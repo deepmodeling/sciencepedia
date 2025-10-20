@@ -8,7 +8,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/deepmodeling/sciencepedia?style=social)](https://github.com/deepmodeling/sciencepedia)
 [![GitHub license](https://img.shields.io/github/license/deepmodeling/sciencepedia)](https://github.com/deepmodeling/sciencepedia/blob/main/LICENSE)
 
-[Report Bug][github-issues-url] · [Request Feature][github-issues-url] · [English](./README.md) · 中文
+[English](./README.md) · 中文
 </div>
 
 **SciencePedia** 是一个**开放、协作、可信的科学知识库**，致力于构建人类的“科学知识宇宙”。我们以“学科”为脉络，以“知识点”为最小单元，追求科学知识的**可获取、结构化、可验证与动态更新**。
