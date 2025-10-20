@@ -8,7 +8,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/deepmodeling/sciencepedia?style=social)](https://github.com/deepmodeling/sciencepedia)
 [![GitHub license](https://img.shields.io/github/license/deepmodeling/sciencepedia)](https://github.com/deepmodeling/sciencepedia/blob/main/LICENSE)
 
-[Report Bug][github-issues-url] · [Request Feature][github-issues-url] · English · [中文](./README-zh_CN.md)
+English · [中文](./README-zh_CN.md)
 </div>
 
 **SciencePedia** is an **open, collaborative, and trustworthy scientific knowledge base**, dedicated to building humanity's **"Scientific Knowledge Universe"**. We use **disciplines** as the framework and **knowledge points** as the smallest units, pursuing scientific knowledge that is **accessible, structured, verifiable, and dynamically updated**.
