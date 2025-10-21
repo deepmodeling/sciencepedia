@@ -1,0 +1,63 @@
+## Introduction
+In the world of digital logic, the rhythmic pulse of a clock signal provides a comforting sense of order, coordinating every action in a predictable sequence. But what if we abandon this central conductor? This leads us to the domain of asynchronous, or clockless, circuits—systems that react to events as they occur, offering potential advantages in speed, power, and modularity. However, this freedom comes at the price of complexity; without a clock, we must confront the raw realities of [signal propagation](@article_id:164654) time, leading to potential chaos. The challenge, then, is to impose order on this chaos.
+
+This article introduces the **fundamental-mode model**, a foundational framework for analyzing and designing reliable [asynchronous sequential circuits](@article_id:170241). It provides the rules and tools needed to navigate the treacherous world of timing without a central clock. By understanding this model, you can design systems that are both responsive and robust.
+
+Across the following chapters, you will embark on a structured journey into this topic. First, **"Principles and Mechanisms"** will lay the groundwork, introducing the concepts of state, stability, and the flow table, while also defining the cardinal rules of the fundamental-mode model and the timing problems—races and hazards—that arise when these rules are violated. Next, **"Applications and Interdisciplinary Connections"** will demonstrate how these principles are applied to build essential real-world components like switch debouncers, arbiters, and handshake protocols, revealing connections to broader fields like computer science. Finally, the **"Hands-On Practices"** section provides targeted problems to help you apply these concepts and solidify your understanding of diagnosing and designing asynchronous systems.
+
+## Principles and Mechanisms
+
+In our journey into the world of digital logic, we've grown accustomed to a benevolent tyrant: the clock. It marches our data from one place to another in perfect lockstep, ensuring order and predictability. But what happens if we depose the tyrant? What if we build circuits that operate on their own time, reacting to inputs as they arrive? We enter the fascinating, and sometimes treacherous, world of asynchronous design. To navigate this world, we need a map and a set of rules. That map is the **flow table**, and the rules are known as the **fundamental-mode model**.
+
+### States and Stability: The Memory of a Machine
+
+At the heart of any [sequential circuit](@article_id:167977)—any circuit with memory—is the concept of a **state**. But what *is* a state? It’s the circuit's current condition, a snapshot of its memory that tells its history. In [synchronous systems](@article_id:171720), the state changes only on the tick of a clock. In an asynchronous world, things are more fluid.
+
+Let's build the simplest possible memory element to get a feel for this. Imagine we take two simple NOR gates and cross-couple them, as described in a classic setup [@problem_id:1967936]. The output of the first gate, let's call it $y_1$, feeds into the second. The output of the second gate, $y_2$, feeds back into the first. This simple loop of logic creates something remarkable. Depending on the external inputs, $x_1$ and $x_2$, this circuit can settle into a condition where its outputs hold steady. For instance, if both inputs are 0, the circuit can happily rest with $y_1=1$ and $y_2=0$, or just as happily with $y_1=0$ and $y_2=1$. Each of these configurations is a **stable state**. It is a point of equilibrium where the next state, determined by the logic gates, is identical to the present state. The circuit, for a given input, has found a resting place.
+
+We can capture all possible behaviors of such a circuit in a chart called a **flow table**. Think of it as a rulebook or a roadmap [@problem_id:1967909]. The rows represent the circuit's possible internal states, and the columns represent the possible combinations of external inputs. Each cell in the table tells us what the *next* state will be. If the entry in a cell is the same as the row's state, we've found a stable state—the circuit will remain there as long as the inputs don't change.
+
+If the entry points to a different state, we have an **[unstable state](@article_id:170215)**. The circuit is in transition. It feels an internal "pull" to change, and it will follow the path laid out by the flow table until it finds a stable resting place for the current input. As you can trace in a simple state-based system, a sequence of input changes guides the circuit on a journey from one stable state to another, producing a sequence of outputs in the process [@problem_id:1967909].
+
+These outputs themselves can be of two flavors, a distinction that is crucial in [state machine design](@article_id:168397) [@problem_id:1967928]. If an output depends *only* on the current stable state, it is called a **Moore-type output**. The output value is a property of the state itself. If, however, the output can change based on the external inputs *as well as* the state, it is a **Mealy-type output**. Mealy outputs can react faster, but they also open the door to more complex timing behavior.
+
+### The Rules of the Game: The Fundamental-Mode Assumption
+
+This dance between stable and [unstable states](@article_id:196793) seems orderly enough, but it relies on a gentleman's agreement between the circuit and the outside world. This agreement is the **fundamental-mode assumption**, and it has two cardinal rules.
+
+**Rule 1: Only one input may change at a time.**
+
+Why such a strict rule? Because in the physical world, "simultaneous" is a fantasy. Imagine you try to change two inputs, say from $x_1x_2=01$ to $x_1x_2=10$. Due to minuscule differences in wire lengths [and gate](@article_id:165797) speeds, one change will inevitably arrive before the other. The circuit won't see a single jump from $01$ to $10$. It will see a sequence: either $01 \to 00 \to 10$ or $01 \to 11 \to 10$ [@problem_id:1967929]. Each of these paths can lead the circuit to a completely different final stable state. By insisting on single input changes, we eliminate this ambiguity and ensure a predictable path through the flow table.
+
+**Rule 2: You must wait for the circuit to fully stabilize before changing the input again.**
+
+After an input changes, the circuit might go through a series of internal state transitions. This process isn't instantaneous; it takes time for signals to propagate through the logic gates. If you change the input again while the circuit is still "thinking," you throw it into a chaotic state where its behavior is undefined.
+
+How long must we wait? The minimum time is dictated by the longest possible path a signal must travel through the chain of logic gates to determine the final state [@problem_id:1967895]. If each logic gate has a propagation delay of $\tau$, and the longest path from any input to the final state variable involves, say, three gates, then we must wait at least $3\tau$ before the next input change is permitted. This ensures the internal state has settled and the circuit is ready for its next command.
+
+### When Signals Race: A Rogues' Gallery of Problems
+
+Following the rules of the fundamental model is our best effort to impose order on an asynchronous system. But inside the silicon, a wild world of pico-second physics can still lead to trouble. These problems are broadly classified as races and hazards.
+
+#### Critical Races: When the Destination is in Doubt
+
+To build a real circuit, our abstract states (like S0, S1, S2) must be assigned binary codes (like 00, 01, 10). This is called **[state assignment](@article_id:172174)**. Now, consider a transition from a state coded as `01` to one coded as `10`. This requires two [state variables](@article_id:138296), $y_1$ and $y_2$, to change simultaneously: $y_1$ from 0 to 1, and $y_2$ from 1 to 0.
+
+But again, "simultaneity" is a myth. The two variables are in a **race**. Which one will change first?
+
+*   If the difference in arrival time doesn't affect the final destination, we have a **non-critical race**. No harm done.
+*   But if the winner of the race determines the final outcome, we have a **critical race**, a catastrophic design flaw. Imagine a transition from `00` to `11` [@problem_id:1967910]. If $y_1$ changes first, the circuit briefly enters the intermediate state `10`. If $y_2$ changes first, it passes through `01`. If the flow table dictates that for the current input, both `10` and `01` are *stable states*, the circuit will simply stop in whichever one it hits first. The intended destination of `11` is never reached, and the circuit's behavior is now unpredictable.
+
+Clever [state assignment](@article_id:172174) is the primary weapon against races. The goal is to assign adjacent binary codes (differing in only one bit) to states that transition between each other. Sometimes, however, the very structure of the flow table makes a race-free assignment impossible with the minimum number of [state variables](@article_id:138296) [@problem_id:1967902]. For some problems, the required "adjacency graph" of state transitions is simply too complex to be mapped onto the simple geometry of a [binary cube](@article_id:189879), guaranteeing at least one critical race that must be designed around, often by adding more state variables. Another common source of critical races is when an intended transition passes through an unused state code, which might inadvertently redirect the circuit to the wrong place [@problem_id:1967914].
+
+Even more troubling, sometimes a circuit doesn't find a new stable state at all. It can enter a loop, oscillating forever between two or more [unstable states](@article_id:196793)—a digital siren call of a broken design [@problem_id:1899].
+
+#### Hazards: Glitches in the Logic
+
+Even if our [state assignment](@article_id:172174) is perfect, transient gremlins can appear in the combinational logic that calculates the next state. These are called **hazards**.
+
+*   **Static Hazards**: Imagine a situation where an output is supposed to remain `1` during an input transition. For instance, the function might be $Y = x_1'y + x_1x_2$. When $y=1$ and $x_2=1$, this simplifies to $Y = x_1' + x_1$, which should always be `1`. But as $x_1$ changes from `0` to `1`, the first term ($x_1'y$) is turning off while the second term ($x_1x_2$) is turning on. If there's a delay, there might be a fleeting moment where both terms are `0`, causing the output $Y$ to glitch to `0` and back to `1`. This is a **[static-1 hazard](@article_id:260508)**. This brief glitch could be enough to incorrectly change the state of the circuit. The solution is wonderfully elegant: we add a redundant "consensus" term to the logic ($Y = x_1'y + x_1x_2 + x_2y$) [@problem_id:1967923]. This new term acts like a safety net, holding the output at `1` during the transition and eliminating the hazard. A similar issue where an output should be `0` but glitches to `1` is a **[static-0 hazard](@article_id:172270)**. The combined effect of such a hazard and asymmetric gate delays can be surprisingly potent, turning an otherwise safe transition into a critical race by tricking the circuit into a wrong intermediate state [@problem_id:1967908].
+
+*   **Essential Hazards**: This is the most subtle hazard, as it's inherent to the structure of the flow table itself, not the specific logic implementation. An [essential hazard](@article_id:169232) occurs when an input signal races against the circuit's own internal state-feedback loop. Imagine an input $x$ changes. This change propagates through the logic to produce a new state. But the *old* state information is also still propagating through the feedback loop. If the new input value reaches a part of the circuit before the state has had a chance to update everywhere, it can cause an incorrect transition. This is a fundamental race between the external world and the circuit's internal reaction, a problem that can only be solved by inserting specific delays in the feedback path to ensure the state change always wins the race [@problem_id:1967921].
+
+Designing [asynchronous circuits](@article_id:168668) in the [fundamental mode](@article_id:164707) is thus an exercise in vigilance. It requires us to abandon the comforting certainty of the clock and instead embrace the fluid, continuous nature of time. By understanding states, stability, and the rogues' gallery of races and hazards, we can craft rules and structures that bring beautiful, efficient order to the apparent chaos.
