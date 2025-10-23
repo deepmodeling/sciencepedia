@@ -1,0 +1,17 @@
+## Introduction
+Molecules are not static, rigid structures but are in a constant state of motion, with rotation around single bonds creating a multitude of spatial arrangements known as conformations. While these different "postures" are all the same molecule, they are not all equally stable. The eclipsed conformation, where atoms on adjacent carbons are in direct alignment, represents a state of high potential energy, and understanding why this is so is fundamental to chemistry. This article bridges the gap between the simple concept of molecular crowding and its profound, far-reaching consequences. In the following chapters, we will first explore the core "Principles and Mechanisms" of conformational strain, using simple [alkanes](@article_id:184699) to define torsional and [steric strain](@article_id:138450) and quantify their energetic costs. Subsequently, we will broaden our perspective to see the far-reaching "Applications and Interdisciplinary Connections," discovering how avoiding—or in rare cases, embracing—the eclipsed conformation governs [protein folding](@article_id:135855), dictates the structure of [inorganic complexes](@article_id:155088), and even enables the creation of molecular machines.
+
+## Principles and Mechanisms
+
+If you were to peek into the world of molecules, you would find it is not a static museum of fixed, rigid shapes. It is a world of ceaseless, frantic motion. Bonds stretch and bend like tiny springs, and entire sections of molecules twist and turn. Among the most important of these movements is the rotation around single bonds—a simple twist that unlocks a world of three-dimensional complexity and profoundly influences a molecule's behavior. This is the heart of [conformational analysis](@article_id:177235), and our journey begins with the simplest stage on which this dance is performed: the ethane molecule, $C_2H_6$.
+
+### A World of Wiggles and Jiggles
+
+Imagine holding a model of an ethane molecule. It has two carbon atoms linked by a single bond, and each carbon has three hydrogen atoms attached. You can grab one of the carbon-and-three-hydrogens units (a methyl group) and give it a twist relative to the other. The molecule doesn't break; the atoms just rearrange in space. These different spatial arrangements, which can be interconverted simply by rotating around a [single bond](@article_id:188067), are called **conformations**.
+
+It is crucial to understand that these different conformations are all the *same molecule*. They are not **constitutional isomers**, which have their atoms connected in a different order [@problem_id:2184963]. Think of it this way: you can change your own posture—standing up straight, slouching, or curling up—but you are still you. Conformations are the postures of a molecule. And just as some postures are more comfortable for us than others, some conformations are more "comfortable"—that is, lower in energy—for a molecule.
+
+To see these postures clearly, chemists use a clever trick called a **Newman projection**. Instead of looking at the molecule from the side, we look straight down the barrel of the central carbon-carbon bond. The front carbon is a dot, and the back carbon is a large circle behind it. The bonds attached to each carbon radiate out like spokes on a wheel.
+
+
+*Figure 1: Newman projections of ethane. The [staggered conformation](@article_id:200342) (left) allows maximum separation between hydrogen atoms, while the eclipsed conformation (right) forces them into alignment.*
