@@ -1,0 +1,3 @@
+## Applications and Interdisciplinary Connections
+
+Now that we have grappled with the fundamental principles of stereodynamics—the vector correlations and geometric constraints that govern chemical change—you might be wondering, "What is all this for?" It is a fair question. Does knowing the precise three-dimensional choreography of a single molecular event have any bearing on the world we see and interact with? The answer, you may not be surprised to hear, is a resounding yes. The beauty of these principles is not confined to the rarefied air of a [chemical physics](@article_id:199091) laboratory; it echoes in the mechanisms of life and the properties of the materials we build.
