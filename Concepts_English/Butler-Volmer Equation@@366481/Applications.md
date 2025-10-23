@@ -1,0 +1,3 @@
+## Applications and Interdisciplinary Connections
+
+Now that we have acquainted ourselves with the machinery of the Butler-Volmer equation, we might be tempted to leave it in the rarefied air of [theoretical chemistry](@article_id:198556). But to do so would be to miss the point entirely! This equation is not an abstract curiosity; it is a workhorse. It is the bridge between the quantum leap of a single electron and the tangible technologies that power our world, from the batteries in our pockets to the global quest for clean energy. It allows us to diagnose, design, and control the electrochemical reactions that are all around us.
