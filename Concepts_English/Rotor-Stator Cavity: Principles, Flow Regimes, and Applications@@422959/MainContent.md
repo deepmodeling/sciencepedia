@@ -1,0 +1,24 @@
+## Introduction
+The rotor-stator cavity—a seemingly simple arrangement of a spinning surface next to a stationary one—is one of the most fundamental configurations in science and engineering. While its geometry is elementary, the fluid dynamics within the gap are remarkably complex, governing everything from the efficiency of jet engines to the production of energy in our cells. This complexity presents a fascinating challenge: how do we understand and predict the behavior of the fluid trapped in this dynamic environment? This article addresses this question by providing a conceptual journey into the world of rotor-stator cavities. We will first explore the core physical principles and [flow regimes](@article_id:152326) that dictate the fluid's motion, including key distinctions between sealed and throughflow systems. Following this, we will discover the surprising versatility of this design by examining its diverse applications across heavy machinery, micro-electronics, and even the molecular machinery of life. The upcoming chapters, "Principles and Mechanisms" and "Applications and Interdisciplinary Connections," will unveil the intricate physics and widespread impact of this foundational design.
+
+![Diagram showing the 'unrolling' of a cylindrical gap into a planar Couette flow model, with a linear velocity profile from U at the rotor surface (y=0) to 0 at the stator surface (y=c).](https://i.imgur.com/vHqJ9Fj.png)
+*Figure 1: The [lubrication approximation](@article_id:202659). A narrow annular gap can be "unrolled" into a simple planar Couette flow. The fluid [velocity profile](@article_id:265910) across the gap is linear.*
+
+
+*Figure 2: The two fundamental [flow regimes](@article_id:152326). (Left) Batchelor flow in a sealed cavity creates a recirculating cell with a rotating core. (Right) Stewartson flow with imposed radial throughflow results in a non-rotating core and suppresses recirculation.*
+
+## Principles and Mechanisms
+
+Now that we have been introduced to the world of rotor-stator cavities, let us peel back the layers and look at the beautiful physics that governs the fluid trapped between these moving and stationary surfaces. You might imagine that if a disk spins at a constant speed, the flow must be "steady". But as with many things in physics, our everyday intuition needs a little sharpening. The story is far more intricate and interesting.
+
+### The Unseen Dance: A World of Whirls and Wakes
+
+Imagine you are a tiny, stationary observer, a probe fixed in the gap of a giant machine like a jet engine's compressor. Below you, a rotor with a set of blades spins relentlessly at a constant [angular velocity](@article_id:192045), $\Omega$. Even though the rotor’s motion is perfectly steady, what you observe is anything but. Each time a blade sweeps past, it leaves a swirling trail, a **wake**, in the fluid. As this parade of wakes marches by your fixed position, you measure a velocity that fluctuates, rising and falling in a rhythmic, periodic pattern.
+
+This is a fundamental concept: the distinction between the description in a frame of reference that moves with the rotor and one that is fixed in the lab. In the rotor's frame, the flow pattern might look completely stationary—frozen in time. But from our stationary viewpoint, we see a dynamic, **unsteady** flow. The rate at which the velocity changes at our observation point depends, quite naturally, on the amplitude of these fluctuations, the number of blades $N$ on the rotor, and how fast it's spinning, $\Omega$ [@problem_id:1793133]. This unsteadiness is not a minor detail; it is the lifeblood of the interaction, driving vibrations, noise, and complex heat transfer patterns in real [turbomachinery](@article_id:276468). The seemingly simple rotation orchestrates a complex, time-varying dance in the fluid.
+
+### The Close Embrace: The Lubrication Regime
+
+Let's simplify things for a moment. What happens if the gap between the rotor and stator is made incredibly thin? So thin, in fact, that the fluid particles barely have any room to move except in a nice, orderly path along with the rotor. This is the world of **lubrication**, a powerful approximation that physicists and engineers use to understand everything from the oil in your car's engine to the synovial fluid in your knee joints.
+
+Imagine a long shaft spinning perfectly centered inside a stationary cylinder, with a thin film of oil in between [@problem_id:1786032]. Because the gap $c$ is so much smaller than the shaft's radius $R$, we can "unroll" the curved surface in our minds and pretend we are looking at a flat plate (the rotor surface) moving at a speed $U = \Omega R$ parallel to a stationary plate (the stator surface).
