@@ -1,0 +1,3 @@
+## Applications and Interdisciplinary Connections
+
+Now that we have explored the fundamental principles of how chemical energy can be converted into mechanical work and vice versa, you might be wondering, "That's all very elegant, but what is it *good* for?" This is a wonderful question. The true beauty of a scientific principle is revealed not just in its abstract formulation, but in the breadth and diversity of phenomena it can explain. As it turns out, the universe has been exploiting the secrets of chemo-mechanics for billions of years, and we are just beginning to harness them ourselves.
