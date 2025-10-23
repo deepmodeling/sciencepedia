@@ -63,7 +63,7 @@ Adopting the **strictest knowledge verification and open collaboration mechanism
 | **Full Transparency** | Review processes **regularly made fully public** |
 
 ---
-## 🔧 **Get Started **
+## 🔧 **Get Started**
 
 | **Scenario** | **Steps** | **Example Outcome** |
 |--------------|-----------|---------------------|
