@@ -1,0 +1,7 @@
+## Applications and Interdisciplinary Connections
+
+Now that we have acquainted ourselves with the various characters in our play—the vacancies, interstitials, dislocations, and grain boundaries—let us see what roles they perform on the grand stage of the real world. We might be tempted to think of them as mere troublemakers, spoiling the perfection of our pristine [crystal lattices](@article_id:147780). But we shall soon find that they are far more interesting characters than that. Sometimes they are indeed villains, causing our devices to fail and our materials to weaken. Other times, however, they are unintentional heroes, and often, they are the very key to the plot, making possible the technologies and phenomena that a "perfect" world would simply forbid. The story of nonideal crystals is the story of learning to live with, and ultimately to master, imperfection itself.
+
+### The Tug-of-War in a Copper Wire: Defects and Electrical Resistance
+
+Let us begin with something as familiar as the flow of electricity through a metal wire. An electron moving through a perfect crystal at absolute zero would be like a ghost, passing through the perfectly ordered lattice of atomic nuclei without scattering at all. Its resistance would be zero. In the real world, of course, two things get in the way. First, the atoms are not stationary; they are constantly jiggling due to thermal energy. This jiggling forms a sort of "thermal fog" that scatters the electrons. Second, and more to our point, the crystal is never perfect. It is littered with defects.

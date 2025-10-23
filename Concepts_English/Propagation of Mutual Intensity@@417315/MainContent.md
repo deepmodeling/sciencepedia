@@ -1,0 +1,62 @@
+## Introduction
+The concept of [optical coherence](@article_id:177384) describes the [statistical correlation](@article_id:199707) of light waves, a property fundamental to understanding phenomena like [interference and diffraction](@article_id:164603). While idealized models often assume perfect coherence, most real-world light sources, from distant stars to LEDs, are only partially coherent. This raises a crucial question: how does the degree of correlation, mathematically captured by the mutual [intensity function](@article_id:267735), evolve as light propagates through space and interacts with optical systems? The answer is not one of simple decay, but rather a complex and structured transformation governed by the fundamental principles of [wave optics](@article_id:270934).
+
+This article delves into the physics governing the propagation of mutual intensity. It addresses the apparent paradox of how order and predictable correlation patterns can emerge from seemingly chaotic and random light sources. You will gain a comprehensive understanding of the theoretical tools used to describe and predict these changes. We will first uncover the foundational principles and mathematical mechanisms that dictate how coherence evolves. Subsequently, we will explore the profound impact of these principles on a wide range of practical applications, revealing how [partial coherence](@article_id:175687) is not a mere technicality but a central feature in modern optics and related fields.
+
+## Principles and Mechanisms
+
+Now, you might be wondering, how does this property we call coherence evolve as light travels? If we start with a jumble of light waves at a source, like the chaotic glow from a frosted lightbulb, how can any sense of order or correlation possibly emerge hundreds or millions of miles away? It seems paradoxical, like expecting an orderly pattern to arise from a pot of boiling water. And yet, this is precisely what happens. The evolution of coherence is not random; it is governed by some of the most elegant and surprising principles in optics. Our journey in this chapter is to uncover these principles.
+
+### Order from Chaos: The Van Cittert-Zernike Theorem
+
+Let's begin with the most fundamental idea, a cornerstone of coherence theory known as the **van Cittert-Zernike theorem**. This theorem is a bit of a miracle. It tells us something profound about how an extended, completely **spatially incoherent** source—think of a distant star, where every point on its surface radiates independently—can produce a light field that has a very definite and predictable [spatial coherence](@article_id:164589) far away.
+
+Imagine each point on the surface of our [incoherent source](@article_id:163952) is like a tiny, independent pebble being dropped into a vast pond. Each one creates its own circular ripple, completely unrelated to the others. Close to where the pebbles are dropping, the water's surface is a chaotic, unpredictable mess. But what if you look at the ripples very, very far away? There, the different expanding circular waves have had time to travel and overlap. The van Cittert-Zernike theorem gives us the rule for how these ripples are related to one another.
+
+The stunning conclusion is this: the **complex degree of spatial coherence** between any two points in the [far-field](@article_id:268794) is, to a very good approximation, the **Fourier transform** of the source's intensity distribution.
+
+Let that sink in. A mathematical operation that is central to everything from signal processing to quantum mechanics—the Fourier transform—is the secret link between the shape of a chaotic light source and the structure of its coherence far away. This relationship, where the [mutual coherence function](@article_id:167467) in an observation plane is proportional to the Fourier transform of the source intensity, is what breathes order into the initial chaos [@problem_id:539816].
+
+### A Tale of Two Slits (and a Single Slit)
+
+What does this mean in practice? Let's take some simple examples. Suppose our [incoherent source](@article_id:163952) is a uniformly lit, one-dimensional slit of width $a$, like a tiny, thin fluorescent bulb seen from afar [@problem_id:568502]. The intensity distribution is a simple rectangular function. The Fourier transform of a rectangle is a **[sinc function](@article_id:274252)**, $\frac{\sin(x)}{x}$. The theorem tells us that if we place two detectors in the [far-field](@article_id:268794) and measure the correlation between the light they receive as we vary their separation, this correlation will trace out a sinc function! Even though the source itself has no intrinsic correlation, the very geometry of its emission imposes a beautifully structured coherence pattern onto the field it creates.
+
+Now for an even more striking case. What if our source consists of just two incredibly fine, [parallel lines](@article_id:168513) of light separated by a distance $d$ [@problem_id:1011129]? In the language of mathematics, we'd model the source intensity as two Dirac delta functions. What's the Fourier transform of two delta functions? A simple cosine function! This means that in the far-field, the degree of coherence will vary sinusoidally as you move your two detectors apart. This is a profound result. It is the deep reason behind **Young's double-slit experiment**. Even if the light passing through two pinholes comes from a completely [incoherent source](@article_id:163952) (like the sun), the light *at* the pinholes acts as a new, two-point source. Far away on a screen, the resulting field will have cosine-like coherence, which manifests as the famous bright and dark [interference fringes](@article_id:176225). The van Cittert-Zernike theorem gives us the fundamental "why" behind one of the most famous experiments in all of physics.
+
+### Coherence in Three Dimensions: Looking Along the Beam
+
+So far, we've only talked about **transverse coherence**—the correlation between two points separated *across* the direction of [light propagation](@article_id:275834). But coherence is a three-dimensional property. What about the relationship between a point in the field and another point directly in front of or behind it, along the direction of travel? This is called **longitudinal coherence**.
+
+To investigate this, let's imagine we have a flat, circular, incoherent disk source (like a glowing coin) and we set up two detectors on the central axis, one at a distance $z$ and the other at $z + \Delta z$ [@problem_id:1015736]. We are now measuring the correlation along the path of the light. Will the light at the first detector be related to the light that arrives a moment later at the second one?
+
+The answer, once again, is a resounding yes, and the pattern is just as structured. The calculation reveals that the degree of longitudinal coherence also oscillates. As you increase the separation $\Delta z$, the correlation can drop from perfect, down to zero, and back up again. The first point at which the coherence vanishes completely can be calculated precisely. For a disk of radius $a$ at a distance $z$, this first "coherence null" occurs at a separation of approximately $\Delta z \approx \frac{2\lambda z^2}{a^2}$, where $\lambda$ is the wavelength. This tells us that the field is organized into "cells" of coherence, not just transversely but also longitudinally. Light possesses a rich, three-dimensional coherence structure, all born from the geometry of a simple, random source.
+
+### The Real World: Partially Coherent Beams and the $M^2$ Factor
+
+In the real world, sources are rarely perfectly coherent (like an ideal laser) or perfectly incoherent (like a thermal source). Most interesting sources, from LEDs to multimode lasers to starlight passing through the atmosphere, are **partially coherent**.
+
+A wonderfully useful model for such beams is the **Gaussian Schell-model (GSM)**. This model describes a source that has both a Gaussian intensity profile (brightest at the center, fading outwards) and a Gaussian degree of coherence (most coherent at the center, with coherence falling off over a certain distance $\sigma_g$).
+
+How does such a beam propagate? A partially coherent beam will spread out, or diverge, more rapidly than a perfectly coherent laser beam of the same initial size. We need a way to quantify this "beam quality". This is done using the **beam propagation factor**, or **$M^2$** (M-squared). A perfect, diffraction-limited Gaussian laser beam has $M^2 = 1$. Any real or partially coherent beam has $M^2 > 1$. The larger the $M^2$, the worse the beam quality and the faster it spreads.
+
+By tracking the propagation of a GSM beam, we can derive a beautifully simple expression for its [quality factor](@article_id:200511) [@problem_id:575595]:
+$$ M^2 = \sqrt{1 + \frac{w_0^2}{2\sigma_g^2}} $$
+Here, $w_0$ is the initial waist size of the beam and $\sigma_g$ is the [transverse coherence length](@article_id:171054) at the source. This formula is incredibly insightful.
+- If the beam is perfectly coherent ($\sigma_g \to \infty$), the second term vanishes and $M^2=1$, just as we'd expect for a perfect laser beam.
+- If the coherence is very poor relative to the beam size ($\sigma_g \ll w_0$), the $M^2$ factor becomes very large. This tells us that low spatial coherence is a direct cause of high [beam divergence](@article_id:269462). This single parameter, $M^2$, neatly bundles the dual effects of a beam's size and its coherence into a single, practical measure of how it will behave. The framework is also powerful enough to handle sources with more exotic correlation structures, such as Bessel-correlated sources, which can create fascinating "self-reconstructing" beams [@problem_id:1045731].
+
+### The Ultimate View: Light in Phase Space
+
+The methods we've used so far, based on the Huygens-Fresnel integral, involve monstrously complex calculations, integrating over pairs of points. While powerful, they don't always offer a gut-level intuition. Is there a more elegant way to see what's going on?
+
+The answer lies in borrowing a concept from classical mechanics: **phase space**. Instead of describing a particle just by its position $x$, we describe its full state by its position *and* its momentum. For light, we can do something similar. We can describe the state of a light field not just by its transverse position $x$, but also by its direction of travel, or [spatial frequency](@article_id:270006), $u$. This $(x, u)$ plane is the phase space for light.
+
+The mathematical tool for this is the **Wigner Distribution Function (WDF)**, $W(x,u)$. You can think of it as a function that tells you "how much light" there is at position $x$ traveling in direction $u$.
+
+Here is where the magic happens. The complicated integral that describes the propagation of the [mutual coherence function](@article_id:167467) becomes breathtakingly simple when expressed in terms of the WDF. For free space propagation over a distance $z$, a ray starting at $x_0$ with angle $u_0$ simply moves to a new position $x_0 + z u_0$. The Wigner function does the exact same thing! The distribution just shears across phase space [@problem_id:978337]:
+$$ W_{out}(x, u) = W_{in}(x - zu, u) $$
+All the complexity of diffraction is captured in this simple coordinate shift.
+
+This picture becomes even more powerful when we consider propagation through an entire optical system of lenses and spaces, which can be described by a single **ABCD ray-[transfer matrix](@article_id:145016)**. How does the WDF propagate through such a system [@problem_id:1027539]? The result, derived from the generalized propagation integral, is the crown jewel of this formalism [@problem_id:967889]:
+$$ W_{out}(x, u) = W_{in}(Dx - Bu, -Cx + Au) $$
+This is stunning. The Wigner distribution at the output is just the Wigner distribution at the input, with its phase-space coordinates transformed by the very same matrix that traces geometric light rays through the system (albeit in a slightly rearranged form). The propagation of a partially coherent field, a fundamentally wave-based phenomenon, is perfectly described by a geometric, ray-like transformation in this abstract phase space. It is a profound and beautiful unification of [wave optics](@article_id:270934) and ray optics, showing us that underneath the seeming complexity of wave interference lies a simple, geometric heart.
