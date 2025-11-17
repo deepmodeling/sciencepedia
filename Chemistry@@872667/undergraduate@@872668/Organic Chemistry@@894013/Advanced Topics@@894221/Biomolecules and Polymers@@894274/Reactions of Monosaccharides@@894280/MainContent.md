@@ -1,0 +1,95 @@
+## Introduction
+Monosaccharides, the simplest form of [carbohydrates](@entry_id:146417), are fundamental [biomolecules](@entry_id:176390) whose rich and varied chemistry stems from their unique polyfunctional structure, which includes multiple hydroxyl groups and a [carbonyl group](@entry_id:147570). This complexity presents a significant challenge: how can we predict and control the reactivity of these molecules when so many similar [functional groups](@entry_id:139479) are present? Understanding the principles that govern their transformations is essential for deciphering their roles in biology and for harnessing their potential in synthetic applications.
+
+This article provides a systematic guide to the reactions of [monosaccharides](@entry_id:142751). In the "Principles and Mechanisms" chapter, we will dissect the core reactions—from [glycoside formation](@entry_id:197390) at the [anomeric carbon](@entry_id:167875) to isomerizations, oxidations, reductions, and chain-length modifications—exploring the mechanisms that drive them. Following this, the "Applications and Interdisciplinary Connections" chapter will demonstrate how this foundational knowledge is applied in diverse fields, from the classical methods of [structural elucidation](@entry_id:187703) to the elegant strategies used in modern [chemical synthesis](@entry_id:266967) and the intricate [biochemical pathways](@entry_id:173285) found in nature. Finally, the "Hands-On Practices" section will provide an opportunity to apply these concepts to solve practical problems, solidifying your understanding of this vital area of organic chemistry.
+
+## Principles and Mechanisms
+
+The rich chemistry of [monosaccharides](@entry_id:142751) stems from their polyfunctional nature, possessing multiple hydroxyl groups and a [carbonyl group](@entry_id:147570). In aqueous solution, this [carbonyl group](@entry_id:147570) engages in a reversible [intramolecular reaction](@entry_id:204579) with a hydroxyl group to form cyclic hemiacetals, which dominate at equilibrium. The interplay between the open-chain and cyclic forms, along with the unique reactivity of the newly formed [hemiacetal](@entry_id:194877) center, governs the principal reactions of these fundamental biomolecules. This chapter will systematically explore the mechanisms and principles that underpin the transformations of [monosaccharides](@entry_id:142751).
+
+### Reactions at the Anomeric Carbon: Glycosides and Anomeric Stability
+
+The most distinct reactive site in a cyclic [monosaccharide](@entry_id:204068) is the **anomeric carbon**—the carbon atom that was originally part of the [carbonyl group](@entry_id:147570) (C-1 in aldoses, C-2 in ketoses). This carbon is unique as it is a [hemiacetal](@entry_id:194877) (or hemiketal) center, bonded to both an ether-like oxygen within the ring and a [hydroxyl group](@entry_id:198662). The reactivity of this anomeric hydroxyl group is central to much of [carbohydrate chemistry](@entry_id:167855).
+
+#### Glycoside Formation
+
+One of the most important reactions of [monosaccharides](@entry_id:142751) is their conversion to **glycosides**. When a [monosaccharide](@entry_id:204068) is treated with an alcohol in the presence of an acid catalyst, the anomeric [hydroxyl group](@entry_id:198662) is replaced by an alkoxy group. For example, when D-glucose is treated with a large excess of methanol ($\text{CH}_3\text{OH}$) and a catalytic amount of strong acid, two major stereoisomeric products are formed, known as methyl $\alpha$-D-glucopyranoside and methyl $\beta$-D-glucopyranoside [@problem_id:2194730].
+
+The mechanism for this transformation, known as **Fischer glycosidation**, provides deep insight into the reactivity of the anomeric center. The reaction begins with the protonation of the anomeric [hydroxyl group](@entry_id:198662) by the acid catalyst, converting it into a good leaving group (water). The subsequent departure of a water molecule is assisted by the neighboring ring oxygen, which donates a lone pair of electrons to form a highly reactive intermediate: a planar, resonance-stabilized **[oxocarbenium ion](@entry_id:202879)** [@problem_id:2194751].
+
+The anomeric carbon in this [oxocarbenium ion](@entry_id:202879) is $sp^2$-hybridized and trigonal planar. This planarity is the key to the stereochemical outcome of the reaction. The alcohol nucleophile (in this case, methanol) can attack the electrophilic [anomeric carbon](@entry_id:167875) from either face of the plane. Attack from one face leads to the $\alpha$-glycoside, while attack from the opposite face leads to the $\beta$-glycoside. After deprotonation of the newly added methoxy group, the final glycoside products are formed.
+
+Because these two products differ only in the three-dimensional configuration at the anomeric carbon, they are defined as **[anomers](@entry_id:166480)** of each other. Anomers are a specific class of diastereomers [@problem_id:2194730]. The formation of both [anomers](@entry_id:166480) is a direct consequence of the planar [oxocarbenium ion](@entry_id:202879) intermediate, which serves as a common precursor to both stereochemical outcomes [@problem_id:2194751].
+
+A crucial consequence of [glycoside formation](@entry_id:197390) is the change in chemical properties. The [hemiacetal](@entry_id:194877) of the parent sugar is converted into a full **acetal** in the glycoside. This acetal linkage is stable under neutral or basic conditions. Unlike a [hemiacetal](@entry_id:194877), it cannot readily revert to the open-chain aldehyde form. This has two major implications [@problem_id:2194716]:
+1.  **Glycosides are non-[reducing sugars](@entry_id:164701).** Because they cannot generate a free aldehyde group, they do not give a positive test with mild oxidizing agents like Benedict's or Tollens' reagents.
+2.  **Glycosides do not undergo [mutarotation](@entry_id:156364).** Mutarotation is the change in [optical rotation](@entry_id:201162) that occurs as an anomer equilibrates with its other [anomers](@entry_id:166480) via the open-chain form. Since the acetal "locks" the ring, this equilibrium is prevented, and a pure sample of a glycoside, such as methyl $\alpha$-D-mannopyranoside, will maintain a constant [optical rotation](@entry_id:201162) in solution.
+
+#### Anomer Stability and Reactivity
+
+The formation of two [anomers](@entry_id:166480) in Fischer glycosidation raises the question of their [relative stability](@entry_id:262615). For D-glucose, an equilibrium mixture in water at room temperature contains approximately $63.6\%$ of the $\beta$-anomer and $36.4\%$ of the $\alpha$-anomer, with a negligible amount of the open-chain form. This indicates that $\beta$-D-glucopyranose is thermodynamically more stable than $\alpha$-D-glucopyranose [@problem_id:2194746].
+
+The reason for this stability difference becomes clear upon examining the chair conformations of the [pyranose](@entry_id:170980) rings. In $\beta$-D-glucopyranose, the anomeric [hydroxyl group](@entry_id:198662) at C-1 is in an **equatorial** position. In fact, *all* of the bulky substituents (the four hydroxyl groups and the $-\text{CH}_2\text{OH}$ group) are in equatorial positions. This arrangement minimizes [steric strain](@entry_id:138944), making it an exceptionally stable conformation. In contrast, $\alpha$-D-glucopyranose has its anomeric hydroxyl group in an **axial** position, which introduces destabilizing 1,3-diaxial interactions with other axial hydrogens on the ring. The energy difference between these two [anomers](@entry_id:166480), which can be calculated from their equilibrium concentrations, is the thermodynamic driving force favoring the $\beta$ form. For D-glucose, this energy difference corresponds to a standard Gibbs free energy change of approximately $-1.38 \text{ kJ/mol}$ for the $\alpha \to \beta$ conversion [@problem_id:2194746].
+
+This stereochemical difference also influences kinetic reactivity. For example, in the esterification of D-mannose [anomers](@entry_id:166480) with acetic anhydride, the equatorial [hydroxyl group](@entry_id:198662) of the $\beta$-anomer is sterically more accessible to the incoming reagent than the axial hydroxyl group of the $\alpha$-anomer. This lower steric hindrance results in a lower activation energy ($E_a$) for the reaction of the $\beta$-anomer. Based on the Arrhenius equation, $k = A \exp(-E_a / (RT))$, a lower activation energy leads to a faster reaction rate. If the activation energy for the $\alpha$-anomer is higher by just $4.50 \text{ kJ/mol}$, the initial [rate of reaction](@entry_id:185114) for the $\beta$-anomer can be over six times faster than that of the $\alpha$-anomer at room temperature [@problem_id:2194754].
+
+### Isomerization and Reactions at C-1/C-2
+
+The region encompassing the [anomeric carbon](@entry_id:167875) (C-1) and the adjacent carbon (C-2) is a hotbed of reactivity, leading to important isomerization and derivatization reactions.
+
+#### Base-Catalyzed Isomerization
+
+While stable in acidic or neutral solution (apart from [mutarotation](@entry_id:156364)), [monosaccharides](@entry_id:142751) undergo facile isomerization in the presence of a mild base. This reaction, known as the **Lobry de Bruyn–van Ekenstein transformation**, allows for the interconversion of aldoses, ketoses, and their C-2 [epimers](@entry_id:167966).
+
+The mechanism is initiated by the removal of the acidic $\alpha$-proton at C-2 of an [aldose](@entry_id:173199) (like D-glucose) by a base. This generates an [enolate](@entry_id:186227) which is then protonated on the oxygen atom at C-1 to form a key intermediate: an **enediol**. The enediol contains a carbon-carbon double bond with a hydroxyl group on each carbon ($\text{HO}-\text{C}(1)=\text{C}(2)-\text{OH}$). This planar intermediate is the pivot point for isomerization [@problem_id:2194758].
+
+From the enediol intermediate derived from D-glucose, three outcomes are possible:
+1.  Reprotonation at C-2 can regenerate the starting D-glucose.
+2.  Reprotonation at C-2 from the opposite face leads to the C-2 epimer of D-glucose, which is **D-mannose**.
+3.  Tautomerization where the C-1 hydroxyl proton is transferred and reprotonation occurs at C-1 results in the formation of the ketohexose **D-fructose**.
+
+Thus, placing D-glucose in a dilute basic solution will eventually lead to a thermodynamic equilibrium mixture containing D-glucose, D-mannose, and D-fructose [@problem_id:2194755]. The exact composition of this equilibrium mixture is dictated by the relative standard Gibbs free energies of the three sugars.
+
+A significant practical consequence of this isomerization is that ketoses, such as D-fructose, give a positive test with **Benedict's reagent**. Benedict's test detects [reducing sugars](@entry_id:164701) by oxidizing an aldehyde group. Although a ketose lacks an aldehyde, the basic conditions of the test reagent catalyze the isomerization of the ketose to aldoses via the enediol intermediate. These aldoses are then oxidized, causing the reduction of $\text{Cu}^{2+}$ to red $\text{Cu}_2\text{O}$ and giving a positive result [@problem_id:2194758].
+
+#### Osazone Formation
+
+A classic reaction that probes the stereochemistry at C-1 and C-2 is the formation of **osazones**. When an [aldose](@entry_id:173199) or ketose is heated with an excess of phenylhydrazine in a weakly acidic solution, a crystalline derivative called an osazone is formed. The reaction is complex, but the net result is that both the carbonyl carbon (C-1 in an [aldose](@entry_id:173199)) and the adjacent carbon (C-2) react. The original [hydroxyl group](@entry_id:198662) at C-2 is oxidized to a carbonyl, and both carbonyls then react with phenylhydrazine to form a bis(phenylhydrazone).
+
+The crucial feature of osazone formation is that the original [stereochemistry](@entry_id:166094) at both C-1 and C-2 is destroyed. The resulting osazone's structure is therefore determined only by the configurations of the remaining chiral centers (C-3, C-4, C-5, etc.). This has a powerful consequence for [structure elucidation](@entry_id:174508): any two sugars that differ only in their configuration at C-1 or C-2 will produce the exact same osazone product. For this reason, the C-2 [epimers](@entry_id:167966) D-glucose and D-mannose both form identical osazones. Furthermore, since D-fructose has the same C-3, C-4, and C-5 configuration as D-glucose, it also forms the same osazone [@problem_id:2194732].
+
+### Oxidation and Reduction of Monosaccharides
+
+The carbonyl group in the open-chain form of a [monosaccharide](@entry_id:204068) is susceptible to both oxidation and reduction, leading to important classes of sugar derivatives.
+
+#### Oxidation Reactions
+
+The oxidation of [monosaccharides](@entry_id:142751) can be controlled to yield different products depending on the strength of the oxidizing agent.
+
+1.  **Aldonic Acids**: A mild [oxidizing agent](@entry_id:149046), such as bromine water ($\text{Br}_2/\text{H}_2\text{O}$), selectively oxidizes the aldehyde group of an [aldose](@entry_id:173199) to a carboxylic acid. The resulting product is called an **aldonic acid** (e.g., D-glucose is oxidized to D-gluconic acid). This reaction is specific to aldoses because ketoses lack the easily oxidized aldehyde group. Furthermore, because the reaction requires the open-chain aldehyde form, glycosides (acetals) are unreactive towards bromine water. This makes the reaction a useful diagnostic test to distinguish reducing from non-[reducing sugars](@entry_id:164701) [@problem_id:2194716].
+
+2.  **Lactone Formation**: Aldonic acids exist in equilibrium with their cyclic [esters](@entry_id:182671), known as **lactones**. This intramolecular esterification typically occurs upon heating an aqueous solution of the aldonic acid. The cyclization can involve different hydroxyl groups along the chain, leading to rings of different sizes. For instance, D-galactonic acid can cyclize to form either a five-membered **γ-[lactone](@entry_id:192272)** (involving the C-4 hydroxyl) or a six-membered **δ-[lactone](@entry_id:192272)** (involving the C-5 hydroxyl).
+
+The principles of [kinetic and thermodynamic control](@entry_id:148847) govern which [lactone](@entry_id:192272) is favored. The formation of five-membered rings is generally faster due to a more favorable (less negative) [entropy of activation](@entry_id:169746), making the γ-[lactone](@entry_id:192272) the **[kinetic product](@entry_id:188509)**. However, six-membered rings are generally more stable due to lower [ring strain](@entry_id:201345), as they can adopt strain-free chair conformations. Therefore, the δ-[lactone](@entry_id:192272) is the more stable **[thermodynamic product](@entry_id:203930)**. Under brief reaction times or lower temperatures, the γ-[lactone](@entry_id:192272) will predominate, while under prolonged heating that allows equilibrium to be reached, the more stable δ-[lactone](@entry_id:192272) will be the major product [@problem_id:2194720].
+
+#### Reduction Reactions
+
+The carbonyl group of a [monosaccharide](@entry_id:204068) can be reduced to a [hydroxyl group](@entry_id:198662) using reducing agents like [sodium borohydride](@entry_id:192850) ($\text{NaBH}_4$). This transformation converts the sugar into a polyhydroxy alcohol, known as an **alditol**. For example, the reduction of the [aldose](@entry_id:173199) D-glucose yields the single alditol D-glucitol.
+
+The reduction of a ketose is stereochemically more complex. When D-fructose is reduced, the target is the ketone at C-2. This carbonyl carbon is $sp^2$-hybridized and [trigonal planar](@entry_id:147464). The nucleophilic hydride ion ($\text{H}^−$) from $\text{NaBH}_4$ can attack this planar center from either of two faces. Since the rest of the molecule is chiral, these two pathways are [diastereotopic](@entry_id:748385) and lead to two different products. Attack from one face yields D-glucitol, while attack from the other face yields its C-2 epimer, D-mannitol. The reduction of a single ketose thus produces two epimeric alditols because a new [stereocenter](@entry_id:194773) is created from an achiral (planar) functional group [@problem_id:2194733].
+
+### Carbon Chain Lengthening and Shortening
+
+Classical methods have been developed to systematically modify the length of a [monosaccharide](@entry_id:204068)'s carbon chain, which were invaluable in the historical effort to elucidate sugar structures and are still of synthetic utility.
+
+#### Kiliani-Fischer Synthesis: Chain Lengthening
+
+The **Kiliani-Fischer synthesis** is a method for lengthening the carbon chain of an [aldose](@entry_id:173199) by one carbon atom. The process begins with the [nucleophilic addition](@entry_id:196792) of [cyanide](@entry_id:154235) ($\text{CN}^−$) to the aldehyde group of the starting [aldose](@entry_id:173199). This reaction forms two diastereomeric cyanohydrins, because a new [stereocenter](@entry_id:194773) is created at what was the carbonyl carbon (the new C-2). The nitrile group of the cyanohydrins is then hydrolyzed to a carboxylic acid, and subsequent reduction (often via an intermediate [lactone](@entry_id:192272)) yields a new [aldose](@entry_id:173199) that is one carbon longer.
+
+Because the initial [cyanohydrin formation](@entry_id:202513) generates two [diastereomers](@entry_id:154793) that differ only at the newly formed C-2 [stereocenter](@entry_id:194773), the Kiliani-Fischer synthesis converts a single starting [aldose](@entry_id:173199) into a pair of **C-2 [epimers](@entry_id:167966)**. For instance, subjecting the aldopentose D-ribose to this synthesis results in the formation of two aldohexoses, D-allose and D-altrose, which are epimeric at C-2 [@problem_id:2194734].
+
+#### Wohl Degradation: Chain Shortening
+
+The inverse operation, shortening an [aldose](@entry_id:173199) chain by one carbon, can be achieved via the **Wohl degradation**. In this procedure, the [aldose](@entry_id:173199) is first converted to an oxime by reaction with hydroxylamine. The oxime is then treated with acetic anhydride, which acetylates all the hydroxyl groups and dehydrates the oxime group to a cyanohydrin. Treatment with a mild base promotes elimination, expelling the original C-1 as cyanide and generating an [aldose](@entry_id:173199) with one fewer carbon.
+
+In this process, the original C-1 is removed, and the original C-2, which loses its stereochemistry, becomes the new C-1 aldehyde carbon. The stereochemical configurations of all other chiral centers (C-3, C-4, etc.) are preserved. Therefore, performing a Wohl degradation on D-glucose, which has a (Right, Left, Right, Right) configuration at C-2 through C-5, yields a product whose C-2, C-3, and C-4 stereocenters correspond to the original C-3, C-4, and C-5 of glucose. This results in the formation of the aldopentose D-arabinose, which has a (Left, Right, Right) configuration [@problem_id:2194711].
