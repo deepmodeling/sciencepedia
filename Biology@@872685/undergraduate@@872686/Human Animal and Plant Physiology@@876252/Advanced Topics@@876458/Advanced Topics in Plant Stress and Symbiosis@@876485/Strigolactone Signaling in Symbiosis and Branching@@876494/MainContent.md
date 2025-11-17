@@ -1,0 +1,62 @@
+## Introduction
+Strigolactones are a remarkable class of [plant hormones](@entry_id:143955) that stand at the crossroads of internal development and external environmental interaction. These carotenoid-derived molecules orchestrate a plant's shape while also serving as a chemical language for communicating with other organisms in the soil. The central challenge for any plant is to balance its growth against the availability of essential resources, and [strigolactones](@entry_id:150774) provide an elegant molecular solution to this problem. This article delves into the fascinating world of [strigolactone signaling](@entry_id:155611), revealing how a single hormone system can coordinate a plant's architecture with its survival strategies.
+
+In the chapters that follow, you will gain a comprehensive understanding of this vital pathway. We will begin by exploring the core **Principles and Mechanisms**, dissecting how [strigolactones](@entry_id:150774) are perceived and how their signal is translated into a cellular response. Next, we will expand our perspective in **Applications and Interdisciplinary Connections**, examining the profound impact of this signaling on agriculture, [symbiotic relationships](@entry_id:156340), and the [evolutionary arms race](@entry_id:145836) with [parasitic plants](@entry_id:155226). Finally, **Hands-On Practices** will challenge you to apply these concepts through a series of [thought experiments](@entry_id:264574), solidifying your grasp of how these molecular events shape the whole organism.
+
+## Principles and Mechanisms
+
+Strigolactones (SLs) represent a fascinating class of [plant hormones](@entry_id:143955) that function at the interface of [plant development](@entry_id:154890) and environmental interaction. As carotenoid-derived molecules, they possess a unique chemical structure that enables them to act as both internal regulators of plant form and external signals in the complex ecosystem of the soil. This chapter will elucidate the core principles governing the dual functions of [strigolactones](@entry_id:150774) and detail the intricate molecular mechanisms through which they are perceived and their signals are transduced within the plant cell.
+
+### The Dual Role of Strigolactones: An Integrated System for Resource Management
+
+The most striking principle of strigolactone biology is its duality. SLs perform two primary, yet distinct, roles that are elegantly integrated to manage the plant's resources in response to environmental cues.
+
+First, within the plant, [strigolactones](@entry_id:150774) function as **endogenous hormones** that regulate shoot architecture. Their principal internal role is the suppression of axillary bud outgrowth, a process that contributes to **[apical dominance](@entry_id:149081)**, where the central stem grows more strongly than the lateral stems. By inhibiting the growth of these buds, SLs effectively reduce [shoot branching](@entry_id:153563), resulting in a less "bushy" phenotype [@problem_id:1743486] [@problem_id:1743446]. This architectural control is not static; it is a dynamic response to the plant's internal status and external environment.
+
+Second, [strigolactones](@entry_id:150774) function as **exogenous signals** in the **[rhizosphere](@entry_id:169417)**, the narrow region of soil directly influenced by root secretions. Roots, particularly under nutrient-limiting conditions, exude SLs into the soil. Here, they act as a chemical message to other organisms. Their most well-documented and beneficial role is to stimulate the germination of spores and promote hyphal branching in symbiotic **Arbuscular Mycorrhizal (AM) [fungi](@entry_id:200472)** [@problem_id:1743446]. This pre-symbiotic communication greatly increases the likelihood of colonization of the root by the fungus, establishing a partnership in which the fungus extends its vast network of hyphae into the soil to acquire nutrients, especially immobile ones like phosphate, and transfers them to the plant in exchange for carbon.
+
+The link between these two roles lies in the regulation of SL [biosynthesis](@entry_id:174272). The production of [strigolactones](@entry_id:150774), primarily in the roots, is significantly upregulated when the plant experiences nutrient scarcity, most notably phosphate starvation [@problem_id:1743461]. This observation reveals a profound evolutionary logic: the dual-function system provides a coordinated, adaptive response to nutrient stress. When phosphate is scarce, the plant increases SL production. This simultaneously triggers two beneficial responses:
+1.  **Resource Conservation**: Increased internal SL levels suppress the formation of new, resource-intensive branches, conserving energy and nutrients.
+2.  **Resource Acquisition**: Increased exudation of SLs into the soil promotes the symbiotic relationship with AM fungi to improve phosphate uptake from the environment.
+
+This integrated strategy allows the plant to coordinate its internal growth program with its external nutrient-foraging strategy, using a single chemical signal as a master switch. This avoids the maladaptive scenario of investing in new growth before the necessary resources are secured, providing a clear evolutionary advantage [@problem_id:1743445].
+
+### The Core Signaling Pathway: Perception and Signal Transduction
+
+The physiological effects of [strigolactones](@entry_id:150774) are mediated by a precise [intracellular signaling](@entry_id:170800) pathway centered on [targeted protein degradation](@entry_id:182352). This mechanism acts as a [molecular switch](@entry_id:270567), turning gene expression on or off in response to the hormone's presence.
+
+#### The "Off" State: Repression in the Absence of Strigolactones
+
+In the absence of SLs, the signaling pathway is in a default "off" state. This state is maintained by a family of nuclear proteins known as the **SMAX1-LIKE/DWARF53 (SMXL/D53)** family. These proteins function as **[transcriptional repressors](@entry_id:177873)**. They bind to the promoters of SL-responsive genes, often as part of larger [protein complexes](@entry_id:269238), and physically block their transcription. By keeping these genes silenced, the SMXL/D53 repressors prevent the plant from initiating SL-dependent responses. For example, their presence allows for the potential outgrowth of axillary buds.
+
+#### The "On" Switch: Hormone-Induced Repressor Degradation
+
+The arrival of strigolactone molecules flips the switch to the "on" state through a multi-step cascade that culminates in the destruction of the SMXL/D53 repressors.
+
+1.  **Perception**: The process begins when a strigolactone molecule enters the nucleus and binds to its receptor, a protein named **DWARF14 (D14)**. D14 is a member of the α/β-hydrolase superfamily and possesses a specific binding pocket for the SL molecule [@problem_id:1743472].
+
+2.  **Complex Formation**: The binding of SL induces a critical conformational change in the D14 protein. This altered shape creates a new interaction surface, allowing the hormone-bound receptor to simultaneously bind to both a target SMXL/D53 [repressor protein](@entry_id:194935) and a crucial adaptor protein known as **MORE AXILLARY GROWTH 2 (MAX2)**.
+
+3.  **Targeting for Degradation**: MAX2 is an **F-box protein**. The defining function of an F-box protein is to serve as the substrate-recognition component of a larger enzymatic machine called an **SCF E3 [ubiquitin](@entry_id:174387) ligase** complex (named for its core components: Skp1, Cullin, and an F-box protein). By recruiting the SMXL/D53 repressor to the SL-D14 complex, MAX2 effectively presents the repressor as a substrate to the SCF E3 [ligase](@entry_id:139297) [@problem_id:1743487].
+
+4.  **Ubiquitination and Proteasomal Degradation**: The SCF^MAX2 complex then catalyzes the process of **[ubiquitination](@entry_id:147203)**, attaching a chain of small [ubiquitin](@entry_id:174387) proteins to the SMXL/D53 repressor. This polyubiquitin chain acts as a molecular "tag for destruction." The tagged repressor is then recognized and degraded by the **26S proteasome**, a large, barrel-shaped [protein complex](@entry_id:187933) that functions as the cell's primary machinery for protein disposal [@problem_id:1743472].
+
+The power and necessity of this degradation mechanism can be illustrated by considering a hypothetical mutant plant where the D53 protein is rendered resistant to degradation. In such a plant, even in the presence of high strigolactone levels, the repressor would persist. Consequently, the downstream genes would remain silenced, and the signaling pathway would be permanently blocked. This mutant would exhibit phenotypes characteristic of SL insensitivity, such as excessive [shoot branching](@entry_id:153563) and impaired ability to form [symbiotic relationships](@entry_id:156340) with AM fungi, demonstrating that the destruction of the repressor is the indispensable event for [signal transduction](@entry_id:144613) [@problem_id:1743423].
+
+5.  **De-repression and Physiological Response**: With the SMXL/D53 repressor eliminated, the transcriptional block is lifted. SL-responsive genes are now expressed, producing proteins that carry out the hormone's physiological directives. These downstream proteins are responsible for executing tasks such as suppressing cell division or growth in axillary buds and facilitating the necessary root cell modifications to accommodate the entry and development of AM [fungi](@entry_id:200472) [@problem_id:1743433].
+
+### System-Level Regulation and Transport
+
+The [strigolactone signaling](@entry_id:155611) system involves more than just the core nuclear pathway; it is integrated across the whole plant through long-distance transport and features a sophisticated mechanism for [signal attenuation](@entry_id:262973) at the receptor level.
+
+#### Long-Distance Signaling: From Root to Shoot
+
+A key question is how [strigolactones](@entry_id:150774), which are often synthesized in the roots in response to soil conditions, can exert control over bud growth in the distant shoots. This long-distance communication is achieved via the plant's vascular system. After being synthesized in the roots, SL molecules are loaded into the **[xylem](@entry_id:141619)**, the primary water-conducting tissue in plants. They are then carried upwards with the [transpiration](@entry_id:136237) stream, which transports water and dissolved minerals from the roots to the rest of the plant. Upon reaching the nodes of the stem, the SLs can exit the vasculature and act directly on the axillary buds to inhibit their growth [@problem_id:1743426]. This transport mechanism provides a direct and efficient link between the nutrient-sensing roots and the growth-regulating shoots.
+
+#### The "Suicidal" Receptor: An Elegant Mechanism for Signal Termination
+
+A remarkable feature of the D14 receptor is that it is not just a passive docking station for the hormone; it is also a slow-acting enzyme. After binding the strigolactone molecule and initiating the signaling cascade, D14 catalyzes the irreversible hydrolysis (cleavage) of its ligand. In essence, the receptor destroys the hormone molecule as part of the signaling cycle.
+
+The functional significance of this "suicidal" mechanism can be understood by considering a hypothetical mutant D14* protein that can bind SL and trigger signaling but has lost its ability to hydrolyze the hormone. In such a mutant, a single SL molecule could bind, activate signaling, dissociate, and then re-bind repeatedly, initiating multiple rounds of signaling. This would make the system far more sensitive to the hormone, as each ligand molecule would have a much greater effect. The mutant plant would exhibit a **hypersensitive response**, showing a much stronger suppression of branching even at very low SL concentrations [@problem_id:1743456].
+
+This thought experiment reveals the purpose of ligand hydrolysis in the wild-type system: it acts as a crucial mechanism for [signal attenuation](@entry_id:262973) and termination. By ensuring that each hormone molecule is effectively "single-use," the plant can generate a response that is proportional to the amount of hormone present and can terminate the signal efficiently. This prevents runaway signaling and allows the plant to mount a measured, transient response to fluctuating environmental conditions.
