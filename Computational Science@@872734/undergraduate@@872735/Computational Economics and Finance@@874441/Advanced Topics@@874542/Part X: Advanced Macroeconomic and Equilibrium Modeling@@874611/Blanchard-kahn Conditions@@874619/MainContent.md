@@ -1,0 +1,90 @@
+## Introduction
+In modern economics, understanding how rational, forward-looking agents make decisions is paramount. From households planning their savings to central banks setting interest rates, expectations about the future shape the present. This creates a significant challenge for modelers: how can we ensure that a dynamic economic model produces a single, stable, and economically sensible path, rather than an explosive or indeterminate one? The assumption that rational agents will not follow paths leading to infinite prices or consumption needs a formal mathematical foundation. The Blanchard-Kahn (BK) conditions provide precisely this foundation, serving as a powerful and indispensable tool for verifying the internal consistency of linear [rational expectations](@entry_id:140553) models.
+
+This article provides a comprehensive exploration of the Blanchard-Kahn conditions, designed to build both theoretical understanding and practical skill. We will begin in the first chapter, **Principles and Mechanisms**, by deconstructing the core logic of the conditions, moving from the intuitive concept of saddle-path stability to the formal algebraic requirements involving system eigenvalues. The second chapter, **Applications and Interdisciplinary Connections**, will demonstrate the remarkable versatility of the BK framework, showing how it provides crucial insights into monetary and fiscal policy, financial markets, and even problems in [epidemiology](@entry_id:141409) and [environmental science](@entry_id:187998). Finally, the **Hands-On Practices** section will allow you to solidify your knowledge by working through guided problems that apply these concepts directly. We begin by examining the fundamental principles that govern the behavior of dynamic systems.
+
+## Principles and Mechanisms
+
+In the study of dynamic economic systems, particularly those involving forward-looking agents, a central challenge is to determine the conditions under which a model yields a unique and [stable equilibrium](@entry_id:269479) path. Rational agents, when forming expectations about the future, will not anticipate paths where key economic variables explode to plus or minus infinity. This intuitive notion of stability must be formalized. The **Blanchard-Kahn conditions** provide a powerful and widely used mathematical framework for analyzing the [existence and uniqueness of solutions](@entry_id:177406) in linear [rational expectations](@entry_id:140553) models. This chapter elucidates the core principles and mechanisms underlying these conditions, moving from geometric intuition to formal analysis and practical application.
+
+### The Anatomy of Dynamic Systems: State and Jump Variables
+
+Linear [rational expectations](@entry_id:140553) models are typically expressed as a system of first-order [difference equations](@entry_id:262177). The variables within these systems can be fundamentally classified into two types.
+
+First, there are **[predetermined variables](@entry_id:143819)**, often called **[state variables](@entry_id:138790)**. The value of a predetermined variable at the beginning of period $t$ is determined by past decisions and historical shocks. It cannot "jump" or change in response to new information that arrives within period $t$. A classic example is the capital stock, $k_t$, whose value is a function of the previous period's stock, $k_{t-1}$, and investment, $i_{t-1}$. As these are past events, $k_t$ is given at the start of period $t$.
+
+Second, there are **non-[predetermined variables](@entry_id:143819)**, often called **[jump variables](@entry_id:146705)** or **forward-looking variables**. These variables are not tied down by past events and can adjust instantaneously in response to new information or changes in expectations. Asset prices, such as stock prices or exchange rates, are canonical examples. Their current value depends critically on agents' expectations of their future values.
+
+The core problem of dynamic modeling is to understand how these two types of variables interact to trace a path over time. Given the initial values of the predetermined state variables, how do rational agents set the initial values of the [jump variables](@entry_id:146705) to ensure the economy proceeds along a stable, non-explosive path toward its [long-run equilibrium](@entry_id:139043) or **steady state**?
+
+### Saddle-Path Stability: A Geometric Intuition
+
+To build intuition, consider a simple system with one predetermined variable, $k_t$, and one jump variable, $q_t$. The dynamics of such a system can often be characterized by a **saddle point**. A powerful physical analogy helps to visualize this concept [@problem_id:2376653]. Imagine a hiker standing at a mountain pass, which is shaped like a saddle. The goal is to roll a ball down to the bottom of the valley, which represents the model's steady state. The ridge leading down from the pass to the valley is very narrow. This ridge represents the **stable manifold**, or the **saddle path**—the unique trajectory that converges to the steady state.
+
+The hiker's position along the mountain range can be thought of as the given initial value of the predetermined variable, $k_0$. The choice variable is the initial lateral "nudge" given to the ball, which corresponds to the initial value of the jump variable, $q_0$. If the nudge is chosen with absolute precision, the ball will travel along the narrow ridge (the stable manifold) and arrive at the valley (the steady state). However, if the nudge is off by even an infinitesimal amount, the ball will immediately fall off the side of the ridge and tumble uncontrollably away from the valley, following an explosive path.
+
+In the economic model, rational agents understand the structure of the economy (the shape of the saddle). Knowing the initial state $k_0$, and seeking to avoid an explosive outcome, they will immediately choose the value of the jump variable $q_0$ that places the economy precisely on the saddle path. Any other choice for $q_0$ would imply a future explosive path for prices or quantities, a scenario that is ruled out under the assumption of rational, optimizing behavior. The requirement of a non-explosive future thus "pins down" the value of the jump variable today.
+
+### The Blanchard-Kahn Conditions: A Formal Statement
+
+The geometric intuition of saddle-path stability can be formalized using linear algebra. A general linear [rational expectations](@entry_id:140553) system can be written in the canonical form:
+$$
+\mathbb{E}_t[y_{t+1}] = M y_t
+$$
+where $y_t$ is a vector stacking all variables of the model (both predetermined and jump), and $M$ is the [state transition matrix](@entry_id:267928) derived from the model's [structural equations](@entry_id:274644). The behavior of the system as $t \to \infty$ is governed by the **eigenvalues** of the matrix $M$.
+
+Each eigenvalue, $\lambda$, corresponds to a fundamental dynamic mode of the system.
+- If an eigenvalue has a modulus strictly less than one, $|\lambda| < 1$, it corresponds to a **stable mode**. Any component of the system associated with this mode will converge toward the steady state over time.
+- If an eigenvalue has a modulus strictly greater than one, $|\lambda| > 1$, it corresponds to an **unstable or explosive mode**. Any component of the system associated with this mode will diverge from the steady state at an exponential rate.
+
+The assumption of [rational expectations](@entry_id:140553) and [market efficiency](@entry_id:143751) is typically taken to mean that agents will act to prevent the economy from following an explosive path. This requires that the initial state of the system, $y_0$, must be chosen such that it has no projection onto any of the unstable dynamic modes. The initial values of the [predetermined variables](@entry_id:143819) are given by history. Therefore, the only way to eliminate the unstable dynamics is through the appropriate choice of the initial values of the [jump variables](@entry_id:146705).
+
+This leads to the formal statement of the **Blanchard-Kahn (BK) conditions**: For a linear [rational expectations](@entry_id:140553) model to have a unique, non-explosive (bounded) solution for any given initial state of its [predetermined variables](@entry_id:143819), the number of eigenvalues of the transition matrix $M$ with modulus greater than one must be exactly equal to the number of non-predetermined (jump) variables.
+
+### The Three Cases of Solution Dynamics
+
+The relationship between the number of unstable eigenvalues, which we denote $N_{unstable}$, and the number of [jump variables](@entry_id:146705), $n_{jump}$, gives rise to three distinct possibilities for the model's equilibrium dynamics.
+
+#### Case 1: Determinacy ($N_{unstable} = n_{jump}$)
+This is the case of **saddle-path stability**. The number of degrees of freedom available to agents (the $n_{jump}$ variables they can choose) is exactly equal to the number of [unstable modes](@entry_id:263056) that must be neutralized. For any given set of initial [predetermined variables](@entry_id:143819), there exists a unique set of initial values for the [jump variables](@entry_id:146705) that will place the system on its [stable manifold](@entry_id:266484) and ensure convergence to the steady state.
+
+Consider a simple two-dimensional system with one predetermined variable and one jump variable, governed by the matrix $M = \begin{pmatrix} 0.6 & 0.2 \\ 0 & 1.3 \end{pmatrix}$ [@problem_id:2389640]. The eigenvalues are the diagonal entries, $\lambda_1 = 0.6$ and $\lambda_2 = 1.3$. There is one stable root ($|\lambda_1| < 1$) and one unstable root ($|\lambda_2| > 1$). The number of [unstable roots](@entry_id:180215), $N_{unstable}=1$, is equal to the number of [jump variables](@entry_id:146705), $n_{jump}=1$. The BK condition is satisfied, and a unique, stable equilibrium exists. The larger the magnitude of an unstable root $|\lambda| > 1$, the faster the system diverges from the saddle path if an incorrect initial jump is chosen. The "half-life of divergence," or the time it takes for a deviation to double, can be shown to be $\tau_{1/2} = \frac{\ln(2)}{\ln(|\lambda|)}$, providing a quantitative measure of instability [@problem_id:2376613].
+
+#### Case 2: No Equilibrium ($N_{unstable} > n_{jump}$)
+In this case, there are more unstable dynamic modes than there are free variables to control them. It is generally impossible to choose the initial values of the [jump variables](@entry_id:146705) to eliminate all the explosive dynamics. For any non-trivial initial state, any path the economy takes will be explosive. Therefore, no bounded [rational expectations](@entry_id:140553) equilibrium exists.
+
+This situation can arise, for example, in a system with one predetermined variable and one jump variable, but where the dynamics generate two unstable eigenvalues [@problem_id:2376615]. This can occur if the eigenvalues are a [complex conjugate pair](@entry_id:150139) $\lambda_{1,2} = r e^{\pm i \theta}$ with modulus $r > 1$. The presence of a non-zero imaginary part ($\theta \neq 0$) induces oscillations, while the modulus greater than one causes the amplitude of these oscillations to grow exponentially. The resulting path exhibits **oscillatory divergence**, spiraling away from the steady state. With two [unstable modes](@entry_id:263056) to neutralize but only one jump variable to control, a stable path cannot be found. This outcome is not just a mathematical curiosity; it can arise from specific parameterizations of economic models, for instance, when feedback loops between asset prices and investment are sufficiently strong relative to [discounting](@entry_id:139170) [@problem_id:2418917].
+
+#### Case 3: Indeterminacy ($N_{unstable}  n_{jump}$)
+Here, there are fewer [unstable modes](@entry_id:263056) to neutralize than there are [jump variables](@entry_id:146705). After agents choose the [jump variables](@entry_id:146705) to eliminate the explosive dynamics, there are still remaining degrees of freedom. This means there is not a unique stable path; rather, there is a continuum of them. The model's "fundamentals" are insufficient to pin down the equilibrium.
+
+This situation, known as **indeterminacy**, opens the door to equilibria that depend on factors extrinsic to the model, such as arbitrary, self-fulfilling beliefs or **[sunspots](@entry_id:191026)**. For instance, if agents believe that a variable like a stock price will rise when they see a random, irrelevant signal (a "sunspot"), and this belief is coordinated, their resulting actions can make the price rise, validating the initial belief. An indeterminate model provides the mathematical structure in which such self-fulfilling prophecies can be rational [@problem_id:2376605]. Indeterminacy is also a necessary condition for the existence of certain types of **rational bubbles**, where an asset price contains a non-fundamental component that is nevertheless consistent with [rational expectations](@entry_id:140553) because the underlying dynamic system admits multiple bounded solutions [@problem_id:2376638].
+
+### Application: Deriving Stability in a Complete Model
+
+To see these principles in action, we can analyze a canonical Real Business Cycle (RBC) model. The model features a representative household choosing consumption $c_t$ and savings (in the form of capital $k_{t+1}$) to maximize utility subject to a resource constraint. The key dynamic equations are the Euler equation, which governs the intertemporal choice of consumption, and the capital accumulation equation.
+
+$$c_{t}^{-1} = \beta \mathbb{E}_{t}\left[c_{t+1}^{-1} (\alpha A k_{t+1}^{\alpha - 1} + 1 - \delta)\right]$$
+$$k_{t+1} = A k_{t}^{\alpha} + (1 - \delta) k_{t} - c_{t}$$
+
+Here, capital $k_t$ is the predetermined state variable, while consumption $c_t$ is the forward-looking jump variable. To apply the BK conditions, one must first find the model's non-[stochastic steady state](@entry_id:147227), and then construct a [linear approximation](@entry_id:146101) of the system's dynamics around that steady state. This process yields a $2 \times 2$ transition matrix $M$.
+
+As a concrete exercise, consider a permanent, unanticipated shock that increases the household's discount factor $\beta$ from $0.96$ to $0.98$. Agents become more patient, which alters the steady-state levels of capital and consumption. By linearizing the system around the *new* steady state and using standard parameters ($\alpha=0.36, \delta=0.08, A=1$), one can compute the eigenvalues of the new transition matrix. The calculation reveals one stable eigenvalue ($\approx 0.903$) and one unstable eigenvalue ($\approx 1.130$) [@problem_id:2376645]. Since there is one unstable root and one jump variable ($c_t$), the BK condition for determinacy is met. Following the shock, consumption will immediately jump to a new level that places the economy on the unique saddle path to the new, higher-capital steady state. This exercise demonstrates the complete workflow from economic theory to a quantitative prediction about equilibrium stability.
+
+### Extensions and Limitations
+
+The Blanchard-Kahn framework is designed for time-invariant, [linear systems](@entry_id:147850). However, many important economic models feature nonlinearities or regime changes.
+
+#### Occasionally Binding Constraints
+A common source of nonlinearity is an **occasionally binding constraint**, such as an irreversibility constraint on investment ($i_t \ge 0$) or the **Zero Lower Bound (ZLB)** on nominal interest rates ($i_t \ge 0$). When such a constraint binds, the laws of motion of the system change, creating a **piecewise linear system**.
+
+For example, the presence of an investment [irreversibility](@entry_id:140985) constraint does not change the fact that the capital stock $k_t$ is a predetermined variable, as its value is set by past investment $i_{t-1}$ [@problem_id:2376612]. However, the system's dynamics will follow one set of [linear equations](@entry_id:151487) when the constraint is slack ($i_t \gt 0$) and a different set when it is binding ($i_t=0$).
+
+The Blanchard-Kahn conditions can be applied to analyze the **local determinacy** within each of these linear regimes. However, local determinacy in all regimes is not sufficient to guarantee a unique [global equilibrium](@entry_id:148976). One must also verify that the sequence of regimes itself is uniquely determined and that there are no self-fulfilling paths that cause the economy to jump between regimes [@problem_id:2376583]. Establishing global uniqueness in such models is therefore a more complex, two-step process.
+
+#### Non-Diagonalizable Systems
+A technical consideration arises when the transition matrix $M$ is not diagonalizable. In this case, the analysis must be based on the **Jordan Normal Form** of the matrix. The key stability results are generalized as follows [@problem_id:2376611]:
+- Eigenvalues with modulus not equal to one ($|\lambda| \neq 1$) retain their stability properties. The presence of Jordan blocks introduces polynomial terms (e.g., $t \lambda^{t-1}$) into the solution, but the exponential term $\lambda^t$ dominates, so stable roots remain stable and explosive roots remain explosive.
+- Eigenvalues with modulus equal to one ($|\lambda| = 1$) are the critical case. If such an eigenvalue is associated with a Jordan block of size greater than one, the polynomial terms (e.g., $t \lambda^{t-1}$) are no longer dominated by exponential decay and will grow unboundedly. This mode becomes unstable.
+
+The BK counting rule is therefore extended: the number of [jump variables](@entry_id:146705) must equal the number of eigenvalues with modulus greater than one, *plus* the number of unit-modulus eigenvalues associated with Jordan blocks of size greater than one. The fundamental logic of counting [unstable modes](@entry_id:263056) and comparing them to available degrees of freedom remains intact.

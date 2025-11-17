@@ -1,0 +1,75 @@
+## Introduction
+Modern high-performance systems, from virtual machines to dynamic language runtimes, owe much of their speed to Just-In-Time (JIT) compilation. By observing code at runtime and compiling 'hot' paths into optimized machine code, JITs bridge the performance gap with statically compiled languages. However, this power comes with a fundamental challenge: the most effective optimizations are often speculative, based on runtime assumptions that may not always hold true. This creates a critical tension between aggressive optimization and the guarantee of program correctness. How can a compiler speculate boldly while ensuring it can always retreat to a [safe state](@entry_id:754485) if its assumptions are proven wrong?
+
+This article delves into the two cornerstone technologies that solve this problem: **[deoptimization](@entry_id:748312)** and **On-Stack Replacement (OSR)**. These mechanisms form a sophisticated safety net, enabling JIT compilers to optimize with confidence. We will explore how these systems function, from their theoretical underpinnings to their practical implementation.
+
+The first section, **Principles and Mechanisms**, will dissect the core logic of [deoptimization](@entry_id:748312), explaining how a JIT can reconstruct a valid interpreter state from a highly optimized one using metadata like stack maps. Next, in **Applications and Interdisciplinary Connections**, we will examine how these techniques are applied to solve real-world problems, such as eliminating redundant checks in loops and managing type instability in dynamic languages. Finally, the **Hands-On Practices** section provides exercises to solidify your understanding of the complex state transitions involved in this process. Together, these sections will illuminate the intricate dance between optimization and correctness that is central to modern [compiler design](@entry_id:271989).
+
+## Principles and Mechanisms
+
+Modern high-performance virtual machines and dynamic language runtimes rely heavily on Just-In-Time (JIT) compilation to achieve performance comparable to statically compiled languages. A JIT compiler observes a program as it runs and compiles frequently executed "hot" code into highly optimized machine code. However, this optimization process introduces a fundamental tension: the most powerful optimizations are often **speculative**, meaning they are based on assumptions about the program's behavior that have been observed to be true but are not guaranteed to hold for all future executions. This section explores the critical mechanisms that resolve this tension: **[deoptimization](@entry_id:748312)** and **On-Stack Replacement (OSR)**. These mechanisms provide a safety net, allowing the compiler to optimize aggressively while ensuring program correctness if and when its speculations prove false.
+
+### The Optimizer's Dilemma and Speculative Optimization
+
+A JIT compiler's primary advantage is its access to runtime information. It can observe which code paths are frequently taken, what types of data are actually used, and which branches are predictable. Based on this profile, it can perform powerful **speculative optimizations**. For example, if a method call `object.method()` has always been observed to invoke the `method` of class `A`, the compiler might speculatively replace the expensive virtual dispatch with a direct call or even inline the body of `A.method()`.
+
+To preserve correctness, the compiler must insert **guards** to check if its assumptions remain valid. In our example, a guard would be inserted before the direct call to verify that `object` is still an instance of class `A`. If the guard holds, execution proceeds along the fast, optimized path. If it fails—for instance, if `object` is now an instance of class `B`—the optimized code is no longer valid, and the system must transition back to a safe, unoptimized state. This process of unwinding an optimized execution state and resuming in a baseline interpreter or a less-optimized compiled version is known as **[deoptimization](@entry_id:748312)**.
+
+### The Core Principle of Deoptimization: Semantic Equivalence
+
+Deoptimization is not merely a matter of jumping back to an interpreter. The central challenge is to reconstruct an interpreter-level state that is **semantically equivalent** to the state the program *would have been in* had it been executing in the interpreter all along. This means the reconstructed environment must contain the correct values for all source-level variables (locals, operands on the stack) that are live at the point of the guard failure.
+
+This task is complicated by the fact that the optimized code's structure may bear little resemblance to the original source code. The compiler may have reordered instructions, eliminated variables, and transformed data structures. The most significant challenge arises from the distinction between pure computations and operations with side effects.
+
+Consider a loop containing a mixture of operations: a set of pure computations $\Pi$ (e.g., arithmetic on local variables) and a set of side-effecting operations $\Sigma$ (e.g., heap stores, I/O). If a guard fails mid-loop, the runtime must materialize the values for all live variables. Re-executing a portion of the loop to compute these values is not a viable option, as re-running operations from $\Sigma$ would produce duplicate side effects (like writing to a file twice), violating program semantics.
+
+The principled solution, employed by modern JIT compilers, is to make [deoptimization](@entry_id:748312) a purely computational process at runtime, devoid of side effects. This is achieved by having the compiler generate **[deoptimization](@entry_id:748312) metadata** at each guard. This [metadata](@entry_id:275500) provides a recipe for reconstructing the required interpreter state. Specifically, for each live variable at the guard, the metadata specifies how to obtain its value:
+1.  **Direct Use**: If the value already exists in a known machine register or stack slot, the metadata simply points to it.
+2.  **Rematerialization**: If the value is the result of a pure computation (an operation in $\Pi$) and all its inputs are available, the [metadata](@entry_id:275500) contains a recipe to re-compute it on the spot. This is often cheaper than storing the value for the entire duration of its liveness. For example, the value of `x + y` can be recomputed if `x` and `y` are available.
+3.  **Spilled Values**: If a live value depends on a side-effecting operation (an operation in $\Sigma$), it cannot be rematerialized. To handle this, the compiler must schedule the code to ensure this value is computed and saved—or **spilled**—into a pre-defined location in the [stack frame](@entry_id:635120) *before* the side effect occurs. The [deoptimization](@entry_id:748312) metadata then simply records where to find this spilled value.
+
+By employing this strategy, the runtime can materialize the entire interpreter environment by reading from registers and pre-spilled slots, and by evaluating pure rematerialization recipes. This process involves no re-execution of side-effecting operations, thus preserving observational equivalence with the baseline program semantics. [@problem_id:3648583]
+
+### On-Stack Replacement: Dynamic Transitions
+
+Deoptimization describes the process of invalidating optimized code and reverting to a baseline state. **On-Stack Replacement (OSR)** is a powerful mechanism that facilitates this transition, particularly for code executing within long-running loops.
+
+While standard [deoptimization](@entry_id:748312) typically occurs at method entry points, OSR allows the runtime to switch the implementation of a function *while it is actively running on the call stack*. This is crucial for two primary scenarios:
+1.  **OSR into Optimized Code**: A loop may run for thousands of iterations in the interpreter, eventually being identified as "hot". Instead of waiting for the method to finish and re-enter, OSR allows the runtime to dynamically switch execution from the interpreter *into* a newly compiled, optimized version of the loop, right in the middle of an iteration.
+2.  **OSR for Deoptimization**: Conversely, if a guard fails inside an optimized loop, OSR is the mechanism that transitions execution *out of* the optimized code and back into an interpreter frame at the precise program point where the guard failed.
+
+The remainder of this section focuses on the second scenario, exploring the machinery that enables this seamless exit from optimized code.
+
+### The Machinery of Deoptimization: Safepoints and Stack Maps
+
+For [deoptimization](@entry_id:748312) to be possible, the runtime must be able to halt a thread at a known state. It is impractical for every single machine instruction to be a potential point for [deoptimization](@entry_id:748312). Instead, the compiler designates specific locations in the generated code as **safepoints**. A safepoint is a program point where the machine state is well-defined and corresponds to a clear state in the source-level semantics. A thread can only be stopped for services like [garbage collection](@entry_id:637325) (GC) or [deoptimization](@entry_id:748312) when it is at a safepoint.
+
+At each safepoint, the compiler emits a crucial piece of [metadata](@entry_id:275500) called a **stack map**. A stack map is a data structure that provides a complete description of the mapping from the low-level machine state (registers and stack slots) to the high-level logical state of the source program. This information is vital for both GC and [deoptimization](@entry_id:748312).
+
+A stack map for a given safepoint typically contains:
+*   **GC Root Information**: It identifies which registers and stack slots contain live object references. This allows a precise garbage collector to find all roots of the object graph.
+*   **Variable Mapping**: It maps the source-level local variables to their current locations in the optimized frame (e.g., local variable `x` is in register `$rax`).
+*   **Materialization Recipes**: For source-level entities that have been optimized away, the stack map provides instructions on how to reconstruct them.
+
+A common and powerful optimization is **scalar replacement of aggregates**, where an object allocation is eliminated, and its fields are instead held directly in local variables or registers. If deoptimization occurs, the interpreter will expect the object to exist. The stack map must therefore contain a recipe to materialize this "virtual" object.
+
+For example, consider source code that creates a `Pair` object: `Pair p = new Pair(n, new Node(t))`. An aggressive optimizer might eliminate the allocations for both the `Pair` and the inner `Node` object, instead storing their constituent fields (the reference `n` and the integer `t`) in registers. If a safepoint exists after this logical allocation, and deoptimization is triggered there, the interpreter will need a reference to the `Pair` object `p`. The stack map at that safepoint will contain a materialization recipe instructing the runtime: "To create `p`, allocate a `Pair` object. Set its `left` field to the value in register $R_1$ (which holds `n`). For its `right` field, allocate a `Node` object and set its `val` field to the value in register $R_2$ (which holds `t`)." This lazy, on-demand reconstruction is only performed if deoptimization actually occurs, ensuring no performance penalty on the optimized path. [@problem_id:3669381]
+
+### Reconstructing the Stack: From Optimized to Interpreter Frames
+
+The final step of deoptimization is the physical reconstruction of the call stack. The interpreter has a strict expectation for the layout of stack frames. A single, highly optimized frame—which may contain inlined code from several different methods—must be unwound and replaced with a chain of standard interpreter frames that look as if the program had been interpreted all along.
+
+This process is particularly illustrative in the case of **inlining**. Suppose a caller method $\mathcal{M}$ inlines a callee method $\mathcal{N}$, and a guard fails inside the inlined code of $\mathcal{N}$. The optimized code is running in a single stack frame for $\mathcal{M}$. Deoptimization requires the runtime to create two new, synthetic interpreter frames on the stack: first a frame for $\mathcal{M}$, and then, on top of it (at a lower memory address), a frame for $\mathcal{N}$.
+
+This reconstruction is a precise, mechanical process governed by the interpreter's calling convention. Let's assume a convention where the stack grows toward decreasing addresses and each frame has a header followed by local variable slots. The **frame pointer** ($fp$) points to a fixed location within the header, and the **stack pointer** ($sp$) points to the bottom of the frame.
+
+To reconstruct the stack from the failed inlining scenario [@problem_id:3636775]:
+1.  The runtime first identifies the stack pointer of the frame that called $\mathcal{M}$. Let's say this was at address $S$.
+2.  It allocates the frame for $\mathcal{M}$ "below" $S$. First, it reserves space for $\mathcal{M}$'s header (e.g., $24$ bytes). The new frame pointer, $fp_{\mathcal{M}}$, is set to the bottom of this header block (e.g., $fp_{\mathcal{M}} = S - 24$). The contents of the header (saved old frame pointer, return address) are filled in from metadata.
+3.  Next, space for $\mathcal{M}$'s local variables is allocated below its header. If $\mathcal{M}$ has $L_{\mathcal{M}}$ local variable slots of $8$ bytes each, its stack pointer becomes $sp_{\mathcal{M}} = fp_{\mathcal{M}} - 8L_{\mathcal{M}}$. This $sp_{\mathcal{M}}$ represents the top of the stack at the point where $\mathcal{M}$ would have called $\mathcal{N}$ in the interpreter.
+4.  The process repeats for the callee, $\mathcal{N}$. Its frame is allocated below $sp_{\mathcal{M}}$. Its header is allocated, and its frame pointer, $fp_{\mathcal{N}}$, is set accordingly (e.g., $fp_{\mathcal{N}} = sp_{\mathcal{M}} - 24$).
+5.  Finally, space for $\mathcal{N}$'s locals is allocated, and its own stack pointer, $sp_{\mathcal{N}}$, is established. The values for the locals in both frames are populated from the deoptimization metadata.
+
+After this reconstruction, the runtime has replaced one optimized frame with two pristine interpreter frames. The CPU's frame and stack pointers are updated to point to the newly created frame for $\mathcal{N}$, and execution resumes in the interpreter at the exact instruction corresponding to the failed guard. The program continues, unaware of the complex optimization and [deoptimization](@entry_id:748312) dance that just occurred.
+
+In summary, [deoptimization](@entry_id:748312) and On-Stack Replacement are not mere afterthoughts but are foundational technologies that enable the spectacular performance of modern JIT-compiled systems. They provide a robust escape hatch that allows compilers to speculate and optimize aggressively, secure in the knowledge that there is always a correct, if slower, path to fall back on.

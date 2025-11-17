@@ -1,0 +1,91 @@
+## Introduction
+Automatic [memory management](@entry_id:636637), or garbage collection (GC), is a cornerstone of modern programming languages, freeing developers from the error-prone task of manual memory deallocation. However, traditional garbage collectors often introduce a significant problem: "stop-the-world" pauses, where the entire application freezes while the collector reclaims memory. For interactive applications, servers, and [real-time systems](@entry_id:754137), these unpredictable interruptions are unacceptable. Concurrent garbage collection provides the solution by performing most of its work in parallel with the application, but this raises a fundamental challenge: how can the collector maintain a correct view of memory while the application is simultaneously modifying it?
+
+This article delves into the principles and mechanisms that solve this complex [synchronization](@entry_id:263918) problem, enabling high-performance, low-latency memory management. The following chapters will guide you through the core concepts that make concurrent GC possible. In "Principles and Mechanisms," we will explore the elegant tri-color marking abstraction and the crucial role of write barriers in maintaining correctness. The "Applications and Interdisciplinary Connections" chapter will then reveal how these concepts are applied in high-performance runtimes and how they connect to diverse fields like operating systems and databases. Finally, "Hands-On Practices" will provide opportunities to solidify your understanding through practical, problem-solving exercises.
+
+## Principles and Mechanisms
+
+Concurrent garbage collection represents a significant step in the evolution of [automatic memory management](@entry_id:746589), moving from models that require noticeable application pauses to those that perform collection work in parallel with program execution. The primary motivation is to reduce or eliminate the long, unpredictable "stop-the-world" (STW) pauses that are characteristic of simpler collectors. In an STW collector, all application threads, or **mutators**, are halted completely while the **collector** traverses the object graph to identify and reclaim garbage. While this approach simplifies the collection process by providing the collector with a static, unchanging view of memory, the resulting pauses can be unacceptable for interactive applications, servers, and [real-time systems](@entry_id:754137).
+
+Concurrent collectors, by contrast, perform the majority of their work—particularly the expensive task of tracing the graph of live objects—while the mutator threads continue to run. This [interleaving](@entry_id:268749) of collection and mutation introduces the fundamental challenge of concurrent garbage collection: how can the collector build a correct view of the live object graph while the mutator is actively changing it? The principles and mechanisms discussed in this chapter form the theoretical and practical foundation for solving this problem.
+
+### The Tri-Color Abstraction
+
+To reason about the dynamic state of the object graph during a concurrent marking phase, garbage collection algorithms employ a powerful abstraction known as the **tri-color marking** system. Every object in the heap is conceptually painted one of three colors:
+
+-   **White:** Initially, all objects (except for a few special cases) are white. White objects are candidates for reclamation. By the end of the marking phase, any object that remains white is considered garbage.
+
+-   **Gray:** A gray object is one that has been discovered by the collector as live, but whose children have not yet been fully scanned. Gray objects represent the [wavefront](@entry_id:197956) or frontier of the collection process. The set of all gray objects can be thought of as a worklist for the collector.
+
+-   **Black:** A black object is one that has been discovered by the collector and whose children have all been scanned. A black object represents a fully processed portion of the live object graph.
+
+The marking process begins by identifying the initial set of live objects, known as the **root set** (pointers from global variables, registers, and thread stacks), and coloring them gray. The collector then enters a loop: it picks a gray object, scans its fields for pointers to other objects, colors any white children it finds to gray, and then, once all its children have been processed, colors the original object black. This process continues until there are no more gray objects. At this point, the marking phase is complete, and any remaining white objects are unreachable garbage that can be reclaimed.
+
+For this process to be correct, a crucial invariant must be maintained throughout the concurrent marking phase: the **tri-color invariant**. In its most common form, it states that **no black object can have a direct pointer to a white object**. If this invariant were violated, it could lead to a "lost object." Imagine a black object $b$ that has already been fully scanned. If the mutator then stores a pointer to a white object $w$ into a field of $b$, creating an edge $b \to w$, the collector will never revisit $b$ (since it is black) and will therefore never discover $w$ through this new path. If this was the only path to $w$, $w$ would remain white and be incorrectly reclaimed.
+
+### Write Barriers: Enforcing the Invariant
+
+The mutator is unaware of the collector's progress and can easily violate the tri-color invariant. The primary mechanism for preventing this violation is the **[write barrier](@entry_id:756777)** (also known as a mutator barrier). A [write barrier](@entry_id:756777) is a small piece of code, inserted by the compiler, that executes just before or after a pointer store operation in the mutator's code. Its job is to detect potentially dangerous stores and take corrective action to notify the collector.
+
+The necessity of a carefully designed [write barrier](@entry_id:756777) can be starkly illustrated by considering a naive implementation. Suppose a [write barrier](@entry_id:756777) only acts when the source object of a pointer store is already black. This seems intuitive, as it directly targets the creation of a black-to-white edge. However, a critical [race condition](@entry_id:177665) emerges during the "gray-to-black" transition of an object. Consider an object $x$ that is currently gray, meaning the collector has discovered it but has not yet finished scanning it. Now, consider the following [interleaving](@entry_id:268749) of operations between the mutator and the collector [@problem_id:3630293]:
+
+1.  The collector begins to scan the gray object $x$. It reads its fields and finds no outgoing pointers.
+2.  Concurrently, the mutator prepares to execute the store $x.f := y$, where $y$ is a white object. The mutator's [write barrier](@entry_id:756777) checks the color of $x$, sees that it is gray (not black), and consequently does nothing.
+3.  The collector, having finished its scan of $x$'s (old) state, colors $x$ black.
+4.  The mutator now performs the store, creating a pointer from the now-black object $x$ to the white object $y$.
+
+The tri-color invariant has been violated. Since $x$ is black, the collector will not scan it again, and the path to $y$ is lost. This demonstrates that the barrier must account for the window of time when an object is being processed by the collector. There are two principal families of write barriers that correctly solve this problem.
+
+#### Incremental Update Barriers (Dijkstra-Style)
+
+An **incremental update** barrier, first described by Dijkstra et al., focuses on the destination of the pointer. When the mutator creates a pointer from a black object $o_1$ to a white object $o_2$ via the store $o_1.f \leftarrow o_2$, the barrier's action is to "shade" the destination object $o_2$ gray. This immediately repairs the invariant, as the edge becomes black-to-gray, which is permissible. The newly grayed object $o_2$ must then be added to the collector's worklist (e.g., a marking queue) to ensure it is eventually scanned.
+
+From an implementation perspective, this is often the most efficient approach. The barrier's logic is to check the colors of the source and destination objects and, if a black-to-white edge is being created, to atomically update the destination's color from white to gray and enqueue it. This is considered the minimal necessary work because it focuses only on the newly reachable subgraph rooted at $o_2$, rather than forcing a more costly re-scan of the source object $o_1$ [@problem_id:3683373].
+
+#### Snapshot-at-the-Beginning (SATB) Barriers
+
+A different philosophy is embodied by **Snapshot-At-The-Beginning (SATB)** barriers. Instead of preventing the creation of black-to-white pointers, an SATB barrier ensures that no object that was reachable at the start of the marking cycle can be lost. It achieves this by intercepting pointer overwrites. When a mutator executes a store like `p.f = o_new`, which overwrites the previous value `o_old`, the pre-[write barrier](@entry_id:756777) logs or marks the *old* value, `o_old`.
+
+The collector is thus guaranteed to eventually process `o_old`, preserving the entire object graph that was reachable through it at the beginning of the cycle. The conceptual "snapshot" is the set of all objects reachable at time $t_0$. The SATB invariant guarantees that by the end of the cycle, every object in this snapshot will be marked.
+
+### Floating Garbage: A Consequence of Concurrency
+
+A notable consequence of the SATB approach is the phenomenon of **floating garbage**. An object is considered floating garbage if it was part of the initial snapshot (reachable at $t_0$) but becomes unreachable at some point during the concurrent marking phase. Because the SATB barrier preserves the initial snapshot, such an object will still be marked as live by the current collection cycle. It will only be reclaimed in the *next* GC cycle.
+
+The amount of floating garbage represents a trade-off: for the benefit of reduced pause times, the system temporarily tolerates a higher memory footprint. The expected amount of floating garbage is a function of the duration of the concurrent marking phase, $\Delta t$, and the rate at which objects "die" or become unreachable. If we model the lifetime of an object as an exponential random variable with a constant rate $\mu$, the expected fraction of the initially live objects that will become floating garbage during a cycle of duration $\Delta t$ can be shown to be $1 - \exp(-\mu \Delta t)$ [@problem_id:3643382]. This relationship highlights a key tuning parameter for concurrent collectors: longer, less frequent cycles may reduce CPU overhead but will increase the memory cost due to floating garbage.
+
+### Root Scanning and Safepoints
+
+The tri-color marking process must begin from the **root set**: the set of all pointers into the heap originating from outside the heap, such as global variables, thread stacks, and CPU registers. Obtaining a consistent snapshot of these roots from concurrently executing mutator threads is one of the most complex aspects of GC design.
+
+Most runtimes use a cooperative mechanism based on **safepoints**. A safepoint is a location in the compiled code where the mutator's state is known and it can safely cooperate with the GC. The runtime periodically requests that all mutator threads rendezvous at a safepoint. However, a critical problem arises if a thread is executing a tight loop with no internal safepoint check, as it may fail to cooperate for an arbitrarily long time. This is the "time to safepoint" problem.
+
+A robust solution involves a multi-stage protocol [@problem_id:3668695]. The collector first issues a cooperative request. If a thread does not respond within a set time lease, the runtime escalates to a preemptive mechanism, typically by sending an operating system signal to the non-cooperative thread. The signal handler, running on the thread's stack, can then perform a **conservative stack scan** (explained further below) to extract the roots and allow the GC to proceed. This ensures that the time to acquire all roots is bounded.
+
+However, such preemptive mechanisms must be designed with extreme care to avoid deadlocks. For example, if a signal handler tries to acquire a lock that the interrupted thread might already hold (such as a lock on a global GC work queue or a lock for refilling a thread-local allocation buffer), a [deadlock](@entry_id:748237) can occur [@problem_id:3630294]. A safe protocol therefore dictates that the signal handler perform only async-signal-safe operations, such as setting a flag. The thread then checks this flag at its next true safepoint (where it is known to hold no locks) and performs the stack scan cooperatively.
+
+Furthermore, for SATB collectors, the stack itself must be subject to barrier semantics. If a thread's stack is part of the "snapshot," overwriting a pointer in a stack slot is equivalent to overwriting a pointer in the heap: it can break the path to a live object. An on-the-fly stack snapshot protocol might "freeze" a portion of the stack at a point in time. Any subsequent writes by the mutator into pointer slots within this frozen region must be intercepted by a pre-[write barrier](@entry_id:756777) that logs the old value, just as the heap barrier does [@problem_id:3630299].
+
+### Precision, Conservatism, and Performance Trade-offs
+
+The accuracy of the collector's knowledge about data types is a crucial design dimension.
+
+-   A **precise collector** has access to type information for every memory location. It knows exactly which words are pointers and which are not (e.g., integers, [floating-point numbers](@entry_id:173316)). Heap scanning is almost always precise.
+
+-   A **conservative collector**, on the other hand, lacks [complete type](@entry_id:156215) information for some memory regions, typically the root set (stacks and registers). It must scan these regions conservatively, treating any word that *looks like* a valid, aligned pointer into the heap as if it *is* a pointer.
+
+This conservatism can lead to **false roots**: an integer or other data value that happens to have the bit pattern of a heap address. The consequence of a false root depends on its lifetime. A transient false root, such as a random integer on the stack that is soon overwritten, may cause a garbage object to be retained for one extra GC cycle, contributing to floating garbage. However, a **persistent false root** can cause a permanent [memory leak](@entry_id:751863), a phenomenon known as **unbounded retention**. For instance, if a long-lived global buffer stores integer-typed object addresses for logging purposes, a conservative scanner will treat these integers as live pointers indefinitely, pinning the corresponding objects in memory long after they have become programmatically unreachable [@problem_id:3630327].
+
+The choice of barrier type also has significant performance implications. While write barriers are common, some moving collectors use **read barriers**, which intercept every pointer read. A **Brooks-style indirection barrier**, for example, forces every object access to go through an extra forwarding pointer in the object's header. This simplifies object relocation but imposes a constant overhead on every read. The choice between a read-barrier-based or write-barrier-based design is a complex trade-off. For a workload with many more reads than writes ($R \gg W$), the aggregated cost of a cheap [read barrier](@entry_id:754124) ($R$ times a small cost) can easily outweigh the cost of an expensive [write barrier](@entry_id:756777) ($W$ times a large cost) [@problem_id:3630288]. The optimal choice depends on the specific microarchitectural costs of each barrier type and the read/write frequency of the application workload.
+
+### Implementation on Weak Memory Models
+
+The correctness of [concurrent algorithms](@entry_id:635677), including write barriers, depends critically on the [memory consistency model](@entry_id:751851) of the underlying hardware and language. On modern [multi-core processors](@entry_id:752233) with **[weak memory models](@entry_id:756673)** (such as ARM or POWER), the compiler and CPU are permitted to reorder memory operations for performance. This means that a write to one memory location by one thread may become visible to another thread before a preceding write to a different location.
+
+This reordering can fatally break a [write barrier](@entry_id:756777). Consider a mutator that executes two stores in program order: first, it colors a new object $x$ gray, and second, it stores a pointer to $x$ into a black object $b$. A collector thread might observe the second store (the pointer to $x$) before it observes the first store (the color change). It would thus see a black-to-white pointer, violating the invariant [@problem_id:3630305].
+
+To prevent this, the implementation must use [memory fences](@entry_id:751859) or [atomic operations](@entry_id:746564) with specific ordering semantics. The C11 and C++11 [memory models](@entry_id:751871) provide the necessary tools. A **release-acquire** [synchronization](@entry_id:263918) protocol is the standard solution.
+- The mutator must use a **store with release semantics** when publishing the pointer that could create the problematic edge.
+- The collector must use a **load with acquire semantics** when reading that pointer.
+
+This pairing establishes a **synchronize-with** relationship, which in turn creates a **happens-before** edge. This ensures that all memory writes that happened *before* the release store in the mutator are visible to all memory reads that happen *after* the acquire load in the collector. This same principle of **safe publication** is essential when a new object is allocated, initialized, and then published to a shared location. The initialization writes must happen-before a release store of the object's pointer, which must synchronize-with an acquire load by any thread that will access the object [@problem_id:3630342]. Using these primitives correctly is non-negotiable for building a correct concurrent garbage collector on modern hardware.
