@@ -1,0 +1,93 @@
+## Introduction
+The failure of materials and structures is often a dynamic event, unfolding at speeds that defy quasi-static assumptions. Dynamic [fracture mechanics](@entry_id:141480) is the field dedicated to understanding the rapid propagation of cracks, a phenomenon critical to the safety analysis of high-[performance engineering](@entry_id:270797) systems and the scientific explanation of natural disasters. While classical [fracture mechanics](@entry_id:141480) provides a robust framework for slow crack growth, it leaves a significant knowledge gap concerning processes where inertial effects and [stress wave propagation](@entry_id:192035) are dominant. This article provides a comprehensive exploration of dynamic fracture, bridging this gap for graduate-level students and researchers in solid mechanics.
+
+The journey begins in **Principles and Mechanisms**, where we will establish the foundational concepts that distinguish dynamic from quasi-static fracture, including the role of kinetic energy in the global energy balance, the mechanics of the local crack-tip field, and the wave-mechanical origins of limiting crack speeds. We will then transition in **Applications and Interdisciplinary Connections** to see these principles in action, examining their profound impact on fields like geophysics in explaining earthquake ruptures and materials science in predicting failure under impact and [thermal shock](@entry_id:158329). Finally, the **Hands-On Practices** section provides an opportunity to apply these concepts through targeted problems, reinforcing the theoretical and practical knowledge gained. This structured approach will equip you with the essential tools to analyze and predict the complex behavior of materials at the intersection of high-speed deformation and failure.
+
+## Principles and Mechanisms
+
+The study of dynamic fracture mechanics builds upon the foundational principles of [elastostatics](@entry_id:198298) but introduces critical new elements related to inertia and energy transport. While the [quasi-static approximation](@entry_id:167818) is sufficient for processes where crack growth is slow compared to the characteristic wave speeds of the material, dynamic fracture addresses the regime where crack velocities are a significant fraction of these speeds. This chapter elucidates the core principles and mechanisms governing the rapid propagation and arrest of cracks. We begin by establishing the fundamental [energy balance](@entry_id:150831), then delve into the local mechanics at the crack tip, explore the [wave mechanics](@entry_id:166256) that dictate limiting crack speeds, and conclude with an overview of advanced models used to simulate these complex phenomena.
+
+### The Global Energy Balance in a Dynamic System
+
+The first law of thermodynamics provides the most fundamental starting point for understanding fracture. For a cracked body undergoing deformation, the rate at which external forces do work on the body, $P_{\text{ext}}$, must equal the rate of change of its total internal energy. In dynamic fracture, this total energy is composed of three principal components: the total elastic strain energy stored in the body, $U(t)$; the total kinetic energy arising from material motion, $T(t)$; and the energy consumed to create new crack surfaces, $E_s(t)$.
+
+Let us consider a two-dimensional body of unit thickness containing a crack of length $a(t)$. If the material has a specific surface energy $\Gamma$ (energy per unit new area), the creation of two new surfaces of length $a(t)$ requires an energy of $E_s(t) = 2\Gamma a(t)$. Assuming no heat exchange, the first law dictates that the rate of change of the total energy equals the power input from external loads:
+$$
+\frac{d}{dt} \left[ U(t) + T(t) + 2\Gamma a(t) \right] = P_{\text{ext}}(t)
+$$
+This equation represents the **global [energy balance](@entry_id:150831) for dynamic fracture**. It is a direct statement of energy conservation for the entire system [@problem_id:2632641].
+
+It is instructive to contrast this with its quasi-static counterpart. In a [quasi-static process](@entry_id:151741), changes occur so slowly that material velocities are negligible. Consequently, the kinetic energy $T(t)$ and its time derivative are both zero. The [energy balance](@entry_id:150831) then simplifies to:
+$$
+\frac{d}{dt} \left[ U(t) + 2\Gamma a(t) \right] = P_{\text{ext}}(t)
+$$
+The explicit inclusion of the kinetic energy term, $T(t)$, is the primary feature that distinguishes the dynamic energy balance from the quasi-static one. This term accounts for the energy associated with the motion of the material as stress waves propagate and the body deforms rapidly. A portion of the energy that would contribute to crack extension in a static scenario is instead converted into kinetic energy, an effect often described as **inertial shielding**.
+
+### Local Mechanics: Energy Flux and the Moving Crack Tip
+
+While the global balance provides a complete picture, it does not directly describe the conditions at the crack tip, which is where the process of material separation occurs. To understand fracture, we must adopt a local perspective and consider the flow of energy into a small region surrounding the advancing crack tip.
+
+The **[dynamic energy release rate](@entry_id:202588)**, denoted $G$ or $G(v)$ to emphasize its dependence on crack speed $v$, is defined as the net flux of energy into a vanishingly small region around the [crack tip](@entry_id:182807), per unit of crack advance. In the quasi-static case, $G$ is interpreted as the reduction in the system's potential energy. In the dynamic case, this interpretation must be expanded. The energy flowing towards the tip originates from both the release of strain energy and the conversion of kinetic energy in the surrounding material. Therefore, the [dynamic energy release rate](@entry_id:202588) must be interpreted as the flux of the *[total mechanical energy](@entry_id:167353)* (strain plus kinetic) into the process zone at the [crack tip](@entry_id:182807) [@problem_id:2632623].
+
+This concept can be formalized through a [path-independent integral](@entry_id:195769). The static $J$-integral of Rice, which represents the [energy release rate](@entry_id:158357) in [elastostatics](@entry_id:198298), can be extended to [elastodynamics](@entry_id:175818). For a crack propagating in the $x_1$ direction, the **dynamic J-integral** is defined as a line integral over a contour $\Gamma$ enclosing the tip:
+$$
+J_d = \int_{\Gamma} \left[ (W + T)\delta_{1j} - \sigma_{ij} u_{i,1} \right] n_j \, \mathrm{d}s
+$$
+Here, $W$ is the [strain energy density](@entry_id:200085), $T = \frac{1}{2}\rho \dot{u}_k \dot{u}_k$ is the kinetic energy density, $\sigma_{ij}$ is the stress tensor, $u_i$ are the displacements, and $n_j$ is the outward normal to the contour. A detailed analysis shows that this integral is path-independent only under two specific conditions: [elastostatics](@entry_id:198298) (where $T=0$ and all time derivatives vanish) or steady-state [crack propagation](@entry_id:160116) at a constant velocity [@problem_id:2632634]. For general transient motion, the integral is not path-independent, which limits its direct application but makes it a powerful theoretical tool for analyzing steady-state problems. In the case of steady-[state propagation](@entry_id:634773), its value equals the [dynamic energy release rate](@entry_id:202588), $G(v)$.
+
+The existence of a finite energy flux into the tip implies a [singular stress field](@entry_id:184079), analogous to the static case. For a Mode I crack moving at a constant sub-Rayleigh speed $v$, the asymptotic near-tip stress and displacement fields take the form:
+$$
+\sigma_{ij}(r,\theta,t) \sim \frac{K_{I}(v)}{\sqrt{2\pi r}} \Sigma^{I}_{ij}(\theta;v)
+$$
+$$
+u_{k}(r,\theta,t) \sim \frac{K_{I}(v)}{\mu}\sqrt{\frac{r}{2\pi}} \Upsilon^{I}_{k}(\theta;v)
+$$
+Here, $(r, \theta)$ are polar coordinates in a frame moving with the tip, $\mu$ is the [shear modulus](@entry_id:167228), and $K_I(v)$ is the **dynamic stress intensity factor**. Crucially, both the amplitude of the singularity, $K_I(v)$, and the [angular distribution](@entry_id:193827) functions, $\Sigma^{I}_{ij}(\theta;v)$ and $\Upsilon^{I}_{k}(\theta;v)$, depend on the crack speed $v$. This velocity dependence is a direct manifestation of inertia; the stress distribution around a moving crack is distorted compared to a stationary one [@problem_id:2632650].
+
+### The Equation of Motion for a Crack
+
+The propagation of a crack is governed by an "equation of motion" that balances the energy supplied to the [crack tip](@entry_id:182807) with the material's resistance to fracture. The driving force is the [dynamic energy release rate](@entry_id:202588), $G(v)$, while the resistance is the dynamic fracture toughness, $\Gamma(v)$. Steady-[state propagation](@entry_id:634773) occurs when:
+$$
+G(v) = \Gamma(v)
+$$
+The [dynamic energy release rate](@entry_id:202588) $G(v)$ is related to the dynamic stress intensity factor $K_I(v)$. A cornerstone result of dynamic fracture mechanics, established by L.B. Freund, is that for a given geometry and remote loading, the dynamic SIF can be related to its quasi-static counterpart, $K_I^{\text{qs}}$, through a universal, dimensionless function of speed, $k_I(v)$:
+$$
+K_I(v) = k_I(v) K_I^{\text{qs}}
+$$
+The term $K_I^{\text{qs}}$ encapsulates all information about the applied loads and the geometry, just as in [statics](@entry_id:165270). The function $k_I(v)$ captures the purely dynamic effects of inertia and depends only on the crack speed normalized by the material wave speeds (and Poisson's ratio). For a wide range of problems, $k_I(v)$ is a monotonically decreasing function of speed, with $k_I(0)=1$ and $k_I(v) \to 0$ as the crack speed approaches the Rayleigh wave speed, $c_R$ [@problem_id:2632631]. The fact that $k_I(v)  1$ for $v>0$ confirms the concept of inertial shielding: for a fixed remote load, the stress intensity at the tip of a moving crack is less than that of a stationary crack of the same length.
+
+### Wave Mechanics and Limiting Crack Speeds
+
+The behavior of the function $k_I(v)$, particularly its vanishing at a critical speed, reveals that [crack propagation](@entry_id:160116) is fundamentally constrained by [wave mechanics](@entry_id:166256). An elastic solid can support bulk compressional (P) waves with speed $c_d$ (or $c_L$), bulk shear (S) waves with speed $c_s$, and, along free surfaces, Rayleigh [surface waves](@entry_id:755682) with speed $c_R$. The typical hierarchy is $c_R  c_s  c_d$.
+
+For a Mode I crack, the theoretical maximum speed is the Rayleigh wave speed, $c_R$. As the crack speed $v$ approaches $c_R$, the function $k_I(v)$ and consequently the energy release rate $G(v)$ approach zero for any finite remote loading [@problem_id:2632631]. This phenomenon is known as the **degeneracy** of the near-tip fields. Physically, it occurs because as $v \to c_R$, the system approaches a resonance with the natural speed of waves on the newly created, traction-free crack faces. Instead of being channeled into the crack tip to drive fracture, energy is efficiently radiated away from the tip region along the crack faces in the form of Rayleigh-type waves [@problem_id:2632582]. Since propagation requires a finite energy supply, $G(v) = \Gamma(v) > 0$, this condition cannot be met as $v \to c_R$. Thus, $c_R$ serves as an unbreakable speed limit for Mode I cracks in the context of [linear elastic fracture mechanics](@entry_id:172400).
+
+The situation is markedly different for Mode II (in-plane shear) cracks. While also subject to wave-mechanical constraints, Mode II cracks have been observed and predicted to propagate at **intersonic speeds**, i.e., in the range $c_s  v  c_d$. This is possible due to a different energy radiation mechanism. The analysis of steady-state motion shows that when a source moves faster than a wave speed, it generates a shock wave, or Mach cone. For $v > c_s$, the moving [crack tip](@entry_id:182807) generates shear [shock waves](@entry_id:142404) that radiate energy into the bulk material. The anti-symmetric nature of the Mode II deformation field allows it to couple effectively with these shear shock fronts, satisfying the [traction-free boundary](@entry_id:197683) conditions on the crack faces while providing a pathway for energy to be shed. This mechanism bypasses the Rayleigh wave limitation that governs Mode I cracks, allowing for sustained propagation at speeds above $c_s$ [@problem_id:2632609].
+
+### Dynamic Toughness and Crack Arrest
+
+The material's resistance to dynamic fracture, $\Gamma(v)$, is known as the **dynamic [fracture toughness](@entry_id:157609)**. In experiments, measuring $\Gamma(v)$ is a complex task. One must carefully distinguish between **intrinsic rate effects** and **apparent rate effects**. Intrinsic effects are true material behavior, where microstructural dissipation mechanisms cause the energy required for fracture to genuinely depend on the speed of [crack propagation](@entry_id:160116). Apparent effects are artifacts of the measurement process. If one naively estimates $\Gamma(v)$ from global measurements (e.g., external power input) without properly accounting for the rates of change of stored strain energy ($\dot{U}$) and kinetic energy ($\dot{T}$), the result will be contaminated by geometry- and inertia-dependent terms that do not reflect the local material resistance [@problem_id:2632626]. A true measurement of $\Gamma(v)$ requires either a full accounting of the [energy balance](@entry_id:150831) or a local measurement of the near-tip fields.
+
+A critical application of dynamic fracture is the study of **crack arrest**. When a crack propagates into a region of decreasing stress or encounters a tougher material, it may decelerate and stop. The **dynamic crack arrest toughness**, often denoted $K_{Ia}$, is the value of the [stress intensity factor](@entry_id:157604) at the moment of arrest. Although at the instant of arrest the crack speed is zero, $K_{Ia}$ is not generally equal to the quasi-static initiation toughness, $K_{Ic}$. The reason is that the system is not in equilibrium at the moment of arrest. The body still possesses kinetic energy from the prior dynamic propagation, and the stress field is influenced by the history of motion and reflected stress waves. Consequently, the measured value of $K_{Ia}$ depends significantly on the specimen geometry and the loading history, making it a system-dependent property rather than a pure material constant in the same sense as $K_{Ic}$ [@problem_id:2632612].
+
+### Advanced Models for Dynamic Fracture
+
+Linear Elastic Fracture Mechanics (LEFM) relies on a singularity, which is a mathematical idealization. To resolve the physics of the [fracture process zone](@entry_id:749561), more advanced models are required.
+
+#### Cohesive Zone Models
+
+**Cohesive Zone Models (CZM)** replace the singular crack tip with a process zone of finite length where material separation occurs gradually. The behavior within this zone is described by a **[traction-separation law](@entry_id:170931) (TSL)**, which relates the cohesive traction, $T$, across the interface to the opening displacement, $\delta$. For dynamic problems, this law must be extended to include rate effects, taking the form $T(\delta, \dot{\delta})$. A thermodynamically consistent approach, analogous to a Kelvin-Voigt model, decomposes the traction into an equilibrium part and a viscous part:
+$$
+T(\delta, \dot{\delta}) = T_{\text{eq}}(\delta) + \eta \dot{\delta}
+$$
+Here, $T_{\text{eq}}(\delta)$ is the rate-independent part, derivable from a cohesive potential, which defines the quasi-static fracture energy $G_c = \int_0^\infty T_{\text{eq}}(\delta) \,d\delta$. The term $\eta \dot{\delta}$ represents viscous dissipation, where $\eta$ is a viscosity parameter. Such a law is characterized by a peak [cohesive strength](@entry_id:194858), $\sigma_{\max}$, and a characteristic separation, $\delta_c$. This framework allows for the incorporation of rate-dependent material behavior directly into the fracture criterion, providing a powerful tool for numerical simulations [@problem_id:2632629].
+
+#### Phase-Field Models
+
+An alternative approach that has gained prominence is the **[phase-field method](@entry_id:191689)**. This technique regularizes the sharp geometry of a crack by introducing a continuous [scalar field](@entry_id:154310), $d(\boldsymbol{x},t)$, which varies smoothly from $d=0$ (intact material) to $d=1$ (fully broken material). The evolution of both the [displacement field](@entry_id:141476) $\boldsymbol{u}$ and the phase field $d$ is found by solving a coupled system of [partial differential equations](@entry_id:143134) derived from a variational principle.
+
+The dynamics of the system are governed by an [action functional](@entry_id:169216), which is the time integral of the Lagrangian ($L = K - \Pi$). The total kinetic energy is $K = \int_\Omega \frac{1}{2}\rho |\dot{\boldsymbol{u}}|^2 \,d\Omega$. The [total potential energy](@entry_id:185512), $\Pi$, consists of the elastic strain energy and the fracture energy. The elastic energy is degraded by the phase field, for instance as $\int_\Omega (1-d)^2 \psi_0(\boldsymbol{\varepsilon}) \,d\Omega$, where $\psi_0$ is the [strain energy density](@entry_id:200085) of the pristine material. The fracture energy associated with the diffuse crack is modeled with a functional that depends on both the phase field and its gradient, such as:
+$$
+W_{fr} = \int_{\Omega} G_c \left( \frac{d^2}{2\ell} + \frac{\ell}{2} |\nabla d|^2 \right) d\Omega
+$$
+The parameter $\ell$ is an internal length scale that controls the width of the regularized crack. This length scale is not merely a numerical parameter; it has physical consequences. Specifically, it governs the interaction between the diffuse crack and [elastic waves](@entry_id:196203). For waves with a wavelength $\lambda$ much larger than $\ell$, the diffuse crack behaves like a sharp one. However, for waves with $\lambda \sim \ell$, the gradual change in stiffness across the phase-field band acts as a spatial low-pass filter, reducing reflections and scattering of high-frequency components [@problem_id:2632655]. This provides a physically motivated mechanism for regularizing the [stress singularity](@entry_id:166362) and capturing complex crack phenomena like branching and merging in a unified computational framework.
