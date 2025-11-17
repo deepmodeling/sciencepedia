@@ -1,0 +1,76 @@
+## Introduction
+In algebraic topology, the [degree of a map](@entry_id:158493) is a fundamental integer invariant that captures how a continuous map wraps one sphere around another. While its definition via homology theory is elegant, computing the degree for a given map can be a formidable challenge. The central problem this article addresses is how to move from the abstract definition of degree to a concrete, computable number. This is achieved through the powerful mechanism of [cellular approximation](@entry_id:275369), which simplifies complex continuous functions into a combinatorial, algebraic framework.
+
+This article provides a comprehensive guide to understanding and applying this technique. In the first chapter, **"Principles and Mechanisms,"** we will explore the foundational properties of the degree and introduce the Cellular Approximation Theorem as the primary computational tool, with detailed examples on the circle and higher spheres. The second chapter, **"Applications and Interdisciplinary Connections,"** will demonstrate the far-reaching impact of this concept, showing how it solves problems and forges links between topology, analysis, geometry, and algebra. Finally, **"Hands-On Practices"** will offer a series of guided problems to solidify your computational skills, allowing you to master the translation from geometric intuition to algebraic calculation.
+
+## Principles and Mechanisms
+
+In the preceding chapter, we introduced the [topological degree](@entry_id:264252) as a powerful integer invariant for [continuous maps](@entry_id:153855) between spheres of the same dimension, $f: S^n \to S^n$. This integer, denoted $\deg(f)$, is defined by the action of the [induced homomorphism](@entry_id:149311) $f_*: H_n(S^n; \mathbb{Z}) \to H_n(S^n; \mathbb{Z})$. As the $n$-th homology group of the sphere with integer coefficients, $H_n(S^n; \mathbb{Z})$, is isomorphic to the group of integers $\mathbb{Z}$, the endomorphism $f_*$ corresponds to multiplication by a unique integer. This integer is precisely the degree of $f$.
+
+The significance of the degree lies in its ability to translate a complex, continuous problem into a simple algebraic one. It is a homotopy invariant, meaning that if two maps $f$ and $g$ are homotopic ($f \simeq g$), then they must have the same degree. This property is the cornerstone upon which we build our computational strategies. If we can find a simpler map that is homotopic to our original, more complex map, we can compute the degree of the simpler map instead. This chapter will delve into the fundamental principles governing the degree and explore the primary mechanism for its computation: the [cellular approximation](@entry_id:275369).
+
+### Fundamental Properties of the Degree
+
+Before developing computational tools, it is crucial to understand the foundational properties that make the degree such a robust invariant. These properties follow directly from the definition of degree and the axioms of homology theory.
+
+One of the most elementary yet revealing cases is that of a **constant map**. Consider a map $c_p: S^n \to S^n$ for $n \ge 1$ that sends every point on the domain sphere to a single fixed point $p$ on the target sphere, $c_p(x) = p$ for all $x \in S^n$ [@problem_id:1636988] [@problem_id:1637000]. This map can be factored through the one-point space $\{p\}$ as the composition of a map $q: S^n \to \{p\}$ followed by the inclusion $i: \{p\} \hookrightarrow S^n$. By the [functoriality of homology](@entry_id:269512), the [induced map](@entry_id:271712) on the $n$-th homology group is the composition $(c_p)_* = i_* \circ q_*$. However, for $n \ge 1$, the $n$-th homology group of a point is trivial, $H_n(\{p\}; \mathbb{Z}) = 0$. This forces the map $q_*: H_n(S^n; \mathbb{Z}) \to H_n(\{p\}; \mathbb{Z})$ to be the zero homomorphism. Consequently, $(c_p)_*$ must also be the zero homomorphism, which corresponds to multiplication by zero. Therefore, any constant map has a degree of zero.
+
+This result has a powerful generalization: any map that is **not surjective** must have degree zero [@problem_id:1636976]. If a map $f: S^n \to S^n$ is not surjective, its image is a [proper subset](@entry_id:152276) of the target sphere. Let $p$ be a point not in the image of $f$. Then $f$ can be factored as a map from $S^n$ to the punctured sphere $S^n \setminus \{p\}$, followed by the inclusion of this punctured sphere back into $S^n$. The space $S^n \setminus \{p\}$ is, however, homeomorphic to Euclidean space $\mathbb{R}^n$ via stereographic projection. Since $\mathbb{R}^n$ is contractible, all its [reduced homology](@entry_id:274187) groups are trivial, including $H_n(\mathbb{R}^n; \mathbb{Z}) = 0$. As before, this forces the [induced map](@entry_id:271712) $f_*$ on the $n$-th homology of $S^n$ to be the zero map. Thus, $\deg(f)=0$. This provides a simple topological criterion: if a map "misses" even a single point, it cannot "wrap" the sphere around itself in a non-trivial way.
+
+Another crucial property relates to the composition of maps. For any two [continuous maps](@entry_id:153855) $f, g: S^n \to S^n$, the degree of their composition is the product of their individual degrees:
+$$ \deg(g \circ f) = \deg(g) \deg(f) $$
+This follows directly from the [functoriality](@entry_id:150069) of the homology [functor](@entry_id:260898), which states that $(g \circ f)_* = g_* \circ f_*$. On the level of integers, the composition of "multiplication by $\deg(f)$" and "multiplication by $\deg(g)$" is "multiplication by $\deg(g)\deg(f)$". This property is particularly useful in analyzing systems where transformations are applied sequentially [@problem_id:1637008].
+
+This multiplicative property leads to a profound insight regarding **homotopy equivalences** [@problem_id:1636974]. A map $f: S^n \to S^n$ is a homotopy equivalence if there exists a homotopy inverse $g: S^n \to S^n$ such that $g \circ f$ and $f \circ g$ are both homotopic to the identity map, $\text{id}_{S^n}$. Since the degree is a homotopy invariant, this implies $\deg(g \circ f) = \deg(\text{id}_{S^n})$ and $\deg(f \circ g) = \deg(\text{id}_{S^n})$. The identity map induces the identity on homology, so its degree is 1. We therefore have the algebraic relations:
+$$ \deg(g) \deg(f) = 1 \quad \text{and} \quad \deg(f) \deg(g) = 1 $$
+Since the degrees are integers, the only possible integer solutions to this pair of equations are $\deg(f) = 1$ or $\deg(f) = -1$. Consequently, any map that topologically deforms the sphere but preserves its essential structure (in the sense of homotopy) must have a degree of $\pm 1$.
+
+### The Power of Cellular Approximation
+
+The **Cellular Approximation Theorem** provides the central computational technique of this chapter. It states that any continuous map $f: X \to Y$ between CW complexes is homotopic to a [cellular map](@entry_id:151769), a map that sends the $k$-skeleton of $X$ into the $k$-skeleton of $Y$ for all $k$. Since the [degree of a map](@entry_id:158493) on spheres is a homotopy invariant, we can compute the degree of any continuous map $f: S^n \to S^n$ by first finding a [cellular map](@entry_id:151769) $f_c$ that is homotopic to $f$ and then computing $\deg(f_c)$. The advantage is that the degree of a [cellular map](@entry_id:151769) can be determined directly from the [induced map](@entry_id:271712) on the [cellular chain complex](@entry_id:160435).
+
+For a [cellular map](@entry_id:151769) $f_c$, the [induced chain map](@entry_id:271516) $f_\#: C_k(X) \to C_k(Y)$ is a homomorphism between the free [abelian groups](@entry_id:145145) generated by the $k$-cells. To find the degree, we focus on the top dimension, $k=n$. The [chain map](@entry_id:266133) $f_\#: C_n(S^n) \to C_n(S^n)$ induces the map $f_*: H_n(S^n) \to H_n(S^n)$. Our task is to find a generator of the homology group $H_n(S^n)$ as a specific linear combination of the $n$-cells and then calculate how the [chain map](@entry_id:266133) $f_\#$ acts on this generator. The resulting multiplicative factor will be the degree.
+
+### Computations on the Circle ($S^1$)
+
+The simplest non-trivial case is the circle, $S^1$. We can equip $S^1$ with a minimal CW structure consisting of one 0-cell, $e^0$, and one 1-cell, $e^1$. The [cellular chain complex](@entry_id:160435) is $C_1(S^1) = \mathbb{Z}\{e^1\}$ and $C_0(S^1) = \mathbb{Z}\{e^0\}$. The boundary map $d_1: C_1(S^1) \to C_0(S^1)$ must be the zero map, since $d_1(e^1)$ is a multiple of $e^0 - e^0 = 0$. Thus, $H_1(S^1) = \ker(d_1) / \text{im}(d_2) = C_1(S^1) / 0 \cong \mathbb{Z}$, with the 1-cell $e^1$ itself serving as a generator.
+
+For a [cellular map](@entry_id:151769) $f: S^1 \to S^1$, the [induced chain map](@entry_id:271516) $f_\#: C_1(S^1) \to C_1(S^1)$ sends the generator $e^1$ to some integer multiple of itself, $f_\#(e^1) = k \cdot e^1$. This integer $k$ is precisely the degree of the map, and it corresponds to the intuitive notion of **[winding number](@entry_id:138707)**—the number of times the map wraps the domain circle around the target circle.
+
+For example, consider maps on $S^1$ viewed as the unit circle in the complex plane, $\mathbb{C}$. A map of the form $f(z) = z^k$ for an integer $k$ wraps the circle around itself $k$ times, with negative $k$ indicating a reversal of orientation. This map has degree $k$. A more complex-looking map, such as $f(z) = (\bar{z})^m z^n$ for positive integers $m$ and $n$, can be simplified by recalling that for $z \in S^1$, we have $\bar{z} = z^{-1}$. The map becomes $f(z) = (z^{-1})^m z^n = z^{n-m}$ [@problem_id:1637016]. This is a [standard map](@entry_id:165002) of degree $n-m$.
+
+### Computations on Higher Spheres ($S^n$)
+
+For higher spheres, the computation is more involved but follows the same principles. A particularly instructive CW structure for $S^n$ (for $n \ge 1$) consists of taking the equatorial $(n-1)$-sphere as the $(n-1)$-skeleton, and attaching two $n$-cells, corresponding to the open northern ($e^n_+$) and southern ($e^n_-$) hemispheres [@problem_id:1637023]. In this structure, the chain group $C_n(S^n)$ is the free [abelian group](@entry_id:139381) on two generators, $C_n(S^n) = \mathbb{Z}\{e^n_+\} \oplus \mathbb{Z}\{e^n_-\} \cong \mathbb{Z}^2$. Let's denote the single $(n-1)$-cell (the equator) by $e^{n-1}$.
+
+The boundary map $d_n: C_n(S^n) \to C_{n-1}(S^n)$ is determined by the [attaching maps](@entry_id:159062). If we orient the boundaries of both hemispheres to match the orientation of the equator, the boundary map is given by $d_n(e^n_+) = e^{n-1}$ and $d_n(e^n_-) = e^{n-1}$. An $n$-cycle is a chain $c = a e^n_+ + b e^n_-$ whose boundary is zero: $d_n(c) = (a+b)e^{n-1} = 0$. This implies $b = -a$. Thus, all $n$-cycles are integer multiples of the chain $z = e^n_+ - e^n_-$. This chain represents the entire sphere (the northern hemisphere minus the southern hemisphere, which, with orientations, glues into a cycle) and its homology class $[z]$ generates $H_n(S^n; \mathbb{Z})$.
+
+Let us apply this to compute the degree of the **reflection map** $f(x_1, \dots, x_n, x_{n+1}) = (x_1, \dots, x_n, -x_{n+1})$ [@problem_id:1637023] [@problem_id:1636993]. This map is cellular with respect to our two-[cell structure](@entry_id:266491). It maps the northern hemisphere to the southern hemisphere and vice-versa. A careful analysis of local orientations shows that the [induced chain map](@entry_id:271516) is $f_\#(e^n_+) = e^n_-$ and $f_\#(e^n_-) = e^n_+$. To find the degree, we see how $f_\#$ acts on our homology generator $z$:
+$$ f_\#(z) = f_\#(e^n_+ - e^n_-) = f_\#(e^n_+) - f_\#(e^n_-) = e^n_- - e^n_+ = -(e^n_+ - e^n_-) = -1 \cdot z $$
+The [induced map on homology](@entry_id:265781) is multiplication by $-1$. Therefore, the degree of the reflection map is $-1$.
+
+A more subtle example is the **[antipodal map](@entry_id:151775)**, $a(x) = -x$ [@problem_id:1636986]. This map also swaps the hemispheres, so $a_\#(e^n_+)$ is a multiple of $e^n_-$ and $a_\#(e^n_-)$ is a multiple of $e^n_+$. Let's write $a_\#(e^n_+) = \epsilon e^n_-$ and $a_\#(e^n_-) = \delta e^n_+$, where $\epsilon, \delta$ are signs representing the local degrees. A key constraint is that a [chain map](@entry_id:266133) must commute with the boundary map: $d \circ a_\# = a_\# \circ d$. Let's consider a CW structure where the boundaries are oriented oppositely, so that $d_n(e^n_+) = e^{n-1}$ and $d_n(e^n_-) = -e^{n-1}$. In this case, the generator for $H_n(S^n)$ is the cycle $z' = e^n_+ + e^n_-$.
+The [antipodal map](@entry_id:151775) restricted to the equator ($S^{n-1}$) is the [antipodal map](@entry_id:151775) on $S^{n-1}$, which is known to have degree $(-1)^{(n-1)+1} = (-1)^n$. Thus, on the chain level, $a_\#(e^{n-1}) = (-1)^n e^{n-1}$. Now we use the [chain map](@entry_id:266133) condition on $e^n_+$:
+$d_n(a_\#(e^n_+)) = a_\#(d_n(e^n_+))$
+$d_n(\epsilon e^n_-) = a_\#(e^{n-1})$
+$\epsilon \cdot d_n(e^n_-) = (-1)^n e^{n-1}$
+$\epsilon(-e^{n-1}) = (-1)^n e^{n-1}$
+This forces $\epsilon = -(-1)^n = (-1)^{n+1}$. A similar calculation shows $\delta = (-1)^{n+1}$. Now we apply $a_\#$ to the homology generator $z'$:
+$$ a_\#(z') = a_\#(e^n_+ + e^n_-) = \epsilon e^n_- + \delta e^n_+ = (-1)^{n+1} e^n_- + (-1)^{n+1} e^n_+ = (-1)^{n+1} z' $$
+Thus, the degree of the [antipodal map](@entry_id:151775) on $S^n$ is the famous result $\deg(a) = (-1)^{n+1}$.
+
+### The Suspension Principle
+
+Finally, we consider a beautiful theoretical property that relates maps across different dimensions. The **suspension** of a space $X$, denoted $\Sigma X$, is formed by taking the cylinder $X \times [-1, 1]$ and collapsing the top lid $X \times \{1\}$ to a "north pole" and the bottom lid $X \times \{-1\}$ to a "south pole". It is a fundamental fact that the suspension of an $n$-sphere is homeomorphic to an $(n+1)$-sphere: $\Sigma S^n \cong S^{n+1}$.
+
+Any map $g: S^n \to S^n$ induces a suspension map $\Sigma g: \Sigma S^n \to \Sigma S^n$ defined by $\Sigma g([x, t]) = [g(x), t]$. The remarkable **Suspension Principle** states that the degree is preserved under suspension [@problem_id:1637002]:
+$$ \deg(\Sigma g) = \deg(g) $$
+Intuitively, the suspension map simply extends the action of $g$ on the "equator" $S^n$ up and down to the poles of $S^{n+1}$ without adding any new twisting. The formal proof relies on the [naturality](@entry_id:270302) of the [suspension isomorphism](@entry_id:156388) in homology, $\sigma: \tilde{H}_n(S^n) \to \tilde{H}_{n+1}(\Sigma S^n)$, which is an isomorphism between the [reduced homology](@entry_id:274187) groups. Naturality means the following diagram commutes:
+$$
+\begin{CD}
+\tilde{H}_n(S^n) @>{g_*}>> \tilde{H}_n(S^n) \\
+@V{\sigma}VV @VV{\sigma}V \\
+\tilde{H}_{n+1}(\Sigma S^n) @>>{(\Sigma g)_*}> \tilde{H}_{n+1}(\Sigma S^n)
+\end{CD}
+$$
+If $g_*$ is multiplication by $k = \deg(g)$, then chasing an element through the diagram shows that $(\Sigma g)_*$ must also be multiplication by $k$. This principle implies, for example, that since the [antipodal map](@entry_id:151775) on $S^1$ (a reflection) has degree $-1$, its suspension (the [antipodal map](@entry_id:151775) on $S^2$) must also have degree $-1$, which aligns with our formula $\deg(a) = (-1)^{2+1} = -1$. This elegant result demonstrates the deep structural consistency of homology theory across dimensions.

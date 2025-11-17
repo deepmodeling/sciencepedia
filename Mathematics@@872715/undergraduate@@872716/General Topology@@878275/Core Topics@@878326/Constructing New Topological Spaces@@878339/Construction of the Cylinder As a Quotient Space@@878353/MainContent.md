@@ -1,0 +1,72 @@
+## Introduction
+In topology, the intuitive act of "gluing" simple shapes together to form more complex ones is made rigorous through the powerful machinery of [quotient spaces](@entry_id:274314). The construction of a cylinder from a flat square is a quintessential example of this process, providing a bridge between our geometric intuition and abstract mathematical formalism. This article addresses the fundamental question: how do we translate the simple act of taping a sheet of paper into a cylinder into the precise language of topology?
+
+This article will guide you through this foundational construction in three parts. In **Principles and Mechanisms**, we will delve into the core concepts, defining the [equivalence relation](@entry_id:144135) on a square, establishing the [quotient topology](@entry_id:150384), and rigorously proving that the resulting space is indeed a cylinder via homeomorphism. Next, **Applications and Interdisciplinary Connections** will broaden our perspective, exploring how the cylinder functions as a model in physics and analysis, and as a crucial building block for creating other surfaces like the torus and sphere. Finally, **Hands-On Practices** will offer opportunities to solidify your understanding through targeted exercises. By the end, you will not only grasp how to build a cylinder but also appreciate the power of [quotient topology](@entry_id:150384) as a fundamental tool in mathematics.
+
+## Principles and Mechanisms
+
+In topology, many complex spaces can be understood as the result of a "gluing" process performed on simpler, more familiar objects. This chapter provides a rigorous examination of one of the most fundamental examples of this technique: the construction of a cylinder from a flat square. We will move from the intuitive idea of taping together two opposite edges of a sheet of paper to the formal, abstract machinery of [quotient spaces](@entry_id:274314), their topologies, and their fundamental properties.
+
+### The Equivalence Relation: A Formalism for Gluing
+
+Our starting point is the unit square in the Euclidean plane, the set $X = [0,1] \times [0,1]$. We can think of this as a flexible sheet. The intuitive act of forming a cylinder involves identifying the left vertical edge, where the $x$-coordinate is $0$, with the right vertical edge, where the $x$-coordinate is $1$. Specifically, a point $(0, y)$ on the left edge is "glued" to the point $(1, y)$ at the same height on the right edge. All other points in the square, those in the interior or on the top and bottom edges, are not glued to any other points.
+
+To capture this idea mathematically, we define an **[equivalence relation](@entry_id:144135)**, denoted by the symbol $\sim$, on the set $X$. An [equivalence relation](@entry_id:144135) is a [binary relation](@entry_id:260596) that is reflexive, symmetric, and transitive. For any two points $p_1 = (x_1, y_1)$ and $p_2 = (x_2, y_2)$ in $X$, we define the relation as follows:
+
+$p_1 \sim p_2$ if and only if $y_1 = y_2$ and either $x_1 = x_2$ or $\{x_1, x_2\} = \{0, 1\}$.
+
+Let us verify that this indeed constitutes an equivalence relation [@problem_id:1542817]:
+
+1.  **Reflexivity**: For any point $p = (x, y) \in X$, we have $p \sim p$ because $y=y$ and $x=x$.
+
+2.  **Symmetry**: If $p_1 \sim p_2$, we must show $p_2 \sim p_1$. The condition $p_1 \sim p_2$ means $y_1=y_2$ and either $x_1=x_2$ or $\{x_1, x_2\} = \{0, 1\}$. Both of these conditions are symmetric with respect to swapping the indices $1$ and $2$. If $y_1=y_2$, then $y_2=y_1$. If $\{x_1, x_2\} = \{0, 1\}$, then $\{x_2, x_1\} = \{0, 1\}$. Thus, $p_2 \sim p_1$.
+
+3.  **Transitivity**: If $p_1 \sim p_2$ and $p_2 \sim p_3$, we must show $p_1 \sim p_3$. This requires that $y_1=y_2$ and $y_2=y_3$, which implies $y_1=y_3$. Now we consider the $x$-coordinates. If the equivalences are simple equalities (e.g., $p_1=p_2=p_3$), the result is trivial. The interesting case arises from the "gluing" part of the definition. Suppose $p_1 \sim p_2$ because they are on opposite edges (e.g., $x_1=0, x_2=1$) and $p_2 \sim p_3$ also because they are on opposite edges ($x_2=1, x_3=0$). In this scenario, $p_1=(0, y_1)$ and $p_3=(0, y_1)$, so $p_1=p_3$ and thus $p_1 \sim p_3$. If only one of the relations involves edge identification, say $p_1 \sim p_2$ via the edges and $p_2=p_3$, then $p_1 \sim p_3$ holds directly.
+
+This equivalence relation precisely partitions the square $X$ into sets of points that are to be considered "the same" in our new space.
+
+### The Quotient Space and its Topology
+
+The set of all these identified points forms a new [topological space](@entry_id:149165). An **[equivalence class](@entry_id:140585)** of a point $p \in X$, denoted $[p]$, is the set of all points in $X$ that are equivalent to $p$. The **quotient space**, which we will call $C$, is the set of all such equivalence classes: $C = X/{\sim} = \{[p] \mid p \in X\}$. The function $\pi: X \to C$ that sends each point $p$ to its equivalence class $[p]$ is known as the **[quotient map](@entry_id:140877)** or **canonical projection**.
+
+Under our specific relation, the [equivalence classes](@entry_id:156032) take one of two forms [@problem_id:1542789]:
+-   For any point $(x,y)$ in the "interior" of the gluing process, meaning $x \in (0,1)$, its [equivalence class](@entry_id:140585) is the singleton set containing only that point: $[(x,y)] = \{(x,y)\}$.
+-   For any point $(0,y)$ on the left edge, its [equivalence class](@entry_id:140585) is a pair of points: $[(0,y)] = \{(0,y), (1,y)\}$. This single class in $C$ corresponds to the two points in $X$ that are glued together.
+
+The space $C$ is endowed with the **[quotient topology](@entry_id:150384)**. By definition, a subset $V \subseteq C$ is open if and only if its preimage under the [quotient map](@entry_id:140877), $\pi^{-1}(V)$, is an open set in the original space $X$. A key concept for understanding this topology is that of a **[saturated set](@entry_id:155857)**. A subset $U \subseteq X$ is called saturated (with respect to $\sim$) if for any point $p \in U$, the entire [equivalence class](@entry_id:140585) $[p]$ is contained in $U$. The definition of the [quotient topology](@entry_id:150384) can be rephrased: the image $\pi(U)$ of a set $U \subseteq X$ is open in $C$ if and only if the saturation of $U$, denoted $\text{sat}(U) = \pi^{-1}(\pi(U))$, is an open set in $X$.
+
+Let's consider what open sets in $C$ look like. A neighborhood of a point $[(x,y)]$ with $x \in (0,1)$ is straightforward; it is simply the image of any standard [open neighborhood](@entry_id:268496) of $(x,y)$ that is contained entirely in the interior of the square. The situation is more interesting for a point on the "seam" of the cylinder, for example $p_0 = [(0, 1/2)] = \{(0, 1/2), (1, 1/2)\}$. A neighborhood of $p_0$ in $C$ must be the image of a [saturated open set](@entry_id:153354) in $X$ that contains *both* $(0, 1/2)$ and $(1, 1/2)$. For instance, for a small $\epsilon > 0$, the union of two open disks in $\mathbb{R}^2$, one centered at $(0, 1/2)$ and the other at $(1, 1/2)$, intersected with $X$, forms a [saturated open set](@entry_id:153354). Its image under $\pi$ is a basic open neighborhood of the point $p_0$ on the cylinder's seam [@problem_id:1542787] [@problem_id:1542827].
+
+It is a common misconception that the [quotient map](@entry_id:140877) $\pi$ must be an [open map](@entry_id:155659) (a map that sends open sets to open sets). For our cylinder construction, this is not true. Consider the set $U = [0, \epsilon) \times (1/4, 3/4)$ for some small $\epsilon > 0$. This is an open set in the subspace topology of $X$. However, its image $\pi(U)$ is not open in $C$. To see why, we examine its saturation, $\text{sat}(U) = U \cup (\{1\} \times (1/4, 3/4))$. This set is not open in $X$ because no [open ball](@entry_id:141481) around a point like $(1, 1/2)$ can be contained within $\text{sat}(U)$. Since the saturation is not open, the image $\pi(U)$ is not open in $C$ [@problem_id:1542819].
+
+### Proving the Cylinder's Identity via Homeomorphism
+
+We have constructed an abstract topological space $C = X/{\sim}$. But how do we prove this space is truly a cylinder? We must show it is **homeomorphic** to a standard geometric cylinder, such as the space $Y = S^1 \times [0,1]$, where $S^1$ is the unit circle in $\mathbb{R}^2$. The central tool for this task is the **[universal property](@entry_id:145831) of [quotient spaces](@entry_id:274314)**.
+
+This property states that a function $f: C \to Y$ is continuous if and only if the [composite function](@entry_id:151451) $g = f \circ \pi: X \to Y$ is continuous. Furthermore, for a function $g: X \to Y$ to induce a [well-defined function](@entry_id:146846) $f: C \to Y$ such that $f([p]) = g(p)$, the function $g$ must be constant on each [equivalence class](@entry_id:140585) of $\sim$. That is, if $p_1 \sim p_2$, then we must have $g(p_1) = g(p_2)$. This principle is broadly applicable for defining functions on any [quotient space](@entry_id:148218) [@problem_id:1542773].
+
+Let's apply this to our cylinder. We seek a [continuous map](@entry_id:153772) $g: [0,1] \times [0,1] \to S^1 \times [0,1]$ that respects our [equivalence relation](@entry_id:144135). Consider the function [@problem_id:1542777] [@problem_id:1542829]:
+$g(x, y) = ((\cos(2\pi x), \sin(2\pi x)), y)$
+
+This function $g$ is continuous because its component functions are continuous. It "wraps" the $x$-interval $[0,1]$ around the circle $S^1$ and maps the $y$-coordinate to the height on the cylinder. Now, we check if it is constant on the equivalence classes:
+$g(0, y) = ((\cos(0), \sin(0)), y) = ((1, 0), y)$
+$g(1, y) = ((\cos(2\pi), \sin(2\pi)), y) = ((1, 0), y)$
+Since $g(0,y) = g(1,y)$ for all $y \in [0,1]$, the function $g$ respects the [equivalence relation](@entry_id:144135).
+
+By the [universal property](@entry_id:145831), $g$ induces a well-defined, [continuous map](@entry_id:153772) $f: C \to Y$. To prove that $f$ is a [homeomorphism](@entry_id:146933), we must show it is a [bijection](@entry_id:138092) (one-to-one and onto) and that its inverse is continuous.
+-   **Injectivity (One-to-one)**: Suppose $f([p_1]) = f([p_2])$. This means $g(p_1) = g(p_2)$. Let $p_1=(x_1, y_1)$ and $p_2=(x_2, y_2)$. Then $y_1=y_2$, and $(\cos(2\pi x_1), \sin(2\pi x_1)) = (\cos(2\pi x_2), \sin(2\pi x_2))$. This equality of points on the circle implies that $2\pi x_1$ and $2\pi x_2$ differ by an integer multiple of $2\pi$, so $x_1 - x_2$ is an integer. Since $x_1, x_2 \in [0,1]$, the only possibilities are $x_1=x_2$ or $\{x_1, x_2\} = \{0,1\}$. This is precisely the condition for $p_1 \sim p_2$, which means $[p_1] = [p_2]$. Thus, $f$ is injective.
+-   **Surjectivity (Onto)**: For any point $(c, h) \in S^1 \times [0,1]$, we can find a point $(x,y) \in X$ such that $g(x,y)=(c,h)$. We can always find an angle $\theta \in [0, 2\pi)$ such that $c=(\cos(\theta), \sin(\theta))$. By setting $x = \theta/(2\pi)$ and $y=h$, we find a point in $X$ that maps to $(c,h)$. Thus, $f$ is surjective.
+
+So, $f$ is a [continuous bijection](@entry_id:198258). A powerful theorem in topology states that a [continuous bijection](@entry_id:198258) from a **compact** space to a **Hausdorff** space is a [homeomorphism](@entry_id:146933). The square $X = [0,1] \times [0,1]$ is closed and bounded in $\mathbb{R}^2$, so by the Heine-Borel theorem, it is compact. The cylinder $C$ is the image of the [compact space](@entry_id:149800) $X$ under the [continuous map](@entry_id:153772) $\pi$, so $C$ is also compact. The target space $Y = S^1 \times [0,1]$ is a closed and bounded subset of $\mathbb{R}^3$, so it is Hausdorff. Therefore, the map $f$ is a [homeomorphism](@entry_id:146933), and our abstractly constructed [quotient space](@entry_id:148218) $C$ is topologically identical to the familiar geometric cylinder.
+
+### Inherited Topological Properties
+
+The fact that the cylinder is the [continuous image of a compact space](@entry_id:265606), and is homeomorphic to a well-behaved subspace of $\mathbb{R}^3$, endows it with several important topological properties.
+
+-   **Compactness**: As established, the cylinder is compact. This implies, by the Extreme Value Theorem, that any continuous real-valued function defined on the cylinder must attain a maximum and minimum value. For example, to find the maximum value of a function on the cylinder, one can equivalently find the maximum value of its inducing function on the original square, an often simpler problem in multivariable calculus [@problem_id:1542772].
+
+-   **Path-Connectedness**: The square $X$ is path-connected. Since the continuous image of a [path-connected space](@entry_id:156428) is path-connected, the cylinder $C$ is also path-connected. This means any two points on the cylinder can be joined by a continuous path. The geometry of this construction provides a beautiful way to visualize paths and distances. The shortest path between two points on the cylinder's surface can be found by "unrolling" it back into the plane. The distance between points $\pi(P_1)$ and $\pi(P_2)$ on the cylinder is the minimum Euclidean distance between $P_1$ and all possible "image" points of $P_2$ in the plane, i.e., points translated by integer multiples of the cylinder's width [@problem_id:1542808].
+
+-   **The Hausdorff Property**: A space is Hausdorff if any two distinct points have disjoint open neighborhoods. While [quotient spaces](@entry_id:274314) are not always Hausdorff, the cylinder is. This can be verified by considering any two distinct points $z_1, z_2 \in C$. The most challenging case is when both points lie on the identification seam, say $z_1 = \pi(0, y_1)$ and $z_2 = \pi(0, y_2)$ with $y_1 \neq y_2$. We can separate them by choosing a small enough $\delta > 0$, for instance $\delta = |y_1-y_2|/4$. The horizontal bands $U_1 = [0,1] \times (y_1-\delta, y_1+\delta)$ and $U_2 = [0,1] \times (y_2-\delta, y_2+\delta)$ are disjoint, open, and saturated sets in $X$. Their images, $V_1 = \pi(U_1)$ and $V_2 = \pi(U_2)$, are disjoint open neighborhoods of $z_1$ and $z_2$ in $C$, confirming the Hausdorff property [@problem_id:1542820].
+
+Through this detailed construction, we see how the abstract machinery of [quotient topology](@entry_id:150384) provides a precise and powerful language to realize intuitive geometric ideas, transforming a simple square into a cylinder and allowing us to rigorously deduce its essential topological character.

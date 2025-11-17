@@ -1,0 +1,78 @@
+## Introduction
+In the study of topology, understanding the structure of a space goes far beyond simply classifying subsets as open or not. To delve deeper, we must develop a precise language to describe proximity, boundaries, and the notion of completeness. This article introduces the fundamental concepts of limit points and closed sets, which formalize the intuitive idea of a point being "arbitrarily close" to a set. By mastering these tools, we can rigorously define what it means for a set to be self-contained, without any "missing" boundary points, and explore the crucial property of density, where a subset effectively "fills" an entire space.
+
+This article will guide you through the theoretical underpinnings and practical applications of these concepts across three chapters. In "Principles and Mechanisms," you will learn the rigorous definitions of [limit points](@entry_id:140908), closed sets, and the [closure of a set](@entry_id:143367), along with powerful criteria for proving a set is closed. Next, "Applications and Interdisciplinary Connections" will demonstrate the remarkable utility of these ideas, showing how they provide critical insights into fields such as linear algebra, [functional analysis](@entry_id:146220), and dynamical systems. Finally, "Hands-On Practices" will offer you the opportunity to apply your knowledge to solve concrete problems, solidifying your understanding of these essential topological tools.
+
+## Principles and Mechanisms
+
+In our exploration of topological spaces, we move beyond the simple classification of sets as open or not open. The structure of a space is deeply revealed by how points relate to sets, particularly by the notion of proximity. This chapter introduces the foundational concepts of [limit points](@entry_id:140908) and closed sets, which provide a precise language for describing the boundaries and completeness of subsets within a topological space.
+
+### Defining Proximity: Limit Points
+
+The intuitive idea of a point being "arbitrarily close" to a set, even if it is not part of the set itself, is formalized by the concept of a **[limit point](@entry_id:136272)**, also known as an accumulation point.
+
+A point $p$ in a topological space $X$ is a **limit point** of a subset $A \subseteq X$ if every open set containing $p$ also contains at least one point of $A$ that is different from $p$. This condition ensures that $p$ is not "isolated" from $A$; one can always find points of $A$ as close to $p$ as desired. The set of all [limit points](@entry_id:140908) of $A$ is called the **derived set** of $A$, often denoted $A'$.
+
+In the context of a [metric space](@entry_id:145912), where distance is defined, this definition becomes more concrete: a point $p$ is a limit point of $A$ if for every real number $\epsilon > 0$, the [open ball](@entry_id:141481) of radius $\epsilon$ centered at $p$, $B(p, \epsilon)$, contains a point of $A$ other than $p$.
+
+Consider, for example, the half-open interval $S = [-3, \sqrt{2})$ in the real number line $\mathbb{R}$ with its standard topology [@problem_id:2290789]. Let's examine the point $p = \sqrt{2}$. For any $\epsilon > 0$, the [open interval](@entry_id:144029) $(\sqrt{2}-\epsilon, \sqrt{2}+\epsilon)$ is an open neighborhood of $\sqrt{2}$. Within this neighborhood, we can always find a real number $x$ such that $\sqrt{2}-\epsilon  x  \sqrt{2}$. Such a point $x$ belongs to the set $S$. Thus, every neighborhood of $\sqrt{2}$ contains a point of $S$ other than itself, making $\sqrt{2}$ a [limit point](@entry_id:136272) of $S$. Notice that in this case, the [limit point](@entry_id:136272) $\sqrt{2}$ is not an element of the set $S$.
+
+In contrast, consider the set of natural numbers $\mathbb{N} = \{1, 2, 3, \dots\}$ as a subset of $\mathbb{R}$. Does this set have any [limit points](@entry_id:140908)? Let's test an arbitrary real number $p$. If we choose $\epsilon = 1/2$, the [open interval](@entry_id:144029) $(p-1/2, p+1/2)$ can contain at most one integer. If it contains an integer $n \in \mathbb{N}$, that point must be $p$ itself (if $p$ is an integer) or another integer, but it cannot contain a point of $\mathbb{N}$ *other than* $p$ if we choose $\epsilon$ small enough (e.g., less than the distance to the nearest other natural number). Therefore, no point in $\mathbb{R}$ is a limit point of $\mathbb{N}$. The derived set of $\mathbb{N}$ is the [empty set](@entry_id:261946). Points of a set that are not limit points, such as any natural number $n \in \mathbb{N}$, are called **isolated points**. An [isolated point](@entry_id:146695) $a \in A$ is one for which there exists a neighborhood containing no other points of $A$.
+
+### The Definition and Nature of Closed Sets
+
+The concept of a limit point allows us to define a crucial [topological property](@entry_id:141605): being closed.
+
+A set $A$ is **closed** if it contains all of its [limit points](@entry_id:140908). That is, $A$ is closed if $A' \subseteq A$.
+
+Intuitively, a [closed set](@entry_id:136446) is one that you cannot "leak out of" by a process of approximation. If you can approach a point arbitrarily closely by using points from within the set, then that point must also belong to the set.
+
+Let's revisit our examples:
+-   The set $S = [-3, \sqrt{2})$ is **not closed**. As we established, $\sqrt{2}$ is a [limit point](@entry_id:136272) of $S$, but $\sqrt{2} \notin S$. The set fails to contain one of its limit points [@problem_id:2290789].
+-   The set of natural numbers $\mathbb{N}$ **is closed** in $\mathbb{R}$. We found that $\mathbb{N}$ has no [limit points](@entry_id:140908), so its derived set is $\emptyset$. The condition that a set must contain all its limit points, $\emptyset \subseteq \mathbb{N}$, is satisfied. This is a case of a **vacuously true** condition; the set is closed because the condition for being non-closed (having a limit point outside the set) cannot possibly be met [@problem_id:1286939].
+
+It is a fundamental axiom of topology that in any [topological space](@entry_id:149165) $X$, both the empty set $\emptyset$ and the entire space $X$ are closed. The reasoning for this, based on our definition, is instructive [@problem_id:1287376].
+-   The empty set $\emptyset$ has no points, and therefore it cannot have any limit points. Its [set of limit points](@entry_id:178514) is $\emptyset$. The condition for being closed, $\emptyset \subseteq \emptyset$, is trivially true.
+-   The entire space $\mathbb{R}$ is closed. Any point $p \in \mathbb{R}$ is a [limit point](@entry_id:136272) of $\mathbb{R}$, because any [open interval](@entry_id:144029) around $p$ contains infinitely many other real numbers. Thus, the [set of limit points](@entry_id:178514) of $\mathbb{R}$ is $\mathbb{R}$ itself. The condition $\mathbb{R} \subseteq \mathbb{R}$ is true, so $\mathbb{R}$ is closed.
+
+### The Closure of a Set and the Concept of Density
+
+If a set is not closed, it can be "completed" by adding all of its missing [limit points](@entry_id:140908). This larger set is known as the closure.
+
+The **closure** of a set $A$, denoted $\bar{A}$, is the union of the set with its derived set: $\bar{A} = A \cup A'$. Equivalently, the closure of $A$ is the smallest [closed set](@entry_id:136446) that contains $A$. A point $p$ is in the closure of $A$ if and only if every [open neighborhood](@entry_id:268496) of $p$ has a non-empty intersection with $A$. A set $A$ is closed if and only if $A = \bar{A}$.
+
+This leads to the vital concept of density. A set $A$ is said to be **dense** in a space $X$ if its closure is the entire space, i.e., $\bar{A} = X$. This means that any point in the space can be arbitrarily well-approximated by points from the [dense subset](@entry_id:150508).
+
+The rational numbers $\mathbb{Q}$ are the canonical example of a [dense subset](@entry_id:150508) of the real numbers $\mathbb{R}$. However, other subsets can also be dense.
+-   Consider the set of **[dyadic rationals](@entry_id:148903)**, $D = \{ m/2^n \mid m \in \mathbb{Z}, n \in \mathbb{N}_0 \}$ [@problem_id:1640094]. For any real number $x \in \mathbb{R}$ and any $\epsilon > 0$, we can choose $n$ large enough such that $2^{-n}  \epsilon$. By finding an integer $m$ such that $m \le 2^n x  m+1$, we can construct a dyadic rational $d = m/2^n$ for which $|x-d|  2^{-n}  \epsilon$. This shows that every neighborhood of any real number $x$ contains a point from $D$. Therefore, the closure of $D$ is all of $\mathbb{R}$, and $D$ is dense in $\mathbb{R}$.
+
+-   Density can appear in more abstract settings. Consider the set $A$ of all vertices of regular $n$-gons inscribed in the unit circle $S^1 \subset \mathbb{C}$ for all $n \ge 3$ [@problem_id:1640065]. These points correspond to $e^{i\theta}$ where the angle $\theta$ is a rational multiple of $2\pi$. The set of such angles is dense in $[0, 2\pi)$. Consequently, for any point $p$ on the unit circle, any open arc around $p$ will contain a vertex from some $V_n$. This implies that every point on the circle is a [limit point](@entry_id:136272) of $A$. The [set of limit points](@entry_id:178514) of $A$ is the entire circle $S^1$, and thus the closure of $A$ is $S^1$.
+
+-   The concept of closure is highly dependent on the topology of the space. Consider the set of [irrational numbers](@entry_id:158320), $S = \mathbb{R} \setminus \mathbb{Q}$, on the **Sorgenfrey line** $\mathbb{R}_l$, where the topology is generated by basis sets of the form $[a,b)$ [@problem_id:1640052]. To find the closure of $S$, we ask which points $x \in \mathbb{R}$ have the property that every neighborhood of $x$ intersects $S$. A basic neighborhood of $x$ is an interval $[x, x+\epsilon)$ for some $\epsilon > 0$. Since the [irrational numbers](@entry_id:158320) are dense in $\mathbb{R}$ in the usual sense, any interval $(x, x+\epsilon)$ contains an irrational number. This irrational number is also in $[x, x+\epsilon)$. Therefore, every basic neighborhood of any real number $x$ intersects $S$, which means the closure of the irrationals in the Sorgenfrey line is all of $\mathbb{R}$.
+
+-   In higher dimensions, density can lead to interesting results. The set $S$ of points $(x,y) \in \mathbb{R}^2$ where the ratio $x/y$ is rational is dense in the entire plane $\mathbb{R}^2$ [@problem_id:1640057]. Any point $(x_0, y_0)$ with $y_0 \neq 0$ can be approximated by a sequence of points $(q_n y_0, y_0)$ where $q_n$ is a sequence of rational numbers converging to the real number $x_0/y_0$. Furthermore, any point on the $x$-axis, $(x_0, 0)$, can also be shown to be a limit point of $S$. This demonstrates that $\bar{S} = \mathbb{R}^2$.
+
+### The Sequential Criterion for Closed Sets
+
+In metric spaces, and more generally in spaces where every point has a countable [neighborhood basis](@entry_id:148053) (first-countable spaces), there is an alternative and often more practical way to characterize closed sets using sequences.
+
+A set $A$ in a metric space is **closed** if and only if for every sequence $(x_n)_{n=1}^\infty$ of points in $A$ that converges to a limit $L$, the limit $L$ is also an element of $A$.
+
+This criterion provides a powerful computational tool. To show a set is not closed, one only needs to find a single sequence within the set whose limit lies outside.
+
+Let's see this in action:
+-   Consider the set $A$ of real roots of the polynomials $p_n(x) = x^n - 2$ for $n \in \mathbb{N}$ [@problem_id:1640055]. This set includes the sequence $x_n = 2^{1/n}$. As $n \to \infty$, the exponent $1/n \to 0$, and by the continuity of the [exponential function](@entry_id:161417), $x_n = \exp(\frac{\ln 2}{n}) \to \exp(0) = 1$. The sequence $(x_n)$ is in $A$, but its limit, $1$, is not, because $p_n(1) = 1-2 = -1 \neq 0$ for any $n$. This single sequence is enough to prove that $A$ is not a closed set. Similarly, the sequence of negative roots, $y_m = -2^{1/(2m)}$, converges to $-1$, which is also not in $A$. The limit points of $A$ are precisely $\{-1, 1\}$.
+
+-   This sequential test is particularly useful in more abstract spaces, like spaces of matrices. Consider the space $M_2(\mathbb{C})$ of $2 \times 2$ [complex matrices](@entry_id:190650), where convergence is entry-wise. The [general linear group](@entry_id:141275) $GL(2, \mathbb{C})$ is the set of [invertible matrices](@entry_id:149769), i.e., those with a non-zero determinant. Consider the sequence of matrices $A_k = \begin{pmatrix} i/k   0 \\ 0  -i \end{pmatrix}$ [@problem_id:1640096]. For every $k \ge 1$, $\det(A_k) = (i/k)(-i) = 1/k \neq 0$, so each $A_k \in GL(2, \mathbb{C})$. However, the sequence converges to the limit matrix $A_\infty = \lim_{k\to\infty} A_k = \begin{pmatrix} 0  0 \\ 0  -i \end{pmatrix}$. The determinant of the limit is $\det(A_\infty) = 0$. Since we have found a sequence in $GL(2, \mathbb{C})$ whose limit is not in $GL(2, \mathbb{C})$, we have proven that **$GL(2, \mathbb{C})$ is not a closed set**.
+
+### Proving Sets are Closed via Continuous Functions
+
+While the limit point and sequential definitions are fundamental, one of the most elegant and powerful methods for establishing that a set is closed involves continuous functions.
+
+A function $f: X \to Y$ between two [topological spaces](@entry_id:155056) is **continuous** if the [preimage](@entry_id:150899) of every open set in $Y$ is an open set in $X$. An equivalent statement, and the one most useful for our current purpose, is that $f$ is continuous if and only if the [preimage](@entry_id:150899) of every **closed** set in $Y$ is a **closed** set in $X$.
+
+This provides a high-level mechanism for identifying closed sets. If a set can be described as the collection of points where a continuous function takes on a value from a closed set, then it must be closed.
+
+-   Consider the set $S$ of singular $2 \times 2$ real matrices [@problem_id:1640067]. A matrix $A = \begin{pmatrix} a  b \\ c  d \end{pmatrix}$ is in $S$ if and only if its determinant is zero. The determinant map, $\det: M_2(\mathbb{R}) \to \mathbb{R}$, is given by $\det(A) = ad-bc$. This is a polynomial function of the matrix entries. Since polynomial functions are continuous, the determinant map is continuous. The set $S$ is precisely the preimage of the singleton set $\{0\}$ under this map: $S = \det^{-1}(\{0\})$. In any Hausdorff space like $\mathbb{R}$, finite sets (and thus singletons) are closed. Since $\{0\}$ is a [closed set](@entry_id:136446) in $\mathbb{R}$ and the determinant function is continuous, its preimage $S$ must be a [closed set](@entry_id:136446) in $M_2(\mathbb{R})$.
+
+-   This same logic applies to many important sets in mathematics. The **[special linear group](@entry_id:139538)** $SL(2, \mathbb{C})$ is the set of matrices with determinant equal to 1 [@problem_id:1640096]. It can be expressed as $SL(2, \mathbb{C}) = \det^{-1}(\{1\})$. Since $\{1\}$ is a [closed set](@entry_id:136446) in $\mathbb{C}$ and the determinant map is continuous, $SL(2, \mathbb{C})$ is a [closed subset](@entry_id:155133) of $M_2(\mathbb{C})$. This has an important consequence: by the [sequential criterion](@entry_id:158961), any convergent sequence of matrices from $SL(2, \mathbb{C})$ must have its limit also in $SL(2, \mathbb{C})$. This explains why, in problem [@problem_id:1640096], the limit $B_\infty$ of the sequence $B_k \in SL(2, \mathbb{C})$ was guaranteed to be in $SL(2, \mathbb{C})$. The algebraic structure is preserved under topological limits precisely because the set is closed.
