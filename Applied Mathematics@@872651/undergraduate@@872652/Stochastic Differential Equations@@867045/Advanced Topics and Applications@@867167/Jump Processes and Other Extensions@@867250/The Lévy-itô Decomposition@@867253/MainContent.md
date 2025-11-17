@@ -1,0 +1,79 @@
+## Introduction
+Stochastic processes that exhibit sudden, unpredictable jumps are essential for modeling phenomena across science and finance, from asset price shocks to random bursts in physical systems. While Brownian motion effectively captures continuous fluctuations, it fails to account for these abrupt discontinuities. The class of Lévy processes provides a powerful and mathematically tractable framework that unifies both continuous diffusion and discontinuous jumps. However, their complex, hybrid nature presents a significant challenge: how can we rigorously analyze and work with a process that behaves so erratically?
+
+The answer lies in the celebrated Lévy-Itô decomposition, a cornerstone of modern stochastic calculus. This theorem provides a definitive structural anatomy of any Lévy process, revealing that its seemingly complicated behavior is simply the sum of three distinct, independent, and more manageable parts: a deterministic drift, a continuous Brownian motion, and a pure [jump process](@entry_id:201473). This article demystifies this fundamental result.
+
+Across the following chapters, you will gain a comprehensive understanding of this powerful decomposition. The "Principles and Mechanisms" chapter will dissect the mathematical foundations, exploring the properties of Lévy processes and the role of the Lévy-Khintchine formula before building the pathwise decomposition itself. Following this, the "Applications and Interdisciplinary Connections" chapter will demonstrate the theorem's immense practical utility in numerical simulation, the analysis of [stochastic differential equations](@entry_id:146618), and interdisciplinary modeling. Finally, the "Hands-On Practices" chapter will offer concrete problems to solidify your grasp of these concepts. We begin by exploring the core principles that make this elegant decomposition possible.
+
+## Principles and Mechanisms
+
+This chapter delves into the fundamental principles and structural mechanisms that govern Lévy processes, culminating in the celebrated Lévy-Itô decomposition. As established in the introduction, Lévy processes serve as a cornerstone for modeling phenomena that exhibit both continuous fluctuations and sudden, discontinuous jumps. Our objective here is to dissect the mathematical anatomy of these processes, revealing how their seemingly complex behavior arises from the interplay of a few distinct, independent components.
+
+### Foundations: Properties of a Lévy Process
+
+A stochastic process $(L_t)_{t \ge 0}$ defined on a filtered probability space is classified as a **Lévy process** if it satisfies a specific set of three foundational properties. These properties are not arbitrary but are precisely what is needed to ensure a rich yet tractable mathematical structure [@problem_id:3081084].
+
+1.  **Initial State**: The process starts at the origin, meaning $L_0 = 0$ [almost surely](@entry_id:262518).
+
+2.  **Stationary and Independent Increments**: For any sequence of times $0 \le t_0  t_1  \dots  t_n$, the increments $L_{t_1} - L_{t_0}, L_{t_2} - L_{t_1}, \dots, L_{t_n} - L_{t_{n-1}}$ are mutually [independent random variables](@entry_id:273896). Furthermore, the probability distribution of any increment $L_t - L_s$ for $s  t$ depends only on the time difference $t-s$, not on the specific values of $s$ or $t$. This latter property is **stationarity**, or time-homogeneity.
+
+3.  **Path Regularity**: The [sample paths](@entry_id:184367) $t \mapsto L_t(\omega)$ are [almost surely](@entry_id:262518) **càdlàg**, a French acronym for *continue à droite, limites à gauche*, meaning right-continuous with left limits. This ensures that jumps are well-defined events, occurring at specific moments in time, and that the process does not exhibit pathological oscillations.
+
+It is crucial to distinguish a Lévy process from a more general process that merely has [independent increments](@entry_id:262163). The property of stationarity is a powerful restriction; it is the source of the process's time-homogeneity, ensuring that its statistical character does not change over time. For a generic process with non-[stationary independent increments](@entry_id:635556), the distribution of an increment over an interval of length $h$ could depend on the interval's starting point. For a Lévy process, the distribution of $L_{s+h} - L_s$ is identical to that of $L_h$ for any $s \ge 0$ [@problem_id:3081084]. This time-homogeneity is what ultimately allows for a decomposition into components with time-constant parameters. The càdlàg property is also essential, as it provides the pathwise structure needed to define and count jumps, without which the decomposition would be meaningless [@problem_id:3081084].
+
+### A Distributional Blueprint: The Lévy-Khintchine Formula
+
+The property of stationary, [independent increments](@entry_id:262163) has a profound consequence for the distributional nature of a Lévy process. Let $\phi_t(u) = \mathbb{E}[\exp(iuL_t)]$ be the characteristic function of the random variable $L_t$. The independence and [stationarity](@entry_id:143776) of increments imply a fundamental relationship:
+$$ \phi_{t+s}(u) = \mathbb{E}[\exp(iu(L_{t+s}-L_s) + iuL_s)] = \mathbb{E}[\exp(iu(L_{t+s}-L_s))] \mathbb{E}[\exp(iuL_s)] = \phi_s(u)\phi_t(u) $$
+This is a Cauchy functional equation in the variable $t$. Combined with the continuity in probability (implied by the càdlàg property), its only solution is of the exponential form $\phi_t(u) = \exp(t\psi(u))$ [@problem_id:3081084]. The function $\psi(u)$ is known as the **[characteristic exponent](@entry_id:188977)**, and it completely determines the law of the Lévy process.
+
+The celebrated **Lévy-Khintchine formula** provides the [canonical representation](@entry_id:146693) of any such [characteristic exponent](@entry_id:188977). It reveals that every Lévy process is distributionally equivalent to the sum of three independent components: a linear drift, a Brownian motion, and a pure [jump process](@entry_id:201473). Specifically, for a given truncation convention, such as separating "small" jumps from "large" ones at a threshold of $|x|=1$, the [characteristic exponent](@entry_id:188977) is given by the triplet $(b, \sigma^2, \nu)$ [@problem_id:3081095]:
+$$ \psi(u) = i u b - \frac{1}{2}\sigma^{2} u^{2} + \int_{\mathbb{R}\setminus\{0\}}\!\big(e^{i u x} - 1 - i u x\,\mathbf{1}_{|x|\le 1}\big)\,\nu(dx) $$
+Each term in this formula corresponds to one of the fundamental building blocks of the process:
+*   The term $i u b$ is the contribution from a deterministic **drift** component, $bt$. Here, $b \in \mathbb{R}$ is the drift parameter.
+*   The term $-\frac{1}{2}\sigma^{2} u^{2}$ is the [characteristic exponent](@entry_id:188977) of a scaled Brownian motion, $\sigma W_t$. Here, $\sigma^2 \ge 0$ is the **Gaussian variance** parameter.
+*   The integral term captures the contribution of all **jumps**. The function $\nu$ is the **Lévy measure**, which governs the intensity and size distribution of the jumps. The term $- i u x\,\mathbf{1}_{|x|\le 1}$ inside the integral is a mathematical device for centering, or compensating, the contribution of small jumps, a crucial mechanism we will explore in detail.
+
+This formula serves as a distributional blueprint, telling us that to understand the structure of any Lévy process, we must understand drift, diffusion, and jumps.
+
+### The Anatomy of Jumps: The Lévy Measure and Activity
+
+The most distinctive feature of a general Lévy process is its jumps. The mathematical object that governs these jumps is the **Lévy measure**, $\nu$. This is a measure on $\mathbb{R}\setminus\{0\}$ that must satisfy the [integrability condition](@entry_id:160334):
+$$ \int_{\mathbb{R}\setminus\{0\}} (1 \wedge x^2)\,\nu(dx)  \infty $$
+Conceptually, the Lévy measure $\nu(A)$ for a set of jump sizes $A \subset \mathbb{R}\setminus\{0\}$ has a beautifully intuitive interpretation: it represents the expected number of jumps per unit of time whose sizes fall within the set $A$ [@problem_id:1314263]. It is a measure of jump intensity.
+
+The random arrival of jumps in time and size is formally described by a **Poisson random measure** (PRM), denoted $N(dt, dx)$, on the space-time domain $(0, \infty) \times (\mathbb{R}\setminus\{0\})$. This measure counts the jumps, where $N((0,t] \times A)$ gives the number of jumps that have occurred up to time $t$ with a size in the set $A$ [@problem_id:3081088]. The intensity of this PRM is given by $dt\,\nu(dx)$. This means that the expected number of jumps in the region $(0,t] \times A$ is precisely $\mathbb{E}[N((0,t] \times A)] = t\nu(A)$ [@problem_id:3081094].
+
+From this fundamental connection, several key properties emerge. For any set $A$ with a finite Lévy measure, $\nu(A)  \infty$, the counting process of jumps with sizes in $A$, defined as $N_t(A) = N((0,t] \times A)$, is a homogeneous **Poisson process** with rate $\lambda = \nu(A)$ [@problem_id:3081088]. This implies that $N_t(A)$ follows a Poisson distribution with parameter $t\nu(A)$, and the process has stationary and [independent increments](@entry_id:262163) itself [@problem_id:3081094, @problem_id:3081088].
+
+The [integrability condition](@entry_id:160334) on $\nu$ has a critical consequence. It can be split into two parts: $\int_{|x|\le 1} x^2\,\nu(dx)  \infty$ and $\int_{|x|>1} 1\,\nu(dx)  \infty$. The second part, $\nu(\{x : |x|>1\})  \infty$, means that the rate of "large" jumps is always finite. However, the rate of "small" jumps, $\nu(\{x : 0  |x| \le 1\})$, can be either finite or infinite. This gives rise to two classes of jump behavior [@problem_id:3081102]:
+
+*   **Finite Activity**: If the total jump rate $\nu(\mathbb{R}\setminus\{0\})  \infty$, the process has a finite number of jumps in any finite time interval. This occurs if and only if the rate of small jumps is finite. Such processes are compound Poisson processes (plus drift and diffusion).
+*   **Infinite Activity**: If $\nu(\mathbb{R}\setminus\{0\}) = \infty$, the process has infinitely many jumps in any finite time interval. Since the rate of large jumps is always finite, this is equivalent to having an infinite rate of small jumps: $\int_{|x|\le 1} \nu(dx) = \infty$. These processes, like the Variance Gamma or Normal Inverse Gaussian processes, exhibit a dense flurry of small jumps everywhere.
+
+### A Pathwise Construction: The Lévy-Itô Decomposition Theorem
+
+The Lévy-Khintchine formula provides a blueprint for the law of a Lévy process. The **Lévy-Itô decomposition theorem** provides the corresponding pathwise construction, showing how any Lévy process can be written as a sum of its elementary components. It is the central result in the structural theory of these processes.
+
+The theorem states that any Lévy process $L_t$ with [characteristic triplet](@entry_id:635937) $(b, \sigma^2, \nu)$ (relative to the truncation at $|x|=1$) can be written as the sum of four independent processes [@problem_id:3081122]:
+$$ L_t = bt + \sigma W_t + \int_0^t\int_{|x|>1} x\,N(ds,dx) + \int_0^t\int_{|x|\le 1} x\,\tilde N(ds,dx) $$
+Let us analyze each of these four terms:
+
+1.  $bt$: This is the deterministic **linear drift** component.
+2.  $\sigma W_t$: This is the **continuous Gaussian component**, where $W_t$ is a standard Brownian motion. This part captures the "diffusion" aspect of the process.
+3.  $\int_0^t\int_{|x|>1} x\,N(ds,dx)$: This is the **large jump component**. As we saw, the rate of jumps with size $|x|>1$ is finite. This means that in any finite time interval $[0,t]$, there are only finitely many such jumps. This integral is therefore a finite sum of the sizes of these large jumps. This process is a **compound Poisson process** and does not require any modification to be well-defined [@problem_id:3081109].
+4.  $\int_0^t\int_{|x|\le 1} x\,\tilde N(ds,dx)$: This is the **compensated small jump component**. This is the most subtle and ingenious part of the decomposition. For infinite activity processes, the sum of all small jumps is not convergent. The key is to "compensate" the jump measure.
+
+The **compensated Poisson random measure** is defined as $\tilde{N}(dt, dx) = N(dt, dx) - dt\,\nu(dx)$. Here, $dt\,\nu(dx)$ is the **compensator**, which is the predictable part (or the expected value) of the random measure $N(dt, dx)$. By subtracting this deterministic compensator, we create a centered random measure. A fundamental result of [stochastic calculus](@entry_id:143864) is that integrals with respect to this compensated measure are **[martingales](@entry_id:267779)** [@problem_id:3081094]. Under appropriate conditions, for a [predictable process](@entry_id:274260) $H(t,x)$, the [stochastic integral](@entry_id:195087) $I_t = \int_0^t\int H(s,x)\,\tilde{N}(ds,dx)$ is a martingale and thus has zero expectation, $\mathbb{E}[I_t]=0$ [@problem_id:3081114]. This is because the compensation term, by its very nature as the [conditional expectation](@entry_id:159140) of the jump measure, cancels out the mean of the jumps in expectation.
+
+The [integrability condition](@entry_id:160334) $\int_{|x|\le 1} x^2\,\nu(dx)  \infty$ ensures that the integral of small jumps, when compensated, forms a well-defined square-integrable martingale [@problem_id:3081109]. This process captures the aggregate effect of the potentially infinite number of small fluctuations.
+
+It is important to note that the choice of $1$ as the boundary for "small" and "large" jumps is a convention, not a physical constant. Any threshold $r>0$ could be used. Changing the threshold from $1$ to $r$ does not change the law of the process $L_t$; it merely reallocates terms within the decomposition. Specifically, it changes the value of the drift parameter $b$ by a deterministic amount, but leaves the Gaussian and jump components distributionally unchanged [@problem_id:3081109].
+
+### The Principle of Independence
+
+A final, crucial principle of the Lévy-Itô decomposition is the **independence of its components**. The theorem does not just state that a Lévy process is the sum of four types of processes; it states that the underlying random drivers are mutually independent [@problem_id:3081121]. That is, the Brownian motion $W_t$, the Poisson random measure $N$ governing large jumps, and the Poisson random measure governing small jumps can be constructed as independent random elements.
+
+This has powerful consequences. It means the continuous part of the process, $X^c_t = \sigma W_t$, and the pure jump part of the process, $X^d_t$, are independent processes. A direct implication from [stochastic calculus](@entry_id:143864) is that their [quadratic covariation](@entry_id:180155) is zero: $[X^c, X^d]_t = 0$ for all $t \ge 0$. This orthogonality is fundamental and holds for any stochastic integrals driven by $W$ and $\tilde{N}$, respectively [@problem_id:3081121].
+
+A common misconception is that the "cloud" of infinitely many small jumps might somehow converge to or "contain" the Brownian motion component, perhaps via a Central Limit Theorem-type argument. The Lévy-Itô decomposition and the Lévy-Khintchine formula show this to be false. The Gaussian variance $\sigma^2$ and the Lévy measure $\nu$ are distinct, independent parameters. A process can have a Brownian component ($\sigma > 0$) and no jumps ($\nu \equiv 0$), or it can have infinite jump activity and no Brownian component ($\sigma=0$). The decomposition tells us that these two sources of randomness are fundamentally separate and additive [@problem_id:3081121]. Understanding this principle of independence is key to correctly applying and interpreting models based on Lévy processes.

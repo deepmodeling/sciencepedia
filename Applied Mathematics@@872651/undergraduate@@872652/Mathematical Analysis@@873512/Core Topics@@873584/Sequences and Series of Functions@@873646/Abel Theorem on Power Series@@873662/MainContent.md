@@ -1,0 +1,68 @@
+## Introduction
+In [mathematical analysis](@entry_id:139664), power series provide a powerful way to represent functions as infinite polynomials, offering deep insights into their analytic properties such as [continuity and differentiability](@entry_id:160718) within their [interval of convergence](@entry_id:146678). A fundamental question, however, remains open: how does a function behave at the very boundary of this interval? Does the smooth behavior of the function inside the interval extend to its endpoints? This knowledge gap is critical, as the behavior at these boundaries often corresponds to important physical limits or special numerical values.
+
+This article delves into the Abel Theorem on Power Series, a cornerstone result that elegantly bridges this gap. It provides a rigorous connection between the [limit of a function](@entry_id:144788) as it approaches an endpoint and the sum of the series at that same point. We will see that this connection is not a given but is conditional upon the convergence of the series at the endpoint.
+
+Across the following chapters, you will gain a comprehensive understanding of this vital theorem. The "Principles and Mechanisms" chapter will lay the theoretical groundwork, presenting the formal statement of Abel's theorem, its implications, and the crucial distinction between the theorem and its converse. In "Applications and Interdisciplinary Connections," we will explore the theorem's remarkable utility in summing famous series, evaluating [definite integrals](@entry_id:147612), and solving problems in fields ranging from differential equations to Fourier analysis. Finally, "Hands-On Practices" will provide you with the opportunity to apply these concepts to concrete problems, solidifying your grasp of this elegant and powerful tool.
+
+## Principles and Mechanisms
+
+In the study of [power series](@entry_id:146836), we have established that a series $f(x) = \sum_{n=0}^{\infty} a_n (x-c)^n$ defines a function that is continuous and infinitely differentiable within its open [interval of convergence](@entry_id:146678) $(c-R, c+R)$. A profound question naturally arises: what is the relationship between the function $f(x)$ and the series at the very boundaries of this interval, $x = c \pm R$? Does the continuous behavior of $f(x)$ extend to these endpoints? The answer is provided by a foundational result in analysis known as **Abel's Theorem**.
+
+### Statement and Meaning of Abel's Theorem
+
+Abel's theorem for power series creates a powerful link between the limiting value of the function defined by the series and the sum of the series at an endpoint, provided the series converges there.
+
+**Theorem (Abel's Theorem):** Let $f(x) = \sum_{n=0}^{\infty} a_n x^n$ be a [power series](@entry_id:146836) with a finite, non-zero radius of convergence $R$.
+1.  If the series converges at the right endpoint $x=R$, i.e., the numerical series $\sum_{n=0}^{\infty} a_n R^n$ converges to a finite sum $S$, then the limit of $f(x)$ as $x$ approaches $R$ from the left exists and is equal to $S$. Formally,
+    $$ \lim_{x \to R^-} f(x) = \sum_{n=0}^{\infty} a_n R^n = S $$
+2.  If the series converges at the left endpoint $x=-R$, i.e., the numerical series $\sum_{n=0}^{\infty} a_n (-R)^n$ converges to a finite sum $T$, then the limit of $f(x)$ as $x$ approaches $-R$ from the right exists and is equal to $T$. Formally,
+    $$ \lim_{x \to -R^+} f(x) = \sum_{n=0}^{\infty} a_n (-R)^n = T $$
+
+In essence, the theorem states that if a power series converges at an endpoint, the function it represents is continuous from within the interval up to that endpoint [@problem_id:1280343]. This guarantee of continuity is not automatic; it is a special property that holds only when the endpoint series converges. Consequently, if a series converges at one endpoint but diverges at the other, continuity is only guaranteed up to the convergent endpoint [@problem_id:1280369]. For example, if a series with $R=1$ converges at $x=1$ but diverges at $x=-1$, the function $f(x)$ is guaranteed to be continuous on the interval $(-1, 1]$.
+
+### Primary Application: The Summation of Numerical Series
+
+One of the most elegant applications of Abel's theorem is in determining the sum of a convergent numerical series. The strategy is as follows: given a numerical series $\sum a_n$, we can construct its associated [power series](@entry_id:146836) $f(x) = \sum a_n x^n$. If we can identify a familiar elementary function that this power series represents (its "closed-form"), and if the original numerical series converges, then its sum is simply the limit of the elementary function as $x$ approaches $1$.
+
+Let's consider the [alternating harmonic series](@entry_id:140965), $S = \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n}$. This series is known to converge by the Alternating Series Test. To find its sum, we examine the associated power series:
+$$ f(x) = \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} x^n $$
+For $|x|  1$, this is the well-known Maclaurin series for $f(x) = \ln(1+x)$. Since the numerical series at $x=1$ converges, Abel's theorem applies. Therefore, the sum of the series is equal to the limit of the function as $x$ approaches $1$ from below:
+$$ S = \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} = \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} \ln(1+x) = \ln(2) $$
+This method allows us to find the exact [sum of a series](@entry_id:260729) that would otherwise be difficult to evaluate directly.
+
+This technique is widely applicable. In physics, for instance, a material's response to a field can sometimes be modeled by a power series. Consider a scenario where a crystal's susceptibility is given by $\chi_{\text{Re}}(z) = \sum_{k=0}^{\infty} \frac{(-1)^{k}}{2k+1} z^{2k+1}$ for a [normalized frequency](@entry_id:273411) $z$ with $|z|1$ [@problem_id:1280365]. To find the limiting susceptibility as $z \to 1^-$, we can first identify the closed-form function. By integrating the geometric series for $\frac{1}{1+t^2}$, we find that $\chi_{\text{Re}}(z) = \arctan(z)$. The numerical series at $z=1$, $\sum_{k=0}^{\infty} \frac{(-1)^{k}}{2k+1}$, converges by the Alternating Series Test. Thus, by Abel's theorem:
+$$ \lim_{z \to 1^{-}} \chi_{\text{Re}}(z) = \lim_{z \to 1^{-}} \arctan(z) = \arctan(1) = \frac{\pi}{4} $$
+In this way, Abel's theorem provides the value of the famous Leibniz formula for $\pi$.
+
+The principle can also be used in reverse. If we know a function and that its Maclaurin series converges at an endpoint, we can find the sum of the series without explicitly calculating the coefficients. For a function like $f(x) = \sqrt{4+2x}$, whose Maclaurin series has a [radius of convergence](@entry_id:143138) $R=2$ and is known to converge at $x=2$, Abel's theorem directly implies that the sum of the series at that point, $\sum_{n=0}^{\infty} c_n 2^n$, is simply $f(2) = \sqrt{4+2(2)} = \sqrt{8} = 2\sqrt{2}$ [@problem_id:1280367].
+
+### The Indispensable Hypothesis: Endpoint Convergence
+
+Abel's theorem is a [conditional statement](@entry_id:261295): *if* the series converges at an endpoint, *then* the function is continuous up to that endpoint. The verification of this hypothesis is a critical and non-negotiable step. Without it, any conclusion is unfounded.
+
+To verify the hypothesis, one must employ convergence tests for numerical series. For series that converge conditionally, the **Alternating Series Test (AST)** is the most common tool. For example, for the series $f(x) = \sum_{n=1}^{\infty} \frac{(-1)^n x^n}{n^{1/3}}$, to determine the value $f(1)$, we must first examine the numerical series $\sum_{n=1}^{\infty} \frac{(-1)^n}{n^{1/3}}$ [@problem_id:2287268]. The AST confirms that this series converges. Only after establishing this convergence can we legitimately invoke Abel's theorem to conclude that $f(x)$ is continuous at $x=1$ and that $f(1) = \sum_{n=1}^{\infty} \frac{(-1)^n}{n^{1/3}}$. The same logic applies to series like $\sum_{n=1}^\infty \frac{(-1)^{n-1}x^n}{\sqrt{n}}$ at $x=1$ [@problem_id:2293220].
+
+In other cases, the series may converge absolutely at an endpoint. For instance, the series for $f(x) = \sum_{n=1}^{\infty} \frac{x^n}{n^2}$ converges absolutely at both $x=1$ and $x=-1$ because the corresponding numerical series $\sum \frac{1}{n^2}$ is a convergent [p-series](@entry_id:139707). In such a case, Abel's theorem guarantees continuity on the entire closed interval $[-1,1]$ [@problem_id:1280378]. Similarly, for $f(x) = \sum_{n=1}^\infty \frac{x^n}{n(n+1)}$, the series converges absolutely at both endpoints, so the function is continuous on $[-1,1]$ [@problem_id:2287316].
+
+What happens if the hypothesis of endpoint convergence is not met? The theorem's conclusion is not guaranteed, and indeed, may fail. Consider the [power series](@entry_id:146836) for $S(x) = -\ln(1-x)$, which is $\sum_{n=1}^{\infty} \frac{x^n}{n}$ for $|x|1$ [@problem_id:1280383]. At the endpoint $x=1$, the series becomes the [harmonic series](@entry_id:147787) $\sum_{n=1}^{\infty} \frac{1}{n}$, which famously diverges. Since the hypothesis of Abel's theorem is not met, we cannot apply it [@problem_id:2287283]. In this case, we see that the function's limit, $\lim_{x \to 1^-} (-\ln(1-x))$, diverges to $+\infty$, which is consistent with the divergence of the series.
+
+A more subtle example is the geometric series $f(x) = \sum_{n=0}^{\infty} (-x)^n = \frac{1}{1+x}$ for $|x|1$ [@problem_id:1280358]. The radius of convergence is $R=1$. At the endpoint $x=1$, the series becomes $\sum_{n=0}^{\infty} (-1)^n = 1-1+1-\dots$, which diverges. Here, the limit of the function exists: $\lim_{x \to 1^-} \frac{1}{1+x} = \frac{1}{2}$. However, the series itself has no sum. This demonstrates that if the endpoint series diverges, the function's limit may exist but it does not correspond to a sum, highlighting why the convergence hypothesis is essential.
+
+### The Converse and Tauberian Theorems
+
+The last example naturally leads to a question about the converse of Abel's theorem: If the limit $\lim_{x \to R^-} f(x)$ exists, must the series $\sum a_n R^n$ converge to this limit? The answer is a definitive **no**.
+
+The geometric series $f(x) = \sum_{n=0}^{\infty} x^n = \frac{1}{1-x}$ at the endpoint $x=-1$ provides a canonical counterexample [@problem_id:229291]. The [radius of convergence](@entry_id:143138) is $R=1$. The limit of the function as $x$ approaches $-1$ from within the interval exists:
+$$ \lim_{x \to -1^+} f(x) = \lim_{x \to -1^+} \frac{1}{1-x} = \frac{1}{1-(-1)} = \frac{1}{2} $$
+However, the series evaluated at $x=-1$ is $\sum_{n=0}^{\infty} (-1)^n$, which diverges. This example unequivocally shows that the existence of the function's limit at an endpoint does not imply the convergence of the series at that point.
+
+This observation gives rise to the concept of **Abel summability**. A series $\sum a_n$ is said to be Abel summable to a value $S$ if its associated power series $f(x) = \sum a_n x^n$ (assuming $R=1$) converges for $|x|1$ and $\lim_{x \to 1^-} f(x) = S$. This provides a method for assigning a meaningful value to some [divergent series](@entry_id:158951). For instance, based on our previous analysis, the [divergent series](@entry_id:158951) $\sum (-1)^n$ is Abel summable to $\frac{1}{2}$ [@problem_id:2287286]. Similarly, one can show that the [divergent series](@entry_id:158951) $\sum_{n=0}^\infty (-1)^n(n+1)$ is Abel summable to $\frac{1}{4}$ by finding that its associated [power series](@entry_id:146836) is $\mathcal{R}(x) = \frac{1}{(1+x)^2}$, whose limit at $x=1^-$ is $\frac{1}{4}$ [@problem_id:2287288]. Sophisticated constructions can also yield series that are Abel summable but divergent, such as the series $1 - x + x^4 - x^9 + \dots$, which can be shown to have an Abel sum of $\frac{1}{2}$ [@problem_id:2287270].
+
+While the full converse of Abel's theorem is false, a class of "almost-converse" results known as **Tauberian theorems** exist. These theorems state that if a series is Abel summable, then the addition of a certain "smallness" condition on its coefficients is sufficient to guarantee that the series converges in the ordinary sense. The first such result, due to Alfred Tauber, is as follows:
+
+**Theorem (Tauber's Theorem):** If the series $\sum_{n=0}^{\infty} a_n$ is Abel summable to $S$, and if the coefficients satisfy the condition $\lim_{n \to \infty} (n a_n) = 0$, then the series $\sum_{n=0}^{\infty} a_n$ converges to $S$.
+
+The condition $na_n \to 0$ is what distinguishes series that must converge from those that might not. For our counterexample series $\sum (-1)^n$, the coefficients are $a_n = (-1)^n$. Here, $na_n = n(-1)^n$, which does not approach zero. Thus, it fails the Tauberian condition, which is consistent with its divergence. In contrast, a sequence like $a_n = \frac{(-1)^n}{n (\ln n)^2}$ for $n \ge 2$ does satisfy the Tauberian condition, as $na_n = \frac{(-1)^n}{(\ln n)^2} \to 0$. Therefore, if the series $\sum a_n$ were known to be Abel summable, we could immediately conclude that it also converges in the usual sense [@problem_id:2287322].
+
+These ideas extend beyond [power series](@entry_id:146836), finding analogues in other areas of analysis, such as the convergence of Fourier series. Abel's theorem and its Tauberian counterparts form a deep and interconnected part of the theory of series, providing a sophisticated toolkit for relating the continuous and the discrete [@problem_id:2294627].
