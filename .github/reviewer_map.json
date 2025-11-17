@@ -1,0 +1,24 @@
+{
+  "defaults": {
+    "labels": ["status:in-review"]
+  },
+  "sizeLabels": [
+    { "label": "size:XS", "max": 9 },
+    { "label": "size:S",  "max": 49 },
+    { "label": "size:M",  "max": 199 },
+    { "label": "size:L",  "max": 999 },
+    { "label": "size:XL", "max": 999999 }
+  ],
+  "rules": [
+    {
+      "pattern": ".github/*",
+      "labels": ["github_workflow"]
+    }
+  ],
+  "fieldMap": {
+  },
+  "fieldDefaults": {
+    "users": ["huangy22"],
+    "teams": ["editorial-board"]
+  }
+}
