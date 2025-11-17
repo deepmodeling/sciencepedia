@@ -1,0 +1,74 @@
+## Introduction
+In the study of topology, functions or "maps" are the bridges that connect different [topological spaces](@entry_id:155056), allowing us to compare their structures. While continuity is the most fundamental property—preserving the "nearness" of points—other classifications of maps reveal equally important structural information. This article focuses on **closed maps**, a class of functions defined by their ability to preserve the property of closedness. Understanding closed maps addresses a key gap beyond continuity, explaining how certain topological features are transferred from one space to another.
+
+This article is structured to build your expertise systematically. In the first chapter, **Principles and Mechanisms**, you will learn the formal definition of a [closed map](@entry_id:150357), see how it differs from continuous and open maps through concrete examples, and explore its fundamental properties, especially in relation to compactness. The second chapter, **Applications and Interdisciplinary Connections**, demonstrates the utility of closed maps in action, showing how the concept is applied in quotient constructions and in related mathematical fields like functional analysis and algebraic topology. Finally, the **Hands-On Practices** section provides carefully selected problems to help you solidify your knowledge and test your understanding of this essential topological tool.
+
+## Principles and Mechanisms
+
+In our study of [topological spaces](@entry_id:155056), maps are the essential tools for comparing and relating different structures. While continuity, which preserves the "nearness" of points, is perhaps the most fundamental property of a map, other classifications reveal different and equally important aspects of a function's behavior. In this chapter, we investigate the properties and mechanisms of **closed maps**, a class of functions that preserve the topological property of closedness.
+
+### The Definition and Its Distinctions
+
+A map $f: X \to Y$ between two topological spaces $(X, \tau_X)$ and $(Y, \tau_Y)$ is defined as a **[closed map](@entry_id:150357)** if for every closed set $C$ in the domain $X$, its image $f(C)$ is a closed set in the [codomain](@entry_id:139336) $Y$.
+
+This definition, while simple, carries significant implications. It is crucial to immediately distinguish it from two related concepts: [continuous maps](@entry_id:153855) and open maps.
+
+- A map $f: X \to Y$ is **continuous** if for every open set $V \subseteq Y$, the [preimage](@entry_id:150899) $f^{-1}(V)$ is open in $X$.
+- A map $f: X \to Y$ is an **[open map](@entry_id:155659)** if for every open set $U \subseteq X$, the image $f(U)$ is open in $Y$.
+
+A common misconception is to assume these properties are interdependent. However, a map can be open, closed, both, or neither. Furthermore, a map can be continuous without being open or closed, and vice versa. To build a robust understanding, we must explore these distinctions through concrete examples.
+
+Consider the function $f: \mathbb{R} \to \mathbb{R}$ defined by $f(x) = x^2$. This map is continuous. To see if it is open, consider the [open interval](@entry_id:144029) $U = (-1, 1)$ in the domain. Its image is $f(U) = [0, 1)$, which is not an open set in $\mathbb{R}$ because it contains the endpoint $0$ but no [open interval](@entry_id:144029) around it. Therefore, $f(x) = x^2$ is not an [open map](@entry_id:155659). However, as we will demonstrate later, this function is a [closed map](@entry_id:150357), providing an example of a map that is closed but not open [@problem_id:1536879].
+
+Conversely, consider the function $h: \mathbb{R}^2 \to \mathbb{R}$ defined by the projection $h(x, y) = x$. This map is open (a fact we accept for now, as its proof relies on the basis for the product topology). Is it a [closed map](@entry_id:150357)? Let's examine the image of a [closed set](@entry_id:136446). The hyperbola defined by $C = \{(x, y) \in \mathbb{R}^2 \mid xy = 1\}$ is a closed set in $\mathbb{R}^2$. Its image under $h$ is the set of all possible first coordinates, which is $h(C) = (-\infty, 0) \cup (0, \infty)$. This set, $\mathbb{R} \setminus \{0\}$, is not closed in $\mathbb{R}$. Thus, the projection $h(x,y) = x$ is an example of a map that is open but not closed. A more complex function like $f(x, y) = \exp(x) \cos(y)$ from $\mathbb{R}^2$ to $\mathbb{R}$ provides another such example [@problem_id:1536838].
+
+The relationship between continuity and closedness is similarly subtle. The inclusion map $i: A \to X$ for a subspace $A \subseteq X$ is always continuous. However, it is a [closed map](@entry_id:150357) if and only if the subspace $A$ is itself a closed subset of $X$. To prove this, note that $A$ is always a closed set in its own subspace topology. If the inclusion $i$ is a [closed map](@entry_id:150357), then its image, $i(A) = A$, must be a closed set in $X$. Conversely, if $A$ is a closed set in $X$, and $C$ is any closed set in $A$, then by definition of the subspace topology, $C = A \cap F$ for some closed set $F$ in $X$. The image $i(C) = C$ is the intersection of two [closed sets](@entry_id:137168) in $X$ and is therefore closed in $X$. This shows that the inclusion of a non-[closed subspace](@entry_id:267213), such as $A = (0, 1)$ into $\mathbb{R}$, provides a simple example of a map that is continuous but not closed [@problem_id:1536819].
+
+Finally, a map need not be continuous to be closed. Consider the [floor function](@entry_id:265373) $f: \mathbb{R} \to \mathbb{Z}$ given by $f(x) = \lfloor x \rfloor$, where $\mathbb{R}$ has its usual topology and $\mathbb{Z}$ has the discrete topology. This map is not continuous; the [preimage](@entry_id:150899) of the open set $\{1\} \subseteq \mathbb{Z}$ is $f^{-1}(\{1\}) = [1, 2)$, which is not open in $\mathbb{R}$. However, this map is closed. In the [discrete topology](@entry_id:152622) on $\mathbb{Z}$, *every* subset is closed. Thus, for any closed set $C \subseteq \mathbb{R}$, the image $f(C)$ is a subset of $\mathbb{Z}$ and is therefore automatically closed in $\mathbb{Z}$. This demonstrates a map that is closed but not continuous [@problem_id:1536861].
+
+### Fundamental Properties and Algebraic Closure
+
+The property of being a [closed map](@entry_id:150357) can be characterized by its interaction with the underlying topologies and with map composition.
+
+A foundational question arises when considering the identity map on a set with two different topologies. Let $X$ be a set, and let $\tau_1$ and $\tau_2$ be two topologies on $X$. Consider the identity map $id: (X, \tau_1) \to (X, \tau_2)$. The condition that this map is closed means that for any set $C$ that is closed in $(X, \tau_1)$, its image $id(C) = C$ must be closed in $(X, \tau_2)$. This implies that the collection of $\tau_1$-[closed sets](@entry_id:137168) is a subset of the collection of $\tau_2$-[closed sets](@entry_id:137168). By taking complements, this is equivalent to stating that for any open set $U \in \tau_1$, its complement $X \setminus U$ is $\tau_1$-closed, hence $\tau_2$-closed, which means its complement $U$ must be in $\tau_2$. Therefore, the identity map is closed if and only if $\tau_1 \subseteq \tau_2$, meaning the [codomain](@entry_id:139336) topology $\tau_2$ is finer than the domain topology $\tau_1$ [@problem_id:1536872]. This provides a beautiful parallel to the condition for continuity of the identity map, which is $\tau_2 \subseteq \tau_1$.
+
+The nature of the [codomain](@entry_id:139336) topology can have a decisive effect. As we saw with the [floor function](@entry_id:265373), certain topologies force maps to be closed. In general, for any function $f: X \to Y$, if the [codomain](@entry_id:139336) $Y$ is equipped with the **discrete topology**, then $f$ is a [closed map](@entry_id:150357). This is because every subset of $Y$ is closed in the [discrete topology](@entry_id:152622), so for any [closed set](@entry_id:136446) $C \subseteq X$, its image $f(C)$ is guaranteed to be a [closed set](@entry_id:136446) in $Y$ [@problem_id:1536859]. Conversely, if the [codomain](@entry_id:139336) $Y$ has the **[indiscrete topology](@entry_id:149604)**, its only [closed sets](@entry_id:137168) are $\emptyset$ and $Y$. For a map $f$ to be closed, the image of any closed set in $X$ must be either $\emptyset$ or $Y$, a very restrictive condition [@problem_id:1536878].
+
+The property of being a [closed map](@entry_id:150357) is also well-behaved under composition.
+
+**Theorem:** If $f: X \to Y$ and $g: Y \to Z$ are both closed maps, then their composition $g \circ f: X \to Z$ is also a [closed map](@entry_id:150357).
+
+**Proof:** Let $C$ be an arbitrary [closed set](@entry_id:136446) in $X$. Since $f$ is a [closed map](@entry_id:150357), its image $f(C)$ is a [closed set](@entry_id:136446) in $Y$. Now, since $g$ is a [closed map](@entry_id:150357) and $f(C)$ is a [closed set](@entry_id:136446) in its domain, the image $g(f(C))$ must be a closed set in $Z$. By definition, $g(f(C)) = (g \circ f)(C)$, so we have shown that the composition maps any [closed set](@entry_id:136446) in $X$ to a [closed set](@entry_id:136446) in $Z$. $\blacksquare$
+
+Exploring compositions can also serve to test our understanding. For example, while the map $f(x)=x^2$ is closed and $p(x)=x^3$ is a [homeomorphism](@entry_id:146933) (and thus closed), their composition $(f \circ p)(x) = x^6$ is also a [closed map](@entry_id:150357). However, the composition of a [closed map](@entry_id:150357) with a map that is not closed may or may not be closed, requiring case-by-case analysis [@problem_id:1536853].
+
+### The Critical Role of Compactness
+
+The most profound and useful results concerning closed maps arise from the interplay with compactness. Compactness in the domain is a powerful condition that often forces a continuous map to be closed.
+
+**Theorem:** If $f: X \to Y$ is a [continuous map](@entry_id:153772) from a compact space $X$ to a Hausdorff space $Y$, then $f$ is a [closed map](@entry_id:150357).
+
+**Proof:** Let $C$ be any [closed subset](@entry_id:155133) of $X$. Since $X$ is a [compact space](@entry_id:149800), a closed subset of a [compact space](@entry_id:149800) is also compact. Thus, $C$ is compact. Because $f$ is a continuous function, the image of a compact set is compact. Therefore, $f(C)$ is a compact subset of $Y$. Finally, in a Hausdorff space, every compact subset is closed. Since $Y$ is Hausdorff, $f(C)$ must be a closed set in $Y$. This completes the proof. $\blacksquare$
+
+This theorem is immensely practical. For example, any continuous function defined on a [closed and bounded interval](@entry_id:136474) of $\mathbb{R}$, such as $f: [0, 1] \to \mathbb{R}$ given by $f(x) = x^3 - x$, is a [closed map](@entry_id:150357) because $[0, 1]$ is compact and $\mathbb{R}$ is Hausdorff [@problem_id:1536878]. This principle also applies to more complex constructions, like the map $h \circ k: [0, 1] \to \mathbb{R}$ where $k(t) = (\cos t, \sin t)$ and $h$ is a projection. The composite map is continuous from a compact space to a Hausdorff space, and is therefore closed [@problem_id:1536853].
+
+Another key result involves projection maps. In general, projection maps are open but not necessarily closed. However, compactness again provides a crucial guarantee.
+
+**Theorem (The Tube Lemma Consequence):** If $X$ is a compact space, then for any [topological space](@entry_id:149165) $Y$, the projection map $p_Y: X \times Y \to Y$ defined by $p_Y(x, y) = y$ is a [closed map](@entry_id:150357).
+
+The proof of this theorem is a classic application of the Tube Lemma. It establishes that if $C$ is a [closed set](@entry_id:136446) in $X \times Y$ and $y_0 \notin p_Y(C)$, then there exists an [open neighborhood](@entry_id:268496) $V$ of $y_0$ such that the "tube" $X \times V$ is disjoint from $C$, implying that $V$ is disjoint from $p_Y(C)$. This shows the complement of $p_Y(C)$ is open, hence $p_Y(C)$ is closed.
+
+We can see this theorem in action with a concrete example. Let $X = [0, 1]$ and $Y = \mathbb{R}$. Consider the set $C = \{ (x, y) \in [0, 1] \times \mathbb{R} \mid xy^3 = \exp(x) \}$. This set is the [preimage](@entry_id:150899) of $\{0\}$ under the continuous function $g(x, y) = xy^3 - \exp(x)$, so $C$ is a closed set in $[0, 1] \times \mathbb{R}$. Since $X = [0, 1]$ is compact, the theorem guarantees that its projection $p_Y(C)$ must be a [closed set](@entry_id:136446) in $\mathbb{R}$. A direct calculation shows that $p_Y(C) = [\sqrt[3]{e}, \infty)$, which is indeed a closed set, confirming the theorem's conclusion [@problem_id:1536817].
+
+### An Alternative Characterization
+
+Beyond the standard definition, there exists an alternative and powerful characterization of closed maps that relates them to neighborhoods and preimages. This formulation is often useful in proofs.
+
+A map $f: X \to Y$ is closed if and only if for any subset $S \subseteq Y$ and any open set $U \subseteq X$ such that $f^{-1}(S) \subseteq U$, there exists an open set $V \subseteq Y$ containing $S$ such that $f^{-1}(V) \subseteq U$.
+
+This condition can be understood intuitively: if the [preimage](@entry_id:150899) of a set $S$ is contained within an open "sleeve" $U$, we can always find an [open neighborhood](@entry_id:268496) $V$ of $S$ whose own [preimage](@entry_id:150899) remains within that same sleeve. A map fails to be closed if there is some set $S$ whose preimage lies in an open set $U$, but any attempt to "thicken" $S$ to an open set $V$ causes the [preimage](@entry_id:150899) $f^{-1}(V)$ to "spill out" of $U$.
+
+To illustrate, consider the function $f: \mathbb{R} \to Y = \{p, q, r\}$ from an earlier example, where $f(x)$ is $p$ for $x  0$, $q$ for $x = 0$, and $r$ for $x > 0$. The topology on $Y$ is $\mathcal{T}_Y = \{\emptyset, \{p\}, \{p,q\}, Y\}$. Let's test the condition with $S = \{q\}$ and the open set $U = (-1, 1)$ in $\mathbb{R}$. The preimage is $f^{-1}(S) = \{0\}$, which is indeed contained in $U$. Now we must find an open set $V$ in $Y$ with $S \subseteq V$ such that $f^{-1}(V) \subseteq U$. The open sets in $Y$ containing $S = \{q\}$ are $V_1 = \{p,q\}$ and $V_2 = Y$. Let's check their preimages:
+- $f^{-1}(V_1) = f^{-1}(\{p,q\}) = (-\infty, 0]$. This is not a subset of $U = (-1, 1)$.
+- $f^{-1}(V_2) = f^{-1}(Y) = \mathbb{R}$. This is not a subset of $U = (-1, 1)$.
+Since we cannot find any such open set $V$, the condition fails for the pair $(S, U)$. This provides a rigorous demonstration, using the alternative characterization, that the map $f$ is not closed [@problem_id:1536821]. This characterization, though more abstract, provides a deeper insight into the mechanics of how closed maps relate sets and their surrounding neighborhoods across the domain and [codomain](@entry_id:139336).

@@ -1,0 +1,90 @@
+## Introduction
+In Riemannian geometry, geodesics generalize the notion of straight lines. While the geodesic equation defines them locally, it does not tell us whether a geodesic segment is truly the shortest path between its endpoints. This gap between local definition and global property is a central question in geometry. To answer it, we turn to the powerful tools of the calculus of variations, which allow us to analyze how the length of a curve changes when it is deformed. This article provides a comprehensive exploration of this variational theory.
+
+In the chapters that follow, you will learn to bridge the gap between local curvature and the global behavior of geodesics. The first chapter, **Principles and Mechanisms**, develops the foundational machinery, deriving the first and second variation formulas for arc length. This will lead to the critical concepts of the [index form](@entry_id:183467), the Jacobi equation, and [conjugate points](@entry_id:160335). The second chapter, **Applications and Interdisciplinary Connections**, showcases the power of this theory, using it to analyze [geodesic stability](@entry_id:201863) on the sphere, prove celebrated global results like the Bonnet-Myers and Synge's theorems, and draw connections to physics and general relativity. Finally, **Hands-On Practices** will guide you through concrete calculations that solidify these abstract concepts, allowing you to compute Jacobi fields and analyze conjugate points in fundamental settings.
+
+## Principles and Mechanisms
+
+In the study of Riemannian geometry, geodesics stand out as the analogues of straight lines in Euclidean space. While the geodesic equation, $\nabla_{\dot{\gamma}}\dot{\gamma} = 0$, provides a local definition, a deeper understanding of their global properties requires the tools of calculus of variations. This chapter explores the principles that govern the length-minimizing properties of geodesics by examining the first and second variations of the arc [length functional](@entry_id:203503). This analysis will lead us to the fundamental concepts of the [index form](@entry_id:183467), Jacobi fields, and conjugate points, which collectively provide a powerful mechanism for connecting the local curvature of a manifold to the global behavior of its geodesics.
+
+### Variational Principles and the Geodesic Equation
+
+The foundational idea is to study a given curve by comparing it to a family of "nearby" curves. Let $(M,g)$ be a Riemannian manifold and $\gamma: [0, \ell] \to M$ be a smooth curve. A **smooth variation** of $\gamma$ is a [smooth map](@entry_id:160364) $\alpha: (-\epsilon, \epsilon) \times [0, \ell] \to M$ such that $\alpha(0, t) = \gamma(t)$ for all $t \in [0, \ell]$. For each $s \in (-\epsilon, \epsilon)$, the map $t \mapsto \alpha(s,t)$ is a curve, which we denote by $\gamma_s(t)$. The parameter $s$ tracks the deformation of the curve, while $t$ parametrizes the curve itself.
+
+The infinitesimal deformation of the variation at $s=0$ is captured by the **variation vector field** along $\gamma$, defined as:
+$V(t) = \frac{\partial \alpha}{\partial s}(0, t) \in T_{\gamma(t)}M$
+This vector field describes the direction and magnitude of the initial "velocity" of each point on the curve $\gamma(t)$ as it is being deformed.
+
+A particularly important class of variations are those that keep the endpoints of the curve fixed. If $\gamma(0)=p$ and $\gamma(\ell)=q$, a variation $\alpha$ is said to have **fixed endpoints** if $\alpha(s, 0) = p$ and $\alpha(s, \ell) = q$ for all $s \in (-\epsilon, \epsilon)$. This constraint imposes specific conditions on the variation field $V$. Since $\alpha(s,0)$ is a constant map to the point $p$, its derivative with respect to $s$ must be the zero vector in $T_pM$. A similar argument applies at the other endpoint. Therefore, for any fixed-endpoint variation, the variation field must vanish at the endpoints [@problem_id:3064594]:
+$V(0) = 0 \quad \text{and} \quad V(\ell) = 0$
+
+With this framework, we can investigate how the length of the curve $\gamma_s$ changes as a function of $s$. The **arc [length functional](@entry_id:203503)** is given by $L(s) = L(\gamma_s) = \int_0^\ell \|\dot{\gamma}_s(t)\| dt$. A geodesic is characterized as a critical point of this functional. That is, a curve $\gamma$ is a geodesic if the [first variation of arc length](@entry_id:272271) vanishes for all fixed-endpoint variations. Let's compute this **[first variation](@entry_id:174697)**, $\frac{dL}{ds}|_{s=0}$. For simplicity, let us assume $\gamma$ is parametrized by arc length, so $\|\dot{\gamma}(t)\| = 1$. The [first variation](@entry_id:174697) formula is derived as [@problem_id:3064578]:
+$\frac{dL}{ds}\Big|_{s=0} = \int_0^\ell \frac{g(\nabla_t V, \dot{\gamma})}{\|\dot{\gamma}\|} dt = \int_0^\ell g(\nabla_t V, \dot{\gamma}) dt$
+where $\nabla_t$ is the [covariant derivative](@entry_id:152476) along $\gamma$. Using integration by parts for covariant derivatives and the fact that $V(0)=V(\ell)=0$, we find:
+$\begin{align*} \frac{dL}{ds}\Big|_{s=0}  = \int_0^\ell \left( \frac{d}{dt}g(V, \dot{\gamma}) - g(V, \nabla_t \dot{\gamma}) \right) dt \\  = \left[ g(V(t), \dot{\gamma}(t)) \right]_0^\ell - \int_0^\ell g(V, \nabla_t \dot{\gamma}) dt \\  = - \int_0^\ell g(V, \nabla_t \dot{\gamma}) dt \end{align*}$
+For $\gamma$ to be a critical point of the [length functional](@entry_id:203503), this [first variation](@entry_id:174697) must be zero for *every* smooth variation field $V$ that vanishes at the endpoints. By the fundamental lemma of [calculus of variations](@entry_id:142234), this can only be true if the other term in the integrand is identically zero. Thus, we arrive at the geodesic equation:
+$\nabla_t \dot{\gamma} \equiv \nabla_{\dot{\gamma}}\dot{\gamma} = 0$
+This confirms that geodesics are precisely the [critical points](@entry_id:144653) of the arc [length functional](@entry_id:203503).
+
+### The Second Variation and the Index Form
+
+Having established geodesics as critical points, the next natural question is to determine the nature of these [critical points](@entry_id:144653). Is a given geodesic a local minimum, maximum, or saddle point for length? To answer this, we must examine the **second variation**, $\frac{d^2L}{ds^2}|_{s=0}$.
+
+The calculation is simpler if we work with the **[energy functional](@entry_id:170311)**, $E(s) = \frac{1}{2} \int_0^\ell \|\dot{\gamma}_s(t)\|^2 dt$. For curves parametrized by arc length, minimizing length is equivalent to minimizing energy, and the second variation formulas are closely related. The [second variation of energy](@entry_id:201932) for a variation of a geodesic $\gamma$ with fixed endpoints is given by a [quadratic form](@entry_id:153497) called the **[index form](@entry_id:183467)**, denoted $I(V,V)$.
+
+The derivation of the [index form](@entry_id:183467) is a crucial calculation that reveals the deep interplay between the connection, curvature, and the variation field. Let $T = \frac{\partial \alpha}{\partial t}$ and $S = \frac{\partial \alpha}{\partial s}$ be the [vector fields](@entry_id:161384) induced by the variation map $\alpha(s,t)$. A key insight is that since [partial derivatives](@entry_id:146280) commute, the Lie bracket of these vector fields is zero, $[T,S]=0$. For the Levi-Civita connection, which is **torsion-free**, the [torsion tensor](@entry_id:204137) $\mathcal{T}(T,S) = \nabla_T S - \nabla_S T - [T,S]$ is zero. This implies the fundamental identity $\nabla_T S = \nabla_S T$ [@problem_id:3064559]. At $s=0$, this becomes $\nabla_{\dot{\gamma}} V = \nabla_t V = \nabla_S T$. This allows us to express derivatives of the tangent field $T$ in terms of derivatives of the variation field $V$.
+
+The second variation is $E''(0) = \frac{d^2E}{ds^2}|_{s=0}$. A careful calculation involving [differentiation under the integral sign](@entry_id:158299), the identity $\nabla_S T = \nabla_T S$, the Ricci identity for commuting covariant derivatives, and [integration by parts](@entry_id:136350) leads to the celebrated [second variation formula](@entry_id:180586). During this derivation, boundary terms such as $[\langle \nabla_t V, V \rangle]_0^\ell$ appear. These terms vanish precisely because the fixed-endpoint condition ensures that $V(0)=0$ and $V(\ell)=0$ [@problem_id:3064592]. The final result, for a variation field $V$ along a geodesic $\gamma$, is [@problem_id:3061465]:
+$E''(0) = I(V,V) = \int_0^\ell \left( \|\nabla_t V\|^2 - g(R(V, \dot{\gamma})\dot{\gamma}, V) \right) dt$
+
+This is the **[index form](@entry_id:183467)**. It consists of two terms:
+1.  The kinetic term $\int_0^\ell \|\nabla_t V\|^2 dt$ is always non-negative. It measures the "stretching" of the variation field $V$ along the geodesic. It is a stabilizing term, trying to make $I(V,V)$ positive.
+2.  The curvature term $-\int_0^\ell g(R(V, \dot{\gamma})\dot{\gamma}, V) dt$ depends on the Riemann [curvature tensor](@entry_id:181383) $R$. Its sign depends on the geometry of the manifold. Positive [sectional curvature](@entry_id:159738) generally makes this term negative, introducing an instability that can cause $I(V,V)$ to be negative. It measures how the curvature of the manifold causes nearby geodesics to spread apart or converge.
+
+For a geodesic to be a stable [local minimum](@entry_id:143537) of length, we need $I(V,V) \ge 0$ for all admissible variation fields $V$.
+
+### Jacobi Fields and Conjugate Points
+
+The [index form](@entry_id:183467) provides a test for the stability of a geodesic. The most interesting phenomena occur when the [index form](@entry_id:183467) is degenerate, i.e., when there exists a non-zero variation field $J$ for which $I(J,J)=0$. Let's characterize such fields.
+
+A vector field $J$ that is in the [null space](@entry_id:151476) of the [index form](@entry_id:183467) (meaning $I(J,W)=0$ for all admissible $W$) can be found by integrating the [index form](@entry_id:183467) by parts:
+$I(J,W) = - \int_0^\ell \langle \nabla_t^2 J + R(J, \dot{\gamma})\dot{\gamma}, W \rangle dt$
+For this to be zero for all $W$ vanishing at the endpoints, the field in the first slot of the inner product must be identically zero. This leads to a remarkable second-order linear ordinary differential equation [@problem_id:3064585]:
+$\nabla_t^2 J + R(J, \dot{\gamma})\dot{\gamma} = 0$
+This is the **Jacobi equation**, and a vector field $J$ that satisfies it is called a **Jacobi field**.
+
+Jacobi fields have a profound geometric meaning. They are precisely the variation fields of **variations through geodesics**. If we take a one-parameter family of geodesics $\gamma_s(t)$, its variation field $J(t)$ at $s=0$ must satisfy the Jacobi equation [@problem_id:3061465]. Conversely, any solution to the Jacobi equation can be realized as the variation field of such a family.
+
+Now we can connect the degeneracy of the [index form](@entry_id:183467) to a concrete geometric event. Suppose there exists a non-trivial Jacobi field $J$ along a geodesic $\gamma: [a,b] \to M$ such that $J(a)=0$ and $J(b)=0$. For such a field, we can evaluate the [index form](@entry_id:183467) directly. Using the Jacobi equation and integration by parts, we find [@problem_id:3064571]:
+$I(J,J) = \int_a^b \langle \nabla_t^2 J + R(J,\dot{\gamma})\dot{\gamma}, J \rangle dt + \left[ \langle J, \nabla_t J \rangle \right]_a^b = 0 + 0 = 0$
+This demonstrates that the existence of such a Jacobi field implies the [index form](@entry_id:183467) is degenerate. In fact, the [null space](@entry_id:151476) of the [index form](@entry_id:183467) on the space of vector fields vanishing at the endpoints consists precisely of the Jacobi fields that vanish at the endpoints [@problem_id:3064571, @problem_id:3064585].
+
+This leads to a central definition: a point $\gamma(b)$ is said to be **conjugate** to $\gamma(a)$ along the geodesic $\gamma$ if there exists a non-trivial Jacobi field $J$ along $\gamma$ that vanishes at both $a$ and $b$. Geometrically, this means that there is a family of geodesics starting at $\gamma(a)$ that momentarily refocuses at $\gamma(b)$. The existence of a conjugate point $\gamma(b)$ is therefore equivalent to the degeneracy of the [index form](@entry_id:183467) $I$ on the interval $[a,b]$.
+
+### Geometric Interpretation and Consequences
+
+The concept of [conjugate points](@entry_id:160335) provides a powerful bridge between the analytical machinery of variations and the geometric intuition of geodesics. This connection is made most explicit through the **exponential map**, $\exp_p: T_pM \to M$. Recall that for a vector $v \in T_pM$, $\exp_p(v)$ is the point reached by following the unique geodesic $\gamma$ with $\gamma(0)=p$ and $\dot{\gamma}(0)=v$ for a parameter time of 1.
+
+A fundamental theorem states that a point $q = \exp_p(v)$ is conjugate to $p$ along the geodesic $\gamma(t) = \exp_p(tv)$ if and only if the [differential of the exponential map](@entry_id:635617), $d(\exp_p)_v: T_v(T_pM) \cong T_pM \to T_qM$, is singular (i.e., not an isomorphism). The kernel of $d(\exp_p)_v$ corresponds to the initial derivatives of Jacobi fields along $\gamma$ that vanish at $p$ and $q$. Thus, the absence of a conjugate point at $q$ is equivalent to the non-degeneracy of the [differential of the exponential map](@entry_id:635617) [@problem_id:3064564].
+
+This equivalence has profound consequences for the length-minimizing properties of geodesics:
+- **No Conjugate Points:** If a geodesic segment $\gamma: [a,b] \to M$ has no [conjugate points](@entry_id:160335) in $(a,b]$, then the [index form](@entry_id:183467) $I$ is positive definite on the space of variation fields vanishing at the endpoints. This implies that $\gamma$ is a **local minimizer of length** among all nearby curves with the same endpoints [@problem_id:3064564]. Furthermore, by the Inverse Function Theorem, the [exponential map](@entry_id:137184) is a [local diffeomorphism](@entry_id:203529), ensuring that sufficiently short geodesics are unique minimizers.
+- **Existence of a Conjugate Point:** If $\gamma(b)$ is conjugate to $\gamma(a)$, then the [index form](@entry_id:183467) is degenerate ($I(J,J)=0$ for some $J \neq 0$). This signals the failure of the [positive-definiteness](@entry_id:149643) condition for a strict minimum. By a more refined argument, one can construct a variation for which the second variation is strictly negative. Therefore, a geodesic that contains a conjugate point (other than the start point) is **not a local minimizer of length** [@problem_id:3061465].
+
+It is important to guard against common misconceptions. For instance, [positive sectional curvature](@entry_id:193532) does not guarantee the absence of conjugate points. On a sphere, which has [constant positive curvature](@entry_id:268046), any geodesic of length greater than $\pi$ times the radius will contain [conjugate points](@entry_id:160335). Similarly, the absence of conjugate points on a complete manifold does not imply that the [exponential map](@entry_id:137184) is globally one-to-one; the [flat torus](@entry_id:261129) provides a classic [counterexample](@entry_id:148660) where $\exp_p$ is a covering map but not injective [@problem_id:3064564].
+
+### Generalization to Focal Points
+
+The variational theory can be extended from point-to-point paths to paths that start on a [submanifold](@entry_id:262388) and end at a point. Let $S \subset M$ be a submanifold, and let $\gamma:[0,L] \to M$ be a geodesic that starts at $\gamma(0) \in S$ and is orthogonal to $S$ (i.e., $\dot{\gamma}(0) \in (T_{\gamma(0)}S)^\perp$). We consider variations of $\gamma$ where the initial point remains in $S$ and the final point $\gamma(L)$ is fixed.
+
+The variation field $J$ of a variation through geodesics starting orthogonally from $S$ is again a Jacobi field, but it satisfies a different set of [initial conditions](@entry_id:152863). These conditions involve the curvature of the submanifold $S$ itself, as measured by its **shape operator** (or Weingarten map) $A_{\nu}$, where $\nu=\dot{\gamma}(0)$. The initial conditions for such a Jacobi field $J$ are [@problem_id:3064567]:
+1. $J(0) \in T_{\gamma(0)}S$
+2. $(\nabla_t J)(0)^T = -A_{\dot{\gamma}(0)}(J(0))$, where $(\cdot)^T$ denotes projection onto $T_{\gamma(0)}S$.
+
+A point $\gamma(t_0)$ is called a **focal point** of $S$ along $\gamma$ if there exists a non-trivial Jacobi field $J$ satisfying these [initial conditions](@entry_id:152863) and vanishing at $t_0$, i.e., $J(t_0)=0$.
+
+Similar to the conjugate point case, [focal points](@entry_id:199216) correspond to the degeneracy of an associated [index form](@entry_id:183467). The [index form](@entry_id:183467) for this problem includes a boundary term from the submanifold's curvature:
+$I(V,V) = \int_0^L \left( \|\nabla_t V\|^2 - g(R(V, \dot{\gamma})\dot{\gamma}, V) \right) dt - g(A_{\dot{\gamma}(0)}(V(0)), V(0))$
+The [index form](@entry_id:183467) $I$ on the space of admissible variations is degenerate if and only if $\gamma(L)$ is a [focal point](@entry_id:174388) of $S$ [@problem_id:3064587]. Geometrically, [focal points](@entry_id:199216) are the images of the [critical points](@entry_id:144653) of the **normal [exponential map](@entry_id:137184)** $\exp^\perp: NS \to M$, where $NS$ is the [normal bundle](@entry_id:272447) of $S$ [@problem_id:3064567]. The absence of [focal points](@entry_id:199216) on a geodesic segment implies that it is the unique shortest path from the submanifold $S$ to its endpoint.
+
+Focal points are a generalization of [conjugate points](@entry_id:160335); if the submanifold $S$ is just a single point, then $T_{\gamma(0)}S = \{0\}$, the shape operator is zero, and the condition $J(0) \in T_{\gamma(0)}S$ becomes $J(0)=0$, recovering the definition of a conjugate point. However, it is crucial to recognize that in general, [focal points](@entry_id:199216) and conjugate points are distinct geometric concepts [@problem_id:3064567].

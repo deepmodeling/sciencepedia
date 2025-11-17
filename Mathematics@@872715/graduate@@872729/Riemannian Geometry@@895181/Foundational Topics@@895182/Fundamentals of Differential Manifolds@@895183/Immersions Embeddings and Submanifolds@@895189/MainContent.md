@@ -1,0 +1,94 @@
+## Introduction
+In the study of Riemannian geometry, abstract manifolds are often best understood by visualizing them as objects residing within a larger, more familiar space, such as Euclidean space. The theory of immersions, [embeddings](@entry_id:158103), and submanifolds provides the rigorous mathematical framework for this powerful idea. It addresses the fundamental question of how a manifold's geometric properties are influenced by the way it is "placed" inside an [ambient space](@entry_id:184743). This article bridges the gap between the abstract definition of a manifold and its concrete realization, offering a comprehensive exploration of the [intrinsic and extrinsic geometry](@entry_id:161677) of [submanifolds](@entry_id:159439).
+
+This exploration is structured into three distinct parts. The first chapter, **Principles and Mechanisms**, lays the theoretical groundwork. We will define smooth immersions and [embeddings](@entry_id:158103), showing how an immersion into a Riemannian manifold naturally induces a metric. We will then introduce the core tools of [extrinsic geometry](@entry_id:262461)—the [second fundamental form](@entry_id:161454) and the shape operator—and derive the fundamental Gauss-Codazzi equations that link them to the manifold's intrinsic curvature. Building on this foundation, the second chapter, **Applications and Interdisciplinary Connections**, demonstrates the far-reaching impact of these concepts. We will examine canonical examples like spheres and cylinders, discuss the profound [existence theorems](@entry_id:261096) of Whitney and Nash, and explore connections to diverse fields such as Lie group theory, topology, and dynamical systems. Finally, the **Hands-On Practices** chapter provides an opportunity to solidify these abstract concepts through concrete problem-solving, analyzing specific maps and constructions to deepen your understanding of the interplay between local properties, global topology, and geometric structure.
+
+## Principles and Mechanisms
+
+The study of [submanifolds](@entry_id:159439) is central to Riemannian geometry, providing the framework through which abstractly defined manifolds can be visualized and analyzed as geometric objects residing within a larger, often simpler, [ambient space](@entry_id:184743) such as Euclidean space. This chapter builds upon the foundational concepts of smooth manifolds and tensors to establish the principles governing how a manifold can be immersed or embedded into another, and the mechanisms by which the geometry of the [ambient space](@entry_id:184743) induces and constrains the [intrinsic geometry](@entry_id:158788) of the [submanifold](@entry_id:262388).
+
+### Immersions, Embeddings, and the Induced Metric
+
+Our primary goal is to understand how a [smooth manifold](@entry_id:156564) $M$ can acquire a Riemannian metric by virtue of its placement within an ambient Riemannian manifold $(N, h)$. The fundamental concept governing this relationship is that of a [smooth map](@entry_id:160364) and its differential.
+
+A [smooth map](@entry_id:160364) $f: M \to N$ provides a way to "place" $M$ inside $N$. The local behavior of this placement is captured by the **differential** of $f$ at a point $p \in M$, which is the [linear map](@entry_id:201112) $df_p: T_pM \to T_{f(p)}N$. This map describes how tangent vectors on $M$ are pushed forward to [tangent vectors](@entry_id:265494) on $N$.
+
+A map $f$ is called a **smooth immersion** if its differential $df_p$ is injective at every point $p \in M$. Injectivity means that distinct tangent vectors at $p$ are mapped to distinct tangent vectors at $f(p)$. This ensures that, locally, the map $f$ does not "crush" the tangent space of $M$. For an immersion to exist, the dimension of $M$ must be less than or equal to the dimension of $N$.
+
+The true geometric power of an immersion is realized when the [ambient space](@entry_id:184743) $(N,h)$ is a Riemannian manifold. An immersion allows us to pull back the metric $h$ from $N$ to define a metric on $M$. This **[induced metric](@entry_id:160616)** (or **[pullback metric](@entry_id:161465)**), denoted $g = f^*h$, is defined at each point $p \in M$ by how it acts on tangent vectors $X, Y \in T_pM$:
+$$
+g_p(X,Y) := h_{f(p)}(df_p(X), df_p(Y))
+$$
+This definition essentially states that the inner product of two tangent vectors on $M$ is defined to be the inner product of their images in the [tangent space](@entry_id:141028) of $N$. For this pullback tensor $g$ to be a true Riemannian metric, it must be [positive definite](@entry_id:149459). This condition, $g_p(X,X) > 0$ for all nonzero $X \in T_pM$, is guaranteed precisely because $h$ is [positive definite](@entry_id:149459) and the differential $df_p$ of an immersion is injective. Thus, any immersion into a Riemannian manifold naturally endows the source manifold with a Riemannian structure. [@problem_id:2980345]
+
+When a manifold $M$ is already equipped with a metric $g$, we are often interested in immersions that preserve this metric. A map $f: (M,g) \to (N,h)$ is called an **[isometric immersion](@entry_id:272242)** if it is an immersion and the metric $g$ is precisely the one induced by $f$. That is, $g = f^*h$. This condition ensures that the length of any curve in $M$ is identical to the length of its image curve in $N$.
+
+While an immersion guarantees a well-behaved local structure, it does not preclude complex global behavior such as self-intersections. A classic example is the map $f: S^1 \to \mathbb{R}^2$ that wraps the circle around itself twice. Parameterizing the circle by angle $\theta$, this map can be given by $f(\theta) = (\cos(2\theta), \sin(2\theta))$. The derivative of this map is $(-2\sin(2\theta), 2\cos(2\theta))$, which is never the zero vector. Thus, $f$ is an immersion. However, the map is not injective; for example, points that are diametrically opposite on the domain circle, like $\theta=0$ and $\theta=\pi$, both map to the same point $(1,0)$ in the image. [@problem_id:2980333] Similarly, the "figure-eight" curve in $\mathbb{R}^3$ given by $\gamma(t) = (\sin(t), \sin(2t), 0)$ is an immersion of $S^1$ that self-intersects at the origin, since $\gamma(0) = \gamma(\pi) = (0,0,0)$. [@problem_id:2980336]
+
+To exclude such global pathologies, we introduce the stronger notion of an embedding. A map $f: M \to N$ is a **[smooth embedding](@entry_id:637480)** if it is an immersion that is also a homeomorphism onto its image, $f(M)$, where the image is endowed with the subspace topology inherited from $N$. Being a [homeomorphism](@entry_id:146933) means that $f$ is injective and its inverse, $f^{-1}: f(M) \to M$, is continuous. This ensures that the global topology of $M$ is faithfully represented in its image. For a [compact domain](@entry_id:139725) manifold $M$, the condition for a continuous bijective map to be a homeomorphism is automatically satisfied, so an immersion from a [compact manifold](@entry_id:158804) is an embedding if and only if it is injective. The [figure-eight curve](@entry_id:167790) is therefore an immersed but not an [embedded submanifold](@entry_id:273162). In contrast, the paraboloid in $\mathbb{R}^3$ defined by the map $F(x,y) = (x, y, x^2+y^2)$ is a true embedding of $\mathbb{R}^2$ into $\mathbb{R}^3$, as it is both an immersion and globally one-to-one. [@problem_id:2980336]
+
+### Constructing Submanifolds via the Regular Value Theorem
+
+While embeddings provide a parametric way to define [submanifolds](@entry_id:159439), a powerful alternative is to realize them implicitly as level sets of functions. This approach is formalized by the **Regular Value Theorem**.
+
+Let $f: M \to N$ be a [smooth map](@entry_id:160364) between manifolds of dimension $m$ and $n$, respectively. A point $p \in M$ is a **regular point** of $f$ if the differential $df_p: T_pM \to T_{f(p)}N$ is surjective. A point $q \in N$ is a **[regular value](@entry_id:188218)** of $f$ if every point $p$ in its preimage, $p \in f^{-1}(q)$, is a regular point. (Note that if the preimage $f^{-1}(q)$ is empty, $q$ is vacuously a [regular value](@entry_id:188218)).
+
+The **Regular Value Theorem** states that if $q \in N$ is a [regular value](@entry_id:188218) of a [smooth map](@entry_id:160364) $f: M \to N$, then the level set $f^{-1}(q)$ is a smooth, properly [embedded submanifold](@entry_id:273162) of $M$. The dimension of this [submanifold](@entry_id:262388) is $m-n$, and its [tangent space](@entry_id:141028) at any point $p \in f^{-1}(q)$ is given by the kernel of the differential:
+$$
+T_p(f^{-1}(q)) = \ker(df_p)
+$$
+This theorem is a direct consequence of the Implicit Function Theorem. It provides a robust method for constructing and verifying submanifolds. For example, the unit sphere $S^n \subset \mathbb{R}^{n+1}$ can be defined as the [level set](@entry_id:637056) $f^{-1}(1)$ for the function $f: \mathbb{R}^{n+1} \to \mathbb{R}$ given by $f(x) = \|x\|^2 = \sum_{i=1}^{n+1} (x^i)^2$. Its differential is $df_x(v) = 2 \langle x, v \rangle$. For any $x$ on the sphere ($f(x)=1$), $x$ is not the [zero vector](@entry_id:156189), so $df_x$ is a non-zero [linear functional](@entry_id:144884) and thus surjective onto $\mathbb{R}$. This shows that $1$ is a [regular value](@entry_id:188218), confirming that $S^n$ is an [embedded submanifold](@entry_id:273162) of $\mathbb{R}^{n+1}$ of dimension $(n+1)-1 = n$. [@problem_id:2980347]
+
+### Extrinsic Geometry: The Second Fundamental Form and Shape Operator
+
+Once a manifold $M$ is isometrically immersed in an ambient manifold $(N, h)$, we can study its **[extrinsic geometry](@entry_id:262461)**—the aspects of its geometry related to how it "sits" or "curves" within $N$. The central tool for this is to analyze how [vector fields](@entry_id:161384) change as we move along the [submanifold](@entry_id:262388).
+
+At any point $p \in M$, the tangent space of the ambient manifold $T_p N$ splits orthogonally into the space of vectors tangent to $M$ and the space of vectors normal (perpendicular) to $M$: $T_p N = T_p M \oplus \nu_p M$. Let $\nabla^N$ be the Levi-Civita connection on $N$. If we take two vector fields $X, Y$ tangent to $M$ and compute the [covariant derivative](@entry_id:152476) $\nabla^N_X Y$, the resulting vector field will not, in general, be tangent to $M$. By projecting this vector onto the tangent and normal bundles, we can decompose the derivative into two fundamental components.
+
+This decomposition is known as the **Gauss formula**:
+$$
+\nabla^N_X Y = \nabla^M_X Y + \mathrm{II}(X, Y)
+$$
+Here, $\nabla^M_X Y := (\nabla^N_X Y)^\top$ is the tangential component, and it defines a connection on $M$ known as the **[induced connection](@entry_id:635081)** (which is, in fact, the Levi-Civita connection of the [induced metric](@entry_id:160616) $g$). The normal component, $\mathrm{II}(X, Y) := (\nabla^N_X Y)^\perp$, is a symmetric, vector-valued [bilinear form](@entry_id:140194) called the **second fundamental form**. It measures how much the [submanifold](@entry_id:262388) curves or "bends" within the [ambient space](@entry_id:184743), as it quantifies the failure of the derivative of a tangent field to remain tangent.
+
+A parallel analysis can be performed by differentiating a [normal vector field](@entry_id:268853) $\eta$ along a tangent direction $X$. This gives rise to the **Weingarten formula**:
+$$
+\nabla^N_X \eta = -A_\eta(X) + \nabla^\perp_X \eta
+$$
+Here, the tangential component, $A_\eta(X) := -(\nabla^N_X \eta)^\top$, defines a field of endomorphisms on the [tangent bundle](@entry_id:161294) of $M$, called the **shape operator** or **Weingarten map** associated with $\eta$. The minus sign is a widely adopted convention. The normal component, $\nabla^\perp_X \eta := (\nabla^N_X \eta)^\perp$, defines the **normal connection** in the [normal bundle](@entry_id:272447).
+
+The [second fundamental form](@entry_id:161454) and the family of shape operators are intimately related. By using the [metric compatibility](@entry_id:265910) of the ambient connection $\nabla^N$ on the identity $h(Y, \eta) = 0$, we arrive at the fundamental equation:
+$$
+h(\mathrm{II}(X, Y), \eta) = g(A_\eta(X), Y)
+$$
+This equation reveals that the [shape operator](@entry_id:264703) $A_\eta$ is a self-adjoint (symmetric) operator on the tangent space $T_pM$ for each normal vector $\eta \in \nu_p M$. It also provides a way to completely recover the vector-valued second fundamental form from the family of shape operators. If $\{\eta_\alpha\}$ is a local [orthonormal basis](@entry_id:147779) for the [normal bundle](@entry_id:272447), then the second fundamental form can be expressed as:
+$$
+\mathrm{II}(X, Y) = \sum_{\alpha=1}^{k} g(A_{\eta_\alpha}X, Y) \eta_\alpha
+$$
+where $k$ is the codimension of the submanifold. [@problem_id:2980324]
+
+### The Bridge: Gauss-Codazzi Equations and Fundamental Theorems
+
+The machinery of the second fundamental form and [shape operator](@entry_id:264703) forms a bridge between the [intrinsic and extrinsic geometry](@entry_id:161677) of a [submanifold](@entry_id:262388). The celebrated **Gauss-Codazzi equations** are the [structural equations](@entry_id:274644) that make this connection precise.
+
+The **Gauss equation** relates the intrinsic Riemann [curvature tensor](@entry_id:181383) $R^M$ of the [submanifold](@entry_id:262388) to its second fundamental form. For a hypersurface ($k=1$) in a [space form](@entry_id:203017) of [constant curvature](@entry_id:162122) $\kappa$, it takes the form:
+$$
+g(R^M(X,Y)Z, W) = \kappa(g(Y,Z)g(X,W) - g(X,Z)g(Y,W)) + h(\mathrm{II}(Y,Z), \mathrm{II}(X,W)) - h(\mathrm{II}(X,Z), \mathrm{II}(Y,W))
+$$
+This equation is a cornerstone of [submanifold theory](@entry_id:190701). A beautiful application is computing the curvature of the unit $n$-sphere $S^n$ embedded in Euclidean space $\mathbb{R}^{n+1}$ ($\kappa=0$). The outward unit normal is $\nu(p)=p$. The [shape operator](@entry_id:264703) is found to be $A_\nu(X) = -X$, meaning it is the negative of the identity map. This gives a second fundamental form $\mathrm{II}(X,Y) = g(A_\nu X, Y)\nu = -g(X,Y)\nu$. Plugging this into the Gauss equation for an orthonormal pair of vectors $X, Y$ gives the [sectional curvature](@entry_id:159738) $K(\text{span}\{X,Y\}) = (-1)(-1) - (0)(0) = 1$. This rigorously shows, from an extrinsic viewpoint, that the unit $n$-sphere is a space of [constant sectional curvature](@entry_id:272200) $+1$. The scalar curvature is then easily computed as $\mathrm{Scal}_{S^n} = n(n-1)$. [@problem_id:2980342]
+
+The **Codazzi-Mainardi equation** provides the second compatibility condition, relating the covariant derivative of the second fundamental form: $(\nabla^M_X \mathrm{II})(Y,Z) = (\nabla^M_Y \mathrm{II})(X,Z)$. Together, the Gauss and Codazzi equations are the [integrability conditions](@entry_id:158502) for the existence of a submanifold with a given first and [second fundamental form](@entry_id:161454).
+
+This leads to a profound question: can we reverse the process? Given an abstract Riemannian manifold $(M,g)$ and a candidate second fundamental form $h$, can we find an [isometric immersion](@entry_id:272242) into a [space form](@entry_id:203017) that realizes this data? The answer is yes, under the right conditions, and is given by the **Fundamental Theorem of Hypersurfaces** (also known as the Bonnet-Cartan theorem). It states that if $(M,g)$ is a simply-connected manifold and a symmetric $(0,2)$-tensor $h$ is given such that the pair $(g,h)$ satisfies the Gauss and Codazzi equations for a [space form](@entry_id:203017) $N^{n+1}_\kappa$, then:
+1.  **Existence:** There exists an [isometric immersion](@entry_id:272242) $F: M \to N^{n+1}_\kappa$ with first fundamental form $g$ and second fundamental form $h$.
+2.  **Uniqueness:** Any two such immersions are congruent; that is, they differ only by an [isometry](@entry_id:150881) of the ambient space $N^{n+1}_\kappa$.
+
+This theorem establishes that the [first and second fundamental forms](@entry_id:192112), subject to the Gauss-Codazzi [integrability conditions](@entry_id:158502), form a complete set of local invariants for a hypersurface. [@problem_id:2980343]
+
+Finally, a broader existence question was answered by John Nash. The **Nash Isometric Embedding Theorem** addresses whether *any* abstract Riemannian manifold $(M,g)$ can be realized as a [submanifold](@entry_id:262388) of some Euclidean space. The answer is a resounding yes. For any smooth $n$-dimensional Riemannian manifold, there exists an [isometric embedding](@entry_id:152303) into $\mathbb{R}^N$ for some sufficiently large $N$. Remarkably, the required dimension $N$ depends only on $n$ (growing roughly as $n^2$), and not on the particular geometry of $(M,g)$. This means that even the most "wildly" curved manifold can be embedded without creases if given enough room in the [ambient space](@entry_id:184743). [@problem_id:2980355]
+
+This universality, however, is a feature of high regularity ($C^\infty$). The role of regularity reveals a fascinating dichotomy between [geometric rigidity](@entry_id:189736) and flexibility.
+- **Rigidity in $C^2$**: Smooth ($C^2$ or higher) isometric embeddings are rigid. The Gauss-Codazzi equations act as hard constraints. For example, a strictly convex surface in $\mathbb{R}^3$ must have positive Gaussian curvature ($K = \kappa_1\kappa_2 > 0$) and thus cannot be endowed with a flat metric. Moreover, Efimov's theorem shows that a [complete surface](@entry_id:263033) with Gaussian [curvature bounded above](@entry_id:183384) by a negative constant ($K \le -\epsilon  0$) cannot be $C^2$-isometrically immersed into $\mathbb{R}^3$ at all.
+- **Flexibility in $C^1$**: In contrast, the **Nash–Kuiper theorem** shows that $C^1$ isometric [embeddings](@entry_id:158103) are surprisingly flexible. For instance, any compact surface, including one with strictly [negative curvature](@entry_id:159335), *can* be $C^1$-isometrically embedded into $\mathbb{R}^3$. The reason for this flexibility is that for a $C^1$ map, second derivatives may not exist, so the second fundamental form is not classically defined and the Gauss-Codazzi equations do not pose a constraint. The proof involves constructing [embeddings](@entry_id:158103) with high-frequency "corrugations" or "wrinkles" that are too fine to be "seen" by $C^1$ derivatives but are sufficient to adjust all lengths to be correct. This is a classic example of a "homotopy principle" or "h-principle" in geometry. [@problem_id:2980346]
+
+This journey from basic definitions to the deep results of Nash illustrates the rich interplay between the local and global, the intrinsic and extrinsic, and the analytical and geometrical properties of manifolds.
