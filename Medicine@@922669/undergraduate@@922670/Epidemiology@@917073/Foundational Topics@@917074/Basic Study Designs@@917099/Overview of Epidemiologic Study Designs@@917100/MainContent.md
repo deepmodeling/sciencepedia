@@ -1,0 +1,101 @@
+## Introduction
+Epidemiology seeks to understand the causes and distribution of disease in populations, but how do we generate reliable evidence to answer these critical questions? The answer lies in rigorous study design. Moving from a simple observed association to a robust causal conclusion is a complex task, fraught with potential pitfalls like confounding and bias. This article serves as a guide to the foundational toolkit of epidemiologic research, equipping you with the knowledge to select, interpret, and critique different study designs. We will begin in the first chapter, "Principles and Mechanisms," by establishing the core classifications of studies—from observational to experimental—and formalizing the concepts of causality and bias. The second chapter, "Applications and Interdisciplinary Connections," will demonstrate how these designs are applied in real-world settings, from clinical trials to [policy evaluation](@entry_id:136637). Finally, the "Hands-On Practices" section will offer opportunities to apply these concepts to concrete problems. Let us begin by exploring the principles that govern how epidemiologists investigate the determinants of health.
+
+## Principles and Mechanisms
+
+This chapter delves into the foundational principles and mechanisms that govern how epidemiologists design studies to achieve this mission. We will move from the broadest classifications of study designs to the specific architectures of observational and experimental research, concluding with a formal framework for understanding causality and bias.
+
+### The Fundamental Divide: Observational vs. Experimental Studies
+
+The most fundamental distinction among epidemiologic study designs hinges on the role of the investigator in relation to the exposure under study. An exposure, denoted as $E$, can be any factor, intervention, or characteristic that may influence an outcome, $Y$. The defining question is: does the investigator control who is exposed?
+
+A study is classified as **experimental** if and only if the investigator actively controls the assignment of the exposure according to a prespecified protocol or allocation rule. The investigator intervenes to determine which study units receive which level of the exposure. This allocation rule may be deterministic (e.g., all participants receive a new treatment) or it may involve a chance process (i.e., randomization).
+
+In contrast, a study is **observational** if the investigator does not control exposure assignment. The investigator is a passive observer who measures the exposures that individuals have due to their own choices, genetics, environment, or routine medical care. The investigator's role is to record exposures, outcomes, and other relevant covariates as they naturally occur and then use statistical methods to analyze their interrelationships.
+
+It is crucial to recognize that features commonly associated with high-quality experiments—such as randomization, blinding (masking), or the inclusion of a concurrent control group—are not necessary for a study to be classified as experimental. A study in which an investigator administers an intervention to a single group of participants without a comparison group is still an experiment, albeit a methodologically weak one. These features are not definitional but rather tools to enhance the validity of an experimental design. The singular, necessary, and sufficient condition for a study to be experimental is investigator control over the exposure assignment mechanism [@problem_id:4617347].
+
+### The Goal of the Inquiry: Descriptive vs. Analytic Epidemiology
+
+Beyond the experimental-observational divide, studies can also be classified by their primary objective: to describe or to analyze.
+
+**Descriptive epidemiology** aims to characterize the distribution of health-related states or events in a population. It answers questions of "who," "what," "where," and "when." The primary estimands of descriptive studies are measures of disease frequency, such as **prevalence**—the proportion of individuals in a population who have a disease at a specific point in time—and its distribution across different subgroups. For example, a public health department might conduct a survey to determine the prevalence of asthma in a city and to see how this prevalence varies by neighborhood [@problem_id:4617404]. These studies are vital for public health planning, resource allocation, and hypothesis generation.
+
+**Analytic epidemiology**, by contrast, aims to test specific hypotheses about the causes of disease. It seeks to answer questions of "why" and "how." The goal of an analytic study is to quantify the association between an exposure and an outcome, often with the ultimate aim of assessing causality. The estimands of interest are measures of effect, which compare the occurrence of an outcome in different exposure groups. Critically, analytic epidemiology strives to move beyond mere association to estimate a **causal effect**. This is a quantitative measure of how the outcome would change if the exposure were modified in the population. Common causal estimands include the **Average Treatment Effect (ATE)**, defined as $\mathbb{E}[Y^1 - Y^0]$, or the **causal risk ratio**, $\mathbb{E}[Y^1] / \mathbb{E}[Y^0]$, where $Y^a$ represents the potential outcome an individual would have experienced had their exposure been set to level $a$ [@problem_id:4617404]. As we will see, moving from a [statistical association](@entry_id:172897) observed in the data to an estimate of a causal effect requires a specific study design and, particularly in observational studies, a set of strong, untestable assumptions.
+
+### A Taxonomy of Observational Study Designs
+
+Observational studies are the most common type of epidemiologic research, as it is often unethical or infeasible to experimentally assign exposures like smoking, environmental pollutants, or socioeconomic status. We will now review the principal designs.
+
+#### Cross-Sectional Studies
+
+The **cross-sectional study** is arguably the simplest design. In a cross-sectional study, investigators define a target population and ascertain exposure and outcome status at a single point in time, like taking a snapshot [@problem_id:4617387]. The primary measure of disease frequency obtained from this design is **prevalence**. For example, a survey of 1,000 factory workers that simultaneously records current wood-dust exposure and current asthma status is a cross-sectional study. If 120 workers have asthma, the point prevalence is $120/1,000 = 0.12$ [@problem_id:4617387].
+
+While useful for descriptive purposes, cross-sectional studies have a severe limitation for causal inference: **temporal ambiguity**. Because exposure and outcome are measured at the same time, it is often impossible to determine whether the exposure preceded the outcome. This opens the door to **[reverse causation](@entry_id:265624)**, where the outcome may have influenced the exposure status. For instance, in our factory example, it is possible that workers who developed asthma were subsequently moved to jobs with less wood dust. If so, the disease would be causing a change in exposure, confounding the true causal relationship [@problem_id:4617387]. Furthermore, cross-sectional studies are prone to **survivor bias**; individuals with severe, rapidly fatal diseases or those who leave the population (e.g., quit their job due to illness) will be underrepresented, potentially making the study population appear healthier than it truly is [@problem_id:4617387].
+
+#### Cohort Studies
+
+The **cohort study** design resolves the issue of temporality. In a cohort study, investigators define a cohort of individuals, measure their exposure status at baseline, and follow them over time to ascertain the incidence of the outcome. **Incidence** refers to the occurrence of new cases of disease in a population over a specified period. Because exposure is measured before the outcome occurs, the temporal sequence required for causality is established.
+
+Cohort studies are classified based on the timing of study initiation relative to the occurrence of outcomes:
+-   A **prospective cohort study** is one where the investigator assembles the cohort, measures baseline exposures, and then follows the cohort forward in real time to observe future outcomes. For example, a study that recruits employees in 2010, assesses their exposures, and then follows them until 2020 to track the development of kidney disease is a prospective design [@problem_id:4617349].
+-   A **retrospective cohort study** (or historical cohort study) is one where the investigator initiates the study after all exposures and outcomes have already occurred. The cohort is reconstructed from past records (e.g., employment rosters from 1995), exposure is determined from historical data (e.g., records from 1995-2000), and outcomes are ascertained from subsequent records (e.g., medical claims from 2000-2010) [@problem_id:4617349].
+
+The key distinction is not the calendar years involved, but whether the outcomes are yet to occur at the time the study begins. Both designs, however, share the same logical structure: proceeding from exposure to outcome, thereby ensuring temporality.
+
+#### Case-Control Studies
+
+While cohort studies are logically straightforward, they can be inefficient for studying rare diseases, potentially requiring the follow-up of thousands of individuals to observe a sufficient number of cases. The **case-control study** offers a more efficient alternative. In this design, individuals are sampled based on their outcome status. A group of individuals with the disease (**cases**) and a group of individuals without the disease (**controls**) are enrolled, and their past exposure histories are compared.
+
+The validity of a case-control study hinges critically on the selection of the control group. The central principle is that controls should be representative of the underlying source population (the "study base") from which the cases arose. The measure of association estimated in a case-control study—the exposure odds ratio—and its interpretation depend on the specific control sampling strategy [@problem_id:4617332].
+
+-   **Cumulative Incidence Sampling**: Controls are selected from individuals who remained disease-free at the end of the follow-up period. The exposure odds ratio calculated from this design estimates the **cumulative incidence odds ratio** in the source population. This measure approximates the more intuitive cumulative incidence ratio (risk ratio) only when the disease is rare.
+-   **Density Sampling** (or Risk-Set Sampling): For each case that occurs, one or more controls are sampled from the individuals who are currently at risk of the disease at the exact time the case occurred. This sophisticated strategy has a powerful property: the exposure odds ratio from this design directly estimates the **incidence [rate ratio](@entry_id:164491)** of the source population, without requiring a rare disease assumption.
+-   **Case-Base Sampling** (or Case-Cohort): Controls are selected from the entire population at risk at the start of the follow-up period. When analyzed with appropriate statistical methods that account for the sampling design, this approach also provides an estimate of the **incidence [rate ratio](@entry_id:164491)** or **hazard ratio**.
+
+#### Ecological Studies
+
+In all the designs discussed so far, the unit of analysis is the individual. An **ecological study** is unique in that the units of analysis are groups of people, such as countries, cities, or census tracts. Exposures and outcomes are measured as group-level summaries, for example, the average air pollution level ($\bar{X}_g$) and the age-standardized mortality rate ($Y_g$) for a set of communities [@problem_id:4617371].
+
+The primary limitation of this design is the **ecological fallacy** (or aggregation bias). This fallacy is the error of assuming that an association observed at the group level reflects the association at the individual level. A positive correlation between average pollution and mortality rates across cities does not prove that individuals with higher pollution exposure have a higher risk of death. The reason is that the total individual-level association is a combination of the between-group association (which the ecological study measures) and the average within-group association. These two components can differ in magnitude and even in direction. For instance, within each city, there might be no association or even a negative one, but confounding by a group-level factor (e.g., industrialization) could create a positive association at the group level [@problem_id:4617371].
+
+### Principles of Experimental Design: The Randomized Controlled Trial
+
+The **Randomized Controlled Trial (RCT)** is often considered the "gold standard" for causal inference in epidemiology. Its strength lies in its ability to create, through the randomization process, groups that are comparable with respect to all baseline characteristics, both measured and unmeasured. This directly addresses the problem of **confounding**, a major threat to the validity of observational studies. An RCT's internal validity is protected by three key mechanisms [@problem_id:4617384].
+
+1.  **Randomization**: This is the process of assigning participants to treatment or control groups using an unpredictable chance mechanism. Its sole purpose is to achieve **exchangeability** at baseline—that is, to make the groups comparable on all prognostic factors. By breaking any natural link between patient characteristics and the treatment received, randomization minimizes confounding.
+
+2.  **Allocation Concealment**: This refers to the procedure for protecting the randomization sequence, ensuring that those responsible for enrolling participants do not know the upcoming treatment assignment. If an investigator can foresee the next assignment, they may consciously or unconsciously steer certain types of patients into or out of a particular group, destroying the balance achieved by randomization. This introduces **selection bias** at enrollment. Successful allocation concealment is therefore critical to preserving the integrity of the randomization process.
+
+3.  **Blinding (or Masking)**: This is the practice of keeping one or more parties (participants, clinicians, outcome assessors) unaware of the treatment assignment after randomization. Blinding participants and personnel prevents **performance bias**, which are systematic differences in the care or behavior of participants due to knowledge of the intervention. Blinding outcome assessors prevents **measurement bias**, which is a systematic difference in how outcomes are evaluated between groups.
+
+### Formalizing Causality and Bias: A Modern Perspective
+
+Modern epidemiology employs formal frameworks to make causal assumptions explicit and to reason precisely about bias.
+
+#### Directed Acyclic Graphs and Structural Models
+
+A **Directed Acyclic Graph (DAG)** is a visual tool used to encode our assumptions about the causal relationships among a set of variables. In a DAG, nodes represent variables and directed arrows ($X \to Y$) represent a hypothesized direct causal effect of $X$ on $Y$. The graph must be "acyclic," meaning there are no paths that start and end at the same node. The absence of an arrow represents a strong assumption of no direct causal effect [@problem_id:4617374].
+
+Underlying a DAG is a **Structural Causal Model (SCM)**, which gives a mathematical formalization of the causal mechanisms. In an SCM, each variable is assigned a value by a structural equation, $V_i = f_i(Pa_i, U_i)$, where $Pa_i$ are the causal parents of $V_i$ in the DAG and $U_i$ represents all unmeasured factors. The key intervention operator, **`do(X=x)`**, represents an external action that forces the variable $X$ to take the value $x$, overriding its natural cause. In an SCM, this corresponds to replacing the equation for $X$ with the constant $X=x$. On the DAG, this is represented by "graph surgery": deleting all arrows pointing *into* $X$ [@problem_id:4617374]. This distinction between passive observation ($P(Y \mid X=x)$) and active intervention ($P(Y \mid do(X=x))$) is the essence of causal inference.
+
+#### Confounding Bias
+
+**Confounding** is a bias that arises when a third variable is a common cause of both the exposure and the outcome, creating a spurious association between them. In the counterfactual framework, confounding is defined as a lack of **exchangeability**, meaning the potential outcomes are not independent of the observed exposure, or $Y^a \not\perp\perp A$. On a DAG, confounding is represented by an open "backdoor path" from the exposure to the outcome, such as $A \leftarrow L \rightarrow Y$, where $L$ is a common cause [@problem_id:4617355].
+
+To eliminate confounding in an observational study, we can perform **adjustment** by conditioning on a sufficient set of confounding variables. On the DAG, this means conditioning on a set of variables that blocks all backdoor paths. If we successfully measure and adjust for a set of covariates $L$ that satisfies the [backdoor criterion](@entry_id:637856), we can achieve **conditional exchangeability**, $Y^a \perp\perp A \mid L$. This condition, along with others, allows us to identify the causal effect from observational data [@problem_id:4617355].
+
+#### Selection Bias
+
+**Selection bias** occurs when the study population is a non-[representative sample](@entry_id:201715) of the target population with respect to the exposure-outcome relationship. A classic form of selection bias is **[collider](@entry_id:192770)-stratification bias**. A [collider](@entry_id:192770) is a variable on a causal path that is caused by two other variables (e.g., $X \to S \leftarrow Y$). In a population where two variables $X$ and $Y$ are independent, conditioning on their common effect $S$ will induce a spurious statistical association between them. For example, if a study on the relationship between an exposure $X$ and an outcome $Y$ is conducted in a hospital ($S=1$), and both $X$ and $Y$ increase the probability of hospitalization, an association between $X$ and $Y$ may be found among hospitalized patients even if no such association exists in the general population [@problem_id:4617327]. The magnitude of this spurious odds ratio is given by the formula
+$$\frac{P(S=1|X=1, Y=1) P(S=1|X=0, Y=0)}{P(S=1|X=1, Y=0) P(S=1|X=0, Y=1)}$$
+which is generally not equal to 1.
+
+#### Information Bias (Misclassification)
+
+**Information bias**, or measurement error, arises from systematic errors in the ascertainment of exposure, outcome, or covariate data. Such errors are often described as **misclassification** in the case of [categorical variables](@entry_id:637195).
+
+-   **Nondifferential misclassification** occurs when the probability of misclassifying one variable (e.g., exposure) is independent of the true status of another variable (e.g., outcome).
+-   **Differential misclassification** occurs when the error rate for one variable depends on the status of the other. For example, if individuals with a disease remember their past exposures more accurately than healthy individuals (recall bias), the misclassification of exposure would be differential with respect to outcome.
+
+Nondifferential misclassification is generally considered less pernicious than differential misclassification. For a binary exposure and a binary outcome, a well-established principle states that if the exposure is misclassified nondifferentially, and the classification method is better than random guessing (i.e., sensitivity + specificity > 1), the observed risk ratio will be biased toward the null value of 1.0 [@problem_id:4617372]. This means the observed measure of association will be an underestimate of the true effect. However, this rule of thumb is not guaranteed to hold for exposures with more than two categories or in the presence of other biases.

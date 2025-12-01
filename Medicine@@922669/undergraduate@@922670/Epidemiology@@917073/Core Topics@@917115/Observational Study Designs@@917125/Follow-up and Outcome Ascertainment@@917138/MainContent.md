@@ -1,0 +1,94 @@
+## Introduction
+The validity of longitudinal research, from cohort studies to clinical trials, rests on two critical pillars: the complete follow-up of participants and the accurate ascertainment of health outcomes. Without rigorous methods for these processes, study conclusions can be invalidated by bias and error. This article addresses the fundamental challenge of conducting robust longitudinal research in the face of real-world imperfections like participant dropouts, inconsistent data, and differential observation. Across the following chapters, you will gain a comprehensive understanding of this vital topic. The 'Principles and Mechanisms' chapter will lay the theoretical groundwork, defining core concepts such as person-time, censoring, and misclassification, and explaining how biases like informative censoring and surveillance bias arise. Next, the 'Applications and Interdisciplinary Connections' chapter will demonstrate how these principles are applied in diverse fields, from clinical trials to pharmacoepidemiology, and introduces advanced methods to correct for bias. Finally, 'Hands-On Practices' will provide an opportunity to solidify your knowledge by tackling practical problems in calculating rates and quantifying error.
+
+## Principles and Mechanisms
+
+The validity of any longitudinal study hinges on its ability to accurately and completely follow its cohort over time and correctly ascertain the outcomes of interest. The principles and mechanisms governing these two processes—follow-up and outcome ascertainment—are fundamental to epidemiology. This chapter delineates these core principles, from the basic accounting of time at risk to the complex biases that arise from imperfect observation.
+
+### The Foundation: Person-Time and Risk Sets
+
+The primary goal of a cohort study is to quantify the occurrence of new events, or incidence. This can be expressed as an incidence proportion (risk) or an incidence rate. While risk is a simple proportion, the calculation of an incidence rate requires a more nuanced denominator: **person-time**. Person-time is the sum of the time periods during which each individual in the cohort is under observation and at risk for developing the outcome.
+
+In an idealized cohort where all participants are enrolled on the same day and followed for the entire study duration without any dropouts, calculating total person-time is straightforward. However, real-world cohorts are often dynamic. Participants may enter the study at different times, a feature known as **staggered entry** or **left truncation**. Furthermore, their follow-up may end for various reasons before the study concludes.
+
+To correctly handle this dynamic nature, we must precisely define the period of observation for each individual. For an individual $i$, let their time of entry into the cohort be $E_i$. Follow-up continues until they either experience the event at time $D_i$ or are **censored** (i.e., their follow-up ends for reasons other than the event) at time $C_i$. The observed follow-up time for this individual is the duration from entry until the first of these occurrences. Therefore, the person-time contributed by individual $i$, denoted $t_i$, is calculated as $t_i = \min(D_i, C_i) - E_i$.
+
+This concept is crucial for defining the **risk set** at any given point in calendar time, $t$. The risk set, $R(t)$, comprises all individuals who are currently under observation and eligible to experience the event. An individual $i$ is in the risk set $R(t)$ if and only if they have already entered the study ($E_i \le t$) and have not yet experienced the event or been censored ($t  \min(D_i, C_i)$). Accurately accounting for who is in the risk set at the moment each event occurs is the cornerstone of [time-to-event analysis](@entry_id:163785) and the calculation of incidence rates [@problem_id:4593930]. Failing to correctly exclude the unobserved time before entry ($E_i$) can lead to a form of bias known as immortal time bias, where subjects are incorrectly assumed to be at risk during a period when they could not have been observed to have an event.
+
+### Methods of Outcome Ascertainment
+
+Once a follow-up structure is in place, investigators must employ a strategy to identify outcomes. These strategies can be broadly categorized as prospective or retrospective, each with distinct advantages and sources of error [@problem_id:4593937].
+
+**Prospective outcome ascertainment** involves pre-specifying the outcome definition and establishing active procedures to capture events as they occur. This may involve regular clinic visits, scheduled laboratory tests, or active contact with participants. This approach allows for contemporaneous data capture using standardized methods and often includes an adjudication committee to review potential events against strict criteria. While resource-intensive, prospective ascertainment is generally considered the gold standard for minimizing misclassification.
+
+**Retrospective outcome ascertainment**, by contrast, identifies outcomes after the follow-up period has concluded. It relies on looking back at data sources that were not collected with the primary research question in mind. Common sources include:
+*   **Participant Self-Report:** Asking participants to recall events that occurred in the past. This method is inexpensive but susceptible to recall errors. Simple forgetting can reduce the probability of identifying true events, particularly those that occurred in the distant past. More complex errors, such as **telescoping** (misremembering the timing of events) or confusing minor symptoms with the outcome of interest, can lead to the reporting of events that never occurred.
+*   **Existing Records:** Reviewing data from sources like electronic health records (EHRs), administrative claims databases, or disease registries. These sources can be rich in information, but the data are often incomplete or were recorded for clinical or billing purposes, not research.
+
+In modern epidemiology, particularly with the rise of large-scale EHR data, **algorithmic case definitions** (or phenotypes) have become a common and powerful tool for outcome ascertainment [@problem_id:4593904]. These algorithms combine various data elements—such as diagnosis codes (e.g., ICD-10), laboratory results, medication orders, and procedure codes—to identify cases. The complexity of these algorithms can be tuned to balance the trade-off between capturing all true cases and excluding all non-cases. For example, a simple algorithm for acute kidney injury (AKI) might rely only on a single diagnosis code. A more complex and specific algorithm might require both a diagnosis code *and* laboratory evidence of a significant rise in serum creatinine, and perhaps even exclude patients with pre-existing chronic kidney disease to reduce misclassification.
+
+### Quantifying Ascertainment Accuracy: Misclassification
+
+No ascertainment method is perfect. The deviation from a true or "gold standard" classification is known as **misclassification**. We quantify the performance of an ascertainment method using two key validity metrics: **sensitivity** and **specificity** [@problem_id:4593935].
+
+Let $D^+$ represent the true state of having the outcome and $D^-$ be the true state of not having the outcome. Let $T^+$ and $T^-$ be the classification assigned by the ascertainment method (e.g., the algorithm).
+
+*   **Sensitivity ($Se$)** is the probability that the method correctly classifies a true case. It is the conditional probability $Se = P(T^+ \mid D^+)$. Low sensitivity means a high rate of false negatives (true cases are missed), leading to an underestimation of the true incidence or prevalence.
+
+*   **Specificity ($Sp$)** is the probability that the method correctly classifies a true non-case. It is the conditional probability $Sp = P(T^- \mid D^-)$. Low specificity means a high rate of false positives (non-cases are incorrectly labeled as cases), leading to an overestimation of the true incidence or prevalence.
+
+Consider the AKI algorithm example [@problem_id:4593904]. As the algorithm becomes more stringent by adding more criteria, it becomes harder for a case to be identified. This typically reduces the number of false positives, thereby increasing specificity. However, it may also cause more borderline or atypical true cases to be missed, decreasing sensitivity. The choice of algorithm thus involves a trade-off that depends on the study's goals. For a surveillance system designed to trigger costly manual chart reviews, minimizing false positives is paramount, favoring a high-specificity algorithm. For an etiologic study aiming to capture all possible cases, a high-sensitivity algorithm might be preferred, even at the cost of some false positives.
+
+Mathematically, if the probability of correctly identifying a true event is $p$ and the probability of falsely identifying a non-event as an event is $q$, then the sensitivity is $Se=p$ and the specificity is $Sp=1-q$ [@problem_id:4593937].
+
+It is crucial to distinguish sensitivity and specificity from **positive predictive value (PPV)**, which is $P(D^+ \mid T^+)$, and **negative predictive value (NPV)**, which is $P(D^- \mid T^-)$. While $Se$ and $Sp$ are intrinsic properties of the ascertainment method, PPV and NPV are dependent on the underlying prevalence of the outcome in the population being studied.
+
+### The Challenge of Incomplete Observation and Associated Biases
+
+In a perfect study, all participants would be followed for the entire planned duration, and their outcome status would be known. In reality, follow-up is almost always incomplete. This incomplete observation, known as censoring, poses a significant threat to the validity of a study.
+
+#### A Taxonomy of Censoring
+
+Censoring occurs when we have some, but not full, information on an individual's event time. There are three main types [@problem_id:4593955]:
+
+1.  **Right Censoring**: This is the most common type. It occurs when a participant's follow-up ends before they experience the event of interest. We know their event time is *greater than* their censoring time ($T > C$). This can happen because the study ends (**administrative censoring**), or because the participant withdraws, moves away, or is otherwise lost to follow-up.
+2.  **Left Censoring**: This occurs when an event is known to have happened *before* a certain time, but the exact time is unknown ($T \le t_{obs}$). For instance, in a study on age at first infection, a participant might test positive at their first study visit, indicating the infection occurred at some point before enrollment.
+3.  **Interval Censoring**: This occurs when an event is only known to have happened within an interval between two observation points ($t_L  T \le t_R$). This is common in studies with periodic follow-up visits, where a participant who was event-free at one visit is found to have had the event by the next visit.
+
+It is vital to distinguish censoring from **truncation**. Left truncation, or staggered entry, means that individuals are only included in the study if they are event-free at their time of entry, $E_i$. The condition for inclusion is $T \ge E_i$. This is a feature of the sampling process, whereas censoring is a feature of the follow-up process [@problem_id:4593955].
+
+#### The Non-informative Censoring Assumption
+
+The ability to make valid inferences from [censored data](@entry_id:173222) rests on a single, critical assumption: **[non-informative censoring](@entry_id:170081)**. Intuitively, this means that, at any point in time, individuals who are censored are no more or less likely to experience the event in the future than those who remain under observation.
+
+Formally, this is a statement of conditional independence. Let $T$ be the true event time, $C$ be the censoring time, and $X$ be a set of measured covariates. The [non-informative censoring](@entry_id:170081) assumption states that $T$ and $C$ are independent, conditional on $X$: $T \perp C \mid X$ [@problem_id:4593929]. This assumption is an **identifiability condition**. It allows the mathematical separation of the event process from the censoring process in the likelihood of the observed data. Without it, the two processes are inextricably entangled, and it becomes impossible to estimate the true hazard or survival function for the event of interest from the observed data alone.
+
+Administrative censoring is, by design, non-informative. A study ending on a specific date is a mechanism independent of any individual's risk profile. In contrast, loss to follow-up may or may not be non-informative, and this is where significant biases can arise [@problem_id:4593980].
+
+#### Biases from Violated Assumptions
+
+When the [non-informative censoring](@entry_id:170081) assumption is violated, or when outcome detection is systematically different between groups, the study results can be severely biased.
+
+1.  **Selection Bias from Informative Censoring**: If participants are lost to follow-up for reasons related to their risk of the outcome, censoring is informative and leads to selection bias. For example, if patients in a post-heart attack cohort who are sicker are more likely to drop out of the study, the remaining participants will be an artificially "healthy" sample. A naive analysis that either excludes the lost participants or treats them as non-informatively censored will underestimate the true risk of subsequent events in the original target population. Advanced methods like **Inverse Probability of Censoring Weighting (IPCW)** can sometimes be used to correct for this bias, provided that the reasons for censoring are well-understood and captured in measured covariates [@problem_id:4593980].
+
+2.  **Surveillance Bias (Detection Bias)**: This information bias occurs when one group of participants is monitored more intensively than another, leading to a higher probability of detecting the outcome in the more closely watched group, even if the true underlying event rates are identical. Consider two clinics where patients are screened for an asymptomatic condition. If Clinic A screens patients twice as often as Clinic B, Clinic A will have a higher *observed* incidence simply because it has more opportunities to detect the event. This can create a spurious association or exaggerate a real one [@problem_id:4593939]. This bias is a major concern in EHR-based research where, for instance, patients exposed to a certain drug may undergo more frequent laboratory monitoring, leading to differential detection of lab-based outcomes compared to unexposed patients [@problem_id:4593904]. For this reason, an algorithm based on less-biased data sources (like diagnosis codes, if coding practices are similar) might be preferable for etiologic inference, despite potentially lower overall accuracy.
+
+3.  **Competing Risks**: A competing risk is an event that precludes the occurrence of the outcome of interest. Death is the classic competing risk for any non-fatal outcome [@problem_id:4593977]. For example, in a study of time to non-fatal stroke, a patient who dies can no longer have a non-fatal stroke. Treating a competing event as a standard right-censoring event is a profound error because it violates the [non-informative censoring](@entry_id:170081) assumption. The risk factors for death are often the same as the risk factors for stroke, so individuals who die are not representative of those who survive.
+    
+    The standard **Kaplan-Meier (KM) estimator** of survival, when used in this context by censoring at death, does not estimate the real-world probability of the event. Instead, it estimates a hypothetical probability of the event *if the competing risk did not exist*. This quantity is often biologically implausible and almost always overestimates the true absolute risk.
+    
+    The correct approach for estimating the absolute probability of an event in the presence of competing risks is to calculate the **Cumulative Incidence Function (CIF)**. The CIF correctly accounts for the fact that individuals can be removed from the risk pool by either the event of interest or the competing event. As demonstrated by calculation, the risk estimate from a naive KM analysis that censors deaths can be substantially higher than the true risk given by the CIF, leading to invalid conclusions [@problem_id:4593977].
+
+### Advanced Topic: Composite Outcomes
+
+In many clinical trials, especially in fields like cardiology, investigators use a **composite outcome**, which is a single endpoint defined as the first occurrence of any of several pre-specified events [@problem_id:4593941]. For example, a composite endpoint might include cardiovascular death, non-fatal myocardial infarction, or hospitalization for unstable angina.
+
+The primary motivation for using a composite outcome is to increase statistical power. By combining several related but infrequent events, the total number of observed events increases, which allows for a smaller required sample size or a shorter study duration.
+
+However, this gain in statistical efficiency comes at a significant cost to interpretability and potentially validity:
+
+*   **Obscured Clinical Meaning**: A single effect estimate, such as a hazard ratio of 0.85, for a composite endpoint is difficult to interpret. It does not distinguish between a large effect on a minor endpoint (e.g., hospitalization) and a small effect on a major endpoint (e.g., death). The clinical relevance is ambiguous when components differ greatly in severity.
+*   **Dilution of Effect**: The overall hazard ratio for the composite is a weighted average of the hazard ratios for its components. If a treatment has a strong beneficial effect on one component (e.g., death) but no effect on another, more frequent component (e.g., hospitalization), the overall composite effect will be diluted, or biased toward the null value of 1.0. This can mask a clinically important benefit [@problem_id:4593941].
+*   **Increased Susceptibility to Bias**: Composite outcomes often include "softer" endpoints (like hospitalization for unstable angina) that are based on clinical judgment, alongside "hard" endpoints (like death). These softer endpoints are more susceptible to ascertainment and detection biases, which can compromise the validity of the entire composite endpoint [@problem_id:4593941].
+
+In conclusion, the journey from enrolling a participant to recording their final outcome is fraught with methodological challenges. A deep understanding of the principles of person-time, the mechanisms of ascertainment, the metrics of validity, and the myriad forms of bias that can arise from incomplete or differential observation is essential for designing, analyzing, and interpreting longitudinal research.

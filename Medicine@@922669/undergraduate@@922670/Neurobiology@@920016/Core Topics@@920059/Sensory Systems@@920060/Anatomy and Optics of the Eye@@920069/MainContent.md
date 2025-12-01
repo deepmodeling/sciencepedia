@@ -1,0 +1,148 @@
+## Introduction
+The [human eye](@entry_id:164523) is a marvel of biological engineering, an intricate optical instrument capable of capturing the world with stunning clarity. But how does it truly work? Beyond simply seeing, the eye performs a continuous series of complex physical and physiological feats—from precisely bending light to form an image, to dynamically adjusting its focus, to translating photons into the language of the nervous system. This article bridges the gap between basic anatomy and the functional principles that govern vision. It aims to provide a comprehensive understanding of the eye's design, its imperfections, and the elegant biological solutions that overcome them.
+
+In the following chapters, we will embark on a journey through the visual system. We begin with **Principles and Mechanisms**, dissecting the eye's optical components, the nature of image quality, and the fundamental neural processes of the retina. Next, in **Applications and Interdisciplinary Connections**, we explore how these principles are applied in clinical ophthalmology, advanced surgical interventions, and how they inform broader fields like evolutionary biology. Finally, **Hands-On Practices** will offer opportunities to apply this knowledge to solve practical problems in vision science, solidifying your understanding of this remarkable sensory organ.
+
+## Principles and Mechanisms
+
+### The Eye as an Optical Instrument: Forming the Retinal Image
+
+The primary function of the eye's anterior structures is to form a focused image of the external world onto the light-sensitive retina. This is accomplished through a series of transparent biological media that collectively act as a compound lens system. Understanding the principles of this optical system is foundational to understanding vision itself.
+
+#### The Major Refractive Components
+
+The journey of light into the eye involves passage through four primary optical components: the **cornea**, the **aqueous humor**, the **crystalline lens**, and the **vitreous humor**. Each of these media is transparent to visible light, a remarkable biological property that we will explore later. The [bending of light](@entry_id:267634), or **refraction**, occurs at the interface between any two media that possess a different **refractive index ($n$)**, a dimensionless number that describes how fast light travels through the medium.
+
+A common misconception is that the lens performs most of the eye's focusing. In reality, the greatest contribution to the eye's total refractive power—approximately two-thirds of it—occurs at the very first surface: the interface between the outside air ($n_{\text{air}} \approx 1.000$) and the anterior surface of the cornea ($n_{\text{cornea}} \approx 1.376$). According to Snell's Law, the amount of refraction is determined by the change in refractive index across an interface. The air-cornea interface presents the largest change in refractive index ($\Delta n \approx 0.376$) that light encounters on its path to the retina. Subsequent interfaces, such as the cornea-aqueous humor interface ($n_{\text{aqueous}} \approx 1.336$, leading to $\Delta n = 1.336 - 1.376 = -0.040$), make smaller, but crucial, contributions that help fine-tune the final focus [@problem_id:4998184]. This is why our vision becomes blurry underwater: the refractive index of water ($n_{\text{water}} \approx 1.333$) is very close to that of the cornea, nearly eliminating the powerful refractive effect of the air-cornea interface.
+
+#### The Physical Basis of Ocular Refractive Indices
+
+The specific refractive index of each ocular medium is a direct consequence of its molecular composition and density. A medium's refractive index is fundamentally related to the polarizability of its constituent molecules; generally, a higher concentration of polarizable molecules results in a higher refractive index and a slower speed of light.
+
+The **aqueous humor** in the anterior chamber and the **vitreous humor** filling the large posterior cavity of the eye are both over 98% water, with dissolved salts, proteins, and other [macromolecules](@entry_id:150543). Consequently, their refractive indices ($n_{\text{aq}} \approx n_{\text{vit}} \approx 1.336$) are very close to that of pure water ($n \approx 1.333$) [@problem_id:4998242].
+
+In contrast, the **cornea** is a dense, highly organized tissue composed of a matrix of collagen fibrils and hydrated [proteoglycans](@entry_id:140275). This higher density and protein concentration account for its significantly higher refractive index of $n_{\text{cornea}} \approx 1.376$ [@problem_id:4998242].
+
+The **crystalline lens** is unique in that its refractive index is not uniform. It is composed of highly concentrated proteins called crystallins, and their concentration increases from the outer layers (**lens cortex**, $n_{\text{cortex}} \approx 1.386$) to the central core (**lens nucleus**, $n_{\text{nucleus}} \approx 1.406$). This gradient refractive index (GRIN) structure is not an incidental property; it plays a critical optical role by gradually bending light as it passes through the lens, which helps to correct for **spherical aberration**, an optical imperfection we will discuss shortly [@problem_id:4998184] [@problem_id:4998242].
+
+#### Modeling the Eye's Optics: From Schematic Eyes to Cardinal Points
+
+To analyze the optical performance of the eye, it is useful to create simplified models. In **Gaussian optics**, which applies to rays close to the optical axis (paraxial rays), any complex system of lenses can be fully described by a set of six **cardinal points** located on the optical axis. These are the primary and secondary [focal points](@entry_id:199216) ($F$ and $F'$), the primary and secondary [principal points](@entry_id:173969) ($P$ and $P'$), and the primary and secondary [nodal points](@entry_id:171339) ($N$ and $N'$) [@problem_id:4998183]. The [principal points](@entry_id:173969) define the locations of the **[principal planes](@entry_id:164488)**, which are theoretical planes of unit magnification from which object and image distances are measured.
+
+A crucial feature of the eye is that the refractive index of the object space (air, $n_1 \approx 1.00$) is different from that of the image space (vitreous humor, $n_2 \approx 1.336$). A fundamental property of optical systems is that when $n_1 \neq n_2$, the [nodal points](@entry_id:171339) are displaced from their corresponding [principal points](@entry_id:173969). A ray directed at the primary nodal point ($N$) emerges from the secondary nodal point ($N'$) at the same angle, undeviated. In the eye, these [nodal points](@entry_id:171339) are shifted towards the posterior of the eye relative to the [principal planes](@entry_id:164488).
+
+More detailed **schematic eye** models, such as the famous model by Allvar Gullstrand, account for the multiple curved surfaces of the cornea and lens, their precise spacings, and even the gradient index of the lens. Such models yield separated principal and [nodal points](@entry_id:171339) and accurately predict how [optical power](@entry_id:170412) changes during accommodation [@problem_id:4998183]. For simpler pedagogical purposes, a **reduced eye** model replaces the entire optical system with a single spherical refracting surface. While this loses accuracy, it is useful for illustrating basic principles, such as the fact that the total power of the eye (around $60$ Diopters) is defined as $\Phi = n_2 / f_2$, where $f_2$ is the secondary focal length. Mistakenly using the "in-air" formula $\Phi = 1/f_2$ would incorrectly predict a focal length of about $16.7$ mm instead of the correct value of approximately $f_2 = 1.336 / 60 \approx 22.3$ mm, demonstrating that the refractive index of the vitreous is indispensable for correct calculations [@problem_id:4998183].
+
+### The Quality of the Retinal Image: Aberrations and Scatter
+
+The eye's optical system is not perfect. Like any real-world lens, it suffers from a variety of optical imperfections, or **aberrations**, that can degrade the quality of the retinal image. These aberrations, along with the [scattering of light](@entry_id:269379) within the ocular media, ultimately limit the sharpness of our vision.
+
+#### Chromatic Aberration: The Prismatic Effect of the Eye
+
+The refractive index of any transparent material, including the ocular media, varies with the wavelength of light. This phenomenon is known as **dispersion**. In the eye, as in most transparent materials, dispersion is "normal," meaning the refractive index is higher for shorter wavelengths (blue light) than for longer wavelengths (red light), i.e., $n(\text{blue}) > n(\text{red})$. The material with the strongest dispersion in the eye is the crystalline lens, owing to its very high concentration of proteins [@problem_id:4998242].
+
+This wavelength-dependent refraction, called **[chromatic aberration](@entry_id:174838)**, causes the eye to act like a prism. It has two main consequences [@problem_id:4998164]:
+1.  **Longitudinal Chromatic Aberration (LCA)**: Because blue light is refracted more strongly than red light, different colors come to a focus at different depths. In the [human eye](@entry_id:164523), blue light focuses in front of the retina, while red light focuses behind it, with green light focusing nearest to the photoreceptors.
+2.  **Transverse Chromatic Aberration (TCA)**: For off-axis points, dispersion causes different colors to be imaged at slightly different positions on the retina, creating colored fringes.
+
+While [chromatic aberration](@entry_id:174838) degrades image quality, the [visual system](@entry_id:151281) is exquisitely adapted to it. In fact, the brain may exploit the information contained in [chromatic aberration](@entry_id:174838). For example, the relative blur of red and blue components of an image provides a robust, directional cue for **accommodation** (the process of changing focus), signaling whether the eye needs to focus nearer or farther [@problem_id:4998164].
+
+#### Monochromatic Aberrations: The Imperfections of a Spherical Lens
+
+Even for light of a single wavelength ([monochromatic light](@entry_id:178750)), aberrations arise due to the geometry of the eye's refracting surfaces. The most significant of these are known as the Seidel aberrations [@problem_id:4998164].
+
+*   **Spherical Aberration**: In a lens with spherical surfaces, rays passing through the periphery of the lens are focused more strongly than rays passing through the center. This on-axis, symmetric blur increases dramatically with pupil size. It can be mitigated by constricting the pupil (stopping down), which blocks the more aberrated peripheral rays.
+
+*   **Coma**: An [off-axis aberration](@entry_id:174607) that gives the image of a point source a characteristic comet-like (comatic) shape. It arises because magnification varies across different zones of the pupil for off-axis points. Coma is zero on the optical axis and thus primarily affects peripheral vision.
+
+*   **Oblique Astigmatism and Field Curvature**: For off-axis points, the oblique [angle of incidence](@entry_id:192705) causes the eye's optics to have different powers in the tangential (vertical) and sagittal (horizontal) meridians. This results in two separate line foci instead of a single point focus, an effect known as [oblique astigmatism](@entry_id:177047). Even if astigmatism were corrected, the plane of best focus for a flat object would be a curved surface (the Petzval surface). Fortunately, the naturally curved shape of the retina helps to partially compensate for this [field curvature](@entry_id:162957), improving the quality of our peripheral vision.
+
+*   **Distortion**: This aberration does not blur the image but rather warps it geometrically. It occurs when magnification changes with distance from the optical axis, causing straight lines in the world to appear curved in the image (either "barrel" or "pincushion" distortion). Distortion does not affect the sharpness of the image, only the position of its features. The brain's [neural circuits](@entry_id:163225) can readily adapt to and compensate for static distortions.
+
+#### Intraocular Scatter: The Problem of Veiling Glare
+
+In addition to refractive errors, image quality is degraded by [light scattering](@entry_id:144094). As light passes through the cornea, lens, and vitreous, a small fraction is scattered by microscopic particles and imperfections. This scattered light creates a "veil" of light over the retina, reducing the contrast of the focused image. This effect is known as **veiling glare**.
+
+The impact of aberrations and scatter on image quality is formally described by the **Point Spread Function (PSF)**, which is the retinal image of an ideal [point source](@entry_id:196698) of light. A perfect optical system would have a point-like PSF. In the [human eye](@entry_id:164523), the PSF is typically modeled as having a narrow, sharp core (representing the focused, aberrated light) and a broad, low-intensity halo (representing the scattered light) [@problem_id:4998182].
+
+The Fourier transform of the PSF gives the **Optical Transfer Function (OTF)**. The magnitude of the OTF, called the **Modulation Transfer Function (MTF)**, quantifies how much the contrast of a sinusoidal grating is reduced as it passes through the eye's optics. The broad scatter halo primarily reduces the MTF at all spatial frequencies, causing a general loss of contrast. It has little effect on the sharpness of edges, which is determined by the narrow core of the PSF. Therefore, the primary perceptual effect of intraocular scatter is a reduction in image contrast, not an increase in blur [@problem_id:4998182].
+
+### Maintaining the Optical System: Anatomy and Physiology
+
+The eye's optical components are not static glass lenses but are living tissues that must be metabolically supported and dynamically controlled, all while maintaining their precise optical properties.
+
+#### The Miracle of Corneal Transparency
+
+The cornea presents a fascinating biological paradox: it is a living tissue composed of cells and extracellular matrix, yet it is almost perfectly transparent. Any random collection of fibers and cells should scatter light profusely, rendering the tissue translucent or opaque. The cornea's transparency is an active and highly engineered property stemming from its nanoscale architecture [@problem_id:4998158].
+
+The corneal stroma, which comprises 90% of the corneal thickness, consists of collagen fibrils arranged in stacked layers called lamellae. Within each lamella, the fibrils are parallel, but the crucial feature is their arrangement relative to one another. They are not perfectly crystalline (which would create iridescence) but possess a liquid-like **[short-range order](@entry_id:158915)**, meaning each fibril has near-neighbors at a preferred distance but there is no long-range periodicity. The fibrils themselves are very thin (radius $\approx 15$ nm), and their average spacing is also much smaller than the wavelength of visible light ($d \approx 55$ nm).
+
+The theory of corneal transparency, first proposed by George Benedek, explains that this dense and quasi-regular packing causes the [light waves](@entry_id:262972) scattered by individual fibrils to destructively interfere with one another in all directions except for the forward direction. In essence, scattered light cancels itself out, allowing only the original, unscattered beam of light to pass through. This condition holds because the [momentum transfer](@entry_id:147714) required to "see" the fibril spacing ($q \approx 2\pi/d$) is much larger than the maximum momentum transfer that a visible light photon can provide ($q_{max} = 4\pi n/\lambda_0$) [@problem_id:4998158].
+
+Maintaining this delicate structure requires two further conditions. First, the cornea must be **avascular**, as blood vessels and red blood cells are much larger than the wavelength of light and would cause significant scattering and absorption [@problem_id:4998240]. The cornea's low metabolic rate and extreme thinness ($\approx 0.5$ mm) allow it to receive sufficient oxygen and nutrients by diffusion from the tear film on its front surface and the aqueous humor on its back surface, a process governed by Fick's Law of diffusion [@problem_id:4998240]. Second, the stromal hydration must be precisely controlled by an active ion-pumping mechanism in the corneal endothelium, which maintains a state of relative dehydration (deturgescence). This ensures a uniform refractive index throughout the stroma, minimizing local fluctuations that would cause scattering.
+
+#### The Dynamic Lens: Accommodation
+
+Unlike a camera with a fixed lens, the eye can dynamically change its focal power to view objects at different distances. This process is called **accommodation**. It is achieved by changing the shape of the crystalline lens, a feat accomplished by the **ciliary body**, a ring of smooth [muscle tissue](@entry_id:145481) located behind the iris.
+
+The lens is suspended in place by a series of fine ligaments called **zonular fibers**, which connect the lens capsule to the ciliary body. The prevailing theory of accommodation, first proposed by Hermann von Helmholtz, states that for viewing distant objects, the ciliary muscle is relaxed. This keeps the diameter of the ciliary ring large, which in turn pulls the zonular fibers taut. The tension on the zonules flattens the elastic lens, minimizing its [optical power](@entry_id:170412).
+
+To focus on a near object, the ciliary muscle contracts. The ciliary body consists of distinct groups of muscle fibers, including longitudinal, radial, and circular fibers. Experimental evidence shows that the contraction of the **circular fibers** acts like a sphincter, reducing the inner diameter of the ciliary ring. This reduces the tension on the zonular fibers, allowing the elastic capsule of the lens to relax into its natural, more spherical shape. This increased curvature of the lens surfaces increases its [optical power](@entry_id:170412), bringing the near object into focus on the retina [@problem_id:4998210].
+
+#### Aqueous Humor Dynamics: Production and Drainage
+
+The aqueous humor is a clear fluid that fills the anterior and posterior chambers of the eye. It serves two critical functions: providing nutrients to the avascular cornea and lens, and maintaining the **intraocular pressure (IOP)**, which is necessary to keep the eyeball's shape stable.
+
+Aqueous humor is continuously produced and drained in a dynamic cycle. It is produced by the **ciliary epithelium** of the ciliary body through a process of active, energy-dependent secretion of ions and solutes, which osmotically draws water from the blood supply. This production process is largely independent of the eye's pressure [@problem_id:4998193]. From the posterior chamber, the fluid flows through the pupil into the anterior chamber, from where it exits the eye through two main routes:
+
+1.  **Trabecular Outflow Pathway**: This is the primary drainage route, accounting for about 80-90% of outflow. Aqueous humor filters through a sieve-like tissue called the **trabecular meshwork** into Schlemm's canal, which then drains into the venous system. This is a passive, pressure-dependent pathway; flow is proportional to the pressure gradient between the IOP and the episcleral venous pressure ($P_{ev}$). The constant of proportionality is the **outflow facility ($C$)**.
+2.  **Uveoscleral Outflow Pathway**: This secondary route involves fluid seeping through the spaces within the ciliary muscle and into the suprachoroidal space. This pathway is largely independent of intraocular pressure.
+
+The steady-state IOP is determined by the balance between production ($F$) and drainage through both pathways. This relationship is captured by the **Goldmann equation**:
+$$ P_i = \frac{F - U}{C} + P_{ev} $$
+where $P_i$ is the IOP, $U$ is the pressure-independent uveoscleral outflow, and the other terms are as defined above [@problem_id:4998193]. An imbalance, such as reduced outflow facility, can lead to elevated IOP, a primary risk factor for glaucoma.
+
+Intriguingly, the ciliary muscle has a dual role, participating in both accommodation and IOP regulation. The **longitudinal fibers** of the ciliary muscle attach to a structure called the scleral spur, which is adjacent to the trabecular meshwork. When the ciliary muscle contracts (during accommodation), these longitudinal fibers pull on the scleral spur, which opens up the spaces in the trabecular meshwork and increases outflow facility, thereby lowering IOP [@problem_id:4998210].
+
+### The Neural Retina: Transducing Light into Signals
+
+After passing through the eye's optics, light is focused onto the **retina**, the neural tissue lining the back of the eye. Here, the energy of photons is converted into the electrochemical language of the nervous system, a process called **[phototransduction](@entry_id:153524)**.
+
+#### The Inverted Retina: A Design of Layers
+
+The vertebrate retina has a distinct laminar structure and is famously "inverted," meaning that light must pass through several layers of transparent neural cells and axons before reaching the [photoreceptors](@entry_id:151500) that actually detect the light. From the vitreous humor inward, the principal layers are the Nerve Fiber Layer (NFL), Ganglion Cell Layer (GCL), Inner Plexiform Layer (IPL), Inner Nuclear Layer (INL), Outer Plexiform Layer (OPL), Outer Nuclear Layer (ONL), Photoreceptor Inner and Outer Segments (IS/OS), and finally, the Retinal Pigment Epithelium (RPE) [@problem_id:4998170].
+
+This layered organization reflects the flow of information. The **nuclear layers** (GCL, INL, ONL) contain the cell bodies (somata) of the retina's neurons. The **plexiform layers** (IPL, OPL) are dense networks of axons, dendrites, and synapses where these neurons communicate. For example, [photoreceptors](@entry_id:151500) in the ONL synapse with bipolar and horizontal cells in the OPL. Bipolar cells from the INL then synapse with amacrine cells and ganglion cells in the IPL. The axons of the ganglion cells in the GCL form the NFL as they course towards the optic disc to form the optic nerve.
+
+The optical properties of these layers can be probed directly. As light passes through, its intensity is attenuated by scattering and absorption, described by the Beer-Lambert law. The synaptic plexiform layers, rich in fine neural processes, are primary sites of [light scattering](@entry_id:144094). Significant absorption occurs in two specific layers: the photoreceptor outer segments, which are densely packed with light-absorbing photopigment molecules ([opsins](@entry_id:190940)), and the RPE, which contains melanin granules that absorb any stray photons that pass through the photoreceptor layer, thereby reducing backscatter and sharpening the image [@problem_id:4998170].
+
+#### Photoreceptors: The Duplex System of Rods and Cones
+
+The human retina contains two types of photoreceptor cells, [rods and cones](@entry_id:155352), which support a duplex visual system.
+
+*   **Rods** are highly sensitive to light and are responsible for vision in dim-light conditions ([scotopic vision](@entry_id:171319)). They are monochromatic, containing a single type of photopigment called **[rhodopsin](@entry_id:175649)**.
+*   **Cones** are less light-sensitive but are responsible for high-acuity vision in bright daylight (photopic vision) and for [color perception](@entry_id:171832). Most humans have three types of cones, each containing a different photopigment (L-, M-, and S-[opsins](@entry_id:190940)) that is maximally sensitive to long (red), medium (green), or short (blue) wavelengths of light [@problem_id:4998223].
+
+Rods and cones differ not only in their function but also in their structure and biochemistry. In cones, the outer segment discs containing the [opsins](@entry_id:190940) are formed from continuous invaginations of the cell's plasma membrane. In rods, the discs are enclosed, separate organelles. This gives cones a much larger surface area-to-volume ratio, facilitating faster [ion exchange](@entry_id:150861) and contributing to their faster response times [@problem_id:4998223].
+
+Phototransduction itself is a G-protein-coupled biochemical cascade. In darkness, [photoreceptors](@entry_id:151500) have a high concentration of cyclic guanosine monophosphate (cGMP), which keeps cation channels open, leading to a constant inward flow of positive ions (the "[dark current](@entry_id:154449)") and a relatively depolarized membrane potential. When a photon is absorbed by an [opsin](@entry_id:174689) molecule, it triggers a cascade: the activated [opsin](@entry_id:174689) ($R^*$) activates hundreds of G-protein molecules (transducin), each of which activates an enzyme ([phosphodiesterase](@entry_id:163729), PDE), which then hydrolyzes thousands of cGMP molecules. The resulting drop in cGMP concentration causes the cation channels to close, reducing the [dark current](@entry_id:154449) and **hyperpolarizing** the cell. This [hyperpolarization](@entry_id:171603) is the neural signal that is transmitted to the next cells in the retina [@problem_id:4998223].
+
+The rod and cone cascades are tuned for different purposes. The rod cascade has extremely high amplification and slow kinetics, allowing a single photon to produce a reliable electrical signal. The cone cascade has lower gain but much faster kinetics, allowing cones to respond rapidly and adapt to a wide range of bright light levels. This difference in speed is due to specialized isoforms of regulatory proteins (like RGS9 and [arrestin](@entry_id:154851)) that shut down the cascade more quickly in cones [@problem_id:4998223]. Cones also possess a more powerful calcium-dependent feedback mechanism for [light adaptation](@entry_id:167812) and a dedicated, faster pathway for regenerating their photopigment involving Müller [glial cells](@entry_id:139163), both of which are critical for their function in bright light [@problem_id:4998223].
+
+#### The Retinal Trade-off: Metabolism vs. Optics
+
+The constant activity of the "[dark current](@entry_id:154449)" and the associated ion pumping make [photoreceptors](@entry_id:151500) among the most metabolically demanding cells in the body. The retina as a whole has one of the highest rates of oxygen consumption per unit mass. This immense energy requirement cannot be met by diffusion alone. Consequently, the retina is equipped with a rich dual blood supply: an inner retinal vasculature supplies the ganglion cell and inner nuclear layers, while the choriocapillaris, an extremely high-flow vascular bed just outside the RPE, supplies the metabolically voracious photoreceptors [@problem_id:4998240].
+
+This presents a fundamental design trade-off. Unlike the cornea, which can afford to be avascular, the retina must prioritize its metabolic needs over perfect optical clarity. The presence of blood vessels and flowing red blood cells within the optical path inevitably introduces scattering and absorption. The [visual system](@entry_id:151281) minimizes this disruption in the most [critical region](@entry_id:172793) for high-acuity vision, the fovea, by creating a **foveal avascular zone (FAZ)** [@problem_id:4998240].
+
+#### Retinal Processing: The ON and OFF Pathways
+
+The retina does not simply act as a light meter. It performs significant processing to extract meaningful features from the visual scene before sending information to the brain. The most fundamental processing step is the segregation of visual information into parallel **ON** and **OFF** pathways, which signal light increments and decrements, respectively. This split occurs at the very first synapse, between photoreceptors and bipolar cells.
+
+As noted, photoreceptors hyperpolarize in response to light, meaning they *reduce* their rate of glutamate release. The response of the bipolar cell depends on the type of [glutamate receptor](@entry_id:164401) it expresses [@problem_id:4998208]:
+
+*   **OFF bipolar cells** express [ionotropic glutamate receptors](@entry_id:176453) (e.g., AMPA/kainate). These are excitatory receptors that open cation channels when glutamate binds. Thus, OFF bipolars are depolarized by glutamate (in the dark) and hyperpolarized by light (less glutamate). They are "sign-preserving" and respond to light turning OFF.
+
+*   **ON bipolar cells** express a unique metabotropic [glutamate receptor](@entry_id:164401), mGluR6. In these cells, glutamate binding triggers a cascade that *closes* cation channels (TRPM1). Thus, ON bipolars are hyperpolarized by glutamate (in the dark) and are released from this inhibition and depolarize in response to light (less glutamate). They are "sign-inverting" and respond to light turning ON.
+
+This clever synaptic arrangement allows the retina to efficiently encode both increases and decreases in [light intensity](@entry_id:177094) relative to the ambient background. This information is then further shaped by lateral interactions from **horizontal cells** in the outer plexiform layer, which help create center-surround [receptive fields](@entry_id:636171), and a diverse array of **amacrine cells** in the inner plexiform layer, which modulate the signals before they converge onto the retinal ganglion cells, the output neurons of the eye.

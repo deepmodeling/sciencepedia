@@ -1,0 +1,113 @@
+## Introduction
+In the quest to understand cause and effect in health, the randomized controlled trial (RCT) is the gold standard. However, many critical public health questions—concerning the impact of new laws, system-wide policies, or environmental events—cannot be answered with RCTs due to ethical, practical, or political barriers. This creates a significant knowledge gap, forcing researchers to find alternative, rigorous methods for establishing causality. This article introduces quasi-experimental study designs, a powerful set of tools that allow researchers to make credible causal claims by leveraging naturally occurring, 'as-if' random events.
+
+This article will guide you through the theory and practice of these essential methods. In the first chapter, **Principles and Mechanisms**, we will explore the counterfactual framework that underpins all causal inference and delve into the mechanics of key designs like Difference-in-Differences, Instrumental Variables, and Regression Discontinuity. Next, **Applications and Interdisciplinary Connections** will demonstrate how these designs are applied to real-world problems in public health, policy, and medicine, and discuss how to handle common complexities like staggered policy rollouts and spillover effects. Finally, the **Hands-On Practices** chapter will provide opportunities to apply these concepts to practical problems, solidifying your understanding of how to use these designs to generate robust evidence.
+
+## Principles and Mechanisms
+
+In the pursuit of causal knowledge, the randomized controlled trial (RCT) represents a pinnacle of design, capable of creating groups that are, in expectation, identical on all characteristics, both measured and unmeasured. However, in many critical areas of public health and epidemiology, randomization is not merely difficult but ethically impossible, logistically infeasible, or politically untenable. When faced with such constraints, researchers are not relegated to purely descriptive or associational studies. An alternative path, grounded in rigorous causal logic, is offered by quasi-experimental designs. These methods seek to approximate the conditions of a randomized experiment by exploiting sources of variation in the world that are "as-if" random. This chapter delineates the foundational principles of causal inference that underpin these designs and explores the mechanisms of the most prominent [quasi-experimental methods](@entry_id:636714).
+
+### The Counterfactual Framework and Foundational Assumptions
+
+To speak of a "causal effect" is to invoke a counterfactual comparison. For any given unit of analysis—be it a patient, a clinic, or a geographic region—we must conceptualize their potential outcomes under different scenarios. Within the **[potential outcomes framework](@entry_id:636884)**, for a binary treatment $A$ (e.g., exposure to a new program, $A=1$, versus no exposure, $A=0$), we posit that each unit $i$ has two potential outcomes: $Y_i(1)$, the outcome that would be observed if unit $i$ were treated, and $Y_i(0)$, the outcome that would be observed if unit $i$ were not treated. The causal effect for unit $i$ is the difference $Y_i(1) - Y_i(0)$.
+
+The **fundamental problem of causal inference** is that we can only ever observe one of these potential outcomes for any given unit. We observe $Y_i(1)$ for units that were treated and $Y_i(0)$ for units that were not. The other potential outcome remains a counterfactual, unobserved quantity. The entire enterprise of causal inference, therefore, is to find credible ways to estimate what these missing potential outcomes would have been, typically by making comparisons across groups of units. To do so, we rely on a set of core assumptions that allow us to link the observed data to the unobserved potential outcomes [@problem_id:4626138].
+
+**Consistency**: This is the bridge between the world of potential outcomes and the world of observed data. It states that for a unit $i$ that received treatment $A_i=a$, its observed outcome $Y_i$ is equal to its potential outcome under that specific treatment, i.e., $Y_i = Y_i(a)$. This assumption seems trivial, but it implies that the treatment is well-defined and consistently administered. If "program A" means one thing in one clinic and something entirely different in another, the consistency assumption is violated.
+
+**Stable Unit Treatment Value Assumption (SUTVA)**: This assumption has two components. First is **no interference**, which posits that the potential outcomes of one unit are not affected by the treatment status of any other unit. For instance, in a school-based vaccination program evaluated across different districts, this assumes that a program in one district does not affect hospitalization rates in a neighboring, untreated district. Second is **no hidden variations of treatment**, which reinforces the consistency assumption by stating that for any treatment level $a$, the intervention is the same for all units receiving it. SUTVA ensures that $Y_i(a)$ is a single, well-defined value for each unit.
+
+**Exchangeability (or Ignorability)**: This is the critical "as-if random" assumption. In its strongest form, *unconditional exchangeability* posits that the treatment assignment is independent of the potential outcomes, written as $(Y_i(1), Y_i(0)) \perp A_i$. This is what an RCT achieves through randomization, and it allows for direct comparison of the average outcomes in the treated and untreated groups. In quasi-experiments and observational studies, we often rely on a weaker, more plausible version: *conditional exchangeability*. This assumption states that treatment assignment is independent of potential outcomes *conditional on a set of measured baseline covariates* $X_i$, written as $(Y_i(1), Y_i(0)) \perp A_i \mid X_i$. This means that within strata of $X_i$, the treated and untreated groups are comparable, and any remaining differences in their outcomes can be attributed to the treatment.
+
+**Positivity (or Overlap)**: This is a practical, data-dependent assumption. It requires that for every stratum defined by the covariates $X_i$, there is a non-zero probability of being both treated and untreated. Formally, for all covariate patterns $x$ present in the population, we must have $0 \lt P(A_i=1 \mid X_i=x) \lt 1$. Without positivity, we would have subgroups where we only observe one treatment condition, making causal comparison within that subgroup impossible.
+
+### The Essence of a Quasi-Experiment: The Assignment Mechanism
+
+With these foundational assumptions in place, we can precisely define a quasi-experimental design and distinguish it from its methodological cousins. A quasi-experiment is a non-randomized study that estimates a causal effect by leveraging an **exogenous** source of variation in the exposure. This variation is generated by a known rule, threshold, timing, or instrument that is not controlled by the investigator but can be exploited to approximate random assignment in specific subpopulations or at specific margins of the data [@problem_id:4626118].
+
+This definition highlights key distinctions:
+-   **Versus Randomized Controlled Trials (RCTs):** In an RCT, the investigator controls the randomization process, which ideally ensures global exchangeability. In a quasi-experiment, the investigator has no such control. The "as-if" randomization is provided by an external process, and the resulting exchangeability is often local (e.g., valid only at a threshold) rather than global.
+-   **Versus Purely Observational Designs:** A standard observational study (e.g., a generic cohort or case-control study) often lacks a well-understood assignment mechanism. To make causal claims, it must rely heavily on the strong, often untestable assumption of conditional exchangeability—that measuring and adjusting for a set of covariates $X$ is sufficient to remove all confounding. A quasi-experiment, by contrast, grounds its claim to validity in a specific, understood feature of the world that assigns the treatment, thereby providing a stronger justification for a design-specific exchangeability or exclusion assumption.
+
+A powerful class of quasi-experiments are **natural experiments**. These arise when an event or rule, often administrative or environmental, creates a division between groups that resembles deliberate randomization. The key is that the assignment mechanism is credibly unrelated to the potential outcomes of the units. Consider two scenarios [@problem_id:4626114]:
+1.  A software bug in an electronic prescribing system causes a specific medication to be pre-selected on prescription forms for clinics west of a certain meridian, based solely on a geocoding artifact. This administrative quirk is plausibly unrelated to patient risk or physician preference. Using this bug as an instrument for who is prescribed the drug constitutes a [natural experiment](@entry_id:143099).
+2.  A sudden economic downturn leads to higher unemployment in some neighborhoods than others. Researchers might compare depression rates across these neighborhoods. While the downturn is a "shock," it is not a clean [natural experiment](@entry_id:143099). Neighborhoods likely differ in pre-existing economic vulnerability, social cohesion, and healthcare access—factors that are correlated with both the severity of the downturn's impact (the "treatment") and the potential outcomes for depression. The assignment mechanism is endogenous and complex, not as-if random.
+
+The first scenario provides an exploitable assignment mechanism; the second does not. This distinction is the core of quasi-experimental reasoning.
+
+### Key Quasi-Experimental Designs
+
+Equipped with these principles, we now turn to the mechanisms of several key quasi-experimental designs.
+
+#### Difference-in-Differences (DiD)
+
+The Difference-in-Differences (DiD) design is a powerful method for evaluating interventions in settings with pre- and post-intervention data for both a treated group and an untreated control group. Imagine a new public health program is rolled out in one region (the treated group, $T$) but not in a neighboring one (the control group, $C$). We measure an outcome of interest, $Y$, before ($t=0$) and after ($t=1$) the program's implementation.
+
+A simple before-and-after comparison in the treated group, $\bar{Y}_{1}^{T} - \bar{Y}_{0}^{T}$, is likely biased because other factors may have changed over time. A simple post-intervention comparison between groups, $\bar{Y}_{1}^{T} - \bar{Y}_{1}^{C}$, is also likely biased because the two regions may have had different baseline levels of the outcome.
+
+The DiD estimator combines these comparisons to address both issues. It is the difference in the change over time for the treated group minus the change over time for the control group [@problem_id:4626148]:
+$$ \hat{\tau}_{DiD} = (\bar{Y}_{1}^{T} - \bar{Y}_{0}^{T}) - (\bar{Y}_{1}^{C} - \bar{Y}_{0}^{C}) $$
+This estimator identifies the **Average Treatment effect on the Treated (ATT)** under one crucial assumption: **parallel trends**. This assumption states that, in the absence of the treatment, the average outcome in the treated group would have followed the same trend as the average outcome in the control group. Formally, using $D=1$ for the treated group and $D=0$ for the control, the assumption is [@problem_id:4626170]:
+$$ E[Y_1(0) - Y_0(0) \mid D=1] = E[Y_1(0) - Y_0(0) \mid D=0] $$
+It is critical to understand that this is an assumption about trends (changes), not levels. The groups do not need to have the same starting point. This assumption is fundamentally untestable because it involves the counterfactual outcome $Y_1(0)$ for the treated group. However, if data from multiple pre-intervention periods are available, we can perform a "placebo test" by checking if the trends were indeed parallel before the intervention occurred. Observing parallel pre-trends provides supportive, though not definitive, evidence for the validity of the assumption [@problem_id:4626170].
+
+#### Instrumental Variables (IV)
+
+The Instrumental Variables (IV) method is designed for situations where there is unmeasured confounding between the treatment of interest, $D$, and the outcome, $Y$. IV analysis requires finding a third variable, the instrument $Z$, which is related to the treatment but not the outcome, except through its effect on the treatment.
+
+An excellent example is an **encouragement design** [@problem_id:4626121]. Suppose a city health department wants to know the causal effect of influenza vaccination ($D$) on later infection ($Y$). A simple comparison of vaccinated and unvaccinated individuals is likely confounded by factors like health consciousness. To overcome this, the department randomly assigns some clinics to a voucher program ($Z=1$) that reduces vaccine costs, while others receive no such program ($Z=0$). The voucher is the instrument.
+
+For $Z$ to be a valid instrument, it must satisfy four conditions, stated here in the [potential outcomes framework](@entry_id:636884):
+1.  **Relevance**: The instrument must have a causal effect on the treatment. Receiving a voucher must actually increase vaccination rates. Formally, $E[D(1)] - E[D(0)] \neq 0$.
+2.  **Independence (Exogeneity)**: The instrument must be as-if randomly assigned, meaning it is independent of all potential outcomes for both treatment uptake and the final health outcome. In this case, randomization of the voucher program ensures this holds: $Z \perp \{Y(0), Y(1), D(0), D(1)\}$.
+3.  **Exclusion Restriction**: The instrument can only affect the outcome through its effect on the treatment. The voucher itself cannot provide immunity; only the vaccine it encourages someone to get can. Formally, the potential outcome is not a function of the instrument once treatment status is fixed: $Y(d,z) = Y(d)$ for all $d,z$ [@problem_id:4626120]. This assumption is distinct from the DiD [parallel trends assumption](@entry_id:633981); the exclusion restriction concerns the absence of a direct causal pathway from instrument to outcome at a single point in time, while parallel trends is an assumption about the equality of counterfactual trends over time between groups.
+4.  **Monotonicity**: The instrument must affect all individuals in the same direction. In the encouragement design, this means the voucher may induce some people to get vaccinated, but it will not cause anyone who would have been vaccinated anyway to now refuse the vaccine. There are no "defiers."
+
+Under these conditions, the IV estimator—the ratio of the instrument's effect on the outcome to its effect on the treatment—identifies the **Local Average Treatment Effect (LATE)**. This is the average causal effect specifically for the subpopulation of "compliers"—those individuals who get vaccinated if and only if they receive the voucher. The effect is "local" to this compliant subpopulation.
+
+#### Regression Discontinuity Design (RDD)
+
+The Regression Discontinuity Design (RDD) is applicable when a continuous "forcing" variable $X$ is used to assign treatment based on whether $X$ is above or below a specific cutoff $c$. For example, an immunization subsidy might be granted to individuals whose risk score $X$ exceeds a threshold $c$ [@problem_id:4626106]. The core insight is that individuals with scores just above and just below the threshold are likely to be very similar in all other respects, making the comparison around the cutoff a local randomized experiment.
+
+There are two forms of RDD:
+-   **Sharp RDD**: Treatment assignment is a deterministic function of the forcing variable: $D = \mathbf{1}\{X \ge c\}$. Everyone above the cutoff is treated, and everyone below is not. The key assumption is that the potential outcomes are continuous functions of $X$ at the cutoff. Any observed "jump" or discontinuity in the average observed outcome at $c$ is then interpreted as the causal effect. This identifies the **average causal effect at the cutoff**, $E[Y(1)-Y(0) \mid X=c]$.
+
+-   **Fuzzy RDD**: Crossing the threshold does not guarantee treatment but rather induces a discontinuous jump in the *probability* of treatment. For example, some eligible individuals may not take up the subsidy, and some ineligible individuals might get it through other means. In this case, the design becomes a local application of instrumental variables, where eligibility ($Z = \mathbf{1}\{X \ge c\}$) serves as the instrument for treatment uptake. The analysis proceeds by calculating the ratio of the jump in the outcome to the jump in the treatment probability at the cutoff. This identifies a **Local Average Treatment Effect (LATE)** for compliers at the cutoff.
+
+In both sharp and fuzzy RDD, the identified causal effect is explicitly **local**: it applies only to the subpopulation of individuals whose forcing variable is at or infinitesimally close to the cutoff $c$. Extrapolating this effect to individuals far from the threshold is generally not warranted.
+
+#### Interrupted Time Series (ITS)
+
+The Interrupted Time Series (ITS) design is used when we have a series of observations on an outcome over time, and an intervention is introduced at a known time point $T_0$. For example, we might have monthly injury counts for a city before and after a new safety ordinance is passed [@problem_id:4626179].
+
+The core logic of ITS is to use the pre-intervention data to establish a trend, and then project this trend into the post-intervention period. This projection serves as the counterfactual—what would have happened without the intervention. The causal effect is then estimated by comparing the observed post-intervention outcome series to this counterfactual projection.
+
+A common method for implementing ITS is **segmented linear regression**. A typical model is:
+$$ E[Y_t] = \beta_0 + \beta_1 t + \beta_2 A_t + \beta_3 P_t $$
+Here, $t$ is a continuous time counter, $A_t$ is an indicator that is 1 after the intervention ($t \ge T_0$) and 0 before, and $P_t$ is a time counter that equals $(t - T_0)$ after the intervention and 0 before. The coefficients have direct causal interpretations:
+-   $\beta_2$ represents the **immediate change in the level** of the outcome at the moment of intervention.
+-   $\beta_3$ represents the **change in the slope or trend** of the outcome after the intervention.
+
+The central identifying assumption of ITS is that the pre-intervention trend would have continued unchanged into the post-intervention period in the absence of the intervention. This assumption can be threatened by several factors, including: the occurrence of other events at the same time as the intervention (co-interventions), changes in how the outcome is measured, or anticipatory effects where behavior changes before the intervention is officially implemented.
+
+### Advanced Topics and Common Pitfalls
+
+#### Internal vs. External Validity and Transportability
+
+The goal of any quasi-experimental design is to achieve high **internal validity**—the property that the causal effect estimate is unbiased and trustworthy for the specific population, setting, and time period of the study [@problem_id:4626090]. This relies on the satisfaction of the design's core identifying assumptions (e.g., parallel trends, [exclusion restriction](@entry_id:142409)).
+
+A separate but equally important concept is **external validity**, or generalizability. This concerns whether the findings from the study can be applied to a different target population, setting, or time. For instance, would the effect of a subsidy estimated in one city apply to another city with a different demographic profile?
+
+The formal study of generalizability is known as **transportability**. Suppose our quasi-experiment in a *source population* has high internal validity, and we have identified stratum-specific causal effects $P(Y \mid \text{do}(X), z)$ for an effect modifier $Z$ (e.g., age group). If we know that the only relevant difference between our source population and a *target population* is the distribution of this modifier $Z$, we can "transport" our findings. The average causal effect in the target population, $P^*(Y \mid \text{do}(X))$, can be calculated by re-weighting the stratum-specific effects from our study by the distribution of $Z$ in the target population, $P^*(z)$ [@problem_id:4626090]:
+$$ P^*(Y \mid \text{do}(X)) = \sum_{z} P(Y \mid \text{do}(X), z) P^*(z) $$
+This provides a principled way to generalize findings, moving beyond the simple—and often incorrect—assumption that results from one study apply everywhere.
+
+#### The Pitfall of Post-Treatment Adjustment
+
+A common and serious error in causal analysis is the practice of "controlling for" or adjusting for variables that are measured *after* the treatment has occurred and lie on the causal pathway between treatment and outcome. Consider a tax on sugary beverages ($A$), which is intended to reduce the quantity of sugary drinks purchased ($M$), which in turn is intended to improve a health outcome like BMI ($Y$). An investigator might be tempted to include $M$ in a regression model of $Y$ on $A$, reasoning that beverage consumption is a strong predictor of BMI. This is a critical mistake for two reasons [@problem_id:4626157].
+
+First, by conditioning on the mediator $M$, the analysis **blocks the indirect causal pathway** $A \to M \to Y$. The resulting estimate for the effect of $A$ no longer represents its total causal effect.
+
+Second, and more subtly, this adjustment can induce **[collider bias](@entry_id:163186)**. If there is any unmeasured factor $U$ (e.g., stress, health preferences) that affects both the mediator $M$ and the outcome $Y$, then $M$ is a "[collider](@entry_id:192770)" on the path $A \to M \leftarrow U$. Adjusting for the [collider](@entry_id:192770) $M$ in a regression opens a spurious, non-causal [statistical association](@entry_id:172897) between $A$ and $Y$ through $U$. This biases the estimate of even the direct effect of $A$ on $Y$.
+
+When the goal is to understand the mechanisms and quantify the indirect effect operating through a mediator, the appropriate tool is not simple adjustment but a formal **causal mediation analysis**. This framework uses a separate set of assumptions (e.g., sequential ignorability) and specialized methods to decompose the total effect into its natural direct and indirect components, providing a valid window into the causal pathways at work.
