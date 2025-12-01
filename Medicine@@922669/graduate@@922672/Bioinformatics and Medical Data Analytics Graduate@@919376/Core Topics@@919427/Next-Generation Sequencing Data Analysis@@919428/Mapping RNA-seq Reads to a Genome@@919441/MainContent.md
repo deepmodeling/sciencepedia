@@ -1,0 +1,73 @@
+## Introduction
+Mapping RNA sequencing (RNA-seq) reads to a reference genome is a cornerstone of modern [transcriptomics](@entry_id:139549), serving as the critical first step for quantifying gene expression and uncovering the complexities of the [transcriptome](@entry_id:274025). However, the process is far from a simple sequence matching exercise. In eukaryotes, the biological phenomenon of splicing—where [introns](@entry_id:144362) are removed and exons are joined—creates "[split reads](@entry_id:175063)" that pose a significant computational challenge for standard alignment tools. This article addresses this knowledge gap by providing a comprehensive overview of the specialized methods developed to accurately map RNA-seq data.
+
+Across the following chapters, you will delve into the foundational concepts that enable this powerful analysis. The "Principles and Mechanisms" chapter will dissect the algorithms behind [splice-aware alignment](@entry_id:175766), from the [seed-and-extend](@entry_id:170798) strategy to the sophisticated Bayesian framework used for scoring alignments. Following this, the "Applications and Interdisciplinary Connections" chapter will explore how alignment data is translated into biological insights, such as quantifying expression, discovering novel splice junctions and gene fusions, and its connections to genetics and cell biology. Finally, the "Hands-On Practices" section offers practical problems that will challenge you to apply these principles, solidifying your understanding of the entire mapping workflow.
+
+## Principles and Mechanisms
+
+Mapping short sequence reads from an RNA-sequencing (RNA-seq) experiment back to a [reference genome](@entry_id:269221) is a foundational step in transcriptomics. Its primary and most immediate purpose is to determine the genomic origin of each sequenced fragment. By identifying which gene or transcript each read corresponds to, we can quantify the abundance of RNA molecules, forming the basis for estimating gene expression levels and performing [differential expression analysis](@entry_id:266370) [@problem_id:1530945]. While this task may seem analogous to standard DNA [sequence alignment](@entry_id:145635), the unique biology of [eukaryotic gene expression](@entry_id:146803) introduces a significant challenge that necessitates specialized principles and mechanisms.
+
+### The Challenge of Spliced Alignment
+
+In eukaryotes, genes are often composed of **exons** (regions retained in the final messenger RNA) and **[introns](@entry_id:144362)** (intervening regions that are removed). The process of **splicing** excises introns from the precursor mRNA and ligates the exons together to form a continuous, mature mRNA transcript. RNA-seq reads are generated from this mature mRNA. Consequently, a single short read may originate from an **exon-exon junction**, where its sequence is a concatenation of the end of one exon and the beginning of the next.
+
+When such a **split read** is aligned back to the reference genome, its two constituent parts map to two distinct genomic loci separated by the entire length of the intervening [intron](@entry_id:152563). These [introns](@entry_id:144362) can span from tens to hundreds of thousands of base pairs. Standard local alignment tools, such as the Basic Local Alignment Search Tool (BLAST), are designed to find contiguous regions of similarity, allowing for only small gaps (insertions or deletions). They are fundamentally incapable of handling the massive gap represented by an [intron](@entry_id:152563). An attempt to align a split read with BLAST would either fail or report only one of the exonic segments as a short, local match, failing to capture the full origin of the read.
+
+This limitation necessitates the use of **splice-aware aligners**, such as STAR or HISAT2. The key feature of these tools is their ability to perform **[spliced alignment](@entry_id:196404)**, explicitly modeling the biological reality of splicing. Their algorithms are designed to identify and correctly map reads that are split across distant genomic locations, thereby reconstructing the connectivity of exons in the expressed transcripts [@problem_id:2417813].
+
+### Algorithmic Strategies for Spliced Alignment
+
+The dominant paradigm for modern, fast RNA-seq alignment is the **[seed-and-extend](@entry_id:170798)** strategy. This approach avoids the computationally prohibitive task of performing a full [dynamic programming](@entry_id:141107) alignment for every read against the entire genome. Instead, it breaks the problem down into two main phases.
+
+#### Seeding: Finding Potential Anchors
+
+The first phase involves identifying short, exact or near-exact matches, known as **seeds** or **anchors**, between the read and the reference genome. To do this rapidly, the genome is pre-processed into an efficient index structure, such as one based on the **Burrows-Wheeler Transform (BWT)** and the **Ferragina-Manzini (FM) index**. This allows for extremely fast querying of the number and locations of all occurrences of a given seed sequence in the genome.
+
+The choice of seed properties, particularly length, involves critical trade-offs. A seed must be long enough to be sufficiently unique, minimizing the number of spurious, random matches in the vast expanse of the genome. The expected number of off-target matches for a given seed sequence depends on both its length and its base composition. For example, in a genome with non-uniform base frequencies, a GC-rich seed may have a different probability of randomly occurring than an AT-rich seed of the same length. By modeling the genome as a sequence of [independent and identically distributed](@entry_id:169067) bases, we can calculate the expected number of false-positive hits for any given seed, which helps inform the aligner's strategy for which seeds to trust [@problem_id:4580724].
+
+Conversely, seeds must be short enough to be robust to sequencing errors and to fit entirely within the potentially short exons of a transcript. The effectiveness of a split-[read alignment](@entry_id:265329) strategy, which relies on finding anchors on both sides of a splice junction, is a function of this balance. A probabilistic model can be constructed to determine the minimal anchor length $k$ required to achieve a desired probability of successful mapping. This success depends on two factors: (1) the **acceptance probability**, which is the likelihood that the anchor is found despite potential sequencing errors (e.g., allowing for at most $e$ mismatches), and (2) the **uniqueness probability**, which is the likelihood that the anchor sequence does not match randomly elsewhere in the genome. The acceptance probability can be modeled using a Binomial distribution based on the sequencing error rate, while the uniqueness probability can be estimated using a Poisson distribution for the number of off-target hits [@problem_id:4580752]. Finding an optimal $k$ is therefore a core challenge in aligner design.
+
+#### Extension and Split-Read Mapping
+
+Once multiple seeds from a single read are located, the aligner attempts to connect them into a coherent full-length alignment. If two seeds from the same read map to different exons of the same gene in the correct order and orientation, this provides strong evidence for a splice junction. The region of the read between these two anchors can then be aligned across the putative [intron](@entry_id:152563). This process of identifying split alignments is the essence of splice-aware mapping.
+
+### A Unified Probabilistic Framework for Scoring Alignments
+
+An aligner often finds multiple plausible candidate alignments for a single read. To select the best one, it requires a rigorous scoring system. Modern bioinformatics heavily relies on a **Bayesian probabilistic framework** to achieve this. The central idea is to calculate the **posterior probability** of an alignment candidate ($M$) given the observed read data ($D$):
+
+$$ P(M|D) = \frac{P(D|M) P(M)}{P(D)} $$
+
+Here, $P(M|D)$ is the posterior probability we want to maximize. $P(D|M)$ is the **likelihood** of observing the read data if the alignment $M$ is correct. $P(M)$ is the **[prior probability](@entry_id:275634)** of the alignment, reflecting our beliefs before seeing the data. $P(D)$ is a [normalization constant](@entry_id:190182) (the evidence), which is the same for all candidates for a given read. Therefore, selecting the best alignment is equivalent to maximizing the product of the likelihood and the prior, $P(D|M)P(M)$. For [numerical stability](@entry_id:146550) and computational convenience, aligners typically work with logarithms, seeking to maximize the log-posterior score: $\ln(P(D|M)) + \ln(P(M))$.
+
+#### The Likelihood: Modeling Sequencing Data and Errors
+
+The likelihood term, $P(D|M)$, quantifies how well the read sequence matches the genomic reference defined by the alignment. This calculation must account for sequencing errors. At each position in a read, the sequencing instrument provides a **Phred quality score** ($Q$), which encodes the probability of an erroneous base call at that position: $p_{error} = 10^{-Q/10}$. A higher $Q$ score implies a lower error probability.
+
+If an alignment $M$ proposes a genomic reference for the read, the likelihood is the product of probabilities at each base. For a base that matches the reference, its contribution to the probability is $(1 - p_{error})$. For a mismatch, the probability is typically modeled as $p_{error}/3$, assuming any of the three other bases are equally likely. By incorporating Phred scores, the model can intelligently down-weight mismatches that occur at low-quality bases, recognizing they are more likely to be sequencing artifacts than true biological differences [@problem_id:4580694]. An alignment with zero mismatches is not necessarily superior to one with mismatches if those mismatches are supported by low quality scores and the latter alignment has a stronger prior probability [@problem_id:4580694].
+
+Many aligners implement this as a **[log-odds score](@entry_id:166317)**, where the score at each position is the natural logarithm of the ratio of the emission probability under the alignment model to the emission probability under a random background model. This framework naturally produces additive scores and allows for a principled comparison of different alignments [@problem_id:4580740].
+
+#### The Prior: Incorporating Biological Knowledge
+
+The prior term, $P(M)$, is exceptionally powerful, allowing the incorporation of a wealth of biological knowledge into the scoring model. It allows us to favor alignments that are more biologically plausible, independent of the sequence data itself. Components that contribute to the prior include:
+
+*   **Alignment Type:** We can assign different prior weights to unspliced, annotated spliced (i.e., matching a known exon-exon junction), and novel spliced alignments. Typically, annotated junctions are given higher prior probability than novel ones [@problem_id:4580688].
+*   **Splice Site Motifs:** The vast majority of eukaryotic introns are flanked by a canonical dinucleotide motif, most commonly **"GT"** at the 5' (donor) end of the intron and **"AG"** at the 3' (acceptor) end. Alignments that span a junction with a canonical motif can be given a significant score bonus (a higher prior), while those with non-canonical motifs are penalized [@problem_id:4580688] [@problem_id:4580740]. In strand-specific RNA-seq, the reverse complement motif ("CT-AC") can be used to infer the transcript's strand of origin [@problem_id:4580699].
+*   **Intron Length:** The distribution of [intron](@entry_id:152563) lengths is not uniform. Very short or extremely long [introns](@entry_id:144362) are less common. This can be modeled, for instance, by an exponential penalty on intron length, which penalizes alignments that propose unusually large gaps [@problem_id:4580688].
+*   **Locus Type:** Reads mapping to regions annotated as functional genes may be given a higher prior probability than those mapping to known [pseudogenes](@entry_id:166016) or repetitive elements, which are often transcriptionally silent or produce non-functional transcripts [@problem_id:4580667].
+
+By combining these elements, a sophisticated model can be built. For each candidate alignment, a total log-posterior score is calculated by summing the log-likelihood (from sequence matches/mismatches and quality scores) and the log-prior (from alignment type, junction motifs, intron length, etc.). The alignment with the highest total score is selected as the most probable origin of the read [@problem_id:4580688].
+
+### Handling Ambiguity: Multimapping and Mapping Quality
+
+A significant challenge arises when a read aligns almost equally well to multiple locations in the genome. This **multimapping** is common due to repetitive sequences and gene families, such as functional genes and their corresponding processed pseudogenes [@problem_id:4580667]. In such cases, simply reporting the single best alignment (the maximum a posteriori, or MAP, alignment) is insufficient; we must also quantify our confidence in this choice.
+
+This is the role of the **Mapping Quality (MAPQ)** score. The MAPQ is a Phred-scaled posterior probability that the reported best alignment is, in fact, *incorrect*. If $M_{best}$ is the alignment with the highest posterior probability, and $\{M_1, M_2, ..., M_N\}$ is the set of all candidate alignments, the probability of a mapping error is the sum of the posterior probabilities of all other candidates:
+
+$$ P_{error} = \sum_{i \neq best} P(M_i | D) = 1 - P(M_{best} | D) $$
+
+The MAPQ score is then defined as:
+
+$$ \text{MAPQ} = -10 \log_{10}(P_{error}) $$
+
+A high MAPQ score (e.g., 40, corresponding to a $1$ in $10,000$ chance of error) indicates high confidence that the reported alignment is correct because its posterior probability is far greater than that of any other candidate. A low MAPQ score (e.g., 3, corresponding to a $50\%$ chance of error) indicates that at least one other alignment is nearly as good as the best one, and the true origin is ambiguous. Downstream analyses, such as [variant calling](@entry_id:177461) or expression quantification, often use the MAPQ score to filter out unreliable alignments, ensuring the robustness of their results [@problem_id:4580718] [@problem_id:4580694]. The Bayesian framework provides a natural way to compute these posterior probabilities for all candidate alignments, enabling the direct calculation of this crucial confidence metric.

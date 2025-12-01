@@ -1,0 +1,109 @@
+## Introduction
+Electroencephalography (EEG) stands as a cornerstone in the field of neurology, providing an unparalleled, non-invasive view into the real-time electrical function of the human brain. For the study and management of epilepsy, a disorder defined by abnormal electrical activity, EEG is not merely a supplementary test but an indispensable diagnostic and therapeutic tool. It is the primary means by which we confirm the presence of epileptiform activity, classify seizure types and [epilepsy](@entry_id:173650) syndromes, and guide critical treatment decisions, from medication selection to surgical intervention. However, a significant knowledge gap often exists between acknowledging the utility of EEG and truly understanding the complex principles that govern what it measures. This article aims to bridge that gap, systematically connecting the fundamental neurophysics of signal generation to the nuanced art and science of clinical interpretation.
+
+This guide is structured to build your expertise progressively. The first chapter, **"Principles and Mechanisms,"** lays the groundwork, exploring the cellular origins of the EEG signal, the physics of volume conduction, and the technical standards for recording and displaying data. Building on this foundation, the second chapter, **"Applications and Interdisciplinary Connections,"** demonstrates how these principles are applied in diverse clinical scenarios, from diagnosing complex cases to guiding advanced therapies and bridging to basic science. Finally, the **"Hands-On Practices"** section will challenge you to apply your newfound knowledge to solve practical problems, solidifying your understanding and honing your analytical skills.
+
+## Principles and Mechanisms
+
+The electroencephalogram (EEG) provides a non-invasive window into the collective electrical activity of the cerebral cortex. In the context of epilepsy, it is an indispensable tool for diagnosis, classification of seizure types, and localization of epileptogenic brain regions. Understanding the EEG requires a firm grasp of the principles governing its generation, propagation, and measurement. This chapter systematically elucidates these fundamental mechanisms, from the cellular currents that form the basis of the signal to the advanced computational methods used to infer their location.
+
+### The Neurophysiological Origins of the EEG Signal
+
+The minute electrical potentials measured on the scalp originate from the summed activity of vast populations of cortical neurons. However, not all neuronal electrical events contribute equally to the EEG. The primary generators of the scalp EEG are **[postsynaptic potentials](@entry_id:177286) (PSPs)**, rather than the more conspicuous action potentials. Action potentials are very brief events, lasting only 1–2 milliseconds. Their short duration makes it statistically improbable for a large enough population of neurons to fire in the precise synchrony required for their signals to summate constructively at a distance. In contrast, PSPs—the excitatory (EPSPs) and inhibitory (IPSPs) potentials generated at synapses—have durations on the order of tens to hundreds of milliseconds. This longer duration provides a much wider window for **temporal summation**, allowing the potentials from many neurons to overlap and accumulate.
+
+For these summated potentials to be measurable far away at the scalp, two further conditions are critical: geometric alignment and synchrony.
+
+First, the neuronal sources must be arranged in an **open-field geometry**. The neocortex is characterized by its laminar structure, in which large **pyramidal neurons** are aligned in parallel, with their long apical [dendrites](@entry_id:159503) oriented perpendicular to the cortical surface. When an EPSP occurs, for instance, at the superficial apical dendrites, there is an inward flow of positive ions (a **current sink**), which makes the extracellular space locally negative. To maintain electrical neutrality, a return current flows out of the neuron at a deeper level, typically near the soma and basal [dendrites](@entry_id:159503), creating a **[current source](@entry_id:275668)**. This separation of a sink and a source along the axis of the neuron effectively creates a small **current dipole**. Because millions of these pyramidal cells are oriented in parallel, their individual microscopic dipoles can summate spatially. In contrast, structures with a **closed-field geometry**, where neurons are randomly oriented or arranged concentrically (such as in some thalamic nuclei), produce fields that tend to cancel each other out and are therefore "silent" to the [far-field](@entry_id:269288) EEG.
+
+Second, a large population of these aligned neurons must be activated synchronously. **Synchrony** ensures that the individual dipole fields add constructively, generating a macroscopic equivalent current dipole powerful enough to be detected at the scalp. Normal brain activity involves a degree of synchrony, but the hallmark of an epileptiform discharge is **hypersynchrony**, where an abnormally large number of neurons are recruited into a state of simultaneous, high-amplitude firing. It is this combination of PSP generation, open-field alignment, and hypersynchrony that allows interictal spikes and seizure activity to produce prominent, measurable deflections in the EEG [@problem_id:4477130].
+
+### Volume Conduction and Scalp Potential Topography
+
+Once generated, the electric field from the cortical equivalent current dipole must traverse the layers of the head to reach the scalp electrodes. This process is known as **volume conduction**. The head can be modeled as a series of concentric shells—brain, cerebrospinal fluid (CSF), skull, and scalp—each with a different [electrical conductivity](@entry_id:147828), $\sigma$. The governing physics is described by the [quasi-static approximation](@entry_id:167818) of Maxwell's equations, where the potential field $\phi$ is related to the primary current source density $\mathbf{J}_{p}$ by the equation $\nabla \cdot (\sigma \nabla \phi) = \nabla \cdot \mathbf{J}_{p}$ [@problem_id:4477110].
+
+The most significant barrier in this path is the **skull**, which has a conductivity roughly 80 times lower than that of the brain or scalp. The skull acts as a spatial low-pass filter: it severely **attenuates** (reduces the amplitude of) the signal and **spatially blurs** it, smearing the potential distribution over a wider area of the scalp. This blurring effect makes it challenging to precisely localize the underlying source from the scalp topography alone [@problem_id:4477130].
+
+The spatial distribution of the potential on the scalp—the topography—is highly dependent on the orientation of the generating cortical dipole relative to the scalp surface. We can distinguish two fundamental orientations:
+
+*   A **radial dipole** is oriented perpendicular to the local cortical surface. This typically arises from activity on the crown of a gyrus. In a spherical head model, a radial dipole produces a potential field that is maximal (or minimal, depending on polarity) directly over the source, with the potential decaying concentrically. The scalp topography is a focal, "monopolar-looking" extremum with a uniform polarity in the central region [@problem_id:4477173].
+
+*   A **tangential dipole** is oriented parallel to the local cortical surface. This arises from activity within the wall of a sulcus. A tangential dipole generates a more complex field with two lobes of opposite polarity on the scalp, separated by a zero-potential or "nodal" line. This creates a characteristic bipolar scalp topography [@problem_id:4477173].
+
+For example, a radial source in the left precentral gyrus would produce a focal negative or positive peak centered around the C3 electrode. In contrast, a tangential source in the same location, oriented anteriorly, would produce a negative field over the frontal region (e.g., F3) and a positive field over the parietal region (e.g., P3), with a polarity reversal occurring near the C3/Cz electrodes. Understanding this relationship between source orientation and scalp topography is a cornerstone of EEG interpretation and [source localization](@entry_id:755075).
+
+### Recording Principles: From Scalp to Signal
+
+To reliably record and interpret EEG signals, a standardized methodology is essential. This includes the placement of electrodes, the design of amplifiers, and the choice of display format or montage.
+
+#### Standardized Electrode Placement: The 10-20 System
+
+The **International 10-20 System** is the universally accepted standard for scalp electrode placement, ensuring that recordings are reproducible and comparable across different laboratories and patients. The system is based on proportional distances between fixed anatomical landmarks, which accommodates variations in head size and shape. The primary landmarks are the **nasion** (the indentation at the bridge of the nose), the **inion** (the bony protuberance at the back of the skull), and the left and right **preauricular points** (the depressions just anterior to the tragus of the ear).
+
+Distances are measured along the curved surface of the scalp between these landmarks. Electrodes are then placed at $10\%$ and $20\%$ intervals of these total distances. The nomenclature is systematic: letters correspond to the underlying cortical lobe (Fp for frontopolar, F for frontal, C for central, P for parietal, T for temporal, and O for occipital), while numbers indicate the hemisphere. Odd numbers are used for the left hemisphere and even numbers for the right, with larger numbers denoting more lateral positions. A 'z' suffix (from the German *Zentral*, for central) denotes electrodes placed on the midline. For example, C3 is a central electrode on the left hemisphere, while Pz is a parietal electrode on the midline [@problem_id:4477172].
+
+#### The Differential Amplifier and Signal Integrity
+
+EEG amplifiers are designed to measure the minuscule potential differences between pairs of electrodes, which are on the order of microvolts ($\mu\mathrm{V}$). The core component is a **[differential amplifier](@entry_id:272747)**, which amplifies the difference between two inputs while rejecting any voltage that is common to both. This ability to reject common signals is quantified by the **Common-Mode Rejection Ratio (CMRR)**. A high CMRR is critical for eliminating environmental noise, such as the 50 or 60 Hz interference from electrical mains, which is picked up by the body and appears as a large [common-mode voltage](@entry_id:267734) at all scalp electrodes [@problem_id:4477132].
+
+However, the effectiveness of a high-CMRR amplifier can be compromised by poor **electrode-skin impedance**. The impedance at the interface between the electrode and the scalp must be low (typically below $5\,\mathrm{k\Omega}$) and well-matched between electrodes. If the impedances at the two inputs to a [differential amplifier](@entry_id:272747), $Z_1$ and $Z_2$, are mismatched, the [common-mode voltage](@entry_id:267734) $V_{cm}$ will be converted into a spurious differential voltage. This differential noise voltage, $V_{n,\mathrm{mismatch}}$, can be approximated as:
+
+$$ V_{n,\mathrm{mismatch}} \approx V_{cm} \frac{|Z_1 - Z_2|}{R_b} $$
+
+where $R_b$ is the very large input bias resistance of the amplifier. As this expression shows, even with a perfect amplifier, a mismatch in electrode impedances creates noise that is directly proportional to the magnitude of the common-mode interference. Therefore, achieving low and balanced impedances through careful skin preparation is not merely a technicality but a biophysical necessity for obtaining a high [signal-to-noise ratio](@entry_id:271196) in EEG recordings [@problem_id:4477132].
+
+#### Montages: Viewing the Potential Field
+
+An EEG **montage** is the specific arrangement of electrode pairs displayed in the recording channels. Since EEG only measures potential differences, the choice of montage determines how the underlying scalp potential field is visualized. The two primary types are referential and bipolar.
+
+A **referential montage** connects each electrode to a common reference electrode. The output of each channel is $V(\text{electrode}) - V(\text{reference})$. Ideally, the reference should be electrically inactive, but in practice, any location can be affected by the brain's electrical field. Common choices include an electrode at the vertex (Cz), linked mastoids (A1+A2), or a computed average of all electrodes. Referential montages are best for assessing the true amplitude and polarity of a waveform at each electrode location, provided the reference is not contaminated.
+
+A **bipolar montage** connects adjacent electrodes in chains (e.g., Fp1-F7, F7-T7, T7-P7). The output of each channel is the [potential difference](@entry_id:275724) between two nearby electrodes, which approximates the spatial gradient of the potential field. Bipolar montages excel at localizing a focal event. A focal discharge will produce a **phase reversal**, where two adjacent channels sharing a common electrode deflect in opposite directions. This phenomenon occurs because the potential is maximal (or minimal) at the common electrode, causing the [potential gradient](@entry_id:261486) to flip sign across that point. For instance, if the potential at T7 is much more negative than at its neighbors F7 and P7, the F7-T7 channel ($V(F7) - V(T7)$) will show a positive deflection while the T7-P7 channel ($V(T7) - V(P7)$) will show a negative deflection. This phase reversal unequivocally points to T7 as the center of the discharge [@problem_id:4477121] [@problem_id:4477105].
+
+To illustrate, consider a left temporal spike with the following scalp potentials: $V(\text{F7}) = +70\,\mu\mathrm{V}$, $V(\text{T7}) = +100\,\mu\mathrm{V}$, and $V(\text{P7}) = +60\,\mu\mathrm{V}$.
+- A referential montage to a distant, inactive reference (e.g., $V(\text{A2}) = +2\,\mu\mathrm{V}$) would show large positive deflections at all three sites, with the largest at T7 ($+98\,\mu\mathrm{V}$). This shows the field is broad and maximal at T7.
+- A longitudinal bipolar montage would show:
+    - F7-T7 channel: $V(F7) - V(T7) = 70 - 100 = -30\,\mu\mathrm{V}$.
+    - T7-P7 channel: $V(T7) - V(P7) = 100 - 60 = +40\,\mu\mathrm{V}$.
+The opposite polarity in these two channels creates a phase reversal that precisely localizes the focus to the common electrode, T7, even though the individual channel amplitudes are smaller than in the referential montage [@problem_id:4477105].
+
+### Interpreting the EEG: Waveforms, Rhythms, and Network Mechanisms
+
+Interpreting the clinical EEG requires recognizing specific pathological waveforms against the backdrop of normal brain rhythms and their variations with arousal state.
+
+#### The Lexicon of Epileptiform Transients
+
+The fundamental building blocks of interictal epileptiform activity are **spikes** and **sharp waves**. According to the International Federation of Clinical Neurophysiology (IFCN), the distinction is based purely on duration, not amplitude or morphology.
+- A **spike** is a transient, clearly distinguished from background activity, with a duration of 20 to 70 milliseconds.
+- A **sharp wave** is a similar transient with a duration of 70 to 200 milliseconds.
+
+These transients often occur as part of a **spike-and-slow-wave complex** (or sharp-and-slow-wave complex), where the initial fast component is followed by a slower wave of longer duration. It is crucial to note that recognition of these waveforms relies on their morphology and sharp contour relative to the ongoing background activity, not on any absolute amplitude threshold [@problem_id:4477140].
+
+#### Background Rhythms and State of Arousal
+
+The background EEG provides the context in which epileptiform abnormalities are identified. In a normal, relaxed, awake adult with eyes closed, the EEG is dominated by the **posterior dominant rhythm (PDR)**, also known as the alpha rhythm. This is a sinusoidal rhythm in the 8–13 Hz frequency range, maximal over the occipital regions. Its defining characteristic is **reactivity**: it attenuates or "blocks" with eye-opening or mental effort.
+
+The transition to drowsiness (Stage N1 sleep) is marked by predictable changes: the PDR becomes fragmented and less sustained, and the background shifts toward slower frequencies, with an increase in theta activity (4–7 Hz). Slow, rolling eye movements may also appear. Distinguishing these normal features of drowsiness from pathological slowing is a critical skill in EEG interpretation [@problem_id:4477150].
+
+#### Network Mechanisms of Generalized Spike-and-Wave Discharges
+
+A classic EEG pattern in epilepsy is the **generalized 3 Hz spike-and-wave discharge**, the hallmark of typical absence seizures. This highly synchronous, bilateral rhythm is not generated by the cortex alone but arises from pathological oscillations within a large-scale **thalamocortical circuit**. This network involves thalamocortical (TC) relay neurons, inhibitory neurons of the thalamic reticular nucleus (TRN), and cortical pyramidal neurons.
+
+The oscillation is driven by a specific interplay of ion channels and synaptic receptors. A key event is the strong, slow inhibition of TC neurons by TRN neurons via **GABA-B receptors**. This prolonged [hyperpolarization](@entry_id:171603) removes the voltage-dependent inactivation of low-threshold **T-type calcium channels ($I_T$)** in the TC neurons. As the inhibition wanes, the TC neurons' membrane potential drifts upward, allowing the $I_T$ channels to open and trigger a powerful rebound burst of action potentials. This burst drives cortical neurons, producing the "spike" component of the EEG discharge. The subsequent cortical activation re-excites the TRN, which in turn re-inhibits the TC neurons, perpetuating the cycle. The slow kinetics of the GABA-B receptors are a primary determinant of the cycle's period, which is approximately 333 ms, yielding the characteristic 3 Hz frequency [@problem_id:4477159].
+
+This oscillatory state can be provoked by **hyperventilation**. The rapid breathing lowers arterial [partial pressure](@entry_id:143994) of carbon dioxide ($P_{CO_2}$), leading to [respiratory alkalosis](@entry_id:148343) (an increase in blood pH). This systemic change has pro-convulsant effects at the cellular level. First, the decreased proton concentration enhances the function of NMDA receptors, increasing excitatory transmission. Second, it alters the bicarbonate gradient across neuronal membranes, making GABA-A receptor-mediated inhibition less effective. This combined increase in excitation and decrease in inhibition pushes the thalamocortical network toward a state of hyperexcitability, making it easier to initiate and sustain the hypersynchronous spike-and-wave oscillations [@problem_id:4477159].
+
+### Advanced Analysis: The EEG Inverse Problem
+
+A central goal in [epilepsy](@entry_id:173650) is to pinpoint the location of the seizure focus. While scalp EEG topography provides clues, its spatial resolution is limited by volume conduction. **EEG source imaging** refers to a set of computational methods that attempt to solve the **inverse problem**: estimating the location, orientation, and strength of the underlying cortical sources ($\mathbf{s}$) from the measured scalp potentials ($\mathbf{V}$).
+
+The relationship can be modeled linearly as $\mathbf{V} = \mathbf{L}\mathbf{s}$, where $\mathbf{L}$ is the **lead field matrix** that encapsulates the physics of volume conduction for a given head model. The inverse problem is notoriously **ill-posed**, meaning it violates one or more of Hadamard's criteria for a well-posed problem:
+
+1.  **Existence:** A solution may not exist if the noisy data $\mathbf{V}$ does not fall within the space spanned by the lead field $\mathbf{L}$.
+2.  **Uniqueness:** The solution is not unique. In a typical setup, there are many more potential sources than EEG sensors (e.g., $N \approx 5000$ sources vs. $M = 64$ sensors). This makes the system of equations severely underdetermined, with an infinite number of source configurations capable of producing the same scalp map.
+3.  **Stability:** The solution is unstable. The physical smoothing effect of volume conduction means that the forward operator $\mathbf{L}$ is ill-conditioned. Its inverse operation will massively amplify any small amount of noise in the measurements, leading to wildly inaccurate and meaningless solutions.
+
+To overcome ill-posedness, one must apply **regularization**, which involves adding prior assumptions or constraints to select a single, stable solution from the infinite set of possibilities. Different regularization strategies reflect different assumptions about the nature of the source. For example:
+- **Tikhonov regularization**, which penalizes the squared magnitude ($\ell_2$-norm) of the source vector, favors spatially smooth, distributed solutions.
+- **Sparsity-based regularization**, which penalizes the number of active sources (e.g., using an $\ell_1$-norm penalty), is particularly well-suited for localizing the focal discharges seen in many forms of epilepsy. It favors solutions where only a small number of cortical locations are active, which is often a physiologically plausible assumption for interictal spikes [@problem_id:4477110].
+
+By combining sophisticated biophysical models with appropriate mathematical regularization, it is possible to transcend the limitations of visual EEG inspection and generate estimates of cortical activity with improved spatial resolution.
