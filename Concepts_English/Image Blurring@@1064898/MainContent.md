@@ -1,0 +1,16 @@
+## Introduction
+Image blur is a familiar imperfection, the difference between a crisp photograph and a hazy memory. Yet, beneath this simple idea of "lost sharpness" lies a rich and profound scientific narrative. Blur is not a single defect but a collection of distinct physical phenomena, each with its own cause, from the geometry of lenses to the [wave nature of light](@entry_id:141075) and the fundamental laws of diffusion. Understanding it takes us on a journey connecting optics, physics, medicine, and computation.
+
+This article addresses the gap between the intuitive experience of blur and its deep scientific underpinnings. We will uncover the elegant mathematical framework that unifies these disparate phenomena. The reader will gain a comprehensive understanding of what blur truly is, why it happens, and where it matters.
+
+First, in "Principles and Mechanisms," we will dissect the core concepts of the Point Spread Function (PSF) and convolution, explore the various physical sources of blur, and introduce a powerful alternative perspective using spatial frequencies and the Optical Transfer Function (OTF). We culminate this section by revealing the astonishing connection between blurring and the physical process of diffusion. Following this, the "Applications and Interdisciplinary Connections" chapter will demonstrate how these principles manifest in the real world, from the [human eye](@entry_id:164523) and advanced medical scanners like MRI and PET to the nanoscale of [semiconductor manufacturing](@entry_id:159349) and the abstract realm of quantum mechanics, showing blur to be both a fundamental challenge and a powerful conceptual tool.
+
+> *Figure: The concept of convolution. A final blurred image is formed by imagining that every point of the original, sharp scene is replaced by the system's Point Spread Function (PSF). The sum of all these smeared-out points yields the observed image.*
+
+## Principles and Mechanisms
+
+To truly understand what it means for an image to be blurry, we must embark on a journey. It is a journey that begins with a simple, intuitive idea—a loss of sharpness—but quickly leads us to the heart of optics, wave physics, and even the fundamental laws of diffusion. We will see that blur is not just a single, monolithic defect; it is a fascinating collection of phenomena, each with its own physical origin, but all united by a surprisingly elegant mathematical framework.
+
+### The Signature of Blur: The Point Spread Function
+
+Imagine you are trying to capture the image of a single, infinitesimally small, brilliant point of light—a perfect star in a black sky. In an ideal world, your camera would record this as a perfect, infinitesimal point on its sensor. But in the real world, this is never the case. The camera, due to its own limitations, will render this point of light as a small, spread-out shape. This shape, the image of a perfect point, is the system's unique signature of blur. We call it the **Point Spread Function**, or **PSF**.
