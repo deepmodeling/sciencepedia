@@ -1,0 +1,60 @@
+## Introduction
+Imaging technology has revolutionized science, allowing us to see the invisible, from the inside of a human body to the surface of distant worlds. Yet, these powerful tools are not perfect. Their outputs are often haunted by phantoms—artifacts that can obscure, distort, and mislead. Among the most common and intriguing of these are streak artifacts, the sharp lines and starburst patterns that mar images in fields as diverse as medicine and astronomy. This article addresses the fundamental question: what are these streaks, and what do they tell us? Far from being mere noise, these artifacts are the visible echoes of our instrument's limitations, carrying clues about the interplay between physics, geometry, and data.
+
+This article will guide you through the world of imaging phantoms across two comprehensive sections. First, in "Principles and Mechanisms," we will delve into the mathematical and physical heart of tomographic imaging, uncovering how phenomena like beam hardening, patient motion, and incomplete data conspire to create streaks in CT scans. Next, in "Applications and Interdisciplinary Connections," we will broaden our perspective, journeying through clinics, plasma labs, and even Earth's orbit to see how similar artifacts manifest in different contexts and explore the ingenious, field-specific solutions scientists have developed to vanquish them. We begin our investigation by exploring the foundational principles that govern how a perfect image is made—and how it can fall apart.
+
+## Principles and Mechanisms
+
+To comprehend the nature of streak artifacts, we must first journey into the heart of [tomographic reconstruction](@entry_id:199351), a domain of surprising mathematical beauty. At its core, [computed tomography](@entry_id:747638) (CT) is a feat of [reverse engineering](@entry_id:754334). It seeks to reconstruct an object's internal structure—a two-dimensional slice, for instance—from a series of one-dimensional "shadows" or projections taken from many different angles. The magic that stitches these shadows back into a coherent image is a profound principle known as the **Fourier Slice Theorem**.
+
+### The Symphony of Slices: A Perfect Reconstruction
+
+Imagine any two-dimensional image. Just as a musical chord can be broken down into a combination of pure notes (its frequencies), an image can be decomposed into a combination of simple waves, each with a specific frequency, direction, and amplitude. This collection of waves is the image's Fourier transform, a kind of "frequency map" that holds all the information needed to recreate the image. The Fourier Slice Theorem provides the bridge between the shadows we can measure and this hidden frequency map [@problem_id:4901721].
+
+The theorem states something wonderfully elegant: if you take a single projection of your object at a certain angle, and then compute the one-dimensional Fourier transform of that projection, the result is identical to a single slice, or a "spoke," passing through the center of the object's two-dimensional Fourier transform at that very same angle.
+
+This is a powerful revelation! To reconstruct the entire 2D frequency map of the object, we simply need to collect projections from all angles around it, from $0$ to $180$ degrees. Each projection gives us another spoke for our frequency wheel. Once we've assembled all the spokes, from the lowest frequencies at the center to the highest frequencies at the rim, we have the complete frequency map. A final mathematical step, the inverse Fourier transform, then magically converts this frequency map back into the crisp, clear image of the object's internal structure. In an ideal world, the process is perfect.
+
+### The Sound of Silence: Artifacts from Insufficient Data
+
+But the real world is rarely ideal. What happens if our data is incomplete? What if we don't capture the full symphony of projections? This is where the first, and most fundamental, class of streak artifacts arises: artifacts from insufficient or inconsistent data. The beautiful image begins to tear along faint, ghostly lines.
+
+#### Sparse Views: Too Few Spokes on the Wheel
+
+In practice, we cannot acquire an infinite number of projections. We must choose a finite number of angles, $N_{\theta}$. If this number is too small, the spokes on our Fourier wheel will be too far apart, leaving gaps in our knowledge of the object's frequency map [@problem_id:5274482]. This is a classic case of [undersampling](@entry_id:272871), analogous to recording a high-pitched violin melody with a microphone that samples too slowly—the high notes get falsely recorded as lower, incorrect tones, a phenomenon known as aliasing.
+
+In tomography, this angular [undersampling](@entry_id:272871) leads to a specific kind of aliasing. High-frequency information, which corresponds to the sharp edges and fine details in our image, gets "folded" or misrepresented. The reconstruction algorithm, trying to build an image from this corrupted frequency map, ends up smearing these errors across the image.
+
+But why does this smearing create streaks? The answer lies in the geometry of our sampling. We sample Fourier space with [radial spokes](@entry_id:203708). The errors, or aliased frequencies, are therefore distributed in a radial pattern. When the reconstruction algorithm performs its final step (a process related to [backprojection](@entry_id:746638)), it effectively traces these errors back into the image space along the same directions as the original projection angles. Every sharp point in the object gets blurred into a tiny star-like shape, and the superposition of all these stars creates the characteristic streaking pattern seen in **sparse-view [tomography](@entry_id:756051)** [@problem_id:4941755].
+
+There is even a rule of thumb, a kind of Nyquist criterion for [tomography](@entry_id:756051), that tells us how many views are enough. The minimum number of projections needed, $N_{\theta}$, is approximately $\frac{\pi L}{2\Delta x}$, where $L$ is the size of the object and $\Delta x$ is the desired pixel resolution. In essence, the finer the detail you want to see, the more projection angles you need to acquire to avoid these aliasing streaks [@problem_id:2373267] [@problem_id:5274482].
+
+#### The Missing Wedge: A Whole Section of Silence
+
+Another form of data insufficiency occurs in **limited-angle tomography**. Sometimes, physical obstructions prevent us from acquiring projections over the full $180$-degree range. A common example is in dental CT, where the scanner cannot pass X-rays through the patient's spine, or in certain industrial applications.
+
+This results in a "[missing wedge](@entry_id:200945)" in the Fourier map—an entire contiguous angular section where we have zero information [@problem_id:4533001]. According to microlocal analysis, the ability to sharply reconstruct an edge depends on having captured projections with a normal vector parallel to that edge's normal [@problem_id:4913463]. With a [missing wedge](@entry_id:200945), we are completely blind to any edges whose orientations fall within that range. The reconstruction algorithm, faced with this gaping hole in its data, does its best but ultimately fails. The result is a severe distortion, where point-like objects are smeared into streaks. The dominant orientation of these streaks points directly toward the center of the missing angular range, a tell-tale sign that gives away the geometry of the incomplete acquisition [@problem_id:4533001].
+
+### The Out-of-Tune Orchestra: Artifacts from Inconsistent Data
+
+So far, we have assumed that the projection data we collect, however sparse, is at least self-consistent. The Fourier Slice Theorem presumes that every projection is a shadow of the exact same, stationary object. What happens when this assumption is violated? This leads to a second major class of artifacts, where the data itself is "out of tune."
+
+#### The Wiggling Subject: Motion Artifacts
+
+Patients are not static objects. Hearts beat, lungs breathe, and patients may involuntarily move during a scan. When this happens, each projection is taken from a slightly different object configuration. The set of projections is no longer internally consistent [@problem_id:4911736].
+
+From the perspective of Fourier space, the object's motion introduces view-dependent phase errors into each acquired spoke [@problem_id:4901721]. The Fourier slices no longer line up perfectly at the center; they are jumbled and inconsistent. When the reconstruction algorithm attempts to piece together this contradictory information, it produces strong artifacts, typically seen as blurring, ghost-like double images of structures, and sharp streaks emanating from high-contrast moving edges. Even minuscule, [random errors](@entry_id:192700) in the scanner gantry's rotation angle can produce a similar effect, causing a tangential blurring that worsens with distance from the center of rotation [@problem_id:4901745]. Interestingly, if an object simply translates to a new position and stays there for the whole scan, no streaks are produced; the entire reconstructed image is just shifted. It is the *inconsistency* from view to view that is the culprit [@problem_id:4901721].
+
+#### The Shifting Colors of Light: Beam Hardening
+
+Perhaps the most subtle, yet pervasive, source of inconsistency comes not from the object's motion, but from the nature of the X-rays themselves. A clinical X-ray tube does not produce a monochromatic beam of a single energy. Instead, it emits a polychromatic spectrum, a "rainbow" of energies.
+
+As this beam passes through tissue, the lower-energy ("softer") photons are absorbed more readily than the higher-energy ("harder") ones. The result is that the beam becomes progressively "harder"—its average energy increases—as it traverses the object. This phenomenon is called **beam hardening** [@problem_id:4866166].
+
+This poses a problem because a material's ability to attenuate X-rays depends on the X-ray energy. The reconstruction algorithm, in its simplest form, assumes a linear relationship between path length and attenuation, which is only true for a monochromatic beam. Since the beam's energy spectrum is constantly changing, this linearity breaks down.
+
+This non-linearity has two main consequences. In a uniform object like the brain, it causes a "cupping" artifact, where the center of the object appears artificially darker than its periphery. More dramatically, when the beam passes between two very dense objects, like two bones or metal implants, the beam hardening effect is maximal. The reconstruction algorithm misinterprets this severe [non-linearity](@entry_id:637147) as a path of low attenuation, creating a dark streak connecting the two dense objects [@problem_id:4866166]. This is why streak artifacts are so common between the dense petrous bones in a head CT.
+
+**Metal artifacts** are the most extreme manifestation of this principle. Metallic implants cause severe beam hardening and can even absorb so many photons that none reach the detector—a state known as **photon starvation**. This combination of extreme data non-linearity and missing information generates the explosive starburst streaks that can render a scan unreadable. Advanced techniques, such as using new-generation Photon-Counting CT scanners, can exploit the unique spectral signature of metals (their **K-edge**) to precisely identify them and computationally correct for the artifacts they cause, turning a physical limitation into a diagnostic advantage [@problem_id:4900513].
+
+In the end, we see that streak artifacts are not merely imperfections. They are the visible echoes of the interplay between geometry, motion, and physics. They are clues that reveal the limitations of our measurement and tell a deeper story about the challenge of seeing the invisible.

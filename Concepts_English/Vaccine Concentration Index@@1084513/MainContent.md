@@ -1,0 +1,19 @@
+## Introduction
+In the realm of global public health, ensuring that life-saving interventions like vaccines reach all segments of society is a paramount challenge. Simple metrics such as average vaccination rates can be deceptive, often masking critical disparities where the most vulnerable populations are left behind. This creates a pressing need for a more sophisticated tool that can precisely measure and analyze the landscape of health equity. This article introduces the Vaccine Concentration Index (CI), a powerful statistical measure designed to address this very problem. We will first explore the core "Principles and Mechanisms" of the CI, demystifying how a visual representation of inequality is transformed into a single, insightful number. Following this, the "Applications and Interdisciplinary Connections" chapter will demonstrate how this index is used in the real world to diagnose inequities, evaluate public health programs, and even understand the social dynamics of health behaviors. By the end, you will have a comprehensive understanding of this essential tool for health justice.
+
+
+*Figure 1: The Concentration Curve. The straight diagonal is the line of perfect equality. A curve above it ($L_{pro-poor}(p)$) shows a pro-poor distribution, while a curve below it ($L_{pro-rich}(p)$) shows a pro-rich distribution. The Concentration Index is twice the shaded area between the line of equality and the concentration curve.*
+
+## Principles and Mechanisms
+
+Imagine you are in charge of a massive, global vaccination campaign. Your goal is simple: get the vaccine to everyone who needs it. But how do you measure success? Simply counting the total number of doses administered isn't enough. What if all those doses went to people in wealthy cities, while remote, impoverished villages were left unprotected? The average coverage rate might look good, but the reality would be a disaster of inequality. We need a tool that can see beyond the average, a tool that can measure fairness itself. This is where the elegant concept of the **Vaccine Concentration Index** comes into play.
+
+### A Picture of Equity: The Concentration Curve
+
+Before we can assign a number to inequality, let's try to visualize it. Let's line up every single person in a population according to their socioeconomic status, from the very poorest person on the left to the very richest on the right. Now, we can draw a graph. On the horizontal axis, we'll plot the cumulative percentage of the population, starting from the poorest. On the vertical axis, we'll plot the cumulative percentage of vaccinations received by that group.
+
+If we lived in a world of perfect equity, this graph would be a straight diagonal line, often called the **line of equality**. The first 10% of the population (the poorest) would have received 10% of the vaccines. The first 50% would have 50% of the vaccines, and so on. It’s a simple, one-to-one relationship.
+
+But reality is rarely so neat. When we plot the actual data, we get what is called a **concentration curve**. This curve tells the true story of vaccine distribution.
+
+Let's look at a hypothetical case from a city's health assessment [@problem_id:4512765]. They found that the poorest 20% of the population accounted for 25% of the total immunizations. The poorest 40% accounted for 50% of immunizations. If we plot this, the concentration curve, $L(p)$, arches *above* the line of equality. This means the vaccine is more concentrated among the less well-off. We call this a **pro-poor** distribution. It's a scenario where, perhaps due to targeted public health campaigns, the vaccine is reaching the most vulnerable groups more effectively than the affluent ones.
