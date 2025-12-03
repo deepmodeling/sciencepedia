@@ -1,71 +1,116 @@
 ## Introduction
-In the world of computational science and engineering, many of the most complex phenomena—from the airflow over a jet wing to the electronic structure of a molecule—are modeled by vast systems of linear equations, often denoted as $Ax=b$. When the matrix $A$ has millions or even billions of entries, solving for the unknown vector $x$ directly is computationally impossible. This gap between the problem's scale and our computational limits is bridged by iterative methods, a class of algorithms that refine an initial guess until an acceptable solution is found. Among these, the Generalized Minimal Residual (GMRES) method stands out as one of the most powerful and widely used.
+In countless fields, from aircraft design to [economic modeling](@entry_id:144051), progress hinges on our ability to solve enormous [systems of linear equations](@entry_id:148943). When these systems involve millions or even billions of variables, traditional methods like [matrix inversion](@entry_id:636005) become computationally impossible. This creates a critical need for smarter, more efficient algorithms that can navigate toward a solution without the prohibitive cost of direct computation. The Generalized Minimal Residual (GMRES) method stands out as one of the most powerful and versatile iterative techniques developed to meet this challenge.
 
-This article provides an in-depth look at this elegant algorithm. It addresses the fundamental question of how one can systematically and optimally improve a guess to solve an impossibly large problem. You will gain a clear understanding of the ingenuity behind GMRES, its practical strengths, and its limitations. The journey begins by exploring the core ideas that make the method work, followed by a look at its real-world impact. First, the chapter on **Principles and Mechanisms** will unpack the theory behind GMRES, from the initial concept of the residual and the construction of Krylov subspaces to the Arnoldi iteration that powers the algorithm. Subsequently, the chapter on **Applications and Interdisciplinary Connections** will demonstrate how GMRES becomes a practical workhorse through techniques like matrix-free implementation and [preconditioning](@article_id:140710), revealing its surprising connections to diverse fields from fluid dynamics to computational chemistry.
+This article provides a comprehensive exploration of the GMRES method. It addresses the fundamental question of how we can find an accurate solution to a massive linear system when the full matrix is too large to handle directly. By breaking down the algorithm into its core components, this article illuminates the elegant mathematical ideas that make it so effective.
+
+First, in "Principles and Mechanisms," we will delve into the heart of the algorithm. You will learn how GMRES uses the concept of a residual to measure error, how it builds a gallery of search directions known as a Krylov subspace, and how the Arnoldi iteration serves as the engine to transform an impossibly large problem into a sequence of small, manageable ones. Following this, the section "Applications and Interdisciplinary Connections" will demonstrate the method's real-world impact. We will see how GMRES is an indispensable tool for simulating physical phenomena, tackling complex engineering challenges, and even how its core ideas connect to methods in fields as diverse as quantum chemistry and economics.
 
 ## Principles and Mechanisms
 
-Imagine you're an engineer designing a new aircraft, and your simulation has produced a gigantic [system of linear equations](@article_id:139922), symbolized as $Ax=b$. Here, $A$ is a massive matrix representing the physics of airflow, $b$ is a vector representing the forces acting on the plane, and $x$ is the vector of unknown pressures and velocities you desperately need to find. This isn't a textbook problem with a handful of variables; $A$ might be millions by millions in size. Solving it directly is simply out of the question. What do you do?
+Imagine you are faced with a monumental task: solving a system of millions, or even billions, of linear equations. This is the reality in fields from [weather forecasting](@entry_id:270166) and aircraft design to economics and artificial intelligence. The familiar textbook method of finding an inverse matrix, $\mathbf{x} = A^{-1}\mathbf{b}$, is computationally unthinkable. The matrix $A$ is simply too vast to invert or even store in its entirety. We need a more subtle, more intelligent approach. We need a way to feel our way towards the solution, step by step, without ever needing to see the whole map. This is the world of iterative methods, and the Generalized Minimal Residual (GMRES) method is one of its most ingenious inhabitants.
 
-You make a guess. Let's call it $x_0$. It's almost certainly wrong. But the question is, *how* wrong? And in which direction does the right answer lie? This is where our journey into the elegant world of the Generalized Minimal Residual method, or **GMRES**, begins.
+### The Measure of Our Ignorance: The Residual
 
-### The Quest for the Best Guess: Starting with the Residual
+Let's begin with the fundamental equation we want to solve: $A\mathbf{x} = \mathbf{b}$. Here, $A$ is our giant matrix, $\mathbf{b}$ is a known vector, and $\mathbf{x}$ is the unknown solution vector we crave. Since we can't find $\mathbf{x}$ directly, we'll have to guess. Let's call our initial guess $\mathbf{x}_0$.
 
-The first thing we can do is check our guess. We can plug $x_0$ into the equation and see how close $Ax_0$ gets to the target, $b$. The difference between what we want ($b$) and what we got ($Ax_0$) is a vector called the **residual**, $r_0 = b - Ax_0$.
+How good is our guess? We can check by plugging it into the equation and seeing how close $A\mathbf{x}_0$ gets to $\mathbf{b}$. The difference, or the "leftover," is a vector we call the **residual**:
 
-This [residual vector](@article_id:164597) is not just a measure of error; it's a map pointing toward the solution. If, by some miracle, our initial guess was perfect, the residual would be the zero vector, and the algorithm would stop immediately, declaring victory. [@problem_id:2214792] But life is rarely so simple. A non-zero $r_0$ tells us our work has just begun. The fundamental goal of any [iterative method](@article_id:147247), including GMRES, is to systematically drive the size of this residual down to zero.
+$$
+\mathbf{r}_0 = \mathbf{b} - A\mathbf{x}_0
+$$
 
-So, how do we find a better guess, $x_1$? The simplest idea is to adjust our initial guess in the direction that seems most promising: the direction of the residual itself. We can try a new solution of the form $x_1 = x_0 + \alpha r_0$. Now, the question becomes: what's the best value for the scalar step size $\alpha$? GMRES has a simple, powerful answer: choose the $\alpha$ that makes the *new* residual, $r_1 = b - Ax_1$, as short as possible.
+If our guess were perfect, the residual would be a vector of all zeros. The larger the residual, the further we are from the truth. The residual, therefore, is the measure of our ignorance. Our entire goal is to drive this residual to zero. [@problem_id:2214791]
 
-This involves a bit of calculus, but the idea is beautifully intuitive. We are finding the point along a single line that comes closest to the true solution's shadow. This one-dimensional minimization forms the philosophical core of the entire method. [@problem_id:2214790]
+### The First Step on a Long Journey
 
-### The Smartest Search Space: Building the Krylov Subspace
+We have our initial guess $\mathbf{x}_0$ and our initial error vector $\mathbf{r}_0$. How do we improve our guess? A natural idea is to take a step from $\mathbf{x}_0$ in a direction that seems promising. What's the most obvious direction? The direction of the error itself! Let's try to find a better solution $\mathbf{x}_1$ that looks like this:
 
-Taking a single step in the direction of $r_0$ is a good start, but why stop there? The matrix $A$ itself contains a wealth of information about the system's geometry. Acting on the residual with our matrix, $Ar_0$, gives us a new direction. This new vector tells us how the system "warps" or "transforms" our initial error. It seems foolish to ignore it.
+$$
+\mathbf{x}_1 = \mathbf{x}_0 + \alpha \mathbf{r}_0
+$$
 
-This is the brilliant insight behind **Krylov subspaces**. Instead of searching for our correction along a single line, we expand our search to a richer, multi-dimensional space. At step $k$, we build a search space spanned by the initial residual and the vectors we get by repeatedly applying the matrix $A$:
-$$ \mathcal{K}_k(A, r_0) = \text{span}\{r_0, Ar_0, A^2r_0, \dots, A^{k-1}r_0\} $$
-This sequence of nested subspaces, $\mathcal{K}_1 \subset \mathcal{K}_2 \subset \dots$, forms the landscape upon which GMRES operates. At each iteration $k$, we aren't just looking for a better guess; we are looking for the *best possible* guess, $x_k$, that can be formed by taking our initial guess and adding a correction from the corresponding Krylov subspace: $x_k \in x_0 + \mathcal{K}_k(A, r_0)$. [@problem_id:3237127] [@problem_id:2183333]
+Here, $\alpha$ is just a number, a step size. Our job is to choose the *best* possible $\alpha$. And what do we mean by "best"? We mean the $\alpha$ that makes the *new* residual as small as possible. The new residual is $\mathbf{r}_1 = \mathbf{b} - A\mathbf{x}_1$. Let's substitute our expression for $\mathbf{x}_1$:
 
-### The Optimality Principle: A Guarantee of Progress
+$$
+\mathbf{r}_1 = \mathbf{b} - A(\mathbf{x}_0 + \alpha \mathbf{r}_0) = (\mathbf{b} - A\mathbf{x}_0) - \alpha A\mathbf{r}_0 = \mathbf{r}_0 - \alpha A\mathbf{r}_0
+$$
 
-Here lies the heart of the method, encapsulated in its name: **Generalized Minimum Residual**. At each step $k$, GMRES looks at the entire affine subspace $x_0 + \mathcal{K}_k(A, r_0)$ and finds the one, unique vector $x_k$ that **minimizes the Euclidean norm** (the geometric length) of the [residual vector](@article_id:164597), $\|r_k\|_2 = \|b - Ax_k\|_2$. [@problem_id:3237127]
+The GMRES philosophy is born here: we choose the step size $\alpha$ that minimizes the length (the Euclidean norm) of this new residual, $\|\mathbf{r}_0 - \alpha A\mathbf{r}_0\|_2$. This turns out to be a simple minimization problem from introductory calculus, and it gives us the optimal first step to take. [@problem_id:2214790]
 
-This isn't just one of many possible strategies; it's an optimal one. Because the Krylov subspaces are nested, the search space at step $k+1$ contains the entire search space from step $k$. This means the smallest residual we find at step $k+1$ *cannot* be larger than the one we found at step $k$. This gives us the most desirable property of a numerical method: a guaranteed, **monotonic decrease** in the [residual norm](@article_id:136288) (or, more precisely, it's non-increasing). The error will never get worse. Every step is a step in the right direction, even if it's a small one.
+### A Gallery of Directions: The Krylov Subspace
 
-This optimality condition is what separates GMRES from other Krylov methods. Some methods enforce a different condition, like making the residual orthogonal to the search space (a Galerkin condition), which doesn't guarantee a monotonically decreasing residual. GMRES, by contrast, enforces a condition known as a **Petrov-Galerkin condition** ($r_k \perp A\mathcal{K}_k(A,r_0)$), which is a direct consequence of its [minimization principle](@article_id:169458). [@problem_id:3237127]
+Taking a single step in the direction of the residual is a good start, but why stop there? The vector $A\mathbf{r}_0$ that appeared in our calculation is also a direction. What if we considered it, too? And what about the direction we'd get by applying the matrix again, $A^2\mathbf{r}_0$?
 
-### The Machinery Under the Hood: Arnoldi's Elegant Solution
+This line of thought leads to a profound idea. Instead of just taking one step, let's build a whole "gallery" of search directions: $\{\mathbf{r}_0, A\mathbf{r}_0, A^2\mathbf{r}_0, \dots\}$. The space spanned by the first $k$ of these vectors is called the $k$-th **Krylov subspace**, denoted $\mathcal{K}_k(A, \mathbf{r}_0)$.
 
-This all sounds wonderful in theory, but how does a computer actually find this "best" vector in the Krylov subspace? The raw basis vectors $\{r_0, Ar_0, \dots\}$ are a numerical nightmare to work with—they tend to point in very similar directions, making them a "crooked" and unstable basis.
+The grand strategy of GMRES is this: at the $k$-th step, don't just find a better solution, find the *best possible* solution that can be built from your initial guess plus any combination of vectors from the $k$-th Krylov subspace. Our new solution, $\mathbf{x}_k$, will have the form:
 
-The engine that drives GMRES is a procedure called the **Arnoldi iteration**. Think of it as a sophisticated machine that takes in the messy Krylov vectors and, one by one, processes them into a pristine set of [orthonormal vectors](@article_id:151567), $\{v_1, v_2, \dots, v_k\}$. These vectors form a perfect, right-angled grid (an orthonormal basis) for the same Krylov subspace. [@problem_id:2570963]
+$$
+\mathbf{x}_k = \mathbf{x}_0 + \mathbf{z}_k, \quad \text{where } \mathbf{z}_k \in \mathcal{K}_k(A, \mathbf{r}_0)
+$$
 
-But Arnoldi's magic doesn't stop there. As it builds this perfect basis, it simultaneously records the relationships between the basis vectors. This information is stored in a small, highly structured matrix called an **upper Hessenberg matrix**, $\bar{H}_k$. This matrix provides a compact, low-dimensional "sketch" of what the enormous matrix $A$ does to our search space. The whole complex process is summarized in one elegant equation:
-$$ A V_k = V_{k+1} \bar{H}_k $$
-where $V_k$ is the matrix whose columns are our nice basis vectors. [@problem_id:2570963]
+And "best possible" continues to mean one thing: minimizing the length of the [residual vector](@entry_id:165091). This is equivalent to finding the vector $\mathbf{z}_k$ in our Krylov subspace that minimizes $\|\mathbf{r}_0 - A\mathbf{z}_k\|_2$. Geometrically, we are searching for the point in the transformed subspace $\{A\mathbf{z} \mid \mathbf{z} \in \mathcal{K}_k(A, \mathbf{r}_0)\}$ that is closest to our initial residual $\mathbf{r}_0$. This is precisely an [orthogonal projection](@entry_id:144168) problem, a cornerstone of linear algebra. [@problem_id:1396541]
 
-With this machinery, the original, impossibly large minimization problem is transformed into an equivalent, tiny [least-squares problem](@article_id:163704) involving the small matrix $\bar{H}_k$. [@problem_id:2570963] The algorithm solves this small problem to find a set of coefficients, $y_k$. The final step is to use these coefficients to combine our perfect basis vectors and construct the update. The solution at step $k$ is simply:
-$$ x_k = x_0 + V_k y_k $$
-This is the beautiful efficiency of GMRES: a huge problem in $n$-dimensional space is solved by projecting it down to a small $k$-dimensional space, solving it there, and projecting the result back. [@problem_id:2183333]
+### The Engine Room: Arnoldi's Elegant Machinery
 
-### A Deeper Look: The Magic of Polynomials
+There's a serious practical problem with our beautiful Krylov subspace. The basis vectors $\{\mathbf{r}_0, A\mathbf{r}_0, A^2\mathbf{r}_0, \dots\}$ are often a terrible choice for computation. As we keep applying the matrix $A$, these vectors tend to point in nearly the same direction, making them numerically unstable and difficult to work with.
 
-The connection between Krylov subspaces and linear algebra is beautiful, but an even deeper truth is revealed when we view the problem through the lens of polynomials. Any vector in the correction space $\mathcal{K}_k(A, r_0)$ can be written as $q(A)r_0$ for some polynomial $q$ of degree at most $k-1$. This means the residual vector at step $k$ can be expressed as:
-$$ r_k = r_0 - A(q(A)r_0) = (I - Aq(A))r_0 $$
-If we define a new polynomial $p_k(z) = 1 - zq(z)$, we see that the residual is simply $r_k = p_k(A)r_0$. [@problem_id:2214808]
+To solve this, GMRES employs a beautiful piece of algorithmic machinery known as the **Arnoldi iteration**. The Arnoldi process is a clever way to take the "bad" Krylov basis and, step-by-step, generate a "good" **[orthonormal basis](@entry_id:147779)** $\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_k\}$ for the same subspace. Think of it as a sophisticated version of the Gram-Schmidt process.
 
-This polynomial $p_k(z)$ has a degree of at most $k$ and is constrained to have the value $1$ at $z=0$. The GMRES [minimization principle](@article_id:169458), $\|r_k\|_2 \to \min$, can now be rephrased in a completely different language: GMRES finds the polynomial $p_k(z)$ (from the allowed class) that makes the vector $p_k(A)r_0$ as short as possible. [@problem_id:3237127]
+But Arnoldi does something even more magical. As it builds this perfect basis, it simultaneously records the "recipe" for how the big matrix $A$ acts on the basis vectors. This recipe is stored in a small, tidy matrix called an **upper Hessenberg matrix**, which we'll call $\bar{H}_k$. A Hessenberg matrix is one that is almost upper-triangular, with just one extra non-zero subdiagonal.
 
-This polynomial perspective is incredibly powerful. It explains why GMRES is guaranteed to find the exact solution (in exact arithmetic) in at most $n$ steps for an $n \times n$ matrix. The famous Cayley-Hamilton theorem states that every matrix satisfies its own [characteristic polynomial](@article_id:150415), $c(A)=0$. This means there exists a polynomial of degree at most $n$ that, when applied to $A$, results in the [zero matrix](@article_id:155342). GMRES, in its relentless search for the best polynomial, is guaranteed to find one that produces a zero residual by the time the search space is large enough (at most dimension $n$). [@problem_id:2214817] [@problem_id:2570963]
+After $k$ steps, the Arnoldi process gives us two matrices: $V_k = [\mathbf{v}_1, \dots, \mathbf{v}_k]$ containing our [orthonormal basis](@entry_id:147779) vectors, and the $(k+1) \times k$ Hessenberg matrix $\bar{H}_k$. They are linked by what is perhaps the most important equation in the whole method, the Arnoldi relation:
 
-### The Real World: Promises and Practicalities
+$$
+A V_k = V_{k+1} \bar{H}_k
+$$
 
-This guarantee of finite termination is theoretically beautiful, but it comes with a steep price. The standard Arnoldi process requires storing *all* the orthonormal basis vectors, $\{v_1, \dots, v_k\}$, to compute the next one. This is called a **long recurrence**. If our simulation needs, say, 5,000 iterations to converge for a matrix of size $N = 2.5 \times 10^6$, we would need to store 5,001 dense vectors. As the engineer in problem [@problem_id:2214804] discovered, this would require petabytes of memory, far beyond any single computer's capacity.
+This equation is breathtaking. It tells us that the action of the enormous, mysterious matrix $A$ on our entire basis can be understood by looking at the small, simple, and known Hessenberg matrix $\bar{H}_k$. We have caged the beast. [@problem_id:2570963] [@problem_id:2183303]
 
-The practical solution is **restarted GMRES**, often written as **GMRES(m)**. Here, we run the algorithm for a fixed, manageable number of steps (say, $m=50$), compute the intermediate solution $x_m$, and then restart the entire process using $x_m$ as the new initial guess. This keeps the memory cost bounded but comes at a price: we throw away the information built up in the Krylov subspace and lose the theoretical guarantee of convergence in $n$ steps. It's a classic trade-off between memory and computation. [@problem_id:2214804]
+### From a Giant Problem to a Tiny One
 
-Furthermore, even with full GMRES, convergence can be tricky. The [rate of convergence](@article_id:146040) is governed not just by the eigenvalues of $A$, but by its entire structure.
-For certain "nasty" matrices, GMRES can exhibit **stagnation**, where the [residual norm](@article_id:136288) barely decreases for many iterations before suddenly dropping. This can happen with matrices that are highly non-symmetric, like the [nilpotent matrix](@article_id:152238) in problem [@problem_id:2183339], where the Krylov subspace needs several steps just to "discover" the directions in which the residual can be reduced.
+Now we can put all the pieces together. Our goal is to find the best update $\mathbf{z}_k$ in the Krylov subspace. We can express this update using our shiny new [orthonormal basis](@entry_id:147779): $\mathbf{z}_k = V_k \mathbf{y}_k$, where $\mathbf{y}_k$ is a small vector of coefficients that we need to find. Our minimization problem becomes:
 
-An even more subtle case arises with **non-diagonalizable (or defective) matrices**. A matrix like the one in problem [@problem_id:2214805] has all its eigenvalues equal to 1, which might suggest easy convergence. Yet GMRES converges quite slowly. This is because the polynomial $p_k(A)$ behaves very differently for [defective matrices](@article_id:193998) than for diagonalizable ones. The presence of Jordan blocks complicates the approximation problem, reminding us that a simple [eigenvalue analysis](@article_id:272674) is often not enough to predict the complex and fascinating behavior of this powerful algorithm.
+$$
+\min_{\mathbf{y}_k \in \mathbb{R}^k} \|\mathbf{r}_0 - A(V_k \mathbf{y}_k)\|_2
+$$
+
+Now, we use the Arnoldi relation, $AV_k = V_{k+1}\bar{H}_k$:
+
+$$
+\min_{\mathbf{y}_k \in \mathbb{R}^k} \|\mathbf{r}_0 - V_{k+1} \bar{H}_k \mathbf{y}_k\|_2
+$$
+
+The initial residual $\mathbf{r}_0$ is just a scaled version of our first [basis vector](@entry_id:199546), $\mathbf{r}_0 = \|\mathbf{r}_0\|_2 \mathbf{v}_1$. And because the columns of $V_{k+1}$ are orthonormal, multiplying by it doesn't change a vector's length. This means our huge, $n$-dimensional problem has been miraculously transformed into a tiny, $(k+1)$-dimensional [least-squares problem](@entry_id:164198):
+
+$$
+\min_{\mathbf{y}_k \in \mathbb{R}^k} \| \|\mathbf{r}_0\|_2 \mathbf{e}_1 - \bar{H}_k \mathbf{y}_k \|_2
+$$
+
+Here, $\mathbf{e}_1$ is just the vector $[1, 0, \dots, 0]^T$. This is a small, textbook least-squares problem that can be solved very efficiently. Once we have the solution $\mathbf{y}_k$, we find our final update $\mathbf{z}_k = V_k \mathbf{y}_k$ and our new, better solution $\mathbf{x}_k = \mathbf{x}_0 + \mathbf{z}_k$. This is the core mechanism of GMRES: use Arnoldi's engine to transform an impossibly large problem into a series of small, manageable ones. [@problem_id:2183303]
+
+### The Deeper Magic: A Tale of Polynomials
+
+There is another, even more elegant way to view what GMRES is doing. At each step $k$, the residual $\mathbf{r}_k$ can be written as the result of a matrix polynomial applied to the initial residual $\mathbf{r}_0$:
+
+$$
+\mathbf{r}_k = P_k(A) \mathbf{r}_0
+$$
+
+where $P_k(z)$ is a polynomial in the variable $z$ of degree at most $k$, with the special property that $P_k(0) = 1$. [@problem_id:2214808] GMRES, by minimizing the norm of the residual, is implicitly searching through all such polynomials to find the one that makes the vector $P_k(A)\mathbf{r}_0$ as short as possible.
+
+This polynomial perspective gives us incredible insight into when GMRES will work well. For the residual to be small, we need our polynomial $P_k(z)$ to be small for every eigenvalue $\lambda$ of the matrix $A$.
+
+*   **Fast Convergence:** Imagine the eigenvalues of $A$ are all clustered together in a small ball, far from the origin, say around the number $c$. We can easily construct a degree-1 polynomial, $P_1(z) = 1 - z/c$, that will be very close to zero for all of those eigenvalues. In this ideal case, GMRES will converge incredibly quickly, perhaps in just one or two steps. [@problem_id:2214788]
+
+*   **Slow Convergence:** Now imagine the eigenvalues are spread all over the place, or worse, they form a circle around the origin. By the laws of complex analysis, it's impossible to find a low-degree polynomial $P_k(z)$ (with $P_k(0)=1$) that is small everywhere in this region. The algorithm will struggle, and convergence will be slow. This is why **[preconditioning](@entry_id:141204)** is so important in practice; it's the art of transforming the original system so that the new matrix has its eigenvalues in a nice, friendly cluster. [@problem_id:2570963]
+
+### Guarantees and Curiosities
+
+This polynomial viewpoint also gives us a remarkable guarantee. By the famous Cayley-Hamilton theorem, any matrix satisfies its own [characteristic polynomial](@entry_id:150909). This implies that there always exists a polynomial $P(z)$ of degree at most $n$ (where $n$ is the size of the matrix) such that $P(A)$ is the [zero matrix](@entry_id:155836). This means that, in exact arithmetic, GMRES is *guaranteed* to find the exact solution in at most $n$ steps. The Krylov subspace eventually becomes rich enough to contain the exact solution vector. [@problem_id:2214817] In fact, the convergence is even faster: it is guaranteed in at most $m$ steps, where $m$ is the degree of the [minimal polynomial](@entry_id:153598) of $A$ with respect to $\mathbf{r}_0$. [@problem_id:2570963] [@problem_id:2214815]
+
+However, the path to convergence can be strange. The [residual norm](@entry_id:136782) $\|\mathbf{r}_k\|_2$ is guaranteed to be non-increasing, but it is not guaranteed to strictly decrease at every step. It's possible for the algorithm to "stagnate" for several iterations, with the [residual norm](@entry_id:136782) staying constant, before it finally finds a useful new direction and the residual drops. This can happen with certain matrix structures, reminding us that finding the "best" available approximation doesn't always mean making immediate progress. [@problem_id:2183339]
+
+Even if the matrix $A$ is singular (meaning it has a zero eigenvalue and is not invertible), GMRES can still be a hero. As long as the system is consistent (meaning a solution actually exists), GMRES will march on and find an exact solution, terminating as soon as the minimal polynomial of $A$ with respect to $\mathbf{r}_0$ is satisfied. [@problem_id:2214815]
+
+In the end, GMRES is a beautiful synthesis of ideas from linear algebra, numerical analysis, and approximation theory. It's a pragmatic algorithm that tackles impossibly large problems by breaking them down, and it's built upon a foundation of deep and elegant mathematical principles. It doesn't just find an answer; it takes a journey through a sequence of ever-improving approximations, a journey guided by the principle of making the best possible choice at every single step.
