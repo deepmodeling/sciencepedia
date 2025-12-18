@@ -1,0 +1,78 @@
+## Introduction
+In the architecture of modern operating systems, managing access to storage devices is a critical function for overall system performance. For magnetic hard disk drives, where physical mechanics dominate access times, the order in which read and write requests are serviced is not a trivial detail—it is the key to efficiency. Disk [scheduling algorithms](@entry_id:262670) are the set of rules and policies that an operating system uses to manage the queue of pending I/O requests, aiming to optimize performance and ensure responsive service.
+
+The central problem that these algorithms address is a classic engineering trade-off: the conflict between maximizing data throughput and ensuring fairness for all requests. Simply servicing requests as they arrive can lead to chaotic and inefficient head movement, drastically slowing the system down. Conversely, always prioritizing the easiest-to-reach request can leave other requests waiting indefinitely. This article provides a comprehensive exploration of the strategies developed to navigate this complex landscape.
+
+Across the following sections, you will gain a deep understanding of [disk scheduling](@entry_id:748543). The first section, **"Principles and Mechanisms,"** introduces the fundamental trade-off between throughput and fairness and details the mechanics of foundational algorithms like FCFS, SSTF, SCAN, and their variants. Next, **"Applications and Interdisciplinary Connections"** bridges theory and practice, showing how these algorithms are adapted for real-world hardware, integrated with advanced [file systems](@entry_id:637851), and applied in specialized fields like [real-time systems](@entry_id:754137) and security. Finally, **"Hands-On Practices"** offers practical exercises to simulate these algorithms, solidifying your understanding of their behavior and performance implications.
+
+## Principles and Mechanisms
+
+The physical constraints of magnetic hard disk drives, specifically the time required to move the mechanical read/write head, necessitate intelligent scheduling of I/O requests. Unlike solid-state drives where data access time is nearly uniform, a disk's performance is critically dependent on the order in which requests are serviced. Disk [scheduling algorithms](@entry_id:262670) are designed to manage the queue of pending requests to optimize for one or more performance metrics. This section explores the fundamental principles governing these algorithms, the core trade-offs they embody, and the mechanisms of the most common scheduling policies.
+
+### The Fundamental Trade-Off: Throughput vs. Fairness
+
+At the heart of [disk scheduling](@entry_id:748543) lies a classic conflict between two primary objectives: maximizing **throughput** and ensuring **fairness**.
+
+**Throughput**, a measure of efficiency, is the rate at which data can be read from or written to the disk, typically measured in bytes per second. Since the movement of the disk's read/write head between different cylinders—a process known as **seeking**—is often the most time-consuming component of an I/O operation, maximizing throughput is largely equivalent to minimizing the total **[seek time](@entry_id:754621)**. The most direct way to achieve this is to minimize the total **head movement**, the sum of distances the head travels to service a sequence of requests.
+
+**Fairness**, on the other hand, relates to the predictability and timeliness of service for individual requests. A fair scheduler ensures that every request is eventually serviced and does not suffer from **starvation**, or indefinite postponement. The primary metric for fairness is **[response time](@entry_id:271485)**, the total time a request waits from its arrival until it is completed. A good scheduler should not only provide a low average [response time](@entry_id:271485) but also a low variance in response times, indicating predictable performance for all requests.
+
+The simplest [scheduling algorithm](@entry_id:636609), **First-Come, First-Served (FCFS)**, is the epitome of fairness. It processes requests strictly in the order they arrive, guaranteeing that no request will be starved. However, its rigid adherence to arrival order makes it completely oblivious to the physical location of requests on the disk, which can lead to abysmal throughput.
+
+To quantify this inefficiency, consider a pathological scenario where a batch of $2n$ requests arrives simultaneously for a disk, alternating between a "near" cylinder $r$ (the head's current position) and a "far" cylinder $g$, with a distance of $D = |g-r|$. The arrival sequence is $r, g, r, g, \ldots, r, g$. Under FCFS, the head services requests in this exact order. The first request (at $r$) requires zero movement. Subsequently, the head must traverse the distance $D$ back and forth $2n-1$ times. The total head movement is therefore $M_{\mathrm{FCFS}} = (2n-1)D$. An optimal schedule, however, would service all $n$ requests at cylinder $r$ first (zero movement) and then move once to cylinder $g$ to service all $n$ requests there (movement $D$). The minimum possible head movement is thus $M_{\min} = D$. The ratio of FCFS performance to optimal performance in this case is $\frac{M_{\mathrm{FCFS}}}{M_{\min}} = 2n-1$. This shows that the inefficiency of FCFS can grow arbitrarily large as the number of requests increases .
+
+This inefficiency often manifests as **head-of-line blocking**. If the first request in the queue is for a distant cylinder, it can force all subsequent requests—even those for cylinders very close to the head's current position—to endure a long wait. This initial long seek creates a cascade of delays, severely degrading the average [response time](@entry_id:271485) for the entire batch of requests . These dramatic shortcomings of FCFS motivate the development of algorithms that reorder requests to optimize head movement.
+
+### The Greedy Approach: Shortest Seek Time First (SSTF)
+
+The most direct approach to maximizing throughput is the **Shortest Seek Time First (SSTF)** algorithm. SSTF employs a greedy strategy: at any decision point, it selects the pending request that is closest to the current position of the head, thereby minimizing the immediate [seek time](@entry_id:754621). This strategy is highly effective at reducing total head movement and often yields high throughput.
+
+However, the greedy nature of SSTF is also its greatest weakness. By always prioritizing nearby requests, SSTF can lead to the starvation of requests for cylinders that are far from the current head position. If a steady stream of new requests continually arrives in the vicinity of the head, the scheduler will remain localized in that region, perpetually deferring service for distant requests. This problem is directly analogous to the starvation of long jobs under the Shortest Job First (SJF) CPU [scheduling algorithm](@entry_id:636609) . It is possible to construct a scenario where a continuous arrival of requests alternating between two adjacent cylinders can "trap" the SSTF-scheduled head, preventing it from ever servicing a far-out request .
+
+A practical solution to mitigate SSTF's starvation problem is **aging**. This technique incorporates a request's waiting time into the scheduling decision. Instead of choosing the request with the minimum raw distance $|x_i - h(t)|$, the scheduler chooses the one with the minimum *effective distance*, which might be defined as:
+$$
+d_{\mathrm{eff}}(i,t) = \max\{0, |x_i - h(t)| - \alpha \cdot w_i(t)\}
+$$
+Here, $x_i$ is the cylinder of request $i$, $h(t)$ is the head position at time $t$, $w_i(t)$ is the waiting time of request $i$, and $\alpha$ is a constant that determines how heavily waiting time is weighted. As a request waits longer, its effective distance decreases. Eventually, the term $\alpha \cdot w_i(t)$ will grow large enough to overcome even the largest physical seek distance, forcing the effective distance to zero and guaranteeing that the long-waiting request will be selected. This prevents starvation while still favoring requests that are physically close .
+
+### Sweep-Based Algorithms: A Balance of Efficiency and Fairness
+
+To avoid the starvation problem of SSTF while still achieving better performance than FCFS, a family of "elevator" algorithms was developed. These algorithms service requests by sweeping the head across the disk in a structured manner.
+
+#### SCAN (The Elevator Algorithm)
+
+The **SCAN** algorithm, also known as the [elevator algorithm](@entry_id:748934), constrains the head to move back and forth across the entire disk. It services all pending requests in its current direction of motion until it reaches a physical end of the disk (e.g., cylinder $0$ or the maximum cylinder, $C_{\max}$). Upon reaching the end, it reverses direction and repeats the process.
+
+The primary benefit of SCAN is that it eliminates starvation. Since the head is guaranteed to sweep across the entire disk, every pending request will be serviced within a predictable time frame. For a disk with a cylinder span of $C$ and a head that moves at a constant speed $v$, the maximum waiting time for any request has a tight upper bound of $W_{\max} = \frac{2C}{v}$. This is the time required for the head to travel from one end of the disk to the other and back again. This deterministic, workload-independent bound on latency makes SCAN far more suitable than FCFS or SSTF for systems requiring predictable performance .
+
+The performance of SCAN is, however, sensitive to the initial head position and sweep direction. Requests located on the "far side" of the initial sweep must wait for the head to travel to one extreme, reverse, and travel back. For example, if the head starts at cylinder $H=10$ and sweeps inward (towards cylinder $0$) first, requests for outer cylinders (e.g., $150, 160, 170$) will have to wait for the entire round trip ($10 \to 0 \to 150$, etc.), incurring a significant additional delay compared to an outward-first sweep ($10 \to 150$, etc.) .
+
+#### LOOK
+
+A straightforward and widely used optimization of SCAN is the **LOOK** algorithm. LOOK behaves just like SCAN, but instead of traveling to the physical ends of the disk, the head reverses direction as soon as it has serviced the last pending request in its current direction.
+
+In most scenarios, LOOK is more efficient than SCAN because it avoids unnecessary head movement over regions of the disk that have no pending requests. For a set of requests with minimum cylinder $m$ and maximum cylinder $M$ on a disk of size $T$, a SCAN sweep from an intermediate position might travel to cylinder $0$ and then to $T$, while a LOOK sweep would only travel to $m$ and then to $M$. LOOK is therefore generally more efficient than SCAN as it avoids unnecessary head movement to the physical ends of the disk when no requests are pending there. The total head movement is reduced by eliminating travel over uninhabited regions of the disk . Like SCAN, LOOK is also starvation-free, with a maximum waiting time bounded by approximately one full sweep of the *requested* cylinder range .
+
+While LOOK is generally more efficient, there are scenarios where SCAN can outperform it. SCAN's journey to the physical ends can be viewed as a simple form of **anticipatory scheduling**—it is a gamble that new requests may arrive at the extremes of the disk. If this gamble pays off, SCAN can service these late-arriving requests with low marginal cost on its current sweep. LOOK, having reversed direction earlier, would be "wrong-footed" and forced to make a long, separate sweep to service those same requests. This illustrates that no single algorithm is optimal without knowledge of future request patterns .
+
+#### C-SCAN and C-LOOK
+
+One subtle drawback of SCAN and LOOK is their non-uniform service. Requests for cylinders near the middle of the disk have a lower [average waiting time](@entry_id:275427) than requests near the ends. This is because after the head reverses at an endpoint, it immediately begins servicing requests in that vicinity again. To provide more equitable service, the **Circular SCAN (C-SCAN)** algorithm was developed.
+
+C-SCAN restricts head movement to a single direction (e.g., from high cylinder numbers to low). After servicing the last request in its sweep and reaching an end (e.g., cylinder $0$), the head performs a fast "flyback" return to the other end of the disk (cylinder $C_{\max}$) without servicing any requests along the way. It then begins a new sweep. This [circular motion](@entry_id:269135) ensures that the waiting time for any request is more uniform, as it depends only on the head's position when the request arrives, not on whether it's at an "end" or in the "middle". The primary benefit of C-SCAN is not necessarily a lower average [response time](@entry_id:271485), but a significantly lower **variance** in response times, leading to more predictable performance for all requests . **C-LOOK** is the corresponding variant that performs a flyback after servicing the last request in one direction, rather than going to the physical end.
+
+### Selecting an Algorithm: A Synthesis
+
+The choice of a disk [scheduling algorithm](@entry_id:636609) involves a careful analysis of the system's goals and expected workload. We can formalize this decision by considering a unified cost function that weights the penalties for seek distance and waiting time:
+$$
+C = \sum_{i} (\alpha \cdot \text{seek}_i + \beta \cdot \text{wait}_i)
+$$
+Here, $\alpha$ represents the cost per cylinder of head movement, and $\beta$ represents the cost per unit of waiting time. The optimal algorithm is the one that minimizes the long-run average cost per request.
+
+Consider a bimodal workload, where requests are heavily clustered in two distinct bands on the disk, separated by a large empty region.
+- **SSTF** will tend to service all requests in one cluster before making the long journey to the other. This minimizes the $\alpha \cdot \text{seek}$ term, as most seeks are short and intra-cluster. However, it can lead to starvation for the other cluster, causing the $\beta \cdot \text{wait}$ term to become very large.
+- **SCAN** will sweep back and forth across the entire disk, including the empty region. This results in a higher average seek distance than SSTF. However, it provides a hard bound on waiting time, keeping the $\beta \cdot \text{wait}$ term under control.
+
+The choice is governed by the ratio $\beta/\alpha$. If the penalty for waiting time is high relative to the penalty for seek distance (large $\beta/\alpha$), the cost of SSTF's potential starvation becomes unacceptable, and a SCAN-family algorithm is the superior choice. Conversely, if throughput is paramount and waiting time is of little concern (small $\beta/\alpha$), SSTF's efficiency in minimizing head movement makes it more attractive .
+
+In practice, many modern systems employ hybrid strategies. For instance, a scheduler might group incoming requests into small batches. Within each batch, requests can be reordered using an efficiency-focused algorithm like LOOK. However, the batches themselves are processed in a First-Come, First-Served order. This **batch-preserving reordering** approach strikes a practical balance, preserving a degree of FCFS fairness at a coarse granularity while still gaining most of the throughput benefits of reordering at a fine granularity . Ultimately, understanding the fundamental principles and trade-offs detailed in this section is essential for designing and selecting a scheduling policy that meets the specific needs of any given system.

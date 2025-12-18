@@ -1,0 +1,60 @@
+## Introduction
+At the heart of every responsive computer system lies a silent, relentless decision-maker: the disk scheduler. Its job seems simple—to decide the order in which to handle requests for data stored on a disk. However, this seemingly trivial task presents a fundamental conflict between maximizing raw performance and guaranteeing fairness for all requests. A naive approach can lead to sluggish performance, while a purely speed-focused strategy can leave some tasks waiting forever. This article unravels the elegant solutions developed to navigate this complex trade-off.
+
+The journey begins in the "Principles and Mechanisms" chapter, where we will explore the core disk-[scheduling algorithms](@entry_id:262670), from the simple First-Come, First-Served (FCFS) to the efficient Shortest Seek Time First (SSTF) and the balanced SCAN algorithm. We will then move into "Applications and Interdisciplinary Connections," discovering how these theoretical models are adapted for real-world workloads, Quality of Service (QoS) requirements, and even modern Solid-State Drives (SSDs). Finally, the "Hands-On Practices" section will offer exercises to apply these concepts and deepen your understanding. By the end, you will not only grasp how [disk scheduling](@entry_id:748543) works but also appreciate the timeless principles of optimization and fairness that underpin it, starting with the very physics of a spinning disk.
+
+## Principles and Mechanisms
+
+The job of a disk scheduler is, on its face, disarmingly simple. A list of requests comes in, each asking to read or write data at a specific location on the disk. The scheduler's task is merely to decide the order in which to handle them. "First come, first served" seems not only fair but also obvious. And yet, this simple question of "what's next?" unravels into a beautiful story of conflict, compromise, and invention. It's a story about the deep tension between two fundamental goals: raw speed and universal fairness. Our journey into this world begins with a simple, almost cartoonish, model of a disk drive.
+
+### The Arena: A Number Line and a Traveling Head
+
+Imagine a spinning platter in a [hard disk drive](@entry_id:263561) is just a long, one-dimensional number line. Each number represents a circular track, or **cylinder**. To access data, a tiny head must physically move, or **seek**, to the correct cylinder. For now, let's pretend this [seek time](@entry_id:754621) is all that matters. Our problem, then, is to service a batch of requests—each at a different point on the number line—while moving the head the least total distance.
+
+If you're a student of computer science, this might ring a bell. It sounds remarkably like the famous Traveling Salesman Problem (TSP), but simplified to a single line . We have a set of "cities" (cylinder locations) to visit, starting from the head's current position, and we want the shortest possible tour. This analogy is both powerful and a little dangerous, as we're about to see.
+
+### The Naive and the Greedy: A Tale of Two Flawed Policies
+
+Let's start with the most intuitive policy: **First-Come, First-Served (FCFS)**. It embodies a kindergarten sense of justice—you wait your turn. If requests for cylinders 980, 150, and 600 arrive in that order, you service them in that order. What could be wrong with that?
+
+Everything, it turns out. Imagine a large number of requests arrive, scattered randomly across the disk. FCFS will force the head to dart back and forth frenetically, like a confused squirrel on a highway. A request at cylinder 100 is followed by one at 4000, then one at 200, then 3500. The total distance traveled is enormous. In fact, one can prove mathematically that as the number of random requests ($n$) grows, the total distance the head travels under FCFS also grows without bound, scaling linearly with $n$ . It's a policy that is "fair" in its timing but catastrophically inefficient.
+
+So, we get clever. If efficiency is what we want, let's be ruthlessly efficient. Let's invent **Shortest Seek Time First (SSTF)**. The rule is simple: from the head's current position, always service the closest pending request. This is a [greedy algorithm](@entry_id:263215). It focuses only on the immediate gain, minimizing the very next move to maximize **throughput**—the rate at which we get work done .
+
+This seems much better. The head makes a series of short, efficient moves. But SSTF falls into two subtle traps. First, being greedy isn't the same as being optimal. It's possible to construct a set of requests where a long initial seek would set up a smooth, efficient sweep that is shorter overall than the path SSTF would choose .
+
+The second trap is far more sinister and reveals itself only when we move from a static batch of requests to the real world, where new requests arrive continuously. Imagine the head is busy servicing a dense cluster of requests in the middle of the disk. A new request arrives for a cylinder at the far edge of the disk. Then another request arrives in the central cluster, closer to the head. SSTF's logic is unshakable: it will service the closer request. If this pattern continues—a sustained stream of requests in one region—the distant request may *never* be serviced. It is left to wait forever, a phenomenon aptly named **starvation**  . SSTF, in its relentless pursuit of throughput, has sacrificed fairness entirely.
+
+### The Elegant Compromise: The Elevator Algorithm
+
+How do we reconcile this? We want the high throughput of SSTF without the abject unfairness of starvation. The solution is one of the most elegant ideas in [operating systems](@entry_id:752938): the [elevator algorithm](@entry_id:748934), officially known as **SCAN**.
+
+The SCAN algorithm behaves just like its namesake. The disk head sweeps monotonically from one end of the disk to the other (say, from cylinder 0 to 4999), servicing all requests it passes. When it reaches the end, it reverses direction and sweeps back. It doesn't greedily jump to a nearby request if it's in the "wrong" direction. It has the patience to stick to its path.
+
+This simple discipline solves both of our problems at once.
+
+First, it guarantees **fairness** by eliminating starvation. Since the head is guaranteed to sweep across the entire disk, no request can be ignored forever. There is a definite, predictable upper bound on how long any request might have to wait. In the worst-case scenario—a request arrives for a cylinder just after the head has passed it—the request must wait for the head to travel to the end of the disk, reverse, and come all the way back. This maximum wait time is roughly the time it takes to traverse the disk twice, a finite number that depends only on the physical size of the disk and the speed of the head, not on the number of other requests in the queue . This is a powerful guarantee for applications that need predictable performance.
+
+Second, SCAN achieves excellent **throughput**. By servicing requests in a smooth, monotonic sweep, it avoids the wild, inefficient thrashing of FCFS. The comparison is stark: for a large number of requests, the total head travel for FCFS grows to infinity, while for SCAN, it is bounded by less than the distance of two full sweeps . The difference in efficiency is not just a factor of two or three; it's a fundamental difference in character.
+
+A popular variant is **C-SCAN (Circular SCAN)**, which only sweeps in one direction (e.g., from low to high cylinders) and then performs a fast return sweep to the beginning without servicing any requests. This prevents a bias against requests at the extremities of the disk and provides more uniform waiting times.
+
+### The Best of Both Worlds: Hybrid Schedulers
+
+So, is SCAN always the winner? Not quite. The best algorithm often depends on the **workload**. Imagine a very quiet disk with requests arriving only sporadically. In this "light-traffic" world, SSTF is actually faster. An elevator that has to travel all 100 floors just to pick up one person on the 3rd floor is not very efficient. SSTF, in this case, would go directly to the 3rd floor and wait, which is the sensible thing to do .
+
+This insight leads to a wonderful synthesis: **hybrid schedulers**. We don't have to choose one policy and stick with it forever. We can create an adaptive system that gets the best of both worlds. A common strategy is to use SSTF as the default policy to benefit from its high throughput under normal conditions. However, the operating system keeps a timer for every pending request. If any request's waiting time exceeds a certain threshold, $\theta$, it's a sign that starvation might be setting in. The scheduler then switches to a SCAN-like mode to sweep through the disk and guarantee that the aging request (and all others) gets serviced . This approach gives you the speed of the [greedy algorithm](@entry_id:263215) with the fairness guarantee of the elevator—a practical and robust solution.
+
+### A New Dimension: The Revolution of Solid-State Drives
+
+Our entire story has been built on the physics of a spinning disk and a moving arm. But what happens when the hardware undergoes a revolution? Enter the **Solid-State Drive (SSD)**. An SSD has no moving parts. There is no spinning platter, no moving head. Seek time, the very foundation of our problem, is effectively zero. Is everything we've learned now useless?
+
+Far from it. The underlying principles—of optimizing for cost and leveraging locality—are more universal than the hardware they were born from. The problem simply changes its costume.
+
+On an SSD, the new "cost" to minimize is not head movement but a phenomenon called **[write amplification](@entry_id:756776)**. An SSD is made of [flash memory](@entry_id:176118) blocks, which can only be written to after being erased. A single page cannot be erased; the entire block must be. When a host writes a new version of a page, the drive writes the new data to a fresh location and marks the old page "invalid". To reclaim the space taken by invalid pages, a process called [garbage collection](@entry_id:637325) must find a block, copy all its *still-valid* data to a new block, and then erase the old one. The extra work of copying valid data is the source of [write amplification](@entry_id:756776). For every write you ask for, the drive might have to do many more internal writes. To minimize this, you want garbage collection to be as efficient as possible, which means you want to erase blocks that have very few valid pages left to copy .
+
+The key insight is that data has a "temperature." **Hot data** is frequently modified (e.g., log files, database indices), while **cold data** is written once and rarely changed (e.g., photos, operating system files). If you can physically segregate hot and cold data onto different erase blocks, you create a beautiful situation. The block containing hot data will quickly fill up with invalid pages as the data is overwritten, making it an ideal, cheap candidate for garbage collection.
+
+And how do we achieve this segregation? With an algorithm that looks suspiciously like our old friend, SCAN! Hot data is often clustered together in the [logical address](@entry_id:751440) space of the disk (the **Logical Block Addresses**, or LBAs). By sorting pending writes by their LBA before sending them to the drive, a scheduler can naturally group the hot writes together. This is an **LBA-SCAN**. The FTL, which writes data sequentially, then places all this hot data into the same physical block, achieving the desired separation.
+
+Here lies the profound lesson. The elegant idea of a SCAN—a monotonic sweep across an ordered space to exploit locality—survives a complete technological upheaval. The goal changed from minimizing head movement to minimizing [write amplification](@entry_id:756776), and the space changed from physical cylinders to logical addresses. But the core algorithmic principle, born from the simple mechanics of a spinning disk, endures. It’s a powerful testament to the unity and timeless beauty of the ideas that make our computers work.

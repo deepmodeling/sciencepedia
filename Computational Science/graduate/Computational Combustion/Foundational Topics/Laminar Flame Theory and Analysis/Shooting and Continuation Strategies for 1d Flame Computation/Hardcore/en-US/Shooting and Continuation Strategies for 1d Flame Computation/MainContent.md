@@ -1,0 +1,92 @@
+## Introduction
+The computation of one-dimensional flame structures is a cornerstone of [combustion science](@entry_id:187056), providing fundamental insights into flame speed, thickness, and composition. However, the governing equations—a system of coupled, nonlinear [ordinary differential equations](@entry_id:147024)—present significant numerical hurdles. Their inherent stiffness, arising from temperature-sensitive chemical kinetics, and the fact that the flame speed itself is an unknown eigenvalue of the problem, make finding solutions a non-trivial task. This article provides a comprehensive guide to the advanced numerical strategies developed to overcome these challenges. The first section, "Principles and Mechanisms," will lay the theoretical groundwork, explaining how the [shooting method](@entry_id:136635) transforms the [boundary value problem](@entry_id:138753) into a solvable [root-finding problem](@entry_id:174994) and how [continuation methods](@entry_id:635683) trace solution families. The second section, "Applications and Interdisciplinary Connections," will demonstrate how these techniques are used to analyze critical phenomena like [ignition and extinction](@entry_id:1126373) and to robustly solve physically realistic, stiff flame problems. Finally, "Hands-On Practices" will provide opportunities to implement and explore these powerful computational tools, solidifying the theoretical concepts through practical application.
+
+## Principles and Mechanisms
+
+The computation of one-dimensional flame structures represents a foundational problem in [combustion science](@entry_id:187056). While the governing physics are described by well-established conservation laws, their numerical solution presents significant challenges due to inherent stiffness, strong nonlinearities, and the eigenvalue nature of the problem. This chapter elucidates the principles and mechanisms of the primary numerical strategies employed: the [shooting method](@entry_id:136635) for transforming the boundary value problem into a [root-finding problem](@entry_id:174994), and [continuation methods](@entry_id:635683) for robustly tracking flame properties as physical parameters vary.
+
+### The 1D Premixed Flame as an Eigenvalue Boundary Value Problem
+
+Let us consider a steady, planar, one-dimensional, premixed, adiabatic flame propagating at a constant pressure $p$. The analysis is most conveniently performed in a coordinate system attached to the flame front, where the spatial coordinate is $x$. In this frame, the unburned reactants flow from $x \to -\infty$ and the burned products exit at $x \to +\infty$. The state of the gas at any point is described by its temperature $T(x)$ and the set of species mass fractions $\{Y_k(x)\}_{k=1}^{N_s}$.
+
+The governing principles are the conservation of mass, species, and energy. Conservation of mass dictates that the mass flux, $m = \rho u$, where $\rho$ is the density and $u$ is the gas velocity relative to the flame, is constant throughout the domain. The species and energy [conservation equations](@entry_id:1122898) can be written as a system of coupled, second-order ordinary differential equations (ODEs) :
+
+- **Species Conservation:** $\frac{d}{dx}(m Y_k + j_k) = \dot{\omega}_k W_k$ for each species $k=1, \dots, N_s$. Here, $j_k$ is the diffusive mass flux of species $k$ (e.g., modeled via Fick's law or a mixture-averaged approximation), $\dot{\omega}_k$ is the molar production rate, and $W_k$ is the [molar mass](@entry_id:146110).
+
+- **Energy Conservation:** $\frac{d}{dx}(m h - \lambda \frac{dT}{dx} - \sum_{k=1}^{N_s} h_k j_k) = 0$. In this enthalpy form for an adiabatic flame, $h$ is the specific mixture enthalpy, $\lambda$ is the thermal conductivity, and the term $\sum h_k j_k$ represents the transport of enthalpy by diffusing species.
+
+This system of ODEs must satisfy boundary conditions at two points. Far upstream ($x \to -\infty$), the mixture is in its unburned state, characterized by a known temperature $T_u$ and composition $\{Y_{k,u}\}$. Far downstream ($x \to +\infty$), the mixture has reached [chemical equilibrium](@entry_id:142113), corresponding to the adiabatic flame temperature $T_b$ and equilibrium composition $\{Y_{k,b}\}$. This two-point specification defines a **Boundary Value Problem (BVP)**.
+
+A crucial feature of this BVP is that the mass flux $m$ (which is directly proportional to the laminar flame speed, $S_L$) is not known beforehand. For an arbitrary choice of $m$, a solution that satisfies the upstream boundary conditions will generally not satisfy the downstream conditions. A physically meaningful solution that connects both states exists only for a specific, discrete value of $m$. Therefore, the mass flux $m$ is an **eigenvalue** of the BVP, which must be determined simultaneously with the solution profiles for temperature and species, $(T(x), \{Y_k(x)\})$ .
+
+### The Shooting Method: From BVP to Root-Finding
+
+The [shooting method](@entry_id:136635) is a powerful technique that recasts a BVP as an Initial Value Problem (IVP), which can then be solved using standard ODE integrators. The process involves "shooting" trajectories from one boundary and adjusting the initial conditions until the trajectory "hits" the target conditions at the other boundary.
+
+To apply this, we first convert the system of second-order ODEs for temperature and species into a larger system of first-order ODEs. This is typically done by introducing the diffusive fluxes as new [state variables](@entry_id:138790). The entire system can then be written in the compact form :
+$$
+\frac{d\mathbf{u}}{dx} = \mathbf{f}(\mathbf{u}; m)
+$$
+where $\mathbf{u}(x) \in \mathbb{R}^n$ is the state vector containing the temperature, species mass fractions, and their corresponding flux variables, and $m$ is the mass flux eigenvalue.
+
+The shooting procedure is as follows:
+1.  **Guess Unknowns:** Make an initial guess for the eigenvalue $m$ and any unknown initial conditions at the starting boundary (e.g., $x=0$). Let us collect all these $k$ unknown parameters into a vector $\boldsymbol{\theta} \in \mathbb{R}^k$.
+2.  **Integrate:** Solve the IVP defined by the ODE system and the initial conditions specified by $\boldsymbol{\theta}$ from the starting boundary $x=0$ to a final point $x=L$. This yields a solution trajectory $\mathbf{u}(x; \boldsymbol{\theta})$.
+3.  **Evaluate Residual:** At the final point $x=L$, check the discrepancy between the computed solution $\mathbf{u}(L; \boldsymbol{\theta})$ and the required downstream boundary conditions. This discrepancy forms a **[residual vector](@entry_id:165091)** $\mathbf{R}(\boldsymbol{\theta})$. For example, for a downstream equilibrium state where all gradients must vanish, the residual could be composed of the values of the gradients $\frac{dT}{dx}$ and $\frac{dY_k}{dx}$ at $x=L$ .
+4.  **Update Guesses:** The original BVP is now transformed into a nonlinear algebraic [root-finding problem](@entry_id:174994): find $\boldsymbol{\theta}$ such that $\mathbf{R}(\boldsymbol{\theta}) = \mathbf{0}$. This system is typically solved using a variant of Newton's method, which iteratively refines the guess $\boldsymbol{\theta}$ until the residual is minimized.
+
+### Core Challenges in the Shooting Formulation
+
+The abstract description of the [shooting method](@entry_id:136635) conceals two profound mathematical challenges that must be addressed for any practical implementation: determining the correct number of shooting parameters and handling the inherent [translational invariance](@entry_id:195885) of the flame.
+
+#### Manifolds, Heteroclinic Orbits, and Dimension Counting
+
+From a dynamical systems perspective, the unburned state $\mathbf{u}^{-}$ (at $x \to -\infty$) and the burned state $\mathbf{u}^{+}$ (at $x \to +\infty$) are fixed points (or equilibria) of the ODE system, meaning $\mathbf{f}(\mathbf{u}^{-}; m) = \mathbf{f}(\mathbf{u}^{+}; m) = 0$. The flame structure itself is a special trajectory, known as a **[heteroclinic orbit](@entry_id:271352)**, that connects these two fixed points.
+
+The behavior of trajectories near a fixed point is governed by the linearization of the system, i.e., by the eigenvalues of the Jacobian matrix $J = D_{\mathbf{u}}\mathbf{f}$. Trajectories originating near the fixed point are repelled along directions corresponding to eigenvectors with positive-real-part eigenvalues; these directions span the **[unstable manifold](@entry_id:265383)**, $W^u$. Trajectories that converge to the fixed point do so along directions corresponding to negative-real-part eigenvalues; these span the **[stable manifold](@entry_id:266484)**, $W^s$.
+
+For a [shooting method](@entry_id:136635) to succeed, the trajectory initiated at the upstream boundary must lie on the [unstable manifold](@entry_id:265383) of the unburned state, $W^u(\mathbf{u}^{-})$, and it must land on the [stable manifold](@entry_id:266484) of the burned state, $W^s(\mathbf{u}^{+})$. A robust [heteroclinic connection](@entry_id:265748) exists if these two manifolds intersect transversally. The number of parameters needed to force this intersection is determined by a dimension-counting argument .
+
+In an $n$-dimensional state space, let $d_u^{-}$ be the dimension of the [unstable manifold](@entry_id:265383) of the upstream state and $d_s^{+}$ be the dimension of the [stable manifold](@entry_id:266484) of the downstream state. The number of conditions to force a trajectory from $W^u(\mathbf{u}^{-})$ to lie within $W^s(\mathbf{u}^{+})$ is $n - d_s^{+}$. The number of available "dials" to turn are the $d_u^{-}$ parameters that specify a starting point on the [unstable manifold](@entry_id:265383) plus any $p$ external parameters (like the flame speed). For a well-posed problem, the number of free parameters must equal the number of constraints, plus one additional degree of freedom for the [translational invariance](@entry_id:195885) of the flame itself (discussed next). This leads to the condition:
+$$
+d_u^{-} + p = (n - d_s^{+}) + 1
+$$
+The minimum number of adjustable parameters $p$ required is therefore:
+$$
+p = n + 1 - (d_u^{-} + d_s^{+})
+$$
+**Example Application :** Consider a hypothetical flame model where the state space has dimension $n=4$. Suppose linearization at the unburned state yields two positive and two negative eigenvalues, so $d_u^{-} = 2$. Suppose linearization at the burned state also yields two positive and two negative eigenvalues, so the dimension of its [stable manifold](@entry_id:266484) is $d_s^{+} = 2$. The number of parameters required to find a connection is $p = 4 + 1 - (2 + 2) = 1$. This confirms the physical intuition that for a freely propagating flame, one parameter—the flame speed $S_L$ (or mass flux $m$)—must be treated as an unknown eigenvalue to close the problem.
+
+#### Translational Invariance and the Phase Condition
+
+The governing ODE system, $\mathbf{u}' = \mathbf{f}(\mathbf{u}; m)$, is **autonomous** because the function $\mathbf{f}$ does not explicitly depend on the spatial coordinate $x$. A direct consequence of this autonomy is **[translational invariance](@entry_id:195885)**: if $\mathbf{u}(x)$ is a solution representing a flame, then the shifted profile $\mathbf{u}(x-x_0)$ for any constant $x_0$ is also a valid solution . This means there is a continuous family of identical, but shifted, solutions.
+
+This invariance poses a critical problem for numerical methods. The system of algebraic equations resulting from the shooting formulation (or any discretization) becomes underdetermined. The Jacobian matrix of the system is singular, with a null space corresponding to an infinitesimal translation of the solution, i.e., the spatial derivative profile $\mathbf{u}'(x)$ . A Newton-based solver will fail because it cannot invert this [singular matrix](@entry_id:148101).
+
+To obtain a unique solution, this ambiguity must be removed by imposing one additional scalar constraint, known as a **phase condition**. This condition effectively "pins" the flame's location in space. A valid phase condition must not be satisfied by an infinitesimally shifted solution. Mathematically, its [directional derivative](@entry_id:143430) along the null mode $\mathbf{u}'(x)$ must be non-zero. Several types of phase conditions can be used :
+- **Pointwise Pinning:** A simple approach is to fix the value of one state variable at a specific location, e.g., $T(x_0) = T_{fix}$. This is effective as long as the derivative of that variable is non-zero at the pinning point ($T'(x_0) \neq 0$). However, it becomes ill-conditioned if the flame profile is flat near $x_0$, as the condition becomes insensitive to small shifts.
+- **Integral Conditions:** A more robust choice is an integral condition. One common form, particularly useful in [continuation methods](@entry_id:635683), is the [orthogonality condition](@entry_id:168905): $\int_0^L (\mathbf{u}(x) - \mathbf{u}_{\text{ref}}(x)) \cdot \mathbf{u}'_{\text{ref}}(x) dx = 0$, where $\mathbf{u}_{\text{ref}}$ is a previously computed reference solution. Its [directional derivative](@entry_id:143430) with respect to a shift is approximately $\int_0^L (\mathbf{u}'(x))^2 dx$, which is strictly positive for any non-trivial flame profile, ensuring the condition robustly breaks the [translational symmetry](@entry_id:171614).
+
+### Advanced Numerical Strategies: Continuation and Robustness
+
+Solving the nonlinear algebraic system $\mathbf{R}(\boldsymbol{\theta}) = \mathbf{0}$ derived from the [shooting method](@entry_id:136635) is challenging due to the extreme sensitivity of chemical reaction rates to temperature (stiffness). A standard Newton's method is only guaranteed to converge if the initial guess is very close to the true solution. Furthermore, scientists are often interested not just in a single flame but in how its properties (like flame speed) change as a physical parameter, such as [equivalence ratio](@entry_id:1124617) or pressure, is varied. This requires more advanced strategies.
+
+#### Globalization of Newton's Method
+
+To expand the [domain of convergence](@entry_id:165028) for finding a single solution, Newton's method must be "globalized". Common strategies include :
+- **Line Search:** The standard Newton update is damped by a factor $\alpha_k \in (0, 1]$, i.e., $\boldsymbol{\theta}_{k+1} = \boldsymbol{\theta}_k - \alpha_k J^{-1}\mathbf{R}(\boldsymbol{\theta}_k)$. The damping factor $\alpha_k$ is chosen to ensure a [sufficient decrease](@entry_id:174293) in a [merit function](@entry_id:173036), typically the norm of the residual, $\|\mathbf{R}\|^2$. This prevents the algorithm from taking overly aggressive steps that lead to divergence.
+- **Trust-Region Methods:** This approach defines a "trust region" around the current iterate within which the linear model of the residual (defined by the Jacobian) is considered reliable. The update step is found by minimizing this model subject to the constraint that the step remains within the trust region. This is particularly effective when the Jacobian is ill-conditioned, as it prevents pathologically large steps.
+
+#### Continuation Methods for Tracing Solution Branches
+
+To study flame behavior across a range of operating conditions, one employs **[continuation methods](@entry_id:635683)** to trace the [solution branch](@entry_id:755045) $( \mathbf{u}(\lambda), m(\lambda) )$ as a function of a physical parameter $\lambda$.
+
+The simplest approach is **[natural parameter](@entry_id:163968) continuation**, where one increments $\lambda$ by a small amount and uses the previous solution as an initial guess for the new one. This method works well for smooth parts of the [solution branch](@entry_id:755045) but inevitably fails at **turning points** (also called folds or [limit points](@entry_id:140908)). These points correspond to critical physical phenomena like [ignition and extinction](@entry_id:1126373), where the [solution branch](@entry_id:755045) turns back on itself. At a turning point, the solution is no longer a single-valued function of $\lambda$, and the system's Jacobian becomes singular, causing the Newton solver to fail  .
+
+To robustly traverse turning points and trace entire solution curves (e.g., the classic "S-shaped" curve of ignition/extinction), **[pseudo-arclength continuation](@entry_id:637668)** is the state-of-the-art method. This technique treats both the solution vector $\boldsymbol{\theta}$ and the physical parameter $\lambda$ as unknowns, parameterizing the entire solution curve by a new parameter, the arc length $s$. The method typically proceeds in a predictor-corrector fashion  :
+
+1.  **Predictor Step:** From a known point on the solution curve, $(\boldsymbol{\theta}_0, \lambda_0)$, a new point is predicted by taking a small step $\Delta s$ along the curve's [tangent vector](@entry_id:264836), $(\dot{\boldsymbol{\theta}}, \dot{\lambda})$. This tangent is found by solving the linearized system $J_{\boldsymbol{\theta}}\mathbf{R} \cdot \dot{\boldsymbol{\theta}} + J_{\lambda}\mathbf{R} \cdot \dot{\lambda} = 0$ coupled with a [normalization condition](@entry_id:156486) like $\|\dot{\boldsymbol{\theta}}\|^2 + \dot{\lambda}^2 = 1$ .
+
+2.  **Corrector Step:** The predicted point lies close to, but not on, the solution curve. A Newton-like corrector step is then used to return to the curve. This involves solving an **augmented system** of equations, which includes the original residual $\mathbf{R}(\boldsymbol{\theta}, \lambda) = \mathbf{0}$ and an additional arc-length constraint that forces the new solution to be a certain distance $\Delta s$ from the previous one. A typical linear constraint is $\dot{\boldsymbol{\theta}}_0^T(\boldsymbol{\theta}-\boldsymbol{\theta}_0) + \dot{\lambda}_0(\lambda-\lambda_0) = \Delta s$.
+
+The key to this method's success is that the Jacobian of the augmented (or "bordered") system is generally non-singular even at a turning point where the original Jacobian was singular. This allows the Newton corrector to converge, enabling the algorithm to smoothly follow the [solution branch](@entry_id:755045) around folds and map out both stable and unstable [steady-state solutions](@entry_id:200351) of the flame equations . By combining the shooting formulation with robust arclength continuation, a comprehensive picture of flame behavior, including [critical phenomena](@entry_id:144727) like flammability limits, can be computationally determined.

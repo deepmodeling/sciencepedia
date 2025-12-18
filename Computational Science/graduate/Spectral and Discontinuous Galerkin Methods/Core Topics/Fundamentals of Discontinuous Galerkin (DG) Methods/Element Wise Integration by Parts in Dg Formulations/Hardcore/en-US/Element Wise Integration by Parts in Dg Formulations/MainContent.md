@@ -1,0 +1,90 @@
+## Introduction
+The Discontinuous Galerkin (DG) method stands as a remarkably powerful and flexible framework for the [numerical approximation](@entry_id:161970) of partial differential equations. Its ability to handle complex geometries, accommodate varying polynomial degrees, and capture sharp solution features like shocks has made it a cornerstone of modern computational science. The source of this versatility lies in a simple but profound departure from traditional finite element techniques: the application of integration by parts not over the global domain, but separately within each element of the computational mesh. This article addresses the fundamental principles and consequences of this element-wise approach, providing a comprehensive guide to the engine that drives all DG formulations.
+
+This article will guide you through the theoretical and practical landscape of element-wise integration by parts. In the first chapter, **Principles and Mechanisms**, we will dissect this core operation, introducing the concepts of broken [function spaces](@entry_id:143478), interior faces, and the numerical fluxes that connect elements. We will see how this mechanism is applied to canonical advection and diffusion problems. Following this, **Applications and Interdisciplinary Connections** will demonstrate the power of this framework to tackle advanced challenges, from high-order and nonlocal equations in mechanics and physics to the construction of [conservative schemes](@entry_id:747715) on curved meshes and the implementation of adaptive refinement. Finally, in **Hands-On Practices**, you will solidify your understanding by working through concrete problems that highlight key concepts such as matrix assembly, the importance of exact quadrature for conservation, and flux handling on [non-conforming meshes](@entry_id:752550).
+
+## Principles and Mechanisms
+
+The Discontinuous Galerkin (DG) methodology is built upon a simple yet powerful extension of a classical analytical tool: integration by parts. Whereas traditional [finite element methods](@entry_id:749389) rely on a single application of [integration by parts](@entry_id:136350) over the entire computational domain, DG methods operate on a partitioned domain, applying the identity separately within each element. This seemingly minor modification has profound consequences, leading to a flexible and robust framework for a wide range of [partial differential equations](@entry_id:143134). This chapter elucidates the principles and mechanisms that arise from this element-wise approach.
+
+### The Foundation: Element-wise Integration and Broken Spaces
+
+The departure point for DG methods is the recognition that requiring global continuity for basis functions can be overly restrictive, especially for problems with discontinuities or sharp gradients, such as those governed by [hyperbolic conservation laws](@entry_id:147752). DG methods relax this requirement by working with functions that are only piecewise smooth—typically polynomials within each element—but are permitted to be discontinuous across element boundaries.
+
+To formalize this, consider a domain $\Omega$ that has been partitioned into a mesh $\mathcal{T}_h$ of non-overlapping elements $K$. The natural [function space](@entry_id:136890) for DG methods is not the standard Sobolev space $H^1(\Omega)$, which enforces continuity in a weak sense, but rather a **broken Sobolev space**. For first-order derivatives, this space is defined as the set of functions that are square-integrable over the global domain, and whose restriction to each element $K$ belongs to the standard Sobolev space $H^1(K)$ . Formally, this is written as:
+$$
+H^1(\mathcal{T}_h) := \left\{ v \in L^2(\Omega) \;\middle|\; v|_K \in H^1(K)\ \text{for all}\ K \in \mathcal{T}_h \right\}
+$$
+Within this space, the [gradient operator](@entry_id:275922) is also "broken" or piecewise, denoted $\nabla_h$, where $(\nabla_h v)|_K := \nabla(v|_K)$ on each element $K$.
+
+With functions defined in this piecewise manner, the divergence theorem and its corollary, Green's identities, cannot be applied to the global domain $\Omega$ directly. Instead, we apply them on each element $K \in \mathcal{T}_h$. For functions $u$ and $v$ with sufficient regularity on an element $K$ (e.g., $u|_K \in H^2(K)$ and $v|_K \in H^1(K)$), Green's first identity holds on $K$:
+$$
+\int_K \nabla u \cdot \nabla v \, dx = - \int_K (\Delta u) v \, dx + \int_{\partial K} (\nabla u \cdot \boldsymbol{n}_K) v \, ds
+$$
+where $\boldsymbol{n}_K$ is the outward-pointing unit normal to the boundary $\partial K$.
+
+The core principle of DG methods is to sum this identity over all elements in the mesh. This yields the fundamental **element-wise integration by parts identity**:
+$$
+\sum_{K \in \mathcal{T}_h} \int_K \nabla u \cdot \nabla v \, dx = - \sum_{K \in \mathcal{T}_h} \int_K (\Delta u) v \, dx + \sum_{K \in \mathcal{T}_h} \int_{\partial K} (\nabla u \cdot \boldsymbol{n}_K) v \, ds
+$$
+This identity is the cornerstone upon which all DG formulations for second-order equations are built. The boundary integrals on $\partial K$ are understood in the sense of duality pairings between appropriate [trace spaces](@entry_id:756085), such as $H^{1/2}(\partial K)$ and $H^{-1/2}(\partial K)$ .
+
+### The Emergence of Interior Faces
+
+A crucial distinction arises when comparing the element-wise identity to the standard global [integration by parts](@entry_id:136350) . If $u$ and $v$ were globally continuous (i.e., in $H^1(\Omega)$), applying Green's identity once would yield a boundary integral only over the exterior boundary of the domain, $\partial\Omega$. In the DG formulation, the term $\sum_{K \in \mathcal{T}_h} \int_{\partial K} \dots$ is a sum over the boundaries of *all* elements. This collection of boundaries, $\bigcup_K \partial K$, is composed of two distinct sets: faces that lie on the global boundary $\partial\Omega$, and faces that are in the interior of the domain, shared between two adjacent elements.
+
+It is the treatment of these **interior faces** that defines the character of DG methods. Consider an interior face $F$ shared by two elements, $K^+$ and $K^-$. In the summation $\sum_K \int_{\partial K}$, the face $F$ is integrated over twice: once as part of $\partial K^+$ and once as part of $\partial K^-$. If the functions $u$ and $v$ and the normal flux $\nabla u \cdot \boldsymbol{n}$ were continuous across the face, their contributions from each side would be equal and opposite (due to the opposing outward normals) and would cancel perfectly. This cancellation is precisely what happens implicitly in a standard continuous Galerkin method.
+
+However, in DG, the functions are discontinuous. Neither the solution trace $v$ nor the flux trace $\nabla u \cdot \boldsymbol{n}$ are single-valued on $F$. Consequently, the contributions from adjacent elements do not cancel. The residual from this incomplete cancellation forms the set of interior face integrals that are central to any DG scheme. These terms serve as the mechanism for communication between elements, enforcing coupling and ensuring [consistency and stability](@entry_id:636744). For first-order problems, such as conservation laws, these face terms are the *only* mechanism connecting elements, as integration by parts only produces boundary terms .
+
+### Mechanics of Face Integrals: Jumps, Averages, and Fluxes
+
+To properly handle the non-cancelling contributions at interior faces, we must establish a clear notational framework. Let $F$ be an interior face between elements $K^+$ and $K^-$. We arbitrarily assign a fixed [unit normal vector](@entry_id:178851) $\boldsymbol{n}$ on $F$. The outward normal for $K^+$ is then $\boldsymbol{n}_{K^+} = \boldsymbol{n}$, and the outward normal for $K^-$ is $\boldsymbol{n}_{K^-} = -\boldsymbol{n}$ (or vice versa) . A scalar function $\phi$ has two distinct trace values on $F$: $\phi^+$ from $K^+$ and $\phi^-$ from $K^-$.
+
+With this convention, we define two fundamental operators:
+- The **average** of $\phi$ on $F$ is $\{\!\{\phi\}\!\} := \frac{1}{2}(\phi^+ + \phi^-)$.
+- The **jump** of $\phi$ across $F$ is $\llbracket \phi \rrbracket := \phi^+ - \phi^-$.
+
+For a vector function $\boldsymbol{q}$, the definitions are analogous: $\{\!\{\boldsymbol{q}\}\!\} := \frac{1}{2}(\boldsymbol{q}^+ + \boldsymbol{q}^-)$ and $\llbracket \boldsymbol{q} \rrbracket := \boldsymbol{q}^+ - \boldsymbol{q}^-$. The jump of the normal component is defined with respect to the fixed normal $\boldsymbol{n}$ as $\llbracket \boldsymbol{q}\cdot\boldsymbol{n} \rrbracket := (\boldsymbol{q}\cdot\boldsymbol{n})^+ - (\boldsymbol{q}\cdot\boldsymbol{n})^- = (\boldsymbol{q}^+ - \boldsymbol{q}^-)\cdot \boldsymbol{n} = \llbracket \boldsymbol{q} \rrbracket \cdot \boldsymbol{n}$ .
+
+Using these operators, the sum of integrals over an interior face can be expressed compactly. For instance, the term $\int_F (\boldsymbol{q}^+ \cdot \boldsymbol{n}_{K^+})v^+ ds + \int_F (\boldsymbol{q}^- \cdot \boldsymbol{n}_{K^-})v^- ds$ becomes $\int_F (\boldsymbol{q}^+ \cdot \boldsymbol{n} v^+ - \boldsymbol{q}^- \cdot \boldsymbol{n} v^-) ds$. This can be rewritten using the identity $a^+b^+ - a^-b^- = \{\!\{a\}\!\} \llbracket b \rrbracket + \llbracket a \rrbracket \{\!\{b\}\!\}$, which decomposes the face integral into terms involving jumps and averages.
+
+The element-wise integration by parts leaves the values of traces on the element boundaries undefined. For example, in the term $\int_{\partial K} (\nabla u \cdot \boldsymbol{n}_K) v \, ds$, the values of $v$ and $\nabla u \cdot \boldsymbol{n}_K$ are ambiguous on an interior face. To create a functional scheme, we must replace these multi-valued traces with a single-valued **[numerical flux](@entry_id:145174)**. The choice of this numerical flux, denoted $\widehat{u}$, $\widehat{\nabla u}$, or $\widehat{f(u)}$, is the central design decision in a DG method. It dictates the scheme's stability, accuracy, and conservation properties. The [numerical flux](@entry_id:145174) must be *consistent*, meaning that if its arguments are equal (i.e., if the solution were continuous), it reduces to the physical flux, e.g., $\widehat{f}(w,w) = f(w)$ .
+
+### Case Study 1: Advection Problems
+
+Let us consider the [linear advection equation](@entry_id:146245) $u_t + a u_x = 0$ with $a>0$. Applying element-wise integration by parts to the spatial term against a [test function](@entry_id:178872) $\phi_j$ gives:
+$$
+\int_K (a \partial_x u) \phi_j \, dx = - \int_K (a u) \partial_x \phi_j \, dx + [a u \phi_j]_{\partial K}
+$$
+The DG semi-discrete form for a solution $u_h = \sum_i c_i(t) \phi_i(x)$ is found by substituting $u_h$ and replacing the boundary trace $u$ with a [numerical flux](@entry_id:145174) $\widehat{u}$:
+$$
+\frac{d}{dt} \int_K u_h \phi_j \, dx = \int_K (a u_h) \partial_x \phi_j \, dx - [a \widehat{u} \phi_j]_{\partial K}
+$$
+A common choice for hyperbolic problems is the **[upwind flux](@entry_id:143931)**, which selects the trace from the "upwind" direction of information flow. For $a>0$, information flows from left to right. At an interface, the [upwind flux](@entry_id:143931) is the value from the left, $\widehat{u} = u^-$.
+
+This process transforms the PDE into a system of ordinary differential equations, $\boldsymbol{M} \frac{d\boldsymbol{c}}{dt} = \boldsymbol{A}\boldsymbol{c}$, where $\boldsymbol{M}$ is the [mass matrix](@entry_id:177093) and $\boldsymbol{A}$ is the stiffness (or advection) matrix. For a single 1D element with basis functions $\phi_i, \phi_j$, these matrices are assembled from the terms in the [weak form](@entry_id:137295). For instance, a concrete calculation on a single element $[0,1]$ with an [upwind flux](@entry_id:143931) shows how the volume integral contributes to the stiffness matrix, while the [numerical flux](@entry_id:145174) at the outflow boundary ($x=1$) provides the boundary contribution .
+
+### Case Study 2: Diffusion Problems and Symmetrization
+
+For second-order elliptic problems like the [diffusion equation](@entry_id:145865) $-\nabla \cdot (\kappa \nabla u) = f$, DG methods provide a rich design space. Applying element-wise IBP yields face terms involving both the solution $u$ and the flux $\kappa \nabla u$. These must be replaced by [numerical fluxes](@entry_id:752791) $\widehat{u}$ and $\widehat{\kappa \nabla u}$.
+
+One of the most well-known and foundational schemes is the **Symmetric Interior Penalty Galerkin (SIPG)** method. Its bilinear form for interior faces is constructed to be symmetric and to enforce stability . For two functions $u$ and $v$, the interior face terms in the SIPG formulation are:
+$$
+-\sum_{F \in \mathcal{F}_i} \int_F \left( \{\!\{\kappa \nabla u \cdot \boldsymbol{n}\}\!\} \llbracket v \rrbracket + \{\!\{\kappa \nabla v \cdot \boldsymbol{n}\}\!\} \llbracket u \rrbracket \right) ds + \sum_{F \in \mathcal{F}_i} \int_F \frac{\eta}{h_F} \llbracket u \rrbracket \llbracket v \rrbracket \, ds
+$$
+The first two terms ensure consistency and symmetry, while the third term is a **penalty term** that penalizes jumps in the solution. The penalty parameter $\eta$ must be chosen sufficiently large to guarantee coercivity (and thus stability) of the bilinear form.
+
+The SIPG method is just one of many possibilities. Other schemes, such as the Bassi-Rebay methods (BR1, BR2) and the Local Discontinuous Galerkin (LDG) method, arise from different choices for the [numerical fluxes](@entry_id:752791) $\widehat{u}$ and the gradient flux $\widehat{\boldsymbol{q}}$ when the problem is written as a [first-order system](@entry_id:274311). For example, LDG uses "alternating" fluxes, where $\widehat{u}$ is taken from one side of the face and $\widehat{\boldsymbol{q}}$ from the other, mimicking characteristics . This illustrates how the single framework of element-wise IBP gives rise to a family of distinct numerical methods through the choice of closure at the interfaces.
+
+### Advanced Principles and Consequences
+
+The element-wise IBP framework enables the analysis of deeper structural properties of DG schemes.
+
+**Adjoint Consistency:** The concept of an [adjoint operator](@entry_id:147736) is crucial in optimization, stability analysis, and [goal-oriented error estimation](@entry_id:163764). The [discrete adjoint](@entry_id:748494) of a DG operator can be derived by taking its bilinear form $B(v,u)$ and applying integration by parts "backwards" to move all derivatives from the test function $v$ onto the [trial function](@entry_id:173682) $u$. This process reveals the form of the adjoint operator, including its own numerical flux, $\widehat{v}$. A scheme is **adjoint consistent** if the primal [numerical flux](@entry_id:145174) and the adjoint numerical flux have the same functional form. For a general family of fluxes parameterized by $\alpha$, such as $\widehat{u} = \alpha u^{-} + (1-\alpha)u^{+}$, it can be shown that [adjoint consistency](@entry_id:746293) is achieved if and only if $\alpha=0.5$, corresponding to the symmetric central flux .
+
+**Nonlinear Stability and Entropy Analysis:** For [nonlinear conservation laws](@entry_id:170694), such as the compressible Navier-Stokes equations, proving stability is paramount. Element-wise IBP is the essential tool for performing entropy analysis. By testing the DG [weak form](@entry_id:137295) with the entropy variables $v = \partial U / \partial u$ (where $U$ is a convex entropy function), and meticulously applying IBP to both inviscid and viscous terms, one can derive a semi-discrete balance law for the total numerical entropy. This balance reveals that the rate of change of entropy is controlled by several terms: physical dissipation in the volume, numerical dissipation from an entropy-stable inviscid flux, and viscous contributions from the interior faces. The viscous face terms include a stabilizing penalty part (proportional to $\tau \llbracket v_h \rrbracket^2$) and a consistency part with an indefinite sign. By using trace inequalities and Young's inequality, one can derive a [sufficient condition](@entry_id:276242) on the [penalty parameter](@entry_id:753318) $\tau$ that guarantees the consistency term is controlled by the volume dissipation, thus ensuring that the total entropy does not increase and the scheme is nonlinearly stable.
+
+**Interaction with Quadrature:** The algebraic identities derived from IBP hold exactly for polynomials. However, in practice, integrals are computed using [numerical quadrature](@entry_id:136578). If the [quadrature rule](@entry_id:175061) is not exact for the integrands that appear (e.g., if $f(u)$ is a nonlinear flux), then the discrete [integration by parts](@entry_id:136350) rule breaks down. A direct consequence of this "under-integration" is the loss of fundamental properties, most notably [local conservation](@entry_id:751393). By choosing a [test function](@entry_id:178872) $\phi(x)=1$, one can define a **conservation defect**, which measures the difference between the numerically computed net flux across an element's boundary and the time rate of change of the element's mean value. This defect is zero with exact integration but can be non-zero when using an inexact [quadrature rule](@entry_id:175061), quantifying the degree to which [local conservation](@entry_id:751393) is violated . This highlights a crucial interplay between the theoretical formulation and practical implementation, and explains the need for over-integration in some contexts, particularly to mitigate aliasing errors in nonlinear problems .
+
+In summary, the principle of element-wise [integration by parts](@entry_id:136350) is the engine of the Discontinuous Galerkin method. It provides the flexibility to handle discontinuous solutions by creating a system of element-local equations coupled only through face terms. The machinery of jumps, averages, and [numerical fluxes](@entry_id:752791) provides the language to describe and design this coupling, leading to a vast and powerful class of high-order [numerical schemes](@entry_id:752822).
