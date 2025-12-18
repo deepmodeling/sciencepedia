@@ -1,0 +1,104 @@
+## Introduction
+Retrieving land surface temperature and emissivity from thermal infrared remote sensing data is a cornerstone of modern Earth observation, providing critical information for disciplines ranging from climatology to geology. However, this task, known as Temperature–Emissivity Separation (TES), is fundamentally challenging. A single radiance measurement recorded by a sensor inherently convolutes the distinct effects of a surface's temperature and its material-dependent emissivity, creating an [ill-posed inverse problem](@entry_id:901223) with no unique mathematical solution. This article provides a comprehensive guide to understanding and navigating this complex topic.
+
+Across the following chapters, we will systematically deconstruct the TES problem. We begin with **Principles and Mechanisms**, where we will delve into the governing radiative transfer physics, expose the mathematical ambiguity at the heart of TES, and explore the diverse algorithmic strategies developed to constrain the problem and find physically meaningful solutions. From there, we will survey the broad utility of these techniques in **Applications and Interdisciplinary Connections**, demonstrating how accurate temperature and emissivity data fuel discoveries in environmental science, planetary exploration, industrial monitoring, and more. Finally, a set of **Hands-On Practices** will offer the opportunity to apply these concepts, providing practical experience with the core challenges and data-driven solutions in Temperature–Emissivity Separation.
+
+## Principles and Mechanisms
+
+The retrieval of surface temperature and emissivity from thermal infrared radiance data is a central task in Earth observation. As outlined in the introduction, this process, known as Temperature–Emissivity Separation (TES), is confronted by fundamental physical and mathematical challenges. This chapter delves into the principles that govern the thermal signal measured by a remote sensor and the primary mechanisms and algorithms developed to deconvolve this signal into its constituent temperature and emissivity components.
+
+### The Governing Radiative Transfer Equation
+
+The foundation of all TES methods is the radiative transfer equation (RTE), which describes the propagation of thermal radiation from the Earth's surface through the atmosphere to a sensor. To understand the origin and structure of this equation, we can construct it from first principles. Consider a passive thermal infrared sensor observing an opaque, plane-parallel surface that is in [local thermodynamic equilibrium](@entry_id:139579) (LTE). The atmosphere is assumed to be non-scattering but absorbing and emitting. The total spectral radiance arriving at the sensor, $L_{\text{sensor}}(\lambda)$, is the sum of two main contributions: radiance originating from the surface that is transmitted through the atmosphere, and radiance emitted by the atmospheric path itself towards the sensor .
+
+The radiance leaving the surface, $L_{\text{surface}}(\lambda)$, consists of two components. First, the surface self-emits thermal radiation. According to the definition of spectral emissivity, $\epsilon(\lambda)$, this component is the product of the emissivity and the Planck function for a blackbody at the surface's [kinetic temperature](@entry_id:751035), $T$. This gives the term $\epsilon(\lambda)B(\lambda,T)$. Second, the surface reflects a portion of the downwelling atmospheric radiance, $L_{\downarrow}(\lambda)$, that is incident upon it. For an opaque surface in LTE, Kirchhoff's law states that its spectral absorptivity equals its spectral emissivity, $\alpha(\lambda) = \epsilon(\lambda)$. Furthermore, for an opaque material, the sum of reflectivity $\rho(\lambda)$ and [absorptivity](@entry_id:144520) is unity, so $\rho(\lambda) = 1 - \alpha(\lambda) = 1 - \epsilon(\lambda)$. The reflected component is therefore $(1-\epsilon(\lambda))L_{\downarrow}(\lambda)$. Combining these, the total radiance leaving the surface is:
+
+$L_{\text{surface}}(\lambda) = \epsilon(\lambda)B(\lambda,T) + (1-\epsilon(\lambda))L_{\downarrow}(\lambda)$
+
+This surface-leaving radiance is then attenuated as it travels through the atmosphere to the sensor. According to the Beer–Lambert law, this attenuation is described by the atmospheric spectral transmittance, $\tau(\lambda)$. Finally, the atmospheric path between the surface and the sensor itself emits radiation, contributing an additive upwelling path radiance term, $L_{\uparrow}(\lambda)$.
+
+Combining these effects, we arrive at the full surface-to-sensor thermal radiative transfer equation :
+
+$L_{\text{sensor}}(\lambda) = \tau(\lambda)\left[\epsilon(\lambda)B(\lambda,T) + (1-\epsilon(\lambda))L_{\downarrow}(\lambda)\right] + L_{\uparrow}(\lambda)$
+
+Here, all terms representing [spectral radiance](@entry_id:149918) ($L_{\text{sensor}}, B, L_{\downarrow}, L_{\uparrow}$) have units of energy per unit time, per unit area, per unit solid angle, per unit wavelength (e.g., $\mathrm{W}\,\mathrm{m}^{-2}\,\mathrm{sr}^{-1}\,\mu\mathrm{m}^{-1}$). The emissivity $\epsilon(\lambda)$ and transmittance $\tau(\lambda)$ are dimensionless quantities.
+
+The application of this equation requires knowledge of the atmospheric parameters: transmittance $\tau(\lambda)$, upwelling radiance $L_{\uparrow}(\lambda)$, and downwelling radiance $L_{\downarrow}(\lambda)$. Estimating these quantities is a critical first step known as **atmospheric correction**. State-of-the-art methods achieve this by driving sophisticated radiative transfer models with atmospheric profile data (temperature and humidity as a function of altitude) obtained from in-situ radiosondes, global reanalysis models, or even [variational assimilation](@entry_id:756436) of the satellite's own multi-channel radiance measurements. These models, using spectroscopic databases like HITRAN, compute the atmospheric terms, which are then used to isolate the surface-leaving radiance signal . For the remainder of this chapter, to focus on the core TES problem, we will often assume that atmospheric correction has been perfectly performed, allowing us to work directly with the surface-leaving radiance.
+
+### The Core Challenge: The Ill-Posed Nature of TES
+
+After perfect atmospheric correction, the problem simplifies to solving the surface-leaving radiance equation for temperature and emissivity. Let us denote the atmospherically corrected radiance measured in a spectral channel $i$ as $r_i$. The equation for each of $N$ spectral channels is:
+
+$r_i = \epsilon_i B(\lambda_i, T)$
+
+Here, $\epsilon_i$ is the emissivity in channel $i$, and $T$ is the single surface temperature. The fundamental challenge of TES is immediately apparent: for $N$ measurements (the radiances $r_i$ in $N$ bands), we have $N+1$ unknowns (the $N$ emissivity values $\epsilon_i$ and the single temperature $T$). The system of equations is **underdetermined**, meaning there is no unique mathematical solution without additional information or assumptions.
+
+This non-uniqueness can be illustrated with a simple counterexample . Consider a single-band sensor observing a surface-leaving radiance $L_{\lambda_0}$. Suppose this radiance is produced by a surface with temperature $T_1 = 300 \, \mathrm{K}$ and emissivity $\epsilon_1 = 0.98$. The measured radiance is proportional to $\epsilon_1 B(\lambda_0, T_1)$. It is straightforward to demonstrate that another, warmer surface could produce the exact same radiance. For instance, if a second surface has a temperature $T_2 = 320 \, \mathrm{K}$, we can find a corresponding emissivity $\epsilon_2$ such that $\epsilon_1 B(\lambda_0, T_1) = \epsilon_2 B(\lambda_0, T_2)$. Solving for $\epsilon_2$ gives:
+
+$\epsilon_2 = \epsilon_1 \frac{B(\lambda_0, T_1)}{B(\lambda_0, T_2)}$
+
+Using the Planck function at $\lambda_0 = 11 \, \mu\mathrm{m}$, the ratio of blackbody radiances is $B(11 \, \mu\mathrm{m}, 300 \, \mathrm{K}) / B(11 \, \mu\mathrm{m}, 320 \, \mathrm{K}) \approx 0.7584$. The required emissivity would be $\epsilon_2 \approx 0.98 \times 0.7584 \approx 0.7432$. This shows that a cooler, more emissive surface ($300 \, \mathrm{K}, 0.98$) is indistinguishable from a warmer, less emissive surface ($320 \, \mathrm{K}, 0.7432$) based on a single radiance measurement. There exists a continuous curve of $(T, \epsilon)$ pairs that could explain any given radiance value.
+
+This ambiguity can be analyzed more formally using the framework of [statistical estimation theory](@entry_id:173693). The **Fisher Information Matrix (FIM)** quantifies the amount of information that a set of measurements provides about a set of unknown parameters. A singular FIM (i.e., with a determinant of zero) indicates that the parameters are not identifiable. Consider the simplified case of a graybody (wavelength-independent emissivity $\epsilon$) observed in the long-wavelength Rayleigh-Jeans limit, where the Planck function is approximated as $B_\lambda(T) \approx 2ck_BT/\lambda^4$. In this regime, the observed radiance is proportional to the product $\epsilon T$. Any change in $T$ can be perfectly compensated by an inverse change in $\epsilon$, leaving the product $\epsilon T$ unchanged. Consequently, the FIM for the parameters $(T, \epsilon)$ becomes singular, and its determinant is zero . This provides a rigorous mathematical proof that, under these conditions, temperature and emissivity are fundamentally inseparable. While the full Planck law is not linear in $T$, this strong ambiguity persists, motivating the need for external constraints.
+
+### The Nature of Surface Emissivity
+
+Before exploring methods to constrain the TES problem, it is essential to clarify what is meant by "emissivity". Emissivity is not a single, static number but a function of wavelength, direction, and even temperature.
+
+The most fundamental quantity is the **directional spectral emissivity**, $\epsilon(\lambda, \theta, \phi)$, defined as the ratio of the [spectral radiance](@entry_id:149918) emitted by a surface in a specific direction $(\theta, \phi)$ to the spectral radiance of a blackbody at the same temperature, $T$ :
+
+$\epsilon(\lambda, \theta, \phi) = \frac{L_\lambda(\theta, \phi)}{B_\lambda(T)}$
+
+Remote sensing instruments, which have a finite field of view, measure this directional quantity. A common simplifying assumption is that surfaces are **Lambertian**, meaning their emissivity is independent of direction, so $\epsilon(\lambda, \theta, \phi) = \epsilon(\lambda)$.
+
+For applications such as surface energy balance modeling, the total energy emitted over all directions is required. This involves the **hemispherical spectral emissivity**, $\epsilon_h(\lambda)$, which is the ratio of the total spectral radiant exitance of the surface to that of a blackbody. It is related to the directional emissivity through a cosine-weighted integral over the hemisphere :
+
+$\epsilon_h(\lambda) = \frac{1}{\pi} \int_{\Omega_h} \epsilon(\lambda, \theta, \phi) \cos\theta \, d\Omega$
+
+For a Lambertian surface, this integral simplifies, and the directional and hemispherical emissivities are equal: $\epsilon_h(\lambda) = \epsilon(\lambda)$.
+
+Finally, **broadband emissivity**, $\bar{\epsilon}$, represents the effective emissivity over a wide spectral range, such as the entire [thermal infrared window](@entry_id:1133005) ($8-14 \, \mu\mathrm{m}$). It is not a simple average of the spectral emissivities. It must be defined as a weighted average, where the Planck function at the surface temperature serves as the weighting function:
+
+$\bar{\epsilon} = \frac{\int_{\lambda_1}^{\lambda_2} \epsilon_h(\lambda) B_\lambda(T) \, d\lambda}{\int_{\lambda_1}^{\lambda_2} B_\lambda(T) \, d\lambda}$
+
+Crucially, this means that broadband emissivity is itself a function of temperature. TES algorithms primarily retrieve directional spectral emissivity, and any conversion to hemispherical or broadband quantities requires additional modeling or assumptions about the surface's angular and spectral properties .
+
+### Strategies for Constraining the TES Problem
+
+The history of TES is the history of devising physically and empirically sound methods to introduce the additional information needed to solve the [underdetermined system](@entry_id:148553). These methods can be broadly categorized by the nature of the constraint they impose.
+
+#### General Regularization Principles
+
+Modern TES algorithms often frame the problem as a mathematical inverse problem, seeking to find the state vector $(T, \boldsymbol{\epsilon})$ that best fits the measured radiances $\boldsymbol{r}$ while also satisfying certain prior constraints. This is achieved by minimizing an objective function that includes both a data-misfit term and a penalty term embodying the [prior information](@entry_id:753750).
+
+A fundamental constraint is the **physical bounds** on emissivity: $0 \le \epsilon_i \le 1$ for all bands $i$. This simple constraint is powerful. Since $r_i = \epsilon_i B(\lambda_i, T)$, the condition $\epsilon_i \le 1$ implies that $r_i \le B(\lambda_i, T)$. As the Planck function $B(\lambda_i, T)$ is a monotonically increasing function of temperature, this inequality can be inverted to establish a lower bound on the true temperature: $T \ge B^{-1}(\lambda_i, r_i)$. To satisfy this for all bands simultaneously, the temperature must be greater than or equal to the maximum of these individual lower bounds: $T \ge \max_i \{B^{-1}(\lambda_i, r_i)\}$. This effectively excludes a range of impossibly low temperatures from the solution space. However, it does not provide an upper bound, and for any temperature above this minimum, a corresponding valid emissivity spectrum can be calculated. Thus, bounds alone do not guarantee a unique solution, but they constrain the family of possible solutions .
+
+To select a single solution from this feasible set, algorithms often employ **smoothness priors**. These are based on the empirical observation that the emissivity spectra of most natural materials (soils, rocks, vegetation) are relatively smooth and do not exhibit high-frequency oscillations. A smoothness prior is implemented as a penalty term in the objective function that penalizes "rough" emissivity spectra, for example, by minimizing the sum of squared second derivatives of the spectrum. This regularization technique does not alter the underlying physics but selects the most physically plausible solution from the infinite family of mathematically valid ones .
+
+#### Methods Using Spectral Constraints
+
+This class of methods exploits known or assumed relationships within the emissivity spectrum itself.
+
+The **Split-Window Technique** is a classic example, designed for sensors with two adjacent channels in the thermal atmospheric window (e.g., around $10.8 \, \mu\mathrm{m}$ and $12.0 \, \mu\mathrm{m}$). If one assumes the surface is a graybody ($\epsilon_1 = \epsilon_2 = \epsilon_0$) and neglects the downwelling atmospheric radiance term, the ratio of the surface-leaving radiances becomes independent of emissivity:
+
+$\frac{r_1}{r_2} = \frac{\epsilon_0 B(\lambda_1, T)}{\epsilon_0 B(\lambda_2, T)} = \frac{B(\lambda_1, T)}{B(\lambda_2, T)}$
+
+Since the ratio of Planck functions depends only on temperature, $T$ can be retrieved from the radiance ratio. However, this simple approach has significant limitations . First, the presence of downwelling radiance reintroduces a dependency on $\epsilon_0$. Second, few natural surfaces are true graybodies. Incorrectly imposing a graybody assumption on a non-graybody surface leads to biases in the retrieved temperature. For example, if a surface has a true emissivity of $0.92$ in a band, but the model assumes $0.98$, the algorithm will be forced to retrieve a lower temperature to match the observed radiance . Finally, because the split-window channels are spectrally close, the radiance ratio is not very sensitive to temperature, making the inversion ill-conditioned and susceptible to noise.
+
+The **NDVI-Based Emissivity Method** is a powerful technique for heterogeneous surfaces like partially vegetated landscapes. It leverages information from the solar reflective portion of the spectrum to constrain the thermal problem. The Normalized Difference Vegetation Index (NDVI), derived from red and near-infrared reflectances, is a strong indicator of vegetation fraction, $f_v$. Assuming a pixel is an isothermal mixture of vegetation and soil, its effective emissivity can be modeled as a linear combination of the component emissivities :
+
+$\epsilon_{\text{mix}}(\lambda) \approx f_v \epsilon_v(\lambda) + (1 - f_v) \epsilon_s(\lambda)$
+
+The vegetation fraction $f_v$ is estimated from the pixel's NDVI value by scaling it between the typical NDVI values for bare soil and full vegetation. By assigning literature values to the vegetation and soil endmember emissivities ($\epsilon_v(\lambda), \epsilon_s(\lambda)$), this method reduces the number of unknowns, allowing for a more robust retrieval of temperature.
+
+A more sophisticated spectral constraint is the **Maximum-Minimum Difference (MMD) Method**, which forms the basis of the operational TES algorithm for the ASTER instrument. This method is founded on a key empirical relationship discovered from laboratory spectra of natural materials. The MMD is defined as the difference between the maximum and minimum emissivity values across a set of thermal bands: $\text{MMD} = \max_i(\epsilon_i) - \min_i(\epsilon_i)$. Analysis of spectral libraries revealed a strong negative correlation between a material's MMD and its minimum emissivity, $\epsilon_{\min}$. Materials with low spectral contrast (low MMD), like water, have high minimum emissivities (close to 1), while materials with high spectral contrast (high MMD), like quartz-rich rocks, have lower minimum emissivities. This empirical relationship, often expressed as an approximate linear function $\epsilon_{\min} \approx \gamma_0 + \gamma_1 \text{MMD}$ (with $\gamma_0 \approx 1$ and $\gamma_1  0$), provides the necessary additional constraint to solve the [underdetermined system](@entry_id:148553) and retrieve both temperature and the absolute emissivity spectrum .
+
+#### Methods Using Multi-Observation Constraints
+
+This category of methods exploits observations of the same location under different conditions, assuming that the surface emissivity is temporally invariant.
+
+The **Multi-temporal Method** uses a time series of images, for instance, a day/night pair. The key insight is that while the surface temperature $T$ changes significantly between acquisitions, the emissivity spectrum $\boldsymbol{\epsilon}$ does not. Consider an initial acquisition with $K$ bands, which gives $K$ equations for $K+1$ unknowns. A second acquisition at a different time adds one new unknown (the new temperature $T^{(2)}$) but provides $K$ new equations. The total system now has $2K$ equations for $K+2$ unknowns. For a system with $K \ge 2$ bands, the number of equations grows faster than the number of unknowns. A necessary condition for [identifiability](@entry_id:194150) is that the number of equations must be at least equal to the number of unknowns: $N \times K \ge N + K$, where $N$ is the number of temporal acquisitions. For a 3-band sensor ($K=3$), this requires $3N \ge 3+N$, or $N \ge 1.5$. Thus, a minimum of $N=2$ acquisitions are needed, meaning only one additional measurement time is required to make the system determined .
+
+In contrast, **multi-angle observations** do not typically provide the same benefit for TES itself. For a Lambertian surface, the surface-leaving radiance is isotropic. Therefore, viewing the same surface from different angles at the same time yields redundant information about the surface properties after atmospheric correction. While multi-angle views are crucial for atmospheric correction and for studying non-Lambertian surfaces, they do not inherently break the temperature-emissivity ambiguity for a Lambertian target in the same way that multi-temporal data does .
+
+In summary, the separation of temperature and emissivity is a classic inverse problem in remote sensing. Its solution is not found in a single "magic bullet" but in the judicious application of additional information. This information may be drawn from physical principles, empirical relationships derived from laboratory data, assumptions about spectral shape, or the use of multi-sensor and multi-temporal datasets. The ongoing development of TES algorithms continues to refine these constraints to provide ever more accurate estimates of these two critical parameters for understanding the Earth's surface processes.
