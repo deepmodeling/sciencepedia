@@ -1,0 +1,90 @@
+## Introduction
+In modern engineering and finance, making optimal decisions is complicated by an uncertain future. From managing power grids with fluctuating renewable energy to hedging financial portfolios against [market volatility](@entry_id:1127633), the ability to reason about and plan for a range of possible outcomes is paramount. Stochastic modeling provides a powerful framework for this challenge, but a critical question remains: how do we translate the vast, often continuous, space of future possibilities into a form that is both computationally manageable and statistically meaningful? This is the core problem addressed by scenario generation and reduction. This article provides a comprehensive guide to these essential techniques.
+
+First, in **Principles and Mechanisms**, we will delve into the theoretical foundations, exploring how we move from abstract probability spaces to concrete scenario sets. We will introduce key concepts like [weak convergence](@entry_id:146650) and the Wasserstein distance to understand what makes a "good" approximation and discuss the core workflow of generating and then reducing scenarios. Following this, **Applications and Interdisciplinary Connections** will ground these methods in the real world, showcasing their critical role in energy systems planning, investment analysis, and [financial risk management](@entry_id:138248). We will also explore how fields like [meteorology](@entry_id:264031) and climate science provide the physical basis for creating realistic scenarios. Finally, the **Hands-On Practices** section offers practical exercises to build tangible skills in generating [time-series data](@entry_id:262935), preserving statistical moments, and performing risk-aware analysis. We begin by examining the fundamental principles that underpin this entire process.
+
+## Principles and Mechanisms
+
+In the modeling of complex systems under uncertainty, such as energy grids, financial markets, or supply chains, decisions must be made in the face of unknown future events. While the "Introduction" chapter established the necessity of [stochastic modeling](@entry_id:261612), this chapter delves into the principles and mechanisms by which we represent and manipulate uncertainty for computational analysis. The core challenge lies in approximating a potentially complex, continuous probability distribution of uncertain factors with a finite, discrete set of representative outcomes, known as **scenarios**. This chapter will elucidate the theoretical foundations of this approximation, the primary methods for generating and reducing scenario sets, and the trade-offs inherent in this process.
+
+### Foundational Concepts: From Probability Spaces to Scenario Sets
+
+At the most fundamental level, uncertainty is described by a **probability space**, denoted by the triplet $(\Omega, \mathcal{F}, \mathbb{P})$. Here, $\Omega$ is the **[sample space](@entry_id:270284)**, the set of all possible outcomes or [elementary events](@entry_id:265317); $\mathcal{F}$ is a **[sigma-algebra](@entry_id:137915)**, a collection of subsets of $\Omega$ (called events) for which we can assign probabilities; and $\mathbb{P}$ is a **probability measure** that assigns a probability to each event in $\mathcal{F}$. A random variable, such as the [net load](@entry_id:1128559) on a power grid, is a function $X: \Omega \to \mathbb{R}^d$ that maps outcomes in the abstract [sample space](@entry_id:270284) to concrete numerical values.
+
+For computational purposes, it is rarely feasible to work with the infinite set $\Omega$ or a [continuous distribution](@entry_id:261698) of $X$. Instead, we construct a finite set of scenarios. This is formally achieved by creating a finite, measurable **partition** of the [sample space](@entry_id:270284), $\{S_i\}_{i=1}^N$, where each $S_i \in \mathcal{F}$, the sets are mutually disjoint ($S_i \cap S_j = \emptyset$ for $i \ne j$), and their union covers the entire [sample space](@entry_id:270284) ($\bigcup_{i=1}^N S_i = \Omega$). Each set $S_i$ represents a class of outcomes that we group together.
+
+From this partition, we derive a scenario set. The probability of the $i$-th scenario is simply the probability of the corresponding set, $p_i = \mathbb{P}(S_i)$. Since the sets form a partition, these probabilities are non-negative and sum to one. For each set $S_i$, we then select a single representative outcome, $\xi_i \in \mathbb{R}^d$. A common and principled choice for this representative is the [conditional expectation](@entry_id:159140) of the random variable given the event $S_i$, i.e., $\xi_i = \mathbb{E}[X \mid S_i]$. This process yields a **scenario set**, a finite collection of pairs $\{(\xi_i, p_i)\}_{i=1}^N$. This set induces a discrete probability measure $\nu_N = \sum_{i=1}^N p_i \delta_{\xi_i}$, where $\delta_{\xi_i}$ is the Dirac measure that places all probability mass at the single point $\xi_i$ . This [discrete measure](@entry_id:184163) $\nu_N$ serves as our tractable approximation to the true, underlying distribution of $X$ .
+
+It is crucial to recognize that the uncertainty we model can be of two distinct types . **Aleatory uncertainty** refers to the inherent, irreducible randomness of a physical process, such as the fluctuation of wind speed at a given moment, even if we knew the exact climatic parameters. In contrast, **epistemic uncertainty** refers to our lack of knowledge about the model itself—uncertainty in its parameters (e.g., the shape and scale of a Weibull distribution for wind) or even its functional form. While scenario generation often focuses on capturing aleatory uncertainty, advanced methods must also account for epistemic uncertainty, for instance by considering a range of plausible model parameters.
+
+### The Goal: Measuring the Fidelity of Approximation
+
+What constitutes a "good" approximation? The answer is formalized by the concept of **[weak convergence](@entry_id:146650)** of probability measures. We say that a sequence of approximating measures $\nu_N$ converges weakly to the target measure $\mu$, denoted $\nu_N \Rightarrow \mu$, if the expectation of any bounded, continuous function converges. Formally, $\nu_N \Rightarrow \mu$ if and only if for every bounded, continuous function $f: \mathbb{R}^d \to \mathbb{R}$:
+$$ \int_{\mathbb{R}^d} f(x) \, d\nu_N(x) \to \int_{\mathbb{R}^d} f(x) \, d\mu(x) \quad \text{as } N \to \infty $$
+For our [discrete measure](@entry_id:184163) $\nu_N$, this means $\sum_{i=1}^N p_i f(\xi_i) \to \mathbb{E}_{\mu}[f(X)]$. This ensures that for a wide class of performance metrics, the value computed from our scenarios approaches the true value. Weak convergence also implies other properties, such as the convergence of probabilities for certain types of sets .
+
+While convergence is the goal, we need a metric to quantify the "distance" between our approximation $\nu$ and the target $\mu$ for a finite number of scenarios. A particularly powerful metric in this context is the **Wasserstein distance**. For $p \ge 1$, the Wasserstein-$p$ distance, $W_p(\mu, \nu)$, is defined through the lens of [optimal transport](@entry_id:196008) theory:
+$$ W_{p}(\mu,\nu)=\left(\inf_{\gamma\in\Pi(\mu,\nu)} \int_{\mathbb{R}^{d}\times\mathbb{R}^{d}} \|x-y\|^{p} \, \mathrm{d}\gamma(x,y)\right)^{1/p} $$
+where $\Pi(\mu, \nu)$ is the set of all [joint probability](@entry_id:266356) distributions (couplings) on $\mathbb{R}^d \times \mathbb{R}^d$ with marginals $\mu$ and $\nu$. Intuitively, it represents the minimum "cost" to transport the probability mass of $\mu$ to match the distribution of $\nu$, where the cost of moving a unit of mass from $x$ to $y$ is $\|x-y\|^p$.
+
+The relevance of the Wasserstein distance is made clear by the **Kantorovich-Rubinstein [duality theorem](@entry_id:137804)** for $p=1$ . This theorem states that $W_1(\mu, \nu)$ is equal to the maximum difference in expected values over all 1-Lipschitz functions. An $L$-Lipschitz function is one whose rate of change is bounded by $L$. Many cost functions and performance metrics in energy systems, such as the cost of deviating from a schedule, are Lipschitz continuous. The duality provides a direct, quantitative bound on the [approximation error](@entry_id:138265) for the expectation of any such function:
+$$ \left| \mathbb{E}_{\mu}[f(X)] - \mathbb{E}_{\nu}[f(X)] \right| \le L \cdot W_1(\mu, \nu) $$
+This result provides a principled justification for using the Wasserstein distance as a criterion: by minimizing the distance between our scenario-based measure and the true distribution, we explicitly control the error in the calculated expected costs of our system.
+
+### The Core Workflow: A Trade-off Between Fidelity and Tractability
+
+The entire process of scenario modeling is governed by a fundamental trade-off between approximation fidelity and [computational tractability](@entry_id:1122814). In methods like **Sample Average Approximation (SAA)**, the true expectation in a [stochastic optimization](@entry_id:178938) problem is replaced by an average over $N$ scenarios. The resulting [deterministic equivalent](@entry_id:636694) model includes decision variables and constraints for each scenario. Consequently, the size and complexity of the optimization problem grow, often linearly, with the number of scenarios $N$. A large $N$ is desirable for a high-fidelity statistical approximation, but it can render the model computationally intractable .
+
+The quality of the statistical approximation, measured by a metric $d(\hat{\mu}_N, \mu)$, generally improves as $N$ increases, but often with diminishing returns. For i.i.d. sampling, the expected error typically decreases sublinearly, for instance at a rate of $\mathcal{O}(N^{-1/d})$ for the Wasserstein distance in dimension $d$. This "curse of dimensionality" means that achieving a small error in high-dimensional problems requires an astronomically large number of scenarios.
+
+This conflict motivates a two-step workflow :
+1.  **Scenario Generation**: First, a very large number of scenarios ($N$) is generated to create an [empirical measure](@entry_id:181007) $\hat{\mathbb{P}}_N$ that is a high-fidelity approximation of the true distribution $\mathbb{P}$. The goal here is to make the [approximation error](@entry_id:138265) $d(\mathbb{P}, \hat{\mathbb{P}}_N)$ small.
+2.  **Scenario Reduction**: Second, this large set is compressed into a much smaller set of $M$ scenarios, yielding a reduced measure $\hat{\mathbb{P}}_M$. This step makes the resulting optimization model tractable. The goal is to perform this compression while minimizing the newly introduced error, $d(\hat{\mathbb{P}}_N, \hat{\mathbb{P}}_M)$.
+
+The total error of the final model is bounded by the sum of the errors from these two steps, thanks to the [triangle inequality](@entry_id:143750) property of any distance metric: $d(\mathbb{P}, \hat{\mathbb{P}}_M) \leq d(\mathbb{P}, \hat{\mathbb{P}}_N) + d(\hat{\mathbb{P}}_N, \hat{\mathbb{P}}_M)$.
+
+### Mechanisms of Scenario Generation
+
+Scenario generation is the art and science of constructing the initial, high-fidelity scenario set.
+
+#### Monte Carlo Sampling
+The most straightforward method is **Monte Carlo sampling**, where one draws $N$ [independent and identically distributed](@entry_id:169067) (i.i.d.) samples from the [target distribution](@entry_id:634522) $\mu$. The theoretical justification for this method is the **Strong Law of Large Numbers (SLLN)**, which guarantees that for any function $f$ with a finite expectation, the sample average $\frac{1}{N}\sum_{i=1}^N f(X_i)$ converges [almost surely](@entry_id:262518) to the true expectation $\mathbb{E}_\mu[f(X)]$ as $N \to \infty$ .
+
+#### Modeling Dependencies with Copulas
+In many real-world systems, multiple uncertain factors are correlated. For instance, wind generation, solar generation, and electricity demand are not independent. To generate realistic multivariate scenarios, we must capture this dependence structure. **Sklar's Theorem** provides the essential tool for this task, stating that any multivariate [joint distribution](@entry_id:204390) can be decomposed into its marginal distributions and a **[copula](@entry_id:269548)**, which describes the dependence structure between the variables.
+
+This allows for a flexible modeling approach: one can model the [marginal distribution](@entry_id:264862) of each variable separately (e.g., using a Beta distribution for wind capacity factor and a Normal distribution for demand) and then join them using a chosen [copula](@entry_id:269548) function. For example, to generate scenarios that match an observed [rank correlation](@entry_id:175511) (e.g., Kendall's tau), one could use a Gaussian [copula](@entry_id:269548). The procedure involves :
+1.  Choosing a copula family (e.g., Gaussian).
+2.  Calibrating the [copula](@entry_id:269548) parameters (e.g., the [correlation matrix](@entry_id:262631) $R$) to match the desired dependence structure. For a Gaussian copula and a target Kendall's tau, $\tau_{ij}$, the correlation parameter $R_{ij}$ is found by solving $\tau_{ij} = \frac{2}{\pi}\arcsin(R_{ij})$.
+3.  Sampling from the underlying multivariate distribution of the copula (e.g., sample $Z \sim \mathcal{N}(0, R)$).
+4.  Transforming these samples into uniformly distributed samples in $[0,1]^d$. For a Gaussian copula, this is done by applying the standard normal CDF, $U_i = \Phi(Z_i)$.
+5.  Applying the inverse CDF ([quantile function](@entry_id:271351)) of the desired marginal distributions to these uniform samples, e.g., $W = F_W^{-1}(U_W)$, $S = F_S^{-1}(U_S)$, etc.
+
+The resulting multivariate scenarios will have exactly the specified marginal distributions and the dependence structure encoded by the [copula](@entry_id:269548).
+
+#### Modeling Epistemic Uncertainty
+When epistemic uncertainty is significant, generation methods must be adapted. In a Bayesian framework, one can generate scenarios from the **[posterior predictive distribution](@entry_id:167931)**, which naturally integrates over the uncertainty in model parameters, often producing distributions with heavier tails that better reflect total uncertainty. In a robust optimization framework, one might generate scenarios from the "worst-case" distribution within a defined **ambiguity set** (e.g., a Wasserstein ball around an [empirical distribution](@entry_id:267085)), leading to more conservative and robust system designs .
+
+### Mechanisms of Scenario Reduction
+
+Once a large set of $N$ scenarios is generated, [scenario reduction](@entry_id:1131296) techniques are employed to create a smaller, computationally tractable set of $K$ scenarios.
+
+#### Backward Reduction
+This class of methods selects a subset of $K$ scenarios from the original set of $N$ and discards the rest. The key step is to reallocate the probability mass of the discarded scenarios onto the retained ones. The problem is generally formulated as an optimization problem: choose the subset $S$ of $K$ scenarios to keep, and the reallocation scheme, to minimize the distance (e.g., Wasserstein distance) between the reduced measure and the original large-sample measure . The general formulation involves finding a set $S$ and a reallocation matrix $A$ to solve:
+$$ \min_{S, A} D\left(\sum_{i \in S} \tilde{p}_i \delta_{\xi_i}, \sum_{j=1}^N p_j \delta_{\xi_j}\right) $$
+where $\tilde{p}_i = \sum_{j=1}^N p_j a_{ji}$ represents the new probability of retained scenario $i$, and $a_{ji}$ is the fraction of probability from original scenario $j$ reallocated to $i$.
+
+#### Clustering-Based Reduction
+An alternative approach is to group similar scenarios into clusters and then represent each cluster with a single new representative scenario. A prominent method is **probability-weighted [k-means clustering](@entry_id:266891)** . Given a partition of the original $N$ scenarios into $K$ clusters $\{C_k\}_{k=1}^K$, the representative scenario for each cluster is defined by:
+-   **Centroid ($c_k$)**: The new scenario location is the probability-weighted average of the locations of all scenarios within the cluster: $c_k = \frac{\sum_{i \in C_k} p_i \xi_i}{\sum_{i \in C_k} p_i}$.
+-   **Weight ($w_k$)**: The new scenario probability is the sum of the probabilities of all scenarios within the cluster: $w_k = \sum_{i \in C_k} p_i$.
+
+This procedure is intuitive and computationally efficient. A notable property of this method is that it **exactly preserves the first moment** (the mean) of the original distribution. That is, $\sum_{k=1}^K w_k c_k = \sum_{i=1}^N p_i \xi_i$. However, it does not generally preserve higher-order moments like variance.
+
+### Application Context: Non-Anticipativity in Multi-Stage Models
+
+The scenarios generated and reduced are ultimately used to make decisions. In **multi-stage stochastic programs**, decisions are made sequentially over time as uncertainty unfolds. This temporal structure is often represented by a **scenario tree**. A critical principle in this context is **non-anticipativity** . It dictates that a decision made at stage $t$ can only depend on information that has been revealed up to stage $t$; it cannot anticipate the future.
+
+In a scenario tree, scenarios that follow the same path up to a node at stage $t$ are indistinguishable at that point in time. The non-anticipativity principle is enforced by constraints requiring that the decision variables at stage $t$ be identical for all scenarios sharing the same node at that stage. For a given node $n$ at stage $t$, and for all scenarios $\omega, \omega'$ that pass through this node, the constraints take the form:
+$$ x_t(\omega) - x_t(\omega') = 0 $$
+These constraints couple the decisions across different scenarios, ensuring the logical flow of information and producing a single, implementable decision policy that is robust to the range of possibilities represented by the scenario tree.

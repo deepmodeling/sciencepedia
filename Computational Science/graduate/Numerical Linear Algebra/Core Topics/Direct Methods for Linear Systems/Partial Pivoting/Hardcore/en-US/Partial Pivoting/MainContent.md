@@ -1,0 +1,34 @@
+## Introduction
+Gaussian elimination is a cornerstone algorithm for [solving systems of linear equations](@entry_id:136676), but its direct application is fraught with peril. The procedure can fail catastrophically if it encounters a zero pivot, or it can produce wildly inaccurate results if a pivot is merely small in magnitude, leading to an explosion of roundoff errors. The standard and most effective remedy for this [numerical instability](@entry_id:137058) is **partial pivoting**, a strategy that intelligently reorders the equations during elimination. This article demystifies partial pivoting, addressing the crucial gap between the theoretical need for stability and the practical implementation of a robust solver.
+
+The following chapters will guide you from core principles to advanced applications. First, in **Principles and Mechanisms**, we will dissect the mechanics of partial pivoting, formalize it as the elegant $PA=LU$ factorization, and analyze its role in guaranteeing [backward stability](@entry_id:140758) by controlling the pivot growth factor. Next, in **Applications and Interdisciplinary Connections**, we will explore the profound impact of pivoting beyond the basic algorithm, examining the performance bottlenecks it creates in high-performance computing and its complex, often conflicting, relationship with [structured matrices](@entry_id:635736) in fields like optimization and data science. Finally, the **Hands-On Practices** section provides an opportunity to solidify these concepts by applying them to concrete numerical examples.
+
+## Principles and Mechanisms
+
+The process of Gaussian elimination for solving a linear system $Ax=b$ or computing a [matrix factorization](@entry_id:139760) relies on a sequence of transformations that introduce zeros below the main diagonal, systematically converting the matrix $A$ into an upper triangular form $U$. The stability and, in some cases, the very feasibility of this procedure hinge on the choice of **pivots**—the elements used to effect each stage of elimination. This chapter delves into the principles and mechanisms of **partial pivoting**, the most widely adopted strategy for guiding this choice in dense linear algebra. We will explore its definition, its algebraic interpretation as a [matrix factorization](@entry_id:139760), its role in ensuring numerical stability, its computational cost, and its relationship to other [pivoting strategies](@entry_id:151584).
+
+### The Mechanics of Pivoting Strategies
+
+At step $k$ of Gaussian elimination (for $k=1, \dots, n-1$), the algorithm focuses on the so-called **active submatrix**, which consists of rows and columns indexed from $k$ to $n$. The standard elimination procedure uses the diagonal entry $a_{kk}$ of this submatrix as the pivot to eliminate all entries below it in column $k$. However, if this pivot is zero, the algorithm fails. If it is merely very small in magnitude compared to other entries, the multipliers $l_{ik} = a_{ik}/a_{kk}$ can become excessively large, leading to catastrophic growth in the magnitude of the matrix elements and a severe loss of [numerical precision](@entry_id:173145) .
+
+Pivoting strategies are designed to circumvent these issues by reordering the equations (rows) or variables (columns) to bring a more suitable element into the [pivot position](@entry_id:156455) $(k,k)$. The choice of strategy is defined by the set of candidate entries it considers—its **decision set**—and the permutation operations it performs.
+
+The most fundamental strategies are:
+
+*   **No Pivoting**: In this trivial strategy, the pivot is always taken to be the element at the top-left of the active submatrix, i.e., the element at position $(k,k)$. The decision set at step $k$ contains only a single candidate position, $\{(k,k)\}$, and no [permutations](@entry_id:147130) are performed. This approach is only viable for specific classes of matrices where zero or small pivots are known not to occur, such as [symmetric positive definite](@entry_id:139466) or strictly diagonally dominant matrices .
+
+*   **Partial Pivoting**: This strategy represents a robust and efficient compromise. At step $k$, partial pivoting searches for the entry of largest magnitude within the current column of the active submatrix. That is, it identifies a row index $p \in \{k, k+1, \dots, n\}$ such that $|a_{pk}|$ is maximal. The decision set is thus the set of positions $\{(i,k) : i \in \{k, \dots, n\}\}$. Once the index $p$ is found, row $p$ is interchanged with row $k$. This operation, a row permutation, brings the largest-magnitude entry into the [pivot position](@entry_id:156455) $(k,k)$ before the elimination step proceeds. No column [permutations](@entry_id:147130) are performed .
+
+*   **Complete (or Full) Pivoting**: This is the most exhaustive strategy. At step $k$, it searches the entire active submatrix for the entry with the largest magnitude. Its decision set is $\{(i,j) : i, j \in \{k, \dots, n\}\}$. If the [maximal element](@entry_id:274677) is found at position $(p,q)$, the algorithm performs both a row swap (interchanging rows $k$ and $p$) and a column swap (interchanging columns $k$ and $q$) to move this element to the $(k,k)$ position. While theoretically the most stable, its high computational cost makes it rare in practice .
+
+Throughout this text, we will focus primarily on partial pivoting, which is the standard in most high-quality linear algebra software.
+
+### The Algebraic View: The $PA=LU$ Factorization
+
+The sequence of operations in Gaussian Elimination with Partial Pivoting (GEPP) can be elegantly expressed in the language of matrix factorizations. Each step of the algorithm corresponds to a matrix multiplication.
+
+At step $k$, the row interchange that brings the chosen pivot to the $(k,k)$ position is equivalent to left-multiplying the current matrix by a **[permutation matrix](@entry_id:136841)** $P_k$. Following the permutation, the elimination of the subdiagonal entries in column $k$ is achieved by subtracting multiples of the new pivot row from the rows below it. This set of [elementary row operations](@entry_id:155518) can be represented as left-multiplication by a unit lower triangular **elimination matrix** $M_k$.
+
+The matrix at the beginning of step $k+1$, denoted $A^{(k+1)}$, is thus related to the matrix from the previous step, $A^{(k)}$, by the transformation $A^{(k+1)} = M_k P_k A^{(k)}$. After $n-1$ steps, we arrive at an [upper triangular matrix](@entry_id:173038) $U$, given by:
+$$U = M_{n-1} P_{n-1} M_{n-2} P_{n-2} \cdots M_1 P_1 A$$
+This form, while correct, is not the standard $LU$ factorization because the permutation matrices $P_k$ are interspersed with the elimination matrices $M_k$. A more useful form can be obtained by commuting the permutation matrices to the left.

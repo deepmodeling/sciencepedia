@@ -1,0 +1,25 @@
+{
+    "hands_on_practices": [
+        {
+            "introduction": "特征值是理解线性变换的关键，但我们不一定总能直接计算它们。这个练习将展示如何仅通过矩阵的两个基本属性——迹 $ \\text{tr}(A) $ 和行列式 $ \\det(A) $ ——来确定其特征值。这不仅是一个巧妙的计算技巧，更揭示了特征值与矩阵整体性质之间深刻的内在联系。",
+            "id": "1360140",
+            "problem": "由状态空间方程 $\\mathbf{x}_{k+1} = A\\mathbf{x}_k$ 描述的离散时间动力系统的稳定性，由 $2 \\times 2$ 变换矩阵 $A$ 的特征值决定。在一个模拟两个耦合电子振荡器相互作用的特定系统中，状态向量 $\\mathbf{x}_k \\in \\mathbb{R}^2$ 表示在时间步长 $k$ 时振荡器的振幅。\n\n通过对系统整体行为的外部测量，确定了矩阵 $A$ 的两个关键属性，而无需知道其具体元素。矩阵的迹，与系统中的整体阻尼或放大有关，被确定为 $\\text{tr}(A) = 4$。矩阵的行列式，与相空间体积的变化有关，被确定为 $\\det(A) = -5$。\n\n确定矩阵 $A$ 的两个特征值。请将您的答案表示为一对按升序排列的数字。",
+            "solution": "对于一个特征值为 $\\lambda_{1}$ 和 $\\lambda_{2}$ 的实 $2 \\times 2$ 矩阵 $A$，其特征多项式由下式给出\n$$\np(\\lambda) = \\lambda^{2} - (\\text{tr}(A))\\lambda + \\det(A).\n$$\n给定 $\\text{tr}(A) = 4$ 和 $\\det(A) = -5$，特征多项式变为\n$$\n\\lambda^{2} - 4\\lambda - 5 = 0.\n$$\n这个二次方程可以因式分解为\n$$\n(\\lambda - 5)(\\lambda + 1) = 0,\n$$\n所以特征值为\n$$\n\\lambda_{1} = -1,\\quad \\lambda_{2} = 5.\n$$\n将它们按升序排列，得到数对 $-1$ 和 $5$。",
+            "answer": "$$\\boxed{\\begin{pmatrix}-1  5\\end{pmatrix}}$$"
+        },
+        {
+            "introduction": "掌握了特征值的基本属性后，下一步是学习完整的对角化过程。对角化 ($A=PDP^{-1}$) 是线性代数中的核心操作，它能将复杂的矩阵变换简化为简单的对角形式。这个练习将引导你完成从计算特征值和特征向量到构建对角化所需矩阵 $P$ 和 $D$ 的全过程，这是应用特征值解决问题的基础。",
+            "id": "2168155",
+            "problem": "考虑 $2 \\times 2$ 矩阵 $A = \\begin{pmatrix} 15  -8 \\\\ 24  -13 \\end{pmatrix}$。该矩阵可以通过变换 $A = PDP^{-1}$ 进行对角化，其中 $D$ 是一个对角矩阵，$P$ 是一个可逆矩阵。通过施加以下约束，该分解是唯一的：\n1. $D$ 的对角元素按降序排列，即 $D_{11} > D_{22}$。\n2. $P$ 的列是与 $D$ 中特征值相对应的特征向量。每个特征向量表示为一个列向量，其分量为整数，最大公约数为1，且其和为正。\n\n计算逆矩阵 $P^{-1}$ 的非对角元素之和。",
+            "solution": "要对角化 $A=\\begin{pmatrix}15  -8 \\\\ 24  -13\\end{pmatrix}$，首先从特征多项式中求出特征值：\n$$\n\\det(A-\\lambda I)=\\det\\begin{pmatrix}15-\\lambda  -8 \\\\ 24  -13-\\lambda\\end{pmatrix}=(15-\\lambda)(-13-\\lambda)-(-8)(24).\n$$\n计算：\n$$\n(15-\\lambda)(-13-\\lambda)=\\lambda^{2}-2\\lambda-195,\\quad (-8)(24)=-192,\n$$\n所以\n$$\n\\det(A-\\lambda I)=\\lambda^{2}-2\\lambda-195+192=\\lambda^{2}-2\\lambda-3=(\\lambda-3)(\\lambda+1).\n$$\n因此特征值为 $\\lambda_{1}=3$ 和 $\\lambda_{2}=-1$，根据 $D_{11}>D_{22}$，我们设 $D=\\begin{pmatrix}3  0 \\\\ 0  -1\\end{pmatrix}$。\n\n求解 $(A-3I)v=0$ 以求得 $\\lambda=3$ 对应的特征向量：\n$$\nA-3I=\\begin{pmatrix}12  -8 \\\\ 24  -16\\end{pmatrix},\\quad 12x-8y=0\\;\\Rightarrow\\;3x-2y=0\\;\\Rightarrow\\;y=\\frac{3}{2}x.\n$$\n选择分量为整数、最大公约数为1且和为正的向量，得到 $v_{1}=\\begin{pmatrix}2 \\\\ 3\\end{pmatrix}$。\n\n求解 $(A+I)v=0$ 以求得 $\\lambda=-1$ 对应的特征向量：\n$$\nA+I=\\begin{pmatrix}16  -8 \\\\ 24  -12\\end{pmatrix},\\quad 16x-8y=0\\;\\Rightarrow\\;2x-y=0\\;\\Rightarrow\\;y=2x.\n$$\n选择分量为整数、最大公约数为1且和为正的向量，得到 $v_{2}=\\begin{pmatrix}1 \\\\ 2\\end{pmatrix}$。\n\n因此\n$$\nP=\\begin{pmatrix}2  1 \\\\ 3  2\\end{pmatrix},\\quad D=\\begin{pmatrix}3  0 \\\\ 0  -1\\end{pmatrix}.\n$$\n使用 $2\\times 2$ 逆矩阵公式计算 $P^{-1}$。当 $a=2$, $b=1$, $c=3$, $d=2$ 时，我们有 $\\det P=ad-bc=4-3=1$，所以\n$$\nP^{-1}=\\begin{pmatrix}2  -1 \\\\ -3  2\\end{pmatrix}.\n$$\n$P^{-1}$ 的非对角元素是 $-1$ 和 $-3$，它们的和是 $-4$。",
+            "answer": "$$\\boxed{-4}$$"
+        },
+        {
+            "introduction": "对角化是一个强大的工具，但并非所有矩阵都能被对角化。这个练习通过分析一个典型的剪切矩阵，探讨了矩阵可对角化的关键条件。通过计算并比较其特征值的代数重数和几何重数，你将从根本上理解为何某些线性变换无法被简化为纯粹的对角形式，从而对特征向量空间的结构有更深入的认识。",
+            "id": "2168126",
+            "problem": "在离散时间动力系统的分析中，根据线性递推关系 $\\vec{x}_{k+1} = A \\vec{x}_k$ 演化的状态向量 $\\vec{x}_k$ 的长期行为，关键地取决于矩阵 $A$ 的特征值和特征向量。\n\n考虑一个二维系统，其状态向量 $\\vec{v} = \\begin{pmatrix} u \\\\ w \\end{pmatrix}$ 在每个时间步被一个矩阵 $A$ 变换。该变换是一个水平剪切，由以下方程定义：\n$$u' = u + \\gamma w$$\n$$w' = w$$\n其中 $\\gamma$ 是一个代表剪切因子的非零实常数。\n\n对于剪切因子为 $\\gamma = -4$ 的特定情况，确定对应的变换矩阵 $A$ 的单一特征值的代数重数和几何重数。根据这些重数，判断矩阵 $A$ 是否可对角化。选择正确陈述这些性质的选项。\n\nA. 代数重数为1，几何重数为1。矩阵是可对角化的。\n\nB. 代数重数为2，几何重数为2。矩阵是可对角化的。\n\nC. 代数重数为2，几何重数为1。矩阵是可对角化的。\n\nD. 代数重数为2，几何重数为1。矩阵是不可对角化的。\n\nE. 代数重数为1，几何重数为2。矩阵是不可对角化的。",
+            "solution": "给定的对 $\\vec{v} = \\begin{pmatrix} u \\\\ w \\end{pmatrix}$ 的剪切变换是 $u' = u + \\gamma w$， $w' = w$，这对应于矩阵\n$$\nA = \\begin{pmatrix} 1  \\gamma \\\\ 0  1 \\end{pmatrix}.\n$$\n对于 $\\gamma = -4$，我们有\n$$\nA = \\begin{pmatrix} 1  -4 \\\\ 0  1 \\end{pmatrix}.\n$$\n\n为了找到特征值，计算特征多项式：\n$$\n\\chi_{A}(\\lambda) = \\det(A - \\lambda I) = \\det\\begin{pmatrix} 1 - \\lambda  -4 \\\\ 0  1 - \\lambda \\end{pmatrix} = (1 - \\lambda)^{2}.\n$$\n因此，单一特征值为 $\\lambda = 1$，其代数重数为 $2$。\n\n为了找到几何重数，求解 $(A - I)\\vec{x} = \\vec{0}$：\n$$\nA - I = \\begin{pmatrix} 0  -4 \\\\ 0  0 \\end{pmatrix}, \\quad \\begin{pmatrix} 0  -4 \\\\ 0  0 \\end{pmatrix}\\begin{pmatrix} x_{1} \\\\ x_{2} \\end{pmatrix} = \\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix}.\n$$\n这得到单一约束 $-4 x_{2} = 0$，所以 $x_{2} = 0$，而 $x_{1}$ 是自由的。因此，特征空间是\n$$\n\\left\\{ \\begin{pmatrix} x_{1} \\\\ 0 \\end{pmatrix} : x_{1} \\in \\mathbb{R} \\right\\} = \\operatorname{span}\\left\\{ \\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix} \\right\\},\n$$\n其维数为 $1$。因此，$\\lambda = 1$ 的几何重数为 $1$。\n\n一个矩阵是可对角化的，当且仅当其几何重数之和等于空间的维数。在这里，唯一的特征值在二维空间中的几何重数为 $1$，所以 $A$ 是不可对角化的。\n\n因此，正确的选项是代数重数为 $2$，几何重数为 $1$，且矩阵不可对角化。",
+            "answer": "$$\\boxed{D}$$"
+        }
+    ]
+}

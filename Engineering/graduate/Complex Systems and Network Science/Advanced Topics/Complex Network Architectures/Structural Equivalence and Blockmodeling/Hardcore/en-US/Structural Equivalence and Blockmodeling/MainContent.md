@@ -1,0 +1,104 @@
+## Introduction
+In the study of complex systems, understanding a network's structure is paramount to deciphering its function. While metrics like centrality quantify a node's importance, they often fail to capture the more nuanced concept of a node's *role*—its specific pattern of relationships within the broader network topology. This limitation creates a knowledge gap, necessitating a framework that can move from individual attributes to a systemic understanding of how nodes group into functional positions. Structural equivalence and [blockmodeling](@entry_id:1121716) provide this framework, offering a powerful set of theories and methods to simplify complex networks into interpretable maps of roles and their interconnections.
+
+This article provides a comprehensive exploration of this essential topic, designed for a graduate-level audience. Across three chapters, you will build a robust understanding of both the theory and practice of [blockmodeling](@entry_id:1121716).
+- The first chapter, **Principles and Mechanisms**, establishes the theoretical groundwork. It delves into the hierarchy of nodal equivalence concepts—from strict structural equivalence to the more flexible [regular equivalence](@entry_id:1130807)—and introduces the mathematical and statistical mechanisms for partitioning networks, including the influential Stochastic Block Model (SBM) and its variants.
+- The second chapter, **Applications and Interdisciplinary Connections**, showcases the framework's power in action. It demonstrates how [blockmodeling](@entry_id:1121716) is used to identify functional roles in fields like [systems biology](@entry_id:148549) and social science, and explores its extensions for analyzing complex data structures such as bipartite, multilayer, and dynamic [temporal networks](@entry_id:269883).
+- Finally, the **Hands-On Practices** chapter provides a series of problems designed to translate theory into practice, reinforcing your understanding of how to define equivalence, create [blockmodel](@entry_id:1121715) images, and computationally discover network partitions.
+
+## Principles and Mechanisms
+
+The analysis of network structure often begins with the fundamental question of identifying nodes that occupy similar positions or fulfill equivalent roles. While concepts like centrality provide a scalar measure of a node's importance, they do not fully capture the nuanced relational patterns that define a node's function within the broader [network topology](@entry_id:141407). The theory of structural equivalence and the methodology of [blockmodeling](@entry_id:1121716) provide a powerful framework for moving beyond individual node properties to a systemic understanding of network roles and large-scale organization. This chapter delineates the core principles of nodal equivalence and the primary mechanisms through which networks are partitioned into structurally consistent blocks.
+
+### Foundations of Nodal Equivalence
+
+The most intuitive and stringent definition of equivalence is that two nodes are identical if they share the exact same relational pattern with all other nodes in the network. This concept is formalized as **structural equivalence**.
+
+Let a network be represented by an [adjacency matrix](@entry_id:151010) $A$, where $A_{ij}$ denotes the tie from node $i$ to node $j$. For an unweighted, undirected graph, two nodes $i$ and $j$ are structurally equivalent if and only if their corresponding rows (and columns, due to symmetry) in the [adjacency matrix](@entry_id:151010) are identical, excluding the diagonal elements $A_{ii}$ and $A_{jj}$. This means that for every other node $k \neq i,j$, node $i$ is connected to $k$ if and only if node $j$ is connected to $k$. They share the exact same neighborhood.
+
+For a [directed graph](@entry_id:265535), the condition is more comprehensive: nodes $i$ and $j$ are structurally equivalent if they have identical outgoing and incoming ties to all other nodes. Formally, for all nodes $k \in V$, it must hold that $A_{ik} = A_{jk}$ (identical out-ties) and $A_{ki} = A_{kj}$ (identical in-ties). In essence, the network environment looks precisely the same from the perspective of either node.
+
+In empirical networks, perfect structural equivalence is rare. Consequently, it becomes necessary to measure the degree of similarity or dissimilarity between the relational profiles of nodes. To do this, we can represent the connectivity pattern of each node as a vector and then apply standard metrics. For a directed network with $n$ nodes and a weighted [adjacency matrix](@entry_id:151010) $A \in \mathbb{R}^{n \times n}$, the relational profile of a node $i$ can be fully captured by concatenating its corresponding row and column from the matrix. The **out-neighborhood vector**, $o_i \in \mathbb{R}^{n}$, is the $i$-th row of $A$ (transposed), $o_i = (A_{i1}, A_{i2}, \dots, A_{in})^\top$, and the **in-neighborhood vector**, $u_i \in \mathbb{R}^{n}$, is the $i$-th column of $A$, $u_i = (A_{1i}, A_{2i}, \dots, A_{ni})^\top$. The complete **concatenated adjacency profile** for node $i$ is the vector $p_i \in \mathbb{R}^{2n}$ given by $$p_i = \begin{bmatrix} o_i \\ u_i \end{bmatrix}$$ .
+
+With these profile vectors, we can quantify the dissimilarity between two nodes $i$ and $j$ using measures such as the **Euclidean distance**:
+$$ d_{ij} = \|p_i - p_j\|_2 = \sqrt{\sum_{k=1}^{2n} (p_{ik} - p_{jk})^2} $$
+A smaller distance implies greater structural similarity. However, Euclidean distance is sensitive to the absolute magnitudes of edge weights. If all edge weights in the network were doubled, the profile vectors would scale, and the Euclidean distance between any two nodes would also double, even though the relational *pattern* is unchanged.
+
+To measure similarity in a way that is invariant to such scaling, one can use correlation. The **Pearson correlation coefficient** between two profiles $p_i$ and $p_j$ measures the linearity of the relationship between them after centering. It is defined as the [cosine similarity](@entry_id:634957) between the mean-centered vectors:
+$$ \rho_{ij} = \frac{(p_i - \bar{p}_i \mathbf{1})^\top (p_j - \bar{p}_j \mathbf{1})}{\|p_i - \bar{p}_i \mathbf{1}\|_2 \, \|p_j - \bar{p}_j \mathbf{1}\|_2} $$
+where $\bar{p}_i$ is the [arithmetic mean](@entry_id:165355) of the entries of $p_i$ and $\mathbf{1}$ is a vector of ones of the appropriate dimension. A key property of Pearson correlation is its invariance to separate affine transformations of the inputs. This means that $\rho_{ij}$ remains unchanged if profile $p_i$ is replaced by $\alpha p_i + \beta \mathbf{1}$ (for $\alpha > 0$), making it robust to differences in the overall volume or "activity" level of nodes. It captures the similarity of the *shape* of their relational profiles, not their magnitude .
+
+### A Hierarchy of Equivalence Concepts
+
+While structural equivalence provides a solid foundation, its rigidity limits its applicability. In many social and biological systems, nodes can fulfill equivalent roles without being connected to the exact same set of alters. This observation leads to a hierarchy of progressively relaxed equivalence definitions.
+
+#### Automorphic Equivalence
+
+A more lenient notion is **automorphic equivalence**. Two nodes are automorphically equivalent if they are interchangeable in the graph's structure. Formally, nodes $u$ and $v$ are automorphically equivalent if there exists a **[graph automorphism](@entry_id:276599)**—a permutation $\phi$ of the vertex set that preserves adjacency—such that $\phi(u) = v$. If such a mapping exists, it implies that nodes $u$ and $v$ are indistinguishable from a purely graph-theoretic perspective; they must have the same degree, same centrality scores, and identical values for any other measure defined solely on the graph structure.
+
+Every pair of structurally equivalent nodes is also automorphically equivalent, but the converse is not true. Consider a simple directed 3-cycle with vertices $\{1, 2, 3\}$ and edges $\{(1,2), (2,3), (3,1)\}$. No two nodes are structurally equivalent; for instance, node 1 has an outgoing edge to 2, while node 2 has an outgoing edge to 3. However, all three nodes are automorphically equivalent. The permutation $\phi(1)=2, \phi(2)=3, \phi(3)=1$ is an [automorphism](@entry_id:143521) that maps the edge set onto itself, demonstrating that node 1 can be mapped to 2, 2 to 3, and 3 to 1. They occupy symmetrically identical positions in the cycle .
+
+#### Regular Equivalence
+
+**Regular equivalence** provides a further, powerful generalization based on a [recursive definition](@entry_id:265514) of role. Two nodes are regularly equivalent if they are connected to equivalent others. This captures the idea that two individuals can hold the same role (e.g., "department chair") not because they interact with the *same* set of professors, but because they both interact with individuals who hold the role of "professor".
+
+Formally, nodes $u$ and $v$ are regularly equivalent if for every [regular equivalence](@entry_id:1130807) class $C_k$, the existence of a tie from $u$ to a node in $C_k$ implies the existence of a tie from $v$ to a node in $C_k$, and vice versa (for both incoming and outgoing ties in [directed networks](@entry_id:920596)).
+
+Automorphic equivalence implies [regular equivalence](@entry_id:1130807), but again, the converse is not always true. A clear example is a graph composed of two disconnected components, where each component is a "star" with one center and two leaves. Let the first star have center $u_1$ connected to leaves $v_1, v_2$, and the second have center $u_2$ connected to leaves $v_3, v_4$.
+The two centers, $u_1$ and $u_2$, are not structurally or automorphically equivalent because they are in disconnected components. However, they are regularly equivalent. Partition the nodes into two roles: "centers" $R_c = \{u_1, u_2\}$ and "leaves" $R_l = \{v_1, v_2, v_3, v_4\}$. Node $u_1$ connects only to nodes in the "leaf" class, and so does $u_2$. Similarly, every leaf connects only to a node in the "center" class. Because $u_1$ and $u_2$ have identical patterns of connectivity *with respect to the role classes*, they are regularly equivalent .
+
+The hierarchy is thus: **Structural $\implies$ Automorphic $\implies$ Regular**. A comprehensive example illustrates these distinctions. Consider a directed core-periphery network with two reciprocally connected core nodes, $c_1$ and $c_2$. Node $c_1$ is reciprocally connected to a set of two periphery nodes $\{s_1, s_2\}$, while $c_2$ is reciprocally connected to a different set of three periphery nodes $\{t_1, t_2, t_3\}$.
+- **Structural Equivalence**: Only nodes with identical adjacency rows and columns are structurally equivalent. Here, $s_1$ and $s_2$ are structurally equivalent to each other, and $t_1, t_2, t_3$ are structurally equivalent to each other. No other pairs are.
+- **Automorphic Equivalence**: Nodes must be interchangeable. Can $c_1$ be mapped to $c_2$? No, because their degrees are different ($c_1$ has degree 3, $c_2$ has degree 4). Can an $s_i$ be mapped to a $t_j$? No, because the former connects to $c_1$ and the latter to $c_2$, and we already know $c_1$ and $c_2$ are not equivalent. The automorphic [equivalence classes](@entry_id:156032) are $\{c_1\}$, $\{c_2\}$, $\{s_1, s_2\}$, and $\{t_1, t_2, t_3\}$.
+- **Regular Equivalence**: We look for common relational patterns. Let's define two roles: "core" $C = \{c_1, c_2\}$ and "periphery" $P = \{s_1, s_2, t_1, t_2, t_3\}$. Both $c_1$ and $c_2$ connect to nodes in the core (each other) and to nodes in the periphery. All peripheral nodes ($s_i$ and $t_j$) connect only to nodes in the core. Therefore, the [regular equivalence](@entry_id:1130807) classes are precisely the role sets $C$ and $P$. This means the pair $(c_1, c_2)$ and any pair $(s_i, t_j)$ are regularly equivalent, but not automorphically or structurally equivalent .
+
+### Blockmodeling: Partitioning Networks by Equivalence
+
+The concept of equivalence provides the theoretical foundation for **[blockmodeling](@entry_id:1121716)**, a methodology for partitioning the nodes of a network into a set of discrete classes or "blocks," where nodes within the same block are considered equivalent in some sense. The goal is to simplify the complex web of ties into a more interpretable image of block-to-block relationships.
+
+#### Ideal Block Structures: Equitable Partitions
+
+The most direct link between equivalence theory and partitioning is the **equitable partition**, which is the partition-level analogue of [regular equivalence](@entry_id:1130807). A partition $\mathcal{P} = \{C_1, \dots, C_k\}$ of the vertex set is equitable if, for any two cells $C_i$ and $C_j$, the number of neighbors a vertex $u \in C_i$ has in cell $C_j$ is a constant that depends only on the cells $i$ and $j$, not on the specific choice of vertex $u$.
+
+For a directed graph with [adjacency matrix](@entry_id:151010) $A$, this condition is stated as: for every pair of cells $(C_i, C_j)$ and for any two vertices $u, u' \in C_i$, it must hold that:
+$$ \sum_{v \in C_j} A_{uv} = \sum_{v \in C_j} A_{u'v} $$
+This expression represents the out-degree from a node in $C_i$ to the block $C_j$. An equitable partition requires this block-level out-degree to be constant for all nodes within the source block $C_i$ . A "perfect" [blockmodel](@entry_id:1121715) is one where the partition is equitable. However, such perfect structural regularity is exceedingly rare in empirical networks.
+
+#### Generalized Blockmodeling
+
+Most real-world applications employ **Generalized Blockmodeling (GBM)**, an optimization-based approach that seeks a partition minimizing the discrepancy between the observed network and some pre-specified ideal block structure.
+
+The core mechanism of GBM involves defining a **criterion function** that quantifies this discrepancy. The formulation requires several components :
+1.  A partition $\mathcal{C} = \{C_1, \dots, C_k\}$ of the nodes.
+2.  An ideal block type $T_{pq}$ for each block, which describes the desired pattern of ties from nodes in $C_p$ to nodes in $C_q$. Common types include a **null block** (all ties absent) and a **complete block** (all ties present).
+3.  A penalty for each "violation"—an observed tie that contradicts the ideal type (e.g., a 1 in a null block or a 0 in a complete block).
+
+The overall criterion function $F$ is the weighted sum of all such violations across the network. For a binary network with adjacency matrix $\mathbf{X}$ and a partition encoded by a membership matrix $Z$, a general form of the criterion is:
+$$ F(\mathbf{X}, \mathcal{C}, \mathbf{T}, \boldsymbol{\lambda}) = \sum_{p=1}^k \sum_{q=1}^k \lambda_{pq} \sum_{\substack{i \in C_p, j \in C_q \\ (p \neq q) \lor (i \neq j)}} \left( \mathbb{I}[T_{pq}=\text{complete}]\,(1 - X_{ij}) + \mathbb{I}[T_{pq}=\text{null}]\,X_{ij} \right) $$
+where $\lambda_{pq} > 0$ is the weight or importance assigned to block $(p,q)$, and $\mathbb{I}[\cdot]$ is the [indicator function](@entry_id:154167).
+
+The task of [blockmodeling](@entry_id:1121716) then becomes a [constrained optimization](@entry_id:145264) problem: find the partition (and potentially the ideal block types) that minimizes this criterion function. This search is computationally formidable. The number of ways to partition $n$ nodes into $K$ non-empty groups is given by the Stirling number of the second kind, $S(n,K)$, which grows explosively with $n$. This vast, discrete search space makes the problem combinatorial. Furthermore, the problem is **NP-hard**; for specific choices of penalties, it can be shown to contain known NP-hard problems like [graph partitioning](@entry_id:152532) or clique covering as special cases. Consequently, practical [blockmodeling](@entry_id:1121716) relies on [heuristic algorithms](@entry_id:176797) (e.g., local search, simulated annealing) to find high-quality, though not necessarily globally optimal, partitions .
+
+### Stochastic Blockmodeling and Its Extensions
+
+An alternative to the deterministic fitting of GBM is a generative, probabilistic approach known as the **Stochastic Block Model (SBM)**. Instead of measuring deviation from a fixed ideal, the SBM posits that the observed network is a single realization from a [random process](@entry_id:269605) governed by a latent block structure.
+
+#### The Stochastic Block Model (SBM)
+
+In the SBM, nodes are assigned to one of $K$ latent classes. The probability of an edge between any two nodes $i$ and $j$ depends solely on their class memberships, $z_i$ and $z_j$. Conditional on the class assignments $z$ and a $K \times K$ symmetric matrix of block probabilities $B$, the edges $A_{ij}$ are independent Bernoulli random variables:
+$$ A_{ij} \sim \text{Bernoulli}(B_{z_i z_j}) $$
+Nodes within the same block are said to be **stochastically equivalent**: they have the same probability of forming a tie to any other node in the network.
+
+The SBM framework generalizes the common notion of **[community structure](@entry_id:153673)**. A network with communities can be modeled as an SBM where the probability matrix $B$ is **assortative**, meaning it has high probabilities on the diagonal ($B_{rr}$ is high) and low probabilities off the diagonal ($B_{rs}$ is low for $r \neq s$). However, the SBM is far more flexible. It can model **disassortative** or bipartite-like structures, where off-diagonal probabilities are higher than diagonal ones. For example, a network partitioned into two blocks with within-block densities of $p_{11}=0.25$ and $p_{22}=0.20$, and a between-block density of $p_{12} \approx 0.61$, would be poorly described by a [community detection](@entry_id:143791) algorithm. If the global network density is, say, $p \approx 0.43$, the [blockmodel](@entry_id:1121715) image matrix ([thresholding](@entry_id:910037) block densities against global density) would be $$\begin{pmatrix} 0  1 \\ 1  0 \end{pmatrix}$$, correctly identifying a disassortative pattern where nodes preferentially connect to the *other* block .
+
+#### Identifiability and Label Switching
+
+A critical statistical issue in fitting SBMs is **[label switching](@entry_id:751100)**. The likelihood of the observed graph under an SBM is invariant to permutations of the class labels. If we have a set of parameters $(z, B)$ and we relabel every class according to a permutation $\pi$, creating a new assignment vector $z'$ and a permuted probability matrix $B'$, the likelihood of the data remains unchanged. This is because $P(A_{ij}=1 | z_i, z_j, B) = B_{z_i z_j} = B'_{\pi(z_i) \pi(z_j)} = P(A_{ij}=1 | z'_i, z'_j, B')$. Consequently, from the data alone, only the underlying partition structure is identifiable, not the arbitrary names (labels 1, 2, ..., K) of the classes. Any inferential procedure must either account for this symmetry or impose additional constraints (e.g., ordering the classes by size) to achieve an identifiable solution .
+
+#### The Degree-Corrected Stochastic Block Model (DCSBM)
+
+A significant limitation of the standard SBM is that the assumption of stochastic equivalence implies that all nodes within a block should have roughly the same [expected degree](@entry_id:267508). This is inconsistent with the broad degree distributions observed in many real-world networks, which often feature hubs. The **Degree-Corrected Stochastic Block Model (DCSBM)** was developed to address this.
+
+The DCSBM extends the SBM by introducing a node-specific parameter, $\kappa_i  0$, that modulates each node's propensity to form ties. The probability or expected number of edges between nodes $i$ and $j$ now takes a multiplicative form:
+$$ \mathbb{E}[A_{ij}] = \kappa_i \kappa_j \Theta_{z_i z_j} $$
+Here, $\Theta$ is a matrix of baseline block-to-block affinities, and the $\kappa_i$ parameters allow for substantial [degree heterogeneity](@entry_id:1123508) even among nodes in the same class. This model can be formulated for [simple graphs](@entry_id:274882) using a Bernoulli distribution, $A_{ij} \sim \text{Bernoulli}(\kappa_i \kappa_j \Theta_{z_i z_j})$, or for multigraphs using a Poisson distribution. As with the SBM, this more complex model has [identifiability](@entry_id:194150) issues; a common constraint to ensure a unique parameterization is to require the sum of the degree parameters within each class to be constant, for example, $\sum_{i: z_i=r} \kappa_i = 1$ for each class $r$ . The DCSBM and its variants represent the state of the art in capturing both mesoscale block structure and microscale [degree heterogeneity](@entry_id:1123508) in complex networks.

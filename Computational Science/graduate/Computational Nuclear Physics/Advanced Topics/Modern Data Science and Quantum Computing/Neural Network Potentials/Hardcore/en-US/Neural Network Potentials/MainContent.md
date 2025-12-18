@@ -1,0 +1,105 @@
+## Introduction
+Modeling the intricate forces between nucleons is a central challenge in [nuclear physics](@entry_id:136661). Traditional potentials, while successful, often face limitations in flexibility or are computationally intensive to derive from first principles. Neural Network Potentials (NNPs) have emerged as a revolutionary approach, combining the [expressive power](@entry_id:149863) of machine learning with the rigorous constraints of physical law to create highly accurate and efficient models of nuclear interactions. These models are not black boxes; they are sophisticated, physics-informed tools designed to overcome the long-standing problem of representing complex, many-body nuclear dynamics.
+
+This article provides a comprehensive overview of the theory and practice of building and deploying NNPs in [nuclear physics](@entry_id:136661). In the first chapter, **Principles and Mechanisms**, we will dissect the construction of an NNP, detailing how fundamental symmetries and principles from Effective Field Theory are encoded into the network's architecture and training process. Next, in **Applications and Interdisciplinary Connections**, we will explore how these potentials are integrated into quantum mechanical workflows to predict observables, tackle the [nuclear many-body problem](@entry_id:161400), and drive scientific discovery through active learning. Finally, **Hands-On Practices** will present guided exercises to solidify these concepts, focusing on practical challenges like [data normalization](@entry_id:265081), symmetry implementation, and physical regularization. By the end, you will understand how NNPs are transforming the landscape of *[ab initio](@entry_id:203622)* [nuclear theory](@entry_id:752748).
+
+## Principles and Mechanisms
+
+The construction of a neural network potential (NNP) for nuclear interactions is not a simple exercise in function fitting. Instead, it is a sophisticated process of physics-informed model building, where fundamental principles of quantum mechanics and [effective field theory](@entry_id:145328) are meticulously encoded into the architecture and training of the network. This chapter elucidates the core principles and mechanisms that transform a generic neural network, a [universal function approximator](@entry_id:637737), into a rigorous and predictive model of the [nuclear force](@entry_id:154226).
+
+### The Operator Structure of Nuclear Potentials
+
+At a fundamental level, the interaction potential, $\hat{V}$, is an operator acting on the Hilbert space of nucleon states. For a two-nucleon system, this means the potential is not merely a scalar function of position or momentum, but an operator in the spin and isospin spaces of the two particles. A robust and general framework for representing such an operator is through an expansion in a complete basis of spin-isospin operators, $\{O_i\}$, where each operator is multiplied by a coefficient function, $f_i$, that depends on the kinematic state of the system .
+
+In [momentum space](@entry_id:148936), where the initial and final relative momenta are denoted by $\boldsymbol{p}$ and $\boldsymbol{p}'$ respectively, the potential operator can be written as:
+
+$$V(\boldsymbol{p}', \boldsymbol{p}) = \sum_{i} f_{i}(x) O_{i}$$
+
+In this formulation, the neural network's role is to serve as a highly flexible model for the scalar functions $f_i(x)$. The inputs to these networks, denoted collectively by $x$, are themselves constrained by [fundamental symmetries](@entry_id:161256), as we will explore shortly. The operators $O_i$ are fixed structures derived from physics, such as the identity operator ($\mathbb{1}$), the [spin-spin interaction](@entry_id:173966) ($\boldsymbol{\sigma}_1 \cdot \boldsymbol{\sigma}_2$), the tensor operator ($S_{12}$), and the spin-orbit interaction ($\boldsymbol{L} \cdot \boldsymbol{S}$). This operator expansion is the foundational scaffolding upon which a physically meaningful NNP is built. It separates the well-defined operator structure of the interaction from the complex, dynamically-determined functional dependence on [kinematics](@entry_id:173318), which is the part to be learned from data.
+
+### Enforcing Fundamental Symmetries
+
+Any valid [nuclear potential](@entry_id:752727) must adhere to the symmetries of the underlying theory of strong interactions, Quantum Chromodynamics (QCD). These include continuous space-time symmetries, [discrete symmetries](@entry_id:158714), and the Hermiticity of the Hamiltonian. Ensuring these symmetries are respected is not an optional refinement but a mandatory requirement for a physically sound model.
+
+#### Kinematic Symmetries
+
+Kinematic symmetries constrain the functional dependence of the potential on spatial coordinates and momenta.
+
+**Translational and Galilean Invariance:** These symmetries dictate that the interaction can only depend on the relative motion of the nucleons, not their absolute position or the motion of their center of mass. Consequently, the potential must be a function of [relative coordinates](@entry_id:200492) and momenta. In coordinate space, the relevant variable is the [relative position](@entry_id:274838) vector $\boldsymbol{r} = \boldsymbol{r}_1 - \boldsymbol{r}_2$. In [momentum space](@entry_id:148936), it is common to use the initial and final relative momenta, $\boldsymbol{p}$ and $\boldsymbol{p}'$, or a more convenient equivalent pair: the momentum transfer $\boldsymbol{q} = \boldsymbol{p}' - \boldsymbol{p}$ and the average momentum $\boldsymbol{k} = (\boldsymbol{p}' + \boldsymbol{p})/2$ . These variables are, by definition, invariant under global translations and Galilean boosts.
+
+**Rotational Invariance and SO(3) Equivariance:** Rotational symmetry demands that the potential operator $\hat{V}$ be a scalar, meaning it must be invariant under rotations of the coordinate system. This imposes strong constraints on both the operator basis $\{O_i\}$ and the learned functions $\{f_i\}$. There are two primary strategies for enforcing this.
+
+The first and more traditional approach is to construct the inputs to the neural network exclusively from rotationally invariant scalars. For instance, given the kinematic vectors $\boldsymbol{q}$ and $\boldsymbol{k}$, the only independent scalars one can form are their magnitudes squared and their dot product: $q^2$, $k^2$, and $\boldsymbol{q} \cdot \boldsymbol{k}$. If the network functions $f_i$ take only these scalars as inputs, they will be rotationally invariant by construction. Assuming the operators $O_i$ (like $\boldsymbol{\sigma}_1 \cdot \boldsymbol{\sigma}_2$) are also rotational scalars, the entire potential $V$ will be invariant .
+
+A more modern and powerful approach is to design an **SO(3)-equivariant neural network**. Such a network processes geometric information (vectors and tensors) directly, without first reducing them to scalars. Its architecture is built such that if the input features are rotated, the output features transform in a precisely corresponding, predictable manner according to the rules of [group representation theory](@entry_id:141930). This is achieved by:
+1.  Representing all features within the network not as simple arrays of numbers, but as **spherical tensors**, which are objects classified by an [angular momentum quantum number](@entry_id:172069) $l$. The input vector $\boldsymbol{r}$, for example, is an $l=1$ feature.
+2.  Ensuring all operations within the network are equivariant. Linear operations (convolutions) are constrained by Schur's lemma to not mix features of different $l$. Non-linearities are constructed via tensor products of features, which are decomposed into new spherical tensor features using Clebsch-Gordan coefficients.
+3.  The final desired outputs are obtained by projecting the network's final features onto the required representations. For a scalar (central) potential $V_C(r)$, one projects onto the $l=0$ (invariant) component. For a tensor potential, which transforms as a rank-2 symmetric [traceless tensor](@entry_id:274053), one projects onto the $l=2$ component .
+
+An elegant alternative within this framework is to use a simple network to learn only invariant radial functions (e.g., $V_C(r)$ and $V_T(r)$ from the scalar input $r=\|\boldsymbol{r}\|$), and then analytically construct the full equivariant output. For example, a [rank-2 tensor](@entry_id:187697) output $T(\boldsymbol{r})$ can be assembled as $T_{ij}(\boldsymbol{r}) = V_T(r) (\hat{r}_i \hat{r}_j - \delta_{ij}/3)$. This form guarantees the correct $l=2$ transformation property by construction .
+
+#### Intrinsic and Discrete Symmetries
+
+**Parity and Time-Reversal:** The [strong interaction](@entry_id:158112) conserves parity ($P$) and is symmetric under time-reversal ($T$). This forbids certain operator structures. For instance, a term like $\boldsymbol{S} \cdot \boldsymbol{q}$ (where $\boldsymbol{S}$ is the total spin) would be odd under parity and is therefore excluded from the potential. The standard operator basis used in [nuclear physics](@entry_id:136661), including the central, spin-spin, tensor, and spin-orbit terms, is constructed to be explicitly even under both $P$ and $T$ transformations .
+
+**Hermiticity:** To ensure that the Hamiltonian yields real [energy eigenvalues](@entry_id:144381), the potential operator $\hat{V}$ must be Hermitian ($\hat{V} = \hat{V}^\dagger$). In the coordinate and momentum representations, this translates to specific symmetry conditions on the potential kernel:
+$V(\boldsymbol{r}, \boldsymbol{r}') = V^*(\boldsymbol{r}', \boldsymbol{r})$ and $V(\boldsymbol{p}, \boldsymbol{p}') = V^*(\boldsymbol{p}', \boldsymbol{p})$.
+Since the Fourier transform connecting the two representations is unitary, a potential that is Hermitian in one space is automatically Hermitian in the other. This fundamental property can be enforced by construction in an NNP in at least two ways :
+1.  **Explicit Symmetrization:** A general complex kernel $V$ can be built from two real, unconstrained network outputs, $f$ and $g$. The real part of the kernel is explicitly symmetrized, $\text{Re}[V(\boldsymbol{r}, \boldsymbol{r}')] = \frac{1}{2}[f(\boldsymbol{r}, \boldsymbol{r}') + f(\boldsymbol{r}', \boldsymbol{r})]$, while the imaginary part is explicitly anti-symmetrized, $\text{Im}[V(\boldsymbol{r}, \boldsymbol{r}')] = \frac{1}{2}[g(\boldsymbol{r}, \boldsymbol{r}') - g(\boldsymbol{r}', \boldsymbol{r})]$. This construction mathematically guarantees that the Hermiticity condition is satisfied.
+2.  **Spectral Decomposition:** One can parameterize the potential operator via its spectral decomposition, $\hat{V} = \sum_{n} \lambda_n |\phi_n\rangle\langle \phi_n|$. If the network is designed to output real eigenvalues $\lambda_n$ and an [orthonormal set](@entry_id:271094) of [eigenfunctions](@entry_id:154705) $|\phi_n\rangle$, the resulting operator is manifestly Hermitian.
+
+### Architectural Choices and Representation
+
+Beyond [fundamental symmetries](@entry_id:161256), the specific architecture of the NNP and the choice of representation (coordinate vs. momentum space) have profound implications for its performance, computational cost, and physical fidelity.
+
+#### Locality and Nonlocality
+
+A potential is **local** if its action at a point $\boldsymbol{r}$ depends only on the wavefunction at that same point, i.e., $(\hat{V}\psi)(\boldsymbol{r}) = V(\boldsymbol{r})\psi(\boldsymbol{r})$. In this case, the potential kernel is proportional to a Dirac delta function, $V(\boldsymbol{r}, \boldsymbol{r}') = V(\boldsymbol{r})\delta^{(3)}(\boldsymbol{r} - \boldsymbol{r}')$. A **nonlocal** potential is more general, with an action given by an integral operator: $(\hat{V}\psi)(\boldsymbol{r}) = \int d^3\boldsymbol{r}' V(\boldsymbol{r}, \boldsymbol{r}') \psi(\boldsymbol{r}')$. Here, the potential at $\boldsymbol{r}$ depends on the wavefunction across all of space.
+
+Modern nuclear potentials derived from EFT are inherently nonlocal. An NNP can be designed to represent such a general nonlocal kernel while maintaining physical constraints. A robust [parameterization](@entry_id:265163) involves an ANN, $\mathcal{N}_\theta$, that outputs a scalar value based on rotationally invariant inputs $(|\boldsymbol{r}|, |\boldsymbol{r}'|, \hat{\boldsymbol{r}}\cdot\hat{\boldsymbol{r}}')$, combined with a [regulator function](@entry_id:754216) that controls the range of nonlocality. For example, a Hermitian, rotationally invariant nonlocal kernel can be constructed as :
+
+$$V(\boldsymbol{r}, \boldsymbol{r}') = W(\boldsymbol{r}, \boldsymbol{r}') \frac{\exp(-\frac{|\boldsymbol{r}-\boldsymbol{r}'|^2}{2R_0^2})}{(2\pi R_0^2)^{3/2}}$$
+
+Here, $W(\boldsymbol{r}, \boldsymbol{r}')$ is a symmetrized output from the ANN, and the Gaussian term acts as a regulated delta function. The parameter $R_0$ explicitly controls the range of nonlocality; as $R_0 \to 0$, the Gaussian sharpens into a delta function and the potential correctly reduces to a local form.
+
+#### Coordinate Space versus Momentum Space
+
+The choice between representing the potential in coordinate space ($V(\boldsymbol{r})$ or $V(\boldsymbol{r}, \boldsymbol{r}')$) or momentum space ($V(\boldsymbol{p}, \boldsymbol{p}')$) involves significant trade-offs in computational cost and suitability for different physical problems .
+
+*   **Coordinate Space:** This representation is typically used for local potentials $V(r)$. To compute scattering observables like phase shifts, one solves the radial Schrödinger equation, which is an [ordinary differential equation](@entry_id:168621) (ODE). Numerical integration of this ODE is very efficient, with a [computational cost scaling](@entry_id:173946) linearly with the number of grid points, $O(N_r)$. This makes it the preferred representation for calculating on-shell scattering data for local potentials. However, it is less natural for nonlocal potentials and for calculating off-shell quantities, which are crucial for many-body calculations.
+
+*   **Momentum Space:** This is the natural representation for nonlocal potentials, which are functions of two momenta, $V(\boldsymbol{p}, \boldsymbol{p}')$. Scattering [observables](@entry_id:267133) are computed by solving the Lippmann-Schwinger [integral equation](@entry_id:165305). When discretized, this becomes a dense linear algebra problem, whose solution typically scales cubically with the number of momentum grid points, $O(N_k^3)$. While computationally expensive, this method directly yields the full off-shell T-matrix, which is indispensable for embedding the interaction into calculations of nuclear structure and reactions.
+
+The choice of representation can also be guided by the physical characteristics of the potential. For potentials with long-range tails (like the Coulomb or OPE potentials), coordinate space requires a large integration box ($r_{\text{max}}$), while [momentum space](@entry_id:148936) requires a very fine grid near $k=0$ to resolve the corresponding infrared structure. Neither representation is universally superior .
+
+#### Matching Architectures to Physical Properties
+
+The inductive biases of different neural network architectures can be leveraged to better represent the known physical properties of the potential.
+For a typical coordinate-space potential $V(r)$, which exhibits a sharp, repulsive core at short distances and a smooth, decaying tail at long distances, a **Radial Basis Function (RBF) network** is an excellent choice. An RBF [network models](@entry_id:136956) functions using a sum of [localized basis functions](@entry_id:751388) (e.g., Gaussians), allowing one to place narrow basis functions to resolve the sharp core and wide basis functions to efficiently capture the smooth tail .
+
+Conversely, momentum-space potentials are often regularized to suppress contributions from unphysically high momenta, making them effectively smooth and band-limited. For such functions, **Fourier-feature networks** (e.g., SIRENs) are particularly well-suited. These networks use sinusoidal [activation functions](@entry_id:141784), giving them a strong inductive bias for learning smooth, band-limited functions, which often leads to more accurate and data-efficient training .
+
+### Physics-Informed Training and Regularization
+
+Beyond encoding physics into the [network architecture](@entry_id:268981), it is crucial to incorporate physical knowledge into the training process itself through carefully designed [loss functions](@entry_id:634569) and priors.
+
+#### The Inverse Scattering Problem and Identifiability
+
+Training an NNP involves solving an inverse problem: given a set of experimental observables (like [phase shifts](@entry_id:136717)), determine the underlying potential. This [inverse problem](@entry_id:634767) is notoriously ill-posed and non-unique. Two different potentials, $V_1$ and $V_2$, can produce identical on-shell scattering data ([phase shifts](@entry_id:136717)) . One source of this ambiguity is the existence of **phase-equivalent potentials**, which are related by short-range unitary transformations. Such transformations preserve the entire [energy spectrum](@entry_id:181780) and all on-shell [observables](@entry_id:267133) but alter the potential and, crucially, the off-shell behavior.
+
+To overcome this non-uniqueness and identify a single, physically correct potential, the training must be constrained by more than just elastic [scattering phase shifts](@entry_id:138129). A modern strategy involves augmenting the [loss function](@entry_id:136784) with a wide array of additional data and physical priors :
+*   **Bound-state properties:** For the two-nucleon system, this includes the deuteron's binding energy ($B_d$), [quadrupole moment](@entry_id:157717) ($Q_d$), and asymptotic D/S ratio ($\eta$).
+*   **Three-body [observables](@entry_id:267133):** The binding energies of the [triton](@entry_id:159385) (${}^3$H) and helion (${}^3$He) are highly sensitive to the off-shell properties of the two-nucleon potential and provide powerful constraints.
+*   **Physical Priors:** The functional form of the potential can be regularized by imposing known theoretical constraints, such as the long-range behavior dictated by [meson exchange](@entry_id:751912) theory.
+
+#### Incorporating Effective Field Theory Principles
+
+Chiral Effective Field Theory ($\chi$EFT) provides a systematic, low-energy expansion of [nuclear forces](@entry_id:143248) rooted in the symmetries of QCD. Instead of treating an NNP as a replacement for $\chi$EFT, one can design an NNP that respects its core principles, creating a powerful synergy.
+
+**Long-Range Constraints:** The longest-range part of the [nuclear force](@entry_id:154226) is unambiguously described by [one-pion exchange](@entry_id:752917) (OPE). This well-established theoretical knowledge can be imposed on the NNP via a penalty term in the loss function :
+$$\mathcal{L}_{\text{OPE}} = \int_{R_{\pi}}^{\infty} dr\, |V_{\text{NN}}(r) - V_{\pi}(r)|^2$$
+This term forces the learned potential, $V_{\text{NN}}(r)$, to match the known OPE potential, $V_{\pi}(r)$, at large distances ($r > R_{\pi}$). The matching radius $R_{\pi}$ must be chosen judiciously. A physically justified choice is $R_{\pi} \approx \lambda_{\pi} = \hbar/(m_{\pi}c) \approx 1.4$ fm, which is the characteristic range of the [pion exchange](@entry_id:162149). This enforces the correct physics where it is known to be dominant, without corrupting the network's flexibility to learn the more complex dynamics at shorter and intermediate ranges.
+
+**Power Counting Priors:** A cornerstone of $\chi$EFT is **[power counting](@entry_id:158814)**, which organizes the potential into a hierarchy of terms, with contributions from higher orders being progressively smaller. This principle can be embedded into an NNP using a Bayesian framework . Instead of a [black-box model](@entry_id:637279), the network is structured to directly learn the Low-Energy Constants (LECs) of the $\chi$EFT expansion. The total potential is assembled as a [linear combination](@entry_id:155091) of the fixed $\chi$EFT operator basis, where the learnable network parameters are precisely the LECs. Power counting is then enforced by placing a Bayesian prior on these LECs. For example, a Gaussian prior $p(c^{(\nu)}) = \mathcal{N}(0, \sigma_\nu^2)$ can be used, where the variance $\sigma_\nu^2$ is made to decrease with the chiral order $\nu$. This regularizes the training by penalizing large, unnatural coefficients, especially at higher orders, ensuring the resulting potential has the expected convergent behavior.
+
+In this way, NNPs evolve from theory-agnostic approximators to highly structured, [interpretable models](@entry_id:637962) that are both flexible enough to capture complex data and rigorously constrained by the fundamental principles of [nuclear theory](@entry_id:752748). They represent a powerful synthesis of data-driven methods and first-principles physics .

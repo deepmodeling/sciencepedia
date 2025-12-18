@@ -1,0 +1,92 @@
+## Introduction
+Generative artificial intelligence is revolutionizing the field of medicinal chemistry, offering a new paradigm for discovering therapeutic molecules. At the forefront of this transformation is *de novo* [drug design](@entry_id:140420), a computational approach that aims to invent entirely novel molecular structures tailored to specific biological targets. While the concept is powerful, the journey from a generated idea to a viable drug candidate is fraught with complexity. Simply creating new molecules is not enough; they must be potent, safe, soluble, and synthesizable. This article addresses the critical knowledge gap between basic molecular generation and sophisticated, goal-directed [drug design](@entry_id:140420).
+
+Over the following chapters, you will gain a comprehensive understanding of this cutting-edge field. We will begin with the core **Principles and Mechanisms**, demystifying the various families of [generative models](@entry_id:177561), from VAEs and GANs to state-of-the-art diffusion models, and exploring the crucial role of [molecular representations](@entry_id:752125) and symmetries. Next, the chapter on **Applications and Interdisciplinary Connections** will bridge theory and practice, demonstrating how these models are integrated into the [drug discovery](@entry_id:261243) pipeline to perform multi-objective optimization, balancing efficacy with real-world constraints. Finally, the **Hands-On Practices** section provides an opportunity to engage directly with key computational challenges, solidifying your understanding of the methods used to evaluate and guide [generative design](@entry_id:194692).
+
+## Principles and Mechanisms
+
+### The Conceptual Framework of De Novo Design
+
+The ultimate ambition of *de novo* drug design is to computationally create novel molecules tailored to a specific biological objective, such as inhibiting a target protein or possessing a desired pharmacokinetic profile. To formalize this, we must first distinguish it from related computational strategies, chief among them being virtual screening.
+
+Let us define **chemical space** as the vast, implicitly defined set of all synthetically feasible molecules, denoted $\mathcal{M}$. A **virtual library**, in contrast, is a finite, explicitly enumerated subset of this space, $L \subset \mathcal{M}$. Computational drug discovery methods can be broadly categorized by the nature of the search space they explore.
+
+**Virtual screening** operates on a pre-enumerated virtual library $L$. The task is one of **selection**: to rank the molecules in the fixed set $L$ according to a **scoring objective**, $J: \mathcal{M} \to \mathbb{R}$, which might be a [docking score](@entry_id:199125), a similarity metric to known active ligands, or a [composite function](@entry_id:151451) of predicted physicochemical properties. The critical limitation is that virtual screening cannot propose any molecule that was not already present in the library $L$.
+
+**De novo [drug design](@entry_id:140420)**, conversely, is a process of **construction** within the implicit space $\mathcal{M}$. It does not select from a fixed list but rather generates or builds new molecular structures. This generative process can be framed as an optimization problem where the domain is not a finite set but an implicit or constructive representation of [chemical space](@entry_id:1122354). This might be achieved by navigating a graph of chemical transformations or, more commonly, by employing a **generative model**—a parameterized probability distribution $p_{\theta}$ over molecules. The goal is to optimize the model's parameters $\theta$ such that it assigns high probability to molecules with favorable scores under the objective function $J$. This fundamental distinction—selection from an explicit, finite set versus construction within an implicit, vast space—defines *de novo* design as a distinct and more ambitious computational problem .
+
+*De novo* methods themselves can be subdivided. Some approaches are explicitly rule-based, such as those that algorithmically assemble molecular fragments from a vocabulary into larger, novel structures [@problem_id:5247_403]. Another rule-based paradigm formulates molecule generation as a [constrained optimization](@entry_id:145264) problem, for instance, a Mixed-Integer Linear Program (MILP) where chemical rules like valence are encoded as hard constraints . The majority of modern techniques, however, fall under the umbrella of probabilistic generative models, which learn the principles of [molecular structure](@entry_id:140109) implicitly from large datasets of existing molecules.
+
+### The Language of Molecules: Representations and Symmetries
+
+To apply machine learning to molecular design, we must first choose a suitable [data representation](@entry_id:636977). The choice of representation is not merely a technical detail; it profoundly influences a model's capabilities and dictates the types of fundamental chemical symmetries that must be respected.
+
+#### Sequence Representations
+
+One of the simplest ways to represent a molecular graph is to serialize it into a string. The **Simplified Molecular-Input Line-Entry System (SMILES)** is a widely used line notation based on a depth-first traversal of the molecular graph. Its alphabet consists of tokens for atoms, bonds, branches, and ring closures. While compact, SMILES has a significant drawback for [generative modeling](@entry_id:165487): the grammar of valid SMILES strings is complex. A model trained to generate SMILES strings character by character will frequently produce syntactically invalid strings (e.g., with unbalanced parentheses) or strings that correspond to chemically impossible structures (e.g., a carbon atom with five bonds). This necessitates a filtering step to discard invalid outputs.
+
+To address this, the **Self-Referencing Embedded Strings (SELFIES)** representation was developed. SELFIES is designed to be inherently robust. It can be understood as a [formal grammar](@entry_id:273416) whose symbols correspond to state-dependent operations for building a molecular graph. The decoding of a SELFIES string is a deterministic process that acts like an **attributed grammar**, maintaining a state for each atom, most importantly its remaining valence. Each symbol in the SELFIES alphabet proposes an action (e.g., "add a double-bonded carbon"). This action is only executed if it satisfies the current valence constraints. Crucially, if an action would violate valence rules, a built-in fallback mechanism deterministically chooses a different, valid operation (such as terminating a branch). This ensures that the decoding function is total: every possible string over the SELFIES alphabet maps to a syntactically valid molecular graph. This 100% validity rate is a significant advantage for [generative models](@entry_id:177561), as it eliminates the need for post-hoc filtering .
+
+#### Graph and Coordinate Representations
+
+Fundamentally, molecules are graphs, where atoms are nodes and bonds are edges. Many advanced models operate directly on this graph structure, using node features to represent atom types and edge features to represent bond orders. Alternatively, for applications where three-dimensional structure is paramount, molecules can be represented by the Cartesian coordinates of their constituent atoms, $X \in \mathbb{R}^{n \times 3}$ for a molecule with $n$ atoms, often augmented by atomic features and a bond graph.
+
+#### Fundamental Symmetries
+
+A chemically valid generative model must be invariant to transformations that do not change the identity of the molecule.
+
+-   **Permutation Invariance**: The labeling of atoms in a graph is arbitrary. If we permute the indices of the atoms in a [graph representation](@entry_id:274556) $(A, F)$ (adjacency and feature matrices), the underlying molecule remains the same. A generative model of graphs must therefore be **permutation invariant**: the probability assigned to a molecule should not depend on the arbitrary labeling of its atoms. This is typically handled by group-averaging or, more efficiently, by using network architectures like Graph Neural Networks (GNNs) that are inherently permutation-equivariant. This symmetry corresponds to the action of the [symmetric group](@entry_id:142255) $S_n$ .
+
+-   **Euclidean Invariance and Equivariance**: The identity of a molecule in three-dimensional space does not depend on its position or orientation. This is the symmetry of the **Euclidean group E(3)**, which includes translations, rotations, and reflections. For a generative model of 3D coordinates, the probability density $p(X)$ must be invariant to these transformations. An important subtlety arises with chirality. A reflection transforms a chiral molecule into its distinct [enantiomer](@entry_id:170403). If a model were invariant to the full E(3) group, it would assign the same probability to both [enantiomers](@entry_id:149008), conflating them. To preserve [chirality](@entry_id:144105), models should only be invariant to orientation-preserving transformations: translations and proper rotations. This is the **Special Euclidean group SE(3)** .
+
+This invariance requirement on the probability density $p(X)$ imposes a related but different constraint on derived [vector fields](@entry_id:161384), such as the **score function**, $\nabla_X \log p(X)$, which is central to score-based models. If the density $p(X)$ is SE(3)-invariant, the score function must be **SE(3)-equivariant**. This means that if the molecule's coordinates $X$ are rotated by a matrix $R$, the score vectors must also rotate by the same matrix $R$. This property is a critical design constraint for neural networks that operate on 3D molecular structures  .
+
+### Probabilistic Generative Models: A Taxonomy
+
+Modern *de novo* design is dominated by probabilistic models that learn a distribution $p_{\theta}(x)$ over molecules from a large training dataset. These models can be broadly classified by how they define and learn this distribution.
+
+#### Variational Autoencoders (VAEs)
+
+Variational Autoencoders are [latent variable models](@entry_id:174856). They consist of two components: an **encoder** $q_{\phi}(z|x)$ that maps a molecule $x$ to a distribution in a continuous latent space $z$, and a **decoder** $p_{\theta}(x|z)$ that reconstructs the molecule from a latent code. VAEs are trained by maximizing a lower bound on the data [log-likelihood](@entry_id:273783), known as the **Evidence Lower Bound (ELBO)**:
+$$
+\mathcal{L}(\theta,\phi;x) = \mathbb{E}_{q_\phi(z\mid x)}[\ln p_\theta(x\mid z)] - \mathrm{KL}(q_\phi(z\mid x)\Vert p(z))
+$$
+The first term is the **[reconstruction loss](@entry_id:636740)**, encouraging the decoder to faithfully reconstruct the input molecule. The second term is a regularization penalty, the **Kullback–Leibler (KL) divergence**, which forces the distribution of latent codes produced by the encoder to be close to a simple [prior distribution](@entry_id:141376), $p(z)$, typically a [standard normal distribution](@entry_id:184509) $\mathcal{N}(0, I)$ .
+
+A common training pathology in VAEs for molecular generation is **[posterior collapse](@entry_id:636043)**. This occurs when the decoder becomes so powerful (e.g., an autoregressive model like an RNN) that it can model the data distribution $p_{\text{data}}(x)$ very well without using any information from the latent code $z$. In this scenario, the model learns to ignore the latent variable to avoid the KL penalty. The optimization drives the KL divergence term to zero by making the posterior $q_{\phi}(z|x)$ equal to the prior $p(z)$ for all $x$. Consequently, the latent space becomes uninformative. A practical strategy to mitigate this is **KL annealing**, where the KL term is initially down-weighted by a factor $\beta(t)$ that gradually increases from near zero to one during training. This allows the model to first focus on the reconstruction task, learning to use the latent code, before the full regularization penalty is applied . For example, a smooth logistic schedule like $\beta(t) = (1 + 19^{1 - 2t/T})^{-1}$ can be used to grow the weight from $0.05$ to $0.95$ over $T$ training steps.
+
+A second major challenge arises when generating discrete data, such as SMILES/SELFIES tokens. The standard VAE training relies on the **[reparameterization trick](@entry_id:636986)** to backpropagate gradients through the sampling of $z$. This trick fails for discrete variables. Two main families of solutions exist:
+1.  **Score-Function Estimators (e.g., REINFORCE)**: These methods from reinforcement learning estimate the gradient of the expectation without differentiating through the sampling step. They are unbiased but often suffer from high variance.
+2.  **Continuous Relaxations (e.g., Gumbel-Softmax)**: These methods replace the non-differentiable categorical sampling with a differentiable approximation, creating a "soft" version of the discrete tokens. This allows [gradient flow](@entry_id:173722) but introduces a bias into the [gradient estimates](@entry_id:189587) .
+
+#### Generative Adversarial Networks (GANs)
+
+GANs employ a different, game-theoretic approach. A **generator** network $G_{\theta}$ learns to map random noise $z$ to a molecule $x$, while a **discriminator** network $D_{\phi}$ is trained to distinguish between real molecules from the dataset and "fake" molecules from the generator. The two networks are trained in a minimax game, formalized by the objective:
+$$
+\min_{G}\max_{D}\ \mathbb{E}_{x\sim p_{\text{data}}}\left[\ln D(x)\right] + \mathbb{E}_{z\sim p(z)}\left[\ln\left(1 - D\left(G(z)\right)\right)\right]
+$$
+The generator's goal is to produce molecules so realistic that the discriminator is fooled . Training a GAN can be viewed as minimizing a statistical divergence between the data distribution $p_{\text{data}}$ and the model distribution $p_G$. The canonical GAN objective minimizes the **Jensen-Shannon (JS) divergence**. This contrasts with the Maximum Likelihood Estimation (MLE) used to train explicit models like VAEs (and flows), which minimizes the forward **Kullback-Leibler (KL) divergence** $D_{\mathrm{KL}}(p_{\text{data}} \Vert p_G)$. The KL divergence is asymmetric and penalizes the model heavily for failing to cover all modes of the data (mode-covering behavior). The JS divergence is symmetric and can lead to [mode-seeking](@entry_id:634010) behavior, where the model focuses on capturing a few high-density modes of the data well .
+
+Just as with VAEs, applying GANs to discrete [molecular representations](@entry_id:752125) is challenging because the discrete sampling step in the generator breaks the flow of gradients from the discriminator. The solutions are analogous: the problem can be framed in a reinforcement learning context, where the generator is a policy, the generated molecule is the result of a sequence of actions, and the discriminator's score provides a reward signal. The generator is then trained with [policy gradient](@entry_id:635542) algorithms like **REINFORCE**. Alternatively, continuous relaxations like Gumbel-Softmax can be used to make the generator's output differentiable .
+
+#### Normalizing Flows
+
+Normalizing Flows represent a third class of models that, unlike VAEs, can compute the exact likelihood of data. A [normalizing flow](@entry_id:143359) model constructs a complex data distribution by applying a series of invertible and differentiable transformations, $f_{\theta}$, to a simple base distribution $p_Z(z)$. If we have a transformation $z = f_{\theta}(x)$ that maps a data point $x$ to a latent code $z$, the probability density of $x$ can be calculated exactly using the **multivariate [change of variables](@entry_id:141386) formula**:
+$$
+p_X(x) = p_Z(f_{\theta}(x))\left|\det J_{f_{\theta}}(x)\right|
+$$
+Here, $J_{f_{\theta}}(x)$ is the Jacobian matrix of the transformation $f_{\theta}$. The key constraints on this architecture are that the transformation must be a **differentiable [bijection](@entry_id:138092)** and that the **determinant of its Jacobian** must be efficient to compute. These models are trained directly by maximizing the exact log-likelihood $\ln p_X(x)$ . Generation is performed by sampling a point $z$ from the simple base distribution and applying the inverse transformation, $x = f_{\theta}^{-1}(z)$.
+
+#### Score-Based Generative Models (Diffusion Models)
+
+The newest and often most powerful family of [generative models](@entry_id:177561) are score-based, or diffusion, models. These models learn to reverse a diffusion process that gradually corrupts data into pure noise.
+
+1.  **Forward Process**: A fixed [stochastic differential equation](@entry_id:140379) (SDE) defines a process that adds Gaussian noise to the data $x_0$ over a continuous time interval $t \in [0, T]$. A common choice is the variance-preserving SDE: $dx_t = \sqrt{2 \beta(t)} \, dW_t$, where $W_t$ is a standard Wiener process and $\beta(t)$ is a noise schedule.
+2.  **Reverse Process**: Remarkably, this diffusion process has a corresponding reverse-time SDE that can transform a pure noise sample at time $T$ back into a data sample at time $0$. This reverse SDE is given by:
+    $$
+    d x_t = - 2 \beta(t) \, \nabla_x \ln p_t(x_t) \, dt + \sqrt{2 \beta(t)} \, d\bar W_t
+    $$
+    where $d\bar{W}_t$ is a reverse-time Wiener process. The crucial insight is that this generative process depends only on the **score** of the noisy data distribution, $\nabla_x \ln p_t(x_t)$, at each time $t$ .
+3.  **Training**: The model, a time-conditional neural network $s_{\theta}(x_t, t)$, is trained to approximate this unknown [score function](@entry_id:164520). Instead of matching the score of the intractable [marginal distribution](@entry_id:264862) $p_t(x_t)$, one can use **[denoising score matching](@entry_id:637883)**. This involves taking a clean data sample $x_0$, adding a known amount of noise to obtain $x_t$, and training the network to predict the score of the *conditional* distribution $p_t(x_t | x_0)$, which is simply proportional to the noise that was added, $-(x_t-x_0)/\sigma_t^2$. This provides a stable and efficient training objective .
+
+For generating 3D molecular conformations, this framework is particularly powerful, but it requires that the score network $s_{\theta}$ be designed to be E(3)-equivariant to respect the underlying physical symmetries.

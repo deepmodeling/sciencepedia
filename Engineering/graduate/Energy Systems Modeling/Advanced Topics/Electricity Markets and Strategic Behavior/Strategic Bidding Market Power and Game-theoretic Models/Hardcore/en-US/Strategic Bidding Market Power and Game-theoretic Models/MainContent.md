@@ -1,0 +1,111 @@
+## Introduction
+The transition to restructured electricity markets has transformed power generation from a regulated monopoly into a competitive arena. In this new landscape, a small number of large firms often compete, leading to strategic interactions where their bidding decisions can directly influence market prices. Understanding and predicting this behavior is crucial for ensuring [market efficiency](@entry_id:143751), reliability, and affordability. This article addresses the challenge of analyzing [strategic bidding](@entry_id:1132489) and [market power](@entry_id:1127631) through the rigorous lens of game theory and computational modeling, providing the tools to dissect the behavior of firms in these complex environments.
+
+We will embark on a structured journey to unpack this multifaceted topic. The first chapter, **Principles and Mechanisms**, lays the theoretical groundwork, exploring how market clearing mechanisms like uniform pricing and Locational Marginal Prices (LMPs) create the stage for strategic play. We will examine classic game-theoretic models, such as Cournot and Bertrand competition, and see how they explain the exercise of [market power](@entry_id:1127631). The second chapter, **Applications and Interdisciplinary Connections**, shifts from theory to practice, demonstrating how these concepts are used by regulators for market monitoring, by firms for developing advanced bidding strategies, and how they connect to broader fields like finance and policy analysis. Finally, the **Hands-On Practices** chapter provides concrete problems that allow you to apply these models to calculate market outcomes and quantify the impact of strategic actions. Together, these sections offer a comprehensive guide to the core models and applications of strategic behavior in modern energy systems.
+
+## Principles and Mechanisms
+
+Having established the institutional context of restructured [electricity markets](@entry_id:1124241), this chapter delves into the core principles and mechanisms that govern their operation. We will dissect the process of price formation, explore how firms behave strategically within these frameworks, and analyze the complex interplay between market design, physical constraints, and economic outcomes. Our approach will be to build from foundational models of market clearing toward more sophisticated game-theoretic and computational representations of [strategic interaction](@entry_id:141147).
+
+### Market Clearing and Price Formation
+
+The heart of a wholesale electricity market is the centralized auction mechanism, typically administered by an Independent System Operator (ISO). In these auctions, generation firms submit offers to sell energy, and the ISO determines which generators to dispatch and what prices they will be paid. The first step in this process is the creation of a **supply stack** (or merit order), where generator offers are arranged in ascending order of their bid prices. The ISO then "dispatches" generation from this stack, starting with the least expensive offer, until the total supply equals the required demand for that period. The generator whose offer is the last to be accepted to meet demand is known as the **marginal unit**.
+
+While the dispatch process is relatively standard, the mechanism for settling payments to dispatched generators can differ significantly. Two principal settlement rules dominate market designs: uniform-price and pay-as-bid.
+
+In a **[uniform-price auction](@entry_id:1133595)**, also known as marginal pricing or single-price auction, a single **Market Clearing Price (MCP)** is established for all transactions within a given market interval. This price is set by the bid of the marginal unit. Critically, all generators whose offers were accepted (i.e., all **inframarginal** and the marginal generator) are paid this single MCP for every megawatt-hour (MWh) they produce, regardless of their original offer price. This mechanism rewards low-cost generators, who may receive a price well above their bid, creating an incentive for firms to bid their true marginal costs in a perfectly competitive environment.
+
+In a **[pay-as-bid auction](@entry_id:1129450)**, each dispatched generator is paid its own offer price for the quantity of energy it provides. There is no single clearing price for settlement; rather, each transaction has a unique price corresponding to the accepted bid. While this may seem intuitively fairer, it can incentivize complex [strategic bidding](@entry_id:1132489), as firms no longer have a clear incentive to bid their true marginal costs. Instead, they will attempt to bid just low enough to be dispatched, but as high as possible to maximize revenue.
+
+To illustrate the profound difference between these two mechanisms, consider a simplified wholesale auction where demand is fixed (inelastic) at $500$ MW for a single hour . Three firms submit offers:
+*   Firm 1: $250$ MW at $\$25$/MWh
+*   Firm 2: $150$ MW at $\$30$/MWh
+*   Firm 3: $400$ MW at $\$40$/MWh
+
+The ISO constructs the supply stack and dispatches generation to meet the $500$ MW demand. It accepts all $250$ MW from Firm 1, all $150$ MW from Firm 2 (for a cumulative $400$ MW), and finally, $100$ MW from Firm 3. Firm 3 is the marginal unit, and its bid of $\$40$/MWh sets the marginal price.
+
+Under a **uniform-price** settlement:
+*   The MCP is $\$40$/MWh.
+*   Firm 1 Revenue: $250 \text{ MWh} \times \$40/\text{MWh} = \$10,000$.
+*   Firm 2 Revenue: $150 \text{ MWh} \times \$40/\text{MWh} = \$6,000$.
+*   Firm 3 Revenue: $100 \text{ MWh} \times \$40/\text{MWh} = \$4,000$.
+Note that Firms 1 and 2 earn significant **inframarginal rents**—the difference between the market price and their offer price.
+
+Under a **pay-as-bid** settlement, the dispatch is identical, but the payments differ:
+*   Firm 1 Revenue: $250 \text{ MWh} \times \$25/\text{MWh} = \$6,250$.
+*   Firm 2 Revenue: $150 \text{ MWh} \times \$30/\text{MWh} = \$4,500$.
+*   Firm 3 Revenue: $100 \text{ MWh} \times \$40/\text{MWh} = \$4,000$.
+Here, only the marginal unit receives a payment equal to its bid for its marginal output; all other firms are paid their lower bid prices. The total payment to generators is significantly lower.
+
+### Pricing in Networked Systems: Locational Marginal Prices
+
+The single-node model described above is a useful simplification, but real-world power systems are complex networks of interconnected nodes (buses). The transmission network has finite capacity, and these limits, or **congestion**, fundamentally alter the economics of the market. When a transmission line cannot carry all the power that would flow in an unconstrained market, the system must be re-dispatched to respect this limit, often by using more expensive generation "downstream" of the constraint.
+
+In such markets, a single market clearing price is no longer economically efficient. Instead, most organized markets in North America use a system of **Locational Marginal Pricing (LMP)**. The LMP at a specific node represents the marginal cost to the system of supplying one additional megawatt of demand at that particular location.
+
+LMPs are calculated as the solution to a security-constrained economic dispatch problem, often formulated as a **DC Optimal Power Flow (DC-OPF)** model. This model minimizes the total cost of generation subject to a system-wide power balance constraint and individual transmission line flow limits . The LMP at each node emerges as the **shadow price** (or Lagrange multiplier) on the power balance equation at that node.
+
+A key insight from this formulation is that the LMP at any bus $i$, denoted $\text{LMP}_i$, can be decomposed into three distinct components: an energy component, a congestion component, and a loss component.
+$$ \text{LMP}_i = (\text{Energy Component}) + (\text{Congestion Component}) + (\text{Loss Component}) $$
+Under the common **lossless DC power flow approximation**, where ohmic losses are assumed to be negligible, the loss component is zero. The LMP is then expressed as:
+$$ \text{LMP}_i = \lambda + \sum_{l=1}^L H_{l,i} (\mu_l^+ - \mu_l^-) $$
+Let's define these terms:
+*   $\lambda$ is the **energy component**. It is the Lagrange multiplier on the system-wide energy balance constraint and represents the marginal cost of energy at a designated **reference bus** (a location in the network where the congestion component is defined to be zero). It is the base price of energy for the entire system before accounting for any network constraints.
+
+*   The term $\sum_{l=1}^L H_{l,i} (\mu_l^+ - \mu_l^-)$ is the **congestion component**. It captures the marginal cost of transmission congestion. Here, $\mu_l^+$ and $\mu_l^-$ are the shadow prices on the forward and backward flow limits of transmission line $l$. If a line is not congested, these multipliers are zero. If it is congested, the corresponding multiplier is positive, reflecting the cost of re-dispatching to alleviate the constraint. The matrix $H$ is the **Power Transfer Distribution Factor (PTDF)** matrix, where each element $H_{l,i}$ represents the fraction of an additional megawatt injected at bus $i$ (and withdrawn at the reference bus) that would flow over line $l$. This term effectively translates the system-wide cost of congestion on all lines into a price signal at each specific node. When there is no congestion in the system, all congestion components are zero, and LMPs at all nodes collapse to the single energy price, $\lambda$.
+
+### Game-Theoretic Models of Strategic Behavior
+
+The market mechanisms described above set the stage for strategic interaction. In markets with a limited number of firms, generators recognize that their individual bidding decisions can influence the market price. Game theory provides the essential toolkit for analyzing this behavior.
+
+A pivotal concept for any firm with market power is its **residual demand**. This is the portion of total market demand that is "left over" for the firm after accounting for the supply of all its rivals . If $Q_d(p)$ is the total market demand at price $p$, and $Q_r(p)$ is the aggregate supply from all rival firms, the residual demand for firm $i$ is $Q_{\text{res}}(p) = Q_d(p) - Q_r(p)$. It is this residual demand curve, not the total market demand curve, that dictates the firm's optimal strategy and its ability to influence prices.
+
+Two classical models form the foundation of oligopoly theory:
+
+1.  **Cournot Quantity Competition:** In the Cournot model, firms simultaneously choose a quantity to produce, and the market price is determined by the total quantity placed on the market clearing against the inverse demand curve, $P(Q)$. Each firm chooses its quantity $q_i$ to maximize its profit, $\pi_i = P(\sum q_j) q_i - C_i(q_i)$, assuming the quantities of its rivals are fixed . The first-order condition for an interior solution is $P(Q) + q_i P'(Q) - C_i'(q_i) = 0$. This can be rearranged to highlight the firm's optimal price-cost markup: $P(Q) - C_i'(q_i) = -q_i P'(Q)$. This markup shows that the firm prices above its marginal cost, and the size of this markup depends on its own output $q_i$ and the steepness of the market demand curve $P'(Q)$. In markets with capacity constraints, the firm's choice is bounded, $0 \le q_i \le \bar{q}_i$, and the equilibrium conditions are described by the Karush-Kuhn-Tucker (KKT) conditions, which account for the possibility of the firm producing at its maximum capacity.
+
+2.  **Bertrand Price Competition:** In the Bertrand model, firms simultaneously choose a price, and consumers buy from the firm with the lowest price. For a homogeneous product with identical and constant marginal costs $c$ and no capacity constraints, this model leads to the stark **Bertrand Paradox**: the unique Nash Equilibrium is for all firms to set their price equal to marginal cost, $p^* = c$, resulting in zero economic profits, as if the market were perfectly competitive. However, this paradox relies on the crucial—and for electricity markets, unrealistic—assumption of unlimited capacity . When firms have **capacity constraints**, the paradox breaks down. A firm considering undercutting a rival's price knows it can only sell up to its capacity limit. If its capacity is insufficient to serve the entire market, the rival will still be able to sell to the remaining "residual" customers at a higher price. This diminishes the incentive for relentless undercutting. As a result, in capacity-constrained markets like electricity, equilibrium prices can be sustained above marginal cost. This more realistic model is often referred to as **Bertrand-Edgeworth competition**.
+
+### The Exercise and Measurement of Market Power
+
+The ability of a firm to profitably maintain prices above a competitive level is known as **market power**. The Cournot and Bertrand-Edgeworth models show that this power arises from the strategic interaction of a few firms. The primary way firms exercise this power is through **strategic withholding**, which can be either physical (offering less capacity than is available) or economic (submitting offers at prices significantly above marginal cost).
+
+A standard metric for quantifying market power is the **Lerner Index (LI)**, defined as the price-cost margin normalized by price: $LI = \frac{p-c}{p}$. For a profit-maximizing firm, this index is directly related to the elasticity of the demand it faces. Crucially, the relevant elasticity is that of the firm's **residual demand**, not the total market demand . The relationship is given by the formula:
+$$ \frac{p - C'(q)}{p} = -\frac{1}{\epsilon_{\text{res}}} $$
+where $\epsilon_{\text{res}}$ is the price elasticity of the firm's residual demand. This equation, known as the Amoroso-Robinson relation, is fundamental. It shows that a firm's market power is inversely proportional to the elasticity of its residual demand. A firm facing a highly inelastic (steep) residual demand curve has significant market power, as a small reduction in its output will lead to a large increase in price.
+
+This framework provides a powerful lens for understanding how market structure affects market power. For example, network congestion can dramatically increase a firm's market power. Consider a generator located at an import-constrained node $A$, which receives power from a competitive region $B$ over a transmission line with a finite limit $F$ .
+*   When the line is **uncongested**, the generator at $A$ competes with imports from the elastic supply at $B$. The residual demand it faces is relatively flat (elastic), as any attempt to raise the price at $A$ would be met with increased imports from $B$.
+*   When the line is **congested**, imports are capped at $F$. The supply from region $B$ becomes perfectly inelastic from the perspective of node $A$. The generator at $A$ is now a monopolist over the remaining demand at that node. Its residual demand curve becomes much steeper (less elastic). For instance, in a model with linear demand $p_A = \alpha - \beta Q_A$ and linear rival supply from $B$, the slope of the uncongested residual demand might be $\frac{dp_A}{dq_A} = -\frac{\beta}{1+\beta s}$ (where $s$ is the rival supply slope), while the congested slope becomes $\frac{dp_A}{dq_A} = -\beta$. Because $\frac{\beta}{1+\beta s} \lt \beta$, the slope is steeper under congestion. This amplifies the generator's unilateral market power, as each unit of withheld capacity now causes a much larger price spike.
+
+### Advanced Mechanisms and Strategic Dynamics
+
+The static, one-shot models provide a solid foundation, but real-world markets involve repeated interactions, financial instruments, physical complexities, and adaptive learning—all of which have profound implications for strategic behavior.
+
+#### The Role of Financial Contracts
+
+Generators do not operate solely in the spot market. They often use **forward contracts** to hedge against volatile spot prices. A common type is a financial **contract-for-differences (CfD)**, where a generator agrees to a fixed price $p^F$ for a quantity of energy $F_i$ . This is a purely financial arrangement that settles against the spot price $p$. If the generator sold the contract, its net settlement is $(p^F - p)F_i$.
+
+The total profit for a generator with a forward position is $\pi_i = p \cdot q_i + (p^F - p)F_i - C_i(q_i)$, which can be rewritten as $\pi_i = p(q_i - F_i) + p^F F_i - C_i(q_i)$. This reveals a crucial insight: the generator is no longer exposed to the spot price on its full output $q_i$, but only on its **net position**, $q_i - F_i$. This fundamentally alters its incentive to exercise market power. The optimal Cournot markup condition becomes:
+$$ p - C_i'(q_i) = -p'(Q)(q_i - F_i) $$
+Compared to the no-contract case where the markup is proportional to $q_i$, a generator that has sold forward contracts ($F_i > 0$) has a diminished incentive to raise the spot price. If a generator is perfectly hedged ($F_i = q_i$), its incentive to manipulate the spot price disappears entirely, and it behaves as a price-taker, setting $p = C_i'(q_i)$. If it is "net short" ($F_i > q_i$), it actually has an incentive to *lower* the spot price. Thus, robust forward markets can serve as a significant market power mitigation tool.
+
+#### Repeated Interactions and Tacit Collusion
+
+Electricity markets are not one-shot games; they are repeated daily. This opens the door to outcomes that are not stable in a single period, most notably **tacit collusion**. This is the maintenance of supra-competitive prices not through explicit agreements (which are illegal), but through unspoken, mutual understanding reinforced by the threat of future punishment .
+
+In the context of an infinitely repeated game, firms can adopt **trigger strategies**. For example, firms might implicitly agree to produce at a collusive (e.g., monopoly) level. If any firm deviates from this agreement to capture a short-term gain, all other firms "punish" it by reverting to the non-cooperative Cournot-Nash equilibrium quantities in all future periods. Such a strategy can sustain collusion if firms are sufficiently patient. Patience is measured by the **discount factor**, $\delta \in (0,1)$, which represents the value today of a dollar received in the next period. Collusion is sustainable if the present value of the collusive profit stream exceeds the one-time gain from deviation followed by an eternity of lower punishment profits. This leads to a minimum threshold for the discount factor, $\delta \ge \delta_{min}$, for collusion to be a subgame perfect equilibrium. For the symmetric Cournot duopoly with linear demand, this threshold is calculated to be $\delta \ge \frac{9}{17}$. This demonstrates how market outcomes can remain persistently above competitive levels even without explicit communication.
+
+#### Non-Convexities and Market Design Flaws
+
+The models discussed so far generally assume that generator cost functions are simple and convex. In reality, thermal generators have highly **non-convex costs**, including large **start-up costs** to bring a unit online and **no-load costs** incurred just to stay synchronized to the grid, even at zero output . These fixed and commitment-based costs mean that a simple uniform-price auction based on marginal costs can fail to ensure financial viability for essential units.
+
+This leads to two well-known problems. The first is **paradoxical rejection**, where a generator with a low marginal cost ($c_i  p^*$) is not dispatched by the cost-minimizing algorithm because its large start-up cost makes it more expensive overall than a unit with a higher marginal cost but lower start-up cost. The second, and more common, issue is the **"missing money" problem**. A generator with high fixed costs may be essential to meet demand, but the revenue it earns from the uniform energy price may be insufficient to cover its total costs (energy, no-load, and start-up). For example, in an hour where a baseload unit $G_1$ (with large fixed costs but low marginal cost) and a peaker unit $G_2$ (with no fixed costs but high marginal cost) are both needed, the price will be set by $G_2$'s high marginal cost. While $G_2$ breaks even, $G_1$ might still suffer a loss because its inframarginal rents from the energy market are not enough to cover its fixed costs. To solve this, ISOs make out-of-market **uplift payments** (or side-payments) to ensure such generators can recover their full costs, thereby guaranteeing their availability.
+
+#### Learning and Adaptive Bidding Strategies
+
+Finally, strategic behavior is not static. Firms learn from experience and adapt their bidding strategies over time. Modern approaches model this learning process using frameworks from artificial intelligence. The problem of a firm repeatedly bidding into an uncertain market can be formulated as a **Markov Decision Process (MDP)**, where states represent market conditions (e.g., demand levels, rivals' recent behavior), actions are the firm's possible bids, and rewards are the resulting profits .
+
+**Reinforcement Learning (RL)** provides a powerful set of tools for an agent to learn an optimal bidding policy in such an environment, even without a complete model of its rivals or market dynamics. A simple strategy is a **myopic best response**, where the firm chooses the bid that maximizes its expected profit in the current period only. However, a more sophisticated, forward-looking approach like **Q-learning** allows the agent to learn the long-term value, or **Q-value**, of taking a certain action in a given state. The Q-learning algorithm updates its value estimates based on experience, balancing immediate rewards with the discounted value of future states. For instance, the update rule for the value of taking action $a_t$ in state $s_t$, $Q(s_t, a_t)$, is:
+$$ Q(s_t, a_t) \leftarrow (1-\alpha)Q(s_t, a_t) + \alpha [r_t + \gamma \max_{a'} Q(s_{t+1}, a')] $$
+where $r_t$ is the immediate profit, $\alpha$ is the learning rate, and $\gamma$ is the discount factor. By iteratively updating these Q-values, the firm can learn a sophisticated policy that maximizes the long-run stream of discounted profits, capturing the complex temporal dynamics of strategic interaction.
