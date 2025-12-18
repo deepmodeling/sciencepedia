@@ -1,0 +1,8 @@
+## Introduction
+Distillation is one of the most ancient and powerful separation techniques known to science, yet it remains a cornerstone of modern industry and research. At its heart, it addresses a fundamental challenge: how to unmix liquids that have been thoroughly combined at the molecular level. While the concept of boiling a mixture to separate its components seems simple, the underlying principles and their ingenious applications have shaped entire fields, from petrochemical engineering to pharmaceutical synthesis. This article delves into the world of distillation, providing a bridge from foundational theory to real-world practice.
+
+The following chapters will guide you through this essential process. First, we will examine the core **Principles and Mechanisms**, exploring the thermodynamic dance of molecules that makes separation possible. Following that, we will journey through the vast landscape of **Applications and Interdisciplinary Connections**, discovering how distillation refines the fuel for our cars, purifies life-saving medicines, drives chemical reactions, and adapts to the modern challenges of [sustainability](@article_id:197126) and [computational design](@article_id:167461).
+
+## Principles and Mechanisms
+
+Imagine you have a mixture of liquids, say, alcohol and water from a [fermentation](@article_id:143574) process. You want to separate them. The simplest idea you might have is to boil the mixture. Alcohol, as we know, feels more ‘volatile’ than water; it evaporates more readily.
