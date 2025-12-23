@@ -1,0 +1,119 @@
+## Introduction
+The sound produced by moving objects is a ubiquitous phenomenon, from the shifting pitch of a passing siren to the roar of a jet engine. Accurately modeling these acoustic signatures is a critical challenge in fields like aerospace engineering, environmental acoustics, and underwater sonar. The core difficulty lies in capturing the complex interplay between the source's motion, the finite speed of sound, and the physics of wave propagation. This article provides a graduate-level exploration into the computational modeling of moving acoustic sources and observers, bridging the gap between fundamental wave theory and advanced numerical application.
+
+We begin in the "Principles and Mechanisms" chapter by deriving the fundamental equations that govern sound from moving sources and exploring the profound consequences of causality, such as the retarded-time relationship and the Doppler effect. We will investigate the conditions for supersonic [shock formation](@entry_id:194616) and examine powerful theoretical frameworks like Lighthill's [acoustic analogy](@entry_id:1120690). The second chapter, "Applications and Interdisciplinary Connections," demonstrates how these principles are applied in practice, with a deep dive into [computational aeroacoustics](@entry_id:747601), inverse [source localization](@entry_id:755075) problems, and even cosmological observations. Finally, the "Hands-On Practices" chapter provides targeted problems that challenge the reader to implement and analyze key concepts, solidifying their understanding of these essential techniques. Through this structured approach, the reader will gain a robust theoretical and practical foundation in this dynamic area of computational acoustics.
+
+## Principles and Mechanisms
+
+This chapter elucidates the core principles and physical mechanisms that govern the computational modeling of moving acoustic sources and observers. We will derive the fundamental equations of motion, explore the kinematic consequences of [finite propagation speed](@entry_id:163808), and examine the frameworks used to describe complex aeroacoustic phenomena and to construct robust numerical simulations.
+
+### The Governing Wave Equation for a Moving Source
+
+The foundation of computational acoustics is the [linear wave equation](@entry_id:174203). However, its standard form must be carefully adapted to account for source motion. A primary challenge lies in representing a moving point source within a partial differential equation defined on a stationary grid. The choice of acoustic variable—such as [velocity potential](@entry_id:262992) or pressure—profoundly affects the mathematical structure of the source term.
+
+Let us consider a compact acoustic monopole, representing a source of mass injection, moving along a prescribed trajectory $\mathbf{s}(t)$ in a quiescent, homogeneous fluid. The source strength is given by a volumetric flow rate $q(t)$. The linearized laws of mass and [momentum conservation](@entry_id:149964), combined with an isentropic equation of state, can be used to derive a governing equation. If we assume the flow to be irrotational, we can introduce an **acoustic [velocity potential](@entry_id:262992)**, $\phi(\mathbf{x}, t)$, such that the particle velocity is $\mathbf{v} = \nabla\phi$. This choice proves to be particularly elegant.
+
+The resulting [inhomogeneous wave equation](@entry_id:176877) for the [velocity potential](@entry_id:262992) is given by:
+$$ \nabla^2 \phi(\mathbf{x},t) - \frac{1}{c^2}\,\frac{\partial^2 \phi(\mathbf{x},t)}{\partial t^2} = q(t)\,\delta\big(\mathbf{x}-\mathbf{s}(t)\big) $$
+where $c$ is the speed of sound and $\delta(\cdot)$ is the Dirac delta distribution. Remarkably, for a moving monopole source, the source term for the [velocity potential](@entry_id:262992) is a simple [delta function](@entry_id:273429) localized at the instantaneous source position, with no additional derivatives. This elegant form holds under the assumptions of an [irrotational flow](@entry_id:159258) in a homogeneous, lossless medium, provided the source is acoustically compact and $q(t)$ is interpreted as the volumetric source strength. 
+
+This simplicity is lost if we formulate the problem in terms of acoustic pressure, $p$. The pressure is related to the [velocity potential](@entry_id:262992) by $p = -\rho_0 \frac{\partial \phi}{\partial t}$, where $\rho_0$ is the ambient density. Deriving the wave equation for pressure from the fundamental conservation laws reveals a more complex source term, especially when the source is moving. The equation takes the form:
+$$ \frac{1}{c^2}\frac{\partial^2 p}{\partial t^2} - \nabla^2 p = \frac{\partial M}{\partial t} $$
+where $M(\mathbf{x}, t) = \rho_0 q(t) \delta(\mathbf{x}-\mathbf{s}(t))$ is the mass injection rate per unit volume. The time derivative on the right-hand side, when applied to the moving delta function, yields a dipole-like term through the [chain rule](@entry_id:147422) for distributions:
+$$ \frac{\partial}{\partial t}\Big[\rho_0 q(t) \delta(\mathbf{x}-\mathbf{s}(t))\Big] = \rho_0 \frac{dq}{dt}\delta(\mathbf{x}-\mathbf{s}(t)) - \rho_0 q(t) \dot{\mathbf{s}}(t) \cdot \nabla \delta(\mathbf{x}-\mathbf{s}(t)) $$
+The gradient-of-delta term, $-\nabla \delta(\cdot)$, represents an acoustic dipole. This term arises physically from the momentum associated with the injected mass moving at velocity $\dot{\mathbf{s}}(t)$. This complexity highlights the theoretical and computational advantage of using the [velocity potential](@entry_id:262992) $\phi$ for modeling moving monopoles, as it sidesteps the need to handle [distributional derivatives](@entry_id:181138) in the source term.  It is crucial to note that the form of this linear PDE does not change with source speed; it is valid for both subsonic and supersonic motion, although the character of its solutions changes dramatically.
+
+### Causality, Retarded Time, and the Doppler Effect
+
+The finite speed of sound imposes a strict causal relationship between an emission event and an observation event. A signal emitted from a source at position $\mathbf{s}(\tau)$ at time $\tau$ can only be detected by an observer at position $\mathbf{x}(t)$ at a later time $t$, such that the travel time, $t-\tau$, equals the travel distance divided by the sound speed $c$. This principle is encapsulated in the **retarded-time equation**:
+$$ t - \tau = \frac{\|\mathbf{x}(t) - \mathbf{s}(\tau)\|}{c} $$
+For any given observation time $t$, solving this implicit equation for the emission time $\tau$ is a cornerstone of modeling moving sources. The solution, $\tau(t)$, is known as the **retarded time**. Geometrically, this equation signifies that the emission event $(\mathbf{s}(\tau), \tau)$ must lie on the past **[light cone](@entry_id:157667)** (or more accurately, *sound cone*) of the observation event $(\mathbf{x}(t), t)$. Equivalently, the emission point $\mathbf{s}(\tau)$ must lie on a sphere of radius $c(t-\tau)$ centered at the observer's position $\mathbf{x}(t)$. 
+
+The relationship between the rates of change of observer time and source time, $dt/d\tau$, is the source of all kinematic effects, most notably the **Doppler effect**. The received signal, $p_r(t)$, can be modeled as the source signal, $p_s(\tau)$, evaluated at the retarded time, i.e., $p_r(t) = p_s(\tau(t))$. If the source emits a harmonic signal with phase $\phi_s(\tau) = \omega_0 \tau$, the received phase is $\phi_r(t) = \omega_0 \tau(t)$. The instantaneous received frequency, $\omega_r$, is the time derivative of this phase:
+$$ \omega_r(t) = \frac{d\phi_r}{dt} = \omega_0 \frac{d\tau}{dt} $$
+By differentiating the retarded-time equation with respect to $t$, we can find an expression for $d\tau/dt$. For a source with velocity $\mathbf{v}_s$ and an observer with velocity $\mathbf{v}_o$, the result is the classic Doppler shift formula:
+$$ \omega_r = \omega_0 \frac{1 - \mathbf{n}\cdot \mathbf{v}_o/c}{1 - \mathbf{n}\cdot \mathbf{v}_s/c} $$
+where $\mathbf{n}$ is the [unit vector](@entry_id:150575) pointing from the source's emission position to the observer's reception position. The numerator accounts for the observer's motion, and the denominator accounts for the source's motion. This formula is fundamental to predicting the frequency shifts observed in moving acoustic systems. 
+
+It is a common misconception that the Doppler effect is merely a frequency shift. It is, more fundamentally, a **[time-scaling](@entry_id:190118)** (compression or expansion) of the entire received waveform. Consider a source emitting a finite pulse of duration $T_0$, such as a gated [sinusoid](@entry_id:274998). For a source moving toward a stationary observer at speed $v$, the relationship between reception time interval $\Delta t$ and emission time interval $\Delta \tau$ is $\Delta t = \Delta \tau (1 - v/c)$. The received pulse is therefore time-compressed, with a new duration $T_r = T_0(1-v/c)$. Both the carrier frequency and the pulse envelope are scaled by the same factor. The apparent frequency is higher because more cycles are "compressed" into a shorter time interval, and the pulse itself is shorter for the same reason. This unified view of [time-scaling](@entry_id:190118) is crucial for accurate computational modeling of broadband signals from moving sources. 
+
+### Wavefronts and Supersonic Motion: The Mach Cone
+
+The nature of the retarded-time equation changes fundamentally depending on whether the source is subsonic or supersonic. The uniqueness of the retarded time $\tau$ for a given observation time $t$ depends on the [monotonicity](@entry_id:143760) of the function $F(\tau) = c(t-\tau) - \|\mathbf{x}(t)-\mathbf{s}(\tau)\|$. Its derivative is $F'(\tau) = -c + \mathbf{v}_s(\tau) \cdot \mathbf{n}(\tau)$, where $\mathbf{n}(\tau)$ is the unit vector from source to observer.
+
+If the source is always **subsonic** (i.e., $\|\mathbf{v}_s\|  c$), then $\|\mathbf{v}_s \cdot \mathbf{n}\|  c$, which ensures that $F'(\tau)$ is always negative. The function $F(\tau)$ is therefore strictly monotonic, guaranteeing a **unique solution** for the retarded time $\tau$.
+
+If the source is **supersonic** (i.e., $\|\mathbf{v}_s\| > c$), it is possible for the projected velocity $\mathbf{v}_s \cdot \mathbf{n}$ to exceed $c$. In this case, $F'(\tau)$ can become positive, and $F(\tau)$ is no longer monotonic. This can lead to zero, one, or multiple solutions for $\tau$, corresponding physically to an observer hearing sound from multiple emission times simultaneously. 
+
+This piling up of wavefronts from a supersonic source leads to the formation of a singular surface, or shock wave, known as the **Mach cone**. This cone is the **envelope** of the family of spherical wavefronts emitted by the source. An envelope exists only if, in addition to the retarded-time condition $F(\tau; \mathbf{x}, t) = 0$, the condition $\partial F/\partial \tau = 0$ is also satisfied. As we have seen, this second condition is equivalent to $\mathbf{v}_s \cdot \mathbf{n} = c$. 
+
+Let $\theta$ be the angle between the source velocity $\mathbf{v}$ and the [direction vector](@entry_id:169562) $\mathbf{n}$. The condition becomes $\|\mathbf{v}\| \cos\theta = c$, or $\cos\theta = c/\|\mathbf{v}\| = 1/M$, where $M$ is the Mach number. A real solution for $\theta$ exists only if $M \ge 1$. The geometry of this condition defines a cone trailing the source. The **Mach angle**, $\mu$, which is the half-angle of the cone, is complementary to $\theta$ and satisfies:
+$$ \sin\mu = \frac{1}{M} $$
+For subsonic motion ($M  1$), no envelope forms, and the wavefronts are a set of non-intersecting, nested spheres. For supersonic motion ($M>1$), the constructive interference of wavefronts forms the Mach cone, a hallmark of supersonic flight. 
+
+### Motion and Acoustic Compactness
+
+For a stationary, spatially extended source of size $a$ oscillating at frequency $\omega_0$, the source is considered **acoustically compact** if its dimensions are much smaller than the acoustic wavelength, a condition expressed as $k_0 a \ll 1$, where $k_0 = \omega_0/c$ is the wavenumber. Under this condition, phase differences across the source are negligible, and the source radiates coherently as a single point multipole.
+
+Motion complicates this picture. For a moving source, the phase of the signal arriving at a distant observer depends not only on the source's internal phase but also on the retarded time, which varies for different points within the source. This introduces motion-induced phase differences. A careful analysis of the retarded time for a distributed source shows that the [phase variation](@entry_id:166661) across the source is governed by an **effective wavenumber**, $k_{\text{obs}}$, which is direction-dependent :
+$$ k_{\text{obs}} = \frac{\omega_0}{c(1 - \mathbf{M}\cdot\hat{\mathbf{n}})} = \frac{k_0}{1 - \mathbf{M}\cdot\hat{\mathbf{n}}} $$
+where $\mathbf{M}=\mathbf{V}/c$ is the Mach vector and $\hat{\mathbf{n}}$ is the direction to the observer. The compactness criterion for a moving source is therefore not $k_0 a \ll 1$, but rather:
+$$ |k_{\text{obs}}| a \ll 1 $$
+This is a much stricter condition. In the direction of motion ($\mathbf{M}\cdot\hat{\mathbf{n}} \approx M$), the denominator $(1-M)$ becomes small, causing $k_{\text{obs}}$ to become very large. Consequently, a source that is compact at rest may become acoustically non-compact when moving, especially when observed from the front. This apparent "stretching" of the source in the acoustic sense can alter its [radiation pattern](@entry_id:261777), for example, by weakening the cancellation that defines a [quadrupole](@entry_id:1130364) and making it radiate more like a lower-order multipole. 
+
+### Aeroacoustic Sources: Lighthill's Analogy
+
+In many applications, particularly in aeronautics, the most significant source of sound is not a vibrating object but the turbulent fluid motion itself. The theory of **[aeroacoustics](@entry_id:266763)** provides a framework for modeling this phenomenon. The foundational concept is **Lighthill's [acoustic analogy](@entry_id:1120690)**.
+
+Sir James Lighthill demonstrated that the exact equations of fluid motion (the Navier-Stokes equations) can be rearranged, without approximation, into the form of an [inhomogeneous wave equation](@entry_id:176877) :
+$$ \frac{\partial^2 \rho'}{\partial t^2} - c_0^2 \nabla^2 \rho' = \frac{\partial^2 T_{ij}}{\partial x_i \partial x_j} $$
+Here, $\rho'$ is the density fluctuation, $c_0$ is the sound speed in the ambient fluid, and $T_{ij}$ is the **Lighthill stress tensor**:
+$$ T_{ij} = \rho u_i u_j + (p-c_0^2\rho')\delta_{ij} - \tau_{ij} $$
+where $\rho u_i u_j$ is the Reynolds stress tensor representing [momentum flux](@entry_id:199796), $(p-c_0^2\rho')\delta_{ij}$ represents entropy and non-isentropic pressure fluctuations, and $\tau_{ij}$ is the viscous stress tensor.
+
+This powerful analogy recasts the complex problem of sound generation by flow into a standard acoustics problem: a non-moving medium is excited by a source term. The source of the sound is the **double divergence** of the Lighthill tensor. For a compact source region, the double spatial derivative implies that the source is of **quadrupole** nature. For high-Reynolds-number, low-Mach-number turbulence (such as in a jet exhaust), the Reynolds stress term $\rho u_i u_j$ is the dominant component of $T_{ij}$. Lighthill's theory thus leads to the celebrated conclusion that sound generation by free turbulence is equivalent to a field of acoustic quadrupoles. 
+
+### Sound Propagation in Uniform Flow: The Convected Wave Equation
+
+When the medium itself is in motion, such as a uniform wind with velocity $\mathbf{U}$, the [propagation of sound](@entry_id:194493) is altered. By linearizing the fluid dynamics equations around a uniform base flow instead of a quiescent state, one can derive the **[convected wave equation](@entry_id:181114)** for the [acoustic pressure](@entry_id:1120704) perturbation $p'$:
+$$ \left( \frac{\partial}{\partial t} + \mathbf{U} \cdot \nabla \right)^2 p' - c_0^2 \nabla^2 p' = f(\mathbf{x}, t) $$
+where $f$ is a source term. The operator $\frac{D}{Dt} \equiv \frac{\partial}{\partial t} + \mathbf{U} \cdot \nabla$ is the **[material derivative](@entry_id:266939)** (or [convective derivative](@entry_id:262900)) following the mean flow. This equation shows that the simple time derivative $\partial^2/\partial t^2$ is replaced by the square of the material derivative, capturing the effect of the sound being "convected" or "dragged" by the flow. 
+
+This physics is consistent with Galilean relativity. Applying a Galilean [coordinate transformation](@entry_id:138577) to a frame moving with the flow, $\mathbf{x}' = \mathbf{x} - \mathbf{U}t$ and $t' = t$, reveals that the material derivative simplifies to the partial time derivative in the new frame: $\frac{D}{Dt} = \frac{\partial}{\partial t'}$. The [convected wave equation](@entry_id:181114) thus transforms into the standard wave equation in the [moving frame](@entry_id:274518)'s coordinates:
+$$ \frac{\partial^2 p'}{\partial t'^2} - c_0^2 \nabla'^2 p' = f'(\mathbf{x}', t') $$
+This confirms that in a reference frame co-moving with the fluid, acoustics behaves as if the fluid were at rest. The dispersion relation for a plane wave $p' \propto \exp(i(\mathbf{k}\cdot\mathbf{x}-\omega t))$ in the laboratory frame reflects this convection, yielding $(\omega - \mathbf{U}\cdot\mathbf{k})^2 = c_0^2 \|\mathbf{k}\|^2$. The term $\omega - \mathbf{U}\cdot\mathbf{k}$ is the Doppler-shifted frequency as perceived in the co-[moving frame](@entry_id:274518). 
+
+### The Principle of Reciprocity and Its Violation by Motion
+
+In a stationary, lossless, and linear medium, the principle of **[acoustic reciprocity](@entry_id:1120710)** holds. It states that the acoustic response at a point $\mathbf{x}_B$ due to a source at $\mathbf{x}_A$ is identical to the response at $\mathbf{x}_A$ due to the same source placed at $\mathbf{x}_B$. This is a direct consequence of the self-adjoint nature of the underlying wave operator and boundary conditions. The Green's function is symmetric: $G(\mathbf{x}_A, \mathbf{x}_B; t) = G(\mathbf{x}_B, \mathbf{x}_A; t)$. 
+
+This elegant symmetry is broken when both the source and receiver are in motion relative to the medium. The stationary medium provides a preferred reference frame. The overall mapping from a source signal $q(t)$ on trajectory $\mathbf{x}_s(t)$ to a received signal $r(t)$ on trajectory $\mathbf{x}_r(t)$ is not symmetric under the exchange of trajectories. The physical reason is that the kinematic effects—the retarded time mapping and the Doppler factors—are not symmetric. Swapping source and receiver velocities in the Doppler formula, for instance, inverts the scaling factor rather than leaving it unchanged.
+
+From a mathematical perspective, the overall input-output operator is a composition of a time-dependent source injection operator, a time-invariant propagation operator (the Green's function convolution), and a time-dependent receiver sampling operator. The time-dependence of the injection and sampling operators, tied to the specific trajectories, makes the composite operator non-self-adjoint, thus breaking the [exchange symmetry](@entry_id:151892). 
+
+### Computational Formulations for Moving Systems
+
+The principles described above must be translated into robust computational algorithms. Two key challenges are solving the implicit retarded-time equation and solving the wave PDE on moving domains.
+
+#### Solving the Retarded Time Equation Numerically
+
+For general, non-uniform motion, the retarded-time equation $F(\tau) = t - \tau - \|\mathbf{x}(t)-\mathbf{s}(\tau)\|/c = 0$ has no [closed-form solution](@entry_id:270799) and must be solved numerically for $\tau$ at each observer time step $t$. **Newton's method** is a highly efficient choice, given its [quadratic convergence](@entry_id:142552) for [simple roots](@entry_id:197415). As established, a unique solution is guaranteed for subsonic sources.
+
+The success of Newton's method depends on a good initial guess, $\tau_0$. Several strategies exist :
+1.  **First-Order Guess**: A simple but effective guess is to assume the source did not move, i.e., $\mathbf{s}(\tau) \approx \mathbf{s}(t)$, yielding $\tau_0 = t - \|\mathbf{x}(t)-\mathbf{s}(t)\|/c$. This is often sufficient if the source velocity is low or time steps are small.
+2.  **Bracketing**: For subsonic motion with maximum speed $V_{\max}$, one can prove that the root $\tau$ is contained within a rigorous bracket: $\tau \in [t - \frac{D}{c - V_{\max}}, t - \frac{D}{c + V_{\max}}]$, where $D = \|\mathbf{x}(t)-\mathbf{s}(t)\|$. The midpoint of this bracket can serve as a robust initial guess.
+3.  **Constant-Velocity Quadratic Solver**: A more sophisticated guess can be derived by approximating the source trajectory with a first-order Taylor expansion: $\mathbf{s}(\tau) \approx \mathbf{s}(t) - \mathbf{v}_s(t)(t-\tau)$. Substituting this into the retarded-time equation and squaring both sides yields a quadratic equation for the time delay $\Delta = t-\tau$. Solving this quadratic for its unique positive root provides a highly accurate initial guess that accounts for first-order motion effects.
+
+These methods are essential for implementing [time-domain solvers](@entry_id:755984) based on retarded-time formalisms, such as those using the Ffowcs Williams-Hawkings (FW-H) equation. 
+
+#### Solving the Wave Equation on Moving Domains: The ALE Method
+
+When dealing with problems involving moving or deforming boundaries, such as the sound radiated by a vibrating structure, solving the wave PDE directly is challenging. The **Arbitrary Lagrangian-Eulerian (ALE)** formulation is a powerful technique used in finite element (FEM) and [finite volume](@entry_id:749401) (FVM) methods to handle such problems.
+
+The core idea of ALE is to decouple the motion of the computational mesh from the motion of the fluid. One defines a time-dependent, invertible mapping $\mathbf{x} = \boldsymbol{\chi}(\mathbf{X}, t)$ from a fixed, computationally convenient **reference domain** (with coordinates $\mathbf{X}$) to the time-varying **physical domain** (with coordinates $\mathbf{x}$). The governing equations are then "pulled back" and reformulated on the static reference domain. 
+
+This transformation introduces new terms into the equations. The time derivative in the physical frame (Eulerian) is related to the time derivative in the reference frame (Lagrangian on the mesh) via the ALE time derivative relation:
+$$ \frac{\partial p}{\partial t}\Big|_{\mathbf{x}} = \frac{\partial \hat{p}}{\partial t}\Big|_{\mathbf{X}} - \mathbf{w} \cdot \nabla_{\mathbf{x}} p $$
+where $\hat{p}(\mathbf{X}, t) = p(\boldsymbol{\chi}(\mathbf{X},t),t)$ is the pulled-back field and $\mathbf{w} = \partial \boldsymbol{\chi}/\partial t$ is the velocity of the mesh. Spatial derivatives also transform, involving the [deformation gradient tensor](@entry_id:150370) $\mathbf{F} = \partial \boldsymbol{\chi} / \partial \mathbf{X}$ and its determinant $J$.
+
+When applied to the [weak form](@entry_id:137295) of the acoustic wave equation, the ALE transformation results in a new variational problem on the fixed reference domain. This new [weak form](@entry_id:137295) includes additional terms related to the mesh velocity $\mathbf{w}$ and the [geometric transformation](@entry_id:167502) factors $\mathbf{F}$ and $J$. While the resulting equation is more complex, its key advantage is that it is posed on a time-invariant domain $\hat{\Omega}$, which is vastly simpler to discretize and solve numerically. The ALE method is a standard and essential tool for [computational aeroacoustics](@entry_id:747601) (CAA) and [fluid-structure interaction](@entry_id:171183) problems. 

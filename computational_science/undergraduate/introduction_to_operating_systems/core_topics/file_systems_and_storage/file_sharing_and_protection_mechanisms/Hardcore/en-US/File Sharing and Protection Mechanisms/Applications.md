@@ -1,0 +1,102 @@
+## Applications and Interdisciplinary Connections
+
+The principles of file sharing and protection, including discretionary and mandatory [access control](@entry_id:746212), cryptographic integrity, and [concurrency](@entry_id:747654) primitives, are not merely abstract concepts. They form the bedrock upon which secure, reliable, and collaborative computing systems are built. This chapter explores the application of these foundational mechanisms in a variety of interdisciplinary and real-world contexts. By examining a series of practical design problems, we will demonstrate how core principles are synthesized to address complex requirements in system administration, application security, scientific computing, and large-scale [distributed systems](@entry_id:268208). Our focus will be less on re-explaining the mechanisms themselves and more on illustrating their utility and synergy in creating robust solutions.
+
+### Foundational Patterns in Multi-User Systems
+
+Virtually every multi-user operating system must provide mechanisms to facilitate collaboration while protecting individual privacy. The following patterns represent common solutions to these fundamental challenges.
+
+#### Balancing Collaboration and Privacy with POSIX Permissions
+
+A classic system administration task is to configure shared storage for a team project where different directories have different access requirements. Consider a university project team with a shared code repository and a directory for private notes. The `code` directory requires a collaborative environment where all members can freely read, write, and modify each other's files. In contrast, the `notes` directory must allow each member to create a personal subdirectory that is private to them and a project lead, but inaccessible to other team members.
+
+This can be achieved by combining several POSIX features. For the collaborative `code` directory, setting the `setgid` bit on the directory ensures that all new files automatically inherit the project's group ownership. A permissive `umask` (such as $0002_8$) or, more robustly, a default Access Control List (ACL) granting group write permissions ensures that new files are group-writable by default. Crucially, the directory's sticky bit is *not* set, allowing any group member to delete or rename any file, which facilitates open collaboration.
+
+For the `notes` directory, a different combination of mechanisms is required to enforce privacy. Here, the directory is made group-writable, but the **sticky bit** is set. This configuration allows members to create their own subdirectories but prevents them from deleting or renaming subdirectories they do not own. The fine-grained privacy requirement—that a subdirectory is accessible only to its owner and the project lead—cannot be met by standard POSIX permissions alone. This necessitates the use of default ACLs on the `notes` directory. A default ACL can be configured to grant the creator full access (`user::rwx`), grant the project lead specific access (`user:lead:r-x`), and explicitly deny access to the general project group (`group::---`) for any newly created subdirectory. This layered approach demonstrates how `setgid`, the sticky bit, and ACLs can be orchestrated to create sophisticated, tailored sharing policies. 
+
+#### Designing Secure Submission Systems
+
+Another common requirement is a secure digital "dropbox" where multiple users can submit files into a single directory, but cannot view, modify, or delete the submissions of others. A naive world-writable directory is insecure, as it allows any user to delete any file. Setting the sticky bit on a world-writable directory (e.g., mode $1777$) solves the [deletion](@entry_id:149110) problem by restricting removal and renaming operations to the file's owner.
+
+However, two significant challenges remain: name squatting and accidental overwrites. A malicious user could create empty files with predictable names (e.g., `assignment1-bob.pdf`) to prevent other users from submitting their work. Furthermore, standard tools like `cp` can easily overwrite existing files. A robust solution requires moving beyond simple permissions and enforcing policy through a trusted intermediary. This can be implemented as a small, special-purpose `Set-User-ID` (SUID) helper program. When a user wishes to submit a file, they execute this program, which runs with the privileges of the instructor or system administrator. The helper program enforces a canonical and non-predictable naming scheme (e.g., combining user ID, a timestamp, and a random string) and uses the atomic `open()` [system call](@entry_id:755771) with the `$O_{\text{CREAT}} | O_{\text{EXCL}}$` flags. This flag combination guarantees that the file is created only if it does not already exist, atomically preventing race conditions and overwrites. This design pattern, combining the sticky bit for [deletion](@entry_id:149110) protection with a trusted SUID program for enforcing naming and creation policy, provides a highly secure and robust submission system. 
+
+#### Concurrency Control with Advisory Locks
+
+In scenarios like collaborative editing, where multiple processes may access the same file concurrently, advisory locks are essential for coordination. POSIX-compliant systems offer two primary mechanisms: `flock` and `fcntl`. While both can provide shared (read) and exclusive (write) locks, they have critical differences. `flock` typically applies to the entire file, making it simple to use for coarse-grained coordination. In contrast, `fcntl` supports byte-range (record) locking, allowing different processes to work on different parts of the same file simultaneously without conflict, which is ideal for a collaborative editor where users edit distinct paragraphs.
+
+A crucial aspect of these mechanisms is that they are *advisory*—they rely on the voluntary cooperation of all participating processes. Furthermore, neither `flock` nor `fcntl` inherently guarantees fairness. In a classic reader-writer scenario, a continuous stream of readers acquiring and releasing shared locks can indefinitely prevent a writer from acquiring an exclusive lock, a condition known as **starvation**. Since the kernel does not typically enforce a first-in-first-out (FIFO) policy for lock requests, applications requiring fairness must implement it themselves. Common mitigations include using an application-level coordinator that queues and grants lock requests, or programming processes to use timeouts on lock attempts with an exponential backoff and retry strategy. Understanding these subtleties is key to building correct and responsive concurrent applications. 
+
+### Ensuring Data Integrity and Atomicity
+
+Protecting data extends beyond [access control](@entry_id:746212) to ensuring its correctness and consistency, especially during updates or in the face of potential corruption.
+
+#### Atomic Updates for Services and Configurations
+
+Many services rely on configuration files that are read by long-running processes. Updating these files presents a significant challenge: if the file is updated "in-place" (e.g., by truncating and rewriting), a reader process that opens it during the update may see a truncated or partially written, and therefore corrupt, version.
+
+The correct and widely adopted solution is the **atomic rename** pattern. Instead of modifying the live file, the writer process performs the following steps:
+1.  Creates a new version of the file under a temporary name in the same directory (e.g., `config.json.tmp`).
+2.  Writes all content to this temporary file.
+3.  Calls `[fsync](@entry_id:749614)()` on the temporary file's descriptor to ensure its content is durably written to disk.
+4.  Executes the `rename()` [system call](@entry_id:755771) to atomically replace the original file with the temporary one (`rename("config.json.tmp", "config.json")`).
+5.  Calls `[fsync](@entry_id:749614)()` on the containing directory to ensure the directory modification (the rename) is also durable.
+
+Because the `rename()` operation is atomic on a POSIX [filesystem](@entry_id:749324), any reader process calling `open()` will see either the complete old file or the complete new file, never an intermediate state. This pattern is fundamental to reliable software updates and configuration management. 
+
+This same principle can be extended to manage entire directories of configuration files or software versions. A common pattern is to use a [symbolic link](@entry_id:755709), such as `/srv/app/current`, to point to the active version directory (e.g., `/srv/app/versions/v1`). To publish a new version, `v2`, a new temporary [symbolic link](@entry_id:755709) (`current.tmp`) is created to point to the fully prepared `v2` directory. Then, an atomic `rename("current.tmp", "current")` call is used to instantly and atomically switch the live version. This provides a zero-downtime update mechanism and also facilitates easy rollbacks, as `current` can be just as easily repointed back to a previous version directory. 
+
+#### Immutable and Verifiable Data Logs
+
+In [scientific computing](@entry_id:143987), finance, and system auditing, it is often critical to maintain logs that are not only readable but also provably immutable and untampered. Simple [file permissions](@entry_id:749334) are insufficient, as even the file's owner can modify its content. A stronger, kernel-enforced guarantee is needed.
+
+On Linux systems, the `chattr +a` command can set the **append-only** [inode](@entry_id:750667) attribute on a file. When this attribute is set, the kernel permits writes only in append mode; any attempt to modify existing data, truncate the file, or delete it is denied, even for the root user. This provides a powerful mechanism for creating append-only logs.
+
+To further protect against corruption (e.g., from storage errors) and provide verifiable integrity, application-level techniques can be layered on top. A cryptographic **hash chain** can be embedded within the log itself, where each new record `r_i` contains a hash of the previous record's hash concatenated with its own data: $h_i = H(h_{i-1} \Vert r_i)$. Any modification to a past record will break the hash chain from that point forward, making tampering immediately detectable. A [robust recovery](@entry_id:754396) plan can then combine periodic [filesystem](@entry_id:749324) snapshots with asynchronous replication, using the hash chain to find the last known-good record and replay valid subsequent records from the replica, thus minimizing data loss. 
+
+#### Cryptographic Runtime Integrity with `fs-verity`
+
+For critical shared system binaries, it is not enough to verify their authenticity only at installation time. An adversary with access to the [filesystem](@entry_id:749324) could tamper with the files post-installation. The `fs-verity` feature in the Linux kernel addresses this by providing kernel-enforced, on-access integrity checking.
+
+For each protected file, a **Merkle tree** is constructed over its contents, yielding a single cryptographic root hash that uniquely represents the file's state. This root hash is then digitally signed by a trusted authority (e.g., the OS vendor or a local administrator). At installation, the package manager verifies the signature and "pins" the trusted root hash to the file's [inode](@entry_id:750667) metadata. Subsequently, whenever a process reads a page from the file, the kernel automatically verifies that page's contents against the Merkle tree and the pinned root hash. If verification fails, the read operation returns an error, preventing the execution or use of tampered data. This system effectively binds the offline act of package signing to the online, runtime behavior of the kernel, providing a robust defense against tampering with [shared libraries](@entry_id:754739) and executables. 
+
+### Advanced Security and Information Flow Control
+
+While traditional permissions control *access* to data, more advanced security models are needed to control the *flow* of information after it has been accessed. Mandatory Access Control (MAC) provides a powerful framework for enforcing such policies centrally.
+
+#### Mandatory Access Control in Practice: From Compliance to Pipelines
+
+MAC systems, epitomized by security models like Bell-LaPadula, are indispensable in environments with strict confidentiality requirements, such as healthcare and defense. In a hospital setting, MAC can be used to enforce rules analogous to the Health Insurance Portability and Accountability Act (HIPAA). A security lattice can be defined with levels like Public $\prec$ De-identified $\prec$ Patient-Identifiable-Information (PII), and categories for each patient. A doctor or nurse would have a clearance that includes the `PII` level and the category for their assigned patient, allowing them to read and write that patient's record. A researcher, however, would have a lower clearance for `De-identified` data only. The "no read up" property of Bell-LaPadula would fundamentally prevent the researcher from accessing PII. The "no write down" property would prevent a nurse from accidentally or maliciously copying PII into a less sensitive repository. This requires a specially designated **trusted subject**—a verified and audited de-identification service—to be the sole entity permitted to read PII and write de-identified data. 
+
+This concept of controlled information flow is generalizable. Consider a data processing pipeline where a high-security process running at level `Secret` must generate a `Confidential` report. The process reads the `Secret` data, and due to the "no write down" rule, any intermediate files or pipes it creates must also be labeled `Secret`. An untrusted helper program that processes this intermediate data must therefore also run at the `Secret` level. The final step, declassifying the output from `Secret` to `Confidential`, must be performed by a trusted filter process that is explicitly exempt from the "no write down" rule for this specific, audited task. This demonstrates how MAC enforces a disciplined, verifiable [data flow](@entry_id:748201) through a system. 
+
+For situations requiring more flexibility, such as granting a temporary visitor narrow, time-bound access, multiple [access control](@entry_id:746212) models can be layered. MAC can provide the non-bypassable floor of security (e.g., ensuring the visitor, cleared at `Internal`, can never read `Restricted` data). Role-Based Access Control (RBAC) can define the visitor's specific permissions (e.g., read-only on a subset of files). Finally, a time-bound **capability** handle can be issued to enforce automatic expiration of access, achieving a [defense-in-depth](@entry_id:203741) architecture that combines the strengths of each model. 
+
+#### Application Security and Filesystem Interactions
+
+The interaction between applications and the [filesystem](@entry_id:749324) is a frequent source of vulnerabilities. A classic example is the **path traversal** attack, where an attacker crafts input to a web service (e.g., `../../../etc/passwd`) to trick it into accessing files outside its intended base directory. Naive string sanitization is notoriously brittle and prone to bypass.
+
+The robust, OS-level solution is to avoid path string manipulation altogether. Instead of concatenating a base path with user input, the application should first `open()` a file descriptor to the safe base directory. It should then use "open-relative" [system calls](@entry_id:755772) (like `openat()`) that operate relative to this directory descriptor, confining all file access to within that hierarchy. Furthermore, to prevent attacks using symbolic links, the open call should be made with flags like `O_NOFOLLOW` that cause the call to fail if the final path component is a [symbolic link](@entry_id:755709). To avoid Time-of-Check-to-Time-of-Use (TOCTOU) race conditions, the correct pattern is to open the file first and only then perform checks (like verifying it is a regular file) on the resulting file descriptor, not on the path name before opening. 
+
+### Security in Distributed and Encrypted Systems
+
+Adding networks and encryption introduces further layers of complexity to file sharing and protection, demanding more sophisticated solutions.
+
+#### Large-Scale Authenticated File Sharing
+
+In a large organization like a university with multiple autonomous departments, providing a unified, secure file service requires federating identity and trust. A modern solution uses Network File System version 4 (NFSv4) with Kerberos for strong cryptographic authentication. Each department maintains its own Kerberos realm. Bidirectional cross-realm trust is established between a central file server's realm and each departmental realm, allowing for mutual authentication. All NFS traffic is then protected using `RPCSEC_GSS`, with `krb5i` for integrity and `krb5p` for confidentiality (privacy).
+
+A critical component is [identity mapping](@entry_id:634191). NFSv4 ACLs use `name@domain` principals. To resolve these consistently, a central Lightweight Directory Access Protocol (LDAP) server can aggregate user information from all departments, preserving each user's original realm. Services like SSSD on clients and servers can then use this central directory to map Kerberized identities to consistent local POSIX UIDs and GIDs for ACL evaluation, enabling seamless and secure cross-departmental collaboration. 
+
+#### Probabilistic Security of Capabilities
+
+Capability-based security represents a different paradigm where access is granted not based on a subject's identity, but on their possession of an unforgeable token (a capability). In a simple implementation, a capability can be a large, random, and secret number. The security of such a system against brute-force guessing is probabilistic. The probability of a single random guess succeeding is the number of valid capabilities, $N$, divided by the size of the capability space, $2^k$ for a $k$-bit handle.
+
+For a sufficiently large capability space (e.g., $k=96$ or $k=128$), this probability is astronomically small. Even with an adversary making millions of guesses per second for an entire year, the total probability of a single successful guess can remain infinitesimally low (e.g., on the order of $10^{-15}$). This quantifiable security is a powerful feature, allowing system designers to choose parameters that provide a desired level of protection against random guessing attacks. 
+
+#### Secure Revocation in Encrypted File Systems
+
+When data is encrypted at rest, [access control](@entry_id:746212) becomes a matter of key management. Revoking a user's access means ensuring they can no longer use the necessary decryption keys. This is complicated by the **open-file persistence** property of many operating systems: a process that has already opened a file and loaded the decryption key into memory can continue reading from its file descriptor even after its permissions on the file are revoked.
+
+A simple key rotation (re-encrypting all data with a new key) is effective but inefficient for large datasets. A more sophisticated and robust solution involves a multi-layered keying architecture combined with short-lived leases. Each file can be encrypted with its own Data Encryption Key (DEK). The DEK itself is not given directly to users. Instead, it is "wrapped" (encrypted) with the public key of each authorized member. To decrypt a file, a user must first unwrap the DEK using their private key.
+
+To address open-file persistence and provide timely revocation, access to the unwrapping service is mediated by a trusted key server that issues short-lived cryptographic leases or tokens. A user's process must present a valid, unexpired lease to be able to decrypt a DEK. When a member is removed from the project, the key server simply stops issuing new leases to them. Any access they have via open files will cease as soon as their current lease expires, providing a guaranteed, time-bounded revocation of access to the plaintext, even while the OS file descriptor remains technically open. 
