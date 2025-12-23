@@ -1,1 +1,0 @@
-## Applications and Interdisciplinary Connections
