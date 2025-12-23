@@ -1,0 +1,3 @@
+## Applications and Interdisciplinary Connections
+
+We have spent some time learning the rules of the game, the principles and mechanisms of how we might tame the wild, teeming chaos of a liquid solvent by replacing it with a smooth, responsive, and ultimately predictable dielectric sea. This is a wonderfully clever trick, a piece of classic physicist's chicanery. We've replaced a problem with a zillion-and-one moving parts with a single, elegant equation. But the real joy of a new tool is not in admiring its cleverness, but in [using it](https://www.feynmanlectures.caltech.edu/I_03.html).
