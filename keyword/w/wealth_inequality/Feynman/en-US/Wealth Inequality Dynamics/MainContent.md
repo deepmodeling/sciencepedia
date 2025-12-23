@@ -1,0 +1,19 @@
+## Introduction
+Wealth inequality, the uneven distribution of assets within a population, is one of the most pressing and widely debated topics in modern society. While its existence is undeniable, the fundamental forces that create, sustain, and propagate it often remain obscured in complex economic jargon. This article seeks to demystify the topic by addressing a core knowledge gap: how can we rigorously describe and understand the mechanisms of inequality, and what does this understanding reveal about our world beyond just economics?
+
+This article will guide you through a comprehensive exploration of wealth inequality, structured in two main parts. In the first chapter, 'Principles and Mechanisms,' we will delve into the foundational toolkit for analyzing disparity, from visual representations like the Lorenz curve to mathematical laws like the Pareto distribution. We will construct a simple model to see how inequality can emerge from first principles, driven by nothing more than chance and rational behavior. Following this, the chapter on 'Applications and Interdisciplinary Connections' will demonstrate the surprising power of these concepts, showing how the language of inequality can be used to analyze everything from public policy and social stability to [forest ecology](@article_id:191423) and the ethical frontiers of [bioengineering](@article_id:270585). By the end, you will have a multifaceted perspective on wealth inequality, seeing it not just as an economic problem, but as a fundamental pattern in complex systems.
+
+
+*Figure 1: The Lorenz curve plots the cumulative share of wealth held by the cumulative share of the population. The Gini coefficient is proportional to the area between the line of perfect equality and the observed Lorenz curve.*
+
+## Principles and Mechanisms
+
+Now that we have a sense of what we mean by "wealth inequality," let's peel back the layers and look at the machine underneath. How does it work? What are the gears and springs that drive this phenomenon? Like a physicist trying to understand the motion of the planets, we want to find the fundamental principles, the elegant rules that can explain the complex patterns we observe. We will start by figuring out how to measure the shape of this inequality, then explore some simple—and surprisingly powerful—models that describe it, and finally, we'll build a working model from scratch to see how inequality can emerge from the most unlikely of places.
+
+### Seeing the Shape of Disparity
+
+Before we can explain something, we have to be able to describe it. If you wanted to describe the shape of a hill, you might walk its contour lines. How can we draw a "contour map" of a society's wealth?
+
+A wonderfully simple and clever way to do this is with a **Lorenz curve**. Imagine we line up every single person in a country, from the one with the least wealth to the one with the most. We then walk along this line, asking at each step: "What cumulative fraction of the total wealth is held by this cumulative fraction of the population?" We start at the beginning, where 0% of the people have 0% of the wealth. We end at the other end of the line, where 100% of the people hold 100% of the wealth. What happens in between is what tells us the story.
+
+In a world of perfect equality, the line would be perfectly straight. The bottom 10% of the population would have 10% of the wealth, the bottom 50% would have 50%, and so on. This is the "line of perfect equality." But in the real world, the curve sags. The bottom 50% might only have 5% of the wealth, and the curve only begins to shoot upwards as we get to the very wealthiest. The more the Lorenz curve sags away from the line of perfect equality, the more unequal the society.
