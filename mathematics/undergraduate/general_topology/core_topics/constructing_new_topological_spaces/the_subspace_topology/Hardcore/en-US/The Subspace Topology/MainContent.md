@@ -1,0 +1,75 @@
+## Introduction
+In the study of topological spaces, our interest often extends beyond the entire space to the intricate structures of its subsets. A fundamental question arises: how can a subset be treated as a [topological space](@entry_id:149165) in its own right, with its own collection of open sets and inherited properties? Simply looking at a subset in isolation discards the valuable information provided by the ambient space. The solution lies in a natural and powerful construction known as the subspace topology, which provides the framework for endowing any subset with a topological structure inherited from its parent space. This article serves as a comprehensive introduction to this essential concept.
+
+This article is structured to guide the reader from foundational principles to practical applications. First, under **Principles and Mechanisms**, we will rigorously define the subspace topology, explore the relativity of openness and closedness, and establish key theorems regarding bases and closure. Following this, the section on **Applications and Interdisciplinary Connections** will demonstrate the utility of this concept by examining the intrinsic properties of subspaces, comparing them via [homeomorphism](@entry_id:146933), and highlighting its role in geometry, analysis, and algebra. Finally, the **Hands-On Practices** in the appendices provide practical exercises to reinforce these theoretical foundations, allowing you to apply your knowledge to concrete examples.
+
+## Principles and Mechanisms
+
+When studying a [topological space](@entry_id:149165) $(X, \mathcal{T})$, we are often interested not only in the space as a whole but also in its various subsets. To analyze these subsets as [topological spaces](@entry_id:155056) in their own right, we must endow them with a topology. The most natural way to do this is to have the subset "inherit" its topological structure from the parent space $X$. This inherited structure is known as the **subspace topology**, and it provides the foundation for understanding the geometry and properties of subsets within a larger topological context.
+
+### The Definition of the Subspace Topology
+
+Let $(X, \mathcal{T})$ be a topological space and let $Y$ be any subset of $X$. The **subspace topology** on $Y$, denoted $\mathcal{T}_Y$, is defined as the collection of all intersections of the open sets of $X$ with $Y$. Formally,
+
+$\mathcal{T}_Y = \{U \cap Y \mid U \in \mathcal{T}\}$
+
+The resulting space $(Y, \mathcal{T}_Y)$ is called a **subspace** of $(X, \mathcal{T})$. A set $V$ is said to be **open in $Y$** (or **relatively open**) if it belongs to $\mathcal{T}_Y$.
+
+The core idea is that the open sets of the subspace $Y$ are simply the "traces" or "slices" of the open sets of the ambient space $X$ on $Y$. This definition immediately highlights a crucial concept: openness is a relative property. A set may be open in the subspace $Y$ without being open in the larger space $X$.
+
+To build intuition, consider a simple geometric example. Let the [ambient space](@entry_id:184743) be the Euclidean plane $X = \mathbb{R}^2$ with its [standard topology](@entry_id:152252). Let the subspace be the line $Y$ defined by the equation $y = -x$. Now consider the set $S_1$, which is an open line segment on $Y$, for instance, $S_1 = \{(t, -t) \in Y \mid -1 \lt t \lt 1\}$. Is $S_1$ open in $Y$? According to our definition, we must find an open set $U$ in $\mathbb{R}^2$ such that $S_1 = U \cap Y$. A natural choice for $U$ is the open vertical strip $U = \{(x, y) \in \mathbb{R}^2 \mid -1 \lt x \lt 1\}$. The intersection of this open strip with the line $Y$ is precisely the segment $S_1$. Therefore, $S_1$ is an open set in the subspace $Y$. However, $S_1$ is clearly not open in $\mathbb{R}^2$. Any open disk centered at a point in $S_1$ will inevitably contain points that are not on the line $y=-x$, and thus are not in $S_1$. This demonstrates that a set can be open relative to a subspace without being open in the [ambient space](@entry_id:184743).
+
+The subspace topology can sometimes have surprising consequences. Consider the set of real numbers $\mathbb{R}$ with its usual topology and the finite subspace $Y = \{0, 1, 2\}$. To determine the subspace topology on $Y$, we must see which subsets of $Y$ can be formed by intersecting open sets of $\mathbb{R}$ with $Y$. Let's test if the singleton set $\{1\}$ is open in $Y$. We can choose the [open interval](@entry_id:144029) $U = (0.5, 1.5)$ in $\mathbb{R}$. The intersection is $U \cap Y = \{1\}$. Thus, $\{1\}$ is an open set in $Y$. Similarly, we can find [open intervals](@entry_id:157577) in $\mathbb{R}$ that isolate $0$ and $2$. For instance, $(-0.5, 0.5) \cap Y = \{0\}$ and $(1.5, 2.5) \cap Y = \{2\}$. Since the singleton sets $\{0\}, \{1\},$ and $\{2\}$ are all open in $Y$, and any topology is closed under arbitrary unions, any union of these singletons is also open. This means that *every* subset of $Y$ is open. This is the **[discrete topology](@entry_id:152622)**. In this case, a non-discrete parent space has induced a discrete topology on its subspace.
+
+### A Basis for the Subspace Topology
+
+Checking every open set in the parent space $X$ to form the subspace topology on $Y$ can be cumbersome. A more practical tool is to use a basis for the topology on $X$. There is a fundamental theorem that simplifies this process.
+
+**Theorem:** If $\mathcal{B}$ is a basis for the topology $\mathcal{T}$ on $X$, then the collection $\mathcal{B}_Y = \{B \cap Y \mid B \in \mathcal{B}\}$ forms a basis for the subspace topology $\mathcal{T}_Y$ on $Y$.
+
+This theorem is immensely useful because it allows us to generate the entire subspace topology by simply intersecting the basis elements of the parent space with the subspace.
+
+A vivid illustration of this principle comes from considering the unit circle $S^1 = \{(x, y) \in \mathbb{R}^2 \mid x^2 + y^2 = 1\}$ as a subspace of $\mathbb{R}^2$. A standard basis for the topology on $\mathbb{R}^2$ is the collection of all open disks. What, then, is a basis for the topology on $S^1$? According to the theorem, we can generate a basis for $S^1$ by intersecting all the open disks in $\mathbb{R}^2$ with $S^1$. The intersection of an open disk with the circle results in an **open arc** (a segment of the circle excluding its endpoints), a pair of open arcs, the entire circle, or the [empty set](@entry_id:261946). The collection of all such open arcs on the circle fulfills the requirements of a basis. Any point on the circle within an open set (in the subspace topology) can be contained within a sufficiently small open arc that itself lies within that open set. Thus, the collection of all open arcs is a basis for the subspace topology on the circle.
+
+### Closed Sets and Closure in a Subspace
+
+The concept of a subspace topology extends naturally to closed sets. A subset $C \subseteq Y$ is **closed in $Y$** if its complement relative to $Y$, which is $Y \setminus C$, is open in $Y$. This leads to a characterization of closed sets that is dual to the definition of open sets.
+
+**Theorem:** A subset $C \subseteq Y$ is closed in the subspace $Y$ if and only if there exists a closed set $F$ in the [ambient space](@entry_id:184743) $X$ such that $C = F \cap Y$.
+
+Just as with open sets, the property of being closed is relative. A set can be closed in a subspace without being closed in the parent space. This often occurs when the [limit points of a set](@entry_id:137099) that lie outside the subspace are "cut off." For example, let $X = \mathbb{R}$ and consider the subspace $A = (0, 1]$. The subset $C = (0, 1/2]$ is not closed in $\mathbb{R}$ because its [limit point](@entry_id:136272) $0$ is not in $C$. However, when we consider $C$ within the space $A$, the problematic limit point $0$ is no longer part of the universe under consideration. Indeed, $C$ can be written as the intersection of a closed set in $\mathbb{R}$ with $A$: $C = [0, 1/2] \cap (0, 1]$. Therefore, $C$ is a [closed set](@entry_id:136446) in the subspace $A$. A similar situation arises with the set $C = \{1/n \mid n \in \mathbb{Z}, n \ge 2\}$ within the [open interval](@entry_id:144029) $A=(0,1)$. The only [limit point](@entry_id:136272) of $C$ in $\mathbb{R}$ is $0$, but $0 \notin A$. Because $C$ contains all of its [limit points](@entry_id:140908) that are *in A* (it has none), $C$ is closed in $A$. However, it is not closed in $\mathbb{R}$.
+
+A precise relationship governs the **closure** of a set in a subspace. For any subset $A \subseteq Y$, its closure in $Y$, denoted $\text{Cl}_Y(A)$, is the intersection of all closed sets in $Y$ that contain $A$. This can be related directly to its closure in the parent space, $\text{Cl}_X(A)$.
+
+**Theorem:** For a subspace $Y \subseteq X$ and any set $A \subseteq Y$, the closure of $A$ in $Y$ is given by:
+$\text{Cl}_Y(A) = \text{Cl}_X(A) \cap Y$
+
+This formula is a cornerstone for working with subspaces. It states that to find the [closure of a set](@entry_id:143367) within a subspace, we first find its closure in the larger [ambient space](@entry_id:184743) and then simply take the intersection with the subspace itself. This can be a powerful computational shortcut. For instance, consider the integers $\mathbb{Z}$ with the **[cofinite topology](@entry_id:138582)**, where a set is open if it is empty or its complement is finite. Consequently, the [closed sets](@entry_id:137168) are $\mathbb{Z}$ itself and all of its finite subsets. If we take the subspace $Y=\mathbb{N}$, we can ask for the closure of $\{10\}$ in $Y$. Using the formula, $\text{Cl}_{\mathbb{N}}(\{10\}) = \text{Cl}_{\mathbb{Z}}(\{10\}) \cap \mathbb{N}$. In $\mathbb{Z}$ with the [cofinite topology](@entry_id:138582), the singleton $\{10\}$ is a finite set, and therefore it is closed. Its closure is itself: $\text{Cl}_{\mathbb{Z}}(\{10\}) = \{10\}$. The final result is $\{10\} \cap \mathbb{N} = \{10\}$, so the set is closed in the subspace as well.
+
+There is an important special case where the distinction between relative and absolute closedness vanishes.
+
+**Theorem:** If $Y$ is a **[closed subset](@entry_id:155133)** of $X$, then a subset $A \subseteq Y$ is closed in $Y$ if and only if $A$ is closed in $X$.
+
+*Proof:* If $A$ is closed in $X$, then $A = A \cap Y$ shows it is closed in $Y$ (since $A \subseteq Y$). Conversely, if $A$ is closed in $Y$, then $A = F \cap Y$ for some closed set $F$ in $X$. Since $Y$ is also closed in $X$, and the intersection of two closed sets is closed, $A$ must be closed in $X$.
+
+This provides a significant simplification. For example, the set $Y = [0, 10] \cup [20, 30]$ is a [closed subset](@entry_id:155133) of $\mathbb{R}$. Therefore, to determine if a subset of $Y$, such as $S = [0, 5]$, is closed in $Y$, we only need to check if it is closed in $\mathbb{R}$. Since $[0, 5]$ is a closed interval, it is closed in $\mathbb{R}$, and thus it is also closed in $Y$. In contrast, a set like $(1, 5)$ is not closed in $\mathbb{R}$ and therefore cannot be closed in $Y$.
+
+### Inheritance of Topological Properties
+
+A central theme in topology is the study of properties of spaces, such as connectedness, compactness, and the [separation axioms](@entry_id:154482). When we move to a subspace, a natural question arises: which properties of the parent space $X$ are inherited by the subspace $Y$? A property that is passed down to every subspace is called a **[hereditary property](@entry_id:151340)**.
+
+One of the most fundamental inherited properties relates to continuous functions.
+
+**Theorem:** If $f: X \to Z$ is a continuous function between [topological spaces](@entry_id:155056), then for any subspace $Y \subseteq X$, the restriction of $f$ to $Y$, denoted $f|_Y: Y \to Z$, is also continuous.
+
+The proof is a direct application of the definitions. To show $f|_Y$ is continuous, we must show that for any open set $V \subseteq Z$, its [preimage](@entry_id:150899) $(f|_Y)^{-1}(V)$ is open in $Y$. By definition, $(f|_Y)^{-1}(V) = \{y \in Y \mid f(y) \in V\} = f^{-1}(V) \cap Y$. Since $f$ is continuous, $f^{-1}(V)$ is an open set in $X$. By the very definition of the subspace topology, the intersection of an open set in $X$ with $Y$ is an open set in $Y$. Thus, $f|_Y$ is continuous.
+
+This result is remarkably general. The nature of the subspace—whether it is open, closed, connected, or a "scattered" set of points—is completely irrelevant. If a function is continuous on a large space, it remains continuous when its domain is restricted to *any* subset endowed with the subspace topology.
+
+The lower [separation axioms](@entry_id:154482), such as being a $T_1$ space (where all singleton sets are closed) or a Hausdorff ($T_2$) space, are also hereditary. If every pair of distinct points in $X$ can be separated by disjoint open sets, then this same property will clearly hold for any pair of points in a subset $Y$, using the traces of those same open sets.
+
+However, many important [topological properties](@entry_id:154666) are **not** hereditary. Normality is a famous example. A **[normal space](@entry_id:154487)** is one where any two disjoint closed sets can be separated by disjoint open neighborhoods. While many "nice" spaces are normal (e.g., all metric spaces and all compact Hausdorff spaces), a subspace of a normal space is not guaranteed to be normal.
+
+A classic counterexample is the **Tychonoff plank**. This space is constructed by taking the product of two ordinal spaces, $X = [0, \omega_1] \times [0, \omega]$, where $[0, \omega_1]$ is the set of all countable [ordinals](@entry_id:150084) plus the [first uncountable ordinal](@entry_id:156023) $\omega_1$, and $[0, \omega]$ is the set of [natural numbers](@entry_id:636016) including their [limit point](@entry_id:136272) $\omega$. The parent space $X$ is compact and Hausdorff, and therefore normal. The Tychonoff plank is the subspace $Y = X \setminus \{(\omega_1, \omega)\}$. Despite its origin in a [normal space](@entry_id:154487), $Y$ is not normal. One can construct two disjoint closed sets in $Y$, namely $A = \{\omega_1\} \times [0, \omega)$ and $B = [0, \omega_1) \times \{\omega\}$, that cannot be separated by [disjoint open sets](@entry_id:150704) in $Y$. This serves as a critical reminder that one must exercise caution when assuming properties are inherited by subspaces. Other non-[hereditary properties](@entry_id:153191) include compactness (only closed subspaces of [compact spaces](@entry_id:155073) are guaranteed to be compact) and [connectedness](@entry_id:142066).
+
+In summary, the subspace topology provides the essential framework for studying subsets of [topological spaces](@entry_id:155056). It is defined in a simple, natural way, yet its consequences are profound, shaping our understanding of relative properties, closure, continuity, and the inheritance of [topological invariants](@entry_id:138526).
