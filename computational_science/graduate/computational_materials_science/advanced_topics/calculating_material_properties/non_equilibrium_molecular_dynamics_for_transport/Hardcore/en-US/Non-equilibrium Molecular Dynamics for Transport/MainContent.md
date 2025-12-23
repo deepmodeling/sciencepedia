@@ -1,0 +1,33 @@
+## Introduction
+Transport phenomena, which govern the flow of heat, mass, and momentum, are fundamental to the performance and design of materials in countless applications. Predicting the associated transport coefficients—such as thermal conductivity, viscosity, and diffusivity—from the underlying atomistic interactions is a central challenge in [computational materials science](@entry_id:145245). Non-Equilibrium Molecular Dynamics (NEMD) has emerged as a powerful and physically intuitive computational technique for this task. Unlike equilibrium methods that rely on spontaneous fluctuations, NEMD mimics a real-world experiment by applying an external field to drive a system into a non-equilibrium steady state, allowing for the direct measurement of the resulting transport response. This article provides a comprehensive overview of the NEMD methodology for a graduate-level audience. The first chapter, **Principles and Mechanisms**, will lay the theoretical groundwork, contrasting NEMD with equilibrium approaches and detailing its core algorithms and thermodynamic foundations. Next, **Applications and Interdisciplinary Connections** will showcase the versatility of NEMD in calculating transport properties in diverse systems, from anisotropic crystals to nanofluidic channels, and in probing complex coupled phenomena. Finally, the **Hands-On Practices** section provides opportunities to apply these concepts to practical data analysis problems.
+
+## Principles and Mechanisms
+
+The previous chapter introduced the central role of [transport phenomena](@entry_id:147655) in materials science. We now turn to the computational methods used to predict transport coefficients from first principles, focusing on the powerful technique of **Non-Equilibrium Molecular Dynamics (NEMD)**. This chapter will detail the fundamental principles of NEMD, present its core algorithms, and discuss the theoretical and practical considerations required for its rigorous application.
+
+### The NEMD Paradigm: Direct Simulation of Transport
+
+The objective of a transport calculation is to determine the coefficient relating a thermodynamic flux to an applied force or gradient. For processes near [thermodynamic equilibrium](@entry_id:141660), this relationship is linear, as described by Linear Irreversible Thermodynamics (LIT). For example, Fourier's law for [heat conduction](@entry_id:143509) relates the heat flux $\mathbf{J}_q$ to the temperature gradient $\nabla T$ via the thermal conductivity $\kappa$, $\mathbf{J}_q = -\kappa \nabla T$. Similarly, Ohm's law relates the electric current density $\mathbf{J}_e$ to the electric field $\mathbf{E}$ via the electrical conductivity $\sigma$, $\mathbf{J}_e = \sigma \mathbf{E}$.
+
+There are two principal computational routes in molecular dynamics to determine these linear [transport coefficients](@entry_id:136790). The first, based on equilibrium molecular dynamics (EMD), uses the **Fluctuation-Dissipation Theorem (FDT)**. The FDT establishes a profound connection between the irreversible [dissipation of energy](@entry_id:146366) in a system driven by an external field and the spontaneous, reversible fluctuations of that system at thermal equilibrium . This leads to the well-known **Green-Kubo (GK) relations**, which express [transport coefficients](@entry_id:136790) as time integrals of equilibrium time-autocorrelation functions of the corresponding microscopic fluxes. For example, thermal conductivity is related to the fluctuations of the heat current vector $\mathbf{J}_q$:
+
+$$ \kappa = \frac{1}{3Vk_B T^2} \int_0^\infty \langle \mathbf{J}_q(t) \cdot \mathbf{J}_q(0) \rangle_{\text{eq}} dt $$
+
+where $V$ is the volume, $k_B$ is the Boltzmann constant, and $T$ is the temperature. The GK approach is elegant, as it extracts all [transport coefficients](@entry_id:136790) from a single equilibrium simulation.
+
+The second route, and the focus of this chapter, is **Non-Equilibrium Molecular Dynamics (NEMD)**. The NEMD approach is conceptually more direct: it is a computational experiment that mimics the physical measurement of a transport property . The general procedure is as follows:
+
+1.  An external, [generalized force](@entry_id:175048) $X$ (e.g., a temperature gradient, a shear rate, or an electric field) is explicitly applied to the simulated system.
+2.  This force drives the system away from equilibrium and generates a conjugate thermodynamic flux $J$.
+3.  The system is evolved until it reaches a **Non-Equilibrium Steady State (NESS)**, where the time-averaged flux $\langle J \rangle_{\text{ness}}$ becomes constant.
+4.  The transport coefficient $L$ is then calculated directly from its defining linear relationship, $L = \langle J \rangle_{\text{ness}} / X$.
+
+A critical feature of NEMD is the continuous work done on the system by the external field, which is dissipated as heat. To prevent the system from heating indefinitely and to achieve a steady state, this excess heat must be continuously removed. This necessitates the use of a **thermostat**. The role of the thermostat in NEMD is fundamentally different from its role in EMD. In EMD, a thermostat is a numerical device to sample the canonical (NVT) ensemble. In NEMD, the thermostat is an essential physical component of the simulation, acting as the heat sink that allows a [steady flow](@entry_id:264570) of energy or momentum through the system  .
+
+### Microscopic Formulation of Transport Fluxes
+
+To measure a flux in any molecular dynamics simulation, one must first have a precise definition of the corresponding microscopic operator. The **Irving-Kirkwood formalism** provides a rigorous way to connect macroscopic continuum fields (like stress or [energy flux](@entry_id:266056)) to the discrete particle positions $\mathbf{r}_i$, velocities $\mathbf{v}_i$, and forces $\mathbf{F}_i$.
+
+Let us consider the total energy current vector, $\mathbf{J}^E$, as a key example. The [local conservation of energy](@entry_id:268756) is expressed as $\partial_t e(\mathbf{r},t) + \nabla \cdot \mathbf{J}^E(\mathbf{r},t) = 0$, where $e(\mathbf{r},t)$ is the energy density. Following the Irving-Kirkwood procedure, the volume-integrated energy current can be shown to consist of two parts: a **convective** term and a **configurational** term .
+
+$$ \mathbf{J}^E(t) = \underbrace{\sum_i e_i \mathbf{v}_i}_{\text{Convective}} + \underbrace{\frac{1}{2} \sum_{i \ne j} (\mathbf{v}_i \cdot \mathbf{F}_{ij}) \mathbf{r}_{ij}}_{\text{Configurational}} $$
