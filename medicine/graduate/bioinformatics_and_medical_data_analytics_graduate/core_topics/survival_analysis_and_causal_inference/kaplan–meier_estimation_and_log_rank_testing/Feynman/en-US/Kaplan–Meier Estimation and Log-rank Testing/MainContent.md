@@ -1,0 +1,79 @@
+## Introduction
+In fields ranging from medicine to engineering, a fundamental challenge is to understand and predict the timing of critical events: a patient's recovery, a component's failure, or a disease's recurrence. This is the domain of [survival analysis](@entry_id:264012), a powerful statistical framework for interpreting [time-to-event data](@entry_id:165675). The primary obstacle in this endeavor is the prevalence of incomplete information. Studies end, participants move away, or other events intervene, leaving us with [censored data](@entry_id:173222) where we only know that an individual survived up to a certain point. How can we draw meaningful conclusions when we don't have the full story for every subject?
+
+This article introduces two cornerstone techniques that elegantly solve this problem: the Kaplan-Meier estimator for visualizing survival probabilities and the [log-rank test](@entry_id:168043) for comparing survival experiences between groups. By treating survival as a sequence of conditional probabilities, these [non-parametric methods](@entry_id:138925) leverage every piece of available information, including censored observations, to provide robust and intuitive insights. We will journey from the foundational theory to real-world application, equipping you with a comprehensive understanding of these essential biostatistical tools.
+
+The following sections are structured to build this expertise progressively. First, in **"Principles and Mechanisms,"** we will dissect the mathematical and logical foundations of the Kaplan-Meier estimator and the [log-rank test](@entry_id:168043), exploring how they work from first principles. Next, **"Applications and Interdisciplinary Connections"** will demonstrate the immense versatility of these methods across clinical medicine, genomics, and machine learning, while also highlighting the critical assumptions and common analytical traps—such as confounding, [competing risks](@entry_id:173277), and [immortal time bias](@entry_id:914926)—that every researcher must navigate. Finally, **"Hands-On Practices"** will provide the opportunity to solidify your understanding through guided exercises that simulate [real-world data](@entry_id:902212) analysis challenges.
+
+## Principles and Mechanisms
+
+Imagine we are watching a grand, cosmic play where the characters are patients in a clinical trial, light bulbs in a factory, or even stars in a galaxy. The central drama is simple, yet profound: how long until a specific event occurs? A patient recovers, a light bulb burns out, a star goes [supernova](@entry_id:159451). Our goal as scientists is to understand the script of this play—to map out the probability of an event over time. The most natural and elegant tool for this is the **[survival function](@entry_id:267383)**, denoted $S(t)$. It answers the question: what is the probability that our character is still "surviving"—that the event has not yet happened—at a time greater than $t$?
+
+This function, $S(t)$, is a picture of the unfolding story. It always starts at $S(0)=1$ (at the beginning, everyone is a survivor) and gracefully descends towards zero as time marches on, because, inevitably, events happen. It can never increase; the river of time flows in only one direction. The shape of this curve—whether it drops sharply at the beginning or holds steady for a long while—tells us everything about the nature of the risk involved. 
+
+### The Inconvenient Truth of Incomplete Data
+
+If we could watch every character until their final act, estimating $S(t)$ would be straightforward. But the real world is a messy stage. A patient might move to another city, the study might run out of funding, or we might simply reach the deadline for our analysis. When we lose track of a character before their event has occurred, we have an incomplete observation. This is the problem of **[censoring](@entry_id:164473)**.
+
+The most common type is **[right censoring](@entry_id:634946)**. All we know about a subject censored at time $c$ is that their true event time $T$ is *greater than* $c$. They were still in the play when we last looked. This isn't a failure of observation; it's a fundamental feature of time-to-event studies. To ignore these individuals would be to throw away crucial information—the fact that they survived at least until time $c$. Other, more complex forms of [censoring](@entry_id:164473) exist, like **left [censoring](@entry_id:164473)** (the event already happened before our first look) and **interval [censoring](@entry_id:164473)** (we only know the event happened between two check-ups), but the classic tools we are about to explore are masterfully designed for the world of [right censoring](@entry_id:634946). 
+
+To work with [censored data](@entry_id:173222), we must make a crucial "gentleman's agreement" with Nature. We must assume that [censoring](@entry_id:164473) is **non-informative**. This means that the act of a subject being censored gives us no extra clue about their future outcome compared to anyone else still under observation at that same moment. If, for example, the sickest patients are the ones who preferentially drop out of a study, our assumption is violated, the game is rigged, and our standard methods will yield biased results. This assumption of [non-informative censoring](@entry_id:170081) is the bedrock upon which our entire statistical edifice is built. 
+
+### A Masterpiece of Inference: The Kaplan-Meier Estimator
+
+So, how do we draw the survival curve, $S(t)$, when some of our stories are unfinished? A naive approach, like dividing the number of survivors by the initial total, fails because it doesn't know what to do with the censored subjects. The brilliant insight of Edward L. Kaplan and Paul Meier was to reframe the problem. They realized that surviving until time $t$ is equivalent to surviving a series of smaller challenges: you must survive past the first event time, *and then*, given you've made it that far, survive past the second event time, and so on.
+
+This transforms the problem into estimating a chain of conditional probabilities. And here is the key: we only need to update our survival estimate at the specific moments in time when an event *actually happens*. At any event time $t_i$, we look at everyone who is still in the study and has not yet had an event—this is the **[risk set](@entry_id:917426)**. Let's say there are $n_i$ individuals in the [risk set](@entry_id:917426) just before time $t_i$, and $d_i$ of them experience the event at $t_i$. A simple, powerful estimate for the probability of surviving past this moment, for anyone in that [risk set](@entry_id:917426), is $(n_i - d_i) / n_i$. 
+
+The **Kaplan-Meier estimator**, $\hat{S}(t)$, is simply the product of these conditional survival probabilities for all event times up to $t$:
+
+$$
+\hat{S}(t) = \prod_{i: t_i \le t} \left(1 - \frac{d_i}{n_i}\right)
+$$
+
+This "product-limit" formula gives us a beautiful, descending staircase—a step function that represents our best guess for the true survival curve. What about the censored individuals? They play their part perfectly. A subject censored at time $c$ remains in the [risk set](@entry_id:917426) for all event times before $c$, contributing to the denominators ($n_i$) of our [conditional probability](@entry_id:151013) estimates. Then, at time $c$, they are gracefully removed from all future risk sets. They have provided their information—survival up to $c$—and bowed out of the play.
+
+You might wonder, why does the curve only jump downwards at event times, and stay flat at [censoring](@entry_id:164473) times? This is not an arbitrary choice; it is a consequence of a deep principle: maximum likelihood. Imagine we are trying to build our step-function estimate. If we were to introduce a small drop (assigning some probability of failure) at a time $t^*$ where no events were observed, we gain nothing. No observed event is explained by this new jump. However, we incur a penalty: the [survival probability](@entry_id:137919) $S(c)$ for every individual censored *after* $t^*$ would decrease, making our observed data appear less likely. To make what we actually saw as likely as possible, the mathematics forces us to concentrate all the probability of failure at the points where failures actually occurred. The result is the iconic Kaplan-Meier curve, a testament to making the most out of incomplete information. 
+
+Let's see this in action. Consider a group of patients where the data (in months) are $(1, \text{event}), (3, \text{censored}), (4, \text{event}), (6, \text{event})$, and $(8, \text{censored})$, starting with 5 people.
+- At $t=1$, an event occurs. The [risk set](@entry_id:917426) has 5 people. The survival probability becomes $1 \times (1 - 1/5) = 4/5$.
+- Between $t=1$ and $t=4$, one person is censored at $t=3$.
+- At $t=4$, another event occurs. The [risk set](@entry_id:917426) now has 3 people (5 initial - 1 event - 1 censored). The [survival probability](@entry_id:137919) is updated: $(4/5) \times (1 - 1/3) = 8/15$.
+- At $t=6$, a third event occurs. The [risk set](@entry_id:917426) has 2 people (3 previous - 1 event). The survival is updated again: $(8/15) \times (1 - 1/2) = 4/15$.
+- An individual is censored at $t=8$. Since no event happens, the curve remains flat. So, our estimate for surviving past $6.5$ months, $\hat{S}(6.5)$, is $4/15$. 
+
+### Complications on Stage: Delayed Entry
+
+Sometimes, characters enter the play late. In a study, we might only become aware of a subject at a time $L_i > 0$. This is called **left-truncation** or **delayed entry**. Such a person was not at risk of being observed by us before $L_i$. The Kaplan-Meier machinery handles this with remarkable ease. We simply adjust our rule for constructing the [risk set](@entry_id:917426): an individual $i$ is in the [risk set](@entry_id:917426) at time $t$ only if they have already entered the study ($L_i \le t$) AND they are still under observation ($T_i \ge t$). With this simple correction to our accounting of who is "at risk," the product-limit formula remains unchanged and perfectly valid. 
+
+### A Tale of Two Curves: The Log-Rank Test
+
+More often than not, we want to compare two survival stories. Does a new drug (Group A) lead to better survival than a placebo (Group B)? Our question now is: are the two [survival curves](@entry_id:924638), $S_A(t)$ and $S_B(t)$, truly different?
+
+To tackle this, we introduce a related concept: the **[hazard function](@entry_id:177479)**, $h(t)$. You can think of it as the "instantaneous peril" or the intensity of risk at a specific moment $t$, given you've survived up to that moment. A high hazard means a high risk of failure right now, causing a sharp drop in the survival curve. The hazard and survival functions are two sides of the same coin; one can be derived from the other. The [null hypothesis](@entry_id:265441) ($H_0$) of the **[log-rank test](@entry_id:168043)** is that the two groups face the same peril at all times: $h_A(t) = h_B(t)$ for all $t$. If the hazards are identical, the [survival curves](@entry_id:924638) must also be identical. 
+
+The logic of the test is a beautiful piece of statistical reasoning. At each and every time an event occurs in either group, we pause and ask:
+1.  Let's pool everyone from both groups who is currently in the [risk set](@entry_id:917426). Under the [null hypothesis](@entry_id:265441), group identity doesn't matter; everyone shares the same common hazard.
+2.  At this time $t_i$, we observed a total of $d_i$ events. Given the mix of Group A and Group B people in the [risk set](@entry_id:917426), how many of these $d_i$ events would we *expect* to fall in Group A by chance alone?
+
+The answer is simple proportionality. If Group A makes up a fraction $n_{Ai} / n_i$ of the total [risk set](@entry_id:917426) ($n_i$), we expect them to account for that same fraction of the events. The expected number of events in Group A is thus:
+
+$$
+E[d_{Ai}] = d_i \times \frac{n_{Ai}}{n_i}
+$$
+
+This is the mean of a [hypergeometric distribution](@entry_id:193745)—the same math you'd use to calculate the expected number of red cards when drawing from a deck. 
+
+The [log-rank test](@entry_id:168043) meticulously calculates this "Observed minus Expected" difference ($d_{Ai} - E[d_{Ai}]$) for Group A at every single event time and sums them up. If the total observed number of events in Group A is consistently higher (or lower) than what we'd expect under the null hypothesis, the cumulative difference will be large. The test standardizes this total difference by its variance (also summed across event times) to produce a chi-square statistic, which tells us just how surprising our result is.  
+
+### The Right Tool for the Job: Power and Proportionality
+
+The [log-rank test](@entry_id:168043) is elegant, but it's not a magic wand. Its power—its ability to detect a true difference between groups—is greatest under a specific condition: **[proportional hazards](@entry_id:166780)**. This means the hazard in one group is a constant multiple of the hazard in the other group ($h_A(t) = \theta h_B(t)$). One group is consistently more or less risky over the entire course of the study. The [log-rank test](@entry_id:168043) is "unweighted," giving equal importance to an (Observed - Expected) difference whether it happens on Day 1 or Day 1000. This makes it perfectly tuned to detect a constant signal of this kind. In fact, the [log-rank test](@entry_id:168043) is mathematically equivalent to the [score test](@entry_id:171353) from the celebrated **Cox [proportional hazards model](@entry_id:171806)**, which explains its status as the optimal test for this common scenario. 
+
+But what if the hazards are not proportional? Imagine a therapy that is highly effective early on but has late toxic effects, causing its hazard to cross the control group's hazard. Early on, the (O-E) differences will be negative, but later they will turn positive. The [log-rank test](@entry_id:168043), by summing them all, might see these effects cancel out, leading to a loss of power and a failure to detect a real, but complex, [treatment effect](@entry_id:636010). For such scenarios, other "weighted" tests that give more importance to early or late events might be more appropriate. 
+
+### A Final Warning: The Many Ways to Fail
+
+The world is often more complicated than a single type of event. A patient with cancer might die from their disease, but they might also die from a heart attack. These are **[competing risks](@entry_id:173277)**. A frequent and dangerous mistake is to analyze the risk of "death from cancer" by treating "death from heart attack" as a simple [censoring](@entry_id:164473) event.
+
+This is a profound error. Death from a heart attack is not [non-informative censoring](@entry_id:170081). It is an event that *competes* with and precludes death from cancer. By treating it as [censoring](@entry_id:164473), the standard Kaplan-Meier method, $1 - \hat{S}(t)$, ends up estimating the probability of dying from cancer in a hypothetical universe where death from heart attack is impossible. This quantity, called the **net risk**, will almost always *overestimate* the actual probability of dying from cancer in the real world, where both risks are active. The correct quantity to estimate in this setting is the **[cumulative incidence function](@entry_id:904847) (CIF)**, which requires different methods that properly account for the fact that a subject who experiences a competing event is removed from risk for the event of interest. Understanding this distinction is paramount for the correct interpretation of survival data when multiple outcomes are in play.  

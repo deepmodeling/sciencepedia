@@ -1,0 +1,70 @@
+## Introduction
+Electronic Health Records (EHR) represent a vast, untapped resource for medical discovery, but their observational nature makes them fraught with statistical traps that can lead to dangerously misleading conclusions. Deriving causal truth from this "real-world" data requires more than just powerful computers; it demands a rigorous, principled framework for thinking. This article introduces [target trial emulation](@entry_id:921058), a powerful methodology that transforms how we approach [observational research](@entry_id:906079). By first designing a hypothetical, ideal randomized trial and then using EHR data to emulate it, we can systematically identify and mitigate common biases that obscure causal effects.
+
+This article will guide you through this essential framework. The first chapter, "Principles and Mechanisms," lays the conceptual foundation, detailing the core components of a target trial and the key biases—like immortal time, prevalent user bias, and confounding—that this structure is designed to defeat. The second chapter, "Applications and Interdisciplinary Connections," showcases the framework's versatility, exploring its use in [pharmacoepidemiology](@entry_id:907872), the evaluation of dynamic treatment strategies, and even regulatory decision-making. Finally, "Hands-On Practices" will point the way toward applying these concepts to solve practical challenges in data analysis. We begin by exploring the core principles that allow us to turn messy observational data into a well-designed experiment.
+
+## Principles and Mechanisms
+
+To pry causal truths from the silent, sprawling archives of Electronic Health Records (EHR), we cannot simply ask our questions and hope for an honest answer. The data, in its raw state, is a masterful deceiver, riddled with shadows and illusions. Our task is to become master detectives, armed not with a magnifying glass, but with a rigorous framework for thinking. This framework is known as **[target trial emulation](@entry_id:921058)**. The core idea is as simple as it is profound: before we ever touch the data, we will design on paper the perfect, hypothetical randomized trial we wish we could have run. Then, and only then, will we use the observational data to emulate that trial.
+
+This act of specifying the "target trial" is our primary defense against fooling ourselves. It forces us to be explicit, to turn vague questions like "do [statins](@entry_id:167025) work?" into a precise scientific protocol. Every well-designed trial, and thus every well-emulated one, must be built upon seven pillars .
+
+1.  **Eligibility Criteria**: Who would be in our ideal trial? We must be specific. For example, not just "adults," but "adults aged 40 to 75 with no prior statin use in the last year."
+2.  **Treatment Strategies**: What, exactly, are we comparing? Not just "[statins](@entry_id:167025) vs. no [statins](@entry_id:167025)," but "initiation of a statin within 7 days of eligibility" versus "no initiation within that same 7-day grace period."
+3.  **Assignment Procedure**: In our ideal trial, this would be randomization. In our emulation, this becomes the central challenge: how do we mimic [randomization](@entry_id:198186)?
+4.  **Time Zero**: This is the moment a person becomes eligible and, in the ideal trial, would be randomized. It is the anchor for our entire analysis, the "[big bang](@entry_id:159819)" of our causal universe. All follow-up begins here, for everyone.
+5.  **Follow-up Period**: When does the trial end for a given person? At the outcome, at the end of the study period, or if they are lost to follow-up?
+6.  **Outcome**: What are we measuring? A heart attack? A change in a lab value? We must define it precisely using validated codes and algorithms.
+7.  **Causal Estimand**: What is the precise numerical question? Is it a [risk difference](@entry_id:910459)? A [hazard ratio](@entry_id:173429)? An [intention-to-treat](@entry_id:902513) effect or a per-protocol effect?
+
+By laying out these seven pillars, we construct a blueprint. The rest of our work is a careful process of using this blueprint to guide our analysis, helping us navigate the treacherous landscape of observational data and vanquish the biases that lie in wait.
+
+### The Enemies of Causality
+
+Three formidable biases lurk in observational data, ready to twist association into a false illusion of causation. Our framework is designed to defeat them.
+
+#### The Phantom of Immortal Time
+
+Imagine we are studying statin initiation and its effect on mortality. We define our "treated" group as anyone who starts a statin at any point during a one-year follow-up. An individual, let's call her Jane, starts her statin on day 100. To be included in our "treated" group, Jane must, by definition, have survived the first 100 days of the study. This 100-day period is **immortal time**: a period during which death is impossible for members of the treated group, a luxury not afforded to the untreated group.
+
+This error systematically biases the results in favor of the treatment. When we naively calculate the death rate, we might spread Jane's single "death event" (if it occurs) over the full 12 months of follow-up, not just the time she was actually taking the drug. This dilutes the rate. For instance, if 30 deaths occur in a group of 400 initiators who start, on average, after 4 months, the naive rate calculation might use a denominator of $400 \times 12 = 4800$ person-months. The correct denominator, counting only the time they were actually at risk *while treated*, would be closer to $400 \times (12-4) = 3200$ person-months. The naive rate, $\frac{30}{4800}$, is artificially low compared to the more accurate rate of $\frac{30}{3200}$ .
+
+The solution to this phantom is the rigid enforcement of **time zero**. In our target trial, follow-up for *everyone*—initiators and non-initiators alike—must begin at the exact same moment. This moment is the instant an individual first meets all eligibility criteria. By aligning the start of follow-up for both groups, we ensure that both are equally "mortal" from the very first second. We have banished the phantom by synchronizing their clocks .
+
+#### The Ghost of Users Past: Prevalent User Bias
+
+When studying the effect of *initiating* a therapy, it is a grave error to include patients who are already taking the drug at the start of our study. These "prevalent users" are ghosts from a previous, unobserved causal process. Why are they still on the drug? Perhaps they tolerated it well, while those who had side effects already stopped. Perhaps they have a more chronic or severe form of the disease that requires long-term therapy.
+
+Comparing new users to this select group of prevalent users is not a fair comparison. It’s like comparing the performance of rookie athletes to a group of seasoned veterans who weren't cut from the team. To avoid this, we employ a **new-user design**. Our eligibility criteria must explicitly exclude anyone with prior use of the drug during a "washout" period (e.g., the last year). This ensures we are studying the effect of initiation in a fresh cohort, making our comparison groups far more alike at the starting line. A powerful extension of this is the **active-comparator, new-user design**, where we compare new users of one drug (say, a PPI) to new users of another drug for the same indication (say, an H2RA). This can make the groups even more comparable, as both have received a diagnosis and a decision has been made to treat their condition actively .
+
+#### The Hydra of Confounding
+
+The most fearsome beast is confounding. In an EHR, treatments are not assigned by chance; they are prescribed for a reason. This is **[confounding by indication](@entry_id:921749)**: patients who are sicker, or at higher risk of a bad outcome, are precisely the ones most likely to receive a treatment . A naive analysis would find that the treated group has worse outcomes, leading to the absurd conclusion that the medicine is harmful.
+
+The magic of a randomized trial is that it guarantees **[exchangeability](@entry_id:263314)**. The treated and untreated groups are, on average, interchangeable; their risk of the outcome is the same at the start. Since we cannot randomize, we must aim for the next best thing: **[conditional exchangeability](@entry_id:896124)**. The assumption, written formally as $Y^a \perp A \mid L$, is the mathematical heart of our endeavor. It states that within any group of patients who share the same set of baseline characteristics $L$ (e.g., same age, sex, lab values, comorbidities), the decision to treat ($A$) is independent of their potential outcome ($Y^a$) . In other words, after we account for all the reasons a doctor might prescribe the drug, the remaining choice is "as-if" random.
+
+Our strategy is twofold:
+1.  **Measure**: We must diligently measure a rich set of **baseline covariates** $L$—all the factors that could influence both the treatment decision and the outcome. This is where the richness of EHR data becomes an advantage. We can construct high-dimensional [propensity scores](@entry_id:913832) from thousands of codes and measurements to capture a detailed picture of the patient's health status before time zero .
+2.  **Adjust**: We then use statistical methods—like matching, stratification, or weighting by the **[propensity score](@entry_id:635864)** (the probability of receiving treatment given the covariates $L$)—to create a balanced comparison where the two groups look similar with respect to the measured covariates.
+
+This strategy only works, however, if two other conditions hold. The first is **positivity**, which is the assumption that for any given set of characteristics $L$, there was a non-zero chance of receiving either treatment. If doctors, for example, *never* prescribe a drug to patients with severe [liver failure](@entry_id:910124), it is impossible for us to learn what the drug's effect is in that subgroup. We have no data. We must be honest and restrict our target population to those for whom a real choice exists .
+
+The second condition is **consistency**. This simply means that our notion of the "treatment" is well-defined. If "[statin therapy](@entry_id:907347)" in our data could mean ten different molecules at five different doses, each with different biological effects, what does the "effect of [statin therapy](@entry_id:907347)" even mean? The label $A=1$ is ambiguous. Consistency requires us to have no "hidden versions" of treatment. To satisfy this, we must be more specific, perhaps by restricting our analysis to a single statin and dose, or by analyzing each version separately .
+
+### From Start to Finish: Analyzing the Journey
+
+Once we have assembled our cohort and dealt with baseline [confounding](@entry_id:260626), we must follow our patients over time. But the real world is messy. Patients don't always follow the plan. Those assigned to "initiate statin" might stop taking it. Those assigned to "no statin" might cross over and start it later. How we handle these deviations depends on the question we want to answer .
+
+#### Intention-to-Treat: The Effect of the Plan
+
+The **[intention-to-treat](@entry_id:902513) (ITT)** effect asks about the consequence of the *initial strategy*. What is the effect of having a plan to "initiate and take [statins](@entry_id:167025)" versus a plan of "do not initiate," regardless of whether patients actually stick to that plan? This is a pragmatic question, relevant for policy and real-world effectiveness. To estimate it, we follow the principle of "once assigned, always analyzed." We compare the groups defined at time zero, based on their initial assignment $A_0$, and we ignore all subsequent crossovers and discontinuations. The only adjustment needed is for baseline confounding.
+
+#### Per-Protocol: The Effect of Adherence
+
+The **per-protocol (PP)** effect asks a different question: what is the effect of *actually adhering* to the treatment strategy over time? This is a question about the biological efficacy of the treatment if taken as prescribed. This question is vastly more difficult to answer. The reason is that adherence is not random. A patient might stop their blood pressure medication *because* their blood pressure has become too low. Their evolving health status ($L_t$) influences their ongoing treatment ($A_t$), and that health status also predicts their final outcome ($Y$).
+
+This creates a nasty feedback loop known as **[time-varying confounding](@entry_id:920381) affected by prior treatment** . A standard [regression model](@entry_id:163386) that adjusts for the [time-varying covariates](@entry_id:925942) $L_t$ will fail spectacularly. By conditioning on $L_t$, which is on the causal pathway from past treatment to the outcome (e.g., $A_{t-1} \rightarrow L_t \rightarrow Y$), we inadvertently block the very causal effect we want to measure.
+
+To solve this puzzle, we must turn to a more advanced toolkit known as **[g-methods](@entry_id:924504)**. These methods, which include **Marginal Structural Models (MSMs)** with [inverse probability](@entry_id:196307) weighting and the **[g-formula](@entry_id:906523)**, are designed to correctly adjust for time-varying confounders without improperly blocking mediating pathways. In essence, they allow us to estimate what would have happened if everyone had followed a specific treatment protocol, by either reweighting the population to break the [confounding](@entry_id:260626) over time or by simulating the counterfactual world directly.
+
+By moving from a simple emulation of baseline randomization to the complex realities of longitudinal adherence, the target trial framework provides a unified and principled path. It is a journey of discovery, transforming the chaotic, noisy data of real-world medicine into a semblance of the clear, elegant experiment we wish we could have run, allowing us to pursue causal truth with rigor and intellectual honesty.

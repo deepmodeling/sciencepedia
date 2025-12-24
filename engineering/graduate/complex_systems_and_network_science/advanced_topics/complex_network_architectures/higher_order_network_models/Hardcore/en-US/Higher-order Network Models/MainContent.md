@@ -1,0 +1,96 @@
+## Introduction
+Many real-world systems, from human communication to biological pathways, possess a crucial feature that traditional [network models](@entry_id:136956) often ignore: memory. Simple graphs of nodes and edges typically assume that processes, like the flow of information or the spread of a disease, are memoryless, depending only on the present state. This assumption, however, fails to capture the rich, [path-dependent dynamics](@entry_id:1129427) that govern complex behavior. This article introduces Higher-order Network Models, a powerful framework designed to address this gap by explicitly incorporating the influence of past events.
+
+By moving beyond pairwise interactions, we can build more accurate and insightful models of reality. This article will guide you through the theory and application of these advanced structures. In the "Principles and Mechanisms" chapter, you will learn to detect memory in data, formalize [path-dependent dynamics](@entry_id:1129427) using memory networks, and understand their profound impact on system properties. The "Applications and Interdisciplinary Connections" chapter will demonstrate the utility of these models in diverse fields, from neuroscience to web analytics, showcasing how they solve real-world problems. Finally, "Hands-On Practices" will provide opportunities to apply these concepts to concrete examples, solidifying your understanding of how to build and analyze higher-order systems.
+
+## Principles and Mechanisms
+
+In the preceding chapter, we introduced the concept of [higher-order networks](@entry_id:1126102) as a means to encode dependencies that extend beyond immediate pairwise connections. Traditional network models, which represent systems as graphs of nodes and edges, typically underpin dynamical processes that are **first-order Markovian**. In such processes, like a simple random walk, the future state of the system depends only on its present state. The path taken to arrive at the current state is irrelevant. However, a vast array of real-world systems, from human mobility and communication to protein folding and information cascades, exhibit significant **path-dependency**, or "memory." To model such systems accurately, we must move beyond the [first-order approximation](@entry_id:147559). This chapter lays out the fundamental principles and mechanisms of path-dependent higher-order network models. We will explore how to detect, formalize, and analyze these memory effects, and address the practical challenges that arise in their application.
+
+### The Failure of First-Order Models and the Signature of Memory
+
+Why are conventional network models insufficient for systems with memory? Consider a hypothetical process observed on a network with nodes $\{a, b, c\}$. Suppose we record a large number of paths of length two, and we find that the only paths that ever occur are of the form $a \to b \to a$ and $c \to b \to c$, each appearing with high frequency. For instance, we might observe the triple $(a,b,a)$ 50 times and $(c,b,c)$ 50 times, but we never observe triples like $(a,b,c)$ or $(c,b,a)$ .
+
+A first-order model, or a [simple random walk](@entry_id:270663), would estimate [transition probabilities](@entry_id:158294) based only on the current node. From the given data, a walker at node $b$ has transitioned to node $a$ 50 times (from the $a \to b \to a$ paths) and to node $c$ 50 times (from the $c \to b \to c$ paths). A first-order model would therefore assign $p(a|b) \approx 0.5$ and $p(c|b) \approx 0.5$. This model incorrectly predicts that a walker arriving at $b$ from $a$ is just as likely to proceed to $c$ as it is to return to $a$. The empirical data, however, tells a different story: the choice of the next node from $b$ is completely determined by the previous node. If the walker came from $a$, it returns to $a$; if it came from $c$, it returns to $c$. The first-order model is blind to this deterministic, memory-driven rule.
+
+This discrepancy can be formalized using the language of probability theory. A discrete-time [stochastic process](@entry_id:159502) $\{X_t\}$ is **first-order Markov** if the [conditional probability](@entry_id:151013) of the next state depends only on the current state:
+$P(X_{t+1} = x_{t+1} | X_t = x_t, X_{t-1} = x_{t-1}, \dots) = P(X_{t+1} = x_{t+1} | X_t = x_t)$.
+A direct consequence of this property is that the next state $X_{t+1}$ is conditionally independent of the state at time $t-1$, $X_{t-1}$, given the current state $X_t$. We write this as $X_{t+1} \perp\kern-1em\perp X_{t-1} | X_t$. Non-Markovian [path dependence](@entry_id:138606) of order two is precisely the violation of this [conditional independence](@entry_id:262650).
+
+To detect such dependence from data, we can employ an information-theoretic measure called **[conditional mutual information](@entry_id:139456) (CMI)**. The CMI $I(X; Y | Z)$ quantifies the reduction in uncertainty about a random variable $X$ from knowing $Y$, given that $Z$ is already known. It is defined as:
+$$
+I(X; Y | Z) = \sum_{x,y,z} p(x,y,z) \log \frac{p(x | y,z)}{p(x | z)}
+$$
+where the logarithm is typically the natural logarithm, giving a result in "nats". By the [properties of mutual information](@entry_id:270711), $I(X; Y | Z) \ge 0$, with equality holding if and only if $X$ and $Y$ are conditionally independent given $Z$.
+
+To test for second-order memory, we set $X = X_{t+1}$, $Y = X_{t-1}$, and $Z = X_t$. The relevant statistic is thus $I(X_{t+1}; X_{t-1} | X_t)$. This quantity is zero if the process is first-order Markov and strictly positive if there is any residual dependence of the next step on the previous step, after accounting for the current step . For our motivating example, the first-order model predicts $p(a|b) = 0.5$, while the second-order data shows $p(a|b,a)=1$ and $p(a|b,c)=0$. The non-zero CMI, which can be calculated as $\ln(2)$ for this dataset , serves as a definitive signature of higher-order dynamics.
+
+### Formalizing Path-Dependent Models: The Memory Network
+
+Having established the need for models that incorporate memory, we now formalize their structure. A [stochastic process](@entry_id:159502) is said to be a **$d$-th order Markov process** if the conditional probability of the next state depends on the past only through the last $d$ states. Formally, for any time $t \ge d-1$:
+$$
+P(X_{t+1}=v | X_0=x_0, \dots, X_t=x_t) = P(X_{t+1}=v | X_{t-d+1}=x_{t-d+1}, \dots, X_t=x_t)
+$$
+For $d=1$, this reduces to the first-order Markov property. For $d > 1$, it allows the [transition probability](@entry_id:271680) out of a node $x_t$ to depend on the path of length $d-1$ leading into it .
+
+A powerful and elegant technique for analyzing a $d$-th order process is to reconceptualize it as a first-order Markov process on an expanded or **lifted state space**. The states of this new process are not the nodes of the original network, but the memories themselves. This lifted network is known as a **memory network** or, more formally, a **De Bruijn graph**.
+
+For a $d$-th order model on a base graph $G=(V,E)$, the order-$d$ De Bruijn graph $B_d(G)$ is constructed as follows :
+*   **Vertices**: The vertex set of $B_d(G)$ consists of all admissible paths of length $d-1$ in the base graph $G$. An admissible path is a sequence of $d$ nodes, $(v_1, v_2, \dots, v_d)$, such that an edge $(v_i, v_{i+1})$ exists in $E$ for all $i \in \{1, \dots, d-1\}$. Each such vertex represents a possible memory state of the system.
+*   **Edges**: A directed edge exists in $B_d(G)$ from a memory state $(v_1, v_2, \dots, v_d)$ to another memory state $(w_1, w_2, \dots, w_d)$ if and only if the second memory state is a one-step continuation of the first. This requires that the suffix of the first state matches the prefix of the second: $(v_2, \dots, v_d) = (w_1, \dots, w_{d-1})$. This implies that the target memory state must be of the form $(v_2, \dots, v_d, v_{d+1})$ for some node $v_{d+1}$, and that the edge $(v_d, v_{d+1})$ exists in $E$.
+
+A random walk on this De Bruijn graph is a first-order Markov process. A single step from memory node $u = (v_1, \dots, v_d)$ to memory node $v = (v_2, \dots, v_d, v_{d+1})$ in $B_d(G)$ corresponds to the $d$-th order process on $G$ transitioning from state $v_d$ to $v_{d+1}$, given the preceding path $(v_1, \dots, v_{d-1})$.
+
+Let's make this concrete with an example . Consider a base network with nodes $\{1,2,3\}$ forming a complete directed graph (all edges $(i,j)$ for $i \ne j$ exist). Let's build a second-order model ($d=2$). The memory states are admissible paths of length $1$, which are simply the directed edges of the base graph: $(1,2), (1,3), (2,1), (2,3), (3,1), (3,2)$. These six edges are the vertices of our memory network. An edge exists in the memory network from $(i,j)$ to $(j,k)$. For instance, from memory node $(1,2)$, a walker can transition to memory nodes $(2,1)$ or $(2,3)$. Suppose the [transition probabilities](@entry_id:158294) are defined by a rule that favors [backtracking](@entry_id:168557), such that the unnormalized weight for moving from $(i,j)$ to $(j,i)$ is $\beta > 1$, and to $(j,k)$ where $k \ne i$ is $1$. The probability of [backtracking](@entry_id:168557) from $(i,j)$ is then $P((j,i)|(i,j)) = \frac{\beta}{\beta+1}$, while the probability of moving to the other neighbor is $P((j,k)|(i,j)) = \frac{1}{\beta+1}$. A path on the base network, say $1 \to 2 \to 1 \to 2 \to 3 \to 1$, corresponds to a walk on the memory network: $(1,2) \to (2,1) \to (1,2) \to (2,3) \to (3,1)$. The probability of this sequence of memory transitions can be calculated as a product of the corresponding [transition probabilities](@entry_id:158294) in the memory network. For $\beta=2$, this probability is $(\frac{2}{3}) \times (\frac{2}{3}) \times (\frac{1}{3}) \times (\frac{1}{3}) = \frac{4}{81}$.
+
+This "lifting" procedure is the central mechanism of higher-order [network models](@entry_id:136956). It transforms a complex, non-Markovian process on a simple space into a simple, Markovian process on a complex space.
+
+### The Impact of Memory on System Dynamics
+
+The shift from a first-order to a higher-order model is not merely a technicality; it can profoundly alter our understanding of a system's behavior. Two key areas where these differences manifest are in [node centrality](@entry_id:1128742) and the speed of diffusion.
+
+#### Reversal of Centrality Rankings
+
+In simple networks, a node's importance or centrality is often related to its **[stationary distribution](@entry_id:142542) probability** in a random walk—the long-term fraction of time a walker spends at that node. For a simple first-order random walk on an undirected graph, this probability is proportional to the node's degree. Higher-degree nodes are more "central."
+
+Path-dependent rules can completely upend this conclusion. Consider a network with nodes $A, B, C, D$ where node $A$ has degree 3 and node $B$ has degree 2. A first-order model predicts that $A$ is more central than $B$. Now, let's impose a second-order process with a strong tendency for walkers to oscillate within the triangle $A-B-C$, while transitions involving node $D$ are rare and transient. By carefully constructing the [transition probabilities](@entry_id:158294) on the memory network, it is possible to create a scenario where the walker spends significantly more time on paths involving node $B$ than on paths involving node $A$. Aggregating the stationary probabilities of the memory states, we can find that the long-term probability of finding the walker at node $B$ is higher than at node $A$, reversing the centrality ranking predicted by the naive first-order model . This demonstrates that ignoring memory can lead to fundamentally incorrect conclusions about the roles different components play in a system.
+
+#### Modulation of Diffusion Speed
+
+Memory also affects the global dynamics of diffusion, such as how quickly a process explores the network and converges to its [stationary distribution](@entry_id:142542). The [rate of convergence](@entry_id:146534) for a Markov chain is controlled by its **spectral gap**, the difference between the largest and second-largest eigenvalues of its transition matrix. A larger [spectral gap](@entry_id:144877) implies faster convergence.
+
+By analyzing the transition matrix $P_a$ on the memory network, we can study how memory rules influence the spectral gap . Consider a model on a $d$-[regular graph](@entry_id:265877) where a parameter $a \in [0,1]$ controls the probability of immediate [backtracking](@entry_id:168557). When $a=0$, the walker never backtracks, performing a non-[backtracking](@entry_id:168557) random walk. As $a$ increases, the tendency to get "stuck" in local oscillations increases. This generally hinders exploration and reduces the spectral gap, slowing down convergence. Interestingly, there is a special value, $a=1/d$, where the [memory effect](@entry_id:266709) cancels out, and the higher-order process on the nodes becomes equivalent to a simple first-order random walk. This analysis shows that memory is not just a local effect; the microscopic rules of path dependence have macroscopic consequences for the system's global dynamical properties, which can be tuned by adjusting the memory parameters.
+
+### Practical Challenges in Higher-Order Modeling
+
+While powerful, higher-order models introduce significant practical challenges related to the size of the model and the data required to parameterize it.
+
+#### State-Space Explosion
+
+The most immediate challenge is the combinatorial growth of the state space. For a $d$-th order model on a network with $N$ nodes, the number of potential memory states (paths of length $d-1$) can be enormous. For a random directed graph where each edge exists with probability $p$, the expected number of admissible memory states grows as $N^d p^{d-1}$ . This [exponential growth](@entry_id:141869) in the order $d$ and high-degree [polynomial growth](@entry_id:177086) in the network size $N$ is known as the **[state-space explosion](@entry_id:1132298)**. It means that even for moderately sized networks and small orders ($d>2$), the number of states can become computationally intractable to store and analyze.
+
+#### Data Sparsity and Smoothing
+
+A direct consequence of the [state-space explosion](@entry_id:1132298) is **[data sparsity](@entry_id:136465)**. With a vast number of possible memory states, any finite dataset of observed paths will contain observations for only a tiny fraction of them. If we use a Maximum Likelihood Estimate (MLE) to determine [transition probabilities](@entry_id:158294) (i.e., by normalizing observed counts), we will assign zero probability to any transition that was not seen in the data. This is unrealistic and leads to poor generalization.
+
+The solution to this problem is **smoothing**, a set of techniques that redistribute some probability mass from seen events to unseen events.
+*   **Laplace (Add-k) Smoothing**: The simplest method is to add a small pseudocount $k$ (often $k=1$, known as add-one smoothing) to every possible event count before normalizing. The probability of a transition from history $h$ to symbol $x$ becomes $p(x|h) = \frac{N(h,x) + k}{N(h,*) + k|V|}$, where $|V|$ is the size of the alphabet .
+*   **Kneser-Ney Smoothing**: A more sophisticated and effective technique is Kneser-Ney smoothing. It is an "interpolated" method that combines the higher-order estimate with a lower-order "continuation" probability. Its key innovation is that the continuation probability is based not on how often a symbol appears, but on the *diversity of contexts* in which it appears. This method has been shown to be highly effective in practice.
+
+All smoothing techniques operate on the principle of the **[bias-variance tradeoff](@entry_id:138822)** . The unsmoothed MLE has low bias but high variance, as it is highly sensitive to the specific training data. Smoothing introduces bias (the estimates are systematically shifted away from the empirical frequencies) but reduces variance, leading to a more robust model that generalizes better to new data.
+
+#### Model Selection: Choosing the Right Order
+
+Given the challenges of higher-order models, how do we decide what order $d$ is appropriate for a given dataset? Choosing a model that is too simple (low $d$) may miss crucial dynamics, while choosing one that is too complex (high $d$) leads to overfitting and computational burdens. This is a problem of **model selection**.
+
+When the models are nested (e.g., a first-order model is a special case of a second-order model), we can use a formal statistical test like the **Likelihood Ratio Test (LRT)** . To compare a [null hypothesis](@entry_id:265441) $H_0$ (e.g., order 1) against an [alternative hypothesis](@entry_id:167270) $H_1$ (e.g., order $d > 1$), we compute the [test statistic](@entry_id:167372):
+$$
+\Lambda = 2 \left( \ell_d(\hat{\phi}) - \ell_1(\hat{\theta}) \right)
+$$
+where $\ell_d(\hat{\phi})$ and $\ell_1(\hat{\theta})$ are the maximized log-likelihoods for the order-$d$ and order-1 models, respectively. According to Wilks' theorem, under suitable regularity conditions, this statistic asymptotically follows a chi-square ($\chi^2$) distribution if the [null hypothesis](@entry_id:265441) is true. The degrees of freedom of the $\chi^2$ distribution are equal to the difference in the number of free parameters between the two models. For a state space of size $m$, this is $(m^d - m)(m-1)$. By comparing the observed value of $\Lambda$ to the critical value from the corresponding $\chi^2$ distribution, we can obtain a p-value and make a principled decision on whether the additional complexity of the higher-order model is statistically justified by the data.
+
+### Sequential Models in Context: Paths vs. Groups
+
+It is crucial to recognize that the path-dependent models discussed in this chapter represent one specific type of higher-order interaction. These models capture **sequential**, ordered, and causal dependencies, where the event $i \to j \to k$ is fundamentally different from $k \to j \to i$.
+
+Another major class of higher-order models involves **simultaneous**, unordered, group interactions. These are typically represented by structures like **[hypergraphs](@entry_id:270943)** (where hyperedges are subsets of nodes) or **[simplicial complexes](@entry_id:160461)** (collections of subsets closed under inclusion). In these models, a hyperedge or simplex like $\{i, j, k\}$ represents a single group interaction where the participants are symmetric and exchangeable. The underlying adjacency structure is invariant to permutations of the indices, unlike the ordered tensors that describe path dependencies . Dynamics on these structures, such as contagion spreading through a group meeting, are conceptually different from the propagation of influence along a specific path. Choosing the appropriate higher-order framework—sequential or simplicial—depends entirely on the nature of the interactions in the system being modeled. This chapter has focused on the principles and mechanisms of the former, providing the tools to analyze systems governed by memory and path dependence.

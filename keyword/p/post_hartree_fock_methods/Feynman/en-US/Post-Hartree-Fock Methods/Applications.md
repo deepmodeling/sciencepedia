@@ -1,0 +1,5 @@
+## Applications and Interdisciplinary Connections
+
+Now, we have spent some time learning the rules of the game. We've talked about the mean-field idea of Hartree-Fock, a sort of every-electron-for-itself picture, and we've seen that to get things right, we must account for the subtle, cooperative dance that electrons perform to avoid one another—the phenomenon we call [electron correlation](@article_id:142160). We've laid out the principles of post-Hartree-Fock methods, our mathematical tools for describing this dance.
+
+But learning the rules of chess is one thing; playing a game is another. The real thrill lies not in the rules themselves, but in the beautiful, complex, and often surprising outcomes they produce. So, let's step away from the formalism and see what these methods can *do*. What hidden aspects of our world do they reveal? We are about to find that these abstract quantum rules are the key to understanding
