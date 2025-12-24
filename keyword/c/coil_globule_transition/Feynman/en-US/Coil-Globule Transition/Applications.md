@@ -1,0 +1,5 @@
+## Applications and Interdisciplinary Connections
+
+Now that we have grappled with the fundamental physics of the coil-globule transition—the delicate tug-of-war between entropy and energy that governs a polymer's shape—we can ask the most exciting question of all: "What is it good for?" It might seem like a niche curiosity of [polymer physics](@article_id:144836), but it turns out that this simple transformational switch is one of nature's favorite tricks, and one that we humans are increasingly learning to exploit. The applications are surprisingly diverse, spanning from engineered "smart" materials that respond to their environment to the most profound and elegant machinery of life itself. We are about to embark on a journey that will take us from the lab bench into the heart of the living cell, all guided by the simple principle of a chain collapsing upon itself.
+
+### Smart Materials: Polymers That Can Think

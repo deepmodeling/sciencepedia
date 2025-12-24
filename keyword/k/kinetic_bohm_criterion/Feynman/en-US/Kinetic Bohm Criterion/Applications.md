@@ -1,0 +1,3 @@
+## Applications and Interdisciplinary Connections
+
+In the previous chapter, we explored the beautiful physics behind the kinetic Bohm criterion. We saw that it isn't an arbitrary rule, but a necessary condition for the stable existence of a boundary—the sheath—between a plasma and a material surface. It is the law that dictates the minimum speed an ion must achieve to "outrun" the collective electrostatic pull of the electrons and successfully escape the quasi-neutral plasma. This idea, while elegant in theory, finds its true power in its vast and varied applications, connecting the abstract world of plasma kinetics to tangible problems in engineering,

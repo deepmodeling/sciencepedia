@@ -1,0 +1,3 @@
+## Applications and Interdisciplinary Connections
+
+Now that we have acquainted ourselves with the basic machinery of the two-point model, you might be tempted to think of it as a charmingly simple, but perhaps limited, pedagogical toy. Nothing could be further from the truth. The real magic of a great physical idea is not its complexity, but its universality. The art of the scientist, after all, is often the art of knowing what to ignore, of seeing the essential duet within the cacophony of a full orchestra. In this spirit, the two-point model is not just a toy; it is a master key, unlocking insights

@@ -1,0 +1,68 @@
+## Introduction
+Estimating the causal effects of treatments that change over time is a central challenge in medicine, engineering, and social sciences. When using observational data, the task is complicated by a causal knot: variables that guide treatment decisions also lie on the causal pathway of prior treatments. This phenomenon, known as [time-varying confounding](@entry_id:920381), makes standard statistical methods biased and unreliable. For instance, in treating a chronic disease, a doctor's decision is guided by a patient's latest lab results, but those same lab results were influenced by the previous treatment, creating a feedback loop that obscures the true effect of a long-term strategy. Marginal Structural Models (MSMs) offer a powerful framework to untangle this knot. By asking a clear, population-level causal question and employing an elegant re-weighting technique, MSMs allow us to estimate what would have happened under different treatment strategies as if we had run a perfect, sequential randomized trial.
+
+The following chapters will unpack this powerful method. We will first delve into the theoretical **Principles and Mechanisms** behind MSMs, understanding the problem they solve and the assumptions they require. Next, we will explore the wide-ranging **Applications and Interdisciplinary Connections**, seeing how this single statistical idea applies to problems from [chronic disease management](@entry_id:913606) to [predictive maintenance](@entry_id:167809) of jet engines. Finally, a series of **Hands-On Practices** will provide concrete exercises to solidify your understanding of how to build, diagnose, and interpret these sophisticated causal models.
+
+## Principles and Mechanisms
+
+### The Heart of the Problem: A Causal Knot
+
+Imagine you are a physician treating patients with a chronic illness like HIV. Your goal is to keep the virus suppressed over many years. You see a patient today, review their lab results, and decide on a treatment, let's call it $A_0$. A month later, the patient returns. You measure a key [biomarker](@entry_id:914280), say their CD4 count, which we'll call $L_1$. This [biomarker](@entry_id:914280) tells you how their [immune system](@entry_id:152480) is responding. Based on this new information, you decide on the next course of treatment, $A_1$. Finally, sometime later, you measure the ultimate outcome, $Y$, which is whether the virus is successfully suppressed.
+
+You want to know: what is the best sequence of treatments, $(A_0, A_1)$, to maximize the chance of viral suppression for your patients? This seems like a straightforward question. You have data from thousands of patients. Why not just use a standard statistical method, like a regression model, to see which treatment sequences are associated with better outcomes?
+
+Here, we encounter a subtle but profound problem, a kind of causal knot that standard methods cannot untie. The villain of our story is the time-varying [biomarker](@entry_id:914280), $L_1$. This variable wears two hats, and they command us to do opposite things .
+
+First, $L_1$ is a **confounder** for the effect of the second treatment, $A_1$. A low CD4 count (a poor value for $L_1$) might lead you to choose a more aggressive treatment ($L_1 \rightarrow A_1$), and it also independently predicts a worse final outcome ($L_1 \rightarrow Y$). To isolate the true causal effect of $A_1$, statistical wisdom tells us we *must* adjust for $L_1$ to block this [confounding](@entry_id:260626) pathway.
+
+Second, $L_1$ is a **mediator** of the effect of the first treatment, $A_0$. The initial treatment $A_0$ works, in part, by improving the patient's CD4 count ($A_0 \rightarrow L_1$), which in turn improves their health ($L_1 \rightarrow Y$). Therefore, $L_1$ lies on a causal pathway from $A_0$ to $Y$. To capture the *total* effect of the first treatment, a different piece of statistical wisdom tells us we *must not* adjust for $L_1$, as doing so would block this pathway and artificially remove a real part of the treatment's benefit.
+
+Herein lies the paradox. To estimate the effect of the treatment sequence $(A_0, A_1)$, we are told we must adjust for $L_1$ and simultaneously that we must not. If we follow the first rule and put $L_1$ into a standard [regression model](@entry_id:163386), we will get a biased estimate of the total effect of $A_0$. For instance, in a hypothetical but realistic scenario, the true total effect of starting a treatment might be an increase of 2 units on an outcome scale. A standard regression model that adjusts for the intermediate [biomarker](@entry_id:914280) $L_1$ might wrongly conclude the effect is only 1 unit, because it has blinded itself to the portion of the effect that works through improving that very [biomarker](@entry_id:914280) . This isn't just a minor error; it's a fundamental misrepresentation of how the treatment works over time.
+
+### What is the Question? Defining the Causal Target
+
+Before we can untie this knot, we must follow a primary rule of science: be absolutely clear about the question we are asking. What does "the effect of a treatment sequence" truly mean?
+
+The question a **Marginal Structural Model (MSM)** aims to answer is not about what happens to a specific patient with a particular CD4 count. Instead, it asks a population-level question. It invokes the powerful idea of **[potential outcomes](@entry_id:753644)**: what would the average outcome in the *entire population* have been if, contrary to fact, *everyone* had been assigned the treatment sequence $(a_0, a_1)$? We denote this quantity as $E[Y^{a_0, a_1}]$.
+
+The "Marginal" in MSM means we are interested in this population average, having averaged (or marginalized) over all the different individual patient characteristics. The "Structural" means we are interested in the [causal structure](@entry_id:159914) of the world, not just passive associations. An MSM, therefore, is a model for these marginal [potential outcomes](@entry_id:753644), for instance:
+$$
+E[Y^{\bar{a}}] = m(\bar{a}; \beta)
+$$
+Here, $\bar{a}$ represents an entire history of treatment, and the model $m(\cdot)$ tells us how the average potential outcome changes as we change that history. This is fundamentally different from a standard regression model, which models the conditional association $E[Y \mid \bar{A}=\bar{a}, \bar{L}=\bar{\ell}]$—the average outcome for patients who not only had treatment history $\bar{a}$ but also had covariate history $\bar{\ell}$ . The MSM asks a direct causal question about a well-defined, albeit hypothetical, intervention on the whole population.
+
+### The Rules of the Game: Our Pact with Reality
+
+To estimate what would have happened in a hypothetical world from data in the real world, we need to make some assumptions. These assumptions form a pact with reality, a set of rules that, if they hold, allow us to bridge the gap between the data we have and the causal questions we want to answer . There are three main rules.
+
+1.  **Consistency**: This is a simple rule of logical consistency. It states that for a patient who, in the real world, happened to receive treatment sequence $\bar{a}$, their *observed* outcome is precisely their *potential* outcome under that sequence. In short, $Y = Y^{\bar{A}}$, where $\bar{A}$ is the treatment actually received. This assumption links the unobservable [potential outcomes](@entry_id:753644) to the observable data.
+
+2.  **Sequential Exchangeability**: This is the "no [unmeasured confounding](@entry_id:894608)" assumption, extended over time. It says that at every moment a treatment decision is made, the factors that influenced the decision and are also predictive of the outcome have all been measured. Formally, treatment $A_t$ is independent of the [potential outcomes](@entry_id:753644) $Y^{\bar{a}}$ once we account for the past treatment and covariate history $(\bar{A}_{t-1}, \bar{L}_t)$. This is like saying that within a group of patients who are identical on their entire observed past, the reason one got the treatment and another did not is effectively random—it's not because of some hidden factor that also dooms one to a worse outcome. This is a strong assumption, and the credibility of any causal analysis depends on how well the measured covariates $\bar{L}_t$ capture the relevant clinical information.
+
+3.  **Positivity**: This rule states that for any type of patient that exists in our data, there was a non-zero probability of them receiving any of the treatment options. We can't have a situation where a treatment is deterministic for a certain subgroup. For example, if a hospital has a strict policy never to prescribe a certain drug to pregnant patients, then for the group of pregnant patients, the probability of receiving that drug is zero. This is a "positivity violation." We have no data on what would happen to pregnant patients if they *did* get the drug, so we cannot estimate its causal effect in that group without making untestable extrapolations . Positivity ensures we have some information to stand on for all comparisons we wish to make.
+
+### The Solution: Creating a Parallel Universe with Weights
+
+If these three rules hold, how do we untie the knot of the two-faced confounder-mediator? We cannot use a standard [regression model](@entry_id:163386). The solution is as elegant as it is powerful: if we can't run a perfect experiment in the real world, we can use mathematics to create a "pseudo-population" that looks as if it came from one. This technique is called **Inverse Probability of Treatment Weighting (IPTW)**.
+
+Let's use an analogy. Suppose we are studying the effect of a new fertilizer, but the farmers in our study applied it preferentially to the fields with the richest soil. A simple comparison would be confounded. To fix this, we can't change the soil, but we can change the analysis. We can give more analytical "weight" to the rare, informative cases: the few plants in poor soil that, surprisingly, received the new fertilizer, and the few in rich soil that, surprisingly, did not. By up-weighting these individuals, we create a new, balanced dataset in our computer—a pseudo-population—where it appears that soil quality was no longer associated with which fertilizer was used. We have simulated a randomized experiment.
+
+IPTW does exactly this for our medical study. For each patient, at each time point $t$, we estimate the probability that they received the treatment they actually got, given their measured history: $P(A_t \mid \bar{A}_{t-1}, \bar{L}_t)$. This is often called the **[propensity score](@entry_id:635864)**. The full weight for a patient is the product of the inverses of these probabilities over their entire treatment course:
+$$
+W = \prod_{t=0}^{T} \frac{1}{P(A_t \mid \bar{A}_{t-1}, \bar{L}_t)}
+$$
+Patients who received a "predictable" treatment (high probability) get a weight close to 1. Patients who received a "surprising" treatment (low probability) get a large weight.
+
+The mathematical beauty of this is that in the pseudo-population created by these weights, the link between the confounders and the treatment is severed. The weighted data behaves as if, at every time $t$, the treatment $A_t$ was assigned completely at random, independent of the patient's history $\bar{L}_t$ . The causal knot is untied. In this pseudo-population, we no longer need to worry about adjusting for $L_1$. We can fit a simple, marginal model of the outcome $Y$ on the treatment history $\bar{A}$ and obtain a consistent estimate of the causal effect—the $\beta$ parameters of our MSM .
+
+### Refining the Machine: Stabilized Weights
+
+This weighting machine is brilliant, but in its basic form, it can be unstable. If for a particular patient, a treatment decision was very surprising (the probability $P(A_t \mid \dots)$ was very close to zero), their weight can become astronomically large. A single patient might dominate the entire analysis, leading to estimates that are wildly variable and untrustworthy.
+
+To fix this, we can use **[stabilized weights](@entry_id:894842)**. The idea is to make the weights less extreme by multiplying the numerator by a term that is also a probability . The stabilized weight is:
+$$
+W^{(s)} = \prod_{t=0}^{T} \frac{P(A_t \mid \bar{A}_{t-1})}{P(A_t \mid \bar{A}_{t-1}, \bar{L}_t)}
+$$
+The denominator is the same as before. The numerator is the [marginal probability](@entry_id:201078) of receiving treatment $A_t$ given only the past treatment history. Because this numerator is a probability (a number less than 1), it tends to "stabilize" the weights, pulling them closer to 1 and reducing their potential for explosion.
+
+This refinement is remarkable for two reasons. First, using these [stabilized weights](@entry_id:894842) still produces a consistent estimate of the same causal effect. The magic of creating an unconfounded pseudo-population still works; specifically, we create a world where $A_t$ is independent of $\bar{L}_t$ conditional on $\bar{A}_{t-1}$, which is all we need . Second, by taming the variance of the weights, we get more statistically efficient and reliable estimates in practice. In a satisfying piece of mathematical closure, the average of all the [stabilized weights](@entry_id:894842) in the population is exactly 1, reinforcing the notion that we have performed a valid re-balancing of the original data . By moving from a simple idea to a more robust mechanism, we have arrived at a practical and powerful tool for discovering causal truths in a complex, evolving world.

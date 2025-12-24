@@ -1,0 +1,3 @@
+## Applications and Interdisciplinary Connections
+
+Now that we have acquainted ourselves with the peculiar idea of a "vacancy wind"—a directed flow of empty lattice sites that balances a net flow of atoms—it is natural to ask: so what? Is this just a curious piece of microscopic bookkeeping, or does it have real, tangible consequences? The answer is that this river of nothingness is, in fact, one of the most powerful unseen architects in our material world. Its effects are everywhere, from the slow decay of ancient artifacts to the sudden failure of modern electronics, from the way we forge strong [ceramics](@article_id:148132) to the way we sculpt materials atom by atom.
