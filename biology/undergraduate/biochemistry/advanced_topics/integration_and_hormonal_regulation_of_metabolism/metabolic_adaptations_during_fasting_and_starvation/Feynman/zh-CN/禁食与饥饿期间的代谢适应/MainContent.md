@@ -15,17 +15,17 @@
 
 城市管理的第一个动作，不是关闭所有非必要的服务，而是改变中央广播的基调。在我们的身体里，这个“广播”就是血液中两种关键激素——胰岛素（$insulin$）和胰高血糖素（$glucagon$）——的比例。
 
-进食后，[胰岛素](@article_id:311398)水平升高，就像城市广播在说：“燃料充足！所有部门全力储存能源！”它指示肝脏、肌肉和脂肪细胞吸收葡萄糖，将多余的[能量储存](@article_id:328573)为糖原和脂肪。
+进食后，[胰岛素](@keyword=insulin|lang=zh-CN|style=Feynman)水平升高，就像城市广播在说：“燃料充足！所有部门全力储存能源！”它指示肝脏、肌肉和脂肪细胞吸收葡萄糖，将多余的[能量储存](@keyword=energy_storage|lang=zh-CN|style=Feynman)为糖原和脂肪。
 
-然而，一旦你开始禁食，情况就迅速改变。[胰高血糖素](@article_id:312831)水平开始上升，而[胰岛素](@article_id:311398)水平下降。真正关键的信号，并非某一种激素的绝对水平，而是[胰高血糖素](@article_id:312831)与[胰岛素](@article_id:311398)的[摩尔比](@article_id:372523)（$G/I$）。这个比率才是代谢转变的总开关。在禁食的最初12小时内，这个比率会发生戏剧性的变化，可能增加数倍之多。这个不断升高的 $G/I$ 比率，就像一曲逐渐增强的交响乐，向全身的每一个细胞宣告：“各位请注意，运营模式已从‘储存’切换至‘动员’。请各部门按预案行动！”
+然而，一旦你开始禁食，情况就迅速改变。[胰高血糖素](@keyword=glucagon|lang=zh-CN|style=Feynman)水平开始上升，而[胰岛素](@keyword=insulin|lang=zh-CN|style=Feynman)水平下降。真正关键的信号，并非某一种激素的绝对水平，而是[胰高血糖素](@keyword=glucagon|lang=zh-CN|style=Feynman)与[胰岛素](@keyword=insulin|lang=zh-CN|style=Feynman)的[摩尔比](@keyword=molar_ratio|lang=zh-CN|style=Feynman)（$G/I$）。这个比率才是代谢转变的总开关。在禁食的最初12小时内，这个比率会发生戏剧性的变化，可能增加数倍之多[@problem_id:2057760]。这个不断升高的 $G/I$ 比率，就像一曲逐渐增强的交响乐，向全身的每一个细胞宣告：“各位请注意，运营模式已从‘储存’切换至‘动员’。请各部门按预案行动！”
 
 ### 第一阶段：动用应急储备（肝脏的食品柜）
 
 接到“动员”命令后，肝脏——这座城市的中央能源调度站——立即响应。它的首要任务是维持血液中葡萄糖浓度的稳定，因为大脑等关键部门在正常情况下极度依赖葡萄糖。
 
-肝脏首先打开了它的“食品柜”——储存的[糖原](@article_id:305755)。在胰高血糖素的指挥下，一个名为[糖原分解](@article_id:347912)（$glycogenolysis$）的过程被激活。这个过程开始分解[肝糖原](@article_id:353346)，将葡萄糖分子释放到血液中。然而，这个食品柜的储量是有限的。在禁食开始后的几个小时内，[糖原分解](@article_id:347912)的速率会达到峰值，但随着[糖原](@article_id:305755)的消耗，其速率会逐渐下降。大约24小时后，肝脏的[糖原](@article_id:305755)储备基本耗尽，这条供应线也就走到了尽头。
+肝脏首先打开了它的“食品柜”——储存的[糖原](@keyword=glycogen|lang=zh-CN|style=Feynman)。在胰高血糖素的指挥下，一个名为[糖原分解](@keyword=glycogenolysis|lang=zh-CN|style=Feynman)（$glycogenolysis$）的过程被激活。这个过程开始分解[肝糖原](@keyword=liver_glycogen|lang=zh-CN|style=Feynman)，将葡萄糖分子释放到血液中。然而，这个食品柜的储量是有限的。在禁食开始后的几个小时内，[糖原分解](@keyword=glycogenolysis|lang=zh-CN|style=Feynman)的速率会达到峰值，但随着[糖原](@keyword=glycogen|lang=zh-CN|style=Feynman)的消耗，其速率会逐渐下降。大约24小时后，肝脏的[糖原](@keyword=glycogen|lang=zh-CN|style=Feynman)储备基本耗尽，这条供应线也就走到了尽头[@problem_id:2057765]。
 
-这只是权宜之计。在[糖原](@article_id:305755)耗尽之前，身体必须启动更持久、更根本的解决方案。
+这只是权宜之计。在[糖原](@keyword=glycogen|lang=zh-CN|style=Feynman)耗尽之前，身体必须启动更持久、更根本的解决方案。
 
 ### 第二阶段：伟大的新陈代谢转向
 
@@ -33,48 +33,48 @@
 
 #### 子篇一：从“合成脂肪”到“燃烧脂肪”的切换
 
-首先，[胰高血糖素](@article_id:312831)的信号抵达了身体的主要能源仓库——脂肪组织。在这里，信号通过一系列精妙的分子传递（激活 $cAMP$ 和蛋白激酶A，即 $PKA$），最终唤醒了一个关键的酶，名为[激素敏感性脂肪酶](@article_id:347694)（$Hormone-Sensitive Lipase, HSL$）。HSL被激活后，开始将储存的巨大能量分子——甘油三酯——分解为甘油和[脂肪酸](@article_id:305838)，并将它们释放到血液中。脂肪酸，作为一种能量密度极高的燃料，开始大量运往肝脏。
+首先，[胰高血糖素](@keyword=glucagon|lang=zh-CN|style=Feynman)的信号抵达了身体的主要能源仓库——脂肪组织。在这里，信号通过一系列精妙的分子传递（激活 $cAMP$ 和蛋白激酶A，即 $PKA$），最终唤醒了一个关键的酶，名为[激素敏感性脂肪酶](@keyword=hormone_sensitive_lipase|lang=zh-CN|style=Feynman)（$Hormone-Sensitive Lipase, HSL$）[@problem_id:2057790]。HSL被激活后，开始将储存的巨大能量分子——甘油三酯——分解为甘油和[脂肪酸](@keyword=fatty_acids|lang=zh-CN|style=Feynman)，并将它们释放到血液中。脂肪酸，作为一种能量密度极高的燃料，开始大量运往肝脏。
 
-现在，肝脏面临一个抉择：它刚刚还在合成脂肪以备不时之需，现在却收到了大量从外部运来的[脂肪酸](@article_id:305838)。同时进行合成和分解，无疑是一种巨大的浪费（我们称之为“无效循环”）。身体如何避免这种愚蠢的行为？
+现在，肝脏面临一个抉择：它刚刚还在合成脂肪以备不时之需，现在却收到了大量从外部运来的[脂肪酸](@keyword=fatty_acids|lang=zh-CN|style=Feynman)。同时进行合成和分解，无疑是一种巨大的浪费（我们称之为“无效循环”）。身体如何避免这种愚蠢的行为？
 
-答案在于一个神奇的分子“门卫”——**[丙二酰辅酶A](@article_id:357170)（$malonyl-CoA$）**。在能量充足时，肝脏会产生大量的[丙二酰辅酶A](@article_id:357170)，它是合成脂肪的起始材料。同时，它还有一个至关重要的兼职：作为[脂肪酸](@article_id:305838)进入线粒体（细胞的“焚烧炉”）的“门禁卡”。高水平的[丙二酰辅酶A](@article_id:357170)会抑制一个名为肉碱脂酰转移酶I（$CAT I$）的[转运蛋白](@article_id:355583)，从而“关上”线粒体的大门，阻止脂肪酸进入被燃烧。
+答案在于一个神奇的分子“门卫”——**[丙二酰辅酶A](@keyword=malonyl_coa|lang=zh-CN|style=Feynman)（$malonyl-CoA$）**。在能量充足时，肝脏会产生大量的[丙二酰辅酶A](@keyword=malonyl_coa|lang=zh-CN|style=Feynman)，它是合成脂肪的起始材料。同时，它还有一个至关重要的兼职：作为[脂肪酸](@keyword=fatty_acids|lang=zh-CN|style=Feynman)进入线粒体（细胞的“焚烧炉”）的“门禁卡”。高水平的[丙二酰辅酶A](@keyword=malonyl_coa|lang=zh-CN|style=Feynman)会抑制一个名为肉碱脂酰转移酶I（$CAT I$）的[转运蛋白](@keyword=transport_proteins|lang=zh-CN|style=Feynman)，从而“关上”线粒体的大门，阻止脂肪酸进入被燃烧[@problem_id:2057779]。
 
-在禁食状态下，胰高血糖素的信号通过 PKA 磷酸化并**关闭**了合成丙二酰辅酶A的关键酶——[乙酰辅酶A羧化酶](@article_id:355359)（$ACC$）。这样一来，[丙二酰辅酶A](@article_id:357170)的水平骤降。门卫消失了，$CAT I$ 的抑制被解除，线粒体的大门豁然敞开。从[脂肪组织](@article_id:323285)运来的大量脂肪酸得以顺利进入线粒体，进行高效的 [β-氧化](@article_id:297546)，产生海量的能量。
+在禁食状态下，胰高血糖素的信号通过 PKA 磷酸化并**关闭**了合成丙二酰辅酶A的关键酶——[乙酰辅酶A羧化酶](@keyword=acetyl_coa_carboxylase|lang=zh-CN|style=Feynman)（$ACC$）[@problem_id:2057788]。这样一来，[丙二酰辅酶A](@keyword=malonyl_coa|lang=zh-CN|style=Feynman)的水平骤降。门卫消失了，$CAT I$ 的抑制被解除，线粒体的大门豁然敞开。从[脂肪组织](@keyword=adipose_tissue|lang=zh-CN|style=Feynman)运来的大量脂肪酸得以顺利进入线粒体，进行高效的 [β-氧化](@keyword=beta_oxidation|lang=zh-CN|style=Feynman)，产生海量的能量。
 
 通过调控丙二酰辅酶A这一个分子，身体就实现了一个优雅的开关：关闭脂肪合成，同时开启脂肪燃烧。
 
 #### 子篇二：从“消耗葡萄糖”到“制造葡萄糖”的切换
 
-肝脏不仅要为身体提供[脂肪酸](@article_id:305838)燃料，还必须承担起制造新葡萄糖的重任，这个过程称为糖异生（$gluconeogenesis$）。同样，为了避免“一边制造葡萄糖，一边又消耗它”的无效循环（[糖酵解](@article_id:302460)，$glycolysis$），身体再次动用了一个精妙的调控开关。
+肝脏不仅要为身体提供[脂肪酸](@keyword=fatty_acids|lang=zh-CN|style=Feynman)燃料，还必须承担起制造新葡萄糖的重任，这个过程称为糖异生（$gluconeogenesis$）。同样，为了避免“一边制造葡萄糖，一边又消耗它”的无效循环（[糖酵解](@keyword=glycolysis|lang=zh-CN|style=Feynman)，$glycolysis$），身体再次动用了一个精妙的调控开关。
 
-这次的主角是另一个强大的信号分子——**果糖-2,6-二磷酸（$fructose-2,6-bisphosphate, F-2,6-BP$）**。你可以把它想象成[糖酵解途径](@article_id:350301)的“油门踏板”。当 $F-2,6-BP$ 浓度很高时，它会强力踩下糖酵解的油门（激活磷酸果糖激酶-1, PFK-1），同时踩下[糖异生](@article_id:316026)的刹车（抑制果糖-1,6-二磷酸酶, FBPase-1）。
+这次的主角是另一个强大的信号分子——**果糖-2,6-二磷酸（$fructose-2,6-bisphosphate, F-2,6-BP$）**。你可以把它想象成[糖酵解途径](@keyword=glycolytic_pathway|lang=zh-CN|style=Feynman)的“油门踏板”。当 $F-2,6-BP$ 浓度很高时，它会强力踩下糖酵解的油门（激活磷酸果糖激酶-1, PFK-1），同时踩下[糖异生](@keyword=gluconeogenesis|lang=zh-CN|style=Feynman)的刹车（抑制果糖-1,6-二磷酸酶, FBPase-1）。
 
-那么，身体如何控制这位“司机”呢？答案是一个非凡的“双功能”酶，它同时拥有制造 $F-2,6-BP$ 的激酶（$PFK-2$）活性和降解它的磷酸酶（$FBPase-2$）活性。在禁食期间，胰高血糖素信号激活的 PKA 会磷酸化这个双功能酶。在肝脏中，这个磷酸化事件巧妙地**关闭**了其激酶活性，同时**开启**了其磷酸酶活性。
+那么，身体如何控制这位“司机”呢？答案是一个非凡的“双功能”酶，它同时拥有制造 $F-2,6-BP$ 的激酶（$PFK-2$）活性和降解它的磷酸酶（$FBPase-2$）活性。在禁食期间，胰高血糖素信号激活的 PKA 会磷酸化这个双功能酶。在肝脏中，这个磷酸化事件巧妙地**关闭**了其激酶活性，同时**开启**了其磷酸酶活性[@problem_id:2057764]。
 
-结果是，$F-2,6-BP$ 的水平急剧下降。糖酵解的“油门”被松开，糖异生的“刹车”被解除。代谢流向被彻底逆转，肝脏从一个葡萄糖的消费者，转变为一个高效的葡萄糖生产者。
+结果是，$F-2,6-BP$ 的水平急剧下降[@problem_id:2057798]。糖酵解的“油门”被松开，糖异生的“刹车”被解除。代谢流向被彻底逆转，肝脏从一个葡萄糖的消费者，转变为一个高效的葡萄糖生产者。
 
 ### 第三阶段：配角登场与必然的结局
 
-随着肝脏全力投入糖异生和[脂肪酸氧化](@article_id:313692)，两个重要的后续剧情依次上演。
+随着肝脏全力投入糖异生和[脂肪酸氧化](@keyword=fatty_acid_oxidation|lang=zh-CN|style=Feynman)，两个重要的后续剧情依次上演。
 
-首先，为了保证糖异生有充足的原料（如丙酮酸），身体必须阻止这些宝贵的碳骨架被“浪费”掉。[丙酮酸脱氢酶复合物](@article_id:311359)（$PDH$）是将丙酮酸送入线粒体彻底氧化（进入三羧酸循环）的门户。在禁食期间，[脂肪酸氧化](@article_id:313692)产生了大量的[乙酰辅酶A](@article_id:307482)（$acetyl-CoA$）和 $NADH$。这些分子会激活一个名为丙酮酸[脱氢酶](@article_id:365063)激酶（$PDH \ kinase$）的酶，该激酶通过磷酸化来**关闭** PDH 复合物。这相当于在通往“彻底燃烧”的路上设置了一个路障，将丙酮酸引导至“回收再利用制造葡萄糖”的道路上。
+首先，为了保证糖异生有充足的原料（如丙酮酸），身体必须阻止这些宝贵的碳骨架被“浪费”掉。[丙酮酸脱氢酶复合物](@keyword=pyruvate_dehydrogenase_complex|lang=zh-CN|style=Feynman)（$PDH$）是将丙酮酸送入线粒体彻底氧化（进入三羧酸循环）的门户。在禁食期间，[脂肪酸氧化](@keyword=fatty_acid_oxidation|lang=zh-CN|style=Feynman)产生了大量的[乙酰辅酶A](@keyword=acetyl_coa|lang=zh-CN|style=Feynman)（$acetyl-CoA$）和 $NADH$。这些分子会激活一个名为丙酮酸[脱氢酶](@keyword=dehydrogenase|lang=zh-CN|style=Feynman)激酶（$PDH \ kinase$）的酶，该激酶通过磷酸化来**关闭** PDH 复合物[@problem_id:2057781]。这相当于在通往“彻底燃烧”的路上设置了一个路障，将丙酮酸引导至“回收再利用制造葡萄糖”的道路上。
 
-其次，肝脏内出现了一个“幸福的烦恼”。一方面，[脂肪酸氧化](@article_id:313692)产生海啸般的乙酰辅酶A；另一方面，[糖异生](@article_id:316026)大量消耗了草酰乙酸（$oxaloacetate, OAA$）。而草酰乙酸是[乙酰辅酶A](@article_id:307482)进入三羧酸循环（$TCA \ cycle$）进行燃烧所必需的“反应搭档”。就好像一个汽车厂生产了堆积如山的发动机（乙酰辅酶A），却发现底盘（草酰[乙酸](@article_id:314453)）被调去支援别的项目了。
+其次，肝脏内出现了一个“幸福的烦恼”。一方面，[脂肪酸氧化](@keyword=fatty_acid_oxidation|lang=zh-CN|style=Feynman)产生海啸般的乙酰辅酶A；另一方面，[糖异生](@keyword=gluconeogenesis|lang=zh-CN|style=Feynman)大量消耗了草酰乙酸（$oxaloacetate, OAA$）。而草酰乙酸是[乙酰辅酶A](@keyword=acetyl_coa|lang=zh-CN|style=Feynman)进入三羧酸循环（$TCA \ cycle$）进行燃烧所必需的“反应搭档”。就好像一个汽车厂生产了堆积如山的发动机（乙酰辅酶A），却发现底盘（草酰[乙酸](@keyword=acetic_acid|lang=zh-CN|style=Feynman)）被调去支援别的项目了。
 
 $$
 \text{acetyl-CoA} + \text{OAA} \xrightarrow{\text{citrate synthase}} \text{citrate} \quad (\text{进入TCA循环的入口})
 $$
 
-由于草酰[乙酸](@article_id:314453)的短缺，大量的乙酰辅酶A无法进入三羧酸循环，在肝脏线粒体内越积越多。肝脏并没有让这场“交通堵塞”演变成灾难，而是启动了一条旁路——[酮体生成](@article_id:348505)（$ketogenesis$）。它将两个[乙酰辅酶A](@article_id:307482)分子巧妙地拼接起来，制造成一种全新的、水溶性的、可运输的燃料——**酮体**（$ketone \ bodies$），如乙酰乙酸和β-羟丁酸。肝脏将这些酮体大量生产并泵入血液，为其他组织提供了一种新的能源选择。
+由于草酰[乙酸](@keyword=acetic_acid|lang=zh-CN|style=Feynman)的短缺，大量的乙酰辅酶A无法进入三羧酸循环，在肝脏线粒体内越积越多[@problem_id:2057789]。肝脏并没有让这场“交通堵塞”演变成灾难，而是启动了一条旁路——[酮体生成](@keyword=ketone_body_formation|lang=zh-CN|style=Feynman)（$ketogenesis$）。它将两个[乙酰辅酶A](@keyword=acetyl_coa|lang=zh-CN|style=Feynman)分子巧妙地拼接起来，制造成一种全新的、水溶性的、可运输的燃料——**酮体**（$ketone \ bodies$），如乙酰乙酸和β-羟丁酸。肝脏将这些酮体大量生产并泵入血液，为其他组织提供了一种新的能源选择。
 
 ### 终极目标：生存与蛋白质节约
 
-我们不禁要问，身体费尽周折，进行如此复杂的[代谢调控](@article_id:297031)，最终的目的是什么？
+我们不禁要问，身体费尽周折，进行如此复杂的[代谢调控](@keyword=metabolic_regulation|lang=zh-CN|style=Feynman)，最终的目的是什么？
 
 答案是：生存，特别是保护我们最宝贵的资产——蛋白质。
 
-在禁食初期，为了满足大脑对葡萄糖的需求，身体不得不分解肌肉等组织中的蛋白质，将氨基酸运到肝脏进行糖异生。但这是一种饮鸩止渴的策略，因为蛋白质构成了我们身体的结构和功能基础（如肌肉、酶、[抗体](@article_id:307222)等）。长期大量消耗蛋白质是致命的。
+在禁食初期，为了满足大脑对葡萄糖的需求，身体不得不分解肌肉等组织中的蛋白质，将氨基酸运到肝脏进行糖异生。但这是一种饮鸩止渴的策略，因为蛋白质构成了我们身体的结构和功能基础（如肌肉、酶、[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)等）。长期大量消耗蛋白质是致命的。
 
-而酮体的出现，正是这场生存大戏的最高潮。经过几天的适应，大脑这个曾经的“葡萄糖铁杆粉丝”，学会了高效利用[酮体](@article_id:346395)作为其主要的能量来源。当大脑开始大量使用[酮体](@article_id:346395)后，它对葡萄糖的需求就大大降低了。这反过来减轻了肝脏通过糖异生制造葡萄糖的压力，从而显著减少了对肌肉蛋白质的分解需求。这个过程，我们称之为“蛋白质节约”（$protein \ sparing$）。
+而酮体的出现，正是这场生存大戏的最高潮。经过几天的适应，大脑这个曾经的“葡萄糖铁杆粉丝”，学会了高效利用[酮体](@keyword=ketone_bodies|lang=zh-CN|style=Feynman)作为其主要的能量来源。当大脑开始大量使用[酮体](@keyword=ketone_bodies|lang=zh-CN|style=Feynman)后，它对葡萄糖的需求就大大降低了。这反过来减轻了肝脏通过糖异生制造葡萄糖的压力，从而显著减少了对肌肉蛋白质的分解需求。这个过程，我们称之为“蛋白质节约”（$protein \ sparing$）[@problem_id:2057787]。
 
-从一个简单的激素比率变化开始，到[肝糖原](@article_id:353346)的初步动员，再到脂肪燃烧和[糖异生](@article_id:316026)的全面开启，最终到[酮体](@article_id:346395)的产生和对大脑的滋养，从而实现对宝贵蛋白质的保护——这整套流程环环相扣，逻辑清晰，充满了工程学上的美感。它向我们展示了生命在面对逆境时，所展现出的无与伦比的智慧与韧性。
+从一个简单的激素比率变化开始，到[肝糖原](@keyword=liver_glycogen|lang=zh-CN|style=Feynman)的初步动员，再到脂肪燃烧和[糖异生](@keyword=gluconeogenesis|lang=zh-CN|style=Feynman)的全面开启，最终到[酮体](@keyword=ketone_bodies|lang=zh-CN|style=Feynman)的产生和对大脑的滋养，从而实现对宝贵蛋白质的保护——这整套流程环环相扣，逻辑清晰，充满了工程学上的美感。它向我们展示了生命在面对逆境时，所展现出的无与伦比的智慧与韧性。

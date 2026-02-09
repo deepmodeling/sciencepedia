@@ -1,100 +1,100 @@
 ## 引言
-在复杂的神经网络中，单个[神经元](@article_id:324093)扮演着基础计算单元的角色。它接收来自成百上千个突触的输入信号，并将它们整合成一个统一的指令：发放动作电位或保持沉默。然而，在做出这个“全或无”的决定之前，一个更微妙、更基础的过程正在上演：微弱的、亚阈值的电信号是如何在[神经元](@article_id:324093)庞大的[树突](@article_id:319907)和轴突网络中[被动传播](@article_id:374489)和整合的？这个过程看似简单，却构成了[神经计算](@article_id:314470)的物理基石，但其背后的物理定律和生物学意义常常被忽略。
+在复杂的神经网络中，单个[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)扮演着基础计算单元的角色。它接收来自成百上千个突触的输入信号，并将它们整合成一个统一的指令：发放动作电位或保持沉默。然而，在做出这个“全或无”的决定之前，一个更微妙、更基础的过程正在上演：微弱的、亚阈值的电信号是如何在[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)庞大的[树突](@keyword=dendrites|lang=zh-CN|style=Feynman)和轴突网络中[被动传播](@keyword=passive_propagation|lang=zh-CN|style=Feynman)和整合的？这个过程看似简单，却构成了[神经计算](@keyword=neural_computation|lang=zh-CN|style=Feynman)的物理基石，但其背后的物理定律和生物学意义常常被忽略。
 
-本文旨在深入剖析[亚阈值电位](@article_id:374662)[被动传播](@article_id:374489)的物理原理及其在神经功能中的深刻应用。我们将首先在“**原理与机制**”一章中，借鉴物理学中的[电缆理论](@article_id:356543)，将[神经元](@article_id:324093)抽象为一个“漏水的电缆”，并推导出描述信号传播的核心方程。通过理解时间常数和长度常数这两个关键参数，我们将揭示[神经元](@article_id:324093)形态与其电学特性之间的内在联系。接着，在“**应用与跨学科连接**”一章中，我们将探讨这些被动原理如何解释从树突棘到髓鞘轴突的各种生物设计的计算优势，分析线性与非线性的[信号整合](@article_id:354444)法则，并将其与实验方法乃至其他生命系统（如植物）联系起来。
+本文旨在深入剖析[亚阈值电位](@keyword=subthreshold_potentials|lang=zh-CN|style=Feynman)[被动传播](@keyword=passive_propagation|lang=zh-CN|style=Feynman)的物理原理及其在神经功能中的深刻应用。我们将首先在“**原理与机制**”一章中，借鉴物理学中的[电缆理论](@keyword=cable_theory|lang=zh-CN|style=Feynman)，将[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)抽象为一个“漏水的电缆”，并推导出描述信号传播的核心方程。通过理解时间常数和长度常数这两个关键参数，我们将揭示[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)形态与其电学特性之间的内在联系。接着，在“**应用与跨学科连接**”一章中，我们将探讨这些被动原理如何解释从树突棘到髓鞘轴突的各种生物设计的计算优势，分析线性与非线性的[信号整合](@keyword=signal_integration|lang=zh-CN|style=Feynman)法则，并将其与实验方法乃至其他生命系统（如植物）联系起来。
 
-通过这段旅程，我们将看到，最基本的物理定律如何塑造了[神经元](@article_id:324093)这一精妙的[生物计算](@article_id:336807)设备。现在，让我们从其核心原理开始探索。
+通过这段旅程，我们将看到，最基本的物理定律如何塑造了[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)这一精妙的[生物计算](@keyword=biological_computation|lang=zh-CN|style=Feynman)设备。现在，让我们从其核心原理开始探索。
 
 ## 原理与机制
 
-在引言中，我们将[神经元](@article_id:324093)比作一个错综复杂的计算设备。现在，让我们卷起袖子，像物理学家一样深入探勘这台“[生物计算](@article_id:336807)机”的内部运作。我们将发现，那些看似复杂的生物现象背后，隐藏着几条异常优美且简洁的物理定律。我们的旅程将从一个简单的问题开始：一个微弱的电信号是如何在[神经元](@article_id:324093)的“电线”——也就是[树突](@article_id:319907)和轴突——中传播的？
+在引言中，我们将[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)比作一个错综复杂的计算设备。现在，让我们卷起袖子，像物理学家一样深入探勘这台“[生物计算](@keyword=biological_computation|lang=zh-CN|style=Feynman)机”的内部运作。我们将发现，那些看似复杂的生物现象背后，隐藏着几条异常优美且简洁的物理定律。我们的旅程将从一个简单的问题开始：一个微弱的电信号是如何在[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)的“电线”——也就是[树突](@keyword=dendrites|lang=zh-CN|style=Feynman)和轴突——中传播的？
 
-### [神经元](@article_id:324093)：一根漏水的电缆
+### [神经元](@keyword=neurons|lang=zh-CN|style=Feynman)：一根漏水的电缆
 
 想象一下，你想通过一根长长的花园水管给远方的朋友传递一个水压脉冲。如果这根水管是完美的，脉冲会迅速、无损地传到另一端。但如果水管壁上布满了微小的孔洞，情况就大不相同了。水会一边前进，一边从这些孔洞中渗漏出去。等你朋友在远端测量时，收到的脉冲会变得微弱、延迟，甚至完全消失。
 
-[神经元](@article_id:324093)的[树突](@article_id:319907)和轴突，在电气特性上，就非常像这样一根“漏水的电缆”。它内部的细胞质对电流有电阻，就像水管对水流的阻力一样。更重要的是，包裹着它的细胞膜并非完美的绝缘体，它允许一部分电流“泄漏”到细胞外部的导电液体中。此外，[细胞膜](@article_id:305910)本身就像一个[电容器](@article_id:331067)，可以在其内外两侧储存[电荷](@article_id:339187)。
+[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)的[树突](@keyword=dendrites|lang=zh-CN|style=Feynman)和轴突，在电气特性上，就非常像这样一根“漏水的电缆”。它内部的细胞质对电流有电阻，就像水管对水流的阻力一样。更重要的是，包裹着它的细胞膜并非完美的绝缘体，它允许一部分电流“泄漏”到细胞外部的导电液体中。此外，[细胞膜](@keyword=plasma_membrane|lang=zh-CN|style=Feynman)本身就像一个[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)，可以在其内外两侧储存[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。
 
-那么，一个在突触连接处产生的微小电压变化，要如何克服这些阻碍，穿越这根漏水的、能[储能](@article_id:328573)的电缆，到达足够远的地方，从而对[神经元](@article_id:324093)的整体活动产生影响呢？要回答这个问题，我们不能只停留在定性的比喻上。我们需要建立一个数学模型，用物理学的语言来精确描述这个过程。
+那么，一个在突触连接处产生的微小电压变化，要如何克服这些阻碍，穿越这根漏水的、能[储能](@keyword=energy_storage|lang=zh-CN|style=Feynman)的电缆，到达足够远的地方，从而对[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)的整体活动产生影响呢？要回答这个问题，我们不能只停留在定性的比喻上。我们需要建立一个数学模型，用物理学的语言来精确描述这个过程。
 
 ### 从材料到模型：电缆的物理字母表
 
 要理解整根电缆的行为，我们先从它的一小段（我们称之为 infinitesimally small segment）开始分析。我们需要定义几个关键的物理量，它们构成了我们描述电缆行为的“字母表”。
 
-首先是电流在电缆内部*沿轴向*传播时遇到的阻力。这被称为**[轴向电阻](@article_id:356586) (axial resistance)**。就像水管一样，管子越粗，水流越顺畅；管子越长，总阻力越大。对于一个半径为 $a$ 的圆柱形神经突起，其单位长度的[轴向电阻](@article_id:356586) $r_a$ 取决于细胞质的**[电阻率](@article_id:304271) (resistivity)** $R_i$ 和它的横截面积 $\pi a^2$。直观地，电流要挤过的空间越大，就越容易通过。它们的关系简单而优美：
+首先是电流在电缆内部*沿轴向*传播时遇到的阻力。这被称为**[轴向电阻](@keyword=axial_resistance|lang=zh-CN|style=Feynman) (axial resistance)**。就像水管一样，管子越粗，水流越顺畅；管子越长，总阻力越大。对于一个半径为 $a$ 的圆柱形神经突起，其单位长度的[轴向电阻](@keyword=axial_resistance|lang=zh-CN|style=Feynman) $r_a$ 取决于细胞质的**[电阻率](@keyword=electrical_resistivity|lang=zh-CN|style=Feynman) (resistivity)** $R_i$ 和它的横截面积 $\pi a^2$。直观地，电流要挤过的空间越大，就越容易通过。它们的关系简单而优美：
 
 $$ r_a = \frac{R_i}{\pi a^2} $$
 
-这个公式告诉我们，神经突起越粗（$a$ 越大），电流沿其内部传播的阻力就越小。$r_a$ 的单位是 $\Omega/\mathrm{m}$（欧姆每米），代表每米长度的电缆内部有多大的阻力  。
+这个公式告诉我们，神经突起越粗（$a$ 越大），电流沿其内部传播的阻力就越小。$r_a$ 的单位是 $\Omega/\mathrm{m}$（欧姆每米），代表每米长度的电缆内部有多大的阻力 [@problem_id:2737487] [@problem_id:2737502]。
 
-接下来是电流*穿过细胞膜*泄漏出去时遇到的阻力。这部分稍微有些棘手。细胞膜的**[比膜电阻](@article_id:345972) (specific membrane resistance)** $R_m$ 是一个材料属性，单位是 $\Omega \cdot \mathrm{m}^2$（欧姆乘以平方米）。这个单位意味着，对于一大片[细胞膜](@article_id:305910)，其总电阻与面积成*反比*——因为面积越大，可供电流泄漏的“通道”就越多。对于我们单位长度的电缆段，其表面积是周长 $2\pi a$。因此，单位长度的**膜电阻 (membrane resistance)** $r_m$ 的表达式为：
+接下来是电流*穿过细胞膜*泄漏出去时遇到的阻力。这部分稍微有些棘手。细胞膜的**[比膜电阻](@keyword=specific_membrane_resistance|lang=zh-CN|style=Feynman) (specific membrane resistance)** $R_m$ 是一个材料属性，单位是 $\Omega \cdot \mathrm{m}^2$（欧姆乘以平方米）。这个单位意味着，对于一大片[细胞膜](@keyword=plasma_membrane|lang=zh-CN|style=Feynman)，其总电阻与面积成*反比*——因为面积越大，可供电流泄漏的“通道”就越多。对于我们单位长度的电缆段，其表面积是周长 $2\pi a$。因此，单位长度的**膜电阻 (membrane resistance)** $r_m$ 的表达式为：
 
 $$ r_m = \frac{R_m}{2\pi a} $$
 
-这里的单位是 $\Omega \cdot \mathrm{m}$（欧姆米）。请注意这个单位！它暗示着 $r_m$ 衡量的是一种“电阻-长度”乘积。一根长度为 $L$ 的电缆，其总的膜泄漏路径可以看作是许多小段并联而成，所以总膜电阻是 $r_m / L$。这意味着，电缆越长，总的泄漏越严重（总膜电阻越小）。$r_m$ 刻画了[细胞膜](@article_id:305910)阻止电流泄漏的能力有多强  。
+这里的单位是 $\Omega \cdot \mathrm{m}$（欧姆米）。请注意这个单位！它暗示着 $r_m$ 衡量的是一种“电阻-长度”乘积。一根长度为 $L$ 的电缆，其总的膜泄漏路径可以看作是许多小段并联而成，所以总膜电阻是 $r_m / L$。这意味着，电缆越长，总的泄漏越严重（总膜电阻越小）。$r_m$ 刻画了[细胞膜](@keyword=plasma_membrane|lang=zh-CN|style=Feynman)阻止电流泄漏的能力有多强 [@problem_id:2737487] [@problem_id:2737502]。
 
-最后，细胞膜作为一层薄薄的绝缘层，将内外的导电液体隔开，形成了一个**[电容器](@article_id:331067) (capacitor)**。它可以在膜的两侧储存[电荷](@article_id:339187)。与电阻类似，我们有**[比膜电容](@article_id:356712) (specific membrane capacitance)** $C_m$（单位 $\mathrm{F}/\mathrm{m}^2$，法拉每平方米），以及单位长度的**[膜电容](@article_id:351066) (membrane capacitance)** $c_m$：
+最后，细胞膜作为一层薄薄的绝缘层，将内外的导电液体隔开，形成了一个**[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman) (capacitor)**。它可以在膜的两侧储存[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。与电阻类似，我们有**[比膜电容](@keyword=specific_membrane_capacitance|lang=zh-CN|style=Feynman) (specific membrane capacitance)** $C_m$（单位 $\mathrm{F}/\mathrm{m}^2$，法拉每平方米），以及单位长度的**[膜电容](@keyword=membrane_capacitance|lang=zh-CN|style=Feynman) (membrane capacitance)** $c_m$：
 
 $$ c_m = C_m \cdot (2\pi a) $$
 
-$c_m$ 的单位是 $\mathrm{F}/\mathrm{m}$（法拉每米），代表每米长的电缆能储存多少[电荷](@article_id:339187)。这个电容的存在意味着，要改变膜两侧的电压，我们必须先对这个“[电荷](@article_id:339187)桶”进行充电或放电，这需要时间 。
+$c_m$ 的单位是 $\mathrm{F}/\mathrm{m}$（法拉每米），代表每米长的电缆能储存多少[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。这个电容的存在意味着，要改变膜两侧的电压，我们必须先对这个“[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)桶”进行充电或放电，这需要时间 [@problem_id:2737502]。
 
-现在，我们拥有了描述这根漏水电缆的三个基本参数：$r_a$、$r_m$ 和 $c_m$。它们是从更基本的[材料属性](@article_id:307141)（$R_i, R_m, C_m$）和几何形状（半径 $a$）中派生出来的。
+现在，我们拥有了描述这根漏水电缆的三个基本参数：$r_a$、$r_m$ 和 $c_m$。它们是从更基本的[材料属性](@keyword=material_properties|lang=zh-CN|style=Feynman)（$R_i, R_m, C_m$）和几何形状（半径 $a$）中派生出来的。
 
-### 伟大的交响曲：[电缆方程](@article_id:327408)
+### 伟大的交响曲：[电缆方程](@keyword=cable_equation|lang=zh-CN|style=Feynman)
 
-有了这些基本构件，我们就可以将它们组合起来，谱写出描述电压 $V(x,t)$ 如何沿着电缆（位置 $x$）随时间 $t$ 变化的宏伟交响曲——**[电缆方程](@article_id:327408) (Cable Equation)**。
+有了这些基本构件，我们就可以将它们组合起来，谱写出描述电压 $V(x,t)$ 如何沿着电缆（位置 $x$）随时间 $t$ 变化的宏伟交响曲——**[电缆方程](@keyword=cable_equation|lang=zh-CN|style=Feynman) (Cable Equation)**。
 
-它的推导基于一个简单的物理原则：[电荷守恒](@article_id:312253)，也就是[基尔霍夫电流定律](@article_id:334332)。对于电缆的任何一小段，流入的轴向电流，减去流出的轴向电流，其差额必定等于通过细胞膜泄漏出去的电流。而泄漏出去的电流又分成两部分：一部分是通过[膜电阻](@article_id:353767)的“稳定”泄漏，另一部分是用来给[膜电容](@article_id:351066)充电或放电的“动态”电流。
+它的推导基于一个简单的物理原则：[电荷守恒](@keyword=charge_conservation|lang=zh-CN|style=Feynman)，也就是[基尔霍夫电流定律](@keyword=kirchhoff_s_current_law|lang=zh-CN|style=Feynman)。对于电缆的任何一小段，流入的轴向电流，减去流出的轴向电流，其差额必定等于通过细胞膜泄漏出去的电流。而泄漏出去的电流又分成两部分：一部分是通过[膜电阻](@keyword=membrane_resistance|lang=zh-CN|style=Feynman)的“稳定”泄漏，另一部分是用来给[膜电容](@keyword=membrane_capacitance|lang=zh-CN|style=Feynman)充电或放电的“动态”电流。
 
-将这一切用数学语言表达出来，经过一番推导，我们得到了一个惊人地简洁而强大的[偏微分方程](@article_id:301773)   ：
+将这一切用数学语言表达出来，经过一番推导，我们得到了一个惊人地简洁而强大的[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman) [@problem_id:2737479] [@problem_id:2737495] [@problem_id:2737516]：
 
 $$ \tau_m \frac{\partial V}{\partial t} = \lambda^2 \frac{\partial^2 V}{\partial x^2} - V $$
 
-（这里我们暂时忽略了外部注入电流的影响）。这个方程可能看起来令人生畏，但它讲述的故事却非常直观。方程左边的 $\frac{\partial V}{\partial t}$ 代表某一点电压随时间的变化率。它取决于右边的两项：第一项 $\lambda^2 \frac{\partial^2 V}{\partial x^2}$ 描述的是电压在空间上的“曲率”或“[扩散](@article_id:327616)”趋势——如果一个点的电[压比](@article_id:298149)周围高，它就会向两边扩散开来；第二项 $-V$ 则是一个衰减项，代表电压会因通过[膜电阻](@article_id:353767)的泄漏而不断“衰减”回[静息电位](@article_id:355008)。
+（这里我们暂时忽略了外部注入电流的影响）。这个方程可能看起来令人生畏，但它讲述的故事却非常直观。方程左边的 $\frac{\partial V}{\partial t}$ 代表某一点电压随时间的变化率。它取决于右边的两项：第一项 $\lambda^2 \frac{\partial^2 V}{\partial x^2}$ 描述的是电压在空间上的“曲率”或“[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)”趋势——如果一个点的电[压比](@keyword=pressure_ratio|lang=zh-CN|style=Feynman)周围高，它就会向两边扩散开来；第二项 $-V$ 则是一个衰减项，代表电压会因通过[膜电阻](@keyword=membrane_resistance|lang=zh-CN|style=Feynman)的泄漏而不断“衰减”回[静息电位](@keyword=resting_potential|lang=zh-CN|style=Feynman)。
 
 ### 两个神奇的常数：电缆的灵魂
 
-[电缆方程](@article_id:327408)的优雅之处在于，所有复杂的物理细节都被浓缩进了两个“神奇的”常数中：**时间常数 (time constant)** $\tau_m$ 和**长度常数 (length constant)** $\lambda$。这两个常数几乎决定了关于无源信号传播的一切  。
+[电缆方程](@keyword=cable_equation|lang=zh-CN|style=Feynman)的优雅之处在于，所有复杂的物理细节都被浓缩进了两个“神奇的”常数中：**时间常数 (time constant)** $\tau_m$ 和**长度常数 (length constant)** $\lambda$。这两个常数几乎决定了关于无源信号传播的一切 [@problem_id:2737479] [@problem_id:2737495]。
 
-#### [时间常数](@article_id:331080) $\tau_m = R_m C_m$
+#### [时间常数](@keyword=time_constant|lang=zh-CN|style=Feynman) $\tau_m = R_m C_m$
 
-让我们先忘记空间，想象整个[神经元](@article_id:324093)被压缩成一个点（即“等电位”模型）。当我们给这个点注入一股电流时，它的电压不会瞬间上升。电流必须先去“填充”[膜电容](@article_id:351066)这个[电荷](@article_id:339187)桶。$\tau_m$ 就是电压从初始值变化到最终[稳态](@article_id:326048)值大约 63% 所需的时间。它衡量了膜电压响应的“惯性”或“迟滞性” 。
+让我们先忘记空间，想象整个[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)被压缩成一个点（即“等电位”模型）。当我们给这个点注入一股电流时，它的电压不会瞬间上升。电流必须先去“填充”[膜电容](@keyword=membrane_capacitance|lang=zh-CN|style=Feynman)这个[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)桶。$\tau_m$ 就是电压从初始值变化到最终[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)值大约 63% 所需的时间。它衡量了膜电压响应的“惯性”或“迟滞性” [@problem_id:2737485]。
 
-这种迟滞性意味着神经膜在时间上是一个**[低通滤波器](@article_id:305624) (low-pass filter)**。它能很好地响应缓慢变化的输入信号，但对于快速、[抖动](@article_id:326537)的信号，它会将其“平滑”掉。这对[神经元整合](@article_id:349656)来自成百上千个突触的、充满噪声的输入信号至关重要。我们可以定义一个**截止频率 (cutoff frequency)** $f_c = 1/(2\pi\tau_m)$，高于这个频率的信号将被大幅削弱。
+这种迟滞性意味着神经膜在时间上是一个**[低通滤波器](@keyword=low_pass_filter|lang=zh-CN|style=Feynman) (low-pass filter)**。它能很好地响应缓慢变化的输入信号，但对于快速、[抖动](@keyword=dither|lang=zh-CN|style=Feynman)的信号，它会将其“平滑”掉。这对[神经元整合](@keyword=neuronal_integration|lang=zh-CN|style=Feynman)来自成百上千个突触的、充满噪声的输入信号至关重要。我们可以定义一个**截止频率 (cutoff frequency)** $f_c = 1/(2\pi\tau_m)$，高于这个频率的信号将被大幅削弱。
 
-最令人惊讶的是，[时间常数](@article_id:331080) $\tau_m$ 仅由[比膜电阻](@article_id:345972) $R_m$ 和[比膜电容](@article_id:356712) $C_m$ 这两个*膜的内在属性*决定。它与[神经元](@article_id:324093)的尺寸或形状*无关*！这意味着，一个巨大的细胞和一个微小的细胞，只要它们的[细胞膜](@article_id:305910)材质相同，它们对输入信号的时间平滑能力就是一样的。这是大自然在不同尺度上保持功能一致性的一个绝妙例子 。
+最令人惊讶的是，[时间常数](@keyword=time_constant|lang=zh-CN|style=Feynman) $\tau_m$ 仅由[比膜电阻](@keyword=specific_membrane_resistance|lang=zh-CN|style=Feynman) $R_m$ 和[比膜电容](@keyword=specific_membrane_capacitance|lang=zh-CN|style=Feynman) $C_m$ 这两个*膜的内在属性*决定。它与[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)的尺寸或形状*无关*！这意味着，一个巨大的细胞和一个微小的细胞，只要它们的[细胞膜](@keyword=plasma_membrane|lang=zh-CN|style=Feynman)材质相同，它们对输入信号的时间平滑能力就是一样的。这是大自然在不同尺度上保持功能一致性的一个绝妙例子 [@problem_id:2737485]。
 
-#### [长度常数](@article_id:372439) $\lambda = \sqrt{r_m/r_a}$
+#### [长度常数](@keyword=space_constant|lang=zh-CN|style=Feynman) $\lambda = \sqrt{r_m/r_a}$
 
-现在，我们反过来，只考虑[稳态](@article_id:326048)情况（电压不随时间变化）。一股在 $x=0$ 处注入的直流电，其电压信号能传播多远才会基本消失？$\lambda$ 就是这个特征距离。在 $\lambda$ 的距离处，电压会衰减到其初始值的约 37% ($1/e$)。
+现在，我们反过来，只考虑[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)情况（电压不随时间变化）。一股在 $x=0$ 处注入的直流电，其电压信号能传播多远才会基本消失？$\lambda$ 就是这个特征距离。在 $\lambda$ 的距离处，电压会衰减到其初始值的约 37% ($1/e$)。
 
-$\lambda$ 的大小反映了一场“拔河比赛”的结果：一方是试图沿轴向传播的电流（受到 $r_a$ 的阻碍），另一方是不断从膜上泄漏出去的电流（受到 $r_m$ 的阻碍）。$\lambda$ 越大，信号传播得越远。让我们看看它的具体表达式  ：
+$\lambda$ 的大小反映了一场“拔河比赛”的结果：一方是试图沿轴向传播的电流（受到 $r_a$ 的阻碍），另一方是不断从膜上泄漏出去的电流（受到 $r_m$ 的阻碍）。$\lambda$ 越大，信号传播得越远。让我们看看它的具体表达式 [@problem_id:2737479] [@problem_id:2737495]：
 
 $$ \lambda = \sqrt{\frac{r_m}{r_a}} = \sqrt{\frac{R_m / (2\pi a)}{R_i / (\pi a^2)}} = \sqrt{\frac{a R_m}{2 R_i}} $$
 
-这个公式美得令人屏息！它精确地告诉我们如何构建一根“更好的电缆”：增加半径 $a$（更粗的线），增加膜电阻 $R_m$（更好的绝缘），或者减小内部电阻率 $R_i$。这就解释了为什么神经系统中那些需要进行长距离信号传递的轴突（比如从脊髓到脚趾）通常都非常粗，并且包裹着称为[髓鞘](@article_id:309985)的、能极大提高 $R_m$ 的绝缘层。
+这个公式美得令人屏息！它精确地告诉我们如何构建一根“更好的电缆”：增加半径 $a$（更粗的线），增加膜电阻 $R_m$（更好的绝缘），或者减小内部电阻率 $R_i$。这就解释了为什么神经系统中那些需要进行长距离信号传递的轴突（比如从脊髓到脚趾）通常都非常粗，并且包裹着称为[髓鞘](@keyword=myelin_sheath|lang=zh-CN|style=Feynman)的、能极大提高 $R_m$ 的绝缘层。
 
-### 完整图景：[时空](@article_id:370647)交织的滤波
+### 完整图景：[时空](@keyword=space_time|lang=zh-CN|style=Feynman)交织的滤波
 
-真实的突触信号既有时间变化，也需要在空间上传播。当时间和空间交织在一起时，[电缆方程](@article_id:327408)揭示了神经[树突](@article_id:319907)最核心的功能之一：它是一个**[时空](@article_id:370647)[低通滤波器](@article_id:305624) (spatiotemporal low-pass filter)**。
+真实的突触信号既有时间变化，也需要在空间上传播。当时间和空间交织在一起时，[电缆方程](@keyword=cable_equation|lang=zh-CN|style=Feynman)揭示了神经[树突](@keyword=dendrites|lang=zh-CN|style=Feynman)最核心的功能之一：它是一个**[时空](@keyword=space_time|lang=zh-CN|style=Feynman)[低通滤波器](@keyword=low_pass_filter|lang=zh-CN|style=Feynman) (spatiotemporal low-pass filter)**。
 
-[电缆方程](@article_id:327408)在数学上属于**[反应-扩散方程](@article_id:349516) (reaction-diffusion equation)** 的一种，其中的“反应”就是电压的泄漏衰减。想象一下，在一杯清水中滴入一滴墨水。墨水会向四周[扩散](@article_id:327616)（diffusion），同时，如果杯底有个洞，墨水也会慢慢流失（decay）。同样地，一个尖锐、局部的电压脉冲注入树突后，它会在时间和空间上被“涂抹”开来，变得更平缓、更宽阔 。
+[电缆方程](@keyword=cable_equation|lang=zh-CN|style=Feynman)在数学上属于**[反应-扩散方程](@keyword=reaction_diffusion_equations|lang=zh-CN|style=Feynman) (reaction-diffusion equation)** 的一种，其中的“反应”就是电压的泄漏衰减。想象一下，在一杯清水中滴入一滴墨水。墨水会向四周[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)（diffusion），同时，如果杯底有个洞，墨水也会慢慢流失（decay）。同样地，一个尖锐、局部的电压脉冲注入树突后，它会在时间和空间上被“涂抹”开来，变得更平缓、更宽阔 [@problem_id:2737516]。
 
-为什么频率高的信号在空间中衰减得更快？罪魁祸首还是[膜电容](@article_id:351066)。对于高频[振荡](@article_id:331484)的电流，[电容器](@article_id:331067)就像一个低阻抗的“捷径”或“漏洞”。高频电流通过这个捷径大量泄漏到细胞外，根本来不及沿着轴向走远。这意味着[长度常数](@article_id:372439)实际上是依赖于频率的！对于角频率为 $\omega$ 的信号，其[有效长度](@article_id:363629)常数 $\lambda_\omega$ 会随着 $\omega$ 的增加而减小。因此，尖锐、快速的信号会比平缓、慢速的信号在空间中衰减得快得多。这正是[树突](@article_id:319907)对输入信号进行复杂计算和筛选的物理基础 。
+为什么频率高的信号在空间中衰减得更快？罪魁祸首还是[膜电容](@keyword=membrane_capacitance|lang=zh-CN|style=Feynman)。对于高频[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的电流，[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)就像一个低阻抗的“捷径”或“漏洞”。高频电流通过这个捷径大量泄漏到细胞外，根本来不及沿着轴向走远。这意味着[长度常数](@keyword=space_constant|lang=zh-CN|style=Feynman)实际上是依赖于频率的！对于角频率为 $\omega$ 的信号，其[有效长度](@keyword=effective_length|lang=zh-CN|style=Feynman)常数 $\lambda_\omega$ 会随着 $\omega$ 的增加而减小。因此，尖锐、快速的信号会比平缓、慢速的信号在空间中衰减得快得多。这正是[树突](@keyword=dendrites|lang=zh-CN|style=Feynman)对输入信号进行复杂计算和筛选的物理基础 [@problem_id:2737482]。
 
 ### 边界与真实几何：从线到树
 
-我们的模型到目前为止都假设电缆是无限长的。但真实的[树突](@article_id:319907)有终点，有分叉。这些几何特征会如何影响[信号传播](@article_id:344501)？
+我们的模型到目前为止都假设电缆是无限长的。但真实的[树突](@keyword=dendrites|lang=zh-CN|style=Feynman)有终点，有分叉。这些几何特征会如何影响[信号传播](@keyword=signal_propagation|lang=zh-CN|style=Feynman)？
 
-首先，**边界条件 (boundary conditions)** 至关重要。例如，一个“封闭”的树突末端（没有电流可以流出）就像一面镜子。当电压信号到达末端时，它会被反射并与入射[信号叠加](@article_id:339914)，导致末端的电压反而比无限长电缆的相应位置更高。我们甚至可以定义一个无量纲的**[电紧张长度](@article_id:349383) (electrotonic length)** $L = l/\lambda$（物理长度除以长度常数），用它来描述有限长电缆的电气行为。一根电缆的输入电阻不再是一个固定的局部值，而是取决于它的整体[电紧张长度](@article_id:349383)和边界条件。这体现了“结构即功能”的深刻思想  。
+首先，**边界条件 (boundary conditions)** 至关重要。例如，一个“封闭”的树突末端（没有电流可以流出）就像一面镜子。当电压信号到达末端时，它会被反射并与入射[信号叠加](@keyword=signal_superposition|lang=zh-CN|style=Feynman)，导致末端的电压反而比无限长电缆的相应位置更高。我们甚至可以定义一个无量纲的**[电紧张长度](@keyword=electrotonic_length|lang=zh-CN|style=Feynman) (electrotonic length)** $L = l/\lambda$（物理长度除以长度常数），用它来描述有限长电缆的电气行为。一根电缆的输入电阻不再是一个固定的局部值，而是取决于它的整体[电紧张长度](@keyword=electrotonic_length|lang=zh-CN|style=Feynman)和边界条件。这体现了“结构即功能”的深刻思想 [@problem_id:2737501] [@problem_id:2737463]。
 
-更进一步，真实的树突不是简单的线段，而是形态优美的分叉树。我们的理论还能适用吗？答案是肯定的，这要归功于神经科学家 [Wilfrid Rall](@article_id:377641) 的天才洞察。他证明，如果一个树突树的每次分叉都遵循一个特定的几何规则，那么这棵复杂的树在电学上就可以等效于一根简单的、无分叉的“等效圆柱体”！
+更进一步，真实的树突不是简单的线段，而是形态优美的分叉树。我们的理论还能适用吗？答案是肯定的，这要归功于神经科学家 [Wilfrid Rall](@keyword=wilfrid_rall|lang=zh-CN|style=Feynman) 的天才洞察。他证明，如果一个树突树的每次分叉都遵循一个特定的几何规则，那么这棵复杂的树在电学上就可以等效于一根简单的、无分叉的“等效圆柱体”！
 
 这个神奇的规则就是 **$3/2$ 次方律 (3/2 power law)**：
 
 $$ d_p^{3/2} = \sum_{i} d_i^{3/2} $$
 
-其中 $d_p$ 是母[树突](@article_id:319907)的直径，而 $d_i$ 是所有子[树突](@article_id:319907)的直径。如果这个关系在每个分叉点都成立（并且其他一些条件也满足），那么信号在通过分叉点时就不会发生反射，就像光线穿过一组完美匹配的透镜一样。这揭示了[神经元结构](@article_id:309742)中令人惊叹的内在秩序和设计原则，它允许巨大的形态复杂性被简化为可分析的、功能明确的单元 。
+其中 $d_p$ 是母[树突](@keyword=dendrites|lang=zh-CN|style=Feynman)的直径，而 $d_i$ 是所有子[树突](@keyword=dendrites|lang=zh-CN|style=Feynman)的直径。如果这个关系在每个分叉点都成立（并且其他一些条件也满足），那么信号在通过分叉点时就不会发生反射，就像光线穿过一组完美匹配的透镜一样。这揭示了[神经元结构](@keyword=neuron_structure|lang=zh-CN|style=Feynman)中令人惊叹的内在秩序和设计原则，它允许巨大的形态复杂性被简化为可分析的、功能明确的单元 [@problem_id:2737510]。
 
-从最基本的电阻、电容概念出发，我们最终抵达了对复杂生物[结构设计](@article_id:375098)原则的理解。这趟旅程充分展现了物理学定律是如何以其强大的统一性和简洁性，为我们揭示生命内在的秩序与美的。
+从最基本的电阻、电容概念出发，我们最终抵达了对复杂生物[结构设计](@keyword=structural_design|lang=zh-CN|style=Feynman)原则的理解。这趟旅程充分展现了物理学定律是如何以其强大的统一性和简洁性，为我们揭示生命内在的秩序与美的。

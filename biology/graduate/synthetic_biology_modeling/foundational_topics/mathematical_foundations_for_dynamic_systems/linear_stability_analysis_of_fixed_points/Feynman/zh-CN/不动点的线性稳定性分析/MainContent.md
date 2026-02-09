@@ -1,7 +1,7 @@
 ## 引言
-在合成生物学中，理解和工程化复杂的细胞行为，其核心在于掌握稳定状态的概念——在数学语言中，这被称为“不动点”。这些不动点代表了[基因调控网络](@entry_id:150976)或代谢通路在特定条件下的[稳态](@entry_id:139253)。然而，一个设计的状态是否足够鲁棒？当细胞受到内部噪音或外部环境变化的扰动时，它会回归平衡还是会崩溃并跃迁到另一个状态？这些是设计可靠生物系统时必须回答的关键问题。
+在合成生物学中，理解和工程化复杂的细胞行为，其核心在于掌握稳定状态的概念——在数学语言中，这被称为“不动点”。这些不动点代表了[基因调控网络](@keyword=gene_regulatory_networks|lang=zh-CN|style=Feynman)或代谢通路在特定条件下的[稳态](@keyword=steady_state|lang=zh-CN|style=Feynman)。然而，一个设计的状态是否足够鲁棒？当细胞受到内部噪音或外部环境变化的扰动时，它会回归平衡还是会崩溃并跃迁到另一个状态？这些是设计可靠生物系统时必须回答的关键问题。
 
-本文旨在提供一份关于线性稳定性分析的全面指南，这是一个用于回答上述问题的基础性数学工具。它使我们能够量化一个[不动点的稳定性](@entry_id:265683)，并预测系统在受到微小扰动后的行为。通过学习本章，你将能够洞悉生命系统做出决策、维持记忆和产生节律背后的深刻数学原理。在“原理与机制”章节中，我们将深入探讨线性化的数学基础，介绍[雅可比矩阵](@entry_id:178326)和特征值如何作为诊断稳定性的核心工具。接着，在“应用与交叉学科联系”章节中，我们将把这一理论应用于解释和设计核心的生物模块，如基因开关和振荡器，并探索其在进化、[发育生物学](@entry_id:141862)乃至物理学中的广泛回响。最后，通过“动手实践”部分，你将有机会亲自应用这些概念来分析具体的生物模型，巩固你的理解。这种结构化的方法将为你装备必要的理论知识和实践技能，以分析复杂生物系统的动态行为。
+本文旨在提供一份关于线性稳定性分析的全面指南，这是一个用于回答上述问题的基础性数学工具。它使我们能够量化一个[不动点的稳定性](@keyword=stability_of_fixed_points|lang=zh-CN|style=Feynman)，并预测系统在受到微小扰动后的行为。通过学习本章，你将能够洞悉生命系统做出决策、维持记忆和产生节律背后的深刻数学原理。在“原理与机制”章节中，我们将深入探讨线性化的数学基础，介绍[雅可比矩阵](@keyword=jacobi_matrix|lang=zh-CN|style=Feynman)和特征值如何作为诊断稳定性的核心工具。接着，在“应用与交叉学科联系”章节中，我们将把这一理论应用于解释和设计核心的生物模块，如基因开关和振荡器，并探索其在进化、[发育生物学](@keyword=developmental_biology|lang=zh-CN|style=Feynman)乃至物理学中的广泛回响。最后，通过“动手实践”部分，你将有机会亲自应用这些概念来分析具体的生物模型，巩固你的理解。这种结构化的方法将为你装备必要的理论知识和实践技能，以分析复杂生物系统的动态行为。
 
 ## 原理与机制
 
@@ -11,74 +11,74 @@
 
 对于一个描述生命系统动态的方程组 $\frac{d\mathbf{x}}{dt} = \mathbf{f}(\mathbf{x})$，其中 $\mathbf{x}$ 代表了系统中各个组分（比如蛋白质）的浓度向量，不动点 $\mathbf{x}^*$ 就是那个让系统“静止”下来的状态，即浓度的变化速率为零：$\mathbf{f}(\mathbf{x}^*) = \mathbf{0}$。
 
-让我们从一个最简单的例子开始，一个基因通过正反馈自我激活，同时其产物蛋白又在不断地被降解。我们可以用一个一维[常微分方程](@entry_id:147024)来描述蛋白浓度 $x$ 的变化：$\frac{dx}{dt} = f(x) = p(x) - \gamma x$。这里，$p(x)$ 是一个S型的生产[速率函数](@entry_id:154177)（例如希尔函数），而 $\gamma x$ 则是线性的降解速率。不动点 $x^*$ 就在生产与降解完美平衡的地方，即 $p(x^*) = \gamma x^*$ 。
+让我们从一个最简单的例子开始，一个基因通过正反馈自我激活，同时其产物蛋白又在不断地被降解。我们可以用一个一维常微分方程来描述蛋白浓度 $x$ 的变化：$\frac{dx}{dt} = f(x) = p(x) - \gamma x$。这里，$p(x)$ 是一个S型的生产[速率函数](@keyword=rate_function|lang=zh-CN|style=Feynman)（例如希尔函数），而 $\gamma x$ 则是线性的降解速率。不动点 $x^*$ 就在生产与降解完美平衡的地方，即 $p(x^*) = \gamma x^*$ [@problem_id:3916921]。
 
-这个简单的等式背后是一幅美妙的图景。我们可以在图上画出生产速率 $p(x)$ 的曲线和降解速率 $\gamma x$ 的直线。它们的交点，就是系统可能存在的[稳态](@entry_id:139253)。由于 $p(x)$ 曲线的S形状，这条直线可能与它有一个交点，也可能有三个。当只有一个交点时，系统是**单[稳态](@entry_id:139253)**的；而当有三个交点时，系统就进入了**双稳态**（bistability）—— 这意味着同一个[基因线路](@entry_id:201900)，在完全相同的参数下，可以稳定地处于“低表达”或“高表达”两种截然不同的状态。这正是生命系统中“开关”机制的数学本质，一个细胞可以据此做出“开”或“关”的决定。
+这个简单的等式背后是一幅美妙的图景。我们可以在图上画出生产速率 $p(x)$ 的曲线和降解速率 $\gamma x$ 的直线。它们的交点，就是系统可能存在的[稳态](@keyword=steady_state|lang=zh-CN|style=Feynman)。由于 $p(x)$ 曲线的S形状，这条直线可能与它有一个交点，也可能有三个。当只有一个交点时，系统是**单[稳态](@keyword=steady_state|lang=zh-CN|style=Feynman)**的；而当有三个交点时，系统就进入了**双稳态**（bistability）—— 这意味着同一个[基因线路](@keyword=gene_circuits|lang=zh-CN|style=Feynman)，在完全相同的参数下，可以稳定地处于“低表达”或“高表达”两种截然不同的状态。这正是生命系统中“开关”机制的数学本质，一个细胞可以据此做出“开”或“关”的决定。
 
-### [平衡态](@entry_id:270364)的微小扰动：稳定性的思想
+### [平衡态](@keyword=equilibrium_state|lang=zh-CN|style=Feynman)的微小扰动：稳定性的思想
 
 一个状态是“稳定”的，意味着什么？就像一个放在碗底的弹珠，轻轻一推，它会晃动几下，最终还是会回到碗底。但如果把弹珠放在一个倒扣的碗顶上，任何微小的扰动都会让它滚落，一去不复返。
 
-为了在数学上描述这种稳定性，我们考察当系统偏离不动点 $\mathbf{x}^*$ 一个微小的量 $\boldsymbol{\xi} = \mathbf{x} - \mathbf{x}^*$ 时会发生什么。通过[泰勒展开](@entry_id:145057)，我们可以近似地得到扰动 $\boldsymbol{\xi}$ 自身的[演化方程](@entry_id:268137)：
+为了在数学上描述这种稳定性，我们考察当系统偏离不动点 $\mathbf{x}^*$ 一个微小的量 $\boldsymbol{\xi} = \mathbf{x} - \mathbf{x}^*$ 时会发生什么。通过[泰勒展开](@keyword=taylor_expansion|lang=zh-CN|style=Feynman)，我们可以近似地得到扰动 $\boldsymbol{\xi}$ 自身的[演化方程](@keyword=evolution_equations|lang=zh-CN|style=Feynman)：
 $$
 \frac{d\boldsymbol{\xi}}{dt} \approx J \boldsymbol{\xi}
 $$
-这里的 $J$ 就是**[雅可比矩阵](@entry_id:178326)**（Jacobian matrix），它是[多维系统](@entry_id:274301)中的“导数”，在不动点 $\mathbf{x}^*$ 处评估。这个过程，我们称之为**线性化**（linearization）。它告诉我们，在不动点附近，这个复杂[非线性系统](@entry_id:168347)的行为，几乎和一个简单的线性系统一模一样 。
+这里的 $J$ 就是**[雅可比矩阵](@keyword=jacobi_matrix|lang=zh-CN|style=Feynman)**（Jacobian matrix），它是[多维系统](@keyword=multi_dimensional_systems|lang=zh-CN|style=Feynman)中的“导数”，在不动点 $\mathbf{x}^*$ 处评估。这个过程，我们称之为**线性化**（linearization）。它告诉我们，在不动点附近，这个复杂[非线性系统](@keyword=nonlinear_systems|lang=zh-CN|style=Feynman)的行为，几乎和一个简单的线性系统一模一样 [@problem_id:3916926]。
 
-回到我们的一维例子，[雅可比矩阵](@entry_id:178326)就是一个数：$J = f'(x^*)$。扰动的方程简化为 $\frac{d\delta}{dt} \approx f'(x^*)\delta$。这个方程的解是指数函数 $\delta(t) \approx \delta(0) \exp(f'(x^*)t)$。现在，稳定性的判据变得异常清晰：
-- 如果 $f'(x^*)  0$，指数项为负，扰动会随时间指数衰减，系统自动返回不动点。我们称这个不动点是**局部[渐近稳定](@entry_id:168077)**（locally asymptotically stable）的。在图形上，这意味着在交点处，生产曲线的斜率小于降解[直线的斜率](@entry_id:165209)。
-- 如果 $f'(x^*) > 0$，指数项为正，扰动会[指数增长](@entry_id:141869)，系统将远离不动点。这个不动点是**不稳定**（unstable）的。
+回到我们的一维例子，[雅可比矩阵](@keyword=jacobi_matrix|lang=zh-CN|style=Feynman)就是一个数：$J = f'(x^*)$。扰动的方程简化为 $\frac{d\delta}{dt} \approx f'(x^*)\delta$。这个方程的解是指数函数 $\delta(t) \approx \delta(0) \exp(f'(x^*)t)$。现在，稳定性的判据变得异常清晰：
+- 如果 $f'(x^*)  0$，指数项为负，扰动会随时间指数衰减，系统自动返回不动点。我们称这个不动点是**局部[渐近稳定](@keyword=asymptotically_stable|lang=zh-CN|style=Feynman)**（locally asymptotically stable）的。在图形上，这意味着在交点处，生产曲线的斜率小于降解[直线的斜率](@keyword=slope_of_a_line|lang=zh-CN|style=Feynman)。
+- 如果 $f'(x^*) > 0$，指数项为正，扰动会[指数增长](@keyword=exponential_growth|lang=zh-CN|style=Feynman)，系统将远离不动点。这个不动点是**不稳定**（unstable）的。
 
-对于那个[双稳态](@entry_id:269593)的开关，我们现在可以断言：两端的两个不动点是稳定的，而中间的那个则是不稳定的。系统永远不会停留在中间状态，它要么“跌落”到低表达[稳态](@entry_id:139253)，要么“跃升”到高表达[稳态](@entry_id:139253)，泾渭分明。
+对于那个[双稳态](@keyword=bistability|lang=zh-CN|style=Feynman)的开关，我们现在可以断言：两端的两个不动点是稳定的，而中间的那个则是不稳定的。系统永远不会停留在中间状态，它要么“跌落”到低表达[稳态](@keyword=steady_state|lang=zh-CN|style=Feynman)，要么“跃升”到高表达[稳态](@keyword=steady_state|lang=zh-CN|style=Feynman)，泾渭分明。
 
 ### 分子之舞：高维系统中的稳定性
 
-生命系统很少是一维的。通常是两种、三种甚至成千上万种[分子相互作用](@entry_id:263767)的网络。例如，一个基因的产物可能会抑制另一个基因，而第二个基因的产物反过来又抑制第一个，形成一个“拨动开关”（toggle switch）。
+生命系统很少是一维的。通常是两种、三种甚至成千上万种[分子相互作用](@keyword=molecular_interactions|lang=zh-CN|style=Feynman)的网络。例如，一个基因的产物可能会抑制另一个基因，而第二个基因的产物反过来又抑制第一个，形成一个“拨动开关”（toggle switch）[@problem_id:3916927]。
 
-在高维系统中，[雅可比矩阵](@entry_id:178326) $J$ 是一个真正的矩阵，它的每一个元素 $J_{ij} = \frac{\partial f_i}{\partial x_j}$ 都描述了物种 $j$ 的浓度变化如何影响物种 $i$ 的生成速率。这个矩阵的结构直接反映了[基因线路](@entry_id:201900)的拓扑结构 ：
+在高维系统中，[雅可比矩阵](@keyword=jacobi_matrix|lang=zh-CN|style=Feynman) $J$ 是一个真正的矩阵，它的每一个元素 $J_{ij} = \frac{\partial f_i}{\partial x_j}$ 都描述了物种 $j$ 的浓度变化如何影响物种 $i$ 的生成速率。这个矩阵的结构直接反映了[基因线路](@keyword=gene_circuits|lang=zh-CN|style=Feynman)的拓扑结构 [@problem_id:3916889]：
 - **对角线元素** $J_{ii}$ 代表一个物种对自身的影响。由于存在降解或稀释，这个值通常是负的（例如 $-\gamma_i$），这是一个内在的、使系统稳定的因素。
-- **非对角[线元](@entry_id:196833)素** $J_{ij}$ 代表物种 $j$ 对物种 $i$ 的调控。如果 $j$ 激活 $i$，$J_{ij}$ 为正；如果 $j$ 抑制 $i$，$J_{ij}$ 为负。
+- **非对角[线元](@keyword=line_element|lang=zh-CN|style=Feynman)素** $J_{ij}$ 代表物种 $j$ 对物种 $i$ 的调控。如果 $j$ 激活 $i$，$J_{ij}$ 为正；如果 $j$ 抑制 $i$，$J_{ij}$ 为负。
 
-扰动方程 $\frac{d\boldsymbol{\xi}}{dt} = J \boldsymbol{\xi}$ 的解，是[雅可比矩阵](@entry_id:178326) $J$ 的**特征值**（eigenvalues）$\lambda_i$ 和**[特征向量](@entry_id:151813)**（eigenvectors）$\mathbf{v}_i$ 决定的多种指数模式的叠加。稳定性的判据也随之推广：**当且仅当所有特征值的实部都为负（$\Re(\lambda_i)  0$）时，该不动点是局部[渐近稳定](@entry_id:168077)的**。任何一个特征值的实部为正，都足以像一颗脱缰的野马，将系统带离平衡。
+扰动方程 $\frac{d\boldsymbol{\xi}}{dt} = J \boldsymbol{\xi}$ 的解，是[雅可比矩阵](@keyword=jacobi_matrix|lang=zh-CN|style=Feynman) $J$ 的**特征值**（eigenvalues）$\lambda_i$ 和**[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)**（eigenvectors）$\mathbf{v}_i$ 决定的多种指数模式的叠加。稳定性的判据也随之推广：**当且仅当所有特征值的实部都为负（$\Re(\lambda_i)  0$）时，该不动点是局部[渐近稳定](@keyword=asymptotically_stable|lang=zh-CN|style=Feynman)的**。任何一个特征值的实部为正，都足以像一颗脱缰的野马，将系统带离平衡。
 
 ### 稳定性的交响曲：不动点的分类
 
-特征值的具体性质，不仅告诉我们系统是否稳定，更描绘出系统返回（或离开）平衡的“舞姿”。在二维系统中，我们可以通过[雅可比矩阵](@entry_id:178326)的迹 $\tau = \text{Tr}(J)$ 和行列式 $\Delta = \det(J)$ 来一窥究竟。
+特征值的具体性质，不仅告诉我们系统是否稳定，更描绘出系统返回（或离开）平衡的“舞姿”。在二维系统中，我们可以通过[雅可比矩阵](@keyword=jacobi_matrix|lang=zh-CN|style=Feynman)的迹 $\tau = \text{Tr}(J)$ 和行列式 $\Delta = \det(J)$ 来一窥究竟。
 
-- **稳定/[不稳定节点](@entry_id:270976)（Node）**：特征值为负/正实数。系统会沿着[特征向量](@entry_id:151813)的方向直接地、单调地返回/离开不动点。
-- **鞍点（Saddle）**：特征值为一正一负的实数。系统在一个方向上是稳定的，但在另一个方向上是不稳定的。鞍点在相空间中扮演着分水岭的角色，分隔着不同[稳态](@entry_id:139253)的**吸引盆**（basin of attraction）。
-- **稳定/不[稳定焦点](@entry_id:274240)（Focus/Spiral）**：特征值为一对具有负/正实部的[复共轭](@entry_id:174690)数。这意味着系统会以**[阻尼振荡](@entry_id:167749)**（damped oscillations）的方式螺旋式地收敛到（或发散出）不动点。这种振荡行为是[负反馈回路](@entry_id:267222)的典型特征，正如在一些基因振荡器模型中精确计算出的那样 。
+- **稳定/[不稳定节点](@keyword=unstable_node|lang=zh-CN|style=Feynman)（Node）**：特征值为负/正实数。系统会沿着[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)的方向直接地、单调地返回/离开不动点。
+- **鞍点（Saddle）**：特征值为一正一负的实数。系统在一个方向上是稳定的，但在另一个方向上是不稳定的。鞍点在相空间中扮演着分水岭的角色，分隔着不同[稳态](@keyword=steady_state|lang=zh-CN|style=Feynman)的**吸引盆**（basin of attraction）。
+- **稳定/不[稳定焦点](@keyword=stable_focus|lang=zh-CN|style=Feynman)（Focus/Spiral）**：特征值为一对具有负/正实部的[复共轭](@keyword=complex_conjugation|lang=zh-CN|style=Feynman)数。这意味着系统会以**[阻尼振荡](@keyword=damped_oscillations|lang=zh-CN|style=Feynman)**（damped oscillations）的方式螺旋式地收敛到（或发散出）不动点。这种振荡行为是[负反馈回路](@keyword=negative_feedback_loops|lang=zh-CN|style=Feynman)的典型特征，正如在一些基因振荡器模型中精确计算出的那样 [@problem_id:3916891]。
 
-更令人惊叹的是，这些动力学特性与相空间中的几何形态紧密相连。[不动点的稳定性](@entry_id:265683)，乃至整个系统的行为模式，都可以通过不动点处**[零斜线](@entry_id:261510)**（nullclines）的相对斜率来预测 。[零斜线](@entry_id:261510)是相空间中使得某一个变量变化率为零的曲线集合。它们如何相交，决定了雅可比[矩阵的[迹和行列](@entry_id:182536)式](@entry_id:149685)，进而决定了特征值的性质。例如，两条[零斜线](@entry_id:261510)以特定的方式交叉，就可能预示着系统存在产生振荡的倾向。几何与动力学在此处实现了完美的统一。
+更令人惊叹的是，这些动力学特性与相空间中的几何形态紧密相连。[不动点的稳定性](@keyword=stability_of_fixed_points|lang=zh-CN|style=Feynman)，乃至整个系统的行为模式，都可以通过不动点处**[零斜线](@keyword=nullclines|lang=zh-CN|style=Feynman)**（nullclines）的相对斜率来预测 [@problem_id:3916922]。[零斜线](@keyword=nullclines|lang=zh-CN|style=Feynman)是相空间中使得某一个变量变化率为零的曲线集合。它们如何相交，决定了雅可比[矩阵的[迹和行列](@keyword=trace_and_determinant_of_a_matrix|lang=zh-CN|style=Feynman)式](@entry_id:149685)，进而决定了特征值的性质。例如，两条[零斜线](@keyword=nullclines|lang=zh-CN|style=Feynman)以特定的方式交叉，就可能预示着系统存在产生振荡的倾向。几何与动力学在此处实现了完美的统一。
 
 ### 局部视野的局限
 
-**细则：[哈特曼-格罗布曼定理](@entry_id:158812)**
+**细则：[哈特曼-格罗布曼定理](@keyword=hartman_grobman_theorem|lang=zh-CN|style=Feynman)**
 
-为什么线性化这个看似粗暴的近似能够奏效？**[哈特曼-格罗布曼定理](@entry_id:158812)**（Hartman-Grobman theorem）为我们提供了坚实的理论保证 。它指出，对于“行为良好”的**[双曲不动点](@entry_id:269450)**（hyperbolic fixed point，即所有特征值实部均不为零），其附近复杂的非线性动力学流，在拓扑上等价于其线性化系统的动力学流。这就像是说，一团乱麻在远处看只是一个点。线性化捕捉到了不动点附近动力学行为的本质。
+为什么线性化这个看似粗暴的近似能够奏效？**[哈特曼-格罗布曼定理](@keyword=hartman_grobman_theorem|lang=zh-CN|style=Feynman)**（Hartman-Grobman theorem）为我们提供了坚实的理论保证 [@problem_id:3916893]。它指出，对于“行为良好”的**[双曲不动点](@keyword=hyperbolic_fixed_points|lang=zh-CN|style=Feynman)**（hyperbolic fixed point，即所有特征值实部均不为零），其附近复杂的非线性动力学流，在拓扑上等价于其线性化系统的动力学流。这就像是说，一团乱麻在远处看只是一个点。线性化捕捉到了不动点附近动力学行为的本质。
 
 **吸引盆与全局稳定性**
 
-然而，[哈特曼-格罗布曼定理](@entry_id:158812)是一个严格的**局部**定理。线性化分析可以告诉我们一个不动点是稳定的，因此它拥有一个[吸引盆](@entry_id:174948)，但它完全无法告诉我们这个盆有多大、形状如何  。在一个[双稳态开关](@entry_id:190716)中，到底哪些初始状态会进入“高”表达的吸引盆，哪些会进入“低”表达的[吸引盆](@entry_id:174948)？要回答这类**全局**（global）问题，线性化就无能为力了。我们需要更强大的全局性工具，比如**[李雅普诺夫函数](@entry_id:273986)**（Lyapunov functions）。一个[李雅普诺夫函数](@entry_id:273986)就像一个系统的“能量函数”，它在不动点处取得最小值，并且随着系统向该不动点演化，其值会持续降低。找到这样一个全局的能量函数，我们就能证明全局的稳定性。
+然而，[哈特曼-格罗布曼定理](@keyword=hartman_grobman_theorem|lang=zh-CN|style=Feynman)是一个严格的**局部**定理。线性化分析可以告诉我们一个不动点是稳定的，因此它拥有一个[吸引盆](@keyword=domain_of_attraction|lang=zh-CN|style=Feynman)，但它完全无法告诉我们这个盆有多大、形状如何 [@problem_id:3916926] [@problem_id:3916927]。在一个[双稳态开关](@keyword=bistable_switch|lang=zh-CN|style=Feynman)中，到底哪些初始状态会进入“高”表达的吸引盆，哪些会进入“低”表达的[吸引盆](@keyword=domain_of_attraction|lang=zh-CN|style=Feynman)？要回答这类**全局**（global）问题，线性化就无能为力了。我们需要更强大的全局性工具，比如**[李雅普诺夫函数](@keyword=lyapunov_functions|lang=zh-CN|style=Feynman)**（Lyapunov functions）。一个[李雅普诺夫函数](@keyword=lyapunov_functions|lang=zh-CN|style=Feynman)就像一个系统的“能量函数”，它在不动点处取得最小值，并且随着系统向该不动点演化，其值会持续降低。找到这样一个全局的能量函数，我们就能证明全局的稳定性。
 
 **线性化失效之时：混沌的边缘**
 
-如果某个特征值的实部恰好为零呢？此时不动点是**非双曲**的，线性化分析彻底失效。线性近似给出的景象是一片平地，我们无从知晓一个小球会滚向何方。系统的命运将由那些被我们忽略的、更高阶的[非线性](@entry_id:637147)项来决定 。
+如果某个特征值的实部恰好为零呢？此时不动点是**非双曲**的，线性化分析彻底失效。线性近似给出的景象是一片平地，我们无从知晓一个小球会滚向何方。系统的命运将由那些被我们忽略的、更高阶的[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)项来决定 [@problem_id:3916948]。
 
-想象一个线性系统预测出不动点是一个**中心**（center），对应一对纯虚数特征值 $\lambda = \pm i\omega$。这意味着扰动会围绕不动点做永不衰减的振荡。然而，一个微小的三次[非线性](@entry_id:637147)项就可能彻底改变图景：
-- 如果存在一个类似“摩擦力”的项，如 $\dot{r} \propto -r^3$（其中 $r$ 是到不动点的距离），振荡就会被抑制，中心点变为一个稳定的[焦点](@entry_id:174388)。
-- 如果存在一个“自我激励”的项，如 $\dot{r} \propto +r^3$，振荡就会被放大，[中心点](@entry_id:636820)变为一个不稳定的[焦点](@entry_id:174388)。
+想象一个线性系统预测出不动点是一个**中心**（center），对应一对纯虚数特征值 $\lambda = \pm i\omega$。这意味着扰动会围绕不动点做永不衰减的振荡。然而，一个微小的三次[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)项就可能彻底改变图景：
+- 如果存在一个类似“摩擦力”的项，如 $\dot{r} \propto -r^3$（其中 $r$ 是到不动点的距离），振荡就会被抑制，中心点变为一个稳定的[焦点](@keyword=focal_point|lang=zh-CN|style=Feynman)。
+- 如果存在一个“自我激励”的项，如 $\dot{r} \propto +r^3$，振荡就会被放大，[中心点](@keyword=medoid|lang=zh-CN|style=Feynman)变为一个不稳定的[焦点](@keyword=focal_point|lang=zh-CN|style=Feynman)。
 
-分析这类临界情况的利器是**[中心流形理论](@entry_id:178757)**（center manifold theory）。其核心思想是，系统的动力学可以分解为两部分：一部分沿着稳定方向快速衰减，另一部分则沿着实部为零的特征值方向（即[中心流形](@entry_id:188794)）缓慢演化。我们只需在那个低维的[中心流形](@entry_id:188794)上分析简化的[动力学方程](@entry_id:751029)，就能洞悉整个系统在不动点附近的命运。
+分析这类临界情况的利器是**[中心流形理论](@keyword=center_manifold_theory|lang=zh-CN|style=Feynman)**（center manifold theory）[@problem_id:3916899]。其核心思想是，系统的动力学可以分解为两部分：一部分沿着稳定方向快速衰减，另一部分则沿着实部为零的特征值方向（即[中心流形](@keyword=center_manifold|lang=zh-CN|style=Feynman)）缓慢演化。我们只需在那个低维的[中心流形](@keyword=center_manifold|lang=zh-CN|style=Feynman)上分析简化的[动力学方程](@keyword=kinetic_equation|lang=zh-CN|style=Feynman)，就能洞悉整个系统在不动点附近的命运。
 
-### 更深层次的审视：[非正规矩阵](@entry_id:752668)的惊奇
+### 更深层次的审视：非正规矩阵的惊奇
 
-最后，让我们探讨一个更深邃、更违反直觉的问题。如果一个不动点的[雅可比矩阵](@entry_id:178326)所有特征值都是负实数，这似乎预示着系统将平滑、单调地回归平衡。但事实果真如此吗？
+最后，让我们探讨一个更深邃、更违反直觉的问题。如果一个不动点的[雅可比矩阵](@keyword=jacobi_matrix|lang=zh-CN|style=Feynman)所有特征值都是负实数，这似乎预示着系统将平滑、单调地回归平衡。但事实果真如此吗？
 
-这里，我们需要引入**[非正规矩阵](@entry_id:752668)**（non-normal matrices）的概念 。对于一个“正规”的矩阵（例如对称矩阵），其[特征向量](@entry_id:151813)是相互正交的。而对于[非正规矩阵](@entry_id:752668)，其[特征向量](@entry_id:151813)可能以非常小的角度彼此交错。
+这里，我们需要引入**非正规矩阵**（non-normal matrices）的概念 [@problem_id:3916942]。对于一个“正规”的矩阵（例如对称矩阵），其[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)是相互正交的。而对于非正规矩阵，其[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)可能以非常小的角度彼此交错。
 
-这会带来奇特的后果。想象一下用两个几乎指向同一方向的[基向量](@entry_id:199546)来表示空间中的一个向量。即使目标向量很小，也可能需要用两个巨大的、方向几乎相反的分量沿着这两个[基向量](@entry_id:199546)进行组合，才能精确地构造出来。在动力学中，这意味着即使每个模式（[特征向量](@entry_id:151813)对应的解）本身都在衰减，但由于它们之间的非正交干涉，系统状态的整体范数（比如总浓度）可能在衰减之前经历一个巨大的**[瞬时增长](@entry_id:263654)**（transient growth）。系统状态可能会先“冲”出去很远，然后再掉头回归不动点。
+这会带来奇特的后果。想象一下用两个几乎指向同一方向的[基向量](@keyword=basis_vector|lang=zh-CN|style=Feynman)来表示空间中的一个向量。即使目标向量很小，也可能需要用两个巨大的、方向几乎相反的分量沿着这两个[基向量](@keyword=basis_vector|lang=zh-CN|style=Feynman)进行组合，才能精确地构造出来。在动力学中，这意味着即使每个模式（[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)对应的解）本身都在衰减，但由于它们之间的非正交干涉，系统状态的整体范数（比如总浓度）可能在衰减之前经历一个巨大的**[瞬时增长](@keyword=transient_growth|lang=zh-CN|style=Feynman)**（transient growth）。系统状态可能会先“冲”出去很远，然后再掉头回归不动点。
 
-这一现象完美地解释了实验中观察到的一个费解现象：即使系统的特征值都是负实数（预示着[过阻尼](@entry_id:167953)响应），其[阶跃响应](@entry_id:148543)仍然可能出现显著的**超调**（overshoot）。这种超调并非源于振荡，而是[雅可比矩阵](@entry_id:178326)几何性质的直接体现。
+这一现象完美地解释了实验中观察到的一个费解现象：即使系统的特征值都是负实数（预示着[过阻尼](@keyword=overdamping|lang=zh-CN|style=Feynman)响应），其[阶跃响应](@keyword=step_response|lang=zh-CN|style=Feynman)仍然可能出现显著的**超调**（overshoot）。这种超调并非源于振荡，而是[雅可比矩阵](@keyword=jacobi_matrix|lang=zh-CN|style=Feynman)几何性质的直接体现。
 
-我们甚至可以从实验数据中诊断出这种潜在的[非正规性](@entry_id:752585)。系统的脉冲[响应矩阵](@entry_id:754302)是 $h(t) = e^{Jt}$。在 $t=0$ 时，其范数 $\|h(0)\|_2 = 1$。如果系统是正规且稳定的，$\|h(t)\|_2$ 将单调递减。但如果我们在实验中测得 $\|h(t)\|_2$ 在某个时刻大于1，或者其初始斜率 $\frac{d}{dt}\|h(t)\|_2|_{t=0}$ 为正，那么我们就捕获到了非正规性驱动的[瞬时增长](@entry_id:263654)的明确信号。一个微妙的数学性质，就这样与一个可测量的生物学现象联系在了一起。这正是探索生命系统数学模型的美妙之处：它不仅能验证我们的直觉，更能揭示那些隐藏在表象之下的、深刻而令人惊奇的物理机制。
+我们甚至可以从实验数据中诊断出这种潜在的[非正规性](@keyword=non_normality|lang=zh-CN|style=Feynman)。系统的脉冲[响应矩阵](@keyword=response_matrix|lang=zh-CN|style=Feynman)是 $h(t) = e^{Jt}$。在 $t=0$ 时，其范数 $\|h(0)\|_2 = 1$。如果系统是正规且稳定的，$\|h(t)\|_2$ 将单调递减。但如果我们在实验中测得 $\|h(t)\|_2$ 在某个时刻大于1，或者其初始斜率 $\frac{d}{dt}\|h(t)\|_2|_{t=0}$ 为正，那么我们就捕获到了非正规性驱动的[瞬时增长](@keyword=transient_growth|lang=zh-CN|style=Feynman)的明确信号。一个微妙的数学性质，就这样与一个可测量的生物学现象联系在了一起。这正是探索生命系统数学模型的美妙之处：它不仅能验证我们的直觉，更能揭示那些隐藏在表象之下的、深刻而令人惊奇的物理机制。
