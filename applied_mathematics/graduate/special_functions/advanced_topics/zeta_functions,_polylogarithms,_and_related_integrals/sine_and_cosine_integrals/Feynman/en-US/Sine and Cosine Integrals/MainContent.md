@@ -25,7 +25,7 @@ $$
 \mathrm{Ci}(x) = - \int_x^\infty \frac{\cos t}{t} dt
 $$
 
-These aren't just integrals; they are functions that tell a story. As $x$ increases, they are telling us the net result of adding up all those little wave crests and troughs. And because we can't write these down with functions like $\ln(x)$ or $\sqrt{x}$, they earn their title as **[special functions](@article_id:142740)**.
+These aren't just integrals; they are functions that tell a story. As $x$ increases, they are telling us the net result of adding up all those little wave crests and troughs. And because we can't write these down with functions like $\ln(x)$ or $\sqrt{x}$, they earn their title as **[special functions](@keyword=special_functions|lang=en-US|style=Feynman)**.
 
 ### The View from the Origin
 
@@ -39,27 +39,27 @@ $$
 \frac{\sin t}{t} = 1 - \frac{t^2}{6} + \frac{t^4}{120} - \dots
 $$
 
-Integrating this term-by-term from 0 to $x$ gives us a beautiful series for the Sine Integral itself :
+Integrating this term-by-term from 0 to $x$ gives us a beautiful series for the Sine Integral itself [@problem_id:767600]:
 
 $$
 \mathrm{Si}(x) = x - \frac{x^3}{18} + \frac{x^5}{600} - \dots
 $$
 
-This little formula is incredibly powerful. It confirms that $\mathrm{Si}(x)$ starts out looking like $x$, but the next term, $-\frac{x^3}{18}$, tells us it immediately starts to curve slightly downwards. This series allows us to calculate limits that would otherwise be impossible, teasing apart the function's behavior with surgical precision  and even finding its local curvature .
+This little formula is incredibly powerful. It confirms that $\mathrm{Si}(x)$ starts out looking like $x$, but the next term, $-\frac{x^3}{18}$, tells us it immediately starts to curve slightly downwards. This series allows us to calculate limits that would otherwise be impossible, teasing apart the function's behavior with surgical precision [@problem_id:767600] and even finding its local curvature [@problem_id:767609].
 
-The Cosine Integral, $\mathrm{Ci}(x)$, has a more dramatic personality near zero. The integrand $\frac{\cos t}{t}$ behaves like $\frac{1}{t}$ for small $t$, and as you know, the integral of $\frac{1}{t}$ is the natural logarithm, $\ln t$, which goes to negative infinity at the origin. It's a wild beast! But mathematicians are masters at taming such creatures. We cleverly rewrite $\mathrm{Ci}(x)$ in a way that isolates this "infinite" part :
+The Cosine Integral, $\mathrm{Ci}(x)$, has a more dramatic personality near zero. The integrand $\frac{\cos t}{t}$ behaves like $\frac{1}{t}$ for small $t$, and as you know, the integral of $\frac{1}{t}$ is the natural logarithm, $\ln t$, which goes to negative infinity at the origin. It's a wild beast! But mathematicians are masters at taming such creatures. We cleverly rewrite $\mathrm{Ci}(x)$ in a way that isolates this "infinite" part [@problem_id:767604]:
 
 $$
 \mathrm{Ci}(x) = \gamma + \ln x + \int_0^x \frac{\cos t - 1}{t} dt = \gamma + \ln x - \frac{x^2}{4} + \frac{x^4}{96} - \dots
 $$
 
-Here, $\gamma$ is the Euler-Mascheroni constant. Look at what's been done! We've packaged the entire problematic behavior into the $\ln x$ term, leaving a perfectly well-behaved [power series](@article_id:146342). This separation is crucial; it lets us work with $\mathrm{Ci}(x)$ in calculations where, by combining it with other functions, the logarithmic part can be cleverly cancelled out, revealing a finite, meaningful answer hiding underneath the infinity .
+Here, $\gamma$ is the Euler-Mascheroni constant. Look at what's been done! We've packaged the entire problematic behavior into the $\ln x$ term, leaving a perfectly well-behaved [power series](@keyword=power_series|lang=en-US|style=Feynman). This separation is crucial; it lets us work with $\mathrm{Ci}(x)$ in calculations where, by combining it with other functions, the logarithmic part can be cleverly cancelled out, revealing a finite, meaningful answer hiding underneath the infinity [@problem_id:767604].
 
 ### The Far Horizon
 
 What happens when $x$ becomes enormous? We're now asking for the total area under these decaying ripples all the way out to infinity.
 
-For $\mathrm{Si}(x)$, as we integrate further and further, we add successively smaller positive and negative lobes of the [sinc function](@article_id:274252). You might think they would eventually cancel out to zero. But they don't! Because the first lobe is the largest, it contributes a positive area that is never fully canceled out. The integral converges to a very special value, the **Dirichlet Integral**:
+For $\mathrm{Si}(x)$, as we integrate further and further, we add successively smaller positive and negative lobes of the [sinc function](@keyword=sinc_function|lang=en-US|style=Feynman). You might think they would eventually cancel out to zero. But they don't! Because the first lobe is the largest, it contributes a positive area that is never fully canceled out. The integral converges to a very special value, the **Dirichlet Integral**:
 
 $$
 \lim_{x\to\infty} \mathrm{Si}(x) = \int_0^\infty \frac{\sin t}{t} dt = \frac{\pi}{2}
@@ -67,7 +67,7 @@ $$
 
 The Cosine Integral, $\mathrm{Ci}(x)$, on the other hand, does converge to zero.
 
-But *how* they approach these limits is the fascinating part. They don't just slowly creep towards the finish line. They oscillate around it. For very large $x$, we can use what's called an **[asymptotic expansion](@article_id:148808)** to approximate them :
+But *how* they approach these limits is the fascinating part. They don't just slowly creep towards the finish line. They oscillate around it. For very large $x$, we can use what's called an **[asymptotic expansion](@keyword=asymptotic_expansion|lang=en-US|style=Feynman)** to approximate them [@problem_id:767485]:
 
 $$
 \mathrm{Si}(x) \sim \frac{\pi}{2} - \frac{\cos x}{x} - \frac{\sin x}{x^2} + \dots
@@ -77,7 +77,7 @@ $$
 \mathrm{Ci}(x) \sim \frac{\sin x}{x} - \frac{\cos x}{x^2} - \dots
 $$
 
-Look at these formulas! They tell us that $\mathrm{Si}(x)$ approaches $\frac{\pi}{2}$ not steadily, but by "overshooting and undershooting" it in a pattern dictated by a decaying cosine wave. And $\mathrm{Ci}(x)$ approaches 0 by riding a decaying sine wave. This is a beautiful, intuitive picture: the integral's value oscillates with the same frequency as the integrand, but its oscillations die down. These expansions are not just theoretical; they are fantastically practical. If you need to know the value of $\mathrm{Ci}(100)$, you don't need a powerful computer to do the integral. The leading term, $\frac{\sin(100)}{100}$, gives you a remarkably accurate answer all by itself . By keeping more terms, we can uncover even more subtle behaviors and evaluate complex [limits at infinity](@article_id:140385)  .
+Look at these formulas! They tell us that $\mathrm{Si}(x)$ approaches $\frac{\pi}{2}$ not steadily, but by "overshooting and undershooting" it in a pattern dictated by a decaying cosine wave. And $\mathrm{Ci}(x)$ approaches 0 by riding a decaying sine wave. This is a beautiful, intuitive picture: the integral's value oscillates with the same frequency as the integrand, but its oscillations die down. These expansions are not just theoretical; they are fantastically practical. If you need to know the value of $\mathrm{Ci}(100)$, you don't need a powerful computer to do the integral. The leading term, $\frac{\sin(100)}{100}$, gives you a remarkably accurate answer all by itself [@problem_id:767504]. By keeping more terms, we can uncover even more subtle behaviors and evaluate complex [limits at infinity](@keyword=limits_at_infinity|lang=en-US|style=Feynman) [@problem_id:767485] [@problem_id:662662].
 
 ### A Unified Family
 
@@ -85,20 +85,20 @@ So far, $\mathrm{Si}(x)$ and $\mathrm{Ci}(x)$ might seem like a strange, isolate
 
 Let's meet their cousin, the **Exponential Integral**, defined as $\mathrm{E}_1(z) = \int_z^\infty \frac{e^{-t}}{t} dt$. This function is fundamental to heat transfer and radiation physics. Now, what happens if we feed it a purely imaginary argument, $z = iy$, where $y$ is a real number? We turn to the most beautiful formula in mathematics, Euler's formula: $e^{-iy} = \cos y - i \sin y$.
 
-Let's substitute this into the integral (with a bit of care). The integral of $\frac{e^{-it}}{t}$ will magically split into two parts: a real part involving $\frac{\cos t}{t}$ and an imaginary part involving $\frac{\sin t}{t}$. When the dust settles, we find a stunning connection :
+Let's substitute this into the integral (with a bit of care). The integral of $\frac{e^{-it}}{t}$ will magically split into two parts: a real part involving $\frac{\cos t}{t}$ and an imaginary part involving $\frac{\sin t}{t}$. When the dust settles, we find a stunning connection [@problem_id:662662]:
 
 $$
 E_1(iy) = -\mathrm{Ci}(y) + i\left(\mathrm{Si}(y) - \frac{\pi}{2}\right)
 $$
 
-This is profound! The [exponential integral](@article_id:186794), when viewed on the imaginary axis, *is* the [sine and cosine](@article_id:174871) integrals. They are not three separate functions, but three faces of the same underlying object. This web of connections continues, linking them to the Logarithmic Integral $\mathrm{li}(z)$ used in number theory to estimate prime numbers, and many others . They are all pieces of a single, unified tapestry.
+This is profound! The [exponential integral](@keyword=exponential_integral|lang=en-US|style=Feynman), when viewed on the imaginary axis, *is* the [sine and cosine](@keyword=sine_and_cosine|lang=en-US|style=Feynman) integrals. They are not three separate functions, but three faces of the same underlying object. This web of connections continues, linking them to the Logarithmic Integral $\mathrm{li}(z)$ used in number theory to estimate prime numbers, and many others [@problem_id:715363]. They are all pieces of a single, unified tapestry.
 
 ### The Underlying Machinery
 
 How do mathematicians and physicists play with these functions and uncover their secrets? It's not just blind calculation; it's a toolbox of elegant and powerful techniques that often feel more like art than arithmetic.
 
-One of the most powerful tools is **changing the order of integration**. An integral that looks impossible in one order might become trivial in another. Consider, for example, a complicated-looking double integral. By simply switching the order from $dx dy$ to $dy dx$, the problem can miraculously simplify, causing the inner integral to resolve into a familiar Sine Integral, turning a mess into a solvable problem . This same technique can be used to evaluate beautiful and surprising integrals, showing that the difference between two Sine Integrals, integrated in a special way, yields a simple logarithm .
+One of the most powerful tools is **changing the order of integration**. An integral that looks impossible in one order might become trivial in another. Consider, for example, a complicated-looking double integral. By simply switching the order from $dx dy$ to $dy dx$, the problem can miraculously simplify, causing the inner integral to resolve into a familiar Sine Integral, turning a mess into a solvable problem [@problem_id:767484]. This same technique can be used to evaluate beautiful and surprising integrals, showing that the difference between two Sine Integrals, integrated in a special way, yields a simple logarithm [@problem_id:767614].
 
-Another secret is realizing that these functions are not just defined by integrals; they are also solutions to **differential equations**. For instance, the functions $\{1, \mathrm{Si}(x), \mathrm{Ci}(x)\}$ are all solutions to the equation $x y''' + 2 y'' + x y' = 0$. This means they obey a hidden law. One consequence is a strange and wonderful property of their **Wronskian**—a special determinant that measures their linear independence. For these three functions, the Wronskian $W(x)$ turns out to be nothing other than $-\frac{1}{x^2}$ . This is a shocking simplification! It reveals a deep, underlying algebraic structure that is completely hidden in their integral definitions. It's like discovering that three seemingly unrelated people are actually siblings who must obey the same family rules.
+Another secret is realizing that these functions are not just defined by integrals; they are also solutions to **differential equations**. For instance, the functions $\{1, \mathrm{Si}(x), \mathrm{Ci}(x)\}$ are all solutions to the equation $x y''' + 2 y'' + x y' = 0$. This means they obey a hidden law. One consequence is a strange and wonderful property of their **Wronskian**—a special determinant that measures their linear independence. For these three functions, the Wronskian $W(x)$ turns out to be nothing other than $-\frac{1}{x^2}$ [@problem_id:767550]. This is a shocking simplification! It reveals a deep, underlying algebraic structure that is completely hidden in their integral definitions. It's like discovering that three seemingly unrelated people are actually siblings who must obey the same family rules.
 
 These principles and mechanisms are our gateway to understanding not just these functions, but the physical world they describe. They show us that beneath the surface of a difficult problem often lies a simple, elegant structure, waiting for us to find the right perspective to see it.

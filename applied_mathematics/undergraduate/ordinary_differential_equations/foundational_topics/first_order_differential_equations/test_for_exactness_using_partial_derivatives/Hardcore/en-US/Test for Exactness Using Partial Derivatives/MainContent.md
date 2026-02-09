@@ -1,7 +1,7 @@
 ## Introduction
-Among the diverse landscape of [first-order ordinary differential equations](@entry_id:264241), a special class exists whose structure allows for a particularly elegant and direct method of solution. These are known as [exact differential equations](@entry_id:177822), which represent the total differential of some underlying "potential function." The central challenge, however, is determining if an equation of the form $M(x,y)dx + N(x,y)dy = 0$ is exact without having to find the potential function itself. This article addresses this knowledge gap by presenting a simple yet powerful test based on partial derivatives.
+Among the diverse landscape of first-order ordinary differential equations, a special class exists whose structure allows for a particularly elegant and direct method of solution. These are known as exact differential equations, which represent the total differential of some underlying "potential function." The central challenge, however, is determining if an equation of the form $M(x,y)dx + N(x,y)dy = 0$ is exact without having to find the potential function itself. This article addresses this knowledge gap by presenting a simple yet powerful test based on partial derivatives.
 
-This guide will equip you with the tools to identify, solve, and understand the profound implications of exactness. The first chapter, **Principles and Mechanisms**, will derive the [test for exactness](@entry_id:168683) from Clairaut's Theorem and provide a step-by-step method for reconstructing the potential function to find the solution. Next, **Applications and Interdisciplinary Connections** will explore how this mathematical concept is fundamental to physics, thermodynamics, and fluid dynamics, providing the crucial link between differential forms and physical state functions. Finally, **Hands-On Practices** will allow you to apply these concepts to concrete problems, solidifying your understanding of this essential technique in differential equations.
+This guide will equip you with the tools to identify, solve, and understand the profound implications of exactness. The first chapter, **Principles and Mechanisms**, will derive the test for exactness from Clairaut's Theorem and provide a step-by-step method for reconstructing the potential function to find the solution. Next, **Applications and Interdisciplinary Connections** will explore how this mathematical concept is fundamental to physics, thermodynamics, and fluid dynamics, providing the crucial link between differential forms and physical state functions. Finally, **Hands-On Practices** will allow you to apply these concepts to concrete problems, solidifying your understanding of this essential technique in differential equations.
 
 ## Principles and Mechanisms
 
@@ -9,13 +9,13 @@ A first-order ordinary differential equation (ODE) of the form
 $$
 M(x,y)dx + N(x,y)dy = 0
 $$
-is classified as an **[exact differential equation](@entry_id:276405)** if the expression on the left-hand side corresponds precisely to the total differential of some function $f(x,y)$. This function, if it exists, is known as a **[potential function](@entry_id:268662)** for the equation.
+is classified as an **exact differential equation** if the expression on the left-hand side corresponds precisely to the total differential of some function $f(x,y)$. This function, if it exists, is known as a **potential function** for the equation.
 
-Recall from [multivariable calculus](@entry_id:147547) that the total [differential of a function](@entry_id:274991) $f(x,y)$ is given by:
+Recall from multivariable calculus that the total differential of a function $f(x,y)$ is given by:
 $$
 df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy
 $$
-For the [differential form](@entry_id:174025) $M(x,y)dx + N(x,y)dy$ to be the total differential of $f(x,y)$, we must be able to make the following identifications:
+For the differential form $M(x,y)dx + N(x,y)dy$ to be the total differential of $f(x,y)$, we must be able to make the following identifications:
 $$
 M(x,y) = \frac{\partial f}{\partial x} \quad \text{and} \quad N(x,y) = \frac{\partial f}{\partial y}
 $$
@@ -25,22 +25,22 @@ If such a function $f(x,y)$ exists, then the differential equation $Mdx + Ndy = 
 
 The fundamental question is: How can we determine if a potential function $f(x,y)$ exists for a given equation $M(x,y)dx + N(x,y)dy = 0$ without having to find it? The answer lies in a remarkably simple test derived from a core theorem of calculus.
 
-If a [potential function](@entry_id:268662) $f$ exists such that $M = \frac{\partial f}{\partial x}$ and $N = \frac{\partial f}{\partial y}$, we can explore the relationship between the derivatives of $M$ and $N$. Let's compute the partial derivative of $M$ with respect to $y$ and the partial derivative of $N$ with respect to $x$:
+If a potential function $f$ exists such that $M = \frac{\partial f}{\partial x}$ and $N = \frac{\partial f}{\partial y}$, we can explore the relationship between the derivatives of $M$ and $N$. Let's compute the partial derivative of $M$ with respect to $y$ and the partial derivative of $N$ with respect to $x$:
 $$
 \frac{\partial M}{\partial y} = \frac{\partial}{\partial y} \left( \frac{\partial f}{\partial x} \right) = \frac{\partial^2 f}{\partial y \partial x}
 $$
 $$
 \frac{\partial N}{\partial x} = \frac{\partial}{\partial x} \left( \frac{\partial f}{\partial y} \right) = \frac{\partial^2 f}{\partial x \partial y}
 $$
-This brings us to a crucial insight. The condition for exactness appears to be linked to the equality of the mixed [second partial derivatives](@entry_id:635213) of the potential function. This equality is guaranteed by **Clairaut's Theorem**, which states that if a function $f(x,y)$ has continuous second partial derivatives in a region, then the order of differentiation does not matter: $\frac{\partial^2 f}{\partial y \partial x} = \frac{\partial^2 f}{\partial x \partial y}$. This theorem provides the direct theoretical justification for the [test for exactness](@entry_id:168683) .
+This brings us to a crucial insight. The condition for exactness appears to be linked to the equality of the mixed second partial derivatives of the potential function. This equality is guaranteed by **Clairaut's Theorem**, which states that if a function $f(x,y)$ has continuous second partial derivatives in a region, then the order of differentiation does not matter: $\frac{\partial^2 f}{\partial y \partial x} = \frac{\partial^2 f}{\partial x \partial y}$. This theorem provides the direct theoretical justification for the test for exactness [@problem_id:2316928].
 
-This leads to the **[test for exactness](@entry_id:168683)**: A differential equation $M(x,y)dx + N(x,y)dy = 0$ is exact in a simply connected region of the plane if and only if $M$ and $N$ have continuous first partial derivatives and
+This leads to the **test for exactness**: A differential equation $M(x,y)dx + N(x,y)dy = 0$ is exact in a simply connected region of the plane if and only if $M$ and $N$ have continuous first partial derivatives and
 $$
 \frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}
 $$
 This condition is both necessary (if the equation is exact, the partials must be equal) and sufficient (if the partials are equal, the equation is guaranteed to be exact).
 
-Let's examine how to apply this test. Consider the differential equation presented in a classification problem :
+Let's examine how to apply this test. Consider the differential equation presented in a classification problem [@problem_id:2204660]:
 $$
 (\ln(y) + 2x)dx + \left(\frac{x}{y} + 2y\right)dy = 0
 $$
@@ -53,18 +53,18 @@ $$
 $$
 Since $\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$, we conclude that the equation is exact.
 
-This test also reveals interesting connections between different classes of ODEs. For instance, any [separable equation](@entry_id:171576) that can be written in the form $f(x)dx + g(y)dy = 0$ is always exact, assuming $f$ and $g$ are continuously differentiable. In this case, $M(x,y) = f(x)$ and $N(x,y) = g(y)$. The [test for exactness](@entry_id:168683) gives:
+This test also reveals interesting connections between different classes of ODEs. For instance, any separable equation that can be written in the form $f(x)dx + g(y)dy = 0$ is always exact, assuming $f$ and $g$ are continuously differentiable. In this case, $M(x,y) = f(x)$ and $N(x,y) = g(y)$. The test for exactness gives:
 $$
 \frac{\partial M}{\partial y} = \frac{\partial}{\partial y}(f(x)) = 0
 $$
 $$
 \frac{\partial N}{\partial x} = \frac{\partial}{\partial x}(g(y)) = 0
 $$
-The condition $\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$ is trivially satisfied, confirming that all such [separable equations](@entry_id:172693) are a subset of exact equations .
+The condition $\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$ is trivially satisfied, confirming that all such separable equations are a subset of exact equations [@problem_id:2204613].
 
 ### Reconstructing the Potential Function
 
-Once we have verified that an equation is exact, the next step is to find the potential function $f(x,y)$. The process involves partial integration and differentiation. We will illustrate the method using the following [exact differential form](@entry_id:197061), for which we seek the [potential function](@entry_id:268662) $\psi(x,y)$ :
+Once we have verified that an equation is exact, the next step is to find the potential function $f(x,y)$. The process involves partial integration and differentiation. We will illustrate the method using the following exact differential form, for which we seek the potential function $\psi(x,y)$ [@problem_id:2193481]:
 $$
 (2xy^{3} + y\cos(x))dx + (3x^{2}y^{2} + \sin(x) - e^{-y})dy = 0
 $$
@@ -97,7 +97,7 @@ The procedure to find the potential function $\psi(x,y)$ is as follows:
     $$
     where $C_1$ is a true constant.
 
-5.  **Write the final [potential function](@entry_id:268662)**: Substitute the expression for $g(y)$ back into our result from Step 1.
+5.  **Write the final potential function**: Substitute the expression for $g(y)$ back into our result from Step 1.
     $$
     \psi(x,y) = x^2y^3 + y\sin(x) + e^{-y} + C_1
     $$
@@ -109,13 +109,13 @@ Thus, the specific potential function is $\psi(x,y) = x^2y^3 + y\sin(x) + e^{-y}
 
 ### Applications and Advanced Concepts
 
-The principle of [exactness](@entry_id:268999) is not merely a mathematical curiosity; it is a fundamental concept that appears in many areas of science and engineering.
+The principle of exactness is not merely a mathematical curiosity; it is a fundamental concept that appears in many areas of science and engineering.
 
 #### Forcing Exactness
 
 In many modeling scenarios, a physical principle dictates that a differential equation *must* be exact. This requirement can be used to determine unknown parameters or functions within the model.
 
-For example, consider an equation with an unknown constant $k$ :
+For example, consider an equation with an unknown constant $k$ [@problem_id:2204631]:
 $$
 \left( \frac{5}{2} x^{\frac{3}{2}} \sin(y) + y^3 e^{x} \right) dx + \left( x^{k} \cos(y) + 3y^2 e^{x} \right) dy = 0
 $$
@@ -128,7 +128,7 @@ $$
 $$
 Equating these two expressions requires the coefficients of the $\cos(y)$ term to be identical for all $x$. This implies $\frac{5}{2} x^{\frac{3}{2}} = k x^{k-1}$, which is satisfied only if the exponents and coefficients match. Thus, $k-1 = \frac{3}{2}$, leading to $k=\frac{5}{2}$.
 
-This same principle can be used to determine an unknown function within a model. Suppose a process is described by $(y^2 + 4x) dx + (2xy + \cos(x) + f(x)) dy = 0$, and it is known to be exact . The exactness condition gives:
+This same principle can be used to determine an unknown function within a model. Suppose a process is described by $(y^2 + 4x) dx + (2xy + \cos(x) + f(x)) dy = 0$, and it is known to be exact [@problem_id:2204648]. The exactness condition gives:
 $$
 \frac{\partial}{\partial y}(y^2 + 4x) = 2y
 $$
@@ -139,22 +139,22 @@ Equating them gives $2y = 2y - \sin(x) + f'(x)$, which simplifies to $f'(x) = \s
 
 #### Exact Differentials in Science
 
-The concept of a [potential function](@entry_id:268662) is central to many physical theories.
-In physics, a force field $\vec{F}(x,y) = \langle M(x,y), N(x,y) \rangle$ is called **conservative** if the work done by the force on a particle moving between two points is independent of the path taken. This is true if and only if the [differential form](@entry_id:174025) $Mdx + Ndy$ is exact. The potential function $U(x,y)$ is then the potential energy of the system (typically with a sign difference, $\vec{F} = -\nabla U$). A problem might require finding parameters that make a force field conservative and then calculating the corresponding potential energy .
+The concept of a potential function is central to many physical theories.
+In physics, a force field $\vec{F}(x,y) = \langle M(x,y), N(x,y) \rangle$ is called **conservative** if the work done by the force on a particle moving between two points is independent of the path taken. This is true if and only if the differential form $Mdx + Ndy$ is exact. The potential function $U(x,y)$ is then the potential energy of the system (typically with a sign difference, $\vec{F} = -\nabla U$). A problem might require finding parameters that make a force field conservative and then calculating the corresponding potential energy [@problem_id:2204654].
 
-Similarly, in thermodynamics and materials science, many fundamental quantities are **[state functions](@entry_id:137683)**, meaning their value depends only on the current state of the system (e.g., on temperature, pressure, or strain), not on the path taken to reach that state. The differential of any state function must be an [exact differential](@entry_id:138691). For example, the change in internal energy $dU$ of a material under strain might be given by $dU = \sigma_x d\epsilon_x + \sigma_y d\epsilon_y$, where $\sigma$ represents stress and $\epsilon$ represents strain. The physical requirement that internal energy is a state function implies that $dU$ must be an [exact differential](@entry_id:138691), which in turn imposes the constraint $\frac{\partial \sigma_x}{\partial \epsilon_y} = \frac{\partial \sigma_y}{\partial \epsilon_x}$. This condition can be used to find unknown material constants .
+Similarly, in thermodynamics and materials science, many fundamental quantities are **state functions**, meaning their value depends only on the current state of the system (e.g., on temperature, pressure, or strain), not on the path taken to reach that state. The differential of any state function must be an exact differential. For example, the change in internal energy $dU$ of a material under strain might be given by $dU = \sigma_x d\epsilon_x + \sigma_y d\epsilon_y$, where $\sigma$ represents stress and $\epsilon$ represents strain. The physical requirement that internal energy is a state function implies that $dU$ must be an exact differential, which in turn imposes the constraint $\frac{\partial \sigma_x}{\partial \epsilon_y} = \frac{\partial \sigma_y}{\partial \epsilon_x}$. This condition can be used to find unknown material constants [@problem_id:2316874].
 
 #### Structural Exactness
 
-In some cases, the very structure of an equation guarantees its [exactness](@entry_id:268999), regardless of the specific functions involved. Consider an equation of the form:
+In some cases, the very structure of an equation guarantees its exactness, regardless of the specific functions involved. Consider an equation of the form:
 $$
 y h(xy) dx + x h(xy) dy = 0
 $$
-where $h(u)$ is any continuously [differentiable function](@entry_id:144590). Here, $M(x,y) = y h(xy)$ and $N(x,y) = x h(xy)$. Let's apply the [test for exactness](@entry_id:168683), using the [chain rule](@entry_id:147422) :
+where $h(u)$ is any continuously differentiable function. Here, $M(x,y) = y h(xy)$ and $N(x,y) = x h(xy)$. Let's apply the test for exactness, using the chain rule [@problem_id:2204639]:
 $$
 \frac{\partial M}{\partial y} = \frac{\partial}{\partial y}(y h(xy)) = 1 \cdot h(xy) + y \cdot h'(xy) \cdot \frac{\partial}{\partial y}(xy) = h(xy) + xy h'(xy)
 $$
 $$
 \frac{\partial N}{\partial x} = \frac{\partial}{\partial x}(x h(xy)) = 1 \cdot h(xy) + x \cdot h'(xy) \cdot \frac{\partial}{\partial x}(xy) = h(xy) + xy h'(xy)
 $$
-The two partial derivatives are identical. Thus, any equation with this specific structure is guaranteed to be exact. This demonstrates that [exactness](@entry_id:268999) can be a deep structural property of a differential equation.
+The two partial derivatives are identical. Thus, any equation with this specific structure is guaranteed to be exact. This demonstrates that exactness can be a deep structural property of a differential equation.

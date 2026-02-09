@@ -1,11 +1,11 @@
 ## Introduction
-In the study of probability, understanding the likelihood of events is only the first step. To truly harness the power of [probabilistic reasoning](@entry_id:273297), we must be able to summarize and quantify the characteristics of random outcomes. Two of the most essential tools for this task are **expected value** and **variance**, which provide concise yet powerful descriptions of a random variable's central tendency and spread. Without these measures, we are left with a raw probability distribution, making it difficult to compare different random processes, assess risk, or predict long-term behavior. This article bridges the gap between basic probability and its practical application by providing a deep dive into these foundational statistical moments.
+In the study of probability, understanding the likelihood of events is only the first step. To truly harness the power of probabilistic reasoning, we must be able to summarize and quantify the characteristics of random outcomes. Two of the most essential tools for this task are **expected value** and **variance**, which provide concise yet powerful descriptions of a random variable's central tendency and spread. Without these measures, we are left with a raw probability distribution, making it difficult to compare different random processes, assess risk, or predict long-term behavior. This article bridges the gap between basic probability and its practical application by providing a deep dive into these foundational statistical moments.
 
-The journey begins in the **Principles and Mechanisms** chapter, where we will formally define expected value and variance, explore their fundamental properties like linearity, and introduce indispensable computational techniques such as the method of [indicator variables](@entry_id:266428) and [moment generating functions](@entry_id:171708). Following this theoretical foundation, the **Applications and Interdisciplinary Connections** chapter will showcase how these concepts are applied to solve real-world problems in fields as diverse as computer science, [computational biology](@entry_id:146988), and finance. Finally, the **Hands-On Practices** section offers a curated set of problems to solidify your understanding and build practical skills in applying these powerful analytical tools.
+The journey begins in the **Principles and Mechanisms** chapter, where we will formally define expected value and variance, explore their fundamental properties like linearity, and introduce indispensable computational techniques such as the method of indicator variables and moment generating functions. Following this theoretical foundation, the **Applications and Interdisciplinary Connections** chapter will showcase how these concepts are applied to solve real-world problems in fields as diverse as computer science, computational biology, and finance. Finally, the **Hands-On Practices** section offers a curated set of problems to solidify your understanding and build practical skills in applying these powerful analytical tools.
 
 ## Principles and Mechanisms
 
-Following our introduction to the fundamental concepts of probability, we now delve into two of the most critical numerical characteristics of a random variable: its **expected value** and its **variance**. These measures provide a concise summary of the probability distribution, describing its central tendency and its degree of dispersion, respectively. Understanding these principles is foundational to nearly every application of probability theory, from [algorithmic analysis](@entry_id:634228) and financial modeling to statistical physics and reliability engineering.
+Following our introduction to the fundamental concepts of probability, we now delve into two of the most critical numerical characteristics of a random variable: its **expected value** and its **variance**. These measures provide a concise summary of the probability distribution, describing its central tendency and its degree of dispersion, respectively. Understanding these principles is foundational to nearly every application of probability theory, from algorithmic analysis and financial modeling to statistical physics and reliability engineering.
 
 ### The Concept of Expected Value: The Center of Mass
 
@@ -13,7 +13,7 @@ The expected value of a random variable is, arguably, the most important single 
 
 #### Expected Value of Discrete Random Variables
 
-For a **[discrete random variable](@entry_id:263460)** $X$ that can take on a finite or countably infinite set of values $x_1, x_2, \dots$ with corresponding probabilities $P(X=x_i) = p_i$, the expected value, denoted $E[X]$ or $\mu_X$, is defined as the weighted average of these values, where the weights are the probabilities.
+For a **discrete random variable** $X$ that can take on a finite or countably infinite set of values $x_1, x_2, \dots$ with corresponding probabilities $P(X=x_i) = p_i$, the expected value, denoted $E[X]$ or $\mu_X$, is defined as the weighted average of these values, where the weights are the probabilities.
 
 $$
 E[X] = \sum_{i} x_i P(X=x_i) = \sum_{i} x_i p_i
@@ -21,7 +21,7 @@ $$
 
 Each possible outcome $x_i$ is weighted by its likelihood $p_i$. Outcomes that are more probable contribute more to the expected value.
 
-Consider an [algorithmic trading](@entry_id:146572) strategy where the net profit from a single trade is modeled as a [discrete random variable](@entry_id:263460) $X$. Suppose the possible outcomes are a profit of $\$125.50$ with probability $0.25$, a profit of $\$70.00$ with probability $0.15$, a breakeven outcome of $\$0.00$ with probability $0.10$, and a loss of $\$55.25$ (a profit of $-\$55.25$) with probability $0.50$. To determine the viability of this strategy, the firm needs to calculate the expected profit per trade. This is a direct application of the definition of expected value :
+Consider an algorithmic trading strategy where the net profit from a single trade is modeled as a discrete random variable $X$. Suppose the possible outcomes are a profit of $\$125.50$ with probability $0.25$, a profit of $\$70.00$ with probability $0.15$, a breakeven outcome of $\$0.00$ with probability $0.10$, and a loss of $\$55.25$ (a profit of $-\$55.25$) with probability $0.50$. To determine the viability of this strategy, the firm needs to calculate the expected profit per trade. This is a direct application of the definition of expected value [@problem_id:1916093]:
 
 $$
 E[X] = (\$125.50)(0.25) + (\$70.00)(0.15) + (\$0.00)(0.10) + (-\$55.25)(0.50)
@@ -43,7 +43,7 @@ $$
 
 Here, $x$ represents the value, and $f(x)dx$ is its infinitesimal weight. The integral sums these weighted values over the entire range where $f(x)$ is non-zero.
 
-Imagine a quality control process for 2-meter metal rods, where the location $X$ of the most significant imperfection is modeled by a PDF. If the PDF is given by $f(x) = kx^2$ for $x \in [0, 2]$ and $f(x)=0$ otherwise, we can find the expected location of this imperfection . First, a valid PDF must integrate to 1. This normalization condition allows us to find the constant $k$:
+Imagine a quality control process for 2-meter metal rods, where the location $X$ of the most significant imperfection is modeled by a PDF. If the PDF is given by $f(x) = kx^2$ for $x \in [0, 2]$ and $f(x)=0$ otherwise, we can find the expected location of this imperfection [@problem_id:1361554]. First, a valid PDF must integrate to 1. This normalization condition allows us to find the constant $k$:
 
 $$
 \int_{0}^{2} kx^2 \,dx = k \left[ \frac{x^3}{3} \right]_{0}^{2} = k \frac{8}{3} = 1 \implies k = \frac{3}{8}
@@ -71,7 +71,7 @@ $$
 
 When this condition is not met, the expected value is **undefined**. This is not a mathematical triviality; it reflects a real property of certain distributions with "heavy tails," where extreme values are probable enough to destabilize the long-run average.
 
-A classic example is the **standard Cauchy distribution**, which can arise in physics when modeling scattering phenomena. Consider a particle source at $(0, 1)$ firing at a random angle $\Theta$ towards the x-axis, where $\Theta$ is uniform on $(-\frac{\pi}{2}, \frac{\pi}{2})$. The position $X = \tan(\Theta)$ where it hits the x-axis follows a standard Cauchy distribution with PDF :
+A classic example is the **standard Cauchy distribution**, which can arise in physics when modeling scattering phenomena. Consider a particle source at $(0, 1)$ firing at a random angle $\Theta$ towards the x-axis, where $\Theta$ is uniform on $(-\frac{\pi}{2}, \frac{\pi}{2})$. The position $X = \tan(\Theta)$ where it hits the x-axis follows a standard Cauchy distribution with PDF [@problem_id:1916101]:
 
 $$
 f(x) = \frac{1}{\pi(1+x^2)}, \quad \text{for } x \in (-\infty, \infty)
@@ -112,7 +112,7 @@ $$
 
 This property holds universally, regardless of whether $X$ and $Y$ are independent or dependent. This makes it an exceptionally powerful tool for decomposing complex problems.
 
-Let's examine a scenario from materials science where a photodetector's output voltage $V$ is a function of a detected photon's energy $X$, given by $V = \alpha X^2 - \beta X$ for constants $\alpha$ and $\beta$. If we know the PDF of $X$, we can find the expected output voltage $E[V]$ . Using linearity, we can write:
+Let's examine a scenario from materials science where a photodetector's output voltage $V$ is a function of a detected photon's energy $X$, given by $V = \alpha X^2 - \beta X$ for constants $\alpha$ and $\beta$. If we know the PDF of $X$, we can find the expected output voltage $E[V]$ [@problem_id:1361570]. Using linearity, we can write:
 
 $$
 E[V] = E[\alpha X^2 - \beta X] = \alpha E[X^2] - \beta E[X]
@@ -120,7 +120,7 @@ $$
 
 This breaks the problem down into two simpler calculations: finding $E[X]$ and $E[X^2]$. Each of these can be found using LOTUS. For a given PDF $f(x)=4(x-x^3)$ on $[0,1]$, we would compute $E[X] = \int_0^1 x f(x)dx$ and $E[X^2] = \int_0^1 x^2 f(x)dx$, and then combine them to find $E[V]$.
 
-The linearity property extends to any number of random variables. For example, in a semiconductor process, a dopant atom is placed at a random location $(X, Y)$ in a triangular region. To find the expected value of the sum of its coordinates, $E[X+Y]$, linearity tells us that $E[X+Y] = E[X] + E[Y]$ . We can calculate $E[X]$ and $E[Y]$ separately from the joint PDF and simply add the results, which is often much easier than working with the variable $Z=X+Y$ directly.
+The linearity property extends to any number of random variables. For example, in a semiconductor process, a dopant atom is placed at a random location $(X, Y)$ in a triangular region. To find the expected value of the sum of its coordinates, $E[X+Y]$, linearity tells us that $E[X+Y] = E[X] + E[Y]$ [@problem_id:1916092]. We can calculate $E[X]$ and $E[Y]$ separately from the joint PDF and simply add the results, which is often much easier than working with the variable $Z=X+Y$ directly.
 
 #### The Method of Indicator Variables
 
@@ -132,7 +132,7 @@ $$
 
 Many complex random variables that count occurrences can be expressed as a sum of simpler indicator variables. By linearity of expectation, we can then find the expected value of the complex variable by summing the probabilities of the simple events.
 
-A classic problem illustrates this technique's power: finding the expected number of "matches" when $n$ distinct files are randomly placed into $n$ corresponding folders, such that each folder receives exactly one file . A match occurs if file $i$ is placed in folder $i$. Let $X$ be the total number of matches. Calculating the distribution of $X$ is very difficult.
+A classic problem illustrates this technique's power: finding the expected number of "matches" when $n$ distinct files are randomly placed into $n$ corresponding folders, such that each folder receives exactly one file [@problem_id:1916149]. A match occurs if file $i$ is placed in folder $i$. Let $X$ be the total number of matches. Calculating the distribution of $X$ is very difficult.
 
 Instead, let's define an indicator variable $I_i$ for each file $i=1, \dots, n$:
 $$
@@ -150,7 +150,7 @@ E[X] = \sum_{i=1}^n \frac{1}{n} = n \cdot \frac{1}{n} = 1
 $$
 Remarkably, the expected number of matches is always 1, regardless of how many files and folders there are (for $n \ge 1$). This result is simple and elegant, yet obtaining it without linearity and indicator variables would be a formidable combinatorial challenge.
 
-This same method can be used to solve other seemingly complex problems, such as finding the expected number of idle servers in a cloud computing system where $N$ keys are independently and uniformly hashed to one of $K$ servers . By defining an indicator $I_j$ for each server $j$ being idle and summing their expectations, we can easily find the expected number of idle servers to be $K(1-\frac{1}{K})^N$.
+This same method can be used to solve other seemingly complex problems, such as finding the expected number of idle servers in a cloud computing system where $N$ keys are independently and uniformly hashed to one of $K$ servers [@problem_id:1369274]. By defining an indicator $I_j$ for each server $j$ being idle and summing their expectations, we can easily find the expected number of idle servers to be $K(1-\frac{1}{K})^N$.
 
 ### Variance and Covariance: Measuring Spread and Association
 
@@ -198,7 +198,7 @@ $$
 E[X^n] = \frac{d^n}{dt^n} M_X(t) \bigg|_{t=0}
 $$
 
-For instance, in reliability engineering, the lifetime $X$ of a component might have an MGF of $M_X(t) = (1 - 4t)^{-5}$ for $t \lt 1/4$ . We can find $E[X]$ and $\text{Var}(X)$ without ever knowing the PDF.
+For instance, in reliability engineering, the lifetime $X$ of a component might have an MGF of $M_X(t) = (1 - 4t)^{-5}$ for $t \lt 1/4$ [@problem_id:1319723]. We can find $E[X]$ and $\text{Var}(X)$ without ever knowing the PDF.
 
 First moment:
 $$
@@ -232,7 +232,7 @@ $$
 \text{Var}\left(\sum_{i=1}^n X_i\right) = \sum_{i=1}^n \text{Var}(X_i) + 2\sum_{1 \le i \lt j \le n} \text{Cov}(X_i, X_j)
 $$
 
-Let us revisit the problem of fixed points in a random permutation, this time to calculate the variance . Let $X$ be the number of fixed points for a permutation of $n \ge 2$ items. We already established that $X = \sum_{i=1}^n I_i$ and $E[X]=1$. To find the variance, we use the formula above.
+Let us revisit the problem of fixed points in a random permutation, this time to calculate the variance [@problem_id:1369262]. Let $X$ be the number of fixed points for a permutation of $n \ge 2$ items. We already established that $X = \sum_{i=1}^n I_i$ and $E[X]=1$. To find the variance, we use the formula above.
 
 First, the variance of a single indicator $I_i$:
 $E[I_i] = P(I_i=1) = 1/n$. Since $I_i$ is a Bernoulli variable, $\text{Var}(I_i) = p(1-p) = \frac{1}{n}(1-\frac{1}{n})$.
@@ -251,4 +251,4 @@ Finally, putting it all together:
 $$
 \text{Var}(X) = \left(1 - \frac{1}{n}\right) + \frac{1}{n} = 1
 $$
-Just like the expectation, the variance of the number of fixed points is also 1, a constant for any $n \ge 2$. This elegant result demonstrates the power of systematically applying the definitions and [properties of expectation](@entry_id:170671) and variance, transforming a complex combinatorial problem into a series of manageable calculations. It is a fitting testament to the principles and mechanisms explored in this chapter.
+Just like the expectation, the variance of the number of fixed points is also 1, a constant for any $n \ge 2$. This elegant result demonstrates the power of systematically applying the definitions and properties of expectation and variance, transforming a complex combinatorial problem into a series of manageable calculations. It is a fitting testament to the principles and mechanisms explored in this chapter.

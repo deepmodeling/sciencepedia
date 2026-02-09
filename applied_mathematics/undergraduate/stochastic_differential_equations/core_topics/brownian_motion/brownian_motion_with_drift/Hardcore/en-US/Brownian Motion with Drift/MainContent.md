@@ -1,7 +1,7 @@
 ## Introduction
 Brownian motion with drift is a fundamental stochastic process that extends the classic Wiener process to model phenomena exhibiting both a systematic trend and random fluctuations. While standard Brownian motion captures purely random walks, many systems in finance, physics, and biology show a clear directional tendency, creating a gap between the simple model and complex reality. This article provides a comprehensive introduction to Brownian motion with drift, equipping you with the tools to understand and apply this powerful model.
 
-We will begin in **Principles and Mechanisms** by defining the process through its stochastic differential equation (SDE) and deriving its essential statistical properties, including its distribution, covariance, and [asymptotic behavior](@entry_id:160836). Next, in **Applications and Interdisciplinary Connections**, we will explore how this theoretical framework is applied to solve real-world problems, from pricing financial derivatives to modeling neural activity. Finally, the **Hands-On Practices** section will allow you to solidify your understanding by tackling concrete problems that apply the concepts learned in the preceding sections.
+We will begin in **Principles and Mechanisms** by defining the process through its stochastic differential equation (SDE) and deriving its essential statistical properties, including its distribution, covariance, and asymptotic behavior. Next, in **Applications and Interdisciplinary Connections**, we will explore how this theoretical framework is applied to solve real-world problems, from pricing financial derivatives to modeling neural activity. Finally, the **Hands-On Practices** section will allow you to solidify your understanding by tackling concrete problems that apply the concepts learned in the preceding sections.
 
 ## Principles and Mechanisms
 
@@ -19,7 +19,7 @@ This SDE provides a differential description of the process's evolution. To obta
 $$
 \int_0^T dX_t = \int_0^T \mu \, ds + \int_0^T \sigma \, dW_s
 $$
-The left side is simply $X_T - X_0$. The [first integral](@entry_id:274642) on the right is a standard Riemann integral of a constant, evaluating to $\mu T$. The second integral is an Itô stochastic integral of a constant integrand, which evaluates to $\sigma (W_T - W_0)$. Since a standard Wiener process starts at zero, $W_0=0$, we arrive at the explicit solution for Brownian motion with drift :
+The left side is simply $X_T - X_0$. The first integral on the right is a standard Riemann integral of a constant, evaluating to $\mu T$. The second integral is an Itô stochastic integral of a constant integrand, which evaluates to $\sigma (W_T - W_0)$. Since a standard Wiener process starts at zero, $W_0=0$, we arrive at the explicit solution for Brownian motion with drift [@problem_id:1286724]:
 $$
 X_T = X_0 + \mu T + \sigma W_T
 $$
@@ -43,7 +43,7 @@ $$
 $$
 The variance grows linearly with time, a hallmark of diffusive processes, with the growth rate determined by the square of the volatility, $\sigma^2$.
 
-Since $X_t$ is an affine transformation of the normally distributed random variable $W_t$, $X_t$ is itself normally distributed. Combining its mean and variance, we can fully specify its distribution :
+Since $X_t$ is an affine transformation of the normally distributed random variable $W_t$, $X_t$ is itself normally distributed. Combining its mean and variance, we can fully specify its distribution [@problem_id:3042534]:
 $$
 X_t \sim \mathcal{N}(X_0 + \mu t, \sigma^2 t)
 $$
@@ -54,7 +54,7 @@ Understanding the increments of a process is key to understanding its temporal s
 $$
 X_t - X_s = (X_0 + \mu t + \sigma W_t) - (X_0 + \mu s + \sigma W_s) = \mu(t-s) + \sigma(W_t - W_s)
 $$
-This expression reveals two fundamental properties of Brownian motion with drift  :
+This expression reveals two fundamental properties of Brownian motion with drift [@problem_id:3042560] [@problem_id:2970483]:
 
 1.  **Independent Increments**: For any two non-overlapping time intervals, say $[t_1, t_2]$ and $[t_3, t_4]$ with $t_1 \lt t_2 \le t_3 \lt t_4$, the corresponding increments $X_{t_2} - X_{t_1}$ and $X_{t_4} - X_{t_3}$ are independent. This is a direct consequence of the independence of the underlying Wiener process increments, $W_{t_2} - W_{t_1}$ and $W_{t_4} - W_{t_3}$. The deterministic drift term does not introduce any stochastic correlation between intervals.
 
@@ -62,7 +62,7 @@ This expression reveals two fundamental properties of Brownian motion with drift
     $$
     X_t - X_s \sim \mathcal{N}(\mu(t-s), \sigma^2(t-s))
     $$
-    The distribution is completely determined by the [time lag](@entry_id:267112) $t-s$. The drift $\mu$ sets the mean rate of change per unit time, while the volatility $\sigma$ scales the dispersion, contributing a variance of $\sigma^2$ per unit time. This [stationarity](@entry_id:143776) is a powerful property, implying that the statistical behavior of the process's changes is uniform across time.
+    The distribution is completely determined by the time lag $t-s$. The drift $\mu$ sets the mean rate of change per unit time, while the volatility $\sigma$ scales the dispersion, contributing a variance of $\sigma^2$ per unit time. This stationarity is a powerful property, implying that the statistical behavior of the process's changes is uniform across time.
 
 ### Second-Order and Path Properties
 
@@ -77,7 +77,7 @@ $$
 $$
 = \mathbb{E}[(\sigma W_s)(\sigma W_t)] = \sigma^2 \mathbb{E}[W_s W_t]
 $$
-A fundamental property of the standard Wiener process is that for $s \le t$, $\mathbb{E}[W_s W_t] = \min(s,t) = s$. Therefore, the covariance is :
+A fundamental property of the standard Wiener process is that for $s \le t$, $\mathbb{E}[W_s W_t] = \min(s,t) = s$. Therefore, the covariance is [@problem_id:1286740]:
 $$
 \text{Cov}(X_s, X_t) = \sigma^2 \min(s, t)
 $$
@@ -85,17 +85,17 @@ It is crucial to note that the drift coefficient $\mu$ has completely vanished f
 
 #### Quadratic Variation
 
-Quadratic variation, denoted $[X, X]_T$, is a concept from [stochastic calculus](@entry_id:143864) that measures the cumulative "roughness" or variability of a process's path over an interval $[0, T]$. For Itô processes, it captures the sum of the squares of infinitesimal increments. A key principle is that processes of **finite variation**, like the deterministic drift component $A_t = X_0 + \mu t$, have zero [quadratic variation](@entry_id:140680). Conversely, martingales like the Wiener process have non-zero [quadratic variation](@entry_id:140680).
+Quadratic variation, denoted $[X, X]_T$, is a concept from stochastic calculus that measures the cumulative "roughness" or variability of a process's path over an interval $[0, T]$. For Itô processes, it captures the sum of the squares of infinitesimal increments. A key principle is that processes of **finite variation**, like the deterministic drift component $A_t = X_0 + \mu t$, have zero quadratic variation. Conversely, martingales like the Wiener process have non-zero quadratic variation.
 
-A process can be decomposed into a finite-variation part and a martingale part. For $X_t = (X_0 + \mu t) + (\sigma W_t)$, the quadratic variation is determined solely by the [martingale](@entry_id:146036) component $\sigma W_t$. Using the properties of the quadratic variation bracket:
+A process can be decomposed into a finite-variation part and a martingale part. For $X_t = (X_0 + \mu t) + (\sigma W_t)$, the quadratic variation is determined solely by the martingale component $\sigma W_t$. Using the properties of the quadratic variation bracket:
 $$
 [X, X]_T = [X_0 + \mu t + \sigma W_t, X_0 + \mu t + \sigma W_t]_T = [\sigma W_t, \sigma W_t]_T
 $$
-Using the scaling property of the bracket, $[a M, a M]_T = a^2[M, M]_T$, and the fact that for a standard Wiener process, $[W, W]_T = T$, we find :
+Using the scaling property of the bracket, $[a M, a M]_T = a^2[M, M]_T$, and the fact that for a standard Wiener process, $[W, W]_T = T$, we find [@problem_id:1286716]:
 $$
 [X, X]_T = \sigma^2 [W, W]_T = \sigma^2 T
 $$
-Again, the drift $\mu$ does not appear. The quadratic variation is proportional to the time elapsed, with the proportionality constant being the squared volatility $\sigma^2$. This property is central to Itô's lemma and the entire framework of [stochastic integration](@entry_id:198356). It reflects the idea that on infinitesimal time scales, the fluctuations of the process, of order $\sqrt{dt}$, dominate the drift, which is of order $dt$.
+Again, the drift $\mu$ does not appear. The quadratic variation is proportional to the time elapsed, with the proportionality constant being the squared volatility $\sigma^2$. This property is central to Itô's lemma and the entire framework of stochastic integration. It reflects the idea that on infinitesimal time scales, the fluctuations of the process, of order $\sqrt{dt}$, dominate the drift, which is of order $dt$.
 
 ### Martingales and Asymptotic Behavior
 
@@ -103,9 +103,9 @@ The presence of a non-zero drift fundamentally alters some of the most important
 
 #### Martingale Property
 
-A **[martingale](@entry_id:146036)** is a stochastic process for which the best prediction of its future value, given all information up to the present, is its current value. Formally, a process $(M_t)_{t \ge 0}$ is a martingale with respect to a filtration $(\mathcal{F}_t)_{t \ge 0}$ if for all $s \lt t$, $\mathbb{E}[M_t | \mathcal{F}_s] = M_s$. Standard Brownian motion $(W_t)$ is a quintessential example of a martingale.
+A **martingale** is a stochastic process for which the best prediction of its future value, given all information up to the present, is its current value. Formally, a process $(M_t)_{t \ge 0}$ is a martingale with respect to a filtration $(\mathcal{F}_t)_{t \ge 0}$ if for all $s \lt t$, $\mathbb{E}[M_t | \mathcal{F}_s] = M_s$. Standard Brownian motion $(W_t)$ is a quintessential example of a martingale.
 
-For a Brownian motion with drift $X_t$, let's examine the [conditional expectation](@entry_id:159140) for $s \lt t$:
+For a Brownian motion with drift $X_t$, let's examine the conditional expectation for $s \lt t$:
 $$
 \mathbb{E}[X_t | \mathcal{F}_s] = \mathbb{E}[X_s + \mu(t-s) + \sigma(W_t - W_s) | \mathcal{F}_s]
 $$
@@ -113,16 +113,16 @@ Since $X_s$ is known at time $s$ (it is $\mathcal{F}_s$-measurable) and the incr
 $$
 \mathbb{E}[X_t | \mathcal{F}_s] = X_s + \mu(t-s) + \sigma \mathbb{E}[W_t - W_s] = X_s + \mu(t-s)
 $$
-For $X_t$ to be a [martingale](@entry_id:146036), this must equal $X_s$. This only holds if $\mu(t-s)=0$, which for $t > s$ implies $\mu=0$. Therefore, a Brownian motion with drift is **not a martingale if $\mu \ne 0$**  . The drift term introduces a predictable trend, violating the "[fair game](@entry_id:261127)" property of a martingale.
-If $\mu > 0$, $\mathbb{E}[X_t | \mathcal{F}_s] > X_s$, making $X_t$ a **[submartingale](@entry_id:263978)** (a "favorable game"). If $\mu < 0$, $\mathbb{E}[X_t | \mathcal{F}_s] < X_s$, making it a **[supermartingale](@entry_id:271504)** (an "unfavorable game").
+For $X_t$ to be a martingale, this must equal $X_s$. This only holds if $\mu(t-s)=0$, which for $t > s$ implies $\mu=0$. Therefore, a Brownian motion with drift is **not a martingale if $\mu \ne 0$** [@problem_id:3042658] [@problem_id:2970483]. The drift term introduces a predictable trend, violating the "fair game" property of a martingale.
+If $\mu > 0$, $\mathbb{E}[X_t | \mathcal{F}_s] > X_s$, making $X_t$ a **submartingale** (a "favorable game"). If $\mu < 0$, $\mathbb{E}[X_t | \mathcal{F}_s] < X_s$, making it a **supermartingale** (an "unfavorable game").
 
 #### The Infinitesimal Generator
 
-The infinitesimal generator, denoted $\mathcal{L}$, is a [differential operator](@entry_id:202628) that describes the expected rate of change of a function of a Markov process. For a function $f \in C_b^2(\mathbb{R})$ (twice continuously differentiable with bounded derivatives), the generator of $X_t$ is defined as:
+The infinitesimal generator, denoted $\mathcal{L}$, is a differential operator that describes the expected rate of change of a function of a Markov process. For a function $f \in C_b^2(\mathbb{R})$ (twice continuously differentiable with bounded derivatives), the generator of $X_t$ is defined as:
 $$
 \mathcal{L}f(x) := \lim_{t \downarrow 0}\frac{\mathbb{E}[f(X_t) | X_0=x]-f(x)}{t}
 $$
-Applying Itô's formula to $f(X_t)$ and taking expectations, one can derive the explicit form of the generator. The result is a fundamental link between SDEs and partial differential equations :
+Applying Itô's formula to $f(X_t)$ and taking expectations, one can derive the explicit form of the generator. The result is a fundamental link between SDEs and partial differential equations [@problem_id:3042576]:
 $$
 \mathcal{L}f(x) = \mu f'(x) + \frac{1}{2}\sigma^2 f''(x)
 $$
@@ -136,15 +136,15 @@ The process $X_t = X_0 + \mu t + \sigma W_t$ is a competition between a linear d
 $$
 \lim_{t \to \infty} \frac{X_t}{t} = \lim_{t \to \infty} \left( \frac{X_0}{t} + \mu + \sigma \frac{W_t}{t} \right) = \mu \quad \text{(almost surely)}
 $$
-This means that for large $t$, the process will almost surely drift towards $+\infty$ if $\mu > 0$ and towards $-\infty$ if $\mu < 0$. It will visit any bounded region of space only a finite number of times before escaping to infinity forever. This behavior defines **transience**. Thus, a one-dimensional Brownian motion with drift is transient for any non-zero drift $\mu$ .
+This means that for large $t$, the process will almost surely drift towards $+\infty$ if $\mu > 0$ and towards $-\infty$ if $\mu < 0$. It will visit any bounded region of space only a finite number of times before escaping to infinity forever. This behavior defines **transience**. Thus, a one-dimensional Brownian motion with drift is transient for any non-zero drift $\mu$ [@problem_id:3042572].
 
 ### A Deeper Look: Advanced Perspectives
 
-For the reader interested in more advanced mathematical techniques, we can re-derive and extend these properties using more powerful tools from [stochastic analysis](@entry_id:188809).
+For the reader interested in more advanced mathematical techniques, we can re-derive and extend these properties using more powerful tools from stochastic analysis.
 
 #### Distribution via Characteristic Functions
 
-An alternative and powerful method to determine the distribution of $X_t$ is through its **[characteristic function](@entry_id:141714)**, defined as $\varphi_{X_t}(u) = \mathbb{E}[\exp(i u X_t)]$ for $u \in \mathbb{R}$. One can derive an ordinary differential equation (ODE) for $\varphi_{X_t}(u)$ as a function of $t$ by applying Itô's lemma to the complex-valued process $Y_t = \exp(iuX_t)$. Solving this ODE with the initial condition $\varphi_{X_0}(u) = \exp(iuX_0)$ yields :
+An alternative and powerful method to determine the distribution of $X_t$ is through its **characteristic function**, defined as $\varphi_{X_t}(u) = \mathbb{E}[\exp(i u X_t)]$ for $u \in \mathbb{R}$. One can derive an ordinary differential equation (ODE) for $\varphi_{X_t}(u)$ as a function of $t$ by applying Itô's lemma to the complex-valued process $Y_t = \exp(iuX_t)$. Solving this ODE with the initial condition $\varphi_{X_0}(u) = \exp(iuX_0)$ yields [@problem_id:3042620]:
 $$
 \varphi_{X_t}(u) = \exp\left( i u (X_0 + \mu t) - \frac{1}{2} u^2 \sigma^2 t \right)
 $$
@@ -154,7 +154,7 @@ This is immediately recognizable as the characteristic function of a normal dist
 
 A profound insight from modern stochastic calculus is that the drift of a process can be viewed as a property of the underlying probability measure rather than the process itself. **Girsanov's theorem** provides the machinery for this change of perspective. It allows us to construct a new probability measure $\mathbb{Q}$, equivalent to the original measure $\mathbb{P}$, under which the process has a simpler structure.
 
-For the process $X_t$, we can "remove" the drift by defining a new measure $\mathbb{Q}$ via a **Radon-Nikodym derivative** process $(Z_t)$. By choosing the Girsanov kernel $\theta = -\mu/\sigma$, the density process on a finite interval $[0, T]$ is given by $Z_T = d\mathbb{Q}/d\mathbb{P}|_{\mathcal{F}_T}$, where :
+For the process $X_t$, we can "remove" the drift by defining a new measure $\mathbb{Q}$ via a **Radon-Nikodym derivative** process $(Z_t)$. By choosing the Girsanov kernel $\theta = -\mu/\sigma$, the density process on a finite interval $[0, T]$ is given by $Z_T = d\mathbb{Q}/d\mathbb{P}|_{\mathcal{F}_T}$, where [@problem_id:2970502]:
 $$
 Z_T = \exp\left(-\frac{\mu}{\sigma} W_T - \frac{\mu^{2} T}{2\sigma^{2}}\right)
 $$

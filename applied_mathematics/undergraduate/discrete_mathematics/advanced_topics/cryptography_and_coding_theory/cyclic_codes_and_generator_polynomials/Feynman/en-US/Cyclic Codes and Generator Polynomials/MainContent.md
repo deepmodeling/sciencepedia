@@ -1,7 +1,7 @@
 ## Introduction
-In our digital world, data is constantly in motion, vulnerable to corruption from noise and interference. How do we ensure that the messages we send—from simple texts to complex commands for a deep-space probe—arrive exactly as intended? The answer lies in the elegant field of [error-correcting codes](@article_id:153300), and among the most powerful and efficient are [cyclic codes](@article_id:266652). These codes are built on a simple, symmetrical principle: if a sequence of bits is a valid codeword, then any rotation of that sequence is also valid. This article demystifies this powerful concept by translating it into the language of algebra.
+In our digital world, data is constantly in motion, vulnerable to corruption from noise and interference. How do we ensure that the messages we send—from simple texts to complex commands for a deep-space probe—arrive exactly as intended? The answer lies in the elegant field of [error-correcting codes](@keyword=error_correcting_codes|lang=en-US|style=Feynman), and among the most powerful and efficient are [cyclic codes](@keyword=cyclic_codes|lang=en-US|style=Feynman). These codes are built on a simple, symmetrical principle: if a sequence of bits is a valid codeword, then any rotation of that sequence is also valid. This article demystifies this powerful concept by translating it into the language of algebra.
 
-First, in **Principles and Mechanisms**, you will learn how to represent bit sequences as polynomials and discover the central role of the "[generator polynomial](@article_id:269066)," the algebraic DNA that defines an entire code. Next, **Applications and Interdisciplinary Connections** will reveal how this abstract theory powers our world, from the design of high-speed communication circuits to the foundations of [quantum error correction](@article_id:139102). Finally, **Hands-On Practices** will allow you to solidify your understanding by actively constructing and verifying these codes yourself. Let's begin by exploring the magic of translating bit rotations into simple polynomial multiplication.
+First, in **Principles and Mechanisms**, you will learn how to represent bit sequences as polynomials and discover the central role of the "[generator polynomial](@keyword=generator_polynomial|lang=en-US|style=Feynman)," the algebraic DNA that defines an entire code. Next, **Applications and Interdisciplinary Connections** will reveal how this abstract theory powers our world, from the design of high-speed communication circuits to the foundations of [quantum error correction](@keyword=quantum_error_correction|lang=en-US|style=Feynman). Finally, **Hands-On Practices** will allow you to solidify your understanding by actively constructing and verifying these codes yourself. Let's begin by exploring the magic of translating bit rotations into simple polynomial multiplication.
 
 ## Principles and Mechanisms
 
@@ -11,7 +11,7 @@ This property of being closed under rotation, or **cyclic shift**, is the defini
 
 ### A New Language: The Magic of Polynomials
 
-The first great leap in understanding [cyclic codes](@article_id:266652) is to change our language. We're going to translate our strings of 0s and 1s into the language of algebra: polynomials. A binary vector, say $(c_0, c_1, c_2, \dots, c_{n-1})$, becomes a polynomial:
+The first great leap in understanding [cyclic codes](@keyword=cyclic_codes|lang=en-US|style=Feynman) is to change our language. We're going to translate our strings of 0s and 1s into the language of algebra: polynomials. A binary vector, say $(c_0, c_1, c_2, \dots, c_{n-1})$, becomes a polynomial:
 
 $$
 c(x) = c_0 + c_1x + c_2x^2 + \dots + c_{n-1}x^{n-1}
@@ -32,7 +32,7 @@ So, the cyclic shift operation is translated perfectly: a right cyclic shift cor
 
 ### The Generator: The DNA of the Code
 
-With this polynomial framework, an even deeper simplification emerges. We don't need to write down a big list of all the valid codeword polynomials in our code. The entire code, every single valid codeword, can be generated from one single master polynomial: the **[generator polynomial](@article_id:269066)**, $g(x)$.
+With this polynomial framework, an even deeper simplification emerges. We don't need to write down a big list of all the valid codeword polynomials in our code. The entire code, every single valid codeword, can be generated from one single master polynomial: the **[generator polynomial](@keyword=generator_polynomial|lang=en-US|style=Feynman)**, $g(x)$.
 
 The rule is this: a polynomial $c(x)$ represents a valid codeword if, and only if, it is a multiple of $g(x)$.
 $$
@@ -46,15 +46,15 @@ This immediately explains two fundamental properties:
 
 2.  **The Cyclic Property**: We've already established that a cyclic shift is just multiplication by $x$ (modulo $x^n-1$). If $c(x)$ is a codeword, it's a multiple of $g(x)$. Then of course $x \cdot c(x)$ is also a multiple of $g(x)$, and so is its remainder modulo $x^n - 1$. Therefore, any cyclic shift of a codeword is also a codeword.
 
-The [generator polynomial](@article_id:269066) acts like the code's DNA. It contains all the information needed to construct every valid member of the code family and to verify membership. If you know $g(x)$, you know the code.
+The [generator polynomial](@keyword=generator_polynomial|lang=en-US|style=Feynman) acts like the code's DNA. It contains all the information needed to construct every valid member of the code family and to verify membership. If you know $g(x)$, you know the code.
 
 ### Choosing a Generator: The Law of the Land
 
-So, can we just pick any polynomial to be our generator? Not quite. For this elegant structure to hold, there is one crucial constraint that $g(x)$ must obey: **the [generator polynomial](@article_id:269066) $g(x)$ must be a [divisor](@article_id:187958) of $x^n - 1$**.
+So, can we just pick any polynomial to be our generator? Not quite. For this elegant structure to hold, there is one crucial constraint that $g(x)$ must obey: **the [generator polynomial](@keyword=generator_polynomial|lang=en-US|style=Feynman) $g(x)$ must be a [divisor](@keyword=divisor|lang=en-US|style=Feynman) of $x^n - 1$**.
 
 Think of the polynomial $x^n - 1$ as defining the "universe" for a code of length $n$. Any valid generator must be a natural factor of this universe. This ensures that the ideal generated by $g(x)$ behaves nicely within the ring structure defined by the modulo $x^n-1$ operation.
 
-To find all possible [cyclic codes](@article_id:266652) of a certain length, you simply need to find all the factors of $x^n - 1$ over $GF(2)$. Each factor can serve as a generator for a different cyclic code. For example, to find all non-trivial [cyclic codes](@article_id:266652) of length 4, we factor $x^4-1$ over $GF(2)$. Since we're in $GF(2)$, subtraction is addition, so $x^4-1 = x^4+1 = (x+1)^4$. The non-trivial factors are $(x+1)$, $(x+1)^2 = x^2+1$, and $(x+1)^3 = x^3+x^2+x+1$. Each of these generates a distinct cyclic code of length 4.
+To find all possible [cyclic codes](@keyword=cyclic_codes|lang=en-US|style=Feynman) of a certain length, you simply need to find all the factors of $x^n - 1$ over $GF(2)$. Each factor can serve as a generator for a different cyclic code. For example, to find all non-trivial [cyclic codes](@keyword=cyclic_codes|lang=en-US|style=Feynman) of length 4, we factor $x^4-1$ over $GF(2)$. Since we're in $GF(2)$, subtraction is addition, so $x^4-1 = x^4+1 = (x+1)^4$. The non-trivial factors are $(x+1)$, $(x+1)^2 = x^2+1$, and $(x+1)^3 = x^3+x^2+x+1$. Each of these generates a distinct cyclic code of length 4.
 
 ### Putting It All to Work
 
@@ -70,7 +70,7 @@ The choice of $g(x)$ determines the code's efficiency. If our code has length $n
 
 What happens when a codeword $c(x)$ is transmitted through a noisy channel and gets corrupted into a received polynomial $r(x) = c(x) + e(x)$, where $e(x)$ is the error pattern? How can the receiver tell something went wrong?
 
-The receiver knows the code's secret handshake: every valid codeword must be divisible by $g(x)$. So, the receiver performs a simple test: it divides the received polynomial $r(x)$ by the generator $g(x)$ and looks at the remainder. This remainder is called the **[syndrome polynomial](@article_id:273244)**, $s(x)$.
+The receiver knows the code's secret handshake: every valid codeword must be divisible by $g(x)$. So, the receiver performs a simple test: it divides the received polynomial $r(x)$ by the generator $g(x)$ and looks at the remainder. This remainder is called the **[syndrome polynomial](@keyword=syndrome_polynomial|lang=en-US|style=Feynman)**, $s(x)$.
 
 $$
 s(x) = r(x) \pmod{g(x)}
@@ -86,11 +86,11 @@ A non-zero syndrome screams "Error!". Remarkably, the syndrome doesn't just dete
 
 ### A Deeper View: The World of Roots
 
-There is an even more profound way to look at this, which connects [coding theory](@article_id:141432) to the deep results of abstract algebra. The Polynomial Remainder Theorem states that a polynomial $p(x)$ has a root at $x=a$ if and only if $(x-a)$ is a factor of $p(x)$.
+There is an even more profound way to look at this, which connects [coding theory](@keyword=coding_theory|lang=en-US|style=Feynman) to the deep results of abstract algebra. The Polynomial Remainder Theorem states that a polynomial $p(x)$ has a root at $x=a$ if and only if $(x-a)$ is a factor of $p(x)$.
 
 We can extend this idea. A codeword polynomial $c(x)$ is a multiple of $g(x)$ if and only if **every root of $g(x)$ is also a root of $c(x)$**. Let's say the roots of $g(x)$ are $\alpha_1, \alpha_2, \dots, \alpha_r$. Then checking if a polynomial $c(x)$ is a valid codeword is equivalent to checking if:
 $$
 c(\alpha_1) = 0, \quad c(\alpha_2) = 0, \quad \dots, \quad c(\alpha_r) = 0
 $$
 
-These roots may not be simple numbers like 0 or 1; they often live in larger "extension fields" like $GF(4)$. But the principle remains a beautiful and powerful alternative to [polynomial division](@article_id:151306) for verifying codewords. This "root-based" perspective is the gateway to constructing some of the most powerful [error-correcting codes](@article_id:153300) known, such as BCH and Reed-Solomon codes, which are the unsung heroes behind everything from [deep-space communication](@article_id:264129) to the crisp sound on your CDs and the reliability of your data storage.
+These roots may not be simple numbers like 0 or 1; they often live in larger "extension fields" like $GF(4)$. But the principle remains a beautiful and powerful alternative to [polynomial division](@keyword=polynomial_division|lang=en-US|style=Feynman) for verifying codewords. This "root-based" perspective is the gateway to constructing some of the most powerful [error-correcting codes](@keyword=error_correcting_codes|lang=en-US|style=Feynman) known, such as BCH and Reed-Solomon codes, which are the unsung heroes behind everything from [deep-space communication](@keyword=deep_space_communication|lang=en-US|style=Feynman) to the crisp sound on your CDs and the reliability of your data storage.

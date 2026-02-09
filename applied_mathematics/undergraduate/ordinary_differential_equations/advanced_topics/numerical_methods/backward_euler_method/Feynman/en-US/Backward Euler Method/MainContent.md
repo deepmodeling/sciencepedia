@@ -13,7 +13,7 @@ But what if there's a better way? What if, instead of looking at the current und
 
 ### A Look into the Future: The Implicit Idea
 
-Let's formalize this. For an [equation of motion](@article_id:263792) given by $y'(t) = f(t, y)$, which tells us the "slope" or "velocity" at any point $(t, y)$, the forward Euler method simply says:
+Let's formalize this. For an [equation of motion](@keyword=equation_of_motion|lang=en-US|style=Feynman) given by $y'(t) = f(t, y)$, which tells us the "slope" or "velocity" at any point $(t, y)$, the forward Euler method simply says:
 
 $$
 y_{n+1} = y_n + h f(t_n, y_n)
@@ -41,13 +41,13 @@ The term on the left, $\frac{y_{n+1} - y_n}{t_{n+1} - t_n}$, is just the slope o
 
 This predictive power comes at a cost. Nature, it seems, does not give up her secrets without a bit of a fight. For a general, complicated function $f(t,y)$, you can't just shuffle the terms around to isolate $y_{n+1}$. For example, if $f(t,y) = \sin(y) + t^2$, the update rule becomes $y_{n+1} = y_n + h(\sin(y_{n+1}) + t_{n+1}^2)$. There's no simple way to solve for $y_{n+1}$!
 
-Instead, at every single time step, we have to solve an algebraic equation. We typically rewrite it as a [root-finding problem](@article_id:174500):
+Instead, at every single time step, we have to solve an algebraic equation. We typically rewrite it as a [root-finding problem](@keyword=root_finding_problem|lang=en-US|style=Feynman):
 
 $$
 F(y_{n+1}) = y_{n+1} - y_n - h f(t_{n+1}, y_{n+1}) = 0
 $$
 
-And then we call upon a numerical workhorse, like Newton's method or a [fixed-point iteration](@article_id:137275), to find the value of $y_{n+1}$ that makes $F$ equal to zero. This extra computational work at each step is the price we pay for looking into the future.
+And then we call upon a numerical workhorse, like Newton's method or a [fixed-point iteration](@keyword=fixed_point_iteration|lang=en-US|style=Feynman), to find the value of $y_{n+1}$ that makes $F$ equal to zero. This extra computational work at each step is the price we pay for looking into the future.
 
 However, for some very important classes of problems, this task becomes much easier. Consider the simple linear equation $y'(t) = \lambda y(t)$. The Backward Euler formula becomes:
 
@@ -61,7 +61,7 @@ $$
 (1 - h\lambda)y_{n+1} = y_n \quad \implies \quad y_{n+1} = \left(\frac{1}{1 - h\lambda}\right) y_n
 $$
 
-The term $G(\lambda, h) = \frac{1}{1 - h\lambda}$ is the **[growth factor](@article_id:634078)**; it tells us how the solution is scaled from one step to the next. This extends beautifully to [systems of linear equations](@article_id:148449), like $\mathbf{y}' = A\mathbf{y}$. The update rule is $\mathbf{y}_{n+1} = \mathbf{y}_n + hA\mathbf{y}_{n+1}$, which we can rearrange into a standard [matrix equation](@article_id:204257):
+The term $G(\lambda, h) = \frac{1}{1 - h\lambda}$ is the **[growth factor](@keyword=growth_factor|lang=en-US|style=Feynman)**; it tells us how the solution is scaled from one step to the next. This extends beautifully to [systems of linear equations](@keyword=systems_of_linear_equations|lang=en-US|style=Feynman), like $\mathbf{y}' = A\mathbf{y}$. The update rule is $\mathbf{y}_{n+1} = \mathbf{y}_n + hA\mathbf{y}_{n+1}$, which we can rearrange into a standard [matrix equation](@keyword=matrix_equation|lang=en-US|style=Feynman):
 
 $$
 (I - hA)\mathbf{y}_{n+1} = \mathbf{y}_n
@@ -71,7 +71,7 @@ Here, $I$ is the identity matrix. Instead of a nonlinear root-find, we "only" ne
 
 ### The Reward for Patience: Unconditional Stability
 
-So, why would we ever bother with this complicated implicit approach? The answer is one of the most important concepts in [numerical analysis](@article_id:142143): **stability**.
+So, why would we ever bother with this complicated implicit approach? The answer is one of the most important concepts in [numerical analysis](@keyword=numerical_analysis|lang=en-US|style=Feynman): **stability**.
 
 Many systems in physics and engineering are "stiff." A stiff system is one that has processes occurring on vastly different timescales. Imagine a rocket engine: an explosive, millisecond-long combustion event is followed by the long, slow coast of the rocket through space. Or a chemical reaction where some compounds react almost instantly while others change over hours.
 
@@ -79,9 +79,9 @@ If you try to simulate such a system with a simple explicit method, you are in f
 
 Let's see this in action. Consider the stiff equation $y'(t) = -50(y(t) - \sin(t))$ with $y(0)=1$. The term $-50y$ represents a very fast decay. Let's try to take just one step of size $h=0.1$.
 An explicit Euler step gives $y_1 = y_0 + hf(t_0, y_0) = 1 + 0.1(-50(1-\sin(0))) = 1 - 5 = -4$. The solution jumps from 1 to -4 in one step! This is a wild over-correction.
-Now, let's use the Backward Euler method for the same step. We must solve $y_1 = y_0 + hf(t_1, y_1)$, which for this problem yields $y_1 \approx 0.2499$. This is a much more placid and reasonable result. The explicit method became unstable and produced garbage, while the [implicit method](@article_id:138043) remained calm and gave a sensible answer.
+Now, let's use the Backward Euler method for the same step. We must solve $y_1 = y_0 + hf(t_1, y_1)$, which for this problem yields $y_1 \approx 0.2499$. This is a much more placid and reasonable result. The explicit method became unstable and produced garbage, while the [implicit method](@keyword=implicit_method|lang=en-US|style=Feynman) remained calm and gave a sensible answer.
 
-The magic lies in that growth factor we found, $G(z) = \frac{1}{1-z}$, where $z = h\lambda$. For any physical system that is inherently stable, the real part of $\lambda$ is negative, meaning solutions decay over time. For such systems, $\text{Re}(z) = h \text{Re}(\lambda)$ will also be negative. A little bit of complex arithmetic shows that if $\text{Re}(z) < 0$, the magnitude of the denominator, $|1-z|$, is *always* greater than 1. Therefore, the magnitude of the [growth factor](@article_id:634078) is *always* less than 1:
+The magic lies in that growth factor we found, $G(z) = \frac{1}{1-z}$, where $z = h\lambda$. For any physical system that is inherently stable, the real part of $\lambda$ is negative, meaning solutions decay over time. For such systems, $\text{Re}(z) = h \text{Re}(\lambda)$ will also be negative. A little bit of complex arithmetic shows that if $\text{Re}(z) < 0$, the magnitude of the denominator, $|1-z|$, is *always* greater than 1. Therefore, the magnitude of the [growth factor](@keyword=growth_factor|lang=en-US|style=Feynman) is *always* less than 1:
 
 $$
 |G(z)| = \left|\frac{1}{1-z}\right| < 1 \quad \text{for all } h>0 \text{ if } \text{Re}(\lambda) < 0
@@ -93,9 +93,9 @@ This is a remarkable result. It means that no matter how large the step size $h$
 
 So, is the Backward Euler method perfect? Of course not. There's no free lunch in physics or numerics.
 
-First, let's talk about **accuracy**. We can analyze the error made in a single step, known as the **[local truncation error](@article_id:147209)**. By using a Taylor [series expansion](@article_id:142384), one can show that this error is approximately $-\frac{h^2}{2}y''(t_{n+1})$. This is known as a **[first-order method](@article_id:173610)** because its global error is proportional to the step size $h$. Just like the forward Euler method, it's not particularly accurate for a given step size. Its strength is not in getting the answer right to many decimal places with a big step, but in giving a stable, qualitatively correct answer at all.
+First, let's talk about **accuracy**. We can analyze the error made in a single step, known as the **[local truncation error](@keyword=local_truncation_error|lang=en-US|style=Feynman)**. By using a Taylor [series expansion](@keyword=series_expansion|lang=en-US|style=Feynman), one can show that this error is approximately $-\frac{h^2}{2}y''(t_{n+1})$. This is known as a **[first-order method](@keyword=first_order_method|lang=en-US|style=Feynman)** because its global error is proportional to the step size $h$. Just like the forward Euler method, it's not particularly accurate for a given step size. Its strength is not in getting the answer right to many decimal places with a big step, but in giving a stable, qualitatively correct answer at all.
 
-Second, stability can sometimes come with an interesting side effect: **[numerical dissipation](@article_id:140824)**, or [artificial damping](@article_id:271866). Let's consider a system that *shouldn't* decay: a perfect, undamped [simple harmonic oscillator](@article_id:145270), like a frictionless pendulum or a mass on a spring. Its energy should be conserved forever. The equations are $\frac{dx}{dt} = y$ and $\frac{dy}{dt} = -\omega^2 x$.
+Second, stability can sometimes come with an interesting side effect: **[numerical dissipation](@keyword=numerical_dissipation|lang=en-US|style=Feynman)**, or [artificial damping](@keyword=artificial_damping|lang=en-US|style=Feynman). Let's consider a system that *shouldn't* decay: a perfect, undamped [simple harmonic oscillator](@keyword=simple_harmonic_oscillator|lang=en-US|style=Feynman), like a frictionless pendulum or a mass on a spring. Its energy should be conserved forever. The equations are $\frac{dx}{dt} = y$ and $\frac{dy}{dt} = -\omega^2 x$.
 
 If we simulate this system with the Backward Euler method, what happens to the energy-like quantity $\mathcal{E} = \omega^2 x^2 + y^2$? After one step, the ratio of the new energy to the old energy is:
 
@@ -105,4 +105,4 @@ $$
 
 Since $h$ and $\omega$ are positive, this ratio is always less than 1. This means that at every step, the numerical method is sucking a little bit of energy out of the system! The simulated pendulum will slowly spiral down to a halt, even though the physical equations say it should swing forever. The method is stable—it certainly won't blow up—but in achieving this stability, it introduces a "damping" effect that isn't part of the original physics.
 
-This is the ultimate lesson of the Backward Euler method. It is a powerful tool born from a simple, elegant idea of looking into the future. Its implicit nature requires more computational effort, but in return, it grants us the incredible gift of [unconditional stability](@article_id:145137), allowing us to tackle difficult stiff problems that are otherwise untouchable. Yet, we must remain vigilant scientists, aware that our numerical tools, for all their power, can subtly alter the physics we are trying to model. Understanding these principles and trade-offs is what separates a mere computer user from a true computational scientist.
+This is the ultimate lesson of the Backward Euler method. It is a powerful tool born from a simple, elegant idea of looking into the future. Its implicit nature requires more computational effort, but in return, it grants us the incredible gift of [unconditional stability](@keyword=unconditional_stability|lang=en-US|style=Feynman), allowing us to tackle difficult stiff problems that are otherwise untouchable. Yet, we must remain vigilant scientists, aware that our numerical tools, for all their power, can subtly alter the physics we are trying to model. Understanding these principles and trade-offs is what separates a mere computer user from a true computational scientist.

@@ -26,9 +26,9 @@ Covariance, then, is our first mathematical tool for quantifying the linear rela
 
 ### The Beautiful Algebra of Co-variation
 
-What makes covariance so powerful is its beautiful and simple mathematical structure. It behaves according to a few straightforward rules, the most important of which is **[bilinearity](@article_id:146325)**. This sounds complicated, but it just means that covariance acts a lot like regular multiplication when you're dealing with sums.
+What makes covariance so powerful is its beautiful and simple mathematical structure. It behaves according to a few straightforward rules, the most important of which is **[bilinearity](@keyword=bilinearity|lang=en-US|style=Feynman)**. This sounds complicated, but it just means that covariance acts a lot like regular multiplication when you're dealing with sums.
 
-For instance, suppose you're a financial analyst creating new investment products. One product's return, $R_1$, is the sum of assets $X$ and $Y$, so $R_1 = X+Y$. Another's, $R_2$, is the sum of assets $Y$ and $Z$, so $R_2 = Y+Z$. How do the returns of your new products co-vary? You could go through the whole definition again, but [bilinearity](@article_id:146325) gives us a shortcut. We can "expand the brackets" just like in high-school algebra:
+For instance, suppose you're a financial analyst creating new investment products. One product's return, $R_1$, is the sum of assets $X$ and $Y$, so $R_1 = X+Y$. Another's, $R_2$, is the sum of assets $Y$ and $Z$, so $R_2 = Y+Z$. How do the returns of your new products co-vary? You could go through the whole definition again, but [bilinearity](@keyword=bilinearity|lang=en-US|style=Feynman) gives us a shortcut. We can "expand the brackets" just like in high-school algebra:
 
 $$\operatorname{Cov}(R_1, R_2) = \operatorname{Cov}(X+Y, Y+Z) = \operatorname{Cov}(X,Y) + \operatorname{Cov}(X,Z) + \operatorname{Cov}(Y,Y) + \operatorname{Cov}(Y,Z)$$
 
@@ -36,13 +36,13 @@ Notice something interesting there? We ended up with a term $\operatorname{Cov}(
 
 $$\operatorname{Cov}(Y,Y) = \mathbb{E}[(Y - \mathbb{E}[Y])(Y - \mathbb{E}[Y])] = \mathbb{E}[(Y - \mathbb{E}[Y])^2]$$
 
-This is just the definition of the **variance** of $Y$, $\operatorname{Var}(Y)$! So, the covariance of a variable with itself is simply its variance . Variance is a measure of how much a single variable "wiggles" on its own, and we now see it's just a special case of covariance. This is a beautiful piece of unity in the mathematical landscape.
+This is just the definition of the **variance** of $Y$, $\operatorname{Var}(Y)$! So, the covariance of a variable with itself is simply its variance [@problem_id:1614654]. Variance is a measure of how much a single variable "wiggles" on its own, and we now see it's just a special case of covariance. This is a beautiful piece of unity in the mathematical landscape.
 
-Using this fact, our financial expression becomes :
+Using this fact, our financial expression becomes [@problem_id:1293959]:
 
 $$\operatorname{Cov}(R_1, R_2) = \operatorname{Cov}(X,Y) + \operatorname{Cov}(X,Z) + \operatorname{Var}(Y) + \operatorname{Cov}(Y,Z)$$
 
-This algebraic elegance is not just for show. It's immensely practical. It allows us to calculate the variance of a sum of variables, a cornerstone of [portfolio theory](@article_id:136978). From our expansion rule, it's easy to show that :
+This algebraic elegance is not just for show. It's immensely practical. It allows us to calculate the variance of a sum of variables, a cornerstone of [portfolio theory](@keyword=portfolio_theory|lang=en-US|style=Feynman). From our expansion rule, it's easy to show that [@problem_id:1947673]:
 
 $$\operatorname{Var}(X+Y) = \operatorname{Cov}(X+Y, X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) + 2\operatorname{Cov}(X,Y)$$
 
@@ -52,7 +52,7 @@ This formula tells you that the risk (variance) of a portfolio isn't just the su
 
 Despite its elegance, covariance has a very practical weakness: its value is tied to the units of the variables.
 
-Let's imagine we're studying the relationship between daily temperature and the sales of an ice cream parlor . We measure temperature ($X$) in Celsius and revenue ($Y$) in Euros, and we find a covariance of, say, $400 \text{ } {}^\circ\text{C} \cdot €$. This positive number tells us that warmer days indeed lead to more sales.
+Let's imagine we're studying the relationship between daily temperature and the sales of an ice cream parlor [@problem_id:1947658]. We measure temperature ($X$) in Celsius and revenue ($Y$) in Euros, and we find a covariance of, say, $400 \text{ } {}^\circ\text{C} \cdot €$. This positive number tells us that warmer days indeed lead to more sales.
 
 But what if our colleague in America wants to use the data? She converts the temperature to Fahrenheit ($U = \frac{9}{5}X + 32$) and the revenue to US Dollars ($V = 1.10Y$). When she calculates the new covariance, $\operatorname{Cov}(U, V)$, she finds it's $792 \text{ } {}^\circ\text{F} \cdot \$ $. The numbers are completely different! Did the fundamental relationship between temperature and sales change? Of course not. Only our units did.
 
@@ -68,18 +68,18 @@ where $\sigma_X = \sqrt{\operatorname{Var}(X)}$ and $\sigma_Y = \sqrt{\operatorn
 
 Let's see what this does. The units of $\operatorname{Cov}(X,Y)$ are (units of $X$) $\times$ (units of $Y$). The units of $\sigma_X$ are the units of $X$, and the units of $\sigma_Y$ are the units of $Y$. When we divide, all the units cancel out! We are left with a pure, dimensionless number.
 
-If we go back to our temperature and ice cream example , we find that the correlation is $\rho_{XY} = \frac{400}{\sqrt{25} \sqrt{10000}} = 0.8$. And when our American colleague calculates it with her data, she gets $\rho_{UV} = \frac{792}{\sqrt{81} \sqrt{12100}} = 0.8$. The number is identical. The correlation coefficient has captured the intrinsic strength of the linear relationship, independent of the chosen units.
+If we go back to our temperature and ice cream example [@problem_id:1947658], we find that the correlation is $\rho_{XY} = \frac{400}{\sqrt{25} \sqrt{10000}} = 0.8$. And when our American colleague calculates it with her data, she gets $\rho_{UV} = \frac{792}{\sqrt{81} \sqrt{12100}} = 0.8$. The number is identical. The correlation coefficient has captured the intrinsic strength of the linear relationship, independent of the chosen units.
 
 This standardized measure has another wonderful property: it is always bounded between -1 and +1.
 - $\rho = +1$ means a perfect positive linear relationship: $Y$ is just a scaled and shifted version of $X$ (like $Y = aX+b$ with $a>0$).
 - $\rho = -1$ means a perfect negative linear relationship ($Y = aX+b$ with $a0$).
 - $\rho = 0$ means no linear relationship.
 
-This property stems from a deep mathematical result called the Cauchy-Schwarz inequality, and it makes correlation a universal and easily interpretable yardstick for linear dependence .
+This property stems from a deep mathematical result called the Cauchy-Schwarz inequality, and it makes correlation a universal and easily interpretable yardstick for linear dependence [@problem_id:1614655].
 
 ### A Bird's-Eye View: The Covariance Matrix
 
-When we deal with more than two variables—say, temperature ($T$), pressure ($P$), and humidity ($H$) from a weather station—calculating pairwise covariances can get messy. The **covariance matrix** is an elegant way to organize all this information in one place .
+When we deal with more than two variables—say, temperature ($T$), pressure ($P$), and humidity ($H$) from a weather station—calculating pairwise covariances can get messy. The **covariance matrix** is an elegant way to organize all this information in one place [@problem_id:1614662].
 
 For a set of random variables, say $\mathbf{X} = [T, P]^T$, the covariance matrix $\mathbf{K}_{\mathbf{X}}$ is a square table where the entry in the $i$-th row and $j$-th column is the covariance between the $i$-th and $j$-th variable.
 
@@ -97,23 +97,23 @@ With these powerful tools in hand, we must also be wise in their application. A 
 
 This is perhaps the most important mantra in all of statistics. Just because two quantities are correlated does not mean one causes the other. Often, a hidden, third variable—a **confounding variable**—is responsible for the relationship.
 
-Consider the puzzling observation that the number of firefighters at a fire is positively correlated with the amount of damage caused . Does this mean we should send fewer firefighters to reduce damage? Of course not! The confounding variable is the **severity of the fire**. A small kitchen fire gets a few firefighters and causes little damage. A massive warehouse inferno gets many fire trucks and causes enormous damage. The fire's severity causes both the large response *and* the large damage, creating a "spurious" correlation between the two. The firefighters, of course, are working to *reduce* the damage from what it would otherwise be. Without understanding the underlying causal structure, a naive interpretation of the correlation would lead to disastrous conclusions.
+Consider the puzzling observation that the number of firefighters at a fire is positively correlated with the amount of damage caused [@problem_id:1614659]. Does this mean we should send fewer firefighters to reduce damage? Of course not! The confounding variable is the **severity of the fire**. A small kitchen fire gets a few firefighters and causes little damage. A massive warehouse inferno gets many fire trucks and causes enormous damage. The fire's severity causes both the large response *and* the large damage, creating a "spurious" correlation between the two. The firefighters, of course, are working to *reduce* the damage from what it would otherwise be. Without understanding the underlying causal structure, a naive interpretation of the correlation would lead to disastrous conclusions.
 
-The Law of Total Covariance provides a more formal way to decompose these relationships, separating the covariance that arises from a common driver from the covariance that exists even under fixed conditions .
+The Law of Total Covariance provides a more formal way to decompose these relationships, separating the covariance that arises from a common driver from the covariance that exists even under fixed conditions [@problem_id:1947622].
 
 #### Uncorrelated is Not Independent
 
-If two variables are truly **independent**—meaning the value of one gives you absolutely no information about the value of the other—then their covariance will be zero . This makes intuitive sense. If they are fundamentally unrelated, there can be no consistent linear trend between them.
+If two variables are truly **independent**—meaning the value of one gives you absolutely no information about the value of the other—then their covariance will be zero [@problem_id:1947684]. This makes intuitive sense. If they are fundamentally unrelated, there can be no consistent linear trend between them.
 
 But does the reverse hold? If the covariance is zero, are the variables independent? **The answer is a resounding no.**
 
-Covariance and correlation are masters at detecting **linear** relationships. But they are completely blind to non-linear ones. Consider a situation where a random variable $X$ can be -1 or 1, and another variable $Y$ has a relationship with $X$ such that when we calculate the covariance, we find $\operatorname{Cov}(X,Y) = 0$ . This means they are **uncorrelated**. However, in the scenario of the problem, a quick look at the probabilities reveals that if we know, for example, that $Y=0$, then we know with certainty that $X$ must be -1. Knowing $Y$ gives us a great deal of information about $X$. Therefore, they are clearly **dependent**.
+Covariance and correlation are masters at detecting **linear** relationships. But they are completely blind to non-linear ones. Consider a situation where a random variable $X$ can be -1 or 1, and another variable $Y$ has a relationship with $X$ such that when we calculate the covariance, we find $\operatorname{Cov}(X,Y) = 0$ [@problem_id:1614701]. This means they are **uncorrelated**. However, in the scenario of the problem, a quick look at the probabilities reveals that if we know, for example, that $Y=0$, then we know with certainty that $X$ must be -1. Knowing $Y$ gives us a great deal of information about $X$. Therefore, they are clearly **dependent**.
 
 The relationship between them is non-linear, and the positive and negative parts of the dependency cancel each other out perfectly, tricking covariance into giving a result of zero. This is a critical lesson: zero correlation does not mean "no relationship"; it only means "no *linear* relationship."
 
 ### A Final Thought: Finding the Signal in the Noise
 
-Let's end with an example that brings these ideas together in a beautiful and practical way: communication. Imagine sending a signal, $X$, through a noisy channel. What you receive is $Y = X + N$, where $N$ is random noise .
+Let's end with an example that brings these ideas together in a beautiful and practical way: communication. Imagine sending a signal, $X$, through a noisy channel. What you receive is $Y = X + N$, where $N$ is random noise [@problem_id:1614655].
 
 How well does the received signal $Y$ represent the original signal $X$? The correlation coefficient, $\rho_{XY}$, gives us a perfect answer. In a simple model where the signal is either $+v_0$ or $-v_0$ and the noise has variance $\sigma_N^2$, the correlation turns out to be:
 

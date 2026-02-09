@@ -13,7 +13,7 @@ $$
 \mathrm{d}X_t = a(X_t, t)\,\mathrm{d}t + b(X_t, t)\,\mathrm{d}W_t
 $$
 
-This innocent-looking expression is profoundly different from its deterministic cousins. It’s a shorthand for an [integral equation](@article_id:164811) . The first part, the **drift** term with $\mathrm{d}t$, is the predictable "push" or trend. The second part, the **diffusion** term with $\mathrm{d}W_t$, represents the unpredictable "kicks" from a relentless random process called **Brownian motion** (or a Wiener process). The process $W_t$ is the mathematical idealization of a random walk. It's [continuous but nowhere differentiable](@article_id:275940)—its path is infinitely crumpled and jagged. This simple fact is the source of all our challenges and all the beautiful mathematics to come.
+This innocent-looking expression is profoundly different from its deterministic cousins. It’s a shorthand for an [integral equation](@keyword=integral_equation|lang=en-US|style=Feynman) [@problem_id:3002559]. The first part, the **drift** term with $\mathrm{d}t$, is the predictable "push" or trend. The second part, the **diffusion** term with $\mathrm{d}W_t$, represents the unpredictable "kicks" from a relentless random process called **Brownian motion** (or a Wiener process). The process $W_t$ is the mathematical idealization of a random walk. It's [continuous but nowhere differentiable](@keyword=continuous_but_nowhere_differentiable|lang=en-US|style=Feynman)—its path is infinitely crumpled and jagged. This simple fact is the source of all our challenges and all the beautiful mathematics to come.
 
 Since we can't solve these equations with a simple formula most of the time, we must resort to simulation. We must teach a computer how to "draw" a plausible path for our pollen grain. How do we do that? We must take discrete steps in time.
 
@@ -31,21 +31,21 @@ This is the stochastic equivalent of approximating a smooth curve with a series 
 
 ### A Deeper Look: The Hidden Interaction of Noise
 
-How do we judge the "accuracy" of a simulation for a random process? One of the most important criteria is called **strong convergence**. It asks: does our simulated path stay close, on average, to the *actual* random path it is trying to mimic?  The Euler-Maruyama method, it turns out, is not very good at this. It has a strong convergence order of only $0.5$, meaning its error shrinks very slowly as we make the time step $h$ smaller .
+How do we judge the "accuracy" of a simulation for a random process? One of the most important criteria is called **strong convergence**. It asks: does our simulated path stay close, on average, to the *actual* random path it is trying to mimic? [@problem_id:3002644] The Euler-Maruyama method, it turns out, is not very good at this. It has a strong convergence order of only $0.5$, meaning its error shrinks very slowly as we make the time step $h$ smaller [@problem_id:3002618].
 
 Why? The problem lies in the diffusion term. The Euler-Maruyama method assumes that the diffusion coefficient $b(X_s)$ is constant throughout the tiny step from time $t_n$ to $t_{n+1}$. But it's not! As $X_s$ jiggles randomly within the step, $b(X_s)$ jiggles along with it. Because the Brownian path is so rough, this "jiggling of the jiggle-strength" interacts with the jiggling of the path itself in a crucial way.
 
-To see this, we need a better magnifying glass: the **Itô-Taylor expansion**. Just like a regular Taylor series lets us approximate functions, this stochastic version lets us approximate the solution of an SDE. When we expand $X_{t+h}$, we get the familiar Euler-Maruyama terms, but then a whole zoo of new terms appears, built from iterated stochastic integrals . The most important new character is the double Itô integral:
+To see this, we need a better magnifying glass: the **Itô-Taylor expansion**. Just like a regular Taylor series lets us approximate functions, this stochastic version lets us approximate the solution of an SDE. When we expand $X_{t+h}$, we get the familiar Euler-Maruyama terms, but then a whole zoo of new terms appears, built from iterated stochastic integrals [@problem_id:3002562]. The most important new character is the double Itô integral:
 
 $$
 I_{(1,1)} = \int_{t_n}^{t_{n+1}} \int_{t_n}^{s} \mathrm{d}W_r\,\mathrm{d}W_s
 $$
 
-This term represents the [self-interaction](@article_id:200839) of the noise. The Euler-Maruyama method naively ignores it. But what is the size of this term? Using the tools of Itô calculus, one can show that its root-mean-square size is of order $h$. This is much larger than the higher-order terms we’d throw away in a deterministic problem (which would be of order $h^2$ or smaller). By ignoring a term of order $h$, the Euler-Maruyama method introduces a significant error at each step, which accumulates to give the poor overall accuracy .
+This term represents the [self-interaction](@keyword=self_interaction|lang=en-US|style=Feynman) of the noise. The Euler-Maruyama method naively ignores it. But what is the size of this term? Using the tools of Itô calculus, one can show that its root-mean-square size is of order $h$. This is much larger than the higher-order terms we’d throw away in a deterministic problem (which would be of order $h^2$ or smaller). By ignoring a term of order $h$, the Euler-Maruyama method introduces a significant error at each step, which accumulates to give the poor overall accuracy [@problem_id:3002618].
 
 ### The Milstein Correction: A Touch of Genius
 
-So, to improve our method, we must include this $I_{(1,1)}$ term. But how on Earth do we simulate a complicated double [stochastic integral](@article_id:194593)? This seems to make our simple method impossibly complex.
+So, to improve our method, we must include this $I_{(1,1)}$ term. But how on Earth do we simulate a complicated double [stochastic integral](@keyword=stochastic_integral|lang=en-US|style=Feynman)? This seems to make our simple method impossibly complex.
 
 And here, nature gives us a gift. A truly remarkable identity from Itô calculus reveals that this intricate integral has a surprisingly simple form:
 
@@ -61,25 +61,25 @@ $$
 X_{n+1} = X_n + a(X_n)h + b(X_n)\Delta W_n + \frac{1}{2} b(X_n)b'(X_n)\left( (\Delta W_n)^2 - h \right)
 $$
 
-Here, $b'(X_n)$ is the derivative of the diffusion coefficient . This new term is the **Milstein correction**. It accounts for how the volatility changes randomly, and by doing so, it cancels the dominant error of the Euler-Maruyama scheme. The result? The [strong convergence](@article_id:139001) order jumps from $0.5$ to $1.0$ . This means the error shrinks much faster as we decrease our step size. We get a far more faithful drawing of the true random path, for very little extra computational cost.
+Here, $b'(X_n)$ is the derivative of the diffusion coefficient [@problem_id:3002627]. This new term is the **Milstein correction**. It accounts for how the volatility changes randomly, and by doing so, it cancels the dominant error of the Euler-Maruyama scheme. The result? The [strong convergence](@keyword=strong_convergence|lang=en-US|style=Feynman) order jumps from $0.5$ to $1.0$ [@problem_id:3002644]. This means the error shrinks much faster as we decrease our step size. We get a far more faithful drawing of the true random path, for very little extra computational cost.
 
 ### What is "Accuracy"? Strong vs. Weak Paths
 
 We've been focused on **strong convergence**, making the simulated path hug the true path. But sometimes, this isn't what we need. In finance, for example, you might not care about reproducing one specific future for a stock, but rather getting the correct average price, or the correct probability of it ending up above a certain value.
 
-This is the domain of **weak convergence**. It measures how well the *statistical properties* (like the mean or variance) of the simulation match the statistics of the true process . It's a less demanding criterion. Interestingly, for [weak convergence](@article_id:146156), the simple Euler-Maruyama method is often good enough, typically achieving an order of $1.0$. The extra term in the Milstein method has an expectation of zero, so it doesn't usually improve the weak [convergence order](@article_id:170307). Strong convergence implies weak convergence, but the reverse is not true. Knowing which tool to use—Euler for a quick statistical picture, Milstein for a precise path—is part of the art of [scientific computing](@article_id:143493).
+This is the domain of **weak convergence**. It measures how well the *statistical properties* (like the mean or variance) of the simulation match the statistics of the true process [@problem_id:3002569]. It's a less demanding criterion. Interestingly, for [weak convergence](@keyword=weak_convergence|lang=en-US|style=Feynman), the simple Euler-Maruyama method is often good enough, typically achieving an order of $1.0$. The extra term in the Milstein method has an expectation of zero, so it doesn't usually improve the weak [convergence order](@keyword=convergence_order|lang=en-US|style=Feynman). Strong convergence implies weak convergence, but the reverse is not true. Knowing which tool to use—Euler for a quick statistical picture, Milstein for a precise path—is part of the art of [scientific computing](@keyword=scientific_computing|lang=en-US|style=Feynman).
 
 ### A Practical Test: Will a Simulation Explode?
 
-Let's ground this in a concrete example. Consider the famous equation for geometric Brownian motion, often used to model stock prices or [population growth](@article_id:138617) in a random environment:
+Let's ground this in a concrete example. Consider the famous equation for geometric Brownian motion, often used to model stock prices or [population growth](@keyword=population_growth|lang=en-US|style=Feynman) in a random environment:
 
 $$
 dX_t = \lambda X_t\,dt + \mu X_t\,dW_t
 $$
 
-Here $\lambda$ is the growth rate and $\mu$ is the volatility. A crucial question for any numerical method is **stability**: if the true solution is stable (e.g., decays to zero), will our simulation also be stable, or will it explode to infinity due to [numerical errors](@article_id:635093)?
+Here $\lambda$ is the growth rate and $\mu$ is the volatility. A crucial question for any numerical method is **stability**: if the true solution is stable (e.g., decays to zero), will our simulation also be stable, or will it explode to infinity due to [numerical errors](@keyword=numerical_errors|lang=en-US|style=Feynman)?
 
-We can analyze the stability of the Milstein method for this SDE by seeing how the mean-square value, $\mathbb{E}[|X_n|^2]$, evolves from one step to the next. After some algebra, we find that $\mathbb{E}[|X_{n+1}|^2] = G(\lambda, \mu, h) \mathbb{E}[|X_n|^2]$, where $G$ is an "[amplification factor](@article_id:143821)" that depends on the parameters and the step size $h$. For the simulation to be stable, we need $G \lt 1$. This condition carves out a specific region in the space of parameters $(\lambda, \mu, h)$ where the Milstein simulation is reliable . This kind of analysis is not just a mathematical curiosity; it's essential for ensuring our simulations aren't producing nonsensical artifacts.
+We can analyze the stability of the Milstein method for this SDE by seeing how the mean-square value, $\mathbb{E}[|X_n|^2]$, evolves from one step to the next. After some algebra, we find that $\mathbb{E}[|X_{n+1}|^2] = G(\lambda, \mu, h) \mathbb{E}[|X_n|^2]$, where $G$ is an "[amplification factor](@keyword=amplification_factor|lang=en-US|style=Feynman)" that depends on the parameters and the step size $h$. For the simulation to be stable, we need $G \lt 1$. This condition carves out a specific region in the space of parameters $(\lambda, \mu, h)$ where the Milstein simulation is reliable [@problem_id:3002528]. This kind of analysis is not just a mathematical curiosity; it's essential for ensuring our simulations aren't producing nonsensical artifacts.
 
 ### The Plot Thickens: Stepping into Multiple Dimensions
 
@@ -91,18 +91,18 @@ $$
 
 Here, $\mathbf{X}_t$ is a vector, and we have $m$ different independent Brownian motions $W_t^j$ driving the system, each with its own vector-valued diffusion coefficient $\mathbf{b}_j$.
 
-When we perform the Itô-Taylor expansion now, we not only get the self-[interaction terms](@article_id:636789) like $\int\int dW^j dW^j$, but also cross-[interaction terms](@article_id:636789) like $\int\int dW^j dW^k$ for $j \neq k$. These are the infamous **Lévy areas**. Unlike their diagonal cousins, these cannot be simulated with simple combinations of the $\Delta W$ increments. Their simulation is a messy, computationally expensive affair. Does this mean our beautiful, simple Milstein scheme is lost in higher dimensions?
+When we perform the Itô-Taylor expansion now, we not only get the self-[interaction terms](@keyword=interaction_terms|lang=en-US|style=Feynman) like $\int\int dW^j dW^j$, but also cross-[interaction terms](@keyword=interaction_terms|lang=en-US|style=Feynman) like $\int\int dW^j dW^k$ for $j \neq k$. These are the infamous **Lévy areas**. Unlike their diagonal cousins, these cannot be simulated with simple combinations of the $\Delta W$ increments. Their simulation is a messy, computationally expensive affair. Does this mean our beautiful, simple Milstein scheme is lost in higher dimensions?
 
 ### A Hidden Symmetry: The Magic of Commuting Noise
 
-Once again, a deeper mathematical structure comes to our rescue. The key lies not in the noise, but in the diffusion [vector fields](@article_id:160890) $\mathbf{b}_j$ themselves. We can ask a question from geometry: what happens if we first move an infinitesimal amount in the direction of $\mathbf{b}_j$, and then in the direction of $\mathbf{b}_k$? Is that the same as moving along $\mathbf{b}_k$ first, then $\mathbf{b}_j$?
+Once again, a deeper mathematical structure comes to our rescue. The key lies not in the noise, but in the diffusion [vector fields](@keyword=vector_fields|lang=en-US|style=Feynman) $\mathbf{b}_j$ themselves. We can ask a question from geometry: what happens if we first move an infinitesimal amount in the direction of $\mathbf{b}_j$, and then in the direction of $\mathbf{b}_k$? Is that the same as moving along $\mathbf{b}_k$ first, then $\mathbf{b}_j$?
 
-The difference between these two paths is measured by a beautiful mathematical object called the **Lie bracket**, denoted $[\mathbf{b}_j, \mathbf{b}_k]$. If this bracket is zero for all pairs of diffusion vectors, we say they **commute** . This is a profound [geometric symmetry](@article_id:188565) in the structure of the SDE itself.
+The difference between these two paths is measured by a beautiful mathematical object called the **Lie bracket**, denoted $[\mathbf{b}_j, \mathbf{b}_k]$. If this bracket is zero for all pairs of diffusion vectors, we say they **commute** [@problem_id:3002657]. This is a profound [geometric symmetry](@keyword=geometric_symmetry|lang=en-US|style=Feynman) in the structure of the SDE itself.
 
-And here is the magic: if the diffusion vector fields commute, then all the troublesome coefficients in front of the nasty Lévy areas in the Itô-Taylor expansion turn out to be exactly zero! The need to simulate them simply vanishes. The Milstein scheme becomes elegant and implementable once more, using only simple products of the different Brownian increments .
+And here is the magic: if the diffusion vector fields commute, then all the troublesome coefficients in front of the nasty Lévy areas in the Itô-Taylor expansion turn out to be exactly zero! The need to simulate them simply vanishes. The Milstein scheme becomes elegant and implementable once more, using only simple products of the different Brownian increments [@problem_id:3002663].
 
 ### When Symmetry Breaks: The Unavoidable Lévy Area
 
-But what if the symmetry is broken? What if $[\mathbf{b}_j, \mathbf{b}_k] \neq 0$? In this **non-commutative** case, nature offers no such free lunch. The coefficients of the Lévy areas are now non-zero. To achieve a high-accuracy, strong order $1.0$ simulation, we have no choice but to compute or approximate these Lévy areas . Omitting them would again throw us back to the low accuracy of the Euler-Maruyama method.
+But what if the symmetry is broken? What if $[\mathbf{b}_j, \mathbf{b}_k] \neq 0$? In this **non-commutative** case, nature offers no such free lunch. The coefficients of the Lévy areas are now non-zero. To achieve a high-accuracy, strong order $1.0$ simulation, we have no choice but to compute or approximate these Lévy areas [@problem_id:3002570]. Omitting them would again throw us back to the low accuracy of the Euler-Maruyama method.
 
-This reveals a stunning principle of unity in science: the abstract geometric structure of the equations (the commutativity of [vector fields](@article_id:160890)) directly dictates the concrete algorithmic structure of the numerical tool we must build to solve them. The shape of the problem informs the shape of the solution. And this journey—from a simple, flawed idea to a corrected, more powerful one, and finally to its elegant generalization in a world of higher-dimensional symmetries—is a perfect miniature of the grand journey of scientific discovery itself.
+This reveals a stunning principle of unity in science: the abstract geometric structure of the equations (the commutativity of [vector fields](@keyword=vector_fields|lang=en-US|style=Feynman)) directly dictates the concrete algorithmic structure of the numerical tool we must build to solve them. The shape of the problem informs the shape of the solution. And this journey—from a simple, flawed idea to a corrected, more powerful one, and finally to its elegant generalization in a world of higher-dimensional symmetries—is a perfect miniature of the grand journey of scientific discovery itself.

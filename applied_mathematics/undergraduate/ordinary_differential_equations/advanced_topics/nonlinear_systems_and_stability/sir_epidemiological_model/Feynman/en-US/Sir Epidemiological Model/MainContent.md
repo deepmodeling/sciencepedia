@@ -15,7 +15,7 @@ The story of this model unfolds with three main characters, or "compartments":
 *   **I for Infected:** These are the people who are currently sick and can pass the disease on. They are the "fire" of the epidemic.
 *   **R for Recovered (or Removed):** These are the people who have had the disease and are now immune, or have tragically been removed from the population by death. In this simple model, it's a one-way ticket; once you're in R, you are out of the game. They are the "ash" left behind.
 
-The total population, $N$, is the sum of these three groups: $N = S(t) + I(t) + R(t)$. In our simple model, we assume this total number is constant—no births, no deaths from other causes, just a closed system. And as we will see, the logic of the model itself guarantees this. Summing the rates of change for each compartment cancels everything out, leaving $\frac{dN}{dt} = 0$. The total population is conserved! (). This is our first clue to the model's internal elegance and consistency.
+The total population, $N$, is the sum of these three groups: $N = S(t) + I(t) + R(t)$. In our simple model, we assume this total number is constant—no births, no deaths from other causes, just a closed system. And as we will see, the logic of the model itself guarantees this. Summing the rates of change for each compartment cancels everything out, leaving $\frac{dN}{dt} = 0$. The total population is conserved! ([@problem_id:2199703]). This is our first clue to the model's internal elegance and consistency.
 
 ### How the Fire Spreads: The Engine of Infection
 
@@ -25,15 +25,15 @@ $$ \text{Rate of new infections} = \frac{\beta S I}{N} $$
 
 Let's take this apart, because it’s not just a random formula; it's a piece of physical reasoning. The rate at which susceptible people get sick must depend on how many susceptible people there are, $S$. It must also depend on how many infectious people there are to spread the disease, $I$. So, a simple first guess might be that the rate is proportional to the product $S \times I$, which represents all possible pairs of encounters between a susceptible and an infected person.
 
-But the model is a little bit smarter. It uses **[frequency-dependent transmission](@article_id:192998)**. Think about it from a susceptible person's point of view. You go about your day, meeting a certain number of people. What is the *chance* that any one of those people is infectious? Well, if there are $I$ infected people in a total population of $N$, that chance is simply the fraction $\frac{I}{N}$.
+But the model is a little bit smarter. It uses **[frequency-dependent transmission](@keyword=frequency_dependent_transmission|lang=en-US|style=Feynman)**. Think about it from a susceptible person's point of view. You go about your day, meeting a certain number of people. What is the *chance* that any one of those people is infectious? Well, if there are $I$ infected people in a total population of $N$, that chance is simply the fraction $\frac{I}{N}$.
 
-So, for any single susceptible person, their risk of getting infected is proportional to $\frac{I}{N}$. To get the total number of new infections for the *entire* susceptible population, we multiply this risk by the number of susceptible people, $S$. We then just need a constant of proportionality, $\beta$, which we call the **transmission rate**. This parameter bundles up all the messy details of reality: how often people come into contact, and how likely a single contact is to transmit the virus. Putting it all together, we get the term $\beta S \frac{I}{N}$ ().
+So, for any single susceptible person, their risk of getting infected is proportional to $\frac{I}{N}$. To get the total number of new infections for the *entire* susceptible population, we multiply this risk by the number of susceptible people, $S$. We then just need a constant of proportionality, $\beta$, which we call the **transmission rate**. This parameter bundles up all the messy details of reality: how often people come into contact, and how likely a single contact is to transmit the virus. Putting it all together, we get the term $\beta S \frac{I}{N}$ ([@problem_id:2199657]).
 
 This term now drives the change in our compartments. The number of susceptible people can only go down, as they become infected. So, their rate of change is negative:
 
 $$ \frac{dS}{dt} = - \frac{\beta S I}{N} $$
 
-Because $S$, $I$, and $\beta$ are all non-negative, the rate of change of $S$ can, at best, be zero (if there are no infected individuals) but it can never be positive. The $S$ bucket can only be drained; it can never be filled. This means that $S(t)$ is a non-increasing function—a fundamental feature of this one-way process .
+Because $S$, $I$, and $\beta$ are all non-negative, the rate of change of $S$ can, at best, be zero (if there are no infected individuals) but it can never be positive. The $S$ bucket can only be drained; it can never be filled. This means that $S(t)$ is a non-increasing function—a fundamental feature of this one-way process [@problem_id:2199655].
 
 ### The Journey to Recovery
 
@@ -43,13 +43,13 @@ This little parameter $\gamma$ has a wonderfully direct physical meaning. If the
 
 $$ \text{Average Infectious Period} = \frac{1}{\gamma} $$
 
-This is a beautiful result from probability theory . So, if a disease has an average infectious period of 5 days, then $\gamma = \frac{1}{5} \text{ day}^{-1}$. This makes the model's parameters feel much less abstract.
+This is a beautiful result from probability theory [@problem_id:2199693]. So, if a disease has an average infectious period of 5 days, then $\gamma = \frac{1}{5} \text{ day}^{-1}$. This makes the model's parameters feel much less abstract.
 
 This recovery process feeds the $R$ bucket. The number of recovered people can only go up, as sick people get better. Its rate of change is:
 
 $$ \frac{dR}{dt} = \gamma I $$
 
-Since $\gamma$ and $I$ are both non-negative, $\frac{dR}{dt}$ is also non-negative. The stock of recovered, immune individuals can never decrease; the $R$ bucket only fills up .
+Since $\gamma$ and $I$ are both non-negative, $\frac{dR}{dt}$ is also non-negative. The stock of recovered, immune individuals can never decrease; the $R$ bucket only fills up [@problem_id:2199682].
 
 ### The Laws of Motion for an Epidemic
 
@@ -57,7 +57,7 @@ Now we assemble the full picture. The number of infected people, $I$, increases 
 
 $$ \frac{dI}{dt} = \text{(New Infections)} - \text{(Recoveries)} = \frac{\beta S I}{N} - \gamma I $$
 
-So, our complete [system of equations](@article_id:201334) looks like this:
+So, our complete [system of equations](@keyword=system_of_equations|lang=en-US|style=Feynman) looks like this:
 
 $$ \frac{dS}{dt} = - \frac{\beta S I}{N} $$
 $$ \frac{dI}{dt} = \frac{\beta S I}{N} - \gamma I $$
@@ -71,7 +71,7 @@ Imagine a new virus is introduced into a population where everyone is susceptibl
 
 $$ \frac{dI}{dt} = \frac{\beta N I}{N} - \gamma I = (\beta - \gamma)I $$
 
-This is the famous equation for **[exponential growth](@article_id:141375)**! As long as $\beta > \gamma$, the number of infected people will initially explode, doubling at a constant interval $T_d = \frac{\ln 2}{\beta - \gamma}$ . This is why new outbreaks seem to come out of nowhere—they start slow and then accelerate dramatically.
+This is the famous equation for **[exponential growth](@keyword=exponential_growth|lang=en-US|style=Feynman)**! As long as $\beta > \gamma$, the number of infected people will initially explode, doubling at a constant interval $T_d = \frac{\ln 2}{\beta - \gamma}$ [@problem_id:2199668]. This is why new outbreaks seem to come out of nowhere—they start slow and then accelerate dramatically.
 
 ### The Golden Number: $R_0$, the Epidemic's Tipping Point
 
@@ -81,11 +81,11 @@ $$ R_0 = \frac{\beta}{\gamma} $$
 
 $R_0$ has a beautifully clear physical meaning: *It is the average number of people that one infected person will infect in a population that is entirely susceptible.* It’s a contest: $\beta$ is the force of infection, and $\gamma$ is the force of recovery. $R_0$ is the score.
 
-By substituting $R_0$ into our equation for $I'(t)$, we can see its power :
+By substituting $R_0$ into our equation for $I'(t)$, we can see its power [@problem_id:2199700]:
 
 $$ \frac{dI}{dt} = \gamma I \left( R_0 \frac{S}{N} - 1 \right) $$
 
-Look at this equation at the very start of an outbreak when $S/N \approx 1$. The number of infected people will increase ($\frac{dI}{dt} > 0$) only if $R_0 - 1 > 0$, which means $R_0 > 1$. If $R_0$ is less than one, like 0.85, the term in the parenthesis is negative, and $\frac{dI}{dt}$ becomes negative. The outbreak fizzles out before it can even begin. The disease dies off faster than it can spread . This is the fundamental [threshold theorem](@article_id:142137) of epidemiology. An epidemic is only possible if $R_0 > 1$.
+Look at this equation at the very start of an outbreak when $S/N \approx 1$. The number of infected people will increase ($\frac{dI}{dt} > 0$) only if $R_0 - 1 > 0$, which means $R_0 > 1$. If $R_0$ is less than one, like 0.85, the term in the parenthesis is negative, and $\frac{dI}{dt}$ becomes negative. The outbreak fizzles out before it can even begin. The disease dies off faster than it can spread [@problem_id:2199659]. This is the fundamental [threshold theorem](@keyword=threshold_theorem|lang=en-US|style=Feynman) of epidemiology. An epidemic is only possible if $R_0 > 1$.
 
 ### The Peak and the Long Road Down
 
@@ -95,16 +95,16 @@ The number of infected people, $I(t)$, will continue to rise as long as the term
 
 $$ R_0 \frac{S}{N} - 1 = 0 \quad \implies \quad S = \frac{N}{R_0} $$
 
-Or, using the original parameters, $S = \frac{N \gamma}{\beta}$ . This is a moment of profound insight. The epidemic doesn't turn around because the virus gets weaker or because we "do" something. In this simple model, it turns around because the fire is running out of readily available fuel. There are simply not enough susceptible people left to sustain the chain reaction's growth. After this point, $S$ continues to fall, the term in the parenthesis becomes negative, and the number of infected individuals begins its long decline.
+Or, using the original parameters, $S = \frac{N \gamma}{\beta}$ [@problem_id:2199692]. This is a moment of profound insight. The epidemic doesn't turn around because the virus gets weaker or because we "do" something. In this simple model, it turns around because the fire is running out of readily available fuel. There are simply not enough susceptible people left to sustain the chain reaction's growth. After this point, $S$ continues to fall, the term in the parenthesis becomes negative, and the number of infected individuals begins its long decline.
 
 ### The Aftermath and Herd Immunity
 
 What’s left when the fire burns out and $I(t)$ eventually drops to zero? You might think that if a disease is infectious, it will just keep going until everyone has had it. But the model tells us something different. The epidemic stops while there are still susceptible people left! The final number of susceptibles, $S(\infty)$, is greater than zero.
 
-Why? Because by the time the epidemic is in its final stages, the number of susceptible individuals is so low (and the immune 'R' individuals are so numerous) that an infected person is more likely to interact with someone who is already immune than with someone they can infect. The chain reactions sputter and die. The population has achieved **[herd immunity](@article_id:138948)**. The presence of a large number of immune "firebreaks" protects the remaining susceptible individuals. This is a core reason why, in this simple SIR model, a disease wave does not lead to an "endemic equilibrium" where the disease circulates forever; it passes through, leaves a legacy of immunity, and vanishes  .
+Why? Because by the time the epidemic is in its final stages, the number of susceptible individuals is so low (and the immune 'R' individuals are so numerous) that an infected person is more likely to interact with someone who is already immune than with someone they can infect. The chain reactions sputter and die. The population has achieved **[herd immunity](@keyword=herd_immunity|lang=en-US|style=Feynman)**. The presence of a large number of immune "firebreaks" protects the remaining susceptible individuals. This is a core reason why, in this simple SIR model, a disease wave does not lead to an "endemic equilibrium" where the disease circulates forever; it passes through, leaves a legacy of immunity, and vanishes [@problem_id:1707351] [@problem_id:2199651].
 
 ### A Word on Reality: The Myth of Perfect Mixing
 
 For all its power, the SIR model is built on a crucial, and quite false, assumption: **homogeneous mixing**. It assumes that every individual is equally likely to come into contact with every other individual, as if the population were a perfectly stirred gas.
 
-Reality is far more structured. Think of a university, with a large population of students and a smaller population of staff. Students mostly interact with other students, and staff with other staff. Mixing between the groups is less frequent. Accounting for this heterogeneity can change the epidemic's dynamics. For a given set of transmission behaviors, assuming everyone mixes perfectly might actually underestimate the explosive potential of an outbreak within a tightly-knit sub-group, leading to a higher true $R_0$ for the whole system than a simple averaged model would predict . This reminds us that while simple models give us the fundamental principles, understanding the real world often requires adding layers of complexity that account for the beautiful, messy structure of human society.
+Reality is far more structured. Think of a university, with a large population of students and a smaller population of staff. Students mostly interact with other students, and staff with other staff. Mixing between the groups is less frequent. Accounting for this heterogeneity can change the epidemic's dynamics. For a given set of transmission behaviors, assuming everyone mixes perfectly might actually underestimate the explosive potential of an outbreak within a tightly-knit sub-group, leading to a higher true $R_0$ for the whole system than a simple averaged model would predict [@problem_id:2199708]. This reminds us that while simple models give us the fundamental principles, understanding the real world often requires adding layers of complexity that account for the beautiful, messy structure of human society.

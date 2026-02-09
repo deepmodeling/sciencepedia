@@ -33,7 +33,7 @@ $$
 \mathbf{E}_{\nu}(0) = \frac{1}{\pi} \int_0^{\pi} \sin(\nu\theta) d\theta = \frac{1}{\pi} \left[ -\frac{\cos(\nu\theta)}{\nu} \right]_0^{\pi} = \frac{1-\cos(\nu\pi)}{\pi\nu}
 $$
 
-This is provided, of course, that $\nu$ is not an integer, which would make $\sin(\nu\pi)$ zero and could cause some trouble in the denominator for $\mathbf{J}_{\nu}(0)$ (though a quick look at the integral for integer $\nu$ shows it's just zero). A simple calculation for a specific case like $\nu=1/3$ shows that $\mathbf{J}_{1/3}(0)$ is not zero, but a definite number, $\frac{3\sqrt{3}}{2\pi}$ . This is our first clue that these functions are different from their famous cousins, the Bessel functions $J_{\nu}(z)$, which (for positive $\nu$) always start at zero.
+This is provided, of course, that $\nu$ is not an integer, which would make $\sin(\nu\pi)$ zero and could cause some trouble in the denominator for $\mathbf{J}_{\nu}(0)$ (though a quick look at the integral for integer $\nu$ shows it's just zero). A simple calculation for a specific case like $\nu=1/3$ shows that $\mathbf{J}_{1/3}(0)$ is not zero, but a definite number, $\frac{3\sqrt{3}}{2\pi}$ [@problem_id:622063]. This is our first clue that these functions are different from their famous cousins, the Bessel functions $J_{\nu}(z)$, which (for positive $\nu$) always start at zero.
 
 These expressions for the functions at $z=0$ can be combined in a rather lovely way. If we treat them as the real and imaginary parts of a complex number, something special happens. Let's look at the combination $\mathbf{E}_{\nu}(0) + i \mathbf{J}_{\nu}(0)$:
 
@@ -41,13 +41,13 @@ $$
 \mathbf{E}_{\nu}(0) + i \mathbf{J}_{\nu}(0) = \frac{1-\cos(\nu\pi)}{\pi\nu} + i \frac{\sin(\nu\pi)}{\pi\nu} = \frac{1 - (\cos(\nu\pi) - i\sin(\nu\pi))}{\pi\nu}
 $$
 
-Recognizing the term in the parenthesis as Euler's famous formula for $e^{-i\phi}$, we find a wonderfully compact result :
+Recognizing the term in the parenthesis as Euler's famous formula for $e^{-i\phi}$, we find a wonderfully compact result [@problem_id:622181]:
 
 $$
 \pi\nu (\mathbf{E}_{\nu}(0) + i \mathbf{J}_{\nu}(0)) = 1 - e^{-i\nu\pi}
 $$
 
-This neat little formula elegantly bundles the starting values of both functions, tying them directly to their order $\nu$ through the magic of [complex exponentials](@article_id:197674).
+This neat little formula elegantly bundles the starting values of both functions, tying them directly to their order $\nu$ through the magic of [complex exponentials](@keyword=complex_exponentials|lang=en-US|style=Feynman).
 
 ### The Unruly Sibling of the Bessel Equation
 
@@ -59,11 +59,11 @@ $$
 z^2 y''(z) + z y'(z) + (z^2 - \nu^2) y(z) = 0
 $$
 
-This equation is a star performer in physics. Its solutions, the **Bessel functions**, describe everything from the patterns of a [vibrating drumhead](@article_id:175992) to the propagation of [electromagnetic waves](@article_id:268591) in a cylindrical cable. The key thing to notice is the zero on the right-hand side. This is called a **homogeneous** equation, and it describes a system left to its own devices, vibrating or oscillating freely.
+This equation is a star performer in physics. Its solutions, the **Bessel functions**, describe everything from the patterns of a [vibrating drumhead](@keyword=vibrating_drumhead|lang=en-US|style=Feynman) to the propagation of [electromagnetic waves](@keyword=electromagnetic_waves|lang=en-US|style=Feynman) in a cylindrical cable. The key thing to notice is the zero on the right-hand side. This is called a **homogeneous** equation, and it describes a system left to its own devices, vibrating or oscillating freely.
 
-But what happens when you don't leave the system alone? What if you are constantly pushing it, or "driving" it with an external force? In that case, the right-hand side is no longer zero. It becomes a **[source term](@article_id:268617)**, and the equation is now **inhomogeneous**.
+But what happens when you don't leave the system alone? What if you are constantly pushing it, or "driving" it with an external force? In that case, the right-hand side is no longer zero. It becomes a **[source term](@keyword=source_term|lang=en-US|style=Feynman)**, and the equation is now **inhomogeneous**.
 
-This is where the Anger-Weber functions shine. They are the particular solutions to an inhomogeneous Bessel equation. Let's denote the Bessel operator as $\mathcal{L}_{\nu,z}[y]$. Then the Anger and Weber functions satisfy :
+This is where the Anger-Weber functions shine. They are the particular solutions to an inhomogeneous Bessel equation. Let's denote the Bessel operator as $\mathcal{L}_{\nu,z}[y]$. Then the Anger and Weber functions satisfy [@problem_id:622213]:
 
 $$
 \mathcal{L}_{\nu,z}[\mathbf{J}_{\nu}(z)] = \frac{(z-\nu)\sin(\nu\pi)}{\pi}
@@ -79,7 +79,7 @@ Look at those terms on the right! They represent the specific "push" or "driving
 
 Now for a beautiful revelation. What happens if we choose the order $\nu$ to be an integer, let's say $n$? The term $\sin(n\pi)$ is always zero for any integer $n$. Look back at the source term for the Anger function: it has $\sin(\nu\pi)$ as a factor!
 
-So, for an integer order $n$, the driving force for the Anger function vanishes :
+So, for an integer order $n$, the driving force for the Anger function vanishes [@problem_id:622178]:
 
 $$
 \mathcal{L}_{n,z}[\mathbf{J}_{n}(z)] = \frac{(z-n)\sin(n\pi)}{\pi} = 0
@@ -87,21 +87,21 @@ $$
 
 The equation becomes homogeneous again! The Anger function $\mathbf{J}_n(z)$ is no longer special; it has become a solution to the ordinary Bessel equation. And in fact, it turns out to be precisely the most famous solution: the Bessel function of the first kind, $J_n(z)$. So, for integer orders, the distinction melts away: $\mathbf{J}_n(z) = J_n(z)$. The supposedly more exotic Anger function was just a generalized form that includes the familiar Bessel function as a special case. This is a recurring theme in physics and mathematics: what at first appear to be different concepts are often just different faces of a single, more unified idea.
 
-This unity extends further. There are other related functions, like the **Struve function** $H_{\nu}(z)$, which also solves an inhomogeneous Bessel equation but with a different [source term](@article_id:268617). It would seem we have a whole zoo of functions. But they are not independent. For non-integer $\nu$, there exists a stunningly simple relationship between them :
+This unity extends further. There are other related functions, like the **Struve function** $H_{\nu}(z)$, which also solves an inhomogeneous Bessel equation but with a different [source term](@keyword=source_term|lang=en-US|style=Feynman). It would seem we have a whole zoo of functions. But they are not independent. For non-integer $\nu$, there exists a stunningly simple relationship between them [@problem_id:622055]:
 
 $$
 \mathbf{E}_\nu(z) - H_\nu(z) = -\cot\left(\frac{\nu\pi}{2}\right) \left[\mathbf{J}_\nu(z) - J_\nu(z)\right]
 $$
 
-This equation is profound. It tells us that the way the Weber function differs from the Struve function is directly proportional to the way the Anger function differs from the Bessel function. They are all part of an interconnected family. If you know one of these "difference terms", you can find the other. For integer orders, where $\mathbf{J}_n(z) - J_n(z) = 0$, this relationship breaks down (the cotangent term misbehaves), but a new, simpler relationship emerges. The difference $\mathbf{E}_n(z) - H_n(z)$ becomes a finite, well-behaved polynomial in $1/z$ . In every case, we find deep, underlying connections.
+This equation is profound. It tells us that the way the Weber function differs from the Struve function is directly proportional to the way the Anger function differs from the Bessel function. They are all part of an interconnected family. If you know one of these "difference terms", you can find the other. For integer orders, where $\mathbf{J}_n(z) - J_n(z) = 0$, this relationship breaks down (the cotangent term misbehaves), but a new, simpler relationship emerges. The difference $\mathbf{E}_n(z) - H_n(z)$ becomes a finite, well-behaved polynomial in $1/z$ [@problem_id:622078]. In every case, we find deep, underlying connections.
 
 ### Character and Appearance: From Near to Far
 
 We've seen what these functions *are* and what they *do*. But what do they *look like*?
 
-Let's start by looking very close to the origin, at $z=0$. We can get a feel for a function's behavior by looking at the first few terms of its [power series expansion](@article_id:272831). The coefficient of the linear term, $z^1$, is simply the function's derivative at the origin, $f'(0)$, which tells us its initial slope. By cleverly differentiating the original integral definitions (a perfectly valid mathematical trick called differentiating under the integral sign), we can find these slopes. For instance, the initial slope of $\mathbf{J}_{1/4}(z)$ is $\frac{8\sqrt{2}}{15\pi}$ , and for $\mathbf{E}_{1/2}(z)$ it is $-\frac{4}{3\pi}$ . These calculations, while a bit tedious, show that the integral definitions contain all the information needed to map out the functions' behavior, piece by piece. We can even use these derivatives at $z=0$ to compute their **Wronskian**, a tool that confirms they are fundamentally independent functions, like two perpendicular axes on a graph .
+Let's start by looking very close to the origin, at $z=0$. We can get a feel for a function's behavior by looking at the first few terms of its [power series expansion](@keyword=power_series_expansion|lang=en-US|style=Feynman). The coefficient of the linear term, $z^1$, is simply the function's derivative at the origin, $f'(0)$, which tells us its initial slope. By cleverly differentiating the original integral definitions (a perfectly valid mathematical trick called differentiating under the integral sign), we can find these slopes. For instance, the initial slope of $\mathbf{J}_{1/4}(z)$ is $\frac{8\sqrt{2}}{15\pi}$ [@problem_id:622131], and for $\mathbf{E}_{1/2}(z)$ it is $-\frac{4}{3\pi}$ [@problem_id:622185]. These calculations, while a bit tedious, show that the integral definitions contain all the information needed to map out the functions' behavior, piece by piece. We can even use these derivatives at $z=0$ to compute their **Wronskian**, a tool that confirms they are fundamentally independent functions, like two perpendicular axes on a graph [@problem_id:622110].
 
-Now, let's step back and look from very far away, when $z$ becomes very large. How do the functions behave? Here we find another beautiful simplification. Consider the identity :
+Now, let's step back and look from very far away, when $z$ becomes very large. How do the functions behave? Here we find another beautiful simplification. Consider the identity [@problem_id:622066]:
 
 $$
 \mathbf{J}_\nu(z) = J_\nu(z) + \frac{\sin(\nu\pi)}{\pi} \int_0^\infty \exp(-\nu t - z\sinh t) \, dt

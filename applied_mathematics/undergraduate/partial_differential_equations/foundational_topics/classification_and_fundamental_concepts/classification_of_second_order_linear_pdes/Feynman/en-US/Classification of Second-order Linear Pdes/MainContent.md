@@ -15,7 +15,7 @@ The secret lies in a remarkably simple quantity called the **discriminant**, whi
 
 $$\Delta = B^2 - 4AC$$
 
-The lower-order terms, the ones with first derivatives or no derivatives at all, are spectators here; they influence the fine details of the solution, but they don't define its fundamental nature. The entire classification rests on the sign of $\Delta$ .
+The lower-order terms, the ones with first derivatives or no derivatives at all, are spectators here; they influence the fine details of the solution, but they don't define its fundamental nature. The entire classification rests on the sign of $\Delta$ [@problem_id:2351].
 
 Based on this sign, every second-order linear PDE falls into one of three categories:
 
@@ -33,13 +33,13 @@ Consider an equation as simple as:
 
 $$y u_{xx} + x u_{yy} = 0$$
 
-Here, $A=y$, $B=0$, and $C=x$. The [discriminant](@article_id:152126) is $\Delta = B^2 - 4AC = -4xy$. The character of this equation depends entirely on which quadrant of the $xy$-plane you're in .
+Here, $A=y$, $B=0$, and $C=x$. The [discriminant](@keyword=discriminant|lang=en-US|style=Feynman) is $\Delta = B^2 - 4AC = -4xy$. The character of this equation depends entirely on which quadrant of the $xy$-plane you're in [@problem_id:2092191].
 
 -   In Quadrants I ($x>0, y>0$) and III ($x<0, y<0$), the product $xy$ is positive, making $\Delta = -4xy < 0$. The equation is **elliptic**.
 -   In Quadrants II ($x<0, y>0$) and IV ($x>0, y<0$), the product $xy$ is negative, making $\Delta = -4xy > 0$. The equation is **hyperbolic**.
 -   Right on the axes, where either $x=0$ or $y=0$, we have $\Delta = 0$. The equation is **parabolic**.
 
-You can literally draw a map of the equation's behavior. This isn't just an abstract curiosity. Imagine you're an engineer designing a component where the material properties change from point to point. The PDE for temperature might be of a mixed type . If you try to run a computer simulation, a numerical method designed for an elliptic problem (like a [relaxation method](@article_id:137775)) will fail spectacularly when it crosses the border into a hyperbolic region, and vice versa. The math is telling you, "Watch out! The rules of the game are changing under your feet."
+You can literally draw a map of the equation's behavior. This isn't just an abstract curiosity. Imagine you're an engineer designing a component where the material properties change from point to point. The PDE for temperature might be of a mixed type [@problem_id:2159300]. If you try to run a computer simulation, a numerical method designed for an elliptic problem (like a [relaxation method](@keyword=relaxation_method|lang=en-US|style=Feynman)) will fail spectacularly when it crosses the border into a hyperbolic region, and vice versa. The math is telling you, "Watch out! The rules of the game are changing under your feet."
 
 ### The Character of the Cosmos
 
@@ -53,15 +53,15 @@ $$u_{tt} - c^2 u_{xx} = 0$$
 
 This equation governs everything from the vibrations of a guitar string to the propagation of light. Here, the variables are time $t$ and space $x$. The coefficients are $A=1$, $B=0$, and $C=-c^2$, giving a discriminant $\Delta = 0^2 - 4(1)(-c^2) = 4c^2$, which is always positive.
 
-Hyperbolic systems are all about **propagation**. Disturbances travel at a finite speed ($c$ in this case) along specific paths called **characteristics**. A pebble dropped in a pond doesn't instantly disturb the whole surface; a ripple expands outwards. What happens *here* and *now* only influences a limited, cone-shaped region of the future. Similarly, the state at a point is only affected by events in its "past cone." Information has a speed limit. This is the mathematics of sound, light, and [shockwaves](@article_id:191470). For instance, the equations governing airflow around a wing can change from elliptic to hyperbolic as the aircraft breaks the [sound barrier](@article_id:198311) . The math literally becomes hyperbolic when the physics does.
+Hyperbolic systems are all about **propagation**. Disturbances travel at a finite speed ($c$ in this case) along specific paths called **characteristics**. A pebble dropped in a pond doesn't instantly disturb the whole surface; a ripple expands outwards. What happens *here* and *now* only influences a limited, cone-shaped region of the future. Similarly, the state at a point is only affected by events in its "past cone." Information has a speed limit. This is the mathematics of sound, light, and [shockwaves](@keyword=shockwaves|lang=en-US|style=Feynman). For instance, the equations governing airflow around a wing can change from elliptic to hyperbolic as the aircraft breaks the [sound barrier](@keyword=sound_barrier|lang=en-US|style=Feynman) [@problem_id:2159319]. The math literally becomes hyperbolic when the physics does.
 
 #### The Parabolic March of Time ($\Delta = 0$)
 
-The archetype of a parabolic equation is the **heat equation** or **[diffusion equation](@article_id:145371)**:
+The archetype of a parabolic equation is the **heat equation** or **[diffusion equation](@keyword=diffusion_equation|lang=en-US|style=Feynman)**:
 
 $$u_t - k u_{xx} = 0$$
 
-This describes how heat spreads through a metal bar or how a drop of ink diffuses in a glass of water . Let's match it to our general form, thinking of $t$ and $x$ as our two variables. The second derivatives are $u_{tt}$, $u_{tx}$, and $u_{xx}$. Our equation has no $u_{tt}$ or $u_{tx}$ term, so $A = 0$ and $B = 0$. The coefficient of $u_{xx}$ is $C = -k$. The [discriminant](@article_id:152126) is $\Delta = 0^2 - 4(0)(-k) = 0$. It's parabolic.
+This describes how heat spreads through a metal bar or how a drop of ink diffuses in a glass of water [@problem_id:2159356]. Let's match it to our general form, thinking of $t$ and $x$ as our two variables. The second derivatives are $u_{tt}$, $u_{tx}$, and $u_{xx}$. Our equation has no $u_{tt}$ or $u_{tx}$ term, so $A = 0$ and $B = 0$. The coefficient of $u_{xx}$ is $C = -k$. The [discriminant](@keyword=discriminant|lang=en-US|style=Feynman) is $\Delta = 0^2 - 4(0)(-k) = 0$. It's parabolic.
 
 Parabolic systems describe **irreversible, smoothing processes**. If you start with a hot spot on a cold rod, the heat will spread out, the sharp temperature peak will soften, and the whole rod will eventually reach a uniform temperature. Unlike waves, these processes don't have a "memory"; you can't run the movie backwards and reconstruct the initial hot spot from the final uniform state. A peculiar feature of the pure mathematical model is that a change anywhere is felt *everywhere* instantly (though the effect may be infinitesimally small far away). This "infinite speed of propagation" signifies a system where every part is intimately connected to every other part in a dissipative, forward-marching dance with time.
 
@@ -71,7 +71,7 @@ Finally, we have the elliptic domain, personified by **Laplace's equation**:
 
 $$u_{xx} + u_{yy} = 0$$
 
-Here, $A=1$, $B=0$, and $C=1$, so the discriminant is a robustly negative $\Delta = 0^2 - 4(1)(1) = -4$. This is the equation of **steady-states and equilibrium**. It doesn't describe how things change, but how they *are* after everything has settled down. Think of the final shape of a [soap film](@article_id:267134) stretched across a wire loop, or the [steady-state temperature distribution](@article_id:175772) on a metal plate with its edges held at fixed temperatures.
+Here, $A=1$, $B=0$, and $C=1$, so the discriminant is a robustly negative $\Delta = 0^2 - 4(1)(1) = -4$. This is the equation of **steady-states and equilibrium**. It doesn't describe how things change, but how they *are* after everything has settled down. Think of the final shape of a [soap film](@keyword=soap_film|lang=en-US|style=Feynman) stretched across a wire loop, or the [steady-state temperature distribution](@keyword=steady_state_temperature_distribution|lang=en-US|style=Feynman) on a metal plate with its edges held at fixed temperatures.
 
 In an elliptic world, there is no "time" or direction of information flow. The value of the solution at any single point is a kind of average of the values surrounding it, and it depends on the conditions on the *entire boundary* of the domain simultaneously. If you poke the boundary at one point, the entire interior adjusts itself instantly. It's a holistic system where everything is interconnected in a delicate, static balance.
 
@@ -81,7 +81,7 @@ A deep question should now be nagging at you. This classification seems powerful
 
 The beautiful answer is **no**. The classification of a PDE is an **invariant** property. It doesn't matter how you stretch, rotate, or bend your coordinate system; an elliptic equation will remain elliptic, a hyperbolic one will stay hyperbolic, and a parabolic one will stay parabolic.
 
-The reason for this is as elegant as it is profound. When you perform a smooth, invertible change of coordinates, the discriminant of the new, transformed equation, $\bar{\Delta}$, is related to the old [discriminant](@article_id:152126), $\Delta$, by a simple rule  :
+The reason for this is as elegant as it is profound. When you perform a smooth, invertible change of coordinates, the discriminant of the new, transformed equation, $\bar{\Delta}$, is related to the old [discriminant](@keyword=discriminant|lang=en-US|style=Feynman), $\Delta$, by a simple rule [@problem_id:2092212] [@problem_id:2092183]:
 
 $$\bar{\Delta} = J^2 \Delta$$
 

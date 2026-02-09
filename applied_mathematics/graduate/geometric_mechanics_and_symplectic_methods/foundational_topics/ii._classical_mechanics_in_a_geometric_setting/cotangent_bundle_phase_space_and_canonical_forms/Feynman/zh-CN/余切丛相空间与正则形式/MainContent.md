@@ -1,32 +1,32 @@
 ## 引言
 在经典力学中，我们习惯于用位置和速度来描述一个系统的瞬时状态，这个直观的数学舞台被称为切丛。然而，当力学发展到更为深刻和普适的哈密顿形式时，一个更抽象的空间——由位置和动量构成的余切丛——却占据了中心地位。这引出了一个根本性的问题：为何要从直观的速度转向抽象的动量？物理学家进行这种转换的背后，隐藏着怎样的深刻动机和结构优势？
 
-本文旨在揭示[余切丛](@entry_id:185138)作为哈密顿力学相空间的内在必然性与强大功能。我们将带领读者深入探索这个看似抽象的数学构造，理解它如何为物理定律提供一个“与生俱来”的完美几何框架。
-- 在“原理与机制”一章中，我们将从零开始构建余切丛，并揭示其核心的几何宝藏——[刘维尔形式](@entry_id:1127318)与[典范辛形式](@entry_id:180641)。你将看到[哈密顿方程](@entry_id:156213)和泊松括号是如何从这纯粹的几何结构中自然生长出来的。
-- 接着，在“应用与交叉学科联系”一章，我们将展示这一框架的惊人普适性，看它如何统一地描述从天体运动到流体动力学，从[对称性约化](@entry_id:199270)到规范场论的广泛物理现象。
+本文旨在揭示[余切丛](@keyword=the_cotangent_bundle|lang=zh-CN|style=Feynman)作为哈密顿力学相空间的内在必然性与强大功能。我们将带领读者深入探索这个看似抽象的数学构造，理解它如何为物理定律提供一个“与生俱来”的完美几何框架。
+- 在“原理与机制”一章中，我们将从零开始构建余切丛，并揭示其核心的几何宝藏——[刘维尔形式](@keyword=liouville_form|lang=zh-CN|style=Feynman)与[典范辛形式](@keyword=canonical_symplectic_form|lang=zh-CN|style=Feynman)。你将看到[哈密顿方程](@keyword=hamilton_s_equations|lang=zh-CN|style=Feynman)和泊松括号是如何从这纯粹的几何结构中自然生长出来的。
+- 接着，在“应用与交叉学科联系”一章，我们将展示这一框架的惊人普适性，看它如何统一地描述从天体运动到流体动力学，从[对称性约化](@keyword=symmetry_reduction|lang=zh-CN|style=Feynman)到规范场论的广泛物理现象。
 - 最后，“动手实践”部分将通过具体问题，帮助你将这些抽象的几何概念转化为解决实际问题的有力工具。
 
-通过这段旅程，你将领悟到，从[切丛](@entry_id:161294)到[余切丛](@entry_id:185138)的飞跃，不仅仅是一次[变量替换](@entry_id:141386)，而是一次深刻的观念革新，它将我们[对力](@entry_id:159909)学世界内在和谐与统一性的理解提升到了一个全新的高度。
+通过这段旅程，你将领悟到，从[切丛](@keyword=tangent_bundle|lang=zh-CN|style=Feynman)到[余切丛](@keyword=the_cotangent_bundle|lang=zh-CN|style=Feynman)的飞跃，不仅仅是一次[变量替换](@keyword=change_of_variables|lang=zh-CN|style=Feynman)，而是一次深刻的观念革新，它将我们[对力](@keyword=pairing_force|lang=zh-CN|style=Feynman)学世界内在和谐与统一性的理解提升到了一个全新的高度。
 
 ## 原理与机制
 
-在物理学的宏伟画卷中，运动的描述似乎早已尘埃落定。从牛顿时代起，我们就习惯于用物体的位置和速度来描绘它的状态。如果你知道一个系统的所有粒子在某一时刻的位置和速度，以及作用在它们身上的力，你似乎就掌握了开启宇宙未来的钥匙。这个由所有可能的位置和速度构成的空间，在数学上被称为**[切丛](@entry_id:161294)(tangent bundle)**，记作 $TQ$。它是一个非常直观的概念：在[构型空间](@entry_id:149531) $Q$ 的每一个点（一个特定的位置构型），我们都附上一个所有可能的[瞬时速度](@entry_id:167797)的集合。这难道不就是描述力学系统状态最自然、最完美的舞台吗？
+在物理学的宏伟画卷中，运动的描述似乎早已尘埃落定。从牛顿时代起，我们就习惯于用物体的位置和速度来描绘它的状态。如果你知道一个系统的所有粒子在某一时刻的位置和速度，以及作用在它们身上的力，你似乎就掌握了开启宇宙未来的钥匙。这个由所有可能的位置和速度构成的空间，在数学上被称为**[切丛](@keyword=tangent_bundle|lang=zh-CN|style=Feynman)(tangent bundle)**，记作 $TQ$。它是一个非常直观的概念：在[构型空间](@keyword=configuration_space|lang=zh-CN|style=Feynman) $Q$ 的每一个点（一个特定的位置构型），我们都附上一个所有可能的[瞬时速度](@keyword=instantaneous_velocity|lang=zh-CN|style=Feynman)的集合。这难道不就是描述力学系统状态最自然、最完美的舞台吗？
 
-然而，当力学这门艺术发展到拉格朗日和哈密顿的时代，物理学家们却不约而同地选择了一个更抽象、更神秘的舞台——**[余切丛](@entry_id:185138)(cotangent bundle)**，记作 $T^*Q$。在这里，速度 $v$ 被一个叫做**动量 (momentum)** $p$ 的新角色所取代。为什么？为什么我们要放弃 $(q, v)$ 这个亲切直观的组合，转而拥抱 $(q, p)$ 这个看似晦涩的抽象概念？这并非物理学家们故作高深。答案，正如我们将要看到的，隐藏在一个深刻而优美的几何事实之中：[余切丛](@entry_id:185138) $T^*Q$ 与生俱来地拥有一种“神赐”的、不依赖于任何额外选择的几何结构，而[切丛](@entry_id:161294) $TQ$ 却没有。正是这种内在的结构，使得哈密顿力学能够以一种惊人的简洁与和谐来谱写宇宙的运动定律 。
+然而，当力学这门艺术发展到拉格朗日和哈密顿的时代，物理学家们却不约而同地选择了一个更抽象、更神秘的舞台——**[余切丛](@keyword=the_cotangent_bundle|lang=zh-CN|style=Feynman)(cotangent bundle)**，记作 $T^*Q$。在这里，速度 $v$ 被一个叫做**动量 (momentum)** $p$ 的新角色所取代。为什么？为什么我们要放弃 $(q, v)$ 这个亲切直观的组合，转而拥抱 $(q, p)$ 这个看似晦涩的抽象概念？这并非物理学家们故作高深。答案，正如我们将要看到的，隐藏在一个深刻而优美的几何事实之中：[余切丛](@keyword=the_cotangent_bundle|lang=zh-CN|style=Feynman) $T^*Q$ 与生俱来地拥有一种“神赐”的、不依赖于任何额外选择的几何结构，而[切丛](@keyword=tangent_bundle|lang=zh-CN|style=Feynman) $TQ$ 却没有。正是这种内在的结构，使得哈密顿力学能够以一种惊人的简洁与和谐来谱写宇宙的运动定律 [@problem_id:3736182]。
 
 ### 构建舞台：从速度到动量
 
-要理解余切丛，我们首先要重新审视“动量”的本质。在初级物理中，动量是“质量乘以速度”，这更像是一个计算公式，而非一个基本定义。在几何的语言里，速度是一个**切向量 (tangent vector)**，它代表了系统在[构型空间](@entry_id:149531)中的一个瞬时运动趋势，一个“方向”和“速率”的结合体。那么，与速度“对偶”的动量，又是什么呢？
+要理解余切丛，我们首先要重新审视“动量”的本质。在初级物理中，动量是“质量乘以速度”，这更像是一个计算公式，而非一个基本定义。在几何的语言里，速度是一个**切向量 (tangent vector)**，它代表了系统在[构型空间](@keyword=configuration_space|lang=zh-CN|style=Feynman)中的一个瞬时运动趋势，一个“方向”和“速率”的结合体。那么，与速度“对偶”的动量，又是什么呢？
 
-想象一个测量仪器，它被设计用来测量系统沿某个特定方向运动时的某种“变化率”。例如，它可以测量当系统状态发生一个微小位移 $v$ 时，某个物理量（比如一个势能函数）的变化速率。这种测量仪器，在数学上就是一个**余切向量 (cotangent vector)**，或者叫**[协变向量](@entry_id:263917) (covector)**。在[构型空间](@entry_id:149531) $Q$ 的每一点 $q$，“动量” $p$ 就是这样一个线性函数，它“吃掉”一个该点的速度向量 $v$，然后“吐出”一个数值 $\langle p, v \rangle$。这个数值可以被诠释为在 $v$ 方向上的[瞬时功率](@entry_id:174754)、虚功，或是某种更广义的通量。
+想象一个测量仪器，它被设计用来测量系统沿某个特定方向运动时的某种“变化率”。例如，它可以测量当系统状态发生一个微小位移 $v$ 时，某个物理量（比如一个势能函数）的变化速率。这种测量仪器，在数学上就是一个**余切向量 (cotangent vector)**，或者叫**[协变向量](@keyword=covariant_vectors|lang=zh-CN|style=Feynman) (covector)**。在[构型空间](@keyword=configuration_space|lang=zh-CN|style=Feynman) $Q$ 的每一点 $q$，“动量” $p$ 就是这样一个线性函数，它“吃掉”一个该点的速度向量 $v$，然后“吐出”一个数值 $\langle p, v \rangle$。这个数值可以被诠释为在 $v$ 方向上的[瞬时功率](@keyword=instantaneous_power|lang=zh-CN|style=Feynman)、虚功，或是某种更广义的通量。
 
-**余切丛 $T^*Q$** 就是将所有构型点 $q$ 上的所有可能的动量 $p$ 集合在一起，形成的一个宏大的空间。就像[切丛](@entry_id:161294)是所有“位置-速度”对的集合一样，余切丛是所有“位置-动量”对的集合。这个空间自然地继承了其构型空间 $Q$ 的[光滑结构](@entry_id:159394)。如果我们为 $Q$ 的一小块区域选取了[局部坐标](@entry_id:181200) $(q^1, \dots, q^n)$，那么在这块区域上方的余切丛部分，我们也可以定义一套相应的坐标。任何一个动量 $p$ 都可以表示为其在对偶基底 $\{dq^i\}$ 上的分量，即 $p = \sum_{i=1}^n p_i dq^i$。这里的系数 $p_i$ 正是动量 $p$ 作用在基底向量 $\partial/\partial q^i$ 上的测量结果：$p_i = \langle p, \partial/\partial q^i \rangle$。这样，我们就得到了 $T^*Q$ 上的一套自然坐标 $(q^1, \dots, q^n, p_1, \dots, p_n)$ 。
+**余切丛 $T^*Q$** 就是将所有构型点 $q$ 上的所有可能的动量 $p$ 集合在一起，形成的一个宏大的空间。就像[切丛](@keyword=tangent_bundle|lang=zh-CN|style=Feynman)是所有“位置-速度”对的集合一样，余切丛是所有“位置-动量”对的集合。这个空间自然地继承了其构型空间 $Q$ 的[光滑结构](@keyword=smooth_structure|lang=zh-CN|style=Feynman)。如果我们为 $Q$ 的一小块区域选取了[局部坐标](@keyword=local_coordinates|lang=zh-CN|style=Feynman) $(q^1, \dots, q^n)$，那么在这块区域上方的余切丛部分，我们也可以定义一套相应的坐标。任何一个动量 $p$ 都可以表示为其在对偶基底 $\{dq^i\}$ 上的分量，即 $p = \sum_{i=1}^n p_i dq^i$。这里的系数 $p_i$ 正是动量 $p$ 作用在基底向量 $\partial/\partial q^i$ 上的测量结果：$p_i = \langle p, \partial/\partial q^i \rangle$。这样，我们就得到了 $T^*Q$ 上的一套自然坐标 $(q^1, \dots, q^n, p_1, \dots, p_n)$ [@problem_id:3736148]。
 
 有趣的是，当我们更换底空间 $Q$ 上的坐标系时，动量分量 $p_i$ 的变换方式与速度分量 $v^i$ 截然不同。速度分量是“逆变”的，而动量分量 $p_i$ 的变换法则恰好与基底向量 $\partial/\partial q^i$ 的变换法则相同，表现出“协变”的特征。这并非巧合，而是为了保证物理实在——动量 $p$ 本身——在坐标变换下保持不变的必然结果。
 
 ### 典范交响曲：一种与生俱来的几何结构
 
-现在，让我们揭示余切丛 $T^*Q$ 所隐藏的那个秘密结构。这个结构不是人为添加的，而是从余切丛的定义中自然生长出来的。它始于一个被称为**[刘维尔形式](@entry_id:1127318) (Liouville form)** 或**重言形式 (tautological one-form)** 的数学对象，记为 $\theta$ 。
+现在，让我们揭示余切丛 $T^*Q$ 所隐藏的那个秘密结构。这个结构不是人为添加的，而是从余切丛的定义中自然生长出来的。它始于一个被称为**[刘维尔形式](@keyword=liouville_form|lang=zh-CN|style=Feynman) (Liouville form)** 或**重言形式 (tautological one-form)** 的数学对象，记为 $\theta$ [@problem_id:3736158]。
 
 “重言”这个词听起来可能有些吓人，但它的思想却非常质朴。在相空间 $T^*Q$ 中的任意一点 $(q, p)$，$\theta$ 是一个微小的“测量仪”。当你让系统在相空间中迈出微小的一步（一个切向量 $v \in T_{(q,p)}(T^*Q)$）时，$\theta$ 会告诉你，你当前状态的“动量”部分 $p$ 会如何“测量”这一小步在“位置”空间上的投影。用数学公式表达就是：
 $$
@@ -38,31 +38,31 @@ $$
 $$
 \theta = \sum_{i=1}^n p_i dq^i
 $$
-这个简单的表达式蕴含着深刻的物理。它就像是所有动量分量 $p_i$ 与其对应的位置微元 $dq^i$ 的“[虚功](@entry_id:176403)”之和。
+这个简单的表达式蕴含着深刻的物理。它就像是所有动量分量 $p_i$ 与其对应的位置微元 $dq^i$ 的“[虚功](@keyword=virtual_work|lang=zh-CN|style=Feynman)”之和。
 
-然而，这首交响曲的华彩乐章才刚刚开始。物理学中，许多重要的结构都与场的“旋度”有关，比如从电势到电场，从磁矢量势到磁场。在这里，我们对 $\theta$ 取它的“几何旋度”——**[外微分](@entry_id:161900) (exterior derivative)** $d$，从而得到一个[2-形式](@entry_id:188008) $\omega$：
+然而，这首交响曲的华彩乐章才刚刚开始。物理学中，许多重要的结构都与场的“旋度”有关，比如从电势到电场，从磁矢量势到磁场。在这里，我们对 $\theta$ 取它的“几何旋度”——**[外微分](@keyword=exterior_derivative|lang=zh-CN|style=Feynman) (exterior derivative)** $d$，从而得到一个[2-形式](@keyword=2_forms|lang=zh-CN|style=Feynman) $\omega$：
 $$
 \omega = -d\theta
 $$
-（这里的负号是一个历史悠久的约定，选择它会使最终的哈密顿方程形式更优雅）。一场简单的计算  揭示了 $\omega$ 的真面目：
+（这里的负号是一个历史悠久的约定，选择它会使最终的哈密顿方程形式更优雅）。一场简单的计算 [@problem_id:3736161] 揭示了 $\omega$ 的真面目：
 $$
 \omega = -d\left(\sum_{i=1}^n p_i dq^i\right) = -\sum_{i=1}^n (dp_i \wedge dq^i) = \sum_{i=1}^n dq^i \wedge dp_i
 $$
-这个就是大名鼎鼎的**[典范辛形式](@entry_id:180641) (canonical symplectic form)**。它在每一对 $(q^i, p_i)$ 构成的平面上，都像是一个[有向面积](@entry_id:169588)元。这个 $\omega$ 是一个2-形式，它封闭 ($d\omega = d(-d\theta) = 0$) 且非退化（意味着它可以在每一点都有效地将[向量和余向量](@entry_id:181128)配对）。一个装备了这样形式的流形，就被称为**[辛流形](@entry_id:161608) (symplectic manifold)**。
+这个就是大名鼎鼎的**[典范辛形式](@keyword=canonical_symplectic_form|lang=zh-CN|style=Feynman) (canonical symplectic form)**。它在每一对 $(q^i, p_i)$ 构成的平面上，都像是一个[有向面积](@keyword=signed_area|lang=zh-CN|style=Feynman)元。这个 $\omega$ 是一个2-形式，它封闭 ($d\omega = d(-d\theta) = 0$) 且非退化（意味着它可以在每一点都有效地将[向量和余向量](@keyword=vectors_and_covectors|lang=zh-CN|style=Feynman)配对）。一个装备了这样形式的流形，就被称为**[辛流形](@keyword=symplectic_manifolds|lang=zh-CN|style=Feynman) (symplectic manifold)**。
 
-至此，我们触及了核心。余切丛 $T^*Q$ 不仅仅是一个[光滑流形](@entry_id:160799)，它是一个与生俱来的、典范的[辛流形](@entry_id:161608) 。更令人惊叹的是，根据**[达布定理](@entry_id:136551) (Darboux's theorem)**，任何[辛流形](@entry_id:161608)在局部看起来都和这个典范形式一模一样 。这意味着不存在像[黎曼几何](@entry_id:160508)中“曲率”那样的[局部不变量](@entry_id:166858)。从几何上看，所有的辛空间在局部都是“平坦”的。而[余切丛](@entry_id:185138)的非凡之处在于，它甚至不需要借助[达布定理](@entry_id:136551)来“被变成”标准形式——在它自身的自然坐标系下，它 *就是* [标准形式](@entry_id:153058)。这正是我们最初问题的答案：物理学家之所以钟爱[余切丛](@entry_id:185138)，是因为它提供了一个具有普适、内在几何结构的完美舞台，而这一切都是“免费”的。
+至此，我们触及了核心。余切丛 $T^*Q$ 不仅仅是一个[光滑流形](@keyword=smooth_manifolds|lang=zh-CN|style=Feynman)，它是一个与生俱来的、典范的[辛流形](@keyword=symplectic_manifolds|lang=zh-CN|style=Feynman) [@problem_id:3736182]。更令人惊叹的是，根据**[达布定理](@keyword=darboux_s_theorem|lang=zh-CN|style=Feynman) (Darboux's theorem)**，任何[辛流形](@keyword=symplectic_manifolds|lang=zh-CN|style=Feynman)在局部看起来都和这个典范形式一模一样 [@problem_id:3736150]。这意味着不存在像[黎曼几何](@keyword=riemannian_geometry|lang=zh-CN|style=Feynman)中“曲率”那样的[局部不变量](@keyword=local_invariants|lang=zh-CN|style=Feynman)。从几何上看，所有的辛空间在局部都是“平坦”的。而[余切丛](@keyword=the_cotangent_bundle|lang=zh-CN|style=Feynman)的非凡之处在于，它甚至不需要借助[达布定理](@keyword=darboux_s_theorem|lang=zh-CN|style=Feynman)来“被变成”标准形式——在它自身的自然坐标系下，它 *就是* [标准形式](@keyword=canonical_forms|lang=zh-CN|style=Feynman)。这正是我们最初问题的答案：物理学家之所以钟爱[余切丛](@keyword=the_cotangent_bundle|lang=zh-CN|style=Feynman)，是因为它提供了一个具有普适、内在几何结构的完美舞台，而这一切都是“免费”的。
 
-### 从几何到运动：哈密顿方程与[泊松括号](@entry_id:151133)
+### 从几何到运动：哈密顿方程与[泊松括号](@keyword=poisson_brackets|lang=zh-CN|style=Feynman)
 
-拥有了如此美妙的几何结构，我们该如何利用它来描述运动呢？在一个力学系统中，总能量通常是系统状态的函数，我们称之为**[哈密顿量](@entry_id:144286) (Hamiltonian)** $H(q, p)$。给定一个能量函数，我们如何得到系统的运动轨迹？
+拥有了如此美妙的几何结构，我们该如何利用它来描述运动呢？在一个力学系统中，总能量通常是系统状态的函数，我们称之为**哈密顿量 (Hamiltonian)** $H(q, p)$。给定一个能量函数，我们如何得到系统的运动轨迹？
 
-在普通的矢量分析中，我们可能会想到取 $H$ 的梯度。但梯度依赖于一个“度规”（即点积），而我们的[辛流形](@entry_id:161608)上并没有天生的度规。我们拥有的是辛形式 $\omega$。[哈密顿力学](@entry_id:146202)的核心思想是，$\omega$ 提供了一种典范的方式，将能量函数 $H$ 的[微分](@entry_id:158422) $dH$（一个[1-形式](@entry_id:270392)，或者说余[切向量](@entry_id:265494)场）转化为一个**向量场** $X_H$，这个向量场就定义了系统的运动流。这个转换的魔法棒就是下面的方程：
+在普通的矢量分析中，我们可能会想到取 $H$ 的梯度。但梯度依赖于一个“度规”（即点积），而我们的[辛流形](@keyword=symplectic_manifolds|lang=zh-CN|style=Feynman)上并没有天生的度规。我们拥有的是辛形式 $\omega$。[哈密顿力学](@keyword=hamiltonian_mechanics|lang=zh-CN|style=Feynman)的核心思想是，$\omega$ 提供了一种典范的方式，将能量函数 $H$ 的[微分](@keyword=differentials|lang=zh-CN|style=Feynman) $dH$（一个[1-形式](@keyword=one_forms|lang=zh-CN|style=Feynman)，或者说余[切向量](@keyword=tangent_vectors|lang=zh-CN|style=Feynman)场）转化为一个**向量场** $X_H$，这个向量场就定义了系统的运动流。这个转换的魔法棒就是下面的方程：
 $$
 i_{X_H}\omega = dH
 $$
-其中 $i_{X_H}\omega$ 表示将向量场 $X_H$ “代入”到[辛形式](@entry_id:165896) $\omega$ 的一个“槽”里。因为 $\omega$ 是非退化的，对于任何给定的 $dH$，这个方程都有一个唯一的解 $X_H$ 。
+其中 $i_{X_H}\omega$ 表示将向量场 $X_H$ “代入”到[辛形式](@keyword=symplectic_forms|lang=zh-CN|style=Feynman) $\omega$ 的一个“槽”里。因为 $\omega$ 是非退化的，对于任何给定的 $dH$，这个方程都有一个唯一的解 $X_H$ [@problem_id:3734507]。
 
-这个抽象的[几何方程](@entry_id:173321)威力无穷。当我们在典范坐标下把它展开时，我们奇迹般地重获了我们熟悉的**哈密顿方程**：
+这个抽象的[几何方程](@keyword=strain_displacement_relations|lang=zh-CN|style=Feynman)威力无穷。当我们在典范坐标下把它展开时，我们奇迹般地重获了我们熟悉的**哈密顿方程**：
 $$
 \dot{q}^i = \frac{\partial H}{\partial p_i}, \quad \dot{p}_i = -\frac{\partial H}{\partial q^i}
 $$
@@ -72,9 +72,9 @@ $$
 $$
 dH(X_H) = (i_{X_H}\omega)(X_H) = \omega(X_H, X_H)
 $$
-由于辛形式 $\omega$ 是一个[2-形式](@entry_id:188008)，它是反对称的，就像矢量叉乘一样，满足 $\omega(v,u) = -\omega(u,v)$。因此，$\omega(X_H, X_H)$ 必然为零！能量之所以守恒，仅仅是因为相空间的内在几何本身就是反对称的。这是一个何其深刻的洞见 。
+由于辛形式 $\omega$ 是一个[2-形式](@keyword=2_forms|lang=zh-CN|style=Feynman)，它是反对称的，就像矢量叉乘一样，满足 $\omega(v,u) = -\omega(u,v)$。因此，$\omega(X_H, X_H)$ 必然为零！能量之所以守恒，仅仅是因为相空间的内在几何本身就是反对称的。这是一个何其深刻的洞见 [@problem_id:3734507]。
 
-这种几何结构还可以用一种代数语言来表达，那就是**[泊松括号](@entry_id:151133) (Poisson bracket)** 。对于相空间上的任意两个[可观测量](@entry_id:267133)（函数）$F$ 和 $G$，它们的[泊松括号](@entry_id:151133)被定义为：
+这种几何结构还可以用一种代数语言来表达，那就是**[泊松括号](@keyword=poisson_brackets|lang=zh-CN|style=Feynman) (Poisson bracket)** [@problem_id:3736171]。对于相空间上的任意两个[可观测量](@keyword=observables|lang=zh-CN|style=Feynman)（函数）$F$ 和 $G$，它们的[泊松括号](@keyword=poisson_brackets|lang=zh-CN|style=Feynman)被定义为：
 $$
 \{F, G\} = \omega(X_F, X_G) = \sum_{i=1}^{n} \left( \frac{\partial F}{\partial q^{i}}\frac{\partial G}{\partial p_{i}} - \frac{\partial F}{\partial p_{i}}\frac{\partial G}{\partial q^{i}} \right)
 $$
@@ -82,21 +82,21 @@ $$
 $$
 \frac{dF}{dt} = \{F, H\}
 $$
-这便是[哈密顿力学](@entry_id:146202)的代数形式，它与之前的几何形式和坐标形式完[全等](@entry_id:273198)价，三者共同构成了这座理论大厦的支柱。
+这便是[哈密顿力学](@keyword=hamiltonian_mechanics|lang=zh-CN|style=Feynman)的代数形式，它与之前的几何形式和坐标形式完[全等](@keyword=congruences|lang=zh-CN|style=Feynman)价，三者共同构成了这座理论大厦的支柱。
 
-### 自由与选择：[典范变换](@entry_id:178165)与度规
+### 自由与选择：[典范变换](@keyword=canonical_transformations|lang=zh-CN|style=Feynman)与度规
 
 我们已经看到余切丛上典范结构的力量。但这个结构在多大程度上是唯一的？这里，“自由”与“选择”的主题浮现出来。
 
-首先，作为辛形式 $\omega$ 的“势”，[刘维尔形式](@entry_id:1127318) $\theta$ 并非唯一。任何一个与 $\theta$ 相差一个闭1-形式的 $\lambda$（即 $d(\lambda-\theta)=0$），都能导出相同的[辛形式](@entry_id:165896) $\omega$。这种“[规范自由度](@entry_id:160491)”的大小，由底空间 $Q$ 的[拓扑性质](@entry_id:141605)决定，具体来说，是由其**[德拉姆上同调](@entry_id:158673)群 (de Rham cohomology group)** $H^1(Q; \mathbb{R})$ 来衡量的。这个群描绘了空间中“无法被填补的圈”，每一个这样的圈都对应着一种无法被消除的全局[规范自由度](@entry_id:160491) 。这揭示了物理定律的局部形式与时空整体拓扑之间的深刻联系。
+首先，作为辛形式 $\omega$ 的“势”，[刘维尔形式](@keyword=liouville_form|lang=zh-CN|style=Feynman) $\theta$ 并非唯一。任何一个与 $\theta$ 相差一个闭1-形式的 $\lambda$（即 $d(\lambda-\theta)=0$），都能导出相同的[辛形式](@keyword=symplectic_forms|lang=zh-CN|style=Feynman) $\omega$。这种“[规范自由度](@keyword=gauge_freedom|lang=zh-CN|style=Feynman)”的大小，由底空间 $Q$ 的[拓扑性质](@keyword=topological_property|lang=zh-CN|style=Feynman)决定，具体来说，是由其**[德拉姆上同调](@keyword=de_rham_cohomology|lang=zh-CN|style=Feynman)群 (de Rham cohomology group)** $H^1(Q; \mathbb{R})$ 来衡量的。这个群描绘了空间中“无法被填补的圈”，每一个这样的圈都对应着一种无法被消除的全局[规范自由度](@keyword=gauge_freedom|lang=zh-CN|style=Feynman) [@problem_id:3736149]。这揭示了物理定律的局部形式与时空整体拓扑之间的深刻联系。
 
-其次，描述物理的坐标系也不是唯一的。任何保持[辛形式](@entry_id:165896) $\omega$ 不变的[坐标变换](@entry_id:172727)，都是一个合法的“典范”变换。这些**[典范变换](@entry_id:178165) (canonical transformations)** 构成的群非常庞大，远不止简单的坐标平移和旋转 。
--   **[点变换](@entry_id:171852)**：对构型空间 $Q$ 做一个任意的[坐标变换](@entry_id:172727)（[微分同胚](@entry_id:147249)）$\varphi$，它会自然地“提升”为余切丛 $T^*Q$ 上的一个典范变换。
--   **线性[典范变换](@entry_id:178165)**：在相空间中，所有保持原点不变的线性[典范变换](@entry_id:178165)构成了一个称为**[辛群](@entry_id:189031) (symplectic group)** $Sp(2n, \mathbb{R})$ 的李群。任何一个属于此群的矩阵 $A$ 作用在坐标 $(q, p)$ 上，都能得到一套新的典范坐标。
--   **[泊松括号](@entry_id:151133)判据**：一个变换是否是典范的，有一个简洁的代数判据。如果新坐标 $(Q^i, P_i)$ 满足典范[泊松括号](@entry_id:151133)关系：$\{Q^i, Q^j\}=0$, $\{P_i, P_j\}=0$, $\{Q^i, P_j\}=\delta^i_j$，那么它们就是一套典范坐标。这为我们提供了一个强大的工具来验证和构造新的合[法坐标](@entry_id:143194)系。
+其次，描述物理的坐标系也不是唯一的。任何保持[辛形式](@keyword=symplectic_forms|lang=zh-CN|style=Feynman) $\omega$ 不变的[坐标变换](@keyword=coordinate_transformations|lang=zh-CN|style=Feynman)，都是一个合法的“典范”变换。这些**[典范变换](@keyword=canonical_transformations|lang=zh-CN|style=Feynman) (canonical transformations)** 构成的群非常庞大，远不止简单的坐标平移和旋转 [@problem_id:3736185]。
+-   **[点变换](@keyword=point_transformations|lang=zh-CN|style=Feynman)**：对构型空间 $Q$ 做一个任意的[坐标变换](@keyword=coordinate_transformations|lang=zh-CN|style=Feynman)（[微分同胚](@keyword=diffeomorphism|lang=zh-CN|style=Feynman)）$\varphi$，它会自然地“提升”为余切丛 $T^*Q$ 上的一个典范变换。
+-   **线性[典范变换](@keyword=canonical_transformations|lang=zh-CN|style=Feynman)**：在相空间中，所有保持原点不变的线性[典范变换](@keyword=canonical_transformations|lang=zh-CN|style=Feynman)构成了一个称为**[辛群](@keyword=symplectic_group|lang=zh-CN|style=Feynman) (symplectic group)** $Sp(2n, \mathbb{R})$ 的李群。任何一个属于此群的矩阵 $A$ 作用在坐标 $(q, p)$ 上，都能得到一套新的典范坐标。
+-   **[泊松括号](@keyword=poisson_brackets|lang=zh-CN|style=Feynman)判据**：一个变换是否是典范的，有一个简洁的代数判据。如果新坐标 $(Q^i, P_i)$ 满足典范[泊松括号](@keyword=poisson_brackets|lang=zh-CN|style=Feynman)关系：$\{Q^i, Q^j\}=0$, $\{P_i, P_j\}=0$, $\{Q^i, P_j\}=\delta^i_j$，那么它们就是一套典范坐标。这为我们提供了一个强大的工具来验证和构造新的合[法坐标](@keyword=normal_coordinates|lang=zh-CN|style=Feynman)系。
 
-最后，让我们回到最初的比较：$TQ$ 与 $T^*Q$。我们有时会在[物理计算](@entry_id:1129641)中混用速度和动量，仿佛它们是同一回事。这背后其实隐藏着一个未言明的选择：我们在构型空间 $Q$ 上引入了一个**黎曼度规 (Riemannian metric)** $g$ 。度规 $g$ 定义了每一点的[内积](@entry_id:750660)，从而可以测量[切向量](@entry_id:265494)的长度和夹角。有了它，我们就可以通过法则 $p(v) = g(u, v)$，将一个速度向量 $u \in TQ$ 唯一地与一个动量[协变向量](@entry_id:263917) $p \in T^*Q$ 对应起来。这个对应关系，即所谓的“[音乐同构](@entry_id:199976)”$\flat: TQ \to T^*Q$，是一个依赖于度规 $g$ 的同构。
+最后，让我们回到最初的比较：$TQ$ 与 $T^*Q$。我们有时会在[物理计算](@keyword=physical_computation|lang=zh-CN|style=Feynman)中混用速度和动量，仿佛它们是同一回事。这背后其实隐藏着一个未言明的选择：我们在构型空间 $Q$ 上引入了一个**黎曼度规 (Riemannian metric)** $g$ [@problem_id:3736130]。度规 $g$ 定义了每一点的[内积](@keyword=inner_products|lang=zh-CN|style=Feynman)，从而可以测量[切向量](@keyword=tangent_vectors|lang=zh-CN|style=Feynman)的长度和夹角。有了它，我们就可以通过法则 $p(v) = g(u, v)$，将一个速度向量 $u \in TQ$ 唯一地与一个动量[协变向量](@keyword=covariant_vectors|lang=zh-CN|style=Feynman) $p \in T^*Q$ 对应起来。这个对应关系，即所谓的“[音乐同构](@keyword=musical_isomorphisms|lang=zh-CN|style=Feynman)”$\flat: TQ \to T^*Q$，是一个依赖于度规 $g$ 的同构。
 
-然而，关键在于，这个度规是一个**选择**。对于一个给定的[构型空间](@entry_id:149531) $Q$（比如一个陀螺的转动姿态空间），我们可以选择无穷多种不同的度规（对应不同的质量分布）。每一种选择都会给出一种不同的“速度-动量”鉴定方式，并把 $T^*Q$ 上的典范[辛结构](@entry_id:1132759)“拉回到” $TQ$ 上，从而在 $TQ$ 上定义一个依赖于度规的[辛结构](@entry_id:1132759)。
+然而，关键在于，这个度规是一个**选择**。对于一个给定的[构型空间](@keyword=configuration_space|lang=zh-CN|style=Feynman) $Q$（比如一个陀螺的转动姿态空间），我们可以选择无穷多种不同的度规（对应不同的质量分布）。每一种选择都会给出一种不同的“速度-动量”鉴定方式，并把 $T^*Q$ 上的典范[辛结构](@keyword=symplectic_structure|lang=zh-CN|style=Feynman)“拉回到” $TQ$ 上，从而在 $TQ$ 上定义一个依赖于度规的[辛结构](@keyword=symplectic_structure|lang=zh-CN|style=Feynman)。
 
 这正是哈密顿几何力学的深刻之处。它清晰地区分了什么是系统内禀的、不依赖于选择的**辛结构**，以及什么是需要额外赋予的、依赖于选择的**度规结构**。前者掌管着时间的演化和守恒律的普适法则，而后者则与系统的具体惯性性质（如质量、转动惯量）相关。通过在余切丛这个先验的、典范的舞台上展开分析，我们得以将物理定律的普适几何框架与特定系统的具体物理实现分离开来，从而以一种前所未有的清晰和优雅，洞察力学世界的内在和谐。

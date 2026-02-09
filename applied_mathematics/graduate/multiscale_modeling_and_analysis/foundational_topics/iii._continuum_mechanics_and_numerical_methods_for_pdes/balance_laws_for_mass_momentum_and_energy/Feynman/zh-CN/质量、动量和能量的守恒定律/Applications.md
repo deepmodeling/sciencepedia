@@ -6,21 +6,21 @@
 
 我们首先从工程学中最直接的应用开始。
 
-#### 尺度与[无量纲数](@entry_id:260863)的力量
+#### 尺度与[无量纲数](@keyword=dimensionless_number|lang=zh-CN|style=Feynman)的力量
 
-我们如何利用[平衡定律](@entry_id:171298)，将风洞中的飞机模型与真实的巨型喷气式客机联系起来？答案在于尺度分析。通过对[平衡定律](@entry_id:171298)进行**[无量纲化](@entry_id:136704)**，我们可以剥离特定单位的束缚，让方程“说一种普适的语言”。这个过程会自动揭示出一些基本的[无量纲数](@entry_id:260863)，比如**雷诺数**（$Re$），它衡量了惯性力与[粘性力](@entry_id:263294)的比值。这些数字决定了流动的“性格”。例如，当雷诺数很小时（$Re \ll 1$），[粘性力](@entry_id:263294)占主导，流动平缓而有序，就像糖浆的流动一样；当雷诺数很大时（$Re \gg 1$），[惯性力](@entry_id:169104)占主导，流动变得湍急而混乱。通过匹配这些[无量纲数](@entry_id:260863)，工程师可以确保模型实验的结果能够准确地预测真实世界的行为。这是一种无需解出完整方程就能洞察物理本质的强大工具。
+我们如何利用[平衡定律](@keyword=balance_laws|lang=zh-CN|style=Feynman)，将风洞中的飞机模型与真实的巨型喷气式客机联系起来？答案在于尺度分析。通过对[平衡定律](@keyword=balance_laws|lang=zh-CN|style=Feynman)进行**无量纲化**，我们可以剥离特定单位的束缚，让方程“说一种普适的语言”。这个过程会自动揭示出一些基本的[无量纲数](@keyword=dimensionless_number|lang=zh-CN|style=Feynman)，比如**雷诺数**（$Re$），它衡量了惯性力与[粘性力](@keyword=viscous_forces|lang=zh-CN|style=Feynman)的比值。这些数字决定了流动的“性格”。例如，当雷诺数很小时（$Re \ll 1$），[粘性力](@keyword=viscous_forces|lang=zh-CN|style=Feynman)占主导，流动平缓而有序，就像糖浆的流动一样；当雷诺数很大时（$Re \gg 1$），[惯性力](@keyword=inertial_forces|lang=zh-CN|style=Feynman)占主导，流动变得湍急而混乱。通过匹配这些[无量纲数](@keyword=dimensionless_number|lang=zh-CN|style=Feynman)，工程师可以确保模型实验的结果能够准确地预测真实世界的行为。这是一种无需解出完整方程就能洞察物理本质的强大工具。[@problem_id:3735456]
 
-#### 为蓝天简化：[空气动力学](@entry_id:193011)
+#### 为蓝天简化：[空气动力学](@keyword=aerodynamics|lang=zh-CN|style=Feynman)
 
-在设计超音速飞机时，工程师们发现，在极高的速度下，空气的粘性和导热效应与巨大的[惯性力](@entry_id:169104)相比，常常可以忽略不计。这个洞察允许我们对完整的[纳维-斯托克斯方程](@entry_id:142275)（即包含粘性和导热的动量和能量平衡定律）进行简化。通过在通用[平衡定律](@entry_id:171298)中将粘性应力和热通量设为零，我们就得到了一个更简洁但依然强大的模型——**欧拉方程**。 这个模型完美地描述了高速、[无粘性流体](@entry_id:198262)的行为，是[计算流体动力学](@entry_id:142614)（CFD）和[航空航天工程](@entry_id:268503)的基石。这是一个绝佳的例子，说明了如何基于对物理状态的判断，从普适定律中创造出实用的模型。
+在设计超音速飞机时，工程师们发现，在极高的速度下，空气的粘性和导热效应与巨大的[惯性力](@keyword=inertial_forces|lang=zh-CN|style=Feynman)相比，常常可以忽略不计。这个洞察允许我们对完整的[纳维-斯托克斯方程](@keyword=navier_stokes_equations|lang=zh-CN|style=Feynman)（即包含粘性和导热的动量和能量平衡定律）进行简化。通过在通用[平衡定律](@keyword=balance_laws|lang=zh-CN|style=Feynman)中将粘性应力和热通量设为零，我们就得到了一个更简洁但依然强大的模型——**欧拉方程**。[@problem_id:3979222] 这个模型完美地描述了高速、[无粘性流体](@keyword=inviscid_fluid|lang=zh-CN|style=Feynman)的行为，是[计算流体动力学](@keyword=computational_fluid_dynamics|lang=zh-CN|style=Feynman)（CFD）和[航空航天工程](@keyword=aerospace_engineering|lang=zh-CN|style=Feynman)的基石。这是一个绝佳的例子，说明了如何基于对物理状态的判断，从普适定律中创造出实用的模型。
 
-#### 驯服漩涡：[湍流建模](@entry_id:151192)
+#### 驯服漩涡：[湍流建模](@keyword=turbulence_modeling|lang=zh-CN|style=Feynman)
 
-然而，如果我们*不能*忽略那些复杂的细节呢？想象一下[湍流](@entry_id:151300)——香烟升起的缭绕烟雾，或飞机机翼后方混乱的尾迹。直接计算每一个微小的漩涡和涡旋对于今天的计算机来说依然是不可能的任务。我们该怎么办？平衡定律再次给出了出路。我们可以对瞬时的、混乱的流动场进行数学上的“平均”处理，例如**雷诺平均**。将这个平均操作应用于原始的[平衡定律](@entry_id:171298)，我们得到了一套描述*平均*流动行为的新方程。 有趣的是，这个过程会产生一些新的、未知的项，例如“雷诺应力”和“湍流热通量”，它们代表了那些被平均掉的、混乱的[湍流](@entry_id:151300)脉动对平均流动的输运效应。这引出了著名的[湍流](@entry_id:151300)**封闭问题**——我们必须为这些新出现的项建立模型，才能求解平均方程。这个思想是几乎所有现代工程（从汽车设计到管道输运）中实用[流体仿真](@entry_id:138114)的核心。
+然而，如果我们*不能*忽略那些复杂的细节呢？想象一下[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)——香烟升起的缭绕烟雾，或飞机机翼后方混乱的尾迹。直接计算每一个微小的漩涡和涡旋对于今天的计算机来说依然是不可能的任务。我们该怎么办？平衡定律再次给出了出路。我们可以对瞬时的、混乱的流动场进行数学上的“平均”处理，例如**雷诺平均**。将这个平均操作应用于原始的[平衡定律](@keyword=balance_laws|lang=zh-CN|style=Feynman)，我们得到了一套描述*平均*流动行为的新方程。[@problem_id:3735457] 有趣的是，这个过程会产生一些新的、未知的项，例如“雷诺应力”和“湍流热通量”，它们代表了那些被平均掉的、混乱的[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)脉动对平均流动的输运效应。这引出了著名的[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)**封闭问题**——我们必须为这些新出现的项建立模型，才能求解平均方程。这个思想是几乎所有现代工程（从汽车设计到管道输运）中实用[流体仿真](@keyword=fluid_simulation|lang=zh-CN|style=Feynman)的核心。
 
 #### 模拟我们的星球：气候科学
 
-我们可以将这种处理复杂系统的思想延伸到最宏大的尺度：地球的气候。用于天气预报和[气候预测](@entry_id:184747)的庞大计算机模型，其核心正是在一个旋转的球体上求解质量、动量和能量的[平衡定律](@entry_id:171298)。 这些模型被清晰地划分为两个主要部分：**[动力核心](@entry_id:1124042)**（Dynamical Core）和**[物理参数化](@entry_id:1129649)**（Physical Parameterizations）。动力核心负责求解已分辨尺度的大气运动（风、压力、温度）的[平衡定律](@entry_id:171298)；而物理参数化则负责处理那些尺度太小而无法被[计算网格](@entry_id:168560)直接分辨的过程，例如云的形成、辐射传输和地表与大气的相互作用。这些[参数化](@entry_id:265163)方案为动力核心求解的平衡定律提供了源项和汇项。这清晰地展示了平衡定律如何成为我们理解和预[测地球](@entry_id:201133)这一复杂系统的理论框架。
+我们可以将这种处理复杂系统的思想延伸到最宏大的尺度：地球的气候。用于天气预报和[气候预测](@keyword=climate_prediction|lang=zh-CN|style=Feynman)的庞大计算机模型，其核心正是在一个旋转的球体上求解质量、动量和能量的[平衡定律](@keyword=balance_laws|lang=zh-CN|style=Feynman)。[@problem_id:4025103] 这些模型被清晰地划分为两个主要部分：**[动力核心](@keyword=dynamical_core|lang=zh-CN|style=Feynman)**（Dynamical Core）和**[物理参数化](@keyword=physical_parameterization|lang=zh-CN|style=Feynman)**（Physical Parameterizations）。动力核心负责求解已分辨尺度的大气运动（风、压力、温度）的[平衡定律](@keyword=balance_laws|lang=zh-CN|style=Feynman)；而物理参数化则负责处理那些尺度太小而无法被[计算网格](@keyword=computational_mesh|lang=zh-CN|style=Feynman)直接分辨的过程，例如云的形成、辐射传输和地表与大气的相互作用。这些[参数化](@keyword=parameterization|lang=zh-CN|style=Feynman)方案为动力核心求解的平衡定律提供了源项和汇项。这清晰地展示了平衡定律如何成为我们理解和预[测地球](@keyword=geodesic_balls|lang=zh-CN|style=Feynman)这一复杂系统的理论框架。
 
 ### 极端物质：激波、爆炸与等离子体
 
@@ -28,34 +28,34 @@
 
 #### 违背“定律”之声：激波
 
-当物体运动速度超过声速时会发生什么？一个有趣的事情发生了：我们之前熟悉的微分形式的[平衡定律](@entry_id:171298)似乎“失效”了，因为在某个极薄的区域内，流体的密度、压力和温度会发生剧烈的、不连续的跳跃。这个区域就是**激波**。然而，平衡定律并没有真正失败。在这种情况下，*积分形式*的[平衡定律](@entry_id:171298)依然坚如磐石。通过在激波前后画一个控制体，我们可以推导出著名的**朗金-雨果尼厄关系**（Rankine–Hugoniot relations）。  这些关系是一组简单的代数方程，它们精确地连接了激波前后的状态。超音速飞机的[音爆](@entry_id:263417)、宇宙中的超[新星爆发](@entry_id:160050)遗迹，其背后都遵循着这些从积分平衡定律中得出的简单法则。
+当物体运动速度超过声速时会发生什么？一个有趣的事情发生了：我们之前熟悉的微分形式的[平衡定律](@keyword=balance_laws|lang=zh-CN|style=Feynman)似乎“失效”了，因为在某个极薄的区域内，流体的密度、压力和温度会发生剧烈的、不连续的跳跃。这个区域就是**激波**。然而，平衡定律并没有真正失败。在这种情况下，*积分形式*的[平衡定律](@keyword=balance_laws|lang=zh-CN|style=Feynman)依然坚如磐石。通过在激波前后画一个控制体，我们可以推导出著名的**朗金-雨果尼厄关系**（Rankine–Hugoniot relations）。[@problem_id:3735483] [@problem_id:4209492] 这些关系是一组简单的代数方程，它们精确地连接了激波前后的状态。超音速飞机的[音爆](@keyword=sonic_boom|lang=zh-CN|style=Feynman)、宇宙中的超[新星爆发](@keyword=nova_explosion|lang=zh-CN|style=Feynman)遗迹，其背后都遵循着这些从积分平衡定律中得出的简单法则。
 
 #### 烈火狂澜：爆轰
 
-如果我们更进一步，在激波的锋面上瞬间释放化学能，会发生什么？我们就得到了一场爆炸，或者说**爆轰**（Detonation）。我们可以在能量平衡定律中简单地加入一个化学反应的能量源项，来描述这个过程。令人惊讶的是，通过这个简单的扩展，结合激[波理论](@entry_id:180588)，我们甚至可以计算出爆轰波的[传播速度](@entry_id:189384)，例如**查普曼-茹盖（Chapman-Jouguet）速度**。 这美妙地将流[体力](@entry_id:174230)学、[热力学](@entry_id:172368)和化学紧密地联系在了一起。
+如果我们更进一步，在激波的锋面上瞬间释放化学能，会发生什么？我们就得到了一场爆炸，或者说**爆轰**（Detonation）。我们可以在能量平衡定律中简单地加入一个化学反应的能量源项，来描述这个过程。令人惊讶的是，通过这个简单的扩展，结合激[波理论](@keyword=wave_theory|lang=zh-CN|style=Feynman)，我们甚至可以计算出爆轰波的[传播速度](@keyword=propagation_velocity|lang=zh-CN|style=Feynman)，例如**查普曼-茹盖（Chapman-Jouguet）速度**。[@problem_id:541244] 这美妙地将流[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)学、[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)和化学紧密地联系在了一起。
 
-#### 物质的第四态：等离子体与磁流[体力](@entry_id:174230)学
+#### 物质的第四态：等离子体与磁流[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)学
 
-如果流体本身可以导电，比如恒星内部的等离子体呢？我们可以再次*扩展*[平衡定律](@entry_id:171298)的框架。在[动量平衡](@entry_id:1128118)方程中，我们加入由电流和磁场产生的**洛伦兹力**（$\mathbf{J} \times \mathbf{B}$）；在能量平衡方程中，我们加入电流流过电阻介质产生的**[焦耳热](@entry_id:150496)**。当这套扩展后的[流体平衡](@entry_id:187794)定律与电磁学的[麦克斯韦方程组](@entry_id:150940)耦合时，一个全新的领域诞生了——**磁流[体力](@entry_id:174230)学（MHD）**。 这一理论框架是理解恒星、星系、太阳风以及地球磁场的关键，也是我们探索可控核聚变能源的基础。通过[无量纲化](@entry_id:136704)，我们还能发现新的物理参数，如磁雷诺数和阿尔芬马赫数，它们描述了流[体力](@entry_id:174230)和磁力的相对重要性。
+如果流体本身可以导电，比如恒星内部的等离子体呢？我们可以再次*扩展*[平衡定律](@keyword=balance_laws|lang=zh-CN|style=Feynman)的框架。在[动量平衡](@keyword=momentum_balance|lang=zh-CN|style=Feynman)方程中，我们加入由电流和磁场产生的**洛伦兹力**（$\mathbf{J} \times \mathbf{B}$）；在能量平衡方程中，我们加入电流流过电阻介质产生的**[焦耳热](@keyword=joule_heating|lang=zh-CN|style=Feynman)**。当这套扩展后的[流体平衡](@keyword=fluid_equilibrium|lang=zh-CN|style=Feynman)定律与电磁学的[麦克斯韦方程组](@keyword=maxwell_s_equations|lang=zh-CN|style=Feynman)耦合时，一个全新的领域诞生了——**磁流[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)学（MHD）**。[@problem_id:3735469] 这一理论框架是理解恒星、星系、太阳风以及地球磁场的关键，也是我们探索可控核聚变能源的基础。通过无量纲化，我们还能发现新的物理参数，如磁雷诺数和阿尔芬马赫数，它们描述了流[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)和磁力的相对重要性。[@problem_id:3505692]
 
-#### 光与力：[辐射流体力学](@entry_id:754011)
+#### 光与力：[辐射流体力学](@keyword=radiation_hydrodynamics_2|lang=zh-CN|style=Feynman)
 
-在宇宙中最极端的环境中，例如恒星核心或核聚变靶丸内部，仅仅考虑磁流体力学还不够。我们必须考虑光（光子）本身携带的能量和动量。平衡定律的框架再次展现了其惊人的包容性。我们可以在动量平衡中加入**[辐射压力](@entry_id:165366)**，在能量平衡中加入物质对辐射的吸收和发射。 这就构成了**[辐射流体力学](@entry_id:754011)**，它展示了[平衡定律](@entry_id:171298)这一框架的终极[延展性](@entry_id:160108)，使其能够描述宇宙中最严酷环境下的物理过程。
+在宇宙中最极端的环境中，例如恒星核心或核聚变靶丸内部，仅仅考虑磁流体力学还不够。我们必须考虑光（光子）本身携带的能量和动量。平衡定律的框架再次展现了其惊人的包容性。我们可以在动量平衡中加入**[辐射压力](@keyword=radiation_pressure_force|lang=zh-CN|style=Feynman)**，在能量平衡中加入物质对辐射的吸收和发射。[@problem_id:4036389] 这就构成了**[辐射流体力学](@keyword=radiation_hydrodynamics_2|lang=zh-CN|style=Feynman)**，它展示了[平衡定律](@keyword=balance_laws|lang=zh-CN|style=Feynman)这一框架的终极[延展性](@keyword=ductility|lang=zh-CN|style=Feynman)，使其能够描述宇宙中最严酷环境下的物理过程。
 
 ### 连接不同世界：从原子到人工智能
 
-在旅程的最后，我们将探索[平衡定律](@entry_id:171298)背后更深刻、也更前沿的联系。
+在旅程的最后，我们将探索[平衡定律](@keyword=balance_laws|lang=zh-CN|style=Feynman)背后更深刻、也更前沿的联系。
 
 #### 由众归一：动力学理论的启示
 
-我们不禁要问：这些宏观的平衡定律本身又从何而来？它们是物理世界的最底层规律吗？答案是否定的。它们实际上是数量庞大的微观[粒子统计](@entry_id:145640)行为的宏观体现。在更基础的层面，我们可以用一个**分布函数**来描述气体中所有粒子的位置和速度状态，这个函数遵循着更基本的**动力学方程**（如[玻尔兹曼方程](@entry_id:138866)）。令人震撼的是，质量、动量和能量的平衡定律，可以被精确地推导为这个[动力学方程](@entry_id:751029)的前三阶**矩**。 这揭示了一个深刻的联系：我们熟悉的[连续介质力学](@entry_id:155125)，是从更底层的[粒子统计](@entry_id:145640)物理中“涌现”出来的。
+我们不禁要问：这些宏观的平衡定律本身又从何而来？它们是物理世界的最底层规律吗？答案是否定的。它们实际上是数量庞大的微观[粒子统计](@keyword=particle_statistics|lang=zh-CN|style=Feynman)行为的宏观体现。在更基础的层面，我们可以用一个**分布函数**来描述气体中所有粒子的位置和速度状态，这个函数遵循着更基本的**动力学方程**（如[玻尔兹曼方程](@keyword=boltzmann_equation|lang=zh-CN|style=Feynman)）。令人震撼的是，质量、动量和能量的平衡定律，可以被精确地推导为这个[动力学方程](@keyword=kinetic_equation|lang=zh-CN|style=Feynman)的前三阶**矩**。[@problem_id:3779462] 这揭示了一个深刻的联系：我们熟悉的[连续介质力学](@keyword=continuum_mechanics|lang=zh-CN|style=Feynman)，是从更底层的[粒子统计](@keyword=particle_statistics|lang=zh-CN|style=Feynman)物理中“涌现”出来的。
 
 #### 从微观结构到宏观性质：均匀化与多尺度思想
 
-我们可以反向运用这个思想。如果我们知道一种材料的微观结构（例如一种复合材料），我们能否预测它在宏观上表现出的性质（如等效导热系数），以便代入宏观的平衡定律中使用？答案是肯定的，这正是**均匀化理论**（Homogenization）的精髓。 通过在一个微小的、具有代表性的“单胞”上求解[平衡定律](@entry_id:171298)，我们可以推导出整个材料的“有效”宏观性质。日常生活中常见的冷凝现象也是一个很好的例子，正是界面上的微观物理（潜热释放、表面张力）决定了宏观的[冷凝模式](@entry_id:1122846)（膜状或滴状）以及[传热效率](@entry_id:153787)的巨大差异。 这展示了宏观性质是如何从微观结构中涌现的，为“自下而上”地设计新材料提供了理论基础。
+我们可以反向运用这个思想。如果我们知道一种材料的微观结构（例如一种复合材料），我们能否预测它在宏观上表现出的性质（如等效导热系数），以便代入宏观的平衡定律中使用？答案是肯定的，这正是**均匀化理论**（Homogenization）的精髓。[@problem_id:3735486] 通过在一个微小的、具有代表性的“单胞”上求解[平衡定律](@keyword=balance_laws|lang=zh-CN|style=Feynman)，我们可以推导出整个材料的“有效”宏观性质。日常生活中常见的冷凝现象也是一个很好的例子，正是界面上的微观物理（潜热释放、表面张力）决定了宏观的[冷凝模式](@keyword=condensation_modes|lang=zh-CN|style=Feynman)（膜状或滴状）以及[传热效率](@keyword=heat_transfer_effectiveness|lang=zh-CN|style=Feynman)的巨大差异。[@problem_id:3949032] 这展示了宏观性质是如何从微观结构中涌现的，为“自下而上”地设计新材料提供了理论基础。
 
 #### 旧定律，新智慧：物理启发的机器学习
 
-在这次探索的终点，我们来到了科学的最前沿。我们如何让机器学习和人工智能模型变得更智能、更可靠？答案是：教它们物理学！我们可以将平衡定律*直接构建到神经网络的架构中*。 这种方法被称为**物理启发的机器学习**（Physics-Informed Machine Learning, PINN）。例如，通过一种特定的数学[参数化](@entry_id:265163)（如将速度场表示为一个矢量势的旋度），可以强制神经网络的输出永远满足[质量守恒](@entry_id:204015)（不可压缩性）。通过构建具有特定对称性（斜伴随性）的算子，可以强制网络在演化过程中精确地保持能量守恒。这确保了人工智能的预测在物理上是合理的，即便在训练数据稀疏的区域也是如此。
+在这次探索的终点，我们来到了科学的最前沿。我们如何让机器学习和人工智能模型变得更智能、更可靠？答案是：教它们物理学！我们可以将平衡定律*直接构建到神经网络的架构中*。[@problem_id:4235587] 这种方法被称为**物理启发的机器学习**（Physics-Informed Machine Learning, PINN）。例如，通过一种特定的数学[参数化](@keyword=parameterization|lang=zh-CN|style=Feynman)（如将速度场表示为一个矢量势的旋度），可以强制神经网络的输出永远满足[质量守恒](@keyword=mass_conservation|lang=zh-CN|style=Feynman)（不可压缩性）。通过构建具有特定对称性（斜伴随性）的算子，可以强制网络在演化过程中精确地保持能量守恒。这确保了人工智能的预测在物理上是合理的，即便在训练数据稀疏的区域也是如此。
 
-从工程设计到气候变化，从[音爆](@entry_id:263417)到超新星，从原子的统计之舞到人工智能的[神经网络架构](@entry_id:637524)，质量、动量和能量的平衡定律——这一源于“进入的必须等于流出的（或被储存的）”的简单思想——为我们描述宇宙提供了一套统一而强大的语言。它们是连接不同尺度、不同学科的桥梁，其深刻的内涵和强大的生命力，在科学探索的道路上，将继续指引我们前行。
+从工程设计到气候变化，从[音爆](@keyword=sonic_boom|lang=zh-CN|style=Feynman)到超新星，从原子的统计之舞到人工智能的神经网络架构，质量、动量和能量的平衡定律——这一源于“进入的必须等于流出的（或被储存的）”的简单思想——为我们描述宇宙提供了一套统一而强大的语言。它们是连接不同尺度、不同学科的桥梁，其深刻的内涵和强大的生命力，在科学探索的道路上，将继续指引我们前行。

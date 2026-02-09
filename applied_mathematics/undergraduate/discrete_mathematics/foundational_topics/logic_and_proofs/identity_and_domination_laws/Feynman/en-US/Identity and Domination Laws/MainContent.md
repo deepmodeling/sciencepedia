@@ -1,7 +1,7 @@
 ## Introduction
 In the fields of mathematics and computer science, it's easy to get lost in a jungle of complexity. However, the most skilled practitioners know a secret: beneath the most tangled problems often lie a few simple, powerful rules. The art of mastery is not in memorizing countless formulas, but in deeply understanding these fundamental principles. This article addresses the challenge of simplifying complex logical expressions by focusing on two such foundational pairs of rules: the **Identity and Domination Laws**. These laws act as the anchors for a vast amount of logical reasoning, allowing us to cut through confusion and reveal the simple core of a problem.
 
-This article is structured to guide you from foundational theory to practical application. In **Principles and Mechanisms**, we will explore the core concepts of "everything" (the Universal Set and Tautology) and "nothing" (the Empty Set and Contradiction) and define the four laws that govern their interactions. Next, in **Applications and Interdisciplinary Connections**, we will see how these seemingly obvious rules have profound and practical consequences, simplifying everything from database queries and [digital circuits](@article_id:268018) to abstract structures in algebra and graph theory. Finally, the **Hands-On Practices** section will challenge you to apply this knowledge to solve concrete problems, solidifying your understanding. By the end, you will not only know these laws but also appreciate their power to bring clarity to complexity.
+This article is structured to guide you from foundational theory to practical application. In **Principles and Mechanisms**, we will explore the core concepts of "everything" (the Universal Set and Tautology) and "nothing" (the Empty Set and Contradiction) and define the four laws that govern their interactions. Next, in **Applications and Interdisciplinary Connections**, we will see how these seemingly obvious rules have profound and practical consequences, simplifying everything from database queries and [digital circuits](@keyword=digital_circuits|lang=en-US|style=Feynman) to abstract structures in algebra and graph theory. Finally, the **Hands-On Practices** section will challenge you to apply this knowledge to solve concrete problems, solidifying your understanding. By the end, you will not only know these laws but also appreciate their power to bring clarity to complexity.
 
 ## Principles and Mechanisms
 
@@ -11,7 +11,7 @@ You might think that logic and mathematics are all about navigating a jungle of 
 
 Let's start by setting up our world. In any system of logic, whether we're talking about groups of people, propositions that are true or false, or sets of computer data, we always have two extreme concepts.
 
-First, there's the idea of **everything**. This is the whole universe of things we are considering. In [set theory](@article_id:137289), we call it the **Universal Set**, often written as $U$. If we are talking about all students at a university, $U$ is the set of all students . If we're discussing all possible strings of 1s and 0s in computer science, we call it $\Sigma^*$ . In [propositional logic](@article_id:143041), this is the concept of a **Tautology** ($\top$)—a statement that is always, unshakably true, like "$1=1$".
+First, there's the idea of **everything**. This is the whole universe of things we are considering. In [set theory](@keyword=set_theory|lang=en-US|style=Feynman), we call it the **Universal Set**, often written as $U$. If we are talking about all students at a university, $U$ is the set of all students [@problem_id:1374728]. If we're discussing all possible strings of 1s and 0s in computer science, we call it $\Sigma^*$ [@problem_id:1374746]. In [propositional logic](@keyword=propositional_logic|lang=en-US|style=Feynman), this is the concept of a **Tautology** ($\top$)—a statement that is always, unshakably true, like "$1=1$".
 
 Second, there's the idea of **nothing**. This is the complete absence of things. In set theory, it's the **Empty Set**, $\emptyset$, a box with absolutely nothing in it. In logic, it's a **Contradiction** ($\bot$)—a statement that is always, necessarily false, like "$1=2$".
 
@@ -25,13 +25,13 @@ Imagine you have a language $L$, which is simply a set of strings. Now, what if 
 
 $$ L \cup \emptyset = L $$
 
-This seems trivial, but it's a foundational check on our sanity . The empty set is the **identity element** for the union operation. In logic, this is like saying "the sky is blue OR (pigs can fly)". The second part is false ($\bot$), so the truth of the whole statement depends entirely on whether the sky is blue. The "pigs can fly" part adds no information. We write this as $p \lor \bot \equiv p$.
+This seems trivial, but it's a foundational check on our sanity [@problem_id:1374724]. The empty set is the **identity element** for the union operation. In logic, this is like saying "the sky is blue OR (pigs can fly)". The second part is false ($\bot$), so the truth of the whole statement depends entirely on whether the sky is blue. The "pigs can fly" part adds no information. We write this as $p \lor \bot \equiv p$.
 
 Now for the other side of the coin. Suppose we have the set of all customers who have an item in their "Wishlist," let's call it $W$. Now we want to find the customers who are in *both* set $W$ *and* in the set of all customers, $U$. Well, since everyone in the Wishlist set is, by definition, a customer, finding the overlap doesn't shrink the group at all. You just get the Wishlist group back. This is our second identity law:
 
 $$ W \cap U = W $$
 
-Here, the universal set $U$ is the **[identity element](@article_id:138827)** for the intersection operation . The logical parallel is just as intuitive. Imagine a smart home alarm that goes off if motion is detected (`M`), the system is armed (`O`), *and* a master test signal is active (`T`). If that test signal is permanently wired to be *always* active, its logical value is `1` (or $\top$). The logic for the alarm becomes $M \cdot O \cdot 1$. Since multiplying by 1 changes nothing, the logic simplifies to just $M \cdot O$. The always-on test signal is a necessary part of the circuit, but it doesn't add any *contingency* to the logic . We write this as $p \land \top \equiv p$.
+Here, the universal set $U$ is the **[identity element](@keyword=identity_element|lang=en-US|style=Feynman)** for the intersection operation [@problem_id:1374732]. The logical parallel is just as intuitive. Imagine a smart home alarm that goes off if motion is detected (`M`), the system is armed (`O`), *and* a master test signal is active (`T`). If that test signal is permanently wired to be *always* active, its logical value is `1` (or $\top$). The logic for the alarm becomes $M \cdot O \cdot 1$. Since multiplying by 1 changes nothing, the logic simplifies to just $M \cdot O$. The always-on test signal is a necessary part of the circuit, but it doesn't add any *contingency* to the logic [@problem_id:1374737]. We write this as $p \land \top \equiv p$.
 
 ### The Overlords: Domination and Annihilation
 
@@ -39,11 +39,11 @@ The Identity Laws are gentle. They leave things as they are. The Domination Laws
 
 #### The Domination of "Everything"
 
-What happens if you take a specific group of employees—say, senior engineers—and form a **union** with the set of *all* employees in the entire company, $U$? The resulting group is simply... everyone. The original, more specific group is completely absorbed into the [universal set](@article_id:263706). It doesn't matter how complex the initial group was; combining it with "everything" just gives you "everything" . This is the domination law for union:
+What happens if you take a specific group of employees—say, senior engineers—and form a **union** with the set of *all* employees in the entire company, $U$? The resulting group is simply... everyone. The original, more specific group is completely absorbed into the [universal set](@keyword=universal_set|lang=en-US|style=Feynman). It doesn't matter how complex the initial group was; combining it with "everything" just gives you "everything" [@problem_id:1374728]. This is the domination law for union:
 
 $$ A \cup U = U $$
 
-This principle can have surprising consequences. Imagine the logic for an autonomous delivery drone. It's cleared for takeoff if "the weather is clear AND (the recipient is ready OR the diagnostic check passes)". Now, suppose the company pushes a software update with a new, ultra-reliable diagnostic system that is guaranteed to always pass. The proposition "the diagnostic check passes" becomes a [tautology](@article_id:143435) ($\top$). Our logic is $r \land (p \lor \top)$. Look at the part in the parentheses. Does it matter if the recipient is ready? No! Because "the recipient is ready OR (something that is always true)" will itself *always be true*. The tautology `dominates` the OR statement. The whole parenthesis simplifies to $\top$. The drone's takeoff logic then becomes "the weather is clear AND (true)", which is just "the weather is clear" . The recipient's availability has been made logically irrelevant by the guaranteed-perfect diagnostic! This is the domination law in [propositional logic](@article_id:143041):
+This principle can have surprising consequences. Imagine the logic for an autonomous delivery drone. It's cleared for takeoff if "the weather is clear AND (the recipient is ready OR the diagnostic check passes)". Now, suppose the company pushes a software update with a new, ultra-reliable diagnostic system that is guaranteed to always pass. The proposition "the diagnostic check passes" becomes a [tautology](@keyword=tautology|lang=en-US|style=Feynman) ($\top$). Our logic is $r \land (p \lor \top)$. Look at the part in the parentheses. Does it matter if the recipient is ready? No! Because "the recipient is ready OR (something that is always true)" will itself *always be true*. The tautology `dominates` the OR statement. The whole parenthesis simplifies to $\top$. The drone's takeoff logic then becomes "the weather is clear AND (true)", which is just "the weather is clear" [@problem_id:1374733]. The recipient's availability has been made logically irrelevant by the guaranteed-perfect diagnostic! This is the domination law in [propositional logic](@keyword=propositional_logic|lang=en-US|style=Feynman):
 
 $$ p \lor \top \equiv \top $$
 
@@ -53,11 +53,11 @@ Now consider intersection. Suppose a university sets up a new prerequisite for a
 
 $$ P \cap \emptyset = \emptyset $$
 
-This law is a bedrock principle for finding contradictions or invalid configurations in any system . Its logical counterpart is just as powerful. If a statement requires that "proposition $p$ is true AND (something that is always false)", the entire statement is doomed from the start. A single drop of falsehood poisons the entire AND-chain. We write this as:
+This law is a bedrock principle for finding contradictions or invalid configurations in any system [@problem_id:1374744]. Its logical counterpart is just as powerful. If a statement requires that "proposition $p$ is true AND (something that is always false)", the entire statement is doomed from the start. A single drop of falsehood poisons the entire AND-chain. We write this as:
 
 $$ p \land \bot \equiv \bot $$
 
-This is why, in [formal languages](@article_id:264616), the intersection of any language $L$, no matter how complex, with the empty language $\emptyset$ is always just $\emptyset$. You cannot find a string that is simultaneously in your language *and* in a language that contains no strings .
+This is why, in [formal languages](@keyword=formal_languages|lang=en-US|style=Feynman), the intersection of any language $L$, no matter how complex, with the empty language $\emptyset$ is always just $\emptyset$. You cannot find a string that is simultaneously in your language *and* in a language that contains no strings [@problem_id:1374683].
 
 ### A Symphony of Simplification
 
@@ -67,7 +67,7 @@ Consider a data analyst at a university trying to run a database query. The quer
 
 $$ Q = \left( \left( C \cup (P \cap P^c) \right) \cap (M \cup U) \right) \cup (C \cap C) $$
 
-Here, $C$ are Computer Science majors, $P$ are Physics majors, $M$ are Math Club members, and $U$ is the whole student body. At first glance, this is a headache. But let's apply our simple laws and see what happens .
+Here, $C$ are Computer Science majors, $P$ are Physics majors, $M$ are Math Club members, and $U$ is the whole student body. At first glance, this is a headache. But let's apply our simple laws and see what happens [@problem_id:1374755].
 
 1.  Look at the innermost pieces first. We see $P \cap P^c$. This asks for students who are physics majors AND not physics majors. That's a logical contradiction, so this set is $\emptyset$.
 2.  Our expression simplifies. The first part becomes $C \cup \emptyset$. From our identity law, adding nothing changes nothing. This is just $C$.
@@ -78,6 +78,6 @@ Here, $C$ are Computer Science majors, $P$ are Physics majors, $M$ are Math Club
 
 After all that, the gargantuan query was just an absurdly complicated way of saying "find all the Computer Science majors." By patiently applying these few fundamental laws, we tore down the complex facade to reveal the simple core.
 
-This isn't just a party trick for set theory. The same symphony plays out everywhere. In [formal languages](@article_id:264616), an expression like `((L_even ∩ L_odd) ∪ L_prefix) ∩ (L_even ∪ L_odd)` looks intimidating. But when you realize that a string cannot have both an even and an odd number of '1's (so `L_even ∩ L_odd = ∅`), and that it must have either an even or an odd number (so `L_even ∪ L_odd = Σ*`, our universal set), the expression collapses like a house of cards to just `L_prefix` .
+This isn't just a party trick for set theory. The same symphony plays out everywhere. In [formal languages](@keyword=formal_languages|lang=en-US|style=Feynman), an expression like `((L_even ∩ L_odd) ∪ L_prefix) ∩ (L_even ∪ L_odd)` looks intimidating. But when you realize that a string cannot have both an even and an odd number of '1's (so `L_even ∩ L_odd = ∅`), and that it must have either an even or an odd number (so `L_even ∪ L_odd = Σ*`, our universal set), the expression collapses like a house of cards to just `L_prefix` [@problem_id:1374746].
 
-The structure is the same. The laws are the same. Whether you are designing circuits, querying databases, programming drones, or exploring the abstract world of [formal languages](@article_id:264616), you find these same fundamental principles at work. Understanding them is like having a key that unlocks simplicity in a world that often seems intent on being complex. It is a powerful reminder that the most profound truths are often the most basic ones.
+The structure is the same. The laws are the same. Whether you are designing circuits, querying databases, programming drones, or exploring the abstract world of [formal languages](@keyword=formal_languages|lang=en-US|style=Feynman), you find these same fundamental principles at work. Understanding them is like having a key that unlocks simplicity in a world that often seems intent on being complex. It is a powerful reminder that the most profound truths are often the most basic ones.

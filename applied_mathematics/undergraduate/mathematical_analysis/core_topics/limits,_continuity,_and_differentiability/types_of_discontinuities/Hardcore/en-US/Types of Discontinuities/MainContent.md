@@ -14,13 +14,13 @@ When any of these conditions fail, the function is said to have a **discontinuit
 
 ### Discontinuities of the First Kind
 
-A discontinuity at a point $c$ is classified as a **discontinuity of the first kind** if both the [left-hand limit](@entry_id:139055), $\lim_{x \to c^-} f(x)$, and the [right-hand limit](@entry_id:140515), $\lim_{x \to c^+} f(x)$, exist as finite numbers. Within this category, we distinguish between two types based on whether these [one-sided limits](@entry_id:138326) are equal.
+A discontinuity at a point $c$ is classified as a **discontinuity of the first kind** if both the left-hand limit, $\lim_{x \to c^-} f(x)$, and the right-hand limit, $\lim_{x \to c^+} f(x)$, exist as finite numbers. Within this category, we distinguish between two types based on whether these one-sided limits are equal.
 
 #### Removable Discontinuities
 
-A **[removable discontinuity](@entry_id:146730)** occurs when the left-hand and right-hand limits at a point $c$ are equal, but this common value does not match the function's value at $c$. Formally, $\lim_{x \to c^-} f(x) = \lim_{x \to c^+} f(x) = L$, where $L$ is a finite number, but either $f(c) \neq L$ or $f(c)$ is not defined. Such a discontinuity is termed "removable" because it can be eliminated by simply defining or redefining the function at the single point $c$ to have the value $L$. The resulting function would then be continuous at $c$. Visually, this often corresponds to a "hole" in the graph of the function.
+A **removable discontinuity** occurs when the left-hand and right-hand limits at a point $c$ are equal, but this common value does not match the function's value at $c$. Formally, $\lim_{x \to c^-} f(x) = \lim_{x \to c^+} f(x) = L$, where $L$ is a finite number, but either $f(c) \neq L$ or $f(c)$ is not defined. Such a discontinuity is termed "removable" because it can be eliminated by simply defining or redefining the function at the single point $c$ to have the value $L$. The resulting function would then be continuous at $c$. Visually, this often corresponds to a "hole" in the graph of the function.
 
-A classic example arises from [rational functions](@entry_id:154279) where a common factor can be cancelled from the numerator and denominator. Consider the function defined by :
+A classic example arises from rational functions where a common factor can be cancelled from the numerator and denominator. Consider the function defined by [@problem_id:1341886]:
 $$
 f(x) = 
 \begin{cases} 
@@ -32,24 +32,24 @@ For any $x \neq 2$, we can factor the numerator as a difference of cubes, $x^3 -
 $$
 f(x) = x^2 + 2x + 4 \quad (\text{for } x \neq 2)
 $$
-The limit as $x$ approaches $2$ is therefore straightforward to calculate: $\lim_{x \to 2} f(x) = 2^2 + 2(2) + 4 = 12$. However, the function is explicitly defined as $f(2) = 10$. Since the limit exists and is finite ($\lim_{x \to 2} f(x) = 12$), but is not equal to the function's value ($f(2) = 10$), the function has a [removable discontinuity](@entry_id:146730) at $x=2$. We could "remove" this discontinuity by redefining $f(2)$ to be $12$.
+The limit as $x$ approaches $2$ is therefore straightforward to calculate: $\lim_{x \to 2} f(x) = 2^2 + 2(2) + 4 = 12$. However, the function is explicitly defined as $f(2) = 10$. Since the limit exists and is finite ($\lim_{x \to 2} f(x) = 12$), but is not equal to the function's value ($f(2) = 10$), the function has a removable discontinuity at $x=2$. We could "remove" this discontinuity by redefining $f(2)$ to be $12$.
 
-Removable discontinuities are not limited to simple [algebraic functions](@entry_id:187534). Consider the function :
+Removable discontinuities are not limited to simple algebraic functions. Consider the function [@problem_id:2331828]:
 $$
 f(x) = \begin{cases}
 \exp\left(-\frac{1}{x^2}\right), & \text{if } x \neq 0 \\
 1, & \text{if } x = 0
 \end{cases}
 $$
-To analyze the point $x=0$, we examine the limit. As $x \to 0$, the term $x^2$ approaches $0$ from the positive side, so its reciprocal $1/x^2$ approaches $+\infty$. Consequently, $-1/x^2$ approaches $-\infty$. The limit becomes $\lim_{x \to 0} \exp(-1/x^2) = \lim_{t \to -\infty} \exp(t) = 0$. Since the limit as $x \to 0$ exists and equals $0$, but the function is defined as $f(0)=1$, we again have a [removable discontinuity](@entry_id:146730).
+To analyze the point $x=0$, we examine the limit. As $x \to 0$, the term $x^2$ approaches $0$ from the positive side, so its reciprocal $1/x^2$ approaches $+\infty$. Consequently, $-1/x^2$ approaches $-\infty$. The limit becomes $\lim_{x \to 0} \exp(-1/x^2) = \lim_{t \to -\infty} \exp(t) = 0$. Since the limit as $x \to 0$ exists and equals $0$, but the function is defined as $f(0)=1$, we again have a removable discontinuity.
 
-A more subtle and fascinating case is presented by Thomae's function, sometimes called the "popcorn function" . It is defined as $f(x)=0$ for irrational $x$, and $f(p/q) = 1/q$ for rational $x=p/q$ in lowest terms ($q>0$). At any non-zero rational number $c = p_0/q_0$, the function's value is $f(c) = 1/q_0 > 0$. However, one can show that for any point $c$, the limit is $\lim_{x \to c} f(x) = 0$. This is because to get close to $c$, any rational numbers must have increasingly large denominators, causing their function values to approach zero. Since $\lim_{x \to c} f(x) = 0 \neq f(c)$, Thomae's function has a [removable discontinuity](@entry_id:146730) at every non-zero rational number.
+A more subtle and fascinating case is presented by Thomae's function, sometimes called the "popcorn function" [@problem_id:1341924]. It is defined as $f(x)=0$ for irrational $x$, and $f(p/q) = 1/q$ for rational $x=p/q$ in lowest terms ($q>0$). At any non-zero rational number $c = p_0/q_0$, the function's value is $f(c) = 1/q_0 > 0$. However, one can show that for any point $c$, the limit is $\lim_{x \to c} f(x) = 0$. This is because to get close to $c$, any rational numbers must have increasingly large denominators, causing their function values to approach zero. Since $\lim_{x \to c} f(x) = 0 \neq f(c)$, Thomae's function has a removable discontinuity at every non-zero rational number.
 
 #### Jump Discontinuities
 
-A **[jump discontinuity](@entry_id:139886)** occurs when the left-hand and right-hand limits at a point $c$ both exist and are finite, but they are not equal. That is, $\lim_{x \to c^-} f(x) = L_1$ and $\lim_{x \to c^+} f(x) = L_2$, with $L_1 \neq L_2$. The value of $f(c)$ itself can be $L_1$, $L_2$, or some other number entirely; its value does not change the classification of the discontinuity. The "jump" of the function at $c$ is defined as the difference between the [one-sided limits](@entry_id:138326), $L_2 - L_1$.
+A **jump discontinuity** occurs when the left-hand and right-hand limits at a point $c$ both exist and are finite, but they are not equal. That is, $\lim_{x \to c^-} f(x) = L_1$ and $\lim_{x \to c^+} f(x) = L_2$, with $L_1 \neq L_2$. The value of $f(c)$ itself can be $L_1$, $L_2$, or some other number entirely; its value does not change the classification of the discontinuity. The "jump" of the function at $c$ is defined as the difference between the one-sided limits, $L_2 - L_1$.
 
-The canonical example of a [jump discontinuity](@entry_id:139886) is the **[signum function](@entry_id:167507)** , defined as:
+The canonical example of a jump discontinuity is the **signum function** [@problem_id:1341913], defined as:
 $$
 f(x) = \text{sgn}(x) = \begin{cases}
 -1 & \text{if } x \lt 0 \\
@@ -57,19 +57,19 @@ f(x) = \text{sgn}(x) = \begin{cases}
 1 & \text{if } x \gt 0
 \end{cases}
 $$
-At $x=0$, the limit from the left is $\lim_{x \to 0^-} f(x) = -1$, while the limit from the right is $\lim_{x \to 0^+} f(x) = 1$. Since both limits exist but are unequal, the function has a [jump discontinuity](@entry_id:139886) at $x=0$. The jump is $1 - (-1) = 2$.
+At $x=0$, the limit from the left is $\lim_{x \to 0^-} f(x) = -1$, while the limit from the right is $\lim_{x \to 0^+} f(x) = 1$. Since both limits exist but are unequal, the function has a jump discontinuity at $x=0$. The jump is $1 - (-1) = 2$.
 
-Functions can exhibit jump discontinuities at an infinite number of points. Consider the **fractional part function**, $f(x) = x - \lfloor x \rfloor$, where $\lfloor x \rfloor$ is the greatest integer less than or equal to $x$ . Let's analyze its behavior at an arbitrary integer $n$. For $x$ approaching $n$ from the left (e.g., $x \in (n-1, n)$), $\lfloor x \rfloor = n-1$, so $f(x) = x - (n-1)$. The [left-hand limit](@entry_id:139055) is $\lim_{x \to n^-} f(x) = n - (n-1) = 1$. For $x$ approaching $n$ from the right (e.g., $x \in (n, n+1)$), $\lfloor x \rfloor = n$, so $f(x) = x-n$. The [right-hand limit](@entry_id:140515) is $\lim_{x \to n^+} f(x) = n - n = 0$. Since the [one-sided limits](@entry_id:138326) exist but differ ($1 \neq 0$), the function has a [jump discontinuity](@entry_id:139886) at every integer $n$. The jump at each integer is $0 - 1 = -1$.
+Functions can exhibit jump discontinuities at an infinite number of points. Consider the **fractional part function**, $f(x) = x - \lfloor x \rfloor$, where $\lfloor x \rfloor$ is the greatest integer less than or equal to $x$ [@problem_id:1341932]. Let's analyze its behavior at an arbitrary integer $n$. For $x$ approaching $n$ from the left (e.g., $x \in (n-1, n)$), $\lfloor x \rfloor = n-1$, so $f(x) = x - (n-1)$. The left-hand limit is $\lim_{x \to n^-} f(x) = n - (n-1) = 1$. For $x$ approaching $n$ from the right (e.g., $x \in (n, n+1)$), $\lfloor x \rfloor = n$, so $f(x) = x-n$. The right-hand limit is $\lim_{x \to n^+} f(x) = n - n = 0$. Since the one-sided limits exist but differ ($1 \neq 0$), the function has a jump discontinuity at every integer $n$. The jump at each integer is $0 - 1 = -1$.
 
 ### Discontinuities of the Second Kind (Essential Discontinuities)
 
-A discontinuity is classified as a **discontinuity of the second kind**, or an **[essential discontinuity](@entry_id:141343)**, if it is not of the first kind. This means that at the point $c$, at least one of the [one-sided limits](@entry_id:138326) either fails to exist or is infinite. This category encompasses more "severe" types of discontinuous behavior.
+A discontinuity is classified as a **discontinuity of the second kind**, or an **essential discontinuity**, if it is not of the first kind. This means that at the point $c$, at least one of the one-sided limits either fails to exist or is infinite. This category encompasses more "severe" types of discontinuous behavior.
 
 #### Infinite Discontinuities
 
-An **[infinite discontinuity](@entry_id:159869)** is a type of [essential discontinuity](@entry_id:141343) where at least one of the [one-sided limits](@entry_id:138326) is either $+\infty$ or $-\infty$. Such points typically correspond to vertical asymptotes in the graph of the function.
+An **infinite discontinuity** is a type of essential discontinuity where at least one of the one-sided limits is either $+\infty$ or $-\infty$. Such points typically correspond to vertical asymptotes in the graph of the function.
 
-For example, consider the piecewise function defined at $x=0$ in :
+For example, consider the piecewise function defined at $x=0$ in [@problem_id:1341935]:
 $$
 f(x) = \begin{cases}
 \frac{\exp(2x) - 1}{x} & \text{if } x  0 \\
@@ -77,15 +77,15 @@ f(x) = \begin{cases}
 \frac{1}{x^2}  \text{if } x > 0
 \end{cases}
 $$
-Let's analyze the [one-sided limits](@entry_id:138326) at $x=0$. The [left-hand limit](@entry_id:139055) can be found using L'Hôpital's Rule or the definition of the derivative: $\lim_{x \to 0^-} \frac{\exp(2x) - 1}{x} = 2$. The [right-hand limit](@entry_id:140515) is $\lim_{x \to 0^+} \frac{1}{x^2} = +\infty$. Since the [right-hand limit](@entry_id:140515) is infinite, the function has an [infinite discontinuity](@entry_id:159869) at $x=0$. It does not matter that the [left-hand limit](@entry_id:139055) is finite; the presence of a single infinite one-sided limit is sufficient for this classification.
+Let's analyze the one-sided limits at $x=0$. The left-hand limit can be found using L'Hôpital's Rule or the definition of the derivative: $\lim_{x \to 0^-} \frac{\exp(2x) - 1}{x} = 2$. The right-hand limit is $\lim_{x \to 0^+} \frac{1}{x^2} = +\infty$. Since the right-hand limit is infinite, the function has an infinite discontinuity at $x=0$. It does not matter that the left-hand limit is finite; the presence of a single infinite one-sided limit is sufficient for this classification.
 
 #### Oscillatory Discontinuities
 
-The most complex type of [essential discontinuity](@entry_id:141343) occurs when a one-sided limit fails to exist not because the function tends to infinity, but because it oscillates without approaching any single value.
+The most complex type of essential discontinuity occurs when a one-sided limit fails to exist not because the function tends to infinity, but because it oscillates without approaching any single value.
 
-The archetypal example of this behavior is the function $f(x) = \sin(1/x)$ for $x \neq 0$ . As $x$ approaches $0$, its reciprocal $1/x$ grows without bound. Consequently, the sine function oscillates between $-1$ and $1$ with increasing frequency. To prove formally that the limit does not exist, we can find two sequences, both converging to $0$, for which the function values converge to different limits. Let $x_n = \frac{1}{2\pi n + \pi/2}$ and $y_n = \frac{1}{2\pi n + 3\pi/2}$. Both $x_n \to 0$ and $y_n \to 0$ as $n \to \infty$. However, $f(x_n) = \sin(2\pi n + \pi/2) = 1$ for all $n$, while $f(y_n) = \sin(2\pi n + 3\pi/2) = -1$ for all $n$. Since we found paths to zero that yield different limiting values (1 and -1), the limit $\lim_{x \to 0} \sin(1/x)$ does not exist. This is a hallmark of an oscillatory [essential discontinuity](@entry_id:141343).
+The archetypal example of this behavior is the function $f(x) = \sin(1/x)$ for $x \neq 0$ [@problem_id:1341933]. As $x$ approaches $0$, its reciprocal $1/x$ grows without bound. Consequently, the sine function oscillates between $-1$ and $1$ with increasing frequency. To prove formally that the limit does not exist, we can find two sequences, both converging to $0$, for which the function values converge to different limits. Let $x_n = \frac{1}{2\pi n + \pi/2}$ and $y_n = \frac{1}{2\pi n + 3\pi/2}$. Both $x_n \to 0$ and $y_n \to 0$ as $n \to \infty$. However, $f(x_n) = \sin(2\pi n + \pi/2) = 1$ for all $n$, while $f(y_n) = \sin(2\pi n + 3\pi/2) = -1$ for all $n$. Since we found paths to zero that yield different limiting values (1 and -1), the limit $\lim_{x \to 0} \sin(1/x)$ does not exist. This is a hallmark of an oscillatory essential discontinuity.
 
-An even more extreme example is the **Dirichlet function**, which is defined as $f(x)=1$ for rational numbers and $f(x)=0$ for irrational numbers . Due to the density of both rational and [irrational numbers](@entry_id:158320) in the real line, any interval around any point $x_0$, no matter how small, will contain points where $f(x)=0$ and points where $f(x)=1$. As a result, the function oscillates wildly between 0 and 1 in every neighborhood of every point. Neither the left-hand nor the [right-hand limit](@entry_id:140515) exists at any point $x_0 \in \mathbb{R}$. Therefore, the Dirichlet function has an [essential discontinuity](@entry_id:141343) at every real number.
+An even more extreme example is the **Dirichlet function**, which is defined as $f(x)=1$ for rational numbers and $f(x)=0$ for irrational numbers [@problem_id:1341914]. Due to the density of both rational and irrational numbers in the real line, any interval around any point $x_0$, no matter how small, will contain points where $f(x)=0$ and points where $f(x)=1$. As a result, the function oscillates wildly between 0 and 1 in every neighborhood of every point. Neither the left-hand nor the right-hand limit exists at any point $x_0 \in \mathbb{R}$. Therefore, the Dirichlet function has an essential discontinuity at every real number.
 
 ### Advanced Topics and Interactions
 
@@ -93,25 +93,25 @@ The classification of discontinuities becomes particularly powerful when we exam
 
 #### The Algebra of Discontinuities
 
-One might wonder if discontinuities can be "healed" or modified through operations. Consider a function $f(x)$ with a [jump discontinuity](@entry_id:139886) at $x=0$. Let $\lim_{x \to 0^-} f(x) = L_1$ and $\lim_{x \to 0^+} f(x) = L_2$, with $L_1 \neq L_2$. Now, let's define a new function $h(x) = x \cdot f(x)$ .
-To determine the continuity of $h(x)$ at $x=0$, we examine its [one-sided limits](@entry_id:138326):
+One might wonder if discontinuities can be "healed" or modified through operations. Consider a function $f(x)$ with a jump discontinuity at $x=0$. Let $\lim_{x \to 0^-} f(x) = L_1$ and $\lim_{x \to 0^+} f(x) = L_2$, with $L_1 \neq L_2$. Now, let's define a new function $h(x) = x \cdot f(x)$ [@problem_id:1341889].
+To determine the continuity of $h(x)$ at $x=0$, we examine its one-sided limits:
 $$
 \lim_{x \to 0^-} h(x) = \lim_{x \to 0^-} (x \cdot f(x)) = \left(\lim_{x \to 0^-} x\right) \cdot \left(\lim_{x \to 0^-} f(x)\right) = 0 \cdot L_1 = 0
 $$
 $$
 \lim_{x \to 0^+} h(x) = \lim_{x \to 0^+} (x \cdot f(x)) = \left(\lim_{x \to 0^+} x\right) \cdot \left(\lim_{x \to 0^+} f(x)\right) = 0 \cdot L_2 = 0
 $$
-Since both [one-sided limits](@entry_id:138326) are equal to $0$, the two-sided limit $\lim_{x \to 0} h(x)$ exists and is $0$. The value of the function at the point is $h(0) = 0 \cdot f(0) = 0$. Because $\lim_{x \to 0} h(x) = h(0)$, the function $h(x)$ is continuous at $x=0$. The multiplication by $x$ effectively "squashed" the jump to zero, healing the discontinuity. This demonstrates that a bounded discontinuity (like a jump) can be removed by multiplication with a function that goes to zero at the point of discontinuity.
+Since both one-sided limits are equal to $0$, the two-sided limit $\lim_{x \to 0} h(x)$ exists and is $0$. The value of the function at the point is $h(0) = 0 \cdot f(0) = 0$. Because $\lim_{x \to 0} h(x) = h(0)$, the function $h(x)$ is continuous at $x=0$. The multiplication by $x$ effectively "squashed" the jump to zero, healing the discontinuity. This demonstrates that a bounded discontinuity (like a jump) can be removed by multiplication with a function that goes to zero at the point of discontinuity.
 
 #### Discontinuities of Derivatives
 
 A particularly insightful question is: what types of discontinuities can a derivative function possess? Suppose a function $F(x)$ is differentiable on an interval, and we are interested in the continuity of its derivative, $f(x) = F'(x)$.
 
-A fundamental result in [real analysis](@entry_id:145919), **Darboux's Theorem**, states that derivatives, while not necessarily continuous, must satisfy the Intermediate Value Property. This means that if $f(x)=F'(x)$ takes on two values, it must also take on every value in between. An important consequence of this theorem is that a derivative cannot have a removable or a jump discontinuity. If it did, it would be possible to construct a small interval where the function violates the Intermediate Value Property.
+A fundamental result in real analysis, **Darboux's Theorem**, states that derivatives, while not necessarily continuous, must satisfy the Intermediate Value Property. This means that if $f(x)=F'(x)$ takes on two values, it must also take on every value in between. An important consequence of this theorem is that a derivative cannot have a removable or a jump discontinuity. If it did, it would be possible to construct a small interval where the function violates the Intermediate Value Property.
 
 This leads to a powerful conclusion: if a derivative $F'(x)$ is discontinuous at a point $c$, its discontinuity must be of the second kind (essential).
 
-Let's examine a concrete case . Consider the function:
+Let's examine a concrete case [@problem_id:1341928]. Consider the function:
 $$
 F(x) = \begin{cases}
 x^3 \sin\left(\frac{1}{x^2}\right)  \text{if } x \neq 0 \\

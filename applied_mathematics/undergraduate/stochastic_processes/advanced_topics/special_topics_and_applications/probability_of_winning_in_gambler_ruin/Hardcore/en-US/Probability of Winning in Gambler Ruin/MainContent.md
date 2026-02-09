@@ -1,15 +1,15 @@
 ## Introduction
-The Gambler's Ruin problem is a classic and foundational model in the study of [stochastic processes](@entry_id:141566), offering a simple yet profound framework for understanding systems that evolve randomly toward one of two possible outcomes. Its significance lies in its ability to abstract complex phenomena—from market competition to genetic drift—into a manageable random walk between absorbing barriers. The core question it addresses is fundamental: given a starting point and a set of probabilistic rules, what is the precise likelihood of reaching a desired "success" state before falling into a "ruin" state? This article provides a comprehensive exploration of this powerful model.
+The Gambler's Ruin problem is a classic and foundational model in the study of stochastic processes, offering a simple yet profound framework for understanding systems that evolve randomly toward one of two possible outcomes. Its significance lies in its ability to abstract complex phenomena—from market competition to genetic drift—into a manageable random walk between absorbing barriers. The core question it addresses is fundamental: given a starting point and a set of probabilistic rules, what is the precise likelihood of reaching a desired "success" state before falling into a "ruin" state? This article provides a comprehensive exploration of this powerful model.
 
-The journey begins in **Principles and Mechanisms**, where we deconstruct the problem from first principles, formalizing it as a one-dimensional random walk with the Markov property. You will learn to derive the probability of winning by setting up and solving linear [difference equations](@entry_id:262177) for both fair and biased games, revealing the dramatic impact of even a small, persistent edge. The chapter also explores important extensions, such as scenarios with infinitely wealthy opponents and state-dependent probabilities.
+The journey begins in **Principles and Mechanisms**, where we deconstruct the problem from first principles, formalizing it as a one-dimensional random walk with the Markov property. You will learn to derive the probability of winning by setting up and solving linear difference equations for both fair and biased games, revealing the dramatic impact of even a small, persistent edge. The chapter also explores important extensions, such as scenarios with infinitely wealthy opponents and state-dependent probabilities.
 
-Next, in **Applications and Interdisciplinary Connections**, we move beyond the casino to witness the model's remarkable versatility. This chapter demonstrates how the mathematical structure of the Gambler's Ruin problem provides critical insights into diverse fields like finance, population genetics, neuroscience, and engineering, illustrating the unifying power of [stochastic modeling](@entry_id:261612).
+Next, in **Applications and Interdisciplinary Connections**, we move beyond the casino to witness the model's remarkable versatility. This chapter demonstrates how the mathematical structure of the Gambler's Ruin problem provides critical insights into diverse fields like finance, population genetics, neuroscience, and engineering, illustrating the unifying power of stochastic modeling.
 
 Finally, the **Hands-On Practices** section allows you to solidify your understanding by tackling practical challenges. Through a series of guided problems, you will apply the theoretical framework to compare strategic decisions, adapt the model to novel scenarios, and use simulation to verify analytical results, bridging the gap between theory and application.
 
 ## Principles and Mechanisms
 
-The Gambler's Ruin problem serves as a cornerstone in the study of stochastic processes, providing a simple yet powerful model for systems that evolve randomly between two [absorbing boundaries](@entry_id:746195). Its analysis reveals fundamental principles of random walks and their applications, which extend far beyond games of chance to fields such as finance, biology, and computer science. This chapter will deconstruct the problem from first principles, derive the key probabilities, and explore several important extensions and interpretations.
+The Gambler's Ruin problem serves as a cornerstone in the study of stochastic processes, providing a simple yet powerful model for systems that evolve randomly between two absorbing boundaries. Its analysis reveals fundamental principles of random walks and their applications, which extend far beyond games of chance to fields such as finance, biology, and computer science. This chapter will deconstruct the problem from first principles, derive the key probabilities, and explore several important extensions and interpretations.
 
 ### A Random Walk with Absorbing Barriers
 
@@ -19,15 +19,15 @@ To formalize this, let us model the gambler's capital at time $n$ as a random va
 
 At each step, the gambler's capital changes by $+1$ with probability $p$ (a win) or by $-1$ with probability $q = 1-p$ (a loss), for $0  p  1$. This process is a **one-dimensional simple random walk**. Since the outcome of each game depends only on the current capital and not on the history of how that capital was reached, the process has the **Markov property**.
 
-The states $0$ and $N$ are special. Once the capital reaches $0$, the gambler is ruined and cannot play anymore; the capital remains at $0$. Similarly, if the capital reaches $N$, the gambler has met the goal and stops playing; the capital remains at $N$. In the language of Markov chains, states from which it is impossible to leave are called **[absorbing states](@entry_id:161036)**. Here, the transition probabilities from these states are $P(X_{n+1}=0 | X_n=0) = 1$ and $P(X_{n+1}=N | X_n=N) = 1$.
+The states $0$ and $N$ are special. Once the capital reaches $0$, the gambler is ruined and cannot play anymore; the capital remains at $0$. Similarly, if the capital reaches $N$, the gambler has met the goal and stops playing; the capital remains at $N$. In the language of Markov chains, states from which it is impossible to leave are called **absorbing states**. Here, the transition probabilities from these states are $P(X_{n+1}=0 | X_n=0) = 1$ and $P(X_{n+1}=N | X_n=N) = 1$.
 
-Conversely, the intermediate states $\{1, 2, \dots, N-1\}$ are **transient states**. A state is transient if, upon leaving it, there is a non-zero probability of never returning. In our model, from any intermediate state $i$, there is a path to the [absorbing state](@entry_id:274533) $0$ (by losing $i$ times in a row) and a path to the [absorbing state](@entry_id:274533) $N$ (by winning $N-i$ times in a row). Since $0  p  1$, both paths have a positive probability. Once the process reaches an absorbing state, it can never return to any of the intermediate states. Therefore, the process is guaranteed to be absorbed at either $0$ or $N$ in a finite number of steps. Our primary goal is to calculate the probability of being absorbed at $N$ (success) rather than at $0$ (ruin).
+Conversely, the intermediate states $\{1, 2, \dots, N-1\}$ are **transient states**. A state is transient if, upon leaving it, there is a non-zero probability of never returning. In our model, from any intermediate state $i$, there is a path to the absorbing state $0$ (by losing $i$ times in a row) and a path to the absorbing state $N$ (by winning $N-i$ times in a row). Since $0  p  1$, both paths have a positive probability. Once the process reaches an absorbing state, it can never return to any of the intermediate states. Therefore, the process is guaranteed to be absorbed at either $0$ or $N$ in a finite number of steps. Our primary goal is to calculate the probability of being absorbed at $N$ (success) rather than at $0$ (ruin).
 
 ### Deriving the Probability of Winning via Recurrence Relations
 
 Let $u_i$ denote the probability that the gambler wins, i.e., that the process reaches state $N$ before state $0$, given a starting capital of $i$. We seek to find a formula for $u_i$ in terms of $i$, $N$, and $p$.
 
-The boundary conditions are determined by the nature of the [absorbing states](@entry_id:161036):
+The boundary conditions are determined by the nature of the absorbing states:
 - If the gambler starts with 0 capital, ruin is immediate. Thus, the probability of winning is zero: $u_0 = 0$.
 - If the gambler starts with $N$ capital, the goal is already met. Thus, the probability of winning is one: $u_N = 1$.
 
@@ -41,25 +41,25 @@ This fundamental equation is a **linear second-order homogeneous difference equa
 
 ### The Fair Game: An Intuitive Result
 
-Let's first consider the special case of a **[fair game](@entry_id:261127)**, where the probability of winning a single round is exactly $p = 1/2$. This scenario is particularly instructive as it yields a simple, linear result. With $p = q = 1/2$, our [recurrence relation](@entry_id:141039) becomes:
+Let's first consider the special case of a **fair game**, where the probability of winning a single round is exactly $p = 1/2$. This scenario is particularly instructive as it yields a simple, linear result. With $p = q = 1/2$, our recurrence relation becomes:
 $$u_i = \frac{1}{2} u_{i+1} + \frac{1}{2} u_{i-1}$$
 Multiplying by 2 and rearranging gives:
 $$2u_i = u_{i+1} + u_{i-1} \implies u_{i+1} - u_i = u_i - u_{i-1}$$
-This equation states that the difference between the win probabilities of successive states is constant. This means that the values $u_0, u_1, \dots, u_N$ form an **[arithmetic progression](@entry_id:267273)**.
+This equation states that the difference between the win probabilities of successive states is constant. This means that the values $u_0, u_1, \dots, u_N$ form an **arithmetic progression**.
 
-Given the boundary conditions $u_0 = 0$ and $u_N = 1$, we have a sequence of $N+1$ numbers in an arithmetic progression, starting at 0 and ending at 1. The [common difference](@entry_id:275018) must be $1/N$. Therefore, the $i$-th term in the sequence is simply:
+Given the boundary conditions $u_0 = 0$ and $u_N = 1$, we have a sequence of $N+1$ numbers in an arithmetic progression, starting at 0 and ending at 1. The common difference must be $1/N$. Therefore, the $i$-th term in the sequence is simply:
 $$u_i = \frac{i}{N}$$
-This elegant result is highly intuitive: in a [fair game](@entry_id:261127), your probability of success is directly proportional to your initial share of the total capital pool. For example, if Alice starts with $i=5$ dollars and aims for a total of $N=20$ dollars in a [fair game](@entry_id:261127), her probability of winning is $5/20 = 0.25$.
+This elegant result is highly intuitive: in a fair game, your probability of success is directly proportional to your initial share of the total capital pool. For example, if Alice starts with $i=5$ dollars and aims for a total of $N=20$ dollars in a fair game, her probability of winning is $5/20 = 0.25$.
 
 ### The Biased Game: The Power of an Edge
 
-When the game is not fair ($p \neq 1/2$), the linear relationship breaks down, and we must solve the full recurrence relation. The general method for solving linear homogeneous [difference equations](@entry_id:262177) involves finding a [characteristic equation](@entry_id:149057). Let's rewrite the recurrence as:
+When the game is not fair ($p \neq 1/2$), the linear relationship breaks down, and we must solve the full recurrence relation. The general method for solving linear homogeneous difference equations involves finding a characteristic equation. Let's rewrite the recurrence as:
 $$p u_{i+1} - u_i + q u_{i-1} = 0$$
-We seek solutions of the form $u_i = r^i$. Substituting this into the equation and dividing by $r^{i-1}$ gives the **[characteristic equation](@entry_id:149057)**:
+We seek solutions of the form $u_i = r^i$. Substituting this into the equation and dividing by $r^{i-1}$ gives the **characteristic equation**:
 $$p r^2 - r + q = 0$$
 Since $p+q=1$, we can see that $r=1$ is one root: $p(1)^2 - 1 + q = p+q-1 = 0$. By Vieta's formulas, the product of the roots is $q/p$, so the second root must be $r = q/p$. Since we assumed $p \neq 1/2$, the roots $1$ and $q/p$ are distinct.
 
-The general solution to the difference equation is a [linear combination](@entry_id:155091) of the powers of these roots:
+The general solution to the difference equation is a linear combination of the powers of these roots:
 $$u_i = A \cdot (1)^i + B \cdot \left(\frac{q}{p}\right)^i = A + B\left(\frac{q}{p}\right)^i$$
 where $A$ and $B$ are constants determined by the boundary conditions.
 - Using $u_0 = 0$: $A + B(q/p)^0 = A + B = 0 \implies A = -B$.
@@ -128,4 +128,4 @@ In many real-world systems, the transition probabilities are not constant. For e
 $$u_i = p_i u_{i+1} + (1-p_i) u_{i-1}, \quad \text{where } p_i = \begin{cases} p_1  \text{if } i  k \\ p_2  \text{if } i \ge k \end{cases}$$
 While the characteristic equation method applies separately to each region, a more general and powerful technique involves analyzing the forward differences $y_i = u_i - u_{i-1}$. This leads to a solution for the win probability in terms of sums and products of the state-dependent ratios $r_i = q_i/p_i$:
 $$u_i = \frac{\sum_{n=0}^{i-1} R_n}{\sum_{n=0}^{N-1} R_n}, \quad \text{where } R_n = \prod_{j=1}^{n} r_j \text{ and } R_0=1$$
-This general formula elegantly handles any one-dimensional random walk with two absorbing barriers, regardless of how the probabilities change from state to state. It demonstrates the profound connection between the simple Gambler's Ruin problem and the broader theory of one-dimensional birth-death processes, providing a robust tool for analyzing a wide array of [stochastic systems](@entry_id:187663).
+This general formula elegantly handles any one-dimensional random walk with two absorbing barriers, regardless of how the probabilities change from state to state. It demonstrates the profound connection between the simple Gambler's Ruin problem and the broader theory of one-dimensional birth-death processes, providing a robust tool for analyzing a wide array of stochastic systems.

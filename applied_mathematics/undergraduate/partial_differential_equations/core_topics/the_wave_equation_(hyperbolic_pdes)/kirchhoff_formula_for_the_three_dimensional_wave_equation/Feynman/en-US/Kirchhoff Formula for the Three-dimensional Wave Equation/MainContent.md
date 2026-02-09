@@ -1,7 +1,7 @@
 ## Introduction
 The wave equation, $\frac{\partial^2 u}{\partial t^2} = c^2 \nabla^2 u$, is a cornerstone of physics, describing phenomena from sound to light. However, its true power lies in prediction: given an initial state, how can we determine the wave's form at any future moment? For waves in three-dimensional space, the answer is provided by the elegant and powerful Kirchhoff's formula. This article delves into this crucial solution, not merely as a mathematical recipe, but as a narrative about the fundamental character of our universe.
 
-We will embark on a journey structured into three parts. First, in **"Principles and Mechanisms,"** we will dissect the formula itself, uncovering the role of [spherical means](@article_id:165490) and the profound implications of the strong Huygens' principle. Next, in **"Applications and Interdisciplinary Connections,"** we will explore how this mathematical structure explains the crispness of sound, enables technologies like focused ultrasound, and even applies to the grand stage of general relativity. Finally, **"Hands-On Practices"** will allow you to apply these concepts to concrete physical scenarios, solidifying your understanding. Let's begin by exploring the core principles that make Kirchhoff's formula a crystal ball for the world of waves.
+We will embark on a journey structured into three parts. First, in **"Principles and Mechanisms,"** we will dissect the formula itself, uncovering the role of [spherical means](@keyword=spherical_means|lang=en-US|style=Feynman) and the profound implications of the strong Huygens' principle. Next, in **"Applications and Interdisciplinary Connections,"** we will explore how this mathematical structure explains the crispness of sound, enables technologies like focused ultrasound, and even applies to the grand stage of general relativity. Finally, **"Hands-On Practices"** will allow you to apply these concepts to concrete physical scenarios, solidifying your understanding. Let's begin by exploring the core principles that make Kirchhoff's formula a crystal ball for the world of waves.
 
 ## Principles and Mechanisms
 
@@ -15,7 +15,7 @@ At first glance, Kirchhoff's formula might look a bit intimidating:
 
 $$u(\vec{x}, t) = \frac{\partial}{\partial t} \left( t M_g(\vec{x}, ct) \right) + t M_h(\vec{x}, ct)$$
 
-Let's break it down. The magic happens in the terms $M_g(\vec{x}, ct)$ and $M_h(\vec{x}, ct)$. These are called **[spherical means](@article_id:165490)**. $M_g(\vec{x}, r)$ is simply the average value of the initial displacement, $g$, over the surface of a sphere of radius $r$ centered at the point $\vec{x}$.
+Let's break it down. The magic happens in the terms $M_g(\vec{x}, ct)$ and $M_h(\vec{x}, ct)$. These are called **[spherical means](@keyword=spherical_means|lang=en-US|style=Feynman)**. $M_g(\vec{x}, r)$ is simply the average value of the initial displacement, $g$, over the surface of a sphere of radius $r$ centered at the point $\vec{x}$.
 
 $$M_g(\vec{x}, r) = \frac{1}{4\pi r^2} \int_{|\vec{y}-\vec{x}|=r} g(\vec{y}) \, dS(\vec{y})$$
 
@@ -35,7 +35,7 @@ Here is where our universe gets truly special. The structure of Kirchhoff's form
 
 Let's imagine you create a very brief, localized disturbance at $t=0$—say, you pop a tiny balloon. The initial disturbance, described by $g(\vec{x})$ and $h(\vec{x})$, is non-zero only within a small ball of radius $R$ around the origin. Now, you place a sensor at a distant point $\vec{x}_0$, a distance $D \gt R$ away. What does the sensor detect?
 
-First, for any time $t \lt (D-R)/c$, the expanding sphere of influence, $S(\vec{x}_0, ct)$, has a radius too small to reach the region of the initial disturbance. The intersection is empty, the spherical mean integrals are zero, and the sensor reads nothing. This is just common sense: the wave hasn't had time to get there yet. This is the principle of **[finite propagation speed](@article_id:163314)**.
+First, for any time $t \lt (D-R)/c$, the expanding sphere of influence, $S(\vec{x}_0, ct)$, has a radius too small to reach the region of the initial disturbance. The intersection is empty, the spherical mean integrals are zero, and the sensor reads nothing. This is just common sense: the wave hasn't had time to get there yet. This is the principle of **[finite propagation speed](@keyword=finite_propagation_speed|lang=en-US|style=Feynman)**.
 
 The signal arrives at $t_{start} = (D-R)/c$, when the "information-gathering" sphere first touches the region of the initial pop. As time goes on, the sphere sweeps through this region.
 

@@ -1,7 +1,7 @@
 ## Introduction
-The persistent, swirling motion of a smoke ring or a whirlpool hints at a hidden law of nature. This rotational "essence," known as circulation, is a fundamental quantity in fluid dynamics. While its conservation can be demonstrated with classical [vector calculus](@entry_id:146888), such proofs often obscure the profound elegance and inevitability of the principle. The deepest understanding comes not from wrestling with [vector identities](@entry_id:273941), but from embracing the natural language of fluid motion: the language of geometry. This article bridges the gap between a computational proof and a deep conceptual understanding by recasting Kelvin's circulation theorem in the framework of modern [geometric mechanics](@entry_id:169959).
+The persistent, swirling motion of a smoke ring or a whirlpool hints at a hidden law of nature. This rotational "essence," known as circulation, is a fundamental quantity in fluid dynamics. While its conservation can be demonstrated with classical [vector calculus](@keyword=vector_calculus|lang=en-US|style=Feynman), such proofs often obscure the profound elegance and inevitability of the principle. The deepest understanding comes not from wrestling with [vector identities](@keyword=vector_identities|lang=en-US|style=Feynman), but from embracing the natural language of fluid motion: the language of geometry. This article bridges the gap between a computational proof and a deep conceptual understanding by recasting Kelvin's circulation theorem in the framework of modern [geometric mechanics](@keyword=geometric_mechanics|lang=en-US|style=Feynman).
 
-Across the following chapters, you will embark on a journey to uncover this geometric structure. The first chapter, "Principles and Mechanisms," translates the Euler equations into the language of [differential forms](@entry_id:146747), revealing a simple and beautiful proof of the theorem and exploring the ideal conditions required for it to hold. We will then examine what happens when these conditions are broken, uncovering the real-world physics that create and destroy vortices. The second chapter, "Applications and Interdisciplinary Connections," demonstrates the theorem's immense predictive power, showing how it governs everything from aircraft lift and oceanic currents to the behavior of plasma in stars. Finally, "Hands-On Practices" will provide the opportunity to solidify this knowledge by applying these geometric concepts to concrete problems in physics and computation. Our exploration begins with the heart of the matter: translating the physics of fluid motion into the powerful language of geometry.
+Across the following chapters, you will embark on a journey to uncover this geometric structure. The first chapter, "Principles and Mechanisms," translates the Euler equations into the language of [differential forms](@keyword=differential_forms|lang=en-US|style=Feynman), revealing a simple and beautiful proof of the theorem and exploring the ideal conditions required for it to hold. We will then examine what happens when these conditions are broken, uncovering the real-world physics that create and destroy vortices. The second chapter, "Applications and Interdisciplinary Connections," demonstrates the theorem's immense predictive power, showing how it governs everything from aircraft lift and oceanic currents to the behavior of plasma in stars. Finally, "Hands-On Practices" will provide the opportunity to solidify this knowledge by applying these geometric concepts to concrete problems in physics and computation. Our exploration begins with the heart of the matter: translating the physics of fluid motion into the powerful language of geometry.
 
 ## Principles and Mechanisms
 
@@ -11,7 +11,7 @@ Imagine watching a smoke ring drift through the air. It holds its shape, a spinn
 
 What is this circulation? Picture a tiny, imaginary paddlewheel placed in a flowing river. As the fluid moves, it spins the wheel. Now, imagine you take this paddlewheel and carry it along a closed loop in the river, say a circle, and then bring it back to where you started. Circulation is a measure of the total net rotation the wheel experiences during its journey. It's the cumulative "whoosh" of the fluid as you trace the loop.
 
-Mathematically, if the fluid has a velocity field $\boldsymbol{u}$, the circulation $\Gamma$ around a closed loop $c$ is the [line integral](@entry_id:138107) of the velocity field along that loop:
+Mathematically, if the fluid has a velocity field $\boldsymbol{u}$, the circulation $\Gamma$ around a closed loop $c$ is the [line integral](@keyword=line_integral|lang=en-US|style=Feynman) of the velocity field along that loop:
 
 $$
 \Gamma = \oint_c \boldsymbol{u} \cdot d\boldsymbol{l}
@@ -21,27 +21,27 @@ This quantity measures how much the flow is "circulating" around the path. Now, 
 
 ### The Language of Geometry: From Vectors to Forms
 
-Physics often reveals its deepest truths when we find the right mathematical language to describe it. For fluid motion, that language is the geometry of [differential forms](@entry_id:146747). Instead of thinking of velocity as a field of arrows (vectors), let's think of it as a **velocity [one-form](@entry_id:276716)**, which we'll call $u^\flat$. A [one-form](@entry_id:276716) is like a field of measurement devices; at any point, it takes a direction as input and tells you how much flow there is in that direction. The integral for circulation becomes, much more naturally, the integral of this [one-form](@entry_id:276716) over the loop $c_t$:
+Physics often reveals its deepest truths when we find the right mathematical language to describe it. For fluid motion, that language is the geometry of [differential forms](@keyword=differential_forms|lang=en-US|style=Feynman). Instead of thinking of velocity as a field of arrows (vectors), let's think of it as a **velocity [one-form](@keyword=one_form|lang=en-US|style=Feynman)**, which we'll call $u^\flat$. A [one-form](@keyword=one_form|lang=en-US|style=Feynman) is like a field of measurement devices; at any point, it takes a direction as input and tells you how much flow there is in that direction. The integral for circulation becomes, much more naturally, the integral of this [one-form](@keyword=one_form|lang=en-US|style=Feynman) over the loop $c_t$:
 
 $$
 \Gamma(t) = \oint_{c_t} u^\flat
 $$
 
-Now let's look at the law governing the fluid's motion, the Euler equation. In vector notation, it's a bit of a handful: $\partial_t \boldsymbol{u} + (\boldsymbol{u} \cdot \nabla) \boldsymbol{u} = -\frac{1}{\rho}\nabla p - \nabla\Phi$, where $p$ is pressure, $\rho$ is density, and $\Phi$ is a potential for a [body force](@entry_id:184443) like gravity. This equation describes how a fluid particle accelerates.
+Now let's look at the law governing the fluid's motion, the Euler equation. In vector notation, it's a bit of a handful: $\partial_t \boldsymbol{u} + (\boldsymbol{u} \cdot \nabla) \boldsymbol{u} = -\frac{1}{\rho}\nabla p - \nabla\Phi$, where $p$ is pressure, $\rho$ is density, and $\Phi$ is a potential for a [body force](@keyword=body_force|lang=en-US|style=Feynman) like gravity. This equation describes how a fluid particle accelerates.
 
-The key to unlocking its geometric meaning is the concept of the **Lie derivative**, denoted $\mathcal{L}_u$. This is the mathematician's precise tool for describing how a quantity (like our [one-form](@entry_id:276716) $u^\flat$) changes as it is dragged along by the fluid flow $\boldsymbol{u}$. The total change of $u^\flat$ for a moving fluid particle, its "material derivative," is given by the sum of its change at a fixed point ($\partial_t u^\flat$) and the change due to being dragged along ($\mathcal{L}_u u^\flat$).
+The key to unlocking its geometric meaning is the concept of the **Lie derivative**, denoted $\mathcal{L}_u$. This is the mathematician's precise tool for describing how a quantity (like our [one-form](@keyword=one_form|lang=en-US|style=Feynman) $u^\flat$) changes as it is dragged along by the fluid flow $\boldsymbol{u}$. The total change of $u^\flat$ for a moving fluid particle, its "material derivative," is given by the sum of its change at a fixed point ($\partial_t u^\flat$) and the change due to being dragged along ($\mathcal{L}_u u^\flat$).
 
-Here's where the magic happens. When we translate the entire Euler equation into the language of forms, for an ideal, **barotropic** fluid (where pressure is a function of density alone) subject to a **conservative** [body force](@entry_id:184443), the complicated vector equation collapses into an object of breathtaking simplicity  :
+Here's where the magic happens. When we translate the entire Euler equation into the language of forms, for an ideal, **barotropic** fluid (where pressure is a function of density alone) subject to a **conservative** [body force](@keyword=body_force|lang=en-US|style=Feynman), the complicated vector equation collapses into an object of breathtaking simplicity [@problem_id:3750845] [@problem_id:3750833]:
 
 $$
 \partial_t u^\flat + \mathcal{L}_u u^\flat = -d(h + \Phi)
 $$
 
-Here, $h$ is a quantity called the [specific enthalpy](@entry_id:140496), related to the pressure. The expression on the right is the exterior derivative $d$ of a scalar function. A [one-form](@entry_id:276716) that can be written as the derivative of a function is called an **[exact form](@entry_id:273346)**. So, the entire material change in the velocity [one-form](@entry_id:276716) is an [exact form](@entry_id:273346)!
+Here, $h$ is a quantity called the [specific enthalpy](@keyword=specific_enthalpy|lang=en-US|style=Feynman), related to the pressure. The expression on the right is the exterior derivative $d$ of a scalar function. A [one-form](@keyword=one_form|lang=en-US|style=Feynman) that can be written as the derivative of a function is called an **[exact form](@keyword=exact_form|lang=en-US|style=Feynman)**. So, the entire material change in the velocity [one-form](@keyword=one_form|lang=en-US|style=Feynman) is an [exact form](@keyword=exact_form|lang=en-US|style=Feynman)!
 
 ### The Power of Stokes' Theorem
 
-We are now ready for the finale. We want to know the rate of change of circulation, $\frac{d\Gamma}{dt}$. Using a fundamental result called the [transport theorem](@entry_id:176504), we can relate this to the material derivative we just found:
+We are now ready for the finale. We want to know the rate of change of circulation, $\frac{d\Gamma}{dt}$. Using a fundamental result called the [transport theorem](@keyword=transport_theorem|lang=en-US|style=Feynman), we can relate this to the material derivative we just found:
 
 $$
 \frac{d\Gamma}{dt} = \frac{d}{dt} \oint_{c_t} u^\flat = \oint_{c_t} (\partial_t u^\flat + \mathcal{L}_u u^\flat)
@@ -63,9 +63,9 @@ The circulation is conserved. This isn't an accident or a numerical coincidence.
 
 ### Beyond the Loop: A Deeper Invariance
 
-The story gets even better. The fact that the [material derivative](@entry_id:266939) of $u^\flat$ is *exact* is a much stronger statement than just its integral being zero. It tells us something about the very fabric of the flow itself. In geometry, we have a concept called **cohomology**, which, roughly speaking, classifies the "non-[exactness](@entry_id:268999)" of forms. Two forms are said to be in the same [cohomology class](@entry_id:263961) if they differ by an exact form .
+The story gets even better. The fact that the [material derivative](@keyword=material_derivative|lang=en-US|style=Feynman) of $u^\flat$ is *exact* is a much stronger statement than just its integral being zero. It tells us something about the very fabric of the flow itself. In geometry, we have a concept called **cohomology**, which, roughly speaking, classifies the "non-[exactness](@keyword=exactness|lang=en-US|style=Feynman)" of forms. Two forms are said to be in the same [cohomology class](@keyword=cohomology_class|lang=en-US|style=Feynman) if they differ by an exact form [@problem_id:3750845].
 
-Our result implies that the pulled-back velocity form, $\phi_t^* u^\flat$ (which is what an observer "at rest" in the initial fluid configuration would see), has a constant [cohomology class](@entry_id:263961) over time. What does this mean physically? Imagine our fluid is flowing in a domain with a hole, like water in a channel around a central pillar (a donut-shaped, or toroidal, space). You can have a flow that goes around the pillar. This "going around" character corresponds to a non-exact part of the velocity [one-form](@entry_id:276716). Kelvin's theorem, in this deeper sense, says that this "holiness" of the flow is frozen in and preserved. If a flow initially winds around the pillar, the evolved flow will still wind around it in the same way. The topology of the flow is a conserved feature  .
+Our result implies that the pulled-back velocity form, $\phi_t^* u^\flat$ (which is what an observer "at rest" in the initial fluid configuration would see), has a constant [cohomology class](@keyword=cohomology_class|lang=en-US|style=Feynman) over time. What does this mean physically? Imagine our fluid is flowing in a domain with a hole, like water in a channel around a central pillar (a donut-shaped, or toroidal, space). You can have a flow that goes around the pillar. This "going around" character corresponds to a non-exact part of the velocity [one-form](@keyword=one_form|lang=en-US|style=Feynman). Kelvin's theorem, in this deeper sense, says that this "holiness" of the flow is frozen in and preserved. If a flow initially winds around the pillar, the evolved flow will still wind around it in the same way. The topology of the flow is a conserved feature [@problem_id:3750842] [@problem_id:3750853].
 
 ### When the Music Stops: Breaking the Ideal Conditions
 
@@ -73,7 +73,7 @@ A physical law is best understood by knowing its boundaries—when it breaks. Ke
 
 #### Non-Conservative Forces
 
-We assumed all external forces, like gravity, were **conservative** (derivable from a potential, meaning the force [one-form](@entry_id:276716) $f^\flat$ is exact). What if a force is not? Think of stirring your morning coffee with a spoon. The force you exert is localized and not derivable from a potential. Our derivation immediately tells us what happens :
+We assumed all external forces, like gravity, were **conservative** (derivable from a potential, meaning the force [one-form](@keyword=one_form|lang=en-US|style=Feynman) $f^\flat$ is exact). What if a force is not? Think of stirring your morning coffee with a spoon. The force you exert is localized and not derivable from a potential. Our derivation immediately tells us what happens [@problem_id:3750839]:
 
 $$
 \frac{d\Gamma}{dt} = \oint_{c_t} f^\flat
@@ -83,28 +83,28 @@ If the force form $f^\flat$ is not exact, its integral around a loop can be non-
 
 #### Baroclinic Fluids
 
-We assumed a **barotropic** fluid, where pressure depends only on density. In the real world, like in our atmosphere or oceans, pressure also depends on temperature and entropy. This introduces a fascinating new term. The geometric Euler equation picks up a non-exact piece, and the rate of change of circulation becomes :
+We assumed a **barotropic** fluid, where pressure depends only on density. In the real world, like in our atmosphere or oceans, pressure also depends on temperature and entropy. This introduces a fascinating new term. The geometric Euler equation picks up a non-exact piece, and the rate of change of circulation becomes [@problem_id:3750834]:
 
 $$
 \frac{d\Gamma}{dt} = \oint_{c_t} T ds
 $$
 
-where $T$ is temperature and $s$ is specific entropy. This is the **[baroclinic torque](@entry_id:153810)**. It means that if surfaces of constant temperature are not parallel to surfaces of constant entropy, circulation is generated. This is a primary driver of weather! A classic example is a sea breeze: during the day, the land heats up faster than the sea. This creates a temperature gradient that is not aligned with the pressure gradient (which is mostly vertical), generating a circulation that we feel as a cool breeze from the sea .
+where $T$ is temperature and $s$ is specific entropy. This is the **[baroclinic torque](@keyword=baroclinic_torque|lang=en-US|style=Feynman)**. It means that if surfaces of constant temperature are not parallel to surfaces of constant entropy, circulation is generated. This is a primary driver of weather! A classic example is a sea breeze: during the day, the land heats up faster than the sea. This creates a temperature gradient that is not aligned with the pressure gradient (which is mostly vertical), generating a circulation that we feel as a cool breeze from the sea [@problem_id:3750846].
 
 #### Viscous Fluids
 
-We assumed an "inviscid" fluid with no internal friction. Real fluids are sticky; they have **viscosity**. When we add the viscous term to the Euler equation (turning it into the Navier-Stokes equation), we find another source of change for the circulation :
+We assumed an "inviscid" fluid with no internal friction. Real fluids are sticky; they have **viscosity**. When we add the viscous term to the Euler equation (turning it into the Navier-Stokes equation), we find another source of change for the circulation [@problem_id:3750837]:
 
 $$
 \frac{d\Gamma}{dt} = \nu \oint_{c_t} (\Delta u)^\flat
 $$
 
-where $\nu$ is the [kinematic viscosity](@entry_id:261275) and $\Delta$ is the Laplacian operator. This term almost always acts as a brake. It represents the diffusion of vorticity, the process by which a perfect smoke ring slowly smudges out and disappears. Viscosity is the tendency of nature to smooth things out, and it causes the beautiful conserved dance of the [ideal fluid](@entry_id:272764) to eventually fade away.
+where $\nu$ is the [kinematic viscosity](@keyword=kinematic_viscosity|lang=en-US|style=Feynman) and $\Delta$ is the Laplacian operator. This term almost always acts as a brake. It represents the diffusion of vorticity, the process by which a perfect smoke ring slowly smudges out and disappears. Viscosity is the tendency of nature to smooth things out, and it causes the beautiful conserved dance of the [ideal fluid](@keyword=ideal_fluid|lang=en-US|style=Feynman) to eventually fade away.
 
 ### A Wider Symphony: Generalized Circulations
 
 The principle behind Kelvin's theorem is even more general. It is a manifestation of **Noether's theorem**, which connects symmetries to conservation laws. The symmetry here is the freedom to relabel the fluid particles without changing the physics.
 
-What about a fluid in a rotating frame, like the Earth's atmosphere, which feels the Coriolis force? Or a plasma moving in a magnetic field, feeling the Lorentz force? These forces are not conservative. Yet, the deep structure of the theory is preserved. We find that a **modified circulation** is conserved. For a rotating fluid, for instance, we must add a term related to the background rotation to our velocity [one-form](@entry_id:276716). For a plasma, we add the [magnetic vector potential](@entry_id:141246). The conserved quantity becomes something like $\mathcal{C}_m = \oint_{c_t} (u^\flat + \alpha + A)$, where $\alpha$ and $A$ are [one-forms](@entry_id:270392) representing the background rotation and magnetic field .
+What about a fluid in a rotating frame, like the Earth's atmosphere, which feels the Coriolis force? Or a plasma moving in a magnetic field, feeling the Lorentz force? These forces are not conservative. Yet, the deep structure of the theory is preserved. We find that a **modified circulation** is conserved. For a rotating fluid, for instance, we must add a term related to the background rotation to our velocity [one-form](@keyword=one_form|lang=en-US|style=Feynman). For a plasma, we add the [magnetic vector potential](@keyword=magnetic_vector_potential|lang=en-US|style=Feynman). The conserved quantity becomes something like $\mathcal{C}_m = \oint_{c_t} (u^\flat + \alpha + A)$, where $\alpha$ and $A$ are [one-forms](@keyword=one_forms|lang=en-US|style=Feynman) representing the background rotation and magnetic field [@problem_id:3750849].
 
 The physical momentum of the fluid particles alone is no longer the whole story; some "potential momentum" is stored in the background fields. The conservation law simply tells us that the total, generalized circulation is what nature chooses to preserve. Kelvin's theorem is not an isolated curiosity; it is a single, beautiful voice in a grander symphony of conservation laws that govern the universe.

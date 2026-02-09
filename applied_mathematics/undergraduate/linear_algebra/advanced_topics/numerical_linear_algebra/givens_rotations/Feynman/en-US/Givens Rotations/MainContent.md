@@ -15,15 +15,15 @@ $$
 G(\theta) = \begin{pmatrix} \cos(\theta) & \sin(\theta) \\ -\sin(\theta) & \cos(\theta) \end{pmatrix}
 $$
 
-When you apply this matrix to a vector, it rotates it by an angle $\theta$. If you apply a rotation by angle $\alpha$, and then another by angle $\beta$, you find that it's the same as a single rotation by $\alpha + \beta$ . This is just like turning a knob: the order of small turns adds up. But what is the essential mathematical property that makes this a *pure* rotation?
+When you apply this matrix to a vector, it rotates it by an angle $\theta$. If you apply a rotation by angle $\alpha$, and then another by angle $\beta$, you find that it's the same as a single rotation by $\alpha + \beta$ [@problem_id:2176525]. This is just like turning a knob: the order of small turns adds up. But what is the essential mathematical property that makes this a *pure* rotation?
 
-The secret lies in the concept of **orthogonality**. An orthogonal matrix is the mathematical guarantee against stretching and shearing. A matrix $Q$ is orthogonal if its transpose is also its inverse, meaning $Q^T Q = I$, where $I$ is the [identity matrix](@article_id:156230). This simple equation has a beautiful geometric meaning: the columns (and rows) of the matrix are all [unit vectors](@article_id:165413), and they are all perpendicular (orthogonal) to each other.
+The secret lies in the concept of **orthogonality**. An orthogonal matrix is the mathematical guarantee against stretching and shearing. A matrix $Q$ is orthogonal if its transpose is also its inverse, meaning $Q^T Q = I$, where $I$ is the [identity matrix](@keyword=identity_matrix|lang=en-US|style=Feynman). This simple equation has a beautiful geometric meaning: the columns (and rows) of the matrix are all [unit vectors](@keyword=unit_vectors|lang=en-US|style=Feynman), and they are all perpendicular (orthogonal) to each other.
 
-You can verify that our rotation matrix $G(\theta)$ has this property. The condition $c^2 + s^2 = 1$ (where $c=\cos\theta, s=\sin\theta$) is the key. It ensures the columns have a length of 1. You can see this in action: if you are given a matrix that looks like a rotation but has one value missing, you can solve for that value to make the matrix properly orthogonal, ensuring it represents a pure rotation .
+You can verify that our rotation matrix $G(\theta)$ has this property. The condition $c^2 + s^2 = 1$ (where $c=\cos\theta, s=\sin\theta$) is the key. It ensures the columns have a length of 1. You can see this in action: if you are given a matrix that looks like a rotation but has one value missing, you can solve for that value to make the matrix properly orthogonal, ensuring it represents a pure rotation [@problem_id:2176491].
 
-Two profound consequences follow from orthogonality. First, an [orthogonal transformation](@article_id:155156) **preserves the length** of any vector. If you take any vector $x$ and transform it to $x' = Gx$, its length remains unchanged. The squared length of $x'$ is $\|Gx\|_2^2$, which, through a little algebra, can be shown to be equal to $x_1^2 + x_2^2$—exactly the squared length of the original vector $x$ . This is the mathematical reason your photo doesn't warp.
+Two profound consequences follow from orthogonality. First, an [orthogonal transformation](@keyword=orthogonal_transformation|lang=en-US|style=Feynman) **preserves the length** of any vector. If you take any vector $x$ and transform it to $x' = Gx$, its length remains unchanged. The squared length of $x'$ is $\|Gx\|_2^2$, which, through a little algebra, can be shown to be equal to $x_1^2 + x_2^2$—exactly the squared length of the original vector $x$ [@problem_id:2176533]. This is the mathematical reason your photo doesn't warp.
 
-Second, the **determinant** of a Givens rotation matrix is always exactly 1 . A determinant of 1 means the transformation is a "proper" rotation that preserves orientation. It doesn't flip the space inside out, the way a mirror reflection would (a reflection has a determinant of -1). It's a smooth, continuous turn.
+Second, the **determinant** of a Givens rotation matrix is always exactly 1 [@problem_id:2176536]. A determinant of 1 means the transformation is a "proper" rotation that preserves orientation. It doesn't flip the space inside out, the way a mirror reflection would (a reflection has a determinant of -1). It's a smooth, continuous turn.
 
 ### The Surgeon's Scalpel: Zeroing Out with Precision
 
@@ -37,7 +37,7 @@ $$
 c = \frac{a}{r} \quad \text{and} \quad s = \frac{b}{r}
 $$
 
-These are, of course, the cosine and sine of the angle the vector $v$ makes with the horizontal axis! By choosing our rotation angle this way, we are guaranteed to zero out the second component  . The new, non-zero component, $r$, is simply the original length of the vector—just as we would expect from a length-preserving rotation. This technique is not just a mathematical curiosity; it's a "surgical scalpel" used in countless numerical algorithms, like the famous QR factorization, to systematically and reliably introduce zeros into matrices.
+These are, of course, the cosine and sine of the angle the vector $v$ makes with the horizontal axis! By choosing our rotation angle this way, we are guaranteed to zero out the second component [@problem_id:2176469] [@problem_id:2176507]. The new, non-zero component, $r$, is simply the original length of the vector—just as we would expect from a length-preserving rotation. This technique is not just a mathematical curiosity; it's a "surgical scalpel" used in countless numerical algorithms, like the famous QR factorization, to systematically and reliably introduce zeros into matrices.
 
 ### Journeys in Hyperspace: Planar Rotations in N-Dimensions
 
@@ -45,7 +45,7 @@ The real magic happens when we leave the comfort of our 2D plane and venture int
 
 A Givens rotation in an $n$-dimensional space does not try to rotate the entire space at once. Instead, it picks a single 2D plane—spanned by two coordinate axes, say the $i$-th and the $j$-th axes—and performs a standard 2D rotation *only within that plane*. Every other axis is left completely untouched.
 
-The matrix for such a transformation, $G(i, j, \theta)$, looks almost like the identity matrix. It's a vast sea of 1s on the diagonal and 0s everywhere else, with one crucial exception: the four entries at the intersection of rows and columns $i$ and $j$. These four entries form the familiar $2 \times 2$ rotation block .
+The matrix for such a transformation, $G(i, j, \theta)$, looks almost like the identity matrix. It's a vast sea of 1s on the diagonal and 0s everywhere else, with one crucial exception: the four entries at the intersection of rows and columns $i$ and $j$. These four entries form the familiar $2 \times 2$ rotation block [@problem_id:1365893].
 
 For example, to perform a rotation in the plane of the 2nd and 4th axes in a 4D space, the matrix would look like this:
 
@@ -58,7 +58,7 @@ G(2, 4, c, s) = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-Applying this matrix to a 4D vector only changes its 2nd and 4th components, mixing them together according to the rotation rules. The 1st and 3rd components sail through the transformation completely unaffected . In 3D space, this becomes very intuitive: a Givens rotation in the $(x_1, x_3)$-plane is simply a standard rotation around the $x_2$-axis . The [axis of rotation](@article_id:186600) is the dimension that is "left out" of the [planar rotation](@article_id:147805).
+Applying this matrix to a 4D vector only changes its 2nd and 4th components, mixing them together according to the rotation rules. The 1st and 3rd components sail through the transformation completely unaffected [@problem_id:2176492]. In 3D space, this becomes very intuitive: a Givens rotation in the $(x_1, x_3)$-plane is simply a standard rotation around the $x_2$-axis [@problem_id:2176526]. The [axis of rotation](@keyword=axis_of_rotation|lang=en-US|style=Feynman) is the dimension that is "left out" of the [planar rotation](@keyword=planar_rotation|lang=en-US|style=Feynman).
 
 This ability to perform localized, precision rotations is what makes the Givens method so powerful. You can aim at a single, specific element in a vector or matrix and eliminate it with one targeted rotation, leaving the rest of the structure largely intact.
 
@@ -66,7 +66,7 @@ This ability to perform localized, precision rotations is what makes the Givens 
 
 Let's consider a final, more subtle question. Imagine you're performing a sequence of these rotations. Does the order in which you apply them matter? In other words, if we have two rotations, $G_1$ and $G_2$, is it always true that $G_1 G_2 = G_2 G_1$? The answer reveals a deep and beautiful fact about the geometry of high-dimensional spaces.
 
-Let's say $G_1$ rotates in the plane defined by the [index set](@article_id:267995) $I = \{i, j\}$ and $G_2$ rotates in the plane defined by $K = \{k, l\}$. The behavior depends on how these two planes "intersect" .
+Let's say $G_1$ rotates in the plane defined by the [index set](@keyword=index_set|lang=en-US|style=Feynman) $I = \{i, j\}$ and $G_2$ rotates in the plane defined by $K = \{k, l\}$. The behavior depends on how these two planes "intersect" [@problem_id:2176470].
 
 1.  **Identical Planes ($|I \cap K| = 2$):** If both rotations are in the same plane (e.g., both in the $x_1-x_2$ plane), then the order doesn't matter. A 30-degree turn followed by a 45-degree turn is the same as a 45-degree turn followed by a 30-degree one. Both result in a 75-degree turn. Rotations in the same plane commute.
 

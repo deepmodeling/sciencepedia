@@ -1,5 +1,5 @@
 ## Introduction
-In the vast landscape of linear algebra, certain concepts act as foundational pillars, providing structure and insight across numerous scientific domains. Hermitian and skew-Hermitian matrices are two such concepts, extending the familiar properties of real and imaginary numbers to the more complex world of matrices. While their definitions—based on a matrix's relationship to its [conjugate transpose](@article_id:147415)—might seem like a niche algebraic curiosity, they address a fundamental question: how can we mathematically capture symmetries that correspond to physical reality and dynamic evolution? This article demystifies these crucial matrix types, revealing them not as abstract rules but as the language of nature itself.
+In the vast landscape of linear algebra, certain concepts act as foundational pillars, providing structure and insight across numerous scientific domains. Hermitian and skew-Hermitian matrices are two such concepts, extending the familiar properties of real and imaginary numbers to the more complex world of matrices. While their definitions—based on a matrix's relationship to its [conjugate transpose](@keyword=conjugate_transpose|lang=en-US|style=Feynman)—might seem like a niche algebraic curiosity, they address a fundamental question: how can we mathematically capture symmetries that correspond to physical reality and dynamic evolution? This article demystifies these crucial matrix types, revealing them not as abstract rules but as the language of nature itself.
 
 In the first chapter, "Principles and Mechanisms," we will uncover their core definitions, explore the unique way any matrix can be decomposed into these two parts, and discover the profound implications for their eigenvalues. Following that, "Applications and Interdisciplinary Connections" will reveal their indispensable role as the language of quantum mechanics, a cornerstone of modern data analysis, and a bridge to the abstract structures of Lie theory. Finally, "Hands-On Practices" will offer concrete problems to apply these concepts and solidify your understanding. Let us begin by exploring the principles and mechanisms that make these matrices so powerful.
 
@@ -9,9 +9,9 @@ Imagine you are looking in a mirror. Your reflection is a perfect, symmetric cop
 
 ### A Tale of Two Symmetries
 
-Let's start with a simple number. A real number, like 5, has a simple property: its [complex conjugate](@article_id:174394) is itself. The [complex conjugate](@article_id:174394) of a number $z = a+bi$ is $\bar{z} = a-bi$, so for a real number, the imaginary part is zero and $x = \bar{x}$. In a way, real numbers are perfectly symmetric with respect to this conjugation operation.
+Let's start with a simple number. A real number, like 5, has a simple property: its [complex conjugate](@keyword=complex_conjugate|lang=en-US|style=Feynman) is itself. The [complex conjugate](@keyword=complex_conjugate|lang=en-US|style=Feynman) of a number $z = a+bi$ is $\bar{z} = a-bi$, so for a real number, the imaginary part is zero and $x = \bar{x}$. In a way, real numbers are perfectly symmetric with respect to this conjugation operation.
 
-Now, let's step up to matrices. What is the equivalent of conjugation for a matrix? It's an operation called the **conjugate transpose**, or **Hermitian conjugate**, denoted by a dagger symbol ($\dagger$). To find the conjugate transpose of a matrix $A$, you first take its transpose ($A^T$) and then take the [complex conjugate](@article_id:174394) of every entry. So, $A^\dagger = (\overline{A^T})$.
+Now, let's step up to matrices. What is the equivalent of conjugation for a matrix? It's an operation called the **conjugate transpose**, or **Hermitian conjugate**, denoted by a dagger symbol ($\dagger$). To find the conjugate transpose of a matrix $A$, you first take its transpose ($A^T$) and then take the [complex conjugate](@keyword=complex_conjugate|lang=en-US|style=Feynman) of every entry. So, $A^\dagger = (\overline{A^T})$.
 
 This operation is our "mathematical mirror." And just like with numbers, we can ask: what kinds of matrices are perfectly symmetric with respect to this mirror?
 
@@ -27,7 +27,7 @@ S = -S^\dagger
 $$
 These are the matrix analogues of purely imaginary numbers (since for a number like $z=bi$, we have $\bar{z}=-bi = -z$). What does this mean for their entries? Again, let's look at the diagonal. The condition becomes $s_{jj} = -\overline{s_{jj}}$. If you write $s_{jj} = a+bi$, this means $a+bi = -(a-bi) = -a+bi$, which implies $2a=0$, or $a=0$. So, the **diagonal entries of a skew-Hermitian matrix must be purely imaginary or zero**. For the off-diagonal entries, we now have $s_{ij} = -\overline{s_{ji}}$.
 
-These two simple definitions are the key to everything that follows. They are not just arbitrary rules; they are fundamental symmetries. A fascinating consequence appears when we consider a [complex matrix](@article_id:194462) a sum of its real and imaginary parts, $M = A+iB$, where $A$ and $B$ are purely real matrices. If $M$ is Hermitian, it turns out that the real part $A$ must be a symmetric matrix ($A=A^T$) and the imaginary part $B$ must be a [skew-symmetric matrix](@article_id:155504) ($B=-B^T$). This builds a beautiful bridge between the familiar world of real [symmetric matrices](@article_id:155765) and the richer, more general world of complex Hermitian ones.
+These two simple definitions are the key to everything that follows. They are not just arbitrary rules; they are fundamental symmetries. A fascinating consequence appears when we consider a [complex matrix](@keyword=complex_matrix|lang=en-US|style=Feynman) a sum of its real and imaginary parts, $M = A+iB$, where $A$ and $B$ are purely real matrices. If $M$ is Hermitian, it turns out that the real part $A$ must be a symmetric matrix ($A=A^T$) and the imaginary part $B$ must be a [skew-symmetric matrix](@keyword=skew_symmetric_matrix|lang=en-US|style=Feynman) ($B=-B^T$). This builds a beautiful bridge between the familiar world of real [symmetric matrices](@keyword=symmetric_matrices|lang=en-US|style=Feynman) and the richer, more general world of complex Hermitian ones.
 
 ### The Grand Decomposition: Every Matrix Has Two Souls
 
@@ -49,7 +49,7 @@ So, for any square matrix $M$, we can write:
 $$
 M = H + S = \frac{1}{2}(M+M^\dagger) + \frac{1}{2}(M-M^\dagger)
 $$
-This is called the **Toeplitz decomposition**, and it is unique. Every matrix has a Hermitian soul and a skew-Hermitian soul, and we now have the tools to separate them. This isn't just a mathematical curiosity; it's a fundamental statement about the structure of [linear transformations](@article_id:148639).
+This is called the **Toeplitz decomposition**, and it is unique. Every matrix has a Hermitian soul and a skew-Hermitian soul, and we now have the tools to separate them. This isn't just a mathematical curiosity; it's a fundamental statement about the structure of [linear transformations](@keyword=linear_transformations|lang=en-US|style=Feynman).
 
 ### The Character of Eigenvalues: From Math to Physics
 
@@ -59,9 +59,9 @@ A monumental fact of linear algebra is that **the eigenvalues of a Hermitian mat
 
 Think about what this means. In quantum mechanics, physical observables—things we can actually measure in a laboratory, like energy, position, or momentum—are represented by Hermitian matrices (or more accurately, Hermitian operators). When you measure the energy of an electron, you get a real number, not $3+2i$ joules. The fact that Hermitian matrices have real eigenvalues ensures that the predictions of quantum theory correspond to the reality of experimental measurement. It’s a mathematical guarantee that the universe won't give us nonsense answers.
 
-What about our other friends, the skew-Hermitian matrices? As you might guess from their analogy to imaginary numbers, **the eigenvalues of a skew-Hermitian matrix are always purely imaginary or zero**. These matrices don't typically represent static [observables](@article_id:266639). Instead, they often appear in descriptions of how systems evolve or dissipate energy over time. An evolution described by $\exp(St)$ where $S$ is skew-Hermitian often involves [exponential decay](@article_id:136268) or growth, a hallmark of "dissipative" systems.
+What about our other friends, the skew-Hermitian matrices? As you might guess from their analogy to imaginary numbers, **the eigenvalues of a skew-Hermitian matrix are always purely imaginary or zero**. These matrices don't typically represent static [observables](@keyword=observables|lang=en-US|style=Feynman). Instead, they often appear in descriptions of how systems evolve or dissipate energy over time. An evolution described by $\exp(St)$ where $S$ is skew-Hermitian often involves [exponential decay](@keyword=exponential_decay|lang=en-US|style=Feynman) or growth, a hallmark of "dissipative" systems.
 
-There's an even deeper way to understand this, by looking at how these matrices behave with respect to the **[complex inner product](@article_id:260748)**, which is a way of "multiplying" two vectors to get a scalar. For a Hermitian matrix $H$, it can be shown that it is "self-adjoint," meaning it can be moved from one vector to the other inside an inner product without changing the result:
+There's an even deeper way to understand this, by looking at how these matrices behave with respect to the **[complex inner product](@keyword=complex_inner_product|lang=en-US|style=Feynman)**, which is a way of "multiplying" two vectors to get a scalar. For a Hermitian matrix $H$, it can be shown that it is "self-adjoint," meaning it can be moved from one vector to the other inside an inner product without changing the result:
 $$
 \langle Hu, v \rangle = \langle u, Hv \rangle
 $$
@@ -83,7 +83,7 @@ What does this orthogonality mean? It means that a kind of Pythagorean theorem h
 $$
 \|M\|_F^2 = \|H\|_F^2 + \|S\|_F^2
 $$
-The "total length squared" of a matrix is the sum of the squared lengths of its Hermitian and skew-Hermitian parts. This is a direct consequence of the fact that the [trace of a commutator](@article_id:181926) is always zero, $\text{tr}(AB-BA)=0$.
+The "total length squared" of a matrix is the sum of the squared lengths of its Hermitian and skew-Hermitian parts. This is a direct consequence of the fact that the [trace of a commutator](@keyword=trace_of_a_commutator|lang=en-US|style=Feynman) is always zero, $\text{tr}(AB-BA)=0$.
 
 This is not just an abstract nicety. In some physical models, $\|H\|_F^2$ is interpreted as the "conservative energy" of an operator, while $\|S\|_F^2$ is its "dissipative energy". Our matrix Pythagorean theorem shows that the total "energy" of the operator is simply the sum of these two independent components, a direct result of their orthogonality.
 

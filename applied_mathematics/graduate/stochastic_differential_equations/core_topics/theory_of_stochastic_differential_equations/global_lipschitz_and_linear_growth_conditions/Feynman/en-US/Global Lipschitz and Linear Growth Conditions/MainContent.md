@@ -11,7 +11,7 @@ $$
 
 Here, $X_t$ is the position of our pollen grain or the price of our stock at time $t$. The term $b(t, X_t)$ is the **drift** – the deterministic "wind" or average tendency of the process. The term $\sigma(t, X_t)$ is the **diffusion** coefficient, which scales the intensity of the random kicks delivered by $W_t$, a fundamental source of randomness known as **Brownian motion**.
 
-But just writing down an equation is not enough. We must ask a fundamental question: does this equation even describe a sensible reality? Does it predict a unique future path for our particle, or could it split into many possibilities? Does the path exist forever, or could our pollen grain suddenly shoot off to infinity in the blink of an eye? Without some rules of the road for our coefficients $b$ and $\sigma$, our SDE could be describing mathematical nonsense. The theory of SDEs provides these rules, a contract with reality that ensures our equations are well-behaved. This contract consists of two "golden rules": the Lipschitz condition and the [linear growth condition](@article_id:201007).
+But just writing down an equation is not enough. We must ask a fundamental question: does this equation even describe a sensible reality? Does it predict a unique future path for our particle, or could it split into many possibilities? Does the path exist forever, or could our pollen grain suddenly shoot off to infinity in the blink of an eye? Without some rules of the road for our coefficients $b$ and $\sigma$, our SDE could be describing mathematical nonsense. The theory of SDEs provides these rules, a contract with reality that ensures our equations are well-behaved. This contract consists of two "golden rules": the Lipschitz condition and the [linear growth condition](@keyword=linear_growth_condition|lang=en-US|style=Feynman).
 
 ### The Two Golden Rules: A Contract with Reality
 
@@ -27,23 +27,23 @@ $$
 |b(t,x)-b(t,y)| \le L|x-y| \quad \text{and} \quad \|\sigma(t,x)-\sigma(t,y)\|_{\mathrm{F}} \le L|x-y|
 $$
 
-The word **global** is critical: this single constant $L$ works everywhere in the universe of our model, for any pair of points . It's a uniform law. This condition's primary role is to ensure **[pathwise uniqueness](@article_id:267275)**. If two solutions were to start from the same point, the Lipschitz condition forces the distance between them to grow so slowly (at most exponentially) that, having started at zero, it must remain zero forever. They are forced to follow the same path.
+The word **global** is critical: this single constant $L$ works everywhere in the universe of our model, for any pair of points [@problem_id:2978457]. It's a uniform law. This condition's primary role is to ensure **[pathwise uniqueness](@keyword=pathwise_uniqueness|lang=en-US|style=Feynman)**. If two solutions were to start from the same point, the Lipschitz condition forces the distance between them to grow so slowly (at most exponentially) that, having started at zero, it must remain zero forever. They are forced to follow the same path.
 
-This condition is so fundamental that a global Lipschitz function is automatically "locally Lipschitz"—if the rule holds for any two points in the universe, it certainly holds for any two points inside a small bubble .
+This condition is so fundamental that a global Lipschitz function is automatically "locally Lipschitz"—if the rule holds for any two points in the universe, it certainly holds for any two points inside a small bubble [@problem_id:2978452].
 
 #### Rule 2: The Linear Growth Condition (The No-Explosion Rule)
 
 Now, imagine our pollen grain wanders very far from its starting point. What happens then? If the forces pushing it away grow too violently with distance, it could be catapulted out of existence in a finite amount of time—an event called **explosion**. The **Linear Growth Condition** is a tether that prevents this.
 
-It states that the magnitude of the [drift and diffusion](@article_id:148322) cannot grow faster than a straight line as we move away from the origin. Formally, there is a constant $K \ge 0$ such that for all times $t$ and all points $x$:
+It states that the magnitude of the [drift and diffusion](@keyword=drift_and_diffusion|lang=en-US|style=Feynman) cannot grow faster than a straight line as we move away from the origin. Formally, there is a constant $K \ge 0$ such that for all times $t$ and all points $x$:
 
 $$
 |b(t,x)| + \|\sigma(t,x)\|_{\mathrm{F}} \le K(1 + |x|)
 $$
 
-This is equivalent to another common formulation, $|b(t,x)|^2 + \|\sigma(t,x)\|_{\mathrm{F}}^2 \le \tilde{K}(1+|x|^2)$, which highlights how the "energy" of the coefficients is controlled . This rule ensures that even if our particle is far out, the forces acting on it are not uncontrollably large. It guarantees that the solution will not "explode" in finite time, meaning $\mathbb{P}(\tau_\infty = \infty) = 1$, where $\tau_\infty$ is the [explosion time](@article_id:195519) .
+This is equivalent to another common formulation, $|b(t,x)|^2 + \|\sigma(t,x)\|_{\mathrm{F}}^2 \le \tilde{K}(1+|x|^2)$, which highlights how the "energy" of the coefficients is controlled [@problem_id:2978432]. This rule ensures that even if our particle is far out, the forces acting on it are not uncontrollably large. It guarantees that the solution will not "explode" in finite time, meaning $\mathbb{P}(\tau_\infty = \infty) = 1$, where $\tau_\infty$ is the [explosion time](@keyword=explosion_time|lang=en-US|style=Feynman) [@problem_id:2978422].
 
-To see why this is so important, consider a simple, non-random "toy model" where the drift grows too fast: $\mathrm{d}X_t = X_t^2\,\mathrm{d}t$. Here, the drift $b(x) = x^2$ clearly violates linear growth. A quick calculation shows the solution is $X_t = x_0 / (1 - t x_0)$, which shoots off to infinity at the finite time $t = 1/x_0$!  . The [linear growth condition](@article_id:201007) forbids such runaway behavior. It turns out that this is not just a problem for the drift; if either the drift or the diffusion term exhibits super-linear growth, the moments of the solution can explode, invalidating our model .
+To see why this is so important, consider a simple, non-random "toy model" where the drift grows too fast: $\mathrm{d}X_t = X_t^2\,\mathrm{d}t$. Here, the drift $b(x) = x^2$ clearly violates linear growth. A quick calculation shows the solution is $X_t = x_0 / (1 - t x_0)$, which shoots off to infinity at the finite time $t = 1/x_0$! [@problem_id:2978456] [@problem_id:2978447]. The [linear growth condition](@keyword=linear_growth_condition|lang=en-US|style=Feynman) forbids such runaway behavior. It turns out that this is not just a problem for the drift; if either the drift or the diffusion term exhibits super-linear growth, the moments of the solution can explode, invalidating our model [@problem_id:2978456].
 
 ### The Devil is in the Details: Norms and Uniformity
 
@@ -51,21 +51,21 @@ The beauty of physics and mathematics lies not just in the grand principles but 
 
 #### Why the Frobenius Norm?
 
-You might have noticed the strange-looking norm $\|\cdot\|_{\mathrm{F}}$ for the [diffusion matrix](@article_id:182471) $\sigma$. This is the **Frobenius norm**, calculated by summing the squares of all the matrix's entries and taking the square root. Why this specific choice? It's not arbitrary. It arises from the very heart of Itô calculus.
+You might have noticed the strange-looking norm $\|\cdot\|_{\mathrm{F}}$ for the [diffusion matrix](@keyword=diffusion_matrix|lang=en-US|style=Feynman) $\sigma$. This is the **Frobenius norm**, calculated by summing the squares of all the matrix's entries and taking the square root. Why this specific choice? It's not arbitrary. It arises from the very heart of Itô calculus.
 
-The celebrated **Itô [isometry](@article_id:150387)** is the stochastic world's Pythagorean theorem. It relates the average squared distance traveled due to the random term to an integral involving the diffusion coefficient:
+The celebrated **Itô [isometry](@keyword=isometry|lang=en-US|style=Feynman)** is the stochastic world's Pythagorean theorem. It relates the average squared distance traveled due to the random term to an integral involving the diffusion coefficient:
 
 $$
 \mathbb{E}\left[\left\|\int_0^t \sigma(X_s)\,\mathrm{d}W_s\right\|^2\right] = \mathbb{E}\left[\int_0^t \|\sigma(X_s)\|_{\mathrm{F}}^2\,\mathrm{d}s\right]
 $$
 
-Look at that! The Frobenius norm squared, $\|\sigma\|_{\mathrm{F}}^2$, is precisely the quantity that measures the "energy" or variance contributed by the noise term over time . The [linear growth condition](@article_id:201007), by controlling $\|\sigma\|_{\mathrm{F}}$, directly controls the average size of the random fluctuations, which is essential for proving that the solution doesn't explode. The appearance of this term, also written as $\mathrm{trace}(\sigma\sigma^\top)$, is a recurring motif in SDE theory, showing up in Itô's formula and the [infinitesimal generator](@article_id:269930) of the process, cementing the Frobenius norm's central role .
+Look at that! The Frobenius norm squared, $\|\sigma\|_{\mathrm{F}}^2$, is precisely the quantity that measures the "energy" or variance contributed by the noise term over time [@problem_id:2978436]. The [linear growth condition](@keyword=linear_growth_condition|lang=en-US|style=Feynman), by controlling $\|\sigma\|_{\mathrm{F}}$, directly controls the average size of the random fluctuations, which is essential for proving that the solution doesn't explode. The appearance of this term, also written as $\mathrm{trace}(\sigma\sigma^\top)$, is a recurring motif in SDE theory, showing up in Itô's formula and the [infinitesimal generator](@keyword=infinitesimal_generator|lang=en-US|style=Feynman) of the process, cementing the Frobenius norm's central role [@problem_id:2978436].
 
 #### Why Uniform Constants?
 
-Another crucial detail is that the constants $L$ and $K$ in our rules must be **uniform**, meaning they cannot depend on time $t$ . Why such a strict requirement? Imagine a growth "constant" $K(t)$ that was allowed to increase with time. If it were to blow up as time approached some endpoint $T$, our "tether" would snap right when we needed it most.
+Another crucial detail is that the constants $L$ and $K$ in our rules must be **uniform**, meaning they cannot depend on time $t$ [@problem_id:2978421]. Why such a strict requirement? Imagine a growth "constant" $K(t)$ that was allowed to increase with time. If it were to blow up as time approached some endpoint $T$, our "tether" would snap right when we needed it most.
 
-Consider another thought experiment: an object whose velocity is proportional to its position, but the proportionality constant is blowing up over time, as in $\mathrm{d}X_t = \frac{1}{T-t}X_t\,\mathrm{d}t$. The [linear growth](@article_id:157059) coefficient here is $K(t) = 1/(T-t)$, which is not uniform. The solution is $|X_t| = |X_0| \frac{T}{T-t}$, which explodes to infinity as $t \to T$ . This simple example demonstrates that the guarantee of non-explosion relies critically on the uniformity of the growth bound. If the laws of physics can change and become infinitely strong, all bets are off.
+Consider another thought experiment: an object whose velocity is proportional to its position, but the proportionality constant is blowing up over time, as in $\mathrm{d}X_t = \frac{1}{T-t}X_t\,\mathrm{d}t$. The [linear growth](@keyword=linear_growth|lang=en-US|style=Feynman) coefficient here is $K(t) = 1/(T-t)$, which is not uniform. The solution is $|X_t| = |X_0| \frac{T}{T-t}$, which explodes to infinity as $t \to T$ [@problem_id:2978420]. This simple example demonstrates that the guarantee of non-explosion relies critically on the uniformity of the growth bound. If the laws of physics can change and become infinitely strong, all bets are off.
 
 ### Life on the Edge: When the Rules Don't Hold
 
@@ -73,11 +73,11 @@ The world is not always so well-behaved. What happens if our SDE's coefficients 
 
 #### The Power of Stopping: A Local Universe
 
-Often, the coefficients of an SDE might be well-behaved locally but not globally. For example, they might satisfy a Lipschitz condition, but with a constant that gets larger as you move further from the origin (**local Lipschitz continuity**). This means our "no-tearing" rule holds inside any finite bubble of space, but the rule might get weaker in bigger and bigger bubbles .
+Often, the coefficients of an SDE might be well-behaved locally but not globally. For example, they might satisfy a Lipschitz condition, but with a constant that gets larger as you move further from the origin (**local Lipschitz continuity**). This means our "no-tearing" rule holds inside any finite bubble of space, but the rule might get weaker in bigger and bigger bubbles [@problem_id:2978422].
 
-The brilliant mathematical trick here is called **localization**. We can't guarantee a solution for all of space and all of time, but we can for a limited region. We define an "alarm bell," a **stopping time** $\tau_R$, that rings the instant our process $X_t$ first touches the boundary of a ball of radius $R$ .
+The brilliant mathematical trick here is called **localization**. We can't guarantee a solution for all of space and all of time, but we can for a limited region. We define an "alarm bell," a **stopping time** $\tau_R$, that rings the instant our process $X_t$ first touches the boundary of a ball of radius $R$ [@problem_id:2978460].
 
-Inside this ball, our coefficients are well-behaved (globally Lipschitz on a modified SDE). We can prove that a unique solution exists right up until the alarm rings. Then, we can take a sequence of larger and larger balls, with radii $R=1, 2, 3, \dots$, and "patch" these local solutions together. This constructs a unique solution that is valid up to the **[explosion time](@article_id:195519)** $\tau_\infty = \lim_{R \to \infty} \tau_R$, the moment the particle truly escapes to infinity . This powerful technique allows us to analyze a much broader class of SDEs, building a global picture from a series of local certainties.
+Inside this ball, our coefficients are well-behaved (globally Lipschitz on a modified SDE). We can prove that a unique solution exists right up until the alarm rings. Then, we can take a sequence of larger and larger balls, with radii $R=1, 2, 3, \dots$, and "patch" these local solutions together. This constructs a unique solution that is valid up to the **[explosion time](@keyword=explosion_time|lang=en-US|style=Feynman)** $\tau_\infty = \lim_{R \to \infty} \tau_R$, the moment the particle truly escapes to infinity [@problem_id:2978422]. This powerful technique allows us to analyze a much broader class of SDEs, building a global picture from a series of local certainties.
 
 #### A Weaker Rule for Uniqueness: The Monotonicity Condition
 
@@ -89,6 +89,6 @@ $$
 \langle x-y, b(x)-b(y) \rangle \le L|x-y|^2
 $$
 
-Geometrically, this means the vector field $b(x)$ does not "push apart" trajectories too strongly. In fact, if $L \le 0$, it actively pushes them back together. Consider the drift $b(x) = -x^3$. This function fails both the global Lipschitz and linear growth conditions spectacularly. Yet, it satisfies the one-sided Lipschitz condition with $L=0$ . This "[monotonicity](@article_id:143266)" is strong enough to guarantee the uniqueness of the solution, even though the drift itself is wildly nonlinear.
+Geometrically, this means the vector field $b(x)$ does not "push apart" trajectories too strongly. In fact, if $L \le 0$, it actively pushes them back together. Consider the drift $b(x) = -x^3$. This function fails both the global Lipschitz and linear growth conditions spectacularly. Yet, it satisfies the one-sided Lipschitz condition with $L=0$ [@problem_id:2978443]. This "[monotonicity](@keyword=monotonicity|lang=en-US|style=Feynman)" is strong enough to guarantee the uniqueness of the solution, even though the drift itself is wildly nonlinear.
 
 This shows that the theory is not a rigid list of rules, but a flexible toolkit. By understanding the principles behind the rules, we can find new ways to make sense of the complex, random world around us, discovering the deep and often surprising unity in its mathematical description.

@@ -21,7 +21,7 @@ $$
 
 To understand what these parts are, we first need to meet a special quantity that is hidden inside every tensor: its **trace**. The trace, written as $\text{tr}(\mathbf{T})$, is simply the sum of the diagonal elements of the tensor's matrix. It might seem like a mere bookkeeping trick, but the trace holds the physical key to understanding volume.
 
-For a small [strain tensor](@article_id:192838) $\boldsymbol{\epsilon}$, its trace, $\text{tr}(\boldsymbol{\epsilon})$, is a direct measure of the fractional change in volume of the material at that point. What happens if a material is *incompressible*, like water or a specialized polymer in a lab experiment?  Incompressibility means the change in volume is zero. This tells us that for such a material, the trace of its strain tensor must be zero: $\text{tr}(\boldsymbol{\epsilon}) = 0$. This simple equation is the mathematical signature of a material that only changes its shape.
+For a small [strain tensor](@keyword=strain_tensor|lang=en-US|style=Feynman) $\boldsymbol{\epsilon}$, its trace, $\text{tr}(\boldsymbol{\epsilon})$, is a direct measure of the fractional change in volume of the material at that point. What happens if a material is *incompressible*, like water or a specialized polymer in a lab experiment? [@problem_id:1505979] Incompressibility means the change in volume is zero. This tells us that for such a material, the trace of its strain tensor must be zero: $\text{tr}(\boldsymbol{\epsilon}) = 0$. This simple equation is the mathematical signature of a material that only changes its shape.
 
 For a stress tensor $\boldsymbol{\sigma}$, the trace has a related meaning. One-third of the trace, $p = \frac{1}{3}\text{tr}(\boldsymbol{\sigma})$, represents the **mean stress**, or the average pressure you would feel from all directions if you were a tiny observer at that point. It’s what makes things want to shrink or expand uniformly.
 
@@ -33,13 +33,13 @@ $$
 \mathbf{T}_{\text{vol}} = \left(\frac{1}{3}\text{tr}(\mathbf{T})\right)\mathbf{I}
 $$
 
-Let's unpack this. The identity tensor $\mathbf{I}$ is represented by a matrix with 1s on the diagonal and 0s everywhere else. So, $\mathbf{T}_{\text{vol}}$ is a diagonal matrix with all its diagonal entries equal to the mean value, $p$. What does a tensor like this *do*? A tensor of the form $p\mathbf{I}$ describes a state of uniform tension or compression. It pushes or pulls equally in all directions, just like the [hydrostatic pressure](@article_id:141133) you feel deep in the ocean. This is why the volumetric part is also called the **spherical** or **hydrostatic** part.
+Let's unpack this. The identity tensor $\mathbf{I}$ is represented by a matrix with 1s on the diagonal and 0s everywhere else. So, $\mathbf{T}_{\text{vol}}$ is a diagonal matrix with all its diagonal entries equal to the mean value, $p$. What does a tensor like this *do*? A tensor of the form $p\mathbf{I}$ describes a state of uniform tension or compression. It pushes or pulls equally in all directions, just like the [hydrostatic pressure](@keyword=hydrostatic_pressure|lang=en-US|style=Feynman) you feel deep in the ocean. This is why the volumetric part is also called the **spherical** or **hydrostatic** part.
 
-This kind of tensor has a beautiful property: it is **isotropic**, meaning it looks the same no matter how you orient your coordinate system . Hydrostatic pressure is hydrostatic pressure, regardless of whether you're looking at it from the side, top, or any other angle. This physical invariance is a clue that we've isolated a truly fundamental aspect of the tensor.
+This kind of tensor has a beautiful property: it is **isotropic**, meaning it looks the same no matter how you orient your coordinate system [@problem_id:1505958]. Hydrostatic pressure is hydrostatic pressure, regardless of whether you're looking at it from the side, top, or any other angle. This physical invariance is a clue that we've isolated a truly fundamental aspect of the tensor.
 
-Another way to see this is by looking at its **eigenvalues**, which represent the magnitudes of stretching or stress along the principal directions. For a purely volumetric tensor $S = p\mathbf{I}$, all three of its eigenvalues are equal to $p$ . This corresponds to a deformation that is a perfect, uniform scaling—making a sphere a bigger or smaller sphere, with no change in its spherical shape.
+Another way to see this is by looking at its **eigenvalues**, which represent the magnitudes of stretching or stress along the principal directions. For a purely volumetric tensor $S = p\mathbf{I}$, all three of its eigenvalues are equal to $p$ [@problem_id:1506007]. This corresponds to a deformation that is a perfect, uniform scaling—making a sphere a bigger or smaller sphere, with no change in its spherical shape.
 
-So, what is the 'shape-changing' part of a purely hydrostatic state? Intuitively, it should be zero. And our mathematics confirms this. If we consider a stress state that is purely hydrostatic, $\boldsymbol{\sigma} = k\mathbf{I}$, its deviatoric part is precisely the zero tensor . All of its "energy" is in changing volume, with none left over for changing shape.
+So, what is the 'shape-changing' part of a purely hydrostatic state? Intuitively, it should be zero. And our mathematics confirms this. If we consider a stress state that is purely hydrostatic, $\boldsymbol{\sigma} = k\mathbf{I}$, its deviatoric part is precisely the zero tensor [@problem_id:1505995]. All of its "energy" is in changing volume, with none left over for changing shape.
 
 ### The Deviatoric Part: Pure Distortion, No Swelling
 
@@ -49,7 +49,7 @@ $$
 \mathbf{T}_{\text{dev}} = \mathbf{T} - \mathbf{T}_{\text{vol}} = \mathbf{T} - \left(\frac{1}{3}\text{tr}(\mathbf{T})\right)\mathbf{I}
 $$
 
-What is the defining characteristic of this new tensor? Let's take its trace. As a beautiful consequence of its very definition, the trace of any [deviatoric tensor](@article_id:185343) is always zero .
+What is the defining characteristic of this new tensor? Let's take its trace. As a beautiful consequence of its very definition, the trace of any [deviatoric tensor](@keyword=deviatoric_tensor|lang=en-US|style=Feynman) is always zero [@problem_id:1506014].
 
 $$
 \text{tr}(\mathbf{T}_{\text{dev}}) = \text{tr}(\mathbf{T}) - \text{tr}\left(\frac{1}{3}\text{tr}(\mathbf{T})\mathbf{I}\right) = \text{tr}(\mathbf{T}) - \frac{1}{3}\text{tr}(\mathbf{T}) \cdot \text{tr}(\mathbf{I})
@@ -61,9 +61,9 @@ $$
 \text{tr}(\mathbf{T}_{\text{dev}}) = \text{tr}(\mathbf{T}) - \frac{1}{3}\text{tr}(\mathbf{T}) \cdot 3 = \text{tr}(\mathbf{T}) - \text{tr}(\mathbf{T}) = 0
 $$
 
-A [traceless tensor](@article_id:273559) is the mathematical embodiment of a pure shape change. A [deviatoric strain](@article_id:200769) tensor describes a deformation that conserves volume, like squeezing that ball of clay into a snake. A [deviatoric stress tensor](@article_id:267148), often called the **shear [stress tensor](@article_id:148479)**, describes the forces that cause a material to distort or yield. In fact, many theories in material science state that plastic yielding in metals is driven entirely by the [deviatoric stress](@article_id:162829), and is independent of the [hydrostatic pressure](@article_id:141133). The decomposition neatly separates these effects for us.
+A [traceless tensor](@keyword=traceless_tensor|lang=en-US|style=Feynman) is the mathematical embodiment of a pure shape change. A [deviatoric strain](@keyword=deviatoric_strain|lang=en-US|style=Feynman) tensor describes a deformation that conserves volume, like squeezing that ball of clay into a snake. A [deviatoric stress tensor](@keyword=deviatoric_stress_tensor|lang=en-US|style=Feynman), often called the **shear [stress tensor](@keyword=stress_tensor|lang=en-US|style=Feynman)**, describes the forces that cause a material to distort or yield. In fact, many theories in material science state that plastic yielding in metals is driven entirely by the [deviatoric stress](@keyword=deviatoric_stress|lang=en-US|style=Feynman), and is independent of the [hydrostatic pressure](@keyword=hydrostatic_pressure|lang=en-US|style=Feynman). The decomposition neatly separates these effects for us.
 
-For a hands-on feel, one can take any tensor, compute its trace to find the mean stress, and then subtract that from the diagonal components to find the resulting [deviatoric tensor](@article_id:185343) . A tensor whose trace is zero to begin with is already purely deviatoric; it is its own deviatoric part .
+For a hands-on feel, one can take any tensor, compute its trace to find the mean stress, and then subtract that from the diagonal components to find the resulting [deviatoric tensor](@keyword=deviatoric_tensor|lang=en-US|style=Feynman) [@problem_id:1505975]. A tensor whose trace is zero to begin with is already purely deviatoric; it is its own deviatoric part [@problem_id:1505956].
 
 ### An Orthogonal Harmony
 
@@ -85,10 +85,10 @@ $$
 \|\mathbf{T}\|_F^2 = \|\mathbf{T}_{\text{vol}}\|_F^2 + \|\mathbf{T}_{\text{dev}}\|_F^2
 $$
 
-The total "intensity" of the stress or strain is the sum of the intensity of its volume-changing part and the intensity of its shape-changing part .
+The total "intensity" of the stress or strain is the sum of the intensity of its volume-changing part and the intensity of its shape-changing part [@problem_id:1505984].
 
-This geometric picture provides the most profound insight. The set of all traceless (purely deviatoric) tensors forms a subspace within the larger space of all tensors. The act of finding the deviatoric part, $\mathbf{T}_{\text{dev}}$, is equivalent to finding the **[orthogonal projection](@article_id:143674)** of the full tensor $\mathbf{T}$ onto this "shape-only" subspace . This means that out of all possible shape-only tensors, the deviatoric part is the one that is "closest" to the original tensor. The volumetric part is the "remainder," and it sticks out perfectly perpendicular to the shape-only world.
+This geometric picture provides the most profound insight. The set of all traceless (purely deviatoric) tensors forms a subspace within the larger space of all tensors. The act of finding the deviatoric part, $\mathbf{T}_{\text{dev}}$, is equivalent to finding the **[orthogonal projection](@keyword=orthogonal_projection|lang=en-US|style=Feynman)** of the full tensor $\mathbf{T}$ onto this "shape-only" subspace [@problem_id:1506013]. This means that out of all possible shape-only tensors, the deviatoric part is the one that is "closest" to the original tensor. The volumetric part is the "remainder," and it sticks out perfectly perpendicular to the shape-only world.
 
-This decomposition is not just a mathematical convenience tied to a specific coordinate system. It is an **objective** property of the physical state itself . If you rotate your perspective, the decomposed parts simply rotate along with you, maintaining their identities as the true volumetric and deviatoric components.
+This decomposition is not just a mathematical convenience tied to a specific coordinate system. It is an **objective** property of the physical state itself [@problem_id:1505961]. If you rotate your perspective, the decomposed parts simply rotate along with you, maintaining their identities as the true volumetric and deviatoric components.
 
 What began as a simple question—how to separate size from shape—has led us to a deep and beautiful structure within the mathematics of physics. By isolating the trace, we have unlocked a way to decompose any state of stress or strain into its most fundamental ingredients: a pure, directionless pressure and a pure, volume-preserving distortion.

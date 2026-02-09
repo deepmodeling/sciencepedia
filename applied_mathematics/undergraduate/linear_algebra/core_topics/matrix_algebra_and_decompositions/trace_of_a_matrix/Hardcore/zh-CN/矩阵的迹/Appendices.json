@@ -15,7 +15,7 @@
             "answer": "$$\\boxed{8}$$"
         },
         {
-            "introduction": "矩阵的迹和行列式并非孤立的概念，它们与矩阵的特征值有着深刻的内在联系。这个问题将引导你探索这种联系，利用一个 $2 \\times 2$ 矩阵的迹和行列式信息来计算其平方的迹。通过这个练习，你将体会到特征值是如何成为连接这些重要矩阵不变量的桥梁。",
+            "introduction": "矩阵的迹和行列式并非孤立的概念，它们与矩阵的特征值有着深刻的内在联系。这个问题将引导你探索这种联系，利用一个 $2 \\times 2$ 矩阵的迹和行列式信息来计算其平方的迹。通过这个练习[@problem_id:1097370]，你将体会到特征值是如何成为连接这些重要矩阵不变量的桥梁。",
             "id": "1097370",
             "problem": "设 $A$ 为一实数项 $2 \\times 2$ 矩阵。已知 $A$ 的迹 $\\operatorname{tr}(A) = 5$，且其行列式 $\\det(A) = 6$。求 $A^2$ 的迹 $\\operatorname{tr}(A^2)$。",
             "solution": "1. 设 $A$ 的特征值为 $\\lambda_1,\\lambda_2$。则\n$$\\operatorname{tr}(A)=\\lambda_1+\\lambda_2=5,\\quad \\det(A)=\\lambda_1\\lambda_2=6.$$\n2. 我们有\n$$\\operatorname{tr}(A^2)=\\lambda_1^2+\\lambda_2^2\n=(\\lambda_1+\\lambda_2)^2-2\\lambda_1\\lambda_2.$$\n3. 代入已知条件可得，\n$$\\operatorname{tr}(A^2)=5^2-2\\cdot6=25-12=13.$$",

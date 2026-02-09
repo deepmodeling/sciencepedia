@@ -17,15 +17,15 @@ The Binomial distribution is about counting "successes" in a fixed number of tri
 
 Let's do a thought experiment. Suppose we are watching an assembly line for an hour, looking for defective products. Let's break that hour into a huge number of tiny seconds, say $n=3600$. And let's say the chance of a defect appearing in any single second, $p$, is incredibly small. The average number of defects we expect to see in the hour is $\lambda = np$. Now, what if we chop the hour into even smaller pieces? Milliseconds? Nanoseconds? As we make our time slices smaller and smaller, $n$ goes to infinity, and the probability $p$ of a defect in any one slice goes to zero. The key is that we do this in such a way that their product, our average rate $\lambda$, stays the same.
 
-When you push the Binomial formula to this limit—an ocean of trials with a whisper of success in each one—it transforms. It sheds its complexity and elegantly simplifies into the Poisson [probability mass function](@article_id:264990):
+When you push the Binomial formula to this limit—an ocean of trials with a whisper of success in each one—it transforms. It sheds its complexity and elegantly simplifies into the Poisson [probability mass function](@keyword=probability_mass_function|lang=en-US|style=Feynman):
 
 $$
 P(k; \lambda) = \frac{e^{-\lambda} \lambda^k}{k!}
 $$
 
-Here, $k$ is the number of events we are counting (e.g., "exactly 5 defects"), and $\lambda$ is the *average* number of events we expect in our interval. The term $e$ is the base of the natural logarithm, an almost mystical number that shows up whenever we talk about growth and limits. The $k!$ (k-factorial) in the denominator and the $\lambda^k$ in the numerator handle the combinatorics of how these events can be arranged. And what about the $e^{-\lambda}$? This little term is the [normalization constant](@article_id:189688). It's the precise value needed to make sure that the probabilities of all possible outcomes (0 events, 1 event, 2 events, and so on) add up to exactly 1, as any good probability distribution must.
+Here, $k$ is the number of events we are counting (e.g., "exactly 5 defects"), and $\lambda$ is the *average* number of events we expect in our interval. The term $e$ is the base of the natural logarithm, an almost mystical number that shows up whenever we talk about growth and limits. The $k!$ (k-factorial) in the denominator and the $\lambda^k$ in the numerator handle the combinatorics of how these events can be arranged. And what about the $e^{-\lambda}$? This little term is the [normalization constant](@keyword=normalization_constant|lang=en-US|style=Feynman). It's the precise value needed to make sure that the probabilities of all possible outcomes (0 events, 1 event, 2 events, and so on) add up to exactly 1, as any good probability distribution must.
 
-This derivation tells us something profound. The Poisson distribution is the [law of rare events](@article_id:152001). It's what you get when you have countless opportunities for something to happen, but each opportunity is individually unlikely.
+This derivation tells us something profound. The Poisson distribution is the [law of rare events](@keyword=law_of_rare_events|lang=en-US|style=Feynman). It's what you get when you have countless opportunities for something to happen, but each opportunity is individually unlikely.
 
 ### The Heartbeat of the Process: A Tale of Mean and Variance
 
@@ -33,7 +33,7 @@ One of the most remarkable and identifying features of the Poisson distribution 
 
 The **mean** is the average number of events you expect, your center of gravity. The **variance** is a measure of the spread, or how much you expect the actual counts to wobble around that average. For a Poisson process, these two quantities are one and the same! If a university's email server receives an average of $\lambda=5$ emails per minute, then the variance in that count is also 5. If a stable server logs an average of $\lambda=3.5$ errors per hour, the variance is also 3.5. This equality is the signature of a true Poisson process.
 
-This property is not just a mathematical curiosity; it's a powerful diagnostic tool. Suppose you are counting bugs in software modules and you find the average number of bugs is 9, but the variance is much larger, say 13.3. This "[overdispersion](@article_id:263254)" is a red flag! It tells you a simple Poisson model might not be the right fit. It hints that some hidden factor is at play—perhaps some modules are inherently more complex and prone to bugs than others. The equality of mean and variance is a beautiful simplicity, and when nature deviates from it, it's telling you the story is more complicated.
+This property is not just a mathematical curiosity; it's a powerful diagnostic tool. Suppose you are counting bugs in software modules and you find the average number of bugs is 9, but the variance is much larger, say 13.3. This "[overdispersion](@keyword=overdispersion|lang=en-US|style=Feynman)" is a red flag! It tells you a simple Poisson model might not be the right fit. It hints that some hidden factor is at play—perhaps some modules are inherently more complex and prone to bugs than others. The equality of mean and variance is a beautiful simplicity, and when nature deviates from it, it's telling you the story is more complicated.
 
 ### Elegant Arithmetic: Combining and Thinning Streams
 
@@ -61,11 +61,11 @@ So far, we have asked, "How many events happen in a fixed interval of time?" We 
 
 If the number of events in an interval follows a Poisson distribution, then the waiting time between consecutive events follows an **Exponential distribution**. This is the other side of the same coin. The Poisson distribution counts discrete events in continuous time; the Exponential distribution measures the continuous time between discrete events.
 
-A key feature of this waiting time is that it is **memoryless**. If you’ve been waiting for a shooting star for 10 minutes and haven't seen one, the probability of seeing one in the next minute is *exactly the same* as it was when you first started. The process has no memory of how long you've been waiting. The [median](@article_id:264383) time you have to wait for the first event to occur is beautifully simple: $t_m = \frac{\ln(2)}{\lambda}$. Notice how it's inversely proportional to the rate $\lambda$. If events happen more frequently, you don't have to wait as long.
+A key feature of this waiting time is that it is **memoryless**. If you’ve been waiting for a shooting star for 10 minutes and haven't seen one, the probability of seeing one in the next minute is *exactly the same* as it was when you first started. The process has no memory of how long you've been waiting. The [median](@keyword=median|lang=en-US|style=Feynman) time you have to wait for the first event to occur is beautifully simple: $t_m = \frac{\ln(2)}{\lambda}$. Notice how it's inversely proportional to the rate $\lambda$. If events happen more frequently, you don't have to wait as long.
 
 ### Knowing the Boundaries: When the Model Shows its Limits
 
-No model is a perfect mirror of reality, and the Poisson process is no exception. Its elegance comes from its assumptions, and its power comes from knowing when those assumptions hold. The most crucial assumption for the simple, or **homogeneous**, Poisson process is **[stationarity](@article_id:143282)**: the average rate $\lambda$ must be constant over time.
+No model is a perfect mirror of reality, and the Poisson process is no exception. Its elegance comes from its assumptions, and its power comes from knowing when those assumptions hold. The most crucial assumption for the simple, or **homogeneous**, Poisson process is **[stationarity](@keyword=stationarity|lang=en-US|style=Feynman)**: the average rate $\lambda$ must be constant over time.
 
 Consider modeling traffic flow on a highway during rush hour, from 4:00 PM to 7:00 PM. Is the rate of cars passing a sensor constant? Absolutely not. The flow builds to a peak and then subsides. Using a single $\lambda$ for the entire three-hour period would be a poor description of reality. This is a classic example of a **non-homogeneous** process, where the rate $\lambda$ is itself a function of time, $\lambda(t)$.
 

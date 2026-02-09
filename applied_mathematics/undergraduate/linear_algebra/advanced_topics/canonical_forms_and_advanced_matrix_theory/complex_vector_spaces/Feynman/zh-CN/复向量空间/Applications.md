@@ -4,61 +4,61 @@
 
 从实数到复数的跨越，绝非数学家的一场自娱自乐。它为我们提供了一套更丰富的语言，来描述这个世界的本来面目。我们在上一章中引入的额外结构——例如复共轭、内积，以及诸如厄米（Hermitian）矩阵和幺正（Unitary）矩阵这些特殊的算符——并非可有可无的装饰。恰恰相反，物理的精髓就蕴含其中。
 
-现在，让我们开启一段新的旅程。我们将从神秘的量子世界出发，那里的一切都由[复向量](@article_id:371826)描述；然后我们将进入由函数构成的连续世界，看看这些思想如何延伸至无穷维；最后，我们将回归数学本身，欣赏复矢量空间如何揭示不同数学分支之间深刻而优雅的统一性。
+现在，让我们开启一段新的旅程。我们将从神秘的量子世界出发，那里的一切都由[复向量](@keyword=complex_vectors|lang=zh-CN|style=Feynman)描述；然后我们将进入由函数构成的连续世界，看看这些思想如何延伸至无穷维；最后，我们将回归数学本身，欣赏复矢量空间如何揭示不同数学分支之间深刻而优雅的统一性。
 
 ### 量子世界的语言
 
-如果你要用一种语言来描述[亚原子粒子](@article_id:302932)的行为，那么这种语言就是复矢量空间。量子力学，作为我们理解微观世界最成功的理论，其整个数学框架都建立在[复希尔伯特空间](@article_id:364448)（一种完备的[复内积空间](@article_id:325435)）之上。
+如果你要用一种语言来描述[亚原子粒子](@keyword=subatomic_particles|lang=zh-CN|style=Feynman)的行为，那么这种语言就是复矢量空间。量子力学，作为我们理解微观世界最成功的理论，其整个数学框架都建立在[复希尔伯特空间](@keyword=complex_hilbert_space|lang=zh-CN|style=Feynman)（一种完备的[复内积空间](@keyword=complex_inner_product_spaces|lang=zh-CN|style=Feynman)）之上。
 
 **万物的“态”**
 
-在经典世界里，一个物体的状态可以用它的位置和动量来描述。但在量子世界，一个系统的状态，比如一个电子的自旋状态，是由[复希尔伯特空间](@article_id:364448)中的一个单位向量来描述的，我们称之为“态向量”。为什么必须是复数？因为量子现象，如干涉，同时依赖于概率的“振幅”和“相位”。一个实数只能携带振幅信息，而一个复数 $re^{i\theta}$ 则完美地包含了这两者。没有复数，我们就无法解释双缝干涉实验中那些令人费解的图样。
+在经典世界里，一个物体的状态可以用它的位置和动量来描述。但在量子世界，一个系统的状态，比如一个电子的自旋状态，是由[复希尔伯特空间](@keyword=complex_hilbert_space|lang=zh-CN|style=Feynman)中的一个单位向量来描述的，我们称之为“态向量”[@problem_id:2896448]。为什么必须是复数？因为量子现象，如干涉，同时依赖于概率的“振幅”和“相位”。一个实数只能携带振幅信息，而一个复数 $re^{i\theta}$ 则完美地包含了这两者。没有复数，我们就无法解释双缝干涉实验中那些令人费解的图样。
 
 **叠加与合成**
 
-线性代数的核心——[线性组合](@article_id:315155)——在量子力学中化身为“叠加原理”。一个量子系统可以同时处于多种状[态的叠加](@article_id:337688)态中。这意味着，任何一个可能的[量子态](@article_id:306563)，都可以表示为一组基本状态（一组[基矢](@article_id:378298)）的线性组合。这不仅仅是抽象的数学运算；它实实在在地描述了我们如何通过组合一些基本状态来“合成”一个目标状态 。反之，当我们测量一个处于叠加态的系统时，它会“坍缩”到其中一个基本状态上，其概率就由线性组合中对应系数的模平方决定。
+线性代数的核心——[线性组合](@keyword=linear_combinations|lang=zh-CN|style=Feynman)——在量子力学中化身为“叠加原理”。一个量子系统可以同时处于多种状[态的叠加](@keyword=superposition_of_states|lang=zh-CN|style=Feynman)态中。这意味着，任何一个可能的[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)，都可以表示为一组基本状态（一组[基矢](@keyword=basis_vector|lang=zh-CN|style=Feynman)）的线性组合。这不仅仅是抽象的数学运算；它实实在在地描述了我们如何通过组合一些基本状态来“合成”一个目标状态 [@problem_id:1354826]。反之，当我们测量一个处于叠加态的系统时，它会“坍缩”到其中一个基本状态上，其概率就由线性组合中对应系数的模平方决定。
 
 **可观测量与测量**
 
-在量子力学中，像能量、动量、自旋这样我们可以在实验中测量的物理量，被称为“可观测量”。它们不再是简单的数值，而是由一类特殊的线性算符——[厄米算符](@article_id:313822)来表示。在[有限维空间](@article_id:311986)中，这些算符就是[厄米矩阵](@article_id:315558)。
+在量子力学中，像能量、动量、自旋这样我们可以在实验中测量的物理量，被称为“可观测量”。它们不再是简单的数值，而是由一类特殊的线性算符——[厄米算符](@keyword=hermitian_operators|lang=zh-CN|style=Feynman)来表示。在[有限维空间](@keyword=finite_dimensional_spaces|lang=zh-CN|style=Feynman)中，这些算符就是[厄米矩阵](@keyword=hermitian_matrix|lang=zh-CN|style=Feynman)。
 
-一个惊人的事实是：厄米矩阵的[本征值](@article_id:315305)总是实数。这恰好对应了我们在实验室中测量物理量得到的结果——它们总是实数！因此，一个量子系统某个可观测量所有可能的测量值，不多不少，正好是其对应厄米算符的全部[本征值](@article_id:315305) 。
+一个惊人的事实是：厄米矩阵的[本征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)总是实数。这恰好对应了我们在实验室中测量物理量得到的结果——它们总是实数！因此，一个量子系统某个可观测量所有可能的测量值，不多不少，正好是其对应厄米算符的全部[本征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) [@problem_id:1354853]。
 
-而与这些[本征值](@article_id:315305)相对应的本征向量，则被称为“本征态”。当一个系统处于某个本征态时，对它进行相应的测量，将确定地得到该[本征值](@article_id:315305) 。例如，代表系统能量的哈密顿算符（Hamiltonian）的[本征态](@article_id:310323)就是能量稳定不变的“[定态](@article_id:328459)”。
+而与这些[本征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)相对应的本征向量，则被称为“本征态”。当一个系统处于某个本征态时，对它进行相应的测量，将确定地得到该[本征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) [@problem_id:1354849]。例如，代表系统能量的哈密顿算符（Hamiltonian）的[本征态](@keyword=eigenstates|lang=zh-CN|style=Feynman)就是能量稳定不变的“[定态](@keyword=stationary_state|lang=zh-CN|style=Feynman)”。
 
 **算符的结构**
 
-复数可以分解为实部和虚部，同样地，任何一个复方阵（代表一个线性算符）都可以唯一地分解为一个[厄米矩阵](@article_id:315558)和一个斜厄米矩阵（skew-Hermitian, $S^\dagger = -S$）之和 。这是一个非常深刻的类比。如果一个厄米矩阵 $H$ 代表一个[可观测量](@article_id:330836)，那么 $iS$（一个斜[厄米矩阵](@article_id:315558)乘以 $i$）同样也是一个厄米矩阵，也代表着一个[可观测量](@article_id:330836)。这种分解揭示了[量子算符](@article_id:305606)的内在结构。
+复数可以分解为实部和虚部，同样地，任何一个复方阵（代表一个线性算符）都可以唯一地分解为一个[厄米矩阵](@keyword=hermitian_matrix|lang=zh-CN|style=Feynman)和一个斜厄米矩阵（skew-Hermitian, $S^\dagger = -S$）之和 [@problem_id:1354820]。这是一个非常深刻的类比。如果一个厄米矩阵 $H$ 代表一个[可观测量](@keyword=observables|lang=zh-CN|style=Feynman)，那么 $iS$（一个斜[厄米矩阵](@keyword=hermitian_matrix|lang=zh-CN|style=Feynman)乘以 $i$）同样也是一个厄米矩阵，也代表着一个[可观测量](@keyword=observables|lang=zh-CN|style=Feynman)。这种分解揭示了[量子算符](@keyword=quantum_operator|lang=zh-CN|style=Feynman)的内在结构。
 
 **对称性与演化**
 
-量子世界的画卷不仅有静态的结构，更有动态的演化。一个封闭量子系统随时间的演化是由一族幺[正算符](@article_id:327403)（Unitary Operator）所支配的。幺[正算符](@article_id:327403)保持了向量的长度（范数），这在物理上对应着总概率守恒。
+量子世界的画卷不仅有静态的结构，更有动态的演化。一个封闭量子系统随时间的演化是由一族幺[正算符](@keyword=positive_operator|lang=zh-CN|style=Feynman)（Unitary Operator）所支配的。幺[正算符](@keyword=positive_operator|lang=zh-CN|style=Feynman)保持了向量的长度（范数），这在物理上对应着总概率守恒。
 
-这些描述系统对称性的幺[正算符](@article_id:327403)构成了一个称为“[李群](@article_id:298110)”的数学结构，例如 $U(n)$ 群。而李群的“无穷小”变换则构成了它的“李代数”。通过考察[幺正群](@article_id:299050) $U(n)$ 中穿过单位矩阵的任意平滑曲线，我们可以发现，这些曲线在[单位矩阵](@article_id:317130)处的切向量，恰好都是斜[厄米矩阵](@article_id:315558) 。这意味着，$U(n)$ 群的[李代数](@article_id:298403) $\mathfrak{u}(n)$ 正是由所有 $n \times n$ 斜厄米矩阵构成的。
+这些描述系统对称性的幺[正算符](@keyword=positive_operator|lang=zh-CN|style=Feynman)构成了一个称为“[李群](@keyword=lie_groups|lang=zh-CN|style=Feynman)”的数学结构，例如 $U(n)$ 群。而李群的“无穷小”变换则构成了它的“李代数”。通过考察[幺正群](@keyword=unitary_group|lang=zh-CN|style=Feynman) $U(n)$ 中穿过单位矩阵的任意平滑曲线，我们可以发现，这些曲线在[单位矩阵](@keyword=identity_matrix|lang=zh-CN|style=Feynman)处的切向量，恰好都是斜[厄米矩阵](@keyword=hermitian_matrix|lang=zh-CN|style=Feynman) [@problem_id:1354862]。这意味着，$U(n)$ 群的[李代数](@keyword=lie_algebras|lang=zh-CN|style=Feynman) $\mathfrak{u}(n)$ 正是由所有 $n \times n$ 斜厄米矩阵构成的。
 
-这建立了一个美妙的三角关系：静态的[可观测量](@article_id:330836)由**[厄米矩阵](@article_id:315558)**描述，动态的对称变换由**[幺正矩阵](@article_id:299426)**描述，而联系这两者的无穷小生成元则是**斜厄米矩阵**。
+这建立了一个美妙的三角关系：静态的[可观测量](@keyword=observables|lang=zh-CN|style=Feynman)由**[厄米矩阵](@keyword=hermitian_matrix|lang=zh-CN|style=Feynman)**描述，动态的对称变换由**[幺正矩阵](@keyword=unitary_matrix|lang=zh-CN|style=Feynman)**描述，而联系这两者的无穷小生成元则是**斜厄米矩阵**。
 
-著名的泡利（Pauli）矩阵就是这个故事的绝佳主角。它们是描述[电子自旋](@article_id:297467)的关键。例如，算符 $T(z_1, z_2) = (iz_2, -iz_1)$ 对应的矩阵 $\begin{pmatrix} 0 & i \\ -i & 0 \end{pmatrix}$ 本质上就是泡利矩阵 $\sigma_y$ 。这些[泡利矩阵](@article_id:299940)之间的[反对易关系](@article_id:314227)（anti-commutation relations） 正是定义了李代数 $\mathfrak{su}(2)$ 的结构，它精确地支配着所有自旋-1/2粒子的行为。
+著名的泡利（Pauli）矩阵就是这个故事的绝佳主角。它们是描述[电子自旋](@keyword=electron_spin|lang=zh-CN|style=Feynman)的关键。例如，算符 $T(z_1, z_2) = (iz_2, -iz_1)$ 对应的矩阵 $\begin{pmatrix} 0 & i \\ -i & 0 \end{pmatrix}$ 本质上就是泡利矩阵 $\sigma_y$ [@problem_id:1354814]。这些[泡利矩阵](@keyword=pauli_matrices|lang=zh-CN|style=Feynman)之间的[反对易关系](@keyword=anti_commutation_relations|lang=zh-CN|style=Feynman)（anti-commutation relations）[@problem_id:1354823] 正是定义了李代数 $\mathfrak{su}(2)$ 的结构，它精确地支配着所有自旋-1/2粒子的行为。
 
-### 从离散向量到[连续函数](@article_id:297812)
+### 从离散向量到[连续函数](@keyword=continuous_function|lang=zh-CN|style=Feynman)
 
-[向量空间](@article_id:297288)思想的威力远不止于处理有限个复数构成的数组。它可以被优美地推广到无穷维，让我们能够将函数视为一种特殊的向量。
+[向量空间](@keyword=vector_spaces|lang=zh-CN|style=Feynman)思想的威力远不止于处理有限个复数构成的数组。它可以被优美地推广到无穷维，让我们能够将函数视为一种特殊的向量。
 
 **函数空间**
 
-想象一个由所有次数不超过2的复系数多项式构成的集合 $P_2(\mathbb{C})$ ，或者一个由定义在 $[0, 2\pi]$ 区间上所有平方可积的[复变函数](@article_id:354304)构成的集合 $L^2([0, 2\pi])$ 。这些集合在自然的加法和[数乘](@article_id:316379)下，都构成了复矢量空间。
+想象一个由所有次数不超过2的复系数多项式构成的集合 $P_2(\mathbb{C})$ [@problem_id:1354860]，或者一个由定义在 $[0, 2\pi]$ 区间上所有平方可积的[复变函数](@keyword=functions_of_a_complex_variable|lang=zh-CN|style=Feynman)构成的集合 $L^2([0, 2\pi])$ [@problem_id:1354833]。这些集合在自然的加法和[数乘](@keyword=scalar_multiplication|lang=zh-CN|style=Feynman)下，都构成了复矢量空间。
 
-**函[数的几何](@article_id:371956)学**
+**函[数的几何](@keyword=geometry_of_numbers|lang=zh-CN|style=Feynman)学**
 
-更进一步，我们可以在这些[函数空间](@article_id:303911)中定义内积。例如，对于两个函数 $f(x)$ 和 $g(x)$，它们的内积可以定义为 $\langle f, g \rangle = \int f(x)\overline{g(x)}dx$  。一旦有了内积，几何学的大门就敞开了。我们可以谈论一个函数的“长度”（范数）、两个函数之间的“距离”，以及两个函数是否“正交”。正交性的概念  在这里被完美地推广。例如，在 $L^2([0, 2\pi])$ 空间中，[函数族](@article_id:297900) $\{e^{inx}\}_{n \in \mathbb{Z}}$ 就是一个非常重要的[正交基](@article_id:327731)。
+更进一步，我们可以在这些[函数空间](@keyword=function_spaces|lang=zh-CN|style=Feynman)中定义内积。例如，对于两个函数 $f(x)$ 和 $g(x)$，它们的内积可以定义为 $\langle f, g \rangle = \int f(x)\overline{g(x)}dx$ [@problem_id:1354860] [@problem_id:1354833]。一旦有了内积，几何学的大门就敞开了。我们可以谈论一个函数的“长度”（范数）、两个函数之间的“距离”，以及两个函数是否“正交”。正交性的概念 [@problem_id:1354805] 在这里被完美地推广。例如，在 $L^2([0, 2\pi])$ 空间中，[函数族](@keyword=family_of_functions|lang=zh-CN|style=Feynman) $\{e^{inx}\}_{n \in \mathbb{Z}}$ 就是一个非常重要的[正交基](@keyword=orthogonal_basis|lang=zh-CN|style=Feynman)。
 
 **近似的艺术：傅里叶分析**
 
-这种函数几何学最强大的应用之一，就是寻找一个复杂函数的“最佳”近似。假设我们想用一组简单的、正交的基函数（比如 $e^{ix}$, $e^{-ix}$, $1$）来近似一个更复杂的函数（比如 $\cosh(\alpha x)$）。“最佳”的含义是使得两者之差的“长度”平方（即[积分误差](@article_id:350509)）最小。
+这种函数几何学最强大的应用之一，就是寻找一个复杂函数的“最佳”近似。假设我们想用一组简单的、正交的基函数（比如 $e^{ix}$, $e^{-ix}$, $1$）来近似一个更复杂的函数（比如 $\cosh(\alpha x)$）。“最佳”的含义是使得两者之差的“长度”平方（即[积分误差](@keyword=integration_error|lang=zh-CN|style=Feynman)）最小。
 
-这个问题的答案出奇地简单而优雅：最佳近似就是原函数在这个由[基函数](@article_id:307485)张成的子空间上的**正交投影** 。这与我们在二维或三维空间中将一个[向量投影](@article_id:307461)到一条直线或一个平面上，是完全相同的思想。
+这个问题的答案出奇地简单而优雅：最佳近似就是原函数在这个由[基函数](@keyword=basis_functions|lang=zh-CN|style=Feynman)张成的子空间上的**正交投影** [@problem_id:1354833]。这与我们在二维或三维空间中将一个[向量投影](@keyword=vector_projection|lang=zh-CN|style=Feynman)到一条直线或一个平面上，是完全相同的思想。
 
-这个单一而强大的思想，正是傅里叶分析的核心。它在信号处理（音频、视频）、[图像压缩](@article_id:317015)（JPEG）、[偏微分方程](@article_id:301773)求解以及无数其他科学与工程领域中都扮演着不可或缺的角色。
+这个单一而强大的思想，正是傅里叶分析的核心。它在信号处理（音频、视频）、[图像压缩](@keyword=image_compression|lang=zh-CN|style=Feynman)（JPEG）、[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)求解以及无数其他科学与工程领域中都扮演着不可或缺的角色。
 
 ### 数学内在的统一结构
 
@@ -66,17 +66,17 @@
 
 **视角之变：实与复**
 
-任何一个复矢量空间，我们都可以“戴上实数的眼镜”去看它，从而将其视为一个实矢量空间。这会带来什么呢？一个 $n$ 维的复矢量空间，在实数域上看，就变成了一个 $2n$ 维的实矢量空间 。这不仅仅是一个小小的智力游戏，它是理解复[流形几何](@article_id:320244)学的基石。原因很简单，每个复数 $z=x+iy$ 都需要两个实数 $x$ 和 $y$ 来确定，所以每个复坐标都对应两个实坐标。
+任何一个复矢量空间，我们都可以“戴上实数的眼镜”去看它，从而将其视为一个实矢量空间。这会带来什么呢？一个 $n$ 维的复矢量空间，在实数域上看，就变成了一个 $2n$ 维的实矢量空间 [@problem_id:1844586]。这不仅仅是一个小小的智力游戏，它是理解复[流形几何](@keyword=manifold_geometry|lang=zh-CN|style=Feynman)学的基石。原因很简单，每个复数 $z=x+iy$ 都需要两个实数 $x$ 和 $y$ 来确定，所以每个复坐标都对应两个实坐标。
 
-**[量子态](@article_id:306563)的几何**
+**[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)的几何**
 
-这种视角的转变带来一个惊人的结果。在一个 $n$ 维[复希尔伯特空间](@article_id:364448)中，所有归一化的态向量（即物理上所有可能的[量子态](@article_id:306563)）构成的集合，从实空间的角度看，是一个 $(2n-1)$ 维的球面 $S^{2n-1}$ 。例如，一个[量子比特](@article_id:298377)（qubit）的状态空间是 $\mathbb{C}^2$ 中的单位向量集合。在忽略一个[全局相位](@article_id:308367)因子后，这个空间就是我们所熟知的[布洛赫球面](@article_id:299271)（Bloch sphere）$S^2$。它为抽象的[量子态空间](@article_id:376681)提供了一个具体、可触摸的几何图像。
+这种视角的转变带来一个惊人的结果。在一个 $n$ 维[复希尔伯特空间](@keyword=complex_hilbert_space|lang=zh-CN|style=Feynman)中，所有归一化的态向量（即物理上所有可能的[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)）构成的集合，从实空间的角度看，是一个 $(2n-1)$ 维的球面 $S^{2n-1}$ [@problem_id:1643567]。例如，一个[量子比特](@keyword=qubit|lang=zh-CN|style=Feynman)（qubit）的状态空间是 $\mathbb{C}^2$ 中的单位向量集合。在忽略一个[全局相位](@keyword=global_phase|lang=zh-CN|style=Feynman)因子后，这个空间就是我们所熟知的[布洛赫球面](@keyword=bloch_sphere|lang=zh-CN|style=Feynman)（Bloch sphere）$S^2$。它为抽象的[量子态空间](@keyword=quantum_state_space|lang=zh-CN|style=Feynman)提供了一个具体、可触摸的几何图像。
 
 **两种“线性”**
 
-当我们谈论复数域 $\mathbb{C}$ 上的一个[线性变换](@article_id:376365) $T: \mathbb{C} \to \mathbb{C}$ 时，我们究竟是指什么“线性”？如果我们把 $\mathbb{C}$ 看作 $\mathbb{R}$ 上的二维[向量空间](@article_id:297288)，那么一个 $\mathbb{R}$-线性变换并不一定是 $\mathbb{C}$-线性的。一个深刻的定理告诉我们，任何一个 $\mathbb{R}$-[线性变换](@article_id:376365) $T$ 都可以被唯一地写成 $T(z) = az + b\overline{z}$ 的形式，其中 $a$ 和 $b$ 是复常数 。
+当我们谈论复数域 $\mathbb{C}$ 上的一个[线性变换](@keyword=linear_algebra_transformations|lang=zh-CN|style=Feynman) $T: \mathbb{C} \to \mathbb{C}$ 时，我们究竟是指什么“线性”？如果我们把 $\mathbb{C}$ 看作 $\mathbb{R}$ 上的二维[向量空间](@keyword=vector_spaces|lang=zh-CN|style=Feynman)，那么一个 $\mathbb{R}$-线性变换并不一定是 $\mathbb{C}$-线性的。一个深刻的定理告诉我们，任何一个 $\mathbb{R}$-[线性变换](@keyword=linear_algebra_transformations|lang=zh-CN|style=Feynman) $T$ 都可以被唯一地写成 $T(z) = az + b\overline{z}$ 的形式，其中 $a$ 和 $b$ 是复常数 [@problem_id:1354832]。
 
-这个变换要想成为真正的“复线性”（即满足 $T(cz) = cT(z)$ 对所有 $c \in \mathbb{C}$ 都成立），当且仅当 $b=0$。这正是复变函数论中一个函数可导（全纯）的条件之一（柯西-黎曼方程的另一种表达形式）。这个优美的定理将线性代数、[实分析](@article_id:297680)和[复分析](@article_id:304792)紧密地联系在了一起。它揭示了复共轭运算 $\overline{z}$ 的本质——它捕捉了所有非复线性的部分。
+这个变换要想成为真正的“复线性”（即满足 $T(cz) = cT(z)$ 对所有 $c \in \mathbb{C}$ 都成立），当且仅当 $b=0$。这正是复变函数论中一个函数可导（全纯）的条件之一（柯西-黎曼方程的另一种表达形式）。这个优美的定理将线性代数、[实分析](@keyword=real_line_analysis|lang=zh-CN|style=Feynman)和[复分析](@keyword=complex_analysis|lang=zh-CN|style=Feynman)紧密地联系在了一起。它揭示了复共轭运算 $\overline{z}$ 的本质——它捕捉了所有非复线性的部分。
 
 ### 结语
 

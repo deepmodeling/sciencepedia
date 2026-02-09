@@ -17,7 +17,7 @@ The most obvious strategy is a simple greedy one. At every intersection, you loo
 
 But let's think about this for a moment. Imagine you're at your hotel (let’s call it $S$). You can either take a short 3-minute road to a smaller intersection $X$, or a longer 8-minute road to a main avenue $Y$. "InstaPath" would immediately send you down the 3-minute road to $X$. But what if the road from $X$ to the restaurant ($D$) is a slow, 12-minute crawl through a market, while the road from the main avenue $Y$ is a quick 4-minute expressway?
 
-Your "InstaPath" route would be $S \to X \to D$, for a total time of $3 + 12 = 15$ minutes. But the other path, $S \to Y \to D$, would have taken only $8 + 4 = 12$ minutes. By taking the seemingly best first step, you locked yourself into a much slower overall journey .
+Your "InstaPath" route would be $S \to X \to D$, for a total time of $3 + 12 = 15$ minutes. But the other path, $S \to Y \to D$, would have taken only $8 + 4 = 12$ minutes. By taking the seemingly best first step, you locked yourself into a much slower overall journey [@problem_id:1496470].
 
 This is a profound lesson that applies far beyond maps. In life, in science, in engineering, the locally optimal choice is often not the globally optimal one. Nature is more clever than that, and a truly good algorithm must be too. This is where the genius of Edsger Dijkstra's algorithm comes in. It is greedy, yes, but it’s a patient, far-sighted kind of greedy.
 
@@ -25,7 +25,7 @@ This is a profound lesson that applies far beyond maps. In life, in science, in 
 
 So, how does Dijkstra's algorithm avoid this trap? Instead of committing to a full path based on the first step, it builds its understanding of the network outwards from the start, like an expanding bubble of certainty.
 
-Let's imagine the algorithm at work on a small network of computer servers, trying to find the minimum latency (delay) from a source server $A$ to all others . The algorithm maintains two sets of servers:
+Let's imagine the algorithm at work on a small network of computer servers, trying to find the minimum latency (delay) from a source server $A$ to all others [@problem_id:1496519]. The algorithm maintains two sets of servers:
 1.  A set of **finalized** servers, for which we are *absolutely certain* we have found the shortest path from the start. Initially, this set contains only our starting server, $A$, with a distance of $0$.
 2.  A set of **tentative** servers (the "frontier"), which are neighbors of the finalized servers. For these, we have found *a* path from the start, but it might not be the shortest one yet.
 
@@ -35,7 +35,7 @@ Why is this declaration so powerful? We'll get to that in a moment.
 
 Once a server is finalized, the algorithm does its "exploration" work. It looks at all of $C$'s neighbors. For each neighbor, say $D$, it checks: "Is the path to $D$ *through my newly finalized server $C$* shorter than any path I've seen to $D$ before?" If it is, the algorithm updates the tentative distance to $D$. This is called **relaxation**. This process—find the closest frontier node, finalize it, and relax its neighbors—repeats until all servers are finalized.
 
-At its heart, the algorithm is powered by a **[priority queue](@article_id:262689)**, which is just a fancy name for a list that is always kept sorted by the tentative distance . This ensures that in every step, the algorithm can instantly grab the next closest node on the entire frontier to add to its bubble of certainty.
+At its heart, the algorithm is powered by a **[priority queue](@keyword=priority_queue|lang=en-US|style=Feynman)**, which is just a fancy name for a list that is always kept sorted by the tentative distance [@problem_id:1363313]. This ensures that in every step, the algorithm can instantly grab the next closest node on the entire frontier to add to its bubble of certainty.
 
 ### The Unbreakable Guarantee: A Proof of Optimality
 
@@ -49,27 +49,27 @@ Here is the key insight, which only works if all our path lengths (or "weights")
 
 So, the distance to $Y$ is at least $9$. And your sneaky path still has to travel from $Y$ to $C$, adding even more (positive) distance. Therefore, the total length of your sneaky path must be greater than $9$. Your claim of a path of length $8$ is impossible! The algorithm was right all along. The distance it found is truly the shortest.
 
-This elegant proof by contradiction is the bedrock upon which the algorithm stands. It guarantees that once a node is finalized, its shortest path has been found, and we never need to reconsider it . The problem must have what we call **[optimal substructure](@article_id:636583)**: a shortest path from $A$ to $C$ that passes through $B$ must contain the shortest path from $A$ to $B$.
+This elegant proof by contradiction is the bedrock upon which the algorithm stands. It guarantees that once a node is finalized, its shortest path has been found, and we never need to reconsider it [@problem_id:1363302]. The problem must have what we call **[optimal substructure](@keyword=optimal_substructure|lang=en-US|style=Feynman)**: a shortest path from $A$ to $C$ that passes through $B$ must contain the shortest path from $A$ to $B$.
 
 ### A Universal Pattern: From Ponds to Paths
 
 This idea of expanding from a source in layers of increasing distance is a fundamental pattern in nature. Think of dropping a pebble in a still pond. A circular ripple expands outwards. All points on the ripple's edge are equidistant from the center. A **Breadth-First Search (BFS)** on a graph works the same way, exploring all immediate neighbors, then all their neighbors, and so on.
 
-Dijkstra's algorithm is a beautiful generalization of this. On a map where every road takes exactly 1 minute to travel (an **[unweighted graph](@article_id:274574)**), Dijkstra's algorithm behaves *exactly* like BFS . The "distance" is just the number of road segments, so it finalizes all nodes at distance 1, then all nodes at distance 2, and so on, creating perfect "layers" just like the ripples in the pond. Adding weights to the roads simply distorts the bubble, making it expand faster in the direction of "cheaper" paths, but the underlying principle remains the same.
+Dijkstra's algorithm is a beautiful generalization of this. On a map where every road takes exactly 1 minute to travel (an **[unweighted graph](@keyword=unweighted_graph|lang=en-US|style=Feynman)**), Dijkstra's algorithm behaves *exactly* like BFS [@problem_id:1363277]. The "distance" is just the number of road segments, so it finalizes all nodes at distance 1, then all nodes at distance 2, and so on, creating perfect "layers" just like the ripples in the pond. Adding weights to the roads simply distorts the bubble, making it expand faster in the direction of "cheaper" paths, but the underlying principle remains the same.
 
 ### Worlds Where the Rules Break: The Peril of Negative Costs
 
-The unbreakable guarantee we discussed has a crucial condition: all edge weights must be non-negative. What happens if a path can give you a "refund"? Imagine a strange transportation network where traveling one specific link from $B$ to $D$ actually *reduces* your total cost, perhaps because of a subsidy. It has a weight of $-2$ .
+The unbreakable guarantee we discussed has a crucial condition: all edge weights must be non-negative. What happens if a path can give you a "refund"? Imagine a strange transportation network where traveling one specific link from $B$ to $D$ actually *reduces* your total cost, perhaps because of a subsidy. It has a weight of $-2$ [@problem_id:1363332].
 
 Suddenly, our logic collapses. The algorithm might finalize a node $D$ via a path with cost $8$, because it's the closest on the frontier at that moment. But later, it might discover a path to another node $B$ with cost $3$, which then connects to $D$ with the $-2$ edge, for a total cost of $3 + (-2) = 1$. The algorithm was wrong; the "finalized" distance wasn't final at all. Our proof fails because the path that ventures into the "farther" part of the graph can suddenly become shorter by exploiting the negative edge. Dijkstra's algorithm, in its pure form, cannot handle this. It lives in a world where things can't get "cheaper" just by traveling farther.
 
-Similarly, if the cost of an edge depends on the path you took to get there—for instance, an amplifier on a fiber-optic link is primed only if you arrive from a specific direction—the simple model breaks . The algorithm's fundamental assumption is that the cost of traversing a road is fixed, independent of your history.
+Similarly, if the cost of an edge depends on the path you took to get there—for instance, an amplifier on a fiber-optic link is primed only if you arrive from a specific direction—the simple model breaks [@problem_id:1496536]. The algorithm's fundamental assumption is that the cost of traversing a road is fixed, independent of your history.
 
 ### The Power of Abstraction: Redrawing the Map
 
 This might sound like a limitation, but it's also where the true art of problem-solving begins. The real power of a great algorithm isn't just in solving the problem it was designed for, but in its ability to solve other problems if we are clever enough to rephrase them in its language. This is the art of **modeling**.
 
-Consider a Mars rover that needs to get from a starting point to a target . It has a map of paths with associated energy costs. But there's a twist: the rover can engage a special "eco-mode" for *exactly one leg* of its journey. Using eco-mode on a leg cuts its energy cost in half, but it incurs a fixed energy penalty just to turn the system on. How do you find the minimum total energy?
+Consider a Mars rover that needs to get from a starting point to a target [@problem_id:1496509]. It has a map of paths with associated energy costs. But there's a twist: the rover can engage a special "eco-mode" for *exactly one leg* of its journey. Using eco-mode on a leg cuts its energy cost in half, but it incurs a fixed energy penalty just to turn the system on. How do you find the minimum total energy?
 
 This problem has a "memory"—the rover's state is different depending on whether it has used its eco-mode or not. The cost of a path segment is no longer static; it depends on a choice made elsewhere. It seems Dijkstra's can't solve this.
 

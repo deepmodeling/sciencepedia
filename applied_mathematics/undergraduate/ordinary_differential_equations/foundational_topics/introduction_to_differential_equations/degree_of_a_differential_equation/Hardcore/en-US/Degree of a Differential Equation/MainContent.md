@@ -1,11 +1,11 @@
 ## Introduction
-In the study of [ordinary differential equations](@entry_id:147024) (ODEs), classification is the first step toward understanding and solving them. While the order—the highest derivative present—is straightforward to identify, the **degree** offers a more nuanced look into an equation's algebraic structure. The degree is defined as the power of the highest-order derivative, but this simple definition hides a critical precondition: the equation must first be expressed as a polynomial in its derivatives. This requirement often leads to confusion, as it necessitates algebraic manipulations like clearing radicals and simplifying complex expressions.
+In the study of ordinary differential equations (ODEs), classification is the first step toward understanding and solving them. While the order—the highest derivative present—is straightforward to identify, the **degree** offers a more nuanced look into an equation's algebraic structure. The degree is defined as the power of the highest-order derivative, but this simple definition hides a critical precondition: the equation must first be expressed as a polynomial in its derivatives. This requirement often leads to confusion, as it necessitates algebraic manipulations like clearing radicals and simplifying complex expressions.
 
 This article provides a comprehensive guide to mastering the concept of degree. In "Principles and Mechanisms," you will learn the formal procedure for determining the degree, including the crucial steps of rationalization and simplification. "Applications and Interdisciplinary Connections" will explore the practical significance of the degree, demonstrating how it arises naturally from geometric properties and physical models, often indicating underlying nonlinearity. Finally, "Hands-On Practices" will allow you to solidify your understanding by working through targeted problems. By starting with the fundamental rules, we can build a robust framework for classifying any differential equation we encounter.
 
 ## Principles and Mechanisms
 
-In the classification of [ordinary differential equations](@entry_id:147024) (ODEs), two primary characteristics are of immediate importance: the **order** and the **degree**. The order, as previously discussed, refers to the highest-order derivative present in the equation. The degree, however, is a more subtle concept that describes the algebraic structure of the equation with respect to its derivatives. A precise understanding of the degree is essential for classifying equations and, in some contexts, for choosing appropriate solution methods.
+In the classification of ordinary differential equations (ODEs), two primary characteristics are of immediate importance: the **order** and the **degree**. The order, as previously discussed, refers to the highest-order derivative present in the equation. The degree, however, is a more subtle concept that describes the algebraic structure of the equation with respect to its derivatives. A precise understanding of the degree is essential for classifying equations and, in some contexts, for choosing appropriate solution methods.
 
 ### The Fundamental Precondition: Polynomial Form in Derivatives
 
@@ -37,7 +37,7 @@ The equation is now a polynomial in the derivatives $y'$ and $y''$. The highest-
 
 #### Clearing Multiple Fractional Powers
 
-When an equation involves multiple derivative terms with different fractional exponents, we must find a single operation that clears all of them simultaneously. This is achieved by raising both sides of the equation to the **[least common multiple](@entry_id:140942) (LCM)** of the denominators of the fractional exponents.
+When an equation involves multiple derivative terms with different fractional exponents, we must find a single operation that clears all of them simultaneously. This is achieved by raising both sides of the equation to the **least common multiple (LCM)** of the denominators of the fractional exponents.
 
 Consider a system described by the following relation:
 $$ \left(\frac{d^3y}{dx^3}\right)^{1/2} = \left(\frac{dy}{dx}\right)^{1/3} $$
@@ -63,7 +63,7 @@ Consider this equation:
 $$ \left( \frac{d^3y}{dx^3} \right)^2 + x^2 \left( \frac{dy}{dx} \right)^5 = \sqrt{1 + \left( \frac{d^2y}{dx^2} \right)^6} $$
 First, we square both sides to eliminate the square root:
 $$ \left[ \left(\frac{d^3y}{dx^3}\right)^{2}+x^{2}\left(\frac{dy}{dx}\right)^{5} \right]^{2} = 1+\left(\frac{d^{2}y}{dx^{2}}\right)^{6} $$
-We must now expand the left side. The term of interest is the one containing the highest-order derivative, $\frac{d^3y}{dx^3}$. Using the [binomial expansion](@entry_id:269603) $(a+b)^2 = a^2 + 2ab + b^2$, where $a = (y''')^2$, the first term of the expansion is $((y''')^2)^2 = (y''')^4$. The full expansion is:
+We must now expand the left side. The term of interest is the one containing the highest-order derivative, $\frac{d^3y}{dx^3}$. Using the binomial expansion $(a+b)^2 = a^2 + 2ab + b^2$, where $a = (y''')^2$, the first term of the expansion is $((y''')^2)^2 = (y''')^4$. The full expansion is:
 $$ \left(\frac{d^3y}{dx^3}\right)^{4} + 2x^2 \left(\frac{d^3y}{dx^3}\right)^2 \left(\frac{dy}{dx}\right)^5 + x^4 \left(\frac{dy}{dx}\right)^{10} = 1+\left(\frac{d^{2}y}{dx^{2}}\right)^{6} $$
 The highest-order derivative is $y'''$, and its highest power in the fully expanded polynomial form is $4$. Thus, the degree is $4$, not $2$ as one might have mistakenly concluded before expansion.
 
@@ -84,11 +84,11 @@ After simplification, the highest-order derivative is now $y'$, and its highest 
 
 The concept of degree is predicated on the ability to write the ODE as a polynomial in its derivatives. If this cannot be achieved through any algebraic manipulation, the degree is **not defined**.
 
-This situation typically arises when a derivative appears as the argument of a **non-polynomial function**, such as a [transcendental function](@entry_id:271750) (e.g., trigonometric, exponential, logarithmic) or an [absolute value function](@entry_id:160606).
+This situation typically arises when a derivative appears as the argument of a **non-polynomial function**, such as a transcendental function (e.g., trigonometric, exponential, logarithmic) or an absolute value function.
 
 Consider the equation:
 $$ \exp\left(\frac{d^3y}{dx^3}\right) - x \frac{dy}{dx} + y^2 = \sin(x) $$
-Here, the highest-order derivative, $y'''$, is inside an [exponential function](@entry_id:161417). There is no algebraic way to isolate $y'''$ and its powers to form a polynomial. If we try to take the natural logarithm, we get $\frac{d^3y}{dx^3} = \ln\left( \sin(x) + x \frac{dy}{dx} - y^2 \right)$, which now involves a logarithm of a derivative. The equation cannot be expressed as a polynomial in its derivatives, so its degree is not defined.
+Here, the highest-order derivative, $y'''$, is inside an exponential function. There is no algebraic way to isolate $y'''$ and its powers to form a polynomial. If we try to take the natural logarithm, we get $\frac{d^3y}{dx^3} = \ln\left( \sin(x) + x \frac{dy}{dx} - y^2 \right)$, which now involves a logarithm of a derivative. The equation cannot be expressed as a polynomial in its derivatives, so its degree is not defined.
 
 The same principle applies to other non-polynomial functions. For the equations:
 $$ y' + \cos(y'') = x $$

@@ -1,11 +1,11 @@
 ## Introduction
-The Associated Legendre Differential Equation stands as a pillar of mathematical physics, providing the essential functions needed to describe and solve problems in systems exhibiting [spherical symmetry](@entry_id:272852). From the quantum mechanical behavior of an atom to the classical electrostatic field surrounding a charged sphere, the solutions to this equation—the Associated Legendre functions—offer a universal language for modeling the angular dependence of [physical quantities](@entry_id:177395). Understanding these functions is not just an academic exercise; it is a prerequisite for tackling a vast range of problems in science and engineering. This article addresses the need for a coherent and deep understanding of this topic by breaking it down into its core principles, practical applications, and hands-on exercises.
+The Associated Legendre Differential Equation stands as a pillar of mathematical physics, providing the essential functions needed to describe and solve problems in systems exhibiting spherical symmetry. From the quantum mechanical behavior of an atom to the classical electrostatic field surrounding a charged sphere, the solutions to this equation—the Associated Legendre functions—offer a universal language for modeling the angular dependence of physical quantities. Understanding these functions is not just an academic exercise; it is a prerequisite for tackling a vast range of problems in science and engineering. This article addresses the need for a coherent and deep understanding of this topic by breaking it down into its core principles, practical applications, and hands-on exercises.
 
-Across the following chapters, we will embark on a comprehensive journey into the world of Associated Legendre functions. The first chapter, **Principles and Mechanisms**, lays the theoretical groundwork. We will dissect the equation itself, explore the generation of its solutions of the first and second kind using methods like Rodrigues' formula and recurrence relations, and establish their vital orthogonality properties. Next, in **Applications and Interdisciplinary Connections**, we will bridge theory and practice by demonstrating how these functions are instrumental in solving canonical problems in electromagnetism, [potential theory](@entry_id:141424), and most profoundly, in the quantum theory of angular momentum. Finally, the **Hands-On Practices** section provides a curated set of problems designed to solidify your command of these mathematical tools, from direct computation to advanced application.
+Across the following chapters, we will embark on a comprehensive journey into the world of Associated Legendre functions. The first chapter, **Principles and Mechanisms**, lays the theoretical groundwork. We will dissect the equation itself, explore the generation of its solutions of the first and second kind using methods like Rodrigues' formula and recurrence relations, and establish their vital orthogonality properties. Next, in **Applications and Interdisciplinary Connections**, we will bridge theory and practice by demonstrating how these functions are instrumental in solving canonical problems in electromagnetism, potential theory, and most profoundly, in the quantum theory of angular momentum. Finally, the **Hands-On Practices** section provides a curated set of problems designed to solidify your command of these mathematical tools, from direct computation to advanced application.
 
 ## Principles and Mechanisms
 
-The Associated Legendre Equation is a cornerstone of [mathematical physics](@entry_id:265403), providing solutions essential for describing physical phenomena in systems with spherical symmetry. In this chapter, we delve into the fundamental principles governing this equation and the mechanisms for generating and manipulating its solutions. We will explore the properties of these solutions, known as the Associated Legendre functions, including their generation, [recurrence relations](@entry_id:276612), and vital orthogonality properties.
+The Associated Legendre Equation is a cornerstone of mathematical physics, providing solutions essential for describing physical phenomena in systems with spherical symmetry. In this chapter, we delve into the fundamental principles governing this equation and the mechanisms for generating and manipulating its solutions. We will explore the properties of these solutions, known as the Associated Legendre functions, including their generation, recurrence relations, and vital orthogonality properties.
 
 ### The Associated Legendre Differential Equation
 
@@ -15,15 +15,15 @@ $$
 (1-x^2)\frac{d^2y}{dx^2} - 2x\frac{dy}{dx} + \left[l(l+1) - \frac{m^2}{1-x^2}\right]y = 0
 $$
 
-Here, the variable $x$ typically represents the cosine of the [polar angle](@entry_id:175682), $\cos(\theta)$, restricting its domain to the interval $[-1, 1]$. The parameters $l$ and $m$ are constants, which in most physical applications are integers. The term $l(l+1)$ is the eigenvalue associated with the [angular momentum operator](@entry_id:155961) in quantum mechanics, where $l$ is the total angular momentum quantum number. The integer $m$ is the [magnetic quantum number](@entry_id:145584), satisfying the constraint $|m| \le l$.
+Here, the variable $x$ typically represents the cosine of the polar angle, $\cos(\theta)$, restricting its domain to the interval $[-1, 1]$. The parameters $l$ and $m$ are constants, which in most physical applications are integers. The term $l(l+1)$ is the eigenvalue associated with the angular momentum operator in quantum mechanics, where $l$ is the total angular momentum quantum number. The integer $m$ is the magnetic quantum number, satisfying the constraint $|m| \le l$.
 
-It is often illuminating to express this equation using a [linear differential operator](@entry_id:174781). For fixed integer parameters $l$ and $m$, we can define the **associated Legendre operator** $\mathcal{L}_{l,m}$ as:
+It is often illuminating to express this equation using a linear differential operator. For fixed integer parameters $l$ and $m$, we can define the **associated Legendre operator** $\mathcal{L}_{l,m}$ as:
 
 $$
 \mathcal{L}_{l,m}[y(x)] = (1-x^2)\frac{d^2y}{dx^2} - 2x\frac{dy}{dx} + \left[l(l+1) - \frac{m^2}{1-x^2}\right]y(x)
 $$
 
-With this definition, the associated Legendre equation simply states that its solutions, $y(x)$, are functions that are annihilated by this operator, or in other words, are [eigenfunctions](@entry_id:154705) of $\mathcal{L}_{l,m}$ with an eigenvalue of zero. The physically meaningful solutions, denoted as $P_l^m(x)$, satisfy $\mathcal{L}_{l,m}[P_l^m(x)] = 0$.
+With this definition, the associated Legendre equation simply states that its solutions, $y(x)$, are functions that are annihilated by this operator, or in other words, are eigenfunctions of $\mathcal{L}_{l,m}$ with an eigenvalue of zero. The physically meaningful solutions, denoted as $P_l^m(x)$, satisfy $\mathcal{L}_{l,m}[P_l^m(x)] = 0$.
 
 A crucial property of this structure becomes apparent when we apply an operator with a given $l$ to a function corresponding to a different degree, say $l'$. Consider applying the operator $\mathcal{L}_{2,1}$ to a function $P_4^1(x)$. The operator $\mathcal{L}_{2,1}$ is related to $\mathcal{L}_{4,1}$ as follows:
 
@@ -37,7 +37,7 @@ $$
 \mathcal{L}_{2,1}[P_4^1(x)] = 0 - 14P_4^1(x) = -14P_4^1(x)
 $$
 
-This demonstrates that an associated Legendre function $P_{l'}^m(x)$ is not a solution to the equation for a different degree $l$, but is instead an eigenfunction of the operator $\mathcal{L}_{l,m}$ with a non-zero eigenvalue, specifically $[l(l+1) - l'(l'+1)]. Due to the linearity of the operator, any linear combination of functions with different degrees, such as $F(x) = c_1 P_l^m(x) + c_2 P_{l'}^m(x)$, will not be a solution to the equation for degree $l$.
+This demonstrates that an associated Legendre function $P_{l'}^m(x)$ is not a solution to the equation for a different degree $l$, but is instead an eigenfunction of the operator $\mathcal{L}_{l,m}$ with a non-zero eigenvalue, specifically $[l(l+1) - l'(l'+1)][@problem_id:625015]. Due to the linearity of the operator, any linear combination of functions with different degrees, such as $F(x) = c_1 P_l^m(x) + c_2 P_{l'}^m(x)$, will not be a solution to the equation for degree $l$.
 
 ### Solutions of the First Kind: The Associated Legendre Functions
 
@@ -58,14 +58,14 @@ To illustrate this, let us compute $P_2^1(x)$. The Legendre polynomial for $l=2$
 $$
 P_2^1(x) = (-1)^1 (1-x^2)^{1/2} \frac{d}{dx} P_2(x) = -(1-x^2)^{1/2} (3x) = -3x\sqrt{1-x^2}
 $$
-This function is a solution to the associated Legendre equation for $l=2$ and $m=1$ .
+This function is a solution to the associated Legendre equation for $l=2$ and $m=1$ [@problem_id:2089581].
 
 For the case where $m=l$, we can see a particularly simple form emerge. Let's find $P_2^2(x)$. We need the second derivative of $P_2(x)$, which is $\frac{d^2}{dx^2}P_2(x) = 3$. Applying the definition:
 
 $$
 P_2^2(x) = (-1)^2 (1-x^2)^{2/2} \frac{d^2}{dx^2} P_2(x) = (1-x^2)(3) = 3(1-x^2)
 $$
-In general, $P_l^l(x)$ is proportional to $(1-x^2)^{l/2}$ .
+In general, $P_l^l(x)$ is proportional to $(1-x^2)^{l/2}$ [@problem_id:2089605].
 
 #### Rodrigues' Formula for Associated Functions
 
@@ -75,7 +75,7 @@ $$
 P_l^m(x) = \frac{(-1)^m}{2^l l!} (1 - x^2)^{m/2} \frac{d^{l+m}}{dx^{l+m}} (x^2 - 1)^l
 $$
 
-This powerful formula allows for the direct computation of any $P_l^m(x)$ without first finding $P_l(x)$. For example, let's compute $P_3^2(x)$ . We set $l=3, m=2$:
+This powerful formula allows for the direct computation of any $P_l^m(x)$ without first finding $P_l(x)$. For example, let's compute $P_3^2(x)$ [@problem_id:625163]. We set $l=3, m=2$:
 
 $$
 P_3^2(x) = \frac{(-1)^2}{2^3 3!} (1-x^2)^{2/2} \frac{d^{3+2}}{dx^{3+2}} (x^2-1)^3 = \frac{1}{48} (1-x^2) \frac{d^5}{dx^5} (x^6 - 3x^4 + 3x^2 - 1)
@@ -107,7 +107,7 @@ $$
 P_3^2(x) - 5x P_2^2(x) = 0 \quad \implies \quad P_3^2(x) = 5x P_2^2(x)
 $$
 
-Given $P_2^2(x) = 3(1-x^2)$, which we found earlier, we immediately obtain $P_3^2(x) = 5x [3(1-x^2)] = 15x(1-x^2)$, matching the result from Rodrigues' formula .
+Given $P_2^2(x) = 3(1-x^2)$, which we found earlier, we immediately obtain $P_3^2(x) = 5x [3(1-x^2)] = 15x(1-x^2)$, matching the result from Rodrigues' formula [@problem_id:625002].
 
 #### Relation for Negative Order
 
@@ -117,7 +117,7 @@ $$
 P_l^{-m}(x) = (-1)^m \frac{(l-m)!}{(l+m)!} P_l^m(x)
 $$
 
-For example, given $P_3^1(x) = -\frac{3}{2}\sqrt{1-x^2}(5x^2-1)$, we can find $P_3^{-1}(x)$ by setting $l=3, m=1$ :
+For example, given $P_3^1(x) = -\frac{3}{2}\sqrt{1-x^2}(5x^2-1)$, we can find $P_3^{-1}(x)$ by setting $l=3, m=1$ [@problem_id:625171]:
 
 $$
 P_3^{-1}(x) = (-1)^1 \frac{(3-1)!}{(3+1)!} P_3^1(x) = -\frac{2!}{4!} P_3^1(x) = -\frac{1}{12} P_3^1(x)
@@ -141,7 +141,7 @@ $$
 \int_{-1}^{1} P_l^m(x) P_k^m(x) dx = \frac{2}{2l+1} \frac{(l+m)!}{(l-m)!} \delta_{lk}
 $$
 
-The **Kronecker delta**, $\delta_{lk}$, is equal to 1 if $l=k$ and 0 otherwise. This means the integral is zero unless we are integrating the square of a function. Let's verify this for $P_3^1(x)$ and $P_2^1(x)$ . We have already found $P_2^1(x) = -3x\sqrt{1-x^2}$. For $P_3^1(x)$, we use $P_3(x) = \frac{1}{2}(5x^3-3x)$, so $\frac{d}{dx}P_3(x) = \frac{3}{2}(5x^2-1)$. This gives:
+The **Kronecker delta**, $\delta_{lk}$, is equal to 1 if $l=k$ and 0 otherwise. This means the integral is zero unless we are integrating the square of a function. Let's verify this for $P_3^1(x)$ and $P_2^1(x)$ [@problem_id:57124]. We have already found $P_2^1(x) = -3x\sqrt{1-x^2}$. For $P_3^1(x)$, we use $P_3(x) = \frac{1}{2}(5x^3-3x)$, so $\frac{d}{dx}P_3(x) = \frac{3}{2}(5x^2-1)$. This gives:
 
 $$
 P_3^1(x) = - (1-x^2)^{1/2} \frac{3}{2}(5x^2-1) = -\frac{3}{2}(5x^2-1)\sqrt{1-x^2}
@@ -155,7 +155,7 @@ $$
 
 The integrand is $f(x) = \frac{9}{2}(5x^3-5x^5-x+x^3) = \frac{9}{2}(-5x^5 + 6x^3 - x)$. This is an odd function, meaning $f(-x)=-f(x)$. The integral of any odd function over a symmetric interval like $[-1, 1]$ is identically zero, confirming the orthogonality.
 
-This property drastically simplifies calculations involving series expansions. For example, if we need to compute the overlap integral $\int_{-1}^{1} \Phi_A(x) \Phi_B(x) dx$ where $\Phi_A(x) = 2 P_3^2(x) + 3 P_5^2(x)$ and $\Phi_B(x) = 4 P_3^2(x) - 1.5 P_4^2(x)$, orthogonality eliminates all cross-terms :
+This property drastically simplifies calculations involving series expansions. For example, if we need to compute the overlap integral $\int_{-1}^{1} \Phi_A(x) \Phi_B(x) dx$ where $\Phi_A(x) = 2 P_3^2(x) + 3 P_5^2(x)$ and $\Phi_B(x) = 4 P_3^2(x) - 1.5 P_4^2(x)$, orthogonality eliminates all cross-terms [@problem_id:2089629]:
 
 $$
 \int_{-1}^{1} (2 P_3^2 + 3 P_5^2)(4 P_3^2 - 1.5 P_4^2) dx = \int_{-1}^{1} 8 (P_3^2)^2 dx + 0 + 0 + 0 = 8 \left[ \frac{2}{2(3)+1} \frac{(3+2)!}{(3-2)!} \right]
@@ -172,7 +172,7 @@ $$
 \int_{-1}^{1} \frac{P_l^{m_1}(x) P_l^{m_2}(x)}{1-x^2} dx = \frac{(l+m_1)!}{m_1(l-m_1)!} \delta_{m_1 m_2} \quad (m_1, m_2 \neq 0)
 $$
 
-Again, the integral is zero unless $m_1 = m_2$. As a demonstration, consider the integral of $\frac{P_3^1(x) P_3^2(x)}{1-x^2}$ over $[-1, 1]$ . Using our previously derived expressions $P_3^1(x) = -\frac{3}{2}(5x^2 - 1)\sqrt{1-x^2}$ and $P_3^2(x) = 15x(1-x^2)$, the integrand becomes:
+Again, the integral is zero unless $m_1 = m_2$. As a demonstration, consider the integral of $\frac{P_3^1(x) P_3^2(x)}{1-x^2}$ over $[-1, 1]$ [@problem_id:731232]. Using our previously derived expressions $P_3^1(x) = -\frac{3}{2}(5x^2 - 1)\sqrt{1-x^2}$ and $P_3^2(x) = 15x(1-x^2)$, the integrand becomes:
 
 $$
 \frac{P_3^1(x) P_3^2(x)}{1-x^2} = \frac{\left(-\frac{3}{2}(5x^2 - 1)\sqrt{1-x^2}\right) \left(15x(1-x^2)\right)}{1-x^2} = -\frac{45}{2} x (5x^2 - 1) \sqrt{1-x^2}
@@ -192,7 +192,7 @@ $$
 
 Because of their singular nature, the $Q_l^m(x)$ functions are often excluded from physical solutions that must remain finite over the entire range of the polar angle (e.g., wavefunctions for the hydrogen atom). However, they are essential in problems where the domain excludes the points $x=\pm 1$, or in different coordinate systems like spheroidal coordinates.
 
-To understand the singular behavior, let's analyze $Q_2^1(x)$ near $x=1$ . The function $Q_2(x)$ is given by $Q_2(x) = \frac{1}{2} P_2(x) \ln(\frac{1+x}{1-x}) - \frac{3}{2}x$. The logarithmic term $\ln(\frac{1+x}{1-x})$ is the source of the singularity. To find $Q_2^1(x)$, we must first compute $\frac{d}{dx}Q_2(x)$:
+To understand the singular behavior, let's analyze $Q_2^1(x)$ near $x=1$ [@problem_id:625132]. The function $Q_2(x)$ is given by $Q_2(x) = \frac{1}{2} P_2(x) \ln(\frac{1+x}{1-x}) - \frac{3}{2}x$. The logarithmic term $\ln(\frac{1+x}{1-x})$ is the source of the singularity. To find $Q_2^1(x)$, we must first compute $\frac{d}{dx}Q_2(x)$:
 
 $$
 \frac{d}{dx}Q_2(x) = \frac{3}{2}x\ln\left(\frac{1+x}{1-x}\right) + \frac{3x^2-1}{2(1-x^2)} - \frac{3}{2} = \frac{3}{2}x\ln\left(\frac{1+x}{1-x}\right) + \frac{1}{1-x^2} - 3

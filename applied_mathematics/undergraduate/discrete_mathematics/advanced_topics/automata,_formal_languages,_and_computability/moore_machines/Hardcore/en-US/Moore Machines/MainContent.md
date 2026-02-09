@@ -1,9 +1,9 @@
 ## Introduction
-In the fields of computer science and digital engineering, abstract models are essential for understanding and designing complex systems. Among the most foundational of these are finite-[state machines](@entry_id:171352), which provide a powerful framework for modeling systems that process information sequentially. A key variant of this model is the **Moore machine**, a type of automaton where behavior is dictated by a sequence of states, and output is a direct function of the current state. Its elegance and simplicity make it a cornerstone of [digital logic design](@entry_id:141122) and theoretical computer science.
+In the fields of computer science and digital engineering, abstract models are essential for understanding and designing complex systems. Among the most foundational of these are finite-state machines, which provide a powerful framework for modeling systems that process information sequentially. A key variant of this model is the **Moore machine**, a type of automaton where behavior is dictated by a sequence of states, and output is a direct function of the current state. Its elegance and simplicity make it a cornerstone of digital logic design and theoretical computer science.
 
 This article bridges the gap between the abstract definition of a Moore machine and its concrete, real-world utility. We will dissect this powerful model to provide a clear understanding of its structure, behavior, and design principles. By exploring its theoretical underpinnings and diverse applications, you will gain the knowledge to analyze, design, and optimize these essential computational structures.
 
-The journey begins in the **Principles and Mechanisms** chapter, where we will establish the formal definition of a Moore machine, learn to represent it with state diagrams and tables, and analyze its operational behavior, including a key comparison with its counterpart, the Mealy machine. Next, the **Applications and Interdisciplinary Connections** chapter will demonstrate the model's versatility, showcasing its role in [digital circuit design](@entry_id:167445), [control systems](@entry_id:155291), pattern recognition, and its surprising relevance in fields like synthetic biology and [game theory](@entry_id:140730). Finally, the **Hands-On Practices** section will offer a curated set of problems, allowing you to apply your theoretical knowledge to practical design challenges.
+The journey begins in the **Principles and Mechanisms** chapter, where we will establish the formal definition of a Moore machine, learn to represent it with state diagrams and tables, and analyze its operational behavior, including a key comparison with its counterpart, the Mealy machine. Next, the **Applications and Interdisciplinary Connections** chapter will demonstrate the model's versatility, showcasing its role in digital circuit design, control systems, pattern recognition, and its surprising relevance in fields like synthetic biology and game theory. Finally, the **Hands-On Practices** section will offer a curated set of problems, allowing you to apply your theoretical knowledge to practical design challenges.
 
 ## Principles and Mechanisms
 
@@ -11,12 +11,12 @@ In the study of computation and digital systems, we often model processes as sta
 
 ### Formal Definition of a Moore Machine
 
-At its core, a Moore machine is a type of **[finite-state machine](@entry_id:174162) (FSM)** or **[finite automaton](@entry_id:160597)** characterized by a simple, powerful rule: its output at any given moment is determined exclusively by its current state. The history of inputs that led to this state is encapsulated entirely within the state itself; the most recent input has no direct effect on the present output.
+At its core, a Moore machine is a type of **finite-state machine (FSM)** or **finite automaton** characterized by a simple, powerful rule: its output at any given moment is determined exclusively by its current state. The history of inputs that led to this state is encapsulated entirely within the state itself; the most recent input has no direct effect on the present output.
 
 This principle is formalized by defining a Moore machine as a 6-tuple, $(Q, \Sigma, \Gamma, \delta, \lambda, q_0)$, where each component has a precise meaning:
 
-*   $Q$: A finite, non-[empty set](@entry_id:261946) of **states**. These represent the distinct conditions or "memory configurations" the machine can be in.
-*   $\Sigma$: A finite, non-[empty set](@entry_id:261946) called the **input alphabet**. This is the set of all possible symbols the machine can read as input.
+*   $Q$: A finite, non-empty set of **states**. These represent the distinct conditions or "memory configurations" the machine can be in.
+*   $\Sigma$: A finite, non-empty set called the **input alphabet**. This is the set of all possible symbols the machine can read as input.
 *   $\Gamma$: A finite set called the **output alphabet**. This is the set of all possible symbols the machine can produce as output.
 *   $\delta$: The **transition function**, which dictates how the machine changes state. It takes the current state and the current input symbol to determine the next state. Formally, $\delta: Q \times \Sigma \to Q$.
 *   $\lambda$: The **output function**, which determines the output symbol for each state. This is the defining feature of a Moore machine. It maps each state directly to an output symbol, without regard for the input. Formally, $\lambda: Q \to \Gamma$.
@@ -30,17 +30,17 @@ To work with Moore machines, we need clear and unambiguous ways to represent the
 
 #### State Diagrams
 
-A **[state diagram](@entry_id:176069)** is a [directed graph](@entry_id:265535) that provides a visual representation of a machine's logic. In this representation:
+A **state diagram** is a directed graph that provides a visual representation of a machine's logic. In this representation:
 *   Each state in $Q$ is represented by a node (often a circle).
 *   Inside each node, we typically write the state's name and its corresponding output, often formatted as `state_name / output`. For instance, a state $S_2$ that produces an output of `L` would be labeled $S_2$ / L.
 *   A directed edge from a state $q_i$ to a state $q_j$ represents a transition. The edge is labeled with the input symbol from $\Sigma$ that causes this transition. That is, an edge from $q_i$ to $q_j$ labeled with `x` means that $\delta(q_i, x) = q_j$.
 *   The start state $q_0$ is uniquely identified, usually by an arrow pointing to it from no other state.
 
-State diagrams are invaluable for visualizing the flow of control and understanding the machine's behavior at a glance. For instance, by inspecting a diagram, one can identify structural properties such as cycles (paths that return to their starting state) or self-loops (transitions from a state back to itself) .
+State diagrams are invaluable for visualizing the flow of control and understanding the machine's behavior at a glance. For instance, by inspecting a diagram, one can identify structural properties such as cycles (paths that return to their starting state) or self-loops (transitions from a state back to itself) [@problem_id:1386379].
 
 #### State Tables
 
-While diagrams are intuitive, a more formal and systematic representation is the **[state table](@entry_id:178995)**. This tabular format is particularly suited for [algorithmic analysis](@entry_id:634228) and implementation. A [state table](@entry_id:178995) for a Moore machine is typically split into two parts: a **transition table** and an **output table**.
+While diagrams are intuitive, a more formal and systematic representation is the **state table**. This tabular format is particularly suited for algorithmic analysis and implementation. A state table for a Moore machine is typically split into two parts: a **transition table** and an **output table**.
 
 The output table simply lists each state and its associated output, directly representing the function $\lambda$.
 
@@ -54,7 +54,7 @@ The transition table shows the next state for every possible combination of a cu
 |:-------------:|:------------------------:|:------------------------:|:---:|
 | $q_i$ | $\delta(q_i, x_1)$ | $\delta(q_i, x_2)$ | ... |
 
-For example, consider designing a simple digital lock that unlocks upon receiving the binary sequence `101`. We can define states to remember how much of the sequence has been correctly entered: $S_0$ (initial state), $S_1$ (prefix `1` seen), $S_2$ (prefix `10` seen), and $S_3$ (sequence `101` completed, unlocked). The output is `U` (Unlocked) only in state $S_3$ and `L` (Locked) otherwise. The logic for transitions and outputs can be captured perfectly in tables :
+For example, consider designing a simple digital lock that unlocks upon receiving the binary sequence `101`. We can define states to remember how much of the sequence has been correctly entered: $S_0$ (initial state), $S_1$ (prefix `1` seen), $S_2$ (prefix `10` seen), and $S_3$ (sequence `101` completed, unlocked). The output is `U` (Unlocked) only in state $S_3$ and `L` (Locked) otherwise. The logic for transitions and outputs can be captured perfectly in tables [@problem_id:1386368]:
 
 **Output Table ($\lambda$)**
 | State | Output |
@@ -72,7 +72,7 @@ For example, consider designing a simple digital lock that unlocks upon receivin
 | $S_2$ | $S_0$ | $S_3$ |
 | $S_3$ | $S_0$ | $S_1$ |
 
-These tables provide a complete and unambiguous definition of the machine, equivalent to a [state diagram](@entry_id:176069) or the formal 6-tuple definition.
+These tables provide a complete and unambiguous definition of the machine, equivalent to a state diagram or the formal 6-tuple definition.
 
 ### Operation and Behavior
 
@@ -80,7 +80,7 @@ The behavior of a Moore machine is determined by tracing its state transitions a
 
 #### Tracing Execution and Output Generation
 
-Let's trace the machine from problem  with input `1101`. The machine starts in state $q_N$, which has an output of `N`.
+Let's trace the machine from problem [@problem_id:1386334] with input `1101`. The machine starts in state $q_N$, which has an output of `N`.
 
 1.  **Initial State**: The machine is in state $q_N$. Before any input is read, it produces the output associated with this state.
     *   **Current State:** $q_N$
@@ -102,11 +102,11 @@ Let's trace the machine from problem  with input `1101`. The machine starts in s
     *   **Current State:** $q_A$
     *   **Output Sequence:** `NACNA`
 
-After processing the input string `1101`, the final state is $q_A$ and the total output sequence is `NACNA`. A critical observation emerges from this process: for an input string of length $n=4$, the output string has length $5$. This is a universal property of Moore machines. The output sequence is always one symbol longer than the input sequence because it includes an initial output produced from the start state *before* the first input symbol is processed .
+After processing the input string `1101`, the final state is $q_A$ and the total output sequence is `NACNA`. A critical observation emerges from this process: for an input string of length $n=4$, the output string has length $5$. This is a universal property of Moore machines. The output sequence is always one symbol longer than the input sequence because it includes an initial output produced from the start state *before* the first input symbol is processed [@problem_id:1386372].
 
 #### Comparison with Mealy Machines
 
-The properties of the Moore machine are often highlighted by comparing it to the other principal FSM model, the **Mealy machine**. The fundamental difference lies in how their outputs are generated :
+The properties of the Moore machine are often highlighted by comparing it to the other principal FSM model, the **Mealy machine**. The fundamental difference lies in how their outputs are generated [@problem_id:1386390]:
 
 *   **Moore Machine**: The output depends only on the current state ($\lambda: Q \to \Gamma$).
 *   **Mealy Machine**: The output depends on both the current state and the current input symbol ($\lambda: Q \times \Sigma \to \Gamma$).
@@ -115,13 +115,13 @@ In a Mealy machine, the output is associated with the *transition* rather than t
 
 #### Physical Implementation and the One-Cycle Delay
 
-When Moore machines are implemented as synchronous digital circuits, their theoretical properties manifest as tangible timing behaviors. In a [synchronous design](@entry_id:163344), the machine's current state is stored in memory elements, such as D-type flip-flops, which update their stored value only on an active edge of a system clock.
+When Moore machines are implemented as synchronous digital circuits, their theoretical properties manifest as tangible timing behaviors. In a synchronous design, the machine's current state is stored in memory elements, such as D-type flip-flops, which update their stored value only on an active edge of a system clock.
 
-The process within one clock cycle is as follows :
-1.  The machine is in a stable state $s[k]$, held by the [flip-flops](@entry_id:173012). An input $x[k]$ is applied to the circuit.
+The process within one clock cycle is as follows [@problem_id:1969139]:
+1.  The machine is in a stable state $s[k]$, held by the flip-flops. An input $x[k]$ is applied to the circuit.
 2.  A block of **combinational logic**, which implements the transition function $\delta$, computes the *next state*, $s_{next} = \delta(s[k], x[k])$. This result is presented to the data inputs of the flip-flops.
 3.  Simultaneously, a second block of combinational logic, implementing the output function $\lambda$, computes the current output $y[k] = \lambda(s[k])$. This output is based only on the current, stable state.
-4.  On the next active clock edge, the [flip-flops](@entry_id:173012) update, loading $s_{next}$ and making it the new current state, $s[k+1]$.
+4.  On the next active clock edge, the flip-flops update, loading $s_{next}$ and making it the new current state, $s[k+1]$.
 5.  Only after this clock edge can the output logic compute the new output, $y[k+1] = \lambda(s[k+1])$.
 
 This sequence reveals a crucial characteristic: the effect of an input $x[k]$ on the output is delayed by one full clock cycle. The input influences the *next* state, but that state only becomes the *current* state after the clock ticks, and only then can it determine the output. This inherent one-cycle latency is a direct consequence of the output depending solely on the registered state.
@@ -132,11 +132,11 @@ Moore machines are not just theoretical constructs; they are powerful tools for 
 
 #### Sequence Detection
 
-As illustrated with the digital lock example , a primary application of Moore machines is detecting specific patterns in an input stream. The design strategy involves defining states that represent the "memory" of the machine regarding how much of the target sequence has been successfully matched. For a target sequence like `101`, the states naturally correspond to having seen an empty string, having seen `1`, having seen `10`, and finally having seen the complete `101`. The transitions handle all possibilities: extending the match, resetting upon a mismatch, or restarting a match with an overlapping symbol.
+As illustrated with the digital lock example [@problem_id:1386368], a primary application of Moore machines is detecting specific patterns in an input stream. The design strategy involves defining states that represent the "memory" of the machine regarding how much of the target sequence has been successfully matched. For a target sequence like `101`, the states naturally correspond to having seen an empty string, having seen `1`, having seen `10`, and finally having seen the complete `101`. The transitions handle all possibilities: extending the match, resetting upon a mismatch, or restarting a match with an overlapping symbol.
 
 #### Property Checking
 
-Moore machines can also be designed to track more abstract properties of an input string. A classic example is a machine that determines the parity of the number of `0`s and `1`s in a binary string. Consider a machine with four states designed to solve this problem :
+Moore machines can also be designed to track more abstract properties of an input string. A classic example is a machine that determines the parity of the number of `0`s and `1`s in a binary string. Consider a machine with four states designed to solve this problem [@problem_id:1386332]:
 *   $s_0$: Even number of `0`s and even number of `1`s seen so far.
 *   $s_1$: Even number of `0`s and odd number of `1`s seen so far.
 *   $s_2$: Odd number of `0`s and even number of `1`s seen so far.
@@ -152,7 +152,7 @@ When designing a Moore machine, the initial result may not be the most efficient
 
 A state is **unreachable** if there is no sequence of inputs that can lead the machine from its start state to that state. Such states play no role in the machine's operation and can be removed without altering its behavior.
 
-To find unreachable states, we can perform a [graph traversal](@entry_id:267264) (such as a Breadth-First or Depth-First Search) on the [state diagram](@entry_id:176069), starting from the initial state $q_0$. The set of all states visited during this traversal constitutes the set of reachable states. Any state in $Q$ that is not in this set is unreachable . For example, if a search starting from $s_0$ explores states {$s_0, s_1, s_2, s_3, s_4$}, but the full set of states is {$s_0, ..., s_7$}, and no transitions lead from the explored set to {$s_5, s_6, s_7$}, then {$s_5, s_6, s_7$} are unreachable and can be eliminated.
+To find unreachable states, we can perform a graph traversal (such as a Breadth-First or Depth-First Search) on the state diagram, starting from the initial state $q_0$. The set of all states visited during this traversal constitutes the set of reachable states. Any state in $Q$ that is not in this set is unreachable [@problem_id:1386358]. For example, if a search starting from $s_0$ explores states {$s_0, s_1, s_2, s_3, s_4$}, but the full set of states is {$s_0, ..., s_7$}, and no transitions lead from the explored set to {$s_5, s_6, s_7$}, then {$s_5, s_6, s_7$} are unreachable and can be eliminated.
 
 #### State Minimization via Partition Refinement
 
@@ -160,7 +160,7 @@ Beyond removing unreachable states, it is often possible to merge **equivalent s
 1.  They must produce the same output: $\lambda(s_i) = \lambda(s_j)$.
 2.  For every possible input symbol, they must transition to equivalent states: for all $x \in \Sigma$, $\delta(s_i, x) \equiv \delta(s_j, x)$.
 
-This [recursive definition](@entry_id:265514) is the basis for the **partition refinement algorithm**, a systematic method for finding all sets of equivalent states . The algorithm works as follows:
+This recursive definition is the basis for the **partition refinement algorithm**, a systematic method for finding all sets of equivalent states [@problem_id:1386335]. The algorithm works as follows:
 
 1.  **Initial Partition ($P_0$)**: Begin by partitioning the set of all states $Q$ into blocks based on their output. All states in a given block have the same output. States with different outputs are in different blocks and are, by definition, not equivalent.
 
@@ -168,7 +168,7 @@ This [recursive definition](@entry_id:265514) is the basis for the **partition r
 
 3.  **Termination**: Repeat the refinement step until a partition $P_k$ is reached where no block can be further refined. This means for every block, all states within it transition to the same blocks for all inputs. This final partition, $P_{final}$, contains the equivalence classes of the states.
 
-Let's apply this to the machine from .
+Let's apply this to the machine from [@problem_id:1386335].
 *   **$P_0$**: Based on outputs ($a, b, c$), the initial partition is $P_0 = \{\{s_0, s_3, s_5\}, \{s_1, s_4\}, \{s_2, s_6\}\}$. Let's name these blocks $A, B, C$.
 
 *   **Refine $P_0$ to get $P_1$**: We check the transition destinations for states within each block.

@@ -13,9 +13,9 @@ The answer, of course, is $3 + 5 = 8$. This feels obvious, almost too simple to 
 
 This is the essence of the **Sum Rule**: if you have a task that can be done in one of $n_1$ ways *or* in one of $n_2$ ways, and none of the $n_1$ ways overlap with the $n_2$ ways, then there are $n_1 + n_2$ total ways to perform the task.
 
-This idea scales up beautifully. Consider a large application built from many small, independent programs called `microservices`. In a map of this system, some services are "sources" (they don't depend on anything else) and some are "terminals" (nothing else depends on them). An audit reveals there are 17 source services and 9 terminal services. If an architect guarantees that no service can be both a source and a terminal, how many services fall into one of these special categories? Since the two groups are explicitly disjoint, we can find the total simply by adding: $17 + 9 = 26$ .
+This idea scales up beautifully. Consider a large application built from many small, independent programs called `microservices`. In a map of this system, some services are "sources" (they don't depend on anything else) and some are "terminals" (nothing else depends on them). An audit reveals there are 17 source services and 9 terminal services. If an architect guarantees that no service can be both a source and a terminal, how many services fall into one of these special categories? Since the two groups are explicitly disjoint, we can find the total simply by adding: $17 + 9 = 26$ [@problem_id:1410836].
 
-The same logic applies even if our choice is broken into many disjoint parts. Imagine a university choosing a single student representative from a pool of candidates from two different colleges. Let's say the College of Engineering has candidates from three departments (17 from Computer Science, 11 from Electrical Engineering, 8 from Mechanical), and the College of Arts and Sciences has candidates from two departments (14 from Math, 19 from Physics). As long as no student is in more than one of these listed departments, finding the total number of candidates is just a matter of adding up all the possibilities: $(17 + 11 + 8) + (14 + 19) = 36 + 33 = 69$ possible choices for the representative . The Sum Rule, in its purest form, is the simple, intuitive act of combining separate piles of options into one larger pile.
+The same logic applies even if our choice is broken into many disjoint parts. Imagine a university choosing a single student representative from a pool of candidates from two different colleges. Let's say the College of Engineering has candidates from three departments (17 from Computer Science, 11 from Electrical Engineering, 8 from Mechanical), and the College of Arts and Sciences has candidates from two departments (14 from Math, 19 from Physics). As long as no student is in more than one of these listed departments, finding the total number of candidates is just a matter of adding up all the possibilities: $(17 + 11 + 8) + (14 + 19) = 36 + 33 = 69$ possible choices for the representative [@problem_id:1410882]. The Sum Rule, in its purest form, is the simple, intuitive act of combining separate piles of options into one larger pile.
 
 ### Choices Within Choices: The Interplay of Sum and Product
 
@@ -32,9 +32,9 @@ Similarly, for rail:
 - A second operator has 4 services with 1 class each: $4 \times 1 = 4$ options.
 Total rail options: $10 + 4 = 14$.
 
-Now we come back to the top-level choice: air *or* rail. Since these are mutually exclusive, we apply the Sum Rule one last time: $17 + 14 = 31$ total ways to travel .
+Now we come back to the top-level choice: air *or* rail. Since these are mutually exclusive, we apply the Sum Rule one last time: $17 + 14 = 31$ total ways to travel [@problem_id:1410904].
 
-This hierarchical thinking—using the Product Rule to build up the size of each category and the Sum Rule to combine them—is a cornerstone of [combinatorial analysis](@article_id:265065). It allows us to systematically deconstruct a complex counting problem. We see it everywhere, from calculating the number of unique tasks a robot can perform based on different coding schemes  to determining the number of valid variable names in a programming language based on a set of formation rules . The pattern is always the same: identify the main, disjoint categories ("or"), calculate the number of possibilities within each category (often using "and," which implies the Product Rule), and then add the results.
+This hierarchical thinking—using the Product Rule to build up the size of each category and the Sum Rule to combine them—is a cornerstone of [combinatorial analysis](@keyword=combinatorial_analysis|lang=en-US|style=Feynman). It allows us to systematically deconstruct a complex counting problem. We see it everywhere, from calculating the number of unique tasks a robot can perform based on different coding schemes [@problem_id:1410874] to determining the number of valid variable names in a programming language based on a set of formation rules [@problem_id:1410873]. The pattern is always the same: identify the main, disjoint categories ("or"), calculate the number of possibilities within each category (often using "and," which implies the Product Rule), and then add the results.
 
 ### The Double-Counting Dilemma: When Choices Overlap
 
@@ -53,9 +53,9 @@ Let's see this in action. Imagine filtering a database of DNA sequences, which a
 If we just add $|A| + |B|$, we make a mistake. Why? Because a sequence can do *both*. A sequence like `ATG GCTA TGA` satisfies both conditions. These are the sequences in the overlap, $A \cap B$. To count them, we note that the first 3 *and* the last 3 characters are fixed, leaving $10 - 3 - 3 = 4$ characters in the middle free to vary. So, $|A \cap B| = 4^4$.
 
 To get the correct total, we include the members of both sets and exclude the overlap:
-$|A \cup B| = |A| + |B| - |A \cap B| = 4^7 + 4^7 - 4^4 = 16384 + 16384 - 256 = 32512$ .
+$|A \cup B| = |A| + |B| - |A \cap B| = 4^7 + 4^7 - 4^4 = 16384 + 16384 - 256 = 32512$ [@problem_id:1410875].
 
-This principle is not limited to simple string problems. It can handle abstract criteria as well. Consider a firm choosing a processor for a task. A processor is compatible if its core count is a perfect square *or* if it's a specific 'Orion' model with a TPU. These are not mutually exclusive properties. A processor can be an 'Orion' model with a TPU *and* have a core count that is a [perfect square](@article_id:635128). To find the total number of compatible models, we must count all models with a square core count, add all 'Orion' models with a TPU, and then subtract the number of models that satisfy both conditions to correct for the [double-counting](@article_id:152493) .
+This principle is not limited to simple string problems. It can handle abstract criteria as well. Consider a firm choosing a processor for a task. A processor is compatible if its core count is a perfect square *or* if it's a specific 'Orion' model with a TPU. These are not mutually exclusive properties. A processor can be an 'Orion' model with a TPU *and* have a core count that is a [perfect square](@keyword=perfect_square|lang=en-US|style=Feynman). To find the total number of compatible models, we must count all models with a square core count, add all 'Orion' models with a TPU, and then subtract the number of models that satisfy both conditions to correct for the [double-counting](@keyword=double_counting|lang=en-US|style=Feynman) [@problem_id:1410867].
 
 ### The Subtle "Or": Exclusive vs. Inclusive
 
@@ -72,17 +72,17 @@ There are two beautiful ways to think about this, and both lead to the same plac
 - The number of users who tested *only* Echo-Sphere is $|E| - |C \cap E|$.
 The total is the sum of these two: $(|C| - |C \cap E|) + (|E| - |C \cap E|)$, which again simplifies to $|C| + |E| - 2|C \cap E|$.
 
-In a real scenario with 88 Chrono-Shift testers, 123 Echo-Sphere testers, and 35 who tested both, the number of users who participated in testing exactly one feature would be $88 + 123 - 2 \times 35 = 211 - 70 = 141$ . Both paths of logic lead us to the same truth, revealing a deeper connection between the simple sum rule and its more general form.
+In a real scenario with 88 Chrono-Shift testers, 123 Echo-Sphere testers, and 35 who tested both, the number of users who participated in testing exactly one feature would be $88 + 123 - 2 \times 35 = 211 - 70 = 141$ [@problem_id:1410909]. Both paths of logic lead us to the same truth, revealing a deeper connection between the simple sum rule and its more general form.
 
 ### A Symphony of Principles
 
 The true power of these principles is not just in solving simple textbook problems, but in providing a framework to dissect and conquer enormous complexity. They give us a plan of attack.
 
-Consider a final, more intricate puzzle: designing a security protocol where a valid password of length 5 must meet at least one of two criteria: (1) it uses exactly 3 distinct characters from an alphabet of 4, or (2) it is built exclusively from a "legacy" subset of 3 characters .
+Consider a final, more intricate puzzle: designing a security protocol where a valid password of length 5 must meet at least one of two criteria: (1) it uses exactly 3 distinct characters from an alphabet of 4, or (2) it is built exclusively from a "legacy" subset of 3 characters [@problem_id:1410850].
 
 This problem seems daunting. But the phrase "at least one" immediately sings the song of Inclusion-Exclusion. Our grand strategy must be:
 $$|\text{Valid}| = |\text{Criterion 1}| + |\text{Criterion 2}| - |\text{Criterion 1 and 2}|$$
 
-Now, the task is broken down. We have three sub-problems to solve. Calculating the size of each of these sets is a significant challenge in itself (for instance, counting the number of strings of length 5 that use *exactly* 3 specific characters requires its own combinatorial technique for counting [surjective functions](@article_id:269637)). Yet, the overarching logic is clear and simple. The Principle of Inclusion-Exclusion acts as a conductor, orchestrating the other combinatorial rules to produce a harmonious solution. It transforms a mess of overlapping conditions into a structured, solvable puzzle.
+Now, the task is broken down. We have three sub-problems to solve. Calculating the size of each of these sets is a significant challenge in itself (for instance, counting the number of strings of length 5 that use *exactly* 3 specific characters requires its own combinatorial technique for counting [surjective functions](@keyword=surjective_functions|lang=en-US|style=Feynman)). Yet, the overarching logic is clear and simple. The Principle of Inclusion-Exclusion acts as a conductor, orchestrating the other combinatorial rules to produce a harmonious solution. It transforms a mess of overlapping conditions into a structured, solvable puzzle.
 
 From a simple choice between cake and ice cream, we have journeyed to complex security protocols. Yet, the core idea remains the same: to find the size of a union of choices, we add the individual options and then carefully, thoughtfully, deal with any overlaps. This journey from the obvious to the complex, all guided by one unifying principle, is a glimpse into the inherent beauty and unity of mathematics.

@@ -1,15 +1,15 @@
 ## Introduction
-In the world of quantitative finance, modeling the evolution of an investor's wealth is a fundamental challenge that requires precision and rigor. The cornerstone of this endeavor is the concept of a **[self-financing portfolio](@entry_id:635526)**, a mathematical idealization that describes a trading strategy operating without any external injections or withdrawals of cash. Understanding this concept is crucial, as it provides the essential link between the dynamics of underlying assets and the prices of the derivatives built upon them. This article addresses the need for a formal framework to track portfolio value, a framework that underpins the entire theory of arbitrage-free pricing.
+In the world of quantitative finance, modeling the evolution of an investor's wealth is a fundamental challenge that requires precision and rigor. The cornerstone of this endeavor is the concept of a **self-financing portfolio**, a mathematical idealization that describes a trading strategy operating without any external injections or withdrawals of cash. Understanding this concept is crucial, as it provides the essential link between the dynamics of underlying assets and the prices of the derivatives built upon them. This article addresses the need for a formal framework to track portfolio value, a framework that underpins the entire theory of arbitrage-free pricing.
 
-This article will guide you through the theoretical and practical dimensions of self-financing strategies. The first chapter, **"Principles and Mechanisms,"** will establish the foundational definitions in both discrete and continuous time, explore the mechanics of rebalancing, and introduce the powerful simplification offered by [discounting](@entry_id:139170). Following this, **"Applications and Interdisciplinary Connections"** will demonstrate how these principles are applied to solve real-world financial problems, from dynamically replicating derivative payoffs to establishing the theoretical conditions for [market completeness](@entry_id:637624). Finally, the **"Hands-On Practices"** section will provide you with the opportunity to apply these concepts, solidifying your understanding by working through key derivations and practical replication problems.
+This article will guide you through the theoretical and practical dimensions of self-financing strategies. The first chapter, **"Principles and Mechanisms,"** will establish the foundational definitions in both discrete and continuous time, explore the mechanics of rebalancing, and introduce the powerful simplification offered by discounting. Following this, **"Applications and Interdisciplinary Connections"** will demonstrate how these principles are applied to solve real-world financial problems, from dynamically replicating derivative payoffs to establishing the theoretical conditions for market completeness. Finally, the **"Hands-On Practices"** section will provide you with the opportunity to apply these concepts, solidifying your understanding by working through key derivations and practical replication problems.
 
 ## Principles and Mechanisms
 
-In the study of financial markets, a central challenge is to model the evolution of an investor's wealth over time. This requires a precise mathematical description of a **trading strategy** and the value of the assets it comprises. The concept of a **[self-financing portfolio](@entry_id:635526)** is the cornerstone of this description. It provides a rigorous framework for tracking portfolio value under the idealized assumption that there are no external infusions or withdrawals of capital. All changes in the portfolio's composition must be financed internally by buying and selling assets already within the portfolio. This chapter elucidates the principles and mechanisms of self-financing strategies, from their fundamental definitions in discrete and continuous time to their pivotal role in the theory of arbitrage-free pricing.
+In the study of financial markets, a central challenge is to model the evolution of an investor's wealth over time. This requires a precise mathematical description of a **trading strategy** and the value of the assets it comprises. The concept of a **self-financing portfolio** is the cornerstone of this description. It provides a rigorous framework for tracking portfolio value under the idealized assumption that there are no external infusions or withdrawals of capital. All changes in the portfolio's composition must be financed internally by buying and selling assets already within the portfolio. This chapter elucidates the principles and mechanisms of self-financing strategies, from their fundamental definitions in discrete and continuous time to their pivotal role in the theory of arbitrage-free pricing.
 
 ### The Definition of a Self-Financing Strategy
 
-The core idea of a [self-financing portfolio](@entry_id:635526) is that "no money is put in, and no money is taken out" after the initial investment. The portfolio's value changes for only two reasons: changes in the prices of the assets it holds (capital gains or losses) and, as we shall see later, cash flows generated by the assets themselves (like dividends).
+The core idea of a self-financing portfolio is that "no money is put in, and no money is taken out" after the initial investment. The portfolio's value changes for only two reasons: changes in the prices of the assets it holds (capital gains or losses) and, as we shall see later, cash flows generated by the assets themselves (like dividends).
 
 #### The Discrete-Time Formulation
 
@@ -19,9 +19,9 @@ The value of the portfolio at time $t_k$, immediately after rebalancing, is give
 
 $V_{t_k} = \varphi_{t_k} S_{t_k} + \psi_{t_k} B_{t_k}$
 
-The self-financing condition can be expressed in two equivalent ways .
+The self-financing condition can be expressed in two equivalent ways [@problem_id:3073873].
 
-The first perspective focuses on the **source of value change**. Between two trading dates, the change in the portfolio's value must be entirely due to the capital gains on the assets held during that interval. The holdings over $[t_k, t_{k+1})$ are $(\varphi_{t_k}, \psi_{t_k})$. Thus, the change in value, $V_{t_{k+1}} - V_{t_k}$, must equal the gains on these holdings:
+The first perspective focuses on the **source of value change**. Between two trading dates, the change in the portfolio's value must be entirely due to the capital gains on the assets held during that interval. The holdings over $t_k, t_{k+1})$ are $(\varphi_{t_k}, \psi_{t_k})$. Thus, the change in value, $V_{t_{k+1}} - V_{t_k}$, must equal the gains on these holdings:
 
 $V_{t_{k+1}} - V_{t_k} = \varphi_{t_k}(S_{t_{k+1}} - S_{t_k}) + \psi_{t_k}(B_{t_{k+1}} - B_{t_k})$
 
@@ -35,24 +35,24 @@ These two formulations are mathematically equivalent and provide the foundation 
 
 #### The Continuous-Time Formulation
 
-In a continuous-time model, assets can be traded at any instant. The price processes for the risky asset, $S_t$, and the [risk-free asset](@entry_id:145996), $B_t$, are typically modeled by stochastic differential equations (SDEs):
+In a continuous-time model, assets can be traded at any instant. The price processes for the risky asset, $S_t$, and the [risk-free asset, $B_t$, are typically modeled by stochastic differential equations (SDEs):
 
 $dS_t = \mu_t S_t \, dt + \sigma_t S_t \, dW_t$
 $dB_t = r_t B_t \, dt$
 
-Here, $W_t$ is a standard Brownian motion, and the coefficients representing the expected return ($\mu_t$), volatility ($\sigma_t$), and risk-free interest rate ($r_t$) are [adapted processes](@entry_id:187710).
+Here, $W_t$ is a standard Brownian motion, and the coefficients representing the expected return ($\mu_t$), volatility ($\sigma_t$), and risk-free interest rate ($r_t$) are adapted processes.
 
 A trading strategy is given by a pair of **predictable** processes, $(\varphi_t, \psi_t)$, representing the holdings in $S_t$ and $B_t$. Taking the limit of the discrete-time definition, the change in the portfolio's value, $V_t = \varphi_t S_t + \psi_t B_t$, is expressed in differential form. A strategy is self-financing if the infinitesimal change in wealth, $dV_t$, is due only to the infinitesimal capital gains on the current holdings:
 
 $dV_t = \varphi_t dS_t + \psi_t dB_t$
 
-In its integral form, this means that the wealth at any time $t$ is the initial wealth plus the accumulated gains from trade :
+In its integral form, this means that the wealth at any time $t$ is the initial wealth plus the accumulated gains from trade [@problem_id:3073868]:
 
 $V_t = V_0 + \int_0^t \varphi_u dS_u + \int_0^t \psi_u dB_u$
 
 ### The Mechanics of Continuous Rebalancing
 
-The differential definition $dV_t = \varphi_t dS_t + \psi_t dB_t$ is elegant, but its connection to the "no external funds" principle is subtle. The link is revealed by applying the Itô [product rule](@entry_id:144424) to the portfolio value definition, $V_t = \varphi_t S_t + \psi_t B_t$ .
+The differential definition $dV_t = \varphi_t dS_t + \psi_t dB_t$ is elegant, but its connection to the "no external funds" principle is subtle. The link is revealed by applying the Itô product rule to the portfolio value definition, $V_t = \varphi_t S_t + \psi_t B_t$ [@problem_id:3073866].
 
 For simplicity, let us first assume the holdings processes $\varphi_t$ and $\psi_t$ are of finite variation (e.g., piecewise constant). The full change in $V_t$ is:
 
@@ -62,54 +62,54 @@ Rearranging these terms clarifies their financial meaning:
 
 $dV_t = \underbrace{(\varphi_t dS_t + \psi_t dB_t)}_{\text{Capital Gains}} + \underbrace{(S_t d\varphi_t + B_t d\psi_t)}_{\text{Cost of Rebalancing}}$
 
-The first bracketed term represents the change in wealth from asset price movements, assuming fixed holdings. The second term represents the value exchanged in the act of trading itself—the cost of acquiring $d\varphi_t$ new shares of stock and $d\psi_t$ new units of the [risk-free asset](@entry_id:145996).
+The first bracketed term represents the change in wealth from asset price movements, assuming fixed holdings. The second term represents the value exchanged in the act of trading itself—the cost of acquiring $d\varphi_t$ new shares of stock and $d\psi_t$ new units of the risk-free asset.
 
 By defining a self-financing strategy by the condition $dV_t = \varphi_t dS_t + \psi_t dB_t$, we are implicitly forcing this second term—the net cost of rebalancing—to be zero:
 
 $S_t d\varphi_t + B_t d\psi_t = 0$
 
-This is the continuous-time equivalent of the discrete-time rebalancing condition. It mandates that any funds used to adjust holdings must be generated internally. If the holdings processes themselves are stochastic (i.e., Itô processes), a more general Itô [product rule](@entry_id:144424) must be used, which introduces a [quadratic covariation](@entry_id:180155) term. In this advanced case, the rebalancing cost that must be zero includes this additional term: $S_t d\varphi_t + B_t d\psi_t + d[\varphi, S]_t = 0$ .
+This is the continuous-time equivalent of the discrete-time rebalancing condition. It mandates that any funds used to adjust holdings must be generated internally. If the holdings processes themselves are stochastic (i.e., Itô processes), a more general Itô product rule must be used, which introduces a quadratic covariation term. In this advanced case, the rebalancing cost that must be zero includes this additional term: $S_t d\varphi_t + B_t d\psi_t + d[\varphi, S]_t = 0$ [@problem_id:3073893].
 
-A critical technical detail in this framework is the requirement that trading strategies be **predictable** processes. A process $\varphi_t$ is adapted if its value at time $t$ depends on information available up to time $t$ (i.e., it is $\mathcal{F}_t$-measurable). A process is predictable if its value at time $t$ is determined by information available strictly *before* time $t$ (i.e., it is $\mathcal{F}_{t-}$-measurable) . This "no look-ahead" property is essential for defining the [stochastic integral](@entry_id:195087) $\int \varphi_s dS_s$ and for modeling realistic trading, as it prevents a strategy from using knowledge of a price change at the exact moment it occurs.
+A critical technical detail in this framework is the requirement that trading strategies be **predictable** processes. A process $\varphi_t$ is adapted if its value at time $t$ depends on information available up to time $t$ (i.e., it is $\mathcal{F}_t$-measurable). A process is predictable if its value at time $t$ is determined by information available strictly *before* time $t$ (i.e., it is $\mathcal{F}_{t-}$-measurable) [@problem_id:3073899]. This "no look-ahead" property is essential for defining the stochastic integral $\int \varphi_s dS_s$ and for modeling realistic trading, as it prevents a strategy from using knowledge of a price change at the exact moment it occurs.
 
 ### Discounted Wealth: A Powerful Simplification
 
-While the dynamics of $V_t$ are complex, a remarkable simplification occurs when we change our unit of account, or **numeraire**. Instead of measuring wealth in currency units, we measure it in units of the [risk-free asset](@entry_id:145996) $B_t$. This is known as **[discounting](@entry_id:139170)**. The discounted wealth is $\tilde{V}_t = V_t/B_t$, and the discounted stock price is $\tilde{S}_t = S_t/B_t$.
+While the dynamics of $V_t$ are complex, a remarkable simplification occurs when we change our unit of account, or **numeraire**. Instead of measuring wealth in currency units, we measure it in units of the risk-free asset $B_t$. This is known as **discounting**. The discounted wealth is $\tilde{V}_t = V_t/B_t$, and the discounted stock price is $\tilde{S}_t = S_t/B_t$.
 
-One of the most important results in this field is that for any [self-financing portfolio](@entry_id:635526), the dynamics of the discounted wealth are given by:
+One of the most important results in this field is that for any self-financing portfolio, the dynamics of the discounted wealth are given by:
 
 $d\tilde{V}_t = \varphi_t d\tilde{S}_t$
 
 This elegant formula shows that the change in discounted wealth depends only on the holdings in the risky asset and the change in its discounted price. The holdings in the money market account, $\psi_t$, and the risk-free rate, $r_t$, vanish from the expression.
 
-To see how this happens, we can apply Itô's lemma to $\tilde{V}_t = V_t/B_t$ and substitute the self-financing condition. The derivation shows a perfect cancellation of all terms involving the risk-free rate $r_t$ and the risk-free holdings $\psi_t$ . The result is that the drift of the discounted wealth process is driven entirely by the portfolio's exposure to the risky asset and that asset's **excess return** over the risk-free rate, $\mu_t - r_t$. Specifically, the drift coefficient of $d\tilde{V}_t$ is:
+To see how this happens, we can apply Itô's lemma to $\tilde{V}_t = V_t/B_t$ and substitute the self-financing condition. The derivation shows a perfect cancellation of all terms involving the risk-free rate $r_t$ and the risk-free holdings $\psi_t$ [@problem_id:3073862]. The result is that the drift of the discounted wealth process is driven entirely by the portfolio's exposure to the risky asset and that asset's **excess return** over the risk-free rate, $\mu_t - r_t$. Specifically, the drift coefficient of $d\tilde{V}_t$ is:
 
 $\text{Drift}(\tilde{V}_t) = \frac{\varphi_t S_t}{B_t} (\mu_t - r_t) = \varphi_t \tilde{S}_t (\mu_t - r_t)$
 
-This result is fundamental. It isolates the source of [risk and return](@entry_id:139395) in the portfolio and is the gateway to [risk-neutral pricing](@entry_id:144172). Under the physical (or real-world) probability measure, the discounted wealth process $\tilde{V}_t$ is generally not a martingale because its drift is non-zero whenever there is a non-zero [risk premium](@entry_id:137124) ($\mu_t \ne r_t$) and holdings in the risky asset ($\varphi_t \ne 0$) .
+This result is fundamental. It isolates the source of risk and return in the portfolio and is the gateway to risk-neutral pricing. Under the physical (or real-world) probability measure, the discounted wealth process $\tilde{V}_t$ is generally not a martingale because its drift is non-zero whenever there is a non-zero risk premium ($\mu_t \ne r_t$) and holdings in the risky asset ($\varphi_t \ne 0$) [@problem_id:3073868].
 
 ### From Self-Financing to No-Arbitrage
 
-The concept of a [self-financing portfolio](@entry_id:635526) is the primary tool for defining and ruling out arbitrage. An **arbitrage opportunity** is, loosely speaking, a "free lunch"—a strategy that starts with zero wealth, can never lose money, and has a positive probability of making a profit. Formally, an arbitrage is a self-financing strategy with initial wealth $V_0=0$ such that its terminal wealth $V_T \ge 0$ [almost surely](@entry_id:262518), and $\mathbb{P}(V_T > 0) > 0$ .
+The concept of a self-financing portfolio is the primary tool for defining and ruling out arbitrage. An **arbitrage opportunity** is, loosely speaking, a "free lunch"—a strategy that starts with zero wealth, can never lose money, and has a positive probability of making a profit. Formally, an arbitrage is a self-financing strategy with initial wealth $V_0=0$ such that its terminal wealth $V_T \ge 0$ almost surely, and $\mathbb{P}(V_T > 0) > 0$ [@problem_id:3073853].
 
-However, the self-financing condition alone is not strong enough to preclude certain pathological strategies. For example, a "doubling strategy" in a betting game involves borrowing to double the bet after every loss. Such a strategy can appear to guarantee a profit but relies on access to unlimited credit. To rule these out, we must restrict our attention to **admissible strategies**. A self-financing strategy is defined as admissible if its wealth process is **bounded from below**; that is, there exists some constant $K$ such that $V_t \ge -K$ [almost surely](@entry_id:262518) for all time. This condition acts as a realistic credit limit, preventing the portfolio from accumulating infinite debt .
+However, the self-financing condition alone is not strong enough to preclude certain pathological strategies. For example, a "doubling strategy" in a betting game involves borrowing to double the bet after every loss. Such a strategy can appear to guarantee a profit but relies on access to unlimited credit. To rule these out, we must restrict our attention to **admissible strategies**. A self-financing strategy is defined as admissible if its wealth process is **bounded from below**; that is, there exists some constant $K$ such that $V_t \ge -K$ almost surely for all time. This condition acts as a realistic credit limit, preventing the portfolio from accumulating infinite debt [@problem_id:3073895].
 
-The link between these concepts is provided by the **First Fundamental Theorem of Asset Pricing (FTAP)**. This theorem connects the [absence of arbitrage](@entry_id:634322) in a market to the existence of a special probability measure, the **Equivalent Martingale Measure (EMM)**, denoted $\mathbb{Q}$. Under this measure $\mathbb{Q}$, which is equivalent to the [physical measure](@entry_id:264060) $\mathbb{P}$, the discounted price process of every risky asset becomes a [martingale](@entry_id:146036).
+The link between these concepts is provided by the **First Fundamental Theorem of Asset Pricing (FTAP)**. This theorem connects the absence of arbitrage in a market to the existence of a special probability measure, the **Equivalent Martingale Measure (EMM)**, denoted $\mathbb{Q}$. Under this measure $\mathbb{Q}$, which is equivalent to the physical measure $\mathbb{P}$, the discounted price process of every risky asset becomes a martingale.
 
-The FTAP states that a market is free of arbitrage if and only if an EMM exists. The proof that the existence of an EMM implies no-arbitrage proceeds as follows :
-1. For any admissible self-financing strategy, the discounted wealth process $\tilde{V}_t$ is a [local martingale](@entry_id:203733) under $\mathbb{Q}$ because $d\tilde{V}_t = \varphi_t d\tilde{S}_t$ and $\tilde{S}_t$ is a $\mathbb{Q}$-martingale.
-2. Because the strategy is admissible, $\tilde{V}_t$ is bounded from below. A [local martingale](@entry_id:203733) that is bounded from below is a **[supermartingale](@entry_id:271504)**.
-3. The [supermartingale](@entry_id:271504) property implies $\mathbb{E}^{\mathbb{Q}}[\tilde{V}_T] \le \tilde{V}_0$.
+The FTAP states that a market is free of arbitrage if and only if an EMM exists. The proof that the existence of an EMM implies no-arbitrage proceeds as follows [@problem_id:3073853]:
+1. For any admissible self-financing strategy, the discounted wealth process $\tilde{V}_t$ is a local martingale under $\mathbb{Q}$ because $d\tilde{V}_t = \varphi_t d\tilde{S}_t$ and $\tilde{S}_t$ is a $\mathbb{Q}$-martingale.
+2. Because the strategy is admissible, $\tilde{V}_t$ is bounded from below. A local martingale that is bounded from below is a **supermartingale**.
+3. The supermartingale property implies $\mathbb{E}^{\mathbb{Q}}[\tilde{V}_T] \le \tilde{V}_0$.
 4. For a hypothetical arbitrage strategy, we have $\tilde{V}_0=0$ and $\mathbb{E}^{\mathbb{Q}}[\tilde{V}_T] > 0$. This leads to the contradiction $0  \mathbb{E}^{\mathbb{Q}}[\tilde{V}_T] \le 0$.
-Therefore, if an EMM exists, no arbitrage opportunities can exist among the set of admissible strategies  .
+Therefore, if an EMM exists, no arbitrage opportunities can exist among the set of admissible strategies [@problem_id:3073853] [@problem_id:3073895].
 
 ### Extending the Model: Dividends and Transaction Costs
 
-The basic model of a [self-financing portfolio](@entry_id:635526) can be extended to incorporate more realistic market features.
+The basic model of a self-financing portfolio can be extended to incorporate more realistic market features.
 
 #### Continuous Dividends
 
-If a stock pays a continuous dividend, this represents an internal cash flow generated by the portfolio's assets. The self-financing condition is modified to state that the change in wealth is the sum of capital gains *and* this dividend income. If the stock pays dividends at a rate of $\delta_t$ currency units per share per unit time, and its price $S_t$ is quoted ex-dividend, the self-financing dynamics become :
+If a stock pays a continuous dividend, this represents an internal cash flow generated by the portfolio's assets. The self-financing condition is modified to state that the change in wealth is the sum of capital gains *and* this dividend income. If the stock pays dividends at a rate of $\delta_t$ currency units per share per unit time, and its price $S_t$ is quoted ex-dividend, the self-financing dynamics become [@problem_id:3073859]:
 
 $dV_t = \varphi_t dS_t + \psi_t dB_t + \varphi_t \delta_t dt$
 
@@ -119,7 +119,7 @@ The term $\varphi_t \delta_t dt$ is the cash received by the portfolio from hold
 
 The assumption of frictionless trading is a significant idealization. If we introduce proportional transaction costs, where a fraction $\lambda$ of the value of every trade is paid as a fee, the self-financing property breaks down. The wealth of the portfolio is continuously eroded by the cost of rebalancing.
 
-Consider a discrete trading model where trades occur on a grid of times. At each trade, a cost of $\lambda S_{t_k} |\Delta \theta_{t_k}|$ is incurred, where $|\Delta \theta_{t_k}|$ is the absolute change in the number of shares held. In the continuous-time limit, for a strategy $\theta_t$ that has finite [total variation](@entry_id:140383), this "leakage" accumulates. The wealth dynamics are no longer self-financing in the frictionless sense but are instead described by:
+Consider a discrete trading model where trades occur on a grid of times. At each trade, a cost of $\lambda S_{t_k} |\Delta \theta_{t_k}|$ is incurred, where $|\Delta \theta_{t_k}|$ is the absolute change in the number of shares held. In the continuous-time limit, for a strategy $\theta_t$ that has finite total variation, this "leakage" accumulates. The wealth dynamics are no longer self-financing in the frictionless sense but are instead described by:
 
 $dV_t = \theta_t dS_t - \lambda S_t d\mathrm{TV}(\theta)_t$
 

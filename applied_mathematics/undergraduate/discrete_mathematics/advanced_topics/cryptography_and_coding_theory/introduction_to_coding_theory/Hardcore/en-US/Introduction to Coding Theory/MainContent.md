@@ -1,11 +1,11 @@
 ## Introduction
-In our modern world, digital information is the bedrock of communication, science, and commerce. From deep-space probes transmitting images of distant planets to the genome sequencers deciphering the code of life, we rely on the accurate transmission and storage of vast quantities of data. However, every digital system is vulnerable to noise, degradation, and corruption, which can flip bits and turn [coherent information](@entry_id:147583) into meaningless static. The central problem is how to guarantee [data integrity](@entry_id:167528) in an inherently imperfect world. This is the challenge addressed by [coding theory](@entry_id:141926), the mathematical discipline dedicated to designing robust methods for detecting and correcting errors.
+In our modern world, digital information is the bedrock of communication, science, and commerce. From deep-space probes transmitting images of distant planets to the genome sequencers deciphering the code of life, we rely on the accurate transmission and storage of vast quantities of data. However, every digital system is vulnerable to noise, degradation, and corruption, which can flip bits and turn coherent information into meaningless static. The central problem is how to guarantee data integrity in an inherently imperfect world. This is the challenge addressed by coding theory, the mathematical discipline dedicated to designing robust methods for detecting and correcting errors.
 
-This article will guide you through the elegant principles and powerful applications of this essential field. In the chapters that follow, we will first deconstruct the core **Principles and Mechanisms** of coding theory, learning how to measure errors with Hamming distance, understand the anatomy of a code, and leverage the power of linear algebra for efficient decoding. Next, we will explore the vast landscape of **Applications and Interdisciplinary Connections**, demonstrating how these abstract concepts enable everything from satellite communication to revolutionary techniques in biology. Finally, you will have the opportunity to solidify your understanding by working through a series of **Hands-On Practices** designed to build your skills in [error detection and correction](@entry_id:749079).
+This article will guide you through the elegant principles and powerful applications of this essential field. In the chapters that follow, we will first deconstruct the core **Principles and Mechanisms** of coding theory, learning how to measure errors with Hamming distance, understand the anatomy of a code, and leverage the power of linear algebra for efficient decoding. Next, we will explore the vast landscape of **Applications and Interdisciplinary Connections**, demonstrating how these abstract concepts enable everything from satellite communication to revolutionary techniques in biology. Finally, you will have the opportunity to solidify your understanding by working through a series of **Hands-On Practices** designed to build your skills in error detection and correction.
 
 ## Principles and Mechanisms
 
-Having established the fundamental need for error control in digital communication, we now turn to the formal principles and mechanisms that underpin modern [coding theory](@entry_id:141926). This chapter deconstructs the core concepts, beginning with how we measure errors and formally describe a code. We then explore the elegant algebraic structure of [linear codes](@entry_id:261038), which provides powerful tools for analysis and implementation. Finally, we will quantify the error-handling capabilities of codes and investigate the theoretical limits that define the boundaries of what is achievable.
+Having established the fundamental need for error control in digital communication, we now turn to the formal principles and mechanisms that underpin modern coding theory. This chapter deconstructs the core concepts, beginning with how we measure errors and formally describe a code. We then explore the elegant algebraic structure of linear codes, which provides powerful tools for analysis and implementation. Finally, we will quantify the error-handling capabilities of codes and investigate the theoretical limits that define the boundaries of what is achievable.
 
 ### Quantifying Difference: The Hamming Distance
 
@@ -13,7 +13,7 @@ The first step in correcting errors is to have a precise way to measure them. In
 
 The **Hamming distance** between two strings of equal length is defined as the number of positions at which their corresponding characters differ. If we have two strings, or vectors, $x$ and $y$ of length $n$ over some alphabet, their Hamming distance, denoted $d_H(x, y)$, is the count of indices $i$ where the symbol $x_i$ is not equal to $y_i$.
 
-For example, consider a hypothetical deep space probe that transmits data using an alphabet containing letters, digits, and symbols. If the intended transmission was `MARS-EXPLORER-2049-OK` but the received message was `MAR5-EXP10RER-2049-0K`, we can quantify the corruption by a direct comparison .
+For example, consider a hypothetical deep space probe that transmits data using an alphabet containing letters, digits, and symbols. If the intended transmission was `MARS-EXPLORER-2049-OK` but the received message was `MAR5-EXP10RER-2049-0K`, we can quantify the corruption by a direct comparison [@problem_id:1377086].
 ```
 Transmitted: M A R S - E X P L O R E R - 2 0 4 9 - O K
 Received:   M A R 5 - E X P 1 0 R E R - 2 0 4 9 - 0 K
@@ -21,7 +21,7 @@ Positions:        ^         ^ ^               ^
 ```
 The characters differ at the 4th, 9th, 10th, and 20th positions. Therefore, the Hamming distance between the transmitted and received strings is 4. This simple count represents the minimum number of single-character substitution errors required to transform one string into the other.
 
-While this example uses an alphanumeric alphabet, the principles of [coding theory](@entry_id:141926) are most often developed over the binary alphabet $\{0, 1\}$, which is the native language of digital computers. In this binary setting, the Hamming distance between two bit strings is simply the number of positions where one has a $0$ and the other has a $1$.
+While this example uses an alphanumeric alphabet, the principles of coding theory are most often developed over the binary alphabet $\{0, 1\}$, which is the native language of digital computers. In this binary setting, the Hamming distance between two bit strings is simply the number of positions where one has a $0$ and the other has a $1$.
 
 ### The Anatomy of a Code: Parameters (n, M, d)
 
@@ -29,41 +29,41 @@ A **code** is formally defined as a specific subset of all possible strings of a
 
 Any code can be characterized by three fundamental parameters, often written as a triplet $(n, M, d)$:
 
-1.  **Length ($n$)**: The number of symbols in each codeword. For a [binary code](@entry_id:266597), this is the number of bits per codeword.
+1.  **Length ($n$)**: The number of symbols in each codeword. For a binary code, this is the number of bits per codeword.
 
 2.  **Size ($M$)**: The total number of distinct codewords in the code. A larger $M$ means more unique messages can be represented.
 
 3.  **Minimum Distance ($d$)**: The minimum Hamming distance between any pair of *distinct* codewords in the code. Mathematically, $d = \min \{d_H(x, y) \mid x, y \in C, x \neq y\}$. This parameter is the single most important measure of a code's error-handling capability.
 
-Let's consider a simple code $C$ consisting of all binary strings of length 4 that contain an even number of 1s . The set of all possible [binary strings](@entry_id:262113) of length 4 is $\{0000, 0001, ..., 1111\}$, a total of $2^4 = 16$ strings. The codewords in $C$ are those with an even number of 1s (an even Hamming weight):
+Let's consider a simple code $C$ consisting of all binary strings of length 4 that contain an even number of 1s [@problem_id:1377133]. The set of all possible binary strings of length 4 is $\{0000, 0001, ..., 1111\}$, a total of $2^4 = 16$ strings. The codewords in $C$ are those with an even number of 1s (an even Hamming weight):
 $C = \{0000, 0011, 0101, 0110, 1001, 1010, 1100, 1111\}$.
 
 For this code, the parameters are:
 *   $n=4$, as each codeword has four bits.
-*   $M=8$, as there are eight codewords in the set $C$. In general, for any length $n$, exactly half of the $2^n$ [binary strings](@entry_id:262113) have an even weight, so $M = 2^{n-1}$.
+*   $M=8$, as there are eight codewords in the set $C$. In general, for any length $n$, exactly half of the $2^n$ binary strings have an even weight, so $M = 2^{n-1}$.
 *   To find $d$, we must find the minimum distance between any two distinct codewords. For instance, $d_H(0011, 0101) = 2$. A systematic check reveals that the minimum distance is indeed $d=2$.
 
 Therefore, this code is a $(4, 8, 2)$ code. As we will see, a minimum distance of $d=2$ is sufficient to detect single-bit errors, but not to correct them.
 
 ### The Power of Structure: Linear Codes
 
-While any arbitrary collection of codewords forms a code, such unstructured sets are difficult to analyze and implement. The most important and widely studied class of codes are **[linear codes](@entry_id:261038)**, which possess a rich algebraic structure that greatly simplifies their description and decoding.
+While any arbitrary collection of codewords forms a code, such unstructured sets are difficult to analyze and implement. The most important and widely studied class of codes are **linear codes**, which possess a rich algebraic structure that greatly simplifies their description and decoding.
 
-A binary code $C$ of length $n$ is a **[linear code](@entry_id:140077)** if it is a linear subspace of the vector space $\mathbb{F}_2^n$, where $\mathbb{F}_2 = \{0, 1\}$ is the field of integers modulo 2. This definition implies two practical properties:
+A binary code $C$ of length $n$ is a **linear code** if it is a linear subspace of the vector space $\mathbb{F}_2^n$, where $\mathbb{F}_2 = \{0, 1\}$ is the field of integers modulo 2. This definition implies two practical properties:
 
-1.  **The [zero vector](@entry_id:156189) is a codeword**: The string of all zeros, `00...0`, must be in $C$.
+1.  **The zero vector is a codeword**: The string of all zeros, `00...0`, must be in $C$.
 2.  **Closure under addition**: The sum of any two codewords is also a codeword. In the binary case, "addition" refers to component-wise addition modulo 2, which is equivalent to the bitwise XOR operation.
 
-For instance, if an engineer is testing a system based on a [linear code](@entry_id:140077) and knows that $c_1 = 10110110$ and $c_2 = 01101101$ are valid codewords, the [closure property](@entry_id:136899) guarantees that their sum, $c_1 + c_2 = 11011011$, must also be a valid codeword . This structure ensures that codes can be specified very compactly, rather than by listing all $M$ codewords.
+For instance, if an engineer is testing a system based on a linear code and knows that $c_1 = 10110110$ and $c_2 = 01101101$ are valid codewords, the closure property guarantees that their sum, $c_1 + c_2 = 11011011$, must also be a valid codeword [@problem_id:1377127]. This structure ensures that codes can be specified very compactly, rather than by listing all $M$ codewords.
 
-A profound consequence of linearity relates the minimum distance $d$ to the **Hamming weight** of the codewords. The Hamming weight of a codeword $c$, denoted $w(c)$, is the number of 1s it contains (or, equivalently, its Hamming distance from the zero vector). For any [linear code](@entry_id:140077), the minimum distance is equal to the minimum weight of any non-zero codeword:
+A profound consequence of linearity relates the minimum distance $d$ to the **Hamming weight** of the codewords. The Hamming weight of a codeword $c$, denoted $w(c)$, is the number of 1s it contains (or, equivalently, its Hamming distance from the zero vector). For any linear code, the minimum distance is equal to the minimum weight of any non-zero codeword:
 $$d = \min_{c \in C, c \neq 0} w(c)$$
 
-The reasoning is straightforward . The distance between two codewords $x$ and $y$ is $d_H(x, y) = w(x+y)$. Since the code is linear, if $x$ and $y$ are distinct codewords, then their sum $z = x+y$ is a non-zero codeword. Conversely, for any non-zero codeword $z$, its weight $w(z)$ is equal to the distance $d_H(z, 0)$ between $z$ and the zero codeword. Thus, the set of distances between all distinct pairs of codewords is identical to the set of weights of all non-zero codewords. Finding the minimum of one set is equivalent to finding the minimum of the other. This property dramatically simplifies the task of determining a [linear code](@entry_id:140077)'s minimum distance; instead of checking all $\binom{M}{2}$ pairs of codewords, we only need to find the non-zero codeword with the fewest 1s.
+The reasoning is straightforward [@problem_id:1377105]. The distance between two codewords $x$ and $y$ is $d_H(x, y) = w(x+y)$. Since the code is linear, if $x$ and $y$ are distinct codewords, then their sum $z = x+y$ is a non-zero codeword. Conversely, for any non-zero codeword $z$, its weight $w(z)$ is equal to the distance $d_H(z, 0)$ between $z$ and the zero codeword. Thus, the set of distances between all distinct pairs of codewords is identical to the set of weights of all non-zero codewords. Finding the minimum of one set is equivalent to finding the minimum of the other. This property dramatically simplifies the task of determining a linear code's minimum distance; instead of checking all $\binom{M}{2}$ pairs of codewords, we only need to find the non-zero codeword with the fewest 1s.
 
 ### Error Handling Capabilities
 
-The central purpose of a code is to handle errors, a task that can be divided into [error detection](@entry_id:275069) and [error correction](@entry_id:273762). The minimum distance $d$ is the sole parameter that determines a code's guaranteed capabilities in this regard.
+The central purpose of a code is to handle errors, a task that can be divided into error detection and error correction. The minimum distance $d$ is the sole parameter that determines a code's guaranteed capabilities in this regard.
 
 #### Error Detection
 
@@ -83,7 +83,7 @@ The condition for these spheres to be disjoint is that the distance between thei
 $$k_{correct} = t = \left\lfloor \frac{d-1}{2} \right\rfloor$$
 This formula gives the maximum number of errors a code is guaranteed to correct.
 
-For a code with a minimum distance of $d=5$, for example, we can calculate its error-handling power :
+For a code with a minimum distance of $d=5$, for example, we can calculate its error-handling power [@problem_id:1377119]:
 *   Maximum errors detected: $k_{detect} = 5 - 1 = 4$.
 *   Maximum errors corrected: $k_{correct} = \lfloor (5-1)/2 \rfloor = \lfloor 2 \rfloor = 2$.
 
@@ -91,17 +91,17 @@ This code can detect any pattern of 1, 2, 3, or 4 bit-flips. If only 1 or 2 erro
 
 ### Algebraic Tools: The Parity-Check Matrix and the Syndrome
 
-The principles of [error detection and correction](@entry_id:749079) are elegant, but checking a received word by comparing it to millions or billions of codewords is impractical. Linear algebra provides a remarkably efficient mechanism through the **[parity-check matrix](@entry_id:276810)**.
+The principles of error detection and correction are elegant, but checking a received word by comparing it to millions or billions of codewords is impractical. Linear algebra provides a remarkably efficient mechanism through the **parity-check matrix**.
 
-For any [linear code](@entry_id:140077) $C$, there exists a matrix $H$, called the [parity-check matrix](@entry_id:276810), such that a vector $v$ is a codeword if and only if it satisfies the equation:
+For any linear code $C$, there exists a matrix $H$, called the parity-check matrix, such that a vector $v$ is a codeword if and only if it satisfies the equation:
 $$H v^T = 0$$
-Here, $v^T$ is the column-vector representation of the codeword, and the [matrix multiplication](@entry_id:156035) is performed over $\mathbb{F}_2$. This equation means that every codeword must be orthogonal to every row of the [parity-check matrix](@entry_id:276810). Each row of $H$ defines a "[parity check](@entry_id:753172)" that all codewords must satisfy. For instance, a row $(1, 0, 1, 1, 0, 0)$ in $H$ corresponds to the check equation $v_1 + v_3 + v_4 = 0 \pmod 2$.
+Here, $v^T$ is the column-vector representation of the codeword, and the matrix multiplication is performed over $\mathbb{F}_2$. This equation means that every codeword must be orthogonal to every row of the parity-check matrix. Each row of $H$ defines a "parity check" that all codewords must satisfy. For instance, a row $(1, 0, 1, 1, 0, 0)$ in $H$ corresponds to the check equation $v_1 + v_3 + v_4 = 0 \pmod 2$.
 
-This provides a simple and immediate test for validity . To check if a received vector $v$ is a codeword, one simply computes the product $H v^T$. If the result is the zero vector, the vector passes all parity checks and is deemed a valid codeword. If the result is non-zero, the vector is not a codeword.
+This provides a simple and immediate test for validity [@problem_id:1377130]. To check if a received vector $v$ is a codeword, one simply computes the product $H v^T$. If the result is the zero vector, the vector passes all parity checks and is deemed a valid codeword. If the result is non-zero, the vector is not a codeword.
 
 The result of this calculation is called the **syndrome**, denoted $s$. For a received vector $y$, the syndrome is $s = H y^T$.
 *   If $s=0$, no errors are detected. The received word is a valid codeword.
-*   If $s \neq 0$, an error has been detected .
+*   If $s \neq 0$, an error has been detected [@problem_id:1377082].
 
 The power of the syndrome goes even further. Suppose a codeword $c$ was transmitted and an error pattern $e$ occurred, so the received word is $y = c + e$. The syndrome is:
 $$s = H y^T = H (c + e)^T = H c^T + H e^T$$
@@ -121,22 +121,22 @@ The design of a code involves balancing competing goals. We desire a code that c
 
 #### Efficiency vs. Reliability: The Code Rate
 
-A [linear code](@entry_id:140077) is specified by its length $n$ and its dimension $k$. The dimension $k$ is the number of [linearly independent](@entry_id:148207) codewords, and it corresponds to the number of "information bits" in a message. The code maps a $k$-bit message to an $n$-bit codeword. The number of codewords is thus $M=2^k$. The remaining $n-k$ bits are **redundant bits**, added to provide the error-correction capability.
+A linear code is specified by its length $n$ and its dimension $k$. The dimension $k$ is the number of linearly independent codewords, and it corresponds to the number of "information bits" in a message. The code maps a $k$-bit message to an $n$-bit codeword. The number of codewords is thus $M=2^k$. The remaining $n-k$ bits are **redundant bits**, added to provide the error-correction capability.
 
-The **[code rate](@entry_id:176461)**, $R = k/n$, measures the efficiency of the code. It is the fraction of the codeword that constitutes actual information. A high rate ($R \to 1$) means very little redundancy and high throughput, while a low rate ($R \to 0$) means high redundancy.
+The **code rate**, $R = k/n$, measures the efficiency of the code. It is the fraction of the codeword that constitutes actual information. A high rate ($R \to 1$) means very little redundancy and high throughput, while a low rate ($R \to 0$) means high redundancy.
 
-There is a fundamental trade-off between rate and reliability . Consider two codes of length $n=20$. A $(20, 16)$ code has a high rate of $R = 16/20 = 0.8$, with only 4 redundant bits. A $(20, 6)$ code has a low rate of $R = 6/20 = 0.3$, but has 14 redundant bits. This greater proportion of redundancy allows the low-rate code to achieve a much larger minimum distance and thus more robust error-correction capabilities, at the expense of transmitting data more slowly. The choice of code is an engineering decision based on channel noise characteristics and application requirements.
+There is a fundamental trade-off between rate and reliability [@problem_id:1377091]. Consider two codes of length $n=20$. A $(20, 16)$ code has a high rate of $R = 16/20 = 0.8$, with only 4 redundant bits. A $(20, 6)$ code has a low rate of $R = 6/20 = 0.3$, but has 14 redundant bits. This greater proportion of redundancy allows the low-rate code to achieve a much larger minimum distance and thus more robust error-correction capabilities, at the expense of transmitting data more slowly. The choice of code is an engineering decision based on channel noise characteristics and application requirements.
 
 #### The Boundaries of Performance: Code Bounds
 
-A central question in [coding theory](@entry_id:141926) is: for a given length $n$ and minimum distance $d$, what is the maximum possible number of codewords, $M$? This quantity is denoted $A_2(n,d)$. Finding the exact value of $A_2(n,d)$ is a notoriously difficult problem for most parameters. Instead, we rely on bounds that constrain its possible value.
+A central question in coding theory is: for a given length $n$ and minimum distance $d$, what is the maximum possible number of codewords, $M$? This quantity is denoted $A_2(n,d)$. Finding the exact value of $A_2(n,d)$ is a notoriously difficult problem for most parameters. Instead, we rely on bounds that constrain its possible value.
 
 The **Sphere-Packing Bound**, or Hamming Bound, provides an upper limit on $M$. The logic is a formalization of our earlier geometric argument. The $M$ disjoint Hamming spheres of radius $t = \lfloor (d-1)/2 \rfloor$ must all fit within the total space of $2^n$ binary vectors. The volume of a single Hamming sphere (the number of points it contains) is $\sum_{i=0}^{t} \binom{n}{i}$. This gives the inequality:
 $$M \sum_{i=0}^{t} \binom{n}{i} \le 2^n$$
 This bound tells us the absolute maximum number of codewords a code can have.
 
-In rare, ideal cases, the spheres fit together so perfectly that they tile the entire space with no gaps. Such codes are called **[perfect codes](@entry_id:265404)**, and they satisfy the Hamming bound with equality. The binary Golay code is a famous example . It is a $(23, 4096, 7)$ code. With $n=23$ and $M=2^{12}=4096$, the Hamming bound equation becomes $2^{12} \sum_{i=0}^{t} \binom{23}{i} = 2^{23}$, which simplifies to $\sum_{i=0}^{t} \binom{23}{i} = 2^{11} = 2048$. By calculating the sum for increasing values of $t$, we find that $\binom{23}{0} + \binom{23}{1} + \binom{23}{2} + \binom{23}{3} = 1 + 23 + 253 + 1771 = 2048$. Thus, the Golay code can correct $t=3$ errors and is a [perfect code](@entry_id:266245).
+In rare, ideal cases, the spheres fit together so perfectly that they tile the entire space with no gaps. Such codes are called **perfect codes**, and they satisfy the Hamming bound with equality. The binary Golay code is a famous example [@problem_id:1377081]. It is a $(23, 4096, 7)$ code. With $n=23$ and $M=2^{12}=4096$, the Hamming bound equation becomes $2^{12} \sum_{i=0}^{t} \binom{23}{i} = 2^{23}$, which simplifies to $\sum_{i=0}^{t} \binom{23}{i} = 2^{11} = 2048$. By calculating the sum for increasing values of $t$, we find that $\binom{23}{0} + \binom{23}{1} + \binom{23}{2} + \binom{23}{3} = 1 + 23 + 253 + 1771 = 2048$. Thus, the Golay code can correct $t=3$ errors and is a perfect code.
 
 While the Hamming bound provides an optimistic upper limit, the **Gilbert-Varshamov (GV) Bound** provides a pessimistic but constructive lower bound. It guarantees the *existence* of a code with at least a certain size:
 $$A_2(n,d) \ge \frac{2^n}{\sum_{i=0}^{d-1} \binom{n}{i}}$$
-For most $(n,d)$ parameters, there is a significant gap between the Gilbert-Varshamov lower bound and the Hamming upper bound . For the parameters $n=23, d=7$, the Hamming bound gives an upper limit of $M_{upper} = 2^{23} / \sum_{i=0}^{3} \binom{23}{i} = 2^{23}/2048 = 4096$. The Gilbert-Varshamov bound gives a lower limit of $M_{lower} = 2^{23} / \sum_{i=0}^{6} \binom{23}{i} \approx 2^{23}/145499 \approx 57.6$. In this case, we know the true value is $A_2(23,7) = 4096$ because the perfect Golay code exists. However, for slightly different parameters, say $d=9$, the bounds would define a range where the true value of $A_2(23,9)$ remains an open research problem. This gap between existence proofs and impossibility proofs is what drives much of the ongoing research in [coding theory](@entry_id:141926).
+For most $(n,d)$ parameters, there is a significant gap between the Gilbert-Varshamov lower bound and the Hamming upper bound [@problem_id:1377106]. For the parameters $n=23, d=7$, the Hamming bound gives an upper limit of $M_{upper} = 2^{23} / \sum_{i=0}^{3} \binom{23}{i} = 2^{23}/2048 = 4096$. The Gilbert-Varshamov bound gives a lower limit of $M_{lower} = 2^{23} / \sum_{i=0}^{6} \binom{23}{i} \approx 2^{23}/145499 \approx 57.6$. In this case, we know the true value is $A_2(23,7) = 4096$ because the perfect Golay code exists. However, for slightly different parameters, say $d=9$, the bounds would define a range where the true value of $A_2(23,9)$ remains an open research problem. This gap between existence proofs and impossibility proofs is what drives much of the ongoing research in coding theory.

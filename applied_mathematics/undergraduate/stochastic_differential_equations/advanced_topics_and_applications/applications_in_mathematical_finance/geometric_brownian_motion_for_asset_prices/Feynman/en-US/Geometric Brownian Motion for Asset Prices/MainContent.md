@@ -19,7 +19,7 @@ Putting these pieces together gives us the foundational equation of Geometric Br
 $$
 dS_t = \mu S_t dt + \sigma S_t dW_t
 $$
-This is a type of equation known as a **stochastic differential equation (SDE)**. The first term, $\mu S_t dt$, is the deterministic drift. The second term, $\sigma S_t dW_t$, is the random diffusion or "noise" term. Because the random part is multiplied by the state of the system, $S_t$, this is called a model with **multiplicative noise**. The magnitude of the random fluctuation scales directly with the current price level. Over a small time interval $dt$, the standard deviation of the price change is roughly $\sigma S_t \sqrt{dt}$ . This is in stark contrast to a model with *additive* noise, like $dS_t = \dots + \sigma dW_t$, where the random kick would have the same absolute size whether the stock was worth $10 or $10,000. For asset prices, the multiplicative assumption is far more realistic .
+This is a type of equation known as a **stochastic differential equation (SDE)**. The first term, $\mu S_t dt$, is the deterministic drift. The second term, $\sigma S_t dW_t$, is the random diffusion or "noise" term. Because the random part is multiplied by the state of the system, $S_t$, this is called a model with **multiplicative noise**. The magnitude of the random fluctuation scales directly with the current price level. Over a small time interval $dt$, the standard deviation of the price change is roughly $\sigma S_t \sqrt{dt}$ [@problem_id:3057106]. This is in stark contrast to a model with *additive* noise, like $dS_t = \dots + \sigma dW_t$, where the random kick would have the same absolute size whether the stock was worth $10 or $10,000. For asset prices, the multiplicative assumption is far more realistic [@problem_id:3057150].
 
 ### Taming the Randomness: The Magic of Logarithms
 
@@ -45,11 +45,11 @@ Substituting $dS_t = \mu S_t dt + \sigma S_t dW_t$ and simplifying, we get:
 $$
 d(\ln S_t) = (\mu dt + \sigma dW_t) - \frac{1}{2}\sigma^2 dt
 $$
-And by grouping the $dt$ terms, we arrive at a beautifully simple result :
+And by grouping the $dt$ terms, we arrive at a beautifully simple result [@problem_id:3057168]:
 $$
 d(\ln S_t) = \left(\mu - \frac{1}{2}\sigma^2\right) dt + \sigma dW_t
 $$
-This result is profound. The tricky multiplicative noise in $S_t$ has been transformed into simple additive noise in $\ln S_t$ . But in the process, the drift has changed. The naive drift $\mu$ has been replaced by an effective drift of $\mu - \frac{1}{2}\sigma^2$. This new term, $-\frac{1}{2}\sigma^2$, is the **Itô correction term**, sometimes called a **volatility drag**. It is a direct consequence of the interaction between volatility and the curvature of the logarithm function. It is a gift from Itô's Lemma, revealing a hidden dynamic that classical calculus would have missed entirely .
+This result is profound. The tricky multiplicative noise in $S_t$ has been transformed into simple additive noise in $\ln S_t$ [@problem_id:3057150]. But in the process, the drift has changed. The naive drift $\mu$ has been replaced by an effective drift of $\mu - \frac{1}{2}\sigma^2$. This new term, $-\frac{1}{2}\sigma^2$, is the **Itô correction term**, sometimes called a **volatility drag**. It is a direct consequence of the interaction between volatility and the curvature of the logarithm function. It is a gift from Itô's Lemma, revealing a hidden dynamic that classical calculus would have missed entirely [@problem_id:3057127].
 
 ### The Solution Unveiled: The Famous Formula
 
@@ -61,13 +61,13 @@ This gives us the solution for the log-price:
 $$
 \ln S_t = \ln S_0 + \left(\mu - \frac{1}{2}\sigma^2\right) t + \sigma W_t
 $$
-This tells us that the log-price is a normally distributed random variable. Its mean is $\ln S_0 + (\mu - \frac{1}{2}\sigma^2)t$ and its variance is $\sigma^2 t$ . The uncertainty grows linearly with time.
+This tells us that the log-price is a normally distributed random variable. Its mean is $\ln S_0 + (\mu - \frac{1}{2}\sigma^2)t$ and its variance is $\sigma^2 t$ [@problem_id:3057155]. The uncertainty grows linearly with time.
 
 To get the final solution for the price itself, we just need to take the exponential of both sides:
 $$
 S_t = S_0 \exp\left(\left(\mu - \frac{1}{2}\sigma^2\right)t + \sigma W_t\right)
 $$
-This is the famous closed-form solution for Geometric Brownian Motion . It shows that the price $S_t$ follows what is called a **log-normal distribution**. This elegant formula has a wonderful property: since the exponential function can never be negative, our model guarantees that the stock price will never fall below zero, just like in the real world.
+This is the famous closed-form solution for Geometric Brownian Motion [@problem_id:3057126]. It shows that the price $S_t$ follows what is called a **log-normal distribution**. This elegant formula has a wonderful property: since the exponential function can never be negative, our model guarantees that the stock price will never fall below zero, just like in the real world.
 
 ### Consequences and Paradoxes: Exploring the Solution's Depths
 
@@ -82,23 +82,23 @@ Let's ask a simple question: What is the average growth rate of the asset? The a
     g_{\text{a.s.}} = \lim_{t \to \infty} \frac{1}{t} \ln S_t = \mu - \frac{1}{2}\sigma^2
     $$
 
-This is a stunning paradox . The average of all the possible price paths grows at a rate of $\mu$, but the vast majority of individual paths, including the "median" or "typical" one, grow at the slower rate of $\mu - \frac{1}{2}\sigma^2$. How can this be? The answer lies in the asymmetry of the log-normal distribution. The average, $\mathbb{E}[S_t]$, is pulled way up by a very small number of paths that experience extraordinarily good luck, exploding to astronomical values. These rare but extreme winners disproportionately affect the average, while the experience of the "average joe" path is one of a lower growth rate, perpetually dragged down by volatility.
+This is a stunning paradox [@problem_id:3057109]. The average of all the possible price paths grows at a rate of $\mu$, but the vast majority of individual paths, including the "median" or "typical" one, grow at the slower rate of $\mu - \frac{1}{2}\sigma^2$. How can this be? The answer lies in the asymmetry of the log-normal distribution. The average, $\mathbb{E}[S_t]$, is pulled way up by a very small number of paths that experience extraordinarily good luck, exploding to astronomical values. These rare but extreme winners disproportionately affect the average, while the experience of the "average joe" path is one of a lower growth rate, perpetually dragged down by volatility.
 
 This effective growth rate, $\nu = \mu - \frac{1}{2}\sigma^2$, is what truly governs the ultimate fate of the asset.
 -   If $\nu > 0$: The upward drift is strong enough to overcome the volatility drag. The price will, with virtual certainty, grow to infinity.
 -   If $\nu  0$: The volatility drag is too strong. Even if the average price grows ($\mu0$), the typical path is pulled down. The price will almost surely dwindle to zero.
--   If $\nu = 0$: A perfect balance. The drift and drag cancel out. The price doesn't settle down. It oscillates wildly, destined to visit values arbitrarily close to zero and arbitrarily high, never converging .
+-   If $\nu = 0$: A perfect balance. The drift and drag cancel out. The price doesn't settle down. It oscillates wildly, destined to visit values arbitrarily close to zero and arbitrarily high, never converging [@problem_id:3057132].
 
 ### A Reality Check: The Model vs. The World
 
 Geometric Brownian Motion is, without a doubt, a triumph of mathematical physics applied to finance. It’s elegant, tractable, and captures some essential features of asset prices. But how well does it hold up a mirror to reality?
 
-**What It Gets Right:** The model’s core assumption of multiplicative noise is powerful. Its prediction of independent log-returns aligns well with the **Efficient Market Hypothesis**, which states that past returns shouldn't help you predict future returns .
+**What It Gets Right:** The model’s core assumption of multiplicative noise is powerful. Its prediction of independent log-returns aligns well with the **Efficient Market Hypothesis**, which states that past returns shouldn't help you predict future returns [@problem_id:3057149].
 
-**What It Misses:** The model’s elegance comes from its simplicity, and this is also its weakness. Financial markets exhibit several "stylized facts" that GBM cannot explain :
+**What It Misses:** The model’s elegance comes from its simplicity, and this is also its weakness. Financial markets exhibit several "stylized facts" that GBM cannot explain [@problem_id:3057158]:
 -   **Volatility is Not Constant:** The model assumes $\sigma$ is a fixed number. In reality, market volatility changes dramatically. You see quiet periods and turbulent periods. Worse, these periods cluster together; a volatile day is more likely to be followed by another volatile day (**volatility clustering**). The independent increments of GBM forbid this.
 -   **Jumps Happen:** Company announcements, political shocks, or market crashes can cause prices to gap up or down almost instantaneously. The paths of GBM are, by construction, continuous.
 -   **Fat Tails:** Because of changing volatility and jumps, extreme market movements (e.g., daily drops of 5% or more) happen far more frequently in reality than the model’s normal distribution of log-returns would predict. The real distribution has "fat tails."
 -   **The Leverage Effect:** Empirically, there's a negative correlation between returns and volatility: a large price drop is often followed by an increase in market volatility. In GBM, the constant $\sigma$ is oblivious to price movements.
 
-These shortcomings are not a failure of the model, but a map for future exploration. They have inspired decades of research, leading to more sophisticated models that introduce **stochastic volatility** (letting $\sigma$ be a [random process](@article_id:269111) itself) or **jump-diffusion** processes (adding explicit jumps to the price path)  . But all of these more advanced theories stand on the shoulders of Geometric Brownian Motion, the beautifully simple yet profoundly insightful first step into the world of continuous-time finance.
+These shortcomings are not a failure of the model, but a map for future exploration. They have inspired decades of research, leading to more sophisticated models that introduce **stochastic volatility** (letting $\sigma$ be a [random process](@keyword=random_process|lang=en-US|style=Feynman) itself) or **jump-diffusion** processes (adding explicit jumps to the price path) [@problem_id:3057106] [@problem_id:3057158]. But all of these more advanced theories stand on the shoulders of Geometric Brownian Motion, the beautifully simple yet profoundly insightful first step into the world of continuous-time finance.

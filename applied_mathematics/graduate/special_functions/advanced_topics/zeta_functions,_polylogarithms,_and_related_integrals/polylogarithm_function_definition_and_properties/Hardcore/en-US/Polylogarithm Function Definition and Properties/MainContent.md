@@ -1,7 +1,7 @@
 ## Introduction
-The polylogarithm function, a fascinating generalization of the elementary natural logarithm, emerges in a surprising variety of contexts across mathematics and physics. While its definition as a [power series](@entry_id:146836) is simple, its properties reveal a deep and intricate structure that connects disparate fields, from number theory to [quantum statistical mechanics](@entry_id:140244). Often, its appearance in the solution to a problem is unexpected, signaling a hidden underlying structure. This article aims to bridge this knowledge gap by providing a systematic exploration of the polylogarithm, guiding the reader from its fundamental principles to its advanced applications.
+The polylogarithm function, a fascinating generalization of the elementary natural logarithm, emerges in a surprising variety of contexts across mathematics and physics. While its definition as a power series is simple, its properties reveal a deep and intricate structure that connects disparate fields, from number theory to quantum statistical mechanics. Often, its appearance in the solution to a problem is unexpected, signaling a hidden underlying structure. This article aims to bridge this knowledge gap by providing a systematic exploration of the polylogarithm, guiding the reader from its fundamental principles to its advanced applications.
 
-This journey is structured into three comprehensive chapters. The first chapter, **Principles and Mechanisms**, lays the groundwork by introducing the formal definitions, integral representations, and crucial properties of the function, including its derivative rules and special values. We will uncover the elegant [functional equations](@entry_id:199663) that govern the [dilogarithm](@entry_id:202722), which are key to its utility. The second chapter, **Applications and Interdisciplinary Connections**, showcases the power of these properties by applying them to solve challenging problems in [integral calculus](@entry_id:146293), evaluate [complex series](@entry_id:191035) like Euler sums, and reveal the polylogarithm's essential role in describing quantum systems. Finally, the **Hands-On Practices** section provides a curated set of problems to help solidify your understanding and build practical skills in manipulating this remarkable function. We begin by delving into the core principles that define the polylogarithm.
+This journey is structured into three comprehensive chapters. The first chapter, **Principles and Mechanisms**, lays the groundwork by introducing the formal definitions, integral representations, and crucial properties of the function, including its derivative rules and special values. We will uncover the elegant functional equations that govern the dilogarithm, which are key to its utility. The second chapter, **Applications and Interdisciplinary Connections**, showcases the power of these properties by applying them to solve challenging problems in integral calculus, evaluate complex series like Euler sums, and reveal the polylogarithm's essential role in describing quantum systems. Finally, the **Hands-On Practices** section provides a curated set of problems to help solidify your understanding and build practical skills in manipulating this remarkable function. We begin by delving into the core principles that define the polylogarithm.
 
 ## Principles and Mechanisms
 
@@ -13,19 +13,19 @@ The **polylogarithm** of order $s$ and argument $z$, denoted $\mathrm{Li}_s(z)$,
 $$
 \mathrm{Li}_s(z) = \sum_{k=1}^{\infty} \frac{z^k}{k^s}
 $$
-This series provides a robust definition for any complex order $s$ and any complex argument $z$ within the [unit disk](@entry_id:172324), $|z| \lt 1$. The function can be extended to a larger domain via [analytic continuation](@entry_id:147225).
+This series provides a robust definition for any complex order $s$ and any complex argument $z$ within the unit disk, $|z| \lt 1$. The function can be extended to a larger domain via analytic continuation.
 
 For integer orders, the function is given specific names. The case $s=1$ is the **unilogarithm**, which is directly related to the natural logarithm:
 $$
 \mathrm{Li}_1(z) = \sum_{k=1}^{\infty} \frac{z^k}{k} = -\ln(1-z)
 $$
-This identity is foundational, bridging the polylogarithm to the realm of more familiar [elementary functions](@entry_id:181530). The case $s=2$ is known as the **[dilogarithm](@entry_id:202722)**, and $s=3$ is the **trilogarithm**.
+This identity is foundational, bridging the polylogarithm to the realm of more familiar elementary functions. The case $s=2$ is known as the **dilogarithm**, and $s=3$ is the **trilogarithm**.
 
 An alternative and profoundly useful representation is the recursive integral definition. The polylogarithm of order $s$ can be obtained by integrating the polylogarithm of order $s-1$:
 $$
 \mathrm{Li}_s(z) = \int_0^z \frac{\mathrm{Li}_{s-1}(t)}{t} dt
 $$
-By applying this [recursion](@entry_id:264696) starting from $\mathrm{Li}_1(z)$, we arrive at the integral representation for the [dilogarithm](@entry_id:202722), which is valid for any complex $z$ not on the real interval $[1, \infty)$:
+By applying this recursion starting from $\mathrm{Li}_1(z)$, we arrive at the integral representation for the dilogarithm, which is valid for any complex $z$ not on the real interval $1, \infty)$:
 $$
 \mathrm{Li}_2(z) = -\int_0^z \frac{\ln(1-t)}{t} dt
 $$
@@ -39,7 +39,7 @@ A primary connection is to the **Riemann zeta function**, $\zeta(s)$. By setting
 $$
 \mathrm{Li}_s(1) = \sum_{k=1}^{\infty} \frac{1}{k^s} = \zeta(s)
 $$
-The most famous instance of this is for the [dilogarithm](@entry_id:202722), related to the solution of the Basel problem:
+The most famous instance of this is for the [dilogarithm, related to the solution of the Basel problem:
 $$
 \mathrm{Li}_2(1) = \zeta(2) = \frac{\pi^2}{6}
 $$
@@ -47,25 +47,25 @@ Similarly, setting $z=-1$ yields a relationship with the **Dirichlet eta functio
 $$
 \mathrm{Li}_s(-1) = \sum_{k=1}^{\infty} \frac{(-1)^k}{k^s} = -\eta(s) = -(1 - 2^{1-s})\zeta(s)
 $$
-For the [dilogarithm](@entry_id:202722), this gives the specific value:
+For the dilogarithm, this gives the specific value:
 $$
 \mathrm{Li}_2(-1) = -(1 - 2^{-1})\zeta(2) = -\frac{1}{2} \zeta(2) = -\frac{\pi^2}{12}
 $$
-These special values are invaluable for evaluating [definite integrals](@entry_id:147612). For example, consider the integral $I = \int_0^1 \frac{\ln(1-x^2)}{x} dx$. By decomposing the logarithm, $\ln(1-x^2) = \ln(1-x) + \ln(1+x)$, we can split the integral into two parts :
+These special values are invaluable for evaluating definite integrals. For example, consider the integral $I = \int_0^1 \frac{\ln(1-x^2)}{x} dx$. By decomposing the logarithm, $\ln(1-x^2) = \ln(1-x) + \ln(1+x)$, we can split the integral into two parts [@problem_id:742678]:
 $$
 I = \int_0^1 \frac{\ln(1-x)}{x} dx + \int_0^1 \frac{\ln(1+x)}{x} dx
 $$
-The [first integral](@entry_id:274642) corresponds directly to $-\mathrm{Li}_2(1)$, which is $-\frac{\pi^2}{6}$. The second integral can be shown to be $-\mathrm{Li}_2(-1)$, which is $\frac{\pi^2}{12}$. Thus, the value of the integral is the sum of these constants, $I = -\frac{\pi^2}{6} + \frac{\pi^2}{12} = -\frac{\pi^2}{12}$.
+The first integral corresponds directly to $-\mathrm{Li}_2(1)$, which is $-\frac{\pi^2}{6}$. The second integral can be shown to be $-\mathrm{Li}_2(-1)$, which is $\frac{\pi^2}{12}$. Thus, the value of the integral is the sum of these constants, $I = -\frac{\pi^2}{6} + \frac{\pi^2}{12} = -\frac{\pi^2}{12}$.
 
 ### The Derivative Recurrence Relation
 
-The integral representation $\mathrm{Li}_s(z) = \int_0^z \frac{\mathrm{Li}_{s-1}(t)}{t} dt$ immediately implies, by the Fundamental Theorem of Calculus, a crucial [recurrence relation](@entry_id:141039) for the derivative of the polylogarithm with respect to its argument $z$:
+The integral representation $\mathrm{Li}_s(z) = \int_0^z \frac{\mathrm{Li}_{s-1}(t)}{t} dt$ immediately implies, by the Fundamental Theorem of Calculus, a crucial recurrence relation for the derivative of the polylogarithm with respect to its argument $z$:
 $$
 \frac{d}{dz} \mathrm{Li}_s(z) = \frac{\mathrm{Li}_{s-1}(z)}{z}
 $$
 This simple rule is a central mechanism that connects polylogarithms of different orders. It allows us to reduce differentiation problems involving polylogarithms to expressions involving lower-order, and often simpler, polylogarithms.
 
-For example, to find the derivative of a [composite function](@entry_id:151451) like $f(z) = \mathrm{Li}_3(z^2)$ at $z=i$, we apply the [chain rule](@entry_id:147422) and the derivative recurrence .
+For example, to find the derivative of a composite function like $f(z) = \mathrm{Li}_3(z^2)$ at $z=i$, we apply the chain rule and the derivative recurrence [@problem_id:742690].
 $$
 f'(z) = \frac{d}{dz}\mathrm{Li}_3(z^2) = \frac{\mathrm{Li}_{3-1}(z^2)}{z^2} \cdot \frac{d(z^2)}{dz} = \frac{\mathrm{Li}_2(z^2)}{z^2} \cdot 2z = \frac{2\mathrm{Li}_2(z^2)}{z}
 $$
@@ -77,15 +77,15 @@ Using the known value $\mathrm{Li}_2(-1) = -\frac{\pi^2}{12}$, we find the deriv
 
 ### Functional Equations of the Dilogarithm
 
-The [dilogarithm](@entry_id:202722), $\mathrm{Li}_2(z)$, satisfies a host of remarkable [functional equations](@entry_id:199663) that relate its values at different arguments. These identities are not only elegant but also serve as powerful tools for manipulating expressions and evaluating integrals and sums. A common and powerful technique for proving these identities is to show that a constructed function has a derivative of zero, and is therefore constant.
+The dilogarithm, $\mathrm{Li}_2(z)$, satisfies a host of remarkable functional equations that relate its values at different arguments. These identities are not only elegant but also serve as powerful tools for manipulating expressions and evaluating integrals and sums. A common and powerful technique for proving these identities is to show that a constructed function has a derivative of zero, and is therefore constant.
 
 #### Euler's Reflection Formula
 
-One of the most celebrated identities is Euler's [reflection formula](@entry_id:198841), which connects $\mathrm{Li}_2(z)$ and $\mathrm{Li}_2(1-z)$. To derive this, consider the function $F(x) = \mathrm{Li}_2(x) + \mathrm{Li}_2(1-x) + \ln(x)\ln(1-x)$ for real $x \in (0, 1)$ . Differentiating with respect to $x$ yields:
+One of the most celebrated identities is Euler's reflection formula, which connects $\mathrm{Li}_2(z)$ and $\mathrm{Li}_2(1-z)$. To derive this, consider the function $F(x) = \mathrm{Li}_2(x) + \mathrm{Li}_2(1-x) + \ln(x)\ln(1-x)$ for real $x \in (0, 1)$ [@problem_id:742695]. Differentiating with respect to $x$ yields:
 $$
 F'(x) = \frac{d}{dx}\mathrm{Li}_2(x) + \frac{d}{dx}\mathrm{Li}_2(1-x) + \frac{d}{dx}(\ln(x)\ln(1-x))
 $$
-Using the derivative rule, $\frac{d}{dx}\mathrm{Li}_2(x) = -\frac{\ln(1-x)}{x}$, and the [chain rule](@entry_id:147422) for the second term, we get:
+Using the derivative rule, $\frac{d}{dx}\mathrm{Li}_2(x) = -\frac{\ln(1-x)}{x}$, and the chain rule for the second term, we get:
 $$
 F'(x) = \left(-\frac{\ln(1-x)}{x}\right) + \left(\frac{-\ln(1-(1-x))}{1-x} \cdot (-1)\right) + \left(\frac{\ln(1-x)}{x} - \frac{\ln(x)}{1-x}\right)
 $$
@@ -96,16 +96,16 @@ Since the derivative is zero, $F(x)$ must be a constant, $C$. To find $C$, we ca
 $$
 \mathrm{Li}_2(z) + \mathrm{Li}_2(1-z) = \frac{\pi^2}{6} - \ln(z)\ln(1-z)
 $$
-A subtle application of this principle can be seen by examining the derivative of the function $G(z) = z \mathrm{Li}_2(z) + (1-z) \mathrm{Li}_2(1-z)$ . Its derivative is found to be $G'(z) = \mathrm{Li}_2(z) - \mathrm{Li}_2(1-z) - \ln(1-z) + \ln(z)$, which notably evaluates to zero at the symmetric point $z=1/2$.
+A subtle application of this principle can be seen by examining the derivative of the function $G(z) = z \mathrm{Li}_2(z) + (1-z) \mathrm{Li}_2(1-z)$ [@problem_id:742801]. Its derivative is found to be $G'(z) = \mathrm{Li}_2(z) - \mathrm{Li}_2(1-z) - \ln(1-z) + \ln(z)$, which notably evaluates to zero at the symmetric point $z=1/2$.
 
 #### Other Key Identities
 
 The same method of differentiation can be used to establish other fundamental identities.
-The **[duplication formula](@entry_id:173961)** is one such identity. By constructing the function $F(z) = \mathrm{Li}_2(z^2) - 2(\mathrm{Li}_2(z) + \mathrm{Li}_2(-z))$ and showing its derivative is zero, we find that $F(z)$ is a constant. Evaluating at $z=0$ shows this constant is zero , yielding the identity:
+The **duplication formula** is one such identity. By constructing the function $F(z) = \mathrm{Li}_2(z^2) - 2(\mathrm{Li}_2(z) + \mathrm{Li}_2(-z))$ and showing its derivative is zero, we find that $F(z)$ is a constant. Evaluating at $z=0$ shows this constant is zero [@problem_id:742705], yielding the identity:
 $$
 \mathrm{Li}_2(z^2) = 2\mathrm{Li}_2(z) + 2\mathrm{Li}_2(-z)
 $$
-Another important relation, sometimes called **Landen's identity**, connects the arguments $z$ and $\frac{z}{z-1}$. By proving that the derivative of $F(z) = \mathrm{Li}_2(z) + \mathrm{Li}_2\left(\frac{z}{z-1}\right) + \frac{1}{2}\ln^2(1-z)$ is zero and noting that $F(0)=0$, we establish that :
+Another important relation, sometimes called **Landen's identity**, connects the arguments $z$ and $\frac{z}{z-1}$. By proving that the derivative of $F(z) = \mathrm{Li}_2(z) + \mathrm{Li}_2\left(\frac{z}{z-1}\right) + \frac{1}{2}\ln^2(1-z)$ is zero and noting that $F(0)=0$, we establish that [@problem_id:742859]:
 $$
 \mathrm{Li}_2(z) + \mathrm{Li}_2\left(\frac{z}{z-1}\right) = -\frac{1}{2}\ln^2(1-z)
 $$
@@ -120,13 +120,13 @@ A common task in analysis is to evaluate series involving trigonometric function
 $$
 \sum_{k=1}^\infty \frac{\cos(k\theta)}{k^s} = \Re\left( \sum_{k=1}^\infty \frac{(e^{i\theta})^k}{k^s} \right) = \Re(\mathrm{Li}_s(e^{i\theta}))
 $$
-For the unilogarithm ($s=1$), this leads to a simple closed form. For instance, to evaluate $S = \sum_{k=1}^\infty \frac{\cos(k\pi/3)}{k}$, we identify this as $\Re(\mathrm{Li}_1(e^{i\pi/3}))$ . Using the identity $\mathrm{Li}_1(z) = -\ln(1-z)$, we find:
+For the unilogarithm ($s=1$), this leads to a simple closed form. For instance, to evaluate $S = \sum_{k=1}^\infty \frac{\cos(k\pi/3)}{k}$, we identify this as $\Re(\mathrm{Li}_1(e^{i\pi/3}))$ [@problem_id:742802]. Using the identity $\mathrm{Li}_1(z) = -\ln(1-z)$, we find:
 $$
 S = \Re(-\ln(1-e^{i\pi/3})) = -\ln|1-e^{i\pi/3}|
 $$
 Using the geometric identity $|1-e^{i\theta}| = |2\sin(\theta/2)|$, we get $S = -\ln(2\sin(\pi/6)) = -\ln(2 \cdot \frac{1}{2}) = -\ln(1) = 0$.
 
-For higher-order series, the evaluation may require known identities for polylogarithms on the unit circle. For the series $S = \sum_{n=1}^\infty \frac{\cos(n\pi/3)}{n^2}$, which is $\Re(\mathrm{Li}_2(e^{i\pi/3}))$, we can employ the known formula for the real part of the [dilogarithm](@entry_id:202722) on the unit circle :
+For higher-order series, the evaluation may require known identities for polylogarithms on the unit circle. For the series $S = \sum_{n=1}^\infty \frac{\cos(n\pi/3)}{n^2}$, which is $\Re(\mathrm{Li}_2(e^{i\pi/3}))$, we can employ the known formula for the real part of the dilogarithm on the unit circle [@problem_id:742805]:
 $$
 \Re(\mathrm{Li}_2(e^{i\theta})) = \frac{\pi^2}{6} - \frac{\theta(2\pi-\theta)}{4}
 $$
@@ -134,7 +134,7 @@ For $\theta = \pi/3$, this gives $S = \frac{\pi^2}{6} - \frac{(\pi/3)(2\pi-\pi/3
 
 #### Links to Other Constants
 
-Specific values of polylogarithms can be directly related to other named mathematical constants. A beautiful example is the connection between the [dilogarithm](@entry_id:202722) and **Catalan's constant**, $G = \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)^2}$. By evaluating $\mathrm{Li}_2(i)$, we can reveal this relationship . We write out the series and split it into terms with even and odd powers of $i$:
+Specific values of polylogarithms can be directly related to other named mathematical constants. A beautiful example is the connection between the dilogarithm and **Catalan's constant**, $G = \sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)^2}$. By evaluating $\mathrm{Li}_2(i)$, we can reveal this relationship [@problem_id:742684]. We write out the series and split it into terms with even and odd powers of $i$:
 $$
 \mathrm{Li}_2(i) = \sum_{k=1}^\infty \frac{i^k}{k^2} = \sum_{n=1}^\infty \frac{i^{2n}}{(2n)^2} + \sum_{n=1}^\infty \frac{i^{2n-1}}{(2n-1)^2}
 $$
@@ -142,15 +142,15 @@ The sum over even terms becomes $\sum_{n=1}^\infty \frac{(-1)^n}{4n^2} = \frac{1
 $$
 \mathrm{Li}_2(i) = -\frac{\pi^2}{48} + iG
 $$
-Thus, Catalan's constant is simply the imaginary part of the [dilogarithm](@entry_id:202722) evaluated at $i$: $G = \Im(\mathrm{Li}_2(i))$.
+Thus, Catalan's constant is simply the imaginary part of the dilogarithm evaluated at $i$: $G = \Im(\mathrm{Li}_2(i))$.
 
 #### Generating Functions for Harmonic Numbers
 
-The polylogarithm also serves as a building block for the generating functions of other important sequences. The **generalized harmonic numbers**, $H_n^{(s)} = \sum_{k=1}^n \frac{1}{k^s}$, have a [generating function](@entry_id:152704) that is elegantly expressed using the polylogarithm. By considering the Cauchy product of the series for $\mathrm{Li}_s(x)$ and $\frac{1}{1-x}$, one can prove the identity :
+The polylogarithm also serves as a building block for the generating functions of other important sequences. The **generalized harmonic numbers**, $H_n^{(s)} = \sum_{k=1}^n \frac{1}{k^s}$, have a generating function that is elegantly expressed using the polylogarithm. By considering the Cauchy product of the series for $\mathrm{Li}_s(x)$ and $\frac{1}{1-x}$, one can prove the identity [@problem_id:742804]:
 $$
 \sum_{n=1}^\infty H_n^{(s)} x^n = \frac{\mathrm{Li}_s(x)}{1-x}
 $$
-This powerful formula allows us to evaluate series involving harmonic numbers. For example, to find the sum of the [alternating series](@entry_id:143758) $S = \sum_{n=1}^\infty (-1)^n H_n^{(4)}$, we can set $s=4$ and $x=-1$ in the [generating function](@entry_id:152704):
+This powerful formula allows us to evaluate series involving harmonic numbers. For example, to find the sum of the alternating series $S = \sum_{n=1}^\infty (-1)^n H_n^{(4)}$, we can set $s=4$ and $x=-1$ in the generating function:
 $$
 S = \frac{\mathrm{Li}_4(-1)}{1-(-1)} = \frac{\mathrm{Li}_4(-1)}{2}
 $$

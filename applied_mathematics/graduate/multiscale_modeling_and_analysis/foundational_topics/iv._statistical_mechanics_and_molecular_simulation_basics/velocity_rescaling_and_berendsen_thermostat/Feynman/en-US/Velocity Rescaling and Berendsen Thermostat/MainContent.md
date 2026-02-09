@@ -9,19 +9,19 @@ Imagine you are the director of a grand cosmic play. Your stage is a computer si
 
 ### What is Temperature in a World of Atoms?
 
-Before we can control temperature, we must first understand what it *is* in our simulation. In the macroscopic world, temperature is something we feel. In the microscopic world of atoms, temperature is motion. The faster a collection of atoms jiggles and zips around, the higher its temperature. This isn't just a vague notion; it's a precise relationship captured by one of the cornerstones of statistical mechanics: the **[equipartition theorem](@entry_id:136972)**.
+Before we can control temperature, we must first understand what it *is* in our simulation. In the macroscopic world, temperature is something we feel. In the microscopic world of atoms, temperature is motion. The faster a collection of atoms jiggles and zips around, the higher its temperature. This isn't just a vague notion; it's a precise relationship captured by one of the cornerstones of statistical mechanics: the **[equipartition theorem](@keyword=equipartition_theorem|lang=en-US|style=Feynman)**.
 
 The theorem tells us a beautiful and simple truth: for a system in thermal equilibrium, every independent way a particle can store kinetic energy—what we call a **degree of freedom**—holds, on average, the same tiny packet of energy, equal to $\frac{1}{2}k_B T$. Here, $k_B$ is the famous Boltzmann constant, the conversion factor between energy and temperature, and $T$ is the absolute temperature.
 
-If we have a system of $N$ point-like atoms moving in three dimensions, we might naively think there are $3N$ such degrees of freedom (one for motion along x, y, and z for each atom). However, we must be careful. Often, our molecular models have constraints. For instance, in a simulation of water, we might model the water molecules as rigid bodies, fixing the bond lengths and angles between the hydrogen and oxygen atoms. Each of these constraints removes a degree of freedom. Furthermore, it's common practice to keep the entire system from drifting through space by fixing its total momentum to zero, which removes another three degrees of freedom corresponding to the [center-of-mass motion](@entry_id:747201)  .
+If we have a system of $N$ point-like atoms moving in three dimensions, we might naively think there are $3N$ such degrees of freedom (one for motion along x, y, and z for each atom). However, we must be careful. Often, our molecular models have constraints. For instance, in a simulation of water, we might model the water molecules as rigid bodies, fixing the bond lengths and angles between the hydrogen and oxygen atoms. Each of these constraints removes a degree of freedom. Furthermore, it's common practice to keep the entire system from drifting through space by fixing its total momentum to zero, which removes another three degrees of freedom corresponding to the [center-of-mass motion](@keyword=center_of_mass_motion_2|lang=en-US|style=Feynman) [@problem_id:3830588] [@problem_id:3830598].
 
-So, if we have $N_{\mathrm{dof}}$ total independent degrees of freedom, the total instantaneous kinetic energy of the system, $K$, which is simply the sum of $\frac{1}{2}m_i |\mathbf{v}_i|^2$ for all atoms, is directly related to the instantaneous "[kinetic temperature](@entry_id:751035)" $T$:
+So, if we have $N_{\mathrm{dof}}$ total independent degrees of freedom, the total instantaneous kinetic energy of the system, $K$, which is simply the sum of $\frac{1}{2}m_i |\mathbf{v}_i|^2$ for all atoms, is directly related to the instantaneous "kinetic temperature" $T$:
 
 $$
 K = \frac{N_{\mathrm{dof}}}{2} k_B T
 $$
 
-This equation is our microscope. It allows us to "read" the temperature of our system at any instant just by calculating the total kinetic energy of the particles . And more importantly, it gives us a lever to control it.
+This equation is our microscope. It allows us to "read" the temperature of our system at any instant just by calculating the total kinetic energy of the particles [@problem_id:3830645]. And more importantly, it gives us a lever to control it.
 
 ### The Thermostat's Dilemma: A Hard Push or a Gentle Nudge?
 
@@ -33,11 +33,11 @@ $$
 \lambda = \sqrt{\frac{T_0}{T}}
 $$
 
-Applying this scaling, $\mathbf{v}_i \to \lambda \mathbf{v}_i$ for every atom, instantly forces the system's kinetic temperature to be exactly $T_0$ . This is called **exact velocity rescaling**. While simple, it's often too aggressive. It's like yanking the steering wheel of a car instead of making a smooth turn. This abrupt change can introduce strange, unnatural motions into the simulation and disrupt the delicate dance of energy exchange between kinetic and potential forms.
+Applying this scaling, $\mathbf{v}_i \to \lambda \mathbf{v}_i$ for every atom, instantly forces the system's kinetic temperature to be exactly $T_0$ [@problem_id:3830562]. This is called **exact velocity rescaling**. While simple, it's often too aggressive. It's like yanking the steering wheel of a car instead of making a smooth turn. This abrupt change can introduce strange, unnatural motions into the simulation and disrupt the delicate dance of energy exchange between kinetic and potential forms.
 
 ### The Berendsen Way: A Gentle Nudge Towards Equilibrium
 
-In 1984, Herman Berendsen proposed a more elegant solution. Instead of forcing the temperature to be correct at every single step, what if we gently nudged it in the right direction? The idea is to couple the system weakly to a conceptual, external "[heat bath](@entry_id:137040)" at the target temperature $T_0$. This coupling is designed to make the system's temperature relax towards $T_0$ exponentially, much like a cup of hot coffee cooling to room temperature.
+In 1984, Herman Berendsen proposed a more elegant solution. Instead of forcing the temperature to be correct at every single step, what if we gently nudged it in the right direction? The idea is to couple the system weakly to a conceptual, external "[heat bath](@keyword=heat_bath|lang=en-US|style=Feynman)" at the target temperature $T_0$. This coupling is designed to make the system's temperature relax towards $T_0$ exponentially, much like a cup of hot coffee cooling to room temperature.
 
 The mathematical expression for this relaxation is a simple differential equation:
 
@@ -45,7 +45,7 @@ $$
 \frac{dT}{dt} = \frac{T_0 - T}{\tau_T}
 $$
 
-Here, $\tau_T$ is the **relaxation time**, a parameter we choose. A large $\tau_T$ corresponds to very weak coupling—a gentle nudge—while a small $\tau_T$ means [strong coupling](@entry_id:136791), approaching the brute-force method. This equation beautifully describes how any deviation from the target temperature, $\delta T = T - T_0$, should decay over time as $\delta T(t) = \delta T(0) \exp(-t/\tau_T)$ .
+Here, $\tau_T$ is the **relaxation time**, a parameter we choose. A large $\tau_T$ corresponds to very weak coupling—a gentle nudge—while a small $\tau_T$ means [strong coupling](@keyword=strong_coupling|lang=en-US|style=Feynman), approaching the brute-force method. This equation beautifully describes how any deviation from the target temperature, $\delta T = T - T_0$, should decay over time as $\delta T(t) = \delta T(0) \exp(-t/\tau_T)$ [@problem_id:3830557].
 
 In a computer simulation, time proceeds in discrete steps of size $\Delta t$. We can approximate the continuous relaxation over one small time step. If the temperature at the start of the step is $T$, the target temperature at the end of the step, $T_{\text{new}}$, should be:
 
@@ -53,32 +53,32 @@ $$
 T_{\text{new}} \approx T + \frac{\Delta t}{\tau_T}(T_0 - T)
 $$
 
-Now we have a target, $T_{\text{new}}$, for just this single step. We can achieve it using the same logic as before: we find the scaling factor $\lambda$ that will change the temperature from $T$ to $T_{\text{new}}$. The result is the famous **Berendsen scaling factor**  :
+Now we have a target, $T_{\text{new}}$, for just this single step. We can achieve it using the same logic as before: we find the scaling factor $\lambda$ that will change the temperature from $T$ to $T_{\text{new}}$. The result is the famous **Berendsen scaling factor** [@problem_id:3830630] [@problem_id:3830645]:
 
 $$
 \lambda = \sqrt{\frac{T_{\text{new}}}{T}} = \sqrt{1 + \frac{\Delta t}{\tau_T}\left(\frac{T_0}{T} - 1\right)}
 $$
 
-This method is wonderfully intuitive . At each step, it checks the temperature. If $T > T_0$, the term in the parenthesis is negative, so $\lambda < 1$, and the atoms are slowed down. If $T < T_0$, then $\lambda > 1$, and the atoms are sped up. If $T=T_0$, then $\lambda=1$, and the thermostat does nothing, letting the system evolve on its own. It's a simple, stable, and effective way to guide the average temperature of a simulation. For many years, it was a workhorse of the field.
+This method is wonderfully intuitive [@problem_id:3830617]. At each step, it checks the temperature. If $T > T_0$, the term in the parenthesis is negative, so $\lambda < 1$, and the atoms are slowed down. If $T < T_0$, then $\lambda > 1$, and the atoms are sped up. If $T=T_0$, then $\lambda=1$, and the thermostat does nothing, letting the system evolve on its own. It's a simple, stable, and effective way to guide the average temperature of a simulation. For many years, it was a workhorse of the field.
 
 ### A Perfect Algorithm? The Case of the Missing Fluctuations
 
-The Berendsen thermostat controls the *average* temperature perfectly. But in physics, the average is only half the story. A system in thermal equilibrium with its surroundings doesn't just sit at a constant temperature; its energy constantly fluctuates as it exchanges tiny packets of energy with the bath. Statistical mechanics makes a precise prediction for the size of these fluctuations: the variance of the kinetic energy in a true **[canonical ensemble](@entry_id:143358)** (the formal name for a system at constant volume, particle number, and temperature) should be:
+The Berendsen thermostat controls the *average* temperature perfectly. But in physics, the average is only half the story. A system in thermal equilibrium with its surroundings doesn't just sit at a constant temperature; its energy constantly fluctuates as it exchanges tiny packets of energy with the bath. Statistical mechanics makes a precise prediction for the size of these fluctuations: the variance of the kinetic energy in a true **[canonical ensemble](@keyword=canonical_ensemble|lang=en-US|style=Feynman)** (the formal name for a system at constant volume, particle number, and temperature) should be:
 
 $$
 \text{Var}(K)_{\text{canonical}} = \frac{N_{\mathrm{dof}}}{2} (k_{B} T_{0})^{2}
 $$
 
-Here lies the Berendsen thermostat's subtle but profound flaw. Because its action is purely deterministic—it algorithmically corrects any deviation from the mean—it systematically *[damps](@entry_id:143944)* these natural fluctuations. Whenever the system gets a bit hot by chance, the thermostat cools it. Whenever it gets a bit cold, the thermostat warms it. The result is a system with a kinetic energy distribution that is artificially narrow, much like a bell curve that has been squeezed from the sides.
+Here lies the Berendsen thermostat's subtle but profound flaw. Because its action is purely deterministic—it algorithmically corrects any deviation from the mean—it systematically *[damps](@keyword=damps|lang=en-US|style=Feynman)* these natural fluctuations. Whenever the system gets a bit hot by chance, the thermostat cools it. Whenever it gets a bit cold, the thermostat warms it. The result is a system with a kinetic energy distribution that is artificially narrow, much like a bell curve that has been squeezed from the sides.
 
-We can even calculate the extent of this suppression. In a single step, the thermostat reduces the variance of the kinetic energy by a factor of $(1 - \Delta t/\tau_T)^2$ . This might seem like a minor technical issue, but its implications are deep. Properties that depend on fluctuations, like heat capacity, will be calculated incorrectly. More fundamentally, the ensemble of states generated by the simulation is simply not the correct canonical ensemble. The actors are hitting their average marks, but their improvisational flair—the fluctuations—has been stifled.
+We can even calculate the extent of this suppression. In a single step, the thermostat reduces the variance of the kinetic energy by a factor of $(1 - \Delta t/\tau_T)^2$ [@problem_id:3830570]. This might seem like a minor technical issue, but its implications are deep. Properties that depend on fluctuations, like heat capacity, will be calculated incorrectly. More fundamentally, the ensemble of states generated by the simulation is simply not the correct canonical ensemble. The actors are hitting their average marks, but their improvisational flair—the fluctuations—has been stifled.
 
 ### The Deeper Connection: Why Nature Needs Noise
 
-Why does the Berendsen thermostat fail in this way? The answer reveals a beautiful unity at the heart of thermodynamics, encapsulated in the **[fluctuation-dissipation theorem](@entry_id:137014)**.
+Why does the Berendsen thermostat fail in this way? The answer reveals a beautiful unity at the heart of thermodynamics, encapsulated in the **[fluctuation-dissipation theorem](@keyword=fluctuation_dissipation_theorem|lang=en-US|style=Feynman)**.
 
 The Berendsen thermostat provides a "frictional" or **dissipative** force. It removes excess kinetic energy when the system is too hot and adds it when it's too cold. This is the "dissipation" part of the theorem. But a real thermal bath does more than that. The same microscopic collisions that drain energy from a hot system also randomly kick it, injecting energy. This is the **fluctuation** part. The fluctuation-dissipation theorem states that these two processes—dissipation and fluctuation—are inextricably linked. You cannot have one without the other. The strength of the random kicks is determined by the strength of the friction and the temperature of the bath.
 
-The Berendsen thermostat is a one-way street: it only has the deterministic friction term . It lacks a corresponding stochastic, or random, force. A proper thermostat, like the Langevin thermostat, includes both a drag term and a random "kicking" force, with their magnitudes correctly balanced. The dynamics of the kinetic energy $K$ under such a proper thermostat are described not by a simple deterministic equation, but by a **stochastic differential equation** which includes a noise term whose magnitude depends on the kinetic energy itself, $\sqrt{K}$ . This correctly reproduces the Gamma distribution of kinetic energies expected in the canonical ensemble.
+The Berendsen thermostat is a one-way street: it only has the deterministic friction term [@problem_id:3830609]. It lacks a corresponding stochastic, or random, force. A proper thermostat, like the Langevin thermostat, includes both a drag term and a random "kicking" force, with their magnitudes correctly balanced. The dynamics of the kinetic energy $K$ under such a proper thermostat are described not by a simple deterministic equation, but by a **stochastic differential equation** which includes a noise term whose magnitude depends on the kinetic energy itself, $\sqrt{K}$ [@problem_id:3830608]. This correctly reproduces the Gamma distribution of kinetic energies expected in the canonical ensemble.
 
 The failure of the Berendsen thermostat is not just a programming bug; it's a profound lesson. It teaches us that to faithfully replicate a system in thermal equilibrium, it's not enough to simply guide its average energy. We must also embrace the chaos. We must give our atomic actors not only a director's gentle guidance but also the freedom to improvise, to fluctuate, to be kicked and jostled by the beautiful randomness that lies at the very heart of temperature.

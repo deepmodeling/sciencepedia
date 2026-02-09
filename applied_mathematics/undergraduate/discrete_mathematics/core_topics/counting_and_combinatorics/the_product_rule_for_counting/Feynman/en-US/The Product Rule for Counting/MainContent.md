@@ -1,7 +1,7 @@
 ## Introduction
 From the number of passwords for your online accounts to the possible configurations of a complex system, our world is filled with a staggering number of choices. While our intuition often fails to grasp the sheer scale of these possibilities, the field of combinatorics provides formal tools for counting them accurately. At the heart of this field lies a principle of beautiful simplicity and immense power: the Product Rule for Counting. This article serves as a comprehensive guide to understanding and applying this fundamental concept.
 
-This article will guide you through the foundational principles of [combinatorial counting](@article_id:140592). In the first section, **"Principles and Mechanisms"**, we will dissect the Product Rule, its partner the Sum Rule, and powerful strategies like [complementary counting](@article_id:267454). Next, in **"Applications and Interdisciplinary Connections"**, we will witness how this simple rule governs complexity in diverse fields, from the genetic code in biology to the architecture of computer systems. Finally, you will apply your knowledge with a set of **"Hands-On Practices"** designed to solidify your problem-solving skills. Let's begin by exploring the core engine of counting and uncovering the beautiful simplicity and staggering power of the Product Rule.
+This article will guide you through the foundational principles of [combinatorial counting](@keyword=combinatorial_counting|lang=en-US|style=Feynman). In the first section, **"Principles and Mechanisms"**, we will dissect the Product Rule, its partner the Sum Rule, and powerful strategies like [complementary counting](@keyword=complementary_counting|lang=en-US|style=Feynman). Next, in **"Applications and Interdisciplinary Connections"**, we will witness how this simple rule governs complexity in diverse fields, from the genetic code in biology to the architecture of computer systems. Finally, you will apply your knowledge with a set of **"Hands-On Practices"** designed to solidify your problem-solving skills. Let's begin by exploring the core engine of counting and uncovering the beautiful simplicity and staggering power of the Product Rule.
 
 ## Principles and Mechanisms
 
@@ -15,7 +15,7 @@ This sounds simple, but its consequences are profound. Imagine a specialized com
 
 For the first core, we have 7 choices. For the second core, we also have 7 choices, regardless of what we chose for the first. This continues for all 12 cores. The total number of configurations is therefore not $12 \times 7$, but a chain of 12 independent decisions:
 $$ \underbrace{7 \times 7 \times \dots \times 7}_{12 \text{ times}} = 7^{12} $$
-This number, $13,841,287,201$, is nearly 14 billion. From just 12 cores and 7 modes, we get a universe of possibilities far exceeding the number of people on Earth. This is the essence of the Product Rule: small numbers of choices, when compounded, lead to astronomical results. It's the engine that drives complexity in genetics, computing, and all systems built from modular components. 
+This number, $13,841,287,201$, is nearly 14 billion. From just 12 cores and 7 modes, we get a universe of possibilities far exceeding the number of people on Earth. This is the essence of the Product Rule: small numbers of choices, when compounded, lead to astronomical results. It's the engine that drives complexity in genetics, computing, and all systems built from modular components. [@problem_id:1410450]
 
 ### Composing a Sequence: Choices with Memory
 
@@ -28,7 +28,7 @@ Consider designing a unique identifier for a new cloud service. Let's say it mus
 
 - Finally, what if Part 3, of length $m$, must begin with a letter and end with a digit? This imposes constraints on specific positions. The first position has 26 choices, and the last has 10. The $m-2$ positions in between might be unrestricted (say, any letter or digit, giving 36 choices each). The total count would be $26 \times 36^{m-2} \times 10$.
 
-To find the total number of unique identifiers, we simply multiply the counts for each independent part: $N_1 \times N_2 \times N_3$. The Product Rule still holds, because the choice of Part 1 has no bearing on the choices for Part 2 or Part 3. We just have to be more thoughtful about counting the options at each sub-stage. 
+To find the total number of unique identifiers, we simply multiply the counts for each independent part: $N_1 \times N_2 \times N_3$. The Product Rule still holds, because the choice of Part 1 has no bearing on the choices for Part 2 or Part 3. We just have to be more thoughtful about counting the options at each sub-stage. [@problem_id:1410436]
 
 ### Divide and Conquer: Sum Rule and Casework
 
@@ -44,11 +44,11 @@ The number of all-formal outfits is found using the Product Rule: $N_{\text{form
 The number of all-casual outfits is, similarly, $N_{\text{casual}} = 8 \times 5 \times 8 = 320$.
 Since an acceptable outfit is either formal OR casual, the total number of possibilities is the sum: $N_{\text{total}} = N_{\text{formal}} + N_{\text{casual}} = 24 + 320 = 344$.
 
-This "[divide and conquer](@article_id:139060)" strategy is incredibly potent. When a problem seems tangled with complex rules, see if you can break it down into simpler, non-overlapping cases. This method, often called **casework**, is a direct application of the Sum Rule. For example, when counting valid hardware configurations with many compatibility restrictions, it might be easiest to analyze each type of chassis (Desktop, Rack-Mount, etc.) as a separate case. For each chassis, you count the valid core and network options using the Product Rule. Then, you sum the results from all cases to get the grand total.  
+This "[divide and conquer](@keyword=divide_and_conquer|lang=en-US|style=Feynman)" strategy is incredibly potent. When a problem seems tangled with complex rules, see if you can break it down into simpler, non-overlapping cases. This method, often called **casework**, is a direct application of the Sum Rule. For example, when counting valid hardware configurations with many compatibility restrictions, it might be easiest to analyze each type of chassis (Desktop, Rack-Mount, etc.) as a separate case. For each chassis, you count the valid core and network options using the Product Rule. Then, you sum the results from all cases to get the grand total. [@problem_id:1410457] [@problem_id:1410424]
 
 ### The Power of "Not": Counting by Subtraction
 
-Sometimes, a direct assault on a counting problem is a thorny path, but counting what you *don't* want is surprisingly easy. This is the strategy of [complementary counting](@article_id:267454): count the total number of possibilities without any restrictions, then count the number of *forbidden* possibilities, and subtract the second from the first.
+Sometimes, a direct assault on a counting problem is a thorny path, but counting what you *don't* want is surprisingly easy. This is the strategy of [complementary counting](@keyword=complementary_counting|lang=en-US|style=Feynman): count the total number of possibilities without any restrictions, then count the number of *forbidden* possibilities, and subtract the second from the first.
 
 Imagine you're configuring a computing node with 8 CPU models, 5 RAM types, and 6 storage drives. Without any restrictions, the Product Rule gives a total of $8 \times 5 \times 6 = 240$ possible configurations.
 Now, the engineer tells you there are some incompatibilities:
@@ -59,7 +59,7 @@ Let's count the forbidden configurations.
 - The first forbidden set involves 1 CPU, 2 RAM types, and any of the 6 storage drives. Using the Product Rule, this gives $1 \times 2 \times 6 = 12$ invalid configurations.
 - The second set involves 1 storage drive, 3 CPUs, and any of the 5 RAM types. This gives $3 \times 5 \times 1 = 15$ invalid configurations.
 
-If these two sets of forbidden configurations are disjoint (as they are in this scenario), the total number of invalid setups is $12 + 15 = 27$. The number of *valid* configurations is therefore the total minus the invalid: $240 - 27 = 213$. This is often far simpler than trying to build a list of all valid combinations from scratch. When you see constraints, always ask yourself: is it easier to count what's allowed, or to count what's forbidden and subtract?  
+If these two sets of forbidden configurations are disjoint (as they are in this scenario), the total number of invalid setups is $12 + 15 = 27$. The number of *valid* configurations is therefore the total minus the invalid: $240 - 27 = 213$. This is often far simpler than trying to build a list of all valid combinations from scratch. When you see constraints, always ask yourself: is it easier to count what's allowed, or to count what's forbidden and subtract? [@problem_id:1410445] [@problem_id:1410427]
 
 ### Choosing and Placing: The Dance of Combination and Permutation
 
@@ -77,7 +77,7 @@ We can break this down:
     -   If our set of 4 digits does *not* include 0, we can arrange them in any order. The number of arrangements of 4 distinct items is $4! = 4 \times 3 \times 2 \times 1 = 24$.
     -   If our set of 4 digits *does* include 0, we have to be careful. There are 3 choices for the first position (it can't be 0), and then the remaining 3 digits can be arranged in $3!$ ways. So there are $3 \times 3! = 18$ valid arrangements.
 
-To get the final answer, we would combine these steps, perhaps most easily by considering the "choose non-prime" step more carefully (did we choose a set with or without 0?) and then multiplying by the appropriate arrangement count. This elegant decomposition into "choosing" and "arranging" is a master key for a huge class of counting problems. 
+To get the final answer, we would combine these steps, perhaps most easily by considering the "choose non-prime" step more carefully (did we choose a set with or without 0?) and then multiplying by the appropriate arrangement count. This elegant decomposition into "choosing" and "arranging" is a master key for a huge class of counting problems. [@problem_id:1410444]
 
 ### Chains of Dependence: When Choices are Not Independent
 
@@ -96,6 +96,6 @@ We can see the pattern emerging!
 $a_n = b_{n-1}$
 $b_n = 2(a_{n-1} + b_{n-1})$
 
-This system, known as a **[recurrence relation](@article_id:140545)**, allows us to compute the answer for any number of questions by building upon the answers for shorter sequences. For 5 questions, this method yields 164 valid surveys. This technique of tracking "states" (like 'ending in A' vs 'not ending in A') is the key to solving problems with local dependencies. It's a gateway to the powerful field of dynamic programming, and it can even be used to tackle problems where constraints form a circle—for instance, if the first and last items in a sequence are also forbidden from being the same.  
+This system, known as a **[recurrence relation](@keyword=recurrence_relation|lang=en-US|style=Feynman)**, allows us to compute the answer for any number of questions by building upon the answers for shorter sequences. For 5 questions, this method yields 164 valid surveys. This technique of tracking "states" (like 'ending in A' vs 'not ending in A') is the key to solving problems with local dependencies. It's a gateway to the powerful field of dynamic programming, and it can even be used to tackle problems where constraints form a circle—for instance, if the first and last items in a sequence are also forbidden from being the same. [@problem_id:1410432] [@problem_id:1410463]
 
-From simple multiplication to clever subtraction, from dividing problems into cases to building solutions step-by-step, these principles form the bedrock of [combinatorics](@article_id:143849). They show us how to reason about structure and possibility, revealing the vast, intricate, and beautiful mathematics that governs the choices all around us.
+From simple multiplication to clever subtraction, from dividing problems into cases to building solutions step-by-step, these principles form the bedrock of [combinatorics](@keyword=combinatorics|lang=en-US|style=Feynman). They show us how to reason about structure and possibility, revealing the vast, intricate, and beautiful mathematics that governs the choices all around us.

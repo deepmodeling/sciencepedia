@@ -1,11 +1,11 @@
 ## Introduction
-The Fermi-Dirac and Bose-Einstein integrals are cornerstone mathematical constructs in the field of [quantum statistical mechanics](@entry_id:140244), describing the macroscopic properties of systems composed of [fermions and bosons](@entry_id:138279), respectively. While their integral definitions are fundamental, direct manipulation and analysis can be notoriously complex. This complexity often obscures the deep and elegant structure underlying the behavior of [quantum gases](@entry_id:162017). This article addresses this challenge by systematically exploring the profound and powerful connection between these integrals and a class of [special functions](@entry_id:143234) known as polylogarithms. By leveraging this relationship, we can replace cumbersome integration with a rich toolkit of algebraic identities and [functional equations](@entry_id:199663), providing clear insight into the quantum world.
+The Fermi-Dirac and Bose-Einstein integrals are cornerstone mathematical constructs in the field of quantum statistical mechanics, describing the macroscopic properties of systems composed of fermions and bosons, respectively. While their integral definitions are fundamental, direct manipulation and analysis can be notoriously complex. This complexity often obscures the deep and elegant structure underlying the behavior of quantum gases. This article addresses this challenge by systematically exploring the profound and powerful connection between these integrals and a class of special functions known as polylogarithms. By leveraging this relationship, we can replace cumbersome integration with a rich toolkit of algebraic identities and functional equations, providing clear insight into the quantum world.
 
-This article is structured to guide you from foundational theory to practical application. In the first chapter, **"Principles and Mechanisms,"** we will establish the fundamental identities linking the integrals to polylogarithms and derive their key algebraic and differential properties. The second chapter, **"Applications and Interdisciplinary Connections,"** will demonstrate the power of this formalism by applying it to calculate the thermodynamic properties of [quantum gases](@entry_id:162017), explain phase transitions, and explore its reach into fields like condensed matter physics and astrophysics. Finally, the **"Hands-On Practices"** section provides a series of guided problems that will allow you to solidify your understanding and apply these powerful techniques yourself.
+This article is structured to guide you from foundational theory to practical application. In the first chapter, **"Principles and Mechanisms,"** we will establish the fundamental identities linking the integrals to polylogarithms and derive their key algebraic and differential properties. The second chapter, **"Applications and Interdisciplinary Connections,"** will demonstrate the power of this formalism by applying it to calculate the thermodynamic properties of quantum gases, explain phase transitions, and explore its reach into fields like condensed matter physics and astrophysics. Finally, the **"Hands-On Practices"** section provides a series of guided problems that will allow you to solidify your understanding and apply these powerful techniques yourself.
 
 ## Principles and Mechanisms
 
-This chapter delves into the fundamental principles and mathematical mechanisms that govern the behavior of Fermi-Dirac and Bose-Einstein integrals. As we will see, the analytical properties of these integrals, which are of paramount importance in [quantum statistical mechanics](@entry_id:140244), are most elegantly understood through their profound connection to a class of [special functions](@entry_id:143234) known as **polylogarithms**. By leveraging this relationship, we can unlock a suite of powerful analytical tools, including algebraic identities, [differentiation rules](@entry_id:145443), and [functional equations](@entry_id:199663), which transform seemingly intractable problems into manageable exercises.
+This chapter delves into the fundamental principles and mathematical mechanisms that govern the behavior of Fermi-Dirac and Bose-Einstein integrals. As we will see, the analytical properties of these integrals, which are of paramount importance in quantum statistical mechanics, are most elegantly understood through their profound connection to a class of special functions known as **polylogarithms**. By leveraging this relationship, we can unlock a suite of powerful analytical tools, including algebraic identities, differentiation rules, and functional equations, which transform seemingly intractable problems into manageable exercises.
 
 ### The Fundamental Connection to Polylogarithms
 
@@ -19,7 +19,7 @@ G_s(\eta) = \frac{1}{\Gamma(s+1)} \int_0^\infty \frac{t^s}{e^{t-\eta}-1} dt
 $$
 This integral is typically defined for $\Re(\eta)  0$ to ensure the convergence of the denominator. The factor $\Gamma(s+1)$ is the Gamma function, which serves as a normalization constant.
 
-While these integral representations are fundamental, their direct manipulation can be cumbersome. The key to unlocking their analytical structure is the **polylogarithm function**, $\text{Li}_s(z)$, defined by the [power series](@entry_id:146836) for complex argument $z$ where $|z|  1$:
+While these integral representations are fundamental, their direct manipulation can be cumbersome. The key to unlocking their analytical structure is the **polylogarithm function**, $\text{Li}_s(z)$, defined by the power series for complex argument $z$ where $|z|  1$:
 $$
 \text{Li}_s(z) = \sum_{k=1}^\infty \frac{z^k}{k^s}
 $$
@@ -38,7 +38,7 @@ With the polylogarithm connection established, we can derive a rich set of prope
 
 #### An Intersystem Identity
 
-A crucial identity directly connects the statistics of [fermions and bosons](@entry_id:138279). The Fermi-Dirac integral $F_j(\eta)$ can be expressed as a linear combination of Bose-Einstein integrals. This relationship is derived by manipulating the denominator of the Fermi-Dirac integrand :
+A crucial identity directly connects the statistics of fermions and bosons. The Fermi-Dirac integral $F_j(\eta)$ can be expressed as a linear combination of Bose-Einstein integrals. This relationship is derived by manipulating the denominator of the Fermi-Dirac integrand [@problem_id:666653]:
 $$
 \frac{1}{e^{x-\eta}+1} = \frac{1}{e^{x-\eta}-1} - \frac{2}{e^{2(x-\eta)}-1}
 $$
@@ -54,7 +54,7 @@ This equation is remarkably powerful, showing that the properties of a Fermi gas
 
 #### Differentiation with Respect to Chemical Potential
 
-The polylogarithm connection provides a straightforward rule for differentiation. Using the [chain rule](@entry_id:147422) and the known derivative of the polylogarithm, $\frac{d}{dz} \text{Li}_s(z) = \frac{\text{Li}_{s-1}(z)}{z}$, we can find the derivatives of $F_j(x)$ and $G_j(x)$ with respect to $x$.
+The polylogarithm connection provides a straightforward rule for differentiation. Using the chain rule and the known derivative of the polylogarithm, $\frac{d}{dz} \text{Li}_s(z) = \frac{\text{Li}_{s-1}(z)}{z}$, we can find the derivatives of $F_j(x)$ and $G_j(x)$ with respect to $x$.
 
 For the Bose-Einstein integral, with $z=e^x$:
 $$
@@ -68,18 +68,18 @@ Thus, differentiation with respect to the chemical potential parameter simply re
 $$
 \frac{d}{dx} G_j(x) = G_{j-1}(x) \quad \text{and} \quad \frac{d}{dx} F_j(x) = F_{j-1}(x)
 $$
-This [recurrence relation](@entry_id:141039) is exceptionally useful. For the special case where the order becomes zero, we connect to the logarithm function, as $\text{Li}_1(z) = -\ln(1-z)$. For instance, let's compute the derivative of the sum $S(x) = F_1(x) + G_1(x)$ .
+This recurrence relation is exceptionally useful. For the special case where the order becomes zero, we connect to the logarithm function, as $\text{Li}_1(z) = -\ln(1-z)$. For instance, let's compute the derivative of the sum $S(x) = F_1(x) + G_1(x)$ [@problem_id:762332].
 $$
 \frac{dS}{dx} = F_0(x) + G_0(x) = -\text{Li}_1(-e^x) + \text{Li}_1(e^x) = -[-\ln(1 - (-e^x))] + [-\ln(1-e^x)]
 $$
 $$
 \frac{dS}{dx} = \ln(1+e^x) - \ln(1-e^x) = \ln\left(\frac{1+e^x}{1-e^x}\right)
 $$
-This demonstrates how derivatives can reduce expressions involving [special functions](@entry_id:143234) to elementary ones. This technique is also instrumental in applied problems, such as calculating the curvature of the function $y=F_1(x)$ . The curvature $\kappa(x) = |y''| / (1 + (y')^2)^{3/2}$ requires both the first and second derivatives. We find $F_1'(x) = F_0(x) = \ln(1+e^x)$ and $F_1''(x) = F_{-1}(x) = e^x / (1+e^x)$. At $x=0$, this gives $F_1'(0) = \ln(2)$ and $F_1''(0) = 1/2$, yielding a curvature of $\kappa(0) = \frac{1}{2(1+(\ln 2)^2)^{3/2}}$.
+This demonstrates how derivatives can reduce expressions involving special functions to elementary ones. This technique is also instrumental in applied problems, such as calculating the curvature of the function $y=F_1(x)$ [@problem_id:762500]. The curvature $\kappa(x) = |y''| / (1 + (y')^2)^{3/2}$ requires both the first and second derivatives. We find $F_1'(x) = F_0(x) = \ln(1+e^x)$ and $F_1''(x) = F_{-1}(x) = e^x / (1+e^x)$. At $x=0$, this gives $F_1'(0) = \ln(2)$ and $F_1''(0) = 1/2$, yielding a curvature of $\kappa(0) = \frac{1}{2(1+(\ln 2)^2)^{3/2}}$.
 
 ### The Power of Functional Equations
 
-Polylogarithms are renowned for satisfying a host of [functional equations](@entry_id:199663)—identities that relate the function at different arguments. These equations translate directly into powerful, non-obvious relations for Fermi-Dirac and Bose-Einstein integrals, enabling the simplification of complex expressions and the evaluation of [definite integrals](@entry_id:147612).
+Polylogarithms are renowned for satisfying a host of functional equations—identities that relate the function at different arguments. These equations translate directly into powerful, non-obvious relations for Fermi-Dirac and Bose-Einstein integrals, enabling the simplification of complex expressions and the evaluation of definite integrals.
 
 #### The Distribution Formula
 
@@ -91,19 +91,19 @@ This identity provides a way to evaluate sums of polylogarithms whose arguments 
 $$
 \sum_{k=0}^{n-1} G_j(x + 2\pi i k/n) = n^{-j} G_j(nx)
 $$
-A simple application of this rule for $G_1(x)$ (where $j=1$) and $n=3$ shows that a sum over three complex-shifted arguments collapses into a single term :
+A simple application of this rule for $G_1(x)$ (where $j=1$) and $n=3$ shows that a sum over three complex-shifted arguments collapses into a single term [@problem_id:762323]:
 $$
 G_1(x) + G_1(x+2\pi i/3) + G_1(x-2\pi i/3) = 3^{-1}G_1(3x) = \frac{G_1(3x)}{3}
 $$
-This principle can be used in more advanced contexts, for instance, to evaluate finite sums over all $N$-th [roots of unity](@entry_id:142597). By applying series manipulation techniques, one can evaluate sums such as $\sum_{j=0}^{N-1} [G_s(z_j) - G_s(-z_j)]$ where $z_j=e^{2\pi i j/N}$, connecting the result to the Riemann zeta function $\zeta(s)$ .
+This principle can be used in more advanced contexts, for instance, to evaluate finite sums over all $N$-th roots of unity. By applying series manipulation techniques, one can evaluate sums such as $\sum_{j=0}^{N-1} [G_s(z_j) - G_s(-z_j)]$ where $z_j=e^{2\pi i j/N}$, connecting the result to the Riemann zeta function $\zeta(s)$ [@problem_id:762422].
 
 #### Reflection and Inversion Formulas for the Dilogarithm
 
-The [dilogarithm](@entry_id:202722), $\text{Li}_2(z)$, which corresponds to integrals of order $j=1$, satisfies several celebrated [functional equations](@entry_id:199663). One such identity is the inversion formula, which relates $\text{Li}_2(z)$ to $\text{Li}_2(1/z)$. A common form is:
+The dilogarithm, $\text{Li}_2(z)$, which corresponds to integrals of order $j=1$, satisfies several celebrated functional equations. One such identity is the inversion formula, which relates $\text{Li}_2(z)$ to $\text{Li}_2(1/z)$. A common form is:
 $$
 \text{Li}_2(z) + \text{Li}_2(1/z) = -\frac{\pi^2}{6} - \frac{1}{2}\ln^2(-z)
 $$
-This identity is a powerful tool for simplifying expressions. For example, consider the integral $I = \int_{-1}^{0} \mathrm{Re} [F_1(x) + F_1(-x)] dx$ . Expressing the integrand in terms of dilogarithms, we have:
+This identity is a powerful tool for simplifying expressions. For example, consider the integral $I = \int_{-1}^{0} \mathrm{Re} [F_1(x) + F_1(-x)] dx$ [@problem_id:762538]. Expressing the integrand in terms of dilogarithms, we have:
 $$
 F_1(x) + F_1(-x) = -[\text{Li}_2(-e^x) + \text{Li}_2(-e^{-x})]
 $$
@@ -115,19 +115,19 @@ Another crucial identity, known as Landen's identity, is:
 $$
 \text{Li}_2(t) + \text{Li}_2\left(\frac{t}{t-1}\right) = -\frac{1}{2}\ln^2(1-t)
 $$
-This identity is perfect for simplifying integrands of a particular structure. Consider the integral $I = \int_{-\infty}^0 [G_1(x) - F_1(x-\ln(1-e^x))] dx$ . The integrand can be written as:
+This identity is perfect for simplifying integrands of a particular structure. Consider the integral $I = \int_{-\infty}^0 [G_1(x) - F_1(x-\ln(1-e^x))] dx$ [@problem_id:762512]. The integrand can be written as:
 $$
 \text{Li}_2(e^x) - \left(-\text{Li}_2(-e^{x-\ln(1-e^x)})\right) = \text{Li}_2(e^x) + \text{Li}_2\left(\frac{e^x}{e^x-1}\right)
 $$
 With the substitution $t=e^x$, this is exactly the left-hand side of Landen's identity. The integral then simplifies dramatically, leading to the result $I = -\zeta(3)$.
 
-These examples highlight a general strategy: when faced with a complex expression involving Fermi-Dirac or Bose-Einstein integrals of order 1, one should always check if the structure of the arguments maps onto one of the known [functional equations](@entry_id:199663) for the [dilogarithm](@entry_id:202722). The consequences of even simple argument transformations can be profound. For example, a shift by $-i\pi$ in the argument of $F_1(x)$ and $G_1(x)$ has the effect of interchanging their forms, a property that leads to elegant algebraic cancellations .
+These examples highlight a general strategy: when faced with a complex expression involving Fermi-Dirac or Bose-Einstein integrals of order 1, one should always check if the structure of the arguments maps onto one of the known functional equations for the dilogarithm. The consequences of even simple argument transformations can be profound. For example, a shift by $-i\pi$ in the argument of $F_1(x)$ and $G_1(x)$ has the effect of interchanging their forms, a property that leads to elegant algebraic cancellations [@problem_id:762484].
 
 ### Advanced Integral Evaluations
 
-The techniques developed thus far culminate in the ability to solve a wide class of [definite integrals](@entry_id:147612) involving $F_j(x)$ and $G_j(x)$. Often, the evaluation relies on a combination of polylogarithm identities, variable substitutions, and sometimes swapping the order of integration.
+The techniques developed thus far culminate in the ability to solve a wide class of definite integrals involving $F_j(x)$ and $G_j(x)$. Often, the evaluation relies on a combination of polylogarithm identities, variable substitutions, and sometimes swapping the order of integration.
 
-Consider the integral $I = \int_{-\infty}^0 [F_0(x) - G_0(x)] dx$ . First, we write out the explicit integral form:
+Consider the integral $I = \int_{-\infty}^0 [F_0(x) - G_0(x)] dx$ [@problem_id:762474]. First, we write out the explicit integral form:
 $$
 I = \int_{-\infty}^0 \left( \int_0^\infty \left[ \frac{1}{e^{t-x}+1} - \frac{1}{e^{t-x}-1} \right] dt \right) dx
 $$
@@ -137,7 +137,7 @@ I = \int_0^\infty u \left[ \frac{1}{e^u+1} - \frac{1}{e^u-1} \right] du = -2 \in
 $$
 This final form is a standard integral representation related to the Riemann zeta function. Using the known result $\int_0^\infty \frac{x}{e^{ax}-1}dx = \frac{\zeta(2)}{a^2} = \frac{\pi^2}{6a^2}$, we find with $a=2$ that $I = -2 (\pi^2/24) = -\pi^2/12$.
 
-As a final, more intricate example, consider the integral $I = \int_{-\infty}^{0} [x g_1(x) - g_2(x)] dx$, where $g_s(x) = \text{Li}_s(e^x)$ is an alternative notation for the Bose-Einstein integral function . The integrand is $x \text{Li}_1(e^x) - \text{Li}_2(e^x)$. A change of variable $t=e^x$ transforms the integral to:
+As a final, more intricate example, consider the integral $I = \int_{-\infty}^{0} [x g_1(x) - g_2(x)] dx$, where $g_s(x) = \text{Li}_s(e^x)$ is an alternative notation for the Bose-Einstein integral function [@problem_id:762326]. The integrand is $x \text{Li}_1(e^x) - \text{Li}_2(e^x)$. A change of variable $t=e^x$ transforms the integral to:
 $$
 I = \int_0^1 \left[ \ln(t) \text{Li}_1(t) - \text{Li}_2(t) \right] \frac{dt}{t}
 $$

@@ -1,21 +1,21 @@
 ## Introduction
-While often defined by their differential equations or series expansions, Bessel functions reveal their true versatility through their integral representations. These representations are not mere mathematical curiosities; they are powerful analytical tools that build bridges between the theory of [special functions](@entry_id:143234) and other critical domains like complex analysis, Fourier theory, and [integral transforms](@entry_id:186209). They provide the necessary framework for solving a vast array of problems in science and engineering, from calculating wave diffraction patterns to determining the probability distributions of [random processes](@entry_id:268487). This article demystifies the world of integral representations for Bessel functions, addressing the need for a unified perspective that connects theory with practical application.
+While often defined by their differential equations or series expansions, Bessel functions reveal their true versatility through their integral representations. These representations are not mere mathematical curiosities; they are powerful analytical tools that build bridges between the theory of special functions and other critical domains like complex analysis, Fourier theory, and integral transforms. They provide the necessary framework for solving a vast array of problems in science and engineering, from calculating wave diffraction patterns to determining the probability distributions of random processes. This article demystifies the world of integral representations for Bessel functions, addressing the need for a unified perspective that connects theory with practical application.
 
-This article is structured to guide you from foundational theory to practical implementation. The first chapter, **"Principles and Mechanisms,"** lays the groundwork by deriving the most important integral representations from [generating functions](@entry_id:146702) and complex [contour integrals](@entry_id:177264), and explores their use in [asymptotic analysis](@entry_id:160416). The second chapter, **"Applications and Interdisciplinary Connections,"** demonstrates the utility of these representations in evaluating [definite integrals](@entry_id:147612), solving problems involving Laplace and Fourier transforms, and modeling phenomena in physics and probability. Finally, the **"Hands-On Practices"** section provides targeted exercises to reinforce these concepts and develop problem-solving skills. We begin by exploring the fundamental principles and mechanisms that give rise to these powerful integral forms.
+This article is structured to guide you from foundational theory to practical implementation. The first chapter, **"Principles and Mechanisms,"** lays the groundwork by deriving the most important integral representations from generating functions and complex contour integrals, and explores their use in asymptotic analysis. The second chapter, **"Applications and Interdisciplinary Connections,"** demonstrates the utility of these representations in evaluating definite integrals, solving problems involving Laplace and Fourier transforms, and modeling phenomena in physics and probability. Finally, the **"Hands-On Practices"** section provides targeted exercises to reinforce these concepts and develop problem-solving skills. We begin by exploring the fundamental principles and mechanisms that give rise to these powerful integral forms.
 
 ## Principles and Mechanisms
 
-While the series representations and differential equations for Bessel functions are foundational, their integral representations provide a profoundly versatile and powerful perspective. These representations are not merely alternative definitions; they are bridges connecting Bessel functions to other vital areas of mathematics, such as complex analysis and Fourier theory. They unlock methods for evaluating challenging [definite integrals](@entry_id:147612), analyzing the [asymptotic behavior](@entry_id:160836) of functions, and modeling physical phenomena ranging from [wave propagation](@entry_id:144063) to statistical distributions. This chapter explores the principles and mechanisms underlying the most important integral representations.
+While the series representations and differential equations for Bessel functions are foundational, their integral representations provide a profoundly versatile and powerful perspective. These representations are not merely alternative definitions; they are bridges connecting Bessel functions to other vital areas of mathematics, such as complex analysis and Fourier theory. They unlock methods for evaluating challenging definite integrals, analyzing the asymptotic behavior of functions, and modeling physical phenomena ranging from wave propagation to statistical distributions. This chapter explores the principles and mechanisms underlying the most important integral representations.
 
 ### Generating Functions and Contour Integrals
 
-A highly effective method for generating families of special functions is through a **[generating function](@entry_id:152704)**. For Bessel functions of the first kind, $J_n(z)$, the [generating function](@entry_id:152704) is a two-variable function whose Laurent [series expansion](@entry_id:142878) in one variable has the Bessel functions as its coefficients.
+A highly effective method for generating families of special functions is through a **generating function**. For Bessel functions of the first kind, $J_n(z)$, the generating function is a two-variable function whose Laurent series expansion in one variable has the Bessel functions as its coefficients.
 
 The generating function for integer-order Bessel functions is given by:
 $$
 G(z, t) = \exp\left[\frac{z}{2}\left(t - \frac{1}{t}\right)\right] = \sum_{n=-\infty}^{\infty} J_n(z) t^n
 $$
-This expansion is valid for $t \neq 0$. According to the principles of complex analysis, the coefficients of this Laurent series can be extracted using Cauchy's integral formula. For any [simple closed contour](@entry_id:176484) $C$ that encloses the origin $t=0$, the coefficient $J_n(z)$ is given by:
+This expansion is valid for $t \neq 0$. According to the principles of complex analysis, the coefficients of this Laurent series can be extracted using Cauchy's integral formula. For any simple closed contour $C$ that encloses the origin $t=0$, the coefficient $J_n(z)$ is given by:
 $$
 J_n(z) = \frac{1}{2\pi i} \oint_C \frac{G(z, t)}{t^{n+1}} dt = \frac{1}{2\pi i} \oint_C \frac{\exp\left[\frac{z}{2}\left(t - \frac{1}{t}\right)\right]}{t^{n+1}} dt
 $$
@@ -39,28 +39,28 @@ S_n(a, b) = \left(\frac{a}{b}\right)^{n/2} J_n(2\sqrt{ab})
 $$
 Setting $a = z/2$ and $b = z/2$ recovers the Schlömilch integral for $J_n(z)$.
 
-The **modified Bessel functions**, $I_n(z)$, have a similar structure. Their generating function is $g(t, z) = \exp[\frac{z}{2}(t + 1/t)]$, where the minus sign is replaced by a plus. This seemingly small change transforms the oscillatory Bessel functions into functions exhibiting [exponential growth](@entry_id:141869) or decay. These functions are coefficients in the Laurent series $g(t,z) = \sum_{n=-\infty}^\infty I_n(z) t^n$. The structure of these [generating functions](@entry_id:146702) leads to simple algebraic identities. For instance, consider the product $H(t,z) = g(t,z)g(t,-z)$. A direct calculation shows $H(t,z) = \exp[\frac{z}{2}(t + 1/t)] \exp[-\frac{z}{2}(t + 1/t)] = \exp(0) = 1$. The Laurent series for the constant function $1$ is trivial: the constant term is $1$ and all other coefficients are zero. This implies that the Cauchy product of the coefficients of $g(t,z)$ and $g(t,-z)$ must yield the coefficients of $H(t,z)$. Specifically, the constant term $C_0(z)$ of the product series is 1. This corresponds to the convolution identity $\sum_{m=-\infty}^{\infty} I_m(z) I_{-m}(-z) = 1$.
+The **modified Bessel functions**, $I_n(z)$, have a similar structure. Their generating function is $g(t, z) = \exp[\frac{z}{2}(t + 1/t)]$, where the minus sign is replaced by a plus. This seemingly small change transforms the oscillatory Bessel functions into functions exhibiting exponential growth or decay. These functions are coefficients in the Laurent series $g(t,z) = \sum_{n=-\infty}^\infty I_n(z) t^n$. The structure of these generating functions leads to simple algebraic identities. For instance, consider the product $H(t,z) = g(t,z)g(t,-z)$. A direct calculation shows $H(t,z) = \exp[\frac{z}{2}(t + 1/t)] \exp[-\frac{z}{2}(t + 1/t)] = \exp(0) = 1$. The Laurent series for the constant function $1$ is trivial: the constant term is $1$ and all other coefficients are zero. This implies that the Cauchy product of the coefficients of $g(t,z)$ and $g(t,-z)$ must yield the coefficients of $H(t,z)$. Specifically, the constant term $C_0(z)$ of the product series is 1. This corresponds to the convolution identity $\sum_{m=-\infty}^{\infty} I_m(z) I_{-m}(-z) = 1$.
 
 ### Definite Integrals and Fourier Theory
 
-While [contour integrals](@entry_id:177264) are theoretically powerful, representations as [definite integrals](@entry_id:147612) over a real interval are often more practical for computation and physical interpretation. These can frequently be derived by parameterizing the contour in a complex integral.
+While contour integrals are theoretically powerful, representations as definite integrals over a real interval are often more practical for computation and physical interpretation. These can frequently be derived by parameterizing the contour in a complex integral.
 
-A [fundamental representation](@entry_id:157678) for $J_n(z)$ arises from parameterizing the unit circle $t=e^{i\theta}$ in the Schlömilch integral. With this substitution, $dt = ie^{i\theta}d\theta$ and the exponent becomes $\frac{z}{2}(e^{i\theta} - e^{-i\theta}) = iz\sin\theta$. This leads to Bessel's [first integral](@entry_id:274642):
+A fundamental representation for $J_n(z)$ arises from parameterizing the unit circle $t=e^{i\theta}$ in the Schlömilch integral. With this substitution, $dt = ie^{i\theta}d\theta$ and the exponent becomes $\frac{z}{2}(e^{i\theta} - e^{-i\theta}) = iz\sin\theta$. This leads to Bessel's first integral:
 $$
 J_n(z) = \frac{1}{2\pi} \int_0^{2\pi} e^{i(z\sin\theta - n\theta)} d\theta
 $$
-For the important case $n=0$, this simplifies to $J_0(z) = \frac{1}{2\pi} \int_0^{2\pi} e^{iz\sin\theta} d\theta$. By a [change of variables](@entry_id:141386), this is equivalent to:
+For the important case $n=0$, this simplifies to $J_0(z) = \frac{1}{2\pi} \int_0^{2\pi} e^{iz\sin\theta} d\theta$. By a change of variables, this is equivalent to:
 $$
 J_0(z) = \frac{1}{\pi} \int_0^\pi \cos(z\cos\theta) d\theta
 $$
-This form connects Bessel functions directly to Fourier theory. The **Jacobi-Anger expansion** expresses a [plane wave](@entry_id:263752) in terms of [cylindrical waves](@entry_id:190253), and is essentially a Fourier series:
+This form connects Bessel functions directly to Fourier theory. The **Jacobi-Anger expansion** expresses a plane wave in terms of cylindrical waves, and is essentially a Fourier series:
 $$
 e^{iz\cos\theta} = J_0(z) + 2 \sum_{n=1}^\infty i^n J_n(z) \cos(n\theta)
 $$
 This shows that $i^n J_n(z)$ (up to a factor) is the $n$-th Fourier cosine coefficient of the periodic function $f(\theta) = e^{iz\cos\theta}$. This relationship can be exploited to evaluate certain classes of integrals. For example, to evaluate an integral of the form $I(x,k) = \frac{1}{\pi}\int_0^{2\pi} e^{ix\cos\theta}\cos(k\theta) d\theta$, we can simply insert the Jacobi-Anger expansion and use the orthogonality of cosine functions, $\int_0^{2\pi} \cos(n\theta)\cos(k\theta) d\theta = \pi \delta_{nk}$ for $n,k \ge 1$. The integral isolates the $n=k$ term of the series, yielding $I(x,k) = 2i^k J_k(x)$.
 
 The utility of these representations extends far beyond pure mathematics.
-In probability theory, the integral for $J_0(z)$ appears naturally when finding the characteristic [function of a random variable](@entry_id:269391) derived from an [angular distribution](@entry_id:193827). Consider a random variable $X = A\cos\Theta + B$, where $\Theta$ is uniformly distributed on $[0, 2\pi]$. Its [characteristic function](@entry_id:141714) $\Phi_X(t) = E[e^{itX}]$ is calculated as:
+In probability theory, the integral for $J_0(z)$ appears naturally when finding the characteristic function of a random variable derived from an angular distribution. Consider a random variable $X = A\cos\Theta + B$, where $\Theta$ is uniformly distributed on $[0, 2\pi]$. Its characteristic function $\Phi_X(t) = E[e^{itX}]$ is calculated as:
 $$
 \Phi_X(t) = E[e^{it(A\cos\Theta + B)}] = \frac{1}{2\pi} \int_0^{2\pi} e^{it(A\cos\theta + B)} d\theta = e^{itB} \left( \frac{1}{2\pi} \int_0^{2\pi} e^{i(tA)\cos\theta} d\theta \right)
 $$
@@ -94,17 +94,17 @@ J_\nu(x) = \frac{(x/2)^\nu}{\sqrt{\pi} \Gamma(\nu + 1/2)} \int_0^\pi \cos(x \cos
 $$
 This representation allows for direct computation, especially for half-integer orders where the Gamma function is easily evaluated. For example, to find $J_{3/2}(\pi)$, we set $\nu=3/2$ and $x=\pi$. Using $\Gamma(2)=1$, the prefactor simplifies, and the task reduces to evaluating the elementary, albeit non-trivial, integral $\int_0^\pi \cos(\pi\cos\theta) \sin^3\theta d\theta$. Through substitution and integration by parts, this integral evaluates to $4/\pi^2$, leading to the final result $J_{3/2}(\pi) = \sqrt{2}/\pi$.
 
-**Spherical Bessel functions**, $j_n(z)$, which are crucial in [wave scattering](@entry_id:202024) problems, are related to half-integer order Bessel functions by $j_n(z) = \sqrt{\frac{\pi}{2z}} J_{n+1/2}(z)$. They also have their own integral representations. One such formula is:
+**Spherical Bessel functions**, $j_n(z)$, which are crucial in wave scattering problems, are related to half-integer order Bessel functions by $j_n(z) = \sqrt{\frac{\pi}{2z}} J_{n+1/2}(z)$. They also have their own integral representations. One such formula is:
 $$
 j_n(z) = \frac{z^n}{2^{n+1} n!} \int_{-1}^{1} (1-t^2)^n \cos(zt) dt
 $$
-This formula highlights the rich interplay between different representations. For instance, we can use it to find a [closed-form expression](@entry_id:267458) for the integral $I_n(z) = \int_{-1}^{1} (1-t^2)^n \cos(zt) dt$ by rearranging to get $I_n(z) = \frac{2^{n+1}n!}{z^n} j_n(z)$. Since the spherical Bessel functions $j_n(z)$ can be expressed in terms of [elementary functions](@entry_id:181530) (sines and cosines), we can obtain a [closed form](@entry_id:271343) for the integral. For $n=2$, using the known expression for $j_2(z)$ gives a direct evaluation of $I_2(z)$ in terms of $\sin z$, $\cos z$, and powers of $z$.
+This formula highlights the rich interplay between different representations. For instance, we can use it to find a closed-form expression for the integral $I_n(z) = \int_{-1}^{1} (1-t^2)^n \cos(zt) dt$ by rearranging to get $I_n(z) = \frac{2^{n+1}n!}{z^n} j_n(z)$. Since the spherical Bessel functions $j_n(z)$ can be expressed in terms of elementary functions (sines and cosines), we can obtain a closed form for the integral. For $n=2$, using the known expression for $j_2(z)$ gives a direct evaluation of $I_2(z)$ in terms of $\sin z$, $\cos z$, and powers of $z$.
 
 ### Asymptotic Analysis via Integral Representations
 
-Perhaps one of the most powerful applications of integral representations is in determining the [asymptotic behavior](@entry_id:160836) of functions. For large arguments, series representations converge slowly and become computationally impractical, while integral representations become amenable to powerful approximation techniques like Laplace's method and the [method of stationary phase](@entry_id:274037).
+Perhaps one of the most powerful applications of integral representations is in determining the asymptotic behavior of functions. For large arguments, series representations converge slowly and become computationally impractical, while integral representations become amenable to powerful approximation techniques like Laplace's method and the method of stationary phase.
 
-**Laplace's method** is used for integrals of the form $I(z) = \int_a^b g(t) e^{z\phi(t)} dt$ for large positive $z$. The key insight is that for large $z$, the value of the integral is overwhelmingly dominated by the contributions from the neighborhood of the [global maximum](@entry_id:174153) of the function $\phi(t)$ in the interval $[a,b]$.
+**Laplace's method** is used for integrals of the form $I(z) = \int_a^b g(t) e^{z\phi(t)} dt$ for large positive $z$. The key insight is that for large $z$, the value of the integral is overwhelmingly dominated by the contributions from the neighborhood of the global maximum of the function $\phi(t)$ in the interval $[a,b]$.
 
 Let us apply this to find the leading-order asymptotic behavior of the modified Bessel function $I_0(z)$ for $z \to \infty$. We use its integral representation:
 $$
@@ -118,7 +118,7 @@ Since the integrand decays very rapidly away from $\theta=0$ for large $z$, we c
 $$
 I_0(z) \sim \frac{e^z}{\pi} \int_0^\infty e^{-z\theta^2/2} d\theta = \frac{e^z}{\pi} \sqrt{\frac{\pi}{2z}}
 $$
-This yields the celebrated [asymptotic formula](@entry_id:189846):
+This yields the celebrated asymptotic formula:
 $$
 I_0(z) \sim \frac{e^z}{\sqrt{2\pi z}} \quad \text{as } z \to \infty
 $$

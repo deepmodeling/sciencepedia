@@ -1,44 +1,44 @@
 ## Introduction
-The study of second-order [linear homogeneous differential equations](@article_id:164926) is a cornerstone of modeling the physical world, describing everything from swinging pendulums to [electrical circuits](@article_id:266909). The solution to such an equation hinges on the roots of its [characteristic equation](@article_id:148563). We have seen that [distinct real roots](@article_id:272759) lead to overdamped systems that slowly return to equilibrium, while [complex roots](@article_id:172447) produce underdamped systems that oscillate. But this leaves a critical question unanswered: what happens in the "knife-edge" case, where the two roots are not distinct but identical? This scenario, known as critical damping, presents a mathematical puzzle, as a second-order equation requires two independent solutions, yet we seem to have only one.
+The study of second-order [linear homogeneous differential equations](@keyword=linear_homogeneous_differential_equations|lang=en-US|style=Feynman) is a cornerstone of modeling the physical world, describing everything from swinging pendulums to [electrical circuits](@keyword=electrical_circuits|lang=en-US|style=Feynman). The solution to such an equation hinges on the roots of its [characteristic equation](@keyword=characteristic_equation|lang=en-US|style=Feynman). We have seen that [distinct real roots](@keyword=distinct_real_roots|lang=en-US|style=Feynman) lead to overdamped systems that slowly return to equilibrium, while [complex roots](@keyword=complex_roots|lang=en-US|style=Feynman) produce underdamped systems that oscillate. But this leaves a critical question unanswered: what happens in the "knife-edge" case, where the two roots are not distinct but identical? This scenario, known as critical damping, presents a mathematical puzzle, as a second-order equation requires two independent solutions, yet we seem to have only one.
 
 This article unravels this puzzle and explores its profound implications. We will embark on a journey across three chapters to fully understand this special case.
-First, in **Principles and Mechanisms**, we will dive into the mathematics to discover the "missing" second solution, using both an intuitive limiting argument and the rigorous [method of reduction of order](@article_id:167332) to construct the complete [general solution](@article_id:274512).
+First, in **Principles and Mechanisms**, we will dive into the mathematics to discover the "missing" second solution, using both an intuitive limiting argument and the rigorous [method of reduction of order](@keyword=method_of_reduction_of_order|lang=en-US|style=Feynman) to construct the complete [general solution](@keyword=general_solution|lang=en-US|style=Feynman).
 Next, in **Applications and Interdisciplinary Connections**, we will see why critical damping is far from a mere mathematical curiosity. We will explore how it represents an ideal state in countless engineering designs and discover surprising connections to fields like linear algebra and even number theory.
 Finally, **Hands-On Practices** will challenge you to apply these concepts, using the theory to analyze system behavior and make crucial design decisions.
 
 ## Principles and Mechanisms
 
-In our journey through the world of differential equations, we often find ourselves modeling systems that oscillate or decay—a pendulum swinging, a capacitor discharging, a mass on a spring bobbing up and down. The mathematical heart of these systems is often a second-order linear [homogeneous differential equation](@article_id:175902):
+In our journey through the world of differential equations, we often find ourselves modeling systems that oscillate or decay—a pendulum swinging, a capacitor discharging, a mass on a spring bobbing up and down. The mathematical heart of these systems is often a second-order linear [homogeneous differential equation](@keyword=homogeneous_differential_equation|lang=en-US|style=Feynman):
 
 $$
 a\frac{d^2y}{dt^2} + b\frac{dy}{dt} + cy = 0
 $$
 
-As we've seen, guessing a solution of the form $y(t) = \exp(st)$ magically transforms this calculus problem into a simple algebra problem: the **[characteristic equation](@article_id:148563)** $as^2 + bs + c = 0$. The roots of this quadratic equation tell us everything about the system's behavior. If the roots are distinct real numbers, we get two different exponential decays—an **overdamped** system slowly creeping back to equilibrium. If the roots are a [complex conjugate pair](@article_id:149645), we get sines and cosines wrapped in an exponential envelope—an **underdamped** system that oscillates as it settles.
+As we've seen, guessing a solution of the form $y(t) = \exp(st)$ magically transforms this calculus problem into a simple algebra problem: the **[characteristic equation](@keyword=characteristic_equation|lang=en-US|style=Feynman)** $as^2 + bs + c = 0$. The roots of this quadratic equation tell us everything about the system's behavior. If the roots are distinct real numbers, we get two different exponential decays—an **overdamped** system slowly creeping back to equilibrium. If the roots are a [complex conjugate pair](@keyword=complex_conjugate_pair|lang=en-US|style=Feynman), we get sines and cosines wrapped in an exponential envelope—an **underdamped** system that oscillates as it settles.
 
 But what happens when we balance on the knife's edge between these two worlds? What happens when the discriminant $b^2 - 4ac$ is exactly zero?
 
 ### A Curious Coincidence: The Knife's-Edge of Critical Damping
 
-When $b^2 - 4ac = 0$, the characteristic equation doesn't have two [distinct roots](@article_id:266890). It has one **repeated root**, $r = -b/(2a)$. This special situation is called **[critical damping](@article_id:154965)**. It’s not just a mathematical curiosity; it's often the engineer's holy grail.
+When $b^2 - 4ac = 0$, the characteristic equation doesn't have two [distinct roots](@keyword=distinct_roots|lang=en-US|style=Feynman). It has one **repeated root**, $r = -b/(2a)$. This special situation is called **[critical damping](@keyword=critical_damping|lang=en-US|style=Feynman)**. It’s not just a mathematical curiosity; it's often the engineer's holy grail.
 
 Imagine an automatic door closer on a heavy vault door or a robotic arm that needs to move to a new position quickly and precisely. If it's underdamped, it will overshoot the target and oscillate, wasting time and potentially causing damage. If it's overdamped, it will move sluggishly, taking forever to arrive. Critically damped is the "Goldilocks" condition: it's the fastest possible return to equilibrium *without* oscillating. It gets the job done with maximum efficiency.
 
-But this physical perfection presents us with a mathematical puzzle. If we only have one root, $r$, do we only get one solution, $y_1(t) = \exp(rt)$? That can't be right. A second-order equation needs *two* [linearly independent solutions](@article_id:184947) to form a [general solution](@article_id:274512), $y(t) = C_1 y_1(t) + C_2 y_2(t)$. This is essential because we need two free constants, $C_1$ and $C_2$, to satisfy two initial conditions, such as the initial position and initial velocity. So, where is the second solution hiding?
+But this physical perfection presents us with a mathematical puzzle. If we only have one root, $r$, do we only get one solution, $y_1(t) = \exp(rt)$? That can't be right. A second-order equation needs *two* [linearly independent solutions](@keyword=linearly_independent_solutions|lang=en-US|style=Feynman) to form a [general solution](@keyword=general_solution|lang=en-US|style=Feynman), $y(t) = C_1 y_1(t) + C_2 y_2(t)$. This is essential because we need two free constants, $C_1$ and $C_2$, to satisfy two initial conditions, such as the initial position and initial velocity. So, where is the second solution hiding?
 
 ### The Mystery of the Missing Solution
 
-Let's look at the structure. For a repeated root $r$, the [characteristic equation](@article_id:148563) must be a [perfect square](@article_id:635128): $a(s-r)^2 = as^2 - 2ars + ar^2 = 0$. Comparing this to our original $as^2+bs+c=0$, we see that the differential equation itself must have the form:
+Let's look at the structure. For a repeated root $r$, the [characteristic equation](@keyword=characteristic_equation|lang=en-US|style=Feynman) must be a [perfect square](@keyword=perfect_square|lang=en-US|style=Feynman): $a(s-r)^2 = as^2 - 2ars + ar^2 = 0$. Comparing this to our original $as^2+bs+c=0$, we see that the differential equation itself must have the form:
 
 $$
 \frac{d^2y}{dt^2} - 2r\frac{dy}{dt} + r^2y = 0
 $$
 
-We know for a fact that $y_1(t) = \exp(rt)$ is a solution. You can check it yourself. But we are one solution short. It seems to have vanished right at the point where the two [distinct roots](@article_id:266890) of the overdamped case merge into one. This is a clue! Perhaps the missing solution isn't gone, but is instead a "ghost" of the two roots becoming one.
+We know for a fact that $y_1(t) = \exp(rt)$ is a solution. You can check it yourself. But we are one solution short. It seems to have vanished right at the point where the two [distinct roots](@keyword=distinct_roots|lang=en-US|style=Feynman) of the overdamped case merge into one. This is a clue! Perhaps the missing solution isn't gone, but is instead a "ghost" of the two roots becoming one.
 
 ### Finding a Ghost: A Tale of Two Roots Becoming One
 
-Let's explore this idea of merging roots, as inspired by a beautiful limiting argument. Consider a nearly [critically damped system](@article_id:262427)—an [overdamped system](@article_id:176726) where the two [distinct real roots](@article_id:272759) are infinitesimally close. Let its characteristic equation be $s^2 + 2\alpha s + (\alpha^2 - \epsilon^2) = 0$, where $\epsilon$ is a very small positive number. The roots are $s_1 = -\alpha + \epsilon$ and $s_2 = -\alpha - \epsilon$.
+Let's explore this idea of merging roots, as inspired by a beautiful limiting argument. Consider a nearly [critically damped system](@keyword=critically_damped_system|lang=en-US|style=Feynman)—an [overdamped system](@keyword=overdamped_system|lang=en-US|style=Feynman) where the two [distinct real roots](@keyword=distinct_real_roots|lang=en-US|style=Feynman) are infinitesimally close. Let its characteristic equation be $s^2 + 2\alpha s + (\alpha^2 - \epsilon^2) = 0$, where $\epsilon$ is a very small positive number. The roots are $s_1 = -\alpha + \epsilon$ and $s_2 = -\alpha - \epsilon$.
 
 The two fundamental solutions are $y_1(t) = \exp((-\alpha + \epsilon)t)$ and $y_2(t) = \exp((-\alpha - \epsilon)t)$. As $\epsilon \to 0$, both of these solutions converge to the same function, $\exp(-\alpha t)$. This is why we "lose" a solution.
 
@@ -68,7 +68,7 @@ And there it is! The second solution, the one we were missing, appears as if by 
 
 ### A More Formal Confirmation: Reduction of Order
 
-This limiting argument is beautiful and intuitive, but can we prove this result more directly? Yes, using a powerful technique called **[reduction of order](@article_id:140065)**. This method is a brute-force way of finding a second solution if you already know a first one.
+This limiting argument is beautiful and intuitive, but can we prove this result more directly? Yes, using a powerful technique called **[reduction of order](@keyword=reduction_of_order|lang=en-US|style=Feynman)**. This method is a brute-force way of finding a second solution if you already know a first one.
 
 Let's say we have our equation for a repeated root $r$: $y'' - 2ry' + r^2y = 0$. We know one solution is $y_1(t) = \exp(rt)$. We will guess that the second solution has the form $y_2(t) = v(t) y_1(t) = v(t)\exp(rt)$ for some unknown function $v(t)$. We just have to find the $v(t)$ that makes this work.
 
@@ -84,7 +84,7 @@ So our second solution is $y_2(t) = (C_1 t + C_2)\exp(rt) = C_1 t\exp(rt) + C_2\
 
 ### Putting It All Together: The Grand Synthesis
 
-So, we have our principle: for a second-order equation whose [characteristic equation](@article_id:148563) has a repeated root $r$, the [general solution](@article_id:274512) is:
+So, we have our principle: for a second-order equation whose [characteristic equation](@keyword=characteristic_equation|lang=en-US|style=Feynman) has a repeated root $r$, the [general solution](@keyword=general_solution|lang=en-US|style=Feynman) is:
 
 $$
 y(t) = (C_1 + C_2 t)\exp(rt)
@@ -92,14 +92,14 @@ $$
 
 This simple form is incredibly powerful. Given any initial position $y(0)$ and initial velocity $y'(0)$, we can always find a unique pair of constants $C_1$ and $C_2$ that describe the system's entire future.
 
-The two parts of our solution, $\exp(rt)$ and $t\exp(rt)$, are guaranteed to be **linearly independent**. We can formally prove this by calculating their **Wronskian**, a determinant that tests for independence. For our two solutions, the Wronskian $W(t) = \exp(2rt)$, which is never zero, confirming they form a robust basis for our [solution space](@article_id:199976).
+The two parts of our solution, $\exp(rt)$ and $t\exp(rt)$, are guaranteed to be **linearly independent**. We can formally prove this by calculating their **Wronskian**, a determinant that tests for independence. For our two solutions, the Wronskian $W(t) = \exp(2rt)$, which is never zero, confirming they form a robust basis for our [solution space](@keyword=solution_space|lang=en-US|style=Feynman).
 
-This underlying structure is universal. If you observe a system whose motion follows $x(t) = (C_1 + C_2 t)\exp(5t)$, you can work backward and deduce that its governing ODE must have a [characteristic equation](@article_id:148563) of $(r-5)^2=0$, meaning the ODE is $x'' - 10x' + 25x=0$. The pattern holds even for higher-order equations. If a characteristic root $r=1$ appears with multiplicity 3, it contributes three solutions: $\exp(t)$, $t\exp(t)$, and $t^2\exp(t)$. A beautiful, simple pattern emerges from the repetition.
+This underlying structure is universal. If you observe a system whose motion follows $x(t) = (C_1 + C_2 t)\exp(5t)$, you can work backward and deduce that its governing ODE must have a [characteristic equation](@keyword=characteristic_equation|lang=en-US|style=Feynman) of $(r-5)^2=0$, meaning the ODE is $x'' - 10x' + 25x=0$. The pattern holds even for higher-order equations. If a characteristic root $r=1$ appears with multiplicity 3, it contributes three solutions: $\exp(t)$, $t\exp(t)$, and $t^2\exp(t)$. A beautiful, simple pattern emerges from the repetition.
 
 ### The Shape of Critical Damping
 
-Let's return to our physical robotic arm, which is given a sharp kick at its [equilibrium position](@article_id:271898). Its motion is described by $\theta(t) = v_0 t \exp(-\beta t)$. What does this look like? Initially, for small $t$, the $\exp(-\beta t)$ term is close to 1, so the motion is dominated by the linear term $v_0 t$—the angle increases. But as time goes on, the powerful [exponential decay](@article_id:136268) takes over, pulling the angle back down towards zero.
+Let's return to our physical robotic arm, which is given a sharp kick at its [equilibrium position](@keyword=equilibrium_position|lang=en-US|style=Feynman). Its motion is described by $\theta(t) = v_0 t \exp(-\beta t)$. What does this look like? Initially, for small $t$, the $\exp(-\beta t)$ term is close to 1, so the motion is dominated by the linear term $v_0 t$—the angle increases. But as time goes on, the powerful [exponential decay](@keyword=exponential_decay|lang=en-US|style=Feynman) takes over, pulling the angle back down towards zero.
 
 The result is a single smooth hump. The arm moves away from equilibrium, reaches a maximum displacement at a specific time, and then glides smoothly back to its resting position. We can find exactly when this peak occurs by setting the velocity $\theta'(t)$ to zero. For this specific case, the peak happens at $t=1/\beta$. This sort of prediction—finding the exact time or value of a maximum displacement—is one of the key practical uses of solving these equations.
 
-The small factor of $t$ that emerges from the mathematics of repeated roots is no mere technicality. It is the very thing that gives [critical damping](@article_id:154965) its characteristic shape—the initial rise before the ultimate exponential decay. It is the signature of a system perfectly balanced, returning home as quickly as the laws of physics will allow.
+The small factor of $t$ that emerges from the mathematics of repeated roots is no mere technicality. It is the very thing that gives [critical damping](@keyword=critical_damping|lang=en-US|style=Feynman) its characteristic shape—the initial rise before the ultimate exponential decay. It is the signature of a system perfectly balanced, returning home as quickly as the laws of physics will allow.

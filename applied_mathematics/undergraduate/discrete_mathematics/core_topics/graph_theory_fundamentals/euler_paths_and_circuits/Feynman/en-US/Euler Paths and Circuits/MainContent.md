@@ -9,7 +9,7 @@ So, we've been introduced to a rather charming puzzle, one that has captivated m
 
 ### The Secret of the Intersections
 
-Imagine you're a security robot on patrol, tasked with traversing every corridor of a corporate campus exactly once . Let's think about what happens at any given corridor junction, which we'll call a **vertex**. The corridors are the **edges**.
+Imagine you're a security robot on patrol, tasked with traversing every corridor of a corporate campus exactly once [@problem_id:1368261]. Let's think about what happens at any given corridor junction, which we'll call a **vertex**. The corridors are the **edges**.
 
 Now, consider a junction that is *neither* your starting point nor your destination. Every time your patrol route brings you *into* this junction through one corridor, you must then *leave* it through a different, unused corridor. You arrive, you depart. One edge in, one edge out. This process forms a pair. If you pass through this junction multiple times, you'll use up pairs of corridors each time: in-out, in-out, in-out. Since your duty is to use *every* corridor connected to this junction, the total number of corridors meeting there must be perfectly divisible into these pairs. This leads to a startlingly simple conclusion: **any vertex that is not a start or end point must have an even number of connections.** We call this number the **degree** of the vertex.
 
@@ -21,13 +21,13 @@ By the same token, the final destination, junction $v$, is where your patrol end
 
 This gives us our first grand rule, the key that unlocks the puzzle:
 
-*   **For an open path (an Euler Path),** which starts at one point and ends at another, there must be exactly two vertices with an odd degree: the start point and the end point. All other vertices must have an even degree. 
+*   **For an open path (an Euler Path),** which starts at one point and ends at another, there must be exactly two vertices with an odd degree: the start point and the end point. All other vertices must have an even degree. [@problem_id:1368284]
 
 What if you need to end up back where you started, forming a closed loop or an **Euler Circuit**? In this case, there are no "special" start or end points. Even the initial vertex, where you begin, must have its first "departure" eventually balanced by a final "arrival" at the end of the tour. Every vertex, without exception, behaves as an intermediate point. Every arrival is matched by a departure. This means:
 
-*   **For a closed loop (an Euler Circuit),** which starts and ends at the same point, *every single vertex* must have an even degree. 
+*   **For a closed loop (an Euler Circuit),** which starts and ends at the same point, *every single vertex* must have an even degree. [@problem_id:1368289]
 
-Let's test this. Consider a network of five plazas in a city . We count the connections for each: Plaza A has 2, B has 3, C has 4, D has 3, and E has 2. We see two odd-degree plazas, B and D. Our rule predicts that an efficient inspection walk is possible, but it *must* start at B and end at D, or vice-versa. A walk starting anywhere else is doomed to fail! Similarly, in a server network designed as a perfect cube, every server is connected to three others. All eight vertices have an odd degree (3). Eight is certainly more than two, so our rule tells us instantly that a full traversal is impossible .
+Let's test this. Consider a network of five plazas in a city [@problem_id:1368284]. We count the connections for each: Plaza A has 2, B has 3, C has 4, D has 3, and E has 2. We see two odd-degree plazas, B and D. Our rule predicts that an efficient inspection walk is possible, but it *must* start at B and end at D, or vice-versa. A walk starting anywhere else is doomed to fail! Similarly, in a server network designed as a perfect cube, every server is connected to three others. All eight vertices have an odd degree (3). Eight is certainly more than two, so our rule tells us instantly that a full traversal is impossible [@problem_id:1368290].
 
 ### The Law of Evenly Paired Odds
 
@@ -35,17 +35,17 @@ You might be wondering: why only zero or two odd-degree vertices? Why not one? O
 
 It turns out, the answer is a resounding *no*. There is a beautifully simple, fundamental law at play, often called the **Handshaking Lemma**. Imagine a party where people are shaking hands. Each handshake involves two people. Now, if you ask everyone, "How many hands did you shake?" and sum up all the answers, the total must be an even number, because it's simply twice the total number of handshakes that occurred.
 
-In our graph, the vertices are the people and the edges are the handshakes. The [degree of a vertex](@article_id:260621) is how many "handshakes" it was involved in. So, if we sum the degrees of all vertices in *any* graph, the result is always twice the total number of edges:
+In our graph, the vertices are the people and the edges are the handshakes. The [degree of a vertex](@keyword=degree_of_a_vertex|lang=en-US|style=Feynman) is how many "handshakes" it was involved in. So, if we sum the degrees of all vertices in *any* graph, the result is always twice the total number of edges:
 
 $$ \sum_{v \in V} \deg(v) = 2|E| $$
 
 The right side of this equation, $2|E|$, is guaranteed to be an even number. Therefore, the sum on the left side must also be even. Now think about what kinds of numbers can sum to an even total. If you add up a collection of even numbers, the result is even. If you add up an even number of odd numbers, the result is also even. But if you try to add up an *odd* number of odd numbers, the result will always be odd.
 
-This means a graph cannot have exactly one odd-degree vertex, or three, or five, or any odd number of them. The number of odd-degree vertices must itself be even!  This is why the only possibilities for an Euler path are 0 or 2 odd-degree vertices. A network with, say, 4 or 6 odd-degree vertices is constructible, but it will not have a single, continuous path that covers all edges. This simple law of sums dictates the very possibility of our journey.
+This means a graph cannot have exactly one odd-degree vertex, or three, or five, or any odd number of them. The number of odd-degree vertices must itself be even! [@problem_id:1368306] This is why the only possibilities for an Euler path are 0 or 2 odd-degree vertices. A network with, say, 4 or 6 odd-degree vertices is constructible, but it will not have a single, continuous path that covers all edges. This simple law of sums dictates the very possibility of our journey.
 
 ### One-Way Streets and Unbreakable Loops
 
-The world isn't always a two-way street. What if our network consists of one-way routes, as in a city's road system or a drone delivery network?  Can we still find an Euler circuit?
+The world isn't always a two-way street. What if our network consists of one-way routes, as in a city's road system or a drone delivery network? [@problem_id:1368256] Can we still find an Euler circuit?
 
 The underlying principle remains the same, but it becomes more refined. For a journey that returns to its start, at any hub you visit, the number of times you *enter* it must equal the number of times you *leave* it. We now distinguish between **in-degree** (number of incoming edges) and **out-degree** (number of outgoing edges). For an Euler circuit to exist in a directed graph, a simple condition must hold for every single vertex:
 
@@ -53,7 +53,7 @@ $$ \deg^{-}(v) = \deg^{+}(v) $$
 
 The flow into any point must precisely balance the flow out. If even one hub has, say, two incoming routes but three outgoing, a complete, closed tour is impossible. You'd either run out of ways to leave or arrive one too many times.
 
-There's one more subtle but crucial condition: **connectivity**. It seems obvious that you can't trace a picture in one go if it's in two separate, disconnected pieces. But there's a stronger idea here related to [network robustness](@article_id:146304). Consider an edge that is a **bridge**—a connection whose removal would split the network into two pieces .
+There's one more subtle but crucial condition: **connectivity**. It seems obvious that you can't trace a picture in one go if it's in two separate, disconnected pieces. But there's a stronger idea here related to [network robustness](@keyword=network_robustness|lang=en-US|style=Feynman). Consider an edge that is a **bridge**—a connection whose removal would split the network into two pieces [@problem_id:1368287].
 
 If a graph has an Euler circuit, it forms a single, massive, unbreakable loop. If you were to travel this circuit and snip any single edge you've traversed, the rest of the circuit still forms a continuous path between the two ends of the snipped edge. This means no edge in an Euler circuit can be a bridge. In other words, a graph must be **2-edge-connected** (you have to remove at least two edges to disconnect it) to have an Euler circuit.
 
@@ -61,7 +61,7 @@ However, an open Euler *path* can absolutely have bridges. A simple path of five
 
 ### From Principles to Blueprints
 
-These principles aren't just for solving puzzles; they are powerful tools for design and optimization. Imagine you're tasked with unifying five separate zones of a corporate campus into a single network for a security robot that needs to perform one continuous, closed-loop patrol .
+These principles aren't just for solving puzzles; they are powerful tools for design and optimization. Imagine you're tasked with unifying five separate zones of a corporate campus into a single network for a security robot that needs to perform one continuous, closed-loop patrol [@problem_id:1368320].
 
 You'd audit each zone:
 *   Zone 1 and 2 are already perfect: all intersections have even connections. They are "Eulerian."

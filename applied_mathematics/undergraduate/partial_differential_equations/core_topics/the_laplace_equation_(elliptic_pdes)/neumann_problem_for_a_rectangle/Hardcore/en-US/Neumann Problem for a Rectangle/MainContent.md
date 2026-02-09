@@ -1,9 +1,9 @@
 ## Introduction
 Partial differential equations (PDEs) are the mathematical language of the physical world, describing everything from heat flow to fluid dynamics. A crucial step in solving a PDE is specifying its behavior at the boundaries of its domain. While the Dirichlet problem, which prescribes the value of a function on the boundary, is a common starting point, many physical systems are defined not by a fixed value but by a fixed flux—the rate at which a quantity flows across the boundary. This scenario gives rise to the Neumann problem.
 
-The Neumann problem introduces unique mathematical challenges and physical insights not present in its Dirichlet counterpart. It forces us to confront fundamental questions about the very [existence and uniqueness of solutions](@entry_id:177406). This article provides a comprehensive exploration of the Neumann problem within the fundamental setting of a rectangular domain.
+The Neumann problem introduces unique mathematical challenges and physical insights not present in its Dirichlet counterpart. It forces us to confront fundamental questions about the very existence and uniqueness of solutions. This article provides a comprehensive exploration of the Neumann problem within the fundamental setting of a rectangular domain.
 
-Across three chapters, you will build a robust understanding of this important [boundary value problem](@entry_id:138753). In "Principles and Mechanisms," we will dissect the mathematical structure, uncovering the critical compatibility condition for existence, the reason solutions are only unique up to a constant, and how the [method of separation of variables](@entry_id:197320) naturally leads to a cosine series solution. In "Applications and Interdisciplinary Connections," we will see how this abstract framework models real-world phenomena in thermodynamics, [fluid mechanics](@entry_id:152498), and even [quantum chaos](@entry_id:139638). Finally, "Hands-On Practices" will allow you to apply these concepts to concrete problems, solidifying your theoretical knowledge.
+Across three chapters, you will build a robust understanding of this important boundary value problem. In "Principles and Mechanisms," we will dissect the mathematical structure, uncovering the critical compatibility condition for existence, the reason solutions are only unique up to a constant, and how the method of separation of variables naturally leads to a cosine series solution. In "Applications and Interdisciplinary Connections," we will see how this abstract framework models real-world phenomena in thermodynamics, fluid mechanics, and even quantum chaos. Finally, "Hands-On Practices" will allow you to apply these concepts to concrete problems, solidifying your theoretical knowledge.
 
 ## Principles and Mechanisms
 
@@ -11,29 +11,29 @@ In this chapter, we delve into the fundamental principles and solution mechanism
 
 ### The Neumann Boundary Condition: Flux and Geometry
 
-The Neumann boundary condition is a mathematical statement about the flux of a quantity across a domain's boundary. In physical contexts, it models phenomena where the flow rate, rather than the potential itself, is controlled. For instance, in heat transfer, it represents a prescribed heat flux, with a [zero-flux condition](@entry_id:182067) corresponding to a perfectly [insulated boundary](@entry_id:162724). In electrostatics, it specifies the normal component of the electric field, which is related to the [surface charge density](@entry_id:272693).
+The Neumann boundary condition is a mathematical statement about the flux of a quantity across a domain's boundary. In physical contexts, it models phenomena where the flow rate, rather than the potential itself, is controlled. For instance, in heat transfer, it represents a prescribed heat flux, with a zero-flux condition corresponding to a perfectly insulated boundary. In electrostatics, it specifies the normal component of the electric field, which is related to the surface charge density.
 
 Mathematically, for a function $u(x,y)$ on a domain $R$ with boundary $\partial R$, the Neumann condition is expressed as:
 $$
 \frac{\partial u}{\partial n} = g(x,y) \quad \text{for } (x,y) \in \partial R
 $$
-Here, $\hat{n}$ is the outward-pointing [unit normal vector](@entry_id:178851) to the boundary, and $\frac{\partial u}{\partial n}$ is the directional derivative of $u$ in the direction of $\hat{n}$. This derivative can be computed as the dot product of the gradient of $u$ and the [normal vector](@entry_id:264185):
+Here, $\hat{n}$ is the outward-pointing unit normal vector to the boundary, and $\frac{\partial u}{\partial n}$ is the directional derivative of $u$ in the direction of $\hat{n}$. This derivative can be computed as the dot product of the gradient of $u$ and the normal vector:
 $$
 \frac{\partial u}{\partial n} = \nabla u \cdot \hat{n}
 $$
-The special case where $g(x,y) = 0$ is known as the **homogeneous Neumann condition**. It has a particularly clear geometric interpretation. The condition $\nabla u \cdot \hat{n} = 0$ implies that at any point on the boundary, the [gradient vector](@entry_id:141180) $\nabla u$ is orthogonal to the [normal vector](@entry_id:264185) $\hat{n}$. Since the normal vector is, by definition, perpendicular to the boundary curve at that point, the [gradient vector](@entry_id:141180) must be tangent to the boundary . As the [gradient vector](@entry_id:141180) always points in the direction of the [steepest ascent](@entry_id:196945) of the function $u$, this means that the function's value is not changing as one moves directly away from or into the domain. Furthermore, since level curves of a function are always perpendicular to its gradient, the homogeneous Neumann condition implies that the [level curves](@entry_id:268504) of the solution $u(x,y)$ intersect the boundary at a right angle.
+The special case where $g(x,y) = 0$ is known as the **homogeneous Neumann condition**. It has a particularly clear geometric interpretation. The condition $\nabla u \cdot \hat{n} = 0$ implies that at any point on the boundary, the gradient vector $\nabla u$ is orthogonal to the normal vector $\hat{n}$. Since the normal vector is, by definition, perpendicular to the boundary curve at that point, the gradient vector must be tangent to the boundary [@problem_id:2120621]. As the gradient vector always points in the direction of the steepest ascent of the function $u$, this means that the function's value is not changing as one moves directly away from or into the domain. Furthermore, since level curves of a function are always perpendicular to its gradient, the homogeneous Neumann condition implies that the level curves of the solution $u(x,y)$ intersect the boundary at a right angle.
 
 ### The Compatibility Condition for Existence
 
-A defining feature of the Neumann problem is that a solution does not exist for arbitrary data. There is a fundamental constraint, known as the **compatibility condition** or **[solvability condition](@entry_id:167455)**, that relates the [source term](@entry_id:269111) within the domain to the flux across its boundary.
+A defining feature of the Neumann problem is that a solution does not exist for arbitrary data. There is a fundamental constraint, known as the **compatibility condition** or **solvability condition**, that relates the source term within the domain to the flux across its boundary.
 
-We can develop an intuitive understanding of this condition from a physical standpoint. Consider the Poisson equation $\nabla^2 u = f(x,y)$ as a model for [steady-state heat distribution](@entry_id:167804), where $f(x,y)$ represents an internal heat source (if $f \lt 0$) or sink (if $f \gt 0$), and $\frac{\partial u}{\partial n} = g$ represents the heat flux across the boundary. For a steady state to exist, the total heat generated within the domain per unit time must be perfectly balanced by the total heat flowing out through the boundary. If there is a net influx of heat (generation outweighs outflow), the total energy within the plate will continuously increase, and a steady, time-independent temperature distribution is impossible .
+We can develop an intuitive understanding of this condition from a physical standpoint. Consider the Poisson equation $\nabla^2 u = f(x,y)$ as a model for steady-state heat distribution, where $f(x,y)$ represents an internal heat source (if $f \lt 0$) or sink (if $f \gt 0$), and $\frac{\partial u}{\partial n} = g$ represents the heat flux across the boundary. For a steady state to exist, the total heat generated within the domain per unit time must be perfectly balanced by the total heat flowing out through the boundary. If there is a net influx of heat (generation outweighs outflow), the total energy within the plate will continuously increase, and a steady, time-independent temperature distribution is impossible [@problem_id:2120587].
 
 This physical principle is formalized using the Divergence Theorem. By integrating the Poisson equation $\nabla^2 u = f$ over the entire domain $R$, we get:
 $$
 \iint_R \nabla^2 u \, dA = \iint_R f(x,y) \, dA
 $$
-The Divergence Theorem (which is Green's second identity in this context) allows us to convert the integral of the Laplacian into a boundary integral of the [normal derivative](@entry_id:169511):
+The Divergence Theorem (which is Green's second identity in this context) allows us to convert the integral of the Laplacian into a boundary integral of the normal derivative:
 $$
 \iint_R \nabla \cdot (\nabla u) \, dA = \oint_{\partial R} \nabla u \cdot \hat{n} \, ds = \oint_{\partial R} \frac{\partial u}{\partial n} \, ds
 $$
@@ -45,13 +45,13 @@ This equation states that the total source integrated over the domain must equal
 $$
 \oint_{\partial R} g(x,y) \, ds = 0
 $$
-This means that for Laplace's equation, a [steady-state solution](@entry_id:276115) only exists if the net flux across the entire boundary is zero. This condition must be verified before attempting to solve a Neumann problem. For example, if we are given a Poisson problem $\Delta u = x+y$ on a rectangle $[0, a] \times [0, b]$ with specified flux $g(x,y)$ on the boundary, the solvability of the problem may impose constraints on the parameters within the function $g$ .
+This means that for Laplace's equation, a steady-state solution only exists if the net flux across the entire boundary is zero. This condition must be verified before attempting to solve a Neumann problem. For example, if we are given a Poisson problem $\Delta u = x+y$ on a rectangle $[0, a] \times [0, b]$ with specified flux $g(x,y)$ on the boundary, the solvability of the problem may impose constraints on the parameters within the function $g$ [@problem_id:2120574].
 
 ### Non-Uniqueness of Solutions
 
 Another critical distinction from the Dirichlet problem is the uniqueness of the solution. While a Dirichlet problem for Laplace's equation on a bounded domain has a unique solution, a Neumann problem does not.
 
-If $u_1(x,y)$ is a solution to the Neumann problem $\nabla^2 u = f$ with $\frac{\partial u}{\partial n} = g$, consider the function $u_2(x,y) = u_1(x,y) + C$, where $C$ is any arbitrary constant. The Laplacian of $u_2$ is $\nabla^2 u_2 = \nabla^2 u_1 + \nabla^2 C = f + 0 = f$. The [normal derivative](@entry_id:169511) is $\frac{\partial u_2}{\partial n} = \frac{\partial u_1}{\partial n} + \frac{\partial C}{\partial n} = g + 0 = g$. Thus, $u_2(x,y)$ is also a solution. This means that if a solution to a Neumann problem exists, it is only unique up to an additive constant.
+If $u_1(x,y)$ is a solution to the Neumann problem $\nabla^2 u = f$ with $\frac{\partial u}{\partial n} = g$, consider the function $u_2(x,y) = u_1(x,y) + C$, where $C$ is any arbitrary constant. The Laplacian of $u_2$ is $\nabla^2 u_2 = \nabla^2 u_1 + \nabla^2 C = f + 0 = f$. The normal derivative is $\frac{\partial u_2}{\partial n} = \frac{\partial u_1}{\partial n} + \frac{\partial C}{\partial n} = g + 0 = g$. Thus, $u_2(x,y)$ is also a solution. This means that if a solution to a Neumann problem exists, it is only unique up to an additive constant.
 
 We can prove this more formally. Suppose $u_1$ and $u_2$ are two distinct solutions to the same Neumann problem. Let their difference be $w = u_1 - u_2$. Then $w$ must satisfy the homogeneous problem:
 $$
@@ -68,11 +68,11 @@ Substituting the conditions for $w$, this simplifies to:
 $$
 \iint_R |\nabla w|^2 \, dA = 0
 $$
-Since $|\nabla w|^2$ is a non-negative continuous function, its integral can only be zero if the integrand itself is identically zero throughout the domain. Therefore, $\nabla w = 0$ everywhere in $R$, which implies that $w(x,y)$ must be a constant . This confirms that any two solutions to the same Neumann problem can differ only by a constant. Consequently, the general solution to a Neumann problem is a [particular solution](@entry_id:149080) plus an arbitrary constant, $u(x,y) = u_p(x,y) + C$ . To specify a single, unique solution, one must impose an additional condition, such as fixing the value of the potential at a single point (e.g., $u(0,0)=0$) or specifying the average value of the solution over the domain.
+Since $|\nabla w|^2$ is a non-negative continuous function, its integral can only be zero if the integrand itself is identically zero throughout the domain. Therefore, $\nabla w = 0$ everywhere in $R$, which implies that $w(x,y)$ must be a constant [@problem_id:2120591]. This confirms that any two solutions to the same Neumann problem can differ only by a constant. Consequently, the general solution to a Neumann problem is a particular solution plus an arbitrary constant, $u(x,y) = u_p(x,y) + C$ [@problem_id:2120623]. To specify a single, unique solution, one must impose an additional condition, such as fixing the value of the potential at a single point (e.g., $u(0,0)=0$) or specifying the average value of the solution over the domain.
 
 ### Separation of Variables and the Cosine Series
 
-The [method of separation of variables](@entry_id:197320) is a powerful technique for [solving partial differential equations](@entry_id:136409) on rectangular domains. For the Neumann problem, the choice of basis functions is dictated by the boundary conditions.
+The method of separation of variables is a powerful technique for solving partial differential equations on rectangular domains. For the Neumann problem, the choice of basis functions is dictated by the boundary conditions.
 
 Let's consider Laplace's equation, $u_{xx} + u_{yy} = 0$, on a rectangle $[0, a] \times [0, b]$ with homogeneous Neumann conditions on the vertical sides:
 $$
@@ -82,41 +82,41 @@ We seek separated solutions of the form $u(x,y) = X(x)Y(y)$. Substituting this i
 $$
 X'(0)Y(y) = 0 \quad \text{and} \quad X'(a)Y(y) = 0
 $$
-For a non-trivial solution, we require $Y(y) \not\equiv 0$, which implies that the function $X(x)$ must satisfy the boundary conditions $X'(0) = 0$ and $X'(a) = 0$ .
+For a non-trivial solution, we require $Y(y) \not\equiv 0$, which implies that the function $X(x)$ must satisfy the boundary conditions $X'(0) = 0$ and $X'(a) = 0$ [@problem_id:2120613].
 
 The separation of variables process leads to the ordinary differential equation $X''(x) + \lambda X(x) = 0$. The eigenfunctions of this Sturm-Liouville problem with the boundary conditions $X'(0)=0$ and $X'(a)=0$ are found to be:
 $$
 X_n(x) = \cos\left(\frac{n\pi x}{a}\right) \quad \text{for } n = 0, 1, 2, \dots
 $$
-with corresponding eigenvalues $\lambda_n = (\frac{n\pi}{a})^2$. This is the fundamental reason why the **Fourier cosine series** is the natural choice for representing solutions to problems with homogeneous Neumann conditions on the corresponding boundaries . The basis functions themselves satisfy the derivative-zero condition.
+with corresponding eigenvalues $\lambda_n = (\frac{n\pi}{a})^2$. This is the fundamental reason why the **Fourier cosine series** is the natural choice for representing solutions to problems with homogeneous Neumann conditions on the corresponding boundaries [@problem_id:2120568]. The basis functions themselves satisfy the derivative-zero condition.
 
-By applying the same logic to the $y$-direction with boundaries at $y=0$ and $y=b$, we find that the complete set of basis functions, or **eigenfunctions**, for the Laplacian operator on the rectangle $[0,a] \times [0,b]$ with homogeneous Neumann conditions on all four sides are given by the product of the individual cosine functions :
+By applying the same logic to the $y$-direction with boundaries at $y=0$ and $y=b$, we find that the complete set of basis functions, or **eigenfunctions**, for the Laplacian operator on the rectangle $[0,a] \times [0,b]$ with homogeneous Neumann conditions on all four sides are given by the product of the individual cosine functions [@problem_id:2120592]:
 $$
 \phi_{m,n}(x,y) = \cos\left(\frac{m\pi x}{a}\right)\cos\left(\frac{n\pi y}{b}\right) \quad \text{for } m, n = 0, 1, 2, \dots
 $$
-Any sufficiently [smooth function](@entry_id:158037) satisfying these boundary conditions can be represented as a superposition of these [eigenfunctions](@entry_id:154705).
+Any sufficiently smooth function satisfying these boundary conditions can be represented as a superposition of these eigenfunctions.
 
 ### The Constant Eigenfunction and Physical Equilibrium
 
-A noteworthy member of this set of [eigenfunctions](@entry_id:154705) is the one corresponding to $m=n=0$, which is simply $\phi_{0,0}(x,y) = 1$. This constant eigenfunction is associated with the eigenvalue $\lambda_{0,0} = 0$. It plays a profound role in both the mathematical structure and the physical interpretation of the solution.
+A noteworthy member of this set of eigenfunctions is the one corresponding to $m=n=0$, which is simply $\phi_{0,0}(x,y) = 1$. This constant eigenfunction is associated with the eigenvalue $\lambda_{0,0} = 0$. It plays a profound role in both the mathematical structure and the physical interpretation of the solution.
 
 Mathematically, the coefficient of this constant term in a series expansion represents the spatial average of the function. For a solution $u(x,y)$, its average value over the rectangle is:
 $$
 \bar{u} = \frac{1}{ab}\iint_R u(x,y) \, dA
 $$
-This average value is precisely the coefficient of the $\phi_{0,0}$ mode in its [eigenfunction expansion](@entry_id:151460).
+This average value is precisely the coefficient of the $\phi_{0,0}$ mode in its eigenfunction expansion.
 
-Physically, this mode often corresponds to a conserved quantity. Consider the time-dependent heat equation, $u_t = k \nabla^2 u$, on a perfectly insulated rectangle. Since the [net heat flux](@entry_id:155652) across the boundary is zero, the total heat energy within the rectangle is conserved. A general solution can be written as a series of [eigenfunctions](@entry_id:154705), with each term having a time-dependent exponential decay:
+Physically, this mode often corresponds to a conserved quantity. Consider the time-dependent heat equation, $u_t = k \nabla^2 u$, on a perfectly insulated rectangle. Since the net heat flux across the boundary is zero, the total heat energy within the rectangle is conserved. A general solution can be written as a series of eigenfunctions, with each term having a time-dependent exponential decay:
 $$
 u(x,y,t) = \sum_{m=0}^\infty \sum_{n=0}^\infty A_{m,n} \cos\left(\frac{m\pi x}{a}\right)\cos\left(\frac{n\pi y}{b}\right) \exp(-\lambda_{m,n} k t)
 $$
-where $\lambda_{m,n} = (\frac{m\pi}{a})^2 + (\frac{n\pi}{b})^2$. As $t \to \infty$, every term for which $\lambda_{m,n} > 0$ decays to zero. The only term that survives is the one for which $\lambda_{0,0}=0$, which is the constant mode $A_{0,0}$. Therefore, the temperature distribution approaches a constant value as $t \to \infty$. This equilibrium temperature is the spatial average of the initial temperature distribution, a direct consequence of the [conservation of energy](@entry_id:140514) .
+where $\lambda_{m,n} = (\frac{m\pi}{a})^2 + (\frac{n\pi}{b})^2$. As $t \to \infty$, every term for which $\lambda_{m,n} > 0$ decays to zero. The only term that survives is the one for which $\lambda_{0,0}=0$, which is the constant mode $A_{0,0}$. Therefore, the temperature distribution approaches a constant value as $t \to \infty$. This equilibrium temperature is the spatial average of the initial temperature distribution, a direct consequence of the conservation of energy [@problem_id:2120615].
 
 ### Constructing Solutions: A General Approach
 
-We can now outline a systematic procedure for solving an inhomogeneous Neumann problem for Laplace's equation on a rectangle, such as finding the [electrostatic potential](@entry_id:140313) inside a rectangular tube with specified normal electric fields on the walls .
+We can now outline a systematic procedure for solving an inhomogeneous Neumann problem for Laplace's equation on a rectangle, such as finding the electrostatic potential inside a rectangular tube with specified normal electric fields on the walls [@problem_id:2120603].
 
-1.  **Verify Compatibility:** First, check that the specified boundary data $g(x,y)$ satisfies the compatibility condition $\oint_{\partial R} g \, ds = 0$. If not, no [steady-state solution](@entry_id:276115) exists.
+1.  **Verify Compatibility:** First, check that the specified boundary data $g(x,y)$ satisfies the compatibility condition $\oint_{\partial R} g \, ds = 0$. If not, no steady-state solution exists.
 
 2.  **Choose the Appropriate Series Expansion:** Based on the boundary conditions, choose the direction for the series expansion. For instance, if the conditions at $x=0$ and $x=a$ are homogeneous Neumann conditions ($u_x=0$), expand the solution in a Fourier cosine series in $x$:
     $$

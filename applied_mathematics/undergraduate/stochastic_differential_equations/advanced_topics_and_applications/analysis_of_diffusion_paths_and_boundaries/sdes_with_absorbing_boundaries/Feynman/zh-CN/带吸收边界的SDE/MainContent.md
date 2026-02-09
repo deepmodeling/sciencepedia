@@ -1,42 +1,42 @@
 ## 引言
-在一个随机的世界里，许多过程并非永恒，它们会因触及某个[临界点](@article_id:305080)而迎来终结——就像一只飞蛾飞出窗外，一段旅程便戛然而止。如何用数学语言精确描述这类“终局”事件？[带吸收边界的随机微分方程](@article_id:639207)（SDEs）正是为解决这一问题而生的强大工具。它不仅为物理和金融系统中的终止过程提供了严谨的框架，也为理解生物系统中不可逆转的命运抉择带来了深刻的洞见。
+在一个随机的世界里，许多过程并非永恒，它们会因触及某个[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)而迎来终结——就像一只飞蛾飞出窗外，一段旅程便戛然而止。如何用数学语言精确描述这类“终局”事件？[带吸收边界的随机微分方程](@keyword=sdes_with_absorbing_boundaries|lang=zh-CN|style=Feynman)（SDEs）正是为解决这一问题而生的强大工具。它不仅为物理和金融系统中的终止过程提供了严谨的框架，也为理解生物系统中不可逆转的命运抉择带来了深刻的洞见。
 
 本文将带领你深入探索这个迷人的领域。我们将分三个章节逐步揭开其神秘面纱：
 
-在 **“原理与机制”** 中，我们将建立核心直觉，理解[吸收边界](@article_id:380181)如何通过前后向方程这两种对偶的视角被数学化，并探讨其背后的[无穷小生成元](@article_id:334124)等深刻结构。
+在 **“原理与机制”** 中，我们将建立核心直觉，理解[吸收边界](@keyword=absorbing_boundary|lang=zh-CN|style=Feynman)如何通过前后向方程这两种对偶的视角被数学化，并探讨其背后的[无穷小生成元](@keyword=infinitesimal_generator|lang=zh-CN|style=Feynman)等深刻结构。
 
-接下来，在 **“应用和跨学科联系”** 中，我们将看到这些抽象理论如何在金融期权定价、[细胞命运决定](@article_id:375446)、生态[种群动态](@article_id:296806)等真实世界问题中大放异彩，展现其惊人的普适性。
+接下来，在 **“应用和跨学科联系”** 中，我们将看到这些抽象理论如何在金融期权定价、[细胞命运决定](@keyword=cell_fate_decisions_2|lang=zh-CN|style=Feynman)、生态[种群动态](@keyword=population_dynamics|lang=zh-CN|style=Feynman)等真实世界问题中大放异彩，展现其惊人的普适性。
 
-最后，**“动手实践”** 部分将通过具体问题引导你应用所学知识，计算平均出界时间和[逃逸概率](@article_id:330414)，将理论转化为可操作的技能。
+最后，**“动手实践”** 部分将通过具体问题引导你应用所学知识，计算平均出界时间和[逃逸概率](@keyword=escape_probability|lang=zh-CN|style=Feynman)，将理论转化为可操作的技能。
 
 通过这段旅程，你将掌握一个从根本上理解和量化随机世界中“终结”现象的分析框架。
 
 ## 原理与机制
 
-想象一只在房间里漫无目的飞舞的飞蛾。这个房间有一扇敞开的窗户。飞蛾的飞行轨迹是随机的，充满了不可预测的转折。但有一件事是确定的：一旦它飞出窗外，它就永远不会再回来了。对于我们这些房间内的观察者来说，这只飞蛾的故事在那一刻就结束了。这扇窗户，就是一个**[吸收边界](@article_id:380181)（absorbing boundary）**。
+想象一只在房间里漫无目的飞舞的飞蛾。这个房间有一扇敞开的窗户。飞蛾的飞行轨迹是随机的，充满了不可预测的转折。但有一件事是确定的：一旦它飞出窗外，它就永远不会再回来了。对于我们这些房间内的观察者来说，这只飞蛾的故事在那一刻就结束了。这扇窗户，就是一个**[吸收边界](@keyword=absorbing_boundary|lang=zh-CN|style=Feynman)（absorbing boundary）**。
 
-在[随机过程](@article_id:333307)的数学世界里，我们用一种优雅的方式来描述这种“一去不复返”的情景。我们将随机运动的粒子（比如我们的飞蛾）的轨迹建模为一个**[随机微分方程](@article_id:307037)（SDE）**的解。当这个粒子在一个特定的区域 $D$（房间）内运动时，它的边界 $\partial D$（窗户）可以被设定为吸收性的。这意味着，当粒子第一次碰到边界的那一刻，我们称之为**首次出界时间 (first exit time)**，记作 $\tau$，它的旅程就戛然而止了。在数学上，我们说这个过程被“**杀死 (killed)**”了，粒子被送往一个虚构的“**坟墓状态 (cemetery state)**” $\Delta$，并在那里永远停留。
+在[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)的数学世界里，我们用一种优雅的方式来描述这种“一去不复返”的情景。我们将随机运动的粒子（比如我们的飞蛾）的轨迹建模为一个**[随机微分方程](@keyword=stochastic_differential_equations|lang=zh-CN|style=Feynman)（SDE）**的解。当这个粒子在一个特定的区域 $D$（房间）内运动时，它的边界 $\partial D$（窗户）可以被设定为吸收性的。这意味着，当粒子第一次碰到边界的那一刻，我们称之为**首次出界时间 (first exit time)**，记作 $\tau$，它的旅程就戛然而止了。在数学上，我们说这个过程被“**杀死 (killed)**”了，粒子被送往一个虚构的“**坟墓状态 (cemetery state)**” $\Delta$，并在那里永远停留。
 
-理解[吸收边界](@article_id:380181)的关键在于粒子路径的**连续性**。粒子不会像幽灵一样穿墙而过，也不会瞬间从房间内部跳到外部。它必须实实在在地“接触”到边界。因此，首次出界时间 $\tau$ 也正是首次碰到边界的时间。
+理解[吸收边界](@keyword=absorbing_boundary|lang=zh-CN|style=Feynman)的关键在于粒子路径的**连续性**。粒子不会像幽灵一样穿墙而过，也不会瞬间从房间内部跳到外部。它必须实实在在地“接触”到边界。因此，首次出界时间 $\tau$ 也正是首次碰到边界的时间。
 
-当然，边界不一定都是吸收性的。为了更深刻地理[解吸](@article_id:366022)收，我们可以将它与其他类型的边界做个对比。想象一下，如果窗户是关着的玻璃窗，飞蛾撞上去后会弹回来，继续在房间里飞。这就是一个**[反射边界](@article_id:638830) (reflecting boundary)**，它把粒子“推”回区域内部，不允许其离开。还有一种更奇特的边界，称为**[自然边界](@article_id:347889) (natural boundary)**。这就像一个无限遥远的地平线，粒子无论如何努力，在有限的时间内也几乎不可能到达。它永远在区域内部游荡。[吸收边界](@article_id:380181)的独特之处就在于它的终结性：旅程在此结束，概率在此“泄漏”。
+当然，边界不一定都是吸收性的。为了更深刻地理[解吸](@keyword=desorption|lang=zh-CN|style=Feynman)收，我们可以将它与其他类型的边界做个对比。想象一下，如果窗户是关着的玻璃窗，飞蛾撞上去后会弹回来，继续在房间里飞。这就是一个**[反射边界](@keyword=reflecting_boundary|lang=zh-CN|style=Feynman) (reflecting boundary)**，它把粒子“推”回区域内部，不允许其离开。还有一种更奇特的边界，称为**[自然边界](@keyword=natural_boundary|lang=zh-CN|style=Feynman) (natural boundary)**。这就像一个无限遥远的地平线，粒子无论如何努力，在有限的时间内也几乎不可能到达。它永远在区域内部游荡。[吸收边界](@keyword=absorbing_boundary|lang=zh-CN|style=Feynman)的独特之处就在于它的终结性：旅程在此结束，概率在此“泄漏”。
 
 ### 两种叙事视角：后向与前向方程
 
-对于一个被吸收的[随机过程](@article_id:333307)，我们可以提出两种截然不同但又深刻关联的问题。这两种提问方式，引领我们走向两种强大的数学描述——后向方程和前向方程。这揭示了物理世界中常见的一种深刻的对偶之美。
+对于一个被吸收的[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)，我们可以提出两种截然不同但又深刻关联的问题。这两种提问方式，引领我们走向两种强大的数学描述——后向方程和前向方程。这揭示了物理世界中常见的一种深刻的对偶之美。
 
 #### 后向视角：我该何去何从？
 
 让我们把自己代入到粒子本身。假设你就是那个随机行走的粒子，正身处区域 $D$ 中的某一点 $x$。你向前展望，可能会问一些关乎自身命运的问题：
 
-*   “如果边界的不同部分对应着不同的‘奖励’或‘惩罚’，由一个函数 $g(y)$ 给出，那么从我现在的位置出发，最终撞上边界时，我能获得的[期望](@article_id:311378)奖励是多少？”
+*   “如果边界的不同部分对应着不同的‘奖励’或‘惩罚’，由一个函数 $g(y)$ 给出，那么从我现在的位置出发，最终撞上边界时，我能获得的[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)奖励是多少？”
 *   “从我这里出发，平均需要多长时间才能第一次碰到边界？”
 
-这些问题的答案，都取决于你的起始位置 $x$。令人惊奇的是，这些“[期望值](@article_id:313620)函数”（比如[期望](@article_id:311378)奖励 $u(x)$ 或[期望](@article_id:311378)时间 $v(x)$）都满足一类被称为**后向科尔莫戈罗夫方程 (backward Kolmogorov equation)** 的[偏微分方程](@article_id:301773)。例如，[期望](@article_id:311378)奖励 $u(x) = \mathbb{E}_x[g(X_{\tau_D})]$ 满足方程 $\mathcal{L}u = 0$，而[期望](@article_id:311378)出界时间 $v(x) = \mathbb{E}_x[\tau_D]$ 满足 $\mathcal{L}v = -1$。
+这些问题的答案，都取决于你的起始位置 $x$。令人惊奇的是，这些“[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)函数”（比如[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)奖励 $u(x)$ 或[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)时间 $v(x)$）都满足一类被称为**后向科尔莫戈罗夫方程 (backward Kolmogorov equation)** 的[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)。例如，[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)奖励 $u(x) = \mathbb{E}_x[g(X_{\tau_D})]$ 满足方程 $\mathcal{L}u = 0$，而[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)出界时间 $v(x) = \mathbb{E}_x[\tau_D]$ 满足 $\mathcal{L}v = -1$。
 
-这里的 $\mathcal{L}$ 是一个微分算子，我们称之为过程的**[无穷小生成元](@article_id:334124) (infinitesimal generator)**。你可以把它想象成描述粒子“下一步”倾向的规则。$\mathcal{L}u(x)$ 刻画了当粒子位于 $x$ 点时，[期望值](@article_id:313620) $u$ 的[瞬时变化率](@article_id:301823)。
+这里的 $\mathcal{L}$ 是一个微分算子，我们称之为过程的**[无穷小生成元](@keyword=infinitesimal_generator|lang=zh-CN|style=Feynman) (infinitesimal generator)**。你可以把它想象成描述粒子“下一步”倾向的规则。$\mathcal{L}u(x)$ 刻画了当粒子位于 $x$ 点时，[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman) $u$ 的[瞬时变化率](@keyword=instantaneous_rate_of_change|lang=zh-CN|style=Feynman)。
 
-那么，“吸收”这个行为是如何体现在这个方程里的呢？答案就在边界条件里。对于[期望](@article_id:311378)奖励 $u(x)$，它在边界上的取值必须等于边界上设定的奖励 $g(x)$。这非常直观：如果你一开始就站在边界上，那么你的旅程已经结束，你获得的奖励不多不少，正好就是 $g(x)$。这被称为**[狄利克雷边界条件](@article_id:303237) (Dirichlet boundary condition)**, 即 $u|_{\partial D} = g$。同理，对于[期望](@article_id:311378)时间 $v(x)$，如果你从边界出发，出界时间显然是 $0$，所以它的边界条件就是 $v|_{\partial D} = 0$。
+那么，“吸收”这个行为是如何体现在这个方程里的呢？答案就在边界条件里。对于[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)奖励 $u(x)$，它在边界上的取值必须等于边界上设定的奖励 $g(x)$。这非常直观：如果你一开始就站在边界上，那么你的旅程已经结束，你获得的奖励不多不少，正好就是 $g(x)$。这被称为**[狄利克雷边界条件](@keyword=dirichlet_boundary_conditions|lang=zh-CN|style=Feynman) (Dirichlet boundary condition)**, 即 $u|_{\partial D} = g$。同理，对于[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)时间 $v(x)$，如果你从边界出发，出界时间显然是 $0$，所以它的边界条件就是 $v|_{\partial D} = 0$。
 
 #### 前向视角：粒子们都去哪儿了？
 
@@ -66,6 +66,6 @@ $\mathcal{L}$ 是随机过程的**无穷小生成元 (infinitesimal generator)**
 
 那么，吸收效应体现在哪里呢？答案不在于算子本身的形式，而在于它的**定义域 (domain)**——即它可以作用的函数集合。被杀过程的生成元 $\mathcal{L}^D$ 的一个自然定义域，是那些在边界 $\partial D$ 上取值为零的函数，即满足 $f|_{\partial D} = 0$ 的函数。这是因为，与被杀过程相关的任何物理量，都必须反映出其在边界上被“吸收”或“归零”的现实。
 
-与生成元这个“瞬时”描述相对应的，是一个更“全局”的演化图景，由**马尔可夫半群 (Markov semigroup)** $\{P_t^D\}_{t \ge 0}$ 描绘。算子 $P_t^D$ 就像一个时间演化机器：将函数 $f$ 输入，它会输出在考虑了吸收效应之后，时间 $t$ 后 $f$ 的期望值，即 $P_t^D f(x) = \mathbb{E}_x[f(X_t) \mathbf{1}_{\{t  \tau\}}]$。而生成元 $\mathcal{L}^D$ 不过是这个演化机器在时间零点的[瞬时速度](@article_id:347067)（[导数](@article_id:318324)）。这个[半群](@article_id:314272)的视角也自然地将任何可观测量的[期望值](@article_id:313620)分解为“存活”和“已吸收”两部分的贡献，这正是**强马尔可夫性 (strong Markov property)** 的体现。
+与生成元这个“瞬时”描述相对应的，是一个更“全局”的演化图景，由**马尔可夫半群 (Markov semigroup)** $\{P_t^D\}_{t \ge 0}$ 描绘。算子 $P_t^D$ 就像一个时间演化机器：将函数 $f$ 输入，它会输出在考虑了吸收效应之后，时间 $t$ 后 $f$ 的期望值，即 $P_t^D f(x) = \mathbb{E}_x[f(X_t) \mathbf{1}_{\{t  \tau\}}]$。而生成元 $\mathcal{L}^D$ 不过是这个演化机器在时间零点的[瞬时速度](@keyword=instantaneous_velocity|lang=zh-CN|style=Feynman)（[导数](@keyword=derivative|lang=zh-CN|style=Feynman)）。这个[半群](@keyword=semigroup|lang=zh-CN|style=Feynman)的视角也自然地将任何可观测量的[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)分解为“存活”和“已吸收”两部分的贡献，这正是**强马尔可夫性 (strong Markov property)** 的体现。
 
-从一个简单的飞蛾扑窗故事出发，我们看到了[随机过程](@article_id:333307)如何通过后向与前向两种视角被优美地描述，它们通过[伴随算子](@article_id:300680)联系在一起，其深刻的根源又在于无穷小生成元和它那由[吸收边界](@article_id:380181)所塑造的独特数学结构。这正是数学物理的魅力所在——从具体现象中提炼出普适而和谐的抽象原理。
+从一个简单的飞蛾扑窗故事出发，我们看到了[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)如何通过后向与前向两种视角被优美地描述，它们通过[伴随算子](@keyword=operator_adjoint|lang=zh-CN|style=Feynman)联系在一起，其深刻的根源又在于无穷小生成元和它那由[吸收边界](@keyword=absorbing_boundary|lang=zh-CN|style=Feynman)所塑造的独特数学结构。这正是数学物理的魅力所在——从具体现象中提炼出普适而和谐的抽象原理。

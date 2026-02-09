@@ -1,23 +1,23 @@
 ## Introduction
-In the realm of probability and statistics, few concepts are as fundamental yet as frequently confused as **[statistical independence](@entry_id:150300)** and **uncorrelatedness**. Both describe the relationship, or lack thereof, between random variables, but they do so with crucial differences. A clear understanding of this distinction is not a mere academic exercise; it is essential for the accurate modeling of random phenomena across science and engineering. This article addresses the common misconception that these two terms are interchangeable by systematically dissecting their relationship.
+In the realm of probability and statistics, few concepts are as fundamental yet as frequently confused as **statistical independence** and **uncorrelatedness**. Both describe the relationship, or lack thereof, between random variables, but they do so with crucial differences. A clear understanding of this distinction is not a mere academic exercise; it is essential for the accurate modeling of random phenomena across science and engineering. This article addresses the common misconception that these two terms are interchangeable by systematically dissecting their relationship.
 
-Over the next three chapters, you will gain a rigorous understanding of this topic. The first chapter, **"Principles and Mechanisms,"** will establish the formal mathematical definitions of both concepts, prove that independence always implies uncorrelatedness, and explore the key scenarios—such as symmetric distributions and non-linear dependencies—where the reverse is not true. Next, **"Applications and Interdisciplinary Connections"** will demonstrate the real-world impact of this distinction, showing how the equivalence of the concepts for Gaussian variables is a cornerstone of signal processing and how their divergence enables advanced models in finance and [biomedical engineering](@entry_id:268134). Finally, the **"Hands-On Practices"** section provides a set of targeted problems to solidify your intuition and computational skills, allowing you to directly engage with the principles discussed.
+Over the next three chapters, you will gain a rigorous understanding of this topic. The first chapter, **"Principles and Mechanisms,"** will establish the formal mathematical definitions of both concepts, prove that independence always implies uncorrelatedness, and explore the key scenarios—such as symmetric distributions and non-linear dependencies—where the reverse is not true. Next, **"Applications and Interdisciplinary Connections"** will demonstrate the real-world impact of this distinction, showing how the equivalence of the concepts for Gaussian variables is a cornerstone of signal processing and how their divergence enables advanced models in finance and biomedical engineering. Finally, the **"Hands-On Practices"** section provides a set of targeted problems to solidify your intuition and computational skills, allowing you to directly engage with the principles discussed.
 
 ## Principles and Mechanisms
 
-In the study of stochastic processes, understanding the relationship between multiple random variables is of paramount importance. Two of the most fundamental concepts used to describe these relationships are **[statistical independence](@entry_id:150300)** and **uncorrelatedness**. While colloquially used interchangeably at times, these terms have precise and distinct mathematical meanings. A firm grasp of their definitions, their relationship, and the contexts in which they converge or diverge is essential for the rigorous modeling of random phenomena. This chapter will systematically dissect these concepts, establishing their formal properties and exploring the mechanisms that govern their interplay through a series of illustrative scenarios.
+In the study of stochastic processes, understanding the relationship between multiple random variables is of paramount importance. Two of the most fundamental concepts used to describe these relationships are **statistical independence** and **uncorrelatedness**. While colloquially used interchangeably at times, these terms have precise and distinct mathematical meanings. A firm grasp of their definitions, their relationship, and the contexts in which they converge or diverge is essential for the rigorous modeling of random phenomena. This chapter will systematically dissect these concepts, establishing their formal properties and exploring the mechanisms that govern their interplay through a series of illustrative scenarios.
 
 ### Formal Definitions of Independence and Uncorrelatedness
 
 Let us begin by defining our terms with precision.
 
-**Statistical independence** is the strongest form of non-relationship between two random variables. Two random variables, $X$ and $Y$, are said to be statistically independent if and only if their [joint probability distribution](@entry_id:264835) is the product of their marginal distributions.
+**Statistical independence** is the strongest form of non-relationship between two random variables. Two random variables, $X$ and $Y$, are said to be statistically independent if and only if their joint probability distribution is the product of their marginal distributions.
 
-For [discrete random variables](@entry_id:163471), this means that for all possible values $x$ and $y$ that $X$ and $Y$ can assume, the probability of them occurring together is the product of their individual probabilities:
+For discrete random variables, this means that for all possible values $x$ and $y$ that $X$ and $Y$ can assume, the probability of them occurring together is the product of their individual probabilities:
 $$
 P(X=x, Y=y) = P(X=x) P(Y=y)
 $$
-For [continuous random variables](@entry_id:166541) with [joint probability density function](@entry_id:177840) (PDF) $f_{X,Y}(x,y)$ and marginal PDFs $f_X(x)$ and $f_Y(y)$, independence requires:
+For continuous random variables with joint probability density function (PDF) $f_{X,Y}(x,y)$ and marginal PDFs $f_X(x)$ and $f_Y(y)$, independence requires:
 $$
 f_{X,Y}(x,y) = f_X(x) f_Y(y)
 $$
@@ -35,13 +35,13 @@ Two random variables $X$ and $Y$ are said to be **uncorrelated** if their covari
 $$
 \mathbb{E}[XY] = \mathbb{E}[X]\mathbb{E}[Y]
 $$
-While non-zero covariance indicates a linear [statistical dependence](@entry_id:267552) (positive or negative), zero covariance simply means there is no linear trend relating the two variables.
+While non-zero covariance indicates a linear statistical dependence (positive or negative), zero covariance simply means there is no linear trend relating the two variables.
 
 ### The Unidirectional Relationship: Independence Implies Uncorrelatedness
 
 There is a fixed hierarchy between these two concepts: independence is the stronger condition. If two random variables are independent, they are necessarily uncorrelated, provided their expectations exist.
 
-The proof is direct. If $X$ and $Y$ are independent [continuous random variables](@entry_id:166541), the expectation of their product is:
+The proof is direct. If $X$ and $Y$ are independent continuous random variables, the expectation of their product is:
 $$
 \mathbb{E}[XY] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} xy f_{X,Y}(x,y) \,dx\,dy
 $$
@@ -57,11 +57,11 @@ This directly implies that $\text{Cov}(X,Y) = 0$. A similar argument holds for d
 
 ### The Converse Fallacy: Why Uncorrelatedness Does Not Imply Independence
 
-The most crucial and often subtle aspect of this topic is that the converse is not true. The fact that two variables are uncorrelated does *not* mean they are independent. This is because covariance, by its construction, only captures the linear component of a relationship. A strong, perfectly predictable non-[linear relationship](@entry_id:267880) can exist between two variables even when their covariance is zero. Let us explore the mechanisms that give rise to this phenomenon.
+The most crucial and often subtle aspect of this topic is that the converse is not true. The fact that two variables are uncorrelated does *not* mean they are independent. This is because covariance, by its construction, only captures the linear component of a relationship. A strong, perfectly predictable non-linear relationship can exist between two variables even when their covariance is zero. Let us explore the mechanisms that give rise to this phenomenon.
 
 #### The Role of Symmetry in Masking Dependence
 
-One common mechanism that produces [uncorrelated but dependent](@entry_id:275248) variables is symmetry in the [joint probability distribution](@entry_id:264835). Consider a scenario in which an automated system places a microscopic probe onto a silicon wafer, targeting the origin $(0,0)$. Due to mechanical constraints, the probe tip always lands on one of four locations with equal probability: $(a, 0)$, $(-a, 0)$, $(0, a)$, and $(0, -a)$, for some constant $a \gt 0$. Let the final position be the random vector $(X, Y)$.
+One common mechanism that produces uncorrelated but dependent variables is symmetry in the joint probability distribution. Consider a scenario in which an automated system places a microscopic probe onto a silicon wafer, targeting the origin $(0,0)$. Due to mechanical constraints, the probe tip always lands on one of four locations with equal probability: $(a, 0)$, $(-a, 0)$, $(0, a)$, and $(0, -a)$, for some constant $a \gt 0$. Let the final position be the random vector $(X, Y)$.
 
 Are $X$ and $Y$ independent? A quick check reveals they are not. For instance, $P(X=a, Y=a) = 0$. However, their marginal probabilities are $P(X=a) = 1/4$ and $P(Y=a) = 1/4$. Since $P(X=a, Y=a) \neq P(X=a)P(Y=a)$, the variables are dependent. Indeed, knowing the value of $X$ severely constrains the possible values of $Y$. If $X=a$, then $Y$ must be $0$.
 
@@ -73,11 +73,11 @@ And similarly, $\mathbb{E}[Y]=0$. The expectation of their product is:
 $$
 \mathbb{E}[XY] = (a)(0)(\frac{1}{4}) + (-a)(0)(\frac{1}{4}) + (0)(a)(\frac{1}{4}) + (0)(-a)(\frac{1}{4}) = 0
 $$
-Since $\mathbb{E}[XY] = 0$ and $\mathbb{E}[X]\mathbb{E}[Y] = 0$, we have $\text{Cov}(X,Y) = 0$. The variables are uncorrelated. The [geometric symmetry](@entry_id:189059) of the distribution ensures that the products $xy$ for each outcome cancel each other out in expectation, perfectly hiding the clear dependence. This principle extends to more complex symmetric arrangements, such as a point chosen uniformly from the vertices of a regular octagon centered at the origin. The [rotational symmetry](@entry_id:137077) again ensures zero covariance between the coordinates, despite their clear geometric dependence.
+Since $\mathbb{E}[XY] = 0$ and $\mathbb{E}[X]\mathbb{E}[Y] = 0$, we have $\text{Cov}(X,Y) = 0$. The variables are uncorrelated. The geometric symmetry of the distribution ensures that the products $xy$ for each outcome cancel each other out in expectation, perfectly hiding the clear dependence. This principle extends to more complex symmetric arrangements, such as a point chosen uniformly from the vertices of a regular octagon centered at the origin. The rotational symmetry again ensures zero covariance between the coordinates, despite their clear geometric dependence.
 
 #### Non-linear Functional Dependence
 
-An even more direct way to see this distinction is when one variable is a deterministic, non-linear function of another. Consider a [discrete random variable](@entry_id:263460) $X$ with the probability [mass function](@entry_id:158970) $P(X=-1) = 1/4$, $P(X=0) = 1/2$, and $P(X=1) = 1/4$. Let a second variable $Y$ be defined as $Y = X^2$.
+An even more direct way to see this distinction is when one variable is a deterministic, non-linear function of another. Consider a discrete random variable $X$ with the probability mass function $P(X=-1) = 1/4$, $P(X=0) = 1/2$, and $P(X=1) = 1/4$. Let a second variable $Y$ be defined as $Y = X^2$.
 
 The dependence here is undeniable; $Y$ is completely determined by $X$. They cannot be independent. For example, $P(X=1, Y=1) = P(X=1) = 1/4$. However, the marginal probabilities are $P(X=1) = 1/4$ and $P(Y=1) = P(X=1) + P(X=-1) = 1/2$. Thus, $P(X=1)P(Y=1) = (1/4)(1/2) = 1/8$, which is not equal to $1/4$.
 
@@ -111,17 +111,17 @@ And for the product:
 $$
 \mathbb{E}[UV] = \mathbb{E}[(XY)(XZ)] = \mathbb{E}[X^2 Y Z] = \mathbb{E}[X^2]\mathbb{E}[Y]\mathbb{E}[Z] = \mathbb{E}[X^2] \cdot 0 \cdot 0 = 0
 $$
-Thus, $\text{Cov}(U,V) = 0$. Here, the structure of the products combined with the zero-mean property of the independent components $Y$ and $Z$ results in [zero correlation](@entry_id:270141), despite the clear dependence structure created by the common factor $X$.
+Thus, $\text{Cov}(U,V) = 0$. Here, the structure of the products combined with the zero-mean property of the independent components $Y$ and $Z$ results in zero correlation, despite the clear dependence structure created by the common factor $X$.
 
 ### The Gaussian Equivalence: A Foundational Result
 
-The many examples of [uncorrelated but dependent](@entry_id:275248) variables might suggest that uncorrelatedness is a property of limited utility. However, there is a vast and critically important class of random variables for which the distinction vanishes: **jointly Gaussian** (or normal) random variables.
+The many examples of uncorrelated but dependent variables might suggest that uncorrelatedness is a property of limited utility. However, there is a vast and critically important class of random variables for which the distinction vanishes: **jointly Gaussian** (or normal) random variables.
 
-A collection of random variables $(X_1, X_2, \dots, X_n)$ is said to be jointly Gaussian if any linear combination of them results in a one-dimensional Gaussian random variable. A key property of the multivariate Gaussian distribution is that it is completely specified by two parameters: its [mean vector](@entry_id:266544) $\boldsymbol{\mu}$ and its covariance matrix $\boldsymbol{\Sigma}$. The joint PDF for a vector $\mathbf{x} = (x_1, \dots, x_n)^T$ is:
+A collection of random variables $(X_1, X_2, \dots, X_n)$ is said to be jointly Gaussian if any linear combination of them results in a one-dimensional Gaussian random variable. A key property of the multivariate Gaussian distribution is that it is completely specified by two parameters: its mean vector $\boldsymbol{\mu}$ and its covariance matrix $\boldsymbol{\Sigma}$. The joint PDF for a vector $\mathbf{x} = (x_1, \dots, x_n)^T$ is:
 $$
 f_{\mathbf{X}}(\mathbf{x}) = \frac{1}{\sqrt{(2\pi)^n \det(\boldsymbol{\Sigma})}} \exp\left(-\frac{1}{2}(\mathbf{x}-\boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1}(\mathbf{x}-\boldsymbol{\mu})\right)
 $$
-If the variables $X_i$ are pairwise uncorrelated, all the off-diagonal elements of the covariance matrix $\boldsymbol{\Sigma}$ are zero. This makes $\boldsymbol{\Sigma}$ a diagonal matrix. Its inverse $\boldsymbol{\Sigma}^{-1}$ is also diagonal, and the [quadratic form](@entry_id:153497) in the exponent simplifies to a sum of squares:
+If the variables $X_i$ are pairwise uncorrelated, all the off-diagonal elements of the covariance matrix $\boldsymbol{\Sigma}$ are zero. This makes $\boldsymbol{\Sigma}$ a diagonal matrix. Its inverse $\boldsymbol{\Sigma}^{-1}$ is also diagonal, and the quadratic form in the exponent simplifies to a sum of squares:
 $$
 (\mathbf{x}-\boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1}(\mathbf{x}-\boldsymbol{\mu}) = \sum_{i=1}^n \frac{(x_i - \mu_i)^2}{\sigma_i^2}
 $$
@@ -129,11 +129,11 @@ where $\sigma_i^2$ are the diagonal elements of $\boldsymbol{\Sigma}$ (the varia
 $$
 f_{\mathbf{X}}(\mathbf{x}) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma_i^2}} \exp\left(-\frac{(x_i - \mu_i)^2}{2\sigma_i^2}\right) = \prod_{i=1}^n f_{X_i}(x_i)
 $$
-This factorization is the definition of [mutual independence](@entry_id:273670). Therefore, for jointly Gaussian variables, **uncorrelatedness is equivalent to independence**.
+This factorization is the definition of mutual independence. Therefore, for jointly Gaussian variables, **uncorrelatedness is equivalent to independence**.
 
-This property is a cornerstone of signal processing and statistics. For instance, **Gaussian [white noise](@entry_id:145248)** is defined as a sequence of Gaussian random variables that are uncorrelated with each other (and have [zero mean](@entry_id:271600)). Due to the Gaussian equivalence, this automatically means the noise samples are fully independent.
+This property is a cornerstone of signal processing and statistics. For instance, **Gaussian white noise** is defined as a sequence of Gaussian random variables that are uncorrelated with each other (and have zero mean). Due to the Gaussian equivalence, this automatically means the noise samples are fully independent.
 
-The practical utility of this equivalence is immense. Consider a bivariate normal pair $(X,Y)$ with zero means, unit variances, and [zero correlation](@entry_id:270141). If we need to compute a complex expectation like $\mathbb{E}[(X+Y)^2(X-Y)^2]$, the first step is to recognize that since they are jointly Gaussian and uncorrelated, they are also independent. This simplifies expectations involving products, such as $\mathbb{E}[X^2 Y^2] = \mathbb{E}[X^2]\mathbb{E}[Y^2]$. Without this property, the calculation would be far more complex. The famous **Box-Muller transform** is a method that ingeniously starts with two independent uniform random variables and produces two independent standard normal variables, which can be verified to be uncorrelated as a first step in the proof.
+The practical utility of this equivalence is immense. Consider a bivariate normal pair $(X,Y)$ with zero means, unit variances, and zero correlation. If we need to compute a complex expectation like $\mathbb{E}[(X+Y)^2(X-Y)^2]$, the first step is to recognize that since they are jointly Gaussian and uncorrelated, they are also independent. This simplifies expectations involving products, such as $\mathbb{E}[X^2 Y^2] = \mathbb{E}[X^2]\mathbb{E}[Y^2]$. Without this property, the calculation would be far more complex. The famous **Box-Muller transform** is a method that ingeniously starts with two independent uniform random variables and produces two independent standard normal variables, which can be verified to be uncorrelated as a first step in the proof.
 
 ### Dependence and Correlation in Stochastic Modeling
 
@@ -152,7 +152,7 @@ Since the probability $\theta$ is random (not a fixed constant), its variance $\
 
 #### Independence in Time-Series Models
 
-Conversely, the structure of a model can guarantee independence. Consider a simple moving-average process of order one, MA(1): $X_t = \epsilon_t + \theta \epsilon_{t-1}$, where $\{\epsilon_t\}$ is a sequence of i.i.d. noise terms with [zero mean](@entry_id:271600). Let's analyze the relationship between $X_t$ and a past value, $X_{t-2}$.
+Conversely, the structure of a model can guarantee independence. Consider a simple moving-average process of order one, MA(1): $X_t = \epsilon_t + \theta \epsilon_{t-1}$, where $\{\epsilon_t\}$ is a sequence of i.i.d. noise terms with zero mean. Let's analyze the relationship between $X_t$ and a past value, $X_{t-2}$.
 
 We can write out the expressions:
 $$
@@ -161,6 +161,6 @@ $$
 $$
 X_{t-2} = \epsilon_{t-2} + \theta \epsilon_{t-3}
 $$
-The variable $X_t$ is a function of the noise terms $\{\epsilon_t, \epsilon_{t-1}\}$. The variable $X_{t-2}$ is a function of the noise terms $\{\epsilon_{t-2}, \epsilon_{t-3}\}$. Since the noise sequence $\{\epsilon_t\}$ is i.i.d., the set of random variables $\{\epsilon_t, \epsilon_{t-1}\}$ is entirely independent of the set $\{\epsilon_{t-2}, \epsilon_{t-3}\}$. As functions of [independent sets](@entry_id:270749) of random variables, $X_t$ and $X_{t-2}$ are themselves independent. And because they are independent, they are also uncorrelated. This demonstrates how, in [time-series analysis](@entry_id:178930), variables separated by a sufficient [time lag](@entry_id:267112) can be truly independent, not just uncorrelated, depending on the memory of the process.
+The variable $X_t$ is a function of the noise terms $\{\epsilon_t, \epsilon_{t-1}\}$. The variable $X_{t-2}$ is a function of the noise terms $\{\epsilon_{t-2}, \epsilon_{t-3}\}$. Since the noise sequence $\{\epsilon_t\}$ is i.i.d., the set of random variables $\{\epsilon_t, \epsilon_{t-1}\}$ is entirely independent of the set $\{\epsilon_{t-2}, \epsilon_{t-3}\}$. As functions of independent sets of random variables, $X_t$ and $X_{t-2}$ are themselves independent. And because they are independent, they are also uncorrelated. This demonstrates how, in time-series analysis, variables separated by a sufficient time lag can be truly independent, not just uncorrelated, depending on the memory of the process.
 
-In conclusion, the journey from uncorrelatedness to independence is a crucial step in [probabilistic reasoning](@entry_id:273297). While independence always guarantees a lack of correlation, the reverse is a common fallacy. This fallacy is only resolved in the special, albeit immensely important, case of jointly Gaussian variables. Understanding when and why [uncorrelated variables](@entry_id:261964) can still be dependent is key to avoiding modeling errors and to appreciating the subtle ways in which random quantities can influence one another through non-linear relationships, symmetries, and shared underlying factors.
+In conclusion, the journey from uncorrelatedness to independence is a crucial step in probabilistic reasoning. While independence always guarantees a lack of correlation, the reverse is a common fallacy. This fallacy is only resolved in the special, albeit immensely important, case of jointly Gaussian variables. Understanding when and why uncorrelated variables can still be dependent is key to avoiding modeling errors and to appreciating the subtle ways in which random quantities can influence one another through non-linear relationships, symmetries, and shared underlying factors.

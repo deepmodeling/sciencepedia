@@ -26,13 +26,13 @@ For a standard Brownian motion $W_t$, its quadratic variation over an interval $
 $$
 [W]_t := \lim_{|\pi|\to 0} \sum_{k} (W_{t_{k+1}} - W_{t_k})^2 = t
 $$
-This isn't a magical incantation, but a deep truth about the nature of diffusion that can be rigorously proven. One way to convince yourself is to examine the expectation and variance of the sum. The expected value of each squared increment $\mathbb{E}[(W_{t_{k+1}}-W_{t_k})^2]$ is just the time elapsed, $t_{k+1}-t_k$. Summing these up gives exactly $t$. Furthermore, one can show that the variance of this sum shrinks to zero as the partition becomes finer, meaning the sum converges to its expected value .
+This isn't a magical incantation, but a deep truth about the nature of diffusion that can be rigorously proven. One way to convince yourself is to examine the expectation and variance of the sum. The expected value of each squared increment $\mathbb{E}[(W_{t_{k+1}}-W_{t_k})^2]$ is just the time elapsed, $t_{k+1}-t_k$. Summing these up gives exactly $t$. Furthermore, one can show that the variance of this sum shrinks to zero as the partition becomes finer, meaning the sum converges to its expected value [@problem_id:3062229].
 
 This leads to a wonderfully compact and powerful piece of "infinitesimal" notation that serves as the cornerstone of Itô calculus:
 $$
 (dW_t)^2 = dt
 $$
-This strange-looking equation is a shorthand for the quadratic variation property . It tells us that the square of a tiny random step is not a smaller random step, but a tiny, deterministic step forward in time. All other products, like $dt \cdot dt$ or $dt \cdot dW_t$, are of a smaller order and vanish in the limit. This rule, $(dW_t)^2 = dt$, is the secret key that unlocks the relationship between the two worlds of [stochastic calculus](@article_id:143370).
+This strange-looking equation is a shorthand for the quadratic variation property [@problem_id:3062281]. It tells us that the square of a tiny random step is not a smaller random step, but a tiny, deterministic step forward in time. All other products, like $dt \cdot dt$ or $dt \cdot dW_t$, are of a smaller order and vanish in the limit. This rule, $(dW_t)^2 = dt$, is the secret key that unlocks the relationship between the two worlds of [stochastic calculus](@keyword=stochastic_calculus|lang=en-US|style=Feynman).
 
 ### Two Philosophies, Two Integrals
 
@@ -42,7 +42,7 @@ Faced with the ambiguity of how to define an integral against a random path, mat
     $$
     \int_0^t H_s \,dW_s := \lim_{|\pi|\to 0} \sum_{k} H_{t_k} (W_{t_{k+1}}-W_{t_k})
     $$
-    The philosophy here is one of causality and non-anticipation. At time $t_k$, you are making a decision based only on information you have *right now*. You have no knowledge, not even an inkling, of what will happen in the next instant. This choice has a beautiful mathematical consequence: the Itô integral process, $M_t = \int_0^t H_s \,dW_s$, is a **[martingale](@article_id:145542)**. A martingale is the mathematical formalization of a "[fair game](@article_id:260633)." It means that, given all information up to the present time $s$, the expected future value of the process at a later time $t$ is simply its [present value](@article_id:140669): $\mathbb{E}[M_t | \mathcal{F}_s] = M_s$. This property has made Itô calculus the indispensable language of modern mathematical finance, where one cannot assume knowledge of future price movements .
+    The philosophy here is one of causality and non-anticipation. At time $t_k$, you are making a decision based only on information you have *right now*. You have no knowledge, not even an inkling, of what will happen in the next instant. This choice has a beautiful mathematical consequence: the Itô integral process, $M_t = \int_0^t H_s \,dW_s$, is a **[martingale](@keyword=martingale|lang=en-US|style=Feynman)**. A martingale is the mathematical formalization of a "[fair game](@keyword=fair_game|lang=en-US|style=Feynman)." It means that, given all information up to the present time $s$, the expected future value of the process at a later time $t$ is simply its [present value](@keyword=present_value|lang=en-US|style=Feynman): $\mathbb{E}[M_t | \mathcal{F}_s] = M_s$. This property has made Itô calculus the indispensable language of modern mathematical finance, where one cannot assume knowledge of future price movements [@problem_id:3062231].
 
 *   **The Stratonovich Integral:** Stratonovich took a different, more symmetric approach, evaluating the integrand at the midpoint of the time interval.
     $$
@@ -58,17 +58,17 @@ Consider the difference between the Riemann sums for the Stratonovich and Itô i
 $$
 \sum_k \left[ f\left(W_{\frac{t_k+t_{k+1}}{2}}\right) - f(W_{t_k}) \right] (W_{t_{k+1}} - W_{t_k})
 $$
-Using a Taylor expansion for the term in the brackets, $f(W_{\tau_k}) \approx f(W_{t_k}) + f'(W_{t_k})(W_{\tau_k}-W_{t_k}) + \dots$, where $\tau_k = (t_k+t_{k+1})/2$. The [dominant term](@article_id:166924) in the difference sum becomes approximately $\sum_k f'(W_{t_k})(W_{\tau_k}-W_{t_k})(W_{t_{k+1}}-W_{t_k})$. The Brownian increment from $t_k$ to $t_{k+1}$ is the sum of two independent half-steps, and this is where the magic happens. This sum converges not to zero, but to a deterministic integral because the squared increments of Brownian motion do not vanish. The result of this careful analysis  reveals that the Stratonovich integral is the Itô integral plus an extra term:
+Using a Taylor expansion for the term in the brackets, $f(W_{\tau_k}) \approx f(W_{t_k}) + f'(W_{t_k})(W_{\tau_k}-W_{t_k}) + \dots$, where $\tau_k = (t_k+t_{k+1})/2$. The [dominant term](@keyword=dominant_term|lang=en-US|style=Feynman) in the difference sum becomes approximately $\sum_k f'(W_{t_k})(W_{\tau_k}-W_{t_k})(W_{t_{k+1}}-W_{t_k})$. The Brownian increment from $t_k$ to $t_{k+1}$ is the sum of two independent half-steps, and this is where the magic happens. This sum converges not to zero, but to a deterministic integral because the squared increments of Brownian motion do not vanish. The result of this careful analysis [@problem_id:3062277] reveals that the Stratonovich integral is the Itô integral plus an extra term:
 $$
 \int_0^t H_s \circ dW_s = \int_0^t H_s \,dW_s + \frac{1}{2} [H, W]_t
 $$
-Here, $[H, W]_t$ is the **[quadratic covariation](@article_id:179661)** between the integrand $H$ and the Brownian motion $W$. It measures their tendency to "wiggle together" . When $H_t = \sigma(X_t)$ for a process $X_t$ that is itself driven by $W_t$, this [covariation](@article_id:633603) can be computed, and we arrive at the famous conversion rules for [stochastic differential equations](@article_id:146124) (SDEs):
+Here, $[H, W]_t$ is the **[quadratic covariation](@keyword=quadratic_covariation|lang=en-US|style=Feynman)** between the integrand $H$ and the Brownian motion $W$. It measures their tendency to "wiggle together" [@problem_id:3062278]. When $H_t = \sigma(X_t)$ for a process $X_t$ that is itself driven by $W_t$, this [covariation](@keyword=covariation|lang=en-US|style=Feynman) can be computed, and we arrive at the famous conversion rules for [stochastic differential equations](@keyword=stochastic_differential_equations|lang=en-US|style=Feynman) (SDEs):
 
-An SDE in Stratonovich form, $dX_t = a(X_t)\,dt + \sigma(X_t) \circ dW_t$, is equivalent to the following SDE in Itô form :
+An SDE in Stratonovich form, $dX_t = a(X_t)\,dt + \sigma(X_t) \circ dW_t$, is equivalent to the following SDE in Itô form [@problem_id:3062274]:
 $$
 dX_t = \left( a(X_t) + \frac{1}{2}\sigma(X_t)\sigma'(X_t) \right) dt + \sigma(X_t) \,dW_t
 $$
-Conversely, an SDE in Itô form, $dX_t = b(X_t)\,dt + \sigma(X_t) \,dW_t$, is equivalent to the following SDE in Stratonovich form :
+Conversely, an SDE in Itô form, $dX_t = b(X_t)\,dt + \sigma(X_t) \,dW_t$, is equivalent to the following SDE in Stratonovich form [@problem_id:3062212]:
 $$
 dX_t = \left( b(X_t) - \frac{1}{2}\sigma(X_t)\sigma'(X_t) \right) dt + \sigma(X_t) \circ dW_t
 $$
@@ -82,12 +82,12 @@ If you have a process $X_t$ solving a Stratonovich SDE and you look at a new pro
 $$
 dY_t = f'(X_t) \circ dX_t
 $$
-This remarkable property is called **coordinate invariance**. It means that the form of physical laws expressed as Stratonovich SDEs does not change when we apply a smooth [change of variables](@article_id:140892) . This is essential in physics and engineering, where our choice of coordinates (e.g., Cartesian vs. polar) is a matter of convenience and should not alter the underlying reality.
+This remarkable property is called **coordinate invariance**. It means that the form of physical laws expressed as Stratonovich SDEs does not change when we apply a smooth [change of variables](@keyword=change_of_variables|lang=en-US|style=Feynman) [@problem_id:3062253]. This is essential in physics and engineering, where our choice of coordinates (e.g., Cartesian vs. polar) is a matter of convenience and should not alter the underlying reality.
 
-In stark contrast, the Itô calculus does not enjoy this property. Applying a [change of variables](@article_id:140892) requires using **Itô's Lemma**, which introduces an extra second-derivative term:
+In stark contrast, the Itô calculus does not enjoy this property. Applying a [change of variables](@keyword=change_of_variables|lang=en-US|style=Feynman) requires using **Itô's Lemma**, which introduces an extra second-derivative term:
 $$
 dY_t = f'(X_t) \,dX_t + \frac{1}{2} f''(X_t) \sigma(X_t)^2 \,dt
 $$
-The presence of this term means the Itô calculus is not coordinate invariant . The rules of the game change depending on the variables you use.
+The presence of this term means the Itô calculus is not coordinate invariant [@problem_id:3062241]. The rules of the game change depending on the variables you use.
 
 So, we are left with a beautiful duality. Itô's world is the world of fair games and non-anticipation, making it perfect for finance. Stratonovich's world is the world of classical rules and physical consistency, making it the natural choice for many scientific models. There is no "better" calculus; they are simply two different, rigorously connected languages for describing the same, strange, and wonderful random universe. The bridge between them is a testament to the deep and often surprising unity of mathematics.

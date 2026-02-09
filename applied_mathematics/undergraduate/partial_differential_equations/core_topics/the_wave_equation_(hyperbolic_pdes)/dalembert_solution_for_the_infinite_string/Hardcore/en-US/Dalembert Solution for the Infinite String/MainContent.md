@@ -1,21 +1,21 @@
 ## Introduction
-The [one-dimensional wave equation](@entry_id:164824) stands as a cornerstone of [mathematical physics](@entry_id:265403), describing a vast array of phenomena from the vibrations of a guitar string to the propagation of light. The key to unlocking its predictive power was discovered by Jean le Rond d'Alembert, who formulated a general solution of remarkable elegance and physical intuition. This solution resolves any wave motion into a simple superposition of traveling waves, providing a direct link between the initial state of a system and its entire future evolution. This article delves into d'Alembert's powerful framework, addressing the fundamental problem of how an initial displacement and [velocity profile](@entry_id:266404) dictates the subsequent behavior of a wave.
+The one-dimensional wave equation stands as a cornerstone of mathematical physics, describing a vast array of phenomena from the vibrations of a guitar string to the propagation of light. The key to unlocking its predictive power was discovered by Jean le Rond d'Alembert, who formulated a general solution of remarkable elegance and physical intuition. This solution resolves any wave motion into a simple superposition of traveling waves, providing a direct link between the initial state of a system and its entire future evolution. This article delves into d'Alembert's powerful framework, addressing the fundamental problem of how an initial displacement and velocity profile dictates the subsequent behavior of a wave.
 
-To build a complete understanding, we will explore this topic across three comprehensive chapters. The first chapter, **Principles and Mechanisms**, will lay the mathematical groundwork by deriving d'Alembert's formula and examining its core concepts, such as the decomposition into traveling waves, the principle of causality through the domain of dependence, and the [conservation of energy](@entry_id:140514). Next, the chapter on **Applications and Interdisciplinary Connections** will demonstrate the solution's practical utility, showing how it describes wave interaction, how it can be adapted for systems with boundaries using the [method of images](@entry_id:136235), and how its principles extend to other areas of physics like electromagnetism. Finally, the **Hands-On Practices** section will provide a set of curated problems designed to solidify your grasp of these concepts and develop your skills in applying the formula to concrete physical scenarios.
+To build a complete understanding, we will explore this topic across three comprehensive chapters. The first chapter, **Principles and Mechanisms**, will lay the mathematical groundwork by deriving d'Alembert's formula and examining its core concepts, such as the decomposition into traveling waves, the principle of causality through the domain of dependence, and the conservation of energy. Next, the chapter on **Applications and Interdisciplinary Connections** will demonstrate the solution's practical utility, showing how it describes wave interaction, how it can be adapted for systems with boundaries using the method of images, and how its principles extend to other areas of physics like electromagnetism. Finally, the **Hands-On Practices** section will provide a set of curated problems designed to solidify your grasp of these concepts and develop your skills in applying the formula to concrete physical scenarios.
 
 ## Principles and Mechanisms
 
-The [one-dimensional wave equation](@entry_id:164824), $\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$, provides a remarkably accurate model for a wide range of physical phenomena, from the vibrations of a string to the propagation of electromagnetic fields. Its elegance is matched by the profound insight offered by its general solution, first derived by Jean le Rond d'Alembert. This chapter delves into the principles underpinning d'Alembert's solution for an infinite domain, exploring its structure, physical interpretation, and far-reaching consequences.
+The one-dimensional wave equation, $\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$, provides a remarkably accurate model for a wide range of physical phenomena, from the vibrations of a string to the propagation of electromagnetic fields. Its elegance is matched by the profound insight offered by its general solution, first derived by Jean le Rond d'Alembert. This chapter delves into the principles underpinning d'Alembert's solution for an infinite domain, exploring its structure, physical interpretation, and far-reaching consequences.
 
 ### The D'Alembert Solution
 
-The fundamental insight of d'Alembert was to recognize that the solution to the wave equation can be expressed as a superposition of two [traveling waves](@entry_id:185008). One wave, with an arbitrary but fixed shape, propagates to the right with speed $c$, while the other, with its own arbitrary shape, propagates to the left with the same speed. Mathematically, this is expressed as:
+The fundamental insight of d'Alembert was to recognize that the solution to the wave equation can be expressed as a superposition of two traveling waves. One wave, with an arbitrary but fixed shape, propagates to the right with speed $c$, while the other, with its own arbitrary shape, propagates to the left with the same speed. Mathematically, this is expressed as:
 
 $u(x, t) = F(x - ct) + G(x + ct)$
 
 Here, $F$ and $G$ are arbitrary twice-differentiable functions representing the shapes of the right-traveling and left-traveling waves, respectively. The arguments $(x - ct)$ and $(x + ct)$ ensure that a specific feature of the wave profile $F$ (or $G$) corresponds to a point that moves with velocity $+c$ (or $-c$).
 
-To find the specific forms of $F$ and $G$ for a given physical problem, we must impose the [initial conditions](@entry_id:152863) of the system. Let the initial displacement of the string be $u(x, 0) = f(x)$ and the [initial velocity](@entry_id:171759) be $\frac{\partial u}{\partial t}(x, 0) = g(x)$. Applying these at $t=0$, we obtain a system of equations:
+To find the specific forms of $F$ and $G$ for a given physical problem, we must impose the initial conditions of the system. Let the initial displacement of the string be $u(x, 0) = f(x)$ and the initial velocity be $\frac{\partial u}{\partial t}(x, 0) = g(x)$. Applying these at $t=0$, we obtain a system of equations:
 
 1.  $u(x, 0) = F(x) + G(x) = f(x)$
 2.  $\frac{\partial u}{\partial t}(x, 0) = -c F'(x) + c G'(x) = g(x)$
@@ -32,7 +32,7 @@ $u(x, t) = \frac{1}{2} [f(x - ct) + f(x + ct)] + \frac{1}{2c} \int_{x - ct}^{x +
 
 This powerful formula gives the displacement at any point $x$ and time $t$ purely in terms of the initial conditions. The first term, involving $f$, represents the splitting of the initial displacement profile into two half-amplitude waves that travel in opposite directions. The second term, the integral involving $g$, represents the waves generated by the initial velocity of the string.
 
-To make this concrete, consider an [infinite string](@entry_id:168476) with [wave speed](@entry_id:186208) $c = 50.0 \, \text{m/s}$. Suppose the initial displacement is a parabolic pulse $f(x) = 0.100 (1 - x^2/4)$ for $|x| \le 2.00 \, \text{m}$ and zero otherwise, and the initial velocity is a rectangular pulse $g(x) = 10.0 \, \text{m/s}$ for $|x| \le 0.500 \, \text{m}$ and zero otherwise. To find the displacement at the origin ($x=0$) at time $t=0.0300 \, \text{s}$, we can directly apply the formula. At $x=0$, the formula simplifies. Noting that the given $f(x)$ is an [even function](@entry_id:164802), $f(-ct) = f(ct)$, we have:
+To make this concrete, consider an infinite string with wave speed $c = 50.0 \, \text{m/s}$. Suppose the initial displacement is a parabolic pulse $f(x) = 0.100 (1 - x^2/4)$ for $|x| \le 2.00 \, \text{m}$ and zero otherwise, and the initial velocity is a rectangular pulse $g(x) = 10.0 \, \text{m/s}$ for $|x| \le 0.500 \, \text{m}$ and zero otherwise. To find the displacement at the origin ($x=0$) at time $t=0.0300 \, \text{s}$, we can directly apply the formula. At $x=0$, the formula simplifies. Noting that the given $f(x)$ is an even function, $f(-ct) = f(ct)$, we have:
 
 $u(0, t) = \frac{1}{2} [f(-ct) + f(ct)] + \frac{1}{2c} \int_{-ct}^{ct} g(s) ds = f(ct) + \frac{1}{2c} \int_{-ct}^{ct} g(s) ds$
 
@@ -44,33 +44,33 @@ Next, we evaluate the integral term. The integration interval is $[-ct, ct] = [-
 
 $\int_{-1.50}^{1.50} g(s) ds = \int_{-0.500}^{0.500} 10.0 \, ds = 10.0 \times (0.500 - (-0.500)) = 10.0 \, \text{m}^2/\text{s}$
 
-The contribution from the [initial velocity](@entry_id:171759) is therefore:
+The contribution from the initial velocity is therefore:
 
 $\frac{1}{2c} \int_{-ct}^{ct} g(s) ds = \frac{1}{2(50.0)} (10.0) = 0.100 \, \text{m}$
 
-The total displacement is the sum of these two contributions: $u(0, 0.0300) = 0.04375 + 0.100 = 0.14375 \, \text{m}$, or approximately $0.144 \, \text{m}$ . This example demonstrates how d'Alembert's formula elegantly combines the effects of initial position and initial velocity.
+The total displacement is the sum of these two contributions: $u(0, 0.0300) = 0.04375 + 0.100 = 0.14375 \, \text{m}$, or approximately $0.144 \, \text{m}$ [@problem_id:2181540]. This example demonstrates how d'Alembert's formula elegantly combines the effects of initial position and initial velocity.
 
 ### Decomposition into Traveling Waves
 
-The true power of d'Alembert's framework lies in its ability to decompose any initial condition into its constituent right- and left-[traveling waves](@entry_id:185008). This allows us to predict and even engineer the wave's evolution.
+The true power of d'Alembert's framework lies in its ability to decompose any initial condition into its constituent right- and left-traveling waves. This allows us to predict and even engineer the wave's evolution.
 
 #### Purely Traveling Waves
 
 A particularly insightful question is: what initial conditions produce a wave that travels in only one direction?
 
-Let's consider a purely **right-traveling wave**, where the solution has the form $u(x, t) = F(x-ct)$. In the general solution $u(x, t) = F(x-ct) + G(x+ct)$, this corresponds to the case where the left-traveling component $G$ is identically zero. If $G(x) \equiv 0$, our [initial conditions](@entry_id:152863) become:
+Let's consider a purely **right-traveling wave**, where the solution has the form $u(x, t) = F(x-ct)$. In the general solution $u(x, t) = F(x-ct) + G(x+ct)$, this corresponds to the case where the left-traveling component $G$ is identically zero. If $G(x) \equiv 0$, our initial conditions become:
 1. $f(x) = F(x) + 0 = F(x)$
 2. $g(x) = -c F'(x) + 0 = -c f'(x)$
 
-This reveals a profound relationship: a purely right-traveling wave is generated if and only if the [initial velocity](@entry_id:171759) profile is directly proportional to the negative of the spatial derivative of the initial displacement profile, with the proportionality constant being the wave speed $c$, i.e., $g(x) = -c f'(x)$ .
+This reveals a profound relationship: a purely right-traveling wave is generated if and only if the initial velocity profile is directly proportional to the negative of the spatial derivative of the initial displacement profile, with the proportionality constant being the wave speed $c$, i.e., $g(x) = -c f'(x)$ [@problem_id:2094363].
 
-For instance, if the initial displacement is a sine wave $f(x) = A \sin(kx)$, its derivative is $f'(x) = Ak \cos(kx)$. The required initial velocity for a purely right-traveling wave is $g(x) = -c f'(x) = -Ack \cos(kx)$. If we substitute these specific initial conditions into the full d'Alembert's formula, the left-traveling components perfectly cancel, yielding the solution $u(x, t) = A \sin(k(x-ct))$, as expected .
+For instance, if the initial displacement is a sine wave $f(x) = A \sin(kx)$, its derivative is $f'(x) = Ak \cos(kx)$. The required initial velocity for a purely right-traveling wave is $g(x) = -c f'(x) = -Ack \cos(kx)$. If we substitute these specific initial conditions into the full d'Alembert's formula, the left-traveling components perfectly cancel, yielding the solution $u(x, t) = A \sin(k(x-ct))$, as expected [@problem_id:2094347].
 
 Conversely, for a purely **left-traveling wave** of the form $u(x, t) = G(x+ct)$, the right-traveling component $F$ must be identically zero. This leads to the necessary and sufficient condition:
 
 $g(x) = c f'(x)$
 
-This principle allows us to construct an [initial velocity](@entry_id:171759) profile to ensure a given initial shape travels only to the left. For example, if we start with a symmetric [triangular pulse](@entry_id:275838) of height $H$ and half-width $L$, its displacement is $f(x) = H(1-|x|/L)$ for $|x| \le L$. Its derivative is a piecewise [constant function](@entry_id:152060): $f'(x) = -H/L$ for $0 \lt x \lt L$ and $f'(x) = H/L$ for $-L \lt x \lt 0$. To make this triangle travel to the left, we must impart an initial velocity $g(x) = c f'(x)$, which corresponds to two rectangular velocity pulses of opposite sign .
+This principle allows us to construct an initial velocity profile to ensure a given initial shape travels only to the left. For example, if we start with a symmetric triangular pulse of height $H$ and half-width $L$, its displacement is $f(x) = H(1-|x|/L)$ for $|x| \le L$. Its derivative is a piecewise constant function: $f'(x) = -H/L$ for $0 \lt x \lt L$ and $f'(x) = H/L$ for $-L \lt x \lt 0$. To make this triangle travel to the left, we must impart an initial velocity $g(x) = c f'(x)$, which corresponds to two rectangular velocity pulses of opposite sign [@problem_id:2094349].
 
 #### Generation from an Initial Impulse
 
@@ -78,9 +78,9 @@ What if the string is initially straight, $f(x)=0$, but is given a velocity impu
 
 $u(x, t) = \frac{1}{2c} \int_{x - ct}^{x + ct} g(s) ds$
 
-This can be expressed as the difference of two functions. If we define $H(z) = \frac{1}{2c} \int_{0}^{z} g(s) ds$, then $u(x, t) = H(x+ct) - H(x-ct)$. This reveals that an [initial velocity](@entry_id:171759) impulse generates two waves: a right-traveling wave with shape $-H(z)$ and a left-traveling wave with shape $+H(z)$. They travel in opposite directions and have inverted shapes relative to each other.
+This can be expressed as the difference of two functions. If we define $H(z) = \frac{1}{2c} \int_{0}^{z} g(s) ds$, then $u(x, t) = H(x+ct) - H(x-ct)$. This reveals that an initial velocity impulse generates two waves: a right-traveling wave with shape $-H(z)$ and a left-traveling wave with shape $+H(z)$. They travel in opposite directions and have inverted shapes relative to each other.
 
-For example, if a stationary string is struck at $t=0$ with a localized [velocity profile](@entry_id:266404) $\psi(x)$, this disturbance splits into two waves traveling outwards. The amplitude of these waves is determined by the total impulse. For an [initial velocity](@entry_id:171759) pulse given by $v_y(x, 0) = v_m \cos(kx)$ for $|x| \le \frac{\pi}{2k}$, the resulting forward-propagating wave will have an amplitude of $\frac{v_m}{ck}$ . This demonstrates how the initial kinetic energy is partitioned into two traveling waves.
+For example, if a stationary string is struck at $t=0$ with a localized velocity profile $\psi(x)$, this disturbance splits into two waves traveling outwards. The amplitude of these waves is determined by the total impulse. For an initial velocity pulse given by $v_y(x, 0) = v_m \cos(kx)$ for $|x| \le \frac{\pi}{2k}$, the resulting forward-propagating wave will have an amplitude of $\frac{v_m}{ck}$ [@problem_id:619256]. This demonstrates how the initial kinetic energy is partitioned into two traveling waves.
 
 ### Causality and Propagation of Information
 
@@ -92,7 +92,7 @@ The value of the displacement $u(x_0, t_0)$ at a specific spacetime point $(x_0,
 $u(x_0, t_0) = \frac{1}{2} [f(x_0 - ct_0) + f(x_0 + ct_0)] + \frac{1}{2c} \int_{x_0 - ct_0}^{x_0 + ct_0} g(s) ds$
 reveals that the solution depends only on the values of $f(x)$ at the two points $x_0 \pm ct_0$ and the values of $g(x)$ on the interval $[x_0 - ct_0, x_0 + ct_0]$. This interval is called the **domain of dependence** for the point $(x_0, t_0)$. Any change to the initial conditions outside this interval has no effect on the solution at $(x_0, t_0)$.
 
-For instance, if a sensor is placed at $x_0 = 50.0 \, \text{m}$ to measure the displacement at $t_0 = 0.400 \, \text{s}$ on a string with [wave speed](@entry_id:186208) $c = 320.0 \, \text{m/s}$, the measurement will be completely determined by the initial state on the interval $[50.0 - 320.0 \times 0.400, 50.0 + 320.0 \times 0.400] = [-78.0, 178.0]$. The total length of this determining segment is $(x_0 + ct_0) - (x_0 - ct_0) = 2ct_0 = 2(320.0)(0.400) = 256 \, \text{m}$ .
+For instance, if a sensor is placed at $x_0 = 50.0 \, \text{m}$ to measure the displacement at $t_0 = 0.400 \, \text{s}$ on a string with wave speed $c = 320.0 \, \text{m/s}$, the measurement will be completely determined by the initial state on the interval $[50.0 - 320.0 \times 0.400, 50.0 + 320.0 \times 0.400] = [-78.0, 178.0]$. The total length of this determining segment is $(x_0 + ct_0) - (x_0 - ct_0) = 2ct_0 = 2(320.0)(0.400) = 256 \, \text{m}$ [@problem_id:2094373].
 
 #### Region of Influence
 
@@ -101,44 +101,44 @@ The converse concept is the **region of influence**. If the initial disturbance 
 - The term $f(x+ct)$ is non-zero only if $|x+ct| \le L$, which means $x$ is in $[-L-ct, L-ct]$.
 - The integral term is non-zero only if the integration interval $[x-ct, x+ct]$ overlaps with $[-L,L]$. This also requires that $|x| \le L+ct$.
 
-Combining these, the solution $u(x,t)$ can be non-zero only within the region defined by $|x| \le L + ct$. This means the initial disturbed region of width $2L$ expands outwards, with its boundaries moving at speed $c$. This expanding region is the region of influence of the initial disturbance .
+Combining these, the solution $u(x,t)$ can be non-zero only within the region defined by $|x| \le L + ct$. This means the initial disturbed region of width $2L$ expands outwards, with its boundaries moving at speed $c$. This expanding region is the region of influence of the initial disturbance [@problem_id:2094351].
 
 ### Conserved Quantities and Structural Properties
 
-The wave equation possesses deep structural properties that are reflected in [conserved quantities](@entry_id:148503) and symmetries.
+The wave equation possesses deep structural properties that are reflected in conserved quantities and symmetries.
 
 #### Conservation of Energy
 
-For a [vibrating string](@entry_id:138456), the total energy is the sum of its kinetic and potential energies, integrated over its entire length. The energy density is proportional to $u_t^2 + c^2 u_x^2$, and the total energy is given by:
+For a vibrating string, the total energy is the sum of its kinetic and potential energies, integrated over its entire length. The energy density is proportional to $u_t^2 + c^2 u_x^2$, and the total energy is given by:
 
 $E(t) = \frac{1}{2} \int_{-\infty}^{\infty} \left( [u_t(x,t)]^2 + c^2 [u_x(x,t)]^2 \right) dx$
 
-One of the most important consequences of the wave equation is that this total energy is conserved, provided the disturbance is localized (i.e., $u$ and its derivatives vanish at spatial infinity). By differentiating $E(t)$ with respect to time and applying the wave equation and [integration by parts](@entry_id:136350), one can show that $\frac{dE}{dt} = 0$.
+One of the most important consequences of the wave equation is that this total energy is conserved, provided the disturbance is localized (i.e., $u$ and its derivatives vanish at spatial infinity). By differentiating $E(t)$ with respect to time and applying the wave equation and integration by parts, one can show that $\frac{dE}{dt} = 0$.
 
-This implies that $E(t) = E(0)$ for all time. The total energy of the wave never changes, and it can be calculated entirely from the [initial conditions](@entry_id:152863):
+This implies that $E(t) = E(0)$ for all time. The total energy of the wave never changes, and it can be calculated entirely from the initial conditions:
 
 $E(0) = \frac{1}{2} \int_{-\infty}^{\infty} \left( [g(x)]^2 + c^2 [f'(x)]^2 \right) dx$
 
-For an initial triangular displacement of amplitude $A$ and width $2L$ and an initial rectangular velocity pulse of magnitude $V_0$ and width $2W$, the conserved total energy can be calculated as $E(t) = W V_{0}^{2} + \frac{c^{2}A^{2}}{L}$ . The energy simply propagates along with the wave, without dissipation.
+For an initial triangular displacement of amplitude $A$ and width $2L$ and an initial rectangular velocity pulse of magnitude $V_0$ and width $2W$, the conserved total energy can be calculated as $E(t) = W V_{0}^{2} + \frac{c^{2}A^{2}}{L}$ [@problem_id:2094372]. The energy simply propagates along with the wave, without dissipation.
 
 #### Riemann Invariants
 
-A more subtle structural property is revealed by examining quantities that remain constant along the [characteristic curves](@entry_id:175176) $x \pm ct = \text{constant}$. These quantities are known as **Riemann invariants**. Consider the combination $R(x,t) = u_t(x,t) + c u_x(x,t)$. If we differentiate this expression and use the wave equation, we find that it satisfies a simpler first-order PDE: $\frac{\partial R}{\partial t} - c \frac{\partial R}{\partial x} = 0$. The solutions to this equation are functions that are constant along lines where $x+ct$ is constant. Thus, $R(x,t)$ must be a function of $(x+ct)$ alone.
+A more subtle structural property is revealed by examining quantities that remain constant along the characteristic curves $x \pm ct = \text{constant}$. These quantities are known as **Riemann invariants**. Consider the combination $R(x,t) = u_t(x,t) + c u_x(x,t)$. If we differentiate this expression and use the wave equation, we find that it satisfies a simpler first-order PDE: $\frac{\partial R}{\partial t} - c \frac{\partial R}{\partial x} = 0$. The solutions to this equation are functions that are constant along lines where $x+ct$ is constant. Thus, $R(x,t)$ must be a function of $(x+ct)$ alone.
 
 To find this function, we evaluate it at $t=0$: $R(x,0) = u_t(x,0) + c u_x(x,0) = g(x) + c f'(x)$. This implies that for all time:
 
-$u_t(x,t) + c u_x(x,t) = g(x+ct) + c f'(x+ct)$ 
+$u_t(x,t) + c u_x(x,t) = g(x+ct) + c f'(x+ct)$ [@problem_id:2094374]
 
 This expression, which depends only on the initial data, is conserved along the left-traveling characteristics. Similarly, the quantity $S(x,t) = u_t(x,t) - c u_x(x,t)$ is a function of $(x-ct)$ only and is conserved along the right-traveling characteristics. These invariants are fundamental to the mathematical structure of hyperbolic equations like the wave equation.
 
 #### Propagation of Symmetry
 
-The linearity of the wave equation ensures that symmetries in the [initial conditions](@entry_id:152863) are propagated in a predictable manner. Suppose the initial displacement $f(x)$ is an **even** function ($f(-x) = f(x)$) and the [initial velocity](@entry_id:171759) $g(x)$ is an **odd** function ($g(-x) = -g(x)$). What is the symmetry of the solution $u(x,t)$?
+The linearity of the wave equation ensures that symmetries in the initial conditions are propagated in a predictable manner. Suppose the initial displacement $f(x)$ is an **even** function ($f(-x) = f(x)$) and the initial velocity $g(x)$ is an **odd** function ($g(-x) = -g(x)$). What is the symmetry of the solution $u(x,t)$?
 
 We analyze the two parts of d'Alembert's formula separately:
-1.  The displacement part: $\frac{1}{2}[f(x-ct) + f(x+ct)]$. Replacing $x$ with $-x$ gives $\frac{1}{2}[f(-x-ct) + f(-x+ct)]$. Since $f$ is even, this is $\frac{1}{2}[f(x+ct) + f(x-ct)]$, which is identical to the original term. Thus, this part of the solution is an [even function](@entry_id:164802) of $x$ for all $t$.
+1.  The displacement part: $\frac{1}{2}[f(x-ct) + f(x+ct)]$. Replacing $x$ with $-x$ gives $\frac{1}{2}[f(-x-ct) + f(-x+ct)]$. Since $f$ is even, this is $\frac{1}{2}[f(x+ct) + f(x-ct)]$, which is identical to the original term. Thus, this part of the solution is an even function of $x$ for all $t$.
 2.  The velocity part: $I(x,t) = \frac{1}{2c}\int_{x-ct}^{x+ct}g(s)ds$. Replacing $x$ with $-x$ gives $I(-x,t) = \frac{1}{2c}\int_{-x-ct}^{-x+ct}g(s)ds$. By substituting $s = -r$ and using the odd property of $g$ (i.e., $g(-r) = -g(r)$), the integral becomes:
 $I(-x,t) = \frac{1}{2c}\int_{x+ct}^{x-ct} g(-r)(-dr) = \frac{1}{2c}\int_{x+ct}^{x-ct} g(r)dr = -\frac{1}{2c}\int_{x-ct}^{x+ct} g(r)dr = -I(x,t)$.
 Thus, the integral term is an **odd** function of $x$ for all $t$.
 
-The total solution $u(x,t)$ is the sum of a non-trivial even function and a non-trivial [odd function](@entry_id:175940). In general, such a sum is neither even nor odd. Therefore, the initial symmetries of the displacement and velocity profiles combine to produce a solution that, for $t \gt 0$, generally lacks any simple spatial symmetry . This demonstrates how d'Alembert's solution linearly superimposes not just wave shapes, but also their fundamental properties like symmetry.
+The total solution $u(x,t)$ is the sum of a non-trivial even function and a non-trivial odd function. In general, such a sum is neither even nor odd. Therefore, the initial symmetries of the displacement and velocity profiles combine to produce a solution that, for $t \gt 0$, generally lacks any simple spatial symmetry [@problem_id:2094357]. This demonstrates how d'Alembert's solution linearly superimposes not just wave shapes, but also their fundamental properties like symmetry.

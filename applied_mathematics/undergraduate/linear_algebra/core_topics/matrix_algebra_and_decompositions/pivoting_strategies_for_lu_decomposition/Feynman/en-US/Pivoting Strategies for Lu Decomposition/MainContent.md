@@ -1,11 +1,11 @@
 ## Introduction
-Solving large [systems of linear equations](@article_id:148449) is a fundamental task in science and engineering. A powerful and elegant method for this is LU decomposition, which breaks a complex matrix $A$ into two simpler [triangular matrices](@article_id:149246), $L$ and $U$. However, this standard procedure, known as Gaussian elimination, has a critical weakness: it can fail or produce highly inaccurate results when it encounters zero or very small numbers on the diagonal, known as pivots. This article addresses this crucial problem by exploring the role of [pivoting strategies](@article_id:151090).
+Solving large [systems of linear equations](@keyword=systems_of_linear_equations|lang=en-US|style=Feynman) is a fundamental task in science and engineering. A powerful and elegant method for this is LU decomposition, which breaks a complex matrix $A$ into two simpler [triangular matrices](@keyword=triangular_matrices|lang=en-US|style=Feynman), $L$ and $U$. However, this standard procedure, known as Gaussian elimination, has a critical weakness: it can fail or produce highly inaccurate results when it encounters zero or very small numbers on the diagonal, known as pivots. This article addresses this crucial problem by exploring the role of [pivoting strategies](@keyword=pivoting_strategies|lang=en-US|style=Feynman).
 
-Across the following chapters, you will delve into the core principles of [pivoting](@article_id:137115). In "Principles and Mechanisms," we will uncover why pivoting is necessary not just for avoiding division by zero but for ensuring numerical stability in the face of round-off errors. You will learn about partial and complete [pivoting strategies](@article_id:151090) and how they lead to the robust $PA=LU$ factorization. Subsequently, "Applications and Interdisciplinary Connections" will demonstrate how this powerful factorization is applied to solve real-world problems in fields from economics to structural engineering. Finally, "Hands-On Practices" will give you the opportunity to solidify your understanding through targeted exercises. Let's begin by disassembling the problem and seeing how pivoting provides the solution.
+Across the following chapters, you will delve into the core principles of [pivoting](@keyword=pivoting|lang=en-US|style=Feynman). In "Principles and Mechanisms," we will uncover why pivoting is necessary not just for avoiding division by zero but for ensuring numerical stability in the face of round-off errors. You will learn about partial and complete [pivoting strategies](@keyword=pivoting_strategies|lang=en-US|style=Feynman) and how they lead to the robust $PA=LU$ factorization. Subsequently, "Applications and Interdisciplinary Connections" will demonstrate how this powerful factorization is applied to solve real-world problems in fields from economics to structural engineering. Finally, "Hands-On Practices" will give you the opportunity to solidify your understanding through targeted exercises. Let's begin by disassembling the problem and seeing how pivoting provides the solution.
 
 ## Principles and Mechanisms
 
-Imagine you have a complicated machine. To understand it, you don't just stare at the whole contraption; you take it apart. You see how the gears mesh, how the levers move, how the pieces fit together. In the world of linear algebra, performing an LU decomposition is like disassembling a matrix $A$ into two simpler components: a **[lower triangular matrix](@article_id:201383)** $L$ and an **[upper triangular matrix](@article_id:172544)** $U$. This is the mathematical equivalent of revealing the machine's inner workings. The goal is to write $A = LU$. Why? Because [triangular matrices](@article_id:149246) are beautifully simple. Solving equations with them is trivial, a process of just stepping down (or up) the ladder.
+Imagine you have a complicated machine. To understand it, you don't just stare at the whole contraption; you take it apart. You see how the gears mesh, how the levers move, how the pieces fit together. In the world of linear algebra, performing an LU decomposition is like disassembling a matrix $A$ into two simpler components: a **[lower triangular matrix](@keyword=lower_triangular_matrix|lang=en-US|style=Feynman)** $L$ and an **[upper triangular matrix](@keyword=upper_triangular_matrix_2|lang=en-US|style=Feynman)** $U$. This is the mathematical equivalent of revealing the machine's inner workings. The goal is to write $A = LU$. Why? Because [triangular matrices](@keyword=triangular_matrices|lang=en-US|style=Feynman) are beautifully simple. Solving equations with them is trivial, a process of just stepping down (or up) the ladder.
 
 This elegant plan of factorizing a matrix into $A = LU$ is called Gaussian elimination, a method you might have learned for solving systems of equations by hand. It's a systematic procedure of subtracting multiples of one row from another to introduce zeros below the main diagonal. And for many matrices, it works perfectly. But as with any grand plan, reality has a way of introducing... complications.
 
@@ -15,7 +15,7 @@ Let's walk through the process. We move down the main diagonal, using each eleme
 
 But what if our chosen pivot, $A_{kk}$, is zero? The whole algorithm screeches to a halt. We can't divide by zero. The machine is jammed.
 
-Consider a matrix like this one from a thought experiment :
+Consider a matrix like this one from a thought experiment [@problem_id:1383176]:
 $$
 A = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 1 \\ 3 & 5 & 2 \end{pmatrix}
 $$
@@ -27,21 +27,21 @@ Now, we move to the second column. Our next pivot should be the element in the $
 
 ### The Art of the Swap: Taming Matrices with Permutations
 
-When faced with a roadblock, the simplest solution is often to just go around it. If our pivot is zero, why not just swap the current row with another one below it that *doesn't* have a zero in that position? This simple, powerful idea is the heart of **[pivoting](@article_id:137115)**.
+When faced with a roadblock, the simplest solution is often to just go around it. If our pivot is zero, why not just swap the current row with another one below it that *doesn't* have a zero in that position? This simple, powerful idea is the heart of **[pivoting](@keyword=pivoting|lang=en-US|style=Feynman)**.
 
-Instead of adhering to a strict order, we become flexible. At each step, we'll choose the best possible row to be our pivot row. This "choosing" process constitutes our **[pivoting strategy](@article_id:169062)**. The most common strategy is **[partial pivoting](@article_id:137902)**. The rule is simple and effective: at step $k$, look at all the candidate pivots in column $k$ (from row $k$ down to the last row). Choose the one with the largest absolute value, and swap its row with the current pivot row, row $k$.
+Instead of adhering to a strict order, we become flexible. At each step, we'll choose the best possible row to be our pivot row. This "choosing" process constitutes our **[pivoting strategy](@keyword=pivoting_strategy|lang=en-US|style=Feynman)**. The most common strategy is **[partial pivoting](@keyword=partial_pivoting|lang=en-US|style=Feynman)**. The rule is simple and effective: at step $k$, look at all the candidate pivots in column $k$ (from row $k$ down to the last row). Choose the one with the largest absolute value, and swap its row with the current pivot row, row $k$.
 
-Let's see this in action with a fresh matrix :
+Let's see this in action with a fresh matrix [@problem_id:1383214]:
 $$
 A = \begin{pmatrix} 2 & 1 & -4 \\ -3 & 5 & 2 \\ 5 & -2 & 3 \end{pmatrix}
 $$
 For our first pivot (in column 1), we look at the candidates: $2$, $-3$, and $5$. The largest in absolute value is $5$, located in row 3. So, we swap row 1 and row 3. This one simple action ensures we start with a strong, non-zero pivot.
 
-We need a way to keep track of these swaps. We do this with **permutation matrices**. A [permutation matrix](@article_id:136347) is just an [identity matrix](@article_id:156230) with its rows shuffled. Multiplying a matrix $A$ on the left by a [permutation matrix](@article_id:136347) $P$ has the effect of shuffling the rows of $A$ in the exact same way. For example, to swap row 1 and row 3, we use the matrix $P_1$ that is an identity matrix with its rows 1 and 3 swapped :
+We need a way to keep track of these swaps. We do this with **permutation matrices**. A [permutation matrix](@keyword=permutation_matrix|lang=en-US|style=Feynman) is just an [identity matrix](@keyword=identity_matrix|lang=en-US|style=Feynman) with its rows shuffled. Multiplying a matrix $A$ on the left by a [permutation matrix](@keyword=permutation_matrix|lang=en-US|style=Feynman) $P$ has the effect of shuffling the rows of $A$ in the exact same way. For example, to swap row 1 and row 3, we use the matrix $P_1$ that is an identity matrix with its rows 1 and 3 swapped [@problem_id:1383214]:
 $$
 P_1 = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0 \end{pmatrix}
 $$
-If we perform a sequence of swaps throughout the elimination process, represented by matrices $P_1, P_2, \dots$, the total effect is captured by a single, final [permutation matrix](@article_id:136347) $P = \dots P_2 P_1$  .
+If we perform a sequence of swaps throughout the elimination process, represented by matrices $P_1, P_2, \dots$, the total effect is captured by a single, final [permutation matrix](@keyword=permutation_matrix|lang=en-US|style=Feynman) $P = \dots P_2 P_1$ [@problem_id:1383195] [@problem_id:1383178].
 
 This changes our original factorization. Instead of $A = LU$, we now have a slightly different but far more robust equation:
 $$
@@ -55,13 +55,13 @@ At this point, you might think that pivoting is just about dodging zero. This is
 
 Computers don't store numbers with infinite precision. They use a system called floating-point arithmetic, which is a bit like working with numbers that are rounded off after a certain number of decimal places. Every multiplication, every division, introduces a tiny, unavoidable **round-off error**.
 
-This is usually fine. But what happens if we divide by a very, very small number? Consider this matrix from a classic [numerical analysis](@article_id:142143) example :
+This is usually fine. But what happens if we divide by a very, very small number? Consider this matrix from a classic [numerical analysis](@keyword=numerical_analysis|lang=en-US|style=Feynman) example [@problem_id:1383210]:
 $$
 A = \begin{pmatrix} \epsilon & 1 \\ 2 & -3 \end{pmatrix}, \quad \text{where } \epsilon \text{ is a tiny positive number, say } 10^{-10}.
 $$
-Without pivoting, our pivot is $\epsilon$. To eliminate the $2$ below it, we compute the multiplier $l_{21} = \frac{2}{\epsilon}$. If $\epsilon = 10^{-10}$, then our multiplier is a whopping $2 \times 10^{10}$! When we update the element $A_{22}$, the calculation is $A_{22} \leftarrow -3 - (\frac{2}{\epsilon}) \times 1$. The new value is dominated by the huge term involving the multiplier. Any tiny [round-off error](@article_id:143083) in the value of $\epsilon$ or $1$ will be magnified by $2 \times 10^{10}$ and will completely swamp the original value of $-3$. It’s like trying to measure the thickness of a hair on a person standing on top of Mount Everest; the measurement of the mountain is so large that the hair's contribution is lost in the noise.
+Without pivoting, our pivot is $\epsilon$. To eliminate the $2$ below it, we compute the multiplier $l_{21} = \frac{2}{\epsilon}$. If $\epsilon = 10^{-10}$, then our multiplier is a whopping $2 \times 10^{10}$! When we update the element $A_{22}$, the calculation is $A_{22} \leftarrow -3 - (\frac{2}{\epsilon}) \times 1$. The new value is dominated by the huge term involving the multiplier. Any tiny [round-off error](@keyword=round_off_error|lang=en-US|style=Feynman) in the value of $\epsilon$ or $1$ will be magnified by $2 \times 10^{10}$ and will completely swamp the original value of $-3$. It’s like trying to measure the thickness of a hair on a person standing on top of Mount Everest; the measurement of the mountain is so large that the hair's contribution is lost in the noise.
 
-Now, let's apply our partial [pivoting strategy](@article_id:169062). We compare $|\epsilon|$ and $|2|$. Clearly, $2$ is the larger pivot. So we swap the rows:
+Now, let's apply our partial [pivoting strategy](@keyword=pivoting_strategy|lang=en-US|style=Feynman). We compare $|\epsilon|$ and $|2|$. Clearly, $2$ is the larger pivot. So we swap the rows:
 $$
 A' = \begin{pmatrix} 2 & -3 \\ \epsilon & 1 \end{pmatrix}
 $$
@@ -73,38 +73,38 @@ This is the deeper reason for pivoting. By always choosing the largest available
 
 So, looking for the largest pivot in the current column is good. A natural question arises: wouldn't it be even better to search for the largest pivot in the *entire* remaining submatrix?
 
-This line of thinking leads to **complete (or full) [pivoting](@article_id:137115)**. At each step, we find the largest element in absolute value in the entire trailing submatrix and move it to the [pivot position](@article_id:155961). This requires swapping both its row and its column with the current pivot row and column.
+This line of thinking leads to **complete (or full) [pivoting](@keyword=pivoting|lang=en-US|style=Feynman)**. At each step, we find the largest element in absolute value in the entire trailing submatrix and move it to the [pivot position](@keyword=pivot_position|lang=en-US|style=Feynman). This requires swapping both its row and its column with the current pivot row and column.
 
-This more exhaustive search requires us to keep track of column swaps as well, using another [permutation matrix](@article_id:136347), $Q$. The resulting factorization takes the form :
+This more exhaustive search requires us to keep track of column swaps as well, using another [permutation matrix](@keyword=permutation_matrix|lang=en-US|style=Feynman), $Q$. The resulting factorization takes the form [@problem_id:1383164]:
 $$
 PAQ = LU
 $$
 
-Theoretically, [complete pivoting](@article_id:155383) is the most stable strategy you can employ. But is it worth it? Let's consider the cost. The main work in [pivoting](@article_id:137115) is the search itself.
-- For **[partial pivoting](@article_id:137902)**, at each step $k$ for an $n \times n$ matrix, we search down one column, which takes about $n-k$ comparisons. The total number of comparisons adds up to something on the order of $n^2$ .
-- For **[complete pivoting](@article_id:155383)**, we must search the entire $(n-k+1) \times (n-k+1)$ submatrix. This requires roughly $(n-k)^2$ comparisons at each step. The total search cost sums to something on the order of $n^3$ .
+Theoretically, [complete pivoting](@keyword=complete_pivoting|lang=en-US|style=Feynman) is the most stable strategy you can employ. But is it worth it? Let's consider the cost. The main work in [pivoting](@keyword=pivoting|lang=en-US|style=Feynman) is the search itself.
+- For **[partial pivoting](@keyword=partial_pivoting|lang=en-US|style=Feynman)**, at each step $k$ for an $n \times n$ matrix, we search down one column, which takes about $n-k$ comparisons. The total number of comparisons adds up to something on the order of $n^2$ [@problem_id:1383160].
+- For **[complete pivoting](@keyword=complete_pivoting|lang=en-US|style=Feynman)**, we must search the entire $(n-k+1) \times (n-k+1)$ submatrix. This requires roughly $(n-k)^2$ comparisons at each step. The total search cost sums to something on the order of $n^3$ [@problem_id:1383160].
 
-The total cost of Gaussian elimination is already proportional to $n^3$. However, the search cost for [complete pivoting](@article_id:155383) adds a significant overhead. The ratio of the search costs between complete and [partial pivoting](@article_id:137902) is approximately $\frac{2}{3}n$ for large matrices . This means for a $1000 \times 1000$ matrix, the search alone could be hundreds of times more expensive!
+The total cost of Gaussian elimination is already proportional to $n^3$. However, the search cost for [complete pivoting](@keyword=complete_pivoting|lang=en-US|style=Feynman) adds a significant overhead. The ratio of the search costs between complete and [partial pivoting](@keyword=partial_pivoting|lang=en-US|style=Feynman) is approximately $\frac{2}{3}n$ for large matrices [@problem_id:1383186]. This means for a $1000 \times 1000$ matrix, the search alone could be hundreds of times more expensive!
 
-In practice, the extra stability offered by [complete pivoting](@article_id:155383) is rarely needed. Partial [pivoting](@article_id:137115) provides a brilliant trade-off, offering excellent [numerical stability](@article_id:146056) for a much lower computational price. It's the workhorse of nearly all high-quality numerical software for this very reason: it's a triumph of pragmatic, effective design.
+In practice, the extra stability offered by [complete pivoting](@keyword=complete_pivoting|lang=en-US|style=Feynman) is rarely needed. Partial [pivoting](@keyword=pivoting|lang=en-US|style=Feynman) provides a brilliant trade-off, offering excellent [numerical stability](@keyword=numerical_stability|lang=en-US|style=Feynman) for a much lower computational price. It's the workhorse of nearly all high-quality numerical software for this very reason: it's a triumph of pragmatic, effective design.
 
 ### The Elegant Payoff: The Power of `PA = LU`
 
 So we've labored to disassemble our matrix $A$ into $PA=LU$. What do we gain? This factorization is not just a theoretical nicety; it's a powerhouse for computation.
 
 First, solving a system of equations $A\mathbf{x} = \mathbf{b}$ becomes dramatically easier. We can write it as $P^T LU \mathbf{x} = \mathbf{b}$, or $LU\mathbf{x} = P\mathbf{b}$. We solve this in two simple, triangular steps:
-1.  First, solve $L\mathbf{y} = P\mathbf{b}$ for $\mathbf{y}$ (this is called **[forward substitution](@article_id:138783)**).
-2.  Then, solve $U\mathbf{x} = \mathbf{y}$ for $\mathbf{x}$ (this is called **[backward substitution](@article_id:168374)**).
+1.  First, solve $L\mathbf{y} = P\mathbf{b}$ for $\mathbf{y}$ (this is called **[forward substitution](@keyword=forward_substitution|lang=en-US|style=Feynman)**).
+2.  Then, solve $U\mathbf{x} = \mathbf{y}$ for $\mathbf{x}$ (this is called **[backward substitution](@keyword=backward_substitution|lang=en-US|style=Feynman)**).
 Solving triangular systems is computationally cheap and straightforward. The hard work is done once in the factorization. After that, solving for any number of different right-hand sides $\mathbf{b}$ is incredibly fast.
 
-Second, the factorization beautifully reveals fundamental properties of the matrix. A prime example is the determinant. The [determinant of a product](@article_id:155079) is the product of the determinants, so $\det(P)\det(A) = \det(L)\det(U)$.
+Second, the factorization beautifully reveals fundamental properties of the matrix. A prime example is the determinant. The [determinant of a product](@keyword=determinant_of_a_product|lang=en-US|style=Feynman) is the product of the determinants, so $\det(P)\det(A) = \det(L)\det(U)$.
 - $\det(L) = 1$, because it's unit lower triangular.
 - $\det(U)$ is simply the product of its diagonal elements.
 - $\det(P)$ is either $+1$ or $-1$. It is $(-1)^s$, where $s$ is the number of row swaps performed.
-Putting it all together, we get a wonderfully simple formula for the determinant of $A$ :
+Putting it all together, we get a wonderfully simple formula for the determinant of $A$ [@problem_id:1383162]:
 $$
 \det(A) = (-1)^s \times (\text{product of the diagonal elements of } U)
 $$
 A complicated, global property of $A$ is found by simply multiplying a few numbers together—the numbers that fell out of our stable, systematic decomposition process.
 
-Finally, seeing the decomposition $PA=LU$ allows us to reconstruct the original matrix $A$ perfectly by computing $A = P^T LU$ . It's important to recognize the structure here. While we can write $A = (P^T L) U$, the term in parenthesis, $P^T L$, is generally *not* a tidy [lower triangular matrix](@article_id:201383). Left-multiplying $L$ by $P^T$ scrambles its rows, potentially moving non-zero entries above the diagonal . The true elegance lies in the form $PA=LU$, which expresses a deep truth: any [invertible matrix](@article_id:141557), when its rows are suitably reordered, can be seen as the product of a simple lower triangular machine and a simple upper triangular machine. Pivoting is the art of finding that perfect ordering.
+Finally, seeing the decomposition $PA=LU$ allows us to reconstruct the original matrix $A$ perfectly by computing $A = P^T LU$ [@problem_id:1383204]. It's important to recognize the structure here. While we can write $A = (P^T L) U$, the term in parenthesis, $P^T L$, is generally *not* a tidy [lower triangular matrix](@keyword=lower_triangular_matrix|lang=en-US|style=Feynman). Left-multiplying $L$ by $P^T$ scrambles its rows, potentially moving non-zero entries above the diagonal [@problem_id:1383167]. The true elegance lies in the form $PA=LU$, which expresses a deep truth: any [invertible matrix](@keyword=invertible_matrix|lang=en-US|style=Feynman), when its rows are suitably reordered, can be seen as the product of a simple lower triangular machine and a simple upper triangular machine. Pivoting is the art of finding that perfect ordering.

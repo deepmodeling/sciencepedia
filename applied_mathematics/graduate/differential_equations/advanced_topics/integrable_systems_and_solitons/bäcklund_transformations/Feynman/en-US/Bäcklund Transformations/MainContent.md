@@ -7,7 +7,7 @@ In the chapters that follow, we will first explore the "Principles and Mechanism
 
 Imagine you're facing a differential equation. It’s not just any equation; it’s a nonlinear one, a tangled beast where variables conspire and amplify each other, creating phenomena like the steepening of a wave front just before it breaks, or the unpredictable swirls of turbulent smoke. Unlike their well-behaved linear cousins, where you can add solutions together to get new ones, nonlinear equations usually defy such simple tricks. Solving them can be a Herculean task.
 
-But what if you had a secret decoder? A special lens that, when you look through it, transforms the tangled mess into a simple, orderly picture you already understand? This is the central idea behind **Bäcklund transformations**. They are the mathematicians' secret passages, connecting the seemingly impenetrable fortresses of [nonlinear equations](@article_id:145358) to the open, sunlit fields of simpler, often linear, ones.
+But what if you had a secret decoder? A special lens that, when you look through it, transforms the tangled mess into a simple, orderly picture you already understand? This is the central idea behind **Bäcklund transformations**. They are the mathematicians' secret passages, connecting the seemingly impenetrable fortresses of [nonlinear equations](@keyword=nonlinear_equations|lang=en-US|style=Feynman) to the open, sunlit fields of simpler, often linear, ones.
 
 ### The Alchemist's Stone: Turning Nonlinearity into Linearity
 
@@ -15,9 +15,9 @@ Let's start with a classic example that feels like pure magic. Consider the **Bu
 
 $$u_t + u u_x = \nu u_{xx}$$
 
-This equation describes a beautiful mix of phenomena, from the flow of traffic to the propagation of weak shock waves in a viscous fluid. The term $u u_x$ is the nonlinear culprit; it represents [self-interaction](@article_id:200839), causing the wave to steepen. The term $\nu u_{xx}$ represents diffusion or viscosity, which tries to smooth things out. The battle between these two terms creates stable wave structures. Now, solving this equation directly is not a pleasant affair.
+This equation describes a beautiful mix of phenomena, from the flow of traffic to the propagation of weak shock waves in a viscous fluid. The term $u u_x$ is the nonlinear culprit; it represents [self-interaction](@keyword=self_interaction|lang=en-US|style=Feynman), causing the wave to steepen. The term $\nu u_{xx}$ represents diffusion or viscosity, which tries to smooth things out. The battle between these two terms creates stable wave structures. Now, solving this equation directly is not a pleasant affair.
 
-But in the 1950s, Julian Cole and Eberhard Hopf independently discovered a stunning trick. They proposed a [change of variables](@article_id:140892), a transformation that seems to come out of nowhere. Let's suppose the solution $u(x,t)$ is not the fundamental quantity. Instead, let's define it in terms of some other function, $\phi(x,t)$, like this:
+But in the 1950s, Julian Cole and Eberhard Hopf independently discovered a stunning trick. They proposed a [change of variables](@keyword=change_of_variables|lang=en-US|style=Feynman), a transformation that seems to come out of nowhere. Let's suppose the solution $u(x,t)$ is not the fundamental quantity. Instead, let's define it in terms of some other function, $\phi(x,t)$, like this:
 
 $$u(x,t) = A \frac{\partial}{\partial x} \ln(\phi(x,t))$$
 
@@ -33,11 +33,11 @@ This is the first key principle: a Bäcklund transformation can act as a bridge 
 
 The Cole-Hopf transformation might seem like a happy accident, a "lookup-my-sleeve" kind of trick. But the rabbit came from somewhere. Often, these transformations reveal a deep, hidden algebraic structure in the equations themselves.
 
-Let's consider another famous nonlinear equation, the **Korteweg-de Vries (KdV) equation**, which describes [shallow water waves](@article_id:266737) like solitons:
+Let's consider another famous nonlinear equation, the **Korteweg-de Vries (KdV) equation**, which describes [shallow water waves](@keyword=shallow_water_waves|lang=en-US|style=Feynman) like solitons:
 
 $$u_t - 6uu_x + u_{xxx} = 0$$
 
-Again, the $uu_x$ term makes it nonlinear. In the 1960s, a profound connection was discovered by Robert Miura. He was exploring the relationship between the KdV equation and another one, the **modified Korteweg-de Vries (mKdV) equation**. His discovery, the **Miura transformation**, can be understood through the idea of "factoring" [differential operators](@article_id:274543).
+Again, the $uu_x$ term makes it nonlinear. In the 1960s, a profound connection was discovered by Robert Miura. He was exploring the relationship between the KdV equation and another one, the **modified Korteweg-de Vries (mKdV) equation**. His discovery, the **Miura transformation**, can be understood through the idea of "factoring" [differential operators](@keyword=differential_operators|lang=en-US|style=Feynman).
 
 In quantum mechanics, a particle's state is often described by the **Schrödinger operator**, $L = -\partial_x^2 + u(x)$, where $u(x)$ is the potential energy. Now, what if we try to factor this operator, much like we'd factor a number like $x^2 - y^2 = (x-y)(x+y)$? Let's try to write $L$ as a product of two simpler, first-order operators:
 
@@ -47,7 +47,7 @@ Wait, that doesn't quite work because the derivative $\partial_x$ doesn't commut
 
 So what's the big deal? It turns out that if you insist that $u$ evolves in time according to the KdV equation, then the function $v$ must evolve according to the mKdV equation: $v_t - 6v^2v_x + v_{xxx} = 0$. We have found a transformation that connects two fundamentally important, and distinct, nonlinear equations.
 
-This idea of factoring operators is incredibly deep. It shows up in, of all places, **[supersymmetric quantum mechanics](@article_id:183058)**. There, one often factors the Schrödinger operator (or Hamiltonian) as $L = A^\dagger A$, where $A = \partial_x + w(x)$ and $A^\dagger = -\partial_x + w(x)$ is its adjoint. The potential is then $u = w^2 - w_x$. But what if you multiply the factors in the reverse order, $\tilde{L} = A A^\dagger$? You get a new "partner" operator with a new potential, $\tilde{u} = w^2 + w_x$. The two potentials, $u$ and $\tilde{u}$, are intimately related, and their corresponding quantum systems share almost identical energy spectra.
+This idea of factoring operators is incredibly deep. It shows up in, of all places, **[supersymmetric quantum mechanics](@keyword=supersymmetric_quantum_mechanics|lang=en-US|style=Feynman)**. There, one often factors the Schrödinger operator (or Hamiltonian) as $L = A^\dagger A$, where $A = \partial_x + w(x)$ and $A^\dagger = -\partial_x + w(x)$ is its adjoint. The potential is then $u = w^2 - w_x$. But what if you multiply the factors in the reverse order, $\tilde{L} = A A^\dagger$? You get a new "partner" operator with a new potential, $\tilde{u} = w^2 + w_x$. The two potentials, $u$ and $\tilde{u}$, are intimately related, and their corresponding quantum systems share almost identical energy spectra.
 
 The lesson here is profound. Bäcklund transformations are not just clever substitutions. They are reflections of an underlying algebraic framework, a hidden architecture connecting different physical theories.
 
@@ -59,7 +59,7 @@ Let's take the beautiful **sine-Gordon equation**:
 
 $$u_{xy} = \sin(u)$$
 
-This equation describes everything from the geometry of certain curved surfaces to the behavior of elementary particles. It has a [trivial solution](@article_id:154668): $u_0(x,y) = 0$. It's a valid solution, since the derivative of zero is zero and $\sin(0) = 0$. But it's also a boring one. How can we find something more interesting?
+This equation describes everything from the geometry of certain curved surfaces to the behavior of elementary particles. It has a [trivial solution](@keyword=trivial_solution|lang=en-US|style=Feynman): $u_0(x,y) = 0$. It's a valid solution, since the derivative of zero is zero and $\sin(0) = 0$. But it's also a boring one. How can we find something more interesting?
 
 The auto-Bäcklund transformation for the sine-Gordon equation is a pair of equations that connects a known solution, $u_0$, to a new, unknown solution, $u_1$:
 
@@ -68,7 +68,7 @@ The auto-Bäcklund transformation for the sine-Gordon equation is a pair of equa
 \frac{\partial}{\partial y} \left( \frac{u_1-u_0}{2} \right) &= \frac{1}{a} \sin\left(\frac{u_1+u_0}{2}\right)
 \end{align*}
 
-Here, $a$ is just a parameter you can choose. If we plug in our boring solution $u_0 = 0$, this system becomes a set of equations for $u_1$. If we solve them, we get a famous [non-trivial solution](@article_id:149076): the **soliton**, a robust, particle-like wave that maintains its shape as it travels. By differentiating this system and doing some clever algebra with [trigonometric identities](@article_id:164571), one can prove a remarkable fact: if $u_0$ is a solution to the sine-Gordon equation, then the new function $u_1$ generated by this process is *also* a solution to the sine-Gordon equation.
+Here, $a$ is just a parameter you can choose. If we plug in our boring solution $u_0 = 0$, this system becomes a set of equations for $u_1$. If we solve them, we get a famous [non-trivial solution](@keyword=non_trivial_solution|lang=en-US|style=Feynman): the **soliton**, a robust, particle-like wave that maintains its shape as it travels. By differentiating this system and doing some clever algebra with [trigonometric identities](@keyword=trigonometric_identities|lang=en-US|style=Feynman), one can prove a remarkable fact: if $u_0$ is a solution to the sine-Gordon equation, then the new function $u_1$ generated by this process is *also* a solution to the sine-Gordon equation.
 
 The transformation acts like a crank on a machine. You put one solution in, turn the crank (solve the Bäcklund equations), and a new, more complex solution comes out. You can then take *that* solution, put it back into the machine, and generate yet another one! It's a factory for producing an infinite hierarchy of exact solutions.
 
@@ -98,18 +98,18 @@ But the miracle doesn't stop there. One can use this fact to derive an explicit 
 
 $$w_{12} = w_0 + \frac{2(k_1^2 - k_2^2)}{w_1 - w_2}$$
 
-Look at this! It's a purely algebraic formula. It's a **[nonlinear superposition principle](@article_id:200806)**. It tells us how to combine three solutions ($w_0, w_1, w_2$) to get a fourth, just by using arithmetic. This is the kind of behavior we expect from linear equations, yet here it is, hiding in the heart of a quintessentially [nonlinear system](@article_id:162210). This is the ultimate payoff of the Bäcklund transformation: it reveals a hidden, almost linear simplicity and structure where none was apparent.
+Look at this! It's a purely algebraic formula. It's a **[nonlinear superposition principle](@keyword=nonlinear_superposition_principle|lang=en-US|style=Feynman)**. It tells us how to combine three solutions ($w_0, w_1, w_2$) to get a fourth, just by using arithmetic. This is the kind of behavior we expect from linear equations, yet here it is, hiding in the heart of a quintessentially [nonlinear system](@keyword=nonlinear_system|lang=en-US|style=Feynman). This is the ultimate payoff of the Bäcklund transformation: it reveals a hidden, almost linear simplicity and structure where none was apparent.
 
-This principle is the key to constructing multi-soliton solutions. The solution $w_1$ might be a single soliton, and $w_2$ another. The combined solution $w_{12}$ describes the two [solitons](@article_id:145162) interacting and passing through each other as if they were ghosts—a hallmark of integrable systems.
+This principle is the key to constructing multi-soliton solutions. The solution $w_1$ might be a single soliton, and $w_2$ another. The combined solution $w_{12}$ describes the two [solitons](@keyword=solitons|lang=en-US|style=Feynman) interacting and passing through each other as if they were ghosts—a hallmark of integrable systems.
 
 ### Finding the Golden Variable: A Final Perspective
 
 The recurring theme is one of transformation—finding the right variables to make a problem simple. The Cole-Hopf transformation, the Miura transformation, and the auto-Bäcklund transformations are all examples of this.
 
-Another powerful perspective on this is the **Hirota direct method**. For the KdV equation, instead of a Bäcklund transformation, one postulates a [change of variables](@article_id:140892) of the form $u(x,t) = 2 \frac{\partial^2}{\partial x^2} \ln \tau(x,t)$. This looks suspiciously similar to the Cole-Hopf transformation, and for good reason. When you substitute this into the KdV equation, it transforms into a much simpler (though still exotic-looking) "bilinear" equation for the new variable $\tau(x,t)$:
+Another powerful perspective on this is the **Hirota direct method**. For the KdV equation, instead of a Bäcklund transformation, one postulates a [change of variables](@keyword=change_of_variables|lang=en-US|style=Feynman) of the form $u(x,t) = 2 \frac{\partial^2}{\partial x^2} \ln \tau(x,t)$. This looks suspiciously similar to the Cole-Hopf transformation, and for good reason. When you substitute this into the KdV equation, it transforms into a much simpler (though still exotic-looking) "bilinear" equation for the new variable $\tau(x,t)$:
 
 $$(D_x D_t + D_x^4) \tau \cdot \tau = 0$$
 
-The operators $D_x$ and $D_t$ are special "Hirota derivatives," but the key point is that the equation is now expressed in a form where finding multi-[soliton](@article_id:139786) solutions becomes a systematic, almost algorithmic process of finding special polynomials for $\tau$.
+The operators $D_x$ and $D_t$ are special "Hirota derivatives," but the key point is that the equation is now expressed in a form where finding multi-[soliton](@keyword=soliton|lang=en-US|style=Feynman) solutions becomes a systematic, almost algorithmic process of finding special polynomials for $\tau$.
 
 So, what is a Bäcklund transformation? It is at once a practical tool for solving equations, a window into the hidden algebraic structure of physical laws, and a solution-generating machine. It teaches us a profound lesson that Richard Feynman would have surely appreciated: faced with a complex, tangled problem, don't just attack it head-on. Step back, look for a new perspective, a new language, a new set of variables. The secret passage you find might lead you to a world of unexpected simplicity and beauty.

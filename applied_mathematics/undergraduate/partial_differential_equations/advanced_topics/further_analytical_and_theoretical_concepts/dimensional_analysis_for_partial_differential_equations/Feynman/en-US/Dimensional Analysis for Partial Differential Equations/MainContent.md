@@ -1,21 +1,21 @@
 ## Introduction
-Partial differential equations (PDEs) are the language of the natural world, describing everything from the flow of heat in a metal bar to the intricate dance of financial markets. However, these equations are often laden with a multitude of physical parameters—dimensions, material properties, and rates—making them challenging to solve and even harder to interpret. This article addresses this complexity by introducing a powerfully elegant tool: dimensional analysis. It is a method that goes beyond merely checking units; it allows us to simplify problems, uncover universal physical laws, and gain profound intuition about a system's behavior, sometimes without solving the PDE at all. In the sections that follow, you will first learn the foundational "Principles and Mechanisms" of [dimensional analysis](@article_id:139765) and the art of [non-dimensionalization](@article_id:274385). Next, we will explore its "Applications and Interdisciplinary Connections" to see how dimensionless numbers govern behavior across fluid dynamics, biology, and finance. Finally, you will have the opportunity to apply these concepts through "Hands-On Practices," solidifying your ability to use this essential technique to decode the physics hidden within the mathematics.
+Partial differential equations (PDEs) are the language of the natural world, describing everything from the flow of heat in a metal bar to the intricate dance of financial markets. However, these equations are often laden with a multitude of physical parameters—dimensions, material properties, and rates—making them challenging to solve and even harder to interpret. This article addresses this complexity by introducing a powerfully elegant tool: dimensional analysis. It is a method that goes beyond merely checking units; it allows us to simplify problems, uncover universal physical laws, and gain profound intuition about a system's behavior, sometimes without solving the PDE at all. In the sections that follow, you will first learn the foundational "Principles and Mechanisms" of [dimensional analysis](@keyword=dimensional_analysis|lang=en-US|style=Feynman) and the art of [non-dimensionalization](@keyword=non_dimensionalization|lang=en-US|style=Feynman). Next, we will explore its "Applications and Interdisciplinary Connections" to see how dimensionless numbers govern behavior across fluid dynamics, biology, and finance. Finally, you will have the opportunity to apply these concepts through "Hands-On Practices," solidifying your ability to use this essential technique to decode the physics hidden within the mathematics.
 
 ## Principles and Mechanisms
 
-There is a wonderful thing about physics: its laws must be true no matter what units we use to measure things. Whether you measure a car's speed in miles per hour or furlongs per fortnight, the underlying physics of motion doesn't change. This simple, profound idea is the key to a surprisingly powerful tool called **[dimensional analysis](@article_id:139765)**. It’s more than just a bookkeeping method for units; it's a way to understand the very structure of physical law, to simplify complex problems, and sometimes, to find an answer without even solving the full equation. It's like having a secret decoder for nature's language.
+There is a wonderful thing about physics: its laws must be true no matter what units we use to measure things. Whether you measure a car's speed in miles per hour or furlongs per fortnight, the underlying physics of motion doesn't change. This simple, profound idea is the key to a surprisingly powerful tool called **[dimensional analysis](@keyword=dimensional_analysis|lang=en-US|style=Feynman)**. It’s more than just a bookkeeping method for units; it's a way to understand the very structure of physical law, to simplify complex problems, and sometimes, to find an answer without even solving the full equation. It's like having a secret decoder for nature's language.
 
 ### The Grammar of Physics
 
 Every physically meaningful equation has a kind of grammatical rule: you can't add apples and oranges. More formally, every term being added or subtracted in an equation must have the same physical dimensions. This is the **Principle of Dimensional Homogeneity**. It’s the bedrock on which everything else is built.
 
-Let's look at a familiar equation from fluid dynamics, the [advection-diffusion equation](@article_id:143508). It describes how a substance, say, a puff of smoke, both drifts along with the air and spreads out. A one-dimensional version looks like this:
+Let's look at a familiar equation from fluid dynamics, the [advection-diffusion equation](@keyword=advection_diffusion_equation|lang=en-US|style=Feynman). It describes how a substance, say, a puff of smoke, both drifts along with the air and spreads out. A one-dimensional version looks like this:
 
 $$ \frac{\partial u}{\partial t} + c \frac{\partial u}{\partial x} = D \frac{\partial^2 u}{\partial x^2} $$
 
 Here, $u$ is the concentration of the smoke, $t$ is time, $x$ is position, $c$ is the velocity of the air, and $D$ is the diffusion coefficient. Let's denote the dimension of a quantity $Q$ as $[Q]$. So, $[x] = L$ (length) and $[t] = T$ (time). What about the other terms?
 
-The term on the left, $\frac{\partial u}{\partial t}$, represents the rate of change of concentration over time, so its dimensions must be $\frac{[u]}{T}$. The principle of [homogeneity](@article_id:152118) tells us that the other two terms *must* have these exact same dimensions.
+The term on the left, $\frac{\partial u}{\partial t}$, represents the rate of change of concentration over time, so its dimensions must be $\frac{[u]}{T}$. The principle of [homogeneity](@keyword=homogeneity|lang=en-US|style=Feynman) tells us that the other two terms *must* have these exact same dimensions.
 
 Let's check the second term, $c \frac{\partial u}{\partial x}$. Its dimensions are $[c] \frac{[u]}{L}$. For the grammar to be correct, we must have:
 
@@ -33,11 +33,11 @@ This principle is universally applicable. If we were to model a pollutant in a r
 
 ### Choosing the Right Ruler: The Art of Non-Dimensionalization
 
-Now comes the fun part. Since the laws of physics don't care about our choice of units, what if we choose our units in a really clever way? What if we measure lengths not in meters, but in units of the size of our system? What if we measure time not in seconds, but in units of some natural timescale of the process we're studying? This is the core idea of **[non-dimensionalization](@article_id:274385)**. We trade our familiar, human-centric units for "problem-centric" units.
+Now comes the fun part. Since the laws of physics don't care about our choice of units, what if we choose our units in a really clever way? What if we measure lengths not in meters, but in units of the size of our system? What if we measure time not in seconds, but in units of some natural timescale of the process we're studying? This is the core idea of **[non-dimensionalization](@keyword=non_dimensionalization|lang=en-US|style=Feynman)**. We trade our familiar, human-centric units for "problem-centric" units.
 
-The result is that our variables (like position, time, and temperature) become [dimensionless numbers](@article_id:136320), typically ranging from 0 to 1. Why bother? Because it cleans house. It sweeps all the specific, messy parameters of a particular problem—the length of a rod, the speed of a wave, the particular material properties—out of the core differential equation and bundles them into a few, elegant dimensionless groups.
+The result is that our variables (like position, time, and temperature) become [dimensionless numbers](@keyword=dimensionless_numbers|lang=en-US|style=Feynman), typically ranging from 0 to 1. Why bother? Because it cleans house. It sweeps all the specific, messy parameters of a particular problem—the length of a rod, the speed of a wave, the particular material properties—out of the core differential equation and bundles them into a few, elegant dimensionless groups.
 
-Consider the vibrations on a guitar string of length $L$. The wave equation is $\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$. The constant $c$ depends on the tension and mass of the string. But what if we define a dimensionless position $\bar{x} = x/L$ and a dimensionless time $\tau = t/T$, where $T$ is some characteristic time of the system? By using the [chain rule](@article_id:146928), the wave equation transforms into:
+Consider the vibrations on a guitar string of length $L$. The wave equation is $\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$. The constant $c$ depends on the tension and mass of the string. But what if we define a dimensionless position $\bar{x} = x/L$ and a dimensionless time $\tau = t/T$, where $T$ is some characteristic time of the system? By using the [chain rule](@keyword=chain_rule|lang=en-US|style=Feynman), the wave equation transforms into:
 
 $$ \frac{1}{T^2} \frac{\partial^2 u}{\partial \tau^2} = \frac{c^2}{L^2} \frac{\partial^2 u}{\partial \bar{x}^2} $$
 
@@ -45,13 +45,13 @@ Now, look at this. We have the freedom to choose our characteristic time $T$ how
 
 $$ \frac{\partial^2 \bar{u}}{\partial \tau^2} = \frac{\partial^2 \bar{u}}{\partial \bar{x}^2} $$
 
-We've removed *all* the physical parameters from the fundamental equation! The specific physics of the guitar string (its length, its wave speed, the initial plucking amplitude) hasn't vanished. Instead, they are now packaged neatly into [dimensionless parameters](@article_id:180157) that appear in the boundary and initial conditions. This process reveals the universal mathematical structure shared by all wave phenomena, separating it from the specifics of any single example.
+We've removed *all* the physical parameters from the fundamental equation! The specific physics of the guitar string (its length, its wave speed, the initial plucking amplitude) hasn't vanished. Instead, they are now packaged neatly into [dimensionless parameters](@keyword=dimensionless_parameters|lang=en-US|style=Feynman) that appear in the boundary and initial conditions. This process reveals the universal mathematical structure shared by all wave phenomena, separating it from the specifics of any single example.
 
 This trick of "rescaling" works for the geometry of the problem too. Suppose we are solving for heat distribution on a rectangular plate of length $L$ and width $W$. The domain is $0 \le x \le L$ and $0 \le y \le W$. By defining new coordinates $\xi = x/L$ and $\eta = y/W$, we magically transform *any* rectangle into a universal unit square, $0 \le \xi \le 1$ and $0 \le \eta \le 1$. The Laplace equation $\frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} = 0$ becomes:
 
 $$ \frac{1}{L^2} \frac{\partial^2 T}{\partial \xi^2} + \frac{1}{W^2} \frac{\partial^2 T}{\partial \eta^2} = 0 \quad \text{or} \quad \frac{\partial^2 T}{\partial \xi^2} + \left(\frac{L}{W}\right)^2 \frac{\partial^2 T}{\partial \eta^2} = 0 $$
 
-The specific geometry of the plate has been distilled into a single [dimensionless number](@article_id:260369): the square of the **aspect ratio** $L/W$. Now, a computer program only needs to solve the problem on a unit square, with this one parameter telling it whether the original plate was long and skinny or short and fat.
+The specific geometry of the plate has been distilled into a single [dimensionless number](@keyword=dimensionless_number|lang=en-US|style=Feynman): the square of the **aspect ratio** $L/W$. Now, a computer program only needs to solve the problem on a unit square, with this one parameter telling it whether the original plate was long and skinny or short and fat.
 
 ### The Cast of Characters: Dimensionless Numbers
 
@@ -61,7 +61,7 @@ Imagine a pollutant being carried by a river (advection) while it also spreads o
 
 $$ Pe = \frac{\text{rate of transport by advection}}{\text{rate of transport by diffusion}} $$
 
-An equivalent and beautiful way to see it is as a ratio of timescales. The time it takes for the pollutant to drift a distance $L$ is $\tau_{adv} = L/v$. The [characteristic time](@article_id:172978) it takes to diffuse across that same distance $L$ is $\tau_{diff} = L^2/D$. The ratio is:
+An equivalent and beautiful way to see it is as a ratio of timescales. The time it takes for the pollutant to drift a distance $L$ is $\tau_{adv} = L/v$. The [characteristic time](@keyword=characteristic_time|lang=en-US|style=Feynman) it takes to diffuse across that same distance $L$ is $\tau_{diff} = L^2/D$. The ratio is:
 
 $$ \frac{\tau_{diff}}{\tau_{adv}} = \frac{L^2/D}{L/v} = \frac{vL}{D} = Pe $$
 
@@ -69,13 +69,13 @@ So, a large Péclet number means that diffusion is very slow compared to advecti
 
 Countless such numbers exist, each telling a story. If the pollutant is also decaying with a rate $\lambda$, we can construct a number like $\Pi = \frac{v}{\lambda L}$. This compares the time it takes for the pollutant to decay ($\tau_{react} \sim 1/\lambda$) to the time it takes to be carried across our region of interest ($\tau_{adv} = L/v$). This tells us whether the pollutant will decay before it gets washed away.
 
-This is the real power of [non-dimensionalization](@article_id:274385). It reduces a whole zoo of parameters ($v, L, D, k, \rho, c_p, ...$) to a handful of key [dimensionless numbers](@article_id:136320) that govern the entire system's behavior. A complex heat transfer problem with a heat source and convection might seem to depend on a half-dozen parameters, but its behavior might be captured by just two or three dimensionless groups, like a dimensionless initial temperature $\Gamma$ and the Biot number.
+This is the real power of [non-dimensionalization](@keyword=non_dimensionalization|lang=en-US|style=Feynman). It reduces a whole zoo of parameters ($v, L, D, k, \rho, c_p, ...$) to a handful of key [dimensionless numbers](@keyword=dimensionless_numbers|lang=en-US|style=Feynman) that govern the entire system's behavior. A complex heat transfer problem with a heat source and convection might seem to depend on a half-dozen parameters, but its behavior might be captured by just two or three dimensionless groups, like a dimensionless initial temperature $\Gamma$ and the Biot number.
 
 ### The Magic of Scaling and Prediction
 
-This leads to a tremendously useful concept: **[dynamic similarity](@article_id:162468)**. Imagine we are studying heat flow in two very different systems: a tiny silicon microchip and a large concrete slab. The heat equation for both is $\rho c_p \frac{\partial T}{\partial t} = k \frac{\partial^2 T}{\partial x^2}$. When we non-dimensionalize this equation, a key dimensionless time emerges, the **Fourier number**, $Fo = \frac{\alpha t}{L^2}$, where $\alpha = k/(\rho c_p)$ is the thermal diffusivity.
+This leads to a tremendously useful concept: **[dynamic similarity](@keyword=dynamic_similarity|lang=en-US|style=Feynman)**. Imagine we are studying heat flow in two very different systems: a tiny silicon microchip and a large concrete slab. The heat equation for both is $\rho c_p \frac{\partial T}{\partial t} = k \frac{\partial^2 T}{\partial x^2}$. When we non-dimensionalize this equation, a key dimensionless time emerges, the **Fourier number**, $Fo = \frac{\alpha t}{L^2}$, where $\alpha = k/(\rho c_p)$ is the thermal diffusivity.
 
-The principle of [dynamic similarity](@article_id:162468) says that if the dimensionless equations and the dimensionless boundary/initial conditions are identical for both the chip and the slab, then their solutions in dimensionless variables will also be identical! This means if we want the slab to behave in a "similar" way to the chip, we just need to make sure their Fourier numbers are the same:
+The principle of [dynamic similarity](@keyword=dynamic_similarity|lang=en-US|style=Feynman) says that if the dimensionless equations and the dimensionless boundary/initial conditions are identical for both the chip and the slab, then their solutions in dimensionless variables will also be identical! This means if we want the slab to behave in a "similar" way to the chip, we just need to make sure their Fourier numbers are the same:
 
 $$ Fo_{chip} = Fo_{slab} \quad \implies \quad \frac{\alpha_A t_A}{L_A^2} = \frac{\alpha_B t_B}{L_B^2} $$
 
@@ -93,7 +93,7 @@ $$ R \propto \sqrt{Dt} $$
 
 We have just discovered a fundamental law of diffusion—that the size of a diffusing region grows with the square root of time—using nothing more than "grammatical" consistency!
 
-Perhaps the most famous example of this was Sir Geoffrey Taylor's analysis of a declassified film of the first atomic bomb test. He argued that in such a powerful explosion, the radius $R$ of the shockwave could only depend on the immense energy released $E$, the ambient density of the air $\rho_0$, and time $t$. The formal procedure for this, the **Buckingham Pi Theorem**, confirms that these variables can be combined into a single dimensionless group. By requiring [dimensional consistency](@article_id:270699) in the relation $R = C E^a \rho_0^b t^c$, one is inexorably led to the exponents $a=1/5$, $b=-1/5$, and $c=2/5$. This means:
+Perhaps the most famous example of this was Sir Geoffrey Taylor's analysis of a declassified film of the first atomic bomb test. He argued that in such a powerful explosion, the radius $R$ of the shockwave could only depend on the immense energy released $E$, the ambient density of the air $\rho_0$, and time $t$. The formal procedure for this, the **Buckingham Pi Theorem**, confirms that these variables can be combined into a single dimensionless group. By requiring [dimensional consistency](@keyword=dimensional_consistency|lang=en-US|style=Feynman) in the relation $R = C E^a \rho_0^b t^c$, one is inexorably led to the exponents $a=1/5$, $b=-1/5$, and $c=2/5$. This means:
 
 $$ R \propto \left( \frac{E t^2}{\rho_0} \right)^{1/5} $$
 

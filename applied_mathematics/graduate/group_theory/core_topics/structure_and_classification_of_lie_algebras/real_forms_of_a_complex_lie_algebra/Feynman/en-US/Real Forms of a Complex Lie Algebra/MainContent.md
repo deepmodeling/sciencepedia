@@ -5,32 +5,32 @@ Across three chapters, we will embark on a journey to demystify this fundamental
 
 ## Principles and Mechanisms
 
-Now, let's peel back the layers and get to the heart of the matter. We’ve been introduced to this idea of "real forms," but what does that truly mean? Imagine the world of complex numbers, $\mathbb{C}$. Inside this vast, two-dimensional plane, there lies a simple, one-dimensional line: the real numbers, $\mathbb{R}$. The real numbers are, in a very real sense, a "[real form](@article_id:193372)" of the complex numbers. If you take the real numbers and "complexify" them—that is, you allow yourself to multiply them by $i$ and add them together—you reconstruct the entire complex plane. Every complex number $z$ can be uniquely written as $a + ib$, where $a$ and $b$ are real.
+Now, let's peel back the layers and get to the heart of the matter. We’ve been introduced to this idea of "real forms," but what does that truly mean? Imagine the world of complex numbers, $\mathbb{C}$. Inside this vast, two-dimensional plane, there lies a simple, one-dimensional line: the real numbers, $\mathbb{R}$. The real numbers are, in a very real sense, a "[real form](@keyword=real_form|lang=en-US|style=Feynman)" of the complex numbers. If you take the real numbers and "complexify" them—that is, you allow yourself to multiply them by $i$ and add them together—you reconstruct the entire complex plane. Every complex number $z$ can be uniquely written as $a + ib$, where $a$ and $b$ are real.
 
-This simple picture is the key to understanding our entire story. A complex Lie algebra is like the complex plane: a rich, elegant structure. A **[real form](@article_id:193372)** of that complex Lie algebra is a "slice" of it, a real Lie algebra that, when you complexify it, gives you back the original complex algebra. The journey of discovery lies in realizing that, unlike our simple number example, a single complex Lie algebra can have many different, non-equivalent real slices, each revealing a different facet of the underlying complex reality.
+This simple picture is the key to understanding our entire story. A complex Lie algebra is like the complex plane: a rich, elegant structure. A **[real form](@keyword=real_form|lang=en-US|style=Feynman)** of that complex Lie algebra is a "slice" of it, a real Lie algebra that, when you complexify it, gives you back the original complex algebra. The journey of discovery lies in realizing that, unlike our simple number example, a single complex Lie algebra can have many different, non-equivalent real slices, each revealing a different facet of the underlying complex reality.
 
 ### Conjugation: The Magic Mirror
 
-So, how do we find these "real slices"? Instead of building up from the real, let's work backward from the complex. A [real form](@article_id:193372) within a complex algebra $\mathfrak{g}$ is the set of elements left "unchanged" by a special kind of reflection. This reflection is called a **conjugation**, denoted by $\sigma$.
+So, how do we find these "real slices"? Instead of building up from the real, let's work backward from the complex. A [real form](@keyword=real_form|lang=en-US|style=Feynman) within a complex algebra $\mathfrak{g}$ is the set of elements left "unchanged" by a special kind of reflection. This reflection is called a **conjugation**, denoted by $\sigma$.
 
-A conjugation $\sigma$ is a map from the algebra to itself that behaves much like the familiar [complex conjugation](@article_id:174196) of numbers ($z \mapsto \bar{z}$). It must satisfy three properties:
-1.  It's an [automorphism](@article_id:143027): it respects the Lie bracket, $\sigma([X,Y]) = [\sigma(X), \sigma(Y)]$.
-2.  It's an [involution](@article_id:203241): applying it twice gets you back where you started, $\sigma(\sigma(X)) = X$.
+A conjugation $\sigma$ is a map from the algebra to itself that behaves much like the familiar [complex conjugation](@keyword=complex_conjugation|lang=en-US|style=Feynman) of numbers ($z \mapsto \bar{z}$). It must satisfy three properties:
+1.  It's an [automorphism](@keyword=automorphism|lang=en-US|style=Feynman): it respects the Lie bracket, $\sigma([X,Y]) = [\sigma(X), \sigma(Y)]$.
+2.  It's an [involution](@keyword=involution|lang=en-US|style=Feynman): applying it twice gets you back where you started, $\sigma(\sigma(X)) = X$.
 3.  It's "anti-linear": it flips complex scalars, $\sigma(\lambda X) = \bar{\lambda} \sigma(X)$.
 
-The set of all elements $X$ that are fixed by this map—that is, all $X$ for which $\sigma(X) = X$—constitutes a [real form](@article_id:193372). This is a beautiful and powerful idea: the search for real forms becomes a search for these "magic mirrors," these conjugation maps. Different mirrors will reveal different real substructures.
+The set of all elements $X$ that are fixed by this map—that is, all $X$ for which $\sigma(X) = X$—constitutes a [real form](@keyword=real_form|lang=en-US|style=Feynman). This is a beautiful and powerful idea: the search for real forms becomes a search for these "magic mirrors," these conjugation maps. Different mirrors will reveal different real substructures.
 
 ### A Tale of Two Forms: The Hydrogen Atom of Lie Theory
 
 Let's make this concrete with the most fundamental example, the "hydrogen atom" of Lie theory: the complex Lie algebra $\mathfrak{sl}(2, \mathbb{C})$, the algebra of all $2 \times 2$ complex matrices with zero trace. Its simplicity allows us to see all the essential features in action. What are its real forms? Let's find some conjugations!
 
 **Mirror 1: The Obvious One**
-The most straightforward conjugation you could imagine is element-wise [complex conjugation](@article_id:174196) of the matrix entries: $\sigma_0(X) = \bar{X}$. What elements are fixed by this map? A matrix $X$ is fixed if $X = \bar{X}$, which means all of its entries must be real numbers. The set of all $2 \times 2$ *real* matrices with trace zero forms a Lie algebra, which we call $\mathfrak{sl}(2, \mathbb{R})$. This is our first [real form](@article_id:193372).
+The most straightforward conjugation you could imagine is element-wise [complex conjugation](@keyword=complex_conjugation|lang=en-US|style=Feynman) of the matrix entries: $\sigma_0(X) = \bar{X}$. What elements are fixed by this map? A matrix $X$ is fixed if $X = \bar{X}$, which means all of its entries must be real numbers. The set of all $2 \times 2$ *real* matrices with trace zero forms a Lie algebra, which we call $\mathfrak{sl}(2, \mathbb{R})$. This is our first [real form](@keyword=real_form|lang=en-US|style=Feynman).
 
 **Mirror 2: The Subtle One**
-But is that the only one? What if we try a more creative mirror? Consider the map $\sigma_c(X) = -X^\dagger$, where $X^\dagger$ is the [conjugate transpose](@article_id:147415) of $X$. You can check that this is also a valid conjugation. Now, what elements are fixed? We are looking for matrices $X$ such that $X = -X^\dagger$. These are precisely the traceless, *skew-Hermitian* matrices. This real Lie algebra is famously known as $\mathfrak{su}(2)$.
+But is that the only one? What if we try a more creative mirror? Consider the map $\sigma_c(X) = -X^\dagger$, where $X^\dagger$ is the [conjugate transpose](@keyword=conjugate_transpose|lang=en-US|style=Feynman) of $X$. You can check that this is also a valid conjugation. Now, what elements are fixed? We are looking for matrices $X$ such that $X = -X^\dagger$. These are precisely the traceless, *skew-Hermitian* matrices. This real Lie algebra is famously known as $\mathfrak{su}(2)$.
 
-So, we have discovered something remarkable. The single complex algebra $\mathfrak{sl}(2, \mathbb{C})$ has at least two entirely different "real shadows": the algebra $\mathfrak{sl}(2, \mathbb{R})$ of real matrices and the algebra $\mathfrak{su}(2)$ of skew-Hermitian matrices. They are not isomorphic; they represent fundamentally different real structures. The richness comes from this [multiplicity](@article_id:135972).
+So, we have discovered something remarkable. The single complex algebra $\mathfrak{sl}(2, \mathbb{C})$ has at least two entirely different "real shadows": the algebra $\mathfrak{sl}(2, \mathbb{R})$ of real matrices and the algebra $\mathfrak{su}(2)$ of skew-Hermitian matrices. They are not isomorphic; they represent fundamentally different real structures. The richness comes from this [multiplicity](@keyword=multiplicity|lang=en-US|style=Feynman).
 
 ### The Killing Form: A Lie Algebra's Fingerprint
 
@@ -47,20 +47,20 @@ The difference in these fingerprints is undeniable. They are fundamentally diffe
 ### Compact vs. Split: Spheres and Saddles
 
 This signature of the Killing form is not just a bunch of numbers; it paints a geometric picture.
--   A real Lie algebra whose Killing form is negative-definite is called a **compact** [real form](@article_id:193372). Its associated Lie group is "closed" and "bounded," like a sphere. $\mathfrak{su}(2)$ is the quintessential example; its group $SU(2)$ is topologically a 3-sphere.
--   A real Lie algebra with an indefinite Killing form is called **non-compact**. A special, important case is the **split** [real form](@article_id:193372), where the structure is as "non-compact as possible." $\mathfrak{sl}(2, \mathbb{R})$ is the [split real form](@article_id:180896) of $\mathfrak{sl}(2, \mathbb{C})$. Its geometry is "open" and hyperbolic, like a saddle surface.
+-   A real Lie algebra whose Killing form is negative-definite is called a **compact** [real form](@keyword=real_form|lang=en-US|style=Feynman). Its associated Lie group is "closed" and "bounded," like a sphere. $\mathfrak{su}(2)$ is the quintessential example; its group $SU(2)$ is topologically a 3-sphere.
+-   A real Lie algebra with an indefinite Killing form is called **non-compact**. A special, important case is the **split** [real form](@keyword=real_form|lang=en-US|style=Feynman), where the structure is as "non-compact as possible." $\mathfrak{sl}(2, \mathbb{R})$ is the [split real form](@keyword=split_real_form|lang=en-US|style=Feynman) of $\mathfrak{sl}(2, \mathbb{C})$. Its geometry is "open" and hyperbolic, like a saddle surface.
 
-So the Killing form provides the first major branching point in our classification: every complex semisimple Lie algebra has a unique [compact real form](@article_id:203770) (up to isomorphism), and a menagerie of non-compact ones.
+So the Killing form provides the first major branching point in our classification: every complex semisimple Lie algebra has a unique [compact real form](@keyword=compact_real_form|lang=en-US|style=Feynman) (up to isomorphism), and a menagerie of non-compact ones.
 
 ### Deconstructing Reality: The Cartan and Iwasawa Decompositions
 
 The non-compact forms, being more complex, possess a richer internal structure. We can dissect them to understand their anatomy.
 
-The first and most important dissection is the **Cartan decomposition**. For any non-compact semisimple real algebra $\mathfrak{g}_0$, we can write it as a [direct sum](@article_id:156288) of two special subspaces:
+The first and most important dissection is the **Cartan decomposition**. For any non-compact semisimple real algebra $\mathfrak{g}_0$, we can write it as a [direct sum](@keyword=direct_sum|lang=en-US|style=Feynman) of two special subspaces:
 $$ \mathfrak{g}_0 = \mathfrak{k} \oplus \mathfrak{p} $$
-This decomposition is defined by a **Cartan [involution](@article_id:203241)** $\theta$, a special automorphism of the algebra that squares to the identity. $\mathfrak{k}$ is the part fixed by $\theta$ (its $+1$ [eigenspace](@article_id:150096)), and $\mathfrak{p}$ is the part flipped by $\theta$ (its $-1$ [eigenspace](@article_id:150096)).
+This decomposition is defined by a **Cartan [involution](@keyword=involution|lang=en-US|style=Feynman)** $\theta$, a special automorphism of the algebra that squares to the identity. $\mathfrak{k}$ is the part fixed by $\theta$ (its $+1$ [eigenspace](@keyword=eigenspace|lang=en-US|style=Feynman)), and $\mathfrak{p}$ is the part flipped by $\theta$ (its $-1$ [eigenspace](@keyword=eigenspace|lang=en-US|style=Feynman)).
 
-Let's look at $\mathfrak{sl}(n, \mathbb{R})$, where a standard Cartan [involution](@article_id:203241) is $\theta(X) = -X^T$.
+Let's look at $\mathfrak{sl}(n, \mathbb{R})$, where a standard Cartan [involution](@keyword=involution|lang=en-US|style=Feynman) is $\theta(X) = -X^T$.
 -   The **compact part** $\mathfrak{k}$ consists of matrices where $-X^T = X$, meaning $X$ is skew-symmetric. This subalgebra is $\mathfrak{so}(n)$, the algebra of rotations. Its dimension for $n=4$ is $\frac{4(3)}{2}=6$.
 -   The **non-compact part** $\mathfrak{p}$ consists of matrices where $-X^T=-X$, meaning $X$ is symmetric. This is just a vector space, not a subalgebra. For $\mathfrak{sl}(2, \mathbb{R})$, $\dim(\mathfrak{p})=2$.
 
@@ -74,6 +74,6 @@ An even finer decomposition, the **Iwasawa decomposition** $\mathfrak{g} = \math
 
 All these tools—conjugations, Killing forms, decompositions, rank—are not just abstract games. They are the essential machinery behind a complete and stunningly beautiful classification. For any complex simple Lie algebra, we can list all of its possible real forms. For $\mathfrak{sl}(3, \mathbb{C})$ (type $A_2$), for instance, there are exactly three non-isomorphic real forms: the split form $\mathfrak{sl}(3, \mathbb{R})$, the compact form $\mathfrak{su}(3)$, and one "mixed" form $\mathfrak{su}(2,1)$.
 
-This brings us back to our main theme: unity. Every non-compact real algebra, like $\mathfrak{so}(p,q)$, has a **compact dual**, in this case $\mathfrak{so}(p+q)$, which is a [compact real form](@article_id:203770) of the *same* complex algebra. They have the same dimension and are inextricably linked. For example, the 21-dimensional non-compact algebra $\mathfrak{so}(3,4)$ has as its compact dual the 21-dimensional compact algebra $\mathfrak{so}(7)$. They are different real manifestations of a single, underlying complex entity, $\mathfrak{so}(7, \mathbb{C})$.
+This brings us back to our main theme: unity. Every non-compact real algebra, like $\mathfrak{so}(p,q)$, has a **compact dual**, in this case $\mathfrak{so}(p+q)$, which is a [compact real form](@keyword=compact_real_form|lang=en-US|style=Feynman) of the *same* complex algebra. They have the same dimension and are inextricably linked. For example, the 21-dimensional non-compact algebra $\mathfrak{so}(3,4)$ has as its compact dual the 21-dimensional compact algebra $\mathfrak{so}(7)$. They are different real manifestations of a single, underlying complex entity, $\mathfrak{so}(7, \mathbb{C})$.
 
 The world of real forms shows us that reality is structured in subtle and varied ways. A single complex truth can cast many different real shadows, each with its own character, its own geometry, and its own physical applications, from particle physics to general relativity. The principles and mechanisms we've explored are our guide to understanding this deep and unified structure.

@@ -1,20 +1,20 @@
 ## 引言
-从调度全球供应链到优化互联网数据传输，再到规划城市电力网络，无数复杂系统都可以被抽象为一种强大的数学模型：[网络流](@article_id:332502)。这些网络中的实体——无论是货物、数据还是电力——都受到其路径容量的限制。这就引出了一个核心问题：在给定的网络约束下，我们如何才能最大限度地利用其能力，实现从源头到终点的最大吞吐量？这个问题不仅是理论上的挑战，更在工程、物流和计算机科学中具有巨大的实践价值。
+从调度全球供应链到优化互联网数据传输，再到规划城市电力网络，无数复杂系统都可以被抽象为一种强大的数学模型：[网络流](@keyword=network_flows|lang=zh-CN|style=Feynman)。这些网络中的实体——无论是货物、数据还是电力——都受到其路径容量的限制。这就引出了一个核心问题：在给定的网络约束下，我们如何才能最大限度地利用其能力，实现从源头到终点的最大吞吐量？这个问题不仅是理论上的挑战，更在工程、物流和计算机科学中具有巨大的实践价值。
 
-本文旨在系统性地解答这一问题，我们将深入探索解决[最大流问题](@article_id:336335)的经典方法——[Ford-Fulkerson算法](@article_id:326368)。在第一章“核心概念”中，我们将揭示[网络流](@article_id:332502)的基本定律，理解[算法](@article_id:331821)如何通过巧妙的“[残差网络](@article_id:641635)”概念来寻找并增加流量，并触及其深刻的理论基石——[最大流最小割定理](@article_id:310877)。随后的第二章“应用与跨学科连接”将带领我们跨出理论的边界，探索这一思想如何被应用于解决[二分图](@article_id:339387)匹配、项目选择乃至[计算机视觉](@article_id:298749)中的[图像分割](@article_id:326848)等一系列看似毫不相关的问题。通过这次学习，您将不仅掌握一个[算法](@article_id:331821)，更会领略到一个优雅的数学思想如何成为解决现实世界复杂问题的通用钥匙。
+本文旨在系统性地解答这一问题，我们将深入探索解决[最大流问题](@keyword=maximum_flow_problem|lang=zh-CN|style=Feynman)的经典方法——[Ford-Fulkerson算法](@keyword=ford_fulkerson_algorithm|lang=zh-CN|style=Feynman)。在第一章“核心概念”中，我们将揭示[网络流](@keyword=network_flows|lang=zh-CN|style=Feynman)的基本定律，理解[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)如何通过巧妙的“[残差网络](@keyword=residual_networks|lang=zh-CN|style=Feynman)”概念来寻找并增加流量，并触及其深刻的理论基石——[最大流最小割定理](@keyword=max_flow_min_cut_theorem|lang=zh-CN|style=Feynman)。随后的第二章“应用与跨学科连接”将带领我们跨出理论的边界，探索这一思想如何被应用于解决[二分图](@keyword=2_colorable_graph|lang=zh-CN|style=Feynman)匹配、项目选择乃至[计算机视觉](@keyword=computer_vision|lang=zh-CN|style=Feynman)中的[图像分割](@keyword=image_segmentation|lang=zh-CN|style=Feynman)等一系列看似毫不相关的问题。通过这次学习，您将不仅掌握一个[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)，更会领略到一个优雅的数学思想如何成为解决现实世界复杂问题的通用钥匙。
 
-现在，让我们从构成[网络流](@article_id:332502)世界的“物理法则”开始，一同深入其核心概念。
+现在，让我们从构成[网络流](@keyword=network_flows|lang=zh-CN|style=Feynman)世界的“物理法则”开始，一同深入其核心概念。
 
 ## 核心概念
-我们在引言中已经领略了[网络流问题](@article_id:346265)的广阔天地，从输送物资到分发数据，它的身影无处不在。但这些网络背后的支配法则是什么？我们如何才能找到一个网络的“极限”？现在，让我们像物理学家探索自然定律一样，深入这个问题的核心，揭示其内在的原理与机制。
+我们在引言中已经领略了[网络流问题](@keyword=network_flow_problems|lang=zh-CN|style=Feynman)的广阔天地，从输送物资到分发数据，它的身影无处不在。但这些网络背后的支配法则是什么？我们如何才能找到一个网络的“极限”？现在，让我们像物理学家探索自然定律一样，深入这个问题的核心，揭示其内在的原理与机制。
 
-### 流量世界的“[守恒律](@article_id:307307)”
+### 流量世界的“[守恒律](@keyword=conservation_laws|lang=zh-CN|style=Feynman)”
 
 想象一个城市的供水系统，水从水库（源点 $s$）流出，通过一系列泵站和管道，最终到达千家万户（汇点 $t$）。这个系统要正常工作，必须遵守两条不可违背的“物理法则”。
 
-第一条是 **容量限制（Capacity Constraint）**。每根水管都有一个最大[承载量](@article_id:298467)，比如每小时1000升。你不能强行让每小时2000升的水流过它，这和[欧姆定律](@article_id:300974)中电流不能无限大是同一个道理。在我们的[网络模型](@article_id:297407)中，任何一条边 $(u,v)$ 上的实际流量 $f(u,v)$ 都不能超过它的容量 $c(u,v)$。流量也不能是负的——水不会倒流（除非我们后面引入一个更巧妙的概念）。所以，我们有 $0 \leq f(u,v) \leq c(u,v)$。
+第一条是 **容量限制（Capacity Constraint）**。每根水管都有一个最大[承载量](@keyword=carrying_capacity|lang=zh-CN|style=Feynman)，比如每小时1000升。你不能强行让每小时2000升的水流过它，这和[欧姆定律](@keyword=ohm_s_law|lang=zh-CN|style=Feynman)中电流不能无限大是同一个道理。在我们的[网络模型](@keyword=network_models|lang=zh-CN|style=Feynman)中，任何一条边 $(u,v)$ 上的实际流量 $f(u,v)$ 都不能超过它的容量 $c(u,v)$。流量也不能是负的——水不会倒流（除非我们后面引入一个更巧妙的概念）。所以，我们有 $0 \leq f(u,v) \leq c(u,v)$。
 
-第二条是 **[流量守恒](@article_id:337324)（Flow Conservation）**。对于网络中任何一个中间节点——比如一个既不是水库也不是最终用户的泵站——流入的水量必须精确地等于流出的水量。节点本身不生产水，也不消耗水。这就像电路中的基尔霍夫定律，流入一个节点的电流之和等于流出电流之和。
+第二条是 **[流量守恒](@keyword=conservation_of_flow_rate|lang=zh-CN|style=Feynman)（Flow Conservation）**。对于网络中任何一个中间节点——比如一个既不是水库也不是最终用户的泵站——流入的水量必须精确地等于流出的水量。节点本身不生产水，也不消耗水。这就像电路中的基尔霍夫定律，流入一个节点的电流之和等于流出电流之和。[@problem_id:1541567]
 
 任何一个满足了这两个条件的流量分配方案，我们称之为一个 **可行流（feasible flow）**。我们的终极目标，就是找到一个可行流，使得从源点 $s$ 流出的总流量（我们称之为流量的 **值**）达到最大。
 
@@ -26,60 +26,60 @@
 
 这个想法很朴素：不断寻找增广路，不断增加流量，直到再也找不到任何增广路为止。这听起来不错，但它隐藏了一个微妙的陷阱。设想一下，你为了增加一点点流量，选择了一条路径，但这个选择却“堵死”了另一条潜力大得多的路径。你可能会陷入一个局部最优的困局，就像登山时选择了一条看似好走的上山小径，结果却发现它通向一个悬崖，而真正通往山顶的大道在你做出选择的那个岔路口的另一边。
 
-### [残差网络](@article_id:641635)：[算法](@article_id:331821)的“神来之笔”
+### [残差网络](@keyword=residual_networks|lang=zh-CN|style=Feynman)：[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的“神来之笔”
 
-要解决这个“短视”的问题，我们需要一个更强大的工具，一个能让我们“后悔”并“撤销”先前决策的机制。这就是 **[残差网络](@article_id:641635)（Residual Graph）** 的精妙之处，也是[Ford-Fulkerson算法](@article_id:326368)思想的核心。
+要解决这个“短视”的问题，我们需要一个更强大的工具，一个能让我们“后悔”并“撤销”先前决策的机制。这就是 **[残差网络](@keyword=residual_networks|lang=zh-CN|style=Feynman)（Residual Graph）** 的精妙之处，也是[Ford-Fulkerson算法](@keyword=ford_fulkerson_algorithm|lang=zh-CN|style=Feynman)思想的核心。
 
-[残差网络](@article_id:641635)像一个“机会地图”，它告诉我们在当前流量 $f$ 的基础上，还能如何调整流量。对于原始网络中的每一条边 $(u,v)$：
+[残差网络](@keyword=residual_networks|lang=zh-CN|style=Feynman)像一个“机会地图”，它告诉我们在当前流量 $f$ 的基础上，还能如何调整流量。对于原始网络中的每一条边 $(u,v)$：
 
-1.  **前向边（Forward Edge）**: 如果管道 $(u,v)$ 原本的容量是 $c(u,v)$，已经流过了 $f(u,v)$ 的流量，那么它还剩下的容量就是 $c(u,v) - f(u,v)$。我们就在[残差网络](@article_id:641635)里画一条从 $u$ 到 $v$ 的边，容量就是这个“剩余容量”。这代表了我们还能从 $u$ 向 $v$ **增加** 多少流量。
+1.  **前向边（Forward Edge）**: 如果管道 $(u,v)$ 原本的容量是 $c(u,v)$，已经流过了 $f(u,v)$ 的流量，那么它还剩下的容量就是 $c(u,v) - f(u,v)$。我们就在[残差网络](@keyword=residual_networks|lang=zh-CN|style=Feynman)里画一条从 $u$ 到 $v$ 的边，容量就是这个“剩余容量”。这代表了我们还能从 $u$ 向 $v$ **增加** 多少流量。[@problem_id:1541524]
 
-2.  **反向边（Backward Edge）**: 这是最令人拍案叫绝的设计。如果管道 $(u,v)$ 上已经有了 $f(u,v)$ 的流量，我们就在[残差网络](@article_id:641635)里画一条**反向**的边，也就是从 $v$ 到 $u$，容量等于 $f(u,v)$。这代表了什么？它并不意味着水真的从 $v$ 倒流回 $u$。它是一个巧妙的“会计技巧”，代表我们可以从 $(u,v)$ 上**撤销**多少流量。
+2.  **反向边（Backward Edge）**: 这是最令人拍案叫绝的设计。如果管道 $(u,v)$ 上已经有了 $f(u,v)$ 的流量，我们就在[残差网络](@keyword=residual_networks|lang=zh-CN|style=Feynman)里画一条**反向**的边，也就是从 $v$ 到 $u$，容量等于 $f(u,v)$。这代表了什么？它并不意味着水真的从 $v$ 倒流回 $u$。它是一个巧妙的“会计技巧”，代表我们可以从 $(u,v)$ 上**撤销**多少流量。[@problem_id:1541526]
 
-想象一下，你有一批货物从仓库 $u$ 运到了仓库 $v$。[残差网络](@article_id:641635)中的反向边 $(v,u)$ 相当于在说：“嘿，我们可以把之前从 $u$ 运到 $v$ 的那批货‘退回’给 $u$。” 这批货物回到 $u$ 之后，就可以被重新调度，比如沿着一条更好的路径 $u \to w \to \dots \to t$ 送往终点。本质上，这个“撤销”操作实现了一次 **流量重路由**。它允许[算法](@article_id:331821)纠正早期可能不理想的决策，赋予了我们寻找[全局最优解](@article_id:354754)的能力。
+想象一下，你有一批货物从仓库 $u$ 运到了仓库 $v$。[残差网络](@keyword=residual_networks|lang=zh-CN|style=Feynman)中的反向边 $(v,u)$ 相当于在说：“嘿，我们可以把之前从 $u$ 运到 $v$ 的那批货‘退回’给 $u$。” 这批货物回到 $u$ 之后，就可以被重新调度，比如沿着一条更好的路径 $u \to w \to \dots \to t$ 送往终点。本质上，这个“撤销”操作实现了一次 **流量重路由**。它允许[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)纠正早期可能不理想的决策，赋予了我们寻找[全局最优解](@keyword=global_optimum|lang=zh-CN|style=Feynman)的能力。[@problem_id:1541526]
 
-有了[残差网络](@article_id:641635)，[Ford-Fulkerson算法](@article_id:326368)的流程变得异常清晰和优美：
+有了[残差网络](@keyword=residual_networks|lang=zh-CN|style=Feynman)，[Ford-Fulkerson算法](@keyword=ford_fulkerson_algorithm|lang=zh-CN|style=Feynman)的流程变得异常清晰和优美：
 
 1.  从一个零流量的初始状态开始。
-2.  在当前的[残差网络](@article_id:641635) $G_f$ 中，寻找一条从 $s$ 到 $t$ 的路径（也就是增广路）。
-3.  如果找不到任何这样的路径，那么恭喜你，当前的流量 $f$ 已经是最大流了！[算法](@article_id:331821)结束。
-4.  如果找到了，计算这条路径上的[瓶颈容量](@article_id:325939) $\Delta$（即路径上所有边的最小[残差](@article_id:348682)容量）。
+2.  在当前的[残差网络](@keyword=residual_networks|lang=zh-CN|style=Feynman) $G_f$ 中，寻找一条从 $s$ 到 $t$ 的路径（也就是增广路）。
+3.  如果找不到任何这样的路径，那么恭喜你，当前的流量 $f$ 已经是最大流了！[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)结束。
+4.  如果找到了，计算这条路径上的[瓶颈容量](@keyword=bottleneck_capacity|lang=zh-CN|style=Feynman) $\Delta$（即路径上所有边的最小[残差](@keyword=residue|lang=zh-CN|style=Feynman)容量）。
 5.  沿着这条路径增加 $\Delta$ 的流量。具体操作是：对于路径上的每一条前向边 $(u,v)$，我们将原始流量 $f(u,v)$ 增加 $\Delta$；对于每一条反向边 $(v,u)$，我们将原始流量 $f(u,v)$ 减小 $\Delta$。
 6.  回到第2步，重复此过程。
 
-一个有趣且重要的性质是，如果网络的所有容量都是整数，那么每一次增广，流量值至少会增加1（因为[瓶颈容量](@article_id:325939)至少是1）。由于总流量有一个明确的上限（例如，所有从源点出发的管道的容量总和），这个不断累加整数的过程必然会在有限步内结束。这保证了[算法](@article_id:331821)对于整数容量网络是一定会停机的。
+一个有趣且重要的性质是，如果网络的所有容量都是整数，那么每一次增广，流量值至少会增加1（因为[瓶颈容量](@keyword=bottleneck_capacity|lang=zh-CN|style=Feynman)至少是1）。由于总流量有一个明确的上限（例如，所有从源点出发的管道的容量总和），这个不断累加整数的过程必然会在有限步内结束。这保证了[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)对于整数容量网络是一定会停机的。[@problem_id:1541505]
 
-### 深刻的对偶：[最大流](@article_id:357112)-[最小割](@article_id:340712)定理
+### 深刻的对偶：[最大流](@keyword=maximum_flow|lang=zh-CN|style=Feynman)-[最小割](@keyword=minimum_cut|lang=zh-CN|style=Feynman)定理
 
-你可能会问，当[算法](@article_id:331821)停止时，我们怎么能确定得到的就一定是**最大**的流量呢？万一还有别的什么我们没想到的方法能增加流量呢？这里的保证来自于一个[网络流理论](@article_id:378062)中最深刻、最美丽的定理——**[最大流](@article_id:357112)-最小割定理（Max-Flow Min-Cut Theorem）**。
+你可能会问，当[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)停止时，我们怎么能确定得到的就一定是**最大**的流量呢？万一还有别的什么我们没想到的方法能增加流量呢？这里的保证来自于一个[网络流理论](@keyword=network_flow_theory|lang=zh-CN|style=Feynman)中最深刻、最美丽的定理——**[最大流](@keyword=maximum_flow|lang=zh-CN|style=Feynman)-最小割定理（Max-Flow Min-Cut Theorem）**。
 
-首先，我们来理解什么是“割”（Cut）。一个 $s-t$ 割，就是将网络中所有的节点分成两个集合 $S$ 和 $T$，其中源点 $s$ 在集合 $S$ 中，汇点 $t$ 在集合 $T$ 中。你可以想象在网络图上画一条分[割线](@article_id:357650)，把 $s$ 和 $t$ 分开。这个割的“容量”，定义为所有从 $S$ 集合指向 $T$ 集合的边的容量之和，记为 $c(S,T)$。
+首先，我们来理解什么是“割”（Cut）。一个 $s-t$ 割，就是将网络中所有的节点分成两个集合 $S$ 和 $T$，其中源点 $s$ 在集合 $S$ 中，汇点 $t$ 在集合 $T$ 中。你可以想象在网络图上画一条分[割线](@keyword=secant_line|lang=zh-CN|style=Feynman)，把 $s$ 和 $t$ 分开。这个割的“容量”，定义为所有从 $S$ 集合指向 $T$ 集合的边的容量之和，记为 $c(S,T)$。
 
-现在，让我们来看一个几乎是显而易见的道理，这被称为**[弱对偶](@article_id:342496)性**：**任何一个可行流的值，都不会超过任何一个 $s-t$ [割的容量](@article_id:325261)。** 也就是说，$|f| \leq c(S,T)$。这非常直观：所有从 $s$ 出发的流量，最终要想到达 $t$，就必须“穿越”这条分割线，也就是流过那些从 $S$ 指向 $T$ 的边。这些边的总容量就是流量所能通过的瓶颈上限。
+现在，让我们来看一个几乎是显而易见的道理，这被称为**[弱对偶](@keyword=weak_duality|lang=zh-CN|style=Feynman)性**：**任何一个可行流的值，都不会超过任何一个 $s-t$ [割的容量](@keyword=capacity_of_a_cut|lang=zh-CN|style=Feynman)。** 也就是说，$|f| \leq c(S,T)$。这非常直观：所有从 $s$ 出发的流量，最终要想到达 $t$，就必须“穿越”这条分割线，也就是流过那些从 $S$ 指向 $T$ 的边。这些边的总容量就是流量所能通过的瓶颈上限。
 
-设想一个场景：一个运维团队声称他们的网络实现了 52 Tbps 的总流量，而另一个安全团队发现一个割，其容量仅为 48 Tbps。基于上述原理，我们可以立即断定：这两个报告中至少有一个是错误的！因为流量绝不可能“凭空”穿越一个容量更小的瓶颈。
+设想一个场景：一个运维团队声称他们的网络实现了 52 Tbps 的总流量，而另一个安全团队发现一个割，其容量仅为 48 Tbps。基于上述原理，我们可以立即断定：这两个报告中至少有一个是错误的！因为流量绝不可能“凭空”穿越一个容量更小的瓶颈。[@problem_id:1541516]
 
-[弱对偶](@article_id:342496)性告诉我们流量的上限，但真正惊人的是**[强对偶性](@article_id:355058)**，也就是[最大流](@article_id:357112)-[最小割](@article_id:340712)定理本身：**网络中的[最大流](@article_id:357112)值，精确地等于其[最小割](@article_id:340712)容量。**
+[弱对偶](@keyword=weak_duality|lang=zh-CN|style=Feynman)性告诉我们流量的上限，但真正惊人的是**[强对偶性](@keyword=strong_duality|lang=zh-CN|style=Feynman)**，也就是[最大流](@keyword=maximum_flow|lang=zh-CN|style=Feynman)-[最小割](@keyword=minimum_cut|lang=zh-CN|style=Feynman)定理本身：**网络中的[最大流](@keyword=maximum_flow|lang=zh-CN|style=Feynman)值，精确地等于其[最小割](@keyword=minimum_cut|lang=zh-CN|style=Feynman)容量。**
 
-[Ford-Fulkerson算法](@article_id:326368)在终止时，不经意间就为我们证明了这个伟大的定理。当[算法](@article_id:331821)停止时，[残差网络](@article_id:641635) $G_f$ 中不存在从 $s$ 到 $t$ 的路径。让我们把此时所有从 $s$ 在 $G_f$ 中仍然**可达**的节点划分为集合 $S$，其余的节点（包括 $t$）划分为集合 $T=\{t\} \cup \dots$。这样我们就构造出了一个 $s-t$ 割 $(S,T)$。
+[Ford-Fulkerson算法](@keyword=ford_fulkerson_algorithm|lang=zh-CN|style=Feynman)在终止时，不经意间就为我们证明了这个伟大的定理。当[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)停止时，[残差网络](@keyword=residual_networks|lang=zh-CN|style=Feynman) $G_f$ 中不存在从 $s$ 到 $t$ 的路径。让我们把此时所有从 $s$ 在 $G_f$ 中仍然**可达**的节点划分为集合 $S$，其余的节点（包括 $t$）划分为集合 $T=\{t\} \cup \dots$。这样我们就构造出了一个 $s-t$ 割 $(S,T)$。[@problem_id:1541539]
 
-这个割有什么特别之处？根据我们的构造，从 $S$ 中的任何节点到 $T$ 中的任何节点，在[残差网络](@article_id:641635)中都没有路径。这意味着：
--   对于任何从 $S$ 到 $T$ 的**前向边** $(u,v)$，其[残差](@article_id:348682)容量必定为0。也就是说，$c(u,v) - f(u,v) = 0$，这意味着 $f(u,v) = c(u,v)$。这些边上的流量已经**饱和**了！
--   对于任何从 $T$ 到 $S$ 的**反向边** $(u,v)$，其对应的原始流量 $f(v,u)$ 必定为0。否则，在[残差网络](@article_id:641635)中就会有一条从 $u \in S$ 到 $v \in T$ 的边，这与 $T$ 的定义矛盾。
+这个割有什么特别之处？根据我们的构造，从 $S$ 中的任何节点到 $T$ 中的任何节点，在[残差网络](@keyword=residual_networks|lang=zh-CN|style=Feynman)中都没有路径。这意味着：
+-   对于任何从 $S$ 到 $T$ 的**前向边** $(u,v)$，其[残差](@keyword=residue|lang=zh-CN|style=Feynman)容量必定为0。也就是说，$c(u,v) - f(u,v) = 0$，这意味着 $f(u,v) = c(u,v)$。这些边上的流量已经**饱和**了！[@problem_id:1541544]
+-   对于任何从 $T$ 到 $S$ 的**反向边** $(u,v)$，其对应的原始流量 $f(v,u)$ 必定为0。否则，在[残差网络](@keyword=residual_networks|lang=zh-CN|style=Feynman)中就会有一条从 $u \in S$ 到 $v \in T$ 的边，这与 $T$ 的定义矛盾。
 
 现在我们来计算流过这个割 $(S,T)$ 的净流量，它等于流量的总值 $|f|$。这个净流量等于所有从 $S$ 到 $T$ 的流量减去所有从 $T$ 到 $S$ 的流量。根据上面的分析，前者等于这些边的容量总和，而后者为0。于是我们得到了一个惊人的等式：
 $$|f| = \sum_{u \in S, v \in T} f(u,v) - \sum_{v \in T, u \in S} f(v,u) = \sum_{u \in S, v \in T} c(u,v) - 0 = c(S,T)$$
 
-我们找到了一个流 $f$ 和一个割 $(S,T)$，使得 $|f| = c(S,T)$。结合[弱对偶](@article_id:342496)性（$|f_{max}| \leq c_{min}$），我们必然得出结论：我们找到的这个流 $f$ 一定是**[最大流](@article_id:357112)**，而这个割 $(S,T)$ 一定是**[最小割](@article_id:340712)**！[算法](@article_id:331821)的终止条件，完美地揭示了[网络流](@article_id:332502)的内在瓶颈。我们可以利用这个方法，在求出最大流后，通过在[残差网络](@article_id:641635)中进行一次简单的搜索，就能精准地找到网络的瓶颈所在。
+我们找到了一个流 $f$ 和一个割 $(S,T)$，使得 $|f| = c(S,T)$。结合[弱对偶](@keyword=weak_duality|lang=zh-CN|style=Feynman)性（$|f_{max}| \leq c_{min}$），我们必然得出结论：我们找到的这个流 $f$ 一定是**[最大流](@keyword=maximum_flow|lang=zh-CN|style=Feynman)**，而这个割 $(S,T)$ 一定是**[最小割](@keyword=minimum_cut|lang=zh-CN|style=Feynman)**！[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的终止条件，完美地揭示了[网络流](@keyword=network_flows|lang=zh-CN|style=Feynman)的内在瓶颈。我们可以利用这个方法，在求出最大流后，通过在[残差网络](@keyword=residual_networks|lang=zh-CN|style=Feynman)中进行一次简单的搜索，就能精准地找到网络的瓶颈所在。[@problem_id:1541503]
 
 ### 化繁为简：应对多源多汇
 
-现实世界的问题往往更复杂。比如，一个物[流网络](@article_id:326383)可能有多个生产工厂（源点）和多个零售商店（汇点）。我们的[算法](@article_id:331821)能处理这种情况吗？
+现实世界的问题往往更复杂。比如，一个物[流网络](@keyword=flow_networks|lang=zh-CN|style=Feynman)可能有多个生产工厂（源点）和多个零售商店（汇点）。我们的[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)能处理这种情况吗？
 
 答案是肯定的，而且方法非常优雅。我们可以通过一个简单的改造，将多源多汇问题转化为我们已经解决的标准单源单汇问题。具体来说：
 -   我们创建一个虚拟的“**超级源点**” $S'$，然后从 $S'$ 向每一个真实的源点 $I_1, I_2, \dots$ 连接一条边，容量可以设为无限大（或者足够大）。
 -   同样地，我们创建一个虚拟的“**超级汇点**” $T'$，然后从每一个真实的汇点 $O_1, O_2, \dots$ 向 $T'$ 连接一条容量无限的边。
 
-这样一来，问题就变成了求解从 $S'$ 到 $T'$ 的[最大流问题](@article_id:336335)。任何从 $S'$ 流出的流量，都必须先流经某个真实源点；任何要汇入$T'$的流量，都必须来自某个真实汇点。这个简单的“包装”技巧，极大地扩展了[算法](@article_id:331821)的应用范围，体现了[科学建模](@article_id:323273)的智慧与力量。
+这样一来，问题就变成了求解从 $S'$ 到 $T'$ 的[最大流问题](@keyword=maximum_flow_problem|lang=zh-CN|style=Feynman)。任何从 $S'$ 流出的流量，都必须先流经某个真实源点；任何要汇入$T'$的流量，都必须来自某个真实汇点。这个简单的“包装”技巧，极大地扩展了[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的应用范围，体现了[科学建模](@keyword=scientific_modeling|lang=zh-CN|style=Feynman)的智慧与力量。[@problem_id:1541547]
 
-至此，我们已经从最基本的“守恒律”出发，通过引入“反向操作”的[残差网络](@article_id:641635)，理解了[Ford-Fulkerson算法](@article_id:326368)的巧妙机制，并最终触及了作为其理论基石的“[最大流](@article_id:357112)-[最小割](@article_id:340712)”这一定理。这不仅是一个计算过程，更是一场揭示网络结构内在联系的探索之旅。
+至此，我们已经从最基本的“守恒律”出发，通过引入“反向操作”的[残差网络](@keyword=residual_networks|lang=zh-CN|style=Feynman)，理解了[Ford-Fulkerson算法](@keyword=ford_fulkerson_algorithm|lang=zh-CN|style=Feynman)的巧妙机制，并最终触及了作为其理论基石的“[最大流](@keyword=maximum_flow|lang=zh-CN|style=Feynman)-[最小割](@keyword=minimum_cut|lang=zh-CN|style=Feynman)”这一定理。这不仅是一个计算过程，更是一场揭示网络结构内在联系的探索之旅。

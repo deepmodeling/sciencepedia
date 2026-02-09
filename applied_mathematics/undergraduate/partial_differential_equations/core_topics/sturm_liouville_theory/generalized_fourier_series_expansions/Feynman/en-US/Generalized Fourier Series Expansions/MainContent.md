@@ -1,7 +1,7 @@
 ## Introduction
 The classical Fourier series offers a profound insight: complex periodic phenomena can be deconstructed into a simple sum of sines and cosines. But what happens when the problem is not periodic, or when the underlying geometry is not a simple line but a sphere or a non-uniform string? This is the gap that generalized Fourier series brilliantly fill, extending the core idea of harmonic analysis to a vast array of problems in science and engineering. This powerful framework allows us to describe any reasonably well-behaved function as an expansion in a set of 'natural' basis functions dictated by the physics of the system itself.
 
-This article provides a comprehensive exploration of this essential tool. We will first delve into the **Principles and Mechanisms**, establishing the analogy between functions and vectors and mastering the core concepts of inner products, orthogonality, and completeness. Next, in **Applications and Interdisciplinary Connections**, we will witness these principles in action, seeing how they tame [partial differential equations](@article_id:142640), provide the 'best fit' approximations, and give rise to a symphony of specialized functions for different geometries. Finally, the **Hands-On Practices** section offers an opportunity to apply these ideas to tangible problems, reinforcing the computational and conceptual skills you’ve learned. Let us begin by uncovering the elegant mathematical machinery that drives these expansions.
+This article provides a comprehensive exploration of this essential tool. We will first delve into the **Principles and Mechanisms**, establishing the analogy between functions and vectors and mastering the core concepts of inner products, orthogonality, and completeness. Next, in **Applications and Interdisciplinary Connections**, we will witness these principles in action, seeing how they tame [partial differential equations](@keyword=partial_differential_equations|lang=en-US|style=Feynman), provide the 'best fit' approximations, and give rise to a symphony of specialized functions for different geometries. Finally, the **Hands-On Practices** section offers an opportunity to apply these ideas to tangible problems, reinforcing the computational and conceptual skills you’ve learned. Let us begin by uncovering the elegant mathematical machinery that drives these expansions.
 
 ## Principles and Mechanisms
 
@@ -31,7 +31,7 @@ $$
 
 Why an integral? You can think of it as a continuous version of the dot product. Instead of multiplying components one by one and summing them up ($f_1 g_1 + f_2 g_2 + \dots$), we are multiplying the functions' values at every point $x$ and "summing" them up over the entire interval via integration.
 
-With this definition, we can say two functions $f$ and $g$ are **orthogonal** on $[a, b]$ if $\langle f, g \rangle = 0$. For example, on the interval $[-\pi, \pi]$, the functions $\sin(x)$ and $\cos(x)$ are orthogonal because $\int_{-\pi}^{\pi} \sin(x)\cos(x) \, dx = 0$. They represent two perpendicular directions in our [function space](@article_id:136396).
+With this definition, we can say two functions $f$ and $g$ are **orthogonal** on $[a, b]$ if $\langle f, g \rangle = 0$. For example, on the interval $[-\pi, \pi]$, the functions $\sin(x)$ and $\cos(x)$ are orthogonal because $\int_{-\pi}^{\pi} \sin(x)\cos(x) \, dx = 0$. They represent two perpendicular directions in our [function space](@keyword=function_space|lang=en-US|style=Feynman).
 
 But sometimes, not all points in our interval are created equal.
 
@@ -39,13 +39,13 @@ But sometimes, not all points in our interval are created equal.
 
 Imagine a guitar string with a non-uniform thickness; perhaps it's thicker in the middle. When it vibrates, the inertia of the heavier parts matters more. Its physical properties are not uniform. To handle such situations, our notion of the inner product must become more flexible. We introduce a **weight function**, $w(x)$, which is a positive function on the interval of interest.
 
-The **[weighted inner product](@article_id:163383)** is then defined as:
+The **[weighted inner product](@keyword=weighted_inner_product|lang=en-US|style=Feynman)** is then defined as:
 
 $$
 \langle f, g \rangle_w = \int_a^b f(x)g(x)w(x) \, dx
 $$
 
-The [weight function](@article_id:175542) $w(x)$ assigns a different "importance" to each point $x$. Where $w(x)$ is large, the behavior of the functions contributes more to the inner product. Our condition for orthogonality becomes $\langle \phi_n, \phi_m \rangle_w = 0$ for $n \ne m$. This [weighted orthogonality](@article_id:167692) is not just a mathematical curiosity; it is essential for accurately describing physical systems like quantum mechanical wavefunctions or, as we just mentioned, non-uniform vibrating strings.
+The [weight function](@keyword=weight_function|lang=en-US|style=Feynman) $w(x)$ assigns a different "importance" to each point $x$. Where $w(x)$ is large, the behavior of the functions contributes more to the inner product. Our condition for orthogonality becomes $\langle \phi_n, \phi_m \rangle_w = 0$ for $n \ne m$. This [weighted orthogonality](@keyword=weighted_orthogonality|lang=en-US|style=Feynman) is not just a mathematical curiosity; it is essential for accurately describing physical systems like quantum mechanical wavefunctions or, as we just mentioned, non-uniform vibrating strings.
 
 ### Finding the Pieces: The Elegance of Projection
 
@@ -75,19 +75,19 @@ $$
 c_k = \frac{\langle f, \phi_k \rangle_w}{\langle \phi_k, \phi_k \rangle_w} = \frac{\int_a^b f(x)\phi_k(x)w(x) \, dx}{\int_a^b [\phi_k(x)]^2 w(x) \, dx}
 $$
 
-This beautiful result shows that each coefficient $c_k$ can be found independently of all the others. This process is nothing less than an **[orthogonal projection](@article_id:143674)**. We are "projecting" our function-vector $f(x)$ onto each axis-function $\phi_k(x)$ to find its component in that "direction." The denominator, $\langle \phi_k, \phi_k \rangle_w$, is just a normalization factor, representing the squared "length" of our [basis vector](@article_id:199052) $\phi_k$. Various problems, such as finding the expansion of $\ln(x)$ or $x$, are direct applications of this powerful formula. In practice, we can often exploit symmetries, like when expanding an [even function](@article_id:164308) like $f(x)=|x|$ using Legendre polynomials, to know in advance that many coefficients must be zero, simplifying the work considerably.
+This beautiful result shows that each coefficient $c_k$ can be found independently of all the others. This process is nothing less than an **[orthogonal projection](@keyword=orthogonal_projection|lang=en-US|style=Feynman)**. We are "projecting" our function-vector $f(x)$ onto each axis-function $\phi_k(x)$ to find its component in that "direction." The denominator, $\langle \phi_k, \phi_k \rangle_w$, is just a normalization factor, representing the squared "length" of our [basis vector](@keyword=basis_vector|lang=en-US|style=Feynman) $\phi_k$. Various problems, such as finding the expansion of $\ln(x)$ or $x$, are direct applications of this powerful formula. In practice, we can often exploit symmetries, like when expanding an [even function](@keyword=even_function|lang=en-US|style=Feynman) like $f(x)=|x|$ using Legendre polynomials, to know in advance that many coefficients must be zero, simplifying the work considerably.
 
 ### Completeness: When is a Basis Set Actually a Basis?
 
 We have our axes and a way to find components. But can we be sure that our sum $\sum c_n \phi_n(x)$ actually reconstructs the original function $f(x)$? Do our axes span the whole space? This is the question of **completeness**.
 
-A set of [eigenfunctions](@article_id:154211) $\{\phi_n(x)\}$ is **complete** if any reasonable function (say, any [piecewise continuous](@article_id:174119) function) can be represented by its generalized Fourier series. What does this "representation" mean? It doesn't always mean the series equals the function at every single point. Instead, we often talk about **[convergence in the mean](@article_id:269040)**. This means the total "energy" of the error between the function and its $N$-term approximation, $S_N(x) = \sum_{n=1}^N c_n \phi_n(x)$, goes to zero as we add more terms:
+A set of [eigenfunctions](@keyword=eigenfunctions|lang=en-US|style=Feynman) $\{\phi_n(x)\}$ is **complete** if any reasonable function (say, any [piecewise continuous](@keyword=piecewise_continuous|lang=en-US|style=Feynman) function) can be represented by its generalized Fourier series. What does this "representation" mean? It doesn't always mean the series equals the function at every single point. Instead, we often talk about **[convergence in the mean](@keyword=convergence_in_the_mean|lang=en-US|style=Feynman)**. This means the total "energy" of the error between the function and its $N$-term approximation, $S_N(x) = \sum_{n=1}^N c_n \phi_n(x)$, goes to zero as we add more terms:
 
 $$
 \lim_{N \to \infty} \int_a^b |f(x) - S_N(x)|^2 w(x) \, dx = 0
 $$
 
-Completeness is a profound property. It ensures that our basis isn't "missing" any dimensions. If a set is complete, it forms a true basis for the function space, and the expansion for any given function is **unique**. If two different series converge in the mean to the same function, their coefficients must be identical, term by term. There's only one "recipe" for building a function from a [complete basis](@article_id:143414).
+Completeness is a profound property. It ensures that our basis isn't "missing" any dimensions. If a set is complete, it forms a true basis for the function space, and the expansion for any given function is **unique**. If two different series converge in the mean to the same function, their coefficients must be identical, term by term. There's only one "recipe" for building a function from a [complete basis](@keyword=complete_basis|lang=en-US|style=Feynman).
 
 Furthermore, completeness gives rise to one of the most beautiful equations in analysis: **Parseval's identity**. For an orthonormal basis (where the basis functions are normalized so $\langle \phi_n, \phi_n \rangle_w = 1$), it states:
 
@@ -95,7 +95,7 @@ $$
 \sum_{n=1}^{\infty} c_n^2 = \int_a^b [f(x)]^2 w(x) \, dx
 $$
 
-This is the Pythagorean theorem for infinite-dimensional [function space](@article_id:136396)! It says that the total "energy" of the function (the right side) is equal to the sum of the energies of its components (the left side). Nothing is lost. The energy is perfectly partitioned among the orthogonal modes.
+This is the Pythagorean theorem for infinite-dimensional [function space](@keyword=function_space|lang=en-US|style=Feynman)! It says that the total "energy" of the function (the right side) is equal to the sum of the energies of its components (the left side). Nothing is lost. The energy is perfectly partitioned among the orthogonal modes.
 
 What about points where the function itself isn't well-behaved? At a jump discontinuity, for example, the series performs a remarkable feat of compromise: it converges to the average of the values on either side of the jump.
 
@@ -105,4 +105,4 @@ The coefficients $c_n$ are more than just numbers needed for a calculation. They
 
 Think about it: the basis functions $\phi_n(x)$ that come from physical problems (like the modes of a string or the orbitals of an atom) tend to get more "wiggly" as the index $n$ increases. They represent higher and higher "frequencies." To build a very smooth, gently curving function, you don't need many of these high-frequency wiggles. You can approximate it quite well using just the first few, slowly varying basis functions. Therefore, for a smooth function, the coefficients $c_n$ will decay to zero very rapidly as $n \to \infty$.
 
-But what if your function has a sharp corner, like $f(x) = |x|$, or even a jump? To construct a sharp feature, you need to add in lots of high-frequency, "wiggly" functions to interfere just right. This means the coefficients for a non-[smooth function](@article_id:157543) will decay much more slowly. In fact, there is a direct relationship between how smooth a function is (how many continuous derivatives it has) and the rate at which its coefficients decay. A function with a jump in its $k$-th derivative will have coefficients that decay as a power law, $|c_n| \sim n^{-k-1/2}$. This provides a powerful tool: by simply looking at the spectrum of coefficients, we can deduce the smoothness properties of the original function, without even looking at the function itself! This deep connection between the "spatial domain" ($x$) and the "frequency domain" ($n$) is a cornerstone of modern science and engineering.
+But what if your function has a sharp corner, like $f(x) = |x|$, or even a jump? To construct a sharp feature, you need to add in lots of high-frequency, "wiggly" functions to interfere just right. This means the coefficients for a non-[smooth function](@keyword=smooth_function|lang=en-US|style=Feynman) will decay much more slowly. In fact, there is a direct relationship between how smooth a function is (how many continuous derivatives it has) and the rate at which its coefficients decay. A function with a jump in its $k$-th derivative will have coefficients that decay as a power law, $|c_n| \sim n^{-k-1/2}$. This provides a powerful tool: by simply looking at the spectrum of coefficients, we can deduce the smoothness properties of the original function, without even looking at the function itself! This deep connection between the "spatial domain" ($x$) and the "frequency domain" ($n$) is a cornerstone of modern science and engineering.

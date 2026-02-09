@@ -25,7 +25,7 @@ $$
 T_4\left(\cos\frac{\pi}{8}\right) = \cos\left(4 \cdot \frac{\pi}{8}\right) = \cos\left(\frac{\pi}{2}\right) = 0
 $$
 
-The answer is zero. All that algebraic mess evaporates into a simple, elegant result. This is the first taste of the power we gain by viewing these polynomials through a trigonometric lens .
+The answer is zero. All that algebraic mess evaporates into a simple, elegant result. This is the first taste of the power we gain by viewing these polynomials through a trigonometric lens [@problem_id:752760].
 
 ### The Family Grows: Sines and the Second Kind
 
@@ -37,7 +37,7 @@ $$
 
 Why the division by $\sin\theta$? Well, a standalone $\sin(n\theta)$ doesn't generally produce a polynomial in $x=\cos\theta$. For example, $\sin(2\theta) = 2\sin\theta\cos\theta$. If you try to write this in terms of $x = \cos\theta$, you get $2x\sqrt{1-x^2}$, which isn't a polynomial because of that pesky square root. But the ratio $\frac{\sin((n+1)\theta)}{\sin\theta}$ miraculously clears away all the $\sin\theta$ terms, leaving behind a pure polynomial in $\cos\theta$. For instance, $U_1(\cos\theta) = \frac{\sin(2\theta)}{\sin\theta} = \frac{2\sin\theta\cos\theta}{\sin\theta} = 2\cos\theta$, so $U_1(x) = 2x$.
 
-This identity for $U_n(x)$ is just as useful for simplifying calculations. Evaluating $U_4(\cos(\pi/10))$ becomes a straightforward task of calculating $\frac{\sin(5 \cdot \pi/10)}{\sin(\pi/10)} = \frac{\sin(\pi/2)}{\sin(\pi/10)} = \frac{1}{\sin(\pi/10)}$. With a bit of geometry, we find $\sin(\pi/10) = \frac{\sqrt{5}-1}{4}$ (related to the golden ratio, another beautiful connection!), which makes the final answer $\sqrt{5}+1$ . Again, a difficult polynomial evaluation is transformed into simple trigonometry.
+This identity for $U_n(x)$ is just as useful for simplifying calculations. Evaluating $U_4(\cos(\pi/10))$ becomes a straightforward task of calculating $\frac{\sin(5 \cdot \pi/10)}{\sin(\pi/10)} = \frac{\sin(\pi/2)}{\sin(\pi/10)} = \frac{1}{\sin(\pi/10)}$. With a bit of geometry, we find $\sin(\pi/10) = \frac{\sqrt{5}-1}{4}$ (related to the golden ratio, another beautiful connection!), which makes the final answer $\sqrt{5}+1$ [@problem_id:752792]. Again, a difficult polynomial evaluation is transformed into simple trigonometry.
 
 ### The Rules of the Game: Composition and Algebra
 
@@ -55,9 +55,9 @@ $$
 T_m(T_n(x)) = \cos(m(n\theta)) = \cos((mn)\theta) = T_{mn}(x)
 $$
 
-This is a spectacular result! The composition of the $m$-th and $n$-th Chebyshev polynomials is simply the ($mn$)-th Chebyshev polynomial. For example, $T_3(T_2(x)) = T_6(x)$. This simple multiplication rule is completely hidden if you only look at the polynomials themselves, but it's completely obvious from the trigonometric perspective. This allows for quick evaluations like $T_3(T_2(\cos(\pi/12)))$, which becomes $\cos(3 \cdot 2 \cdot \pi/12) = \cos(\pi/2) = 0$ .
+This is a spectacular result! The composition of the $m$-th and $n$-th Chebyshev polynomials is simply the ($mn$)-th Chebyshev polynomial. For example, $T_3(T_2(x)) = T_6(x)$. This simple multiplication rule is completely hidden if you only look at the polynomials themselves, but it's completely obvious from the trigonometric perspective. This allows for quick evaluations like $T_3(T_2(\cos(\pi/12)))$, which becomes $\cos(3 \cdot 2 \cdot \pi/12) = \cos(\pi/2) = 0$ [@problem_id:752930].
 
-This bridge works both ways. We can translate [trigonometric identities](@article_id:164571) into the language of polynomials. For example, the product-to-sum identity $\cos A \cos B = \frac{1}{2}[\cos(A+B) + \cos(A-B)]$. If we let $A=5\theta$ and $B=3\theta$, and set $x=\cos\theta$, we get:
+This bridge works both ways. We can translate [trigonometric identities](@keyword=trigonometric_identities|lang=en-US|style=Feynman) into the language of polynomials. For example, the product-to-sum identity $\cos A \cos B = \frac{1}{2}[\cos(A+B) + \cos(A-B)]$. If we let $A=5\theta$ and $B=3\theta$, and set $x=\cos\theta$, we get:
 
 $$
 \cos(5\theta)\cos(3\theta) = \frac{1}{2}[\cos(8\theta) + \cos(2\theta)]
@@ -69,7 +69,7 @@ $$
 T_5(x)T_3(x) = \frac{1}{2}[T_8(x) + T_2(x)]
 $$
 
-This demonstrates how a product of two polynomials can be expressed as a simple sum of two other polynomials from the same family. This property is central to their power in numerical methods and signal processing .
+This demonstrates how a product of two polynomials can be expressed as a simple sum of two other polynomials from the same family. This property is central to their power in numerical methods and signal processing [@problem_id:752950].
 
 ### The Calculus of Cosines-in-Disguise
 
@@ -80,17 +80,17 @@ $$
 \frac{d}{dx} T_n(x) = \frac{d}{dx}\cos(n \arccos x) = -\sin(n \arccos x) \cdot \frac{-n}{\sqrt{1-x^2}} = \frac{n \sin(n \arccos x)}{\sqrt{1-x^2}}
 $$
 
-With $x = \cos\theta$, this expression becomes $\frac{n \sin(n\theta)}{\sin\theta} = n U_{n-1}(x)$. So, the derivative of a Chebyshev polynomial of the first kind is directly related to a Chebyshev polynomial of the second kind! This reveals a deep and elegant relationship between the two families. It also makes specific calculations much easier .
+With $x = \cos\theta$, this expression becomes $\frac{n \sin(n\theta)}{\sin\theta} = n U_{n-1}(x)$. So, the derivative of a Chebyshev polynomial of the first kind is directly related to a Chebyshev polynomial of the second kind! This reveals a deep and elegant relationship between the two families. It also makes specific calculations much easier [@problem_id:752947].
 
 Integration is where the real magic happens. Physicists and engineers often encounter integrals of the form $\int_{-1}^{1} T_n(x) T_m(x) \frac{dx}{\sqrt{1-x^2}}$. That factor of $1/\sqrt{1-x^2}$ looks terrifyingly out of place. Why is it there? It's the key that unlocks the door to the trigonometric world.
 
-Let's make the substitution $x = \cos\theta$. Then $dx = -\sin\theta \, d\theta$. And look at the denominator: $\sqrt{1-x^2} = \sqrt{1-\cos^2\theta} = \sin\theta$. The troublesome parts cancel out perfectly! As $x$ goes from $-1$ to $1$, $\theta$ goes from $\pi$ to $0$. The entire [integral transforms](@article_id:185715):
+Let's make the substitution $x = \cos\theta$. Then $dx = -\sin\theta \, d\theta$. And look at the denominator: $\sqrt{1-x^2} = \sqrt{1-\cos^2\theta} = \sin\theta$. The troublesome parts cancel out perfectly! As $x$ goes from $-1$ to $1$, $\theta$ goes from $\pi$ to $0$. The entire [integral transforms](@keyword=integral_transforms|lang=en-US|style=Feynman):
 
 $$
 \int_{-1}^{1} \frac{T_n(x) T_m(x)}{\sqrt{1-x^2}} dx = \int_{\pi}^{0} \frac{\cos(n\theta) \cos(m\theta)}{\sin\theta} (-\sin\theta \, d\theta) = \int_{0}^{\pi} \cos(n\theta) \cos(m\theta) \, d\theta
 $$
 
-We've traded a nasty polynomial integral for a basic trigonometric one that every physics student learns to solve. This integral is zero if $n \neq m$ and $\pi/2$ if $n=m \neq 0$. This property is called **orthogonality**, and it is the single most important reason why Chebyshev polynomials are so indispensable. It allows us to break down complex functions into a sum of simple Chebyshev polynomials, much like a Fourier series uses sines and cosines to represent a sound wave. This method simplifies everything from solving differential equations to designing [digital filters](@article_id:180558) . Even integrals that don't have the "magic" weight function, or that contain singularities, often become tame when viewed through the trigonometric lens  .
+We've traded a nasty polynomial integral for a basic trigonometric one that every physics student learns to solve. This integral is zero if $n \neq m$ and $\pi/2$ if $n=m \neq 0$. This property is called **orthogonality**, and it is the single most important reason why Chebyshev polynomials are so indispensable. It allows us to break down complex functions into a sum of simple Chebyshev polynomials, much like a Fourier series uses sines and cosines to represent a sound wave. This method simplifies everything from solving differential equations to designing [digital filters](@keyword=digital_filters|lang=en-US|style=Feynman) [@problem_id:752787]. Even integrals that don't have the "magic" weight function, or that contain singularities, often become tame when viewed through the trigonometric lens [@problem_id:752841] [@problem_id:752745].
 
 ### Beyond the Real Line: A Journey into the Complex Plane
 
@@ -102,6 +102,6 @@ So for $x > 1$, we can let $x = \cosh\beta$. It turns out that the Chebyshev ide
 $$
 T_n(x) = \cosh(n \operatorname{arccosh}(x))
 $$
-This allows us to venture beyond the $[-1, 1]$ interval and into the entire complex plane. For instance, calculating $T_3(2i)$ using the polynomial $4x^3 - 3x$ gives $4(2i)^3 - 3(2i) = 4(-8i) - 6i = -38i$. Using the hyperbolic identity, we can find $\operatorname{arccosh}(2i)$ and show it leads to the same answer, unifying the behavior of these polynomials across all numbers, real and complex .
+This allows us to venture beyond the $[-1, 1]$ interval and into the entire complex plane. For instance, calculating $T_3(2i)$ using the polynomial $4x^3 - 3x$ gives $4(2i)^3 - 3(2i) = 4(-8i) - 6i = -38i$. Using the hyperbolic identity, we can find $\operatorname{arccosh}(2i)$ and show it leads to the same answer, unifying the behavior of these polynomials across all numbers, real and complex [@problem_id:752750].
 
 This is the true spirit of discovery. We started with a simple polynomial. We found a curious link to trigonometry. By following this link, we uncovered a deep structure, simplified calculus, understood their immense practical importance, and finally, saw how they elegantly extend into the realm of complex numbers. The Chebyshev polynomials are not just algebraic formulas; they are a testament to the profound and often surprising unity of mathematics.

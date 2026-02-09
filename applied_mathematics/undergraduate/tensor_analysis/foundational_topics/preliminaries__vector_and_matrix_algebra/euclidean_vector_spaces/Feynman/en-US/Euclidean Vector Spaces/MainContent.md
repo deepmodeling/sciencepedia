@@ -19,7 +19,7 @@ To find out, physicists and mathematicians do what they always do: they abstract
 2.  **Linearity**: It plays nicely with scaling and addition. For any scalar $\alpha$, $\langle \alpha\vec{u} + \vec{w}, \vec{v} \rangle = \alpha \langle \vec{u}, \vec{v} \rangle + \langle \vec{w}, \vec{v} \rangle$.
 3.  **Positive-Definiteness**: This is the crucial one. The inner product of a vector with itself, $\langle \vec{v}, \vec{v} \rangle$, must be positive for any non-zero vector. And it can only be zero if the vector itself is the zero vector. $\langle \vec{v}, \vec{v} \rangle \ge 0$, and $\langle \vec{v}, \vec{v} \rangle = 0$ if and only if $\vec{v} = \vec{0}$.
 
-This last axiom is what gives the space its "Euclidean" character. It guarantees that every vector has a real, positive "size," which we'll soon call its length. Without it, the geometry breaks down in strange ways. For instance, imagine a researcher proposes a new type of product for vectors in $\mathbb{R}^2$: $\langle u, v \rangle = u_1 v_1 - u_2 v_2$. It seems plausible, and it obeys the first two rules. But if we test the third rule by taking a vector like $\vec{v} = (0, 1)$, we find $\langle \vec{v}, \vec{v} \rangle = 0^2 - 1^2 = -1$. A negative "self-product"! Or even worse, for a non-zero vector like $\vec{w} = (1, 1)$, we get $\langle \vec{w}, \vec{w} \rangle = 1^2 - 1^2 = 0$. A vector that isn't the zero vector but has a zero "size." This breaks our intuitive notion of distance. Such a space (called a Minkowski space) is fantastically useful for describing spacetime in special relativity, but it's not our familiar Euclidean world. Thus, the [positive-definiteness](@article_id:149149) axiom is the bedrock on which our familiar geometry is built .
+This last axiom is what gives the space its "Euclidean" character. It guarantees that every vector has a real, positive "size," which we'll soon call its length. Without it, the geometry breaks down in strange ways. For instance, imagine a researcher proposes a new type of product for vectors in $\mathbb{R}^2$: $\langle u, v \rangle = u_1 v_1 - u_2 v_2$. It seems plausible, and it obeys the first two rules. But if we test the third rule by taking a vector like $\vec{v} = (0, 1)$, we find $\langle \vec{v}, \vec{v} \rangle = 0^2 - 1^2 = -1$. A negative "self-product"! Or even worse, for a non-zero vector like $\vec{w} = (1, 1)$, we get $\langle \vec{w}, \vec{w} \rangle = 1^2 - 1^2 = 0$. A vector that isn't the zero vector but has a zero "size." This breaks our intuitive notion of distance. Such a space (called a Minkowski space) is fantastically useful for describing spacetime in special relativity, but it's not our familiar Euclidean world. Thus, the [positive-definiteness](@keyword=positive_definiteness|lang=en-US|style=Feynman) axiom is the bedrock on which our familiar geometry is built [@problem_id:1509651].
 
 ### Inventing Length, Distance, and Angle
 
@@ -29,7 +29,7 @@ $$
 \|\vec{v}\| = \sqrt{\langle \vec{v}, \vec{v} \rangle}
 $$
 
-The [positive-definiteness](@article_id:149149) axiom ensures this is always a real, non-negative number. Suddenly, our abstract vectors have a size! And the distance between two vectors $\vec{u}$ and $\vec{v}$ is just the length of their difference, $\|\vec{u} - \vec{v}\|$.
+The [positive-definiteness](@keyword=positive_definiteness|lang=en-US|style=Feynman) axiom ensures this is always a real, non-negative number. Suddenly, our abstract vectors have a size! And the distance between two vectors $\vec{u}$ and $\vec{v}$ is just the length of their difference, $\|\vec{u} - \vec{v}\|$.
 
 What about angles? The inner product holds that secret, too. The angle $\theta$ between two vectors is given by:
 
@@ -39,21 +39,21 @@ $$
 
 This is amazing! This single operation, the inner product, contains all the geometric information. It's the whole toolkit. Length and angle are not separate ideas; they are two faces of the same coin—the inner product.
 
-In fact, the relationship is even deeper. Suppose you were in a world where you could only measure lengths (norms), but not inner products directly. Could you reconstruct the inner product? It turns out you can! This is revealed by a beautiful little piece of algebra known as the **[polarization identity](@article_id:271325)**. If you take the squared length of the sum of two vectors, $\|\vec{u}+\vec{v}\|^2$, and the squared length of their difference, $\|\vec{u}-\vec{v}\|^2$, and subtract them, something magical happens:
+In fact, the relationship is even deeper. Suppose you were in a world where you could only measure lengths (norms), but not inner products directly. Could you reconstruct the inner product? It turns out you can! This is revealed by a beautiful little piece of algebra known as the **[polarization identity](@keyword=polarization_identity|lang=en-US|style=Feynman)**. If you take the squared length of the sum of two vectors, $\|\vec{u}+\vec{v}\|^2$, and the squared length of their difference, $\|\vec{u}-\vec{v}\|^2$, and subtract them, something magical happens:
 
 $$
 \|\vec{u}+\vec{v}\|^2 - \|\vec{u}-\vec{v}\|^2 = (\langle \vec{u}, \vec{u} \rangle + 2\langle \vec{u}, \vec{v} \rangle + \langle \vec{v}, \vec{v} \rangle) - (\langle \vec{u}, \vec{u} \rangle - 2\langle \vec{u}, \vec{v} \rangle + \langle \vec{v}, \vec{v} \rangle) = 4\langle \vec{u}, \vec{v} \rangle
 $$
 
-So, $\langle \vec{u}, \vec{v} \rangle = \frac{1}{4} (\|\vec{u}+\vec{v}\|^2 - \|\vec{u}-\vec{v}\|^2)$. This is not just a neat trick. It tells us something profound: the inner product is entirely determined by the norm. If a transformation preserves the lengths of all vectors (an **[isometry](@article_id:150387)**), it *must* also preserve the inner products between them  . A rotation, for example, might change a vector's components, but it doesn't change its length. Therefore, a rotation must also preserve the dot product between any two vectors. The geometry of the space remains rigid and unchanging. An object's physical properties, like its length, don't depend on the orientation of the coordinate system you use to measure it . This principle of **invariance** is a cornerstone of modern physics.
+So, $\langle \vec{u}, \vec{v} \rangle = \frac{1}{4} (\|\vec{u}+\vec{v}\|^2 - \|\vec{u}-\vec{v}\|^2)$. This is not just a neat trick. It tells us something profound: the inner product is entirely determined by the norm. If a transformation preserves the lengths of all vectors (an **[isometry](@keyword=isometry|lang=en-US|style=Feynman)**), it *must* also preserve the inner products between them [@problem_id:1509643] [@problem_id:1509631]. A rotation, for example, might change a vector's components, but it doesn't change its length. Therefore, a rotation must also preserve the dot product between any two vectors. The geometry of the space remains rigid and unchanging. An object's physical properties, like its length, don't depend on the orientation of the coordinate system you use to measure it [@problem_id:1509625]. This principle of **invariance** is a cornerstone of modern physics.
 
 ### The Magic of Orthogonality
 
 The inner product gives us angles, and the most special angle of all is a right angle. Two non-zero vectors $\vec{u}$ and $\vec{v}$ are **orthogonal** if their inner product is zero: $\langle \vec{u}, \vec{v} \rangle = 0$. In two or three dimensions, this just means they're perpendicular. But in a general vector space, it's a powerful tool for simplification.
 
-Why is it so powerful? Imagine you have a set of non-zero, mutually [orthogonal vectors](@article_id:141732), like the axes of a standard coordinate system. It can be proven that such a set is always **linearly independent** . This means you can form a basis out of them. And what a wonderful basis it is!
+Why is it so powerful? Imagine you have a set of non-zero, mutually [orthogonal vectors](@keyword=orthogonal_vectors|lang=en-US|style=Feynman), like the axes of a standard coordinate system. It can be proven that such a set is always **linearly independent** [@problem_id:1509623]. This means you can form a basis out of them. And what a wonderful basis it is!
 
-Suppose you have an [orthogonal basis](@article_id:263530) $\{\vec{u}_1, \vec{u}_2, \dots, \vec{u}_n\}$ and you want to express some other vector $\vec{w}$ in this basis:
+Suppose you have an [orthogonal basis](@keyword=orthogonal_basis|lang=en-US|style=Feynman) $\{\vec{u}_1, \vec{u}_2, \dots, \vec{u}_n\}$ and you want to express some other vector $\vec{w}$ in this basis:
 
 $$
 \vec{w} = c_1 \vec{u}_1 + c_2 \vec{u}_2 + \dots + c_n \vec{u}_n
@@ -77,7 +77,7 @@ $$
 c_i = \frac{\langle \vec{w}, \vec{u}_i \rangle}{\|\vec{u}_i\|^2}
 $$
 
-Each coefficient is just the projection of $\vec{w}$ onto the corresponding [basis vector](@article_id:199052). There's no coupling between the components. This is the fundamental principle behind Fourier series, where we break down a complex signal into a sum of simple, orthogonal sine and cosine waves. It is the "cheat code" of linear algebra.
+Each coefficient is just the projection of $\vec{w}$ onto the corresponding [basis vector](@keyword=basis_vector|lang=en-US|style=Feynman). There's no coupling between the components. This is the fundamental principle behind Fourier series, where we break down a complex signal into a sum of simple, orthogonal sine and cosine waves. It is the "cheat code" of linear algebra.
 
 ### Vectors Everywhere: From Arrows to Functions
 
@@ -91,7 +91,7 @@ $$
 
 Let's check the axioms. It's symmetric and linear. And $\langle f, f \rangle = \int_0^1 (f(t))^2 dt$ is always non-negative, and is zero only if $f(t)$ is the zero function. It works! We have a full-blown Euclidean vector space where the "vectors" are functions.
 
-What does the "norm" or "length" of a function mean in this context? $\|f\| = \sqrt{\int_0^1 (f(t))^2 dt}$ is a measure of the function's overall magnitude. In signal processing, this quantity squared is related to the total **energy** of a signal $f(t)$ . The inner product $\langle f, g \rangle$ measures how much the two signals "overlap" or correlate. All the geometric intuition we've built—length, angle, orthogonality, projection—carries over directly into this abstract and incredibly useful domain.
+What does the "norm" or "length" of a function mean in this context? $\|f\| = \sqrt{\int_0^1 (f(t))^2 dt}$ is a measure of the function's overall magnitude. In signal processing, this quantity squared is related to the total **energy** of a signal $f(t)$ [@problem_id:1509579]. The inner product $\langle f, g \rangle$ measures how much the two signals "overlap" or correlate. All the geometric intuition we've built—length, angle, orthogonality, projection—carries over directly into this abstract and incredibly useful domain.
 
 ### The Metric Tensor: The DNA of Space
 
@@ -108,28 +108,28 @@ $$
 g_{ij} = \langle \vec{e}_i, \vec{e}_j \rangle
 $$
 
-The inner product is then simply $\langle \vec{u}, \vec{v} \rangle = g_{ij} u^i v^j$. The metric tensor is the "rulebook" or the "DNA" of the coordinate system. It encodes all the geometric information: the lengths of the basis vectors (the diagonal terms $g_{ii} = \|\vec{e}_i\|^2$) and the angles between them (from the off-diagonal terms $g_{ij}$ for $i \neq j$) .
+The inner product is then simply $\langle \vec{u}, \vec{v} \rangle = g_{ij} u^i v^j$. The metric tensor is the "rulebook" or the "DNA" of the coordinate system. It encodes all the geometric information: the lengths of the basis vectors (the diagonal terms $g_{ii} = \|\vec{e}_i\|^2$) and the angles between them (from the off-diagonal terms $g_{ij}$ for $i \neq j$) [@problem_id:1509607].
 
-If you use a standard Cartesian basis, the basis vectors are orthonormal: they are mutually orthogonal and have unit length. In this case, $\langle \vec{e}_i, \vec{e}_j \rangle$ is 1 if $i=j$ and 0 if $i \neq j$. This is the Kronecker delta, $\delta_{ij}$. The metric tensor is just the [identity matrix](@article_id:156230)! . This is why the dot product formula is so simple in Cartesian coordinates: $g_{ij} u^i v^j = \delta_{ij} u^i v^j = u^1 v^1 + u^2 v^2 + \dots$.
+If you use a standard Cartesian basis, the basis vectors are orthonormal: they are mutually orthogonal and have unit length. In this case, $\langle \vec{e}_i, \vec{e}_j \rangle$ is 1 if $i=j$ and 0 if $i \neq j$. This is the Kronecker delta, $\delta_{ij}$. The metric tensor is just the [identity matrix](@keyword=identity_matrix|lang=en-US|style=Feynman)! [@problem_id:1509635]. This is why the dot product formula is so simple in Cartesian coordinates: $g_{ij} u^i v^j = \delta_{ij} u^i v^j = u^1 v^1 + u^2 v^2 + \dots$.
 
-But what if you use a skewed or [non-orthogonal basis](@article_id:154414), perhaps to model the structure of a crystal? Your basis vectors might have different lengths and not be perpendicular. No problem. You calculate the $g_{ij}$ for that basis, and the formula $\langle \vec{u}, \vec{v} \rangle = g_{ij} u^i v^j$ still gives you the correct, physically invariant inner product. The components of the vectors change, the metric tensor changes, but the final result—a single number representing a physical reality—remains the same.
+But what if you use a skewed or [non-orthogonal basis](@keyword=non_orthogonal_basis|lang=en-US|style=Feynman), perhaps to model the structure of a crystal? Your basis vectors might have different lengths and not be perpendicular. No problem. You calculate the $g_{ij}$ for that basis, and the formula $\langle \vec{u}, \vec{v} \rangle = g_{ij} u^i v^j$ still gives you the correct, physically invariant inner product. The components of the vectors change, the metric tensor changes, but the final result—a single number representing a physical reality—remains the same.
 
 ### Vectors and their Shadows: Duality
 
 This brings us to a final, subtle, and powerful idea. The metric tensor does more than just compute inner products. It provides a canonical link between the vector space $V$ and a related space called its **dual space**, $V^*$.
 
-What is this dual space? It's the space of all linear maps that take a vector and return a number. These maps are called **linear functionals** or **[covectors](@article_id:157233)**. For any vector $\vec{v}$ in our Euclidean space, we can *define* a corresponding [covector](@article_id:149769), let's call it $\tilde{v}$, by the following rule: the action of $\tilde{v}$ on any vector $\vec{u}$ is just their inner product.
+What is this dual space? It's the space of all linear maps that take a vector and return a number. These maps are called **linear functionals** or **[covectors](@keyword=covectors|lang=en-US|style=Feynman)**. For any vector $\vec{v}$ in our Euclidean space, we can *define* a corresponding [covector](@keyword=covector|lang=en-US|style=Feynman), let's call it $\tilde{v}$, by the following rule: the action of $\tilde{v}$ on any vector $\vec{u}$ is just their inner product.
 
 $$
 \tilde{v}(\vec{u}) = \langle \vec{v}, \vec{u} \rangle
 $$
 
-This provides a natural [one-to-one correspondence](@article_id:143441) between [vectors and covectors](@article_id:180634). They are like an object and its shadow. Now, just as a vector $\vec{v}$ has components $v^j$ in a basis $\{\vec{e}_j\}$ (called **contravariant** components), its shadow-self, the covector $\tilde{v}$, has components $v_i$ in the corresponding [dual basis](@article_id:144582) (called **covariant** components). How are these two sets of components related? The metric tensor is the bridge:
+This provides a natural [one-to-one correspondence](@keyword=one_to_one_correspondence|lang=en-US|style=Feynman) between [vectors and covectors](@keyword=vectors_and_covectors|lang=en-US|style=Feynman). They are like an object and its shadow. Now, just as a vector $\vec{v}$ has components $v^j$ in a basis $\{\vec{e}_j\}$ (called **contravariant** components), its shadow-self, the covector $\tilde{v}$, has components $v_i$ in the corresponding [dual basis](@keyword=dual_basis|lang=en-US|style=Feynman) (called **covariant** components). How are these two sets of components related? The metric tensor is the bridge:
 
 $$
 v_i = g_{ij} v^j
 $$
 
-This operation is fittingly called "lowering the index." It's the mathematical machinery for converting a vector into its unique covector counterpart . Contravariant components $v^j$ tell you "how many steps" to take along each [basis vector](@article_id:199052) $\vec{e}_j$ to build the vector $\vec{v}$ itself ($ \vec{v} = v^j \vec{e}_j $) . Covariant components $v_i$ are what you get when you use $\vec{v}$ as a "measuring rod" via the inner product. In an orthonormal Cartesian system where $g_{ij}=\delta_{ij}$, we have $v_i = \delta_{ij}v^j = v^i$. The [contravariant and covariant components](@article_id:268234) are identical, and we usually don't bother to distinguish them. But in the curved spacetimes of general relativity or the non-orthogonal [coordinate systems](@article_id:148772) of materials science, this distinction is absolutely crucial.
+This operation is fittingly called "lowering the index." It's the mathematical machinery for converting a vector into its unique covector counterpart [@problem_id:1509585]. Contravariant components $v^j$ tell you "how many steps" to take along each [basis vector](@keyword=basis_vector|lang=en-US|style=Feynman) $\vec{e}_j$ to build the vector $\vec{v}$ itself ($ \vec{v} = v^j \vec{e}_j $) [@problem_id:1509645]. Covariant components $v_i$ are what you get when you use $\vec{v}$ as a "measuring rod" via the inner product. In an orthonormal Cartesian system where $g_{ij}=\delta_{ij}$, we have $v_i = \delta_{ij}v^j = v^i$. The [contravariant and covariant components](@keyword=contravariant_and_covariant_components|lang=en-US|style=Feynman) are identical, and we usually don't bother to distinguish them. But in the curved spacetimes of general relativity or the non-orthogonal [coordinate systems](@keyword=coordinate_systems|lang=en-US|style=Feynman) of materials science, this distinction is absolutely crucial.
 
 From three simple rules for an inner product, we have built a vast and powerful geometric structure, applicable to worlds far beyond our simple 3D intuition, and equipped ourselves with the language of tensors and duality, a language that allows us to describe the very fabric of the universe.

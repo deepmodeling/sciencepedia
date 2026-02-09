@@ -1,66 +1,66 @@
 ## 引言
-在分子世界中，绝大多数化学过程可以被玻恩-奥本海默近似下的宁静图景所描绘：原子核在单一、平滑的[势能面](@entry_id:143655)上运动。然而，在光化学、催化和许多[生物过程](@entry_id:164026)中，这种近似会戏剧性地失效，分子系统会经历多个电子态之间的快速跃迁。这种[非绝热动力学](@entry_id:189808)是理解和控制能量与物质转化的关键。那么，我们如何才能精确地模拟这种原子核与电子之间复杂的“量子之舞”呢？这正是本文旨在解决的核心知识鸿沟。[表面跳跃算法](@entry_id:173238)，特别是其最著名的实现——最少开关[表面跳跃](@entry_id:185261)（FSSH），为这一挑战提供了一个强大而直观的半经典解决方案。
+在分子世界中，绝大多数化学过程可以被玻恩-奥本海默近似下的宁静图景所描绘：原子核在单一、平滑的[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)上运动。然而，在光化学、催化和许多[生物过程](@keyword=bioprocessing|lang=zh-CN|style=Feynman)中，这种近似会戏剧性地失效，分子系统会经历多个电子态之间的快速跃迁。这种[非绝热动力学](@keyword=nonadiabatic_dynamics|lang=zh-CN|style=Feynman)是理解和控制能量与物质转化的关键。那么，我们如何才能精确地模拟这种原子核与电子之间复杂的“量子之舞”呢？这正是本文旨在解决的核心知识鸿沟。[表面跳跃算法](@keyword=surface_hopping_algorithms|lang=zh-CN|style=Feynman)，特别是其最著名的实现——最少开关[表面跳跃](@keyword=surface_hopping|lang=zh-CN|style=Feynman)（FSSH），为这一挑战提供了一个强大而直观的半经典解决方案。
 
-本文将带领读者深入探索[表面跳跃算法](@entry_id:173238)的世界。我们将分三步展开：第一章“原理与机制”，将从[玻恩-奥本海默近似](@entry_id:146252)的失效讲起，深入剖析FSSH算法的核心思想，包括其[混合量子-经典](@entry_id:750433)图像、随机跳跃的规则以及能量守恒的实现方式。第二章“应用与交叉学科联系”，将展示该方法如何在[光化学](@entry_id:140933)、材料科学和生物物理等领域解决真实的科学难题，并将其与其他理论方法进行比较，勾勒出该领域的理论版图。最后，在“动手实践”部分，我们将通过具体的计算问题，将理论知识转化为实践技能。通过这次旅程，读者将掌握一个用于研究分子世界中超快量子现象的核心计算工具。
+本文将带领读者深入探索[表面跳跃算法](@keyword=surface_hopping_algorithms|lang=zh-CN|style=Feynman)的世界。我们将分三步展开：第一章“原理与机制”，将从[玻恩-奥本海默近似](@keyword=born_oppenheimer_approximation|lang=zh-CN|style=Feynman)的失效讲起，深入剖析FSSH算法的核心思想，包括其[混合量子-经典](@keyword=hybrid_quantum_classical_2|lang=zh-CN|style=Feynman)图像、随机跳跃的规则以及能量守恒的实现方式。第二章“应用与交叉学科联系”，将展示该方法如何在[光化学](@keyword=photochemistry|lang=zh-CN|style=Feynman)、材料科学和生物物理等领域解决真实的科学难题，并将其与其他理论方法进行比较，勾勒出该领域的理论版图。最后，在“动手实践”部分，我们将通过具体的计算问题，将理论知识转化为实践技能。通过这次旅程，读者将掌握一个用于研究分子世界中超快量子现象的核心计算工具。
 
 ## 原理与机制
 
-在上一章中，我们已经对[非绝热动力学](@entry_id:189808)这个迷人的领域有了初步的认识。现在，让我们像物理学家[理查德·费曼](@entry_id:155876)（[Richard Feynman](@entry_id:155876)）那样，卷起袖子，深入探索其背后的核心原理与机制。我们将开启一段发现之旅，从最基本的物理图像出发，一步步揭示当分子世界中的“规则”被打破时，会发生怎样奇妙的景象，以及我们如何用巧妙的算法来描绘这一过程。
+在上一章中，我们已经对[非绝热动力学](@keyword=nonadiabatic_dynamics|lang=zh-CN|style=Feynman)这个迷人的领域有了初步的认识。现在，让我们像物理学家[理查德·费曼](@keyword=richard_feynman|lang=zh-CN|style=Feynman)（[Richard Feynman](@keyword=richard_feynman|lang=zh-CN|style=Feynman)）那样，卷起袖子，深入探索其背后的核心原理与机制。我们将开启一段发现之旅，从最基本的物理图像出发，一步步揭示当分子世界中的“规则”被打破时，会发生怎样奇妙的景象，以及我们如何用巧妙的算法来描绘这一过程。
 
 ### 玻恩-奥本海默的世界：双重时间尺度的故事
 
-想象一个分子，它由沉重的原子核和轻盈的电子组成。这两者之间的质量差异是巨大的——一个质子比一个电子重约1836倍。这悬殊的差异导致了它们运动时间尺度的巨大分离。电子的运动迅如闪电，而原子核的移动则显得迟缓笨拙。这就像一群敏捷的苍蝇（电子）围绕着一头行动缓慢的大象（原子核）嗡嗡作响。
+想象一个分子，它由沉重的原子核和轻盈的电子组成。这两者之间的质量差异是巨大的——一个质子比一个电子重约1836倍。这悬殊的差异导致了它们运动时间尺度的巨大分离。电子的运动迅如闪电，而原子核的移动则显得迟缓笨拙。这就像一群敏捷的苍蝇（电子）围绕着一头行动缓慢的大象（原子核）嗡嗡作响。[@problem_id:3811663]
 
-伟大的物理学家马克斯·玻恩（Max Born）和罗伯特·奥本海默（J. Robert Oppenheimer）基于这个洞察，提出了一个影响深远的近似，即**玻恩-奥本海默近似（Born-Oppenheimer approximation）**。他们认为，在原子核缓慢移动的每时每刻，轻快的电子都有足够的时间瞬间适应原子核的新位置，并重新达到平衡。从电子的角度看，原子核几乎是静止的；而从原子核的角度看，它们感受到的是快速运动的电子所形成的平均化的“电子云”[势场](@entry_id:143025)。
+伟大的物理学家马克斯·玻恩（Max Born）和罗伯特·奥本海默（J. Robert Oppenheimer）基于这个洞察，提出了一个影响深远的近似，即**玻恩-奥本海默近似（Born-Oppenheimer approximation）**。他们认为，在原子核缓慢移动的每时每刻，轻快的电子都有足够的时间瞬间适应原子核的新位置，并重新达到平衡。从电子的角度看，原子核几乎是静止的；而从原子核的角度看，它们感受到的是快速运动的电子所形成的平均化的“电子云”[势场](@keyword=potential_fields|lang=zh-CN|style=Feynman)。
 
-这个[势场](@entry_id:143025)，就是我们所说的**[势能面](@entry_id:143655)（Potential Energy Surface, PES）**。在玻恩-奥本海默的世界里，一切都井然有序：分子始终处于一个特定的电子状态，其原子核就在这个电子态对应的唯一[势能面](@entry_id:143655)上运动，如同一个弹珠在平滑的轨道上滚动。这种动力学过程被称为**绝热动力学（adiabatic dynamics）**，因为系统在演化过程中没有与其他的电子态发生能量交换。
+这个[势场](@keyword=potential_fields|lang=zh-CN|style=Feynman)，就是我们所说的**[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)（Potential Energy Surface, PES）**。在玻恩-奥本海默的世界里，一切都井然有序：分子始终处于一个特定的电子状态，其原子核就在这个电子态对应的唯一[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)上运动，如同一个弹珠在平滑的轨道上滚动。这种动力学过程被称为**绝热动力学（adiabatic dynamics）**，因为系统在演化过程中没有与其他的电子态发生能量交换。
 
 ### 当世界碰撞：绝热图像的失效
 
-然而，[玻恩-奥本海默近似](@entry_id:146252)的美丽图景并非无懈可击。当大象（原子核）突然加速，或者当两个原本分离的[势能面](@entry_id:143655)（景观）在某个区域靠得非常近时，苍蝇（电子）就可能来不及调整，从而“跳”到另一个[势能面](@entry_id:143655)上。这就是[绝热近似](@entry_id:143074)失效的时刻，我们称之为**[非绝热跃迁](@entry_id:199204)（nonadiabatic transition）**。
+然而，[玻恩-奥本海默近似](@keyword=born_oppenheimer_approximation|lang=zh-CN|style=Feynman)的美丽图景并非无懈可击。当大象（原子核）突然加速，或者当两个原本分离的[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)（景观）在某个区域靠得非常近时，苍蝇（电子）就可能来不及调整，从而“跳”到另一个[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)上。这就是[绝热近似](@keyword=adiabatic_approximation|lang=zh-CN|style=Feynman)失效的时刻，我们称之为**[非绝热跃迁](@keyword=nonadiabatic_transitions|lang=zh-CN|style=Feynman)（nonadiabatic transition）**。
 
-这种失效并非毫无征兆。物理学家们给出了一个判据，它比较了两种时间尺度：一个是电子态之间跃迁所需的特征时间，由能量差 $\Delta E_{jk} = E_j - E_k$ 决定，其对应的频率为玻恩频率 $|\Delta E_{jk}|/\hbar$；另一个是原子[核运动](@entry_id:902895)引起[电子哈密顿量](@entry_id:177588)变化的速率，这个速率与原子核速度 $V$ 和一个关键的物理量——**[非绝热耦合](@entry_id:198018)（nonadiabatic coupling）** $d_{jk}$——的乘积成正比。当这两个尺度变得可以比拟时，[绝热近似](@entry_id:143074)就宣告破产：
+这种失效并非毫无征兆。物理学家们给出了一个判据，它比较了两种时间尺度：一个是电子态之间跃迁所需的特征时间，由能量差 $\Delta E_{jk} = E_j - E_k$ 决定，其对应的频率为玻恩频率 $|\Delta E_{jk}|/\hbar$；另一个是原子[核运动](@keyword=nucleokinesis|lang=zh-CN|style=Feynman)引起[电子哈密顿量](@keyword=electronic_hamiltonian|lang=zh-CN|style=Feynman)变化的速率，这个速率与原子核速度 $V$ 和一个关键的物理量——**[非绝热耦合](@keyword=nonadiabatic_coupling|lang=zh-CN|style=Feynman)（nonadiabatic coupling）** $d_{jk}$——的乘积成正比。当这两个尺度变得可以比拟时，[绝热近似](@keyword=adiabatic_approximation|lang=zh-CN|style=Feynman)就宣告破产：
 
 $$
 |V \cdot d_{jk}(R)| \gtrsim \frac{|\Delta E_{jk}(R)|}{\hbar}
 $$
 
- 
+[@problem_id:3811663] [@problem_id:3811695]
 
-这里的 $d_{jk}(R) = \langle \phi_j(r;R) | \nabla_R \phi_k(r;R) \rangle_r$ 是一个向量，它衡量了当原子核位置 $R$ 发生微小变化时，一个电子态 $\phi_k$ 的[波函数](@entry_id:201714)形状变化在另一个电子态 $\phi_j$ 上的投影。通俗地说，它描述了原子核的运动在多大程度上“搅动”了电子云，从而诱导了电子态之间的混合。因此，[非绝热跃迁](@entry_id:199204)最容易在以下情况发生：原子[核运动](@entry_id:902895)快（$V$ 大）、[势能面](@entry_id:143655)靠得近（$\Delta E_{jk}$ 小），或者[非绝热耦合](@entry_id:198018)强（$d_{jk}$ 大）。
+这里的 $d_{jk}(R) = \langle \phi_j(r;R) | \nabla_R \phi_k(r;R) \rangle_r$ 是一个向量，它衡量了当原子核位置 $R$ 发生微小变化时，一个电子态 $\phi_k$ 的[波函数](@keyword=wave_functions|lang=zh-CN|style=Feynman)形状变化在另一个电子态 $\phi_j$ 上的投影。通俗地说，它描述了原子核的运动在多大程度上“搅动”了电子云，从而诱导了电子态之间的混合。因此，[非绝热跃迁](@keyword=nonadiabatic_transitions|lang=zh-CN|style=Feynman)最容易在以下情况发生：原子[核运动](@keyword=nucleokinesis|lang=zh-CN|style=Feynman)快（$V$ 大）、[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)靠得近（$\Delta E_{jk}$ 小），或者[非绝热耦合](@keyword=nonadiabatic_coupling|lang=zh-CN|style=Feynman)强（$d_{jk}$ 大）。
 
-### [势能面](@entry_id:143655)的十字路口：避让交叉与[锥形交叉](@entry_id:191929)
+### [势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)的十字路口：避让交叉与[锥形交叉](@keyword=conical_intersections|lang=zh-CN|style=Feynman)
 
-那么，[势能面](@entry_id:143655)在何处会靠得特别近呢？让我们来探索一下[势能面](@entry_id:143655)的“地理学”。
+那么，[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)在何处会靠得特别近呢？让我们来探索一下[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)的“地理学”。
 
-在一个简化的单维世界里，两个[势能面](@entry_id:143655)相遇的最典型方式是**避让交叉（avoided crossing）**。想象一下，在没有相互作用的情况下（这种虚构的图像被称为**透热（diabatic）**表象），两个[势能面](@entry_id:143655)可能像两条直线一样简单地交叉。然而，一旦引入了电子态之间的相互作用 $V$，量子力学的“[能级排斥](@entry_id:137654)”原理就会起作用。这两个态会互相“推开”，形成两条[双曲线](@entry_id:174213)，在原本的交叉点附近“擦肩而过”，而不是真正地相交。
+在一个简化的单维世界里，两个[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)相遇的最典型方式是**避让交叉（avoided crossing）**。想象一下，在没有相互作用的情况下（这种虚构的图像被称为**透热（diabatic）**表象），两个[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)可能像两条直线一样简单地交叉。然而，一旦引入了电子态之间的相互作用 $V$，量子力学的“[能级排斥](@keyword=level_repulsion|lang=zh-CN|style=Feynman)”原理就会起作用。这两个态会互相“推开”，形成两条[双曲线](@keyword=hyperbola|lang=zh-CN|style=Feynman)，在原本的交叉点附近“擦肩而过”，而不是真正地相交。[@problem_id:3811669]
 
-对于一个由透热势 $E_1(x)=\alpha x$，$E_2(x)=-\alpha x$ 和常数耦合 $V$ 描述的简单模型，通过对[哈密顿量](@entry_id:144286)矩阵的对角化，我们可以精确地得到绝热[势能面](@entry_id:143655) $E_{\pm}(x) = \pm\sqrt{(\alpha x)^2 + V^2}$。它们之间的能量差 $\Delta E(x) = 2\sqrt{(\alpha x)^2 + V^2}$ 在 $x=0$ 处达到最小值 $2V$。这个 $2V$ 就是避让交叉的“鸿沟”宽度，它的大小直接影响了跃迁的难易程度。
+对于一个由透热势 $E_1(x)=\alpha x$，$E_2(x)=-\alpha x$ 和常数耦合 $V$ 描述的简单模型，通过对哈密顿量矩阵的对角化，我们可以精确地得到绝热[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman) $E_{\pm}(x) = \pm\sqrt{(\alpha x)^2 + V^2}$。它们之间的能量差 $\Delta E(x) = 2\sqrt{(\alpha x)^2 + V^2}$ 在 $x=0$ 处达到最小值 $2V$。这个 $2V$ 就是避让交叉的“鸿沟”宽度，它的大小直接影响了跃迁的难易程度。
 
-当我们将视野扩展到多维的真实分子[世界时](@entry_id:275204)，情况变得更加奇妙。两个[势能面](@entry_id:143655)不再是简单地“避让”，它们可以真正在某些点上相交！这种简并（degeneracy）点被称为**[锥形交叉](@entry_id:191929)（conical intersection, CI）**。之所以称为“锥形”，是因为在简并点附近，两个[势能面](@entry_id:143655)形状如同一个双锥体，在一个点上相接。在一个拥有 $f$ 个核自由度的分子中，形成一个[锥形交叉](@entry_id:191929)需要满足两个独立的数学约束，因此这些交叉点通常会连接成一个维度为 $f-2$ 的“接缝”（seam）。
+当我们将视野扩展到多维的真实分子[世界时](@keyword=universal_time|lang=zh-CN|style=Feynman)，情况变得更加奇妙。两个[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)不再是简单地“避让”，它们可以真正在某些点上相交！这种简并（degeneracy）点被称为**[锥形交叉](@keyword=conical_intersections|lang=zh-CN|style=Feynman)（conical intersection, CI）**。之所以称为“锥形”，是因为在简并点附近，两个[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)形状如同一个双锥体，在一个点上相接。在一个拥有 $f$ 个核自由度的分子中，形成一个[锥形交叉](@keyword=conical_intersections|lang=zh-CN|style=Feynman)需要满足两个独立的数学约束，因此这些交叉点通常会连接成一个维度为 $f-2$ 的“接缝”（seam）。[@problem_id:3811651]
 
-[锥形交叉](@entry_id:191929)是分子世界中极其高效的“漏斗”，能引导激发态分子以超快的速度回到基态，这在光化学和[光生物学](@entry_id:922928)中至关重要，例如，它是我们眼睛[视紫红质](@entry_id:175649)感光过程的核心机制。
+[锥形交叉](@keyword=conical_intersections|lang=zh-CN|style=Feynman)是分子世界中极其高效的“漏斗”，能引导激发态分子以超快的速度回到基态，这在光化学和[光生物学](@keyword=photobiology|lang=zh-CN|style=Feynman)中至关重要，例如，它是我们眼睛[视紫红质](@keyword=rhodopsin|lang=zh-CN|style=Feynman)感光过程的核心机制。
 
-更有趣的是，[锥形交叉](@entry_id:191929)还蕴含着深刻的拓扑学。当一个原子核的路径环绕[锥形交叉点](@entry_id:202598)一周后，其电子[波函数](@entry_id:201714)会获得一个额外的相位因子 $-1$（即 $\pi$ 的相位），这被称为**贝里相位（Berry phase）**。这就像一个人绕着一根旗杆走了一圈，发现自己身上的绳子多了一个扭结。这个纯粹由路径几何决定的相位，对核的运动有着真实可测的影响，它是量子力学几何之美的绝佳体现。
+更有趣的是，[锥形交叉](@keyword=conical_intersections|lang=zh-CN|style=Feynman)还蕴含着深刻的拓扑学。当一个原子核的路径环绕[锥形交叉点](@keyword=diabolical_points|lang=zh-CN|style=Feynman)一周后，其电子[波函数](@keyword=wave_functions|lang=zh-CN|style=Feynman)会获得一个额外的相位因子 $-1$（即 $\pi$ 的相位），这被称为**贝里相位（Berry phase）**。这就像一个人绕着一根旗杆走了一圈，发现自己身上的绳子多了一个扭结。这个纯粹由路径几何决定的相位，对核的运动有着真实可测的影响，它是量子力学几何之美的绝佳体现。[@problem_id:3811651]
 
 ### 用经典规则玩转量子游戏：半经典思想
 
-即便我们知道了[非绝热跃迁](@entry_id:199204)的原理，直接求解包含多个[势能面](@entry_id:143655)的[含时薛定谔方程](@entry_id:137898)对于真实分子来说仍然是一项艰巨的任务。我们需要一个更实用的近似。
+即便我们知道了[非绝热跃迁](@keyword=nonadiabatic_transitions|lang=zh-CN|style=Feynman)的原理，直接求解包含多个[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)的[含时薛定谔方程](@keyword=time_dependent_schrödinger_equation|lang=zh-CN|style=Feynman)对于真实分子来说仍然是一项艰巨的任务。我们需要一个更实用的近似。
 
-这就引出了**[混合量子-经典](@entry_id:750433)（mixed quantum-classical）**思想。其核心是区别对待电子和原子核：对于轻盈、量子效应显著的电子，我们继续使用量子力学描述；而对于沉重、运动更接近经典的原子核，我们则将其视为经典粒子，比如台球。
+这就引出了**[混合量子-经典](@keyword=hybrid_quantum_classical_2|lang=zh-CN|style=Feynman)（mixed quantum-classical）**思想。其核心是区别对待电子和原子核：对于轻盈、量子效应显著的电子，我们继续使用量子力学描述；而对于沉重、运动更接近经典的原子核，我们则将其视为经典粒子，比如台球。[@problem_id:3811675]
 
-这种处理方式的合理性来自于**[半经典近似](@entry_id:147497)（semiclassical approximation）**，如[WKB方法](@entry_id:178439)。它告诉我们，一个重粒子的[波函数](@entry_id:201714)可以非常局域化，形成一个所谓的“[波包](@entry_id:154698)”，其整体行为就像一个遵循牛顿力学的经典[质点](@entry_id:186768)。因此，我们将原子核的[量子算符](@entry_id:137703)（如[动量算符](@entry_id:151743) $-i\hbar\nabla_R$）替换为经典的物理量（如动量 $P(t)$）。
+这种处理方式的合理性来自于**[半经典近似](@keyword=semiclassical_approximation|lang=zh-CN|style=Feynman)（semiclassical approximation）**，如[WKB方法](@keyword=wkb_method|lang=zh-CN|style=Feynman)。它告诉我们，一个重粒子的[波函数](@keyword=wave_functions|lang=zh-CN|style=Feynman)可以非常局域化，形成一个所谓的“[波包](@keyword=wave_packets|lang=zh-CN|style=Feynman)”，其整体行为就像一个遵循牛顿力学的经典[质点](@keyword=point_mass|lang=zh-CN|style=Feynman)。因此，我们将原子核的[量子算符](@keyword=quantum_operators|lang=zh-CN|style=Feynman)（如[动量算符](@keyword=momentum_operator|lang=zh-CN|style=Feynman) $-i\hbar\nabla_R$）替换为经典的物理量（如动量 $P(t)$）。
 
-于是，我们的物理图像演变成了：一个经典粒子（原子核）在某个[势能面](@entry_id:143655)上运动，同时它的“内部”电子态则严格地遵循量子力学的演化规律。这个经典粒子携带的电子态，就像一个内置了量子计算机的弹珠。
+于是，我们的物理图像演变成了：一个经典粒子（原子核）在某个[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)上运动，同时它的“内部”电子态则严格地遵循量子力学的演化规律。这个经典粒子携带的电子态，就像一个内置了量子计算机的弹珠。
 
-### [表面跳跃](@entry_id:185261)：信仰之跃
+### [表面跳跃](@keyword=surface_hopping|lang=zh-CN|style=Feynman)：信仰之跃
 
-这个混合图像带来了一个新的难题：原子核是经典粒子，在任何时刻它都必须位于**一个**确定的[势能面](@entry_id:143655)上。但是，它的电子态却是[量子叠加](@entry_id:137914)态，例如 $\Psi_{el} = c_1(t)\phi_1 + c_2(t)\phi_2$。这该如何协调？原子核到底应该跟随哪个[势能面](@entry_id:143655)运动呢？
+这个混合图像带来了一个新的难题：原子核是经典粒子，在任何时刻它都必须位于**一个**确定的[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)上。但是，它的电子态却是[量子叠加](@keyword=quantum_superposition|lang=zh-CN|style=Feynman)态，例如 $\Psi_{el} = c_1(t)\phi_1 + c_2(t)\phi_2$。这该如何协调？原子核到底应该跟随哪个[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)运动呢？
 
-约翰·塔利（John C. Tully）提出的**最少开关[表面跳跃](@entry_id:185261)（Fewest-Switches Surface Hopping, FSSH）**算法为这个问题提供了一个优雅而实用的解决方案。
+约翰·塔利（John C. Tully）提出的**最少开关[表面跳跃](@keyword=surface_hopping|lang=zh-CN|style=Feynman)（Fewest-Switches Surface Hopping, FSSH）**算法为这个问题提供了一个优雅而实用的解决方案。
 
 FSSH的核心思想是：
-1.  **演化**：原子核在一个[势能面](@entry_id:143655)（称为“活性”表面）上演化，如同一个普通的经典粒子。与此同时，我们精确地求解伴随这个经典轨迹的电子[含时薛定谔方程](@entry_id:137898)，得到电子态振幅 $c_i(t)$ 的演化。
+1.  **演化**：原子核在一个[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)（称为“活性”表面）上演化，如同一个普通的经典粒子。与此同时，我们精确地求解伴随这个经典轨迹的电子[含时薛定谔方程](@keyword=time_dependent_schrödinger_equation|lang=zh-CN|style=Feynman)，得到电子态振幅 $c_i(t)$ 的演化。
 2.  **跳跃**：随着演化，原本处于活性表面 $a$ 的系统，其在其他表面 $b$ 上的振幅 $|c_b(t)|^2$ 可能会逐渐增长。FSSH算法以一定的概率允许原子核从表面 $a$ **随机地“跳跃”**到表面 $b$。
 3.  **统计**：通过模拟大量的这种携带量子态并随机跳跃的经典轨迹，我们希望整个轨迹系综（ensemble）的行为能够重现真实的量子布居数动力学。
 
@@ -68,30 +68,30 @@ FSSH的核心思想是：
 
 那么，系统如何决定何时跳跃，又该如何跳跃呢？这便是FSSH算法的精髓所在。
 
-**[跳跃概率](@entry_id:272660)**：从活性表面 $a$ 跳跃到目标表面 $b$ 的瞬时概率 $g_{a \to b}$ 正比于[量子概率](@entry_id:184796)从 $a$ 流向 $b$ 的“通量”。其标准形式为：
+**[跳跃概率](@keyword=jump_probabilities|lang=zh-CN|style=Feynman)**：从活性表面 $a$ 跳跃到目标表面 $b$ 的瞬时概率 $g_{a \to b}$ 正比于[量子概率](@keyword=quantum_probability|lang=zh-CN|style=Feynman)从 $a$ 流向 $b$ 的“通量”。其标准形式为：[@problem_id:3811667]
 
 $$
 g_{a \to b} = \max\left(0, \frac{2 \Delta t}{|c_a|^2} \Re[c_a^* c_b (v \cdot d_{ab})]\right)
 $$
 
-让我们来解剖这个公式。[跳跃概率](@entry_id:272660)与时间步长 $\Delta t$、原子核速度 $v$ 和[非绝热耦合](@entry_id:198018) $d_{ab}$ 的点积成正比，这与我们之前讨论的[非绝热跃迁](@entry_id:199204)判据完全一致。而 $c_a^* c_b$ 这一项则包含了电子态之间的相[干性](@entry_id:900268)信息。
+让我们来解剖这个公式。[跳跃概率](@keyword=jump_probabilities|lang=zh-CN|style=Feynman)与时间步长 $\Delta t$、原子核速度 $v$ 和[非绝热耦合](@keyword=nonadiabatic_coupling|lang=zh-CN|style=Feynman) $d_{ab}$ 的点积成正比，这与我们之前讨论的[非绝热跃迁](@keyword=nonadiabatic_transitions|lang=zh-CN|style=Feynman)判据完全一致。而 $c_a^* c_b$ 这一项则包含了电子态之间的相[干性](@keyword=stemness|lang=zh-CN|style=Feynman)信息。
 
-你可能会问，为什么公式里只取了复数量 $c_a^* c_b (v \cdot d_{ab})$ 的**实部** $\Re[\cdot]$？这是一个非常深刻的问题。通过严谨的推导可以证明，在[量子动力学](@entry_id:138183)中，正是这一项的实部掌管着态与态之间的**布居数转移**，而其虚部则负责驱动电子态**相位的演化**（包括[贝里相位](@entry_id:159450)）。如果混淆两者，就相当于把时钟的滴答声误当作了前进的距离。FSSH通过只采用实部来计算[跳跃概率](@entry_id:272660)，确保了它正确地模拟了布居数的交换。
+你可能会问，为什么公式里只取了复数量 $c_a^* c_b (v \cdot d_{ab})$ 的**实部** $\Re[\cdot]$？这是一个非常深刻的问题。通过严谨的推导可以证明，在[量子动力学](@keyword=quantum_dynamics|lang=zh-CN|style=Feynman)中，正是这一项的实部掌管着态与态之间的**布居数转移**，而其虚部则负责驱动电子态**相位的演化**（包括[贝里相位](@keyword=berry_s_phase|lang=zh-CN|style=Feynman)）。如果混淆两者，就相当于把时钟的滴答声误当作了前进的距离。FSSH通过只采用实部来计算[跳跃概率](@keyword=jump_probabilities|lang=zh-CN|style=Feynman)，确保了它正确地模拟了布居数的交换。[@problem_id:3811692]
 
 **能量守恒**：跳跃是一个瞬间完成的过程。当原子核从能量为 $E_a$ 的表面跳到能量为 $E_b$ 的表面时，它的势能发生了 $\Delta E = E_b - E_a$ 的突变。为了保证总能量守恒，这个势能的改变必须由原子核的动能来补偿。
 
-FSSH通过**重新标定（rescaling）原子核的动量**来实现这一点。这个动量的“反冲”或“踢力”被施加在哪个方向呢？最自然的选择就是沿着[非绝热耦合](@entry_id:198018)向量 $d_{ab}$ 的方向。道理很简单：既然是这个方向上的耦合诱导了电子的跃迁，那么作为回应，原子核也应该在这个方向上感受到能量的交换。这是一种“冤有头，债有主”的物理直觉。
+FSSH通过**重新标定（rescaling）原子核的动量**来实现这一点。这个动量的“反冲”或“踢力”被施加在哪个方向呢？最自然的选择就是沿着[非绝热耦合](@keyword=nonadiabatic_coupling|lang=zh-CN|style=Feynman)向量 $d_{ab}$ 的方向。道理很简单：既然是这个方向上的耦合诱导了电子的跃迁，那么作为回应，原子核也应该在这个方向上感受到能量的交换。这是一种“冤有头，债有主”的物理直觉。[@problem_id:3811688]
 
-当然，经典世界有其自身的限制。如果一次“向上”的跳跃（$E_b > E_a$）所需要的能量超出了原子核在耦合方向上所拥有的动能，那该怎么办？这时，跳跃就无法完成，我们称之为**“受挫的跳跃”（frustrated hop）**。在这种情况下，跳跃被拒绝，原子核继续在原来的表面上运动，就像一个人想跳上一个过高的台阶，但力有不逮，最终只能留在原地。
+当然，经典世界有其自身的限制。如果一次“向上”的跳跃（$E_b > E_a$）所需要的能量超出了原子核在耦合方向上所拥有的动能，那该怎么办？这时，跳跃就无法完成，我们称之为**“受挫的跳跃”（frustrated hop）**。在这种情况下，跳跃被拒绝，原子核继续在原来的表面上运动，就像一个人想跳上一个过高的台阶，但力有不逮，最终只能留在原地。[@problem_id:3811694]
 
 ### 机器中的幽灵：算法的局限与退相干问题
 
-FSSH算法以其简洁和高效，成为了模拟非[绝热过程](@entry_id:138150)的有力工具。但它终究是一个近似，其内部也潜藏着一些“幽灵”，即理论上的缺陷。
+FSSH算法以其简洁和高效，成为了模拟非[绝热过程](@keyword=adiabatic_process|lang=zh-CN|style=Feynman)的有力工具。但它终究是一个近似，其内部也潜藏着一些“幽灵”，即理论上的缺陷。
 
-其中最著名的一个便是**[退相干](@entry_id:145157)（decoherence）**问题。在完整的量子图像中，当一个核波包遇到交叉区域并分裂到两个不同的[势能面](@entry_id:143655)上时，这两个“分身”会沿着不同的路径分道扬镳。随着它们在相空间中的距离越来越远，它们之间将逐渐失去发生干涉的能力。这种由于与环境（这里是核的运动）纠缠而导致的[量子干涉](@entry_id:139127)能力的丧失，就是退相干。
+其中最著名的一个便是**[退相干](@keyword=decoherence|lang=zh-CN|style=Feynman)（decoherence）**问题。在完整的量子图像中，当一个核波包遇到交叉区域并分裂到两个不同的[势能面](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)上时，这两个“分身”会沿着不同的路径分道扬镳。随着它们在相空间中的距离越来越远，它们之间将逐渐失去发生干涉的能力。这种由于与环境（这里是核的运动）纠缠而导致的[量子干涉](@keyword=quantum_interference|lang=zh-CN|style=Feynman)能力的丧失，就是退相干。
 
-然而，FSSH的独立轨迹近似无法捕捉到这种[波包](@entry_id:154698)的分裂。在单条FSSH轨迹上，电子[波函数](@entry_id:201714)永远保持着相[干性](@entry_id:900268)（即 $c_1$ 和 $c_2$ 同时不为零）。这导致了所谓的**“过相干”（overcoherence）**问题。算法会错误地保持电子[态的叠加](@entry_id:273993)特性，即使在真实物理中系统早已“选择”了其中一个状态。这可能导致错误的[长期动力学](@entry_id:1131365)行为和产物分支比。
+然而，FSSH的独立轨迹近似无法捕捉到这种[波包](@keyword=wave_packets|lang=zh-CN|style=Feynman)的分裂。在单条FSSH轨迹上，电子[波函数](@keyword=wave_functions|lang=zh-CN|style=Feynman)永远保持着相[干性](@keyword=stemness|lang=zh-CN|style=Feynman)（即 $c_1$ 和 $c_2$ 同时不为零）。这导致了所谓的**“过相干”（overcoherence）**问题。算法会错误地保持电子[态的叠加](@keyword=superposition_of_states|lang=zh-CN|style=Feynman)特性，即使在真实物理中系统早已“选择”了其中一个状态。这可能导致错误的[长期动力学](@keyword=secular_dynamics|lang=zh-CN|style=Feynman)行为和产物分支比。[@problem_id:3811654]
 
-除了过相干，FSSH还存在其他一些病症，例如**[零点能泄漏](@entry_id:188364)（zero-point energy leakage）**——经典原子核可能会在跳跃中不合物理地失去其量子振动的零点能；以及**不满足细致平衡（violation of detailed balance）**——在长时间模拟后，系统可能无法达到正确的统计热[平衡分布](@entry_id:263943)。
+除了过相干，FSSH还存在其他一些病症，例如**[零点能泄漏](@keyword=zero_point_energy_leakage|lang=zh-CN|style=Feynman)（zero-point energy leakage）**——经典原子核可能会在跳跃中不合物理地失去其量子振动的零点能；以及**不满足细致平衡（violation of detailed balance）**——在长时间模拟后，系统可能无法达到正确的统计热[平衡分布](@keyword=equilibrium_distribution|lang=zh-CN|style=Feynman)。[@problem_id:2681629]
 
-认识并修正这些“幽灵”，是当前[非绝热动力学](@entry_id:189808)研究领域的前沿课题。科学家们正在发展更复杂的算法，试图在保持计算效率的同时，更忠实地描绘这个充满量子奇迹的分子舞蹈世界。尽[管存](@entry_id:1127299)在不足，FSSH算法作为一个开创性的思想，为我们理解和模拟化学反应中的[量子跃迁](@entry_id:145857)提供了第一把钥匙，其内在的物理直觉和简洁之美，至今仍在启发着新的理论发展。
+认识并修正这些“幽灵”，是当前[非绝热动力学](@keyword=nonadiabatic_dynamics|lang=zh-CN|style=Feynman)研究领域的前沿课题。科学家们正在发展更复杂的算法，试图在保持计算效率的同时，更忠实地描绘这个充满量子奇迹的分子舞蹈世界。尽[管存](@keyword=linepack|lang=zh-CN|style=Feynman)在不足，FSSH算法作为一个开创性的思想，为我们理解和模拟化学反应中的[量子跃迁](@keyword=quantum_transitions|lang=zh-CN|style=Feynman)提供了第一把钥匙，其内在的物理直觉和简洁之美，至今仍在启发着新的理论发展。

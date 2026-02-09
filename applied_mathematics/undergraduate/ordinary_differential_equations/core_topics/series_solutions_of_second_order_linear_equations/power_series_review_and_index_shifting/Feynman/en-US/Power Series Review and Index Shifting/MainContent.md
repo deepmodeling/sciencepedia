@@ -1,7 +1,7 @@
 ## Introduction
 Many of the differential equations that describe the natural world cannot be solved by elementary methods. To overcome this, we turn to one of mathematics' most powerful tools: representing solutions as infinite power series. However, substituting a series into an equation creates a mix of different summations that must be unified. This article serves as a guide to the essential technique of **index shifting**, the algebraic art of reorganizing series to uncover their underlying structure.
 
-This exploration is divided into three parts. First, in **Principles and Mechanisms**, we will dive into the mechanics of index shifting, learning how to align and combine series to derive the crucial [recurrence relations](@article_id:276118) that define a solution. Next, **Applications and Interdisciplinary Connections** will broaden our perspective, showing how this single technique provides a key for solving advanced equations in physics and connects continuous mathematics to the discrete world of combinatorics and computer science. Finally, a series of **Hands-On Practices** will allow you to solidify your understanding and apply these methods to concrete problems, building the skills needed to master [series solutions](@article_id:170060).
+This exploration is divided into three parts. First, in **Principles and Mechanisms**, we will dive into the mechanics of index shifting, learning how to align and combine series to derive the crucial [recurrence relations](@keyword=recurrence_relations|lang=en-US|style=Feynman) that define a solution. Next, **Applications and Interdisciplinary Connections** will broaden our perspective, showing how this single technique provides a key for solving advanced equations in physics and connects continuous mathematics to the discrete world of combinatorics and computer science. Finally, a series of **Hands-On Practices** will allow you to solidify your understanding and apply these methods to concrete problems, building the skills needed to master [series solutions](@keyword=series_solutions|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
@@ -37,7 +37,7 @@ This same logic applies to any shift. If we have a series from a second derivati
 
 ### Aligning the Universe: Combining Series
 
-Now for the main event. Let's see how this helps us solve an equation. Consider a simplified version of a famous differential equation, $y'' - y = 0$. If we substitute our power [series solution](@article_id:199789) $y = \sum_{n=0}^{\infty} c_n x^n$, we get:
+Now for the main event. Let's see how this helps us solve an equation. Consider a simplified version of a famous differential equation, $y'' - y = 0$. If we substitute our power [series solution](@keyword=series_solution|lang=en-US|style=Feynman) $y = \sum_{n=0}^{\infty} c_n x^n$, we get:
 
 $$y'' = \sum_{n=2}^{\infty} n(n-1)c_n x^{n-2}$$
 

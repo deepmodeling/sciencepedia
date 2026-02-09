@@ -1,5 +1,5 @@
 ## Introduction
-Stochastic differential equations (SDEs) are the mathematical language used to describe systems evolving under the influence of randomness, from the jittery path of a pollen grain to the fluctuating price of a stock. While these equations provide powerful models, they raise a fundamental question: given a set of rules for drift and diffusion, how can we be certain that a solution path even exists, and if it does, is it the only one? This challenge of establishing [existence and uniqueness](@article_id:262607) is central to the entire field of [stochastic calculus](@article_id:143370).
+Stochastic differential equations (SDEs) are the mathematical language used to describe systems evolving under the influence of randomness, from the jittery path of a pollen grain to the fluctuating price of a stock. While these equations provide powerful models, they raise a fundamental question: given a set of rules for drift and diffusion, how can we be certain that a solution path even exists, and if it does, is it the only one? This challenge of establishing [existence and uniqueness](@keyword=existence_and_uniqueness|lang=en-US|style=Feynman) is central to the entire field of [stochastic calculus](@keyword=stochastic_calculus|lang=en-US|style=Feynman).
 
 This article introduces Picard iteration, a powerful and elegant method that provides a constructive answer to this very problem. Rather than just asserting that a solution exists, this technique provides a step-by-step recipe for building it. We will explore this tool across three chapters. First, in **"Principles and Mechanisms,"** we will dissect the iteration process, learning how to rephrase an SDE as an integral equation and understanding the mathematical guarantees, like the Banach Fixed-Point Theorem, that ensure a unique solution. Then, in **"Applications and Interdisciplinary Connections,"** we will witness this theory in action, seeing how it illuminates core models in finance and physics and reveals deep connections to numerical algorithms and other scientific disciplines. Finally, the **"Hands-On Practices"** section provides an opportunity to apply these concepts directly, allowing you to build solutions to famous SDEs and solidify your understanding.
 
@@ -9,7 +9,7 @@ Imagine trying to predict the path of a tiny speck of pollen floating on the sur
 
 ### A Tale of Two Integrals: The Language of Randomness
 
-In the orderly world of classical physics, if we know the velocity of an object at every moment, we can find its path by integrating. An equation like $\frac{dy}{dt} = f(y, t)$ can be rewritten as an [integral equation](@article_id:164811):
+In the orderly world of classical physics, if we know the velocity of an object at every moment, we can find its path by integrating. An equation like $\frac{dy}{dt} = f(y, t)$ can be rewritten as an [integral equation](@keyword=integral_equation|lang=en-US|style=Feynman):
 
 $$
 y(t) = y(0) + \int_0^t f(y(s), s) \,ds
@@ -17,21 +17,21 @@ $$
 
 This equation reads: "The position at time $t$ is the starting position plus the accumulation of all the infinitesimal changes up to that time." This is a solid foundation. But how do we handle the jittery pollen grain?
 
-A [stochastic differential equation](@article_id:139885) (SDE) is a bold attempt to write down a law for such a process:
+A [stochastic differential equation](@keyword=stochastic_differential_equation|lang=en-US|style=Feynman) (SDE) is a bold attempt to write down a law for such a process:
 
 $$
 dX_t = b(t, X_t)\,dt + \sigma(t, X_t)\,dW_t
 $$
 
-This equation has two parts. The first term, $b(t, X_t)\,dt$, is the **drift**. This is the deterministic part, like the gentle current carrying the pollen grain. If $\sigma$ were zero, this would be an [ordinary differential equation](@article_id:168127) (ODE), and we'd be back in the familiar, predictable world. The second term, $\sigma(t, X_t)\,dW_t$, is the **diffusion**. This is the source of all the trouble and all the fun. It represents the random kicks from the environment. The term $dW_t$ is the mathematical ghost of a single step in a **Brownian motion**—a process so erratic that its path is [continuous but nowhere differentiable](@article_id:275940), and has infinite length over any finite time.
+This equation has two parts. The first term, $b(t, X_t)\,dt$, is the **drift**. This is the deterministic part, like the gentle current carrying the pollen grain. If $\sigma$ were zero, this would be an [ordinary differential equation](@keyword=ordinary_differential_equation|lang=en-US|style=Feynman) (ODE), and we'd be back in the familiar, predictable world. The second term, $\sigma(t, X_t)\,dW_t$, is the **diffusion**. This is the source of all the trouble and all the fun. It represents the random kicks from the environment. The term $dW_t$ is the mathematical ghost of a single step in a **Brownian motion**—a process so erratic that its path is [continuous but nowhere differentiable](@keyword=continuous_but_nowhere_differentiable|lang=en-US|style=Feynman), and has infinite length over any finite time.
 
-You cannot treat $dW_t$ like a normal differential. The very notation $dX_t$ is a convenient fiction. To make sense of it, we must, once again, turn to the language of integrals. The SDE is a shorthand for the following [integral equation](@article_id:164811):
+You cannot treat $dW_t$ like a normal differential. The very notation $dX_t$ is a convenient fiction. To make sense of it, we must, once again, turn to the language of integrals. The SDE is a shorthand for the following [integral equation](@keyword=integral_equation|lang=en-US|style=Feynman):
 
 $$
 X_t = X_0 + \int_0^t b(s, X_s)\,ds + \int_0^t \sigma(s, X_s)\,dW_s
 $$
 
-The [first integral](@article_id:274148) is just our old friend, the standard Lebesgue (or Riemann) integral, accumulating the predictable drift. The second integral is a strange new beast: the **Itô stochastic integral**. Unlike a normal integral, you cannot compute it by looking at the whole path of $W_t$ at once. The Itô integral is built on a fundamental principle of causality: you cannot see into the future. To calculate the contribution to the integral at time $s$, you are only allowed to use information available up to time $s$. In mathematical terms, the process you are integrating, $\sigma(s, X_s)$, must be **adapted** to the [filtration](@article_id:161519) of information generated by the Brownian motion. This is not just a technical detail; it is a deep physical principle embedded in the heart of the mathematics.
+The [first integral](@keyword=first_integral|lang=en-US|style=Feynman) is just our old friend, the standard Lebesgue (or Riemann) integral, accumulating the predictable drift. The second integral is a strange new beast: the **Itô stochastic integral**. Unlike a normal integral, you cannot compute it by looking at the whole path of $W_t$ at once. The Itô integral is built on a fundamental principle of causality: you cannot see into the future. To calculate the contribution to the integral at time $s$, you are only allowed to use information available up to time $s$. In mathematical terms, the process you are integrating, $\sigma(s, X_s)$, must be **adapted** to the [filtration](@keyword=filtration|lang=en-US|style=Feynman) of information generated by the Brownian motion. This is not just a technical detail; it is a deep physical principle embedded in the heart of the mathematics.
 
 ### The Picard Machine: An Engine of Creation
 
@@ -53,7 +53,7 @@ Picard's method is to build this fixed point step-by-step.
     $$
     X^{(1)}_t = \Phi(X^{(0)})_t = X_0 + \int_0^t b(s, X_0)\,ds + \int_0^t \sigma(s, X_0)\,dW_s
     $$
-    If the coefficients don't depend on time, this simplifies beautifully to $X^{(1)}_t = X_0 + b(X_0) t + \sigma(X_0) W_t$. Our first guess was a [stationary point](@article_id:163866). Our second guess is a straight line of drift plus a Brownian motion.
+    If the coefficients don't depend on time, this simplifies beautifully to $X^{(1)}_t = X_0 + b(X_0) t + \sigma(X_0) W_t$. Our first guess was a [stationary point](@keyword=stationary_point|lang=en-US|style=Feynman). Our second guess is a straight line of drift plus a Brownian motion.
 
 3.  **Iterate!** We now feed this new, more complex path $X^{(1)}_t$ back into the machine to generate $X^{(2)}_t$, and so on. We create an infinite sequence of processes:
     $$
@@ -76,19 +76,19 @@ $$
 d(Y,Z) = \|Y - Z\|_{\mathcal{S}^2} = \left(\mathbb{E}\left[\sup_{0 \le t \le T} |Y_t - Z_t|^2\right]\right)^{1/2}
 $$
 
-This is a very demanding ruler. It looks at the maximum separation between the two paths over the entire time interval, squares it, and then averages this squared maximum over all the myriad possibilities of the Brownian motion. If this distance is zero, the paths are identical for all time, with probability one. This is what we call **[pathwise uniqueness](@article_id:267275)**.
+This is a very demanding ruler. It looks at the maximum separation between the two paths over the entire time interval, squares it, and then averages this squared maximum over all the myriad possibilities of the Brownian motion. If this distance is zero, the paths are identical for all time, with probability one. This is what we call **[pathwise uniqueness](@keyword=pathwise_uniqueness|lang=en-US|style=Feynman)**.
 
 ### The Cosmic Contract(ion): Guaranteeing a Single Reality
 
 Here is where a piece of pure mathematics comes to the rescue with astonishing power: the **Banach Fixed-Point Theorem**. You can think of it as the "Shrinking Map Theorem." It states that if you have a map $\Phi$ acting on a **complete** space (a space with no "holes" in it, which our arena $\mathcal{S}^2$ happens to be) and this map is a **contraction**—meaning it always pulls any two points closer together—then there exists one, and only one, point that is left unchanged by the map. A unique fixed point.
 
-This is the key! If we can show that our Picard operator $\Phi$ is a contraction on the space of paths $\mathcal{S}^2$, then the theorem guarantees that there is one and only one path $X$ for which $X = \Phi(X)$. This path is our unique [strong solution](@article_id:197850).
+This is the key! If we can show that our Picard operator $\Phi$ is a contraction on the space of paths $\mathcal{S}^2$, then the theorem guarantees that there is one and only one path $X$ for which $X = \Phi(X)$. This path is our unique [strong solution](@keyword=strong_solution|lang=en-US|style=Feynman).
 
 So, what are the rules of the game that ensure $\Phi$ is a contraction? The coefficients $b$ and $\sigma$ must satisfy two key properties:
 1.  **Global Lipschitz Continuity:** There's a constant $L$ such that $|b(x)-b(y)| \le L|x-y|$ and $\|\sigma(x)-\sigma(y)\| \le L|x-y|$. This is a powerful condition that tames the functions. It says their rate of change is globally bounded. It prevents the dynamics from "blowing up" unpredictably.
 2.  **Linear Growth:** $|b(x)|^2 + \|\sigma(x)\|^2 \le K(1+|x|^2)$. This condition ensures that the coefficients don't grow faster than quadratically, which helps keep our iterates inside the "well-behaved" space $\mathcal{S}^2$.
 
-Under these conditions, one can prove—using powerful tools like the **Burkholder-Davis-Gundy inequality** that tames the [supremum](@article_id:140018) of Itô integrals—that $\Phi$ is a contraction, *provided the time interval $T$ is small enough*. Why small? Because over a short time, the random kicks from $dW_t$ and the drift from $dt$ don't have enough time to drive paths far apart. The Lipschitz condition acts like a tether, and over a short time, the tether holds firm.
+Under these conditions, one can prove—using powerful tools like the **Burkholder-Davis-Gundy inequality** that tames the [supremum](@keyword=supremum|lang=en-US|style=Feynman) of Itô integrals—that $\Phi$ is a contraction, *provided the time interval $T$ is small enough*. Why small? Because over a short time, the random kicks from $dW_t$ and the drift from $dt$ don't have enough time to drive paths far apart. The Lipschitz condition acts like a tether, and over a short time, the tether holds firm.
 
 What about a long time interval? We use a beautiful and simple trick: we build our solution piece by piece. We use the contraction to find a unique solution on a small interval $[0, T_0]$. The endpoint of this path, $X_{T_0}$, becomes the starting point for the next small interval, $[T_0, 2T_0]$. We then solve it again, and "paste" the new path onto the old one. We repeat this process, building a unique solution over any finite horizon.
 
@@ -96,8 +96,8 @@ What about a long time interval? We use a beautiful and simple trick: we build o
 
 The global Lipschitz condition is a physicist's dream—a world with simple, universal rules. But what if the rules are more complex? What if the coefficients are only **locally Lipschitz**? This means they are well-behaved in any finite region of space, but might grow uncontrollably fast far away. For example, $b(x) = x^3$.
 
-In this case, our Picard machine might break. The solution could "explode" to infinity in a finite time. Here, mathematicians use another ingenious tool: the **[stopping time](@article_id:269803)**. We define a large boundary, say at $|x|=N$, and run our process. We construct a solution that is guaranteed to be unique *up to the time it hits this boundary*. By sending the boundary $N$ to infinity, we can build a solution that is unique up to its "[explosion time](@article_id:195519)."
+In this case, our Picard machine might break. The solution could "explode" to infinity in a finite time. Here, mathematicians use another ingenious tool: the **[stopping time](@keyword=stopping_time|lang=en-US|style=Feynman)**. We define a large boundary, say at $|x|=N$, and run our process. We construct a solution that is guaranteed to be unique *up to the time it hits this boundary*. By sending the boundary $N$ to infinity, we can build a solution that is unique up to its "[explosion time](@keyword=explosion_time|lang=en-US|style=Feynman)."
 
-This whole discussion has been about finding a **[strong solution](@article_id:197850)**: an explicit path $X_t$ built on a *given* probability space with a *given* Brownian motion $W_t$. The Picard iteration is the quintessential tool for this, as it is a pathwise construction.
+This whole discussion has been about finding a **[strong solution](@keyword=strong_solution|lang=en-US|style=Feynman)**: an explicit path $X_t$ built on a *given* probability space with a *given* Brownian motion $W_t$. The Picard iteration is the quintessential tool for this, as it is a pathwise construction.
 
-But there is another, more philosophical type of solution. A **weak solution** asks a different question: not "What is the path for *this* random input?", but "Does a universe exist (a [probability space](@article_id:200983) and a Brownian motion) in which a process satisfying my SDE can live?". Proving the existence of weak solutions requires entirely different tools, often when the coefficients are not Lipschitz continuous. The Picard method, with its rigid, constructive nature, is not suited for this more flexible quest. It is a powerful engine, but it runs on the fixed tracks of a pre-determined world.
+But there is another, more philosophical type of solution. A **weak solution** asks a different question: not "What is the path for *this* random input?", but "Does a universe exist (a [probability space](@keyword=probability_space|lang=en-US|style=Feynman) and a Brownian motion) in which a process satisfying my SDE can live?". Proving the existence of weak solutions requires entirely different tools, often when the coefficients are not Lipschitz continuous. The Picard method, with its rigid, constructive nature, is not suited for this more flexible quest. It is a powerful engine, but it runs on the fixed tracks of a pre-determined world.

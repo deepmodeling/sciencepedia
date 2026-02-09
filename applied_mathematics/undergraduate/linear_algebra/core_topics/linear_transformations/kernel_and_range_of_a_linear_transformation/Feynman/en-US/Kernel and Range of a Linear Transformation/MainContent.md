@@ -1,5 +1,5 @@
 ## Introduction
-Linear transformations are the fundamental actions within [vector spaces](@article_id:136343), acting as engines that remap vectors and reshape entire spaces. But what is the true character of such an action? How can we understand what a transformation fundamentally *does*? This article addresses this question by exploring two of the most important concepts in linear algebra: the kernel and the range. These concepts provide a powerful lens for analyzing any linear process by distinguishing what is lost from what is created. In the following chapters, you will first explore the core **Principles and Mechanisms**, defining the [kernel and range](@article_id:155012), understanding their relationship through the Rank-Nullity Theorem, and learning how the kernel tests for information loss. Next, you will witness these ideas in action through a diverse tour of **Applications and Interdisciplinary Connections**, seeing how they describe everything from the optical center of a camera to the resonant frequencies in physics. Finally, you will solidify your understanding through a series of **Hands-On Practices** designed to hone your analytical skills.
+Linear transformations are the fundamental actions within [vector spaces](@keyword=vector_spaces|lang=en-US|style=Feynman), acting as engines that remap vectors and reshape entire spaces. But what is the true character of such an action? How can we understand what a transformation fundamentally *does*? This article addresses this question by exploring two of the most important concepts in linear algebra: the kernel and the range. These concepts provide a powerful lens for analyzing any linear process by distinguishing what is lost from what is created. In the following chapters, you will first explore the core **Principles and Mechanisms**, defining the [kernel and range](@keyword=kernel_and_range|lang=en-US|style=Feynman), understanding their relationship through the Rank-Nullity Theorem, and learning how the kernel tests for information loss. Next, you will witness these ideas in action through a diverse tour of **Applications and Interdisciplinary Connections**, seeing how they describe everything from the optical center of a camera to the resonant frequencies in physics. Finally, you will solidify your understanding through a series of **Hands-On Practices** designed to hone your analytical skills.
 
 ## Principles and Mechanisms
 
@@ -7,7 +7,7 @@ Alright, let's get to the heart of the matter. We’ve been introduced to this i
 
 ### The Anatomy of an Action: What Gets Lost and What Remains?
 
-Imagine you are in a completely dark room, and you have a single, powerful projector. Your vector space $V$ is the entire three-dimensional room, filled with all sorts of objects (vectors). The projector is your [linear transformation](@article_id:142586), $T$. The screen on the wall is your target space, $W$.
+Imagine you are in a completely dark room, and you have a single, powerful projector. Your vector space $V$ is the entire three-dimensional room, filled with all sorts of objects (vectors). The projector is your [linear transformation](@keyword=linear_transformation|lang=en-US|style=Feynman), $T$. The screen on the wall is your target space, $W$.
 
 When you switch on the projector, it takes every object in the room and casts a shadow on the screen. This collection of all possible shadows, the pattern of light on the screen, is the **range** of the transformation. It is the *image* of your space $V$ after the transformation $T$ has acted on it. Notice that the shadows live on the screen ($W$), not in the room ($V$).
 
@@ -23,7 +23,7 @@ This isn't just a geometric game. Think of a sensor designed to detect direction
 
 These ideas apply even in more abstract spaces. Consider the space of all cubic polynomials, $P_3$, and a transformation that simply takes the derivative, mapping them to the space of quadratic polynomials, $P_2$. What gets lost? Differentiation annihilates constants. So, the kernel of the differentiation operator is the set of all constant polynomials. Any polynomial like $p(x) = 5$ or $q(x) = -10.3$ gets sent to the zero polynomial. What's the range? It turns out you can get *any* quadratic polynomial as an output, so the range is all of $P_2$.
 
-Sometimes, a transformation's complexity is deceptive. A complicated-looking formula might hide a very simple action. For instance, a transformation from polynomials to vectors might be rigged in such a way that every single polynomial, no matter what, gets sent to the zero vector. In that case, the range is just the [zero vector](@article_id:155695), and the kernel is the *entire* input space!
+Sometimes, a transformation's complexity is deceptive. A complicated-looking formula might hide a very simple action. For instance, a transformation from polynomials to vectors might be rigged in such a way that every single polynomial, no matter what, gets sent to the zero vector. In that case, the range is just the [zero vector](@keyword=zero_vector|lang=en-US|style=Feynman), and the kernel is the *entire* input space!
 
 ### The Kernel's Secret: A Test for Uniqueness
 
@@ -37,13 +37,13 @@ $$T(\mathbf{v}_1 - \mathbf{v}_2) = \mathbf{0}$$
 This is a stunning result! The only way for two different vectors to be mapped to the same output is if their difference, $\mathbf{v}_1 - \mathbf{v}_2$, is a non-zero vector in the kernel of $T$.
 
 This gives us a profound and simple test:
-**A linear transformation $T$ is injective if and only if its kernel contains only the [zero vector](@article_id:155695).** That is, $\ker(T) = \{\mathbf{0}\}$.
+**A linear transformation $T$ is injective if and only if its kernel contains only the [zero vector](@keyword=zero_vector|lang=en-US|style=Feynman).** That is, $\ker(T) = \{\mathbf{0}\}$.
 
 If the kernel is just the zero vector, then $T(\mathbf{v}_1 - \mathbf{v}_2) = \mathbf{0}$ implies $\mathbf{v}_1 - \mathbf{v}_2 = \mathbf{0}$, or $\mathbf{v}_1 = \mathbf{v}_2$. No two distinct vectors can share an output.
 
-This property is powerful. For example, it means that an injective [linear transformation](@article_id:142586) preserves [linear independence](@article_id:153265). If you take a set of [linearly independent](@article_id:147713) vectors and apply an [injective transformation](@article_id:147558) to them, their images will also be [linearly independent](@article_id:147713). Why? Because if the images were dependent, you could form a non-trivial [linear combination](@article_id:154597) of them that equals zero. By linearity and injectivity, this would imply the original vectors were dependent, a contradiction!
+This property is powerful. For example, it means that an injective [linear transformation](@keyword=linear_transformation|lang=en-US|style=Feynman) preserves [linear independence](@keyword=linear_independence|lang=en-US|style=Feynman). If you take a set of [linearly independent](@keyword=linearly_independent|lang=en-US|style=Feynman) vectors and apply an [injective transformation](@keyword=injective_transformation|lang=en-US|style=Feynman) to them, their images will also be [linearly independent](@keyword=linearly_independent|lang=en-US|style=Feynman). Why? Because if the images were dependent, you could form a non-trivial [linear combination](@keyword=linear_combination|lang=en-US|style=Feynman) of them that equals zero. By linearity and injectivity, this would imply the original vectors were dependent, a contradiction!
 
-On the other hand, a transformation with a non-trivial kernel scrambles information. Consider the map $T(x,y,z) = (x-y, y-z, z-x)$ from $\mathbb{R}^3$ to $\mathbb{R}^3$. A quick check shows that any vector of the form $(c,c,c)$ gets mapped to $(c-c, c-c, c-c) = (0,0,0)$. The kernel is a line spanned by the vector $(1,1,1)$. Since the kernel is not just the [zero vector](@article_id:155695), this map is *not* injective. For example, $T(1,2,3) = (-1, -1, 2)$, but so does $T(2,3,4) = (-1, -1, 2)$. The information about the "average value" or common component of the input vector is lost.
+On the other hand, a transformation with a non-trivial kernel scrambles information. Consider the map $T(x,y,z) = (x-y, y-z, z-x)$ from $\mathbb{R}^3$ to $\mathbb{R}^3$. A quick check shows that any vector of the form $(c,c,c)$ gets mapped to $(c-c, c-c, c-c) = (0,0,0)$. The kernel is a line spanned by the vector $(1,1,1)$. Since the kernel is not just the [zero vector](@keyword=zero_vector|lang=en-US|style=Feynman), this map is *not* injective. For example, $T(1,2,3) = (-1, -1, 2)$, but so does $T(2,3,4) = (-1, -1, 2)$. The information about the "average value" or common component of the input vector is lost.
 
 ### The Conservation of Dimension: The Rank-Nullity Theorem
 
@@ -53,7 +53,7 @@ Let's give our measures of size a name.
 -   The dimension of the kernel, $\dim(\ker(T))$, is called the **nullity** of $T$. It's a number that tells you "how much" of the domain is crushed to zero.
 -   The dimension of the range, $\dim(\text{range}(T))$, is called the **rank** of $T$. It tells you the dimension of the output space, the "size" of the shadow.
 
-The Rank-Nullity Theorem states that for any linear transformation $T$ from a [finite-dimensional vector space](@article_id:186636) $V$ to a space $W$:
+The Rank-Nullity Theorem states that for any linear transformation $T$ from a [finite-dimensional vector space](@keyword=finite_dimensional_vector_space|lang=en-US|style=Feynman) $V$ to a space $W$:
 $$ \dim(V) = \text{nullity}(T) + \text{rank}(T) $$
 Or, in other words:
 $$ \dim(\text{domain}) = \dim(\text{kernel}) + \dim(\text{range}) $$
@@ -69,12 +69,12 @@ This theorem is also a powerful predictive tool. If a data processing system tak
 
 ### A Deeper Unity
 
-These concepts of [kernel and range](@article_id:155012) are not just tools; they reveal the deep, interconnected structure of linear algebra. They show up everywhere. Consider two subspaces, $U$ and $W$, inside a larger space $V$. We can define a very natural "addition" map, $T(u, w) = u + w$, where $u$ is from $U$ and $w$ is from $W$.
+These concepts of [kernel and range](@keyword=kernel_and_range|lang=en-US|style=Feynman) are not just tools; they reveal the deep, interconnected structure of linear algebra. They show up everywhere. Consider two subspaces, $U$ and $W$, inside a larger space $V$. We can define a very natural "addition" map, $T(u, w) = u + w$, where $u$ is from $U$ and $w$ is from $W$.
 -   What is the **range** of this map? It's the set of all possible sums $u+w$, which is precisely the definition of the subspace sum $U+W$.
 -   What is the **kernel**? It's the set of pairs $(u, w)$ such that $u+w=\mathbf{0}$, which means $u = -w$. Since $u \in U$ and $w \in W$, this means $u$ must belong to *both* subspaces (as must $-w$). So, the elements of the kernel correspond directly to the vectors in the intersection $U \cap W$.
 
-Applying the Rank-Nullity Theorem to this simple addition map gives us the famous dimension formula: $\dim(U+W) = \dim(U) + \dim(W) - \dim(U \cap W)$. This shows that a fundamental formula about subspaces is really just a statement about the [kernel and range](@article_id:155012) of a natural linear map.
+Applying the Rank-Nullity Theorem to this simple addition map gives us the famous dimension formula: $\dim(U+W) = \dim(U) + \dim(W) - \dim(U \cap W)$. This shows that a fundamental formula about subspaces is really just a statement about the [kernel and range](@keyword=kernel_and_range|lang=en-US|style=Feynman) of a natural linear map.
 
-The story doesn't even end here. In spaces that have a notion of geometry (an inner product), the [kernel and range](@article_id:155012) are linked in an even more profound way through a "shadow" transformation called the adjoint. The set of vectors that are orthogonal to everything in the [range of a transformation](@article_id:154783) $T$ turns out to be precisely the kernel of its adjoint, $T^*$. This is a beautiful duality, a yin and yang that governs the geometry of linear actions.
+The story doesn't even end here. In spaces that have a notion of geometry (an inner product), the [kernel and range](@keyword=kernel_and_range|lang=en-US|style=Feynman) are linked in an even more profound way through a "shadow" transformation called the adjoint. The set of vectors that are orthogonal to everything in the [range of a transformation](@keyword=range_of_a_transformation|lang=en-US|style=Feynman) $T$ turns out to be precisely the kernel of its adjoint, $T^*$. This is a beautiful duality, a yin and yang that governs the geometry of linear actions.
 
 So when you see a linear transformation, don't just see a matrix of numbers. See an action. See a dynamic process. And always ask the two fundamental questions: What does it destroy? And what does it create? The answers to those questions, embodied in the kernel and the range, tell you everything you need to know.

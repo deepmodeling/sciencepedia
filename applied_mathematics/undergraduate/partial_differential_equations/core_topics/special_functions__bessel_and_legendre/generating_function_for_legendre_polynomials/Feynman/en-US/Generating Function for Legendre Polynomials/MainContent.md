@@ -1,5 +1,5 @@
 ## Introduction
-In the study of the physical world, certain mathematical ideas appear with surprising frequency, acting as master keys that unlock problems in seemingly unrelated fields. The generating function for Legendre polynomials is one such master key, a compact and elegant expression that bridges the gap between the geometry of space and the physics of fields. It arises from a simple question—how to describe the potential from a [point source](@article_id:196204) like a star or an electron—and blossoms into a tool of immense power, capable of describing everything from molecular bonds to [planetary orbits](@article_id:178510). This article addresses the challenge of taming the complexity of such fields by providing a systematic framework for their analysis.
+In the study of the physical world, certain mathematical ideas appear with surprising frequency, acting as master keys that unlock problems in seemingly unrelated fields. The generating function for Legendre polynomials is one such master key, a compact and elegant expression that bridges the gap between the geometry of space and the physics of fields. It arises from a simple question—how to describe the potential from a [point source](@keyword=point_source|lang=en-US|style=Feynman) like a star or an electron—and blossoms into a tool of immense power, capable of describing everything from molecular bonds to [planetary orbits](@keyword=planetary_orbits|lang=en-US|style=Feynman). This article addresses the challenge of taming the complexity of such fields by providing a systematic framework for their analysis.
 
 In this article, we will embark on a journey to understand this remarkable function. In the first chapter, **Principles and Mechanisms**, we will discover its physical origins and see how it acts as a compact container for the entire family of Legendre polynomials, allowing us to derive their core properties. Next, in **Applications and Interdisciplinary Connections**, we will witness the function in action, solving problems in electromagnetism and heat flow, and serving as a powerful engine for mathematical discovery. Finally, the **Hands-On Practices** section will offer you the chance to apply these concepts directly. Let's begin by exploring the principles and mechanisms that give this function its extraordinary power.
 
@@ -11,7 +11,7 @@ In our journey to understand the world, we often find that nature, in its astoni
 
 Imagine you are a satellite in a fixed orbit, listening for a signal from a beacon on the ground. Let’s say your satellite is at a distance $R$ from the center of the Earth, and the beacon is at a distance $r$. The angle between you, the Earth's center, and the beacon is $\theta$. The signal you receive gets weaker the farther away you are; its strength is inversely proportional to the distance $d$ between you and the beacon.
 
-How do we find this distance $d$? It’s a straightforward application of the familiar [law of cosines](@article_id:155717) from high school geometry. The distance squared is $d^2 = R^2 + r^2 - 2Rr\cos\theta$. The signal strength, then, is proportional to $1/d$, or:
+How do we find this distance $d$? It’s a straightforward application of the familiar [law of cosines](@keyword=law_of_cosines|lang=en-US|style=Feynman) from high school geometry. The distance squared is $d^2 = R^2 + r^2 - 2Rr\cos\theta$. The signal strength, then, is proportional to $1/d$, or:
 
 $$ \text{Signal Strength} \propto \frac{1}{\sqrt{R^2 + r^2 - 2Rr\cos\theta}} $$
 
@@ -23,13 +23,13 @@ Look closely at that square root. A specific structure is emerging. Let’s give
 
 $$ G(x,t) = \frac{1}{\sqrt{1 - 2xt + t^2}} $$
 
-This is it! This is the celebrated **generating function for Legendre polynomials**. We didn't invent it out of thin air; we discovered it hiding in a simple geometry problem (). And it’s not just for satellites. If you replace the signal beacon with a point electric charge and the satellite with a point in space where you want to measure the [electric potential](@article_id:267060), you arrive at the *exact same mathematical form* (). The potential from a point charge, which governs so much of chemistry and electronics, is contained within this function. This beautiful unity, where a single mathematical key unlocks both celestial mechanics and electromagnetism, is one of the profound joys of physics.
+This is it! This is the celebrated **generating function for Legendre polynomials**. We didn't invent it out of thin air; we discovered it hiding in a simple geometry problem ([@problem_id:2107196]). And it’s not just for satellites. If you replace the signal beacon with a point electric charge and the satellite with a point in space where you want to measure the [electric potential](@keyword=electric_potential|lang=en-US|style=Feynman), you arrive at the *exact same mathematical form* ([@problem_id:2107152]). The potential from a point charge, which governs so much of chemistry and electronics, is contained within this function. This beautiful unity, where a single mathematical key unlocks both celestial mechanics and electromagnetism, is one of the profound joys of physics.
 
 ### Unpacking the Treasure Chest: The Legendre Polynomials
 
-So, we have this compact function, $G(x,t)$. What good is it? Its true power is revealed when we treat it as a treasure chest and pry it open. In physics, when we have a small parameter like $t = r/R \ll 1$, it is incredibly useful to expand our function as a [power series](@article_id:146342) in that small parameter. This is the idea behind multipole expansions, where we approximate a complex object's field (gravitational or electric) by a series of simpler fields: a monopole (like a point charge), a dipole (like a tiny magnet), a quadrupole, and so on.
+So, we have this compact function, $G(x,t)$. What good is it? Its true power is revealed when we treat it as a treasure chest and pry it open. In physics, when we have a small parameter like $t = r/R \ll 1$, it is incredibly useful to expand our function as a [power series](@keyword=power_series|lang=en-US|style=Feynman) in that small parameter. This is the idea behind multipole expansions, where we approximate a complex object's field (gravitational or electric) by a series of simpler fields: a monopole (like a point charge), a dipole (like a tiny magnet), a quadrupole, and so on.
 
-Let's expand $G(x,t)$ in powers of $t$, using the [binomial theorem](@article_id:276171) $(1+u)^\alpha = 1+\alpha u + \frac{\alpha(\alpha-1)}{2}u^2+\dots$. Here, $u = (-2xt + t^2)$ and $\alpha = -1/2$. After a bit of algebra, collecting terms with the same power of $t$, we find something remarkable ():
+Let's expand $G(x,t)$ in powers of $t$, using the [binomial theorem](@keyword=binomial_theorem|lang=en-US|style=Feynman) $(1+u)^\alpha = 1+\alpha u + \frac{\alpha(\alpha-1)}{2}u^2+\dots$. Here, $u = (-2xt + t^2)$ and $\alpha = -1/2$. After a bit of algebra, collecting terms with the same power of $t$, we find something remarkable ([@problem_id:2107188]):
 
 $$ G(x,t) = 1 \cdot t^0 + (x) \cdot t^1 + \left(\frac{1}{2}(3x^2 - 1)\right) \cdot t^2 + \dots $$
 
@@ -42,21 +42,21 @@ From our expansion, we can pick them out one by one:
 - $P_1(x) = x$ (the dipole term)
 - $P_2(x) = \frac{1}{2}(3x^2 - 1)$ (the quadrupole term)
 
-And so on. The generating function is a compact package containing this entire infinite family of polynomials! Each $P_n(x)$ is a polynomial of degree exactly $n$, a fact that can be proven by repeatedly differentiating the [generating function](@article_id:152210) at $t=0$ (). They have other neat properties, too. For example, if you set $x=0$, which corresponds to an angle of $\theta=90^\circ$, you find that $P_n(0)$ is zero for all odd $n$ (). This reveals a fundamental even-odd symmetry in their shapes.
+And so on. The generating function is a compact package containing this entire infinite family of polynomials! Each $P_n(x)$ is a polynomial of degree exactly $n$, a fact that can be proven by repeatedly differentiating the [generating function](@keyword=generating_function|lang=en-US|style=Feynman) at $t=0$ ([@problem_id:2107186]). They have other neat properties, too. For example, if you set $x=0$, which corresponds to an angle of $\theta=90^\circ$, you find that $P_n(0)$ is zero for all odd $n$ ([@problem_id:2107217]). This reveals a fundamental even-odd symmetry in their shapes.
 
 ### The Engine of Discovery: Recurrence and Relations
 
-At this point, you might think that to find $P_{10}(x)$, you would have to carry out that messy [binomial expansion](@article_id:269109) all the way to the $t^{10}$ term. That would be horrendously tedious. Surely nature has a more elegant way!
+At this point, you might think that to find $P_{10}(x)$, you would have to carry out that messy [binomial expansion](@keyword=binomial_expansion|lang=en-US|style=Feynman) all the way to the $t^{10}$ term. That would be horrendously tedious. Surely nature has a more elegant way!
 
-This is where the [generating function](@article_id:152210) transforms from a mere container into a powerful engine of discovery. Let’s "turn the key" by taking the derivative of $G(x,t)$ with respect to $t$. A little bit of calculus shows an almost magical simplification ():
+This is where the [generating function](@keyword=generating_function|lang=en-US|style=Feynman) transforms from a mere container into a powerful engine of discovery. Let’s "turn the key" by taking the derivative of $G(x,t)$ with respect to $t$. A little bit of calculus shows an almost magical simplification ([@problem_id:2107176]):
 
 $$ (1 - 2xt + t^2) \frac{\partial G}{\partial t} = (x - t) G(x,t) $$
 
-This equation is wonderful because we've gotten rid of the nasty square root! Now comes the masterstroke. We have two ways to write each side of this equation. On the one hand, we have the expression above. On the other hand, we can use the [infinite series](@article_id:142872) definition $G(x,t) = \sum P_n(x) t^n$. Let's substitute the series into both sides of our new, simplified equation.
+This equation is wonderful because we've gotten rid of the nasty square root! Now comes the masterstroke. We have two ways to write each side of this equation. On the one hand, we have the expression above. On the other hand, we can use the [infinite series](@keyword=infinite_series|lang=en-US|style=Feynman) definition $G(x,t) = \sum P_n(x) t^n$. Let's substitute the series into both sides of our new, simplified equation.
 
 $$ (1 - 2xt + t^2) \sum_{n=1}^{\infty} n P_n(x) t^{n-1} = (x - t) \sum_{n=0}^{\infty} P_n(x) t^n $$
 
-This still looks like a mess. But remember, an equation involving [power series](@article_id:146342) must hold true for *each power of $t$ individually*. If we patiently multiply everything out and collect all the terms that are multiplied by $t^n$, we can set the total coefficient of $t^n$ on the left side equal to the coefficient of $t^n$ on the right side. When the dust settles, we are left with a stunningly simple and powerful formula known as the **[three-term recurrence relation](@article_id:176351)** ():
+This still looks like a mess. But remember, an equation involving [power series](@keyword=power_series|lang=en-US|style=Feynman) must hold true for *each power of $t$ individually*. If we patiently multiply everything out and collect all the terms that are multiplied by $t^n$, we can set the total coefficient of $t^n$ on the left side equal to the coefficient of $t^n$ on the right side. When the dust settles, we are left with a stunningly simple and powerful formula known as the **[three-term recurrence relation](@keyword=three_term_recurrence_relation|lang=en-US|style=Feynman)** ([@problem_id:677597]):
 
 $$ (n+1)P_{n+1}(x) = (2n+1)x P_n(x) - n P_{n-1}(x) \quad (\text{for } n \ge 1) $$
 
@@ -70,7 +70,7 @@ $$ \int_{-1}^{1} P_l(x) P_m(x) dx = 0 \quad \text{if } l \neq m $$
 
 This is analogous to how the x, y, and z axes in our 3D world are mutually perpendicular (orthogonal). This property makes Legendre polynomials perfect "basis functions" for building up more complicated functions, just as we can describe any point in space using a combination of x, y, and z coordinates.
 
-The generating function holds the key to this property as well. Consider what happens if we take two [generating functions](@article_id:146208), $G(x,s)$ and $G(x,t)$, multiply them, and integrate over $x$ from -1 to 1. By substituting their series forms and using the [orthogonality property](@article_id:267513), the integral simplifies to a beautiful [power series](@article_id:146342) ():
+The generating function holds the key to this property as well. Consider what happens if we take two [generating functions](@keyword=generating_functions|lang=en-US|style=Feynman), $G(x,s)$ and $G(x,t)$, multiply them, and integrate over $x$ from -1 to 1. By substituting their series forms and using the [orthogonality property](@keyword=orthogonality_property|lang=en-US|style=Feynman), the integral simplifies to a beautiful [power series](@keyword=power_series|lang=en-US|style=Feynman) ([@problem_id:2107163]):
 
 $$ I(s,t) = \int_{-1}^{1} G(x, s) G(x, t) dx = \sum_{n=0}^{\infty} \frac{2}{2n+1} (st)^n $$
 

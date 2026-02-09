@@ -10,11 +10,11 @@ We begin our journey by establishing the core principles that govern the constru
 
 ## Principles and Mechanisms
 
-Having established the fundamental motivation for representing functions as infinite sums of [trigonometric functions](@entry_id:178918), we now develop the formal machinery for constructing and understanding Fourier series on a general symmetric interval. This section will detail the core principles that govern these series, from the calculation of their coefficients to their behavior under various mathematical operations and conditions of convergence.
+Having established the fundamental motivation for representing functions as infinite sums of trigonometric functions, we now develop the formal machinery for constructing and understanding Fourier series on a general symmetric interval. This section will detail the core principles that govern these series, from the calculation of their coefficients to their behavior under various mathematical operations and conditions of convergence.
 
 ### The Fourier Series on an Interval $[-L, L]$
 
-The central idea of Fourier analysis is to represent a function $f(x)$ defined on a symmetric interval $[-L, L]$ as a superposition of [sinusoidal waves](@entry_id:188316). These waves must have wavelengths that fit neatly into the interval's length, $2L$, to ensure periodicity. This leads to the **trigonometric Fourier series** representation:
+The central idea of Fourier analysis is to represent a function $f(x)$ defined on a symmetric interval $[-L, L]$ as a superposition of sinusoidal waves. These waves must have wavelengths that fit neatly into the interval's length, $2L$, to ensure periodicity. This leads to the **trigonometric Fourier series** representation:
 
 $$
 f(x) \sim \frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n \cos\left(\frac{n\pi x}{L}\right) + b_n \sin\left(\frac{n\pi x}{L}\right) \right)
@@ -38,7 +38,7 @@ $$
 \int_{-L}^{L} \sin\left(\frac{n\pi x}{L}\right) \sin\left(\frac{m\pi x}{L}\right) dx = \begin{cases} L  \text{if } n=m \\ 0  \text{if } n \neq m \end{cases}
 $$
 
-Additionally, the [trigonometric functions](@entry_id:178918) are orthogonal to the constant function $1$:
+Additionally, the trigonometric functions are orthogonal to the constant function $1$:
 $$
 \int_{-L}^{L} \cos\left(\frac{n\pi x}{L}\right) dx = 0 \quad \text{and} \quad \int_{-L}^{L} \sin\left(\frac{n\pi x}{L}\right) dx = 0 \quad \text{for } n \ge 1.
 $$
@@ -53,9 +53,9 @@ By linearity of integration, this becomes:
 $$
 I_1 = C_0 \int_{-L}^{L} \cos\left(\frac{\pi x}{L}\right) dx + C_1 \int_{-L}^{L} \cos^2\left(\frac{\pi x}{L}\right) dx + C_2 \int_{-L}^{L} \cos\left(\frac{2\pi x}{L}\right) \cos\left(\frac{\pi x}{L}\right) dx
 $$
-The [orthogonality relations](@entry_id:145540) tell us that the first and third integrals are zero. The second integral evaluates to $L$. Therefore, $I_1 = C_1 L$. This demonstrates how the integral acts as a tool to "filter out" or "project onto" a specific component, isolating its coefficient.
+The orthogonality relations tell us that the first and third integrals are zero. The second integral evaluates to $L$. Therefore, $I_1 = C_1 L$. This demonstrates how the integral acts as a tool to "filter out" or "project onto" a specific component, isolating its coefficient.
 
-Generalizing this process gives us the **Euler-Fourier formulas** for the coefficients of any [piecewise continuous](@entry_id:174613) function $f(x)$:
+Generalizing this process gives us the **Euler-Fourier formulas** for the coefficients of any piecewise continuous function $f(x)$:
 $$
 a_0 = \frac{1}{L} \int_{-L}^{L} f(x) dx
 $$
@@ -79,15 +79,15 @@ Calculating Fourier coefficients can be labor-intensive. However, if the functio
 A function $f$ is **even** if $f(-x) = f(x)$ for all $x$ in its domain. Its graph is symmetric with respect to the y-axis. Examples include $x^2$, $\cos(x)$, and $|x|$.
 A function $f$ is **odd** if $f(-x) = -f(x)$ for all $x$ in its domain. Its graph is symmetric with respect to the origin. Examples include $x$, $x^3$, and $\sin(x)$.
 
-The products of such functions follow simple rules: (even) $\times$ (even) = even, (odd) $\times$ (odd) = even, and (even) $\times$ (odd) = odd. These rules have profound implications for the integrals in the Euler-Fourier formulas, since the integral of any [odd function](@entry_id:175940) over a symmetric interval $[-L, L]$ is zero.
+The products of such functions follow simple rules: (even) $\times$ (even) = even, (odd) $\times$ (odd) = even, and (even) $\times$ (odd) = odd. These rules have profound implications for the integrals in the Euler-Fourier formulas, since the integral of any odd function over a symmetric interval $[-L, L]$ is zero.
 
--   If $f(x)$ is an **even function**: The integrand for $b_n$, which is $f(x)\sin(\frac{n\pi x}{L})$, is the product of an [even function](@entry_id:164802) and an [odd function](@entry_id:175940), making it odd. Therefore, all $b_n=0$. The Fourier series simplifies to a **Fourier cosine series**:
+-   If $f(x)$ is an **even function**: The integrand for $b_n$, which is $f(x)\sin(\frac{n\pi x}{L})$, is the product of an even function and an odd function, making it odd. Therefore, all $b_n=0$. The Fourier series simplifies to a **Fourier cosine series**:
     $$
     f(x) \sim \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos\left(\frac{n\pi x}{L}\right) \quad (\text{for even } f)
     $$
     Furthermore, the integrand for $a_n$ is even, allowing us to simplify its calculation: $a_n = \frac{2}{L} \int_{0}^{L} f(x) \cos(\frac{n\pi x}{L}) dx$.
 
--   If $f(x)$ is an **odd function**: The integrand for $a_n$, $f(x)\cos(\frac{n\pi x}{L})$, is the product of an odd function and an [even function](@entry_id:164802), making it odd. Thus, $a_n=0$ for all $n \ge 0$. The Fourier series simplifies to a **Fourier sine series**:
+-   If $f(x)$ is an **odd function**: The integrand for $a_n$, $f(x)\cos(\frac{n\pi x}{L})$, is the product of an odd function and an even function, making it odd. Thus, $a_n=0$ for all $n \ge 0$. The Fourier series simplifies to a **Fourier sine series**:
     $$
     f(x) \sim \sum_{n=1}^{\infty} b_n \sin\left(\frac{n\pi x}{L}\right) \quad (\text{for odd } f)
     $$
@@ -111,25 +111,25 @@ The Fourier series transformation is linear. If $f(x)$ has Fourier coefficients 
 
 #### Differentiation and Coefficient Decay
 
-One of the most remarkable properties of Fourier series is the relationship between the smoothness of a function and the rate at which its Fourier coefficients decay to zero for large $n$. A rough, jagged function requires many high-frequency (large $n$) harmonics to be accurately represented, so its coefficients decay slowly. A [smooth function](@entry_id:158037) can be well-approximated with fewer harmonics, so its coefficients decay rapidly.
+One of the most remarkable properties of Fourier series is the relationship between the smoothness of a function and the rate at which its Fourier coefficients decay to zero for large $n$. A rough, jagged function requires many high-frequency (large $n$) harmonics to be accurately represented, so its coefficients decay slowly. A smooth function can be well-approximated with fewer harmonics, so its coefficients decay rapidly.
 
-This relationship can be quantified by examining the Fourier series of a derivative. Let $f(x)$ be a continuously differentiable function on $[-L, L]$ satisfying the [periodic boundary condition](@entry_id:271298) $f(L) = f(-L)$. Let $(a_n, b_n)$ be the coefficients of $f(x)$ and $(a'_n, b'_n)$ be the coefficients of its derivative $f'(x)$. By applying integration by parts to the coefficient formulas for $f'(x)$, we can establish a direct link:
+This relationship can be quantified by examining the Fourier series of a derivative. Let $f(x)$ be a continuously differentiable function on $[-L, L]$ satisfying the periodic boundary condition $f(L) = f(-L)$. Let $(a_n, b_n)$ be the coefficients of $f(x)$ and $(a'_n, b'_n)$ be the coefficients of its derivative $f'(x)$. By applying integration by parts to the coefficient formulas for $f'(x)$, we can establish a direct link:
 $$
 a'_n = \frac{n\pi}{L} b_n \quad \text{and} \quad b'_n = -\frac{n\pi}{L} a_n \quad (\text{for } n \ge 1)
 $$
 This shows that differentiation in the time/space domain corresponds to multiplying the coefficients by a factor proportional to $n$ in the frequency domain. Conversely, the coefficients of the original function $f(x)$ are given by $a_n = -\frac{L}{n\pi} b'_n$ and $b_n = \frac{L}{n\pi} a'_n$. Since the coefficients of any reasonably behaved function (like $f'(x)$) must tend to zero, this implies that the coefficients $a_n$ and $b_n$ for $f(x)$ must decay at least as fast as $1/n$.
 
-This reasoning can be extended. If a function $f(x)$ is $k$ times continuously differentiable and its [periodic extension](@entry_id:176490) is also continuous up to the $(k-1)$-th derivative, then its Fourier coefficients $a_n$ and $b_n$ will decay at a rate of at least $O(1/n^{k+1})$. The rate is determined by the "first" discontinuity encountered in the function or its derivatives. For example, a function whose third derivative has a [jump discontinuity](@entry_id:139886) will exhibit Fourier coefficients that decay as $1/n^4$. This principle is fundamental in signal processing, as it connects the physical smoothness of a signal to the bandwidth required to represent it.
+This reasoning can be extended. If a function $f(x)$ is $k$ times continuously differentiable and its periodic extension is also continuous up to the $(k-1)$-th derivative, then its Fourier coefficients $a_n$ and $b_n$ will decay at a rate of at least $O(1/n^{k+1})$. The rate is determined by the "first" discontinuity encountered in the function or its derivatives. For example, a function whose third derivative has a jump discontinuity will exhibit Fourier coefficients that decay as $1/n^4$. This principle is fundamental in signal processing, as it connects the physical smoothness of a signal to the bandwidth required to represent it.
 
 ### Convergence and the Complex Formulation
 
 #### The Dirichlet Convergence Theorem
 
-So far, we have used the symbol `~` to indicate an association between a function and its series. The question of when this can be replaced by an equals sign is answered by the **Fourier Convergence Theorem** (or Dirichlet's Theorem). It states that if $f(x)$ is **piecewise smooth** on $[-L, L]$ (i.e., $f(x)$ and $f'(x)$ are [piecewise continuous](@entry_id:174613)), then its Fourier series converges for all $x$. Specifically:
-1.  At any point $x_0$ where the function's [periodic extension](@entry_id:176490) is continuous, the series converges to the function's value, $f(x_0)$.
-2.  At any point $x_0$ where the function's [periodic extension](@entry_id:176490) has a [jump discontinuity](@entry_id:139886), the series converges to the average of the left-hand and right-hand limits: $\frac{1}{2}\left( f(x_0^+) + f(x_0^-) \right)$.
+So far, we have used the symbol `~` to indicate an association between a function and its series. The question of when this can be replaced by an equals sign is answered by the **Fourier Convergence Theorem** (or Dirichlet's Theorem). It states that if $f(x)$ is **piecewise smooth** on $[-L, L]$ (i.e., $f(x)$ and $f'(x)$ are piecewise continuous), then its Fourier series converges for all $x$. Specifically:
+1.  At any point $x_0$ where the function's periodic extension is continuous, the series converges to the function's value, $f(x_0)$.
+2.  At any point $x_0$ where the function's periodic extension has a jump discontinuity, the series converges to the average of the left-hand and right-hand limits: $\frac{1}{2}\left( f(x_0^+) + f(x_0^-) \right)$.
 
-A common point of confusion is the behavior at the endpoints of the interval, $x=L$ and $x=-L$. The [periodic extension](@entry_id:176490) of $f(x)$ "wraps around" at these points. The value of the series at $x=L$ is determined by the function's values at the very end of the interval (approaching $L$ from the left) and the very beginning (approaching $-L$ from the right). Thus, the series converges to:
+A common point of confusion is the behavior at the endpoints of the interval, $x=L$ and $x=-L$. The periodic extension of $f(x)$ "wraps around" at these points. The value of the series at $x=L$ is determined by the function's values at the very end of the interval (approaching $L$ from the left) and the very beginning (approaching $-L$ from the right). Thus, the series converges to:
 $$
 S(L) = \frac{1}{2} \left( \lim_{x \to L^-} f(x) + \lim_{x \to -L^+} f(x) \right) = \frac{1}{2}(f(L) + f(-L))
 $$
@@ -156,4 +156,4 @@ A crucial property emerges when the original function $f(x)$ is purely real-valu
 $$
 c_{-n} = c_n^*
 $$
-where $c_n^*$ is the [complex conjugate](@entry_id:174888) of $c_n$. This implies that the negative-frequency coefficients are not independent of the positive-frequency ones; their magnitudes are equal ($|c_{-n}| = |c_n|$), and their phases are opposite. This redundancy is a fundamental feature of the frequency spectrum of any real-world signal.
+where $c_n^*$ is the complex conjugate of $c_n$. This implies that the negative-frequency coefficients are not independent of the positive-frequency ones; their magnitudes are equal ($|c_{-n}| = |c_n|$), and their phases are opposite. This redundancy is a fundamental feature of the frequency spectrum of any real-world signal.
