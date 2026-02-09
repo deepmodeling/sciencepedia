@@ -24,7 +24,7 @@ To compute the correlation coefficient, we must first determine three quantities
 -   **Variance**: $\text{Var}(X) = E[X^2] - (E[X])^2$
 -   **Covariance**: $\text{Cov}(X, Y) = E[XY] - E[X]E[Y]$
 
-Let's consider a practical calculation. Suppose an economic model describes the fluctuations of two financial assets, $X$ and $Y$, which have been centered such that their means are zero ($E[X] = E[Y] = 0$). Statistical analysis provides the second moments: $E[X^2] = 16$, $E[Y^2] = 9$, and the cross-moment $E[XY] = 6$. We can find the correlation $\rho(X, Y)$ as follows :
+Let's consider a practical calculation. Suppose an economic model describes the fluctuations of two financial assets, $X$ and $Y$, which have been centered such that their means are zero ($E[X] = E[Y] = 0$). Statistical analysis provides the second moments: $E[X^2] = 16$, $E[Y^2] = 9$, and the cross-moment $E[XY] = 6$. We can find the correlation $\rho(X, Y)$ as follows [@problem_id:1354107]:
 
 First, we calculate the variances. Since the means are zero:
 $$
@@ -60,7 +60,7 @@ This property can be elegantly proven by leveraging the fact that the variance o
 $$
 Z = \frac{X}{\sigma_X} - \frac{Y}{\sigma_Y}
 $$
-The variance of $Z$, $\text{Var}(Z)$, must be greater than or equal to zero. Using the [properties of variance](@entry_id:185416), we can write:
+The variance of $Z$, $\text{Var}(Z)$, must be greater than or equal to zero. Using the properties of variance, we can write:
 $$
 \text{Var}(Z) = \text{Var}\left(\frac{X}{\sigma_X}\right) + \text{Var}\left(\frac{Y}{\sigma_Y}\right) - 2 \text{Cov}\left(\frac{X}{\sigma_X}, \frac{Y}{\sigma_Y}\right) \ge 0
 $$
@@ -76,23 +76,23 @@ Substituting these back into the inequality for $\text{Var}(Z)$ yields:
 $$
 1 + 1 - 2\rho(X, Y) \ge 0 \implies 2(1 - \rho(X, Y)) \ge 0 \implies \rho(X, Y) \le 1
 $$
-This establishes the upper bound of the correlation coefficient . A similar argument, starting with the variable $Z' = \frac{X}{\sigma_X} + \frac{Y}{\sigma_Y}$, can be used to prove the lower bound, $\rho(X, Y) \ge -1$.
+This establishes the upper bound of the correlation coefficient [@problem_id:3560]. A similar argument, starting with the variable $Z' = \frac{X}{\sigma_X} + \frac{Y}{\sigma_Y}$, can be used to prove the lower bound, $\rho(X, Y) \ge -1$.
 
 This property has profound implications. For instance, in finance, the relationships between multiple asset returns are summarized in a **correlation matrix**. For two assets $X$ and $Y$, this matrix is:
 $$
 C = \begin{pmatrix} \rho(X,X) & \rho(X,Y) \\ \rho(Y,X) & \rho(Y,Y) \end{pmatrix} = \begin{pmatrix} 1 & \rho(X,Y) \\ \rho(X,Y) & 1 \end{pmatrix}
 $$
-A key property of any valid [correlation matrix](@entry_id:262631) is that it must be **positive semidefinite**. This is a direct consequence of the non-negativity of variance. For a $2 \times 2$ matrix, this condition is equivalent to its determinant being non-negative.
+A key property of any valid correlation matrix is that it must be **positive semidefinite**. This is a direct consequence of the non-negativity of variance. For a $2 \times 2$ matrix, this condition is equivalent to its determinant being non-negative.
 $$
 \det(C) = 1 \cdot 1 - (\rho(X,Y))^2 = 1 - \rho^2 \ge 0
 $$
-This immediately implies $\rho^2 \le 1$, which is the same as $|\rho| \le 1$. If an analyst were to propose a [correlation matrix](@entry_id:262631) with an off-diagonal element of $1.1$, it would be invalid. The determinant would be $1 - (1.1)^2 = -0.21$, which is negative. Such a matrix would imply that a certain [linear combination](@entry_id:155091) of the underlying random variables has a negative variance, a physical and mathematical impossibility .
+This immediately implies $\rho^2 \le 1$, which is the same as $|\rho| \le 1$. If an analyst were to propose a correlation matrix with an off-diagonal element of $1.1$, it would be invalid. The determinant would be $1 - (1.1)^2 = -0.21$, which is negative. Such a matrix would imply that a certain linear combination of the underlying random variables has a negative variance, a physical and mathematical impossibility [@problem_id:1383141].
 
 #### Invariance to Linear Transformations
 
 One of the most useful features of the correlation coefficient is its invariance to changes in scale and location (i.e., affine transformations) of the variables.
 
-Consider a random variable $X$ and a new variable $Y$ that is a perfect linear function of $X$: $Y = aX + b$, where $a \neq 0$. Intuitively, the [linear relationship](@entry_id:267880) is perfect, so the correlation should be either $+1$ or $-1$. Let's prove this .
+Consider a random variable $X$ and a new variable $Y$ that is a perfect linear function of $X$: $Y = aX + b$, where $a \neq 0$. Intuitively, the linear relationship is perfect, so the correlation should be either $+1$ or $-1$. Let's prove this [@problem_id:3547].
 The covariance is $\text{Cov}(X, Y) = \text{Cov}(X, aX+b) = a\text{Cov}(X,X) = a\sigma_X^2$.
 The standard deviation of $Y$ is $\sigma_Y = \sqrt{\text{Var}(aX+b)} = \sqrt{a^2\text{Var}(X)} = |a|\sigma_X$.
 The correlation is therefore:
@@ -105,7 +105,7 @@ This principle extends to separate linear transformations applied to both variab
 $$
 \rho(W, Z) = \frac{ac}{|a||c|} \rho(X, Y) = \text{sign}(ac) \rho(X, Y)
 $$
-where $\text{sign}(ac)$ is $+1$ if $a$ and $c$ have the same sign, and $-1$ if they have opposite signs . For example, if the correlation between student stress level ($S$) and test scores ($G$) is $\rho(S,G) = -0.65$, we can find the correlation for rescaled variables. Let a "wellness score" be $W = 100 - S$ and a "proficiency index" be $P = 2.5G + 15$. Here, $a = -1$ and $c = 2.5$. The new correlation is:
+where $\text{sign}(ac)$ is $+1$ if $a$ and $c$ have the same sign, and $-1$ if they have opposite signs [@problem_id:1911220]. For example, if the correlation between student stress level ($S$) and test scores ($G$) is $\rho(S,G) = -0.65$, we can find the correlation for rescaled variables. Let a "wellness score" be $W = 100 - S$ and a "proficiency index" be $P = 2.5G + 15$. Here, $a = -1$ and $c = 2.5$. The new correlation is:
 $$
 \rho(W, P) = \text{sign}((-1)(2.5)) \rho(S, G) = (-1) \times (-0.65) = 0.65
 $$
@@ -126,7 +126,7 @@ The angle $\theta$ between these two vectors in $n$-dimensional space is given b
 $$
 \cos(\theta) = \frac{\mathbf{x}' \cdot \mathbf{y}'}{\|\mathbf{x}'\| \|\mathbf{y}'\|}
 $$
-The dot product in the numerator is $\mathbf{x}' \cdot \mathbf{y}' = \sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})$. The [vector norms](@entry_id:140649) (magnitudes) in the denominator are $\|\mathbf{x}'\| = \sqrt{\sum_{i=1}^n (x_i - \bar{x})^2}$ and $\|\mathbf{y}'\| = \sqrt{\sum_{i=1}^n (y_i - \bar{y})^2}$.
+The dot product in the numerator is $\mathbf{x}' \cdot \mathbf{y}' = \sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})$. The vector norms (magnitudes) in the denominator are $\|\mathbf{x}'\| = \sqrt{\sum_{i=1}^n (x_i - \bar{x})^2}$ and $\|\mathbf{y}'\| = \sqrt{\sum_{i=1}^n (y_i - \bar{y})^2}$.
 Substituting these expressions gives:
 $$
 \cos(\theta) = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2} \sqrt{\sum_{i=1}^n (y_i - \bar{y})^2}}
@@ -135,7 +135,7 @@ This expression is identical to the formula for the sample Pearson correlation c
 $$
 \rho_{XY} = \cos(\theta)
 $$
-The correlation coefficient is precisely the cosine of the angle between the mean-centered data vectors . This provides a deep and intuitive understanding of correlation:
+The correlation coefficient is precisely the cosine of the angle between the mean-centered data vectors [@problem_id:1911202]. This provides a deep and intuitive understanding of correlation:
 -   **$\rho = 1$**: $\cos(\theta) = 1$, so $\theta = 0^\circ$. The vectors point in the exact same direction, representing a perfect positive linear relationship.
 -   **$\rho = -1$**: $\cos(\theta) = -1$, so $\theta = 180^\circ$. The vectors point in opposite directions, representing a perfect negative linear relationship.
 -   **$\rho = 0$**: $\cos(\theta) = 0$, so $\theta = 90^\circ$. The vectors are orthogonal, indicating no linear association.
@@ -148,9 +148,9 @@ Despite its utility, the correlation coefficient is often misinterpreted. Unders
 
 The Pearson correlation coefficient is designed exclusively to measure the strength of a **linear** association. It may fail to capture strong, but non-linear, relationships. A correlation of zero does **not** imply that the variables are independent.
 
-Consider a random variable $X$ uniformly distributed on the interval $[-1, 1]$, and let $Y = X^2$. Here, $Y$ is completely determined by $X$—a perfect, albeit non-linear, functional relationship. Let us calculate their correlation  .
+Consider a random variable $X$ uniformly distributed on the interval $[-1, 1]$, and let $Y = X^2$. Here, $Y$ is completely determined by $X$—a perfect, albeit non-linear, functional relationship. Let us calculate their correlation [@problem_id:1354069] [@problem_id:1911186].
 
-First, we find the necessary expected values. Due to the symmetry of the [uniform distribution](@entry_id:261734) around zero, any odd moment of $X$ is zero:
+First, we find the necessary expected values. Due to the symmetry of the uniform distribution around zero, any odd moment of $X$ is zero:
 $$
 E[X] = \int_{-1}^{1} x \cdot \frac{1}{2} dx = 0
 $$
@@ -166,25 +166,25 @@ Since the covariance is zero, the correlation coefficient is also zero:
 $$
 \rho(X, Y) = \frac{0}{\sigma_X \sigma_Y} = 0
 $$
-This striking result demonstrates that two variables can be perfectly dependent, yet have a correlation of zero. The parabolic relationship $Y=X^2$ has no linear component over a symmetric interval. This underscores a critical rule: **independence implies [zero correlation](@entry_id:270141), but [zero correlation](@entry_id:270141) does not imply independence.**
+This striking result demonstrates that two variables can be perfectly dependent, yet have a correlation of zero. The parabolic relationship $Y=X^2$ has no linear component over a symmetric interval. This underscores a critical rule: **independence implies zero correlation, but zero correlation does not imply independence.**
 
 #### Correlation Does Not Imply Causation
 
 Perhaps the most frequent and serious error in interpreting statistics is to infer a causal link from an observed correlation. A strong correlation between two variables, $X$ and $Y$, does not, on its own, provide evidence that $X$ causes $Y$, or that $Y$ causes $X$.
 
-Often, a strong correlation is the result of a **[confounding variable](@entry_id:261683)** (or [lurking variable](@entry_id:172616)), $Z$, that influences both $X$ and $Y$. For example, a sociologist might find a strong positive correlation between the number of users of a social media platform and the number of public disturbances in different cities . It would be a fallacy to conclude that social media use *causes* unrest. A more plausible explanation is that a third variable, such as the **total city population**, is the true driver. Larger cities naturally have more social media users and more public disturbances. The correlation is real, but the causal story is indirect.
+Often, a strong correlation is the result of a **confounding variable** (or lurking variable), $Z$, that influences both $X$ and $Y$. For example, a sociologist might find a strong positive correlation between the number of users of a social media platform and the number of public disturbances in different cities [@problem_id:1911193]. It would be a fallacy to conclude that social media use *causes* unrest. A more plausible explanation is that a third variable, such as the **total city population**, is the true driver. Larger cities naturally have more social media users and more public disturbances. The correlation is real, but the causal story is indirect.
 
-This is famously illustrated by the [spurious correlation](@entry_id:145249) between the number of storks and the number of human births in various regions. Both are correlated with a third variable: the size of the region (rural vs. urban). Mistaking this correlation for causation leads to the absurd conclusion that storks deliver babies. Correlation is a sign that a relationship exists and warrants further investigation, but it cannot, by itself, establish causality.
+This is famously illustrated by the spurious correlation between the number of storks and the number of human births in various regions. Both are correlated with a third variable: the size of the region (rural vs. urban). Mistaking this correlation for causation leads to the absurd conclusion that storks deliver babies. Correlation is a sign that a relationship exists and warrants further investigation, but it cannot, by itself, establish causality.
 
 ### Correlation of Linear Combinations
 
-Finally, we can apply these principles to understand the correlation that arises when a variable is constructed from a combination of other independent variables. This situation is common in signal processing and [financial modeling](@entry_id:145321), where a measured quantity may consist of a true signal plus some independent noise.
+Finally, we can apply these principles to understand the correlation that arises when a variable is constructed from a combination of other independent variables. This situation is common in signal processing and financial modeling, where a measured quantity may consist of a true signal plus some independent noise.
 
-Let's construct a variable $Y$ as a [linear combination](@entry_id:155091) of two [independent random variables](@entry_id:273896), $X$ and $Z$:
+Let's construct a variable $Y$ as a linear combination of two independent random variables, $X$ and $Z$:
 $$
 Y = c_1 X + c_2 Z
 $$
-where $c_1$ and $c_2$ are non-zero constants, and $X$ and $Z$ are independent. Let's derive the correlation between the "signal" $X$ and the composite variable $Y$ .
+where $c_1$ and $c_2$ are non-zero constants, and $X$ and $Z$ are independent. Let's derive the correlation between the "signal" $X$ and the composite variable $Y$ [@problem_id:3577].
 
 The covariance is:
 $$

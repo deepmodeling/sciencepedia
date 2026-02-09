@@ -13,19 +13,19 @@ The foundation of the exponential representation of complex numbers is the **Eul
 $$
 \exp(i\theta) = \cos(\theta) + i\sin(\theta)
 $$
-where $\theta$ is a real number, typically an angle in radians. This extraordinary identity establishes a fundamental link between the [exponential function](@entry_id:161417) and the [trigonometric functions](@entry_id:178918). For any real angle $\theta$, the complex number $\exp(i\theta)$ has a modulus of 1, as $|\exp(i\theta)| = \sqrt{\cos^2(\theta) + \sin^2(\theta)} = 1$. Geometrically, $\exp(i\theta)$ represents a point on the unit circle in the complex plane, with an angle $\theta$ measured counter-clockwise from the positive real axis.
+where $\theta$ is a real number, typically an angle in radians. This extraordinary identity establishes a fundamental link between the exponential function and the trigonometric functions. For any real angle $\theta$, the complex number $\exp(i\theta)$ has a modulus of 1, as $|\exp(i\theta)| = \sqrt{\cos^2(\theta) + \sin^2(\theta)} = 1$. Geometrically, $\exp(i\theta)$ represents a point on the unit circle in the complex plane, with an angle $\theta$ measured counter-clockwise from the positive real axis.
 
 This allows any non-zero complex number $z$ to be expressed in **exponential form**. Recall that any complex number can be described by its modulus $r = |z|$ (its distance from the origin) and its argument $\theta = \arg(z)$ (the angle it makes with the positive real axis). We can therefore write:
 $$
 z = r(\cos(\theta) + i\sin(\theta)) = r\exp(i\theta)
 $$
-This is the exponential form of a complex number. The modulus $r$ must be a positive real number, and the argument $\theta$ is a real angle. While $\theta$ can be any real number, it is standard practice to use the **[principal value](@entry_id:192761)** of the argument, denoted $\text{Arg}(z)$, which is conventionally restricted to the interval $(-\pi, \pi]$.
+This is the exponential form of a complex number. The modulus $r$ must be a positive real number, and the argument $\theta$ is a real angle. While $\theta$ can be any real number, it is standard practice to use the **principal value** of the argument, denoted $\text{Arg}(z)$, which is conventionally restricted to the interval $(-\pi, \pi]$.
 
 A celebrated special case of Euler's formula arises when $\theta = \pi$. This gives **Euler's identity**:
 $$
 \exp(i\pi) = \cos(\pi) + i\sin(\pi) = -1 + 0i = -1
 $$
-which is often written in the elegant form $\exp(i\pi) + 1 = 0$, connecting five of the most [fundamental constants](@entry_id:148774) in mathematics. Calculations involving powers of such numbers become remarkably simple . For instance, $(\exp(i\pi))^5 = \exp(i5\pi) = \cos(5\pi) + i\sin(5\pi) = -1$.
+which is often written in the elegant form $\exp(i\pi) + 1 = 0$, connecting five of the most fundamental constants in mathematics. Calculations involving powers of such numbers become remarkably simple [@problem_id:2240230]. For instance, $(\exp(i\pi))^5 = \exp(i5\pi) = \cos(5\pi) + i\sin(5\pi) = -1$.
 
 **Conversion Between Forms**
 
@@ -35,7 +35,7 @@ To move between rectangular and exponential forms, we use the following relation
     $a = r\cos(\theta)$
     $b = r\sin(\theta)$
 
-    For example, in AC [circuit analysis](@entry_id:261116), electrical quantities are often represented by complex numbers called **[phasors](@entry_id:270266)**. Consider a [phasor](@entry_id:273795) with an amplitude (modulus) of $r=2$ and a [phase angle](@entry_id:274491) (argument) of $\theta = -\frac{\pi}{6}$ . Its exponential form is $Z = 2\exp(-i\frac{\pi}{6})$. To find its rectangular form $a+ib$, we compute:
+    For example, in AC circuit analysis, electrical quantities are often represented by complex numbers called **phasors**. Consider a phasor with an amplitude (modulus) of $r=2$ and a phase angle (argument) of $\theta = -\frac{\pi}{6}$ [@problem_id:2240227]. Its exponential form is $Z = 2\exp(-i\frac{\pi}{6})$. To find its rectangular form $a+ib$, we compute:
     $$
     Z = 2\left(\cos\left(-\frac{\pi}{6}\right) + i\sin\left(-\frac{\pi}{6}\right)\right) = 2\left(\frac{\sqrt{3}}{2} - i\frac{1}{2}\right) = \sqrt{3} - i
     $$
@@ -44,11 +44,11 @@ To move between rectangular and exponential forms, we use the following relation
     $r = |z| = \sqrt{a^2 + b^2}$
     $\theta = \arctan\left(\frac{b}{a}\right)$ (with careful attention to the quadrant of $z$)
 
-    Consider one of the [complex roots](@entry_id:172941) of the equation $x^3 - 1 = 0$, which is $z = -\frac{1}{2} - i\frac{\sqrt{3}}{2}$ . To express this in exponential form, we first find its modulus:
+    Consider one of the complex roots of the equation $x^3 - 1 = 0$, which is $z = -\frac{1}{2} - i\frac{\sqrt{3}}{2}$ [@problem_id:2239324]. To express this in exponential form, we first find its modulus:
     $$
     r = \left|-\frac{1}{2} - i\frac{\sqrt{3}}{2}\right| = \sqrt{\left(-\frac{1}{2}\right)^2 + \left(-\frac{\sqrt{3}}{2}\right)^2} = \sqrt{\frac{1}{4} + \frac{3}{4}} = 1
     $$
-    Since both the real and imaginary parts are negative, the number lies in the third quadrant. The angle $\phi$ whose tangent is $|b/a| = \sqrt{3}$ is $\frac{\pi}{3}$. The [principal argument](@entry_id:171517) $\theta$ is therefore $\theta = -\pi + \phi = -\pi + \frac{\pi}{3} = -\frac{2\pi}{3}$. Thus, the exponential form is:
+    Since both the real and imaginary parts are negative, the number lies in the third quadrant. The angle $\phi$ whose tangent is $|b/a| = \sqrt{3}$ is $\frac{\pi}{3}$. The principal argument $\theta$ is therefore $\theta = -\pi + \phi = -\pi + \frac{\pi}{3} = -\frac{2\pi}{3}$. Thus, the exponential form is:
     $$
     z = 1 \cdot \exp\left(-i\frac{2\pi}{3}\right) = \exp\left(-i\frac{2\pi}{3}\right)
     $$
@@ -72,7 +72,7 @@ A direct consequence of the multiplication rule is the formula for integer power
 $$
 z^n = (r\exp(i\theta))^n = r^n \exp(in\theta)
 $$
-This compact expression is equivalent to **De Moivre's formula**: $(\cos\theta + i\sin\theta)^n = \cos(n\theta) + i\sin(n\theta)$. This makes calculating high powers trivial. For instance, to compute $W = (\sqrt{2}\exp(i\frac{\pi}{4}))^2 + (2\exp(i\frac{2\pi}{3}))^3$ , we evaluate each term separately:
+This compact expression is equivalent to **De Moivre's formula**: $(\cos\theta + i\sin\theta)^n = \cos(n\theta) + i\sin(n\theta)$. This makes calculating high powers trivial. For instance, to compute $W = (\sqrt{2}\exp(i\frac{\pi}{4}))^2 + (2\exp(i\frac{2\pi}{3}))^3$ [@problem_id:2240230], we evaluate each term separately:
 $$
 (\sqrt{2}\exp(i\frac{\pi}{4}))^2 = (\sqrt{2})^2 \exp(i \cdot 2 \cdot \frac{\pi}{4}) = 2\exp(i\frac{\pi}{2}) = 2(0+i) = 2i
 $$
@@ -82,11 +82,11 @@ $$
 The sum is then simply $W = 2i + 8$.
 
 **Complex Conjugate:**
-The [complex conjugate](@entry_id:174888) of $z = a+ib$ is $\bar{z} = a-ib$. In exponential form, since $\cos(\theta) = \cos(-\theta)$ and $\sin(-\theta) = -\sin(\theta)$, the conjugate of $z = r(\cos\theta+i\sin\theta)$ is $\bar{z} = r(\cos\theta - i\sin\theta) = r(\cos(-\theta) + i\sin(-\theta))$. This gives the simple rule:
+The complex conjugate of $z = a+ib$ is $\bar{z} = a-ib$. In exponential form, since $\cos(\theta) = \cos(-\theta)$ and $\sin(-\theta) = -\sin(\theta)$, the conjugate of $z = r(\cos\theta+i\sin\theta)$ is $\bar{z} = r(\cos\theta - i\sin\theta) = r(\cos(-\theta) + i\sin(-\theta))$. This gives the simple rule:
 $$
 \overline{r\exp(i\theta)} = r\exp(-i\theta)
 $$
-Taking the [complex conjugate](@entry_id:174888) negates the argument but leaves the modulus unchanged. This property can lead to significant algebraic simplifications. For instance, consider the expression $w = \frac{z_1}{\bar{z_2}} + \frac{\bar{z_1}}{z_2}$ . Using the rules for division and conjugation:
+Taking the complex conjugate negates the argument but leaves the modulus unchanged. This property can lead to significant algebraic simplifications. For instance, consider the expression $w = \frac{z_1}{\bar{z_2}} + \frac{\bar{z_1}}{z_2}$ [@problem_id:2240279]. Using the rules for division and conjugation:
 $$
 \frac{z_1}{\bar{z_2}} = \frac{r_1\exp(i\theta_1)}{r_2\exp(-i\theta_2)} = \frac{r_1}{r_2}\exp(i(\theta_1 - (-\theta_2))) = \frac{r_1}{r_2}\exp(i(\theta_1+\theta_2))
 $$
@@ -107,7 +107,7 @@ From this definition, we can find the modulus of $\exp(z)$. Since $\exp(x)$ is a
 $$
 |\exp(z)| = |\exp(x)(\cos(y) + i\sin(y))| = |\exp(x)||\cos(y) + i\sin(y)| = \exp(x)
 $$
-Thus, the modulus of $\exp(z)$ depends only on the real part of $z$: $|\exp(x+iy)| = \exp(x)$. This is a critical property. For example, to find the modulus of $W = \exp(z_1)\exp(\overline{z_2})$ where $z_1 = \alpha+i\beta$ and $z_2 = \gamma+i\delta$ , we use the fact that the modulus of a product is the product of the moduli:
+Thus, the modulus of $\exp(z)$ depends only on the real part of $z$: $|\exp(x+iy)| = \exp(x)$. This is a critical property. For example, to find the modulus of $W = \exp(z_1)\exp(\overline{z_2})$ where $z_1 = \alpha+i\beta$ and $z_2 = \gamma+i\delta$ [@problem_id:2240249], we use the fact that the modulus of a product is the product of the moduli:
 $$
 |W| = |\exp(z_1)| |\exp(\overline{z_2})|
 $$
@@ -126,7 +126,7 @@ This shows that the transformation consists of two simple geometric actions:
 1.  **Scaling:** The modulus of $z$ is scaled by a factor of $R = |c|$.
 2.  **Rotation:** The vector representing $z$ is rotated counter-clockwise by an angle of $\alpha = \arg(c)$.
 
-This principle is fundamental in fields like physics and engineering, where complex numbers model wave phenomena and transformations. Consider a particle whose state is described by a complex number $z_0 = 3+4i$. If the system undergoes two sequential updates, first by a factor $c_1 = \exp(i\frac{\pi}{3})$ and then by $c_2 = 2\exp(-i\frac{\pi}{6})$ , the final position $z_f$ is simply the product:
+This principle is fundamental in fields like physics and engineering, where complex numbers model wave phenomena and transformations. Consider a particle whose state is described by a complex number $z_0 = 3+4i$. If the system undergoes two sequential updates, first by a factor $c_1 = \exp(i\frac{\pi}{3})$ and then by $c_2 = 2\exp(-i\frac{\pi}{6})$ [@problem_id:2240271], the final position $z_f$ is simply the product:
 $$
 z_f = z_0 c_1 c_2
 $$
@@ -149,15 +149,15 @@ $$
 \exp(x)\exp(iy) = R\exp(i\Theta)
 $$
 Equating the moduli gives $\exp(x) = R$, which implies $x = \ln(R)$.
-Equating the arguments gives $y = \Theta$. However, since the [exponential function](@entry_id:161417) is periodic with period $2\pi i$ (i.e., $\exp(iy) = \exp(i(y+2\pi k))$ for any integer $k$), the argument is determined only up to an integer multiple of $2\pi$. Therefore, the full solution is:
+Equating the arguments gives $y = \Theta$. However, since the exponential function is periodic with period $2\pi i$ (i.e., $\exp(iy) = \exp(i(y+2\pi k))$ for any integer $k$), the argument is determined only up to an integer multiple of $2\pi$. Therefore, the full solution is:
 $$
 y = \Theta + 2\pi k, \quad \text{for } k \in \mathbb{Z}
 $$
-Combining these, we define the **multivalued [complex logarithm](@entry_id:174857)**:
+Combining these, we define the **multivalued complex logarithm**:
 $$
 z = \ln(R) + i(\Theta + 2\pi k)
 $$
-For instance, to solve $\exp(z) = 1+i\sqrt{3}$ , we first convert the right-hand side to exponential form. The modulus is $R = |1+i\sqrt{3}| = 2$, and the [principal argument](@entry_id:171517) is $\Theta = \arctan(\sqrt{3}) = \frac{\pi}{3}$. So, $1+i\sqrt{3} = 2\exp(i\frac{\pi}{3})$. The general solution for $z$ is:
+For instance, to solve $\exp(z) = 1+i\sqrt{3}$ [@problem_id:2240246], we first convert the right-hand side to exponential form. The modulus is $R = |1+i\sqrt{3}| = 2$, and the principal argument is $\Theta = \arctan(\sqrt{3}) = \frac{\pi}{3}$. So, $1+i\sqrt{3} = 2\exp(i\frac{\pi}{3})$. The general solution for $z$ is:
 $$
 z = \ln(2) + i\left(\frac{\pi}{3} + 2\pi k\right), \quad k \in \mathbb{Z}
 $$
@@ -174,11 +174,11 @@ Adding and subtracting these equations yields:
 $$
 \cos\theta = \frac{\exp(i\theta) + \exp(-i\theta)}{2}, \quad \sin\theta = \frac{\exp(i\theta) - \exp(-i\theta)}{2i}
 $$
-These identities are invaluable for simplifying expressions involving powers of trigonometric functions, a process known as **linearization**. This technique is widely used in signal processing and Fourier analysis. For example, let's express $\cos^4(\omega t)$ as a sum of simple cosines .
+These identities are invaluable for simplifying expressions involving powers of trigonometric functions, a process known as **linearization**. This technique is widely used in signal processing and Fourier analysis. For example, let's express $\cos^4(\omega t)$ as a sum of simple cosines [@problem_id:2240262].
 $$
 \cos^4(\omega t) = \left(\frac{\exp(i\omega t) + \exp(-i\omega t)}{2}\right)^4
 $$
-Using the [binomial theorem](@entry_id:276665), the numerator becomes:
+Using the binomial theorem, the numerator becomes:
 $$
 \frac{1}{16} \left[ \exp(i4\omega t) + 4\exp(i2\omega t) + 6 + 4\exp(-i2\omega t) + \exp(-i4\omega t) \right]
 $$
@@ -190,10 +190,10 @@ Converting back to cosines:
 $$
 \frac{1}{16} \left[ 2\cos(4\omega t) + 4(2\cos(2\omega t)) + 6 \right] = \frac{1}{8}\cos(4\omega t) + \frac{1}{2}\cos(2\omega t) + \frac{3}{8}
 $$
-This result shows that a signal described by $\cos^4(\omega t)$ is actually a superposition of a constant (DC) component and harmonics at twice and four times the [fundamental frequency](@entry_id:268182).
+This result shows that a signal described by $\cos^4(\omega t)$ is actually a superposition of a constant (DC) component and harmonics at twice and four times the fundamental frequency.
 
 **Summation of Series**
-The exponential form is also extremely effective for summing series of trigonometric terms, which often arise in the study of interference and diffraction in physics. Consider the problem of finding the magnitude of the total signal from four antennas, given by $Z = A\sum_{k=1}^4 z_k$, where the signals have different phases :
+The exponential form is also extremely effective for summing series of trigonometric terms, which often arise in the study of interference and diffraction in physics. Consider the problem of finding the magnitude of the total signal from four antennas, given by $Z = A\sum_{k=1}^4 z_k$, where the signals have different phases [@problem_id:2240254]:
 $$
 Z = A[\exp(-i\frac{3}{2}\delta) + \exp(-i\frac{1}{2}\delta) + \exp(i\frac{1}{2}\delta) + \exp(i\frac{3}{2}\delta)]
 $$

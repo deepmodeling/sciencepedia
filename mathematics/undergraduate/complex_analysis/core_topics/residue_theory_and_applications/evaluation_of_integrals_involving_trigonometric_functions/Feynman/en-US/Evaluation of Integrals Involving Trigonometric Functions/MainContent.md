@@ -7,17 +7,17 @@ This article will guide you through this powerful technique in three stages. In 
 
 Imagine you are standing on a riverbank, trying to measure the total amount of water flowing past a certain stretch. You could, in principle, dip a bucket in at every single point and add up the results. This is what a standard real-number integral does, meticulously summing up values along a line. But what if there was another way? What if you could launch a magical boat that, just by circling an island downstream, could tell you the total flow from the source? This is the enchanting power that complex analysis gives us for solving a certain class of real-world integrals.
 
-Our mission is to evaluate definite integrals of functions involving sines and cosines, typically over a full period from $0$ to $2\pi$. These integrals appear everywhere, from the radiation patterns of antennas  to the study of electrostatic potentials and Fourier analysis . While some can be tamed by clever tricks with real numbers, many surrender most gracefully to a journey into the complex plane.
+Our mission is to evaluate definite integrals of functions involving sines and cosines, typically over a full period from $0$ to $2\pi$. These integrals appear everywhere, from the radiation patterns of antennas [@problem_id:2239999] to the study of electrostatic potentials and Fourier analysis [@problem_id:2239955]. While some can be tamed by clever tricks with real numbers, many surrender most gracefully to a journey into the complex plane.
 
 ### The Magic Carpet: From the Real Line to the Complex Plane
 
 The core idea is a beautiful transformation. We take our one-dimensional problem, an integral over the variable $\theta$ from $0$ to $2\pi$, and map it onto a two-dimensional landscape—the complex plane. Our path of integration, once a straight line segment, now becomes a perfect circle.
 
-The spell that works this magic is Euler's supreme creation, $z = e^{i\theta}$. As $\theta$ sweeps from $0$ to $2\pi$, the complex number $z$ glides gracefully around a circle of radius one, centered at the origin. This is the **unit circle**. Why is this so powerful? Because it provides a dictionary to translate every piece of our trigonometric integral into the language of [complex variables](@article_id:174818):
+The spell that works this magic is Euler's supreme creation, $z = e^{i\theta}$. As $\theta$ sweeps from $0$ to $2\pi$, the complex number $z$ glides gracefully around a circle of radius one, centered at the origin. This is the **unit circle**. Why is this so powerful? Because it provides a dictionary to translate every piece of our trigonometric integral into the language of [complex variables](@keyword=complex_variables|lang=en-US|style=Feynman):
 
--   **The Path:** The integration $\int_0^{2\pi} (\dots) d\theta$ becomes a [contour integral](@article_id:164220) $\oint_{|z|=1} (\dots) dz$ around the unit circle.
+-   **The Path:** The integration $\int_0^{2\pi} (\dots) d\theta$ becomes a [contour integral](@keyword=contour_integral|lang=en-US|style=Feynman) $\oint_{|z|=1} (\dots) dz$ around the unit circle.
 
--   **The Functions:** The [trigonometric functions](@article_id:178424) $\cos\theta$ and $\sin\theta$ have elegant representations. From Euler's formula, we know $e^{i\theta} = \cos\theta + i\sin\theta$ and $e^{-i\theta} = \cos\theta - i\sin\theta$. A little algebra gives us:
+-   **The Functions:** The [trigonometric functions](@keyword=trigonometric_functions|lang=en-US|style=Feynman) $\cos\theta$ and $\sin\theta$ have elegant representations. From Euler's formula, we know $e^{i\theta} = \cos\theta + i\sin\theta$ and $e^{-i\theta} = \cos\theta - i\sin\theta$. A little algebra gives us:
     $$
     \cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2} = \frac{z + z^{-1}}{2} = \frac{z^2+1}{2z}
     $$
@@ -30,7 +30,7 @@ The spell that works this magic is Euler's supreme creation, $z = e^{i\theta}$. 
     d\theta = \frac{dz}{iz}
     $$
 
-With this dictionary, any integral of a [rational function](@article_id:270347) of $\sin\theta$ and $\cos\theta$ is transformed into an integral of a rational function of the [complex variable](@article_id:195446) $z$ around the unit circle. The mess of trigonometry dissolves into the clean algebra of polynomials.
+With this dictionary, any integral of a [rational function](@keyword=rational_function|lang=en-US|style=Feynman) of $\sin\theta$ and $\cos\theta$ is transformed into an integral of a rational function of the [complex variable](@keyword=complex_variable|lang=en-US|style=Feynman) $z$ around the unit circle. The mess of trigonometry dissolves into the clean algebra of polynomials.
 
 ### The Residue Theorem: The Grand Toll Collector
 
@@ -43,7 +43,7 @@ $$
 where the sum is over all singularities $z_k$ that lie *inside* the unit circle (i.e., $|z_k| \lt 1$).
 
 So, our grand strategy is this:
-1.  Translate the trigonometric integral into a [complex contour integral](@article_id:189292) using our $z=e^{i\theta}$ substitution.
+1.  Translate the trigonometric integral into a [complex contour integral](@keyword=complex_contour_integral|lang=en-US|style=Feynman) using our $z=e^{i\theta}$ substitution.
 2.  Identify the singularities of the new complex function $f(z)$.
 3.  Determine which of these singularities lie inside the unit circle.
 4.  Calculate the residue at each of these interior singularities.
@@ -51,7 +51,7 @@ So, our grand strategy is this:
 
 ### A First Journey: The Simplest Case
 
-Let's put this into practice with a classic integral that appears in many physics problems :
+Let's put this into practice with a classic integral that appears in many physics problems [@problem_id:2239976]:
 $$
 I = \int_0^{\pi} \frac{d\theta}{a+\cos\theta} \quad (\text{for } a > 1)
 $$
@@ -89,7 +89,7 @@ A beautiful, clean result for an integral that is rather cumbersome to solve oth
 
 The world is not always so simple. Integrands can be more complex, but our method is robust.
 
-What if we have a $\sin\theta$? Let's consider a problem from [antenna theory](@article_id:265756) , calculating the total [radiated power](@article_id:273759), which involves an integral like:
+What if we have a $\sin\theta$? Let's consider a problem from [antenna theory](@keyword=antenna_theory|lang=en-US|style=Feynman) [@problem_id:2239999], calculating the total [radiated power](@keyword=radiated_power|lang=en-US|style=Feynman), which involves an integral like:
 $$
 P_{\text{total}} = \int_0^{2\pi} \frac{P_{0}}{a+b\sin\theta} d\theta \quad (\text{for } a > |b| > 0)
 $$
@@ -99,13 +99,13 @@ P_{\text{total}} = P_0 \oint_{|z|=1} \frac{1}{a+b\frac{z^2-1}{2iz}} \frac{dz}{iz
 $$
 The poles are the roots of $bz^2+2aiz-b=0$. As we found in our preparatory work, these are $z = \frac{(-a \pm \sqrt{a^2-b^2})i}{b}$. Again, one pole is inside the unit circle and one is outside. Calculating the residue and applying the theorem gives the total power: $P_{\text{total}} = \frac{2\pi P_0}{\sqrt{a^2-b^2}}$. The physics of the antenna is captured by the residue of a complex function!
 
-Sometimes the integrand is in disguise. A direct substitution for an integral like $\int_0^{2\pi} \frac{\sin^2\theta}{a-\cos\theta}d\theta$   leads to a complicated rational function with a pole at the origin. But with a bit of algebraic foresight, we can simplify:
+Sometimes the integrand is in disguise. A direct substitution for an integral like $\int_0^{2\pi} \frac{\sin^2\theta}{a-\cos\theta}d\theta$ [@problem_id:2239936] [@problem_id:2239987] leads to a complicated rational function with a pole at the origin. But with a bit of algebraic foresight, we can simplify:
 $$
 \frac{\sin^2\theta}{a-\cos\theta} = \frac{1-\cos^2\theta}{a-\cos\theta} = \frac{(1-a^2) + (a^2-\cos^2\theta)}{a-\cos\theta} = \frac{1-a^2}{a-\cos\theta} + a+\cos\theta
 $$
 Integrating this is now easy. $\int_0^{2\pi}(a+\cos\theta)d\theta = 2\pi a$. The other part is just a multiple of the integral we've already mastered! This demonstrates a key lesson: the complex analysis machinery is powerful, but it works best when paired with clever algebraic thinking.
 
-What if the "toll booths" are more complex? Poles don't have to be simple. They can be of higher order. Consider an integral like :
+What if the "toll booths" are more complex? Poles don't have to be simple. They can be of higher order. Consider an integral like [@problem_id:2239956]:
 $$
 I = \int_0^{2\pi} \frac{d\theta}{(\sqrt{3}+\sin\theta)^2}
 $$
@@ -113,11 +113,11 @@ The substitution leads to an integral $\oint f(z) dz$ where the denominator has 
 $$
 \text{Res}(f, z_k) = \frac{1}{(n-1)!} \lim_{z\to z_k} \frac{d^{n-1}}{dz^{n-1}} \left[ (z-z_k)^n f(z) \right]
 $$
-For a second-order pole ($n=2$), this involves taking a first derivative. For a third-order pole ($n=3$), as in the integral $\int_{0}^{2\pi} \frac{d\theta}{(1 + \frac{1}{2}\cos\theta)^3}$ , it requires a second derivative. The calculations get longer, but the principle remains the same. The machinery handles it without complaint.
+For a second-order pole ($n=2$), this involves taking a first derivative. For a third-order pole ($n=3$), as in the integral $\int_{0}^{2\pi} \frac{d\theta}{(1 + \frac{1}{2}\cos\theta)^3}$ [@problem_id:2239965], it requires a second derivative. The calculations get longer, but the principle remains the same. The machinery handles it without complaint.
 
 ### The True Beauty of Unity: Exponentials and Essential Singularities
 
-The true magic of complex numbers shines when we encounter integrals that don't seem like [rational functions](@article_id:153785) of sine and cosine at all. Consider this formidable-looking integral :
+The true magic of complex numbers shines when we encounter integrals that don't seem like [rational functions](@keyword=rational_functions|lang=en-US|style=Feynman) of sine and cosine at all. Consider this formidable-looking integral [@problem_id:2239959]:
 $$
 I = \int_0^{2\pi} e^{\cos\theta} \cos(3\theta - \sin\theta) \, d\theta
 $$
@@ -137,7 +137,7 @@ The complex integral becomes:
 $$
 J = \oint_{|z|=1} z^3 e^{1/z} \frac{dz}{iz} = \frac{1}{i} \oint_{|z|=1} z^2 e^{1/z} dz
 $$
-The function $f(z) = z^2 e^{1/z}$ has a different kind of singularity at $z=0$. It's not a pole; it's an **[essential singularity](@article_id:173366)**, because the series expansion of $e^{1/z}$ has infinitely many negative powers of $z$. But the Residue Theorem doesn't care! It still just asks for the residue—the coefficient of the $z^{-1}$ term.
+The function $f(z) = z^2 e^{1/z}$ has a different kind of singularity at $z=0$. It's not a pole; it's an **[essential singularity](@keyword=essential_singularity|lang=en-US|style=Feynman)**, because the series expansion of $e^{1/z}$ has infinitely many negative powers of $z$. But the Residue Theorem doesn't care! It still just asks for the residue—the coefficient of the $z^{-1}$ term.
 
 We find it by writing out the series:
 $$
@@ -155,7 +155,7 @@ Our original integral $I$ was the real part of this. Since $\pi/3$ is already re
 
 ### A Word of Caution: Poles on the Path
 
-Our method relies on the singularities being *inside* or *outside* our path. What happens if a singularity lies *on* the unit circle itself? This occurs when the denominator of the original trigonometric integrand can become zero, for example, in an integral like :
+Our method relies on the singularities being *inside* or *outside* our path. What happens if a singularity lies *on* the unit circle itself? This occurs when the denominator of the original trigonometric integrand can become zero, for example, in an integral like [@problem_id:2239949]:
 $$
 \text{P.V.} \int_0^{2\pi} \frac{\cos\theta}{\left(k-\sin\theta\right)^2} d\theta \quad (\text{for } |k| < 1)
 $$
@@ -167,6 +167,6 @@ In this case, there is one. Notice that the integrand is a perfect derivative!
 $$
 \frac{d}{d\theta} \left( \frac{1}{k-\sin\theta} \right) = - \frac{-\cos\theta}{(k-\sin\theta)^2} = \frac{\cos\theta}{(k-\sin\theta)^2}
 $$
-So we are trying to compute $\int_0^{2\pi} F'(\theta) d\theta$ where $F(\theta) = 1/(k-\sin\theta)$. By the Fundamental Theorem of Calculus, this should be $F(2\pi) - F(0)$. Since $\sin(2\pi) = \sin(0) = 0$, this is simply $1/k - 1/k = 0$. The [principal value](@article_id:192267) calculation confirms this: the way the function blows up at its two singularities on the path is perfectly antisymmetric, and the infinities cancel out precisely, yielding a final value of 0.
+So we are trying to compute $\int_0^{2\pi} F'(\theta) d\theta$ where $F(\theta) = 1/(k-\sin\theta)$. By the Fundamental Theorem of Calculus, this should be $F(2\pi) - F(0)$. Since $\sin(2\pi) = \sin(0) = 0$, this is simply $1/k - 1/k = 0$. The [principal value](@keyword=principal_value|lang=en-US|style=Feynman) calculation confirms this: the way the function blows up at its two singularities on the path is perfectly antisymmetric, and the infinities cancel out precisely, yielding a final value of 0.
 
 This journey from the real riverbank into the complex plane is a profound illustration of the unity of mathematics. By stepping into a higher dimension, we gain a new perspective that makes difficult problems transparent, revealing a hidden landscape of poles, residues, and beautiful symmetries that govern the world of real integrals.

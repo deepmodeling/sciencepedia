@@ -9,22 +9,22 @@
 
 想象一下，我们想知道抛掷一枚均匀的硬币100次，出现70次或更多次正面的概率有多大。直觉告诉我们，这个概率应该非常非常小。毕竟，我们最期待的结果是50次正面。但“非常小”是多小呢？我们能否精确地量化它？
 
-一个最基础的工具是**[马尔可夫不等式](@article_id:366404)（Markov's inequality）**。它告诉我们，对于一个非负的[随机变量](@article_id:324024) $X$，其值大于或等于某个数 $a$ 的概率，不会超过它的[期望值](@article_id:313620) $E[X]$ 除以 $a$。用公式表达就是：
+一个最基础的工具是**[马尔可夫不等式](@keyword=markov_inequality|lang=zh-CN|style=Feynman)（Markov's inequality）**。它告诉我们，对于一个非负的[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman) $X$，其值大于或等于某个数 $a$ 的概率，不会超过它的[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman) $E[X]$ 除以 $a$。用公式表达就是：
 
 $P(X \ge a) \le \frac{E[X]}{a}$
 
-在我们的抛硬币例子中，令 $X$ 为正面朝上的次数，它的[期望值](@article_id:313620) $E[X] = 100 \times 0.5 = 50$。我们想知道 $P(X \ge 70)$ 的上界。根据[马尔可夫不等式](@article_id:366404)，我们得到 $P(X \ge 70) \le 50/70 \approx 0.714$。这个结果显然太过宽松，几乎没有任何用处——它告诉我们一个我们直觉上认为极不可能的事件，发生的概率竟然可能高达71.4%！
+在我们的抛硬币例子中，令 $X$ 为正面朝上的次数，它的[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman) $E[X] = 100 \times 0.5 = 50$。我们想知道 $P(X \ge 70)$ 的上界。根据[马尔可夫不等式](@keyword=markov_inequality|lang=zh-CN|style=Feynman)，我们得到 $P(X \ge 70) \le 50/70 \approx 0.714$。这个结果显然太过宽松，几乎没有任何用处——它告诉我们一个我们直觉上认为极不可能的事件，发生的概率竟然可能高达71.4%！
 
-我们还能做得更好吗？当然。我们可以使用**[切比雪夫不等式](@article_id:332884)（Chebyshev's inequality）**，它同时考虑了[随机变量](@article_id:324024)的均值和方差，因此能提供更紧的界。对于我们的[硬币问题](@article_id:641507)，经过计算可以得出，出现70次以上正面的概率上界大约是0.0625，也就是6.25% 。这比[马尔可夫不等式](@article_id:366404)的结果好了很多，但我们隐约觉得，对于这样一个极端事件，真实的概率应该远小于6.25%。
+我们还能做得更好吗？当然。我们可以使用**[切比雪夫不等式](@keyword=chebyshev_s_inequality|lang=zh-CN|style=Feynman)（Chebyshev's inequality）**，它同时考虑了[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman)的均值和方差，因此能提供更紧的界。对于我们的[硬币问题](@keyword=coin_problem|lang=zh-CN|style=Feynman)，经过计算可以得出，出现70次以上正面的概率上界大约是0.0625，也就是6.25% [@problem_id:1348615]。这比[马尔可夫不等式](@keyword=markov_inequality|lang=zh-CN|style=Feynman)的结果好了很多，但我们隐约觉得，对于这样一个极端事件，真实的概率应该远小于6.25%。
 
-这时，切尔诺夫界的“魔法”就登场了。它的核心思想极具创造力：**如果我们直接观察的[随机变量](@article_id:324024) $X$ 不够“显眼”，我们为什么不通过一个“魔法放大镜”来观察它呢？**
+这时，切尔诺夫界的“魔法”就登场了。它的核心思想极具创造力：**如果我们直接观察的[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman) $X$ 不够“显眼”，我们为什么不通过一个“魔法放大镜”来观察它呢？**
 
-这个放大镜就是[指数函数](@article_id:321821) $e^{tX}$，其中 $t$ 是一个我们可以自由选择的正数。为什么选择指数函数？因为它有两个绝佳的性质：
+这个放大镜就是[指数函数](@keyword=exponential_function|lang=zh-CN|style=Feynman) $e^{tX}$，其中 $t$ 是一个我们可以自由选择的正数。为什么选择指数函数？因为它有两个绝佳的性质：
 
-1.  **[单调性](@article_id:304191)**：当 $t > 0$ 时，函数 $f(x)=e^{tx}$ 是一个严格递增的函数。这意味着事件“$X \ge a$”和事件“$e^{tX} \ge e^{ta}$”是完全等价的。一个发生，另一个必然发生。
-2.  **放大效应**：指数函数对较大值的放大作用远超过对较小值的放大作用。当我们关心 $X$ 取一个大值 $a$ 的“尾部概率”时，这个放大镜会不成比例地“拉伸”这部分区域，使得原本隐藏在尾部的微小概率在新的[期望值](@article_id:313620)中占据更大的权重。
+1.  **[单调性](@keyword=monotonicity|lang=zh-CN|style=Feynman)**：当 $t > 0$ 时，函数 $f(x)=e^{tx}$ 是一个严格递增的函数。这意味着事件“$X \ge a$”和事件“$e^{tX} \ge e^{ta}$”是完全等价的。一个发生，另一个必然发生。
+2.  **放大效应**：指数函数对较大值的放大作用远超过对较小值的放大作用。当我们关心 $X$ 取一个大值 $a$ 的“尾部概率”时，这个放大镜会不成比例地“拉伸”这部分区域，使得原本隐藏在尾部的微小概率在新的[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)中占据更大的权重。
 
-有了这个放大镜，我们就可以对新的[随机变量](@article_id:324024) $e^{tX}$ 应用简单但普适的[马尔可夫不等式](@article_id:366404)了：
+有了这个放大镜，我们就可以对新的[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman) $e^{tX}$ 应用简单但普适的[马尔可夫不等式](@keyword=markov_inequality|lang=zh-CN|style=Feynman)了：
 
 $P(X \ge a) = P(e^{tX} \ge e^{ta}) \le \frac{E[e^{tX}]}{e^{ta}}$
 
@@ -36,51 +36,51 @@ $P(X \ge a) \le e^{-ta} M_X(t)$
 
 ### 调校你的放大镜：参数 $t$ 的奥秘
 
-你可能会问，那个参数 $t$ 是什么？它就像是放大镜的调焦旋钮。对于每一个大于零的 $t$，我们都能得到一个上界。但这些上界有好有坏。我们的目标，自然是找到那个能给我们最紧、最精确上界的“最佳[焦距](@article_id:343870)” $t$。
+你可能会问，那个参数 $t$ 是什么？它就像是放大镜的调焦旋钮。对于每一个大于零的 $t$，我们都能得到一个上界。但这些上界有好有坏。我们的目标，自然是找到那个能给我们最紧、最精确上界的“最佳[焦距](@keyword=focal_length|lang=zh-CN|style=Feynman)” $t$。
 
 如何找到最好的 $t$ 呢？这其实是一个经典的优化问题。我们把上界 $e^{-ta} M_X(t)$ 看作是关于 $t$ 的函数，然后利用微积分的知识，通过求导并令其为零，就可以找到使这个函数取最小值的 $t^*$。
 
-让我们回到那个抛硬币的问题 。正面次数 $X$ 是一个二项分布，它的矩生成函数是 $M_X(t) = (0.5 + 0.5e^t)^{100}$。将它代入切尔诺夫界的公式，再通过微积分找到最优的 $t$（具体来说是 $t = \ln(7/3)$），我们最终得到的概率上界大约是 $0.000267$！
+让我们回到那个抛硬币的问题 [@problem_id:1348615]。正面次数 $X$ 是一个二项分布，它的矩生成函数是 $M_X(t) = (0.5 + 0.5e^t)^{100}$。将它代入切尔诺夫界的公式，再通过微积分找到最优的 $t$（具体来说是 $t = \ln(7/3)$），我们最终得到的概率上界大约是 $0.000267$！
 
 现在，让我们并列一下这三个结果：
--   [马尔可夫不等式](@article_id:366404)：$\le 0.714$
--   [切比雪夫不等式](@article_id:332884)：$\le 0.0625$
+-   [马尔可夫不等式](@keyword=markov_inequality|lang=zh-CN|style=Feynman)：$\le 0.714$
+-   [切比雪夫不等式](@keyword=chebyshev_s_inequality|lang=zh-CN|style=Feynman)：$\le 0.0625$
 -   切尔诺夫界：$\le 0.000267$
 
 看到了吗？切尔诺夫界给出的结果比切比雪夫不等式紧了超过200倍！这已经不是简单的量变，而是质变。它告诉我们，出现70次以上正面的概率是如此之小，以至于在现实中几乎不可能发生。这才是真正符合我们直觉的、强大的结论。
 
 ### 一把解决万千问题的“瑞士军刀”
 
-切尔诺夫界的威力远不止于此。它最强大的地方在于处理**[独立随机变量之和](@article_id:339783)**。如果一个[随机变量](@article_id:324024) $S_n$ 是由 $n$ 个独立的[随机变量](@article_id:324024) $X_1, X_2, \dots, X_n$ 相加而成，即 $S_n = \sum_{i=1}^n X_i$，那么它的矩生成函数有一个美妙的性质：
+切尔诺夫界的威力远不止于此。它最强大的地方在于处理**[独立随机变量之和](@keyword=sums_of_independent_random_variables|lang=zh-CN|style=Feynman)**。如果一个[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman) $S_n$ 是由 $n$ 个独立的[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman) $X_1, X_2, \dots, X_n$ 相加而成，即 $S_n = \sum_{i=1}^n X_i$，那么它的矩生成函数有一个美妙的性质：
 
 $M_{S_n}(t) = E[e^{t(X_1 + \dots + X_n)}] = E[e^{tX_1} \cdots e^{tX_n}] = E[e^{tX_1}] \cdots E[e^{tX_n}] = \prod_{i=1}^n M_{X_i}(t)$
 
-和的矩生成函数等于各自[矩生成函数](@article_id:314759)的乘积！这个简单的性质意味着，只要我们知道单个独立部分的统计特性，我们就能分析它们整体的行为。这使得切尔诺夫界成为一把名副其实的“瑞士军刀”，适用于各种场景。
+和的矩生成函数等于各自[矩生成函数](@keyword=moment_generating_function_2|lang=zh-CN|style=Feynman)的乘积！这个简单的性质意味着，只要我们知道单个独立部分的统计特性，我们就能分析它们整体的行为。这使得切尔诺夫界成为一把名副其实的“瑞士军刀”，适用于各种场景。
 
--   **场景一：[网络流](@article_id:332502)量洪峰**
-    假设一个网络服务器每秒收到的数据包数量服从[泊松分布](@article_id:308183)。我们想估算在50秒内，总数据包数量超过某个阈值（比如300）的概率 。这正是分析[独立随机变量](@article_id:337591)（每秒的数据包数量）之和的问题。运用切尔诺夫界的“配方”——写出单个泊松变量的MGF，利用乘法法则得到总和的MGF，代入公式并优化 $t$——我们能算出一个极小的概率上界，例如 $4.00 \times 10^{-10}$。这个数字为网络工程师提供了极大的信心，确保系统在常规波动下几乎不会崩溃。
+-   **场景一：[网络流](@keyword=network_flows|lang=zh-CN|style=Feynman)量洪峰**
+    假设一个网络服务器每秒收到的数据包数量服从[泊松分布](@keyword=poisson_distribution|lang=zh-CN|style=Feynman)。我们想估算在50秒内，总数据包数量超过某个阈值（比如300）的概率 [@problem_id:1610125]。这正是分析[独立随机变量](@keyword=independent_random_variables|lang=zh-CN|style=Feynman)（每秒的数据包数量）之和的问题。运用切尔诺夫界的“配方”——写出单个泊松变量的MGF，利用乘法法则得到总和的MGF，代入公式并优化 $t$——我们能算出一个极小的概率上界，例如 $4.00 \times 10^{-10}$。这个数字为网络工程师提供了极大的信心，确保系统在常规波动下几乎不会崩溃。
 
 -   **场景二：数据中心延迟**
-    一个复杂任务的总延迟时间，可以看作是多个独立处理阶段延迟时间的总和，而每个阶段的延迟可能服从指数分布 。同样地，我们可以用切尔诺夫界来估算总延迟超过某个服务质量（QoS）要求的概率。这再次证明了该方法的普适性，无论底层的[随机过程](@article_id:333307)是离散的（如[泊松分布](@article_id:308183)）还是连续的（如[指数分布](@article_id:337589)）。
+    一个复杂任务的总延迟时间，可以看作是多个独立处理阶段延迟时间的总和，而每个阶段的延迟可能服从指数分布 [@problem_id:1382478]。同样地，我们可以用切尔诺夫界来估算总延迟超过某个服务质量（QoS）要求的概率。这再次证明了该方法的普适性，无论底层的[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)是离散的（如[泊松分布](@keyword=poisson_distribution|lang=zh-CN|style=Feynman)）还是连续的（如[指数分布](@keyword=exponential_distribution|lang=zh-CN|style=Feynman)）。
 
--   **场景三：不完美的[传感器网络](@article_id:336220)**
-    更有趣的是，这些独立的[随机变量](@article_id:324024)甚至不需要“同分布”。想象一个由$N$个不同传感器组成的网络，每个传感器$i$的出错概率是各自不同的$p_i$ 。我们想知道总出错传感器数量超过某个阈值的概率。切尔诺夫界依然适用！总和的MGF就是 $\prod_{i=1}^N (1 - p_i + p_i e^t)$。虽然在这种情况下，要解析地找到最优的$t$可能很困难，但我们仍然得到了一个具体的表达式，可以通过计算机轻松地求出[数值解](@article_id:306259)。有时，为了简化计算，我们还可以使用一些精巧的放缩技巧，比如利用不等式 $1+y \le e^y$，来得到一个虽然稍松但形式更简洁的上界 。这展示了切尔诺夫界的灵活性和在实际应用中的可操作性。
+-   **场景三：不完美的[传感器网络](@keyword=sensor_networks|lang=zh-CN|style=Feynman)**
+    更有趣的是，这些独立的[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman)甚至不需要“同分布”。想象一个由$N$个不同传感器组成的网络，每个传感器$i$的出错概率是各自不同的$p_i$ [@problem_id:1610135]。我们想知道总出错传感器数量超过某个阈值的概率。切尔诺夫界依然适用！总和的MGF就是 $\prod_{i=1}^N (1 - p_i + p_i e^t)$。虽然在这种情况下，要解析地找到最优的$t$可能很困难，但我们仍然得到了一个具体的表达式，可以通过计算机轻松地求出[数值解](@keyword=numerical_solution|lang=zh-CN|style=Feynman)。有时，为了简化计算，我们还可以使用一些精巧的放缩技巧，比如利用不等式 $1+y \le e^y$，来得到一个虽然稍松但形式更简洁的上界 [@problem_id:709761]。这展示了切尔诺夫界的灵活性和在实际应用中的可操作性。
 
 ### 隐藏的深层美：与信息论的邂逅
 
 至此，你可能会觉得切尔诺夫界只是一个聪明的数学“技巧”。它背后是否还有更深刻的物理或哲学意义？答案是肯定的，而且美得令人惊叹。
 
-让我们再次回到最经典的抛[硬币问题](@article_id:641507)。经过一系列推导，我们发现，对于一个[期望](@article_id:311378)成功概率为 $p$ 的伯努利试验，当实际观测到的成功频率为 $a$（其中 $a>p$）时，这个偏差事件的概率上界可以表示为：
+让我们再次回到最经典的抛[硬币问题](@keyword=coin_problem|lang=zh-CN|style=Feynman)。经过一系列推导，我们发现，对于一个[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)成功概率为 $p$ 的伯努利试验，当实际观测到的成功频率为 $a$（其中 $a>p$）时，这个偏差事件的概率上界可以表示为：
 
 $P(\frac{1}{n} \sum X_i \ge a) \le e^{-n \cdot D(a || p)}$
 
-这里的指数项 $D(a || p)$ 并不是一个随意的数学表达式。它在信息论中有一个鼎鼎大名的身份——**[Kullback-Leibler散度](@article_id:300447)（[KL散度](@article_id:327627)）**，其具体形式为 ：
+这里的指数项 $D(a || p)$ 并不是一个随意的数学表达式。它在信息论中有一个鼎鼎大名的身份——**[Kullback-Leibler散度](@keyword=kullback_leibler_divergence|lang=zh-CN|style=Feynman)（[KL散度](@keyword=relative_entropy|lang=zh-CN|style=Feynman)）**，其具体形式为 [@problem_id:1610162]：
 
 $D(a || p) = a \ln(\frac{a}{p}) + (1-a) \ln(\frac{1-a}{1-p})$
 
-那么，KL散度是什么呢？直观地说，它衡量了两个[概率分布](@article_id:306824)之间的“差异”或“距离”（尽管它不是严格意义上的距离）。在这个情境中，它衡量了“真实”的[伯努利分布](@article_id:330636)（参数为 $p$）与我们“观测”到的[经验分布](@article_id:337769)（参数为 $a$）之间的差异。
+那么，KL散度是什么呢？直观地说，它衡量了两个[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)之间的“差异”或“距离”（尽管它不是严格意义上的距离）。在这个情境中，它衡量了“真实”的[伯努利分布](@keyword=bernoulli_distribution|lang=zh-CN|style=Feynman)（参数为 $p$）与我们“观测”到的[经验分布](@keyword=empirical_distributions|lang=zh-CN|style=Feynman)（参数为 $a$）之间的差异。
 
-这个公式揭示了一个惊人的事实：一个大规模随机系统偏离其[期望](@article_id:311378)行为的概率，是以指数形式衰减的，而衰减的速率，正比于这个偏离状态与[期望](@article_id:311378)状态之间的“信息论距离”！
+这个公式揭示了一个惊人的事实：一个大规模随机系统偏离其[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)行为的概率，是以指数形式衰减的，而衰减的速率，正比于这个偏离状态与[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)状态之间的“信息论距离”！
 
 换句话说，系统要“意外地”表现出一种与它内在规律（由 $p$ 决定）截然不同的行为（由 $a$ 体现），其发生的概率就像是要支付一笔巨大的“信息成本”。偏差越大，信息论距离 $D(a || p)$ 就越大，这笔成本就呈指数级增长，事件发生的可能性也就呈指数级下降。
 

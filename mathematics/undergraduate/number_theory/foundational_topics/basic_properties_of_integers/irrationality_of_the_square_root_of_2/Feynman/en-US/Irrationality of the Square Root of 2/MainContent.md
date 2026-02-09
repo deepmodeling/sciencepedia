@@ -1,7 +1,7 @@
 ## Introduction
 The number $\sqrt{2}$, the simple length of a square's diagonal, holds a secret that shook the foundations of ancient mathematics: it cannot be expressed as a ratio of two whole numbers. This discovery of its irrationality marked a pivotal moment, revealing that our intuitive world of fractions was incomplete and opening the door to a richer, more complex understanding of the number line. This article embarks on a journey to unravel this fundamental truth. It addresses the central question: how can we be absolutely certain that $\sqrt{2}$ is irrational?
 
-In the chapters that follow, we will first explore the core "Principles and Mechanisms," dissecting multiple elegant proofs, from the classic argument by contradiction to insights from prime factorization and [continued fractions](@article_id:263525). Next, in "Applications and Interdisciplinary Connections," we will see how this single fact ripples through geometry, abstract algebra, and even the physics of motion, connecting disparate fields with a thread of pure logic. Finally, "Hands-On Practices" will provide an opportunity to engage directly with these concepts, solidifying your understanding. Prepare to see how one "impossible" number reshaped the landscape of science and mathematics.
+In the chapters that follow, we will first explore the core "Principles and Mechanisms," dissecting multiple elegant proofs, from the classic argument by contradiction to insights from prime factorization and [continued fractions](@keyword=continued_fractions|lang=en-US|style=Feynman). Next, in "Applications and Interdisciplinary Connections," we will see how this single fact ripples through geometry, abstract algebra, and even the physics of motion, connecting disparate fields with a thread of pure logic. Finally, "Hands-On Practices" will provide an opportunity to engage directly with these concepts, solidifying your understanding. Prepare to see how one "impossible" number reshaped the landscape of science and mathematics.
 
 ## Principles and Mechanisms
 
@@ -15,7 +15,7 @@ Other numbers have tails that never end but repeat in a predictable cycle. The f
 
 Why do all fractions, all **rational numbers**, have this well-behaved property of either terminating or repeating? The answer lies in the simple process of long division. When you divide an integer $p$ by an integer $q$, the only possible remainders at each step are $0, 1, 2, \ldots, q-1$. If the remainder ever becomes $0$, the division ends, and the decimal terminates. If the remainder never becomes $0$, then by the pigeonhole principle, after at most $q$ steps, one of the previous remainders must show up again. Once a remainder repeats, the entire sequence of calculations repeats, and the digits in your answer will form a repeating block. There's no escape! Every rational number must have a decimal tail that is either finite or forever periodic.
 
-This gives us our first powerful tool. If we can find a number whose decimal expansion goes on forever *without ever repeating*, it cannot be a rational number. It must be something else: an **irrational** number. As it turns out, the decimal expansion of $\sqrt{2}$ begins $1.4142135623\ldots$ and continues, endlessly, with no discernible pattern. It is non-terminating and non-repeating. By this criterion, $\sqrt{2}$ is irrational . But saying "we checked a lot of digits and didn't find a pattern" is not a proof. How can we be *absolutely certain* that a pattern never emerges? For that, we need a more powerful form of argument.
+This gives us our first powerful tool. If we can find a number whose decimal expansion goes on forever *without ever repeating*, it cannot be a rational number. It must be something else: an **irrational** number. As it turns out, the decimal expansion of $\sqrt{2}$ begins $1.4142135623\ldots$ and continues, endlessly, with no discernible pattern. It is non-terminating and non-repeating. By this criterion, $\sqrt{2}$ is irrational [@problem_id:3086601]. But saying "we checked a lot of digits and didn't find a pattern" is not a proof. How can we be *absolutely certain* that a pattern never emerges? For that, we need a more powerful form of argument.
 
 ### The Classic Duel: An Elegant Contradiction
 
@@ -23,7 +23,7 @@ Here we come to one of the most beautiful proofs in all of mathematics, a master
 
 Let’s begin. Assume $\sqrt{2}$ is a rational number. This means we can write it as a fraction of two integers, $a$ and $b$:
 $$ \sqrt{2} = \frac{a}{b} $$
-Now, any fraction can be simplified by canceling common factors. For example, $\frac{12}{18}$ simplifies to $\frac{2}{3}$. We can always reduce a fraction until the numerator and denominator share no common factors (other than 1). This is called writing the fraction in **lowest terms**. A key part of our strategy is to assume we have done this for our fraction $\frac{a}{b}$. So, we state it formally: $a$ and $b$ are **coprime**, meaning their greatest common divisor is 1, or $\gcd(a,b)=1$ . This is the very assumption our argument will attack.
+Now, any fraction can be simplified by canceling common factors. For example, $\frac{12}{18}$ simplifies to $\frac{2}{3}$. We can always reduce a fraction until the numerator and denominator share no common factors (other than 1). This is called writing the fraction in **lowest terms**. A key part of our strategy is to assume we have done this for our fraction $\frac{a}{b}$. So, we state it formally: $a$ and $b$ are **coprime**, meaning their greatest common divisor is 1, or $\gcd(a,b)=1$ [@problem_id:3086587]. This is the very assumption our argument will attack.
 
 With our assumption in place, let's do some simple algebra. Square both sides:
 $$ 2 = \frac{a^2}{b^2} $$
@@ -40,7 +40,7 @@ Look at what has happened! This new equation has the exact same form as our earl
 
 Let's pause and take stock of what we have found. We deduced that $a$ is even. Then we deduced that $b$ is also even. If both $a$ and $b$ are even, they share a common divisor: the number 2.
 
-But wait. This is a disaster! We began with the crucial assumption that our fraction $\frac{a}{b}$ was in its lowest terms, that $a$ and $b$ had no common divisors other than 1. Our logical deduction has led us to a conclusion that directly contradicts our starting point . The argument has collapsed in on itself.
+But wait. This is a disaster! We began with the crucial assumption that our fraction $\frac{a}{b}$ was in its lowest terms, that $a$ and $b$ had no common divisors other than 1. Our logical deduction has led us to a conclusion that directly contradicts our starting point [@problem_id:3086592]. The argument has collapsed in on itself.
 
 When a flawless chain of logic leads to a contradiction, the only possible source of the error is the initial assumption. Our initial assumption was that $\sqrt{2}$ is a rational number. That assumption must be false. And so, with inescapable certainty, we conclude: **$\sqrt{2}$ is irrational**.
 
@@ -48,19 +48,19 @@ When a flawless chain of logic leads to a contradiction, the only possible sourc
 
 The beauty of a deep truth is that it can be seen from many different angles. The "parity" argument (even vs. odd) we just used is beautifully simple, but it can also be expressed in other, more powerful languages. This shows the profound unity of mathematics.
 
-One such language is that of **prime factorization**. The **Fundamental Theorem of Arithmetic** states that every integer greater than 1 can be broken down into a product of prime numbers in a unique way . For example, $12 = 2^2 \times 3^1$. The number 12 will never be equal to $2^1 \times 3^2$ or $5^1 \times 7^1$. Its prime "DNA" is fixed.
+One such language is that of **prime factorization**. The **Fundamental Theorem of Arithmetic** states that every integer greater than 1 can be broken down into a product of prime numbers in a unique way [@problem_id:3086579]. For example, $12 = 2^2 \times 3^1$. The number 12 will never be equal to $2^1 \times 3^2$ or $5^1 \times 7^1$. Its prime "DNA" is fixed.
 
 Let's look again at our equation $2b^2 = a^2$. What does the Fundamental Theorem tell us? Think about the number of times the prime factor 2 appears in the factorization of each side.
 *   On the left side, we have $a^2$. If the prime factorization of $a$ contains the prime 2 raised to some power $k$ (i.e., $v_2(a) = k$), then the factorization of $a^2$ must contain 2 raised to the power $2k$—an **even** number. So, the exponent of 2 in the prime factorization of $a^2$ is always even.
 *   On the right side, we have $2b^2$. If the exponent of 2 in the factorization of $b$ is $m$ (i.e., $v_2(b)=m$), then the exponent of 2 in $b^2$ is $2m$. The exponent of 2 in $2b^2$ is therefore $1 + 2m$—an **odd** number.
 
-So, the equation $a^2 = 2b^2$ claims that two numbers are equal. But the Fundamental Theorem tells us that the number on the left has an even exponent for its prime factor 2, while the number on the right has an odd exponent. This is impossible! A number's prime factorization is unique. It can't have both an even and an odd number of 2s in its DNA. This "parity conflict of exponents" provides another, perhaps more sophisticated, contradiction, proving $\sqrt{2}$ is irrational . Notice that this proof relies on the powerful *uniqueness* of prime factorization, a deeper principle than the simple parity argument required .
+So, the equation $a^2 = 2b^2$ claims that two numbers are equal. But the Fundamental Theorem tells us that the number on the left has an even exponent for its prime factor 2, while the number on the right has an odd exponent. This is impossible! A number's prime factorization is unique. It can't have both an even and an odd number of 2s in its DNA. This "parity conflict of exponents" provides another, perhaps more sophisticated, contradiction, proving $\sqrt{2}$ is irrational [@problem_id:3086590]. Notice that this proof relies on the powerful *uniqueness* of prime factorization, a deeper principle than the simple parity argument required [@problem_id:3086568].
 
 ### A View from a Higher Perch
 
 So far, we have focused intently on $\sqrt{2}$. But true understanding in science and mathematics often comes from generalization. Is there something special about the number 2, or is it part of a larger pattern?
 
-Indeed, it is. The very same logic we used for $\sqrt{2}$ can be applied to the square root of any integer. The conclusion is as simple as it is powerful: **For any positive integer $n$, the number $\sqrt{n}$ is rational if and only if $n$ is a perfect square.** .
+Indeed, it is. The very same logic we used for $\sqrt{2}$ can be applied to the square root of any integer. The conclusion is as simple as it is powerful: **For any positive integer $n$, the number $\sqrt{n}$ is rational if and only if $n$ is a perfect square.** [@problem_id:3086593].
 
 This single, beautiful theorem explains everything at once.
 *   $\sqrt{4} = 2$. It is rational because $4$ is a perfect square ($2^2$).
@@ -70,7 +70,7 @@ This single, beautiful theorem explains everything at once.
 
 This is the nature of deep principles: they organize a whole universe of scattered facts into a single, coherent picture.
 
-We can climb even higher, to the realm of **abstract algebra**. We can classify numbers by the type of polynomial equations they solve. A rational number, like $\frac{a}{b}$, is a solution to a simple, degree-1 polynomial equation with rational coefficients: $bx - a = 0$. What is the simplest polynomial equation with rational coefficients that $\sqrt{2}$ solves? It is, of course, $x^2 - 2 = 0$. One can prove that this is the simplest possible one, and we call it the **minimal polynomial** of $\sqrt{2}$ over the rational numbers . The **degree** of an algebraic number is the degree of its minimal polynomial. Rational numbers are precisely the algebraic numbers of degree 1. Since the degree of $\sqrt{2}$ is 2, it cannot be rational . This algebraic perspective gives us a new way to certify irrationality, connecting the properties of numbers to the structure of polynomials.
+We can climb even higher, to the realm of **abstract algebra**. We can classify numbers by the type of polynomial equations they solve. A rational number, like $\frac{a}{b}$, is a solution to a simple, degree-1 polynomial equation with rational coefficients: $bx - a = 0$. What is the simplest polynomial equation with rational coefficients that $\sqrt{2}$ solves? It is, of course, $x^2 - 2 = 0$. One can prove that this is the simplest possible one, and we call it the **minimal polynomial** of $\sqrt{2}$ over the rational numbers [@problem_id:3086570]. The **degree** of an algebraic number is the degree of its minimal polynomial. Rational numbers are precisely the algebraic numbers of degree 1. Since the degree of $\sqrt{2}$ is 2, it cannot be rational [@problem_id:3086571]. This algebraic perspective gives us a new way to certify irrationality, connecting the properties of numbers to the structure of polynomials.
 
 ### An Unfolding Infinity
 
@@ -87,7 +87,7 @@ But wait, we've seen this remainder $\sqrt{2}-1$ before! Its reciprocal is $\sqr
 
 The continued fraction for $\sqrt{2}$ unfolds in a beautiful, infinite cascade:
 $$ \sqrt{2} = 1 + \frac{1}{2 + \frac{1}{2 + \frac{1}{2 + \ddots}}} $$
-In compact notation, this is written as $[1; 2, 2, 2, \ldots]$, or more elegantly, $[1; \overline{2}]$ .
+In compact notation, this is written as $[1; 2, 2, 2, \ldots]$, or more elegantly, $[1; \overline{2}]$ [@problem_id:3086597].
 
 Here is the final clue. For any rational number, this process must eventually stop, producing a finite continued fraction. The process is, in fact, identical to the Euclidean algorithm for finding the greatest common divisor. But for $\sqrt{2}$, the process never stops. This non-terminating nature is yet another ironclad proof of its irrationality. The fact that its tail is not just infinite, but perfectly periodic, is a signature of a deeper structure shared by numbers like $\sqrt{2}$, hinting at further mysteries to explore.
 

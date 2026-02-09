@@ -1,13 +1,13 @@
 ## 引言
-在数学的宏伟殿堂中，有些思想如同一把万能钥匙，看似简单，却能开启无数扇通往深刻真理的大门。[德摩根定律](@article_id:298977)（De Morgan's Laws）正是这样一把钥匙。它本质上是一对关于集合与逻辑的简单规则，却深刻地揭示了数学世界中一种无处不在的对称性——对偶性。这种“与”和“或”、“交”和“并”之间的相互转化能力，使得我们能够以全新的视角理解复杂的结构，将看似毫不相干的概念联系在一起。它所解决的，正是在不同数学表述之间建立清晰、严谨联系的根本问题。
+在数学的宏伟殿堂中，有些思想如同一把万能钥匙，看似简单，却能开启无数扇通往深刻真理的大门。[德摩根定律](@keyword=de_morgan_s_laws|lang=zh-CN|style=Feynman)（De Morgan's Laws）正是这样一把钥匙。它本质上是一对关于集合与逻辑的简单规则，却深刻地揭示了数学世界中一种无处不在的对称性——对偶性。这种“与”和“或”、“交”和“并”之间的相互转化能力，使得我们能够以全新的视角理解复杂的结构，将看似毫不相干的概念联系在一起。它所解决的，正是在不同数学表述之间建立清晰、严谨联系的根本问题。
 
-在本篇文章中，我们将踏上一段揭示德摩根定律力量的旅程。在第一部分 **原则与机制** 中，我们将深入其在[集合论](@article_id:298234)与拓扑学中的核心作用，探索它如何构建[拓扑空间](@article_id:315467)的基本对称性，并连接起内部、闭包、紧致性等核心概念。接着，在 **应用与[交叉](@article_id:315017)联系** 中，我们将视野扩展到计算机科学、几何学和[数学证明](@article_id:297612)的构造之中，见证这一简单法则如何在不同领域大放异彩。最后，在 **动手实践** 部分，你将有机会通过解决具体问题来巩固和应用所学知识。
+在本篇文章中，我们将踏上一段揭示德摩根定律力量的旅程。在第一部分 **原则与机制** 中，我们将深入其在[集合论](@keyword=set_theory|lang=zh-CN|style=Feynman)与拓扑学中的核心作用，探索它如何构建[拓扑空间](@keyword=topological_spaces|lang=zh-CN|style=Feynman)的基本对称性，并连接起内部、闭包、紧致性等核心概念。接着，在 **应用与[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)联系** 中，我们将视野扩展到计算机科学、几何学和[数学证明](@keyword=mathematical_proof|lang=zh-CN|style=Feynman)的构造之中，见证这一简单法则如何在不同领域大放异彩。最后，在 **动手实践** 部分，你将有机会通过解决具体问题来巩固和应用所学知识。
 
 让我们首先进入这个思想的核心，探索其基本原则与精妙机制。
 
 ## 原则与机制
 
-在前言中，我们已经对拓扑学有了一个初步的印象，它是一门研究空间在[连续形变](@article_id:312105)下保持[不变性](@article_id:300612)质的学科。现在，让我们深入其腹地，探索构建这一切的基石。你可能会惊讶地发现，许多深刻的拓扑概念都源于一个极其简单而优美的思想——一种“对偶性”的对称之美。这个思想的钥匙，就是**德摩根定律 (De Morgan's Laws)**。
+在前言中，我们已经对拓扑学有了一个初步的印象，它是一门研究空间在[连续形变](@keyword=continuous_deformation|lang=zh-CN|style=Feynman)下保持[不变性](@keyword=invariance|lang=zh-CN|style=Feynman)质的学科。现在，让我们深入其腹地，探索构建这一切的基石。你可能会惊讶地发现，许多深刻的拓扑概念都源于一个极其简单而优美的思想——一种“对偶性”的对称之美。这个思想的钥匙，就是**德摩根定律 (De Morgan's Laws)**。
 
 ### 隐藏在明面上的对偶性
 
@@ -15,7 +15,7 @@
 
 但是，让我们换一种思路。如果我们先把两个圆形区域 $A$ 和 $B$ 合并成一个大的区域 $A \cup B$，然后问：哪些地方**不属于**这个合并后的大区域？答案显而易见，就是这个大区域之外的所有地方，即 $(A \cup B)^c$。
 
-现在，请你仔细思考一下。这两种描述——“既不在 $A$ 也不在 $B$”和“不在 $A$ 与 $B$ 的并集里”——难道不是在说同一回事吗？当然是！这正是[德摩根定律](@article_id:298977)的直观体现 ()。它告诉我们一个深刻的真理：
+现在，请你仔细思考一下。这两种描述——“既不在 $A$ 也不在 $B$”和“不在 $A$ 与 $B$ 的并集里”——难道不是在说同一回事吗？当然是！这正是[德摩根定律](@keyword=de_morgan_s_laws|lang=zh-CN|style=Feynman)的直观体现 ([@problem_id:1548071])。它告诉我们一个深刻的真理：
 $$ (A \cup B)^c = A^c \cap B^c $$
 “对一个并集求补”等价于“对每个集合分别求补后再取交集”。
 
@@ -23,86 +23,86 @@ $$ (A \cup B)^c = A^c \cap B^c $$
 $$ (A \cap B)^c = A^c \cup B^c $$
 “对一个交集求补”等价于“对每个集合分别求补后再取并集”。
 
-请注意这里的对称性！**“[补集](@article_id:306716)”**这个操作，就像一个神奇的开关，把**“并集”**（或）变成了**“交集”**（与），反之亦然。这种“并”与“交”之间的对偶关系，正是德摩根定律的精髓。这个简单的思想，不仅适用于两个集合，也适用于任意多个集合，甚至是无穷多个集合 ()。它将成为我们理解拓扑学中许多核心概念的万能钥匙。
+请注意这里的对称性！**“[补集](@keyword=complement_of_a_set|lang=zh-CN|style=Feynman)”**这个操作，就像一个神奇的开关，把**“并集”**（或）变成了**“交集”**（与），反之亦然。这种“并”与“交”之间的对偶关系，正是德摩根定律的精髓。这个简单的思想，不仅适用于两个集合，也适用于任意多个集合，甚至是无穷多个集合 ([@problem_id:1548079])。它将成为我们理解拓扑学中许多核心概念的万能钥匙。
 
 ### 游戏规则：拓扑学及其对称性
 
-拓扑学的“游戏规则”非常简洁，它由三个关于**[开集](@article_id:303845)**的公理定义：
-1. 空集 $\emptyset$ 和全空间 $X$ 都是[开集](@article_id:303845)。
-2. **任意**多个[开集](@article_id:303845)的**并集**仍然是[开集](@article_id:303845)。
-3. **有限**多个[开集](@article_id:303845)的**交集**仍然是[开集](@article_id:303845)。
+拓扑学的“游戏规则”非常简洁，它由三个关于**[开集](@keyword=open_set|lang=zh-CN|style=Feynman)**的公理定义：
+1. 空集 $\emptyset$ 和全空间 $X$ 都是[开集](@keyword=open_set|lang=zh-CN|style=Feynman)。
+2. **任意**多个[开集](@keyword=open_set|lang=zh-CN|style=Feynman)的**并集**仍然是[开集](@keyword=open_set|lang=zh-CN|style=Feynman)。
+3. **有限**多个[开集](@keyword=open_set|lang=zh-CN|style=Feynman)的**交集**仍然是[开集](@keyword=open_set|lang=zh-CN|style=Feynman)。
 
-有了[开集](@article_id:303845)，我们就可以定义它的对偶——**[闭集](@article_id:296900)**。一个集合是[闭集](@article_id:296900)，当且仅当它的[补集](@article_id:306716)是[开集](@article_id:303845)。这是一个非常优雅的定义，但它马上带来一个问题：关于[闭集](@article_id:296900)，我们能总结出什么样的规则呢？我们是否需要一套全新的公理？
+有了[开集](@keyword=open_set|lang=zh-CN|style=Feynman)，我们就可以定义它的对偶——**[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)**。一个集合是[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)，当且仅当它的[补集](@keyword=complement_of_a_set|lang=zh-CN|style=Feynman)是[开集](@keyword=open_set|lang=zh-CN|style=Feynman)。这是一个非常优雅的定义，但它马上带来一个问题：关于[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)，我们能总结出什么样的规则呢？我们是否需要一套全新的公理？
 
-答案是：不需要！德摩根定律允许我们直接从[开集](@article_id:303845)公理“翻译”出[闭集](@article_id:296900)的性质。让我们来做一个精彩的推演。[开集](@article_id:303845)公理2说，任意多个[开集的并集](@article_id:312682)是[开集](@article_id:303845)。那与它对偶的，“任意多个[闭集的交集](@article_id:296695)”呢？它会是[闭集](@article_id:296900)吗？
+答案是：不需要！德摩根定律允许我们直接从[开集](@keyword=open_set|lang=zh-CN|style=Feynman)公理“翻译”出[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)的性质。让我们来做一个精彩的推演。[开集](@keyword=open_set|lang=zh-CN|style=Feynman)公理2说，任意多个[开集的并集](@keyword=union_of_open_sets|lang=zh-CN|style=Feynman)是[开集](@keyword=open_set|lang=zh-CN|style=Feynman)。那与它对偶的，“任意多个[闭集的交集](@keyword=intersection_of_closed_sets|lang=zh-CN|style=Feynman)”呢？它会是[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)吗？
 
-让我们来证明一下 ()。假设我们有一族（可能是无限的）[闭集](@article_id:296900) $\{C_i\}$。为了判断它们的交集 $\bigcap_{i} C_i$ 是否是[闭集](@article_id:296900)，我们只需要根据定义，去考察它的补集 $(\bigcap_{i} C_i)^c$ 是不是[开集](@article_id:303845)。
+让我们来证明一下 ([@problem_id:1548051])。假设我们有一族（可能是无限的）[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman) $\{C_i\}$。为了判断它们的交集 $\bigcap_{i} C_i$ 是否是[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)，我们只需要根据定义，去考察它的补集 $(\bigcap_{i} C_i)^c$ 是不是[开集](@keyword=open_set|lang=zh-CN|style=Feynman)。
 
 这时，德摩根定律就派上用场了！
 $$ \left( \bigcap_{i \in I} C_i \right)^c = \bigcup_{i \in I} C_i^c $$
-因为每一个 $C_i$ 都是[闭集](@article_id:296900)，所以根据定义，它的补集 $C_i^c$ 都是[开集](@article_id:303845)。这样一来，上式右边就变成了**一族[开集的并集](@article_id:312682)**。根据[开集](@article_id:303845)公理2，任意多个[开集的并集](@article_id:312682)必然是[开集](@article_id:303845)！
+因为每一个 $C_i$ 都是[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)，所以根据定义，它的补集 $C_i^c$ 都是[开集](@keyword=open_set|lang=zh-CN|style=Feynman)。这样一来，上式右边就变成了**一族[开集的并集](@keyword=union_of_open_sets|lang=zh-CN|style=Feynman)**。根据[开集](@keyword=open_set|lang=zh-CN|style=Feynman)公理2，任意多个[开集的并集](@keyword=union_of_open_sets|lang=zh-CN|style=Feynman)必然是[开集](@keyword=open_set|lang=zh-CN|style=Feynman)！
 
-瞧！我们证明了 $\bigcap_{i} C_i$ 的[补集](@article_id:306716)是一个[开集](@article_id:303845)。因此，$\bigcap_{i} C_i$ 本身必然是一个[闭集](@article_id:296900)。我们刚刚只用了德摩根定律，就从[开集](@article_id:303845)的公理免费得到了[闭集](@article_id:296900)的一条重要性质：**任意多个[闭集的交集](@article_id:296695)是[闭集](@article_id:296900)**。
+瞧！我们证明了 $\bigcap_{i} C_i$ 的[补集](@keyword=complement_of_a_set|lang=zh-CN|style=Feynman)是一个[开集](@keyword=open_set|lang=zh-CN|style=Feynman)。因此，$\bigcap_{i} C_i$ 本身必然是一个[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)。我们刚刚只用了德摩根定律，就从[开集](@keyword=open_set|lang=zh-CN|style=Feynman)的公理免费得到了[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)的一条重要性质：**任意多个[闭集的交集](@keyword=intersection_of_closed_sets|lang=zh-CN|style=Feynman)是[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)**。
 
-同样地，你可以试着从“有限多个[开集](@article_id:303845)的交集是[开集](@article_id:303845)”这条公理出发，利用[德摩根定律](@article_id:298977)推导出“有限多个[闭集](@article_id:296900)的并集是[闭集](@article_id:296900)”。这种开与闭、并与交之间的深刻对偶，正是拓扑空间结构的对称性所在。这种对称性也延伸到了更复杂的集合类型，比如，一个**$G_\delta$ 集**（可数个[开集](@article_id:303845)的交集）的补集，通过德摩根定律，自然地变成了一个**$F_\sigma$ 集**（可数个[闭集](@article_id:296900)的并集）()。德摩根定律就像一座桥梁，连接着[开集和闭集](@article_id:300799)这两个世界。
+同样地，你可以试着从“有限多个[开集](@keyword=open_set|lang=zh-CN|style=Feynman)的交集是[开集](@keyword=open_set|lang=zh-CN|style=Feynman)”这条公理出发，利用[德摩根定律](@keyword=de_morgan_s_laws|lang=zh-CN|style=Feynman)推导出“有限多个[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)的并集是[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)”。这种开与闭、并与交之间的深刻对偶，正是拓扑空间结构的对称性所在。这种对称性也延伸到了更复杂的集合类型，比如，一个**$G_\delta$ 集**（可数个[开集](@keyword=open_set|lang=zh-CN|style=Feynman)的交集）的补集，通过德摩根定律，自然地变成了一个**$F_\sigma$ 集**（可数个[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)的并集）([@problem_id:1548102])。德摩根定律就像一座桥梁，连接着[开集和闭集](@keyword=open_and_closed_sets|lang=zh-CN|style=Feynman)这两个世界。
 
-### 空间的“阴”与“阳”：[闭包与内部](@article_id:306579)
+### 空间的“阴”与“阳”：[闭包与内部](@keyword=closure_and_interior|lang=zh-CN|style=Feynman)
 
 在拓扑学的世界里，有两个非常重要的操作：求一个集合的**内部 (interior)** 和**闭包 (closure)**。
 
-- 集合 $A$ 的**内部** $\text{int}(A)$，是包含在 $A$ 里面的“最大”的[开集](@article_id:303845)。你可以把它想象成 $A$ 中那些最核心、最不受边界影响的部分。
-- 集合 $A$ 的**闭包** $\overline{A}$，是包含 $A$ 的“最小”的[闭集](@article_id:296900)。你可以把它想象成 $A$ 自身以及所有“紧贴”着 $A$ 的边界点。
+- 集合 $A$ 的**内部** $\text{int}(A)$，是包含在 $A$ 里面的“最大”的[开集](@keyword=open_set|lang=zh-CN|style=Feynman)。你可以把它想象成 $A$ 中那些最核心、最不受边界影响的部分。
+- 集合 $A$ 的**闭包** $\overline{A}$，是包含 $A$ 的“最小”的[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)。你可以把它想象成 $A$ 自身以及所有“紧贴”着 $A$ 的边界点。
 
-“内部”和“闭包”听起来就像一对反义词，一个向内收缩，一个向外扩张。它们之间是否存在类似[开集与闭集](@article_id:316566)那样的对偶关系呢？答案是肯定的，而揭示这一点的，依然是[德摩根定律](@article_id:298977)。
+“内部”和“闭包”听起来就像一对反义词，一个向内收缩，一个向外扩张。它们之间是否存在类似[开集与闭集](@keyword=open_vs_closed_sets|lang=zh-CN|style=Feynman)那样的对偶关系呢？答案是肯定的，而揭示这一点的，依然是[德摩根定律](@keyword=de_morgan_s_laws|lang=zh-CN|style=Feynman)。
 
 它们之间的关系美妙得令人屏息：
 $$ (\overline{A})^c = \text{int}(A^c) $$
-这个公式 () 告诉我们：一个集合**闭包的[补集](@article_id:306716)**，恰好就是这个集合**补集的内部**。
+这个公式 ([@problem_id:1548097]) 告诉我们：一个集合**闭包的[补集](@keyword=complement_of_a_set|lang=zh-CN|style=Feynman)**，恰好就是这个集合**补集的内部**。
 
 让我们用日常语言来“翻译”一下这个公式的含义：
 - 左边 $(\overline{A})^c$ 代表“所有不靠近集合 $A$ 的点”。
 - 右边 $\text{int}(A^c)$ 代表“所有深深地处于‘非 $A$’区域内部的点”。
 
-这两种描述是完[全等](@article_id:323993)价的！一个点不靠近 $A$，就意味着它周围有一个小邻域完全不接触 $A$，这不正是“深处‘非 $A$’区域内部”的定义吗？这个直觉上显而易见的事实，其严格的[数学证明](@article_id:297612)，核心步骤就是利用闭包的定义（所有包含 $A$ 的[闭集的交集](@article_id:296695)）和[德摩根定律](@article_id:298977)。
+这两种描述是完[全等](@keyword=congruence|lang=zh-CN|style=Feynman)价的！一个点不靠近 $A$，就意味着它周围有一个小邻域完全不接触 $A$，这不正是“深处‘非 $A$’区域内部”的定义吗？这个直觉上显而易见的事实，其严格的[数学证明](@keyword=mathematical_proof|lang=zh-CN|style=Feynman)，核心步骤就是利用闭包的定义（所有包含 $A$ 的[闭集的交集](@keyword=intersection_of_closed_sets|lang=zh-CN|style=Feynman)）和[德摩根定律](@keyword=de_morgan_s_laws|lang=zh-CN|style=Feynman)。
 
-这个对偶关系非常强大。例如，它能给我们一个描述**[稠密集](@article_id:307472) (dense set)** 的全新视角。我们说有理数 $\mathbb{Q}$ 在实数 $\mathbb{R}$ 中是稠密的，直观上是指有理数“无处不在”。其严格定义是 $\overline{\mathbb{Q}} = \mathbb{R}$。利用我们刚刚得到的对偶公式，这个定义可以被等价地转换：
+这个对偶关系非常强大。例如，它能给我们一个描述**[稠密集](@keyword=dense_sets|lang=zh-CN|style=Feynman) (dense set)** 的全新视角。我们说有理数 $\mathbb{Q}$ 在实数 $\mathbb{R}$ 中是稠密的，直观上是指有理数“无处不在”。其严格定义是 $\overline{\mathbb{Q}} = \mathbb{R}$。利用我们刚刚得到的对偶公式，这个定义可以被等价地转换：
 $$ \overline{A} = X \iff (\overline{A})^c = X^c \iff \text{int}(A^c) = \emptyset $$
-一个集合 $A$ 在空间 $X$ 中是稠密的，当且仅当它的[补集](@article_id:306716) $A^c$ 的内部是空的 ()！这意味着，[稠密集](@article_id:307472)的[补集](@article_id:306716)是“中空”的，它可能包含很多点，但没有任何一个点是“安全地”处于其中，因为它的任意一个邻域内都必定会闯入来自 $A$ 的点。这为我们理解“稠密”这个概念提供了一个多么形象而深刻的图景！
+一个集合 $A$ 在空间 $X$ 中是稠密的，当且仅当它的[补集](@keyword=complement_of_a_set|lang=zh-CN|style=Feynman) $A^c$ 的内部是空的 ([@problem_id:1548056])！这意味着，[稠密集](@keyword=dense_sets|lang=zh-CN|style=Feynman)的[补集](@keyword=complement_of_a_set|lang=zh-CN|style=Feynman)是“中空”的，它可能包含很多点，但没有任何一个点是“安全地”处于其中，因为它的任意一个邻域内都必定会闯入来自 $A$ 的点。这为我们理解“稠密”这个概念提供了一个多么形象而深刻的图景！
 
 ### 抽象的核心：剖析紧致性
 
 如果说有什么概念是拓扑学中最核心、最强大但又最抽象的，那一定非**紧致性 (compactness)** 莫属。紧致性通常有两种等价的定义。
 
-1.  **[开覆盖](@article_id:300466)定义**：一个空间是紧致的，如果它的任何一个[开集](@article_id:303845)覆盖（一族能够完全覆盖该空间的[开集](@article_id:303845)），都存在一个有限的子覆盖。这说的是一种“有限性”的性质。
-2.  **有限交性质 (FIP) 定义**：一个空间是紧致的，如果任何一族具有“有限交性质”的[闭集](@article_id:296900)（即这族[闭集](@article_id:296900)中任意有限个的交集都不是空的），其总交集也不是空的。
+1.  **[开覆盖](@keyword=open_cover|lang=zh-CN|style=Feynman)定义**：一个空间是紧致的，如果它的任何一个[开集](@keyword=open_set|lang=zh-CN|style=Feynman)覆盖（一族能够完全覆盖该空间的[开集](@keyword=open_set|lang=zh-CN|style=Feynman)），都存在一个有限的子覆盖。这说的是一种“有限性”的性质。
+2.  **有限交性质 (FIP) 定义**：一个空间是紧致的，如果任何一族具有“有限交性质”的[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)（即这族[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)中任意有限个的交集都不是空的），其总交集也不是空的。
 
-这两个定义，一个用“[开集](@article_id:303845)”和“并集”来描述，另一个用“[闭集](@article_id:296900)”和“交集”来描述，看起来截然不同。然而它们却是等价的。证明它们等价的整个论证过程，就像一架精密运转的逻辑机器，而[德摩根定律](@article_id:298977)，正是这台机器中连接两个世界的关键齿轮 ()。
+这两个定义，一个用“[开集](@keyword=open_set|lang=zh-CN|style=Feynman)”和“并集”来描述，另一个用“[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)”和“交集”来描述，看起来截然不同。然而它们却是等价的。证明它们等价的整个论证过程，就像一架精密运转的逻辑机器，而[德摩根定律](@keyword=de_morgan_s_laws|lang=zh-CN|style=Feynman)，正是这台机器中连接两个世界的关键齿轮 ([@problem_id:1548049])。
 
 让我们看看证明的其中一个方向：“紧致性”如何保证“有限交性质”。
-证明过程常常采用[反证法](@article_id:340295)：假设有一个满足有限交性质的[闭集](@article_id:296900)族 $\{C_i\}$，但它们的总交集 $\bigcap C_i$ 却是空的。
+证明过程常常采用[反证法](@keyword=reductio_ad_absurdum|lang=zh-CN|style=Feynman)：假设有一个满足有限交性质的[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)族 $\{C_i\}$，但它们的总交集 $\bigcap C_i$ 却是空的。
 $$ \bigcap_{i \in I} C_i = \emptyset $$
 两边同时取补集，得到 $(\bigcap C_i)^c = \emptyset^c = X$。
-接下来就是关键一步，[德摩根定律](@article_id:298977)闪亮登场：
+接下来就是关键一步，[德摩根定律](@keyword=de_morgan_s_laws|lang=zh-CN|style=Feynman)闪亮登场：
 $$ \bigcup_{i \in I} C_i^c = X $$
-由于每个 $C_i$ 是[闭集](@article_id:296900)，它的[补集](@article_id:306716) $C_i^c$ 就是[开集](@article_id:303845)。上式表明，这族[开集](@article_id:303845) $\{C_i^c\}$ 构成了对整个空间 $X$ 的一个开覆盖！根据紧致性的定义，必然存在一个[有限子覆盖](@article_id:315465)，比如 $\bigcup_{j \in J} C_j^c = X$。
+由于每个 $C_i$ 是[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)，它的[补集](@keyword=complement_of_a_set|lang=zh-CN|style=Feynman) $C_i^c$ 就是[开集](@keyword=open_set|lang=zh-CN|style=Feynman)。上式表明，这族[开集](@keyword=open_set|lang=zh-CN|style=Feynman) $\{C_i^c\}$ 构成了对整个空间 $X$ 的一个开覆盖！根据紧致性的定义，必然存在一个[有限子覆盖](@keyword=finite_subcover|lang=zh-CN|style=Feynman)，比如 $\bigcup_{j \in J} C_j^c = X$。
 再次请出德摩根定律，对上式两边取补集，我们得到：
 $$ \bigcap_{j \in J} C_j = \emptyset $$
-这个结论是说：我们找到了这个[闭集](@article_id:296900)族中的有限个集合，它们的交集是空的。但这与我们最初的假设——该集族具有“有限交性质”——完全矛盾！因此，最初的假设“总交集为空”必定是错误的。
+这个结论是说：我们找到了这个[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)族中的有限个集合，它们的交集是空的。但这与我们最初的假设——该集族具有“有限交性质”——完全矛盾！因此，最初的假设“总交集为空”必定是错误的。
 
-看到了吗？在这段如诗歌般对仗工整的证明中，德摩根定律扮演了两次关键的“翻译官”角色，一次将“交集为空”翻译成“并集为[全集](@article_id:327907)”，另一次反过来。它完美地揭示了“[开覆盖](@article_id:300466)”和“有限交性质”这对概念只不过是同一枚硬币的两面。
+看到了吗？在这段如诗歌般对仗工整的证明中，德摩根定律扮演了两次关键的“翻译官”角色，一次将“交集为空”翻译成“并集为[全集](@keyword=universal_set|lang=zh-CN|style=Feynman)”，另一次反过来。它完美地揭示了“[开覆盖](@keyword=open_cover|lang=zh-CN|style=Feynman)”和“有限交性质”这对概念只不过是同一枚硬币的两面。
 
 ### 超越集合：一种普适的逻辑定律
 
-到目前为止，我们看到的[德摩根定律](@article_id:298977)都是关于集合的。但它的威力远不止于此。它实际上是逻辑学的一条基本准则，适用于更广泛的领域，尤其是涉及量词——“对所有”（$\forall$）和“存在”（$\exists$）——的命题。
+到目前为止，我们看到的[德摩根定律](@keyword=de_morgan_s_laws|lang=zh-CN|style=Feynman)都是关于集合的。但它的威力远不止于此。它实际上是逻辑学的一条基本准则，适用于更广泛的领域，尤其是涉及量词——“对所有”（$\forall$）和“存在”（$\exists$）——的命题。
 
-逻辑学中的[德摩根定律](@article_id:298977)是这样的：
+逻辑学中的[德摩根定律](@keyword=de_morgan_s_laws|lang=zh-CN|style=Feynman)是这样的：
 - “**并非**（**对所有**的 $x$，命题 $P(x)$ 都为真）”等价于“**存在**一个 $x$，使得命题 $P(x)$ 为**假**”。
   $\neg (\forall x, P(x)) \iff \exists x, \neg P(x)$
 - “**并非**（**存在**一个 $x$，使得命题 $P(x)$ 为真）”等价于“**对所有**的 $x$，命题 $P(x)$ 都为**假**”。
   $\neg (\exists x, P(x)) \iff \forall x, \neg P(x)$
 
-这里的“$\forall$”和“$\exists$”就像集合论中的“$\cap$”和“$\cup$”，而“否定”（$\neg$）就像“补集”运算。否定一个[量词](@article_id:319547)，就等于把[量词](@article_id:319547)本身对调（$\forall \leftrightarrow \exists$），然后否定它后面的命题。
+这里的“$\forall$”和“$\exists$”就像集合论中的“$\cap$”和“$\cup$”，而“否定”（$\neg$）就像“补集”运算。否定一个[量词](@keyword=quantifiers|lang=zh-CN|style=Feynman)，就等于把[量词](@keyword=quantifiers|lang=zh-CN|style=Feynman)本身对调（$\forall \leftrightarrow \exists$），然后否定它后面的命题。
 
-这个逻辑版的[德摩根定律](@article_id:298977)在数学分析中无处不在。例如，我们如何描述“一个函数 $f$ 在点 $x_0$ **不连续**”？我们只需取连续的定义，然后一步步地应用逻辑否定即可 ()。同样，要描述“一个序列 $(x_n)$ **不收敛**于 $x$”，我们也需要对收敛的 $\epsilon-N$ 定义进行逻辑否定 ()。这个过程的每一步，都是在应用[德摩根定律](@article_id:298977)，将“对所有”换成“存在”，将“存在”换成“对所有”，并最终否定核心的不等式。
+这个逻辑版的[德摩根定律](@keyword=de_morgan_s_laws|lang=zh-CN|style=Feynman)在数学分析中无处不在。例如，我们如何描述“一个函数 $f$ 在点 $x_0$ **不连续**”？我们只需取连续的定义，然后一步步地应用逻辑否定即可 ([@problem_id:1548029])。同样，要描述“一个序列 $(x_n)$ **不收敛**于 $x$”，我们也需要对收敛的 $\epsilon-N$ 定义进行逻辑否定 ([@problem_id:1548101])。这个过程的每一步，都是在应用[德摩根定律](@keyword=de_morgan_s_laws|lang=zh-CN|style=Feynman)，将“对所有”换成“存在”，将“存在”换成“对所有”，并最终否定核心的不等式。
 
-从直观的集合图形，到拓扑学的基本公理，再到闭包、内部、稠密、紧致等核心概念，最后到分析学的基础语言，[德摩根定律](@article_id:298977)如一条金线，将这些看似无关的领域串联起来，向我们展示了数学内在的和谐与统一。它不仅仅是一条公式，更是一种思考方式，一种在不同数学结构之间建立对偶、发现对称的强大世界观。掌握了它，你就掌握了开启现[代数学](@article_id:316869)大门的又一把钥匙。
+从直观的集合图形，到拓扑学的基本公理，再到闭包、内部、稠密、紧致等核心概念，最后到分析学的基础语言，[德摩根定律](@keyword=de_morgan_s_laws|lang=zh-CN|style=Feynman)如一条金线，将这些看似无关的领域串联起来，向我们展示了数学内在的和谐与统一。它不仅仅是一条公式，更是一种思考方式，一种在不同数学结构之间建立对偶、发现对称的强大世界观。掌握了它，你就掌握了开启现[代数学](@keyword=algebra|lang=zh-CN|style=Feynman)大门的又一把钥匙。

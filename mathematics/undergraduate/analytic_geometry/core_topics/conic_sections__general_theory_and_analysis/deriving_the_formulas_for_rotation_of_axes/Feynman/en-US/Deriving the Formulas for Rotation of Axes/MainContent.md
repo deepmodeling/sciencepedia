@@ -1,19 +1,19 @@
 ## Introduction
-Why do the coordinates of a stationary object change when we simply tilt our point of view? This fundamental question is the gateway to understanding the [rotation of axes](@article_id:178308), a core concept in [analytic geometry](@article_id:163772) with profound implications across science and engineering. While seemingly a simple geometric puzzle, deriving the transformation formulas reveals deep connections between different mathematical fields and highlights the crucial principle of [rotational invariance](@article_id:137150). This article will guide you through this concept in three stages. First, in "Principles and Mechanisms," we will derive the rotation formulas from multiple perspectives, including geometry, linear algebra, and even calculus. Next, "Applications and Interdisciplinary Connections" will explore how this tool is used to simplify complex problems in physics, engineering, and chemistry. Finally, "Hands-On Practices" will provide opportunities to apply these derivations and solidify your understanding. Let's begin by exploring the foundational principles behind this essential transformation.
+Why do the coordinates of a stationary object change when we simply tilt our point of view? This fundamental question is the gateway to understanding the [rotation of axes](@keyword=rotation_of_axes|lang=en-US|style=Feynman), a core concept in [analytic geometry](@keyword=analytic_geometry|lang=en-US|style=Feynman) with profound implications across science and engineering. While seemingly a simple geometric puzzle, deriving the transformation formulas reveals deep connections between different mathematical fields and highlights the crucial principle of [rotational invariance](@keyword=rotational_invariance|lang=en-US|style=Feynman). This article will guide you through this concept in three stages. First, in "Principles and Mechanisms," we will derive the rotation formulas from multiple perspectives, including geometry, linear algebra, and even calculus. Next, "Applications and Interdisciplinary Connections" will explore how this tool is used to simplify complex problems in physics, engineering, and chemistry. Finally, "Hands-On Practices" will provide opportunities to apply these derivations and solidify your understanding. Let's begin by exploring the foundational principles behind this essential transformation.
 
 ## Principles and Mechanisms
 
 It’s a curious thing, but some of the deepest ideas in physics and mathematics come from asking very simple questions. Let’s ask one now: if you are looking at a ladybug on a large sheet of graph paper, what happens to its coordinates if you tilt your head? The ladybug hasn't moved, of course. It’s still at the same physical spot. But the grid lines you are using to describe its location have rotated. The numbers you write down—its coordinates—will change. How? And more importantly, *why* do they change in that specific way?
 
-This simple question about changing our point of view is the essence of [coordinate rotation](@article_id:163950). It's not just a dry exercise in trigonometry; it's a gateway to understanding how we describe the world, and what properties of that world remain true regardless of how we look at it. We will find that the answer can be discovered through many different paths—simple geometry, elegant algebra, even the flow of differential equations—and that all these paths lead to the same beautiful structure.
+This simple question about changing our point of view is the essence of [coordinate rotation](@keyword=coordinate_rotation|lang=en-US|style=Feynman). It's not just a dry exercise in trigonometry; it's a gateway to understanding how we describe the world, and what properties of that world remain true regardless of how we look at it. We will find that the answer can be discovered through many different paths—simple geometry, elegant algebra, even the flow of differential equations—and that all these paths lead to the same beautiful structure.
 
 ### The Geometry of Projections: What Are the New Coordinates?
 
 Let’s get our hands dirty with some geometry. Imagine our original graph paper has axes we call $x$ and $y$. The ladybug is at a point $P$, with coordinates $(x, y)$. Now, we rotate our axes counter-clockwise by an angle $\theta$ to get a new set of axes, $x'$ and $y'$. What are the new coordinates, $(x', y')$?
 
-The new coordinate, $x'$, is simply the measure of how far out the point $P$ is along the new $x'$-axis. Think of it as the length of the shadow that the point's position vector, $\mathbf{r}$ (the arrow from the origin to $P$), casts on the new $x'$-axis. This "shadow casting" is a geometric operation called a **[scalar projection](@article_id:148329)**. In the language of vectors, the most efficient way to calculate this is with the dot product.
+The new coordinate, $x'$, is simply the measure of how far out the point $P$ is along the new $x'$-axis. Think of it as the length of the shadow that the point's position vector, $\mathbf{r}$ (the arrow from the origin to $P$), casts on the new $x'$-axis. This "shadow casting" is a geometric operation called a **[scalar projection](@keyword=scalar_projection|lang=en-US|style=Feynman)**. In the language of vectors, the most efficient way to calculate this is with the dot product.
 
-A point's position is a vector $\mathbf{r} = x\mathbf{e}_x + y\mathbf{e}_y$, where $\mathbf{e}_x$ and $\mathbf{e}_y$ are the [unit vectors](@article_id:165413) along the original axes. The new $x'$-axis is just the old $x$-axis rotated by $\theta$, so its unit vector is $\mathbf{e}_{x'} = (\cos\theta)\mathbf{e}_x + (\sin\theta)\mathbf{e}_y$. The new coordinate $x'$ is the dot product of the position vector with this new unit vector :
+A point's position is a vector $\mathbf{r} = x\mathbf{e}_x + y\mathbf{e}_y$, where $\mathbf{e}_x$ and $\mathbf{e}_y$ are the [unit vectors](@keyword=unit_vectors|lang=en-US|style=Feynman) along the original axes. The new $x'$-axis is just the old $x$-axis rotated by $\theta$, so its unit vector is $\mathbf{e}_{x'} = (\cos\theta)\mathbf{e}_x + (\sin\theta)\mathbf{e}_y$. The new coordinate $x'$ is the dot product of the position vector with this new unit vector [@problem_id:2119971]:
 
 $$
 x' = \mathbf{r} \cdot \mathbf{e}_{x'} = (x\mathbf{e}_x + y\mathbf{e}_y) \cdot ((\cos\theta)\mathbf{e}_x + (\sin\theta)\mathbf{e}_y)
@@ -25,7 +25,7 @@ $$
 x' = x\cos\theta + y\sin\theta
 $$
 
-We can play the same game for the $y'$ coordinate. The new $y'$-axis is the old $y$-axis rotated by $\theta$, so its unit vector is $\mathbf{e}_{y'} = (-\sin\theta)\mathbf{e}_x + (\cos\theta)\mathbf{e}_y$. Projecting the position vector $\mathbf{r}$ onto this new direction gives us $y'$ :
+We can play the same game for the $y'$ coordinate. The new $y'$-axis is the old $y$-axis rotated by $\theta$, so its unit vector is $\mathbf{e}_{y'} = (-\sin\theta)\mathbf{e}_x + (\cos\theta)\mathbf{e}_y$. Projecting the position vector $\mathbf{r}$ onto this new direction gives us $y'$ [@problem_id:2119941]:
 
 $$
 y' = \mathbf{r} \cdot \mathbf{e}_{y'} = (x\mathbf{e}_x + y\mathbf{e}_y) \cdot ((-\sin\theta)\mathbf{e}_x + (\cos\theta)\mathbf{e}_y)
@@ -47,7 +47,7 @@ Let's describe our ladybug's position not by $(x, y)$, but by its distance from 
 
 Now, what happens when we rotate our axes by $\theta$? The ladybug's distance from the origin, $r$, certainly doesn't change. That’s a physical fact, independent of our grid lines. All that changes is the reference line from which we measure the angle. The new $x'$-axis is at an angle $\theta$, so the point's new angle, $\phi'$, measured from this new axis, is simply the old angle minus the rotation angle: $\phi' = \phi - \theta$.
 
-So, the transformation in polar coordinates is ridiculously simple :
+So, the transformation in polar coordinates is ridiculously simple [@problem_id:2119925]:
 $$
 r' = r \quad \text{and} \quad \phi' = \phi - \theta
 $$
@@ -55,7 +55,7 @@ This is elegant! Let's see if this simple rule gives us the same Cartesian formu
 $$
 x' = r\cos(\phi - \theta) \quad \text{and} \quad y' = r\sin(\phi - \theta)
 $$
-Using the [trigonometric identities](@article_id:164571) for the difference of angles, we get:
+Using the [trigonometric identities](@keyword=trigonometric_identities|lang=en-US|style=Feynman) for the difference of angles, we get:
 $$
 x' = r(\cos\phi\cos\theta + \sin\phi\sin\theta) = (r\cos\phi)\cos\theta + (r\sin\phi)\sin\theta
 $$
@@ -75,7 +75,7 @@ This is a beautiful check on our reasoning. By stepping into a more "natural" co
 
 Whenever we perform a transformation, one of the most important questions we can ask is: what stays the same? These unchanging quantities, or **invariants**, often point to the deepest physical principles. For a rotation, our intuition tells us that lengths and distances shouldn't change. The distance from the origin to our ladybug should be the same whether we tilt our head or not.
 
-Let's verify this with our new formulas. The squared distance in the original system is $d^2 = x^2 + y^2$. In the new system, it's $(d')^2 = (x')^2 + (y')^2$. Are they equal? Let's substitute and find out .
+Let's verify this with our new formulas. The squared distance in the original system is $d^2 = x^2 + y^2$. In the new system, it's $(d')^2 = (x')^2 + (y')^2$. Are they equal? Let's substitute and find out [@problem_id:2119968].
 
 $$
 (x')^2 + (y')^2 = (x\cos\theta + y\sin\theta)^2 + (-x\sin\theta + y\cos\theta)^2
@@ -100,9 +100,9 @@ The distance is indeed invariant. This isn't just a mathematical curiosity. It's
 
 So far, we have been thinking about rotating our graph paper while the ladybug stays put. This is called a **passive rotation**—the axes change, but the points are passive. But there's another, equally valid way to think about it. We could keep our graph paper fixed and imagine the ladybug itself moving, rotating around the origin to a new spot. This is called an **active rotation**.
 
-What's the relationship between the two? A moment's thought reveals a wonderful symmetry . Rotating the coordinate axes counter-clockwise by $\theta$ to find a point's new coordinates is *exactly equivalent* to keeping the axes fixed and rotating the point itself clockwise by $\theta$ (or counter-clockwise by $-\theta$). The final numbers you write down are the same.
+What's the relationship between the two? A moment's thought reveals a wonderful symmetry [@problem_id:2119966]. Rotating the coordinate axes counter-clockwise by $\theta$ to find a point's new coordinates is *exactly equivalent* to keeping the axes fixed and rotating the point itself clockwise by $\theta$ (or counter-clockwise by $-\theta$). The final numbers you write down are the same.
 
-This dual perspective is incredibly useful, and it's best handled by the powerful machinery of **linear algebra**. A rotation is a [linear transformation](@article_id:142586), which means it can be represented by a matrix. Let's build the matrix for an *active* rotation by an angle $\phi$. To do this, we just need to see where the basis vectors go .
+This dual perspective is incredibly useful, and it's best handled by the powerful machinery of **linear algebra**. A rotation is a [linear transformation](@keyword=linear_transformation|lang=en-US|style=Feynman), which means it can be represented by a matrix. Let's build the matrix for an *active* rotation by an angle $\phi$. To do this, we just need to see where the basis vectors go [@problem_id:2119924].
 - The vector $\mathbf{e}_x = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$, when rotated by $\phi$, becomes $\begin{pmatrix} \cos\phi \\ \sin\phi \end{pmatrix}$.
 - The vector $\mathbf{e}_y = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$, when rotated by $\phi$, becomes $\begin{pmatrix} \cos(\phi+\pi/2) \\ \sin(\phi+\pi/2) \end{pmatrix} = \begin{pmatrix} -\sin\phi \\ \cos\phi \end{pmatrix}$.
 
@@ -120,17 +120,17 @@ Using the identities $\cos(-\theta) = \cos\theta$ and $\sin(-\theta) = -\sin\the
 $$
 R_{passive}(\theta) = \begin{pmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{pmatrix}
 $$
-Multiplying this out, $\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}$, gives us exactly the formulas we derived from geometry: $x' = x\cos\theta + y\sin\theta$ and $y' = -x\sin\theta + y\cos\theta$. Everything connects. Notice that the passive [rotation matrix](@article_id:139808) is the transpose of the active one: $R_{passive}(\theta) = R_{active}(\theta)^T$. This beautiful and simple relationship encodes the deep duality between rotating the world and rotating our view of it.
+Multiplying this out, $\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}$, gives us exactly the formulas we derived from geometry: $x' = x\cos\theta + y\sin\theta$ and $y' = -x\sin\theta + y\cos\theta$. Everything connects. Notice that the passive [rotation matrix](@keyword=rotation_matrix|lang=en-US|style=Feynman) is the transpose of the active one: $R_{passive}(\theta) = R_{active}(\theta)^T$. This beautiful and simple relationship encodes the deep duality between rotating the world and rotating our view of it.
 
 ### The Rules of the Game: Deriving Rotation from First Principles
 
 Up to now, we've started with the geometric picture of rotation and found the formulas. But can we go the other way? Can we start with the most fundamental properties of a rotation and derive the formulas from pure algebra? This is like a physicist deriving laws of motion from an abstract symmetry principle.
 
-Let’s define a rotation by its essential properties, its "rules of the game"  . Let the transformation be a generic matrix $T = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$.
+Let’s define a rotation by its essential properties, its "rules of the game" [@problem_id:2119927] [@problem_id:2119942]. Let the transformation be a generic matrix $T = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$.
 1.  **It must preserve lengths and angles.** As we saw, this is equivalent to preserving the dot product of any two vectors. Algebraically, this means the matrix must be **orthogonal**, which is the condition $T^T T = I$, where $I$ is the identity matrix.
-2.  **It must preserve orientation.** It can't be a reflection, which would turn a [right-handed system](@article_id:166175) into a left-handed one (like looking in a mirror). This is guaranteed by the condition that the **determinant** of the matrix is $+1$, not $-1$. So, $\det(T) = 1$.
+2.  **It must preserve orientation.** It can't be a reflection, which would turn a [right-handed system](@keyword=right_handed_system|lang=en-US|style=Feynman) into a left-handed one (like looking in a mirror). This is guaranteed by the condition that the **determinant** of the matrix is $+1$, not $-1$. So, $\det(T) = 1$.
 
-Let's see where these two abstract rules lead. The [orthogonality condition](@article_id:168411) $T^T T = I$ gives us:
+Let's see where these two abstract rules lead. The [orthogonality condition](@keyword=orthogonality_condition|lang=en-US|style=Feynman) $T^T T = I$ gives us:
 $$
 \begin{pmatrix} a & c \\ b & d \end{pmatrix} \begin{pmatrix} a & b \\ c & d \end{pmatrix} = \begin{pmatrix} a^2+c^2 & ab+cd \\ ab+cd & b^2+d^2 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
 $$
@@ -149,14 +149,14 @@ Putting it all together, the matrix *must* be:
 $$
 T = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}
 $$
-This is breathtaking. Just by demanding that the transformation preserves distances and orientation, we are *forced* to recover the familiar active rotation matrix. The [trigonometric functions](@article_id:178424) are not just a tool we used; they are woven into the very fabric of what it means to rotate.
+This is breathtaking. Just by demanding that the transformation preserves distances and orientation, we are *forced* to recover the familiar active rotation matrix. The [trigonometric functions](@keyword=trigonometric_functions|lang=en-US|style=Feynman) are not just a tool we used; they are woven into the very fabric of what it means to rotate.
 
 ### Unifying Perspectives: Complex Numbers and Continuous Motion
 
 The story does not end there. The beauty of a fundamental idea is that it reappears in many different guises.
 Consider the complex plane, where a point $(x, y)$ is represented by a single number $z = x + iy$. How do you rotate a complex number? It turns out to be astonishingly simple: you just multiply it by $e^{i\phi} = \cos\phi + i\sin\phi$. This single, elegant operation does the whole job of an active rotation by $\phi$.
 
-So, for our passive axis rotation by $\theta$, which is equivalent to an active rotation by $-\theta$, the new coordinate $z'$ is just the old one $z$ multiplied by $e^{-i\theta}$ .
+So, for our passive axis rotation by $\theta$, which is equivalent to an active rotation by $-\theta$, the new coordinate $z'$ is just the old one $z$ multiplied by $e^{-i\theta}$ [@problem_id:2119934].
 $$
 z' = z e^{-i\theta}
 $$
@@ -166,7 +166,7 @@ x' + iy' = (x+iy)(\cos\theta - i\sin\theta) = (x\cos\theta + y\sin\theta) + i(y\
 $$
 Equating the real and imaginary parts immediately gives our rotation formulas! This links rotation to the deep and powerful world of complex analysis. What was a $2\times2$ matrix operation on real vectors becomes a simple multiplication of complex numbers.
 
-Finally, let’s look at rotation not as a single event, but as a continuous process. What if we rotate the axes just a tiny bit, by an angle $d\theta$? How do the coordinates $(x', y')$ change? This is a question for calculus . It turns out that a small rotation by $d\theta$ transforms a point according to $(x',y') \to (x' + y'd\theta, y' - x'd\theta)$. This implies a relationship between the rates of change:
+Finally, let’s look at rotation not as a single event, but as a continuous process. What if we rotate the axes just a tiny bit, by an angle $d\theta$? How do the coordinates $(x', y')$ change? This is a question for calculus [@problem_id:2119962]. It turns out that a small rotation by $d\theta$ transforms a point according to $(x',y') \to (x' + y'd\theta, y' - x'd\theta)$. This implies a relationship between the rates of change:
 $$
 \frac{dx'}{d\theta} = y' \quad \text{and} \quad \frac{dy'}{d\theta} = -x'
 $$

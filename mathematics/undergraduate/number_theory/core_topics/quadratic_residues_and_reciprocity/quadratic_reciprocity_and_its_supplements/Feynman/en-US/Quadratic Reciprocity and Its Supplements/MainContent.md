@@ -1,11 +1,11 @@
 ## Introduction
-When does a number have a square root in the finite world of [modular arithmetic](@article_id:143206)? This seemingly simple question opens the door to one of number theory's most elegant results: the Law of Quadratic Reciprocity. This theorem reveals a hidden, symmetrical relationship between prime numbers, a "dialogue" that was first unveiled by the great mathematician Carl Friedrich Gauss. It is a cornerstone of modern number theory, celebrated not just for its intrinsic beauty but for its vast and unexpected applications. This article provides a comprehensive exploration of this "Golden Theorem," guiding you from its fundamental principles to its far-reaching impact.
+When does a number have a square root in the finite world of [modular arithmetic](@keyword=modular_arithmetic|lang=en-US|style=Feynman)? This seemingly simple question opens the door to one of number theory's most elegant results: the Law of Quadratic Reciprocity. This theorem reveals a hidden, symmetrical relationship between prime numbers, a "dialogue" that was first unveiled by the great mathematician Carl Friedrich Gauss. It is a cornerstone of modern number theory, celebrated not just for its intrinsic beauty but for its vast and unexpected applications. This article provides a comprehensive exploration of this "Golden Theorem," guiding you from its fundamental principles to its far-reaching impact.
 
-Our journey is structured into three parts. First, in **Principles and Mechanisms**, we will build the theory from the ground up, defining quadratic residues, introducing the powerful notation of the Legendre symbol, and stating the main law along with its crucial supplements. Next, in **Applications and Interdisciplinary Connections**, we will see the theory in action, discovering how [quadratic reciprocity](@article_id:184163) becomes a practical engine for computational algorithms like primality tests, a secret decoder in the world of [cryptography](@article_id:138672), and a bridge to advanced topics in algebraic number theory and complex analysis. Finally, in **Hands-On Practices**, you will have the opportunity to apply these concepts, moving from theoretical understanding to practical mastery by tackling carefully selected problems.
+Our journey is structured into three parts. First, in **Principles and Mechanisms**, we will build the theory from the ground up, defining quadratic residues, introducing the powerful notation of the Legendre symbol, and stating the main law along with its crucial supplements. Next, in **Applications and Interdisciplinary Connections**, we will see the theory in action, discovering how [quadratic reciprocity](@keyword=quadratic_reciprocity|lang=en-US|style=Feynman) becomes a practical engine for computational algorithms like primality tests, a secret decoder in the world of [cryptography](@keyword=cryptography|lang=en-US|style=Feynman), and a bridge to advanced topics in algebraic number theory and complex analysis. Finally, in **Hands-On Practices**, you will have the opportunity to apply these concepts, moving from theoretical understanding to practical mastery by tackling carefully selected problems.
 
 ## Principles and Mechanisms
 
-In our journey into the world of numbers, we often take for granted the properties of operations like addition and multiplication. But when we confine ourselves to the finite, cyclical world of [modular arithmetic](@article_id:143206)—the arithmetic of clocks—strange and beautiful new patterns emerge. Our central question is a simple one: in these finite number systems, which numbers have square roots? This seemingly simple question will lead us to one of the most profound and beautiful theorems in all of mathematics: the Law of Quadratic Reciprocity.
+In our journey into the world of numbers, we often take for granted the properties of operations like addition and multiplication. But when we confine ourselves to the finite, cyclical world of [modular arithmetic](@keyword=modular_arithmetic|lang=en-US|style=Feynman)—the arithmetic of clocks—strange and beautiful new patterns emerge. Our central question is a simple one: in these finite number systems, which numbers have square roots? This seemingly simple question will lead us to one of the most profound and beautiful theorems in all of mathematics: the Law of Quadratic Reciprocity.
 
 ### The World of Squares Modulo a Prime
 
@@ -21,9 +21,9 @@ $5^2 = 25 \equiv 3 \pmod{11}$
 What about the rest? Notice something interesting: $6 \equiv -5 \pmod{11}$, so $6^2 \equiv (-5)^2 = 5^2 \equiv 3 \pmod{11}$. In general, $(p-x)^2 \equiv (-x)^2 = x^2 \pmod p$. So, the second half of the numbers just repeat the squares we've already found:
 $6^2 \equiv 3$, $7^2 \equiv 5$, $8^2 \equiv 9$, $9^2 \equiv 4$, $10^2 \equiv 1 \pmod{11}$.
 
-The set of non-zero numbers that are squares modulo $11$ is $\{1, 3, 4, 5, 9\}$. We call these the **quadratic residues** modulo $11$. The numbers that are *not* squares—$\{2, 6, 7, 8, 10\}$—are the **[quadratic non-residues](@article_id:200615)**.
+The set of non-zero numbers that are squares modulo $11$ is $\{1, 3, 4, 5, 9\}$. We call these the **quadratic residues** modulo $11$. The numbers that are *not* squares—$\{2, 6, 7, 8, 10\}$—are the **[quadratic non-residues](@keyword=quadratic_non_residues|lang=en-US|style=Feynman)**.
 
-Notice the perfect split! There are $\frac{11-1}{2} = 5$ quadratic residues and $5$ [quadratic non-residues](@article_id:200615). This is not a coincidence. For any odd prime $p$, the set of non-zero numbers modulo $p$ is split exactly in half. There are precisely $\frac{p-1}{2}$ quadratic residues and $\frac{p-1}{2}$ [quadratic non-residues](@article_id:200615) . This remarkable symmetry arises because the squaring map $x \mapsto x^2$ is a "two-to-one" map on the non-zero elements; for every square $a$, exactly two numbers, $x_0$ and $-x_0$, have it as their square. The set of non-zero quadratic residues even forms a beautiful algebraic structure: a subgroup of index 2 within the [multiplicative group](@article_id:155481) of all non-zero elements.
+Notice the perfect split! There are $\frac{11-1}{2} = 5$ quadratic residues and $5$ [quadratic non-residues](@keyword=quadratic_non_residues|lang=en-US|style=Feynman). This is not a coincidence. For any odd prime $p$, the set of non-zero numbers modulo $p$ is split exactly in half. There are precisely $\frac{p-1}{2}$ quadratic residues and $\frac{p-1}{2}$ [quadratic non-residues](@keyword=quadratic_non_residues|lang=en-US|style=Feynman) [@problem_id:3089027]. This remarkable symmetry arises because the squaring map $x \mapsto x^2$ is a "two-to-one" map on the non-zero elements; for every square $a$, exactly two numbers, $x_0$ and $-x_0$, have it as their square. The set of non-zero quadratic residues even forms a beautiful algebraic structure: a subgroup of index 2 within the [multiplicative group](@keyword=multiplicative_group|lang=en-US|style=Feynman) of all non-zero elements.
 
 What about $0$? Since $0^2=0$, we consider $0$ to be a quadratic residue, but it's a special case. The interesting action happens with the non-zero numbers.
 
@@ -31,7 +31,7 @@ What about $0$? Since $0^2=0$, we consider $0$ to be a quadratic residue, but it
 
 Constantly writing "is a quadratic residue" is cumbersome. The great mathematician Adrien-Marie Legendre introduced a wonderfully compact notation to capture this idea: the **Legendre symbol**.
 
-The Legendre symbol $\left(\frac{a}{p}\right)$ is defined for an odd prime $p$ as follows :
+The Legendre symbol $\left(\frac{a}{p}\right)$ is defined for an odd prime $p$ as follows [@problem_id:3089062]:
 $$
 \left(\frac{a}{p}\right) =
 \begin{cases}
@@ -48,13 +48,13 @@ The true magic of the Legendre symbol is revealed when we ask how many solutions
 - If $\left(\frac{a}{p}\right) = -1$, by definition there are $0$ solutions.
 - If $\left(\frac{a}{p}\right) = 0$ (meaning $a \equiv 0 \pmod{p}$), there is exactly $1$ solution ($x=0$).
 
-Look closely at these numbers: $2, 0, 1$. We can express them with a single, elegant formula. The number of solutions to $x^2 \equiv a \pmod{p}$ is exactly $1 + \left(\frac{a}{p}\right)$ . This is the kind of unifying beauty that mathematicians live for!
+Look closely at these numbers: $2, 0, 1$. We can express them with a single, elegant formula. The number of solutions to $x^2 \equiv a \pmod{p}$ is exactly $1 + \left(\frac{a}{p}\right)$ [@problem_id:3089021]. This is the kind of unifying beauty that mathematicians live for!
 
 ### The First Clues: The Supplements
 
 Armed with the Legendre symbol, we can begin our expedition, like naturalists cataloging new species. We are hunting for the laws that govern when a number is a square.
 
-Let's start with the simplest interesting number: $-1$. For which primes $p$ does $-1$ have a square root? In other words, when is $\left(\frac{-1}{p}\right) = 1$? Let's test a few small primes :
+Let's start with the simplest interesting number: $-1$. For which primes $p$ does $-1$ have a square root? In other words, when is $\left(\frac{-1}{p}\right) = 1$? Let's test a few small primes [@problem_id:3089016]:
 - For $p=3$: $\left(\frac{-1}{3}\right) = \left(\frac{2}{3}\right) = -1$.
 - For $p=5$: $2^2=4 \equiv -1 \pmod 5$, so $\left(\frac{-1}{5}\right) = 1$.
 - For $p=7$: The squares are $1, 4, 2$. So $\left(\frac{-1}{7}\right) = \left(\frac{6}{7}\right) = -1$.
@@ -64,7 +64,7 @@ A pattern emerges! It seems $\left(\frac{-1}{p}\right)=1$ for $p=5, 13$ but not 
 $$ \left(\frac{-1}{p}\right) = (-1)^{\frac{p-1}{2}} = \begin{cases} 1  \text{if } p \equiv 1 \pmod{4} \\ -1  \text{if } p \equiv 3 \pmod{4} \end{cases} $$
 This rule, easily proven with a tool called **Euler's Criterion**, tells us that the simple question of whether $-1$ is a square neatly cleaves the world of primes in two.
 
-Emboldened, let's try the next prime, $2$. When is $\left(\frac{2}{p}\right) = 1$? 
+Emboldened, let's try the next prime, $2$. When is $\left(\frac{2}{p}\right) = 1$? [@problem_id:3089057]
 - $p=3$: $\left(\frac{2}{3}\right)=-1$.
 - $p=5$: $\left(\frac{2}{5}\right)=-1$.
 - $p=7$: $3^2=9 \equiv 2 \pmod 7$, so $\left(\frac{2}{7}\right)=1$.
@@ -81,20 +81,20 @@ We've handled $-1$ and $2$. What about the relationship between two different od
 
 On the surface, these two questions seem to have nothing to do with each other. One takes place in the world of modulo $p$, the other in the entirely different world of modulo $q$. It was Carl Friedrich Gauss's monumental discovery, a result he called the *Theorema Aureum* or "Golden Theorem," that these two are intimately related. This is the **Law of Quadratic Reciprocity**.
 
-The law states that the symbols $\left(\frac{p}{q}\right)$ and $\left(\frac{q}{p}\right)$ are not independent. They are locked together in a simple, stunning relationship :
+The law states that the symbols $\left(\frac{p}{q}\right)$ and $\left(\frac{q}{p}\right)$ are not independent. They are locked together in a simple, stunning relationship [@problem_id:3089012]:
 $$ \left(\frac{p}{q}\right)\left(\frac{q}{p}\right) = (-1)^{\frac{p-1}{2} \frac{q-1}{2}} $$
 
 Let's unpack this. The exponent is only odd if both $\frac{p-1}{2}$ and $\frac{q-1}{2}$ are odd, which happens if and only if both $p$ and $q$ are of the form $4k+3$. In all other cases, the exponent is even. So, we can state the law in words:
 - If either $p$ or $q$ (or both) are of the form $4k+1$, then $\left(\frac{p}{q}\right) = \left(\frac{q}{p}\right)$.
 - If both $p$ and $q$ are of the form $4k+3$, then $\left(\frac{p}{q}\right) = -\left(\frac{q}{p}\right)$.
 
-This law establishes a shocking "dialogue" between primes. It gives us a powerful shortcut. Suppose we want to find the quadratic residues modulo $23$ . To check if $3$ is a residue, we would need to calculate $\left(\frac{3}{23}\right)$. Instead of squaring numbers modulo $23$, we can use the law. Since $23 \equiv 3 \pmod 4$ and $3 \equiv 3 \pmod 4$, we have $\left(\frac{3}{23}\right) = -\left(\frac{23}{3}\right)$. We know $23 \equiv 2 \pmod 3$, so we need to find $-\left(\frac{2}{3}\right)$. We already know $\left(\frac{2}{3}\right)=-1$, so $\left(\frac{3}{23}\right) = -(-1) = 1$. Thus, $3$ is a square modulo $23$, and we figured this out with almost no calculation!
+This law establishes a shocking "dialogue" between primes. It gives us a powerful shortcut. Suppose we want to find the quadratic residues modulo $23$ [@problem_id:3089028]. To check if $3$ is a residue, we would need to calculate $\left(\frac{3}{23}\right)$. Instead of squaring numbers modulo $23$, we can use the law. Since $23 \equiv 3 \pmod 4$ and $3 \equiv 3 \pmod 4$, we have $\left(\frac{3}{23}\right) = -\left(\frac{23}{3}\right)$. We know $23 \equiv 2 \pmod 3$, so we need to find $-\left(\frac{2}{3}\right)$. We already know $\left(\frac{2}{3}\right)=-1$, so $\left(\frac{3}{23}\right) = -(-1) = 1$. Thus, $3$ is a square modulo $23$, and we figured this out with almost no calculation!
 
 ### Extending the Law: The Jacobi Symbol
 
 The Legendre symbol is defined only when the "denominator" $p$ is a prime. This is restrictive. Can we define a similar symbol for composite denominators? Yes, and it's called the **Jacobi symbol**.
 
-For an odd positive integer $n$ with prime factorization $n = p_1^{e_1} p_2^{e_2} \cdots p_k^{e_k}$, we define the Jacobi symbol as :
+For an odd positive integer $n$ with prime factorization $n = p_1^{e_1} p_2^{e_2} \cdots p_k^{e_k}$, we define the Jacobi symbol as [@problem_id:3089022]:
 $$ \left(\frac{a}{n}\right) = \left(\frac{a}{p_1}\right)^{e_1} \left(\frac{a}{p_2}\right)^{e_2} \cdots \left(\frac{a}{p_k}\right)^{e_k} $$
 It's just the product of the Legendre symbols for the prime factors. Miraculously, all the beautiful laws we just discovered extend perfectly to the Jacobi symbol. For any odd, coprime $m$ and $n$:
 - $\left(\frac{-1}{n}\right) = (-1)^{\frac{n-1}{2}}$
@@ -107,4 +107,4 @@ But a crucial warning is in order. When we generalize, we sometimes lose propert
 $$ \left(\frac{2}{15}\right) = \left(\frac{2}{3}\right)\left(\frac{2}{5}\right) = (-1)(-1) = 1 $$
 The Jacobi symbol is $1$. But is $2$ a square modulo $15$? No. For $x^2 \equiv 2 \pmod{15}$ to have a solution, we'd need solutions to both $x^2 \equiv 2 \pmod 3$ and $x^2 \equiv 2 \pmod 5$. We know the first one has no solution. So, the Jacobi symbol being $1$ is a necessary condition for $a$ to be a square, but it is not sufficient. This subtlety makes the Jacobi symbol a key component in modern primality tests, which cleverly turn this "flaw" into a feature.
 
-This entire elegant structure of reciprocity, from the basic definition of a residue to the powerful Jacobi symbol, can be seen as flowing from a single, deep source: Gauss's Lemma. This lemma provides a way to count and determine the value of the Legendre symbol, and from it, both the supplements and the main law of reciprocity can be rigorously proven . It is the engine that drives this beautiful machinery, revealing the hidden unity and startling dialogue that exists within the world of prime numbers.
+This entire elegant structure of reciprocity, from the basic definition of a residue to the powerful Jacobi symbol, can be seen as flowing from a single, deep source: Gauss's Lemma. This lemma provides a way to count and determine the value of the Legendre symbol, and from it, both the supplements and the main law of reciprocity can be rigorously proven [@problem_id:3089049]. It is the engine that drives this beautiful machinery, revealing the hidden unity and startling dialogue that exists within the world of prime numbers.

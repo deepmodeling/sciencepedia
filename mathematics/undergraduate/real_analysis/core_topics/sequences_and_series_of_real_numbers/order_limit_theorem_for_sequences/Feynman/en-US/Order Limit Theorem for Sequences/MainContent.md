@@ -11,7 +11,7 @@ In our journey into the world of sequences, we've seen that their destination—
 
 Let's begin with a simple thought experiment. Imagine two algorithms, Algorithm A and Algorithm B, designed to approximate some true value. With each iteration $n$, they produce an error, which we'll call $a_n$ and $b_n$. After a lot of testing, you discover that while the first few thousand iterations are chaotic, once you get past, say, the 5000th iteration, Algorithm A is *always* better—its error is consistently smaller than Algorithm B's. That is, for all $n > 5000$, we have $a_n  b_n$. Now, if we know that both algorithms eventually settle down and their errors converge to stable values, $L$ and $M$ respectively, what can we say about these final error values?
 
-Your intuition would probably shout that the final error of A, $L$, must be less than or at most equal to the final error of B, $M$. It seems impossible for Algorithm A, which is always better in the long run, to suddenly have a worse final error. This intuition is correct. This is the heart of the Order Limit Theorem: if two [convergent sequences](@article_id:143629) $(a_n)$ and $(b_n)$ satisfy the inequality $a_n \le b_n$ for all sufficiently large $n$, then their limits must obey the same relationship: $\lim a_n \le \lim b_n$ . The ordering is preserved "in the limit."
+Your intuition would probably shout that the final error of A, $L$, must be less than or at most equal to the final error of B, $M$. It seems impossible for Algorithm A, which is always better in the long run, to suddenly have a worse final error. This intuition is correct. This is the heart of the Order Limit Theorem: if two [convergent sequences](@keyword=convergent_sequences|lang=en-US|style=Feynman) $(a_n)$ and $(b_n)$ satisfy the inequality $a_n \le b_n$ for all sufficiently large $n$, then their limits must obey the same relationship: $\lim a_n \le \lim b_n$ [@problem_id:1313398]. The ordering is preserved "in the limit."
 
 Notice the crucial phrase "for all sufficiently large $n$." The behavior of the first few terms, or even the first few million terms, is irrelevant to the limit. The limit only cares about the ultimate, long-term trend.
 
@@ -24,7 +24,7 @@ Let's pause and think. The limit is a destination, not a step along the way. Con
 $$ \lim_{n \to \infty} a_n = \lim_{n \to \infty} -\frac{1}{n} = 0 $$
 $$ \lim_{n \to \infty} b_n = \lim_{n \to \infty} \frac{1}{n} = 0 $$
 
-They converge to the *exact same point* . The strict gap between them, which was $\frac{2}{n}$, vanishes as they approach infinity. This is a profound idea: a persistent, strict inequality between the terms of sequences can shrink to a non-strict equality between their limits. Therefore, the strongest conclusion we can draw from $a_n  b_n$ is $L \le M$. Strictness is not always preserved.
+They converge to the *exact same point* [@problem_id:1313427]. The strict gap between them, which was $\frac{2}{n}$, vanishes as they approach infinity. This is a profound idea: a persistent, strict inequality between the terms of sequences can shrink to a non-strict equality between their limits. Therefore, the strongest conclusion we can draw from $a_n  b_n$ is $L \le M$. Strictness is not always preserved.
 
 ### The Squeeze Play: A Powerful Tool of Control
 
@@ -32,14 +32,14 @@ This principle of preserving order leads to one of the most powerful and intuiti
 
 As $n$ gets larger and larger, $a_n$ and $c_n$ are getting squeezed closer and closer to $L$. The trapped sequence $(b_n)$ has no choice. It has no room to wander. It must also converge to $L$.
 
-This isn't just a neat trick; it's a workhorse for calculating difficult limits. Suppose we are asked to find the limit of a complicated sequence $(b_n)$, but we know that its distance from a simpler sequence $(a_n)$ is controlled by some third sequence $(c_n)$ that goes to zero. For instance, we might have a condition like $|a_n - b_n| \le c_n$, where $c_n \to 0$ . This inequality is an analyst's dream! We can rewrite it as:
+This isn't just a neat trick; it's a workhorse for calculating difficult limits. Suppose we are asked to find the limit of a complicated sequence $(b_n)$, but we know that its distance from a simpler sequence $(a_n)$ is controlled by some third sequence $(c_n)$ that goes to zero. For instance, we might have a condition like $|a_n - b_n| \le c_n$, where $c_n \to 0$ [@problem_id:1313400]. This inequality is an analyst's dream! We can rewrite it as:
 
 $$ -c_n \le a_n - b_n \le c_n $$
 $$ a_n - c_n \le b_n \le a_n + c_n $$
 
 If we know that $\lim_{n \to \infty} a_n = L$, then since $\lim_{n \to \infty} c_n = 0$, both the lower bound $(a_n - c_n)$ and the upper bound $(a_n + c_n)$ converge to $L$. The Squeeze Theorem snaps into action and tells us, with absolute certainty, that $\lim_{n \to \infty} b_n = L$.
 
-Another classic use is to tame wild, oscillating functions. Consider a sequence like $c_n = \left(\frac{5n^2 + 2}{n^3 + 1}\right) \left(\cos\left(\frac{n\pi}{3}\right) + \arctan(n^2)\right)$ . The second factor, with its cosine and arctangent, jumps all over the place. Calculating its value for any given $n$ is messy, and its long-term pattern is far from obvious. However, we know that no matter what $n$ is, $\cos(\cdot)$ is between $-1$ and $1$, and $\arctan(\cdot)$ is between $-\frac{\pi}{2}$ and $\frac{\pi}{2}$. So, the entire second factor is bounded; it's always trapped inside some fixed interval, say $[-M, M]$. The first factor, $\frac{5n^2 + 2}{n^3 + 1}$, clearly converges to $0$. We have a sequence that goes to zero multiplied by a sequence that is bounded. Using the Squeeze Theorem, we can write:
+Another classic use is to tame wild, oscillating functions. Consider a sequence like $c_n = \left(\frac{5n^2 + 2}{n^3 + 1}\right) \left(\cos\left(\frac{n\pi}{3}\right) + \arctan(n^2)\right)$ [@problem_id:1313376]. The second factor, with its cosine and arctangent, jumps all over the place. Calculating its value for any given $n$ is messy, and its long-term pattern is far from obvious. However, we know that no matter what $n$ is, $\cos(\cdot)$ is between $-1$ and $1$, and $\arctan(\cdot)$ is between $-\frac{\pi}{2}$ and $\frac{\pi}{2}$. So, the entire second factor is bounded; it's always trapped inside some fixed interval, say $[-M, M]$. The first factor, $\frac{5n^2 + 2}{n^3 + 1}$, clearly converges to $0$. We have a sequence that goes to zero multiplied by a sequence that is bounded. Using the Squeeze Theorem, we can write:
 
 $$ -M \left(\frac{5n^2 + 2}{n^3 + 1}\right) \le c_n \le M \left(\frac{5n^2 + 2}{n^3 + 1}\right) $$
 
@@ -55,7 +55,7 @@ If a sequence $(a_n)$ converges to a positive limit $L > 0$, it means the terms 
 
 $$ L - \frac{L}{2}  a_n  L + \frac{L}{2} \quad \implies \quad \frac{L}{2}  a_n  \frac{3L}{2} $$
 
-This is a powerful statement . It guarantees that after a certain point, all the terms of the sequence are not just positive, but are strictly bounded away from zero by a "cushion" of size $\frac{L}{2}$. A sequence converging to $\sqrt{5}$, for instance, will eventually have all its terms be greater than, say, $1$ . This "eventual positivity" can have dramatic effects. For example, if you were to sum the squares of such a sequence, the sum would grow infinitely large because you are adding an infinite number of terms that are all larger than a fixed positive number.
+This is a powerful statement [@problem_id:1313408]. It guarantees that after a certain point, all the terms of the sequence are not just positive, but are strictly bounded away from zero by a "cushion" of size $\frac{L}{2}$. A sequence converging to $\sqrt{5}$, for instance, will eventually have all its terms be greater than, say, $1$ [@problem_id:1313399]. This "eventual positivity" can have dramatic effects. For example, if you were to sum the squares of such a sequence, the sum would grow infinitely large because you are adding an infinite number of terms that are all larger than a fixed positive number.
 
 #### The Integer Lock-In
 
@@ -65,16 +65,16 @@ Let's use our $\epsilon$-trick again. The distance between any two distinct inte
 
 $$ |a_n - L|  0.5 $$
 
-But think about what this means. The interval $(L-0.5, L+0.5)$ has a total length of 1. Such an interval can contain *at most one* integer. Since all the terms $a_n$ (for $n>N$) are integers and they all must lie in this very narrow window, they are all forced to be the *same* integer! The sequence must become constant after the $N$-th term. This phenomenon, where the discrete nature of the terms clashes with the continuous idea of "getting arbitrarily close," forces the sequence to "lock in" to its limiting value . Consequently, the limit $L$ must also be that integer.
+But think about what this means. The interval $(L-0.5, L+0.5)$ has a total length of 1. Such an interval can contain *at most one* integer. Since all the terms $a_n$ (for $n>N$) are integers and they all must lie in this very narrow window, they are all forced to be the *same* integer! The sequence must become constant after the $N$-th term. This phenomenon, where the discrete nature of the terms clashes with the continuous idea of "getting arbitrarily close," forces the sequence to "lock in" to its limiting value [@problem_id:1313439]. Consequently, the limit $L$ must also be that integer.
 
 #### Monotonicity and Order
 
 Finally, let's connect the order *between* sequences to the order *within* a single sequence. A **non-increasing** sequence is one that only ever goes down or stays the same ($x_{n+1} \le x_n$), while a **non-decreasing** sequence only goes up or stays the same ($y_{n+1} \ge y_n$). These monotonic sequences are particularly well-behaved: if they are bounded, they are guaranteed to converge.
 
-Now, let's imagine a non-increasing sequence $(x_n)$ and a [non-decreasing sequence](@article_id:139007) $(y_n)$. Suppose at some point $k$, they cross paths, with $x_k = y_k$. For any future term $n > k$, the non-increasing sequence must have $x_n \le x_k$, while the non-decreasing one must have $y_n \ge y_k$. Combining these, we get a new relationship for all $n>k$:
+Now, let's imagine a non-increasing sequence $(x_n)$ and a [non-decreasing sequence](@keyword=non_decreasing_sequence|lang=en-US|style=Feynman) $(y_n)$. Suppose at some point $k$, they cross paths, with $x_k = y_k$. For any future term $n > k$, the non-increasing sequence must have $x_n \le x_k$, while the non-decreasing one must have $y_n \ge y_k$. Combining these, we get a new relationship for all $n>k$:
 
 $$ x_n \le x_k = y_k \le y_n $$
 
-We have established an ordering between the tails of the two sequences. Now, a simple application of the Order Limit Theorem tells us what must happen to their limits, $L_x$ and $L_y$: $L_x \le L_y$ . The initial ordering, established from a single point of contact and their monotonic nature, dictates their final destinations.
+We have established an ordering between the tails of the two sequences. Now, a simple application of the Order Limit Theorem tells us what must happen to their limits, $L_x$ and $L_y$: $L_x \le L_y$ [@problem_id:1313391]. The initial ordering, established from a single point of contact and their monotonic nature, dictates their final destinations.
 
 From comparing algorithms to taming chaotic functions and revealing the strange behavior of integer sequences, these principles of order provide the fundamental logic for reasoning about the infinite. They are the rules of the road for the journey towards limits, ensuring that even in the strange and wondrous world of the infinite, there is structure, predictability, and an inherent, beautiful order.

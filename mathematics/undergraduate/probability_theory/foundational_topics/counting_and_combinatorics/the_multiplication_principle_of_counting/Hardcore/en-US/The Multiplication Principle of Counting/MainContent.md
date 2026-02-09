@@ -1,7 +1,7 @@
 ## Introduction
 Combinatorics, the mathematics of counting, provides the essential framework for determining the likelihood of events in probability theory. At the heart of this field lies a simple yet profoundly powerful idea: the Multiplication Principle of Counting. This principle addresses the fundamental challenge of enumerating the total number of outcomes for a complex procedure by breaking it down into a sequence of simpler, manageable stages. Without a systematic approach like this, counting the possibilities in scenarios ranging from creating secure passwords to configuring a computer network would be an intractable task. This article provides a structured journey into mastering this fundamental tool.
 
-Across the following chapters, you will build a solid understanding of this principle and its applications. The "Principles and Mechanisms" chapter will introduce the core rule, explore its key variations like sampling with and without replacement, and show how to combine it with other techniques to navigate complex constraints. In "Applications and Interdisciplinary Connections," you will discover how this abstract concept is applied to solve real-world problems in computer science, biology, and engineering, revealing its role as a universal tool for analyzing [discrete systems](@entry_id:167412). Finally, the "Hands-On Practices" chapter will allow you to solidify your knowledge by tackling a curated set of problems. Let us begin by examining the fundamental principles and mechanisms of the Multiplication Principle.
+Across the following chapters, you will build a solid understanding of this principle and its applications. The "Principles and Mechanisms" chapter will introduce the core rule, explore its key variations like sampling with and without replacement, and show how to combine it with other techniques to navigate complex constraints. In "Applications and Interdisciplinary Connections," you will discover how this abstract concept is applied to solve real-world problems in computer science, biology, and engineering, revealing its role as a universal tool for analyzing discrete systems. Finally, the "Hands-On Practices" chapter will allow you to solidify your knowledge by tackling a curated set of problems. Let us begin by examining the fundamental principles and mechanisms of the Multiplication Principle.
 
 ## Principles and Mechanisms
 
@@ -23,7 +23,7 @@ To determine the total number of unique license plates possible, we can view the
 
 By the Multiplication Principle, the total number of unique license plates is the product of the number of choices for each position:
 $$ N = 24 \times 26 \times 9 \times 10 \times 10 \times 26 = 14,601,600 $$
-This example  demonstrates how the principle allows us to systematically build up a large number of combinations from a simple set of rules governing sequential choices.
+This example [@problem_id:1402659] demonstrates how the principle allows us to systematically build up a large number of combinations from a simple set of rules governing sequential choices.
 
 ### Generalizations and Key Applications
 
@@ -31,36 +31,36 @@ The Multiplication Principle serves as the basis for several common counting sce
 
 #### Independent Choices with Replacement
 
-Many problems involve making a sequence of choices from the same set of options, where each choice is independent of the others. This is often referred to as **[sampling with replacement](@entry_id:274194)**.
+Many problems involve making a sequence of choices from the same set of options, where each choice is independent of the others. This is often referred to as **sampling with replacement**.
 
-A clear formalization of this scenario is the concept of a function between two [finite sets](@entry_id:145527). Consider a team of network administrators who must assign a priority level—Low, Medium, or High—to each of five distinct types of network traffic: HTTP, FTP, DNS, SSH, and SMTP. Each traffic type must receive exactly one priority level.
+A clear formalization of this scenario is the concept of a function between two finite sets. Consider a team of network administrators who must assign a priority level—Low, Medium, or High—to each of five distinct types of network traffic: HTTP, FTP, DNS, SSH, and SMTP. Each traffic type must receive exactly one priority level.
 
 We can model this assignment as a function $f: T \to P$, where $T$ is the set of 5 traffic types and $P$ is the set of 3 priority levels. For the first traffic type (HTTP), there are 3 possible priority levels to choose from. For the second (FTP), there are again 3 choices, and so on for all five traffic types. The choice of priority for one traffic type does not affect the options for any other. The total number of distinct assignment configurations is:
 $$ 3 \times 3 \times 3 \times 3 \times 3 = 3^5 = 243 $$
-In general, the number of functions from a set with $n$ elements (the domain) to a set with $k$ elements (the codomain) is $k^n$ .
+In general, the number of functions from a set with $n$ elements (the domain) to a set with $k$ elements (the codomain) is $k^n$ [@problem_id:1402651].
 
 A particularly important special case of this is when there are only two choices for each stage ($k=2$). For instance, a new smartphone might offer 5 optional software features that can each be individually toggled on or off. For each feature, there are 2 states: 'enabled' or 'disabled'. The total number of distinct software configurations is found by multiplying the number of choices for each feature:
 $$ 2 \times 2 \times 2 \times 2 \times 2 = 2^5 = 32 $$
-This type of binary-choice problem is equivalent to counting the number of subsets of a set with 5 elements. Each configuration corresponds to a unique subset of the enabled features, including the [empty set](@entry_id:261946) (no features enabled) and the full set (all features enabled). For a set with $n$ elements, there are $2^n$ possible subsets .
+This type of binary-choice problem is equivalent to counting the number of subsets of a set with 5 elements. Each configuration corresponds to a unique subset of the enabled features, including the empty set (no features enabled) and the full set (all features enabled). For a set with $n$ elements, there are $2^n$ possible subsets [@problem_id:1402673].
 
 #### Dependent Choices without Replacement
 
-In contrast to the previous examples, many situations involve **[sampling without replacement](@entry_id:276879)**, where once an item is chosen, it cannot be chosen again. In these cases, the number of available options decreases at each subsequent stage.
+In contrast to the previous examples, many situations involve **sampling without replacement**, where once an item is chosen, it cannot be chosen again. In these cases, the number of available options decreases at each subsequent stage.
 
-Consider a [cybersecurity](@entry_id:262820) protocol for generating authentication tokens. Each token is an ordered sequence of three *distinct* function calls selected from a library of 20 unique functions. The roles are designated as 'Initialization', 'Processing', and 'Finalization'.
+Consider a cybersecurity protocol for generating authentication tokens. Each token is an ordered sequence of three *distinct* function calls selected from a library of 20 unique functions. The roles are designated as 'Initialization', 'Processing', and 'Finalization'.
 - For the 'Initialization' role, there are 20 available functions.
 - Once the 'Initialization' function is chosen, it cannot be used again. This leaves 19 functions available for the 'Processing' role.
 - With the first two functions selected, there are 18 remaining functions for the 'Finalization' role.
 
 The total number of distinct authentication tokens is:
 $$ 20 \times 19 \times 18 = 6840 $$
-This calculation finds the number of ordered arrangements of 3 elements chosen from a set of 20, which is known as a **k-permutation** of n elements, denoted $P(n, k)$ or ${}_n P_k$. The formula is $P(n, k) = \frac{n!}{(n-k)!}$ .
+This calculation finds the number of ordered arrangements of 3 elements chosen from a set of 20, which is known as a **k-permutation** of n elements, denoted $P(n, k)$ or ${}_n P_k$. The formula is $P(n, k) = \frac{n!}{(n-k)!}$ [@problem_id:1402629].
 
 This "without replacement" constraint can also appear in more subtle forms. Imagine designing a logo with three horizontal color bands, chosen from a palette of 7 colors. If the rules state that any two adjacent bands, as well as the top and bottom bands, must have different colors, this implies that all three bands must be of a unique color. The selection process is:
 - Top band: 7 color choices.
 - Middle band: 6 choices remain (cannot be the same as the top).
 - Bottom band: 5 choices remain (cannot be the same as the top or the middle).
-The total number of designs is $7 \times 6 \times 5 = 210$ .
+The total number of designs is $7 \times 6 \times 5 = 210$ [@problem_id:1402662].
 
 ### Handling Constraints and Complex Scenarios
 
@@ -68,7 +68,7 @@ While the Multiplication Principle is powerful, its direct application can be co
 
 #### The Subtraction Principle
 
-Sometimes, it is easier to count the total number of outcomes without any constraints and then subtract the number of "invalid" or "forbidden" outcomes. This is known as the **Subtraction Principle** or [complementary counting](@entry_id:267948).
+Sometimes, it is easier to count the total number of outcomes without any constraints and then subtract the number of "invalid" or "forbidden" outcomes. This is known as the **Subtraction Principle** or complementary counting.
 
 Let's analyze a menu for a fixed-price dinner consisting of one appetizer, one main course, and one dessert. Suppose there are 4 appetizers, 5 main courses, and 3 desserts. Without any restrictions, the total number of possible meals would be $4 \times 5 \times 3 = 60$.
 
@@ -80,9 +80,9 @@ We can count the number of forbidden meals and subtract them from the total.
 - For constraint 1: The forbidden combination is (1 specific appetizer) $\times$ (1 specific main course) $\times$ (any of the 3 desserts). This gives $1 \times 1 \times 3 = 3$ forbidden meals.
 - For constraint 2: The 'Goulash' (1 main course) cannot be ordered with the 2 desserts that are *not* 'Boolean Biscotti'. This can be paired with any of the 4 appetizers. This gives $4 \times 1 \times 2 = 8$ forbidden meals.
 
-These two sets of forbidden meals are disjoint, as they involve different main courses. The total number of valid meals is therefore $60 - 3 - 8 = 49$ . This approach is often more efficient than trying to directly count all valid combinations that navigate a complex set of rules.
+These two sets of forbidden meals are disjoint, as they involve different main courses. The total number of valid meals is therefore $60 - 3 - 8 = 49$ [@problem_id:1402674]. This approach is often more efficient than trying to directly count all valid combinations that navigate a complex set of rules.
 
-This same logic can be applied to problems like selecting a 'Programmer of the Month' for September, October, and November from 30 students, with the rule that the September and November winners cannot be the same person. Instead of counting valid cases directly ($30 \times 30 \times 29$), one could calculate the total possible sequences ($30^3$) and subtract the invalid ones where the September and November winners are the same ($30 \times 30 \times 1$), yielding $27000 - 900 = 26100$ .
+This same logic can be applied to problems like selecting a 'Programmer of the Month' for September, October, and November from 30 students, with the rule that the September and November winners cannot be the same person. Instead of counting valid cases directly ($30 \times 30 \times 29$), one could calculate the total possible sequences ($30^3$) and subtract the invalid ones where the September and November winners are the same ($30 \times 30 \times 1$), yielding $27000 - 900 = 26100$ [@problem_id:1402677].
 
 #### Multi-Stage Processes with Dependencies
 
@@ -98,7 +98,7 @@ We can analyze this as a two-stage process: the outbound journey (A→B→C→D)
     - B to A: 3 routes available.
     The number of valid return paths for any single outbound journey is $2 \times 3 \times 3 = 18$.
 
-Since there are 24 possible outbound journeys, and each one has 18 possible return journeys, the total number of round-trip itineraries is $24 \times 18 = 432$ .
+Since there are 24 possible outbound journeys, and each one has 18 possible return journeys, the total number of round-trip itineraries is $24 \times 18 = 432$ [@problem_id:1402633].
 
 #### Interacting Constraints and the Need for Casework
 
@@ -118,4 +118,4 @@ Let's attempt to apply the Multiplication Principle sequentially:
     - If the digit in Position 6 is odd, there are only 4 choices for Position 7 (the 5 odd digits minus the one used in Position 6).
     - If the digit in Position 6 is even, there are 5 choices for Position 7 (all odd digits are available).
 
-Because the number of choices for the final stage depends on the *specifics* of the choice made in the previous stage, a simple product chain is insufficient. This signals the need for **casework**, a technique that involves partitioning the problem into [disjoint sets](@entry_id:154341), counting each set separately, and then adding the results (a process formalized by the Addition Principle). For example, one could separately count the number of valid 6-digit prefixes that end in an odd digit and the number that end in an even digit, and then complete the calculation for each case. The existence of such interacting constraints  highlights the boundaries of the simple Multiplication Principle and motivates the need for the more advanced combinatorial techniques that we will explore in subsequent chapters.
+Because the number of choices for the final stage depends on the *specifics* of the choice made in the previous stage, a simple product chain is insufficient. This signals the need for **casework**, a technique that involves partitioning the problem into disjoint sets, counting each set separately, and then adding the results (a process formalized by the Addition Principle). For example, one could separately count the number of valid 6-digit prefixes that end in an odd digit and the number that end in an even digit, and then complete the calculation for each case. The existence of such interacting constraints [@problem_id:1402669] highlights the boundaries of the simple Multiplication Principle and motivates the need for the more advanced combinatorial techniques that we will explore in subsequent chapters.

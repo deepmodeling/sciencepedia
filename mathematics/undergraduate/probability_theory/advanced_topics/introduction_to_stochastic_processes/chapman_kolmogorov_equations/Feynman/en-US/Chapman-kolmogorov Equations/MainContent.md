@@ -20,19 +20,19 @@ Now, suppose today is Sunny. What is the probability that it will be Sunny again
 2.  Sunny today → Cloudy tomorrow → Sunny in two days.
 3.  Sunny today → Rainy tomorrow → Sunny in two days.
 
-There are no other ways for a Sunny today to lead to a Sunny "day after tomorrow." The total probability is the sum of the probabilities of these three distinct paths . If we write $P_{ij}$ for the probability of going from state $i$ to state $j$ in one day, the probability of being Sunny (State 1) in two days, given it's Sunny today, is:
+There are no other ways for a Sunny today to lead to a Sunny "day after tomorrow." The total probability is the sum of the probabilities of these three distinct paths [@problem_id:1337020]. If we write $P_{ij}$ for the probability of going from state $i$ to state $j$ in one day, the probability of being Sunny (State 1) in two days, given it's Sunny today, is:
 
 $P(\text{State 1 in 2 days} | \text{State 1 today}) = \sum_{k \in \{\text{Sunny, Cloudy, Rainy}\}} P_{1k} P_{k1}$
 
 This summation, this act of accounting for all intermediate possibilities, *is* the Chapman-Kolmogorov equation in its most fundamental form. In this simple case, it tells us the probability is $(0.70 \times 0.70) + (0.20 \times 0.30) + (0.10 \times 0.20) = 0.57$.
 
-What is remarkable is that this logical operation of summing over paths corresponds perfectly to the mechanical operation of [matrix multiplication](@article_id:155541). If $P$ is the one-step transition matrix, the two-step transition matrix is simply $P^2 = P \times P$. The probability we just calculated is the entry $(P^2)_{11}$ in the top-left corner of this new matrix. This isn't a coincidence; it's a deep connection between logic and algebra. Whether you are tracking a self-driving car's modes  or a particle's quantum state , the principle remains the same: the probability of an $n$-step journey is found in the matrix $P^n$.
+What is remarkable is that this logical operation of summing over paths corresponds perfectly to the mechanical operation of [matrix multiplication](@keyword=matrix_multiplication|lang=en-US|style=Feynman). If $P$ is the one-step transition matrix, the two-step transition matrix is simply $P^2 = P \times P$. The probability we just calculated is the entry $(P^2)_{11}$ in the top-left corner of this new matrix. This isn't a coincidence; it's a deep connection between logic and algebra. Whether you are tracking a self-driving car's modes [@problem_id:1337015] or a particle's quantum state [@problem_id:1342691], the principle remains the same: the probability of an $n$-step journey is found in the matrix $P^n$.
 
 ### The Unfolding of Continuous Time
 
 Nature, of course, does not always jump in discrete steps. Time flows. Does our principle of intermediate steps still hold? Absolutely.
 
-Imagine a simple electronic component that can be "Operational" or "Failed" . The process is still Markovian, but now transitions can happen at any instant. We want to know the probability $p_{01}(T)$ that a component, starting as Operational (State 0), is Failed (State 1) after a total time $T$. Let's pick an arbitrary moment in between, say time $u$ (where $0  u  T$). At this intermediate time $u$, the component must be in *some* state. It is either still Operational or it has already Failed. There are no other options.
+Imagine a simple electronic component that can be "Operational" or "Failed" [@problem_id:1337021]. The process is still Markovian, but now transitions can happen at any instant. We want to know the probability $p_{01}(T)$ that a component, starting as Operational (State 0), is Failed (State 1) after a total time $T$. Let's pick an arbitrary moment in between, say time $u$ (where $0  u  T$). At this intermediate time $u$, the component must be in *some* state. It is either still Operational or it has already Failed. There are no other options.
 
 So, the journey from Operational to Failed over time $T$ can be broken down into two parts:
 
@@ -43,18 +43,18 @@ Summing these mutually exclusive paths gives us the continuous-time Chapman-Kolm
 
 $p_{01}(T) = p_{00}(u) p_{01}(T-u) + p_{01}(u) p_{11}(T-u)$
 
-More generally, for any two time intervals $s$ and $t$, the transition probabilities $P(t)$ satisfy the **[semigroup](@article_id:153366) property**: $P(s+t) = P(s)P(t)$. This is a powerful statement. It implies that for a time-[homogeneous system](@article_id:149917), the entire evolution is determined by a single object, a **[generator matrix](@article_id:275315)** $Q$, through the beautiful relation $P(t) = \exp(Qt)$ . The Chapman-Kolmogorov property is automatically baked into the very definition of the [matrix exponential](@article_id:138853), because $\exp(Q(s+t)) = \exp(Qs)\exp(Qt)$. The generator $Q$ acts like a velocity, telling us the instantaneous tendencies of the system to change, and the exponential function integrates this tendency over time to give us the full journey.
+More generally, for any two time intervals $s$ and $t$, the transition probabilities $P(t)$ satisfy the **[semigroup](@keyword=semigroup|lang=en-US|style=Feynman) property**: $P(s+t) = P(s)P(t)$. This is a powerful statement. It implies that for a time-[homogeneous system](@keyword=homogeneous_system|lang=en-US|style=Feynman), the entire evolution is determined by a single object, a **[generator matrix](@keyword=generator_matrix|lang=en-US|style=Feynman)** $Q$, through the beautiful relation $P(t) = \exp(Qt)$ [@problem_id:1347928]. The Chapman-Kolmogorov property is automatically baked into the very definition of the [matrix exponential](@keyword=matrix_exponential|lang=en-US|style=Feynman), because $\exp(Q(s+t)) = \exp(Qs)\exp(Qt)$. The generator $Q$ acts like a velocity, telling us the instantaneous tendencies of the system to change, and the exponential function integrates this tendency over time to give us the full journey.
 
 ### From Global Rules to Local Dynamics
 
 So far, we have used the Chapman-Kolmogorov equation to leap across large time intervals. But in physics, we often learn the most by looking at the infinitesimally small. What happens in a tiny sliver of time, $dt$?
 
-Let's look at an ion channel in a neuron, which can be 'Closed' or 'Open' . Let $p(t)$ be the probability it's Open at time $t$. What is the probability $p(t+dt)$? We use our master principle. The channel can be Open at $t+dt$ in two ways:
+Let's look at an ion channel in a neuron, which can be 'Closed' or 'Open' [@problem_id:1337038]. Let $p(t)$ be the probability it's Open at time $t$. What is the probability $p(t+dt)$? We use our master principle. The channel can be Open at $t+dt$ in two ways:
 
 1.  It was already Open at time $t$ and it *didn't* close in the interval $dt$.
 2.  It was Closed at time $t$ and it *did* open in the interval $dt$.
 
-Translating this into mathematics, we get a relationship between $p(t+dt)$ and $p(t)$. By rearranging the terms, dividing by $dt$, and taking the limit as $dt \to 0$, we transform the Chapman-Kolmogorov [integral equation](@article_id:164811) into a differential equation: the **Kolmogorov forward equation**. For the [ion channel](@article_id:170268), this equation looks like:
+Translating this into mathematics, we get a relationship between $p(t+dt)$ and $p(t)$. By rearranging the terms, dividing by $dt$, and taking the limit as $dt \to 0$, we transform the Chapman-Kolmogorov [integral equation](@keyword=integral_equation|lang=en-US|style=Feynman) into a differential equation: the **Kolmogorov forward equation**. For the [ion channel](@keyword=ion_channel|lang=en-US|style=Feynman), this equation looks like:
 
 $\frac{dp(t)}{dt} = \alpha(1-p(t)) - \beta p(t)$
 
@@ -62,9 +62,9 @@ Here, $\alpha$ is the rate of opening, and $\beta$ is the rate of closing. The t
 
 ### When the Rules of the Game Change
 
-We have been living in a comfortable world where the rules of transition are the same yesterday, today, and tomorrow. This is called **time-[homogeneity](@article_id:152118)**. But what if the environment itself is changing?
+We have been living in a comfortable world where the rules of transition are the same yesterday, today, and tomorrow. This is called **time-[homogeneity](@keyword=homogeneity|lang=en-US|style=Feynman)**. But what if the environment itself is changing?
 
-Consider an ecologist studying an island whose ecosystem can be Forest, Grassland, or Barren . The transition from year $n$ to $n+1$ depends on the starting year $n$. For instance, transitions starting in an odd-numbered year ($n=1, 3, ...$) use matrix $A$, while those starting in an even-numbered year ($n=0, 2, ...$) use matrix $B$.
+Consider an ecologist studying an island whose ecosystem can be Forest, Grassland, or Barren [@problem_id:1337039]. The transition from year $n$ to $n+1$ depends on the starting year $n$. For instance, transitions starting in an odd-numbered year ($n=1, 3, ...$) use matrix $A$, while those starting in an even-numbered year ($n=0, 2, ...$) use matrix $B$.
 
 If we start in a 'Forest' state at time $t=2$ and want to know the probability of being 'Barren' by time $t=5$, we can't simply take some matrix to the third power. The journey consists of three distinct steps, each with its own rulebook:
 
@@ -72,12 +72,12 @@ If we start in a 'Forest' state at time $t=2$ and want to know the probability o
 -   Transition from $t=3$ to $t=4$: The starting time $n=3$ is odd, so we use matrix $A$.
 -   Transition from $t=4$ to $t=5$: The starting time $n=4$ is even, so we use matrix $B$.
 
-The Chapman-Kolmogorov principle still guides us. The total transition is the composition of the individual steps, but we must respect the time-ordering. The matrix for the full journey from time 2 to 5 is the product of the individual [transition matrices](@article_id:274124) in chronological order: $T(2,5) = B A B$. This highlights the true essence of the principle: it is a rule for composing journeys, step by ordered step, regardless of whether the steps are identical.
+The Chapman-Kolmogorov principle still guides us. The total transition is the composition of the individual steps, but we must respect the time-ordering. The matrix for the full journey from time 2 to 5 is the product of the individual [transition matrices](@keyword=transition_matrices|lang=en-US|style=Feynman) in chronological order: $T(2,5) = B A B$. This highlights the true essence of the principle: it is a rule for composing journeys, step by ordered step, regardless of whether the steps are identical.
 
 ### Deeper Symmetries and Strange Horizons
 
-The Chapman-Kolmogorov framework is a gateway to even deeper aspects of the world. For systems that have settled into a steady state, or **[stationary distribution](@article_id:142048)**, the equations reveal a hidden time-reversal symmetry. The probability of observing a particular sequence of transitions going forward in time is related to the probability of observing the reverse sequence . This principle of **detailed balance** is fundamental in statistical physics and chemistry.
+The Chapman-Kolmogorov framework is a gateway to even deeper aspects of the world. For systems that have settled into a steady state, or **[stationary distribution](@keyword=stationary_distribution|lang=en-US|style=Feynman)**, the equations reveal a hidden time-reversal symmetry. The probability of observing a particular sequence of transitions going forward in time is related to the probability of observing the reverse sequence [@problem_id:1347938]. This principle of **detailed balance** is fundamental in statistical physics and chemistry.
 
-But what happens when our simple assumptions are pushed to their limits? For some processes, the rates of change can grow so quickly that the system can, in a sense, "accelerate to infinity" in a finite amount of time . This is called an **explosive process**. In such a case, if we add up the probabilities of the system being in any of its finite states, the sum might be less than one! It's as if probability has "leaked out" of our system. The Chapman-Kolmogorov equations for the finite states are not wrong, but they are incomplete. They have revealed to us that our description of the world was missing a state: the state at "infinity." The breakdown of the rule forces us to expand our worldview, a common and beautiful theme in the story of science.
+But what happens when our simple assumptions are pushed to their limits? For some processes, the rates of change can grow so quickly that the system can, in a sense, "accelerate to infinity" in a finite amount of time [@problem_id:1337016]. This is called an **explosive process**. In such a case, if we add up the probabilities of the system being in any of its finite states, the sum might be less than one! It's as if probability has "leaked out" of our system. The Chapman-Kolmogorov equations for the finite states are not wrong, but they are incomplete. They have revealed to us that our description of the world was missing a state: the state at "infinity." The breakdown of the rule forces us to expand our worldview, a common and beautiful theme in the story of science.
 
 From predicting the weather to understanding the very fabric of equilibrium and the limits of our models, the Chapman-Kolmogorov equation is far more than a dry formula. It is a statement about the nature of causality, a tool for dissecting time, and a testament to the idea that even the most complex journeys are just a sequence of simpler steps.

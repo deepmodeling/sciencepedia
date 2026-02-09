@@ -1,11 +1,11 @@
 ## Introduction
-The Nested Interval Property is a foundational principle in [real analysis](@entry_id:145919) that provides a rigorous formulation for the completeness of the [real number system](@entry_id:157774). It addresses the intuitive but crucial idea that an infinite sequence of "shrinking" closed intervals cannot simply vanish into nothingness, ensuring there are no "gaps" on the real number line. This property is not just a theoretical curiosity; it is a powerful tool that underpins many of the most important theorems in analysis and enables practical computational methods.
+The Nested Interval Property is a foundational principle in real analysis that provides a rigorous formulation for the completeness of the real number system. It addresses the intuitive but crucial idea that an infinite sequence of "shrinking" closed intervals cannot simply vanish into nothingness, ensuring there are no "gaps" on the real number line. This property is not just a theoretical curiosity; it is a powerful tool that underpins many of the most important theorems in analysis and enables practical computational methods.
 
-This article will guide you through this powerful concept. First, the "Principles and Mechanisms" chapter will detail the formal definition, its proof using the Axiom of Completeness, and the essential conditions under which it holds. Following this, the "Applications and Interdisciplinary Connections" chapter will explore its far-reaching impact, from [numerical algorithms](@entry_id:752770) like the Bisection Method to the construction of complex structures like the Cantor set. Finally, the "Hands-On Practices" section offers exercises to solidify your understanding and apply the theory to concrete problems.
+This article will guide you through this powerful concept. First, the "Principles and Mechanisms" chapter will detail the formal definition, its proof using the Axiom of Completeness, and the essential conditions under which it holds. Following this, the "Applications and Interdisciplinary Connections" chapter will explore its far-reaching impact, from numerical algorithms like the Bisection Method to the construction of complex structures like the Cantor set. Finally, the "Hands-On Practices" section offers exercises to solidify your understanding and apply the theory to concrete problems.
 
 ## Principles and Mechanisms
 
-Having introduced the fundamental axioms of the real numbers, we now turn to one of their most profound consequences: the Nested Interval Property. This property formalizes the intuitive idea that if we have a sequence of closed intervals, each one contained within the previous, then there must be at least one point common to all of them. This principle is not only a cornerstone of [real analysis](@entry_id:145919) but also provides a powerful tool for proving other key theorems and for constructing important numerical approximations.
+Having introduced the fundamental axioms of the real numbers, we now turn to one of their most profound consequences: the Nested Interval Property. This property formalizes the intuitive idea that if we have a sequence of closed intervals, each one contained within the previous, then there must be at least one point common to all of them. This principle is not only a cornerstone of real analysis but also provides a powerful tool for proving other key theorems and for constructing important numerical approximations.
 
 ### The Definition of a Nested Sequence of Intervals
 
@@ -13,7 +13,7 @@ A sequence of intervals, denoted $(I_n)_{n=1}^\infty$, is said to be **nested** 
 $$
 I_{n+1} \subseteq I_n \quad \text{for all } n \in \mathbb{N}
 $$
-where $\mathbb{N} = \{1, 2, 3, \dots\}$ is the set of [natural numbers](@entry_id:636016).
+where $\mathbb{N} = \{1, 2, 3, \dots\}$ is the set of natural numbers.
 
 Let us consider intervals of the form $I_n = [a_n, b_n]$, where $a_n$ is the left endpoint and $b_n$ is the right endpoint. The condition $I_{n+1} \subseteq I_n$ is equivalent to two simultaneous conditions on the endpoints:
 $$
@@ -41,7 +41,7 @@ $$
 \bigcap_{n=1}^\infty I_n \neq \emptyset
 $$
 
-The proof of this property is a direct and elegant application of the Axiom of Completeness, which states that every non-[empty set](@entry_id:261946) of real numbers that is bounded above has a least upper bound (supremum).
+The proof of this property is a direct and elegant application of the Axiom of Completeness, which states that every non-empty set of real numbers that is bounded above has a least upper bound (supremum).
 
 **Proof:**
 Let the nested sequence of intervals be $I_n = [a_n, b_n]$. From the nesting property, we know that the sequence of left endpoints $(a_n)$ is non-decreasing, and the sequence of right endpoints $(b_n)$ is non-increasing.
@@ -50,7 +50,7 @@ Let us define the set $A$ as the set of all left endpoints: $A = \{a_n \mid n \i
 
 First, we establish that the set $A$ is bounded above. For any $n \in \mathbb{N}$, we have $a_n \le b_n$. Furthermore, because the intervals are nested, for any $m \in \mathbb{N}$, we have $I_m \subseteq I_1$, which implies $a_m \le b_1$. This means that $b_1$ is an upper bound for the set $A$.
 
-Since $A$ is non-empty (it contains $a_1$) and is bounded above (by $b_1$), the **Axiom of Completeness** guarantees that $A$ has a [supremum](@entry_id:140512). Let us define $x = \sup A$.
+Since $A$ is non-empty (it contains $a_1$) and is bounded above (by $b_1$), the **Axiom of Completeness** guarantees that $A$ has a supremum. Let us define $x = \sup A$.
 
 We will now show that this value $x$ belongs to every interval $I_n$ in the sequence. To do this, we must show that $a_n \le x \le b_n$ for all $n \in \mathbb{N}$.
 
@@ -61,9 +61,9 @@ We will now show that this value $x$ belongs to every interval $I_n$ in the sequ
     *   If $m  k$, then by the nesting property, $I_m \subseteq I_k$, which means $a_m \le b_m \le b_k$.
     In both cases, $a_m \le b_k$ for all $m \in \mathbb{N}$. This demonstrates that any right endpoint $b_k$ is an upper bound for the set $A$ of all left endpoints. The assertion that there might exist a $k$ for which $b_k$ is *not* an upper bound for $A$ is therefore false.
 
-    Since $b_n$ is an upper bound for $A$ and $x$ is the *least* upper bound ([supremum](@entry_id:140512)) of $A$, it must be that $x \le b_n$. This holds for every $n \in \mathbb{N}$.
+    Since $b_n$ is an upper bound for $A$ and $x$ is the *least* upper bound (supremum) of $A$, it must be that $x \le b_n$. This holds for every $n \in \mathbb{N}$.
 
-Combining our two findings, we have $a_n \le x \le b_n$ for every $n \in \mathbb{N}$. This means $x \in I_n$ for all $n$, and therefore $x \in \bigcap_{n=1}^\infty I_n$. The intersection is non-empty, which completes the proof. Note also that since $(a_n)$ is a [non-decreasing sequence](@entry_id:139501) that is bounded above, it must converge, and its limit is precisely $\sup A = x$.
+Combining our two findings, we have $a_n \le x \le b_n$ for every $n \in \mathbb{N}$. This means $x \in I_n$ for all $n$, and therefore $x \in \bigcap_{n=1}^\infty I_n$. The intersection is non-empty, which completes the proof. Note also that since $(a_n)$ is a non-decreasing sequence that is bounded above, it must converge, and its limit is precisely $\sup A = x$.
 
 ### The Nature of the Intersection
 
@@ -81,9 +81,9 @@ A crucial corollary to the Nested Interval Property adds a condition that guaran
 
 This unique point is the common limit of the endpoint sequences: $c = \lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n$.
 
-A classic example is the sequence $I_n = [5 - \frac{1}{n}, 5 + \frac{1}{n}]$. These are closed, bounded, and [nested intervals](@entry_id:158649). Their length is $L_n = (5 + \frac{1}{n}) - (5 - \frac{1}{n}) = \frac{2}{n}$, which clearly converges to 0. The common limit of the endpoints is 5, so the intersection is the singleton set $\{5\}$.
+A classic example is the sequence $I_n = [5 - \frac{1}{n}, 5 + \frac{1}{n}]$. These are closed, bounded, and nested intervals. Their length is $L_n = (5 + \frac{1}{n}) - (5 - \frac{1}{n}) = \frac{2}{n}$, which clearly converges to 0. The common limit of the endpoints is 5, so the intersection is the singleton set $\{5\}$.
 
-A more sophisticated example involves sequences defined by series or recursion. Consider the intervals with endpoints $a_n = \sum_{k=1}^{n} \frac{1}{(k+1)!}$ and $b_n = a_n + \frac{1}{n \cdot n!}$. The length of these intervals is $\frac{1}{n \cdot n!}$, which converges to 0. The unique point in the intersection is the limit of the sequence $(a_n)$, which is the sum of the [infinite series](@entry_id:143366) $\sum_{k=1}^{\infty} \frac{1}{(k+1)!}$. By relating this to the Taylor series for $e^x$, we find this sum to be $e - 2$. Thus, $\bigcap_{n=1}^{\infty} I_n = \{e-2\}$. Similarly, if we construct intervals from sequences like $a_{n+1} = \sqrt{1+a_n}$ and $b_n = \frac{1+\sqrt{5}}{2} + \frac{1}{n+1}$, one can show that both endpoint sequences converge to the same value—in this case, the [golden ratio](@entry_id:139097) $\varphi = \frac{1+\sqrt{5}}{2}$. The uniqueness guaranteed by the NIP implies that any points found to be in the intersection must be identical.
+A more sophisticated example involves sequences defined by series or recursion. Consider the intervals with endpoints $a_n = \sum_{k=1}^{n} \frac{1}{(k+1)!}$ and $b_n = a_n + \frac{1}{n \cdot n!}$. The length of these intervals is $\frac{1}{n \cdot n!}$, which converges to 0. The unique point in the intersection is the limit of the sequence $(a_n)$, which is the sum of the infinite series $\sum_{k=1}^{\infty} \frac{1}{(k+1)!}$. By relating this to the Taylor series for $e^x$, we find this sum to be $e - 2$. Thus, $\bigcap_{n=1}^{\infty} I_n = \{e-2\}$. Similarly, if we construct intervals from sequences like $a_{n+1} = \sqrt{1+a_n}$ and $b_n = \frac{1+\sqrt{5}}{2} + \frac{1}{n+1}$, one can show that both endpoint sequences converge to the same value—in this case, the golden ratio $\varphi = \frac{1+\sqrt{5}}{2}$. The uniqueness guaranteed by the NIP implies that any points found to be in the intersection must be identical.
 
 #### Case 2: The Intersection is an Interval
 
@@ -109,7 +109,7 @@ Perhaps the most subtle but important aspect of the NIP is that it is fundamenta
 
 To see this, we can construct a sequence of nested, closed intervals with *rational* endpoints whose intersection, if it existed in $\mathbb{Q}$, would be empty. Consider the number $\sqrt{2}$, which is known to be irrational. We can construct intervals that "trap" it. Let $a_n$ be the decimal expansion of $\sqrt{2}$ truncated to $n$ places, and let $b_n = a_n + 10^{-n}$. For example, $I_1 = [1.4, 1.5]$, $I_2 = [1.41, 1.42]$, and so on. Each $I_n = [a_n, b_n]$ is a closed, bounded interval with rational endpoints. The sequence is nested, and the lengths $10^{-n} \to 0$.
 
-Within the real numbers $\mathbb{R}$, the NIP guarantees a unique point in the intersection, and that point is clearly $\sqrt{2}$. So, $\bigcap_{n=1}^\infty I_n = \{\sqrt{2}\}$. However, if we limit our universe to the rational numbers $\mathbb{Q}$, the intersection becomes $(\bigcap_{n=1}^\infty I_n) \cap \mathbb{Q} = \{\sqrt{2}\} \cap \mathbb{Q}$. Since $\sqrt{2}$ is not a rational number, this intersection is the [empty set](@entry_id:261946). This example brilliantly illustrates the "gaps" in the rational number line; the sequence of rational intervals closes in on a location where, in $\mathbb{Q}$, there is no number. The Nested Interval Property is a statement that, in $\mathbb{R}$, there are no such gaps.
+Within the real numbers $\mathbb{R}$, the NIP guarantees a unique point in the intersection, and that point is clearly $\sqrt{2}$. So, $\bigcap_{n=1}^\infty I_n = \{\sqrt{2}\}$. However, if we limit our universe to the rational numbers $\mathbb{Q}$, the intersection becomes $(\bigcap_{n=1}^\infty I_n) \cap \mathbb{Q} = \{\sqrt{2}\} \cap \mathbb{Q}$. Since $\sqrt{2}$ is not a rational number, this intersection is the empty set. This example brilliantly illustrates the "gaps" in the rational number line; the sequence of rational intervals closes in on a location where, in $\mathbb{Q}$, there is no number. The Nested Interval Property is a statement that, in $\mathbb{R}$, there are no such gaps.
 
 ### Connection to the Bolzano-Weierstrass Theorem
 
@@ -122,4 +122,4 @@ The proof proceeds by a **bisection argument**. Let $(y_k)$ be a bounded sequenc
 
 This procedure generates a sequence of nested, closed, bounded intervals $I_1 \supseteq I_2 \supseteq \dots$. The length of $I_{n+1}$ is half the length of $I_n$, so the lengths converge to zero: $\lim_{n \to \infty} (b_n - a_n) = 0$.
 
-By the Nested Interval Property, there is a unique point $c$ in the intersection $\bigcap_{n=1}^\infty I_n$. This point $c$ is guaranteed to be a **limit point** (or accumulation point) of the sequence $(y_k)$. To prove this, consider any neighborhood $(c - \varepsilon, c + \varepsilon)$ of $c$. Since the lengths of the intervals $I_n$ go to zero, we can find an $N$ large enough such that $I_N$ is entirely contained within this neighborhood, i.e., $I_N \subset (c - \varepsilon, c + \varepsilon)$. By construction, $I_N$ contains infinitely many terms of the sequence $(y_k)$. Therefore, the neighborhood $(c - \varepsilon, c + \varepsilon)$ contains infinitely many terms of $(y_k)$. This is precisely the definition of a [limit point](@entry_id:136272). The existence of this limit point is the core conclusion of the Bolzano-Weierstrass Theorem.
+By the Nested Interval Property, there is a unique point $c$ in the intersection $\bigcap_{n=1}^\infty I_n$. This point $c$ is guaranteed to be a **limit point** (or accumulation point) of the sequence $(y_k)$. To prove this, consider any neighborhood $(c - \varepsilon, c + \varepsilon)$ of $c$. Since the lengths of the intervals $I_n$ go to zero, we can find an $N$ large enough such that $I_N$ is entirely contained within this neighborhood, i.e., $I_N \subset (c - \varepsilon, c + \varepsilon)$. By construction, $I_N$ contains infinitely many terms of the sequence $(y_k)$. Therefore, the neighborhood $(c - \varepsilon, c + \varepsilon)$ contains infinitely many terms of $(y_k)$. This is precisely the definition of a limit point. The existence of this limit point is the core conclusion of the Bolzano-Weierstrass Theorem.

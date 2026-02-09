@@ -1,5 +1,5 @@
 ## Introduction
-How can we know if an infinite sum of numbers settles on a finite value without first knowing what that value is? This fundamental question in mathematics poses a significant challenge: we want to verify that the destination of an infinite journey exists before we can name it. The Cauchy Criterion for Series provides the elegant and powerful answer. This article delves into this cornerstone of [real analysis](@article_id:145425). In the first chapter, "Principles and Mechanisms," we will explore the intuitive idea of a "shrinking tail" and formalize it into a precise mathematical tool. Next, in "Applications and Interdisciplinary Connections," we will see how this abstract principle serves as the bedrock for numerous [convergence tests](@article_id:137562) and extends into diverse fields like signal processing and probability theory. Finally, "Hands-On Practices" will solidify your understanding through targeted exercises. Let's begin by unraveling the core mechanism that makes this criterion so effective.
+How can we know if an infinite sum of numbers settles on a finite value without first knowing what that value is? This fundamental question in mathematics poses a significant challenge: we want to verify that the destination of an infinite journey exists before we can name it. The Cauchy Criterion for Series provides the elegant and powerful answer. This article delves into this cornerstone of [real analysis](@keyword=real_analysis|lang=en-US|style=Feynman). In the first chapter, "Principles and Mechanisms," we will explore the intuitive idea of a "shrinking tail" and formalize it into a precise mathematical tool. Next, in "Applications and Interdisciplinary Connections," we will see how this abstract principle serves as the bedrock for numerous [convergence tests](@keyword=convergence_tests|lang=en-US|style=Feynman) and extends into diverse fields like signal processing and probability theory. Finally, "Hands-On Practices" will solidify your understanding through targeted exercises. Let's begin by unraveling the core mechanism that makes this criterion so effective.
 
 ## Principles and Mechanisms
 
@@ -9,11 +9,11 @@ This is the beautiful, intuitive idea behind one of the most powerful tools in m
 
 ### The Incredible Shrinking Tail
 
-Let's think about an [infinite series](@article_id:142872), $\sum a_n$. We say it converges if its [sequence of partial sums](@article_id:160764), $S_n = a_1 + a_2 + \dots + a_n$, approaches some final value, $S$. If this is the case, then the "tail" of the series, which is the part we haven't added yet, must be getting smaller and smaller. We can define this tail as $R_n = S - S_n = a_{n+1} + a_{n+2} + \dots$. If the series converges, then this remainder $R_n$ must go to zero as $n$ gets larger.
+Let's think about an [infinite series](@keyword=infinite_series|lang=en-US|style=Feynman), $\sum a_n$. We say it converges if its [sequence of partial sums](@keyword=sequence_of_partial_sums|lang=en-US|style=Feynman), $S_n = a_1 + a_2 + \dots + a_n$, approaches some final value, $S$. If this is the case, then the "tail" of the series, which is the part we haven't added yet, must be getting smaller and smaller. We can define this tail as $R_n = S - S_n = a_{n+1} + a_{n+2} + \dots$. If the series converges, then this remainder $R_n$ must go to zero as $n$ gets larger.
 
 But there's a chicken-and-egg problem. To calculate the tail $R_n$, we need to know the final sum $S$. But the whole point is to figure out if $S$ even exists! This is where the genius of the French mathematician Augustin-Louis Cauchy comes in. He realized we don't need to look at the whole infinite tail at once. Instead, we can look at any finite *chunk* of the tail.
 
-A series converges if and only if its [sequence of partial sums](@article_id:160764) is a **Cauchy sequence**. This is just a fancy way of saying the terms of the sequence of sums get closer and closer *to each other*. The connection is direct and simple: the difference between two [partial sums](@article_id:161583), $S_m$ and $S_n$ (with $m > n$), is nothing but a finite chunk of the series:
+A series converges if and only if its [sequence of partial sums](@keyword=sequence_of_partial_sums|lang=en-US|style=Feynman) is a **Cauchy sequence**. This is just a fancy way of saying the terms of the sequence of sums get closer and closer *to each other*. The connection is direct and simple: the difference between two [partial sums](@keyword=partial_sums|lang=en-US|style=Feynman), $S_m$ and $S_n$ (with $m > n$), is nothing but a finite chunk of the series:
 
 $$ S_m - S_n = (a_1 + \dots + a_n + a_{n+1} + \dots + a_m) - (a_1 + \dots + a_n) = \sum_{k=n+1}^{m} a_k $$
 
@@ -21,7 +21,7 @@ So, saying the partial sums get arbitrarily close to each other is exactly the s
 
 ### Making it Precise: The Rule of the Game
 
-This brings us to the formal statement of the Cauchy Criterion, a cornerstone of [mathematical analysis](@article_id:139170). Don't be intimidated by the symbols; they are just a very precise way of stating our "shrinking tail" intuition. A series $\sum a_n$ converges if and only if:
+This brings us to the formal statement of the Cauchy Criterion, a cornerstone of [mathematical analysis](@keyword=mathematical_analysis|lang=en-US|style=Feynman). Don't be intimidated by the symbols; they are just a very precise way of stating our "shrinking tail" intuition. A series $\sum a_n$ converges if and only if:
 
 > For any tiny positive number you can imagine, let's call it $\epsilon$ (epsilon), there must exist some point in the series, let's call it the $N$-th term, such that **every single block** of terms you sum up after that point, say from term $n+1$ to term $m$, has a total sum whose absolute value is less than your chosen $\epsilon$.
 
@@ -44,7 +44,7 @@ Look what we've just done! With almost no effort, we've proved a famous and esse
 
 Now for the million-dollar question: if the terms *do* go to zero, must the series converge? It feels like it should. If you're adding progressively smaller dust particles to a pile, surely the pile's height must eventually settle, right?
 
-Let's investigate the most famous [counterexample](@article_id:148166) in all of mathematics: the **harmonic series**, $\sum_{n=1}^{\infty} \frac{1}{n}$.
+Let's investigate the most famous [counterexample](@keyword=counterexample|lang=en-US|style=Feynman) in all of mathematics: the **harmonic series**, $\sum_{n=1}^{\infty} \frac{1}{n}$.
 
 $$ 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \dots $$
 
@@ -74,7 +74,7 @@ Now we can bound our tail sum:
 
 $$ \sum_{k=n+1}^{n+p} \frac{1}{k^2}  \sum_{k=n+1}^{n+p} \left(\frac{1}{k-1} - \frac{1}{k}\right) $$
 
-The sum on the right is a **[telescoping series](@article_id:161163)**, where intermediate terms cancel out:
+The sum on the right is a **[telescoping series](@keyword=telescoping_series|lang=en-US|style=Feynman)**, where intermediate terms cancel out:
 $$ \left(\frac{1}{n} - \frac{1}{n+1}\right) + \left(\frac{1}{n+1} - \frac{1}{n+2}\right) + \dots + \left(\frac{1}{n+p-1} - \frac{1}{n+p}\right) = \frac{1}{n} - \frac{1}{n+p} $$
 
 This means that for any $n$ and any block size $p$, the sum of that block is strictly less than $\frac{1}{n}$.
@@ -92,7 +92,7 @@ Now, what can we say about our original series, $\sum a_n$? We need to look at $
 $$ \left|\sum_{k=n+1}^{m} a_k\right| \le \sum_{k=n+1}^{m} |a_k| $$
 The logic clicks into place. We have:
 $$ \left|\sum_{k=n+1}^{m} a_k\right| \le \sum_{k=n+1}^{m} |a_k|  \epsilon $$
-This proves that the original series, $\sum a_n$, also satisfies the Cauchy Criterion, and therefore must converge. We have just elegantly proven a major theorem: **[absolute convergence](@article_id:146232) implies convergence**.
+This proves that the original series, $\sum a_n$, also satisfies the Cauchy Criterion, and therefore must converge. We have just elegantly proven a major theorem: **[absolute convergence](@keyword=absolute_convergence|lang=en-US|style=Feynman) implies convergence**.
 
 ### The Fabric of Reality: Why We Need the Real Numbers
 
@@ -102,6 +102,6 @@ Let's imagine a strange world where the only numbers that exist are the **ration
 
 $$ \sum_{k=0}^{\infty} \frac{1}{k!} = 1 + 1 + \frac{1}{2!} + \frac{1}{3!} + \dots $$
 
-Every term is rational. Every partial sum $S_n$ is rational. We can show that this [sequence of partial sums](@article_id:160764) is a Cauchy sequence. The sums get closer and closer together. But what are they converging to? They are converging to the number $e$, which is **irrational**. In our hypothetical world of only rational numbers, this sequence would be "homeless." It's a Cauchy sequence that doesn't converge *within its own space*. There is a "hole" in the rational number line where $e$ is supposed to be. The same is true for a series like $\sum_{k=0}^{\infty} \binom{1/2}{k}$, which is made of rational terms but converges to the irrational number $\sqrt{2}$.
+Every term is rational. Every partial sum $S_n$ is rational. We can show that this [sequence of partial sums](@keyword=sequence_of_partial_sums|lang=en-US|style=Feynman) is a Cauchy sequence. The sums get closer and closer together. But what are they converging to? They are converging to the number $e$, which is **irrational**. In our hypothetical world of only rational numbers, this sequence would be "homeless." It's a Cauchy sequence that doesn't converge *within its own space*. There is a "hole" in the rational number line where $e$ is supposed to be. The same is true for a series like $\sum_{k=0}^{\infty} \binom{1/2}{k}$, which is made of rational terms but converges to the irrational number $\sqrt{2}$.
 
-This is why the **real numbers** are so special. They are defined as being **complete**. This means there are no "holes." Every Cauchy [sequence of real numbers](@article_id:140596) is guaranteed to converge to a limit that is also a real number. The Cauchy Criterion isn't just a clever test; it's a reflection of the fundamental structure of the real number line. It assures us that if we follow a path where the steps get infinitesimally small, there will always be a destination waiting for us.
+This is why the **real numbers** are so special. They are defined as being **complete**. This means there are no "holes." Every Cauchy [sequence of real numbers](@keyword=sequence_of_real_numbers|lang=en-US|style=Feynman) is guaranteed to converge to a limit that is also a real number. The Cauchy Criterion isn't just a clever test; it's a reflection of the fundamental structure of the real number line. It assures us that if we follow a path where the steps get infinitesimally small, there will always be a destination waiting for us.

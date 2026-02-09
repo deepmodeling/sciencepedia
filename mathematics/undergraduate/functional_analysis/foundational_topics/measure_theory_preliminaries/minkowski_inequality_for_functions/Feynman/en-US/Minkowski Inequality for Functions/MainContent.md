@@ -1,15 +1,15 @@
 ## Introduction
-How do we measure the "size" of a function or the "distance" between two abstract curves? While the [triangle inequality](@article_id:143256) provides a bedrock for geometry in our physical world, extending this intuition to the infinite-dimensional universe of functions presents a significant challenge. This article addresses this gap by introducing the Minkowski inequality, a cornerstone of functional analysis that provides a sensible way to define length and distance in function spaces. Over the next three chapters, you will embark on a journey to understand this powerful principle. "Principles and Mechanisms" will demystify the inequality itself, exploring how it turns function spaces into geometric worlds. "Applications and Interdisciplinary Connections" will reveal its surprising impact across probability, statistics, and signal processing. Finally, "Hands-On Practices" will allow you to apply and solidify your knowledge through targeted exercises. Let us begin by exploring the core mechanisms that allow us to treat functions as vectors with a measurable length.
+How do we measure the "size" of a function or the "distance" between two abstract curves? While the [triangle inequality](@keyword=triangle_inequality|lang=en-US|style=Feynman) provides a bedrock for geometry in our physical world, extending this intuition to the infinite-dimensional universe of functions presents a significant challenge. This article addresses this gap by introducing the Minkowski inequality, a cornerstone of functional analysis that provides a sensible way to define length and distance in function spaces. Over the next three chapters, you will embark on a journey to understand this powerful principle. "Principles and Mechanisms" will demystify the inequality itself, exploring how it turns function spaces into geometric worlds. "Applications and Interdisciplinary Connections" will reveal its surprising impact across probability, statistics, and signal processing. Finally, "Hands-On Practices" will allow you to apply and solidify your knowledge through targeted exercises. Let us begin by exploring the core mechanisms that allow us to treat functions as vectors with a measurable length.
 
 ## Principles and Mechanisms
 
-Imagine you want to describe the "distance" between two things. In our everyday world, this is simple. The distance between two points is the length of the straight line connecting them. We also have a wonderfully intuitive rule called the **[triangle inequality](@article_id:143256)**: if you travel from point A to point C, the distance is always less than or equal to the distance you'd cover by going from A to B and then from B to C. The only time the distances are equal is when B lies on the straight line between A and C. This simple, profound rule is the bedrock of our geometric intuition.
+Imagine you want to describe the "distance" between two things. In our everyday world, this is simple. The distance between two points is the length of the straight line connecting them. We also have a wonderfully intuitive rule called the **[triangle inequality](@keyword=triangle_inequality|lang=en-US|style=Feynman)**: if you travel from point A to point C, the distance is always less than or equal to the distance you'd cover by going from A to B and then from B to C. The only time the distances are equal is when B lies on the straight line between A and C. This simple, profound rule is the bedrock of our geometric intuition.
 
 But what if the "things" we want to measure aren't points in a physical space, but something more abstract, like functions? Can we think of a function, say $f(x) = x^2$, as a single "point" in some vast, infinite-dimensional universe? And if so, how would we measure the "length" of such a function, or the "distance" between two of them, like $f(x)=x^2$ and $g(x)=\sin(x)$? This is where the real fun begins, and where we encounter one of the cornerstones of modern analysis: the **Minkowski Inequality**.
 
 ### Functions as Vectors: A New Kind of Length
 
-The first conceptual leap is to start thinking of functions as vectors. Just as a vector $(3, 4)$ in a 2D plane has a length, we want to assign a "length" to a function. This length is what mathematicians call a **norm**. For a whole family of [function spaces](@article_id:142984), called the **$L^p$ spaces**, this norm is defined as:
+The first conceptual leap is to start thinking of functions as vectors. Just as a vector $(3, 4)$ in a 2D plane has a length, we want to assign a "length" to a function. This length is what mathematicians call a **norm**. For a whole family of [function spaces](@keyword=function_spaces|lang=en-US|style=Feynman), called the **$L^p$ spaces**, this norm is defined as:
 
 $$
 \|f\|_p = \left( \int |f(x)|^p \, dx \right)^{1/p}
@@ -21,7 +21,7 @@ $$
 \|f+g\|_p \le \|f\|_p + \|g\|_p
 $$
 
-This statement is the heart of the matter. It's the guarantee that our notion of length behaves sensibly . It ensures that the sum of two "finite-length" functions also has a finite length, which is the basic requirement for building a structured vector space . And once we have this, we can define a meaningful "distance" between two functions as $d(f, g) = \|f-g\|_p$, confident that this distance will also obey the [triangle inequality](@article_id:143256): $d(f, h) \le d(f, g) + d(g, h)$ .
+This statement is the heart of the matter. It's the guarantee that our notion of length behaves sensibly [@problem_id:1870309]. It ensures that the sum of two "finite-length" functions also has a finite length, which is the basic requirement for building a structured vector space [@problem_id:1870321]. And once we have this, we can define a meaningful "distance" between two functions as $d(f, g) = \|f-g\|_p$, confident that this distance will also obey the [triangle inequality](@keyword=triangle_inequality|lang=en-US|style=Feynman): $d(f, h) \le d(f, g) + d(g, h)$ [@problem_id:1870275].
 
 Let's explore this by looking at a few specific values of $p$.
 
@@ -33,7 +33,7 @@ $$
 \|f\|_1 = \int |f(x)| \, dx
 $$
 
-Now, consider two non-negative functions, $f(x)$ and $g(x)$. The "length" of $f$ is the area under its curve, $A_f$, and the "length" of $g$ is the area under its curve, $A_g$. What is the length of their sum, $f+g$? Well, geometrically, the graph of $f+g$ is obtained by stacking the graph of $g$ on top of the graph of $f$. So, the total area is just the sum of the individual areas: $A_{f+g} = A_f + A_g$. In this special case of non-negative functions, the Minkowski inequality becomes an equality .
+Now, consider two non-negative functions, $f(x)$ and $g(x)$. The "length" of $f$ is the area under its curve, $A_f$, and the "length" of $g$ is the area under its curve, $A_g$. What is the length of their sum, $f+g$? Well, geometrically, the graph of $f+g$ is obtained by stacking the graph of $g$ on top of the graph of $f$. So, the total area is just the sum of the individual areas: $A_{f+g} = A_f + A_g$. In this special case of non-negative functions, the Minkowski inequality becomes an equality [@problem_id:1870316].
 
 The inequality appears when the functions can have different signs. If $f(x)$ is positive in a region where $g(x)$ is negative, their sum $|f(x)+g(x)|$ can be smaller than the sum of their absolute values, $|f(x)|+|g(x)|$. When we integrate, this local cancellation leads to the inequality $\|f+g\|_1 \le \|f\|_1 + \|g\|_1$.
 
@@ -53,7 +53,7 @@ $$
 
 This inner product lets us talk about the "angle" between two functions. Specifically, we can say two functions $f$ and $g$ are **orthogonal** if their inner product is zero, $\langle f, g \rangle = 0$, just like two perpendicular vectors.
 
-In this context, the Minkowski inequality for $p=2$ is a direct generalization of the triangle inequality from high school geometry . If you consider a triangle with sides represented by the "vectors" $f$, $g$, and $f+g$, the inequality simply states that the length of one side, $\|f+g\|_2$, is no greater than the sum of the lengths of the other two sides, $\|f\|_2 + \|g\|_2$.
+In this context, the Minkowski inequality for $p=2$ is a direct generalization of the triangle inequality from high school geometry [@problem_id:1870273]. If you consider a triangle with sides represented by the "vectors" $f$, $g$, and $f+g$, the inequality simply states that the length of one side, $\|f+g\|_2$, is no greater than the sum of the lengths of the other two sides, $\|f\|_2 + \|g\|_2$.
 
 Let's see this in action. The squared length of the sum $f+g$ is:
 $$
@@ -63,13 +63,13 @@ If the functions $f$ and $g$ are orthogonal, then $\langle f,g \rangle = 0$, and
 $$
 \|f+g\|_2^2 = \|f\|_2^2 + \|g\|_2^2
 $$
-This is nothing but the **Pythagorean theorem**, translated into the language of functions! For example, on the interval $[-1, 1]$, the [simple functions](@article_id:137027) $f(x)=1$ and $g(x)=x$ are orthogonal. A quick calculation shows $\|f\|_2^2 = 2$ and $\|g\|_2^2 = \frac{2}{3}$. Their sum's squared norm, $\|f+g\|_2^2$, is indeed $2 + \frac{2}{3} = \frac{8}{3}$, just as Pythagoras would have predicted .
+This is nothing but the **Pythagorean theorem**, translated into the language of functions! For example, on the interval $[-1, 1]$, the [simple functions](@keyword=simple_functions|lang=en-US|style=Feynman) $f(x)=1$ and $g(x)=x$ are orthogonal. A quick calculation shows $\|f\|_2^2 = 2$ and $\|g\|_2^2 = \frac{2}{3}$. Their sum's squared norm, $\|f+g\|_2^2$, is indeed $2 + \frac{2}{3} = \frac{8}{3}$, just as Pythagoras would have predicted [@problem_id:1870301].
 
 ### When Does the Triangle Straighten Out?
 
 This brings us to a fascinating question. When does the inequality sign in $\|f+g\|_p \le \|f\|_p + \|g\|_p$ become an equality? In our everyday world, this happens when we walk in a straight line—when the vectors representing our path all point in the same direction. The same beautiful intuition holds true in the world of functions.
 
-For $p$ strictly greater than 1, equality holds if and only if one function is a positive constant multiple of the other (almost everywhere) . That is, $g(x) = c f(x)$ for some constant $c > 0$. This means the functions $f$ and $g$ are "pointing in the same direction" in [function space](@article_id:136396). They have the same shape and sign, differing only in magnitude. If $g = -cf$ for some $c>0$, they point in opposite directions, and the inequality is strict. This deep result bridges the gap between abstract algebra and our most fundamental geometric intuitions.
+For $p$ strictly greater than 1, equality holds if and only if one function is a positive constant multiple of the other (almost everywhere) [@problem_id:1311160]. That is, $g(x) = c f(x)$ for some constant $c > 0$. This means the functions $f$ and $g$ are "pointing in the same direction" in [function space](@keyword=function_space|lang=en-US|style=Feynman). They have the same shape and sign, differing only in magnitude. If $g = -cf$ for some $c>0$, they point in opposite directions, and the inequality is strict. This deep result bridges the gap between abstract algebra and our most fundamental geometric intuitions.
 
 ### Beyond the Boundary: The Strange World of $p  1$
 
@@ -85,6 +85,6 @@ Look what happened! We found that $\|f+g\|_{1/2} = 4$ and $\|f\|_{1/2} + \|g\|_{
 $$
 \|f+g\|_{1/2} > \|f\|_{1/2} + \|g\|_{1/2}
 $$
-The inequality is reversed! . This is sometimes called a "[reverse triangle inequality](@article_id:145608)." Our cherished geometric intuition is completely shattered. In these bizarre spaces where $0  p  1$, the shortest path between two points is *not* a straight line. The condition $p \ge 1$ is not a mere suggestion; it is the very rule that imposes a familiar, Euclidean-like geometric structure on our universe of functions. This "failure" is profoundly illuminating—it shows us just how special the spaces with $p \ge 1$ really are. This family includes the $L^\infty$ space, which measures the function's maximum peak, and which also obeys the familiar triangle inequality .
+The inequality is reversed! [@problem_id:1870292]. This is sometimes called a "[reverse triangle inequality](@keyword=reverse_triangle_inequality|lang=en-US|style=Feynman)." Our cherished geometric intuition is completely shattered. In these bizarre spaces where $0  p  1$, the shortest path between two points is *not* a straight line. The condition $p \ge 1$ is not a mere suggestion; it is the very rule that imposes a familiar, Euclidean-like geometric structure on our universe of functions. This "failure" is profoundly illuminating—it shows us just how special the spaces with $p \ge 1$ really are. This family includes the $L^\infty$ space, which measures the function's maximum peak, and which also obeys the familiar triangle inequality [@problem_id:1870318].
 
-The ultimate reason for this drastic change in behavior lies in the shape of the function $\phi(t) = t^p$. For $p \ge 1$, this function is convex (it curves "upwards," like a bowl). This upward curvature is the deep mathematical engine that powers the Minkowski inequality. For $0  p  1$, the function is concave (it curves "downwards"), and this reversal in curvature is what flips the inequality and breaks our standard geometry . It's a stunning example of how a simple property of a [simple function](@article_id:160838) can dictate the entire geometric character of an infinite-dimensional universe.
+The ultimate reason for this drastic change in behavior lies in the shape of the function $\phi(t) = t^p$. For $p \ge 1$, this function is convex (it curves "upwards," like a bowl). This upward curvature is the deep mathematical engine that powers the Minkowski inequality. For $0  p  1$, the function is concave (it curves "downwards"), and this reversal in curvature is what flips the inequality and breaks our standard geometry [@problem_id:1870278]. It's a stunning example of how a simple property of a [simple function](@keyword=simple_function|lang=en-US|style=Feynman) can dictate the entire geometric character of an infinite-dimensional universe.

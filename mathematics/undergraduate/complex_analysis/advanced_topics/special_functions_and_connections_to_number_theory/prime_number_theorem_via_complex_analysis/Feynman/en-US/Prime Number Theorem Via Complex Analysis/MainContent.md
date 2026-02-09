@@ -1,5 +1,5 @@
 ## Introduction
-The Prime Number Theorem stands as a monumental achievement in mathematics, offering a profound statement about the average [distribution of prime numbers](@article_id:636953). While the primes themselves are discrete and seemingly erratic, the most celebrated proof of this theorem ventures into the continuous and smooth landscape of complex analysis. This article illuminates the surprising and powerful connection between these two disparate worlds. It addresses the fundamental question: How can properties of a complex function reveal deep truths about the integers?
+The Prime Number Theorem stands as a monumental achievement in mathematics, offering a profound statement about the average [distribution of prime numbers](@keyword=distribution_of_prime_numbers|lang=en-US|style=Feynman). While the primes themselves are discrete and seemingly erratic, the most celebrated proof of this theorem ventures into the continuous and smooth landscape of complex analysis. This article illuminates the surprising and powerful connection between these two disparate worlds. It addresses the fundamental question: How can properties of a complex function reveal deep truths about the integers?
 
 Across three chapters, you will embark on a journey through one of mathematics' great stories. You will first explore the principles and mechanisms of the proof, learning how the problem is reformulated using the Chebyshev and von Mangoldt functions and then translated into the language of the Riemann zeta function. Next, you will witness the power and breadth of this analytic method as it is applied to a variety of other number-theoretic questions, from counting divisors to describing primes in other algebraic universes. Finally, hands-on practices will allow you to engage directly with the key calculations that underpin this beautiful theory. Our exploration begins with the core mechanics of this analytic engine.
 
@@ -27,11 +27,11 @@ $$
 \end{cases}
 $$
 
-At first glance, this seems bizarre. Why would we care about a function that is zero almost everywhere, and only "lights up" at [prime powers](@article_id:635600), with a weight of $\ln(p)$? Let's get a feel for it. For the first few integers, its values are:
+At first glance, this seems bizarre. Why would we care about a function that is zero almost everywhere, and only "lights up" at [prime powers](@keyword=prime_powers|lang=en-US|style=Feynman), with a weight of $\ln(p)$? Let's get a feel for it. For the first few integers, its values are:
 
 $\Lambda(1)=0$, $\Lambda(2)=\ln(2)$, $\Lambda(3)=\ln(3)$, $\Lambda(4)=\ln(2)$, $\Lambda(5)=\ln(5)$, $\Lambda(6)=0$, $\Lambda(7)=\ln(7)$, $\Lambda(8)=\ln(2)$, ...
 
-This function acts like a detector for "prime-ness", but it also gives more weight to higher [prime powers](@article_id:635600) (in a logarithmic way) and treats a prime power like $p^k$ as being related to the fundamental prime $p$. The logarithmic weight isn't arbitrary; as we'll see, it's the most natural weight to use when working with analytic tools.
+This function acts like a detector for "prime-ness", but it also gives more weight to higher [prime powers](@keyword=prime_powers|lang=en-US|style=Feynman) (in a logarithmic way) and treats a prime power like $p^k$ as being related to the fundamental prime $p$. The logarithmic weight isn't arbitrary; as we'll see, it's the most natural weight to use when working with analytic tools.
 
 Using this function, we can define the **second Chebyshev function**, $\psi(x)$:
 
@@ -55,7 +55,7 @@ $$
 \zeta(s) = \prod_{p \text{ prime}} \frac{1}{1-p^{-s}}
 $$
 
-This is one of the most profound identities in mathematics. On the left, a sum over all positive integers. On the right, a product over all prime numbers. It asserts that the zeta function encodes the secrets of the primes. The validity of this [infinite product](@article_id:172862), for $\operatorname{Re}(s) > 1$, is itself a consequence of the properties of [geometric series](@article_id:157996) and the convergence of $\sum_p |p^{-s}|$.
+This is one of the most profound identities in mathematics. On the left, a sum over all positive integers. On the right, a product over all prime numbers. It asserts that the zeta function encodes the secrets of the primes. The validity of this [infinite product](@keyword=infinite_product|lang=en-US|style=Feynman), for $\operatorname{Re}(s) > 1$, is itself a consequence of the properties of [geometric series](@keyword=geometric_series|lang=en-US|style=Feynman) and the convergence of $\sum_p |p^{-s}|$.
 
 Now, how do we use this bridge to get to our function $\psi(x)$? We need to find the von Mangoldt function $\Lambda(n)$ hiding inside $\zeta(s)$. The trick is not to look at $\zeta(s)$ itself, but at its logarithmic derivative. If we take the natural logarithm of the Euler product and then differentiate with respect to $s$, something magical happens. The calculation reveals:
 
@@ -81,9 +81,9 @@ By **Cauchy's Residue Theorem**, we can evaluate such integrals by shifting the 
 
 The poles of this integrand can come from the poles or zeros of $\zeta(s)$, or from the $1/s$ term (a pole at $s=0$). Let's hunt for the rightmost one.
 
-Let's start with $\zeta(s)$ itself. It has a famous singularity: a [simple pole](@article_id:163922) at $s=1$. We can get an intuition for this by comparing the discrete sum $\sum n^{-s}$ to the continuous integral $\int_1^\infty x^{-s} dx$, which evaluates to $\frac{1}{s-1}$. This suggests that for $s$ near 1, $\zeta(s)$ ought to behave like $\frac{1}{s-1}$. Indeed, it's a fact that $\zeta(s)$ has a [simple pole](@article_id:163922) at $s=1$ with residue 1.
+Let's start with $\zeta(s)$ itself. It has a famous singularity: a [simple pole](@keyword=simple_pole|lang=en-US|style=Feynman) at $s=1$. We can get an intuition for this by comparing the discrete sum $\sum n^{-s}$ to the continuous integral $\int_1^\infty x^{-s} dx$, which evaluates to $\frac{1}{s-1}$. This suggests that for $s$ near 1, $\zeta(s)$ ought to behave like $\frac{1}{s-1}$. Indeed, it's a fact that $\zeta(s)$ has a [simple pole](@keyword=simple_pole|lang=en-US|style=Feynman) at $s=1$ with residue 1.
 
-If $\zeta(s)$ has a simple pole at $s=1$, then its logarithmic derivative $-\frac{\zeta'(s)}{\zeta(s)}$ also has a [simple pole](@article_id:163922) there, and its residue is also 1. This gives us a candidate for our rightmost pole: $s=1$.
+If $\zeta(s)$ has a simple pole at $s=1$, then its logarithmic derivative $-\frac{\zeta'(s)}{\zeta(s)}$ also has a [simple pole](@keyword=simple_pole|lang=en-US|style=Feynman) there, and its residue is also 1. This gives us a candidate for our rightmost pole: $s=1$.
 
 Now for the payoff. The residue of the full integrand at this pole is given by the residue of $-\frac{\zeta'(s)}{\zeta(s)}$ at $s=1$ (which is 1), multiplied by the value of the rest of the integrand, $\frac{x^s}{s}$, at $s=1$. This gives:
 
@@ -91,11 +91,11 @@ $$
 \text{Res}_{s=1} \left[ \left(-\frac{\zeta'(s)}{\zeta(s)}\right) \frac{x^s}{s} \right] = 1 \cdot \frac{x^1}{1} = x
 $$
 
-This is the stunning result. The residue theorem tells us this single pole contributes a term of size $x$ to our function $\psi(x)$. If this is the only pole on the line $\operatorname{Re}(s)=1$, then it must be the [dominant term](@article_id:166924), and we can conclude that $\psi(x) \sim x$.
+This is the stunning result. The residue theorem tells us this single pole contributes a term of size $x$ to our function $\psi(x)$. If this is the only pole on the line $\operatorname{Re}(s)=1$, then it must be the [dominant term](@keyword=dominant_term|lang=en-US|style=Feynman), and we can conclude that $\psi(x) \sim x$.
 
 ### The Final Hurdle: Securing the Frontier
 
-Our entire proof now hangs by a single, crucial thread. The pole at $s=1$ came from a pole of $\zeta(s)$. But there could be other poles of $-\frac{\zeta'(s)}{\zeta(s)}$ on the line $\operatorname{Re}(s)=1$. Where would they come from? They could only come from **[zeros of the zeta function](@article_id:196411)**.
+Our entire proof now hangs by a single, crucial thread. The pole at $s=1$ came from a pole of $\zeta(s)$. But there could be other poles of $-\frac{\zeta'(s)}{\zeta(s)}$ on the line $\operatorname{Re}(s)=1$. Where would they come from? They could only come from **[zeros of the zeta function](@keyword=zeros_of_the_zeta_function|lang=en-US|style=Feynman)**.
 
 So, the Prime Number Theorem is true if and only if **$\zeta(s)$ has no zeros on the line $\operatorname{Re}(s)=1$**.
 

@@ -15,9 +15,9 @@ $$
 f(x) = 6 \cdot (3x^4 - 7x^2 + 9x - 1)
 $$
 
-What we have just done is separate the polynomial into two parts. The first part is an integer, 6, which captures the "greatest common numerical stuff" of all the coefficients. We'll give this a formal name: the **content** of the polynomial, denoted $c(f)$. The content is defined as the [greatest common divisor](@article_id:142453) (GCD) of all its coefficients. ()
+What we have just done is separate the polynomial into two parts. The first part is an integer, 6, which captures the "greatest common numerical stuff" of all the coefficients. We'll give this a formal name: the **content** of the polynomial, denoted $c(f)$. The content is defined as the [greatest common divisor](@keyword=greatest_common_divisor|lang=en-US|style=Feynman) (GCD) of all its coefficients. ([@problem_id:1798432])
 
-The second part, $(3x^4 - 7x^2 + 9x - 1)$, is what's left. Look at its coefficients: 3, -7, 9, -1. They share no common factor other than 1. Such a polynomial, whose content is 1, is called a **[primitive polynomial](@article_id:151382)**. It is "pure" in a sense; we've factored out all the common arithmetic grit, leaving only its essential polynomial structure.
+The second part, $(3x^4 - 7x^2 + 9x - 1)$, is what's left. Look at its coefficients: 3, -7, 9, -1. They share no common factor other than 1. Such a polynomial, whose content is 1, is called a **[primitive polynomial](@keyword=primitive_polynomial|lang=en-US|style=Feynman)**. It is "pure" in a sense; we've factored out all the common arithmetic grit, leaving only its essential polynomial structure.
 
 So, any polynomial $f(x)$ in $\mathbb{Z}[x]$ (the set of polynomials with integer coefficients) can be uniquely written as:
 
@@ -25,7 +25,7 @@ $$
 f(x) = c(f) \cdot f_p(x)
 $$
 
-where $c(f)$ is its content and $f_p(x)$ is its primitive part. Now, you might ask, how unique is this primitive part? If you'd factored out $-6$ instead, you'd get $f(x) = -6 \cdot (-3x^4 + 7x^2 - 9x + 1)$. The primitive part simply flips its sign. So, we can say the primitive part is unique up to a factor of $\pm 1$, which are the only integers that have multiplicative inverses (the "units") in the integers. This is a fine level of precision that tells us our decomposition is solid. ()
+where $c(f)$ is its content and $f_p(x)$ is its primitive part. Now, you might ask, how unique is this primitive part? If you'd factored out $-6$ instead, you'd get $f(x) = -6 \cdot (-3x^4 + 7x^2 - 9x + 1)$. The primitive part simply flips its sign. So, we can say the primitive part is unique up to a factor of $\pm 1$, which are the only integers that have multiplicative inverses (the "units") in the integers. This is a fine level of precision that tells us our decomposition is solid. ([@problem_id:1798471])
 
 ### A Curious Multiplicative Law
 
@@ -36,7 +36,7 @@ The content of $f(x)$ is $c(f) = \gcd(14, 49, 21) = 7$.
 The content of $g(x)$ is $c(g) = \gcd(10, 6) = 2$.
 The product of the contents is $7 \times 2 = 14$.
 
-If you multiply them out, you get $h(x) = f(x)g(x) = 140x^5 + 406x^3 - 210x^2 - 294x + 126$. Now find the content of $h(x)$. You'll have to trust me, or do the fun work of finding the GCD of these large numbers, but the answer is indeed 14. ()
+If you multiply them out, you get $h(x) = f(x)g(x) = 140x^5 + 406x^3 - 210x^2 - 294x + 126$. Now find the content of $h(x)$. You'll have to trust me, or do the fun work of finding the GCD of these large numbers, but the answer is indeed 14. ([@problem_id:1798449])
 
 It seems we've stumbled upon a remarkable law: the content of a product is the product of the contents!
 
@@ -44,13 +44,13 @@ $$
 c(fg) = c(f)c(g)
 $$
 
-To show this is always true, we only need to prove the most fundamental case: **the product of two [primitive polynomials](@article_id:151585) is itself primitive**. () If we can prove this, the general formula follows easily. This very statement is the heart of **Gauss's Lemma**.
+To show this is always true, we only need to prove the most fundamental case: **the product of two [primitive polynomials](@keyword=primitive_polynomials|lang=en-US|style=Feynman) is itself primitive**. ([@problem_id:1798479]) If we can prove this, the general formula follows easily. This very statement is the heart of **Gauss's Lemma**.
 
-How do we prove it? The proof is a beautiful example of changing your perspective to make a hard problem easy. Suppose, for the sake of argument, that we multiply two [primitive polynomials](@article_id:151585), $f(x)$ and $g(x)$, and their product $h(x)=f(x)g(x)$ is *not* primitive. If it's not primitive, its content must be greater than 1, which means all its coefficients must be divisible by some prime number, let's call it $p$. For example, perhaps every coefficient in the product is divisible by 5. ()
+How do we prove it? The proof is a beautiful example of changing your perspective to make a hard problem easy. Suppose, for the sake of argument, that we multiply two [primitive polynomials](@keyword=primitive_polynomials|lang=en-US|style=Feynman), $f(x)$ and $g(x)$, and their product $h(x)=f(x)g(x)$ is *not* primitive. If it's not primitive, its content must be greater than 1, which means all its coefficients must be divisible by some prime number, let's call it $p$. For example, perhaps every coefficient in the product is divisible by 5. ([@problem_id:1784753])
 
 Now, let's look at the world through "modulo $p$" glasses. In this world, any number divisible by $p$ is just zero. Since all coefficients of $h(x)$ are divisible by $p$, the polynomial $\bar{h}(x)$ is just the zero polynomial in the world of $(\mathbb{Z}/p\mathbb{Z})[x]$. So, we have $\bar{f}(x)\bar{g}(x) = \bar{h}(x) = 0$.
 
-But because $f(x)$ and $g(x)$ are primitive, not all of their coefficients can be divisible by $p$. This means that $\bar{f}(x)$ and $\bar{g}(x)$ are *not* the zero polynomial. So we have two non-zero polynomials that multiply to zero! This is impossible in a world like $(\mathbb{Z}/p\mathbb{Z})[x]$ because it's an [integral domain](@article_id:146993) (just like the familiar integers, where if $ab=0$, either $a=0$ or $b=0$). This contradiction shows our initial assumption must be wrong. The product $h(x)$ must have been primitive after all!
+But because $f(x)$ and $g(x)$ are primitive, not all of their coefficients can be divisible by $p$. This means that $\bar{f}(x)$ and $\bar{g}(x)$ are *not* the zero polynomial. So we have two non-zero polynomials that multiply to zero! This is impossible in a world like $(\mathbb{Z}/p\mathbb{Z})[x]$ because it's an [integral domain](@keyword=integral_domain|lang=en-US|style=Feynman) (just like the familiar integers, where if $ab=0$, either $a=0$ or $b=0$). This contradiction shows our initial assumption must be wrong. The product $h(x)$ must have been primitive after all!
 
 ### The Great Bridge Between Two Worlds
 
@@ -70,11 +70,11 @@ Now, let's put it all back together:
 $$
 P(x) = \left(\frac{4}{3}\right)(2x^2+5) \cdot \left(\frac{3}{4}\right)(3x-1) = \left(\frac{4}{3} \cdot \frac{3}{4}\right)(2x^2+5)(3x-1) = (2x^2+5)(3x-1)
 $$
-Look at that! The messy rational numbers canceled out perfectly, leaving a clean factorization into [primitive polynomials](@article_id:151585) with integer coefficients. ()
+Look at that! The messy rational numbers canceled out perfectly, leaving a clean factorization into [primitive polynomials](@keyword=primitive_polynomials|lang=en-US|style=Feynman) with integer coefficients. ([@problem_id:1798447])
 
-This leads to the grand theorem: **A non-constant polynomial with integer coefficients is reducible over the rational numbers if and only if it is reducible over the integers.** () This is a tremendous simplification. To find out if a polynomial has rational factors, we only need to search for integer factors—a much more manageable task.
+This leads to the grand theorem: **A non-constant polynomial with integer coefficients is reducible over the rational numbers if and only if it is reducible over the integers.** ([@problem_id:1798464]) This is a tremendous simplification. To find out if a polynomial has rational factors, we only need to search for integer factors—a much more manageable task.
 
-This result is incredibly powerful. For example, if you have a **monic** polynomial (leading coefficient is 1), any integer factors it has must also be monic (or have a leading coefficient of -1). So, if you find a rational factor for a [monic polynomial](@article_id:151817) like $x^4 + \dots$, you can always "adjust" it to find a corresponding monic integer factor. () Furthermore, this bridge allows for clever tricks. To check if a polynomial like $f(x)=x^4+x+1$ is irreducible over the rationals, we can check its image modulo 2. Since $\bar{f}(x) = x^4+x+1$ is irreducible in $(\mathbb{Z}/2\mathbb{Z})[x]$, the original polynomial must be irreducible over the rationals! ()
+This result is incredibly powerful. For example, if you have a **monic** polynomial (leading coefficient is 1), any integer factors it has must also be monic (or have a leading coefficient of -1). So, if you find a rational factor for a [monic polynomial](@keyword=monic_polynomial|lang=en-US|style=Feynman) like $x^4 + \dots$, you can always "adjust" it to find a corresponding monic integer factor. ([@problem_id:1798487]) Furthermore, this bridge allows for clever tricks. To check if a polynomial like $f(x)=x^4+x+1$ is irreducible over the rationals, we can check its image modulo 2. Since $\bar{f}(x) = x^4+x+1$ is irreducible in $(\mathbb{Z}/2\mathbb{Z})[x]$, the original polynomial must be irreducible over the rationals! ([@problem_id:1798480])
 
 ### Where the Map Ends
 
@@ -86,8 +86,8 @@ Let's take a trip to a strange new world where this isn't true: the ring $\mathb
 $$
 6 = 2 \cdot 3 = (1+\sqrt{-5})(1-\sqrt{-5})
 $$
-In this world, [unique factorization](@article_id:151819) fails. So what happens to Gauss's Lemma? It fails spectacularly. It is possible to find two "primitive" polynomials, $f(x) = 2x+1+\sqrt{-5}$ and $g(x) = 2x+1-\sqrt{-5}$, whose product is $f(x)g(x) = 4x^2+4x+6$. The coefficients of the product are all divisible by 2, so the product is not primitive! ()
+In this world, [unique factorization](@keyword=unique_factorization|lang=en-US|style=Feynman) fails. So what happens to Gauss's Lemma? It fails spectacularly. It is possible to find two "primitive" polynomials, $f(x) = 2x+1+\sqrt{-5}$ and $g(x) = 2x+1-\sqrt{-5}$, whose product is $f(x)g(x) = 4x^2+4x+6$. The coefficients of the product are all divisible by 2, so the product is not primitive! ([@problem_id:1842993])
 
-The elegant structure has collapsed. This shows that Gauss's Lemma is not just a trick about polynomials; it is a deep reflection of the fundamental "good behavior" of the underlying number system. The lemma holds because integer multiplication is orderly and unique. It can also fail for other reasons, for example in rings like $\mathbb{Z}_6$ where $2 \times 3 = 0$. The very logic of our proof, which relied on having no zero divisors, falls apart in such a system. ()
+The elegant structure has collapsed. This shows that Gauss's Lemma is not just a trick about polynomials; it is a deep reflection of the fundamental "good behavior" of the underlying number system. The lemma holds because integer multiplication is orderly and unique. It can also fail for other reasons, for example in rings like $\mathbb{Z}_6$ where $2 \times 3 = 0$. The very logic of our proof, which relied on having no zero divisors, falls apart in such a system. ([@problem_id:1798468])
 
 And so, we see that Gauss's Lemma is more than a formula. It's a window into the deep and beautiful unity between arithmetic and algebra, revealing how the structure of numbers dictates the structure of the polynomials built upon them.

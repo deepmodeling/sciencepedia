@@ -4,23 +4,23 @@
 
 ### 驯服无穷：从有限到可数
 
-想象一条路，路面上有些坑洼。如果只有几个坑，我们显然不会认为这条路无法通行。这就像一个仅在有限个点上不连续的函数——比如一个[分段函数](@article_id:320679)，在连接处有一个“跳跃”，或者一个阶梯函数，每上一级台阶就跳一次。这些[不连续点](@article_id:367714)的集合是有限的，它们的总“长度”（也就是测度）为零。我们的新准则对此表示：“没问题，[黎曼积分](@article_id:306242)畅通无阻。”
+想象一条路，路面上有些坑洼。如果只有几个坑，我们显然不会认为这条路无法通行。这就像一个仅在有限个点上不连续的函数——比如一个[分段函数](@keyword=piecewise_functions|lang=zh-CN|style=Feynman)，在连接处有一个“跳跃”[@problem_id:1335090]，或者一个阶梯函数，每上一级台阶就跳一次[@problem_id:1335085]。这些[不连续点](@keyword=discontinuities|lang=zh-CN|style=Feynman)的集合是有限的，它们的总“长度”（也就是测度）为零。我们的新准则对此表示：“没问题，[黎曼积分](@keyword=riemann_integral|lang=zh-CN|style=Feynman)畅通无阻。”
 
 但如果这条路上有无穷多个坑呢？情况是否会失控？这正是勒贝格准则大显身手的地方。它教我们区分不同类型的“无穷”。
 
-让我们来看一个函数，它在一系列越来越小的区间 $(2^{-(n+1)}, 2^{-n}]$ 上取不同的常数值。这个函数在 $x = 1/2, 1/4, 1/8, \dots$ 等无穷多个点上发生跳跃。然而，这些[不连续点](@article_id:367714)是“可数的”——我们可以像数[自然数](@article_id:640312)一样把它们一一列出来。可数个点组成的集合，无论多么密集，其总长度（测度）仍然是零。准则再次给出了绿灯：尽管有无穷多处不连续，积分依然存在且定义良好。
+让我们来看一个函数，它在一系列越来越小的区间 $(2^{-(n+1)}, 2^{-n}]$ 上取不同的常数值[@problem_id:1335042]。这个函数在 $x = 1/2, 1/4, 1/8, \dots$ 等无穷多个点上发生跳跃。然而，这些[不连续点](@keyword=discontinuities|lang=zh-CN|style=Feynman)是“可数的”——我们可以像数[自然数](@keyword=natural_numbers|lang=zh-CN|style=Feynman)一样把它们一一列出来。可数个点组成的集合，无论多么密集，其总长度（测度）仍然是零。准则再次给出了绿灯：尽管有无穷多处不连续，积分依然存在且定义良好。
 
-现在，让我们面对一个更“狂野”的对手：函数 $f(x) = \text{sgn}(\sin(\pi/x))$ 。当 $x$ 趋近于 $0$ 时，它的图像以惊人的频率在 $1$ 和 $-1$ 之间疯狂[振荡](@article_id:331484)，仿佛要撕裂整个[坐标系](@article_id:316753)。直觉可能会告诉我们，这种混乱的行为必然导致积分的崩溃。但勒贝格准则仿佛一位沉着冷静的向导，它让我们忽略这令人眼花缭乱的表象，转而专注于问题的核心：不连续点在哪里？经过分析，我们发现这些[不连续点](@article_id:367714)恰好位于集合 $\{1/n \mid n \in \mathbb{N}\} \cup \{0\}$。这又是一个可数集！它的[测度为零](@article_id:298313)。因此，尽管外表“病态”，这个函数在黎曼积分的意义下却是“健康”的。这个例子有力地证明了勒贝格准则的深刻洞察力：它能穿透视觉上的复杂性，直达数学行为的本质。
+现在，让我们面对一个更“狂野”的对手：函数 $f(x) = \text{sgn}(\sin(\pi/x))$ [@problem_id:1335091]。当 $x$ 趋近于 $0$ 时，它的图像以惊人的频率在 $1$ 和 $-1$ 之间疯狂[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，仿佛要撕裂整个[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)。直觉可能会告诉我们，这种混乱的行为必然导致积分的崩溃。但勒贝格准则仿佛一位沉着冷静的向导，它让我们忽略这令人眼花缭乱的表象，转而专注于问题的核心：不连续点在哪里？经过分析，我们发现这些[不连续点](@keyword=discontinuities|lang=zh-CN|style=Feynman)恰好位于集合 $\{1/n \mid n \in \mathbb{N}\} \cup \{0\}$。这又是一个可数集！它的[测度为零](@keyword=measure_zero|lang=zh-CN|style=Feynman)。因此，尽管外表“病态”，这个函数在黎曼积分的意义下却是“健康”的。这个例子有力地证明了勒贝格准则的深刻洞察力：它能穿透视觉上的复杂性，直达数学行为的本质。
 
-### 可[积性](@article_id:367078)的边缘：当[黎曼积分](@article_id:306242)“失灵”时
+### 可[积性](@keyword=multiplicativity|lang=zh-CN|style=Feynman)的边缘：当[黎曼积分](@keyword=riemann_integral|lang=zh-CN|style=Feynman)“失灵”时
 
-既然我们已经看到，即使存在无穷多处不连续，函数也可能安然无恙，一个自然的问题是：我们是否可以肆无忌惮地增加不连续点？黎曼[积分的极限](@article_id:301991)在哪里？勒贝格准则不仅能划定边界，更能清晰地解释边界为何存在。
+既然我们已经看到，即使存在无穷多处不连续，函数也可能安然无恙，一个自然的问题是：我们是否可以肆无忌惮地增加不连续点？黎曼[积分的极限](@keyword=limit_of_integrals|lang=zh-CN|style=Feynman)在哪里？勒贝格准则不仅能划定边界，更能清晰地解释边界为何存在。
 
-让我们来认识一下[数学分析](@article_id:300111)中一个著名的“反叛者”——[狄利克雷函数](@article_id:301213)。它在有理数点上取值为 $1$，在无理数点上取值为 $0$ 。由于任何一个微小的区间内都既有有理数也存在[无理数](@article_id:318724)，这个函数在每一点的附近都在剧烈地“抽搐”。它在定义域内的每一点都是不连续的！因此，它的[不连续点集](@article_id:320712)就是整个区间，其测度为 $1$，远非零。此时，勒贝格准则亮起了鲜明的红灯：“此路不通！非[黎曼可积](@article_id:307151)！”
+让我们来认识一下[数学分析](@keyword=mathematical_analysis|lang=zh-CN|style=Feynman)中一个著名的“反叛者”——[狄利克雷函数](@keyword=dirichlet_function|lang=zh-CN|style=Feynman)。它在有理数点上取值为 $1$，在无理数点上取值为 $0$ [@problem_id:1335075]。由于任何一个微小的区间内都既有有理数也存在[无理数](@keyword=irrational_numbers|lang=zh-CN|style=Feynman)，这个函数在每一点的附近都在剧烈地“抽搐”。它在定义域内的每一点都是不连续的！因此，它的[不连续点集](@keyword=set_of_discontinuities|lang=zh-CN|style=Feynman)就是整个区间，其测度为 $1$，远非零。此时，勒贝格准则亮起了鲜明的红灯：“此路不通！非[黎曼可积](@keyword=riemann_integrable|lang=zh-CN|style=Feynman)！”
 
-这不仅仅是一个数学上的奇闻异事。它揭示了[黎曼积分](@article_id:306242)理论的一个根本性弱点。我们可以构造一个由一系列行为良好、完全可积的函数组成的序列，但这个序列的[逐点极限](@article_id:372496)却恰恰是这个不可积的[狄利克雷函数](@article_id:301213) 。这就像一队遵纪守法的公民，他们最终的集体行为却走向了混乱。这种情况表明，[黎曼可积函数](@article_id:321149)的集合在[逐点极限](@article_id:372496)这种常见的运算下是不“封闭”的。这一发现强烈地呼唤着一个更强大、更完备的积分理论的诞生——而这，正是通往[勒贝格积分](@article_id:300633)理论的大门。
+这不仅仅是一个数学上的奇闻异事。它揭示了[黎曼积分](@keyword=riemann_integral|lang=zh-CN|style=Feynman)理论的一个根本性弱点。我们可以构造一个由一系列行为良好、完全可积的函数组成的序列，但这个序列的[逐点极限](@keyword=pointwise_limit|lang=zh-CN|style=Feynman)却恰恰是这个不可积的[狄利克雷函数](@keyword=dirichlet_function|lang=zh-CN|style=Feynman)[@problem_id:1409301] [@problem_id:1409329]。这就像一队遵纪守法的公民，他们最终的集体行为却走向了混乱。这种情况表明，[黎曼可积函数](@keyword=riemann_integrable_function|lang=zh-CN|style=Feynman)的集合在[逐点极限](@keyword=pointwise_limit|lang=zh-CN|style=Feynman)这种常见的运算下是不“封闭”的。这一发现强烈地呼唤着一个更强大、更完备的积分理论的诞生——而这，正是通往[勒贝格积分](@keyword=lebesgue_integration|lang=zh-CN|style=Feynman)理论的大门。
 
-除了[狄利克雷函数](@article_id:301213)这种“无处不乱”的情形，还有更精巧的例子。我们可以构造一个被称为“胖”[康托集](@article_id:302344)的奇特集合，它像尘埃一样弥漫，不包含任何区间，但其总长度（测度）却是一个正数，例如 $1/2$。现在，定义一个函数，在这个“胖”康托集上取值为 $1$，在其他地方取值为 $0$ 。这个函数只在其[不连续点集](@article_id:320712)——也就是这个“胖”[康托集](@article_id:302344)——上“行为不端”。由于[不连续点集](@article_id:320712)的测度不为零，勒贝格准则再次判定它不是[黎曼可积](@article_id:307151)的。这个例子精妙地区分了不同类型的[不可数集](@article_id:300953)：标准的康托集虽然不可数，但[测度为零](@article_id:298313)；而“胖”康托集不可数，且测度为正。可积与否的关键，不在于[不连续点](@article_id:367714)的个数是有限还是无限，甚至不是可数还是不可数，而在于这个集合的“重量”——它的测度是否为零。
+除了[狄利克雷函数](@keyword=dirichlet_function|lang=zh-CN|style=Feynman)这种“无处不乱”的情形，还有更精巧的例子。我们可以构造一个被称为“胖”[康托集](@keyword=cantor_set|lang=zh-CN|style=Feynman)的奇特集合，它像尘埃一样弥漫，不包含任何区间，但其总长度（测度）却是一个正数，例如 $1/2$。现在，定义一个函数，在这个“胖”康托集上取值为 $1$，在其他地方取值为 $0$ [@problem_id:2314280]。这个函数只在其[不连续点集](@keyword=set_of_discontinuities|lang=zh-CN|style=Feynman)——也就是这个“胖”[康托集](@keyword=cantor_set|lang=zh-CN|style=Feynman)——上“行为不端”。由于[不连续点集](@keyword=set_of_discontinuities|lang=zh-CN|style=Feynman)的测度不为零，勒贝格准则再次判定它不是[黎曼可积](@keyword=riemann_integrable|lang=zh-CN|style=Feynman)的。这个例子精妙地区分了不同类型的[不可数集](@keyword=uncountable_sets|lang=zh-CN|style=Feynman)：标准的康托集虽然不可数，但[测度为零](@keyword=measure_zero|lang=zh-CN|style=Feynman)；而“胖”康托集不可数，且测度为正。可积与否的关键，不在于[不连续点](@keyword=discontinuities|lang=zh-CN|style=Feynman)的个数是有限还是无限，甚至不是可数还是不可数，而在于这个集合的“重量”——它的测度是否为零。
 
 ### 万物之网：一曲跨学科的交响
 
@@ -28,20 +28,20 @@
 
 #### 数学结构的内在逻辑
 
-在分析学的殿堂里，勒贝格准则帮助我们优雅地证明了许多深刻的结论。例如，所有[单调函数](@article_id:305540)（即函数值只增不减或只减不增的函数）都是[黎曼可积](@article_id:307151)的。为什么？因为一个函数如果始终朝着一个方向前进，它就无法“上蹿下跳”得太厉害。可以证明，它的[不连续点集](@article_id:320712)至多是可数的。有了这个结论，勒贝格准则便立即宣布了所有[单调函数](@article_id:305540)的“可积资格”。这真是序结构（[单调性](@article_id:304191)）与[测度论](@article_id:300191)之间的一次完美联姻。
+在分析学的殿堂里，勒贝格准则帮助我们优雅地证明了许多深刻的结论。例如，所有[单调函数](@keyword=monotonic_functions|lang=zh-CN|style=Feynman)（即函数值只增不减或只减不增的函数）都是[黎曼可积](@keyword=riemann_integrable|lang=zh-CN|style=Feynman)的。为什么？因为一个函数如果始终朝着一个方向前进，它就无法“上蹿下跳”得太厉害。可以证明，它的[不连续点集](@keyword=set_of_discontinuities|lang=zh-CN|style=Feynman)至多是可数的[@problem_id:2303070]。有了这个结论，勒贝格准则便立即宣布了所有[单调函数](@keyword=monotonic_functions|lang=zh-CN|style=Feynman)的“可积资格”。这真是序结构（[单调性](@keyword=monotonicity|lang=zh-CN|style=Feynman)）与[测度论](@keyword=measure_theory|lang=zh-CN|style=Feynman)之间的一次完美联姻。
 
-我们还可以探索函数间的“[化学反应](@article_id:307389)”。两个[黎曼可积](@article_id:307151)的“稳定”函数，经过复合运算后，是否依然“稳定”？答案是“不一定！” 一个著名的例子表明，将两个行为相当温和的可积函数（如[托马函数](@article_id:306856)和一个简单的[阶跃函数](@article_id:362824)）复合起来，其产物竟然是剧毒的[狄利克雷函数](@article_id:301213)。这警示我们，函数的代数运算背后隐藏着深刻的结构性问题。研究这些“病态”案例并非吹毛求疵，它们恰恰帮助我们理解数学规则的适用边界，探索函数世界的深层法则 。
+我们还可以探索函数间的“[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)”。两个[黎曼可积](@keyword=riemann_integrable|lang=zh-CN|style=Feynman)的“稳定”函数，经过复合运算后，是否依然“稳定”？答案是“不一定！” 一个著名的例子表明，将两个行为相当温和的可积函数（如[托马函数](@keyword=thomae_s_function|lang=zh-CN|style=Feynman)和一个简单的[阶跃函数](@keyword=staircase_function|lang=zh-CN|style=Feynman)）复合起来，其产物竟然是剧毒的[狄利克雷函数](@keyword=dirichlet_function|lang=zh-CN|style=Feynman)[@problem_id:1318720]。这警示我们，函数的代数运算背后隐藏着深刻的结构性问题。研究这些“病态”案例并非吹毛求疵，它们恰恰帮助我们理解数学规则的适用边界，探索函数世界的深层法则[@problem_id:1335058] [@problem_id:1335059]。
 
 #### 从纯粹数学到计算机代码
 
-现在，让我们从抽象的理论走向实践。想象一个定义在单位正方形上的函数 $F(x,y)$，它的定义与标准康托集有关——一个著名的[测度为零](@article_id:298313)的[分形集](@article_id:365676)。当一个点的坐标落在康托集中时，函数值为零；否则，它等于坐标的乘积 $xy$ 。
+现在，让我们从抽象的理论走向实践。想象一个定义在单位正方形上的函数 $F(x,y)$，它的定义与标准康托集有关——一个著名的[测度为零](@keyword=measure_zero|lang=zh-CN|style=Feynman)的[分形集](@keyword=fractal_sets|lang=zh-CN|style=Feynman)。当一个点的坐标落在康托集中时，函数值为零；否则，它等于坐标的乘积 $xy$ [@problem_id:2414977]。
 
-*   **理论的裁决**：勒贝格准则告诉我们，这个函数的[不连续点集](@article_id:320712)是一个[测度为零](@article_id:298313)的集合。因此，$F(x,y)$ 是[黎曼可积](@article_id:307151)的。它的积分值与更简单的函数 $g(x,y)=xy$ 的积分值完全相同，因为它们仅在一个[测度为零](@article_id:298313)的集合上有所不同。
+*   **理论的裁决**：勒贝格准则告诉我们，这个函数的[不连续点集](@keyword=set_of_discontinuities|lang=zh-CN|style=Feynman)是一个[测度为零](@keyword=measure_zero|lang=zh-CN|style=Feynman)的集合。因此，$F(x,y)$ 是[黎曼可积](@keyword=riemann_integrable|lang=zh-CN|style=Feynman)的。它的积分值与更简单的函数 $g(x,y)=xy$ 的积分值完全相同，因为它们仅在一个[测度为零](@keyword=measure_zero|lang=zh-CN|style=Feynman)的集合上有所不同。
 
-*   **计算的困境**：理论上一切安好，但当我们让计算机来计算这个积[分时](@article_id:338112)，奇妙的事情发生了。一种“简单粗暴”的[蒙特卡洛方法](@article_id:297429)（在正方形内随机“投掷飞镖”并取平均）表现得非常出色。由于[不连续点集](@article_id:320712)[测度为零](@article_id:298313)，随机投掷的飞镖击中它的概率为零。计算机甚至“看不见”问题的复杂性，便轻松得到了正确答案。
+*   **计算的困境**：理论上一切安好，但当我们让计算机来计算这个积[分时](@keyword=time_sharing|lang=zh-CN|style=Feynman)，奇妙的事情发生了。一种“简单粗暴”的[蒙特卡洛方法](@keyword=monte_carlo_methods|lang=zh-CN|style=Feynman)（在正方形内随机“投掷飞镖”并取平均）表现得非常出色。由于[不连续点集](@keyword=set_of_discontinuities|lang=zh-CN|style=Feynman)[测度为零](@keyword=measure_zero|lang=zh-CN|style=Feynman)，随机投掷的飞镖击中它的概率为零。计算机甚至“看不见”问题的复杂性，便轻松得到了正确答案。
 
-*   **智能的陷阱**：然而，一种更“智能”的自适应[积分算法](@article_id:371562)却可能陷入无尽的循环。这种[算法](@article_id:331821)会试图在函数变化剧烈的区域加密网格以提高精度。当它探测到[康托集](@article_id:302344)边缘附近函数值从零到非零的剧烈跳变时，它会错误地认为这里存在严重的计算难题。于是，它不断地“放大”这些区域，试图去解析一个对最终积分值毫无贡献的、测度为零的集合的细节。这个“智能”[算法](@article_id:331821)，被一个[测度为零](@article_id:298313)的[分形集](@article_id:365676)的几何形态给“催眠”和“困住”了。
+*   **智能的陷阱**：然而，一种更“智能”的自适应[积分算法](@keyword=integration_algorithms|lang=zh-CN|style=Feynman)却可能陷入无尽的循环。这种[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)会试图在函数变化剧烈的区域加密网格以提高精度。当它探测到[康托集](@keyword=cantor_set|lang=zh-CN|style=Feynman)边缘附近函数值从零到非零的剧烈跳变时，它会错误地认为这里存在严重的计算难题。于是，它不断地“放大”这些区域，试图去解析一个对最终积分值毫无贡献的、测度为零的集合的细节。这个“智能”[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)，被一个[测度为零](@keyword=measure_zero|lang=zh-CN|style=Feynman)的[分形集](@keyword=fractal_sets|lang=zh-CN|style=Feynman)的几何形态给“催眠”和“困住”了。
 
-这是一个多么深刻而有趣的教训！一个来自最纯粹数学领域的概念——集合的测度——直接解释并预测了计算机[算法](@article_id:331821)在现实世界中的性能表现。它告诉我们，理解深刻的理论并非一种学术上的奢侈，它对于编写健壮、高效的科学计算程序至关重要。在这里，纯粹数学与计算科学的统一性被展现得淋漓尽致。
+这是一个多么深刻而有趣的教训！一个来自最纯粹数学领域的概念——集合的测度——直接解释并预测了计算机[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)在现实世界中的性能表现。它告诉我们，理解深刻的理论并非一种学术上的奢侈，它对于编写健壮、高效的科学计算程序至关重要。在这里，纯粹数学与计算科学的统一性被展现得淋漓尽致。
 
-总而言之，勒贝格准则不仅是一条规则，更是一种思维方式。它教会我们如何区分表面的复杂与本质的病态，指出了[黎曼积分](@article_id:306242)的局限，并为通向更广阔的[勒贝格积分](@article_id:300633)世界铺平了道路。而最令人惊叹的是，这些源于人类智力深处的好奇心与探索，其回响竟能在科学与工程的实际挑战中听到。发现之旅，永无止境。
+总而言之，勒贝格准则不仅是一条规则，更是一种思维方式。它教会我们如何区分表面的复杂与本质的病态，指出了[黎曼积分](@keyword=riemann_integral|lang=zh-CN|style=Feynman)的局限，并为通向更广阔的[勒贝格积分](@keyword=lebesgue_integration|lang=zh-CN|style=Feynman)世界铺平了道路。而最令人惊叹的是，这些源于人类智力深处的好奇心与探索，其回响竟能在科学与工程的实际挑战中听到。发现之旅，永无止境。

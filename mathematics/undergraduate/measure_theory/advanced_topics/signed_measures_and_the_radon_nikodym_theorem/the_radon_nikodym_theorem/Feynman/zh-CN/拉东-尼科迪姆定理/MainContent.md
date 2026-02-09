@@ -1,7 +1,7 @@
 ## 引言
-您是否想过，我们如何用一个统一的框架来描述不同事物的“密度”？从一根材质不均的金属棒的质量密度，到一个[随机变量](@article_id:324024)的[概率密度](@article_id:304297)，再到[金融市场](@article_id:303273)中风险的“价格密度”，这些看似迥异的概念背后，隐藏着一个共同的数学原理。这个原理正是现代分析学和概率论的基石之一——[拉东-尼科迪姆定理](@article_id:321642)。它优雅地回答了一个核心问题：我们何时能用一个量（如长度）来表示另一个量（如质量或概率）？
+您是否想过，我们如何用一个统一的框架来描述不同事物的“密度”？从一根材质不均的金属棒的质量密度，到一个[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman)的[概率密度](@keyword=probability_density|lang=zh-CN|style=Feynman)，再到[金融市场](@keyword=financial_markets|lang=zh-CN|style=Feynman)中风险的“价格密度”，这些看似迥异的概念背后，隐藏着一个共同的数学原理。这个原理正是现代分析学和概率论的基石之一——[拉东-尼科迪姆定理](@keyword=radon_nikodym_theorem|lang=zh-CN|style=Feynman)。它优雅地回答了一个核心问题：我们何时能用一个量（如长度）来表示另一个量（如质量或概率）？
 
-本文旨在揭开[拉东-尼科迪姆定理](@article_id:321642)的神秘面纱，带领您领略其深刻的内涵与强大的应用价值。我们将首先深入探讨其核心原理，理解“绝对连续性”和“奇异性”这两个关键思想如何决定了“密度”的存在与否。随后，我们将跨越学科的边界，探索该定理如何在物理学、概率统计、金融工程乃至前沿几何学中扮演着不可或缺的角色，揭示其作为一种通用“语言”的魅力。准备好开始这场从直观物理到抽象数学的奇妙旅程吧。
+本文旨在揭开[拉东-尼科迪姆定理](@keyword=radon_nikodym_theorem|lang=zh-CN|style=Feynman)的神秘面纱，带领您领略其深刻的内涵与强大的应用价值。我们将首先深入探讨其核心原理，理解“绝对连续性”和“奇异性”这两个关键思想如何决定了“密度”的存在与否。随后，我们将跨越学科的边界，探索该定理如何在物理学、概率统计、金融工程乃至前沿几何学中扮演着不可或缺的角色，揭示其作为一种通用“语言”的魅力。准备好开始这场从直观物理到抽象数学的奇妙旅程吧。
 
 ## 原理与机制
 
@@ -13,13 +13,13 @@ $$
 M([a, b]) = \int_a^b \rho(x) dx
 $$
 
-这个简单的想法蕴含着一个深刻的道理：我们通过一个“密度函数” $\rho(x)$，将一个物理量（质量）用另一个物理量（长度）表达了出来。这里的密度函数 $\rho(x)$，本质上就是质量对长度的“[导数](@article_id:318324)”。事实上，如果你想知道点 $p$ 处的精确密度，你可以取包含 $p$ 的一小段，计算它的“质量/长度”之比，然后让这段的长度趋向于零。这个极限就是点 $p$ 的密度 。
+这个简单的想法蕴含着一个深刻的道理：我们通过一个“密度函数” $\rho(x)$，将一个物理量（质量）用另一个物理量（长度）表达了出来。这里的密度函数 $\rho(x)$，本质上就是质量对长度的“[导数](@keyword=derivative|lang=zh-CN|style=Feynman)”。事实上，如果你想知道点 $p$ 处的精确密度，你可以取包含 $p$ 的一小段，计算它的“质量/长度”之比，然后让这段的长度趋向于零。这个极限就是点 $p$ 的密度 [@problem_id:1459134]。
 
 $$
 \rho(p) = \lim_{r \to 0^+} \frac{\text{质量}(B(p, r))}{\text{长度}(B(p, r))}
 $$
 
-这里 $B(p, r)$ 是以 $p$ 为中心，半径为 $r$ 的区间。这个概念，即用一个量的“密度”来表示另一个量，正是我们即将探索的[拉东-尼科迪姆定理](@article_id:321642) (Radon-Nikodym Theorem) 的核心。这个定理将上述物理直觉推广到了一个极其广阔和抽象的数学世界。
+这里 $B(p, r)$ 是以 $p$ 为中心，半径为 $r$ 的区间。这个概念，即用一个量的“密度”来表示另一个量，正是我们即将探索的[拉东-尼科迪姆定理](@keyword=radon_nikodym_theorem|lang=zh-CN|style=Feynman) (Radon-Nikodym Theorem) 的核心。这个定理将上述物理直觉推广到了一个极其广阔和抽象的数学世界。
 
 ### 崭新的尺度：测度
 
@@ -31,9 +31,9 @@ $$
 \nu(A) = \int_A f \,d\mu
 $$
 
-如果可以，这个函数 $f$ 将扮演“汇率”的角色，它告诉我们如何把以 $\mu$ 为单位的“大小”兑换成以 $\nu$ 为单位的“大小”。这个 $f$ 就是我们梦寐以求的**[拉东-尼科迪姆导数](@article_id:318803)**，记作 $\frac{d\nu}{d\mu}$。
+如果可以，这个函数 $f$ 将扮演“汇率”的角色，它告诉我们如何把以 $\mu$ 为单位的“大小”兑换成以 $\nu$ 为单位的“大小”。这个 $f$ 就是我们梦寐以求的**[拉东-尼科迪姆导数](@keyword=radon_nikodym_derivative|lang=zh-CN|style=Feynman)**，记作 $\frac{d\nu}{d\mu}$。
 
-### “无中不能生有”：[绝对连续](@article_id:304941)性
+### “无中不能生有”：[绝对连续](@keyword=absolute_continuity|lang=zh-CN|style=Feynman)性
 
 那么，这个“汇率”或“密度函数”在什么条件下才存在呢？这里有一个至关重要的、充满哲学意味的条件：**绝对连续性 (Absolute Continuity)**。
 
@@ -41,47 +41,47 @@ $$
 
 这个条件的直觉含义是 “无中不能生有”。如果一个集合在 $\mu$ 的世界里“一无所有”（测度为零），那么它在 $\nu$ 的世界里也必须“一无所有”。你不能在 $\mu$ 的“真空”地带凭空创造出 $\nu$ 的“物质”。
 
-让我们看一个简单的例子。假设我们的空间只有三个点 $X = \{1, 2, 3\}$。我们定义一个测度 $\mu$ 如下：$\mu(\{1\})=2$, $\mu(\{2\})=0$, $\mu(\{3\})=5$。现在，我们用一个函数 $f(1)=0, f(2)=10, f(3)=4$ 来定义一个新的测度 $\nu(A) = \sum_{x \in A} f(x)\mu(\{x\})$。我们可以看到，任何 $\mu$-[测度为零](@article_id:298313)的集合，其 $\nu$-测度也必然为零。例如，$\mu(\{2\})=0$，那么 $\nu(\{2\}) = f(2)\mu(\{2\}) = 10 \cdot 0 = 0$。所以，$\nu \ll \mu$ 成立。但是反过来不一定，$\mu(\{1\})=2 > 0$，而 $\nu(\{1\}) = f(1)\mu(\{1\}) = 0 \cdot 2 = 0$。这意味着，当 $\nu(\{1\})=0$ 时，$\mu(\{1\})$ 却不为零。因此 $\mu$ 对 $\nu$ 不是绝对连续的 。
+让我们看一个简单的例子。假设我们的空间只有三个点 $X = \{1, 2, 3\}$。我们定义一个测度 $\mu$ 如下：$\mu(\{1\})=2$, $\mu(\{2\})=0$, $\mu(\{3\})=5$。现在，我们用一个函数 $f(1)=0, f(2)=10, f(3)=4$ 来定义一个新的测度 $\nu(A) = \sum_{x \in A} f(x)\mu(\{x\})$。我们可以看到，任何 $\mu$-[测度为零](@keyword=measure_zero|lang=zh-CN|style=Feynman)的集合，其 $\nu$-测度也必然为零。例如，$\mu(\{2\})=0$，那么 $\nu(\{2\}) = f(2)\mu(\{2\}) = 10 \cdot 0 = 0$。所以，$\nu \ll \mu$ 成立。但是反过来不一定，$\mu(\{1\})=2 > 0$，而 $\nu(\{1\}) = f(1)\mu(\{1\}) = 0 \cdot 2 = 0$。这意味着，当 $\nu(\{1\})=0$ 时，$\mu(\{1\})$ 却不为零。因此 $\mu$ 对 $\nu$ 不是绝对连续的 [@problem_id:1459124]。
 
-什么时候[绝对连续](@article_id:304941)性不成立呢？一个经典的例子是[狄拉克测度](@article_id:324091) (Dirac measure) $\delta_{x_0}$。它像一个“点电荷”，把全部的“质量”（值为1）集中在一个点 $x_0$ 上，而其他任何不包含 $x_0$ 的区域质量都为零。现在，我们拿它和我们熟悉的勒贝格测度（长度）$\lambda$ 比较。考虑单点集 $A = \{\sqrt{2}\}$。对于[勒贝格测度](@article_id:300228)，一个点的长度是零，所以 $\lambda(A) = 0$。但对于以 $\sqrt{2}$ 为中心的[狄拉克测度](@article_id:324091)，$\delta_{\sqrt{2}}(A) = 1$。看！我们找到了一个集合，它在 $\lambda$ 的世界里是“无”，但在 $\delta_{\sqrt{2}}$ 的世界里是“有”。这违反了绝对连续性，因此 $\delta_{\sqrt{2}}$ 对 $\lambda$ 不是[绝对连续](@article_id:304941)的 。这意味着，我们无法找到一个普通的密度函数 $f(x)$，通过对勒贝格测度的积分来得到[狄拉克测度](@article_id:324091)。
+什么时候[绝对连续](@keyword=absolute_continuity|lang=zh-CN|style=Feynman)性不成立呢？一个经典的例子是[狄拉克测度](@keyword=dirac_measure|lang=zh-CN|style=Feynman) (Dirac measure) $\delta_{x_0}$。它像一个“点电荷”，把全部的“质量”（值为1）集中在一个点 $x_0$ 上，而其他任何不包含 $x_0$ 的区域质量都为零。现在，我们拿它和我们熟悉的勒贝格测度（长度）$\lambda$ 比较。考虑单点集 $A = \{\sqrt{2}\}$。对于[勒贝格测度](@keyword=lebesgue_measure|lang=zh-CN|style=Feynman)，一个点的长度是零，所以 $\lambda(A) = 0$。但对于以 $\sqrt{2}$ 为中心的[狄拉克测度](@keyword=dirac_measure|lang=zh-CN|style=Feynman)，$\delta_{\sqrt{2}}(A) = 1$。看！我们找到了一个集合，它在 $\lambda$ 的世界里是“无”，但在 $\delta_{\sqrt{2}}$ 的世界里是“有”。这违反了绝对连续性，因此 $\delta_{\sqrt{2}}$ 对 $\lambda$ 不是[绝对连续](@keyword=absolute_continuity|lang=zh-CN|style=Feynman)的 [@problem_id:1459152]。这意味着，我们无法找到一个普通的密度函数 $f(x)$，通过对勒贝格测度的积分来得到[狄拉克测度](@keyword=dirac_measure|lang=zh-CN|style=Feynman)。
 
 ### “老死不相往来”：奇异性
 
-与[绝对连续](@article_id:304941)性相对的另一个极端是**奇异性 (Singularity)**。如果两个测度 $\nu$ 和 $\mu$ 是奇异的（记作 $\nu \perp \mu$），意味着它们“生活”在完全不同的世界里。我们可以找到一个集合 $N$，使得 $\mu(N)=0$，但 $\nu$ 的全部“质量”都集中在 $N$ 上（即 $\nu(X \setminus N)=0$）。它们就像两个国家，一个国家的所有公民都生活在另一国地图上的无人区里。
+与[绝对连续](@keyword=absolute_continuity|lang=zh-CN|style=Feynman)性相对的另一个极端是**奇异性 (Singularity)**。如果两个测度 $\nu$ 和 $\mu$ 是奇异的（记作 $\nu \perp \mu$），意味着它们“生活”在完全不同的世界里。我们可以找到一个集合 $N$，使得 $\mu(N)=0$，但 $\nu$ 的全部“质量”都集中在 $N$ 上（即 $\nu(X \setminus N)=0$）。它们就像两个国家，一个国家的所有公民都生活在另一国地图上的无人区里。
 
-一个绝佳的例子是康托测度 (Cantor measure) $\nu$ 和[勒贝格测度](@article_id:300228) $m$ 。[康托集](@article_id:302344) $C$ 是一个非常奇特的几何对象，它由无数个离散的点构成，但其总长度（勒贝格测度）为零，即 $m(C)=0$。而康托测度 $\nu$ 是一种[概率测度](@article_id:323878)，它把全部的“概率质量”都放在了[康托集](@article_id:302344) $C$ 上。对于[勒贝格测度](@article_id:300228)来说，[康托集](@article_id:302344)是一个可以忽略的“尘埃”集合；但对于康托测度来说，这片“尘埃”就是它的整个宇宙。因此，$\nu \perp m$。在这种情况下，$\nu$ 相对于 $m$ 的“密度”是什么？直观上应该是零，因为它没有任何部分是与 $m$ “兼容”的。
+一个绝佳的例子是康托测度 (Cantor measure) $\nu$ 和[勒贝格测度](@keyword=lebesgue_measure|lang=zh-CN|style=Feynman) $m$ [@problem_id:1459120]。[康托集](@keyword=cantor_set|lang=zh-CN|style=Feynman) $C$ 是一个非常奇特的几何对象，它由无数个离散的点构成，但其总长度（勒贝格测度）为零，即 $m(C)=0$。而康托测度 $\nu$ 是一种[概率测度](@keyword=probability_measures|lang=zh-CN|style=Feynman)，它把全部的“概率质量”都放在了[康托集](@keyword=cantor_set|lang=zh-CN|style=Feynman) $C$ 上。对于[勒贝格测度](@keyword=lebesgue_measure|lang=zh-CN|style=Feynman)来说，[康托集](@keyword=cantor_set|lang=zh-CN|style=Feynman)是一个可以忽略的“尘埃”集合；但对于康托测度来说，这片“尘埃”就是它的整个宇宙。因此，$\nu \perp m$。在这种情况下，$\nu$ 相对于 $m$ 的“密度”是什么？直观上应该是零，因为它没有任何部分是与 $m$ “兼容”的。
 
-### 伟大的综合：[勒贝格-拉东-尼科迪姆定理](@article_id:368866)
+### 伟大的综合：[勒贝格-拉东-尼科迪姆定理](@keyword=lebesgue_radon_nikodym_theorem|lang=zh-CN|style=Feynman)
 
 现在，我们可以陈述那个伟大的定理了。它实际上是两个定理的完美结合。
 
-**1. [勒贝格分解定理](@article_id:376479) (Lebesgue Decomposition Theorem):** 对于两个（$\sigma$-有限的）测度 $\mu$ 和 $\nu$，$\nu$ 总可以被唯一地分解成两部分：一个相对于 $\mu$ 是绝对连续的部分 $\nu_{ac}$，和一个相对于 $\mu$ 是奇异的部分 $\nu_s$。
+**1. [勒贝格分解定理](@keyword=lebesgue_decomposition_theorem|lang=zh-CN|style=Feynman) (Lebesgue Decomposition Theorem):** 对于两个（$\sigma$-有限的）测度 $\mu$ 和 $\nu$，$\nu$ 总可以被唯一地分解成两部分：一个相对于 $\mu$ 是绝对连续的部分 $\nu_{ac}$，和一个相对于 $\mu$ 是奇异的部分 $\nu_s$。
 $$
 \nu = \nu_{ac} + \nu_s, \quad \text{其中 } \nu_{ac} \ll \mu \text{ 且 } \nu_s \perp \mu
 $$
-这就像任何一个二维平面上的向量，都可以被[唯一分解](@article_id:312726)为一个 $x$ 分量和一个 $y$ 分量。这个定理告诉我们，任何测度与另一个测度的关系，都可以看作是“绝对连续”和“奇异”这两种纯粹关系的混合。一个非常直观的例子是，如果我们用一个既包含平滑增长部分又包含跳跃的函数来构造测度，那么平滑部分就会对应于[绝对连续测度](@article_id:381253)，而跳跃点则会产生[奇异测度](@article_id:370581)（通常是[狄拉克测度](@article_id:324091)之和）。
+这就像任何一个二维平面上的向量，都可以被[唯一分解](@keyword=unique_factorization|lang=zh-CN|style=Feynman)为一个 $x$ 分量和一个 $y$ 分量。这个定理告诉我们，任何测度与另一个测度的关系，都可以看作是“绝对连续”和“奇异”这两种纯粹关系的混合。一个非常直观的例子是，如果我们用一个既包含平滑增长部分又包含跳跃的函数来构造测度，那么平滑部分就会对应于[绝对连续测度](@keyword=absolutely_continuous_measure|lang=zh-CN|style=Feynman)，而跳跃点则会产生[奇异测度](@keyword=singular_measures|lang=zh-CN|style=Feynman)（通常是[狄拉克测度](@keyword=dirac_measure|lang=zh-CN|style=Feynman)之和）[@problem_id:1459143]。
 
-**2. [拉东-尼科迪姆定理](@article_id:321642) (Radon-Nikodym Theorem):** 对于这个绝对连续的部分 $\nu_{ac}$，**总是**存在一个非负的可测函数 $f$（[拉东-尼科迪姆导数](@article_id:318803)），使得对于任何集合 $A$：
+**2. [拉东-尼科迪姆定理](@keyword=radon_nikodym_theorem|lang=zh-CN|style=Feynman) (Radon-Nikodym Theorem):** 对于这个绝对连续的部分 $\nu_{ac}$，**总是**存在一个非负的可测函数 $f$（[拉东-尼科迪姆导数](@keyword=radon_nikodym_derivative|lang=zh-CN|style=Feynman)），使得对于任何集合 $A$：
 $$
 \nu_{ac}(A) = \int_A f \,d\mu
 $$
 我们通常将这个 $f$ 写作 $f = \frac{d\nu}{d\mu}$，它被定义为 $\frac{d\nu_{ac}}{d\mu}$。
 
-当然，这个强大的定理也有它的前提。其中一个关键条件是测度 $\mu$ 必须是**$\sigma$-有限的**。这意味着整个空间可以被一列测度有限的集合所覆盖。这个条件看似技术性，但缺少它，定理就不再成立。例如，在实数轴 $\mathbb{R}$ 上，如果我们用计算元素个数的“[计数测度](@article_id:367867)” $\mu$ 作为基准，由于 $\mathbb{R}$ 是[不可数集](@article_id:300953)，$\mu$ 就不是 $\sigma$-有限的。因此，即使[勒贝格测度](@article_id:300228) $\lambda$ 对 $\mu$ 是[绝对连续](@article_id:304941)的，我们仍然无法找到一个[拉东-尼科迪姆导数](@article_id:318803) 。这提醒我们，即使是再美的理论，也有其应用的边界。
+当然，这个强大的定理也有它的前提。其中一个关键条件是测度 $\mu$ 必须是**$\sigma$-有限的**。这意味着整个空间可以被一列测度有限的集合所覆盖。这个条件看似技术性，但缺少它，定理就不再成立。例如，在实数轴 $\mathbb{R}$ 上，如果我们用计算元素个数的“[计数测度](@keyword=counting_measure|lang=zh-CN|style=Feynman)” $\mu$ 作为基准，由于 $\mathbb{R}$ 是[不可数集](@keyword=uncountable_sets|lang=zh-CN|style=Feynman)，$\mu$ 就不是 $\sigma$-有限的。因此，即使[勒贝格测度](@keyword=lebesgue_measure|lang=zh-CN|style=Feynman) $\lambda$ 对 $\mu$ 是[绝对连续](@keyword=absolute_continuity|lang=zh-CN|style=Feynman)的，我们仍然无法找到一个[拉东-尼科迪姆导数](@keyword=radon_nikodym_derivative|lang=zh-CN|style=Feynman) [@problem_id:1459146]。这提醒我们，即使是再美的理论，也有其应用的边界。
 
-### “新[导数](@article_id:318324)”的优美性质
+### “新[导数](@keyword=derivative|lang=zh-CN|style=Feynman)”的优美性质
 
-这个广义的“[导数](@article_id:318324)” $f = \frac{d\nu}{d\mu}$ 不仅存在，还继承了我们在微积分中学到的普通[导数](@article_id:318324)的许多优美性质，这揭示了数学内在的和谐与统一。
+这个广义的“[导数](@keyword=derivative|lang=zh-CN|style=Feynman)” $f = \frac{d\nu}{d\mu}$ 不仅存在，还继承了我们在微积分中学到的普通[导数](@keyword=derivative|lang=zh-CN|style=Feynman)的许多优美性质，这揭示了数学内在的和谐与统一。
 
-- **几乎处处唯一性 (Uniqueness Almost Everywhere):** 这个[导数](@article_id:318324) $f$ 并非在每一点上都独一无二。任何两个合法的[导数](@article_id:318324)函数 $f$ 和 $g$ 可能在某些点上取值不同，但它们只能在一块“无足轻重”的区域上存在差异——即一个在 $\mu$ 测度下大小为零的集合上。我们称 $f$ 和 $g$ 是“$\mu$-[几乎处处相等](@article_id:331309)”的。这在实践中完全足够了，因为当我们用它们来积分时，在一个测度为零的集合上的差异不会对积分结果产生任何影响 。
+- **几乎处处唯一性 (Uniqueness Almost Everywhere):** 这个[导数](@keyword=derivative|lang=zh-CN|style=Feynman) $f$ 并非在每一点上都独一无二。任何两个合法的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)函数 $f$ 和 $g$ 可能在某些点上取值不同，但它们只能在一块“无足轻重”的区域上存在差异——即一个在 $\mu$ 测度下大小为零的集合上。我们称 $f$ 和 $g$ 是“$\mu$-[几乎处处相等](@keyword=almost_everywhere_equality|lang=zh-CN|style=Feynman)”的。这在实践中完全足够了，因为当我们用它们来积分时，在一个测度为零的集合上的差异不会对积分结果产生任何影响 [@problem_id:1459150]。
 
-- **[链式法则](@article_id:307837) (Chain Rule):** 如果我们有三个测度 $\lambda, \mu, \nu$，且 $\nu \ll \mu$ 以及 $\mu \ll \lambda$，那么改变测度的“汇率”可以像链条一样传递下去：
+- **[链式法则](@keyword=chain_rule|lang=zh-CN|style=Feynman) (Chain Rule):** 如果我们有三个测度 $\lambda, \mu, \nu$，且 $\nu \ll \mu$ 以及 $\mu \ll \lambda$，那么改变测度的“汇率”可以像链条一样传递下去：
 $$
 \frac{d\nu}{d\lambda} = \frac{d\nu}{d\mu} \cdot \frac{d\mu}{d\lambda}
 $$
-这和微积分中的链式法则 $dz/dx = (dz/dy) \cdot (dy/dx)$ 如出一辙！这表明我们发现的不仅仅是一个类比，而是一个深层次的结构性[共性](@article_id:344227) 。
+这和微积分中的链式法则 $dz/dx = (dz/dy) \cdot (dy/dx)$ 如出一辙！这表明我们发现的不仅仅是一个类比，而是一个深层次的结构性[共性](@keyword=communality|lang=zh-CN|style=Feynman) [@problem_id:1459151]。
 
-- **可逆性 (Invertibility):** 如果两个测度是“等价的”，即它们互相绝对连续（$\nu \ll \mu$ 且 $\mu \ll \nu$），这意味着它们对于哪个集合是“零测集”有着完全相同的看法。在这种情况下，它们的“汇率”$\frac{d\nu}{d\mu}$ 必须是（[几乎处处](@article_id:307050)）严格大于零的，你不能把一个有价值的东西兑换成零 。并且，我们可以像对待普通分数一样“翻转”这个[导数](@article_id:318324)：
+- **可逆性 (Invertibility):** 如果两个测度是“等价的”，即它们互相绝对连续（$\nu \ll \mu$ 且 $\mu \ll \nu$），这意味着它们对于哪个集合是“零测集”有着完全相同的看法。在这种情况下，它们的“汇率”$\frac{d\nu}{d\mu}$ 必须是（[几乎处处](@keyword=almost_everywhere|lang=zh-CN|style=Feynman)）严格大于零的，你不能把一个有价值的东西兑换成零 [@problem_id:1459126]。并且，我们可以像对待普通分数一样“翻转”这个[导数](@keyword=derivative|lang=zh-CN|style=Feynman)：
 $$
 \frac{d\mu}{d\nu} = \left(\frac{d\nu}{d\mu}\right)^{-1}
 $$
@@ -90,12 +90,12 @@ $$
 
 你可能会问，我们为什么要费这么大劲去建立这样一个抽象的理论？答案是，这个理论是现代科学许多分支的基石。
 
-最重要的应用之一是在**概率论**中。你在统计学课程里熟悉的**[概率密度函数](@article_id:301053) (PDF)** $p(x)$，其实就是你的概率测度 $P$ 相对于[勒贝格测度](@article_id:300228) $\lambda$ 的[拉东-尼科迪姆导数](@article_id:318803)！
+最重要的应用之一是在**概率论**中。你在统计学课程里熟悉的**[概率密度函数](@keyword=probability_density_function|lang=zh-CN|style=Feynman) (PDF)** $p(x)$，其实就是你的概率测度 $P$ 相对于[勒贝格测度](@keyword=lebesgue_measure|lang=zh-CN|style=Feynman) $\lambda$ 的[拉东-尼科迪姆导数](@keyword=radon_nikodym_derivative|lang=zh-CN|style=Feynman)！[@problem_id:1459118]
 $$
 P(A) = \int_A p(x) \,d\lambda(x) \quad \implies \quad p(x) = \frac{dP}{d\lambda}
 $$
 这个发现令人兴奋，因为它将一个看似独立的实用工具（PDF）融入到了一个更宏大、更普适的数学框架之中。
 
-更进一步，[拉东-尼科迪姆导数](@article_id:318803)是进行**[测度变换](@article_id:318291) (Change of Measure)** 的关键工具。在金融数学中，[衍生品定价](@article_id:304438)理论（如[布莱克-斯科尔斯模型](@article_id:299617)）的核心就是从“真实世界”的概率测度 $P$ 切换到一个虚构的“风险中性”世界 $Q$。这个切换正是通过一个[拉东-尼科迪姆导数](@article_id:318803)（也叫状态价格密度）来完成的。它允许我们在一个更容易计算的数学世界里（[风险中性世界](@article_id:307934)）找到[期望值](@article_id:313620)，然后通过这个“汇率”转换回我们关心的真实世界价格。
+更进一步，[拉东-尼科迪姆导数](@keyword=radon_nikodym_derivative|lang=zh-CN|style=Feynman)是进行**[测度变换](@keyword=change_of_measure|lang=zh-CN|style=Feynman) (Change of Measure)** 的关键工具。在金融数学中，[衍生品定价](@keyword=derivative_pricing|lang=zh-CN|style=Feynman)理论（如[布莱克-斯科尔斯模型](@keyword=black_scholes_model|lang=zh-CN|style=Feynman)）的核心就是从“真实世界”的概率测度 $P$ 切换到一个虚构的“风险中性”世界 $Q$。这个切换正是通过一个[拉东-尼科迪姆导数](@keyword=radon_nikodym_derivative|lang=zh-CN|style=Feynman)（也叫状态价格密度）来完成的。它允许我们在一个更容易计算的数学世界里（[风险中性世界](@keyword=risk_neutral_world|lang=zh-CN|style=Feynman)）找到[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)，然后通过这个“汇率”转换回我们关心的真实世界价格。
 
-从一个不均匀的金属棒的密度，到一个统一了概率、金融和物理学的强大数学工具，我们完成了一次奇妙的旅程。[拉东-尼科迪姆定理](@article_id:321642)向我们展示了数学的力量：它能从一个简单的直觉出发，通过严谨的抽象和推广，最终构建出一个既优美又极其有用的理论体系，揭示了宇宙不同角落背后共通的逻辑之美。
+从一个不均匀的金属棒的密度，到一个统一了概率、金融和物理学的强大数学工具，我们完成了一次奇妙的旅程。[拉东-尼科迪姆定理](@keyword=radon_nikodym_theorem|lang=zh-CN|style=Feynman)向我们展示了数学的力量：它能从一个简单的直觉出发，通过严谨的抽象和推广，最终构建出一个既优美又极其有用的理论体系，揭示了宇宙不同角落背后共通的逻辑之美。

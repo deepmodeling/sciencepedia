@@ -1,7 +1,7 @@
 ## Introduction
 From a researcher waiting for a successful experiment to a user refreshing a webpage, we are constantly engaged in a 'waiting game' for a desired outcome. But how do we quantify this uncertainty and predict how long we might have to wait? The Geometric Distribution offers a powerful and elegant answer, providing the mathematical framework for understanding the time until the first success in a series of independent trials. While intuition might give us a rough guess, this article bridges the gap between vague feelings and rigorous analysis, revealing the predictable laws that govern seemingly random waits.
 
-This article will guide you through a comprehensive exploration of this fundamental concept. We will begin in **Principles and Mechanisms** by deriving the distribution's core formula, exploring its peculiar memoryless property, and calculating key measures like its [average waiting time](@article_id:274933). Next, in **Applications and Interdisciplinary Connections**, we will see this theory in action, uncovering its surprising relevance in fields from genetics and finance to the very architecture of the internet. Finally, the journey culminates in **Hands-On Practices**, where you can solidify your understanding by tackling practical problems and statistical estimations.
+This article will guide you through a comprehensive exploration of this fundamental concept. We will begin in **Principles and Mechanisms** by deriving the distribution's core formula, exploring its peculiar memoryless property, and calculating key measures like its [average waiting time](@keyword=average_waiting_time|lang=en-US|style=Feynman). Next, in **Applications and Interdisciplinary Connections**, we will see this theory in action, uncovering its surprising relevance in fields from genetics and finance to the very architecture of the internet. Finally, the journey culminates in **Hands-On Practices**, where you can solidify your understanding by tackling practical problems and statistical estimations.
 
 ## Principles and Mechanisms
 
@@ -19,25 +19,25 @@ $$
 P(\text{first success is on trial } k) = (1-p)^{k-1}p
 $$
 
-This beautifully simple formula is the cornerstone of our discussion . It's called the **[probability mass function](@article_id:264990) (PMF)** of the **Geometric Distribution**. The random variable, let's call it $X$, is the number of trials needed to get that first success. The formula gives us the probability for any possible value of $X$ (where $X$ can be 1, 2, 3, and so on, forever).
+This beautifully simple formula is the cornerstone of our discussion [@problem_id:1920102]. It's called the **[probability mass function](@keyword=probability_mass_function|lang=en-US|style=Feynman) (PMF)** of the **Geometric Distribution**. The random variable, let's call it $X$, is the number of trials needed to get that first success. The formula gives us the probability for any possible value of $X$ (where $X$ can be 1, 2, 3, and so on, forever).
 
-Whenever a scientist or mathematician cooks up a new formula like this, the first thing they should do is a "sanity check." If we add up the probabilities for *all* possible waiting times—failing on the first try, the second, the third, and on to infinity—the total must be 1. Why? Because if the probability of success is greater than zero, we are certain that we *must* eventually succeed. The sum $\sum_{k=1}^{\infty} (1-p)^{k-1}p$ is what's known as a geometric series. And, sure enough, as long as $p>0$, this sum elegantly converges to exactly 1 . Our model is consistent; it holds water.
+Whenever a scientist or mathematician cooks up a new formula like this, the first thing they should do is a "sanity check." If we add up the probabilities for *all* possible waiting times—failing on the first try, the second, the third, and on to infinity—the total must be 1. Why? Because if the probability of success is greater than zero, we are certain that we *must* eventually succeed. The sum $\sum_{k=1}^{\infty} (1-p)^{k-1}p$ is what's known as a geometric series. And, sure enough, as long as $p>0$, this sum elegantly converges to exactly 1 [@problem_id:8188]. Our model is consistent; it holds water.
 
 ### The Peculiar Amnesia of a Random Process
 
 Here is where things get truly interesting, even a little strange. Let's go back to our stubborn car. Suppose the chance of it starting on any given turn of the key is $p=0.1$. You've already tried four times, and it has failed each time. You're frustrated. You might feel that you're "due" for a success, that the universe owes you one. But what is the actual, cold, hard probability that it starts on the fifth try, *given* that it has already failed four times?
 
-The surprising answer is that the probability is still just $p=0.1$. The process has no memory of the past failures .
+The surprising answer is that the probability is still just $p=0.1$. The process has no memory of the past failures [@problem_id:1920115].
 
-This is the famous **[memoryless property](@article_id:267355)** of the geometric distribution. Because each trial is independent, the history of failures is completely irrelevant to the future. The system "forgets" everything that happened before the current trial. We can state this more formally: the probability of waiting $n$ *more* trials for a success, given that you have already waited through $k$ failed trials, is exactly the same as the probability of waiting $n$ trials from the very beginning. In mathematical shorthand:
+This is the famous **[memoryless property](@keyword=memoryless_property|lang=en-US|style=Feynman)** of the geometric distribution. Because each trial is independent, the history of failures is completely irrelevant to the future. The system "forgets" everything that happened before the current trial. We can state this more formally: the probability of waiting $n$ *more* trials for a success, given that you have already waited through $k$ failed trials, is exactly the same as the probability of waiting $n$ trials from the very beginning. In mathematical shorthand:
 
 $$
 P(X = n+k \mid X > k) = P(X=n) = (1-p)^{n-1}p
 $$
 
-This property can be derived directly from the definition of [conditional probability](@article_id:150519) , but its intuition is what's powerful. Think of a deep space probe sending packets of data home. It has failed its first 10 transmission attempts . Is the 11th attempt more likely to succeed? No. The conditions of the universe haven't changed; the probability is still $p$. The process essentially "resets" after every failure.
+This property can be derived directly from the definition of [conditional probability](@keyword=conditional_probability|lang=en-US|style=Feynman) [@problem_id:11747], but its intuition is what's powerful. Think of a deep space probe sending packets of data home. It has failed its first 10 transmission attempts [@problem_id:1920138]. Is the 11th attempt more likely to succeed? No. The conditions of the universe haven't changed; the probability is still $p$. The process essentially "resets" after every failure.
 
-This isn't just a curious feature; it's a defining characteristic. In fact, if we consider all discrete processes that can occur at times $1, 2, 3, \ldots$, the geometric distribution is the *only* one with this memoryless nature. This can be expressed in terms of the **hazard rate**—the probability of success at time $k$, given survival up to time $k$. For the geometric distribution, this [hazard rate](@article_id:265894) is constant and equal to $p$ . It's this constant risk of "success" at every step that gives rise to its profound amnesia.
+This isn't just a curious feature; it's a defining characteristic. In fact, if we consider all discrete processes that can occur at times $1, 2, 3, \ldots$, the geometric distribution is the *only* one with this memoryless nature. This can be expressed in terms of the **hazard rate**—the probability of success at time $k$, given survival up to time $k$. For the geometric distribution, this [hazard rate](@keyword=hazard_rate|lang=en-US|style=Feynman) is constant and equal to $p$ [@problem_id:1920078]. It's this constant risk of "success" at every step that gives rise to its profound amnesia.
 
 ### Gauging the Wait: Mean and Predictability
 
@@ -49,7 +49,7 @@ $$
 E[X] = \frac{1}{p}
 $$
 
-For the developer, with $p=0.2$, the average wait is $1/0.2 = 5$ test runs . This is an incredibly useful, simple result.
+For the developer, with $p=0.2$, the average wait is $1/0.2 = 5$ test runs [@problem_id:1920103]. This is an incredibly useful, simple result.
 
 But "average" can be deceiving. Will it always take exactly 5 tries? Of course not. Sometimes it might pass on the first try; sometimes it might take 15. How spread out are the results? This is measured by the **variance**. For the geometric distribution, the variance is:
 
@@ -59,11 +59,11 @@ $$
 
 Notice something fascinating here. As the probability of success $p$ gets very small, the mean waiting time $1/p$ gets large, which makes sense. But the variance $(1-p)/p^2$ gets large *even faster*. This means that for rare events, not only do you have to wait a very long time on average, but the actual waiting time is also extremely unpredictable. The developer might expect to wait 5 runs, but a variance of $(1-0.2)/(0.2)^2 = 20$ tells her that the actual number of runs could easily deviate quite a bit from that average. For very rare events, the average is a poor predictor of any single outcome.
 
-For those who enjoy seeing the deep machinery of mathematics, these properties, and indeed all the **moments** of the distribution, can be elegantly derived from a single master formula called the **Moment Generating Function (MGF)**. It acts like a compressed blueprint containing all the information about the distribution's shape and properties .
+For those who enjoy seeing the deep machinery of mathematics, these properties, and indeed all the **moments** of the distribution, can be elegantly derived from a single master formula called the **Moment Generating Function (MGF)**. It acts like a compressed blueprint containing all the information about the distribution's shape and properties [@problem_id:8228].
 
 ### When Processes Compete
 
-The world is rarely so simple as a single process waiting in isolation. Often, we have competing processes. Imagine two [cybersecurity](@article_id:262326) teams, Alpha and Bravo, in a race to decrypt a file . In any given minute, Team Alpha has a probability $p_A$ of succeeding, and Team Bravo has probability $p_B$. They work independently. What is the chance that Alpha wins the race, and wins it alone?
+The world is rarely so simple as a single process waiting in isolation. Often, we have competing processes. Imagine two [cybersecurity](@keyword=cybersecurity|lang=en-US|style=Feynman) teams, Alpha and Bravo, in a race to decrypt a file [@problem_id:1920105]. In any given minute, Team Alpha has a probability $p_A$ of succeeding, and Team Bravo has probability $p_B$. They work independently. What is the chance that Alpha wins the race, and wins it alone?
 
 This turns our simple waiting game into a thrilling race. For Alpha to win, there must come a minute where two things happen simultaneously: all previous minutes were failures for *both* teams, and in *this* minute, Alpha succeeds while Bravo fails. We can solve this by looking at what happens in the very first minute.
 *   Alpha wins immediately with probability $p_A(1-p_B)$.
@@ -78,7 +78,7 @@ Finally, it's important in science to see how ideas fit into a larger picture. T
 
 The geometric distribution describes the wait for the *first* success. But what if we wanted to know how long it takes to achieve, say, the $r$-th success? How many times must you flip a coin to get 10 heads? This more general question is answered by the **Negative Binomial Distribution**.
 
-The amazing thing is that if you take the formula for the [negative binomial distribution](@article_id:261657)—which looks a bit more complicated—and set the number of desired successes $r$ to be 1, it simplifies perfectly. The terms rearrange, the combinations collapse, and what you are left with is precisely the [probability mass function](@article_id:264990) for our friend, the geometric distribution .
+The amazing thing is that if you take the formula for the [negative binomial distribution](@keyword=negative_binomial_distribution|lang=en-US|style=Feynman)—which looks a bit more complicated—and set the number of desired successes $r$ to be 1, it simplifies perfectly. The terms rearrange, the combinations collapse, and what you are left with is precisely the [probability mass function](@keyword=probability_mass_function|lang=en-US|style=Feynman) for our friend, the geometric distribution [@problem_id:1939509].
 
 $$
 \underbrace{ \binom{k-1}{r-1}p^r(1-p)^{k-r} }_{\text{Negative Binomial for } r \text{ successes}} \quad \xrightarrow{r=1} \quad \underbrace{ \binom{k-1}{0}p^1(1-p)^{k-1} = (1-p)^{k-1}p }_{\text{Geometric}}

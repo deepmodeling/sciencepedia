@@ -1,11 +1,11 @@
 ## Introduction
-The Curry-Howard correspondence, also known as the "[propositions-as-types](@entry_id:155756)" paradigm, represents one of the most profound discoveries at the intersection of mathematical logic and computer science. It moves beyond a mere analogy to establish a deep, formal identity between the act of proving a logical statement and the act of writing a computer program. This article addresses the often superficial understanding of this concept by systematically unpacking its core mechanics and far-reaching implications. By exploring this isomorphism, you will learn not only what the correspondence is but also how it provides a rigorous foundation for modern programming languages, [data structures](@entry_id:262134), and automated [proof systems](@entry_id:156272).
+The Curry-Howard correspondence, also known as the "propositions-as-types" paradigm, represents one of the most profound discoveries at the intersection of mathematical logic and computer science. It moves beyond a mere analogy to establish a deep, formal identity between the act of proving a logical statement and the act of writing a computer program. This article addresses the often superficial understanding of this concept by systematically unpacking its core mechanics and far-reaching implications. By exploring this isomorphism, you will learn not only what the correspondence is but also how it provides a rigorous foundation for modern programming languages, data structures, and automated proof systems.
 
-The following chapters will guide you through this fascinating landscape. We will begin with "Principles and Mechanisms," where we lay the groundwork by mapping the connectives of intuitionistic logic to the type constructors of the [lambda calculus](@entry_id:148725). Next, in "Applications and Interdisciplinary Connections," we will explore the powerful consequences of this connection, from defining data types and recursion to unifying logic and programming with dependent types. Finally, the "Hands-On Practices" section will offer concrete exercises to solidify your understanding, allowing you to directly experience the synergy between proof and program.
+The following chapters will guide you through this fascinating landscape. We will begin with "Principles and Mechanisms," where we lay the groundwork by mapping the connectives of intuitionistic logic to the type constructors of the lambda calculus. Next, in "Applications and Interdisciplinary Connections," we will explore the powerful consequences of this connection, from defining data types and recursion to unifying logic and programming with dependent types. Finally, the "Hands-On Practices" section will offer concrete exercises to solidify your understanding, allowing you to directly experience the synergy between proof and program.
 
 ## Principles and Mechanisms
 
-The Curry-Howard correspondence, also known as the [propositions-as-types](@entry_id:155756) and proofs-as-programs paradigm, moves beyond mere analogy to establish a deep, formal [isomorphism](@entry_id:137127) between [logic and computation](@entry_id:270730). This chapter elucidates the core principles and mechanisms of this correspondence, focusing on its manifestation in intuitionistic [propositional logic](@entry_id:143535) and the simply typed [lambda calculus](@entry_id:148725). We will see that this is not a superficial labeling of proofs with arbitrary terms, but a structural and dynamic identity where the very act of constructing a proof is identical to writing a program, and simplifying a proof is identical to running that program. 
+The Curry-Howard correspondence, also known as the propositions-as-types and proofs-as-programs paradigm, moves beyond mere analogy to establish a deep, formal isomorphism between logic and computation. This chapter elucidates the core principles and mechanisms of this correspondence, focusing on its manifestation in intuitionistic propositional logic and the simply typed lambda calculus. We will see that this is not a superficial labeling of proofs with arbitrary terms, but a structural and dynamic identity where the very act of constructing a proof is identical to writing a program, and simplifying a proof is identical to running that program. 
 
 ### The Fundamental Isomorphism: Judgments and Structures
 
@@ -13,7 +13,7 @@ The foundation of the correspondence lies in re-interpreting the fundamental sta
 
 $ \Gamma \vdash \varphi $
 
-This is read as "the proposition $\varphi$ is provable from the set of assumptions $\Gamma$." The central insight of the Curry-Howard correspondence is to enrich this statement of [provability](@entry_id:149169). Instead of merely asserting that a proof exists, we explicitly provide it. This "proof object" is a term, or program, in a suitable calculus. The logical judgment is thus refined into a **typing judgment**:
+This is read as "the proposition $\varphi$ is provable from the set of assumptions $\Gamma$." The central insight of the Curry-Howard correspondence is to enrich this statement of provability. Instead of merely asserting that a proof exists, we explicitly provide it. This "proof object" is a term, or program, in a suitable calculus. The logical judgment is thus refined into a **typing judgment**:
 
 $ \Gamma \vdash t : A $
 
@@ -29,29 +29,29 @@ This correspondence unfolds on three distinct but interconnected levels:
 
 1.  **Static Correspondence**: The direct mapping of propositions to types and proofs to terms.
 2.  **Structural Correspondence**: An isomorphism between the rules of inference in the logical system and the typing rules for constructing terms in the computational system.
-3.  **Dynamic Correspondence**: An [isomorphism](@entry_id:137127) between the process of **[proof normalization](@entry_id:148687)** (simplifying proofs by removing redundant steps) and **program evaluation** (computing the result of a program via reduction). 
+3.  **Dynamic Correspondence**: An isomorphism between the process of **proof normalization** (simplifying proofs by removing redundant steps) and **program evaluation** (computing the result of a program via reduction). 
 
-We will now explore this correspondence in detail by examining the primary [logical connectives](@entry_id:146395) and their type-theoretic counterparts.
+We will now explore this correspondence in detail by examining the primary logical connectives and their type-theoretic counterparts.
 
 ### A Lexicon of Logic and Types
 
-The true power of the correspondence becomes evident when we see how the structure of [logical connectives](@entry_id:146395) is mirrored by the structure of type constructors. 
+The true power of the correspondence becomes evident when we see how the structure of logical connectives is mirrored by the structure of type constructors. 
 
 #### Implication and Function Types
 
-The most fundamental case is the correspondence between [logical implication](@entry_id:273592) ($\varphi \to \psi$) and the function type ($A \to B$).
+The most fundamental case is the correspondence between logical implication ($\varphi \to \psi$) and the function type ($A \to B$).
 
-In [natural deduction](@entry_id:151259), the rule for **implication introduction** (often called the Deduction Theorem) states that to prove $\varphi \to \psi$, we may temporarily assume $\varphi$, derive a proof of $\psi$, and then discharge the assumption.
+In natural deduction, the rule for **implication introduction** (often called the Deduction Theorem) states that to prove $\varphi \to \psi$, we may temporarily assume $\varphi$, derive a proof of $\psi$, and then discharge the assumption.
 
 $ \frac{\Gamma, \varphi \vdash \psi}{\Gamma \vdash \varphi \to \psi} (\to I) $
 
-In the simply typed [lambda calculus](@entry_id:148725), the rule for constructing a function—**lambda abstraction**—has precisely the same structure. To construct a function of type $A \to B$, we assume a variable $x$ of type $A$ and use it to construct a term $t$ of type $B$. The resulting term is $\lambda x:A. t$.
+In the simply typed lambda calculus, the rule for constructing a function—**lambda abstraction**—has precisely the same structure. To construct a function of type $A \to B$, we assume a variable $x$ of type $A$ and use it to construct a term $t$ of type $B$. The resulting term is $\lambda x:A. t$.
 
 $ \frac{\Gamma, x:A \vdash t:B}{\Gamma \vdash (\lambda x:A. t) : A \to B} $
 
 The correspondence is exact: discharging the logical assumption $\varphi$ corresponds to binding the variable $x$ in the lambda term. The proof of $\psi$ that depends on $\varphi$ becomes a program $t$ that has a free variable $x$. 
 
-Conversely, the rule for **implication elimination**, or **[modus ponens](@entry_id:268205)**, states that from proofs of $\varphi \to \psi$ and $\varphi$, we can obtain a proof of $\psi$.
+Conversely, the rule for **implication elimination**, or **modus ponens**, states that from proofs of $\varphi \to \psi$ and $\varphi$, we can obtain a proof of $\psi$.
 
 $ \frac{\Gamma \vdash \varphi \to \psi \quad \Gamma \vdash \varphi}{\Gamma \vdash \psi} (\to E) $
 
@@ -59,7 +59,7 @@ This is mirrored by **function application**. Given a function $f$ of type $A \t
 
 $ \frac{\Gamma \vdash f : A \to B \quad \Gamma \vdash a : A}{\Gamma \vdash f\,a : B} $
 
-A proof of an implication is a function; using that proof via [modus ponens](@entry_id:268205) is applying that function to an argument. 
+A proof of an implication is a function; using that proof via modus ponens is applying that function to an argument. 
 
 #### Conjunction and Product Types
 
@@ -81,7 +81,7 @@ This corresponds to the **projection** operators, $\mathsf{fst}$ and $\mathsf{sn
 
 $ \frac{\Gamma \vdash p : A \times B}{\Gamma \vdash \mathsf{fst}(p) : A} (\times E_1) \qquad \frac{\Gamma \vdash p : A \times B}{\Gamma \vdash \mathsf{snd}(p) : B} (\times E_2) $
 
-An alternative, equally expressive elimination form is [pattern matching](@entry_id:137990), often written as a `let` binding, which deconstructs the pair and binds its components to new variables for use in a subsequent expression. 
+An alternative, equally expressive elimination form is pattern matching, often written as a `let` binding, which deconstructs the pair and binds its components to new variables for use in a subsequent expression. 
 
 #### Disjunction and Sum Types
 
@@ -107,13 +107,13 @@ $ \frac{\Gamma \vdash s : A + B \quad \Gamma, x : A \vdash t_1 : C \quad \Gamma,
 
 The correspondence extends to the logical constants:
 *   **Truth ($\top$)** corresponds to the **unit type** (often written `1` or `()`). This type has exactly one canonical value, `*` or `()`, corresponding to the single, trivial proof of `⊤`.
-*   **Falsity ($\bot$)** corresponds to the **empty type** (often written `0` or `Void`). This type has no introduction rules and is therefore uninhabited—there are no canonical values of the empty type. This reflects the fact that there is no [direct proof](@entry_id:141172) of falsity. The principle of explosion (*[ex falso quodlibet](@entry_id:265560)*), which allows any proposition to be derived from a contradiction ($\bot \vdash \varphi$), corresponds to the eliminator for the empty type, which can produce a term of any type from a term of the empty type (of which there are none). 
+*   **Falsity ($\bot$)** corresponds to the **empty type** (often written `0` or `Void`). This type has no introduction rules and is therefore uninhabited—there are no canonical values of the empty type. This reflects the fact that there is no direct proof of falsity. The principle of explosion (*ex falso quodlibet*), which allows any proposition to be derived from a contradiction ($\bot \vdash \varphi$), corresponds to the eliminator for the empty type, which can produce a term of any type from a term of the empty type (of which there are none). 
 
 ### The Dynamic Correspondence: Computation as Proof Simplification
 
 The most profound aspect of the Curry-Howard correspondence is its dynamic nature: the simplification of proofs is mirrored by the execution of programs.
 
-The key concept in [proof theory](@entry_id:151111) is **normalization**, the process of eliminating redundancies. A common redundancy is a **detour** (or **cut**), which occurs when an introduction rule for a connective is immediately followed by its corresponding elimination rule. Such a proof can be simplified into a more direct one.
+The key concept in proof theory is **normalization**, the process of eliminating redundancies. A common redundancy is a **detour** (or **cut**), which occurs when an introduction rule for a connective is immediately followed by its corresponding elimination rule. Such a proof can be simplified into a more direct one.
 
 The computational analogue of normalization is **evaluation**, most fundamentally captured by **$\beta$-reduction**. A $\beta$-redex is a term of the form $(\lambda x:A. t) u$, representing a function being immediately applied to an argument. The reduction rule is:
 
@@ -138,20 +138,20 @@ A secondary, more subtle principle is **$\eta$-equivalence**, which identifies a
 
 ### Profound Consequences and Variations
 
-The [isomorphism](@entry_id:137127) between proofs and programs is not merely an elegant theoretical construct; it has profound consequences for both logic and computer science.
+The isomorphism between proofs and programs is not merely an elegant theoretical construct; it has profound consequences for both logic and computer science.
 
 #### Consistency of Intuitionistic Logic
 
-One of the most significant results stemming from the dynamic correspondence is a [constructive proof](@entry_id:157587) of the logical **consistency** of intuitionistic logic. Consistency means that it is impossible to prove a contradiction; in our system, this means the proposition $\bot$ is unprovable.
+One of the most significant results stemming from the dynamic correspondence is a constructive proof of the logical **consistency** of intuitionistic logic. Consistency means that it is impossible to prove a contradiction; in our system, this means the proposition $\bot$ is unprovable.
 
-The proof relies on a key property of the simply typed [lambda calculus](@entry_id:148725): the **Strong Normalization Theorem**. This theorem states that for any well-typed term, every sequence of $\beta$-reductions must terminate in a finite number of steps. There are no infinite computations.
+The proof relies on a key property of the simply typed lambda calculus: the **Strong Normalization Theorem**. This theorem states that for any well-typed term, every sequence of $\beta$-reductions must terminate in a finite number of steps. There are no infinite computations.
 
 The argument for consistency then proceeds by contradiction: 
 1.  Assume intuitionistic logic is inconsistent. This means $\bot$ is provable.
 2.  By the Curry-Howard correspondence, this implies that the empty type `0` is inhabited; there must exist a closed term $M$ such that $\vdash M : 0$.
-3.  By the Strong Normalization theorem, the term $M$ must reduce to a [normal form](@entry_id:161181), let's call it $V$. A normal form is a term that cannot be reduced further.
+3.  By the Strong Normalization theorem, the term $M$ must reduce to a normal form, let's call it $V$. A normal form is a term that cannot be reduced further.
 4.  A fundamental property of typing, known as **subject reduction**, ensures that typing is preserved during evaluation. If $\vdash M : 0$ and $M$ reduces to $V$, then it must be that $\vdash V : 0$.
-5.  What does a term in normal form look like? For the simply typed [lambda calculus](@entry_id:148725), a closed [normal form](@entry_id:161181) is a **value** (e.g., a lambda abstraction). The **[canonical forms](@entry_id:153058)** property tells us what values can exist for each type. For the empty type `0`, which has no introduction rules, there are no [canonical forms](@entry_id:153058). It is impossible to construct a value of the empty type.
+5.  What does a term in normal form look like? For the simply typed lambda calculus, a closed normal form is a **value** (e.g., a lambda abstraction). The **canonical forms** property tells us what values can exist for each type. For the empty type `0`, which has no introduction rules, there are no canonical forms. It is impossible to construct a value of the empty type.
 6.  This is a contradiction. We concluded that a value $V$ of type `0` must exist, yet we know it is impossible to construct such a value. Therefore, our initial assumption—that $\bot$ is provable—must be false.
 
 This elegant proof demonstrates how a property of program execution (termination) can be used to establish a fundamental property of a logical system (consistency).
@@ -160,8 +160,8 @@ This elegant proof demonstrates how a property of program execution (termination
 
 When implementing programming languages or proof assistants based on these ideas, a practical distinction arises between two presentation styles: Church-style and Curry-style typing. 
 
-*   **Church-style**: In a Church-style system, terms carry explicit type annotations. For instance, a lambda abstraction is written $\lambda x : A. t$. Type checking is the main task: the system verifies that a given, fully annotated term has the correct type. This process is typically straightforward and decidable, even for very expressive systems like System F (the polymorphic [lambda calculus](@entry_id:148725)). Proof assistants like Coq and Agda use Church-style systems.
+*   **Church-style**: In a Church-style system, terms carry explicit type annotations. For instance, a lambda abstraction is written $\lambda x : A. t$. Type checking is the main task: the system verifies that a given, fully annotated term has the correct type. This process is typically straightforward and decidable, even for very expressive systems like System F (the polymorphic lambda calculus). Proof assistants like Coq and Agda use Church-style systems.
 
-*   **Curry-style**: In a Curry-style system, terms are "raw" or unannotated (e.g., $\lambda x. t$). The main task is **type inference**: the system attempts to deduce a valid type for the term, if one exists. For the simply typed [lambda calculus](@entry_id:148725), if a term is typable, it has a **[principal type](@entry_id:149889)**—a most general type from which all other valid types can be derived. However, for more expressive systems like Curry-style System F, type inference becomes undecidable. Functional programming languages like Haskell and ML are based on Curry-style systems with powerful, decidable type inference algorithms (like Hindley-Milner).
+*   **Curry-style**: In a Curry-style system, terms are "raw" or unannotated (e.g., $\lambda x. t$). The main task is **type inference**: the system attempts to deduce a valid type for the term, if one exists. For the simply typed lambda calculus, if a term is typable, it has a **principal type**—a most general type from which all other valid types can be derived. However, for more expressive systems like Curry-style System F, type inference becomes undecidable. Functional programming languages like Haskell and ML are based on Curry-style systems with powerful, decidable type inference algorithms (like Hindley-Milner).
 
 The two styles are closely related. A well-typed Church-style term can have its annotations erased to produce a well-typed Curry-style term. Conversely, a typable Curry-style term can be annotated to produce a well-typed Church-style term. The choice between them represents a trade-off between explicitness and automation in language design and proof development.

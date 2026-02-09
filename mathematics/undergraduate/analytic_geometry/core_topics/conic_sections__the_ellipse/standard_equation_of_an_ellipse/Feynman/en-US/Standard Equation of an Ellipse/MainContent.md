@@ -16,7 +16,7 @@ Distance to focus 1 + Distance to focus 2 = $2a$
 In algebraic terms, using the distance formula, this becomes:
 $$ \sqrt{x^2 + (y-c)^2} + \sqrt{x^2 + (y+c)^2} = 2a $$
 
-Now, this equation looks a bit monstrous. It's bristling with square roots. But if you have the patience to perform the algebraic heavy-lifting—isolating one square root, squaring both sides, simplifying, and then repeating the process—something magical happens. The complicated terms, the messy square roots, all conspire to cancel and rearrange themselves. When the dust settles, what remains is an equation of breathtaking simplicity and symmetry. For instance, if the foci are at $(0, 4)$ and $(0, -4)$ and the constant sum is 10, the entire relationship boils down to this tidy expression :
+Now, this equation looks a bit monstrous. It's bristling with square roots. But if you have the patience to perform the algebraic heavy-lifting—isolating one square root, squaring both sides, simplifying, and then repeating the process—something magical happens. The complicated terms, the messy square roots, all conspire to cancel and rearrange themselves. When the dust settles, what remains is an equation of breathtaking simplicity and symmetry. For instance, if the foci are at $(0, 4)$ and $(0, -4)$ and the constant sum is 10, the entire relationship boils down to this tidy expression [@problem_id:2159716]:
 
 $$ \frac{x^2}{9} + \frac{y^2}{25} = 1 $$
 
@@ -32,11 +32,11 @@ The standard equation is a treasure map. Every part of it points to a key featur
 
 #### The Major and Minor Axes: $a$ and $b$
 
-The values $a$ and $b$ tell us the size and orientation of the ellipse. They represent the lengths of the **[semi-major axis](@article_id:163673)** and **semi-minor axis**, respectively. In simple terms, $a$ is the distance from the center to the farthest points on the ellipse (the **vertices**), and $b$ is the distance from the center to the closest points (the **co-vertices**).
+The values $a$ and $b$ tell us the size and orientation of the ellipse. They represent the lengths of the **[semi-major axis](@keyword=semi_major_axis|lang=en-US|style=Feynman)** and **semi-minor axis**, respectively. In simple terms, $a$ is the distance from the center to the farthest points on the ellipse (the **vertices**), and $b$ is the distance from the center to the closest points (the **co-vertices**).
 
-How do you know which is which? The larger denominator is always $a^2$. If the larger number is under the $y^2$ term, as in $\frac{x^2}{9} + \frac{y^2}{25} = 1$, the ellipse is taller than it is wide—its major axis is vertical. The [semi-major axis](@article_id:163673) is $a = \sqrt{25} = 5$, and the semi-minor axis is $b = \sqrt{9} = 3$. Conversely, in the equation $\frac{x^2}{49} + \frac{y^2}{16} = 1$, the larger denominator is under $x^2$, so the ellipse is wider than it is tall, with a horizontal major axis . If you are told the vertices are at $(0, \pm 6)$ and co-vertices are at $(\pm 2, 0)$, you immediately know $a=6$ and $b=2$, and that the major axis is vertical .
+How do you know which is which? The larger denominator is always $a^2$. If the larger number is under the $y^2$ term, as in $\frac{x^2}{9} + \frac{y^2}{25} = 1$, the ellipse is taller than it is wide—its major axis is vertical. The [semi-major axis](@keyword=semi_major_axis|lang=en-US|style=Feynman) is $a = \sqrt{25} = 5$, and the semi-minor axis is $b = \sqrt{9} = 3$. Conversely, in the equation $\frac{x^2}{49} + \frac{y^2}{16} = 1$, the larger denominator is under $x^2$, so the ellipse is wider than it is tall, with a horizontal major axis [@problem_id:2159702]. If you are told the vertices are at $(0, \pm 6)$ and co-vertices are at $(\pm 2, 0)$, you immediately know $a=6$ and $b=2$, and that the major axis is vertical [@problem_id:2159752].
 
-And what about that constant sum of distances, the $2a$ from our original definition? It’s right there in the equation! For the ellipse $\frac{x^2}{49} + \frac{y^2}{16} = 1$, we see $a^2=49$, so $a=7$. The sum of the distances from *any* point on this ellipse to its two foci is always $2a = 14$ . The equation directly tells you the "length of the string."
+And what about that constant sum of distances, the $2a$ from our original definition? It’s right there in the equation! For the ellipse $\frac{x^2}{49} + \frac{y^2}{16} = 1$, we see $a^2=49$, so $a=7$. The sum of the distances from *any* point on this ellipse to its two foci is always $2a = 14$ [@problem_id:2159745]. The equation directly tells you the "length of the string."
 
 #### The Foci: The Secret Ingredient $c$
 
@@ -44,7 +44,7 @@ But where are the foci? They are the "two pins" that started it all. Their locat
 
 $$ a^2 = b^2 + c^2 $$
 
-This formula holds the key to finding the foci. If you have the equation $\frac{x^2}{25} + \frac{y^2}{13} = 1$, you know $a^2=25$ and $b^2=13$. A quick calculation gives $c^2 = a^2 - b^2 = 25 - 13 = 12$, so $c = \sqrt{12} = 2\sqrt{3}$. Since the major axis is horizontal (because 25 is under $x^2$), the foci must lie on the x-axis at $(\pm 2\sqrt{3}, 0)$ .
+This formula holds the key to finding the foci. If you have the equation $\frac{x^2}{25} + \frac{y^2}{13} = 1$, you know $a^2=25$ and $b^2=13$. A quick calculation gives $c^2 = a^2 - b^2 = 25 - 13 = 12$, so $c = \sqrt{12} = 2\sqrt{3}$. Since the major axis is horizontal (because 25 is under $x^2$), the foci must lie on the x-axis at $(\pm 2\sqrt{3}, 0)$ [@problem_id:2159743].
 
 #### Eccentricity: A Measure of "Squash"
 
@@ -52,7 +52,7 @@ How "squashed" is an ellipse? Is it almost a perfect circle, or is it long and t
 
 $$ e = \frac{c}{a} $$
 
-For a circle, the foci merge at the center, so $c=0$ and the [eccentricity](@article_id:266406) is $e=0$. As the ellipse gets more stretched, $c$ gets closer to $a$, and the eccentricity approaches 1. An ellipse can never have $e=1$; that would be a parabola. A cam profile with vertices at $(\pm 10, 0)$ and co-vertices at $(0, \pm 6)$ has $a=10$ and $b=6$. We can find $c = \sqrt{10^2 - 6^2} = \sqrt{64} = 8$. The eccentricity is therefore $e = \frac{c}{a} = \frac{8}{10} = 0.8$ . This single number, 0.8, tells an engineer everything they need to know about the shape of that cam. Similarly, the acoustics of a "[whispering gallery](@article_id:162902)" might reveal that for an ellipse, $a=5$ and $c=3$, giving an eccentricity of $e = \frac{3}{5}$, or 0.6 .
+For a circle, the foci merge at the center, so $c=0$ and the [eccentricity](@keyword=eccentricity|lang=en-US|style=Feynman) is $e=0$. As the ellipse gets more stretched, $c$ gets closer to $a$, and the eccentricity approaches 1. An ellipse can never have $e=1$; that would be a parabola. A cam profile with vertices at $(\pm 10, 0)$ and co-vertices at $(0, \pm 6)$ has $a=10$ and $b=6$. We can find $c = \sqrt{10^2 - 6^2} = \sqrt{64} = 8$. The eccentricity is therefore $e = \frac{c}{a} = \frac{8}{10} = 0.8$ [@problem_id:2159700]. This single number, 0.8, tells an engineer everything they need to know about the shape of that cam. Similarly, the acoustics of a "[whispering gallery](@keyword=whispering_gallery|lang=en-US|style=Feynman)" might reveal that for an ellipse, $a=5$ and $c=3$, giving an eccentricity of $e = \frac{3}{5}$, or 0.6 [@problem_id:2159714].
 
 ### The Ellipse in Disguise: Finding Order in Complexity
 
@@ -60,11 +60,11 @@ Nature, and engineering, rarely hand us an ellipse perfectly centered at the ori
 
 $$ 9x^2 + 4y^2 + 18x - 24y + 9 = 0 $$
 
-This looks nothing like our neat standard form. Is it even an ellipse? Here we use a powerful algebraic technique called **[completing the square](@article_id:264986)**. It functions like a mathematical "re-centering" tool. By cleverly rearranging and grouping the $x$ and $y$ terms, we can transform this messy equation into something familiar :
+This looks nothing like our neat standard form. Is it even an ellipse? Here we use a powerful algebraic technique called **[completing the square](@keyword=completing_the_square|lang=en-US|style=Feynman)**. It functions like a mathematical "re-centering" tool. By cleverly rearranging and grouping the $x$ and $y$ terms, we can transform this messy equation into something familiar [@problem_id:2159711]:
 
 $$ \frac{(x+1)^2}{4} + \frac{(y-3)^2}{9} = 1 $$
 
-Look at that! It *is* an ellipse. The form $\frac{(x-h)^2}{b^2} + \frac{(y-k)^2}{a^2} = 1$ tells us everything. The center is not at $(0,0)$, but at $(h,k) = (-1, 3)$. The shape, however, is identical to an ellipse at the origin; it has just been shifted. We can still see that it's a vertical ellipse with a [semi-major axis](@article_id:163673) $a=3$ and a semi-minor axis $b=2$. This transformation process allows us to analyze any elliptical shape, no matter where it's located, and even find more obscure properties like the length of its **[latus rectum](@article_id:171098)** (a chord through a focus perpendicular to the major axis), which turns out to be $\frac{2b^2}{a}$ .
+Look at that! It *is* an ellipse. The form $\frac{(x-h)^2}{b^2} + \frac{(y-k)^2}{a^2} = 1$ tells us everything. The center is not at $(0,0)$, but at $(h,k) = (-1, 3)$. The shape, however, is identical to an ellipse at the origin; it has just been shifted. We can still see that it's a vertical ellipse with a [semi-major axis](@keyword=semi_major_axis|lang=en-US|style=Feynman) $a=3$ and a semi-minor axis $b=2$. This transformation process allows us to analyze any elliptical shape, no matter where it's located, and even find more obscure properties like the length of its **[latus rectum](@keyword=latus_rectum|lang=en-US|style=Feynman)** (a chord through a focus perpendicular to the major axis), which turns out to be $\frac{2b^2}{a}$ [@problem_id:2159734].
 
 ### The Hidden Ellipse: A Mechanical Surprise
 
@@ -72,6 +72,6 @@ You might be tempted to think of ellipses as static, geometric figures confined 
 
 Consider a simple rigid rod—think of it as a ladder. Let this ladder slide down a wall, so that its top end is always on the vertical y-axis and its bottom end is always on the horizontal x-axis. Now, imagine you paint a dot, point P, somewhere on the ladder. What path does this dot trace as the ladder slides?
 
-Does it move in a straight line? A complicated curve? The answer is astounding. If the distance from the dot P to the top of the ladder is $a$, and the distance to the bottom is $b$, the path traced by P is a perfect quarter of an ellipse with the equation $\frac{x^2}{b^2} + \frac{y^2}{a^2} = 1$ .
+Does it move in a straight line? A complicated curve? The answer is astounding. If the distance from the dot P to the top of the ladder is $a$, and the distance to the bottom is $b$, the path traced by P is a perfect quarter of an ellipse with the equation $\frac{x^2}{b^2} + \frac{y^2}{a^2} = 1$ [@problem_id:2159740].
 
 This is a profound and beautiful result. A simple mechanical motion, something you can visualize in your mind's eye, gives birth to the exact same shape that defines the orbits of planets. The ellipse is not just a shape; it is a principle of motion, a pattern woven into the fabric of the physical world, waiting to be discovered in the slide of a ladder or the whisper in a gallery. It is a testament to the deep and often unexpected unity of geometry and a moving, dynamic universe.

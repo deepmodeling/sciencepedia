@@ -9,14 +9,14 @@ Barycentric coordinates provide a powerful and elegant system for describing the
 
 ### The Formal Definition: Affine Combinations and Independence
 
-The most rigorous foundation for barycentric coordinates lies in the concept of an **[affine combination](@entry_id:276726)**. Consider a set of $n+1$ vertices $\{v_0, v_1, \dots, v_n\}$ in a Euclidean space $\mathbb{R}^k$. These vertices are said to be **affinely independent** if the vectors $\{v_1-v_0, v_2-v_0, \dots, v_n-v_0\}$ are linearly independent. For example, three vertices in a plane are affinely independent if they are not collinear; four vertices in 3D space are affinely independent if they are not coplanar.
+The most rigorous foundation for barycentric coordinates lies in the concept of an **affine combination**. Consider a set of $n+1$ vertices $\{v_0, v_1, \dots, v_n\}$ in a Euclidean space $\mathbb{R}^k$. These vertices are said to be **affinely independent** if the vectors $\{v_1-v_0, v_2-v_0, \dots, v_n-v_0\}$ are linearly independent. For example, three vertices in a plane are affinely independent if they are not collinear; four vertices in 3D space are affinely independent if they are not coplanar.
 
-The set of all points that can be formed by affine combinations of these vertices is called the **[affine hull](@entry_id:637696)** of the vertices. For any point $P$ within this [affine hull](@entry_id:637696), there exists a unique set of scalar coefficients $(\lambda_0, \lambda_1, \dots, \lambda_n)$, called the **barycentric coordinates** of $P$, such that two conditions are met:
+The set of all points that can be formed by affine combinations of these vertices is called the **affine hull** of the vertices. For any point $P$ within this affine hull, there exists a unique set of scalar coefficients $(\lambda_0, \lambda_1, \dots, \lambda_n)$, called the **barycentric coordinates** of $P$, such that two conditions are met:
 
 1.  $P = \sum_{i=0}^{n} \lambda_i v_i$
 2.  $\sum_{i=0}^{n} \lambda_i = 1$
 
-The uniqueness of these coordinates is critically dependent on the [affine independence](@entry_id:262726) of the vertices. If the vertices are affinely dependent, any point in their [affine hull](@entry_id:637696) will have infinitely many possible sets of barycentric coordinates. For instance, if three points $v_0, v_1, v_2$ in a plane are collinear, they are affinely dependent. A point $p$ on the line passing through them can be represented by multiple combinations of $(t_0, t_1, t_2)$ that satisfy the defining equations, rendering the coordinate system ambiguous . Thus, for a well-defined coordinate system, we always assume our reference vertices are affinely independent.
+The uniqueness of these coordinates is critically dependent on the affine independence of the vertices. If the vertices are affinely dependent, any point in their affine hull will have infinitely many possible sets of barycentric coordinates. For instance, if three points $v_0, v_1, v_2$ in a plane are collinear, they are affinely dependent. A point $p$ on the line passing through them can be represented by multiple combinations of $(t_0, t_1, t_2)$ that satisfy the defining equations, rendering the coordinate system ambiguous [@problem_id:1633404]. Thus, for a well-defined coordinate system, we always assume our reference vertices are affinely independent.
 
 ### Intuitive Foundations: Physical and Geometric Models
 
@@ -24,7 +24,7 @@ While the algebraic definition is precise, the true power of barycentric coordin
 
 #### The Physical Analogy: Center of Mass
 
-Imagine a system of point masses, $m_0, m_1, \dots, m_n$, placed at the vertices $v_0, v_1, \dots, v_n$. The center of mass (or [barycenter](@entry_id:170655)) of this system, $P$, is given by the weighted average of the vertex positions:
+Imagine a system of point masses, $m_0, m_1, \dots, m_n$, placed at the vertices $v_0, v_1, \dots, v_n$. The center of mass (or barycenter) of this system, $P$, is given by the weighted average of the vertex positions:
 
 $P = \frac{m_0 v_0 + m_1 v_1 + \dots + m_n v_n}{m_0 + m_1 + \dots + m_n} = \frac{\sum_{i=0}^{n} m_i v_i}{\sum_{i=0}^{n} m_i}$
 
@@ -42,43 +42,43 @@ $\lambda_B = \frac{2m}{6m} = \frac{2}{6} = \frac{1}{3}$
 
 $\lambda_C = \frac{3m}{6m} = \frac{3}{6} = \frac{1}{2}$
 
-The center of mass has coordinates $(\frac{1}{6}, \frac{1}{3}, \frac{1}{2})$ . This physical model provides a tangible way to understand how the coordinates represent a "balancing act" between the vertices.
+The center of mass has coordinates $(\frac{1}{6}, \frac{1}{3}, \frac{1}{2})$ [@problem_id:2109656]. This physical model provides a tangible way to understand how the coordinates represent a "balancing act" between the vertices.
 
 #### The Geometric Interpretation: Ratios of Area and Volume
 
-For a 2-[simplex](@entry_id:270623) (a triangle $v_0v_1v_2$) in a plane, barycentric coordinates have a beautiful geometric interpretation related to area. For any point $P$ inside the triangle, its barycentric coordinates $(\lambda_0, \lambda_1, \lambda_2)$ are the ratios of the areas of the sub-triangles formed by $P$ and the triangle's edges. Specifically:
+For a 2-simplex (a triangle $v_0v_1v_2$) in a plane, barycentric coordinates have a beautiful geometric interpretation related to area. For any point $P$ inside the triangle, its barycentric coordinates $(\lambda_0, \lambda_1, \lambda_2)$ are the ratios of the areas of the sub-triangles formed by $P$ and the triangle's edges. Specifically:
 
 $\lambda_0 = \frac{\text{Area}(\triangle P v_1 v_2)}{\text{Area}(\triangle v_0 v_1 v_2)}$, $\quad \lambda_1 = \frac{\text{Area}(\triangle P v_0 v_2)}{\text{Area}(\triangle v_0 v_1 v_2)}$, $\quad \lambda_2 = \frac{\text{Area}(\triangle P v_0 v_1)}{\text{Area}(\triangle v_0 v_1 v_2)}$
 
-Each coordinate $\lambda_i$ represents the fractional area of the sub-triangle that does not include the vertex $v_i$ . This principle generalizes to higher dimensions: for an $n$-simplex, the barycentric coordinates are the ratios of the $(n)$-dimensional hypervolumes of the sub-[simplices](@entry_id:264881). This geometric view is fundamental in fields like computer graphics for tasks such as texture mapping and color interpolation, where properties are smoothly varied across a surface.
+Each coordinate $\lambda_i$ represents the fractional area of the sub-triangle that does not include the vertex $v_i$ [@problem_id:1633416]. This principle generalizes to higher dimensions: for an $n$-simplex, the barycentric coordinates are the ratios of the $(n)$-dimensional hypervolumes of the sub-simplices. This geometric view is fundamental in fields like computer graphics for tasks such as texture mapping and color interpolation, where properties are smoothly varied across a surface.
 
 ### A Coordinate System for the Entire Space
 
-A common misconception is that barycentric coordinates are only valid for points *inside* the reference simplex. In fact, they form a valid coordinate system for the entire [affine hull](@entry_id:637696) of the vertices. The signs of the coordinates $(\lambda_0, \lambda_1, \dots, \lambda_n)$ precisely determine the location of the point $P$ relative to the simplex.
+A common misconception is that barycentric coordinates are only valid for points *inside* the reference simplex. In fact, they form a valid coordinate system for the entire affine hull of the vertices. The signs of the coordinates $(\lambda_0, \lambda_1, \dots, \lambda_n)$ precisely determine the location of the point $P$ relative to the simplex.
 
 #### Inside the Simplex
 
-A point $P$ lies inside the $n$-[simplex](@entry_id:270623) defined by vertices $\{v_0, \dots, v_n\}$ (inclusive of its boundary) if and only if all of its barycentric coordinates are non-negative:
+A point $P$ lies inside the $n$-simplex defined by vertices $\{v_0, \dots, v_n\}$ (inclusive of its boundary) if and only if all of its barycentric coordinates are non-negative:
 
 $\lambda_i \ge 0 \quad \text{for all } i \in \{0, 1, \dots, n\}$
 
-This is in addition to the standard requirement that $\sum \lambda_i = 1$. A point with coordinates like $(0.1, 0.2, 0.3, 0.4)$ for a tetrahedron is clearly inside, while a point with coordinates $(2, -0.5, -0.5, 0)$ satisfies the sum condition but lies outside the tetrahedron because some coordinates are negative .
+This is in addition to the standard requirement that $\sum \lambda_i = 1$. A point with coordinates like $(0.1, 0.2, 0.3, 0.4)$ for a tetrahedron is clearly inside, while a point with coordinates $(2, -0.5, -0.5, 0)$ satisfies the sum condition but lies outside the tetrahedron because some coordinates are negative [@problem_id:1633361].
 
 #### On the Boundary of the Simplex
 
-The boundaries of a [simplex](@entry_id:270623) (its faces, edges, and vertices) are characterized by one or more barycentric coordinates being exactly zero.
+The boundaries of a simplex (its faces, edges, and vertices) are characterized by one or more barycentric coordinates being exactly zero.
 
-*   **Faces:** A point $P$ lies on the $(n-1)$-dimensional face opposite to a vertex $v_i$ if and only if its corresponding coordinate $\lambda_i = 0$. For instance, in a tetrahedron with vertices $\{v_0, v_1, v_2, v_3\}$, the set of all points where $\lambda_3 = 0$ forms the triangular face defined by the [convex hull](@entry_id:262864) of $\{v_0, v_1, v_2\}$ .
-*   **Edges:** A point lies on the edge connecting vertices $v_i$ and $v_j$ if all coordinates except $\lambda_i$ and $\lambda_j$ are zero. The point is then simply an [affine combination](@entry_id:276726) of $v_i$ and $v_j$.
+*   **Faces:** A point $P$ lies on the $(n-1)$-dimensional face opposite to a vertex $v_i$ if and only if its corresponding coordinate $\lambda_i = 0$. For instance, in a tetrahedron with vertices $\{v_0, v_1, v_2, v_3\}$, the set of all points where $\lambda_3 = 0$ forms the triangular face defined by the convex hull of $\{v_0, v_1, v_2\}$ [@problem_id:1633387].
+*   **Edges:** A point lies on the edge connecting vertices $v_i$ and $v_j$ if all coordinates except $\lambda_i$ and $\lambda_j$ are zero. The point is then simply an affine combination of $v_i$ and $v_j$.
 *   **Vertices:** A point $P$ is identical to a vertex $v_i$ if and only if $\lambda_i=1$ and all other coordinates $\lambda_j=0$ for $j \neq i$.
 
 #### Outside the Simplex
 
 If any barycentric coordinate $\lambda_i$ is negative, the point $P$ lies outside the simplex. The signs of the coordinates partition the entire affine space into distinct regions. For a triangle $ABC$, the lines containing its three edges divide the plane into seven regions. Only one of these is the interior of the triangle (where $\lambda_A, \lambda_B, \lambda_C$ are all positive).
 
-Consider a point $P$ on the line passing through $A$ and $B$. Its coordinate $\lambda_C$ must be zero. If $P$ lies on the segment $AB$, then $\lambda_A, \lambda_B \in [0,1]$. If $P$ lies on the line outside the segment, one of these two coordinates must be negative. For example, a point $P$ with coordinates $(2, -1, 0)$ with respect to triangle $ABC$ satisfies $P = 2A - 1B + 0C$. This can be rearranged to $A = \frac{1}{2}(P+B)$, which reveals that $A$ is the midpoint of the line segment $BP$. Geometrically, $P$ lies on the line through $A$ and $B$, on the side of $A$ opposite to $B$ .
+Consider a point $P$ on the line passing through $A$ and $B$. Its coordinate $\lambda_C$ must be zero. If $P$ lies on the segment $AB$, then $\lambda_A, \lambda_B \in [0,1]$. If $P$ lies on the line outside the segment, one of these two coordinates must be negative. For example, a point $P$ with coordinates $(2, -1, 0)$ with respect to triangle $ABC$ satisfies $P = 2A - 1B + 0C$. This can be rearranged to $A = \frac{1}{2}(P+B)$, which reveals that $A$ is the midpoint of the line segment $BP$. Geometrically, $P$ lies on the line through $A$ and $B$, on the side of $A$ opposite to $B$ [@problem_id:2109635].
 
-Similarly, a point in the region "behind" a vertex, say $v_0$, formed by the extension of the edges from $v_0$, will have $\lambda_0 > 1$ while the other coordinates are negative. This is because to "reach" such a point from within the triangle, one must move "away" from the other vertices, giving them negative weight .
+Similarly, a point in the region "behind" a vertex, say $v_0$, formed by the extension of the edges from $v_0$, will have $\lambda_0 > 1$ while the other coordinates are negative. This is because to "reach" such a point from within the triangle, one must move "away" from the other vertices, giving them negative weight [@problem_id:1633364].
 
 ### Fundamental Properties and Algebraic Utility
 
@@ -86,7 +86,7 @@ Barycentric coordinates possess several powerful properties that make them an in
 
 #### Invariance Under Affine Transformations
 
-One of the most significant properties of barycentric coordinates is their **invariance under affine transformations**. An affine transformation $T$ is a mapping of the form $T(v) = Mv + b$, where $M$ is a [linear transformation](@entry_id:143080) (a matrix) and $b$ is a translation vector. Such transformations include rotation, scaling, shear, reflection, and translation.
+One of the most significant properties of barycentric coordinates is their **invariance under affine transformations**. An affine transformation $T$ is a mapping of the form $T(v) = Mv + b$, where $M$ is a linear transformation (a matrix) and $b$ is a translation vector. Such transformations include rotation, scaling, shear, reflection, and translation.
 
 If a point $P$ has barycentric coordinates $(\lambda_0, \dots, \lambda_n)$ with respect to vertices $\{v_0, \dots, v_n\}$, so that $P = \sum \lambda_i v_i$, then the transformed point $P' = T(P)$ has the *exact same* barycentric coordinates with respect to the transformed vertices $\{v'_0, \dots, v'_n\}$, where $v'_i = T(v_i)$.
 
@@ -97,11 +97,11 @@ $P' = \sum (\lambda_i M v_i) + (\sum \lambda_i)b = \sum (\lambda_i M v_i + \lamb
 Since $v'_i = T(v_i) = Mv_i + b$, we have:
 $P' = \sum \lambda_i v'_i$
 
-This invariance means that if we know the barycentric coordinates of a point within a shape, we do not need to recalculate them after the shape has been affinely deformed. This is immensely useful in computer graphics and [finite element analysis](@entry_id:138109), where meshes are constantly being transformed  .
+This invariance means that if we know the barycentric coordinates of a point within a shape, we do not need to recalculate them after the shape has been affinely deformed. This is immensely useful in computer graphics and finite element analysis, where meshes are constantly being transformed [@problem_id:1633386] [@problem_id:2109680].
 
 #### Connection to Vector Algebra
 
-Barycentric coordinates provide a seamless bridge between [affine geometry](@entry_id:178810) (dealing with points) and linear algebra (dealing with vectors). Consider a triangle $ABC$ and a point $P$ with barycentric coordinates $(u, v, w)$, where $u+v+w=1$. By definition, for any origin $O$, we have $\vec{OP} = u\vec{OA} + v\vec{OB} + w\vec{OC}$.
+Barycentric coordinates provide a seamless bridge between affine geometry (dealing with points) and linear algebra (dealing with vectors). Consider a triangle $ABC$ and a point $P$ with barycentric coordinates $(u, v, w)$, where $u+v+w=1$. By definition, for any origin $O$, we have $\vec{OP} = u\vec{OA} + v\vec{OB} + w\vec{OC}$.
 
 Let's express the vector $\vec{AP}$ in terms of the edge vectors of the triangle. We choose the origin to be vertex $A$, so $\vec{OA}$ is the zero vector in this frame. However, to be general, we can simply write:
 $\vec{AP} = \vec{OP} - \vec{OA} = (u\vec{OA} + v\vec{OB} + w\vec{OC}) - \vec{OA}$
@@ -112,4 +112,4 @@ $\vec{AP} = v(\vec{OB} - \vec{OA}) + w(\vec{OC} - \vec{OA})$
 Recognizing that $\vec{OB} - \vec{OA} = \vec{AB}$ and $\vec{OC} - \vec{OA} = \vec{AC}$, we arrive at a remarkably simple result:
 $\vec{AP} = v\vec{AB} + w\vec{AC}$
 
-This equation  shows that the barycentric coordinates $v$ and $w$ act as the standard linear coordinates for the vector $\vec{AP}$ in the basis formed by the edge vectors $\{\vec{AB}, \vec{AC}\}$ originating from vertex $A$. This provides a direct method for converting between barycentric representations and local vector representations, which is essential for many [geometric algorithms](@entry_id:175693).
+This equation [@problem_id:2109681] shows that the barycentric coordinates $v$ and $w$ act as the standard linear coordinates for the vector $\vec{AP}$ in the basis formed by the edge vectors $\{\vec{AB}, \vec{AC}\}$ originating from vertex $A$. This provides a direct method for converting between barycentric representations and local vector representations, which is essential for many geometric algorithms.

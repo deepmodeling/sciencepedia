@@ -1,7 +1,7 @@
 ## 引言
-看似简单的方程 $y^2 = x^3 + ax + b$ 背后隐藏着一个远比其仿射图像更丰富、更完整的数学世界。在[笛卡尔平面](@article_id:354382)上，我们看到的是一条开放的曲线，其群律中神秘的“无穷远点”似乎只是一个凭空添加的符号。这种不完整的视图掩盖了[椭圆曲线](@article_id:641521)真正的几何优雅性与[代数结构](@article_id:297503)的根源。我们如何才能看到它的全貌，并理解其上神奇的加法运算从何而来？
+看似简单的方程 $y^2 = x^3 + ax + b$ 背后隐藏着一个远比其仿射图像更丰富、更完整的数学世界。在[笛卡尔平面](@keyword=cartesian_plane|lang=zh-CN|style=Feynman)上，我们看到的是一条开放的曲线，其群律中神秘的“无穷远点”似乎只是一个凭空添加的符号。这种不完整的视图掩盖了[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)真正的几何优雅性与[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)的根源。我们如何才能看到它的全貌，并理解其上神奇的加法运算从何而来？
 
-本文将带领您踏上一段从具体到抽象再回归具体的旅程，以揭示椭圆曲线作为非奇异射影三次曲线的深刻本质。我们将首先在“原理与机制”一章中，将曲线置于其真正的舞台——射影平面——之上，并理解“非奇异性”这一关键要求的重要性。接着，在“应用与跨学科连接”部分，我们将探索这一优雅结构如何在[密码学](@article_id:299614)、数论乃至理论物理等领域产生深远影响。最后，通过一系列“动手实践”，您将有机会亲手应用这些核心概念。
+本文将带领您踏上一段从具体到抽象再回归具体的旅程，以揭示椭圆曲线作为非奇异射影三次曲线的深刻本质。我们将首先在“原理与机制”一章中，将曲线置于其真正的舞台——射影平面——之上，并理解“非奇异性”这一关键要求的重要性。接着，在“应用与跨学科连接”部分，我们将探索这一优雅结构如何在[密码学](@keyword=cryptography|lang=zh-CN|style=Feynman)、数论乃至理论物理等领域产生深远影响。最后，通过一系列“动手实践”，您将有机会亲手应用这些核心概念。
 
 现在，让我们从第一步开始：走出熟悉的仿射世界，进入一个平行线亦可相交的完美几何领域，去发现椭圆曲线的完整形态。
 
@@ -11,76 +11,76 @@
 
 ### 从有限到无限：射影世界的优雅完备
 
-我们熟悉的二维[笛卡尔平面](@article_id:354382)，在[代数几何](@article_id:316707)中被称为仿射平面（affine plane） $\mathbb{A}^2$。它很棒，但有一个“缺陷”：平行线永不相交。这在几何上显得有些“不自然”。[射影几何](@article_id:316647)学家们通过一个绝妙的想法修正了这一点：他们在仿射平面的“无穷远处”增加了一条“[无穷远直线](@article_id:350471)”。在这条线上，每一组相互平行的直线都有一个唯一的交点。这就好比在二维透视画中，所有伸向远方的平行铁轨最终汇聚于地平线上的一个“灭点”。
+我们熟悉的二维[笛卡尔平面](@keyword=cartesian_plane|lang=zh-CN|style=Feynman)，在[代数几何](@keyword=algebraic_geometry|lang=zh-CN|style=Feynman)中被称为仿射平面（affine plane） $\mathbb{A}^2$。它很棒，但有一个“缺陷”：平行线永不相交。这在几何上显得有些“不自然”。[射影几何](@keyword=projective_geometry|lang=zh-CN|style=Feynman)学家们通过一个绝妙的想法修正了这一点：他们在仿射平面的“无穷远处”增加了一条“[无穷远直线](@keyword=line_at_infinity|lang=zh-CN|style=Feynman)”。在这条线上，每一组相互平行的直线都有一个唯一的交点。这就好比在二维透视画中，所有伸向远方的平行铁轨最终汇聚于地平线上的一个“灭点”。
 
-将仿射曲线置于[射影平面](@article_id:330205) $\mathbb{P}^2$ 中，我们就能看到它的“全部”。技术上，我们通过一个名为“齐次化”（homogenization）的过程来实现这一点。对于一个仿射方程，例如 $f(x,y)=0$（总次数为 $d$），我们引入第三个坐标 $Z$，并将 $x$替换为 $X/Z$，将 $y$ 替换为 $Y/Z$。然后，我们乘以 $Z^d$ 来清除分母，从而得到一个[齐次多项式](@article_id:357063) $F(X,Y,Z)=0$。 
+将仿射曲线置于[射影平面](@keyword=projective_plane|lang=zh-CN|style=Feynman) $\mathbb{P}^2$ 中，我们就能看到它的“全部”。技术上，我们通过一个名为“齐次化”（homogenization）的过程来实现这一点。对于一个仿射方程，例如 $f(x,y)=0$（总次数为 $d$），我们引入第三个坐标 $Z$，并将 $x$替换为 $X/Z$，将 $y$ 替换为 $Y/Z$。然后，我们乘以 $Z^d$ 来清除分母，从而得到一个[齐次多项式](@keyword=homogeneous_polynomial|lang=zh-CN|style=Feynman) $F(X,Y,Z)=0$。 [@problem_id:3012852]
 
-为什么要这样做？[射影平面](@article_id:330205)中的点是用三个坐标 $[X:Y:Z]$ 来描述的，但这三个坐标并非唯一。对于任何非零的数 $\lambda$，$[X:Y:Z]$ 和 $[\lambda X:\lambda Y:\lambda Z]$ 代表的是同一个点。只有[齐次多项式](@article_id:357063)才具有 $F(\lambda X, \lambda Y, \lambda Z) = \lambda^d F(X,Y,Z)$ 这样的优美性质。这意味着，如果一个坐标三元组 $(X,Y,Z)$ 使得 $F(X,Y,Z)=0$，那么所有与之等价的坐标三元组 $(\lambda X, \lambda Y, \lambda Z)$ 也同样满足这个方程。因此，在[射影空间](@article_id:318367)中，“一个点是否在曲线上”这个概念是定义明确的（well-defined）。
+为什么要这样做？[射影平面](@keyword=projective_plane|lang=zh-CN|style=Feynman)中的点是用三个坐标 $[X:Y:Z]$ 来描述的，但这三个坐标并非唯一。对于任何非零的数 $\lambda$，$[X:Y:Z]$ 和 $[\lambda X:\lambda Y:\lambda Z]$ 代表的是同一个点。只有[齐次多项式](@keyword=homogeneous_polynomial|lang=zh-CN|style=Feynman)才具有 $F(\lambda X, \lambda Y, \lambda Z) = \lambda^d F(X,Y,Z)$ 这样的优美性质。这意味着，如果一个坐标三元组 $(X,Y,Z)$ 使得 $F(X,Y,Z)=0$，那么所有与之等价的坐标三元组 $(\lambda X, \lambda Y, \lambda Z)$ 也同样满足这个方程。因此，在[射影空间](@keyword=projective_spaces|lang=zh-CN|style=Feynman)中，“一个点是否在曲线上”这个概念是定义明确的（well-defined）。[@problem_id:3012852]
 
-我们最初所在的仿射平面，现在可以看作是射影平面中 $Z \neq 0$ 的部分。通过令 $Z=1$，我们就回到了熟悉的仿射坐标 $(x,y) = (X/1, Y/1)$。而那些 $Z=0$ 的点，就构成了那条神秘的“[无穷远直线](@article_id:350471)”。我们最初的仿射曲线，正是其射影闭包与仿射部分 $Z \neq 0$ 的交集。 
+我们最初所在的仿射平面，现在可以看作是射影平面中 $Z \neq 0$ 的部分。通过令 $Z=1$，我们就回到了熟悉的仿射坐标 $(x,y) = (X/1, Y/1)$。而那些 $Z=0$ 的点，就构成了那条神秘的“[无穷远直线](@keyword=line_at_infinity|lang=zh-CN|style=Feynman)”。我们最初的仿射曲线，正是其射影闭包与仿射部分 $Z \neq 0$ 的交集。 [@problem_id:3012843]
 
 现在，让我们回到我们的例子 $y^2 = x^3 - x$。它的次数是 3。齐次化后得到：
 $$ Y^2Z = X^3 - XZ^2 $$
-这条曲线现在生活在[射影平面](@article_id:330205) $\mathbb{P}^2$ 中。它在无穷远处 ($Z=0$) 是什么样子？代入 $Z=0$，方程变为 $0 = X^3$，这意味着 $X=0$。所以在无穷远直線上，满足方程的点必须具有形式 $[0:Y:0]$。由于点的坐标不能全是零，所以 $Y$ 必须非零。我们可以用 $Y$ 来缩放坐标，得到唯一的点 $[0:1:0]$。 
+这条曲线现在生活在[射影平面](@keyword=projective_plane|lang=zh-CN|style=Feynman) $\mathbb{P}^2$ 中。它在无穷远处 ($Z=0$) 是什么样子？代入 $Z=0$，方程变为 $0 = X^3$，这意味着 $X=0$。所以在无穷远直線上，满足方程的点必须具有形式 $[0:Y:0]$。由于点的坐标不能全是零，所以 $Y$ 必须非零。我们可以用 $Y$ 来缩放坐标，得到唯一的点 $[0:1:0]$。[@problem_id:3012813] [@problem_id:3012855]
 
-这是一个惊人的发现！那两条在仿射平面中看似永远分离、奔向无穷的曲线分支，在射影平面这个更宏大的世界里，通过一个唯一的“[无穷远点](@article_id:351634)” $\mathcal{O}=[0:1:0]$ 优雅地连接在一起，形成了一个完整的、封闭的环路。这正是数学追求的和谐与统一之美。
+这是一个惊人的发现！那两条在仿射平面中看似永远分离、奔向无穷的曲线分支，在射影平面这个更宏大的世界里，通过一个唯一的“[无穷远点](@keyword=points_at_infinity|lang=zh-CN|style=Feynman)” $\mathcal{O}=[0:1:0]$ 优雅地连接在一起，形成了一个完整的、封闭的环路。这正是数学追求的和谐与统一之美。
 
 ### 光滑之美：为何“非奇异”至关重要
 
 椭圆曲线的定义中有一个至关重要的词：“非奇异”（nonsingular），或者说“光滑”（smooth）。这意味着曲线上每一点都有一个唯一定义的切线，没有任何尖点、自相交点或其他“病态”行为。
 
-在代数上，我们可以用一个漂亮的判据来检验光滑性，即雅可比判据（Jacobian criterion）。对于由 $F(X,Y,Z)=0$ 定义的曲线，如果在一个点 $P$ 上，所有的偏导数 $\partial F/\partial X$、$\partial F/\partial Y$ 和 $\partial F/\partial Z$ 同时为零，那么这个点就是一个[奇异点](@article_id:378277)。[椭圆曲线](@article_id:641521)的定义要求，在其（在[代数闭域](@article_id:312250)上的）任何一点，这种情况都不能发生。 
+在代数上，我们可以用一个漂亮的判据来检验光滑性，即雅可比判据（Jacobian criterion）。对于由 $F(X,Y,Z)=0$ 定义的曲线，如果在一个点 $P$ 上，所有的偏导数 $\partial F/\partial X$、$\partial F/\partial Y$ 和 $\partial F/\partial Z$ 同时为零，那么这个点就是一个[奇异点](@keyword=exceptional_points|lang=zh-CN|style=Feynman)。[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的定义要求，在其（在[代数闭域](@keyword=algebraically_closed_fields|lang=zh-CN|style=Feynman)上的）任何一点，这种情况都不能发生。[@problem_id:3012843] [@problem_id:3012852]
 
-一条仿射曲线可能是光滑的，但它的射影闭包却可能在无穷远处产生[奇异点](@article_id:378277)。例如，光滑的仿射曲线 $y=x^3$ 在齐次化后变为 $YZ^2 = X^3$。通过计算[偏导数](@article_id:306700)，你会发现在无穷远点 $[0:1:0]$ 处，所有[偏导数](@article_id:306700)都为零。这是一个“[尖点](@article_id:641085)”（cusp）[奇点](@article_id:298215)。 这种在无穷远处“行为不端”的曲线，不是我们所说的椭圆曲线。
+一条仿射曲线可能是光滑的，但它的射影闭包却可能在无穷远处产生[奇异点](@keyword=exceptional_points|lang=zh-CN|style=Feynman)。例如，光滑的仿射曲线 $y=x^3$ 在齐次化后变为 $YZ^2 = X^3$。通过计算[偏导数](@keyword=partial_derivatives|lang=zh-CN|style=Feynman)，你会发现在无穷远点 $[0:1:0]$ 处，所有[偏导数](@keyword=partial_derivatives|lang=zh-CN|style=Feynman)都为零。这是一个“[尖点](@keyword=cusps|lang=zh-CN|style=Feynman)”（cusp）[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)。[@problem_id:3012843] 这种在无穷远处“行为不端”的曲线，不是我们所说的椭圆曲线。
 
 而对于标准的魏尔斯特拉斯方程（Weierstrass equation），例如我们之前看到的 $Y^2Z = X^3 - XZ^2$，奇迹再次发生。我们来检验一下无穷远点 $\mathcal{O}=[0:1:0]$ 的光滑性。它的定义多项式是 $F(X,Y,Z) = Y^2Z - X^3 + XZ^2$。
-其[偏导数](@article_id:306700)为：
+其[偏导数](@keyword=partial_derivatives|lang=zh-CN|style=Feynman)为：
 $$ \frac{\partial F}{\partial X} = -3X^2 + Z^2, \quad \frac{\partial F}{\partial Y} = 2YZ, \quad \frac{\partial F}{\partial Z} = Y^2 + 2XZ $$
-在点 $(0,1,0)$ 处计算这些[导数](@article_id:318324)，我们得到：
+在点 $(0,1,0)$ 处计算这些[导数](@keyword=derivative|lang=zh-CN|style=Feynman)，我们得到：
 $$ \frac{\partial F}{\partial X}(0,1,0) = 0, \quad \frac{\partial F}{\partial Y}(0,1,0) = 0, \quad \frac{\partial F}{\partial Z}(0,1,0) = 1^2 = 1 $$
-梯度向量是 $(0,0,1)$，不是零向量！因此，这个[无穷远点](@article_id:351634)是光滑的。 事实上，对于任何形式的魏尔斯特拉斯方程，只要其判别式 $\Delta \neq 0$（这保证了仿射部分是光滑的），其[无穷远点](@article_id:351634) $[0:1:0]$ *永远*是光滑的。 这种与生俱来的光滑性是魏爾斯特拉斯方程成为研究[椭圆曲线](@article_id:641521)的[标准模型](@article_id:297875)的关键原因之一。
+梯度向量是 $(0,0,1)$，不是零向量！因此，这个[无穷远点](@keyword=points_at_infinity|lang=zh-CN|style=Feynman)是光滑的。[@problem_id:3012813] 事实上，对于任何形式的魏尔斯特拉斯方程，只要其判别式 $\Delta \neq 0$（这保证了仿射部分是光滑的），其[无穷远点](@keyword=points_at_infinity|lang=zh-CN|style=Feynman) $[0:1:0]$ *永远*是光滑的。[@problem_id:3012832] 这种与生俱来的光滑性是魏爾斯特拉斯方程成为研究[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的[标准模型](@keyword=standard_model|lang=zh-CN|style=Feynman)的关键原因之一。
 
-### [贝祖定理](@article_id:346037)：相交的守恒律
+### [贝祖定理](@keyword=bézout_s_theorem|lang=zh-CN|style=Feynman)：相交的守恒律
 
-现在我们有了一个光滑的、闭合的立方曲线。它与一条直线相交时会发生什么？一个强大的工具——[贝祖定理](@article_id:346037)（Bézout's Theorem）——告诉我们，在[射影平面](@article_id:330205)中（且在[代数闭域](@article_id:312250)上），一条 $m$ 次曲线和一条 $n$ 次曲线，如果没有共同的组件，它们恰好相交 $m \times n$ 次，只要我们“正确地”计数。 
+现在我们有了一个光滑的、闭合的立方曲线。它与一条直线相交时会发生什么？一个强大的工具——[贝祖定理](@keyword=bézout_s_theorem|lang=zh-CN|style=Feynman)（Bézout's Theorem）——告诉我们，在[射影平面](@keyword=projective_plane|lang=zh-CN|style=Feynman)中（且在[代数闭域](@keyword=algebraically_closed_fields|lang=zh-CN|style=Feynman)上），一条 $m$ 次曲线和一条 $n$ 次曲线，如果没有共同的组件，它们恰好相交 $m \times n$ 次，只要我们“正确地”计数。 [@problem_id:3012818]
 
 “正确地计数”意味着需要考虑两点：
-1.  **[相交重数](@article_id:343523) (Intersection Multiplicity)**：如果一条[线与](@article_id:356071)曲线相切，那么这个切点的相交次数就不止一次。一个普通的切点算两次，而在一个更特殊的“[拐点](@article_id:305354)”（inflection point）处的切线则算三次。
-2.  **复数解**：有些交点可能隐藏在[复数域](@article_id:314180)中，即使我们画在实数平面上看不到。
+1.  **[相交重数](@keyword=intersection_multiplicity|lang=zh-CN|style=Feynman) (Intersection Multiplicity)**：如果一条[线与](@keyword=wired_and|lang=zh-CN|style=Feynman)曲线相切，那么这个切点的相交次数就不止一次。一个普通的切点算两次，而在一个更特殊的“[拐点](@keyword=inflection_points|lang=zh-CN|style=Feynman)”（inflection point）处的切线则算三次。
+2.  **复数解**：有些交点可能隐藏在[复数域](@keyword=complex_numbers_field|lang=zh-CN|style=Feynman)中，即使我们画在实数平面上看不到。
 
-对于我们的三次曲线（$m=3$）和一条直线（$n=1$），[贝祖定理](@article_id:346037)预言总共有 $3 \times 1 = 3$ 个交点。这可以表现为：
--   三个不同的实数交点（[重数](@article_id:296920)之和为 $1+1+1=3$）。
--   一个[切点](@article_id:351997)和一个普通交点（重数之和为 $2+1=3$）。
--   一个[拐点](@article_id:305354)（重数之和为 $3$）。
--   一个实数交点和一对[共轭复数](@article_id:353921)交点。
+对于我们的三次曲线（$m=3$）和一条直线（$n=1$），[贝祖定理](@keyword=bézout_s_theorem|lang=zh-CN|style=Feynman)预言总共有 $3 \times 1 = 3$ 个交点。这可以表现为：
+-   三个不同的实数交点（[重数](@keyword=multiplicity|lang=zh-CN|style=Feynman)之和为 $1+1+1=3$）。
+-   一个[切点](@keyword=point_of_tangency|lang=zh-CN|style=Feynman)和一个普通交点（重数之和为 $2+1=3$）。
+-   一个[拐点](@keyword=inflection_points|lang=zh-CN|style=Feynman)（重数之和为 $3$）。
+-   一个实数交点和一对[共轭复数](@keyword=complex_conjugate|lang=zh-CN|style=Feynman)交点。
 
-那么，[无穷远直线](@article_id:350471) $Z=0$ 与我们的曲线 $Y^2Z = X^3 - XZ^2$ 是如何相交的呢？我们已经知道它们只在唯一的点 $\mathcal{O}=[0:1:0]$ 相遇。这是否与[贝祖定理](@article_id:346037)矛盾？
+那么，[无穷远直线](@keyword=line_at_infinity|lang=zh-CN|style=Feynman) $Z=0$ 与我们的曲线 $Y^2Z = X^3 - XZ^2$ 是如何相交的呢？我们已经知道它们只在唯一的点 $\mathcal{O}=[0:1:0]$ 相遇。这是否与[贝祖定理](@keyword=bézout_s_theorem|lang=zh-CN|style=Feynman)矛盾？
 
-完全不！这里的关键在于[相交重数](@article_id:343523)。通过在 $\mathcal{O}$ 点附近进行[局部坐标](@article_id:360581)变换和计算，我们可以精确地算出，这条[无穷远直线](@article_id:350471)与曲线在 $\mathcal{O}$ 点的[相交重数](@article_id:343523)**恰好是3**！ 这意味着[无穷远直线](@article_id:350471) $Z=0$ 不仅在 $\mathcal{O}$ 点与曲线相切，而且是一种高度相切，使得 $\mathcal{O}$ 成为了曲线的一个[拐点](@article_id:305354)。 这个看似平淡的[无穷远点](@article_id:351634)，竟然独自承担了[贝祖定理](@article_id:346037)所要求的全部三个交点。这不仅是一个漂亮的计算结果，它也是[椭圆曲线](@article_id:641521)上那个神奇的加法群律的几何基础。
+完全不！这里的关键在于[相交重数](@keyword=intersection_multiplicity|lang=zh-CN|style=Feynman)。通过在 $\mathcal{O}$ 点附近进行[局部坐标](@keyword=local_coordinates|lang=zh-CN|style=Feynman)变换和计算，我们可以精确地算出，这条[无穷远直线](@keyword=line_at_infinity|lang=zh-CN|style=Feynman)与曲线在 $\mathcal{O}$ 点的[相交重数](@keyword=intersection_multiplicity|lang=zh-CN|style=Feynman)**恰好是3**！[@problem_id:3012855] 这意味着[无穷远直线](@keyword=line_at_infinity|lang=zh-CN|style=Feynman) $Z=0$ 不仅在 $\mathcal{O}$ 点与曲线相切，而且是一种高度相切，使得 $\mathcal{O}$ 成为了曲线的一个[拐点](@keyword=inflection_points|lang=zh-CN|style=Feynman)。[@problem_id:3012813] 这个看似平淡的[无穷远点](@keyword=points_at_infinity|lang=zh-CN|style=Feynman)，竟然独自承担了[贝祖定理](@keyword=bézout_s_theorem|lang=zh-CN|style=Feynman)所要求的全部三个交点。这不仅是一个漂亮的计算结果，它也是[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)上那个神奇的加法群律的几何基础。
 
-### 从抽象到具体：[基点](@article_id:330677)的 foundational 角色
+### 从抽象到具体：[基点](@keyword=basepoint|lang=zh-CN|style=Feynman)的 foundational 角色
 
 到目前为止，我们都从一个具体的方程出发。但椭圆曲线的现代理论，是从一个更为抽象和深刻的定义开始的：
-> 一个域 $k$ 上的椭圆曲线，是一个光滑的、射影的、几何整的（geometrically integral）亏格为1（genus 1）的曲线 $E$，并且带有一个指定的 $k$-有理点 $\mathcal{O}$。 
+> 一个域 $k$ 上的椭圆曲线，是一个光滑的、射影的、几何整的（geometrically integral）亏格为1（genus 1）的曲线 $E$，并且带有一个指定的 $k$-有理点 $\mathcal{O}$。 [@problem_id:3012851]
 
 让我们来解构这个定义。
 - “亏格为1”在拓扑上意味着这条曲线（在复数域上）像一个甜甜圈的表面。
-- 关键在于“带有一个指定的 $k$-[有理点](@article_id:374057) $\mathcal{O}$”。为什么这个点如此重要？
+- 关键在于“带有一个指定的 $k$-[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman) $\mathcal{O}$”。为什么这个点如此重要？
 
-一个没有指定[基点](@article_id:330677)的亏格为1的光滑曲线，就像一个完美的对称环。它上面有很多点，但没有任何一个点比其他点更特殊。它有成为一个群的潜力，但却没有一个天生的“单位元”。这样的曲线在代数几何中被称为其“[雅可比簇](@article_id:377240)的主[齐性空间](@article_id:335185)”（a principal homogeneous space, or torsor）。
+一个没有指定[基点](@keyword=basepoint|lang=zh-CN|style=Feynman)的亏格为1的光滑曲线，就像一个完美的对称环。它上面有很多点，但没有任何一个点比其他点更特殊。它有成为一个群的潜力，但却没有一个天生的“单位元”。这样的曲线在代数几何中被称为其“[雅可比簇](@keyword=jacobian_variety|lang=zh-CN|style=Feynman)的主[齐性空间](@keyword=homogeneous_spaces|lang=zh-CN|style=Feynman)”（a principal homogeneous space, or torsor）。[@problem_id:3012851]
 
-一旦我们*指定*了一个有理点 $\mathcal{O}$，我们就打破了这种对称性。我们宣告：“你，$\mathcal{O}$，就是单位元！”。这个简单的指定，就像给一个旋转的圆盘点上了一个标记，使得我们可以定义其余所有点的位置和运算。这个点的存在，允许我们建立一个从曲线 $E$ 本身到其[雅可比簇](@article_id:377240)（一个自带群结构的[阿贝尔簇](@article_id:362818)）的 $k$-同构，从而将群结构“传输”到 $E$ 上。没有这个点，曲线 $E$ 就无法在域 $k$ 上承载一个群结构。
+一旦我们*指定*了一个有理点 $\mathcal{O}$，我们就打破了这种对称性。我们宣告：“你，$\mathcal{O}$，就是单位元！”。这个简单的指定，就像给一个旋转的圆盘点上了一个标记，使得我们可以定义其余所有点的位置和运算。这个点的存在，允许我们建立一个从曲线 $E$ 本身到其[雅可比簇](@keyword=jacobian_variety|lang=zh-CN|style=Feynman)（一个自带群结构的[阿贝尔簇](@keyword=abelian_variety|lang=zh-CN|style=Feynman)）的 $k$-同构，从而将群结构“传输”到 $E$ 上。没有这个点，曲线 $E$ 就无法在域 $k$ 上承载一个群结构。[@problem_id:3012851]
 
 ### 终极综合：黎曼-洛赫定理的魔力
 
-我们如何从“带点的亏格为1曲线”这个抽象概念，回到我们熟悉的 $y^2 = x^3+ax+b$ 这样的方程呢？这需要借助[代数几何](@article_id:316707)中最强大的工具之一——黎曼-洛赫定理（Riemann-Roch Theorem）。
+我们如何从“带点的亏格为1曲线”这个抽象概念，回到我们熟悉的 $y^2 = x^3+ax+b$ 这样的方程呢？这需要借助[代数几何](@keyword=algebraic_geometry|lang=zh-CN|style=Feynman)中最强大的工具之一——黎曼-洛赫定理（Riemann-Roch Theorem）。[@problem_id:3012797]
 
-这个定理能告诉我们，在一个曲线上，满足特定“约束条件”的函数有多少。这里的“约束”通常指函数允许在哪些点有极点，以及[极点的阶](@article_id:353090)数不能超过多少。
+这个定理能告诉我们，在一个曲线上，满足特定“约束条件”的函数有多少。这里的“约束”通常指函数允许在哪些点有极点，以及[极点的阶](@keyword=order_of_a_pole|lang=zh-CN|style=Feynman)数不能超过多少。
 
-对于一个带[基点](@article_id:330677) $\mathcal{O}$ 的亏格为1曲线 $E$，黎曼-洛赫定理告诉我们，考察那些只允许在 $\mathcal{O}$ 点有至多3阶极点的函数，它们构成了一个3维的[向量空间](@article_id:297288)。 我们可以为这个空间选取一组基底，称之为 $\{1, x, y\}$。这里，$1$ 是常数函数， $x$ 是一个在 $\mathcal{O}$ 点有2阶极点的函数，而 $y$ 是一个在 $\mathcal{O}$ 点有3阶极点的函数。
+对于一个带[基点](@keyword=basepoint|lang=zh-CN|style=Feynman) $\mathcal{O}$ 的亏格为1曲线 $E$，黎曼-洛赫定理告诉我们，考察那些只允许在 $\mathcal{O}$ 点有至多3阶极点的函数，它们构成了一个3维的[向量空间](@keyword=vector_spaces|lang=zh-CN|style=Feynman)。[@problem_id:3012797] 我们可以为这个空间选取一组基底，称之为 $\{1, x, y\}$。这里，$1$ 是常数函数， $x$ 是一个在 $\mathcal{O}$ 点有2阶极点的函数，而 $y$ 是一个在 $\mathcal{O}$ 点有3阶极点的函数。
 
 有了这三个基函数，我们就可以定义一个从抽象曲线 $E$到射影平面 $\mathbb{P}^2$ 的映射：
 $$ P \mapsto [1: x(P) : y(P)] $$
-黎曼-洛赫定理进一步保证，这个映射是一个“[嵌入](@article_id:311541)”（embedding），也就是说它忠实地把抽象曲线 $E$ 变成了 $\mathbb{P}^2$ 中的一条光滑曲线。它的像，正是一条光滑的三次平面曲线！而我们选择的基点 $\mathcal{O}$，则被映射到了我们已经非常熟悉的[无穷远点](@article_id:351634) $[0:1:0]$。
+黎曼-洛赫定理进一步保证，这个映射是一个“[嵌入](@keyword=embedding|lang=zh-CN|style=Feynman)”（embedding），也就是说它忠实地把抽象曲线 $E$ 变成了 $\mathbb{P}^2$ 中的一条光滑曲线。它的像，正是一条光滑的三次平面曲线！而我们选择的基点 $\mathcal{O}$，则被映射到了我们已经非常熟悉的[无穷远点](@keyword=points_at_infinity|lang=zh-CN|style=Feynman) $[0:1:0]$。[@problem_id:3012797]
 
-这就是[椭圆曲线](@article_id:641521)理论的精髓：一个抽象的拓扑概念（亏格为1的[曲面](@article_id:331153)），通过一个[代数结构](@article_id:297503)（指定一个[基点](@article_id:330677)来定义群律），最终由黎曼-洛赫定理赋予了具体的几何形态（一条非奇异的射影三次曲线）。从仿射平面到[射影平面](@article_id:330205)，从具体方程到抽象定义，再回到具体方程，我们完成了一个美妙的循环，揭示了看似不相关的概念之间深刻而和谐的内在联系。这正是数学的魅力所在。
+这就是[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)理论的精髓：一个抽象的拓扑概念（亏格为1的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)），通过一个[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)（指定一个[基点](@keyword=basepoint|lang=zh-CN|style=Feynman)来定义群律），最终由黎曼-洛赫定理赋予了具体的几何形态（一条非奇异的射影三次曲线）。从仿射平面到[射影平面](@keyword=projective_plane|lang=zh-CN|style=Feynman)，从具体方程到抽象定义，再回到具体方程，我们完成了一个美妙的循环，揭示了看似不相关的概念之间深刻而和谐的内在联系。这正是数学的魅力所在。

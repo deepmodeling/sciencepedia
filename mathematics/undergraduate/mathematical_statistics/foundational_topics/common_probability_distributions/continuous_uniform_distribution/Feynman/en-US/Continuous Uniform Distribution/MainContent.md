@@ -1,7 +1,7 @@
 ## Introduction
-In the vast landscape of probability theory, some concepts stand out for their profound simplicity and far-reaching impact. The continuous [uniform distribution](@article_id:261240) is one such concept—it is the mathematical formalization of pure, unbiased chance within a fixed range. It answers a fundamental question: how do we model a situation where we know the boundaries of what is possible, but nothing more? Whether it is a bus arriving within a 10-minute window or the quantization error of a digital instrument, this distribution provides the logical starting point for reasoning under uncertainty. This article guides you from the first principles of this distribution to its surprisingly sophisticated applications across science and engineering.
+In the vast landscape of probability theory, some concepts stand out for their profound simplicity and far-reaching impact. The continuous [uniform distribution](@keyword=uniform_distribution|lang=en-US|style=Feynman) is one such concept—it is the mathematical formalization of pure, unbiased chance within a fixed range. It answers a fundamental question: how do we model a situation where we know the boundaries of what is possible, but nothing more? Whether it is a bus arriving within a 10-minute window or the quantization error of a digital instrument, this distribution provides the logical starting point for reasoning under uncertainty. This article guides you from the first principles of this distribution to its surprisingly sophisticated applications across science and engineering.
 
-This exploration is structured to build your understanding layer by layer. First, we will delve into the **Principles and Mechanisms** of the distribution, uncovering its core mathematical properties like the [probability density function](@article_id:140116), mean, and variance. Next, we will survey its diverse **Applications and Interdisciplinary Connections**, revealing its role as a cornerstone in fields from engineering and computer science to theoretical physics. Finally, a series of **Hands-On Practices** will allow you to apply this knowledge to solve concrete problems, solidifying your grasp of this essential statistical tool. Our journey begins with the elegant idea at its heart: a world without favorites.
+This exploration is structured to build your understanding layer by layer. First, we will delve into the **Principles and Mechanisms** of the distribution, uncovering its core mathematical properties like the [probability density function](@keyword=probability_density_function|lang=en-US|style=Feynman), mean, and variance. Next, we will survey its diverse **Applications and Interdisciplinary Connections**, revealing its role as a cornerstone in fields from engineering and computer science to theoretical physics. Finally, a series of **Hands-On Practices** will allow you to apply this knowledge to solve concrete problems, solidifying your grasp of this essential statistical tool. Our journey begins with the elegant idea at its heart: a world without favorites.
 
 ## Principles and Mechanisms
 
@@ -20,7 +20,7 @@ $$
 \int_{-\infty}^{\infty} f(x) \, dx = 1
 $$
 
-For our [uniform distribution](@article_id:261240), the function is zero everywhere except for the interval $[a, b]$. So, the integral simplifies dramatically. We are looking at the area of a simple rectangle with width $(b-a)$ and height $c$. 
+For our [uniform distribution](@keyword=uniform_distribution|lang=en-US|style=Feynman), the function is zero everywhere except for the interval $[a, b]$. So, the integral simplifies dramatically. We are looking at the area of a simple rectangle with width $(b-a)$ and height $c$. [@problem_id:3222]
 
 Area = height $\times$ width = $c \times (b-a)$
 
@@ -28,15 +28,15 @@ And since this area must be 1, we find our constant with beautiful certainty:
 $$
 c \times (b-a) = 1 \implies c = \frac{1}{b-a}
 $$
-And there it is. The [probability density function](@article_id:140116) for a random variable $X$ uniformly distributed on $[a, b]$, written $X \sim \mathrm{Unif}(a, b)$, is a simple, elegant rectangle:
+And there it is. The [probability density function](@keyword=probability_density_function|lang=en-US|style=Feynman) for a random variable $X$ uniformly distributed on $[a, b]$, written $X \sim \mathrm{Unif}(a, b)$, is a simple, elegant rectangle:
 $$
 f(x) = \begin{cases} \frac{1}{b-a}  \text{for } a \le x \le b \\ 0  \text{otherwise} \end{cases}
 $$
-So, if a [random number generator](@article_id:635900) picks a value from $3$ to $11$, the [probability density](@article_id:143372) at any point inside that interval, say at $x = 7$, is simply $\frac{1}{11-3} = \frac{1}{8}$. It's the same height everywhere, reflecting perfect impartiality. 
+So, if a [random number generator](@keyword=random_number_generator|lang=en-US|style=Feynman) picks a value from $3$ to $11$, the [probability density](@keyword=probability_density|lang=en-US|style=Feynman) at any point inside that interval, say at $x = 7$, is simply $\frac{1}{11-3} = \frac{1}{8}$. It's the same height everywhere, reflecting perfect impartiality. [@problem_id:3199]
 
 ### The Anatomy of a Rectangle: Mean and Variance
 
-Now that we have this perfect rectangle of probability, we can ask some simple questions about it. What is its "center"? And how "spread out" is it? These questions lead us to two of the most important [summary statistics](@article_id:196285) in all of science: the **mean** and the **variance**.
+Now that we have this perfect rectangle of probability, we can ask some simple questions about it. What is its "center"? And how "spread out" is it? These questions lead us to two of the most important [summary statistics](@keyword=summary_statistics|lang=en-US|style=Feynman) in all of science: the **mean** and the **variance**.
 
 The **expected value**, or **mean** ($\operatorname{E}[X]$), is the center of mass of the distribution. It's the point where the distribution would balance if it were a physical object. Looking at our perfect rectangle, your intuition screams that the balance point must be exactly in the middle of the interval. And your intuition is perfectly correct. The formal definition of the expected value is a weighted average of all possible values, where the PDF serves as the weight:
 $$
@@ -46,7 +46,7 @@ For our uniform distribution, this becomes:
 $$
 \operatorname{E}[X] = \int_{a}^{b} x \left( \frac{1}{b-a} \right) \, dx = \frac{1}{b-a} \left[ \frac{x^2}{2} \right]_{a}^{b} = \frac{1}{b-a} \left( \frac{b^2 - a^2}{2} \right)
 $$
-Using the difference of squares, $b^2 - a^2 = (b-a)(b+a)$, the $(b-a)$ terms cancel out, leaving us with a wonderfully simple result that confirms our intuition. 
+Using the difference of squares, $b^2 - a^2 = (b-a)(b+a)$, the $(b-a)$ terms cancel out, leaving us with a wonderfully simple result that confirms our intuition. [@problem_id:3239]
 $$
 \operatorname{E}[X] = \frac{a+b}{2}
 $$
@@ -56,9 +56,9 @@ Next, how do we measure the spread? That's the job of the **variance** ($\operat
 $$
 \operatorname{Var}(X) = \frac{(b-a)^2}{12}
 $$
-Notice something fascinating here. The variance depends only on the *length* of the interval, $(b-a)$, not on where the interval is located.  A 10-minute period of uncertainty has the same variance whether it's from 8:00 to 8:10 or from 12:00 to 12:10. The uncertainty is inherent to the duration, not the time of day. The mysterious number 12 in the denominator is a beautiful consequence of the geometry of this calculation.
+Notice something fascinating here. The variance depends only on the *length* of the interval, $(b-a)$, not on where the interval is located. [@problem_id:3234] A 10-minute period of uncertainty has the same variance whether it's from 8:00 to 8:10 or from 12:00 to 12:10. The uncertainty is inherent to the duration, not the time of day. The mysterious number 12 in the denominator is a beautiful consequence of the geometry of this calculation.
 
-These properties are not just abstract curiosities; they are powerful tools for deduction. Imagine you're told a random variable has a [uniform distribution](@article_id:261240) with a mean of 0 and its 25th percentile is at -1. Using just these two clues, we can become statistical detectives and reconstruct the entire distribution, finding its boundaries $a$ and $b$ to be -2 and 2, respectively. 
+These properties are not just abstract curiosities; they are powerful tools for deduction. Imagine you're told a random variable has a [uniform distribution](@keyword=uniform_distribution|lang=en-US|style=Feynman) with a mean of 0 and its 25th percentile is at -1. Using just these two clues, we can become statistical detectives and reconstruct the entire distribution, finding its boundaries $a$ and $b$ to be -2 and 2, respectively. [@problem_id:1910012]
 
 ### The Distribution's Fingerprint: The Moment Generating Function
 
@@ -68,23 +68,23 @@ M_X(t) = \operatorname{E}[\exp(tx)] = \int_{-\infty}^{\infty} \exp(tx) f_X(x) \,
 $$
 This definition might look intimidating, but its purpose is profound. This single function, if it exists, uniquely determines the distribution. More practically, it "generates" moments (like the mean and variance) with startling ease through differentiation. The first derivative evaluated at $t=0$ gives the mean, the second gives the mean of the squares, and so on.
 
-For our trusty uniform distribution $\mathrm{Unif}(a, b)$, the calculation yields: 
+For our trusty uniform distribution $\mathrm{Unif}(a, b)$, the calculation yields: [@problem_id:1396213]
 $$
 M_X(t) = \frac{\exp(tb) - \exp(ta)}{(b-a)t}
 $$
-This power of the MGF truly shines in reverse. Suppose an engineer tells you that the lifetime of an electronic component has an MGF of $M_X(t) = \frac{\exp(4t) - 1}{4t}$. At a glance, this might look like just another formula. But by comparing it to our fingerprint library, we can immediately identify it! It matches the MGF for a $\mathrm{Unif}(a, b)$ distribution with $a=0$ and $b=4$. Just like that, we know the component's lifetime is uniformly distributed between 0 and 4 years. From this recognition, we can instantly calculate its variance as $\frac{(4-0)^2}{12} = \frac{4}{3}$, without having to perform any further complex integrations.  It is a stunning example of how an abstract tool provides a powerful shortcut to practical answers.
+This power of the MGF truly shines in reverse. Suppose an engineer tells you that the lifetime of an electronic component has an MGF of $M_X(t) = \frac{\exp(4t) - 1}{4t}$. At a glance, this might look like just another formula. But by comparing it to our fingerprint library, we can immediately identify it! It matches the MGF for a $\mathrm{Unif}(a, b)$ distribution with $a=0$ and $b=4$. Just like that, we know the component's lifetime is uniformly distributed between 0 and 4 years. From this recognition, we can instantly calculate its variance as $\frac{(4-0)^2}{12} = \frac{4}{3}$, without having to perform any further complex integrations. [@problem_id:1910004] It is a stunning example of how an abstract tool provides a powerful shortcut to practical answers.
 
 ### From Building Block to Cornerstone: Transformation and Inference
 
 The uniform distribution's flat, uninteresting shape belies its true role as the fundamental building block for modeling randomness. Most random phenomena in the world are not uniform, but we can often generate them by starting with a uniform variable and transforming it.
 
-Imagine we take a number $X$ chosen uniformly from the interval $[1, 2]$ and we compute its reciprocal, $Y = 1/X$. What does the distribution of $Y$ look like? Our flat rectangle of probability is now squeezed and stretched. The values of $X$ near 1 have their reciprocals also near 1, while the values of $X$ near 2 have their reciprocals squashed down towards $1/2$. This stretching and squeezing means the probability density is no longer constant. In fact, we generate a new, curved distribution for $Y$.  This principle, known as the **change of variable method**, is the basis for how computers can simulate almost any [random process](@article_id:269111) imaginable, from the stock market to particle physics, often starting with nothing more than a simple uniform [random number generator](@article_id:635900).
+Imagine we take a number $X$ chosen uniformly from the interval $[1, 2]$ and we compute its reciprocal, $Y = 1/X$. What does the distribution of $Y$ look like? Our flat rectangle of probability is now squeezed and stretched. The values of $X$ near 1 have their reciprocals also near 1, while the values of $X$ near 2 have their reciprocals squashed down towards $1/2$. This stretching and squeezing means the probability density is no longer constant. In fact, we generate a new, curved distribution for $Y$. [@problem_id:1910015] This principle, known as the **change of variable method**, is the basis for how computers can simulate almost any [random process](@keyword=random_process|lang=en-US|style=Feynman) imaginable, from the stock market to particle physics, often starting with nothing more than a simple uniform [random number generator](@keyword=random_number_generator|lang=en-US|style=Feynman).
 
 Perhaps the most profound application of these ideas lies in **statistical inference**: the art and science of learning about the world from incomplete data. Consider a materials scientist developing a new fiber optic cable whose minimum bending radius follows a $\mathrm{Unif}(0, \theta)$ distribution, where $\theta$ is the unknown theoretical maximum. To estimate $\theta$, an engineer tests $n$ cables and finds the largest minimum bending radius in the sample, let's call it $X_{(n)}$.
 
 What is our best guess for $\theta$? Our first instinct might be to use $X_{(n)}$ itself. But think for a moment. In a sample of, say, 10 cables, is it likely that we happened to find the one single strongest cable the process could ever produce? It's highly improbable. The true maximum $\theta$ is almost certainly a bit larger than the maximum we observed. Our simple guess, $X_{(n)}$, is therefore a **biased estimator**—on average, it will underestimate the true value.
 
-Here, mathematics offers a beautiful correction. By analyzing the distribution of the sample maximum, we find that its expected value is not $\theta$, but actually $\frac{n}{n+1}\theta$. Knowing this, we can perfectly counteract the bias! We simply multiply our observation by a correction factor of $\frac{n+1}{n}$. Our new, **unbiased estimator** is: 
+Here, mathematics offers a beautiful correction. By analyzing the distribution of the sample maximum, we find that its expected value is not $\theta$, but actually $\frac{n}{n+1}\theta$. Knowing this, we can perfectly counteract the bias! We simply multiply our observation by a correction factor of $\frac{n+1}{n}$. Our new, **unbiased estimator** is: [@problem_id:1910026]
 $$
 \hat{\theta} = \frac{n+1}{n} X_{(n)}
 $$
@@ -92,7 +92,7 @@ This is a stunning result. It tells us precisely how to adjust our guess based o
 
 We can take this one step further, from estimation to decision making. Suppose the standard calibration for making these cables is $\theta_0$, but we suspect the machine has drifted and is now making stronger cables ($\theta > \theta_0$). We can set up a formal **hypothesis test**. Our rule might be: "If the maximum observed bending radius $T = X_{(n)}$ is greater than some critical value $c$, we will conclude the machine has changed."
 
-But how do we choose $c$? This is where we balance risk. We must set a **significance level**, $\alpha$, which is the risk we are willing to take of raising a false alarm (rejecting the standard $\theta_0$ when it's actually correct). By reasoning about the probability distribution of the sample maximum under the assumption that the standard is correct, we can derive the exact critical value that corresponds to our chosen risk level: 
+But how do we choose $c$? This is where we balance risk. We must set a **significance level**, $\alpha$, which is the risk we are willing to take of raising a false alarm (rejecting the standard $\theta_0$ when it's actually correct). By reasoning about the probability distribution of the sample maximum under the assumption that the standard is correct, we can derive the exact critical value that corresponds to our chosen risk level: [@problem_id:1910017]
 $$
 c = \theta_0 (1 - \alpha)^{1/n}
 $$

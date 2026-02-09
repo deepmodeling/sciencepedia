@@ -1,11 +1,11 @@
 ## Introduction
-In the study of abstract algebra, understanding the internal structure of a group is paramount. While subgroups offer a way to break down complex groups, they only tell part of the story. The concept of a **[coset](@entry_id:149651)** provides the essential tool for analyzing how a subgroup is situated within its parent group, effectively partitioning the entire group into structured, manageable pieces. This partitioning reveals deep insights into the group's nature and lays the groundwork for some of group theory's most important results, including Lagrange's Theorem and the construction of [quotient groups](@entry_id:145113). This article serves as a comprehensive introduction to this fundamental concept.
+In the study of abstract algebra, understanding the internal structure of a group is paramount. While subgroups offer a way to break down complex groups, they only tell part of the story. The concept of a **coset** provides the essential tool for analyzing how a subgroup is situated within its parent group, effectively partitioning the entire group into structured, manageable pieces. This partitioning reveals deep insights into the group's nature and lays the groundwork for some of group theory's most important results, including Lagrange's Theorem and the construction of quotient groups. This article serves as a comprehensive introduction to this fundamental concept.
 
-This article will guide you through the theory and application of [cosets](@entry_id:147145) across three chapters. First, we will explore the **Principles and Mechanisms**, where we will formally define left and [right cosets](@entry_id:136335), examine their core properties, and prove their connection to Lagrange's Theorem. Next, the chapter on **Applications and Interdisciplinary Connections** will demonstrate the power of cosets in defining [normal subgroups](@entry_id:147397), constructing [quotient groups](@entry_id:145113), and building bridges to other fields like linear algebra and topology. Finally, **Hands-On Practices** will provide opportunities to solidify your understanding through guided computational exercises. We begin by establishing the fundamental definitions and properties that make cosets an indispensable tool in the algebraist's toolkit.
+This article will guide you through the theory and application of cosets across three chapters. First, we will explore the **Principles and Mechanisms**, where we will formally define left and right cosets, examine their core properties, and prove their connection to Lagrange's Theorem. Next, the chapter on **Applications and Interdisciplinary Connections** will demonstrate the power of cosets in defining normal subgroups, constructing quotient groups, and building bridges to other fields like linear algebra and topology. Finally, **Hands-On Practices** will provide opportunities to solidify your understanding through guided computational exercises. We begin by establishing the fundamental definitions and properties that make cosets an indispensable tool in the algebraist's toolkit.
 
 ## Principles and Mechanisms
 
-In our study of group theory, subgroups provide a means to deconstruct a parent group into smaller, more manageable components. However, the subgroup itself is just one piece of the puzzle. The concept of a **coset** allows us to understand how a subgroup is embedded within a larger group and how it imposes a structure upon the entire group. Cosets are fundamental building blocks for more advanced topics, including [quotient groups](@entry_id:145113) and the celebrated [isomorphism theorems](@entry_id:145702).
+In our study of group theory, subgroups provide a means to deconstruct a parent group into smaller, more manageable components. However, the subgroup itself is just one piece of the puzzle. The concept of a **coset** allows us to understand how a subgroup is embedded within a larger group and how it imposes a structure upon the entire group. Cosets are fundamental building blocks for more advanced topics, including quotient groups and the celebrated isomorphism theorems.
 
 ### Defining Cosets
 
@@ -27,7 +27,7 @@ $(1, 1) + H = \{(1, 1) + h \mid h \in H\}$
 $= \{(1, 1) + (0, 0), (1, 1) + (2, 0)\}$
 $= \{(1+0 \pmod 4, 1+0 \pmod 2), (1+2 \pmod 4, 1+0 \pmod 2)\}$
 $= \{(1, 1), (3, 1)\}$
-Thus, the left coset $(1, 1) + H$ is the set $\{(1, 1), (3, 1)\}$. Notice that the representative $(1, 1)$ is an element of the [coset](@entry_id:149651), which is always true since $H$ contains the identity element $e$ (or $(0,0)$ in this [additive group](@entry_id:151801)), and $g = ge$ is always in $gH$ .
+Thus, the left coset $(1, 1) + H$ is the set $\{(1, 1), (3, 1)\}$. Notice that the representative $(1, 1)$ is an element of the coset, which is always true since $H$ contains the identity element $e$ (or $(0,0)$ in this additive group), and $g = ge$ is always in $gH$ [@problem_id:1807549].
 
 ### Core Properties of Cosets
 
@@ -35,14 +35,14 @@ Cosets possess several fundamental properties that make them an indispensable to
 
 #### Cosets as a Partition of the Group
 
-The most significant property of cosets is that the set of all distinct left cosets (or all distinct [right cosets](@entry_id:136335)) of a subgroup $H$ in a group $G$ forms a **partition** of $G$. This means two things:
-1.  Every element of $G$ belongs to some [coset](@entry_id:149651) of $H$.
-2.  Any two distinct [cosets](@entry_id:147145) are disjoint; that is, they have no elements in common.
+The most significant property of cosets is that the set of all distinct left cosets (or all distinct right cosets) of a subgroup $H$ in a group $G$ forms a **partition** of $G$. This means two things:
+1.  Every element of $G$ belongs to some coset of $H$.
+2.  Any two distinct cosets are disjoint; that is, they have no elements in common.
 
 In other words, a subgroup slices the parent group into a collection of non-overlapping subsets of equal size.
 
-Let's explore this with the alternating group $A_4$, the group of [even permutations](@entry_id:146469) on four elements, which has order 12. Consider the subgroup $H = \{e, (12)(34), (13)(24), (14)(23)\}$, which is isomorphic to the Klein four-group and has order 4.
-The first [coset](@entry_id:149651) is always $H$ itself, which can be thought of as $eH$.
+Let's explore this with the alternating group $A_4$, the group of even permutations on four elements, which has order 12. Consider the subgroup $H = \{e, (12)(34), (13)(24), (14)(23)\}$, which is isomorphic to the Klein four-group and has order 4.
+The first coset is always $H$ itself, which can be thought of as $eH$.
 $eH = H = \{e, (12)(34), (13)(24), (14)(23)\}$
 
 To find another coset, we pick an element not in $H$, for instance, $g_1 = (123)$. The left coset $(123)H$ is:
@@ -53,7 +53,7 @@ These two cosets, $H$ and $(123)H$, account for $4+4=8$ elements of $A_4$. We ca
 $(132)H = \{(132)e, (132)(12)(34), (132)(13)(24), (132)(14)(23)\}$
 $= \{(132), (234), (124), (143)\}$
 
-We have now found three distinct left cosets, each of size 4, whose union is all 12 elements of $A_4$. This illustrates the partition property perfectly . This partitioning stems from an underlying equivalence relation: for left cosets, we define $a \sim b$ if and only if $a^{-1}b \in H$. The equivalence classes of this relation are precisely the left [cosets](@entry_id:147145) of $H$.
+We have now found three distinct left cosets, each of size 4, whose union is all 12 elements of $A_4$. This illustrates the partition property perfectly [@problem_id:1807530]. This partitioning stems from an underlying equivalence relation: for left cosets, we define $a \sim b$ if and only if $a^{-1}b \in H$. The equivalence classes of this relation are precisely the left cosets of $H$.
 
 #### Uniformity of Coset Size
 
@@ -62,22 +62,22 @@ As the previous example suggests, all cosets of a given subgroup have the same s
 
 To prove this for the left coset $gH$, we can define a map $\phi: H \to gH$ by $\phi(h) = gh$.
 -   **Surjective (onto):** By the definition of $gH$, every element in it is of the form $gh$ for some $h \in H$. Thus, for any $y \in gH$, there exists an $h \in H$ such that $\phi(h) = y$.
--   **Injective (one-to-one):** Suppose $\phi(h_1) = \phi(h_2)$ for some $h_1, h_2 \in H$. This means $gh_1 = gh_2$. By multiplying on the left by $g^{-1}$ (left [cancellation law](@entry_id:141788)), we get $g^{-1}(gh_1) = g^{-1}(gh_2)$, which simplifies to $h_1 = h_2$.
-Since $\phi$ is both injective and surjective, it is a bijection. Therefore, the sets $H$ and $gH$ must have the same cardinality. A similar argument holds for [right cosets](@entry_id:136335) .
+-   **Injective (one-to-one):** Suppose $\phi(h_1) = \phi(h_2)$ for some $h_1, h_2 \in H$. This means $gh_1 = gh_2$. By multiplying on the left by $g^{-1}$ (left cancellation law), we get $g^{-1}(gh_1) = g^{-1}(gh_2)$, which simplifies to $h_1 = h_2$.
+Since $\phi$ is both injective and surjective, it is a bijection. Therefore, the sets $H$ and $gH$ must have the same cardinality. A similar argument holds for right cosets [@problem_id:1807584].
 
 #### When is a Coset a Subgroup?
 
-A natural question arises: under what conditions is a coset $Hg$ itself a subgroup of $G$? For any set to be a subgroup, it must satisfy three axioms: it must contain the [identity element](@entry_id:139321), be closed under the group operation, and be closed under inversion.
+A natural question arises: under what conditions is a coset $Hg$ itself a subgroup of $G$? For any set to be a subgroup, it must satisfy three axioms: it must contain the identity element, be closed under the group operation, and be closed under inversion.
 
 The identity condition is the most telling. For $Hg$ to be a subgroup, it must contain the identity element $e$ of $G$. This implies that for some $h_1 \in H$, we must have $e = h_1g$. Solving for $g$, we find $g = h_1^{-1}$. Since $H$ is a subgroup, if $h_1 \in H$, then its inverse $h_1^{-1}$ must also be in $H$. Therefore, a **necessary** condition for $Hg$ to be a subgroup is that $g \in H$.
 
 Is this condition also sufficient? Let's assume $g \in H$. We want to show that the set $Hg$ is a subgroup. Consider an arbitrary element $hg \in Hg$. Since $h \in H$ and we assume $g \in H$, their product $hg$ is also in $H$ because $H$ is closed under the group operation. This shows that every element of the set $Hg$ is also an element of $H$, so $Hg \subseteq H$. Conversely, for any $h' \in H$, we can write $h' = (h'g^{-1})g$. Since $g \in H$, so is $g^{-1}$. Thus $h'g^{-1} \in H$. This means any element $h' \in H$ can be written as an element of $Hg$, so $H \subseteq Hg$. Together, these imply that if $g \in H$, then $Hg = H$. Since $H$ is a subgroup, it follows that $Hg$ is a subgroup.
 
-Therefore, the condition is both necessary and sufficient: a right coset $Hg$ (or left [coset](@entry_id:149651) $gH$) is a subgroup of $G$ if and only if $g \in H$, in which case the [coset](@entry_id:149651) is simply $H$ itself .
+Therefore, the condition is both necessary and sufficient: a right coset $Hg$ (or left coset $gH$) is a subgroup of $G$ if and only if $g \in H$, in which case the coset is simply $H$ itself [@problem_id:1807546].
 
 ### The Index of a Subgroup and Lagrange's Theorem
 
-The properties that cosets partition a group and are all of equal size lead to one of the most fundamental theorems in [finite group theory](@entry_id:146601).
+The properties that cosets partition a group and are all of equal size lead to one of the most fundamental theorems in finite group theory.
 
 **Lagrange's Theorem:** If $G$ is a finite group and $H$ is a subgroup of $G$, then the order of $H$ divides the order of $G$.
 
@@ -85,45 +85,45 @@ The proof is a straightforward consequence of our discussion. The distinct coset
 $|G| = |g_1H| + |g_2H| + \dots + |g_kH| = |H| + |H| + \dots + |H|$ ($k$ times)
 $|G| = k \cdot |H|$
 
-This integer $k$ is called the **index** of $H$ in $G$, denoted $[G:H]$. The index is precisely the number of distinct left (or right) [cosets](@entry_id:147145) of $H$ in $G$. Thus, we have the important formula:
+This integer $k$ is called the **index** of $H$ in $G$, denoted $[G:H]$. The index is precisely the number of distinct left (or right) cosets of $H$ in $G$. Thus, we have the important formula:
 $|G| = [G:H] |H|$
 
-This theorem is remarkably powerful because it allows us to determine the number of [cosets](@entry_id:147145) without having to compute them. For instance, consider the [symmetric group](@entry_id:142255) $S_4$ (order $4! = 24$) and the subgroup $H$ generated by the 3-cycle $(123)$. The order of $(123)$ is 3, so $|H|=3$. The number of distinct [right cosets](@entry_id:136335) of $H$ in $S_4$ is given by the index:
+This theorem is remarkably powerful because it allows us to determine the number of cosets without having to compute them. For instance, consider the symmetric group $S_4$ (order $4! = 24$) and the subgroup $H$ generated by the 3-cycle $(123)$. The order of $(123)$ is 3, so $|H|=3$. The number of distinct right cosets of $H$ in $S_4$ is given by the index:
 $[S_4 : H] = \frac{|S_4|}{|H|} = \frac{24}{3} = 8$.
-Without any further calculation, we know that $S_4$ is partitioned into exactly 8 distinct [right cosets](@entry_id:136335) of $H$, each containing 3 elements .
+Without any further calculation, we know that $S_4$ is partitioned into exactly 8 distinct right cosets of $H$, each containing 3 elements [@problem_id:1807573].
 
 ### A Tale of Two Cosets: Left versus Right
 
-So far, we have treated left and [right cosets](@entry_id:136335) somewhat interchangeably. In many important cases, they are indeed identical. However, their potential difference is a source of rich mathematical structure.
+So far, we have treated left and right cosets somewhat interchangeably. In many important cases, they are indeed identical. However, their potential difference is a source of rich mathematical structure.
 
 If the group $G$ is **abelian**, then the distinction vanishes. For any $g \in G$ and any subgroup $H$, we have:
 $gH = \{gh \mid h \in H\} = \{hg \mid h \in H\} = Hg$
-The second equality holds because the group operation is commutative. For example, in the abelian group $G = \mathbb{Z}_4 \times \mathbb{Z}_6$, for the subgroup $H = \langle(2, 3)\rangle = \{(0, 0), (2, 3)\}$ and the element $g=(1,2)$, the left coset $g+H = \{(1,2), (3,5)\}$ is identical to the right coset $H+g = \{(1,2), (3,5)\}$ .
+The second equality holds because the group operation is commutative. For example, in the abelian group $G = \mathbb{Z}_4 \times \mathbb{Z}_6$, for the subgroup $H = \langle(2, 3)\rangle = \{(0, 0), (2, 3)\}$ and the element $g=(1,2)$, the left coset $g+H = \{(1,2), (3,5)\}$ is identical to the right coset $H+g = \{(1,2), (3,5)\}$ [@problem_id:1807551].
 
-In **non-abelian** groups, however, left and [right cosets](@entry_id:136335) can differ. This is a crucial observation that motivates the definition of [normal subgroups](@entry_id:147397) (subgroups for which left and [right cosets](@entry_id:136335) always coincide). A classic demonstration is found in the smallest non-abelian group, $S_3$. Let $H = \langle(12)\rangle = \{e, (12)\}$. Now let's choose an element not in $H$, say $g = (13)$.
-The left [coset](@entry_id:149651) $gH$ is:
+In **non-abelian** groups, however, left and right cosets can differ. This is a crucial observation that motivates the definition of normal subgroups (subgroups for which left and right cosets always coincide). A classic demonstration is found in the smallest non-abelian group, $S_3$. Let $H = \langle(12)\rangle = \{e, (12)\}$. Now let's choose an element not in $H$, say $g = (13)$.
+The left coset $gH$ is:
 $gH = (13)H = \{(13)e, (13)(12)\} = \{(13), (132)\}$
-The right [coset](@entry_id:149651) $Hg$ is:
+The right coset $Hg$ is:
 $Hg = H(13) = \{e(13), (12)(13)\} = \{(13), (123)\}$
-Since $(132) \neq (123)$, we have found that $gH \neq Hg$ .
+Since $(132) \neq (123)$, we have found that $gH \neq Hg$ [@problem_id:1807574].
 
-A more complex example can be seen in $S_4$. Let $H = \langle(13)\rangle = \{e, (13)\}$ and $g=(1234)$. The left [coset](@entry_id:149651) is $gH = \{(1234), (14)(23)\}$, while the right [coset](@entry_id:149651) is $Hg = \{(1234), (12)(34)\}$. The two [cosets](@entry_id:147145) share the element $(1234)$ but are not identical .
+A more complex example can be seen in $S_4$. Let $H = \langle(13)\rangle = \{e, (13)\}$ and $g=(1234)$. The left coset is $gH = \{(1234), (14)(23)\}$, while the right coset is $Hg = \{(1234), (12)(34)\}$. The two cosets share the element $(1234)$ but are not identical [@problem_id:1807565].
 
-Despite their potential differences, there is a fundamental connection between left and [right cosets](@entry_id:136335) through the group's inverse operation. For any left coset $gH$, the set of inverses of its elements, denoted $(gH)^{-1}$, is itself a right coset. Specifically,
+Despite their potential differences, there is a fundamental connection between left and right cosets through the group's inverse operation. For any left coset $gH$, the set of inverses of its elements, denoted $(gH)^{-1}$, is itself a right coset. Specifically,
 $(gH)^{-1} = Hg^{-1}$.
-The proof is direct: any element in $(gH)^{-1}$ has the form $(gh)^{-1}$ for some $h \in H$. By the inverse property $(ab)^{-1} = b^{-1}a^{-1}$, this is equal to $h^{-1}g^{-1}$. Since $H$ is a subgroup, $h^{-1} \in H$, so this element is in the right [coset](@entry_id:149651) $Hg^{-1}$. This shows $(gH)^{-1} \subseteq Hg^{-1}$. A similar argument establishes the reverse inclusion, proving the identity .
+The proof is direct: any element in $(gH)^{-1}$ has the form $(gh)^{-1}$ for some $h \in H$. By the inverse property $(ab)^{-1} = b^{-1}a^{-1}$, this is equal to $h^{-1}g^{-1}$. Since $H$ is a subgroup, $h^{-1} \in H$, so this element is in the right coset $Hg^{-1}$. This shows $(gH)^{-1} \subseteq Hg^{-1}$. A similar argument establishes the reverse inclusion, proving the identity [@problem_id:1807572].
 
 ### Cosets as Equivalence Classes and Geometric Models
 
-The partitioning property of cosets can be formalized by viewing them as equivalence classes. For a subgroup $H$ of a group $G$, we can define a relation $\sim$ on $G$ by $a \sim b$ if and only if $a^{-1}b \in H$. One can verify that this is an [equivalence relation](@entry_id:144135):
+The partitioning property of cosets can be formalized by viewing them as equivalence classes. For a subgroup $H$ of a group $G$, we can define a relation $\sim$ on $G$ by $a \sim b$ if and only if $a^{-1}b \in H$. One can verify that this is an equivalence relation:
 - **Reflexive:** $a \sim a$ because $a^{-1}a = e \in H$.
 - **Symmetric:** If $a \sim b$, then $a^{-1}b \in H$. Since $H$ is a subgroup, $(a^{-1}b)^{-1} = b^{-1}a \in H$, so $b \sim a$.
 - **Transitive:** If $a \sim b$ and $b \sim c$, then $a^{-1}b \in H$ and $b^{-1}c \in H$. Since $H$ is closed, $(a^{-1}b)(b^{-1}c) = a^{-1}c \in H$, so $a \sim c$.
 
-The [equivalence class](@entry_id:140585) of an element $g \in G$ is the set of all elements $x$ such that $g \sim x$, which means $g^{-1}x \in H$. Let $g^{-1}x = h$ for some $h \in H$. Then $x = gh$. This is precisely the definition of the left [coset](@entry_id:149651) $gH$. Thus, the left [cosets](@entry_id:147145) of $H$ are the [equivalence classes](@entry_id:156032) of $G$ under this relation.
+The equivalence class of an element $g \in G$ is the set of all elements $x$ such that $g \sim x$, which means $g^{-1}x \in H$. Let $g^{-1}x = h$ for some $h \in H$. Then $x = gh$. This is precisely the definition of the left coset $gH$. Thus, the left cosets of $H$ are the equivalence classes of $G$ under this relation.
 
-This abstract idea of "identifying" all elements within a single [coset](@entry_id:149651) has a beautiful geometric interpretation. Consider the [additive group](@entry_id:151801) of real numbers $(\mathbb{R}, +)$ and its subgroup of integers $(\mathbb{Z}, +)$. The coset of an element $r \in \mathbb{R}$ is the set $r + \mathbb{Z} = \{r+k \mid k \in \mathbb{Z}\}$. This is the set of all real numbers that differ from $r$ by an integer. In other words, all elements in a given [coset](@entry_id:149651) have the same [fractional part](@entry_id:275031). For example, the numbers $0.5$, $1.5$, $-2.5$ are all in the coset $0.5+\mathbb{Z}$.
+This abstract idea of "identifying" all elements within a single coset has a beautiful geometric interpretation. Consider the additive group of real numbers $(\mathbb{R}, +)$ and its subgroup of integers $(\mathbb{Z}, +)$. The coset of an element $r \in \mathbb{R}$ is the set $r + \mathbb{Z} = \{r+k \mid k \in \mathbb{Z}\}$. This is the set of all real numbers that differ from $r$ by an integer. In other words, all elements in a given coset have the same fractional part. For example, the numbers $0.5$, $1.5$, $-2.5$ are all in the coset $0.5+\mathbb{Z}$.
 
-This provides a natural one-to-one correspondence between the set of [cosets](@entry_id:147145), denoted $\mathbb{R}/\mathbb{Z}$, and the interval $[0, 1)$. Every real number has a fractional part in this interval, and two numbers have the same [fractional part](@entry_id:275031) if and only if they belong to the same coset. If we "wrap" this interval around and identify the endpoints 0 and 1 (since $1-0=1 \in \mathbb{Z}$, they belong to the same coset, namely $\mathbb{Z}$ itself), we get a circle. Thus, the set of cosets $\mathbb{R}/\mathbb{Z}$ can be visualized as the set of points on a circle of circumference 1 .
+This provides a natural one-to-one correspondence between the set of cosets, denoted $\mathbb{R}/\mathbb{Z}$, and the interval $0, 1)$. Every real number has a fractional part in this interval, and two numbers have the same [fractional part if and only if they belong to the same coset. If we "wrap" this interval around and identify the endpoints 0 and 1 (since $1-0=1 \in \mathbb{Z}$, they belong to the same coset, namely $\mathbb{Z}$ itself), we get a circle. Thus, the set of cosets $\mathbb{R}/\mathbb{Z}$ can be visualized as the set of points on a circle of circumference 1 [@problem_id:1807532].
 
-This perspective of [cosets](@entry_id:147145) as elements of a new "quotient" set is extremely powerful. For instance, in the group $G = GL_2(\mathbb{Z}_5)$ of invertible $2 \times 2$ matrices over $\mathbb{Z}_5$, the subgroup $H = SL_2(\mathbb{Z}_5)$ consists of matrices with determinant 1. A [coset](@entry_id:149651) $AH$ consists of all matrices $B$ such that $\det(A^{-1}B) = 1$, which simplifies to $\det(B) = \det(A)$. Therefore, the cosets of $H$ are precisely the sets of matrices with a common determinant. The set of cosets corresponds to the set of possible determinant values, $\mathbb{Z}_5^* = \{1, 2, 3, 4\}$ . This foreshadows the First Isomorphism Theorem, where the set of [cosets](@entry_id:147145) of the [kernel of a homomorphism](@entry_id:145895) is isomorphic to the image of the homomorphism.
+This perspective of cosets as elements of a new "quotient" set is extremely powerful. For instance, in the group $G = GL_2(\mathbb{Z}_5)$ of invertible $2 \times 2$ matrices over $\mathbb{Z}_5$, the subgroup $H = SL_2(\mathbb{Z}_5)$ consists of matrices with determinant 1. A coset $AH$ consists of all matrices $B$ such that $\det(A^{-1}B) = 1$, which simplifies to $\det(B) = \det(A)$. Therefore, the cosets of $H$ are precisely the sets of matrices with a common determinant. The set of cosets corresponds to the set of possible determinant values, $\mathbb{Z}_5^* = \{1, 2, 3, 4\}$ [@problem_id:1807584]. This foreshadows the First Isomorphism Theorem, where the set of cosets of the kernel of a homomorphism is isomorphic to the image of the homomorphism.

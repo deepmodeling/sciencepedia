@@ -21,15 +21,15 @@ In this chapter, we will embark on a journey to understand the heart of this con
 
 Let’s refine our ant's experiment. Suppose you have a directional arrow—a vector—that you want to keep "pointing in the same direction" as you move it around. On a flat sheet, this is easy. You just slide it, keeping it parallel to its original orientation. If you slide it around a closed loop and come back to your starting point, the arrow will point exactly as it did when you started.
 
-But what if you are on a sphere? Imagine starting at the North Pole with an arrow pointing towards, say, Greenwich. You slide the arrow down to the equator, keeping it "parallel" to the line of longitude you're on. Then, you slide it along the equator for a quarter of the Earth's [circumference](@article_id:263108). Finally, you slide it back up to the North Pole along a new line of longitude. When you arrive back at the North Pole, you'll be shocked! Your arrow no longer points towards Greenwich. It has rotated by 90 degrees.
+But what if you are on a sphere? Imagine starting at the North Pole with an arrow pointing towards, say, Greenwich. You slide the arrow down to the equator, keeping it "parallel" to the line of longitude you're on. Then, you slide it along the equator for a quarter of the Earth's [circumference](@keyword=circumference|lang=en-US|style=Feynman). Finally, you slide it back up to the North Pole along a new line of longitude. When you arrive back at the North Pole, you'll be shocked! Your arrow no longer points towards Greenwich. It has rotated by 90 degrees.
 
 This failure of a vector to return to its original orientation after being parallel-transported around a closed loop is the very definition of curvature. Curvature is the path-dependence of parallelism.
 
-The mathematical tool for defining "[parallel transport](@article_id:160177)" on a [curved manifold](@article_id:267464) is called a **connection**, denoted by $\nabla$. It tells us how a vector changes as we move it in a particular direction. The Riemann [curvature tensor](@article_id:180889), $R$, is the machine that measures the failure of this process to be path-independent. It is defined by a commutator:
+The mathematical tool for defining "[parallel transport](@keyword=parallel_transport|lang=en-US|style=Feynman)" on a [curved manifold](@keyword=curved_manifold|lang=en-US|style=Feynman) is called a **connection**, denoted by $\nabla$. It tells us how a vector changes as we move it in a particular direction. The Riemann [curvature tensor](@keyword=curvature_tensor|lang=en-US|style=Feynman), $R$, is the machine that measures the failure of this process to be path-independent. It is defined by a commutator:
 $$
 R(X,Y)Z = \nabla_X\nabla_Y Z - \nabla_Y\nabla_X Z - \nabla_{[X,Y]} Z
 $$
-This formula answers a precise question: What is the difference between parallel-transporting a vector $Z$ first along a vector field $Y$ then $X$, versus first along $X$ then $Y$? The first two terms, $\nabla_X\nabla_Y Z - \nabla_Y\nabla_X Z$, measure this discrepancy. The third term, $-\nabla_{[X,Y]} Z$, is a crucial correction that ensures this measurement is a true "local" property, independent of the coordinate system you use. It guarantees that $R$ is a **tensor**—a genuine geometric object . In a simple coordinate system where the basis vectors don't "twist" (i.e., their Lie bracket $[X,Y]$ is zero), the curvature is simply the failure of covariant derivatives to commute.
+This formula answers a precise question: What is the difference between parallel-transporting a vector $Z$ first along a vector field $Y$ then $X$, versus first along $X$ then $Y$? The first two terms, $\nabla_X\nabla_Y Z - \nabla_Y\nabla_X Z$, measure this discrepancy. The third term, $-\nabla_{[X,Y]} Z$, is a crucial correction that ensures this measurement is a true "local" property, independent of the coordinate system you use. It guarantees that $R$ is a **tensor**—a genuine geometric object [@problem_id:3002447]. In a simple coordinate system where the basis vectors don't "twist" (i.e., their Lie bracket $[X,Y]$ is zero), the curvature is simply the failure of covariant derivatives to commute.
 
 ### The Genetic Code of Spacetime
 
@@ -37,26 +37,26 @@ Where do these rules for parallel transport come from? On a Riemannian manifold�
 1.  **Metric-compatibility:** Parallel-transporting two vectors doesn't change the angle between them or their lengths. The metric itself is parallel.
 2.  **Torsion-freeness:** An infinitesimal parallelogram actually closes. The connection is "symmetric."
 
-This is a profound link. The metric $g$, which is like the local "ruler" of the space, contains all the information needed to define parallel transport. When we write out the Riemann tensor in local coordinates, we find its components are made of derivatives and products of the Christoffel symbols (the components of the connection). The Christoffel symbols, in turn, are made of the metric components and their first derivatives. This leads to an astonishing conclusion: the Riemann [curvature tensor](@article_id:180889) at a point is completely determined by the metric and its first and second derivatives at that point .
+This is a profound link. The metric $g$, which is like the local "ruler" of the space, contains all the information needed to define parallel transport. When we write out the Riemann tensor in local coordinates, we find its components are made of derivatives and products of the Christoffel symbols (the components of the connection). The Christoffel symbols, in turn, are made of the metric components and their first derivatives. This leads to an astonishing conclusion: the Riemann [curvature tensor](@keyword=curvature_tensor|lang=en-US|style=Feynman) at a point is completely determined by the metric and its first and second derivatives at that point [@problem_id:3002442].
 
 Think of the metric as the weave of a fabric. The first derivatives tell you how the fabric is stretching, and the second derivatives tell you how that stretching is *changing*—which is precisely what it means for the fabric to be wrinkled or curved. Curvature is the "acceleration" of the metric.
 
 ### An Algebraic Masterpiece: The Symmetries of Curvature
 
-The Riemann tensor, expressed in coordinates as $R_{ijkl}$, might look like a monstrous collection of $n^4$ numbers. But it is not. It possesses a stunningly rigid and beautiful internal structure, governed by a set of [algebraic symmetries](@article_id:274171). For the $(0,4)$ tensor $R(u,v,w,z) = g(R(u,v)w, z)$, these symmetries are:
+The Riemann tensor, expressed in coordinates as $R_{ijkl}$, might look like a monstrous collection of $n^4$ numbers. But it is not. It possesses a stunningly rigid and beautiful internal structure, governed by a set of [algebraic symmetries](@keyword=algebraic_symmetries|lang=en-US|style=Feynman). For the $(0,4)$ tensor $R(u,v,w,z) = g(R(u,v)w, z)$, these symmetries are:
 
 1.  **Antisymmetry in the first two slots:** $R_{ijkl} = -R_{jikl}$.
 2.  **Antisymmetry in the last two slots:** $R_{ijkl} = -R_{ijlk}$.
-3.  **Pair-[exchange symmetry](@article_id:151398):** $R_{ijkl} = R_{klij}$.
+3.  **Pair-[exchange symmetry](@keyword=exchange_symmetry|lang=en-US|style=Feynman):** $R_{ijkl} = R_{klij}$.
 4.  **The First Bianchi Identity:** $R_{ijkl} + R_{iklj} + R_{iljk} = 0$.
 
-The first two are natural consequences of the commutator definition and metric-compatibility. The third, the pair-[exchange symmetry](@article_id:151398), is a deeper and more surprising property. The fourth, the First Bianchi Identity, arises from the torsion-free nature of the connection . In a hypothetical universe with a "twisty" connection (one with torsion), this identity would fail and be replaced by a more complex one involving the [torsion tensor](@article_id:203643) .
+The first two are natural consequences of the commutator definition and metric-compatibility. The third, the pair-[exchange symmetry](@keyword=exchange_symmetry|lang=en-US|style=Feynman), is a deeper and more surprising property. The fourth, the First Bianchi Identity, arises from the torsion-free nature of the connection [@problem_id:3002439]. In a hypothetical universe with a "twisty" connection (one with torsion), this identity would fail and be replaced by a more complex one involving the [torsion tensor](@keyword=torsion_tensor|lang=en-US|style=Feynman) [@problem_id:3002429].
 
-These symmetries are not mere curiosities; they are the heart of the matter. The first two antisymmetries, for instance, tell us that the Riemann tensor is not really a map on four individual vectors, but rather a bilinear form on the space of bivectors, or oriented 2-planes, $\Lambda^2 T_p M$. The pair-[exchange symmetry](@article_id:151398) then tells us that this [bilinear form](@article_id:139700) is **symmetric** .
+These symmetries are not mere curiosities; they are the heart of the matter. The first two antisymmetries, for instance, tell us that the Riemann tensor is not really a map on four individual vectors, but rather a bilinear form on the space of bivectors, or oriented 2-planes, $\Lambda^2 T_p M$. The pair-[exchange symmetry](@keyword=exchange_symmetry|lang=en-US|style=Feynman) then tells us that this [bilinear form](@keyword=bilinear_form|lang=en-US|style=Feynman) is **symmetric** [@problem_id:3002445].
 
-This is a monumental simplification! It means we can view the curvature tensor as a self-adjoint linear map $\mathcal{R}: \Lambda^2 T_p M \to \Lambda^2 T_p M$, which we call the **[curvature operator](@article_id:197512)**. It takes a 2-plane as input and gives us information about the curvature associated with that plane. And because it's symmetric, it has real eigenvalues. These eigenvalues encode the geometric information in a wonderfully compact way.
+This is a monumental simplification! It means we can view the curvature tensor as a self-adjoint linear map $\mathcal{R}: \Lambda^2 T_p M \to \Lambda^2 T_p M$, which we call the **[curvature operator](@keyword=curvature_operator|lang=en-US|style=Feynman)**. It takes a 2-plane as input and gives us information about the curvature associated with that plane. And because it's symmetric, it has real eigenvalues. These eigenvalues encode the geometric information in a wonderfully compact way.
 
-The choice of sign convention for the Riemann tensor—whether $R(X,Y)Z$ is defined as $+\nabla_X\nabla_Y Z - \dots$ or $-\nabla_X\nabla_Y Z + \dots$—will flip the sign of the operator and all its eigenvalues. However, all the fundamental [algebraic symmetries](@article_id:274171) remain perfectly intact . The structure is inviolable; only the perspective changes.
+The choice of sign convention for the Riemann tensor—whether $R(X,Y)Z$ is defined as $+\nabla_X\nabla_Y Z - \dots$ or $-\nabla_X\nabla_Y Z + \dots$—will flip the sign of the operator and all its eigenvalues. However, all the fundamental [algebraic symmetries](@keyword=algebraic_symmetries|lang=en-US|style=Feynman) remain perfectly intact [@problem_id:3036576]. The structure is inviolable; only the perspective changes.
 
 ### Quantifying Curvature: The Degrees of Freedom
 
@@ -64,7 +64,7 @@ With so many symmetries, how many independent numbers are actually needed to spe
 $$
 \dim \mathcal{A} = \frac{n^2(n^2 - 1)}{12}
 $$
-. Let's see what this means.
+[@problem_id:3002435]. Let's see what this means.
 
 *   In 2 dimensions (a surface), $\dim \mathcal{A} = \frac{2^2(2^2-1)}{12} = 1$. There is only one independent component, which is the familiar Gaussian curvature.
 *   In 3 dimensions, $\dim \mathcal{A} = \frac{3^2(3^2-1)}{12} = 6$. The geometry is richer.
@@ -74,13 +74,13 @@ This tells us that in spacetime, there are 20 independent components of curvatur
 
 ### The Trinity of Curvature: A Ricci Decomposition
 
-Those 20 components are not a monolithic block. In a way that is deeply significant for physics, the curvature tensor can be uniquely broken down into three fundamental, independent pieces, much like a musical chord can be decomposed into its constituent notes. This is the **Ricci decomposition** .
+Those 20 components are not a monolithic block. In a way that is deeply significant for physics, the curvature tensor can be uniquely broken down into three fundamental, independent pieces, much like a musical chord can be decomposed into its constituent notes. This is the **Ricci decomposition** [@problem_id:3036586].
 
-1.  **Scalar Curvature ($s$):** This is a single number at each point, representing the "average" curvature. It's obtained by taking the full trace of the tensor. In cosmology, positive scalar curvature means that the volume of a small ball of test particles will initially shrink faster than in [flat space](@article_id:204124). It governs the overall expansion or contraction of spacetime.
+1.  **Scalar Curvature ($s$):** This is a single number at each point, representing the "average" curvature. It's obtained by taking the full trace of the tensor. In cosmology, positive scalar curvature means that the volume of a small ball of test particles will initially shrink faster than in [flat space](@keyword=flat_space|lang=en-US|style=Feynman). It governs the overall expansion or contraction of spacetime.
 
-2.  **Traceless Ricci Curvature ($S$):** This is the part of curvature that describes how volumes are distorted. It's responsible for the **[tidal forces](@article_id:158694)** of gravity. The reason the Earth is stretched into an ellipsoid by the Moon's gravity is due to the Ricci [curvature of spacetime](@article_id:188986). In 4D, this part has 9 independent components.
+2.  **Traceless Ricci Curvature ($S$):** This is the part of curvature that describes how volumes are distorted. It's responsible for the **[tidal forces](@keyword=tidal_forces|lang=en-US|style=Feynman)** of gravity. The reason the Earth is stretched into an ellipsoid by the Moon's gravity is due to the Ricci [curvature of spacetime](@keyword=curvature_of_spacetime|lang=en-US|style=Feynman). In 4D, this part has 9 independent components.
 
-3.  **Weyl Curvature ($W$):** This is the remaining, totally trace-free part of the curvature. It describes the distortion of *shapes* without changing volume. In a vacuum, where there is no matter to generate Ricci or [scalar curvature](@article_id:157053), the Weyl tensor can still be non-zero. This is the part of curvature that propagates through empty space as **gravitational waves**. In 4D, it has 10 independent components.
+3.  **Weyl Curvature ($W$):** This is the remaining, totally trace-free part of the curvature. It describes the distortion of *shapes* without changing volume. In a vacuum, where there is no matter to generate Ricci or [scalar curvature](@keyword=scalar_curvature|lang=en-US|style=Feynman), the Weyl tensor can still be non-zero. This is the part of curvature that propagates through empty space as **gravitational waves**. In 4D, it has 10 independent components.
 
 The decomposition looks like this:
 $$
@@ -96,13 +96,13 @@ $$
 $$
 This identity is the geometric source of the conservation of energy and momentum in general relativity. It tells us that the way curvature changes is not arbitrary but is itself highly constrained.
 
-What if we consider a universe of [maximal symmetry](@article_id:196971)? A space where the curvature is the *same* at every point and in every direction? This would be a space where, if you parallel-transport the entire curvature tensor, it remains unchanged. This is the condition of a **parallel curvature tensor**, $\nabla R = 0$. Remarkably, the existence of geodesic symmetries (isometries that reverse geodesics through a point) is completely equivalent to this condition. Such a space is called a **[locally symmetric space](@article_id:636118)**, representing a kind of crystalline perfection in geometry . Examples include flat Euclidean space, spheres, and hyperbolic spaces.
+What if we consider a universe of [maximal symmetry](@keyword=maximal_symmetry|lang=en-US|style=Feynman)? A space where the curvature is the *same* at every point and in every direction? This would be a space where, if you parallel-transport the entire curvature tensor, it remains unchanged. This is the condition of a **parallel curvature tensor**, $\nabla R = 0$. Remarkably, the existence of geodesic symmetries (isometries that reverse geodesics through a point) is completely equivalent to this condition. Such a space is called a **[locally symmetric space](@keyword=locally_symmetric_space|lang=en-US|style=Feynman)**, representing a kind of crystalline perfection in geometry [@problem_id:3036571]. Examples include flat Euclidean space, spheres, and hyperbolic spaces.
 
 ### The Many Faces of Positivity
 
 We often talk about "positive" and "negative" curvature. But in higher dimensions, this simple idea splinters into a hierarchy of subtle conditions, each with powerful consequences for the global shape of the space.
 
-*   **Positive Sectional Curvature (PSC):** This is the most intuitive condition. It means that any 2D cross-section you slice through your space is positively curved, like a little piece of a sphere. One might assume this means the [curvature operator](@article_id:197512) $\mathcal{R}$ is positive definite (has all positive eigenvalues). Amazingly, for dimensions $n \ge 4$, this is false! A space can have PSC everywhere, yet its [curvature operator](@article_id:197512) can have negative eigenvalues hiding in "indecomposable" bivectors . This is one of the most subtle and beautiful facts in Riemannian geometry.
+*   **Positive Sectional Curvature (PSC):** This is the most intuitive condition. It means that any 2D cross-section you slice through your space is positively curved, like a little piece of a sphere. One might assume this means the [curvature operator](@keyword=curvature_operator|lang=en-US|style=Feynman) $\mathcal{R}$ is positive definite (has all positive eigenvalues). Amazingly, for dimensions $n \ge 4$, this is false! A space can have PSC everywhere, yet its [curvature operator](@keyword=curvature_operator|lang=en-US|style=Feynman) can have negative eigenvalues hiding in "indecomposable" bivectors [@problem_id:3036579]. This is one of the most subtle and beautiful facts in Riemannian geometry.
 
 *   **2-Positive Curvature Operator:** A stronger condition, defined by requiring that the sum of the two smallest eigenvalues of $\mathcal{R}$ is positive ($\lambda_1 + \lambda_2 > 0$). This forces all eigenvalues except possibly the very smallest one to be positive and is a key technical condition in many geometric theorems.
 

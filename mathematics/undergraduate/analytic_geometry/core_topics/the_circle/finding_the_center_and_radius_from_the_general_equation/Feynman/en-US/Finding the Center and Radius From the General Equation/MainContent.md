@@ -1,7 +1,7 @@
 ## Introduction
 In the landscape of mathematics, the circle stands as a symbol of perfect symmetry and simplicity. Yet, its elegant form is often disguised within a more complex and cluttered algebraic expression known as the general equation of a circle. This form, $x^2 + y^2 + Dx + Ey + F = 0$, is commonly encountered in fields from physics to engineering, but it conceals the circle's most fundamental properties: its center and radius. This article addresses the essential task of decoding this equation to unveil the clear geometric information hidden within.
 
-Throughout this guide, you will be equipped with the primary tool for this task: the powerful algebraic technique of [completing the square](@article_id:264986). The first chapter, **"Principles and Mechanisms,"** will delve into the mechanics of this method, demonstrating how to systematically rearrange the general equation into the intuitive standard form. You will also uncover the deep geometric meaning encoded within the equation's coefficients. The second chapter, **"Applications and Interdisciplinary Connections,"** will broaden your perspective, revealing how this core skill serves as a bridge connecting [analytic geometry](@article_id:163772) to a vast array of disciplines, from robotics and vector analysis to complex numbers and control theory. Finally, the **"Hands-On Practices"** section will provide you with opportunities to apply these concepts to challenging problems, solidifying your understanding and preparing you to use this knowledge in practical contexts.
+Throughout this guide, you will be equipped with the primary tool for this task: the powerful algebraic technique of [completing the square](@keyword=completing_the_square|lang=en-US|style=Feynman). The first chapter, **"Principles and Mechanisms,"** will delve into the mechanics of this method, demonstrating how to systematically rearrange the general equation into the intuitive standard form. You will also uncover the deep geometric meaning encoded within the equation's coefficients. The second chapter, **"Applications and Interdisciplinary Connections,"** will broaden your perspective, revealing how this core skill serves as a bridge connecting [analytic geometry](@keyword=analytic_geometry|lang=en-US|style=Feynman) to a vast array of disciplines, from robotics and vector analysis to complex numbers and control theory. Finally, the **"Hands-On Practices"** section will provide you with opportunities to apply these concepts to challenging problems, solidifying your understanding and preparing you to use this knowledge in practical contexts.
 
 ## Principles and Mechanisms
 
@@ -33,7 +33,7 @@ $$
 x^{2} + Dx + \left(\frac{D}{2}\right)^{2} = \left(x + \frac{D}{2}\right)^{2}
 $$
 
-Let’s see this in action. Suppose a circle is described by the peculiar equation $(x-2)(x+4) + (y-1)(y-5) = 0$ . At first, this looks like a mess. But let's expand it:
+Let’s see this in action. Suppose a circle is described by the peculiar equation $(x-2)(x+4) + (y-1)(y-5) = 0$ [@problem_id:2130944]. At first, this looks like a mess. But let's expand it:
 
 $$
 (x^{2} + 2x - 8) + (y^{2} - 6y + 5) = 0
@@ -83,9 +83,9 @@ From this, we can read the code directly:
 -   The center is $(h, k) = \left(-\frac{D}{2}, -\frac{E}{2}\right)$.
 -   The radius squared is $r^{2} = \frac{D^{2} + E^{2}}{4} - F$.
 
-This isn't just an abstract exercise. Imagine studying the shockwave from an explosion on a metal plate, whose circular boundary at some moment is known to be centered at $(-4, 1)$ . The governing equation is $x^2 + y^2 + Dx + Ey + F = 0$. Using our newfound knowledge, we know that $h = -4 = -D/2$, which immediately tells us $D=8$. Similarly, $k = 1 = -E/2$, which means $E=-2$. The coefficients $D$ and $E$ are not arbitrary numbers; they are the encoded position of the circle's center.
+This isn't just an abstract exercise. Imagine studying the shockwave from an explosion on a metal plate, whose circular boundary at some moment is known to be centered at $(-4, 1)$ [@problem_id:2130920]. The governing equation is $x^2 + y^2 + Dx + Ey + F = 0$. Using our newfound knowledge, we know that $h = -4 = -D/2$, which immediately tells us $D=8$. Similarly, $k = 1 = -E/2$, which means $E=-2$. The coefficients $D$ and $E$ are not arbitrary numbers; they are the encoded position of the circle's center.
 
-Furthermore, the constant $F$ is deeply connected to the other parameters. As we see from our formula for the radius, we can express $F$ in terms of the other coefficients and the radius itself :
+Furthermore, the constant $F$ is deeply connected to the other parameters. As we see from our formula for the radius, we can express $F$ in terms of the other coefficients and the radius itself [@problem_id:2130946]:
 
 $$
 F = \frac{D^{2} + E^{2}}{4} - r^{2}
@@ -93,7 +93,7 @@ $$
 
 This tells us that the constant term $F$ is a measure of the difference between a quantity related to the center's distance from the origin and the circle's size.
 
-A small but important note: this technique works beautifully when the coefficients of $x^{2}$ and $y^{2}$ are both $1$. If you encounter an equation like $\alpha(x^2 + y^2) - 4\beta x + 12\gamma y + \delta = 0$, as one might in designing a wireless charging zone , your first step must be to divide the entire equation by $\alpha$ to normalize it. Only then can you apply the method of [completing the square](@article_id:264986).
+A small but important note: this technique works beautifully when the coefficients of $x^{2}$ and $y^{2}$ are both $1$. If you encounter an equation like $\alpha(x^2 + y^2) - 4\beta x + 12\gamma y + \delta = 0$, as one might in designing a wireless charging zone [@problem_id:2130965], your first step must be to divide the entire equation by $\alpha$ to normalize it. Only then can you apply the method of [completing the square](@keyword=completing_the_square|lang=en-US|style=Feynman).
 
 ### When Is a Circle... Not a Circle?
 
@@ -105,9 +105,9 @@ $$
 
 This inequality separates all such equations into three distinct families:
 
-1.  **Real Circles ($r^{2} > 0$):** When $D^{2} + E^{2} - 4F > 0$, we have a positive radius and a genuine circle that you can draw. For a plasma to be confined in a stable circular shape in a fusion reactor, the control parameter $c$ in an equation like $x^2 + y^2 + 2x - 6y + c = 0$ must satisfy this condition. In this case, it means $10-c > 0$, or $c < 10$ . Any value of $c$ greater than or equal to 10 would cause the [plasma confinement](@article_id:203052) to fail.
+1.  **Real Circles ($r^{2} > 0$):** When $D^{2} + E^{2} - 4F > 0$, we have a positive radius and a genuine circle that you can draw. For a plasma to be confined in a stable circular shape in a fusion reactor, the control parameter $c$ in an equation like $x^2 + y^2 + 2x - 6y + c = 0$ must satisfy this condition. In this case, it means $10-c > 0$, or $c < 10$ [@problem_id:2130962]. Any value of $c$ greater than or equal to 10 would cause the [plasma confinement](@keyword=plasma_confinement|lang=en-US|style=Feynman) to fail.
 
-2.  **Point-Circles ($r^{2} = 0$):** When $D^{2} + E^{2} - 4F = 0$, the radius is zero. The circle has collapsed into a single point—its own center. This might seem like a useless abstraction, but it represents a critical boundary condition. For a proximity sensor whose detection field collapses to a single point, finding the calibration constant that makes this happen is key to understanding its operational limits .
+2.  **Point-Circles ($r^{2} = 0$):** When $D^{2} + E^{2} - 4F = 0$, the radius is zero. The circle has collapsed into a single point—its own center. This might seem like a useless abstraction, but it represents a critical boundary condition. For a proximity sensor whose detection field collapses to a single point, finding the calibration constant that makes this happen is key to understanding its operational limits [@problem_id:2130958].
 
 3.  **Imaginary Circles ($r^{2} < 0$):** When $D^{2} + E^{2} - 4F < 0$, the equation has no real solution. No point $(x, y)$ in the real plane can satisfy it. It is a geometric ghost, an algebraic statement with no corresponding picture.
 
@@ -119,27 +119,27 @@ $$
 g(0, 0) = 0^{2} + 0^{2} + D(0) + E(0) + F = F
 $$
 
-Amazingly, the sign of the constant term $F$ tells you exactly where the origin is relative to the circle :
+Amazingly, the sign of the constant term $F$ tells you exactly where the origin is relative to the circle [@problem_id:2130943]:
 -   If **$F > 0$**, the origin is outside the circle.
 -   If **$F = 0$**, the origin is on the circle.
 -   If **$F < 0$**, the origin is inside the circle.
 
-What an elegant and simple test! The seemingly humble constant $F$ carries fundamental geometric information. We can even find surprising relationships by imposing conditions on these properties. For instance, if we require that the power of the origin ($F$) be equal to the square of the circle's radius ($r^{2}$), a little algebra reveals a fixed relationship between the coefficients: $D^{2} + E^{2} = 8F$ . It's through exploring these connections that we uncover the deep, rigid structure that underpins geometry. This structure is so reliable that we can use it to solve complex problems, such as finding the exact location of a line tangent to a whole family of circles .
+What an elegant and simple test! The seemingly humble constant $F$ carries fundamental geometric information. We can even find surprising relationships by imposing conditions on these properties. For instance, if we require that the power of the origin ($F$) be equal to the square of the circle's radius ($r^{2}$), a little algebra reveals a fixed relationship between the coefficients: $D^{2} + E^{2} = 8F$ [@problem_id:2130941]. It's through exploring these connections that we uncover the deep, rigid structure that underpins geometry. This structure is so reliable that we can use it to solve complex problems, such as finding the exact location of a line tangent to a whole family of circles [@problem_id:2130957].
 
 ### A New Dimension: Circles as the Base of a Bowl
 
 So far, our journey has been purely algebraic. Now, let’s take a step back and view our circle from a completely different, and perhaps more beautiful, perspective. Let's look at it from the third dimension.
 
-Consider the surface defined by the equation $z(x, y) = x^{2} + y^{2} + Dx + Ey + F$ . This is not a circle; it is a three-dimensional surface called an **[elliptic paraboloid](@article_id:267574)**. You can think of it as a perfectly smooth bowl or valley. The $z$ value represents the 'height' at any point $(x, y)$.
+Consider the surface defined by the equation $z(x, y) = x^{2} + y^{2} + Dx + Ey + F$ [@problem_id:2130923]. This is not a circle; it is a three-dimensional surface called an **[elliptic paraboloid](@keyword=elliptic_paraboloid|lang=en-US|style=Feynman)**. You can think of it as a perfectly smooth bowl or valley. The $z$ value represents the 'height' at any point $(x, y)$.
 
 So, where is our original circle in this picture? Our circle was defined by the equation $x^{2} + y^{2} + Dx + Ey + F = 0$. In our new 3D landscape, this is simply the set of all points where the height $z$ is zero. The circle is the **shoreline of the bowl at sea level**!
 
 This new perspective gives us a breathtakingly intuitive way to find the circle's center and radius.
--   **The Center:** Where would the center of a circular shoreline be? It would be directly beneath the lowest point of the bowl! This lowest point is the **vertex** of the [paraboloid](@article_id:264219). In calculus, we find a minimum by taking derivatives and setting them to zero:
+-   **The Center:** Where would the center of a circular shoreline be? It would be directly beneath the lowest point of the bowl! This lowest point is the **vertex** of the [paraboloid](@keyword=paraboloid|lang=en-US|style=Feynman). In calculus, we find a minimum by taking derivatives and setting them to zero:
     -   $\frac{\partial z}{\partial x} = 2x + D = 0 \implies x = -\frac{D}{2}$
     -   $\frac{\partial z}{\partial y} = 2y + E = 0 \implies y = -\frac{E}{2}$
     Look at that! The $(x, y)$ coordinates of the bowl's lowest point are $\left(-\frac{D}{2}, -\frac{E}{2}\right)$. This is exactly the same center we found through pages of algebra! This is no coincidence; completing the square is, in essence, an algebraic method for finding the vertex of a quadratic function.
 
 -   **The Radius:** What about the radius? The height of the vertex, $z_v$, is what we get when we plug its coordinates back into the $z$ equation: $z_{v} = F - \frac{D^{2} + E^{2}}{4}$. This is the 'depth' of our valley. Our equation for the circle can be rewritten as $(x - h)^{2} + (y - k)^{2} = -z_v$. So, the radius squared is simply the negative of the vertex's height: $r^{2} = -z_v$. This makes perfect visual sense: the deeper the bowl ($z_v$ is a larger negative number), the wider the circular shoreline will be at sea level ($z=0$).
 
-This is the unity of mathematics on full display. A problem in 2D [analytic geometry](@article_id:163772) (finding a circle's center) is equivalent to a problem in 3D calculus (finding a [paraboloid](@article_id:264219)'s minimum). The algebraic drudgery of [completing the square](@article_id:264986) is transformed into the elegant and intuitive act of finding the bottom of a bowl. The different perspectives—algebra, calculus, geometry—are not separate subjects. They are different languages telling the same beautiful, true story.
+This is the unity of mathematics on full display. A problem in 2D [analytic geometry](@keyword=analytic_geometry|lang=en-US|style=Feynman) (finding a circle's center) is equivalent to a problem in 3D calculus (finding a [paraboloid](@keyword=paraboloid|lang=en-US|style=Feynman)'s minimum). The algebraic drudgery of [completing the square](@keyword=completing_the_square|lang=en-US|style=Feynman) is transformed into the elegant and intuitive act of finding the bottom of a bowl. The different perspectives—algebra, calculus, geometry—are not separate subjects. They are different languages telling the same beautiful, true story.

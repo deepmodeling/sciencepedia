@@ -22,7 +22,7 @@ $$
 s_{xy} = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})
 $$
 
-A positive sum suggests that, on average, the two variables tend to move in the same direction. A negative sum suggests they move in opposite directions . A sum near zero suggests there isn't a clear linear trend of them moving together.
+A positive sum suggests that, on average, the two variables tend to move in the same direction. A negative sum suggests they move in opposite directions [@problem_id:1911507]. A sum near zero suggests there isn't a clear linear trend of them moving together.
 
 While this *sample covariance* is calculated from data, the true, underlying relationship is captured by the **population covariance**. This is a theoretical ideal, defined using the language of expectations. For two random variables $X$ and $Y$, it's the expected value of that product of deviations:
 
@@ -30,7 +30,7 @@ $$
 \text{Cov}(X, Y) = \mathbb{E}[(X - \mathbb{E}[X])(Y - \mathbb{E}[Y])]
 $$
 
-This is often more conveniently calculated using the shortcut formula $\text{Cov}(X, Y) = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y]$ . Whether calculated from a sample of real-world data or from a theoretical probability distribution, the core idea is the same: we're capturing the average way in which two variables dance together around their respective means.
+This is often more conveniently calculated using the shortcut formula $\text{Cov}(X, Y) = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y]$ [@problem_id:1354388]. Whether calculated from a sample of real-world data or from a theoretical probability distribution, the core idea is the same: we're capturing the average way in which two variables dance together around their respective means.
 
 ### Variance: A Variable's Conversation with Itself
 
@@ -44,13 +44,13 @@ $$
 
 Wait a minute. That expression, $\mathbb{E}[(X - \mathbb{E}[X])^2]$, is the very definition of the **variance** of $X$, denoted $\text{Var}(X)$!
 
-So, we find that $\text{Cov}(X, X) = \text{Var}(X)$ . This is a beautiful moment of unity. The concept of variance, which we thought of as a measure of a single variable's "spread" or "volatility," is not a separate idea at all. It is simply a special case of covariance. Variance is the measure of how a variable "covaries" with its own fluctuations. It’s a measure of self-agreement. A variable with high variance is one that takes wild swings away from its average—it has a very dramatic internal conversation.
+So, we find that $\text{Cov}(X, X) = \text{Var}(X)$ [@problem_id:1382176]. This is a beautiful moment of unity. The concept of variance, which we thought of as a measure of a single variable's "spread" or "volatility," is not a separate idea at all. It is simply a special case of covariance. Variance is the measure of how a variable "covaries" with its own fluctuations. It’s a measure of self-agreement. A variable with high variance is one that takes wild swings away from its average—it has a very dramatic internal conversation.
 
 ### The Rules of Combination: The Power of Bilinearity
 
-The true power of covariance emerges when we start combining variables. The rules governing these combinations are beautifully simple and are collectively known as **[bilinearity](@article_id:146325)**.
+The true power of covariance emerges when we start combining variables. The rules governing these combinations are beautifully simple and are collectively known as **[bilinearity](@keyword=bilinearity|lang=en-US|style=Feynman)**.
 
-First, let's consider a practical problem. An analyst knows the covariance between daily temperature in Celsius ($C$) and ice cream sales in scoops ($S$). But their boss wants the report in Fahrenheit ($F$) and revenue in thousands of dollars ($K$) . The transformations are linear: $F = \frac{9}{5}C + 32$ and $K = \frac{p}{1000}S$ where $p$ is the price. What happens to the covariance?
+First, let's consider a practical problem. An analyst knows the covariance between daily temperature in Celsius ($C$) and ice cream sales in scoops ($S$). But their boss wants the report in Fahrenheit ($F$) and revenue in thousands of dollars ($K$) [@problem_id:1354352]. The transformations are linear: $F = \frac{9}{5}C + 32$ and $K = \frac{p}{1000}S$ where $p$ is the price. What happens to the covariance?
 
 It turns out that shifting a variable by a constant (like the `+ 32` in the temperature conversion) has *no effect* on the covariance. This is intuitive; if you shift every data point up by 32, the average also shifts up by 32, so the deviations from the average remain unchanged. Adding a constant offset doesn't change how two variables fluctuate *together*.
 
@@ -60,27 +60,27 @@ $$
 \text{Cov}(aX + b, cY + d) = ac\,\text{Cov}(X, Y)
 $$
 
-This property is part of what makes covariance so useful. For example, if we have a signal $X$ with some random error, and we pass it through an amplifier that scales it by $a$ and adds a DC offset $b$ to get $Y = aX+b$, the covariance between the input and the output is simply $\text{Cov}(X, aX+b) = a\,\text{Cov}(X,X) = a\,\text{Var}(X)$ .
+This property is part of what makes covariance so useful. For example, if we have a signal $X$ with some random error, and we pass it through an amplifier that scales it by $a$ and adds a DC offset $b$ to get $Y = aX+b$, the covariance between the input and the output is simply $\text{Cov}(X, aX+b) = a\,\text{Cov}(X,X) = a\,\text{Var}(X)$ [@problem_id:1354394].
 
-This linearity extends to sums as well. Imagine a financial portfolio whose return $R_P$ is a [weighted sum](@article_id:159475) of two funds, the Alpha Fund ($R_A$) and the Beta Fund ($R_B$): $R_P = w_A R_A + w_B R_B$. How does this portfolio's return covary with the overall market, $R_M$? The [bilinearity](@article_id:146325) rule tells us that we can just "distribute" the covariance operation:
+This linearity extends to sums as well. Imagine a financial portfolio whose return $R_P$ is a [weighted sum](@keyword=weighted_sum|lang=en-US|style=Feynman) of two funds, the Alpha Fund ($R_A$) and the Beta Fund ($R_B$): $R_P = w_A R_A + w_B R_B$. How does this portfolio's return covary with the overall market, $R_M$? The [bilinearity](@keyword=bilinearity|lang=en-US|style=Feynman) rule tells us that we can just "distribute" the covariance operation:
 
 $$
 \text{Cov}(R_P, R_M) = \text{Cov}(w_A R_A + w_B R_B, R_M) = w_A \text{Cov}(R_A, R_M) + w_B \text{Cov}(R_B, R_M)
 $$
 
-This elegant result  is the cornerstone of [modern portfolio theory](@article_id:142679). We can understand the risk of a complex portfolio by understanding the covariances of its individual parts. These rules allow us to take a system with many interacting components, like the noisy output signals of an integrated circuit , and precisely calculate the relationships between them by breaking the problem down into simpler pieces.
+This elegant result [@problem_id:1911490] is the cornerstone of [modern portfolio theory](@keyword=modern_portfolio_theory|lang=en-US|style=Feynman). We can understand the risk of a complex portfolio by understanding the covariances of its individual parts. These rules allow us to take a system with many interacting components, like the noisy output signals of an integrated circuit [@problem_id:1354730], and precisely calculate the relationships between them by breaking the problem down into simpler pieces.
 
 ### The Great Deception: Uncorrelated vs. Independent
 
-Now we arrive at the most subtle, and perhaps most important, aspect of covariance. We know that two events are **independent** if the outcome of one tells you absolutely nothing about the outcome of the other. The results of two separate coin flips are independent. What is the covariance of two [independent random variables](@article_id:273402), say $N_1$ and $N_2$?
+Now we arrive at the most subtle, and perhaps most important, aspect of covariance. We know that two events are **independent** if the outcome of one tells you absolutely nothing about the outcome of the other. The results of two separate coin flips are independent. What is the covariance of two [independent random variables](@keyword=independent_random_variables|lang=en-US|style=Feynman), say $N_1$ and $N_2$?
 
-Because knowing $N_1$ gives no information about $N_2$, there can be no consistent pattern of them moving together or apart. The positive products of their deviations will, in the long run, be cancelled out by the negative products. The result is that their covariance is zero. This is a fundamental theorem: **if two random variables are independent, their covariance is zero.** . This is why, for independent variables, the variance of their sum is just the sum of their variances: $\text{Var}(N_1+N_2) = \text{Var}(N_1) + \text{Var}(N_2)$, because the cross-term $2\text{Cov}(N_1, N_2)$ is zero.
+Because knowing $N_1$ gives no information about $N_2$, there can be no consistent pattern of them moving together or apart. The positive products of their deviations will, in the long run, be cancelled out by the negative products. The result is that their covariance is zero. This is a fundamental theorem: **if two random variables are independent, their covariance is zero.** [@problem_id:1614657]. This is why, for independent variables, the variance of their sum is just the sum of their variances: $\text{Var}(N_1+N_2) = \text{Var}(N_1) + \text{Var}(N_2)$, because the cross-term $2\text{Cov}(N_1, N_2)$ is zero.
 
 This leads to a tempting—and dangerous—conclusion. If covariance is zero, does that mean the variables must be independent? The answer, surprisingly, is **no**.
 
 This is a critical distinction. Covariance measures the strength of a *linear* relationship. It's entirely possible for two variables to be profoundly dependent in a *non-linear* way, yet have a covariance of zero.
 
-Consider a simple, beautiful [counterexample](@article_id:148166) . Let a random variable $X$ take values $-1$, $0$, and $1$ with equal probability. Now, let $Y = X^2$. Is $Y$ dependent on $X$? Absolutely! If you tell me $X=1$, I know with 100% certainty that $Y=1$. They are perfectly dependent.
+Consider a simple, beautiful [counterexample](@keyword=counterexample|lang=en-US|style=Feynman) [@problem_id:1911459]. Let a random variable $X$ take values $-1$, $0$, and $1$ with equal probability. Now, let $Y = X^2$. Is $Y$ dependent on $X$? Absolutely! If you tell me $X=1$, I know with 100% certainty that $Y=1$. They are perfectly dependent.
 
 But let's calculate their covariance. The mean of $X$ is $E[X] = \frac{-1+0+1}{3} = 0$. The product $XY$ is just $X^3$. The expected value of their product is $E[XY] = E[X^3] = \frac{(-1)^3 + 0^3 + 1^3}{3} = \frac{-1+0+1}{3} = 0$. Therefore,
 
@@ -98,4 +98,4 @@ $$
 \rho_{XY} = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}
 $$
 
-This number is always between -1 and 1. Since the standard deviations $\sigma_X$ and $\sigma_Y$ are always positive, the sign of the correlation is always the same as the sign of the covariance . Covariance tells us the *direction* of the tilt in the data cloud; correlation tells us how tightly the data points cluster around a straight line. But we must never forget that both tools are designed for a world of lines, and can be easily fooled by the universe's love for curves.
+This number is always between -1 and 1. Since the standard deviations $\sigma_X$ and $\sigma_Y$ are always positive, the sign of the correlation is always the same as the sign of the covariance [@problem_id:1911456]. Covariance tells us the *direction* of the tilt in the data cloud; correlation tells us how tightly the data points cluster around a straight line. But we must never forget that both tools are designed for a world of lines, and can be easily fooled by the universe's love for curves.

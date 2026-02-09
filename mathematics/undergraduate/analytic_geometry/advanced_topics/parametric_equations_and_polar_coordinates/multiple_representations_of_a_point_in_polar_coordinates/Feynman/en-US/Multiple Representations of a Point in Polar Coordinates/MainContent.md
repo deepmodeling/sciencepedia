@@ -1,7 +1,7 @@
 ## Introduction
-In the familiar grid of Cartesian coordinates, every point has a unique address. This one-to-one correspondence provides a rigid, reliable framework for geometry. However, when describing phenomena involving rotation, such as a planet's orbit or a radar's sweep, it is often more natural to use distance and direction—the language of [polar coordinates](@article_id:158931). This shift in perspective introduces a fascinating and powerful new concept: a single point in space can have an infinite number of polar coordinate 'addresses'. This article addresses the apparent paradox of this non-uniqueness, showing it to be not a flaw, but a feature that reveals deeper truths about symmetry and geometry.
+In the familiar grid of Cartesian coordinates, every point has a unique address. This one-to-one correspondence provides a rigid, reliable framework for geometry. However, when describing phenomena involving rotation, such as a planet's orbit or a radar's sweep, it is often more natural to use distance and direction—the language of [polar coordinates](@keyword=polar_coordinates|lang=en-US|style=Feynman). This shift in perspective introduces a fascinating and powerful new concept: a single point in space can have an infinite number of polar coordinate 'addresses'. This article addresses the apparent paradox of this non-uniqueness, showing it to be not a flaw, but a feature that reveals deeper truths about symmetry and geometry.
 
-Across the following chapters, you will embark on a journey from first principles to practical applications. The 'Principles and Mechanisms' chapter will deconstruct the rules of polar coordinate equivalence, unifying them into a single, elegant formula. Next, 'Applications and Interdisciplinary Connections' will explore the profound consequences of this ambiguity in fields ranging from robotics and calculus to physics and complex analysis, explaining why it is crucial for tasks like finding curve intersections and defining [physical quantities](@article_id:176901). Finally, the 'Hands-On Practices' section will allow you to solidify your understanding by tackling concrete problems. Let's begin by exploring the fundamental principles that give polar coordinates their unique flexibility.
+Across the following chapters, you will embark on a journey from first principles to practical applications. The 'Principles and Mechanisms' chapter will deconstruct the rules of polar coordinate equivalence, unifying them into a single, elegant formula. Next, 'Applications and Interdisciplinary Connections' will explore the profound consequences of this ambiguity in fields ranging from robotics and calculus to physics and complex analysis, explaining why it is crucial for tasks like finding curve intersections and defining [physical quantities](@keyword=physical_quantities|lang=en-US|style=Feynman). Finally, the 'Hands-On Practices' section will allow you to solidify your understanding by tackling concrete problems. Let's begin by exploring the fundamental principles that give polar coordinates their unique flexibility.
 
 ## Principles and Mechanisms
 
@@ -11,13 +11,13 @@ And in this world, we find a curious and beautiful new freedom: a single point i
 
 ### The Freedom of Rotation
 
-Imagine a robotic arm pivoted at the center of a room . To tell it where to go, you give it two instructions: "extend to a distance $r$" and "rotate to an angle $\theta$." Suppose you command it to move to $(5, \frac{\pi}{6})$. Now, what happens if you tell it to rotate a full circle, an angle of $2\pi$ [radians](@article_id:171199), from that position? It ends up in the exact same spot! The arm doesn't care if its final angle is $\frac{\pi}{6}$, or $\frac{\pi}{6} + 2\pi$, or $\frac{\pi}{6} - 4\pi$.
+Imagine a robotic arm pivoted at the center of a room [@problem_id:2144833]. To tell it where to go, you give it two instructions: "extend to a distance $r$" and "rotate to an angle $\theta$." Suppose you command it to move to $(5, \frac{\pi}{6})$. Now, what happens if you tell it to rotate a full circle, an angle of $2\pi$ [radians](@keyword=radians|lang=en-US|style=Feynman), from that position? It ends up in the exact same spot! The arm doesn't care if its final angle is $\frac{\pi}{6}$, or $\frac{\pi}{6} + 2\pi$, or $\frac{\pi}{6} - 4\pi$.
 
 This leads us to our first rule of polar equivalence: adding any integer multiple of $2\pi$ to the angle does not change the point's location. Mathematically, for any integer $k$:
 $$
 (r, \theta) \equiv (r, \theta + 2k\pi)
 $$
-This single rule immediately gives every point an infinite number of labels. The point represented by $(3, \frac{\pi}{4})$ can just as correctly be identified by $(3, \frac{9\pi}{4})$ or $(3, -\frac{7\pi}{4})$ . It's a simple idea, but it's the first crack in the rigid shell of unique addresses we inherited from Descartes.
+This single rule immediately gives every point an infinite number of labels. The point represented by $(3, \frac{\pi}{4})$ can just as correctly be identified by $(3, \frac{9\pi}{4})$ or $(3, -\frac{7\pi}{4})$ [@problem_id:2148487]. It's a simple idea, but it's the first crack in the rigid shell of unique addresses we inherited from Descartes.
 
 ### A Step Backward: The Meaning of Negative Radius
 
@@ -31,7 +31,7 @@ Facing one direction and walking backward is the same as turning 180 degrees ($\
 $$
 (r, \theta) \equiv (-r, \theta + \pi)
 $$
-Combining this with our first rule, we can say that adding *any odd multiple* of $\pi$ to the angle is equivalent to flipping the sign of the radius . Thus, a surveyor who logs a landmark at $(2, \frac{2\pi}{3})$ and a colleague who logs it at $(-2, \frac{5\pi}{3})$ have, in fact, recorded the exact same physical location .
+Combining this with our first rule, we can say that adding *any odd multiple* of $\pi$ to the angle is equivalent to flipping the sign of the radius [@problem_id:2144878]. Thus, a surveyor who logs a landmark at $(2, \frac{2\pi}{3})$ and a colleague who logs it at $(-2, \frac{5\pi}{3})$ have, in fact, recorded the exact same physical location [@problem_id:2144884].
 
 ### A Unified View: Finding the Deeper Pattern
 
@@ -41,11 +41,11 @@ Of course! Let's consider what happens when we add *any* integer multiple of $\p
 *   If $k$ is an even integer ($k=2n$), we add $2n\pi$ to $\theta$. This corresponds to our first rule, and the radius $r$ stays the same.
 *   If $k$ is an odd integer ($k=2n+1$), we add $(2n+1)\pi$ to $\theta$. This corresponds to our second rule, and the radius $r$ becomes $-r$.
 
-Notice the pattern: the sign of the radius flips when we add an odd multiple of $\pi$, and stays the same for an even multiple. This is exactly the behavior of the function $(-1)^k$! This allows us to consolidate both rules into one beautifully compact formula :
+Notice the pattern: the sign of the radius flips when we add an odd multiple of $\pi$, and stays the same for an even multiple. This is exactly the behavior of the function $(-1)^k$! This allows us to consolidate both rules into one beautifully compact formula [@problem_id:2144867]:
 $$
 (r, \theta) \equiv ((-1)^k r, \theta + k\pi) \quad \text{for any integer } k
 $$
-This single expression now generates every possible polar representation of a point from a single starting pair. What looked like two distinct operations is revealed to be two faces of a single, unified principle of [rotational symmetry](@article_id:136583).
+This single expression now generates every possible polar representation of a point from a single starting pair. What looked like two distinct operations is revealed to be two faces of a single, unified principle of [rotational symmetry](@keyword=rotational_symmetry|lang=en-US|style=Feynman).
 
 ### The Unchanging Core: The True Distance
 
@@ -57,13 +57,13 @@ x^2 + y^2 = (r\cos\theta)^2 + (r\sin\theta)^2 = r^2(\cos^2\theta + \sin^2\theta)
 $$
 So, $\sqrt{x^2 + y^2} = \sqrt{r^2} = |r|$.
 
-This is a crucial insight. No matter which representation you choose—$(r_1, \theta_1)$, $(r_2, \theta_2)$, or $(r_3, \theta_3)$—if they all describe the same point, then the absolute values of their radial coordinates must all be equal: $|r_1| = |r_2| = |r_3|$ . The number $r$ can be positive or negative depending on the instructional "story" you are telling, but its absolute value, the actual distance, is fixed.
+This is a crucial insight. No matter which representation you choose—$(r_1, \theta_1)$, $(r_2, \theta_2)$, or $(r_3, \theta_3)$—if they all describe the same point, then the absolute values of their radial coordinates must all be equal: $|r_1| = |r_2| = |r_3|$ [@problem_id:2144862]. The number $r$ can be positive or negative depending on the instructional "story" you are telling, but its absolute value, the actual distance, is fixed.
 
 ### The Eye of the Storm: The Ambiguity of the Pole
 
 There is one point in the plane that is even more special: the origin, or the **pole**. Here, the ambiguity reaches its peak. The distance from the origin to itself is zero, so for any representation of the pole, we must have $r=0$.
 
-But what about the angle $\theta$? If your instruction is "move a distance of 0," does it matter which direction you are facing? Not at all! You can face North, East, Southwest, or any direction imaginable; if you move zero units, you remain at the pole. Therefore, any coordinate pair of the form $(0, \theta)$ where $\theta$ is *any real number* represents the pole . The pole is a singularity of infinite addresses, a point where direction becomes meaningless.
+But what about the angle $\theta$? If your instruction is "move a distance of 0," does it matter which direction you are facing? Not at all! You can face North, East, Southwest, or any direction imaginable; if you move zero units, you remain at the pole. Therefore, any coordinate pair of the form $(0, \theta)$ where $\theta$ is *any real number* represents the pole [@problem_id:2144875]. The pole is a singularity of infinite addresses, a point where direction becomes meaningless.
 
 ### More Than Just a Location: Why Non-Uniqueness Matters
 
@@ -71,19 +71,19 @@ At this point, you might be thinking this is a curious mathematical game, but wo
 
 #### Graphs as Sets of Solutions
 
-Consider the elegant four-petaled [rose curve](@article_id:173580) given by the equation $r = \cos(2\theta)$. We can verify that the coordinate pair $(\frac{1}{2}, \frac{\pi}{6})$ satisfies this equation, since $\cos(2 \cdot \frac{\pi}{6}) = \cos(\frac{\pi}{3}) = \frac{1}{2}$. So this point is on the graph.
+Consider the elegant four-petaled [rose curve](@keyword=rose_curve|lang=en-US|style=Feynman) given by the equation $r = \cos(2\theta)$. We can verify that the coordinate pair $(\frac{1}{2}, \frac{\pi}{6})$ satisfies this equation, since $\cos(2 \cdot \frac{\pi}{6}) = \cos(\frac{\pi}{3}) = \frac{1}{2}$. So this point is on the graph.
 
 Now, let's find another representation for this same geometric point. Using our rule, we can try $(-r, \theta+\pi)$, which gives us $(-\frac{1}{2}, \frac{\pi}{6}+\pi) = (-\frac{1}{2}, \frac{7\pi}{6})$. This is the *exact same point* in space. But does it satisfy the equation? Let's check:
 $$
 r = -\frac{1}{2} \quad \text{while} \quad \cos(2\theta) = \cos(2 \cdot \frac{7\pi}{6}) = \cos(\frac{7\pi}{3}) = \cos(\frac{\pi}{3}) = \frac{1}{2}
 $$
-Here, $r \neq \cos(2\theta)$. So, even though $(-\frac{1}{2}, \frac{7\pi}{6})$ is the same point as $(\frac{1}{2}, \frac{\pi}{6})$, it is **not** a solution to the equation! .
+Here, $r \neq \cos(2\theta)$. So, even though $(-\frac{1}{2}, \frac{7\pi}{6})$ is the same point as $(\frac{1}{2}, \frac{\pi}{6})$, it is **not** a solution to the equation! [@problem_id:2144880].
 
-This is a profound lesson. A polar graph is not just a collection of geometric points. It is the set of *all coordinate pairs $(r, \theta)$ that satisfy the given equation*. When we trace a polar curve, the pen is following the path of the solutions, and sometimes it passes through the same geometric point multiple times using different coordinate descriptions. This subtlety is critical when you begin to use calculus to find areas or points of intersection in [polar coordinates](@article_id:158931).
+This is a profound lesson. A polar graph is not just a collection of geometric points. It is the set of *all coordinate pairs $(r, \theta)$ that satisfy the given equation*. When we trace a polar curve, the pen is following the path of the solutions, and sometimes it passes through the same geometric point multiple times using different coordinate descriptions. This subtlety is critical when you begin to use calculus to find areas or points of intersection in [polar coordinates](@keyword=polar_coordinates|lang=en-US|style=Feynman).
 
 #### When the Description Changes the Outcome
 
-The ambiguity can lead to even stranger behavior. Imagine a function defined not on a geometric point, but on the polar coordinate pair itself . Consider a hypothetical physical quantity $F$ that depends on both the radius and the angle in a specific way, for instance, $F(r, \theta) = r - 5 \lfloor \frac{\theta}{\pi} - \frac{1}{2} \rfloor$.
+The ambiguity can lead to even stranger behavior. Imagine a function defined not on a geometric point, but on the polar coordinate pair itself [@problem_id:2144847]. Consider a hypothetical physical quantity $F$ that depends on both the radius and the angle in a specific way, for instance, $F(r, \theta) = r - 5 \lfloor \frac{\theta}{\pi} - \frac{1}{2} \rfloor$.
 
 Let's evaluate this for the Cartesian point $(\sqrt{2}, -\sqrt{2})$. Here are three perfectly valid polar addresses for this single location:
 *   A: $(2, \frac{7\pi}{4})$

@@ -1,11 +1,11 @@
 ## 引言
 测量是人类理解世界的基本方式，从测量土地的长度到天体的体积。在数学中，我们将这个概念推广，试图为任何“集合”——无论是简单的区间还是复杂的点集——赋予一个精确的“大小”或“测度”。然而，当我们从直观的几何图形转向由无穷多个点构成的抽象集合时，传统的“长度”概念迅速失效，甚至会引发逻辑上的矛盾。为了系统地解决“哪些集合是可测的？”以及“如何测量它们？”这一根本问题，数学家们建立了一套严谨而深刻的理论。
 
-本文将带领读者深入这一理论的核心。我们将从构建测量体系的基本规则——σ-代数的公理——出发，探索如何从最简单的几何形状（[开区间](@article_id:317982)）逐步生成包含几乎所有常见集合的[波莱尔σ-代数](@article_id:307246)。随后，我们将见证Henri Lebesgue的远见卓识如何通过“完备化”思想，将这一体系扩展为功能更强大的勒贝格[σ-代数](@article_id:336143)，并了解这一飞跃带来的深远影响。最后，我们将探讨这一强大理论在分析、数论和概率论等多个领域的应用，并触及其自身的边界——[不可测集](@article_id:321794)的存在。
+本文将带领读者深入这一理论的核心。我们将从构建测量体系的基本规则——σ-代数的公理——出发，探索如何从最简单的几何形状（[开区间](@keyword=open_intervals|lang=zh-CN|style=Feynman)）逐步生成包含几乎所有常见集合的[波莱尔σ-代数](@keyword=borel_σ_algebra|lang=zh-CN|style=Feynman)。随后，我们将见证Henri Lebesgue的远见卓识如何通过“完备化”思想，将这一体系扩展为功能更强大的勒贝格[σ-代数](@keyword=algebra_of_events|lang=zh-CN|style=Feynman)，并了解这一飞跃带来的深远影响。最后，我们将探讨这一强大理论在分析、数论和概率论等多个领域的应用，并触及其自身的边界——[不可测集](@keyword=non_measurable_sets|lang=zh-CN|style=Feynman)的存在。
 
 ## 原理与机制
 
-在引言中，我们开启了一场探索之旅，试图为宇宙中千奇百怪的“形状”——也就是数学中的“集合”——找到一把普适的“尺子”。这把尺子不仅要能测量直线段的长度，还要能测量更复杂的对象，例如由无数个点构成的[分形](@article_id:301219)，或是物理模型中奇特的点集。现在，让我们深入这场探索的核心，看看构建这把“尺子”（也就是“测度”）的基石——σ-代数——究竟是什么，以及数学家们是如何一步步构建出我们今天所使用的强大工具的。
+在引言中，我们开启了一场探索之旅，试图为宇宙中千奇百怪的“形状”——也就是数学中的“集合”——找到一把普适的“尺子”。这把尺子不仅要能测量直线段的长度，还要能测量更复杂的对象，例如由无数个点构成的[分形](@keyword=fractal|lang=zh-CN|style=Feynman)，或是物理模型中奇特的点集。现在，让我们深入这场探索的核心，看看构建这把“尺子”（也就是“测度”）的基石——σ-代数——究竟是什么，以及数学家们是如何一步步构建出我们今天所使用的强大工具的。
 
 ### 游戏的规则：什么是“可测”？
 
@@ -13,55 +13,55 @@
 
 1.  **整个空间是可测的**：我们测量的“宇宙”（例如整条实数轴 $\mathbb{R}$）本身必须是可测的。这很自然，如果我们连整个操场都无法测量，又怎能测量操场上的一块石头呢？
 
-2.  **“里面”可测，“外面”也得可测**：如果一个集合 $A$ 是可测的，那么它在整个空间中的[补集](@article_id:306716)（也就是 $A$ 之外的所有部分）也必须是可测的。这保证了对称性；能量出一个区域，也就能量出这个区域之外的世界。
+2.  **“里面”可测，“外面”也得可测**：如果一个集合 $A$ 是可测的，那么它在整个空间中的[补集](@keyword=complement_of_a_set|lang=zh-CN|style=Feynman)（也就是 $A$ 之外的所有部分）也必须是可测的。这保证了对称性；能量出一个区域，也就能量出这个区域之外的世界。
 
 3.  **可数个碎片的拼接是可测的**：如果我们有一串（可数无穷个）可测的集合 $A_1, A_2, A_3, \dots$，那么将它们“粘”在一起形成的并集 $\bigcup_{n=1}^{\infty} A_n$ 也必须是可测的。这是最关键也最微妙的一条。它允许我们通过组合简单的碎片来构建和测量复杂的形状。
 
-这三条规则共同定义了一个 [σ-代数](@article_id:336143)。值得注意的是，这些规则非常严格。例如，如果你有两个 σ-代数，想当然地把它们的所有成员放在一起组成一个更大的集合，这个新集合很可能不再是一个 σ-代数，因为它可能不再满足第三条规则（闭合于可数并集）。这告诉我们，构建一个有效的“[可测集](@article_id:319577)合”家族，需要一种比随意合并更精巧的系统性方法。
+这三条规则共同定义了一个 [σ-代数](@keyword=algebra_of_events|lang=zh-CN|style=Feynman)。值得注意的是，这些规则非常严格。例如，如果你有两个 σ-代数，想当然地把它们的所有成员放在一起组成一个更大的集合，这个新集合很可能不再是一个 σ-代数，因为它可能不再满足第三条规则（闭合于可数并集）[@problem_id:1341205]。这告诉我们，构建一个有效的“[可测集](@keyword=measurable_sets|lang=zh-CN|style=Feynman)合”家族，需要一种比随意合并更精巧的系统性方法。
 
 ### 第一次尝试：从最熟悉的砖块开始
 
-那么，我们该从哪里着手，来寻找这样一个符合规则的“[可测集](@article_id:319577)合”大家族呢？最自然的想法是从我们最熟悉的几何对象开始：实数轴上的**开区间** $(a, b)$。所有开区间的集合看起来是个不错的起点。我们可以把更复杂的形状，比如任何**[开集](@article_id:303845)**（open set），看作是许多[开区间](@article_id:317982)的并集。
+那么，我们该从哪里着手，来寻找这样一个符合规则的“[可测集](@keyword=measurable_sets|lang=zh-CN|style=Feynman)合”大家族呢？最自然的想法是从我们最熟悉的几何对象开始：实数轴上的**开区间** $(a, b)$。所有开区间的集合看起来是个不错的起点。我们可以把更复杂的形状，比如任何**[开集](@keyword=open_set|lang=zh-CN|style=Feynman)**（open set），看作是许多[开区间](@keyword=open_intervals|lang=zh-CN|style=Feynman)的并集。
 
-这自然引出了一个问题：所有[开集](@article_id:303845)的集合，自身是否构成一个 [σ-代数](@article_id:336143)呢？答案是否定的。问题出在第二条规则上。一个[开集](@article_id:303845)的补集是一个[闭集](@article_id:296900)，而[闭集](@article_id:296900)不一定是[开集](@article_id:303845)。例如，[开区间](@article_id:317982) $(0, 1)$ 的补集是 $(-\infty, 0] \cup [1, \infty)$，它包含了端点 $0$ 和 $1$，因此不是一个[开集](@article_id:303845) 。我们的第一次尝试失败了。仅仅使用[开集](@article_id:303845)这个大家族，我们连“测量一个[开集](@article_id:303845)之外的部分”这个基本操作都无法保证。
+这自然引出了一个问题：所有[开集](@keyword=open_set|lang=zh-CN|style=Feynman)的集合，自身是否构成一个 [σ-代数](@keyword=algebra_of_events|lang=zh-CN|style=Feynman)呢？答案是否定的。问题出在第二条规则上。一个[开集](@keyword=open_set|lang=zh-CN|style=Feynman)的补集是一个[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)，而[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)不一定是[开集](@keyword=open_set|lang=zh-CN|style=Feynman)。例如，[开区间](@keyword=open_intervals|lang=zh-CN|style=Feynman) $(0, 1)$ 的补集是 $(-\infty, 0] \cup [1, \infty)$，它包含了端点 $0$ 和 $1$，因此不是一个[开集](@keyword=open_set|lang=zh-CN|style=Feynman) [@problem_id:1341217]。我们的第一次尝试失败了。仅仅使用[开集](@keyword=open_set|lang=zh-CN|style=Feynman)这个大家族，我们连“测量一个[开集](@keyword=open_set|lang=zh-CN|style=Feynman)之外的部分”这个基本操作都无法保证。
 
-然而，这个失败指明了方向。我们需要的，是一个不仅包含所有[开集](@article_id:303845)，还包含了通过三条公理反复运算所能产生的所有新集合的大家庭。这就像给了我们一堆砖块（[开集](@article_id:303845)），然后说：“用这些砖块，以及‘取[补集](@article_id:306716)’和‘可数拼接’这两种操作，去建造一座尽可能大的城堡吧。”
+然而，这个失败指明了方向。我们需要的，是一个不仅包含所有[开集](@keyword=open_set|lang=zh-CN|style=Feynman)，还包含了通过三条公理反复运算所能产生的所有新集合的大家庭。这就像给了我们一堆砖块（[开集](@keyword=open_set|lang=zh-CN|style=Feynman)），然后说：“用这些砖块，以及‘取[补集](@keyword=complement_of_a_set|lang=zh-CN|style=Feynman)’和‘可数拼接’这两种操作，去建造一座尽可能大的城堡吧。”
 
-这座城堡，就是大名鼎鼎的**波莱尔 [σ-代数](@article_id:336143)**（Borel σ-algebra），记作 $\mathcal{B}(\mathbb{R})$。它是包含所有[开集](@article_id:303845)的**最小**的 σ-代数。它包含了[开集](@article_id:303845)、[闭集](@article_id:296900)，以及通过对它们进行可数次求交、求并、求补运算得到的所有集合，例如一个[开集](@article_id:303845)和一个[闭集的交集](@article_id:296695)，或者无穷多个[闭集](@article_id:296900)的并集等等。
+这座城堡，就是大名鼎鼎的**波莱尔 [σ-代数](@keyword=algebra_of_events|lang=zh-CN|style=Feynman)**（Borel σ-algebra），记作 $\mathcal{B}(\mathbb{R})$。它是包含所有[开集](@keyword=open_set|lang=zh-CN|style=Feynman)的**最小**的 σ-代数。它包含了[开集](@keyword=open_set|lang=zh-CN|style=Feynman)、[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)，以及通过对它们进行可数次求交、求并、求补运算得到的所有集合，例如一个[开集](@keyword=open_set|lang=zh-CN|style=Feynman)和一个[闭集的交集](@keyword=intersection_of_closed_sets|lang=zh-CN|style=Feynman)，或者无穷多个[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)的并集等等。
 
-令人惊叹的是，这座看似无穷无尽、结构复杂的“城堡”，其根基可以追溯到一组非常简单的“砖块”。我们甚至不需要所有的开区间。仅仅使用那些**端点为有理数**的[开区间](@article_id:317982)——这是一个可数的集合——就足以生成整个波莱尔 σ-代数 。这揭示了数学中一种深刻的“由简生繁”的美感：从可数个简单的构件出发，通过几条简单的规则，我们构建出了一个包含连续统那么多 ($\mathfrak{c}$) 成员的复杂结构。
+令人惊叹的是，这座看似无穷无尽、结构复杂的“城堡”，其根基可以追溯到一组非常简单的“砖块”。我们甚至不需要所有的开区间。仅仅使用那些**端点为有理数**的[开区间](@keyword=open_intervals|lang=zh-CN|style=Feynman)——这是一个可数的集合——就足以生成整个波莱尔 σ-代数 [@problem_id:1341235]。这揭示了数学中一种深刻的“由简生繁”的美感：从可数个简单的构件出发，通过几条简单的规则，我们构建出了一个包含连续统那么多 ($\mathfrak{c}$) 成员的复杂结构。
 
 ### 勒贝格的远见：追求“完备”的测量体系
 
-[波莱尔集](@article_id:304935)非常强大，足以描述我们在微积分和基础物理中遇到的大多数集合。但伟大的法国数学家亨利·勒贝格（Henri Lebesgue）认为，一个真正完美的[测量理论](@article_id:314028)，应该更进一步。他的动机源于对当时[数学分析](@article_id:300111)中一些“病态”函数的深入研究，他需要一个更强大的工具。
+[波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)非常强大，足以描述我们在微积分和基础物理中遇到的大多数集合。但伟大的法国数学家亨利·勒贝格（Henri Lebesgue）认为，一个真正完美的[测量理论](@keyword=measurement_theory|lang=zh-CN|style=Feynman)，应该更进一步。他的动机源于对当时[数学分析](@keyword=mathematical_analysis|lang=zh-CN|style=Feynman)中一些“病态”函数的深入研究，他需要一个更强大的工具。
 
-勒贝格的核心思想围绕着“**测度为零**”的集合。直觉上，有些集合是如此“稀疏”或“微不足道”，以至于它们的“长度”或“面积”应该是零。比如，单个点、有限个点，甚至像所有有理数集合 $\mathbb{Q}$ 这样在实数轴上处处稠密但又是可数的集合，它们的[勒贝格测度](@article_id:300228)都是零。
+勒贝格的核心思想围绕着“**测度为零**”的集合。直觉上，有些集合是如此“稀疏”或“微不足道”，以至于它们的“长度”或“面积”应该是零。比如，单个点、有限个点，甚至像所有有理数集合 $\mathbb{Q}$ 这样在实数轴上处处稠密但又是可数的集合，它们的[勒贝格测度](@keyword=lebesgue_measure|lang=zh-CN|style=Feynman)都是零。
 
-现在，勒贝格提出了一个关键问题：如果一个集合 $N$ 的[测度为零](@article_id:298313)，那么它的任何一个子集 $A \subseteq N$ 的测度难道不也应该是零吗？这似乎是天经地义的。如果一袋灰尘的总重量为零，那么从中取出的一小撮灰尘，其重量也必定为零。
+现在，勒贝格提出了一个关键问题：如果一个集合 $N$ 的[测度为零](@keyword=measure_zero|lang=zh-CN|style=Feynman)，那么它的任何一个子集 $A \subseteq N$ 的测度难道不也应该是零吗？这似乎是天经地义的。如果一袋灰尘的总重量为零，那么从中取出的一小撮灰尘，其重量也必定为零。
 
-然而，波莱尔 σ-代数并不能完全保证这一点。存在一些测度为零的波莱尔集，其内部的某些子集本身却不属于[波莱尔集](@article_id:304935)！这在勒贝格看来是一个缺陷。他所追求的测量体系应该是“**完备**”（complete）的。
+然而，波莱尔 σ-代数并不能完全保证这一点。存在一些测度为零的波莱尔集，其内部的某些子集本身却不属于[波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)！这在勒贝格看来是一个缺陷。他所追求的测量体系应该是“**完备**”（complete）的。
 
-于是，勒贝格对波莱尔 σ-代数进行了扩充。他把所有测度为零的[波莱尔集](@article_id:304935)的**所有子集**都加入到“可测大家庭”中。通过这个“完备化”的过程，我们得到了一个更庞大的集合家族——**勒贝格 σ-代数**（Lebesgue σ-algebra），记作 $\mathcal{L}(\mathbb{R})$。其核心特征就是：任何测度为零的集合的子集，都是勒贝格可测的，并且其测度也为零 。
+于是，勒贝格对波莱尔 σ-代数进行了扩充。他把所有测度为零的[波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)的**所有子集**都加入到“可测大家庭”中。通过这个“完备化”的过程，我们得到了一个更庞大的集合家族——**勒贝格 σ-代数**（Lebesgue σ-algebra），记作 $\mathcal{L}(\mathbb{R})$。其核心特征就是：任何测度为零的集合的子集，都是勒贝格可测的，并且其测度也为零 [@problem_id:1341226]。
 
 ### 新宇宙的尺度与力量
 
-从波莱尔集到勒贝格集的这一步跨越，究竟有多大？答案是惊世骇俗的。[波莱尔集](@article_id:304935)的数量，虽然巨大，但与实数的数量是同一个量级，都是连续统基数 $\mathfrak{c}$。然而，[勒贝格可测集](@article_id:298002)的数量，则跃升到了 $2^{\mathfrak{c}}$，这比实数的数量要多得多 。这个数量上的爆炸式增长，其根源恰恰在于“完备性”。例如，经典的[康托集](@article_id:302344)（Cantor set）是一个[测度为零](@article_id:298313)的[波莱尔集](@article_id:304935)，但它本身却拥有和整条实数轴一样多的点（基数为 $\mathfrak{c}$）。它的所有子集（数量为 $2^{\mathfrak{c}}$）因此都成为了[勒贝格可测集](@article_id:298002)。
+从波莱尔集到勒贝格集的这一步跨越，究竟有多大？答案是惊世骇俗的。[波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)的数量，虽然巨大，但与实数的数量是同一个量级，都是连续统基数 $\mathfrak{c}$。然而，[勒贝格可测集](@keyword=lebesgue_measurable_sets|lang=zh-CN|style=Feynman)的数量，则跃升到了 $2^{\mathfrak{c}}$，这比实数的数量要多得多 [@problem_id:1341220]。这个数量上的爆炸式增长，其根源恰恰在于“完备性”。例如，经典的[康托集](@keyword=cantor_set|lang=zh-CN|style=Feynman)（Cantor set）是一个[测度为零](@keyword=measure_zero|lang=zh-CN|style=Feynman)的[波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)，但它本身却拥有和整条实数轴一样多的点（基数为 $\mathfrak{c}$）。它的所有子集（数量为 $2^{\mathfrak{c}}$）因此都成为了[勒贝格可测集](@keyword=lebesgue_measurable_sets|lang=zh-CN|style=Feynman)。
 
-在这个更广阔的勒贝格宇宙里，我们的“尺子”变得异常强大和灵活。[勒贝格可测集](@article_id:298002)在平移和缩放这两种最基本的几何变换下表现出完美的性质。如果一个集合 $E$ 是可测的，那么将它平移任意距离 $c$ 得到的集合 $E+c$，或者将它缩放任意非零倍数 $c$ 得到的集合 $cE$，都仍然是可测的  。这完全符合我们的物理直觉：一个物体的可测量性不应因其位置或大小的改变而改变。
+在这个更广阔的勒贝格宇宙里，我们的“尺子”变得异常强大和灵活。[勒贝格可测集](@keyword=lebesgue_measurable_sets|lang=zh-CN|style=Feynman)在平移和缩放这两种最基本的几何变换下表现出完美的性质。如果一个集合 $E$ 是可测的，那么将它平移任意距离 $c$ 得到的集合 $E+c$，或者将它缩放任意非零倍数 $c$ 得到的集合 $cE$，都仍然是可测的 [@problem_id:1341221] [@problem_id:1341179]。这完全符合我们的物理直觉：一个物体的可测量性不应因其位置或大小的改变而改变。
 
-不仅如此，[勒贝格可测集](@article_id:298002)虽然可以极其复杂，但它们并非无章可循。它们在某种意义上都是“近似”于我们熟悉的[开集](@article_id:303845)或[闭集](@article_id:296900)的。对于任何一个[勒贝格可测集](@article_id:298002) $E$，我们总能找到一个包含它的[开集](@article_id:303845) $O$，使得两者的[差集](@article_id:301347) $O \setminus E$ 的测度可以任意小 。这意味着任何[可测集](@article_id:319577)都可以被一个“稍大一点”的[开集](@article_id:303845)以任意精度包裹起来。这种优美的结构性质是勒贝格理论在现代分析、概率论和物理学中取得巨大成功的关键。无论是模拟[薄膜沉积](@article_id:320275)的生长区域 ，还是分析“胖[分形](@article_id:301219)”这类奇特的几何对象 ，勒贝格的理论都提供了坚实而优雅的框架。
+不仅如此，[勒贝格可测集](@keyword=lebesgue_measurable_sets|lang=zh-CN|style=Feynman)虽然可以极其复杂，但它们并非无章可循。它们在某种意义上都是“近似”于我们熟悉的[开集](@keyword=open_set|lang=zh-CN|style=Feynman)或[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)的。对于任何一个[勒贝格可测集](@keyword=lebesgue_measurable_sets|lang=zh-CN|style=Feynman) $E$，我们总能找到一个包含它的[开集](@keyword=open_set|lang=zh-CN|style=Feynman) $O$，使得两者的[差集](@keyword=set_difference|lang=zh-CN|style=Feynman) $O \setminus E$ 的测度可以任意小 [@problem_id:1341188]。这意味着任何[可测集](@keyword=measurable_sets|lang=zh-CN|style=Feynman)都可以被一个“稍大一点”的[开集](@keyword=open_set|lang=zh-CN|style=Feynman)以任意精度包裹起来。这种优美的结构性质是勒贝格理论在现代分析、概率论和物理学中取得巨大成功的关键。无论是模拟[薄膜沉积](@keyword=thin_film_deposition|lang=zh-CN|style=Feynman)的生长区域 [@problem_id:1341230]，还是分析“胖[分形](@keyword=fractal|lang=zh-CN|style=Feynman)”这类奇特的几何对象 [@problem_id:1341179]，勒贝格的理论都提供了坚实而优雅的框架。
 
-### 知识的边界：[不可测集](@article_id:321794)的存在
+### 知识的边界：[不可测集](@keyword=non_measurable_sets|lang=zh-CN|style=Feynman)的存在
 
-我们已经构建了一个如此庞大且功能强大的[勒贝格可测集](@article_id:298002)家族 $\mathcal{L}(\mathbb{R})$。它包含了所有我们能想到的“正常”集合，甚至许多极为“奇异”的集合。那么，我们的探索是否已经到达终点？$\mathcal{L}(\mathbb{R})$ 是否就是实数轴上所有子集的集合 $\mathcal{P}(\mathbb{R})$ 呢？换句话说，是否存在我们这把“终极尺子”也无法测量的集合？
+我们已经构建了一个如此庞大且功能强大的[勒贝格可测集](@keyword=lebesgue_measurable_sets|lang=zh-CN|style=Feynman)家族 $\mathcal{L}(\mathbb{R})$。它包含了所有我们能想到的“正常”集合，甚至许多极为“奇异”的集合。那么，我们的探索是否已经到达终点？$\mathcal{L}(\mathbb{R})$ 是否就是实数轴上所有子集的集合 $\mathcal{P}(\mathbb{R})$ 呢？换句话说，是否存在我们这把“终极尺子”也无法测量的集合？
 
-答案是整个故事最富戏剧性的转折：**是的，存在[不可测集](@article_id:321794)**。
+答案是整个故事最富戏剧性的转折：**是的，存在[不可测集](@keyword=non_measurable_sets|lang=zh-CN|style=Feynman)**。
 
-这一惊人的结论，源于一个精妙绝伦的思想实验，它利用了集合论中一条充满争议的公理——**[选择公理](@article_id:311065)**（Axiom of Choice）。这个构造通常被称为[维塔利集](@article_id:304587)（Vitali set）。其逻辑如下，让我们直观地感受一下 ：
+这一惊人的结论，源于一个精妙绝伦的思想实验，它利用了集合论中一条充满争议的公理——**[选择公理](@keyword=axiom_of_choice|lang=zh-CN|style=Feynman)**（Axiom of Choice）。这个构造通常被称为[维塔利集](@keyword=vitali_set|lang=zh-CN|style=Feynman)（Vitali set）。其逻辑如下，让我们直观地感受一下 [@problem_id:1341241]：
 
-1.  我们将区间 $[0, 1)$ 中的所有数字进行分组。如果两个数字的差是一个有理数，我们就把它们归为同一组。这样，整个区间被划分成了无数个互不相交的“[等价类](@article_id:316440)”。
+1.  我们将区间 $[0, 1)$ 中的所有数字进行分组。如果两个数字的差是一个有理数，我们就把它们归为同一组。这样，整个区间被划分成了无数个互不相交的“[等价类](@keyword=equivalence_classes|lang=zh-CN|style=Feynman)”。
 
-2.  接着，我们动用“[选择公理](@article_id:311065)”，从每一个小组中任意挑选一个代表。将所有这些代表放在一起，形成一个新的集合，我们称之为 $V$。
+2.  接着，我们动用“[选择公理](@keyword=axiom_of_choice|lang=zh-CN|style=Feynman)”，从每一个小组中任意挑选一个代表。将所有这些代表放在一起，形成一个新的集合，我们称之为 $V$。
 
 3.  现在，我们来试着“测量”这个集合 $V$。假设 $V$ 是勒贝格可测的，那么它的测度 $\lambda(V)$ 只能有两种可能：要么等于零，要么大于零。
 
@@ -69,8 +69,8 @@
 
     *   如果 $\lambda(V) > 0$：同样，我们将 $V$ 进行有理数平移。将这（可数）无穷多个测度为正的、互不相交的复制品拼接起来，得到的总测度将是无穷大。但另一方面，所有这些复制品都拥挤在一个有限的区间内（比如 $(-1, 2)$），其总测度不应该超过 3。这也产生了矛盾。
 
-唯一的出路，就是承认我们最初的假设是错误的。集合 $V$ 根本就**不能被赋予一个与平移不变性和[可数可加性](@article_id:302106)相容的测度**。它就是“不可测的”。
+唯一的出路，就是承认我们最初的假设是错误的。集合 $V$ 根本就**不能被赋予一个与平移不变性和[可数可加性](@keyword=countable_additivity|lang=zh-CN|style=Feynman)相容的测度**。它就是“不可测的”。
 
-这个结论并非宣告我们理论的失败，恰恰相反，它是一项关于无限、连续和测量本质的深刻发现。它为我们的知识划定了边界，告诉我们，虽然勒贝格的“尺子”已经极其强大，但宇宙的复杂性超越了它，存在着一些用任何满足基本物理直觉的尺子都无法测量的“幽灵”集合。这也从根本上解释了为何 σ-代数的第三条公理仅限于**可数**并集：如果我们允许对**不可数**个集合求并，那么任何集合都可以被看作是其所有单点集的（不可数）并集。由于每个单点都是可测的（[测度为零](@article_id:298313)），这将迫使所有集合都变得可测，从而引爆[维塔利集](@article_id:304587)所揭示的逻辑悖论 。
+这个结论并非宣告我们理论的失败，恰恰相反，它是一项关于无限、连续和测量本质的深刻发现。它为我们的知识划定了边界，告诉我们，虽然勒贝格的“尺子”已经极其强大，但宇宙的复杂性超越了它，存在着一些用任何满足基本物理直觉的尺子都无法测量的“幽灵”集合。这也从根本上解释了为何 σ-代数的第三条公理仅限于**可数**并集：如果我们允许对**不可数**个集合求并，那么任何集合都可以被看作是其所有单点集的（不可数）并集。由于每个单点都是可测的（[测度为零](@keyword=measure_zero|lang=zh-CN|style=Feynman)），这将迫使所有集合都变得可测，从而引爆[维塔利集](@keyword=vitali_set|lang=zh-CN|style=Feynman)所揭示的逻辑悖论 [@problem_id:1341221]。
 
-至此，我们完成了对“[可测性](@article_id:377952)”核心原理的探索。从定义游戏规则的 [σ-代数](@article_id:336143)，到不断升级、臻于“完备”的[勒贝格可测集](@article_id:298002)，再到最终触及理论边界的[不可测集](@article_id:321794)，我们见证了一场人类智力试图驯服无穷的壮丽冒险。
+至此，我们完成了对“[可测性](@keyword=measurability|lang=zh-CN|style=Feynman)”核心原理的探索。从定义游戏规则的 [σ-代数](@keyword=algebra_of_events|lang=zh-CN|style=Feynman)，到不断升级、臻于“完备”的[勒贝格可测集](@keyword=lebesgue_measurable_sets|lang=zh-CN|style=Feynman)，再到最终触及理论边界的[不可测集](@keyword=non_measurable_sets|lang=zh-CN|style=Feynman)，我们见证了一场人类智力试图驯服无穷的壮丽冒险。

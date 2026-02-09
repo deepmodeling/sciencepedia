@@ -1,11 +1,11 @@
 ## Introduction
-The ring of Gaussian integers, denoted Z[i], represents a natural and elegant extension of the familiar integers into the complex plane. By introducing the imaginary unit `i`, we unlock a richer algebraic world where concepts like primality and factorization take on new, fascinating dimensions. This extended number system is not just an abstract curiosity; it provides powerful tools to solve longstanding problems in classical number theory that are difficult to tackle using integers alone. The central question this article addresses is how arithmetic properties, such as division with remainder and [unique prime factorization](@entry_id:155480), generalize to this new domain and what consequences arise from this generalization.
+The ring of Gaussian integers, denoted Z[i], represents a natural and elegant extension of the familiar integers into the complex plane. By introducing the imaginary unit `i`, we unlock a richer algebraic world where concepts like primality and factorization take on new, fascinating dimensions. This extended number system is not just an abstract curiosity; it provides powerful tools to solve longstanding problems in classical number theory that are difficult to tackle using integers alone. The central question this article addresses is how arithmetic properties, such as division with remainder and unique prime factorization, generalize to this new domain and what consequences arise from this generalization.
 
-This article will guide you through the beautiful structure of the Gaussian integers across three comprehensive chapters. In "Principles and Mechanisms," you will learn the foundational algebraic properties that define Z[i] as a [unique factorization domain](@entry_id:155710), exploring the crucial role of the norm function and the Euclidean algorithm. Next, "Applications and Interdisciplinary Connections" will reveal the power of this structure by applying it to number theory, geometry, and [modern algebra](@entry_id:171265), demonstrating its role in proving Fermat's theorem on [sums of two squares](@entry_id:154791) and its connection to [elliptic curves](@entry_id:152409). Finally, "Hands-On Practices" will allow you to solidify your understanding by working through concrete problems involving division, factorization, and the Euclidean algorithm within Z[i].
+This article will guide you through the beautiful structure of the Gaussian integers across three comprehensive chapters. In "Principles and Mechanisms," you will learn the foundational algebraic properties that define Z[i] as a unique factorization domain, exploring the crucial role of the norm function and the Euclidean algorithm. Next, "Applications and Interdisciplinary Connections" will reveal the power of this structure by applying it to number theory, geometry, and modern algebra, demonstrating its role in proving Fermat's theorem on sums of two squares and its connection to elliptic curves. Finally, "Hands-On Practices" will allow you to solidify your understanding by working through concrete problems involving division, factorization, and the Euclidean algorithm within Z[i].
 
 ## Principles and Mechanisms
 
-Having introduced the Gaussian integers, we now delve into the fundamental principles and mechanisms that govern their arithmetic and algebraic structure. This exploration will reveal a world remarkably parallel to, yet richer than, the familiar integers, culminating in a profound understanding of [unique factorization](@entry_id:152313) in this extended numerical system.
+Having introduced the Gaussian integers, we now delve into the fundamental principles and mechanisms that govern their arithmetic and algebraic structure. This exploration will reveal a world remarkably parallel to, yet richer than, the familiar integers, culminating in a profound understanding of unique factorization in this extended numerical system.
 
 ### The Ring Structure of Gaussian Integers
 
@@ -13,7 +13,7 @@ The set of Gaussian integers, denoted $\mathbb{Z}[i]$, is defined as the set of 
 $$
 \mathbb{Z}[i] = \{a+bi \mid a, b \in \mathbb{Z}\}
 $$
-This set is not merely a collection of points in the complex plane; it possesses a rich algebraic structure. Under the [standard addition](@entry_id:194049) and multiplication of complex numbers, $\mathbb{Z}[i]$ forms an **[integral domain](@entry_id:147487)**, a [commutative ring](@entry_id:148075) with a multiplicative identity and no [zero divisors](@entry_id:145266). It is, more specifically, a **subring** of the field of complex numbers, $\mathbb{C}$.
+This set is not merely a collection of points in the complex plane; it possesses a rich algebraic structure. Under the standard addition and multiplication of complex numbers, $\mathbb{Z}[i]$ forms an **integral domain**, a commutative ring with a multiplicative identity and no zero divisors. It is, more specifically, a **subring** of the field of complex numbers, $\mathbb{C}$.
 
 To verify that a subset of a ring is a subring, one must confirm that it is non-empty and closed under both subtraction and multiplication. Let's consider two arbitrary Gaussian integers, $\alpha = a_1 + b_1i$ and $\beta = a_2 + b_2i$.
 
@@ -23,11 +23,11 @@ Their product is $\alpha\beta = (a_1 + b_1i)(a_2 + b_2i) = (a_1a_2 - b_1b_2) + (
 $$
 z_1 z_2 = (4)(-3) + (4)(2i) - (7i)(-3) - (7i)(2i) = -12 + 8i + 21i - 14i^2 = -12 + 29i + 14 = 2 + 29i
 $$
-As this example illustrates , since the integers are closed under addition, subtraction, and multiplication, the resulting real part ($a_1a_2 - b_1b_2$) and imaginary part ($a_1b_2 + a_2b_1$) are also integers. Therefore, $\alpha\beta \in \mathbb{Z}[i]$. This confirms that $\mathbb{Z}[i]$ is indeed a subring of $\mathbb{C}$.
+As this example illustrates [@problem_id:1838703], since the integers are closed under addition, subtraction, and multiplication, the resulting real part ($a_1a_2 - b_1b_2$) and imaginary part ($a_1b_2 + a_2b_1$) are also integers. Therefore, $\alpha\beta \in \mathbb{Z}[i]$. This confirms that $\mathbb{Z}[i]$ is indeed a subring of $\mathbb{C}$.
 
-Not all subsets of $\mathbb{Z}[i]$ defined by simple arithmetic conditions form subrings. Consider the set $S_D = \{a+bi \mid a,b \in \mathbb{Z}, \text{ and } a \text{ is even}\}$. The element $i = 0+1i$ belongs to $S_D$ since its real part, 0, is even. However, the product $i \cdot i = -1 = -1+0i$ does not belong to $S_D$, as its real part is odd. The failure of closure under multiplication means $S_D$ is not a subring .
+Not all subsets of $\mathbb{Z}[i]$ defined by simple arithmetic conditions form subrings. Consider the set $S_D = \{a+bi \mid a,b \in \mathbb{Z}, \text{ and } a \text{ is even}\}$. The element $i = 0+1i$ belongs to $S_D$ since its real part, 0, is even. However, the product $i \cdot i = -1 = -1+0i$ does not belong to $S_D$, as its real part is odd. The failure of closure under multiplication means $S_D$ is not a subring [@problem_id:1838739].
 
-Interestingly, certain conditions on $a$ and $b$ define special subrings known as **ideals**. An ideal is a subring that "absorbs" multiplication by any element from the parent ring. For example, consider the set $S_B = \{a+bi \mid a,b \in \mathbb{Z}, \text{ and } a^2+b^2 \text{ is a multiple of 3}\}$. An analysis of squares modulo 3 shows that $a^2+b^2 \equiv 0 \pmod 3$ if and only if both $a \equiv 0 \pmod 3$ and $b \equiv 0 \pmod 3$. This means $S_B$ is precisely the set of Gaussian integers of the form $3u+3vi = 3(u+vi)$, which is the [principal ideal](@entry_id:152760) generated by the number 3, denoted $\langle 3 \rangle$. This is indeed a subring of $\mathbb{Z}[i]$ .
+Interestingly, certain conditions on $a$ and $b$ define special subrings known as **ideals**. An ideal is a subring that "absorbs" multiplication by any element from the parent ring. For example, consider the set $S_B = \{a+bi \mid a,b \in \mathbb{Z}, \text{ and } a^2+b^2 \text{ is a multiple of 3}\}$. An analysis of squares modulo 3 shows that $a^2+b^2 \equiv 0 \pmod 3$ if and only if both $a \equiv 0 \pmod 3$ and $b \equiv 0 \pmod 3$. This means $S_B$ is precisely the set of Gaussian integers of the form $3u+3vi = 3(u+vi)$, which is the principal ideal generated by the number 3, denoted $\langle 3 \rangle$. This is indeed a subring of $\mathbb{Z}[i]$ [@problem_id:1838739].
 
 ### The Norm: A Bridge Between Algebra and Geometry
 
@@ -35,7 +35,7 @@ A crucial tool for understanding the structure of $\mathbb{Z}[i]$ is the **norm 
 $$
 N(\gamma) = N(a+bi) = a^2 + b^2
 $$
-Geometrically, the norm is the square of the Euclidean distance from the origin to the point $(a,b)$ in the complex plane. Algebraically, it can be defined using the [complex conjugate](@entry_id:174888), $\overline{\gamma} = a-bi$, as $N(\gamma) = \gamma \overline{\gamma}$.
+Geometrically, the norm is the square of the Euclidean distance from the origin to the point $(a,b)$ in the complex plane. Algebraically, it can be defined using the complex conjugate, $\overline{\gamma} = a-bi$, as $N(\gamma) = \gamma \overline{\gamma}$.
 
 The most important property of the norm is its **multiplicativity**. For any two Gaussian integers $\alpha$ and $\beta$, we have:
 $$
@@ -43,7 +43,7 @@ N(\alpha\beta) = N(\alpha)N(\beta)
 $$
 This can be proven elegantly: $N(\alpha\beta) = (\alpha\beta)\overline{(\alpha\beta)} = (\alpha\beta)(\overline{\alpha}\overline{\beta}) = (\alpha\overline{\alpha})(\beta\overline{\beta}) = N(\alpha)N(\beta)$.
 
-Let's verify this with a concrete example. Consider $\alpha = 4 - 3i$ and $\beta = 2 + 5i$ . First, we compute their product:
+Let's verify this with a concrete example. Consider $\alpha = 4 - 3i$ and $\beta = 2 + 5i$ [@problem_id:1838701]. First, we compute their product:
 $$
 \alpha\beta = (4-3i)(2+5i) = 8 + 20i - 6i - 15i^2 = (8+15) + (20-6)i = 23 + 14i
 $$
@@ -56,13 +56,13 @@ $$
 $$
 N(\beta) = 2^2 + 5^2 = 4 + 25 = 29
 $$
-The product of the norms is $N(\alpha)N(\beta) = 25 \times 29 = 725$. As expected, the two results are identical. This multiplicative property is indispensable for studying [divisibility](@entry_id:190902), units, and primes in $\mathbb{Z}[i]$.
+The product of the norms is $N(\alpha)N(\beta) = 25 \times 29 = 725$. As expected, the two results are identical. This multiplicative property is indispensable for studying divisibility, units, and primes in $\mathbb{Z}[i]$.
 
 ### Multiplicative Structure: Units, Associates, and Divisibility
 
-The norm allows us to analyze the multiplicative structure of $\mathbb{Z}[i]$. A **unit** is an element $\alpha \in \mathbb{Z}[i]$ that has a [multiplicative inverse](@entry_id:137949), $\beta$, which is also in $\mathbb{Z}[i]$, such that $\alpha\beta = 1$.
+The norm allows us to analyze the multiplicative structure of $\mathbb{Z}[i]$. A **unit** is an element $\alpha \in \mathbb{Z}[i]$ that has a multiplicative inverse, $\beta$, which is also in $\mathbb{Z}[i]$, such that $\alpha\beta = 1$.
 
-To find the units, we apply the norm to the equation $\alpha\beta=1$. This gives $N(\alpha\beta) = N(\alpha)N(\beta) = N(1) = 1$. Since $N(\alpha)$ and $N(\beta)$ must be non-negative integers, the only possibility is $N(\alpha)=1$ and $N(\beta)=1$. For an element $\alpha = a+bi$, the condition $N(\alpha)=1$ translates to $a^2+b^2=1$. The only integer solutions $(a,b)$ to this equation are $(\pm 1, 0)$ and $(0, \pm 1)$. These correspond to the four Gaussian integers: $1, -1, i, -i$. Each is its own inverse or has an inverse within the set: $1 \cdot 1 = 1$, $(-1)(-1) = 1$, and $i(-i)=1$. Thus, there are exactly four units in $\mathbb{Z}[i]$ .
+To find the units, we apply the norm to the equation $\alpha\beta=1$. This gives $N(\alpha\beta) = N(\alpha)N(\beta) = N(1) = 1$. Since $N(\alpha)$ and $N(\beta)$ must be non-negative integers, the only possibility is $N(\alpha)=1$ and $N(\beta)=1$. For an element $\alpha = a+bi$, the condition $N(\alpha)=1$ translates to $a^2+b^2=1$. The only integer solutions $(a,b)$ to this equation are $(\pm 1, 0)$ and $(0, \pm 1)$. These correspond to the four Gaussian integers: $1, -1, i, -i$. Each is its own inverse or has an inverse within the set: $1 \cdot 1 = 1$, $(-1)(-1) = 1$, and $i(-i)=1$. Thus, there are exactly four units in $\mathbb{Z}[i]$ [@problem_id:1838708].
 
 The existence of multiple units leads to the concept of **associates**. Two Gaussian integers $\alpha$ and $\beta$ are associates if $\alpha = u\beta$ for some unit $u \in \{1, -1, i, -i\}$. Geometrically, the associates of a Gaussian integer $\beta$ are the points obtained by rotating $\beta$ about the origin by $0^\circ, 90^\circ, 180^\circ,$ and $270^\circ$. For example, the associates of $5+2i$ are:
 *   $1 \cdot (5+2i) = 5+2i$
@@ -70,7 +70,7 @@ The existence of multiple units leads to the concept of **associates**. Two Gaus
 *   $i \cdot (5+2i) = 5i + 2i^2 = -2+5i$
 *   $-i \cdot (5+2i) = -5i - 2i^2 = 2-5i$
 
-Therefore, $5+2i$ and $-2+5i$ are associates . When discussing factorization, we often consider associate elements to be equivalent.
+Therefore, $5+2i$ and $-2+5i$ are associates [@problem_id:1838720]. When discussing factorization, we often consider associate elements to be equivalent.
 
 ### The Euclidean Division Property
 
@@ -80,7 +80,7 @@ Specifically, for any two Gaussian integers $\alpha$ and $\beta$ with $\beta \ne
 $$
 \alpha = q\beta + r, \quad \text{with} \quad N(r)  N(\beta)
 $$
-A practical method to find a suitable quotient $q$ is to compute the complex number $\frac{\alpha}{\beta} = x+yi$ and then choose $q$ to be the Gaussian integer $m+ni$ where $m$ and $n$ are the integers closest to $x$ and $y$, respectively. This $q$ is often called the "nearest Gaussian integer" to the quotient. For example, to divide $z_1=89$ by $z_2=34+i$ , we compute:
+A practical method to find a suitable quotient $q$ is to compute the complex number $\frac{\alpha}{\beta} = x+yi$ and then choose $q$ to be the Gaussian integer $m+ni$ where $m$ and $n$ are the integers closest to $x$ and $y$, respectively. This $q$ is often called the "nearest Gaussian integer" to the quotient. For example, to divide $z_1=89$ by $z_2=34+i$ [@problem_id:1838745], we compute:
 $$
 \frac{z_1}{z_2} = \frac{89}{34+i} = \frac{89(34-i)}{34^2+1^2} = \frac{3026-89i}{1157} \approx 2.615 - 0.077i
 $$
@@ -90,7 +90,7 @@ r_1 = z_1 - q z_2 = 89 - 3(34+i) = 89 - 102 - 3i = -13-3i
 $$
 We must verify that $N(r_1)  N(z_2)$. We have $N(r_1) = (-13)^2 + (-3)^2 = 169+9=178$, while $N(z_2) = 34^2+1^2=1157$. Since $178  1157$, the condition is satisfied.
 
-This division property allows us to use the **Euclidean algorithm** to find a **greatest common divisor (GCD)** of any two Gaussian integers, analogous to its use in $\mathbb{Z}$. The GCD is the last non-zero remainder in the sequence of divisions. For instance, to find the GCD of $\alpha=10+11i$ and $\beta=8+i$ :
+This division property allows us to use the **Euclidean algorithm** to find a **greatest common divisor (GCD)** of any two Gaussian integers, analogous to its use in $\mathbb{Z}$. The GCD is the last non-zero remainder in the sequence of divisions. For instance, to find the GCD of $\alpha=10+11i$ and $\beta=8+i$ [@problem_id:1838728]:
 1.  Divide $\alpha$ by $\beta$: $\frac{10+11i}{8+i} = \frac{91+78i}{65} \approx 1.4 + 1.2i$. The nearest Gaussian integer is $q_1=1+i$. The remainder is $r_1 = (10+11i) - (1+i)(8+i) = (10+11i) - (7+9i) = 3+2i$.
 2.  Divide $\beta$ by $r_1$: $\frac{8+i}{3+2i} = \frac{26-13i}{13} = 2-i$. The remainder is $r_2=0$.
 
@@ -98,23 +98,23 @@ Since the remainder is now zero, the last non-zero remainder, $r_1=3+2i$, is a G
 
 ### Prime Factorization in the Gaussian Integers
 
-A direct and powerful consequence of being a Euclidean domain is that $\mathbb{Z}[i]$ is also a **[unique factorization domain](@entry_id:155710) (UFD)**. This means that every non-zero, non-unit Gaussian integer can be written as a product of **Gaussian primes**, and this factorization is unique up to the order of the primes and their replacement by associates.
+A direct and powerful consequence of being a Euclidean domain is that $\mathbb{Z}[i]$ is also a **unique factorization domain (UFD)**. This means that every non-zero, non-unit Gaussian integer can be written as a product of **Gaussian primes**, and this factorization is unique up to the order of the primes and their replacement by associates.
 
-A **Gaussian prime** $\pi$ is a non-unit element whose only divisors in $\mathbb{Z}[i]$ are units and associates of $\pi$. A useful test emerges from the norm: if $N(\pi)$ is a prime number in $\mathbb{Z}$, then $\pi$ must be a prime in $\mathbb{Z}[i]$. For example, $N(1+i) = 1^2+1^2=2$. Since 2 is a prime in $\mathbb{Z}$, $1+i$ must be a prime in $\mathbb{Z}[i]$ .
+A **Gaussian prime** $\pi$ is a non-unit element whose only divisors in $\mathbb{Z}[i]$ are units and associates of $\pi$. A useful test emerges from the norm: if $N(\pi)$ is a prime number in $\mathbb{Z}$, then $\pi$ must be a prime in $\mathbb{Z}[i]$. For example, $N(1+i) = 1^2+1^2=2$. Since 2 is a prime in $\mathbb{Z}$, $1+i$ must be a prime in $\mathbb{Z}[i]$ [@problem_id:1838710].
 
 The behavior of the ordinary primes from $\mathbb{Z}$ (called **rational primes**) when considered within $\mathbb{Z}[i]$ is the key to understanding the landscape of Gaussian primes. There are three distinct cases:
 
-1.  **The prime 2 (Ramification):** The rational prime 2 is no longer prime in $\mathbb{Z}[i]$. It factors as $2 = (1+i)(1-i)$. Since $1-i = -i(1+i)$, the two factors are associates. So, up to units, $2$ is the square of the Gaussian prime $1+i$. We say that 2 *ramifies*. The primality of $1+i$ is also reflected in the structure of the [quotient ring](@entry_id:155460) $\mathbb{Z}[i]/\langle 1+i \rangle$, which is a field with two elements, isomorphic to $\mathbb{Z}/2\mathbb{Z}$ .
+1.  **The prime 2 (Ramification):** The rational prime 2 is no longer prime in $\mathbb{Z}[i]$. It factors as $2 = (1+i)(1-i)$. Since $1-i = -i(1+i)$, the two factors are associates. So, up to units, $2$ is the square of the Gaussian prime $1+i$. We say that 2 *ramifies*. The primality of $1+i$ is also reflected in the structure of the quotient ring $\mathbb{Z}[i]/\langle 1+i \rangle$, which is a field with two elements, isomorphic to $\mathbb{Z}/2\mathbb{Z}$ [@problem_id:1838710].
 
-2.  **Primes $p \equiv 1 \pmod 4$ (Splitting):** A rational prime $p$ can be written as the [sum of two squares](@entry_id:634766) if and only if $p=2$ or $p \equiv 1 \pmod 4$ (Fermat's Theorem). When $p \equiv 1 \pmod 4$, we can write $p=a^2+b^2$ for integers $a, b$. This gives a factorization in $\mathbb{Z}[i]$:
+2.  **Primes $p \equiv 1 \pmod 4$ (Splitting):** A rational prime $p$ can be written as the sum of two squares if and only if $p=2$ or $p \equiv 1 \pmod 4$ (Fermat's Theorem). When $p \equiv 1 \pmod 4$, we can write $p=a^2+b^2$ for integers $a, b$. This gives a factorization in $\mathbb{Z}[i]$:
     $$
     p = a^2 - (bi)^2 = (a+bi)(a-bi)
     $$
     The factors $a+bi$ and $a-bi$ are Gaussian primes. Since their norms are both $p$, they are prime. They are also not associates. In this case, we say the prime $p$ *splits*. For example, $5 = 1^2+2^2 = (1+2i)(1-2i)$ and $13 = 2^2+3^2 = (2+3i)(2-3i)$.
 
-3.  **Primes $p \equiv 3 \pmod 4$ (Inertia):** A rational prime $p$ where $p \equiv 3 \pmod 4$ *cannot* be written as the [sum of two squares](@entry_id:634766). Such a prime remains a prime in $\mathbb{Z}[i]$. We say it is *inert*. To see this, suppose $p$ factors as $p=\alpha\beta$ where $\alpha, \beta$ are not units. Then $N(p) = p^2 = N(\alpha)N(\beta)$. Since $\alpha$ and $\beta$ are not units, their norms are greater than 1, so we must have $N(\alpha)=N(\beta)=p$. But if $\alpha=a+bi$, then $N(\alpha)=a^2+b^2=p$, which is impossible for $p \equiv 3 \pmod 4$. Thus, no such factorization exists.
+3.  **Primes $p \equiv 3 \pmod 4$ (Inertia):** A rational prime $p$ where $p \equiv 3 \pmod 4$ *cannot* be written as the sum of two squares. Such a prime remains a prime in $\mathbb{Z}[i]$. We say it is *inert*. To see this, suppose $p$ factors as $p=\alpha\beta$ where $\alpha, \beta$ are not units. Then $N(p) = p^2 = N(\alpha)N(\beta)$. Since $\alpha$ and $\beta$ are not units, their norms are greater than 1, so we must have $N(\alpha)=N(\beta)=p$. But if $\alpha=a+bi$, then $N(\alpha)=a^2+b^2=p$, which is impossible for $p \equiv 3 \pmod 4$. Thus, no such factorization exists.
 
-To find the [prime factorization](@entry_id:152058) of a number in $\mathbb{Z}[i]$, we first factor it in $\mathbb{Z}$ and then apply these rules to each rational prime factor. For example, to find the distinct prime divisors of $390$ in $\mathbb{Z}[i]$ :
+To find the prime factorization of a number in $\mathbb{Z}[i]$, we first factor it in $\mathbb{Z}$ and then apply these rules to each rational prime factor. For example, to find the distinct prime divisors of $390$ in $\mathbb{Z}[i]$ [@problem_id:1838718]:
 $$
 390 = 2 \cdot 3 \cdot 5 \cdot 13
 $$
@@ -129,13 +129,13 @@ The set of distinct Gaussian prime factors of 390 (represented by their first-qu
 
 The algebraic properties of $\mathbb{Z}[i]$ are beautifully reflected in its geometric representation as a square lattice in the complex plane. This connection can be made more profound by viewing ideals geometrically. Any non-zero ideal $I \subseteq \mathbb{Z}[i]$ forms a sublattice of the main $\mathbb{Z}[i]$ lattice.
 
-We established that $\mathbb{Z}[i]$ is a Euclidean domain, which implies it is a **[principal ideal domain](@entry_id:152359) (PID)**—that is, every ideal $I$ can be generated by a single element, $I = \langle \gamma \rangle$. While the Euclidean algorithm provides a [constructive proof](@entry_id:157587) of this fact, a remarkably elegant, non-constructive argument comes from the [geometry of numbers](@entry_id:192990).
+We established that $\mathbb{Z}[i]$ is a Euclidean domain, which implies it is a **principal ideal domain (PID)**—that is, every ideal $I$ can be generated by a single element, $I = \langle \gamma \rangle$. While the Euclidean algorithm provides a constructive proof of this fact, a remarkably elegant, non-constructive argument comes from the geometry of numbers.
 
-Let $I$ be any non-zero ideal in $\mathbb{Z}[i]$. As a lattice, its [fundamental domain](@entry_id:201756) has a well-defined area, $A(I)$. A consequence of Minkowski's Convex Body Theorem states that this ideal must contain a non-zero element $\alpha$ whose norm is bounded by its area: $N(\alpha) \le \frac{4}{\pi} A(I)$.
+Let $I$ be any non-zero ideal in $\mathbb{Z}[i]$. As a lattice, its fundamental domain has a well-defined area, $A(I)$. A consequence of Minkowski's Convex Body Theorem states that this ideal must contain a non-zero element $\alpha$ whose norm is bounded by its area: $N(\alpha) \le \frac{4}{\pi} A(I)$.
 
-Now, let's select an element $\beta \in I$ that has the minimum possible non-zero norm. Consider the [principal ideal](@entry_id:152760) $J = \langle \beta \rangle$. Since $\beta \in I$, it follows that every multiple of $\beta$ is also in $I$, so $J \subseteq I$. The relationship between the areas of these ideal lattices is given by $A(I) = A(J) / [I:J]$, where $[I:J]$ is the index of the subgroup $J$ in $I$, which must be a positive integer. For a [principal ideal](@entry_id:152760) like $J$, its area is simply the norm of its generator, $A(J) = N(\beta)$.
+Now, let's select an element $\beta \in I$ that has the minimum possible non-zero norm. Consider the principal ideal $J = \langle \beta \rangle$. Since $\beta \in I$, it follows that every multiple of $\beta$ is also in $I$, so $J \subseteq I$. The relationship between the areas of these ideal lattices is given by $A(I) = A(J) / [I:J]$, where $[I:J]$ is the index of the subgroup $J$ in $I$, which must be a positive integer. For a principal ideal like $J$, its area is simply the norm of its generator, $A(J) = N(\beta)$.
 
-Combining these facts gives us a powerful chain of inequalities :
+Combining these facts gives us a powerful chain of inequalities [@problem_id:1838750]:
 $$
 N(\beta) \le N(\alpha) \le \frac{4}{\pi} A(I) = \frac{4}{\pi} \frac{A(J)}{[I:J]} = \frac{4}{\pi} \frac{N(\beta)}{[I:J]}
 $$

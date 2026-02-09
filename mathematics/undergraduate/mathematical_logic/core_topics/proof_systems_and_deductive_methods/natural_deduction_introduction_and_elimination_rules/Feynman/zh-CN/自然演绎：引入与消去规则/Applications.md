@@ -1,8 +1,8 @@
 ## 应用和跨学科联系
 
-现在，我们已经熟悉了[自然演绎](@article_id:311676)的引入和消去规则，你可能会觉得它们不过是一套用于在纸上移动符号的古板游戏。然而，这远非事实。这些规则并非随意创造，它们是一扇窗，透过它我们可以窥见逻辑、数学乃至计算本身最深刻的结构。就像物理定律并非人类的发明，而是对宇宙内在秩序的描述一样，逻辑规则也揭示了理性思维的内在结构。在这一章，我们将踏上一段旅程，探索这些规则如何与其他思想领域产生惊人的共鸣，以及它们在理论和实践中激起的深远涟含。
+现在，我们已经熟悉了[自然演绎](@keyword=natural_deduction|lang=zh-CN|style=Feynman)的引入和消去规则，你可能会觉得它们不过是一套用于在纸上移动符号的古板游戏。然而，这远非事实。这些规则并非随意创造，它们是一扇窗，透过它我们可以窥见逻辑、数学乃至计算本身最深刻的结构。就像物理定律并非人类的发明，而是对宇宙内在秩序的描述一样，逻辑规则也揭示了理性思维的内在结构。在这一章，我们将踏上一段旅程，探索这些规则如何与其他思想领域产生惊人的共鸣，以及它们在理论和实践中激起的深远涟含。
 
-### 规则的灵魂：[构造性证明](@article_id:317992)的意义
+### 规则的灵魂：[构造性证明](@keyword=constructive_proof|lang=zh-CN|style=Feynman)的意义
 
 我们首先要问一个最基本的问题：为什么引入和消去规则是现在这个样子？例如，为什么合取（“与”，$\land$）的引入需要两个前提，而消去规则又允许我们取回任意一个部分？为什么析取（“或”，$\lor$）的引入只需要一个前提，而它的消去规则却如此复杂，需要进行分情况讨论？
 
@@ -16,19 +16,19 @@
 
 就连 $\top$（真）和 $\bot$（假）也有它们的构造性意义。$\top$ 有一个不证自明的、平凡的证据。而 $\bot$ 则被定义为没有任何证据的命题。正因为 $\bot$ 不可能被证明，所以如果我们（在某个假设下）居然推导出了 $\bot$，那就说明这个假设是荒谬的。这引出了“从矛盾中可以推出一切”（Ex Falso Quodlibet）的原则，因为对一个不可能的证据进行“情况讨论”是空洞无物的，任何结论都可以随之而来。
 
-这种将证明视为具体构造的思想，是[直觉主义逻辑](@article_id:312488)和[构造性数学](@article_id:321428)的基石，它不仅为我们的规则赋予了深刻的含义，也为连接[逻辑与计算](@article_id:334429)机科学铺平了道路 ()。
+这种将证明视为具体构造的思想，是[直觉主义逻辑](@keyword=constructive_logic|lang=zh-CN|style=Feynman)和[构造性数学](@keyword=constructive_mathematics|lang=zh-CN|style=Feynman)的基石，它不仅为我们的规则赋予了深刻的含义，也为连接[逻辑与计算](@keyword=logic_and_computation|lang=zh-CN|style=Feynman)机科学铺平了道路 ([@problem_id:3045312])。
 
 ### 规则的和谐之美：逻辑系统的优良设计
 
 一旦我们将规则视为对证据的“打包”和“拆包”操作，一个自然的问题就出现了：如何确保这些操作是匹配的？我们不希望消去规则比引入规则“更强”，从中提取出本不存在的信息；也不希望它“更弱”，以至于无法完全利用引入时所提供的信息。
 
-这种完美的平衡被称为**和谐 (Harmony)**，它是**[证明论](@article_id:311528)语义学 (Proof-Theoretic Semantics)** 的核心概念 ()。这个理论主张，[逻辑联结词](@article_id:306815)的意义完全由其[推理规则](@article_id:336844)定义，特别是引入规则。消去规则必须与引入规则和谐共存。
+这种完美的平衡被称为**和谐 (Harmony)**，它是**[证明论](@keyword=proof_theory|lang=zh-CN|style=Feynman)语义学 (Proof-Theoretic Semantics)** 的核心概念 ([@problem_id:2979835])。这个理论主张，[逻辑联结词](@keyword=logical_connectives|lang=zh-CN|style=Feynman)的意义完全由其[推理规则](@keyword=rules_of_inference|lang=zh-CN|style=Feynman)定义，特别是引入规则。消去规则必须与引入规则和谐共存。
 
 和谐原则有两方面的技术要求：
 
 1.  **局部可靠性 (Local Soundness)**：这确保了消去规则不会“过强”。任何一个“引入-然后-立即消去”的证明步骤都是一个可以被消除的“弯路 (detour)”。例如，如果我们先证明了 $\varphi$ 和 $\psi$，用 $\land$-引入得到 $\varphi \land \psi$，然后立刻用 $\land$-消去取回 $\varphi$，这整个过程是多余的。我们本来就已经有 $\varphi$ 的证明了。一个和谐的系统必须允许我们将这种弯路“拉直”，直接使用原始的证明。
 
-2.  **局部[完备性](@article_id:304263) (Local Completeness)**：这确保了消去规则不会“过弱”。消去规则必须强大到足以“分解”一个公式，并从中提取出所有用于重建它的原始信息。例如，对于任意一个 $\varphi \land \psi$ 的证明，我们应该能用消去规则分别得到 $\varphi$ 和 $\psi$ 的证明，然后再用这些证明通过引入规则重新构造出 $\varphi \land \psi$。
+2.  **局部[完备性](@keyword=completeness|lang=zh-CN|style=Feynman) (Local Completeness)**：这确保了消去规则不会“过弱”。消去规则必须强大到足以“分解”一个公式，并从中提取出所有用于重建它的原始信息。例如，对于任意一个 $\varphi \land \psi$ 的证明，我们应该能用消去规则分别得到 $\varphi$ 和 $\psi$ 的证明，然后再用这些证明通过引入规则重新构造出 $\varphi \land \psi$。
 
 和谐不仅是一个美学上的要求，它保证了逻辑系统是良好和一致的。它就像是逻辑系统设计中的“守恒定律”，确保了意义在推理过程中不会凭空产生或消失。
 
@@ -36,62 +36,62 @@
 
 拥有了一套和谐的规则后，我们可以探索改变规则集会带来什么后果。这就像在物理学中改变一个基本常数，我们可能会进入一个全新的“宇宙”。逻辑也是如此，不同的规则集定义了不同的逻辑世界。
 
-最著名的例子莫过于**经典逻辑**与**直觉主义（或构造性）逻辑**之间的分野。它们的区别在于如何处理否定和矛盾。[直觉主义逻辑](@article_id:312488)严格遵循[BHK解释](@article_id:311514)，而经典逻辑则加入了一条强大的规则，通常是**[排中律](@article_id:639382) (Law of the Excluded Middle, LEM)**，即 $\varphi \lor \neg \varphi$ 作为一个公理，或者是等价的**[反证法](@article_id:340295) (Reductio ad Absurdum, RAA)** 或**双重否定消去**（从 $\neg \neg \varphi$ 推出 $\varphi$）。
+最著名的例子莫过于**经典逻辑**与**直觉主义（或构造性）逻辑**之间的分野。它们的区别在于如何处理否定和矛盾。[直觉主义逻辑](@keyword=constructive_logic|lang=zh-CN|style=Feynman)严格遵循[BHK解释](@keyword=bhk_interpretation|lang=zh-CN|style=Feynman)，而经典逻辑则加入了一条强大的规则，通常是**[排中律](@keyword=law_of_the_excluded_middle|lang=zh-CN|style=Feynman) (Law of the Excluded Middle, LEM)**，即 $\varphi \lor \neg \varphi$ 作为一个公理，或者是等价的**[反证法](@keyword=reductio_ad_absurdum|lang=zh-CN|style=Feynman) (Reductio ad Absurdum, RAA)** 或**双重否定消去**（从 $\neg \neg \varphi$ 推出 $\varphi$）。
 
-在我们的[自然演绎](@article_id:311676)系统中，一旦允许使用经典的RAA规则，我们就可以构造出[排中律](@article_id:639382) $\varphi \lor \neg \varphi$ 的证明 ()。这个看似无害的添加，却对逻辑世界产生了深远的影响。在经典世界里，任何命题要么为真，要么为假。但在构造性世界里，要断言 $\varphi \lor \neg \varphi$，你必须给出一个 $\varphi$ 的证明，或者给出一个 $\varphi$ 会导致矛盾的证明。对于某些悬而未决的数学猜想（如[哥德巴赫猜想](@article_id:366453)），我们两者都还没有，因此构造主义者会说我们目前无法断言[排中律](@article_id:639382)对它成立。
+在我们的[自然演绎](@keyword=natural_deduction|lang=zh-CN|style=Feynman)系统中，一旦允许使用经典的RAA规则，我们就可以构造出[排中律](@keyword=law_of_the_excluded_middle|lang=zh-CN|style=Feynman) $\varphi \lor \neg \varphi$ 的证明 ([@problem_id:2983049])。这个看似无害的添加，却对逻辑世界产生了深远的影响。在经典世界里，任何命题要么为真，要么为假。但在构造性世界里，要断言 $\varphi \lor \neg \varphi$，你必须给出一个 $\varphi$ 的证明，或者给出一个 $\varphi$ 会导致矛盾的证明。对于某些悬而未决的数学猜想（如[哥德巴赫猜想](@keyword=goldbach_conjecture|lang=zh-CN|style=Feynman)），我们两者都还没有，因此构造主义者会说我们目前无法断言[排中律](@keyword=law_of_the_excluded_middle|lang=zh-CN|style=Feynman)对它成立。
 
-这种差异也体现在一些我们习以为常的逻辑定律上。例如，德摩根定律在[经典逻辑](@article_id:328618)中普遍成立，但在[直觉主义逻辑](@article_id:312488)中，只有部分成立 ()。
+这种差异也体现在一些我们习以为常的逻辑定律上。例如，德摩根定律在[经典逻辑](@keyword=classical_logic|lang=zh-CN|style=Feynman)中普遍成立，但在[直觉主义逻辑](@keyword=constructive_logic|lang=zh-CN|style=Feynman)中，只有部分成立 ([@problem_id:3039989])。
 -   $\neg(P \lor Q) \leftrightarrow \neg P \land \neg Q$ 在两个世界中都成立。
 -   $\neg P \lor \neg Q \to \neg(P \land Q)$ 也都成立。
--   然而，$\neg(P \land Q) \to \neg P \lor \neg Q$ 却只在[经典逻辑](@article_id:328618)中成立。在构造性世界里，拥有一个“$P$ 和 $Q$ 不能同时成立”的证明，并不足以让你构造出“$P$ 的反证”或“$Q$ 的反证”。
+-   然而，$\neg(P \land Q) \to \neg P \lor \neg Q$ 却只在[经典逻辑](@keyword=classical_logic|lang=zh-CN|style=Feynman)中成立。在构造性世界里，拥有一个“$P$ 和 $Q$ 不能同时成立”的证明，并不足以让你构造出“$P$ 的反证”或“$Q$ 的反证”。
 
-这种区别并非吹毛求疵。在计算机科学中，一个[构造性证明](@article_id:317992)对应着一个具体的[算法](@article_id:331821)。经典证明（因为它依赖于[排中律](@article_id:639382)）可能告诉你某个东西存在，但无法告诉你如何找到它。因此，在程序合成和形式化验证领域，[直觉主义逻辑](@article_id:312488)因其构造性而扮演着核心角色。
+这种区别并非吹毛求疵。在计算机科学中，一个[构造性证明](@keyword=constructive_proof|lang=zh-CN|style=Feynman)对应着一个具体的[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)。经典证明（因为它依赖于[排中律](@keyword=law_of_the_excluded_middle|lang=zh-CN|style=Feynman)）可能告诉你某个东西存在，但无法告诉你如何找到它。因此，在程序合成和形式化验证领域，[直觉主义逻辑](@keyword=constructive_logic|lang=zh-CN|style=Feynman)因其构造性而扮演着核心角色。
 
 ### 形式的多样性与统一性
 
-[自然演绎](@article_id:311676)因其与人类日常推理的相似性而得名，但它并非形式化逻辑的唯一途径。通过比较不同的证明系统，我们能更深刻地理解[自然演绎](@article_id:311676)的设计精妙之处，并看到逻辑概念的普适性。
+[自然演绎](@keyword=natural_deduction|lang=zh-CN|style=Feynman)因其与人类日常推理的相似性而得名，但它并非形式化逻辑的唯一途径。通过比较不同的证明系统，我们能更深刻地理解[自然演绎](@keyword=natural_deduction|lang=zh-CN|style=Feynman)的设计精妙之处，并看到逻辑概念的普适性。
 
--   **[希尔伯特系统](@article_id:639526) (Hilbert Systems)**：这是最早的公理化证明系统之一，通常只包含极少数的公理模式和一两条[推理规则](@article_id:336844)（如分离规则）。在[希尔伯特系统](@article_id:639526)中进行证明非常繁琐和不直观。[自然演绎](@article_id:311676)中那个优雅的“假设-推导-撤销假设”的蕴含引入规则，在[希尔伯特系统](@article_id:639526)中并不存在。取而代之的是一个关于该系统的**元定理**——**[演绎定理](@article_id:640058) (Deduction Theorem)**，它以一种迂回的方式实现了同样的效果。这种对比凸显了[自然演绎](@article_id:311676)为何“自然”：它将推理中至关重要的假设管理功能，内化成了一条核心规则 ()。
+-   **[希尔伯特系统](@keyword=hilbert_systems|lang=zh-CN|style=Feynman) (Hilbert Systems)**：这是最早的公理化证明系统之一，通常只包含极少数的公理模式和一两条[推理规则](@keyword=rules_of_inference|lang=zh-CN|style=Feynman)（如分离规则）。在[希尔伯特系统](@keyword=hilbert_systems|lang=zh-CN|style=Feynman)中进行证明非常繁琐和不直观。[自然演绎](@keyword=natural_deduction|lang=zh-CN|style=Feynman)中那个优雅的“假设-推导-撤销假设”的蕴含引入规则，在[希尔伯特系统](@keyword=hilbert_systems|lang=zh-CN|style=Feynman)中并不存在。取而代之的是一个关于该系统的**元定理**——**[演绎定理](@keyword=deduction_theorem|lang=zh-CN|style=Feynman) (Deduction Theorem)**，它以一种迂回的方式实现了同样的效果。这种对比凸显了[自然演绎](@keyword=natural_deduction|lang=zh-CN|style=Feynman)为何“自然”：它将推理中至关重要的假设管理功能，内化成了一条核心规则 ([@problem_id:3044476])。
 
--   **相继演算 (Sequent Calculus)**：这是与[自然演绎](@article_id:311676)关系最密切的兄弟系统。[自然演绎](@article_id:311676)中通过“撤销假设”来引入蕴含，在相继演算中则体现为将假设从上下文的一边“移动”到另一边。相继演算的对称性和严格的规则结构，使其在证明关于逻辑本身的性质（[元理论](@article_id:642335)）时特别强大，并且非常适合自动化定理证明 ()。
+-   **相继演算 (Sequent Calculus)**：这是与[自然演绎](@keyword=natural_deduction|lang=zh-CN|style=Feynman)关系最密切的兄弟系统。[自然演绎](@keyword=natural_deduction|lang=zh-CN|style=Feynman)中通过“撤销假设”来引入蕴含，在相继演算中则体现为将假设从上下文的一边“移动”到另一边。相继演算的对称性和严格的规则结构，使其在证明关于逻辑本身的性质（[元理论](@keyword=meta_theory|lang=zh-CN|style=Feynman)）时特别强大，并且非常适合自动化定理证明 ([@problem_id:3047469])。
 
--   **[语义图表法](@article_id:642360) (Semantic Tableaux)**：这又是一种完全不同的方法。[自然演绎](@article_id:311676)旨在从前提出发，一步步**构造**出结论的证明。而[语义图表法](@article_id:642360)则是一种**反驳**方法：为了证明一个结论，它系统地尝试去构建一个“反例”（即前提为真但结论为假的情形）。如果所有构建反例的尝试都通向矛盾，那么结论就被证明是有效的。这种目标导向的、系统性的搜索方式使其成为自动化推理工具中的热门选择 ()。
+-   **[语义图表法](@keyword=semantic_tableaux_method|lang=zh-CN|style=Feynman) (Semantic Tableaux)**：这又是一种完全不同的方法。[自然演绎](@keyword=natural_deduction|lang=zh-CN|style=Feynman)旨在从前提出发，一步步**构造**出结论的证明。而[语义图表法](@keyword=semantic_tableaux_method|lang=zh-CN|style=Feynman)则是一种**反驳**方法：为了证明一个结论，它系统地尝试去构建一个“反例”（即前提为真但结论为假的情形）。如果所有构建反例的尝试都通向矛盾，那么结论就被证明是有效的。这种目标导向的、系统性的搜索方式使其成为自动化推理工具中的热门选择 ([@problem_id:3051975])。
 
-这些不同的系统就像是用于探索逻辑世界的不同工具。[自然演绎](@article_id:311676)是思想家的画笔，[希尔伯特系统](@article_id:639526)是逻辑考古学家的化石，而相继演算和语义图表则是工程师的蓝图和自动化装配线。它们共同描绘了一幅丰富而统一的逻辑图景。
+这些不同的系统就像是用于探索逻辑世界的不同工具。[自然演绎](@keyword=natural_deduction|lang=zh-CN|style=Feynman)是思想家的画笔，[希尔伯特系统](@keyword=hilbert_systems|lang=zh-CN|style=Feynman)是逻辑考古学家的化石，而相继演算和语义图表则是工程师的蓝图和自动化装配线。它们共同描绘了一幅丰富而统一的逻辑图景。
 
-### 证明的“纯化”：[范式](@article_id:329204)和其惊人力量
+### 证明的“纯化”：[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)和其惊人力量
 
-一个[自然演绎](@article_id:311676)的证明可能包含许多不必要的迂回。比如，我们费力地用引入规则构造了一个复杂的公式，紧接着又用消去规则把它拆开，这就像是为了过河而造了一座桥，过河后又立刻把它拆了。这种多余的步骤被称为**极大公式 (maximal formula)** 或**弯路 (detour)** ()。
+一个[自然演绎](@keyword=natural_deduction|lang=zh-CN|style=Feynman)的证明可能包含许多不必要的迂回。比如，我们费力地用引入规则构造了一个复杂的公式，紧接着又用消去规则把它拆开，这就像是为了过河而造了一座桥，过河后又立刻把它拆了。这种多余的步骤被称为**极大公式 (maximal formula)** 或**弯路 (detour)** ([@problem_id:3047875])。
 
-一个没有这种弯路的证明被称为**[范式](@article_id:329204)证明 (normal derivation)**。[证明论](@article_id:311528)中最深刻的结果之一就是**范式化定理 (Normalization Theorem)**，它表明任何一个证明都可以通过一系列局部“拉直”操作，转化为一个等价的[范式](@article_id:329204)证明 ()。
+一个没有这种弯路的证明被称为**[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)证明 (normal derivation)**。[证明论](@keyword=proof_theory|lang=zh-CN|style=Feynman)中最深刻的结果之一就是**范式化定理 (Normalization Theorem)**，它表明任何一个证明都可以通过一系列局部“拉直”操作，转化为一个等价的[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)证明 ([@problem_id:3047466])。
 
 这一定理绝不仅仅是为证明“瘦身”那么简单，它带来了一系列惊人的推论：
 
-1.  **一致性 (Consistency)**：逻辑系统的一致性意味着我们不可能在其中证明出矛盾（$\bot$）。通过分析[范式](@article_id:329204)证明的结构，我们可以得出一个优雅的结论：一个以 $\bot$ 为结论的[范式](@article_id:329204)证明是不可能存在的。因为[范式](@article_id:329204)证明的最后一步必须是引入规则，而 $\bot$ 没有任何引入规则。因此，通过[范式化](@article_id:310343)定理，我们证明了整个逻辑系统是自洽的、没有内在矛盾的 ()。这是一种系统内部的“自我体检”，证明了其自身的“心智健全”。
+1.  **一致性 (Consistency)**：逻辑系统的一致性意味着我们不可能在其中证明出矛盾（$\bot$）。通过分析[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)证明的结构，我们可以得出一个优雅的结论：一个以 $\bot$ 为结论的[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)证明是不可能存在的。因为[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)证明的最后一步必须是引入规则，而 $\bot$ 没有任何引入规则。因此，通过[范式化](@keyword=normalization|lang=zh-CN|style=Feynman)定理，我们证明了整个逻辑系统是自洽的、没有内在矛盾的 ([@problem_id:3047827])。这是一种系统内部的“自我体检”，证明了其自身的“心智健全”。
 
-2.  **[子公式性质](@article_id:316865) (Subformula Property)**：[范式](@article_id:329204)证明具有一个美妙的性质，即证明过程中出现的任何公式，都必然是结论或某个未撤销的假设的子公式。这意味着证明不会“天马行空”地引入无关的概念。这个性质对于自动化定理证明至关重要，因为它极大地缩小了证明的搜索空间。
+2.  **[子公式性质](@keyword=subformula_property|lang=zh-CN|style=Feynman) (Subformula Property)**：[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)证明具有一个美妙的性质，即证明过程中出现的任何公式，都必然是结论或某个未撤销的假设的子公式。这意味着证明不会“天马行空”地引入无关的概念。这个性质对于自动化定理证明至关重要，因为它极大地缩小了证明的搜索空间。
 
-3.  **析取性质 (Disjunction Property)**：在[直觉主义逻辑](@article_id:312488)中，[范式化](@article_id:310343)定理是证明**析取性质**的关键。该性质指出，如果 $\vdash A \lor B$ 是可证的，那么要么 $\vdash A$ 可证，要么 $\vdash B$ 可证。这是因为 $\vdash A \lor B$ 的[范式](@article_id:329204)证明的最后一步必然是 $\lor$-引入，这意味着它必须从一个 $A$ 的证明或一个 $B$ 的证明推导而来 ()。这完美地呼应了[BHK解释](@article_id:311514)中“证明是构造”的思想。
+3.  **析取性质 (Disjunction Property)**：在[直觉主义逻辑](@keyword=constructive_logic|lang=zh-CN|style=Feynman)中，[范式化](@keyword=normalization|lang=zh-CN|style=Feynman)定理是证明**析取性质**的关键。该性质指出，如果 $\vdash A \lor B$ 是可证的，那么要么 $\vdash A$ 可证，要么 $\vdash B$ 可证。这是因为 $\vdash A \lor B$ 的[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)证明的最后一步必然是 $\lor$-引入，这意味着它必须从一个 $A$ 的证明或一个 $B$ 的证明推导而来 ([@problem_id:3045335])。这完美地呼应了[BHK解释](@keyword=bhk_interpretation|lang=zh-CN|style=Feynman)中“证明是构造”的思想。
 
 ### 终极联系：证明即程序 (Proofs as Programs)
 
-我们旅程的最后一站，也是最令人震撼的一站，是[逻辑与计算](@article_id:334429)机科学之间一道最深刻的桥梁——**Curry-Howard 同构 (Curry-Howard Correspondence)**。
+我们旅程的最后一站，也是最令人震撼的一站，是[逻辑与计算](@keyword=logic_and_computation|lang=zh-CN|style=Feynman)机科学之间一道最深刻的桥梁——**Curry-Howard 同构 (Curry-Howard Correspondence)**。
 
-这个同构揭示，直觉主义[自然演绎](@article_id:311676)和一种叫做“类型化 Lambda 演算”的[计算模型](@article_id:313052)，实际上是同一事物的两种不同语言。它们之间的对应关系是如此精确和优美 ()：
+这个同构揭示，直觉主义[自然演绎](@keyword=natural_deduction|lang=zh-CN|style=Feynman)和一种叫做“类型化 Lambda 演算”的[计算模型](@keyword=models_of_computation|lang=zh-CN|style=Feynman)，实际上是同一事物的两种不同语言。它们之间的对应关系是如此精确和优美 ([@problem_id:2985677])：
 
 -   **命题 (Proposition) 对应 类型 (Type)**：每个逻辑命题，如 $\varphi \land \psi$，都可以被看作一个数据类型，如 `Product(A, B)`。
 -   **证明 (Proof) 对应 程序 (Program/Term)**：一个命题的证明，就是一个属于对应类型的程序（或“项”）。
--   **证明规则 (Rule) 对应 类型规则 (Typing Rule)**：[自然演绎](@article_id:311676)的引入和消去规则，精确地对应于构建和使用这些数据类型的编程操作。
+-   **证明规则 (Rule) 对应 类型规则 (Typing Rule)**：[自然演绎](@keyword=natural_deduction|lang=zh-CN|style=Feynman)的引入和消去规则，精确地对应于构建和使用这些数据类型的编程操作。
 
 让我们来看几个例子：
 
 -   **合取与积类型 (Conjunction and Product Types)**：命题 $\varphi \land \psi$ 对应于**积类型**（或称“元组类型”） $A \times B$。
     -   $\land$-引入规则（从 $\varphi$ 和 $\psi$ 得到 $\varphi \land \psi$）对应于**创建数据对 (pairing)**：给定一个类型为 $A$ 的值 $a$ 和一个类型为 $B$ 的值 $b$，你可以创建一个数据对 $\langle a, b \rangle$，其类型为 $A \times B$。
-    -   $\land$-消去规则（从 $\varphi \land \psi$ 得到 $\varphi$ 或 $\psi$）对应于**投影 (projection)**：从数据对 $p$ 中，你可以提取第一个元素 $\mathsf{fst}(p)$ 或第二个元素 $\mathsf{snd}(p)$ ()。
+    -   $\land$-消去规则（从 $\varphi \land \psi$ 得到 $\varphi$ 或 $\psi$）对应于**投影 (projection)**：从数据对 $p$ 中，你可以提取第一个元素 $\mathsf{fst}(p)$ 或第二个元素 $\mathsf{snd}(p)$ ([@problem_id:3056183])。
 
 -   **析取与和类型 (Disjunction and Sum Types)**：命题 $\varphi \lor \psi$ 对应于**和类型**（或称“变体类型”、“联合类型”） $A + B$。
     -   $\lor$-引入规则（从 $\varphi$ 得到 $\varphi \lor \psi$）对应于**注入 (injection)**：你可以将一个类型为 $A$ 的值 $a$ “注入”到和类型中，创建一个新值 $\mathsf{inl}(a)$，其类型为 $A + B$。
-    -   $\lor$-消去规则（分情况讨论）对应于**case 语句**：要处理一个类型为 $A+B$ 的值，你必须提供两个分支——一个处理它来自 $A$ 的情况，另一个处理它来自 $B$ 的情况 ()。
+    -   $\lor$-消去规则（分情况讨论）对应于**case 语句**：要处理一个类型为 $A+B$ 的值，你必须提供两个分支——一个处理它来自 $A$ 的情况，另一个处理它来自 $B$ 的情况 ([@problem_id:2985662])。
 
 -   **蕴含与函数类型 (Implication and Function Types)**：命题 $\varphi \to \psi$ 对应于**函数类型** $A \to B$。
     -   $\to$-引入规则（假设 $\varphi$ 推出 $\psi$）对应于**函数抽象 (lambda abstraction)**：如果你能写出一个函数体，它接受一个类型为 $A$ 的参数 $x$ 并返回一个类型为 $B$ 的结果，那么你就定义了一个函数 $\lambda x:A. \dots$，其类型为 $A \to B$。
@@ -99,6 +99,6 @@
 
 这个同构是革命性的。它告诉我们，写一个证明，和写一个（在特定强类型语言中的）程序，是同一回事。逻辑规则就是我们编程语言的**类型检查器**。更深刻的是，我们之前讨论的**证明范式化，在程序的世界里就是程序求值（或执行）**！证明中的“弯路”对应于程序中可以被计算简化的表达式。
 
-这一发现为现代[函数式编程](@article_id:640626)语言（如Haskell, OCaml）和交互式定理证明器（如Coq, Agda, Lean）奠定了理论基础。在这些系统中，程序员和数学家可以写出具有极高可靠性的软件，因为程序的类型（即它所证明的逻辑命题）保证了它的行为。
+这一发现为现代[函数式编程](@keyword=functional_programming|lang=zh-CN|style=Feynman)语言（如Haskell, OCaml）和交互式定理证明器（如Coq, Agda, Lean）奠定了理论基础。在这些系统中，程序员和数学家可以写出具有极高可靠性的软件，因为程序的类型（即它所证明的逻辑命题）保证了它的行为。
 
-从简单的符号游戏开始，[自然演绎](@article_id:311676)的引入和消去规则带领我们穿越了逻辑哲学、数学基础，最终抵达了计算科学的前沿。它们不仅仅是僵硬的教条，而是思想结构中最基本、最富有成效的模式之一，其回响至今仍在塑造着我们与机器和数学打交道的方式 ()。
+从简单的符号游戏开始，[自然演绎](@keyword=natural_deduction|lang=zh-CN|style=Feynman)的引入和消去规则带领我们穿越了逻辑哲学、数学基础，最终抵达了计算科学的前沿。它们不仅仅是僵硬的教条，而是思想结构中最基本、最富有成效的模式之一，其回响至今仍在塑造着我们与机器和数学打交道的方式 ([@problem_id:3056184])。

@@ -1,7 +1,7 @@
 ## 引言
-在数学的宏伟殿堂中，[自然数](@article_id:640312)是最基础的砖石。然而，我们如何能确保关于这些数字的推理是绝对严谨、万无一失的呢？[一阶皮亚诺算术](@article_id:641956)（First-order Peano Arithmetic, PA）正是为了回答这一根本问题而构建的精妙形式系统。它试图用一套有限、明确的符号和规则，来捕捉我们关于数字的全部直觉知识。这个尝试最初源于为数学提供坚实基础的伟大梦想，但其探索过程却意外地揭示了理性本身固有的、令人震惊的界限。
+在数学的宏伟殿堂中，[自然数](@keyword=natural_numbers|lang=zh-CN|style=Feynman)是最基础的砖石。然而，我们如何能确保关于这些数字的推理是绝对严谨、万无一失的呢？[一阶皮亚诺算术](@keyword=first_order_peano_arithmetic|lang=zh-CN|style=Feynman)（First-order Peano Arithmetic, PA）正是为了回答这一根本问题而构建的精妙形式系统。它试图用一套有限、明确的符号和规则，来捕捉我们关于数字的全部直觉知识。这个尝试最初源于为数学提供坚实基础的伟大梦想，但其探索过程却意外地揭示了理性本身固有的、令人震惊的界限。
 
-本文将带领读者深入皮亚诺算术的核心，探索一个由简单公理构建的宇宙所蕴含的无限复杂性。我们将分三步展开这次旅程：在“原理与机制”一章中，我们将像工程师一样拆解PA的语言、公理和模型，理解它是如何运作的，并直面塔斯基和哥德尔的定理带来的第一次冲击。随后，在“应用与[交叉](@article_id:315017)联系”中，我们将跨越学科的边界，见证PA如何成为一台“宇宙计算机”，与计算机科学、数论和[组合学](@article_id:304771)产生深刻共鸣，并理解其不[完备性](@article_id:304263)在这些领域中的具体体现。最后，通过“动手实践”部分，读者将有机会亲手操作PA的语言和概念，将抽象的理论转化为具体的技能。这趟旅程不仅是关于数字的，更是关于知识的边界和确定性的本质。
+本文将带领读者深入皮亚诺算术的核心，探索一个由简单公理构建的宇宙所蕴含的无限复杂性。我们将分三步展开这次旅程：在“原理与机制”一章中，我们将像工程师一样拆解PA的语言、公理和模型，理解它是如何运作的，并直面塔斯基和哥德尔的定理带来的第一次冲击。随后，在“应用与[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)联系”中，我们将跨越学科的边界，见证PA如何成为一台“宇宙计算机”，与计算机科学、数论和[组合学](@keyword=combinatorics|lang=zh-CN|style=Feynman)产生深刻共鸣，并理解其不[完备性](@keyword=completeness|lang=zh-CN|style=Feynman)在这些领域中的具体体现。最后，通过“动手实践”部分，读者将有机会亲手操作PA的语言和概念，将抽象的理论转化为具体的技能。这趟旅程不仅是关于数字的，更是关于知识的边界和确定性的本质。
 
 ## 原理与机制
 
@@ -16,7 +16,7 @@
 *   两个二元**函数符号**：$+$ 和 $\times$。它们分别代表我们熟悉的加法和乘法。它们是二元函数，因为它们需要两个数字作为输入，然后输出一个结果。
 *   最后，一个二元的**关系符号**：$=$。这是我们的“等号”，用来断言两个表达式所代表的数字是同一个。
 
-请注意这里的分类：$0$、$S$、$+$ 和 $\times$ 被精心挑选为常数或函数符号，因为它们的操作结果是数字（或者用逻辑的术语说，是“项”）。而 $=$ 是一个关系符号，因为它不产生一个新的数字，而是建立一种关系，形成一个可以判断真假的“陈述句”。这就像语言中的名词（项）和动词（关系）的区别，一个是指代事物，一个是描述状态或关系。有了这些基本砖块，我们就可以开始搭建更复杂的结构了。
+请注意这里的分类：$0$、$S$、$+$ 和 $\times$ 被精心挑选为常数或函数符号，因为它们的操作结果是数字（或者用逻辑的术语说，是“项”）。而 $=$ 是一个关系符号，因为它不产生一个新的数字，而是建立一种关系，形成一个可以判断真假的“陈述句”[@problem_id:3041998]。这就像语言中的名词（项）和动词（关系）的区别，一个是指代事物，一个是描述状态或关系。有了这些基本砖块，我们就可以开始搭建更复杂的结构了。
 
 ### 数字的语法：从术语到公式
 
@@ -30,29 +30,29 @@
 
 **公式**则是用来陈述事实的“句子”，它们具有真假值。
 1.  **原子公式**：最简单的句子就是断言两个项相等，形如 $(t_1 = t_2)$。例如，$S(0) = S(0)$ 是一个原子公式。
-2.  **复合公式**：我们可以使用[逻辑连接词](@article_id:306815)（如 $\neg$ “非”、$\land$ “与”、$\lor$ “或”、$\rightarrow$ “如果...那么...”）和[量词](@article_id:319547)（$\forall$ “对所有”、$\exists$ “存在”）将简单的公式组合成更复杂的句子。
+2.  **复合公式**：我们可以使用[逻辑连接词](@keyword=logical_connectives|lang=zh-CN|style=Feynman)（如 $\neg$ “非”、$\land$ “与”、$\lor$ “或”、$\rightarrow$ “如果...那么...”）和[量词](@keyword=quantifiers|lang=zh-CN|style=Feynman)（$\forall$ “对所有”、$\exists$ “存在”）将简单的公式组合成更复杂的句子。
 
-例如，$\forall x \, \exists y \, (x = y + y)$ 就是一个复杂的公式，它断言“对每一个数 $x$，都存在另一个数 $y$，使得 $x$ 是 $y$ 的两倍”（换句话说，每个数都是偶数——当然这是个假命题，但它是一个语法正确的句子）。
+例如，$\forall x \, \exists y \, (x = y + y)$ 就是一个复杂的公式，它断言“对每一个数 $x$，都存在另一个数 $y$，使得 $x$ 是 $y$ 的两倍”（换句话说，每个数都是偶数——当然这是个假命题，但它是一个语法正确的句子）[@problem_id:3042053]。
 
-### 宇宙的法则：[皮亚诺公理](@article_id:638347)
+### 宇宙的法则：[皮亚诺公理](@keyword=pa_axioms|lang=zh-CN|style=Feynman)
 
-现在我们有了语言和语法，可以写出无数关于数字的陈述。但哪些陈述是我们应该接受为“真”的呢？这就需要**公理 (axioms)**——我们预设的、不证自明的基础法则。皮亚诺算术的公理系统，正是一套试图捕捉[自然数](@article_id:640312)本质的法则。
+现在我们有了语言和语法，可以写出无数关于数字的陈述。但哪些陈述是我们应该接受为“真”的呢？这就需要**公理 (axioms)**——我们预设的、不证自明的基础法则。皮亚诺算术的公理系统，正是一套试图捕捉[自然数](@keyword=natural_numbers|lang=zh-CN|style=Feynman)本质的法则。
 
 #### 后继者与零：万物之始
 
-关于我们最基本的符号 $0$ 和 $S$，有两条简单的公理，它们为整个[自然数](@article_id:640312)世界设定了起点和方向：
+关于我们最基本的符号 $0$ 和 $S$，有两条简单的公理，它们为整个[自然数](@keyword=natural_numbers|lang=zh-CN|style=Feynman)世界设定了起点和方向：
 
 1.  $\forall x \, \neg(S(x) = 0)$
     这条公理说：$0$ 不是任何数的后继。换句话说，$0$ 是唯一的起点，你永远无法通过从某个数“后退一步”来到达 $0$。
 
 2.  $\forall x \forall y \, (S(x) = S(y) \rightarrow x = y)$
-    这条公理说：如果两个数 $x$ 和 $y$ 的后继相同，那么 $x$ 和 $y$ 本身也必须相同。这意味着后继函数 $S$ 是一条“单行道”，不会有两条不同的路径汇合到同一个点上。它是**[单射](@article_id:331040)**的。
+    这条公理说：如果两个数 $x$ 和 $y$ 的后继相同，那么 $x$ 和 $y$ 本身也必须相同。这意味着后继函数 $S$ 是一条“单行道”，不会有两条不同的路径汇合到同一个点上。它是**[单射](@keyword=injective_mapping|lang=zh-CN|style=Feynman)**的。
 
-这两条公理共同确保了数字像一条从 $0$ 开始、无限延伸、永不交汇的链条：$0, S(0), S(S(0)), \dots$ 。
+这两条公理共同确保了数字像一条从 $0$ 开始、无限延伸、永不交汇的链条：$0, S(0), S(S(0)), \dots$ [@problem_id:3042020]。
 
 #### 定义“加”与“乘”：优雅的递归
 
-我们如何用公理来定义像加法和乘法这样复杂的操作呢？皮亚诺算术采用了一种极其优美的方式——**[递归定义](@article_id:330317)**。
+我们如何用公理来定义像加法和乘法这样复杂的操作呢？皮亚诺算术采用了一种极其优美的方式——**[递归定义](@keyword=recursive_definitions|lang=zh-CN|style=Feynman)**。
 
 对于加法，我们有两条公理：
 1.  $\forall x \, (x + 0 = x)$
@@ -64,17 +64,17 @@
 1.  $\forall x \, (x \times 0 = 0)$
 2.  $\forall x \forall y \, (x \times S(y) = (x \times y) + x)$
 
-第一条是基础：任何[数乘](@article_id:316379)以 $0$ 都得 $0$。第二条是递归步骤：$x$ 乘以 $y$ 的后继，等于先计算 $x \times y$，然后再加上一个 $x$。这正是我们小学时学到的[乘法原理](@article_id:337072)！。
+第一条是基础：任何[数乘](@keyword=scalar_multiplication|lang=zh-CN|style=Feynman)以 $0$ 都得 $0$。第二条是递归步骤：$x$ 乘以 $y$ 的后继，等于先计算 $x \times y$，然后再加上一个 $x$。这正是我们小学时学到的[乘法原理](@keyword=multiplication_principle|lang=zh-CN|style=Feynman)！[@problem_id:3042042]。
 
-有趣的是，像加法[交换律](@article_id:301656) ($a+b=b+a$) 或乘法对加法的分配律 ($a \times (b+c) = a \times b + a \times c$) 这样我们习以为常的性质，在这里并不是公理。它们是**定理**——是需要从这些更基本的递归公理出发，通过一个关键工具来**证明**的。这个工具就是下面要讲的[数学归纳法](@article_id:308230)。
+有趣的是，像加法[交换律](@keyword=commutative_property|lang=zh-CN|style=Feynman) ($a+b=b+a$) 或乘法对加法的分配律 ($a \times (b+c) = a \times b + a \times c$) 这样我们习以为常的性质，在这里并不是公理。它们是**定理**——是需要从这些更基本的递归公理出发，通过一个关键工具来**证明**的。这个工具就是下面要讲的[数学归纳法](@keyword=mathematical_induction|lang=zh-CN|style=Feynman)。
 
-#### 多米诺骨牌效应：[数学归纳法](@article_id:308230)
+#### 多米诺骨牌效应：[数学归纳法](@keyword=mathematical_induction|lang=zh-CN|style=Feynman)
 
-这是[皮亚诺公理](@article_id:638347)中最强大、也最微妙的一部分。它不是一条单一的公理，而是一个**公理模式 (axiom schema)**。它的思想可以用一个绝妙的比喻来理解：多米诺骨牌。
+这是[皮亚诺公理](@keyword=pa_axioms|lang=zh-CN|style=Feynman)中最强大、也最微妙的一部分。它不是一条单一的公理，而是一个**公理模式 (axiom schema)**。它的思想可以用一个绝妙的比喻来理解：多米诺骨牌。
 
-想象一排无限延伸的多米诺骨牌，每一块都代表一个[自然数](@article_id:640312)。如果你想证明所有的骨牌都会倒下，你只需要做两件事：
+想象一排无限延伸的多米诺骨牌，每一块都代表一个[自然数](@keyword=natural_numbers|lang=zh-CN|style=Feynman)。如果你想证明所有的骨牌都会倒下，你只需要做两件事：
 1.  **基础情形**：推倒第一块骨牌（数字 $0$）。
-2.  **[归纳步骤](@article_id:305021)**：证明对于任意一块骨牌，如果它倒下了，那么它一定会撞倒下一块。
+2.  **[归纳步骤](@keyword=inductive_step|lang=zh-CN|style=Feynman)**：证明对于任意一块骨牌，如果它倒下了，那么它一定会撞倒下一块。
 
 如果你能证明这两点，那么你就可以断定，整排骨牌都会倒下。
 
@@ -82,7 +82,7 @@
 $$ (\varphi(0) \land \forall x (\varphi(x) \rightarrow \varphi(S(x)))) \rightarrow \forall x \, \varphi(x) $$
 这个公式的字面意思是：如果性质 $\varphi$ 对 $0$ 成立（$\varphi(0)$），并且对于任意的 $x$，只要 $\varphi$ 对 $x$ 成立，它也必然对 $x$ 的后继 $S(x)$ 成立（$\forall x (\varphi(x) \rightarrow \varphi(S(x)))$），那么我们就可以得出结论：性质 $\varphi$ 对所有的 $x$ 都成立（$\forall x \, \varphi(x)$）。
 
-为什么这是一个“模式”而不是“一条公理”呢？因为我们无法在**[一阶逻辑](@article_id:314752)**的语言内部说“对于所有的性质”。一阶逻辑的[量词](@article_id:319547)只能[约束变量](@article_id:340145)（数字），不能约束性质（公式）。因此，我们只能退而求其次，为我们能用 $\mathcal{L}_{PA}$ 写出的**每一个**公式 $\varphi(x)$，都生成一条对应的归纳公理。由于我们可以写出无穷多个不同的公式，所以皮亚诺算术的归纳公理实际上是一个无穷的公理列表！。这正是它既强大又有限的根源所在。
+为什么这是一个“模式”而不是“一条公理”呢？因为我们无法在**[一阶逻辑](@keyword=first_order_logic|lang=zh-CN|style=Feynman)**的语言内部说“对于所有的性质”。一阶逻辑的[量词](@keyword=quantifiers|lang=zh-CN|style=Feynman)只能[约束变量](@keyword=bound_variables|lang=zh-CN|style=Feynman)（数字），不能约束性质（公式）。因此，我们只能退而求其次，为我们能用 $\mathcal{L}_{PA}$ 写出的**每一个**公式 $\varphi(x)$，都生成一条对应的归纳公理。由于我们可以写出无穷多个不同的公式，所以皮亚诺算术的归纳公理实际上是一个无穷的公理列表！[@problem_id:3041973]。这正是它既强大又有限的根源所在。
 
 ### 数字的世界：模型与意义
 
@@ -90,24 +90,24 @@ $$ (\varphi(0) \land \forall x (\varphi(x) \rightarrow \varphi(S(x)))) \rightarr
 
 #### 我们熟悉的世界：标准模型 $\mathbb{N}$
 
-对于皮亚诺算术，最自然、最直观的模型就是我们从小就认识的**[自然数](@article_id:640312)集** $\mathbb{N} = \{0, 1, 2, 3, \dots\}$。在这个**[标准模型](@article_id:297875)**中：
+对于皮亚诺算术，最自然、最直观的模型就是我们从小就认识的**[自然数](@keyword=natural_numbers|lang=zh-CN|style=Feynman)集** $\mathbb{N} = \{0, 1, 2, 3, \dots\}$。在这个**[标准模型](@keyword=standard_model|lang=zh-CN|style=Feynman)**中：
 *   符号 $0$ 指向数字 $0$。
 *   符号 $S$ 被解释为函数 $n \mapsto n+1$。
 *   符号 $+$ 和 $\times$ 被解释为我们日常使用的加法和乘法运算。
 *   符号 $=$ 被解释为真正的“相等”。
 
-当我们说一个 $\mathcal{L}_{PA}$ 公式在 $\mathbb{N}$ 中为真（记作 $\mathbb{N} \models \varphi$），意思是当我们将公式中的符号替换成它们在自然数世界中的对应物后，这个陈述是成立的。例如，$\mathbb{N} \models \exists y (S(S(0)) = S(y))$，因为在自然数中，这句话的意思是“存在一个数 $y$，使得 $2 = y+1$”，而这个数就是 $1$ 。
+当我们说一个 $\mathcal{L}_{PA}$ 公式在 $\mathbb{N}$ 中为真（记作 $\mathbb{N} \models \varphi$），意思是当我们将公式中的符号替换成它们在自然数世界中的对应物后，这个陈述是成立的。例如，$\mathbb{N} \models \exists y (S(S(0)) = S(y))$，因为在自然数中，这句话的意思是“存在一个数 $y$，使得 $2 = y+1$”，而这个数就是 $1$ [@problem_id:3041975]。
 
 #### 我们能说什么：可定义性
 
-有了模型，我们就可以问一个深刻的问题：我们的语言 $\mathcal{L}_{PA}$ 究竟有多大的**[表达能力](@article_id:310282)**？哪些关于数字的性质是我们可以用一个公式精确“定义”出来的？
+有了模型，我们就可以问一个深刻的问题：我们的语言 $\mathcal{L}_{PA}$ 究竟有多大的**[表达能力](@keyword=expressive_power|lang=zh-CN|style=Feynman)**？哪些关于数字的性质是我们可以用一个公式精确“定义”出来的？
 
-一个数字集合 $A \subseteq \mathbb{N}$ 是**可定义的 (definable)**，如果存在一个公式 $\varphi(x)$，使得一个数 $n$ 在集合 $A$ 中当且仅当 $\varphi(n)$ 在[标准模型](@article_id:297875) $\mathbb{N}$ 中为真。
+一个数字集合 $A \subseteq \mathbb{N}$ 是**可定义的 (definable)**，如果存在一个公式 $\varphi(x)$，使得一个数 $n$ 在集合 $A$ 中当且仅当 $\varphi(n)$ 在[标准模型](@keyword=standard_model|lang=zh-CN|style=Feynman) $\mathbb{N}$ 中为真。
 
 事实证明，$\mathcal{L}_{PA}$ 的表达能力惊人地强大。例如：
-*   **素数集**是可定义的。我们可以写一个公式 $\varphi_{prime}(n)$ 来表达“$n$ 大于 $1$ 且不能被任何大于 $1$ 且小于 $n$ 的数整除”。
-*   **指数关系** $z = x^y$ 也是可定义的。尽管我们的语言里没有指数符号 `^`，但伟大的逻辑学家 [Kurt Gödel](@article_id:308735) 发现，可以通过一种巧妙的编码技巧，用加法和乘法来间接定义指数运算。
-*   更令人震惊的是，所有**可计算的** (computable) 性质都是可定义的。这意味着，任何一个可以被计算机程序（如图灵机）在有限时间内判断的性质，都可以在 $\mathcal{L}_{PA}$ 中写出一个对应的公式。这包括了检查一个数是否是某个公理的[哥德尔](@article_id:642168)数，或者一个给定的符号序列是否构成一个合法的证明。例如，我们可以定义一个集合 $\mathrm{Prov}_{\mathrm{PA}}$，它包含了所有**在 PA 中可被证明的句子的[哥德尔](@article_id:642168)数** 。
+*   **素数集**是可定义的。我们可以写一个公式 $\varphi_{prime}(n)$ 来表达“$n$ 大于 $1$ 且不能被任何大于 $1$ 且小于 $n$ 的数整除”[@problem_id:3042006]。
+*   **指数关系** $z = x^y$ 也是可定义的。尽管我们的语言里没有指数符号 `^`，但伟大的逻辑学家 [Kurt Gödel](@keyword=kurt_gödel|lang=zh-CN|style=Feynman) 发现，可以通过一种巧妙的编码技巧，用加法和乘法来间接定义指数运算[@problem_id:3042006]。
+*   更令人震惊的是，所有**可计算的** (computable) 性质都是可定义的。这意味着，任何一个可以被计算机程序（如图灵机）在有限时间内判断的性质，都可以在 $\mathcal{L}_{PA}$ 中写出一个对应的公式。这包括了检查一个数是否是某个公理的[哥德尔](@keyword=gödel|lang=zh-CN|style=Feynman)数，或者一个给定的符号序列是否构成一个合法的证明。例如，我们可以定义一个集合 $\mathrm{Prov}_{\mathrm{PA}}$，它包含了所有**在 PA 中可被证明的句子的[哥德尔](@keyword=gödel|lang=zh-CN|style=Feynman)数** [@problem_id:3042006]。
 
 这似乎暗示着我们的语言无所不能。但事实并非如此。
 
@@ -120,66 +120,66 @@ $$ (\varphi(0) \land \forall x (\varphi(x) \rightarrow \varphi(S(x)))) \rightarr
 为什么会这样？其根源在于古老的**说谎者悖论**（“这句话是假的”）。塔斯基的证明，非形式地看，是这样的：
 1.  假设我们**有**这样一个真理检测公式 $\mathsf{True}(x)$。
 2.  那么我们也可以写出它的否定 $\neg \mathsf{True}(x)$。
-3.  利用[哥德尔](@article_id:642168)的编码技巧（具体来说是**[对角引理](@article_id:309708)**或**[不动点引理](@article_id:311455)**），我们可以构造一个特殊的句子 $L$，这个句子在 PA 中可以被证明等价于 $\neg \mathsf{True}(\ulcorner L \urcorner)$。这里的 $\ulcorner L \urcorner$ 是句子 $L$ 自己的哥德尔数。所以，$L$ 的内容实际上是在说：“我这个句子，不是一个真句子。”
+3.  利用[哥德尔](@keyword=gödel|lang=zh-CN|style=Feynman)的编码技巧（具体来说是**[对角引理](@keyword=diagonal_lemma|lang=zh-CN|style=Feynman)**或**[不动点引理](@keyword=fixed_point_lemma|lang=zh-CN|style=Feynman)**），我们可以构造一个特殊的句子 $L$，这个句子在 PA 中可以被证明等价于 $\neg \mathsf{True}(\ulcorner L \urcorner)$。这里的 $\ulcorner L \urcorner$ 是句子 $L$ 自己的哥德尔数。所以，$L$ 的内容实际上是在说：“我这个句子，不是一个真句子。”
 4.  现在我们来问：$L$ 到底是真是假？
     *   如果 $L$ 是**真**的，那么根据我们假设的真理检测器 $\mathsf{True}$ 的定义，$\mathsf{True}(\ulcorner L \urcorner)$ 也必须是真的。但是 $L$ 又声称自己是 $\neg \mathsf{True}(\ulcorner L \urcorner)$，这意味着 $\mathsf{True}(\ulcorner L \urcorner)$ 是假的。矛盾！
     *   如果 $L$ 是**假**的，那么根据 $\mathsf{True}$ 的定义，$\mathsf{True}(\ulcorner L \urcorner)$ 必须是假的，也就是说 $\neg \mathsf{True}(\ulcorner L \urcorner)$ 是真的。但是 $L$ 等价于 $\neg \mathsf{True}(\ulcorner L \urcorner)$，所以 $L$ 又必须是真的。还是矛盾！
 
-这个无法摆脱的悖论告诉我们，我们最初的假设——存在一个能定义真理的公式 $\mathsf{True}(x)$——必然是错误的。算术语言可以谈论许许多多复杂的事情，但它无法完美地谈论自身的“真理”。
+这个无法摆脱的悖论告诉我们，我们最初的假设——存在一个能定义真理的公式 $\mathsf{True}(x)$——必然是错误的。算术语言可以谈论许许多多复杂的事情，但它无法完美地谈论自身的“真理”[@problem_id:3042035]。
 
-### 理性的边缘：[哥德尔](@article_id:642168)不完备性定理
+### 理性的边缘：[哥德尔](@keyword=gödel|lang=zh-CN|style=Feynman)不完备性定理
 
-塔斯基的定理揭示了算术语言[表达能力](@article_id:310282)的界限。而[哥德尔](@article_id:642168)（Gödel）的不完备性定理则更进一步，揭示了算术**证明能力**的界限。即使一个陈述是“真”的（即在[标准模型](@article_id:297875) $\mathbb{N}$ 中成立），我们也不一定能从[皮亚诺公理](@article_id:638347)出发，通过[逻辑推演](@article_id:331485)来**证明**它。
+塔斯基的定理揭示了算术语言[表达能力](@keyword=expressive_power|lang=zh-CN|style=Feynman)的界限。而[哥德尔](@keyword=gödel|lang=zh-CN|style=Feynman)（Gödel）的不完备性定理则更进一步，揭示了算术**证明能力**的界限。即使一个陈述是“真”的（即在[标准模型](@keyword=standard_model|lang=zh-CN|style=Feynman) $\mathbb{N}$ 中成立），我们也不一定能从[皮亚诺公理](@keyword=pa_axioms|lang=zh-CN|style=Feynman)出发，通过[逻辑推演](@keyword=logical_deduction|lang=zh-CN|style=Feynman)来**证明**它。
 
-#### 伟大的不可证明之物：第一不[完备性定理](@article_id:312012)
+#### 伟大的不可证明之物：第一不[完备性定理](@keyword=completeness_theorem|lang=zh-CN|style=Feynman)
 
-**[哥德尔](@article_id:642168)第一不完备性定理**指出：任何一个包含了足够算术（如PA）、公理可以被程序识别、且自身相容（不会导致矛盾）的形式系统，都必然是**不完备的**。也就是说，总会存在一个句子 $G$，使得系统既不能证明 $G$，也不能证明其否定 $\neg G$。
+**[哥德尔](@keyword=gödel|lang=zh-CN|style=Feynman)第一不完备性定理**指出：任何一个包含了足够算术（如PA）、公理可以被程序识别、且自身相容（不会导致矛盾）的形式系统，都必然是**不完备的**。也就是说，总会存在一个句子 $G$，使得系统既不能证明 $G$，也不能证明其否定 $\neg G$。
 
-[哥德尔的证明](@article_id:311151)是一个划时代的杰作，其核心思想与塔斯基的证明异曲同工。他同样利用了[对角引理](@article_id:309708)来构造一个“[自我指涉](@article_id:313680)”的句子。
-1.  首先，哥德尔展示了如何将关于“证明”的[元数学](@article_id:315797)概念进行**算术化**（或称**[哥德尔编码](@article_id:313401)**）。“公式 A 是对公式 B 的一个证明”这个关系，虽然看起来复杂，但本质上是一种符号串的[模式匹配](@article_id:298439)，它可以被编码成一个关于自然数的、可计算的关系。
-2.  因为所有可计算的关系在 PA 中都是可定义的，所以我们可以写出一个公式 $\mathrm{Prov}_{\mathsf{PA}}(x)$，它的意思是“$x$ 是一个在 PA 中可被证明的句子的[哥德尔](@article_id:642168)数”。
-3.  接着，应用[对角引理](@article_id:309708)于公式 $\neg \mathrm{Prov}_{\mathsf{PA}}(x)$，我们得到一个[哥德尔](@article_id:642168)句 $G$，它在 PA 中可以被证明等价于 $\neg \mathrm{Prov}_{\mathsf{PA}}(\ulcorner G \urcorner)$。
+[哥德尔的证明](@keyword=gödel_s_proof|lang=zh-CN|style=Feynman)是一个划时代的杰作，其核心思想与塔斯基的证明异曲同工。他同样利用了[对角引理](@keyword=diagonal_lemma|lang=zh-CN|style=Feynman)来构造一个“[自我指涉](@keyword=self_reference|lang=zh-CN|style=Feynman)”的句子。
+1.  首先，哥德尔展示了如何将关于“证明”的[元数学](@keyword=metamathematics|lang=zh-CN|style=Feynman)概念进行**算术化**（或称**[哥德尔编码](@keyword=gödel_numbering|lang=zh-CN|style=Feynman)**）。“公式 A 是对公式 B 的一个证明”这个关系，虽然看起来复杂，但本质上是一种符号串的[模式匹配](@keyword=pattern_matching|lang=zh-CN|style=Feynman)，它可以被编码成一个关于自然数的、可计算的关系。
+2.  因为所有可计算的关系在 PA 中都是可定义的，所以我们可以写出一个公式 $\mathrm{Prov}_{\mathsf{PA}}(x)$，它的意思是“$x$ 是一个在 PA 中可被证明的句子的[哥德尔](@keyword=gödel|lang=zh-CN|style=Feynman)数”。
+3.  接着，应用[对角引理](@keyword=diagonal_lemma|lang=zh-CN|style=Feynman)于公式 $\neg \mathrm{Prov}_{\mathsf{PA}}(x)$，我们得到一个[哥德尔](@keyword=gödel|lang=zh-CN|style=Feynman)句 $G$，它在 PA 中可以被证明等价于 $\neg \mathrm{Prov}_{\mathsf{PA}}(\ulcorner G \urcorner)$。
 4.  这个句子 $G$ 的意思就是：“我这个句子，在 PA 中是不可证明的。”
 
 现在，让我们思考这个句子的命运：
 *   **PA 能证明 $G$ 吗？** 如果能，那么 $G$ 就是一个定理。根据我们对 $\mathrm{Prov}_{\mathsf{PA}}$ 的构造，$\mathrm{Prov}_{\mathsf{PA}}(\ulcorner G \urcorner)$ 这句话也应该是可证的。但 $G$ 本身又等价于 $\neg \mathrm{Prov}_{\mathsf{PA}}(\ulcorner G \urcorner)$，所以 $\neg \mathrm{Prov}_{\mathsf{PA}}(\ulcorner G \urrolo)$ 也可证。这样一来，PA 同时证明了一对相互矛盾的句子，说明 PA 是**不相容的**。所以，只要 PA 是相容的，它就**不能**证明 $G$。
 *   **PA 能证明 $\neg G$ 吗？** 哥德尔最初的证明显示，如果 PA 是**ω-相容的**（一个比简单相容性更强的条件），那么它也不能证明 $\neg G$。因此 $G$ 在 PA 中是**不可判定的** (undecidable)。
 
-我们刚刚得出结论：如果 PA 相容，那么 PA 无法证明 $G$。但 $G$ 的内容恰恰就是“PA 无法证明 G”。所以，$G$ 说的是一句真话！我们站在系统之外，可以看到 $G$ 在标准模型 $\mathbb{N}$ 中是真的，但系统本身却被困在里面，永远无法通过公理推演出这个真理。
+我们刚刚得出结论：如果 PA 相容，那么 PA 无法证明 $G$。但 $G$ 的内容恰恰就是“PA 无法证明 G”。所以，$G$ 说的是一句真话！我们站在系统之外，可以看到 $G$ 在标准模型 $\mathbb{N}$ 中是真的，但系统本身却被困在里面，永远无法通过公理推演出这个真理[@problem_id:3041986]。
 
 #### 系统无法认识自身：第二不完备性定理
 
-第一不[完备性定理](@article_id:312012)的冲击已经足够巨大，但[哥德尔](@article_id:642168)紧接着给出了更令人震撼的**第二不[完备性定理](@article_id:312012)**。
+第一不[完备性定理](@keyword=completeness_theorem|lang=zh-CN|style=Feynman)的冲击已经足够巨大，但[哥德尔](@keyword=gödel|lang=zh-CN|style=Feynman)紧接着给出了更令人震撼的**第二不[完备性定理](@keyword=completeness_theorem|lang=zh-CN|style=Feynman)**。
 
 这个定理说：如果 PA 是相容的，那么 PA 无法证明它自身的相容性。
 
-证明的思路是将第一不[完备性定理](@article_id:312012)的证明过程本身在 PA 系统**内部**进行形式化。我们刚才在外部进行的推理“如果 PA 相容，那么 PA 无法证明 G”，这个推理过程本身是纯粹逻辑的，因此可以在 PA 内部被模仿。
+证明的思路是将第一不[完备性定理](@keyword=completeness_theorem|lang=zh-CN|style=Feynman)的证明过程本身在 PA 系统**内部**进行形式化。我们刚才在外部进行的推理“如果 PA 相容，那么 PA 无法证明 G”，这个推理过程本身是纯粹逻辑的，因此可以在 PA 内部被模仿。
 1.  首先，我们需要一个代表“PA 是相容的”的形式化句子。这通常被定义为 $\mathsf{Con}(\mathsf{PA}) \equiv \neg \mathrm{Prov}_{\mathsf{PA}}(\ulcorner 0=1 \urcorner)$，即“PA 无法证明 $0=1$ 这个矛盾”。
 2.  在 PA 内部，可以证明这样一个命题：“$\mathsf{Con}(\mathsf{PA}) \rightarrow G$”。也就是说，“如果 PA 是相容的，那么哥德尔句 G 成立”。
 3.  现在，假设 PA 能够证明自己的相容性，即 $\mathsf{PA} \vdash \mathsf{Con}(\mathsf{PA})$。
 4.  根据上面第二步的结论和基本的逻辑规则（分离规则），我们马上可以得到 $\mathsf{PA} \vdash G$。
 5.  但这与第一不完备性定理的结论（只要 PA 相容，它就不能证明 G）相矛盾。
 
-因此，最初的假设——PA 能够证明自身的相容性——必然是错误的。一个系统，只要它强大到足以描述基本的算术，它就无法在内部证明自己的根基是稳固的，除非它本身就是不稳固的（不相容的）。
+因此，最初的假设——PA 能够证明自身的相容性——必然是错误的。一个系统，只要它强大到足以描述基本的算术，它就无法在内部证明自己的根基是稳固的，除非它本身就是不稳固的（不相容的）[@problem_id:3041988]。
 
-### 地平线之外：光怪陆离的[非标准模型](@article_id:312353)
+### 地平线之外：光怪陆离的[非标准模型](@keyword=non_standard_models|lang=zh-CN|style=Feynman)
 
-[哥德尔](@article_id:642168)不[完备性定理](@article_id:312012)告诉我们，存在一个句子 $G$，它在标准模型 $\mathbb{N}$ 中为真，但在 PA 中不可证。这意味着什么？这意味着，理论“PA + $\neg G$”也是一个相容的理论！根据逻辑学的完备性定理，任何相容的理论都必然有模型。
+[哥德尔](@keyword=gödel|lang=zh-CN|style=Feynman)不[完备性定理](@keyword=completeness_theorem|lang=zh-CN|style=Feynman)告诉我们，存在一个句子 $G$，它在标准模型 $\mathbb{N}$ 中为真，但在 PA 中不可证。这意味着什么？这意味着，理论“PA + $\neg G$”也是一个相容的理论！根据逻辑学的完备性定理，任何相容的理论都必然有模型。
 
-因此，必定存在着某个数学宇宙，在这个宇宙里，PA 的所有公理（包括全部的无穷条归纳公理）都成立，但哥德尔句 $G$ 却是假的。这样的宇宙，我们称之为 PA 的**[非标准模型](@article_id:312353)**。
+因此，必定存在着某个数学宇宙，在这个宇宙里，PA 的所有公理（包括全部的无穷条归纳公理）都成立，但哥德尔句 $G$ 却是假的。这样的宇宙，我们称之为 PA 的**[非标准模型](@keyword=non_standard_models|lang=zh-CN|style=Feynman)**。
 
-这些[非标准模型](@article_id:312353)是什么样子的？它们奇特而美妙。一个可数的[非标准模型](@article_id:312353) $M$ 的结构，从序的角度看，是这样的：
+这些[非标准模型](@keyword=non_standard_models|lang=zh-CN|style=Feynman)是什么样子的？它们奇特而美妙。一个可数的[非标准模型](@keyword=non_standard_models|lang=zh-CN|style=Feynman) $M$ 的结构，从序的角度看，是这样的：
 $$ \omega + (\mathbb{Z} \cdot \eta) $$
 
 让我们来解读这个神秘的表达式：
-*   **$\omega$**：模型以一个与标准[自然数](@article_id:640312) $\mathbb{N}$ 完全相同的部分开始。这就是我们熟悉的 $0, 1, 2, 3, \dots$。这是一个初始片段。
+*   **$\omega$**：模型以一个与标准[自然数](@keyword=natural_numbers|lang=zh-CN|style=Feynman) $\mathbb{N}$ 完全相同的部分开始。这就是我们熟悉的 $0, 1, 2, 3, \dots$。这是一个初始片段。
 *   **$+$**：紧接着这个标准部分之后，是所有的**非标准数**。这些数比任何一个标准数都要大。
 *   **$\mathbb{Z} \cdot \eta$**：这描述了非标准部分的结构。
     *   **$\mathbb{Z}$**：非标准数并非一盘散沙，而是被组织成许多条“**$\mathbb{Z}$-链**”。每一条链都像整数集 $\mathbb{Z}$ 一样，可以无限地向前（通过后继 $S$）和向后（通过前驱）。PA 的公理保证了每个非零数都有前驱，因此非标准数不是从某个点开始，而是双向无限延伸的。
-    *   **$\eta$**：这是有理数集 $\mathbb{Q}$ 的序类型。它代表一个**可数的、稠密的、无端点的线性序**。令人惊讶的是，这些 $\mathbb{Z}$-链之间的[排列](@article_id:296886)方式，竟然是稠密的！也就是说，在任意两条不同的 $\mathbb{Z}$-链之间，你总能找到另一条 $\mathbb{Z}$-链。不仅如此，这个链的集合没有“第一条”非标准链，也没有“最后一条”。
+    *   **$\eta$**：这是有理数集 $\mathbb{Q}$ 的序类型。它代表一个**可数的、稠密的、无端点的线性序**。令人惊讶的是，这些 $\mathbb{Z}$-链之间的[排列](@keyword=permutation|lang=zh-CN|style=Feynman)方式，竟然是稠密的！也就是说，在任意两条不同的 $\mathbb{Z}$-链之间，你总能找到另一条 $\mathbb{Z}$-链。不仅如此，这个链的集合没有“第一条”非标准链，也没有“最后一条”[@problem_id:3042006]。
 
 想象一下，你走过我们熟悉的自然数 $0, 1, 2, \dots$，一直走到“无穷远”，然后你进入了一个全新的领域。在这里，数字被捆绑成一条条类似整数轴的长链。而这些长链本身，又像有理数一样紧密地挤在一起。这就是一个遵守着我们所有算术法则的“合法”数字世界！
 
-这些[非标准模型](@article_id:312353)的存在，为我们理解“真理”与“可证性”之间的鸿沟提供了最终的、也是最形象的说明。一个在 PA 中不可判定的句子（如 $G$），正因为它在标准模型 $\mathbb{N}$ 中为真，而在某些[非标准模型](@article_id:312353)中为假，所以 PA 才无法对它做出最终的裁决。因为任何一个 PA 的证明，都必须在**所有**遵守其公理的模型中普遍有效，无论是标准的还是非标准的。
+这些[非标准模型](@keyword=non_standard_models|lang=zh-CN|style=Feynman)的存在，为我们理解“真理”与“可证性”之间的鸿沟提供了最终的、也是最形象的说明。一个在 PA 中不可判定的句子（如 $G$），正因为它在标准模型 $\mathbb{N}$ 中为真，而在某些[非标准模型](@keyword=non_standard_models|lang=zh-CN|style=Feynman)中为假，所以 PA 才无法对它做出最终的裁决。因为任何一个 PA 的证明，都必须在**所有**遵守其公理的模型中普遍有效，无论是标准的还是非标准的。
 
 从定义数字语言的几个简单符号出发，我们构建了一套力图囊括算术真理的公理系统。然而，这趟探索之旅的终点，却是在理性的边界上发现了深刻的局限性，并瞥见了由这些局限性所暗示的、远超我们日常直觉的奇妙数学景观。这或许正是逻辑学最迷人的地方：它不仅构建确定性，更勇于揭示确定性自身的边界。

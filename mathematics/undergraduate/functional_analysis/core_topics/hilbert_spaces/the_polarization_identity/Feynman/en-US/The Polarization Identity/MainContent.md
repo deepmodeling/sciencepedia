@@ -32,19 +32,19 @@ Or, rearranging for the dot product, we get:
 
 $\vec{u} \cdot \vec{v} = \frac{1}{4}(d_1^2 - d_2^2) = \frac{1}{4}(\|\vec{u}+\vec{v}\|^2 - \|\vec{u}-\vec{v}\|^2)$
 
-This is astonishing! It tells us that if you can measure the lengths of the two diagonals of the parallelogram, you can determine the dot product of its sides perfectly . You've recovered the notion of an "angle" using only a tape measure. This simple formula is the **real [polarization identity](@article_id:271325)**. It bridges the world of lengths (norms) and the world of angles (inner products). The name "polarization" beautifully captures this idea: we are taking a quantity that depends on a single vector, its squared norm $\|\vec{x}\|^2 = \langle \vec{x}, \vec{x} \rangle$, and "polarizing" it to reveal the more general, two-vector interaction $\langle \vec{x}, \vec{y} \rangle$. It's like taking white light and splitting it into its constituent colors.
+This is astonishing! It tells us that if you can measure the lengths of the two diagonals of the parallelogram, you can determine the dot product of its sides perfectly [@problem_id:1897835]. You've recovered the notion of an "angle" using only a tape measure. This simple formula is the **real [polarization identity](@keyword=polarization_identity|lang=en-US|style=Feynman)**. It bridges the world of lengths (norms) and the world of angles (inner products). The name "polarization" beautifully captures this idea: we are taking a quantity that depends on a single vector, its squared norm $\|\vec{x}\|^2 = \langle \vec{x}, \vec{x} \rangle$, and "polarizing" it to reveal the more general, two-vector interaction $\langle \vec{x}, \vec{y} \rangle$. It's like taking white light and splitting it into its constituent colors.
 
 ### The Power of Polarization: Beyond Geometry
 
-This identity is far more than a geometric curiosity. It holds true in any **real [inner product space](@article_id:137920)**, no matter how abstract. The "vectors" could be functions, matrices, or even polynomials, and the "inner product" could be a generalized dot product like an integral of their product . As long as the norm is defined from a valid inner product ($\|x\|^2 = \langle x, x \rangle$), the [polarization identity](@article_id:271325) gives us a way to get the inner product back from the norm.
+This identity is far more than a geometric curiosity. It holds true in any **real [inner product space](@keyword=inner_product_space|lang=en-US|style=Feynman)**, no matter how abstract. The "vectors" could be functions, matrices, or even polynomials, and the "inner product" could be a generalized dot product like an integral of their product [@problem_id:1897819]. As long as the norm is defined from a valid inner product ($\|x\|^2 = \langle x, x \rangle$), the [polarization identity](@keyword=polarization_identity|lang=en-US|style=Feynman) gives us a way to get the inner product back from the norm.
 
-For example, if we are told that for two vectors $u$ and $v$ in some space, $\|u+v\|=11$ and $\|u-v\|=7$, we can immediately calculate that $4\langle u,v \rangle = 11^2 - 7^2 = 121 - 49 = 72$, which means $\langle u,v \rangle = 18$ . We don't even need to know what the vectors *are*!
+For example, if we are told that for two vectors $u$ and $v$ in some space, $\|u+v\|=11$ and $\|u-v\|=7$, we can immediately calculate that $4\langle u,v \rangle = 11^2 - 7^2 = 121 - 49 = 72$, which means $\langle u,v \rangle = 18$ [@problem_id:1897791]. We don't even need to know what the vectors *are*!
 
-Furthermore, notice a lovely symmetry in the formula. If you swap $x$ and $y$, you get $\langle y, x \rangle$. On the right side, $\|y+x\|^2 = \|x+y\|^2$ and $\|y-x\|^2 = \|-(x-y)\|^2 = \|x-y\|^2$. The expression is unchanged! This tells us that any "inner product" defined this way from a norm will automatically satisfy the symmetry property $\langle x, y \rangle = \langle y, x \rangle$, a fundamental requirement for any real inner product .
+Furthermore, notice a lovely symmetry in the formula. If you swap $x$ and $y$, you get $\langle y, x \rangle$. On the right side, $\|y+x\|^2 = \|x+y\|^2$ and $\|y-x\|^2 = \|-(x-y)\|^2 = \|x-y\|^2$. The expression is unchanged! This tells us that any "inner product" defined this way from a norm will automatically satisfy the symmetry property $\langle x, y \rangle = \langle y, x \rangle$, a fundamental requirement for any real inner product [@problem_id:1897799].
 
 ### A Journey into the Complex Plane
 
-Now, every physicist and engineer knows that the real world often requires complex numbers. What happens to our identity in a **[complex inner product](@article_id:260748) space**? Here, the inner product $\langle x, y \rangle$ can be a complex number, and it has a slightly different rule: it's conjugate-linear in the second argument, meaning $\langle x, \alpha y \rangle = \bar{\alpha} \langle x, y \rangle$.
+Now, every physicist and engineer knows that the real world often requires complex numbers. What happens to our identity in a **[complex inner product](@keyword=complex_inner_product|lang=en-US|style=Feynman) space**? Here, the inner product $\langle x, y \rangle$ can be a complex number, and it has a slightly different rule: it's conjugate-linear in the second argument, meaning $\langle x, \alpha y \rangle = \bar{\alpha} \langle x, y \rangle$.
 
 Let's try our trick again and expand $\|x+y\|^2 = \langle x+y, x+y \rangle$:
 
@@ -62,7 +62,7 @@ Subtracting these two equations, just as before, we find:
 
 $\|x+y\|^2 - \|x-y\|^2 = 4\Re(\langle x,y \rangle)$
 
-So, in a complex space, the old real [polarization identity](@article_id:271325) doesn't give us the full inner product. It only gives us its **real part**  . We've lost the imaginary part! How can we recover it?
+So, in a complex space, the old real [polarization identity](@keyword=polarization_identity|lang=en-US|style=Feynman) doesn't give us the full inner product. It only gives us its **real part** [@problem_id:1897828] [@problem_id:1897844]. We've lost the imaginary part! How can we recover it?
 
 ### A Twist of $i$ to Find the Missing Piece
 
@@ -74,9 +74,9 @@ So, the strategy is clear: to find $\Im(\langle x,y \rangle)$, we just need to c
 
 $\Im(\langle x,y \rangle) = \Re(\langle x,iy \rangle) = \frac{1}{4}(\|x+iy\|^2 - \|x-iy\|^2)$
 
-This is a beautiful and subtle argument, one that also explains a curious puzzle . If you were to naively apply the real identity formula to the vectors $ix$ and $y$, you would be calculating $\Re(\langle ix,y \rangle)$. Since $\langle ix,y\rangle = i\langle x,y \rangle = i(a+bi) = -b+ai$, its real part is $-b$, or $-\Im(\langle x,y \rangle)$. This shows how all these pieces fit together consistently.
+This is a beautiful and subtle argument, one that also explains a curious puzzle [@problem_id:1897776]. If you were to naively apply the real identity formula to the vectors $ix$ and $y$, you would be calculating $\Re(\langle ix,y \rangle)$. Since $\langle ix,y\rangle = i\langle x,y \rangle = i(a+bi) = -b+ai$, its real part is $-b$, or $-\Im(\langle x,y \rangle)$. This shows how all these pieces fit together consistently.
 
-Now we can assemble the complete **[complex polarization identity](@article_id:268761)**. An inner product is just its real part plus $i$ times its imaginary part:
+Now we can assemble the complete **[complex polarization identity](@keyword=complex_polarization_identity|lang=en-US|style=Feynman)**. An inner product is just its real part plus $i$ times its imaginary part:
 
 $\langle x, y \rangle = \Re(\langle x, y \rangle) + i\Im(\langle x, y \rangle)$
 
@@ -88,13 +88,13 @@ It looks complicated, but we've seen how it arises from a simple geometric idea 
 
 ### The Ultimate Litmus Test: The Parallelogram Law
 
-We've shown that if a norm comes from an inner product, we can recover that inner product using the [polarization identity](@article_id:271325). This raises a profound question: can we go the other way? Can we take *any* function that behaves like a length (any norm), plug it into the polarization formula, and have it magically produce a valid inner product?
+We've shown that if a norm comes from an inner product, we can recover that inner product using the [polarization identity](@keyword=polarization_identity|lang=en-US|style=Feynman). This raises a profound question: can we go the other way? Can we take *any* function that behaves like a length (any norm), plug it into the polarization formula, and have it magically produce a valid inner product?
 
-Let's try it. Consider the vector space $\mathbb{R}^2$ with a different way of measuring distance. Instead of the usual Euclidean distance, let's use the **[maximum norm](@article_id:268468)**, where the "length" of a vector $(v_1, v_2)$ is just the largest of its components' absolute values: $\|v\|_\infty = \max(|v_1|, |v_2|)$. Let's define a form $B(x,y)$ using our identity: $B(x,y) = \frac{1}{4}(\|x+y\|_\infty^2 - \|x-y\|_\infty^2)$. To be an inner product, $B$ must be bilinear. Let's test this with a simple case: is $B(2x,y)$ equal to $2B(x,y)$?
+Let's try it. Consider the vector space $\mathbb{R}^2$ with a different way of measuring distance. Instead of the usual Euclidean distance, let's use the **[maximum norm](@keyword=maximum_norm|lang=en-US|style=Feynman)**, where the "length" of a vector $(v_1, v_2)$ is just the largest of its components' absolute values: $\|v\|_\infty = \max(|v_1|, |v_2|)$. Let's define a form $B(x,y)$ using our identity: $B(x,y) = \frac{1}{4}(\|x+y\|_\infty^2 - \|x-y\|_\infty^2)$. To be an inner product, $B$ must be bilinear. Let's test this with a simple case: is $B(2x,y)$ equal to $2B(x,y)$?
 
-A quick calculation with vectors like $x=(1,1)$ and $y=(2,0)$ shows that $B(2x,y) = 3$ while $2B(x,y) = 4$. They are not equal! . The formula failed to produce a valid inner product. The same failure happens for the "Manhattan" or $L_1$ norm  and for the general $L_p$ norms whenever $p \neq 2$ .
+A quick calculation with vectors like $x=(1,1)$ and $y=(2,0)$ shows that $B(2x,y) = 3$ while $2B(x,y) = 4$. They are not equal! [@problem_id:1897822]. The formula failed to produce a valid inner product. The same failure happens for the "Manhattan" or $L_1$ norm [@problem_id:1897787] and for the general $L_p$ norms whenever $p \neq 2$ [@problem_id:1897830].
 
-So, what is the secret ingredient? What special property must a norm have for the [polarization identity](@article_id:271325) to work its magic? Go back to our very first derivation. If we add the two equations for $d_1^2$ and $d_2^2$, the dot product terms cancel out, leaving:
+So, what is the secret ingredient? What special property must a norm have for the [polarization identity](@keyword=polarization_identity|lang=en-US|style=Feynman) to work its magic? Go back to our very first derivation. If we add the two equations for $d_1^2$ and $d_2^2$, the dot product terms cancel out, leaving:
 
 $d_1^2 + d_2^2 = (\|\vec{u}\|^2 + \|\vec{v}\|^2 + 2(\vec{u} \cdot \vec{v})) + (\|\vec{u}\|^2 + \|\vec{v}\|^2 - 2(\vec{u} \cdot \vec{v})) = 2(\|\vec{u}\|^2 + \|\vec{v}\|^2)$
 
@@ -104,6 +104,6 @@ $\|\vec{u}+\vec{v}\|^2 + \|\vec{u}-\vec{v}\|^2 = 2(\|\vec{u}\|^2 + \|\vec{v}\|^2
 
 This is the famous **Parallelogram Law**. It states that for any parallelogram, the sum of the squares of the lengths of the diagonals is equal to the sum of the squares of the lengths of the four sides. It is a simple geometric truth in our familiar Euclidean space.
 
-The deep and powerful result, known as the **Jordan-von Neumann theorem**, is that this law is the ultimate litmus test. A norm can be derived from an inner product *if and only if* it satisfies the [parallelogram law](@article_id:137498) for all vectors.
+The deep and powerful result, known as the **Jordan-von Neumann theorem**, is that this law is the ultimate litmus test. A norm can be derived from an inner product *if and only if* it satisfies the [parallelogram law](@keyword=parallelogram_law|lang=en-US|style=Feynman) for all vectors.
 
-The [polarization identity](@article_id:271325) and the [parallelogram law](@article_id:137498) are two sides of the same coin. The law is the gatekeeper; it tells you if the geometry of your space is "Euclidean-like" enough to even have a consistent notion of an inner product. If it is, the identity is the key that unlocks it, allowing you to reconstruct that inner product using only the most basic tool you have: your tape measure.
+The [polarization identity](@keyword=polarization_identity|lang=en-US|style=Feynman) and the [parallelogram law](@keyword=parallelogram_law|lang=en-US|style=Feynman) are two sides of the same coin. The law is the gatekeeper; it tells you if the geometry of your space is "Euclidean-like" enough to even have a consistent notion of an inner product. If it is, the identity is the key that unlocks it, allowing you to reconstruct that inner product using only the most basic tool you have: your tape measure.

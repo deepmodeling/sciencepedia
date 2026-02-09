@@ -1,21 +1,21 @@
 ## Introduction
-Many [definite integrals](@entry_id:147612) involving [trigonometric functions](@entry_id:178918), while fundamental in fields like physics and engineering, prove notoriously difficult to solve using standard real calculus techniques. These integrals, typically of the form $\int_0^{2\pi} F(\cos\theta, \sin\theta) \, d\theta$, often lead to cumbersome calculations or are simply intractable. Complex analysis provides a remarkably powerful and elegant pathway to their solution, transforming a challenging real-variable problem into a straightforward exercise in [complex contour integration](@entry_id:175437).
+Many definite integrals involving trigonometric functions, while fundamental in fields like physics and engineering, prove notoriously difficult to solve using standard real calculus techniques. These integrals, typically of the form $\int_0^{2\pi} F(\cos\theta, \sin\theta) \, d\theta$, often lead to cumbersome calculations or are simply intractable. Complex analysis provides a remarkably powerful and elegant pathway to their solution, transforming a challenging real-variable problem into a straightforward exercise in complex contour integration.
 
-This article serves as a comprehensive guide to mastering this technique. By bridging the gap between real-valued integration and complex analysis, it unlocks a systematic method for solving a wide array of [trigonometric integrals](@entry_id:175581). Throughout the following sections, you will gain a deep understanding of this approach. The first section, **Principles and Mechanisms**, lays the groundwork by introducing the unit circle transformation and the application of the Residue Theorem. The second section, **Applications and Interdisciplinary Connections**, broadens the scope to showcase how this method tackles more advanced integrands and connects to fields like Fourier analysis and [potential theory](@entry_id:141424). Finally, **Hands-On Practices** will allow you to solidify your knowledge by working through guided examples.
+This article serves as a comprehensive guide to mastering this technique. By bridging the gap between real-valued integration and complex analysis, it unlocks a systematic method for solving a wide array of trigonometric integrals. Throughout the following sections, you will gain a deep understanding of this approach. The first section, **Principles and Mechanisms**, lays the groundwork by introducing the unit circle transformation and the application of the Residue Theorem. The second section, **Applications and Interdisciplinary Connections**, broadens the scope to showcase how this method tackles more advanced integrands and connects to fields like Fourier analysis and potential theory. Finally, **Hands-On Practices** will allow you to solidify your knowledge by working through guided examples.
 
-We begin by exploring the core principles of the method, detailing the transformation that converts real [trigonometric integrals](@entry_id:175581) into the complex domain where the powerful machinery of [residue calculus](@entry_id:171988) can be applied.
+We begin by exploring the core principles of the method, detailing the transformation that converts real trigonometric integrals into the complex domain where the powerful machinery of residue calculus can be applied.
 
 ## Principles and Mechanisms
 
-A significant application of the Residue Theorem lies in the evaluation of real-valued [definite integrals](@entry_id:147612) that are otherwise cumbersome or intractable using standard calculus techniques. A particularly important class of such integrals consists of those involving [trigonometric functions](@entry_id:178918) integrated over a full period, typically from $\theta=0$ to $\theta=2\pi$. These integrals frequently appear in physics and engineering, in fields ranging from electrostatics to signal processing. They can generally be expressed in the form:
+A significant application of the Residue Theorem lies in the evaluation of real-valued definite integrals that are otherwise cumbersome or intractable using standard calculus techniques. A particularly important class of such integrals consists of those involving trigonometric functions integrated over a full period, typically from $\theta=0$ to $\theta=2\pi$. These integrals frequently appear in physics and engineering, in fields ranging from electrostatics to signal processing. They can generally be expressed in the form:
 $$
 I = \int_0^{2\pi} F(\cos\theta, \sin\theta) \, d\theta
 $$
-where $F$ is a function, typically rational, of $\cos\theta$ and $\sin\theta$. The central strategy is to transform this real integral into a [complex contour integral](@entry_id:189786) around the unit circle, which can then be elegantly dispatched by the Residue Theorem.
+where $F$ is a function, typically rational, of $\cos\theta$ and $\sin\theta$. The central strategy is to transform this real integral into a complex contour integral around the unit circle, which can then be elegantly dispatched by the Residue Theorem.
 
 ### The Unit Circle Transformation
 
-The key to this method is the [parameterization](@entry_id:265163) of the unit circle in the complex plane, $|z|=1$, by the equation $z = e^{i\theta}$ for $\theta \in [0, 2\pi]$. As $\theta$ traverses the interval from $0$ to $2\pi$, the point $z$ travels once counter-clockwise around the unit circle. This correspondence allows us to recast the integral with respect to $\theta$ as an integral with respect to the complex variable $z$.
+The key to this method is the parameterization of the unit circle in the complex plane, $|z|=1$, by the equation $z = e^{i\theta}$ for $\theta \in [0, 2\pi]$. As $\theta$ traverses the interval from $0$ to $2\pi$, the point $z$ travels once counter-clockwise around the unit circle. This correspondence allows us to recast the integral with respect to $\theta$ as an integral with respect to the complex variable $z$.
 
 To do this, we express the core components of the integrand, $\cos\theta$, $\sin\theta$, and the differential $d\theta$, in terms of $z$. From Euler's formula, we know:
 $$
@@ -36,7 +36,7 @@ By applying these three substitutions, the real integral $\int_0^{2\pi} F(\cos\t
 $$
 I = \oint_C F\left(\frac{z + z^{-1}}{2}, \frac{z - z^{-1}}{2i}\right) \frac{dz}{iz}
 $$
-If $F$ is a [rational function](@entry_id:270841) of its arguments, this transformation yields an integrand that is a [rational function](@entry_id:270841) of $z$. We can then evaluate this integral by summing the residues of the poles enclosed by the unit circle, according to the Residue Theorem:
+If $F$ is a rational function of its arguments, this transformation yields an integrand that is a rational function of $z$. We can then evaluate this integral by summing the residues of the poles enclosed by the unit circle, according to the Residue Theorem:
 $$
 \oint_C f(z) \, dz = 2\pi i \sum_{k} \text{Res}(f, z_k)
 $$
@@ -56,7 +56,7 @@ Simplifying the expression algebraically:
 $$
 = \oint_C \frac{2z}{2az + z^2 + 1} \frac{dz}{iz} = \frac{2}{i} \oint_C \frac{1}{z^2 + 2az + 1} dz
 $$
-The integrand $f(z) = \frac{1}{z^2 + 2az + 1}$ has [simple poles](@entry_id:175768) where the denominator is zero. Using the quadratic formula, the poles are at:
+The integrand $f(z) = \frac{1}{z^2 + 2az + 1}$ has simple poles where the denominator is zero. Using the quadratic formula, the poles are at:
 $$
 z_{\pm} = \frac{-2a \pm \sqrt{4a^2 - 4}}{2} = -a \pm \sqrt{a^2 - 1}
 $$
@@ -64,7 +64,7 @@ Since we are given $a > 1$, we can analyze the location of these poles. Let $z_+
 For $z_-$, since $a>1$ and $\sqrt{a^2-1} > 0$, it is clear that $z_- < -1$, so its magnitude is greater than 1, $|z_-| > 1$.
 For $z_+$, we can check its magnitude by considering the product of the roots $|z_+ z_-| = |1| = 1$. Since $|z_-| > 1$, it must be that $|z_+| < 1$. Thus, only the pole at $z_+ = -a + \sqrt{a^2 - 1}$ lies inside the unit circle.
 
-The residue at this [simple pole](@entry_id:164416) is:
+The residue at this simple pole is:
 $$
 \text{Res}(f, z_+) = \lim_{z \to z_+} (z - z_+) f(z) = \lim_{z \to z_+} \frac{z - z_+}{(z - z_+)(z - z_-)} = \frac{1}{z_+ - z_-}
 $$
@@ -78,7 +78,7 @@ $$
 
 #### Denominators Involving Sine
 
-The procedure is analogous for integrands containing $\sin\theta$. A problem arising in the study of [antenna radiation](@entry_id:265286) patterns involves calculating the total power by integrating a function of the form $\frac{P_0}{a+b\sin\theta}$ . Let's evaluate the core integral $\int_0^{2\pi} \frac{d\theta}{a+b\sin\theta}$ under the physical constraint $a > |b| > 0$.
+The procedure is analogous for integrands containing $\sin\theta$. A problem arising in the study of antenna radiation patterns involves calculating the total power by integrating a function of the form $\frac{P_0}{a+b\sin\theta}$ [@problem_id:2239999]. Let's evaluate the core integral $\int_0^{2\pi} \frac{d\theta}{a+b\sin\theta}$ under the physical constraint $a > |b| > 0$.
 
 Substituting $\sin\theta = \frac{z - z^{-1}}{2i}$ and $d\theta = \frac{dz}{iz}$:
 $$
@@ -99,7 +99,7 @@ Since $(a - \sqrt{a^2-b^2})(a + \sqrt{a^2-b^2}) = a^2 - (a^2-b^2) = b^2$, we hav
 $$
 |z_+| = \frac{b^2}{|b|(a+\sqrt{a^2-b^2})} = \frac{|b|}{a+\sqrt{a^2-b^2}} < \frac{|b|}{|b| + \sqrt{a^2-b^2}} < 1
 $$
-The residue at the [simple pole](@entry_id:164416) $z_+$ for the integrand $f(z)$ is:
+The residue at the simple pole $z_+$ for the integrand $f(z)$ is:
 $$
 \text{Res}\left(f, z_+\right) = \lim_{z \to z_+} (z-z_+) \frac{2}{b(z-z_+)(z-z_-)} = \frac{2}{b(z_+-z_-)} = \frac{2}{b\left(\frac{2i\sqrt{a^2-b^2}}{b}\right)} = \frac{1}{i\sqrt{a^2 - b^2}}
 $$
@@ -110,7 +110,7 @@ $$
 
 #### Handling More Complex Integrands
 
-This method extends naturally to more complicated [rational functions](@entry_id:154279). For example, consider the integral $I = \int_0^{2\pi} \frac{\sin^2\theta}{a - \cos\theta} d\theta$ for $a > 1$ . While a direct substitution is possible, a preliminary algebraic simplification can be effective:
+This method extends naturally to more complicated rational functions. For example, consider the integral $I = \int_0^{2\pi} \frac{\sin^2\theta}{a - \cos\theta} d\theta$ for $a > 1$ [@problem_id:2239936]. While a direct substitution is possible, a preliminary algebraic simplification can be effective:
 $$
 \frac{\sin^2\theta}{a - \cos\theta} = \frac{1 - \cos^2\theta}{a - \cos\theta} = \frac{(a^2 - \cos^2\theta) - (a^2-1)}{a - \cos\theta} = a + \cos\theta - \frac{a^2-1}{a - \cos\theta}
 $$
@@ -118,12 +118,12 @@ Integrating this term by term from $0$ to $2\pi$:
 $$
 I = \int_0^{2\pi} (a + \cos\theta) d\theta - (a^2-1) \int_0^{2\pi} \frac{d\theta}{a - \cos\theta}
 $$
-The [first integral](@entry_id:274642) evaluates to $2\pi a$. The second integral, $\int_0^{2\pi}\frac{d\theta}{a-\cos\theta}$, can be evaluated using our method. The transformation yields $\oint_C \frac{2i}{z^2-2az+1}dz$. The poles are $z_\pm = a \pm \sqrt{a^2-1}$. For $a>1$, $z_+ > 1$ and $z_- = a - \sqrt{a^2-1}$ is inside the unit circle. The residue of the integrand at $z_-$ is $\frac{2i}{2z_- - 2a} = \frac{i}{z_- - a} = \frac{i}{-\sqrt{a^2-1}}$. The integral is $2\pi i \cdot \text{Res} = 2\pi i \cdot \frac{-i}{\sqrt{a^2-1}} = \frac{2\pi}{\sqrt{a^2-1}}$.
+The first integral evaluates to $2\pi a$. The second integral, $\int_0^{2\pi}\frac{d\theta}{a-\cos\theta}$, can be evaluated using our method. The transformation yields $\oint_C \frac{2i}{z^2-2az+1}dz$. The poles are $z_\pm = a \pm \sqrt{a^2-1}$. For $a>1$, $z_+ > 1$ and $z_- = a - \sqrt{a^2-1}$ is inside the unit circle. The residue of the integrand at $z_-$ is $\frac{2i}{2z_- - 2a} = \frac{i}{z_- - a} = \frac{i}{-\sqrt{a^2-1}}$. The integral is $2\pi i \cdot \text{Res} = 2\pi i \cdot \frac{-i}{\sqrt{a^2-1}} = \frac{2\pi}{\sqrt{a^2-1}}$.
 So for the original problem:
 $$
 I = 2\pi a - (a^2-1) \left( \frac{2\pi}{\sqrt{a^2-1}} \right) = 2\pi a - 2\pi\sqrt{a^2-1} = 2\pi(a - \sqrt{a^2-1})
 $$
-For integrands containing terms like $\cos(n\theta)$ or $\sin(n\theta)$, we can use $z^n = e^{in\theta} = \cos(n\theta) + i\sin(n\theta)$. This implies $\cos(n\theta) = \text{Re}(z^n)$ and $\sin(n\theta) = \text{Im}(z^n)$. For an integral such as $I = \int_0^{2\pi} \frac{\cos(3\theta)}{5-4\cos\theta} d\theta$ , we can relate it to a complex integral. An alternative is to use $\cos(3\theta) = \frac{1}{2}(z^3+z^{-3})$, which is often more direct. A common approach for this type of integral is to consider the related complex integral:
+For integrands containing terms like $\cos(n\theta)$ or $\sin(n\theta)$, we can use $z^n = e^{in\theta} = \cos(n\theta) + i\sin(n\theta)$. This implies $\cos(n\theta) = \text{Re}(z^n)$ and $\sin(n\theta) = \text{Im}(z^n)$. For an integral such as $I = \int_0^{2\pi} \frac{\cos(3\theta)}{5-4\cos\theta} d\theta$ [@problem_id:2239955], we can relate it to a complex integral. An alternative is to use $\cos(3\theta) = \frac{1}{2}(z^3+z^{-3})$, which is often more direct. A common approach for this type of integral is to consider the related complex integral:
 $$
 \oint_C \frac{\frac{1}{2}(z^3 + z^{-3})}{5-4(\frac{z+z^{-1}}{2})} \frac{dz}{iz} = \frac{1}{2i} \oint_C \frac{z^{-3}(z^6+1)}{-2z^2+5z-2} dz
 $$
@@ -143,9 +143,9 @@ In the second integral, let $u = 2\pi - \theta$, so $d\theta = -du$. The limits 
 $$
 \int_{\pi}^{2\pi} g(\theta) \, d\theta = \int_{\pi}^{0} g(2\pi-u) \, (-du) = \int_0^{\pi} g(2\pi-u) \, du = \int_0^{\pi} g(u) \, du
 $$
-Thus, $\int_0^{2\pi} g(\theta) \, d\theta = 2 \int_0^{\pi} g(\theta) \, d\theta$. For an integrand $g(\theta)=F(\cos\theta, \sin\theta)$, this symmetry holds if $F$ is an [even function](@entry_id:164802) of its second argument, since $\cos(2\pi-\theta)=\cos\theta$ and $\sin(2\pi-\theta)=-\sin\theta$. Any [rational function](@entry_id:270841) of only $\cos\theta$ has this property.
+Thus, $\int_0^{2\pi} g(\theta) \, d\theta = 2 \int_0^{\pi} g(\theta) \, d\theta$. For an integrand $g(\theta)=F(\cos\theta, \sin\theta)$, this symmetry holds if $F$ is an even function of its second argument, since $\cos(2\pi-\theta)=\cos\theta$ and $\sin(2\pi-\theta)=-\sin\theta$. Any rational function of only $\cos\theta$ has this property.
 
-For instance, to evaluate $I = \int_0^{\pi} \frac{d\theta}{a+\cos\theta}$ for $a>1$ , we can note that the integrand meets the symmetry condition. Therefore:
+For instance, to evaluate $I = \int_0^{\pi} \frac{d\theta}{a+\cos\theta}$ for $a>1$ [@problem_id:2239976], we can note that the integrand meets the symmetry condition. Therefore:
 $$
 I = \frac{1}{2} \int_0^{2\pi} \frac{d\theta}{a+\cos\theta}
 $$
@@ -160,7 +160,7 @@ If the denominator of the integrand is raised to a power, the corresponding comp
 $$
 \text{Res}(f, z_0) = \frac{1}{(m-1)!} \lim_{z \to z_0} \frac{d^{m-1}}{dz^{m-1}} \left[ (z-z_0)^m f(z) \right]
 $$
-Let's evaluate $I = \int_0^{2\pi} \frac{d\theta}{(\sqrt{3}+\sin\theta)^2}$ . The transformation yields:
+Let's evaluate $I = \int_0^{2\pi} \frac{d\theta}{(\sqrt{3}+\sin\theta)^2}$ [@problem_id:2239956]. The transformation yields:
 $$
 I = \oint_C \frac{1}{\left(\sqrt{3} + \frac{z-z^{-1}}{2i}\right)^2} \frac{dz}{iz} = \oint_C \frac{(2iz)^2}{(2i\sqrt{3}z + z^2 - 1)^2} \frac{dz}{iz} = 4i \oint_C \frac{z}{(z^2 + 2i\sqrt{3}z - 1)^2} dz
 $$
@@ -177,17 +177,17 @@ $$
 $$
 Finally, the integral is $I = 4i \cdot (2\pi i \cdot \text{Res}) = -8\pi \cdot \left( -\frac{\sqrt{3}}{8\sqrt{2}} \right) = \pi\sqrt{\frac{3}{2}}$.
 
-The calculations can become quite involved for higher-order poles, as seen when evaluating integrals like $\int_0^{2\pi} \frac{d\theta}{(1 + a \cos\theta)^n}$ . For $a=1/2$ and $n=3$, this requires finding the residue at a third-order pole, involving a second derivative, but the principle remains the same.
+The calculations can become quite involved for higher-order poles, as seen when evaluating integrals like $\int_0^{2\pi} \frac{d\theta}{(1 + a \cos\theta)^n}$ [@problem_id:2239965]. For $a=1/2$ and $n=3$, this requires finding the residue at a third-order pole, involving a second derivative, but the principle remains the same.
 
 ### Advanced Application: Essential Singularities
 
-The power of this method extends beyond [rational functions](@entry_id:154279) to more exotic integrands. Sometimes the transformation leads to a function with an essential singularity, requiring the calculation of a Laurent series to find the residue.
+The power of this method extends beyond rational functions to more exotic integrands. Sometimes the transformation leads to a function with an essential singularity, requiring the calculation of a Laurent series to find the residue.
 
-Consider the integral $I = \int_0^{2\pi} e^{\cos\theta} \cos(3\theta - \sin\theta) \, d\theta$ . This does not appear to be a [rational function](@entry_id:270841) of sine and cosine. The key is to use Euler's formula to write the integrand as the real part of a [complex exponential](@entry_id:265100):
+Consider the integral $I = \int_0^{2\pi} e^{\cos\theta} \cos(3\theta - \sin\theta) \, d\theta$ [@problem_id:2239959]. This does not appear to be a rational function of sine and cosine. The key is to use Euler's formula to write the integrand as the real part of a complex exponential:
 $$
 I = \text{Re} \left( \int_0^{2\pi} e^{\cos\theta} e^{i(3\theta - \sin\theta)} \, d\theta \right)
 $$
-Let's analyze the [complex exponential](@entry_id:265100) term:
+Let's analyze the complex exponential term:
 $$
 e^{\cos\theta} e^{i(3\theta - \sin\theta)} = e^{\cos\theta - i\sin\theta} e^{i3\theta} = e^{e^{-i\theta}} (e^{i\theta})^3
 $$
@@ -195,7 +195,7 @@ Now, we perform the standard substitution $z=e^{i\theta}$:
 $$
 J = \int_0^{2\pi} e^{e^{-i\theta}} (e^{i\theta})^3 \, d\theta = \oint_C e^{1/z} z^3 \frac{dz}{iz} = \frac{1}{i} \oint_C z^2 e^{1/z} \, dz
 $$
-The integrand $f(z) = z^2 e^{1/z}$ has an [essential singularity](@entry_id:173860) at $z=0$, which is inside the unit circle. To find the residue, we must find the coefficient of the $z^{-1}$ term in its Laurent series expansion around $z=0$. We start with the well-known series for the [exponential function](@entry_id:161417), $e^w = \sum_{k=0}^\infty \frac{w^k}{k!}$. Substituting $w=1/z$:
+The integrand $f(z) = z^2 e^{1/z}$ has an essential singularity at $z=0$, which is inside the unit circle. To find the residue, we must find the coefficient of the $z^{-1}$ term in its Laurent series expansion around $z=0$. We start with the well-known series for the exponential function, $e^w = \sum_{k=0}^\infty \frac{w^k}{k!}$. Substituting $w=1/z$:
 $$
 e^{1/z} = 1 + \frac{1}{z} + \frac{1}{2!z^2} + \frac{1}{3!z^3} + \dots
 $$

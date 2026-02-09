@@ -1,7 +1,7 @@
 ## 引言
-我们如何测量地球上两个城市之间的最短航线，或者在海量数据中衡量两个数据点之间的“相似度”？在这些不再平直的弯曲世界里，我们熟悉的欧几里得“直线距离”不再适用。[黎曼距离函数](@article_id:377681)正是为了解决这一根本问题而生，它为在各种弯曲[流形](@article_id:313450)（从行星表面到抽象的信息空间）上定义和计算距离提供了一个普适而强大的框架。本文旨在揭开[黎曼距离函数](@article_id:377681)的面纱，阐明其背后的深刻原理及其在现代科学技术中的关键作用。
+我们如何测量地球上两个城市之间的最短航线，或者在海量数据中衡量两个数据点之间的“相似度”？在这些不再平直的弯曲世界里，我们熟悉的欧几里得“直线距离”不再适用。[黎曼距离函数](@keyword=riemannian_distance_function|lang=zh-CN|style=Feynman)正是为了解决这一根本问题而生，它为在各种弯曲[流形](@keyword=manifold|lang=zh-CN|style=Feynman)（从行星表面到抽象的信息空间）上定义和计算距离提供了一个普适而强大的框架。本文旨在揭开[黎曼距离函数](@keyword=riemannian_distance_function|lang=zh-CN|style=Feynman)的面纱，阐明其背后的深刻原理及其在现代科学技术中的关键作用。
 
-为了系统地理解这一概念，我们将分三步进行探索。在“原理与机制”一章中，我们将从最基本的黎曼度量出发，学习如何定义曲线长度，并由此引出作为距离的“[下确界](@article_id:302618)”概念。我们将深入探讨[测地线](@article_id:327811)、空间的[完备性](@article_id:304263)、以及指数映射和[割迹](@article_id:321741)等核心工具，并揭示曲率如何成为这一切的幕后推手。随后，在“应用与[交叉](@article_id:315017)连接”一章中，我们将看到这些抽象的几何思想如何转化为解决现实世界问题的利器，其应用横跨物理学、工程学、数据科学乃至人工智能。最后，在“动手实践”部分，你将通过具体的计算练习，亲手感受和验证这些美妙的几何性质。现在，让我们从最基本的问题开始：在一个弯曲的世界里，距离究竟意味着什么？
+为了系统地理解这一概念，我们将分三步进行探索。在“原理与机制”一章中，我们将从最基本的黎曼度量出发，学习如何定义曲线长度，并由此引出作为距离的“[下确界](@keyword=greatest_lower_bound|lang=zh-CN|style=Feynman)”概念。我们将深入探讨[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)、空间的[完备性](@keyword=completeness|lang=zh-CN|style=Feynman)、以及指数映射和[割迹](@keyword=cut_locus|lang=zh-CN|style=Feynman)等核心工具，并揭示曲率如何成为这一切的幕后推手。随后，在“应用与[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)连接”一章中，我们将看到这些抽象的几何思想如何转化为解决现实世界问题的利器，其应用横跨物理学、工程学、数据科学乃至人工智能。最后，在“动手实践”部分，你将通过具体的计算练习，亲手感受和验证这些美妙的几何性质。现在，让我们从最基本的问题开始：在一个弯曲的世界里，距离究竟意味着什么？
 
 ## 原理与机制
 
@@ -9,77 +9,77 @@
 
 ### 在弯曲的世界中测量距离
 
-在欧几里得的平直世界里，距离是“两点之间直线最短”。但在一个弯曲的[流形](@article_id:313450)（比如地球表面或者更抽象的空间）上，“直线”这个概念本身就变得不那么直观了。[黎曼几何](@article_id:320912)的奠基者们想出了一个绝妙的办法：他们不再试图从宏观上定义“直线”，而是从最微观的尺度入手。
+在欧几里得的平直世界里，距离是“两点之间直线最短”。但在一个弯曲的[流形](@keyword=manifold|lang=zh-CN|style=Feynman)（比如地球表面或者更抽象的空间）上，“直线”这个概念本身就变得不那么直观了。[黎曼几何](@keyword=riemannian_geometry|lang=zh-CN|style=Feynman)的奠基者们想出了一个绝妙的办法：他们不再试图从宏观上定义“直线”，而是从最微观的尺度入手。
 
-他们设想，在弯曲空间中的每一个点上，都存在一个微小的、几乎是平坦的局部空间，我们称之为**[切空间](@article_id:377902)**（tangent space）。你可以把它想象成在地球表面的某一点铺开的一张无限小的地图。[黎曼几何](@article_id:320912)的核心工具——**[黎曼度量](@article_id:311323)**（Riemannian metric）$g$，就是在每个点的切空间上都定义了一个**内积**（inner product）。这个内积就像一把微型标尺和量角器，它让我们能够在每一个无穷小的邻域里测量向量的长度和它们之间的夹角。
+他们设想，在弯曲空间中的每一个点上，都存在一个微小的、几乎是平坦的局部空间，我们称之为**[切空间](@keyword=tangent_spaces|lang=zh-CN|style=Feynman)**（tangent space）。你可以把它想象成在地球表面的某一点铺开的一张无限小的地图。[黎曼几何](@keyword=riemannian_geometry|lang=zh-CN|style=Feynman)的核心工具——**[黎曼度量](@keyword=riemannian_metric|lang=zh-CN|style=Feynman)**（Riemannian metric）$g$，就是在每个点的切空间上都定义了一个**内积**（inner product）。这个内积就像一把微型标尺和量角器，它让我们能够在每一个无穷小的邻域里测量向量的长度和它们之间的夹角。[@problem_id:3066818]
 
-有了这把无处不在的“微型标尺”，我们就可以测量一条曲线的长度了。想象一下，一条光滑曲线 $\gamma$ 是你在[曲面](@article_id:331153)上行走的轨迹。在任何时刻 $t$，你的速度 $\dot\gamma(t)$ 都是[切空间](@article_id:377902)中的一个向量。使用该点的度量 $g_{\gamma(t)}$，我们可以计算出你[瞬时速度](@article_id:347067)的大小（速率）：$\|\dot\gamma(t)\| = \sqrt{g_{\gamma(t)}(\dot\gamma(t), \dot\gamma(t))}$。然后，就像计算汽车的行驶总里程一样，我们将速率从起点到终点进行积分，就得到了这条曲线的总长度 $L(\gamma)$：
+有了这把无处不在的“微型标尺”，我们就可以测量一条曲线的长度了。想象一下，一条光滑曲线 $\gamma$ 是你在[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上行走的轨迹。在任何时刻 $t$，你的速度 $\dot\gamma(t)$ 都是[切空间](@keyword=tangent_spaces|lang=zh-CN|style=Feynman)中的一个向量。使用该点的度量 $g_{\gamma(t)}$，我们可以计算出你[瞬时速度](@keyword=instantaneous_velocity|lang=zh-CN|style=Feynman)的大小（速率）：$\|\dot\gamma(t)\| = \sqrt{g_{\gamma(t)}(\dot\gamma(t), \dot\gamma(t))}$。然后，就像计算汽车的行驶总里程一样，我们将速率从起点到终点进行积分，就得到了这条曲线的总长度 $L(\gamma)$：
 
 $$ L(\gamma) = \int_a^b \|\dot\gamma(t)\| \,dt $$
 
-这个定义极其优美且普适，它不依赖于空间是如何[嵌入](@article_id:311541)到更高维度的空间中的，只依赖于空间内在的、逐点定义的度量结构。
+这个定义极其优美且普适，它不依赖于空间是如何[嵌入](@keyword=embedding|lang=zh-CN|style=Feynman)到更高维度的空间中的，只依赖于空间内在的、逐点定义的度量结构。[@problem_id:3066818]
 
-### [最短路径](@article_id:317973)：从[下确界](@article_id:302618)到[测地线](@article_id:327811)
+### [最短路径](@keyword=shortest_path|lang=zh-CN|style=Feynman)：从[下确界](@keyword=greatest_lower_bound|lang=zh-CN|style=Feynman)到[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)
 
-既然我们可以测量任意路径的长度，那么两点 $p$ 和 $q$ 之间的“距离”又该如何定义呢？一个自然的想法是：遍历所有连接 $p$ 和 $q$ 的可能路径，找出其中长度最短的那一条。因此，[黎曼距离](@article_id:364418) $d(p,q)$ 被定义为所有连接 $p$ 和 $q$ 的（分段光滑）曲线长度的**下确界**（infimum）。
+既然我们可以测量任意路径的长度，那么两点 $p$ 和 $q$ 之间的“距离”又该如何定义呢？一个自然的想法是：遍历所有连接 $p$ 和 $q$ 的可能路径，找出其中长度最短的那一条。因此，[黎曼距离](@keyword=riemannian_distance|lang=zh-CN|style=Feynman) $d(p,q)$ 被定义为所有连接 $p$ 和 $q$ 的（分段光滑）曲线长度的**下确界**（infimum）。
 
 $$ d(p,q) = \inf \{L(\gamma) \mid \gamma \text{ 连接 } p \text{ 和 } q\} $$
 
-这里使用“下确界”而不是“最小值”（minimum）是一个非常精妙的数学细节，它揭示了空间的一个深刻属性。[下确界](@article_id:302618)是所有路径长度的最大下界。在大多数我们熟悉的情况下，它和最小值是一回事。但事实并非总是如此！
+这里使用“下确界”而不是“最小值”（minimum）是一个非常精妙的数学细节，它揭示了空间的一个深刻属性。[下确界](@keyword=greatest_lower_bound|lang=zh-CN|style=Feynman)是所有路径长度的最大下界。在大多数我们熟悉的情况下，它和最小值是一回事。但事实并非总是如此！
 
-想象一个被戳了一个洞的平面，$M = \mathbb{R}^2 \setminus \{(0,0)\}$。现在我们想测量点 $p=(-1,0)$ 和 $q=(1,0)$ 之间的距离。在完整的 $\mathbb{R}^2$ 中，最短路径是穿过原点的直线段，长度为 $2$。但在我们这个有洞的平面 $M$ 中，这条直线路径是“非法”的，因为它经过了被移除的原点。然而，我们可以构造一系列路径，比如绕着原点上方走一个很小的半圆，这些路径可以无限地逼近那条被禁止的直线段。这些路径的长度可以无限接近于 $2$，但永远无法真正达到 $2$。因此，距离的[下确界](@article_id:302618)是 $2$，但没有任何一条存在于 $M$ 中的路径长度恰好等于 $2$。
+想象一个被戳了一个洞的平面，$M = \mathbb{R}^2 \setminus \{(0,0)\}$。现在我们想测量点 $p=(-1,0)$ 和 $q=(1,0)$ 之间的距离。在完整的 $\mathbb{R}^2$ 中，最短路径是穿过原点的直线段，长度为 $2$。但在我们这个有洞的平面 $M$ 中，这条直线路径是“非法”的，因为它经过了被移除的原点。然而，我们可以构造一系列路径，比如绕着原点上方走一个很小的半圆，这些路径可以无限地逼近那条被禁止的直线段。这些路径的长度可以无限接近于 $2$，但永远无法真正达到 $2$。因此，距离的[下确界](@keyword=greatest_lower_bound|lang=zh-CN|style=Feynman)是 $2$，但没有任何一条存在于 $M$ 中的路径长度恰好等于 $2$。[@problem_id:3076905]
 
-这个例子引出了一个至关重要的概念：**完备性**（completeness）。一个[黎曼流形](@article_id:324872)如果被称为是**测地完备**的，粗略地说，意味着任何“直线”（[测地线](@article_id:327811)）都可以无限延伸而不会“掉出”这个空间。著名的**[霍普夫-里诺定理](@article_id:321032)**（Hopf-Rinow theorem）告诉我们，一个[流形](@article_id:313450)是测地完备的，当且仅当它作为一个[度量空间](@article_id:299308)是完备的（即所有[柯西序列](@article_id:318344)都收敛到空间内的点）。更重要的是，该定理保证：**在一个完备的黎曼流形上，任意两点之间的距离（下确界）总能被某条曲线的长度（最小值）所实现**。 
+这个例子引出了一个至关重要的概念：**完备性**（completeness）。一个[黎曼流形](@keyword=riemannian_manifolds|lang=zh-CN|style=Feynman)如果被称为是**测地完备**的，粗略地说，意味着任何“直线”（[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)）都可以无限延伸而不会“掉出”这个空间。著名的**[霍普夫-里诺定理](@keyword=hopf_rinow_theorem|lang=zh-CN|style=Feynman)**（Hopf-Rinow theorem）告诉我们，一个[流形](@keyword=manifold|lang=zh-CN|style=Feynman)是测地完备的，当且仅当它作为一个[度量空间](@keyword=metric_spaces|lang=zh-CN|style=Feynman)是完备的（即所有[柯西序列](@keyword=cauchy_sequences|lang=zh-CN|style=Feynman)都收敛到空间内的点）。更重要的是，该定理保证：**在一个完备的黎曼流形上，任意两点之间的距离（下确界）总能被某条曲线的长度（最小值）所实现**。[@problem_id:1494682] [@problem_id:3076914]
 
-像球面 $S^n$ 这样的紧致空间总是完备的，因此球面上任意两点间总存在一条最短路径。而上面提到的有洞的平面则是不完备的。完备性就像一个承诺：[最短路径](@article_id:317973)的理想不仅“可望”，而且“可即”。
+像球面 $S^n$ 这样的紧致空间总是完备的，因此球面上任意两点间总存在一条最短路径。而上面提到的有洞的平面则是不完备的。完备性就像一个承诺：[最短路径](@keyword=shortest_path|lang=zh-CN|style=Feynman)的理想不仅“可望”，而且“可即”。
 
-### [测地线](@article_id:327811)：弯曲空间中的“直线”
+### [测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)：弯曲空间中的“直线”
 
-那些实现了最短距离的路径，我们称之为**最短[测地线](@article_id:327811)**（minimizing geodesic）。更一般地，**[测地线](@article_id:327811)**是局部上长度最短的曲线，可以被认为是弯曲空间中“直线”的推广。它们是在空间中“笔直”前行的轨迹，就像光在[引力场](@article_id:348648)中沿[测地线](@article_id:327811)传播一样。
+那些实现了最短距离的路径，我们称之为**最短[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)**（minimizing geodesic）。更一般地，**[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)**是局部上长度最短的曲线，可以被认为是弯曲空间中“直线”的推广。它们是在空间中“笔直”前行的轨迹，就像光在[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)中沿[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)传播一样。
 
-一个有趣且有用的性质是，任何实现最短距离的曲线，总可以通过调整其行进的“节奏”（即重新参数化），使其以恒定的速率运动，这个速率恰好等于总距离除以总时间。 这种以单位速率行进的[参数化](@article_id:336283)方式，称为**[弧长参数化](@article_id:640891)**，它极大地简化了许多几何计算。
+一个有趣且有用的性质是，任何实现最短距离的曲线，总可以通过调整其行进的“节奏”（即重新参数化），使其以恒定的速率运动，这个速率恰好等于总距离除以总时间。[@problem_id:3002690] 这种以单位速率行进的[参数化](@keyword=parametrization|lang=zh-CN|style=Feynman)方式，称为**[弧长参数化](@keyword=arc_length_parametrization_2|lang=zh-CN|style=Feynman)**，它极大地简化了许多几何计算。
 
-为了系统地研究[测地线](@article_id:327811)，数学家引入了另一个强大工具——**[指数映射](@article_id:297635)**（exponential map），记作 $\exp_p$。它的想法非常直观：站在点 $p$，选择一个初始方向和速率（由切空间中的一个向量 $v$ 给出），然后沿着这个方向“笔直”走一个单位时间。你最终到达的点，就是 $\exp_p(v)$。这个映射为我们建立了一座从平坦的[切空间](@article_id:377902)到弯曲[流形](@article_id:313450)本身的桥梁。
+为了系统地研究[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)，数学家引入了另一个强大工具——**[指数映射](@keyword=exponential_map|lang=zh-CN|style=Feynman)**（exponential map），记作 $\exp_p$。它的想法非常直观：站在点 $p$，选择一个初始方向和速率（由切空间中的一个向量 $v$ 给出），然后沿着这个方向“笔直”走一个单位时间。你最终到达的点，就是 $\exp_p(v)$。这个映射为我们建立了一座从平坦的[切空间](@keyword=tangent_spaces|lang=zh-CN|style=Feynman)到弯曲[流形](@keyword=manifold|lang=zh-CN|style=Feynman)本身的桥梁。[@problem_id:3076914]
 
 ### 局部图景：一个行为良好的邻域
 
-有了[指数映射](@article_id:297635)，我们仿佛拥有了一张可以“展开”[流形](@article_id:313450)的局部地图。事实证明，在任何一点 $p$ 周围，都存在一个“安全区”，在这个区域内，几何性质非常简单和优美。这个区域的大小由**[单射半径](@article_id:323926)**（injectivity radius）$\operatorname{inj}(p)$ 决定。
+有了[指数映射](@keyword=exponential_map|lang=zh-CN|style=Feynman)，我们仿佛拥有了一张可以“展开”[流形](@keyword=manifold|lang=zh-CN|style=Feynman)的局部地图。事实证明，在任何一点 $p$ 周围，都存在一个“安全区”，在这个区域内，几何性质非常简单和优美。这个区域的大小由**[单射半径](@keyword=injectivity_radius|lang=zh-CN|style=Feynman)**（injectivity radius）$\operatorname{inj}(p)$ 决定。
 
 在一个以 $p$ 为中心、半径小于 $\operatorname{inj}(p)$ 的球形邻域内，以下美妙的性质成立：
 
--   对于邻域内的任何点 $q$，存在**唯一一条**连接 $p$ 和 $q$ 的最短[测地线](@article_id:327811)。 
--   $p$ 和 $q$ 之间的距离 $d(p,q)$，恰好等于在[切空间](@article_id:377902)中连接原点和 $q$ 对应点 $v = \exp_p^{-1}(q)$ 的那个向量的长度 $\|v\|_g$。
--   在这个邻域内（除了点 $p$ 本身），距离函数 $x \mapsto d(p,x)$ 是一个**[光滑函数](@article_id:299390)**。它的行为和我们熟悉的欧几里得距离函数一样友好。 
--   这个邻域（度量球）可以完美地看作是切空间中一个相应大小的球在[指数映射](@article_id:297635)下的像。几何学家称 $\exp_p$ 在这个范围内是一个**微分同胚**，意味着它是一个表现极佳的[坐标系](@article_id:316753)。
+-   对于邻域内的任何点 $q$，存在**唯一一条**连接 $p$ 和 $q$ 的最短[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)。[@problem_id:3076906] [@problem_id:3076904]
+-   $p$ 和 $q$ 之间的距离 $d(p,q)$，恰好等于在[切空间](@keyword=tangent_spaces|lang=zh-CN|style=Feynman)中连接原点和 $q$ 对应点 $v = \exp_p^{-1}(q)$ 的那个向量的长度 $\|v\|_g$。
+-   在这个邻域内（除了点 $p$ 本身），距离函数 $x \mapsto d(p,x)$ 是一个**[光滑函数](@keyword=smooth_functions|lang=zh-CN|style=Feynman)**。它的行为和我们熟悉的欧几里得距离函数一样友好。[@problem_id:3076906] [@problem_id:3053794]
+-   这个邻域（度量球）可以完美地看作是切空间中一个相应大小的球在[指数映射](@keyword=exponential_map|lang=zh-CN|style=Feynman)下的像。几何学家称 $\exp_p$ 在这个范围内是一个**微分同胚**，意味着它是一个表现极佳的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)。[@problem_id:3076906]
 
-### 全局图景：奇妙之处（[割迹](@article_id:321741)）
+### 全局图景：奇妙之处（[割迹](@keyword=cut_locus|lang=zh-CN|style=Feynman)）
 
 当我们勇敢地走出单射半径所定义的“安全区”，几何世界开始展现出它奇异而迷人的一面。我们会遇到一个称为**割迹**（cut locus）的边界。
 
-让我们再次回到球面 $S^n$ 的例子。想象你站在北极点 $p$。单射半径是 $\pi$。只要你的目的地离北极的距离小于 $\pi$，就只有一条[最短路径](@article_id:317973)（一段经线）。但是当你走到距离为 $\pi$ 的南极点 $-p$ 时，情况突变。
+让我们再次回到球面 $S^n$ 的例子。想象你站在北极点 $p$。单射半径是 $\pi$。只要你的目的地离北极的距离小于 $\pi$，就只有一条[最短路径](@keyword=shortest_path|lang=zh-CN|style=Feynman)（一段经线）。但是当你走到距离为 $\pi$ 的南极点 $-p$ 时，情况突变。[@problem_id:3076900]
 
-南极点就是北极点的[割迹](@article_id:321741)。在割迹上，通常会发生两件事：
-1.  **最短路径不再唯一**：所有经线都在南极点交汇，每一条从北极到南极的半圆经线都是长度为 $\pi$ 的最短路径。
-2.  **[测地线](@article_id:327811)不再是最短的**：一旦你越过南极点继续沿经线前进，你虽然离南极点越来越近，但离北极点却越来越远了。此时，回头走另一段更短的弧线才是回到北极的捷径。
+南极点就是北极点的[割迹](@keyword=cut_locus|lang=zh-CN|style=Feynman)。在割迹上，通常会发生两件事：
+1.  **最短路径不再唯一**：所有经线都在南极点交汇，每一条从北极到南极的半圆经线都是长度为 $\pi$ 的最短路径。[@problem_id:3076900]
+2.  **[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)不再是最短的**：一旦你越过南极点继续沿经线前进，你虽然离南极点越来越近，但离北极点却越来越远了。此时，回头走另一段更短的弧线才是回到北极的捷径。
 
-因此，单射半径 $\operatorname{inj}(p)$ 的几何意义正是点 $p$ 到其割迹的最近距离。
+因此，单射半径 $\operatorname{inj}(p)$ 的几何意义正是点 $p$ 到其割迹的最近距离。[@problem_id:3076904]
 
-割迹也是距离函数 $d(p,x)$ “出问题”的地方。我们之前提到，在“安全区”内 $d(p,x)$ 是光滑的。但在割迹上，它通常是不可微的。这背后有一个深刻的数学原因，可以通过**[隐函数定理](@article_id:307662)**来理解。光滑性本质上依赖于我们可以平滑地找到一个从 $p$ 出发“瞄准”任意近处点 $x$ 的唯一初始速度向量 $v(x)$。但在割迹点，这种“瞄准”机制失灵了：要么是因为目标点是**共轭点**（conjugate point），导致[指数映射](@article_id:297635)在此处变得“奇异”（就像透镜的焦点），要么是因为存在多个同样“好”的瞄准方向（多条[最短路径](@article_id:317973)）。这使得距离函数的图像在割迹处形成“[尖点](@article_id:641085)”或“折痕”，从而失去了光滑性。 
+割迹也是距离函数 $d(p,x)$ “出问题”的地方。我们之前提到，在“安全区”内 $d(p,x)$ 是光滑的。但在割迹上，它通常是不可微的。这背后有一个深刻的数学原因，可以通过**[隐函数定理](@keyword=implicit_function_theorem|lang=zh-CN|style=Feynman)**来理解。光滑性本质上依赖于我们可以平滑地找到一个从 $p$ 出发“瞄准”任意近处点 $x$ 的唯一初始速度向量 $v(x)$。但在割迹点，这种“瞄准”机制失灵了：要么是因为目标点是**共轭点**（conjugate point），导致[指数映射](@keyword=exponential_map|lang=zh-CN|style=Feynman)在此处变得“奇异”（就像透镜的焦点），要么是因为存在多个同样“好”的瞄准方向（多条[最短路径](@keyword=shortest_path|lang=zh-CN|style=Feynman)）。这使得距离函数的图像在割迹处形成“[尖点](@keyword=cusps|lang=zh-CN|style=Feynman)”或“折痕”，从而失去了光滑性。[@problem_id:3053794] [@problem_id:3076900]
 
 ### 根本原因：曲率的角色
 
-为什么[测地线](@article_id:327811)在球面上会重新汇合，而在其他空间中可能不会？为什么会有割迹和共轭点？所有这些现象的幕后推手，是空间内在的**曲率**（curvature）。
+为什么[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)在球面上会重新汇合，而在其他空间中可能不会？为什么会有割迹和共轭点？所有这些现象的幕后推手，是空间内在的**曲率**（curvature）。
 
 曲率描述了空间在每一点的弯曲程度。我们可以直观地将其分为三类：
--   **正曲率（$K > 0$）**：像球面一样。正曲率使得原本“平行”出发的[测地线](@article_id:327811)相互靠拢。想象两个旅行者从赤道上不同地点同时向北极走，他们会越来越近。
--   **[负曲率](@article_id:319739)（$K  0$）**：像马鞍面一样。[负曲率](@article_id:319739)使得[测地线](@article_id:327811)相互发散得比在[平直空间](@article_id:383214)中更快。
--   **零曲率（$K = 0$）**：平直的[欧几里得空间](@article_id:298501)。[测地线](@article_id:327811)（直线）保持平行。
+-   **正曲率（$K > 0$）**：像球面一样。正曲率使得原本“平行”出发的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)相互靠拢。想象两个旅行者从赤道上不同地点同时向北极走，他们会越来越近。
+-   **[负曲率](@keyword=negative_curvature|lang=zh-CN|style=Feynman)（$K  0$）**：像马鞍面一样。[负曲率](@keyword=negative_curvature|lang=zh-CN|style=Feynman)使得[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)相互发散得比在[平直空间](@keyword=flat_space|lang=zh-CN|style=Feynman)中更快。
+-   **零曲率（$K = 0$）**：平直的[欧几里得空间](@keyword=euclidean_space|lang=zh-CN|style=Feynman)。[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)（直线）保持平行。
 
-著名的**[劳赫比较定理](@article_id:319512)**（Rauch comparison theorem）精确地描述了这一点。它告诉我们，曲率如何影响[测地线](@article_id:327811)周围的体积。在一个正曲率空间中，以某点为中心的[测地球](@article_id:379838)面（所有[等距点](@article_id:345742)的集合）的面积，会比同半径的欧几里得球面要小。反之，在负曲率空间中，面积会更大。
+著名的**[劳赫比较定理](@keyword=rauch_comparison_theorem|lang=zh-CN|style=Feynman)**（Rauch comparison theorem）精确地描述了这一点。它告诉我们，曲率如何影响[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)周围的体积。在一个正曲率空间中，以某点为中心的[测地球](@keyword=geodesic_balls|lang=zh-CN|style=Feynman)面（所有[等距点](@keyword=equally_spaced_points|lang=zh-CN|style=Feynman)的集合）的面积，会比同半径的欧几里得球面要小。反之，在负曲率空间中，面积会更大。[@problem_id:3076888]
 
--   如果一个空间处处有 $K \le k$（[曲率有上界](@article_id:362692)），那么它的[测地线](@article_id:327811)发散得“至少”和[常曲率](@article_id:322525)为 $k$ 的模型空间一样快。例如，如果 $K \le 0$，那么[测地线](@article_id:327811)的发散速度不亚于欧氏空间，[测地球](@article_id:379838)面面积也更大。
--   如果一个空间处处有 $K \ge k$（[曲率有下界](@article_id:365750)），那么它的[测地线](@article_id:327811)发散得“至多”和模型空间一样快。
+-   如果一个空间处处有 $K \le k$（[曲率有上界](@keyword=curvature_bounded_above|lang=zh-CN|style=Feynman)），那么它的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)发散得“至少”和[常曲率](@keyword=constant_curvature|lang=zh-CN|style=Feynman)为 $k$ 的模型空间一样快。例如，如果 $K \le 0$，那么[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)的发散速度不亚于欧氏空间，[测地球](@keyword=geodesic_balls|lang=zh-CN|style=Feynman)面面积也更大。
+-   如果一个空间处处有 $K \ge k$（[曲率有下界](@keyword=curvature_bounded_below|lang=zh-CN|style=Feynman)），那么它的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)发散得“至多”和模型空间一样快。
 
-正是[正曲率](@article_id:332922)的“汇聚”效应，导致了球面上[测地线](@article_id:327811)的相交，产生了[共轭点](@article_id:320739)和割迹，并决定了其非平凡的全局距离函数行为。而负曲率空间的“发散”效应，则使得其几何性质在很多方面与[欧氏空间](@article_id:298501)截然不同，比如三角形内角和小于 $\pi$。
+正是[正曲率](@keyword=positive_curvature|lang=zh-CN|style=Feynman)的“汇聚”效应，导致了球面上[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)的相交，产生了[共轭点](@keyword=conjugate_points|lang=zh-CN|style=Feynman)和割迹，并决定了其非平凡的全局距离函数行为。而负曲率空间的“发散”效应，则使得其几何性质在很多方面与[欧氏空间](@keyword=euclidean_space|lang=zh-CN|style=Feynman)截然不同，比如三角形内角和小于 $\pi$。
 
-从定义一个微观的标尺，到理解整个空间的全局结构，[黎曼距离函数](@article_id:377681)的理论引领我们走上了一条揭示几何与拓扑之间深刻联系的优美道路。而这一切的根源，都系于那个描述空间最本质弯曲属性的概念——曲率。
+从定义一个微观的标尺，到理解整个空间的全局结构，[黎曼距离函数](@keyword=riemannian_distance_function|lang=zh-CN|style=Feynman)的理论引领我们走上了一条揭示几何与拓扑之间深刻联系的优美道路。而这一切的根源，都系于那个描述空间最本质弯曲属性的概念——曲率。

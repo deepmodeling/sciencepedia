@@ -29,7 +29,7 @@ for any vectors $\mathbf{u}, \mathbf{v}, \mathbf{w}$ and scalars $\alpha, \beta$
 
 A central geometric concept defined by the dot product is **orthogonality**. Two vectors $\mathbf{v}$ and $\mathbf{w}$ are defined to be orthogonal if and only if their dot product is zero: $\mathbf{v} \cdot \mathbf{w} = 0$. This algebraic condition perfectly captures the geometric notion of being perpendicular.
 
-When vectors are orthogonal, a familiar geometric law emerges in a more general form. Consider the squared norm of the sum of two [orthogonal vectors](@entry_id:142226) $\mathbf{v}$ and $\mathbf{w}$:
+When vectors are orthogonal, a familiar geometric law emerges in a more general form. Consider the squared norm of the sum of two orthogonal vectors $\mathbf{v}$ and $\mathbf{w}$:
 $$
 \|\mathbf{v} + \mathbf{w}\|^2 = (\mathbf{v} + \mathbf{w}) \cdot (\mathbf{v} + \mathbf{w}) = \mathbf{v} \cdot \mathbf{v} + 2(\mathbf{v} \cdot \mathbf{w}) + \mathbf{w} \cdot \mathbf{w}
 $$
@@ -37,9 +37,9 @@ Since $\mathbf{v} \cdot \mathbf{w} = 0$, this simplifies to:
 $$
 \|\mathbf{v} + \mathbf{w}\|^2 = \|\mathbf{v}\|^2 + \|\mathbf{w}\|^2
 $$
-This is the celebrated **Pythagorean theorem** in the context of [abstract vector spaces](@entry_id:155811). It holds for any pair of [orthogonal vectors](@entry_id:142226) in any dimension. For instance, if we are given two [orthogonal vectors](@entry_id:142226) $\mathbf{v}$ and $\mathbf{w}$ with norms $\|\mathbf{v}\| = 7$ and $\|\mathbf{w}\| = 2$, we can find the [norm of a vector](@entry_id:154882) such as $\mathbf{z} = \mathbf{v} + 3\mathbf{w}$. The vectors $\mathbf{v}$ and $3\mathbf{w}$ are also orthogonal, since $\mathbf{v} \cdot (3\mathbf{w}) = 3(\mathbf{v} \cdot \mathbf{w}) = 0$. Applying the Pythagorean theorem gives $\|\mathbf{z}\|^2 = \|\mathbf{v}\|^2 + \|3\mathbf{w}\|^2 = \|\mathbf{v}\|^2 + 9\|\mathbf{w}\|^2$. Substituting the known values yields $\|\mathbf{z}\|^2 = 7^2 + 9(2^2) = 49 + 36 = 85$, so $\|\mathbf{z}\| = \sqrt{85}$ .
+This is the celebrated **Pythagorean theorem** in the context of abstract vector spaces. It holds for any pair of orthogonal vectors in any dimension. For instance, if we are given two orthogonal vectors $\mathbf{v}$ and $\mathbf{w}$ with norms $\|\mathbf{v}\| = 7$ and $\|\mathbf{w}\| = 2$, we can find the norm of a vector such as $\mathbf{z} = \mathbf{v} + 3\mathbf{w}$. The vectors $\mathbf{v}$ and $3\mathbf{w}$ are also orthogonal, since $\mathbf{v} \cdot (3\mathbf{w}) = 3(\mathbf{v} \cdot \mathbf{w}) = 0$. Applying the Pythagorean theorem gives $\|\mathbf{z}\|^2 = \|\mathbf{v}\|^2 + \|3\mathbf{w}\|^2 = \|\mathbf{v}\|^2 + 9\|\mathbf{w}\|^2$. Substituting the known values yields $\|\mathbf{z}\|^2 = 7^2 + 9(2^2) = 49 + 36 = 85$, so $\|\mathbf{z}\| = \sqrt{85}$ [@problem_id:1672308].
 
-In the specific case of $\mathbb{R}^2$, orthogonality has a particularly simple and useful geometric interpretation. Given a non-[zero vector](@entry_id:156189) $\mathbf{v} = (a, b)$, the vector $\mathbf{w} = (-b, a)$ is always orthogonal to $\mathbf{v}$, as their dot product is $\mathbf{v} \cdot \mathbf{w} = (a)(-b) + (b)(a) = 0$. Geometrically, the operation $(a, b) \to (-b, a)$ corresponds to a counter-clockwise rotation by $90$ degrees. Furthermore, the norm is preserved under this rotation: $\|\mathbf{w}\|^2 = (-b)^2 + a^2 = a^2 + b^2 = \|\mathbf{v}\|^2$. This provides a convenient method for constructing perpendicular vectors in the plane .
+In the specific case of $\mathbb{R}^2$, orthogonality has a particularly simple and useful geometric interpretation. Given a non-zero vector $\mathbf{v} = (a, b)$, the vector $\mathbf{w} = (-b, a)$ is always orthogonal to $\mathbf{v}$, as their dot product is $\mathbf{v} \cdot \mathbf{w} = (a)(-b) + (b)(a) = 0$. Geometrically, the operation $(a, b) \to (-b, a)$ corresponds to a counter-clockwise rotation by $90$ degrees. Furthermore, the norm is preserved under this rotation: $\|\mathbf{w}\|^2 = (-b)^2 + a^2 = a^2 + b^2 = \|\mathbf{v}\|^2$. This provides a convenient method for constructing perpendicular vectors in the plane [@problem_id:1672327].
 
 ### Projections and Decompositions: The Geometry of Interaction
 
@@ -49,7 +49,7 @@ Let this decomposition be $\mathbf{a} = \mathbf{a}_{\|} + \mathbf{a}_{\perp}$, w
 $$
 \mathbf{a}_{\perp} = \mathbf{a} - \mathbf{a}_{\|} = \mathbf{a} - k\mathbf{b}
 $$
-The [orthogonality condition](@entry_id:168905) then becomes:
+The orthogonality condition then becomes:
 $$
 (\mathbf{a} - k\mathbf{b}) \cdot \mathbf{b} = 0
 $$
@@ -57,13 +57,13 @@ Using the linearity of the dot product, we have $\mathbf{a} \cdot \mathbf{b} - k
 $$
 k = \frac{\mathbf{a} \cdot \mathbf{b}}{\|\mathbf{b}\|^2}
 $$
-This leads to the formula for the **[vector projection](@entry_id:147046)** of $\mathbf{a}$ onto $\mathbf{b}$:
+This leads to the formula for the **vector projection** of $\mathbf{a}$ onto $\mathbf{b}$:
 $$
 \mathbf{a}_{\|} = \text{proj}_{\mathbf{b}}\mathbf{a} = \left(\frac{\mathbf{a} \cdot \mathbf{b}}{\|\mathbf{b}\|^2}\right) \mathbf{b}
 $$
-The orthogonal component is then easily found by subtraction: $\mathbf{a}_{\perp} = \mathbf{a} - \mathbf{a}_{\|}$. For example, to decompose $\mathbf{a} = (3, 1, -4)$ relative to $\mathbf{b} = (2, 2, 1)$, we first compute the necessary quantities: $\mathbf{a} \cdot \mathbf{b} = (3)(2) + (1)(2) + (-4)(1) = 4$ and $\|\mathbf{b}\|^2 = 2^2 + 2^2 + 1^2 = 9$. The parallel component is $\mathbf{a}_{\|} = \frac{4}{9}\mathbf{b} = (\frac{8}{9}, \frac{8}{9}, \frac{4}{9})$. The orthogonal component is therefore $\mathbf{a}_{\perp} = (3, 1, -4) - (\frac{8}{9}, \frac{8}{9}, \frac{4}{9}) = (\frac{19}{9}, \frac{1}{9}, -\frac{40}{9})$ .
+The orthogonal component is then easily found by subtraction: $\mathbf{a}_{\perp} = \mathbf{a} - \mathbf{a}_{\|}$. For example, to decompose $\mathbf{a} = (3, 1, -4)$ relative to $\mathbf{b} = (2, 2, 1)$, we first compute the necessary quantities: $\mathbf{a} \cdot \mathbf{b} = (3)(2) + (1)(2) + (-4)(1) = 4$ and $\|\mathbf{b}\|^2 = 2^2 + 2^2 + 1^2 = 9$. The parallel component is $\mathbf{a}_{\|} = \frac{4}{9}\mathbf{b} = (\frac{8}{9}, \frac{8}{9}, \frac{4}{9})$. The orthogonal component is therefore $\mathbf{a}_{\perp} = (3, 1, -4) - (\frac{8}{9}, \frac{8}{9}, \frac{4}{9}) = (\frac{19}{9}, \frac{1}{9}, -\frac{40}{9})$ [@problem_id:1672301].
 
-This concept of projection can also be viewed from an optimization perspective. Suppose we want to find the [best approximation](@entry_id:268380) of a vector $\mathbf{a}$ by a scalar multiple of $\mathbf{b}$. "Best" is defined in the sense of minimizing the distance between $\mathbf{a}$ and the approximation $k\mathbf{b}$, which is equivalent to minimizing the squared error $E(k) = \|\mathbf{a} - k\mathbf{b}\|^2$. Expanding this expression using the properties of the dot product gives:
+This concept of projection can also be viewed from an optimization perspective. Suppose we want to find the best approximation of a vector $\mathbf{a}$ by a scalar multiple of $\mathbf{b}$. "Best" is defined in the sense of minimizing the distance between $\mathbf{a}$ and the approximation $k\mathbf{b}$, which is equivalent to minimizing the squared error $E(k) = \|\mathbf{a} - k\mathbf{b}\|^2$. Expanding this expression using the properties of the dot product gives:
 $$
 E(k) = (\mathbf{a} - k\mathbf{b}) \cdot (\mathbf{a} - k\mathbf{b}) = \|\mathbf{a}\|^2 - 2k(\mathbf{a} \cdot \mathbf{b}) + k^2\|\mathbf{b}\|^2
 $$
@@ -71,7 +71,7 @@ This is a quadratic function of $k$. To find the minimum, we take the derivative
 $$
 \frac{dE}{dk} = -2(\mathbf{a} \cdot \mathbf{b}) + 2k\|\mathbf{b}\|^2 = 0
 $$
-Solving for $k$ gives $k = \frac{\mathbf{a} \cdot \mathbf{b}}{\|\mathbf{b}\|^2}$, the very same scalar we found earlier. Thus, the projection of $\mathbf{a}$ onto $\mathbf{b}$ is not just a geometric component; it is also the best possible approximation of $\mathbf{a}$ within the subspace spanned by $\mathbf{b}$. This principle is extremely general and applies even in infinite-dimensional [vector spaces](@entry_id:136837), such as spaces of functions. For instance, if we define an [inner product for functions](@entry_id:176307) on $[0, 1]$ as $\langle f, g \rangle = \int_{0}^{1} f(x)g(x) dx$, we can find the [best approximation](@entry_id:268380) of the function $u(x) = x$ by a multiple of $v(x) = x^2$. The optimal scalar $k$ is given by $k = \frac{\langle u, v \rangle}{\langle v, v \rangle} = \frac{\int_0^1 x^3 dx}{\int_0^1 x^4 dx} = \frac{1/4}{1/5} = \frac{5}{4}$ .
+Solving for $k$ gives $k = \frac{\mathbf{a} \cdot \mathbf{b}}{\|\mathbf{b}\|^2}$, the very same scalar we found earlier. Thus, the projection of $\mathbf{a}$ onto $\mathbf{b}$ is not just a geometric component; it is also the best possible approximation of $\mathbf{a}$ within the subspace spanned by $\mathbf{b}$. This principle is extremely general and applies even in infinite-dimensional vector spaces, such as spaces of functions. For instance, if we define an inner product for functions on $[0, 1]$ as $\langle f, g \rangle = \int_{0}^{1} f(x)g(x) dx$, we can find the best approximation of the function $u(x) = x$ by a multiple of $v(x) = x^2$. The optimal scalar $k$ is given by $k = \frac{\langle u, v \rangle}{\langle v, v \rangle} = \frac{\int_0^1 x^3 dx}{\int_0^1 x^4 dx} = \frac{1/4}{1/5} = \frac{5}{4}$ [@problem_id:1672309].
 
 ### Norms, Dot Products, and Fundamental Identities
 
@@ -88,13 +88,13 @@ Subtracting the second equation from the first yields:
 $$
 \|\mathbf{u} + \mathbf{v}\|^2 - \|\mathbf{u} - \mathbf{v}\|^2 = 4(\mathbf{u} \cdot \mathbf{v})
 $$
-This gives the most common form of the [polarization identity](@entry_id:271819):
+This gives the most common form of the polarization identity:
 $$
 \mathbf{u} \cdot \mathbf{v} = \frac{1}{4} \left( \|\mathbf{u} + \mathbf{v}\|^2 - \|\mathbf{u} - \mathbf{v}\|^2 \right)
 $$
-This remarkable formula shows that the dot product is completely determined by the norm. Geometrically, if vectors $\mathbf{u}$ and $\mathbf{v}$ represent adjacent sides of a parallelogram, then $\mathbf{u}+\mathbf{v}$ and $\mathbf{u}-\mathbf{v}$ represent its diagonals. The [polarization identity](@entry_id:271819) thus allows us to compute the dot product (related to the angle between the sides) from the lengths of the diagonals. For example, if the diagonals of a parallelogram have lengths $\sqrt{35}$ and $\sqrt{15}$, their squared lengths are $35$ and $15$. The dot product of the side vectors is simply $\mathbf{u} \cdot \mathbf{v} = \frac{1}{4}(35 - 15) = 5$ .
+This remarkable formula shows that the dot product is completely determined by the norm. Geometrically, if vectors $\mathbf{u}$ and $\mathbf{v}$ represent adjacent sides of a parallelogram, then $\mathbf{u}+\mathbf{v}$ and $\mathbf{u}-\mathbf{v}$ represent its diagonals. The polarization identity thus allows us to compute the dot product (related to the angle between the sides) from the lengths of the diagonals. For example, if the diagonals of a parallelogram have lengths $\sqrt{35}$ and $\sqrt{15}$, their squared lengths are $35$ and $15$. The dot product of the side vectors is simply $\mathbf{u} \cdot \mathbf{v} = \frac{1}{4}(35 - 15) = 5$ [@problem_id:1672313].
 
-Adding the two expanded norm equations instead of subtracting them gives another important result, the **[parallelogram law](@entry_id:137992)**:
+Adding the two expanded norm equations instead of subtracting them gives another important result, the **parallelogram law**:
 $$
 \|\mathbf{u} + \mathbf{v}\|^2 + \|\mathbf{u} - \mathbf{v}\|^2 = 2\|\mathbf{u}\|^2 + 2\|\mathbf{v}\|^2
 $$
@@ -111,15 +111,15 @@ Subtracting these equations yields $C - D = 4\alpha\beta(\mathbf{u} \cdot \mathb
 $$
 \mathbf{u} \cdot \mathbf{v} = \frac{C - D}{4\alpha\beta}
 $$
-This generalized form shows how the "interaction term" $\mathbf{u} \cdot \mathbf{v}$ can be extracted from measurements of combined "energy" or "superposition" states .
+This generalized form shows how the "interaction term" $\mathbf{u} \cdot \mathbf{v}$ can be extracted from measurements of combined "energy" or "superposition" states [@problem_id:1672323].
 
 ### The Dot Product in Kinematics: Describing Motion Along Curves
 
-The dot product is an indispensable tool for analyzing the motion of a particle along a trajectory, described by a [parametric curve](@entry_id:136303) $\alpha(t)$. The first two derivatives of the [position vector](@entry_id:168381) $\alpha(t)$ have profound physical meaning:
+The dot product is an indispensable tool for analyzing the motion of a particle along a trajectory, described by a parametric curve $\alpha(t)$. The first two derivatives of the position vector $\alpha(t)$ have profound physical meaning:
 - **Velocity**: $\mathbf{v}(t) = \alpha'(t) = \frac{d\alpha}{dt}$
 - **Acceleration**: $\mathbf{a}(t) = \mathbf{v}'(t) = \alpha''(t) = \frac{d^2\alpha}{dt^2}$
 
-The **speed** of the particle is the magnitude of the velocity vector, $\|\mathbf{v}(t)\|$. A key to understanding the relationship between these kinematic quantities is the [product rule](@entry_id:144424) for differentiation applied to the dot product:
+The **speed** of the particle is the magnitude of the velocity vector, $\|\mathbf{v}(t)\|$. A key to understanding the relationship between these kinematic quantities is the product rule for differentiation applied to the dot product:
 $$
 \frac{d}{dt} (\mathbf{u}(t) \cdot \mathbf{v}(t)) = \mathbf{u}'(t) \cdot \mathbf{v}(t) + \mathbf{u}(t) \cdot \mathbf{v}'(t)
 $$
@@ -129,7 +129,7 @@ $$
 $$
 This simple equation, $\frac{d}{dt}(\|\mathbf{v}\|^2) = 2(\mathbf{v} \cdot \mathbf{a})$, connects the change in speed to the dot product of velocity and acceleration. It tells us that the component of acceleration in the direction of velocity is what causes the speed to change.
 
-This leads to a fundamental principle of motion: **if a particle moves at a constant speed, its [acceleration vector](@entry_id:175748) is always orthogonal to its velocity vector.** If the speed $\|\mathbf{v}(t)\|$ is constant, then its square is also constant, so its derivative must be zero. This implies $2(\mathbf{v}(t) \cdot \mathbf{a}(t)) = 0$, and thus $\mathbf{v}(t) \cdot \mathbf{a}(t) = 0$. In this case, the acceleration vector acts purely to change the direction of motion, not its speed. This is characteristic of [uniform circular motion](@entry_id:178264), but also applies to more complex paths like the [helical motion](@entry_id:273033) described by $\alpha(t) = (A \cos(\omega t), A \sin(\omega t), bt)$, which has a constant speed of $\sqrt{A^2\omega^2 + b^2}$. For such a path, the dot product of velocity and acceleration must be zero at all times  .
+This leads to a fundamental principle of motion: **if a particle moves at a constant speed, its acceleration vector is always orthogonal to its velocity vector.** If the speed $\|\mathbf{v}(t)\|$ is constant, then its square is also constant, so its derivative must be zero. This implies $2(\mathbf{v}(t) \cdot \mathbf{a}(t)) = 0$, and thus $\mathbf{v}(t) \cdot \mathbf{a}(t) = 0$. In this case, the acceleration vector acts purely to change the direction of motion, not its speed. This is characteristic of uniform circular motion, but also applies to more complex paths like the helical motion described by $\alpha(t) = (A \cos(\omega t), A \sin(\omega t), bt)$, which has a constant speed of $\sqrt{A^2\omega^2 + b^2}$. For such a path, the dot product of velocity and acceleration must be zero at all times [@problem_id:1672322] [@problem_id:1672312].
 
 This principle is a specific instance of a more general geometric fact: **a vector of constant magnitude is always orthogonal to its derivative**. Let $\mathbf{u}(t)$ be any differentiable vector function such that $\|\mathbf{u}(t)\| = C$ for some constant $C$. Then $\mathbf{u}(t) \cdot \mathbf{u}(t) = C^2$. Differentiating both sides with respect to $t$ gives:
 $$
@@ -137,10 +137,10 @@ $$
 $$
 This implies $\mathbf{u}'(t) \cdot \mathbf{u}(t) = 0$.
 
-The most important application of this principle in differential geometry involves the **[unit tangent vector](@entry_id:262985)**, $T(t)$. It is defined as the normalized velocity vector, $T(t) = \frac{\mathbf{v}(t)}{\|\mathbf{v}(t)\|}$, provided the speed is non-zero. By definition, $T(t)$ is a vector of constant magnitude one. Therefore, it must be orthogonal to its derivative $T'(t)$ for all $t$. That is,
+The most important application of this principle in differential geometry involves the **unit tangent vector**, $T(t)$. It is defined as the normalized velocity vector, $T(t) = \frac{\mathbf{v}(t)}{\|\mathbf{v}(t)\|}$, provided the speed is non-zero. By definition, $T(t)$ is a vector of constant magnitude one. Therefore, it must be orthogonal to its derivative $T'(t)$ for all $t$. That is,
 $$
 T(t) \cdot T'(t) = 0
 $$
-This holds universally for any [regular curve](@entry_id:267371), regardless of its specific parameterization . The vector $T'(t)$ describes the rate at which the direction of the curve is changing. Its orthogonality to $T(t)$ is a cornerstone for constructing the Frenet-Serret frame, a moving coordinate system that travels along the curve and provides a complete local description of its geometry.
+This holds universally for any regular curve, regardless of its specific parameterization [@problem_id:1672324]. The vector $T'(t)$ describes the rate at which the direction of the curve is changing. Its orthogonality to $T(t)$ is a cornerstone for constructing the Frenet-Serret frame, a moving coordinate system that travels along the curve and provides a complete local description of its geometry.
 
-Finally, the dot product and norm are constrained by the **Cauchy-Schwarz inequality**, which states $|\mathbf{v} \cdot \mathbf{w}| \leq \|\mathbf{v}\| \|\mathbf{w}\|$. This can be written as $\|\mathbf{v}\|^2 \|\mathbf{w}\|^2 - (\mathbf{v} \cdot \mathbf{w})^2 \ge 0$. The expression on the left is the subject of **Lagrange's identity**, which in $\mathbb{R}^3$ equates it to the squared norm of the [cross product](@entry_id:156749), $\|\mathbf{v} \times \mathbf{w}\|^2$. Examining this quantity for the velocity and acceleration of a helical path provides a concrete verification of the inequality and its connection to the [geometry of motion](@entry_id:174687) .
+Finally, the dot product and norm are constrained by the **Cauchy-Schwarz inequality**, which states $|\mathbf{v} \cdot \mathbf{w}| \leq \|\mathbf{v}\| \|\mathbf{w}\|$. This can be written as $\|\mathbf{v}\|^2 \|\mathbf{w}\|^2 - (\mathbf{v} \cdot \mathbf{w})^2 \ge 0$. The expression on the left is the subject of **Lagrange's identity**, which in $\mathbb{R}^3$ equates it to the squared norm of the cross product, $\|\mathbf{v} \times \mathbf{w}\|^2$. Examining this quantity for the velocity and acceleration of a helical path provides a concrete verification of the inequality and its connection to the geometry of motion [@problem_id:1672330].

@@ -1,7 +1,7 @@
 ## Introduction
 Describing and analyzing random processes that involve counting—such as the number of defects in a product or the number of offspring in a generation—can often become a cumbersome task of managing long lists of probabilities. Is there a more elegant, unified way to capture the entire character of such a random variable? The Probability Generating Function (PGF) provides a powerful answer, packaging all the information about a discrete distribution into a single, analyzable function. This article tackles the problem of how to efficiently extract crucial properties, like the mean and variance, from this compact representation, moving beyond tedious summations to the elegant power of calculus.
 
-Across the following chapters, you will embark on a journey to master this essential tool. First, **"Principles and Mechanisms"** will lay the foundation, revealing how PGFs are constructed and how differentiation unlocks their secrets to reveal [statistical moments](@article_id:268051). Next, in **"Applications and Interdisciplinary Connections"**, we will see the PGF in action, exploring its remarkable utility in fields from physics and engineering to biology and [polymer chemistry](@article_id:155334). Finally, you will concrete your knowledge with **"Hands-On Practices"**, applying these techniques to solve practical problems and build your analytical skills.
+Across the following chapters, you will embark on a journey to master this essential tool. First, **"Principles and Mechanisms"** will lay the foundation, revealing how PGFs are constructed and how differentiation unlocks their secrets to reveal [statistical moments](@keyword=statistical_moments|lang=en-US|style=Feynman). Next, in **"Applications and Interdisciplinary Connections"**, we will see the PGF in action, exploring its remarkable utility in fields from physics and engineering to biology and [polymer chemistry](@keyword=polymer_chemistry|lang=en-US|style=Feynman). Finally, you will concrete your knowledge with **"Hands-On Practices"**, applying these techniques to solve practical problems and build your analytical skills.
 
 ## Principles and Mechanisms
 
@@ -19,7 +19,7 @@ $$G_X(s) = P(X=0)s^0 + P(X=1)s^1 + P(X=2)s^2 + \dots = \sum_{k=0}^{\infty} P(X=k
 
 At first glance, this might seem strange. We've taken our list of probabilities and made them the coefficients of a power series. What have we gained? The key is to think of the variable $s$ not as something with a physical meaning, but as a clever bookkeeping device, a placeholder that keeps the probabilities sorted by the outcome they belong to. The probability of getting a '2' is always attached to $s^2$, the probability of '5' is attached to $s^5$, and so on.
 
-The [entire function](@article_id:178275) is just the expected value of $s^X$, written concisely as $G_X(s) = E[s^X]$. A simple but crucial check: what happens if we set $s=1$? We get $G_X(1) = \sum P(X=k) \times 1^k = \sum P(X=k)$, which must equal 1, because the sum of all probabilities is always one. If your PGF doesn't equal 1 at $s=1$, something is wrong!
+The [entire function](@keyword=entire_function|lang=en-US|style=Feynman) is just the expected value of $s^X$, written concisely as $G_X(s) = E[s^X]$. A simple but crucial check: what happens if we set $s=1$? We get $G_X(1) = \sum P(X=k) \times 1^k = \sum P(X=k)$, which must equal 1, because the sum of all probabilities is always one. If your PGF doesn't equal 1 at $s=1$, something is wrong!
 
 ### The First Secret: Finding the Average with a Derivative
 
@@ -37,7 +37,7 @@ $$E[X] = G'_X(1)$$
 
 The average value of our random variable is simply the slope of its PGF curve at the point $s=1$.
 
-Let's see this in action. An astrophysicist counting photons from a quasar finds the number of arrivals $N$ follows a Poisson distribution. Its PGF is known to be $\mathcal{G}(z) = \exp(\lambda(z-1))$ for some [rate parameter](@article_id:264979) $\lambda$ ``. Instead of a messy infinite sum, we can find the average number of photons with one quick differentiation:
+Let's see this in action. An astrophysicist counting photons from a quasar finds the number of arrivals $N$ follows a Poisson distribution. Its PGF is known to be $\mathcal{G}(z) = \exp(\lambda(z-1))$ for some [rate parameter](@keyword=rate_parameter|lang=en-US|style=Feynman) $\lambda$ `[@problem_id:1409565]`. Instead of a messy infinite sum, we can find the average number of photons with one quick differentiation:
 
 $$\frac{d\mathcal{G}}{dz} = \lambda \exp(\lambda(z-1))$$
 
@@ -57,17 +57,17 @@ This quantity, $E[X(X-1)]$, is called the **second factorial moment**. How does 
 
 $$E[X^2] = E[X(X-1)] + E[X] = G''_X(1) + G'_X(1)$$
 
-Now we have everything. We can write a complete formula for the variance using only the PGF and its derivatives ``:
+Now we have everything. We can write a complete formula for the variance using only the PGF and its derivatives `[@problem_id:1409501]`:
 
 $$\text{Var}(X) = E[X^2] - (E[X])^2 = G''_X(1) + G'_X(1) - (G'_X(1))^2$$
 
 This is a powerful result. It means that the mean and variance, the two most important descriptors of a distribution's central tendency and spread, are entirely determined by the local behavior of the PGF around $s=1$.
 
-Imagine engineers analyzing bit errors in a communication channel. The exact PGF might be too complex to write down, but they might determine from physical principles that $G_X'(1) = 5$ and $G_X''(1) = 30$ ``. Without ever knowing the full distribution, they can immediately calculate the mean and variance:
+Imagine engineers analyzing bit errors in a communication channel. The exact PGF might be too complex to write down, but they might determine from physical principles that $G_X'(1) = 5$ and $G_X''(1) = 30$ `[@problem_id:1409555]`. Without ever knowing the full distribution, they can immediately calculate the mean and variance:
 $E[X] = G_X'(1) = 5$.
 $\text{Var}(X) = 30 + 5 - (5)^2 = 10$.
 
-Let's try a full calculation. Suppose a quantum optics experiment yields photon counts whose PGF is $G_X(s) = \frac{\exp(s) - 1}{e - 1}$ ``. We find the first two derivatives:
+Let's try a full calculation. Suppose a quantum optics experiment yields photon counts whose PGF is $G_X(s) = \frac{\exp(s) - 1}{e - 1}$ `[@problem_id:1409536]`. We find the first two derivatives:
 $G'_X(s) = \frac{\exp(s)}{e-1}$ and $G''_X(s) = \frac{\exp(s)}{e-1}$.
 Evaluating at $s=1$:
 $E[X] = G'_X(1) = \frac{e}{e-1}$.
@@ -80,7 +80,7 @@ The true beauty of PGFs shines when we start combining random variables. The cum
 
 #### Sums of Independent Variables: Multiplication is Addition
 
-Let's go back to our dice. Let $X$ be the roll of a 4-sided die and $Y$ the roll of a 6-sided die ``. We want to understand their sum, $Z = X+Y$. Calculating the variance directly involves finding the distribution of $Z$, which can be tedious. But with PGFs, it's a thing of beauty. If $X$ and $Y$ are independent, then:
+Let's go back to our dice. Let $X$ be the roll of a 4-sided die and $Y$ the roll of a 6-sided die `[@problem_id:1409558]`. We want to understand their sum, $Z = X+Y$. Calculating the variance directly involves finding the distribution of $Z$, which can be tedious. But with PGFs, it's a thing of beauty. If $X$ and $Y$ are independent, then:
 
 $$G_Z(s) = E[s^Z] = E[s^{X+Y}] = E[s^X s^Y]$$
 
@@ -88,13 +88,13 @@ Because they are independent, the expectation of the product is the product of t
 
 $$G_Z(s) = E[s^X] E[s^Y] = G_X(s) G_Y(s)$$
 
-This is a landmark result! **The PGF of a [sum of independent random variables](@article_id:263234) is the product of their individual PGFs.** The messy operation of convolution becomes simple multiplication.
+This is a landmark result! **The PGF of a [sum of independent random variables](@keyword=sum_of_independent_random_variables|lang=en-US|style=Feynman) is the product of their individual PGFs.** The messy operation of convolution becomes simple multiplication.
 
-This principle beautifully explains the origin of many standard distributions. A single Bernoulli trial (success with probability $p$) has PGF $G_Y(s) = (1-p)s^0 + ps^1 = (1-p) + ps$. A Binomial($n,p$) variable is just the sum of $n$ independent Bernoulli trials. So, its PGF must be the product of $n$ identical Bernoulli PGFs ``:
+This principle beautifully explains the origin of many standard distributions. A single Bernoulli trial (success with probability $p$) has PGF $G_Y(s) = (1-p)s^0 + ps^1 = (1-p) + ps$. A Binomial($n,p$) variable is just the sum of $n$ independent Bernoulli trials. So, its PGF must be the product of $n$ identical Bernoulli PGFs `[@problem_id:1409533]`:
 
 $$G_Z(s) = ((1-p) + ps)^n$$
 
-From this, finding the mean is trivial. We just saw $E[Y] = G_Y'(1) = p$. For the Binomial, $G_Z'(s) = n((1-p)+ps)^{n-1}p$, so $E[Z] = G_Z'(1) = n(1)^{n-1}p = np$. The mean of the sum is $n$ times the mean of a single trial, a result that is algebraically obvious through PGFs. This multiplicative property also simplifies finding the variance of sums ``.
+From this, finding the mean is trivial. We just saw $E[Y] = G_Y'(1) = p$. For the Binomial, $G_Z'(s) = n((1-p)+ps)^{n-1}p$, so $E[Z] = G_Z'(1) = n(1)^{n-1}p = np$. The mean of the sum is $n$ times the mean of a single trial, a result that is algebraically obvious through PGFs. This multiplicative property also simplifies finding the variance of sums `[@problem_id:1409562]`.
 
 #### Chain Reactions and Compounding: PGFs within PGFs
 
@@ -110,9 +110,9 @@ Look at this sum! It has the exact same structure as a PGF, but with the placeho
 
 $$G_Z(s) = G_X(G_Y(s))$$
 
-The PGF for a two-stage [branching process](@article_id:150257) is the *composition* of the single-stage PGF with itself! This powerful idea allows us to analyze complex, multi-stage random phenomena with relative ease ``.
+The PGF for a two-stage [branching process](@keyword=branching_process|lang=en-US|style=Feynman) is the *composition* of the single-stage PGF with itself! This powerful idea allows us to analyze complex, multi-stage random phenomena with relative ease `[@problem_id:1409557]`.
 
-A similar phenomenon, sometimes called **[random sum](@article_id:269175)** or **thinning**, occurs in many fields. Imagine a manufacturing process that creates a random number of quantum dots, $X$, with PGF $G_X(s)$. Each created dot, however, only survives with probability $p$ ``. The number of surviving dots, $Y$, is a sum of $X$ Bernoulli trials. The PGF for a single Bernoulli trial for survival is $(1-p) + ps$. Using the composition rule, the PGF for the final number of surviving dots is:
+A similar phenomenon, sometimes called **[random sum](@keyword=random_sum|lang=en-US|style=Feynman)** or **thinning**, occurs in many fields. Imagine a manufacturing process that creates a random number of quantum dots, $X$, with PGF $G_X(s)$. Each created dot, however, only survives with probability $p$ `[@problem_id:1409511]`. The number of surviving dots, $Y$, is a sum of $X$ Bernoulli trials. The PGF for a single Bernoulli trial for survival is $(1-p) + ps$. Using the composition rule, the PGF for the final number of surviving dots is:
 
 $$G_Y(s) = G_X((1-p) + ps)$$
 
@@ -124,10 +124,10 @@ The power of PGFs doesn't stop with single variables. What if we have two correl
 
 $$G_{X,Y}(s_1, s_2) = E[s_1^X s_2^Y] = \sum_{j=0}^{\infty} \sum_{k=0}^{\infty} P(X=j, Y=k) s_1^j s_2^k$$
 
-Now, [partial derivatives](@article_id:145786) become our tools. To find $E[X]$, we differentiate with respect to $s_1$ and then set both $s_1$ and $s_2$ to 1. To find $E[Y]$, we differentiate with respect to $s_2$. But the most interesting part is the mixed partial derivative, which unlocks the relationship between the two variables:
+Now, [partial derivatives](@keyword=partial_derivatives|lang=en-US|style=Feynman) become our tools. To find $E[X]$, we differentiate with respect to $s_1$ and then set both $s_1$ and $s_2$ to 1. To find $E[Y]$, we differentiate with respect to $s_2$. But the most interesting part is the mixed partial derivative, which unlocks the relationship between the two variables:
 
 $$\frac{\partial^2 G_{X,Y}}{\partial s_1 \partial s_2} \bigg|_{s_1=1, s_2=1} = E[XY]$$
 
-This gives us a direct path to calculating the **covariance**, $\text{Cov}(X,Y) = E[XY] - E[X]E[Y]$, a measure of how two variables move together ``. Once again, a statistical property that seems to require complex summations over a [joint probability](@article_id:265862) table is reduced to a clean, mechanical calculus operation on a single function.
+This gives us a direct path to calculating the **covariance**, $\text{Cov}(X,Y) = E[XY] - E[X]E[Y]$, a measure of how two variables move together `[@problem_id:1409530]`. Once again, a statistical property that seems to require complex summations over a [joint probability](@keyword=joint_probability|lang=en-US|style=Feynman) table is reduced to a clean, mechanical calculus operation on a single function.
 
 From a simple bookkeeping device to a powerful analytical engine, the Probability Generating Function transforms the discrete, sometimes clumsy, world of counting into the smooth, powerful language of calculus. It reveals the hidden unity in probability, showing how sums, compositions, and correlations can be understood through the elegant and universal operations of algebra and differentiation. It is a testament to the profound beauty that emerges when one mathematical idea is viewed through the lens of another.

@@ -1,12 +1,12 @@
-## 应用与[交叉](@article_id:315017)联系：宇宙的对称性
+## 应用与[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)联系：宇宙的对称性
 
-我们在前一章学习了[群作用](@article_id:332514)的“语法”——描述对称性的严谨数学语言。现在，让我们来欣赏它在整个科学领域谱写的“诗篇”。对称性不仅仅是让事物看起来更美观；它是一种强大的工具，能够简化问题并做出预测，让我们能够解决那些原本看似不可能完成的复杂问题。从物理学定律到材料的内在结构，从宇宙的几何形状到分子的[振动](@article_id:331484)，群作用的概念如同一条金线，将这些看似无关的领域编织成一幅壮丽的画卷。
+我们在前一章学习了[群作用](@keyword=group_actions|lang=zh-CN|style=Feynman)的“语法”——描述对称性的严谨数学语言。现在，让我们来欣赏它在整个科学领域谱写的“诗篇”。对称性不仅仅是让事物看起来更美观；它是一种强大的工具，能够简化问题并做出预测，让我们能够解决那些原本看似不可能完成的复杂问题。从物理学定律到材料的内在结构，从宇宙的几何形状到分子的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，群作用的概念如同一条金线，将这些看似无关的领域编织成一幅壮丽的画卷。
 
 ### 平均的艺术：从混沌中创造秩序
 
-想象一下，你手里有一个凹凸不平、形状怪异的“[圆环](@article_id:343088)”（用数学语言来说，一个具有非均匀黎曼度量的圆）。你如何从中找出那个隐藏在内的、完美的、均匀的“标[准圆](@article_id:354146)环”呢？对称性给出了一个简单得令人惊讶的答案：旋转它，然后取平均值。当你将这个不完美的圆环绕其中心旋转，并将每一点在所有角度下的“形态”平均起来，所有的不规则性都会被抹平，最终留下一个完美的、旋转不变的度量。这个度量就是常[数乘](@article_id:316379)以标准度量，它代表了[圆环](@article_id:343088)最根本的几何属性。
+想象一下，你手里有一个凹凸不平、形状怪异的“[圆环](@keyword=annulus|lang=zh-CN|style=Feynman)”（用数学语言来说，一个具有非均匀黎曼度量的圆）。你如何从中找出那个隐藏在内的、完美的、均匀的“标[准圆](@keyword=director_circle|lang=zh-CN|style=Feynman)环”呢？对称性给出了一个简单得令人惊讶的答案：旋转它，然后取平均值。当你将这个不完美的圆环绕其中心旋转，并将每一点在所有角度下的“形态”平均起来，所有的不规则性都会被抹平，最终留下一个完美的、旋转不变的度量。这个度量就是常[数乘](@keyword=scalar_multiplication|lang=zh-CN|style=Feynman)以标准度量，它代表了[圆环](@keyword=annulus|lang=zh-CN|style=Feynman)最根本的几何属性。[@problem_id:3051151]
 
-这个“[平均法](@article_id:328107)”技巧不仅仅是一个有趣的思维实验。它是一个普适的原理，适用于任何紧致[李群](@article_id:298110)（比如旋转群）的作用。只要有一个紧致的对称群作用于一个[流形](@article_id:313450)，我们就可以通过对[群作用](@article_id:332514)积分（即“平均”）来将任何张量场（如度量、应力张量或[电磁场](@article_id:329585)）转换成一个与该对称性兼容的不变版本。 这就像一个通用的“对称化机器”，它保证了在[对称空间](@article_id:361152)上进行分析所需的各种不变结构（如不变度量、不变内积）的存在性。这个看似简单的思想，为在对称背景下进行几何分析和[物理建模](@article_id:305009)奠定了坚实的基础。
+这个“[平均法](@keyword=method_of_averaging|lang=zh-CN|style=Feynman)”技巧不仅仅是一个有趣的思维实验。它是一个普适的原理，适用于任何紧致[李群](@keyword=lie_groups|lang=zh-CN|style=Feynman)（比如旋转群）的作用。只要有一个紧致的对称群作用于一个[流形](@keyword=manifold|lang=zh-CN|style=Feynman)，我们就可以通过对[群作用](@keyword=group_actions|lang=zh-CN|style=Feynman)积分（即“平均”）来将任何张量场（如度量、应力张量或[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)）转换成一个与该对称性兼容的不变版本。[@problem_id:3051139] 这就像一个通用的“对称化机器”，它保证了在[对称空间](@keyword=symmetric_spaces|lang=zh-CN|style=Feynman)上进行分析所需的各种不变结构（如不变度量、不变内积）的存在性。这个看似简单的思想，为在对称背景下进行几何分析和[物理建模](@keyword=physical_modeling|lang=zh-CN|style=Feynman)奠定了坚实的基础。
 
 ### 对称性的超能力：化繁为简
 
@@ -14,56 +14,56 @@
 
 #### 驯服无穷：降低物理问题的复杂性
 
-考虑一个在物理学和工程学中无处不在的问题：计算一个物体内部的温度分布或电势分布。这些问题通常由[偏微分方程](@article_id:301773)（PDE）描述，求解过程可能极其繁琐。
+考虑一个在物理学和工程学中无处不在的问题：计算一个物体内部的温度分布或电势分布。这些问题通常由[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)（PDE）描述，求解过程可能极其繁琐。
 
-但是，如果物体本身是对称的呢？例如，一个环形管道。如果边界条件也是[旋转对称](@article_id:297528)的（比如内壁和外壁的温度恒定），那么一个深刻的结论是：其解也必须是旋转对称的。 这意味着，原本可能依赖于半径和角度两个变量的解，现在只依赖于半径。这个可怕的[偏微分方程](@article_id:301773)瞬间“坍缩”成一个简单的[一阶常微分方程](@article_id:327948)（ODE），任何一个学过微积分入门的学生都能轻松求解。对称性将问题的维度从二维降到了一维。
+但是，如果物体本身是对称的呢？例如，一个环形管道。如果边界条件也是[旋转对称](@keyword=rotational_symmetry|lang=zh-CN|style=Feynman)的（比如内壁和外壁的温度恒定），那么一个深刻的结论是：其解也必须是旋转对称的。[@problem_id:3051141] 这意味着，原本可能依赖于半径和角度两个变量的解，现在只依赖于半径。这个可怕的[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)瞬间“坍缩”成一个简单的[一阶常微分方程](@keyword=first_order_ordinary_differential_equations|lang=zh-CN|style=Feynman)（ODE），任何一个学过微积分入门的学生都能轻松求解。对称性将问题的维度从二维降到了一维。
 
-这个原理的应用非常广泛。想象一下在环面上（就像一个首尾相连的游戏屏幕）的热量[扩散](@article_id:327616)。如果初始的热量分布沿着某个方向是均匀的，那么这种均匀性将永远保持下去。热方程这个二维问题也随之简化为一维问题。
+这个原理的应用非常广泛。想象一下在环面上（就像一个首尾相连的游戏屏幕）的热量[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)。如果初始的热量分布沿着某个方向是均匀的，那么这种均匀性将永远保持下去。热方程这个二维问题也随之简化为一维问题。[@problem_id:3051145]
 
-这一切的核心在于“不变函数”的概念。一个在[群作用](@article_id:332514)下保持不变的函数，必然只依赖于那些在作用下同样保持不变的量。例如，当球体绕着 $z$ 轴旋转时，什么量是不变的？是高度（即 $z$ 坐标）。因此，任何一个旋转不变的函数，都必然可以表示为高度的函数。 理解了这一点，就抓住了[对称性约化](@article_id:378029)方法的精髓。
+这一切的核心在于“不变函数”的概念。一个在[群作用](@keyword=group_actions|lang=zh-CN|style=Feynman)下保持不变的函数，必然只依赖于那些在作用下同样保持不变的量。例如，当球体绕着 $z$ 轴旋转时，什么量是不变的？是高度（即 $z$ 坐标）。因此，任何一个旋转不变的函数，都必然可以表示为高度的函数。[@problem_id:3051135] 理解了这一点，就抓住了[对称性约化](@keyword=symmetry_reduction|lang=zh-CN|style=Feynman)方法的精髓。
 
 #### 宇宙与分子的力学
 
-对称性的力量在力学中体现得淋漓尽致。诺特定理告诉我们，每一个连续的对称性都对应一个[守恒量](@article_id:321879)：空间平移对称性对应[动量守恒](@article_id:321373)，[时间平移对称性](@article_id:324805)对应[能量守恒](@article_id:300957)，而旋转对称性则对应[角动量守恒](@article_id:313488)。
+对称性的力量在力学中体现得淋漓尽致。诺特定理告诉我们，每一个连续的对称性都对应一个[守恒量](@keyword=conserved_quantity|lang=zh-CN|style=Feynman)：空间平移对称性对应[动量守恒](@keyword=conservation_of_momentum|lang=zh-CN|style=Feynman)，[时间平移对称性](@keyword=time_translation_symmetry_2|lang=zh-CN|style=Feynman)对应[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)，而旋转对称性则对应[角动量守恒](@keyword=conservation_of_angular_momentum|lang=zh-CN|style=Feynman)。
 
-物理学家不仅仅是写下这些守恒定律就心满意足了。他们利用这些[守恒量](@article_id:321879)来简化描述系统所有可能状态的“相空间”。这一过程的现代理论被称为 **Marsden-Weinstein 约化**。 想象一个分子的动力学，其相空间维度极高，包含了所有原子的所有可能位置和动量。但我们知道，整个分子的[总角动量](@article_id:316157)是守恒的。因此，我们可以先将研究范围限制在相空间中具有特定总角动量值的那个“切片”上。然后，我们再“除以”旋转对称性本身，即把所有因整体旋转而产生的不同状态视为同一个状态。
+物理学家不仅仅是写下这些守恒定律就心满意足了。他们利用这些[守恒量](@keyword=conserved_quantity|lang=zh-CN|style=Feynman)来简化描述系统所有可能状态的“相空间”。这一过程的现代理论被称为 **Marsden-Weinstein 约化**。[@problem_id:2776174] 想象一个分子的动力学，其相空间维度极高，包含了所有原子的所有可能位置和动量。但我们知道，整个分子的[总角动量](@keyword=total_angular_momentum|lang=zh-CN|style=Feynman)是守恒的。因此，我们可以先将研究范围限制在相空间中具有特定总角动量值的那个“切片”上。然后，我们再“除以”旋转对称性本身，即把所有因整体旋转而产生的不同状态视为同一个状态。
 
-这个过程最终会得到一个维度更低、结构更简单的“[约化相空间](@article_id:344489)”，它有自己的[哈密顿动力学](@article_id:316680)。原始系统在完整相空间中的复杂轨迹，会投影为[约化相空间](@article_id:344489)中更清晰的轨迹。这正是[理论物理学](@article_id:314482)家和化学家研究分子振动与转动、或天体轨道时采用的强大方法。为了严谨地实现这一过程，我们需要将[对称群](@article_id:306504)的作用从构型空间 ($Q$) “提升”到其相空间——[余切丛](@article_id:364373) ($T^*Q$) 上，这需要精确定义[群作用](@article_id:332514)在切丛和[余切丛](@article_id:364373)上的诱导作用。
+这个过程最终会得到一个维度更低、结构更简单的“[约化相空间](@keyword=reduced_phase_space|lang=zh-CN|style=Feynman)”，它有自己的[哈密顿动力学](@keyword=hamiltonian_dynamics|lang=zh-CN|style=Feynman)。原始系统在完整相空间中的复杂轨迹，会投影为[约化相空间](@keyword=reduced_phase_space|lang=zh-CN|style=Feynman)中更清晰的轨迹。这正是[理论物理学](@keyword=theoretical_physics|lang=zh-CN|style=Feynman)家和化学家研究分子振动与转动、或天体轨道时采用的强大方法。为了严谨地实现这一过程，我们需要将[对称群](@keyword=symmetry_groups|lang=zh-CN|style=Feynman)的作用从构型空间 ($Q$) “提升”到其相空间——[余切丛](@keyword=the_cotangent_bundle|lang=zh-CN|style=Feynman) ($T^*Q$) 上，这需要精确定义[群作用](@keyword=group_actions|lang=zh-CN|style=Feynman)在切丛和[余切丛](@keyword=the_cotangent_bundle|lang=zh-CN|style=Feynman)上的诱导作用。[@problem_id:3051111]
 
 ### 更深层次的和谐：几何、拓扑与谱
 
 对称性的启示远不止于简化计算，它揭示了空间本身的内在结构，以及“几何之声”的奥秘。
 
-#### 空间的形状：齐性世界与[纤维丛](@article_id:319969)
+#### 空间的形状：齐性世界与[纤维丛](@keyword=fibre_bundle|lang=zh-CN|style=Feynman)
 
-有些空间具有极高的对称性，从任何一点向任何方向看去，空间的景象都是完全相同的。想象一个完美的球面或一个无限平坦的平面，它们就是这样的例子，被称为**[齐性空间](@article_id:335185)**（Homogeneous Spaces）。
+有些空间具有极高的对称性，从任何一点向任何方向看去，空间的景象都是完全相同的。想象一个完美的球面或一个无限平坦的平面，它们就是这样的例子，被称为**[齐性空间](@keyword=homogeneous_spaces|lang=zh-CN|style=Feynman)**（Homogeneous Spaces）。
 
-一个深刻的定理（Myers-Steenrod 定理）指出，一个黎曼流形的[等距群](@article_id:322065)是一个李群。如果这个[等距群](@article_id:322065)的作用是传递的（即空间中任意两点都可以通过一个等距变换联系起来），那么这个[流形](@article_id:313450)就是一个[齐性空间](@article_id:335185)。更重要的是，我们可以用纯代数的方式来描述它的几何：这个[流形](@article_id:313450) $M$ 微分同胚于一个[商空间](@article_id:338007) $G/H$，其中 $G$ 是[等距群](@article_id:322065)，而 $H$ 是某一点的[稳定子群](@article_id:297667)（即保持该点不动的变换组成的[子群](@article_id:306585)）。[流形](@article_id:313450)的维数也简单地由代数决定：$\dim M = \dim G - \dim H$。 这为我们理解几何提供了一条强有力的代数途径。
+一个深刻的定理（Myers-Steenrod 定理）指出，一个黎曼流形的[等距群](@keyword=isometry_group|lang=zh-CN|style=Feynman)是一个李群。如果这个[等距群](@keyword=isometry_group|lang=zh-CN|style=Feynman)的作用是传递的（即空间中任意两点都可以通过一个等距变换联系起来），那么这个[流形](@keyword=manifold|lang=zh-CN|style=Feynman)就是一个[齐性空间](@keyword=homogeneous_spaces|lang=zh-CN|style=Feynman)。更重要的是，我们可以用纯代数的方式来描述它的几何：这个[流形](@keyword=manifold|lang=zh-CN|style=Feynman) $M$ 微分同胚于一个[商空间](@keyword=quotient_spaces|lang=zh-CN|style=Feynman) $G/H$，其中 $G$ 是[等距群](@keyword=isometry_group|lang=zh-CN|style=Feynman)，而 $H$ 是某一点的[稳定子群](@keyword=stabilizer_subgroup|lang=zh-CN|style=Feynman)（即保持该点不动的变换组成的[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)）。[流形](@keyword=manifold|lang=zh-CN|style=Feynman)的维数也简单地由代数决定：$\dim M = \dim G - \dim H$。[@problem_id:3001002] 这为我们理解几何提供了一条强有力的代数途径。
 
-如果群作用虽然不是传递的，但仍然“良好”（即自由且正常），我们会得到另一种美妙的几何结构——**主纤维丛**。在这种情况下，[流形](@article_id:313450) $M$ 可以被看作是底空间 $M/G$ 和群 $G$ 本身的一个“扭曲乘积”。
+如果群作用虽然不是传递的，但仍然“良好”（即自由且正常），我们会得到另一种美妙的几何结构——**主纤维丛**。在这种情况下，[流形](@keyword=manifold|lang=zh-CN|style=Feynman) $M$ 可以被看作是底空间 $M/G$ 和群 $G$ 本身的一个“扭曲乘积”。[@problem_id:3070848]
 
-其中最著名的例子莫过于**霍普夫[纤维化](@article_id:381971) (Hopf Fibration)**。通过 $S^1$ 群在三维球面 $S^3$ 上的作用，我们惊奇地发现，$S^3$ 竟然可以被看作是一个以二维球面 $S^2$ 为底、以圆周 $S^1$ 为纤维的[纤维丛](@article_id:319969)。换句话说，更高维的 $S^3$ 是由许多“圆圈”以一种精巧的方式“粘合”在 $S^2$ 的每一点上构成的。这是一个完全违背我们日常直觉的几何事实，但通过[群作用](@article_id:332514)的视角，它变得清晰而自然。
+其中最著名的例子莫过于**霍普夫[纤维化](@keyword=fibrosis|lang=zh-CN|style=Feynman) (Hopf Fibration)**。通过 $S^1$ 群在三维球面 $S^3$ 上的作用，我们惊奇地发现，$S^3$ 竟然可以被看作是一个以二维球面 $S^2$ 为底、以圆周 $S^1$ 为纤维的[纤维丛](@keyword=fibre_bundle|lang=zh-CN|style=Feynman)。换句话说，更高维的 $S^3$ 是由许多“圆圈”以一种精巧的方式“粘合”在 $S^2$ 的每一点上构成的。这是一个完全违背我们日常直觉的几何事实，但通过[群作用](@keyword=group_actions|lang=zh-CN|style=Feynman)的视角，它变得清晰而自然。[@problem_id:3050972]
 
-#### 对称之声：[谱几何](@article_id:323745)学
+#### 对称之声：[谱几何](@keyword=spectral_geometry|lang=zh-CN|style=Feynman)学
 
-一个系统有哪些基本的[振动](@article_id:331484)模式？它的“音符”是什么？在数学上，这对应于研究拉普拉斯算子的谱（[特征值](@article_id:315305)集合）。
+一个系统有哪些基本的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式？它的“音符”是什么？在数学上，这对应于研究拉普拉斯算子的谱（[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)集合）。
 
-让我们考虑最简单的[振动](@article_id:331484)系统：一个[圆环](@article_id:343088)。它的基本[振动](@article_id:331484)模式是正弦和余弦波，或者用复数形式写为 $e^{ik\theta}$。这些正是[拉普拉斯算子](@article_id:334415)在圆上的特征函数。 现在，我们来看对称性（旋转）如何作用于这些[振动](@article_id:331484)模式。将一个[振动](@article_id:331484)模式 $e^{ik\theta}$ 旋转一个角度 $\alpha$，结果是 $e^{ik(\theta+\alpha)} = e^{ik\alpha} e^{ik\theta}$。[振动](@article_id:331484)模式的形状没有改变，只是被乘以了一个复数因子 $e^{ik\alpha}$。
+让我们考虑最简单的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)系统：一个[圆环](@keyword=annulus|lang=zh-CN|style=Feynman)。它的基本[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式是正弦和余弦波，或者用复数形式写为 $e^{ik\theta}$。这些正是[拉普拉斯算子](@keyword=divergence_of_the_gradient|lang=zh-CN|style=Feynman)在圆上的特征函数。[@problem_id:3051107] 现在，我们来看对称性（旋转）如何作用于这些[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式。将一个[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式 $e^{ik\theta}$ 旋转一个角度 $\alpha$，结果是 $e^{ik(\theta+\alpha)} = e^{ik\alpha} e^{ik\theta}$。[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式的形状没有改变，只是被乘以了一个复数因子 $e^{ik\alpha}$。
 
-这个复数因子 $e^{ik\alpha}$ 正是[旋转群](@article_id:383013) $S^1$ 的一个**特征标** (character)。这里，我们看到了一个惊人的统一：几何算子（[拉普拉斯算子](@article_id:334415) $\Delta$）的特征函数，恰好构成了[对称群](@article_id:306504)（旋转群 $S^1$）的[不可约表示](@article_id:298633)的基！几何学与[表示论](@article_id:298447)在此刻唱出了同一首歌。
+这个复数因子 $e^{ik\alpha}$ 正是[旋转群](@keyword=rotation_group|lang=zh-CN|style=Feynman) $S^1$ 的一个**特征标** (character)。这里，我们看到了一个惊人的统一：几何算子（[拉普拉斯算子](@keyword=divergence_of_the_gradient|lang=zh-CN|style=Feynman) $\Delta$）的特征函数，恰好构成了[对称群](@keyword=symmetry_groups|lang=zh-CN|style=Feynman)（旋转群 $S^1$）的[不可约表示](@keyword=irreducible_representations|lang=zh-CN|style=Feynman)的基！几何学与[表示论](@keyword=representation_theory|lang=zh-CN|style=Feynman)在此刻唱出了同一首歌。
 
-这个联系还[能带](@article_id:306995)来更令人震惊的结果吗？答案是肯定的。**[砂田定理](@article_id:375858) (Sunada's Theorem)** 提供了一个纯粹基于群论的“配方”，用于构造两个形状完全不同、但听起来声音完全一样（即等谱）的“鼓”。 这一成果震惊了数学界，它依赖于在某个更大的对称群中找到一对所谓的“几乎[共轭](@article_id:312168)”[子群](@article_id:306585)。群论告诉我们，如何欺骗我们的耳朵，让它无法分辨几何的真实形状。
+这个联系还[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)来更令人震惊的结果吗？答案是肯定的。**[砂田定理](@keyword=sunada_s_theorem|lang=zh-CN|style=Feynman) (Sunada's Theorem)** 提供了一个纯粹基于群论的“配方”，用于构造两个形状完全不同、但听起来声音完全一样（即等谱）的“鼓”。[@problem_id:3054469] 这一成果震惊了数学界，它依赖于在某个更大的对称群中找到一对所谓的“几乎[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)”[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)。群论告诉我们，如何欺骗我们的耳朵，让它无法分辨几何的真实形状。
 
 #### 对称性与现实的构造：拓扑学
 
 对称性是否还能告诉我们关于空间更深层次的、不可变形的属性，比如它有多少个“洞”（拓扑）？
 
-答案依然是肯定的。如果一个[有限群](@article_id:300157) $G$ 作用于一个[流形](@article_id:313450) $M$，我们可以将 $M$ 的拓扑与[商空间](@article_id:338007) $M/G$ 的拓扑联系起来。一个关键结果表明，[商空间](@article_id:338007)的贝蒂数（Betti numbers，用于计算不同维度“洞”的数量）等于原[流形](@article_id:313450)上 $G$-不变的[上同调类](@article_id:327668)的子空间的维数。 这不仅提供了一个强大的计算工具，也揭示了群作用的[代数结构](@article_id:297503)与空间的拓扑不变量之间的深刻联系。
+答案依然是肯定的。如果一个[有限群](@keyword=finite_groups|lang=zh-CN|style=Feynman) $G$ 作用于一个[流形](@keyword=manifold|lang=zh-CN|style=Feynman) $M$，我们可以将 $M$ 的拓扑与[商空间](@keyword=quotient_spaces|lang=zh-CN|style=Feynman) $M/G$ 的拓扑联系起来。一个关键结果表明，[商空间](@keyword=quotient_spaces|lang=zh-CN|style=Feynman)的贝蒂数（Betti numbers，用于计算不同维度“洞”的数量）等于原[流形](@keyword=manifold|lang=zh-CN|style=Feynman)上 $G$-不变的[上同调类](@keyword=cohomology_class|lang=zh-CN|style=Feynman)的子空间的维数。[@problem_id:1634051] 这不仅提供了一个强大的计算工具，也揭示了群作用的[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)与空间的拓扑不变量之间的深刻联系。
 
 ### 结语：从理论到实践，再回归统一
 
-我们所讨论的并非纯粹的数学游戏。在[材料科学](@article_id:312640)和工程中，理解材料的内在对称性对于预测其力学行为至关重要。在一个实验中，参数无法被唯一确定的问题，可以被理解为对称群作用下的一个轨道，轨道上的所有参数都给出相同的实验结果。
+我们所讨论的并非纯粹的数学游戏。在[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)和工程中，理解材料的内在对称性对于预测其力学行为至关重要。在一个实验中，参数无法被唯一确定的问题，可以被理解为对称群作用下的一个轨道，轨道上的所有参数都给出相同的实验结果。[@problem_id:2658730]
 
-回顾我们的旅程，我们看到，群作用这个看似简单的概念，如何演变成一个贯穿众多科学领域的统一性原理。它简化了[偏微分方程](@article_id:301773)，驯服了[哈密顿动力学](@article_id:316680)，揭示了空间作为[纤维丛](@article_id:319969)的隐藏结构，将物体的“声音”（谱）与其对称性联系起来，甚至连接了不同空间的拓扑。
+回顾我们的旅程，我们看到，群作用这个看似简单的概念，如何演变成一个贯穿众多科学领域的统一性原理。它简化了[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)，驯服了[哈密顿动力学](@keyword=hamiltonian_dynamics|lang=zh-CN|style=Feynman)，揭示了空间作为[纤维丛](@keyword=fibre_bundle|lang=zh-CN|style=Feynman)的隐藏结构，将物体的“声音”（谱）与其对称性联系起来，甚至连接了不同空间的拓扑。
 
-[群作用](@article_id:332514)的语言让我们能够不再将世界看作一堆孤立问题的集合，而是将其视为一个由优美而强大的对称法则所构建的、统一的整体。通过它，我们得以一窥宇宙深处的和谐与秩序。
+[群作用](@keyword=group_actions|lang=zh-CN|style=Feynman)的语言让我们能够不再将世界看作一堆孤立问题的集合，而是将其视为一个由优美而强大的对称法则所构建的、统一的整体。通过它，我们得以一窥宇宙深处的和谐与秩序。

@@ -1,17 +1,17 @@
 ## Introduction
-In number theory, solving a polynomial equation modulo a prime number, $f(x) \equiv 0 \pmod{p}$, is a fundamental first step. However, a deeper question immediately arises: how does a solution modulo $p$ relate to solutions modulo higher powers like $p^2$, $p^3$, and beyond? The ability to transition from a solution in a finite field to one in a more complex ring structure is a central problem, and the key to solving it lies in a powerful technique known as Hensel's Lemma. This principle provides a systematic way to "lift" solutions from a base prime to its powers, forming the bedrock of [p-adic analysis](@entry_id:139426) and serving as an indispensable tool in modern number theory and algebra.
+In number theory, solving a polynomial equation modulo a prime number, $f(x) \equiv 0 \pmod{p}$, is a fundamental first step. However, a deeper question immediately arises: how does a solution modulo $p$ relate to solutions modulo higher powers like $p^2$, $p^3$, and beyond? The ability to transition from a solution in a finite field to one in a more complex ring structure is a central problem, and the key to solving it lies in a powerful technique known as Hensel's Lemma. This principle provides a systematic way to "lift" solutions from a base prime to its powers, forming the bedrock of p-adic analysis and serving as an indispensable tool in modern number theory and algebra.
 
 This article provides a comprehensive exploration of Hensel's lifting. It aims to bridge the gap between finding a preliminary root and constructing a precise solution modulo any prime power. Throughout this guide, you will gain a robust understanding of this elegant method and its far-reaching implications.
 
-The first chapter, **Principles and Mechanisms**, will dissect the core iterative process of lifting. We will derive the fundamental formula, formally state the conditions under which lifting is guaranteed (the "[simple root](@entry_id:635422)" case), and explore what happens when these conditions fail (the "singular" case).
+The first chapter, **Principles and Mechanisms**, will dissect the core iterative process of lifting. We will derive the fundamental formula, formally state the conditions under which lifting is guaranteed (the "simple root" case), and explore what happens when these conditions fail (the "singular" case).
 
-Next, the chapter on **Applications and Interdisciplinary Connections** will showcase the lemma's versatility. We will see how it combines with the Chinese Remainder Theorem to solve [congruences](@entry_id:273198) modulo any integer, serves as the gateway to the world of $p$-adic numbers, and reveals deep connections to abstract algebra, computational mathematics, and even mathematical logic.
+Next, the chapter on **Applications and Interdisciplinary Connections** will showcase the lemma's versatility. We will see how it combines with the Chinese Remainder Theorem to solve congruences modulo any integer, serves as the gateway to the world of $p$-adic numbers, and reveals deep connections to abstract algebra, computational mathematics, and even mathematical logic.
 
-Finally, the **Hands-On Practices** section will provide opportunities to apply these concepts directly. Through a curated set of problems, you will solidify your understanding by verifying [initial conditions](@entry_id:152863), performing the lifting algorithm, and analyzing the more complex behavior of singular roots.
+Finally, the **Hands-On Practices** section will provide opportunities to apply these concepts directly. Through a curated set of problems, you will solidify your understanding by verifying initial conditions, performing the lifting algorithm, and analyzing the more complex behavior of singular roots.
 
 ## Principles and Mechanisms
 
-In the study of [polynomial congruences](@entry_id:195961), a foundational question is how solutions modulo a prime $p$ relate to solutions modulo higher powers of that prime, $p^k$. If we can solve $f(x) \equiv 0 \pmod{p}$, does this give us a path to solving $f(x) \equiv 0 \pmod{p^2}$, $f(x) \equiv 0 \pmod{p^3}$, and ultimately, to finding a true root in a larger algebraic structure? The collection of principles and mechanisms known as **Hensel's Lemma** provides a powerful and often constructive answer to this question. It forms the bedrock of $p$-adic analysis and has profound implications for number theory and algebraic geometry.
+In the study of polynomial congruences, a foundational question is how solutions modulo a prime $p$ relate to solutions modulo higher powers of that prime, $p^k$. If we can solve $f(x) \equiv 0 \pmod{p}$, does this give us a path to solving $f(x) \equiv 0 \pmod{p^2}$, $f(x) \equiv 0 \pmod{p^3}$, and ultimately, to finding a true root in a larger algebraic structure? The collection of principles and mechanisms known as **Hensel's Lemma** provides a powerful and often constructive answer to this question. It forms the bedrock of $p$-adic analysis and has profound implications for number theory and algebraic geometry.
 
 This chapter will elucidate the core mechanism of "lifting" solutions, formally state the conditions under which this process is guaranteed to succeed, explore the consequences when these conditions are not met, and finally, present powerful generalizations of the method.
 
@@ -39,7 +39,7 @@ By our initial assumption, $f(x_k)$ is a multiple of $p^k$, so we can write $f(x
 
 $c \cdot p^k + t p^k f'(x_k) \equiv 0 \pmod{p^{k+1}}$
 
-This is a [congruence](@entry_id:194418) for our unknown value $t$. Since every term and the modulus are divisible by $p^k$, we can divide through by $p^k$ to obtain a simpler, [linear congruence](@entry_id:273259) for $t$ modulo $p$:
+This is a congruence for our unknown value $t$. Since every term and the modulus are divisible by $p^k$, we can divide through by $p^k$ to obtain a simpler, linear congruence for $t$ modulo $p$:
 
 $c + t f'(x_k) \equiv 0 \pmod{p}$
 
@@ -47,24 +47,24 @@ Recalling that $c = f(x_k)/p^k$, this can be written as:
 
 $t f'(x_k) \equiv -\frac{f(x_k)}{p^k} \pmod{p}$
 
-This [linear congruence](@entry_id:273259) is the heart of the lifting mechanism. Its solvability for $t$ determines whether a lift exists and how many such lifts there are. The nature of its solution depends critically on the value of the derivative, $f'(x_k)$, modulo $p$.
+This linear congruence is the heart of the lifting mechanism. Its solvability for $t$ determines whether a lift exists and how many such lifts there are. The nature of its solution depends critically on the value of the derivative, $f'(x_k)$, modulo $p$.
 
 ### The Simple Root Case and Hensel's Lemma
 
-The most straightforward and powerful application of this mechanism occurs when the derivative at the root is non-zero modulo $p$. This is known as the **[simple root](@entry_id:635422)** case. An integer $a_0$ is called a [simple root](@entry_id:635422) of $f(x)$ modulo $p$ if it satisfies two conditions:
+The most straightforward and powerful application of this mechanism occurs when the derivative at the root is non-zero modulo $p$. This is known as the **simple root** case. An integer $a_0$ is called a simple root of $f(x)$ modulo $p$ if it satisfies two conditions:
 1.  $f(a_0) \equiv 0 \pmod{p}$ (it is a root)
 2.  $f'(a_0) \not\equiv 0 \pmod{p}$ (it is "simple")
 
-The second condition means that $f'(a_0)$ is an invertible element in the field of integers modulo $p$, $\mathbb{F}_p$. In the language of [polynomial rings](@entry_id:152854), this condition is equivalent to stating that the root $a_0$ has [multiplicity](@entry_id:136466) 1; that is, $(x-a_0)$ is a factor of $f(x)$ in $\mathbb{F}_p[x]$, but $(x-a_0)^2$ is not.
+The second condition means that $f'(a_0)$ is an invertible element in the field of integers modulo $p$, $\mathbb{F}_p$. In the language of polynomial rings, this condition is equivalent to stating that the root $a_0$ has multiplicity 1; that is, $(x-a_0)$ is a factor of $f(x)$ in $\mathbb{F}_p[x]$, but $(x-a_0)^2$ is not.
 
-If we start with such a [simple root](@entry_id:635422) $a_0$, and we construct our sequence of lifts $x_k$ starting with $x_1 \equiv a_0 \pmod p$, then for every step $k$, we have $x_k \equiv a_0 \pmod p$. Since $f'(x)$ is also a polynomial, this implies $f'(x_k) \equiv f'(a_0) \not\equiv 0 \pmod p$.
+If we start with such a simple root $a_0$, and we construct our sequence of lifts $x_k$ starting with $x_1 \equiv a_0 \pmod p$, then for every step $k$, we have $x_k \equiv a_0 \pmod p$. Since $f'(x)$ is also a polynomial, this implies $f'(x_k) \equiv f'(a_0) \not\equiv 0 \pmod p$.
 
 Returning to our fundamental congruence for $t$:
 $t f'(x_k) \equiv -\frac{f(x_k)}{p^k} \pmod{p}$
 
 Since $f'(x_k)$ is invertible modulo $p$, we can multiply by its inverse to find a unique solution for $t$ modulo $p$. This means that at each stage of the lifting process, from $p^k$ to $p^{k+1}$, there is exactly one choice of $t \in \{0, 1, \dots, p-1\}$ that produces a valid root.
 
-This deterministic, unique process gives rise to the main statement of Hensel's Lemma for [simple roots](@entry_id:197415).
+This deterministic, unique process gives rise to the main statement of Hensel's Lemma for simple roots.
 
 **Hensel's Lemma (Simple Root Version):** Let $f(x)$ be a polynomial with integer coefficients. Let $p$ be a prime number. If an integer $a_0$ satisfies $f(a_0) \equiv 0 \pmod{p}$ and $f'(a_0) \not\equiv 0 \pmod{p}$, then for any integer $k \ge 1$, there exists a unique integer $a_k$ modulo $p^k$ such that:
 1.  $f(a_k) \equiv 0 \pmod{p^k}$
@@ -72,7 +72,7 @@ This deterministic, unique process gives rise to the main statement of Hensel's 
 
 ### From Lifting to $p$-adic Integers
 
-Hensel's Lemma guarantees the existence of a unique and compatible sequence of roots $(a_k)_{k \ge 1}$, where each $a_k \in \mathbb{Z}/p^k\mathbb{Z}$ is a root modulo $p^k$, and they satisfy the [compatibility condition](@entry_id:171102) $a_{k+1} \equiv a_k \pmod{p^k}$. This structure is not just a curiosity; it is the very definition of a **$p$-adic integer**.
+Hensel's Lemma guarantees the existence of a unique and compatible sequence of roots $(a_k)_{k \ge 1}$, where each $a_k \in \mathbb{Z}/p^k\mathbb{Z}$ is a root modulo $p^k$, and they satisfy the compatibility condition $a_{k+1} \equiv a_k \pmod{p^k}$. This structure is not just a curiosity; it is the very definition of a **$p$-adic integer**.
 
 The ring of **$p$-adic integers**, denoted $\mathbb{Z}_p$, can be formally defined as the inverse limit of the rings $\mathbb{Z}/p^k\mathbb{Z}$:
 $\mathbb{Z}_p = \varprojlim_{k} \mathbb{Z}/p^k\mathbb{Z}$
@@ -85,7 +85,7 @@ This leads to the formulation of Hensel's Lemma in the context of $p$-adic integ
 
 **Hensel's Lemma (p-adic Version):** Let $f(x) \in \mathbb{Z}_p[x]$ be a polynomial with $p$-adic integer coefficients. If there exists a $p$-adic integer $\alpha_0$ such that $f(\alpha_0) \equiv 0 \pmod p$ and $f'(\alpha_0) \not\equiv 0 \pmod p$, then there exists a unique $p$-adic integer $\alpha \in \mathbb{Z}_p$ such that $f(\alpha)=0$ and $\alpha \equiv \alpha_0 \pmod p$.
 
-This perspective is also deeply connected to compactness arguments. The set of all roots of $f$ in $\mathbb{Z}_p$ can be seen as the inverse limit of the solution sets $S_k = \{x \in \mathbb{Z}/p^k\mathbb{Z} \mid f(x) \equiv 0 \pmod{p^k}\}$. A fundamental theorem states that if each $S_k$ is non-empty, then their inverse limit is also non-empty, guaranteeing the existence of a $p$-adic root. Hensel's lemma provides a [constructive proof](@entry_id:157587) of this for [simple roots](@entry_id:197415).
+This perspective is also deeply connected to compactness arguments. The set of all roots of $f$ in $\mathbb{Z}_p$ can be seen as the inverse limit of the solution sets $S_k = \{x \in \mathbb{Z}/p^k\mathbb{Z} \mid f(x) \equiv 0 \pmod{p^k}\}$. A fundamental theorem states that if each $S_k$ is non-empty, then their inverse limit is also non-empty, guaranteeing the existence of a $p$-adic root. Hensel's lemma provides a constructive proof of this for simple roots.
 
 ### A Practical Algorithm: p-adic Newton's Method
 
@@ -99,7 +99,7 @@ $x_{2m} \equiv x_m - f(x_m) [f'(x_m)]^{-1} \pmod{p^{2m}}$
 
 where the inverse $[f'(x_m)]^{-1}$ is computed modulo $p^{2m}$.
 
-**Example:** Let's find the square root of $2$ in the 7-adic integers, $\mathbb{Z}_7$. This is equivalent to finding a root of $f(x) = x^2 - 2$. We can start by finding a root modulo $7$. By inspection, $3^2 - 2 = 7 \equiv 0 \pmod{7}$, so we can take our initial root as $x_0 = 3$. We check the derivative: $f'(x) = 2x$, so $f'(3) = 6 \not\equiv 0 \pmod 7$. Since this is a [simple root](@entry_id:635422), Hensel's Lemma guarantees a unique lift exists. We now apply the Newton iteration.
+**Example:** Let's find the square root of $2$ in the 7-adic integers, $\mathbb{Z}_7$. This is equivalent to finding a root of $f(x) = x^2 - 2$. We can start by finding a root modulo $7$. By inspection, $3^2 - 2 = 7 \equiv 0 \pmod{7}$, so we can take our initial root as $x_0 = 3$. We check the derivative: $f'(x) = 2x$, so $f'(3) = 6 \not\equiv 0 \pmod 7$. Since this is a simple root, Hensel's Lemma guarantees a unique lift exists. We now apply the Newton iteration.
 
 *   **Lift from mod 7 to mod $7^2=49$:**
     Our starting point is $x_0 = 3$. We need $f(x_0)=7$ and $f'(x_0)=6$. The inverse of $6$ modulo $49$ is found via the Euclidean algorithm: $49 = 8 \cdot 6 + 1 \implies 1 = 49 - 8 \cdot 6 \implies 6^{-1} \equiv -8 \equiv 41 \pmod{49}$.
@@ -115,7 +115,7 @@ where the inverse $[f'(x_m)]^{-1}$ is computed modulo $p^{2m}$.
 
 ### The Singular Case: When the Derivative Vanishes
 
-A crucial question remains: what occurs if the [simple root](@entry_id:635422) condition fails, i.e., $f'(a_0) \equiv 0 \pmod{p}$? This is often called the **singular case**. Our fundamental lifting [congruence](@entry_id:194418), $t f'(x_k) \equiv -f(x_k)/p^k \pmod p$, becomes:
+A crucial question remains: what occurs if the simple root condition fails, i.e., $f'(a_0) \equiv 0 \pmod{p}$? This is often called the **singular case**. Our fundamental lifting congruence, $t f'(x_k) \equiv -f(x_k)/p^k \pmod p$, becomes:
 
 $0 \equiv -f(x_k)/p^k \pmod p$
 
@@ -131,7 +131,7 @@ This equation's behavior dictates the outcome. There are two distinct possibilit
     - $f(1) = (1-1)^2 = 0 \equiv 0 \pmod 9$
     - $f(4) = (4-1)^2 = 9 \equiv 0 \pmod 9$
     - $f(7) = (7-1)^2 = 36 \equiv 0 \pmod 9$
-    As predicted, the single root ramifies into three distinct roots. Note that for this specific polynomial, the only true root in $\mathbb{Z}_3$ is $x=1$, as $\mathbb{Z}_3$ is an [integral domain](@entry_id:147487).
+    As predicted, the single root ramifies into three distinct roots. Note that for this specific polynomial, the only true root in $\mathbb{Z}_3$ is $x=1$, as $\mathbb{Z}_3$ is an integral domain.
 
 The prime $p=2$ often exhibits further subtleties. In the singular case, a root might lift for one or more steps and then become obstructed. For example, for $f(x)=x^2-5$, the root $x \equiv 1 \pmod 2$ is singular. It lifts to two roots, $1$ and $3$, modulo 4. However, neither of these roots can be lifted to a root modulo 8, demonstrating that lifting can fail at a later stage. A more general version of Hensel's lemma, involving the $p$-adic valuations of both $f(x_k)$ and $f'(x_k)$, is needed to fully describe these complex scenarios.
 
@@ -142,7 +142,7 @@ The power of Hensel's method extends beyond lifting single roots of single-varia
 #### Polynomial Factorization
 Instead of lifting a root (which corresponds to factoring out a linear term $x-a$), we can lift an entire factorization of a polynomial.
 
-**Hensel's Lemma (Factorization Version):** Let $f(x) \in \mathbb{Z}[x]$ be a polynomial. Suppose that modulo a prime $p$, we have a factorization $f(x) \equiv g_0(x)h_0(x) \pmod p$. If the factors $g_0(x)$ and $h_0(x)$ are **coprime** in the ring $\mathbb{F}_p[x]$ (i.e., their [greatest common divisor](@entry_id:142947) is 1), then for any $k \ge 1$, there exist polynomials $g_k(x), h_k(x) \in (\mathbb{Z}/p^k\mathbb{Z})[x]$ such that:
+**Hensel's Lemma (Factorization Version):** Let $f(x) \in \mathbb{Z}[x]$ be a polynomial. Suppose that modulo a prime $p$, we have a factorization $f(x) \equiv g_0(x)h_0(x) \pmod p$. If the factors $g_0(x)$ and $h_0(x)$ are **coprime** in the ring $\mathbb{F}_p[x]$ (i.e., their greatest common divisor is 1), then for any $k \ge 1$, there exist polynomials $g_k(x), h_k(x) \in (\mathbb{Z}/p^k\mathbb{Z})[x]$ such that:
 1.  $f(x) \equiv g_k(x)h_k(x) \pmod{p^k}$
 2.  $g_k(x) \equiv g_0(x) \pmod p$ and $h_k(x) \equiv h_0(x) \pmod p$
 

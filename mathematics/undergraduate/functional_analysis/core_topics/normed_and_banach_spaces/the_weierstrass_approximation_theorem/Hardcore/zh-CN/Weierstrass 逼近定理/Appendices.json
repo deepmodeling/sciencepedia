@@ -8,7 +8,7 @@
             "answer": "$$\\boxed{f(0)+\\bigl(f(1)-f(0)\\bigr)x}$$"
         },
         {
-            "introduction": "在理解了线性逼近的直观几何意义后，一个自然的问题是：提高多项式的次数会如何改善逼近效果？我们将通过构造一个二次伯恩斯坦多项式来探索这一点。这个练习将具体展示一个二次多项式如何开始捕捉像指数函数这样具有曲率的函数形态，从而加深对逼近过程的理解。",
+            "introduction": "在理解了线性逼近的直观几何意义后[@problem_id:2330457]，一个自然的问题是：提高多项式的次数会如何改善逼近效果？我们将通过构造一个二次伯恩斯坦多项式来探索这一点。这个练习将具体展示一个二次多项式如何开始捕捉像指数函数这样具有曲率的函数形态，从而加深对逼近过程的理解。",
             "id": "2330472",
             "problem": "在数学分析中，Weierstrass 逼近定理保证了定义在闭有界区间上的任何连续函数都可以由多项式函数一致逼近。该定理的一个构造性证明可以通过使用 Bernstein 多项式来实现。\n\n对于在区间 $[0, 1]$ 上连续的函数 $f(x)$，其 $n$ 次 Bernstein 多项式定义为：\n$$B_n(f; x) = \\sum_{k=0}^{n} f\\left(\\frac{k}{n}\\right) \\binom{n}{k} x^k (1-x)^{n-k}$$\n其中 $\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$ 表示二项式系数。\n\n对于区间 $[0, 1]$ 上的函数 $f(x) = \\exp(x)$，求其二次 Bernstein 多项式 $B_2(f; x)$。你的最终答案应该是一个关于变量 $x$ 的多项式。",
             "solution": "我们使用在 $[0,1]$ 上的 $n$ 次 Bernstein 多项式的定义：\n$$B_{n}(f;x)=\\sum_{k=0}^{n} f\\left(\\frac{k}{n}\\right)\\binom{n}{k}x^{k}(1-x)^{n-k}.$$\n对于 $n=2$ 和 $f(x)=\\exp(x)$，可得\n$$B_{2}(f;x)=f(0)\\binom{2}{0}(1-x)^{2}+f\\left(\\frac{1}{2}\\right)\\binom{2}{1}x(1-x)+f(1)\\binom{2}{2}x^{2}.$$\n使用 $f(0)=\\exp(0)=1$，$f\\left(\\frac{1}{2}\\right)=\\exp\\left(\\frac{1}{2}\\right)$ 和 $f(1)=\\exp(1)$，我们得到\n$$B_{2}(f;x)=(1-x)^{2}+2\\exp\\left(\\frac{1}{2}\\right)x(1-x)+\\exp(1)x^{2}.$$\n展开各项，\n$$(1-x)^{2}=1-2x+x^{2},$$\n$$2\\exp\\left(\\frac{1}{2}\\right)x(1-x)=2\\exp\\left(\\frac{1}{2}\\right)x-2\\exp\\left(\\frac{1}{2}\\right)x^{2},$$\n所以\n$$B_{2}(f;x)=1+\\left(2\\exp\\left(\\frac{1}{2}\\right)-2\\right)x+\\left(\\exp(1)-2\\exp\\left(\\frac{1}{2}\\right)+1\\right)x^{2}.$$\n这是一个关于 $x$ 的多项式，其系数用 $\\exp\\left(\\frac{1}{2}\\right)$ 和 $\\exp(1)$ 表示。",

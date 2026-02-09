@@ -1,10 +1,10 @@
 ## 引言
-在[形式逻辑](@article_id:326785)的精确世界中，**代换**（substitution）是一个看似基础却至关重要的操作。它远不止是简单的“查找与替换”，而是我们进行推理、应用规则和构建复杂思想的基石。然而，在这个过程中潜藏着一个微妙而深刻的陷阱——**变量捕获**（variable capture），一次不谨慎的代换就可能扭曲一个逻辑陈述的本意，使真理变为谬误，从而动摇整个逻辑推理大厦的根基。
+在[形式逻辑](@keyword=formal_logic|lang=zh-CN|style=Feynman)的精确世界中，**代换**（substitution）是一个看似基础却至关重要的操作。它远不止是简单的“查找与替换”，而是我们进行推理、应用规则和构建复杂思想的基石。然而，在这个过程中潜藏着一个微妙而深刻的陷阱——**变量捕获**（variable capture），一次不谨慎的代换就可能扭曲一个逻辑陈述的本意，使真理变为谬误，从而动摇整个逻辑推理大厦的根基。
 
 本文旨在系统地剖析代换机制及其伴随的变量捕获问题。我们将引导你穿越这个逻辑语言的核心地带，揭示为何对变量的精确控制是维持逻辑严谨性的关键。
 
-*   在“**原理与机制**”一章中，我们将首先区分[自由变量与约束变量](@article_id:640397)，揭示[量词作用域](@article_id:340546)的秘密，并精确定义导致变量捕获的危险情境。随后，我们将学习如何通过[α-变换](@article_id:313435)这一优雅的技巧来安全地执行代换。
-*   接着，在“**应用与[交叉](@article_id:315017)联系**”一章中，我们将视野扩展到逻辑学之外，探讨避免变量捕获的原则如何在计算机科学（从lambda演算到[编译器设计](@article_id:335686)）、人工智能乃至数学基础（如[哥德尔](@article_id:642168)不[完备性定理](@article_id:312012)）中扮演着不可或缺的角色。
+*   在“**原理与机制**”一章中，我们将首先区分[自由变量与约束变量](@keyword=free_vs_bound_variables|lang=zh-CN|style=Feynman)，揭示[量词作用域](@keyword=quantifier_scope|lang=zh-CN|style=Feynman)的秘密，并精确定义导致变量捕获的危险情境。随后，我们将学习如何通过[α-变换](@keyword=alpha_conversion|lang=zh-CN|style=Feynman)这一优雅的技巧来安全地执行代换。
+*   接着，在“**应用与[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)联系**”一章中，我们将视野扩展到逻辑学之外，探讨避免变量捕获的原则如何在计算机科学（从lambda演算到[编译器设计](@keyword=compiler_design|lang=zh-CN|style=Feynman)）、人工智能乃至数学基础（如[哥德尔](@keyword=gödel|lang=zh-CN|style=Feynman)不[完备性定理](@keyword=completeness_theorem|lang=zh-CN|style=Feynman)）中扮演着不可或缺的角色。
 *   最后，在“**动手实践**”部分，你将通过一系列精心设计的问题，亲手处理代换与变量捕获的经典场景，将理论知识转化为实践技能。
 
 通过本次学习，你将不仅掌握一项关键的逻辑技术，更能深刻理解为何对细节的严谨追求是构建可靠知识体系的根本保障。现在，让我们开始这趟精确而迷人的逻辑之旅。
@@ -15,11 +15,11 @@
 
 ### 两种变量的故事：自由与约束
 
-在日常语言中，我们经常使用代词。比如，“他喜欢他的狗”。如果我们在谈论张三，那么“他”和“他的”指的就是张三。这里的代词指代一个特定的人，其含义由**外部语境**决定。在逻辑学中，我们称这种变量为**[自由变量](@article_id:312077)**（free variable）。它的值像是一个待填的空，由我们从外部指定。
+在日常语言中，我们经常使用代词。比如，“他喜欢他的狗”。如果我们在谈论张三，那么“他”和“他的”指的就是张三。这里的代词指代一个特定的人，其含义由**外部语境**决定。在逻辑学中，我们称这种变量为**[自由变量](@keyword=free_variables|lang=zh-CN|style=Feynman)**（free variable）。它的值像是一个待填的空，由我们从外部指定。
 
-但代词还有另一种用法。想象一下这句话：“每个男孩都喜欢他的狗”。这里的“他”指的不是任何一个特定的男孩，而是作为一个**占位符**（placeholder），与“每个男孩”联动。它的含义被“每个男孩”这个量词**限定在其作用域内**。这种变量，我们称之为**[约束变量](@article_id:340145)**（bound variable）。
+但代词还有另一种用法。想象一下这句话：“每个男孩都喜欢他的狗”。这里的“他”指的不是任何一个特定的男孩，而是作为一个**占位符**（placeholder），与“每个男孩”联动。它的含义被“每个男孩”这个量词**限定在其作用域内**。这种变量，我们称之为**[约束变量](@keyword=bound_variables|lang=zh-CN|style=Feynman)**（bound variable）。
 
-让我们把这个直觉变得精确起来。考虑一个公式 $\varphi$，比如 $x > y$（“$x$ 大于 $y$”）。这里的 $x$ 和 $y$ 都是[自由变量](@article_id:312077)。但如果我们加上一个**[量词](@article_id:319547)**（quantifier），比如“对于所有的 $y$”（记作 $\forall y$），公式就变成了 $\forall y, x > y$。在这个新公式中，$y$ 成为了一个[约束变量](@article_id:340145)，因为它被量词 $\forall y$ 所“捕获”并约束。它的含义完全由这个量词的范围所定义，我们不能从外部再给它赋值。然而，$x$ 仍然是自由的，它像一个孤独的岗哨，等待着我们为它指派一个具体的值。
+让我们把这个直觉变得精确起来。考虑一个公式 $\varphi$，比如 $x > y$（“$x$ 大于 $y$”）。这里的 $x$ 和 $y$ 都是[自由变量](@keyword=free_variables|lang=zh-CN|style=Feynman)。但如果我们加上一个**[量词](@keyword=quantifiers|lang=zh-CN|style=Feynman)**（quantifier），比如“对于所有的 $y$”（记作 $\forall y$），公式就变成了 $\forall y, x > y$。在这个新公式中，$y$ 成为了一个[约束变量](@keyword=bound_variables|lang=zh-CN|style=Feynman)，因为它被量词 $\forall y$ 所“捕获”并约束。它的含义完全由这个量词的范围所定义，我们不能从外部再给它赋值。然而，$x$ 仍然是自由的，它像一个孤独的岗哨，等待着我们为它指派一个具体的值。
 
 ### 项的简单世界
 
@@ -33,13 +33,13 @@
 -   如果项 $t$ 是一个与 $x$ 不同的变量 $y$，那么 $y[x:=s]$ 的结果仍然是 $y$。
 -   如果项 $t$ 是一个复杂的项，比如 $f(t_1, t_2, \dots, t_n)$，我们就递归地对它的每一个部分进行代换：$f(t_1[x:=s], t_2[x:=s], \dots, t_n[x:=s])$。
 
-例如，将 $x$ 替换为“苏格拉底”，那么项“$x$ 的父亲”（$f(x)$）就变成了“苏格拉底的父亲”（$f(\text{苏格拉底})$）。这一切都非常直观且毫无危险。为什么？因为项的结构中没有[量词](@article_id:319547)，没有能“捕获”变量的陷阱。所有变量都赤裸裸地暴露在外，等待被替换。
+例如，将 $x$ 替换为“苏格拉底”，那么项“$x$ 的父亲”（$f(x)$）就变成了“苏格拉底的父亲”（$f(\text{苏格拉底})$）。这一切都非常直观且毫无危险。为什么？因为项的结构中没有[量词](@keyword=quantifiers|lang=zh-CN|style=Feynman)，没有能“捕获”变量的陷阱。所有变量都赤裸裸地暴露在外，等待被替换。
 
-### 情节展开：[量词](@article_id:319547)与它们的作用域
+### 情节展开：[量词](@keyword=quantifiers|lang=zh-CN|style=Feynman)与它们的作用域
 
-现在，让我们回到公式的世界。公式是能判断真假的句子，比如 $x > 0$ 或者 $P(x,y)$。而让这个世界变得无比丰富的，正是量词。每个[量词](@article_id:319547)，如 $\forall y$ 或 $\exists x$，都像一个小型的地方立法者，它在自己管辖的范围内制定规则。这个管辖范围，我们称为量词的**作用域**（scope）。
+现在，让我们回到公式的世界。公式是能判断真假的句子，比如 $x > 0$ 或者 $P(x,y)$。而让这个世界变得无比丰富的，正是量词。每个[量词](@keyword=quantifiers|lang=zh-CN|style=Feynman)，如 $\forall y$ 或 $\exists x$，都像一个小型的地方立法者，它在自己管辖的范围内制定规则。这个管辖范围，我们称为量词的**作用域**（scope）。
 
-一个变量出现在一个[量词](@article_id:319547)的作用域内，并不一定意味着它被该[量词](@article_id:319547)约束。想象这个复杂的公式：
+一个变量出现在一个[量词](@keyword=quantifiers|lang=zh-CN|style=Feynman)的作用域内，并不一定意味着它被该[量词](@keyword=quantifiers|lang=zh-CN|style=Feynman)约束。想象这个复杂的公式：
 $$ \Phi = \forall x\big( \underbrace{ \big( P(x,y) \wedge \exists x\big( R(x,z) \wedge \forall y, P(y,x) \big) \big) \to R(y) }_{\text{Scope of outer } \forall x} \big) \lor \forall y, S(y,x) $$
 公式中 $R(x,z)$ 里的 $x$，同时处在外层 $\forall x$ 和内层 $\exists x$ 的作用域中。但是，根据“就近原则”，它只被**最内层的** $\exists x$ 所约束。而公式最左边的 $P(x,y)$ 里的 $x$，则只被外层的 $\forall x$ 约束。理解这种嵌套的作用域和约束关系是接下来所有内容的关键。一个变量出现的位置（occurrence）决定了它的命运。
 
@@ -55,7 +55,7 @@ $$ \forall y, P(y,y) $$
 
 发生了什么？一次看似无辜的代换，竟然让一个真命题变成了假命题。逻辑的确定性大厦似乎在此刻产生了裂痕。这就是**变量捕获**（variable capture）的幽灵在作祟。
 
-诊断一下问题所在：我们用来替换 $x$ 的项 $t=y$ 本身包含一个[自由变量](@article_id:312077) $y$。当我们把它代入到 $\forall y, P(x,y)$ 中时，这个原本自由的 $y$ 不幸落入了[量词](@article_id:319547) $\forall y$ 的作用域。它被“捕获”了，从一个代表外部特定值的变量，变成了一个被量词约束的内部占位符。它的“身份”被改变了，公式的含义也因此面目全非。
+诊断一下问题所在：我们用来替换 $x$ 的项 $t=y$ 本身包含一个[自由变量](@keyword=free_variables|lang=zh-CN|style=Feynman) $y$。当我们把它代入到 $\forall y, P(x,y)$ 中时，这个原本自由的 $y$ 不幸落入了[量词](@keyword=quantifiers|lang=zh-CN|style=Feynman) $\forall y$ 的作用域。它被“捕获”了，从一个代表外部特定值的变量，变成了一个被量词约束的内部占位符。它的“身份”被改变了，公式的含义也因此面目全非。
 
 这个现象并非个例。在一个复杂的公式中，一次错误的代换可能会导致多处捕获，彻底扭曲原意。为了维护逻辑的完整性，我们绝不能允许这种事情发生。
 
@@ -66,19 +66,19 @@ $$ \forall y, P(y,y) $$
 这个安全条件的正式定义是：
 > 对于 $\varphi$ 中 $x$ 的**每一个自由出现**，如果这个位置处于某个量词 $Qy$（如 $\forall y$ 或 $\exists y$）的作用域内，那么变量 $y$ **不能**在项 $t$ 中自由出现。
 
-简单来说，就是你塞进去的东西（项 $t$），不能含有会被“当地”[量词](@article_id:319547)抓住的变量。在我们的例子 $\varphi \equiv \forall y, P(x,y)$ 和 $t \equiv y$ 中，$x$ 的自由出现位置在 $P(x,y)$，它处于 $\forall y$ 的作用域内。而项 $t$ 中恰好含有自由变量 $y$。这违反了安全条件。因此，我们说“$y$ 对于 $x$ 在 $\forall y, P(x,y)$ 中**不是**自由的”，这次代换是非法的。
+简单来说，就是你塞进去的东西（项 $t$），不能含有会被“当地”[量词](@keyword=quantifiers|lang=zh-CN|style=Feynman)抓住的变量。在我们的例子 $\varphi \equiv \forall y, P(x,y)$ 和 $t \equiv y$ 中，$x$ 的自由出现位置在 $P(x,y)$，它处于 $\forall y$ 的作用域内。而项 $t$ 中恰好含有自由变量 $y$。这违反了安全条件。因此，我们说“$y$ 对于 $x$ 在 $\forall y, P(x,y)$ 中**不是**自由的”，这次代换是非法的。
 
-### 终极解决方案：巧换身份（[α-变换](@article_id:313435)）
+### 终极解决方案：巧换身份（[α-变换](@keyword=alpha_conversion|lang=zh-CN|style=Feynman)）
 
-那么，如果一次代换因为不安全而被禁止，我们就束手无策了吗？当然不是。逻辑学家们想出了一个极为优雅的办法，其思想根源在于一个美丽的发现：[约束变量](@article_id:340145)的名字无关紧要。
+那么，如果一次代换因为不安全而被禁止，我们就束手无策了吗？当然不是。逻辑学家们想出了一个极为优雅的办法，其思想根源在于一个美丽的发现：[约束变量](@keyword=bound_variables|lang=zh-CN|style=Feynman)的名字无关紧要。
 
-公式 $\forall x, P(x)$ 和公式 $\forall z, P(z)$ 表达的是完全相同的思想：“所有的东西都具有性质 $P$”。这里的 $x$ 和 $z$ 都只是占位符。只要我们系统性地更换一个[约束变量](@article_id:340145)的名字，公式的意义完全不变。这种操作，我们称之为**[α-变换](@article_id:313435)**（alpha-conversion），通过这种变换得到的公式互为 **[α-等价](@article_id:639089)**（alpha-equivalent）。
+公式 $\forall x, P(x)$ 和公式 $\forall z, P(z)$ 表达的是完全相同的思想：“所有的东西都具有性质 $P$”。这里的 $x$ 和 $z$ 都只是占位符。只要我们系统性地更换一个[约束变量](@keyword=bound_variables|lang=zh-CN|style=Feynman)的名字，公式的意义完全不变。这种操作，我们称之为**[α-变换](@keyword=alpha_conversion|lang=zh-CN|style=Feynman)**（alpha-conversion），通过这种变换得到的公式互为 **[α-等价](@keyword=alpha_equivalence|lang=zh-CN|style=Feynman)**（alpha-equivalent）。
 
 现在，我们有了解决变量捕获问题的终极武器。回到那个棘手的问题：我们想在 $\forall y, P(x,y)$ 中用 $y$ 替换 $x$。我们知道这不安全。怎么办？
 
-很简单：在代换之前，我们先对 $\forall y, P(x,y)$ 做一次 [α-变换](@article_id:313435)。我们选择一个全新的变量，比如 $z$，它既不是 $x$ 也不是 $y$，然后把[约束变量](@article_id:340145) $y$ 重命名为 $z$。公式变成了：
+很简单：在代换之前，我们先对 $\forall y, P(x,y)$ 做一次 [α-变换](@keyword=alpha_conversion|lang=zh-CN|style=Feynman)。我们选择一个全新的变量，比如 $z$，它既不是 $x$ 也不是 $y$，然后把[约束变量](@keyword=bound_variables|lang=zh-CN|style=Feynman) $y$ 重命名为 $z$。公式变成了：
 $$ \forall z, P(x,z) $$
-这个新公式与原公式是 [α-等价](@article_id:639089)的，意味着它们的逻辑含义完全相同。但现在，量词变成了 $\forall z$。我们再来检查安全性：$x$ 的自由出现位置处于 $\forall z$ 的作用域内，而我们要代入的项是 $t=y$。$y$ 不是 $z$，所以安全条件满足了！
+这个新公式与原公式是 [α-等价](@keyword=alpha_equivalence|lang=zh-CN|style=Feynman)的，意味着它们的逻辑含义完全相同。但现在，量词变成了 $\forall z$。我们再来检查安全性：$x$ 的自由出现位置处于 $\forall z$ 的作用域内，而我们要代入的项是 $t=y$。$y$ 不是 $z$，所以安全条件满足了！
 
 现在我们可以安全地进行代换了：
 $$ (\forall z, P(x,z))[x:=y] \implies \forall z, P(y,z) $$

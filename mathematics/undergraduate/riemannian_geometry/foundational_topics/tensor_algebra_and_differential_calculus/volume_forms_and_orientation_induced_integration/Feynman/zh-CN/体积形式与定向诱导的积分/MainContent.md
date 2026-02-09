@@ -1,9 +1,9 @@
 ## 引言
-我们如何在弯曲的表面——比如地球表面或更抽象的数学空间——上测量面积或体积？我们熟悉的微积分是在平直的[欧几里得空间](@article_id:298501)中建立的，但当空间本身发生扭曲时，这些工具便显得力不从心。这不仅仅是一个技术难题，更是一个深刻的概念挑战。要将积分的概念从平面推广到任意[流形](@article_id:313450)，我们需要一种新的语言，这便是“体积形式”；同时，我们还必须面对一个看似微妙却至关重要的性质——“定向”。
+我们如何在弯曲的表面——比如地球表面或更抽象的数学空间——上测量面积或体积？我们熟悉的微积分是在平直的[欧几里得空间](@keyword=euclidean_space|lang=zh-CN|style=Feynman)中建立的，但当空间本身发生扭曲时，这些工具便显得力不从心。这不仅仅是一个技术难题，更是一个深刻的概念挑战。要将积分的概念从平面推广到任意[流形](@keyword=manifold|lang=zh-CN|style=Feynman)，我们需要一种新的语言，这便是“体积形式”；同时，我们还必须面对一个看似微妙却至关重要的性质——“定向”。
 
-本文旨在填补从直观几何到严谨[流形理论](@article_id:327429)之间的认知鸿沟。我们将揭示为何简单地“累加”微小体积块在某些空间（如[莫比乌斯带](@article_id:312802)）上会产生矛盾，以及数学家如何通过精确定义定向与体积来解决这一问题。通过本文，您将学习到一套描述和[测量弯曲空间](@article_id:320224)的强大工具。
+本文旨在填补从直观几何到严谨[流形理论](@keyword=manifold_theory|lang=zh-CN|style=Feynman)之间的认知鸿沟。我们将揭示为何简单地“累加”微小体积块在某些空间（如[莫比乌斯带](@keyword=möbius_strip|lang=zh-CN|style=Feynman)）上会产生矛盾，以及数学家如何通过精确定义定向与体积来解决这一问题。通过本文，您将学习到一套描述和[测量弯曲空间](@keyword=measuring_curved_spaces|lang=zh-CN|style=Feynman)的强大工具。
 
-在接下来的“原理与机制”一章中，我们将深入探讨定向和[体积形式](@article_id:381647)的数学本质，理解它们如何通过楔积的代数规则与空间的“手性”联系起来，并揭示为何定向是积分成败的关键。随后，在“应用与[交叉](@article_id:315017)联系”一章，我们将运用这些理论去解决实际问题，从计算球面面积到探索广义[相对论](@article_id:327421)的几何基础，见证其在物理学和拓扑学中的惊人力量。最后，“动手实践”部分将通过具体的计算练习，帮助您将理论知识内化为真正的技能。让我们一同开启这场探索现代几何核心思想的旅程。
+在接下来的“原理与机制”一章中，我们将深入探讨定向和[体积形式](@keyword=volume_forms|lang=zh-CN|style=Feynman)的数学本质，理解它们如何通过楔积的代数规则与空间的“手性”联系起来，并揭示为何定向是积分成败的关键。随后，在“应用与[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)联系”一章，我们将运用这些理论去解决实际问题，从计算球面面积到探索广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)的几何基础，见证其在物理学和拓扑学中的惊人力量。最后，“动手实践”部分将通过具体的计算练习，帮助您将理论知识内化为真正的技能。让我们一同开启这场探索现代几何核心思想的旅程。
 
 ## 原理与机制
 
@@ -11,67 +11,67 @@
 
 ### 空间的“手性”：什么是定向？
 
-想象一下你的双手。它们互为镜像，但无法通过旋转和移动使之完全重合。这个简单的事实蕴含了一个深刻的几何概念：**手性（chirality）**，或者说**定向（orientation）**。在二维平面上，我们可以想象有两个“面”：一个“正面”和一个“背面”。在三维空间中，我们有“左手系”和“[右手系](@article_id:345976)”坐标。定向，本质上就是在空间的每一点上，都做出一个一致的、关于“手性”的选择。
+想象一下你的双手。它们互为镜像，但无法通过旋转和移动使之完全重合。这个简单的事实蕴含了一个深刻的几何概念：**手性（chirality）**，或者说**定向（orientation）**。在二维平面上，我们可以想象有两个“面”：一个“正面”和一个“背面”。在三维空间中，我们有“左手系”和“[右手系](@keyword=right_handed_system|lang=zh-CN|style=Feynman)”坐标。定向，本质上就是在空间的每一点上，都做出一个一致的、关于“手性”的选择。
 
-那么，数学上如何精确地描述这种选择呢？答案出人意料地简单，它藏在线性代数的核心里。想象在空间中的一点，我们有两组[基向量](@article_id:378298)（可以看作是两个不同的[坐标系](@article_id:316753)）。如果从一组基$e$变换到另一组基$f$的[变换矩阵](@article_id:312030)$A$的[行列式](@article_id:303413)$\det(A)$为正，我们就说这两组基定义了**相同的定向**。如果$\det(A)$为负，它们就定义了**相反的定向** 。
+那么，数学上如何精确地描述这种选择呢？答案出人意料地简单，它藏在线性代数的核心里。想象在空间中的一点，我们有两组[基向量](@keyword=basis_vector|lang=zh-CN|style=Feynman)（可以看作是两个不同的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)）。如果从一组基$e$变换到另一组基$f$的[变换矩阵](@keyword=transformation_matrix|lang=zh-CN|style=Feynman)$A$的[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)$\det(A)$为正，我们就说这两组基定义了**相同的定向**。如果$\det(A)$为负，它们就定义了**相反的定向** [@problem_id:3079841]。
 
-一个绝佳的例子是镜子。当你照镜子时，镜中的你就是[原像](@article_id:311316)经过一次[反射变换](@article_id:354534)得到的。这个变换，比如将三维空间中的$(x, y, z)$坐标映为$(x, y, -z)$，其变换[矩阵的[行列](@article_id:308617)式](@article_id:303413)为-1。这正是为什么镜中的你看起来左右颠倒——反射颠倒了空间的手性，或者说，它反转了空间的定向 。这个符号上的简单正负，却是一扇通往深刻几何世界的大门。它告诉我们，定向并非可有可无的附加品，而是空间内在结构的一部分。
+一个绝佳的例子是镜子。当你照镜子时，镜中的你就是[原像](@keyword=preimage|lang=zh-CN|style=Feynman)经过一次[反射变换](@keyword=reflection_transformation|lang=zh-CN|style=Feynman)得到的。这个变换，比如将三维空间中的$(x, y, z)$坐标映为$(x, y, -z)$，其变换[矩阵的[行列](@keyword=determinant_of_a_matrix|lang=zh-CN|style=Feynman)式](@article_id:303413)为-1。这正是为什么镜中的你看起来左右颠倒——反射颠倒了空间的手性，或者说，它反转了空间的定向 [@problem_id:3079841]。这个符号上的简单正负，却是一扇通往深刻几何世界的大门。它告诉我们，定向并非可有可无的附加品，而是空间内在结构的一部分。
 
 ### 体积的语言：楔积的交响乐
 
-如果我们想在弯曲的空间（即[流形](@article_id:313450)）上测量体积，我们需要一种新的语言。这种语言就是**[微分形式](@article_id:307165)（differential forms）**。你可以将一个$n$维[流形](@article_id:313450)上的$n$-形式想象成一个微小的、能够测量$n$维体积的“探测器”。在[局部坐标](@article_id:360581)$(x^1, ..., x^n)$下，最基本的体积元素就是$dx^1 \wedge \dots \wedge dx^n$。
+如果我们想在弯曲的空间（即[流形](@keyword=manifold|lang=zh-CN|style=Feynman)）上测量体积，我们需要一种新的语言。这种语言就是**[微分形式](@keyword=differential_forms|lang=zh-CN|style=Feynman)（differential forms）**。你可以将一个$n$维[流形](@keyword=manifold|lang=zh-CN|style=Feynman)上的$n$-形式想象成一个微小的、能够测量$n$维体积的“探测器”。在[局部坐标](@keyword=local_coordinates|lang=zh-CN|style=Feynman)$(x^1, ..., x^n)$下，最基本的体积元素就是$dx^1 \wedge \dots \wedge dx^n$。
 
-这里的$\wedge$符号，即**[楔积](@article_id:307445)（wedge product）**，是整个故事的关键。它有一个核心性质：**交错性（alternating）**。这意味着，只要交换任意两个$dx$的位置，整个表达式就会变号。例如，在二维平面上：
+这里的$\wedge$符号，即**[楔积](@keyword=wedge_product|lang=zh-CN|style=Feynman)（wedge product）**，是整个故事的关键。它有一个核心性质：**交错性（alternating）**。这意味着，只要交换任意两个$dx$的位置，整个表达式就会变号。例如，在二维平面上：
 $$
 dx \wedge dy = - dy \wedge dx
 $$
-这个简单的代数规则，完美地捕捉了“[有向体积](@article_id:310347)”的精髓。交换坐标轴的顺序，就像做了一次反射，从而改变了面积的“手性”。例如，$dx^2 \wedge dx^1 \wedge \dots$就等于$-dx^1 \wedge dx^2 \wedge \dots$ 。
+这个简单的代数规则，完美地捕捉了“[有向体积](@keyword=signed_volume|lang=zh-CN|style=Feynman)”的精髓。交换坐标轴的顺序，就像做了一次反射，从而改变了面积的“手性”。例如，$dx^2 \wedge dx^1 \wedge \dots$就等于$-dx^1 \wedge dx^2 \wedge \dots$ [@problem_id:3079850]。
 
-更一般地，对坐标进行任意的[置换](@article_id:296886)$\sigma$，[体积元](@article_id:331505)素会带上一个[置换的符号](@article_id:297629)$\operatorname{sgn}(\sigma)$ 。这并非随意的规定，而是将空间的“手性”概念，用代数的语言谱写成了一首严谨而和谐的交响乐。每一个[微分形式](@article_id:307165)，都在用这种方式“感知”着空间的方向。
+更一般地，对坐标进行任意的[置换](@keyword=permutation|lang=zh-CN|style=Feynman)$\sigma$，[体积元](@keyword=volume_element|lang=zh-CN|style=Feynman)素会带上一个[置换的符号](@keyword=sign_of_a_permutation|lang=zh-CN|style=Feynman)$\operatorname{sgn}(\sigma)$ [@problem_id:3079850]。这并非随意的规定，而是将空间的“手性”概念，用代数的语言谱写成了一首严谨而和谐的交响乐。每一个[微分形式](@keyword=differential_forms|lang=zh-CN|style=Feynman)，都在用这种方式“感知”着空间的方向。
 
 ### 无法回避的问题：可定向与否？
 
-现在，一个自然的问题浮现出来：我们总能在一个完整的空间上，做出一个全局一致的[定向选择](@article_id:296721)吗？换句话说，任何一个[流形](@article_id:313450)都是**可定向的（orientable）**吗？
+现在，一个自然的问题浮现出来：我们总能在一个完整的空间上，做出一个全局一致的[定向选择](@keyword=directional_selection|lang=zh-CN|style=Feynman)吗？换句话说，任何一个[流形](@keyword=manifold|lang=zh-CN|style=Feynman)都是**可定向的（orientable）**吗？
 
 答案是：**否！**
 
-最著名的例子莫过于**[莫比乌斯带](@article_id:312802)（Möbius strip）**。如果你让一只蚂蚁在莫比乌斯带的“一面”上爬行，它最终会回到起点，但却处于起点的“另一面”。这个带子只有一个面，一条边。在这样的空间里，你无法全局一致地定义“上”和“下”，或者“内”和“外”。
+最著名的例子莫过于**[莫比乌斯带](@keyword=möbius_strip|lang=zh-CN|style=Feynman)（Möbius strip）**。如果你让一只蚂蚁在莫比乌斯带的“一面”上爬行，它最终会回到起点，但却处于起点的“另一面”。这个带子只有一个面，一条边。在这样的空间里，你无法全局一致地定义“上”和“下”，或者“内”和“外”。
 
-在更严谨的数学世界里，我们有同样迷人的例子 ：
+在更严谨的数学世界里，我们有同样迷人的例子 [@problem_id:3079843]：
 -   **球面$S^n$**和**环面$T^n$**：对于任何维度$n$，它们总是可定向的。我们可以想象球面有清晰的“内部”和“外部”，环面则有连贯的“流动方向”。
--   **[实射影空间](@article_id:309513)$\mathbb{RP}^n$**：它们是真正的“捣蛋鬼”。$\mathbb{RP}^n$是将$n$维球面$S^n$上所有相对的点$x$和$-x$视为同一个点而得到的空间。$\mathbb{RP}^2$（[实射影平面](@article_id:310782)）就是不可定向的，它就像是[莫比乌斯带](@article_id:312802)的二维推广。然而，令人惊讶的是，$\mathbb{RP}^3$却是可定向的！一个空间的定向性，有时竟然取决于其维度的奇偶性。这背后深刻的原因在于，将球面上每个点变为其[对径点](@article_id:312003)的“[对径映射](@article_id:312189)”，在奇数维空间里保持定向，而在偶数维空间里反转定向 。
+-   **[实射影空间](@keyword=real_projective_space|lang=zh-CN|style=Feynman)$\mathbb{RP}^n$**：它们是真正的“捣蛋鬼”。$\mathbb{RP}^n$是将$n$维球面$S^n$上所有相对的点$x$和$-x$视为同一个点而得到的空间。$\mathbb{RP}^2$（[实射影平面](@keyword=real_projective_plane|lang=zh-CN|style=Feynman)）就是不可定向的，它就像是[莫比乌斯带](@keyword=möbius_strip|lang=zh-CN|style=Feynman)的二维推广。然而，令人惊讶的是，$\mathbb{RP}^3$却是可定向的！一个空间的定向性，有时竟然取决于其维度的奇偶性。这背后深刻的原因在于，将球面上每个点变为其[对径点](@keyword=antipodal_points|lang=zh-CN|style=Feynman)的“[对径映射](@keyword=antipodal_map|lang=zh-CN|style=Feynman)”，在奇数维空间里保持定向，而在偶数维空间里反转定向 [@problem_id:3079843]。
 
 ### 积分的困境：为何定向至关重要
 
-这一切与积分有什么关系呢？积分的本质，是在整个空间上将局部的量（如密度、场强）累加起来，得到一个总的量（如质量、通量）。在[流形](@article_id:313450)上，我们通过“分而治之”的策略来实现：将弯曲的空间切成许多个近似平坦的小块（即**坐标卡**），在每个小块上用我们熟悉的微积分进行计算，最后通过一个名为**单位分解（partition of unity）**的精巧工具，将这些局部结果天衣无缝地“粘合”起来，得到一个全局的积分值  。
+这一切与积分有什么关系呢？积分的本质，是在整个空间上将局部的量（如密度、场强）累加起来，得到一个总的量（如质量、通量）。在[流形](@keyword=manifold|lang=zh-CN|style=Feynman)上，我们通过“分而治之”的策略来实现：将弯曲的空间切成许多个近似平坦的小块（即**坐标卡**），在每个小块上用我们熟悉的微积分进行计算，最后通过一个名为**单位分解（partition of unity）**的精巧工具，将这些局部结果天衣无缝地“粘合”起来，得到一个全局的积分值 [@problem_id:3079839] [@problem_id:3079849]。
 
 真正的麻烦出现在“粘合”的环节，也就是在不同坐标卡的重叠区域。无论我们用哪个坐标卡的“语言”来计算，重叠区域的积分值都必须是相同的。这正是定向发挥关键作用的地方。
 
-让我们看看计算中发生了什么。微积分中的[换元积分法](@article_id:308086)则告诉我们，当坐标变换时，积分元素会乘以雅可比行列式的**[绝对值](@article_id:308102)$|\det(J)|$**。然而，我们之前看到，一个[微分形式](@article_id:307165)（如[体积形式](@article_id:381647)）在[坐标变换](@article_id:323290)下，乘以的是[雅可比行列式](@article_id:365483)**本身$\det(J)$** 。
+让我们看看计算中发生了什么。微积分中的[换元积分法](@keyword=integration_by_substitution|lang=zh-CN|style=Feynman)则告诉我们，当坐标变换时，积分元素会乘以雅可比行列式的**[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)$|\det(J)|$**。然而，我们之前看到，一个[微分形式](@keyword=differential_forms|lang=zh-CN|style=Feynman)（如[体积形式](@keyword=volume_forms|lang=zh-CN|style=Feynman)）在[坐标变换](@keyword=coordinate_transformations|lang=zh-CN|style=Feynman)下，乘以的是[雅可比行列式](@keyword=jacobian_factor|lang=zh-CN|style=Feynman)**本身$\det(J)$** [@problem_id:3079828]。
 
--   在**[可定向流形](@article_id:340626)**上，我们可以选择一套“方向一致”的坐标卡，使得所有卡之间的变换都具有正的[雅可比行列式](@article_id:365483)。在这种情况下，$\det(J) > 0$，于是$|\det(J)| = \det(J)$。两种变换规则[完美匹配](@article_id:337611)，积分的定义是自洽的。
--   在**[不可定向流形](@article_id:320955)**（如[莫比乌斯带](@article_id:312802)）上，无论我们如何选择坐标卡，都必然存在某个重叠区域，其变换的$\det(J)  0$。在这里，$|\det(J)| = -\det(J)$！这意味着，用不同坐标卡计算出的积分值会相差一个负号。粘合工作彻底失败，全局积分失去了意义 。
+-   在**[可定向流形](@keyword=orientable_manifold|lang=zh-CN|style=Feynman)**上，我们可以选择一套“方向一致”的坐标卡，使得所有卡之间的变换都具有正的[雅可比行列式](@keyword=jacobian_factor|lang=zh-CN|style=Feynman)。在这种情况下，$\det(J) > 0$，于是$|\det(J)| = \det(J)$。两种变换规则[完美匹配](@keyword=perfect_matching|lang=zh-CN|style=Feynman)，积分的定义是自洽的。
+-   在**[不可定向流形](@keyword=non_orientable_manifold|lang=zh-CN|style=Feynman)**（如[莫比乌斯带](@keyword=möbius_strip|lang=zh-CN|style=Feynman)）上，无论我们如何选择坐标卡，都必然存在某个重叠区域，其变换的$\det(J)  0$。在这里，$|\det(J)| = -\det(J)$！这意味着，用不同坐标卡计算出的积分值会相差一个负号。粘合工作彻底失败，全局积分失去了意义 [@problem_id:3079828]。
 
 ### 救赎之道：密度，绝对的测量
 
-那么，我们该如何在一个[莫比乌斯带](@article_id:312802)上计算它的总面积呢？大自然本身并不会因为我们的[坐标系](@article_id:316753)“打架”而感到困惑。数学家们为此引入了一个更强大的工具：**密度（densities）**。
+那么，我们该如何在一个[莫比乌斯带](@keyword=möbius_strip|lang=zh-CN|style=Feynman)上计算它的总面积呢？大自然本身并不会因为我们的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)“打架”而感到困惑。数学家们为此引入了一个更强大的工具：**密度（densities）**。
 
-一个**密度**，就像一个微分形式，但它的定义被巧妙地设计过：在[坐标变换](@article_id:323290)中，它乘以的恰好是[雅可比行列式](@article_id:365483)的[绝对值](@article_id:308102)$|\det(J)|$  。这个设计完全是为了迎合积分的换元法则。如此一来，正负号的冲突被彻底消除，我们可以在任何[流形](@article_id:313450)上进行积分，无论它是否可定向。
+一个**密度**，就像一个微分形式，但它的定义被巧妙地设计过：在[坐标变换](@keyword=coordinate_transformations|lang=zh-CN|style=Feynman)中，它乘以的恰好是[雅可比行列式](@keyword=jacobian_factor|lang=zh-CN|style=Feynman)的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)$|\det(J)|$ [@problem_id:3079828] [@problem_id:3079847]。这个设计完全是为了迎合积分的换元法则。如此一来，正负号的冲突被彻底消除，我们可以在任何[流形](@keyword=manifold|lang=zh-CN|style=Feynman)上进行积分，无论它是否可定向。
 
-现在我们可以清晰地分辨两者 ：
--   **体积形式$\mathrm{vol}_g$**：它是一个“有向”的[体积元](@article_id:331505)素。反转[流形的定向](@article_id:321358)，它就会变成$-\mathrm{vol}_g$。因此，积分$\int_M f\,\mathrm{vol}_g$的值也会变号。
+现在我们可以清晰地分辨两者 [@problem_id:3079859]：
+-   **体积形式$\mathrm{vol}_g$**：它是一个“有向”的[体积元](@keyword=volume_element|lang=zh-CN|style=Feynman)素。反转[流形的定向](@keyword=orientation_of_manifolds|lang=zh-CN|style=Feynman)，它就会变成$-\mathrm{vol}_g$。因此，积分$\int_M f\,\mathrm{vol}_g$的值也会变号。
 -   **体积密度$d\mu_g$**：它是一个“绝对”的体积元素，永远为正，与定向无关。积分$\int_M f\,d\mu_g$的值在任何情况下都保持不变。
 
-在黎曼几何中，一个度规$g$在任何[流形](@article_id:313450)上都能自然地定义一个体积密度，其局部表达式为$\sqrt{\det(g_{ij})} |dx^1 \wedge \dots \wedge dx^n|$。如果[流形](@article_id:313450)恰好是可定向的，我们便可以通过选择一个正负号，将这个密度“提升”为一个[体积形式](@article_id:381647)  。但在不可定向的[流形](@article_id:313450)上，我们虽然失去了体积形式，却依然拥有体积密度这一可靠的积分工具 。
+在黎曼几何中，一个度规$g$在任何[流形](@keyword=manifold|lang=zh-CN|style=Feynman)上都能自然地定义一个体积密度，其局部表达式为$\sqrt{\det(g_{ij})} |dx^1 \wedge \dots \wedge dx^n|$。如果[流形](@keyword=manifold|lang=zh-CN|style=Feynman)恰好是可定向的，我们便可以通过选择一个正负号，将这个密度“提升”为一个[体积形式](@keyword=volume_forms|lang=zh-CN|style=Feynman) [@problem_id:3079847] [@problem_id:3079849]。但在不可定向的[流形](@keyword=manifold|lang=zh-CN|style=Feynman)上，我们虽然失去了体积形式，却依然拥有体积密度这一可靠的积分工具 [@problem_id:3079828]。
 
 ### 边界上的故事：定向的传承
 
-最后，让我们将目光投向那些带有边界的空间，比如一个圆盘或一个半球。[流形上的定向](@article_id:366857)，可以“遗传”给它的边界，这为斯托克斯定理（Stokes' Theorem）等深刻的[积分定理](@article_id:362980)奠定了基础。
+最后，让我们将目光投向那些带有边界的空间，比如一个圆盘或一个半球。[流形上的定向](@keyword=orientation_on_manifolds|lang=zh-CN|style=Feynman)，可以“遗传”给它的边界，这为斯托克斯定理（Stokes' Theorem）等深刻的[积分定理](@keyword=integral_theorems|lang=zh-CN|style=Feynman)奠定了基础。
 
-这个“遗传”规则非常直观，通常采用**“外[法向量](@article_id:327892)优先”（outward normal first）**的约定。想象你站在一个三维物体的表面（边界）上。要确定边界上的一个正定向，你先将一个向量指向“外部”（即外[法向量](@article_id:327892)$\nu$），然后再用你的另外$n-1$个向量沿着边界展开。如果这$n$个向量组成的[坐标系](@article_id:316753)与物体内部的定向（比如，[右手系](@article_id:345976)）一致，那么你沿着边界的这$n-1$个向量就构成了边界上的一个正定向基底  。
+这个“遗传”规则非常直观，通常采用**“外[法向量](@keyword=normal_vector|lang=zh-CN|style=Feynman)优先”（outward normal first）**的约定。想象你站在一个三维物体的表面（边界）上。要确定边界上的一个正定向，你先将一个向量指向“外部”（即外[法向量](@keyword=normal_vector|lang=zh-CN|style=Feynman)$\nu$），然后再用你的另外$n-1$个向量沿着边界展开。如果这$n$个向量组成的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)与物体内部的定向（比如，[右手系](@keyword=right_handed_system|lang=zh-CN|style=Feynman)）一致，那么你沿着边界的这$n-1$个向量就构成了边界上的一个正定向基底 [@problem_id:3079827] [@problem_id:3079840]。
 
-这个规则有一个美妙的推论：在一个平面区域上，“外[法向量](@article_id:327892)优先”的约定，恰好就在其边界曲线上导出了我们所熟悉的**逆时针方向**作为正方向 。这正是[格林公式](@article_id:352225)和[斯托克斯定理](@article_id:328241)中边界方向的来源！
+这个规则有一个美妙的推论：在一个平面区域上，“外[法向量](@keyword=normal_vector|lang=zh-CN|style=Feynman)优先”的约定，恰好就在其边界曲线上导出了我们所熟悉的**逆时针方向**作为正方向 [@problem_id:3079840]。这正是[格林公式](@keyword=green_s_formula|lang=zh-CN|style=Feynman)和[斯托克斯定理](@keyword=the_curl_theorem|lang=zh-CN|style=Feynman)中边界方向的来源！
 
-在数学上，这个过程被优雅地表达为**内积（interior product）**$\iota_\nu$。边界上的[体积形式](@article_id:381647)$\omega_{\partial M}$就是[流形](@article_id:313450)的体积形式$\omega$与外[法向量场](@article_id:332555)$\nu$做内积的结果：$\omega_{\partial M} = \iota_\nu \omega$。当我们在[局部坐标](@article_id:360581)中计算它时，一个看似不起眼的符号因子$(-1)^{n-1}$会冒出来 。这个符号绝非代数上的偶然，它蕴含着深刻的几何信息，确保了边界定向在任何维度下都能被一致地、和谐地定义。
+在数学上，这个过程被优雅地表达为**内积（interior product）**$\iota_\nu$。边界上的[体积形式](@keyword=volume_forms|lang=zh-CN|style=Feynman)$\omega_{\partial M}$就是[流形](@keyword=manifold|lang=zh-CN|style=Feynman)的体积形式$\omega$与外[法向量场](@keyword=normal_vector_field|lang=zh-CN|style=Feynman)$\nu$做内积的结果：$\omega_{\partial M} = \iota_\nu \omega$。当我们在[局部坐标](@keyword=local_coordinates|lang=zh-CN|style=Feynman)中计算它时，一个看似不起眼的符号因子$(-1)^{n-1}$会冒出来 [@problem_id:3079827]。这个符号绝非代数上的偶然，它蕴含着深刻的几何信息，确保了边界定向在任何维度下都能被一致地、和谐地定义。
 
-从空间的“手性”，到积分的成败，再到边界的传承，定向这一概念如同一根金线，将线性代数、微积分和拓扑学编织成一幅壮丽的几何画卷。理解它，就是理解现[代数学](@article_id:316869)与物理学中描述宇宙的基本语言。
+从空间的“手性”，到积分的成败，再到边界的传承，定向这一概念如同一根金线，将线性代数、微积分和拓扑学编织成一幅壮丽的几何画卷。理解它，就是理解现[代数学](@keyword=algebra|lang=zh-CN|style=Feynman)与物理学中描述宇宙的基本语言。

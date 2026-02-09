@@ -1,7 +1,7 @@
 ## Introduction
 In a world awash with data, one of the most fundamental challenges is to distinguish a true signal from random noise. We constantly rely on averages—from poll results to scientific measurements—to understand complex systems. The Law of Large Numbers assures us that, given enough data, these averages will eventually converge to their true values. However, this law doesn't tell us how fast they converge or how much we should trust an average based on a finite sample. This knowledge gap is precisely what Hoeffding's Inequality addresses, providing a powerful and practical guarantee against being misled by randomness.
 
-This article demystifies this cornerstone of modern [probability and statistics](@article_id:633884). It transforms an abstract mathematical formula into an intuitive tool for taming uncertainty. Across the following sections, you will gain a robust understanding of this powerful concept.
+This article demystifies this cornerstone of modern [probability and statistics](@keyword=probability_and_statistics|lang=en-US|style=Feynman). It transforms an abstract mathematical formula into an intuitive tool for taming uncertainty. Across the following sections, you will gain a robust understanding of this powerful concept.
 
 First, in **"Principles and Mechanisms"**, we will dissect the inequality itself, exploring the elegant mathematics that guarantees the stability of averages and how it provides a blueprint for experimental design. Next, in **"Applications and Interdisciplinary Connections"**, we will journey through diverse fields—from machine learning and engineering to quantum physics and biology—to witness the inequality's profound impact in action. Finally, a series of **"Hands-On Practices"** will allow you to apply your knowledge to solve concrete problems, solidifying your grasp of this indispensable tool.
 
@@ -39,9 +39,9 @@ Notice what *isn't* in the formula: the exact shape of the probability distribut
 
 This inequality is more than just a tool for calculating probabilities; it's a blueprint for discovery. In science and engineering, we often face the reverse problem: we have a goal for our experiment's reliability, and we need to know how much work it will take to get there.
 
-Imagine a physicist measuring the lifetime of a new [quantum dot](@article_id:137542). They want to be 99% certain that their final calculated average is within $0.04$ nanoseconds of the true value. The question is no longer "what is the probability?" but rather "**What is the minimum number of measurements, $n$, I need to perform?**"
+Imagine a physicist measuring the lifetime of a new [quantum dot](@keyword=quantum_dot|lang=en-US|style=Feynman). They want to be 99% certain that their final calculated average is within $0.04$ nanoseconds of the true value. The question is no longer "what is the probability?" but rather "**What is the minimum number of measurements, $n$, I need to perform?**"
 
-This is where we can turn the inequality on its head. We set the left side to our desired maximum probability of failure (in this case, $1 - 0.99 = 0.01$) and the $\epsilon$ to our desired tolerance ($0.04$). We know the bounds of our [measurement error](@article_id:270504). The only unknown left in the inequality is $n$. We can simply solve for it!
+This is where we can turn the inequality on its head. We set the left side to our desired maximum probability of failure (in this case, $1 - 0.99 = 0.01$) and the $\epsilon$ to our desired tolerance ($0.04$). We know the bounds of our [measurement error](@keyword=measurement_error|lang=en-US|style=Feynman). The only unknown left in the inequality is $n$. We can simply solve for it!
 
 $$ 0.01 \ge 2 \exp\left( - \frac{2 n (0.04)^{2}}{1^2} \right) $$
 
@@ -57,10 +57,10 @@ Now for a final, modern twist. What happens when we face not one, but thousands 
 
 But what is the chance that *at least one* of the hundred algorithms looks great on the test data purely by a fluke? If you buy one lottery ticket, your chance of winning is minuscule. If you buy a million tickets, your chance of holding a winner becomes significant.
 
-Probability theory gives us a simple, if somewhat crude, tool to handle this: the **[union bound](@article_id:266924)**. It states that the probability of any one of a series of bad events happening is, at most, the sum of their individual probabilities. So, if the probability of any single algorithm being misleading is $p$, the probability that *at least one* of $M$ algorithms is misleading is no more than $M \times p$.
+Probability theory gives us a simple, if somewhat crude, tool to handle this: the **[union bound](@keyword=union_bound|lang=en-US|style=Feynman)**. It states that the probability of any one of a series of bad events happening is, at most, the sum of their individual probabilities. So, if the probability of any single algorithm being misleading is $p$, the probability that *at least one* of $M$ algorithms is misleading is no more than $M \times p$.
 
 $$ \mathbb{P}(\text{at least one failure}) \le M \times \left( 2 \exp\left( - \frac{2 n \epsilon^{2}}{(b-a)^2} \right) \right) $$
 
-This is a profoundly important result in the age of big data. It warns us that as we increase the complexity of our search (by increasing $M$), our confidence in any one result can decrease. This is the mathematical soul of the "[multiple comparisons problem](@article_id:263186)." If you test enough things, you are bound to find something that looks significant just by random chance. Hoeffding's inequality, combined with [the union bound](@article_id:271105), allows us to quantify this risk and adjust our standards of evidence accordingly.
+This is a profoundly important result in the age of big data. It warns us that as we increase the complexity of our search (by increasing $M$), our confidence in any one result can decrease. This is the mathematical soul of the "[multiple comparisons problem](@keyword=multiple_comparisons_problem|lang=en-US|style=Feynman)." If you test enough things, you are bound to find something that looks significant just by random chance. Hoeffding's inequality, combined with [the union bound](@keyword=the_union_bound|lang=en-US|style=Feynman), allows us to quantify this risk and adjust our standards of evidence accordingly.
 
 From the simple intuition of a coin flip, we have journeyed to a principle that quantifies uncertainty, guides the design of quantum physics experiments, and cautions us about the pitfalls of machine learning. This is the power of Hoeffding's inequality: a simple, beautiful, and profoundly useful piece of mathematics for taming the randomness of the world.

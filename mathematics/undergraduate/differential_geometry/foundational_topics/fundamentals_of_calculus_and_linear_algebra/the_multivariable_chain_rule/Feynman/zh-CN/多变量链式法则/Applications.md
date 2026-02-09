@@ -1,58 +1,58 @@
 ## 应用与跨学科连接
 
-在我们掌握了[多变量链式法则](@article_id:345887)的原理和机制之后，我们可能会问：这究竟有什么用？它仅仅是数学家工具箱里一个精巧但深奥的工具吗？答案是，远非如此。[链式法则](@article_id:307837)不仅不是一个孤立的公式，它更像是一条贯穿科学与工程各个领域的黄金线索，一个“通用翻译器”，让我们能够在不同视角、不同[坐标系](@article_id:316753)、不同学科的语言之间自由切换，揭示出变化世界中万物相互关联的内在美与统一性。
+在我们掌握了[多变量链式法则](@keyword=chain_rule_multivariable|lang=zh-CN|style=Feynman)的原理和机制之后，我们可能会问：这究竟有什么用？它仅仅是数学家工具箱里一个精巧但深奥的工具吗？答案是，远非如此。[链式法则](@keyword=chain_rule|lang=zh-CN|style=Feynman)不仅不是一个孤立的公式，它更像是一条贯穿科学与工程各个领域的黄金线索，一个“通用翻译器”，让我们能够在不同视角、不同[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)、不同学科的语言之间自由切换，揭示出变化世界中万物相互关联的内在美与统一性。
 
 现在，让我们开启一段旅程，去看看这条法则如何从最直观的物理场景，延伸到经济模型、宇宙的基本定律，甚至是我们这个时代最具革命性的技术——人工智能的核心。
 
 ### 运动中的世界：物理学与工程学的视角
 
-想象一个微小的探测器正在一个正在冷却的硅晶片上滑行 。晶片中心的温度最低，向外逐渐升高，形成了一个温度“地形图”。探测器自身携带的温度计读数会如何随时间变化呢？直觉告诉我们，这取决于两件事：探测器所在位置的温度“坡度”有多陡，以及它移动得有多快、朝哪个方向移动。
+想象一个微小的探测器正在一个正在冷却的硅晶片上滑行 [@problem_id:1680051]。晶片中心的温度最低，向外逐渐升高，形成了一个温度“地形图”。探测器自身携带的温度计读数会如何随时间变化呢？直觉告诉我们，这取决于两件事：探测器所在位置的温度“坡度”有多陡，以及它移动得有多快、朝哪个方向移动。
 
 链式法则将这个直观的想法精确地表达出来。如果温度场是 $T(x,y)$，探测器的轨迹是 $\mathbf{r}(t) = \langle x(t), y(t) \rangle$，那么温度随时间的变化率就是：
 $$ \frac{dT}{dt} = \frac{\partial T}{\partial x}\frac{dx}{dt} + \frac{\partial T}{\partial y}\frac{dy}{dt} $$
-这可以更优雅地写成梯度向量 $\nabla T$ 与速度向量 $\mathbf{v} = \frac{d\mathbf{r}}{dt}$ 的[点积](@article_id:309438)：
+这可以更优雅地写成梯度向量 $\nabla T$ 与速度向量 $\mathbf{v} = \frac{d\mathbf{r}}{dt}$ 的[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)：
 $$ \frac{dT}{dt} = \nabla T \cdot \mathbf{v} $$
-这个简单的公式蕴含着深刻的物理意义。它告诉我们，沿着[等温线](@article_id:312307)（$\nabla T \cdot \mathbf{v} = 0$）移动，[温度感觉](@article_id:347519)不到变化；而逆着梯度方向（最陡峭的下坡方向）移动，温度下降得最快。这个概念，在流[体力](@article_id:353281)学中被称为“[物质导数](@article_id:369934)”，是描述随流体运动的粒子所经历的物理量变化的基本工具。同样，在[机器人学](@article_id:311041)和动力学中，当我们想要计算一架无人机和一辆移动的地面车辆之间的距离变化率时，我们也是在应用完全相同的原理 。距离是位置的函数，而位置又是时间的函数——这是一个典型的链式依赖关系。
+这个简单的公式蕴含着深刻的物理意义。它告诉我们，沿着[等温线](@keyword=isotherms|lang=zh-CN|style=Feynman)（$\nabla T \cdot \mathbf{v} = 0$）移动，[温度感觉](@keyword=thermosensation|lang=zh-CN|style=Feynman)不到变化；而逆着梯度方向（最陡峭的下坡方向）移动，温度下降得最快。这个概念，在流[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)学中被称为“[物质导数](@keyword=material_time_derivative|lang=zh-CN|style=Feynman)”，是描述随流体运动的粒子所经历的物理量变化的基本工具。同样，在[机器人学](@keyword=robotics|lang=zh-CN|style=Feynman)和动力学中，当我们想要计算一架无人机和一辆移动的地面车辆之间的距离变化率时，我们也是在应用完全相同的原理 [@problem_id:1680032]。距离是位置的函数，而位置又是时间的函数——这是一个典型的链式依赖关系。
 
-### 变化的语言：从[热力学](@article_id:359663)到经济学
+### 变化的语言：从[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)到经济学
 
 链式法则的威力远不止于描述物理空间中的运动。它的“坐标”可以是任何描述系统状态的变量。
 
-考虑一个正在升空的气象气球 。随着高度变化，其内部理想气体的压强 $P$、体积 $V$ 和温度 $T$ 都在不断变化。这三个变量构成了气体的“状态空间”。[理想气体定律](@article_id:307175) $PV = nRT$ 在这个三维[状态空间](@article_id:323449)中定义了一个[曲面](@article_id:331153)，气球的整个生命历程就是这个[曲面](@article_id:331153)上的一条轨迹。如果我们想知道压强是如何随时间变化的，[链式法则](@article_id:307837)（在这里体现为乘法法则）就能给出答案：
+考虑一个正在升空的气象气球 [@problem_id:2326945]。随着高度变化，其内部理想气体的压强 $P$、体积 $V$ 和温度 $T$ 都在不断变化。这三个变量构成了气体的“状态空间”。[理想气体定律](@keyword=ideal_gas_law|lang=zh-CN|style=Feynman) $PV = nRT$ 在这个三维[状态空间](@keyword=state_space_2|lang=zh-CN|style=Feynman)中定义了一个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，气球的整个生命历程就是这个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上的一条轨迹。如果我们想知道压强是如何随时间变化的，[链式法则](@keyword=chain_rule|lang=zh-CN|style=Feynman)（在这里体现为乘法法则）就能给出答案：
 $$ \frac{d(PV)}{dt} = V\frac{dP}{dt} + P\frac{dV}{dt} = nR\frac{dT}{dt} $$
 整理后可以得到一个不含常数 $n$ 和 $R$ 的优美关系式：
 $$ \frac{dP}{dt} = \frac{P}{T}\frac{dT}{dt} - \frac{P}{V}\frac{dV}{dt} $$
-这个等式告诉我们，压强的变化率取决于温度和体积的[相对变化率](@article_id:357822)。这正是[热力学](@article_id:359663)中分析复杂过程的基石。
+这个等式告诉我们，压强的变化率取决于温度和体积的[相对变化率](@keyword=relative_rate_of_change|lang=zh-CN|style=Feynman)。这正是[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)中分析复杂过程的基石。
 
-现在，让我们把“[坐标系](@article_id:316753)”切换到经济学领域。一个公司的产出 $P$ 可以用著名的Cobb-Douglas生产函数来建模，它依赖于资本投入 $K$ 和劳动力投入 $L$，即 $P(K, L)$ 。在现实世界中，资本和劳动力都不是静止的。公司可能会以指数形式增加投资（$K(t)$ 增长），同时由于季节性需求，劳动力投入会周期性波动（$L(t)$ [振荡](@article_id:331484)）。那么，总产出将如何随时间演变？链式法则再次给出了清晰的答案：
+现在，让我们把“[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)”切换到经济学领域。一个公司的产出 $P$ 可以用著名的Cobb-Douglas生产函数来建模，它依赖于资本投入 $K$ 和劳动力投入 $L$，即 $P(K, L)$ [@problem_id:2326926]。在现实世界中，资本和劳动力都不是静止的。公司可能会以指数形式增加投资（$K(t)$ 增长），同时由于季节性需求，劳动力投入会周期性波动（$L(t)$ [振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)）。那么，总产出将如何随时间演变？链式法则再次给出了清晰的答案：
 $$ \frac{dP}{dt} = \frac{\partial P}{\partial K}\frac{dK}{dt} + \frac{\partial P}{\partial L}\frac{dL}{dt} $$
 这个公式的每一项都有明确的经济学意义：总产出增长率等于资本的边际产出乘以资本的增长率，加上劳动力的边际产出乘以劳动力的增长率。链式法则将静态的经济学概念（边际产出）与动态的现实世界（投资与雇佣）完美地结合在了一起。
 
-### 物理定律的深层结构：变换与[不变量](@article_id:309269)
+### 物理定律的深层结构：变换与[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)
 
-链式法则最令人赞叹的应用，或许在于它揭示了物理定律的深层结构。物理定律应当是普适的，不应依赖于我们选择的“观察角度”或“测量标尺”。链式法则是保证这种[不变性](@article_id:300612)的数学基石。
+链式法则最令人赞叹的应用，或许在于它揭示了物理定律的深层结构。物理定律应当是普适的，不应依赖于我们选择的“观察角度”或“测量标尺”。链式法则是保证这种[不变性](@keyword=invariance|lang=zh-CN|style=Feynman)的数学基石。
 
-想象Alice和Bob都在观察同一个粒子沿一条曲线的运动 。Alice用她的手表计时（参数为 $t$），而Bob用一个节拍器计时（参数为 $s$）。他们测量的速度向量显然是不同的。然而，[链式法则](@article_id:307837)告诉我们，Bob的速度向量 $V_B(s)$ 正是Alice的速度向量 $V_A(t)$ 乘以他们两人时间参数之间的换算因子 $\frac{dt}{ds}$。这意味着，速度向量的“方向”这个几何本质，是独立于观测者的。链式法则让我们能够区分什么是物理实在，什么是我们描述方式的[人为选择](@article_id:347612)。
+想象Alice和Bob都在观察同一个粒子沿一条曲线的运动 [@problem_id:1680059]。Alice用她的手表计时（参数为 $t$），而Bob用一个节拍器计时（参数为 $s$）。他们测量的速度向量显然是不同的。然而，[链式法则](@keyword=chain_rule|lang=zh-CN|style=Feynman)告诉我们，Bob的速度向量 $V_B(s)$ 正是Alice的速度向量 $V_A(t)$ 乘以他们两人时间参数之间的换算因子 $\frac{dt}{ds}$。这意味着，速度向量的“方向”这个几何本质，是独立于观测者的。链式法则让我们能够区分什么是物理实在，什么是我们描述方式的[人为选择](@keyword=anthropogenic_selection|lang=zh-CN|style=Feynman)。
 
-这个思想可以被推广到更强大的层面：变换整个物理定律。在物理和工程中，我们经常遇到拉普拉斯算子 $\Delta u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}$。在直角[坐标系](@article_id:316753)下它形式简单，但如果问题本身具有圆形对称性（比如一个鼓面的[振动](@article_id:331484)），在直角[坐标系](@article_id:316753)下求解将是一场噩梦。通过反复应用[链式法则](@article_id:307837)，我们可以将[拉普拉斯算子](@article_id:334415)“翻译”到[极坐标](@article_id:319829) $(r, \theta)$ 中 。翻译后的表达式看起来更复杂，但它却能让问题的求解过程变得异常简单。这种“换元”是求解[偏微分方程](@article_id:301773)的标准技巧。
+这个思想可以被推广到更强大的层面：变换整个物理定律。在物理和工程中，我们经常遇到拉普拉斯算子 $\Delta u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}$。在直角[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)下它形式简单，但如果问题本身具有圆形对称性（比如一个鼓面的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)），在直角[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)下求解将是一场噩梦。通过反复应用[链式法则](@keyword=chain_rule|lang=zh-CN|style=Feynman)，我们可以将[拉普拉斯算子](@keyword=divergence_of_the_gradient|lang=zh-CN|style=Feynman)“翻译”到[极坐标](@keyword=polar_coordinates|lang=zh-CN|style=Feynman) $(r, \theta)$ 中 [@problem_id:2326935]。翻译后的表达式看起来更复杂，但它却能让问题的求解过程变得异常简单。这种“换元”是求解[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)的标准技巧。
 
-一个更具戏剧性的例子来自金融领域。著名的[Black-Scholes方程](@article_id:304942)描述了[金融衍生品](@article_id:641330)的价格如何演变，它形式复杂，令人生畏 。然而，通过一个精心设计的变量代换（将股价 $S$、时间 $t$ 和期权价格 $V$ 替换为新的变量 $x, \tau, u$），这个金融领域的“怪兽”方程，在[链式法则](@article_id:307837)的魔力之下，居然可以被转化为物理学中最基本、最广为人知的[一维热传导方程](@article_id:354503) $\frac{\partial u}{\partial \tau} = \frac{\partial^2 u}{\partial x^2}$！这就像是找到了破译古埃及象形文字的罗塞塔石碑，揭示了热量的[扩散](@article_id:327616)和市场价格的波动之间惊人的数学统一性。
+一个更具戏剧性的例子来自金融领域。著名的[Black-Scholes方程](@keyword=black_scholes_equation|lang=zh-CN|style=Feynman)描述了[金融衍生品](@keyword=financial_derivatives|lang=zh-CN|style=Feynman)的价格如何演变，它形式复杂，令人生畏 [@problem_id:577379]。然而，通过一个精心设计的变量代换（将股价 $S$、时间 $t$ 和期权价格 $V$ 替换为新的变量 $x, \tau, u$），这个金融领域的“怪兽”方程，在[链式法则](@keyword=chain_rule|lang=zh-CN|style=Feynman)的魔力之下，居然可以被转化为物理学中最基本、最广为人知的[一维热传导方程](@keyword=one_dimensional_heat_equation|lang=zh-CN|style=Feynman) $\frac{\partial u}{\partial \tau} = \frac{\partial^2 u}{\partial x^2}$！这就像是找到了破译古埃及象形文字的罗塞塔石碑，揭示了热量的[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)和市场价格的波动之间惊人的数学统一性。
 
-链式法则甚至能触及宇宙最基本的[守恒律](@article_id:307307)。在哈密顿力学中，一个物理系统的状态由其广义坐标 $q$ 和[广义动量](@article_id:345028) $p$ 描述，其总能量由哈密顿量 $H(q, p, t)$ 给出。系统的能量如何随时间变化？[链式法则](@article_id:307837)告诉我们 ：
+链式法则甚至能触及宇宙最基本的[守恒律](@keyword=conservation_laws|lang=zh-CN|style=Feynman)。在哈密顿力学中，一个物理系统的状态由其广义坐标 $q$ 和[广义动量](@keyword=generalized_momentum|lang=zh-CN|style=Feynman) $p$ 描述，其总能量由哈密顿量 $H(q, p, t)$ 给出。系统的能量如何随时间变化？[链式法则](@keyword=chain_rule|lang=zh-CN|style=Feynman)告诉我们 [@problem_id:2326924]：
 $$ \frac{dH}{dt} = \frac{\partial H}{\partial q}\frac{dq}{dt} + \frac{\partial H}{\partial p}\frac{dp}{dt} + \frac{\partial H}{\partial t} $$
-当我们代入[哈密顿运动方程](@article_id:355931) $\frac{dq}{dt} = \frac{\partial H}{\partial p}$ 和 $\frac{dp}{dt} = -\frac{\partial H}{\partial q}$ 时，奇迹发生了：
+当我们代入[哈密顿运动方程](@keyword=hamilton_s_equations_of_motion|lang=zh-CN|style=Feynman) $\frac{dq}{dt} = \frac{\partial H}{\partial p}$ 和 $\frac{dp}{dt} = -\frac{\partial H}{\partial q}$ 时，奇迹发生了：
 $$ \frac{dH}{dt} = \frac{\partial H}{\partial q}\left(\frac{\partial H}{\partial p}\right) + \frac{\partial H}{\partial p}\left(-\frac{\partial H}{\partial q}\right) + \frac{\partial H}{\partial t} = \frac{\partial H}{\partial t} $$
-前两项如同一对正负粒子般湮灭了！这个结果意义非凡：一个系统的能量是否守恒，完全取决于它的物理规律（由$H$描述）是否随时间明确地改变。如果 $H$ 不显含时间 $t$（即 $\frac{\partial H}{\partial t} = 0$），则能量必然守恒。这个物理学中最深刻的对称性之一——[时间平移不变性](@article_id:333910)导致[能量守恒](@article_id:300957)——正是由链式法则通过一次优美的数学编舞所证明的。同样，当描述粒子在[曲面](@article_id:331153)上的运动时，链式法则也能帮助我们将复杂的加速度分解为与[曲面](@article_id:331153)几何相关的内在分量  ，再次展现了它在连接动力学与几何学方面的桥梁作用。
+前两项如同一对正负粒子般湮灭了！这个结果意义非凡：一个系统的能量是否守恒，完全取决于它的物理规律（由$H$描述）是否随时间明确地改变。如果 $H$ 不显含时间 $t$（即 $\frac{\partial H}{\partial t} = 0$），则能量必然守恒。这个物理学中最深刻的对称性之一——[时间平移不变性](@keyword=time_translation_invariance|lang=zh-CN|style=Feynman)导致[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)——正是由链式法则通过一次优美的数学编舞所证明的。同样，当描述粒子在[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上的运动时，链式法则也能帮助我们将复杂的加速度分解为与[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)几何相关的内在分量 [@problem_id:1680047] [@problem_id:1680060]，再次展现了它在连接动力学与几何学方面的桥梁作用。
 
 ### 现代前沿：计算科学与人工智能
 
 链式法则的故事并未停留在经典物理的殿堂。在21世纪，它正以前所未有的方式，驱动着我们这个时代的技术革命。
 
-在现代工程中，[有限元方法](@article_id:297335)（FEM）是设计桥梁、飞机和各种复杂结构的基础 。工程师们将复杂结构拆解成数以万计的简单单元（如四边形或四面体）。在计算时，他们首先在一个完美的、未变形的“参考”单元（使用“[自然坐标](@article_id:355571)” $\xi, \eta$）上进行分析，因为这里的数学最简单。那么，如何将这些简单的计算应用到真实世界中那些被拉伸和扭曲的单元上呢？答案是雅可比矩阵（Jacobian），而它的核心正是[链式法则](@article_id:307837)。[链式法则](@article_id:307837)充当了“数学胶水”，将理想化的计算与真实的物理世界紧密地粘合在一起，构成了整个现代计算力学大厦的基石。
+在现代工程中，[有限元方法](@keyword=finite_element_method|lang=zh-CN|style=Feynman)（FEM）是设计桥梁、飞机和各种复杂结构的基础 [@problem_id:2582286]。工程师们将复杂结构拆解成数以万计的简单单元（如四边形或四面体）。在计算时，他们首先在一个完美的、未变形的“参考”单元（使用“[自然坐标](@keyword=natural_coordinates|lang=zh-CN|style=Feynman)” $\xi, \eta$）上进行分析，因为这里的数学最简单。那么，如何将这些简单的计算应用到真实世界中那些被拉伸和扭曲的单元上呢？答案是雅可比矩阵（Jacobian），而它的核心正是[链式法则](@keyword=chain_rule|lang=zh-CN|style=Feynman)。[链式法则](@keyword=chain_rule|lang=zh-CN|style=Feynman)充当了“数学胶水”，将理想化的计算与真实的物理世界紧密地粘合在一起，构成了整个现代计算力学大厦的基石。
 
-也许[链式法则](@article_id:307837)最令人惊叹的现代应用，是在人工智能的核心——深度学习中。一个深度神经网络包含数百万甚至数十亿个可调节的“旋钮”（即网络权重）。训练网络的过程，就是不断微调这些旋钮，使得网络的输出与真实答案的“误差”最小化。问题是：我们应该如何转动这数百万个旋钮？是向左还是向右？转动多少？
+也许[链式法则](@keyword=chain_rule|lang=zh-CN|style=Feynman)最令人惊叹的现代应用，是在人工智能的核心——深度学习中。一个深度神经网络包含数百万甚至数十亿个可调节的“旋钮”（即网络权重）。训练网络的过程，就是不断微调这些旋钮，使得网络的输出与真实答案的“误差”最小化。问题是：我们应该如何转动这数百万个旋钮？是向左还是向右？转动多少？
 
-答案就是链式法则。我们需要计算误差对于每一个旋钮的梯度（敏感度）。由于网络的结构是层层嵌套的函数，这是一个规模极其庞大的复合函数求导问题。一种高效计算这个巨大梯度链的方法被称为“[反向传播](@article_id:302452)”（Backpropagation）[算法](@article_id:331821) 。这个[算法](@article_id:331821)的本质，无非就是[链式法则](@article_id:307837)在计算机上的巧妙实现，它从最终的误差开始，逐层向后“传播”梯度，直到网络的第一个“旋钮”。正是这个工业规模的链式法则应用，赋予了人工智能从海量数据中学习复杂模式的能力，无论是识别图像，还是像在[理论化学](@article_id:377821)中那样，从量子力学数据中学习并构建出能够预测[分子间作用力](@article_id:382384)的[机器学习势](@article_id:362354)函数。
+答案就是链式法则。我们需要计算误差对于每一个旋钮的梯度（敏感度）。由于网络的结构是层层嵌套的函数，这是一个规模极其庞大的复合函数求导问题。一种高效计算这个巨大梯度链的方法被称为“[反向传播](@keyword=backpropagation|lang=zh-CN|style=Feynman)”（Backpropagation）[算法](@keyword=algorithm|lang=zh-CN|style=Feynman) [@problem_id:2784660]。这个[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的本质，无非就是[链式法则](@keyword=chain_rule|lang=zh-CN|style=Feynman)在计算机上的巧妙实现，它从最终的误差开始，逐层向后“传播”梯度，直到网络的第一个“旋钮”。正是这个工业规模的链式法则应用，赋予了人工智能从海量数据中学习复杂模式的能力，无论是识别图像，还是像在[理论化学](@keyword=theoretical_chemistry|lang=zh-CN|style=Feynman)中那样，从量子力学数据中学习并构建出能够预测[分子间作用力](@keyword=molecular_forces|lang=zh-CN|style=Feynman)的[机器学习势](@keyword=machine_learned_potentials|lang=zh-CN|style=Feynman)函数。
 
 ### 结论
 

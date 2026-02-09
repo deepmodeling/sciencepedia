@@ -13,9 +13,9 @@ The primary reason the intersection is a cornerstone of subgroup analysis is tha
 
 **Theorem:** The intersection of any non-empty collection of subgroups of a group $G$ is itself a subgroup of $G$.
 
-*Proof:* Let $\{H_i\}_{i \in I}$ be a non-empty collection of subgroups of a group $G$, where $I$ is some [index set](@entry_id:268489). Let $H = \bigcap_{i \in I} H_i$. To prove that $H$ is a subgroup, we must verify the three subgroup criteria:
+*Proof:* Let $\{H_i\}_{i \in I}$ be a non-empty collection of subgroups of a group $G$, where $I$ is some index set. Let $H = \bigcap_{i \in I} H_i$. To prove that $H$ is a subgroup, we must verify the three subgroup criteria:
 
-1.  **Identity:** Since each $H_i$ is a subgroup, the [identity element](@entry_id:139321) $e$ of $G$ belongs to every $H_i$. Therefore, $e \in H$, and $H$ is non-empty.
+1.  **Identity:** Since each $H_i$ is a subgroup, the identity element $e$ of $G$ belongs to every $H_i$. Therefore, $e \in H$, and $H$ is non-empty.
 
 2.  **Closure:** Let $a, b \in H$. By the definition of intersection, this means that for every $i \in I$, both $a$ and $b$ are elements of $H_i$. Because each $H_i$ is a subgroup, it is closed under the group operation, so the product $ab$ must also be in $H_i$. Since this holds for all $i \in I$, the product $ab$ is in their intersection, $H$. Thus, $H$ is closed.
 
@@ -39,25 +39,25 @@ $A^3 = \begin{pmatrix} 0  2 \\ 2  1 \end{pmatrix}$
 $A^4 = \begin{pmatrix} 2  0 \\ 0  2 \end{pmatrix} = 2I$
 $A^8 = (A^4)^2 = (2I)^2 = 4I \equiv I \pmod{3}$
 
-The order of $A$ is 8. Therefore, the subgroup $H = \langle A \rangle$, which is the intersection of all subgroups containing $A$, has order 8 .
+The order of $A$ is 8. Therefore, the subgroup $H = \langle A \rangle$, which is the intersection of all subgroups containing $A$, has order 8 [@problem_id:1624772].
 
 ### Constraints on the Order of an Intersection
 
-For [finite groups](@entry_id:139710), Lagrange's Theorem provides a powerful constraint on the size of an intersection. If $H$ and $K$ are subgroups of a finite group $G$, their intersection $H \cap K$ is also a subgroup of $G$. Furthermore, since $H \cap K$ is a subset of both $H$ and $K$, it must also be a subgroup of both $H$ and $K$. Consequently, by Lagrange's Theorem, the order of the intersection, $|H \cap K|$, must divide both $|H|$ and $|K|$.
+For finite groups, Lagrange's Theorem provides a powerful constraint on the size of an intersection. If $H$ and $K$ are subgroups of a finite group $G$, their intersection $H \cap K$ is also a subgroup of $G$. Furthermore, since $H \cap K$ is a subset of both $H$ and $K$, it must also be a subgroup of both $H$ and $K$. Consequently, by Lagrange's Theorem, the order of the intersection, $|H \cap K|$, must divide both $|H|$ and $|K|$.
 
 This leads to a crucial insight:
 $$ |H \cap K| \text{ must divide } \gcd(|H|, |K|). $$
 
-This simple fact can have profound consequences for the structure of the intersection. For instance, consider subgroups $H$ and $K$ with orders $|H| = 2p$ and $|K| = 2q$, where $p$ and $q$ are distinct odd prime numbers. The order of their intersection, $I = H \cap K$, must divide $\gcd(2p, 2q) = 2$. This means $|I|$ can only be 1 or 2. Any group of order 1 or 2 is necessarily cyclic. Therefore, we can conclude that the intersection $I$ must be a [cyclic group](@entry_id:146728), regardless of the structure of the ambient group $G$ .
+This simple fact can have profound consequences for the structure of the intersection. For instance, consider subgroups $H$ and $K$ with orders $|H| = 2p$ and $|K| = 2q$, where $p$ and $q$ are distinct odd prime numbers. The order of their intersection, $I = H \cap K$, must divide $\gcd(2p, 2q) = 2$. This means $|I|$ can only be 1 or 2. Any group of order 1 or 2 is necessarily cyclic. Therefore, we can conclude that the intersection $I$ must be a cyclic group, regardless of the structure of the ambient group $G$ [@problem_id:1624756].
 
-A particularly important special case is when the orders of the subgroups are coprime. If $\gcd(|H|, |K|) = 1$, then the only positive integer that divides both orders is 1. This forces $|H \cap K| = 1$, which means the intersection is the [trivial subgroup](@entry_id:141709), $H \cap K = \{e\}$.
+A particularly important special case is when the orders of the subgroups are coprime. If $\gcd(|H|, |K|) = 1$, then the only positive integer that divides both orders is 1. This forces $|H \cap K| = 1$, which means the intersection is the trivial subgroup, $H \cap K = \{e\}$.
 
 This property is instrumental in determining the size of the **product set** $HK = \{hk \mid h \in H, k \in K\}$. Note that $HK$ is not always a subgroup. The number of distinct elements in this set is given by the formula:
 $$ |HK| = \frac{|H| |K|}{|H \cap K|} $$
 
-As an application, let's consider two subgroups of the [symmetric group](@entry_id:142255) $S_{10}$. Let $H = \langle (1\ 2\ 3\ 4\ 5\ 6\ 7) \rangle$ and $K = \langle (1\ 8)(2\ 9\ 10) \rangle$. The order of $H$ is the order of the 7-cycle, so $|H|=7$. The order of $K$ is the least common multiple of the lengths of the [disjoint cycles](@entry_id:140007) in its generator, so $|K| = \text{lcm}(2,3) = 6$. Since $|H|=7$ and $|K|=6$ are coprime, their intersection must be trivial: $H \cap K = \{e\}$. Using the product formula, the number of elements in the set $S = HK$ is:
+As an application, let's consider two subgroups of the symmetric group $S_{10}$. Let $H = \langle (1\ 2\ 3\ 4\ 5\ 6\ 7) \rangle$ and $K = \langle (1\ 8)(2\ 9\ 10) \rangle$. The order of $H$ is the order of the 7-cycle, so $|H|=7$. The order of $K$ is the least common multiple of the lengths of the disjoint cycles in its generator, so $|K| = \text{lcm}(2,3) = 6$. Since $|H|=7$ and $|K|=6$ are coprime, their intersection must be trivial: $H \cap K = \{e\}$. Using the product formula, the number of elements in the set $S = HK$ is:
 $$ |S| = |HK| = \frac{|H| |K|}{|H \cap K|} = \frac{7 \cdot 6}{1} = 42 $$
-There are exactly 42 distinct elements of the form $hk$ .
+There are exactly 42 distinct elements of the form $hk$ [@problem_id:1624763].
 
 ### Methods for Finding Intersections
 
@@ -69,18 +69,18 @@ When subgroups are defined by specific properties their elements must satisfy, t
 
 A classic example occurs in the group $(\mathbb{Z}, +)$ of integers under addition. Every subgroup of $\mathbb{Z}$ is of the form $n\mathbb{Z} = \{nk \mid k \in \mathbb{Z}\}$ for some non-negative integer $n$. Consider the subgroups $H_1 = 30\mathbb{Z}$ and $H_2 = 42\mathbb{Z}$. An integer $x$ is in the intersection $H_1 \cap H_2$ if and only if it is a multiple of both 30 and 42. This is precisely the definition of a common multiple. The set of all common multiples of 30 and 42 is the set of all multiples of their least common multiple (lcm).
 $$ \text{lcm}(30, 42) = \text{lcm}(2 \cdot 3 \cdot 5, 2 \cdot 3 \cdot 7) = 2 \cdot 3 \cdot 5 \cdot 7 = 210 $$
-Thus, the intersection is $30\mathbb{Z} \cap 42\mathbb{Z} = 210\mathbb{Z}$ . In general, for any two subgroups $m\mathbb{Z}$ and $n\mathbb{Z}$, their intersection is $\text{lcm}(m,n)\mathbb{Z}$.
+Thus, the intersection is $30\mathbb{Z} \cap 42\mathbb{Z} = 210\mathbb{Z}$ [@problem_id:1624786]. In general, for any two subgroups $m\mathbb{Z}$ and $n\mathbb{Z}$, their intersection is $\text{lcm}(m,n)\mathbb{Z}$.
 
-This method is also effective in [matrix groups](@entry_id:137464). Let's return to $G = GL_2(\mathbb{Z}_3)$. Consider two subgroups:
-1.  $H_1 = SL_2(\mathbb{Z}_3)$, the [special linear group](@entry_id:139538), consists of matrices with determinant 1.
-2.  $H_2$ is the subgroup of all invertible upper [triangular matrices](@entry_id:149740).
+This method is also effective in matrix groups. Let's return to $G = GL_2(\mathbb{Z}_3)$. Consider two subgroups:
+1.  $H_1 = SL_2(\mathbb{Z}_3)$, the special linear group, consists of matrices with determinant 1.
+2.  $H_2$ is the subgroup of all invertible upper triangular matrices.
 
-An element of the intersection $H = H_1 \cap H_2$ must be an invertible upper triangular matrix with a determinant of 1. A general [upper triangular matrix](@entry_id:173038) in $G$ has the form $\begin{pmatrix} a  b \\ 0  d \end{pmatrix}$, where $a, d \in \{1, 2\}$ and $b \in \{0, 1, 2\}$. The determinant is $ad$. The condition from $H_1$ imposes that $ad = 1$ (mod 3).
-The pairs $(a,d)$ from $\{1,2\}$ that satisfy this are $(1,1)$ and $(2,2)$. There are $q-1=2$ choices for these diagonal entries. The entry $b$ can be any of the $q=3$ elements in $\mathbb{Z}_3$. Therefore, the total number of matrices satisfying both conditions is $(3-1) \times 3 = 6$. The order of the intersection subgroup is 6 .
+An element of the intersection $H = H_1 \cap H_2$ must be an invertible upper triangular matrix with a determinant of 1. A general upper triangular matrix in $G$ has the form $\begin{pmatrix} a  b \\ 0  d \end{pmatrix}$, where $a, d \in \{1, 2\}$ and $b \in \{0, 1, 2\}$. The determinant is $ad$. The condition from $H_1$ imposes that $ad = 1$ (mod 3).
+The pairs $(a,d)$ from $\{1,2\}$ that satisfy this are $(1,1)$ and $(2,2)$. There are $q-1=2$ choices for these diagonal entries. The entry $b$ can be any of the $q=3$ elements in $\mathbb{Z}_3$. Therefore, the total number of matrices satisfying both conditions is $(3-1) \times 3 = 6$. The order of the intersection subgroup is 6 [@problem_id:1624765].
 
 #### Intersection by Element Analysis
 
-When subgroups are given by generators, it can be necessary to enumerate their elements to find the common ones. For example, consider two subgroups of $G = S_4$: $H = \{\sigma \in S_4 \mid \sigma(4)=4\}$, which is isomorphic to $S_3$ and has order 6, and $K = \langle (1234), (12)(34) \rangle$, which is the dihedral group of order 8. To find $|H \cap K|$, we can list the 8 elements of $K$ and check which of them fix the element 4. A direct check reveals that only the identity permutation $e$ and the permutation $(1234)(12)(34) = (13)$ fix the element 4. Thus, $|H \cap K| = 2$. From this, we can calculate the index of the intersection in $S_4$: $[S_4 : H \cap K] = |S_4| / |H \cap K| = 24 / 2 = 12$ .
+When subgroups are given by generators, it can be necessary to enumerate their elements to find the common ones. For example, consider two subgroups of $G = S_4$: $H = \{\sigma \in S_4 \mid \sigma(4)=4\}$, which is isomorphic to $S_3$ and has order 6, and $K = \langle (1234), (12)(34) \rangle$, which is the dihedral group of order 8. To find $|H \cap K|$, we can list the 8 elements of $K$ and check which of them fix the element 4. A direct check reveals that only the identity permutation $e$ and the permutation $(1234)(12)(34) = (13)$ fix the element 4. Thus, $|H \cap K| = 2$. From this, we can calculate the index of the intersection in $S_4$: $[S_4 : H \cap K] = |S_4| / |H \cap K| = 24 / 2 = 12$ [@problem_id:1624796].
 
 ### Intersections and Normality
 
@@ -88,30 +88,30 @@ The interaction between intersections and normal subgroups reveals deeper struct
 
 #### The Intersection of Normal Subgroups
 
-If $H$ and $K$ are both [normal subgroups](@entry_id:147397) of $G$, their intersection $H \cap K$ is also a [normal subgroup](@entry_id:144438) of $G$.
+If $H$ and $K$ are both normal subgroups of $G$, their intersection $H \cap K$ is also a normal subgroup of $G$.
 
 *Proof:* Let $x \in H \cap K$ and $g \in G$. Since $x \in H$ and $H \trianglelefteq G$, the conjugate $gxg^{-1}$ is in $H$. Similarly, since $x \in K$ and $K \trianglelefteq G$, the conjugate $gxg^{-1}$ is in $K$. Because $gxg^{-1}$ belongs to both $H$ and $K$, it must belong to their intersection, $H \cap K$. This confirms that $H \cap K$ is normal in $G$ [@problem_id:1624782, part B]. This result generalizes to any collection of normal subgroups.
-This property is frequently used. For example, in the group $G = S_3 \times S_3$, the subgroup $H = \{(\sigma, \tau) \mid \text{sgn}(\sigma)=+1\}$ is the kernel of the projection homomorphism onto the first component followed by the sign map, so it is normal. The subgroup $K = \{(\sigma, \tau) \mid \text{sgn}(\sigma)=\text{sgn}(\tau)\}$ is the kernel of the homomorphism $(\sigma, \tau) \mapsto \text{sgn}(\sigma)\text{sgn}(\tau)$, so it is also normal. Their intersection $L = H \cap K$ must therefore be a [normal subgroup](@entry_id:144438) of $G$. Elements in this intersection satisfy $\text{sgn}(\sigma)=+1$ and $\text{sgn}(\tau)=+1$, so $L = A_3 \times A_3$. Its order is $|A_3| \cdot |A_3| = 3 \cdot 3 = 9$ .
+This property is frequently used. For example, in the group $G = S_3 \times S_3$, the subgroup $H = \{(\sigma, \tau) \mid \text{sgn}(\sigma)=+1\}$ is the kernel of the projection homomorphism onto the first component followed by the sign map, so it is normal. The subgroup $K = \{(\sigma, \tau) \mid \text{sgn}(\sigma)=\text{sgn}(\tau)\}$ is the kernel of the homomorphism $(\sigma, \tau) \mapsto \text{sgn}(\sigma)\text{sgn}(\tau)$, so it is also normal. Their intersection $L = H \cap K$ must therefore be a normal subgroup of $G$. Elements in this intersection satisfy $\text{sgn}(\sigma)=+1$ and $\text{sgn}(\tau)=+1$, so $L = A_3 \times A_3$. Its order is $|A_3| \cdot |A_3| = 3 \cdot 3 = 9$ [@problem_id:1624803].
 
 #### The Core of a Subgroup
 
-The intersection construction allows us to identify the largest [normal subgroup](@entry_id:144438) of $G$ contained within a given subgroup $H$. This is called the **core of H in G**, denoted $\text{Core}_G(H)$, and is defined as the intersection of all conjugates of $H$:
+The intersection construction allows us to identify the largest normal subgroup of $G$ contained within a given subgroup $H$. This is called the **core of H in G**, denoted $\text{Core}_G(H)$, and is defined as the intersection of all conjugates of $H$:
 $$ \text{Core}_G(H) = \bigcap_{g \in G} gHg^{-1} $$
-Since each conjugate $gHg^{-1}$ is a subgroup of $G$, their intersection is a subgroup. To see that it is normal, take any element $x \in \text{Core}_G(H)$ and any $k \in G$. Then $kxk^{-1} = k(\bigcap_{g \in G} gxg^{-1})k^{-1}$. It can be shown that this intersection is indeed normal. More importantly, if $N$ is any [normal subgroup](@entry_id:144438) of $G$ contained in $H$, then for any $g \in G$, $N = gNg^{-1} \subseteq gHg^{-1}$. Since this holds for all $g$, $N$ is contained in the intersection of all conjugates of $H$. Thus, $\text{Core}_G(H)$ is the largest such [normal subgroup](@entry_id:144438).
+Since each conjugate $gHg^{-1}$ is a subgroup of $G$, their intersection is a subgroup. To see that it is normal, take any element $x \in \text{Core}_G(H)$ and any $k \in G$. Then $kxk^{-1} = k(\bigcap_{g \in G} gxg^{-1})k^{-1}$. It can be shown that this intersection is indeed normal. More importantly, if $N$ is any normal subgroup of $G$ contained in $H$, then for any $g \in G$, $N = gNg^{-1} \subseteq gHg^{-1}$. Since this holds for all $g$, $N$ is contained in the intersection of all conjugates of $H$. Thus, $\text{Core}_G(H)$ is the largest such normal subgroup.
 
-For example, in $S_4$, let $H$ be the dihedral subgroup of order 8 generated by $\sigma = (1234)$ and $\tau = (12)(34)$. To find its core, we can intersect $H$ with the known [normal subgroups](@entry_id:147397) of $S_4$, which are $\{e\}$, the Klein four-group $V_4 = \{e, (12)(34), (13)(24), (14)(23)\}$, the [alternating group](@entry_id:140499) $A_4$, and $S_4$ itself. Since $|H|=8$, it cannot contain $A_4$ (order 12) or $S_4$ (order 24). However, $H$ does contain all elements of $V_4$. As $V_4$ is normal in $S_4$ and contained in $H$, it must be a subgroup of the core. Since it is the largest possible [normal subgroup](@entry_id:144438) of $S_4$ that is contained in $H$, we conclude that the core of $H$ is precisely $V_4$ .
+For example, in $S_4$, let $H$ be the dihedral subgroup of order 8 generated by $\sigma = (1234)$ and $\tau = (12)(34)$. To find its core, we can intersect $H$ with the known normal subgroups of $S_4$, which are $\{e\}$, the Klein four-group $V_4 = \{e, (12)(34), (13)(24), (14)(23)\}$, the alternating group $A_4$, and $S_4$ itself. Since $|H|=8$, it cannot contain $A_4$ (order 12) or $S_4$ (order 24). However, $H$ does contain all elements of $V_4$. As $V_4$ is normal in $S_4$ and contained in $H$, it must be a subgroup of the core. Since it is the largest possible normal subgroup of $S_4$ that is contained in $H$, we conclude that the core of $H$ is precisely $V_4$ [@problem_id:1624767].
 
 #### A Crucial Distinction
 
 A common point of confusion arises when only one of the subgroups is normal. If $N$ is a normal subgroup of $G$ and $H$ is any subgroup of $G$, is their intersection $H \cap N$ necessarily normal in $G$? The answer is **no**.
 
-As a [counterexample](@entry_id:148660), consider $G=S_4$. Let $N$ be the Klein four-group $V_4$, which is normal in $S_4$. Let $H$ be the [cyclic subgroup](@entry_id:138079) of order 2 generated by the permutation $(12)(34)$, so $H = \{e, (12)(34)\}$. The intersection is $H \cap N = H$. However, $H$ is not normal in $S_4$. For example, if we conjugate $(12)(34)$ by $g=(123)$, we get:
+As a counterexample, consider $G=S_4$. Let $N$ be the Klein four-group $V_4$, which is normal in $S_4$. Let $H$ be the cyclic subgroup of order 2 generated by the permutation $(12)(34)$, so $H = \{e, (12)(34)\}$. The intersection is $H \cap N = H$. However, $H$ is not normal in $S_4$. For example, if we conjugate $(12)(34)$ by $g=(123)$, we get:
 $$ (123)(12)(34)(132) = (14)(23) $$
 This resulting permutation is not in $H$, so $H \cap N$ is not normal in $G$.
 
 However, a related statement is true: if $N \trianglelefteq G$, then the intersection $H \cap N$ is always a normal subgroup of **H**.
 
-*Proof:* To show $H \cap N \trianglelefteq H$, we take an element $x \in H \cap N$ and an element $h \in H$. We must check if the conjugate $hxh^{-1}$ is in $H \cap N$. Since $x$ and $h$ are both in the subgroup $H$, the product $hxh^{-1}$ is also in $H$. Furthermore, since $x \in N$ and $N$ is normal in the larger group $G$, the conjugate $hxh^{-1}$ (where $h$ is an element of $G$) must be in $N$. Since $hxh^{-1}$ is in both $H$ and $N$, it is in their intersection. This proves that $H \cap N$ is normal in $H$ . This result is a key lemma for proving the Second Isomorphism Theorem.
+*Proof:* To show $H \cap N \trianglelefteq H$, we take an element $x \in H \cap N$ and an element $h \in H$. We must check if the conjugate $hxh^{-1}$ is in $H \cap N$. Since $x$ and $h$ are both in the subgroup $H$, the product $hxh^{-1}$ is also in $H$. Furthermore, since $x \in N$ and $N$ is normal in the larger group $G$, the conjugate $hxh^{-1}$ (where $h$ is an element of $G$) must be in $N$. Since $hxh^{-1}$ is in both $H$ and $N$, it is in their intersection. This proves that $H \cap N$ is normal in $H$ [@problem_id:1624782]. This result is a key lemma for proving the Second Isomorphism Theorem.
 
 ### Intersections and Homomorphisms
 
@@ -126,4 +126,4 @@ Let's illustrate this with an example. Let $G = \mathbb{Z}_4 \times \mathbb{Z}_2
 - The images of the subgroups are $\phi(H) = \{\phi(0,0), \phi(2,1)\} = \{(0,0), (0,1)\}$ and $\phi(K) = \{\phi(0,0), \phi(0,1)\} = \{(0,0), (0,1)\}$.
 - The intersection of the images is $\phi(H) \cap \phi(K) = \{(0,0), (0,1)\}$.
 
-In this case, $\phi(H \cap K) = \{(0,0)\}$ is a [proper subgroup](@entry_id:141915) of $\phi(H) \cap \phi(K) = \{(0,0), (0,1)\}$. The element $(0,1)$ is in the intersection of the images. It is the image of $(2,1) \in H$ and the image of $(0,1) \in K$. Since these pre-images are different, and neither lies in the intersection $H \cap K$, the element $(0,1)$ is not in $\phi(H \cap K)$ . This demonstrates that the image of an intersection is not always the intersection of the images. Equality is guaranteed, however, if the homomorphism $\phi$ is injective.
+In this case, $\phi(H \cap K) = \{(0,0)\}$ is a proper subgroup of $\phi(H) \cap \phi(K) = \{(0,0), (0,1)\}$. The element $(0,1)$ is in the intersection of the images. It is the image of $(2,1) \in H$ and the image of $(0,1) \in K$. Since these pre-images are different, and neither lies in the intersection $H \cap K$, the element $(0,1)$ is not in $\phi(H \cap K)$ [@problem_id:1624762]. This demonstrates that the image of an intersection is not always the intersection of the images. Equality is guaranteed, however, if the homomorphism $\phi$ is injective.

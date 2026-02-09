@@ -13,9 +13,9 @@ This beautiful and powerful idea models countless phenomena in the real world: t
 
 To understand this process, which we'll call $S(t)$, we must appreciate its two distinct sources of randomness.
 
-First, **when do the jumps occur?** The timing is governed by what we call a **Poisson process**, which you can think of as nature's ultimate random metronome. Events, or "jumps," happen at a constant average rate, which we'll denote by the Greek letter $\lambda$. If [cosmic rays](@article_id:158047) hit a detector at an average rate of $\lambda = 15.2$ hits per second , it doesn't mean they arrive with the precision of a clock. It means that in any given second, the *chance* of a hit is the same, regardless of when the last one occurred. This "memoryless" property is the hallmark of the Poisson process. The number of jumps that have occurred by time $t$, let's call it $N(t)$, is itself a random variable. A remarkable feature is that both its average value and its variance are the same: $E[N(t)] = \text{Var}(N(t)) = \lambda t$.
+First, **when do the jumps occur?** The timing is governed by what we call a **Poisson process**, which you can think of as nature's ultimate random metronome. Events, or "jumps," happen at a constant average rate, which we'll denote by the Greek letter $\lambda$. If [cosmic rays](@keyword=cosmic_rays|lang=en-US|style=Feynman) hit a detector at an average rate of $\lambda = 15.2$ hits per second [@problem_id:1290807], it doesn't mean they arrive with the precision of a clock. It means that in any given second, the *chance* of a hit is the same, regardless of when the last one occurred. This "memoryless" property is the hallmark of the Poisson process. The number of jumps that have occurred by time $t$, let's call it $N(t)$, is itself a random variable. A remarkable feature is that both its average value and its variance are the same: $E[N(t)] = \text{Var}(N(t)) = \lambda t$.
 
-Second, **how big is each jump?** Each time an event occurs, it adds a certain amount to our total. This amount, the jump size, is a random variable in its own right, which we'll call $Y$. In an insurance model, $Y$ might be the monetary value of a claim. For our cosmic ray detector, it’s the energy of a single particle. These jump sizes, $Y_1, Y_2, Y_3, \dots$, are all independent of each other and are drawn from the same probability distribution. The distribution of $Y$ can be anything you can imagine: it could be that every jump is exactly one unit, or it could follow a bell curve, or something much more exotic .
+Second, **how big is each jump?** Each time an event occurs, it adds a certain amount to our total. This amount, the jump size, is a random variable in its own right, which we'll call $Y$. In an insurance model, $Y$ might be the monetary value of a claim. For our cosmic ray detector, it’s the energy of a single particle. These jump sizes, $Y_1, Y_2, Y_3, \dots$, are all independent of each other and are drawn from the same probability distribution. The distribution of $Y$ can be anything you can imagine: it could be that every jump is exactly one unit, or it could follow a bell curve, or something much more exotic [@problem_id:1290787].
 
 Putting these two ideas together, the total accumulated value $S(t)$ is simply the sum of all the random jump sizes that have occurred up to time $t$:
 $$
@@ -43,16 +43,16 @@ Adding them together gives the total variance:
 $$
 \text{Var}(S(t)) = \lambda t \sigma_Y^2 + \lambda t \mu_Y^2 = \lambda t (\sigma_Y^2 + \mu_Y^2)
 $$
-Recalling that the second moment of a variable is $E[Y^2] = \sigma_Y^2 + \mu_Y^2$, we arrive at a remarkably compact and elegant formula :
+Recalling that the second moment of a variable is $E[Y^2] = \sigma_Y^2 + \mu_Y^2$, we arrive at a remarkably compact and elegant formula [@problem_id:715611]:
 $$
 \text{Var}(S(t)) = \lambda t E[Y^2]
 $$
 This tells us that the variance of the total process depends not on the variance of the jumps, but on their **second moment**. This is a crucial insight. It means that a jump distribution with
-a high mean can contribute just as much to the overall process variance as a distribution with a high intrinsic variance. We can see this in action when calculating the variance of the total energy from cosmic rays , or the total number of corrections made by a manuscript editor where the "jump size" is a mix of simple and complex error types . A fascinating consequence of these formulas is that the ratio of the variance to the mean, a quantity called the **Fano factor**, is independent of time and the arrival rate: it's simply $\frac{\text{Var}(S(t))}{E[S(t)]} = \frac{\lambda t E[Y^2]}{\lambda t E[Y]} = \frac{E[Y^2]}{E[Y]}$ .
+a high mean can contribute just as much to the overall process variance as a distribution with a high intrinsic variance. We can see this in action when calculating the variance of the total energy from cosmic rays [@problem_id:1290807], or the total number of corrections made by a manuscript editor where the "jump size" is a mix of simple and complex error types [@problem_id:1290787]. A fascinating consequence of these formulas is that the ratio of the variance to the mean, a quantity called the **Fano factor**, is independent of time and the arrival rate: it's simply $\frac{\text{Var}(S(t))}{E[S(t)]} = \frac{\lambda t E[Y^2]}{\lambda t E[Y]} = \frac{E[Y^2]}{E[Y]}$ [@problem_id:815079].
 
 ### The Power of Splitting and Thinning
 
-One of the most elegant properties of a Poisson process is that you can split it apart, and the pieces retain their beautiful structure. Imagine an insurance company that classifies claims as either 'major' with probability $p$ or 'minor' with probability $1-p$ . If total claims arrive at rate $\lambda$, a magical thing happens: the major claims arrive as their own Poisson process with rate $\lambda p$, and the minor claims arrive as an *independent* Poisson process with rate $\lambda(1-p)$. This is called **thinning**.
+One of the most elegant properties of a Poisson process is that you can split it apart, and the pieces retain their beautiful structure. Imagine an insurance company that classifies claims as either 'major' with probability $p$ or 'minor' with probability $1-p$ [@problem_id:1349636]. If total claims arrive at rate $\lambda$, a magical thing happens: the major claims arrive as their own Poisson process with rate $\lambda p$, and the minor claims arrive as an *independent* Poisson process with rate $\lambda(1-p)$. This is called **thinning**.
 
 This means we can decompose our compound Poisson process. The total claim amount $S(t)$ can be written as the sum of the total from major claims, $S_M(t)$, and the total from minor claims, $S_m(t)$.
 $$
@@ -60,7 +60,7 @@ S(t) = S_M(t) + S_m(t)
 $$
 But because the underlying arrival processes are independent, $S_M(t)$ and $S_m(t)$ are themselves two independent compound Poisson processes! This is an incredibly powerful analytical tool. For example, if we want the variance of the total claim amount, we can just add the variances of the two sub-processes: $\text{Var}(S(t)) = \text{Var}(S_M(t)) + \text{Var}(S_m(t))$.
 
-This idea gets even more profound when we consider jumps that can be positive or negative, like in a model of a financial asset's value . Let's say shocks can be positive (good news) or negative (bad news). We can define a process $U(t)$ as the sum of all the positive shocks and another process $D(t)$ as the sum of the absolute values of all the negative shocks. The thinning principle tells us that $U(t)$ and $D(t)$ are independent compound Poisson processes. The total change in the asset's value is $X(t) = U(t) - D(t)$. This decomposition is crucial for understanding the separate contributions of upward and downward movements and reveals a deep structural symmetry in the process.
+This idea gets even more profound when we consider jumps that can be positive or negative, like in a model of a financial asset's value [@problem_id:1349683]. Let's say shocks can be positive (good news) or negative (bad news). We can define a process $U(t)$ as the sum of all the positive shocks and another process $D(t)$ as the sum of the absolute values of all the negative shocks. The thinning principle tells us that $U(t)$ and $D(t)$ are independent compound Poisson processes. The total change in the asset's value is $X(t) = U(t) - D(t)$. This decomposition is crucial for understanding the separate contributions of upward and downward movements and reveals a deep structural symmetry in the process.
 
 ### Beyond the Average: A Glimpse into the Machine's Inner Workings
 
@@ -85,11 +85,11 @@ This single formula contains everything we've found so far and more!
 -   For $n=2$, the variance is $\kappa_2 = \lambda t E[Y^2]$.
 -   For $n=3$, the third central moment (related to skewness) is $\kappa_3 = \lambda t E[Y^3]$.
 
-Using this, we can effortlessly calculate the skewness of a process, whether the jumps represent the energy of Gamma-distributed particles or the cost of mixed-type insurance claims  . It provides a complete recipe for describing the shape of the distribution of $S(t)$.
+Using this, we can effortlessly calculate the skewness of a process, whether the jumps represent the energy of Gamma-distributed particles or the cost of mixed-type insurance claims [@problem_id:715457] [@problem_id:1349636]. It provides a complete recipe for describing the shape of the distribution of $S(t)$.
 
 ### The Fabric of Randomness: Correlations and Memory
 
-Are the different random parts of our process connected? For example, is the number of jumps $N(t)$ correlated with the total sum $S(t)$? Intuitively, the answer should be yes—more jumps should lead to a larger total, on average. We can check this by calculating their covariance. A careful calculation reveals :
+Are the different random parts of our process connected? For example, is the number of jumps $N(t)$ correlated with the total sum $S(t)$? Intuitively, the answer should be yes—more jumps should lead to a larger total, on average. We can check this by calculating their covariance. A careful calculation reveals [@problem_id:715503]:
 $$
 \text{Cov}(N(t), S(t)) = \mu_Y \lambda t
 $$
@@ -97,13 +97,13 @@ This elegant result confirms our intuition perfectly. The correlation is positiv
 
 What about memory? Does a large value of $S(t)$ at time $t$ tell us anything about what will happen next, in the interval from $t$ to $t+h$? For a standard compound Poisson process, the answer is a definitive **no**. The process has **independent increments**. What happens in the future is completely independent of the past. This is a direct inheritance from the memoryless property of the underlying Poisson timing.
 
-But what if we break this rule? Imagine a model where the arrival rate $\lambda$ isn't a fixed constant but is itself a random variable, $\Lambda$, chosen at the beginning of time—say, on a "high volatility" day in the market, $\Lambda$ is large . This is called a **Cox process** or a doubly stochastic process. Now, the increments are no longer independent! If we observe a large number of jumps up to time $t$, it's a hint that we probably drew a large value for $\Lambda$. And if $\Lambda$ is large, we should expect more jumps in the future, too. The past now gives us information about the future. The covariance between the present value and a future increment is no longer zero. It can be shown to be $\text{Cov}(S(t), S(t+h)-S(t)) = \mu_Y^2 \sigma_\Lambda^2 t h$, where $\sigma_\Lambda^2$ is the variance of the rate itself. The existence of this correlation beautifully illustrates just how special the "independent increments" property of the standard CPP is.
+But what if we break this rule? Imagine a model where the arrival rate $\lambda$ isn't a fixed constant but is itself a random variable, $\Lambda$, chosen at the beginning of time—say, on a "high volatility" day in the market, $\Lambda$ is large [@problem_id:715455]. This is called a **Cox process** or a doubly stochastic process. Now, the increments are no longer independent! If we observe a large number of jumps up to time $t$, it's a hint that we probably drew a large value for $\Lambda$. And if $\Lambda$ is large, we should expect more jumps in the future, too. The past now gives us information about the future. The covariance between the present value and a future increment is no longer zero. It can be shown to be $\text{Cov}(S(t), S(t+h)-S(t)) = \mu_Y^2 \sigma_\Lambda^2 t h$, where $\sigma_\Lambda^2$ is the variance of the rate itself. The existence of this correlation beautifully illustrates just how special the "independent increments" property of the standard CPP is.
 
 ### A Unifying Language: The Lévy Measure
 
 We've described our process with two pieces of information: the rate of jumps, $\lambda$, and the distribution of their sizes, $Y$. The theory of stochastic processes offers a more elegant way to combine these into a single mathematical object: the **Lévy measure**, denoted by $\nu$.
 
-The Lévy measure answers a simple question: for any set of possible jump sizes, say "jumps between 10 and 20 units," what is the *expected number of such jumps per unit time*? For a compound Poisson process, the answer is beautifully intuitive: it's the total rate of jumps, $\lambda$, multiplied by the probability that any given jump falls into that set . Mathematically, for a set of sizes $B$:
+The Lévy measure answers a simple question: for any set of possible jump sizes, say "jumps between 10 and 20 units," what is the *expected number of such jumps per unit time*? For a compound Poisson process, the answer is beautifully intuitive: it's the total rate of jumps, $\lambda$, multiplied by the probability that any given jump falls into that set [@problem_id:1310010]. Mathematically, for a set of sizes $B$:
 $$
 \nu(B) = \lambda P(Y \in B)
 $$

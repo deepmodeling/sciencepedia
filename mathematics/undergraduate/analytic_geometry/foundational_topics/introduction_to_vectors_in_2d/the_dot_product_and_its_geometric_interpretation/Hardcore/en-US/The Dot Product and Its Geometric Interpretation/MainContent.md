@@ -1,7 +1,7 @@
 ## Introduction
-The dot product, or scalar product, is a cornerstone of [vector algebra](@entry_id:152340), offering a simple way to multiply two vectors to produce a single scalar value. While its component-wise calculation is straightforward, its true significance lies in a deep geometric interpretation that is often underappreciated. This article aims to bridge the gap between rote algebraic manipulation and profound geometric insight, revealing the dot product as a powerful tool for understanding and quantifying spatial relationships.
+The dot product, or scalar product, is a cornerstone of vector algebra, offering a simple way to multiply two vectors to produce a single scalar value. While its component-wise calculation is straightforward, its true significance lies in a deep geometric interpretation that is often underappreciated. This article aims to bridge the gap between rote algebraic manipulation and profound geometric insight, revealing the dot product as a powerful tool for understanding and quantifying spatial relationships.
 
-By exploring this connection, you will gain a versatile analytical framework applicable across numerous scientific and technical fields. We will begin in our first chapter, "Principles and Mechanisms," by deriving the geometric meaning of the dot product from its algebraic definition, exploring core concepts like angle, orthogonality, and projection. The second chapter, "Applications and Interdisciplinary Connections," will showcase the dot product's utility in solving real-world problems in physics, engineering, [computer graphics](@entry_id:148077), and even abstract fields like data science. Finally, "Hands-On Practices" will solidify your understanding through targeted exercises. Let us begin by establishing the fundamental principles of this essential mathematical operation.
+By exploring this connection, you will gain a versatile analytical framework applicable across numerous scientific and technical fields. We will begin in our first chapter, "Principles and Mechanisms," by deriving the geometric meaning of the dot product from its algebraic definition, exploring core concepts like angle, orthogonality, and projection. The second chapter, "Applications and Interdisciplinary Connections," will showcase the dot product's utility in solving real-world problems in physics, engineering, computer graphics, and even abstract fields like data science. Finally, "Hands-On Practices" will solidify your understanding through targeted exercises. Let us begin by establishing the fundamental principles of this essential mathematical operation.
 
 ## Principles and Mechanisms
 
@@ -20,7 +20,7 @@ The result is always a scalar, not a vector. The dot product obeys several impor
 
 2.  **Distributive Property:** The dot product distributes over vector addition.
     $$ \vec{u} \cdot (\vec{v} + \vec{w}) = \vec{u} \cdot \vec{v} + \vec{u} \cdot \vec{w} $$
-    This property is particularly significant as it has a clear geometric meaning related to projections, which we will explore later .
+    This property is particularly significant as it has a clear geometric meaning related to projections, which we will explore later [@problem_id:2165572].
 
 3.  **Scalar Multiplication Property:** A scalar multiple can be factored out from any position in the product.
     $$ (c\vec{u}) \cdot \vec{v} = \vec{u} \cdot (c\vec{v}) = c(\vec{u} \cdot \vec{v}) $$
@@ -39,7 +39,7 @@ $$ \vec{u} \cdot \vec{v} = \|\vec{u}\| \|\vec{v}\| \cos(\theta) $$
 
 where $\theta$ (with $0 \le \theta \le \pi$) is the angle between the two vectors when they are placed tail to tail. This equation beautifully connects the algebraic component-wise multiplication to the geometric concepts of length and angle.
 
-This geometric formula is not an arbitrary definition; it is a direct consequence of the **Law of Cosines**. Consider a triangle formed by vectors $\vec{A}$, $\vec{B}$, and their difference $\vec{C} = \vec{B} - \vec{A}$. Let the lengths of the sides defined by $\vec{A}$ and $\vec{B}$ be $a = \|\vec{A}\|$ and $b = \|\vec{B}\|$, and let $\theta$ be the angle between them. The squared length of the third side is $\|\vec{B} - \vec{A}\|^2$. Using the properties of the dot product, we can expand this expression :
+This geometric formula is not an arbitrary definition; it is a direct consequence of the **Law of Cosines**. Consider a triangle formed by vectors $\vec{A}$, $\vec{B}$, and their difference $\vec{C} = \vec{B} - \vec{A}$. Let the lengths of the sides defined by $\vec{A}$ and $\vec{B}$ be $a = \|\vec{A}\|$ and $b = \|\vec{B}\|$, and let $\theta$ be the angle between them. The squared length of the third side is $\|\vec{B} - \vec{A}\|^2$. Using the properties of the dot product, we can expand this expression [@problem_id:2165536]:
 
 $$ \|\vec{B} - \vec{A}\|^2 = (\vec{B} - \vec{A}) \cdot (\vec{B} - \vec{A}) $$
 $$ = \vec{B} \cdot \vec{B} - \vec{B} \cdot \vec{A} - \vec{A} \cdot \vec{B} + \vec{A} \cdot \vec{A} $$
@@ -52,17 +52,17 @@ This relationship allows us to compute the angle between any two non-zero vector
 
 $$ \cos(\theta) = \frac{\vec{u} \cdot \vec{v}}{\|\vec{u}\| \|\vec{v}\|} $$
 
-For example, to find the angle between a median and an adjacent side of a triangle with vertices $A$, $B$, and $C$, one can define the vectors $\vec{AB}$ and $\vec{AM}$ (where $M$ is the midpoint of $BC$). By computing their dot product and their individual magnitudes from their coordinate components, one can find the cosine of the angle between them directly using this formula .
+For example, to find the angle between a median and an adjacent side of a triangle with vertices $A$, $B$, and $C$, one can define the vectors $\vec{AB}$ and $\vec{AM}$ (where $M$ is the midpoint of $BC$). By computing their dot product and their individual magnitudes from their coordinate components, one can find the cosine of the angle between them directly using this formula [@problem_id:2165561].
 
 From this formula, the **Cauchy-Schwarz Inequality** naturally arises. Since the cosine function has a range of $[-1, 1]$, we know that $|\cos(\theta)| \le 1$. This implies:
 
 $$ |\vec{u} \cdot \vec{v}| \le \|\vec{u}\| \|\vec{v}\| $$
 
-This inequality is a cornerstone of linear algebra and analysis. The ratio $\frac{|\vec{u} \cdot \vec{v}|}{\|\vec{u}\| \|\vec{v}\|}$, sometimes used as a measure of correlation, is therefore guaranteed to be a value between 0 and 1 .
+This inequality is a cornerstone of linear algebra and analysis. The ratio $\frac{|\vec{u} \cdot \vec{v}|}{\|\vec{u}\| \|\vec{v}\|}$, sometimes used as a measure of correlation, is therefore guaranteed to be a value between 0 and 1 [@problem_id:2165554].
 
 ### Orthogonality
 
-The single most important application of the dot product's geometric meaning is testing for **orthogonality**. Two non-zero vectors are orthogonal (perpendicular) if the angle between them is $\theta = 90^\circ$ (or $\frac{\pi}{2}$ [radians](@entry_id:171693)). Since $\cos(\frac{\pi}{2}) = 0$, the geometric formula simplifies dramatically:
+The single most important application of the dot product's geometric meaning is testing for **orthogonality**. Two non-zero vectors are orthogonal (perpendicular) if the angle between them is $\theta = 90^\circ$ (or $\frac{\pi}{2}$ radians). Since $\cos(\frac{\pi}{2}) = 0$, the geometric formula simplifies dramatically:
 
 > Two non-zero vectors $\vec{u}$ and $\vec{v}$ are orthogonal if and only if their dot product is zero: $\vec{u} \cdot \vec{v} = 0$.
 
@@ -70,25 +70,25 @@ This provides a simple, purely algebraic method to check for a perpendicular geo
 
 $$ (c)(c-1) + (c)(4) + (2)(-1) = c^2 + 3c - 2 = 0 $$
 
-Solving this quadratic equation for $c$ determines the precise parameter values that ensure the movement is safe .
+Solving this quadratic equation for $c$ determines the precise parameter values that ensure the movement is safe [@problem_id:2165562].
 
 ### Projections and Orthogonal Decomposition
 
 The dot product is the primary tool for decomposing a vector into components relative to another vector. This process is known as **projection**.
 
-The **[scalar projection](@entry_id:148823)** of a vector $\vec{a}$ onto a non-[zero vector](@entry_id:156189) $\vec{b}$ is the signed length of the shadow that $\vec{a}$ casts on the line defined by $\vec{b}$. It is denoted as $\text{comp}_{\vec{b}}\vec{a}$ and is given by:
+The **scalar projection** of a vector $\vec{a}$ onto a non-zero vector $\vec{b}$ is the signed length of the shadow that $\vec{a}$ casts on the line defined by $\vec{b}$. It is denoted as $\text{comp}_{\vec{b}}\vec{a}$ and is given by:
 
 $$ \text{comp}_{\vec{b}}\vec{a} = \|\vec{a}\| \cos(\theta) = \frac{\|\vec{a}\| \|\vec{b}\| \cos(\theta)}{\|\vec{b}\|} = \frac{\vec{a} \cdot \vec{b}}{\|\vec{b}\|} $$
 
-The [scalar projection](@entry_id:148823) is positive if the angle $\theta$ is acute ($0 \le \theta \lt \pi/2$), negative if it is obtuse ($\pi/2 \lt \theta \le \pi$), and zero if the vectors are orthogonal. Geometrically, it is clear that the length of the "shadow" cannot be longer than the vector itself, so we must have $|\text{comp}_{\vec{b}}\vec{a}| \le \|\vec{a}\|$, a direct consequence of the Cauchy-Schwarz inequality .
+The scalar projection is positive if the angle $\theta$ is acute ($0 \le \theta \lt \pi/2$), negative if it is obtuse ($\pi/2 \lt \theta \le \pi$), and zero if the vectors are orthogonal. Geometrically, it is clear that the length of the "shadow" cannot be longer than the vector itself, so we must have $|\text{comp}_{\vec{b}}\vec{a}| \le \|\vec{a}\|$, a direct consequence of the Cauchy-Schwarz inequality [@problem_id:2165566].
 
-While the [scalar projection](@entry_id:148823) gives a length, the **[vector projection](@entry_id:147046)** gives the vector that represents this shadow. To get the [vector projection](@entry_id:147046) of $\vec{a}$ onto $\vec{b}$, we multiply the [scalar projection](@entry_id:148823) by the unit vector in the direction of $\vec{b}$, which is $\frac{\vec{b}}{\|\vec{b}\|}$.
+While the scalar projection gives a length, the **vector projection** gives the vector that represents this shadow. To get the vector projection of $\vec{a}$ onto $\vec{b}$, we multiply the scalar projection by the unit vector in the direction of $\vec{b}$, which is $\frac{\vec{b}}{\|\vec{b}\|}$.
 
 $$ \text{proj}_{\vec{b}}\vec{a} = (\text{comp}_{\vec{b}}\vec{a}) \frac{\vec{b}}{\|\vec{b}\|} = \left(\frac{\vec{a} \cdot \vec{b}}{\|\vec{b}\|}\right) \frac{\vec{b}}{\|\vec{b}\|} = \left(\frac{\vec{a} \cdot \vec{b}}{\|\vec{b}\|^2}\right) \vec{b} $$
 
-This formula is widely used. For example, to find the component of an object's position vector $\vec{OP}$ that lies along a specific direction, such as the [normal vector](@entry_id:264185) $\vec{n}$ to a plane, one would compute $\text{proj}_{\vec{n}}(\vec{OP})$ .
+This formula is widely used. For example, to find the component of an object's position vector $\vec{OP}$ that lies along a specific direction, such as the normal vector $\vec{n}$ to a plane, one would compute $\text{proj}_{\vec{n}}(\vec{OP})$ [@problem_id:2165569].
 
-This leads to the powerful concept of **[orthogonal decomposition](@entry_id:148020)**. Any vector $\vec{a}$ can be uniquely written as the sum of two [orthogonal vectors](@entry_id:142226): one parallel to a given vector $\vec{b}$, and one perpendicular to it. The parallel component is simply the [vector projection](@entry_id:147046) of $\vec{a}$ onto $\vec{b}$:
+This leads to the powerful concept of **orthogonal decomposition**. Any vector $\vec{a}$ can be uniquely written as the sum of two orthogonal vectors: one parallel to a given vector $\vec{b}$, and one perpendicular to it. The parallel component is simply the vector projection of $\vec{a}$ onto $\vec{b}$:
 
 $$ \vec{a}_{\|} = \text{proj}_{\vec{b}}\vec{a} $$
 
@@ -96,7 +96,7 @@ The perpendicular component is what remains:
 
 $$ \vec{a}_{\perp} = \vec{a} - \vec{a}_{\|} = \vec{a} - \left(\frac{\vec{a} \cdot \vec{b}}{\|\vec{b}\|^2}\right) \vec{b} $$
 
-One can easily verify that $\vec{a}_{\perp} \cdot \vec{b} = 0$, confirming the orthogonality. This decomposition is crucial in physics and engineering. For example, the velocity of a drone, $\vec{v}_d$, can be decomposed relative to the line-of-sight vector $\vec{r}$ from a ground station. The component parallel to the line of sight, $\vec{v}_{\|} = \text{proj}_{\vec{r}}\vec{v}_d$, represents how quickly the drone is moving towards or away from the station. The component perpendicular to the line of sight, $\vec{v}_{\perp} = \vec{v}_d - \vec{v}_{\|}$, represents its tangential motion .
+One can easily verify that $\vec{a}_{\perp} \cdot \vec{b} = 0$, confirming the orthogonality. This decomposition is crucial in physics and engineering. For example, the velocity of a drone, $\vec{v}_d$, can be decomposed relative to the line-of-sight vector $\vec{r}$ from a ground station. The component parallel to the line of sight, $\vec{v}_{\|} = \text{proj}_{\vec{r}}\vec{v}_d$, represents how quickly the drone is moving towards or away from the station. The component perpendicular to the line of sight, $\vec{v}_{\perp} = \vec{v}_d - \vec{v}_{\|}$, represents its tangential motion [@problem_id:2165586].
 
 ### Applications in Geometric Proofs
 
@@ -104,7 +104,7 @@ The conciseness and power of dot product algebra make it an elegant tool for pro
 
 Another classic example is the **Parallelogram Law**. This law states that for any parallelogram, the sum of the squares of the lengths of the two diagonals is equal to the sum of the squares of the lengths of all four sides. If the parallelogram is defined by two adjacent vectors $\vec{a}$ and $\vec{b}$, its sides have lengths $\|\vec{a}\|$ and $\|\vec{b}\|$. The diagonals are represented by the vectors $\vec{d}_1 = \vec{a} + \vec{b}$ and $\vec{d}_2 = \vec{a} - \vec{b}$. We want to prove $\|\vec{d}_1\|^2 + \|\vec{d}_2\|^2 = 2(\|\vec{a}\|^2 + \|\vec{b}\|^2)$.
 
-Using the property that $\|\vec{v}\|^2 = \vec{v} \cdot \vec{v}$, we can expand the left side :
+Using the property that $\|\vec{v}\|^2 = \vec{v} \cdot \vec{v}$, we can expand the left side [@problem_id:2165567]:
 
 $$ \|\vec{a} + \vec{b}\|^2 + \|\vec{a} - \vec{b}\|^2 = (\vec{a} + \vec{b}) \cdot (\vec{a} + \vec{b}) + (\vec{a} - \vec{b}) \cdot (\vec{a} - \vec{b}) $$
 $$ = (\vec{a} \cdot \vec{a} + 2(\vec{a} \cdot \vec{b}) + \vec{b} \cdot \vec{b}) + (\vec{a} \cdot \vec{a} - 2(\vec{a} \cdot \vec{b}) + \vec{b} \cdot \vec{b}) $$
@@ -119,7 +119,7 @@ This elegant proof, which would be cumbersome using traditional geometry, showca
 
 The standard dot product is formally known as the **Euclidean inner product**. The concept can be generalized. An **inner product** on a vector space is any operation that takes two vectors and returns a scalar, satisfying certain axioms (positivity, linearity, and symmetry).
 
-In $\mathbb{R}^n$, a generalized inner product can be defined using a symmetric, [positive-definite matrix](@entry_id:155546) $G$. For two column vectors $\vec{u}$ and $\vec{v}$, this inner product is defined as:
+In $\mathbb{R}^n$, a generalized inner product can be defined using a symmetric, positive-definite matrix $G$. For two column vectors $\vec{u}$ and $\vec{v}$, this inner product is defined as:
 
 $$ \langle \vec{u}, \vec{v} \rangle_G = \vec{u}^T G \vec{v} $$
 
@@ -133,4 +133,4 @@ The condition for G-orthogonality becomes:
 
 $$ \begin{pmatrix} x  y \end{pmatrix} \begin{pmatrix} 4 \\ 7 \end{pmatrix} = 4x + 7y = 0 $$
 
-This equation describes a line through the origin with a slope of $-\frac{4}{7}$ . This demonstrates that geometric concepts like "perpendicularity" are not absolute but are defined relative to the chosen inner product, a foundational idea in linear algebra and its applications in fields like relativity and data science.
+This equation describes a line through the origin with a slope of $-\frac{4}{7}$ [@problem_id:2165540]. This demonstrates that geometric concepts like "perpendicularity" are not absolute but are defined relative to the chosen inner product, a foundational idea in linear algebra and its applications in fields like relativity and data science.

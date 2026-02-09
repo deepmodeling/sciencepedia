@@ -3,7 +3,7 @@ How many ways can you arrange the letters in the word `LEADER`? If every letter 
 
 This article addresses the challenge of counting arrangements in "multisets"—collections where elements can appear more than once. You will learn not just a formula, but a new way of thinking about counting centered on correcting for redundancy. Across three chapters, we will:
 
-1.  **Establish the Principles and Mechanisms:** We will derive the core formula for [multiset permutations](@article_id:273899) by understanding how to "un-count" the phantom arrangements created by identical items and apply it to solve constrained problems.
+1.  **Establish the Principles and Mechanisms:** We will derive the core formula for [multiset permutations](@keyword=multiset_permutations|lang=en-US|style=Feynman) by understanding how to "un-count" the phantom arrangements created by identical items and apply it to solve constrained problems.
 2.  **Explore Applications and Interdisciplinary Connections:** We will see how this single idea provides critical insights into diverse fields, from the genetic code in biology to the energy levels of quantum systems.
 3.  **Engage in Hands-On Practices:** You will solidify your understanding by working through guided problems that build from basic principles to complex applications.
 
@@ -21,7 +21,7 @@ This seemingly trivial observation is the key that unlocks a whole branch of com
 
 The word "repetition" can mean two rather different things in counting, and it's good to get this straight from the start.
 
-Imagine you are programming a robotic arm with 12 joints, and each joint can be set to one of 8 distinct positions . How many total configurations can the arm have? For the first joint, you have 8 choices. For the second joint, you still have 8 choices. Your choice for the first joint doesn't "use up" a position for the second. You can *repeat* your choice. This is **arrangement with replacement**. Since each of the 12 joints is an independent decision, the total number of configurations is simply $8 \times 8 \times \dots \times 8$ ($12$ times), which is $8^{12}$. In general, if you are making $J$ choices from $P$ options with replacement, the total number of possibilities is $P^J$.
+Imagine you are programming a robotic arm with 12 joints, and each joint can be set to one of 8 distinct positions [@problem_id:1379178]. How many total configurations can the arm have? For the first joint, you have 8 choices. For the second joint, you still have 8 choices. Your choice for the first joint doesn't "use up" a position for the second. You can *repeat* your choice. This is **arrangement with replacement**. Since each of the 12 joints is an independent decision, the total number of configurations is simply $8 \times 8 \times \dots \times 8$ ($12$ times), which is $8^{12}$. In general, if you are making $J$ choices from $P$ options with replacement, the total number of possibilities is $P^J$.
 
 But this isn't the problem we're most interested in today. We want to tackle a different, more subtle kind of repetition. What happens when you don't have an infinite supply of options for each slot? What if you are given a fixed bag of items and told to arrange *all of them*? For example, arranging the letters in the word `BOOK`. You have 4 letters in total, but two of them are identical. This is a problem of **permuting a multiset** (a collection where items can appear more than once). This is where the real fun begins.
 
@@ -49,17 +49,17 @@ We can now easily generalize this. Suppose we are tasked with arranging a total 
 
 If we temporarily pretend all $N$ objects are distinct, we have $N!$ permutations. But we've overcounted. For the $n_1$ objects of type 1, we've counted $n_1!$ arrangements as if they were different, when they're all the same. So we must divide by $n_1!$. For the $n_2$ objects of type 2, we must divide by $n_2!$. We do this for all types.
 
-This gives us the magnificent and powerful formula for **[permutations of a multiset](@article_id:264777)**:
+This gives us the magnificent and powerful formula for **[permutations of a multiset](@keyword=permutations_of_a_multiset|lang=en-US|style=Feynman)**:
 
 $$ \text{Number of arrangements} = \frac{N!}{n_1! n_2! \cdots n_k!} $$
 
-This expression is often called a **[multinomial coefficient](@article_id:261793)**. This single formula is breathtakingly versatile. It’s the answer to a staggering number of questions that, on the surface, seem to have nothing to do with each other.
+This expression is often called a **[multinomial coefficient](@keyword=multinomial_coefficient|lang=en-US|style=Feynman)**. This single formula is breathtakingly versatile. It’s the answer to a staggering number of questions that, on the surface, seem to have nothing to do with each other.
 
--   A bioinformatician wants to know how many unique DNA sequences could be formed from a known chemical composition of 8 Adenine (A), 5 Guanine (G), 4 Cytosine (C), and 3 Thymine (T) bases. This is simply arranging a multiset of $N=20$ items. The answer? $\frac{20!}{8!5!4!3!}$ .
+-   A bioinformatician wants to know how many unique DNA sequences could be formed from a known chemical composition of 8 Adenine (A), 5 Guanine (G), 4 Cytosine (C), and 3 Thymine (T) bases. This is simply arranging a multiset of $N=20$ items. The answer? $\frac{20!}{8!5!4!3!}$ [@problem_id:1391222].
 
--   A bioengineer is creating a library of protein fragments, each 15 amino acids long, using 6 Alanine, 4 Glycine, 3 Valine, and 2 Leucine units. How many distinct chemical sequences are possible? The same formula gives the answer: $\frac{15!}{6!4!3!2!}$ .
+-   A bioengineer is creating a library of protein fragments, each 15 amino acids long, using 6 Alanine, 4 Glycine, 3 Valine, and 2 Leucine units. How many distinct chemical sequences are possible? The same formula gives the answer: $\frac{15!}{6!4!3!2!}$ [@problem_id:1391203].
 
--   A robotic arm must fill 14 slots on a circuit board using 6 identical microchips, 5 identical capacitors, and 3 identical resistors. How many distinct board layouts can be produced? Once again, it's $\frac{14!}{6!5!3!}$ .
+-   A robotic arm must fill 14 slots on a circuit board using 6 identical microchips, 5 identical capacitors, and 3 identical resistors. How many distinct board layouts can be produced? Once again, it's $\frac{14!}{6!5!3!}$ [@problem_id:1391250].
 
 This is the beauty of physics and mathematics. The same abstract law governs the informational arrangements in our language, our genes, and our technology.
 
@@ -69,7 +69,7 @@ Knowing the formula is Level 1. The real test of understanding, and where the mo
 
 #### The Glue Rule: Forcing Togetherness
 
-What if some items *must* stay together? Suppose a communication protocol requires that in a packet of 4 Synchronization (S), 7 Data (D), and 5 Null (N) pulses, all 4 'S' pulses must be transmitted as a single, consecutive block .
+What if some items *must* stay together? Suppose a communication protocol requires that in a packet of 4 Synchronization (S), 7 Data (D), and 5 Null (N) pulses, all 4 'S' pulses must be transmitted as a single, consecutive block [@problem_id:1379193].
 
 The brute-force approach of trying to list all valid sequences would be a nightmare. The elegant trick is to conceptually "glue" the four 'S' pulses together into a single "super-item": SSSS. Now, what are we arranging? We are no longer arranging 16 items. We are arranging:
 
@@ -85,7 +85,7 @@ By simply changing our perspective, a constrained problem became an unconstraine
 
 #### The Personal Space Rule: Forcing Separation
 
-Now for the opposite problem: what if certain items are forbidden from being neighbors? Imagine a signal packet with 4 'S', 5 'D', and 3 'C' signals, where the rule is that no two 'S' signals can be adjacent .
+Now for the opposite problem: what if certain items are forbidden from being neighbors? Imagine a signal packet with 4 'S', 5 'D', and 3 'C' signals, where the rule is that no two 'S' signals can be adjacent [@problem_id:1379200].
 
 Placing the 'S' signals one by one while trying to keep them apart is tricky. The key is another shift in perspective: **ignore the difficult items for a moment and arrange everything else first.** Let's take the 5 'D' signals and 3 'C' signals and arrange them. The number of ways to do this is:
 
@@ -99,11 +99,11 @@ For 8 items, there are 9 possible gaps (including before the first item and afte
 
 $$ \binom{9}{4} = \frac{9!}{4!5!} = 126 $$
 
-Since each of the 56 arrangements of D's and C's provides 126 ways to place the S's, the total number of valid sequences is, by the [multiplication principle](@article_id:272883), $56 \times 126 = 7056$. It's a beautiful piece of combinatorial jujitsu—deal with the easy part first to create a structure that makes the hard part simple.
+Since each of the 56 arrangements of D's and C's provides 126 ways to place the S's, the total number of valid sequences is, by the [multiplication principle](@keyword=multiplication_principle|lang=en-US|style=Feynman), $56 \times 126 = 7056$. It's a beautiful piece of combinatorial jujitsu—deal with the easy part first to create a structure that makes the hard part simple.
 
 #### The Symmetry Ploy: When Brute Force Fails
 
-Some constraints seem tailor-made to cause headaches. Consider arranging a set of nucleotide bases (4 A's, 3 G's, 2 C's, 5 T's) with the rule that the *first* Guanine (G) base must appear before the *first* Cytosine (C) base .
+Some constraints seem tailor-made to cause headaches. Consider arranging a set of nucleotide bases (4 A's, 3 G's, 2 C's, 5 T's) with the rule that the *first* Guanine (G) base must appear before the *first* Cytosine (C) base [@problem_id:1379179].
 
 Let's step back. Forget the constraint for a second. The total number of ways to arrange all 14 bases is a huge number: $\frac{14!}{4!3!2!5!}$. Now, in any given one of these arrangements, look only at the 5 bases that are either G or C. By pure symmetry, in the grand collection of *all* possible permutations, is it more likely that the first of these five bases we encounter is a G or a C? No. Each specific base (G1, G2, G3, C1, C2) has an equal shot at being the first one in that subset.
 
@@ -115,7 +115,7 @@ This is an incredibly powerful trick. Instead of building the valid sequences fr
 
 #### The Mirror Rule: Exploiting Redundancy
 
-Finally, let's look at a constraint of structure. What if we must form a **palindrome**, a sequence that reads the same forwards and backwards, like `MADAM`? Suppose we have a stock of monomers (10 of type 1, 8 of type 2, 6 of type 3, and 9 of type 4) and we need to form a palindromic chain using all of them .
+Finally, let's look at a constraint of structure. What if we must form a **palindrome**, a sequence that reads the same forwards and backwards, like `MADAM`? Suppose we have a stock of monomers (10 of type 1, 8 of type 2, 6 of type 3, and 9 of type 4) and we need to form a palindromic chain using all of them [@problem_id:1379161].
 
 The total length is $10+8+6+9 = 33$, an odd number. For a sequence of odd length to be a palindrome, it must have a unique center element, and the counts of all other element types must be even. Here, only type 4 has an odd count (9), so an $M_4$ monomer *must* be the center element.
 
@@ -126,6 +126,6 @@ What does this first half consist of? It must contain half the count of each mon
 The total number of distinct palindromes is simply the number of ways we can arrange this new multiset for the first half:
 $$ \text{Number of palindromes} = \frac{16!}{5!4!3!4!} $$
 
-Once again, by recognizing a deep structural symmetry, a large and complicated problem was reduced to a smaller, familiar one. This same principle of reducing the problem space is at play even in simpler constraints, like being told to build a DNA strand that must begin and end with a 'C' . Those two positions are fixed; they contain no variability. The real problem is just a smaller one: arranging the remaining bases in the remaining inner slots.
+Once again, by recognizing a deep structural symmetry, a large and complicated problem was reduced to a smaller, familiar one. This same principle of reducing the problem space is at play even in simpler constraints, like being told to build a DNA strand that must begin and end with a 'C' [@problem_id:1391220]. Those two positions are fixed; they contain no variability. The real problem is just a smaller one: arranging the remaining bases in the remaining inner slots.
 
 From correcting for identical twins to exploiting the deep symmetries of our problems, the ability to count arrangements of non-unique items is not just a mathematical exercise. It is a fundamental way of understanding the structure and possibilities inherent in the world around us.

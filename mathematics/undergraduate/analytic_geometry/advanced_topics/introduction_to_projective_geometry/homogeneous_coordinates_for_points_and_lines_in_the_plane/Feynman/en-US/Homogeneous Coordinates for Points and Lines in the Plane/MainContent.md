@@ -1,13 +1,13 @@
 ## Introduction
-In the familiar world of Cartesian geometry, points are pairs of numbers and lines are simple equations. Yet, this seemingly straightforward system contains awkward exceptions and requires different mathematical tools for different tasks. What if there were a way to describe geometry that was more unified, elegant, and powerful? What if a small change in perspective could make [parallel lines meet](@article_id:176660), turn [complex sequences](@article_id:174547) of transformations into a single action, and reveal a beautiful symmetry hidden within the plane?
+In the familiar world of Cartesian geometry, points are pairs of numbers and lines are simple equations. Yet, this seemingly straightforward system contains awkward exceptions and requires different mathematical tools for different tasks. What if there were a way to describe geometry that was more unified, elegant, and powerful? What if a small change in perspective could make [parallel lines meet](@keyword=parallel_lines_meet|lang=en-US|style=Feynman), turn [complex sequences](@keyword=complex_sequences|lang=en-US|style=Feynman) of transformations into a single action, and reveal a beautiful symmetry hidden within the plane?
 
-This article introduces **[homogeneous coordinates](@article_id:154075)**, a system that achieves all of this and more. By representing 2D points and lines with three-component vectors, we step into the world of projective geometry, where exceptions disappear and seemingly distinct concepts become two sides of the same coin. This is not just a mathematical curiosity; it is the foundational language that powers modern [computer graphics](@article_id:147583), [robotics](@article_id:150129), and advanced geometric study.
+This article introduces **[homogeneous coordinates](@keyword=homogeneous_coordinates|lang=en-US|style=Feynman)**, a system that achieves all of this and more. By representing 2D points and lines with three-component vectors, we step into the world of projective geometry, where exceptions disappear and seemingly distinct concepts become two sides of the same coin. This is not just a mathematical curiosity; it is the foundational language that powers modern [computer graphics](@keyword=computer_graphics|lang=en-US|style=Feynman), [robotics](@keyword=robotics|lang=en-US|style=Feynman), and advanced geometric study.
 
 Across the following sections, we will embark on a journey to understand this transformative idea. We will begin by exploring the core **Principles and Mechanisms**, uncovering how the system works and the elegant duality between points and lines. Next, we will survey its broad **Applications and Interdisciplinary Connections**, from creating 3D illusions in video games to providing a new foundation for geometry itself. Finally, you will solidify your understanding through a series of **Hands-On Practices**, applying these concepts to solve concrete geometric problems. Prepare to see the plane in a new, remarkably unified light.
 
 ## Principles and Mechanisms
 
-So, we've been introduced to a curious new way of thinking about the good old-fashioned plane. We take a simple point, $(x, y)$, and complicate things by giving it a third coordinate, turning it into a triplet like $(X, Y, W)$. This might seem like a strange step backward, making things more complex. But as we'll see, this small change of perspective, this leap into what we call **[homogeneous coordinates](@article_id:154075)**, doesn't complicate things—it simplifies them. It smooths out the rough edges of geometry and reveals a landscape of breathtaking symmetry and unity that was previously hidden from view.
+So, we've been introduced to a curious new way of thinking about the good old-fashioned plane. We take a simple point, $(x, y)$, and complicate things by giving it a third coordinate, turning it into a triplet like $(X, Y, W)$. This might seem like a strange step backward, making things more complex. But as we'll see, this small change of perspective, this leap into what we call **[homogeneous coordinates](@keyword=homogeneous_coordinates|lang=en-US|style=Feynman)**, doesn't complicate things—it simplifies them. It smooths out the rough edges of geometry and reveals a landscape of breathtaking symmetry and unity that was previously hidden from view.
 
 ### The Great Unification: One More Number to Rule Them All
 
@@ -45,9 +45,9 @@ But stop and think for a moment. A point is a 3-vector. A line is a 3-vector. Ap
 
 ### The Universal Tool: The Cross Product
 
-In ordinary geometry, if you have two distinct points, you can draw a unique line through them. If you have two (non-parallel) lines, they have a unique intersection point. These seem like two different operations. But in the world of [homogeneous coordinates](@article_id:154075), they become one and the same.
+In ordinary geometry, if you have two distinct points, you can draw a unique line through them. If you have two (non-parallel) lines, they have a unique intersection point. These seem like two different operations. But in the world of [homogeneous coordinates](@keyword=homogeneous_coordinates|lang=en-US|style=Feynman), they become one and the same.
 
-Suppose you have two points, $\mathbf{p}_1 = (X_1, Y_1, W_1)$ and $\mathbf{p}_2 = (X_2, Y_2, W_2)$. How do you find the line $\mathbf{l}$ that passes through them? By the principle of duality, we might guess that this "joining" of two points into a line is related to the "meeting" of two lines at a point. The tool that does both is the **[vector cross product](@article_id:155990)**.
+Suppose you have two points, $\mathbf{p}_1 = (X_1, Y_1, W_1)$ and $\mathbf{p}_2 = (X_2, Y_2, W_2)$. How do you find the line $\mathbf{l}$ that passes through them? By the principle of duality, we might guess that this "joining" of two points into a line is related to the "meeting" of two lines at a point. The tool that does both is the **[vector cross product](@keyword=vector_cross_product|lang=en-US|style=Feynman)**.
 
 Let's just declare that the line passing through $\mathbf{p}_1$ and $\mathbf{p}_2$ is given by:
 $$ \mathbf{l} = \mathbf{p}_1 \times \mathbf{p}_2 $$
@@ -57,7 +57,7 @@ Now for the dual. How do we find the intersection point $\mathbf{p}$ of two line
 $$ \mathbf{p} = \mathbf{l}_1 \times \mathbf{l}_2 $$
 The logic is identical. The resulting vector $\mathbf{p}$ is orthogonal to both $\mathbf{l}_1$ and $\mathbf{l}_2$, meaning $\mathbf{l}_1 \cdot \mathbf{p} = 0$ and $\mathbf{l}_2 \cdot \mathbf{p} = 0$. This means the point $\mathbf{p}$ lies on both lines simultaneously. It must be their intersection point!
 
-This single, elegant operation now allows us to solve [complex geometry](@article_id:158586) problems with the simple, mechanical application of a formula. The tedious algebra of solving [simultaneous equations](@article_id:192744) is replaced by a single [cross product](@article_id:156255).
+This single, elegant operation now allows us to solve [complex geometry](@keyword=complex_geometry|lang=en-US|style=Feynman) problems with the simple, mechanical application of a formula. The tedious algebra of solving [simultaneous equations](@keyword=simultaneous_equations|lang=en-US|style=Feynman) is replaced by a single [cross product](@keyword=cross_product|lang=en-US|style=Feynman).
 
 ### Solving an Old Riddle: Where Parallel Lines Meet
 
@@ -66,7 +66,7 @@ So, our new system is elegant for the things that already worked. But what about
 Let's not be afraid. Let's trust our new machinery. Consider two parallel lines:
 $$L_1: 2x + 5y - 3 = 0 \quad \implies \quad \mathbf{l}_1 = (2, 5, -3)$$
 $$L_2: 2x + 5y + 8 = 0 \quad \implies \quad \mathbf{l}_2 = (2, 5, 8)$$
-They are parallel because their $a$ and $b$ coefficients are the same. Let's find their intersection point $\mathbf{p}$ with our universal [cross product](@article_id:156255) tool:
+They are parallel because their $a$ and $b$ coefficients are the same. Let's find their intersection point $\mathbf{p}$ with our universal [cross product](@keyword=cross_product|lang=en-US|style=Feynman) tool:
 $$ \mathbf{p} = \mathbf{l}_1 \times \mathbf{l}_2 = (2, 5, -3) \times (2, 5, 8) $$
 Calculating the components:
 $$ X = (5)(8) - (-3)(5) = 40 + 15 = 55 $$
@@ -76,22 +76,22 @@ So our intersection point is $\mathbf{p} = (55, -22, 0)$. Remembering that scale
 
 What is this point? If we try to convert it back to Cartesian form, we get $x = X/W = 5/0$ and $y = Y/W = -2/0$. Division by zero! Our beautiful system seems to have broken. But it hasn't. It has given us a meaningful answer. This is the system's way of telling us that the point is not in the ordinary, finite plane. The third component, $W=0$, is the calling card of a **point at infinity**.
 
-We can even watch a point race off to infinity. Imagine a horizontal line $y=c_0$ and a line through the origin $y = (\tan \theta) x$. As you let the angle $\theta$ get smaller and smaller, the second line gets closer and closer to being horizontal, and the intersection point shoots off to the right. In the old geometry, the intersection point simply ceases to exist when $\theta = 0$. In [homogeneous coordinates](@article_id:154075), the intersection point smoothly approaches the limiting vector $(1, 0, 0)$. This is the "point at infinity" in the horizontal direction.
+We can even watch a point race off to infinity. Imagine a horizontal line $y=c_0$ and a line through the origin $y = (\tan \theta) x$. As you let the angle $\theta$ get smaller and smaller, the second line gets closer and closer to being horizontal, and the intersection point shoots off to the right. In the old geometry, the intersection point simply ceases to exist when $\theta = 0$. In [homogeneous coordinates](@keyword=homogeneous_coordinates|lang=en-US|style=Feynman), the intersection point smoothly approaches the limiting vector $(1, 0, 0)$. This is the "point at infinity" in the horizontal direction.
 
-This is the punchline. In the **projective plane**, which is the world described by [homogeneous coordinates](@article_id:154075), there are no exceptions. *Any two distinct lines intersect at exactly one point.* If the lines are parallel in the Euclidean sense, their intersection is simply one of these new, perfectly well-behaved [points at infinity](@article_id:172019). The ugly exception has been absorbed into a more general, more elegant rule.
+This is the punchline. In the **projective plane**, which is the world described by [homogeneous coordinates](@keyword=homogeneous_coordinates|lang=en-US|style=Feynman), there are no exceptions. *Any two distinct lines intersect at exactly one point.* If the lines are parallel in the Euclidean sense, their intersection is simply one of these new, perfectly well-behaved [points at infinity](@keyword=points_at_infinity|lang=en-US|style=Feynman). The ugly exception has been absorbed into a more general, more elegant rule.
 
 ### The Grand Symphony: Collinearity and Concurrency
 
-The symphony of duality has one more magnificent movement. Think of three points: $\mathbf{p}_1, \mathbf{p}_2, \mathbf{p}_3$. When do they all lie on the same line? We say they are **collinear**. This means that the three vectors, when viewed in their 3D space, must lie in the same plane that passes through the origin. In other words, they must be linearly dependent. The standard test for [linear dependence](@article_id:149144) of three 3-vectors is to form a matrix with them and check if its determinant is zero.
+The symphony of duality has one more magnificent movement. Think of three points: $\mathbf{p}_1, \mathbf{p}_2, \mathbf{p}_3$. When do they all lie on the same line? We say they are **collinear**. This means that the three vectors, when viewed in their 3D space, must lie in the same plane that passes through the origin. In other words, they must be linearly dependent. The standard test for [linear dependence](@keyword=linear_dependence|lang=en-US|style=Feynman) of three 3-vectors is to form a matrix with them and check if its determinant is zero.
 $$
 \text{Points are collinear} \iff \det(\mathbf{p}_1, \mathbf{p}_2, \mathbf{p}_3) = 0
 $$
 This gives us a simple, powerful test for collinearity.
 
-Now, let the [principle of duality](@article_id:276121) sing. What is the dual statement? Let's take three *lines*, $\mathbf{l}_1, \mathbf{l}_2, \mathbf{l}_3$. What does it mean if *their* determinant is zero?
+Now, let the [principle of duality](@keyword=principle_of_duality|lang=en-US|style=Feynman) sing. What is the dual statement? Let's take three *lines*, $\mathbf{l}_1, \mathbf{l}_2, \mathbf{l}_3$. What does it mean if *their* determinant is zero?
 $$
 \det(\mathbf{l}_1, \mathbf{l}_2, \mathbf{l}_3) = 0
 $$
 Geometrically, this condition means that the three lines all intersect at a single, common point. We say they are **concurrent**. The very same algebraic condition, when applied to line vectors, describes a different but perfectly analogous geometric property.
 
-This is the profound beauty of [homogeneous coordinates](@article_id:154075). Every theorem about points and lines has a mirror-image twin. Finding the line through two points is the same process as finding the point on two lines. The condition for three points to be on a line has the exact same form as the condition for three lines to pass through a point. This is the unity that was hiding behind the familiar facade of Cartesian geometry, revealed by simply adding one more number.
+This is the profound beauty of [homogeneous coordinates](@keyword=homogeneous_coordinates|lang=en-US|style=Feynman). Every theorem about points and lines has a mirror-image twin. Finding the line through two points is the same process as finding the point on two lines. The condition for three points to be on a line has the exact same form as the condition for three lines to pass through a point. This is the unity that was hiding behind the familiar facade of Cartesian geometry, revealed by simply adding one more number.

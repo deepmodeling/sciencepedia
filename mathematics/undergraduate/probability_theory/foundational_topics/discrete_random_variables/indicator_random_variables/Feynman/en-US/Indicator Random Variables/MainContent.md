@@ -1,11 +1,11 @@
 ## Introduction
 How do you find the average outcome of a random event when the number of possibilities is astronomically large? Consider a social network with a million users, where friendships form randomly. What is the expected number of 'friend triangles'? Or in a large-scale DNA sequencing process, what is the average number of correctly identified gene fragments? These questions seem computationally formidable, bogged down by tangled dependencies and a vast sea of possibilities. However, a surprisingly simple tool from probability theory—the indicator random variable—provides an elegant way to cut through this complexity. This article will introduce you to this powerful method, revealing how breaking down a large problem into a series of simple 'yes/no' questions can lead to remarkably insightful solutions.
 
-In the first chapter, **Principles and Mechanisms**, we will define indicator random variables and explore their fundamental link to probability. You will learn about the 'magic' behind their effectiveness: the [linearity of expectation](@article_id:273019), a property that allows us to find the total expected value by simply summing the parts, even when they are not independent. We will also contrast this with the more complex calculation of variance, introducing covariance as the measure of dependency.
+In the first chapter, **Principles and Mechanisms**, we will define indicator random variables and explore their fundamental link to probability. You will learn about the 'magic' behind their effectiveness: the [linearity of expectation](@keyword=linearity_of_expectation|lang=en-US|style=Feynman), a property that allows us to find the total expected value by simply summing the parts, even when they are not independent. We will also contrast this with the more complex calculation of variance, introducing covariance as the measure of dependency.
 
-Next, in **Applications and Interdisciplinary Connections**, we will take this tool on a tour through various fields. From biology and computer science to [network theory](@article_id:149534) and [combinatorics](@article_id:143849), you will see how indicator variables provide elegant answers to practical problems, such as analyzing the [quicksort algorithm](@article_id:637442), calculating connections in [random graphs](@article_id:269829), and solving classic puzzles like the "[hat-check problem](@article_id:181517)".
+Next, in **Applications and Interdisciplinary Connections**, we will take this tool on a tour through various fields. From biology and computer science to [network theory](@keyword=network_theory|lang=en-US|style=Feynman) and [combinatorics](@keyword=combinatorics|lang=en-US|style=Feynman), you will see how indicator variables provide elegant answers to practical problems, such as analyzing the [quicksort algorithm](@keyword=quicksort_algorithm|lang=en-US|style=Feynman), calculating connections in [random graphs](@keyword=random_graphs|lang=en-US|style=Feynman), and solving classic puzzles like the "[hat-check problem](@keyword=hat_check_problem|lang=en-US|style=Feynman)".
 
-Finally, to solidify your understanding, the **Hands-On Practices** section provides a curated set of exercises. These problems will challenge you to apply the concepts of indicator variables and [linearity of expectation](@article_id:273019) to different scenarios, building your skills from foundational mechanics to more abstract combinatorial applications. Let's begin by exploring the core principles of this deceptively simple technique.
+Finally, to solidify your understanding, the **Hands-On Practices** section provides a curated set of exercises. These problems will challenge you to apply the concepts of indicator variables and [linearity of expectation](@keyword=linearity_of_expectation|lang=en-US|style=Feynman) to different scenarios, building your skills from foundational mechanics to more abstract combinatorial applications. Let's begin by exploring the core principles of this deceptively simple technique.
 
 ## Principles and Mechanisms
 
@@ -19,7 +19,7 @@ And yet, the answer can be found in seconds with a wonderfully simple, almost de
 
 An indicator random variable is nothing more than a mathematical way of asking a yes-or-no question. We define a variable, let's call it $I$, that is equal to 1 ("yes") if a certain event happens, and 0 ("no") if it doesn't. That's it. It’s a simple switch.
 
-Its true power is revealed when we consider its **expectation**. The [expectation of a random variable](@article_id:261592) is its long-run average value. For our simple switch $I$, the calculation is trivial:
+Its true power is revealed when we consider its **expectation**. The [expectation of a random variable](@keyword=expectation_of_a_random_variable|lang=en-US|style=Feynman) is its long-run average value. For our simple switch $I$, the calculation is trivial:
 $$
 \mathbb{E}[I] = 1 \cdot \mathbb{P}(I=1) + 0 \cdot \mathbb{P}(I=0) = \mathbb{P}(I=1)
 $$
@@ -41,37 +41,37 @@ The stunningly beautiful answer is yes. This is thanks to one of the most fundam
 $$
 \mathbb{E}[X+Y] = \mathbb{E}[X] + \mathbb{E}[Y]
 $$
-This extends to any number of variables. The most magical part of this property is that it holds true **whether the variables are independent or not**. This is wildly non-intuitive. Think about it: if finding money in your left pocket makes it more likely you'll find money in your right pocket (perhaps a rich aunt visited), the two events are dependent. Yet, [linearity of expectation](@article_id:273019) says that your total expected findings are still just the sum of what you expect to find in each pocket individually.
+This extends to any number of variables. The most magical part of this property is that it holds true **whether the variables are independent or not**. This is wildly non-intuitive. Think about it: if finding money in your left pocket makes it more likely you'll find money in your right pocket (perhaps a rich aunt visited), the two events are dependent. Yet, [linearity of expectation](@keyword=linearity_of_expectation|lang=en-US|style=Feynman) says that your total expected findings are still just the sum of what you expect to find in each pocket individually.
 
 This principle allows us to solve complex problems by breaking them down into a sum of simple indicator variables.
 
-Let's consider a technology company with $n$ servers. A monitoring system randomly selects a subset of servers for a diagnostic test by generating an $n$-bit binary string, where each of the $2^n$ strings is equally likely. A '1' in position $i$ means server $i$ is selected. What is the expected number of servers tested? 
+Let's consider a technology company with $n$ servers. A monitoring system randomly selects a subset of servers for a diagnostic test by generating an $n$-bit binary string, where each of the $2^n$ strings is equally likely. A '1' in position $i$ means server $i$ is selected. What is the expected number of servers tested? [@problem_id:1365974]
 
-Trying to count this directly is a mess. But we can define an indicator $X_i=1$ if server $i$ is chosen, and $X_i=0$ otherwise. The total number of selected servers is $X = \sum_{i=1}^n X_i$. By [linearity of expectation](@article_id:273019), $\mathbb{E}[X] = \sum_{i=1}^n \mathbb{E}[X_i]$. For any server $i$, its bit is '1' in exactly half of the $2^n$ possible strings, so $\mathbb{P}(X_i=1) = 0.5$. Thus, $\mathbb{E}[X_i] = 0.5$. The total expected number of servers is simply the sum over all $n$ servers:
+Trying to count this directly is a mess. But we can define an indicator $X_i=1$ if server $i$ is chosen, and $X_i=0$ otherwise. The total number of selected servers is $X = \sum_{i=1}^n X_i$. By [linearity of expectation](@keyword=linearity_of_expectation|lang=en-US|style=Feynman), $\mathbb{E}[X] = \sum_{i=1}^n \mathbb{E}[X_i]$. For any server $i$, its bit is '1' in exactly half of the $2^n$ possible strings, so $\mathbb{P}(X_i=1) = 0.5$. Thus, $\mathbb{E}[X_i] = 0.5$. The total expected number of servers is simply the sum over all $n$ servers:
 $$
 \mathbb{E}[X] = \sum_{i=1}^n 0.5 = \frac{n}{2}
 $$
-Elegant. Simple. Powerful. We solved the problem without ever touching the complexity of $2^n$ possibilities. This same logic tells us that if two committees are formed from $n$ people, where each person is randomly assigned to each committee with a 50% chance, the expected number of people on both committees is $n/4$, because for any person, the chance of being in both is $0.5 \times 0.5 = 0.25$. 
+Elegant. Simple. Powerful. We solved the problem without ever touching the complexity of $2^n$ possibilities. This same logic tells us that if two committees are formed from $n$ people, where each person is randomly assigned to each committee with a 50% chance, the expected number of people on both committees is $n/4$, because for any person, the chance of being in both is $0.5 \times 0.5 = 0.25$. [@problem_id:1365989]
 
-The real power of linearity shines in problems with clear dependencies. Consider the famous "[hat-check problem](@article_id:181517)". If $N$ people throw their hats in a bin and get one back at random, what's the expected number of people who get their own hat back? This is a classic case of [sampling without replacement](@article_id:276385); if person 1 gets person 2's hat, person 2 cannot get their own hat back. The outcomes are dependent. Yet, linearity lets us ignore this!
+The real power of linearity shines in problems with clear dependencies. Consider the famous "[hat-check problem](@keyword=hat_check_problem|lang=en-US|style=Feynman)". If $N$ people throw their hats in a bin and get one back at random, what's the expected number of people who get their own hat back? This is a classic case of [sampling without replacement](@keyword=sampling_without_replacement|lang=en-US|style=Feynman); if person 1 gets person 2's hat, person 2 cannot get their own hat back. The outcomes are dependent. Yet, linearity lets us ignore this!
 
-Let's look at a more general version: a genomics lab misplaces $N$ DNA fragments belonging to $k$ different categories into $N$ categorized wells . A fragment is correctly categorized if it ends up in a well of its own category. Let's find the expected number of correctly categorized fragments.
+Let's look at a more general version: a genomics lab misplaces $N$ DNA fragments belonging to $k$ different categories into $N$ categorized wells [@problem_id:1365955]. A fragment is correctly categorized if it ends up in a well of its own category. Let's find the expected number of correctly categorized fragments.
 For any single fragment, what is the chance it's placed correctly? If the fragment is from category $i$, which has $n_i$ members, there are $n_i$ correct wells for it out of a total of $N$ wells. So, the probability is $\frac{n_i}{N}$.
 The total number of correct fragments is $X = \sum_{j=1}^N I_j$, where $I_j=1$ if fragment $j$ is correct. By linearity, we just sum the individual probabilities (expectations):
 $$
 \mathbb{E}[X] = \sum_{i=1}^{k} \sum_{j=1}^{n_i} \mathbb{P}(\text{fragment } j \text{ of category } i \text{ is correct}) = \sum_{i=1}^{k} n_i \cdot \frac{n_i}{N} = \frac{1}{N} \sum_{i=1}^{k} n_i^2
 $$
-For the classic [hat-check problem](@article_id:181517), we have $N$ categories, each with $n_i=1$. The expected number of people getting their own hat is $\frac{1}{N} \sum_{i=1}^N 1^2 = \frac{N}{N} = 1$. Astoundingly, on average, exactly one person gets their own hat back, regardless of whether there are 10 people or a million!
+For the classic [hat-check problem](@keyword=hat_check_problem|lang=en-US|style=Feynman), we have $N$ categories, each with $n_i=1$. The expected number of people getting their own hat is $\frac{1}{N} \sum_{i=1}^N 1^2 = \frac{N}{N} = 1$. Astoundingly, on average, exactly one person gets their own hat back, regardless of whether there are 10 people or a million!
 
 ### Beyond Simple Counts
 
-The indicator method isn't just for counting things. It can be a crucial step in analyzing more complex quantities. Imagine a company forming a committee of size $k$ from a pool of $E$ engineers and $M$ managers. A "synergy score" is defined as $S = X^2 - Y^2$, where $X$ is the number of engineers and $Y$ is the number of managers on the committee. What is the expected synergy score? 
+The indicator method isn't just for counting things. It can be a crucial step in analyzing more complex quantities. Imagine a company forming a committee of size $k$ from a pool of $E$ engineers and $M$ managers. A "synergy score" is defined as $S = X^2 - Y^2$, where $X$ is the number of engineers and $Y$ is the number of managers on the committee. What is the expected synergy score? [@problem_id:1365984]
 
 The score $S$ is not a simple sum of indicators. But, we can use algebra first. Since $X+Y=k$, we have $Y=k-X$.
 $$
 S = X^2 - (k-X)^2 = X^2 - (k^2 - 2kX + X^2) = 2kX - k^2
 $$
-Now, we can use [linearity of expectation](@article_id:273019) on this new form:
+Now, we can use [linearity of expectation](@keyword=linearity_of_expectation|lang=en-US|style=Feynman) on this new form:
 $$
 \mathbb{E}[S] = \mathbb{E}[2kX - k^2] = 2k \mathbb{E}[X] - k^2
 $$
@@ -87,7 +87,7 @@ We've sung the praises of linearity, celebrating that it doesn't require indepen
 $$
 \text{Var}(X_1 + \dots + X_n) = \text{Var}(X_1) + \dots + \text{Var}(X_n) \quad (\text{if independent})
 $$
-This is beautifully illustrated by the Binomial distribution . A Binomial random variable $X$, which counts successes in $n$ independent trials with success probability $p$, can be seen as the sum of $n$ independent Bernoulli (indicator) variables $Y_i$. The variance of a single indicator is $\text{Var}(Y_i) = \mathbb{E}[Y_i^2] - (\mathbb{E}[Y_i])^2 = p - p^2 = p(1-p)$. Because of independence, we can just sum these up:
+This is beautifully illustrated by the Binomial distribution [@problem_id:6305]. A Binomial random variable $X$, which counts successes in $n$ independent trials with success probability $p$, can be seen as the sum of $n$ independent Bernoulli (indicator) variables $Y_i$. The variance of a single indicator is $\text{Var}(Y_i) = \mathbb{E}[Y_i^2] - (\mathbb{E}[Y_i])^2 = p - p^2 = p(1-p)$. Because of independence, we can just sum these up:
 $$
 \text{Var}(X) = \sum_{i=1}^n \text{Var}(Y_i) = n p(1-p)
 $$
@@ -104,9 +104,9 @@ This formula is profound. It tells us that the covariance is zero if and only if
 *   A positive covariance means the events tend to happen together.
 *   A negative covariance means they tend to happen separately.
 
-Consider two mutually exclusive outcomes, like a 'Success' ($I_S$) and a 'Failure' ($I_F$) in a single trial. They can't happen together, so $\mathbb{E}[I_S I_F]=0$. The covariance is $\text{Cov}(I_S, I_F) = 0 - p(1-p) = -p(1-p)$ . This strong negative relationship makes perfect sense.
+Consider two mutually exclusive outcomes, like a 'Success' ($I_S$) and a 'Failure' ($I_F$) in a single trial. They can't happen together, so $\mathbb{E}[I_S I_F]=0$. The covariance is $\text{Cov}(I_S, I_F) = 0 - p(1-p) = -p(1-p)$ [@problem_id:1382223]. This strong negative relationship makes perfect sense.
 
-Or consider sampling two wafers from a batch of $N$ with $D$ defectives, without replacement . Let $I_A$ and $I_B$ be indicators for the first and second draws being defective. Drawing a defective wafer first reduces the proportion of defectives left, so $\mathbb{P}(B|A)  \mathbb{P}(B)$. This dependency results in a negative covariance: $\text{Cov}(I_A, I_B) = -\frac{D(N-D)}{N^2(N-1)}$.
+Or consider sampling two wafers from a batch of $N$ with $D$ defectives, without replacement [@problem_id:1365766]. Let $I_A$ and $I_B$ be indicators for the first and second draws being defective. Drawing a defective wafer first reduces the proportion of defectives left, so $\mathbb{P}(B|A)  \mathbb{P}(B)$. This dependency results in a negative covariance: $\text{Cov}(I_A, I_B) = -\frac{D(N-D)}{N^2(N-1)}$.
 
 The full formula for the variance of a sum is:
 $$
@@ -114,4 +114,4 @@ $$
 $$
 This formula reveals why linearity of expectation is such a gift. To find the exact expectation of a sum, we only need the individual expectations. But to find the variance of a sum, we need to understand the variance of every single variable *and* the covariance of every single pair of variables. This is vastly more complicated.
 
-The [indicator variable](@article_id:203893), this simple 0-or-1 switch, does more than just simplify calculations. It provides a bridge between abstract events and concrete numbers. It gives us a strategy—decomposition—and a superpower—[linearity of expectation](@article_id:273019)—to navigate the complexities of randomness. It helps us not only to find the average outcome but also to understand the structure of dependency and variance that governs the world of uncertainty around us.
+The [indicator variable](@keyword=indicator_variable|lang=en-US|style=Feynman), this simple 0-or-1 switch, does more than just simplify calculations. It provides a bridge between abstract events and concrete numbers. It gives us a strategy—decomposition—and a superpower—[linearity of expectation](@keyword=linearity_of_expectation|lang=en-US|style=Feynman)—to navigate the complexities of randomness. It helps us not only to find the average outcome but also to understand the structure of dependency and variance that governs the world of uncertainty around us.

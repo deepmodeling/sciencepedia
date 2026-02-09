@@ -1,11 +1,11 @@
 ## Introduction
-The Fourier transform is a cornerstone of modern mathematics, science, and engineering, providing a powerful lens through which to analyze functions and physical phenomena. Its fundamental ability to decompose a complex signal into its constituent frequencies has unlocked profound insights and practical tools across numerous fields. While many are familiar with its basic application, a deeper understanding requires delving into the elegant mathematical machinery that governs its behavior, particularly its properties on different function spaces and the crucial concept of [energy conservation](@entry_id:146975). This article addresses this need by providing a comprehensive exploration of the Fourier transform's theoretical foundations, culminating in the celebrated Plancherel theorem.
+The Fourier transform is a cornerstone of modern mathematics, science, and engineering, providing a powerful lens through which to analyze functions and physical phenomena. Its fundamental ability to decompose a complex signal into its constituent frequencies has unlocked profound insights and practical tools across numerous fields. While many are familiar with its basic application, a deeper understanding requires delving into the elegant mathematical machinery that governs its behavior, particularly its properties on different function spaces and the crucial concept of energy conservation. This article addresses this need by providing a comprehensive exploration of the Fourier transform's theoretical foundations, culminating in the celebrated Plancherel theorem.
 
-This article is structured to guide you from foundational principles to practical applications. The first chapter, "Principles and Mechanisms," will build the theory from the ground up, defining the transform, introducing the ideal setting of Schwartz space, and meticulously developing the L^2 theory that leads to Plancherel's theorem. The second chapter, "Applications and Interdisciplinary Connections," will demonstrate the transform's utility in [solving partial differential equations](@entry_id:136409), understanding the Heisenberg Uncertainty Principle, and connecting fields like physics, signal processing, and finance. Finally, "Hands-On Practices" will provide opportunities to solidify this knowledge by applying the theorem to concrete problems. By the end, you will have a robust understanding of not just what the Fourier transform does, but why its structure makes it one of the most versatile tools in mathematical analysis.
+This article is structured to guide you from foundational principles to practical applications. The first chapter, "Principles and Mechanisms," will build the theory from the ground up, defining the transform, introducing the ideal setting of Schwartz space, and meticulously developing the L^2 theory that leads to Plancherel's theorem. The second chapter, "Applications and Interdisciplinary Connections," will demonstrate the transform's utility in solving partial differential equations, understanding the Heisenberg Uncertainty Principle, and connecting fields like physics, signal processing, and finance. Finally, "Hands-On Practices" will provide opportunities to solidify this knowledge by applying the theorem to concrete problems. By the end, you will have a robust understanding of not just what the Fourier transform does, but why its structure makes it one of the most versatile tools in mathematical analysis.
 
 ## Principles and Mechanisms
 
-Having introduced the fundamental role of the Fourier transform in analyzing functions and physical phenomena, we now delve into the core principles and mathematical mechanisms that govern its behavior. This chapter will systematically explore the properties of the Fourier transform, its interplay with different [function spaces](@entry_id:143478), and the profound consequences of its structure, culminating in the celebrated Plancherel theorem.
+Having introduced the fundamental role of the Fourier transform in analyzing functions and physical phenomena, we now delve into the core principles and mathematical mechanisms that govern its behavior. This chapter will systematically explore the properties of the Fourier transform, its interplay with different function spaces, and the profound consequences of its structure, culminating in the celebrated Plancherel theorem.
 
 ### Defining the Fourier Transform: Conventions and Consequences
 
@@ -15,7 +15,7 @@ For a suitable function $f: \mathbb{R}^n \to \mathbb{C}$, we define its Fourier 
 $$
 \widehat{f}(\xi) = \int_{\mathbb{R}^n} f(x) e^{-2\pi i x \cdot \xi} \,dx
 $$
-Here, $x \in \mathbb{R}^n$ is the "spatial" or "time" variable, $\xi \in \mathbb{R}^n$ is the "frequency" variable, and $x \cdot \xi$ is the standard Euclidean inner product. The factor of $2\pi$ in the exponent is a deliberate choice. Its presence simplifies the associated formulas for inversion and [energy conservation](@entry_id:146975). Specifically, with this convention, the inverse Fourier transform $\mathcal{F}^{-1}$ is given by:
+Here, $x \in \mathbb{R}^n$ is the "spatial" or "time" variable, $\xi \in \mathbb{R}^n$ is the "frequency" variable, and $x \cdot \xi$ is the standard Euclidean inner product. The factor of $2\pi$ in the exponent is a deliberate choice. Its presence simplifies the associated formulas for inversion and energy conservation. Specifically, with this convention, the inverse Fourier transform $\mathcal{F}^{-1}$ is given by:
 $$
 f(x) = \int_{\mathbb{R}^n} \widehat{f}(\xi) e^{2\pi i x \cdot \xi} \,d\xi
 $$
@@ -23,7 +23,7 @@ Notice the symmetry: the inverse transform is identical to the forward transform
 
 Other conventions exist. For example, the definition $\widehat{f}(\xi) = \int f(x) e^{-i x \cdot \xi} \,dx$ is common in physics and differential equations. This moves the $2\pi$ factor out of the phase. In this case, the inverse transform becomes $f(x) = (2\pi)^{-n} \int \widehat{f}(\xi) e^{i x \cdot \xi} \,d\xi$, and Parseval's identity for the inner product acquires a factor of $(2\pi)^{-n}$. Another popular choice is the "unitary" convention $\widehat{f}(\xi) = (2\pi)^{-n/2} \int f(x) e^{-i x \cdot \xi} \,dx$, which distributes the normalization factor symmetrically between the forward and inverse transforms, both of which then carry a $(2\pi)^{-n/2}$ prefactor.
 
-Our chosen convention, however, yields a particularly beautiful result for the $L^2$ norm, which is that the Fourier transform is a **[unitary operator](@entry_id:155165)**. This means it preserves the inner product and, consequently, the norm (or "energy") of a function without any scaling factors. This leads directly to the Plancherel identity:
+Our chosen convention, however, yields a particularly beautiful result for the $L^2$ norm, which is that the Fourier transform is a **unitary operator**. This means it preserves the inner product and, consequently, the norm (or "energy") of a function without any scaling factors. This leads directly to the Plancherel identity:
 $$
 \int_{\mathbb{R}^n} |f(x)|^2 \,dx = \int_{\mathbb{R}^n} |\widehat{f}(\xi)|^2 \,d\xi
 $$
@@ -31,15 +31,15 @@ This conservation law is a cornerstone of the theory, and our choice of normaliz
 
 ### The Schwartz Space: The Natural Domain for the Fourier Transform
 
-While the Fourier transform can be defined on various [function spaces](@entry_id:143478), there is one space on which it behaves exceptionally well: the **Schwartz space**, denoted $\mathcal{S}(\mathbb{R}^n)$. This space consists of all infinitely differentiable functions $f \in C^\infty(\mathbb{R}^n)$ that, along with all their derivatives, decay faster than any inverse polynomial. Formally, for any multi-indices $\alpha, \beta \in \mathbb{N}_0^n$, the [seminorm](@entry_id:264573)
+While the Fourier transform can be defined on various function spaces, there is one space on which it behaves exceptionally well: the **Schwartz space**, denoted $\mathcal{S}(\mathbb{R}^n)$. This space consists of all infinitely differentiable functions $f \in C^\infty(\mathbb{R}^n)$ that, along with all their derivatives, decay faster than any inverse polynomial. Formally, for any multi-indices $\alpha, \beta \in \mathbb{N}_0^n$, the seminorm
 $$
 p_{\alpha,\beta}(f) := \sup_{x \in \mathbb{R}^{n}} |x^{\alpha} \partial^{\beta} f(x)|
 $$
 is finite. Functions like the Gaussian $f(x) = e^{-c|x|^2}$ for $c>0$ are canonical examples of Schwartz functions.
 
-The Schwartz space is the ideal domain for the Fourier transform because the transform maps $\mathcal{S}(\mathbb{R}^n)$ to itself, and is in fact an [isomorphism](@entry_id:137127). To understand why, we must examine two fundamental operational properties:
+The Schwartz space is the ideal domain for the Fourier transform because the transform maps $\mathcal{S}(\mathbb{R}^n)$ to itself, and is in fact an isomorphism. To understand why, we must examine two fundamental operational properties:
 
-1.  **Transform of a Derivative**: How does differentiation in the spatial domain affect the frequency domain? By using [integration by parts](@entry_id:136350) (justified by the rapid decay of Schwartz functions, which ensures boundary terms vanish), we can show that for $f \in \mathcal{S}(\mathbb{R}^n)$:
+1.  **Transform of a Derivative**: How does differentiation in the spatial domain affect the frequency domain? By using integration by parts (justified by the rapid decay of Schwartz functions, which ensures boundary terms vanish), we can show that for $f \in \mathcal{S}(\mathbb{R}^n)$:
     $$
     \widehat{\partial^\alpha f}(\xi) = (2\pi i \xi)^\alpha \widehat{f}(\xi)
     $$
@@ -51,7 +51,7 @@ The Schwartz space is the ideal domain for the Fourier transform because the tra
     $$
     This shows that multiplication by a polynomial in the spatial domain is converted into differentiation in the frequency domain.
 
-These two rules demonstrate the remarkable duality inherent in Fourier analysis. Together, they prove that if $f \in \mathcal{S}(\mathbb{R}^n)$, its Fourier transform $\widehat{f}$ must also be in $\mathcal{S}(\mathbb{R}^n)$. A derivative of $\widehat{f}$ corresponds to the transform of a rapidly decaying function, which is bounded. Multiplying $\widehat{f}$ by a polynomial corresponds to the transform of a derivative of $f$, which is also bounded. Combining these, we can show that any [seminorm](@entry_id:264573) $p_{\alpha, \beta}(\widehat{f})$ is finite if $f \in \mathcal{S}(\mathbb{R}^n)$.
+These two rules demonstrate the remarkable duality inherent in Fourier analysis. Together, they prove that if $f \in \mathcal{S}(\mathbb{R}^n)$, its Fourier transform $\widehat{f}$ must also be in $\mathcal{S}(\mathbb{R}^n)$. A derivative of $\widehat{f}$ corresponds to the transform of a rapidly decaying function, which is bounded. Multiplying $\widehat{f}$ by a polynomial corresponds to the transform of a derivative of $f$, which is also bounded. Combining these, we can show that any seminorm $p_{\alpha, \beta}(\widehat{f})$ is finite if $f \in \mathcal{S}(\mathbb{R}^n)$.
 
 ### The Smoothness-Decay Duality
 
@@ -73,13 +73,13 @@ A transform is of limited use if one cannot invert it. The Fourier inversion the
 
 -   **For Schwartz Functions**: For $f \in \mathcal{S}(\mathbb{R}^n)$, the situation is ideal. Since $\widehat{f}$ is also in $\mathcal{S}(\mathbb{R}^n)$ and therefore absolutely integrable, the inversion integral converges absolutely and uniformly. The equality $f(x) = \int \widehat{f}(\xi) e^{2\pi i x \cdot \xi} d\xi$ holds pointwise for all $x \in \mathbb{R}^n$, and this equality persists under differentiation.
 
--   **For $L^1$ Functions**: If we only assume $f \in L^1(\mathbb{R}^n)$, its transform $\widehat{f}$ is guaranteed to be a bounded, continuous function that vanishes at infinity (the **Riemann-Lebesgue lemma**). However, $\widehat{f}$ is not necessarily in $L^1(\mathbb{R}^n)$. If we impose the stronger condition that both $f \in L^1$ and $\widehat{f} \in L^1$, then the inversion integral converges absolutely, and the identity $f(x) = \int \widehat{f}(\xi) e^{2\pi i x \cdot \xi} d\xi$ holds for almost every $x$. The right-hand side defines a continuous function that is equal to $f$ [almost everywhere](@entry_id:146631).
+-   **For $L^1$ Functions**: If we only assume $f \in L^1(\mathbb{R}^n)$, its transform $\widehat{f}$ is guaranteed to be a bounded, continuous function that vanishes at infinity (the **Riemann-Lebesgue lemma**). However, $\widehat{f}$ is not necessarily in $L^1(\mathbb{R}^n)$. If we impose the stronger condition that both $f \in L^1$ and $\widehat{f} \in L^1$, then the inversion integral converges absolutely, and the identity $f(x) = \int \widehat{f}(\xi) e^{2\pi i x \cdot \xi} d\xi$ holds for almost every $x$. The right-hand side defines a continuous function that is equal to $f$ almost everywhere.
 
-The requirement that $\widehat{f} \in L^1$ is a significant restriction. A simple and classic example demonstrates this. Consider the [indicator function](@entry_id:154167) of the interval $[-1, 1]$ in one dimension, $f(x) = \mathbf{1}_{[-1,1]}(x)$. This function is clearly in $L^1(\mathbb{R})$ (its integral is 2) and also in $L^2(\mathbb{R})$. A direct calculation yields its Fourier transform (using the convention $\exp(-ix\xi)$ for simplicity in this example) as $\widehat{f}(\xi) = 2\frac{\sin(\xi)}{\xi}$. This function, known as the sinc function, is not in $L^1(\mathbb{R})$; its integral diverges due to the slow $1/|\xi|$ decay. This shows that the Fourier transform does not map $L^1$ to $L^1$. Consequently, for this [simple function](@entry_id:161332), we cannot justify the inversion formula by appealing to [absolute convergence](@entry_id:146726). This limitation motivates the need for a more powerful framework.
+The requirement that $\widehat{f} \in L^1$ is a significant restriction. A simple and classic example demonstrates this. Consider the indicator function of the interval $[-1, 1]$ in one dimension, $f(x) = \mathbf{1}_{[-1,1]}(x)$. This function is clearly in $L^1(\mathbb{R})$ (its integral is 2) and also in $L^2(\mathbb{R})$. A direct calculation yields its Fourier transform (using the convention $\exp(-ix\xi)$ for simplicity in this example) as $\widehat{f}(\xi) = 2\frac{\sin(\xi)}{\xi}$. This function, known as the sinc function, is not in $L^1(\mathbb{R})$; its integral diverges due to the slow $1/|\xi|$ decay. This shows that the Fourier transform does not map $L^1$ to $L^1$. Consequently, for this simple function, we cannot justify the inversion formula by appealing to absolute convergence. This limitation motivates the need for a more powerful framework.
 
 ### The $L^2$ Theory: Plancherel's Theorem and Unitarity
 
-The most satisfactory and general theory of the Fourier transform is built on the Hilbert space $L^2(\mathbb{R}^n)$ of square-integrable functions. Since a general $L^2$ function may not be in $L^1$, its Fourier transform cannot always be defined by the standard integral. The solution is to first define the transform on the Schwartz space $\mathcal{S}(\mathbb{R}^n)$, which is a [dense subspace](@entry_id:261392) of $L^2(\mathbb{R}^n)$, and then uniquely extend it by continuity to all of $L^2(\mathbb{R}^n)$. The result of this extension is summarized by **Plancherel's theorem**.
+The most satisfactory and general theory of the Fourier transform is built on the Hilbert space $L^2(\mathbb{R}^n)$ of square-integrable functions. Since a general $L^2$ function may not be in $L^1$, its Fourier transform cannot always be defined by the standard integral. The solution is to first define the transform on the Schwartz space $\mathcal{S}(\mathbb{R}^n)$, which is a dense subspace of $L^2(\mathbb{R}^n)$, and then uniquely extend it by continuity to all of $L^2(\mathbb{R}^n)$. The result of this extension is summarized by **Plancherel's theorem**.
 
 **Plancherel's theorem** states that the Fourier transform $\mathcal{F}$ extends to a **unitary operator** on $L^2(\mathbb{R}^n)$. Unitarity is a statement about the preservation of the inner product structure of the Hilbert space. For any $f, g \in L^2(\mathbb{R}^n)$, we have the identity:
 $$
@@ -95,7 +95,7 @@ $$
 $$
 This identity can be interpreted physically as the **conservation of energy**. If $|f(x)|^2$ represents the energy density of a signal in space, then $|\widehat{f}(\xi)|^2$ is its energy density in the frequency domain. Plancherel's theorem asserts that the total energy of the signal is the same, whether computed in the spatial domain or the frequency domain. It is crucial to remember this is an equality of integrals, not of the integrands; it does not imply a pointwise relation like $|f(x)|=|\widehat{f}(x)|$.
 
-This conservation law also has a geometric interpretation. Let $R \in O(n)$ be an [orthogonal transformation](@entry_id:155650) (a rotation or reflection). It is a property of the Fourier transform that if we rotate a function, its Fourier transform is also rotated: if $g(x) = f(Rx)$, then $\widehat{g}(\xi) = \widehat{f}(R\xi)$. Furthermore, the total energy is invariant under such a rotation in either space. This is because orthogonal transformations preserve the [volume element](@entry_id:267802) ($dx$ and $d\xi$):
+This conservation law also has a geometric interpretation. Let $R \in O(n)$ be an orthogonal transformation (a rotation or reflection). It is a property of the Fourier transform that if we rotate a function, its Fourier transform is also rotated: if $g(x) = f(Rx)$, then $\widehat{g}(\xi) = \widehat{f}(R\xi)$. Furthermore, the total energy is invariant under such a rotation in either space. This is because orthogonal transformations preserve the volume element ($dx$ and $d\xi$):
 $$
 \int_{\mathbb{R}^n} |\widehat{f}(R\xi)|^2 \,d\xi = \int_{\mathbb{R}^n} |\widehat{f}(\xi)|^2 \,d\xi
 $$
@@ -111,7 +111,7 @@ This means that the $L^2$ norm of the difference between $f$ and the truncated i
 
 The distinct behaviors of the Fourier transform on $L^1$ and $L^2$ are a frequent source of confusion. The **Riemann-Lebesgue lemma** is a cornerstone of the $L^1$ theory, stating that if $f \in L^1(\mathbb{R}^n)$, its transform $\widehat{f}$ is continuous and vanishes at infinity, i.e., $\lim_{|\xi| \to \infty} \widehat{f}(\xi) = 0$.
 
-This property does *not* hold for the $L^2$ theory. It is possible to construct a function $f \in L^2(\mathbb{R})$ whose Fourier transform $\widehat{f}$ is in $L^2(\mathbb{R})$ but does not vanish at infinity. Consider a function in the frequency domain defined as a sum of narrow, disjoint [indicator functions](@entry_id:186820) with unit height, centered at the integers $n=1, 2, 3, \dots$. For instance, let
+This property does *not* hold for the $L^2$ theory. It is possible to construct a function $f \in L^2(\mathbb{R})$ whose Fourier transform $\widehat{f}$ is in $L^2(\mathbb{R})$ but does not vanish at infinity. Consider a function in the frequency domain defined as a sum of narrow, disjoint indicator functions with unit height, centered at the integers $n=1, 2, 3, \dots$. For instance, let
 $$
 \widehat{f}(\xi) = \sum_{n=1}^{\infty} \mathbf{1}_{[n - 1/(4n^2), n + 1/(4n^2)]}(\xi)
 $$
@@ -119,9 +119,9 @@ The $L^2$ norm of this function is $\|\widehat{f}\|_{L^2}^2 = \sum 2/(4n^2) = \f
 
 ### Extension to Tempered Distributions
 
-The power of the Fourier transform is most fully realized when it is extended to the space of **[tempered distributions](@entry_id:193859)**, $\mathcal{S}'(\mathbb{R}^n)$, which is the space of all [continuous linear functionals](@entry_id:262913) on the Schwartz space $\mathcal{S}(\mathbb{R}^n)$. This space includes all $L^p$ functions (for $p \ge 1$), but also more singular objects like the Dirac delta distribution.
+The power of the Fourier transform is most fully realized when it is extended to the space of **tempered distributions**, $\mathcal{S}'(\mathbb{R}^n)$, which is the space of all continuous linear functionals on the Schwartz space $\mathcal{S}(\mathbb{R}^n)$. This space includes all $L^p$ functions (for $p \ge 1$), but also more singular objects like the Dirac delta distribution.
 
-The Fourier transform $\widehat{T}$ of a tempered distribution $T \in \mathcal{S}'(\mathbb{R}^n)$ is defined by duality. Instead of an integral, its definition is based on its action on a [test function](@entry_id:178872) $\varphi \in \mathcal{S}(\mathbb{R}^n)$:
+The Fourier transform $\widehat{T}$ of a tempered distribution $T \in \mathcal{S}'(\mathbb{R}^n)$ is defined by duality. Instead of an integral, its definition is based on its action on a test function $\varphi \in \mathcal{S}(\mathbb{R}^n)$:
 $$
 \langle \widehat{T}, \varphi \rangle := \langle T, \widehat{\varphi} \rangle
 $$
@@ -129,9 +129,9 @@ This clever definition ensures that for any function $f$ that defines a regular 
 $$
 \widehat{\partial^\alpha T} = (2\pi i \xi)^\alpha \widehat{T}
 $$
-where the right-hand side is multiplication of a distribution by a [smooth function](@entry_id:158037).
+where the right-hand side is multiplication of a distribution by a smooth function.
 
-This framework allows us to compute the Fourier transforms of objects that are not functions at all. For example, the Fourier transform of the Dirac delta distribution at the origin, $\delta_0$, is the [constant function](@entry_id:152060) $1$. We see this by testing against $\varphi$:
+This framework allows us to compute the Fourier transforms of objects that are not functions at all. For example, the Fourier transform of the Dirac delta distribution at the origin, $\delta_0$, is the constant function $1$. We see this by testing against $\varphi$:
 $$
 \langle \widehat{\delta_0}, \varphi \rangle = \langle \delta_0, \widehat{\varphi} \rangle = \widehat{\varphi}(0) = \int_{\mathbb{R}^n} \varphi(x) \,dx = \langle 1, \varphi \rangle
 $$

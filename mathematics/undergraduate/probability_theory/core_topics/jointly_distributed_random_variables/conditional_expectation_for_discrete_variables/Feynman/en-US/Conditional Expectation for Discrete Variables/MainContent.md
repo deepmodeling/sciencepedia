@@ -1,7 +1,7 @@
 ## Introduction
 In the study of probability, the expected value gives us a powerful way to predict the long-run average of an experiment. But what happens when our initial assumptions change—when we receive a clue, an observation, or a piece of new information? Our predictions must adapt. This article delves into **Conditional Expectation for Discrete Variables**, the formal framework for updating our expectations in light of new evidence. It addresses the fundamental question: how do we precisely adjust our view of the future when the world of possibilities has been revised?
 
-To navigate this essential topic, we will journey through three distinct chapters. First, in **Principles and Mechanisms**, we will dissect the mathematical machinery of [conditional expectation](@article_id:158646), exploring how techniques like symmetry, independence, and the [law of total expectation](@article_id:267435) allow us to solve complex problems with elegance and insight. Next, **Applications and Interdisciplinary Connections** will reveal the far-reaching impact of this concept, showing how it is used to separate signal from noise in physics, model evolving systems in biology, and analyze the structure of networks in computer science. Finally, our **Hands-On Practices** section provides carefully selected problems to solidify your understanding and build your problem-solving skills.
+To navigate this essential topic, we will journey through three distinct chapters. First, in **Principles and Mechanisms**, we will dissect the mathematical machinery of [conditional expectation](@keyword=conditional_expectation|lang=en-US|style=Feynman), exploring how techniques like symmetry, independence, and the [law of total expectation](@keyword=law_of_total_expectation|lang=en-US|style=Feynman) allow us to solve complex problems with elegance and insight. Next, **Applications and Interdisciplinary Connections** will reveal the far-reaching impact of this concept, showing how it is used to separate signal from noise in physics, model evolving systems in biology, and analyze the structure of networks in computer science. Finally, our **Hands-On Practices** section provides carefully selected problems to solidify your understanding and build your problem-solving skills.
 
 We begin by exploring the core principles that govern how we 'slice' reality to incorporate new information, transforming abstract formulas into a powerful tool for reasoning under uncertainty.
 
@@ -19,7 +19,7 @@ $$
 \mathbb{E}[\text{Number} | \text{Number is prime}] = \frac{2+3+5+7+11+13+17+19+23+29+31}{11} = \frac{160}{11} \approx 14.5
 $$
 
-Our expectation dropped from 18 to about 14.5. This makes sense; there are more small primes than large ones in this range. The clue allowed us to slice away irrelevant parts of reality and refocus our calculations on the world that remains . This is the fundamental operation of conditional expectation: we are computing an average over a new, restricted [sample space](@article_id:269790) defined by our condition.
+Our expectation dropped from 18 to about 14.5. This makes sense; there are more small primes than large ones in this range. The clue allowed us to slice away irrelevant parts of reality and refocus our calculations on the world that remains [@problem_id:1350717]. This is the fundamental operation of conditional expectation: we are computing an average over a new, restricted [sample space](@keyword=sample_space|lang=en-US|style=Feynman) defined by our condition.
 
 ### The Surprising Simplicity of New Information
 
@@ -31,13 +31,13 @@ The expected position is simply the average of these indices:
 $$
 \mathbb{E}[\text{Position} | \text{1 flip}] = \frac{1+2+\dots+n}{n} = \frac{n(n+1)/2}{n} = \frac{n+1}{2}
 $$
-The expected position is right in the middle! This is a beautiful, intuitive result that emerges from the fog of a more complex initial setup .
+The expected position is right in the middle! This is a beautiful, intuitive result that emerges from the fog of a more complex initial setup [@problem_id:1350715].
 
-We see this same pattern in other scenarios. Consider a computing system where the total work units $N$ are distributed between two clusters, A and B, such that the number of units $(x,y)$ satisfies $x+y \le N$. If every valid pair $(x,y)$ is equally likely, and we learn that Cluster A received exactly $k$ units (i.e., $X=k$), what do we expect for Cluster B? The condition $X=k$ restricts our attention to a vertical "slice" of the possibility space. In this slice, the possible values for $Y$ are $\{0, 1, \dots, N-k\}$. And just like before, the initial uniform assumption implies that, within this slice, all these values for $Y$ are equally likely. The [conditional distribution](@article_id:137873) is again uniform, and the expected value is simply the midpoint of this range:
+We see this same pattern in other scenarios. Consider a computing system where the total work units $N$ are distributed between two clusters, A and B, such that the number of units $(x,y)$ satisfies $x+y \le N$. If every valid pair $(x,y)$ is equally likely, and we learn that Cluster A received exactly $k$ units (i.e., $X=k$), what do we expect for Cluster B? The condition $X=k$ restricts our attention to a vertical "slice" of the possibility space. In this slice, the possible values for $Y$ are $\{0, 1, \dots, N-k\}$. And just like before, the initial uniform assumption implies that, within this slice, all these values for $Y$ are equally likely. The [conditional distribution](@keyword=conditional_distribution|lang=en-US|style=Feynman) is again uniform, and the expected value is simply the midpoint of this range:
 $$
 \mathbb{E}[Y | X=k] = \frac{0 + (N-k)}{2} = \frac{N-k}{2}
 $$
-Knowing $X=k$ simplifies the problem to finding the average of a simple sequence of numbers .
+Knowing $X=k$ simplifies the problem to finding the average of a simple sequence of numbers [@problem_id:1350737].
 
 ### Symmetry: The Lazy Person's Guide to Genius
 
@@ -53,9 +53,9 @@ But we know their sum:
 $$
 \mathbb{E}[\text{Chunks on Server 1} | \text{Total is } k] + \mathbb{E}[\text{Chunks on Server 2} | \text{Total is } k] = k
 $$
-Two equal numbers that add up to $k$ must both be $\frac{k}{2}$. The expected number of chunks on Server 1 is simply $\frac{k}{2}$ . No messy formulas, just pure, elegant reasoning.
+Two equal numbers that add up to $k$ must both be $\frac{k}{2}$. The expected number of chunks on Server 1 is simply $\frac{k}{2}$ [@problem_id:1350733]. No messy formulas, just pure, elegant reasoning.
 
-This principle of proportional sharing appears in more complex situations too. In a quality control process where two independent stations stop after finding $r_1$ and $r_2$ defective items, respectively, if we learn that a total of $n$ non-defective items were inspected, the expected number inspected by the first station is $n \frac{r_1}{r_1+r_2}$. The total work, $n$, is shared in proportion to the "difficulty" of each station's task, measured by $r_1$ and $r_2$ .
+This principle of proportional sharing appears in more complex situations too. In a quality control process where two independent stations stop after finding $r_1$ and $r_2$ defective items, respectively, if we learn that a total of $n$ non-defective items were inspected, the expected number inspected by the first station is $n \frac{r_1}{r_1+r_2}$. The total work, $n$, is shared in proportion to the "difficulty" of each station's task, measured by $r_1$ and $r_2$ [@problem_id:1350725].
 
 ### Divide and Conquer: How Information Affects the Pieces
 
@@ -65,13 +65,13 @@ Let's look at a deep-space observatory. The total number of particle detections,
 
 We can write $N = N_A + N_B$, the sum of Type-A and Type-B detections. A wonderful property of this "thinning" of a Poisson process is that the counts $N_A$ and $N_B$ are **independent** random variables. This is huge. It means that learning the value of $N_A$ tells you absolutely nothing new about what to expect for $N_B$. The universe of possibilities for $N_B$ is completely unaffected.
 
-So, we can break down our [conditional expectation](@article_id:158646):
+So, we can break down our [conditional expectation](@keyword=conditional_expectation|lang=en-US|style=Feynman):
 $$
 \mathbb{E}[N | N_A = k] = \mathbb{E}[N_A + N_B | N_A=k] = \mathbb{E}[N_A | N_A=k] + \mathbb{E}[N_B | N_A=k]
 $$
-The first term is easy: the expected value of $N_A$ given that $N_A$ is $k$ is just $k$. For the second term, because of independence, the condition is irrelevant: $\mathbb{E}[N_B | N_A=k] = \mathbb{E}[N_B]$. The unconditional expectation for $N_B$ is its own Poisson rate, which is $\lambda(1-p)$. So, our answer is simply $k + \lambda(1-p)$ . We add the part we know for sure ($k$) to the best guess we've always had about the other part.
+The first term is easy: the expected value of $N_A$ given that $N_A$ is $k$ is just $k$. For the second term, because of independence, the condition is irrelevant: $\mathbb{E}[N_B | N_A=k] = \mathbb{E}[N_B]$. The unconditional expectation for $N_B$ is its own Poisson rate, which is $\lambda(1-p)$. So, our answer is simply $k + \lambda(1-p)$ [@problem_id:1350730]. We add the part we know for sure ($k$) to the best guess we've always had about the other part.
 
-Contrast this with a system of $N$ jobs assigned to $M$ servers, where we're interested in a weighted cost $C = \sum_{i=1}^{M} i X_i$. If we learn that Server 1 got $k$ jobs ($X_1=k$), can we use the same trick? Not quite. The remaining loads $X_2, \dots, X_M$ are *not* independent of the condition, because they must now accommodate the remaining $N-k$ jobs among themselves. We have to re-evaluate their expectations in this new reality. The expected load on any other server $i > 1$ becomes $\frac{N-k}{M-1}$. By plugging this new expectation into the cost formula, we can calculate the total conditional expected cost . The key is to always ask: does my information about one piece constrain the others?
+Contrast this with a system of $N$ jobs assigned to $M$ servers, where we're interested in a weighted cost $C = \sum_{i=1}^{M} i X_i$. If we learn that Server 1 got $k$ jobs ($X_1=k$), can we use the same trick? Not quite. The remaining loads $X_2, \dots, X_M$ are *not* independent of the condition, because they must now accommodate the remaining $N-k$ jobs among themselves. We have to re-evaluate their expectations in this new reality. The expected load on any other server $i > 1$ becomes $\frac{N-k}{M-1}$. By plugging this new expectation into the cost formula, we can calculate the total conditional expected cost [@problem_id:1350742]. The key is to always ask: does my information about one piece constrain the others?
 
 ### The Detective's Work: Unpacking the Clues
 
@@ -81,7 +81,7 @@ Consider a simple random walk, modeling a volatile stock price. At each step, it
 
 The only remaining uncertainty is *when* that single downward step occurred. Since all paths with this composition are equally likely, that one blip could have happened at time $t=1$, or $t=2$, ..., all the way to $t=n$, with equal probability of $\frac{1}{n}$. We have translated the complex condition into a simple, concrete model.
 
-Now we can ask for the expected *maximum* height the walk reached. For each possible time $t$ of the downward step, we can trace the path and find its maximum. Then, we average these maximums over all possible values of $t$. This detective work transforms a difficult problem into a straightforward, though perhaps tedious, calculation, revealing the underlying structure of the conditioned process .
+Now we can ask for the expected *maximum* height the walk reached. For each possible time $t$ of the downward step, we can trace the path and find its maximum. Then, we average these maximums over all possible values of $t$. This detective work transforms a difficult problem into a straightforward, though perhaps tedious, calculation, revealing the underlying structure of the conditioned process [@problem_id:1350721].
 
 ### Building Expectations, One Step at a Time
 
@@ -98,11 +98,11 @@ So, the expected size is the sum of these probabilities:
 $$
 \mathbb{E}[K] = \sum_{k=1}^{n} \Pr(K \ge k) = \sum_{k=1}^{n} p^{k-1} = 1 + p + p^2 + \dots + p^{n-1}
 $$
-This is a simple geometric series, which sums to $\frac{1-p^n}{1-p}$. What seemed like a complex problem about graph components becomes a simple sum, all thanks to a different way of looking at what expectation means .
+This is a simple geometric series, which sums to $\frac{1-p^n}{1-p}$. What seemed like a complex problem about graph components becomes a simple sum, all thanks to a different way of looking at what expectation means [@problem_id:1350707].
 
 ### An Indirect Strategy: The Power of the Opposite
 
-Finally, let us consider a technique that feels a bit like cheating, but is perfectly rigorous: the **Law of Total Expectation**. It states that the overall average of a quantity is the weighted average of its conditional averages. If we partition the world into a set of [mutually exclusive events](@article_id:264624) $A_1, A_2, \dots$, then
+Finally, let us consider a technique that feels a bit like cheating, but is perfectly rigorous: the **Law of Total Expectation**. It states that the overall average of a quantity is the weighted average of its conditional averages. If we partition the world into a set of [mutually exclusive events](@keyword=mutually_exclusive_events|lang=en-US|style=Feynman) $A_1, A_2, \dots$, then
 $$
 \mathbb{E}[S] = \mathbb{E}[S|A_1]\Pr(A_1) + \mathbb{E}[S|A_2]\Pr(A_2) + \dots
 $$
@@ -114,6 +114,6 @@ We can also easily compute the unconditional expectation $\mathbb{E}[S]$ (it's $
 $$
 \underbrace{\mathbb{E}[S]}_{\text{easy}} = \underbrace{\mathbb{E}[S|A]}_{\text{want this}} \underbrace{\Pr(A)}_{\text{easy}} + \underbrace{\mathbb{E}[S|A^c]}_{\text{trivial}} \underbrace{\Pr(A^c)}_{\text{easy}}
 $$
-We can simply rearrange this algebraic equation to solve for our desired quantity, $\mathbb{E}[S|A]$, without ever having to grapple with the messy direct calculation . It's a beautiful example of how looking at a problem from a different angle, and even solving for what you *don't* want, can lead you directly to the answer.
+We can simply rearrange this algebraic equation to solve for our desired quantity, $\mathbb{E}[S|A]$, without ever having to grapple with the messy direct calculation [@problem_id:1350711]. It's a beautiful example of how looking at a problem from a different angle, and even solving for what you *don't* want, can lead you directly to the answer.
 
 From slicing reality to leveraging symmetry and exploiting independence, the principles of conditional expectation are your guide to reasoning in a world of uncertainty. It's the mathematical toolkit for learning from experience.

@@ -6,42 +6,42 @@
 
 ### 作为坐标通用翻译器的联络
 
-让我们从最熟悉的地方开始：平直的欧几里得平面。如果我们使用经典的笛卡尔坐标系 $(x, y)$，[列维-奇维塔联络](@article_id:321511)的表现可以说相当“乏善可陈”。它就是我们在[多元微积分](@article_id:307962)中学到的普通[方向导数](@article_id:368231)，而所有的克里斯托费尔符号（Christoffel symbols）都等于零 。这给了我们一个重要的基准：当空间和[坐标系](@article_id:316753)都是“直”的时候，几何学中没有任何意外。
+让我们从最熟悉的地方开始：平直的欧几里得平面。如果我们使用经典的笛卡尔坐标系 $(x, y)$，[列维-奇维塔联络](@keyword=levi_civita_connection|lang=zh-CN|style=Feynman)的表现可以说相当“乏善可陈”。它就是我们在[多元微积分](@keyword=multivariable_calculus|lang=zh-CN|style=Feynman)中学到的普通[方向导数](@keyword=directional_derivatives|lang=zh-CN|style=Feynman)，而所有的克里斯托费尔符号（Christoffel symbols）都等于零 [@problem_id:3047955]。这给了我们一个重要的基准：当空间和[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)都是“直”的时候，几何学中没有任何意外。
 
-但如果我们换一种视角呢？让我们用极坐标 $(r, \theta)$ 来审视同一个平直的平面 。世界本身没有改变，但我们描述它的语言变了。突然之间，诸如 $\Gamma^{r}_{\theta\theta}=-r$ 和 $\Gamma^{\theta}_{r\theta}=\Gamma^{\theta}_{\theta r}=1/r$ 这样的[克里斯托费尔符号](@article_id:320235)从无到有地冒了出来。
+但如果我们换一种视角呢？让我们用极坐标 $(r, \theta)$ 来审视同一个平直的平面 [@problem_id:3047927]。世界本身没有改变，但我们描述它的语言变了。突然之间，诸如 $\Gamma^{r}_{\theta\theta}=-r$ 和 $\Gamma^{\theta}_{r\theta}=\Gamma^{\theta}_{\theta r}=1/r$ 这样的[克里斯托费尔符号](@keyword=christoffel_symbols|lang=zh-CN|style=Feynman)从无到有地冒了出来。
 
-这些符号是什么？你可以把它们想象成当你身处旋转木马上时感受到的“虚拟力”（如[科里奥利力](@article_id:320500)和[离心力](@article_id:323329)）。旋转木马并非一个奇异的新宇宙，你只是处在一个旋转的[参考系](@article_id:345789)中。同样地，这些[克里斯托费尔符号](@article_id:320235)并非告诉我们空间本身变弯了，而是我们的**坐标网格**是弯曲的。列维-奇维塔联络足够“聪明”，能够精确地捕捉到这一点。它是一个修正因子，解释了当我们移动时，[基向量](@article_id:378298) $\partial_r$ 和 $\partial_\theta$ 是如何扭转和变化的。
+这些符号是什么？你可以把它们想象成当你身处旋转木马上时感受到的“虚拟力”（如[科里奥利力](@keyword=coriolis_force|lang=zh-CN|style=Feynman)和[离心力](@keyword=centrifugal_force|lang=zh-CN|style=Feynman)）。旋转木马并非一个奇异的新宇宙，你只是处在一个旋转的[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)中。同样地，这些[克里斯托费尔符号](@keyword=christoffel_symbols|lang=zh-CN|style=Feynman)并非告诉我们空间本身变弯了，而是我们的**坐标网格**是弯曲的。列维-奇维塔联络足够“聪明”，能够精确地捕捉到这一点。它是一个修正因子，解释了当我们移动时，[基向量](@keyword=basis_vector|lang=zh-CN|style=Feynman) $\partial_r$ 和 $\partial_\theta$ 是如何扭转和变化的。
 
-我们可以证明这一点！让我们沿着极坐标网格中的一个圆周来平行移动一个向量 。平行输运方程需要用到那些非零的克里斯托费尔符号，看起来向量应该会被扭曲。然而，当你解出方程，并完整地绕圆一周后，你会发现向量不多不少，正好变回了它最初的样子。联络中的各项修正，在闭合路径上完美地抵消了“[坐标系](@article_id:316753)力”的影响。这就是列维-奇维塔联络的精妙之处：它能清晰地区分真正的曲率和纯粹由坐标选择带来的“伪影”。
+我们可以证明这一点！让我们沿着极坐标网格中的一个圆周来平行移动一个向量 [@problem_id:3047938]。平行输运方程需要用到那些非零的克里斯托费尔符号，看起来向量应该会被扭曲。然而，当你解出方程，并完整地绕圆一周后，你会发现向量不多不少，正好变回了它最初的样子。联络中的各项修正，在闭合路径上完美地抵消了“[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)力”的影响。这就是列维-奇维塔联络的精妙之处：它能清晰地区分真正的曲率和纯粹由坐标选择带来的“伪影”。
 
 ### 描绘空间的真实形状
 
-那么，在一个**真正**弯曲的空间里，情况又如何呢？让我们来到单位球面 $S^2$ 的表面 。在这里，像 $\Gamma^{\theta}_{\phi\phi} = -\sin(\theta)\cos(\theta)$ 这样的非零克里斯托费尔符号具有了更深层次的含义。它们不再仅仅是我们坐标选择（球坐标）的产物，而是在捕捉球面本身固有的“弯曲度”。
+那么，在一个**真正**弯曲的空间里，情况又如何呢？让我们来到单位球面 $S^2$ 的表面 [@problem_id:3047937]。在这里，像 $\Gamma^{\theta}_{\phi\phi} = -\sin(\theta)\cos(\theta)$ 这样的非零克里斯托费尔符号具有了更深层次的含义。它们不再仅仅是我们坐标选择（球坐标）的产物，而是在捕捉球面本身固有的“弯曲度”。
 
-这个原理是完全通用的。无论我们面对的是由一个函数 $f(r)$ 决定的[旋转曲面](@article_id:325089) ，还是由一个函数图 $z=f(x,y)$ 描述的起伏山峦 ，同样的过程都适用。度规给了我们测量距离的方法，而[黎曼几何基本定理](@article_id:368283)则从度规中赋予了我们一个唯一的联络。这个联络，通过它的[克里斯托费尔符号](@article_id:320235)，包含了所有局部的几何信息。
+这个原理是完全通用的。无论我们面对的是由一个函数 $f(r)$ 决定的[旋转曲面](@keyword=surface_of_revolution|lang=zh-CN|style=Feynman) [@problem_id:3047952]，还是由一个函数图 $z=f(x,y)$ 描述的起伏山峦 [@problem_id:3047915]，同样的过程都适用。度规给了我们测量距离的方法，而[黎曼几何基本定理](@keyword=fundamental_theorem_of_riemannian_geometry|lang=zh-CN|style=Feynman)则从度规中赋予了我们一个唯一的联络。这个联络，通过它的[克里斯托费尔符号](@keyword=christoffel_symbols|lang=zh-CN|style=Feynman)，包含了所有局部的几何信息。
 
-这直接导向了[数学史](@article_id:356453)上最令人赞叹的成果之一——高斯的**[绝妙定理](@article_id:319471)**（Theorema Egregium）。高斯发现，一个[曲面](@article_id:331153)的[高斯曲率](@article_id:310144) $K$ **只**取决于它的[第一基本形式](@article_id:337717)（即度规）。这为何如此“绝妙”？因为从我们建立的逻辑链来看，这几乎是必然的：度规 $g$ 唯一地确定了列维-奇维塔联络 $\nabla$，而联络 $\nabla$ 又唯一地确定了曲率 $K$。因此，曲率 $K$ 必然是一个内蕴于度规的性质。在这条逻辑链中，完全没有给[曲面](@article_id:331153)如何[嵌入](@article_id:311541)三维空间（即第二基本形式）留下任何插足的余地。[列维-奇维塔联络](@article_id:321511)，正是架设在这条从“距离测量”到“曲率”的宏伟桥梁。
+这直接导向了[数学史](@keyword=history_of_mathematics|lang=zh-CN|style=Feynman)上最令人赞叹的成果之一——高斯的**[绝妙定理](@keyword=theorema_egregium|lang=zh-CN|style=Feynman)**（Theorema Egregium）[@problem_id:3079131]。高斯发现，一个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的[高斯曲率](@keyword=gaussian_curvature|lang=zh-CN|style=Feynman) $K$ **只**取决于它的[第一基本形式](@keyword=first_fundamental_form|lang=zh-CN|style=Feynman)（即度规）。这为何如此“绝妙”？因为从我们建立的逻辑链来看，这几乎是必然的：度规 $g$ 唯一地确定了列维-奇维塔联络 $\nabla$，而联络 $\nabla$ 又唯一地确定了曲率 $K$。因此，曲率 $K$ 必然是一个内蕴于度规的性质。在这条逻辑链中，完全没有给[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)如何[嵌入](@keyword=embedding|lang=zh-CN|style=Feynman)三维空间（即第二基本形式）留下任何插足的余地。[列维-奇维塔联络](@keyword=levi_civita_connection|lang=zh-CN|style=Feynman)，正是架设在这条从“距离测量”到“曲率”的宏伟桥梁。
 
-那么，这个曲率直观上究竟是什么？它是在[平行输运](@article_id:382271)中[路径依赖性](@article_id:365518)的体现 。如果你将一个向量沿着球面上的一个闭合小圈（比如一个球面三角形）进行平行移动，它返回原点时会发生旋转。对于一个无穷小的回路，这种旋转的程度恰好由黎曼曲率张量 $R$ 来衡量，而 $R$ 正是由联络构建的。因此，零曲率意味着向量总能原封不动地返回（就像在平坦平面上那样），而非零曲率则意味着存在一种“和乐”（holonomy），即对路径的几何记忆。
+那么，这个曲率直观上究竟是什么？它是在[平行输运](@keyword=vector_transport_on_curved_space|lang=zh-CN|style=Feynman)中[路径依赖性](@keyword=path_dependency|lang=zh-CN|style=Feynman)的体现 [@problem_id:3047956]。如果你将一个向量沿着球面上的一个闭合小圈（比如一个球面三角形）进行平行移动，它返回原点时会发生旋转。对于一个无穷小的回路，这种旋转的程度恰好由黎曼曲率张量 $R$ 来衡量，而 $R$ 正是由联络构建的。因此，零曲率意味着向量总能原封不动地返回（就像在平坦平面上那样），而非零曲率则意味着存在一种“和乐”（holonomy），即对路径的几何记忆。
 
 ### 几何语言中的自然法则
 
-现在，让我们谈谈运动。在弯曲空间中，什么是“直线”？在平面上，它是直线。在球面上，它是大圆。在一般的[黎曼流形](@article_id:324872)上，它是一条**[测地线](@article_id:327811)**（geodesic）。物理上的定义是，一个不受外力的质点所遵循的路径。而数学上的定义则异常优美：一条曲线 $\gamma(t)$，其[切向量](@article_id:329199) $\dot{\gamma}$ 沿着自身是平行的。用我们的联络语言来说，就是：
+现在，让我们谈谈运动。在弯曲空间中，什么是“直线”？在平面上，它是直线。在球面上，它是大圆。在一般的[黎曼流形](@keyword=riemannian_manifolds|lang=zh-CN|style=Feynman)上，它是一条**[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)**（geodesic）。物理上的定义是，一个不受外力的质点所遵循的路径。而数学上的定义则异常优美：一条曲线 $\gamma(t)$，其[切向量](@keyword=tangent_vectors|lang=zh-CN|style=Feynman) $\dot{\gamma}$ 沿着自身是平行的。用我们的联络语言来说，就是：
 $$
 \nabla_{\dot{\gamma}}\dot{\gamma}=0
 $$
-这正是一条“零加速度”的路径 。
+这正是一条“零加速度”的路径 [@problem_id:3047949]。
 
-这个简洁的方程定义了在任何弯曲空间中“最直”的可能路径。在球面上，解这个方程你会得到[大圆](@article_id:332672) 。在[双曲平面](@article_id:325427)上，你会得到定义那种奇异几何的圆弧 。
+这个简洁的方程定义了在任何弯曲空间中“最直”的可能路径。在球面上，解这个方程你会得到[大圆](@keyword=great_circle|lang=zh-CN|style=Feynman) [@problem_id:3047949]。在[双曲平面](@keyword=hyperbolic_plane|lang=zh-CN|style=Feynman)上，你会得到定义那种奇异几何的圆弧 [@problem_id:2974958]。
 
-但这里还蕴含着一个更深刻的物理原理。为什么这些路径如此特殊？因为它们同时也是**局部长度最短**（或更准确地说，长度为[极值](@article_id:335356)）的路径 。这便将几何学与变分法以及物理学的基石——[平稳作用量原理](@article_id:312137)联系了起来。该原理指出，自然界倾向于选择使某个量（如时间或能量）取[极值](@article_id:335356)的路径。[测地线方程](@article_id:328056)，正是[能量泛函](@article_id:349508)的欧拉-拉格朗日方程。这是几何与物理之间深刻统一的体现。
+但这里还蕴含着一个更深刻的物理原理。为什么这些路径如此特殊？因为它们同时也是**局部长度最短**（或更准确地说，长度为[极值](@keyword=extrema|lang=zh-CN|style=Feynman)）的路径 [@problem_id:3047957]。这便将几何学与变分法以及物理学的基石——[平稳作用量原理](@keyword=principle_of_stationary_action|lang=zh-CN|style=Feynman)联系了起来。该原理指出，自然界倾向于选择使某个量（如时间或能量）取[极值](@keyword=extrema|lang=zh-CN|style=Feynman)的路径。[测地线方程](@keyword=geodesic_equations|lang=zh-CN|style=Feynman)，正是[能量泛函](@keyword=energy_functional|lang=zh-CN|style=Feynman)的欧拉-拉格朗日方程。这是几何与物理之间深刻统一的体现。
 
-### 视界之外——广义[相对论](@article_id:327421)与其他几何
+### 视界之外——广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)与其他几何
 
-故事的格局变得更加宏大。证明[列维-奇维塔联络](@article_id:321511)存在且唯一的过程中，我们从未要求度规必须是正定的。这个证明对于可以取负“长度”的**伪黎曼度规**同样有效 。这并非一个无关紧要的数学细节，它正是爱因斯坦广义[相对论](@article_id:327421)得以建立的基石！
+故事的格局变得更加宏大。证明[列维-奇维塔联络](@keyword=levi_civita_connection|lang=zh-CN|style=Feynman)存在且唯一的过程中，我们从未要求度规必须是正定的。这个证明对于可以取负“长度”的**伪黎曼度规**同样有效 [@problem_id:1550521]。这并非一个无关紧要的数学细节，它正是爱因斯坦广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)得以建立的基石！
 
-在广义[相对论](@article_id:327421)中，我们的[时空](@article_id:370647)是一个四维[伪黎曼流形](@article_id:363998)。[克里斯托费尔符号](@article_id:320235)不再仅仅是几何修正项，它们本身就是**[引力场](@article_id:348648)**！而[测地线方程](@article_id:328056) $\nabla_{\dot{\gamma}}\dot{\gamma}=0$ 描述的正是行星、恒星和光线在[时空](@article_id:370647)中自由穿行的运动定律。引力不再是一种“力”，而是[时空](@article_id:370647)的几何本身，它通过克里斯托费尔符号告诉物体如何以“最直”的方式运动。
+在广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)中，我们的[时空](@keyword=space_time|lang=zh-CN|style=Feynman)是一个四维[伪黎曼流形](@keyword=pseudo_riemannian_manifolds|lang=zh-CN|style=Feynman)。[克里斯托费尔符号](@keyword=christoffel_symbols|lang=zh-CN|style=Feynman)不再仅仅是几何修正项，它们本身就是**[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)**！而[测地线方程](@keyword=geodesic_equations|lang=zh-CN|style=Feynman) $\nabla_{\dot{\gamma}}\dot{\gamma}=0$ 描述的正是行星、恒星和光线在[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中自由穿行的运动定律。引力不再是一种“力”，而是[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的几何本身，它通过克里斯托费尔符号告诉物体如何以“最直”的方式运动。
 
-此外，联络使我们能够推广矢量微积分中的所有算子。例如，在弯曲空间中定义一个[矢量场的散度](@article_id:296796)时，我们不能再简单地将各分量的偏导数相加。我们必须使用[协变导数](@article_id:312889)：$\mathrm{div}(X) = \nabla_i X^i$。其中包含[克里斯托费尔符号](@article_id:320235)的额外项，恰好说明了空间体积元本身是如何随点变化的 。这对于以一种尊重[宇宙几何](@article_id:320208)的方式书写物理定律（如[麦克斯韦方程组](@article_id:311357)或流[体力](@article_id:353281)学方程）至关重要。
+此外，联络使我们能够推广矢量微积分中的所有算子。例如，在弯曲空间中定义一个[矢量场的散度](@keyword=divergence_of_a_vector_field|lang=zh-CN|style=Feynman)时，我们不能再简单地将各分量的偏导数相加。我们必须使用[协变导数](@keyword=covariant_derivative|lang=zh-CN|style=Feynman)：$\mathrm{div}(X) = \nabla_i X^i$。其中包含[克里斯托费尔符号](@keyword=christoffel_symbols|lang=zh-CN|style=Feynman)的额外项，恰好说明了空间体积元本身是如何随点变化的 [@problem_id:3047910]。这对于以一种尊重[宇宙几何](@keyword=universe_geometry|lang=zh-CN|style=Feynman)的方式书写物理定律（如[麦克斯韦方程组](@keyword=maxwell_s_equations|lang=zh-CN|style=Feynman)或流[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)学方程）至关重要。
 
-最后，值得一提的是，列维-奇维塔联络的**唯一性**是[黎曼几何](@article_id:320912)如此“刚性”且强大的原因。但这并非所有几何结构的普遍真理。例如，在[辛几何](@article_id:321187)中，保持其几何结构（辛形式）的联络确实存在，但并**不唯一** 。这种对比凸显了在[黎曼和](@article_id:298118)爱因斯坦的世界里，度规、联络和曲率之间的关系是多么的特殊和“绝妙”。这种结构似乎是为描述我们的宇宙量身定做的。我们甚至还未提及它在[积流形](@article_id:333909)上的优美分解性质 ，但或许我们应该为下一章保留一些奇迹。
+最后，值得一提的是，列维-奇维塔联络的**唯一性**是[黎曼几何](@keyword=riemannian_geometry|lang=zh-CN|style=Feynman)如此“刚性”且强大的原因。但这并非所有几何结构的普遍真理。例如，在[辛几何](@keyword=symplectic_geometry|lang=zh-CN|style=Feynman)中，保持其几何结构（辛形式）的联络确实存在，但并**不唯一** [@problem_id:1678550]。这种对比凸显了在[黎曼和](@keyword=riemann_sums|lang=zh-CN|style=Feynman)爱因斯坦的世界里，度规、联络和曲率之间的关系是多么的特殊和“绝妙”。这种结构似乎是为描述我们的宇宙量身定做的。我们甚至还未提及它在[积流形](@keyword=product_manifolds|lang=zh-CN|style=Feynman)上的优美分解性质 [@problem_id:3047908]，但或许我们应该为下一章保留一些奇迹。

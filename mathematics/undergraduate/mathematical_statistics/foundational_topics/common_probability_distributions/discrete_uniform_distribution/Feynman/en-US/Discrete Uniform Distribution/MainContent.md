@@ -1,9 +1,9 @@
 ## Introduction
-What do a fair die roll, a random lottery draw, and a computer assigning a task to a server all have in common? They are all governed by a single, fundamental principle of probability: perfect fairness. This is the world of the **discrete [uniform distribution](@article_id:261240)**, a model where every possible outcome has an exactly equal chance of occurring. It is the mathematical embodiment of "no favorites," a concept so intuitive it seems almost too simple to be profound.
+What do a fair die roll, a random lottery draw, and a computer assigning a task to a server all have in common? They are all governed by a single, fundamental principle of probability: perfect fairness. This is the world of the **discrete [uniform distribution](@keyword=uniform_distribution|lang=en-US|style=Feynman)**, a model where every possible outcome has an exactly equal chance of occurring. It is the mathematical embodiment of "no favorites," a concept so intuitive it seems almost too simple to be profound.
 
 Yet, this apparent simplicity is deceptive. The real power of the uniform distribution is not in describing a single event, but in serving as a foundational building block for analyzing complex systems. This article bridges the gap between the simple idea of a fair choice and its far-reaching consequences. We will uncover how this humble distribution underpins sophisticated methods in statistical estimation, powers crucial algorithms in the digital world, and even reveals surprising connections to the deepest truths of mathematics.
 
-This exploration is divided into three parts. First, in **Principles and Mechanisms**, we will dissect the mathematical anatomy of the distribution, defining its probability functions, its center of gravity (expected value), and its [measure of unpredictability](@article_id:267052) (variance). Next, in **Applications and Interdisciplinary Connections**, we will journey from the battlefields of World War II with the German Tank Problem to the core of modern computing, discovering how this simple model is applied to solve real-world problems. Finally, through our **Hands-On Practices**, you will have the opportunity to apply these theoretical concepts to practical problem-solving, solidifying your understanding. Let us begin by examining the core tenet of this distribution: the democracy of outcomes.
+This exploration is divided into three parts. First, in **Principles and Mechanisms**, we will dissect the mathematical anatomy of the distribution, defining its probability functions, its center of gravity (expected value), and its [measure of unpredictability](@keyword=measure_of_unpredictability|lang=en-US|style=Feynman) (variance). Next, in **Applications and Interdisciplinary Connections**, we will journey from the battlefields of World War II with the German Tank Problem to the core of modern computing, discovering how this simple model is applied to solve real-world problems. Finally, through our **Hands-On Practices**, you will have the opportunity to apply these theoretical concepts to practical problem-solving, solidifying your understanding. Let us begin by examining the core tenet of this distribution: the democracy of outcomes.
 
 ## Principles and Mechanisms
 
@@ -17,9 +17,9 @@ $P(X=k) = \frac{1}{N} \quad \text{for } k \in \{1, 2, \dots, N\}$
 
 And of course, the probability is zero for any number outside this set. You can't roll a 7 on a six-sided die. It is the simplest probability rule imaginable. There are no complications, no complex dependencies, just pure, unadulterated equality of chances.
 
-This leads to a curious and revealing property when we consider the **mode** of the distribution, which is the value that appears most frequently. In most distributions, there's a peak, a single value that is the most probable. But what about our [uniform distribution](@article_id:261240)? Since every outcome has the exact same probability, *every single outcome is a mode*. It's a perfect democracy of possibilities.
+This leads to a curious and revealing property when we consider the **mode** of the distribution, which is the value that appears most frequently. In most distributions, there's a peak, a single value that is the most probable. But what about our [uniform distribution](@keyword=uniform_distribution|lang=en-US|style=Feynman)? Since every outcome has the exact same probability, *every single outcome is a mode*. It's a perfect democracy of possibilities.
 
-This primitive notion of fairness is so fundamental that it serves as a building block for other concepts. Consider the simplest non-trivial random event: a coin toss. Let's represent "tails" as 0 and "heads" as 1. For a fair coin, $P(X=0) = \frac{1}{2}$ and $P(X=1) = \frac{1}{2}$. This is precisely a discrete [uniform distribution](@article_id:261240) on the set $\{0, 1\}$. It's also known as a **Bernoulli distribution**, which is defined by a parameter $p$ for the probability of "success" (value 1). Our fair coin toss is just a Bernoulli distribution with $p=\frac{1}{2}$. This little connection reminds us that even the most foundational ideas in probability are deeply intertwined.
+This primitive notion of fairness is so fundamental that it serves as a building block for other concepts. Consider the simplest non-trivial random event: a coin toss. Let's represent "tails" as 0 and "heads" as 1. For a fair coin, $P(X=0) = \frac{1}{2}$ and $P(X=1) = \frac{1}{2}$. This is precisely a discrete [uniform distribution](@keyword=uniform_distribution|lang=en-US|style=Feynman) on the set $\{0, 1\}$. It's also known as a **Bernoulli distribution**, which is defined by a parameter $p$ for the probability of "success" (value 1). Our fair coin toss is just a Bernoulli distribution with $p=\frac{1}{2}$. This little connection reminds us that even the most foundational ideas in probability are deeply intertwined.
 
 ### The Staircase of Accumulation: Cumulative Distribution Function
 
@@ -31,17 +31,17 @@ This creates a step function. For a random variable uniformly distributed on $\{
 
 $F(x) = \begin{cases} 0 & \text{if } x < 1 \\ \frac{\lfloor x \rfloor}{N} & \text{if } 1 \le x < N \\ 1 & \text{if } x \ge N \end{cases}$
 
-Here, $\lfloor x \rfloor$ is the "[floor function](@article_id:264879)," which just means rounding down to the nearest integer. This formula perfectly captures the staircase nature of the function.
+Here, $\lfloor x \rfloor$ is the "[floor function](@keyword=floor_function|lang=en-US|style=Feynman)," which just means rounding down to the nearest integer. This formula perfectly captures the staircase nature of the function.
 
 For example, if we pick a random integer from 1 to 25, what is the probability that the number is less than or equal to 10.2? The possible outcomes satisfying this are $\{1, 2, \dots, 10\}$. There are 10 such outcomes, each with a probability of $\frac{1}{25}$. So, $F(10.2) = 10 \times \frac{1}{25} = \frac{10}{25} = \frac{2}{5}$. The "point-two" is irrelevant; the staircase hasn't reached the 11th step yet.
 
-The height of each of these steps carries a special significance. The jump in the CDF at any integer $k$ is the difference between the probability of being less than or equal to $k$ and the probability of being strictly less than $k$. This difference is, not surprisingly, exactly the probability of being equal to $k$. For our [uniform distribution](@article_id:261240), this means the height of every step is a constant $\frac{1}{N}$. The CDF is a visual representation of how probability mass is distributed, one identical chunk at a time.
+The height of each of these steps carries a special significance. The jump in the CDF at any integer $k$ is the difference between the probability of being less than or equal to $k$ and the probability of being strictly less than $k$. This difference is, not surprisingly, exactly the probability of being equal to $k$. For our [uniform distribution](@keyword=uniform_distribution|lang=en-US|style=Feynman), this means the height of every step is a constant $\frac{1}{N}$. The CDF is a visual representation of how probability mass is distributed, one identical chunk at a time.
 
 ### Finding the Center of Gravity: Expected Value
 
 If you were to roll a standard six-sided die thousands of times and average all the results, what number would you expect to get? It can't be 1, and it can't be 6. Your intuition correctly tells you it should be somewhere in the middle. This "long-run average" is what we call the **expected value**, or **mean**.
 
-For a discrete [uniform distribution](@article_id:261240) on the set of integers $\{a, a+1, \dots, b\}$, the calculation is a beautiful illustration of symmetry. The expected value, $E[X]$, is the sum of all possible values, each weighted by its probability.
+For a discrete [uniform distribution](@keyword=uniform_distribution|lang=en-US|style=Feynman) on the set of integers $\{a, a+1, \dots, b\}$, the calculation is a beautiful illustration of symmetry. The expected value, $E[X]$, is the sum of all possible values, each weighted by its probability.
 
 $E[X] = \sum_{k=a}^{b} k \cdot P(X=k) = \frac{1}{b-a+1} \sum_{k=a}^{b} k$
 
@@ -55,7 +55,7 @@ This simple formula is surprisingly powerful. Imagine a lottery machine with bal
 
 $\frac{N+1}{2} = 15.5 \implies N+1 = 31 \implies N=30$
 
-The lottery machine contains 30 balls. A little bit of [probabilistic reasoning](@article_id:272803) allows us to see inside the machine.
+The lottery machine contains 30 balls. A little bit of [probabilistic reasoning](@keyword=probabilistic_reasoning|lang=en-US|style=Feynman) allows us to see inside the machine.
 
 ### Measuring the Spread: Variance
 
@@ -79,7 +79,7 @@ Our first guess might be "around one-half." After all, by symmetry, it seems tha
 
 The probability of a "tie," $S_A = S_B$, is easy to calculate. For any given server $k$, the probability that both tasks land there is $(\frac{1}{N}) \times (\frac{1}{N}) = \frac{1}{N^2}$. Since there are $N$ possible servers where a tie could occur, the total probability of a tie is $N \times \frac{1}{N^2} = \frac{1}{N}$.
 
-The remaining probability, $1 - \frac{1}{N}$, must be shared between the other two outcomes. Because of the perfect symmetry of the [uniform distribution](@article_id:261240), these two outcomes must share the probability equally. Therefore:
+The remaining probability, $1 - \frac{1}{N}$, must be shared between the other two outcomes. Because of the perfect symmetry of the [uniform distribution](@keyword=uniform_distribution|lang=en-US|style=Feynman), these two outcomes must share the probability equally. Therefore:
 
 $P(S_B > S_A) = \frac{1 - P(S_A = S_B)}{2} = \frac{1 - \frac{1}{N}}{2} = \frac{N-1}{2N}$
 
@@ -89,7 +89,7 @@ For a large number of servers, this probability is indeed very close to $\frac{1
 
 Finally, we might ask if there's a single, powerful function that contains all the information about a distribution—its mean, its variance, and every other property we might care about. Such an object exists: it's called the **Moment Generating Function (MGF)**, $M_X(t) = E[\exp(tX)]$. It might look a bit esoteric, but it is like a unique fingerprint for a distribution. From the MGF, one can "generate" all the moments (like the mean and variance) of the distribution through differentiation.
 
-For our uniform distribution on $\{1, 2, \dots, N\}$, the MGF is found by summing an exponential series, which turns out to be a simple [geometric series](@article_id:157996):
+For our uniform distribution on $\{1, 2, \dots, N\}$, the MGF is found by summing an exponential series, which turns out to be a simple [geometric series](@keyword=geometric_series|lang=en-US|style=Feynman):
 
 $M_X(t) = \frac{1}{N} \sum_{k=1}^{N} \exp(tk) = \frac{\exp(t)\bigl(\exp(N t)-1\bigr)}{N\bigl(\exp(t)-1\bigr)}$ (for $t \neq 0$)
 

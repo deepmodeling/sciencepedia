@@ -1,7 +1,7 @@
 ## Introduction
 The question of how to measure the distance from a point to a flat surface seems simple, rooted in our everyday intuition of "straight down." However, translating this concept into a precise and universally applicable mathematical tool is a foundational challenge in geometry. This article bridges that intuitive understanding with the rigorous power of vector algebra, providing a single, elegant method to solve this problem in any context.
 
-Across the following chapters, you will embark on a journey from core theory to practical application. First, in **Principles and Mechanisms**, we will deconstruct the problem and derive the master formula from the geometric concept of [scalar projection](@article_id:148329) onto a [normal vector](@article_id:263691). Next, **Applications and Interdisciplinary Connections** will reveal the surprising and far-reaching impact of this formula, showing its relevance in fields as diverse as physics, engineering, and modern data science. Finally, you will solidify your knowledge with **Hands-On Practices**, applying the concepts to solve concrete problems. By the end, you won't just have a formula; you'll have a deeper appreciation for the interconnected structure of space itself.
+Across the following chapters, you will embark on a journey from core theory to practical application. First, in **Principles and Mechanisms**, we will deconstruct the problem and derive the master formula from the geometric concept of [scalar projection](@keyword=scalar_projection|lang=en-US|style=Feynman) onto a [normal vector](@keyword=normal_vector|lang=en-US|style=Feynman). Next, **Applications and Interdisciplinary Connections** will reveal the surprising and far-reaching impact of this formula, showing its relevance in fields as diverse as physics, engineering, and modern data science. Finally, you will solidify your knowledge with **Hands-On Practices**, applying the concepts to solve concrete problems. By the end, you won't just have a formula; you'll have a deeper appreciation for the interconnected structure of space itself.
 
 ## Principles and Mechanisms
 
@@ -25,9 +25,9 @@ Now, the length of this vector, $||\overrightarrow{QP}||$, is probably *not* the
 
 Think of it this way: Imagine the normal vector $\vec{n}$ is a brilliantly lit flagpole, and our vector $\overrightarrow{QP}$ is a metal rod. The true vertical distance from the bird to the ground is simply the length of the shadow that the rod $\overrightarrow{QP}$ casts onto the flagpole $\vec{n}$.
 
-This "shadow" has a formal name: the **[scalar projection](@article_id:148329)**. It tells us how much of one vector goes in the direction of another. The [scalar projection](@article_id:148329) of a vector $\vec{A}$ onto a vector $\vec{B}$ is calculated with the dot product: $\frac{\vec{A} \cdot \vec{B}}{||\vec{B}||}$.
+This "shadow" has a formal name: the **[scalar projection](@keyword=scalar_projection|lang=en-US|style=Feynman)**. It tells us how much of one vector goes in the direction of another. The [scalar projection](@keyword=scalar_projection|lang=en-US|style=Feynman) of a vector $\vec{A}$ onto a vector $\vec{B}$ is calculated with the dot product: $\frac{\vec{A} \cdot \vec{B}}{||\vec{B}||}$.
 
-So, the shortest distance $d$ from our point $P$ to the plane is the absolute value of the [scalar projection](@article_id:148329) of the vector $\overrightarrow{QP}$ onto the [normal vector](@article_id:263691) $\vec{n}$. This gives us our magnificent, all-purpose master formula:
+So, the shortest distance $d$ from our point $P$ to the plane is the absolute value of the [scalar projection](@keyword=scalar_projection|lang=en-US|style=Feynman) of the vector $\overrightarrow{QP}$ onto the [normal vector](@keyword=normal_vector|lang=en-US|style=Feynman) $\vec{n}$. This gives us our magnificent, all-purpose master formula:
 
 $$d = \frac{|\overrightarrow{QP} \cdot \vec{n}|}{||\vec{n}||}$$
 
@@ -39,7 +39,7 @@ Our master formula is like a master key. All we need is a point on the plane ($Q
 
 #### The Simplest Case: The Floor
 
-Let's start with a very simple plane: the $xy$-plane, which is described by the simple equation $z=0$ . Our intuition screams that the distance from a point $P(x_0, y_0, z_0)$ to this plane should just be $|z_0|$. Let's see if the formula agrees.
+Let's start with a very simple plane: the $xy$-plane, which is described by the simple equation $z=0$ [@problem_id:2121611]. Our intuition screams that the distance from a point $P(x_0, y_0, z_0)$ to this plane should just be $|z_0|$. Let's see if the formula agrees.
 The normal vector is clearly pointing along the z-axis, so we can choose $\vec{n} = \langle 0, 0, 1 \rangle$. For our point $Q$ on the plane, let's pick the one directly "below" $P$, which is $Q(x_0, y_0, 0)$.
 The vector connecting them is $\overrightarrow{QP} = \langle x_0 - x_0, y_0 - y_0, z_0 - 0 \rangle = \langle 0, 0, z_0 \rangle$.
 Plugging this into our formula:
@@ -48,32 +48,32 @@ It works perfectly! Our sophisticated vector machinery confirms our simple intui
 
 #### From Blueprints to Normals
 
-Often, a plane is defined not by an equation but by physical points. An architect might define a slanted roof by the locations of three support columns, say at points $A$, $B$, and $C$  . A drone's navigation system might model a landing pad this way . How do we find the [normal vector](@article_id:263691) here?
+Often, a plane is defined not by an equation but by physical points. An architect might define a slanted roof by the locations of three support columns, say at points $A$, $B$, and $C$ [@problem_id:2121628] [@problem_id:2121606]. A drone's navigation system might model a landing pad this way [@problem_id:2121672]. How do we find the [normal vector](@keyword=normal_vector|lang=en-US|style=Feynman) here?
 
-This is where another wonderful tool of [vector calculus](@article_id:146394) comes in: the **[cross product](@article_id:156255)**. If we create two vectors that lie *in* the plane, for example $\overrightarrow{AB}$ and $\overrightarrow{AC}$, their [cross product](@article_id:156255), $\vec{n} = \overrightarrow{AB} \times \overrightarrow{AC}$, will, by its very definition, produce a new vector that is perpendicular to both. It's our normal vector!
+This is where another wonderful tool of [vector calculus](@keyword=vector_calculus|lang=en-US|style=Feynman) comes in: the **[cross product](@keyword=cross_product|lang=en-US|style=Feynman)**. If we create two vectors that lie *in* the plane, for example $\overrightarrow{AB}$ and $\overrightarrow{AC}$, their [cross product](@keyword=cross_product|lang=en-US|style=Feynman), $\vec{n} = \overrightarrow{AB} \times \overrightarrow{AC}$, will, by its very definition, produce a new vector that is perpendicular to both. It's our normal vector!
 Once we have $\vec{n}$, we already have points on the plane (we can use $A$, $B$, or $C$ as our point $Q$), and we can use the master formula to find the distance.
 
-Similarly, if a robotic arm's instructions define a plane parametrically, like "start at point $A$ and move any amount in direction $\vec{u}$ and any amount in direction $\vec{v}$" , we are in the same situation. The vectors $\vec{u}$ and $\vec{v}$ lie in the plane, so their [cross product](@article_id:156255) $\vec{n} = \vec{u} \times \vec{v}$ gives us the normal, and we're ready to go.
+Similarly, if a robotic arm's instructions define a plane parametrically, like "start at point $A$ and move any amount in direction $\vec{u}$ and any amount in direction $\vec{v}$" [@problem_id:2121674], we are in the same situation. The vectors $\vec{u}$ and $\vec{v}$ lie in the plane, so their [cross product](@keyword=cross_product|lang=en-US|style=Feynman) $\vec{n} = \vec{u} \times \vec{v}$ gives us the normal, and we're ready to go.
 
 #### The Hidden Normal
 
-What about when we get a plane as a tidy algebraic equation, like $2x - y + 3z = 4$?  Or perhaps from its axis intercepts? . It might not seem obvious, but the [normal vector](@article_id:263691) is sitting right there in plain sight. For any plane written in the form $Ax + By + Cz = D$, the normal vector is simply $\vec{n} = \langle A, B, C \rangle$.
+What about when we get a plane as a tidy algebraic equation, like $2x - y + 3z = 4$? [@problem_id:2121632] Or perhaps from its axis intercepts? [@problem_id:2121609]. It might not seem obvious, but the [normal vector](@keyword=normal_vector|lang=en-US|style=Feynman) is sitting right there in plain sight. For any plane written in the form $Ax + By + Cz = D$, the normal vector is simply $\vec{n} = \langle A, B, C \rangle$.
 The coefficients of $x$, $y$, and $z$ directly tell you the orientation of the plane!
 
 With this insight, we can derive the famous textbook formula for the distance from a point $P(x_0, y_0, z_0)$ to the plane $Ax + By + Cz - D = 0$:
 $$ d = \frac{|A x_0 + B y_0 + C z_0 - D|}{\sqrt{A^2 + B^2 + C^2}} $$
-This formula, used in many applications from [collision avoidance](@article_id:162948) systems  to 3D rendering engines, isn't a new principle. It is just a convenient specialization of our master [projection formula](@article_id:151670), custom-tailored for a plane given in this specific format. It's the same key, just with a slightly different handle.
+This formula, used in many applications from [collision avoidance](@keyword=collision_avoidance|lang=en-US|style=Feynman) systems [@problem_id:2121661] to 3D rendering engines, isn't a new principle. It is just a convenient specialization of our master [projection formula](@keyword=projection_formula|lang=en-US|style=Feynman), custom-tailored for a plane given in this specific format. It's the same key, just with a slightly different handle.
 
 ### A Deeper Cut: The Geometry of Volume
 
-Let's take one last look at our problem through a different lens. Consider again the four points: $A$, $B$, and $C$ forming a triangular base on a plane, and a fourth point $D$ hovering in space above them . These four points form a pyramid with a triangular base—a shape called a **tetrahedron**.
+Let's take one last look at our problem through a different lens. Consider again the four points: $A$, $B$, and $C$ forming a triangular base on a plane, and a fourth point $D$ hovering in space above them [@problem_id:2121672]. These four points form a pyramid with a triangular base—a shape called a **tetrahedron**.
 
 The very distance we are trying to calculate is simply the **height** of this tetrahedron, if we consider triangle $ABC$ to be its base.
 
 From elementary geometry, we know the volume of any pyramid is $V = \frac{1}{3} \times (\text{Area of Base}) \times (\text{Height})$.
 
-We can also calculate these quantities with vectors. The area of the base triangle $ABC$ is half the magnitude of the [cross product](@article_id:156255) of its sides: $A_{base} = \frac{1}{2} ||\overrightarrow{AB} \times \overrightarrow{AC}|| = \frac{1}{2} ||\vec{n}||$.
-The volume of the tetrahedron is given by one-sixth of the absolute value of the [scalar triple product](@article_id:152503): $V = \frac{1}{6} |\overrightarrow{AD} \cdot (\overrightarrow{AB} \times \overrightarrow{AC})| = \frac{1}{6} |\overrightarrow{AD} \cdot \vec{n}|$.
+We can also calculate these quantities with vectors. The area of the base triangle $ABC$ is half the magnitude of the [cross product](@keyword=cross_product|lang=en-US|style=Feynman) of its sides: $A_{base} = \frac{1}{2} ||\overrightarrow{AB} \times \overrightarrow{AC}|| = \frac{1}{2} ||\vec{n}||$.
+The volume of the tetrahedron is given by one-sixth of the absolute value of the [scalar triple product](@keyword=scalar_triple_product|lang=en-US|style=Feynman): $V = \frac{1}{6} |\overrightarrow{AD} \cdot (\overrightarrow{AB} \times \overrightarrow{AC})| = \frac{1}{6} |\overrightarrow{AD} \cdot \vec{n}|$.
 
 Now for the grand finale. Let's solve for the height, which is our distance $d$:
 $$ d = \text{Height} = \frac{3V}{A_{base}} = \frac{3 \times \frac{1}{6} |\overrightarrow{AD} \cdot \vec{n}|}{\frac{1}{2} ||\vec{n}||} = \frac{\frac{1}{2} |\overrightarrow{AD} \cdot \vec{n}|}{\frac{1}{2} ||\vec{n}||} = \frac{|\overrightarrow{AD} \cdot \vec{n}|}{||\vec{n}||} $$
