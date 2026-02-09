@@ -1,38 +1,38 @@
 ## 应用与跨学科连接
 
-我们已经攀登到了能量山脉的顶峰——[过渡态](@article_id:313517)。现在，让我们从这个制高点向下俯瞰，欣赏它所俯瞰的广阔科学版图。[活化吉布斯能](@article_id:370723)（$\Delta G^\ddagger$）这个概念，不仅仅是一个抽象的理论，更像是一把万能钥匙，能打开几乎所有科学领域的门。从萤火虫的一闪一灭到冰川的缓慢移动，从救命良药的合成到[太阳能电池](@article_id:298527)的设计，这个单一的概念为我们提供了描述和控制变化的语言。
+我们已经攀登到了能量山脉的顶峰——[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)。现在，让我们从这个制高点向下俯瞰，欣赏它所俯瞰的广阔科学版图。[活化吉布斯能](@keyword=activation_gibbs_energy|lang=zh-CN|style=Feynman)（$\Delta G^\ddagger$）这个概念，不仅仅是一个抽象的理论，更像是一把万能钥匙，能打开几乎所有科学领域的门。从萤火虫的一闪一灭到冰川的缓慢移动，从救命良药的合成到[太阳能电池](@keyword=solar_cells|lang=zh-CN|style=Feynman)的设计，这个单一的概念为我们提供了描述和控制变化的语言。
 
-在前面的章节中，我们理解了[活化吉布斯能](@article_id:370723)的本质。现在，我们将踏上一段新的旅程，去探索 $\Delta G^\ddagger$ 如何从理论殿堂走向现实世界，成为化学家、生物学家、工程师和物理学家手中解决实际问题的有力工具。
+在前面的章节中，我们理解了[活化吉布斯能](@keyword=activation_gibbs_energy|lang=zh-CN|style=Feynman)的本质。现在，我们将踏上一段新的旅程，去探索 $\Delta G^\ddagger$ 如何从理论殿堂走向现实世界，成为化学家、生物学家、工程师和物理学家手中解决实际问题的有力工具。
 
 ### 化学家的艺术：驾驭反应之路
 
-化学的核心艺术在于创造新物质，而活化能正是指导这门艺术的指挥棒。一个[化学反应](@article_id:307389)能走多快，最终能得到什么，往往取决于它需要翻越的能量壁垒有多高。
+化学的核心艺术在于创造新物质，而活化能正是指导这门艺术的指挥棒。一个[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)能走多快，最终能得到什么，往往取决于它需要翻越的能量壁垒有多高。
 
-#### 选择你的路径：[动力学与热力学控制](@article_id:309266)
+#### 选择你的路径：[动力学与热力学控制](@keyword=kinetic_and_thermodynamic_control|lang=zh-CN|style=Feynman)
 
-想象一下，你站在一个岔路口，两条路都[能带](@article_id:306995)你到达山下的村庄。一条是崎岖但更短的近路，另一条是平坦但绕远的远路。如果你赶时间，你会选择近路，尽管它可能通往一个海拔较高的村庄（亚稳态产物）。如果你有足够的时间并且追求最省力，你会选择那条通往海拔最低村庄（[热力学](@article_id:359663)稳定产物）的远路。
+想象一下，你站在一个岔路口，两条路都[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)你到达山下的村庄。一条是崎岖但更短的近路，另一条是平坦但绕远的远路。如果你赶时间，你会选择近路，尽管它可能通往一个海拔较高的村庄（亚稳态产物）。如果你有足够的时间并且追求最省力，你会选择那条通往海拔最低村庄（[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)稳定产物）的远路。
 
-[化学反应](@article_id:307389)也是如此。当一个反应物可以生成多种产物时，每条路径都有其独特的活化能垒。在低温或短时间内，反应会优先选择翻越最低能垒的路径，这被称为**[动力学控制](@article_id:315291)**。这就像选择最容易攀登的山峰，而不关心它是否是最低的山谷。最终产物的比例由不同路径的[活化吉布斯能](@article_id:370723)之差（$\Delta\Delta G^\ddagger$）决定，产物比例与 $\exp(-\Delta\Delta G^\ddagger/RT)$ 成正比。通过精确控制温度和[反应时间](@article_id:335182)，化学家可以选择性地合成想要的产物，即使它不是最稳定的那一个。这种策略在[材料科学](@article_id:312640)中至关重要，例如，合成具有特定优异性能的[亚稳态](@article_id:346793)[超导材料](@article_id:321703) ，或是在有机合成中，精确控制分子是通过环化还是断裂来得到目标产物 。
+[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)也是如此。当一个反应物可以生成多种产物时，每条路径都有其独特的活化能垒。在低温或短时间内，反应会优先选择翻越最低能垒的路径，这被称为**[动力学控制](@keyword=kinetic_control|lang=zh-CN|style=Feynman)**。这就像选择最容易攀登的山峰，而不关心它是否是最低的山谷。最终产物的比例由不同路径的[活化吉布斯能](@keyword=activation_gibbs_energy|lang=zh-CN|style=Feynman)之差（$\Delta\Delta G^\ddagger$）决定，产物比例与 $\exp(-\Delta\Delta G^\ddagger/RT)$ 成正比。通过精确控制温度和[反应时间](@keyword=response_time|lang=zh-CN|style=Feynman)，化学家可以选择性地合成想要的产物，即使它不是最稳定的那一个。这种策略在[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)中至关重要，例如，合成具有特定优异性能的[亚稳态](@keyword=metastable_states|lang=zh-CN|style=Feynman)[超导材料](@keyword=superconducting_materials|lang=zh-CN|style=Feynman) [@problem_id:1487343]，或是在有机合成中，精确控制分子是通过环化还是断裂来得到目标产物 [@problem_id:1487345]。
 
 #### 催化的魔力：另辟蹊径
 
-如果说控制反应条件是选择不同的山路，那么催化就是直接开辟一条全新的、更低的隧道。[催化剂](@article_id:298981)是一位神奇的向导，它不改变旅程的起点（反应物）和终点（产物），因此总的能量变化（$\Delta G_{rxn}$）保持不变。但它能彻底改变旅程本身，提供一条拥有更低活化能（$\Delta G^\ddagger_{cat} < \Delta G^\ddagger_{uncat}$）的新路径，从而使[反应速率](@article_id:303093)发生惊人的飞跃 。
+如果说控制反应条件是选择不同的山路，那么催化就是直接开辟一条全新的、更低的隧道。[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)是一位神奇的向导，它不改变旅程的起点（反应物）和终点（产物），因此总的能量变化（$\Delta G_{rxn}$）保持不变。但它能彻底改变旅程本身，提供一条拥有更低活化能（$\Delta G^\ddagger_{cat} < \Delta G^\ddagger_{uncat}$）的新路径，从而使[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)发生惊人的飞跃 [@problem_id:2283962]。
 
-在**[多相催化](@article_id:299849)**中，固体[催化剂](@article_id:298981)的表面成为了反应的天堂。例如，气体分子在金属表面的[分解反应](@article_id:305851)，其活化能远低于在气相中直接断裂所需的能量 。这是因为[催化剂](@article_id:298981)表面首先通过吸附作用“抓住”了反应物分子，这个过程通常会释放能量。然后，在这个“作坊”里，分子以一种能量耗费更低的方式[重排](@article_id:369331)和断裂。当然，这个过程也伴随着熵的代价——分子被束缚在表面，失去了自由。最终的 $\Delta G^\ddagger$ 是[焓和熵](@article_id:314881)共同作用的结果。
+在**[多相催化](@keyword=heterogeneous_catalysis|lang=zh-CN|style=Feynman)**中，固体[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)的表面成为了反应的天堂。例如，气体分子在金属表面的[分解反应](@keyword=decomposition_reaction|lang=zh-CN|style=Feynman)，其活化能远低于在气相中直接断裂所需的能量 [@problem_id:1487342]。这是因为[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)表面首先通过吸附作用“抓住”了反应物分子，这个过程通常会释放能量。然后，在这个“作坊”里，分子以一种能量耗费更低的方式[重排](@keyword=derangement|lang=zh-CN|style=Feynman)和断裂。当然，这个过程也伴随着熵的代价——分子被束缚在表面，失去了自由。最终的 $\Delta G^\ddagger$ 是[焓和熵](@keyword=enthalpy_and_entropy|lang=zh-CN|style=Feynman)共同作用的结果。
 
-然而，[催化剂](@article_id:298981)并非越“热情”越好。这引出了催化学中一个优美而深刻的原则——**[萨巴蒂尔原理](@article_id:365526)（Sabatier principle）**。一个理想的[催化剂](@article_id:298981)与反应物的结合必须恰到好处。如果结合太弱，反应物很难被有效活化；如果结合太强，产物又会“赖着不走”，堵塞催化位点。这种平衡之美在所谓的“[火山图](@article_id:324236)”中得到了完美体现 。图中，催化活性（与[反应速率](@article_id:303093)相关）随着[催化剂](@article_id:298981)与中间体结合能的变化，呈现出像火山一样的形状，在某个不强不弱的最佳结合能处达到顶峰。这就像一位循循善诱的老师，对学生的引导既不能太松也不能太紧。
+然而，[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)并非越“热情”越好。这引出了催化学中一个优美而深刻的原则——**[萨巴蒂尔原理](@keyword=sabatier_s_principle|lang=zh-CN|style=Feynman)（Sabatier principle）**。一个理想的[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)与反应物的结合必须恰到好处。如果结合太弱，反应物很难被有效活化；如果结合太强，产物又会“赖着不走”，堵塞催化位点。这种平衡之美在所谓的“[火山图](@keyword=volcano_plots|lang=zh-CN|style=Feynman)”中得到了完美体现 [@problem_id:1487312]。图中，催化活性（与[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)相关）随着[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)与中间体结合能的变化，呈现出像火山一样的形状，在某个不强不弱的最佳结合能处达到顶峰。这就像一位循循善诱的老师，对学生的引导既不能太松也不能太紧。
 
-更进一步，科学家们发现，对于一系列结构相似的反应，活化能与反应本身的[热力学](@article_id:359663)驱动力（$\Delta G^\circ$）之间常常存在简单的线性关系，这就是**贝尔-埃文斯-波拉尼（Bell-Evans-Polanyi）原理** 。这个强大的[经验法则](@article_id:325910)，使得我们可以通过更容易计算或测量的[热力学](@article_id:359663)数据，来预测和筛选[催化剂](@article_id:298981)的动力学性能，大[大加速](@article_id:377658)了新[催化剂](@article_id:298981)的设计进程。
+更进一步，科学家们发现，对于一系列结构相似的反应，活化能与反应本身的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)驱动力（$\Delta G^\circ$）之间常常存在简单的线性关系，这就是**贝尔-埃文斯-波拉尼（Bell-Evans-Polanyi）原理** [@problem_id:1487315]。这个强大的[经验法则](@keyword=68_95_99.7_rule|lang=zh-CN|style=Feynman)，使得我们可以通过更容易计算或测量的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)数据，来预测和筛选[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)的动力学性能，大[大加速](@keyword=great_acceleration|lang=zh-CN|style=Feynman)了新[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)的设计进程。
 
-### 生命的精妙机械：[分子尺](@article_id:346013)度的生物学
+### 生命的精妙机械：[分子尺](@keyword=molecular_ruler|lang=zh-CN|style=Feynman)度的生物学
 
 如果说人类的催化技术是一种艺术，那么大自然经过亿万年演化出的酶，则是鬼斧神工的杰作。
 
-#### 酶：自然界的完美[催化剂](@article_id:298981)
+#### 酶：自然界的完美[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)
 
-生命体内的[化学反应](@article_id:307389)，如新陈代谢、DNA复制，若无催化，其速率之慢将无法维持生命。酶，作为[生物催化剂](@article_id:300944)，正是生命节律的掌控者。它们能将反应的[活化能垒](@article_id:339249)降低到令人难以置信的程度，使[反应速率](@article_id:303093)提升数百万倍甚至更多 。酶通过其精确的三维结构，创造出一个被称为“[活性位点](@article_id:296930)”的微环境，它能完美地稳定[过渡态](@article_id:313517)，就像一个量身定制的模具，极大地降低了达到过渡态所需的能量。
+生命体内的[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)，如新陈代谢、DNA复制，若无催化，其速率之慢将无法维持生命。酶，作为[生物催化剂](@keyword=biological_catalysts|lang=zh-CN|style=Feynman)，正是生命节律的掌控者。它们能将反应的[活化能垒](@keyword=activation_energy_barrier|lang=zh-CN|style=Feynman)降低到令人难以置信的程度，使[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)提升数百万倍甚至更多 [@problem_id:1431819]。酶通过其精确的三维结构，创造出一个被称为“[活性位点](@keyword=active_site|lang=zh-CN|style=Feynman)”的微环境，它能完美地稳定[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)，就像一个量身定制的模具，极大地降低了达到过渡态所需的能量。
 
-生命过程的有序进行，不仅需要“加速”，还需要精确的“刹车”。**[酶抑制剂](@article_id:365174)**就扮演了这样的角色。通过理解不同抑制剂如何影响活化能，我们可以揭示生命调控的奥秘。例如，[竞争性抑制剂](@article_id:356454)与底物争夺[活性位点](@article_id:296930)，但在底物饱和条件下，[最大反应速率](@article_id:370681)（$V_{max}$）不受影响，表明催化步骤本身的[活化能垒](@article_id:339249)并未改变。相反，[非竞争性抑制](@article_id:298514)剂通过结合到酶的其他位点来降低其催化效率（即降低 $V_{max}$），这等效于增加了催化反应的[表观活化能](@article_id:365884) 。这些知识不仅深化了我们对生命化学的理解，也为[药物设计](@article_id:300863)提供了理论基础。
+生命过程的有序进行，不仅需要“加速”，还需要精确的“刹车”。**[酶抑制剂](@keyword=enzyme_inhibitors|lang=zh-CN|style=Feynman)**就扮演了这样的角色。通过理解不同抑制剂如何影响活化能，我们可以揭示生命调控的奥秘。例如，[竞争性抑制剂](@keyword=competitive_inhibitor|lang=zh-CN|style=Feynman)与底物争夺[活性位点](@keyword=active_site|lang=zh-CN|style=Feynman)，但在底物饱和条件下，[最大反应速率](@keyword=vmax_(maximal_velocity)|lang=zh-CN|style=Feynman)（$V_{max}$）不受影响，表明催化步骤本身的[活化能垒](@keyword=activation_energy_barrier|lang=zh-CN|style=Feynman)并未改变。相反，[非竞争性抑制](@keyword=non_competitive_inhibition|lang=zh-CN|style=Feynman)剂通过结合到酶的其他位点来降低其催化效率（即降低 $V_{max}$），这等效于增加了催化反应的[表观活化能](@keyword=apparent_activation_energy|lang=zh-CN|style=Feynman) [@problem_id:1490680]。这些知识不仅深化了我们对生命化学的理解，也为[药物设计](@keyword=drug_design|lang=zh-CN|style=Feynman)提供了理论基础。
 
 ### 我们周围的世界：物理与工程的交响
 
@@ -42,29 +42,29 @@
 
 一个反应并非孤立存在，它周围的环境，如压力、溶剂，都会深刻地影响其能量壁垒。
 
-- **压力之手**：在高压下，物质被压缩。如果一个反应的[过渡态](@article_id:313517)比反应物更“紧凑”（即[活化体积](@article_id:370995) $\Delta V^\ddagger < 0$），那么施加压力将有利于过渡态的形成，从而降低[活化吉布斯能](@article_id:370723)，加速反应 。这个原理在地球深处的地球化学过程，以及[高压合成](@article_id:316317)新材料（如人造金刚石）中扮演着核心角色。
+- **压力之手**：在高压下，物质被压缩。如果一个反应的[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)比反应物更“紧凑”（即[活化体积](@keyword=activation_volume|lang=zh-CN|style=Feynman) $\Delta V^\ddagger < 0$），那么施加压力将有利于过渡态的形成，从而降低[活化吉布斯能](@keyword=activation_gibbs_energy|lang=zh-CN|style=Feynman)，加速反应 [@problem_id:1487321]。这个原理在地球深处的地球化学过程，以及[高压合成](@keyword=high_pressure_synthesis|lang=zh-CN|style=Feynman)新材料（如人造金刚石）中扮演着核心角色。
 
-- **溶剂的拥抱**：反应往往在溶液中进行。溶剂分子并非无动于衷的旁观者，它们会与反应物和[过渡态](@article_id:313517)发生相互作用。如果一个反应从非极性反应物生成一个极性很强的过渡态（例如形成[电荷](@article_id:339187)分离的偶极），那么将它置于[极性溶剂](@article_id:380030)中，溶剂分子就会像热情的拥抱一样稳定这个过渡态，从而显著降低活化能 。
+- **溶剂的拥抱**：反应往往在溶液中进行。溶剂分子并非无动于衷的旁观者，它们会与反应物和[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)发生相互作用。如果一个反应从非极性反应物生成一个极性很强的过渡态（例如形成[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)分离的偶极），那么将它置于[极性溶剂](@keyword=polar_solvent|lang=zh-CN|style=Feynman)中，溶剂分子就会像热情的拥抱一样稳定这个过渡态，从而显著降低活化能 [@problem_id:1487328]。
 
-- **离子的海洋**：在离子溶液中，带[电荷](@article_id:339187)的反应物之间的相互作用会被周围的“离子云”所屏蔽。这便是**[动力学盐效应](@article_id:328886)** 。若两个相反[电荷](@article_id:339187)的离子需要靠近反应，增加溶液中的“惰性”盐会削弱它们的静电吸引，使得反应更难发生，相当于提高了活化能。这就像在喧闹的人群中寻找朋友，比在安静的房间里更困难。
+- **离子的海洋**：在离子溶液中，带[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的反应物之间的相互作用会被周围的“离子云”所屏蔽。这便是**[动力学盐效应](@keyword=kinetic_salt_effect|lang=zh-CN|style=Feynman)** [@problem_id:1487313]。若两个相反[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的离子需要靠近反应，增加溶液中的“惰性”盐会削弱它们的静电吸引，使得反应更难发生，相当于提高了活化能。这就像在喧闹的人群中寻找朋友，比在安静的房间里更困难。
 
 #### 电化学的协奏
 
-电化学将电与化学紧密联系在一起，而活化能是理解其动态过程的关键。在电极表面，施加一个额外的电压，即**过电势**（$\eta$），就如同用一只无形的手直接推高或拉低电子的能量。对于一个氧化反应，施加正的[过电势](@article_id:299877)会降低电子转移的活化能垒，从而驱动反应以更快的速率进行 。我们每天使用的电池、未来的[氢燃料电池](@article_id:325151)，其充放电效率都与如何有效降低这些电[化学反应](@article_id:307389)的 $\Delta G^\ddagger$ 息息相关。
+电化学将电与化学紧密联系在一起，而活化能是理解其动态过程的关键。在电极表面，施加一个额外的电压，即**过电势**（$\eta$），就如同用一只无形的手直接推高或拉低电子的能量。对于一个氧化反应，施加正的[过电势](@keyword=overpotential|lang=zh-CN|style=Feynman)会降低电子转移的活化能垒，从而驱动反应以更快的速率进行 [@problem_id:1535283]。我们每天使用的电池、未来的[氢燃料电池](@keyword=hydrogen_fuel_cell|lang=zh-CN|style=Feynman)，其充放电效率都与如何有效降低这些电[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的 $\Delta G^\ddagger$ 息息相关。
 
-谈到电子转移，就不能不提优美的**[马库斯理论](@article_id:310036)（Marcus theory）** 。该理论为[电子转移反应](@article_id:310590)的活化能提供了一个简洁而出人意料的表达式。它指出，$\Delta G^\ddagger$ 主要由两个因素决定：反应的驱动力（$\Delta G^\circ$）和**[重组能](@article_id:312408)**（$\lambda$）。[重组能](@article_id:312408)是指为了让电子“跳跃”，反应物分子自身及其周围溶剂分子需要进行结构扭曲和[重排](@article_id:369331)所付出的能量代价。这个理论不仅解释了光合作用中高效的能量转换，也指导着[有机发光二极管](@article_id:307149)（OLED）和太阳能电池等现代技术的设计。
+谈到电子转移，就不能不提优美的**[马库斯理论](@keyword=marcus_theory|lang=zh-CN|style=Feynman)（Marcus theory）** [@problem_id:1490639]。该理论为[电子转移反应](@keyword=electron_transfer_reactions|lang=zh-CN|style=Feynman)的活化能提供了一个简洁而出人意料的表达式。它指出，$\Delta G^\ddagger$ 主要由两个因素决定：反应的驱动力（$\Delta G^\circ$）和**[重组能](@keyword=reorganization_energy|lang=zh-CN|style=Feynman)**（$\lambda$）。[重组能](@keyword=reorganization_energy|lang=zh-CN|style=Feynman)是指为了让电子“跳跃”，反应物分子自身及其周围溶剂分子需要进行结构扭曲和[重排](@keyword=derangement|lang=zh-CN|style=Feynman)所付出的能量代价。这个理论不仅解释了光合作用中高效的能量转换，也指导着[有机发光二极管](@keyword=oleds|lang=zh-CN|style=Feynman)（OLED）和太阳能电池等现代技术的设计。
 
 #### 追踪飞速的分子之舞
 
-对于一些极快的化学过程，比如分子的构象变化，我们如何测量其微小的[活化能垒](@article_id:339249)？**[动态核磁共振](@article_id:382768)（NMR）**技术为我们提供了独特的视角 。NMR就像一台分子摄像机。在低温下，一个分子（如 $\text{BrF}_4^+$）的不同部分（如轴向和赤道向的氟原子）可能因为化学环境不同而显示出独立的信号。当温度升高，分子内部的交换变得越来越快，快到NMR“相机”来不及分辨。信号开始模糊并最终在某个“合并温度”合二为一。通过分析这一过程，科学家可以精确计算出分子翻转的速率，进而推算出其需要跨越的[活化吉布斯能](@article_id:370723)。
+对于一些极快的化学过程，比如分子的构象变化，我们如何测量其微小的[活化能垒](@keyword=activation_energy_barrier|lang=zh-CN|style=Feynman)？**[动态核磁共振](@keyword=dynamic_nmr|lang=zh-CN|style=Feynman)（NMR）**技术为我们提供了独特的视角 [@problem_id:2261745]。NMR就像一台分子摄像机。在低温下，一个分子（如 $\text{BrF}_4^+$）的不同部分（如轴向和赤道向的氟原子）可能因为化学环境不同而显示出独立的信号。当温度升高，分子内部的交换变得越来越快，快到NMR“相机”来不及分辨。信号开始模糊并最终在某个“合并温度”合二为一。通过分析这一过程，科学家可以精确计算出分子翻转的速率，进而推算出其需要跨越的[活化吉布斯能](@keyword=activation_gibbs_energy|lang=zh-CN|style=Feynman)。
 
 #### 从流体到固体：万物皆“流”
 
 活化能的视角甚至可以延伸到我们日常接触的宏观世界。
 
-- **固体的蠕变**：在高温下，一块金属材料在持续的应力作用下会发生缓慢而永久的变形，这一现象称为**蠕变**。这对于喷气发动机涡轮叶片或[核反应堆](@article_id:299224)管道的设计是致命的。这种宏观变形，其微观本质是固体内部的原子或[位错](@article_id:299027)，借助热能的“一臂之力”，克服一个个微小的能量壁垒，从一个位置跳到另一个位置的过程。这个过程的速率，同样遵循一个由应力和温度决定的、包含活化能（和[活化体积](@article_id:370995)）的公式 。
+- **固体的蠕变**：在高温下，一块金属材料在持续的应力作用下会发生缓慢而永久的变形，这一现象称为**蠕变**。这对于喷气发动机涡轮叶片或[核反应堆](@keyword=nuclear_reactor|lang=zh-CN|style=Feynman)管道的设计是致命的。这种宏观变形，其微观本质是固体内部的原子或[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)，借助热能的“一臂之力”，克服一个个微小的能量壁垒，从一个位置跳到另一个位置的过程。这个过程的速率，同样遵循一个由应力和温度决定的、包含活化能（和[活化体积](@keyword=activation_volume|lang=zh-CN|style=Feynman)）的公式 [@problem_id:2811096]。
 
-- **液体的黏度**：当你倒蜂蜜时，你是否想过它为何如此黏稠？液体的黏性，即其流动的阻力，也可以通过活化能来理解。根据**艾林（Eyring）的黏[度理论](@article_id:640354)**，液体流动被看作是分子克服一个能量势垒，挤入邻近“空穴”的集体行为。这个过程的[活化吉布斯能](@article_id:370723)越高，分子移动就越困难，液体也就越黏稠。这个理论甚至能漂亮地推导出理想液体混合物的黏度混合规则 。
+- **液体的黏度**：当你倒蜂蜜时，你是否想过它为何如此黏稠？液体的黏性，即其流动的阻力，也可以通过活化能来理解。根据**艾林（Eyring）的黏[度理论](@keyword=degree_theory|lang=zh-CN|style=Feynman)**，液体流动被看作是分子克服一个能量势垒，挤入邻近“空穴”的集体行为。这个过程的[活化吉布斯能](@keyword=activation_gibbs_energy|lang=zh-CN|style=Feynman)越高，分子移动就越困难，液体也就越黏稠。这个理论甚至能漂亮地推导出理想液体混合物的黏度混合规则 [@problem_id:522595]。
 
 ---
 

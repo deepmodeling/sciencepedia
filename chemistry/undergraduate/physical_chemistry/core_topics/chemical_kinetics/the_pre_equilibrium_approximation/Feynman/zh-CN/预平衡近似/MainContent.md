@@ -1,15 +1,15 @@
 ## 引言
-[化学反应](@article_id:307389)的世界远比简单的 $A \to B$ 复杂得多。许多重要的转化过程都通过一系列隐秘的中间步骤进行，其中涉及到寿命极短、浓度极低的“[反应中间体](@article_id:312233)”。直接测量这些瞬息即逝的物质几乎是不可能的，这给理解和预测整个反应的速率带来了巨大挑战。我们如何才能绕过这个障碍，揭示[复杂反应](@article_id:345723)背后的动力学规律呢？
+[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的世界远比简单的 $A \to B$ 复杂得多。许多重要的转化过程都通过一系列隐秘的中间步骤进行，其中涉及到寿命极短、浓度极低的“[反应中间体](@keyword=reactive_intermediates|lang=zh-CN|style=Feynman)”。直接测量这些瞬息即逝的物质几乎是不可能的，这给理解和预测整个反应的速率带来了巨大挑战。我们如何才能绕过这个障碍，揭示[复杂反应](@keyword=complex_reactions|lang=zh-CN|style=Feynman)背后的动力学规律呢？
 
-本文旨在系统介绍一个优雅而强大的工具——**[预平衡近似](@article_id:307860) (Pre-equilibrium Approximation)**，它为解决上述难题提供了关键思路。您将学习到该近似的核心原理，即一个快速可逆的初始步骤如何在缓慢的决速步骤之前建立平衡。我们将探讨其应用的明确边界条件，并展示其如何解释[分数反应级数](@article_id:373598)和[负活化能](@article_id:350265)等看似反常的实验现象。此外，文章还将展示此方法在[酶催化](@article_id:306582)、[大气化学](@article_id:377159)乃至电化学等不同科学领域的广泛适用性。现在，就让我们踏上这段探索之旅，首先深入揭开[预平衡近似](@article_id:307860)的原理与机制。
+本文旨在系统介绍一个优雅而强大的工具——**[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman) (Pre-equilibrium Approximation)**，它为解决上述难题提供了关键思路。您将学习到该近似的核心原理，即一个快速可逆的初始步骤如何在缓慢的决速步骤之前建立平衡。我们将探讨其应用的明确边界条件，并展示其如何解释[分数反应级数](@keyword=fractional_reaction_order|lang=zh-CN|style=Feynman)和[负活化能](@keyword=negative_activation_energy|lang=zh-CN|style=Feynman)等看似反常的实验现象。此外，文章还将展示此方法在[酶催化](@keyword=enzyme_catalysis|lang=zh-CN|style=Feynman)、[大气化学](@keyword=atmospheric_chemistry|lang=zh-CN|style=Feynman)乃至电化学等不同科学领域的广泛适用性。现在，就让我们踏上这段探索之旅，首先深入揭开[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman)的原理与机制。
 
 ## 原理与机制
 
-想象一下，你正试图理解一个繁忙大都市的[交通流](@article_id:344699)量。你不可能跟踪每一辆车的完整路径——那太复杂了。但如果你发现，成千上万的汽车都涌向一个巨大的、有多个出口的环岛，但只有一个出口通往市中心，并且那条路狭窄而拥堵。你会马上意识到，整个城市的交通瓶颈就在那条通往市中心的窄路上。要预测有多少车能到达市中心，你不需要知道每辆车在环岛里转了多久；你只需要知道环岛里随时大概有多少车，以及那条窄路能以多快的速度“消化”它们。
+想象一下，你正试图理解一个繁忙大都市的[交通流](@keyword=traffic_flow|lang=zh-CN|style=Feynman)量。你不可能跟踪每一辆车的完整路径——那太复杂了。但如果你发现，成千上万的汽车都涌向一个巨大的、有多个出口的环岛，但只有一个出口通往市中心，并且那条路狭窄而拥堵。你会马上意识到，整个城市的交通瓶颈就在那条通往市中心的窄路上。要预测有多少车能到达市中心，你不需要知道每辆车在环岛里转了多久；你只需要知道环岛里随时大概有多少车，以及那条窄路能以多快的速度“消化”它们。
 
-[化学反应](@article_id:307389)的世界，在分子尺度上，就像这个繁忙的都市。许多反应并非一步到位，而是经历了一系列复杂的步骤，其中常常涉及到一些“害羞”的、寿命极短的分子，我们称之为“[反应中间体](@article_id:312233)”。这些中间体就像是环岛里飞驰的汽车：它们来去匆匆，浓度极低，难以直接测量。那么，我们该如何理解整个反应的速率呢？
+[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的世界，在分子尺度上，就像这个繁忙的都市。许多反应并非一步到位，而是经历了一系列复杂的步骤，其中常常涉及到一些“害羞”的、寿命极短的分子，我们称之为“[反应中间体](@keyword=reactive_intermediates|lang=zh-CN|style=Feynman)”。这些中间体就像是环岛里飞驰的汽车：它们来去匆匆，浓度极低，难以直接测量。那么，我们该如何理解整个反应的速率呢？
 
-答案，就在于一个优雅而强大的思想工具：**[预平衡近似](@article_id:307860) (Pre-equilibrium Approximation)**。
+答案，就在于一个优雅而强大的思想工具：**[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman) (Pre-equilibrium Approximation)**。
 
 ### 瓶颈思想：快平衡与慢转化
 
@@ -23,15 +23,15 @@ $$
 \text{第 2 步 (慢):}\quad I \xrightarrow{k_2} P
 $$
 
-这里的 $k_1$，$k_{-1}$ 和 $k_2$ 是各个[基元步骤](@article_id:303828)的[速率常数](@article_id:375068)，它们衡量了对应步骤的固有速率。
+这里的 $k_1$，$k_{-1}$ 和 $k_2$ 是各个[基元步骤](@keyword=elementary_steps|lang=zh-CN|style=Feynman)的[速率常数](@keyword=rate_constants|lang=zh-CN|style=Feynman)，它们衡量了对应步骤的固有速率。
 
-整个反应产生 $P$ 的速率，显然取决于第二步，即产物生成的瓶颈步骤。根据[化学反应](@article_id:307389)速率的基本法则，这个速率可以写成：
+整个反应产生 $P$ 的速率，显然取决于第二步，即产物生成的瓶颈步骤。根据[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)速率的基本法则，这个速率可以写成：
 $$
 \text{速率} = \frac{d[P]}{dt} = k_2 [I]
 $$
-这个表达式非常直观：产物生成的速率正比于中间体 $I$ 的浓度 $[I]$ 和它转化的[速率常数](@article_id:375068) $k_2$。但问题是，我们如何知道那个难以捉摸的 $[I]$ 是多少？
+这个表达式非常直观：产物生成的速率正比于中间体 $I$ 的浓度 $[I]$ 和它转化的[速率常数](@keyword=rate_constants|lang=zh-CN|style=Feynman) $k_2$。但问题是，我们如何知道那个难以捉摸的 $[I]$ 是多少？
 
-这就是[预平衡近似](@article_id:307860)大显身手的地方。这个近似的核心思想是：既然第一步的反应（$A+B \rightleftharpoons I$）在正向和逆向都进行得“飞快”，而第二步消耗 $I$ 的过程却非常“缓慢”，那么第一步几乎总是有足够的时间来达到它自身的平衡状态。这就好像环岛里的[车流](@article_id:344699)量非常大，进出的速度都很快，而通往市中心的那条小路只是非常缓慢地从中“抽取”了一小部分车。因此，在任何时刻，环岛里的车辆总数（即中间体 $[I]$ 的浓度）都近似地由环岛自身的“动态平衡”所决定。
+这就是[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman)大显身手的地方。这个近似的核心思想是：既然第一步的反应（$A+B \rightleftharpoons I$）在正向和逆向都进行得“飞快”，而第二步消耗 $I$ 的过程却非常“缓慢”，那么第一步几乎总是有足够的时间来达到它自身的平衡状态。这就好像环岛里的[车流](@keyword=traffic_flow|lang=zh-CN|style=Feynman)量非常大，进出的速度都很快，而通往市中心的那条小路只是非常缓慢地从中“抽取”了一小部分车。因此，在任何时刻，环岛里的车辆总数（即中间体 $[I]$ 的浓度）都近似地由环岛自身的“动态平衡”所决定。
 
 在这个“预先建立的平衡”中，中间体 $I$ 的生成速率与它分解回反应物 $A$ 和 $B$ 的速率几乎相等：
 $$
@@ -51,35 +51,35 @@ $$
 $$
 这个等式告诉我们，整个反应的速率正比于反应物 $A$ 和 $B$ 的浓度。我们已经推导出了一个完整的、可以与实验数据进行比较的速率方程！
 
-我们还可以让这个表达式更优美一些。你可能认出，比值 $k_1/k_{-1}$ 正是第一步反应的[平衡常数](@article_id:301482)，我们记为 $K_1$。于是，整个反应的速率可以写成：
+我们还可以让这个表达式更优美一些。你可能认出，比值 $k_1/k_{-1}$ 正是第一步反应的[平衡常数](@keyword=equilibrium_constant|lang=zh-CN|style=Feynman)，我们记为 $K_1$。于是，整个反应的速率可以写成：
 $$
 \text{速率} = k_2 K_1 [A][B]
 $$
-这真是太美妙了！一个描述[反应速率](@article_id:303093)的动力学方程，竟然直接与描述反应[平衡位置](@article_id:336089)的[热力学](@article_id:359663)量（$K_1$）联系在了一起。动力学和[热力学](@article_id:359663)，在此刻握手言和。我们可以将 $k_2 K_1$ 看作是整个反应的“表观速率常数” $k_{obs}$。
+这真是太美妙了！一个描述[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)的动力学方程，竟然直接与描述反应[平衡位置](@keyword=equilibrium_position|lang=zh-CN|style=Feynman)的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)量（$K_1$）联系在了一起。动力学和[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)，在此刻握手言和。我们可以将 $k_2 K_1$ 看作是整个反应的“表观速率常数” $k_{obs}$。
 
 ### 游戏的规则：何时可以信赖这个近似？
 
-任何近似都有其适用范围，就像任何工具都有其使用说明。[预平衡近似](@article_id:307860)的美妙之处在于，它的“使用说明”非常清晰。
+任何近似都有其适用范围，就像任何工具都有其使用说明。[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman)的美妙之处在于，它的“使用说明”非常清晰。
 
 回到我们的环岛比喻：这个近似成立的前提是，汽车离开环岛进入市中心小路的速度，必须远远慢于它们在环岛里掉头返回原来道路的速度。如果进入市中心的路又宽又快，那么大量的汽车会迅速被抽走，环岛本身就无法维持一个稳定的平衡状态了。
 
-将其翻译成化学语言，就是中间体 $I$ 转化为产物 $P$ 的速率（由 $k_2$ 决定），必须远远慢于它分解回反应物 $A$ 和 $B$ 的速率（由 $k_{-1}$ 决定）。这就是[预平衡近似](@article_id:307860)的核心前提条件：
+将其翻译成化学语言，就是中间体 $I$ 转化为产物 $P$ 的速率（由 $k_2$ 决定），必须远远慢于它分解回反应物 $A$ 和 $B$ 的速率（由 $k_{-1}$ 决定）。这就是[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman)的核心前提条件：
 $$
 k_{-1} \gg k_2
 $$
-这个简单的数学不等式，就是判断我们是否可以安全使用[预平衡近似](@article_id:307860)的黄金法则。
+这个简单的数学不等式，就是判断我们是否可以安全使用[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman)的黄金法则。
 
-我们可以更进一步，用数学来量化这个近似的可靠性。如果我们使用一个更普适（但也更复杂）的方法——稳态近似（Steady-State Approximation, SSA），我们会得到一个更精确的速率表达式。通过比较[预平衡近似](@article_id:307860)（PEA）的结果和[稳态近似](@article_id:300898)的结果，我们可以计算出[预平衡近似](@article_id:307860)的[相对误差](@article_id:307953) $\epsilon$。令人惊讶的是，这个误差有一个极其简洁的形式：
+我们可以更进一步，用数学来量化这个近似的可靠性。如果我们使用一个更普适（但也更复杂）的方法——稳态近似（Steady-State Approximation, SSA），我们会得到一个更精确的速率表达式。通过比较[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman)（PEA）的结果和[稳态近似](@keyword=steady_state_approximation|lang=zh-CN|style=Feynman)的结果，我们可以计算出[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman)的[相对误差](@keyword=relative_error|lang=zh-CN|style=Feynman) $\epsilon$。令人惊讶的是，这个误差有一个极其简洁的形式：
 $$
 \epsilon = \frac{|v_{SSA} - v_{PEA}|}{v_{SSA}} \approx \frac{k_2}{k_{-1}}
 $$
-这个公式完美地印证了我们的直觉：$k_{-1}$ 相对于 $k_2$ 越大，比值 $k_2/k_{-1}$ 就越小，我们使用[预平衡近似](@article_id:307860)所引入的误差也就越小。例如，如果中间体分解回反应物的速率是它转化为产物速率的1000倍（$k_{-1} = 1000 \times k_2$），那么这个近似的误差就只有大约0.1%！
+这个公式完美地印证了我们的直觉：$k_{-1}$ 相对于 $k_2$ 越大，比值 $k_2/k_{-1}$ 就越小，我们使用[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman)所引入的误差也就越小。例如，如果中间体分解回反应物的速率是它转化为产物速率的1000倍（$k_{-1} = 1000 \times k_2$），那么这个近似的误差就只有大约0.1%！
 
-反之，如果 $k_2$ 远大于 $k_{-1}$，即中间体一旦生成就几乎立刻转化为产物，根本来不及回到反应物的状态，那么[预平衡](@article_id:361667)的假设就完全崩溃了。在这种情况下，[稳态近似](@article_id:300898)会给出更准确的答案，而[预平衡近似](@article_id:307860)则会得出荒谬的结论。理解一个理论的边界，和理解其核心同样重要。
+反之，如果 $k_2$ 远大于 $k_{-1}$，即中间体一旦生成就几乎立刻转化为产物，根本来不及回到反应物的状态，那么[预平衡](@keyword=pre_equilibrium|lang=zh-CN|style=Feynman)的假设就完全崩溃了。在这种情况下，[稳态近似](@keyword=steady_state_approximation|lang=zh-CN|style=Feynman)会给出更准确的答案，而[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman)则会得出荒谬的结论。理解一个理论的边界，和理解其核心同样重要。
 
 ### 揭示隐藏的真相
 
-[预平衡近似](@article_id:307860)不仅仅是一个计算工具，它更像是一副特殊的“眼镜”，能帮助我们洞察到反应机理中隐藏的细节。
+[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman)不仅仅是一个计算工具，它更像是一副特殊的“眼镜”，能帮助我们洞察到反应机理中隐藏的细节。
 
 #### **“看到”反应的分子数**
 
@@ -87,30 +87,30 @@ $$
 $$
 2A + B \underset{k_{-1}}{\stackrel{k_1}{\rightleftharpoons}} I \xrightarrow{k_2} P
 $$
-在不了解机理的情况下，我们很难猜测[反应速率](@article_id:303093)是如何依赖于 $[A]$ 和 $[B]$ 的。但只要应用[预平衡近似](@article_id:307860)，我们立刻可以写出 $k_1 [A]^2 [B] \approx k_{-1} [I]$，从而得到 $[I] \approx (k_1/k_{-1})[A]^2[B]$。代入[速率方程](@article_id:360355)，我们得到：
+在不了解机理的情况下，我们很难猜测[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)是如何依赖于 $[A]$ 和 $[B]$ 的。但只要应用[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman)，我们立刻可以写出 $k_1 [A]^2 [B] \approx k_{-1} [I]$，从而得到 $[I] \approx (k_1/k_{-1})[A]^2[B]$。代入[速率方程](@keyword=reaction_rate_law|lang=zh-CN|style=Feynman)，我们得到：
 $$
 \text{速率} \approx \frac{k_1 k_2}{k_{-1}} [A]^2 [B]
 $$
-请注意 $[A]$ 的指数是2，$[B]$ 的指数是1！这些指数，我们称之为“[反应级数](@article_id:303416)”，直接反映了快速[预平衡](@article_id:361667)步骤中反应物的[化学计量数](@article_id:305198)。这意味着，通过在实验室测量并确定反应级数，我们就能反过来推断出那个看不见的、快速发生的[预平衡](@article_id:361667)步骤的“[分子式](@article_id:297377)”。这个近似方法，给了我们一种窥探[反应机理](@article_id:364777)第一步的强大能力。
+请注意 $[A]$ 的指数是2，$[B]$ 的指数是1！这些指数，我们称之为“[反应级数](@keyword=reaction_order|lang=zh-CN|style=Feynman)”，直接反映了快速[预平衡](@keyword=pre_equilibrium|lang=zh-CN|style=Feynman)步骤中反应物的[化学计量数](@keyword=stoichiometric_number|lang=zh-CN|style=Feynman)。这意味着，通过在实验室测量并确定反应级数，我们就能反过来推断出那个看不见的、快速发生的[预平衡](@keyword=pre_equilibrium|lang=zh-CN|style=Feynman)步骤的“[分子式](@keyword=molecular_formula|lang=zh-CN|style=Feynman)”。这个近似方法，给了我们一种窥探[反应机理](@keyword=chemical_mechanism|lang=zh-CN|style=Feynman)第一步的强大能力。
 
-#### **[负活化能](@article_id:350265)之谜**
+#### **[负活化能](@keyword=negative_activation_energy|lang=zh-CN|style=Feynman)之谜**
 
-通常我们都认为，升高温度会使[化学反应](@article_id:307389)变快。这是因为温度升高，分子拥有更多能量来跨越反应的“能垒”，即活化能 $E_a$。因此，我们几乎总是遇到正的活化能。
+通常我们都认为，升高温度会使[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)变快。这是因为温度升高，分子拥有更多能量来跨越反应的“能垒”，即活化能 $E_a$。因此，我们几乎总是遇到正的活化能。
 
-但[预平衡](@article_id:361667)机理却[能带](@article_id:306995)来一个惊人的、违反直觉的现象：**[负活化能](@article_id:350265)**。
+但[预平衡](@keyword=pre_equilibrium|lang=zh-CN|style=Feynman)机理却[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)来一个惊人的、违反直觉的现象：**[负活化能](@keyword=negative_activation_energy|lang=zh-CN|style=Feynman)**。
 
-我们推导出的表观速率常数是 $k_{obs} = k_2 (k_1/k_{-1})$。每一个速率常数 $k$ 都遵循 Arrhenius 方程，该方程描述了速率常数与温度的关系，其中包含了各自的活化能 $E_{a,i}$。通过一番数学推导，我们可以得到[表观活化能](@article_id:365884) $E_{a,obs}$ 与各[基元步骤](@article_id:303828)活化能之间的关系：
+我们推导出的表观速率常数是 $k_{obs} = k_2 (k_1/k_{-1})$。每一个速率常数 $k$ 都遵循 Arrhenius 方程，该方程描述了速率常数与温度的关系，其中包含了各自的活化能 $E_{a,i}$。通过一番数学推导，我们可以得到[表观活化能](@keyword=apparent_activation_energy|lang=zh-CN|style=Feynman) $E_{a,obs}$ 与各[基元步骤](@keyword=elementary_steps|lang=zh-CN|style=Feynman)活化能之间的关系：
 $$
 E_{a,obs} = E_{a,1} + E_{a,2} - E_{a,-1}
 $$
 现在，想象一下这样一个情景：中间体 $I$ 分解回反应物 $A$ 和 $B$ 需要跨越的能垒 $E_{a,-1}$ 非常非常高，比 $A$ 和 $B$ 形成 $I$ 的能垒 $E_{a,1}$ 与 $I$ 转化为 $P$ 的能垒 $E_{a,2}$ 之和还要高。在这种情况下，$E_{a,obs}$ 就会是一个负值！
 
-[负活化能](@article_id:350265)意味着什么？它意味着**升高温度，总[反应速率](@article_id:303093)反而会减慢**。
+[负活化能](@keyword=negative_activation_energy|lang=zh-CN|style=Feynman)意味着什么？它意味着**升高温度，总[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)反而会减慢**。
 
-这怎么可能呢？让我们再次回到一个生动的场景。[预平衡](@article_id:361667)步骤 $A + B \rightleftharpoons I$ 是一个放热反应（这对应着一个很大的 $E_{a,-1}$）。根据[热力学](@article_id:359663)原理（Le Chatelier 原理），对于放热反应，升高温度会使平衡向吸热的方向移动，也就是向左，即反应物 $A$ 和 $B$ 的方向。
+这怎么可能呢？让我们再次回到一个生动的场景。[预平衡](@keyword=pre_equilibrium|lang=zh-CN|style=Feynman)步骤 $A + B \rightleftharpoons I$ 是一个放热反应（这对应着一个很大的 $E_{a,-1}$）。根据[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)原理（Le Chatelier 原理），对于放热反应，升高温度会使平衡向吸热的方向移动，也就是向左，即反应物 $A$ 和 $B$ 的方向。
 
-所以，当我们升高温度时，虽然第二步 $I \rightarrow P$ 的速率（由 $k_2$ 决定）确实变快了，但[预平衡](@article_id:361667) $A+B \rightleftharpoons I$ 会向左移动得更厉害，导致中间体 $I$ 的平衡浓度 $[I]$ 大幅下降。如果 $[I]$ 下降的效应超过了 $k_2$ 增长的效应，那么总的速率 $k_2[I]$ 就会随着温度的升高而降低。这就像一家工厂，虽然装配工人的速度（$k_2$）在温暖的环境下变快了，但高温却导致生产线上可用的零件（$[I]$）数量急剧减少，结果工厂的总产量反而下降了。
+所以，当我们升高温度时，虽然第二步 $I \rightarrow P$ 的速率（由 $k_2$ 决定）确实变快了，但[预平衡](@keyword=pre_equilibrium|lang=zh-CN|style=Feynman) $A+B \rightleftharpoons I$ 会向左移动得更厉害，导致中间体 $I$ 的平衡浓度 $[I]$ 大幅下降。如果 $[I]$ 下降的效应超过了 $k_2$ 增长的效应，那么总的速率 $k_2[I]$ 就会随着温度的升高而降低。这就像一家工厂，虽然装配工人的速度（$k_2$）在温暖的环境下变快了，但高温却导致生产线上可用的零件（$[I]$）数量急剧减少，结果工厂的总产量反而下降了。
 
-因此，当实验中观测到[负活化能](@article_id:350265)时，它往往是存在一个快速放热的[预平衡](@article_id:361667)步骤的强烈信号。这再次证明了[预平衡近似](@article_id:307860)这个简单的模型，是如何为我们解读复杂、甚至是反直觉的实验现象提供深刻见解的。
+因此，当实验中观测到[负活化能](@keyword=negative_activation_energy|lang=zh-CN|style=Feynman)时，它往往是存在一个快速放热的[预平衡](@keyword=pre_equilibrium|lang=zh-CN|style=Feynman)步骤的强烈信号。这再次证明了[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman)这个简单的模型，是如何为我们解读复杂、甚至是反直觉的实验现象提供深刻见解的。
 
-从[大气化学](@article_id:377159)到[酶催化](@article_id:306582)反应，从药物合成到[材料科学](@article_id:312640)，[预平衡近似](@article_id:307860)无处不在。它不仅仅是一种数学技巧，更是一种思维方式——教我们如何在复杂的多步过程中，通过识别最快和最慢的环节来抓住主要矛盾，从而洞见系统的本质。这正是科学之美：用简单的原理，揭示复杂世界背后的统一秩序。
+从[大气化学](@keyword=atmospheric_chemistry|lang=zh-CN|style=Feynman)到[酶催化](@keyword=enzyme_catalysis|lang=zh-CN|style=Feynman)反应，从药物合成到[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)，[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman)无处不在。它不仅仅是一种数学技巧，更是一种思维方式——教我们如何在复杂的多步过程中，通过识别最快和最慢的环节来抓住主要矛盾，从而洞见系统的本质。这正是科学之美：用简单的原理，揭示复杂世界背后的统一秩序。

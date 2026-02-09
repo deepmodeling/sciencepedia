@@ -1,9 +1,9 @@
 ## 引言
-在科学与工程的广阔天地中，从新材料的合成到生命过程的运转，能量的转移与转化无处不在，而热量是其最基本的形式之一。为了精确地描述和预测物质在热作用下的行为，物理学家和化学家发展出了两个基石性的概念：焓（Enthalpy）与[热容](@article_id:340019)（Heat Capacity）。然而，对于许多学习者而言，它们往往只是教科书上的公式，其背后深刻的物理洞察、与微观世界的精妙联系，以及作为强大分析工具的跨学科应用，常常被忽略。本文旨在填补这一认知鸿沟。我们将首先深入剖析焓与[热容](@article_id:340019)的原理与机制，揭示它们为何是描述恒压过程能量变化的完美工具；接着，我们将踏上一段跨学科之旅，探索它们在[材料科学](@article_id:312640)、纳米技术乃至生命科学中的广泛应用；最后，通过一系列动手实践，巩固理论联系实际的能力。现在，让我们从最核心的问题开始：这些概念究竟从何而来，其本质又是什么？
+在科学与工程的广阔天地中，从新材料的合成到生命过程的运转，能量的转移与转化无处不在，而热量是其最基本的形式之一。为了精确地描述和预测物质在热作用下的行为，物理学家和化学家发展出了两个基石性的概念：焓（Enthalpy）与[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)（Heat Capacity）。然而，对于许多学习者而言，它们往往只是教科书上的公式，其背后深刻的物理洞察、与微观世界的精妙联系，以及作为强大分析工具的跨学科应用，常常被忽略。本文旨在填补这一认知鸿沟。我们将首先深入剖析焓与[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)的原理与机制，揭示它们为何是描述恒压过程能量变化的完美工具；接着，我们将踏上一段跨学科之旅，探索它们在[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)、纳米技术乃至生命科学中的广泛应用；最后，通过一系列动手实践，巩固理论联系实际的能力。现在，让我们从最核心的问题开始：这些概念究竟从何而来，其本质又是什么？
 
 ## 原理与机制
 
-在上一章中，我们对焓与[热容](@article_id:340019)有了初步的认识。现在，让我们像剥洋葱一样，一层层地深入其核心，去探索它们背后的深刻原理与精巧机制。这个旅程将带我们从宏观的[热力学](@article_id:359663)定义，一直走到微观的量子与统计世界。
+在上一章中，我们对焓与[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)有了初步的认识。现在，让我们像剥洋葱一样，一层层地深入其核心，去探索它们背后的深刻原理与精巧机制。这个旅程将带我们从宏观的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)定义，一直走到微观的量子与统计世界。
 
 ### 为何我们需要“焓”？一个为方便而生的绝妙概念
 
@@ -13,68 +13,68 @@
 
 当然可以！物理学家们引入了一个绝妙的概念——**焓**（Enthalpy），用符号 $H$ 表示，其定义为 $H = U + PV$。现在，让我们看看在恒定压强下，当系统状态发生微小改变时，焓的变化 $dH$ 是什么：
 $$ dH = dU + d(PV) = dU + P dV + V dP $$
-在恒压条件下，$dP = 0$，上式简化为 $dH = dU + P dV$。现在，把[热力学第一定律](@article_id:306905) $dU = \delta Q_p - P dV$（下标 $p$ 表示恒压过程）代入，奇迹发生了：
+在恒压条件下，$dP = 0$，上式简化为 $dH = dU + P dV$。现在，把[热力学第一定律](@keyword=first_law_of_thermodynamics|lang=zh-CN|style=Feynman) $dU = \delta Q_p - P dV$（下标 $p$ 表示恒压过程）代入，奇迹发生了：
 $$ dH = (\delta Q_p - P dV) + P dV = \delta Q_p $$
 这真是再漂亮不过的结果了！在恒定压强下，我们向系统输入的热量，不多不少，正好等于系统焓的增加量。焓就像一个专为恒压过程定制的“热量账户”。
 
-有了这个强大的工具，我们就能更优雅地定义**恒压[热容](@article_id:340019)**（isobaric heat capacity）$C_P$。$C_P$ 衡量的是，在恒压下，使物质温度升高一度需要多少热量，即 $C_P = (\delta Q / dT)_P$。利用我们刚刚得到的结论，它直接变成了焓对温度的偏导数：
+有了这个强大的工具，我们就能更优雅地定义**恒压[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)**（isobaric heat capacity）$C_P$。$C_P$ 衡量的是，在恒压下，使物质温度升高一度需要多少热量，即 $C_P = (\delta Q / dT)_P$。利用我们刚刚得到的结论，它直接变成了焓对温度的偏导数：
 $$ C_P = \left(\frac{\partial H}{\partial T}\right)_P $$
-这个简洁的公式，是连接宏观测量与理论计算的桥梁。无论是对于理想气体还是复杂的[非理想气体](@article_id:306996)，只要我们知道了焓的表达式，就可以通过求导得到其[热容](@article_id:340019)，这为我们处理真实世界的物质提供了极大的便利 。
+这个简洁的公式，是连接宏观测量与理论计算的桥梁。无论是对于理想气体还是复杂的[非理想气体](@keyword=non_ideal_gases|lang=zh-CN|style=Feynman)，只要我们知道了焓的表达式，就可以通过求导得到其[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)，这为我们处理真实世界的物质提供了极大的便利 [@problem_id:446686]。
 
 ### 一对“孪生兄弟”：$C_P$ 与 $C_V$ 的故事
 
-有了恒压[热容](@article_id:340019) $C_P$，我们自然会想到它的“孪生兄弟”——**恒容[热容](@article_id:340019)**（isochoric heat capacity）$C_V$。如果在加热时，我们把系统密封在一个体积不变的刚性容器里，那么系统无法对外做功（$dV=0$）。此时，根据[热力学第一定律](@article_id:306905)，所有加入的热量 $\delta Q_V$ 都用于增加内能 $U$。因此，$C_V$ 可以直接定义为：
+有了恒压[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman) $C_P$，我们自然会想到它的“孪生兄弟”——**恒容[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)**（isochoric heat capacity）$C_V$。如果在加热时，我们把系统密封在一个体积不变的刚性容器里，那么系统无法对外做功（$dV=0$）。此时，根据[热力学第一定律](@keyword=first_law_of_thermodynamics|lang=zh-CN|style=Feynman)，所有加入的热量 $\delta Q_V$ 都用于增加内能 $U$。因此，$C_V$ 可以直接定义为：
 $$ C_V = \left(\frac{\partial U}{\partial T}\right)_V $$
 那么，问题来了：$C_P$ 和 $C_V$ 哪个更大？
 
 直觉告诉我们，在恒压下加热物质，它会膨胀，一部分能量要用来做功“推开”周围的环境。而在恒容下，所有能量都“专心”用于提高温度。因此，要使温度同样升高一度，恒压过程需要提供更多的热量。这意味着，几乎在所有情况下，$C_P$ 都大于 $C_V$。
 
-这个直觉不仅正确，而且可以被[热力学](@article_id:359663)理论精准地量化。对于任何物质，我们都有一个普适而优美的关系式 ：
+这个直觉不仅正确，而且可以被[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)理论精准地量化。对于任何物质，我们都有一个普适而优美的关系式 [@problem_id:2486498]：
 $$ C_P - C_V = \frac{T V \alpha^2}{\kappa_T} $$
-这里的 $T$ 是绝对温度，$V$ 是体积。$\alpha$ 是**[体膨胀](@article_id:298146)系数**，描述物质受热时膨胀的程度；$\kappa_T$ 是**[等温压缩率](@article_id:301337)**，描述物质在压力下被压缩的难易程度。由于温度 $T$、体积 $V$、压缩率 $\kappa_T$（对于稳定物质）都是正值，而膨胀系数 $\alpha$ 在公式中是以平方 $\alpha^2$ 的形式出现，所以 $C_P - C_V$ 的值总是大于或等于零。
+这里的 $T$ 是绝对温度，$V$ 是体积。$\alpha$ 是**[体膨胀](@keyword=volume_expansion|lang=zh-CN|style=Feynman)系数**，描述物质受热时膨胀的程度；$\kappa_T$ 是**[等温压缩率](@keyword=isothermal_compressibility|lang=zh-CN|style=Feynman)**，描述物质在压力下被压缩的难易程度。由于温度 $T$、体积 $V$、压缩率 $\kappa_T$（对于稳定物质）都是正值，而膨胀系数 $\alpha$ 在公式中是以平方 $\alpha^2$ 的形式出现，所以 $C_P - C_V$ 的值总是大于或等于零。
 
 大自然在这里耍了一个漂亮的花招：即使某种材料在加热时收缩（即 $\alpha < 0$，比如4摄氏度附近的水），$\alpha^2$ 依然是正的，使得 $C_P$ 仍然大于 $C_V$！宇宙似乎在说：我不在乎你是膨胀还是收缩，只要体积发生了变化，就意味着在与环境“互动”，这部分能量就不能算在提高温度的“纯粹”贡献里。
 
-### [状态函数](@article_id:298134)与化学家的“账本”
+### [状态函数](@keyword=state_functions|lang=zh-CN|style=Feynman)与化学家的“账本”
 
-焓是一个**[态函数](@article_id:301553)**（state function），这意味着它的值只取决于系统当前的状态（温度、压力等），而与系统如何达到这个状态的历史路径无关。这就像爬山，无论你选择陡峭的捷径还是平缓的盘山路，你最终的海拔变化是完全一样的。
+焓是一个**[态函数](@keyword=state_function|lang=zh-CN|style=Feynman)**（state function），这意味着它的值只取决于系统当前的状态（温度、压力等），而与系统如何达到这个状态的历史路径无关。这就像爬山，无论你选择陡峭的捷径还是平缓的盘山路，你最终的海拔变化是完全一样的。
 
-这个特性让焓成为了化学家手中进行能量“记账”的利器，其最直接的应用就是**[赫斯定律](@article_id:308289)**（Hess's Law）。例如，在合成一种[先进陶瓷](@article_id:361860)材料（如 $\mathrm{SrTiO_3}$）时，我们想知道其[反应热](@article_id:301435)。直接测量可能很困难，但我们可以利用[赫斯定律](@article_id:308289)走一条“迂回”的计算路线：想象先把反应物（$\mathrm{SrO}$ 和 $\mathrm{TiO_2}$）分解成最稳定的纯元素（$\mathrm{Sr}$, $\mathrm{Ti}$, $\mathrm{O_2}$），然后再由这些元素组合成最终产物 $\mathrm{SrTiO_3}$。由于焓是[态函数](@article_id:301553)，这条“迂回”路径的[总焓](@article_id:371860)变与[直接反应](@article_id:321434)的焓变是完全相同的。通过查阅已知的[生成焓](@article_id:299652)数据，我们就能轻松算出目标反应的焓变 。
+这个特性让焓成为了化学家手中进行能量“记账”的利器，其最直接的应用就是**[赫斯定律](@keyword=hess_s_law|lang=zh-CN|style=Feynman)**（Hess's Law）。例如，在合成一种[先进陶瓷](@keyword=advanced_ceramics|lang=zh-CN|style=Feynman)材料（如 $\mathrm{SrTiO_3}$）时，我们想知道其[反应热](@keyword=heat_of_reaction|lang=zh-CN|style=Feynman)。直接测量可能很困难，但我们可以利用[赫斯定律](@keyword=hess_s_law|lang=zh-CN|style=Feynman)走一条“迂回”的计算路线：想象先把反应物（$\mathrm{SrO}$ 和 $\mathrm{TiO_2}$）分解成最稳定的纯元素（$\mathrm{Sr}$, $\mathrm{Ti}$, $\mathrm{O_2}$），然后再由这些元素组合成最终产物 $\mathrm{SrTiO_3}$。由于焓是[态函数](@keyword=state_function|lang=zh-CN|style=Feynman)，这条“迂回”路径的[总焓](@keyword=stagnation_enthalpy|lang=zh-CN|style=Feynman)变与[直接反应](@keyword=direct_reactions|lang=zh-CN|style=Feynman)的焓变是完全相同的。通过查阅已知的[生成焓](@keyword=enthalpy_of_formation|lang=zh-CN|style=Feynman)数据，我们就能轻松算出目标反应的焓变 [@problem_id:2486497]。
 
-然而，这些计算通常是在标准温度（298 K，约25 °C）下进行的。如果反应在1000 K的高温下发生，[反应热](@article_id:301435)会改变吗？答案是肯定的，而[热容](@article_id:340019)恰恰是揭示这一变化的关键。**基尔霍夫定律**（Kirchhoff's Law）告诉我们：
+然而，这些计算通常是在标准温度（298 K，约25 °C）下进行的。如果反应在1000 K的高温下发生，[反应热](@keyword=heat_of_reaction|lang=zh-CN|style=Feynman)会改变吗？答案是肯定的，而[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)恰恰是揭示这一变化的关键。**基尔霍夫定律**（Kirchhoff's Law）告诉我们：
 $$ \left(\frac{\partial (\Delta H_R)}{\partial T}\right)_p = \Delta C_p $$
-这里 $\Delta H_R$ 是[反应焓](@article_id:310183)，而 $\Delta C_p$ 是产物的总[热容](@article_id:340019)与反应物的总[热容](@article_id:340019)之差。这个公式的直观意义是：[反应焓](@article_id:310183)随温度的变化率，取决于产物和反应物在“储热能力”上的差异。如果产物的[热容比](@article_id:297511)反应物大，那么随着温度升高，产物的焓会增长得更快，从而导致整个反应的[焓变](@article_id:308053)发生改变。通过对 $\Delta C_p$ 进行积分，我们就可以精确地计算出任意温度下的[反应热](@article_id:301435)  。
+这里 $\Delta H_R$ 是[反应焓](@keyword=reaction_enthalpy|lang=zh-CN|style=Feynman)，而 $\Delta C_p$ 是产物的总[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)与反应物的总[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)之差。这个公式的直观意义是：[反应焓](@keyword=reaction_enthalpy|lang=zh-CN|style=Feynman)随温度的变化率，取决于产物和反应物在“储热能力”上的差异。如果产物的[热容比](@keyword=heat_capacity_ratio|lang=zh-CN|style=Feynman)反应物大，那么随着温度升高，产物的焓会增长得更快，从而导致整个反应的[焓变](@keyword=enthalpy_change|lang=zh-CN|style=Feynman)发生改变。通过对 $\Delta C_p$ 进行积分，我们就可以精确地计算出任意温度下的[反应热](@keyword=heat_of_reaction|lang=zh-CN|style=Feynman) [@problem_id:2486492] [@problem_id:2486497]。
 
-### 深入微观：[热容](@article_id:340019)从何而来？
+### 深入微观：[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)从何而来？
 
-到目前为止，我们都将[热容](@article_id:340019)看作一个宏观属性。但一个根本的问题是：物质为何具有特定的[热容](@article_id:340019)？要回答这个问题，我们必须戴上微观的“眼镜”，潜入原子和分子的世界。
+到目前为止，我们都将[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)看作一个宏观属性。但一个根本的问题是：物质为何具有特定的[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)？要回答这个问题，我们必须戴上微观的“眼镜”，潜入原子和分子的世界。
 
 #### 统计的视角：起伏与响应
 
-想象一个浸在恒温[热浴](@article_id:297491)中的系统。它的能量并非一成不变，而是在与热浴的能量交换中不断地微小“起伏”（fluctuation）。[统计力](@article_id:373880)学揭示了一个极为深刻的联系：一个系统的[热容](@article_id:340019)，正比于其能量起伏的剧烈程度 。对于焓而言，这个关系是：
+想象一个浸在恒温[热浴](@keyword=heat_bath|lang=zh-CN|style=Feynman)中的系统。它的能量并非一成不变，而是在与热浴的能量交换中不断地微小“起伏”（fluctuation）。[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学揭示了一个极为深刻的联系：一个系统的[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)，正比于其能量起伏的剧烈程度 [@problem_id:354186]。对于焓而言，这个关系是：
 $$ C_P = \frac{\langle (H - \langle H \rangle)^2 \rangle}{k_B T^2} = \frac{\sigma_H^2}{k_B T^2} $$
 其中 $\sigma_H^2$ 是焓的方差，即焓的涨落的平方的平均值，$k_B$ 是玻尔兹曼常数。这便是**涨落-耗散定理**（fluctuation-dissipation theorem）的一个实例。
 
-这个公式告诉我们，[热容](@article_id:340019)大的系统，就像一个巨大的湖泊，即使有河流（能量）汇入或流出，其水位（温度）也能保持相对稳定。而[热容](@article_id:340019)小的系统，则像一个小水坑，稍有风吹草动（能量交换），水位（温度）就会发生剧烈变化。因此，[热容](@article_id:340019)不仅仅是一个数字，它是系统微观能量世界“喧嚣”程度在宏观上的一个投影。
+这个公式告诉我们，[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)大的系统，就像一个巨大的湖泊，即使有河流（能量）汇入或流出，其水位（温度）也能保持相对稳定。而[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)小的系统，则像一个小水坑，稍有风吹草动（能量交换），水位（温度）就会发生剧烈变化。因此，[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)不仅仅是一个数字，它是系统微观能量世界“喧嚣”程度在宏观上的一个投影。
 
-#### 量子的视角：[振动](@article_id:331484)与自由度
+#### 量子的视角：[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)与自由度
 
-那么，能量究竟储存在哪些微观的“自由度”里呢？在固体中，原子并非静止不动，而是在其[晶格](@article_id:300090)位置附近不停地[振动](@article_id:331484)。根据量子力学，这些[振动](@article_id:331484)的能量不是连续的，而是一份一份的，称为**[声子](@article_id:297589)**（phonons）。
+那么，能量究竟储存在哪些微观的“自由度”里呢？在固体中，原子并非静止不动，而是在其[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)位置附近不停地[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。根据量子力学，这些[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的能量不是连续的，而是一份一份的，称为**[声子](@keyword=phonons|lang=zh-CN|style=Feynman)**（phonons）。
 
-在高温下，热量足以激发所有可能的[振动](@article_id:331484)模式，[热容](@article_id:340019)趋于一个常数（[杜隆-珀蒂定律](@article_id:298832)）。但在极低的温度下，大部分高频率的[振动](@article_id:331484)模式被“冻结”了，因为系统没有足够的能量去激活它们。只有那些低频率、长波长的[振动](@article_id:331484)（就像声音在介质中传播）还能被激发。
+在高温下，热量足以激发所有可能的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式，[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)趋于一个常数（[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman)）。但在极低的温度下，大部分高频率的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式被“冻结”了，因为系统没有足够的能量去激活它们。只有那些低频率、长波长的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)（就像声音在介质中传播）还能被激发。
 
-**德拜模型**（Debye model）完美地描述了这一现象，并预言在低温下，[固体的热容](@article_id:305362)与温度的三次方成正比，即 $C_V \propto T^3$ 。这个著名的 $T^3$ 定律是晶格振动量子化在三维空间中的直接体现。它告诉我们，[热容](@article_id:340019)曲线的形状，描绘了一幅物质内部量子能量阶梯的图景。
+**德拜模型**（Debye model）完美地描述了这一现象，并预言在低温下，[固体的热容](@keyword=heat_capacity_of_solids|lang=zh-CN|style=Feynman)与温度的三次方成正比，即 $C_V \propto T^3$ [@problem_id:2486505]。这个著名的 $T^3$ 定律是晶格振动量子化在三维空间中的直接体现。它告诉我们，[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)曲线的形状，描绘了一幅物质内部量子能量阶梯的图景。
 
-### [热容](@article_id:340019)：揭示材料秘密的“侦探”
+### [热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)：揭示材料秘密的“侦探”
 
-正因为[热容](@article_id:340019)与微观世界的能量储存方式息息相关，测量它随温度的变化，就如同一项强大的“谱学”技术，能够揭示材料内部发生的各种“秘密事件”。
+正因为[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)与微观世界的能量储存方式息息相关，测量它随温度的变化，就如同一项强大的“谱学”技术，能够揭示材料内部发生的各种“秘密事件”。
 
-- **[相变](@article_id:297531)**：当材料发生[相变](@article_id:297531)（如冰融化成水，或磁铁失去磁性）时，其内部结构和[能量储存](@article_id:328573)方式会发生剧烈变化，这在[热容](@article_id:340019)曲线上会留下独特的“指纹”。
-    - **[一级相变](@article_id:304949)**（如熔化、沸腾）伴随着**[潜热](@article_id:306453)**（latent heat）的吸收或释放。系统在恒定温度下吸收大量能量，导致[热容](@article_id:340019)在理论上出现一个无限大的 $\delta$ 函数峰  。
-    - **[二级相变](@article_id:315289)**（如某些[有序-无序转变](@article_id:301441)）则更为平缓，没有[潜热](@article_id:306453)，但[热容](@article_id:340019)会发生一个有限的跳跃或出现一个 $\lambda$ 形的峰。这个额外的[热容](@article_id:340019)，称为**构型[热容](@article_id:340019)**（configurational heat capacity），来源于系统在从有序到无序过程中内部构型能量的变化 。
+- **[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)**：当材料发生[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)（如冰融化成水，或磁铁失去磁性）时，其内部结构和[能量储存](@keyword=energy_storage|lang=zh-CN|style=Feynman)方式会发生剧烈变化，这在[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)曲线上会留下独特的“指纹”。
+    - **[一级相变](@keyword=first_order_phase_transition|lang=zh-CN|style=Feynman)**（如熔化、沸腾）伴随着**[潜热](@keyword=latent_heat|lang=zh-CN|style=Feynman)**（latent heat）的吸收或释放。系统在恒定温度下吸收大量能量，导致[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)在理论上出现一个无限大的 $\delta$ 函数峰 [@problem_id:2486502] [@problem_id:2486532]。
+    - **[二级相变](@keyword=second_order_transition|lang=zh-CN|style=Feynman)**（如某些[有序-无序转变](@keyword=order_disorder_transition|lang=zh-CN|style=Feynman)）则更为平缓，没有[潜热](@keyword=latent_heat|lang=zh-CN|style=Feynman)，但[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)会发生一个有限的跳跃或出现一个 $\lambda$ 形的峰。这个额外的[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)，称为**构型[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)**（configurational heat capacity），来源于系统在从有序到无序过程中内部构型能量的变化 [@problem_id:2486502]。
 
-- **[玻璃化转变](@article_id:312083)**：当高分子液体冷却形成玻璃时，我们也会在[热容](@article_id:340019)上观察到一个台阶状的变化。但这并非真正的[热力学](@article_id:359663)[相变](@article_id:297531)，而是一种**动力学现象**（kinetic phenomenon） 。在高温下，聚合物链可以自由[蠕动](@article_id:301401)；当温度降低到**玻璃化转变温度**（$T_g$）以下，这些大规模的链段运动变得极其缓慢，以至于在实验的时间尺度上被“冻结”了。[热容](@article_id:340019)的台阶，正是这些被冻结的“构型自由度”贡献的消失。有趣的是，由于这是一种动力学效应，你测得的 $T_g$ 值会随着你的加热或冷却速率而改变！
+- **[玻璃化转变](@keyword=vitrification|lang=zh-CN|style=Feynman)**：当高分子液体冷却形成玻璃时，我们也会在[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)上观察到一个台阶状的变化。但这并非真正的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)，而是一种**动力学现象**（kinetic phenomenon） [@problem_id:2486516]。在高温下，聚合物链可以自由[蠕动](@keyword=peristalsis|lang=zh-CN|style=Feynman)；当温度降低到**玻璃化转变温度**（$T_g$）以下，这些大规模的链段运动变得极其缓慢，以至于在实验的时间尺度上被“冻结”了。[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)的台阶，正是这些被冻结的“构型自由度”贡献的消失。有趣的是，由于这是一种动力学效应，你测得的 $T_g$ 值会随着你的加热或冷却速率而改变！
 
-- **[化学反应](@article_id:307389)**：如果材料在加热过程中自身会发生[化学反应](@article_id:307389)呢？例如，某种氧化物在高温下会与大气交换氧气，改变自身的化学计量比。如果这个反应是吸热的，那么系统在升温的同时，还必须额外吸收一份热量来驱动这个[化学反应](@article_id:307389)。这使得我们测出的“表观”[热容](@article_id:340019)，会比材料本身的“本征”[热容](@article_id:340019)要大。这个额外的贡献，恰恰与反应的[焓变](@article_id:308053)直接相关 。因此，在可控气氛下测量[热容](@article_id:340019)，竟也成了一种研究材料[反应热力学](@article_id:311573)的有力工具。
+- **[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)**：如果材料在加热过程中自身会发生[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)呢？例如，某种氧化物在高温下会与大气交换氧气，改变自身的化学计量比。如果这个反应是吸热的，那么系统在升温的同时，还必须额外吸收一份热量来驱动这个[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)。这使得我们测出的“表观”[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)，会比材料本身的“本征”[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)要大。这个额外的贡献，恰恰与反应的[焓变](@keyword=enthalpy_change|lang=zh-CN|style=Feynman)直接相关 [@problem_id:2486530]。因此，在可控气氛下测量[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)，竟也成了一种研究材料[反应热力学](@keyword=thermodynamics_of_reactions|lang=zh-CN|style=Feynman)的有力工具。
 
-从为方便计算而生的一个定义，到连接宏观响应与微观涨落的普适桥梁，再到揭示材料内部量子行为、[相变](@article_id:297531)和[化学反应](@article_id:307389)的敏锐探针，焓与[热容](@article_id:340019)展现了物理学概念的强大威力与内在统一之美。它们不仅仅是教科书上的公式，更是我们理解和驾驭物质世界的通用语言。
+从为方便计算而生的一个定义，到连接宏观响应与微观涨落的普适桥梁，再到揭示材料内部量子行为、[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)和[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的敏锐探针，焓与[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)展现了物理学概念的强大威力与内在统一之美。它们不仅仅是教科书上的公式，更是我们理解和驾驭物质世界的通用语言。
