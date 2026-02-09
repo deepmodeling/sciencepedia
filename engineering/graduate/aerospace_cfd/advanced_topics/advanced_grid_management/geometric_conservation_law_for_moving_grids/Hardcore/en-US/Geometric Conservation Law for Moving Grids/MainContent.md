@@ -3,7 +3,7 @@ In modern computational science and engineering, simulating physical phenomena o
 
 This article provides a graduate-level exploration of the GCL, establishing it as a cornerstone of high-fidelity simulation on dynamic grids. Across three comprehensive chapters, you will gain a deep understanding of this crucial law.
 - The first chapter, **Principles and Mechanisms**, derives the GCL from first principles, explores its various mathematical formulations, and details the requirements for its correct implementation in a discrete numerical scheme.
-- The second chapter, **Applications and Interdisciplinary Connections**, demonstrates the GCL's indispensable role across a vast spectrum of applications, from computational fluid dynamics and [fluid-structure interaction](@entry_id:171183) to computational astrophysics and numerical relativity.
+- The second chapter, **Applications and Interdisciplinary Connections**, demonstrates the GCL's indispensable role across a vast spectrum of applications, from computational fluid dynamics and fluid-structure interaction to computational astrophysics and numerical relativity.
 - The final chapter, **Hands-On Practices**, offers a series of guided problems designed to solidify theoretical understanding through practical calculation and numerical experimentation.
 
 By the end of this article, you will not only understand what the GCL is but also why its strict enforcement is non-negotiable for any accurate and stable moving-grid simulation.
@@ -24,19 +24,19 @@ $$
 
 Here, $\mathbf{n}$ is the outward unit normal, and the term $\mathbf{U} \otimes \mathbf{w}$ accounts for the flux of the conserved quantity $\mathbf{U}$ due to the motion of the boundary itself.
 
-Now, we test the condition of free-stream preservation . We demand that a spatially and temporally constant state, $\mathbf{U} = \mathbf{U}_\infty$, must be a solution to this equation for any arbitrary smooth grid motion $\mathbf{w}$. Substituting $\mathbf{U}_\infty$ into the equation and noting that it is a constant vector, we can factor it out of the time derivative:
+Now, we test the condition of free-stream preservation [@problem_id:3962108]. We demand that a spatially and temporally constant state, $\mathbf{U} = \mathbf{U}_\infty$, must be a solution to this equation for any arbitrary smooth grid motion $\mathbf{w}$. Substituting $\mathbf{U}_\infty$ into the equation and noting that it is a constant vector, we can factor it out of the time derivative:
 
 $$
 \mathbf{U}_\infty \frac{d}{dt} \int_{\Omega(t)} 1 \, dV + \oint_{\partial \Omega(t)} \left( \mathbb{F}(\mathbf{U}_\infty) - \mathbf{U}_\infty \otimes \mathbf{w} \right) \cdot \mathbf{n} \, dS = \mathbf{0}
 $$
 
-For a uniform state $\mathbf{U}_\infty$, the physical flux tensor $\mathbb{F}(\mathbf{U}_\infty)$ is also constant throughout the domain. By Gauss's [divergence theorem](@entry_id:145271), the integral of its flux over any closed boundary is zero. The equation therefore simplifies to:
+For a uniform state $\mathbf{U}_\infty$, the physical flux tensor $\mathbb{F}(\mathbf{U}_\infty)$ is also constant throughout the domain. By Gauss's divergence theorem, the integral of its flux over any closed boundary is zero. The equation therefore simplifies to:
 
 $$
 \mathbf{U}_\infty \left( \frac{d}{dt} \int_{\Omega(t)} dV \right) - \oint_{\partial \Omega(t)} \left( \mathbf{U}_\infty \otimes \mathbf{w} \right) \cdot \mathbf{n} \, dS = \mathbf{0}
 $$
 
-The term $(\mathbf{U}_\infty \otimes \mathbf{w}) \cdot \mathbf{n}$ can be written as $\mathbf{U}_\infty (\mathbf{w} \cdot \mathbf{n})$. Since $\mathbf{U}_\infty$ is constant, we can factor it out of the [surface integral](@entry_id:275394) as well:
+The term $(\mathbf{U}_\infty \otimes \mathbf{w}) \cdot \mathbf{n}$ can be written as $\mathbf{U}_\infty (\mathbf{w} \cdot \mathbf{n})$. Since $\mathbf{U}_\infty$ is constant, we can factor it out of the surface integral as well:
 
 $$
 \mathbf{U}_\infty \left( \frac{d}{dt} \int_{\Omega(t)} dV \right) - \mathbf{U}_\infty \left( \oint_{\partial \Omega(t)} \mathbf{w} \cdot \mathbf{n} \, dS \right) = \mathbf{0}
@@ -54,7 +54,7 @@ $$
 \frac{d}{dt} \int_{\Omega(t)} dV = \oint_{\partial \Omega(t)} \mathbf{w} \cdot \mathbf{n} \, dS
 $$
 
-This derivation reveals a profound truth: the GCL is not an independent physical law but a kinematic constraint imposed on the numerical method. It is the condition that ensures the geometric "bookkeeping" of changing cell volumes is consistent with the grid-motion terms appearing in the discretized flow equations. Without it, a moving grid would artificially create or destroy mass, momentum, and energy, even in a [uniform flow](@entry_id:272775).
+This derivation reveals a profound truth: the GCL is not an independent physical law but a kinematic constraint imposed on the numerical method. It is the condition that ensures the geometric "bookkeeping" of changing cell volumes is consistent with the grid-motion terms appearing in the discretized flow equations. Without it, a moving grid would artificially create or destroy mass, momentum, and energy, even in a uniform flow.
 
 ### The Continuous GCL: Kinematic Formulations
 
@@ -62,13 +62,13 @@ Having established the necessity of the GCL, we now examine its mathematical ide
 
 #### Integral Formulation from First Principles
 
-The GCL can be derived directly as a statement about the geometry of moving volumes, independent of any specific flow physics. In the ALE framework, we define a time-dependent mapping $x(\xi, t)$ that maps a point $\xi$ in a fixed, time-independent reference (or computational) domain $\Omega_{\xi}$ to its corresponding physical position $x$ in the time-varying physical domain $\Omega(t)$ . The **grid velocity** $\boldsymbol{v}_g$ is the velocity of a point with a fixed reference coordinate $\xi$:
+The GCL can be derived directly as a statement about the geometry of moving volumes, independent of any specific flow physics. In the ALE framework, we define a time-dependent mapping $x(\xi, t)$ that maps a point $\xi$ in a fixed, time-independent reference (or computational) domain $\Omega_{\xi}$ to its corresponding physical position $x$ in the time-varying physical domain $\Omega(t)$ [@problem_id:3962111]. The **grid velocity** $\boldsymbol{v}_g$ is the velocity of a point with a fixed reference coordinate $\xi$:
 
 $$
 \boldsymbol{v}_{g}(x,t) = \left. \frac{\partial x(\xi, t)}{\partial t} \right|_{\xi}
 $$
 
-The GCL can be derived from the general **Reynolds Transport Theorem (RTT)** for a [moving control volume](@entry_id:265261) $\Omega(t)$ whose boundary moves with velocity $\boldsymbol{v}_b$:
+The GCL can be derived from the general **Reynolds Transport Theorem (RTT)** for a moving control volume $\Omega(t)$ whose boundary moves with velocity $\boldsymbol{v}_b$:
 
 $$
 \frac{d}{dt} \int_{\Omega(t)} \phi \, dV = \int_{\Omega(t)} \frac{\partial \phi}{\partial t} \, dV + \oint_{\partial \Omega(t)} \phi (\boldsymbol{v}_b \cdot \boldsymbol{n}) \, dS
@@ -84,7 +84,7 @@ This equation provides a clear physical interpretation: the rate of change of a 
 
 #### The Space-Time Perspective
 
-An elegant and unifying viewpoint considers conservation not in space alone, but in space-time . Let us define a **space-time control volume** $\mathcal{C}^n$ as the region in space-time swept out by a spatial control volume $K(t)$ as time evolves from $t^n$ to $t^{n+1}$:
+An elegant and unifying viewpoint considers conservation not in space alone, but in space-time [@problem_id:3962092]. Let us define a **space-time control volume** $\mathcal{C}^n$ as the region in space-time swept out by a spatial control volume $K(t)$ as time evolves from $t^n$ to $t^{n+1}$:
 
 $$
 \mathcal{C}^n = \{(x,t) \;|\; x \in K(t), \; t \in [t^n,t^{n+1}] \}
@@ -112,15 +112,15 @@ This perspective demonstrates that the GCL is not an ad-hoc fix but a fundamenta
 
 #### Differential Formulation in Curvilinear Coordinates
 
-For solvers based on structured [curvilinear grids](@entry_id:748121), it is often more convenient to express the GCL in a differential form. This involves the **Jacobian** of the coordinate transformation, $J = \det(\frac{\partial x}{\partial \xi})$, which represents the ratio of a differential volume element in physical space to its counterpart in computational space, $dV = J \,d\xi_1 d\xi_2 d\xi_3$. The [time evolution](@entry_id:153943) of the Jacobian is related to the grid velocity through the identity known as **Euler's expansion formula**:
+For solvers based on structured curvilinear grids, it is often more convenient to express the GCL in a differential form. This involves the **Jacobian** of the coordinate transformation, $J = \det(\frac{\partial x}{\partial \xi})$, which represents the ratio of a differential volume element in physical space to its counterpart in computational space, $dV = J \,d\xi_1 d\xi_2 d\xi_3$. The time evolution of the Jacobian is related to the grid velocity through the identity known as **Euler's expansion formula**:
 
 $$
 \frac{1}{J} \frac{\partial J}{\partial t} = \nabla_x \cdot \boldsymbol{v}_g
 $$
 
-This states that the [relative rate of change](@entry_id:178948) of a [volume element](@entry_id:267802) is equal to the divergence of the grid velocity field. This is one form of the differential GCL.
+This states that the relative rate of change of a volume element is equal to the divergence of the grid velocity field. This is one form of the differential GCL.
 
-A more useful form for conservative discretizations arises from considering the metric identities of the transformation  . For any stationary, smooth [curvilinear grid](@entry_id:1123319), the metric terms satisfy the vector identity:
+A more useful form for conservative discretizations arises from considering the metric identities of the transformation [@problem_id:3962175] [@problem_id:3962141]. For any stationary, smooth curvilinear grid, the metric terms satisfy the vector identity:
 
 $$
 \sum_{i=1}^3 \frac{\partial}{\partial \xi_i}(J \boldsymbol{a}^i) = \boldsymbol{0}
@@ -132,7 +132,7 @@ $$
 \frac{\partial J}{\partial t} + \sum_{i=1}^3 \frac{\partial}{\partial \xi_i} (J a_i^t) = 0
 $$
 
-This form is particularly powerful because it has the structure of a conservation law in computational space. Verifying this identity for a given mapping confirms its geometric integrity. For instance, for the 2D mapping $x = L(t)\xi + S(t)\eta$, $y = M(t)\eta$, direct calculation shows that the GCL residual $\frac{\partial J}{\partial t} + \frac{\partial}{\partial \xi}(J a_1^t) + \frac{\partial}{\partial \eta}(J a_2^t)$ is identically zero .
+This form is particularly powerful because it has the structure of a conservation law in computational space. Verifying this identity for a given mapping confirms its geometric integrity. For instance, for the 2D mapping $x = L(t)\xi + S(t)\eta$, $y = M(t)\eta$, direct calculation shows that the GCL residual $\frac{\partial J}{\partial t} + \frac{\partial}{\partial \xi}(J a_1^t) + \frac{\partial}{\partial \eta}(J a_2^t)$ is identically zero [@problem_id:3962175].
 
 ### The Discrete GCL: Ensuring Numerical Conservation
 
@@ -146,17 +146,17 @@ $$
 \frac{d V_c}{dt} = \int_{\partial V_c} \boldsymbol{v}_g \cdot \boldsymbol{n} \, dS
 $$
 
-The boundary $\partial V_c$ is composed of a set of discrete faces, indexed by $f$. The integral over the boundary becomes a sum of integrals over each face. For a polyhedral cell with planar faces, this leads to an exact discrete relation :
+The boundary $\partial V_c$ is composed of a set of discrete faces, indexed by $f$. The integral over the boundary becomes a sum of integrals over each face. For a polyhedral cell with planar faces, this leads to an exact discrete relation [@problem_id:3962171]:
 
 $$
 \frac{d V_c}{dt} = \sum_f \int_f \boldsymbol{v}_g \cdot \boldsymbol{n}_f \, dS = \sum_f \boldsymbol{A}_f \cdot \boldsymbol{v}_{g,f}
 $$
 
 To achieve this, we define two key quantities:
-1.  The **[face area vector](@entry_id:749209)** $\boldsymbol{A}_f$, defined as the scalar area of the face $A_f$ multiplied by its outward-pointing [unit normal vector](@entry_id:178851) $\boldsymbol{n}_f$: $\boldsymbol{A}_f = A_f \boldsymbol{n}_f$.
+1.  The **face area vector** $\boldsymbol{A}_f$, defined as the scalar area of the face $A_f$ multiplied by its outward-pointing unit normal vector $\boldsymbol{n}_f$: $\boldsymbol{A}_f = A_f \boldsymbol{n}_f$.
 2.  The effective **grid-face velocity** $\boldsymbol{v}_{g,f}$, defined as the area-average of the grid velocity field over the face: $\boldsymbol{v}_{g,f} = \frac{1}{A_f}\int_f \boldsymbol{v}_g(\boldsymbol{x},t) \,dS$.
 
-Common numerical approximations, such as using the grid velocity at the face [centroid](@entry_id:265015), are not exact in general and can lead to violations of the GCL.
+Common numerical approximations, such as using the grid velocity at the face centroid, are not exact in general and can lead to violations of the GCL.
 
 #### Temporal Discretization
 
@@ -166,7 +166,7 @@ $$
 V^{n+1} - V^n \approx \Delta t \sum_f (\boldsymbol{v}_{g,f} \cdot \boldsymbol{A}_f)^{n+\theta}
 $$
 
-Rearranging and using the convention of an inward-pointing area vector (common in many CFD codes), the fully discrete GCL is written as :
+Rearranging and using the convention of an inward-pointing area vector (common in many CFD codes), the fully discrete GCL is written as [@problem_id:3962170]:
 
 $$
 \frac{V^{n+1}-V^n}{\Delta t} + \sum_{f}\boldsymbol{A}_f^{\,n+\theta}\cdot\boldsymbol{v}_{g,f}^{\,n+\theta}=0
@@ -176,14 +176,14 @@ The parameter $\theta \in [0,1]$ controls the time-centering: $\theta=0$ gives a
 
 #### The Consistency Condition
 
-The most crucial aspect of the discrete GCL is not merely satisfying the volume-update equation, but doing so in a way that is perfectly consistent with the flux calculations in the main flow solver. This principle is sometimes known as the **Thomas–Lombard/Vinokur condition** .
+The most crucial aspect of the discrete GCL is not merely satisfying the volume-update equation, but doing so in a way that is perfectly consistent with the flux calculations in the main flow solver. This principle is sometimes known as the **Thomas–Lombard/Vinokur condition** [@problem_id:3962141].
 
-Recalling the derivation for free-stream preservation, the cancellation of terms relies on an exact balance between the rate of change of the integrated quantity ($\frac{d}{dt}\int \mathbf{U}_\infty dV = \mathbf{U}_\infty \frac{dV}{dt}$) and the grid-motion flux term ($-\oint \mathbf{U}_\infty (\mathbf{w} \cdot \mathbf{n}) dS$). At the discrete level , this cancellation will only be exact if:
+Recalling the derivation for free-stream preservation, the cancellation of terms relies on an exact balance between the rate of change of the integrated quantity ($\frac{d}{dt}\int \mathbf{U}_\infty dV = \mathbf{U}_\infty \frac{dV}{dt}$) and the grid-motion flux term ($-\oint \mathbf{U}_\infty (\mathbf{w} \cdot \mathbf{n}) dS$). At the discrete level [@problem_id:3962097], this cancellation will only be exact if:
 1.  The convective fluxes are computed using the **relative velocity** between the fluid and the grid, i.e., using $(\boldsymbol{u}-\boldsymbol{v}_g)\cdot\boldsymbol{n}_f$.
 2.  Basic spatial metric identities, such as the closure of a control volume ($\sum_f \boldsymbol{A}_f = \boldsymbol{0}$), are satisfied by the discrete geometry.
-3.  The discrete GCL, which relates the volume change $\frac{V^{n+1}-V^n}{\Delta t}$ to the grid-face velocities $\boldsymbol{v}_{g,f}$, is evaluated using the **exact same [quadrature rules](@entry_id:753909) and time-integration scheme** ($\theta$-value) as are used for the grid-velocity-dependent flux terms in the flow solver.
+3.  The discrete GCL, which relates the volume change $\frac{V^{n+1}-V^n}{\Delta t}$ to the grid-face velocities $\boldsymbol{v}_{g,f}$, is evaluated using the **exact same quadrature rules and time-integration scheme** ($\theta$-value) as are used for the grid-velocity-dependent flux terms in the flow solver.
 
-If, for example, the cell volume is updated using a midpoint rule ($\theta=1/2$) but the fluxes are evaluated with an explicit scheme ($\theta=0$), the cancellation will be imperfect. This inconsistency introduces [numerical errors](@entry_id:635587) that behave like source terms, destroying the [uniform flow](@entry_id:272775).
+If, for example, the cell volume is updated using a midpoint rule ($\theta=1/2$) but the fluxes are evaluated with an explicit scheme ($\theta=0$), the cancellation will be imperfect. This inconsistency introduces numerical errors that behave like source terms, destroying the uniform flow.
 
 ### Consequences of GCL Violation
 
@@ -191,7 +191,7 @@ When the discrete GCL is not satisfied, the numerical scheme becomes geometrical
 
 #### The GCL Residual as an Error Source
 
-We can precisely quantify the effect of a GCL violation by deriving an error transport equation . Consider the 1D [linear advection equation](@entry_id:146245) on a moving mesh. The discrete GCL residual for a cell $i$ can be defined as the amount by which the GCL is not satisfied:
+We can precisely quantify the effect of a GCL violation by deriving an error transport equation [@problem_id:3962149]. Consider the 1D linear advection equation on a moving mesh. The discrete GCL residual for a cell $i$ can be defined as the amount by which the GCL is not satisfied:
 
 $$
 \mathcal{R}_{i}^{\mathrm{GCL}}(t) \equiv \frac{d}{dt}\big(\Delta x_{i}(t)\big) - \big(w_{i+1/2}(t) - w_{i-1/2}(t)\big)
@@ -209,7 +209,7 @@ This remarkable result shows that a GCL violation acts as a direct source for nu
 
 This numerical error is not just an abstract quantity; it manifests as spurious physical phenomena. In simulations of compressible flows, a common consequence of GCL violation is the generation of non-physical pressure and velocity fluctuations, often referred to as **spurious acoustics**.
 
-Consider a 1D compressible flow, initially at rest, on a mesh that oscillates with velocity $w(t) = U_g \sin(\omega t)$ . If the discrete GCL is violated by a small amount, quantified by a dimensionless parameter $\varepsilon$ that depends on the mesh spacing $h$ and time step $\Delta t$ (e.g., $\varepsilon \sim (h/L)^p + (\omega \Delta t)^q$), this violation creates an artificial forcing on the momentum equation. This forcing, in turn, generates spurious velocity fluctuations $u'(t)$. A linearized analysis shows that the spurious velocity is $u'(t) = -\varepsilon U_g \sin(\omega t)$.
+Consider a 1D compressible flow, initially at rest, on a mesh that oscillates with velocity $w(t) = U_g \sin(\omega t)$ [@problem_id:3962084]. If the discrete GCL is violated by a small amount, quantified by a dimensionless parameter $\varepsilon$ that depends on the mesh spacing $h$ and time step $\Delta t$ (e.g., $\varepsilon \sim (h/L)^p + (\omega \Delta t)^q$), this violation creates an artificial forcing on the momentum equation. This forcing, in turn, generates spurious velocity fluctuations $u'(t)$. A linearized analysis shows that the spurious velocity is $u'(t) = -\varepsilon U_g \sin(\omega t)$.
 
 The maximum spurious kinetic energy per unit mass generated is $E_{k, \text{spurious}}^{\max} = \frac{1}{2} \varepsilon^2 U_g^2$. We can compare this to the kinetic energy of a physical acoustic wave of a certain reference Mach number, $M_a$. The ratio of spurious to physical energy is found to be:
 

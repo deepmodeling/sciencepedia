@@ -1,11 +1,11 @@
 ## Introduction
-In the design and analysis of [feedback control systems](@entry_id:274717), a central challenge is understanding how the [open-loop frequency response](@entry_id:267477), represented by a Nyquist plot, translates into the behavior of the final closed-loop system. While the Nyquist plot of $G(j\omega)$ is a powerful tool for assessing stability, it does not inherently reveal quantitative performance metrics like the phase of the closed-loop response, $T(j\omega)$. This article introduces N-circles, a fundamental graphical method designed to bridge this gap by providing contours of constant closed-loop phase directly on the open-loop G-plane.
+In the design and analysis of feedback control systems, a central challenge is understanding how the open-loop frequency response, represented by a Nyquist plot, translates into the behavior of the final closed-loop system. While the Nyquist plot of $G(j\omega)$ is a powerful tool for assessing stability, it does not inherently reveal quantitative performance metrics like the phase of the closed-loop response, $T(j\omega)$. This article introduces N-circles, a fundamental graphical method designed to bridge this gap by providing contours of constant closed-loop phase directly on the open-loop G-plane.
 
-This article is structured to build a complete understanding of N-circles, from theory to practice. The first chapter, **Principles and Mechanisms**, will delve into the mathematical derivation of the N-circle equations and explore their distinct geometric properties. Following this theoretical foundation, the **Applications and Interdisciplinary Connections** chapter will demonstrate how N-circles are used for direct graphical analysis, [controller synthesis](@entry_id:261816), and how they relate to broader topics like robust and [digital control](@entry_id:275588). Finally, the **Hands-On Practices** section provides targeted exercises to reinforce these concepts and develop practical skills in applying N-circles to control problems.
+This article is structured to build a complete understanding of N-circles, from theory to practice. The first chapter, **Principles and Mechanisms**, will delve into the mathematical derivation of the N-circle equations and explore their distinct geometric properties. Following this theoretical foundation, the **Applications and Interdisciplinary Connections** chapter will demonstrate how N-circles are used for direct graphical analysis, controller synthesis, and how they relate to broader topics like robust and digital control. Finally, the **Hands-On Practices** section provides targeted exercises to reinforce these concepts and develop practical skills in applying N-circles to control problems.
 
 ## Principles and Mechanisms
 
-In the analysis and design of [feedback control systems](@entry_id:274717), understanding the relationship between the [open-loop frequency response](@entry_id:267477), $G(j\omega)$, and the [closed-loop frequency response](@entry_id:273935), $T(j\omega)$, is paramount. For a canonical unity-feedback system, this relationship is given by:
+In the analysis and design of feedback control systems, understanding the relationship between the open-loop frequency response, $G(j\omega)$, and the closed-loop frequency response, $T(j\omega)$, is paramount. For a canonical unity-feedback system, this relationship is given by:
 
 $$T(j\omega) = \frac{G(j\omega)}{1+G(j\omega)}$$
 
@@ -17,7 +17,7 @@ Our primary goal is to find the set of all points $G(j\omega)$ in the complex G-
 
 $$T(j\omega) = \frac{x + iy}{1 + (x + iy)} = \frac{x + iy}{(1+x) + iy}$$
 
-To separate the real and imaginary parts of $T(j\omega)$, we multiply the numerator and denominator by the [complex conjugate](@entry_id:174888) of the denominator, $(1+x) - iy$:
+To separate the real and imaginary parts of $T(j\omega)$, we multiply the numerator and denominator by the complex conjugate of the denominator, $(1+x) - iy$:
 
 $$T(j\omega) = \frac{(x + iy)((1+x) - iy)}{((1+x) + iy)((1+x) - iy)} = \frac{x(1+x) - ixy + iy(1+x) - i^2y^2}{(1+x)^2 + y^2}$$
 
@@ -25,7 +25,7 @@ Simplifying the numerator by grouping real and imaginary terms, and using $i^2 =
 
 $$T(j\omega) = \frac{(x + x^2 + y^2) + i(y + xy - xy)}{(1+x)^2 + y^2} = \frac{x + x^2 + y^2}{(1+x)^2 + y^2} + i \frac{y}{(1+x)^2 + y^2}$$
 
-The [phase angle](@entry_id:274491) of the closed-loop response is $\phi = \arg[T(j\omega)]$. The tangent of this angle is the ratio of the imaginary part to the real part of $T(j\omega)$:
+The phase angle of the closed-loop response is $\phi = \arg[T(j\omega)]$. The tangent of this angle is the ratio of the imaginary part to the real part of $T(j\omega)$:
 
 $$\tan(\phi) = \frac{\Im\{T(j\omega)\}}{\Re\{T(j\omega)\}} = \frac{\frac{y}{(1+x)^2 + y^2}}{\frac{x + x^2 + y^2}{(1+x)^2 + y^2}} = \frac{y}{x^2 + x + y^2}$$
 
@@ -53,7 +53,7 @@ $$(x^2 + x + \frac{1}{4}) - \frac{1}{4} + (y^2 - \frac{1}{N}y + \frac{1}{4N^2}) 
 
 $$(x + \frac{1}{2})^2 + (y - \frac{1}{2N})^2 = \frac{1}{4} + \frac{1}{4N^2}$$
 
-This is the [standard equation of a circle](@entry_id:164169), $(x-x_c)^2 + (y-y_c)^2 = R^2$. By inspection, we can identify the center and radius of the N-circle:
+This is the standard equation of a circle, $(x-x_c)^2 + (y-y_c)^2 = R^2$. By inspection, we can identify the center and radius of the N-circle:
 
 - **Center:** $(x_c, y_c) = \left(-\frac{1}{2}, \frac{1}{2N}\right)$
 - **Radius:** $R = \sqrt{\frac{1}{4} + \frac{1}{4N^2}} = \frac{1}{2}\sqrt{1 + \frac{1}{N^2}}$
@@ -62,15 +62,15 @@ This is the [standard equation of a circle](@entry_id:164169), $(x-x_c)^2 + (y-y
 
 Let's consider two specific cases to build intuition.
 
-- Suppose we are interested in the locus for a closed-loop phase of $\phi = -45^\circ$. The corresponding parameter is $N = \tan(-45^\circ) = -1$. The center of this N-circle is at $(-\frac{1}{2}, \frac{1}{2(-1)}) = (-\frac{1}{2}, -\frac{1}{2})$, and its radius is $R = \frac{1}{2}\sqrt{1 + \frac{1}{(-1)^2}} = \frac{\sqrt{2}}{2}$ .
+- Suppose we are interested in the locus for a closed-loop phase of $\phi = -45^\circ$. The corresponding parameter is $N = \tan(-45^\circ) = -1$. The center of this N-circle is at $(-\frac{1}{2}, \frac{1}{2(-1)}) = (-\frac{1}{2}, -\frac{1}{2})$, and its radius is $R = \frac{1}{2}\sqrt{1 + \frac{1}{(-1)^2}} = \frac{\sqrt{2}}{2}$ [@problem_id:1594796].
 
-- For a closed-loop phase of $\phi = -30^\circ$, the parameter is $N = \tan(-30^\circ) = -1/\sqrt{3}$. The center is at $(-\frac{1}{2}, \frac{1}{2(-1/\sqrt{3})}) = (-\frac{1}{2}, -\frac{\sqrt{3}}{2})$, and the radius is $R = \frac{1}{2}\sqrt{1 + \frac{1}{(-1/\sqrt{3})^2}} = \frac{1}{2}\sqrt{1+3} = 1$ .
+- For a closed-loop phase of $\phi = -30^\circ$, the parameter is $N = \tan(-30^\circ) = -1/\sqrt{3}$. The center is at $(-\frac{1}{2}, \frac{1}{2(-1/\sqrt{3})}) = (-\frac{1}{2}, -\frac{\sqrt{3}}{2})$, and the radius is $R = \frac{1}{2}\sqrt{1 + \frac{1}{(-1/\sqrt{3})^2}} = \frac{1}{2}\sqrt{1+3} = 1$ [@problem_id:1594775].
 
 #### Locus of Centers and Behavior of Radius
 
-The formula for the center, $(-\frac{1}{2}, \frac{1}{2N})$, reveals a remarkable property: the x-coordinate of the center of every N-circle is fixed at $x_c = -1/2$. As the phase angle $\phi$ (and thus $N$) varies, the y-coordinate $y_c = 1/(2N)$ sweeps through all real values. Therefore, **the locus of the centers of all N-circles is the vertical line $x = -1/2$** in the G-plane .
+The formula for the center, $(-\frac{1}{2}, \frac{1}{2N})$, reveals a remarkable property: the x-coordinate of the center of every N-circle is fixed at $x_c = -1/2$. As the phase angle $\phi$ (and thus $N$) varies, the y-coordinate $y_c = 1/(2N)$ sweeps through all real values. Therefore, **the locus of the centers of all N-circles is the vertical line $x = -1/2$** in the G-plane [@problem_id:1594819].
 
-The radius, $R = \frac{1}{2}\sqrt{1 + 1/N^2}$, also exhibits a systematic behavior :
+The radius, $R = \frac{1}{2}\sqrt{1 + 1/N^2}$, also exhibits a systematic behavior [@problem_id:1594783]:
 - As $|N| \to \infty$ (corresponding to $\phi \to \pm 90^\circ$), the term $1/N^2 \to 0$, and the radius approaches its minimum value: $R \to 1/2$.
 - As $|N| \to 0$ (corresponding to $\phi \to 0^\circ$ or $\phi \to \pm 180^\circ$), the term $1/N^2 \to \infty$, and the radius $R \to \infty$. This limiting case corresponds to a degenerate circle—a straight line.
 
@@ -84,7 +84,7 @@ A key property is that all N-circles, for any non-zero real value of $N$, inters
 
 $$x^2 + x = 0 \implies x(x+1) = 0$$
 
-This yields two solutions: $x=0$ and $x=-1$. Therefore, **all N-circles pass through the origin $(0,0)$ and the critical point $(-1,0)$** in the G-plane . These points correspond to $G(j\omega)=0$ and $G(j\omega)=-1$, respectively.
+This yields two solutions: $x=0$ and $x=-1$. Therefore, **all N-circles pass through the origin $(0,0)$ and the critical point $(-1,0)$** in the G-plane [@problem_id:1594777]. These points correspond to $G(j\omega)=0$ and $G(j\omega)=-1$, respectively.
 
 #### Degenerate Cases: The Real Axis
 
@@ -95,7 +95,7 @@ To distinguish between $0^\circ$ and $180^\circ$ phase, we must examine the sign
 $$T = \frac{x}{1+x}$$
 
 - A phase of $\phi = 0^\circ$ requires $T > 0$. This occurs when $x$ and $1+x$ have the same sign, which is true for the intervals $(-\infty, -1)$ and $(0, \infty)$.
-- A phase of $\phi = 180^\circ$ requires $T  0$. This occurs when $x$ and $1+x$ have opposite signs, which is true for the interval $(-1, 0)$ .
+- A phase of $\phi = 180^\circ$ requires $T  0$. This occurs when $x$ and $1+x$ have opposite signs, which is true for the interval $(-1, 0)$ [@problem_id:1594831].
 
 Thus, the real axis is partitioned into three segments, corresponding to different closed-loop phases.
 
@@ -106,7 +106,7 @@ Consider two phase angles that are equal in magnitude but opposite in sign, $\ph
 - Center for $+\alpha$: $(-\frac{1}{2}, \frac{1}{2\tan(\alpha)})$
 - Center for $-\alpha$: $(-\frac{1}{2}, -\frac{1}{2\tan(\alpha)})$
 
-The radii are identical since $R$ depends on $N^2$. This shows that the N-circles for $\pm \alpha$ are mirror images of each other with respect to the real axis ($y=0$) .
+The radii are identical since $R$ depends on $N^2$. This shows that the N-circles for $\pm \alpha$ are mirror images of each other with respect to the real axis ($y=0$) [@problem_id:1594820].
 
 ### Application in Frequency Response Analysis
 
@@ -118,12 +118,12 @@ For instance, if at a frequency $\omega_p$, the open-loop response is found to b
 
 $$T(j\omega_p) = \frac{-0.800 - j0.900}{1 + (-0.800 - j0.900)} = \frac{-0.800 - j0.900}{0.200 - j0.900} \approx 0.765 - j1.059$$
 
-The phase is $\arg[T(j\omega_p)] = \arctan(\frac{-1.059}{0.765}) \approx -54.2^\circ$. This means the point $(-0.800, -0.900)$ lies on the N-circle for $\phi=-54.2^\circ$ .
+The phase is $\arg[T(j\omega_p)] = \arctan(\frac{-1.059}{0.765}) \approx -54.2^\circ$. This means the point $(-0.800, -0.900)$ lies on the N-circle for $\phi=-54.2^\circ$ [@problem_id:1594839].
 
 Conversely, to identify which N-circle a given point $G(j\omega_k) = x+iy$ lies upon, one can compute the value of $N$ directly from its definition. For a point $G(j\omega_k) = -1.2 + j0.9$, we have $x=-1.2$ and $y=0.9$. Using the derived formula:
 
 $$N = \frac{y}{x^2 + x + y^2} = \frac{0.9}{(-1.2)^2 + (-1.2) + (0.9)^2} = \frac{0.9}{1.44 - 1.2 + 0.81} = \frac{0.9}{1.05} \approx 0.857$$
 
-This point lies on the N-circle corresponding to a closed-loop phase of $\phi = \arctan(0.857)$ .
+This point lies on the N-circle corresponding to a closed-loop phase of $\phi = \arctan(0.857)$ [@problem_id:1594778].
 
-Finally, it is worth noting that the family of N-circles is intrinsically related to the family of **M-circles**, which are loci of constant closed-loop magnitude $|T(j\omega)| = M$. Together, these two families of circles form a curvilinear coordinate system on the G-plane. A fundamental property of these families is that they are **mutually orthogonal**: at every intersection point, the tangent to the M-circle is perpendicular to the tangent to the N-circle. This orthogonality is a consequence of the analytic properties of the mapping $T(G)$ and is extremely useful in graphical design methods using tools like the Hall chart .
+Finally, it is worth noting that the family of N-circles is intrinsically related to the family of **M-circles**, which are loci of constant closed-loop magnitude $|T(j\omega)| = M$. Together, these two families of circles form a curvilinear coordinate system on the G-plane. A fundamental property of these families is that they are **mutually orthogonal**: at every intersection point, the tangent to the M-circle is perpendicular to the tangent to the N-circle. This orthogonality is a consequence of the analytic properties of the mapping $T(G)$ and is extremely useful in graphical design methods using tools like the Hall chart [@problem_id:1594804].

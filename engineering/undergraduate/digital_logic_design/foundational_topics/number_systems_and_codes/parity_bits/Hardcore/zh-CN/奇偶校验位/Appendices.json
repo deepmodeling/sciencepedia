@@ -8,7 +8,7 @@
             "answer": "$$\\boxed{A}$$"
         },
         {
-            "introduction": "在理解了偶校验之后，我们自然会转向它的对应物——奇校验。这个练习要求你推导出奇校验位的布尔表达式，这能加深你对奇偶校验背后数学原理的理解。通过对比偶校验和奇校验的逻辑 ，你会发现它们之间的紧密联系以及如何轻松地在两者之间进行转换。",
+            "introduction": "在理解了偶校验之后，我们自然会转向它的对应物——奇校验。这个练习要求你推导出奇校验位的布尔表达式，这能加深你对奇偶校验背后数学原理的理解。通过对比偶校验和奇校验的逻辑 [@problem_id:1951228]，你会发现它们之间的紧密联系以及如何轻松地在两者之间进行转换。",
             "id": "1951506",
             "problem": "一个数字系统处理一个4位数据字，由输入变量 $A, B, C, D$ 表示。为确保数据完整性，设计了一个奇校验生成电路来产生一个单一的校验位 $P$。校验位 $P$ 的取值应使得由校验位和数据字拼接形成的完整5位字 $PABCD$ 中‘1’的总数始终为奇数。\n\n您的任务是确定校验位 $P$ 作为输入数据位 $A$、$B$、$C$ 和 $D$ 的函数的最简布尔表达式。异或运算由 $\\oplus$ 表示。\n\n以下哪个选项代表了 $P$ 的正确简化表达式？\n\nA. $P = A \\oplus B \\oplus C \\oplus D$\n\nB. $P = \\overline{A \\oplus B \\oplus C \\oplus D}$\n\nC. $P = \\overline{A}\\overline{B}\\overline{C}\\overline{D} + ABCD$\n\nD. 该表达式无法简化，并表示为具有八个4文字项的积之和（SOP）形式。\n\nE. $P = (\\overline{A}+\\overline{B})(\\overline{C}+\\overline{D}) + (A+B)(C+D)$",
             "solution": "目标：选择 $P$ 以使得5位字中‘1’的总数为奇数。在布尔代数中，一组位的奇偶性（‘1’的奇数/偶数个）等于它们的异或值。因此，“$PABCD$ 中有奇数个‘1’”的条件等价于\n$$\nP \\oplus A \\oplus B \\oplus C \\oplus D = 1.\n$$\n为了解出 $P$，将等式两边与 $A \\oplus B \\oplus C \\oplus D$ 进行异或运算，并利用结合律、交换律以及 $X \\oplus X = 0$ 和 $X \\oplus 0 = X$：\n$$\n(P \\oplus A \\oplus B \\oplus C \\oplus D) \\oplus (A \\oplus B \\oplus C \\oplus D) = 1 \\oplus (A \\oplus B \\oplus C \\oplus D),\n$$\n$$\nP \\oplus 0 = 1 \\oplus (A \\oplus B \\oplus C \\oplus D),\n$$\n$$\nP = 1 \\oplus (A \\oplus B \\oplus C \\oplus D).\n$$\n对于任意布尔表达式 $X$，使用恒等式 $1 \\oplus X = \\overline{X}$，我们得到\n$$\nP = \\overline{A \\oplus B \\oplus C \\oplus D}.\n$$\n这与选项B相匹配。（注意：选择 $P = A \\oplus B \\oplus C \\oplus D$ 会强制实现偶校验，因为那样的话 $P \\oplus A \\oplus B \\oplus C \\oplus D = 0$。）",

@@ -6,64 +6,64 @@
 
 ### 弹性世界的蓝图：从简单结构到坚实理论
 
-工程师们是如何确信他们设计的桥梁和[压力容器](@article_id:370911)是安全的？几百年来的工程实践建立了许多经典的公式，例如梁的[纯弯曲](@article_id:381617)理论和[厚壁圆筒](@article_id:368320)的Lamé解。你可能会认为这些只是基于大量实验和直觉的近似。然而，相容性理论告诉我们，这些经典解之所以“正确”，是因为它们在数学上完美地满足了材料内部的几何协调要求。
+工程师们是如何确信他们设计的桥梁和[压力容器](@keyword=pressure_vessel|lang=zh-CN|style=Feynman)是安全的？几百年来的工程实践建立了许多经典的公式，例如梁的[纯弯曲](@keyword=pure_bending|lang=zh-CN|style=Feynman)理论和[厚壁圆筒](@keyword=thick_walled_cylinder|lang=zh-CN|style=Feynman)的Lamé解。你可能会认为这些只是基于大量实验和直觉的近似。然而，相容性理论告诉我们，这些经典解之所以“正确”，是因为它们在数学上完美地满足了材料内部的几何协调要求。
 
-以一根受纯弯矩作用的梁为例，其内部的应力分布呈现简单的线性关系 。当我们用贝尔特拉米-米歇尔方程这把“标尺”去检验它时，会发现该应[力场](@article_id:307740)完美地通过了测试。同样，对于承受内外压力的[厚壁圆筒](@article_id:368320)，经典的Lamé解也同样满足在柱坐标下的相容性方程 。这表明，这些看似简单的工程解，实际上是弹性理论这一宏大框架下的精确解。它们不仅满足力的平衡，也满足了变形的几何相容性。
+以一根受纯弯矩作用的梁为例，其内部的应力分布呈现简单的线性关系 [@problem_id:2616985]。当我们用贝尔特拉米-米歇尔方程这把“标尺”去检验它时，会发现该应[力场](@keyword=force_field|lang=zh-CN|style=Feynman)完美地通过了测试。同样，对于承受内外压力的[厚壁圆筒](@keyword=thick_walled_cylinder|lang=zh-CN|style=Feynman)，经典的Lamé解也同样满足在柱坐标下的相容性方程 [@problem_id:2616960]。这表明，这些看似简单的工程解，实际上是弹性理论这一宏大框架下的精确解。它们不仅满足力的平衡，也满足了变形的几何相容性。
 
-在二维问题中，物理学家和工程师们发明了一种巧妙的工具——[Airy应力函数](@article_id:370354) $\phi$。通过将[应力分量](@article_id:373838)表示为 $\phi$ 的[二阶偏导数](@article_id:639509)（例如，$\sigma_{xx} = \partial^2\phi/\partial y^2$），力的平衡方程便被自动满足了。这样一来，问题的核心就完全转移到了满足相容性上。而我们已经看到，对于一个没有[体力](@article_id:353281)作用的[各向同性材料](@article_id:349861)，[相容性条件](@article_id:379809)最终归结为一个优美而简洁的[四阶偏微分方程](@article_id:355233)——双谐和方程（biharmonic equation）：
+在二维问题中，物理学家和工程师们发明了一种巧妙的工具——[Airy应力函数](@keyword=airy_stress_function|lang=zh-CN|style=Feynman) $\phi$。通过将[应力分量](@keyword=stress_components|lang=zh-CN|style=Feynman)表示为 $\phi$ 的[二阶偏导数](@keyword=second_partial_derivatives|lang=zh-CN|style=Feynman)（例如，$\sigma_{xx} = \partial^2\phi/\partial y^2$），力的平衡方程便被自动满足了。这样一来，问题的核心就完全转移到了满足相容性上。而我们已经看到，对于一个没有[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)作用的[各向同性材料](@keyword=isotropic_materials|lang=zh-CN|style=Feynman)，[相容性条件](@keyword=compatibility_conditions|lang=zh-CN|style=Feynman)最终归结为一个优美而简洁的[四阶偏微分方程](@keyword=fourth_order_pde|lang=zh-CN|style=Feynman)——双谐和方程（biharmonic equation）[@problem_id:2670082]：
 $$ \nabla^4 \phi = \nabla^2(\nabla^2 \phi) = 0 $$
-一个简单的均匀剪切应力场 $\sigma_{xy} = \tau_0$ 对应着一个简单的二次多项式[势函数](@article_id:332364) $\phi = -\tau_0 xy$，而这个函数显然是一个双谐和函数 。因此，[Airy应力函数](@article_id:370354)和双谐和方程为我们提供了一幅绘制弹性世界应力分布的“蓝图”，将复杂的力学问题转化为了求解一个[标量势函数](@article_id:375636)的数学问题。
+一个简单的均匀剪切应力场 $\sigma_{xy} = \tau_0$ 对应着一个简单的二次多项式[势函数](@keyword=potential_function|lang=zh-CN|style=Feynman) $\phi = -\tau_0 xy$，而这个函数显然是一个双谐和函数 [@problem_id:2614003]。因此，[Airy应力函数](@keyword=airy_stress_function|lang=zh-CN|style=Feynman)和双谐和方程为我们提供了一幅绘制弹性世界应力分布的“蓝图”，将复杂的力学问题转化为了求解一个[标量势函数](@keyword=scalar_potential_function|lang=zh-CN|style=Feynman)的数学问题。
 
 ### 自然之力：当引力和温度试图“掰弯”物质
 
 我们的世界不仅仅由工程师设计的结构组成，更充满了无处不在的自然力，比如引力和温度变化。这些因素如何影响材料的相容性呢？
 
-让我们思考一下引力。一个物体自身的重量会在其内部产生应力。你可能会直觉地认为，这种体力（body force）会使相容性方程变得复杂。然而，一个惊人的事实是，一个*均匀*的[体力](@article_id:353281)场，例如在一个小范围内的[重力场](@article_id:348648)，并不会破坏应变场的相容性 。贝尔特拉米-米歇尔方程的非齐次项（[源项](@article_id:332813)）仅与体力的*梯度*有关。当[体力](@article_id:353281)均匀时，梯度为零，方程形式上又变回了齐次形式 。这背后的物理图像是：均匀的[体力](@article_id:353281)试图让物体的每一部分都以相同的方式“下坠”，它不会在物体内部造成“意见不合”或“扭曲”，因此不会引入几何上的不相容性。真正能引起不相容性的是力的*不均匀性*。
+让我们思考一下引力。一个物体自身的重量会在其内部产生应力。你可能会直觉地认为，这种体力（body force）会使相容性方程变得复杂。然而，一个惊人的事实是，一个*均匀*的[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)场，例如在一个小范围内的[重力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)，并不会破坏应变场的相容性 [@problem_id:2616959]。贝尔特拉米-米歇尔方程的非齐次项（[源项](@keyword=source_term|lang=zh-CN|style=Feynman)）仅与体力的*梯度*有关。当[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)均匀时，梯度为零，方程形式上又变回了齐次形式 [@problem_id:2616965]。这背后的物理图像是：均匀的[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)试图让物体的每一部分都以相同的方式“下坠”，它不会在物体内部造成“意见不合”或“扭曲”，因此不会引入几何上的不相容性。真正能引起不相容性的是力的*不均匀性*。
 
-相比之下，温度变化则是一个更常见的导致内部应力——即[热应力](@article_id:360016)——的元凶。当一个物体被不均匀地加热时，它内部的不同区域会试图以不同的程度进行热膨胀。想象一下，一块金属板的中心被加热，而边缘保持冷却。中心部分想膨胀，但受到周围冷区的束缚；而冷区则被膨胀的中心部分拉伸。这种内部的“推拉”和“扯皮”就是几何不相容的体现。
+相比之下，温度变化则是一个更常见的导致内部应力——即[热应力](@keyword=thermal_stresses|lang=zh-CN|style=Feynman)——的元凶。当一个物体被不均匀地加热时，它内部的不同区域会试图以不同的程度进行热膨胀。想象一下，一块金属板的中心被加热，而边缘保持冷却。中心部分想膨胀，但受到周围冷区的束缚；而冷区则被膨胀的中心部分拉伸。这种内部的“推拉”和“扯皮”就是几何不相容的体现。
 
-在热弹性理论中，这种不相容性被精确地量化了。非均匀的温度场 $T(x,y)$ 在贝尔特拉米-米歇尔方程（或其等价的双谐和方程）的右边引入了一个[源项](@article_id:332813)，这个源项正比于温度场的[拉普拉斯算子](@article_id:334415) $\nabla^2 T$ 。
+在热弹性理论中，这种不相容性被精确地量化了。非均匀的温度场 $T(x,y)$ 在贝尔特拉米-米歇尔方程（或其等价的双谐和方程）的右边引入了一个[源项](@keyword=source_term|lang=zh-CN|style=Feynman)，这个源项正比于温度场的[拉普拉斯算子](@keyword=divergence_of_the_gradient|lang=zh-CN|style=Feynman) $\nabla^2 T$ [@problem_id:2928449]。
 $$ \nabla^4 \Phi \propto -\nabla^2 T $$
-$\nabla^2 T$ 衡量了局部温度与其周围平均温度的差异，完美地捕捉了“热膨胀不协调”的程度。如果 $\nabla^2 T \neq 0$，意味着热膨胀的“意愿”在空间上是不相容的，物体为了保持自身的完整性，就*必须*产生一个应[力场](@article_id:307740)来抵消这种不相容性 。这就是即使在没有任何外部约束的情况下，仅仅对一个物体进行不均匀加热或冷却，也会产生[残余应力](@article_id:299236)的根本原因。
+$\nabla^2 T$ 衡量了局部温度与其周围平均温度的差异，完美地捕捉了“热膨胀不协调”的程度。如果 $\nabla^2 T \neq 0$，意味着热膨胀的“意愿”在空间上是不相容的，物体为了保持自身的完整性，就*必须*产生一个应[力场](@keyword=force_field|lang=zh-CN|style=Feynman)来抵消这种不相容性 [@problem_id:2701619]。这就是即使在没有任何外部约束的情况下，仅仅对一个物体进行不均匀加热或冷却，也会产生[残余应力](@keyword=residual_stress|lang=zh-CN|style=Feynman)的根本原因。
 
 ### 材料的微观世界：各向异性与内在缺陷
 
 到目前为止，我们主要讨论的是性质均一的各向同性材料。然而，真实世界的材料，如木材、复合材料和晶体，其内部结构往往是各向异性的——它们在不同方向上具有不同的力学性能。幸运的是，相容性的基本原理是普适的。
 
-对于各向异性材料，虽然[应力-应变关系](@article_id:337788)（本构关系）变得更加复杂，但相容性方程作为变形几何的约束依然成立。我们只需将更复杂的本构关系代入[应变相容性](@article_id:378407)条件，就能得到适用于特定材料的贝尔特拉米-米歇尔方程。例如，对于[正交各向异性材料](@article_id:369185)  或横观各向同性材料 ，方程的形式会发生改变，其中会包含多个不同的[弹性模量](@article_id:377638)，反映出法向应力与剪应力之间、以及不同方向变形之间的复杂耦合。但其核心思想——保证应变场可积的约束——始终如一。
+对于各向异性材料，虽然[应力-应变关系](@keyword=stress_strain_relationship|lang=zh-CN|style=Feynman)（本构关系）变得更加复杂，但相容性方程作为变形几何的约束依然成立。我们只需将更复杂的本构关系代入[应变相容性](@keyword=strain_compatibility|lang=zh-CN|style=Feynman)条件，就能得到适用于特定材料的贝尔特拉米-米歇尔方程。例如，对于[正交各向异性材料](@keyword=orthotropic_materials|lang=zh-CN|style=Feynman) [@problem_id:2616942] 或横观各向同性材料 [@problem_id:2904981]，方程的形式会发生改变，其中会包含多个不同的[弹性模量](@keyword=elastic_modulus|lang=zh-CN|style=Feynman)，反映出法向应力与剪应力之间、以及不同方向变形之间的复杂耦合。但其核心思想——保证应变场可积的约束——始终如一。
 
-相容性理论最深刻的应用之一，是解释材料内部[残余应力](@article_id:299236)的来源。除了热膨胀，材料内部还可能存在其他形式的“固有应变”或“[本征应变](@article_id:376923)”（eigenstrain）。这些应变不是由外力引起的，而是源于材料的“历史”或内部缺陷，例如晶体中的[位错](@article_id:299027)、[相变](@article_id:297531)、夹杂物或塑性变形。
+相容性理论最深刻的应用之一，是解释材料内部[残余应力](@keyword=residual_stress|lang=zh-CN|style=Feynman)的来源。除了热膨胀，材料内部还可能存在其他形式的“固有应变”或“[本征应变](@keyword=eigenstrain|lang=zh-CN|style=Feynman)”（eigenstrain）。这些应变不是由外力引起的，而是源于材料的“历史”或内部缺陷，例如晶体中的[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)、[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)、夹杂物或塑性变形。
 
-我们可以将这些[本征应变](@article_id:376923)看作是材料在理想无应力状态下就存在的“预变形”。如果这个[本征应变](@article_id:376923)场本身是几何不相容的（也就是说，你无法将这些预变形的小块无缝地拼回一个整体），那么当材料真的要形成一个连续体时，就必然会产生一个应[力场](@article_id:307740)来“矫正”这种不相容性 。在这种情况下，[本征应变](@article_id:376923)场的不相容度充当了贝尔特拉米-米歇尔方程的源项。这完美地解释了为什么冷加工后的金属、或含有大量微观缺陷的材料会存在巨大的内部残余应力，即使它看起来没有任何外部载荷。
+我们可以将这些[本征应变](@keyword=eigenstrain|lang=zh-CN|style=Feynman)看作是材料在理想无应力状态下就存在的“预变形”。如果这个[本征应变](@keyword=eigenstrain|lang=zh-CN|style=Feynman)场本身是几何不相容的（也就是说，你无法将这些预变形的小块无缝地拼回一个整体），那么当材料真的要形成一个连续体时，就必然会产生一个应[力场](@keyword=force_field|lang=zh-CN|style=Feynman)来“矫正”这种不相容性 [@problem_id:2616961]。在这种情况下，[本征应变](@keyword=eigenstrain|lang=zh-CN|style=Feynman)场的不相容度充当了贝尔特拉米-米歇尔方程的源项。这完美地解释了为什么冷加工后的金属、或含有大量微观缺陷的材料会存在巨大的内部残余应力，即使它看起来没有任何外部载荷。
 
-### 超越平面：三维世界与力的[奇点](@article_id:298215)
+### 超越平面：三维世界与力的[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)
 
-我们之前主要依赖的[Airy应力函数](@article_id:370354)是一个非常强大的工具，但它有一个局限：它只适用于二维问题。为什么呢？一个简单的自由度争论可以说明问题 。在三维空间中，一个对称的应力张量有6个独立的力学分量，而它需要满足3个平衡方程。这意味着，描述一个三维自平衡应[力场](@article_id:307740)，原则上需要 $6-3=3$ 个独立的任意函数。而一个[标量势函数](@article_id:375636) $\phi$ 只能提供1个，因此它不足以描述三维世界中所有可能的应力状态。
+我们之前主要依赖的[Airy应力函数](@keyword=airy_stress_function|lang=zh-CN|style=Feynman)是一个非常强大的工具，但它有一个局限：它只适用于二维问题。为什么呢？一个简单的自由度争论可以说明问题 [@problem_id:2866234]。在三维空间中，一个对称的应力张量有6个独立的力学分量，而它需要满足3个平衡方程。这意味着，描述一个三维自平衡应[力场](@keyword=force_field|lang=zh-CN|style=Feynman)，原则上需要 $6-3=3$ 个独立的任意函数。而一个[标量势函数](@keyword=scalar_potential_function|lang=zh-CN|style=Feynman) $\phi$ 只能提供1个，因此它不足以描述三维世界中所有可能的应力状态。
 
-为了解决这个问题，物理学家们，如Beltrami、Maxwell和Morera，将[Airy函数](@article_id:377473)推广到了三维，引入了一个对称的[二阶张量](@article_id:366843)势 $\Phi_{ij}$。通过对这个[张量](@article_id:321604)势进行两次旋度操作，可以构造出一个自动满足平衡方程的对称应力张量。
+为了解决这个问题，物理学家们，如Beltrami、Maxwell和Morera，将[Airy函数](@keyword=airy_functions|lang=zh-CN|style=Feynman)推广到了三维，引入了一个对称的[二阶张量](@keyword=rank_2_tensor|lang=zh-CN|style=Feynman)势 $\Phi_{ij}$。通过对这个[张量](@keyword=tensor|lang=zh-CN|style=Feynman)势进行两次旋度操作，可以构造出一个自动满足平衡方程的对称应力张量。
 $$ \sigma_{ij} = \epsilon_{ik\ell} \epsilon_{jmn} \partial_k \partial_m \Phi_{\ell n} $$
-这个贝尔特拉米应力函数理论上可以描述任何三维自平衡应[力场](@article_id:307740)，而[相容性条件](@article_id:379809)则转化为对这个[张量](@article_id:321604)势分量的[四阶偏微分方程](@article_id:355233)组。
+这个贝尔特拉米应力函数理论上可以描述任何三维自平衡应[力场](@keyword=force_field|lang=zh-CN|style=Feynman)，而[相容性条件](@keyword=compatibility_conditions|lang=zh-CN|style=Feynman)则转化为对这个[张量](@keyword=tensor|lang=zh-CN|style=Feynman)势分量的[四阶偏微分方程](@keyword=fourth_order_pde|lang=zh-CN|style=Feynman)组。
 
-另一个引人入胜的领域是力的[奇点](@article_id:298215)问题。如果我们将一个集中的点力施加在无限大的弹性体内部（这被称为Kelvin问题）会发生什么 ？此时，体力可以用狄拉克$\delta$函数来描述。贝尔特拉米-米歇尔方程此时必须在分布的意义上进行理解。方程中的源项变成了$\delta$函数的一阶[导数](@article_id:318324)。为了平衡这个作用在无穷小一点上的有限大小的力，应力必须在这一点附近急剧增大。通过对[奇点](@article_id:298215)周围一个小球体上的力进行积分平衡，我们可以严格地推断出，应力必须以与距离平方成反比($1/r^2$)的方式发散。这一结果不仅是[弹性理论](@article_id:363424)的基石之一，也与[电磁学](@article_id:363853)和[引力场](@article_id:348648)中[点源](@article_id:375549)产生的场行为遥相呼应，再次彰显了物理学中[基本解](@article_id:364028)的普遍模式。
+另一个引人入胜的领域是力的[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)问题。如果我们将一个集中的点力施加在无限大的弹性体内部（这被称为Kelvin问题）会发生什么 [@problem_id:2616957]？此时，体力可以用狄拉克$\delta$函数来描述。贝尔特拉米-米歇尔方程此时必须在分布的意义上进行理解。方程中的源项变成了$\delta$函数的一阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)。为了平衡这个作用在无穷小一点上的有限大小的力，应力必须在这一点附近急剧增大。通过对[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)周围一个小球体上的力进行积分平衡，我们可以严格地推断出，应力必须以与距离平方成反比($1/r^2$)的方式发散。这一结果不仅是[弹性理论](@keyword=theory_of_elasticity|lang=zh-CN|style=Feynman)的基石之一，也与[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)和[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)中[点源](@keyword=point_source|lang=zh-CN|style=Feynman)产生的场行为遥相呼应，再次彰显了物理学中[基本解](@keyword=fundamental_solutions|lang=zh-CN|style=Feynman)的普遍模式。
 
 ### 从抽象理论到实际计算
 
-理论虽然优美，但工程师们最终需要解决具有复杂几何形状和边界条件的实际问题，这些问题几乎不可能找到解析解。这正是计算力学，特别是[有限元方法](@article_id:297335)（FEM）大展身手的舞台。
+理论虽然优美，但工程师们最终需要解决具有复杂几何形状和边界条件的实际问题，这些问题几乎不可能找到解析解。这正是计算力学，特别是[有限元方法](@keyword=finite_element_method|lang=zh-CN|style=Feynman)（FEM）大展身手的舞台。
 
-相容性理论也为计算方法提供了指导。例如，在二维问题中，我们可以不直接求解位移，而是尝试直接求解[Airy应力函数](@article_id:370354) $\phi$ 。由于控制方程是四阶的双谐和方程，标准的有限元方法会遇到困难，因为它要求单元之间不仅函数值连续（$C^0$连续），连一阶[导数](@article_id:318324)也要连续（$C^1$连续）。构造这种$C^1$单元（如Argyris单元）相当复杂。为了规避这一困难，人们发展了“混合法”：引入一个[辅助变量](@article_id:329712)（如 $\psi = \nabla^2 \phi$），将一个四阶方程分解为两个耦合的二阶方程组。这样，对每个变量就只需要$C^0$连续性，从而可以使用简单的标准有限元单元。这体现了理论与计算之间的巧妙互动。
+相容性理论也为计算方法提供了指导。例如，在二维问题中，我们可以不直接求解位移，而是尝试直接求解[Airy应力函数](@keyword=airy_stress_function|lang=zh-CN|style=Feynman) $\phi$ [@problem_id:2616970]。由于控制方程是四阶的双谐和方程，标准的有限元方法会遇到困难，因为它要求单元之间不仅函数值连续（$C^0$连续），连一阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)也要连续（$C^1$连续）。构造这种$C^1$单元（如Argyris单元）相当复杂。为了规避这一困难，人们发展了“混合法”：引入一个[辅助变量](@keyword=auxiliary_variables|lang=zh-CN|style=Feynman)（如 $\psi = \nabla^2 \phi$），将一个四阶方程分解为两个耦合的二阶方程组。这样，对每个变量就只需要$C^0$连续性，从而可以使用简单的标准有限元单元。这体现了理论与计算之间的巧妙互动。
 
 ### 最深的联结：弹性即几何
 
-我们旅程的最后一站，将触及贝尔特拉米-米歇尔方程最深刻、最美丽的内涵。它揭示了弹性力学与一门更古老、更基础的学科——几何学——之间令人惊叹的联系 。
+我们旅程的最后一站，将触及贝尔特拉米-米歇尔方程最深刻、最美丽的内涵。它揭示了弹性力学与一门更古老、更基础的学科——几何学——之间令人惊叹的联系 [@problem_id:2616951]。
 
-想象一下，[应变张量](@article_id:372284) $\epsilon_{ij}$ 定义了空间中每一点的[伸缩和](@article_id:326058)剪切。我们可以利用它来定义一个新的度规[张量](@article_id:321604) $g_{ij} = \delta_{ij} + 2\epsilon_{ij}$，它描述了变形后空间中点与点之间距离的测量方式。一个基本的问题是：这个被“应变”了的空间，本质上还是我们熟悉的平直欧几里得空间吗？
+想象一下，[应变张量](@keyword=strain_tensor|lang=zh-CN|style=Feynman) $\epsilon_{ij}$ 定义了空间中每一点的[伸缩和](@keyword=telescoping_sum|lang=zh-CN|style=Feynman)剪切。我们可以利用它来定义一个新的度规[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $g_{ij} = \delta_{ij} + 2\epsilon_{ij}$，它描述了变形后空间中点与点之间距离的测量方式。一个基本的问题是：这个被“应变”了的空间，本质上还是我们熟悉的平直欧几里得空间吗？
 
 答案是，当且仅当描述这个空间的黎曼曲率张量（Riemann curvature tensor）为零时，它才是平直的。黎曼曲率张量衡量了空间内在的弯曲程度——例如，在一个平地上沿三角形走一圈回到起点，你转过的总角度是360度；但在一个球面上做同样的事，总角度会大于360度，这个“多出来”的角度就源于球面的曲率。
 
-令人震惊的真相是：在线性化（小应变）的极限下，圣维南[应变相容性](@article_id:378407)[张量](@article_id:321604)（贝尔特拉米-米歇尔方程就是从它推导而来）与变形度规的[黎曼曲率张量](@article_id:320593)，本质上是同一个东西！
+令人震惊的真相是：在线性化（小应变）的极限下，圣维南[应变相容性](@keyword=strain_compatibility|lang=zh-CN|style=Feynman)[张量](@keyword=tensor|lang=zh-CN|style=Feynman)（贝尔特拉米-米歇尔方程就是从它推导而来）与变形度规的[黎曼曲率张量](@keyword=riemannian_curvature_tensor|lang=zh-CN|style=Feynman)，本质上是同一个东西！
 $$ \mathcal{C}[\epsilon]_{ijkl} \quad \Leftrightarrow \quad R^{\text{lin}}_{ijkl} $$
-因此，**[相容性条件](@article_id:379809) $\mathcal{C}[\epsilon]=0$ 无非是说，变形后的空间必须是平直的（曲率为零）。**
+因此，**[相容性条件](@keyword=compatibility_conditions|lang=zh-CN|style=Feynman) $\mathcal{C}[\epsilon]=0$ 无非是说，变形后的空间必须是平直的（曲率为零）。**
 
-从这个几何的视角来看，弹性力学的整个故事豁然开朗。一个不相容的应变场（例如由不均匀热膨胀或[位错](@article_id:299027)引起）试图将材料“塑造”成一个内禀弯曲的空间。这就像试图把一张平坦的纸完美地包裹在一个球面上而不产生任何褶皱或撕裂——这是不可能的。材料为了抵抗这种被“掰弯”成非欧空间的企图，为了维持其作为平直[欧氏空间](@article_id:298501)一部分的“尊严”，便会自发地产生[内力](@article_id:346879)，也就是应力。
+从这个几何的视角来看，弹性力学的整个故事豁然开朗。一个不相容的应变场（例如由不均匀热膨胀或[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)引起）试图将材料“塑造”成一个内禀弯曲的空间。这就像试图把一张平坦的纸完美地包裹在一个球面上而不产生任何褶皱或撕裂——这是不可能的。材料为了抵抗这种被“掰弯”成非欧空间的企图，为了维持其作为平直[欧氏空间](@keyword=euclidean_space|lang=zh-CN|style=Feynman)一部分的“尊严”，便会自发地产生[内力](@keyword=internal_forces|lang=zh-CN|style=Feynman)，也就是应力。
 
 所以，应力，这个我们能感受到的、能驱动机器、能支撑建筑的物理量，其最深层的本质，不过是物质为了保持自身几何完整性而做出的反抗。贝尔特拉米-米歇尔相容性方程，正是这场关于几何与力的宏大戏剧的剧本。

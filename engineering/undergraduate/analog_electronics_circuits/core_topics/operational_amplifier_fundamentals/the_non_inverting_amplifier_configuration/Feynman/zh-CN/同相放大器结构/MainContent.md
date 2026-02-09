@@ -1,7 +1,7 @@
 ## 引言
-在模拟电子的世界里，[运算放大器](@article_id:327673)（op-amp）如同一位拥有无穷力量的魔法师，其“开环增益”巨大到几乎无法直接使用。我们如何才能驾驭这股原始的力量，精确地获得稳定、可预测的[信号放大](@article_id:306958)呢？这正是[同相放大器](@article_id:335825)及其核心原理——[负反馈](@article_id:299067)所要解决的根本问题。
+在模拟电子的世界里，[运算放大器](@keyword=operational_amplifier|lang=zh-CN|style=Feynman)（op-amp）如同一位拥有无穷力量的魔法师，其“开环增益”巨大到几乎无法直接使用。我们如何才能驾驭这股原始的力量，精确地获得稳定、可预测的[信号放大](@keyword=signal_amplification|lang=zh-CN|style=Feynman)呢？这正是[同相放大器](@keyword=non_inverting_amplifier|lang=zh-CN|style=Feynman)及其核心原理——[负反馈](@keyword=negative_feedback|lang=zh-CN|style=Feynman)所要解决的根本问题。
 
-本文将带领您踏上一段从理论到实践的深度探索之旅。我们将一同解构[同相放大器](@article_id:335825)的核心概念，从优雅简洁的理想模型出发，逐步揭示现实世界中有限增益、直流误差和动态限制等不完美之处，并理解[负反馈](@article_id:299067)如何巧妙地克服它们。随后，我们将视野扩展到广阔的应用领域，见证这个看似简单的电路如何化身为功能强大的“积木”，构建出精密[仪表放大器](@article_id:329680)、[有源滤波器](@article_id:325362)、信号发生器等复杂系统。通过这次旅程，您将掌握的不仅仅是一个电路，更是一种用不完美元件构建高性能系统的核心设计思想。
+本文将带领您踏上一段从理论到实践的深度探索之旅。我们将一同解构[同相放大器](@keyword=non_inverting_amplifier|lang=zh-CN|style=Feynman)的核心概念，从优雅简洁的理想模型出发，逐步揭示现实世界中有限增益、直流误差和动态限制等不完美之处，并理解[负反馈](@keyword=negative_feedback|lang=zh-CN|style=Feynman)如何巧妙地克服它们。随后，我们将视野扩展到广阔的应用领域，见证这个看似简单的电路如何化身为功能强大的“积木”，构建出精密[仪表放大器](@keyword=instrumentation_amplifier|lang=zh-CN|style=Feynman)、[有源滤波器](@keyword=active_filters|lang=zh-CN|style=Feynman)、信号发生器等复杂系统。通过这次旅程，您将掌握的不仅仅是一个电路，更是一种用不完美元件构建高性能系统的核心设计思想。
 
 让我们首先深入其内部，探究它的工作原理与机制。
 
@@ -19,4 +19,4 @@
 1.  它的两个输入端（一个“+”号，一个“-”号）不会吸入任何电流。它们是完美的观察者。
 2.  通过负反馈，运放会竭尽所能地调整其输出，使得“-”号输入端的电压（$V_-$）与“+”号输入端的电压（$V_+$）完全相等。
 
-现在，我们来搭建一个最经典的放大电路——**[同相放大器](@article_id:335825)（Non-inverting Amplifier）**。我们将输入信号 $V_{in}$ 连接到“+”输入端。然后，我们用两个电阻，$R_f$ 和 $R_1$，组成一个[分压器](@article_id:339224)，连接在输出 $V_{out}$ 和地之间，并将它们的分压点连接到“-”输入端。
+现在，我们来搭建一个最经典的放大电路——**[同相放大器](@keyword=non_inverting_amplifier|lang=zh-CN|style=Feynman)（Non-inverting Amplifier）**。我们将输入信号 $V_{in}$ 连接到“+”输入端。然后，我们用两个电阻，$R_f$ 和 $R_1$，组成一个[分压器](@keyword=voltage_divider|lang=zh-CN|style=Feynman)，连接在输出 $V_{out}$ 和地之间，并将它们的分压点连接到“-”输入端。

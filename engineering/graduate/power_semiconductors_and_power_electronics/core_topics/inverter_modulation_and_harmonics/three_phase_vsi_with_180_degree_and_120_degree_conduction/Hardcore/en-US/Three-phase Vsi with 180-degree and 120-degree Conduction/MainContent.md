@@ -13,13 +13,13 @@ A three-phase VSI consists of three half-bridge legs, one for each phase ($a, b,
 
 #### Switching States and Pole Voltages
 
-The state of the inverter at any instant can be precisely described by a set of binary [switching functions](@entry_id:755705), $[s_a, s_b, s_c]$, where $s_x \in \{0, 1\}$ for each phase $x \in \{a, b, c\}$. By convention, $s_x = 1$ signifies that the upper switch of leg $x$ is conducting, connecting the output terminal to the positive DC rail. Conversely, $s_x = 0$ signifies that the lower switch is conducting, connecting the terminal to the negative DC rail. To prevent a direct short-circuit of the DC source (a "shoot-through" fault), the upper and lower switches of the same leg are never commanded to be on simultaneously.
+The state of the inverter at any instant can be precisely described by a set of binary switching functions, $[s_a, s_b, s_c]$, where $s_x \in \{0, 1\}$ for each phase $x \in \{a, b, c\}$. By convention, $s_x = 1$ signifies that the upper switch of leg $x$ is conducting, connecting the output terminal to the positive DC rail. Conversely, $s_x = 0$ signifies that the lower switch is conducting, connecting the terminal to the negative DC rail. To prevent a direct short-circuit of the DC source (a "shoot-through" fault), the upper and lower switches of the same leg are never commanded to be on simultaneously.
 
 The voltage at each inverter output terminal relative to a reference point is known as the **pole voltage**. A convenient and common reference is the negative DC bus, which we can label as node $M$ and assign a potential of $0$. The positive DC bus, node $P$, is then at potential $V_{dc}$. With ideal switches (zero voltage drop when on), the pole voltage for phase $x$ with respect to the negative DC rail, $v_{xM}$, is directly determined by its switching state:
 
 $$v_{xM}(t) = s_x(t) V_{dc}$$
 
-This simple yet powerful equation is the most fundamental link between the [digital control](@entry_id:275588) state of the inverter and the analog voltage it produces.
+This simple yet powerful equation is the most fundamental link between the digital control state of the inverter and the analog voltage it produces.
 
 #### Line-to-Line Voltages
 
@@ -27,7 +27,7 @@ The primary function of the VSI is to create AC line-to-line voltages at its out
 
 $$v_{xy}(t) = v_{xM}(t) - v_{yM}(t)$$
 
-Substituting the expression for pole voltages, we arrive at a universally applicable formula for the line-to-line voltage :
+Substituting the expression for pole voltages, we arrive at a universally applicable formula for the line-to-line voltage [@problem_id:3887181]:
 
 $$v_{xy}(t) = (s_x(t) - s_y(t))V_{dc}$$
 
@@ -37,7 +37,7 @@ Remarkably, this relationship depends only on the switching states of the two in
 
 It is crucial to distinguish between the inverter's pole voltage and the voltage that appears across a phase of the load. For a star (Y) connected load, the load impedances are connected from the inverter terminals ($a, b, c$) to a common load neutral point, which we will label $O$. The voltage across the phase-$x$ load impedance is $v_{xO}$.
 
-The potential of the load neutral point $O$ relative to the inverter's DC reference midpoint $N$ (assuming a center-tapped DC bus for this definition) is called the **neutral displacement voltage**, $v_{ON}$. By applying KVL to the loop containing points $x$, $O$, and $N$, we find the relationship :
+The potential of the load neutral point $O$ relative to the inverter's DC reference midpoint $N$ (assuming a center-tapped DC bus for this definition) is called the **neutral displacement voltage**, $v_{ON}$. By applying KVL to the loop containing points $x$, $O$, and $N$, we find the relationship [@problem_id:3887158]:
 
 $$v_{xO} = v_{xN} - v_{ON}$$
 
@@ -49,7 +49,7 @@ While analyzing individual phase and line voltages is essential, a more holistic
 
 #### Mapping States to Space Vectors
 
-The [space vector](@entry_id:1132014) of the inverter's output voltage, $\vec{v}$, is defined by the Clarke Transform of the load's phase-to-neutral voltages, $v_{aO}, v_{bO}, v_{cO}$. However, a more direct mapping from the switching states can be derived. For a balanced, 3-wire load, the condition $v_{aO} + v_{bO} + v_{cO} = 0$ holds. This allows us to derive a compact formula for the [space vector](@entry_id:1132014) directly from the pole voltages, and thus from the switching states $[s_a, s_b, s_c]$ . If we define the complex operator $\alpha = \exp(j\frac{2\pi}{3})$, the [space vector](@entry_id:1132014) is given by:
+The space vector of the inverter's output voltage, $\vec{v}$, is defined by the Clarke Transform of the load's phase-to-neutral voltages, $v_{aO}, v_{bO}, v_{cO}$. However, a more direct mapping from the switching states can be derived. For a balanced, 3-wire load, the condition $v_{aO} + v_{bO} + v_{cO} = 0$ holds. This allows us to derive a compact formula for the space vector directly from the pole voltages, and thus from the switching states $[s_a, s_b, s_c]$ [@problem_id:3887232]. If we define the complex operator $\alpha = \exp(j\frac{2\pi}{3})$, the space vector is given by:
 
 $$\vec{v} = \frac{2V_{dc}}{3} (s_a + s_b\alpha + s_c\alpha^2)$$
 
@@ -57,7 +57,7 @@ This equation elegantly synthesizes the discrete, three-dimensional state $[s_a,
 
 #### The Eight Fundamental Vectors
 
-Since there are three legs, each with two possible states, there are $2^3 = 8$ unique switching states. Each state corresponds to a specific voltage [space vector](@entry_id:1132014)  :
+Since there are three legs, each with two possible states, there are $2^3 = 8$ unique switching states. Each state corresponds to a specific voltage space vector [@problem_id:3887232] [@problem_id:3887204]:
 
 *   **Zero Vectors:** Two states result in a zero-magnitude vector.
     *   State $[0,0,0]$: $\vec{v}_0 = \frac{2V_{dc}}{3}(0 + 0 + 0) = 0$. All phases are connected to the negative DC rail.
@@ -84,25 +84,25 @@ The defining principle of this mode is straightforward: each of the six switchin
 
 #### State Sequence and Vector Trajectory
 
-This gating logic dictates a deterministic sequence of switching states. At any given moment, exactly three switches are on—one in each leg. As the electrical angle progresses, a commutation (one switch turning off, another turning on) occurs every $60°$. This results in the inverter cycling through the six active vector states sequentially, dwelling on each one for exactly $60°$ or $\pi/3$ [radians](@entry_id:171693) . For example, a typical sequence is $\vec{v}_1 \to \vec{v}_2 \to \vec{v}_3 \to \vec{v}_4 \to \vec{v}_5 \to \vec{v}_6$ and back to $\vec{v}_1$.
+This gating logic dictates a deterministic sequence of switching states. At any given moment, exactly three switches are on—one in each leg. As the electrical angle progresses, a commutation (one switch turning off, another turning on) occurs every $60°$. This results in the inverter cycling through the six active vector states sequentially, dwelling on each one for exactly $60°$ or $\pi/3$ radians [@problem_id:3887207]. For example, a typical sequence is $\vec{v}_1 \to \vec{v}_2 \to \vec{v}_3 \to \vec{v}_4 \to \vec{v}_5 \to \vec{v}_6$ and back to $\vec{v}_1$.
 
-A critical characteristic of ideal 180° conduction is that the zero vectors, $\vec{v}_0$ and $\vec{v}_7$, are never applied. The inverter is always in one of the six active states  .
+A critical characteristic of ideal 180° conduction is that the zero vectors, $\vec{v}_0$ and $\vec{v}_7$, are never applied. The inverter is always in one of the six active states [@problem_id:3887192] [@problem_id:3887204].
 
 #### Output Voltage Waveforms
 
-The fixed sequence of active vectors produces a distinctive output voltage waveform. The line-to-line voltage, such as $v_{ab}$, is a quasi-square wave or **six-step waveform**. It holds a value of $+V_{dc}$ for $120°$, drops to $0$ for $60°$, then goes to $-V_{dc}$ for $120°$, and back to $0$ for $60°$ within each cycle .
+The fixed sequence of active vectors produces a distinctive output voltage waveform. The line-to-line voltage, such as $v_{ab}$, is a quasi-square wave or **six-step waveform**. It holds a value of $+V_{dc}$ for $120°$, drops to $0$ for $60°$, then goes to $-V_{dc}$ for $120°$, and back to $0$ for $60°$ within each cycle [@problem_id:3887203].
 
-While non-sinusoidal, this waveform is periodic and can be analyzed using Fourier series. The waveform is rich in harmonics, specifically of orders $6k \pm 1$ (i.e., 5th, 7th, 11th, 13th, ...). The primary objective is to produce a strong fundamental component. Through Fourier analysis, the peak amplitude of the fundamental component of the line-to-line voltage can be shown to be :
+While non-sinusoidal, this waveform is periodic and can be analyzed using Fourier series. The waveform is rich in harmonics, specifically of orders $6k \pm 1$ (i.e., 5th, 7th, 11th, 13th, ...). The primary objective is to produce a strong fundamental component. Through Fourier analysis, the peak amplitude of the fundamental component of the line-to-line voltage can be shown to be [@problem_id:3887203]:
 
 $$V_{ab, peak(1)} = \frac{2\sqrt{3}}{\pi}V_{dc} \approx 1.103 V_{dc}$$
 
 #### Load Neutral Behavior
 
-With an isolated star-connected load, the neutral displacement voltage $v_{ON}$ is determined by applying KCL at the neutral point, which implies that the sum of the phase currents must be zero. For a balanced resistive load, this means the sum of the phase voltages must also be zero. This leads to the result that the neutral displacement is the average of the three pole voltages :
+With an isolated star-connected load, the neutral displacement voltage $v_{ON}$ is determined by applying KCL at the neutral point, which implies that the sum of the phase currents must be zero. For a balanced resistive load, this means the sum of the phase voltages must also be zero. This leads to the result that the neutral displacement is the average of the three pole voltages [@problem_id:3887158]:
 
 $$v_{ON} = \frac{v_{AN} + v_{BN} + v_{CN}}{3}$$
 
-Since the pole voltages jump between $+V_{dc}/2$ and $-V_{dc}/2$ (relative to a DC midpoint $N$), the neutral point voltage $v_{ON}$ also jumps between distinct levels. For instance, in state $[1,1,0]$, where $v_{AN}=+V_{dc}/2$, $v_{BN}=+V_{dc}/2$, and $v_{CN}=-V_{dc}/2$, the neutral voltage is $v_{ON} = (+V_{dc}/2 + V_{dc}/2 - V_{dc}/2)/3 = +V_{dc}/6$. This fluctuating neutral voltage contributes to the [harmonic content](@entry_id:1125926) of the phase voltages experienced by the load.
+Since the pole voltages jump between $+V_{dc}/2$ and $-V_{dc}/2$ (relative to a DC midpoint $N$), the neutral point voltage $v_{ON}$ also jumps between distinct levels. For instance, in state $[1,1,0]$, where $v_{AN}=+V_{dc}/2$, $v_{BN}=+V_{dc}/2$, and $v_{CN}=-V_{dc}/2$, the neutral voltage is $v_{ON} = (+V_{dc}/2 + V_{dc}/2 - V_{dc}/2)/3 = +V_{dc}/6$. This fluctuating neutral voltage contributes to the harmonic content of the phase voltages experienced by the load.
 
 ### The 120° Conduction Mode
 
@@ -110,7 +110,7 @@ The 120° conduction mode represents an alternative fundamental operating strate
 
 #### Gating Principle
 
-In this mode, each switching device is gated on for only $120°$ per cycle. The key operational feature is that at any given time, only two switches are actively gated on: one upper switch in one leg, and one lower switch in another leg. The third leg is intentionally left in a **floating** state, with both its upper and lower switches commanded off . This state persists for $60°$ before the next commutation.
+In this mode, each switching device is gated on for only $120°$ per cycle. The key operational feature is that at any given time, only two switches are actively gated on: one upper switch in one leg, and one lower switch in another leg. The third leg is intentionally left in a **floating** state, with both its upper and lower switches commanded off [@problem_id:3887155]. This state persists for $60°$ before the next commutation.
 
 #### State Sequence and Floating Leg Behavior
 
@@ -118,11 +118,11 @@ The behavior of the floating leg is a crucial aspect of this mode. Although no s
 
 If the current in the floating phase $x$ is flowing out of the inverter ($i_x > 0$), it will flow back into the negative DC rail through the lower diode. This clamps the terminal voltage $v_{xM}$ to near $0$, corresponding to a state $s_x = 0$. If the current is flowing into the inverter ($i_x  0$), it will flow from the positive DC rail through the upper diode, clamping $v_{xM}$ to near $V_{dc}$, corresponding to a state $s_x = 1$.
 
-Therefore, even though one leg is not actively switched, its terminal is still connected to one of the DC rails. The remarkable result is that the inverter cycles through the exact same sequence of six active states—$[100], [110], [010], [011], [001], [101]$—as in the 180° mode. The mechanism for achieving these states is different, but the resulting voltage vectors applied to the load are identical .
+Therefore, even though one leg is not actively switched, its terminal is still connected to one of the DC rails. The remarkable result is that the inverter cycles through the exact same sequence of six active states—$[100], [110], [010], [011], [001], [101]$—as in the 180° mode. The mechanism for achieving these states is different, but the resulting voltage vectors applied to the load are identical [@problem_id:3887204].
 
 #### Load Neutral Behavior
 
-The behavior of the load neutral in 120° mode differs from the 180° case. When one phase is floating, its current is zero only if the gating commands it to be open. In the typical implementation where it floats and current is conducted by a diode, KCL applies to the two actively driven phases and the floating phase. If we consider the simpler idealized case where the floating leg's current is forced to be zero (as with a resistive load), KCL at the neutral dictates that the currents in the two active phases are equal and opposite ($i_A = -i_B$ if C is floating). For a balanced load, this implies $v_{AO} = -v_{BO}$. Substituting $v_{xO} = v_{xN} - v_{ON}$ leads to :
+The behavior of the load neutral in 120° mode differs from the 180° case. When one phase is floating, its current is zero only if the gating commands it to be open. In the typical implementation where it floats and current is conducted by a diode, KCL applies to the two actively driven phases and the floating phase. If we consider the simpler idealized case where the floating leg's current is forced to be zero (as with a resistive load), KCL at the neutral dictates that the currents in the two active phases are equal and opposite ($i_A = -i_B$ if C is floating). For a balanced load, this implies $v_{AO} = -v_{BO}$. Substituting $v_{xO} = v_{xN} - v_{ON}$ leads to [@problem_id:3887158]:
 
 $$v_{ON} = \frac{v_{AN} + v_{BN}}{2}$$
 
@@ -134,7 +134,7 @@ While both 180° and 120° conduction modes sequence through the same six active
 
 #### Zero Vector Accessibility and PWM
 
-The 180° mode is a form of continuous modulation; all three legs are always actively switching. There are no natural intervals in the switching pattern to insert a zero vector. In contrast, the 120° mode is a form of discontinuous modulation. The fact that one leg is "off" for a third of the cycle provides a natural opportunity. While the basic 120° mode does not produce zero vectors, its structure is the foundation for advanced PWM techniques like Discontinuous PWM (DPWM). In these schemes, the "floating" intervals are strategically used to apply a zero vector, which can reduce switching losses .
+The 180° mode is a form of continuous modulation; all three legs are always actively switching. There are no natural intervals in the switching pattern to insert a zero vector. In contrast, the 120° mode is a form of discontinuous modulation. The fact that one leg is "off" for a third of the cycle provides a natural opportunity. While the basic 120° mode does not produce zero vectors, its structure is the foundation for advanced PWM techniques like Discontinuous PWM (DPWM). In these schemes, the "floating" intervals are strategically used to apply a zero vector, which can reduce switching losses [@problem_id:3887164].
 
 #### Common-Mode Voltage
 
@@ -146,7 +146,7 @@ The instantaneous value of $v_0(t)$ depends on how many upper switches are on:
 *   $s_a+s_b+s_c = 2$ (states [110], [011], [101]): $v_0 = 2V_{dc}/3$
 *   $s_a+s_b+s_c = 3$ (state [111]): $v_0 = V_{dc}$
 
-In 180° conduction, only active vectors are used, so $v_0(t)$ only takes values of $V_{dc}/3$ and $2V_{dc}/3$. In PWM schemes that utilize zero vectors (often based on the 120° structure), all four voltage levels appear. Let $\alpha$ be the fraction of time per cycle that zero vectors are applied. The RMS value of the common-mode voltage can be shown to be a function of this fraction :
+In 180° conduction, only active vectors are used, so $v_0(t)$ only takes values of $V_{dc}/3$ and $2V_{dc}/3$. In PWM schemes that utilize zero vectors (often based on the 120° structure), all four voltage levels appear. Let $\alpha$ be the fraction of time per cycle that zero vectors are applied. The RMS value of the common-mode voltage can be shown to be a function of this fraction [@problem_id:3887229]:
 
 $$V_{0,rms} = V_{dc} \sqrt{\frac{4\alpha + 5}{18}}$$
 
@@ -154,4 +154,4 @@ For a purely 180° scheme, $\alpha=0$, giving $V_{0,rms} = V_{dc} \sqrt{5/18} \a
 
 #### Switching Losses
 
-Perhaps the most significant practical difference lies in switching losses. In 180° mode, all six devices are actively switching throughout the cycle. In 120° mode, each device is inactive (clamped to a rail or floating) for one-third of the [fundamental period](@entry_id:267619). This means that two of the six devices are not experiencing switching losses at any given time. Consequently, the 120° conduction mode and its PWM derivatives inherently offer lower total switching losses, leading to higher inverter efficiency, especially at high switching frequencies. This trade-off between harmonic performance, implementation complexity, and efficiency is a central theme in the design of power electronic converters.
+Perhaps the most significant practical difference lies in switching losses. In 180° mode, all six devices are actively switching throughout the cycle. In 120° mode, each device is inactive (clamped to a rail or floating) for one-third of the fundamental period. This means that two of the six devices are not experiencing switching losses at any given time. Consequently, the 120° conduction mode and its PWM derivatives inherently offer lower total switching losses, leading to higher inverter efficiency, especially at high switching frequencies. This trade-off between harmonic performance, implementation complexity, and efficiency is a central theme in the design of power electronic converters.

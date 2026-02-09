@@ -3,7 +3,7 @@ In the worlds of science and engineering, change is the only constant, and the l
 
 ## Principles and Mechanisms
 
-Imagine you're facing a tangled knot of ropes. You could try to pull at each strand, painstakingly tracing its path through the mess, a tedious and error-prone process. Or, you could perform a magical gesture that causes the knot to transform into a set of straight, [parallel lines](@article_id:168513). Suddenly, you can see how everything connects. You can easily manipulate the lines, and with another gesture, transform them back into a perfectly untangled rope. This is precisely the magic of the Laplace transform. The tangled knot is a differential equation, and the transform is our magical gesture for turning the difficult world of calculus into the simple, clear world of algebra.
+Imagine you're facing a tangled knot of ropes. You could try to pull at each strand, painstakingly tracing its path through the mess, a tedious and error-prone process. Or, you could perform a magical gesture that causes the knot to transform into a set of straight, [parallel lines](@keyword=parallel_lines|lang=en-US|style=Feynman). Suddenly, you can see how everything connects. You can easily manipulate the lines, and with another gesture, transform them back into a perfectly untangled rope. This is precisely the magic of the Laplace transform. The tangled knot is a differential equation, and the transform is our magical gesture for turning the difficult world of calculus into the simple, clear world of algebra.
 
 ### A Machine for Turning Calculus into Algebra
 
@@ -28,17 +28,17 @@ Y(s) (s+k) = y_0 \implies Y(s) = \frac{y_0}{s+k}
 $$
 We now have the *transformed* solution. By looking up this form in a table (the reverse of our transform machine), we find it corresponds to $y(t) = y_0 \exp(-k t)$. We have solved a differential equation without performing any calculus on the difficult parts.
 
-This power scales beautifully. For a [second-order system](@article_id:261688), like a mass on a spring, the second derivative transforms just as neatly:
+This power scales beautifully. For a [second-order system](@keyword=second_order_system|lang=en-US|style=Feynman), like a mass on a spring, the second derivative transforms just as neatly:
 $$
 \mathcal{L}\left\{\frac{d^2y(t)}{dt^2}\right\} = s^2Y(s) - sy(0) - y'(0)
 $$
-Again, the fearsome second derivative becomes a simple multiplication by $s^2$, neatly packaging both required initial conditions, position $y(0)$ and velocity $y'(0)$, into the algebra. What was once a [complex calculus](@article_id:166788) problem becomes a matter of solving for $Y(s)$.
+Again, the fearsome second derivative becomes a simple multiplication by $s^2$, neatly packaging both required initial conditions, position $y(0)$ and velocity $y'(0)$, into the algebra. What was once a [complex calculus](@keyword=complex_calculus|lang=en-US|style=Feynman) problem becomes a matter of solving for $Y(s)$.
 
 ### The System's Soul: The Transfer Function
 
 Let's take this a step further. What if we wanted to characterize the system *itself*, separate from any specific input or initial state? Imagine a stereo system. Its internal electronics are fixed. The quality of the sound depends on these electronics, not on whether you play rock music or classical. We want a description of just the electronics.
 
-In control theory, we do this by considering a system at rest (all initial conditions are zero) and asking: how does the output, $Y(s)$, relate to the input, $X(s)$? When we take the Laplace transform of a [linear differential equation](@article_id:168568) with zero initial conditions, all those $y(0)$ and $y'(0)$ terms vanish.
+In control theory, we do this by considering a system at rest (all initial conditions are zero) and asking: how does the output, $Y(s)$, relate to the input, $X(s)$? When we take the Laplace transform of a [linear differential equation](@keyword=linear_differential_equation|lang=en-US|style=Feynman) with zero initial conditions, all those $y(0)$ and $y'(0)$ terms vanish.
 
 Consider the equation for a MEMS actuator, a tiny machine driven by voltage:
 $$
@@ -71,19 +71,19 @@ Solving this algebraic equation for $V(s)$ might give us a complicated expressio
 $$
 V(s) = \frac{K C_{max}}{s(\tau s + 1)} + \frac{\tau V_0}{\tau s + 1}
 $$
-This brings us to the final step of our journey: returning from the clear world of algebra back to the tangled-but-real time domain. Our table of transforms might not have an entry for a complex fraction like this. The key is to act like a musical connoisseur and break the complex sound down into its pure notes. This technique is called **[partial fraction decomposition](@article_id:158714)**. We can break down a fraction like $\frac{2}{s(s-1)(s+1)}$ into a sum of simpler terms:
+This brings us to the final step of our journey: returning from the clear world of algebra back to the tangled-but-real time domain. Our table of transforms might not have an entry for a complex fraction like this. The key is to act like a musical connoisseur and break the complex sound down into its pure notes. This technique is called **[partial fraction decomposition](@keyword=partial_fraction_decomposition|lang=en-US|style=Feynman)**. We can break down a fraction like $\frac{2}{s(s-1)(s+1)}$ into a sum of simpler terms:
 $$
 \frac{2}{s(s-1)(s+1)} = -\frac{2}{s} + \frac{1}{s-1} + \frac{1}{s+1}
 $$
-Each of these terms—$-\frac{2}{s}$, $\frac{1}{s-1}$, and $\frac{1}{s+1}$—is a "pure note" that we know how to transform back. They correspond to a constant, an [exponential growth](@article_id:141375), and an [exponential decay](@article_id:136268), respectively. By transforming each simple piece, we reconstruct the full solution in the time domain, $y(t) = -2 + \exp(t) + \exp(-t)$, or simplified, $y(t) = 2\cosh(t) - 2$. This algebraic chore is the "price" we pay for avoiding the calculus, and it's a price well worth paying for the method's power and clarity.
+Each of these terms—$-\frac{2}{s}$, $\frac{1}{s-1}$, and $\frac{1}{s+1}$—is a "pure note" that we know how to transform back. They correspond to a constant, an [exponential growth](@keyword=exponential_growth|lang=en-US|style=Feynman), and an [exponential decay](@keyword=exponential_decay|lang=en-US|style=Feynman), respectively. By transforming each simple piece, we reconstruct the full solution in the time domain, $y(t) = -2 + \exp(t) + \exp(-t)$, or simplified, $y(t) = 2\cosh(t) - 2$. This algebraic chore is the "price" we pay for avoiding the calculus, and it's a price well worth paying for the method's power and clarity.
 
 ### The Engineer's Toolkit: Advanced Properties and Powerful Shortcuts
 
 The Laplace transform is more than just a method; it's a full toolkit equipped with specialized tools for handling all sorts of real-world situations.
 
-**A World of Inputs:** What if the input isn't a simple constant? What if it's a sudden, sharp shock, like a hammer hitting a sensor? Such an input is modeled by the **Dirac [delta function](@article_id:272935)**, $\delta(t)$, an infinitely sharp, infinitely high spike. Its Laplace transform is, miraculously, just 1. This means the system's transformed output, $Y(s)$, is simply equal to its transfer function, $G(s)$! The response to a hammer hit, the **impulse response**, is the time-domain embodiment of the transfer function itself.
+**A World of Inputs:** What if the input isn't a simple constant? What if it's a sudden, sharp shock, like a hammer hitting a sensor? Such an input is modeled by the **Dirac [delta function](@keyword=delta_function|lang=en-US|style=Feynman)**, $\delta(t)$, an infinitely sharp, infinitely high spike. Its Laplace transform is, miraculously, just 1. This means the system's transformed output, $Y(s)$, is simply equal to its transfer function, $G(s)$! The response to a hammer hit, the **impulse response**, is the time-domain embodiment of the transfer function itself.
 
-Or what if the input is a pulse of finite duration, like a CPU running at full power for a time T and then stopping? The transform has a special **[time-shift property](@article_id:270753)** for this. An input that turns on at $t=0$ and off at $t=T$ can be written as two separate steps. The transform handles this delay with a simple factor of $\exp(-sT)$, making it easy to analyze the "on-off" behavior of real systems.
+Or what if the input is a pulse of finite duration, like a CPU running at full power for a time T and then stopping? The transform has a special **[time-shift property](@keyword=time_shift_property_2|lang=en-US|style=Feynman)** for this. An input that turns on at $t=0$ and off at $t=T$ can be written as two separate steps. The transform handles this delay with a simple factor of $\exp(-sT)$, making it easy to analyze the "on-off" behavior of real systems.
 
 **The End Game:** Often, an engineer doesn't need to know the entire story of the system's journey. They just want to know how it ends. Where will the aircraft's landing gear finally settle after touchdown? This is the steady-state value. The **Final Value Theorem** is a spectacular shortcut that lets us find this final value directly from the $s$-domain. It states that:
 $$
@@ -91,6 +91,6 @@ $$
 $$
 We can find the ultimate fate of our system by simply multiplying its transform $Y(s)$ by $s$ and seeing what happens as $s$ approaches 0. This allows us to predict the future steady state without ever performing the full inverse transform. It feels like a bit of magic.
 
-**The Whole Menagerie:** Finally, the transform's power is not limited to derivatives. It can also handle integrals with equal grace. An [integro-differential equation](@article_id:175007), which contains both derivatives and integrals of the function, is a nightmare to solve by hand. But for the Laplace transform, an integral is just another algebraic piece of the puzzle. The operation $\int_0^t y(\tau) d\tau$ simply becomes $\frac{1}{s}Y(s)$. So derivatives are multiplications by $s$, and integrals are divisions by $s$. 
+**The Whole Menagerie:** Finally, the transform's power is not limited to derivatives. It can also handle integrals with equal grace. An [integro-differential equation](@keyword=integro_differential_equation|lang=en-US|style=Feynman), which contains both derivatives and integrals of the function, is a nightmare to solve by hand. But for the Laplace transform, an integral is just another algebraic piece of the puzzle. The operation $\int_0^t y(\tau) d\tau$ simply becomes $\frac{1}{s}Y(s)$. So derivatives are multiplications by $s$, and integrals are divisions by $s$. 
 
 This is the ultimate testament to the beauty and unity of the method. The Laplace transform provides a single, coherent framework where all the operations of calculus—differentiation and integration—are unified into the simple, familiar rules of algebra. It turns tangled knots into straight lines, revealing the hidden structure and inherent simplicity of the dynamic world around us.

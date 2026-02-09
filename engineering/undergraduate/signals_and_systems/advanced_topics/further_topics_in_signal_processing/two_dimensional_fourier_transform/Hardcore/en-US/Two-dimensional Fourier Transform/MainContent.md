@@ -1,11 +1,11 @@
 ## Introduction
 The two-dimensional Fourier transform is a cornerstone of modern signal processing, extending the power of frequency analysis to signals that exist in two spatial dimensions, such as images, optical fields, and physical potential maps. While analyzing complex patterns, filtering noise, or reconstructing an object from its projections can be computationally intensive and conceptually difficult in the spatial domain, the Fourier transform provides an alternative perspective—the frequency domain—where these operations often become remarkably simple. This article bridges the gap between the abstract mathematics of the transform and its powerful real-world applications.
 
-This article will guide you through the essential aspects of the Two-dimensional Fourier Transform across three focused chapters. In "Principles and Mechanisms," we will establish the mathematical definition, explore fundamental properties, and build a vocabulary of key transform pairs. Following this, "Applications and Interdisciplinary Connections" will showcase the transform's immense practical utility in fields as diverse as image processing, medical [tomography](@entry_id:756051), and quantum physics. Finally, "Hands-On Practices" will offer a set of guided problems to solidify your understanding and apply these concepts to concrete examples.
+This article will guide you through the essential aspects of the Two-dimensional Fourier Transform across three focused chapters. In "Principles and Mechanisms," we will establish the mathematical definition, explore fundamental properties, and build a vocabulary of key transform pairs. Following this, "Applications and Interdisciplinary Connections" will showcase the transform's immense practical utility in fields as diverse as image processing, medical tomography, and quantum physics. Finally, "Hands-On Practices" will offer a set of guided problems to solidify your understanding and apply these concepts to concrete examples.
 
 ## Principles and Mechanisms
 
-Following our introduction to two-dimensional signals, we now delve into the principles and mechanisms of the tool that is indispensable for their analysis: the Two-dimensional Fourier Transform. This chapter extends the familiar one-dimensional Fourier transform to two spatial dimensions, providing a framework for understanding the frequency content of signals such as images, [antenna array](@entry_id:260841) patterns, and optical fields. We will establish the transform's definition, explore its fundamental properties through key examples, and conclude with its application in advanced imaging modalities.
+Following our introduction to two-dimensional signals, we now delve into the principles and mechanisms of the tool that is indispensable for their analysis: the Two-dimensional Fourier Transform. This chapter extends the familiar one-dimensional Fourier transform to two spatial dimensions, providing a framework for understanding the frequency content of signals such as images, antenna array patterns, and optical fields. We will establish the transform's definition, explore its fundamental properties through key examples, and conclude with its application in advanced imaging modalities.
 
 ### Definition and Frequency-Domain Interpretation
 
@@ -26,11 +26,11 @@ A point of immediate interest in the frequency domain is the origin, $(u,v) = (0
 $$
 F(0,0) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x,y) \,dx\,dy
 $$
-This value, often called the **DC component**, represents the average value or total volume under the function $f(x,y)$. For many physical signals, it corresponds to a key physical quantity. For instance, consider a static [surface charge density](@entry_id:272693) $\sigma(x,y)$ across a large semiconductor sheet. The Fourier transform of this [charge distribution](@entry_id:144400), $\Sigma(k_x, k_y)$, evaluated at the origin $(k_x, k_y) = (0,0)$, yields the total charge on the sheet. For a distribution given by $\sigma(x,y) = \sigma_0 \exp(-\alpha |x| - \beta |y|)$, the total charge is:
+This value, often called the **DC component**, represents the average value or total volume under the function $f(x,y)$. For many physical signals, it corresponds to a key physical quantity. For instance, consider a static surface charge density $\sigma(x,y)$ across a large semiconductor sheet. The Fourier transform of this charge distribution, $\Sigma(k_x, k_y)$, evaluated at the origin $(k_x, k_y) = (0,0)$, yields the total charge on the sheet. For a distribution given by $\sigma(x,y) = \sigma_0 \exp(-\alpha |x| - \beta |y|)$, the total charge is:
 $$
 \Sigma(0,0) = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} \sigma_0 \exp(-\alpha |x| - \beta |y|) \,dx\,dy = \sigma_0 \left(\int_{-\infty}^{\infty}\exp(-\alpha|x|)\\,dx\right) \left(\int_{-\infty}^{\infty}\exp(-\beta|y|)\\,dy\right) = \frac{4\sigma_0}{\alpha\beta}
 $$
-This demonstrates that the DC component of the frequency spectrum encapsulates the net magnitude of the spatial signal. 
+This demonstrates that the DC component of the frequency spectrum encapsulates the net magnitude of the spatial signal. [@problem_id:1772403]
 
 ### Fundamental Transform Pairs
 
@@ -38,15 +38,15 @@ Just as in one dimension, a vocabulary of fundamental transform pairs is essenti
 
 **The Impulse Function**
 
-The most elementary signal is the two-dimensional **Dirac [delta function](@entry_id:273429)**, $\delta(x,y)$, defined by its [sifting property](@entry_id:265662). For a signal modeled as a single point-like burst of energy at coordinates $(x_0, y_0)$, we can write $g(x,y) = \delta(x-x_0, y-y_0)$. Its Fourier transform is found by applying the [sifting property](@entry_id:265662) to the transform integral:
+The most elementary signal is the two-dimensional **Dirac delta function**, $\delta(x,y)$, defined by its sifting property. For a signal modeled as a single point-like burst of energy at coordinates $(x_0, y_0)$, we can write $g(x,y) = \delta(x-x_0, y-y_0)$. Its Fourier transform is found by applying the sifting property to the transform integral:
 $$
 G(u,v) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \delta(x-x_0, y-y_0) \exp(-j2\pi(ux + vy)) \,dx\,dy = \exp(-j2\pi(ux_0 + vy_0))
 $$
-This reveals a crucial property: a single impulse in the spatial domain contains all spatial frequencies with equal magnitude ($|G(u,v)|=1$). A shift in the spatial domain from the origin to $(x_0, y_0)$ introduces a linear phase shift in the frequency domain. This is a specific instance of the general **shift property**. 
+This reveals a crucial property: a single impulse in the spatial domain contains all spatial frequencies with equal magnitude ($|G(u,v)|=1$). A shift in the spatial domain from the origin to $(x_0, y_0)$ introduces a linear phase shift in the frequency domain. This is a specific instance of the general **shift property**. [@problem_id:1772371]
 
 **The Constant Function**
 
-The dual of the impulse is the [constant function](@entry_id:152060), $f(x,y) = I_0$, which represents a perfectly uniform field, such as a flat-field image in an optical system. Its Fourier transform is:
+The dual of the impulse is the constant function, $f(x,y) = I_0$, which represents a perfectly uniform field, such as a flat-field image in an optical system. Its Fourier transform is:
 $$
 F(u,v) = I_0 \int_{-\infty}^{\infty} \exp(-j2\pi ux) \,dx \int_{-\infty}^{\infty} \exp(-j2\pi vy) \,dy
 $$
@@ -54,7 +54,7 @@ Recalling the one-dimensional identity $\mathcal{F}\{1\} = \delta(u)$, the expre
 $$
 F(u,v) = I_0 \delta(u) \delta(v) = I_0 \delta(u,v)
 $$
-This result is profoundly intuitive: a signal with no spatial variation (zero frequency) is represented in the frequency domain by a single impulse at the origin (zero frequency). All the signal's energy is concentrated in the DC component. 
+This result is profoundly intuitive: a signal with no spatial variation (zero frequency) is represented in the frequency domain by a single impulse at the origin (zero frequency). All the signal's energy is concentrated in the DC component. [@problem_id:1772387]
 
 **Sinusoidal Gratings**
 
@@ -62,7 +62,7 @@ Periodic signals, such as sinusoidal gratings, are fundamental patterns in optic
 $$
 F(u,v) = \frac{A}{4} \left[ \delta(u-u_0, v-v_0) + \delta(u-u_0, v+v_0) + \delta(u+u_0, v-v_0) + \delta(u+u_0, v+v_0) \right]
 $$
-The spectrum of this purely periodic spatial pattern consists of four impulses located at the specific frequency coordinates $(\pm u_0, \pm v_0)$ that define the pattern. 
+The spectrum of this purely periodic spatial pattern consists of four impulses located at the specific frequency coordinates $(\pm u_0, \pm v_0)$ that define the pattern. [@problem_id:1772398]
 
 ### Key Properties of the 2D Fourier Transform
 
@@ -80,13 +80,13 @@ A classic example is the rectangular function, which models a uniform intensity 
 $$
 F(u,v) = I_0 (L_x \text{sinc}(L_x u)) (L_y \text{sinc}(L_y v)) = I_0 L_x L_y \text{sinc}(L_x u) \text{sinc}(L_y v)
 $$
-The spectrum of a rectangular aperture is a 2D [sinc function](@entry_id:274746), which plays a central role in [diffraction theory](@entry_id:167098). 
+The spectrum of a rectangular aperture is a 2D sinc function, which plays a central role in diffraction theory. [@problem_id:1772406]
 
 Another profoundly important separable function is the circularly symmetric Gaussian, $f(x,y) = \exp(-a(x^2+y^2)) = \exp(-ax^2)\exp(-ay^2)$. The 1D Fourier transform of a Gaussian $\exp(-at^2)$ is $\sqrt{\pi/a} \exp(-\pi^2 u^2 / a)$. Applying separability, the 2D transform is:
 $$
 F(u,v) = \left( \sqrt{\frac{\pi}{a}} \exp\left(-\frac{\pi^2 u^2}{a}\right) \right) \left( \sqrt{\frac{\pi}{a}} \exp\left(-\frac{\pi^2 v^2}{a}\right) \right) = \frac{\pi}{a} \exp\left(-\frac{\pi^2 (u^2+v^2)}{a}\right)
 $$
-Remarkably, the Fourier transform of a 2D Gaussian is another 2D Gaussian. Note the inverse relationship: a wide Gaussian in the spatial domain (small $a$) results in a narrow Gaussian in the frequency domain, and vice versa. This illustrates the uncertainty principle in a spatial context. 
+Remarkably, the Fourier transform of a 2D Gaussian is another 2D Gaussian. Note the inverse relationship: a wide Gaussian in the spatial domain (small $a$) results in a narrow Gaussian in the frequency domain, and vice versa. This illustrates the uncertainty principle in a spatial context. [@problem_id:1772391]
 
 **Differentiation**
 
@@ -98,17 +98,17 @@ Similarly, for the partial derivative with respect to $y$:
 $$
 \mathcal{F}\left\{\frac{\partial f(x,y)}{\partial y}\right\} = j2\pi v F(u,v)
 $$
-This property transforms the calculus operation of differentiation into the algebraic operation of multiplication. It is fundamental to [solving partial differential equations](@entry_id:136409) and understanding frequency-domain filtering, where multiplying $F(u,v)$ by factors of $u$ or $v$ corresponds to enhancing or suppressing features with high spatial frequencies (like edges). 
+This property transforms the calculus operation of differentiation into the algebraic operation of multiplication. It is fundamental to solving partial differential equations and understanding frequency-domain filtering, where multiplying $F(u,v)$ by factors of $u$ or $v$ corresponds to enhancing or suppressing features with high spatial frequencies (like edges). [@problem_id:1772376]
 
 **Symmetry**
 
 The symmetries of a spatial function $f(x,y)$ impose strong constraints on its Fourier transform $F(u,v)$.
-- If $f(x,y)$ is a **real-valued** function, its transform must exhibit **[conjugate symmetry](@entry_id:144131)** (also known as Hermitian symmetry): $F(u,v) = F^*(-u,-v)$.
-- If $f(x,y)$ is **real and even** (centrally symmetric, $f(x,y) = f(-x,-y)$), its transform is also **real and even**. This can be shown by combining the [conjugate symmetry](@entry_id:144131) property with a direct evaluation using the symmetry of $f$:
+- If $f(x,y)$ is a **real-valued** function, its transform must exhibit **conjugate symmetry** (also known as Hermitian symmetry): $F(u,v) = F^*(-u,-v)$.
+- If $f(x,y)$ is **real and even** (centrally symmetric, $f(x,y) = f(-x,-y)$), its transform is also **real and even**. This can be shown by combining the conjugate symmetry property with a direct evaluation using the symmetry of $f$:
 $$F(-u,-v) = \int \int f(x,y) \exp(j2\pi(ux+vy)) dx dy = F^*(u,v)$$
 Since $f$ is also even, we can show $F(u,v)$ is real, which means $F^*(u,v) = F(u,v)$. Therefore, $F(-u,-v)=F(u,v)$.
 - If $f(x,y)$ is **real and odd** ($f(x,y) = -f(-x,-y)$), its transform is **purely imaginary and odd**.
-These rules are invaluable for predicting the nature of a spectrum and for verifying computational results. 
+These rules are invaluable for predicting the nature of a spectrum and for verifying computational results. [@problem_id:1772372]
 
 ### Energy Conservation: Parseval's Theorem
 
@@ -116,13 +116,13 @@ These rules are invaluable for predicting the nature of a spectrum and for verif
 $$
 E = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} |f(x,y)|^2 \, dx \, dy = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} |F(u,v)|^2 \, du \, dv
 $$
-The Fourier transform merely redistributes the signal's energy across its constituent spatial frequencies; it does not alter the total amount. This principle can be a powerful computational tool. For example, calculating the energy of a 2D triangular signal $s(x,y) = A \cdot \text{tri}(x/W) \cdot \text{tri}(y/W)$ can be done by integrating $|S(u,v)|^2 = |A W^2 \text{sinc}^2(Wu)\text{sinc}^2(Wv)|^2$ in the frequency domain, which may be more tractable than integrating $|s(x,y)|^2$ directly. This theorem provides a critical link between the physical energy of a signal and its [spectral density](@entry_id:139069). 
+The Fourier transform merely redistributes the signal's energy across its constituent spatial frequencies; it does not alter the total amount. This principle can be a powerful computational tool. For example, calculating the energy of a 2D triangular signal $s(x,y) = A \cdot \text{tri}(x/W) \cdot \text{tri}(y/W)$ can be done by integrating $|S(u,v)|^2 = |A W^2 \text{sinc}^2(Wu)\text{sinc}^2(Wv)|^2$ in the frequency domain, which may be more tractable than integrating $|s(x,y)|^2$ directly. This theorem provides a critical link between the physical energy of a signal and its spectral density. [@problem_id:1772402]
 
 ### Advanced Application: The Projection-Slice Theorem
 
-A powerful and elegant result connecting 1D and 2D Fourier transforms is the **Projection-Slice Theorem**. This theorem is the theoretical foundation of modern [computed tomography](@entry_id:747638) (CT) and other reconstruction-from-projection techniques.
+A powerful and elegant result connecting 1D and 2D Fourier transforms is the **Projection-Slice Theorem**. This theorem is the theoretical foundation of modern computed tomography (CT) and other reconstruction-from-projection techniques.
 
-Consider a 2D function $f(x,y)$. A **projection** of this function, $p_{\theta}(r)$, is formed by integrating its values along a set of [parallel lines](@entry_id:169007). The angle $\theta$ defines the orientation of the lines (specifically, the direction perpendicular to the lines of integration), and $r$ is the position along an axis oriented at angle $\theta$.
+Consider a 2D function $f(x,y)$. A **projection** of this function, $p_{\theta}(r)$, is formed by integrating its values along a set of parallel lines. The angle $\theta$ defines the orientation of the lines (specifically, the direction perpendicular to the lines of integration), and $r$ is the position along an axis oriented at angle $\theta$.
 
 The Projection-Slice Theorem states that the 1D Fourier transform of a projection at angle $\theta$, denoted $P_{\theta}(\omega)$, is equal to a "slice" of the 2D Fourier transform of the original function, $F(u,v)$, taken along the line in the frequency domain at the same angle $\theta$. Mathematically:
 $$
@@ -134,4 +134,4 @@ For example, consider an elliptical Gaussian gas cloud $f(x,y) = A \exp(-\alpha 
 $$
 P_{\theta}(\omega) = A\pi(\alpha\beta)^{-1/2} \exp\left(-\pi^2\omega^2\left(\frac{\cos^2\theta}{\alpha} + \frac{\sin^2\theta}{\beta}\right)\right)
 $$
-The practical implication of this theorem is immense: by physically measuring 1D projections of an object (like X-ray absorptions through a body) at many different angles, we can acquire data along radial lines in the 2D frequency domain. By collecting enough projections, we can fill the 2D Fourier plane with data. An inverse 2D Fourier transform can then be used to reconstruct the original 2D cross-sectional image, $f(x,y)$. 
+The practical implication of this theorem is immense: by physically measuring 1D projections of an object (like X-ray absorptions through a body) at many different angles, we can acquire data along radial lines in the 2D frequency domain. By collecting enough projections, we can fill the 2D Fourier plane with data. An inverse 2D Fourier transform can then be used to reconstruct the original 2D cross-sectional image, $f(x,y)$. [@problem_id:1772381]

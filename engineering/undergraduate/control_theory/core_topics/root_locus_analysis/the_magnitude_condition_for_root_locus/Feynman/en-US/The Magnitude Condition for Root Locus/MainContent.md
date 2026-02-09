@@ -2,7 +2,7 @@
 In the study of dynamic systems, feedback control offers a powerful way to alter a system's behavior, transforming it from unstable or sluggish to stable and responsive. This transformation is achieved by moving the system's closed-loop poles to more desirable locations in the complex s-plane. While the Root Locus method charts the possible paths these poles can take as a controller gain $K$ is varied, it leaves a critical question unanswered: how do we calculate the exact gain needed to land a pole at a specific, desired location on that path? This article addresses this crucial problem by providing a deep dive into the Magnitude Condition of the Root Locus method.
 
 In the following sections, you will gain a comprehensive understanding of this fundamental tool.
-*   In **Principles and Mechanisms**, we will derive the Magnitude Condition from the [characteristic equation](@article_id:148563), exploring both its elegant geometric interpretation and its robust algebraic application.
+*   In **Principles and Mechanisms**, we will derive the Magnitude Condition from the [characteristic equation](@keyword=characteristic_equation|lang=en-US|style=Feynman), exploring both its elegant geometric interpretation and its robust algebraic application.
 *   **Applications and Interdisciplinary Connections** will demonstrate how this principle is used to tune system performance, ensure stability, and act as a unifying concept across different engineering domains and analysis techniques.
 *   Finally, **Hands-On Practices** will allow you to apply your knowledge to solve practical problems, solidifying your ability to translate design goals into concrete controller parameters.
 
@@ -10,7 +10,7 @@ In the following sections, you will gain a comprehensive understanding of this f
 
 Feedback, the simple idea of looping a system's output back to its input, has the power to transform its behavior. It can tame an unstable beast, or it can make a sluggish system snappy and responsive. The secret to this transformation lies in the movement of the system's **closed-loop poles**, those special values in the complex plane that act as the system's dynamic DNA.
 
-But this raises a crucial question for any engineer or scientist. If we have a knob to turn—a gain $K$ on our controller—how, precisely, do the poles move as we turn it? Can we *choose* a desirable spot in the [s-plane](@article_id:271090), a place that corresponds to, say, a smooth and fast response, and then calculate the exact gain needed to put a pole right there? The answer is a resounding yes, and the method is one of the most elegant and powerful ideas in control theory.
+But this raises a crucial question for any engineer or scientist. If we have a knob to turn—a gain $K$ on our controller—how, precisely, do the poles move as we turn it? Can we *choose* a desirable spot in the [s-plane](@keyword=s_plane|lang=en-US|style=Feynman), a place that corresponds to, say, a smooth and fast response, and then calculate the exact gain needed to put a pole right there? The answer is a resounding yes, and the method is one of the most elegant and powerful ideas in control theory.
 
 ### The "-1" Landmark: A Guiding Star for Poles
 
@@ -25,9 +25,9 @@ $$ K G(s_p) = -1 $$
 Look at this equation. It's so simple, yet it's packed with meaning. It's an equation of complex numbers, which means it's really *two* equations in one. Like any complex number, the number $-1$ has a magnitude (its distance from the origin) and an angle.
 
 - The magnitude of $-1$ is simply $1$.
-- The angle of $-1$ is $180^\circ$ (or $\pi$ [radians](@article_id:171199)), or $540^\circ$ ($3\pi$ [radians](@article_id:171199)), and so on.
+- The angle of $-1$ is $180^\circ$ (or $\pi$ [radians](@keyword=radians|lang=en-US|style=Feynman)), or $540^\circ$ ($3\pi$ [radians](@keyword=radians|lang=en-US|style=Feynman)), and so on.
 
-This single, compact equation therefore splits into two independent conditions that our [pole location](@article_id:271071) $s_p$ must satisfy:
+This single, compact equation therefore splits into two independent conditions that our [pole location](@keyword=pole_location|lang=en-US|style=Feynman) $s_p$ must satisfy:
 
 1.  **The Angle Condition**: $\angle (K G(s_p)) = \pm 180^\circ, \pm 540^\circ, \ldots$ This condition charts the possible *paths* the poles can take as $K$ varies. These paths form the famous **Root Locus**.
 
@@ -49,11 +49,11 @@ The magnitude of $G(s_p)$ is then:
 
 $$ |G(s_p)| = \frac{|s_p-z_1||s_p-z_2|\cdots}{|s_p-p_1||s_p-p_2|\cdots} $$
 
-Now, what does a term like $|s_p - p_1|$ represent? It's simply the straight-line distance in the complex plane from the open-loop pole $p_1$ to our desired closed-loop [pole location](@article_id:271071) $s_p$. The same goes for the zeros. Suddenly, our algebraic formula transforms into a beautifully intuitive geometric rule:
+Now, what does a term like $|s_p - p_1|$ represent? It's simply the straight-line distance in the complex plane from the open-loop pole $p_1$ to our desired closed-loop [pole location](@keyword=pole_location|lang=en-US|style=Feynman) $s_p$. The same goes for the zeros. Suddenly, our algebraic formula transforms into a beautifully intuitive geometric rule:
 
 $$ K = \frac{\text{Product of distances from open-loop poles to } s_p}{\text{Product of distances from open-loop zeros to } s_p} $$
 
-Let's see this in action. Imagine a magnetic levitation system where the [open-loop transfer function](@article_id:275786) is $L(s) = \frac{K(s+8)}{s(s+4)}$. This system has [open-loop poles](@article_id:271807) at $s=0$ and $s=-4$, and an open-loop zero at $s=-8$. An engineer wants to place a closed-loop pole at $s_p = -4 + j4$ to get a nice, crisp response. What gain $K$ is needed?
+Let's see this in action. Imagine a magnetic levitation system where the [open-loop transfer function](@keyword=open_loop_transfer_function|lang=en-US|style=Feynman) is $L(s) = \frac{K(s+8)}{s(s+4)}$. This system has [open-loop poles](@keyword=open_loop_poles|lang=en-US|style=Feynman) at $s=0$ and $s=-4$, and an open-loop zero at $s=-8$. An engineer wants to place a closed-loop pole at $s_p = -4 + j4$ to get a nice, crisp response. What gain $K$ is needed?
 
 Let's get out our geometric ruler! We need to calculate three distances to our target point $s_p = -4 + j4$:
 
@@ -65,13 +65,13 @@ Now, we plug these distances into our rule:
 
 $$ K = \frac{(\text{distance from pole 1}) \times (\text{distance from pole 2})}{(\text{distance from zero 1})} = \frac{\sqrt{32} \times 4}{\sqrt{32}} = 4 $$
 
-And there you have it. A gain of $K=4$ will place a pole exactly at the desired location. This geometric interpretation is not just a calculation trick; it gives you a deep intuition for how the landscape of [poles and zeros](@article_id:261963) influences the gain required for any point in the plane. For a straightforward robotic arm model with $L(s) = \frac{K}{s(s+10)}$, finding the gain for a pole at $s_p = -4+j5$ is as simple as calculating $K = |s_p(s_p+10)|$.
+And there you have it. A gain of $K=4$ will place a pole exactly at the desired location. This geometric interpretation is not just a calculation trick; it gives you a deep intuition for how the landscape of [poles and zeros](@keyword=poles_and_zeros|lang=en-US|style=Feynman) influences the gain required for any point in the plane. For a straightforward robotic arm model with $L(s) = \frac{K}{s(s+10)}$, finding the gain for a pole at $s_p = -4+j5$ is as simple as calculating $K = |s_p(s_p+10)|$.
 
 ### When Algebra is Your Best Friend
 
-The geometric view is beautiful, but sometimes, just plugging numbers into an equation is faster. Remember, the ultimate source of our rule is the [characteristic equation](@article_id:148563) $1+KG(s)=0$. If we have a candidate pole $s_p$, it *must* satisfy this equation. We can often just substitute $s_p$ directly into the equation and solve for $K$ algebraically.
+The geometric view is beautiful, but sometimes, just plugging numbers into an equation is faster. Remember, the ultimate source of our rule is the [characteristic equation](@keyword=characteristic_equation|lang=en-US|style=Feynman) $1+KG(s)=0$. If we have a candidate pole $s_p$, it *must* satisfy this equation. We can often just substitute $s_p$ directly into the equation and solve for $K$ algebraically.
 
-For instance, consider trying to stabilize an inherently unstable system, like a [magnetic levitation](@article_id:275277) setup with an open-loop pole in the right-half plane: $L(s) = \frac{K(s+3)}{s(s-1)}$. The goal is to place a pole in the *stable* [left-half plane](@article_id:270235), at $s=-3.5$. We don't need to draw a diagram; we just enforce the rule:
+For instance, consider trying to stabilize an inherently unstable system, like a [magnetic levitation](@keyword=magnetic_levitation|lang=en-US|style=Feynman) setup with an open-loop pole in the right-half plane: $L(s) = \frac{K(s+3)}{s(s-1)}$. The goal is to place a pole in the *stable* [left-half plane](@keyword=left_half_plane|lang=en-US|style=Feynman), at $s=-3.5$. We don't need to draw a diagram; we just enforce the rule:
 
 $$ 1 + \frac{K(s+3)}{s(s-1)} = 0 \quad \text{at } s = -3.5 $$
 
@@ -87,9 +87,9 @@ This algebraic approach is robust and works for any system, including those with
 
 So far, we've talked about simple systems with rational transfer functions. But the real world is more complicated. What about systems with time delays? Or systems where the parameter we're tuning isn't a simple gain? Does our principle hold?
 
-Let's look at a [process control](@article_id:270690) system with a transport delay, like the time it takes for hot water to travel through a long pipe. This introduces a term $e^{-\tau s}$ into our transfer function, for example, $L(s) = \frac{K e^{-0.2s}}{s(s+5)}$. Transfer functions with this exponential term are called "transcendental" — they are not simple ratios of polynomials. Can we still find the gain $K$ to place a pole at, say, $s=-2$?
+Let's look at a [process control](@keyword=process_control|lang=en-US|style=Feynman) system with a transport delay, like the time it takes for hot water to travel through a long pipe. This introduces a term $e^{-\tau s}$ into our transfer function, for example, $L(s) = \frac{K e^{-0.2s}}{s(s+5)}$. Transfer functions with this exponential term are called "transcendental" — they are not simple ratios of polynomials. Can we still find the gain $K$ to place a pole at, say, $s=-2$?
 
-Absolutely! The principle is universal. We simply go back to the [characteristic equation](@article_id:148563):
+Absolutely! The principle is universal. We simply go back to the [characteristic equation](@keyword=characteristic_equation|lang=en-US|style=Feynman):
 
 $$ 1 + L(s) = 0 \quad \implies \quad 1 + \frac{K e^{-0.2s}}{s(s+5)} = 0 \quad \text{at } s = -2 $$
 
@@ -101,7 +101,7 @@ $$ -6 + K e^{0.4} = 0 \quad \implies \quad K = 6e^{-0.4} \approx 4.02 $$
 
 The principle holds perfectly. The time delay term just becomes one more number in our calculation. This shows the robustness of the fundamental law.
 
-Even more profoundly, the parameter we vary doesn't have to be a controller gain $K$. Let's say we have a system whose [characteristic equation](@article_id:148563) depends on a physical parameter $\alpha$, like a mass or a resistance: $s^2 + (4+\alpha)s + 8 = 0$. We can always rearrange this equation into our standard form.
+Even more profoundly, the parameter we vary doesn't have to be a controller gain $K$. Let's say we have a system whose [characteristic equation](@keyword=characteristic_equation|lang=en-US|style=Feynman) depends on a physical parameter $\alpha$, like a mass or a resistance: $s^2 + (4+\alpha)s + 8 = 0$. We can always rearrange this equation into our standard form.
 
 $$ s^2 + 4s + 8 + \alpha s = 0 $$
 
@@ -109,7 +109,7 @@ Dividing by the terms that don't depend on $\alpha$, we get:
 
 $$ 1 + \alpha \frac{s}{s^2+4s+8} = 0 $$
 
-This looks exactly like our original equation $1+KG(s)=0$! Here, the "gain" is $\alpha$ and the "plant" is a new effective transfer function $F(s) = \frac{s}{s^2+4s+8}$. We can now use the very same magnitude condition to find the value of the physical parameter $\alpha$ needed to place a pole at a desired location. This elevates the [root locus method](@article_id:273049) from a [controller design](@article_id:274488) tool to a universal tool for sensitivity analysis.
+This looks exactly like our original equation $1+KG(s)=0$! Here, the "gain" is $\alpha$ and the "plant" is a new effective transfer function $F(s) = \frac{s}{s^2+4s+8}$. We can now use the very same magnitude condition to find the value of the physical parameter $\alpha$ needed to place a pole at a desired location. This elevates the [root locus method](@keyword=root_locus_method|lang=en-US|style=Feynman) from a [controller design](@keyword=controller_design|lang=en-US|style=Feynman) tool to a universal tool for sensitivity analysis.
 
 ### A Final Puzzle: The Reciprocal Universe
 

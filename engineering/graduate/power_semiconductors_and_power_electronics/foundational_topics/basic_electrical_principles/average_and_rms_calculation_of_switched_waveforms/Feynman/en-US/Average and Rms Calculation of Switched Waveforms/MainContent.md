@@ -1,5 +1,5 @@
 ## Introduction
-In the realm of power electronics, signals are rarely the smooth sinusoids of textbook theory. Instead, they are often jagged, switched waveforms, rapidly toggling between distinct voltage or current levels. This presents a fundamental question: how do we assign a single, meaningful value to such a complex signal? Simply averaging it over time can be dangerously misleading, as it fails to capture the true power and [thermal stress](@entry_id:143149) imposed on components. The key to unlocking robust and efficient [power converter design](@entry_id:1130011) lies in understanding the different "averages" that characterize these waveforms, each telling a different part of the physical story.
+In the realm of power electronics, signals are rarely the smooth sinusoids of textbook theory. Instead, they are often jagged, switched waveforms, rapidly toggling between distinct voltage or current levels. This presents a fundamental question: how do we assign a single, meaningful value to such a complex signal? Simply averaging it over time can be dangerously misleading, as it fails to capture the true power and [thermal stress](@keyword=thermal_stress|lang=en-US|style=Feynman) imposed on components. The key to unlocking robust and efficient [power converter design](@keyword=power_converter_design|lang=en-US|style=Feynman) lies in understanding the different "averages" that characterize these waveforms, each telling a different part of the physical story.
 
 This article provides a comprehensive guide to calculating and interpreting the most important metrics for switched waveforms: the time-average and the Root Mean Square (RMS) value. By navigating through the material, you will gain a deep, intuitive understanding of these foundational concepts. The first chapter, **Principles and Mechanisms**, will lay the mathematical groundwork, defining the time-average and RMS values and exploring their distinct physical meanings related to DC-equivalent behavior and heating effects. Next, **Applications and Interdisciplinary Connections** will bridge theory and practice, demonstrating how these calculations are critical for sizing components, quantifying power loss, ensuring reliability, and defining power quality. Finally, **Hands-On Practices** will challenge you to apply these principles to calculate key parameters for both idealized and realistic waveforms found in common power converter circuits, solidifying your analytical skills.
 
@@ -17,7 +17,7 @@ $$
 \bar{v} = \frac{1}{T} \int_{0}^{T} v(t) \, dt
 $$
 
-For our simple [rectangular pulse](@entry_id:273749), the integral is easy to visualize. It's the area of a rectangle of height $V$ and width $DT$. So, the total area is $V \times (DT)$. Dividing by the period $T$, we find a beautifully simple result  :
+For our simple [rectangular pulse](@keyword=rectangular_pulse|lang=en-US|style=Feynman), the integral is easy to visualize. It's the area of a rectangle of height $V$ and width $DT$. So, the total area is $V \times (DT)$. Dividing by the period $T$, we find a beautifully simple result [@problem_id:3822700] [@problem_id:3822669]:
 
 $$
 \bar{v} = \frac{V D T}{T} = D V
@@ -29,13 +29,13 @@ The average value is simply the peak voltage $V$ scaled by the **duty cycle** $D
 
 But is the time-average the whole story? Let's ask a different kind of question. Suppose this switched voltage is connected to a simple resistor—a heating element or a light bulb. The heat produced at any instant is proportional to the *square* of the voltage, since power is $p(t) = v(t)^2 / R$. Because the voltage is squared, the power is always positive, even if the voltage were to flip negative. A voltage of $-10\,\mathrm{V}$ produces just as much heat as $+10\,\mathrm{V}$.
 
-So, to find the [effective voltage](@entry_id:267211) for heating, we can't just average $v(t)$. We must average the quantity that matters: power, which is proportional to $v(t)^2$. We seek a constant, "effective" DC voltage that would deliver the same average power. Let's call this special voltage $v_{\mathrm{rms}}$. The power it would deliver is $P_{\mathrm{avg}} = v_{\mathrm{rms}}^2 / R$. This must equal the average power from our switched waveform:
+So, to find the [effective voltage](@keyword=effective_voltage|lang=en-US|style=Feynman) for heating, we can't just average $v(t)$. We must average the quantity that matters: power, which is proportional to $v(t)^2$. We seek a constant, "effective" DC voltage that would deliver the same average power. Let's call this special voltage $v_{\mathrm{rms}}$. The power it would deliver is $P_{\mathrm{avg}} = v_{\mathrm{rms}}^2 / R$. This must equal the average power from our switched waveform:
 
 $$
 P_{\mathrm{avg}} = \frac{1}{T} \int_{0}^{T} p(t) \, dt = \frac{1}{T} \int_{0}^{T} \frac{v(t)^2}{R} \, dt
 $$
 
-Equating the two expressions for [average power](@entry_id:271791) gives us the definition of this new kind of average:
+Equating the two expressions for [average power](@keyword=average_power|lang=en-US|style=Feynman) gives us the definition of this new kind of average:
 
 $$
 \frac{v_{\mathrm{rms}}^2}{R} = \frac{1}{R} \left( \frac{1}{T} \int_{0}^{T} v(t)^2 \, dt \right) \quad \implies \quad v_{\mathrm{rms}} = \sqrt{\frac{1}{T} \int_{0}^{T} v(t)^2 \, dt}
@@ -43,7 +43,7 @@ $$
 
 This is the famous **Root Mean Square (RMS)** value. The name itself is a recipe for its calculation, if you read it backwards: you take the signal, **Square** it, find its **Mean** (average), and take the square **Root**.
 
-Let's apply this to our simple unipolar PWM waveform. The squared waveform is $V^2$ when the switch is on and $0$ when it's off. The average of this squared waveform is, by the same logic as before, $D V^2$. Taking the square root gives us the RMS value  :
+Let's apply this to our simple unipolar PWM waveform. The squared waveform is $V^2$ when the switch is on and $0$ when it's off. The average of this squared waveform is, by the same logic as before, $D V^2$. Taking the square root gives us the RMS value [@problem_id:3822700] [@problem_id:3822669]:
 
 $$
 v_{\mathrm{rms}} = \sqrt{D V^2} = V \sqrt{D}
@@ -53,11 +53,11 @@ Now compare the two averages we've found:
 -   **Time Average**: $\bar{v} = D V$
 -   **RMS Average**: $v_{\mathrm{rms}} = V \sqrt{D}$
 
-These are not the same! Since the duty cycle $D$ is between 0 and 1, it's always true that $D \le \sqrt{D}$. This means that $v_{\mathrm{rms}} \ge \bar{v}$. This simple inequality is one of the most important lessons in power electronics. It reveals that a fluctuating waveform delivers more power than its simple DC average would suggest. Confusing the two is a classic and dangerous mistake. The average power is *always* correctly given by the RMS values: $P_{\mathrm{avg}} = v_{\mathrm{rms}}^2 / R = R \cdot i_{\mathrm{rms}}^2$. Using the time-average voltage, $\bar{v}^2 / R$, will almost always underestimate the true power and the resulting heat .
+These are not the same! Since the duty cycle $D$ is between 0 and 1, it's always true that $D \le \sqrt{D}$. This means that $v_{\mathrm{rms}} \ge \bar{v}$. This simple inequality is one of the most important lessons in power electronics. It reveals that a fluctuating waveform delivers more power than its simple DC average would suggest. Confusing the two is a classic and dangerous mistake. The average power is *always* correctly given by the RMS values: $P_{\mathrm{avg}} = v_{\mathrm{rms}}^2 / R = R \cdot i_{\mathrm{rms}}^2$. Using the time-average voltage, $\bar{v}^2 / R$, will almost always underestimate the true power and the resulting heat [@problem_id:3822682].
 
 ### The Constant and the Variable: A Gallery of Switched Waveforms
 
-The power of the RMS definition is its universality. It works for any waveform shape. Consider a bipolar waveform that switches between $+V$ for a duration $DT$ and $-\alpha V$ for the remaining $(1-D)T$. The squared waveform is $V^2$ and $(\alpha V)^2$. The mean-square value is a weighted average of these squares, leading to an RMS value of :
+The power of the RMS definition is its universality. It works for any waveform shape. Consider a bipolar waveform that switches between $+V$ for a duration $DT$ and $-\alpha V$ for the remaining $(1-D)T$. The squared waveform is $V^2$ and $(\alpha V)^2$. The mean-square value is a weighted average of these squares, leading to an RMS value of [@problem_id:3822737]:
 
 $$
 v_{\mathrm{rms}} = V \sqrt{D + (1-D)\alpha^2}
@@ -69,9 +69,9 @@ $$
 v_{\mathrm{rms}} = \sqrt{\frac{V_{\mathrm{dc}}^2}{4}} = \frac{V_{\mathrm{dc}}}{2}
 $$
 
-This is an astonishing result. The RMS voltage of this waveform is completely independent of the duty cycle, the switching frequency, or the modulation strategy. As long as the voltage is constrained to those two levels, its heating potential is fixed . This reveals a deep, hidden simplicity in what seems like a complex, rapidly changing signal.
+This is an astonishing result. The RMS voltage of this waveform is completely independent of the duty cycle, the switching frequency, or the modulation strategy. As long as the voltage is constrained to those two levels, its heating potential is fixed [@problem_id:3822691]. This reveals a deep, hidden simplicity in what seems like a complex, rapidly changing signal.
 
-The RMS definition is also indifferent to the shape of the pulses. In some converters, the current doesn't form a neat rectangle but instead ramps up, perhaps as a triangle. For a triangular current pulse that ramps from 0 to a peak $I_{\mathrm{p}}$ over the on-time $DT$, the RMS value requires integrating $i(t)^2$. The result is $i_{\mathrm{rms}} = I_{\mathrm{p}} \sqrt{D/3}$ . The recipe—square, mean, root—remains the same.
+The RMS definition is also indifferent to the shape of the pulses. In some converters, the current doesn't form a neat rectangle but instead ramps up, perhaps as a triangle. For a triangular current pulse that ramps from 0 to a peak $I_{\mathrm{p}}$ over the on-time $DT$, the RMS value requires integrating $i(t)^2$. The result is $i_{\mathrm{rms}} = I_{\mathrm{p}} \sqrt{D/3}$ [@problem_id:3822717]. The recipe—square, mean, root—remains the same.
 
 ### Beyond the RMS Value: Peaks, Ripples, and Symmetries
 
@@ -83,9 +83,9 @@ $$
 C = \frac{x_{\mathrm{peak}}}{x_{\mathrm{rms}}}
 $$
 
-A pure DC signal has a [crest factor](@entry_id:264576) of 1. A sine wave has a [crest factor](@entry_id:264576) of $\sqrt{2} \approx 1.414$. For our triangular current pulse, the [crest factor](@entry_id:264576) is $C = I_{\mathrm{p}} / (I_{\mathrm{p}} \sqrt{D/3}) = \sqrt{3/D}$ . For a small duty cycle $D$, this value can become very large. A high [crest factor](@entry_id:264576) is a warning sign for engineers. It means that for a given amount of average heating (set by the RMS value), the device is being subjected to very high instantaneous peaks of current or voltage. These peaks can cause transient thermal stress, exceed component voltage ratings, or create significant electromagnetic interference, even if the average power is modest.
+A pure DC signal has a [crest factor](@keyword=crest_factor|lang=en-US|style=Feynman) of 1. A sine wave has a [crest factor](@keyword=crest_factor|lang=en-US|style=Feynman) of $\sqrt{2} \approx 1.414$. For our triangular current pulse, the [crest factor](@keyword=crest_factor|lang=en-US|style=Feynman) is $C = I_{\mathrm{p}} / (I_{\mathrm{p}} \sqrt{D/3}) = \sqrt{3/D}$ [@problem_id:3822717]. For a small duty cycle $D$, this value can become very large. A high [crest factor](@keyword=crest_factor|lang=en-US|style=Feynman) is a warning sign for engineers. It means that for a given amount of average heating (set by the RMS value), the device is being subjected to very high instantaneous peaks of current or voltage. These peaks can cause transient thermal stress, exceed component voltage ratings, or create significant electromagnetic interference, even if the average power is modest.
 
-Another way to look beyond RMS is to consider the frequency content of the waveform. An ideal output is often a pure sine wave at a specific frequency (the fundamental). Our switched waveform is a crude approximation of this, containing the desired fundamental plus a host of unwanted higher-frequency harmonics. The total RMS value contains the power of all of these components combined. The **Total Harmonic Distortion (THD)** quantifies the "pollution" by measuring the ratio of the RMS value of all the unwanted harmonics to the RMS of the desired fundamental .
+Another way to look beyond RMS is to consider the frequency content of the waveform. An ideal output is often a pure sine wave at a specific frequency (the fundamental). Our switched waveform is a crude approximation of this, containing the desired fundamental plus a host of unwanted higher-frequency harmonics. The total RMS value contains the power of all of these components combined. The **Total Harmonic Distortion (THD)** quantifies the "pollution" by measuring the ratio of the RMS value of all the unwanted harmonics to the RMS of the desired fundamental [@problem_id:3822691].
 
 $$
 \mathrm{THD} = \frac{\sqrt{v_{\mathrm{rms}}^2 - v_{1,\mathrm{rms}}^2}}{v_{1,\mathrm{rms}}}
@@ -93,24 +93,24 @@ $$
 
 Here, $v_{1,\mathrm{rms}}$ is the RMS value of the fundamental component alone. THD tells us how much filtering will be needed to clean up the signal and produce a smooth output.
 
-Finally, a note on elegance in calculation. The integrals for RMS values can be tedious. But nature, and good engineering, loves symmetry. If a waveform possesses **quarter-wave symmetry** (common in advanced PWM schemes), the squared waveform $v^2(t)$ is identical in all four quarters of the [fundamental period](@entry_id:267619). This means we only need to integrate over the first quarter and multiply the result by four, dramatically simplifying the calculation . This is a beautiful example of how recognizing underlying mathematical structure can simplify physical analysis.
+Finally, a note on elegance in calculation. The integrals for RMS values can be tedious. But nature, and good engineering, loves symmetry. If a waveform possesses **quarter-wave symmetry** (common in advanced PWM schemes), the squared waveform $v^2(t)$ is identical in all four quarters of the [fundamental period](@keyword=fundamental_period|lang=en-US|style=Feynman). This means we only need to integrate over the first quarter and multiply the result by four, dramatically simplifying the calculation [@problem_id:3822714]. This is a beautiful example of how recognizing underlying mathematical structure can simplify physical analysis.
 
 ### From Ideal Forms to Real Numbers: The Challenge of Measurement
 
 So far, we have lived in an idealized world of continuous functions. But in the lab or in a simulation, we deal with a stream of discrete samples taken by a data acquisition system. How do we measure the RMS value in reality?
 
-The natural discrete-time equivalent of the RMS integral is its Riemann sum approximation, which leads to the familiar formula for a set of $N$ samples :
+The natural discrete-time equivalent of the RMS integral is its Riemann sum approximation, which leads to the familiar formula for a set of $N$ samples [@problem_id:3822702]:
 
 $$
 x_{\mathrm{rms, est}} = \sqrt{\frac{1}{N} \sum_{k=1}^{N} x_k^2}
 $$
 
-But one must be exceedingly careful. A simple "average of samples" is not necessarily the same as a "[time average](@entry_id:151381)." Consider our unipolar PWM waveform again. If we take just two samples per cycle—one when the voltage is high and one when it's low—and take their arithmetic mean, the result is $(V+0)/2 = V/2$. This only equals the true time-average $\bar{v}=DV$ if the duty cycle $D$ is exactly $0.5$! For any other duty cycle, this simple sampling scheme gives the wrong answer . This is a profound cautionary tale: the way you sample fundamentally affects the result.
+But one must be exceedingly careful. A simple "average of samples" is not necessarily the same as a "[time average](@keyword=time_average|lang=en-US|style=Feynman)." Consider our unipolar PWM waveform again. If we take just two samples per cycle—one when the voltage is high and one when it's low—and take their arithmetic mean, the result is $(V+0)/2 = V/2$. This only equals the true time-average $\bar{v}=DV$ if the duty cycle $D$ is exactly $0.5$! For any other duty cycle, this simple sampling scheme gives the wrong answer [@problem_id:3822749]. This is a profound cautionary tale: the way you sample fundamentally affects the result.
 
 How can a discrete estimate converge to the true continuous value?
-1.  **High-Speed, Coherent Sampling**: If we sample much faster than the switching frequency ($N \to \infty$) and ensure our measurement window $T$ is an *exact integer multiple* of the waveform's period $T_{\mathrm{sw}}$, our discrete RMS estimate will converge to the true value. This is called **coherent sampling** .
-2.  **Randomness**: If we sample at random, uniformly distributed times, the Law of Large Numbers ensures that the average of many samples will converge to the true time average .
+1.  **High-Speed, Coherent Sampling**: If we sample much faster than the switching frequency ($N \to \infty$) and ensure our measurement window $T$ is an *exact integer multiple* of the waveform's period $T_{\mathrm{sw}}$, our discrete RMS estimate will converge to the true value. This is called **coherent sampling** [@problem_id:3822702].
+2.  **Randomness**: If we sample at random, uniformly distributed times, the Law of Large Numbers ensures that the average of many samples will converge to the true time average [@problem_id:3822749].
 
-In practice, achieving perfect coherent sampling is difficult. What happens if our measurement window is not a perfect integer multiple of the period? Suppose the window captures $N$ full periods plus a little fragment of length $\Delta \lt T$. This leftover fragment introduces an error. The size of the error depends on how long the fragment is and, crucially, where it lands within the waveform's cycle. The error is largest when the fragment lands entirely within the "on" or "off" portion of the cycle, and it is bounded. This effect, sometimes called [scalloping loss](@entry_id:145172), is a fundamental challenge in precision digital measurement and explains why high-end instruments often use complex [phase-locking](@entry_id:268892) systems to synchronize their sampling windows to the signal being measured .
+In practice, achieving perfect coherent sampling is difficult. What happens if our measurement window is not a perfect integer multiple of the period? Suppose the window captures $N$ full periods plus a little fragment of length $\Delta \lt T$. This leftover fragment introduces an error. The size of the error depends on how long the fragment is and, crucially, where it lands within the waveform's cycle. The error is largest when the fragment lands entirely within the "on" or "off" portion of the cycle, and it is bounded. This effect, sometimes called [scalloping loss](@keyword=scalloping_loss|lang=en-US|style=Feynman), is a fundamental challenge in precision digital measurement and explains why high-end instruments often use complex [phase-locking](@keyword=phase_locking|lang=en-US|style=Feynman) systems to synchronize their sampling windows to the signal being measured [@problem_id:3822733].
 
 From a simple question of "what is the average?" we have journeyed through the distinct physical meanings of time-average and RMS, explored their behavior across various waveforms, and uncovered the subtleties of spikiness, harmonic content, and the practical art of measurement. These are not just mathematical curiosities; they are the fundamental tools for designing, analyzing, and controlling the flow of power in our modern world.

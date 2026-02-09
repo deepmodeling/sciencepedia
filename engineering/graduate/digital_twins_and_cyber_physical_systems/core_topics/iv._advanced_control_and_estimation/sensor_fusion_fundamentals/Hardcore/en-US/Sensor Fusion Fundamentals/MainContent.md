@@ -1,12 +1,12 @@
 ## Introduction
 
-In an era defined by intelligent systems, from autonomous vehicles to digital twins, the ability to build a reliable understanding of the world from sensor data is critical. Sensor fusion is the discipline that provides the framework for this task, enabling systems to intelligently combine information from multiple, often noisy and incomplete, sources. By integrating data, a system can achieve a state estimate that is more accurate, robust, and comprehensive than what any single sensor could provide. The fundamental challenge addressed by [sensor fusion](@entry_id:263414) is how to mathematically merge these disparate data streams, each with unique error characteristics, to produce a single, coherent estimate while rigorously quantifying the uncertainty of that result.
+In an era defined by intelligent systems, from autonomous vehicles to digital twins, the ability to build a reliable understanding of the world from sensor data is critical. Sensor fusion is the discipline that provides the framework for this task, enabling systems to intelligently combine information from multiple, often noisy and incomplete, sources. By integrating data, a system can achieve a state estimate that is more accurate, robust, and comprehensive than what any single sensor could provide. The fundamental challenge addressed by sensor fusion is how to mathematically merge these disparate data streams, each with unique error characteristics, to produce a single, coherent estimate while rigorously quantifying the uncertainty of that result.
 
-This article serves as a foundational guide to the theory and practice of sensor fusion. We will journey from the mathematical bedrock of probabilistic estimation to the powerful algorithms that are staples of modern engineering and science. You will gain insight into not just the mechanics of these methods, but also the principles that govern their application. This exploration is structured across three key sections. First, in **"Principles and Mechanisms,"** we will dissect the core theory of probabilistic [state representation](@entry_id:141201), [state-space modeling](@entry_id:180240), and the recursive Bayesian filtering paradigm, culminating in the mechanics of the Kalman Filter and its nonlinear extensions. Next, **"Applications and Interdisciplinary Connections"** will showcase these concepts in action, highlighting their impact on robotics, healthcare, and [environmental monitoring](@entry_id:196500). Finally, the **"Hands-On Practices"** section offers a chance to apply this knowledge to concrete problems. We will now begin our detailed study of the foundational **Principles and Mechanisms** that underpin all of [sensor fusion](@entry_id:263414).
+This article serves as a foundational guide to the theory and practice of sensor fusion. We will journey from the mathematical bedrock of probabilistic estimation to the powerful algorithms that are staples of modern engineering and science. You will gain insight into not just the mechanics of these methods, but also the principles that govern their application. This exploration is structured across three key sections. First, in **"Principles and Mechanisms,"** we will dissect the core theory of probabilistic state representation, state-space modeling, and the recursive Bayesian filtering paradigm, culminating in the mechanics of the Kalman Filter and its nonlinear extensions. Next, **"Applications and Interdisciplinary Connections"** will showcase these concepts in action, highlighting their impact on robotics, healthcare, and environmental monitoring. Finally, the **"Hands-On Practices"** section offers a chance to apply this knowledge to concrete problems. We will now begin our detailed study of the foundational **Principles and Mechanisms** that underpin all of sensor fusion.
 
 ## Principles and Mechanisms
 
-In the preceding section, we introduced the conceptual framework of sensor fusion within cyber-physical systems and their digital twins. We established that the core task is to estimate a system's latent state by integrating information from multiple, often imperfect, sources. This section delves into the fundamental principles and mathematical mechanisms that make this possible. We will begin by formalizing how to represent and quantify uncertainty, proceed to construct the standard models for [system dynamics](@entry_id:136288) and measurements, and then explore the computational engines—filters—that recursively refine our knowledge of the state in light of new evidence.
+In the preceding section, we introduced the conceptual framework of sensor fusion within cyber-physical systems and their digital twins. We established that the core task is to estimate a system's latent state by integrating information from multiple, often imperfect, sources. This section delves into the fundamental principles and mathematical mechanisms that make this possible. We will begin by formalizing how to represent and quantify uncertainty, proceed to construct the standard models for system dynamics and measurements, and then explore the computational engines—filters—that recursively refine our knowledge of the state in light of new evidence.
 
 ### Foundations of Probabilistic State Representation
 
@@ -16,7 +16,7 @@ The mean, or expected value $\mu = \mathbb{E}[x]$, represents our best guess for
 
 #### The Covariance Matrix: Quantifying Uncertainty
 
-For an $n$-dimensional state vector $x$, the **covariance matrix** $\Sigma$ is a crucial $n \times n$ matrix that summarizes the dispersion and correlation of the [state variables](@entry_id:138790). It is formally defined as the expected value of the [outer product](@entry_id:201262) of the state's deviation from its mean with itself:
+For an $n$-dimensional state vector $x$, the **covariance matrix** $\Sigma$ is a crucial $n \times n$ matrix that summarizes the dispersion and correlation of the state variables. It is formally defined as the expected value of the outer product of the state's deviation from its mean with itself:
 
 $$
 \Sigma = \mathbb{E}[(x - \mu)(x - \mu)^\top]
@@ -24,15 +24,15 @@ $$
 
 Each element $\Sigma_{ij}$ of this matrix represents the covariance between the $i$-th and $j$-th components of the state vector, $\Sigma_{ij} = \operatorname{Cov}(x_i, x_j)$. The diagonal elements $\Sigma_{ii}$ are the variances of individual components, $\operatorname{Var}(x_i)$, quantifying the uncertainty in each state variable independently. The off-diagonal elements describe how the uncertainties in different state variables are related; a non-zero $\Sigma_{ij}$ indicates that if $x_i$ deviates from its mean, $x_j$ is also likely to deviate in a correlated manner.
 
-A valid covariance matrix must possess two fundamental properties: it must be **symmetric** and **positive semidefinite** .
+A valid covariance matrix must possess two fundamental properties: it must be **symmetric** and **positive semidefinite** [@problem_id:4245579].
 
-1.  **Symmetry**: A matrix $\Sigma$ is symmetric if $\Sigma = \Sigma^\top$. The symmetry of the covariance matrix is a direct consequence of its definition. The [outer product](@entry_id:201262) $(x - \mu)(x - \mu)^\top$ is itself a [symmetric matrix](@entry_id:143130) for any realization of the random vector $x$. Since the expectation operator is a linear, element-wise operation, the expectation of a symmetric random matrix is also symmetric. Thus, $\Sigma^\top = \mathbb{E}[((x - \mu)(x - \mu)^\top)^\top] = \mathbb{E}[(x - \mu)(x - \mu)^\top] = \Sigma$.
+1.  **Symmetry**: A matrix $\Sigma$ is symmetric if $\Sigma = \Sigma^\top$. The symmetry of the covariance matrix is a direct consequence of its definition. The outer product $(x - \mu)(x - \mu)^\top$ is itself a symmetric matrix for any realization of the random vector $x$. Since the expectation operator is a linear, element-wise operation, the expectation of a symmetric random matrix is also symmetric. Thus, $\Sigma^\top = \mathbb{E}[((x - \mu)(x - \mu)^\top)^\top] = \mathbb{E}[(x - \mu)(x - \mu)^\top] = \Sigma$.
 
 2.  **Positive Semidefiniteness (PSD)**: A symmetric matrix $\Sigma$ is positive semidefinite if for any non-zero vector $v \in \mathbb{R}^n$, the quadratic form $v^\top \Sigma v \ge 0$. To see why this must hold, we can substitute the definition of $\Sigma$:
     $$
     v^\top \Sigma v = v^\top \mathbb{E}[(x - \mu)(x - \mu)^\top] v
     $$
-    By the [linearity of expectation](@entry_id:273513), we can move the constant vector $v$ inside:
+    By the linearity of expectation, we can move the constant vector $v$ inside:
     $$
     v^\top \Sigma v = \mathbb{E}[v^\top (x - \mu)(x - \mu)^\top v]
     $$
@@ -42,13 +42,13 @@ A valid covariance matrix must possess two fundamental properties: it must be **
     $$
     Since the square of any real number is non-negative, the quantity $(v^\top(x - \mu))^2$ is always greater than or equal to zero. The expectation of a non-negative random variable must also be non-negative. This proves that $\Sigma$ is positive semidefinite.
 
-Geometrically, the covariance matrix defines an **uncertainty ellipsoid** in the state space centered at the mean $\mu$. This [ellipsoid](@entry_id:165811) is the set of points $y$ satisfying $(y-\mu)^\top \Sigma^{-1} (y-\mu) \le c^2$ for some constant $c$. The principal axes of the [ellipsoid](@entry_id:165811) are aligned with the eigenvectors of $\Sigma$, and the length of these axes are proportional to the square roots of the corresponding eigenvalues.
+Geometrically, the covariance matrix defines an **uncertainty ellipsoid** in the state space centered at the mean $\mu$. This ellipsoid is the set of points $y$ satisfying $(y-\mu)^\top \Sigma^{-1} (y-\mu) \le c^2$ for some constant $c$. The principal axes of the ellipsoid are aligned with the eigenvectors of $\Sigma$, and the length of these axes are proportional to the square roots of the corresponding eigenvalues.
 
-If $\Sigma$ is **positive definite (SPD)**, meaning $v^\top \Sigma v > 0$ for all non-zero $v$, then all its eigenvalues are strictly positive. In this case, $\Sigma$ is invertible, and the uncertainty ellipsoid is non-degenerate, having volume in $\mathbb{R}^n$. This signifies that there is uncertainty in every direction of the state space. If, however, $\Sigma$ is PSD but not SPD (i.e., it is singular), it has at least one zero eigenvalue. This implies that there is zero uncertainty along the direction of the corresponding eigenvector—the state is known to lie on a lower-dimensional subspace. The resulting uncertainty [ellipsoid](@entry_id:165811) is degenerate, or "flat" .
+If $\Sigma$ is **positive definite (SPD)**, meaning $v^\top \Sigma v > 0$ for all non-zero $v$, then all its eigenvalues are strictly positive. In this case, $\Sigma$ is invertible, and the uncertainty ellipsoid is non-degenerate, having volume in $\mathbb{R}^n$. This signifies that there is uncertainty in every direction of the state space. If, however, $\Sigma$ is PSD but not SPD (i.e., it is singular), it has at least one zero eigenvalue. This implies that there is zero uncertainty along the direction of the corresponding eigenvector—the state is known to lie on a lower-dimensional subspace. The resulting uncertainty ellipsoid is degenerate, or "flat" [@problem_id:4245579].
 
 ### Modeling the System: The State-Space Representation
 
-To perform sensor fusion, we must first construct a mathematical model of the system we are observing. In discrete-time filtering, this is typically done using a **[state-space representation](@entry_id:147149)**, which consists of two core equations: a process model and a measurement model.
+To perform sensor fusion, we must first construct a mathematical model of the system we are observing. In discrete-time filtering, this is typically done using a **state-space representation**, which consists of two core equations: a process model and a measurement model.
 
 #### The Process Model: How the State Evolves
 
@@ -70,22 +70,22 @@ As a concrete example, consider a robot navigating a plane, whose state includes
 $$
 h(x_k) = \mathrm{atan2}(L_y - p_y, L_x - p_x) - \psi
 $$
-where the state is $x_k = [p_x, p_y, \psi]^\top$. The actual sensor reading $z_k$ would be this ideal value plus some noise $v_k$ .
+where the state is $x_k = [p_x, p_y, \psi]^\top$. The actual sensor reading $z_k$ would be this ideal value plus some noise $v_k$ [@problem_id:4245559].
 
 #### Characterizing the Noise
 
-The process noise $w_k$ and measurement noise $v_k$ are fundamentally different in their physical origin. Process noise arises from the system's interaction with its environment and its own internal imperfections, affecting the *actual* [state evolution](@entry_id:755365). Measurement noise arises from the sensor's hardware and signal processing, affecting the *observation* of the state .
+The process noise $w_k$ and measurement noise $v_k$ are fundamentally different in their physical origin. Process noise arises from the system's interaction with its environment and its own internal imperfections, affecting the *actual* state evolution. Measurement noise arises from the sensor's hardware and signal processing, affecting the *observation* of the state [@problem_id:4245610].
 
-In many filtering applications, a simplifying set of assumptions known as the **Additive White Gaussian Noise (AWGN)** model is used. This model is justified under a specific set of physical and statistical conditions :
+In many filtering applications, a simplifying set of assumptions known as the **Additive White Gaussian Noise (AWGN)** model is used. This model is justified under a specific set of physical and statistical conditions [@problem_id:4245559]:
 
 *   **Additive**: The noise is assumed to be simply added to the ideal model output. This is a good approximation if the physical noise sources are small, allowing for a first-order Taylor expansion of a more complex true noise model. It breaks down in cases of sensor saturation or large, nonlinear distortions.
 *   **Gaussian**: The noise is assumed to follow a Gaussian (Normal) distribution. The primary justification for this is the **Central Limit Theorem**, which states that the sum of many small, independent random disturbances will tend toward a Gaussian distribution, even if the individual sources are not Gaussian. For a camera, these sources might include thermal noise, shot noise, and quantization errors.
-*   **Zero-Mean**: The noise is assumed to have an expected value of zero, $\mathbb{E}[v_k] = 0$. This implies the absence of [systematic errors](@entry_id:755765) or **biases**. For this to hold, the sensor must be well-calibrated. Any uncorrected systematic effect would manifest as a non-zero mean.
-*   **White**: The noise is assumed to be "white" in time, meaning the noise at one time step is statistically uncorrelated with the noise at any other time step ($\mathbb{E}[v_k v_j^\top] = 0$ for $k \neq j$). This approximation is valid if the sensor's sampling interval is much longer than the [correlation time](@entry_id:176698) of the underlying physical noise phenomena (e.g., [electronic noise](@entry_id:894877) is very fast). It is violated by slow-drifting errors, such as thermal bias in a [gyroscope](@entry_id:172950).
+*   **Zero-Mean**: The noise is assumed to have an expected value of zero, $\mathbb{E}[v_k] = 0$. This implies the absence of systematic errors or **biases**. For this to hold, the sensor must be well-calibrated. Any uncorrected systematic effect would manifest as a non-zero mean.
+*   **White**: The noise is assumed to be "white" in time, meaning the noise at one time step is statistically uncorrelated with the noise at any other time step ($\mathbb{E}[v_k v_j^\top] = 0$ for $k \neq j$). This approximation is valid if the sensor's sampling interval is much longer than the correlation time of the underlying physical noise phenomena (e.g., electronic noise is very fast). It is violated by slow-drifting errors, such as thermal bias in a gyroscope.
 
-Furthermore, a critical assumption in standard [filter design](@entry_id:266363) is that the [process noise](@entry_id:270644) sequence $\{w_k\}$ and the measurement noise sequence $\{v_k\}$ are **mutually independent**. This means $\mathbb{E}[w_k v_j^\top] = 0$ for all time indices $k$ and $j$. This is physically plausible as they arise from distinct phenomena. This independence simplifies the filter mathematics considerably.
+Furthermore, a critical assumption in standard filter design is that the process noise sequence $\{w_k\}$ and the measurement noise sequence $\{v_k\}$ are **mutually independent**. This means $\mathbb{E}[w_k v_j^\top] = 0$ for all time indices $k$ and $j$. This is physically plausible as they arise from distinct phenomena. This independence simplifies the filter mathematics considerably.
 
-Finally, we must consider the relationship between the noise and the state itself. A system is non-anticipative, meaning future noise cannot affect the present state. Therefore, the process noise $w_k$ is independent of the state $x_j$ and measurement $z_j$ for all past and present times $j \le k$. This implies that the [cross-correlation](@entry_id:143353) $\mathbb{E}[w_k z_j^\top] = 0$ for $j \le k$. However, for a future time $j > k$, the state $x_j$ will depend on $w_k$ through the [system dynamics](@entry_id:136288). Consequently, the measurement $z_j$ will also depend on $w_k$, and their correlation $\mathbb{E}[w_k z_j^\top]$ will generally be non-zero .
+Finally, we must consider the relationship between the noise and the state itself. A system is non-anticipative, meaning future noise cannot affect the present state. Therefore, the process noise $w_k$ is independent of the state $x_j$ and measurement $z_j$ for all past and present times $j \le k$. This implies that the cross-correlation $\mathbb{E}[w_k z_j^\top] = 0$ for $j \le k$. However, for a future time $j > k$, the state $x_j$ will depend on $w_k$ through the system dynamics. Consequently, the measurement $z_j$ will also depend on $w_k$, and their correlation $\mathbb{E}[w_k z_j^\top]$ will generally be non-zero [@problem_id:4245610].
 
 ### The Bayesian Filtering Paradigm
 
@@ -103,17 +103,17 @@ The mathematical engine driving the update step is **Bayes' Theorem**. In the co
 $$
 p(x_k | z_k) \propto p(z_k | x_k) \, p(x_k)
 $$
-Here, $p(x_k)$ is the [prior distribution](@entry_id:141376) from the prediction step. The term $p(z_k | x_k)$ is the **likelihood**, which is specified by the measurement model and quantifies how probable the observed measurement $z_k$ is for a given hypothesized state $x_k$. The result, $p(x_k | z_k)$, is the posterior distribution, representing our updated belief after considering the measurement.
+Here, $p(x_k)$ is the prior distribution from the prediction step. The term $p(z_k | x_k)$ is the **likelihood**, which is specified by the measurement model and quantifies how probable the observed measurement $z_k$ is for a given hypothesized state $x_k$. The result, $p(x_k | z_k)$, is the posterior distribution, representing our updated belief after considering the measurement.
 
-The **prior** distribution, which for the very first step is $p(x_0)$, plays a crucial role in initializing the filter. The choice of the initial prior mean $m_0$ and covariance $P_0$ represents all knowledge about the system before any measurements are taken. The confidence in this prior knowledge, encoded in the magnitude of $P_0$, significantly impacts the filter's initial behavior .
+The **prior** distribution, which for the very first step is $p(x_0)$, plays a crucial role in initializing the filter. The choice of the initial prior mean $m_0$ and covariance $P_0$ represents all knowledge about the system before any measurements are taken. The confidence in this prior knowledge, encoded in the magnitude of $P_0$, significantly impacts the filter's initial behavior [@problem_id:4245592].
 
 Consider a simple static estimation problem where we estimate a scalar value $x$ from a measurement $z = x+v$. If our prior belief is $x \sim \mathcal{N}(m_0, P_0)$ and the noise is $v \sim \mathcal{N}(0, R)$, the posterior variance will be $P_1 = (P_0^{-1} + R^{-1})^{-1}$. If we choose a very small prior variance $P_0$, we are stating that we are highly confident in our initial guess $m_0$. Consequently, the posterior variance $P_1$ will be dominated by $P_0$, and the updated mean will barely move from $m_0$. The filter will appear "stubborn" and less sensitive to the new data.
 
-Conversely, if we are very uncertain about the initial state, we would choose a large $P_0$. In the long run, however, as more and more measurements are fused, the influence of the initial prior diminishes. For a correctly specified model, the [posterior mean](@entry_id:173826) will converge towards the true state, and the posterior distribution will become dominated by the accumulated information from the data (the likelihood). The initial bias introduced by a poorly chosen $m_0$ will decay, typically at a rate proportional to $1/n$ where $n$ is the number of measurements .
+Conversely, if we are very uncertain about the initial state, we would choose a large $P_0$. In the long run, however, as more and more measurements are fused, the influence of the initial prior diminishes. For a correctly specified model, the posterior mean will converge towards the true state, and the posterior distribution will become dominated by the accumulated information from the data (the likelihood). The initial bias introduced by a poorly chosen $m_0$ will decay, typically at a rate proportional to $1/n$ where $n$ is the number of measurements [@problem_id:4245592].
 
 ### Mechanisms of Linear Filtering: The Kalman Filter
 
-The general Bayesian filtering paradigm is elegant but often computationally intractable. However, for the special case of a **linear-Gaussian system**, there exists a closed-form, [optimal solution](@entry_id:171456): the **Kalman Filter**. The system must adhere to the form:
+The general Bayesian filtering paradigm is elegant but often computationally intractable. However, for the special case of a **linear-Gaussian system**, there exists a closed-form, optimal solution: the **Kalman Filter**. The system must adhere to the form:
 $$
 x_{k+1} = Fx_k + Bu_k + w_k, \quad w_k \sim \mathcal{N}(0, Q)
 $$
@@ -124,7 +124,7 @@ where $F, B, H$ are matrices. In this case, if the initial state is Gaussian, th
 
 #### Mechanism 1: The Prediction Step
 
-The prediction step projects the state estimate forward in time. Given the [posterior mean](@entry_id:173826) $\hat{x}_{k-1|k-1}$ and covariance $P_{k-1|k-1}$ from the previous step, we can derive the predicted (prior) mean $\hat{x}_{k|k-1}$ and covariance $P_{k|k-1}$ for the current step .
+The prediction step projects the state estimate forward in time. Given the posterior mean $\hat{x}_{k-1|k-1}$ and covariance $P_{k-1|k-1}$ from the previous step, we can derive the predicted (prior) mean $\hat{x}_{k|k-1}$ and covariance $P_{k|k-1}$ for the current step [@problem_id:4245565].
 
 The predicted mean is found by taking the expectation of the process model:
 $$
@@ -138,15 +138,15 @@ P_{k|k-1} = F P_{k-1|k-1} F^\top + Q
 $$
 This equation shows that uncertainty increases for two reasons: the existing uncertainty, $P_{k-1|k-1}$, is transformed by the system dynamics ($F(\cdot)F^\top$), and new uncertainty from the process noise, $Q$, is added.
 
-For example, consider a 1D constant-velocity model with state $x = [p, v]^\top$, dynamics matrix $F = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$ (for a 1s time step), and process noise $Q = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$. If the [posterior covariance](@entry_id:753630) at the previous step was $P_{k-1|k-1} = \begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}$, the predicted covariance would be:
+For example, consider a 1D constant-velocity model with state $x = [p, v]^\top$, dynamics matrix $F = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$ (for a 1s time step), and process noise $Q = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$. If the posterior covariance at the previous step was $P_{k-1|k-1} = \begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}$, the predicted covariance would be:
 $$
 P_{k|k-1} = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix} + \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} = \begin{pmatrix} 7 & 4 \\ 4 & 3 \end{pmatrix} + \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} = \begin{pmatrix} 8 & 4 \\ 4 & 5 \end{pmatrix}
 $$
-The trace of the covariance, a measure of total uncertainty, increases from $2+3=5$ to $8+5=13$ .
+The trace of the covariance, a measure of total uncertainty, increases from $2+3=5$ to $8+5=13$ [@problem_id:4245565].
 
 #### Mechanism 2: The Update Step
 
-The update step corrects the predicted estimate using the new measurement. For the scalar case $z = x+v$ with prior $x \sim \mathcal{N}(\mu_0, P_0)$ and noise $v \sim \mathcal{N}(0, R)$, the [posterior mean](@entry_id:173826) and variance are :
+The update step corrects the predicted estimate using the new measurement. For the scalar case $z = x+v$ with prior $x \sim \mathcal{N}(\mu_0, P_0)$ and noise $v \sim \mathcal{N}(0, R)$, the posterior mean and variance are [@problem_id:4245599]:
 $$
 \hat{x} = \frac{\mu_0 R + z P_0}{P_0 + R}, \quad P = \frac{P_0 R}{P_0 + R}
 $$
@@ -167,15 +167,15 @@ This logic extends to the multidimensional case, yielding the canonical Kalman f
 
 A Kalman filter can only estimate states that are, in principle, "visible" through the measurements. This property is known as **observability**. For an LTI system, a state is observable if an initial non-zero value for that state will eventually produce a non-zero effect on the measurement output.
 
-Observability is formally tested using the **[observability matrix](@entry_id:165052)**:
+Observability is formally tested using the **observability matrix**:
 $$
 \mathcal{O} = \begin{pmatrix} H \\ HF \\ HF^2 \\ \vdots \\ HF^{n-1} \end{pmatrix}
 $$
 The system pair $(F, H)$ is observable if and only if this matrix has full column rank, i.e., $\operatorname{rank}(\mathcal{O}) = n$.
 
-If a system is not observable, there exists an **[unobservable subspace](@entry_id:176289)**. Any state component within this subspace is invisible to the sensor configuration. For example, consider a system with two decoupled parts: a position-velocity block and a rotation block. If the sensor only measures position, the rotation states are completely uncoupled from the measurement . The [observability matrix](@entry_id:165052) will be rank-deficient, and its [null space](@entry_id:151476) will correspond exactly to the unobservable rotation states.
+If a system is not observable, there exists an **unobservable subspace**. Any state component within this subspace is invisible to the sensor configuration. For example, consider a system with two decoupled parts: a position-velocity block and a rotation block. If the sensor only measures position, the rotation states are completely uncoupled from the measurement [@problem_id:4245534]. The observability matrix will be rank-deficient, and its null space will correspond exactly to the unobservable rotation states.
 
-For the Kalman filter, unobservability means that it cannot reduce the uncertainty of the states in the [unobservable subspace](@entry_id:176289). The Kalman gain components corresponding to these states will be zero. The error covariance for these states will not decrease during the update step and may even grow indefinitely due to process noise. This is a fundamental limitation, not merely a question of convergence rate. However, if the system is observable (and another condition, [stabilizability](@entry_id:178956), holds), the Kalman filter [error covariance](@entry_id:194780) will converge to a unique steady-state value that is independent of the initial [prior covariance](@entry_id:1130174) $P_0$ . Observability can often be achieved by adding more or different sensors to the system .
+For the Kalman filter, unobservability means that it cannot reduce the uncertainty of the states in the unobservable subspace. The Kalman gain components corresponding to these states will be zero. The error covariance for these states will not decrease during the update step and may even grow indefinitely due to process noise. This is a fundamental limitation, not merely a question of convergence rate. However, if the system is observable (and another condition, stabilizability, holds), the Kalman filter error covariance will converge to a unique steady-state value that is independent of the initial prior covariance $P_0$ [@problem_id:4245592]. Observability can often be achieved by adding more or different sensors to the system [@problem_id:4245534].
 
 ### Mechanisms of Nonlinear Filtering
 
@@ -183,9 +183,9 @@ Most real-world systems are nonlinear. While the optimal solution is no longer a
 
 #### The Extended Kalman Filter (EKF): Linearization
 
-The most common approach is the **Extended Kalman Filter (EKF)**. Its core idea is to handle nonlinearity by performing a [local linearization](@entry_id:169489) of the nonlinear process and measurement functions around the current best state estimate. The standard Kalman filter equations are then applied to this approximated linear system.
+The most common approach is the **Extended Kalman Filter (EKF)**. Its core idea is to handle nonlinearity by performing a local linearization of the nonlinear process and measurement functions around the current best state estimate. The standard Kalman filter equations are then applied to this approximated linear system.
 
-For the measurement update, the nonlinear function $h(x)$ is approximated using a first-order Taylor [series expansion](@entry_id:142878) around the predicted mean $\bar{x} = \hat{x}_{k|k-1}$:
+For the measurement update, the nonlinear function $h(x)$ is approximated using a first-order Taylor series expansion around the predicted mean $\bar{x} = \hat{x}_{k|k-1}$:
 $$
 h(x) \approx h(\bar{x}) + H(\bar{x})(x - \bar{x})
 $$
@@ -193,15 +193,15 @@ The matrix $H(\bar{x})$ is the **Jacobian matrix** of $h$ evaluated at $\bar{x}$
 $$
 H_{ij}(\bar{x}) = \frac{\partial h_i}{\partial x_j} \bigg|_{x=\bar{x}}
 $$
-For example, if the state contains 2D position $(p_x, p_y)$ and a sensor measures the range to the origin, $h(x) = \sqrt{p_x^2 + p_y^2}$, the Jacobian is a row vector whose components are $\frac{\partial h}{\partial p_x} = \frac{p_x}{\sqrt{p_x^2+p_y^2}}$ and $\frac{\partial h}{\partial p_y} = \frac{p_y}{\sqrt{p_x^2+p_y^2}}$ . The EKF uses this Jacobian matrix in place of the static $H$ matrix in the Kalman filter update equations.
+For example, if the state contains 2D position $(p_x, p_y)$ and a sensor measures the range to the origin, $h(x) = \sqrt{p_x^2 + p_y^2}$, the Jacobian is a row vector whose components are $\frac{\partial h}{\partial p_x} = \frac{p_x}{\sqrt{p_x^2+p_y^2}}$ and $\frac{\partial h}{\partial p_y} = \frac{p_y}{\sqrt{p_x^2+p_y^2}}$ [@problem_id:4245600]. The EKF uses this Jacobian matrix in place of the static $H$ matrix in the Kalman filter update equations.
 
 #### The Unscented Kalman Filter (UKF): Statistical Approximation
 
 A more sophisticated approach is the **Unscented Kalman Filter (UKF)**, which is based on the **Unscented Transform (UT)**. The UT operates on the principle that it is easier to approximate a probability distribution than it is to approximate a nonlinear function.
 
-Instead of linearizing the function, the UT deterministically selects a small set of points, called **[sigma points](@entry_id:171701)**, from the state distribution. These points are chosen and weighted so that their [sample mean](@entry_id:169249) and covariance exactly match the mean $\mu$ and covariance $\Sigma$ of the original Gaussian distribution. A standard scheme for a state of dimension $n$ uses $2n+1$ [sigma points](@entry_id:171701) .
+Instead of linearizing the function, the UT deterministically selects a small set of points, called **sigma points**, from the state distribution. These points are chosen and weighted so that their sample mean and covariance exactly match the mean $\mu$ and covariance $\Sigma$ of the original Gaussian distribution. A standard scheme for a state of dimension $n$ uses $2n+1$ sigma points [@problem_id:4245551].
 
-These [sigma points](@entry_id:171701) are then propagated individually through the true nonlinear function, $y_i = g(\chi_i)$. The mean and covariance of the transformed variable are then estimated by computing the weighted sample mean and covariance of the resulting transformed points:
+These sigma points are then propagated individually through the true nonlinear function, $y_i = g(\chi_i)$. The mean and covariance of the transformed variable are then estimated by computing the weighted sample mean and covariance of the resulting transformed points:
 $$
 \hat{y} \approx \sum_i W_i^{(m)} y_i, \quad P_y \approx \sum_i W_i^{(c)} (y_i - \hat{y})(y_i - \hat{y})^\top
 $$
@@ -213,7 +213,7 @@ When a digital twin receives data from multiple sensors simultaneously, a key qu
 
 #### Conditional Independence
 
-The simplest case occurs when the sensor measurements are **conditionally independent** given the state. This means that, if the true state $x$ were known, knowing the measurement from one sensor would provide no additional information about the measurement from another. In this case, the [joint likelihood](@entry_id:750952) is simply the product of the individual likelihoods:
+The simplest case occurs when the sensor measurements are **conditionally independent** given the state. This means that, if the true state $x$ were known, knowing the measurement from one sensor would provide no additional information about the measurement from another. In this case, the joint likelihood is simply the product of the individual likelihoods:
 $$
 p(y_L, y_C, y_I | x) = p(y_L | x) \, p(y_C | x) \, p(y_I | x)
 $$
@@ -221,9 +221,9 @@ This allows for a very simple fusion process, where measurements can be processe
 
 #### Correlated Measurements
 
-In more complex scenarios, this independence may not hold. A common reason is the presence of an unobserved **nuisance variable** that affects multiple sensors. For example, a sudden change in ambient illumination might affect both a LiDAR and a camera, while also being influenced by sensor-specific biases .
+In more complex scenarios, this independence may not hold. A common reason is the presence of an unobserved **nuisance variable** that affects multiple sensors. For example, a sudden change in ambient illumination might affect both a LiDAR and a camera, while also being influenced by sensor-specific biases [@problem_id:4245606].
 
-In such cases, simply multiplying the individual likelihoods is incorrect because it ignores the correlation induced by the common disturbance. The rigorous approach is to model the nuisance variables explicitly and then **marginalize** them out using the law of total probability. If $w$ is the common disturbance and $b_L, b_C, b_I$ are independent biases, the correct [joint likelihood](@entry_id:750952) requires integrating over all possible values of these unobserved variables:
+In such cases, simply multiplying the individual likelihoods is incorrect because it ignores the correlation induced by the common disturbance. The rigorous approach is to model the nuisance variables explicitly and then **marginalize** them out using the law of total probability. If $w$ is the common disturbance and $b_L, b_C, b_I$ are independent biases, the correct joint likelihood requires integrating over all possible values of these unobserved variables:
 $$
 p(y_L, y_C, y_I | x, m) = \int p(w) \left( \int p(y_L | \dots, w, b_L)p(b_L)db_L \right) \left( \int p(y_C | \dots, w, b_C)p(b_C)db_C \right) \left( \dots \right) dw
 $$

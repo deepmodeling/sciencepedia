@@ -1,7 +1,7 @@
 ## Introduction
 From a drop of ink spreading in water to the aroma of coffee filling a room, the universe displays a relentless tendency towards uniformity. This process, known as diffusion, is a fundamental transport mechanism driven by the random motion of countless microscopic particles. But how can we move beyond poetic description to a precise, predictive mathematical framework? This is the central question addressed by the laws of diffusion, first quantified by the physiologist Adolf Fick in 1855.
 
-This article will guide you through the elegant world of Fick's laws. In the first chapter, **Principles and Mechanisms**, we will dissect the mathematical formulation of Fick's first and second laws, connect them to the microscopic 'drunkard's walk' of molecules, and explore the richer physics of non-ideal and anisotropic systems. Next, in **Applications and Interdisciplinary Connections**, we will witness these laws in action, shaping phenomena as diverse as [pollutant transport](@entry_id:165650) in the environment, nutrient supply to cancerous tumors, and even the pricing of financial options. Finally, the **Hands-On Practices** chapter will challenge you to apply these concepts, solving canonical problems that bridge the gap between theory and practical modeling. By the end, you will have a deep appreciation for how this simple principle of spreading out governs the complex patterns of our world.
+This article will guide you through the elegant world of Fick's laws. In the first chapter, **Principles and Mechanisms**, we will dissect the mathematical formulation of Fick's first and second laws, connect them to the microscopic 'drunkard's walk' of molecules, and explore the richer physics of non-ideal and anisotropic systems. Next, in **Applications and Interdisciplinary Connections**, we will witness these laws in action, shaping phenomena as diverse as [pollutant transport](@keyword=pollutant_transport|lang=en-US|style=Feynman) in the environment, nutrient supply to cancerous tumors, and even the pricing of financial options. Finally, the **Hands-On Practices** chapter will challenge you to apply these concepts, solving canonical problems that bridge the gap between theory and practical modeling. By the end, you will have a deep appreciation for how this simple principle of spreading out governs the complex patterns of our world.
 
 ## Principles and Mechanisms
 
@@ -9,7 +9,7 @@ At the heart of the universe is an irresistible and relentless tendency towards 
 
 ### The Irresistible Tendency Towards Uniformity
 
-Imagine a substance—call it a solute, a tracer, or a contaminant—distributed unevenly in a medium like water or air. We can describe this unevenness with a [scalar field](@entry_id:154310) called **concentration**, $C(\mathbf{x}, t)$, which tells us the [amount of substance](@entry_id:145418) per unit volume at any position $\mathbf{x}$ and time $t$. Where the concentration is high, the substance is crowded; where it is low, it is sparse. The universe, in its quest for maximum entropy, seeks to smooth out these differences.
+Imagine a substance—call it a solute, a tracer, or a contaminant—distributed unevenly in a medium like water or air. We can describe this unevenness with a [scalar field](@keyword=scalar_field|lang=en-US|style=Feynman) called **concentration**, $C(\mathbf{x}, t)$, which tells us the [amount of substance](@keyword=amount_of_substance|lang=en-US|style=Feynman) per unit volume at any position $\mathbf{x}$ and time $t$. Where the concentration is high, the substance is crowded; where it is low, it is sparse. The universe, in its quest for maximum entropy, seeks to smooth out these differences.
 
 To quantify this "unevenness," we use a mathematical tool called the **gradient**, $\nabla C$. The gradient is a vector that, at any point, points in the direction of the steepest *increase* in concentration. It points "uphill" towards the peak of the concentration mountain.
 
@@ -19,9 +19,9 @@ $$
 \mathbf{J} = -D \nabla C
 $$
 
-Let's unpack this elegant statement. The negative sign is the most important character in this story. It mathematically encodes the physical principle that diffusion is a [spontaneous process](@entry_id:140005) that acts to erase concentration gradients . The flux is always directed *opposite* to the gradient.
+Let's unpack this elegant statement. The negative sign is the most important character in this story. It mathematically encodes the physical principle that diffusion is a [spontaneous process](@keyword=spontaneous_process|lang=en-US|style=Feynman) that acts to erase concentration gradients [@problem_id:3879859]. The flux is always directed *opposite* to the gradient.
 
-The term $D$ is the **diffusion coefficient**. It is a proportionality constant that characterizes how quickly the substance diffuses. A large $D$ means rapid spreading, like a gas in air, while a small $D$ signifies a slow, creeping process, like dye in honey. A [dimensional analysis](@entry_id:140259) shows that $D$ must have units of length squared per time, typically $\mathrm{m^2/s}$. This unit is itself a deep clue about the nature of diffusion, hinting at a process that explores an area over a given time.
+The term $D$ is the **diffusion coefficient**. It is a proportionality constant that characterizes how quickly the substance diffuses. A large $D$ means rapid spreading, like a gas in air, while a small $D$ signifies a slow, creeping process, like dye in honey. A [dimensional analysis](@keyword=dimensional_analysis|lang=en-US|style=Feynman) shows that $D$ must have units of length squared per time, typically $\mathrm{m^2/s}$. This unit is itself a deep clue about the nature of diffusion, hinting at a process that explores an area over a given time.
 
 ### A Microscopic Dance
 
@@ -31,7 +31,7 @@ Let's perform a thought experiment. Consider a notional vertical plane in our me
 
 But now, suppose there is a concentration gradient; say, the concentration is higher on the left than on the right. Even though the motion of any single molecule is random, there are simply *more* molecules on the left side that are candidates to wander across the plane to the right. Conversely, there are fewer molecules on the right available to wander to the left. The result is a net statistical flow of molecules from the region of higher concentration to the region of lower concentration. This is not due to any force pushing them; it is a pure numbers game.
 
-Kinetic theory allows us to formalize this picture and derive Fick's law from first principles . A more detailed analysis shows that the net flux is proportional to the difference in concentration over a characteristic distance—the average distance a molecule travels between collisions, or its **mean free path**. This beautiful derivation reveals that the macroscopic diffusion coefficient $D$ is directly related to the microscopic properties of the molecules:
+Kinetic theory allows us to formalize this picture and derive Fick's law from first principles [@problem_id:2640905]. A more detailed analysis shows that the net flux is proportional to the difference in concentration over a characteristic distance—the average distance a molecule travels between collisions, or its **mean free path**. This beautiful derivation reveals that the macroscopic diffusion coefficient $D$ is directly related to the microscopic properties of the molecules:
 
 $$
 D \approx \frac{1}{3} \langle v^2 \rangle \tau
@@ -55,15 +55,15 @@ $$
 \frac{\partial C}{\partial t} = \nabla \cdot (D \nabla C)
 $$
 
-If the medium is homogeneous, meaning $D$ is constant everywhere, we can pull it out of the [divergence operator](@entry_id:265975) to get the classic form:
+If the medium is homogeneous, meaning $D$ is constant everywhere, we can pull it out of the [divergence operator](@keyword=divergence_operator|lang=en-US|style=Feynman) to get the classic form:
 
 $$
 \frac{\partial C}{\partial t} = D \nabla^2 C
 $$
 
-The term $\nabla^2$ is the Laplacian operator, which measures the local curvature of the concentration field. This equation tells us that the concentration at a point will increase if the profile is "dished" upwards ($\nabla^2 C > 0$) and decrease if it is "humped" downwards ($\nabla^2 C  0$). It is this tendency to flatten out curvature that drives the smoothing process of diffusion. The mathematical structure of this equation classifies it as **parabolic**, which has profound implications for how we model it, requiring one initial condition and a set of boundary conditions to be well-posed .
+The term $\nabla^2$ is the Laplacian operator, which measures the local curvature of the concentration field. This equation tells us that the concentration at a point will increase if the profile is "dished" upwards ($\nabla^2 C > 0$) and decrease if it is "humped" downwards ($\nabla^2 C  0$). It is this tendency to flatten out curvature that drives the smoothing process of diffusion. The mathematical structure of this equation classifies it as **parabolic**, which has profound implications for how we model it, requiring one initial condition and a set of boundary conditions to be well-posed [@problem_id:3879871].
 
-But what if the medium is not homogeneous? Imagine diffusion in soil, where porosity might vary from place to place. Here, $D$ is a function of position, $D(\mathbf{x})$. The diffusion equation becomes more interesting :
+But what if the medium is not homogeneous? Imagine diffusion in soil, where porosity might vary from place to place. Here, $D$ is a function of position, $D(\mathbf{x})$. The diffusion equation becomes more interesting [@problem_id:2640940]:
 
 $$
 \frac{\partial C}{\partial t} = \nabla D \cdot \nabla C + D \nabla^2 C
@@ -73,9 +73,9 @@ A new term, $\nabla D \cdot \nabla C$, appears! This term tells us that concentr
 
 ### The Spreading Cloud and the Drunkard's Walk
 
-What is the archetypal picture of diffusion? It is an instantaneous point release—a single puff of smoke in the air, a drop of dye in water. At time $t=0$, all the substance is at the origin. The diffusion equation predicts that the concentration profile for all later times will be a Gaussian (a "bell curve"). This Gaussian cloud starts infinitely sharp and spreads outwards, its width growing with time, while its peak height diminishes, always keeping the total [amount of substance](@entry_id:145418) constant.
+What is the archetypal picture of diffusion? It is an instantaneous point release—a single puff of smoke in the air, a drop of dye in water. At time $t=0$, all the substance is at the origin. The diffusion equation predicts that the concentration profile for all later times will be a Gaussian (a "bell curve"). This Gaussian cloud starts infinitely sharp and spreads outwards, its width growing with time, while its peak height diminishes, always keeping the total [amount of substance](@keyword=amount_of_substance|lang=en-US|style=Feynman) constant.
 
-This spreading cloud is the macroscopic manifestation of the microscopic "drunkard's walk." If we track the position of a single diffusing particle, its path is a random zigzag. The most important statistical measure of this walk is the **mean square displacement** (MSD), $\langle r^2(t) \rangle$, which quantifies the average squared distance of the particles from their starting point. By solving the diffusion equation, or by analyzing the statistics of the random walk, we arrive at a landmark result :
+This spreading cloud is the macroscopic manifestation of the microscopic "drunkard's walk." If we track the position of a single diffusing particle, its path is a random zigzag. The most important statistical measure of this walk is the **mean square displacement** (MSD), $\langle r^2(t) \rangle$, which quantifies the average squared distance of the particles from their starting point. By solving the diffusion equation, or by analyzing the statistics of the random walk, we arrive at a landmark result [@problem_id:3879892]:
 
 $$
 \langle r^2(t) \rangle = 2dDt
@@ -85,7 +85,7 @@ where $d$ is the number of spatial dimensions (so $\langle r^2(t) \rangle = 6Dt$
 
 ### Beyond the Ideal: Complications and Richer Physics
 
-The Fickian model of diffusion is elegant and powerful, but it is built on a set of idealizations: an isotropic medium, ideal thermodynamics, and a [simple random walk](@entry_id:270663). When we venture into more complex, realistic environments—like geological formations, biological cells, or industrial polymers—we must enrich our model. The failure of the simple law is not a flaw, but a gateway to deeper, more interesting physics .
+The Fickian model of diffusion is elegant and powerful, but it is built on a set of idealizations: an isotropic medium, ideal thermodynamics, and a [simple random walk](@keyword=simple_random_walk|lang=en-US|style=Feynman). When we venture into more complex, realistic environments—like geological formations, biological cells, or industrial polymers—we must enrich our model. The failure of the simple law is not a flaw, but a gateway to deeper, more interesting physics [@problem_id:2640894].
 
 #### Anisotropy: Not All Directions are Equal
 
@@ -95,24 +95,24 @@ $$
 \mathbf{J} = -\mathbf{D} \nabla C
 $$
 
-The consequence of this is that the [flux vector](@entry_id:273577) $\mathbf{J}$ is no longer necessarily parallel to the concentration gradient $\nabla C$. The internal structure of the medium can deflect the flow. The principles of thermodynamics impose strict constraints on this tensor: it must be **symmetric** ($\mathbf{D} = \mathbf{D}^\top$) and **[positive definite](@entry_id:149459)** . These properties ensure that diffusion is always a dissipative process—that it always increases entropy.
+The consequence of this is that the [flux vector](@keyword=flux_vector|lang=en-US|style=Feynman) $\mathbf{J}$ is no longer necessarily parallel to the concentration gradient $\nabla C$. The internal structure of the medium can deflect the flow. The principles of thermodynamics impose strict constraints on this tensor: it must be **symmetric** ($\mathbf{D} = \mathbf{D}^\top$) and **[positive definite](@keyword=positive_definite|lang=en-US|style=Feynman)** [@problem_id:3879861]. These properties ensure that diffusion is always a dissipative process—that it always increases entropy.
 
 #### Non-Ideality: When Molecules Get Personal
 
-In [dilute solutions](@entry_id:144419), solute molecules are far apart and ignore each other. In concentrated solutions, such as saltwater intruding into coastal groundwater, they interact. These interactions mean that the true thermodynamic driving force for diffusion is not the concentration gradient, but the gradient of **chemical potential**, $\nabla \mu$. The chemical potential is a measure of the free energy per particle, and particles, like everything else in nature, seek to minimize their free energy.
+In [dilute solutions](@keyword=dilute_solutions|lang=en-US|style=Feynman), solute molecules are far apart and ignore each other. In concentrated solutions, such as saltwater intruding into coastal groundwater, they interact. These interactions mean that the true thermodynamic driving force for diffusion is not the concentration gradient, but the gradient of **chemical potential**, $\nabla \mu$. The chemical potential is a measure of the free energy per particle, and particles, like everything else in nature, seek to minimize their free energy.
 
-For [non-ideal solutions](@entry_id:142298), the relationship between chemical potential and concentration involves an **[activity coefficient](@entry_id:143301)**, $\gamma$. This leads to a generalized Fick's law where the effective diffusion coefficient is no longer a constant, but can depend on the concentration itself, $D_{\text{eff}}(C)$  . The diffusion "constant" is not constant at all, a crucial consideration for accurate [environmental modeling](@entry_id:1124562).
+For [non-ideal solutions](@keyword=non_ideal_solutions|lang=en-US|style=Feynman), the relationship between chemical potential and concentration involves an **[activity coefficient](@keyword=activity_coefficient|lang=en-US|style=Feynman)**, $\gamma$. This leads to a generalized Fick's law where the effective diffusion coefficient is no longer a constant, but can depend on the concentration itself, $D_{\text{eff}}(C)$ [@problem_id:3879842] [@problem_id:3879845]. The diffusion "constant" is not constant at all, a crucial consideration for accurate [environmental modeling](@keyword=environmental_modeling|lang=en-US|style=Feynman).
 
 #### Anomalous Diffusion: A Strange Kind of Walk
 
-The [linear scaling](@entry_id:197235) of the MSD with time, $\langle r^2(t) \rangle \propto t$, is the hallmark of normal diffusion. But in many complex systems, from water in porous rocks to proteins inside a cell, this rule is broken. This is the world of **[anomalous diffusion](@entry_id:141592)**, where the MSD scales as a power law :
+The [linear scaling](@keyword=linear_scaling|lang=en-US|style=Feynman) of the MSD with time, $\langle r^2(t) \rangle \propto t$, is the hallmark of normal diffusion. But in many complex systems, from water in porous rocks to proteins inside a cell, this rule is broken. This is the world of **[anomalous diffusion](@keyword=anomalous_diffusion|lang=en-US|style=Feynman)**, where the MSD scales as a power law [@problem_id:3879857]:
 
 $$
 \langle r^2(t) \rangle \propto t^\alpha
 $$
 
-When the exponent $\alpha  1$, we have **[subdiffusion](@entry_id:149298)**. Particles spread more slowly than expected. The microscopic picture is often a random walk interrupted by long periods of waiting, as if the particles are temporarily caught in traps—like a solute molecule getting stuck in a dead-end pore in an aquifer.
+When the exponent $\alpha  1$, we have **[subdiffusion](@keyword=subdiffusion|lang=en-US|style=Feynman)**. Particles spread more slowly than expected. The microscopic picture is often a random walk interrupted by long periods of waiting, as if the particles are temporarily caught in traps—like a solute molecule getting stuck in a dead-end pore in an aquifer.
 
 When $\alpha > 1$, we have **superdiffusion**. Particles spread more quickly than expected. This can happen when the random walk is interspersed with rare, exceptionally long jumps, known as Lévy flights. Imagine a tracer molecule finding a "superhighway" like a fracture in a rock, allowing it to bypass the slow, tortuous path through the rock matrix.
 
-The journey from Fick's simple, elegant law to the frontiers of [anomalous diffusion](@entry_id:141592) is a perfect example of how physics progresses. We start with an intuitive, idealized model, test its limits, and then build a richer, more comprehensive theory to account for the beautiful complexity of the real world.
+The journey from Fick's simple, elegant law to the frontiers of [anomalous diffusion](@keyword=anomalous_diffusion|lang=en-US|style=Feynman) is a perfect example of how physics progresses. We start with an intuitive, idealized model, test its limits, and then build a richer, more comprehensive theory to account for the beautiful complexity of the real world.

@@ -5,27 +5,27 @@ This article will guide you through a complete understanding of peak time across
 
 ## Principles and Mechanisms
 
-In the analysis of [control systems](@entry_id:155291), understanding the transient response—how a system reacts to a sudden change in its input—is of paramount importance. Among the key metrics used to quantify this behavior, **peak time** ($t_p$) stands out as a critical indicator of the speed of response for a certain class of systems. This chapter delves into the fundamental principles governing peak time, its mathematical derivation, its relationship with the system's intrinsic properties, and how it is affected by common system modifications.
+In the analysis of control systems, understanding the transient response—how a system reacts to a sudden change in its input—is of paramount importance. Among the key metrics used to quantify this behavior, **peak time** ($t_p$) stands out as a critical indicator of the speed of response for a certain class of systems. This chapter delves into the fundamental principles governing peak time, its mathematical derivation, its relationship with the system's intrinsic properties, and how it is affected by common system modifications.
 
 ### The Concept of Peak Time
 
-**Peak time ($t_p$)** is formally defined as the time required for a system's output to reach the first, and highest, peak of its response to a step input. Imagine a simple mechanical system, such as a mass suspended by a spring with a damper . If this system is at rest and a constant force is suddenly applied, the mass will not move smoothly to its new [equilibrium position](@entry_id:272392). Instead, it will likely overshoot this position, carried by its own momentum. The instant the mass reaches its maximum displacement, its velocity momentarily becomes zero as it prepares to reverse direction. This moment of instantaneous rest at the apex of its travel is the peak time. At this precise instant, $t = t_p$, the system's velocity is zero, and consequently, its kinetic energy is also zero. The energy that was kinetic has been maximally converted into potential energy stored in the spring.
+**Peak time ($t_p$)** is formally defined as the time required for a system's output to reach the first, and highest, peak of its response to a step input. Imagine a simple mechanical system, such as a mass suspended by a spring with a damper [@problem_id:1598331]. If this system is at rest and a constant force is suddenly applied, the mass will not move smoothly to its new equilibrium position. Instead, it will likely overshoot this position, carried by its own momentum. The instant the mass reaches its maximum displacement, its velocity momentarily becomes zero as it prepares to reverse direction. This moment of instantaneous rest at the apex of its travel is the peak time. At this precise instant, $t = t_p$, the system's velocity is zero, and consequently, its kinetic energy is also zero. The energy that was kinetic has been maximally converted into potential energy stored in the spring.
 
-Mathematically, this physical intuition corresponds to finding the first time $t > 0$ for which the derivative of the system's [step response](@entry_id:148543), $y(t)$, is zero, i.e., $\frac{dy}{dt} = 0$. This condition identifies an extremum, and for the systems we are concerned with, this first extremum is the maximum peak.
+Mathematically, this physical intuition corresponds to finding the first time $t > 0$ for which the derivative of the system's step response, $y(t)$, is zero, i.e., $\frac{dy}{dt} = 0$. This condition identifies an extremum, and for the systems we are concerned with, this first extremum is the maximum peak.
 
 ### The Domain of Peak Time: System Order and Damping
 
-While the concept of a "peak" is intuitive, it is not a feature of all systems. The existence of a peak time is strictly tied to the presence of overshoot and oscillatory behavior in the [step response](@entry_id:148543). This behavior, in turn, is dictated by the order and parameters of the system.
+While the concept of a "peak" is intuitive, it is not a feature of all systems. The existence of a peak time is strictly tied to the presence of overshoot and oscillatory behavior in the step response. This behavior, in turn, is dictated by the order and parameters of the system.
 
-A stable **first-order system**, described by the transfer function $G(s) = \frac{K}{\tau s + 1}$ with $K > 0$ and $\tau > 0$, exhibits a [step response](@entry_id:148543) of the form $y(t) = K(1 - \exp(-t/\tau))$. The derivative of this response is $\frac{dy}{dt} = \frac{K}{\tau} \exp(-t/\tau)$. Since $K$ and $\tau$ are positive, this derivative is strictly positive for all finite time $t \ge 0$. The response is therefore **monotonically increasing**; it continuously rises and asymptotically approaches its final value $K$ without ever overshooting it. Consequently, there is no peak, and the concept of peak time is not applicable to [first-order systems](@entry_id:147467) .
+A stable **first-order system**, described by the transfer function $G(s) = \frac{K}{\tau s + 1}$ with $K > 0$ and $\tau > 0$, exhibits a step response of the form $y(t) = K(1 - \exp(-t/\tau))$. The derivative of this response is $\frac{dy}{dt} = \frac{K}{\tau} \exp(-t/\tau)$. Since $K$ and $\tau$ are positive, this derivative is strictly positive for all finite time $t \ge 0$. The response is therefore **monotonically increasing**; it continuously rises and asymptotically approaches its final value $K$ without ever overshooting it. Consequently, there is no peak, and the concept of peak time is not applicable to first-order systems [@problem_id:1598333].
 
-The situation becomes more interesting for **[second-order systems](@entry_id:276555)**, whose canonical transfer function is:
+The situation becomes more interesting for **second-order systems**, whose canonical transfer function is:
 $$
 G(s) = \frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}
 $$
-Here, $\omega_n$ is the **[undamped natural frequency](@entry_id:261839)** and $\zeta$ is the dimensionless **[damping ratio](@entry_id:262264)**. The nature of the response is entirely determined by $\zeta$.
+Here, $\omega_n$ is the **undamped natural frequency** and $\zeta$ is the dimensionless **damping ratio**. The nature of the response is entirely determined by $\zeta$.
 
--   For **[overdamped](@entry_id:267343)** ($\zeta > 1$) and **critically damped** ($\zeta = 1$) systems, the [step response](@entry_id:148543) also proves to be monotonically increasing. A detailed mathematical analysis shows that for both cases, the derivative of the step response, $\frac{dy}{dt}$, is strictly positive for all $t > 0$ and only approaches zero as $t \to \infty$  . These systems approach their final value without any oscillation or overshoot. As with [first-order systems](@entry_id:147467), they do not have a finite peak time.
+-   For **overdamped** ($\zeta > 1$) and **critically damped** ($\zeta = 1$) systems, the step response also proves to be monotonically increasing. A detailed mathematical analysis shows that for both cases, the derivative of the step response, $\frac{dy}{dt}$, is strictly positive for all $t > 0$ and only approaches zero as $t \to \infty$ [@problem_id:1598321] [@problem_id:1598365]. These systems approach their final value without any oscillation or overshoot. As with first-order systems, they do not have a finite peak time.
 
 -   For **underdamped** systems ($0  \zeta  1$), the step response is characterized by oscillations that decay over time. The response overshoots the final value, oscillates around it, and eventually settles. It is exclusively within this underdamped regime that the system exhibits a series of peaks and valleys. The first and most significant of these is the one that defines the peak time, $t_p$.
 
@@ -33,13 +33,13 @@ Therefore, the discussion of peak time as a performance metric is meaningful onl
 
 ### Derivation and Interpretation of the Peak Time Formula
 
-To derive the expression for peak time, we begin with the unit [step response](@entry_id:148543) of an underdamped second-order system:
+To derive the expression for peak time, we begin with the unit step response of an underdamped second-order system:
 $$
 y(t) = 1 - \exp(-\zeta\omega_n t) \left( \cos(\omega_d t) + \frac{\zeta}{\sqrt{1-\zeta^2}} \sin(\omega_d t) \right)
 $$
-where $\omega_d = \omega_n \sqrt{1-\zeta^2}$ is the **[damped natural frequency](@entry_id:273436)**—the actual frequency of oscillation of the damped system.
+where $\omega_d = \omega_n \sqrt{1-\zeta^2}$ is the **damped natural frequency**—the actual frequency of oscillation of the damped system.
 
-To find the time of the peaks, we must find where the rate of change of the response is zero. Differentiating $y(t)$ with respect to time and simplifying yields a remarkably compact expression :
+To find the time of the peaks, we must find where the rate of change of the response is zero. Differentiating $y(t)$ with respect to time and simplifying yields a remarkably compact expression [@problem_id:1598336]:
 $$
 \frac{dy}{dt} = \frac{\omega_n}{\sqrt{1-\zeta^2}} \exp(-\zeta\omega_n t) \sin(\omega_d t)
 $$
@@ -51,22 +51,22 @@ The first peak corresponds to the smallest positive value of $t$, which occurs w
 $$
 t_p = \frac{\pi}{\omega_d}
 $$
-This elegant result reveals that the peak time is inversely proportional to the [damped natural frequency](@entry_id:273436). A higher frequency of oscillation means a shorter time to reach the first peak. Substituting the definition of $\omega_d$, we can also express peak time in terms of the system's fundamental parameters, $\omega_n$ and $\zeta$:
+This elegant result reveals that the peak time is inversely proportional to the damped natural frequency. A higher frequency of oscillation means a shorter time to reach the first peak. Substituting the definition of $\omega_d$, we can also express peak time in terms of the system's fundamental parameters, $\omega_n$ and $\zeta$:
 $$
 t_p = \frac{\pi}{\omega_n \sqrt{1-\zeta^2}}
 $$
 
 ### Peak Time and System Poles
 
-A deeper understanding of peak time emerges when we connect it to the poles of the system's transfer function. The poles are the roots of the [characteristic equation](@entry_id:149057), $s^2 + 2\zeta\omega_n s + \omega_n^2 = 0$. For an [underdamped system](@entry_id:178889), the poles form a [complex conjugate pair](@entry_id:150139):
+A deeper understanding of peak time emerges when we connect it to the poles of the system's transfer function. The poles are the roots of the characteristic equation, $s^2 + 2\zeta\omega_n s + \omega_n^2 = 0$. For an underdamped system, the poles form a complex conjugate pair:
 $$
 s = -\zeta\omega_n \pm j\omega_n\sqrt{1-\zeta^2}
 $$
 These poles can be written in the general form $s = -\sigma \pm j\omega_d$, where:
 -   $\sigma = \zeta\omega_n$ is the **damping factor**, representing the rate of exponential decay of the response envelope. It is the magnitude of the real part of the poles.
--   $\omega_d = \omega_n\sqrt{1-\zeta^2}$ is the **[damped natural frequency](@entry_id:273436)**, representing the [oscillation frequency](@entry_id:269468). It is the magnitude of the imaginary part of the poles.
+-   $\omega_d = \omega_n\sqrt{1-\zeta^2}$ is the **damped natural frequency**, representing the oscillation frequency. It is the magnitude of the imaginary part of the poles.
 
-The formula $t_p = \pi/\omega_d$ provides a profound geometric interpretation in the complex $s$-plane: **The peak time is determined solely by the imaginary part of the system's dominant [complex poles](@entry_id:274945)** . Systems with poles located further from the real axis (larger $\omega_d$) will oscillate faster and exhibit a shorter peak time, signifying a quicker response.
+The formula $t_p = \pi/\omega_d$ provides a profound geometric interpretation in the complex $s$-plane: **The peak time is determined solely by the imaginary part of the system's dominant complex poles** [@problem_id:1598354]. Systems with poles located further from the real axis (larger $\omega_d$) will oscillate faster and exhibit a shorter peak time, signifying a quicker response.
 
 ### Application and Calculation
 
@@ -74,22 +74,22 @@ Let's apply these principles to practical engineering scenarios. Consider the de
 $$
 s^2 + (8.0 \times 10^3)s + (4.1 \times 10^7) = 0
 $$
-By comparing this to the standard form $s^2 + 2\zeta\omega_n s + \omega_n^2 = 0$, we identify $\omega_n^2 = 4.1 \times 10^7$ and $2\zeta\omega_n = 8.0 \times 10^3$. From these, we can find the [damped natural frequency](@entry_id:273436) directly. An alternative way is to find the pole locations by solving the quadratic equation, but we can also use the relationship $\omega_d = \sqrt{\omega_n^2 - (\zeta\omega_n)^2}$. Since $\zeta\omega_n = 4.0 \times 10^3$, we have:
+By comparing this to the standard form $s^2 + 2\zeta\omega_n s + \omega_n^2 = 0$, we identify $\omega_n^2 = 4.1 \times 10^7$ and $2\zeta\omega_n = 8.0 \times 10^3$. From these, we can find the damped natural frequency directly. An alternative way is to find the pole locations by solving the quadratic equation, but we can also use the relationship $\omega_d = \sqrt{\omega_n^2 - (\zeta\omega_n)^2}$. Since $\zeta\omega_n = 4.0 \times 10^3$, we have:
 $$
 \omega_d = \sqrt{4.1 \times 10^7 - (4.0 \times 10^3)^2} = \sqrt{4.1 \times 10^7 - 1.6 \times 10^7} = \sqrt{2.5 \times 10^7} = 5000 \text{ rad/s}
 $$
-The peak time is then calculated as :
+The peak time is then calculated as [@problem_id:1598354]:
 $$
 t_p = \frac{\pi}{\omega_d} = \frac{\pi}{5000} \text{ s} \approx 0.628 \text{ ms}
 $$
-In another HDD application, the transfer function from control voltage to the head's radial position might be given in a slightly different form, such as $G(s) = \frac{K}{s^2 + as + K}$ . Here, by identification with the standard form, we have $\omega_n^2 = K$ and $2\zeta\omega_n = a$. The [damped natural frequency](@entry_id:273436) is $\omega_d = \sqrt{\omega_n^2 - (\zeta\omega_n)^2} = \sqrt{K - (a/2)^2}$. Given component values, for instance $a = 1.20 \times 10^4 \text{ s}^{-1}$ and $K = 2.50 \times 10^8 \text{ s}^{-2}$, the calculation proceeds:
+In another HDD application, the transfer function from control voltage to the head's radial position might be given in a slightly different form, such as $G(s) = \frac{K}{s^2 + as + K}$ [@problem_id:1598335]. Here, by identification with the standard form, we have $\omega_n^2 = K$ and $2\zeta\omega_n = a$. The damped natural frequency is $\omega_d = \sqrt{\omega_n^2 - (\zeta\omega_n)^2} = \sqrt{K - (a/2)^2}$. Given component values, for instance $a = 1.20 \times 10^4 \text{ s}^{-1}$ and $K = 2.50 \times 10^8 \text{ s}^{-2}$, the calculation proceeds:
 $$
 \omega_d = \sqrt{2.50 \times 10^8 - \frac{(1.20 \times 10^4)^2}{4}} = \sqrt{2.14 \times 10^8} \approx 14629 \text{ rad/s}
 $$
 $$
 t_p = \frac{\pi}{\omega_d} \approx \frac{\pi}{14629} \text{ s} \approx 215\,\mu\text{s}
 $$
-These examples, including models of voice coil motors, illustrate how identifying the system parameters allows for the direct computation of this crucial performance metric .
+These examples, including models of voice coil motors, illustrate how identifying the system parameters allows for the direct computation of this crucial performance metric [@problem_id:1598345].
 
 ### Modifying Peak Time: The Effect of Zeros and Delays
 
@@ -97,11 +97,11 @@ The canonical second-order model provides a powerful foundation, but real-world 
 
 #### The Effect of a Zero
 
-Consider adding a zero to our standard [underdamped system](@entry_id:178889). The new transfer function could be $G_2(s) = (1 + s/z)G_1(s)$, where $G_1(s)$ is the original system and $z$ is the location of the zero. In the time domain, this modification corresponds to adding a scaled derivative of the original response to the response itself: $y_2(t) = y_1(t) + \frac{1}{z}\dot{y}_1(t)$. This derivative term acts as an "anticipatory" component, causing the response to be more aggressive. The result is typically an increase in overshoot and, critically, a **reduction in peak time**. The system reaches its peak faster. A detailed derivation shows that the new peak time $t_{p,2}$ is less than the original $t_{p,1}$ . This is a key principle in control design: adding a left-half-plane zero can be used to speed up the system's response.
+Consider adding a zero to our standard underdamped system. The new transfer function could be $G_2(s) = (1 + s/z)G_1(s)$, where $G_1(s)$ is the original system and $z$ is the location of the zero. In the time domain, this modification corresponds to adding a scaled derivative of the original response to the response itself: $y_2(t) = y_1(t) + \frac{1}{z}\dot{y}_1(t)$. This derivative term acts as an "anticipatory" component, causing the response to be more aggressive. The result is typically an increase in overshoot and, critically, a **reduction in peak time**. The system reaches its peak faster. A detailed derivation shows that the new peak time $t_{p,2}$ is less than the original $t_{p,1}$ [@problem_id:1598320]. This is a key principle in control design: adding a left-half-plane zero can be used to speed up the system's response.
 
 #### The Effect of a Time Delay
 
-A **pure time delay** has a fundamentally different effect. If a system is placed in series with a delay element, whose transfer function is $\exp(-Ts)$, the shape of the output response is not altered at all. The entire response is simply shifted later in time by an amount $T$. Therefore, if the original system has a peak time of $t_p$, the new system with the added delay will have a peak time of :
+A **pure time delay** has a fundamentally different effect. If a system is placed in series with a delay element, whose transfer function is $\exp(-Ts)$, the shape of the output response is not altered at all. The entire response is simply shifted later in time by an amount $T$. Therefore, if the original system has a peak time of $t_p$, the new system with the added delay will have a peak time of [@problem_id:1598377]:
 $$
 t_{p, \text{new}} = t_p + T
 $$

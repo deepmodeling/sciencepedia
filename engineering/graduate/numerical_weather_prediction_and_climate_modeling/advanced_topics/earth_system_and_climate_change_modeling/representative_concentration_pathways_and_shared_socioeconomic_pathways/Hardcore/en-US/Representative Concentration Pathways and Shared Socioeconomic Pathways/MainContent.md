@@ -1,5 +1,5 @@
 ## Introduction
-Projecting the Earth's future climate is an endeavor fundamentally linked to envisioning the future of humanity. The complex interplay of [population growth](@entry_id:139111), economic development, technological change, and policy decisions dictates the trajectory of greenhouse gas emissions and, consequently, the planet's energy balance. To navigate this complexity, the climate science community has developed sophisticated frameworks to construct plausible, internally consistent scenarios. The **Representative Concentration Pathways (RCPs)** and **Shared Socioeconomic Pathways (SSPs)** stand as the cornerstones of this effort, providing a structured language to connect societal choices with physical climate outcomes. This article demystifies these critical frameworks, addressing the challenge of how to systematically explore a range of possible climate futures.
+Projecting the Earth's future climate is an endeavor fundamentally linked to envisioning the future of humanity. The complex interplay of population growth, economic development, technological change, and policy decisions dictates the trajectory of greenhouse gas emissions and, consequently, the planet's energy balance. To navigate this complexity, the climate science community has developed sophisticated frameworks to construct plausible, internally consistent scenarios. The **Representative Concentration Pathways (RCPs)** and **Shared Socioeconomic Pathways (SSPs)** stand as the cornerstones of this effort, providing a structured language to connect societal choices with physical climate outcomes. This article demystifies these critical frameworks, addressing the challenge of how to systematically explore a range of possible climate futures.
 
 Across the following chapters, you will gain a graduate-level understanding of the complete scenario-based modeling process. The first chapter, **Principles and Mechanisms**, deconstructs the causal chain from human activity to climate response, introducing foundational concepts like the Kaya identity and radiative forcing. The second chapter, **Applications and Interdisciplinary Connections**, illustrates how these scenarios are operationalized across diverse fields, from assessing biogeochemical feedbacks to downscaling projections for local impact studies. Finally, the **Hands-On Practices** section provides a look into the quantitative methods used to translate scenarios into concrete metrics like carbon budgets and temperature projections. We begin by examining the core principles that enable us to translate narratives about our future into the language of climate models.
 
@@ -9,7 +9,7 @@ To project the future of the Earth's climate, we must first construct plausible 
 
 ### The Causal Chain: From Human Activity to Climate Response
 
-At its core, the challenge of [climate projection](@entry_id:1122479) can be understood as a sequence of cause and effect. This causal chain provides a conceptual roadmap for the components we must model:
+At its core, the challenge of climate projection can be understood as a sequence of cause and effect. This causal chain provides a conceptual roadmap for the components we must model:
 
 1.  **Socioeconomic Drivers:** Human activities, driven by population growth, economic development, and technological choices, are the ultimate source of changes in atmospheric composition.
 
@@ -35,21 +35,21 @@ Here, $E_{\mathrm{CO2}}(t)$ is total $\text{CO}_2$ emissions, $P(t)$ is populati
 
 The power of this identity lies in its analytical tractability. The fractional growth rate of emissions, $g_{E_{\mathrm{CO2}}}$, is approximately the sum of the growth rates of its components: $g_{E_{\mathrm{CO2}}} \approx g_P + g_A + g_I + g_C$, where the subscripts denote population, affluence, energy intensity, and carbon intensity, respectively. This allows us to analyze how different societal trends combine to influence the overall emissions trajectory.
 
-For instance, consider a hypothetical scenario where, starting in 2035, population grows at $0.6\%$ per year ($g_P=0.006$) and per capita GDP grows at $1.9\%$ per year ($g_A=0.019$). These upward pressures on emissions could be counteracted by improvements in energy efficiency (a negative $g_I$) and decarbonization of the energy supply (a negative $g_C$). If energy intensity improves at a rate of $-1.6\%$ per year and carbon intensity improves at $-0.8\%$ per year, the net emissions growth rate would be $0.006 + 0.019 - 0.016 - 0.008 = 0.001$, or $0.1\%$. If, a decade later, the rate of decarbonization accelerates to $-1.5\%$ per year while other factors remain similar, the net growth rate could become negative, marking a peak in emissions .
+For instance, consider a hypothetical scenario where, starting in 2035, population grows at $0.6\%$ per year ($g_P=0.006$) and per capita GDP grows at $1.9\%$ per year ($g_A=0.019$). These upward pressures on emissions could be counteracted by improvements in energy efficiency (a negative $g_I$) and decarbonization of the energy supply (a negative $g_C$). If energy intensity improves at a rate of $-1.6\%$ per year and carbon intensity improves at $-0.8\%$ per year, the net emissions growth rate would be $0.006 + 0.019 - 0.016 - 0.008 = 0.001$, or $0.1\%$. If, a decade later, the rate of decarbonization accelerates to $-1.5\%$ per year while other factors remain similar, the net growth rate could become negative, marking a peak in emissions [@problem_id:4082283].
 
 This is precisely the conceptual space that **Shared Socioeconomic Pathways (SSPs)** are designed to explore. An SSP is a narrative, supported by quantitative data, that describes a plausible future evolution of these Kaya factors and other societal elements like land use, education, and governance. The five primary SSPs span a wide range of futures:
 
-*   **SSP1 (Sustainability - Taking the Green Road):** A world shifting towards sustainability, with low [population growth](@entry_id:139111), high education, rapid technological progress in renewables, and high value placed on environmental protection.
+*   **SSP1 (Sustainability - Taking the Green Road):** A world shifting towards sustainability, with low population growth, high education, rapid technological progress in renewables, and high value placed on environmental protection.
 *   **SSP2 (Middle of the Road):** A world where historical trends continue, with moderate progress in all areas.
 *   **SSP3 (Regional Rivalry - A Rocky Road):** A fragmented world with resurgent nationalism, low international cooperation, slow economic growth, and little investment in education or environmental protection.
 *   **SSP4 (Inequality - A Road Divided):** A world with high inequality both between and within countries, where a high-tech elite prospers while a large, low-income population struggles.
 *   **SSP5 (Fossil-fueled Development - Taking the Highway):** A world with rapid, fossil-fuel-intensive economic growth, high faith in technological solutions, and high energy demand.
 
-Crucially, SSPs are defined as **policy-neutral** with respect to new, explicit [climate policy](@entry_id:1122477) . They describe the socioeconomic background and the challenges it presents for climate mitigation and adaptation. The same SSP can be paired with different levels of climate policy ambition within an **Integrated Assessment Model (IAM)**, a type of model that links socioeconomic, energy, and climate systems. This allows researchers to explore how a specific climate outcome (e.g., limiting warming to $2^\circ\text{C}$) might be achieved under vastly different world conditions.
+Crucially, SSPs are defined as **policy-neutral** with respect to new, explicit climate policy [@problem_id:4082336]. They describe the socioeconomic background and the challenges it presents for climate mitigation and adaptation. The same SSP can be paired with different levels of climate policy ambition within an **Integrated Assessment Model (IAM)**, a type of model that links socioeconomic, energy, and climate systems. This allows researchers to explore how a specific climate outcome (e.g., limiting warming to $2^\circ\text{C}$) might be achieved under vastly different world conditions.
 
 ### From Emissions to Concentrations: The Role of Biogeochemical Cycles
 
-Once emitted, greenhouse gases do not simply remain in the atmosphere. They are subject to complex biogeochemical cycles that redistribute them between the atmosphere, oceans, and land. The rate of change of a gas's atmospheric concentration, $C(t)$, can be described by a [mass balance equation](@entry_id:178786):
+Once emitted, greenhouse gases do not simply remain in the atmosphere. They are subject to complex biogeochemical cycles that redistribute them between the atmosphere, oceans, and land. The rate of change of a gas's atmospheric concentration, $C(t)$, can be described by a mass balance equation:
 
 $$
 \frac{dC(t)}{dt} = E(t) - S(C(t), t)
@@ -57,7 +57,7 @@ $$
 
 Here, $E(t)$ is the anthropogenic emission rate and $S(C(t), t)$ is the net **sink** term, representing the rate of removal by land and ocean processes. This sink term is not constant; it depends on the atmospheric concentration itself and the state of the climate. For example, as the oceans warm, their ability to absorb $\text{CO}_2$ decreases. This **climate-carbon feedback** means that the fraction of emissions that remains in the atmosphere—the **airborne fraction**—is not constant and tends to increase under higher warming scenarios.
 
-To model this complex behavior in a computationally efficient manner, especially for $\text{CO}_2$, a common approach is to use an **[impulse response function](@entry_id:137098) (IRF)**. The concentration increase above a preindustrial baseline is calculated as the convolution of the historical and future emissions path with a function that describes how a single pulse of emissions decays over time through multiple reservoirs (e.g., shallow ocean, deep ocean, terrestrial [biosphere](@entry_id:183762)) . This can be written as:
+To model this complex behavior in a computationally efficient manner, especially for $\text{CO}_2$, a common approach is to use an **impulse response function (IRF)**. The concentration increase above a preindustrial baseline is calculated as the convolution of the historical and future emissions path with a function that describes how a single pulse of emissions decays over time through multiple reservoirs (e.g., shallow ocean, deep ocean, terrestrial biosphere) [@problem_id:4082329]. This can be written as:
 
 $$
 \Delta C_{\mathrm{CO_2}}(t) = \int_{t_0}^{t} E_{\mathrm{CO_2}}(\tau) R(t-\tau) \, d\tau
@@ -67,7 +67,7 @@ where $R(t-\tau)$ is the IRF, often represented as a sum of exponentials with di
 
 ### From Concentrations to Forcing: The Physics of Radiative Transfer
 
-The link between atmospheric concentrations and the Earth's energy balance is quantified by **Radiative Forcing (RF)**. It is defined as the net change in [irradiance](@entry_id:176465) at the tropopause (in $\text{W m}^{-2}$) following a perturbation (e.g., an increase in GHG concentration), after allowing for stratospheric temperatures to readjust to [radiative equilibrium](@entry_id:158473). A positive forcing implies a net energy gain and thus a warming influence.
+The link between atmospheric concentrations and the Earth's energy balance is quantified by **Radiative Forcing (RF)**. It is defined as the net change in irradiance at the tropopause (in $\text{W m}^{-2}$) following a perturbation (e.g., an increase in GHG concentration), after allowing for stratospheric temperatures to readjust to radiative equilibrium. A positive forcing implies a net energy gain and thus a warming influence.
 
 For $\text{CO}_2$, the relationship between concentration and forcing is not linear. Each additional unit of $\text{CO}_2$ has a smaller warming effect than the one before it. This is due to a phenomenon called **absorption band saturation**. $\text{CO}_2$ absorbs outgoing longwave radiation in specific wavelength bands (notably around $15 \, \mu\text{m}$). At the center of these bands, the atmosphere is already nearly opaque even at preindustrial concentrations. Further increases in $\text{CO}_2$ primarily act to broaden these absorption bands, trapping radiation in the "wings" of the band. This process yields a logarithmic relationship, famously parameterized by Myhre et al. (1998):
 
@@ -75,7 +75,7 @@ $$
 \Delta F_{\mathrm{CO_2}} = \alpha \ln\left(\frac{C}{C_0}\right)
 $$
 
-where $\alpha \approx 5.35 \, \text{W m}^{-2}$, $C$ is the current concentration, and $C_0$ is a preindustrial reference concentration (e.g., $278 \, \text{ppm}$). According to this formula, a doubling of $\text{CO}_2$ concentration from $278 \, \text{ppm}$ to $556 \, \text{ppm}$ results in a forcing of $5.35 \ln(2) \approx 3.7 \, \text{W m}^{-2}$. To achieve the same incremental forcing again, concentration would need to double again to $1112 \, \text{ppm}$ .
+where $\alpha \approx 5.35 \, \text{W m}^{-2}$, $C$ is the current concentration, and $C_0$ is a preindustrial reference concentration (e.g., $278 \, \text{ppm}$). According to this formula, a doubling of $\text{CO}_2$ concentration from $278 \, \text{ppm}$ to $556 \, \text{ppm}$ results in a forcing of $5.35 \ln(2) \approx 3.7 \, \text{W m}^{-2}$. To achieve the same incremental forcing again, concentration would need to double again to $1112 \, \text{ppm}$ [@problem_id:4082243].
 
 This leads us to the concept of **Representative Concentration Pathways (RCPs)**. An RCP is a trajectory of total radiative forcing over the 21st century and beyond. They are named after their approximate total radiative forcing value in the year 2100 relative to preindustrial times. The four canonical RCPs used in the Coupled Model Intercomparison Project Phase 5 (CMIP5) are:
 
@@ -96,11 +96,11 @@ The CMIP5 experimental design was primarily organized around the four RCPs. For 
 
 #### The CMIP6 Scenario Matrix: Pairing SSPs and RCPs
 
-The CMIP6 framework introduces a more sophisticated **scenario matrix** that pairs the socioeconomic pathways (SSPs) with the radiative forcing targets (RCPs) . This two-dimensional matrix allows researchers to explore a much richer set of questions. The SSPs form the rows, representing different socioeconomic futures, and the forcing targets (named after the RCPs) form the columns, representing different levels of climate ambition. A scenario is now labeled, for example, **SSP2-4.5**, signifying a future that follows a "middle of the road" socioeconomic path (SSP2) and implements policies sufficient to limit 2100 radiative forcing to $4.5 \, \text{W m}^{-2}$.
+The CMIP6 framework introduces a more sophisticated **scenario matrix** that pairs the socioeconomic pathways (SSPs) with the radiative forcing targets (RCPs) [@problem_id:4082320]. This two-dimensional matrix allows researchers to explore a much richer set of questions. The SSPs form the rows, representing different socioeconomic futures, and the forcing targets (named after the RCPs) form the columns, representing different levels of climate ambition. A scenario is now labeled, for example, **SSP2-4.5**, signifying a future that follows a "middle of the road" socioeconomic path (SSP2) and implements policies sufficient to limit 2100 radiative forcing to $4.5 \, \text{W m}^{-2}$.
 
 This framework allows for the exploration of mitigation and adaptation challenges in a consistent way. For example, one can compare SSP1-2.6 and SSP5-2.6 to understand how much harder it is to achieve a low-forcing target in a fossil-fuel-intensive world (SSP5) versus a sustainability-focused one (SSP1).
 
-However, not all combinations in this matrix are considered equally plausible. Integrated Assessment Models are used to determine which pairings are feasible. Some pairings may be ruled out due to **feasibility constraints** (the required emissions reductions are technologically or economically impossible) or **consistency constraints** (the required emissions trajectory violates the core narrative of the SSP). For example, a stylized analysis might show that for SSP3 (Regional Rivalry), with its limited capacity for mitigation and negative emissions, achieving the stringent RCP2.6 budget is infeasible. Conversely, for SSP1 (Sustainability), with its baseline emissions already low, it is inconsistent with the narrative to imagine a massive expansion of fossil fuel use to reach the high emissions of RCP8.5 .
+However, not all combinations in this matrix are considered equally plausible. Integrated Assessment Models are used to determine which pairings are feasible. Some pairings may be ruled out due to **feasibility constraints** (the required emissions reductions are technologically or economically impossible) or **consistency constraints** (the required emissions trajectory violates the core narrative of the SSP). For example, a stylized analysis might show that for SSP3 (Regional Rivalry), with its limited capacity for mitigation and negative emissions, achieving the stringent RCP2.6 budget is infeasible. Conversely, for SSP1 (Sustainability), with its baseline emissions already low, it is inconsistent with the narrative to imagine a massive expansion of fossil fuel use to reach the high emissions of RCP8.5 [@problem_id:4082303].
 
 ### Mechanisms of Scenario Implementation in Models
 
@@ -108,7 +108,7 @@ The practical use of these scenarios in global climate models requires a sophist
 
 #### Concentration-Driven vs. Emissions-Driven Simulations
 
-At the heart of scenario implementation are two fundamental types of experiments , :
+At the heart of scenario implementation are two fundamental types of experiments [@problem_id:4082273], [@problem_id:4082322]:
 
 1.  **Concentration-Driven Simulations:** In this setup, the model is provided with prescribed time series of atmospheric concentrations for GHGs. The model's radiative transfer code uses these concentrations to calculate radiative forcing, which then drives the climate response. This approach bypasses the model's own carbon cycle. The causal chain within the model is simply: Prescribed $C(t) \rightarrow$ Calculated $F(t) \rightarrow$ Calculated $\Delta T(t)$. This is the required mode for models without an interactive carbon cycle (e.g., older Atmosphere-Ocean General Circulation Models, AOGCMs) and is the standard for the main CMIP intercomparison experiments to ensure a common forcing.
 
@@ -116,9 +116,9 @@ At the heart of scenario implementation are two fundamental types of experiments
 
 #### The Data Pipeline: From IAMs to Model Forcings
 
-The generation of the standardized forcing datasets used by climate models—housed in repositories like **input4MIPs**—is a complex, multi-step process :
+The generation of the standardized forcing datasets used by climate models—housed in repositories like **input4MIPs**—is a complex, multi-step process [@problem_id:4082329]:
 
-1.  **Harmonization:** Emissions trajectories from IAMs, which start from a stylized base year, must be smoothly blended with official historical emissions inventories. This "stitching" process is critical to avoid unphysical jumps or kinks in the emissions time series that could shock the climate model. Sophisticated mathematical techniques are used to ensure the resulting harmonized path is continuous in both its value and its rate of change ($C^1$ continuity) across the transition window .
+1.  **Harmonization:** Emissions trajectories from IAMs, which start from a stylized base year, must be smoothly blended with official historical emissions inventories. This "stitching" process is critical to avoid unphysical jumps or kinks in the emissions time series that could shock the climate model. Sophisticated mathematical techniques are used to ensure the resulting harmonized path is continuous in both its value and its rate of change ($C^1$ continuity) across the transition window [@problem_id:4082313].
 
 2.  **Concentration Conversion:** The harmonized emissions are then fed into a reduced-complexity climate model (like MAGICC) that simulates the translation from emissions to concentrations for each gas. This involves using IRFs for $\text{CO}_2$, modeling complex chemical feedbacks for the lifetime of $\text{CH}_4$ (which depends on the hydroxyl radical, OH), and accounting for the "banks" of halocarbons present in existing equipment.
 
@@ -128,11 +128,11 @@ The final product is a comprehensive, internally consistent set of gridded conce
 
 ### Interpreting and Using Scenario-Based Projections
 
-The SSP-RCP framework does not produce predictions. It produces "projections"—[conditional statements](@entry_id:268820) about the future, contingent on the scenario's assumptions coming to pass. Understanding the sources of uncertainty in these projections is key to their proper use.
+The SSP-RCP framework does not produce predictions. It produces "projections"—conditional statements about the future, contingent on the scenario's assumptions coming to pass. Understanding the sources of uncertainty in these projections is key to their proper use.
 
 #### Decomposing Projection Uncertainty
 
-At any given point in the future, the total uncertainty in a [climate projection](@entry_id:1122479) (e.g., for global mean temperature) can be decomposed into three main sources:
+At any given point in the future, the total uncertainty in a climate projection (e.g., for global mean temperature) can be decomposed into three main sources:
 
 1.  **Internal Variability:** This is the natural, chaotic variability inherent in the climate system (e.g., El Niño-Southern Oscillation). It is often estimated as the spread of different simulations from the same model under the same forcing scenario (a "large ensemble"). Its variance contribution, $V_{\text{int}}$, is largely constant with time.
 
@@ -140,12 +140,12 @@ At any given point in the future, the total uncertainty in a [climate projection
 
 3.  **Scenario Uncertainty:** This is the uncertainty arising from the unknown future path of human development and emissions, as captured by the different SSP-RCP scenarios. Its variance contribution, $V_{\text{scen}}$, is small in the near term (as all scenarios start from the same historical point) but grows substantially over time as the scenarios diverge.
 
-A key finding from analyses of this decomposition is that in the near term (out to ~2040), [internal variability](@entry_id:1126630) and model uncertainty are the dominant sources of uncertainty in global temperature projections. However, by the second half of the 21st century, **scenario uncertainty becomes the single largest source of uncertainty** . This powerfully demonstrates that our long-term climate future is not predetermined; it depends profoundly on the societal choices we make today and in the coming decades.
+A key finding from analyses of this decomposition is that in the near term (out to ~2040), internal variability and model uncertainty are the dominant sources of uncertainty in global temperature projections. However, by the second half of the 21st century, **scenario uncertainty becomes the single largest source of uncertainty** [@problem_id:4082276]. This powerfully demonstrates that our long-term climate future is not predetermined; it depends profoundly on the societal choices we make today and in the coming decades.
 
 #### The Epistemology of High-End Scenarios
 
 This leads to a final, critical point about the use of scenarios. What is the epistemic status of a high-end scenario like SSP5-8.5, which involves a massive, century-long expansion of fossil fuel use? Some critics argue that, given recent trends in decarbonization, such a scenario is implausible and its use is misleading.
 
-However, its justification does not lie in its being a likely forecast. Rather, SSP5-8.5 and other high-end scenarios serve an essential role as **plausible worst-case storylines** or **stress tests** . In [risk assessment](@entry_id:170894), it is critical to understand the [upper bounds](@entry_id:274738) of [potential outcomes](@entry_id:753644), even if their probability is low. SSP5-8.5 explores a future where current decarbonization trends falter and are reversed, providing an invaluable tool for impact and adaptation studies that need to plan for high levels of warming.
+However, its justification does not lie in its being a likely forecast. Rather, SSP5-8.5 and other high-end scenarios serve an essential role as **plausible worst-case storylines** or **stress tests** [@problem_id:4082314]. In risk assessment, it is critical to understand the upper bounds of potential outcomes, even if their probability is low. SSP5-8.5 explores a future where current decarbonization trends falter and are reversed, providing an invaluable tool for impact and adaptation studies that need to plan for high levels of warming.
 
 At the same time, it is scientifically rigorous to test the feasibility of these scenarios against known physical and economic constraints. For example, a proper sensitivity analysis could use an IAM to examine whether the cumulative emissions required for an SSP5-8.5 pathway are achievable given different estimates of ultimately recoverable fossil fuel resources, modeled through dynamic cost-supply curves. Such work helps to refine our understanding of what is not just imaginable, but also attainable, at the high end of the scenario spectrum.

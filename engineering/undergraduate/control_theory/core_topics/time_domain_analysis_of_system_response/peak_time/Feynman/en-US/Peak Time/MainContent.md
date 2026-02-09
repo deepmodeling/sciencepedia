@@ -24,10 +24,10 @@ So, the first principle is this: **Peak time is a performance metric exclusively
 To understand *why* some systems are underdamped, we need to look at their mathematical DNA. For a linear system, this DNA is captured by the **poles** of its transfer function. You can think of poles as the system's characteristic "notes" or "resonances"—the intrinsic ways it wants to behave. These poles are the roots of the system's characteristic equation, a polynomial that governs its dynamics.
 
 The location of these poles on a 2D map called the complex s-plane tells us everything about the system's stability and transient response.
-*   For those sluggish, non-overshooting systems (first-order, overdamped, critically damped), the poles are purely real, negative numbers. They represent simple [exponential decay](@article_id:136268) or growth.
-*   For the interesting, oscillatory, underdamped systems, the poles appear as a **[complex conjugate pair](@article_id:149645)**: $s = -\sigma \pm j\omega_d$.
+*   For those sluggish, non-overshooting systems (first-order, overdamped, critically damped), the poles are purely real, negative numbers. They represent simple [exponential decay](@keyword=exponential_decay|lang=en-US|style=Feynman) or growth.
+*   For the interesting, oscillatory, underdamped systems, the poles appear as a **[complex conjugate pair](@keyword=complex_conjugate_pair|lang=en-US|style=Feynman)**: $s = -\sigma \pm j\omega_d$.
 
-Don't let the "complex" part scare you. It's just nature's way of describing two things happening at once. The real part, $-\sigma$, represents **damping**. It's a decaying exponential term, $\exp(-\sigma t)$, that acts like friction, causing the oscillations to die down over time. The larger $\sigma$ is, the faster the system settles. The imaginary part, $\omega_d$, is the star of our show. This is the **damped natural frequency**, and it represents the actual frequency at which the system oscillates back and forth as it is settling. It's the "wobble" in the system's [step response](@article_id:148049).
+Don't let the "complex" part scare you. It's just nature's way of describing two things happening at once. The real part, $-\sigma$, represents **damping**. It's a decaying exponential term, $\exp(-\sigma t)$, that acts like friction, causing the oscillations to die down over time. The larger $\sigma$ is, the faster the system settles. The imaginary part, $\omega_d$, is the star of our show. This is the **damped natural frequency**, and it represents the actual frequency at which the system oscillates back and forth as it is settling. It's the "wobble" in the system's [step response](@keyword=step_response|lang=en-US|style=Feynman).
 
 ### An Elegant Connection: The Peak Time Formula
 
@@ -39,7 +39,7 @@ This formula is the heart of the matter. Think about what it says. The time it t
 
 This leads to a crucial insight for engineers: **if you want to make a system respond faster (decrease its peak time), you must increase its damped natural frequency**.
 
-Let's see this in action. Consider the actuator arm in a [hard disk drive](@article_id:263067) (HDD), which must move with lightning speed and precision. A simplified model might have a [characteristic equation](@article_id:148563) like $s^2 + (8.0 \times 10^3)s + (4.1 \times 10^7) = 0$. By comparing this to the standard form $s^2 + 2\zeta\omega_n s + \omega_n^2 = 0$, an engineer can extract the natural frequency $\omega_n$ and damping ratio $\zeta$. From these, they find the damped natural frequency, $\omega_d = \omega_n \sqrt{1-\zeta^2}$. In this specific case, the calculation reveals $\omega_d = 5000 \text{ rad/s}$. Applying our elegant formula:
+Let's see this in action. Consider the actuator arm in a [hard disk drive](@keyword=hard_disk_drive|lang=en-US|style=Feynman) (HDD), which must move with lightning speed and precision. A simplified model might have a [characteristic equation](@keyword=characteristic_equation|lang=en-US|style=Feynman) like $s^2 + (8.0 \times 10^3)s + (4.1 \times 10^7) = 0$. By comparing this to the standard form $s^2 + 2\zeta\omega_n s + \omega_n^2 = 0$, an engineer can extract the natural frequency $\omega_n$ and damping ratio $\zeta$. From these, they find the damped natural frequency, $\omega_d = \omega_n \sqrt{1-\zeta^2}$. In this specific case, the calculation reveals $\omega_d = 5000 \text{ rad/s}$. Applying our elegant formula:
 
 $$t_p = \frac{\pi}{\omega_d} = \frac{\pi}{5000} \text{ s} \approx 0.628 \text{ ms}$$
 

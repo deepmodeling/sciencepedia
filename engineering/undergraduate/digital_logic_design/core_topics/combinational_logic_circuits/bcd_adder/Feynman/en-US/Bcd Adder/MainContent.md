@@ -5,7 +5,7 @@ This article demystifies the specialized circuit designed to solve this very pro
 
 ## Principles and Mechanisms
 
-Alright, let's get our hands dirty. We've talked about why we might want to work with decimal numbers inside a computer, but now we have to face the music. How do we actually do it? How do we convince a machine that thinks in [powers of two](@article_id:195834) to respect our human obsession with the number ten? The answer is a beautiful piece of logical artistry called the **BCD Adder**.
+Alright, let's get our hands dirty. We've talked about why we might want to work with decimal numbers inside a computer, but now we have to face the music. How do we actually do it? How do we convince a machine that thinks in [powers of two](@keyword=powers_of_two|lang=en-US|style=Feynman) to respect our human obsession with the number ten? The answer is a beautiful piece of logical artistry called the **BCD Adder**.
 
 ### The Trouble with Ten
 
@@ -24,9 +24,9 @@ $$
 \end{array}
 $$
 
-The adder, doing its job perfectly, gives us the binary result $1101_2$ . Now we have a puzzle. The binary number $1101_2$ is equivalent to the decimal number 13. So, the machine got the *right answer* numerically ($8+5=13$). But it gave it to us in the wrong *language*. The code $1101_2$ is not a valid BCD digit! In the world of BCD, 4-bit codes are only allowed to represent digits from 0 ($0000_2$) to 9 ($1001_2$). $1101_2$ is meaningless. The correct BCD representation for the decimal number 13 should be two separate BCD digits: $0001_2$ for the "1" and $0011_2$ for the "3".
+The adder, doing its job perfectly, gives us the binary result $1101_2$ [@problem_id:1911901]. Now we have a puzzle. The binary number $1101_2$ is equivalent to the decimal number 13. So, the machine got the *right answer* numerically ($8+5=13$). But it gave it to us in the wrong *language*. The code $1101_2$ is not a valid BCD digit! In the world of BCD, 4-bit codes are only allowed to represent digits from 0 ($0000_2$) to 9 ($1001_2$). $1101_2$ is meaningless. The correct BCD representation for the decimal number 13 should be two separate BCD digits: $0001_2$ for the "1" and $0011_2$ for the "3".
 
-Our simple binary adder is like a friend who is fluent in one language (pure binary) but doesn't understand the nuances of another (BCD). It has given us an illegal code. This is the fundamental problem we need to solve. A standard adder works perfectly fine as long as the decimal sum of the two digits is 9 or less . But the moment the sum hits 10 or more, we step out of the valid BCD territory and into chaos.
+Our simple binary adder is like a friend who is fluent in one language (pure binary) but doesn't understand the nuances of another (BCD). It has given us an illegal code. This is the fundamental problem we need to solve. A standard adder works perfectly fine as long as the decimal sum of the two digits is 9 or less [@problem_id:1911918]. But the moment the sum hits 10 or more, we step out of the valid BCD territory and into chaos.
 
 ### The "Magic" Number Six
 
@@ -36,7 +36,7 @@ Think about the tools we have. A 4-bit binary adder understands a world of $2^4 
 
 These six forbidden states are the source of our problem. When our naive adder produced $1101_2$ (13), it landed squarely in this forbidden zone. The trick is to find a way to "skip over" these six states to get back to a valid representation. And how do you skip 6 numbers in arithmetic? You simply add 6!
 
-Let’s revisit our example of $8+5$. The initial binary sum was $1101_2$ (13). Since this sum is greater than 9, a correction is needed . Let's add our "magic" correction factor, 6 (which is $0110_2$ in binary), to this intermediate result :
+Let’s revisit our example of $8+5$. The initial binary sum was $1101_2$ (13). Since this sum is greater than 9, a correction is needed [@problem_id:1911920]. Let's add our "magic" correction factor, 6 (which is $0110_2$ in binary), to this intermediate result [@problem_id:1911937]:
 
 $$
 \begin{array}{@{}c@{\,}c@{}c@{}c@{}c}
@@ -55,15 +55,15 @@ Adding 6 forces the 4-bit adder to wrap around its 16-state limit in just the ri
 
 You might be wondering if this number "6" is some fortuitous, lucky number. It is not. It comes from a deep and simple principle. A 4-bit system has $16$ states. A decimal digit has $10$ states. The number of states we must "skip" to bridge the gap is simply $16 - 10 = 6$. The correction factor is the difference between the size of the binary "container" and the size of the decimal system we want to emulate.
 
-To prove this isn't just a fluke, let's imagine we're designing a computer for an alien species that uses a 10-digit system but represents each digit with 5 bits. Let's call it **Quint-Coded Decimal (QCD)** . A 5-bit system has $2^5 = 32$ possible states. Our aliens only use 10 of them. So, the number of unused, "forbidden" states is $32 - 10 = 22$. To build a QCD adder, whenever the sum of two digits exceeded 9, we would need to add a correction factor of 22!
+To prove this isn't just a fluke, let's imagine we're designing a computer for an alien species that uses a 10-digit system but represents each digit with 5 bits. Let's call it **Quint-Coded Decimal (QCD)** [@problem_id:1913583]. A 5-bit system has $2^5 = 32$ possible states. Our aliens only use 10 of them. So, the number of unused, "forbidden" states is $32 - 10 = 22$. To build a QCD adder, whenever the sum of two digits exceeded 9, we would need to add a correction factor of 22!
 
-This general rule, **Correction = (Total Binary States) - (Valid Decimal States)**, holds true for any such system. If we were to encode our 10 decimal digits using a base-3 (ternary) system, we would need $k=3$ ternary digits, since $3^2=9 \lt 10$ but $3^3=27 \ge 10$. The total number of states would be $27$. The correction factor would be $27 - 10 = 17$ . The "+6" rule for BCD is not an arbitrary hack; it is one instance of a universal law for reconciling number systems.
+This general rule, **Correction = (Total Binary States) - (Valid Decimal States)**, holds true for any such system. If we were to encode our 10 decimal digits using a base-3 (ternary) system, we would need $k=3$ ternary digits, since $3^2=9 \lt 10$ but $3^3=27 \ge 10$. The total number of states would be $27$. The correction factor would be $27 - 10 = 17$ [@problem_id:1911962]. The "+6" rule for BCD is not an arbitrary hack; it is one instance of a universal law for reconciling number systems.
 
 ### Building the Brain: The Correction Logic
 
-So, we know we need to add 6, but *when* do we add it? We need a small logic circuit, a "detector," that decides when a correction is necessary. This detector looks at the output of the initial [binary addition](@article_id:176295).
+So, we know we need to add 6, but *when* do we add it? We need a small logic circuit, a "detector," that decides when a correction is necessary. This detector looks at the output of the initial [binary addition](@keyword=binary_addition|lang=en-US|style=Feynman).
 
-Let the 5-bit result of adding two BCD digits (and a possible carry-in from a previous stage) be represented by the carry-out bit $K$ and the 4-bit sum $S_3S_2S_1S_0$. A correction is needed if this 5-bit number is greater than 9 . This happens under two distinct conditions:
+Let the 5-bit result of adding two BCD digits (and a possible carry-in from a previous stage) be represented by the carry-out bit $K$ and the 4-bit sum $S_3S_2S_1S_0$. A correction is needed if this 5-bit number is greater than 9 [@problem_id:1911932]. This happens under two distinct conditions:
 
 1.  **The carry bit $K$ is 1.** If $K=1$, the sum is at least 16 (binary $10000_2$). Since $16 \gt 9$, a correction is definitely needed.
 2.  **The carry bit $K$ is 0, but the 4-bit sum $S_3S_2S_1S_0$ is greater than 9.** This covers the sums from 10 ($1010_2$) to 15 ($1111_2$).
@@ -78,7 +78,7 @@ $$
 C_{BCD} = K + S_3S_2 + S_3S_1
 $$
 
-Here, the '+' symbol means the logical OR operation. This elegant expression is the "brain" of our BCD adder  . It perfectly captures the rule for when to apply the "+6" correction. Not only that, this signal $C_{BCD}$ also serves as the final decimal carry-out to the next digit!
+Here, the '+' symbol means the logical OR operation. This elegant expression is the "brain" of our BCD adder [@problem_id:1911956] [@problem_id:1911935]. It perfectly captures the rule for when to apply the "+6" correction. Not only that, this signal $C_{BCD}$ also serves as the final decimal carry-out to the next digit!
 
 ### From One to Many: Cascading Adders
 
@@ -86,7 +86,7 @@ We have successfully designed a circuit that can add two single decimal digits. 
 
 The answer is as beautifully simple as doing long addition on paper. You add the rightmost column ($6+7$), get 13, write down the 3, and carry the 1 to the next column. Then you add the second column, including the carry: $1+8+5=14$.
 
-We can build a digital circuit that mimics this exact process by linking our 1-digit BCD adders together in a chain, or **cascade** . The BCD carry-out ($C_{BCD}$) from the first adder (for the "ones" place) is connected directly to the carry-in ($C_{in}$) of the second adder (for the "tens" place).
+We can build a digital circuit that mimics this exact process by linking our 1-digit BCD adders together in a chain, or **cascade** [@problem_id:1911940]. The BCD carry-out ($C_{BCD}$) from the first adder (for the "ones" place) is connected directly to the carry-in ($C_{in}$) of the second adder (for the "tens" place).
 
 Let's trace the addition of $86+57$.
 - **Stage 0 (Ones place):** Adds BCD $0110_2$ (6) and $0111_2$ (7). The initial binary sum is 13 ($1101_2$). The correction logic sees a sum greater than 9 and fires. The circuit adds 6, producing a final sum of $0011_2$ (3) and a BCD carry-out of 1.
@@ -94,4 +94,4 @@ Let's trace the addition of $86+57$.
 
 The final result is read from the outputs of the stages: the carry-out from the last stage is $1$, the sum from Stage 1 is $4$, and the sum from Stage 0 is $3$. Read together, they form the number `143`, the correct answer.
 
-This modular design is a cornerstone of engineering. We solved a small, well-defined problem—how to add two digits—and by cleverly connecting our solution blocks, we created a system capable of solving an arbitrarily large version of the problem. From a single, elegant trick of adding six, a whole system of [decimal arithmetic](@article_id:172928) is born.
+This modular design is a cornerstone of engineering. We solved a small, well-defined problem—how to add two digits—and by cleverly connecting our solution blocks, we created a system capable of solving an arbitrarily large version of the problem. From a single, elegant trick of adding six, a whole system of [decimal arithmetic](@keyword=decimal_arithmetic|lang=en-US|style=Feynman) is born.

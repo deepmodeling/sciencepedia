@@ -3,7 +3,7 @@ How can we predict the intricate behavior of a complex system—be it a mechanic
 
 Across the following chapters, you will gain a comprehensive understanding of this foundational framework. We will embark on a journey that takes these ideas from mathematical abstraction to tangible application.
 
-*   In **Principles and Mechanisms**, we will dissect the core theory, defining Linear Time-Invariant (LTI) systems, introducing the idealized impulse, and deriving the convolution integral as the [master equation](@article_id:142465) for predicting system output.
+*   In **Principles and Mechanisms**, we will dissect the core theory, defining Linear Time-Invariant (LTI) systems, introducing the idealized impulse, and deriving the convolution integral as the [master equation](@keyword=master_equation|lang=en-US|style=Feynman) for predicting system output.
 *   In **Applications and Interdisciplinary Connections**, we will see this theory in action, exploring how the shape of an impulse response reveals a system’s hidden secrets and unifies phenomena across control engineering, physics, and image processing.
 *   Finally, **Hands-On Practices** will provide you with the opportunity to apply these concepts to concrete problems, solidifying your understanding from basic properties to advanced system representations.
 
@@ -22,7 +22,7 @@ First, we need to agree on the kinds of boxes we're investigating. We're interes
 
 Now, back to our detective work. What's the simplest "poke" we can give our LTI system? We want something that is as sharp and as short as possible—an "atomic" input. In the world of continuous time, we have a magical concept for this: the **Dirac delta distribution**, denoted by $\delta(t)$.
 
-You can think of $\delta(t)$ as an idealized hammer tap: an infinitely [strong force](@article_id:154316) applied over an infinitely short duration. It’s zero everywhere except at $t=0$, where it's infinitely high, but it's constructed in such a way that its total "oomph" (its integral) is exactly one. While it's a mathematical abstraction, we can get very close to it in reality with a very short, sharp pulse, like a quick clap or a brief electrical spike . For [discrete-time systems](@article_id:263441), the equivalent is the **Kronecker delta**, $\delta[k]$, which is simply a pulse of value 1 at time $k=0$ and 0 everywhere else.
+You can think of $\delta(t)$ as an idealized hammer tap: an infinitely [strong force](@keyword=strong_force|lang=en-US|style=Feynman) applied over an infinitely short duration. It’s zero everywhere except at $t=0$, where it's infinitely high, but it's constructed in such a way that its total "oomph" (its integral) is exactly one. While it's a mathematical abstraction, we can get very close to it in reality with a very short, sharp pulse, like a quick clap or a brief electrical spike [@problem_id:2712253]. For [discrete-time systems](@keyword=discrete_time_systems|lang=en-US|style=Feynman), the equivalent is the **Kronecker delta**, $\delta[k]$, which is simply a pulse of value 1 at time $k=0$ and 0 everywhere else.
 
 So, here's the masterstroke: we hit our system, starting from a state of rest, with this one perfect, instantaneous impulse. Then we listen. The output that the system produces, its "echo" to this single tap, is called the **impulse response**, denoted $h(t)$ for continuous time or $h[k]$ for discrete time.
 
@@ -39,7 +39,7 @@ This is where the magic of linearity comes in. We can think of *any* input signa
 
 Since the system is linear and time-invariant, we know how it will respond to each of these little impulsive kicks. The total output must simply be the sum of all the individual echoes from all the individual kicks that make up the input.
 
-This process of "summing up the echoes" is a mathematical operation called **convolution**. For a discrete-time system, the output $y[k]$ is the **[convolution sum](@article_id:262744)**:
+This process of "summing up the echoes" is a mathematical operation called **convolution**. For a discrete-time system, the output $y[k]$ is the **[convolution sum](@keyword=convolution_sum|lang=en-US|style=Feynman)**:
 
 $$ y[k] = \sum_{n=-\infty}^{\infty} x[n]h[k-n] $$
 
@@ -47,7 +47,7 @@ For a continuous-time system, the sum becomes an integral, the **convolution int
 
 $$ y(t) = \int_{-\infty}^{\infty} x(\tau)h(t-\tau)\,d\tau $$
 
-Let's pause and appreciate what this equation tells us. It says the output at this very moment, $t$, is a [weighted sum](@article_id:159475) of all *past* inputs $x(\tau)$. And what's the weighting function? It's the impulse response, $h$, but time-reversed ($h(t-\tau)$). It's as if the system is "remembering" all the kicks it ever received, but the influence of a past kick fades according to the shape of its echo, $h(t)$. A system with a long, slowly decaying impulse response has a long "memory," while one with a short, sharp impulse response reacts mainly to recent events.
+Let's pause and appreciate what this equation tells us. It says the output at this very moment, $t$, is a [weighted sum](@keyword=weighted_sum|lang=en-US|style=Feynman) of all *past* inputs $x(\tau)$. And what's the weighting function? It's the impulse response, $h$, but time-reversed ($h(t-\tau)$). It's as if the system is "remembering" all the kicks it ever received, but the influence of a past kick fades according to the shape of its echo, $h(t)$. A system with a long, slowly decaying impulse response has a long "memory," while one with a short, sharp impulse response reacts mainly to recent events.
 
 ### The Rules of the Game: Stability and Causality
 
@@ -57,7 +57,7 @@ A system is **causal** if the output at any time depends only on present and pas
 
 $$ h(t) = 0 \text{ for } t \lt 0 $$
 
-A system is **Bounded-Input, Bounded-Output (BIBO) stable** if any reasonable, finite input produces an output that also remains finite. Imagine yelling into a microphone; you expect a loud but finite sound out of the speaker, not a deafening, ever-increasing feedback squeal. A system is BIBO stable if and only if its impulse response is "well-behaved" enough to fade away over time. Mathematically, it must be **absolutely integrable** (or summable for discrete time) :
+A system is **Bounded-Input, Bounded-Output (BIBO) stable** if any reasonable, finite input produces an output that also remains finite. Imagine yelling into a microphone; you expect a loud but finite sound out of the speaker, not a deafening, ever-increasing feedback squeal. A system is BIBO stable if and only if its impulse response is "well-behaved" enough to fade away over time. Mathematically, it must be **absolutely integrable** (or summable for discrete time) [@problem_id:2712283]:
 
 $$ \int_{-\infty}^{\infty} |h(t)|\,dt \lt \infty \quad \text{and} \quad \sum_{k=-\infty}^{\infty} |h[k]| \lt \infty $$
 
@@ -65,17 +65,17 @@ If the impulse response grows without bound, the system is unstable. A tiny tap 
 
 ### Free vs. Forced: The Importance of Starting at Rest
 
-There's a crucial subtlety we've glossed over: the "starting from rest" condition. What if the system already has some energy in it when we apply our input? Think of a guitar string that's already vibrating. If you then start plucking it, the resulting motion is a combination of two things: the dying-out vibration from the initial state (the **free response**) and the new vibration caused by your plucking (the **[forced response](@article_id:261675)**).
+There's a crucial subtlety we've glossed over: the "starting from rest" condition. What if the system already has some energy in it when we apply our input? Think of a guitar string that's already vibrating. If you then start plucking it, the resulting motion is a combination of two things: the dying-out vibration from the initial state (the **free response**) and the new vibration caused by your plucking (the **[forced response](@keyword=forced_response|lang=en-US|style=Feynman)**).
 
-The convolution integral *only* describes the [forced response](@article_id:261675). The total output of an LTI system is actually the sum of these two parts :
+The convolution integral *only* describes the [forced response](@keyword=forced_response|lang=en-US|style=Feynman). The total output of an LTI system is actually the sum of these two parts [@problem_id:2712250]:
 
 $$ y_{total}(t) = y_{free}(t) + y_{forced}(t) = (\text{Response to initial conditions}) + (h * u)(t) $$
 
-Because of linearity, these two behaviors add up without interfering with each other. However, this means that if we want to measure the system's unique fingerprint, $h(t)$, we must ensure the free response is zero. We must start from a state of **initial rest**. This requirement isn't just a technicality; it's what allows us to define the system's behavior as a simple, elegant [convolution operator](@article_id:276326). Without it, the input-output relationship is more complex (it becomes affine, not purely linear) .
+Because of linearity, these two behaviors add up without interfering with each other. However, this means that if we want to measure the system's unique fingerprint, $h(t)$, we must ensure the free response is zero. We must start from a state of **initial rest**. This requirement isn't just a technicality; it's what allows us to define the system's behavior as a simple, elegant [convolution operator](@keyword=convolution_operator|lang=en-US|style=Feynman). Without it, the input-output relationship is more complex (it becomes affine, not purely linear) [@problem_id:2712250].
 
 ### Peeking Inside the Box: The State-Space Connection
 
-So far, we've treated our system as a black box. But what if we can see inside? Many physical systems—from [mechanical oscillators](@article_id:269541) to [electrical circuits](@article_id:266909)—can be described by a set of [first-order differential equations](@article_id:172645) called a **[state-space model](@article_id:273304)**:
+So far, we've treated our system as a black box. But what if we can see inside? Many physical systems—from [mechanical oscillators](@keyword=mechanical_oscillators|lang=en-US|style=Feynman) to [electrical circuits](@keyword=electrical_circuits|lang=en-US|style=Feynman)—can be described by a set of [first-order differential equations](@keyword=first_order_differential_equations|lang=en-US|style=Feynman) called a **[state-space model](@keyword=state_space_model_2|lang=en-US|style=Feynman)**:
 
 $$ \dot{x}(t) = Ax(t) + Bu(t) $$
 $$ y(t) = Cx(t) + Du(t) $$
@@ -86,15 +86,15 @@ This internal description gives us a concrete formula for the impulse response! 
 
 $$ h(t) = C e^{At} B \sigma(t) + D \delta(t) $$
 
-Here, $\sigma(t)$ is the Heaviside step function (which is 0 for $t\lt0$ and 1 for $t\gt0$), ensuring causality. The term $e^{At}$ is the famous **[matrix exponential](@article_id:138853)**, which describes how the state evolves from an initial condition. This beautiful formula connects the abstract "black box" fingerprint $h(t)$ to the concrete internal machinery $(A, B, C, D)$.
+Here, $\sigma(t)$ is the Heaviside step function (which is 0 for $t\lt0$ and 1 for $t\gt0$), ensuring causality. The term $e^{At}$ is the famous **[matrix exponential](@keyword=matrix_exponential|lang=en-US|style=Feynman)**, which describes how the state evolves from an initial condition. This beautiful formula connects the abstract "black box" fingerprint $h(t)$ to the concrete internal machinery $(A, B, C, D)$.
 
-Notice the term $D\delta(t)$. This part of the impulse response only exists if the $D$ matrix is non-zero, corresponding to a "shortcut" path directly from the input to the output. This is called **direct feedthrough**. This term means the impulse response itself contains an impulse! It is not an ordinary function but a **distribution** . This makes perfect sense: if an impulsive input can instantaneously affect the output, the system's response to an impulse must also be impulsive. The stability of the system is also hidden here: if the matrix $A$ has unstable dynamics (eigenvalues with positive real parts), the term $e^{At}$ will grow exponentially, making the impulse response non-integrable and the system unstable, unless that unstable part is cleverly hidden from the input or the output (it is "unreachable" or "unobservable") .
+Notice the term $D\delta(t)$. This part of the impulse response only exists if the $D$ matrix is non-zero, corresponding to a "shortcut" path directly from the input to the output. This is called **direct feedthrough**. This term means the impulse response itself contains an impulse! It is not an ordinary function but a **distribution** [@problem_id:2712280]. This makes perfect sense: if an impulsive input can instantaneously affect the output, the system's response to an impulse must also be impulsive. The stability of the system is also hidden here: if the matrix $A$ has unstable dynamics (eigenvalues with positive real parts), the term $e^{At}$ will grow exponentially, making the impulse response non-integrable and the system unstable, unless that unstable part is cleverly hidden from the input or the output (it is "unreachable" or "unobservable") [@problem_id:2712241].
 
 ### A Universe of Systems
 
 The power of this framework is its incredible generality.
-*   **Multiple Inputs, Multiple Outputs (MIMO):** What if our system is an airplane, with multiple control surfaces (inputs) and multiple sensor readings (outputs)? The framework extends seamlessly. The impulse response becomes a matrix $H(t)$, where the element $h_{ij}(t)$ is the response at output $i$ due to an impulse at input $j$. The [convolution integral](@article_id:155371) still holds, but now it involves [matrix-vector multiplication](@article_id:140050), elegantly capturing all the cross-couplings in one go .
+*   **Multiple Inputs, Multiple Outputs (MIMO):** What if our system is an airplane, with multiple control surfaces (inputs) and multiple sensor readings (outputs)? The framework extends seamlessly. The impulse response becomes a matrix $H(t)$, where the element $h_{ij}(t)$ is the response at output $i$ due to an impulse at input $j$. The [convolution integral](@keyword=convolution_integral|lang=en-US|style=Feynman) still holds, but now it involves [matrix-vector multiplication](@keyword=matrix_vector_multiplication|lang=en-US|style=Feynman), elegantly capturing all the cross-couplings in one go [@problem_id:2712278].
 
-*   **Differentiating Systems:** What kind of impulse response would a system have if its job were to take the derivative of the input signal? This seems like a purely mathematical operation, not a physical box. Yet, our framework can handle it. Such a system has an impulse response that is the *derivative* of the Dirac delta, $h(t) = \delta'(t)$. Convolving this with an input $x(t)$ gives $y(t) = (\delta' * x)(t) = x'(t)$ . That a simple rule—convolution with a fingerprint—can describe everything from an RLC circuit to an ideal [differentiator](@article_id:272498) shows the profound unity and beauty of this idea.
+*   **Differentiating Systems:** What kind of impulse response would a system have if its job were to take the derivative of the input signal? This seems like a purely mathematical operation, not a physical box. Yet, our framework can handle it. Such a system has an impulse response that is the *derivative* of the Dirac delta, $h(t) = \delta'(t)$. Convolving this with an input $x(t)$ gives $y(t) = (\delta' * x)(t) = x'(t)$ [@problem_id:2712286]. That a simple rule—convolution with a fingerprint—can describe everything from an RLC circuit to an ideal [differentiator](@keyword=differentiator|lang=en-US|style=Feynman) shows the profound unity and beauty of this idea.
 
 From a single, intuitive idea—characterizing a system by its echo to a perfect tap—we have built a framework that is the bedrock of modern signal processing, control theory, and dynamics. It reveals a hidden order, allowing us to predict, analyze, and design complex systems using the simple, elegant language of the impulse response and convolution.

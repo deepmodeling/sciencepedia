@@ -1,25 +1,25 @@
 ## Introduction
-The movement of water into soil is a fundamental process that governs the partitioning of rainfall into stored soil moisture and [surface runoff](@entry_id:1132694). This process, known as infiltration, is a critical component of the hydrological cycle and has profound implications for agriculture, water resource management, and environmental science. While the complete physics of water flow in variably saturated soil can be described by the complex Richards partial differential equation, its mathematical difficulty often precludes its use in routine applications. This knowledge gap has driven the development of simplified, yet physically-based, conceptual models that capture the essential dynamics of infiltration in a computationally efficient manner.
+The movement of water into soil is a fundamental process that governs the partitioning of rainfall into stored soil moisture and surface runoff. This process, known as infiltration, is a critical component of the hydrological cycle and has profound implications for agriculture, water resource management, and environmental science. While the complete physics of water flow in variably saturated soil can be described by the complex Richards partial differential equation, its mathematical difficulty often precludes its use in routine applications. This knowledge gap has driven the development of simplified, yet physically-based, conceptual models that capture the essential dynamics of infiltration in a computationally efficient manner.
 
-This article delves into the theory and application of these crucial infiltration models, with a central focus on the venerable Green-Ampt model. You will learn how this model is derived from first principles of [porous media flow](@entry_id:146440) and how its core assumptions create a powerful tool for practical hydrology. This article is structured to build a comprehensive understanding of the topic. The "Principles and Mechanisms" section will unpack the core physics of [unsaturated flow](@entry_id:756345) and derive the Green-Ampt equation. The "Applications and Interdisciplinary Connections" section will explore how the model is used to predict runoff, discuss its limitations, and highlight its role in fields ranging from geotechnical engineering to climate modeling. Finally, the "Hands-On Practices" section will provide opportunities to apply these concepts through targeted exercises in [parameter estimation](@entry_id:139349), sensitivity analysis, and numerical implementation.
+This article delves into the theory and application of these crucial infiltration models, with a central focus on the venerable Green-Ampt model. You will learn how this model is derived from first principles of porous media flow and how its core assumptions create a powerful tool for practical hydrology. This article is structured to build a comprehensive understanding of the topic. The "Principles and Mechanisms" section will unpack the core physics of unsaturated flow and derive the Green-Ampt equation. The "Applications and Interdisciplinary Connections" section will explore how the model is used to predict runoff, discuss its limitations, and highlight its role in fields ranging from geotechnical engineering to climate modeling. Finally, the "Hands-On Practices" section will provide opportunities to apply these concepts through targeted exercises in parameter estimation, sensitivity analysis, and numerical implementation.
 
 ## Principles and Mechanisms
 
-The movement of water into and through the soil matrix is a process of fundamental importance in hydrology, agriculture, and environmental science. While the complete physics of [variably saturated flow](@entry_id:1133716) can be described by the Richards partial differential equation, its complexity often necessitates the use of simplified, conceptual models for practical applications. Among the most enduring and physically-based of these is the Green-Ampt model. This chapter elucidates the core principles and mechanisms underlying this model, building from the fundamental laws of [porous media flow](@entry_id:146440) to its application in predicting infiltration and runoff.
+The movement of water into and through the soil matrix is a process of fundamental importance in hydrology, agriculture, and environmental science. While the complete physics of variably saturated flow can be described by the Richards partial differential equation, its complexity often necessitates the use of simplified, conceptual models for practical applications. Among the most enduring and physically-based of these is the Green-Ampt model. This chapter elucidates the core principles and mechanisms underlying this model, building from the fundamental laws of porous media flow to its application in predicting infiltration and runoff.
 
 ### The Fundamental Physics of Unsaturated Flow
 
-The flow of water in unsaturated soil is governed by the interplay of two primary forces: gravity and capillarity. The **Darcy-Buckingham law** provides the constitutive relation for this process, stating that the specific discharge (or flux), $q$, is proportional to the gradient of the total [hydraulic head](@entry_id:750444), $H$. For one-dimensional vertical flow, this is expressed as:
+The flow of water in unsaturated soil is governed by the interplay of two primary forces: gravity and capillarity. The **Darcy-Buckingham law** provides the constitutive relation for this process, stating that the specific discharge (or flux), $q$, is proportional to the gradient of the total hydraulic head, $H$. For one-dimensional vertical flow, this is expressed as:
 
 $$ q = -K(\theta) \frac{\partial H}{\partial z} $$
 
-Here, $z$ is the vertical coordinate (defined as positive upwards, representing elevation), and $\theta$ is the volumetric water content (the volume of water per unit volume of soil). The term $K(\theta)$ is the **[unsaturated hydraulic conductivity](@entry_id:756347)**, which is not a constant but a strongly nonlinear function of the water content. As the soil becomes drier (i.e., as $\theta$ decreases), the water-filled pathways become more tortuous and disconnected, causing $K(\theta)$ to decrease dramatically, often by several orders of magnitude. The constant value that the conductivity approaches as the soil becomes fully saturated is known as the **saturated hydraulic conductivity**, denoted $K_s$. 
+Here, $z$ is the vertical coordinate (defined as positive upwards, representing elevation), and $\theta$ is the volumetric water content (the volume of water per unit volume of soil). The term $K(\theta)$ is the **unsaturated hydraulic conductivity**, which is not a constant but a strongly nonlinear function of the water content. As the soil becomes drier (i.e., as $\theta$ decreases), the water-filled pathways become more tortuous and disconnected, causing $K(\theta)$ to decrease dramatically, often by several orders of magnitude. The constant value that the conductivity approaches as the soil becomes fully saturated is known as the **saturated hydraulic conductivity**, denoted $K_s$. [@problem_id:3885512]
 
-The **[hydraulic head](@entry_id:750444)**, $H$, represents the [total potential energy](@entry_id:185512) of the water per unit weight. It is the sum of two components: the elevation head, $z$, and the pressure head, $\psi$:
+The **hydraulic head**, $H$, represents the total potential energy of the water per unit weight. It is the sum of two components: the elevation head, $z$, and the pressure head, $\psi$:
 
 $$ H = \psi + z $$
 
-In unsaturated soil, the water is held in pores under tension by capillary forces, resulting in a pressure that is less than atmospheric pressure. This negative [gauge pressure](@entry_id:147760), when expressed as a head of water, is known as the **matric potential** or **capillary pressure head**, $\psi(\theta)$, which is a negative value that becomes more negative as the soil dries. The downward infiltration of water is thus driven by both gravity, which always exerts a downward pull, and the capillary [potential gradient](@entry_id:261486), which draws water from wetter regions to drier regions. The term $\frac{\partial\psi}{\partial z}$ across a wetting front is therefore a significant driver of infiltration, especially into initially dry soil. 
+In unsaturated soil, the water is held in pores under tension by capillary forces, resulting in a pressure that is less than atmospheric pressure. This negative gauge pressure, when expressed as a head of water, is known as the **matric potential** or **capillary pressure head**, $\psi(\theta)$, which is a negative value that becomes more negative as the soil dries. The downward infiltration of water is thus driven by both gravity, which always exerts a downward pull, and the capillary potential gradient, which draws water from wetter regions to drier regions. The term $\frac{\partial\psi}{\partial z}$ across a wetting front is therefore a significant driver of infiltration, especially into initially dry soil. [@problem_id:3885462]
 
 ### The Green-Ampt Model: A Conceptual Simplification
 
@@ -29,9 +29,9 @@ $$ \frac{\partial \theta}{\partial t} = \frac{\partial}{\partial z}\left[K(\thet
 
 The difficulty in solving this equation, especially for complex boundary conditions, motivates the use of simplified models. The Green-Ampt model is derived by replacing the continuous, smoothly varying profiles of $\theta$, $\psi$, and $K$ with an idealized, piecewise-constant structure. The central idealization is the concept of a **sharp wetting front**.
 
-This approximation is not merely a convenience; it has a basis in the physics of the Richards equation itself. When written in an [advection-diffusion](@entry_id:151021) form, the equation reveals that the nonlinear dependence of $K$ on $\theta$ creates a "[kinematic wave](@entry_id:200331)" effect that causes the wetting front to steepen. Wetter soil, with its higher conductivity, allows water to travel faster, causing it to catch up to the drier, slower-moving portions of the front. This compressive effect is counteracted by diffusion-like terms related to capillarity. In many soils, particularly coarse-textured ones where gravity effects are strong, the advective steepening dominates, leading to a very thin transition zone. It is therefore a defensible simplification to model this thin zone as a zero-thickness discontinuity, or a "shock," that propagates into the soil. 
+This approximation is not merely a convenience; it has a basis in the physics of the Richards equation itself. When written in an advection-diffusion form, the equation reveals that the nonlinear dependence of $K$ on $\theta$ creates a "kinematic wave" effect that causes the wetting front to steepen. Wetter soil, with its higher conductivity, allows water to travel faster, causing it to catch up to the drier, slower-moving portions of the front. This compressive effect is counteracted by diffusion-like terms related to capillarity. In many soils, particularly coarse-textured ones where gravity effects are strong, the advective steepening dominates, leading to a very thin transition zone. It is therefore a defensible simplification to model this thin zone as a zero-thickness discontinuity, or a "shock," that propagates into the soil. [@problem_id:3885441]
 
-This core idea, combined with several other idealizations, forms the basis of the Green-Ampt model. The complete set of assumptions necessary to reduce the Richards equation to the tractable Green-Ampt framework is as follows :
+This core idea, combined with several other idealizations, forms the basis of the Green-Ampt model. The complete set of assumptions necessary to reduce the Richards equation to the tractable Green-Ampt framework is as follows [@problem_id:3885478]:
 
 1.  **Homogeneous Soil Profile:** The soil properties ($K_s$, $\theta_s$, etc.) are constant with depth.
 2.  **Uniform Initial Water Content:** The soil is initially at a uniform volumetric water content, $\theta_i$.
@@ -51,17 +51,17 @@ The change in water storage is directly related to the volume of pore space fill
 
 $$ \Delta\theta = \theta_s - \theta_i $$
 
-This dimensionless parameter represents the available storage capacity per unit volume of soil. By the principle of mass conservation, the total volume of water that has infiltrated per unit surface area, known as the **cumulative infiltration** $F$, must equal the total volume of water added to storage. If the wetting front has advanced to a depth $z_f$, the change in storage per unit area is simply the storage capacity per unit volume multiplied by the depth of the wetted zone. This gives a fundamental relationship in the model :
+This dimensionless parameter represents the available storage capacity per unit volume of soil. By the principle of mass conservation, the total volume of water that has infiltrated per unit surface area, known as the **cumulative infiltration** $F$, must equal the total volume of water added to storage. If the wetting front has advanced to a depth $z_f$, the change in storage per unit area is simply the storage capacity per unit volume multiplied by the depth of the wetted zone. This gives a fundamental relationship in the model [@problem_id:3885440]:
 
 $$ F(t) = \Delta\theta \cdot z_f(t) $$
 
 #### The Capillary Drive Parameter, $\psi_f$
 
-The **wetting front suction head**, $\psi_f$, represents the effective capillary pull exerted by the dry soil on the water at the front. It is not an arbitrary fitting parameter but can be physically related to the soil's [water retention curve](@entry_id:1133972), $\psi(\theta)$. The Green-Ampt model's sharp front collapses the true, thin transition zone where suction varies continuously with water content. The parameter $\psi_f$ is defined to preserve the total work done by capillary forces during wetting. This leads to its formal definition as the average capillary suction (where suction is $-\psi(\theta)$) integrated over the change in water content :
+The **wetting front suction head**, $\psi_f$, represents the effective capillary pull exerted by the dry soil on the water at the front. It is not an arbitrary fitting parameter but can be physically related to the soil's water retention curve, $\psi(\theta)$. The Green-Ampt model's sharp front collapses the true, thin transition zone where suction varies continuously with water content. The parameter $\psi_f$ is defined to preserve the total work done by capillary forces during wetting. This leads to its formal definition as the average capillary suction (where suction is $-\psi(\theta)$) integrated over the change in water content [@problem_id:3885465]:
 
 $$ \psi_f = \frac{1}{\theta_s - \theta_i} \int_{\theta_i}^{\theta_s} [-\psi(\theta)] d\theta $$
 
-This integral formulation demonstrates how $\psi_f$ aggregates the capillary properties of the soil, as described by the full [water retention curve](@entry_id:1133972), into a single, effective parameter for the simplified model.
+This integral formulation demonstrates how $\psi_f$ aggregates the capillary properties of the soil, as described by the full water retention curve, into a single, effective parameter for the simplified model.
 
 ### Deriving the Infiltration Capacity Equation
 
@@ -69,8 +69,8 @@ With the model structure and parameters defined, we can derive the governing equ
 
 The flux $f_c$ is given by Darcy's law: $f_c = K_s \cdot i_{grad}$, where $i_{grad}$ is the hydraulic gradient. The gradient is the total head drop across the wetted zone divided by its length, $z_f$.
 
-*   **Head at the surface ($z=0$):** The total head is the sum of [pressure head](@entry_id:141368) ($h_p$) and elevation head ($-z=0$ in this coordinate system). So, $H_{surface} = h_p$.
-*   **Head at the wetting front ($z=z_f$):** The total head is the sum of [pressure head](@entry_id:141368) ($-\psi_f$) and elevation head ($-z_f$). So, $H_{front} = -\psi_f - z_f$.
+*   **Head at the surface ($z=0$):** The total head is the sum of pressure head ($h_p$) and elevation head ($-z=0$ in this coordinate system). So, $H_{surface} = h_p$.
+*   **Head at the wetting front ($z=z_f$):** The total head is the sum of pressure head ($-\psi_f$) and elevation head ($-z_f$). So, $H_{front} = -\psi_f - z_f$.
 
 The head drop driving the flow is $\Delta H = H_{surface} - H_{front} = h_p - (-\psi_f - z_f) = h_p + \psi_f + z_f$.
 The hydraulic gradient is therefore:
@@ -81,7 +81,7 @@ Substituting this into Darcy's law gives the infiltration capacity as a function
 
 $$ f_c(z_f) = K_s \left( 1 + \frac{h_p + \psi_f}{z_f} \right) $$
 
-While correct, this form is not as practical as one expressed in terms of cumulative infiltration, $F$. Using the mass balance relationship $z_f = F / \Delta\theta$, we arrive at the standard Green-Ampt equation for infiltration capacity :
+While correct, this form is not as practical as one expressed in terms of cumulative infiltration, $F$. Using the mass balance relationship $z_f = F / \Delta\theta$, we arrive at the standard Green-Ampt equation for infiltration capacity [@problem_id:3885498]:
 
 $$ f_c(F) = K_s \left( 1 + \frac{(h_p + \psi_f)\Delta\theta}{F} \right) $$
 
@@ -95,23 +95,23 @@ As infiltration proceeds over a long time ($t \to \infty$, $F \to \infty$), the 
 
 $$ \lim_{F \to \infty} f_c(F) = K_s(1 + 0) = K_s $$
 
-This is a crucial insight: for long-duration events, the influence of [capillarity](@entry_id:144455) becomes negligible relative to the depth of the wetted zone, and the infiltration process becomes controlled solely by gravity acting on a saturated column. The infiltration rate approaches the soil's saturated hydraulic conductivity, $K_s$. 
+This is a crucial insight: for long-duration events, the influence of capillarity becomes negligible relative to the depth of the wetted zone, and the infiltration process becomes controlled solely by gravity acting on a saturated column. The infiltration rate approaches the soil's saturated hydraulic conductivity, $K_s$. [@problem_id:3885504]
 
 ### Application to Rainfall Events
 
 The Green-Ampt model is particularly useful for predicting the generation of runoff from rainfall. The key is to distinguish between when infiltration is limited by the supply of water (rainfall) and when it is limited by the soil's capacity to absorb it.
 
-*   **Pre-Ponding Phase:** At the start of a rainstorm, the soil's infiltration capacity $f_c$ is typically much greater than the rainfall intensity $i$. In this **supply-limited** phase, the soil can absorb all the water provided, so the actual infiltration rate, $f$, is equal to the rainfall intensity: $f(t) = i$. This continues as long as $i \le f_c(t)$. 
+*   **Pre-Ponding Phase:** At the start of a rainstorm, the soil's infiltration capacity $f_c$ is typically much greater than the rainfall intensity $i$. In this **supply-limited** phase, the soil can absorb all the water provided, so the actual infiltration rate, $f$, is equal to the rainfall intensity: $f(t) = i$. This continues as long as $i \le f_c(t)$. [@problem_id:3885487]
 
-*   **Onset of Ponding:** As infiltration proceeds, cumulative infiltration $F$ increases, and according to the Green-Ampt equation, the infiltration capacity $f_c$ decreases. If the rainfall intensity is greater than the soil's saturated hydraulic conductivity ($i > K_s$), there will inevitably come a time, $t_p$, when the declining capacity becomes equal to the constant rainfall rate. This is the moment of **ponding onset**: $f_c(t_p) = i$. 
+*   **Onset of Ponding:** As infiltration proceeds, cumulative infiltration $F$ increases, and according to the Green-Ampt equation, the infiltration capacity $f_c$ decreases. If the rainfall intensity is greater than the soil's saturated hydraulic conductivity ($i > K_s$), there will inevitably come a time, $t_p$, when the declining capacity becomes equal to the constant rainfall rate. This is the moment of **ponding onset**: $f_c(t_p) = i$. [@problem_id:3885487]
 
-*   **Post-Ponding Phase:** For all times $t > t_p$, the rainfall supply exceeds the soil's absorption capacity ($i > f_c(t)$). In this **capacity-limited** phase, infiltration occurs at the maximum possible rate, so $f(t) = f_c(t)$. The excess water, $i - f_c(t)$, cannot enter the soil and becomes [surface runoff](@entry_id:1132694).
+*   **Post-Ponding Phase:** For all times $t > t_p$, the rainfall supply exceeds the soil's absorption capacity ($i > f_c(t)$). In this **capacity-limited** phase, infiltration occurs at the maximum possible rate, so $f(t) = f_c(t)$. The excess water, $i - f_c(t)$, cannot enter the soil and becomes surface runoff.
 
 #### A Case Study: Predicting Infiltration-Excess Runoff
 
-Let's consider a practical application using the principles discussed. Imagine a homogeneous soil with $K_s = 10 \text{ mm h}^{-1}$, $\psi_f = 100 \text{ mm}$, $\theta_s = 0.45$, and $\theta_i = 0.20$. This soil is subjected to a 2-hour storm with a constant rainfall intensity of $i = 40 \text{ mm h}^{-1}$. The water table is deep, so we only need to consider infiltration processes near the surface. 
+Let's consider a practical application using the principles discussed. Imagine a homogeneous soil with $K_s = 10 \text{ mm h}^{-1}$, $\psi_f = 100 \text{ mm}$, $\theta_s = 0.45$, and $\theta_i = 0.20$. This soil is subjected to a 2-hour storm with a constant rainfall intensity of $i = 40 \text{ mm h}^{-1}$. The water table is deep, so we only need to consider infiltration processes near the surface. [@problem_id:3885471]
 
-1.  **Assess Runoff Potential:** First, we check if ponding is possible. We compare the rainfall intensity to the ultimate, gravity-driven infiltration rate, $K_s$. Here, $i = 40 \text{ mm h}^{-1} > K_s = 10 \text{ mm h}^{-1}$. Since the supply rate exceeds the soil's long-term capacity, ponding and subsequent **[infiltration-excess runoff](@entry_id:1126487)** will occur.
+1.  **Assess Runoff Potential:** First, we check if ponding is possible. We compare the rainfall intensity to the ultimate, gravity-driven infiltration rate, $K_s$. Here, $i = 40 \text{ mm h}^{-1} > K_s = 10 \text{ mm h}^{-1}$. Since the supply rate exceeds the soil's long-term capacity, ponding and subsequent **infiltration-excess runoff** will occur.
 
 2.  **Calculate Time to Ponding:** Ponding begins when the infiltration capacity drops to the level of the rainfall intensity. We first need to find the cumulative infiltration, $F_p$, at which this occurs. We use the Green-Ampt equation (with $h_p=0$) and set $f_c = i$:
     $$ i = K_s \left( 1 + \frac{\psi_f \Delta\theta}{F_p} \right) $$

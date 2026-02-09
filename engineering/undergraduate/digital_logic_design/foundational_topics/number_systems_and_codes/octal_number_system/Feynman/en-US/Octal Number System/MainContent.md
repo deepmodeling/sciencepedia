@@ -15,7 +15,7 @@ We can express this mathematically. A number $(d_2 d_1 d_0)_{10}$ is really a sh
 
 $$(244)_R = 2 \times R^2 + 4 \times R^1 + 4 \times R^0$$
 
-Since we know this equals $100_{10}$, we have a simple algebraic equation: $2R^2 + 4R + 4 = 100$. Solving this reveals that $R=6$ . The ancient computer was based on a six-digit system! This elegant idea—that the value of a number is a sum of its digits multiplied by powers of the base—is the universal key that unlocks *any* number system, no matter how alien.
+Since we know this equals $100_{10}$, we have a simple algebraic equation: $2R^2 + 4R + 4 = 100$. Solving this reveals that $R=6$ [@problem_id:1949102]. The ancient computer was based on a six-digit system! This elegant idea—that the value of a number is a sum of its digits multiplied by powers of the base—is the universal key that unlocks *any* number system, no matter how alien.
 
 ### Welcome to Base-8
 
@@ -25,9 +25,9 @@ Converting from octal to our familiar decimal is a direct application of the law
 
 $$(62)_8 = 6 \times 8^1 + 2 \times 8^0 = 48 + 2 = 50_{10}$$
 
-Simple as that . The principle is so robust that it extends seamlessly to fractions. In decimal, $0.5$ means $5 \times 10^{-1}$, or five-tenths. In octal, a number like $(0.3)_8$ means $3 \times 8^{-1}$, or three-eighths, which we write as $0.375$ in decimal . The positions to the right of the "octal point" simply represent negative powers of eight: eighths, sixty-fourths, and so on.
+Simple as that [@problem_id:1949115]. The principle is so robust that it extends seamlessly to fractions. In decimal, $0.5$ means $5 \times 10^{-1}$, or five-tenths. In octal, a number like $(0.3)_8$ means $3 \times 8^{-1}$, or three-eighths, which we write as $0.375$ in decimal [@problem_id:1949116]. The positions to the right of the "octal point" simply represent negative powers of eight: eighths, sixty-fourths, and so on.
 
-Going the other way—from decimal to octal—is like asking, "how many groups of eight can I pack into this number?" For instance, to convert the decimal number $99$ to octal, we use a beautifully simple process of repeated division .
+Going the other way—from decimal to octal—is like asking, "how many groups of eight can I pack into this number?" For instance, to convert the decimal number $99$ to octal, we use a beautifully simple process of repeated division [@problem_id:1949153].
 1.  Divide 99 by 8: you get 12 with a remainder of **3**. This remainder is our last octal digit.
 2.  Now, divide the result, 12, by 8: you get 1 with a remainder of **4**. This is our next digit.
 3.  Finally, divide 1 by 8: you get 0 with a remainder of **1**. This is our first digit.
@@ -36,7 +36,7 @@ Reading the remainders from bottom to top gives us $(143)_8$. And we can check o
 
 ### The Rosetta Stone of Computing
 
-At this point, you might be thinking, "This is a cute mathematical game, but why would anyone use this?" The answer is one of the most elegant connections in all of [digital logic](@article_id:178249). Computers, at their core, are profoundly simple. They think in **binary** (base-2), a language with only two "digits": 0 and 1. Every piece of information, every calculation, is a vast sea of these ones and zeroes.
+At this point, you might be thinking, "This is a cute mathematical game, but why would anyone use this?" The answer is one of the most elegant connections in all of [digital logic](@keyword=digital_logic|lang=en-US|style=Feynman). Computers, at their core, are profoundly simple. They think in **binary** (base-2), a language with only two "digits": 0 and 1. Every piece of information, every calculation, is a vast sea of these ones and zeroes.
 
 For a human, a binary number like `110101011` is an unreadable mess. It’s too long, too monotonous. We need a better way to write it down. We could convert it to decimal, but that requires a fair bit of calculation. Is there a more direct translation?
 
@@ -46,18 +46,18 @@ Let's transform that binary monster, $(110101011)_2$. Instead of trying to read 
 
 $$ (110 \ 101 \ 011)_2 $$
 
-Now, we translate each [little group](@article_id:198269) into a single digit:
+Now, we translate each [little group](@keyword=little_group|lang=en-US|style=Feynman) into a single digit:
 -   $(110)_2 = 1 \times 2^2 + 1 \times 2^1 + 0 \times 2^0 = 4 + 2 + 0 = 6$
 -   $(101)_2 = 1 \times 2^2 + 0 \times 2^1 + 1 \times 2^0 = 4 + 0 + 1 = 5$
 -   $(011)_2 = 0 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 = 0 + 2 + 1 = 3$
 
-Putting them together, we get $(653)_8$ . Octal is a brilliant shorthand, a compact and human-readable representation of the underlying binary code. The conversion is a simple lookup, not a complex calculation. The reverse is just as easy. To find the binary for $(61)_8$, we just convert each digit to its 3-bit binary equivalent: $6 \rightarrow 110$ and $1 \rightarrow 001$. String them together, and you get $(110001)_2$ .
+Putting them together, we get $(653)_8$ [@problem_id:1949145]. Octal is a brilliant shorthand, a compact and human-readable representation of the underlying binary code. The conversion is a simple lookup, not a complex calculation. The reverse is just as easy. To find the binary for $(61)_8$, we just convert each digit to its 3-bit binary equivalent: $6 \rightarrow 110$ and $1 \rightarrow 001$. String them together, and you get $(110001)_2$ [@problem_id:1949117].
 
-This relationship is not a coincidence; it's a mathematical necessity. If you have a device that uses a 3-digit octal number, it can display $8 \times 8 \times 8 = 8^3 = 512$ different values. To store this information in binary, you would need $n$ bits such that $2^n \ge 8^3$. Since $8^3 = (2^3)^3 = 2^9$, you need exactly 9 bits . Three octal digits map perfectly to nine bits—three bits for each digit. Octal is not just a different number system; it's a human-friendly lens for viewing the binary world.
+This relationship is not a coincidence; it's a mathematical necessity. If you have a device that uses a 3-digit octal number, it can display $8 \times 8 \times 8 = 8^3 = 512$ different values. To store this information in binary, you would need $n$ bits such that $2^n \ge 8^3$. Since $8^3 = (2^3)^3 = 2^9$, you need exactly 9 bits [@problem_id:1949126]. Three octal digits map perfectly to nine bits—three bits for each digit. Octal is not just a different number system; it's a human-friendly lens for viewing the binary world.
 
 ### Life in the Octal Lane
 
-Once you get the hang of it, living in an octal world is no different from living in our decimal one. The universal rules still apply. Consider doing addition. What happens when you add $(1)_8$ to $(377)_8$? 
+Once you get the hang of it, living in an octal world is no different from living in our decimal one. The universal rules still apply. Consider doing addition. What happens when you add $(1)_8$ to $(377)_8$? [@problem_id:1949119]
 
 Think of it like a car's odometer hitting 999. When you add 1, the 9 becomes 0 and "carries" a 1 to the next digit. That 9 also becomes 0 and carries a 1. The final 9 becomes a 10. The result is 1000. The same thing happens in octal.
 
@@ -68,17 +68,17 @@ In $(377)_8 + (1)_8$:
 
 The result is $(400)_8$. The fundamental mechanism of "carrying the one" is universal to all positional systems.
 
-This idea of a shared underlying structure allows us to navigate between different systems with ease. Suppose you need to convert an octal permission code, $(52)_8$, for a modern system that uses **[hexadecimal](@article_id:176119)** (base-16) . Should you try to convert directly? There's a much more beautiful way: use binary as the universal translator.
+This idea of a shared underlying structure allows us to navigate between different systems with ease. Suppose you need to convert an octal permission code, $(52)_8$, for a modern system that uses **[hexadecimal](@keyword=hexadecimal|lang=en-US|style=Feynman)** (base-16) [@problem_id:1949108]. Should you try to convert directly? There's a much more beautiful way: use binary as the universal translator.
 
 1.  **Octal to Binary**: Convert each octal digit to 3 bits.
     $$(52)_8 \rightarrow (101 \ 010)_2$$
-2.  **Binary to Hexadecimal**: Since [hexadecimal](@article_id:176119) is base-16 and $16 = 2^4$, we simply re-group the same binary string into clusters of four.
+2.  **Binary to Hexadecimal**: Since [hexadecimal](@keyword=hexadecimal|lang=en-US|style=Feynman) is base-16 and $16 = 2^4$, we simply re-group the same binary string into clusters of four.
     $$(0010 \ 1010)_2$$
     (We add leading zeros to make a full group of four.)
 3.  **Translate the 4-bit groups**:
     -   $(0010)_2 = 2_{16}$
     -   $(1010)_2 = 10_{10} = A_{16}$
 
-So, $(52)_8 = (2A)_{16}$. Octal and [hexadecimal](@article_id:176119) are like two different languages that both share a common root in binary. By understanding this root, we can translate between them effortlessly.
+So, $(52)_8 = (2A)_{16}$. Octal and [hexadecimal](@keyword=hexadecimal|lang=en-US|style=Feynman) are like two different languages that both share a common root in binary. By understanding this root, we can translate between them effortlessly.
 
-The octal system, while less common today than [hexadecimal](@article_id:176119), serves as a perfect vehicle for this journey of discovery. It shows us that the numerals we use every day are just one of many possible structures, all built on the elegant and unified principle of positional value. More importantly, it provides an intuitive and essential bridge from our human world of counting to the binary heart of the machine.
+The octal system, while less common today than [hexadecimal](@keyword=hexadecimal|lang=en-US|style=Feynman), serves as a perfect vehicle for this journey of discovery. It shows us that the numerals we use every day are just one of many possible structures, all built on the elegant and unified principle of positional value. More importantly, it provides an intuitive and essential bridge from our human world of counting to the binary heart of the machine.

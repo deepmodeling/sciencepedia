@@ -1,54 +1,54 @@
 ## 应用与跨学科连接
 
-在前面的章节中，我们已经深入探讨了[应力-应变关系](@article_id:337788)的矩阵形式，这一优雅的数学框架。你可能已经体会到，将[弹性张量](@article_id:349909) $C_{ijkl}$ 的81个分量压缩成一个紧凑的 $6 \times 6$ 矩阵，不仅仅是为了书写上的便利。现在，我们将踏上一段更激动人心的旅程，去发现这个矩阵并不仅仅是一个记账工具；它更像是一个“基因”，编码了一种材料的力学特性。我们将看到，这个“基因”如何在不同的工程应用和科学领域中表达自我，展现出其惊人的普适性和内在的统一之美。
+在前面的章节中，我们已经深入探讨了[应力-应变关系](@keyword=stress_strain_relationship|lang=zh-CN|style=Feynman)的矩阵形式，这一优雅的数学框架。你可能已经体会到，将[弹性张量](@keyword=elasticity_tensor|lang=zh-CN|style=Feynman) $C_{ijkl}$ 的81个分量压缩成一个紧凑的 $6 \times 6$ 矩阵，不仅仅是为了书写上的便利。现在，我们将踏上一段更激动人心的旅程，去发现这个矩阵并不仅仅是一个记账工具；它更像是一个“基因”，编码了一种材料的力学特性。我们将看到，这个“基因”如何在不同的工程应用和科学领域中表达自我，展现出其惊人的普适性和内在的统一之美。
 
 ### 工程师的工具箱：从测量到设计
 
 对于工程师而言，理论的价值在于其解决实际问题的能力。应力-应变矩阵正是连接抽象理论与具体应用的坚实桥梁。
 
-#### [材料表征](@article_id:321750)：我们如何读取材料的“基因”？
+#### [材料表征](@keyword=materials_characterization|lang=zh-CN|style=Feynman)：我们如何读取材料的“基因”？
 
-我们手中的刚度矩阵（stiffness matrix）$\mathbf{C}$ 或[柔度矩阵](@article_id:364895)（compliance matrix）$\mathbf{S}$ 里的数字从何而来？它们并非凭空产生，而是必须通过实验来“审问”材料本身。想象一下，你得到一块新型的复合材料层压板，它的内部结构是未知的秘密。你如何揭开它的面纱？你不能仅仅看着它。你必须对它提问——用力学的方式。
+我们手中的刚度矩阵（stiffness matrix）$\mathbf{C}$ 或[柔度矩阵](@keyword=compliance_matrix|lang=zh-CN|style=Feynman)（compliance matrix）$\mathbf{S}$ 里的数字从何而来？它们并非凭空产生，而是必须通过实验来“审问”材料本身。想象一下，你得到一块新型的复合材料层压板，它的内部结构是未知的秘密。你如何揭开它的面纱？你不能仅仅看着它。你必须对它提问——用力学的方式。
 
-你可以将一个样品放在[拉伸试验](@article_id:364671)机上，沿着一个方向（比如材料的纤维方向）施加一个已知的拉力。通过精确测量样品在这个方向上的伸长以及在垂直方向上的收缩，你就能反推出[刚度矩阵](@article_id:323515)中的几个关键分量，例如 $Q_{11}$ 和 $Q_{12}$。接着，你再对它施加纯剪切力，测量其剪切变形，又能确定出剪切刚度项 $Q_{66}$。通过一系列精心设计的简单实验，我们就能一步步地“破译”出这块看似复杂的各向异性材料的完整刚度矩阵 。这个过程完美地诠释了理论与实验的结合：矩阵为我们提供了一个清晰的框架，来整理和理解从现实世界中测量到的数据。
+你可以将一个样品放在[拉伸试验](@keyword=tensile_testing|lang=zh-CN|style=Feynman)机上，沿着一个方向（比如材料的纤维方向）施加一个已知的拉力。通过精确测量样品在这个方向上的伸长以及在垂直方向上的收缩，你就能反推出[刚度矩阵](@keyword=stiffness_matrix|lang=zh-CN|style=Feynman)中的几个关键分量，例如 $Q_{11}$ 和 $Q_{12}$。接着，你再对它施加纯剪切力，测量其剪切变形，又能确定出剪切刚度项 $Q_{66}$。通过一系列精心设计的简单实验，我们就能一步步地“破译”出这块看似复杂的各向异性材料的完整刚度矩阵 [@problem_id:2691804]。这个过程完美地诠释了理论与实验的结合：矩阵为我们提供了一个清晰的框架，来整理和理解从现实世界中测量到的数据。
 
 #### 创造更好的材料：复合材料的精巧构筑
 
-一旦我们掌握了单层复合材料（即“单层板”）的刚度矩阵 $\mathbf{Q}$ ，我们就可以从“材料的使用者”转变为“材料的建筑师”。这就是经典层压[板理论](@article_id:350660)（Classical Lamination Theory）的魅力所在。
+一旦我们掌握了单层复合材料（即“单层板”）的刚度矩阵 $\mathbf{Q}$ [@problem_id:2870833]，我们就可以从“材料的使用者”转变为“材料的建筑师”。这就是经典层压[板理论](@keyword=plate_theory|lang=zh-CN|style=Feynman)（Classical Lamination Theory）的魅力所在。
 
-想象一下，你像叠三明治一样，将许多拥有简单[刚度矩阵](@article_id:323515)的单层板以不同的角度（例如 $[0/90/0]$）堆叠起来。奇妙的事情发生了。通过对每一层的[刚度矩阵](@article_id:323515) $\bar{\mathbf{Q}}_k$（在[全局坐标系](@article_id:350197)下表示）沿着板的厚度方向进行积分，我们得到了一个全新的、功能更强大的“超级矩阵”——$\mathbf{ABD}$ 矩阵 。
+想象一下，你像叠三明治一样，将许多拥有简单[刚度矩阵](@keyword=stiffness_matrix|lang=zh-CN|style=Feynman)的单层板以不同的角度（例如 $[0/90/0]$）堆叠起来。奇妙的事情发生了。通过对每一层的[刚度矩阵](@keyword=stiffness_matrix|lang=zh-CN|style=Feynman) $\bar{\mathbf{Q}}_k$（在[全局坐标系](@keyword=global_coordinate_system|lang=zh-CN|style=Feynman)下表示）沿着板的厚度方向进行积分，我们得到了一个全新的、功能更强大的“超级矩阵”——$\mathbf{ABD}$ 矩阵 [@problem_id:2641413]。
 
 $$
 \begin{pmatrix} \mathbf{N} \\ \mathbf{M} \end{pmatrix} = \begin{pmatrix} \mathbf{A} & \mathbf{B} \\ \mathbf{B} & \mathbf{D} \end{pmatrix} \begin{pmatrix} \boldsymbol{\varepsilon}^0 \\ \boldsymbol{\kappa} \end{pmatrix}
 $$
 
-其中，$\mathbf{A}$ 矩阵描述了材料的拉伸-压缩行为，$\mathbf{D}$ 矩阵描述了其弯曲-扭转行为 。而最有趣的莫过于 $\mathbf{B}$ 矩阵，它描述了一种奇特的“拉伸-弯曲耦合”效应。如果 $\mathbf{B}$ 矩阵的元素不为零（这通常发生在非对称铺层的层压板中），仅仅是拉伸这块板，就能让它像花儿一样弯曲起来！这不是什么戏法，而是[矩阵力学](@article_id:316554)的诗篇。通过精心设计[铺层顺序](@article_id:376112)和角度，工程师可以精确地“编程”材料的 $\mathbf{ABD}$ 矩阵，创造出具有特定力学性能（例如，在[飞机机翼设计](@article_id:337315)中用以抵抗气动扭转）的结构。从简单的 $\mathbf{Q}$ 矩阵到功能强大的 $\mathbf{ABD}$ 矩阵，我们看到了通过数学构造实现性能飞跃的经典范例。
+其中，$\mathbf{A}$ 矩阵描述了材料的拉伸-压缩行为，$\mathbf{D}$ 矩阵描述了其弯曲-扭转行为 [@problem_id:2909798]。而最有趣的莫过于 $\mathbf{B}$ 矩阵，它描述了一种奇特的“拉伸-弯曲耦合”效应。如果 $\mathbf{B}$ 矩阵的元素不为零（这通常发生在非对称铺层的层压板中），仅仅是拉伸这块板，就能让它像花儿一样弯曲起来！这不是什么戏法，而是[矩阵力学](@keyword=quantum_mechanics_matrices|lang=zh-CN|style=Feynman)的诗篇。通过精心设计[铺层顺序](@keyword=stacking_sequence|lang=zh-CN|style=Feynman)和角度，工程师可以精确地“编程”材料的 $\mathbf{ABD}$ 矩阵，创造出具有特定力学性能（例如，在[飞机机翼设计](@keyword=aircraft_wing_design|lang=zh-CN|style=Feynman)中用以抵抗气动扭转）的结构。从简单的 $\mathbf{Q}$ 矩阵到功能强大的 $\mathbf{ABD}$ 矩阵，我们看到了通过数学构造实现性能飞跃的经典范例。
 
 #### 预测未来：计算力学的崛起
 
 然而，现实世界中的结构，如桥梁、汽车底盘或飞机机身，其几何形状和受力状况远比一块平整的板要复杂。我们无法用笔和纸来解析它们的行为。这正是应力-应变矩阵与计算机结合，展现其真正威力的地方——有限元方法（Finite Element Method, FEM）。
 
-FEM 的核心思想是“化整为零”。它将一个复杂的结构分解成数百万个微小的、几何形状简单的单元（例如三角形或四面体） 。在每一个微小的单元内部，我们熟悉的[本构矩阵](@article_id:344276) $\mathbf{C}$（在有限元中常记为 $\mathbf{D}$）精确地描述了应力与应变之间的局部物理规律。计算机的工作，就是将这数百万块“力学拼图”按照它们之间的连接关系组装起来，形成一个庞大的线性方程组。通过求解这个方程组，我们就能预测出整个结构在各种载荷下的变形和应力分布。
+FEM 的核心思想是“化整为零”。它将一个复杂的结构分解成数百万个微小的、几何形状简单的单元（例如三角形或四面体）[@problem_id:2691781] [@problem_id:2588383]。在每一个微小的单元内部，我们熟悉的[本构矩阵](@keyword=constitutive_matrix|lang=zh-CN|style=Feynman) $\mathbf{C}$（在有限元中常记为 $\mathbf{D}$）精确地描述了应力与应变之间的局部物理规律。计算机的工作，就是将这数百万块“力学拼图”按照它们之间的连接关系组装起来，形成一个庞大的线性方程组。通过求解这个方程组，我们就能预测出整个结构在各种载荷下的变形和应力分布。
 
-在这里，[本构矩阵](@article_id:344276)扮演了连接[材料科学](@article_id:312640)与大规模工程分析的纽带角色。它将材料的内在属性，以一种计算机可以理解和处理的形式，注入到对宏观结构的模拟之中。
+在这里，[本构矩阵](@keyword=constitutive_matrix|lang=zh-CN|style=Feynman)扮演了连接[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)与大规模工程分析的纽带角色。它将材料的内在属性，以一种计算机可以理解和处理的形式，注入到对宏观结构的模拟之中。
 
-### 物理学家的游乐场：从[微观结构](@article_id:309020)到[物质波](@article_id:318030)
+### 物理学家的游乐场：从[微观结构](@keyword=microstructure|lang=zh-CN|style=Feynman)到[物质波](@keyword=matter_wave_2|lang=zh-CN|style=Feynman)
 
 应力-应变矩阵不仅是工程师宏观设计的工具，它同样为我们揭示材料微观世界的奥秘提供了深刻的洞见。
 
 #### 材料的微观世界
 
-*   **均质化与平均之美**：许[多工](@article_id:329938)程材料，例如短切纤维复合材料，从微观上看是由各向异性的组分（如纤维）[随机分布](@article_id:360036)构成的，但从宏观上看却表现出各向同性。这是为什么呢？矩阵形式和它的[不变量理论](@article_id:305560)给出了一个优美的解答。我们可以对单个各向异性层板的旋转刚度矩阵 $\bar{\mathbf{Q}}(\theta)$ 在所有可能的取向角 $\theta$ 上进行积分平均。神奇的是，那些依赖于角度的项（如 $\cos(2\theta)$）在 $[0, \pi)$ 的[均匀分布](@article_id:325445)下平均为零，最终留下的是一个形式上完美的各向同性刚度矩阵 。这揭示了宏观对称性是如何从微观的无序中涌现出来的。
+*   **均质化与平均之美**：许[多工](@keyword=multiplexing|lang=zh-CN|style=Feynman)程材料，例如短切纤维复合材料，从微观上看是由各向异性的组分（如纤维）[随机分布](@keyword=random_dispersion|lang=zh-CN|style=Feynman)构成的，但从宏观上看却表现出各向同性。这是为什么呢？矩阵形式和它的[不变量理论](@keyword=invariant_theory|lang=zh-CN|style=Feynman)给出了一个优美的解答。我们可以对单个各向异性层板的旋转刚度矩阵 $\bar{\mathbf{Q}}(\theta)$ 在所有可能的取向角 $\theta$ 上进行积分平均。神奇的是，那些依赖于角度的项（如 $\cos(2\theta)$）在 $[0, \pi)$ 的[均匀分布](@keyword=uniform_distribution|lang=zh-CN|style=Feynman)下平均为零，最终留下的是一个形式上完美的各向同性刚度矩阵 [@problem_id:2691801]。这揭示了宏观对称性是如何从微观的无序中涌现出来的。
 
-*   **缺陷的“力”**：完美的晶体只存在于教科书中。真实材料内部充满了各种“不完美”，例如[位错](@article_id:299027)、晶界或第二相沉淀物。这些微观结构对材料的宏观性能（如强度和韧性）至关重要。例如，在合金中，一个微小的球形沉淀物（析出相）由于其自然[晶格](@article_id:300090)尺寸与周围的基体不匹配，会在其周围产生巨大的内部应[力场](@article_id:307740) 。弹性力学理论，借助[应力-应变关系](@article_id:337788)，使我们能够精确计算这种由“失配”引起的应力，从而理解和设计“[沉淀强化](@article_id:322043)”这一关键的材料增强机制。
+*   **缺陷的“力”**：完美的晶体只存在于教科书中。真实材料内部充满了各种“不完美”，例如[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)、晶界或第二相沉淀物。这些微观结构对材料的宏观性能（如强度和韧性）至关重要。例如，在合金中，一个微小的球形沉淀物（析出相）由于其自然[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)尺寸与周围的基体不匹配，会在其周围产生巨大的内部应[力场](@keyword=force_field|lang=zh-CN|style=Feynman) [@problem_id:45440]。弹性力学理论，借助[应力-应变关系](@keyword=stress_strain_relationship|lang=zh-CN|style=Feynman)，使我们能够精确计算这种由“失配”引起的应力，从而理解和设计“[沉淀强化](@keyword=precipitation_strengthening|lang=zh-CN|style=Feynman)”这一关键的材料增强机制。
 
-*   **材料的老化与损伤**：材料和生命体一样，会随着时间的推移和使用的增加而“疲劳”和“损伤”。微小的裂纹会萌生、扩展，最终导致失效。我们如何描述这一过程？[连续介质损伤力学](@article_id:356380)（Continuum Damage Mechanics）提供了一个优雅的框架。我们可以将损伤视为材料的“软化”。通过引入一个损伤算子矩阵 $\mathbf{M}$，我们可以对原始的、完好无损的刚度矩阵 $\mathbf{C}_0$ 进行修正，得到一个考虑了损伤的、退化的刚度矩阵 $\mathbf{C}_d = \mathbf{M}^T \mathbf{C}_0 \mathbf{M}$ 。这种方法使我们能够将微观损伤累积的物理过程，量化为[刚度矩阵](@article_id:323515)的演化，从而为预测部件的剩余寿命和可靠性提供了可能。
+*   **材料的老化与损伤**：材料和生命体一样，会随着时间的推移和使用的增加而“疲劳”和“损伤”。微小的裂纹会萌生、扩展，最终导致失效。我们如何描述这一过程？[连续介质损伤力学](@keyword=continuum_damage_mechanics|lang=zh-CN|style=Feynman)（Continuum Damage Mechanics）提供了一个优雅的框架。我们可以将损伤视为材料的“软化”。通过引入一个损伤算子矩阵 $\mathbf{M}$，我们可以对原始的、完好无损的刚度矩阵 $\mathbf{C}_0$ 进行修正，得到一个考虑了损伤的、退化的刚度矩阵 $\mathbf{C}_d = \mathbf{M}^T \mathbf{C}_0 \mathbf{M}$ [@problem_id:2691779]。这种方法使我们能够将微观损伤累积的物理过程，量化为[刚度矩阵](@keyword=stiffness_matrix|lang=zh-CN|style=Feynman)的演化，从而为预测部件的剩余寿命和可靠性提供了可能。
 
-#### 原子之舞：[晶格](@article_id:300090)中的[弹性波](@article_id:375072)
+#### 原子之舞：[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中的[弹性波](@keyword=elastic_waves|lang=zh-CN|style=Feynman)
 
-刚度矩阵不仅支配着材料的静态行为，它同样是材料动态特性的核心。想象一下钟声响起，清脆的声音是[弹性波](@article_id:375072)在金属中传播的结果。在各向异性的晶体中，声[波的传播](@article_id:304493)速度惊人地依赖于其传播方向。
+刚度矩阵不仅支配着材料的静态行为，它同样是材料动态特性的核心。想象一下钟声响起，清脆的声音是[弹性波](@keyword=elastic_waves|lang=zh-CN|style=Feynman)在金属中传播的结果。在各向异性的晶体中，声[波的传播](@keyword=wave_propagation|lang=zh-CN|style=Feynman)速度惊人地依赖于其传播方向。
 
-这个现象的背后，正是[刚度矩阵](@article_id:323515)在发挥作用。从牛顿第二定律（$\rho \ddot{\mathbf{u}} = \nabla \cdot \boldsymbol{\sigma}$）出发，结合[应力-应变关系](@article_id:337788)和[平面波解](@article_id:374121)的假设，我们可以推导出一个被称为[克里斯托费尔方程](@article_id:359539)（Christoffel's equation）的[本征值问题](@article_id:302593)。其中，支配波传播的克里斯托费尔[张量](@article_id:321604) $\boldsymbol{\Gamma}$，其分量正是由[刚度矩阵](@article_id:323515) $C_{ijkl}$ 和波的传播方向矢量 $n_k$ 组合而成。这个新矩阵的[本征值](@article_id:315305)，竟然就是材料密度 $\rho$ 乘以三个可能的[波速](@article_id:323732)的平方（$\rho v^2$）！  例如，在[立方晶体](@article_id:377708)中，沿着高对称的 $[100]$ 或 $[110]$ 方向，我们可以精确地解出[纵波和横波](@article_id:356612)的速度。这一联系将固[体力](@article_id:353281)学与[晶体学](@article_id:301099)、凝聚态物理学紧密地联系在一起，揭示了材料的宏观弹性与其内部原子[排列](@article_id:296886)和相互作用的深刻关系。
+这个现象的背后，正是[刚度矩阵](@keyword=stiffness_matrix|lang=zh-CN|style=Feynman)在发挥作用。从牛顿第二定律（$\rho \ddot{\mathbf{u}} = \nabla \cdot \boldsymbol{\sigma}$）出发，结合[应力-应变关系](@keyword=stress_strain_relationship|lang=zh-CN|style=Feynman)和[平面波解](@keyword=plane_wave_solutions|lang=zh-CN|style=Feynman)的假设，我们可以推导出一个被称为[克里斯托费尔方程](@keyword=christoffel_equation|lang=zh-CN|style=Feynman)（Christoffel's equation）的[本征值问题](@keyword=eigenvalue_problems|lang=zh-CN|style=Feynman)。其中，支配波传播的克里斯托费尔[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $\boldsymbol{\Gamma}$，其分量正是由[刚度矩阵](@keyword=stiffness_matrix|lang=zh-CN|style=Feynman) $C_{ijkl}$ 和波的传播方向矢量 $n_k$ 组合而成。这个新矩阵的[本征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)，竟然就是材料密度 $\rho$ 乘以三个可能的[波速](@keyword=wave_speed|lang=zh-CN|style=Feynman)的平方（$\rho v^2$）！ [@problem_id:2668193] 例如，在[立方晶体](@keyword=cubic_crystals|lang=zh-CN|style=Feynman)中，沿着高对称的 $[100]$ 或 $[110]$ 方向，我们可以精确地解出[纵波和横波](@keyword=p_waves_and_s_waves|lang=zh-CN|style=Feynman)的速度。这一联系将固[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)学与[晶体学](@keyword=crystallography|lang=zh-CN|style=Feynman)、凝聚态物理学紧密地联系在一起，揭示了材料的宏观弹性与其内部原子[排列](@keyword=permutation|lang=zh-CN|style=Feynman)和相互作用的深刻关系。
 
 ### 统一的语言：跨越学科的边界
 
@@ -58,26 +58,26 @@ FEM 的核心思想是“化整为零”。它将一个复杂的结构分解成�
 
 大自然是终极的结构工程师，而生命本身就是力学规律的杰作。
 
-*   **硬组织**：以我们的骨骼为例。骨骼远非一块简单的、各向同性的材料。它是一种由进化精心优化的、轻质而坚固的复合材料。例如，皮质骨就具有显著的[正交各向异性](@article_id:375808)（orthotropy），其纵向、径向和周向的力学性能各不相同，以最高效的方式支撑我们的体重并抵抗各种活动产生的载荷 。我们可以用与分析碳纤维部件完全相同的[柔度矩阵](@article_id:364895) $\mathbf{S}$ 或刚度矩阵 $\mathbf{C}$ 来描述骨骼的力学行为，从而理解骨折的机制，设计更有效的骨植入物。
+*   **硬组织**：以我们的骨骼为例。骨骼远非一块简单的、各向同性的材料。它是一种由进化精心优化的、轻质而坚固的复合材料。例如，皮质骨就具有显著的[正交各向异性](@keyword=orthotropy|lang=zh-CN|style=Feynman)（orthotropy），其纵向、径向和周向的力学性能各不相同，以最高效的方式支撑我们的体重并抵抗各种活动产生的载荷 [@problem_id:2868815]。我们可以用与分析碳纤维部件完全相同的[柔度矩阵](@keyword=compliance_matrix|lang=zh-CN|style=Feynman) $\mathbf{S}$ 或刚度矩阵 $\mathbf{C}$ 来描述骨骼的力学行为，从而理解骨折的机制，设计更有效的骨植入物。
 
-*   **软组织与多孔介质**：现在，让我们将目光转向一些“湿软”的物质，例如你膝盖中的软骨，或是包裹着我们身体每个细胞的细胞外基质（ECM）。这些组织不仅是固体，它们更像是充满了水的海绵——专业上称为多孔介质（poroelastic media）。当你行走或跳跃时，压力会从软骨中挤出水分，这个过程对于关节的润滑和缓冲至关重要。著名的 Biot 理论巧妙地扩展了我们熟悉的弹性[本构关系](@article_id:323747)，将孔隙[流体压力](@article_id:333768) $p$ 作为一个新的变量引入。于是，[本构矩阵](@article_id:344276)不再仅仅连接应力和应变，它还联系着应力与流体含量的变化 。
+*   **软组织与多孔介质**：现在，让我们将目光转向一些“湿软”的物质，例如你膝盖中的软骨，或是包裹着我们身体每个细胞的细胞外基质（ECM）[@problem_id:2799120]。这些组织不仅是固体，它们更像是充满了水的海绵——专业上称为多孔介质（poroelastic media）。当你行走或跳跃时，压力会从软骨中挤出水分，这个过程对于关节的润滑和缓冲至关重要。著名的 Biot 理论巧妙地扩展了我们熟悉的弹性[本构关系](@keyword=constitutive_relations|lang=zh-CN|style=Feynman)，将孔隙[流体压力](@keyword=fluid_pressure|lang=zh-CN|style=Feynman) $p$ 作为一个新的变量引入。于是，[本构矩阵](@keyword=constitutive_matrix|lang=zh-CN|style=Feynman)不再仅仅连接应力和应变，它还联系着应力与流体含量的变化 [@problem_id:2589996]。
 $$
 \boldsymbol{\sigma} = \mathbf{D}_d \boldsymbol{\varepsilon} - \alpha p \mathbf{I}
 $$
-这种扩展后的矩阵形式，帮助我们理解了土壤的固结、[水凝胶](@article_id:319056)的溶胀，以及细胞如何通过感知周围基质的力学特性和流体流动来做出反应。
+这种扩展后的矩阵形式，帮助我们理解了土壤的固结、[水凝胶](@keyword=hydrogels|lang=zh-CN|style=Feynman)的溶胀，以及细胞如何通过感知周围基质的力学特性和流体流动来做出反应。
 
-#### [智能材料](@article_id:315332)：[多物理场](@article_id:343859)的交响
+#### [智能材料](@keyword=smart_materials|lang=zh-CN|style=Feynman)：[多物理场](@keyword=multiphysics|lang=zh-CN|style=Feynman)的交响
 
-到目前为止，我们的矩阵主要说的是力学的语言。但有些材料是“双语”甚至“多语”的。[压电材料](@article_id:376380)（piezoelectric materials）就是其中的杰出代表，它们能够流畅地在力学和电学世界之间“翻译”。
+到目前为止，我们的矩阵主要说的是力学的语言。但有些材料是“双语”甚至“多语”的。[压电材料](@keyword=piezoelectric_materials|lang=zh-CN|style=Feynman)（piezoelectric materials）就是其中的杰出代表，它们能够流畅地在力学和电学世界之间“翻译”。
 
-对一块[压电](@article_id:304953)晶体施加压力，它会产生电压（[正压电效应](@article_id:361101)）；反之，对它施加电场，它会发生形变（[逆压电效应](@article_id:325644)）。这种奇妙的耦合行为如何描述？答案是：扩展我们的[本构矩阵](@article_id:344276)！我们不再只有一个应力向量和一个应变向量，而是有了一个包含机械量和电学量的“广义应力”和“广义应变”向量。相应的，[本构矩阵](@article_id:344276)也变得更大，其非对角[块矩阵](@article_id:308854)优雅地捕捉了应力与电场、应变与电位移之间的[交叉](@article_id:315017)耦合 。
+对一块[压电](@keyword=piezoelectricity|lang=zh-CN|style=Feynman)晶体施加压力，它会产生电压（[正压电效应](@keyword=direct_piezoelectric_effect|lang=zh-CN|style=Feynman)）；反之，对它施加电场，它会发生形变（[逆压电效应](@keyword=converse_piezoelectric_effect|lang=zh-CN|style=Feynman)）。这种奇妙的耦合行为如何描述？答案是：扩展我们的[本构矩阵](@keyword=constitutive_matrix|lang=zh-CN|style=Feynman)！我们不再只有一个应力向量和一个应变向量，而是有了一个包含机械量和电学量的“广义应力”和“广义应变”向量。相应的，[本构矩阵](@keyword=constitutive_matrix|lang=zh-CN|style=Feynman)也变得更大，其非对角[块矩阵](@keyword=block_matrix|lang=zh-CN|style=Feynman)优雅地捕捉了应力与电场、应变与电位移之间的[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)耦合 [@problem_id:2691794]。
 $$
 \begin{pmatrix} \boldsymbol{\sigma} \\ \mathbf{D} \end{pmatrix} = \begin{pmatrix} \mathbf{c}^E & -\mathbf{e}^T \\ \mathbf{e} & \boldsymbol{\epsilon}^S \end{pmatrix} \begin{pmatrix} \boldsymbol{\varepsilon} \\ \mathbf{E} \end{pmatrix}
 $$
-这个扩展后的矩阵，完美地描绘了传感器、驱动器和超声换能器等智能设备的工作核心。它雄辩地证明了矩阵形式作为一种统一框架，在描述[多物理场耦合](@article_id:350545)现象方面的强大生命力。
+这个扩展后的矩阵，完美地描绘了传感器、驱动器和超声换能器等智能设备的工作核心。它雄辩地证明了矩阵形式作为一种统一框架，在描述[多物理场耦合](@keyword=multiphysics_coupling|lang=zh-CN|style=Feynman)现象方面的强大生命力。
 
 ### 结论
 
-回顾我们的旅程，从实验室的[拉伸试验](@article_id:364671)到飞机翅膀的复杂设计，从材料内部的微观应力到[晶格](@article_id:300090)中的[声波](@article_id:353278)传播，从坚硬的骨骼到智能的压[电陶瓷](@article_id:366800)，我们反复看到同一个主角——[应力-应变关系](@article_id:337788)矩阵。
+回顾我们的旅程，从实验室的[拉伸试验](@keyword=tensile_testing|lang=zh-CN|style=Feynman)到飞机翅膀的复杂设计，从材料内部的微观应力到[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中的[声波](@keyword=acoustic_waves|lang=zh-CN|style=Feynman)传播，从坚硬的骨骼到智能的压[电陶瓷](@keyword=electroceramics|lang=zh-CN|style=Feynman)，我们反复看到同一个主角——[应力-应变关系](@keyword=stress_strain_relationship|lang=zh-CN|style=Feynman)矩阵。
 
-它就像一块力学领域的“罗塞塔石碑”，让我们能够将一种材料最核心的力学属性，翻译成在广阔应用领域中关于其行为的精确预测。它的美，在于其内在的[逻辑一致性](@article_id:642159)，在于其惊人的[可扩展性](@article_id:640905)，能够被不断地调整、扩充，以拥抱日益丰富的物理现象。这个看似平淡无奇的数字方阵，实则是物理规律在物质世界中谱写的一曲和谐、统一而又变化无穷的赞歌。
+它就像一块力学领域的“罗塞塔石碑”，让我们能够将一种材料最核心的力学属性，翻译成在广阔应用领域中关于其行为的精确预测。它的美，在于其内在的[逻辑一致性](@keyword=consistency_of_logic|lang=zh-CN|style=Feynman)，在于其惊人的[可扩展性](@keyword=scalability|lang=zh-CN|style=Feynman)，能够被不断地调整、扩充，以拥抱日益丰富的物理现象。这个看似平淡无奇的数字方阵，实则是物理规律在物质世界中谱写的一曲和谐、统一而又变化无穷的赞歌。

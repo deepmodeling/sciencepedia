@@ -13,21 +13,21 @@ Imagine a perfect crystal of silicon, a vast, three-dimensional grid where every
 
 The encounter is, at its heart, a collision, not unlike a game of billiards. The intruder transfers some of its kinetic energy and momentum to the target atom. If the transferred energy is small, the lattice atom just shudders, dissipating the energy as vibrations (phonons) that ripple through the crystal as heat. But what if the kick is much harder?
 
-There is a certain minimum energy required to permanently knock an atom out of its comfortable lattice position, breaking its bonds with its neighbors and sending it careening into the space between atoms. This [critical energy](@entry_id:158905) is called the **threshold displacement energy**, denoted by the symbol $E_d$. Think of it as the "[escape velocity](@entry_id:157685)" from a lattice site. Its value, typically a few tens of electron-volts (eV), is a fundamental property of the crystal, reflecting the strength of its atomic bonds. For silicon, this value is around $15$ to $25\,\mathrm{eV}$  .
+There is a certain minimum energy required to permanently knock an atom out of its comfortable lattice position, breaking its bonds with its neighbors and sending it careening into the space between atoms. This [critical energy](@keyword=critical_energy|lang=en-US|style=Feynman) is called the **threshold displacement energy**, denoted by the symbol $E_d$. Think of it as the "[escape velocity](@keyword=escape_velocity|lang=en-US|style=Feynman)" from a lattice site. Its value, typically a few tens of electron-volts (eV), is a fundamental property of the crystal, reflecting the strength of its atomic bonds. For silicon, this value is around $15$ to $25\,\mathrm{eV}$ [@problem_id:4137124] [@problem_id:4137107].
 
-When an atom receives a kick with energy greater than $E_d$, it is dislodged. The atom that gets knocked out is called a **Primary Knock-on Atom (PKA)**. It leaves behind an empty site, a **vacancy**, and comes to rest in a non-lattice position, becoming an **interstitial**. This fundamental defect pair—a vacancy and a nearby interstitial—is known as a **Frenkel pair**. It is the elementary particle of displacement damage, the first signature of disorder in our once-perfect crystal .
+When an atom receives a kick with energy greater than $E_d$, it is dislodged. The atom that gets knocked out is called a **Primary Knock-on Atom (PKA)**. It leaves behind an empty site, a **vacancy**, and comes to rest in a non-lattice position, becoming an **interstitial**. This fundamental defect pair—a vacancy and a nearby interstitial—is known as a **Frenkel pair**. It is the elementary particle of displacement damage, the first signature of disorder in our once-perfect crystal [@problem_id:4118401].
 
 ### From One to Many: The Collision Cascade
 
 The story rarely ends with a single Frenkel pair. A PKA created by a high-energy particle can itself have a tremendous amount of kinetic energy, often thousands of times greater than $E_d$. This energetic PKA does not simply settle down quietly. It becomes a projectile in its own right, a bull in the china shop of the crystal lattice.
 
-As it tears through the material, the PKA collides with other lattice atoms. If it transfers more than $E_d$ of energy in these subsequent collisions, it creates secondary knock-on atoms. These secondaries, if energetic enough, can go on to create tertiary knock-ons, and so on. This branching, self-propagating chain reaction of displacements is called a **[collision cascade](@entry_id:1122653)** or a [displacement cascade](@entry_id:748566) . It is an atomic-scale avalanche, an explosive event that unfolds over picoseconds ($10^{-12}\,\mathrm{s}$) within a volume of only a few nanometers.
+As it tears through the material, the PKA collides with other lattice atoms. If it transfers more than $E_d$ of energy in these subsequent collisions, it creates secondary knock-on atoms. These secondaries, if energetic enough, can go on to create tertiary knock-ons, and so on. This branching, self-propagating chain reaction of displacements is called a **[collision cascade](@keyword=collision_cascade|lang=en-US|style=Feynman)** or a [displacement cascade](@keyword=displacement_cascade|lang=en-US|style=Feynman) [@problem_id:4118401]. It is an atomic-scale avalanche, an explosive event that unfolds over picoseconds ($10^{-12}\,\mathrm{s}$) within a volume of only a few nanometers.
 
-The crucial question for engineers and scientists is: how many stable defects does a single PKA of a given energy create? Predicting the magnitude of this atomic debris is the key to understanding and controlling [radiation damage](@entry_id:160098). The challenge is one of bookkeeping for an unimaginably fast and complex process. This is where the simple genius of the Kinchin-Pease model comes into play.
+The crucial question for engineers and scientists is: how many stable defects does a single PKA of a given energy create? Predicting the magnitude of this atomic debris is the key to understanding and controlling [radiation damage](@keyword=radiation_damage|lang=en-US|style=Feynman). The challenge is one of bookkeeping for an unimaginably fast and complex process. This is where the simple genius of the Kinchin-Pease model comes into play.
 
 ### The Kinchin-Pease Model: A Beautifully Simple Account
 
-In the 1950s, physicists George Kinchin and Robert Pease sought to answer this question not with a complex simulation, but with a model built on elegant physical reasoning . Let’s reconstruct their logic. Let $T$ be the initial kinetic energy of our PKA.
+In the 1950s, physicists George Kinchin and Robert Pease sought to answer this question not with a complex simulation, but with a model built on elegant physical reasoning [@problem_id:3716295]. Let’s reconstruct their logic. Let $T$ be the initial kinetic energy of our PKA.
 
 *   **Regime 1: If $T  E_d$**, the PKA lacks the minimum energy to dislodge even a single atom. No stable defects are formed. The number of displacements, $N_d$, is zero.
 
@@ -35,11 +35,11 @@ In the 1950s, physicists George Kinchin and Robert Pease sought to answer this q
 
 *   **Regime 3: If $T \ge 2E_d$**, we enter the linear cascade regime, where the PKA has enough energy to create a multiplicative cascade. Here lies the most brilliant simplification of the model. Kinchin and Pease asked: on average, what is the total energy "cost" to create one final, stable displacement? One might naively guess the cost is simply $E_d$, but this ignores that the projectile atoms themselves retain kinetic energy after collisions. A more careful accounting, assuming hard-sphere collisions, reveals that a significant amount of energy is lost to sub-threshold recoils that only generate heat. The model approximates this complex energy partitioning by postulating that, on average, a total of $2E_d$ is removed from the cascade's "budget" for every stable Frenkel pair that is formed.
 
-This $2E_d$ is the effective "price" of a displacement in the cascade's energy economy . If the total energy budget is $T$ and the price per item is $2E_d$, then the number of items you can "buy" is simply:
+This $2E_d$ is the effective "price" of a displacement in the cascade's energy economy [@problem_id:4137109]. If the total energy budget is $T$ and the price per item is $2E_d$, then the number of items you can "buy" is simply:
 
 $$ N_d = \frac{T}{2E_d} $$
 
-Putting it all together, we arrive at the celebrated Kinchin-Pease damage function :
+Putting it all together, we arrive at the celebrated Kinchin-Pease damage function [@problem_id:3716295]:
 
 $$ N_d(T) = \begin{cases} 0  \text{if } T  E_d \\ 1  \text{if } E_d \le T  2E_d \\ \frac{T}{2E_d}  \text{if } T \ge 2E_d \end{cases} $$
 
@@ -47,15 +47,15 @@ This simple, piecewise formula is a landmark of theoretical physics—a "spheric
 
 ### Reality Bites: Cracks in the Simple Model
 
-The Kinchin-Pease (KP) model is a powerful tool, but it is, by design, a simplification. As with any good physical model, understanding its limitations is just as important as understanding its predictions . The model makes two particularly bold, and ultimately incorrect, assumptions.
+The Kinchin-Pease (KP) model is a powerful tool, but it is, by design, a simplification. As with any good physical model, understanding its limitations is just as important as understanding its predictions [@problem_id:4137113]. The model makes two particularly bold, and ultimately incorrect, assumptions.
 
 **1. All Energy Creates Displacements:** The original KP model assumes the entire kinetic energy $T$ of the PKA is available to create displacements. This is not true. An energetic atom moving through a solid loses energy in two distinct ways:
-    *   **Nuclear Stopping ($S_n$):** Energy lost in billiard-ball-like [elastic collisions](@entry_id:188584) with target nuclei. This is the energy loss channel that causes atomic displacements.
+    *   **Nuclear Stopping ($S_n$):** Energy lost in billiard-ball-like [elastic collisions](@keyword=elastic_collisions|lang=en-US|style=Feynman) with target nuclei. This is the energy loss channel that causes atomic displacements.
     *   **Electronic Stopping ($S_e$):** Energy lost to inelastic interactions with the sea of electrons in the solid. This primarily causes ionization and excitation, dissipating as heat.
 
-For many important scenarios, such as the implantation of light ions like boron into silicon, [electronic stopping](@entry_id:157852) is substantial and cannot be ignored . Only the fraction of energy lost to nuclear collisions is actually available to create the cascade. This portion is called the **damage energy**, $T_d$ . A proper damage model must start with $T_d$, not the total energy. The calculation of $T_d$ itself involves a more detailed look at scattering physics and energy partitioning, a field pioneered by Jens Lindhard .
+For many important scenarios, such as the implantation of light ions like boron into silicon, [electronic stopping](@keyword=electronic_stopping|lang=en-US|style=Feynman) is substantial and cannot be ignored [@problem_id:4137113]. Only the fraction of energy lost to nuclear collisions is actually available to create the cascade. This portion is called the **damage energy**, $T_d$ [@problem_id:3716320]. A proper damage model must start with $T_d$, not the total energy. The calculation of $T_d$ itself involves a more detailed look at scattering physics and energy partitioning, a field pioneered by Jens Lindhard [@problem_id:4137107].
 
-**2. Every Displacement is Permanent:** The KP model is a simple counting exercise. It assumes that once a Frenkel pair is formed, it is there forever. This ignores the violent, crowded nature of the cascade's core. In this dense, hot region—sometimes called a "thermal spike"—a newly formed interstitial can find itself right next to a vacancy and spontaneously recombine, annihilating the defect pair almost instantly. This process, called **athermal recombination**, significantly reduces the number of defects that survive the initial moments of the cascade .
+**2. Every Displacement is Permanent:** The KP model is a simple counting exercise. It assumes that once a Frenkel pair is formed, it is there forever. This ignores the violent, crowded nature of the cascade's core. In this dense, hot region—sometimes called a "thermal spike"—a newly formed interstitial can find itself right next to a vacancy and spontaneously recombine, annihilating the defect pair almost instantly. This process, called **athermal recombination**, significantly reduces the number of defects that survive the initial moments of the cascade [@problem_id:4035954].
 
 ### The First Major Upgrade: The NRT Model
 
@@ -63,11 +63,11 @@ To build a more realistic model, we must address these simplifications. This was
 
 First, it mandates the use of the correct energy budget: the **damage energy $T_d$**. Second, it accounts for athermal recombination by introducing a **displacement efficiency factor**, $\kappa$. Based on extensive computer simulations of collision cascades, they found that the simple KP energy balance consistently over-predicted the final number of defects. The simulations showed that, due to recombination and other inefficiencies, only about 80% of the defects predicted by the $T_d / (2E_d)$ formula actually survive as stable Frenkel pairs.
 
-The NRT model thus takes the form  :
+The NRT model thus takes the form [@problem_id:3716320] [@problem_id:4035954]:
 
 $$ N_d^{\text{NRT}} = \frac{\kappa T_d}{2 E_d} \quad \text{with } \kappa \approx 0.8 $$
 
-This formula is the cornerstone of modern radiation damage quantification. It is used to calculate the standard metric for damage: **Displacements Per Atom (DPA)**. To find the DPA in a given volume of material, one calculates the total number of displacements created by all irradiating particles (using the NRT formula for each cascade) and divides by the total number of atoms in that volume. A DPA of $0.1$, for instance, means that on average, every atom in the material has been displaced from its lattice site $0.1$ times .
+This formula is the cornerstone of modern radiation damage quantification. It is used to calculate the standard metric for damage: **Displacements Per Atom (DPA)**. To find the DPA in a given volume of material, one calculates the total number of displacements created by all irradiating particles (using the NRT formula for each cascade) and divides by the total number of atoms in that volume. A DPA of $0.1$, for instance, means that on average, every atom in the material has been displaced from its lattice site $0.1$ times [@problem_id:4118401].
 
 ### Beyond Static Counts: The Living World of Defects
 
@@ -81,4 +81,4 @@ $$ \frac{dn(t)}{dt} = G - k_{\text{loss}}(T) n(t) $$
 
 Here, $G$ is the defect generation rate, which we can calculate from the NRT model and the incoming particle flux. The second term represents the loss of defects due to annealing. The rate constant $k_{\text{loss}}(T)$ is highly dependent on temperature, typically following an **Arrhenius law**, $k \propto \exp(-E_a / k_B T)$, where $E_a$ is the activation energy for defect motion.
 
-This simple differential equation is incredibly powerful. It shows that under continuous irradiation, the defect concentration doesn't grow forever. It approaches a steady state where the rate of creation is exactly balanced by the rate of annealing . This beautiful unification of nuclear collision physics with thermal kinetics is essential for predicting the long-term evolution of materials in harsh environments, from silicon chips during manufacturing to the walls of a future fusion reactor. The simple Kinchin-Pease model, while not the final word, provided the indispensable first concept—the generation term $G$—upon which these more sophisticated models are built.
+This simple differential equation is incredibly powerful. It shows that under continuous irradiation, the defect concentration doesn't grow forever. It approaches a steady state where the rate of creation is exactly balanced by the rate of annealing [@problem_id:4137111]. This beautiful unification of nuclear collision physics with thermal kinetics is essential for predicting the long-term evolution of materials in harsh environments, from silicon chips during manufacturing to the walls of a future fusion reactor. The simple Kinchin-Pease model, while not the final word, provided the indispensable first concept—the generation term $G$—upon which these more sophisticated models are built.

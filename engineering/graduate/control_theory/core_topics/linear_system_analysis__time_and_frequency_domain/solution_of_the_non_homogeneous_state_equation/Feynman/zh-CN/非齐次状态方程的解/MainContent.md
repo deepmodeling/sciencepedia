@@ -1,13 +1,13 @@
 ## 引言
-在动态系统的研究中，[状态方程](@article_id:338071)扮演着基石的角色，它以一种简洁而强大的方式描述了系统如何随时间演化。然而，现实世界中的系统很少孤立存在，它们不仅受自身初始状态的影响，更持续地与外部环境互动，接收各种形式的输入。这就引出了一个核心问题：我们如何精确地求解一个同时受内在“惯性”（初始状态）和外在“驱动”（外部输入）共同作用的系统的行为轨迹？这正是[非齐次状态方程](@article_id:334616)所要解决的知识鸿沟。
+在动态系统的研究中，[状态方程](@keyword=state_equations|lang=zh-CN|style=Feynman)扮演着基石的角色，它以一种简洁而强大的方式描述了系统如何随时间演化。然而，现实世界中的系统很少孤立存在，它们不仅受自身初始状态的影响，更持续地与外部环境互动，接收各种形式的输入。这就引出了一个核心问题：我们如何精确地求解一个同时受内在“惯性”（初始状态）和外在“驱动”（外部输入）共同作用的系统的行为轨迹？这正是[非齐次状态方程](@keyword=non_homogeneous_state_equation|lang=zh-CN|style=Feynman)所要解决的知识鸿沟。
 
-本文将带领读者系统地探索这一问题的答案。我们将从一个极其优美的思想出发，揭示如何将复杂问题“分而治之”。随后，我们将深入线性时不变（LTI）系统的核心，学习如何运用[矩阵指数](@article_id:299795)和[卷积积分](@article_id:316273)这两个强大工具，构建出描述系统完整动态的“常数变易公式”。最后，我们会将视野拓宽，将这些思想推广到[离散时间](@article_id:641801)和规则随时间变化的更复杂系统中，最终触及现代理论物理的前沿。通过本次学习，您将掌握求解[非齐次状态方程](@article_id:334616)的完整理论框架，并理解其背后深刻的物理直觉。
+本文将带领读者系统地探索这一问题的答案。我们将从一个极其优美的思想出发，揭示如何将复杂问题“分而治之”。随后，我们将深入线性时不变（LTI）系统的核心，学习如何运用[矩阵指数](@keyword=matrix_exponential|lang=zh-CN|style=Feynman)和[卷积积分](@keyword=convolution_integral|lang=zh-CN|style=Feynman)这两个强大工具，构建出描述系统完整动态的“常数变易公式”。最后，我们会将视野拓宽，将这些思想推广到[离散时间](@keyword=discrete_time|lang=zh-CN|style=Feynman)和规则随时间变化的更复杂系统中，最终触及现代理论物理的前沿。通过本次学习，您将掌握求解[非齐次状态方程](@keyword=non_homogeneous_state_equation|lang=zh-CN|style=Feynman)的完整理论框架，并理解其背后深刻的物理直觉。
 
 我们的旅程将从理解驱动系统演化的核心原理与机制开始。
 
 ## 原理与机制
 
-我们已经对状态方程有了初步的认识，现在，让我们像物理学家一样，深入其内部，探索驱动系统演化的核心原理与机制。我们的旅程将从一个极其优美且强大的思想开始——[叠加原理](@article_id:308501)（Superposition Principle）。
+我们已经对状态方程有了初步的认识，现在，让我们像物理学家一样，深入其内部，探索驱动系统演化的核心原理与机制。我们的旅程将从一个极其优美且强大的思想开始——[叠加原理](@keyword=principle_of_superposition|lang=zh-CN|style=Feynman)（Superposition Principle）。
 
 ### 分而治之：线性系统的叠加之美
 
@@ -15,13 +15,13 @@
 
 首先，想象在没有任何石子投入的情况下，初始的涟漪会如何自行演化和消散。其次，想象一个完全平静的池塘（零初始状态），你按照计划投入石子，观察由此产生的波纹。神奇的是，对于像我们正在研究的线性系统，最初那个复杂问题的答案，就是这两个简单问题答案的直接相加！
 
-这就是[叠加原理](@article_id:308501)的精髓。对于[非齐次状态方程](@article_id:334616) $\dot{x}(t) = Ax(t) + Bu(t)$，其完整解 $x(t)$ 可以被完美地分解为两部分之和  ：
+这就是[叠加原理](@keyword=principle_of_superposition|lang=zh-CN|style=Feynman)的精髓。对于[非齐次状态方程](@keyword=non_homogeneous_state_equation|lang=zh-CN|style=Feynman) $\dot{x}(t) = Ax(t) + Bu(t)$，其完整解 $x(t)$ 可以被完美地分解为两部分之和 [@problem_id:1611722] [@problem_id:1611777]：
 
-1.  **零输入响应 (Zero-Input Response, ZIR)**：这是系统在**没有外部输入** ($u(t)=0$) 的情况下，仅由初始状态 $x(0)$ 驱动的响应。它描述了系统固有的、内在的[演化趋势](@article_id:352554)，就像是系统内部的“回声”或“记忆”。这个响应的求解，就是解一个[齐次方程](@article_id:350590)：$\dot{x}(t) = Ax(t)$，其[初始条件](@article_id:313275)为 $x(0)$。
+1.  **零输入响应 (Zero-Input Response, ZIR)**：这是系统在**没有外部输入** ($u(t)=0$) 的情况下，仅由初始状态 $x(0)$ 驱动的响应。它描述了系统固有的、内在的[演化趋势](@keyword=evolutionary_trends|lang=zh-CN|style=Feynman)，就像是系统内部的“回声”或“记忆”。这个响应的求解，就是解一个[齐次方程](@keyword=homogeneous_equation|lang=zh-CN|style=Feynman)：$\dot{x}(t) = Ax(t)$，其[初始条件](@keyword=initial_conditions|lang=zh-CN|style=Feynman)为 $x(0)$。
 
-2.  **[零状态响应](@article_id:336976) (Zero-State Response, ZSR)**：这是系统在**初始状态为零** ($x(0)=0$) 的情况下，完全由外部输入 $u(t)$ 驱动的响应。它描述了系统如何对外界的“刺激”或“驱动”做出反应。这个响应的求解，就是解一个[非齐次方程](@article_id:344314)，但其初始条件为零。 
+2.  **[零状态响应](@keyword=zero_state_response|lang=zh-CN|style=Feynman) (Zero-State Response, ZSR)**：这是系统在**初始状态为零** ($x(0)=0$) 的情况下，完全由外部输入 $u(t)$ 驱动的响应。它描述了系统如何对外界的“刺激”或“驱动”做出反应。这个响应的求解，就是解一个[非齐次方程](@keyword=nonhomogeneous_equations|lang=zh-CN|style=Feynman)，但其初始条件为零。 [@problem_id:2746286]
 
-这种“分而治之”的策略是解决线性问题的基石。它不仅在数学上简化了求解过程，更在概念上为我们提供了一个清晰的框架来理解系统的行为：一部分源于其“天性”（初始状态），另一部分源于其与环境的“互动”（外部输入）。[线性系统](@article_id:308264)的“线性”二字，其最直接的体现之一就是这种可叠加性，以及一个相关的优美特性：如果输入信号的强度加倍，系统的（零状态）响应也会精确地加倍 。
+这种“分而治之”的策略是解决线性问题的基石。它不仅在数学上简化了求解过程，更在概念上为我们提供了一个清晰的框架来理解系统的行为：一部分源于其“天性”（初始状态），另一部分源于其与环境的“互动”（外部输入）。[线性系统](@keyword=linear_systems|lang=zh-CN|style=Feynman)的“线性”二字，其最直接的体现之一就是这种可叠加性，以及一个相关的优美特性：如果输入信号的强度加倍，系统的（零状态）响应也会精确地加倍 [@problem_id:1611755]。
 
 ### 当规则不变时：LTI系统的不变旋律
 
@@ -29,23 +29,23 @@
 
 #### 内在节律：矩阵指数 $e^{At}$
 
-对于LTI系统的[零输入响应](@article_id:326509)，我们面对的是方程 $\dot{x}(t) = Ax(t)$，其初始状态为 $x(0)=x_0$。如果你对一维情况 $\dot{x}=ax$ 很熟悉，你可能立刻会想到解是 $x(t) = e^{at}x_0$。那么对于多维的矩阵情况呢？答案惊人地相似，我们只需把标量 $a$ 换成矩阵 $A$：
+对于LTI系统的[零输入响应](@keyword=natural_response|lang=zh-CN|style=Feynman)，我们面对的是方程 $\dot{x}(t) = Ax(t)$，其初始状态为 $x(0)=x_0$。如果你对一维情况 $\dot{x}=ax$ 很熟悉，你可能立刻会想到解是 $x(t) = e^{at}x_0$。那么对于多维的矩阵情况呢？答案惊人地相似，我们只需把标量 $a$ 换成矩阵 $A$：
 
 $$
 x_{zi}(t) = e^{At} x_0
 $$
 
-这里的 $e^{At}$ 被称为**[矩阵指数](@article_id:299795)**。它不是简单地将[指数函数](@article_id:321821)作用于矩阵的每个元素，而是通过一个与 $e^a$ 的[泰勒级数展开](@article_id:298916)完全相同的形式来定义：
+这里的 $e^{At}$ 被称为**[矩阵指数](@keyword=matrix_exponential|lang=zh-CN|style=Feynman)**。它不是简单地将[指数函数](@keyword=exponential_function|lang=zh-CN|style=Feynman)作用于矩阵的每个元素，而是通过一个与 $e^a$ 的[泰勒级数展开](@keyword=taylor_series_expansion|lang=zh-CN|style=Feynman)完全相同的形式来定义：
 
 $$
 e^{At} = I + At + \frac{(At)^2}{2!} + \frac{(At)^3}{3!} + \cdots
 $$
 
-这个矩阵 $e^{At}$ 是理解[LTI系统](@article_id:335643)的关键。我们可以把它看作是系统的“动力学DNA”或“指纹”。它封装了系统的所有内在模式——[振荡](@article_id:331484)、衰减、增长。给定任何一个初始状态 $x_0$，我们只需用 $e^{At}$ 左乘它，就能预测出系统在未来任何时刻 $t$ 的自然演化状态。
+这个矩阵 $e^{At}$ 是理解[LTI系统](@keyword=lti_systems|lang=zh-CN|style=Feynman)的关键。我们可以把它看作是系统的“动力学DNA”或“指纹”。它封装了系统的所有内在模式——[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)、衰减、增长。给定任何一个初始状态 $x_0$，我们只需用 $e^{At}$ 左乘它，就能预测出系统在未来任何时刻 $t$ 的自然演化状态。
 
-#### 响应历史：[卷积积分](@article_id:316273)
+#### 响应历史：[卷积积分](@keyword=convolution_integral|lang=zh-CN|style=Feynman)
 
-接下来是更激动人心的部分：[零状态响应](@article_id:336976)。系统如何响应一个持续变化的输入 $u(t)$？答案蕴含在一个美妙的数学形式中，即**[卷积积分](@article_id:316273)**：
+接下来是更激动人心的部分：[零状态响应](@keyword=zero_state_response|lang=zh-CN|style=Feynman)。系统如何响应一个持续变化的输入 $u(t)$？答案蕴含在一个美妙的数学形式中，即**[卷积积分](@keyword=convolution_integral|lang=zh-CN|style=Feynman)**：
 
 $$
 x_{zs}(t) = \int_0^t e^{A(t-\tau)} B u(\tau) d\tau
@@ -55,51 +55,51 @@ $$
 
 *   在过去的某个时刻 $\tau$，外部输入 $u(\tau)$ 通过矩阵 $B$ 赋予了系统一个微小的“状态脉冲”或“踢了一脚”，其效果可以看作是 $B u(\tau) d\tau$。
 *   这个在 $\tau$ 时刻产生的脉冲，并不会停在那里。它会根据系统的内在动力学 $e^{At}$ 进行演化。从 $\tau$ 时刻到当前时刻 $t$，它已经演化了 $t-\tau$ 这么长的时间。因此，它对当前状态的贡献是 $e^{A(t-\tau)} [B u(\tau) d\tau]$。
-*   [卷积积分](@article_id:316273)所做的，就是将从初始时刻 $0$ 到当前时刻 $t$ 之间，每一个过去瞬间 $\tau$ 所产生的脉冲及其后续演化的效果，全部“叠加”起来。
+*   [卷积积分](@keyword=convolution_integral|lang=zh-CN|style=Feynman)所做的，就是将从初始时刻 $0$ 到当前时刻 $t$ 之间，每一个过去瞬间 $\tau$ 所产生的脉冲及其后续演化的效果，全部“叠加”起来。
 
-所以，系统在时刻 $t$ 的状态，是它经历过的所有外部输入的“回声”的总和。每一个“回声”都根据其发生的时间远近，经过了相应时长的“衰减”或“演化”。这与我们在池塘中连续投掷石子所看到的景象如出一辙：当前水面的波纹是之前所有石子激起的涟漪的叠加。数学上，这个积分还有另一种等价的优美形式 $e^{At} \int_{0}^{t} e^{-A \tau} B u(\tau) d\tau$，它们都描述着同一个物理实在 。
+所以，系统在时刻 $t$ 的状态，是它经历过的所有外部输入的“回声”的总和。每一个“回声”都根据其发生的时间远近，经过了相应时长的“衰减”或“演化”。这与我们在池塘中连续投掷石子所看到的景象如出一辙：当前水面的波纹是之前所有石子激起的涟漪的叠加。数学上，这个积分还有另一种等价的优美形式 $e^{At} \int_{0}^{t} e^{-A \tau} B u(\tau) d\tau$，它们都描述着同一个物理实在 [@problem_id:2746237]。
 
-将这两部分组合起来，我们就得到了LTI系统[非齐次状态方程](@article_id:334616)的完整解，也就是著名的**常数变易公式** (Variation of Constants Formula)：
+将这两部分组合起来，我们就得到了LTI系统[非齐次状态方程](@keyword=non_homogeneous_state_equation|lang=zh-CN|style=Feynman)的完整解，也就是著名的**常数变易公式** (Variation of Constants Formula)：
 
 $$
 x(t) = \underbrace{e^{At} x_0}_{\text{零输入响应}} + \underbrace{\int_0^t e^{A(t-\tau)} B u(\tau) d\tau}_{\text{零状态响应}}
 $$
 
-### 换个视角看世界：[LTI系统](@article_id:335643)的统一图景
+### 换个视角看世界：[LTI系统](@keyword=lti_systems|lang=zh-CN|style=Feynman)的统一图景
 
 对于LTI系统，我们还有其他强大的工具和视角，它们不仅能帮助我们求解，更能揭示出系统更深层次的结构和不同数学思想之间的内在统一性。
 
 #### 频率眼镜：拉普拉斯变换
 
-[微分方程](@article_id:327891)之所以棘手，是因为它把一个函数和它的[导数](@article_id:318324)联系在了一起。有没有一种方法可以摆脱掉[微分算子](@article_id:300589)呢？答案是肯定的，那就是**[拉普拉斯变换](@article_id:319743)**。这就像是戴上了一副特殊的“频率眼镜”，它能将时域中复杂的[微分](@article_id:319122)和卷积运算，转换成[频域](@article_id:320474)（或称为$s$域）中简单的代数运算。
+[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)之所以棘手，是因为它把一个函数和它的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)联系在了一起。有没有一种方法可以摆脱掉[微分算子](@keyword=differentiation_operator|lang=zh-CN|style=Feynman)呢？答案是肯定的，那就是**[拉普拉斯变换](@keyword=laplace_transform|lang=zh-CN|style=Feynman)**。这就像是戴上了一副特殊的“频率眼镜”，它能将时域中复杂的[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)和卷积运算，转换成[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)（或称为$s$域）中简单的代数运算。
 
-当我们对[状态方程](@article_id:338071) $\dot{x}(t) = Ax(t) + Bu(t)$ 两边同时进行[拉普拉斯变换](@article_id:319743)，利用其核心性质 $\mathcal{L}\{\dot{x}(t)\} = sX(s) - x(0)$，方程瞬间变得清晰起来 ：
+当我们对[状态方程](@keyword=state_equations|lang=zh-CN|style=Feynman) $\dot{x}(t) = Ax(t) + Bu(t)$ 两边同时进行[拉普拉斯变换](@keyword=laplace_transform|lang=zh-CN|style=Feynman)，利用其核心性质 $\mathcal{L}\{\dot{x}(t)\} = sX(s) - x(0)$，方程瞬间变得清晰起来 [@problem_id:2746263]：
 
 $$
 sX(s) - x_0 = AX(s) + BU(s)
 $$
 
-这是一个关于 $X(s)$ 的线性[代数方程](@article_id:336361)！我们可以轻易地解出 $X(s)$：
+这是一个关于 $X(s)$ 的线性[代数方程](@keyword=algebraic_equations|lang=zh-CN|style=Feynman)！我们可以轻易地解出 $X(s)$：
 
 $$
 X(s) = \underbrace{(sI-A)^{-1} x_0}_{\text{ZIR的变换}} + \underbrace{(sI-A)^{-1}B U(s)}_{\text{ZSR的变换}}
 $$
 
-这个结果是如此的优雅！它再次清晰地分离了零输入响应和[零状态响应](@article_id:336976)。更重要的是，它揭示了一个深刻的对偶关系：时域中的[卷积积分](@article_id:316273)，在[频域](@article_id:320474)中对应着简单的[矩阵乘法](@article_id:316443)。矩阵 $(sI-A)^{-1}$（被称为**预解矩阵**）扮演了核心角色，它正是矩阵指数 $e^{At}$ 在[频域](@article_id:320474)中的“化身”。
+这个结果是如此的优雅！它再次清晰地分离了零输入响应和[零状态响应](@keyword=zero_state_response|lang=zh-CN|style=Feynman)。更重要的是，它揭示了一个深刻的对偶关系：时域中的[卷积积分](@keyword=convolution_integral|lang=zh-CN|style=Feynman)，在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中对应着简单的[矩阵乘法](@keyword=matrix_multiplication|lang=zh-CN|style=Feynman)。矩阵 $(sI-A)^{-1}$（被称为**预解矩阵**）扮演了核心角色，它正是矩阵指数 $e^{At}$ 在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中的“化身”。
 
-#### 寻找“[简正模](@article_id:300087)式”：[特征基](@article_id:311825)下的[解耦](@article_id:641586)
+#### 寻找“[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman)式”：[特征基](@keyword=eigenbasis|lang=zh-CN|style=Feynman)下的[解耦](@keyword=disentanglement|lang=zh-CN|style=Feynman)
 
-矩阵 $A$ 描述了系统各个[状态变量](@article_id:299238)之间复杂的耦合关系。但是，是否存在一个“自然”的[坐标系](@article_id:316753)，使得在这个[坐标系](@article_id:316753)下，系统的运动变得异常简单呢？
+矩阵 $A$ 描述了系统各个[状态变量](@keyword=state_variables|lang=zh-CN|style=Feynman)之间复杂的耦合关系。但是，是否存在一个“自然”的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)，使得在这个[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)下，系统的运动变得异常简单呢？
 
-答案是肯定的，前提是矩阵 $A$ 可以被对角化。如果我们可以找到一组线性无关的[特征向量](@article_id:312227)，由它们构成矩阵 $V$，那么我们就可以进行[坐标变换](@article_id:323290) $x(t) = Vz(t)$。在这个新的[坐标系](@article_id:316753) $z$ 下，原来的状态方程 $\dot{x}=Ax+Bu$ 会变成 ：
+答案是肯定的，前提是矩阵 $A$ 可以被对角化。如果我们可以找到一组线性无关的[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)，由它们构成矩阵 $V$，那么我们就可以进行[坐标变换](@keyword=coordinate_transformations|lang=zh-CN|style=Feynman) $x(t) = Vz(t)$。在这个新的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman) $z$ 下，原来的状态方程 $\dot{x}=Ax+Bu$ 会变成 [@problem_id:2746253]：
 
 $$
 \dot{z}(t) = \Lambda z(t) + V^{-1}Bu(t)
 $$
 
-其中 $\Lambda = V^{-1}AV$ 是一个[对角矩阵](@article_id:642074)，其对角线上的元素正是 $A$ 的[特征值](@article_id:315305) $\lambda_i$。这意味着，在 $z$ [坐标系](@article_id:316753)中，系统被“[解耦](@article_id:641586)”了！它变成了一组互不相关的、简单的[一阶线性微分方程](@article_id:344238)：$\dot{z}_i(t) = \lambda_i z_i(t) + (\text{输入项})_i$。我们可以独立地解出每一个 $z_i(t)$，然后再通过 $x(t) = Vz(t)$ 变换回原来的[坐标系](@article_id:316753)。
+其中 $\Lambda = V^{-1}AV$ 是一个[对角矩阵](@keyword=diagonal_matrix|lang=zh-CN|style=Feynman)，其对角线上的元素正是 $A$ 的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) $\lambda_i$。这意味着，在 $z$ [坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中，系统被“[解耦](@keyword=disentanglement|lang=zh-CN|style=Feynman)”了！它变成了一组互不相关的、简单的[一阶线性微分方程](@keyword=first_order_linear_differential_equations|lang=zh-CN|style=Feynman)：$\dot{z}_i(t) = \lambda_i z_i(t) + (\text{输入项})_i$。我们可以独立地解出每一个 $z_i(t)$，然后再通过 $x(t) = Vz(t)$ 变换回原来的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)。
 
-这个过程就像是分析一个复杂乐器的声音。我们不是直接分析空气的整体[振动](@article_id:331484)，而是将其分解为一系列“基频”和“[泛音](@article_id:323464)”（即[简正模](@article_id:300087)式），每种模式都有其固定的频率（[特征值](@article_id:315305)）。系统的任何复杂运动，都可以看作是这些基本模式的叠加。
+这个过程就像是分析一个复杂乐器的声音。我们不是直接分析空气的整体[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，而是将其分解为一系列“基频”和“[泛音](@keyword=overtones|lang=zh-CN|style=Feynman)”（即[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman)式），每种模式都有其固定的频率（[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)）。系统的任何复杂运动，都可以看作是这些基本模式的叠加。
 
 ### 从特例到通则：走向更广阔的世界
 
@@ -107,27 +107,27 @@ $$
 
 #### 离散的节拍：数字世界中的动力学
 
-在计算机控制和[数字信号处理](@article_id:327367)的世界里，时间不是连续流动的，而是一步一步地跳跃。状态方程也因此变成了离散的递推关系：
+在计算机控制和[数字信号处理](@keyword=digital_signal_processing|lang=zh-CN|style=Feynman)的世界里，时间不是连续流动的，而是一步一步地跳跃。状态方程也因此变成了离散的递推关系：
 
 $$
 x_{k+1} = A x_k + B u_k
 $$
 
-我们不再需要解[微分方程](@article_id:327891)，而是通过迭代来求解。然而，解的最终形式与连续时间的情况有着惊人的相似性 ：
+我们不再需要解[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)，而是通过迭代来求解。然而，解的最终形式与连续时间的情况有着惊人的相似性 [@problem_id:2746287]：
 
 $$
 x_k = A^k x_0 + \sum_{i=0}^{k-1} A^{k-1-i} B u_i
 $$
 
-请仔细观察这个公式！$e^{At}$ 被[矩阵的幂](@article_id:328473) $A^k$ 所取代，而积分则被求和所取代。[零输入响应](@article_id:326509)是通过初始状态 $x_0$ 乘以 $A$ 的 $k$ 次方得到的，而[零状态响应](@article_id:336976)则是一个**[离散卷积](@article_id:321343)和**。这再次体现了“对[历史求和](@article_id:317107)”的思想：在过去的每一步 $i$，输入 $u_i$ 都对系统状态产生影响，这个影响在随后的 $k-1-i$ 步中通过矩阵 $A$ 不断演化。这表明，驱动系统演化的基本物理原理是相通的，无论时间是连续的还是离散的。
+请仔细观察这个公式！$e^{At}$ 被[矩阵的幂](@keyword=matrix_powers|lang=zh-CN|style=Feynman) $A^k$ 所取代，而积分则被求和所取代。[零输入响应](@keyword=natural_response|lang=zh-CN|style=Feynman)是通过初始状态 $x_0$ 乘以 $A$ 的 $k$ 次方得到的，而[零状态响应](@keyword=zero_state_response|lang=zh-CN|style=Feynman)则是一个**[离散卷积](@keyword=discrete_convolution|lang=zh-CN|style=Feynman)和**。这再次体现了“对[历史求和](@keyword=sum_over_histories|lang=zh-CN|style=Feynman)”的思想：在过去的每一步 $i$，输入 $u_i$ 都对系统状态产生影响，这个影响在随后的 $k-1-i$ 步中通过矩阵 $A$ 不断演化。这表明，驱动系统演化的基本物理原理是相通的，无论时间是连续的还是离散的。
 
-#### 当规则改变时：[线性时变系统](@article_id:382336)
+#### 当规则改变时：[线性时变系统](@keyword=linear_time_varying_systems|lang=zh-CN|style=Feynman)
 
 我们一直假设系统的规则 $A$ 是恒定不变的。但在现实世界中，规则常常会随时间改变。想象一枚正在燃烧燃料的火箭，它的质量不断减小，导致其动力学特性 $A(t)$ 也在随时间变化。这种系统被称为**线性时变（LTV）系统**。
 
-对于LTV系统，我们的老朋友 $e^{At}$ 不再有效。我们需要一个更强大的工具来描述状态如何从一个时刻演化到另一个时刻。这个工具就是**[状态转移矩阵](@article_id:331631) (State Transition Matrix)**，记作 $\Phi(t, t_0)$ 。它的含义就是：如果系统在 $t_0$ 时刻处于某个状态，那么在没有外部输入时，它将在 $t$ 时刻转移到哪个状态。
+对于LTV系统，我们的老朋友 $e^{At}$ 不再有效。我们需要一个更强大的工具来描述状态如何从一个时刻演化到另一个时刻。这个工具就是**[状态转移矩阵](@keyword=state_transition_matrix|lang=zh-CN|style=Feynman) (State Transition Matrix)**，记作 $\Phi(t, t_0)$ [@problem_id:2746252]。它的含义就是：如果系统在 $t_0$ 时刻处于某个状态，那么在没有外部输入时，它将在 $t$ 时刻转移到哪个状态。
 
-有了这个强大的 $\Phi(t, t_0)$，常数变易公式依然以其优美的形式存在 ：
+有了这个强大的 $\Phi(t, t_0)$，常数变易公式依然以其优美的形式存在 [@problem_id:2746251]：
 
 $$
 x(t) = \Phi(t, t_0)x_0 + \int_{t_0}^t \Phi(t, \tau) B(\tau) u(\tau) d\tau
@@ -135,18 +135,18 @@ $$
 
 这个公式的结构与LTI情况完全相同，再次印证了叠加原理的普适性。唯一的区别是，我们用更通用的“传播算子”$\Phi(t, \tau)$ 取代了 $e^{A(t-\tau)}$。它告诉我们，在时刻 $\tau$ 由输入产生的状态脉冲，是如何通过一个**规则正在随时间变化**的系统，传播到时刻 $t$ 的。
 
-#### 终极公式：时间序与[戴森级数](@article_id:305090)
+#### 终极公式：时间序与[戴森级数](@keyword=dyson_series|lang=zh-CN|style=Feynman)
 
-那么，这个神秘的[状态转移矩阵](@article_id:331631) $\Phi(t, t_0)$ 到底是什么呢？对于LTV系统，它通常不能被写成一个简单的[封闭形式](@article_id:336656)。原因非常深刻：当系统规则 $A(t)$ 随时间变化时，不同时刻的规则 $A(t_1)$ 和 $A(t_2)$ 之间可能并不满足乘法[交换律](@article_id:301656)，即 $A(t_1)A(t_2) \neq A(t_2)A(t_1)$。这意味着，规则变化的**顺序**至关重要！
+那么，这个神秘的[状态转移矩阵](@keyword=state_transition_matrix|lang=zh-CN|style=Feynman) $\Phi(t, t_0)$ 到底是什么呢？对于LTV系统，它通常不能被写成一个简单的[封闭形式](@keyword=closed_forms|lang=zh-CN|style=Feynman)。原因非常深刻：当系统规则 $A(t)$ 随时间变化时，不同时刻的规则 $A(t_1)$ 和 $A(t_2)$ 之间可能并不满足乘法[交换律](@keyword=commutative_property|lang=zh-CN|style=Feynman)，即 $A(t_1)A(t_2) \neq A(t_2)A(t_1)$。这意味着，规则变化的**顺序**至关重要！
 
-解决这个问题的答案，将我们引向了理论物理的一个核心概念。$\Phi(t, t_0)$ 的完整解是一个被称为**皮亚诺-贝克级数 (Peano-Baker series)** 的[无穷级数](@article_id:303801)，它有一个更为物理学家所熟知的名字——**[戴森级数](@article_id:305090) (Dyson series)**，并可以被紧凑地记为**时间序指数 (Time-ordered Exponential)** ：
+解决这个问题的答案，将我们引向了理论物理的一个核心概念。$\Phi(t, t_0)$ 的完整解是一个被称为**皮亚诺-贝克级数 (Peano-Baker series)** 的[无穷级数](@keyword=infinite_series|lang=zh-CN|style=Feynman)，它有一个更为物理学家所熟知的名字——**[戴森级数](@keyword=dyson_series|lang=zh-CN|style=Feynman) (Dyson series)**，并可以被紧凑地记为**时间序指数 (Time-ordered Exponential)** [@problem_id:2746231]：
 
 $$
 \Phi(t, t_0) = \mathcal{T} \exp\left(\int_{t_0}^t A(\sigma) d\sigma\right)
 $$
 
-这里的 $\mathcal{T}$ 是一个**时间排序算子**。它像一位严谨的“历史学家”，确保在级数的每一项中，矩阵 $A(\sigma)$ 都严格按照其时间参数 $\sigma$ 从大到小（即从“现在”到“过去”）的顺序[排列](@article_id:296886)。例如，级数的第二项是 $\int_{t_0}^t d\sigma_1 \int_{t_0}^{\sigma_1} d\sigma_2 A(\sigma_1)A(\sigma_2)$，其中 $\sigma_1 \ge \sigma_2$，因此 $A(\sigma_1)$ 总是出现在 $A(\sigma_2)$ 的左边。
+这里的 $\mathcal{T}$ 是一个**时间排序算子**。它像一位严谨的“历史学家”，确保在级数的每一项中，矩阵 $A(\sigma)$ 都严格按照其时间参数 $\sigma$ 从大到小（即从“现在”到“过去”）的顺序[排列](@keyword=permutation|lang=zh-CN|style=Feynman)。例如，级数的第二项是 $\int_{t_0}^t d\sigma_1 \int_{t_0}^{\sigma_1} d\sigma_2 A(\sigma_1)A(\sigma_2)$，其中 $\sigma_1 \ge \sigma_2$，因此 $A(\sigma_1)$ 总是出现在 $A(\sigma_2)$ 的左边。
 
 这个公式，是我们在本次旅程中遇到的最深刻、最普适的解。它不仅是LTV控制系统的终极答案，也是量子场论中计算粒子相互作用的基本工具。它描绘了一幅壮丽的图景：系统状态的演化，是系统在其自身不断变化的动力学规则 $A(t)$ 作用下，进行一次、两次、无穷多次相互作用的系列过程，并且所有这些过程都严格遵循着因果律的时间顺序。
 
-从简单的[叠加原理](@article_id:308501)出发，我们一路走来，穿越了LTI系统、[离散时间系统](@article_id:348701)，最终到达了LTV系统和[戴森级数](@article_id:305090)这座理论高峰。我们看到，尽管系统的具体形式和求解工具在不断演化，但其背后“分而治之”和“追溯历史”的核心思想，却以一种不变的、统一而优美的姿态，贯穿始终。这正是科学的魅力所在。
+从简单的[叠加原理](@keyword=principle_of_superposition|lang=zh-CN|style=Feynman)出发，我们一路走来，穿越了LTI系统、[离散时间系统](@keyword=discrete_time_system|lang=zh-CN|style=Feynman)，最终到达了LTV系统和[戴森级数](@keyword=dyson_series|lang=zh-CN|style=Feynman)这座理论高峰。我们看到，尽管系统的具体形式和求解工具在不断演化，但其背后“分而治之”和“追溯历史”的核心思想，却以一种不变的、统一而优美的姿态，贯穿始终。这正是科学的魅力所在。

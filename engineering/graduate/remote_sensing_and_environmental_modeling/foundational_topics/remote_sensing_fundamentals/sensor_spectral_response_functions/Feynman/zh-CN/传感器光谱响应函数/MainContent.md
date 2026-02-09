@@ -21,7 +21,7 @@
 
 如果光子足够幸运，穿过了滤光片，它最终会撞击到**探测器**的感光表面。但这仍然不保证它会被记录下来。探测器，通常是像硅一样的半导体材料，会将特定能量（也就是特定波长）的光子转化为电荷（电子）。这个转换效率被称为**量子效率 (Quantum Efficiency, QE)**，我们用 $Q(\lambda)$ 或 $\eta(\lambda)$ 来表示。它代表了在特定波长下，一个入射光子能成功产生一个可测量电子的概率。
 
-现在，让我们思考一下。光子要成功闯过这三关——光学系统、滤光片和探测器——的整体概率是多少？由于这些事件可以被认为是统计上独立的，总的成功概率就是各个阶段成功概率的乘积 。因此，一个波长为 $\lambda$ 的光子从进入传感器到最终被记录为一个电子的端到端概率，正比于：
+现在，让我们思考一下。光子要成功闯过这三关——光学系统、滤光片和探测器——的整体概率是多少？由于这些事件可以被认为是统计上独立的，总的成功概率就是各个阶段成功概率的乘积 [@problem_id:3845855]。因此，一个波长为 $\lambda$ 的光子从进入传感器到最终被记录为一个电子的端到端概率，正比于：
 
 $$
 \text{响应}(\lambda) \propto T_{\mathrm{opt}}(\lambda) \cdot F(\lambda) \cdot Q(\lambda)
@@ -29,13 +29,13 @@ $$
 
 这个乘积，这个描述了传感器对不同波长光子综合响应效率的函数，正是光谱响应函数（SRF）的物理本质。它就像是传感器独特的“光谱指纹”，定义了它对宇宙中每一种“颜色”的敏感程度。例如，如果一个传感器的 SRF 在 650 纳米（红色）处达到峰值，而在 550 纳米（绿色）处非常低，那么它本质上就是一个“红色”传感器。
 
-### 从光子到数字：完整的[辐射度](@entry_id:156534)量方程
+### 从光子到数字：完整的[辐射度](@keyword=radiosity|lang=zh-CN|style=Feynman)量方程
 
-当然，传感器记录的不是单个光子，而是来自目标地物的连续能量流。这个能量流由一个被称为**光谱辐射度 (spectral radiance)** 的物理量来描述，记为 $L(\lambda)$。它的单位是瓦特每平方米每球面度每纳米（$\mathrm{W\cdot m^{-2}\cdot sr^{-1}\cdot nm^{-1}}$），精确地描述了在特定波长、特定方向上能量的强度 。
+当然，传感器记录的不是单个光子，而是来自目标地物的连续能量流。这个能量流由一个被称为**光谱辐射度 (spectral radiance)** 的物理量来描述，记为 $L(\lambda)$。它的单位是瓦特每平方米每球面度每纳米（$\mathrm{W\cdot m^{-2}\cdot sr^{-1}\cdot nm^{-1}}$），精确地描述了在特定波长、特定方向上能量的强度 [@problem_id:3845880]。
 
-为了构建一个从 $L(\lambda)$ 到最终数字输出的完整模型，我们必须更加严谨。让我们一步步追踪能量的转换过程 ：
+为了构建一个从 $L(\lambda)$ 到最终数字输出的完整模型，我们必须更加严谨。让我们一步步追踪能量的转换过程 [@problem_id:3845846]：
 
-1.  **收集能量**：传感器通过其孔径（面积为 $A$）和[视场](@entry_id:175690)（立体角为 $\Omega$）收集光线。在单位时间内，到达传感器的光谱功率正比于 $L(\lambda) \cdot A\Omega$。这个 $A\Omega$ 乘积被称为**光学通量 (optical throughput or etendue)**，是衡量仪器[聚光能力](@entry_id:169831)的关键参数。
+1.  **收集能量**：传感器通过其孔径（面积为 $A$）和[视场](@keyword=field_of_view|lang=zh-CN|style=Feynman)（立体角为 $\Omega$）收集光线。在单位时间内，到达传感器的光谱功率正比于 $L(\lambda) \cdot A\Omega$。这个 $A\Omega$ 乘积被称为**光学通量 (optical throughput or etendue)**，是衡量仪器[聚光能力](@keyword=light_gathering_power|lang=zh-CN|style=Feynman)的关键参数。
 
 2.  **转换为光子流**：探测器是对光子数量做出响应，而不是能量。一个波长为 $\lambda$ 的光子的能量是 $E_p = hc/\lambda$（其中 $h$ 是普朗克常数， $c$ 是光速）。因此，到达探测器的光子速率（每秒光子数）是通过将功率除以单个光子的能量得到的，这引入了一个 $\lambda/hc$ 的因子。
 
@@ -49,13 +49,13 @@ $$
 S_{e} = \int L(\lambda) \underbrace{\left( A\Omega \cdot t \cdot T_{\mathrm{opt}}(\lambda) \cdot \eta(\lambda) \cdot \frac{\lambda}{hc} \right)}_{W(\lambda)} d\lambda
 $$
 
-这个方程非常强大，但也很繁琐。括号中的所有项 $W(\lambda)$ 共同构成了仪器的**未归一化光谱敏感度 (unnormalized wavelength sensitivity)**。它包含了所有与波长相关的物理过程，但它的单位很奇怪，并且将仪器的绝对灵敏度（比如[孔径](@entry_id:172936)大小 $A$ 或积分时间 $t$）和其光谱形状（由 $T_{\mathrm{opt}}(\lambda)$ 和 $\eta(\lambda)$ 等决定）混在了一起。
+这个方程非常强大，但也很繁琐。括号中的所有项 $W(\lambda)$ 共同构成了仪器的**未归一化光谱敏感度 (unnormalized wavelength sensitivity)**。它包含了所有与波长相关的物理过程，但它的单位很奇怪，并且将仪器的绝对灵敏度（比如[孔径](@keyword=aperture|lang=zh-CN|style=Feynman)大小 $A$ 或积分时间 $t$）和其光谱形状（由 $T_{\mathrm{opt}}(\lambda)$ 和 $\eta(\lambda)$ 等决定）混在了一起。
 
 ### 抽象的艺术：归一化 SRF 与绝对增益
 
 物理学的美妙之处常常在于其化繁为简的能力。我们可以通过一个简单的数学技巧来梳理上述方程。我们的目标是将描述“什么颜色”的部分与描述“多亮”的部分分开。
 
-我们定义一个**归一化的光谱[响应函数](@entry_id:142629) (normalized SRF)**，记为 $R(\lambda)$。它的形状与 $W(\lambda)$ 完全相同，但我们通过除以其自身的面积来强制其积分为 1 。
+我们定义一个**归一化的光谱[响应函数](@keyword=response_functions|lang=zh-CN|style=Feynman) (normalized SRF)**，记为 $R(\lambda)$。它的形状与 $W(\lambda)$ 完全相同，但我们通过除以其自身的面积来强制其积分为 1 [@problem_id:3845887]。
 
 $$
 K = \int W(\lambda) d\lambda
@@ -67,14 +67,14 @@ $$
 
 通过这个定义，$R(\lambda)$ 变成了一个无量纲的、纯粹的**权重函数**。它的单位是波长的倒数（例如 $\mathrm{nm}^{-1}$），这样它与 $d\lambda$ 相乘后就是无量纲的。
 
-现在，我们最初的测量方程变得异常简洁和优美  ：
+现在，我们最初的测量方程变得异常简洁和优美 [@problem_id:3845846] [@problem_id:3845880]：
 
 $$
 S_{e} = K \int L(\lambda) R(\lambda) d\lambda
 $$
 
 这个方程告诉我们一个深刻的故事。测量过程可以被分解为两个独立的部分：
--   积分部分 $\int L(\lambda) R(\lambda) d\lambda$ 计算了一个被称为**波段平均[辐射度](@entry_id:156534) (band-averaged radiance)** 的量。它代表了传感器根据其光谱敏感度“看到”的场景的有效辐射度。由于 $R(\lambda)$ 的积分为 1，这个结果的物理单位与 $L(\lambda)$ 完全相同。
+-   积分部分 $\int L(\lambda) R(\lambda) d\lambda$ 计算了一个被称为**波段平均[辐射度](@keyword=radiosity|lang=zh-CN|style=Feynman) (band-averaged radiance)** 的量。它代表了传感器根据其光谱敏感度“看到”的场景的有效辐射度。由于 $R(\lambda)$ 的积分为 1，这个结果的物理单位与 $L(\lambda)$ 完全相同。
 -   常数 $K$ 则是一个**绝对辐射定标系数 (absolute radiometric calibration coefficient)**。它将所有与波长无关的仪器参数（如光学通量 $A\Omega$、积分时间 $t$ 以及将电子数转换为最终数字（DN）的电子增益）全部打包成一个单一的增益因子。
 
 这种分离是至关重要的。$R(\lambda)$ 描述了传感器的光谱特性，而 $K$ 描述了其辐射度量级的整体灵敏度。我们可以独立地研究和测量它们。
@@ -87,21 +87,21 @@ $$
 
 人们很自然地想用一个单一的波长来代表整个波段。但“中心波长”到底是什么？是 $R(\lambda)$ 的峰值位置（$\lambda_{\mathrm{pk}}$）吗？还是其光谱范围的几何中心（$\lambda_{\mathrm{geo}}$）？对于一个不对称的 SRF，这两个值可能相差甚远。
 
-一个更稳健、物理意义更明确的定义是**[有效波长](@entry_id:1124197) (effective wavelength)** $\lambda_{\mathrm{eff}}$，它被定义为 SRF 的[质心](@entry_id:138352)或一阶矩 ：
+一个更稳健、物理意义更明确的定义是**[有效波长](@keyword=effective_wavelength|lang=zh-CN|style=Feynman) (effective wavelength)** $\lambda_{\mathrm{eff}}$，它被定义为 SRF 的[质心](@keyword=center_of_mass|lang=zh-CN|style=Feynman)或一阶矩 [@problem_id:3845886]：
 
 $$
 \lambda_{\mathrm{eff}} = \frac{\int \lambda R(\lambda) d\lambda}{\int R(\lambda) d\lambda}
 $$
 
-（由于我们定义的 $R(\lambda)$ 积分为 1，分母就是 1）。这个定义的优美之处在于，对于一个在波段内缓慢变化的光谱 $L(\lambda)$，波段平均[辐射度](@entry_id:156534)可以很好地近似为在[有效波长](@entry_id:1124197)处的辐射度值，即 $\int L(\lambda) R(\lambda) d\lambda \approx L(\lambda_{\mathrm{eff}})$。只有当 SRF 的形状是完美的、单峰对称的（例如一个矩形或高斯形状），$\lambda_{\mathrm{eff}}$、$\lambda_{\mathrm{pk}}$ 和 $\lambda_{\mathrm{geo}}$ 这三个量才会重合。
+（由于我们定义的 $R(\lambda)$ 积分为 1，分母就是 1）。这个定义的优美之处在于，对于一个在波段内缓慢变化的光谱 $L(\lambda)$，波段平均[辐射度](@keyword=radiosity|lang=zh-CN|style=Feynman)可以很好地近似为在[有效波长](@keyword=effective_wavelength|lang=zh-CN|style=Feynman)处的辐射度值，即 $\int L(\lambda) R(\lambda) d\lambda \approx L(\lambda_{\mathrm{eff}})$。只有当 SRF 的形状是完美的、单峰对称的（例如一个矩形或高斯形状），$\lambda_{\mathrm{eff}}$、$\lambda_{\mathrm{pk}}$ 和 $\lambda_{\mathrm{geo}}$ 这三个量才会重合。
 
 #### 带宽与分辨率
 
-另一个关键特征是 SRF 的宽度，通常用**半峰全宽 (Full Width at Half Maximum, FWHM)** 来量化。顾名思义，它是在 SRF 达到其峰值一半高度时，函数图像所跨越的波长宽度 。FWHM 为我们提供了一个关于波段“纯度”的直观度量：一个窄的 FWHM 意味着传感器对一个非常特定的颜色敏感，而一个宽的 FWHM 则意味着它混合了更广泛的颜色。
+另一个关键特征是 SRF 的宽度，通常用**半峰全宽 (Full Width at Half Maximum, FWHM)** 来量化。顾名思义，它是在 SRF 达到其峰值一半高度时，函数图像所跨越的波长宽度 [@problem_id:3845873]。FWHM 为我们提供了一个关于波段“纯度”的直观度量：一个窄的 FWHM 意味着传感器对一个非常特定的颜色敏感，而一个宽的 FWHM 则意味着它混合了更广泛的颜色。
 
-FWHM 与仪器的**[光谱分辨率](@entry_id:263022)**——区分两个相邻的窄光谱特征的能力——直接相关。想象一下，一个场景中有两条非常窄的发射谱线，就像钠灯发出的两条靠得很近的黄色谱线。我们的传感器能将它们分辨成两个独立的峰，还是只能看到一个模糊的、合并后的峰？
+FWHM 与仪器的**[光谱分辨率](@keyword=spectral_resolution|lang=zh-CN|style=Feynman)**——区分两个相邻的窄光谱特征的能力——直接相关。想象一下，一个场景中有两条非常窄的发射谱线，就像钠灯发出的两条靠得很近的黄色谱线。我们的传感器能将它们分辨成两个独立的峰，还是只能看到一个模糊的、合并后的峰？
 
-答案取决于这两条谱线的间距与传感器 SRF 的 FWHM 的比较。根据一个被称为**斯派洛判据 (Sparrow criterion)** 的物理准则，当两个相同强度的高斯形谱线被一个高斯形 SRF 观测时，它们恰好能被分辨的[临界点](@entry_id:144653)发生在它们的间距等于 $2\sigma$（其中 $\sigma$ 是 SRF 的标准差）时。这一点恰好是它们叠加后的曲线中心从一个峰顶变为一个[局部极小值](@entry_id:143537)的转折点。对于高斯函数，FWHM 和 $\sigma$ 之间有一个固定的关系：$\text{FWHM} \approx 2.355\sigma$。因此，分辨两条谱线所需的最小间距 $\Delta\lambda$ 约为 ：
+答案取决于这两条谱线的间距与传感器 SRF 的 FWHM 的比较。根据一个被称为**斯派洛判据 (Sparrow criterion)** 的物理准则，当两个相同强度的高斯形谱线被一个高斯形 SRF 观测时，它们恰好能被分辨的[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)发生在它们的间距等于 $2\sigma$（其中 $\sigma$ 是 SRF 的标准差）时。这一点恰好是它们叠加后的曲线中心从一个峰顶变为一个[局部极小值](@keyword=local_minimum|lang=zh-CN|style=Feynman)的转折点。对于高斯函数，FWHM 和 $\sigma$ 之间有一个固定的关系：$\text{FWHM} \approx 2.355\sigma$。因此，分辨两条谱线所需的最小间距 $\Delta\lambda$ 约为 [@problem_id:3845873]：
 
 $$
 \Delta\lambda \approx \frac{\text{FWHM}}{\sqrt{2\ln(2)}} \approx 0.849 \cdot \text{FWHM}
@@ -115,32 +115,32 @@ $$
 
 #### 角度效应：光谱蓝移
 
-许多传感器使用的干涉滤光片，其工作原理依赖于光在多层薄膜中反射和干涉时的[光程差](@entry_id:201533)。当光线以一个角度 $\theta_i$（而非垂直）入射时，它在薄膜内部的有效[光程](@entry_id:178906)会缩短（正比于 $\cos\theta_t$，其中 $\theta_t$ 是内部传播角）。这导致整个[通带](@entry_id:276907)向**更短的波长移动**，这种现象被称为**蓝移 (blue shift)**。因此，对于视场边缘的像素，其感知的中心波长会比视场中心的像素略微偏蓝 。
+许多传感器使用的干涉滤光片，其工作原理依赖于光在多层薄膜中反射和干涉时的[光程差](@keyword=path_difference|lang=zh-CN|style=Feynman)。当光线以一个角度 $\theta_i$（而非垂直）入射时，它在薄膜内部的有效[光程](@keyword=optical_path_length|lang=zh-CN|style=Feynman)会缩短（正比于 $\cos\theta_t$，其中 $\theta_t$ 是内部传播角）。这导致整个[通带](@keyword=passband|lang=zh-CN|style=Feynman)向**更短的波长移动**，这种现象被称为**蓝移 (blue shift)**。因此，对于视场边缘的像素，其感知的中心波长会比视场中心的像素略微偏蓝 [@problem_id:3845831]。
 
 #### 温度效应：光谱红移
 
-温度是另一个关键的扰动因素。温度升高会通过两种主要机制影响 SRF ：
-1.  **滤光片效应**：材料的热胀冷缩（由热膨胀系数 $\alpha$ 描述）和折射率随温度的变化（由[热光](@entry_id:165211)系数 $dn/dT$ 描述）都会改变滤光片的光学厚度。对于大多数材料，这两种效应都会导致[通带](@entry_id:276907)向**更长的波长移动**，即**红移 (red shift)**。
-2.  **探测器效应**：[半导体探测器](@entry_id:157719)的[带隙](@entry_id:138445)能量 $E_g$ 对温度很敏感。对于硅等常用材料，温度升高会导致[带隙](@entry_id:138445)能量减小。由于探测器的长[波截止](@entry_id:1133985)波长由 $\lambda_c = hc/E_g$ 决定，[带隙](@entry_id:138445)能量的减小会导致截止波长**向更长的波长移动**，同样是**红移**。
+温度是另一个关键的扰动因素。温度升高会通过两种主要机制影响 SRF [@problem_id:3845831]：
+1.  **滤光片效应**：材料的热胀冷缩（由热膨胀系数 $\alpha$ 描述）和折射率随温度的变化（由[热光](@keyword=thermal_light|lang=zh-CN|style=Feynman)系数 $dn/dT$ 描述）都会改变滤光片的光学厚度。对于大多数材料，这两种效应都会导致[通带](@keyword=passband|lang=zh-CN|style=Feynman)向**更长的波长移动**，即**红移 (red shift)**。
+2.  **探测器效应**：[半导体探测器](@keyword=semiconductor_detectors|lang=zh-CN|style=Feynman)的[带隙](@keyword=band_gap|lang=zh-CN|style=Feynman)能量 $E_g$ 对温度很敏感。对于硅等常用材料，温度升高会导致[带隙](@keyword=band_gap|lang=zh-CN|style=Feynman)能量减小。由于探测器的长[波截止](@keyword=wave_cutoffs|lang=zh-CN|style=Feynman)波长由 $\lambda_c = hc/E_g$ 决定，[带隙](@keyword=band_gap|lang=zh-CN|style=Feynman)能量的减小会导致截止波长**向更长的波长移动**，同样是**红移**。
 
-#### 空间维度：光谱“微笑”与“[梯形畸变](@entry_id:169956)”
+#### 空间维度：光谱“微笑”与“[梯形畸变](@keyword=keystone_distortion|lang=zh-CN|style=Feynman)”
 
-对于一个**成像**[光谱仪](@entry_id:193181)，事情变得更加复杂，因为 SRF 可能会在整个视场（空间维度）上发生变化。两种最著名的畸变是“光谱微笑”和“[梯形畸变](@entry_id:169956)” 。
+对于一个**成像**[光谱仪](@keyword=spectrometer|lang=zh-CN|style=Feynman)，事情变得更加复杂，因为 SRF 可能会在整个视场（空间维度）上发生变化。两种最著名的畸变是“光谱微笑”和“[梯形畸变](@keyword=keystone_distortion|lang=zh-CN|style=Feynman)” [@problem_id:3845863]。
 -   **光谱微笑 (Spectral Smile)**：这是指对于一个给定的波长，它在探测器上成像的位置并不是一条直线，而是一条弯曲的曲线，形状酷似一个“微笑”或“皱眉”。这意味着位于视场边缘的像素和中心像素的中心波长是不同的。
--   **[梯形畸变](@entry_id:169956) (Keystone)**：这是指一个地面上的点，在不同波长的图像中，其空间位置会发生偏移。这就像不同颜色的图像之间没有完美地对齐。
+-   **[梯形畸变](@keyword=keystone_distortion|lang=zh-CN|style=Feynman) (Keystone)**：这是指一个地面上的点，在不同波长的图像中，其空间位置会发生偏移。这就像不同颜色的图像之间没有完美地对齐。
 
-这些畸变都源于仪器[光学设计](@entry_id:163416)的复杂性，必须在数据处理中进行精确校正，以确保光谱和空间信息的准确性。
+这些畸变都源于仪器[光学设计](@keyword=optical_design|lang=zh-CN|style=Feynman)的复杂性，必须在数据处理中进行精确校正，以确保光谱和空间信息的准确性。
 
-### 当模型失效：[非线性](@entry_id:637147)与 SRF 的局限
+### 当模型失效：[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)与 SRF 的局限
 
-我们所依赖的那个简洁的[线性模型](@entry_id:178302)——`信号` $\propto \int L(\lambda) R(\lambda) d\lambda$——是一个非常强大的近似，但它终究只是一个近似。当信号非常强时，真实世界的探测器会暴露出它的[非线性](@entry_id:637147)行为。
+我们所依赖的那个简洁的[线性模型](@keyword=linear_models|lang=zh-CN|style=Feynman)——`信号` $\propto \int L(\lambda) R(\lambda) d\lambda$——是一个非常强大的近似，但它终究只是一个近似。当信号非常强时，真实世界的探测器会暴露出它的[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)行为。
 
-首先，探测器的响应可能不是严格线性的。当光照增强时，其输出信号的增长可能会减慢。这种效应可以被建模为在我们的线性方程中加入一个二次项，例如 `输出` $\propto a_1 Q + a_2 Q^2$，其中 $Q$ 是积分光生电荷 。其次，任何探测器都有其极限。当信号强到一定程度时，它会**饱和 (saturate)**，输出值将不再增加，被“削平”在一个最大值上。
+首先，探测器的响应可能不是严格线性的。当光照增强时，其输出信号的增长可能会减慢。这种效应可以被建模为在我们的线性方程中加入一个二次项，例如 `输出` $\propto a_1 Q + a_2 Q^2$，其中 $Q$ 是积分光生电荷 [@problem_id:3845891]。其次，任何探测器都有其极限。当信号强到一定程度时，它会**饱和 (saturate)**，输出值将不再增加，被“削平”在一个最大值上。
 
-这两种效应——**[非线性](@entry_id:637147)**和**饱和**——都从根本上破坏了[线性叠加原理](@entry_id:196987)。这意味着，一个单一的、与输入信号无关的 SRF 概念不再严格成立。系统的响应（其“SRF”）现在取决于它所观测的场景本身的亮度！
+这两种效应——**[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)**和**饱和**——都从根本上破坏了[线性叠加原理](@keyword=principle_of_linear_superposition|lang=zh-CN|style=Feynman)。这意味着，一个单一的、与输入信号无关的 SRF 概念不再严格成立。系统的响应（其“SRF”）现在取决于它所观测的场景本身的亮度！
 
 那么，SRF 的概念就完全没用了吗？并非如此。只要我们足够小心，这个概念仍然非常有用。
--   我们可以定义一个**有效 SRF (effective SRF)**，它描述了系统在某个特定的背景光照水平下，对微小信号变化的响应。这本质上是在一个[工作点](@entry_id:173374)上对系统进行线性化。
--   只要我们确保传感器工作在其响应的“近线性”区域（即[非线性](@entry_id:637147)项的影响可以忽略不计），并且远未达到饱和，那么那个简单的、理想化的 SRF 模型就依然是一个极好的近似 。
+-   我们可以定义一个**有效 SRF (effective SRF)**，它描述了系统在某个特定的背景光照水平下，对微小信号变化的响应。这本质上是在一个[工作点](@keyword=operating_point|lang=zh-CN|style=Feynman)上对系统进行线性化。
+-   只要我们确保传感器工作在其响应的“近线性”区域（即[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)项的影响可以忽略不计），并且远未达到饱和，那么那个简单的、理想化的 SRF 模型就依然是一个极好的近似 [@problem_id:3845891]。
 
 理解这些局限性与理解 SRF 本身同样重要。它提醒我们，我们所有的模型都是对现实的简化。一个优秀的科学家不仅要懂得如何使用模型，更要懂得模型在何处会失效，以及为什么会失效。光谱响应函数，这个从光子的微观旅程到宏观仪器性能的桥梁，完美地诠释了这一科学智慧。

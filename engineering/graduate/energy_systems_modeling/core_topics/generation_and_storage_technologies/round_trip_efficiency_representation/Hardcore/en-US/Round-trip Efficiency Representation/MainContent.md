@@ -1,11 +1,11 @@
 ## Introduction
-Round-trip efficiency (RTE) is one of the most critical performance metrics for any energy storage technology. It dictates not only the technical feasibility of a device but also its economic viability and environmental impact within the broader energy system. While the basic concept—the ratio of energy out to energy in—is simple, a superficial understanding is insufficient for the rigorous demands of modern energy systems modeling. The complexity arises from multiple loss pathways, the dependence of efficiency on operating conditions, and the profound economic consequences of even small inefficiencies. This article addresses this gap by providing a deep, multi-faceted exploration of how to accurately represent and interpret [round-trip efficiency](@entry_id:1131124).
+Round-trip efficiency (RTE) is one of the most critical performance metrics for any energy storage technology. It dictates not only the technical feasibility of a device but also its economic viability and environmental impact within the broader energy system. While the basic concept—the ratio of energy out to energy in—is simple, a superficial understanding is insufficient for the rigorous demands of modern energy systems modeling. The complexity arises from multiple loss pathways, the dependence of efficiency on operating conditions, and the profound economic consequences of even small inefficiencies. This article addresses this gap by providing a deep, multi-faceted exploration of how to accurately represent and interpret round-trip efficiency.
 
 This article will guide you from first principles to advanced applications. In the "Principles and Mechanisms" chapter, we will establish the fundamental mathematical definitions of RTE, deconstruct it into its constituent parts like conversion and standing losses, and explore its physical origins in electrochemical systems. Following this, the "Applications and Interdisciplinary Connections" chapter will demonstrate the far-reaching impact of RTE on system design, economic arbitrage, grid optimization, and life-cycle environmental assessment. Finally, the "Hands-On Practices" section will allow you to solidify your understanding by building and analyzing optimization models that incorporate these sophisticated efficiency representations, bridging the gap between theory and practical implementation.
 
 ## Principles and Mechanisms
 
-The concept of round-trip efficiency (RTE) is central to the analysis, design, and [economic evaluation](@entry_id:901239) of any energy storage system. It quantifies the fundamental reality that storing and retrieving energy is not a lossless process. This chapter delves into the principles governing RTE, explores the various physical mechanisms contributing to energy loss, and establishes rigorous mathematical representations used in advanced energy system modeling.
+The concept of round-trip efficiency (RTE) is central to the analysis, design, and economic evaluation of any energy storage system. It quantifies the fundamental reality that storing and retrieving energy is not a lossless process. This chapter delves into the principles governing RTE, explores the various physical mechanisms contributing to energy loss, and establishes rigorous mathematical representations used in advanced energy system modeling.
 
 ### Foundational Definition of Round-Trip Efficiency
 
@@ -17,13 +17,13 @@ $E_{\text{in}} = \int_{t_0}^{t_1} p_{\text{in}}(t) \, dt$
 
 $E_{\text{out}} = \int_{t_0}^{t_1} p_{\text{out}}(t) \, dt$
 
-The [round-trip efficiency](@entry_id:1131124) is then defined as the ratio of the total energy output to the total energy input:
+The round-trip efficiency is then defined as the ratio of the total energy output to the total energy input:
 
 $$
 \eta_{RT} = \frac{E_{\text{out}}}{E_{\text{in}}} = \frac{\int_{t_0}^{t_1} p_{\text{out}}(t) \, dt}{\int_{t_0}^{t_1} p_{\text{in}}(t) \, dt}
 $$
 
-Due to the Second Law of Thermodynamics, [energy conversion](@entry_id:138574) processes are inherently dissipative. Some energy is invariably converted into a non-useful form, typically heat, during both the charging and discharging phases. Consequently, for any real-world storage device, $E_{\text{out}} \lt E_{\text{in}}$, which implies that $\eta_{RT} \lt 1$. The difference $E_{\text{in}} - E_{\text{out}}$ represents the total energy lost over the cycle. It is important to distinguish RTE from the loss fraction, which is given by $(E_{\text{in}} - E_{\text{out}}) / E_{\text{in}} = 1 - \eta_{RT}$ .
+Due to the Second Law of Thermodynamics, energy conversion processes are inherently dissipative. Some energy is invariably converted into a non-useful form, typically heat, during both the charging and discharging phases. Consequently, for any real-world storage device, $E_{\text{out}} \lt E_{\text{in}}$, which implies that $\eta_{RT} \lt 1$. The difference $E_{\text{in}} - E_{\text{out}}$ represents the total energy lost over the cycle. It is important to distinguish RTE from the loss fraction, which is given by $(E_{\text{in}} - E_{\text{out}}) / E_{\text{in}} = 1 - \eta_{RT}$ [@problem_id:4120252].
 
 ### One-Way Efficiencies and the State-of-Charge Balance
 
@@ -43,9 +43,9 @@ $$
 \eta_d = \frac{p^{\text{dis}} \Delta t}{|\Delta s_{\text{dis}}|} \implies |\Delta s_{\text{dis}}| = \frac{p^{\text{dis}} \Delta t}{\eta_d}
 $$
 
-The change in stored energy during discharge is thus $\Delta s_{\text{dis}} = - \frac{p^{\text{dis}} \Delta t}{\eta_d}$  . The placement of $\eta_c$ as a multiplier for charging and $1/\eta_d$ as a [divisor](@entry_id:188452) for discharging is a direct consequence of energy conservation: for a lossy system ($\eta_c, \eta_d \lt 1$), the energy stored must be less than the energy drawn from the grid, and the energy drawn from the store must be greater than the energy delivered to the grid.
+The change in stored energy during discharge is thus $\Delta s_{\text{dis}} = - \frac{p^{\text{dis}} \Delta t}{\eta_d}$ [@problem_id:4125167] [@problem_id:4120235]. The placement of $\eta_c$ as a multiplier for charging and $1/\eta_d$ as a divisor for discharging is a direct consequence of energy conservation: for a lossy system ($\eta_c, \eta_d \lt 1$), the energy stored must be less than the energy drawn from the grid, and the energy drawn from the store must be greater than the energy delivered to the grid.
 
-Combining these, we can write a general [state-of-charge balance](@entry_id:1132294) equation for the stored energy $s_t$ at time step $t$:
+Combining these, we can write a general state-of-charge balance equation for the stored energy $s_t$ at time step $t$:
 
 $$
 s_{t+1} = s_t + \eta_c \, p^{\text{ch}}_t \Delta t - \frac{1}{\eta_d} \, p^{\text{dis}}_t \Delta t
@@ -65,33 +65,33 @@ The total inefficiency of an energy storage system arises from multiple distinct
 
 #### Conversion vs. Standing Losses
 
-The one-way efficiencies $\eta_c$ and $\eta_d$ primarily capture **conversion losses**. These are losses proportional to the power being processed by the device, arising from phenomena like [ohmic resistance](@entry_id:1129097), [charge-transfer](@entry_id:155270) kinetics, and mass transport limitations within an [electrochemical cell](@entry_id:147644).
+The one-way efficiencies $\eta_c$ and $\eta_d$ primarily capture **conversion losses**. These are losses proportional to the power being processed by the device, arising from phenomena like ohmic resistance, charge-transfer kinetics, and mass transport limitations within an electrochemical cell.
 
-A second major category is **standing losses**, also known as [self-discharge](@entry_id:274268) or parasitic losses. These are time-dependent losses that occur even when the device is idle (i.e., not charging or discharging). They are typically proportional to the amount of energy currently stored. A common model for [standing loss](@entry_id:1132284) is exponential decay, where a fraction of the stored energy is lost over a given time interval.
+A second major category is **standing losses**, also known as self-discharge or parasitic losses. These are time-dependent losses that occur even when the device is idle (i.e., not charging or discharging). They are typically proportional to the amount of energy currently stored. A common model for standing loss is exponential decay, where a fraction of the stored energy is lost over a given time interval.
 
-We can refine our discrete-time state-of-charge model to include both types of losses :
+We can refine our discrete-time state-of-charge model to include both types of losses [@problem_id:4120235]:
 
 $$
 s_{t+1} = (1-\lambda) s_t + \eta_c \, p^{\text{ch}}_t \Delta t - \frac{1}{\eta_d} \, p^{\text{dis}}_t \Delta t
 $$
 
-Here, $\lambda$ is the fractional [standing loss](@entry_id:1132284) per time step $\Delta t$. The term $(1-\lambda)s_t$ represents the portion of energy that remains after self-discharge over one period. If the device is idle ($p^{\text{ch}}_t = p^{\text{dis}}_t = 0$), the equation simplifies to $s_{t+1} = (1-\lambda)s_t$, clearly showing the inventory-dependent decay. The discrete loss factor $\lambda$ is related to the continuous-time [self-discharge](@entry_id:274268) rate constant $\alpha$ (in units of 1/time) by the exact relationship $(1-\lambda) = \exp(-\alpha \Delta t)$, which can be approximated as $\lambda \approx \alpha \Delta t$ for small time steps.
+Here, $\lambda$ is the fractional standing loss per time step $\Delta t$. The term $(1-\lambda)s_t$ represents the portion of energy that remains after self-discharge over one period. If the device is idle ($p^{\text{ch}}_t = p^{\text{dis}}_t = 0$), the equation simplifies to $s_{t+1} = (1-\lambda)s_t$, clearly showing the inventory-dependent decay. The discrete loss factor $\lambda$ is related to the continuous-time self-discharge rate constant $\alpha$ (in units of 1/time) by the exact relationship $(1-\lambda) = \exp(-\alpha \Delta t)$, which can be approximated as $\lambda \approx \alpha \Delta t$ for small time steps.
 
-The presence of standing losses means that the effective [round-trip efficiency](@entry_id:1131124) is no longer constant but depends on the duration of storage. Consider a cycle where energy is charged, held in storage for a "dwell time" $T$, and then discharged. The initial round-trip conversion efficiency $\eta_c \eta_d$ is further degraded by the [self-discharge](@entry_id:274268) during the dwell period. The energy available for discharge is reduced by a factor of $\exp(-\alpha T)$. Thus, the cycle-level RTE becomes a function of the storage duration :
+The presence of standing losses means that the effective round-trip efficiency is no longer constant but depends on the duration of storage. Consider a cycle where energy is charged, held in storage for a "dwell time" $T$, and then discharged. The initial round-trip conversion efficiency $\eta_c \eta_d$ is further degraded by the self-discharge during the dwell period. The energy available for discharge is reduced by a factor of $\exp(-\alpha T)$. Thus, the cycle-level RTE becomes a function of the storage duration [@problem_id:4120256]:
 
 $$
 \eta_{RT}(T) = \eta_c \eta_d \exp(-\alpha T)
 $$
 
-For example, a device with $\eta_c=0.98$ and $\eta_d=0.97$ has a conversion RTE of $0.98 \times 0.97 \approx 0.951$. If this device has a [standing loss](@entry_id:1132284) rate of $\alpha = 0.01 \, \text{h}^{-1}$ (1% per hour) and the energy is stored for a dwell time of $T=24$ hours, the effective RTE for this cycle drops significantly: $\eta_{RT}(24) = 0.951 \times \exp(-0.01 \times 24) \approx 0.951 \times 0.787 \approx 0.748$. This demonstrates that for long-duration storage applications, minimizing standing losses is as critical as maximizing conversion efficiencies.
+For example, a device with $\eta_c=0.98$ and $\eta_d=0.97$ has a conversion RTE of $0.98 \times 0.97 \approx 0.951$. If this device has a standing loss rate of $\alpha = 0.01 \, \text{h}^{-1}$ (1% per hour) and the energy is stored for a dwell time of $T=24$ hours, the effective RTE for this cycle drops significantly: $\eta_{RT}(24) = 0.951 \times \exp(-0.01 \times 24) \approx 0.951 \times 0.787 \approx 0.748$. This demonstrates that for long-duration storage applications, minimizing standing losses is as critical as maximizing conversion efficiencies.
 
 #### Net vs. Gross Efficiency: The Role of Auxiliary Loads
 
 In a practical installation, the storage device itself is part of a larger facility that may include auxiliary systems such as thermal management (HVAC), control electronics, and monitoring equipment. These **auxiliary loads** consume power, which can significantly impact the overall efficiency as measured from the grid connection point, or Point of Interconnection (POI).
 
-This distinction leads to two important definitions of RTE :
+This distinction leads to two important definitions of RTE [@problem_id:4120295]:
 
-1.  **Net Round-Trip Efficiency ($\eta_{\text{net}}$)**: This is the efficiency measured at the electrical terminals of the storage device or stack itself. It reflects the intrinsic performance of the core storage technology, accounting only for its [internal conversion](@entry_id:161248) and standing losses. It is equivalent to the $\eta_{RT}$ discussed in previous sections.
+1.  **Net Round-Trip Efficiency ($\eta_{\text{net}}$)**: This is the efficiency measured at the electrical terminals of the storage device or stack itself. It reflects the intrinsic performance of the core storage technology, accounting only for its internal conversion and standing losses. It is equivalent to the $\eta_{RT}$ discussed in previous sections.
 
 2.  **Gross Round-Trip Efficiency ($\eta_{\text{gross}}$)**: This is the efficiency measured at the facility's POI with the grid. It accounts for both the storage device's internal losses *and* the energy consumed by all auxiliary loads.
 
@@ -111,7 +111,7 @@ To engineer better storage devices, it is essential to understand the physical m
 
 #### Coulombic and Voltage Efficiency
 
-The total round-trip energy efficiency can be expressed as the product of **Coulombic efficiency** ($\eta_C$) and **voltage efficiency** ($\eta_V$) .
+The total round-trip energy efficiency can be expressed as the product of **Coulombic efficiency** ($\eta_C$) and **voltage efficiency** ($\eta_V$) [@problem_id:4120297].
 
 $$
 \eta_{RT} \approx \eta_C \eta_V
@@ -123,7 +123,7 @@ $$
 \eta_C = \frac{Q_{\text{dis}}}{Q_{\text{ch}}}
 $$
 
-A Coulombic efficiency of less than 1 indicates that some of the charge carriers (e.g., lithium ions) are lost to irreversible parasitic side reactions (e.g., [solid-electrolyte interphase](@entry_id:159806) growth) during each cycle and are no longer available for delivering energy.
+A Coulombic efficiency of less than 1 indicates that some of the charge carriers (e.g., lithium ions) are lost to irreversible parasitic side reactions (e.g., solid-electrolyte interphase growth) during each cycle and are no longer available for delivering energy.
 
 **Voltage efficiency** ($\eta_V$) is the ratio of the average voltage during discharge to the average voltage during charge.
 
@@ -141,11 +141,11 @@ $$
 V(x, I) = U(x) + \eta_{\text{overpotential}}(x, I)
 $$
 
-Here, $U(x)$ is the equilibrium [open-circuit voltage](@entry_id:270130) (OCV). The overpotential term represents the deviation from equilibrium due to current flow. It can be modeled, for instance, as the sum of an [ohmic drop](@entry_id:272464) and a branch-dependent hysteresis term .
+Here, $U(x)$ is the equilibrium open-circuit voltage (OCV). The overpotential term represents the deviation from equilibrium due to current flow. It can be modeled, for instance, as the sum of an ohmic drop and a branch-dependent hysteresis term [@problem_id:4120313].
 
 $V(x, I) = U_{\text{br}}(x) + rI$
 
-Here, $r$ is the internal ohmic resistance, and $U_{\text{br}}(x)$ is a reversible but branch-dependent OCV, with a different function for charging, $U_c(x)$, and discharging, $U_d(x)$. The fact that $U_c(x) > U_d(x)$ represents [thermodynamic hysteresis](@entry_id:1133065) in the material. The term $rI$ represents the voltage drop due to electrical resistance. Both effects contribute to voltage efficiency losses. The total energy loss due to voltage effects is the integral of $(V_{\text{ch}} - V_{\text{dis}})$ over the charge transferred. By carefully defining one-way efficiencies referenced to these different voltage branches, it is possible to isolate the effect of hysteresis alone. The ratio of the measured RTE to the product of these branch-referenced one-way efficiencies reveals a term that depends only on the ratio of the integrated reversible voltages, isolating the impact of [thermodynamic hysteresis](@entry_id:1133065) from ohmic losses: $\rho = (\int U_d(x)dx) / (\int U_c(x)dx)$.
+Here, $r$ is the internal ohmic resistance, and $U_{\text{br}}(x)$ is a reversible but branch-dependent OCV, with a different function for charging, $U_c(x)$, and discharging, $U_d(x)$. The fact that $U_c(x) > U_d(x)$ represents thermodynamic hysteresis in the material. The term $rI$ represents the voltage drop due to electrical resistance. Both effects contribute to voltage efficiency losses. The total energy loss due to voltage effects is the integral of $(V_{\text{ch}} - V_{\text{dis}})$ over the charge transferred. By carefully defining one-way efficiencies referenced to these different voltage branches, it is possible to isolate the effect of hysteresis alone. The ratio of the measured RTE to the product of these branch-referenced one-way efficiencies reveals a term that depends only on the ratio of the integrated reversible voltages, isolating the impact of thermodynamic hysteresis from ohmic losses: $\rho = (\int U_d(x)dx) / (\int U_c(x)dx)$.
 
 ### Path Dependence: Instantaneous vs. Cycle Efficiency
 
@@ -153,7 +153,7 @@ A further layer of complexity arises because the instantaneous efficiencies, $\e
 
 This means that the overall energy-based RTE for a given cycle, $\eta_{RT} = E_{\text{out}}/E_{\text{in}}$, is not a fixed property of the device but is **path-dependent**—it depends on the specific power profile and state-of-charge trajectory taken during that cycle.
 
-To reconcile the instantaneous, power-based efficiencies with the cycle-level, energy-based RTE, one must perform a power-weighted integration over the cycle's path . The total energy effectively stored during charging is not simply an average efficiency multiplied by the total input energy. Rather, it is the integral of the effective power being stored:
+To reconcile the instantaneous, power-based efficiencies with the cycle-level, energy-based RTE, one must perform a power-weighted integration over the cycle's path [@problem_id:4120257]. The total energy effectively stored during charging is not simply an average efficiency multiplied by the total input energy. Rather, it is the integral of the effective power being stored:
 
 $$
 \Delta s_{\text{stored}} = \int_{\text{charge}} \eta_c(x(t), p^{\text{ch}}(t)) \, p^{\text{ch}}(t) \, dt
@@ -173,7 +173,7 @@ $$
 p_2 \eta_{RT} E_{\text{in}} \ge p_1 E_{\text{in}}
 $$
 
-Assuming $\eta_{RT}$ is the product of one-way efficiencies, $\eta_c \eta_d$, and simplifying, we arrive at the break-even condition for the price ratio  :
+Assuming $\eta_{RT}$ is the product of one-way efficiencies, $\eta_c \eta_d$, and simplifying, we arrive at the break-even condition for the price ratio [@problem_id:4120298] [@problem_id:4120266]:
 
 $$
 \frac{p_2}{p_1} \ge \frac{1}{\eta_{RT}} = \frac{1}{\eta_c \eta_d}

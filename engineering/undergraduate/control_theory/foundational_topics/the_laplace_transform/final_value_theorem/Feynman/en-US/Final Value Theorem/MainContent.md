@@ -1,5 +1,5 @@
 ## Introduction
-In engineering and science, predicting the ultimate behavior of a dynamic system is a fundamental challenge. How can we know the final temperature of a processor, the final speed of a motor, or the final position of a satellite without waiting indefinitely or solving complex differential equations? This article explores a powerful mathematical shortcut that acts like a crystal ball for engineers: the **Final Value Theorem (FVT)**. It addresses the problem of determining a system's long-term steady state by examining its behavior at the very initial moment in the frequency domain. Across the upcoming chapters, you will gain a comprehensive understanding of this vital tool. **"Principles and Mechanisms"** will delve into the theorem's mathematical foundation and, crucially, the stability conditions that govern its use. Next, **"Applications and Interdisciplinary Connections"** will showcase how the FVT is used to analyze [steady-state error](@article_id:270649), design high-performance controllers, and even model economic systems. Finally, **"Hands-On Practices"** will solidify your knowledge with targeted problems. Let us begin by exploring the principles that give the Final Value Theorem its predictive power.
+In engineering and science, predicting the ultimate behavior of a dynamic system is a fundamental challenge. How can we know the final temperature of a processor, the final speed of a motor, or the final position of a satellite without waiting indefinitely or solving complex differential equations? This article explores a powerful mathematical shortcut that acts like a crystal ball for engineers: the **Final Value Theorem (FVT)**. It addresses the problem of determining a system's long-term steady state by examining its behavior at the very initial moment in the frequency domain. Across the upcoming chapters, you will gain a comprehensive understanding of this vital tool. **"Principles and Mechanisms"** will delve into the theorem's mathematical foundation and, crucially, the stability conditions that govern its use. Next, **"Applications and Interdisciplinary Connections"** will showcase how the FVT is used to analyze [steady-state error](@keyword=steady_state_error|lang=en-US|style=Feynman), design high-performance controllers, and even model economic systems. Finally, **"Hands-On Practices"** will solidify your knowledge with targeted problems. Let us begin by exploring the principles that give the Final Value Theorem its predictive power.
 
 ## Principles and Mechanisms
 
@@ -15,7 +15,7 @@ $$
 
 Think about what this means. The left side of the equation lives in the familiar world of time; it asks us to wait and watch a system evolve over an infinite duration. The right side lives in the abstract "frequency domain" of the Laplace transform, and it only asks what happens near $s=0$, which corresponds to zero frequency, or the direct current (DC) behavior. The theorem provides a bridge between the end of a long story in the time domain and the very beginning of the story in the frequency domain.
 
-Let's see this in action. Suppose an analysis of a circuit gives us the Laplace transform of its output voltage as $Y(s) = \frac{5(s+1)}{s(s^2+4s+8)}$ (). To find the final voltage, we could undertake the arduous task of finding the inverse Laplace transform $y(t)$—a messy process involving partial fractions—and then calculate its limit as $t \to \infty$. Or, we can use our crystal ball. We compute:
+Let's see this in action. Suppose an analysis of a circuit gives us the Laplace transform of its output voltage as $Y(s) = \frac{5(s+1)}{s(s^2+4s+8)}$ ([@problem_id:1576016]). To find the final voltage, we could undertake the arduous task of finding the inverse Laplace transform $y(t)$—a messy process involving partial fractions—and then calculate its limit as $t \to \infty$. Or, we can use our crystal ball. We compute:
 
 $$
 \lim_{s \to 0} sY(s) = \lim_{s \to 0} s \left( \frac{5(s+1)}{s(s^2+4s+8)} \right) = \lim_{s \to 0} \frac{5(s+1)}{s^2+4s+8} = \frac{5(1)}{8} = \frac{5}{8}
@@ -23,7 +23,7 @@ $$
 
 Just like that, we know the voltage will eventually settle at $\frac{5}{8}$ volts.
 
-This isn't just an abstract mathematical trick; it has profound physical meaning. Consider a servomotor designed to achieve a certain [angular velocity](@article_id:192045) (). Its behavior is described by a transfer function, $G(s)$, which is the ratio of the output's transform $Y(s)$ to the input's transform $R(s)$. If we give it a step command of magnitude $A$ (so $R(s) = A/s$), the final value becomes:
+This isn't just an abstract mathematical trick; it has profound physical meaning. Consider a servomotor designed to achieve a certain [angular velocity](@keyword=angular_velocity|lang=en-US|style=Feynman) ([@problem_id:1576041]). Its behavior is described by a transfer function, $G(s)$, which is the ratio of the output's transform $Y(s)$ to the input's transform $R(s)$. If we give it a step command of magnitude $A$ (so $R(s) = A/s$), the final value becomes:
 
 $$
 y(\infty) = \lim_{s \to 0} s Y(s) = \lim_{s \to 0} s G(s) R(s) = \lim_{s \to 0} s G(s) \frac{A}{s} = A \cdot G(0)
@@ -41,7 +41,7 @@ Let's venture into the "danger zones" to see why.
 
 ### Failure Mode 1: The Runaway System
 
-Consider a model for a magnetic levitation system, which is inherently unstable without a controller. Its transfer function might look like $G(s) = \frac{8}{s^2 - 4}$ (). If we apply a unit step input ($U(s) = 1/s$), the output transform is $Y(s) = \frac{8}{s(s^2 - 4)}$.
+Consider a model for a magnetic levitation system, which is inherently unstable without a controller. Its transfer function might look like $G(s) = \frac{8}{s^2 - 4}$ ([@problem_id:1576051]). If we apply a unit step input ($U(s) = 1/s$), the output transform is $Y(s) = \frac{8}{s(s^2 - 4)}$.
 
 A naive engineer might rush to apply the FVT:
 $$
@@ -49,11 +49,11 @@ $$
 $$
 So, the object will settle at a position of $-2$? This seems plausible. But let's check our rule. The poles of $sY(s) = \frac{8}{(s-2)(s+2)}$ are at $s=2$ and $s=-2$. The pole at $s=2$ is a red flag—it's in the right-half plane! This corresponds to a time behavior proportional to $\exp(2t)$. The system isn't settling; it's exploding! The position of the levitating object is actually rushing off towards infinity.
 
-The FVT gave us a clean, finite answer, but it was a complete fabrication. The prediction was meaningless because one of the fundamental assumptions—that a final value *exists*—was false. This is the most dangerous failure mode: trusting a prediction about where something will settle when, in reality, it's headed for catastrophic failure ().
+The FVT gave us a clean, finite answer, but it was a complete fabrication. The prediction was meaningless because one of the fundamental assumptions—that a final value *exists*—was false. This is the most dangerous failure mode: trusting a prediction about where something will settle when, in reality, it's headed for catastrophic failure ([@problem_id:1600290]).
 
 ### Failure Mode 2: The Indecisive Oscillator
 
-What about a less dramatic failure? Consider a perfect, frictionless [mass-spring system](@article_id:267002) (, ). Pulled by a constant force, it won't explode, but it also won't settle. It will oscillate forever. Its transfer function from force to position looks like $G(s) = \frac{K}{s^2 + \omega_n^2}$. Again, let's analyze its response to a unit step input. We have $Y(s) = \frac{K}{s(s^2 + \omega_n^2)}$.
+What about a less dramatic failure? Consider a perfect, frictionless [mass-spring system](@keyword=mass_spring_system|lang=en-US|style=Feynman) ([@problem_id:2179906], [@problem_id:1576050]). Pulled by a constant force, it won't explode, but it also won't settle. It will oscillate forever. Its transfer function from force to position looks like $G(s) = \frac{K}{s^2 + \omega_n^2}$. Again, let's analyze its response to a unit step input. We have $Y(s) = \frac{K}{s(s^2 + \omega_n^2)}$.
 
 Let's once more play the naive engineer:
 $$
@@ -61,15 +61,15 @@ $$
 $$
 This answer, which corresponds to the familiar static deflection $F_0/k$ from physics, looks eminently reasonable. But is it correct?
 
-Let's check the poles of $sY(s) = \frac{K}{s^2 + \omega_n^2}$. They are at $s = \pm j\omega_n$. These poles are not in the left-half plane; they lie directly on the imaginary axis. This corresponds to a time behavior of $\cos(\omega_n t)$—a sustained, undamped oscillation (). The system never settles to a single final value. It forever oscillates around the very value, $K/\omega_n^2$, that the FVT predicted. The theorem gives us the *center* of the oscillation, but it falsely presents it as the *final* value. The crystal ball was cloudy; it showed us the average location but missed the perpetual motion.
+Let's check the poles of $sY(s) = \frac{K}{s^2 + \omega_n^2}$. They are at $s = \pm j\omega_n$. These poles are not in the left-half plane; they lie directly on the imaginary axis. This corresponds to a time behavior of $\cos(\omega_n t)$—a sustained, undamped oscillation ([@problem_id:1568522]). The system never settles to a single final value. It forever oscillates around the very value, $K/\omega_n^2$, that the FVT predicted. The theorem gives us the *center* of the oscillation, but it falsely presents it as the *final* value. The crystal ball was cloudy; it showed us the average location but missed the perpetual motion.
 
-This highlights the strictness of the condition: poles must be *strictly* in the [left-half plane](@article_id:270235). Being on the boundary (the [imaginary axis](@article_id:262124)) is not good enough ().
+This highlights the strictness of the condition: poles must be *strictly* in the [left-half plane](@keyword=left_half_plane|lang=en-US|style=Feynman). Being on the boundary (the [imaginary axis](@keyword=imaginary_axis|lang=en-US|style=Feynman)) is not good enough ([@problem_id:1604466]).
 
 ### What a "Wrong" Answer Really Means: A Deeper Truth
 
 This is where the story gets truly beautiful. We've seen that when the FVT "fails" for an oscillating system, the number it produces isn't just gibberish. It's the DC offset, the equilibrium point, the very center of the undying oscillation.
 
-This hints at a more profound interpretation. The operation $\lim_{s \to 0} sY(s)$ is fundamentally an act of filtering out everything but the "zero-frequency" or constant component of a signal. When a signal truly settles, its final state *is* a constant component, so the theorem works perfectly. When a signal settles into a perpetual oscillation, like $y(t) = A_0 + B\cos(\omega t)$, this operation masterfully ignores the oscillating part (which has a frequency of $\omega$) and extracts only the DC offset, $A_0$ (). This value, $A_0$, is precisely the long-term **time-average** of the signal.
+This hints at a more profound interpretation. The operation $\lim_{s \to 0} sY(s)$ is fundamentally an act of filtering out everything but the "zero-frequency" or constant component of a signal. When a signal truly settles, its final state *is* a constant component, so the theorem works perfectly. When a signal settles into a perpetual oscillation, like $y(t) = A_0 + B\cos(\omega t)$, this operation masterfully ignores the oscillating part (which has a frequency of $\omega$) and extracts only the DC offset, $A_0$ ([@problem_id:1576052]). This value, $A_0$, is precisely the long-term **time-average** of the signal.
 
 So, the Final Value Theorem isn't a faulty tool. It's a precise instrument that always measures the same thing: the strength of the truly constant, eternal part of a signal. It's our responsibility as interpreters to understand what that measurement means. If the system is stable and all transients die out, this value is indeed the "final value." If the system is an eternal oscillator, this value is its "time-averaged value." And if the system is unstable and runs off to infinity, the very premise of a finite constant value is flawed, and the theorem's calculation, valid or not, is physically irrelevant.
 

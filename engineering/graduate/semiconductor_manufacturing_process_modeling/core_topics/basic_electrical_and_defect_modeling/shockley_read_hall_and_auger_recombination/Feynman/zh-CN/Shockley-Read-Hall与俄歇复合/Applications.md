@@ -6,68 +6,68 @@
 
 ### 光之舞：光电子学的核心博弈
 
-在光电子器件中，光子是主角。我们的目标是高效地创造光（如LED）或捕获光（如[太阳能电池](@entry_id:159733)）。在这场与光的博弈中，SRH和俄歇复合扮演了关键的“反派”角色。
+在光电子器件中，光子是主角。我们的目标是高效地创造光（如LED）或捕获光（如[太阳能电池](@keyword=solar_cell|lang=zh-CN|style=Feynman)）。在这场与光的博弈中，SRH和俄歇复合扮演了关键的“反派”角色。
 
 #### LED与“效率骤降”之谜
 
-发光二极管（LED）的原理很简单：注入电子和空穴，让它们通过辐射复合发光。我们期望每一次复合都是一次光明的诞生。然而，现实并非如此。LED的内部[量子效率](@entry_id:142245)（IQE）——即[辐射复合](@entry_id:181459)事件占总复合事件的比例——展现出一种奇特的行为。在低电流下，效率不高；随着电流增加，效率攀升至一个峰值；但若电流继续增大，效率反而会不升反降，这一现象被称为“效率骤降”（Efficiency Droop）。
+发光二极管（LED）的原理很简单：注入电子和空穴，让它们通过辐射复合发光。我们期望每一次复合都是一次光明的诞生。然而，现实并非如此。LED的内部[量子效率](@keyword=quantum_efficiency|lang=zh-CN|style=Feynman)（IQE）——即[辐射复合](@keyword=radiative_recombination|lang=zh-CN|style=Feynman)事件占总复合事件的比例——展现出一种奇特的行为。在低电流下，效率不高；随着电流增加，效率攀升至一个峰值；但若电流继续增大，效率反而会不升反降，这一现象被称为“效率骤降”（Efficiency Droop）。
 
-这个谜题的答案，就藏在SRH、辐射和俄歇这三种复合机制的竞争之中。我们可以用一个简洁的“[ABC模型](@entry_id:156192)”来描述这个故事。总[复合率](@entry_id:203271) $R$ 可以写成三个部分的和：$R = An + Bn^2 + Cn^3$。
+这个谜题的答案，就藏在SRH、辐射和俄歇这三种复合机制的竞争之中。我们可以用一个简洁的“[ABC模型](@keyword=abc_model|lang=zh-CN|style=Feynman)”来描述这个故事[@problem_id:4164441]。总[复合率](@keyword=recombination_rate|lang=zh-CN|style=Feynman) $R$ 可以写成三个部分的和：$R = An + Bn^2 + Cn^3$。
 
-- **$A$ 项** 代表SRH[复合率](@entry_id:203271)，它与[载流子浓度](@entry_id:143028) $n$ 成正比。这是由材料中的缺陷（比如[晶格](@entry_id:148274)位错或杂质）引起的。在**低电流**、低载流子浓度下，这个“缺陷捷径”是主要的复合通道，许多[电子-空穴对](@entry_id:142506)在发出光子前就悄无声息地湮灭了，导致效率低下。
+- **$A$ 项** 代表SRH[复合率](@keyword=recombination_rate|lang=zh-CN|style=Feynman)，它与[载流子浓度](@keyword=charge_carrier_density|lang=zh-CN|style=Feynman) $n$ 成正比。这是由材料中的缺陷（比如[晶格](@keyword=crystal_lattices|lang=zh-CN|style=Feynman)位错或杂质）引起的。在**低电流**、低载流子浓度下，这个“缺陷捷径”是主要的复合通道，许多[电子-空穴对](@keyword=electron_hole_pair|lang=zh-CN|style=Feynman)在发出光子前就悄无声息地湮灭了，导致效率低下。
 
-- **$B$ 项** 代表我们期望的[辐射复合](@entry_id:181459)率，它与 $n^2$ 成正比。随着电流增加，[载流子浓度](@entry_id:143028) $n$ 升高，$Bn^2$ 项的增长速度超过了 $An$ 项，[辐射复合](@entry_id:181459)开始占据主导地位，于是IQE随之攀升。
+- **$B$ 项** 代表我们期望的[辐射复合](@keyword=radiative_recombination|lang=zh-CN|style=Feynman)率，它与 $n^2$ 成正比。随着电流增加，[载流子浓度](@keyword=charge_carrier_density|lang=zh-CN|style=Feynman) $n$ 升高，$Bn^2$ 项的增长速度超过了 $An$ 项，[辐射复合](@keyword=radiative_recombination|lang=zh-CN|style=Feynman)开始占据主导地位，于是IQE随之攀升。
 
-- **$C$ 项** 代表俄歇复合率，它与 $n^3$ 成正比。在**高电流**、极高载流子浓度下，载流子变得异常“拥挤”。这时，三个载流子相互作用的俄歇复合过程变得不可忽视。一个电子和一个空穴复合，但它们没有释放光子，而是将能量转移给了第三个载流子，使其变成一个高能的“热”载流子，随后再通过振动[晶格](@entry_id:148274)的方式散掉能量。这个过程不发光，纯属能量浪费。由于其对 $n$ 的三次方依赖性，它在高电流下迅速成为主导，从[辐射复合](@entry_id:181459)手中“窃取”了大量的[电子-空穴对](@entry_id:142506)，导致了“效率骤降”现象。
+- **$C$ 项** 代表俄歇复合率，它与 $n^3$ 成正比。在**高电流**、极高载流子浓度下，载流子变得异常“拥挤”。这时，三个载流子相互作用的俄歇复合过程变得不可忽视。一个电子和一个空穴复合，但它们没有释放光子，而是将能量转移给了第三个载流子，使其变成一个高能的“热”载流子，随后再通过振动[晶格](@keyword=crystal_lattices|lang=zh-CN|style=Feynman)的方式散掉能量。这个过程不发光，纯属能量浪费。由于其对 $n$ 的三次方依赖性，它在高电流下迅速成为主导，从[辐射复合](@keyword=radiative_recombination|lang=zh-CN|style=Feynman)手中“窃取”了大量的[电子-空穴对](@keyword=electron_hole_pair|lang=zh-CN|style=Feynman)，导致了“效率骤降”现象。
 
-因此，设计高效LED的过程，本质上就是一场与A和C系数的战斗。材料科学家们通过改进晶体生长工艺，减少缺陷，从而降低A系数，这可以提高LED在低电流下的效率。同时，他们通过量子阱工程等手段，试图抑制俄歇复合，即减小C系数，以推迟效率骤降的发生，让LED在高功率下也能保持高效率。对于[激光二极管](@entry_id:185754)这样工作在极高载流子浓度下的器件，[俄歇复合](@entry_id:138653)更是其性能的终极限制因素之一。
+因此，设计高效LED的过程，本质上就是一场与A和C系数的战斗。材料科学家们通过改进晶体生长工艺，减少缺陷，从而降低A系数，这可以提高LED在低电流下的效率。同时，他们通过量子阱工程等手段，试图抑制俄歇复合，即减小C系数，以推迟效率骤降的发生，让LED在高功率下也能保持高效率[@problem_id:4164451]。对于[激光二极管](@keyword=laser_diode|lang=zh-CN|style=Feynman)这样工作在极高载流子浓度下的器件，[俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)更是其性能的终极限制因素之一[@problem_id:4164459]。
 
-#### [太阳能电池](@entry_id:159733)与电压的极限
+#### [太阳能电池](@keyword=solar_cell|lang=zh-CN|style=Feynman)与电压的极限
 
-如果说在LED中，[非辐射复合](@entry_id:267336)是光的“窃贼”，那么在[太阳能电池](@entry_id:159733)中，它就是电的“内鬼”。[太阳能电池](@entry_id:159733)的工作原理与LED正好相反：吸收光子，产生[电子-空穴对](@entry_id:142506)，然后将它们分离形成电流和电压。
+如果说在LED中，[非辐射复合](@keyword=non_radiative_recombination|lang=zh-CN|style=Feynman)是光的“窃贼”，那么在[太阳能电池](@keyword=solar_cell|lang=zh-CN|style=Feynman)中，它就是电的“内鬼”。[太阳能电池](@keyword=solar_cell|lang=zh-CN|style=Feynman)的工作原理与LED正好相反：吸收光子，产生[电子-空穴对](@keyword=electron_hole_pair|lang=zh-CN|style=Feynman)，然后将它们分离形成电流和电压。
 
-在开路（不接负载）条件下，光生载流子无处可去，它们会在电池内部不断累积，直到其复合速率恰好与光生速率[相平衡](@entry_id:136822)。这种平衡状态下在电池两端建立的电压，就是[开路电压](@entry_id:270130)（$V_{OC}$），它直接决定了[太阳能电池](@entry_id:159733)的最高理论效率。
+在开路（不接负载）条件下，光生载流子无处可去，它们会在电池内部不断累积，直到其复合速率恰好与光生速率[相平衡](@keyword=phase_equilibrium|lang=zh-CN|style=Feynman)。这种平衡状态下在电池两端建立的电压，就是[开路电压](@keyword=open_circuit_voltage|lang=zh-CN|style=Feynman)（$V_{OC}$），它直接决定了[太阳能电池](@keyword=solar_cell|lang=zh-CN|style=Feynman)的最高理论效率。
 
-那么，是什么限制了$V_{OC}$的极限呢？正是非辐射复合。所有[复合过程](@entry_id:1130720)，无论是辐射的还是非辐射的，都会消耗掉累积的载流子，形成一种与[光电流](@entry_id:272634)方向相反的“暗电流”（dark current）。[开路电压](@entry_id:270130)的建立，正是[光电流](@entry_id:272634)与暗电流相互抗衡的结果。SRH、俄歇等[非辐射复合](@entry_id:267336)过程，为[暗电流](@entry_id:154449)的产生提供了额外的通道。材料中的缺陷越多（SRH复合越强），或是在强光下俄歇复合越显著，[暗电流](@entry_id:154449)就越大。为了平衡同样大小的光电流，系统只需要建立一个更低的载流子浓度和更低的[准费米能级](@entry_id:1130433)分裂，这就直接导致了更低的$V_{OC}$  。
+那么，是什么限制了$V_{OC}$的极限呢？正是非辐射复合。所有[复合过程](@keyword=recombination_processes|lang=zh-CN|style=Feynman)，无论是辐射的还是非辐射的，都会消耗掉累积的载流子，形成一种与[光电流](@keyword=photocurrent|lang=zh-CN|style=Feynman)方向相反的“暗电流”（dark current）。[开路电压](@keyword=open_circuit_voltage|lang=zh-CN|style=Feynman)的建立，正是[光电流](@keyword=photocurrent|lang=zh-CN|style=Feynman)与暗电流相互抗衡的结果。SRH、俄歇等[非辐射复合](@keyword=non_radiative_recombination|lang=zh-CN|style=Feynman)过程，为[暗电流](@keyword=dark_current|lang=zh-CN|style=Feynman)的产生提供了额外的通道。材料中的缺陷越多（SRH复合越强），或是在强光下俄歇复合越显著，[暗电流](@keyword=dark_current|lang=zh-CN|style=Feynman)就越大。为了平衡同样大小的光电流，系统只需要建立一个更低的载流子浓度和更低的[准费米能级](@keyword=quasi_fermi_potential|lang=zh-CN|style=Feynman)分裂，这就直接导致了更低的$V_{OC}$ [@problem_id:3733002] [@problem_id:4164426]。
 
-因此，一块完美的、只存在本征辐射复合的[太阳能电池](@entry_id:159733)，其[暗电流](@entry_id:154449)最小，能够达到由[热力学](@entry_id:172368)决定的理论最高电压——这便是著名的肖克利-奎伊瑟极限（Shockley-Queisser Limit）的精髓。现实世界中，我们与材料缺陷（SRH复合）和高浓度效应（[俄歇复合](@entry_id:138653)）的斗争，决定了我们能多么接近这个理论天堂。特别是在聚光光伏技术中，太阳光被透镜或反射镜汇集，光照强度可能是普通太阳光的一百倍甚至一千倍。在这种极端高注入条件下，[载流子浓度](@entry_id:143028)极高，[三体](@entry_id:265960)[俄歇过程](@entry_id:194061)便取代SRH复合，成为限制[电池效率](@entry_id:268356)的最主要杀手。
+因此，一块完美的、只存在本征辐射复合的[太阳能电池](@keyword=solar_cell|lang=zh-CN|style=Feynman)，其[暗电流](@keyword=dark_current|lang=zh-CN|style=Feynman)最小，能够达到由[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)决定的理论最高电压——这便是著名的肖克利-奎伊瑟极限（Shockley-Queisser Limit）的精髓。现实世界中，我们与材料缺陷（SRH复合）和高浓度效应（[俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)）的斗争，决定了我们能多么接近这个理论天堂。特别是在聚光光伏技术中，太阳光被透镜或反射镜汇集，光照强度可能是普通太阳光的一百倍甚至一千倍。在这种极端高注入条件下，[载流子浓度](@keyword=charge_carrier_density|lang=zh-CN|style=Feynman)极高，[三体](@keyword=trisomy|lang=zh-CN|style=Feynman)[俄歇过程](@keyword=auger_process|lang=zh-CN|style=Feynman)便取代SRH复合，成为限制[电池效率](@keyword=battery_efficiency|lang=zh-CN|style=Feynman)的最主要杀手[@problem_id:1322627]。
 
 ### 机器之脑：微电子学的隐形杀手
 
-离开了光的世界，在驱动我们数字时代的微电子器件——晶体管中，SRH和[俄歇复合](@entry_id:138653)同样扮演着不可或缺（尽管是负面）的角色。在这里，它们影响的不是光的产生或吸收，而是信息的处理速度与能耗。
+离开了光的世界，在驱动我们数字时代的微电子器件——晶体管中，SRH和[俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)同样扮演着不可或缺（尽管是负面）的角色。在这里，它们影响的不是光的产生或吸收，而是信息的处理速度与能耗。
 
 #### 晶体管作为开关（MOSFET）
 
-我们电脑和手机中的数十亿个晶体管（主要是MOSFET）构成了[数字逻辑](@entry_id:178743)的基础。理想情况下，我们希望它们是完美的开关：在“开”态（ON-state）下导通电流，在“关”态（OFF-state）下完全截止。然而，SRH复合让这个理想打了折扣。
+我们电脑和手机中的数十亿个晶体管（主要是MOSFET）构成了[数字逻辑](@keyword=digital_logic|lang=zh-CN|style=Feynman)的基础。理想情况下，我们希望它们是完美的开关：在“开”态（ON-state）下导通电流，在“关”态（OFF-state）下完全截止。然而，SRH复合让这个理想打了折扣。
 
-在MOSFET的结构中，作为沟道的硅与作为绝缘层的二氧化硅之间存在一个至关重要的界面（$\mathrm{Si}/\mathrm{SiO_2}$）。这个界面不可避免地存在缺陷，如悬挂键，它们就像SRH复合的“陷阱中心”。这些界面陷阱会带来两大问题：
+在MOSFET的结构中，作为沟道的硅与作为绝缘层的二氧化硅之间存在一个至关重要的界面（$\mathrm{Si}/\mathrm{SiO_2}$）。这个界面不可避免地存在缺陷，如悬挂键，它们就像SRH复合的“陷阱中心”。这些界面陷阱会带来两大问题[@problem_id:4164421]：
 
-1.  **降低开关陡峭度**：晶体管的开关特性由其“[亚阈值摆幅](@entry_id:193480)”（Subthreshold Swing, SS）来衡量，即栅极电压需要改变多少才能使漏极电流改变一个数量级。理想的开关SS值应该尽可能小。界面陷阱的存在引入了一个额外的电容（陷阱电容），削弱了栅极对沟道电势的控制能力。结果是，我们需要施加更大的栅压变化才能开关晶体管，SS值增大，开关不再“陡峭”。
+1.  **降低开关陡峭度**：晶体管的开关特性由其“[亚阈值摆幅](@keyword=subthreshold_swing|lang=zh-CN|style=Feynman)”（Subthreshold Swing, SS）来衡量，即栅极电压需要改变多少才能使漏极电流改变一个数量级。理想的开关SS值应该尽可能小。界面陷阱的存在引入了一个额外的电容（陷阱电容），削弱了栅极对沟道电势的控制能力。结果是，我们需要施加更大的栅压变化才能开关晶体管，SS值增大，开关不再“陡峭”。
 
-2.  **增加漏电功耗**：在晶体管的“关”态，我们希望电流为零。但是，源极和漏极与衬底形成的p-n结处于反偏状态，其耗尽区内的SRH陷阱会作为“产生中心”，不断地产生电子-空穴对，形成漏电流。尤其是在器件尺寸不断缩小的今天，[浅沟槽隔离](@entry_id:1131533)（STI）的侧壁等界面区域成了漏电的主要来源。这种由SRH复合引起的关态漏电，是现代芯片待机功耗的一个主要来源。
+2.  **增加漏电功耗**：在晶体管的“关”态，我们希望电流为零。但是，源极和漏极与衬底形成的p-n结处于反偏状态，其耗尽区内的SRH陷阱会作为“产生中心”，不断地产生电子-空穴对，形成漏电流。尤其是在器件尺寸不断缩小的今天，[浅沟槽隔离](@keyword=shallow_trench_isolation|lang=zh-CN|style=Feynman)（STI）的侧壁等界面区域成了漏电的主要来源。这种由SRH复合引起的关态漏电，是现代芯片待机功耗的一个主要来源。
 
 #### 晶体管作为放大器（BJT）
 
-在[模拟电路](@entry_id:274672)和一些高速应用中，[双极结型晶体管](@entry_id:266088)（BJT）仍然发挥着重要作用。BJT的核心性能指标之一是[共发射极电流增益](@entry_id:264207) $\beta$，它表示[集电极电流](@entry_id:1122640)相对于基极电流的放大倍数。
+在[模拟电路](@keyword=analog_circuits|lang=zh-CN|style=Feynman)和一些高速应用中，[双极结型晶体管](@keyword=bipolar_junction_transistor|lang=zh-CN|style=Feynman)（BJT）仍然发挥着重要作用。BJT的核心性能指标之一是[共发射极电流增益](@keyword=common_emitter_current_gain|lang=zh-CN|style=Feynman) $\beta$，它表示[集电极电流](@keyword=collector_current|lang=zh-CN|style=Feynman)相对于基极电流的放大倍数。
 
-BJT的工作原理，可以想象成从发射区向基区“发射”大量的[少数载流子](@entry_id:272708)（比如NPN型中的电子），这些电子大部分需要穿过薄薄的基区，被集电区“收集”起来，形成[集电极电流](@entry_id:1122640)。然而，有一小部分电子在穿越基区的“旅途”中，会不幸地与基区的大量多数载流子（空穴）通过SRH复合而“阵亡”。这些复合掉的电子，就需要从外部通过基极引线补充相应的空穴来维持[电中性](@entry_id:138647)，这就构成了基极电流。
+BJT的工作原理，可以想象成从发射区向基区“发射”大量的[少数载流子](@keyword=minority_carriers|lang=zh-CN|style=Feynman)（比如NPN型中的电子），这些电子大部分需要穿过薄薄的基区，被集电区“收集”起来，形成[集电极电流](@keyword=collector_current|lang=zh-CN|style=Feynman)。然而，有一小部分电子在穿越基区的“旅途”中，会不幸地与基区的大量多数载流子（空穴）通过SRH复合而“阵亡”。这些复合掉的电子，就需要从外部通过基极引线补充相应的空穴来维持[电中性](@keyword=charge_neutrality|lang=zh-CN|style=Feynman)，这就构成了基极电流。
 
-因此，基极中的SRH复合，就像是一个无法避免的“泄漏”通道，直接导致了基极电流的产生，从而降低了电流增益 $\beta$ 。基区材料质量越好、缺陷越少，SRH复合寿命越长，则基极电流越小，$\beta$ 值就越高。而在BJT中为了获得高的注入效率，其发射区通常被重度掺杂。在这样高的载流子浓度下，[俄歇复合](@entry_id:138653)往往会成为限制少数载流子寿命的主要因素，从而影响整个器件的性能。
+因此，基极中的SRH复合，就像是一个无法避免的“泄漏”通道，直接导致了基极电流的产生，从而降低了电流增益 $\beta$ [@problem_id:45560]。基区材料质量越好、缺陷越少，SRH复合寿命越长，则基极电流越小，$\beta$ 值就越高。而在BJT中为了获得高的注入效率，其发射区通常被重度掺杂。在这样高的载流子浓度下，[俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)往往会成为限制少数载流子寿命的主要因素，从而影响整个器件的性能[@problem_id:1286774]。
 
 ### 瑕疵的艺术：制造过程中的缺陷调控
 
-既然SRH复合的根源在于材料缺陷，那么我们能否在制造过程中主动地控制它们呢？答案是肯定的。[半导体制造](@entry_id:187383)的整个流程，在某种程度上，就是一场与缺陷生成和湮灭的精密博弈。
+既然SRH复合的根源在于材料缺陷，那么我们能否在制造过程中主动地控制它们呢？答案是肯定的。[半导体制造](@keyword=semiconductor_fabrication|lang=zh-CN|style=Feynman)的整个流程，在某种程度上，就是一场与缺陷生成和湮灭的精密博弈。
 
-让我们跟随一片硅晶圆，经历一次简化的制造之旅：
+让我们跟随一片硅晶圆，经历一次简化的制造之旅[@problem_id:4164449]：
 
-- **热氧化**：在高温下生长一层高质量的二氧化硅。这一步虽然是为了绝缘，但它也创造了前述的$\mathrm{Si}/\mathrm{SiO_2}$界面，其质量直接决定了[界面陷阱](@entry_id:1126598)的初始密度。
-- **离子注入**：为了在特定区域掺入杂质（如形成源、漏区），我们用高能[离子轰击](@entry_id:196044)晶圆。这个过程简单粗暴，会像炮弹一样在硅[晶格](@entry_id:148274)中造成大量的“弹坑”和“碎片”——即点缺陷和缺陷团簇，导致SRH复合中心（$N_t$）的密度急剧增加。
+- **热氧化**：在高温下生长一层高质量的二氧化硅。这一步虽然是为了绝缘，但它也创造了前述的$\mathrm{Si}/\mathrm{SiO_2}$界面，其质量直接决定了界面陷阱的初始密度。
+- **离子注入**：为了在特定区域掺入杂质（如形成源、漏区），我们用高能[离子轰击](@keyword=ion_bombardment|lang=zh-CN|style=Feynman)晶圆。这个过程简单粗暴，会像炮弹一样在硅[晶格](@keyword=crystal_lattices|lang=zh-CN|style=Feynman)中造成大量的“弹坑”和“碎片”——即点缺陷和缺陷团簇，导致SRH复合中心（$N_t$）的密度急剧增加。
 - **刻蚀**：使用等离子体来移除部分材料，形成电路图形。等离子体中的高能粒子同样会对暴露的硅表面造成损伤，增加表面/界面缺陷。
-- **退火**：这是“治疗”环节。通过高温处理（如快速热退火，RTA），给予[晶格](@entry_id:148274)原子足够的能量去“自愈”，修复离子注入造成的大部分损伤，使$N_t$大幅降低。
+- **退火**：这是“治疗”环节。通过高温处理（如快速热退火，RTA），给予[晶格](@keyword=crystal_lattices|lang=zh-CN|style=Feynman)原子足够的能量去“自愈”，修复离子注入造成的大部分损伤，使$N_t$大幅降低。
 
-其中，一个特别精妙的工艺是**形成气[退火](@entry_id:159359)**（Forming Gas Anneal）。在含有氢气的温和气氛中进行[退火](@entry_id:159359)，氢原子会扩散到$\mathrm{Si}/\mathrm{SiO_2}$界面，像微型“外科医生”一样，找到那些具有电活性的悬挂键，并与之结合形成稳定的Si-H键，从而“钝化”这些缺陷，使其不再作为有效的SRH复合中心。这个过程极大地降低了[界面态](@entry_id:1126595)密度，是提升现代MOSFET性能的关键步骤。
+其中，一个特别精妙的工艺是**形成气[退火](@keyword=annealing|lang=zh-CN|style=Feynman)**（Forming Gas Anneal）。在含有氢气的温和气氛中进行[退火](@keyword=annealing|lang=zh-CN|style=Feynman)，氢原子会扩散到$\mathrm{Si}/\mathrm{SiO_2}$界面，像微型“外科医生”一样，找到那些具有电活性的悬挂键，并与之结合形成稳定的Si-H键，从而“钝化”这些缺陷，使其不再作为有效的SRH复合中心[@problem_id:4164397]。这个过程极大地降低了[界面态](@keyword=interface_states|lang=zh-CN|style=Feynman)密度，是提升现代MOSFET性能的关键步骤。
 
-所有这些复杂的物理和化学过程，如今都被精确地建模在“技术计算机辅助设计”（TCAD）软件中。工程师们可以在电脑上模拟整个制造流程，预测包括SRH和[俄歇复合](@entry_id:138653)在内的各种效应对最终器件性能的影响，从而优化工艺参数，设计出更先进的芯片。
+所有这些复杂的物理和化学过程，如今都被精确地建模在“技术计算机辅助设计”（TCAD）软件中。工程师们可以在电脑上模拟整个制造流程，预测包括SRH和[俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)在内的各种效应对最终器件性能的影响，从而优化工艺参数，设计出更先进的芯片[@problem_id:3752044]。
 
 ### 量子世界的回响：噪声与新材料
 
@@ -77,16 +77,16 @@ SRH和俄歇复合的影响，甚至超越了效率和性能本身，延伸到�
 
 我们通常将SRH复合看作是大量陷阱共同作用的平均效果。但如果器件足够小，小到纳米尺度，我们就有可能“听”到一个**单个陷阱**的活动。当一个陷阱俘获和释放一个载流子时，它自身的电荷状态会发生改变，这个微小的变化会扰动周围的电场，导致流过器件的电流发生一个微小但可分辨的跳变。
 
-电流就在两个（或多个）离散的能级之间随机地来回跳动，就像老式电报机发出的信号，因此被称为“[随机电报噪声](@entry_id:269610)”（Random Telegraph Noise, RTN）。在模拟传感器或精密放大器中，这种来自单个缺陷的“量子耳语”会成为性能的终极限制。这是一个绝佳的例子，展示了一个宏观可测的噪声现象，如何追溯其根源至一个孤立的量子缺陷的SRH动力学。
+电流就在两个（或多个）离散的能级之间随机地来回跳动，就像老式电报机发出的信号，因此被称为“[随机电报噪声](@keyword=random_telegraph_noise|lang=zh-CN|style=Feynman)”（Random Telegraph Noise, RTN）[@problem_id:45710]。在模拟传感器或精密放大器中，这种来自单个缺陷的“量子耳语”会成为性能的终极限制。这是一个绝佳的例子，展示了一个宏观可测的噪声现象，如何追溯其根源至一个孤立的量子缺陷的SRH动力学。
 
 #### 新材料前沿的复合物理
 
-当我们把目光投向凝聚态物理的前沿，会发现SRH和[俄歇复合](@entry_id:138653)的物理框架依然适用，并且帮助我们理解新奇的量子现象。
+当我们把目光投向凝聚态物理的前沿，会发现SRH和[俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)的物理框架依然适用，并且帮助我们理解新奇的量子现象。
 
-- **莫尔超晶格**：当两层[二维材料](@entry_id:142244)（如过渡金属硫化物）以微小的角度扭转堆叠时，会形成一种名为“莫尔[超晶格](@entry_id:200197)”的周期性势场。这种势场的能量最低点，可以像量子点一样束缚电子和空穴，从而形成一个人为可设计的、周期性排列的“陷阱阵列”。这些莫尔“陷阱”中的非辐射复合过程，同样可以用SRH模型来描述，其复合寿命由莫尔[晶格](@entry_id:148274)的密度和捕获[截面](@entry_id:154995)决定。
+- **莫尔超晶格**：当两层[二维材料](@keyword=2d_materials|lang=zh-CN|style=Feynman)（如过渡金属硫化物）以微小的角度扭转堆叠时，会形成一种名为“莫尔[超晶格](@keyword=superlattices|lang=zh-CN|style=Feynman)”的周期性势场。这种势场的能量最低点，可以像量子点一样束缚电子和空穴，从而形成一个人为可设计的、周期性排列的“陷阱阵列”。这些莫尔“陷阱”中的非辐射复合过程，同样可以用SRH模型来描述，其复合寿命由莫尔[晶格](@keyword=crystal_lattices|lang=zh-CN|style=Feynman)的密度和捕获[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)决定[@problem_id:45547]。
 
-- **[拓扑绝缘体](@entry_id:137834)**：这是一种奇特的材料，其内部是绝缘体，但表面却存在受[拓扑保护](@entry_id:145388)的、像金属一样可以导电的狄拉克电子态。这些[表面态](@entry_id:137922)对普通的缺陷和散射具有“免疫力”。然而，这种保护并非绝对。如果材料体内的SRH陷阱离表面足够近，[表面态](@entry_id:137922)电子的[波函数](@entry_id:201714)会像“幽灵”一样渗透到体内一段距离。如果这个渗透的“尾巴”与体内的陷阱相遇，电子仍然有可能被俘获，从而发生复合。这种复合的速率，取决于[表面态](@entry_id:137922)[波函数](@entry_id:201714)与[体缺陷](@entry_id:159101)分布的**空间交叠积分**。这表明，即使在最前沿的[量子材料](@entry_id:136741)中，理解和控制这些看似“平庸”的[复合过程](@entry_id:1130720)，依然是释放其奇异物性的关键。
+- **[拓扑绝缘体](@keyword=topological_insulators|lang=zh-CN|style=Feynman)**：这是一种奇特的材料，其内部是绝缘体，但表面却存在受[拓扑保护](@keyword=topological_protection|lang=zh-CN|style=Feynman)的、像金属一样可以导电的狄拉克电子态。这些[表面态](@keyword=surface_states|lang=zh-CN|style=Feynman)对普通的缺陷和散射具有“免疫力”。然而，这种保护并非绝对。如果材料体内的SRH陷阱离表面足够近，[表面态](@keyword=surface_states|lang=zh-CN|style=Feynman)电子的[波函数](@keyword=wave_functions|lang=zh-CN|style=Feynman)会像“幽灵”一样渗透到体内一段距离。如果这个渗透的“尾巴”与体内的陷阱相遇，电子仍然有可能被俘获，从而发生复合。这种复合的速率，取决于[表面态](@keyword=surface_states|lang=zh-CN|style=Feynman)[波函数](@keyword=wave_functions|lang=zh-CN|style=Feynman)与[体缺陷](@keyword=volume_defects|lang=zh-CN|style=Feynman)分布的**空间交叠积分**[@problem_id:45556]。这表明，即使在最前沿的[量子材料](@keyword=quantum_materials|lang=zh-CN|style=Feynman)中，理解和控制这些看似“平庸”的[复合过程](@keyword=recombination_processes|lang=zh-CN|style=Feynman)，依然是释放其奇异物性的关键。
 
 ### 结语
 
-从主宰LED和[太阳能电池效率](@entry_id:161307)的宏观博弈，到决定晶体管速度与功耗的微观杀手，再到产生纳米器件噪声的量子回响，乃至在新奇材料中展现出的普适性——[肖克利-里德-霍尔复合](@entry_id:263615)与[俄歇复合](@entry_id:138653)，这两个非辐射的“黑暗”过程，以其深刻而普遍的方式，塑造着我们所依赖的半导体世界。它们是材料不完美性的体现，是高密度粒子体系的必然结果，更是我们与物理规律之间永恒的对话。理解它们，驾驭它们，正是半导体科学与工程魅力的一部分，也是推动技术不断向前发展的核心动力之一。
+从主宰LED和[太阳能电池效率](@keyword=solar_cell_efficiency|lang=zh-CN|style=Feynman)的宏观博弈，到决定晶体管速度与功耗的微观杀手，再到产生纳米器件噪声的量子回响，乃至在新奇材料中展现出的普适性——[肖克利-里德-霍尔复合](@keyword=srh_recombination|lang=zh-CN|style=Feynman)与[俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)，这两个非辐射的“黑暗”过程，以其深刻而普遍的方式，塑造着我们所依赖的半导体世界。它们是材料不完美性的体现，是高密度粒子体系的必然结果，更是我们与物理规律之间永恒的对话。理解它们，驾驭它们，正是半导体科学与工程魅力的一部分，也是推动技术不断向前发展的核心动力之一。

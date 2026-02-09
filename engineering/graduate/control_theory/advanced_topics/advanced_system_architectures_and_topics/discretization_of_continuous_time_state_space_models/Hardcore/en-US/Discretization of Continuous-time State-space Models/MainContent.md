@@ -1,48 +1,48 @@
 ## Introduction
-In the realm of modern engineering and science, controlling continuous-time physical systems with digital computers is a ubiquitous challenge. At the heart of this challenge lies a fundamental problem: the [continuous dynamics](@entry_id:268176) described by differential equations must be translated into a discrete-time language that a digital controller can understand and act upon. This process, known as [discretization](@entry_id:145012), is far more than a simple [numerical approximation](@entry_id:161970); it is a critical transformation that carries profound implications for [system stability](@entry_id:148296), performance, and robustness. This article serves as a comprehensive guide to the theory and practice of discretizing continuous-time [state-space models](@entry_id:137993), bridging the gap between continuous physical reality and discrete [computational logic](@entry_id:136251).
+In the realm of modern engineering and science, controlling continuous-time physical systems with digital computers is a ubiquitous challenge. At the heart of this challenge lies a fundamental problem: the continuous dynamics described by differential equations must be translated into a discrete-time language that a digital controller can understand and act upon. This process, known as discretization, is far more than a simple numerical approximation; it is a critical transformation that carries profound implications for system stability, performance, and robustness. This article serves as a comprehensive guide to the theory and practice of discretizing continuous-time state-space models, bridging the gap between continuous physical reality and discrete computational logic.
 
-Across the following chapters, you will embark on a structured journey through this topic. We begin in **Principles and Mechanisms** by deriving the exact discrete-time model from first principles, focusing on the ubiquitous Zero-Order Hold (ZOH) and examining the crucial mapping of [system poles and zeros](@entry_id:174017). Next, in **Applications and Interdisciplinary Connections**, we explore the practical impact of these principles in fields like [high-fidelity simulation](@entry_id:750285), robust control design for [stiff systems](@entry_id:146021), and even modern machine learning with [neural state-space models](@entry_id:195892). Finally, the **Hands-On Practices** section provides concrete problems to help you apply and master these essential techniques.
+Across the following chapters, you will embark on a structured journey through this topic. We begin in **Principles and Mechanisms** by deriving the exact discrete-time model from first principles, focusing on the ubiquitous Zero-Order Hold (ZOH) and examining the crucial mapping of system poles and zeros. Next, in **Applications and Interdisciplinary Connections**, we explore the practical impact of these principles in fields like high-fidelity simulation, robust control design for stiff systems, and even modern machine learning with neural state-space models. Finally, the **Hands-On Practices** section provides concrete problems to help you apply and master these essential techniques.
 
 ## Principles and Mechanisms
 
-The process of designing a digital controller for a continuous-time physical system necessitates a crucial intermediate step: the creation of a discrete-time model that accurately represents the system's behavior at sampling instants. This chapter delves into the fundamental principles and mechanisms governing this transformation. We begin with the exact discretization of linear time-invariant (LTI) systems, focusing on the ubiquitous Zero-Order Hold (ZOH), and then explore the profound implications of this process on system properties such as poles, zeros, and stability. We will subsequently broaden our scope to include alternative hold mechanisms, common numerical approximation techniques, and the generalization to [time-varying systems](@entry_id:175653).
+The process of designing a digital controller for a continuous-time physical system necessitates a crucial intermediate step: the creation of a discrete-time model that accurately represents the system's behavior at sampling instants. This chapter delves into the fundamental principles and mechanisms governing this transformation. We begin with the exact discretization of linear time-invariant (LTI) systems, focusing on the ubiquitous Zero-Order Hold (ZOH), and then explore the profound implications of this process on system properties such as poles, zeros, and stability. We will subsequently broaden our scope to include alternative hold mechanisms, common numerical approximation techniques, and the generalization to time-varying systems.
 
 ### The Foundational Principle: State Transition Over a Sampling Interval
 
-Consider a continuous-time LTI system described by the [state-space representation](@entry_id:147149):
+Consider a continuous-time LTI system described by the state-space representation:
 $$
 \dot{x}(t) = A x(t) + B u(t)
 $$
 $$
 y(t) = C x(t) + D u(t)
 $$
-where $x(t) \in \mathbb{R}^{n}$ is the [state vector](@entry_id:154607), $u(t) \in \mathbb{R}^{m}$ is the input vector, and $y(t) \in \mathbb{R}^{p}$ is the output vector. The matrices $A$, $B$, $C$, and $D$ are constant and of compatible dimensions.
+where $x(t) \in \mathbb{R}^{n}$ is the state vector, $u(t) \in \mathbb{R}^{m}$ is the input vector, and $y(t) \in \mathbb{R}^{p}$ is the output vector. The matrices $A$, $B$, $C$, and $D$ are constant and of compatible dimensions.
 
-The cornerstone of all [discretization methods](@entry_id:272547) is the exact solution to the state differential equation over a finite time interval. Given the state $x(t_0)$ at an initial time $t_0$, the state at a later time $t$ is given by the [variation of constants](@entry_id:196393) formula:
+The cornerstone of all discretization methods is the exact solution to the state differential equation over a finite time interval. Given the state $x(t_0)$ at an initial time $t_0$, the state at a later time $t$ is given by the variation of constants formula:
 $$
 x(t) = e^{A(t-t_0)} x(t_0) + \int_{t_0}^{t} e^{A(t-\tau)} B u(\tau) \, d\tau
 $$
-The first term, $e^{A(t-t_0)} x(t_0)$, represents the autonomous evolution of the system (the response to the initial state), while the second term, a convolution integral, captures the [forced response](@entry_id:262169) due to the input $u(\tau)$ over the interval $[t_0, t]$.
+The first term, $e^{A(t-t_0)} x(t_0)$, represents the autonomous evolution of the system (the response to the initial state), while the second term, a convolution integral, captures the forced response due to the input $u(\tau)$ over the interval $[t_0, t]$.
 
-In a [digital control](@entry_id:275588) context, we are interested in the system's behavior at discrete sampling instants, $t_k = kT$, where $T$ is the sampling period. To find the relationship between the state at consecutive sampling instants, we set $t_0 = kT$ and $t = (k+1)T$. Letting $x_k \triangleq x(kT)$, the state at the next sampling instant, $x_{k+1} \triangleq x((k+1)T)$, is:
+In a digital control context, we are interested in the system's behavior at discrete sampling instants, $t_k = kT$, where $T$ is the sampling period. To find the relationship between the state at consecutive sampling instants, we set $t_0 = kT$ and $t = (k+1)T$. Letting $x_k \triangleq x(kT)$, the state at the next sampling instant, $x_{k+1} \triangleq x((k+1)T)$, is:
 $$
 x_{k+1} = e^{AT} x_k + \int_{kT}^{(k+1)T} e^{A((k+1)T - \tau)} B u(\tau) \, d\tau
 $$
-This equation is exact and forms the basis for all subsequent analysis. The specific form of the resulting discrete-time model depends entirely on the behavior of the input signal $u(\tau)$ during the intersample interval $[kT, (k+1)T)$. A change of integration variable $\sigma = \tau - kT$ is often useful, yielding the equivalent form :
+This equation is exact and forms the basis for all subsequent analysis. The specific form of the resulting discrete-time model depends entirely on the behavior of the input signal $u(\tau)$ during the intersample interval $[kT, (k+1)T)$. A change of integration variable $\sigma = \tau - kT$ is often useful, yielding the equivalent form [@problem_id:2701312]:
 $$
 x_{k+1} = e^{AT} x_k + \int_{0}^{T} e^{A(T-\sigma)} B u(kT+\sigma) \, d\sigma
 $$
-This fundamental relationship connects the continuous-time system dynamics to the discrete-time [state evolution](@entry_id:755365). The task of "discretization" is to evaluate this integral based on a specific assumption about the intersample input behavior generated by a [digital-to-analog converter](@entry_id:267281) (DAC).
+This fundamental relationship connects the continuous-time system dynamics to the discrete-time state evolution. The task of "discretization" is to evaluate this integral based on a specific assumption about the intersample input behavior generated by a digital-to-analog converter (DAC).
 
 ### Exact Discretization under Zero-Order Hold (ZOH)
 
-The most common model for a DAC in digital control is the **Zero-Order Hold (ZOH)**. This device converts a discrete-time sequence of control signals, $\{u_k\}$, into a piecewise-constant [continuous-time signal](@entry_id:276200).
+The most common model for a DAC in digital control is the **Zero-Order Hold (ZOH)**. This device converts a discrete-time sequence of control signals, $\{u_k\}$, into a piecewise-constant continuous-time signal.
 
 #### The ZOH Assumption and Model Derivation
 
 The ZOH assumption is simple and powerful: the input $u(t)$ is held constant at the value of the most recent sample, $u_k$, throughout the entire sampling interval.
 $$
-u(t) = u_k \quad \text{for all } t \in [kT, (k+1)T)
+u(t) = u_k \quad \text{for all } t \in kT, (k+1)T)
 $$
 This model accurately reflects the behavior of standard DACs, which update their output voltage at the beginning of a sampling period and maintain that voltage until the next update.
 
@@ -50,16 +50,16 @@ To derive the discrete-time model, we substitute this assumption into our fundam
 $$
 x_{k+1} = e^{AT} x_k + \left( \int_{0}^{T} e^{A(T-\sigma)} B \, d\sigma \right) u_k
 $$
-This equation is now in the standard LTI [discrete-time state-space](@entry_id:261361) form, $x_{k+1} = A_d x_k + B_d u_k$. By comparison, we identify the discrete-time system matrices:
+This equation is now in the standard LTI [discrete-time state-space form, $x_{k+1} = A_d x_k + B_d u_k$. By comparison, we identify the discrete-time system matrices:
 $$
 A_d = e^{AT}
 $$
 $$
 B_d = \int_{0}^{T} e^{A(T-\sigma)} B \, d\sigma
 $$
-The matrix $A_d$ is the **discrete-time [state transition matrix](@entry_id:267928)**. It describes how the state evolves autonomously (without input) from one sampling instant to the next. The matrix $B_d$ is the **discrete-time input matrix**, which represents the accumulated effect on the state at time $(k+1)T$ due to the constant input $u_k$ being applied over the entire interval $[kT, (k+1)T)$ .
+The matrix $A_d$ is the **discrete-time state transition matrix**. It describes how the state evolves autonomously (without input) from one sampling instant to the next. The matrix $B_d$ is the **discrete-time input matrix**, which represents the accumulated effect on the state at time $(k+1)T$ due to the constant input $u_k$ being applied over the entire interval $[kT, (k+1)T)$ [@problem_id:2723696].
 
-A common and equivalent form for $B_d$ can be obtained via the change of variable $\lambda = T-\sigma$, which yields :
+A common and equivalent form for $B_d$ can be obtained via the change of variable $\lambda = T-\sigma$, which yields [@problem_id:2701312]:
 $$
 B_d = \int_{0}^{T} e^{A\lambda} B \, d\lambda
 $$
@@ -67,13 +67,13 @@ If the matrix $A$ is invertible, this integral can be solved analytically:
 $$
 B_d = A^{-1}(e^{AT} - I)B = A^{-1}(A_d - I)B
 $$
-However, this [closed-form solution](@entry_id:270799) is not general, as it fails for systems with poles at the origin (e.g., integrators), where $A$ is singular .
+However, this closed-form solution is not general, as it fails for systems with poles at the origin (e.g., integrators), where $A$ is singular [@problem_id:2723696].
 
 For the output equation, we assume an **ideal sampler** that measures the output $y(t)$ precisely at the sampling instants $t=kT$. In a standard synchronized architecture, the sampling of the output occurs at the same instant the ZOH updates its input. This raises a subtle but important question about continuity. If the direct feedthrough matrix $D$ is non-zero, the continuous-time output $y(t) = Cx(t) + Du(t)$ will exhibit an instantaneous jump at each sampling instant $t=kT$ whenever the input changes, i.e., $u_k \neq u_{k-1}$. The magnitude of this jump is $D(u_k - u_{k-1})$. The standard convention is to define the sampled output $y_k$ as the right-continuous limit at the sampling instant:
 $$
 y_k \triangleq y(kT^+) = C x(kT) + D u(kT^+)
 $$
-Since $x(t)$ is continuous for bounded inputs and $u(kT^+)=u_k$, this gives the discrete-time output equation :
+Since $x(t)$ is continuous for bounded inputs and $u(kT^+)=u_k$, this gives the discrete-time output equation [@problem_id:2701309]:
 $$
 y_k = C x_k + D u_k
 $$
@@ -81,7 +81,7 @@ Therefore, the discrete-time output matrices are simply:
 $$
 C_d = C \quad \text{and} \quad D_d = D
 $$
-The direct feedthrough term is preserved in the [discretization](@entry_id:145012) process.
+The direct feedthrough term is preserved in the discretization process.
 
 #### Illustrative Examples and Computational Methods
 
@@ -89,15 +89,15 @@ To build intuition, consider a simple continuous-time integrator, $\dot{x}(t) = 
 - $A_d = e^{0 \cdot T} = 1$
 - $B_d = \left( \int_{0}^{T} e^{0 \cdot \tau} d\tau \right) \cdot 1 = \int_{0}^{T} 1 \, d\tau = T$
 
-The resulting discrete-time model is $x_{k+1} = x_k + T u_k$, which is the familiar Euler integration rule. This is not an approximation; it is the *exact* discrete equivalent of a continuous integrator with a piecewise-constant input .
+The resulting discrete-time model is $x_{k+1} = x_k + T u_k$, which is the familiar Euler integration rule. This is not an approximation; it is the *exact* discrete equivalent of a continuous integrator with a piecewise-constant input [@problem_id:2701314].
 
 This result can also be seen as a special case. Consider a system with dynamics $A = \alpha I$. The discrete input matrix is $B_d = \frac{\exp(\alpha T) - 1}{\alpha} B$. Using L'Hôpital's rule, the limit of the scalar coefficient as $\alpha \to 0$ is:
 $$
 \lim_{\alpha \to 0} \frac{\exp(\alpha T) - 1}{\alpha} = \lim_{\alpha \to 0} \frac{T \exp(\alpha T)}{1} = T
 $$
-Thus, as the dynamics approach those of a pure integrator ($A \to 0$), the formula for $B_d$ smoothly converges to $TB$, confirming the result .
+Thus, as the dynamics approach those of a pure integrator ($A \to 0$), the formula for $B_d$ smoothly converges to $TB$, confirming the result [@problem_id:2701327].
 
-For practical computation of $A_d$ and $B_d$ for more complex systems, a powerful technique involves computing the [matrix exponential](@entry_id:139347) of an augmented [block matrix](@entry_id:148435) :
+For practical computation of $A_d$ and $B_d$ for more complex systems, a powerful technique involves computing the matrix exponential of an augmented block matrix [@problem_id:2723696]:
 $$
 \exp\left( \begin{pmatrix} A  B \\ 0  0 \end{pmatrix} T \right) = \begin{pmatrix} A_d  B_d \\ 0  I \end{pmatrix}
 $$
@@ -109,27 +109,27 @@ Discretization is more than just a change of notation; it is a profound transfor
 
 #### Pole Mapping and Stability
 
-The poles of a continuous-time system are the eigenvalues of its state matrix $A$. The poles of the discrete-time system are the eigenvalues of $A_d$. Since $A_d = e^{AT}$, the **[spectral mapping theorem](@entry_id:264489)** provides a direct and simple relationship: if $\lambda$ is an eigenvalue of $A$, then $z = e^{\lambda T}$ is an eigenvalue of $A_d$.
+The poles of a continuous-time system are the eigenvalues of its state matrix $A$. The poles of the discrete-time system are the eigenvalues of $A_d$. Since $A_d = e^{AT}$, the **spectral mapping theorem** provides a direct and simple relationship: if $\lambda$ is an eigenvalue of $A$, then $z = e^{\lambda T}$ is an eigenvalue of $A_d$.
 $$
 \text{Continuous Pole } \lambda \quad \longrightarrow \quad \text{Discrete Pole } z = e^{\lambda T}
 $$
-This mapping has crucial consequences for [system stability](@entry_id:148296)  . Let a continuous pole be $\lambda = \sigma + j\omega$. The magnitude of the corresponding discrete pole $z$ is:
+This mapping has crucial consequences for system stability [@problem_id:2701322] [@problem_id:2857354]. Let a continuous pole be $\lambda = \sigma + j\omega$. The magnitude of the corresponding discrete pole $z$ is:
 $$
 |z| = |e^{(\sigma + j\omega)T}| = |e^{\sigma T} e^{j\omega T}| = e^{\sigma T}
 $$
-A continuous-time system is asymptotically stable if all its poles lie in the open left-half of the complex plane, i.e., $\text{Re}(\lambda) = \sigma \lt 0$. This condition implies $e^{\sigma T} \lt 1$, meaning $|z| \lt 1$. Conversely, if $|z| \lt 1$, then $\sigma \lt 0$. Therefore, exact ZOH [discretization](@entry_id:145012) faithfully preserves stability:
+A continuous-time system is asymptotically stable if all its poles lie in the open left-half of the complex plane, i.e., $\text{Re}(\lambda) = \sigma \lt 0$. This condition implies $e^{\sigma T} \lt 1$, meaning $|z| \lt 1$. Conversely, if $|z| \lt 1$, then $\sigma \lt 0$. Therefore, exact ZOH discretization faithfully preserves stability:
 $$
 \text{Continuous Stability (Re}(\lambda) \lt 0) \quad \iff \quad \text{Discrete Stability } (|z| \lt 1)
 $$
-The imaginary axis in the $s$-plane ($\sigma=0$) maps to the unit circle in the $z$-plane ($|z|=1$), and the unstable [right-half plane](@entry_id:277010) ($\sigma \gt 0$) maps to the exterior of the unit circle ($|z|\gt1$).
+The imaginary axis in the $s$-plane ($\sigma=0$) maps to the unit circle in the $z$-plane ($|z|=1$), and the unstable right-half plane ($\sigma \gt 0$) maps to the exterior of the unit circle ($|z|\gt1$).
 
-However, the exponential mapping is not one-to-one. The [complex exponential function](@entry_id:169796) is periodic along the imaginary axis with period $j2\pi$. This means that multiple continuous-time poles can map to the same discrete-time pole. Specifically, if $e^{\lambda_1 T} = e^{\lambda_2 T}$, then $(\lambda_1 - \lambda_2)T = j2\pi k$ for some non-zero integer $k$. This phenomenon, known as **aliasing**, implies that a sampled system cannot distinguish between continuous-time modes whose frequencies differ by an integer multiple of the sampling frequency, $\omega_s = 2\pi/T$. Consequently, the inverse mapping from a discrete pole $z$ back to a continuous pole $\lambda$ is not unique  .
+However, the exponential mapping is not one-to-one. The complex exponential function is periodic along the imaginary axis with period $j2\pi$. This means that multiple continuous-time poles can map to the same discrete-time pole. Specifically, if $e^{\lambda_1 T} = e^{\lambda_2 T}$, then $(\lambda_1 - \lambda_2)T = j2\pi k$ for some non-zero integer $k$. This phenomenon, known as **aliasing**, implies that a sampled system cannot distinguish between continuous-time modes whose frequencies differ by an integer multiple of the sampling frequency, $\omega_s = 2\pi/T$. Consequently, the inverse mapping from a discrete pole $z$ back to a continuous pole $\lambda$ is not unique [@problem_id:2701322] [@problem_id:2857354].
 
 #### The Complexities of Zero Mapping
 
-In stark contrast to the straightforward mapping of poles, the mapping of system zeros is highly complex and non-intuitive. A common misconception is that continuous-time zeros $\zeta$ also map via $z = e^{\zeta T}$. This is **false**. The discrete-time zeros depend on a complicated interaction between $A_d$, $B_d$, $C_d$, and $D_d$, and their locations are heavily influenced by the [sampling period](@entry_id:265475) $T$.
+In stark contrast to the straightforward mapping of poles, the mapping of system zeros is highly complex and non-intuitive. A common misconception is that continuous-time zeros $\zeta$ also map via $z = e^{\zeta T}$. This is **false**. The discrete-time zeros depend on a complicated interaction between $A_d$, $B_d$, $C_d$, and $D_d$, and their locations are heavily influenced by the sampling period $T$.
 
-The process of sampling and holding can create new zeros in the discrete-time model that have no direct counterpart in the continuous-time system. These are known as **sampling zeros**. A landmark result in sampled-data theory shows that for a continuous-time system with [relative degree](@entry_id:171358) $r$ (the difference between the number of poles and finite zeros), the ZOH-discretized system will have $r-1$ sampling zeros. For a sufficiently fast [sampling rate](@entry_id:264884) ($T \to 0$), the locations of these zeros approach specific roots of unity. Critically, for systems with a [relative degree](@entry_id:171358) of three or higher, at least one of these sampling zeros will approach a location outside the unit circle. This means that the act of discretizing a perfectly well-behaved, minimum-phase continuous-time system can introduce a **[non-minimum-phase zero](@entry_id:273761)** in the discrete model, which can pose significant challenges for [controller design](@entry_id:274982)  .
+The process of sampling and holding can create new zeros in the discrete-time model that have no direct counterpart in the continuous-time system. These are known as **sampling zeros**. A landmark result in sampled-data theory shows that for a continuous-time system with relative degree $r$ (the difference between the number of poles and finite zeros), the ZOH-discretized system will have $r-1$ sampling zeros. For a sufficiently fast sampling rate ($T \to 0$), the locations of these zeros approach specific roots of unity. Critically, for systems with a relative degree of three or higher, at least one of these sampling zeros will approach a location outside the unit circle. This means that the act of discretizing a perfectly well-behaved, minimum-phase continuous-time system can introduce a **non-minimum-phase zero** in the discrete model, which can pose significant challenges for controller design [@problem_id:2701322] [@problem_id:2857354].
 
 ### Beyond Zero-Order Hold: Alternative Discretization Methods
 
@@ -141,7 +141,7 @@ A **First-Order Hold (FOH)** assumes that the continuous-time input is reconstru
 $$
 u(t) = \frac{T-\tau}{T} u_k + \frac{\tau}{T} u_{k+1}
 $$
-Substituting this into the fundamental state transition integral leads to a discrete-time model with a different structure :
+Substituting this into the fundamental state transition integral leads to a discrete-time model with a different structure [@problem_id:2701316]:
 $$
 x_{k+1} = A_d x_k + B_0 u_k + B_1 u_{k+1}
 $$
@@ -152,14 +152,14 @@ $$
 $$
 B_1 = \int_{0}^{T} e^{A(T-\tau)} B \frac{\tau}{T} \,d\tau
 $$
-The presence of the $u_{k+1}$ term means the state at time $k+1$ depends on the input at time $k+1$. This is a non-standard state-[space form](@entry_id:203017) that can complicate controller implementation but may provide a more accurate representation if the true DAC has ramp-like behavior, potentially leading to better control performance.
+The presence of the $u_{k+1}$ term means the state at time $k+1$ depends on the input at time $k+1$. This is a non-standard state-space form that can complicate controller implementation but may provide a more accurate representation if the true DAC has ramp-like behavior, potentially leading to better control performance.
 
 #### Impulse-Invariant Discretization
 
 Another approach is **impulse-invariant discretization**. This method is defined not by an assumption on the input signal, but by a requirement on the output: the impulse response of the discrete-time model must exactly match the sampled impulse response of the continuous-time system. That is, $h_d[k] = h_c(kT)$.
 This leads to a discrete-time model with matrices $A_d=e^{AT}$ and $C_d=C$, but with a different input matrix, often $B_d=B$ or $B_d=TB$, depending on the specific formulation.
 
-The primary feature of this method is that it seeks to preserve the time-domain characteristics of the system's response. However, this comes at a significant cost: susceptibility to [aliasing](@entry_id:146322). The [frequency response](@entry_id:183149) of the resulting discrete system is a sum of shifted replicas of the continuous frequency response. A fundamental theorem of signal processing states that any finite-dimensional LTI system (with a rational transfer function) has an impulse response that is not band-limited. Consequently, for any finite [sampling rate](@entry_id:264884), some aliasing is unavoidable with this method, which can distort the system's perceived frequency characteristics .
+The primary feature of this method is that it seeks to preserve the time-domain characteristics of the system's response. However, this comes at a significant cost: susceptibility to aliasing. The frequency response of the resulting discrete system is a sum of shifted replicas of the continuous frequency response. A fundamental theorem of signal processing states that any finite-dimensional LTI system (with a rational transfer function) has an impulse response that is not band-limited. Consequently, for any finite sampling rate, some aliasing is unavoidable with this method, which can distort the system's perceived frequency characteristics [@problem_id:2701342].
 
 ### Approximation Methods for Discretization
 
@@ -170,20 +170,20 @@ Common methods include:
 - **Backward Euler:** Approximates $\dot{x}(t)$ at time $k+1$, yielding $x_{k+1} = (I-TA)^{-1}x_k + (I-TA)^{-1}TBu_k$.
 - **Tustin's Method (Bilinear Transform):** Uses the trapezoidal rule for integration, leading to the substitution $s \to \frac{2}{T}\frac{z-1}{z+1}$.
 
-The choice of approximation method is especially critical for **[stiff systems](@entry_id:146021)**—systems with modes that have widely separated time constants (e.g., eigenvalues of $-1$ and $-1000$). For such systems, the stability of the numerical method is paramount. Forward Euler has a very small [stability region](@entry_id:178537) and will often become unstable unless the sampling period $T$ is made impractically small to accommodate the fastest mode .
+The choice of approximation method is especially critical for **stiff systems**—systems with modes that have widely separated time constants (e.g., eigenvalues of $-1$ and $-1000$). For such systems, the stability of the numerical method is paramount. Forward Euler has a very small stability region and will often become unstable unless the sampling period $T$ is made impractically small to accommodate the fastest mode [@problem_id:2701346].
 
-In contrast, methods like Backward Euler and Tustin are **A-stable**, meaning they map the entire stable left-half of the $s$-plane into the stable [unit disk](@entry_id:172324) of the $z$-plane. This guarantees that for any stable continuous-time system, the discretized model will also be stable, regardless of the sampling period $T$. This property makes them far superior for discretizing [stiff systems](@entry_id:146021). A further distinction is **L-stability**, which requires that very fast, stable modes (poles approaching $-\infty$) are mapped to $z=0$, providing strong [numerical damping](@entry_id:166654). Backward Euler is L-stable, whereas Tustin maps these fast modes to $z=-1$, which can result in lingering, high-frequency oscillations in the discrete-time response .
+In contrast, methods like Backward Euler and Tustin are **A-stable**, meaning they map the entire stable left-half of the $s$-plane into the stable unit disk of the $z$-plane. This guarantees that for any stable continuous-time system, the discretized model will also be stable, regardless of the sampling period $T$. This property makes them far superior for discretizing stiff systems. A further distinction is **L-stability**, which requires that very fast, stable modes (poles approaching $-\infty$) are mapped to $z=0$, providing strong numerical damping. Backward Euler is L-stable, whereas Tustin maps these fast modes to $z=-1$, which can result in lingering, high-frequency oscillations in the discrete-time response [@problem_id:2701346].
 
 ### Generalization to Time-Varying Systems
 
-The principles of discretization can be extended to linear time-varying (LTV) systems of the form $\dot{x}(t) = A(t)x(t)$. For LTV systems, the solution can no longer be expressed with a simple [matrix exponential](@entry_id:139347), because $A(t_1)$ and $A(t_2)$ may not commute for different times $t_1, t_2$.
+The principles of discretization can be extended to linear time-varying (LTV) systems of the form $\dot{x}(t) = A(t)x(t)$. For LTV systems, the solution can no longer be expressed with a simple matrix exponential, because $A(t_1)$ and $A(t_2)$ may not commute for different times $t_1, t_2$.
 
-The solution is instead described by a **[state transition matrix](@entry_id:267928)**, $\Phi(t, t_0)$, which propagates the state from time $t_0$ to $t$. The discrete transition matrix over one sampling interval $[t_k, t_{k+1}]$ is thus $A_{d,k} = \Phi(t_{k+1}, t_k)$. This matrix is the unique solution to the matrix differential equation:
+The solution is instead described by a **state transition matrix**, $\Phi(t, t_0)$, which propagates the state from time $t_0$ to $t$. The discrete transition matrix over one sampling interval $[t_k, t_{k+1}]$ is thus $A_{d,k} = \Phi(t_{k+1}, t_k)$. This matrix is the unique solution to the matrix differential equation:
 $$
 \frac{d}{dt} \Phi(t, t_k) = A(t) \Phi(t, t_k), \quad \text{with } \Phi(t_k, t_k) = I
 $$
-The solution to this equation for a general, non-commuting $A(t)$ is given by the **Peano-Baker series**, which can be written compactly using the **time-ordered exponential** :
+The solution to this equation for a general, non-commuting $A(t)$ is given by the **Peano-Baker series**, which can be written compactly using the **time-ordered exponential** [@problem_id:2701297]:
 $$
 A_{d,k} = \Phi(t_{k+1}, t_k) = \mathcal{T}\exp\left(\int_{t_k}^{t_{k+1}} A(\tau)\,d\tau\right)
 $$
-The [time-ordering operator](@entry_id:148044) $\mathcal{T}$ ensures that matrix products within the series expansion are always ordered chronologically, a crucial detail absent in the LTI case. Only if $A(t)$ commutes with itself at all times does this expression simplify to the standard [matrix exponential](@entry_id:139347) of the integral of $A(t)$.
+The time-ordering operator $\mathcal{T}$ ensures that matrix products within the series expansion are always ordered chronologically, a crucial detail absent in the LTI case. Only if $A(t)$ commutes with itself at all times does this expression simplify to the standard matrix exponential of the integral of $A(t)$.

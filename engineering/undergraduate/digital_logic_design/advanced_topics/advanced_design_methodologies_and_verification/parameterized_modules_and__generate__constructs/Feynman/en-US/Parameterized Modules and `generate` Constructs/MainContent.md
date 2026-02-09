@@ -3,7 +3,7 @@ In modern digital design, we strive to move beyond creating single-purpose, rigi
 
 This article delves into the solution: Verilog's powerful **`generate` constructs**. You will learn how these commands act as a script for the synthesis tools, enabling the algorithmic construction of hardware.
 - The first chapter, **"Principles and Mechanisms"**, will introduce the fundamental concepts, explaining how `generate` loops and conditionals are used to create repetitive, chained, and selectable hardware structures.
-- The second chapter, **"Applications and Interdisciplinary Connections"**, will showcase how these principles are applied to build real-world systems, from the core of a CPU to advanced accelerators for AI and [digital signal processing](@article_id:263166).
+- The second chapter, **"Applications and Interdisciplinary Connections"**, will showcase how these principles are applied to build real-world systems, from the core of a CPU to advanced accelerators for AI and [digital signal processing](@keyword=digital_signal_processing|lang=en-US|style=Feynman).
 - Finally, **"Hands-On Practices"** will provide practical exercises to solidify your understanding and help you master this essential design methodology.
 
 Let's begin by exploring the core mechanisms that turn static code into dynamic, self-assembling hardware.
@@ -12,7 +12,7 @@ Let's begin by exploring the core mechanisms that turn static code into dynamic,
 
 Imagine you are an architect. You don't just design one specific house; you create a master blueprint. With a few adjustments—changing the number of rooms, the height of the ceilings, the type of roof—this single blueprint can be used to build a cozy cottage, a spacious family home, or even a grand manor. This is the essence of modern digital design. We don't just build one-off circuits; we design intelligent, adaptable blueprints called **parameterized modules**.
 
-A **parameter** is a knob on our blueprint. It's a value we can set *before* the factory—the synthesis tool—starts building the chip. It could be the width of a [data bus](@article_id:166938), `N`, or the number of processing units, `P`. This simple idea is transformative. It allows us to create a single, elegant solution that is reusable, scalable, and far more robust than a library of fixed-sized components.
+A **parameter** is a knob on our blueprint. It's a value we can set *before* the factory—the synthesis tool—starts building the chip. It could be the width of a [data bus](@keyword=data_bus|lang=en-US|style=Feynman), `N`, or the number of processing units, `P`. This simple idea is transformative. It allows us to create a single, elegant solution that is reusable, scalable, and far more robust than a library of fixed-sized components.
 
 But what if changing a parameter requires more than just making a bus wider? What if it means adding more components, rewiring them, or even choosing a completely different internal structure? For this, we need a smarter blueprint, one that contains instructions *on how to build itself*. This is the magic of Verilog's **`generate` constructs**. They are not logic that runs on the final chip; they are a set of commands for the synthesis tool, a script for the automated factory that assembles our hardware. They allow us to describe patterns, repetition, and choices, turning a static blueprint into a dynamic recipe for creating circuits.
 
@@ -24,9 +24,9 @@ Let's start with the most fundamental task in any factory: making many copies of
 
 The `generate for` loop is our robotic assembly arm. You give it a single component—a "Lego brick"—and tell it how many to lay down and how to connect them.
 
-Consider the task of building a generic N-bit register. Our fundamental building block is a single 1-bit D-Flip-Flop (`DFF`), a tiny memory cell that can store a `0` or a `1`. To build an N-bit register, we simply need N of these `DFF`s, all lined up and sharing the same clock, reset, and enable signals. The `generate for` loop expresses this with beautiful simplicity .
+Consider the task of building a generic N-bit register. Our fundamental building block is a single 1-bit D-Flip-Flop (`DFF`), a tiny memory cell that can store a `0` or a `1`. To build an N-bit register, we simply need N of these `DFF`s, all lined up and sharing the same clock, reset, and enable signals. The `generate for` loop expresses this with beautiful simplicity [@problem_id:1950973].
 
-```[verilog](@article_id:172252)
+```[verilog](@keyword=verilog|lang=en-US|style=Feynman)
 // Hypothetical N-bit Register
 module Register_N_bit #(parameter N = 8) (...);
   genvar i; // A special variable for generation
@@ -49,15 +49,15 @@ It's like telling the factory: "For `i` from 0 to $N-1$, place one `DFF` module.
 
 ### Assembling the Assembly Line
 
-Making independent copies is one thing. The true power of [generative design](@article_id:194198) emerges when we build interconnected systems—an entire assembly line where the output of one station becomes the input of the next.
+Making independent copies is one thing. The true power of [generative design](@keyword=generative_design|lang=en-US|style=Feynman) emerges when we build interconnected systems—an entire assembly line where the output of one station becomes the input of the next.
 
 #### The Bucket Brigade: Chaining Components
 
-A wonderful example of this is the **[ripple-carry adder](@article_id:177500)**. You learn in introductory logic that you can build an adder for multi-bit numbers by chaining together 1-bit "full adders." Each [full adder](@article_id:172794) takes two bits, `a` and `b`, and a `carry-in` from the previous stage, and produces a `sum` bit and a `carry-out` for the next stage. It’s a digital bucket brigade.
+A wonderful example of this is the **[ripple-carry adder](@keyword=ripple_carry_adder|lang=en-US|style=Feynman)**. You learn in introductory logic that you can build an adder for multi-bit numbers by chaining together 1-bit "full adders." Each [full adder](@keyword=full_adder|lang=en-US|style=Feynman) takes two bits, `a` and `b`, and a `carry-in` from the previous stage, and produces a `sum` bit and a `carry-out` for the next stage. It’s a digital bucket brigade.
 
-To build an N-bit adder, we need to generate $N$ full adders and create a "carry chain" to link them. This requires an internal set of wires to pass the carry from one stage to the next. The `generate for` loop handles this structure with remarkable elegance .
+To build an N-bit adder, we need to generate $N$ full adders and create a "carry chain" to link them. This requires an internal set of wires to pass the carry from one stage to the next. The `generate for` loop handles this structure with remarkable elegance [@problem_id:1951011].
 
-```[verilog](@article_id:172252)
+```[verilog](@keyword=verilog|lang=en-US|style=Feynman)
 // Hypothetical N-bit Ripple-Carry Adder
 module ripple_carry_adder #(parameter N = 8) (...);
     wire [N:0] carry; // An internal wire to chain the carries
@@ -79,13 +79,13 @@ module ripple_carry_adder #(parameter N = 8) (...);
 endmodule
 ```
 
-Notice the beauty of this. The `i`-th adder instance takes `carry[i]` as its input and produces `carry[i+1]` as its output. The loop automatically wires up the entire cascade. This same principle allows us to construct any kind of chained structure, like a multi-cycle delay line built from a series of flip-flops, where the output of one is simply fed into the input of the next to create a "whisper down the lane" for digital signals .
+Notice the beauty of this. The `i`-th adder instance takes `carry[i]` as its input and produces `carry[i+1]` as its output. The loop automatically wires up the entire cascade. This same principle allows us to construct any kind of chained structure, like a multi-cycle delay line built from a series of flip-flops, where the output of one is simply fed into the input of the next to create a "whisper down the lane" for digital signals [@problem_id:1951008].
 
 #### The Checkout Counter Array: Parallel Processing
 
-Not all systems are serial chains. Often, we want to perform the same operation on many different pieces of data simultaneously—a concept known as [data parallelism](@article_id:172047). Imagine a supermarket with a single, long checkout line versus one with a dozen parallel checkout counters. The latter is far more efficient.
+Not all systems are serial chains. Often, we want to perform the same operation on many different pieces of data simultaneously—a concept known as [data parallelism](@keyword=data_parallelism|lang=en-US|style=Feynman). Imagine a supermarket with a single, long checkout line versus one with a dozen parallel checkout counters. The latter is far more efficient.
 
-The `generate` construct is the perfect tool for building these parallel hardware structures. Suppose we have a very wide 64-bit [data bus](@article_id:166938), and we want to compute the parity (a simple form of error-checking) for each 8-bit chunk of that bus. We can design a single `odd_parity_generator` module and then use a `generate` loop to instantiate eight of them, each one working on its own slice of the 64-bit input . The synthesis tool creates eight independent parity generators, automatically handling the bus slicing and connecting each generator to its dedicated output bit.
+The `generate` construct is the perfect tool for building these parallel hardware structures. Suppose we have a very wide 64-bit [data bus](@keyword=data_bus|lang=en-US|style=Feynman), and we want to compute the parity (a simple form of error-checking) for each 8-bit chunk of that bus. We can design a single `odd_parity_generator` module and then use a `generate` loop to instantiate eight of them, each one working on its own slice of the 64-bit input [@problem_id:1950996]. The synthesis tool creates eight independent parity generators, automatically handling the bus slicing and connecting each generator to its dedicated output bit.
 
 ### The "Choose Your Own Adventure" of Circuit Design
 
@@ -95,9 +95,9 @@ So far, we've used `generate` to create repetitive structures. But its power goe
 
 Imagine you need a configurable logic unit that can act as an AND gate, an OR gate, or an XOR gate. You could build all three and use a multiplexer to select the output. But that's wasteful if you only need it to be an AND gate for a particular application. A more elegant solution is to tell the factory which one to build.
 
-Using a parameter, say `OP_MODE`, we can use a `generate case` statement to conditionally instantiate *only one* gate module .
+Using a parameter, say `OP_MODE`, we can use a `generate case` statement to conditionally instantiate *only one* gate module [@problem_id:1950977].
 
-```[verilog](@article_id:172252)
+```[verilog](@keyword=verilog|lang=en-US|style=Feynman)
 // Hypothetical Configurable Logic Unit
 generate
     case (OP_MODE)
@@ -109,13 +109,13 @@ generate
 endgenerate
 ```
 
-When the synthesis tool processes this, it looks at the `OP_MODE` parameter. If it's `1`, the tool only ever instantiates the `or_gate`. The code for the `and_gate` and `xor_gate` is effectively discarded for that specific build. The final chip is smaller, faster, and more efficient. The `generate if` construct works similarly, allowing for binary choices, such as generating an N-input AND gate or an N-input OR gate based on a string parameter like "AND" or "OR" .
+When the synthesis tool processes this, it looks at the `OP_MODE` parameter. If it's `1`, the tool only ever instantiates the `or_gate`. The code for the `and_gate` and `xor_gate` is effectively discarded for that specific build. The final chip is smaller, faster, and more efficient. The `generate if` construct works similarly, allowing for binary choices, such as generating an N-input AND gate or an N-input OR gate based on a string parameter like "AND" or "OR" [@problem_id:1951004].
 
 #### The Optional Turbocharger: Conditional Hardware
 
 This ability to include or exclude hardware is incredibly powerful. A common use case is implementing optional features. For instance, in a high-performance datapath, we might want the option to add a pipeline register. Pipelining increases throughput (more operations per second) but adds latency (a delay for the first result). For some applications, low latency is critical; for others, throughput is king.
 
-With a parameter `USE_PIPELINE`, we can use `generate if` to control this trade-off . If `USE_PIPELINE` is 1, the `generate` block instantiates a bank of flip-flops at the output of our logic. If `USE_PIPELINE` is 0, that `if` block is ignored, and the [combinatorial logic](@article_id:264589) is connected directly to the output. These are two fundamentally different circuits, selected by flipping a single switch in our blueprint before we even start fabrication.
+With a parameter `USE_PIPELINE`, we can use `generate if` to control this trade-off [@problem_id:1950990]. If `USE_PIPELINE` is 1, the `generate` block instantiates a bank of flip-flops at the output of our logic. If `USE_PIPELINE` is 0, that `if` block is ignored, and the [combinatorial logic](@keyword=combinatorial_logic|lang=en-US|style=Feynman) is connected directly to the output. These are two fundamentally different circuits, selected by flipping a single switch in our blueprint before we even start fabrication.
 
 ### The Pinnacle: Meta-Hardware and Algorithmic Construction
 
@@ -125,12 +125,12 @@ When we combine all these ideas, we arrive at a truly profound concept: we can w
 
 Consider designing a complex decoder that has to recognize a set of specific input patterns and produce a corresponding output. Furthermore, some patterns might have priority over others. We could write a massive, tangled `if-else` or `case` statement, but this would be a nightmare to manage and update.
 
-A far more advanced approach is to encode the entire logic specification—the patterns, the masks (for 'don't care' bits), the output values, and the priorities—into a single, large parameter vector. A `generate` loop can then iterate through this vector, building the precise chain of comparators and priority logic required to implement that exact specification . This is data-driven hardware design. The Verilog code becomes a generic "engine" for building decoders, and the parameter vector is the "data" that tells the engine what specific decoder to build. Changing the decoder's function is no longer a matter of rewiring logic; it's a matter of changing the data in the parameter.
+A far more advanced approach is to encode the entire logic specification—the patterns, the masks (for 'don't care' bits), the output values, and the priorities—into a single, large parameter vector. A `generate` loop can then iterate through this vector, building the precise chain of comparators and priority logic required to implement that exact specification [@problem_id:1951009]. This is data-driven hardware design. The Verilog code becomes a generic "engine" for building decoders, and the parameter vector is the "data" that tells the engine what specific decoder to build. Changing the decoder's function is no longer a matter of rewiring logic; it's a matter of changing the data in the parameter.
 
 #### The Crystal Growth Algorithm: Recursive Descriptions
 
-Perhaps the most mind-bending application is using `generate` to unroll [recursive definitions](@article_id:266119). In mathematics and computer science, we often define complex objects recursively. A [factorial](@article_id:266143) is defined in terms of a smaller [factorial](@article_id:266143). A fractal is made of smaller copies of itself. You can't have a truly recursive circuit—it would be infinitely large! But you can have a recursive *description* of a finite, hierarchical structure.
+Perhaps the most mind-bending application is using `generate` to unroll [recursive definitions](@keyword=recursive_definitions|lang=en-US|style=Feynman). In mathematics and computer science, we often define complex objects recursively. A [factorial](@keyword=factorial|lang=en-US|style=Feynman) is defined in terms of a smaller [factorial](@keyword=factorial|lang=en-US|style=Feynman). A fractal is made of smaller copies of itself. You can't have a truly recursive circuit—it would be infinitely large! But you can have a recursive *description* of a finite, hierarchical structure.
 
-A classic example is an **H-tree**, a fractal-like structure used to distribute a clock signal across a chip with minimal timing differences. A level-$L$ H-tree is defined as a central 'H' shape connecting to four level-$(L-1)$ H-trees at its tips. We can describe this with a recursive module definition. The `generate` construct acts as the mechanism to terminate the [recursion](@article_id:264202). It unrolls this elegant, [recursive definition](@article_id:265020) a fixed number of times (`LEVELS`), creating a massive but perfectly regular physical structure. We can even use this [generative model](@article_id:166801) to reason about the final hardware, for example, by calculating the exact number of signal-boosting repeaters that will be needed across the entire tree based on the level of [recursion](@article_id:264202) and physical design rules . It's like giving the synthesis tool the DNA for a crystal and letting it grow the entire, complex, perfect structure.
+A classic example is an **H-tree**, a fractal-like structure used to distribute a clock signal across a chip with minimal timing differences. A level-$L$ H-tree is defined as a central 'H' shape connecting to four level-$(L-1)$ H-trees at its tips. We can describe this with a recursive module definition. The `generate` construct acts as the mechanism to terminate the [recursion](@keyword=recursion|lang=en-US|style=Feynman). It unrolls this elegant, [recursive definition](@keyword=recursive_definition|lang=en-US|style=Feynman) a fixed number of times (`LEVELS`), creating a massive but perfectly regular physical structure. We can even use this [generative model](@keyword=generative_model|lang=en-US|style=Feynman) to reason about the final hardware, for example, by calculating the exact number of signal-boosting repeaters that will be needed across the entire tree based on the level of [recursion](@keyword=recursion|lang=en-US|style=Feynman) and physical design rules [@problem_id:1951012]. It's like giving the synthesis tool the DNA for a crystal and letting it grow the entire, complex, perfect structure.
 
 From simple repetition to intricate, algorithmically-generated hardware, parameters and `generate` constructs elevate hardware design from a craft of manual connection to an art of abstract description. They allow us to capture patterns, manage complexity, and build flexible, powerful, and beautiful digital systems.

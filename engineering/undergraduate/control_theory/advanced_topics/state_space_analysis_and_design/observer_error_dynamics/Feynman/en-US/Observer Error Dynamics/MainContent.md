@@ -1,9 +1,9 @@
 ## Introduction
-In many engineering systems, from automated vehicles to chemical reactors, we can only measure a fraction of the critical internal variables. We might know the position of a robot, but not its velocity; we might measure the output temperature, but not the internal [reaction rates](@article_id:142161). This poses a fundamental problem: how can we control a system accurately if we don't have a complete picture of its state? The answer lies in building a virtual model, an "observer," that estimates the [hidden variables](@article_id:149652) based on the information we do have. But this raises an even deeper question: how can we trust our estimate? How do we know it's converging to the truth, and how quickly?
+In many engineering systems, from automated vehicles to chemical reactors, we can only measure a fraction of the critical internal variables. We might know the position of a robot, but not its velocity; we might measure the output temperature, but not the internal [reaction rates](@keyword=reaction_rates|lang=en-US|style=Feynman). This poses a fundamental problem: how can we control a system accurately if we don't have a complete picture of its state? The answer lies in building a virtual model, an "observer," that estimates the [hidden variables](@keyword=hidden_variables|lang=en-US|style=Feynman) based on the information we do have. But this raises an even deeper question: how can we trust our estimate? How do we know it's converging to the truth, and how quickly?
 
 This article unpacks the theory and practice of "observer error dynamics"—the study of the life, behavior, and ultimate fate of the discrepancy between our estimate and reality.
 
-- In **Principles and Mechanisms**, we will dive into the elegant mathematics that govern this error, discovering how we can command it to disappear using the powerful technique of [pole placement](@article_id:155029). We will also uncover profound structural truths like the duality and separation principles.
+- In **Principles and Mechanisms**, we will dive into the elegant mathematics that govern this error, discovering how we can command it to disappear using the powerful technique of [pole placement](@keyword=pole_placement|lang=en-US|style=Feynman). We will also uncover profound structural truths like the duality and separation principles.
 - In **Applications and Interdisciplinary Connections**, we will see these principles at work, from reconstructing velocity in robotic arms to dealing with the practical challenges of sensor noise and model imperfections.
 - Finally, **Hands-On Practices** will guide you through concrete design problems, solidifying your ability to build and analyze these essential tools of modern control.
 
@@ -11,7 +11,7 @@ This article unpacks the theory and practice of "observer error dynamics"—the 
 
 Imagine you are trying to understand the inner workings of a complex machine—say, a power plant or a spacecraft—but you are locked outside. Your only connection to the inside world is a small set of gauges and dials that report certain outputs, like the overall temperature or the final velocity. You can't see the individual components, the pressures in the pipes, or the temperatures of the internal circuits. How can you possibly know what's truly going on inside?
 
-The answer is to build a replica, a virtual model of the machine that runs on a computer. You feed your model the same inputs that the real machine gets. This model is what we call an **observer**. Of course, since you don't know the precise initial conditions inside the real machine, your model's state, which we'll call $\hat{x}$, will start off different from the real machine's state, $x$. This difference, $\tilde{x} = x - \hat{x}$, is the **[estimation error](@article_id:263396)**. It is the ghost in our machine, the silent discrepancy between reality and our simulation. The entire goal of [observer design](@article_id:262910) is to understand the life of this error and, ultimately, to command it to fade away to nothing.
+The answer is to build a replica, a virtual model of the machine that runs on a computer. You feed your model the same inputs that the real machine gets. This model is what we call an **observer**. Of course, since you don't know the precise initial conditions inside the real machine, your model's state, which we'll call $\hat{x}$, will start off different from the real machine's state, $x$. This difference, $\tilde{x} = x - \hat{x}$, is the **[estimation error](@keyword=estimation_error|lang=en-US|style=Feynman)**. It is the ghost in our machine, the silent discrepancy between reality and our simulation. The entire goal of [observer design](@keyword=observer_design|lang=en-US|style=Feynman) is to understand the life of this error and, ultimately, to command it to fade away to nothing.
 
 ### The Ghost in the Machine: The Life of an Error
 
@@ -43,15 +43,15 @@ Look at this equation: $\dot{\tilde{x}} = (A-LC)\tilde{x}$. Something remarkable
 
 ### Masters of a Small Universe: Pole Placement
 
-This leads us to the heart of [observer design](@article_id:262910). The behavior of the error—whether it decays to zero, and how quickly—is dictated entirely by the eigenvalues (also called **poles**) of the matrix $(A-LC)$. And here is the profound part: we get to choose $L$. By choosing the gain matrix $L$, we are shaping the error's dynamics. We can, in many cases, place the poles of $(A-LC)$ anywhere we want in the complex plane!
+This leads us to the heart of [observer design](@keyword=observer_design|lang=en-US|style=Feynman). The behavior of the error—whether it decays to zero, and how quickly—is dictated entirely by the eigenvalues (also called **poles**) of the matrix $(A-LC)$. And here is the profound part: we get to choose $L$. By choosing the gain matrix $L$, we are shaping the error's dynamics. We can, in many cases, place the poles of $(A-LC)$ anywhere we want in the complex plane!
 
-This technique is called **[pole placement](@article_id:155029)**. If we want the error to vanish quickly, we can place the poles far to the left in the negative real half of the complex plane (e.g., at -10, -20). If we want a smoother, less aggressive response, we can place them closer to the origin (e.g., at -1, -2). The process is a delightful exercise in algebra. We simply write down the [desired characteristic polynomial](@article_id:275814), for instance $(s-\lambda_1)(s-\lambda_2)$, and the actual [characteristic polynomial](@article_id:150415), $\det(sI - (A-LC))$, which will have the gains $l_i$ as variables. By equating the coefficients of the powers of $s$, we get a system of linear equations that we can solve to find the required gains. We become the masters of the error's fate, commanding it to disappear at exactly the rate we prescribe.
+This technique is called **[pole placement](@keyword=pole_placement|lang=en-US|style=Feynman)**. If we want the error to vanish quickly, we can place the poles far to the left in the negative real half of the complex plane (e.g., at -10, -20). If we want a smoother, less aggressive response, we can place them closer to the origin (e.g., at -1, -2). The process is a delightful exercise in algebra. We simply write down the [desired characteristic polynomial](@keyword=desired_characteristic_polynomial|lang=en-US|style=Feynman), for instance $(s-\lambda_1)(s-\lambda_2)$, and the actual [characteristic polynomial](@keyword=characteristic_polynomial|lang=en-US|style=Feynman), $\det(sI - (A-LC))$, which will have the gains $l_i$ as variables. By equating the coefficients of the powers of $s$, we get a system of linear equations that we can solve to find the required gains. We become the masters of the error's fate, commanding it to disappear at exactly the rate we prescribe.
 
 ### A Surprising Reflection: The Duality Principle
 
-As we delve deeper into the mathematics of placing the observer poles, a strange sense of déjà vu might arise. The algebraic problem of finding an observer gain $L$ to shape the dynamics of $(A-LC)$ looks suspiciously similar to another core problem in control theory: finding a state-[feedback gain](@article_id:270661) $K$ to shape the dynamics of a system with control law $u = -Kx$, which results in the matrix $(A-BK)$.
+As we delve deeper into the mathematics of placing the observer poles, a strange sense of déjà vu might arise. The algebraic problem of finding an observer gain $L$ to shape the dynamics of $(A-LC)$ looks suspiciously similar to another core problem in control theory: finding a state-[feedback gain](@keyword=feedback_gain|lang=en-US|style=Feynman) $K$ to shape the dynamics of a system with control law $u = -Kx$, which results in the matrix $(A-BK)$.
 
-This is no mere coincidence. It is a sign of a deep and beautiful symmetry known as the **[principle of duality](@article_id:276121)**. Let's look at the [characteristic polynomial](@article_id:150415) for our observer error:
+This is no mere coincidence. It is a sign of a deep and beautiful symmetry known as the **[principle of duality](@keyword=principle_of_duality|lang=en-US|style=Feynman)**. Let's look at the [characteristic polynomial](@keyword=characteristic_polynomial|lang=en-US|style=Feynman) for our observer error:
 $$
 p_{obs}(s) = \det(sI - (A-LC))
 $$
@@ -59,7 +59,7 @@ A fundamental property of determinants is that $\det(M) = \det(M^T)$. Applying t
 $$
 p_{obs}(s) = \det((sI - (A-LC))^T) = \det(sI - (A^T - C^T L^T))
 $$
-Now, consider a completely different "dual" control problem: a system with dynamics matrix $A^T$ and input matrix $B_{dual} = C^T$. If we design a [state-feedback controller](@article_id:202855) for this dual system with gain $K_{dual}$, its closed-loop [characteristic polynomial](@article_id:150415) would be:
+Now, consider a completely different "dual" control problem: a system with dynamics matrix $A^T$ and input matrix $B_{dual} = C^T$. If we design a [state-feedback controller](@keyword=state_feedback_controller|lang=en-US|style=Feynman) for this dual system with gain $K_{dual}$, its closed-loop [characteristic polynomial](@keyword=characteristic_polynomial|lang=en-US|style=Feynman) would be:
 $$
 p_{ctrl, dual}(s) = \det(sI - (A^T - B_{dual} K_{dual})) = \det(sI - (A^T - C^T K_{dual}))
 $$
@@ -81,19 +81,19 @@ This shows that $v$ is *also* an eigenvector of $(A-LC)$ with the *same* eigenva
 
 ### A Fortunate Divorce: The Separation Principle
 
-We are now ready to assemble our complete system. We have designed a [state-feedback controller](@article_id:202855), $u = -Kx$, to make the plant behave as we wish. But since we don't have the true state $x$, we must use our estimate: $u = -K\hat{x}$. We have also designed an observer to generate this estimate $\hat{x}$.
+We are now ready to assemble our complete system. We have designed a [state-feedback controller](@keyword=state_feedback_controller|lang=en-US|style=Feynman), $u = -Kx$, to make the plant behave as we wish. But since we don't have the true state $x$, we must use our estimate: $u = -K\hat{x}$. We have also designed an observer to generate this estimate $\hat{x}$.
 
 A critical question arises: by feeding the estimate back into the system, have we created a complicated loop where the controller's behavior affects the observer's error, and vice-versa? Have we invalidated both of our careful, separate designs?
 
-The answer is one of the most elegant and profoundly useful results in all of control theory: **No**. The dynamics of the observer error, $\dot{\tilde{x}} = (A-LC)\tilde{x}$, remain completely independent of the control law. In other words, the [controller design](@article_id:274488) and the [observer design](@article_id:262910) are *separate*. This is the **[separation principle](@article_id:175640)**. It allows us to tackle a complex problem by breaking it into two simpler ones:
+The answer is one of the most elegant and profoundly useful results in all of control theory: **No**. The dynamics of the observer error, $\dot{\tilde{x}} = (A-LC)\tilde{x}$, remain completely independent of the control law. In other words, the [controller design](@keyword=controller_design|lang=en-US|style=Feynman) and the [observer design](@keyword=observer_design|lang=en-US|style=Feynman) are *separate*. This is the **[separation principle](@keyword=separation_principle|lang=en-US|style=Feynman)**. It allows us to tackle a complex problem by breaking it into two simpler ones:
 1.  Design the controller gain $K$ as if you had perfect access to the states, placing the poles of $(A-BK)$ where you want them.
-2.  Design the observer gain $L$ to place the poles of $(A-LC)$ where you want them, ensuring the [estimation error](@article_id:263396) dies out as desired.
+2.  Design the observer gain $L$ to place the poles of $(A-LC)$ where you want them, ensuring the [estimation error](@keyword=estimation_error|lang=en-US|style=Feynman) dies out as desired.
 
-When you put them together, the overall system will have a set of poles that is simply the union of the controller poles and the observer poles. This "divorce" between [controller design](@article_id:274488) and [observer design](@article_id:262910) is a cornerstone of modern [control engineering](@article_id:149365), making an otherwise intractable problem beautifully manageable.
+When you put them together, the overall system will have a set of poles that is simply the union of the controller poles and the observer poles. This "divorce" between [controller design](@keyword=controller_design|lang=en-US|style=Feynman) and [observer design](@keyword=observer_design|lang=en-US|style=Feynman) is a cornerstone of modern [control engineering](@keyword=control_engineering|lang=en-US|style=Feynman), making an otherwise intractable problem beautifully manageable.
 
 ### The Engineer's Dilemma: Speed vs. Jitters
 
-With the power of [pole placement](@article_id:155029) at our fingertips, the temptation is to be aggressive. Why not place the observer poles at, say, -1000 and -2000, to make the [estimation error](@article_id:263396) vanish almost instantaneously?
+With the power of [pole placement](@keyword=pole_placement|lang=en-US|style=Feynman) at our fingertips, the temptation is to be aggressive. Why not place the observer poles at, say, -1000 and -2000, to make the [estimation error](@keyword=estimation_error|lang=en-US|style=Feynman) vanish almost instantaneously?
 
 Here, the messy reality of the physical world intervenes. Our sensors are never perfect; their measurements are always corrupted by some amount of **noise**, $v(t)$. So the measured output is really $y_m = y + v$. Let's look at our correction term again:
 $$
@@ -104,7 +104,7 @@ This reveals that while we are using the output error to correct our state estim
 Generally, to achieve very fast poles (placing them far out on the negative real axis), we need a large observer gain $L$. But a large $L$ also means a large amplification of sensor noise. The result is an estimate that, while it may converge "on average" very quickly, is also extremely noisy and "jittery".
 
 This presents the engineer with a fundamental **trade-off**:
-*   **A fast observer** (large $L$, aggressive [pole placement](@article_id:155029)) tracks the true state's changes quickly but suffers from high sensitivity to [measurement noise](@article_id:274744), resulting in a jittery estimate.
+*   **A fast observer** (large $L$, aggressive [pole placement](@keyword=pole_placement|lang=en-US|style=Feynman)) tracks the true state's changes quickly but suffers from high sensitivity to [measurement noise](@keyword=measurement_noise|lang=en-US|style=Feynman), resulting in a jittery estimate.
 *   **A slow observer** (small $L$, conservative pole placement) provides a much smoother, less noisy estimate but is more sluggish in responding to rapid changes in the true state.
 
-Finding the right balance—fast enough to be useful, but slow enough to be clean—is the art of [control engineering](@article_id:149365). It's a reminder that even with the most elegant theories, the final design is always a compromise, a conversation between our desires and the noisy, imperfect nature of the world.
+Finding the right balance—fast enough to be useful, but slow enough to be clean—is the art of [control engineering](@keyword=control_engineering|lang=en-US|style=Feynman). It's a reminder that even with the most elegant theories, the final design is always a compromise, a conversation between our desires and the noisy, imperfect nature of the world.

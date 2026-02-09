@@ -1,17 +1,17 @@
 ## Introduction
-To engineer better batteries, we must first understand their complex inner world. The performance, longevity, and safety of a battery are all dictated by the intricate dance of ions and electrons within its hidden architecture. Building a predictive, physics-based "digital twin" of a battery requires a deep understanding of the fundamental laws governing this internal transport. This article addresses this need by systematically constructing the mathematical framework for species and charge conservation in the electrolyte phase, starting from the single-ion level and building up to a complete [porous electrode model](@entry_id:1129960).
+To engineer better batteries, we must first understand their complex inner world. The performance, longevity, and safety of a battery are all dictated by the intricate dance of ions and electrons within its hidden architecture. Building a predictive, physics-based "digital twin" of a battery requires a deep understanding of the fundamental laws governing this internal transport. This article addresses this need by systematically constructing the mathematical framework for species and charge conservation in the electrolyte phase, starting from the single-ion level and building up to a complete [porous electrode model](@keyword=porous_electrode_model|lang=en-US|style=Feynman).
 
-Across three comprehensive chapters, you will gain a robust theoretical foundation for battery simulation. The journey begins in **"Principles and Mechanisms,"** where we derive the essential equations governing [ion transport](@entry_id:273654) and reaction kinetics, from the concept of [electrochemical potential](@entry_id:141179) to the Nernst-Planck and Butler-Volmer equations. Next, in **"Applications and Interdisciplinary Connections,"** we explore how these principles are applied in influential models like the Doyle-Fuller-Newman (DFN) model to predict [critical phenomena](@entry_id:144727) such as lithium plating and connect electrochemistry to thermal and mechanical effects. Finally, the **"Hands-On Practices"** section provides opportunities to apply these concepts through targeted exercises, solidifying your understanding of the theory. By the end, you will be equipped with the core knowledge needed to interpret, implement, and critically evaluate the models that drive modern battery design and analysis.
+Across three comprehensive chapters, you will gain a robust theoretical foundation for battery simulation. The journey begins in **"Principles and Mechanisms,"** where we derive the essential equations governing [ion transport](@keyword=ion_transport|lang=en-US|style=Feynman) and reaction kinetics, from the concept of [electrochemical potential](@keyword=electrochemical_potential|lang=en-US|style=Feynman) to the Nernst-Planck and Butler-Volmer equations. Next, in **"Applications and Interdisciplinary Connections,"** we explore how these principles are applied in influential models like the Doyle-Fuller-Newman (DFN) model to predict [critical phenomena](@keyword=critical_phenomena|lang=en-US|style=Feynman) such as lithium plating and connect electrochemistry to thermal and mechanical effects. Finally, the **"Hands-On Practices"** section provides opportunities to apply these concepts through targeted exercises, solidifying your understanding of the theory. By the end, you will be equipped with the core knowledge needed to interpret, implement, and critically evaluate the models that drive modern battery design and analysis.
 
 ## Principles and Mechanisms
 
-To build a [virtual battery](@entry_id:1133819), we must first become fluent in the language of its inner world. This world is a bustling, microscopic metropolis, where charged atoms—ions—are the citizens. A battery’s power arises from orchestrating the grand migration of these ions. Our task, then, is to become the urban planners of this metropolis. We need to understand what makes the ions move, the paths they take, and the rules they must obey. Let us embark on this journey of discovery, starting with a single ion and building our way up to a complete, functioning porous electrode.
+To build a [virtual battery](@keyword=virtual_battery|lang=en-US|style=Feynman), we must first become fluent in the language of its inner world. This world is a bustling, microscopic metropolis, where charged atoms—ions—are the citizens. A battery’s power arises from orchestrating the grand migration of these ions. Our task, then, is to become the urban planners of this metropolis. We need to understand what makes the ions move, the paths they take, and the rules they must obey. Let us embark on this journey of discovery, starting with a single ion and building our way up to a complete, functioning porous electrode.
 
 ### The Universal Driving Force
 
 Imagine a ball on a hilly landscape. What makes it roll? Gravity, of course. It moves from a place of high potential energy to a place of low potential energy. For an ion in an electrolyte, the principle is exactly the same, but the "hill" is a more abstract and beautiful concept: the **electrochemical potential**, denoted by the symbol $\tilde{\mu}_k$ for an ion of species $k$. An ion, left to its own devices, will always move from a region of higher $\tilde{\mu}_k$ to a region of lower $\tilde{\mu}_k$.
 
-But what is this electrochemical potential? It is the total energy required to add one mole of a particular ion to the system, and it is the sum of two distinct parts :
+But what is this electrochemical potential? It is the total energy required to add one mole of a particular ion to the system, and it is the sum of two distinct parts [@problem_id:3911533]:
 
 $$
 \tilde{\mu}_k = \mu_k + z_k F \phi_e
@@ -25,7 +25,7 @@ The electrochemical potential $\tilde{\mu}_k$ beautifully unifies these two effe
 
 ### A Symphony of Motion: The Nernst-Planck Equation
 
-Now that we know the driving force, we can write down a wonderfully complete equation for the flux of ions, $\mathbf{N}_k$—the number of moles of species $k$ moving across a unit area per second. This is the celebrated **Nernst-Planck equation**, which describes [ion transport](@entry_id:273654) as a symphony of three distinct movements :
+Now that we know the driving force, we can write down a wonderfully complete equation for the flux of ions, $\mathbf{N}_k$—the number of moles of species $k$ moving across a unit area per second. This is the celebrated **Nernst-Planck equation**, which describes [ion transport](@keyword=ion_transport|lang=en-US|style=Feynman) as a symphony of three distinct movements [@problem_id:3911573]:
 
 $$
 \mathbf{N}_k = \underbrace{-D_k \nabla c_k}_{\text{Diffusion}} \underbrace{- \frac{D_k z_k F}{RT} c_k \nabla \phi_e}_{\text{Migration}} + \underbrace{c_k \mathbf{v}}_{\text{Convection}}
@@ -43,7 +43,7 @@ This equation is the foundation of our transport model. It tells us how ions wil
 
 ### From Ion Flux to Electric Current
 
-Our instruments don't measure ion flux directly; they measure electric current. The connection is straightforward. Current is simply the flow of charge. Since we know the charge on one mole of ions is $z_k F$, the electric current density, $\mathbf{i}_e$, is just the sum of the charge carried by each species' flux :
+Our instruments don't measure ion flux directly; they measure electric current. The connection is straightforward. Current is simply the flow of charge. Since we know the charge on one mole of ions is $z_k F$, the electric current density, $\mathbf{i}_e$, is just the sum of the charge carried by each species' flux [@problem_id:3911510]:
 
 $$
 \mathbf{i}_e = F \sum_k z_k \mathbf{N}_k
@@ -55,9 +55,9 @@ This equation contains a subtle but critical insight. Consider an anion (a negat
 
 The Nernst-Planck equation, in its simplest form, assumes the electrolyte is "dilute." This is like assuming each person in a room can move freely without bumping into others. In a real battery, the electrolyte is a concentrated, bustling crowd. In such a crowd, an ion's desire to move isn't just about the raw concentration; it's about its interactions with all the other ions around it.
 
-To account for this, we introduce the concept of **activity**, $a_k$, which can be thought of as the "effective" concentration. It is related to the true concentration $c_k$ by an activity coefficient, $f_k$. For a salt, we define a **mean [molar activity](@entry_id:906458)** $a_\pm$ and a [mean activity coefficient](@entry_id:269077) $f_\pm$ . The fundamental driving force for diffusion is truly the gradient of activity, not concentration.
+To account for this, we introduce the concept of **activity**, $a_k$, which can be thought of as the "effective" concentration. It is related to the true concentration $c_k$ by an activity coefficient, $f_k$. For a salt, we define a **mean [molar activity](@keyword=molar_activity|lang=en-US|style=Feynman)** $a_\pm$ and a [mean activity coefficient](@keyword=mean_activity_coefficient|lang=en-US|style=Feynman) $f_\pm$ [@problem_id:3911572]. The fundamental driving force for diffusion is truly the gradient of activity, not concentration.
 
-The relationship between the two is captured by the **[thermodynamic factor](@entry_id:189257)**, $\chi$:
+The relationship between the two is captured by the **[thermodynamic factor](@keyword=thermodynamic_factor|lang=en-US|style=Feynman)**, $\chi$:
 
 $$
 \chi = \frac{\partial \ln a_\pm}{\partial \ln c_\pm} = 1 + \frac{\partial \ln f_\pm}{\partial \ln c_\pm}
@@ -67,19 +67,19 @@ In the dilute limit, ions don't interact, so $f_\pm \to 1$, its logarithm is zer
 
 ### The Arena: Modeling the Porous Electrode
 
-Ions don't move through an open pool of liquid in a battery; they navigate a complex, sponge-like maze called a porous electrode. To describe transport on a macroscopic level, we must average over the microscopic twists and turns. This process introduces three essential geometric parameters that define the arena :
+Ions don't move through an open pool of liquid in a battery; they navigate a complex, sponge-like maze called a porous electrode. To describe transport on a macroscopic level, we must average over the microscopic twists and turns. This process introduces three essential geometric parameters that define the arena [@problem_id:3911559]:
 
 1.  **Porosity ($\epsilon$):** This is simply the fraction of the total volume that is open for the electrolyte to flow through. A value of $\epsilon=0.3$ means the structure is 30% liquid and 70% solid.
 
-2.  **Specific Surface Area ($a_s$):** This is the total area of the [solid-liquid interface](@entry_id:201674) packed into a unit volume. A high value of $a_s$ means there is a vast amount of surface available for reactions to occur, like having many tiny workshops instead of one large one. Its units are area per volume, or $m^{-1}$.
+2.  **Specific Surface Area ($a_s$):** This is the total area of the [solid-liquid interface](@keyword=solid_liquid_interface|lang=en-US|style=Feynman) packed into a unit volume. A high value of $a_s$ means there is a vast amount of surface available for reactions to occur, like having many tiny workshops instead of one large one. Its units are area per volume, or $m^{-1}$.
 
-3.  **Tortuosity ($\tau$):** This measures how convoluted the pathways are. A straight path has $\tau=1$. A winding, tortuous path has $\tau > 1$. Tortuosity impedes transport because ions must travel a longer distance to get from point A to point B. It reduces the [effective diffusivity](@entry_id:183973) and conductivity of the electrolyte, often described by a relationship like the Bruggeman correlation, $D_{\text{eff}} = D_k \frac{\epsilon}{\tau^2}$ or $D_{\text{eff}} = D_k \epsilon^{\alpha}$.
+3.  **Tortuosity ($\tau$):** This measures how convoluted the pathways are. A straight path has $\tau=1$. A winding, tortuous path has $\tau > 1$. Tortuosity impedes transport because ions must travel a longer distance to get from point A to point B. It reduces the [effective diffusivity](@keyword=effective_diffusivity|lang=en-US|style=Feynman) and conductivity of the electrolyte, often described by a relationship like the Bruggeman correlation, $D_{\text{eff}} = D_k \frac{\epsilon}{\tau^2}$ or $D_{\text{eff}} = D_k \epsilon^{\alpha}$.
 
 These parameters are our bridge from the microscopic reality to a manageable macroscopic model.
 
 ### The Grand Ledger: Conservation Laws
 
-With our fluxes defined and our arena described, we can now apply the most fundamental law of all: conservation. The amount of any given species in a small volume can only change if it flows in or out, or if it is created or destroyed inside. This gives us the magnificent **species continuity equation** for a porous medium :
+With our fluxes defined and our arena described, we can now apply the most fundamental law of all: conservation. The amount of any given species in a small volume can only change if it flows in or out, or if it is created or destroyed inside. This gives us the magnificent **species continuity equation** for a porous medium [@problem_id:3911574]:
 
 $$
 \frac{\partial (\epsilon c_k)}{\partial t} + \nabla \cdot \mathbf{N}_k = R_k
@@ -90,9 +90,9 @@ Let's read this equation from left to right:
 - $\nabla \cdot \mathbf{N}_k$: This is the divergence of the flux, representing the net rate at which species $k$ is being transported *out* of the volume.
 - $R_k$: This is the volumetric source term. It's the net rate at which species $k$ is being created (positive $R_k$) or consumed (negative $R_k$) by chemical reactions within the volume.
 
-Just as we must account for every ion, we must account for every bit of charge. The porous electrode is a remarkable "two-lane highway" for charge. Electrons travel through the solid matrix, while ions travel through the electrolyte. These two phases are distinct, each with its own potential, $\phi_s$ for the solid and $\phi_e$ for the electrolyte .
+Just as we must account for every ion, we must account for every bit of charge. The porous electrode is a remarkable "two-lane highway" for charge. Electrons travel through the solid matrix, while ions travel through the electrolyte. These two phases are distinct, each with its own potential, $\phi_s$ for the solid and $\phi_e$ for the electrolyte [@problem_id:3911536].
 
-Charge conservation must hold in each phase separately. The electrochemical reactions at the interface act as "on-ramps" and "off-ramps," transferring charge between the two lanes. If we define the interfacial reaction current density as $j_F$ (charge per unit area per time), the volumetric source term becomes $a_s j_F$. The [charge conservation](@entry_id:151839) laws for the two phases then take on a beautiful symmetry:
+Charge conservation must hold in each phase separately. The electrochemical reactions at the interface act as "on-ramps" and "off-ramps," transferring charge between the two lanes. If we define the interfacial reaction current density as $j_F$ (charge per unit area per time), the volumetric source term becomes $a_s j_F$. The [charge conservation](@keyword=charge_conservation|lang=en-US|style=Feynman) laws for the two phases then take on a beautiful symmetry:
 
 $$
 \nabla \cdot \mathbf{i}_s = -a_s j_F \quad \text{(Solid Phase)}
@@ -105,7 +105,7 @@ This pair of equations elegantly states that any charge that leaves the solid ph
 
 ### The Engine of the Battery: Interfacial Kinetics
 
-We've seen the source term $a_s j_F$ appear in our conservation laws, but what determines its value? What is the "throttle" on this engine? The answer lies in the kinetics of the electrochemical reaction at the interface, which is governed by the **overpotential**, $\eta$ .
+We've seen the source term $a_s j_F$ appear in our conservation laws, but what determines its value? What is the "throttle" on this engine? The answer lies in the kinetics of the electrochemical reaction at the interface, which is governed by the **overpotential**, $\eta$ [@problem_id:3911530].
 
 The overpotential is the "extra voltage" applied across the interface beyond what is needed for equilibrium. It is the thermodynamic driving force for the reaction:
 
@@ -113,45 +113,45 @@ $$
 \eta = \phi_s - \phi_e - U
 $$
 
-Here, $\phi_s - \phi_e$ is the actual potential difference across the interface, and $U$ is the [equilibrium potential](@entry_id:166921) (the [open-circuit voltage](@entry_id:270130)), which depends on the state of the electrode. A non-zero overpotential means the system is out of equilibrium, and a net reaction will occur.
+Here, $\phi_s - \phi_e$ is the actual potential difference across the interface, and $U$ is the [equilibrium potential](@keyword=equilibrium_potential|lang=en-US|style=Feynman) (the [open-circuit voltage](@keyword=open_circuit_voltage|lang=en-US|style=Feynman)), which depends on the state of the electrode. A non-zero overpotential means the system is out of equilibrium, and a net reaction will occur.
 
-The relationship between the overpotential and the resulting current density $j_F$ is famously described by the **Butler-Volmer equation** :
+The relationship between the overpotential and the resulting current density $j_F$ is famously described by the **Butler-Volmer equation** [@problem_id:3911527]:
 
 $$
 j_F = j_0 \left[ \exp\left(\frac{\alpha_a F \eta}{R T}\right) - \exp\left(-\frac{\alpha_c F \eta}{R T}\right) \right]
 $$
 
-This equation looks complicated, but its story is simple. The net current ($j_F$) is the difference between a forward (anodic) reaction rate and a backward (cathodic) reaction rate. Both rates depend exponentially on the overpotential $\eta$. This exponential dependence means that even a small overpotential can drive a very large current, making it a powerful "throttle" for the battery. The parameter $j_0$ is the exchange current density, which represents the furious, equal-and-opposite [rate of reaction](@entry_id:185114) that occurs at equilibrium ($\eta=0$).
+This equation looks complicated, but its story is simple. The net current ($j_F$) is the difference between a forward (anodic) reaction rate and a backward (cathodic) reaction rate. Both rates depend exponentially on the overpotential $\eta$. This exponential dependence means that even a small overpotential can drive a very large current, making it a powerful "throttle" for the battery. The parameter $j_0$ is the exchange current density, which represents the furious, equal-and-opposite [rate of reaction](@keyword=rate_of_reaction|lang=en-US|style=Feynman) that occurs at equilibrium ($\eta=0$).
 
-The spatial distribution of this overpotential, $\eta(x)$, is what orchestrates the battery's operation. By determining the local reaction rate $j_F(x)$, it dictates where the current is handed off from the solid phase to the electrolyte phase, ensuring that the total current is smoothly transferred from the current collector to the separator .
+The spatial distribution of this overpotential, $\eta(x)$, is what orchestrates the battery's operation. By determining the local reaction rate $j_F(x)$, it dictates where the current is handed off from the solid phase to the electrolyte phase, ensuring that the total current is smoothly transferred from the current collector to the separator [@problem_id:3911530].
 
 ### The Unseen Capacitor
 
-There is one more piece to our puzzle. The interface between the solid and the electrolyte doesn't just host reactions; it also stores charge. A thin layer of charge separation, called the **[electrical double layer](@entry_id:160711) (EDL)**, forms at the interface, acting like a microscopic capacitor.
+There is one more piece to our puzzle. The interface between the solid and the electrolyte doesn't just host reactions; it also stores charge. A thin layer of charge separation, called the **[electrical double layer](@keyword=electrical_double_layer|lang=en-US|style=Feynman) (EDL)**, forms at the interface, acting like a microscopic capacitor.
 
-When the potential difference across the interface, and thus the overpotential $\eta$, changes with time, this capacitor must be charged or discharged. This flow of charge constitutes a **[capacitive current](@entry_id:272835)**, which is non-Faradaic (it doesn't involve a chemical reaction). For a double-layer with capacitance per unit area $C_{dl}$, this current is given by :
+When the potential difference across the interface, and thus the overpotential $\eta$, changes with time, this capacitor must be charged or discharged. This flow of charge constitutes a **[capacitive current](@keyword=capacitive_current|lang=en-US|style=Feynman)**, which is non-Faradaic (it doesn't involve a chemical reaction). For a double-layer with capacitance per unit area $C_{dl}$, this current is given by [@problem_id:3911526]:
 
 $$
 j_{dl} = C_{dl} \frac{\partial \eta}{\partial t}
 $$
 
-This capacitive current contributes to the total current transferred from the solid phase, acting as another source term in the electrolyte's [charge conservation](@entry_id:151839) law:
+This capacitive current contributes to the total current transferred from the solid phase, acting as another source term in the electrolyte's [charge conservation](@keyword=charge_conservation|lang=en-US|style=Feynman) law:
 
 $$
 \nabla \cdot \mathbf{i}_e = a_s j_F + a_s j_{dl} = a_s j_F + a_s C_{dl} \frac{\partial \eta}{\partial t}
 $$
 
-While often small during slow discharge, this [capacitive current](@entry_id:272835) becomes critically important for understanding a battery's response to [fast charging](@entry_id:1124848), pulses, and high-frequency perturbations.
+While often small during slow discharge, this [capacitive current](@keyword=capacitive_current|lang=en-US|style=Feynman) becomes critically important for understanding a battery's response to [fast charging](@keyword=fast_charging|lang=en-US|style=Feynman), pulses, and high-frequency perturbations.
 
 ### When Simplifications Fail: The Limits of Electroneutrality
 
-Throughout our discussion, we've relied on a powerful simplification: the **[electroneutrality approximation](@entry_id:748897)**. We've assumed that at any point in the bulk electrolyte, the total positive charge from cations perfectly balances the total negative charge from [anions](@entry_id:166728), so the net charge density $\rho_e = F \sum_k z_k c_k$ is effectively zero. This allows us to avoid solving the complex Poisson's equation, $\nabla^2 \phi_e = -\rho_e/\epsilon$, and instead use a simpler algebraic constraint .
+Throughout our discussion, we've relied on a powerful simplification: the **[electroneutrality approximation](@keyword=electroneutrality_approximation|lang=en-US|style=Feynman)**. We've assumed that at any point in the bulk electrolyte, the total positive charge from cations perfectly balances the total negative charge from [anions](@keyword=anions|lang=en-US|style=Feynman), so the net charge density $\rho_e = F \sum_k z_k c_k$ is effectively zero. This allows us to avoid solving the complex Poisson's equation, $\nabla^2 \phi_e = -\rho_e/\epsilon$, and instead use a simpler algebraic constraint [@problem_id:3911580].
 
-But when is this approximation valid? Physics tells us it holds when the [characteristic length scales](@entry_id:266383) of our system (like the pore radius) are much larger than a fundamental length scale called the **Debye length**, $\lambda_D$. The Debye length is the typical distance over which charge imbalances are screened out by the movement of other ions. In concentrated electrolytes, $\lambda_D$ is typically on the order of nanometers.
+But when is this approximation valid? Physics tells us it holds when the [characteristic length scales](@keyword=characteristic_length_scales|lang=en-US|style=Feynman) of our system (like the pore radius) are much larger than a fundamental length scale called the **Debye length**, $\lambda_D$. The Debye length is the typical distance over which charge imbalances are screened out by the movement of other ions. In concentrated electrolytes, $\lambda_D$ is typically on the order of nanometers.
 
 This means our model works beautifully for most macroscopic battery simulations. However, the electroneutrality assumption breaks down in several important cases:
 -   **Inside the EDL:** By its very nature, the EDL is a region of charge separation, and $\rho_e$ is large.
 -   **In Nanopores:** If the electrode or separator has pores with dimensions comparable to the Debye length, the EDLs from opposite pore walls can overlap, and the entire pore volume becomes a region of net charge.
--   **Under Fast Transients:** If we apply a very rapid change in potential, the ions may not have time to rearrange and screen the charge, leading to temporary [space charge](@entry_id:199907) regions.
+-   **Under Fast Transients:** If we apply a very rapid change in potential, the ions may not have time to rearrange and screen the charge, leading to temporary [space charge](@keyword=space_charge|lang=en-US|style=Feynman) regions.
 
-In these regimes, we must abandon the [electroneutrality approximation](@entry_id:748897) and solve the fully coupled **Poisson-Nernst-Planck (PNP) equations**. This is computationally far more demanding, but it is the price of capturing the complete physics. Understanding the limits of our model is just as important as understanding the model itself. It is the mark of a true scientist to know not only the power of their tools, but also their boundaries.
+In these regimes, we must abandon the [electroneutrality approximation](@keyword=electroneutrality_approximation|lang=en-US|style=Feynman) and solve the fully coupled **Poisson-Nernst-Planck (PNP) equations**. This is computationally far more demanding, but it is the price of capturing the complete physics. Understanding the limits of our model is just as important as understanding the model itself. It is the mark of a true scientist to know not only the power of their tools, but also their boundaries.

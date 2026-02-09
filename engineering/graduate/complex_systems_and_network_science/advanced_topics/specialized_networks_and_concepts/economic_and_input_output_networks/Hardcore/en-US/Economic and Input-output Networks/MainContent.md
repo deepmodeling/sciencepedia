@@ -1,7 +1,7 @@
 ## Introduction
-Modern economies are not monolithic entities but vast, intricate networks of interdependent industries. To understand systemic risks, [economic shocks](@entry_id:140842), and the true environmental cost of consumption, we must look beyond aggregate indicators and map the complex web of flows between production sectors. The Input-Output (I-O) framework, pioneered by Wassily Leontief, provides the essential quantitative tool for this task, transforming economic accounting into a powerful analytical model of a networked system. This article demystifies the I-O framework, addressing the need for a structural understanding of economic dependencies.
+Modern economies are not monolithic entities but vast, intricate networks of interdependent industries. To understand systemic risks, economic shocks, and the true environmental cost of consumption, we must look beyond aggregate indicators and map the complex web of flows between production sectors. The Input-Output (I-O) framework, pioneered by Wassily Leontief, provides the essential quantitative tool for this task, transforming economic accounting into a powerful analytical model of a networked system. This article demystifies the I-O framework, addressing the need for a structural understanding of economic dependencies.
 
-The following chapters will guide you through this powerful framework, from its theoretical foundations to its diverse real-world applications. We begin in **Principles and Mechanisms** by deconstructing the foundational Leontief quantity model, its price dual, and the crucial concept of the Leontief inverse. Next, in **Applications and Interdisciplinary Connections**, we explore how this model is applied to analyze economic multipliers, trace global supply chains, calculate environmental footprints, and identify keystone sectors. Finally, the **Hands-On Practices** section provides opportunities to engage with these concepts directly, solidifying your understanding of how to model and analyze the intricate architecture of [economic networks](@entry_id:140520).
+The following chapters will guide you through this powerful framework, from its theoretical foundations to its diverse real-world applications. We begin in **Principles and Mechanisms** by deconstructing the foundational Leontief quantity model, its price dual, and the crucial concept of the Leontief inverse. Next, in **Applications and Interdisciplinary Connections**, we explore how this model is applied to analyze economic multipliers, trace global supply chains, calculate environmental footprints, and identify keystone sectors. Finally, the **Hands-On Practices** section provides opportunities to engage with these concepts directly, solidifying your understanding of how to model and analyze the intricate architecture of economic networks.
 
 ## Principles and Mechanisms
 
@@ -25,27 +25,27 @@ The material balance principle can now be stated formally for each sector $i$. T
 
 $x_i = \left(\sum_{j=1}^{n} Z_{ij}\right) + y_i$
 
-This system of $n$ [linear equations](@entry_id:151487) can be expressed compactly in matrix notation. If we let $\mathbf{1}$ be a column vector of ones, the product $Z\mathbf{1}$ yields a column vector whose $i$-th element is the sum of the $i$-th row of $Z$. This allows us to write the complete set of balance equations for the entire economy as:
+This system of $n$ linear equations can be expressed compactly in matrix notation. If we let $\mathbf{1}$ be a column vector of ones, the product $Z\mathbf{1}$ yields a column vector whose $i$-th element is the sum of the $i$-th row of $Z$. This allows us to write the complete set of balance equations for the entire economy as:
 
 $x = Z\mathbf{1} + y$
 
-This equation provides a complete snapshot of the economy's flows, but it does not yet describe the underlying technological structure. 
+This equation provides a complete snapshot of the economy's flows, but it does not yet describe the underlying technological structure. [@problem_id:4273262]
 
 #### The Technical Coefficient Matrix
 
 To transform the accounting snapshot into a predictive model, we must characterize the production technology of each sector. The core assumption of the Leontief model is that of a **fixed-coefficient production function**. This means that to produce one unit of output, a sector always requires a fixed "recipe" of inputs.
 
-This recipe is quantified by the **technical [coefficient matrix](@entry_id:151473)**, $A \in \mathbb{R}^{n \times n}$. An entry $A_{ij}$ is defined as the monetary value of input from sector $i$ required to produce one monetary unit's worth of gross output in sector $j$.
+This recipe is quantified by the **technical coefficient matrix**, $A \in \mathbb{R}^{n \times n}$. An entry $A_{ij}$ is defined as the monetary value of input from sector $i$ required to produce one monetary unit's worth of gross output in sector $j$.
 
 This coefficient can be derived directly from the transaction data. If sector $j$ produces a total gross output of $x_j$ and in doing so consumes $Z_{ij}$ worth of inputs from sector $i$, then the input requirement per unit of output is:
 
 $A_{ij} = \frac{Z_{ij}}{x_j}$
 
-This definition is valid for any economically active sector, for which we assume $x_j > 0$. This relationship allows us to construct the entire technical [coefficient matrix](@entry_id:151473) $A$ from the transaction matrix $Z$ and the gross output vector $x$. We observe that every element in the $j$-th column of $Z$ is divided by the same scalar value $x_j$. This column-wise normalization is achieved by post-multiplying (right-multiplying) $Z$ by the inverse of a [diagonal matrix](@entry_id:637782) formed from $x$. Letting $\mathrm{diag}(x)$ be the [diagonal matrix](@entry_id:637782) with the elements of $x$ on its main diagonal, we have:
+This definition is valid for any economically active sector, for which we assume $x_j > 0$. This relationship allows us to construct the entire technical coefficient matrix $A$ from the transaction matrix $Z$ and the gross output vector $x$. We observe that every element in the $j$-th column of $Z$ is divided by the same scalar value $x_j$. This column-wise normalization is achieved by post-multiplying (right-multiplying) $Z$ by the inverse of a diagonal matrix formed from $x$. Letting $\mathrm{diag}(x)$ be the diagonal matrix with the elements of $x$ on its main diagonal, we have:
 
 $A = Z \mathrm{diag}(x)^{-1}$
 
-It is crucial to distinguish between $Z$ and $A$. The transaction matrix $Z$ measures absolute flows in monetary units, which change as the scale of the economy changes. In contrast, the technical [coefficient matrix](@entry_id:151473) $A$ measures the stable, underlying technological structure. Its entries are dimensionless ratios (e.g., dollars of input per dollar of output). In network science terms, if $Z$ represents the weighted flows, $A$ can be considered the normalized, weighted adjacency matrix of the economic network, where an edge from $i$ to $j$ with weight $A_{ij}$ signifies that product $i$ is an input to product $j$.  
+It is crucial to distinguish between $Z$ and $A$. The transaction matrix $Z$ measures absolute flows in monetary units, which change as the scale of the economy changes. In contrast, the technical coefficient matrix $A$ measures the stable, underlying technological structure. Its entries are dimensionless ratios (e.g., dollars of input per dollar of output). In network science terms, if $Z$ represents the weighted flows, $A$ can be considered the normalized, weighted adjacency matrix of the economic network, where an edge from $i$ to $j$ with weight $A_{ij}$ signifies that product $i$ is an input to product $j$. [@problem_id:4273262] [@problem_id:4273306]
 
 #### The Fundamental Leontief Equation
 
@@ -53,13 +53,13 @@ The definition of the technical coefficients provides the crucial link to build 
 
 Total Intermediate Demand for product $i = \sum_{j=1}^{n} A_{ij} x_j$
 
-This summation is precisely the $i$-th element of the [matrix-vector product](@entry_id:151002) $Ax$. Therefore, the vector $Ax$ represents the total intermediate demand for the products of all sectors.
+This summation is precisely the $i$-th element of the matrix-vector product $Ax$. Therefore, the vector $Ax$ represents the total intermediate demand for the products of all sectors.
 
 By substituting this expression for intermediate demand back into the original accounting identity, $x_i = (\text{Total Intermediate Demand for product } i) + y_i$, we arrive at the fundamental equation of the Leontief quantity model:
 
 $x = Ax + y$
 
-This equation provides a profound statement about the structure of the economy: Gross Output ($x$) equals Intermediate Demand ($Ax$) plus Final Demand ($y$). This identity embodies the principle of material balance at the sector level, where for each sector, total supply ($x_i$) must equal total use ($(Ax)_i + y_i$), assuming no changes in inventories. 
+This equation provides a profound statement about the structure of the economy: Gross Output ($x$) equals Intermediate Demand ($Ax$) plus Final Demand ($y$). This identity embodies the principle of material balance at the sector level, where for each sector, total supply ($x_i$) must equal total use ($(Ax)_i + y_i$), assuming no changes in inventories. [@problem_id:4273321]
 
 ### Solving the Model: The Leontief Inverse and Multiplier Effects
 
@@ -67,7 +67,7 @@ The fundamental equation $x = Ax + y$ is more than an accounting identity; it is
 
 #### The Leontief Inverse
 
-To solve for the gross output vector $x$, we can rearrange the fundamental equation through simple [matrix algebra](@entry_id:153824):
+To solve for the gross output vector $x$, we can rearrange the fundamental equation through simple matrix algebra:
 
 $x - Ax = y$
 
@@ -94,15 +94,15 @@ This expansion provides a deep mechanistic insight into economic multipliers. Le
 
 The total gross output $x$ is the sum of the production from all these rounds: $x = (\mathbf{I} + A + A^2 + A^3 + \dots)y$.
 
-From a network perspective, the matrix power $A^k$ holds a special meaning. The entry $(A^k)_{ij}$ is the sum of the weights of all directed **walks** (paths that can revisit nodes and edges) of length $k$ from sector $j$ to sector $i$. The Leontief inverse, therefore, aggregates the economic impact across all possible production chains of all possible lengths, including complex feedback loops where a sector's output is indirectly used to produce its own inputs. 
+From a network perspective, the matrix power $A^k$ holds a special meaning. The entry $(A^k)_{ij}$ is the sum of the weights of all directed **walks** (paths that can revisit nodes and edges) of length $k$ from sector $j$ to sector $i$. The Leontief inverse, therefore, aggregates the economic impact across all possible production chains of all possible lengths, including complex feedback loops where a sector's output is indirectly used to produce its own inputs. [@problem_id:4273249]
 
 #### The Condition for a Productive Economy
 
-For the infinite [series expansion](@entry_id:142878) of the Leontief inverse to converge, and thus for the economy to be able to meet any final demand, a crucial condition must be met: the **spectral radius** of the technical [coefficient matrix](@entry_id:151473), $\rho(A)$, must be strictly less than 1. The spectral radius is the largest absolute value of the eigenvalues of $A$.
+For the infinite series expansion of the Leontief inverse to converge, and thus for the economy to be able to meet any final demand, a crucial condition must be met: the **spectral radius** of the technical coefficient matrix, $\rho(A)$, must be strictly less than 1. The spectral radius is the largest absolute value of the eigenvalues of $A$.
 
 The economic intuition behind this mathematical condition is straightforward. $\rho(A)  1$ ensures that the production process is "productive" or "viable"—that is, the economy as a whole can produce a surplus over and above what it consumes in its own production processes. If $\rho(A) \ge 1$, the economy would require at least one unit of input to produce one unit of output, leaving no surplus for final demand, and the production cascade would diverge.
 
-A [sufficient condition](@entry_id:276242) that guarantees $\rho(A)  1$ is that the total value of intermediate inputs for every sector is less than the value of its output. This difference is called **value added** ($v_j$), which primarily consists of payments to labor and capital. If the value added $v_j$ is strictly positive for every sector $j$, then the sum of inputs for that sector, $\sum_{i=1}^{n} A_{ij}$, must be less than 1. If this holds for all sectors, then the maximum column sum of $A$ is less than 1, which in turn ensures that $\rho(A)  1$. This is known as the **Hawkins-Simon condition**. 
+A sufficient condition that guarantees $\rho(A)  1$ is that the total value of intermediate inputs for every sector is less than the value of its output. This difference is called **value added** ($v_j$), which primarily consists of payments to labor and capital. If the value added $v_j$ is strictly positive for every sector $j$, then the sum of inputs for that sector, $\sum_{i=1}^{n} A_{ij}$, must be less than 1. If this holds for all sectors, then the maximum column sum of $A$ is less than 1, which in turn ensures that $\rho(A)  1$. This is known as the **Hawkins-Simon condition**. [@problem_id:4273306]
 
 #### Analyzing Economic Shocks
 
@@ -112,7 +112,7 @@ $\delta x = (\mathbf{I} - A)^{-1} \delta y$
 
 This demonstrates the **multiplier effect**. A small, localized change in demand for one sector's products can trigger a much larger, economy-wide change in total production, as the initial demand ripples through the supply chain network.
 
-Consider, for example, a three-sector economy with the technical matrix $\mathbf{A} = \begin{pmatrix} 0.2  0.05  0.1 \\ 0.1  0.25  0.05 \\ 0.05  0.1  0.2 \end{pmatrix}$. Suppose there is a positive demand shock of 10 monetary units for sector 1 only, so $\delta y = (10, 0, 0)^\top$. By calculating the Leontief inverse, $(\mathbf{I} - \mathbf{A})^{-1}$, one finds that the required change in gross output is $\delta x \approx (12.74, 1.77, 1.02)^\top$. The initial 10-unit demand in sector 1 necessitates not only a 12.74-unit increase in its own output but also increases of 1.77 and 1.02 units in sectors 2 and 3, respectively. The total change in gross output across the economy is $12.74 + 1.77 + 1.02 \approx 15.52$ units, an amplification of over 50% relative to the initial shock. This illustrates how inter-sectoral dependencies, encoded in $A$, create systemic multiplier effects. 
+Consider, for example, a three-sector economy with the technical matrix $\mathbf{A} = \begin{pmatrix} 0.2  0.05  0.1 \\ 0.1  0.25  0.05 \\ 0.05  0.1  0.2 \end{pmatrix}$. Suppose there is a positive demand shock of 10 monetary units for sector 1 only, so $\delta y = (10, 0, 0)^\top$. By calculating the Leontief inverse, $(\mathbf{I} - \mathbf{A})^{-1}$, one finds that the required change in gross output is $\delta x \approx (12.74, 1.77, 1.02)^\top$. The initial 10-unit demand in sector 1 necessitates not only a 12.74-unit increase in its own output but also increases of 1.77 and 1.02 units in sectors 2 and 3, respectively. The total change in gross output across the economy is $12.74 + 1.77 + 1.02 \approx 15.52$ units, an amplification of over 50% relative to the initial shock. This illustrates how inter-sectoral dependencies, encoded in $A$, create systemic multiplier effects. [@problem_id:4273293]
 
 #### Amplification and Economic Fragility
 
@@ -120,7 +120,7 @@ The magnitude of the multiplier effect is intrinsically linked to how "productiv
 
 Mathematically, the eigenvalues of $(\mathbf{I} - A)$ are $1 - \lambda_i$, where $\lambda_i$ are the eigenvalues of $A$. If $\rho(A)$ is close to 1, the largest eigenvalue of $A$ is close to 1, meaning the smallest eigenvalue of $(\mathbf{I} - A)$ is close to 0. The eigenvalues of the inverse matrix $(\mathbf{I} - A)^{-1}$ are the reciprocals, so there will be a very large eigenvalue, leading to massive amplification of any shock aligned with the corresponding eigenvector (the Perron-Frobenius eigenvector).
 
-A simple case illustrates this powerfully. If all columns of $A$ sum to the same constant $c$ (implying a uniform share of value added, $1-c$, across all sectors), then $\rho(A) = c$. The aggregate amplification factor, defined as the ratio of total output change to total demand change, can be shown to be exactly $S = \frac{1}{1-c}$. For an economy where column sums are $c=0.95$, the aggregate multiplier is $S = \frac{1}{1-0.95} = 20$. A one-unit shock to final demand generates twenty units of total economic activity. Such systems are highly efficient in their use of primary inputs but are also fragile, exhibiting extreme sensitivity to perturbations. 
+A simple case illustrates this powerfully. If all columns of $A$ sum to the same constant $c$ (implying a uniform share of value added, $1-c$, across all sectors), then $\rho(A) = c$. The aggregate amplification factor, defined as the ratio of total output change to total demand change, can be shown to be exactly $S = \frac{1}{1-c}$. For an economy where column sums are $c=0.95$, the aggregate multiplier is $S = \frac{1}{1-0.95} = 20$. A one-unit shock to final demand generates twenty units of total economic activity. Such systems are highly efficient in their use of primary inputs but are also fragile, exhibiting extreme sensitivity to perturbations. [@problem_id:4273287]
 
 ### Duality: The Leontief Price Model
 
@@ -140,11 +140,11 @@ Letting $p \in \mathbb{R}^n$ be the vector of sectoral prices, the price-cost id
 
 $p_j = \left(\sum_{i=1}^n p_i A_{ij}\right) + v_j$
 
-This equation states that the price of output $j$ is determined by the prices of its inputs and the value added in its production. 
+This equation states that the price of output $j$ is determined by the prices of its inputs and the value added in its production. [@problem_id:4273270]
 
 #### The Role of the Transpose
 
-To write the system of price equations in matrix form, we must be careful. The summation $\sum_{i=1}^n p_i A_{ij}$ involves summing down the $j$-th column of the matrix $A$. This operation corresponds to multiplication by the **transpose** of $A$, denoted $A^\top$, where $(A^\top)_{ji} = A_{ij}$. The $j$-th element of the [vector product](@entry_id:156672) $A^\top p$ is precisely $\sum_{i=1}^n (A^\top)_{ji} p_i = \sum_{i=1}^n A_{ij} p_i$.
+To write the system of price equations in matrix form, we must be careful. The summation $\sum_{i=1}^n p_i A_{ij}$ involves summing down the $j$-th column of the matrix $A$. This operation corresponds to multiplication by the **transpose** of $A$, denoted $A^\top$, where $(A^\top)_{ji} = A_{ij}$. The $j$-th element of the vector product $A^\top p$ is precisely $\sum_{i=1}^n (A^\top)_{ji} p_i = \sum_{i=1}^n A_{ij} p_i$.
 
 Therefore, the complete system of price equations is:
 
@@ -154,11 +154,11 @@ The emergence of the transpose is the mathematical manifestation of economic dua
 *   The **quantity model** ($x = Ax + y$) aggregates across the rows of $A$. It answers the question: "Where does the output of sector $i$ go?" It sums over all downstream sectors $j$ that use $i$'s product.
 *   The **price model** ($p = A^\top p + v$) aggregates down the columns of $A$. It answers the question: "What are the costs to produce sector $j$'s output?" It sums over all upstream sectors $i$ that supply inputs to $j$.
 
-Transposition elegantly flips the perspective from downstream output requirements to upstream cost accumulation. 
+Transposition elegantly flips the perspective from downstream output requirements to upstream cost accumulation. [@problem_id:4273231]
 
 #### Solving the Price Model
 
-The [price equation](@entry_id:148476) can be solved for the price vector $p$ in a manner analogous to the quantity model:
+The price equation can be solved for the price vector $p$ in a manner analogous to the quantity model:
 
 $p - A^\top p = v$
 
@@ -166,7 +166,7 @@ $(\mathbf{I} - A^\top)p = v$
 
 $p = (\mathbf{I} - A^\top)^{-1}v$
 
-The solvability of this system depends on the invertibility of $(\mathbf{I} - A^\top)$. The condition for a unique, non-negative price solution is that the spectral radius $\rho(A^\top)$ must be less than 1. A [fundamental theorem of linear algebra](@entry_id:190797) states that $\rho(A^\top) = \rho(A)$. Thus, the same condition of a "productive" economy that guarantees a solution to the quantity model also guarantees a solution to the price model. This powerfully connects the physical productivity of the economy with its ability to support a stable price system based on its value added.  
+The solvability of this system depends on the invertibility of $(\mathbf{I} - A^\top)$. The condition for a unique, non-negative price solution is that the spectral radius $\rho(A^\top)$ must be less than 1. A fundamental theorem of linear algebra states that $\rho(A^\top) = \rho(A)$. Thus, the same condition of a "productive" economy that guarantees a solution to the quantity model also guarantees a solution to the price model. This powerfully connects the physical productivity of the economy with its ability to support a stable price system based on its value added. [@problem_id:4273270] [@problem_id:4273231]
 
 ### Extensions and Advanced Topics
 
@@ -176,7 +176,7 @@ While the standard Leontief model is the cornerstone of I-O analysis, several im
 
 An alternative to the demand-driven Leontief model is the **supply-driven model**, developed by A. Ghosh. Instead of assuming that final demand "pulls" production through the system, the Ghosh model assumes that primary inputs (supply) "push" output through the system.
 
-This model is built on a different normalization of the transaction matrix. It defines a **distribution [coefficient matrix](@entry_id:151473)**, $B$, where an element $B_{ij} = Z_{ij}/x_i$ represents the fraction of sector $i$'s total output that is sold to (or allocated to) sector $j$. This is a row-wise normalization: $B = \mathrm{diag}(x)^{-1}Z$.
+This model is built on a different normalization of the transaction matrix. It defines a **distribution coefficient matrix**, $B$, where an element $B_{ij} = Z_{ij}/x_i$ represents the fraction of sector $i$'s total output that is sold to (or allocated to) sector $j$. This is a row-wise normalization: $B = \mathrm{diag}(x)^{-1}Z$.
 
 The corresponding balance equation is derived from the input-side identity, which states that a sector's total output value equals the sum of its intermediate input costs and primary input costs (value added). This leads to the equation:
 
@@ -186,7 +186,7 @@ Here, $s$ is the vector of primary inputs (value added), and the equation is wri
 
 $x^\top = s^\top(\mathbf{I}-B)^{-1}$
 
-The matrix $(\mathbf{I}-B)^{-1}$ is the Ghosh inverse. This model is conceptually distinct from the Leontief model, and its assumption of fixed output allocation coefficients is often considered less behaviorally plausible than fixed input coefficients. However, it provides a useful dual perspective and is applied in contexts like modeling the impact of resource constraints. 
+The matrix $(\mathbf{I}-B)^{-1}$ is the Ghosh inverse. This model is conceptually distinct from the Leontief model, and its assumption of fixed output allocation coefficients is often considered less behaviorally plausible than fixed input coefficients. However, it provides a useful dual perspective and is applied in contexts like modeling the impact of resource constraints. [@problem_id:4273325]
 
 #### From Theory to Practice: Supply-Use Tables
 
@@ -197,10 +197,10 @@ The symmetric, square I-O tables (where sectors produce one unique product) disc
 
 To apply the Leontief model, these rectangular SUTs must be converted into a single, square, symmetric matrix, either product-by-product or industry-by-industry. This requires an assumption about the underlying technology.
 
-One common approach is the **Industry Technology Assumption (ITA)**. This assumes that each industry has a single, fixed input structure, regardless of its product mix. Under this assumption, we can construct a product-by-product technical [coefficient matrix](@entry_id:151473), $A^p$. The process involves allocating each industry's inputs to its various outputs. The share of product $p$ in industry $i$'s total output is $v_{pi}/x_i$. The inputs $U$ used by industry $i$ are allocated to its outputs $V$ based on these shares. This transformation can be expressed in matrix form to derive the product-by-product intermediate flows, $Z^p$, and subsequently the technical coefficients, $A^p$:
+One common approach is the **Industry Technology Assumption (ITA)**. This assumes that each industry has a single, fixed input structure, regardless of its product mix. Under this assumption, we can construct a product-by-product technical coefficient matrix, $A^p$. The process involves allocating each industry's inputs to its various outputs. The share of product $p$ in industry $i$'s total output is $v_{pi}/x_i$. The inputs $U$ used by industry $i$ are allocated to its outputs $V$ based on these shares. This transformation can be expressed in matrix form to derive the product-by-product intermediate flows, $Z^p$, and subsequently the technical coefficients, $A^p$:
 
 $Z^p = U (\mathrm{diag}(x))^{-1} V^{\top}$
 
 $A^p = Z^p (\mathrm{diag}(q))^{-1}$
 
-Here, $x$ is the vector of industry gross outputs and $q$ is the vector of product gross outputs. This procedure, while based on a simplifying assumption, is a standard and essential step for applying I-O models to real-world empirical data. 
+Here, $x$ is the vector of industry gross outputs and $q$ is the vector of product gross outputs. This procedure, while based on a simplifying assumption, is a standard and essential step for applying I-O models to real-world empirical data. [@problem_id:4273283]

@@ -1,7 +1,7 @@
 ## 引言
-在[模拟电子学](@article_id:337543)的世界里，交流（AC）电路中不断变化的电压和电流带来了巨大的分析挑战。我们如何才能驾驭这些[振荡](@article_id:331484)的信号，从而设计和理解从电网到精密[电子滤波器](@article_id:332496)的一切事物？单纯依赖于使用[微分方程](@article_id:327891)的时域分析往往既繁琐又缺乏直观性。知识的缺口在于找到一个更优雅、更强大的框架，来管理[交流电路](@article_id:381756)的复杂性，尤其是在分析其在特定频率下的行为时。
+在[模拟电子学](@keyword=analog_electronics|lang=zh-CN|style=Feynman)的世界里，交流（AC）电路中不断变化的电压和电流带来了巨大的分析挑战。我们如何才能驾驭这些[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的信号，从而设计和理解从电网到精密[电子滤波器](@keyword=electronic_filters|lang=zh-CN|style=Feynman)的一切事物？单纯依赖于使用[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)的时域分析往往既繁琐又缺乏直观性。知识的缺口在于找到一个更优雅、更强大的框架，来管理[交流电路](@keyword=ac_circuits|lang=zh-CN|style=Feynman)的复杂性，尤其是在分析其在特定频率下的行为时。
 
-本文将介绍这一解决方案：[正弦稳态分析](@article_id:328341)。首先，在“原理与机制”部分，我们会将[振荡](@article_id:331484)的波形转化为称为“相量”的静态实体，并将电阻的概念推广为强大的“阻抗”。您将学到这如何将微积分问题转变为简单的代数问题，使我们能够轻松分析串[并联](@article_id:336736)[RLC电路](@article_id:350685)、谐振现象和功率传输。随后，“应用与跨学科连接”部分将带您超越电路板的局限，揭示这些原理在[信号滤波](@article_id:302907)、[功率因数](@article_id:334407)校正，甚至在[材料科学](@article_id:312640)、化学和神经科学等领域的系统建模中是如何应用的。读完本文，您不仅会掌握一种计算技术，更将获得一种分析动态系统的全新视角。
+本文将介绍这一解决方案：[正弦稳态分析](@keyword=sinusoidal_steady_state_analysis|lang=zh-CN|style=Feynman)。首先，在“原理与机制”部分，我们会将[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的波形转化为称为“相量”的静态实体，并将电阻的概念推广为强大的“阻抗”。您将学到这如何将微积分问题转变为简单的代数问题，使我们能够轻松分析串[并联](@keyword=parallel_connection|lang=zh-CN|style=Feynman)[RLC电路](@keyword=rlc_circuits|lang=zh-CN|style=Feynman)、谐振现象和功率传输。随后，“应用与跨学科连接”部分将带您超越电路板的局限，揭示这些原理在[信号滤波](@keyword=signal_filtering|lang=zh-CN|style=Feynman)、[功率因数](@keyword=power_factor|lang=zh-CN|style=Feynman)校正，甚至在[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)、化学和神经科学等领域的系统建模中是如何应用的。读完本文，您不仅会掌握一种计算技术，更将获得一种分析动态系统的全新视角。
 
 让我们开始这段旅程，首先深入探讨使这种强大分析方法成为可能的核心原理与机制。
 
@@ -9,59 +9,59 @@
 
 想象一下，你试图描述一个在水面上上下起伏的软木塞的运动。你可以用一堆复杂的三角函数来记录它每一刻的位置。但如果你想描述它与旁边另一个软木塞的关系，事情就会变得异常繁琐。现在，如果我告诉你，有一种方法可以“冻结”时间，用一个简单的箭头——一个长度代表起伏幅度、一个角度代表其在周期中位置的箭头——来捕捉整个运动的精髓，那会怎么样？
 
-这正是我们分析正弦[稳态](@article_id:326048)电路的核心思想。我们不再追逐电压和电流随时间变化的每一个瞬间，而是将它们从不断变化的波形，转化为一种名为**相量 (Phasor)** 的静态实体。一个随时间变化的量，如电压 $v(t) = V_m \cos(\omega t + \theta_v)$，可以被一个复数，或者说一个“相量” $\underline{V} = V_m \angle \theta_v$ 完美地代表。这个相量包含了我们关心的所有信息：峰值幅度 $V_m$ 和初始相位 $\theta_v$。角频率 $\omega$ 则是整个系统的背景音乐，大家都按这个节拍“起舞”，所以我们暂时不必在每个[相量](@article_id:333967)中都写上它。
+这正是我们分析正弦[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)电路的核心思想。我们不再追逐电压和电流随时间变化的每一个瞬间，而是将它们从不断变化的波形，转化为一种名为**相量 (Phasor)** 的静态实体。一个随时间变化的量，如电压 $v(t) = V_m \cos(\omega t + \theta_v)$，可以被一个复数，或者说一个“相量” $\underline{V} = V_m \angle \theta_v$ 完美地代表。这个相量包含了我们关心的所有信息：峰值幅度 $V_m$ 和初始相位 $\theta_v$。角频率 $\omega$ 则是整个系统的背景音乐，大家都按这个节拍“起舞”，所以我们暂时不必在每个[相量](@keyword=phasors|lang=zh-CN|style=Feynman)中都写上它。
 
-这种转变的威力是惊人的。它将微积分中令人头疼的[微分方程](@article_id:327891)，变成了我们都喜欢的简单代数。例如，电路中的一个节点，根据[基尔霍夫电流定律](@article_id:334332) (Kirchhoff's Current Law)，流入的总电流等于流出的总电流。在时域中，这意味着要对多个余弦函数求和，这可不是什么乐事。但在相量世界里，这变成了简单的矢量相加。如果两个电流相量 $\underline{I}_1$ 和 $\underline{I}_2$ 流入一个节点，流出的电流相量 $\underline{I}_3$ 就是它们的矢量和：$\underline{I}_3 = \underline{I}_1 + \underline{I}_2$。就像在地图上合并两段位移一样直观 。
+这种转变的威力是惊人的。它将微积分中令人头疼的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)，变成了我们都喜欢的简单代数。例如，电路中的一个节点，根据[基尔霍夫电流定律](@keyword=kirchhoff_s_current_law|lang=zh-CN|style=Feynman) (Kirchhoff's Current Law)，流入的总电流等于流出的总电流。在时域中，这意味着要对多个余弦函数求和，这可不是什么乐事。但在相量世界里，这变成了简单的矢量相加。如果两个电流相量 $\underline{I}_1$ 和 $\underline{I}_2$ 流入一个节点，流出的电流相量 $\underline{I}_3$ 就是它们的矢量和：$\underline{I}_3 = \underline{I}_1 + \underline{I}_2$。就像在地图上合并两段位移一样直观 [@problem_id:1333352]。
 
 #### 阻抗：广义的电阻
 
-既然电压和电流都变成了相量，那么它们之间的关系——[欧姆定律](@article_id:300974)——又该如何演变呢？答案是一个更为宏大和优美的概念：**阻抗 (Impedance)**，用符号 $\underline{Z}$ 表示。它被定义为电压[相量](@article_id:333967)与电流相量之比：
+既然电压和电流都变成了相量，那么它们之间的关系——[欧姆定律](@keyword=ohm_s_law|lang=zh-CN|style=Feynman)——又该如何演变呢？答案是一个更为宏大和优美的概念：**阻抗 (Impedance)**，用符号 $\underline{Z}$ 表示。它被定义为电压[相量](@keyword=phasors|lang=zh-CN|style=Feynman)与电流相量之比：
 
 $$ \underline{Z} = \frac{\underline{V}}{\underline{I}} $$
 
-阻抗是一个复数，它不仅告诉我们电压和电流幅度之间的比例关系（像电阻一样），还告诉我们它们之间的**[相位差](@article_id:333823)**。这正是解锁[交流电路](@article_id:381756)奥秘的关键。
+阻抗是一个复数，它不仅告诉我们电压和电流幅度之间的比例关系（像电阻一样），还告诉我们它们之间的**[相位差](@keyword=phase_difference|lang=zh-CN|style=Feynman)**。这正是解锁[交流电路](@keyword=ac_circuits|lang=zh-CN|style=Feynman)奥秘的关键。
 
 让我们看看三个基本元件在交流世界里的新“身份”：
 
 *   **电阻 (Resistor)**：在电阻中，电压和电流总是步调一致、同相位的。因此，它的阻抗就是一个实数，$\underline{Z}_R = R$。这毫不奇怪，它依然扮演着那个朴实无华的角色。
 
-*   **[电感](@article_id:339724) (Inductor)**：电感的天性是抵抗电流的变化。想象一下，你试图推动一个沉重的[飞轮](@article_id:374726)，你必须先用力，飞轮的速度才会慢慢跟上来。同样，在电感中，电压必须“领先”于电流，才能迫使电流发生变化。这个领先恰好是 $90^\circ$。在复数平面上，乘以虚数单位 $j$ 正好对应着一次 $90^\circ$ 的逆时针旋转。因此，[电感](@article_id:339724)的阻抗是 $\underline{Z}_L = j\omega L$。它的阻抗大小 $\omega L$ 随着频率的增加而增加——频率越高，电流变化越快，电感的“抵抗”就越强烈。
+*   **[电感](@keyword=inductance|lang=zh-CN|style=Feynman) (Inductor)**：电感的天性是抵抗电流的变化。想象一下，你试图推动一个沉重的[飞轮](@keyword=flywheel|lang=zh-CN|style=Feynman)，你必须先用力，飞轮的速度才会慢慢跟上来。同样，在电感中，电压必须“领先”于电流，才能迫使电流发生变化。这个领先恰好是 $90^\circ$。在复数平面上，乘以虚数单位 $j$ 正好对应着一次 $90^\circ$ 的逆时针旋转。因此，[电感](@keyword=inductance|lang=zh-CN|style=Feynman)的阻抗是 $\underline{Z}_L = j\omega L$。它的阻抗大小 $\omega L$ 随着频率的增加而增加——频率越高，电流变化越快，电感的“抵抗”就越强烈。
 
 *   **电容 (Capacitor)**：电容则像一个小型水库，电流必须先流入（充电），两端的电压才会随之建立起来。因此，在电容中，电流“领先”于电压 $90^\circ$，或者说电压“滞后”于电流 $90^\circ$。这个 $-90^\circ$ 的相位关系被数学完美地捕捉为 $\underline{Z}_C = \frac{1}{j\omega C} = -\frac{j}{\omega C}$。它的阻抗大小 $1/(\omega C)$ 随频率的增加而减小——对于高频信号，电容频繁地充放电，看起来就像一条通路。
 
-这个阻抗的概念威力无穷。假设你找到了一个神秘的“黑盒子”，只知道里面是一个理想的 R、L 或 C 元件。你只需给它加上一个正弦电压，测量产生的电流，然后计算阻抗 $\underline{Z} = \underline{V}/\underline{I}$。如果得到的阻抗是一个正实数，它就是电阻；如果是一个正的纯虚数（相位为 $+90^\circ$），它就是[电感](@article_id:339724)；如果是一个负的纯虚数（相位为 $-90^\circ$），它就是电容。你无需打开盒子，就能洞悉其内在 。
+这个阻抗的概念威力无穷。假设你找到了一个神秘的“黑盒子”，只知道里面是一个理想的 R、L 或 C 元件。你只需给它加上一个正弦电压，测量产生的电流，然后计算阻抗 $\underline{Z} = \underline{V}/\underline{I}$。如果得到的阻抗是一个正实数，它就是电阻；如果是一个正的纯虚数（相位为 $+90^\circ$），它就是[电感](@keyword=inductance|lang=zh-CN|style=Feynman)；如果是一个负的纯虚数（相位为 $-90^\circ$），它就是电容。你无需打开盒子，就能洞悉其内在 [@problem_id:1333362]。
 
-#### 元件的交响乐：串联、[并联](@article_id:336736)与谐振
+#### 元件的交响乐：串联、[并联](@keyword=parallel_connection|lang=zh-CN|style=Feynman)与谐振
 
 有了阻抗这些“乐器”，我们就可以开始谱写电路的“交响乐”了。好消息是，组合这些阻抗的规则与我们熟悉的电阻定律完全相同！
 
-*   **串联**：将元件串联起来，总阻抗就是各个阻抗的矢量和：$\underline{Z}_{eq} = \underline{Z}_1 + \underline{Z}_2 + \dots$。这使得分析[串联电路](@article_id:338868)，比如一个 RC 电路，变得异常简单。我们可以像使用电阻分压一样，使用阻抗[分压](@article_id:348162)公式来计算每个元件上的电压 。
+*   **串联**：将元件串联起来，总阻抗就是各个阻抗的矢量和：$\underline{Z}_{eq} = \underline{Z}_1 + \underline{Z}_2 + \dots$。这使得分析[串联电路](@keyword=series_circuits|lang=zh-CN|style=Feynman)，比如一个 RC 电路，变得异常简单。我们可以像使用电阻分压一样，使用阻抗[分压](@keyword=partial_pressures|lang=zh-CN|style=Feynman)公式来计算每个元件上的电压 [@problem_id:1333355]。
 
-*   **并联**：对于[并联电路](@article_id:332891)，直接计算总阻抗会有点麻烦。一个更优雅的方法是引入“[导纳](@article_id:329756) (Admittance)” $\underline{Y}$，它是阻抗的倒数 ($\underline{Y} = 1/\underline{Z}$)，衡量元件对电流的“接纳”程度。[并联电路](@article_id:332891)的总[导纳](@article_id:329756)就是各个[导纳](@article_id:329756)之和：$\underline{Y}_{eq} = \underline{Y}_1 + \underline{Y}_2 + \dots$。然后，总阻抗就是总[导纳](@article_id:329756)的倒数 。
+*   **并联**：对于[并联电路](@keyword=parallel_circuits|lang=zh-CN|style=Feynman)，直接计算总阻抗会有点麻烦。一个更优雅的方法是引入“[导纳](@keyword=admittance|lang=zh-CN|style=Feynman) (Admittance)” $\underline{Y}$，它是阻抗的倒数 ($\underline{Y} = 1/\underline{Z}$)，衡量元件对电流的“接纳”程度。[并联电路](@keyword=parallel_circuits|lang=zh-CN|style=Feynman)的总[导纳](@keyword=admittance|lang=zh-CN|style=Feynman)就是各个[导纳](@keyword=admittance|lang=zh-CN|style=Feynman)之和：$\underline{Y}_{eq} = \underline{Y}_1 + \underline{Y}_2 + \dots$。然后，总阻抗就是总[导纳](@keyword=admittance|lang=zh-CN|style=Feynman)的倒数 [@problem_id:1333338]。
 
-当电路中同时存在电感和电容时，一场有趣的“拔河比赛”便开始了。[电感](@article_id:339724)的[感抗](@article_id:335880) $X_L = \omega L$ 随频率升高而增强，而电容的容抗 $X_C = 1/(\omega C)$ 则随频率升高而减弱。在某个特定的频率，这两个力道将达到完美的平衡，彼此抵消。这个频率被称为**[谐振频率](@article_id:329446) (Resonant Frequency)**，$\omega_0 = 1/\sqrt{LC}$。
+当电路中同时存在电感和电容时，一场有趣的“拔河比赛”便开始了。[电感](@keyword=inductance|lang=zh-CN|style=Feynman)的[感抗](@keyword=inductive_reactance|lang=zh-CN|style=Feynman) $X_L = \omega L$ 随频率升高而增强，而电容的容抗 $X_C = 1/(\omega C)$ 则随频率升高而减弱。在某个特定的频率，这两个力道将达到完美的平衡，彼此抵消。这个频率被称为**[谐振频率](@keyword=resonant_frequency|lang=zh-CN|style=Feynman) (Resonant Frequency)**，$\omega_0 = 1/\sqrt{LC}$。
 
-*   在谐振时，一个串联 RLC 电路的总阻抗中，[电感](@article_id:339724)和电容的[虚部](@article_id:370770)（电抗）相互抵消 ($\omega_0 L - 1/(\omega_0 C) = 0$)，使得总阻抗达到最小值，且为纯电阻 $\underline{Z} = R$。这正是收音机调谐的原理——通过改变电容或电感来调整[谐振频率](@article_id:329446)，使其与你想要收听的电台频率相匹配。
+*   在谐振时，一个串联 RLC 电路的总阻抗中，[电感](@keyword=inductance|lang=zh-CN|style=Feynman)和电容的[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)（电抗）相互抵消 ($\omega_0 L - 1/(\omega_0 C) = 0$)，使得总阻抗达到最小值，且为纯电阻 $\underline{Z} = R$。这正是收音机调谐的原理——通过改变电容或电感来调整[谐振频率](@keyword=resonant_frequency|lang=zh-CN|style=Feynman)，使其与你想要收听的电台频率相匹配。
 
-*   当工作频率低于[谐振频率](@article_id:329446)时 ($f < f_0$)，容抗占主导地位，电路整体表现为**容性**。当频率高于谐振频率时 ($f > f_0$)，[感抗](@article_id:335880)占主导地位，电路整体表现为**感性** 。
+*   当工作频率低于[谐振频率](@keyword=resonant_frequency|lang=zh-CN|style=Feynman)时 ($f < f_0$)，容抗占主导地位，电路整体表现为**容性**。当频率高于谐振频率时 ($f > f_0$)，[感抗](@keyword=inductive_reactance|lang=zh-CN|style=Feynman)占主导地位，电路整体表现为**感性** [@problem_id:1333363]。
 
-谐振的“尖锐”程度可以用**品质因数 (Quality Factor, Q)** 来衡量。一个高 $Q$ 值的电路像一个挑剔的听众，只对非常窄的一个频段有强烈的响应。我们可以通过测量**半功率频率** ($f_1$ 和 $f_2$) 来确定 $Q$ 值。在这两个频率点，电路消耗的功率恰好是谐振时最大功率的一半，对应的阻抗大小是谐振时的 $\sqrt{2}$ 倍 。带宽 (Bandwidth) $B = f_2 - f_1$ 描述了谐振峰的宽度，而品质因数就是谐振频率与带宽的比值：$Q = f_0 / B$ 。
+谐振的“尖锐”程度可以用**品质因数 (Quality Factor, Q)** 来衡量。一个高 $Q$ 值的电路像一个挑剔的听众，只对非常窄的一个频段有强烈的响应。我们可以通过测量**半功率频率** ($f_1$ 和 $f_2$) 来确定 $Q$ 值。在这两个频率点，电路消耗的功率恰好是谐振时最大功率的一半，对应的阻抗大小是谐振时的 $\sqrt{2}$ 倍 [@problem_id:1333322]。带宽 (Bandwidth) $B = f_2 - f_1$ 描述了谐振峰的宽度，而品质因数就是谐振频率与带宽的比值：$Q = f_0 / B$ [@problem_id:1333321]。
 
 #### 宇宙的通货：功率与效率
 
-我们设计电路的最终目的，往往是为了控制和传输能量。在[交流电路](@article_id:381756)中，功率的概念也变得更加丰富。
+我们设计电路的最终目的，往往是为了控制和传输能量。在[交流电路](@keyword=ac_circuits|lang=zh-CN|style=Feynman)中，功率的概念也变得更加丰富。
 
-[瞬时功率](@article_id:353792) $p(t) = v(t)i(t)$ 不再是一个恒定的值，而是一个以两倍于电源频率波动的量。通过一个简单的[三角恒等式](@article_id:344424)变换，我们可以将其分解为两个部分 ：
+[瞬时功率](@keyword=instantaneous_power|lang=zh-CN|style=Feynman) $p(t) = v(t)i(t)$ 不再是一个恒定的值，而是一个以两倍于电源频率波动的量。通过一个简单的[三角恒等式](@keyword=trigonometric_identities|lang=zh-CN|style=Feynman)变换，我们可以将其分解为两个部分 [@problem_id:1333318]：
 
 $$ p(t) = \frac{V_m I_m}{2} \cos(\theta_v - \theta_i) + \frac{V_m I_m}{2} \cos(2\omega t + \theta_v + \theta_i) $$
 
-*   第一项是一个常数，被称为**[平均功率](@article_id:335488) (Average Power)** 或**有功功率 (Real Power)**，用 $P$ 表示。这是真正做功的功率，它点亮灯泡、驱动电机、运行你的电脑。电力公司就是按这个向你收费的。
+*   第一项是一个常数，被称为**[平均功率](@keyword=average_power|lang=zh-CN|style=Feynman) (Average Power)** 或**有功功率 (Real Power)**，用 $P$ 表示。这是真正做功的功率，它点亮灯泡、驱动电机、运行你的电脑。电力公司就是按这个向你收费的。
 
-*   第二项是一个[振荡](@article_id:331484)项。它代表了在[电感](@article_id:339724)和电容中来回“晃荡”而没有被消耗的能量。其振幅被称为**[无功功率](@article_id:371793) (Reactive Power)**，用 $Q$ 表示。它虽然不做功，但却占用了输电线路的容量，就像啤酒杯顶部的泡沫，占据了空间却没有实际的啤酒。
+*   第二项是一个[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)项。它代表了在[电感](@keyword=inductance|lang=zh-CN|style=Feynman)和电容中来回“晃荡”而没有被消耗的能量。其振幅被称为**[无功功率](@keyword=reactive_power|lang=zh-CN|style=Feynman) (Reactive Power)**，用 $Q$ 表示。它虽然不做功，但却占用了输电线路的容量，就像啤酒杯顶部的泡沫，占据了空间却没有实际的啤酒。
 
-为了描述总的输电负担，我们定义了**视在功率 (Apparent Power)** $S$，它是有功功率和[无功功率](@article_id:371793)的矢量和的幅值，即 $S = \sqrt{P^2 + Q^2}$。**[功率因数](@article_id:334407) (Power Factor)** $\text{pf} = P/S = \cos(\phi)$（其中 $\phi = \theta_v - \theta_i$ 是电压和电流的[相位差](@article_id:333823)）则衡量了电能被有效利用的程度。一个数据中心可能消耗巨大的视在功率，但如果其[功率因数](@article_id:334407)很低（例如，由于大量的感性负载），那么很大一部分电流只是在线路上来回流动，增加了损耗却没有为计算做贡献 。
+为了描述总的输电负担，我们定义了**视在功率 (Apparent Power)** $S$，它是有功功率和[无功功率](@keyword=reactive_power|lang=zh-CN|style=Feynman)的矢量和的幅值，即 $S = \sqrt{P^2 + Q^2}$。**[功率因数](@keyword=power_factor|lang=zh-CN|style=Feynman) (Power Factor)** $\text{pf} = P/S = \cos(\phi)$（其中 $\phi = \theta_v - \theta_i$ 是电压和电流的[相位差](@keyword=phase_difference|lang=zh-CN|style=Feynman)）则衡量了电能被有效利用的程度。一个数据中心可能消耗巨大的视在功率，但如果其[功率因数](@keyword=power_factor|lang=zh-CN|style=Feynman)很低（例如，由于大量的感性负载），那么很大一部分电流只是在线路上来回流动，增加了损耗却没有为计算做贡献 [@problem_id:1333368]。
 
-最后，我们来到了这场探索的高潮：**[最大功率传输](@article_id:302015)**。我们如何才能将最多的*有功功率*从电源传递到负载？在[直流电路](@article_id:324934)中，我们只需让[负载电阻](@article_id:331693)等于电源内阻。但在交流世界里，我们必须考虑阻抗的复数特性。为了实现[最大功率传输](@article_id:302015)，负载阻抗必须等于电源[戴维南等效](@article_id:327521)阻抗的**[复共轭](@article_id:353729)** (complex conjugate) ：
+最后，我们来到了这场探索的高潮：**[最大功率传输](@keyword=maximum_power_transfer|lang=zh-CN|style=Feynman)**。我们如何才能将最多的*有功功率*从电源传递到负载？在[直流电路](@keyword=dc_circuits|lang=zh-CN|style=Feynman)中，我们只需让[负载电阻](@keyword=load_resistance|lang=zh-CN|style=Feynman)等于电源内阻。但在交流世界里，我们必须考虑阻抗的复数特性。为了实现[最大功率传输](@keyword=maximum_power_transfer|lang=zh-CN|style=Feynman)，负载阻抗必须等于电源[戴维南等效](@keyword=thevenin_equivalent|lang=zh-CN|style=Feynman)阻抗的**[复共轭](@keyword=complex_conjugation|lang=zh-CN|style=Feynman)** (complex conjugate) [@problem_id:1333347]：
 
 $$ \underline{Z}_L = \underline{Z}_{th}^* $$
 

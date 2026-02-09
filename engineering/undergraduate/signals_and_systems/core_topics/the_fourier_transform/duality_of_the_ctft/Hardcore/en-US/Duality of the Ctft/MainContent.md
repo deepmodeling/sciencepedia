@@ -3,7 +3,7 @@ The Continuous-Time Fourier Transform (CTFT) is a cornerstone of signal processi
 
 This article explores the theory and application of CTFT duality. Across three chapters, you will gain a robust understanding of this fundamental principle.
 - **Principles and Mechanisms** will introduce the formal definition of the duality property, demonstrate its derivation, and explore its impact on fundamental transform pairs and signal characteristics like energy and symmetry.
-- **Applications and Interdisciplinary Connections** will showcase how duality is applied in practical contexts, from communication systems and filter design to the theoretical underpinnings of [sampling theory](@entry_id:268394).
+- **Applications and Interdisciplinary Connections** will showcase how duality is applied in practical contexts, from communication systems and filter design to the theoretical underpinnings of sampling theory.
 - **Hands-On Practices** will provide opportunities to apply your knowledge to solve problems, solidifying your grasp of how duality works as a powerful analytical tool.
 
 ## Principles and Mechanisms
@@ -24,13 +24,13 @@ A careful examination of these two integrals reveals a profound and beautiful sy
 
 The duality property formalizes the observation that the roles of time $t$ and frequency $\omega$ can be interchanged, with a predictable effect on the resulting functions. To understand this relationship rigorously, consider a two-step transformation process. For any given time-domain signal $g(t)$, we can first find its Fourier transform $G(\omega)$. Then, we can create a new time-domain signal by taking the functional form of $G(\omega)$ and replacing the frequency variable $\omega$ with the time variable $t$. Let's call this new signal $h(t) = G(t)$.
 
-What happens if we apply this process twice? Let's begin with an arbitrary signal $x(t)$ and its transform $X(\omega)$. Our first transformation yields a new signal $y(t) = X(t)$. Now, we find the Fourier transform of $y(t)$, which we denote $Y(\omega)$, and then perform the variable swap. The resulting signal will be $z(t) = Y(t)$. The relationship between $z(t)$ and our original signal $x(t)$ reveals the essence of duality .
+What happens if we apply this process twice? Let's begin with an arbitrary signal $x(t)$ and its transform $X(\omega)$. Our first transformation yields a new signal $y(t) = X(t)$. Now, we find the Fourier transform of $y(t)$, which we denote $Y(\omega)$, and then perform the variable swap. The resulting signal will be $z(t) = Y(t)$. The relationship between $z(t)$ and our original signal $x(t)$ reveals the essence of duality [@problem_id:1716179].
 
 Let's compute $Y(\omega)$:
 $$
 Y(\omega) = \mathcal{F}\{y(t)\} = \int_{-\infty}^{\infty} y(t) e^{-j\omega t} dt = \int_{-\infty}^{\infty} X(t) e^{-j\omega t} dt
 $$
-This integral has the same form as the inverse Fourier transform, but with a sign change in the exponent. We can relate it back to the [synthesis equation](@entry_id:260669) for $x(t)$:
+This integral has the same form as the inverse Fourier transform, but with a sign change in the exponent. We can relate it back to the synthesis equation for $x(t)$:
 $$
 x(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} X(\omega) e^{j\omega t} d\omega
 $$
@@ -60,11 +60,11 @@ The most immediate use of the duality property is to populate our table of known
 
 #### The Rectangular and Sinc Functions
 
-A canonical example involves the rectangular pulse and the sinc function. The **rectangular pulse**, $\text{rect}(u)$, is defined as 1 for $|u| \le 1/2$ and 0 otherwise. The CTFT of a [rectangular pulse](@entry_id:273749) of duration $T$, given by $x_1(t) = \text{rect}(t/T)$, is a sinc function:
+A canonical example involves the rectangular pulse and the sinc function. The **rectangular pulse**, $\text{rect}(u)$, is defined as 1 for $|u| \le 1/2$ and 0 otherwise. The CTFT of a rectangular pulse of duration $T$, given by $x_1(t) = \text{rect}(t/T)$, is a sinc function:
 $$
 x_1(t) = \text{rect}\left(\frac{t}{T}\right) \longleftrightarrow X_1(\omega) = T \frac{\sin(\omega T/2)}{\omega T/2}
 $$
-The function $\frac{\sin(u)}{u}$ is often called the **[sinc function](@entry_id:274746)**. Now, suppose we encounter a sinc function in the time domain, such as $x(t) = \frac{\sin(Wt)}{Wt}$, and wish to find its Fourier transform . Instead of computing a difficult integral, we can apply duality.
+The function $\frac{\sin(u)}{u}$ is often called the **sinc function**. Now, suppose we encounter a sinc function in the time domain, such as $x(t) = \frac{\sin(Wt)}{Wt}$, and wish to find its Fourier transform [@problem_id:1757833]. Instead of computing a difficult integral, we can apply duality.
 
 Let's use our known pair with $f(t) = \text{rect}(t/T)$ and $F(\omega) = T \frac{\sin(\omega T/2)}{\omega T/2}$. The duality property tells us that the signal $g(t) = F(t)$ has the transform $G(\omega) = 2\pi f(-\omega)$.
 $$
@@ -80,17 +80,17 @@ Using the linearity of the Fourier transform, we can find the transform of our t
 $$
 x(t) = \frac{\sin(Wt)}{Wt} = \frac{1}{2W} \left( (2W)\frac{\sin(Wt)}{Wt} \right) \longleftrightarrow X(\omega) = \frac{1}{2W} \left( 2\pi \, \text{rect}\left(\frac{\omega}{2W}\right) \right) = \frac{\pi}{W} \text{rect}\left(\frac{\omega}{2W}\right)
 $$
-Thus, duality reveals a beautiful symmetry: a [rectangular pulse](@entry_id:273749) in time transforms to a [sinc function](@entry_id:274746) in frequency, and a [sinc function](@entry_id:274746) in time transforms to a [rectangular pulse](@entry_id:273749) in frequency.
+Thus, duality reveals a beautiful symmetry: a rectangular pulse in time transforms to a sinc function in frequency, and a sinc function in time transforms to a rectangular pulse in frequency.
 
 #### The Impulse and the Constant (DC) Signal
 
-Another fundamental pair is that of the Dirac delta function, $\delta(t)$, and a constant value. The [sifting property](@entry_id:265662) of the delta function makes its transform straightforward to compute:
+Another fundamental pair is that of the Dirac delta function, $\delta(t)$, and a constant value. The sifting property of the delta function makes its transform straightforward to compute:
 $$
 \mathcal{F}\{\delta(t)\} = \int_{-\infty}^{\infty} \delta(t) e^{-j\omega t} dt = e^{-j\omega (0)} = 1
 $$
 So, we have the pair $\delta(t) \longleftrightarrow 1$.
 
-Now, what is the transform of a constant DC signal, $x(t) = C$?  We can use duality on our impulse pair. Let $f(t) = \delta(t)$ and $F(\omega) = 1$. The duality property gives:
+Now, what is the transform of a constant DC signal, $x(t) = C$? [@problem_id:1716176] We can use duality on our impulse pair. Let $f(t) = \delta(t)$ and $F(\omega) = 1$. The duality property gives:
 $$
 F(t) \longleftrightarrow 2\pi f(-\omega)
 $$
@@ -106,7 +106,7 @@ This result is highly intuitive: a signal that never changes with time (DC) cont
 
 #### The Self-Transforming Gaussian Pulse
 
-The Gaussian function holds a unique position in Fourier analysis: its Fourier transform is also a Gaussian function. This makes it a perfect illustration of time-frequency symmetry. Let's explore this by considering a signal $g(t)$ whose spectrum is a Gaussian function of frequency :
+The Gaussian function holds a unique position in Fourier analysis: its Fourier transform is also a Gaussian function. This makes it a perfect illustration of time-frequency symmetry. Let's explore this by considering a signal $g(t)$ whose spectrum is a Gaussian function of frequency [@problem_id:1716133]:
 $$
 G(\omega) = A e^{-\beta \omega^2}
 $$
@@ -130,11 +130,11 @@ The power of duality extends beyond generating individual transform pairs. It re
 
 #### Differentiation and Multiplication
 
-Consider the **[time-differentiation property](@entry_id:265436)**, which states that taking the derivative of a signal in the time domain corresponds to multiplication by $j\omega$ in the frequency domain:
+Consider the **time-differentiation property**, which states that taking the derivative of a signal in the time domain corresponds to multiplication by $j\omega$ in the frequency domain:
 $$
 \mathcal{F}\left\{\frac{d}{dt}x(t)\right\} = j\omega X(\omega)
 $$
-The dual operation to differentiation in time is [differentiation in frequency](@entry_id:261936). Let's see what operation in the time domain corresponds to this. We can find the transform of $g(t) = t x(t)$ by directly differentiating the analysis equation with respect to $\omega$ :
+The dual operation to differentiation in time is differentiation in frequency. Let's see what operation in the time domain corresponds to this. We can find the transform of $g(t) = t x(t)$ by directly differentiating the analysis equation with respect to $\omega$ [@problem_id:1716149]:
 $$
 \frac{d}{d\omega}X(\omega) = \frac{d}{d\omega} \int_{-\infty}^{\infty} x(t) e^{-j\omega t} dt = \int_{-\infty}^{\infty} x(t) \frac{\partial}{\partial\omega}(e^{-j\omega t}) dt
 $$
@@ -151,17 +151,17 @@ The two properties form a dual pair:
 
 #### Time-Shift and Frequency-Shift (Modulation)
 
-A similar dual relationship exists between shifting in time and shifting in frequency. The **[time-shifting property](@entry_id:275667)** is:
+A similar dual relationship exists between shifting in time and shifting in frequency. The **time-shifting property** is:
 $$
 \mathcal{F}\{x(t-t_0)\} = e^{-j\omega t_0} X(\omega)
 $$
-Its dual is the **[frequency-shifting property](@entry_id:272563)**, also known as the [modulation property](@entry_id:189105):
+Its dual is the **frequency-shifting property**, also known as the modulation property:
 $$
 \mathcal{F}\{e^{j\omega_0 t} x(t)\} = X(\omega - \omega_0)
 $$
-Shifting a signal in time introduces a [linear phase](@entry_id:274637) shift in frequency. Dually, introducing a [linear phase](@entry_id:274637) shift in time (i.e., multiplying by a [complex exponential](@entry_id:265100)) shifts the signal in frequency. This property is the cornerstone of [communications systems](@entry_id:265921).
+Shifting a signal in time introduces a linear phase shift in frequency. Dually, introducing a linear phase shift in time (i.e., multiplying by a complex exponential) shifts the signal in frequency. This property is the cornerstone of communications systems.
 
-As an example, consider a signal formed by modulating a [carrier wave](@entry_id:261646) with a [sinc pulse](@entry_id:273184) . Let the modulating signal be $b(t) = T \frac{\sin(tT/2)}{tT/2}$. From our earlier derivation, we know its transform is $B(\omega) = 2\pi \, \text{rect}(\omega/T)$. The modulated signal is $s(t) = b(t) \cos(\omega_0 t)$. Using Euler's formula, $\cos(\omega_0 t) = \frac{1}{2}(e^{j\omega_0 t} + e^{-j\omega_0 t})$, and the [modulation property](@entry_id:189105), we get the transform of $s(t)$:
+As an example, consider a signal formed by modulating a carrier wave with a sinc pulse [@problem_id:1716182]. Let the modulating signal be $b(t) = T \frac{\sin(tT/2)}{tT/2}$. From our earlier derivation, we know its transform is $B(\omega) = 2\pi \, \text{rect}(\omega/T)$. The modulated signal is $s(t) = b(t) \cos(\omega_0 t)$. Using Euler's formula, $\cos(\omega_0 t) = \frac{1}{2}(e^{j\omega_0 t} + e^{-j\omega_0 t})$, and the modulation property, we get the transform of $s(t)$:
 $$
 S(\omega) = \frac{1}{2} \mathcal{F}\{b(t)e^{j\omega_0 t}\} + \frac{1}{2} \mathcal{F}\{b(t)e^{-j\omega_0 t}\} = \frac{1}{2}[B(\omega-\omega_0) + B(\omega+\omega_0)]
 $$
@@ -169,7 +169,7 @@ Substituting the expression for $B(\omega)$:
 $$
 S(\omega) = \frac{1}{2}\left[2\pi \, \text{rect}\left(\frac{\omega-\omega_0}{T}\right) + 2\pi \, \text{rect}\left(\frac{\omega+\omega_0}{T}\right)\right] = \pi\left[\text{rect}\left(\frac{\omega-\omega_0}{T}\right) + \text{rect}\left(\frac{\omega+\omega_0}{T}\right)\right]
 $$
-The spectrum of the [sinc pulse](@entry_id:273184), which was a single rectangular pulse centered at $\omega=0$, has been split into two half-amplitude rectangular pulses centered at $\pm \omega_0$, exactly as predicted by the duality between [time-shifting](@entry_id:261541) and frequency-shifting.
+The spectrum of the sinc pulse, which was a single rectangular pulse centered at $\omega=0$, has been split into two half-amplitude rectangular pulses centered at $\pm \omega_0$, exactly as predicted by the duality between time-shifting and frequency-shifting.
 
 ### Duality, Energy, and Signal Characteristics
 
@@ -177,7 +177,7 @@ Duality also provides insights into how fundamental signal characteristics like 
 
 #### Symmetry Properties
 
-If a signal $x(t)$ is **real and even**, its Fourier transform $X(\omega)$ is also **real and even**. What does duality tell us about the transform of the signal $y(t) = X(t)$?  Since $X(\omega)$ is real and even, its time-domain counterpart $y(t)=X(t)$ must also be real and even. A real and even time signal must have a real and even Fourier transform. Thus, $Y(\omega)$ must be real and even. We can verify this with the duality property:
+If a signal $x(t)$ is **real and even**, its Fourier transform $X(\omega)$ is also **real and even**. What does duality tell us about the transform of the signal $y(t) = X(t)$? [@problem_id:1716148] Since $X(\omega)$ is real and even, its time-domain counterpart $y(t)=X(t)$ must also be real and even. A real and even time signal must have a real and even Fourier transform. Thus, $Y(\omega)$ must be real and even. We can verify this with the duality property:
 $$
 Y(\omega) = 2\pi x(-\omega)
 $$
@@ -189,7 +189,7 @@ Since the original signal $x(t)$ was given to be real and even, $x(-\omega) = x(
 $$
 E_x = \int_{-\infty}^{\infty} |x(t)|^2 dt = \frac{1}{2\pi} \int_{-\infty}^{\infty} |X(\omega)|^2 d\omega
 $$
-Now, consider a theoretical system that synthesizes a new waveform $y(t)$ by using the [spectral function](@entry_id:147628) of $x(t)$ as a temporal template, i.e., $y(t) = X(t)$ . What is the energy $E_y$ of this new signal?
+Now, consider a theoretical system that synthesizes a new waveform $y(t)$ by using the spectral function of $x(t)$ as a temporal template, i.e., $y(t) = X(t)$ [@problem_id:1716166]. What is the energy $E_y$ of this new signal?
 $$
 E_y = \int_{-\infty}^{\infty} |y(t)|^2 dt = \int_{-\infty}^{\infty} |X(t)|^2 dt
 $$
@@ -211,7 +211,7 @@ We can quantify the "spread" of a signal using its **Root-Mean-Square (RMS) dura
 $$
 (\Delta t_x)^2 = \frac{\int_{-\infty}^{\infty} t^2 |x(t)|^2 dt}{\int_{-\infty}^{\infty} |x(t)|^2 dt} \quad , \quad (\Delta \omega_x)^2 = \frac{\int_{-\infty}^{\infty} \omega^2 |X(\omega)|^2 d\omega}{\int_{-\infty}^{\infty} |X(\omega)|^2 d\omega}
 $$
-Now, let's examine these metrics for the dual signal $y(t) = X(t)$ . Its transform is $Y(\omega) = 2\pi x(-\omega)$.
+Now, let's examine these metrics for the dual signal $y(t) = X(t)$ [@problem_id:1716136]. Its transform is $Y(\omega) = 2\pi x(-\omega)$.
 
 The RMS duration of $y(t)$ is:
 $$

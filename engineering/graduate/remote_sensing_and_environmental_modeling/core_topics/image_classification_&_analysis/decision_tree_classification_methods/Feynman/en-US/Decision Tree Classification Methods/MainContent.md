@@ -11,7 +11,7 @@ You would likely play a game of twenty questions. "Is the pixel very bright in t
 
 ### The Anatomy of a Decision
 
-In the language of machine learning, each of those numbers—the reflectance in a spectral band, a derived quantity like the **Normalized Difference Vegetation Index (NDVI)**, or an ancillary piece of data like elevation from a Digital Elevation Model—is a **feature**. Together, they form a **[feature vector](@entry_id:920515)** $\mathbf{x}$, which defines a point in a high-dimensional feature space. A [decision tree](@entry_id:265930) is an algorithm that learns to partition this space into regions, with each region corresponding to a class label. 
+In the language of machine learning, each of those numbers—the reflectance in a spectral band, a derived quantity like the **Normalized Difference Vegetation Index (NDVI)**, or an ancillary piece of data like elevation from a Digital Elevation Model—is a **feature**. Together, they form a **[feature vector](@keyword=feature_vector|lang=en-US|style=Feynman)** $\mathbf{x}$, which defines a point in a high-dimensional feature space. A [decision tree](@keyword=decision_tree|lang=en-US|style=Feynman) is an algorithm that learns to partition this space into regions, with each region corresponding to a class label. [@problem_id:3805133]
 
 The questions we ask are called **splits**. The most common type, used in algorithms like CART, are **axis-aligned splits**. They take the simple form: "Is feature $j$ less than or equal to some threshold $t$?" (e.g., "$x_{\text{NDVI}} \le 0.2$"). Each "yes" or "no" answer sends us down a different branch of the tree until we reach a leaf node. The leaf provides the final verdict—the predicted class for any pixel that ends up there. The magic of the algorithm lies in figuring out which questions to ask, in what order, and with what thresholds.
 
@@ -23,27 +23,27 @@ A perfectly pure node contains pixels of only one class. A maximally impure node
 
 -   **Gini Impurity**: Imagine you reach into a node's bag of pixels, pull one out, and then guess its class based on the distribution of classes in that bag (e.g., if it's 60% forest, you guess 'forest'). The Gini impurity is the probability that your guess will be wrong. For a set of class probabilities $p_k$, it's calculated as $G = 1 - \sum_k p_k^2$. It's a simple, effective measure of disorder.
 
--   **Entropy**: A concept borrowed from [thermodynamics and information](@entry_id:272258) theory, Shannon entropy measures the average level of "information" or "surprise" in a distribution. For a node with class probabilities $p_k$, the entropy is $H = -\sum_k p_k \log_2(p_k)$. A pure node (e.g., $p_k=1$ for one class) has zero entropy—no surprise. A uniform mix has maximum entropy. A split that maximizes the **information gain**—the reduction in entropy—is one that reduces our uncertainty about the pixel's class by the largest amount. 
+-   **Entropy**: A concept borrowed from [thermodynamics and information](@keyword=thermodynamics_and_information|lang=en-US|style=Feynman) theory, Shannon entropy measures the average level of "information" or "surprise" in a distribution. For a node with class probabilities $p_k$, the entropy is $H = -\sum_k p_k \log_2(p_k)$. A pure node (e.g., $p_k=1$ for one class) has zero entropy—no surprise. A uniform mix has maximum entropy. A split that maximizes the **information gain**—the reduction in entropy—is one that reduces our uncertainty about the pixel's class by the largest amount. [@problem_id:3805151]
 
-While these two measures are often similar in practice, they have different sensitivities. Entropy is more sensitive to changes in the probabilities of small, minority classes, whereas Gini impurity is slightly less so. A third metric, the **[misclassification error](@entry_id:635045)** ($1 - \max_k p_k$), is also possible, but it's rarely used to grow a tree. Why? Because it's insensitive. A split might not change the majority class, but it could make the minority classes much more organized—a desirable step that Gini and entropy would reward, but [misclassification error](@entry_id:635045) would ignore. 
+While these two measures are often similar in practice, they have different sensitivities. Entropy is more sensitive to changes in the probabilities of small, minority classes, whereas Gini impurity is slightly less so. A third metric, the **[misclassification error](@keyword=misclassification_error|lang=en-US|style=Feynman)** ($1 - \max_k p_k$), is also possible, but it's rarely used to grow a tree. Why? Because it's insensitive. A split might not change the majority class, but it could make the minority classes much more organized—a desirable step that Gini and entropy would reward, but [misclassification error](@keyword=misclassification_error|lang=en-US|style=Feynman) would ignore. [@problem_id:3805160]
 
 ### The Greedy Recursive Algorithm
 
-Armed with a way to score questions, we can now build the tree. The process is a classic example of a **greedy [recursive algorithm](@entry_id:633952)**:
+Armed with a way to score questions, we can now build the tree. The process is a classic example of a **greedy [recursive algorithm](@keyword=recursive_algorithm|lang=en-US|style=Feynman)**:
 
 1.  Start with all the training data at the root node.
 2.  At the current node, search through all features and all possible split thresholds for the one that produces the greatest impurity decrease (the "greediest" choice).
-3.  This seems like a monumental task, especially for continuous features like reflectance where there are seemingly infinite thresholds. But here lies a beautiful computational shortcut: you only need to test thresholds at the midpoints between the unique sorted values of your data. The problem becomes finite! The heavy lifting is sorting the data for each feature, which takes $O(n \log n)$ time, after which a single linear scan is enough to find the best split.  
+3.  This seems like a monumental task, especially for continuous features like reflectance where there are seemingly infinite thresholds. But here lies a beautiful computational shortcut: you only need to test thresholds at the midpoints between the unique sorted values of your data. The problem becomes finite! The heavy lifting is sorting the data for each feature, which takes $O(n \log n)$ time, after which a single linear scan is enough to find the best split. [@problem_id:3805147] [@problem_id:3805161]
 4.  Once the best split is found, partition the data into two new child nodes.
 5.  Repeat this process on each child node.
 
-This [recursion](@entry_id:264696) continues, with each node asking the best possible question it can, given the data it has received. But when does it stop?
+This [recursion](@keyword=recursion|lang=en-US|style=Feynman) continues, with each node asking the best possible question it can, given the data it has received. But when does it stop?
 
 ### The Peril of Perfection: Bias vs. Variance
 
 If we let the algorithm run its course, it will continue splitting until every leaf node is perfectly pure or contains only one sample. The resulting tree will have zero errors on the training data. It will have perfectly "memorized" the answers. But like a student who only memorizes old exams, it will likely fail miserably on new, unseen data. This phenomenon is called **overfitting**.
 
-This is a manifestation of the fundamental **bias-variance trade-off**. 
+This is a manifestation of the fundamental **bias-variance trade-off**. [@problem_id:3805169]
 
 -   **Bias** is the error from a model being too simple. A very shallow tree, with only a few splits, creates a coarse, blocky map of the world. It might misclassify a winding river as a series of rectangles. Its assumptions are too simple, leading to high bias.
 
@@ -55,24 +55,24 @@ As we increase the tree's depth, we decrease its bias (it can represent more com
 
 To find that sweet spot, we must control the tree's complexity. There are two main philosophies for this: stop early or go all the way and then retreat.
 
-**Pre-pruning** sets [stopping rules](@entry_id:924532) to prevent the tree from becoming too complex in the first place. Common rules include: 
+**Pre-pruning** sets [stopping rules](@keyword=stopping_rules|lang=en-US|style=Feynman) to prevent the tree from becoming too complex in the first place. Common rules include: [@problem_id:3805136]
 
 -   `max_depth`: Don't let any branch of the tree grow longer than a certain number of questions.
 -   `min_samples_split`: Don't even consider splitting a node if it contains too few samples to make a statistically reliable decision.
 -   `min_samples_leaf`: Insist that any split must leave a certain minimum number of samples in each of its resulting child nodes. This ensures that every final prediction is backed by a "quorum."
 -   `min_impurity_decrease`: Only accept a split if it reduces impurity by more than a tiny threshold, ignoring splits that offer negligible gains and are likely just fitting noise.
 
-**Post-pruning**, championed by the CART algorithm, takes a different approach. It first grows a large, complex tree and then systematically prunes it back. The most elegant method is **[cost-complexity pruning](@entry_id:634342)**. Here, we define a new objective function that balances the tree's error with its complexity:
+**Post-pruning**, championed by the CART algorithm, takes a different approach. It first grows a large, complex tree and then systematically prunes it back. The most elegant method is **[cost-complexity pruning](@keyword=cost_complexity_pruning|lang=en-US|style=Feynman)**. Here, we define a new objective function that balances the tree's error with its complexity:
 
 $$R_{\alpha}(T) = \text{Error}(T) + \alpha \times \text{Complexity}(T)$$
 
-Here, $\text{Error}(T)$ is the tree's total misclassification on the training data, and $\text{Complexity}(T)$ is simply the number of leaf nodes. The parameter $\alpha$ is a knob we can turn. When $\alpha=0$, we just want to minimize error, so we get the largest tree. As we increase $\alpha$, we increase the "cost" of every leaf, making complexity more expensive. The algorithm finds that pruning a branch becomes "cheaper" than keeping the leaves it supports. By varying $\alpha$ from zero upwards, we can generate a whole sequence of optimally pruned trees, from the most complex to the simplest (a single root node). We can then use a separate validation dataset to pick the tree from this sequence that performs the best. 
+Here, $\text{Error}(T)$ is the tree's total misclassification on the training data, and $\text{Complexity}(T)$ is simply the number of leaf nodes. The parameter $\alpha$ is a knob we can turn. When $\alpha=0$, we just want to minimize error, so we get the largest tree. As we increase $\alpha$, we increase the "cost" of every leaf, making complexity more expensive. The algorithm finds that pruning a branch becomes "cheaper" than keeping the leaves it supports. By varying $\alpha$ from zero upwards, we can generate a whole sequence of optimally pruned trees, from the most complex to the simplest (a single root node). We can then use a separate validation dataset to pick the tree from this sequence that performs the best. [@problem_id:3805120]
 
 ### The Tyranny of the Axes
 
 There is a subtle but profound limitation in everything we've discussed so far. Our splits are "axis-aligned." They can only create decision boundaries that are parallel to the feature axes, resulting in a world carved into hyper-rectangles.
 
-But what if the true boundary in nature is diagonal? Consider classifying land as 'sunlit' or 'shaded' based on brightness and elevation. The boundary might be a [linear combination](@entry_id:155091) of the two. An axis-aligned tree must approximate this diagonal with a clunky, inefficient "staircase." It's a universal approximator—it *can* get arbitrarily close if you make the steps small enough—but it might require an enormous number of splits to do so. 
+But what if the true boundary in nature is diagonal? Consider classifying land as 'sunlit' or 'shaded' based on brightness and elevation. The boundary might be a [linear combination](@keyword=linear_combination|lang=en-US|style=Feynman) of the two. An axis-aligned tree must approximate this diagonal with a clunky, inefficient "staircase." It's a universal approximator—it *can* get arbitrarily close if you make the steps small enough—but it might require an enormous number of splits to do so. [@problem_id:3805153]
 
 This is where **oblique decision trees** enter. They can ask more powerful, "diagonal" questions of the form $\sum w_j x_j \le t$. A single well-chosen oblique split could perfectly capture a linear boundary that would take an axis-aligned tree dozens of splits to approximate. The cost, of course, is computational: finding the optimal weights $w_j$ for an oblique split is a much harder problem than finding an axis-aligned one.
 
@@ -80,6 +80,6 @@ This is where **oblique decision trees** enter. They can ask more powerful, "dia
 
 This brings us to a final, humbling point. The entire process of building a tree by making the best possible split at each step is a **greedy heuristic**. Does this greedy approach guarantee that we will find the best possible tree?
 
-Absolutely not. A locally optimal choice at the root node might prevent a far better sequence of splits later on. The problem of finding the globally optimal decision tree of a given size is, in fact, **NP-hard**. This means it belongs to a class of problems for which no efficient (polynomial-time) algorithm is known to exist. Proving this involves showing that if you could solve the optimal tree problem efficiently, you could also solve other famously hard problems like the Set Cover problem. 
+Absolutely not. A locally optimal choice at the root node might prevent a far better sequence of splits later on. The problem of finding the globally optimal decision tree of a given size is, in fact, **NP-hard**. This means it belongs to a class of problems for which no efficient (polynomial-time) algorithm is known to exist. Proving this involves showing that if you could solve the optimal tree problem efficiently, you could also solve other famously hard problems like the Set Cover problem. [@problem_id:3805166]
 
-The sheer number of possible tree structures is combinatorially explosive. This intractability is not a minor inconvenience; it is a fundamental barrier. It is precisely *why* we resort to [greedy algorithms](@entry_id:260925) like CART, ID3, and C4.5.  We trade the guarantee of global optimality for the gift of a practical, feasible algorithm that can give us a "good enough" solution in a reasonable amount of time. And as decades of research and application have shown, this "good enough" is often very, very good indeed.
+The sheer number of possible tree structures is combinatorially explosive. This intractability is not a minor inconvenience; it is a fundamental barrier. It is precisely *why* we resort to [greedy algorithms](@keyword=greedy_algorithms|lang=en-US|style=Feynman) like CART, ID3, and C4.5. [@problem_id:3805111] We trade the guarantee of global optimality for the gift of a practical, feasible algorithm that can give us a "good enough" solution in a reasonable amount of time. And as decades of research and application have shown, this "good enough" is often very, very good indeed.

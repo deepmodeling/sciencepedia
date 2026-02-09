@@ -1,7 +1,7 @@
 ## Introduction
 In the complex world of energy systems, the ability to accurately quantify the performance and reliability of generating assets is not just an academic exercise—it is the bedrock of economic viability, operational stability, and strategic planning. A myriad of metrics exists, each offering a different lens through which to view an asset's performance. The challenge for engineers, analysts, and planners lies in navigating this landscape to select and apply the right metric for the right problem, avoiding misinterpretations that can lead to flawed economic or reliability assessments. This article addresses this need by providing a structured guide to the most critical availability and utilization metrics used in the industry.
 
-This guide is designed to build your expertise from the ground up. In the "Principles and Mechanisms" chapter, you will learn the fundamental definitions of availability and reliability, see how simple uptime metrics evolve into sophisticated capacity-weighted and demand-dependent measures, and understand the crucial decomposition of performance into technical availability and economic utilization. Following this, the "Applications and Interdisciplinary Connections" chapter will demonstrate how these metrics are applied to solve real-world problems in [economic dispatch](@entry_id:143387), reliability assessment, risk management, and contracting, while also showing their relevance to emerging technologies and other engineering fields. Finally, the "Hands-On Practices" section will provide opportunities to solidify your understanding through practical exercises. By progressing through these sections, you will gain a robust and applicable understanding of how to measure and manage the performance of energy assets.
+This guide is designed to build your expertise from the ground up. In the "Principles and Mechanisms" chapter, you will learn the fundamental definitions of availability and reliability, see how simple uptime metrics evolve into sophisticated capacity-weighted and demand-dependent measures, and understand the crucial decomposition of performance into technical availability and economic utilization. Following this, the "Applications and Interdisciplinary Connections" chapter will demonstrate how these metrics are applied to solve real-world problems in economic dispatch, reliability assessment, risk management, and contracting, while also showing their relevance to emerging technologies and other engineering fields. Finally, the "Hands-On Practices" section will provide opportunities to solidify your understanding through practical exercises. By progressing through these sections, you will gain a robust and applicable understanding of how to measure and manage the performance of energy assets.
 
 ## Principles and Mechanisms
 
@@ -9,7 +9,7 @@ In the study of energy systems, quantifying the performance and reliability of g
 
 ### Foundational Concepts: State, Availability, and Reliability
 
-At the heart of performance measurement lies the concept of a component's **state**. In the simplest model, a generating unit can be in one of two states: "up" (operational) or "down" (failed). For a repairable system, the transitions between these states can be modeled stochastically. A common approach employs a continuous-time Markov process, where failures occur at a constant rate $\lambda$ (the [failure rate](@entry_id:264373)) and repairs are completed at a constant rate $\mu$ (the repair rate).
+At the heart of performance measurement lies the concept of a component's **state**. In the simplest model, a generating unit can be in one of two states: "up" (operational) or "down" (failed). For a repairable system, the transitions between these states can be modeled stochastically. A common approach employs a continuous-time Markov process, where failures occur at a constant rate $\lambda$ (the failure rate) and repairs are completed at a constant rate $\mu$ (the repair rate).
 
 From this simple model, two fundamental yet distinct system characteristics emerge: **availability** and **reliability**.
 
@@ -23,7 +23,7 @@ Availability is an ergodic, time-averaged property. It tells us what proportion 
 
 Consider, for example, a plant where mission success over a period $t_m$ is defined not by avoiding failure altogether, but by ensuring no single outage lasts longer than a critical duration $\tau$. In such a case, a system can have frequent but short outages and still be considered highly reliable. The probability of an individual outage exceeding $\tau$ is $P(\text{outage duration} > \tau) = \exp(-\mu \tau)$. Catastrophic, mission-ending events thus occur at a much lower effective rate, $\lambda_c = \lambda \exp(-\mu \tau)$. The mission reliability becomes the probability of zero such catastrophic events occurring, $R(t_m) = \exp(-\lambda_c t_m)$.
 
-This distinction is crucial . A system with a high failure rate ($\lambda$) and a very high repair rate ($\mu$) may have a modest availability (e.g., $A=0.80$) because it is down for 20% of the time. However, if repairs are consistently rapid, the probability of a long, mission-critical outage can be extremely low, resulting in a very high mission reliability (e.g., $R \approx 0.99$). Availability measures the *fraction* of time operational, while reliability measures the *probability* of uninterrupted success according to a specific rule.
+This distinction is crucial [@problem_id:4070947]. A system with a high failure rate ($\lambda$) and a very high repair rate ($\mu$) may have a modest availability (e.g., $A=0.80$) because it is down for 20% of the time. However, if repairs are consistently rapid, the probability of a long, mission-critical outage can be extremely low, resulting in a very high mission reliability (e.g., $R \approx 0.99$). Availability measures the *fraction* of time operational, while reliability measures the *probability* of uninterrupted success according to a specific rule.
 
 ### Time-Based Availability: A Deeper Dive
 
@@ -31,9 +31,9 @@ While the theoretical steady-state availability is a useful concept, practical a
 
 $$A = \frac{T_{\text{up}}}{T_{\text{up}} + T_{\text{down}}}$$
 
-The critical question immediately becomes: what constitutes "up" time? A rigorous definition of availability hinges on **technical capability**, not on economic dispatch or energy production. A unit is considered available if it is capable of performing its intended function upon request within a specified [response time](@entry_id:271485).
+The critical question immediately becomes: what constitutes "up" time? A rigorous definition of availability hinges on **technical capability**, not on economic dispatch or energy production. A unit is considered available if it is capable of performing its intended function upon request within a specified response time.
 
-To illustrate, consider a generating unit with a declared capacity $C_{\text{decl}}$ and a requirement to be able to deliver this capacity within $t_{\text{req}}=30$ minutes of being called upon . Various operational modes must be classified:
+To illustrate, consider a generating unit with a declared capacity $C_{\text{decl}}$ and a requirement to be able to deliver this capacity within $t_{\text{req}}=30$ minutes of being called upon [@problem_id:4070890]. Various operational modes must be classified:
 - **Online and Healthy**: The unit is synchronized and producing power, or capable of producing $C_{\text{decl}}$. This is clearly **up time**.
 - **Synchronized Spinning Reserve**: The unit is synchronized but at zero output, ready to ramp up quickly. Since it can meet the functional requirement, this is **up time**.
 - **Hot Standby**: The unit is offline but warm, with a start time (e.g., $10$ minutes) less than or equal to $t_{\text{req}}$. It can meet the requirement on demand. This is **up time**.
@@ -49,9 +49,9 @@ This classification underscores a key principle: availability is a measure of th
 
 The binary availability metric, while useful, has a significant limitation: it treats a unit operating at 100% of its capacity and a unit derated to 1% of its capacity as equally "up". This fails to capture the magnitude of the available resource. To address this, we move from a simple up/down model to a **multi-state model** that accounts for partial outages or deratings.
 
-In a multi-state framework, a unit's available capacity is modeled as a process that can take on multiple discrete levels . For example, a $500$ MW unit might have four states: full capacity ($500$ MW), a partial derating ($300$ MW), a severe derating ($100$ MW), and a full outage ($0$ MW). The performance over a horizon can then be described by a **multi-state availability vector**, which lists the fraction of time spent in each state. For instance, a vector $[0.30, 0.40, 0.25, 0.05]$ would indicate the unit spent 30% of its time at full capacity, 40% at the first derating, 25% at the second, and 5% in a full outage.
+In a multi-state framework, a unit's available capacity is modeled as a process that can take on multiple discrete levels [@problem_id:4070918]. For example, a $500$ MW unit might have four states: full capacity ($500$ MW), a partial derating ($300$ MW), a severe derating ($100$ MW), and a full outage ($0$ MW). The performance over a horizon can then be described by a **multi-state availability vector**, which lists the fraction of time spent in each state. For instance, a vector $[0.30, 0.40, 0.25, 0.05]$ would indicate the unit spent 30% of its time at full capacity, 40% at the first derating, 25% at the second, and 5% in a full outage.
 
-This multi-[state representation](@entry_id:141201) allows for a more nuanced and powerful metric: the **Effective Capacity-Based Availability**, $A_{\text{cap}}$, often called the Equivalent Availability Factor (EAF). This metric represents the time-averaged fraction of the nameplate capacity that was available. It is calculated by taking the weighted average of the capacity levels of each state, where the weights are the time fractions spent in those states.
+This multi-state representation allows for a more nuanced and powerful metric: the **Effective Capacity-Based Availability**, $A_{\text{cap}}$, often called the Equivalent Availability Factor (EAF). This metric represents the time-averaged fraction of the nameplate capacity that was available. It is calculated by taking the weighted average of the capacity levels of each state, where the weights are the time fractions spent in those states.
 
 If $a_i$ is the fraction of time in state $i$ and $c_i$ is the capacity of state $i$ as a fraction of nameplate capacity, then:
 $$A_{\text{cap}} = \sum_{i} c_i a_i$$
@@ -61,7 +61,7 @@ $$A_{\text{cap}} = (1.0 \times 0.30) + (0.6 \times 0.40) + (0.2 \times 0.25) + (
 
 This means that, on average, the unit was able to offer 59% of its nameplate capacity over the period.
 
-The contrast between binary and capacity-weighted availability can be stark. Consider a unit that over 24 hours is derated to 50-60% capacity for 20 hours, at full capacity for 3 hours, and fully offline for just 1 hour . Its binary availability would be high, $A = 23/24 \approx 0.958$, because it was "up" for 23 hours. However, its [effective capacity](@entry_id:748806)-based availability would be much lower, $A_{\text{cap}} \approx 0.563$, accurately reflecting the significant loss of potential output due to deratings. For any study concerned with energy potential or capacity adequacy, $A_{\text{cap}}$ is a far more meaningful metric than its binary counterpart.
+The contrast between binary and capacity-weighted availability can be stark. Consider a unit that over 24 hours is derated to 50-60% capacity for 20 hours, at full capacity for 3 hours, and fully offline for just 1 hour [@problem_id:4070859]. Its binary availability would be high, $A = 23/24 \approx 0.958$, because it was "up" for 23 hours. However, its effective capacity-based availability would be much lower, $A_{\text{cap}} \approx 0.563$, accurately reflecting the significant loss of potential output due to deratings. For any study concerned with energy potential or capacity adequacy, $A_{\text{cap}}$ is a far more meaningful metric than its binary counterpart.
 
 ### Deconstructing Performance: Outage Rates and Utilization
 
@@ -73,25 +73,25 @@ Unavailability is not a monolithic category. The most fundamental distinction is
 
 A **Planned Outage Rate (POR)** quantifies the time fraction dedicated to scheduled maintenance. It is typically calculated over a long period, such as a calendar year ($H_{\text{total}}$), and is defined as:
 $$POR = \frac{H_{\text{planned}}}{H_{\text{total}}}$$
-Planned outages are, by definition, deterministic, predictable, and controllable by the operator. They are often scheduled during periods of low demand to minimize system impact .
+Planned outages are, by definition, deterministic, predictable, and controllable by the operator. They are often scheduled during periods of low demand to minimize system impact [@problem_id:4070899].
 
 A **Forced Outage Rate (FOR)**, conversely, quantifies unavailability from unscheduled, spontaneous failures. Its standard definition is more subtle. It is the fraction of time the unit was on a forced outage, relative to the time it was *in demand*, where the demand period is defined as service hours plus forced outage hours. It specifically excludes planned outage and reserve shutdown hours from its denominator.
 $$FOR = \frac{H_{\text{forced}}}{H_{\text{service}} + H_{\text{forced}}}$$
-This definition  is crucial because it measures the probability of failure *during periods when the unit was expected to run*. Unlike planned outages, forced outages are stochastic and not directly controllable, but they are statistically predictable based on the underlying failure ($\lambda$) and repair ($\mu$) rates. For a two-state Markov model, the theoretical FOR is $P_{\text{Down}} = \lambda / (\lambda + \mu)$ .
+This definition [@problem_id:4070926] is crucial because it measures the probability of failure *during periods when the unit was expected to run*. Unlike planned outages, forced outages are stochastic and not directly controllable, but they are statistically predictable based on the underlying failure ($\lambda$) and repair ($\mu$) rates. For a two-state Markov model, the theoretical FOR is $P_{\text{Down}} = \lambda / (\lambda + \mu)$ [@problem_id:4070899].
 
 #### Time Basis: Operational vs. Calendar Availability
 
-The distinction between planned and forced outages leads to different ways of defining the time basis for availability metrics .
-- **Calendar Availability** is the probability that a unit is available in any randomly chosen hour of the year. It accounts for both planned and forced outages. If $P$ is planned outage hours, $H$ is total hours, and $q$ is the conditional probability of a forced outage during a service hour, then calendar availability is the [joint probability](@entry_id:266356) of not being on planned outage *and* not being on forced outage: $A_{\text{calendar}} = (1 - \frac{P}{H})(1 - q)$.
-- **Operational Availability** is the probability that a unit is available *conditional on it not being on a planned outage*. This metric isolates the impact of [random failures](@entry_id:1130547). In the simple model, $A_{\text{operational}} = 1 - q$.
+The distinction between planned and forced outages leads to different ways of defining the time basis for availability metrics [@problem_id:4070860].
+- **Calendar Availability** is the probability that a unit is available in any randomly chosen hour of the year. It accounts for both planned and forced outages. If $P$ is planned outage hours, $H$ is total hours, and $q$ is the conditional probability of a forced outage during a service hour, then calendar availability is the joint probability of not being on planned outage *and* not being on forced outage: $A_{\text{calendar}} = (1 - \frac{P}{H})(1 - q)$.
+- **Operational Availability** is the probability that a unit is available *conditional on it not being on a planned outage*. This metric isolates the impact of random failures. In the simple model, $A_{\text{operational}} = 1 - q$.
 
 The choice between these metrics depends on the modeling application. For a high-level assessment, calendar availability provides a single, all-encompassing number. However, in sophisticated resource adequacy models where planned maintenance schedules are explicitly represented, using calendar availability would double-count the impact of planned outages. In such models, the correct approach is to enforce the planned outage schedule deterministically and then use the **operational availability** to model the probability of random forced outages during the remaining service hours.
 
 #### The Role of Demand: The Equivalent Forced Outage Rate on Demand (EFORd)
 
-For capacity adequacy studies, even the standard FOR can be misleading. A forced outage that occurs when a unit is not needed by the system (e.g., overnight during low demand) does not contribute to a capacity shortfall. To capture the most relevant risk, we must condition the outage probability on the unit being demanded by the system. This gives rise to the **Equivalent Forced Outage Rate on Demand (EFORd)** .
+For capacity adequacy studies, even the standard FOR can be misleading. A forced outage that occurs when a unit is not needed by the system (e.g., overnight during low demand) does not contribute to a capacity shortfall. To capture the most relevant risk, we must condition the outage probability on the unit being demanded by the system. This gives rise to the **Equivalent Forced Outage Rate on Demand (EFORd)** [@problem_id:4070891].
 
-Using the language of probability, if $FO$ is the event of a forced outage and $D$ is the event that the unit is demanded, EFORd is the [conditional probability](@entry_id:151013) $P(FO | D)$. It is calculated as the number of hours the unit was forced out *while demanded*, divided by the total number of hours it was demanded (served hours plus forced-out-on-demand hours). In contrast, a simple unavailability factor might be viewed as the unconditional probability $P(FO)$. Because EFORd focuses exclusively on failure during periods of need, it is the industry-standard metric for representing forced outage risk in probabilistic capacity adequacy assessments.
+Using the language of probability, if $FO$ is the event of a forced outage and $D$ is the event that the unit is demanded, EFORd is the conditional probability $P(FO | D)$. It is calculated as the number of hours the unit was forced out *while demanded*, divided by the total number of hours it was demanded (served hours plus forced-out-on-demand hours). In contrast, a simple unavailability factor might be viewed as the unconditional probability $P(FO)$. Because EFORd focuses exclusively on failure during periods of need, it is the industry-standard metric for representing forced outage risk in probabilistic capacity adequacy assessments.
 
 #### Synthesis: Capacity Factor and Utilization Factor
 
@@ -99,11 +99,11 @@ The ultimate measure of a generator's energy output is the **Capacity Factor (CF
 
 $$CF = \frac{E_{\text{actual}}}{P_{\text{nameplate}} T}$$
 
-The capacity factor is the end result of a cascade of availability and operational constraints. A powerful [conceptual model](@entry_id:1122832) decomposes the [instantaneous power](@entry_id:174754) output $p(t)$ as :
+The capacity factor is the end result of a cascade of availability and operational constraints. A powerful conceptual model decomposes the instantaneous power output $p(t)$ as [@problem_id:4070862]:
 $$p(t) = P_{\text{nameplate}} \times a(t) \times r(t) \times d(t)$$
 Here, $a(t)$ is the availability factor (1 if available, 0 if not), $r(t)$ is a resource factor (e.g., for wind or solar), and $d(t)$ is a dispatch factor representing economic curtailment. The capacity factor is the time-average of this product, $CF = \mathbb{E}[a(t)r(t)d(t)]$. This shows that CF is necessarily less than or equal to the average availability.
 
-To separate technical availability from economic operation, we introduce the **Utilization Factor (UF)** . The UF is the ratio of the energy actually produced to the energy that *could have been produced* with the available capacity.
+To separate technical availability from economic operation, we introduce the **Utilization Factor (UF)** [@problem_id:4070944]. The UF is the ratio of the energy actually produced to the energy that *could have been produced* with the available capacity.
 $$UF = \frac{\int_{0}^{T} P_{\text{actual}}(t) \,dt}{\int_{0}^{T} P_{\text{available}}(t) \,dt}$$
 
 These metrics connect in a simple, elegant relationship. The total energy produced is $E_{\text{actual}} = UF \times E_{\text{available}}$. By definition, $CF = E_{\text{actual}} / (P_{\text{nameplate}} T)$ and $A_{\text{cap}} = E_{\text{available}} / (P_{\text{nameplate}} T)$. Substituting these into the first equation yields:

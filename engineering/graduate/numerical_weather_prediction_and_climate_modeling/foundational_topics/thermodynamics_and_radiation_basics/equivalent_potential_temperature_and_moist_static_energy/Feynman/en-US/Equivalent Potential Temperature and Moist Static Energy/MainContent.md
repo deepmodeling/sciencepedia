@@ -4,9 +4,9 @@ In the vast and turbulent theater of the atmosphere, air parcels are constantly 
 This article provides a comprehensive exploration of the most important conserved quantities in a moist atmosphere: equivalent potential temperature (θe) and moist static energy (MSE).
 - The first chapter, **Principles and Mechanisms**, delves into the thermodynamic first principles, deriving these variables from the concepts of entropy and energy conservation. It builds from the simpler case of potential temperature (θ) in a dry atmosphere to the more robust moist invariants that account for the game-changing effects of water.
 - The second chapter, **Applications and Interdisciplinary Connections**, showcases these concepts in action. You will learn how θe and MSE are used as practical tools to diagnose storm instability, analyze large-scale weather patterns like fronts and jet streams, and understand the energy budget of the entire tropical climate system.
-- Finally, the **Hands-On Practices** section provides graduate-level problems that bridge theory with numerical application, reinforcing your understanding of how these principles are implemented in modern [atmospheric modeling](@entry_id:1121199).
+- Finally, the **Hands-On Practices** section provides graduate-level problems that bridge theory with numerical application, reinforcing your understanding of how these principles are implemented in modern [atmospheric modeling](@keyword=atmospheric_modeling|lang=en-US|style=Feynman).
 
-We begin our journey by examining the fundamental principles that allow us to label a parcel of air and follow it through its [complex life cycle](@entry_id:272848).
+We begin our journey by examining the fundamental principles that allow us to label a parcel of air and follow it through its [complex life cycle](@keyword=complex_life_cycle|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
@@ -22,11 +22,11 @@ $$
 ds_d = c_{p,d} d(\ln T) - R_d d(\ln p)
 $$
 
-where $c_{p,d}$ is the specific heat of dry air at constant pressure and $R_d$ is the gas constant for dry air. For an adiabatic journey, $ds_d = 0$, so entropy is our conserved tag. 
+where $c_{p,d}$ is the specific heat of dry air at constant pressure and $R_d$ is the gas constant for dry air. For an adiabatic journey, $ds_d = 0$, so entropy is our conserved tag. [@problem_id:4040078]
 
 Now, physicists are practical folk. While entropy is fundamental, it's not as intuitive as temperature. Wouldn't it be wonderful if we could invent a new kind of "temperature" that is conserved just like entropy is? This is exactly what **potential temperature**, denoted by the Greek letter $\theta$ (theta), is. We define it by asking a simple question: "What would the temperature of our air parcel be if we brought it adiabatically to a standard reference pressure, say, the average pressure at sea level ($p_0 = 1000$ hPa)?"
 
-By setting $ds_d=0$ and integrating the equation above from the parcel's current state $(T, p)$ to its [reference state](@entry_id:151465) $(\theta, p_0)$, we find the formula for this new quantity :
+By setting $ds_d=0$ and integrating the equation above from the parcel's current state $(T, p)$ to its [reference state](@keyword=reference_state|lang=en-US|style=Feynman) $(\theta, p_0)$, we find the formula for this new quantity [@problem_id:4040078]:
 
 $$
 \theta = T \left(\frac{p_0}{p}\right)^{R_d/c_{p,d}}
@@ -40,7 +40,7 @@ $$
 s_d = c_{p,d} \ln \theta + \text{constant}
 $$
 
-This is a profound result . It tells us that potential temperature isn't just a clever trick; it is, for all intents and purposes, the entropy of dry air, just expressed in the familiar units of temperature. Surfaces of constant $\theta$ in the atmosphere are surfaces of constant entropy—**isentropic surfaces**—and in a dry, adiabatic world, air parcels would be forever confined to move along them.
+This is a profound result [@problem_id:4040128]. It tells us that potential temperature isn't just a clever trick; it is, for all intents and purposes, the entropy of dry air, just expressed in the familiar units of temperature. Surfaces of constant $\theta$ in the atmosphere are surfaces of constant entropy—**isentropic surfaces**—and in a dry, adiabatic world, air parcels would be forever confined to move along them.
 
 ### The Game-Changer: Water's Hidden Energy
 
@@ -48,7 +48,7 @@ Of course, the Earth's atmosphere is not dry. It is laced with water in all its 
 
 To evaporate one gram of water, you need to supply about 2500 Joules of energy. That energy doesn't disappear; it's stored in the kinetic energy and freedom of the water vapor molecules. When that gram of vapor condenses back into a cloud droplet, it releases all 2500 Joules back into the air as heat. This is a colossal amount of energy. The latent heat released in a single thunderstorm can rival the energy of a small nuclear bomb.
 
-This latent heating is a massive source of heat for a rising air parcel. As the parcel rises and cools, its relative humidity increases until it reaches saturation. Then, clouds form. This condensation releases latent heat, which warms the parcel, counteracting the cooling from expansion. Because the parcel is being actively heated from within, its entropy is no longer constant. Its potential temperature, $\theta$, steadily increases as it ascends through the cloud. Our simple label for dry air is broken.  We need a new, more robust tag that accounts for this hidden energy.
+This latent heating is a massive source of heat for a rising air parcel. As the parcel rises and cools, its relative humidity increases until it reaches saturation. Then, clouds form. This condensation releases latent heat, which warms the parcel, counteracting the cooling from expansion. Because the parcel is being actively heated from within, its entropy is no longer constant. Its potential temperature, $\theta$, steadily increases as it ascends through the cloud. Our simple label for dry air is broken. [@problem_id:4110052] We need a new, more robust tag that accounts for this hidden energy.
 
 ### Two Paths to a Moist Invariant
 
@@ -56,7 +56,7 @@ Fortunately, physics provides two powerful, and ultimately equivalent, ways to c
 
 #### The Energy Budget: Moist Static Energy
 
-Let's think like an accountant and draw up a complete energy budget for our moist air parcel. What are all the forms of energy it possesses? There are three main players :
+Let's think like an accountant and draw up a complete energy budget for our moist air parcel. What are all the forms of energy it possesses? There are three main players [@problem_id:4040075]:
 
 1.  **Sensible Heat ($c_{p,d} T$)**: This is the thermal energy of the air, the energy of its vibrating and jostling molecules that we feel as temperature.
 
@@ -70,13 +70,13 @@ $$
 m = c_{p,d} T + gz + L_v q_v
 $$
 
-Now, consider a saturated parcel rising adiabatically. As it goes up, its geopotential energy ($gz$) increases. It also expands and cools, so its sensible heat ($c_{p,d} T$) decreases. But simultaneously, it's condensing water vapor into liquid, so its latent energy ($L_v q_v$) also decreases. The beauty of the first law of thermodynamics is that, for this process, these changes perfectly balance out. The decrease in sensible and latent heat exactly pays for the increase in potential energy. The total, the moist static energy, is conserved! 
+Now, consider a saturated parcel rising adiabatically. As it goes up, its geopotential energy ($gz$) increases. It also expands and cools, so its sensible heat ($c_{p,d} T$) decreases. But simultaneously, it's condensing water vapor into liquid, so its latent energy ($L_v q_v$) also decreases. The beauty of the first law of thermodynamics is that, for this process, these changes perfectly balance out. The decrease in sensible and latent heat exactly pays for the increase in potential energy. The total, the moist static energy, is conserved! [@problem_id:4040075]
 
 MSE is a wonderfully intuitive quantity. It represents the total thermodynamic and potential energy of the air. Air in the warm, humid boundary layer near the tropical ocean surface has very high MSE (high T, high $q_v$, low $z$). Air in the cold, dry upper troposphere has much lower MSE (low T, low $q_v$, high $z$). Thunderclouds are essentially powerful engines that transport high-MSE air from the surface to the upper atmosphere.
 
 #### The Entropy Path: Equivalent Potential Temperature
 
-The second path returns to our idea of potential temperature. How can we salvage it for a moist world? The trick is to account for the latent heat from the outset. We perform a thought experiment :
+The second path returns to our idea of potential temperature. How can we salvage it for a moist world? The trick is to account for the latent heat from the outset. We perform a thought experiment [@problem_id:4110052]:
 
 Take our moist air parcel at its current state $(T, p, q_v)$. Imagine we magically force all of its water vapor to condense. We collect all the latent heat that is released and use it to warm the parcel. The parcel is now much hotter, and completely dry. Now, we take this artificially hot, dry parcel and bring it adiabatically to our standard reference pressure ($p_0$). The temperature it attains at the end of this process is the **equivalent potential temperature ($\theta_e$)**.
 
@@ -86,7 +86,7 @@ $$
 \theta_e \approx \theta \exp\left(\frac{L_v q_v}{c_{p,d} T}\right)
 $$
 
-This formula elegantly shows that $\theta_e$ is simply the dry potential temperature $\theta$ "boosted" by an exponential factor that depends on the amount of moisture ($q_v$) . Just as $\theta$ was our proxy for dry entropy, $\theta_e$ is our new proxy for **moist entropy**. It is the robust tag we were searching for, one that remains constant for an air parcel moving through the tumultuous, cloudy heart of a storm.
+This formula elegantly shows that $\theta_e$ is simply the dry potential temperature $\theta$ "boosted" by an exponential factor that depends on the amount of moisture ($q_v$) [@problem_id:4040134]. Just as $\theta$ was our proxy for dry entropy, $\theta_e$ is our new proxy for **moist entropy**. It is the robust tag we were searching for, one that remains constant for an air parcel moving through the tumultuous, cloudy heart of a storm.
 
 ### A Guide to the Atmospheric Bestiary of Temperatures
 
@@ -98,17 +98,17 @@ We have now met a whole family of temperature-like variables, and it's crucial t
 
 *   **Equivalent Potential Temperature ($\theta_e$)** or **Moist Static Energy ($m$)**: These are two sides of the same coin. They are your conserved tracers for air parcels undergoing **moist, saturated adiabatic** processes (i.e., inside clouds). They are proxies for moist entropy.
 
-*   **Virtual Potential Temperature ($\theta_v$)**: There is one more crucial member of the family. Its job is to diagnose **buoyancy**. Moist air is less dense than dry air at the same temperature and pressure because water molecules are lighter than the average air molecule. $\theta_v$ is the potential temperature a dry parcel would need to have the same density as the moist parcel. To see if a parcel will rise or sink, you must compare its $\theta_v$ to that of the surrounding air. Density, and therefore $\theta_v$, is king for determining static stability. 
+*   **Virtual Potential Temperature ($\theta_v$)**: There is one more crucial member of the family. Its job is to diagnose **buoyancy**. Moist air is less dense than dry air at the same temperature and pressure because water molecules are lighter than the average air molecule. $\theta_v$ is the potential temperature a dry parcel would need to have the same density as the moist parcel. To see if a parcel will rise or sink, you must compare its $\theta_v$ to that of the surrounding air. Density, and therefore $\theta_v$, is king for determining static stability. [@problem_id:4110052]
 
 ### The Devil in the Details
 
-Like any powerful theory, the beauty of these [conserved variables](@entry_id:747720) lies in understanding the assumptions they depend on. The real atmosphere often introduces complications that can, in fact, break their conservation.
+Like any powerful theory, the beauty of these [conserved variables](@keyword=conserved_variables|lang=en-US|style=Feynman) lies in understanding the assumptions they depend on. The real atmosphere often introduces complications that can, in fact, break their conservation.
 
-First, there's the question of what happens to the condensed water. Our derivation of $\theta_e$ as a conserved quantity implicitly assumes that when water condenses, it is immediately removed from the parcel (a **pseudo-adiabatic** process), as if by precipitation. If, however, the cloud droplets and ice crystals remain with the parcel (a **reversible adiabatic** process), the heat capacity of the water itself has to be taken into account. This leads to a slightly different conserved variable, often called the **liquid [water potential](@entry_id:145904) temperature ($\theta_l$)**. In this reversible scenario, the standard $\theta_e$ is actually not perfectly conserved! 
+First, there's the question of what happens to the condensed water. Our derivation of $\theta_e$ as a conserved quantity implicitly assumes that when water condenses, it is immediately removed from the parcel (a **pseudo-adiabatic** process), as if by precipitation. If, however, the cloud droplets and ice crystals remain with the parcel (a **reversible adiabatic** process), the heat capacity of the water itself has to be taken into account. This leads to a slightly different conserved variable, often called the **liquid [water potential](@keyword=water_potential|lang=en-US|style=Feynman) temperature ($\theta_l$)**. In this reversible scenario, the standard $\theta_e$ is actually not perfectly conserved! [@problem_id:4040121]
 
-Second, what about ice? Our standard definitions of MSE and $\theta_e$ use the [latent heat of vaporization](@entry_id:142174) ($L_v$). But in the cold upper troposphere, water vapor often deposits directly to ice, releasing the [latent heat of sublimation](@entry_id:187184) ($L_s$). Since freezing releases extra heat, $L_s$ is larger than $L_v$. This means that the standard, liquid-water-based MSE and $\theta_e$ are not conserved during ice formation! There is a net source of energy and entropy in cirrus clouds that our simple formulas don't capture, a detail of critical importance for modeling the high-altitude climate system. 
+Second, what about ice? Our standard definitions of MSE and $\theta_e$ use the [latent heat of vaporization](@keyword=latent_heat_of_vaporization|lang=en-US|style=Feynman) ($L_v$). But in the cold upper troposphere, water vapor often deposits directly to ice, releasing the [latent heat of sublimation](@keyword=latent_heat_of_sublimation|lang=en-US|style=Feynman) ($L_s$). Since freezing releases extra heat, $L_s$ is larger than $L_v$. This means that the standard, liquid-water-based MSE and $\theta_e$ are not conserved during ice formation! There is a net source of energy and entropy in cirrus clouds that our simple formulas don't capture, a detail of critical importance for modeling the high-altitude climate system. [@problem_id:4040106]
 
-Finally, a very subtle but profound point arises when we try to compare $\theta_e$ values between different climate models. The total moist entropy is a sum of the entropies of dry air and the different phases of water. The absolute value of entropy for each component depends on an arbitrary reference state. If two models use different reference conventions, their calculated values of $\theta_e$ will not be directly comparable, creating spurious biases. For true, unambiguous comparison, a universal standard, anchored by the Third Law of Thermodynamics, is required. 
+Finally, a very subtle but profound point arises when we try to compare $\theta_e$ values between different climate models. The total moist entropy is a sum of the entropies of dry air and the different phases of water. The absolute value of entropy for each component depends on an arbitrary reference state. If two models use different reference conventions, their calculated values of $\theta_e$ will not be directly comparable, creating spurious biases. For true, unambiguous comparison, a universal standard, anchored by the Third Law of Thermodynamics, is required. [@problem_id:4040076]
 
 ### From Abstract Principle to the Engine of the Tropics
 
@@ -116,6 +116,6 @@ These concepts might seem abstract, but they are the key to understanding the la
 
 What holds it in balance? The answer lies in the budget of moist static energy. To counteract the radiative cooling, the atmosphere must have a source of heat. This source is provided by large-scale, gentle sinking motion, or **subsidence**. As air sinks, it is compressed and warms. This "subsidence warming" must, on average, exactly balance the radiative cooling to maintain the stable climate we observe.
 
-The relationship is expressed with beautiful simplicity through the MSE budget. In a steady state, the heating from subsidence (which brings down air with lower MSE) must balance the diabatic cooling from radiation. This balance, known as **Convective Quasi-Equilibrium (CQE)**, allows us to calculate the required subsidence rate based on the [radiative cooling](@entry_id:754014) rate and the vertical gradient of MSE. For a typical tropical cooling of $-1.5 \, \mathrm{K/day}$, the atmosphere must maintain a gentle, almost imperceptible subsidence of a few millimeters per second over vast areas. 
+The relationship is expressed with beautiful simplicity through the MSE budget. In a steady state, the heating from subsidence (which brings down air with lower MSE) must balance the diabatic cooling from radiation. This balance, known as **Convective Quasi-Equilibrium (CQE)**, allows us to calculate the required subsidence rate based on the [radiative cooling](@keyword=radiative_cooling|lang=en-US|style=Feynman) rate and the vertical gradient of MSE. For a typical tropical cooling of $-1.5 \, \mathrm{K/day}$, the atmosphere must maintain a gentle, almost imperceptible subsidence of a few millimeters per second over vast areas. [@problem_id:4040145]
 
 This is the grand picture: deep, narrow convective storms act as elevators, rapidly lifting high-MSE air from the warm, moist surface. This is balanced by slow, broad-scale subsidence of low-MSE air from above. The abstract principle of a conserved quantity thus orchestrates the entire heat engine of the tropics, governing the global circulation that shapes our world's climate. The simple search for a "tag" for an air parcel has led us to the very heart of the planet's climate machine.

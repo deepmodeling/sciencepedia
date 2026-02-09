@@ -10,61 +10,61 @@
 
 #### 高速飞行之艺术
 
-当你凝视一架超音速飞机时，你看到的是[空气动力学](@article_id:323955)工程的杰作。但在物理学家眼中，那是一场精心编排的、由[激波](@article_id:302844)（一种强大的不连续面）主导的舞蹈。飞机周围的空气中充满了各种[激波](@article_id:302844)，它们从机头、机翼和尾翼上产生。然而，真正决定飞机性能、甚至生死存亡的，往往是当一道[激波](@article_id:302844)与另一个不连续面——附着在机体表面的薄薄的“[边界层](@article_id:299864)”——相遇时发生的事情。
+当你凝视一架超音速飞机时，你看到的是[空气动力学](@keyword=aerodynamics|lang=zh-CN|style=Feynman)工程的杰作。但在物理学家眼中，那是一场精心编排的、由[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)（一种强大的不连续面）主导的舞蹈。飞机周围的空气中充满了各种[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)，它们从机头、机翼和尾翼上产生。然而，真正决定飞机性能、甚至生死存亡的，往往是当一道[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)与另一个不连续面——附着在机体表面的薄薄的“[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)”——相遇时发生的事情。
 
-[边界层](@article_id:299864)本身就是速度的不连续区域，从紧贴机体表面的静止空气到远处的超音速主流。当一道[斜激波](@article_id:324207)撞击这个[边界层](@article_id:299864)时，就发生了一场“不连续面与不连续面的交锋”。[激波](@article_id:302844)带来的剧烈压力上升会“[逆流](@article_id:317161)而上”，使[边界层](@article_id:299864)内的流动减速、增厚，甚至从机体表面分离。这种“[激波](@article_id:302844)/[边界层](@article_id:299864)相互作用”是一个极其复杂的现象，它会产生剧烈的局部加热和不稳定的压力波动，这是设计高超音速飞行器时必须克服的核心挑战。正如精妙的“[三层理论](@article_id:383161)”所揭示的，这个相互作用区域的长度 $L_{int}$ 与雷诺数 $Re_{x_0}$ 之间存在着一个奇特的[标度律](@article_id:300393)，$L_{int} \propto Re_{x_0}^{-3/8}$，这个非整数的幂律正暗示了其背后隐藏的深刻而复杂的多尺度物理。
+[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)本身就是速度的不连续区域，从紧贴机体表面的静止空气到远处的超音速主流。当一道[斜激波](@keyword=oblique_shock_waves|lang=zh-CN|style=Feynman)撞击这个[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)时，就发生了一场“不连续面与不连续面的交锋”[@problem_id:544560]。[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)带来的剧烈压力上升会“[逆流](@keyword=counterflow|lang=zh-CN|style=Feynman)而上”，使[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)内的流动减速、增厚，甚至从机体表面分离。这种“[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)/[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)相互作用”是一个极其复杂的现象，它会产生剧烈的局部加热和不稳定的压力波动，这是设计高超音速飞行器时必须克服的核心挑战。正如精妙的“[三层理论](@keyword=triple_deck_theory|lang=zh-CN|style=Feynman)”所揭示的，这个相互作用区域的长度 $L_{int}$ 与雷诺数 $Re_{x_0}$ 之间存在着一个奇特的[标度律](@keyword=scaling_laws|lang=zh-CN|style=Feynman)，$L_{int} \propto Re_{x_0}^{-3/8}$，这个非整数的幂律正暗示了其背后隐藏的深刻而复杂的多尺度物理[@problem_id:544560]。
 
 #### 能量的释放与控制：从火焰到爆炸
 
-现在，让我们把目光从冰冷的超音速气流转向炽热的燃烧与爆炸。火焰本身可以被看作一个不连续面，它分隔了未燃的气体和燃烧后的产物。当一道[激波](@article_id:302844)——比如来自发动机内部的压力波——撞上这团火焰时，会发生什么？。[激波](@article_id:302844)会被透射和反射，其强度会根据两种介质（未燃和已燃气体）的“[声阻抗](@article_id:330935)”而改变。[声阻抗](@article_id:330935) $Z = \rho a$ 是介质密度 $\rho$ 与声速 $a$ 的乘积，它衡量了介质对压力波的抵抗能力。这个看似简单的概念，却是理解[超燃冲压发动机](@article_id:333195)内部[激波](@article_id:302844)与火焰复杂相互作用、以及防止工业管道中火焰意外加速的关键。
+现在，让我们把目光从冰冷的超音速气流转向炽热的燃烧与爆炸。火焰本身可以被看作一个不连续面，它分隔了未燃的气体和燃烧后的产物。当一道[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)——比如来自发动机内部的压力波——撞上这团火焰时，会发生什么？[@problem_id:544542]。[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)会被透射和反射，其强度会根据两种介质（未燃和已燃气体）的“[声阻抗](@keyword=acoustic_impedance|lang=zh-CN|style=Feynman)”而改变。[声阻抗](@keyword=acoustic_impedance|lang=zh-CN|style=Feynman) $Z = \rho a$ 是介质密度 $\rho$ 与声速 $a$ 的乘积，它衡量了介质对压力波的抵抗能力。这个看似简单的概念，却是理解[超燃冲压发动机](@keyword=scramjet|lang=zh-CN|style=Feynman)内部[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)与火焰复杂相互作用、以及防止工业管道中火焰意外加速的关键。
 
-更进一步，我们可以考虑一个更剧烈的现象：[爆轰](@article_id:361998)。[爆轰波](@article_id:364648)是一种由[化学反应](@article_id:307389)支撑的超音速[燃烧波](@article_id:376781)，它同样是一个不连续面。如果这样一道强大的[爆轰波](@article_id:364648)撞击到另一种惰性气体的界面上，它会继续传播，还是会被“[淬灭](@article_id:314988)”？答案再次取决于两种材料的属性。存在一个临界的初始[声阻抗](@article_id:330935)比值，如果[惰性气体](@article_id:302024)的[声阻抗](@article_id:330935)足够高，它就能够产生一道足够强的反射[稀疏波](@article_id:347679)，从而削弱并熄灭来袭的[爆轰](@article_id:361998)反应。这一原理直接应用于爆炸安全领域，例如设计“[爆轰](@article_id:361998)遏制器”，通过巧妙地选择材料界面来阻止灾难性的爆炸[链式反应](@article_id:317097)。
+更进一步，我们可以考虑一个更剧烈的现象：[爆轰](@keyword=detonation|lang=zh-CN|style=Feynman)。[爆轰波](@keyword=detonation_wave|lang=zh-CN|style=Feynman)是一种由[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)支撑的超音速[燃烧波](@keyword=combustion_wave|lang=zh-CN|style=Feynman)，它同样是一个不连续面。如果这样一道强大的[爆轰波](@keyword=detonation_wave|lang=zh-CN|style=Feynman)撞击到另一种惰性气体的界面上，它会继续传播，还是会被“[淬灭](@keyword=quenching|lang=zh-CN|style=Feynman)”？答案再次取决于两种材料的属性[@problem_id:544598]。存在一个临界的初始[声阻抗](@keyword=acoustic_impedance|lang=zh-CN|style=Feynman)比值，如果[惰性气体](@keyword=noble_gases|lang=zh-CN|style=Feynman)的[声阻抗](@keyword=acoustic_impedance|lang=zh-CN|style=Feynman)足够高，它就能够产生一道足够强的反射[稀疏波](@keyword=rarefaction_waves|lang=zh-CN|style=Feynman)，从而削弱并熄灭来袭的[爆轰](@keyword=detonation|lang=zh-CN|style=Feynman)反应。这一原理直接应用于爆炸安全领域，例如设计“[爆轰](@keyword=detonation|lang=zh-CN|style=Feynman)遏制器”，通过巧妙地选择材料界面来阻止灾难性的爆炸[链式反应](@keyword=self_sustaining_reaction|lang=zh-CN|style=Feynman)。
 
-#### [复杂介质](@article_id:343483)中的协奏曲
+#### [复杂介质](@keyword=complex_medium|lang=zh-CN|style=Feynman)中的协奏曲
 
-世界并非总是由单一、纯净的物质构成。想象一下，当一道[激波](@article_id:302844)穿过充满尘埃的空气（如火山喷发或沙尘暴），或者充满微小气泡的液体时，会发生什么？这便是[多相流](@article_id:306900)中的不连续面交汇问题。
+世界并非总是由单一、纯净的物质构成。想象一下，当一道[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)穿过充满尘埃的空气（如火山喷发或沙尘暴），或者充满微小气泡的液体时，会发生什么？这便是[多相流](@keyword=multiphase_flow|lang=zh-CN|style=Feynman)中的不连续面交汇问题。
 
-以“[含尘气体](@article_id:375779)”为例，当[激波](@article_id:302844)穿过时，气体作为连续介质几乎是瞬间被压缩和减速。然而，密度大得多的尘埃颗粒由于其惯性，不能瞬间响应，它们会保持原有的高速继续前进，然后才在气体阻力的作用下慢慢减速。这就在[激波](@article_id:302844)的后方形成了一个“动量弛豫区”。在这个区域里，气体和颗粒这两种组分的速度是不连续的，它们通过[斯托克斯阻力](@article_id:323346)等相互作用，最终趋于新的平衡。理解这个弛豫区的结构和尺度，对于预测火山灰的扩散范围、评估粉尘爆炸的风险，以及设计工业喷涂和气力输送系统都至关重要。
+以“[含尘气体](@keyword=dusty_gas|lang=zh-CN|style=Feynman)”为例，当[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)穿过时，气体作为连续介质几乎是瞬间被压缩和减速。然而，密度大得多的尘埃颗粒由于其惯性，不能瞬间响应，它们会保持原有的高速继续前进，然后才在气体阻力的作用下慢慢减速。这就在[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)的后方形成了一个“动量弛豫区”[@problem_id:544607]。在这个区域里，气体和颗粒这两种组分的速度是不连续的，它们通过[斯托克斯阻力](@keyword=stokes_drag|lang=zh-CN|style=Feynman)等相互作用，最终趋于新的平衡。理解这个弛豫区的结构和尺度，对于预测火山灰的扩散范围、评估粉尘爆炸的风险，以及设计工业喷涂和气力输送系统都至关重要。
 
 ### 第二部分：从铸锻到断裂：固体中的不连续性
 
 你可能会认为，不连续面是流体的专利。然而，这个概念的触角延伸得更远，深入到了固态物质的核心。当我们拉伸、压缩或扭曲一块固体时，其内部同样会上演不连续面的生成与交汇。
 
-#### 固体中的“[激波](@article_id:302844)”：[剪切带](@article_id:362660)与裂纹
+#### 固体中的“[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)”：[剪切带](@keyword=shear_bands|lang=zh-CN|style=Feynman)与裂纹
 
-在固体力学中，我们同样区分两种基本的不连续性。当一块金属或一堆沙土在极端载荷下屈服时，变形往往会集中在一些被称为“剪切带”的狭窄区域内。在[剪切带](@article_id:362660)上，材料的位移是连续的，但位移的梯度（也就是应变）却发生了跳跃。这被称为“弱[不连续性](@article_id:304538)”，它与[流体动力学](@article_id:319275)中的普通[激波](@article_id:302844)在数学上是完全对应的，都遵循着著名的阿达马(Hadamard)[相容性条件](@article_id:379809)。
+在固体力学中，我们同样区分两种基本的不连续性。当一块金属或一堆沙土在极端载荷下屈服时，变形往往会集中在一些被称为“剪切带”的狭窄区域内。在[剪切带](@keyword=shear_bands|lang=zh-CN|style=Feynman)上，材料的位移是连续的，但位移的梯度（也就是应变）却发生了跳跃。这被称为“弱[不连续性](@keyword=discontinuity|lang=zh-CN|style=Feynman)”，它与[流体动力学](@keyword=hydrodynamics|lang=zh-CN|style=Feynman)中的普通[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)在数学上是完全对应的，都遵循着著名的阿达马(Hadamard)[相容性条件](@keyword=compatibility_conditions|lang=zh-CN|style=Feynman)[@problem_id:2593490]。
 
-而当材料最终断裂时，我们就见证了“强不连续性”的诞生——一条裂纹。裂纹是一个真正的物质分离面，位移场本身在这里发生了跳跃。材料的一边相对于另一边有了实在的张开或错动 。因此，裂纹就是一个位移的强不连续面。从流体[激波](@article_id:302844)到固体断裂，我们看到了同一个数学框架在不同物理背景下的惊人统一。
+而当材料最终断裂时，我们就见证了“强不连续性”的诞生——一条裂纹。裂纹是一个真正的物质分离面，位移场本身在这里发生了跳跃。材料的一边相对于另一边有了实在的张开或错动[@problem_id:2593490] [@problem_id:2536599]。因此，裂纹就是一个位移的强不连续面。从流体[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)到固体断裂，我们看到了同一个数学框架在不同物理背景下的惊人统一。
 
-#### 抽象空间中的交汇：材料[本构模型](@article_id:353764)
+#### 抽象空间中的交汇：材料[本构模型](@keyword=constitutive_models|lang=zh-CN|style=Feynman)
 
-不连续面的交汇甚至可以发生在抽象的数学空间中。为了描述复杂材料（如土壤、岩石或混凝土）的行为，工程师们会在“应力空间”（一个由[主应力](@article_id:323442) $\sigma_1, \sigma_2, \sigma_3$ 张成的三维空间）中定义一个“[屈服面](@article_id:354351)”。这个面是一个边界，标志着材料从弹性变形到[塑性流动](@article_id:380043)的转变。
+不连续面的交汇甚至可以发生在抽象的数学空间中。为了描述复杂材料（如土壤、岩石或混凝土）的行为，工程师们会在“应力空间”（一个由[主应力](@keyword=principal_stresses|lang=zh-CN|style=Feynman) $\sigma_1, \sigma_2, \sigma_3$ 张成的三维空间）中定义一个“[屈服面](@keyword=yield_surface|lang=zh-CN|style=Feynman)”。这个面是一个边界，标志着材料从弹性变形到[塑性流动](@keyword=plastic_flow|lang=zh-CN|style=Feynman)的转变。
 
-对于许多地质材料，单一的[屈服面](@article_id:354351)不足以描述其复杂的行为。例如，它们在剪切作用下会破坏，但在高静水压力下又会压实。因此，模型中常常包含两个或多个相交的[曲面](@article_id:331153)：一个代表剪切破坏的“破坏面”，和一个代表压实硬化的“硬化帽”。材料的实际状态由这两个面的外包络线决定。为了保证模型的数学稳定性和物理真实性，这两个[曲面](@article_id:331153)在它们的交线处必须“光滑连接”。这意味着，在交线上的每一点，两个[曲面的法向量](@article_id:338545)（由各自函数的梯度给出）必须共线。这个纯粹的几何条件，确保了材料从一种破坏模式到另一种模式的平滑过渡，是构建现代岩[土力学](@article_id:359676)和[材料科学](@article_id:312640)[本构模型](@article_id:353764)的基石。
+对于许多地质材料，单一的[屈服面](@keyword=yield_surface|lang=zh-CN|style=Feynman)不足以描述其复杂的行为。例如，它们在剪切作用下会破坏，但在高静水压力下又会压实。因此，模型中常常包含两个或多个相交的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)：一个代表剪切破坏的“破坏面”，和一个代表压实硬化的“硬化帽”。材料的实际状态由这两个面的外包络线决定[@problem_id:2888799]。为了保证模型的数学稳定性和物理真实性，这两个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)在它们的交线处必须“光滑连接”。这意味着，在交线上的每一点，两个[曲面的法向量](@keyword=normal_vector_to_a_surface|lang=zh-CN|style=Feynman)（由各自函数的梯度给出）必须共线。这个纯粹的几何条件，确保了材料从一种破坏模式到另一种模式的平滑过渡，是构建现代岩[土力学](@keyword=soil_mechanics|lang=zh-CN|style=Feynman)和[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)[本构模型](@keyword=constitutive_models|lang=zh-CN|style=Feynman)的基石[@problem_id:2888799]。
 
 ### 第三部分：科学前沿的奇异交汇
 
-现在，让我们把视野投向更广阔、更奇异的领域。在天体物理的高能宇宙和[量子化学](@article_id:300637)的微观世界中，不连续面的交汇展现出更加深刻和出人意料的面貌。
+现在，让我们把视野投向更广阔、更奇异的领域。在天体物理的高能宇宙和[量子化学](@keyword=quantum_chemistry|lang=zh-CN|style=Feynman)的微观世界中，不连续面的交汇展现出更加深刻和出人意料的面貌。
 
 #### 宇宙织网与磁流体之舞
 
-在浩瀚的宇宙中，[激波](@article_id:302844)无处不在。超[新星爆发](@article_id:320454)、[星系碰撞](@article_id:319018)、[恒星风](@article_id:321790)……这些都驱动着巨大的[激波](@article_id:302844)扫过星际介质。当这些[激波](@article_id:302844)极其强大时，会产生一些地球上难以想象的现象。
+在浩瀚的宇宙中，[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)无处不在。超[新星爆发](@keyword=nova_explosion|lang=zh-CN|style=Feynman)、[星系碰撞](@keyword=galaxy_collisions|lang=zh-CN|style=Feynman)、[恒星风](@keyword=stellar_winds|lang=zh-CN|style=Feynman)……这些都驱动着巨大的[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)扫过星际介质。当这些[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)极其强大时，会产生一些地球上难以想象的现象。
 
-例如，当两道极强的[激波](@article_id:302844)在气体中迎头相撞时，中心区域的温度会高到难以置信的程度，以至于辐射（[光子](@article_id:305617)）本身的压力和能量占据了主导地位。此时，[光子气体](@article_id:304415)就像一种新的流体成分，整个气-光混合物的行为可以用一个等效的[绝热指数](@article_id:302241) $\Gamma_{eff} = 4/3$ 来描述。在这种极端情况下，一个简化的[气体动力学](@article_id:308106)模型预言了一个惊人的结果：穿过其中一道[激波](@article_id:302844)后，气体的密度可以达到其初始密度的7倍之多！这是理解高能量密度物理实验和[超新星遗迹](@article_id:331609)演化的重要一步。
+例如，当两道极强的[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)在气体中迎头相撞时，中心区域的温度会高到难以置信的程度，以至于辐射（[光子](@keyword=photon|lang=zh-CN|style=Feynman)）本身的压力和能量占据了主导地位。此时，[光子气体](@keyword=photon_gas|lang=zh-CN|style=Feynman)就像一种新的流体成分，整个气-光混合物的行为可以用一个等效的[绝热指数](@keyword=adiabatic_index|lang=zh-CN|style=Feynman) $\Gamma_{eff} = 4/3$ 来描述。在这种极端情况下，一个简化的[气体动力学](@keyword=gas_dynamics|lang=zh-CN|style=Feynman)模型预言了一个惊人的结果：穿过其中一道[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)后，气体的密度可以达到其初始密度的7倍之多[@problem_id:544600]！这是理解高能量密度物理实验和[超新星遗迹](@keyword=supernova_remnants|lang=zh-CN|style=Feynman)演化的重要一步。
 
-宇宙中的气体通常是等离子体，并与[磁场](@article_id:313708)交织在一起。当[激波](@article_id:302844)穿过这种磁化等离子体时，我们就进入了磁[流体动力学](@article_id:319275)(MHD)的领域。一道[MHD激波](@article_id:367793)不仅仅是密度和压力的不连续，它还与[磁场](@article_id:313708)发生强烈的相互作用。气体的[电阻率](@article_id:304271)，即使很小，也会起到类似粘性的作用，它会阻止[磁场](@article_id:313708)的瞬间跳变，从而将一个理想的、无限薄的[激波](@article_id:302844)“涂抹”成一个具有内部结构的、有一定厚度的“[激波层](@article_id:375946)”。[激波层](@article_id:375946)的厚度与结构，揭示了动能、热能与磁能之间复杂的转换过程，这对于研究太阳风、核聚变装置以及[天体物理喷流](@article_id:330512)至关重要。
+宇宙中的气体通常是等离子体，并与[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)交织在一起。当[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)穿过这种磁化等离子体时，我们就进入了磁[流体动力学](@keyword=hydrodynamics|lang=zh-CN|style=Feynman)(MHD)的领域。一道[MHD激波](@keyword=mhd_shocks|lang=zh-CN|style=Feynman)不仅仅是密度和压力的不连续，它还与[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)发生强烈的相互作用。气体的[电阻率](@keyword=electrical_resistivity|lang=zh-CN|style=Feynman)，即使很小，也会起到类似粘性的作用，它会阻止[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的瞬间跳变，从而将一个理想的、无限薄的[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)“涂抹”成一个具有内部结构的、有一定厚度的“[激波层](@keyword=shock_layer|lang=zh-CN|style=Feynman)”[@problem_id:544575]。[激波层](@keyword=shock_layer|lang=zh-CN|style=Feynman)的厚度与结构，揭示了动能、热能与磁能之间复杂的转换过程，这对于研究太阳风、核聚变装置以及[天体物理喷流](@keyword=astrophysical_jets|lang=zh-CN|style=Feynman)至关重要。
 
-#### 分子世界的命运岔路口：[锥形交叉](@article_id:323915)
+#### 分子世界的命运岔路口：[锥形交叉](@keyword=conical_intersections|lang=zh-CN|style=Feynman)
 
-也许最令人称奇的“[曲面](@article_id:331153)交汇”发生在[量子化学](@article_id:300637)的微观世界中。根据玻恩-奥本海默(Born-Oppenheimer)近似，分子的运动可以被描述在由其核坐标定义的“[势能面](@article_id:307856)”上。[化学反应](@article_id:307389)通常被看作是体系在**单个**[势能面](@article_id:307856)上从反应物走向产物的过程。
+也许最令人称奇的“[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)交汇”发生在[量子化学](@keyword=quantum_chemistry|lang=zh-CN|style=Feynman)的微观世界中。根据玻恩-奥本海默(Born-Oppenheimer)近似，分子的运动可以被描述在由其核坐标定义的“[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)”上。[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)通常被看作是体系在**单个**[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)上从反应物走向产物的过程。
 
-然而，在某些特定的[分子构型](@article_id:298301)下，两个电子态的[势能面](@article_id:307856)可能会接触或[交叉](@article_id:315017)。这个[交叉](@article_id:315017)点被称为“锥形交叉”(Conical Intersection)。在这一点上，[玻恩-奥本海默近似](@article_id:306672)彻底失效，因为我们再也无法将体系的行为限制在单一的[势能面](@article_id:307856)上。这个[交叉](@article_id:315017)点就像一个命运的岔路口，分子可以在不同的电子态之间“跳跃”。这种[非绝热跃迁](@article_id:354775)是许多[光化学](@article_id:301376)和光生物过程的核心，例如我们眼睛中视紫红质分子吸收[光子](@article_id:305617)后发生的异构化反应，或是光合作用中能量的快速传递。因此，[锥形交叉](@article_id:323915)这个[势能面](@article_id:307856)的交汇点，是连接量子力学与[化学反应动力学](@article_id:338148)的关键桥梁。
+然而，在某些特定的[分子构型](@keyword=molecular_geometry|lang=zh-CN|style=Feynman)下，两个电子态的[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)可能会接触或[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)。这个[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)点被称为“锥形交叉”(Conical Intersection)[@problem_id:1360811]。在这一点上，[玻恩-奥本海默近似](@keyword=born_oppenheimer_approximation|lang=zh-CN|style=Feynman)彻底失效，因为我们再也无法将体系的行为限制在单一的[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)上。这个[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)点就像一个命运的岔路口，分子可以在不同的电子态之间“跳跃”。这种[非绝热跃迁](@keyword=non_adiabatic_transitions|lang=zh-CN|style=Feynman)是许多[光化学](@keyword=photochemistry|lang=zh-CN|style=Feynman)和光生物过程的核心，例如我们眼睛中视紫红质分子吸收[光子](@keyword=photon|lang=zh-CN|style=Feynman)后发生的异构化反应，或是光合作用中能量的快速传递。因此，[锥形交叉](@keyword=conical_intersections|lang=zh-CN|style=Feynman)这个[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)的交汇点，是连接量子力学与[化学反应动力学](@keyword=chemical_reaction_kinetics|lang=zh-CN|style=Feynman)的关键桥梁。
 
 #### 几何学的创造力：从衍射到失稳
 
-最后，让我们回到[激波](@article_id:302844)本身，欣赏它们自身形成的复杂几何形态。[激波](@article_id:302844)并非总是简单的平面。当一道平面[激波](@article_id:302844)绕过一个尖锐的拐角时，它会发生衍射，其波阵面会弯曲成一种由自相似性决定的特定形状，在拐角附近，其压力形式可以用一个优美的分数幂律 $(r/t)^{2/3}$ 来描述。
+最后，让我们回到[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)本身，欣赏它们自身形成的复杂几何形态。[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)并非总是简单的平面。当一道平面[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)绕过一个尖锐的拐角时，它会发生衍射，其波阵面会弯曲成一种由自相似性决定的特定形状，在拐角附近，其压力形式可以用一个优美的分数幂律 $(r/t)^{2/3}$ 来描述[@problem_id:544583]。
 
-更有趣的是，[激波](@article_id:302844)在某些情况下是不稳定的。例如，一道向中心汇聚的柱面[激波](@article_id:302844)，在传播过程中可能会因为微小的扰动而失稳，形成一个尖锐的“[尖点](@article_id:641085)”。从这个[尖点](@article_id:641085)处，会生长出一个新的、垂直于传播方向的[激波](@article_id:302844)，称为“[马赫杆](@article_id:328731)”(Mach Stem)，整个系统演变成一个包含三道[激波](@article_id:302844)交汇于一点的“三波点”结构。这个[马赫杆](@article_id:328731)的生长规律同样遵循着一个奇特的幂律，其指数蕴含着激[波动力学](@article_id:345574)深层的非线性物理。这种从简单初始条件中自发涌现出复杂结构的过程，是物理学中最迷人的主题之一，它在从声学聚焦（如医学上的[碎石术](@article_id:339457)）到[惯性约束聚变](@article_id:323795)等领域都有着深刻的应用。
+更有趣的是，[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)在某些情况下是不稳定的。例如，一道向中心汇聚的柱面[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)，在传播过程中可能会因为微小的扰动而失稳，形成一个尖锐的“[尖点](@keyword=cusps|lang=zh-CN|style=Feynman)”。从这个[尖点](@keyword=cusps|lang=zh-CN|style=Feynman)处，会生长出一个新的、垂直于传播方向的[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)，称为“[马赫杆](@keyword=mach_stem|lang=zh-CN|style=Feynman)”(Mach Stem)，整个系统演变成一个包含三道[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)交汇于一点的“三波点”结构[@problem_id:544528]。这个[马赫杆](@keyword=mach_stem|lang=zh-CN|style=Feynman)的生长规律同样遵循着一个奇特的幂律，其指数蕴含着激[波动力学](@keyword=wave_mechanics|lang=zh-CN|style=Feynman)深层的非线性物理。这种从简单初始条件中自发涌现出复杂结构的过程，是物理学中最迷人的主题之一，它在从声学聚焦（如医学上的[碎石术](@keyword=lithotripsy|lang=zh-CN|style=Feynman)）到[惯性约束聚变](@keyword=inertial_confinement_fusion|lang=zh-CN|style=Feynman)等领域都有着深刻的应用。
 
 ### 结语
 

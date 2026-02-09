@@ -5,35 +5,35 @@ This exploration is structured across three key chapters. First, we will delve i
 
 ## Principles and Mechanisms
 
-This chapter delves into the fundamental principles and mechanisms that underpin [reservoir computing](@entry_id:1130887) systems. We will deconstruct the architecture of these models, analyze the dynamical properties that make them effective for temporal processing, and explore the theoretical foundations that guarantee their computational power.
+This chapter delves into the fundamental principles and mechanisms that underpin reservoir computing systems. We will deconstruct the architecture of these models, analyze the dynamical properties that make them effective for temporal processing, and explore the theoretical foundations that guarantee their computational power.
 
 ### The Core Architecture of Reservoir Computing
 
-At its heart, [reservoir computing](@entry_id:1130887) is built upon a powerful principle: the **separation of concerns** for nonlinear temporal transformation and linear classification or regression. This architectural paradigm decomposes the complex problem of learning on time series into three distinct, manageable components .
+At its heart, reservoir computing is built upon a powerful principle: the **separation of concerns** for nonlinear temporal transformation and linear classification or regression. This architectural paradigm decomposes the complex problem of learning on time series into three distinct, manageable components [@problem_id:4015928].
 
 1.  **An Input Layer**: This component serves as an interface to the external world, encoding the raw input time series, $u(t)$, into a format suitable for driving the reservoir. This mapping is typically a fixed, often linear, transformation.
 
-2.  **A Fixed Recurrent Dynamical System (The Reservoir)**: This is the computational core of the system. The reservoir is a high-dimensional network of interconnected nonlinear units, such as a [recurrent neural network](@entry_id:634803). Its crucial characteristic is that its internal parameters—the connection weights—are **not trained** for a specific task. They are typically initialized randomly and then remain fixed throughout the learning process. When driven by an input signal, this fixed network generates complex, high-dimensional transient state trajectories, $x(t)$. The reservoir acts as a rich, dynamic "kernel," projecting the history of the input signal into a high-dimensional feature space.
+2.  **A Fixed Recurrent Dynamical System (The Reservoir)**: This is the computational core of the system. The reservoir is a high-dimensional network of interconnected nonlinear units, such as a recurrent neural network. Its crucial characteristic is that its internal parameters—the connection weights—are **not trained** for a specific task. They are typically initialized randomly and then remain fixed throughout the learning process. When driven by an input signal, this fixed network generates complex, high-dimensional transient state trajectories, $x(t)$. The reservoir acts as a rich, dynamic "kernel," projecting the history of the input signal into a high-dimensional feature space.
 
 3.  **A Trainable Readout Layer**: This component is a (typically) simple, memoryless function that is trained to map the instantaneous reservoir state, $x(t)$, to the desired output, $y(t)$. The readout parameters, $W_{\mathrm{out}}$, are the only part of the system adapted during supervised learning.
 
-This division of labor stands in stark contrast to conventional Recurrent Neural Networks (RNNs), where input, recurrent, and output connection weights are all trained jointly, often using computationally intensive algorithms like Backpropagation Through Time (BPTT). In [reservoir computing](@entry_id:1130887), the difficult task of training a recurrent network is bypassed entirely. By keeping the reservoir fixed, the problem of learning is reduced to training the readout layer. If the readout is a linear function, this training step often becomes a simple linear or [logistic regression](@entry_id:136386) problem, which is a convex optimization problem that can be solved efficiently and reliably, without the challenges of vanishing/[exploding gradients](@entry_id:635825) or local minima that plague deep RNN training .
+This division of labor stands in stark contrast to conventional Recurrent Neural Networks (RNNs), where input, recurrent, and output connection weights are all trained jointly, often using computationally intensive algorithms like Backpropagation Through Time (BPTT). In reservoir computing, the difficult task of training a recurrent network is bypassed entirely. By keeping the reservoir fixed, the problem of learning is reduced to training the readout layer. If the readout is a linear function, this training step often becomes a simple linear or logistic regression problem, which is a convex optimization problem that can be solved efficiently and reliably, without the challenges of vanishing/exploding gradients or local minima that plague deep RNN training [@problem_id:4015928].
 
 ### Canonical Models: ESNs and LSMs
 
-The abstract framework of [reservoir computing](@entry_id:1130887) is realized through two principal models, which differ primarily in their choice of neuron model and time domain.
+The abstract framework of reservoir computing is realized through two principal models, which differ primarily in their choice of neuron model and time domain.
 
 #### The Echo State Network (ESN)
 
-The **Echo State Network (ESN)** is the archetypal rate-based, discrete-time implementation of reservoir computing. The reservoir consists of a network of artificial neurons whose activations are continuous values representing firing rates. The state of the reservoir evolves at discrete time steps according to a deterministic update rule. Because of their simplicity and the ease with which they can be simulated on digital computers, ESNs are the most widely studied form of [reservoir computing](@entry_id:1130887) .
+The **Echo State Network (ESN)** is the archetypal rate-based, discrete-time implementation of reservoir computing. The reservoir consists of a network of artificial neurons whose activations are continuous values representing firing rates. The state of the reservoir evolves at discrete time steps according to a deterministic update rule. Because of their simplicity and the ease with which they can be simulated on digital computers, ESNs are the most widely studied form of reservoir computing [@problem_id:4015591].
 
 #### The Liquid State Machine (LSM)
 
-The **Liquid State Machine (LSM)** is a more biologically inspired model that operates in continuous time and uses spiking neurons as its computational units. In an LSM, information is encoded in the precise timing of discrete events (spikes), rather than in continuous activation levels. The reservoir, often referred to as the "liquid," is a recurrently connected network of [spiking neuron models](@entry_id:1132172) (e.g., [leaky integrate-and-fire](@entry_id:261896) neurons). While both ESNs and LSMs share the core principle of a fixed reservoir and a trainable readout, the LSM framework is particularly well-suited for modeling neural computation in the brain and for implementation on specialized neuromorphic hardware .
+The **Liquid State Machine (LSM)** is a more biologically inspired model that operates in continuous time and uses spiking neurons as its computational units. In an LSM, information is encoded in the precise timing of discrete events (spikes), rather than in continuous activation levels. The reservoir, often referred to as the "liquid," is a recurrently connected network of spiking neuron models (e.g., leaky integrate-and-fire neurons). While both ESNs and LSMs share the core principle of a fixed reservoir and a trainable readout, the LSM framework is particularly well-suited for modeling neural computation in the brain and for implementation on specialized neuromorphic hardware [@problem_id:4015591].
 
 ### The Dynamics of Echo State Networks
 
-To understand the mechanisms of [reservoir computing](@entry_id:1130887), we begin with a detailed analysis of the Echo State Network.
+To understand the mechanisms of reservoir computing, we begin with a detailed analysis of the Echo State Network.
 
 #### The State Update Equation and its Components
 
@@ -47,7 +47,7 @@ Here, $u_t$ is the input at time $t$ (for simplicity, we consider a scalar input
 
 *   **The Input Weight Vector ($W_{\text{in}} \in \mathbb{R}^{N \times 1}$)**: This vector determines how the input signal $u_t$ is coupled into the reservoir neurons. It controls which neurons are driven by the input and with what strength. The magnitude of the entries in $W_{\text{in}}$ influences how strongly the reservoir's dynamics are shaped by the input versus its own internal activity.
 
-*   **The Bias Vector ($b \in \mathbb{R}^{N}$)**: This vector provides a constant activation offset to each neuron, shifting its operating point. The bias helps to break symmetry and can push neurons into more nonlinear operational regimes, thereby enriching the dynamics the reservoir can produce .
+*   **The Bias Vector ($b \in \mathbb{R}^{N}$)**: This vector provides a constant activation offset to each neuron, shifting its operating point. The bias helps to break symmetry and can push neurons into more nonlinear operational regimes, thereby enriching the dynamics the reservoir can produce [@problem_id:4050165].
 
 The output of the ESN is then computed via a simple readout, which is often linear:
 $$
@@ -57,7 +57,7 @@ where $\mathbf{w} \in \mathbb{R}^{N}$ is the vector of trainable readout weights
 
 #### A Concrete Example of State Evolution
 
-Let us consider a simple ESN with $N=3$ neurons. Suppose the reservoir is defined by the following parameters :
+Let us consider a simple ESN with $N=3$ neurons. Suppose the reservoir is defined by the following parameters [@problem_id:4050165]:
 $$
 W = \begin{pmatrix} 0.5  0  0 \\ 0  0.5  0 \\ 0  0  0 \end{pmatrix}, \quad W_{\text{in}} = \begin{pmatrix} 1 \\ -1.5 \\ 0 \end{pmatrix}, \quad b = \begin{pmatrix} 0 \\ -0.05 \\ 0 \end{pmatrix}.
 $$
@@ -72,13 +72,13 @@ The new state is then $\mathbf{x}_1 = \tanh(\mathbf{a}_1) = \begin{pmatrix} \tan
 
 #### The Role of Nonlinear Activation Functions
 
-The choice of the nonlinear [activation function](@entry_id:637841) $\phi$ is critical. A linear reservoir ($\phi(z)=z$) could only act as a linear filter, severely limiting its computational power. The nonlinearity is what allows the reservoir to generate a rich set of features from the input. Common choices include:
+The choice of the nonlinear activation function $\phi$ is critical. A linear reservoir ($\phi(z)=z$) could only act as a linear filter, severely limiting its computational power. The nonlinearity is what allows the reservoir to generate a rich set of features from the input. Common choices include:
 
-*   **Hyperbolic Tangent ($\tanh(z)$)**: This is a classic choice. As a saturating, [odd function](@entry_id:175940) ($\tanh(-z) = -\tanh(z)$), it has specific implications for dynamics. When driven by a zero-mean sinusoidal input, an odd nonlinearity produces an output containing only odd harmonics of the input frequency, with no DC offset. This property of preserving certain symmetries can be beneficial for some tasks .
+*   **Hyperbolic Tangent ($\tanh(z)$)**: This is a classic choice. As a saturating, odd function ($\tanh(-z) = -\tanh(z)$), it has specific implications for dynamics. When driven by a zero-mean sinusoidal input, an odd nonlinearity produces an output containing only odd harmonics of the input frequency, with no DC offset. This property of preserving certain symmetries can be beneficial for some tasks [@problem_id:4050170].
 
-*   **Rectified Linear Unit ($\mathrm{ReLU}(z) = \max(0,z)$)**: This function is not an [odd function](@entry_id:175940). When driven by a zero-mean sinusoid, it acts as a half-wave rectifier, producing a non-zero DC component and both even and odd harmonics. This harmonic generation, while a form of distortion, is a key part of the nonlinear feature generation process.
+*   **Rectified Linear Unit ($\mathrm{ReLU}(z) = \max(0,z)$)**: This function is not an odd function. When driven by a zero-mean sinusoid, it acts as a half-wave rectifier, producing a non-zero DC component and both even and odd harmonics. This harmonic generation, while a form of distortion, is a key part of the nonlinear feature generation process.
 
-The derivative of the activation function, $\phi'(z)$, also plays a crucial role in the [local stability](@entry_id:751408) of the dynamics, as we will see later. For $\tanh(z)$, the derivative is $\phi'(z) = 1 - \tanh^2(z)$, which smoothly ranges from $1$ (in the [linear region](@entry_id:1127283) around $z=0$) to $0$ (in the saturated regions). For $\mathrm{ReLU}(z)$, the derivative is either $0$ or $1$, leading to a more abrupt change in local dynamics .
+The derivative of the activation function, $\phi'(z)$, also plays a crucial role in the local stability of the dynamics, as we will see later. For $\tanh(z)$, the derivative is $\phi'(z) = 1 - \tanh^2(z)$, which smoothly ranges from $1$ (in the linear region around $z=0$) to $0$ (in the saturated regions). For $\mathrm{ReLU}(z)$, the derivative is either $0$ or $1$, leading to a more abrupt change in local dynamics [@problem_id:4050170].
 
 #### The Leaky Integrator: Incorporating Memory Timescales
 
@@ -91,7 +91,7 @@ The parameter $\alpha \in (0, 1]$ is the **leak rate**. This equation represents
 *   When $\alpha=1$, we recover the non-leaky ESN.
 *   As $\alpha$ approaches $0$, the previous state $\mathbf{x}_t$ is given more weight. This means the state changes more slowly, effectively increasing the memory capacity of the reservoir. The state "leaks" away more slowly.
 
-The leak rate is related to the neuron time constant $\tau$ and the simulation time step $\Delta t$ by $\alpha = \Delta t / \tau$. A small leak rate corresponds to a long intrinsic time constant. The characteristic memory horizon of the reservoir, in the absence of input, scales roughly as $1/\alpha$. This gives the practitioner direct control over the effective timescale of the reservoir's memory, a crucial parameter for adapting the model to the temporal characteristics of the task at hand .
+The leak rate is related to the neuron time constant $\tau$ and the simulation time step $\Delta t$ by $\alpha = \Delta t / \tau$. A small leak rate corresponds to a long intrinsic time constant. The characteristic memory horizon of the reservoir, in the absence of input, scales roughly as $1/\alpha$. This gives the practitioner direct control over the effective timescale of the reservoir's memory, a crucial parameter for adapting the model to the temporal characteristics of the task at hand [@problem_id:4050161].
 
 ### The Echo State Property: A Principle of Dynamic Consistency
 
@@ -103,27 +103,27 @@ The ESP asserts that for any given bounded input sequence, the influence of the 
 $$
 \lim_{t \to \infty} \|\mathbf{x}_t - \mathbf{x}'_t\| = 0
 $$
-When the ESP holds, the reservoir's state becomes a unique function of the input's history, effectively acting as a consistent, [causal filter](@entry_id:1122143). This ensures that the readout layer receives a stable representation on which to base its output, regardless of how the reservoir was initialized .
+When the ESP holds, the reservoir's state becomes a unique function of the input's history, effectively acting as a consistent, causal filter. This ensures that the readout layer receives a stable representation on which to base its output, regardless of how the reservoir was initialized [@problem_id:4015956].
 
 #### Conditions for Stability: Contraction Mappings and Spectral Properties
 
-A [sufficient condition](@entry_id:276242) for the ESP is that the state update map is a **contraction mapping**. For the ESN update rule, this means that the distance between any two state vectors decreases after one update step. Let $\phi$ be a function with a global Lipschitz constant $L_\phi$ (meaning $|\phi(a) - \phi(b)| \le L_\phi|a-b|$ for all $a,b$). A [sufficient condition](@entry_id:276242) for the state map to be a contraction is:
+A sufficient condition for the ESP is that the state update map is a **contraction mapping**. For the ESN update rule, this means that the distance between any two state vectors decreases after one update step. Let $\phi$ be a function with a global Lipschitz constant $L_\phi$ (meaning $|\phi(a) - \phi(b)| \le L_\phi|a-b|$ for all $a,b$). A sufficient condition for the state map to be a contraction is:
 $$
 L_\phi \|W\|_2  1
 $$
-where $\|W\|_2$ is the [spectral norm](@entry_id:143091) (largest [singular value](@entry_id:171660)) of the recurrent weight matrix $W$. For the $\tanh$ [activation function](@entry_id:637841), $L_\phi=1$, so the condition simplifies to $\|W\|_2  1$ .
+where $\|W\|_2$ is the spectral norm (largest singular value) of the recurrent weight matrix $W$. For the $\tanh$ activation function, $L_\phi=1$, so the condition simplifies to $\|W\|_2  1$ [@problem_id:4050170].
 
-It is important to distinguish the **[spectral norm](@entry_id:143091)** $\|W\|_2$ from the **spectral radius** $\rho(W)$, which is the largest magnitude of the eigenvalues of $W$. While $\rho(W) \le \|W\|_2$ is always true, the reverse is not. One can have $\rho(W)  1$ while $\|W\|_2 > 1$, particularly for [non-symmetric matrices](@entry_id:153254) common in ESNs. In such cases, the system can exhibit [transient growth](@entry_id:263654) before eventual decay, and the ESP is not guaranteed by the simple contraction argument. Thus, having a spectral radius less than 1 is a necessary condition for stability in a linear system but not a [sufficient condition](@entry_id:276242) for the ESP in a general nonlinear ESN .
+It is important to distinguish the **spectral norm** $\|W\|_2$ from the **spectral radius** $\rho(W)$, which is the largest magnitude of the eigenvalues of $W$. While $\rho(W) \le \|W\|_2$ is always true, the reverse is not. One can have $\rho(W)  1$ while $\|W\|_2 > 1$, particularly for non-symmetric matrices common in ESNs. In such cases, the system can exhibit transient growth before eventual decay, and the ESP is not guaranteed by the simple contraction argument. Thus, having a spectral radius less than 1 is a necessary condition for stability in a linear system but not a sufficient condition for the ESP in a general nonlinear ESN [@problem_id:4015591].
 
-For the leaky-integrator ESN, the leak rate $\alpha$ contributes to stability. A [sufficient condition](@entry_id:276242) for the ESP in a leaky ESN with a $\tanh$ activation is :
+For the leaky-integrator ESN, the leak rate $\alpha$ contributes to stability. A sufficient condition for the ESP in a leaky ESN with a $\tanh$ activation is [@problem_id:4015591]:
 $$
 (1-\alpha) + \alpha \|W\|_2  1
 $$
-This condition reveals that a sufficiently small leak rate $\alpha$ can stabilize a reservoir even if the un-leaked reservoir would be unstable (i.e., even if $\|W\|_2 \ge 1$). For example, if $\rho(W) = 1.2$, the non-leaky reservoir is unstable near the origin. However, with a leak rate of $\alpha=0.3$, the linearized dynamics around the origin are governed by an effective spectral radius of $\rho_{\text{eff}} \approx (1-\alpha) + \alpha \rho(W) = (1-0.3) + 0.3 \times 1.2 = 1.06$. While this specific heuristic shows it is still slightly unstable, a smaller $\alpha$ could stabilize it. The general principle is that leakage provides a powerful mechanism for ensuring the ESP .
+This condition reveals that a sufficiently small leak rate $\alpha$ can stabilize a reservoir even if the un-leaked reservoir would be unstable (i.e., even if $\|W\|_2 \ge 1$). For example, if $\rho(W) = 1.2$, the non-leaky reservoir is unstable near the origin. However, with a leak rate of $\alpha=0.3$, the linearized dynamics around the origin are governed by an effective spectral radius of $\rho_{\text{eff}} \approx (1-\alpha) + \alpha \rho(W) = (1-0.3) + 0.3 \times 1.2 = 1.06$. While this specific heuristic shows it is still slightly unstable, a smaller $\alpha$ could stabilize it. The general principle is that leakage provides a powerful mechanism for ensuring the ESP [@problem_id:4050161].
 
 #### Local Stability and Lyapunov Exponents
 
-A more fine-grained view of stability can be obtained by analyzing the **Jacobian matrix** of the state update, $\mathbf{J}_t = \frac{\partial \mathbf{x}_{t+1}}{\partial \mathbf{x}_t}$. This matrix governs how infinitesimal perturbations evolve along a specific trajectory. For the ESN, this Jacobian is given by :
+A more fine-grained view of stability can be obtained by analyzing the **Jacobian matrix** of the state update, $\mathbf{J}_t = \frac{\partial \mathbf{x}_{t+1}}{\partial \mathbf{x}_t}$. This matrix governs how infinitesimal perturbations evolve along a specific trajectory. For the ESN, this Jacobian is given by [@problem_id:4050139]:
 $$
 \mathbf{J}_t = \mathrm{diag}\big(\phi'(\mathbf{W}\mathbf{x}_t + \dots)\big) \mathbf{W}
 $$
@@ -131,7 +131,7 @@ The ESP is related to the system being, on average, contractive. This can be qua
 $$
 \lambda_T = \frac{1}{T}\sum_{t=0}^{T-1}\ln\big(\|\mathbf{J}_t\|_2\big)
 $$
-A negative largest Lyapunov exponent ($\lambda  0$) indicates that the system is, on average, contracting, which is a strong indicator that the ESP holds. For a simple autonomous ESN with $\mathbf{x}_{t+1} = \tanh(\mathbf{W}\mathbf{x}_t)$ and $\mathbf{W} = \begin{pmatrix} 0.7  0 \\ 0  -0.2 \end{pmatrix}$, the trajectory starting at $\mathbf{x}_0 = \mathbf{0}$ stays at the origin. The Jacobian is constant, $\mathbf{J}_t = \mathbf{W}$, with [spectral norm](@entry_id:143091) $\|\mathbf{J}_t\|_2 = 0.7$. The Lyapunov exponent is simply $\lambda = \ln(0.7) \approx -0.3567$. The negative sign confirms the stability of the fixed point and that the ESP holds in its vicinity .
+A negative largest Lyapunov exponent ($\lambda  0$) indicates that the system is, on average, contracting, which is a strong indicator that the ESP holds. For a simple autonomous ESN with $\mathbf{x}_{t+1} = \tanh(\mathbf{W}\mathbf{x}_t)$ and $\mathbf{W} = \begin{pmatrix} 0.7  0 \\ 0  -0.2 \end{pmatrix}$, the trajectory starting at $\mathbf{x}_0 = \mathbf{0}$ stays at the origin. The Jacobian is constant, $\mathbf{J}_t = \mathbf{W}$, with spectral norm $\|\mathbf{J}_t\|_2 = 0.7$. The Lyapunov exponent is simply $\lambda = \ln(0.7) \approx -0.3567$. The negative sign confirms the stability of the fixed point and that the ESP holds in its vicinity [@problem_id:4050139].
 
 ### Practical Design of the Reservoir
 
@@ -141,23 +141,23 @@ While reservoir parameters are fixed, their initial random generation must be do
 
 A common method for constructing $W$ is to use a sparse random matrix. For example, in an **Erdős–Rényi** construction, each potential connection exists with a small probability $p$, and if it exists, its weight is drawn from a distribution, such as a Gaussian $\mathcal{N}(0, \sigma^2)$.
 
-Random [matrix theory](@entry_id:184978) provides a powerful tool for predicting the spectral properties of such matrices. For a large, sparse random matrix constructed this way, the eigenvalues are approximately distributed in a disk in the complex plane whose radius—the spectral radius—is given by :
+Random matrix theory provides a powerful tool for predicting the spectral properties of such matrices. For a large, sparse random matrix constructed this way, the eigenvalues are approximately distributed in a disk in the complex plane whose radius—the spectral radius—is given by [@problem_id:4050140]:
 $$
 \rho(W) \approx \sigma \sqrt{Np}
 $$
-This formula is invaluable. It tells us that the spectral radius grows with the square root of the reservoir size $N$ and the connection probability $p$. To achieve a desired dynamical regime, for instance one "at the [edge of stability](@entry_id:634573)" where $\rho(W) \approx 1$, we must rescale the generated matrix. If we generate a matrix $W_{\text{raw}}$ and estimate its spectral radius $\rho(W_{\text{raw}})$, we can obtain a rescaled matrix $W = \alpha W_{\text{raw}}$ with a target spectral radius $r^\star$ by choosing the scaling factor $\alpha = r^\star / \rho(W_{\text{raw}})$.
+This formula is invaluable. It tells us that the spectral radius grows with the square root of the reservoir size $N$ and the connection probability $p$. To achieve a desired dynamical regime, for instance one "at the edge of stability" where $\rho(W) \approx 1$, we must rescale the generated matrix. If we generate a matrix $W_{\text{raw}}$ and estimate its spectral radius $\rho(W_{\text{raw}})$, we can obtain a rescaled matrix $W = \alpha W_{\text{raw}}$ with a target spectral radius $r^\star$ by choosing the scaling factor $\alpha = r^\star / \rho(W_{\text{raw}})$.
 
-For example, for a reservoir of size $N=2000$ with sparsity $p=0.05$ and nonzero weight variance $\sigma^2=0.36$ ($\sigma=0.6$), the estimated spectral radius is $\rho(W) \approx 0.6 \sqrt{2000 \times 0.05} = 6.0$. To achieve a target spectral radius of $r^\star = 0.9$, we would need to rescale the matrix by a factor of $\alpha = 0.9 / 6.0 = 0.15$ .
+For example, for a reservoir of size $N=2000$ with sparsity $p=0.05$ and nonzero weight variance $\sigma^2=0.36$ ($\sigma=0.6$), the estimated spectral radius is $\rho(W) \approx 0.6 \sqrt{2000 \times 0.05} = 6.0$. To achieve a target spectral radius of $r^\star = 0.9$, we would need to rescale the matrix by a factor of $\alpha = 0.9 / 6.0 = 0.15$ [@problem_id:4050140].
 
 #### Input Scaling and its Critical Role in Dynamics
 
-The magnitude of the input, controlled by the input weights $W_{\text{in}}$ and any additional scaling factor $s$, is also critical. There is a fundamental trade-off :
+The magnitude of the input, controlled by the input weights $W_{\text{in}}$ and any additional scaling factor $s$, is also critical. There is a fundamental trade-off [@problem_id:4050220]:
 
 *   **Small Input Scaling**: If the input drive is too weak, the reservoir state will be only weakly perturbed by the input. While this helps ensure the ESP is satisfied, it diminishes the **separation property**: the ability of the reservoir to map different input histories to distinct state trajectories. If the states are not well-separated, the readout cannot distinguish them.
 
 *   **Large Input Scaling**: If the input drive is too strong, it can overwhelm the internal dynamics and push many neurons into their saturation regimes. For an activation like ReLU, a large input can activate a large fraction of the neurons, causing the local Jacobian's norm to approach the norm of the full weight matrix $W$. If $\|W\|_2 \ge 1$, this can destroy the ESP and lead to unstable or chaotic behavior.
 
-Finding the right balance for input scaling is a key aspect of [hyperparameter tuning](@entry_id:143653) in [reservoir computing](@entry_id:1130887).
+Finding the right balance for input scaling is a key aspect of hyperparameter tuning in reservoir computing.
 
 ### From Rates to Spikes: Principles of Liquid State Machines
 
@@ -165,28 +165,28 @@ While the principles of stability and dynamics discussed for ESNs have analogues
 
 #### Input Encoding for Spiking Dynamics: Rate and Latency Coding
 
-Since LSMs process spike trains, continuous input signals must be encoded into spikes. The choice of encoding scheme should match the temporal characteristics of the input signal .
+Since LSMs process spike trains, continuous input signals must be encoded into spikes. The choice of encoding scheme should match the temporal characteristics of the input signal [@problem_id:4050220].
 
-*   **Rate Coding**: For low-bandwidth signals where information is contained in slowly varying amplitudes, **[rate coding](@entry_id:148880)** is appropriate. The signal amplitude is mapped to the firing rate of an input neuron (e.g., via a Poisson process). The reservoir then integrates these spikes over its intrinsic synaptic timescale, effectively responding to the time-averaged signal amplitude.
+*   **Rate Coding**: For low-bandwidth signals where information is contained in slowly varying amplitudes, **rate coding** is appropriate. The signal amplitude is mapped to the firing rate of an input neuron (e.g., via a Poisson process). The reservoir then integrates these spikes over its intrinsic synaptic timescale, effectively responding to the time-averaged signal amplitude.
 
-*   **Latency Coding**: For high-bandwidth signals containing fast, transient events, **[latency coding](@entry_id:1127087)** is more suitable. The occurrence of a transient event is encoded by the precise timing of a single spike relative to a time window. The LSM's dynamics are well-suited to processing such precise temporal patterns, which would be smeared out by rate coding.
+*   **Latency Coding**: For high-bandwidth signals containing fast, transient events, **latency coding** is more suitable. The occurrence of a transient event is encoded by the precise timing of a single spike relative to a time window. The LSM's dynamics are well-suited to processing such precise temporal patterns, which would be smeared out by rate coding.
 
 #### The Separation Property: Distinguishing Input Histories
 
-In the context of LSMs, the notion of computational power is often framed in terms of the **separation property**. While the ESP is concerned with the [existence and uniqueness](@entry_id:263101) of a state trajectory for a *single* input, the separation property is concerned with the **distinguishability** of state trajectories for *different* inputs . It requires that distinct input signals (from a class of interest) produce reservoir states that are themselves distinct and, ideally, well-separated in the state space. This separation is what enables a simple linear readout to classify the inputs. The separation property is a statement about the [injectivity](@entry_id:147722) of the input-to-state map, whereas the ESP is a statement about its well-definedness and stability.
+In the context of LSMs, the notion of computational power is often framed in terms of the **separation property**. While the ESP is concerned with the existence and uniqueness of a state trajectory for a *single* input, the separation property is concerned with the **distinguishability** of state trajectories for *different* inputs [@problem_id:4015956]. It requires that distinct input signals (from a class of interest) produce reservoir states that are themselves distinct and, ideally, well-separated in the state space. This separation is what enables a simple linear readout to classify the inputs. The separation property is a statement about the injectivity of the input-to-state map, whereas the ESP is a statement about its well-definedness and stability.
 
 ### A Theoretical Synthesis: Reservoirs as Random Feature Maps
 
-A powerful modern perspective frames [reservoir computing](@entry_id:1130887) within the theory of [kernel methods](@entry_id:276706) and random features. This view provides deep insights into why large, random networks are effective.
+A powerful modern perspective frames reservoir computing within the theory of kernel methods and random features. This view provides deep insights into why large, random networks are effective.
 
 #### The Kernel Perspective on Reservoir States
 
-For a given input, the reservoir state vector $\mathbf{x}$ can be viewed as a set of features extracted from that input. If the reservoir parameters are drawn randomly from a distribution, the reservoir is effectively implementing a **random [feature map](@entry_id:634540)**, $\phi: u \mapsto \mathbf{x}$. The theory of random features, pioneered by Rahimi and Recht, shows that such maps can approximate [kernel functions](@entry_id:1126899). Specifically, the inner product of two feature vectors in the reservoir state space, $\mathbb{E}[\phi(u_1)^\top \phi(u_2)]$, approximates a specific [kernel function](@entry_id:145324) $k(u_1, u_2)$ associated with the random feature-generating process .
+For a given input, the reservoir state vector $\mathbf{x}$ can be viewed as a set of features extracted from that input. If the reservoir parameters are drawn randomly from a distribution, the reservoir is effectively implementing a **random feature map**, $\phi: u \mapsto \mathbf{x}$. The theory of random features, pioneered by Rahimi and Recht, shows that such maps can approximate kernel functions. Specifically, the inner product of two feature vectors in the reservoir state space, $\mathbb{E}[\phi(u_1)^\top \phi(u_2)]$, approximates a specific kernel function $k(u_1, u_2)$ associated with the random feature-generating process [@problem_id:4050142].
 
 #### Approximation Error and the Blessing of Dimensionality
 
-This connection allows us to leverage powerful results from [approximation theory](@entry_id:138536). A key result states that if we want to approximate a target function that lies within the Reproducing Kernel Hilbert Space (RKHS) associated with the reservoir's effective kernel, the [approximation error](@entry_id:138265) of a linear readout decreases as the number of reservoir neurons $N$ increases. Specifically, the expected [approximation error](@entry_id:138265) scales as:
+This connection allows us to leverage powerful results from approximation theory. A key result states that if we want to approximate a target function that lies within the Reproducing Kernel Hilbert Space (RKHS) associated with the reservoir's effective kernel, the approximation error of a linear readout decreases as the number of reservoir neurons $N$ increases. Specifically, the expected approximation error scales as:
 $$
 \text{Error} = O(N^{-1/2})
 $$
-This result is a direct consequence of standard Monte Carlo [approximation theory](@entry_id:138536). It provides a formal justification for a core tenet of [reservoir computing](@entry_id:1130887): that increasing the size $N$ of the random reservoir generally improves its computational capacity. It is a "[blessing of dimensionality](@entry_id:137134)" where more random features provide a better basis for approximating complex functions, and the error decreases at a predictable rate . This theoretical link solidifies our understanding of why the seemingly naive approach of using a large, fixed, random network can be so remarkably effective.
+This result is a direct consequence of standard Monte Carlo approximation theory. It provides a formal justification for a core tenet of reservoir computing: that increasing the size $N$ of the random reservoir generally improves its computational capacity. It is a "blessing of dimensionality" where more random features provide a better basis for approximating complex functions, and the error decreases at a predictable rate [@problem_id:4050142]. This theoretical link solidifies our understanding of why the seemingly naive approach of using a large, fixed, random network can be so remarkably effective.

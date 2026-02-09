@@ -1,13 +1,13 @@
 ## Introduction
-In the study of dynamic systems, a robust mathematical model is essential for analysis and control. While classical control theory often views systems as 'black boxes' defined by their input-output relationships, this perspective can obscure the rich internal dynamics that govern system behavior. Modern control theory addresses this limitation by introducing the [state-space representation](@entry_id:147149), a powerful framework that provides a complete internal description of a system.
+In the study of dynamic systems, a robust mathematical model is essential for analysis and control. While classical control theory often views systems as 'black boxes' defined by their input-output relationships, this perspective can obscure the rich internal dynamics that govern system behavior. Modern control theory addresses this limitation by introducing the state-space representation, a powerful framework that provides a complete internal description of a system.
 
-This article delves into the foundational elements of this approach: the state variable and the [state vector](@entry_id:154607). It bridges the gap between abstract differential equations and the physical reality of dynamic systems, showing how to select a minimal set of variables that encapsulate a system's entire history and dictate its future trajectory.
+This article delves into the foundational elements of this approach: the state variable and the state vector. It bridges the gap between abstract differential equations and the physical reality of dynamic systems, showing how to select a minimal set of variables that encapsulate a system's entire history and dictate its future trajectory.
 
-You will begin by exploring the core **Principles and Mechanisms** behind state variables, learning how to derive them from physical laws and higher-order equations. Next, the article showcases the framework's versatility through a tour of **Applications and Interdisciplinary Connections**, demonstrating how the same concepts model everything from robotic arms to economic trends. Finally, you will apply your knowledge with a series of **Hands-On Practices** designed to solidify these essential modeling skills. By the end, you will have a firm grasp of how to translate complex dynamic phenomena into the structured, universal language of [state-space analysis](@entry_id:266177).
+You will begin by exploring the core **Principles and Mechanisms** behind state variables, learning how to derive them from physical laws and higher-order equations. Next, the article showcases the framework's versatility through a tour of **Applications and Interdisciplinary Connections**, demonstrating how the same concepts model everything from robotic arms to economic trends. Finally, you will apply your knowledge with a series of **Hands-On Practices** designed to solidify these essential modeling skills. By the end, you will have a firm grasp of how to translate complex dynamic phenomena into the structured, universal language of state-space analysis.
 
 ## Principles and Mechanisms
 
-The analysis and design of [control systems](@entry_id:155291) are predicated on a robust mathematical description of the system's behavior. While classical control theory often relies on input-output relationships, such as [transfer functions](@entry_id:756102), modern control theory adopts a more comprehensive internal perspective through the [state-space representation](@entry_id:147149). This approach centers on the concept of the system's **state**, a powerful construct that provides a complete summary of the system's history, enabling the prediction of its future evolution. This chapter elucidates the fundamental principles underlying the selection and use of state variables and the formulation of the state vector.
+The analysis and design of control systems are predicated on a robust mathematical description of the system's behavior. While classical control theory often relies on input-output relationships, such as transfer functions, modern control theory adopts a more comprehensive internal perspective through the state-space representation. This approach centers on the concept of the system's **state**, a powerful construct that provides a complete summary of the system's history, enabling the prediction of its future evolution. This chapter elucidates the fundamental principles underlying the selection and use of state variables and the formulation of the state vector.
 
 ### The Concept of System State
 
@@ -19,7 +19,7 @@ $$
 \mathbf{x}(t) = \begin{pmatrix} x_1(t) \\ x_2(t) \\ \vdots \\ x_n(t) \end{pmatrix}
 $$
 
-The number of state variables, $n$, is the **order** of the system and defines the dimensionality of the **state space**, which is the $n$-dimensional vector space where the state vector "lives." The evolution of the [state vector](@entry_id:154607) is described by a first-order vector differential equation known as the **state equation**, which, for a linear time-invariant (LTI) system, takes the form:
+The number of state variables, $n$, is the **order** of the system and defines the dimensionality of the **state space**, which is the $n$-dimensional vector space where the state vector "lives." The evolution of the state vector is described by a first-order vector differential equation known as the **state equation**, which, for a linear time-invariant (LTI) system, takes the form:
 
 $$
 \dot{\mathbf{x}}(t) = A\mathbf{x}(t) + B\mathbf{u}(t)
@@ -31,17 +31,17 @@ $$
 \mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t)
 $$
 
-where $C$ is the **output matrix** and $D$ is the **feedthrough matrix**. The primary task in modeling is to select a valid set of [state variables](@entry_id:138790) and then derive these four matrices.
+where $C$ is the **output matrix** and $D$ is the **feedthrough matrix**. The primary task in modeling is to select a valid set of state variables and then derive these four matrices.
 
 ### State Variables in Physical Systems
 
-For systems grounded in physical laws, a powerful heuristic for selecting [state variables](@entry_id:138790) is to identify the system's independent [energy storage](@entry_id:264866) elements. The variables that characterize the energy stored in these elements are excellent candidates for [state variables](@entry_id:138790) because they typically cannot change instantaneously. An abrupt change in stored energy would imply infinite power, which is physically impossible.
+For systems grounded in physical laws, a powerful heuristic for selecting state variables is to identify the system's independent energy storage elements. The variables that characterize the energy stored in these elements are excellent candidates for state variables because they typically cannot change instantaneously. An abrupt change in stored energy would imply infinite power, which is physically impossible.
 
 #### Mechanical Systems
 
 In mechanical systems, energy is stored in elements that have mass (kinetic energy, $\frac{1}{2}mv^2$) and in compliant elements like springs (potential energy, $\frac{1}{2}kx^2$). Consequently, variables like position and velocity are natural choices.
 
-Consider a simplified model of a car with mass $m$ moving along a straight line . Its kinetic energy depends on its velocity, $v(t)$, and its position, $p(t)$, is the integral of its velocity. These two quantities are independent and capture the dynamic history of the vehicle. Let's define the [state vector](@entry_id:154607) as $\mathbf{x}(t) = \begin{pmatrix} p(t) \\ v(t) \end{pmatrix}$. The system is influenced by an engine thrust $F(t)$ (the input) and a drag force $-bv(t)$. The first state equation is purely kinematic: the rate of change of position is velocity.
+Consider a simplified model of a car with mass $m$ moving along a straight line [@problem_id:1614433]. Its kinetic energy depends on its velocity, $v(t)$, and its position, $p(t)$, is the integral of its velocity. These two quantities are independent and capture the dynamic history of the vehicle. Let's define the state vector as $\mathbf{x}(t) = \begin{pmatrix} p(t) \\ v(t) \end{pmatrix}$. The system is influenced by an engine thrust $F(t)$ (the input) and a drag force $-bv(t)$. The first state equation is purely kinematic: the rate of change of position is velocity.
 
 $$
 \dot{p}(t) = v(t)
@@ -53,29 +53,29 @@ $$
 m \dot{v}(t) = F(t) - b v(t) \implies \dot{v}(t) = -\frac{b}{m} v(t) + \frac{1}{m} F(t)
 $$
 
-Arranging these into the [standard state](@entry_id:145000)-[space form](@entry_id:203017) $\dot{\mathbf{x}} = A\mathbf{x} + B u$ gives:
+Arranging these into the standard state-space form $\dot{\mathbf{x}} = A\mathbf{x} + B u$ gives:
 
 $$
 \frac{d}{dt} \begin{pmatrix} p(t) \\ v(t) \end{pmatrix} = \begin{pmatrix} 0 & 1 \\ 0 & -\frac{b}{m} \end{pmatrix} \begin{pmatrix} p(t) \\ v(t) \end{pmatrix} + \begin{pmatrix} 0 \\ \frac{1}{m} \end{pmatrix} F(t)
 $$
 
-Thus, the state matrix is $A = \begin{pmatrix} 0 & 1 \\ 0 & -b/m \end{pmatrix}$ and the input matrix is $B = \begin{pmatrix} 0 \\ 1/m \end{pmatrix}$. This illustrates a direct path from first principles of physics to a [state-space representation](@entry_id:147149).
+Thus, the state matrix is $A = \begin{pmatrix} 0 & 1 \\ 0 & -b/m \end{pmatrix}$ and the input matrix is $B = \begin{pmatrix} 0 \\ 1/m \end{pmatrix}$. This illustrates a direct path from first principles of physics to a state-space representation.
 
 #### Electrical Circuits
 
-In electrical circuits, energy is stored in capacitors (electric field, $E = \frac{1}{2}CV^2$) and inductors (magnetic field, $E = \frac{1}{2}LI^2$). The voltage across a capacitor and the current through an inductor cannot change instantaneously. This makes them the default choice for [state variables](@entry_id:138790).
+In electrical circuits, energy is stored in capacitors (electric field, $E = \frac{1}{2}CV^2$) and inductors (magnetic field, $E = \frac{1}{2}LI^2$). The voltage across a capacitor and the current through an inductor cannot change instantaneously. This makes them the default choice for state variables.
 
-For a circuit with multiple energy storage elements, the number of independent elements determines the order of the system. In a two-stage RC filter, there are two capacitors, $C_1$ and $C_2$. Their stored energies are independent. Therefore, the system is second-order, and a valid state vector is formed by the two capacitor voltages: $\mathbf{x}(t) = \begin{pmatrix} v_{C1}(t) \\ v_{C2}(t) \end{pmatrix}$ . Any other choice, such as the currents through the resistors, would be insufficient or invalid because resistor currents can change instantaneously and are algebraically dependent on the capacitor voltages and the input.
+For a circuit with multiple energy storage elements, the number of independent elements determines the order of the system. In a two-stage RC filter, there are two capacitors, $C_1$ and $C_2$. Their stored energies are independent. Therefore, the system is second-order, and a valid state vector is formed by the two capacitor voltages: $\mathbf{x}(t) = \begin{pmatrix} v_{C1}(t) \\ v_{C2}(t) \end{pmatrix}$ [@problem_id:1614448]. Any other choice, such as the currents through the resistors, would be insufficient or invalid because resistor currents can change instantaneously and are algebraically dependent on the capacitor voltages and the input.
 
-Let's develop a full [state-space model](@entry_id:273798) for a classic series RLC circuit . The energy storage elements are the inductor $L$ and capacitor $C$. We select the inductor current $i_L(t)$ and the capacitor voltage $v_C(t)$ as our [state variables](@entry_id:138790). Let the [state vector](@entry_id:154607) be $\mathbf{x}(t) = \begin{pmatrix} v_C(t) \\ i_L(t) \end{pmatrix}$.
+Let's develop a full state-space model for a classic series RLC circuit [@problem_id:1614492]. The energy storage elements are the inductor $L$ and capacitor $C$. We select the inductor current $i_L(t)$ and the capacitor voltage $v_C(t)$ as our state variables. Let the state vector be $\mathbf{x}(t) = \begin{pmatrix} v_C(t) \\ i_L(t) \end{pmatrix}$.
 
-The first state equation is derived from the [constitutive relation](@entry_id:268485) for the capacitor. In a [series circuit](@entry_id:271365), the current flowing into the capacitor is the same as the inductor current, $i_C(t) = i_L(t)$.
+The first state equation is derived from the constitutive relation for the capacitor. In a series circuit, the current flowing into the capacitor is the same as the inductor current, $i_C(t) = i_L(t)$.
 
 $$
 i_C(t) = C \frac{dv_C(t)}{dt} \implies \frac{dv_C(t)}{dt} = \frac{1}{C} i_L(t)
 $$
 
-The second state equation comes from applying Kirchhoff's Voltage Law (KVL) around the loop and using the inductor's [constitutive relation](@entry_id:268485). The sum of voltages must equal the input voltage $u(t) = v_{in}(t)$.
+The second state equation comes from applying Kirchhoff's Voltage Law (KVL) around the loop and using the inductor's constitutive relation. The sum of voltages must equal the input voltage $u(t) = v_{in}(t)$.
 
 $$
 u(t) = v_R(t) + v_L(t) + v_C(t) = R i_L(t) + L \frac{di_L(t)}{dt} + v_C(t)
@@ -103,11 +103,11 @@ This yields $C = \begin{pmatrix} 0 & R \end{pmatrix}$ and $D=0$, completing the 
 
 ### State Variables from Higher-Order Differential Equations
 
-Many systems, particularly in signal processing and mechanics, are initially described by a single $n$-th order linear ordinary differential equation (ODE) relating the output $y(t)$ to the input $u(t)$. A key technique in [state-space analysis](@entry_id:266177) is the conversion of this single ODE into a system of $n$ first-order ODEs.
+Many systems, particularly in signal processing and mechanics, are initially described by a single $n$-th order linear ordinary differential equation (ODE) relating the output $y(t)$ to the input $u(t)$. A key technique in state-space analysis is the conversion of this single ODE into a system of $n$ first-order ODEs.
 
-A standard and systematic method is to choose the output and its first $n-1$ derivatives as the state variables. This is often called the **phase-variable** or **[controllable canonical form](@entry_id:165254)** realization.
+A standard and systematic method is to choose the output and its first $n-1$ derivatives as the state variables. This is often called the **phase-variable** or **controllable canonical form** realization.
 
-For a simple [second-order system](@entry_id:262182) described by $\frac{d^2y}{dt^2} = u(t)$, we need two [state variables](@entry_id:138790) . Following the convention, we choose:
+For a simple second-order system described by $\frac{d^2y}{dt^2} = u(t)$, we need two state variables [@problem_id:1614473]. Following the convention, we choose:
 
 $$
 x_1(t) = y(t) \quad \text{and} \quad x_2(t) = \frac{dy(t)}{dt}
@@ -125,19 +125,19 @@ $$
 \dot{x}_2(t) = \frac{d^2y(t)}{dt^2} = u(t)
 $$
 
-The [state equations](@entry_id:274378) are therefore:
+The state equations are therefore:
 
 $$
 \frac{d}{dt} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} + \begin{pmatrix} 0 \\ 1 \end{pmatrix} u(t)
 $$
 
-This procedure generalizes directly. Consider a third-order LTI system :
+This procedure generalizes directly. Consider a third-order LTI system [@problem_id:1614455]:
 
 $$
 \frac{d^3y}{dt^3} + a_2 \frac{d^2y}{dt^2} + a_1 \frac{dy}{dt} + a_0 y = u(t)
 $$
 
-We define the [state variables](@entry_id:138790) according to the same convention:
+We define the state variables according to the same convention:
 
 $$
 x_1 = y, \quad x_2 = \dot{y}, \quad x_3 = \ddot{y}
@@ -149,13 +149,13 @@ $\dot{x}_2 = \ddot{y} = x_3$
 To find $\dot{x}_3 = \dddot{y}$, we rearrange the original ODE:
 $\dot{x}_3 = -a_0 y - a_1 \dot{y} - a_2 \ddot{y} + u(t) = -a_0 x_1 - a_1 x_2 - a_2 x_3 + u(t)$
 
-This results in the state matrix known as the [controllable canonical form](@entry_id:165254):
+This results in the state matrix known as the controllable canonical form:
 
 $$
 A = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ -a_0 & -a_1 & -a_2 \end{pmatrix}
 $$
 
-For a concrete example, a filter with the dynamics $\frac{d^2y}{dt^2} + 3\frac{dy}{dt} + 2y(t) = u(t)$ has coefficients $a_1=3$ and $a_0=2$ . Applying the same method with $x_1 = y$ and $x_2 = \dot{y}$ leads to the state matrix:
+For a concrete example, a filter with the dynamics $\frac{d^2y}{dt^2} + 3\frac{dy}{dt} + 2y(t) = u(t)$ has coefficients $a_1=3$ and $a_0=2$ [@problem_id:1614500]. Applying the same method with $x_1 = y$ and $x_2 = \dot{y}$ leads to the state matrix:
 
 $$
 A = \begin{pmatrix} 0 & 1 \\ -2 & -3 \end{pmatrix}
@@ -167,17 +167,17 @@ A critical insight is that the choice of state variables for a given system is n
 
 #### Alternative Physical Variables
 
-In our RL circuit example, we chose inductor current $i_L$ as a state variable. However, we could instead choose the magnetic flux in the inductor's core, $\Phi(t)$, as the state variable $x(t)$ . From Faraday's law of induction and the definition of [inductance](@entry_id:276031), the inductor voltage is $v_L = N \frac{d\Phi}{dt} = N \dot{x}$, and the flux linkage is $\lambda = N\Phi = Li_L$. From these, we can express the current as $i_L = (N/L)x$. Applying KVL to the series RL circuit gives $u(t) = v_R + v_L = R i_L + N \dot{x}$. Substituting for $i_L$ and solving for $\dot{x}$ yields a valid first-order state equation:
+In our RL circuit example, we chose inductor current $i_L$ as a state variable. However, we could instead choose the magnetic flux in the inductor's core, $\Phi(t)$, as the state variable $x(t)$ [@problem_id:1614444]. From Faraday's law of induction and the definition of inductance, the inductor voltage is $v_L = N \frac{d\Phi}{dt} = N \dot{x}$, and the flux linkage is $\lambda = N\Phi = Li_L$. From these, we can express the current as $i_L = (N/L)x$. Applying KVL to the series RL circuit gives $u(t) = v_R + v_L = R i_L + N \dot{x}$. Substituting for $i_L$ and solving for $\dot{x}$ yields a valid first-order state equation:
 
 $$
 \dot{x}(t) = -\frac{R}{L}x(t) + \frac{1}{N}u(t)
 $$
 
-This demonstrates that different, but related, [physical quantities](@entry_id:177395) can serve as state variables.
+This demonstrates that different, but related, physical quantities can serve as state variables.
 
 #### State Variables in Nonlinear Systems
 
-The state-space concept extends naturally to nonlinear systems. Consider a mobile robot moving on a plane . Its configuration is given by its Cartesian coordinates $(x, y)$ and its orientation angle $\phi$. If its control inputs are its forward speed $v$ and angular velocity $\omega$, its motion is described by the nonlinear [kinematic equations](@entry_id:173032):
+The state-space concept extends naturally to nonlinear systems. Consider a mobile robot moving on a plane [@problem_id:1614453]. Its configuration is given by its Cartesian coordinates $(x, y)$ and its orientation angle $\phi$. If its control inputs are its forward speed $v$ and angular velocity $\omega$, its motion is described by the nonlinear kinematic equations:
 
 $$
 \dot{x} = v \cos(\phi) \\
@@ -185,22 +185,22 @@ $$
 \dot{\phi} = \omega
 $$
 
-The vector $\mathbf{z} = \begin{pmatrix} x & y & \phi \end{pmatrix}^T$ is a valid [state vector](@entry_id:154607) because its time derivative, $\dot{\mathbf{z}}$, is expressed entirely as a function of the state $\mathbf{z}$ and the inputs $v$ and $\omega$. This shows the broad applicability of the state concept beyond LTI systems.
+The vector $\mathbf{z} = \begin{pmatrix} x & y & \phi \end{pmatrix}^T$ is a valid state vector because its time derivative, $\dot{\mathbf{z}}$, is expressed entirely as a function of the state $\mathbf{z}$ and the inputs $v$ and $\omega$. This shows the broad applicability of the state concept beyond LTI systems.
 
 #### Linear Transformations of State
 
-If $\mathbf{x}(t)$ is a valid [state vector](@entry_id:154607) for an LTI system, then any new vector $\mathbf{z}(t)$ created by an [invertible linear transformation](@entry_id:149915), $\mathbf{z}(t) = T \mathbf{x}(t)$, is also a valid [state vector](@entry_id:154607). The dynamics for the new state vector $\mathbf{z}$ are given by:
+If $\mathbf{x}(t)$ is a valid state vector for an LTI system, then any new vector $\mathbf{z}(t)$ created by an invertible linear transformation, $\mathbf{z}(t) = T \mathbf{x}(t)$, is also a valid state vector. The dynamics for the new state vector $\mathbf{z}$ are given by:
 
 $$
 \dot{\mathbf{z}} = T \dot{\mathbf{x}} = T(A\mathbf{x} + B\mathbf{u}) = T A (T^{-1}\mathbf{z}) + T B \mathbf{u}
 $$
 
-The new [state-space representation](@entry_id:147149) is $\dot{\mathbf{z}} = A' \mathbf{z} + B' \mathbf{u}$ and $y = C' \mathbf{z} + D' \mathbf{u}$, where $A' = TAT^{-1}$, $B' = TB$, $C' = CT^{-1}$, and $D'=D$.
+The new state-space representation is $\dot{\mathbf{z}} = A' \mathbf{z} + B' \mathbf{u}$ and $y = C' \mathbf{z} + D' \mathbf{u}$, where $A' = TAT^{-1}$, $B' = TB$, $C' = CT^{-1}$, and $D'=D$.
 
-This principle can be used to transform a system into a more convenient coordinate system. For instance, in a system of two magnetically coupled inductors, the [stored magnetic energy](@entry_id:274401) is $E = \frac{1}{2}\mathbf{i}^T L \mathbf{i}$, where $L$ is the [symmetric positive definite](@entry_id:139466) inductance matrix . One might choose a new state vector $\mathbf{x} = A\mathbf{i}$ such that the energy is expressed in the simple Euclidean form $E = \frac{1}{2}\mathbf{x}^T \mathbf{x}$. This requires finding a matrix $A$ such that $L = A^T A$. If we constrain $A$ to be symmetric and [positive definite](@entry_id:149459), the solution is the unique principal [matrix square root](@entry_id:158930) of $L$, $A = L^{1/2}$. This change of variables transforms the state into a basis where the energy contributions are decoupled, akin to finding the principal axes of an [inertia tensor](@entry_id:178098).
+This principle can be used to transform a system into a more convenient coordinate system. For instance, in a system of two magnetically coupled inductors, the stored magnetic energy is $E = \frac{1}{2}\mathbf{i}^T L \mathbf{i}$, where $L$ is the symmetric positive definite inductance matrix [@problem_id:1614480]. One might choose a new state vector $\mathbf{x} = A\mathbf{i}$ such that the energy is expressed in the simple Euclidean form $E = \frac{1}{2}\mathbf{x}^T \mathbf{x}$. This requires finding a matrix $A$ such that $L = A^T A$. If we constrain $A$ to be symmetric and positive definite, the solution is the unique principal matrix square root of $L$, $A = L^{1/2}$. This change of variables transforms the state into a basis where the energy contributions are decoupled, akin to finding the principal axes of an inertia tensor.
 
 #### Invariance of Characteristic Properties
 
-Although the state matrices $A$ and $A'$ are different for different choices of state variables, they are related by a similarity transformation ($A' = TAT^{-1}$). A fundamental property of similarity transformations is that they preserve the matrix's eigenvalues. The eigenvalues of the state matrix $A$ are the poles of the system, which are intrinsic properties of the system's dynamics. Consequently, the characteristic polynomial, $\det(sI-A)$, is invariant under any choice of [state variables](@entry_id:138790).
+Although the state matrices $A$ and $A'$ are different for different choices of state variables, they are related by a similarity transformation ($A' = TAT^{-1}$). A fundamental property of similarity transformations is that they preserve the matrix's eigenvalues. The eigenvalues of the state matrix $A$ are the poles of the system, which are intrinsic properties of the system's dynamics. Consequently, the characteristic polynomial, $\det(sI-A)$, is invariant under any choice of state variables.
 
-This implies that [matrix invariants](@entry_id:195012) like the trace and determinant, which are related to the coefficients of the [characteristic polynomial](@entry_id:150909), are also independent of the chosen [state-space realization](@entry_id:166670). For a second-order system, $\det(sI-A) = s^2 - \text{Tr}(A)s + \det(A)$. For the RLC circuit discussed earlier, the governing ODE leads to a [characteristic polynomial](@entry_id:150909) of $s^2 + (R/L)s + (1/LC)$ . By comparing coefficients, we see that $\text{Tr}(A) = -R/L$. This value remains the same whether we use physical variables ($v_C, i_L$), canonical variables, or any other valid set of state variables. This remarkable property provides a powerful consistency check and highlights the deep connection between different system representations.
+This implies that matrix invariants like the trace and determinant, which are related to the coefficients of the characteristic polynomial, are also independent of the chosen state-space realization. For a second-order system, $\det(sI-A) = s^2 - \text{Tr}(A)s + \det(A)$. For the RLC circuit discussed earlier, the governing ODE leads to a characteristic polynomial of $s^2 + (R/L)s + (1/LC)$ [@problem_id:1614434]. By comparing coefficients, we see that $\text{Tr}(A) = -R/L$. This value remains the same whether we use physical variables ($v_C, i_L$), canonical variables, or any other valid set of state variables. This remarkable property provides a powerful consistency check and highlights the deep connection between different system representations.

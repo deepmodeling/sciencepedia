@@ -1,11 +1,11 @@
 ## Introduction
-The exchange of energy and water between the Earth's surface and the atmosphere is a cornerstone of the climate system, directly influencing weather patterns, climate dynamics, and [ecosystem health](@entry_id:202023). These critical exchanges are mediated by the physical state of the soil, specifically its temperature and moisture content. For large-scale [numerical weather prediction](@entry_id:191656) (NWP) and climate models to be accurate, they must rely on computationally efficient representations, or "parameterizations," of these complex, small-scale soil processes. This article addresses the fundamental challenge of how to model soil thermal and hydrologic behavior in a physically robust yet computationally tractable way.
+The exchange of energy and water between the Earth's surface and the atmosphere is a cornerstone of the climate system, directly influencing weather patterns, climate dynamics, and ecosystem health. These critical exchanges are mediated by the physical state of the soil, specifically its temperature and moisture content. For large-scale numerical weather prediction (NWP) and climate models to be accurate, they must rely on computationally efficient representations, or "parameterizations," of these complex, small-scale soil processes. This article addresses the fundamental challenge of how to model soil thermal and hydrologic behavior in a physically robust yet computationally tractable way.
 
-Over the following chapters, you will gain a graduate-level understanding of the theories and applications that form the bedrock of modern land surface modeling. The journey begins in **Principles and Mechanisms**, where we will derive the governing equations for heat and water transport from first principles, exploring the physical meaning behind key parameters and constitutive relationships. We will then transition in **Applications and Interdisciplinary Connections** to see how these theories are implemented in state-of-the-art Land Surface Models, examining their crucial role in coupling the soil to the atmosphere, vegetation, and [cryosphere](@entry_id:1123254). Finally, the **Hands-On Practices** section provides an opportunity to solidify your understanding by applying these concepts to solve practical problems in [soil physics](@entry_id:1131887) and hydrology.
+Over the following chapters, you will gain a graduate-level understanding of the theories and applications that form the bedrock of modern land surface modeling. The journey begins in **Principles and Mechanisms**, where we will derive the governing equations for heat and water transport from first principles, exploring the physical meaning behind key parameters and constitutive relationships. We will then transition in **Applications and Interdisciplinary Connections** to see how these theories are implemented in state-of-the-art Land Surface Models, examining their crucial role in coupling the soil to the atmosphere, vegetation, and cryosphere. Finally, the **Hands-On Practices** section provides an opportunity to solidify your understanding by applying these concepts to solve practical problems in soil physics and hydrology.
 
 ## Principles and Mechanisms
 
-The exchange of energy and water between the land surface and the atmosphere is a critical component of numerical weather prediction (NWP) and climate models. This exchange is mediated by the physical state of the soil, specifically its thermal and hydrologic properties. The parameterizations that describe the transport and storage of heat and water within the soil column are therefore of fundamental importance. This chapter elucidates the core principles and mechanisms governing these processes, deriving the governing equations from first principles and exploring the physical meaning and implications of the parameters used in [land surface models](@entry_id:1127054). We will separately examine the domains of soil hydrology and soil thermodynamics before synthesizing them through their coupling at the [surface energy balance](@entry_id:188222).
+The exchange of energy and water between the land surface and the atmosphere is a critical component of numerical weather prediction (NWP) and climate models. This exchange is mediated by the physical state of the soil, specifically its thermal and hydrologic properties. The parameterizations that describe the transport and storage of heat and water within the soil column are therefore of fundamental importance. This chapter elucidates the core principles and mechanisms governing these processes, deriving the governing equations from first principles and exploring the physical meaning and implications of the parameters used in land surface models. We will separately examine the domains of soil hydrology and soil thermodynamics before synthesizing them through their coupling at the surface energy balance.
 
 ### Soil Hydrologic Principles
 
@@ -13,7 +13,7 @@ The movement of water through unsaturated soil is a complex process governed by 
 
 #### The Richards Equation
 
-To derive the Richards equation, we begin with the principle of **mass conservation** for water in a [representative elementary volume](@entry_id:152065) (REV) of soil. For a one-dimensional vertical column, the continuity equation for the **volumetric water content**, $\theta$ (defined as the volume of water per unit bulk volume of soil, $\mathrm{m^3\,m^{-3}}$), is:
+To derive the Richards equation, we begin with the principle of **mass conservation** for water in a representative elementary volume (REV) of soil. For a one-dimensional vertical column, the continuity equation for the **volumetric water content**, $\theta$ (defined as the volume of water per unit bulk volume of soil, $\mathrm{m^3\,m^{-3}}$), is:
 
 $$
 \frac{\partial \theta}{\partial t} = -\frac{\partial q_z}{\partial z} - S
@@ -21,13 +21,13 @@ $$
 
 Here, $t$ is time, $z$ is the vertical coordinate (which we define as positive upward), $q_z$ is the vertical volumetric water flux (positive upward), and $S$ is a volumetric sink term (e.g., for root water uptake), with units of $\mathrm{m^3\,m^{-3}\,s^{-1}}$. A positive $S$ represents water extraction.
 
-The flux $q_z$ is described by the **Darcy–Buckingham law**, which generalizes Darcy's law for [unsaturated flow](@entry_id:756345). It states that the flux is proportional to the gradient of the total [hydraulic head](@entry_id:750444), $H$:
+The flux $q_z$ is described by the **Darcy–Buckingham law**, which generalizes Darcy's law for unsaturated flow. It states that the flux is proportional to the gradient of the total hydraulic head, $H$:
 
 $$
 q_z = -K \frac{\partial H}{\partial z}
 $$
 
-The **[unsaturated hydraulic conductivity](@entry_id:756347)**, $K$, is not a constant but a strong, typically nonlinear, function of the soil's water content, $K(\theta)$, or matric potential, $K(\psi)$. The total [hydraulic head](@entry_id:750444) $H$ is the sum of the [pressure head](@entry_id:141368) and the elevation head. In [unsaturated soils](@entry_id:756348), the [pressure head](@entry_id:141368) is negative and is referred to as the **matric potential** (or suction head), denoted by $\psi$. The elevation head, for a coordinate system with $z$ positive upward, is simply $z$. Therefore:
+The **unsaturated hydraulic conductivity**, $K$, is not a constant but a strong, typically nonlinear, function of the soil's water content, $K(\theta)$, or matric potential, $K(\psi)$. The total hydraulic head $H$ is the sum of the pressure head and the elevation head. In unsaturated soils, the pressure head is negative and is referred to as the **matric potential** (or suction head), denoted by $\psi$. The elevation head, for a coordinate system with $z$ positive upward, is simply $z$. Therefore:
 
 $$
 H = \psi + z
@@ -45,15 +45,15 @@ $$
 \frac{\partial \theta}{\partial t} = \frac{\partial}{\partial z} \left[ K(\psi) \left( \frac{\partial \psi}{\partial z} + 1 \right) \right] - S(\psi)
 $$
 
-This equation forms the foundation of soil hydrology modeling in most land surface schemes. It is a single equation with two [dependent variables](@entry_id:267817), $\theta$ and $\psi$, and two highly nonlinear constitutive functions, $K(\psi)$ and $S(\psi)$. To solve it, we must specify the relationship between $\theta$ and $\psi$—the [soil water retention curve](@entry_id:755032).
+This equation forms the foundation of soil hydrology modeling in most land surface schemes. It is a single equation with two dependent variables, $\theta$ and $\psi$, and two highly nonlinear constitutive functions, $K(\psi)$ and $S(\psi)$. To solve it, we must specify the relationship between $\theta$ and $\psi$—the soil water retention curve.
 
 #### Constitutive Relations for Soil Hydraulics
 
-The solution of the Richards equation requires parameterizations that define the soil's specific hydraulic character. These are captured in two key constitutive relationships: the [soil water retention curve](@entry_id:755032) and the [hydraulic conductivity](@entry_id:149185) function.
+The solution of the Richards equation requires parameterizations that define the soil's specific hydraulic character. These are captured in two key constitutive relationships: the soil water retention curve and the hydraulic conductivity function.
 
 **The Soil Water Retention Curve (SWRC)**
 
-The **[soil water retention curve](@entry_id:755032) (SWRC)**, $\theta(\psi)$, describes the relationship between the amount of water stored in the soil and the energy state (matric potential) of that water. Physically, matric potential arises from the capillary and adsorptive forces that bind water to soil particles. In drier soil, water is held in smaller pores and thinner films, corresponding to a more negative (stronger suction) matric potential.
+The **soil water retention curve (SWRC)**, $\theta(\psi)$, describes the relationship between the amount of water stored in the soil and the energy state (matric potential) of that water. Physically, matric potential arises from the capillary and adsorptive forces that bind water to soil particles. In drier soil, water is held in smaller pores and thinner films, corresponding to a more negative (stronger suction) matric potential.
 
 The SWRC is bounded by two important parameters:
 1.  **Saturated Water Content ($\theta_s$)**: The maximum volumetric water content, achieved when all pore spaces are filled with water. This is equivalent to the soil's porosity, $\phi$. As $\psi \to 0$, $\theta \to \theta_s$.
@@ -68,13 +68,13 @@ $$
 The parameters have distinct physical interpretations:
 *   $\boldsymbol{\alpha}$: A parameter related to the inverse of the air-entry suction, with units of $[\mathrm{L}]^{-1}$. Coarser soils (like sand) have larger pores, desaturate at lower suctions, and thus have larger $\alpha$ values.
 *   $\boldsymbol{n}$: A dimensionless parameter ($n>1$) that controls the steepness of the curve. A larger $n$ corresponds to a sharper transition from saturated to dry, indicating a more uniform pore-size distribution.
-*   $\boldsymbol{m}$: An auxiliary parameter, often constrained by $m = 1 - 1/n$ to allow for an analytical solution for the [hydraulic conductivity](@entry_id:149185) function, as we will see.
+*   $\boldsymbol{m}$: An auxiliary parameter, often constrained by $m = 1 - 1/n$ to allow for an analytical solution for the hydraulic conductivity function, as we will see.
 
 **The Unsaturated Hydraulic Conductivity Function**
 
-The hydraulic conductivity, $K$, varies over many orders of magnitude as a soil wets and dries. It is bounded by the **saturated hydraulic conductivity ($K_s$)**, which is the maximum conductivity of the soil when $\theta = \theta_s$. This parameter is related to the soil's [intrinsic permeability](@entry_id:750790) $k_{perm}$ (a property of the solid matrix alone) and the fluid properties by $K_s = k_{perm} (\rho g / \mu)$, where $\rho$ and $\mu$ are the fluid density and [dynamic viscosity](@entry_id:268228), respectively.
+The hydraulic conductivity, $K$, varies over many orders of magnitude as a soil wets and dries. It is bounded by the **saturated hydraulic conductivity ($K_s$)**, which is the maximum conductivity of the soil when $\theta = \theta_s$. This parameter is related to the soil's intrinsic permeability $k_{perm}$ (a property of the solid matrix alone) and the fluid properties by $K_s = k_{perm} (\rho g / \mu)$, where $\rho$ and $\mu$ are the fluid density and dynamic viscosity, respectively.
 
-As the soil desaturates, air-filled pores create tortuous and disconnected pathways for water, drastically reducing the effective conductivity. Constitutive models relate $K$ to its saturated value $K_s$ and the state of saturation. For instance, when combined with the van Genuchten SWRC and the $m=1-1/n$ constraint, the Mualem pore-bundle model provides a [closed-form expression](@entry_id:267458) for $K(S_e)$:
+As the soil desaturates, air-filled pores create tortuous and disconnected pathways for water, drastically reducing the effective conductivity. Constitutive models relate $K$ to its saturated value $K_s$ and the state of saturation. For instance, when combined with the van Genuchten SWRC and the $m=1-1/n$ constraint, the Mualem pore-bundle model provides a closed-form expression for $K(S_e)$:
 
 $$
 K(S_e) = K_s S_e^l \left[ 1 - (1 - S_e^{1/m})^{m} \right]^2
@@ -86,7 +86,7 @@ where $l$ is an empirical pore-connectivity parameter, often set to $0.5$. This 
 
 A further complexity is that the SWRC is not unique; it exhibits **hysteresis**. For the same matric potential $\psi$, a soil will hold more water when it is drying than when it is wetting, i.e., $\theta_{drying}(\psi) \ge \theta_{wetting}(\psi)$. This phenomenon arises primarily from two mechanisms: the "ink-bottle" effect, where irregular pore geometries trap water during drainage, and differences in the contact angle of the air-water meniscus for advancing (wetting) versus receding (drying) interfaces.
 
-Models can account for this by defining primary drainage and [wetting](@entry_id:147044) curves and a set of "scanning curves" for reversals between them. A simple model for a scanning curve that initiates at a reversal point $(\psi_{rev}, S_{rev})$ can be formulated as a scaled interpolation between the primary [wetting](@entry_id:147044) ($S_e^{PW}$) and primary drainage ($S_e^{PD}$) curves. Neglecting hysteresis can lead to significant errors in simulated evapotranspiration and soil [thermal states](@entry_id:199977), as the soil's water storage and conductivity profiles are misrepresented. For physical consistency, if the SWRC is hysteretic, the [hydraulic conductivity](@entry_id:149185) function $K$ must also be treated as hysteretic to avoid spurious sources or sinks of water in numerical solutions.
+Models can account for this by defining primary drainage and wetting curves and a set of "scanning curves" for reversals between them. A simple model for a scanning curve that initiates at a reversal point $(\psi_{rev}, S_{rev})$ can be formulated as a scaled interpolation between the primary wetting ($S_e^{PW}$) and primary drainage ($S_e^{PD}$) curves. Neglecting hysteresis can lead to significant errors in simulated evapotranspiration and soil thermal states, as the soil's water storage and conductivity profiles are misrepresented. For physical consistency, if the SWRC is hysteretic, the hydraulic conductivity function $K$ must also be treated as hysteretic to avoid spurious sources or sinks of water in numerical solutions.
 
 #### Numerical Implications and Hydraulic Diffusivity
 
@@ -96,19 +96,19 @@ $$
 C(\psi) \frac{\partial \psi}{\partial t} = \frac{\partial}{\partial z} \left[ K(\psi) \left( \frac{\partial \psi}{\partial z} + 1 \right) \right] - S(\psi)
 $$
 
-The terms $C(\psi)$ and $K(\psi)$ can vary by many orders of magnitude, causing the [characteristic timescale](@entry_id:276738) of the equation to vary dramatically. This stiffness renders simple [explicit time-stepping](@entry_id:168157) schemes unstable unless impractically small time steps are used. Therefore, robust solvers for [land surface models](@entry_id:1127054) almost always employ [implicit time integration](@entry_id:171761), which requires solving a large nonlinear system of equations at each step, often with sophisticated Newton-Krylov [iterative methods](@entry_id:139472).
+The terms $C(\psi)$ and $K(\psi)$ can vary by many orders of magnitude, causing the characteristic timescale of the equation to vary dramatically. This stiffness renders simple explicit time-stepping schemes unstable unless impractically small time steps are used. Therefore, robust solvers for land surface models almost always employ implicit time integration, which requires solving a large nonlinear system of equations at each step, often with sophisticated Newton-Krylov iterative methods.
 
-A useful concept for understanding horizontal moisture spread is the **[hydraulic diffusivity](@entry_id:750440)**, $D(\theta) = K(\theta) \frac{d\psi}{d\theta}$. For purely horizontal flow (neglecting gravity), the Richards equation simplifies to a [nonlinear diffusion](@entry_id:177801) equation:
+A useful concept for understanding horizontal moisture spread is the **hydraulic diffusivity**, $D(\theta) = K(\theta) \frac{d\psi}{d\theta}$. For purely horizontal flow (neglecting gravity), the Richards equation simplifies to a nonlinear diffusion equation:
 
 $$
 \frac{\partial \theta}{\partial t} = \frac{\partial}{\partial x} \left( D(\theta) \frac{\partial \theta}{\partial x} \right)
 $$
 
-In this form, it is clear that $D(\theta)$ governs the rate of water redistribution. For a [wetting](@entry_id:147044) front propagating into a dry soil, [dimensional analysis](@entry_id:140259) shows the position of the front, $x_f$, scales with the square root of time: $x_f(t) \propto \sqrt{\bar{D}t}$, where $\bar{D}$ is an [effective diffusivity](@entry_id:183973). The speed of the front, $dx_f/dt$, is proportional to $t^{-1/2}$, decreasing as the front advances. This diffusive behavior is a hallmark of capillary-driven flow.
+In this form, it is clear that $D(\theta)$ governs the rate of water redistribution. For a wetting front propagating into a dry soil, dimensional analysis shows the position of the front, $x_f$, scales with the square root of time: $x_f(t) \propto \sqrt{\bar{D}t}$, where $\bar{D}$ is an effective diffusivity. The speed of the front, $dx_f/dt$, is proportional to $t^{-1/2}$, decreasing as the front advances. This diffusive behavior is a hallmark of capillary-driven flow.
 
 ### Soil Thermal Principles
 
-The flow of heat in soil is governed by principles analogous to those for water: energy conservation and a flux-gradient relationship. The governing equation is the **[heat diffusion equation](@entry_id:154385)**.
+The flow of heat in soil is governed by principles analogous to those for water: energy conservation and a flux-gradient relationship. The governing equation is the **heat diffusion equation**.
 
 #### The Heat Diffusion Equation
 
@@ -126,7 +126,7 @@ $$
 G = -k \frac{\partial T}{\partial z}
 $$
 
-The proportionality constant, $k$, is the **thermal conductivity** ($\mathrm{W\,m^{-1}\,K^{-1}}$). Note the standard sign convention for $G$ (downward positive) is opposite to our convention for $q_z$ (upward positive). Combining these two laws gives the [heat diffusion equation](@entry_id:154385):
+The proportionality constant, $k$, is the **thermal conductivity** ($\mathrm{W\,m^{-1}\,K^{-1}}$). Note the standard sign convention for $G$ (downward positive) is opposite to our convention for $q_z$ (upward positive). Combining these two laws gives the heat diffusion equation:
 
 $$
 C \frac{\partial T}{\partial t} = \frac{\partial}{\partial z} \left( k \frac{\partial T}{\partial z} \right)
@@ -150,13 +150,13 @@ Here, the subscripts $s$, $w$, and $a$ refer to solids, water, and air, respecti
 
 **Thermal Conductivity ($k$)**
 
-The [effective thermal conductivity](@entry_id:152265) $k$ also increases monotonically and nonlinearly with water content. This is because water has a thermal conductivity ($k_w \approx 0.6 \,\mathrm{W\,m^{-1}\,K^{-1}}$) more than 20 times greater than that of air ($k_a \approx 0.025 \,\mathrm{W\,m^{-1}\,K^{-1}}$). As water replaces air in the soil pores, it creates "thermal bridges" between soil grains, dramatically improving the medium's ability to conduct heat. Consequently, a typical mineral soil might have $k \approx 0.2-0.6 \,\mathrm{W\,m^{-1}\,K^{-1}}$ when dry, but $k \approx 1.5-3.0 \,\mathrm{W\,m^{-1}\,K^{-1}}$ when saturated. Various empirical and semi-physical models exist to parameterize $k(\theta)$.
+The effective thermal conductivity $k$ also increases monotonically and nonlinearly with water content. This is because water has a thermal conductivity ($k_w \approx 0.6 \,\mathrm{W\,m^{-1}\,K^{-1}}$) more than 20 times greater than that of air ($k_a \approx 0.025 \,\mathrm{W\,m^{-1}\,K^{-1}}$). As water replaces air in the soil pores, it creates "thermal bridges" between soil grains, dramatically improving the medium's ability to conduct heat. Consequently, a typical mineral soil might have $k \approx 0.2-0.6 \,\mathrm{W\,m^{-1}\,K^{-1}}$ when dry, but $k \approx 1.5-3.0 \,\mathrm{W\,m^{-1}\,K^{-1}}$ when saturated. Various empirical and semi-physical models exist to parameterize $k(\theta)$.
 
 #### Thermal Response and Key Diagnostic Parameters
 
-The [heat diffusion equation](@entry_id:154385), with its moisture-dependent coefficients, governs the soil's temperature response to surface forcing. For a periodic surface forcing, such as the diurnal cycle of solar radiation, we can identify key parameters that describe the soil's thermal behavior.
+The heat diffusion equation, with its moisture-dependent coefficients, governs the soil's temperature response to surface forcing. For a periodic surface forcing, such as the diurnal cycle of solar radiation, we can identify key parameters that describe the soil's thermal behavior.
 
-For a sinusoidal temperature forcing at the surface, $T(0,t) = T_0 \cos(\omega t)$, the [temperature wave](@entry_id:193534) propagates into the soil, but its amplitude is attenuated and its phase is shifted. The solution to the heat equation for a homogeneous soil is:
+For a sinusoidal temperature forcing at the surface, $T(0,t) = T_0 \cos(\omega t)$, the temperature wave propagates into the soil, but its amplitude is attenuated and its phase is shifted. The solution to the heat equation for a homogeneous soil is:
 
 $$
 T(z,t) = T_0 \exp(-z/\delta) \cos(\omega t - z/\delta)
@@ -164,7 +164,7 @@ $$
 
 This solution reveals two important parameters:
 1.  **Thermal Diffusivity ($\kappa$)**: Defined as $\kappa = k/C$, this parameter ($\mathrm{m^2\,s^{-1}}$) determines how quickly a thermal perturbation diffuses through the soil.
-2.  **Skin Depth ($\delta$)**: Defined as $\delta = \sqrt{2\kappa/\omega}$, this is the characteristic depth at which the amplitude of a [temperature wave](@entry_id:193534) with frequency $\omega$ decays to $1/e$ (about 37%) of its surface value. It also determines the phase lag, which is $z/\delta$ radians at depth $z$. For the diurnal cycle, $\delta$ is typically 10-20 cm.
+2.  **Skin Depth ($\delta$)**: Defined as $\delta = \sqrt{2\kappa/\omega}$, this is the characteristic depth at which the amplitude of a temperature wave with frequency $\omega$ decays to $1/e$ (about 37%) of its surface value. It also determines the phase lag, which is $z/\delta$ radians at depth $z$. For the diurnal cycle, $\delta$ is typically 10-20 cm.
 
 When considering a sinusoidal *heat flux* forcing at the surface, $G(0,t) = G_0 \cos(\omega t)$, a different diagnostic parameter emerges that characterizes the surface's resistance to temperature change. The amplitude of the resulting surface temperature oscillation, $| \Delta T_s |$, is given by:
 
@@ -182,22 +182,22 @@ Thermal inertia, with units of $\mathrm{J\,m^{-2}\,K^{-1}\,s^{-1/2}}$, encapsula
 
 ### Coupling and the Surface Energy Balance
 
-The soil hydrologic and thermal processes are inextricably linked, primarily through the dependence of thermal properties ($k, C$) on soil moisture ($\theta$). This coupling finds its ultimate expression at the land-atmosphere interface through the **surface energy balance (SEB)**. For a control volume enclosing the surface, the conservation of energy requires that the net [radiative flux](@entry_id:151732) into the surface ($R_n$) must be balanced by the non-radiative fluxes away from the surface:
+The soil hydrologic and thermal processes are inextricably linked, primarily through the dependence of thermal properties ($k, C$) on soil moisture ($\theta$). This coupling finds its ultimate expression at the land-atmosphere interface through the **surface energy balance (SEB)**. For a control volume enclosing the surface, the conservation of energy requires that the net radiative flux into the surface ($R_n$) must be balanced by the non-radiative fluxes away from the surface:
 
 $$
 R_n = H + LE + G
 $$
 
 Following standard micrometeorological sign conventions:
-*   $R_n$ is the **[net radiation](@entry_id:1128562)** (incoming shortwave minus reflected shortwave, plus incoming longwave minus outgoing longwave), positive towards the surface.
-*   $H$ is the **turbulent [sensible heat flux](@entry_id:1131473)**, transporting heat from the surface to the atmosphere, positive upward.
+*   $R_n$ is the **net radiation** (incoming shortwave minus reflected shortwave, plus incoming longwave minus outgoing longwave), positive towards the surface.
+*   $H$ is the **turbulent sensible heat flux**, transporting heat from the surface to the atmosphere, positive upward.
 *   $LE$ is the **turbulent latent heat flux**, representing the energy consumed by evapotranspiration ($E$, where $L$ is the latent heat of vaporization), positive upward.
-*   $G$ is the **[ground heat flux](@entry_id:1125826)**, conducting heat into the soil, positive downward.
+*   $G$ is the **ground heat flux**, conducting heat into the soil, positive downward.
 
 The soil thermal and hydrologic parameterizations we have discussed are what allow a land surface model to solve this equation by determining how the available energy, $R_n$, is partitioned among the other three terms.
 
-*   The **[ground heat flux](@entry_id:1125826) ($G$)** is directly determined by the soil thermal state via Fourier's law at the surface, $G = -k(\theta) \partial T/\partial z|_{z=0}$. The evolution of the temperature profile, and thus the [surface gradient](@entry_id:261146), is governed by the [heat diffusion equation](@entry_id:154385) with moisture-dependent $k(\theta)$ and $C(\theta)$. A wetter soil has higher thermal inertia, which [damps](@entry_id:143944) the diurnal surface [temperature wave](@entry_id:193534) and alters both the magnitude and phase of $G$.
+*   The **ground heat flux ($G$)** is directly determined by the soil thermal state via Fourier's law at the surface, $G = -k(\theta) \partial T/\partial z|_{z=0}$. The evolution of the temperature profile, and thus the surface gradient, is governed by the heat diffusion equation with moisture-dependent $k(\theta)$ and $C(\theta)$. A wetter soil has higher thermal inertia, which damps the diurnal surface temperature wave and alters both the magnitude and phase of $G$.
 
-*   The partitioning between **sensible ($H$) and latent ($LE$) heat fluxes** is critically controlled by surface water availability. The latent heat flux is determined by the rate of evapotranspiration, which is limited by a series of resistances. The soil hydrologic state, governed by the Richards equation, determines the soil surface resistance to evaporation and influences plant [stomatal resistance](@entry_id:1132453) to [transpiration](@entry_id:136237). When the soil is wet, resistance is low, and a large fraction of the available energy ($R_n - G$) is used for evaporation, leading to a high $LE$ and a relatively low $H$ (a "cool" and "moist" surface). Conversely, when the soil is dry, resistance is high, evapotranspiration is suppressed, and most of the available energy goes into heating the overlying air, leading to a low $LE$ and a high $H$ (a "hot" and "dry" surface).
+*   The partitioning between **sensible ($H$) and latent ($LE$) heat fluxes** is critically controlled by surface water availability. The latent heat flux is determined by the rate of evapotranspiration, which is limited by a series of resistances. The soil hydrologic state, governed by the Richards equation, determines the soil surface resistance to evaporation and influences plant stomatal resistance to transpiration. When the soil is wet, resistance is low, and a large fraction of the available energy ($R_n - G$) is used for evaporation, leading to a high $LE$ and a relatively low $H$ (a "cool" and "moist" surface). Conversely, when the soil is dry, resistance is high, evapotranspiration is suppressed, and most of the available energy goes into heating the overlying air, leading to a low $LE$ and a high $H$ (a "hot" and "dry" surface).
 
-In summary, the soil hydraulic parameterizations determine the evolution of soil moisture, which in turn controls both the soil thermal properties (and thus $G$) and the [surface resistance](@entry_id:149810) to evaporation (and thus the $H/LE$ partitioning). This intricate coupling is at the heart of land-atmosphere interactions and is a cornerstone of modern weather and climate modeling.
+In summary, the soil hydraulic parameterizations determine the evolution of soil moisture, which in turn controls both the soil thermal properties (and thus $G$) and the surface resistance to evaporation (and thus the $H/LE$ partitioning). This intricate coupling is at the heart of land-atmosphere interactions and is a cornerstone of modern weather and climate modeling.

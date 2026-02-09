@@ -13,7 +13,7 @@ Before we dive into the method, let's be precise about the problem we're trying 
 
 The catch is that the laws of physics stand between our design and the outcome. For a given design $p$, the fluid flow—described by a **state vector** $u$ containing variables like density, velocity, and pressure at every point in space—must satisfy a set of governing equations, such as the Navier-Stokes equations. We can write these complex partial differential equations (PDEs) in a compact form: $R(u, p) = 0$. This is the **residual equation**, and it simply states that a valid physical state $u$ for a design $p$ is one that makes the residual of the governing equations zero.
 
-So, the grand challenge is not just to minimize $J(p)$, but to do so while respecting the laws of physics. The formal statement of our problem is a **PDE-[constrained optimization](@entry_id:145264) problem**:
+So, the grand challenge is not just to minimize $J(p)$, but to do so while respecting the laws of physics. The formal statement of our problem is a **PDE-[constrained optimization](@keyword=constrained_optimization|lang=en-US|style=Feynman) problem**:
 
 Find the state $u$ and design $p$ that
 $$
@@ -24,7 +24,7 @@ This formulation is beautiful because it puts everything on the table: the goal 
 
 ### The Brute-Force Mountain and the Adjoint Path
 
-To use a powerful gradient-based optimizer, we need to compute the [total derivative](@entry_id:137587) of our objective with respect to our design parameters, $\frac{dJ}{dp}$. Using the [chain rule](@entry_id:147422) from calculus, we can write this derivative as:
+To use a powerful gradient-based optimizer, we need to compute the [total derivative](@keyword=total_derivative|lang=en-US|style=Feynman) of our objective with respect to our design parameters, $\frac{dJ}{dp}$. Using the [chain rule](@keyword=chain_rule|lang=en-US|style=Feynman) from calculus, we can write this derivative as:
 $$
 \frac{dJ}{dp} = \frac{\partial J}{\partial p} + \frac{\partial J}{\partial u} \frac{du}{dp}
 $$
@@ -44,7 +44,7 @@ Here is where the magic happens. Let's look at the gradient equation again, subs
 $$
 \frac{dJ}{dp} = \frac{\partial J}{\partial p} - \frac{\partial J}{\partial u} \left(\frac{\partial R}{\partial u}\right)^{-1} \frac{\partial R}{\partial p}
 $$
-The computationally nightmarish part is the product of the row vector $\frac{\partial J}{\partial u}$ with the giant [matrix inverse](@entry_id:140380). Let's group these terms differently, using the [associativity](@entry_id:147258) of matrix multiplication:
+The computationally nightmarish part is the product of the row vector $\frac{\partial J}{\partial u}$ with the giant [matrix inverse](@keyword=matrix_inverse|lang=en-US|style=Feynman). Let's group these terms differently, using the [associativity](@keyword=associativity|lang=en-US|style=Feynman) of matrix multiplication:
 $$
 \frac{dJ}{dp} = \frac{\partial J}{\partial p} - \left[ \frac{\partial J}{\partial u} \left(\frac{\partial R}{\partial u}\right)^{-1} \right] \frac{\partial R}{\partial p}
 $$
@@ -52,7 +52,7 @@ What if we could compute the entire bracketed expression, which is a row vector,
 $$
 \lambda^T = \frac{\partial J}{\partial u} \left(\frac{\partial R}{\partial u}\right)^{-1}
 $$
-To find $\lambda$ without the [matrix inverse](@entry_id:140380), we can rearrange this into a linear system, which is known as the **adjoint equation**:
+To find $\lambda$ without the [matrix inverse](@keyword=matrix_inverse|lang=en-US|style=Feynman), we can rearrange this into a linear system, which is known as the **adjoint equation**:
 $$
 \left(\frac{\partial R}{\partial u}\right)^T \lambda = \left(\frac{\partial J}{\partial u}\right)^T
 $$
@@ -62,7 +62,7 @@ This is the clever path around the mountain. We solve the flow equations $R(u,p)
 $$
 \frac{dJ}{dp} = \frac{\partial J}{\partial p} + \lambda^T \frac{\partial R}{\partial p}
 $$
-The cost of computing the gradient for a thousand, or a million, parameters is roughly the same as computing it for one. This is the "reverse mode" or **adjoint method**, and its incredible efficiency is what makes large-scale [aerodynamic shape optimization](@entry_id:1120852) possible.
+The cost of computing the gradient for a thousand, or a million, parameters is roughly the same as computing it for one. This is the "reverse mode" or **adjoint method**, and its incredible efficiency is what makes large-scale [aerodynamic shape optimization](@keyword=aerodynamic_shape_optimization|lang=en-US|style=Feynman) possible.
 
 ### The Secret Identity of the Adjoint: A Map of Influence
 
@@ -74,37 +74,37 @@ $$
 $$
 This means that regions where the magnitude of the adjoint vector, $|\lambda|$, is large are highly "receptive": a small force applied there will have a large impact on the drag. Conversely, where $|\lambda|$ is small, the flow is insensitive, and perturbations have little effect on our goal.
 
-So, where would we expect the adjoint field for drag to be large? Exactly where drag is generated! For a transonic airfoil, drag comes from shock waves and the viscous wake. Sure enough, the adjoint field magnitude peaks at the shock location and throughout the wake. This tells the designer that modifying the flow in these regions—for instance, by changing the surface shape to weaken the shock or reduce the wake's momentum deficit—is the most effective way to reduce drag. Similarly, the leading-edge [stagnation point](@entry_id:266621), which dictates the entire [pressure distribution](@entry_id:275409), is also a highly receptive region.
+So, where would we expect the adjoint field for drag to be large? Exactly where drag is generated! For a transonic airfoil, drag comes from shock waves and the viscous wake. Sure enough, the adjoint field magnitude peaks at the shock location and throughout the wake. This tells the designer that modifying the flow in these regions—for instance, by changing the surface shape to weaken the shock or reduce the wake's momentum deficit—is the most effective way to reduce drag. Similarly, the leading-edge [stagnation point](@keyword=stagnation_point|lang=en-US|style=Feynman), which dictates the entire [pressure distribution](@keyword=pressure_distribution|lang=en-US|style=Feynman), is also a highly receptive region.
 
-The adjoint equations themselves exhibit fascinating physics. For flow problems, the convective term in the [adjoint equation](@entry_id:746294) typically has an opposite sign to the one in the flow equations. This means that while flow information travels downstream, **adjoint information propagates upstream**. This makes perfect intuitive sense: the adjoint field is tracing causality backward. To understand what upstream events caused a certain drag value on the body, one must look upstream.
+The adjoint equations themselves exhibit fascinating physics. For flow problems, the convective term in the adjoint equation typically has an opposite sign to the one in the flow equations. This means that while flow information travels downstream, **adjoint information propagates upstream**. This makes perfect intuitive sense: the adjoint field is tracing causality backward. To understand what upstream events caused a certain drag value on the body, one must look upstream.
 
-Furthermore, the [adjoint problem](@entry_id:746299) is "sourced" by the objective function itself. If our objective is lift, which is an integral of pressure over the body's surface, the mathematical process of deriving the [adjoint equation](@entry_id:746294) naturally produces a boundary condition for the adjoint variable on that same surface. The form of this boundary condition is precisely the sensitivity of the lift integrand to the flow variables at the wall. The adjoint field literally "knows" what we care about and where we measure it.
+Furthermore, the adjoint problem is "sourced" by the objective function itself. If our objective is lift, which is an integral of pressure over the body's surface, the mathematical process of deriving the adjoint equation naturally produces a boundary condition for the adjoint variable on that same surface. The form of this boundary condition is precisely the sensitivity of the lift integrand to the flow variables at the wall. The adjoint field literally "knows" what we care about and where we measure it.
 
 ### The Ghosts in the Machine: Discretization and its Pitfalls
 
 The world of continuous PDEs is elegant, but computers work with discrete numbers on a mesh. This transition from the continuous to the discrete world is fraught with subtle dangers. In the context of adjoints, the key question is: if we take the adjoint of our discrete computer code, will we get the right answer?
 
 There are two ways to proceed:
-1.  **Adjoint-then-Discretize (AtD):** We first derive the beautiful [continuous adjoint](@entry_id:747804) PDE and then write a new computer code to solve it.
-2.  **Discretize-then-Adjoint (DtA):** We take our existing flow solver code and apply [automatic differentiation](@entry_id:144512) (AD) tools to generate its algebraic adjoint. This is the approach used in most modern toolchains.
+1.  **Adjoint-then-Discretize (AtD):** We first derive the beautiful [continuous adjoint](@keyword=continuous_adjoint|lang=en-US|style=Feynman) PDE and then write a new computer code to solve it.
+2.  **Discretize-then-Adjoint (DtA):** We take our existing flow solver code and apply [automatic differentiation](@keyword=automatic_differentiation|lang=en-US|style=Feynman) (AD) tools to generate its algebraic adjoint. This is the approach used in most modern toolchains.
 
 The DtA approach gives the exact gradient of the *discrete* objective from the *discrete* simulation. This is what a numerical optimizer needs. But a deeper question looms: as we refine the mesh and our simulation gets closer to reality, does this discrete adjoint solution converge to the true, continuous adjoint solution? The answer is a resounding *maybe*.
 
-It converges only if the numerical scheme possesses a property called **dual consistency**. This means that the transpose of the discrete flow operator must itself be a consistent discretization of the [continuous adjoint](@entry_id:747804) operator. This is not guaranteed! Many "tricks of the trade" used to make CFD solvers stable and accurate can violate this property. Things like:
+It converges only if the numerical scheme possesses a property called **dual consistency**. This means that the transpose of the discrete flow operator must itself be a consistent discretization of the [continuous adjoint](@keyword=continuous_adjoint|lang=en-US|style=Feynman) operator. This is not guaranteed! Many "tricks of the trade" used to make CFD solvers stable and accurate can violate this property. Things like:
 - **Artificial dissipation:** Terms added to smooth out shocks depend on the flow state. Their derivatives introduce non-physical terms into the discrete adjoint.
 - **Slope limiters:** Nonlinear functions used in high-resolution schemes to prevent oscillations are often non-differentiable or have bizarre derivatives that create "ghosts" in the adjoint equations.
 - **Geometric errors:** If the discrete mesh geometry doesn't perfectly satisfy certain conservation laws (like the Geometric Conservation Law, or GCL), it can create spurious source terms that pollute the adjoint.
 
-Achieving dual consistency requires careful design of the numerical method. It's a beautiful and deep principle: for our sensitivity analysis to be physically meaningful in the limit, our discrete operators must respect the fundamental dual structure of the underlying continuous physics. Even the choice of mathematical "inner product" used to define the adjoint can change the form of the [continuous adjoint](@entry_id:747804) operator, adding another layer of mathematical structure that a good numerical scheme must emulate.
+Achieving dual consistency requires careful design of the numerical method. It's a beautiful and deep principle: for our sensitivity analysis to be physically meaningful in the limit, our discrete operators must respect the fundamental dual structure of the underlying continuous physics. Even the choice of mathematical "inner product" used to define the adjoint can change the form of the [continuous adjoint](@keyword=continuous_adjoint|lang=en-US|style=Feynman) operator, adding another layer of mathematical structure that a good numerical scheme must emulate.
 
 ### Assembling the Adjoint: The Art of Computational Duality
 
 Finally, how do we practically implement this on a computer for a code with millions of lines? The core task is to compute matrix-vector products with the Jacobian transpose, $(\frac{\partial R}{\partial u})^T \lambda$. Forming this matrix explicitly is unthinkable.
 
-Fortunately, the structure of the computation lends itself to an elegant "matrix-free" approach. A finite-volume CFD code builds its residual by looping over the faces of the mesh, calculating a flux, and adding its contribution to the two cells sharing the face. The process of computing the Jacobian-transpose-[vector product](@entry_id:156672) has a beautiful dual structure. It can also be implemented as a loop over faces, where we now "gather" adjoint values from the two cells, multiply them by the transposed flux Jacobians, and "scatter" the results back to the cells. This computational duality is what makes adjoint solvers efficient in practice.
+Fortunately, the structure of the computation lends itself to an elegant "matrix-free" approach. A finite-volume CFD code builds its residual by looping over the faces of the mesh, calculating a flux, and adding its contribution to the two cells sharing the face. The process of computing the Jacobian-transpose-[vector product](@keyword=vector_product|lang=en-US|style=Feynman) has a beautiful dual structure. It can also be implemented as a loop over faces, where we now "gather" adjoint values from the two cells, multiply them by the transposed flux Jacobians, and "scatter" the results back to the cells. This computational duality is what makes adjoint solvers efficient in practice.
 
 To automate this for an entire code, we rely on **Automatic Differentiation (AD)** tools. These tools come in two main flavors:
 - **Operator Overloading (OO):** This approach is often easier to apply to complex modern codes. It replaces numerical types like `double` with a special AD type that records every mathematical operation onto a "tape." The adjoint is then computed by playing this tape in reverse. The downside is that this tape can consume enormous amounts of memory, and the interpretation can be slow.
 - **Source Transformation (S2S):** This method involves a tool that reads the original source code and writes new source code for the adjoint computation. This generated code is often much faster and more memory-efficient, as it can be fully optimized by a standard compiler. The challenge is that building a tool that can parse complex, mixed-language, parallel scientific code is incredibly difficult, making this approach harder to integrate and maintain.
 
-The choice between them is a classic engineering trade-off between ease of use and ultimate performance. But both are built upon the same profound principle: that for every computational process, there is a dual process that carries sensitivities backward, a duality that begins with a simple application of the [chain rule](@entry_id:147422) and ends with the power to redesign the world around us.
+The choice between them is a classic engineering trade-off between ease of use and ultimate performance. But both are built upon the same profound principle: that for every computational process, there is a dual process that carries sensitivities backward, a duality that begins with a simple application of the [chain rule](@keyword=chain_rule|lang=en-US|style=Feynman) and ends with the power to redesign the world around us.

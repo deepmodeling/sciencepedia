@@ -4,54 +4,54 @@
 
 ### 绝对零度下的基态：预测结构与稳定性
 
-我们旅程的第一站始于最基本的问题：对于一堆给定的原子，它们在绝对[零度](@entry_id:156285)时会如何排列？大自然，在其最懒惰的状态下（即最低能量状态），会为我们揭晓答案。通过计算不同[晶体结构](@entry_id:140373)的总能量，我们可以直接“问”大自然哪个结构是它的最爱。能量最低的那个，就是最稳定的基态结构。这就像比较两个山谷的深度，最深的那个才能让球安稳地停在谷底。这个简单的能量比较原则，使我们能够从第一性原理出发，预测一种化合物是会形成如氯化钠那样的[岩盐结构](@entry_id:192480)，还是如砷化镓那样的[闪锌矿结构](@entry_id:161172) 。
+我们旅程的第一站始于最基本的问题：对于一堆给定的原子，它们在绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)时会如何排列？大自然，在其最懒惰的状态下（即最低能量状态），会为我们揭晓答案。通过计算不同[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)的总能量，我们可以直接“问”大自然哪个结构是它的最爱。能量最低的那个，就是最稳定的基态结构。这就像比较两个山谷的深度，最深的那个才能让球安稳地停在谷底。这个简单的能量比较原则，使我们能够从第一性原理出发，预测一种化合物是会形成如氯化钠那样的[岩盐结构](@keyword=rocksalt_structure|lang=zh-CN|style=Feynman)，还是如砷化镓那样的[闪锌矿结构](@keyword=zincblende_structure|lang=zh-CN|style=Feynman) [@problem_id:1768571]。
 
-然而，对于一种复杂的、包含多种元素的合金，简单的能量两两比较就不够了。此时，大自然玩的是一场[几何优化](@entry_id:151817)的游戏。想象一下，将每一种可能化合物的能量与其成分对应，绘制在一张多维度的“成分-能量”图上。稳定的结构不仅仅是那些能量最低的点，而是所有能够构成“**能量凸包**”（Convex Hull）的点——它就像是在所有数据点下方拉起的一张绷紧的网。任何能量位于这张网之上的材料，都如同山坡上的小球，其[热力学](@entry_id:172368)宿命就是滚落下来，分解成位于其正下方那片“网面”所定义的稳定相的混合物。通过计算少数关键化合物的总能量，我们就能构建出这个[凸包](@entry_id:262864)，并利用简单的几何工具——杠杆定则——来精确预测一种[亚稳态](@entry_id:167515)合金会分解成什么，以及各相的比例 。
+然而，对于一种复杂的、包含多种元素的合金，简单的能量两两比较就不够了。此时，大自然玩的是一场[几何优化](@keyword=geometry_optimization|lang=zh-CN|style=Feynman)的游戏。想象一下，将每一种可能化合物的能量与其成分对应，绘制在一张多维度的“成分-能量”图上。稳定的结构不仅仅是那些能量最低的点，而是所有能够构成“**能量凸包**”（Convex Hull）的点——它就像是在所有数据点下方拉起的一张绷紧的网。任何能量位于这张网之上的材料，都如同山坡上的小球，其[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)宿命就是滚落下来，分解成位于其正下方那片“网面”所定义的稳定相的混合物。通过计算少数关键化合物的总能量，我们就能构建出这个[凸包](@keyword=convex_hull|lang=zh-CN|style=Feynman)，并利用简单的几何工具——杠杆定则——来精确预测一种[亚稳态](@keyword=metastable_states|lang=zh-CN|style=Feynman)合金会分解成什么，以及各相的比例 [@problem_id:3763354]。
 
 ### 超越完美：缺陷与界面的世界
 
 真实的材料并非完美无瑕的晶体。它们的性能，无论是好是坏，往往由其内部的“瑕疵”——缺陷所决定。总能量计算让我们能够精确量化这些缺陷的“成本”。
 
-我们可以研究**点缺陷**，例如晶体中缺失一个原子的**空位**，或是一个原子占据了“错误”位置的**[反位缺陷](@entry_id:158307)**。一个深刻的见解是，缺陷的[形成能](@entry_id:142642)并非一个固定的数值，而是强烈依赖于其化学环境，即周围原子“储库”的化学势 。这就像从银行取钱的“成本”取决于当时的利率一样。化学势由材料所处的宏观条件（例如，富锂或贫锂环境）决定，而这些条件本身又受限于整个体系的[相图](@entry_id:144015)。这个概念将孤立的缺陷计算与宏观的[热力学](@entry_id:172368)联系起来，形成了一个完整的理论闭环。更有甚者，利用这些在零温下计算得到的[缺陷形成能](@entry_id:1125245)，我们可以在统计力学的框架下，预测在有限温度下有序合金中[反位缺陷](@entry_id:158307)的浓度，从而理解[有序-无序转变](@entry_id:140999) 。
+我们可以研究**点缺陷**，例如晶体中缺失一个原子的**空位**，或是一个原子占据了“错误”位置的**[反位缺陷](@keyword=antisite_defects|lang=zh-CN|style=Feynman)**。一个深刻的见解是，缺陷的[形成能](@keyword=formation_energy|lang=zh-CN|style=Feynman)并非一个固定的数值，而是强烈依赖于其化学环境，即周围原子“储库”的化学势 [@problem_id:3763318]。这就像从银行取钱的“成本”取决于当时的利率一样。化学势由材料所处的宏观条件（例如，富锂或贫锂环境）决定，而这些条件本身又受限于整个体系的[相图](@keyword=phase_portrait|lang=zh-CN|style=Feynman)。这个概念将孤立的缺陷计算与宏观的[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)联系起来，形成了一个完整的理论闭环。更有甚者，利用这些在零温下计算得到的[缺陷形成能](@keyword=formation_energy_of_defects|lang=zh-CN|style=Feynman)，我们可以在统计力学的框架下，预测在有限温度下有序合金中[反位缺陷](@keyword=antisite_defects|lang=zh-CN|style=Feynman)的浓度，从而理解[有序-无序转变](@keyword=order_disorder_transition|lang=zh-CN|style=Feynman) [@problem_id:3763345]。
 
-当我们将视线从零维的[点缺陷](@entry_id:136257)扩展到二维的**面缺陷**时，一幅更壮丽的图景展现在眼前。例如，在[面心立方](@entry_id:156319)（FCC）金属中普遍存在的**[堆垛层错](@entry_id:138255)**，其形成能（$\gamma_{\text{SF}}$）可以通过比较完美超胞与包含层错的超胞的总能量来精确计算 。这个微观的能量值与材料的宏观力学行为有着惊人的联系。低的[堆垛层错能](@entry_id:145736)意味着位错更容易分解，从而促进孪晶（Twinning）的形成，甚至诱发从面心立方到密排六方（HCP）的[马氏体相变](@entry_id:158998)。这正是某些[高性能合金](@entry_id:185324)（如著名的[Cantor合金](@entry_id:160598)）同时拥有高强度和高[延展性](@entry_id:160108)的奥秘所在，即所谓的孪生诱导塑性（TWIP）和相变诱导塑性（TRIP）效应。总能量计算为我们提供了一把钥匙，通过调控微观的[堆垛层错能](@entry_id:145736)来设计具有特定[力学性能](@entry_id:201145)的宏观材料。
+当我们将视线从零维的[点缺陷](@keyword=point_defects|lang=zh-CN|style=Feynman)扩展到二维的**面缺陷**时，一幅更壮丽的图景展现在眼前。例如，在[面心立方](@keyword=face_centered_cubic|lang=zh-CN|style=Feynman)（FCC）金属中普遍存在的**[堆垛层错](@keyword=stacking_faults|lang=zh-CN|style=Feynman)**，其形成能（$\gamma_{\text{SF}}$）可以通过比较完美超胞与包含层错的超胞的总能量来精确计算 [@problem_id:3763333]。这个微观的能量值与材料的宏观力学行为有着惊人的联系。低的[堆垛层错能](@keyword=stacking_fault_energy|lang=zh-CN|style=Feynman)意味着位错更容易分解，从而促进孪晶（Twinning）的形成，甚至诱发从面心立方到密排六方（HCP）的[马氏体相变](@keyword=martensitic_transformation|lang=zh-CN|style=Feynman)。这正是某些[高性能合金](@keyword=high_performance_alloys|lang=zh-CN|style=Feynman)（如著名的[Cantor合金](@keyword=cantor_alloy|lang=zh-CN|style=Feynman)）同时拥有高强度和高[延展性](@keyword=ductility|lang=zh-CN|style=Feynman)的奥秘所在，即所谓的孪生诱导塑性（TWIP）和相变诱导塑性（TRIP）效应。总能量计算为我们提供了一把钥匙，通过调控微观的[堆垛层错能](@keyword=stacking_fault_energy|lang=zh-CN|style=Feynman)来设计具有特定[力学性能](@keyword=mechanical_properties|lang=zh-CN|style=Feynman)的宏观材料。
 
-除了材料内部的缺陷，不同[物相](@entry_id:196677)之间的**界面**也至关重要。例如，在合金中析出相的形成过程中，新旧两相间的[界面能](@entry_id:198323)（$\gamma$）扮演着关键角色。通过在超胞中构建包含两个[相干界](@entry_id:747457)面的“平板”模型，我们可以从总能量计算中精确提取出界面能的大小 。根据经典形核理论，这个能量值直接决定了新相形核的能垒（与 $\gamma^3$ 成正比）和临界形核尺寸（与 $\gamma$ 成正比）。因此，界面能是控制材料微结构[演化动力学](@entry_id:1124712)的核心参数之一。此外，[界面能](@entry_id:198323)的各向异性（即在不同[晶向](@entry_id:137393)上能量不同）还决定了析出相的最终形貌——是光滑的球形，还是棱角分明的多面体。
+除了材料内部的缺陷，不同[物相](@keyword=phases_of_matter|lang=zh-CN|style=Feynman)之间的**界面**也至关重要。例如，在合金中析出相的形成过程中，新旧两相间的[界面能](@keyword=interfacial_energy|lang=zh-CN|style=Feynman)（$\gamma$）扮演着关键角色。通过在超胞中构建包含两个[相干界](@keyword=coherence_bound|lang=zh-CN|style=Feynman)面的“平板”模型，我们可以从总能量计算中精确提取出界面能的大小 [@problem_id:3763360]。根据经典形核理论，这个能量值直接决定了新相形核的能垒（与 $\gamma^3$ 成正比）和临界形核尺寸（与 $\gamma$ 成正比）。因此，界面能是控制材料微结构[演化动力学](@keyword=evolutionary_dynamics|lang=zh-CN|style=Feynman)的核心参数之一。此外，[界面能](@keyword=interfacial_energy|lang=zh-CN|style=Feynman)的各向异性（即在不同[晶向](@keyword=crystallographic_directions|lang=zh-CN|style=Feynman)上能量不同）还决定了析出相的最终形貌——是光滑的球形，还是棱角分明的多面体。
 
 ### 应对无序的挑战：驯服真实合金的混沌
 
-许多现代先进合金，特别是**[高熵合金](@entry_id:141320)**，其特性恰恰来源于其成分的化学无序。这种无序性对基于[周期性边界条件](@entry_id:753346)的标准总能量计算方法构成了根本性挑战。我们如何计算一个“随机”系统的能量呢？
+许多现代先进合金，特别是**[高熵合金](@keyword=high_entropy_alloys|lang=zh-CN|style=Feynman)**，其特性恰恰来源于其成分的化学无序。这种无序性对基于[周期性边界条件](@keyword=periodic_boundary_conditions_(pbc)|lang=zh-CN|style=Feynman)的标准总能量计算方法构成了根本性挑战。我们如何计算一个“随机”系统的能量呢？
 
-这里的绝妙技巧是引入**[特殊准随机结构](@entry_id:1132064)**（Special Quasirandom Structure, SQS）方法 。其核心思想是，构建一个尺寸虽小但原子排列经过精心设计的周期性结构，使其局域的原子关联函数（例如，最近邻、次近邻的原子对出现的频率）与一个真正无限大的随机固溶体完全一致。这个小的周期性结构就像一个完美的“模仿者”或“替身”，它能够在计算上可行的小尺度内，欺骗量子力学计算，让其“以为”自己正在处理一个真正的[无序系统](@entry_id:145417)。SQS方法是连接[第一性原理计算](@entry_id:198754)与复杂无序材料体系之间的一座至关重要的桥梁。
+这里的绝妙技巧是引入**[特殊准随机结构](@keyword=special_quasirandom_structures|lang=zh-CN|style=Feynman)**（Special Quasirandom Structure, SQS）方法 [@problem_id:3763343]。其核心思想是，构建一个尺寸虽小但原子排列经过精心设计的周期性结构，使其局域的原子关联函数（例如，最近邻、次近邻的原子对出现的频率）与一个真正无限大的随机固溶体完全一致。这个小的周期性结构就像一个完美的“模仿者”或“替身”，它能够在计算上可行的小尺度内，欺骗量子力学计算，让其“以为”自己正在处理一个真正的[无序系统](@keyword=disordered_systems|lang=zh-CN|style=Feynman)。SQS方法是连接[第一性原理计算](@keyword=ab_initio_calculations|lang=zh-CN|style=Feynman)与复杂无序材料体系之间的一座至关重要的桥梁。
 
-### 升温：从静态能量到有限温[相图](@entry_id:144015)
+### 升温：从静态能量到有限温[相图](@keyword=phase_portrait|lang=zh-CN|style=Feynman)
 
 到目前为止，我们的讨论大多局限于绝对零度。然而，真实世界是有温度的。如何将我们的理论框架推广到有限温度呢？答案在于吉布斯自由能（$G = E + PV - TS$）。我们计算的总能量 $E$ 仅仅是自由能拼图的第一块，也是最重要的一块。
 
-为了得到完整的自由能，我们必须考虑温度带来的各种“激发”。原子不再静止于格点，而是会振动；电子不再安分地占据最低能级，而是会被热激发；在[磁性材料](@entry_id:137953)中，[原子磁矩](@entry_id:173739)的排列也会变得混乱。每一种激发都对自由能有其独特的贡献，例如**[振动自由能](@entry_id:1133800)**、$F_{\mathrm{vib}}$，**电子自由能**、$F_{\mathrm{el}}$，以及**磁自由能**、$F_{\mathrm{mag}}$。通过结合格[点动力学](@entry_id:1129859)、电子态密度和[自旋涨落](@entry_id:141847)理论，我们可以从第一性原理出发，分别计算这些贡献 。将这些项与零温总能量 $E_0$ 和最重要的**[构型熵](@entry_id:147820)**（$-TS_{\mathrm{conf}}$）贡献相加，我们便能得到一个随温度变化的完整的吉布斯自由能。当两种不同相的自由能曲线发生交叉时，就意味着一个相变发生了。这使得我们能够从头开始绘制材料的[相图](@entry_id:144015)。
+为了得到完整的自由能，我们必须考虑温度带来的各种“激发”。原子不再静止于格点，而是会振动；电子不再安分地占据最低能级，而是会被热激发；在[磁性材料](@keyword=magnetic_materials|lang=zh-CN|style=Feynman)中，[原子磁矩](@keyword=atomic_magnetic_moments|lang=zh-CN|style=Feynman)的排列也会变得混乱。每一种激发都对自由能有其独特的贡献，例如**[振动自由能](@keyword=vibrational_free_energy|lang=zh-CN|style=Feynman)**、$F_{\mathrm{vib}}$，**电子自由能**、$F_{\mathrm{el}}$，以及**磁自由能**、$F_{\mathrm{mag}}$。通过结合格[点动力学](@keyword=point_kinetics|lang=zh-CN|style=Feynman)、电子态密度和[自旋涨落](@keyword=spin_fluctuations|lang=zh-CN|style=Feynman)理论，我们可以从第一性原理出发，分别计算这些贡献 [@problem_id:3763310]。将这些项与零温总能量 $E_0$ 和最重要的**[构型熵](@keyword=configurational_entropy|lang=zh-CN|style=Feynman)**（$-TS_{\mathrm{conf}}$）贡献相加，我们便能得到一个随温度变化的完整的吉布斯自由能。当两种不同相的自由能曲线发生交叉时，就意味着一个相变发生了。这使得我们能够从头开始绘制材料的[相图](@keyword=phase_portrait|lang=zh-CN|style=Feynman)。
 
-这种“自下而上”的建模思想还可以与经典的唯象[热力学](@entry_id:172368)模型相结合。例如，我们可以用总能量计算来精确确定**正规溶体模型**中的混合焓参数 $\Omega$。一旦有了这个参数，我们就可以利用这个简洁的模型来分析合金的[混合自由能](@entry_id:185318)，并预测在特定温度下发生**[旋节线](@entry_id:195346)分解**（spinodal decomposition）的成分范围，即合金会自发地分解为两个不同成分的区域 。
+这种“自下而上”的建模思想还可以与经典的唯象[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)模型相结合。例如，我们可以用总能量计算来精确确定**正规溶体模型**中的混合焓参数 $\Omega$。一旦有了这个参数，我们就可以利用这个简洁的模型来分析合金的[混合自由能](@keyword=free_energy_of_mixing|lang=zh-CN|style=Feynman)，并预测在特定温度下发生**[旋节线](@keyword=spinodal_curve|lang=zh-CN|style=Feynman)分解**（spinodal decomposition）的成分范围，即合金会自发地分解为两个不同成分的区域 [@problem_id:3763331]。
 
-更进一步，将[第一性原理计算](@entry_id:198754)得到的[热力学](@entry_id:172368)数据整合到更宏大的**[CALPHAD](@entry_id:147253)**（[相图计算](@entry_id:1129576)）框架中，是实现多尺度[材料设计](@entry_id:160450)的关键一步。这个过程需要格外小心，因为不同方法（如DFT和CALPHAD）使用不同的能量参考态。只有通过严谨的[热力学](@entry_id:172368)转换和[参考态](@entry_id:151465)对齐，才能确保数据的一致性和预测的可靠性 。
+更进一步，将[第一性原理计算](@keyword=ab_initio_calculations|lang=zh-CN|style=Feynman)得到的[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)数据整合到更宏大的**[CALPHAD](@keyword=calphad|lang=zh-CN|style=Feynman)**（[相图计算](@keyword=phase_diagram_calculation|lang=zh-CN|style=Feynman)）框架中，是实现多尺度[材料设计](@keyword=materials_design|lang=zh-CN|style=Feynman)的关键一步。这个过程需要格外小心，因为不同方法（如DFT和CALPHAD）使用不同的能量参考态。只有通过严谨的[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)转换和[参考态](@keyword=reference_state|lang=zh-CN|style=Feynman)对齐，才能确保数据的一致性和预测的可靠性 [@problem_id:3763316]。
 
 ### 相变之路：理解动力学与转变路径
 
-[热力学](@entry_id:172368)告诉我们旅程的起点和终点，但对过程本身却保持沉默。一颗钻石在常压下相对于石墨是亚稳的，但它并不会在你的手指上瞬间变成铅笔芯。为什么？因为从“钻石”这个能量山谷要想到达“石墨”这个更深的山谷，需要翻越一座巨大的能量山峰。**动力学**研究的正是这些“山峰”和“山路”。
+[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)告诉我们旅程的起点和终点，但对过程本身却保持沉默。一颗钻石在常压下相对于石墨是亚稳的，但它并不会在你的手指上瞬间变成铅笔芯。为什么？因为从“钻石”这个能量山谷要想到达“石墨”这个更深的山谷，需要翻越一座巨大的能量山峰。**动力学**研究的正是这些“山峰”和“山路”。
 
-总能量计算，借助如**[微动弹性带](@entry_id:201656)**（Nudged Elastic Band, NEB）这样的巧妙方法，使我们能够绘制出原子从一个格点跳到另一个格点所需翻越的整条“最小能量路径” 。这条路径上最高点的能量，即**激活能**，直接决定了扩散速率。这是连接能量的量子世界与时间的宏观世界之间的桥梁，它告诉我们一种材料老化、有序化或相变的速度有多快。
+总能量计算，借助如**[微动弹性带](@keyword=nudged_elastic_band|lang=zh-CN|style=Feynman)**（Nudged Elastic Band, NEB）这样的巧妙方法，使我们能够绘制出原子从一个格点跳到另一个格点所需翻越的整条“最小能量路径” [@problem_id:3763317]。这条路径上最高点的能量，即**激活能**，直接决定了扩散速率。这是连接能量的量子世界与时间的宏观世界之间的桥梁，它告诉我们一种材料老化、有序化或相变的速度有多快。
 
-除了需要[原子扩散](@entry_id:159939)的相变，还存在一类无需扩散、仅通过[晶格](@entry_id:148274)协同畸变就能完成的**[位移型相变](@entry_id:139524)**，其中最著名的就是[马氏体相变](@entry_id:158998)。总能量计算同样可以揭示这类相变的奥秘。通过计算连接两种不同[晶体结构](@entry_id:140373)（例如BCC和FCC）的**贝恩路径**（Bain path）上的能量变化，我们可以绘制出整个转变过程的能量地貌图 。如果高对称性的初始结构在畸变路径上出现能量极大值，而两侧出现新的能量极小值，就预示着[马氏体相变](@entry_id:158998)可能发生。
+除了需要[原子扩散](@keyword=atomic_diffusion|lang=zh-CN|style=Feynman)的相变，还存在一类无需扩散、仅通过[晶格](@keyword=crystal_lattices|lang=zh-CN|style=Feynman)协同畸变就能完成的**[位移型相变](@keyword=displacive_transition|lang=zh-CN|style=Feynman)**，其中最著名的就是[马氏体相变](@keyword=martensitic_transformation|lang=zh-CN|style=Feynman)。总能量计算同样可以揭示这类相变的奥秘。通过计算连接两种不同[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)（例如BCC和FCC）的**贝恩路径**（Bain path）上的能量变化，我们可以绘制出整个转变过程的能量地貌图 [@problem_id:3763329]。如果高对称性的初始结构在畸变路径上出现能量极大值，而两侧出现新的能量极小值，就预示着[马氏体相变](@keyword=martensitic_transformation|lang=zh-CN|style=Feynman)可能发生。
 
 ### 跨越学科边界：能量的普适语言
 
 我们所建立的这套基于总能量的理论框架具有惊人的普适性，其威力远远超出了传统的冶金学范畴。
 
-在**电化学**领域，它正在彻底改变电池材料的设计。我们可以运用凸包分析来预测[锂离子电池](@entry_id:150991)[正极材料](@entry_id:161536)在充放电过程中的相变路径和电压平台 。在这个体系中，锂的化学势与电池的电压直接挂钩（$\mu_{\mathrm{Li}} = \mu_{\mathrm{Li}}^{\mathrm{metal}} - eV$），这意味着我们可以通过调节电压来控制材料的[热力学稳定性](@entry_id:142877)。总能量计算使得我们能够在计算机上“测试”成千上万种潜在电极材料，并预测它们的电化学性能。
+在**电化学**领域，它正在彻底改变电池材料的设计。我们可以运用凸包分析来预测[锂离子电池](@keyword=lithium_ion_batteries|lang=zh-CN|style=Feynman)[正极材料](@keyword=cathode_materials|lang=zh-CN|style=Feynman)在充放电过程中的相变路径和电压平台 [@problem_id:3926544]。在这个体系中，锂的化学势与电池的电压直接挂钩（$\mu_{\mathrm{Li}} = \mu_{\mathrm{Li}}^{\mathrm{metal}} - eV$），这意味着我们可以通过调节电压来控制材料的[热力学稳定性](@keyword=thermodynamic_stability|lang=zh-CN|style=Feynman)。总能量计算使得我们能够在计算机上“测试”成千上万种潜在电极材料，并预测它们的电化学性能。
 
-在**地球化学**中，同样的[热力学](@entry_id:172368)框架被用来预测在地球深处极端高压、高温和不同酸碱度（pH）条件下矿物的稳定性以及水[溶液中的离子](@entry_id:143907)形态 。尽管为水溶液中的离子精确计算能量（特别是[溶剂化能](@entry_id:178842)）是一个巨大的挑战，但通过将[DFT计算](@entry_id:1123635)与连续介质溶剂模型等方法相结合，我们依然可以获得对地球化学过程的深刻洞察。
+在**地球化学**中，同样的[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)框架被用来预测在地球深处极端高压、高温和不同酸碱度（pH）条件下矿物的稳定性以及水[溶液中的离子](@keyword=ions_in_solution|lang=zh-CN|style=Feynman)形态 [@problem_id:4076885]。尽管为水溶液中的离子精确计算能量（特别是[溶剂化能](@keyword=solvation_energy|lang=zh-CN|style=Feynman)）是一个巨大的挑战，但通过将[DFT计算](@keyword=dft_calculations|lang=zh-CN|style=Feynman)与连续介质溶剂模型等方法相结合，我们依然可以获得对地球化学过程的深刻洞察。
 
-此外，该框架还能用于研究**杂质**对[材料性能](@entry_id:146723)的影响。例如，氢原子作为一种常见的[间隙杂质](@entry_id:197267)，是导致许多金属材料**[氢脆](@entry_id:197612)**的罪魁祸首。通过总能量计算，我们可以精确评估将一个氢原子“塞入”材料[晶格](@entry_id:148274)的形成能，并分析它如何改变局域的[原子弛豫](@entry_id:168503)和声子振动谱 。这些微观层面的变化，特别是对[振动自由能](@entry_id:1133800)的改变，最终会影响材料的宏观稳定性和力学行为。
+此外，该框架还能用于研究**杂质**对[材料性能](@keyword=material_properties|lang=zh-CN|style=Feynman)的影响。例如，氢原子作为一种常见的[间隙杂质](@keyword=interstitial_impurity|lang=zh-CN|style=Feynman)，是导致许多金属材料**[氢脆](@keyword=hydrogen_embrittlement|lang=zh-CN|style=Feynman)**的罪魁祸首。通过总能量计算，我们可以精确评估将一个氢原子“塞入”材料[晶格](@keyword=crystal_lattices|lang=zh-CN|style=Feynman)的形成能，并分析它如何改变局域的[原子弛豫](@keyword=atomic_relaxation|lang=zh-CN|style=Feynman)和声子振动谱 [@problem_id:3763350]。这些微观层面的变化，特别是对[振动自由能](@keyword=vibrational_free_energy|lang=zh-CN|style=Feynman)的改变，最终会影响材料的宏观稳定性和力学行为。
 
 ### 结语：从计算到创造
 
-我们的旅程从一个单一的数字——总能量——开始。我们看到，从这个数字出发，借助[热力学](@entry_id:172368)和统计力学的强大工具，我们构建了一个强大的预测引擎。它不仅能告诉我们物质的静态结构，还能揭示其相图、[力学性能](@entry_id:201145)、[相变动力学](@entry_id:197611)，甚至电池性能和地质过程。我们已经从单纯地“理解”自然，迈向了主动地“设计”自然。这正是[计算材料科学](@entry_id:1122793)的魅力所在：将严谨的物理定律转化为创造新材料的蓝图，将比特世界中的能量计算，转化为现实世界中拥有前所未有性能的物质。
+我们的旅程从一个单一的数字——总能量——开始。我们看到，从这个数字出发，借助[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)和统计力学的强大工具，我们构建了一个强大的预测引擎。它不仅能告诉我们物质的静态结构，还能揭示其相图、[力学性能](@keyword=mechanical_properties|lang=zh-CN|style=Feynman)、[相变动力学](@keyword=transformation_kinetics|lang=zh-CN|style=Feynman)，甚至电池性能和地质过程。我们已经从单纯地“理解”自然，迈向了主动地“设计”自然。这正是[计算材料科学](@keyword=computational_material_science|lang=zh-CN|style=Feynman)的魅力所在：将严谨的物理定律转化为创造新材料的蓝图，将比特世界中的能量计算，转化为现实世界中拥有前所未有性能的物质。

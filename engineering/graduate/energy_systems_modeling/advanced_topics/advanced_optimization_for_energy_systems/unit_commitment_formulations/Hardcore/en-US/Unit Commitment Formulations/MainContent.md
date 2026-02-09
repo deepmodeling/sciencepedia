@@ -1,13 +1,13 @@
 ## Introduction
 The reliable and economic operation of modern power grids hinges on a complex optimization problem known as Unit Commitment (UC). At its core, UC determines which power plants to run, and at what level, to meet electricity demand at every moment. While the concept is straightforward, the underlying mathematical formulation is intricate, blending discrete on/off decisions with continuous power levels, physical limitations, and economic objectives. This article demystifies the UC problem by breaking down its formulation from first principles, addressing the gap between high-level understanding and practical modeling expertise.
 
-Over the next three chapters, you will embark on a structured journey through the world of unit commitment. The first chapter, **Principles and Mechanisms**, lays the groundwork by constructing a canonical Mixed-Integer Linear Program (MILP) from scratch, defining its variables, objective function, and critical constraints. The second chapter, **Applications and Interdisciplinary Connections**, expands on this foundation to show how the model is adapted to handle real-world complexities like network constraints, energy storage, and uncertainty from renewable sources. Finally, the **Hands-On Practices** chapter provides targeted exercises to reinforce your understanding of the core concepts. This comprehensive exploration will equip you with the knowledge to formulate, interpret, and extend UC models for advanced energy [system analysis](@entry_id:263805).
+Over the next three chapters, you will embark on a structured journey through the world of unit commitment. The first chapter, **Principles and Mechanisms**, lays the groundwork by constructing a canonical Mixed-Integer Linear Program (MILP) from scratch, defining its variables, objective function, and critical constraints. The second chapter, **Applications and Interdisciplinary Connections**, expands on this foundation to show how the model is adapted to handle real-world complexities like network constraints, energy storage, and uncertainty from renewable sources. Finally, the **Hands-On Practices** chapter provides targeted exercises to reinforce your understanding of the core concepts. This comprehensive exploration will equip you with the knowledge to formulate, interpret, and extend UC models for advanced energy system analysis.
 
 ## Principles and Mechanisms
 
-The Unit Commitment (UC) problem addresses the challenge of scheduling power generation units to meet system-wide electricity demand at the minimum possible cost, while respecting a complex set of physical and operational constraints. Unlike the simpler **Economic Dispatch** (ED) problem, which assumes the on/off status of generators is predetermined and only optimizes their continuous power output, Unit Commitment must decide which units to turn on or off in each time period. This introduction of discrete on/off decisions, coupled with time-linking constraints, transforms the problem into a large-scale, non-convex, Mixed-Integer Linear Program (MILP), which is the focus of this chapter. 
+The Unit Commitment (UC) problem addresses the challenge of scheduling power generation units to meet system-wide electricity demand at the minimum possible cost, while respecting a complex set of physical and operational constraints. Unlike the simpler **Economic Dispatch** (ED) problem, which assumes the on/off status of generators is predetermined and only optimizes their continuous power output, Unit Commitment must decide which units to turn on or off in each time period. This introduction of discrete on/off decisions, coupled with time-linking constraints, transforms the problem into a large-scale, non-convex, Mixed-Integer Linear Program (MILP), which is the focus of this chapter. [@problem_id:4134183]
 
-This chapter deconstructs the canonical thermal [unit commitment formulation](@entry_id:1133607), examining its core components—decision variables, objective function, and constraints—from first principles. We will build the model piece by piece, clarifying the physical or economic rationale behind each mathematical statement.
+This chapter deconstructs the canonical thermal unit commitment formulation, examining its core components—decision variables, objective function, and constraints—from first principles. We will build the model piece by piece, clarifying the physical or economic rationale behind each mathematical statement.
 
 ### The Building Blocks: Decision Variables
 
@@ -18,7 +18,7 @@ To construct a mathematical model of the UC problem, we first need to define a s
 
 2.  **Power Generation ($p_{i,t}$):** A continuous, non-negative variable representing the amount of electrical power produced by unit $i$ in period $t$.
 
-To model the costs and physical limitations associated with state transitions, we introduce two auxiliary [binary variables](@entry_id:162761):
+To model the costs and physical limitations associated with state transitions, we introduce two auxiliary binary variables:
 
 3.  **Startup Indicator ($y_{i,t}$):** A binary variable indicating that unit $i$ transitions from offline to online at the beginning of period $t$.
     $$ y_{i,t} = \begin{cases} 1,  \text{if unit } i \text{ starts up at period } t \\ 0,  \text{otherwise} \end{cases} $$
@@ -26,13 +26,13 @@ To model the costs and physical limitations associated with state transitions, w
 4.  **Shutdown Indicator ($z_{i,t}$):** A binary variable indicating that unit $i$ transitions from online to offline at the beginning of period $t$.
     $$ z_{i,t} = \begin{cases} 1,  \text{if unit } i \text{ shuts down at period } t \\ 0,  \text{otherwise} \end{cases} $$
 
-The presence of both [binary variables](@entry_id:162761) ($u_{i,t}, y_{i,t}, z_{i,t}$) and continuous variables ($p_{i,t}$) is what makes the UC problem a "mixed-integer" program. 
+The presence of both binary variables ($u_{i,t}, y_{i,t}, z_{i,t}$) and continuous variables ($p_{i,t}$) is what makes the UC problem a "mixed-integer" program. [@problem_id:4104478]
 
 ### The Objective Function: Quantifying Operating Costs
 
-The goal of the UC problem is typically to minimize the total operating cost over the entire planning horizon. This cost is composed of several distinct components that are directly tied to the decision variables we have just defined. 
+The goal of the UC problem is typically to minimize the total operating cost over the entire planning horizon. This cost is composed of several distinct components that are directly tied to the decision variables we have just defined. [@problem_id:4134219]
 
-*   **Variable Production Cost:** This is the cost of the fuel consumed to produce electricity. While the true fuel cost curve is often a non-linear (convex quadratic) function of power output, for the purposes of a linear program it is typically approximated by a [piecewise linear function](@entry_id:634251). In its simplest [linear form](@entry_id:751308), it is the product of a constant variable cost rate, $\beta_i$ (in $/MWh$), and the energy produced, $p_{i,t} \Delta t$, where $\Delta t$ is the duration of the time period.
+*   **Variable Production Cost:** This is the cost of the fuel consumed to produce electricity. While the true fuel cost curve is often a non-linear (convex quadratic) function of power output, for the purposes of a linear program it is typically approximated by a piecewise linear function. In its simplest linear form, it is the product of a constant variable cost rate, $\beta_i$ (in $/MWh$), and the energy produced, $p_{i,t} \Delta t$, where $\Delta t$ is the duration of the time period.
 
 *   **No-Load Cost:** This is a fixed cost incurred for every period a thermal unit is online ($u_{i,t}=1$), regardless of its power output. It represents the fuel required to maintain operating temperature and pressure and other fixed operational expenses. It is calculated as the product of a no-load cost rate, $\alpha_i$ (in $/h$), and the commitment status, $u_{i,t}$, multiplied by the period duration $\Delta t$.
 
@@ -54,7 +54,7 @@ Let $D_t$ be the forecasted demand in period $t$. The simplest form of the power
 $$ \sum_{i=1}^N p_{i,t} = D_t \quad \forall t $$
 This states that the sum of power produced by all generators must exactly meet the demand in that period.
 
-In more sophisticated models, this equation is augmented to account for other factors.  For instance, if we consider aggregate transmission losses $\ell_t$ (power that is generated but dissipated as heat in the network) and demand response $r_t$ (a reduction from the baseline demand $D_t^{\text{base}}$), the equation becomes:
+In more sophisticated models, this equation is augmented to account for other factors. [@problem_id:4104443] For instance, if we consider aggregate transmission losses $\ell_t$ (power that is generated but dissipated as heat in the network) and demand response $r_t$ (a reduction from the baseline demand $D_t^{\text{base}}$), the equation becomes:
 $$ \sum_{i=1}^N p_{i,t} = (D_t^{\text{base}} - r_t) + \ell_t \quad \forall t $$
 Here, total generation must cover both the realized end-user demand and the power lost in transmission.
 
@@ -68,14 +68,14 @@ The commitment status variable ($u_{i,t}$) and the transition variables ($y_{i,t
 $$ u_{i,t} - u_{i,t-1} = y_{i,t} - z_{i,t} \quad \forall i, t $$
 Additionally, a unit cannot simultaneously start up and shut down in the same period, which is enforced by:
 $$ y_{i,t} + z_{i,t} \le 1 \quad \forall i, t $$
-Together, these two [linear constraints](@entry_id:636966) are sufficient to perfectly model the four possible state transitions: staying off, starting up, shutting down, and staying on. 
+Together, these two linear constraints are sufficient to perfectly model the four possible state transitions: staying off, starting up, shutting down, and staying on. [@problem_id:4134217]
 
 **Generation Limits**
 
 A thermal unit cannot produce power when it is offline. When online, its output must lie within a stable operating range defined by a minimum stable generation level, $P_i^{\min}$, and a maximum capacity, $P_i^{\max}$. This conditional logic is elegantly captured by the following pair of linear inequalities:
 $$ P_i^{\min} u_{i,t} \le p_{i,t} $$
 $$ p_{i,t} \le P_i^{\max} u_{i,t} $$
-If $u_{i,t}=0$, these constraints combine to force $p_{i,t}=0$. If $u_{i,t}=1$, they enforce $P_i^{\min} \le p_{i,t} \le P_i^{\max}$. These constraints are fundamental as they link the binary commitment variable to the continuous power output variable. The presence of a non-zero $P_i^{\min}$ is a primary source of the problem's non-convexity. 
+If $u_{i,t}=0$, these constraints combine to force $p_{i,t}=0$. If $u_{i,t}=1$, they enforce $P_i^{\min} \le p_{i,t} \le P_i^{\max}$. These constraints are fundamental as they link the binary commitment variable to the continuous power output variable. The presence of a non-zero $P_i^{\min}$ is a primary source of the problem's non-convexity. [@problem_id:4104441]
 
 **Inter-temporal Constraints: Coupling Decisions Across Time**
 
@@ -84,9 +84,9 @@ The most complex constraints are those that link decisions across different time
 *   **Ramping Limits:** A generator's power output cannot change instantaneously. Its rate of change is limited by **ramp-up ($RU_i$)** and **ramp-down ($RD_i$)** rates. When a unit is online in two consecutive periods, this is straightforward: $p_{i,t} - p_{i,t-1} \le RU_i$. However, the formulation must also correctly handle startups and shutdowns. A more comprehensive formulation accounts for special start-up ($SU_i$) and shut-down ($SD_i$) ramp capabilities. A standard tight formulation for these limits is:
     $$ p_{i,t} - p_{i,t-1} \le RU_i u_{i,t-1} + SU_i y_{i,t} $$
     $$ p_{i,t-1} - p_{i,t} \le RD_i u_{i,t} + SD_i z_{i,t} $$
-    In the ramp-up constraint, for example, if the unit was already on ($u_{i,t-1}=1, y_{i,t}=0$), the limit is $RU_i$. If the unit is starting up ($u_{i,t-1}=0, y_{i,t}=1$), the limit becomes $SU_i$, which is typically the maximum power the unit can reach in its first hour. The formulation correctly deactivates the constraint when the unit is off. 
+    In the ramp-up constraint, for example, if the unit was already on ($u_{i,t-1}=1, y_{i,t}=0$), the limit is $RU_i$. If the unit is starting up ($u_{i,t-1}=0, y_{i,t}=1$), the limit becomes $SU_i$, which is typically the maximum power the unit can reach in its first hour. The formulation correctly deactivates the constraint when the unit is off. [@problem_id:4104559]
 
-*   **Minimum Up and Down Times:** To avoid excessive [thermal stress](@entry_id:143149) from rapid heating and cooling cycles, operational policies dictate that once a unit is turned on, it must remain on for a **minimum up time ($T_i^{\text{up}}$)**, and once shut down, it must remain off for a **minimum down time ($T_i^{\text{down}}$)**.  This is enforced by "window" constraints. If a unit starts up at time $t$ ($y_{i,t}=1$), it must remain on for the next $T_i^{\text{up}}$ periods. This is modeled by:
+*   **Minimum Up and Down Times:** To avoid excessive thermal stress from rapid heating and cooling cycles, operational policies dictate that once a unit is turned on, it must remain on for a **minimum up time ($T_i^{\text{up}}$)**, and once shut down, it must remain off for a **minimum down time ($T_i^{\text{down}}$)**. [@problem_id:4104438] This is enforced by "window" constraints. If a unit starts up at time $t$ ($y_{i,t}=1$), it must remain on for the next $T_i^{\text{up}}$ periods. This is modeled by:
     $$ \sum_{\tau=t}^{t+T_i^{\text{up}}-1} u_{i,\tau} \ge T_i^{\text{up}} y_{i,t} $$
     Since each $u_{i,\tau}$ cannot exceed 1, this sum can only be greater than or equal to $T_i^{\text{up}}$ if every $u_{i,\tau}$ in the window is equal to 1. A similar logic applies for the minimum down time:
     $$ \sum_{\tau=t}^{t+T_i^{\text{down}}-1} (1-u_{i,\tau}) \ge T_i^{\text{down}} z_{i,t} $$
@@ -101,14 +101,14 @@ Many logical implications in UC are modeled using the "Big-M" technique. This in
 $$ p_t - p_{t-1} \le R_{\text{up}} + M^{\text{up}} (2 - u_{t-1} - u_t) $$
 When the unit is on in both periods, $u_{t-1}=u_t=1$, the term with $M^{\text{up}}$ becomes zero, and the ramp limit is active. In any other case (startup, shutdown, stay off), the term $(2 - u_{t-1} - u_t)$ is at least 1, and if $M^{\text{up}}$ is large enough, the constraint becomes non-binding.
 
-The key challenge is choosing a value for $M$ that is "just big enough." An overly large $M$ weakens the LP relaxation, allowing unrealistic fractional solutions that slow down the solver. It can also cause numerical instability due to the large difference in coefficient magnitudes. The tightest valid $M$ is the smallest value that guarantees the constraint is non-restrictive in all "off" states. For the ramp-up constraint above, the tightest $M^{\text{up}}$ is found by calculating the maximum possible value of $p_t - p_{t-1} - R_{\text{up}}$ during a startup, which is $P_{\max} - R_{\text{up}}$. Using values derived from the physical parameters of the unit is always superior to using arbitrary large numbers. 
+The key challenge is choosing a value for $M$ that is "just big enough." An overly large $M$ weakens the LP relaxation, allowing unrealistic fractional solutions that slow down the solver. It can also cause numerical instability due to the large difference in coefficient magnitudes. The tightest valid $M$ is the smallest value that guarantees the constraint is non-restrictive in all "off" states. For the ramp-up constraint above, the tightest $M^{\text{up}}$ is found by calculating the maximum possible value of $p_t - p_{t-1} - R_{\text{up}}$ during a startup, which is $P_{\max} - R_{\text{up}}$. Using values derived from the physical parameters of the unit is always superior to using arbitrary large numbers. [@problem_id:4104446]
 
 #### Strengthening Formulations with Valid Inequalities
 
-The quality of a UC formulation can be significantly improved by adding **[valid inequalities](@entry_id:636383)**. These are constraints that are redundant for the integer problem but cut off fractional solutions in the LP relaxation, thereby "tightening" it.
+The quality of a UC formulation can be significantly improved by adding **valid inequalities**. These are constraints that are redundant for the integer problem but cut off fractional solutions in the LP relaxation, thereby "tightening" it.
 
-For instance, the basic generation limit $p_{i,t} \le P_i^{\max} u_{i,t}$ can be strengthened. If we know the unit's maximum output during its startup hour is $\overline{S}_i  P_i^{\max}$, we can add the following [valid inequality](@entry_id:170492):
+For instance, the basic generation limit $p_{i,t} \le P_i^{\max} u_{i,t}$ can be strengthened. If we know the unit's maximum output during its startup hour is $\overline{S}_i  P_i^{\max}$, we can add the following valid inequality:
 $$ p_{i,t} \le P_i^{\max} u_{i,t} - (P_i^{\max} - \overline{S}_i) y_{i,t} $$
-If $y_{i,t}=1$, this constraint tightens the upper bound on power to $p_{i,t} \le \overline{S}_i$, providing a more accurate representation of the unit's capability in the LP relaxation. 
+If $y_{i,t}=1$, this constraint tightens the upper bound on power to $p_{i,t} \le \overline{S}_i$, providing a more accurate representation of the unit's capability in the LP relaxation. [@problem_id:4104441]
 
-The ultimate goal of this process is to make the [feasible region](@entry_id:136622) of the LP relaxation as close as possible to the **convex hull** of the true integer feasible set. A convex-hull formulation is ideal because its LP relaxation has no fractional [extreme points](@entry_id:273616) corresponding to that substructure, completely closing the "[integrality gap](@entry_id:635752)" for that part of the problem. While deriving the full [convex hull](@entry_id:262864) for the entire UC problem is intractable, modern research has produced very tight, near-convex-hull formulations for specific substructures like the minimum up/down time constraints, which are critical for building effective, solvable UC models. 
+The ultimate goal of this process is to make the feasible region of the LP relaxation as close as possible to the **convex hull** of the true integer feasible set. A convex-hull formulation is ideal because its LP relaxation has no fractional extreme points corresponding to that substructure, completely closing the "integrality gap" for that part of the problem. While deriving the full convex hull for the entire UC problem is intractable, modern research has produced very tight, near-convex-hull formulations for specific substructures like the minimum up/down time constraints, which are critical for building effective, solvable UC models. [@problem_id:4104440]

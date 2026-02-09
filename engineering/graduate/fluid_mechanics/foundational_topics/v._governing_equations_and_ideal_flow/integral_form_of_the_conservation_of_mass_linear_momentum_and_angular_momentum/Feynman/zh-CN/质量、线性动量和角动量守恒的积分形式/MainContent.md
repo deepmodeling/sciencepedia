@@ -1,78 +1,78 @@
 ## 引言
-当我们初步踏入流[体力](@article_id:353281)学的世界，我们领略了[流体运动](@article_id:362051)的多姿多彩，从潺潺溪流到呼啸狂风。然而，要从定性的观察转向定量的分析，我们需要一套更为强大和普适的工具。仅仅知道流体在流动是不够的，我们如何精确计算作用在飞机机翼上的升力，或是驱动涡轮旋转的力矩？我们如何将为单个粒子建立的牛顿定律，有效地应用于由无数分子组成的[连续流](@article_id:367779)体之上？这个从微观基础到宏观应用的飞跃，正是通过本文将要探讨的积[分形](@article_id:301219)式守恒定律来完成的。本文将为你系统性地构建这一核心知识体系。我们将首先深入其核心原理，揭示[雷诺输运定理](@article_id:323891)如何成为连接粒子观点和流场观点的桥梁，并由此推导出质量、[线动量](@article_id:353514)与角动量的积分守恒方程。接着，我们将跨越学科的边界，探索这些基本定律在工程设计、自然科学乃至宇宙学中的广泛应用，展示物理学惊人的统一与力量。
+当我们初步踏入流[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)学的世界，我们领略了[流体运动](@keyword=fluid_motion|lang=zh-CN|style=Feynman)的多姿多彩，从潺潺溪流到呼啸狂风。然而，要从定性的观察转向定量的分析，我们需要一套更为强大和普适的工具。仅仅知道流体在流动是不够的，我们如何精确计算作用在飞机机翼上的升力，或是驱动涡轮旋转的力矩？我们如何将为单个粒子建立的牛顿定律，有效地应用于由无数分子组成的[连续流](@keyword=continuous_flow|lang=zh-CN|style=Feynman)体之上？这个从微观基础到宏观应用的飞跃，正是通过本文将要探讨的积[分形](@keyword=fractal|lang=zh-CN|style=Feynman)式守恒定律来完成的。本文将为你系统性地构建这一核心知识体系。我们将首先深入其核心原理，揭示[雷诺输运定理](@keyword=reynolds_transport_theorem|lang=zh-CN|style=Feynman)如何成为连接粒子观点和流场观点的桥梁，并由此推导出质量、[线动量](@keyword=linear_momentum|lang=zh-CN|style=Feynman)与角动量的积分守恒方程。接着，我们将跨越学科的边界，探索这些基本定律在工程设计、自然科学乃至宇宙学中的广泛应用，展示物理学惊人的统一与力量。
 
 ## 原理与机制
 
-我们已经[对流](@article_id:302247)体力学这个迷人的领域有了初步的了解。现在，让我们像物理学家一样，卷起袖子，深入其核心。我们要探讨的不是一大堆孤立的公式，而是一些威力巨大、普适性极强的基本原理。这些原理就像物理世界的宪法，流体无论多么湍急、多么复杂，都必须严格遵守。我们将要展开的，是一段发现之旅，看看牛顿为粒子建立的宏伟定律，是如何在由亿万粒子组成的流体世界中，以一种新的、同样优美的形式重生的。
+我们已经[对流](@keyword=convection|lang=zh-CN|style=Feynman)体力学这个迷人的领域有了初步的了解。现在，让我们像物理学家一样，卷起袖子，深入其核心。我们要探讨的不是一大堆孤立的公式，而是一些威力巨大、普适性极强的基本原理。这些原理就像物理世界的宪法，流体无论多么湍急、多么复杂，都必须严格遵守。我们将要展开的，是一段发现之旅，看看牛顿为粒子建立的宏伟定律，是如何在由亿万粒子组成的流体世界中，以一种新的、同样优美的形式重生的。
 
 ### 从粒子到连续介质：一种新的“观看”之道
 
 想象一下，我们想描述一条河流的运动。一个直接但又“愚蠢”的方法是什么？那就是去追踪每一个水分子的位置和速度！这显然是天方夜谭。水分子的数量堪比天文数字，它们的运动杂乱无章，相互碰撞，上演着一出永不停歇的微观大戏。即使我们拥有最强大的计算机，这样做也毫无意义。我们关心的不是某个特定分子的命运，而是水的整体行为：它的流速、它的压力、它掀起的波浪。
 
-那么，物理学家们想出了一个绝顶聪明的办法。他们决定“眯起眼睛”看世界。我们不再去分辨单个的粒子，而是关注一小“团”流体——这个“小”是相对于河流而言，但“大”到足以包含数以百万计的分子。在这个小小的[体积元](@article_id:331505)里，我们可以计算分子的平均性质。比如，把所有分子的质量加起来再除以体积，我们就得到了一个平滑的、在空间中连续变化的量，我们称之为**密度** $\rho(\mathbf{x}, t)$。同样，我们也可以计算这个[体积元](@article_id:331505)里所有分子的平均动量，从而得到一个**[速度场](@article_id:335158)** $\mathbf{v}(\mathbf{x}, t)$。
+那么，物理学家们想出了一个绝顶聪明的办法。他们决定“眯起眼睛”看世界。我们不再去分辨单个的粒子，而是关注一小“团”流体——这个“小”是相对于河流而言，但“大”到足以包含数以百万计的分子。在这个小小的[体积元](@keyword=volume_element|lang=zh-CN|style=Feynman)里，我们可以计算分子的平均性质。比如，把所有分子的质量加起来再除以体积，我们就得到了一个平滑的、在空间中连续变化的量，我们称之为**密度** $\rho(\mathbf{x}, t)$。同样，我们也可以计算这个[体积元](@keyword=volume_element|lang=zh-CN|style=Feynman)里所有分子的平均动量，从而得到一个**[速度场](@keyword=velocity_field|lang=zh-CN|style=Feynman)** $\mathbf{v}(\mathbf{x}, t)$。
 
-这个从离散的[粒子系统](@article_id:355770)到平滑的连续场的转变，是一种思想上的伟大飞跃。我们用一个被数学家称为“粗粒化”（coarse-graining）或“平滑化”（mollification）的过程，将微观世界的剧烈涨落，变成了一幅宏观的、可描述的平滑画卷。 重要的是，在这个过程中，我们并没有抛弃底层的物理定律。牛顿定律依然有效，只不过它们将以一种更宏大的语言——[连续介质力学](@article_id:315536)的语言——来表达。
+这个从离散的[粒子系统](@keyword=system_of_particles|lang=zh-CN|style=Feynman)到平滑的连续场的转变，是一种思想上的伟大飞跃。我们用一个被数学家称为“粗粒化”（coarse-graining）或“平滑化”（mollification）的过程，将微观世界的剧烈涨落，变成了一幅宏观的、可描述的平滑画卷。[@problem_id:2871737] 重要的是，在这个过程中，我们并没有抛弃底层的物理定律。牛顿定律依然有效，只不过它们将以一种更宏大的语言——[连续介质力学](@keyword=continuum_mechanics|lang=zh-CN|style=Feynman)的语言——来表达。
 
-### [雷诺输运定理](@article_id:323891)：流动的“会计”法则
+### [雷诺输运定理](@keyword=reynolds_transport_theorem|lang=zh-CN|style=Feynman)：流动的“会计”法则
 
-现在我们有了密度、速度这些连续的场，但新的问题又来了。我们如何追踪一群特定流体（物理学家称之为“系统”）的某个物理量，比如总质量或总动量？想象一下，在流动的河水中滴入一滴墨水，这滴墨水会随着水流移动、变形、[扩散](@article_id:327616)。如果我们想计算这团墨水所含流体的总[动量变化](@article_id:352966)，我们该怎么做？直接对这团形状千变万化的移动物质进行积分和求导，是一件极其困难的事情。
+现在我们有了密度、速度这些连续的场，但新的问题又来了。我们如何追踪一群特定流体（物理学家称之为“系统”）的某个物理量，比如总质量或总动量？想象一下，在流动的河水中滴入一滴墨水，这滴墨水会随着水流移动、变形、[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)。如果我们想计算这团墨水所含流体的总[动量变化](@keyword=change_in_momentum|lang=zh-CN|style=Feynman)，我们该怎么做？直接对这团形状千变万化的移动物质进行积分和求导，是一件极其困难的事情。
 
-为了解决这个难题，工程师和物理学家们发明了一个极其强大的工具，它就是**[雷诺输运定理](@article_id:323891)**（Reynolds Transport Theorem）。我们可以把它想象成一个通用的“流动会计法则”。这个法则的核心思想是：与其追踪那个变形的“系统”（那团墨水），不如我们找一个空间中固定或者以某种确定方式运动的区域，我们称之为“[控制体](@article_id:304313)”（Control Volume），然后在这个区域里做“收支审计”。
+为了解决这个难题，工程师和物理学家们发明了一个极其强大的工具，它就是**[雷诺输运定理](@keyword=reynolds_transport_theorem|lang=zh-CN|style=Feynman)**（Reynolds Transport Theorem）。我们可以把它想象成一个通用的“流动会计法则”。这个法则的核心思想是：与其追踪那个变形的“系统”（那团墨水），不如我们找一个空间中固定或者以某种确定方式运动的区域，我们称之为“[控制体](@keyword=control_volume|lang=zh-CN|style=Feynman)”（Control Volume），然后在这个区域里做“收支审计”。
 
-假设我们关心的是某个物理量 $B$（比如质量、动量或能量），它对应一个密度 $\phi$（比如质量密度 $\rho$ 或[动量密度](@article_id:335057) $\rho\mathbf{v}$）。[雷诺输运定理](@article_id:323891)告诉我们一个非常直观的道理：
+假设我们关心的是某个物理量 $B$（比如质量、动量或能量），它对应一个密度 $\phi$（比如质量密度 $\rho$ 或[动量密度](@keyword=momentum_density|lang=zh-CN|style=Feynman) $\rho\mathbf{v}$）。[雷诺输运定理](@keyword=reynolds_transport_theorem|lang=zh-CN|style=Feynman)告诉我们一个非常直观的道理：
 
-**一个流体系统（比如那团墨水）中 $B$ 的总变化率 = [控制体](@article_id:304313)内 $B$ 的瞬时变化率 + 穿过[控制体](@article_id:304313)边界流出的净通量**
+**一个流体系统（比如那团墨水）中 $B$ 的总变化率 = [控制体](@keyword=control_volume|lang=zh-CN|style=Feynman)内 $B$ 的瞬时变化率 + 穿过[控制体](@keyword=control_volume|lang=zh-CN|style=Feynman)边界流出的净通量**
 
-这就像是在审计一个城市的人口变化。城市总人口的变化率，等于城内人口的自然增长率（出生减去死亡），加上净迁出的人口数量（离开城市的人减去进入城市的人）。这个定理之所以能成立，依赖于我们对控制体形状和运动的“良好行为”假设，比如它不能在运动中自我撕裂或产生无限大的变形，这些都在严谨的数学中得到了保证。 
+这就像是在审计一个城市的人口变化。城市总人口的变化率，等于城内人口的自然增长率（出生减去死亡），加上净迁出的人口数量（离开城市的人减去进入城市的人）。这个定理之所以能成立，依赖于我们对控制体形状和运动的“良好行为”假设，比如它不能在运动中自我撕裂或产生无限大的变形，这些都在严谨的数学中得到了保证。[@problem_id:2871713] [@problem_id:2871690]
 
-这个定理就像一座桥梁，它把描述一个特定物质团（系统）的[拉格朗日观点](@article_id:329176)，和观察空间固[定点](@article_id:304105)（[控制体](@article_id:304313)）的[欧拉观点](@article_id:377484)完美地联系了起来。有了它，我们就可以把牛顿定律应用到任意选取的、方便计算的控制体上，从而开启了分析流体运动的康庄大道。
+这个定理就像一座桥梁，它把描述一个特定物质团（系统）的[拉格朗日观点](@keyword=lagrangian_perspective|lang=zh-CN|style=Feynman)，和观察空间固[定点](@keyword=fixed_points|lang=zh-CN|style=Feynman)（[控制体](@keyword=control_volume|lang=zh-CN|style=Feynman)）的[欧拉观点](@keyword=eulerian_viewpoint|lang=zh-CN|style=Feynman)完美地联系了起来。有了它，我们就可以把牛顿定律应用到任意选取的、方便计算的控制体上，从而开启了分析流体运动的康庄大道。
 
 ### 三大守恒定律：流体世界的支柱
 
-有了[雷诺输运定理](@article_id:323891)这把“瑞士军刀”，我们现在可以逐一“解锁”流[体力](@article_id:353281)学的三大基本守恒定律：[质量守恒](@article_id:331706)、[动量守恒](@article_id:321373)和[角动量守恒](@article_id:313488)。
+有了[雷诺输运定理](@keyword=reynolds_transport_theorem|lang=zh-CN|style=Feynman)这把“瑞士军刀”，我们现在可以逐一“解锁”流[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)学的三大基本守恒定律：[质量守恒](@keyword=conservation_of_mass|lang=zh-CN|style=Feynman)、[动量守恒](@keyword=conservation_of_momentum|lang=zh-CN|style=Feynman)和[角动量守恒](@keyword=conservation_of_angular_momentum|lang=zh-CN|style=Feynman)。
 
 #### 质量守恒：“有进必有出”
 
-让我们首先把“会计法则”应用到最基本的物理量——质量上。对于一个由特定粒子组成的系统，无论它如何运动和变形，它的总质量是永远不变的（在非[相对论](@article_id:327421)框架下）。这意味着，在一个系统里，质量的“总变化率”永远是零。
+让我们首先把“会计法则”应用到最基本的物理量——质量上。对于一个由特定粒子组成的系统，无论它如何运动和变形，它的总质量是永远不变的（在非[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)框架下）。这意味着，在一个系统里，质量的“总变化率”永远是零。
 
-根据[雷诺输运定理](@article_id:323891)，这等价于说：
+根据[雷诺输运定理](@keyword=reynolds_transport_theorem|lang=zh-CN|style=Feynman)，这等价于说：
 $$
 0 = \frac{d}{dt} \int_{CV} \rho \, dV + \oint_{CS} \rho (\mathbf{v} \cdot \mathbf{n}) \, dA
 $$
-这里的 $CV$ 是[控制体](@article_id:304313)（Control Volume），$CS$ 是它的边界面（Control Surface），$\mathbf{n}$ 是指向外部的[法向量](@article_id:327892)。公式的右边第一项是控制体内总质量的瞬时变化率，第二项是单位时间内通过边界面净流出的质量通量。整个公式的物理意义再清晰不过了：**控制体内质量的增加（或减少），必须等于从边界净流入（或流出）的质量。** 这就是积[分形](@article_id:301219)式的质量守恒定律。
+这里的 $CV$ 是[控制体](@keyword=control_volume|lang=zh-CN|style=Feynman)（Control Volume），$CS$ 是它的边界面（Control Surface），$\mathbf{n}$ 是指向外部的[法向量](@keyword=normal_vector|lang=zh-CN|style=Feynman)。公式的右边第一项是控制体内总质量的瞬时变化率，第二项是单位时间内通过边界面净流出的质量通量。整个公式的物理意义再清晰不过了：**控制体内质量的增加（或减少），必须等于从边界净流入（或流出）的质量。** 这就是积[分形](@keyword=fractal|lang=zh-CN|style=Feynman)式的质量守恒定律。
 
-想象一个两边有孔的管子，水从中间流过，同时从管壁上的小孔被均匀吸走。 为了维持质量守恒，如果下游某个[截面](@article_id:315406)的流速要和上游一样，那么上游必须有更多的水流进来补充被吸走的部分。反过来，如果入口流量是固定的，那么由于沿途不断有质量被吸走，水流越往下游，其[平均速度](@article_id:310457)就必然会越慢。这就是质量守恒定律在起作用。
+想象一个两边有孔的管子，水从中间流过，同时从管壁上的小孔被均匀吸走。[@problem_id:541209] 为了维持质量守恒，如果下游某个[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)的流速要和上游一样，那么上游必须有更多的水流进来补充被吸走的部分。反过来，如果入口流量是固定的，那么由于沿途不断有质量被吸走，水流越往下游，其[平均速度](@keyword=mean_velocity|lang=zh-CN|style=Feynman)就必然会越慢。这就是质量守恒定律在起作用。
 
-如果我们把这个积分定律应用到一个无限小的控制体上，通过一个称为“定位”（localization）的数学过程，我们就能得到它在每一点上都成立的[微分形式](@article_id:307165)，也就是著名的[连续性方程](@article_id:373909)：$\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0$。 这两个形式本质上是同一回事，只是观察的尺度不同。
+如果我们把这个积分定律应用到一个无限小的控制体上，通过一个称为“定位”（localization）的数学过程，我们就能得到它在每一点上都成立的[微分形式](@keyword=differential_forms|lang=zh-CN|style=Feynman)，也就是著名的[连续性方程](@keyword=equation_of_continuity|lang=zh-CN|style=Feynman)：$\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0$。[@problem_id:2871690] 这两个形式本质上是同一回事，只是观察的尺度不同。
 
 #### 动量守恒：流体的牛顿第二定律
 
-接下来，我们把目光投向[动量密度](@article_id:335057) $\rho\mathbf{v}$。牛顿第二定律告诉我们，一个系统的[动量变化](@article_id:352966)率等于作用在该系统上的所有力的合力，即 $\sum \mathbf{F} = \frac{d}{dt}(m\mathbf{v})$。现在，借助[雷诺输运定理](@article_id:323891)，我们可以把这个定律改写成适用于控制体的形式：
+接下来，我们把目光投向[动量密度](@keyword=momentum_density|lang=zh-CN|style=Feynman) $\rho\mathbf{v}$。牛顿第二定律告诉我们，一个系统的[动量变化](@keyword=change_in_momentum|lang=zh-CN|style=Feynman)率等于作用在该系统上的所有力的合力，即 $\sum \mathbf{F} = \frac{d}{dt}(m\mathbf{v})$。现在，借助[雷诺输运定理](@keyword=reynolds_transport_theorem|lang=zh-CN|style=Feynman)，我们可以把这个定律改写成适用于控制体的形式：
 $$
 \sum \mathbf{F} = \frac{d}{dt} \int_{CV} \rho\mathbf{v} \, dV + \oint_{CS} \rho\mathbf{v} (\mathbf{v} \cdot \mathbf{n}) \, dA
 $$
-这个方程的物理图像是：**作用在一个[控制体](@article_id:304313)上的所有力的[合力](@article_id:343232)，等于控制体内动量的瞬时变化，加上随流体流出和流入而产生的[动量通量](@article_id:378540)变化。**
+这个方程的物理图像是：**作用在一个[控制体](@keyword=control_volume|lang=zh-CN|style=Feynman)上的所有力的[合力](@keyword=net_force|lang=zh-CN|style=Feynman)，等于控制体内动量的瞬时变化，加上随流体流出和流入而产生的[动量通量](@keyword=momentum_flux|lang=zh-CN|style=Feynman)变化。**
 
-这些力来自哪里？它们分为两类：作用于整个[控制体](@article_id:304313)体积的**体力**（Body Forces），如重力；以及作用于控制体表面的**面力**（Surface Forces），如压力和粘性力（摩擦力）。
+这些力来自哪里？它们分为两类：作用于整个[控制体](@keyword=control_volume|lang=zh-CN|style=Feynman)体积的**体力**（Body Forces），如重力；以及作用于控制体表面的**面力**（Surface Forces），如压力和粘性力（摩擦力）。
 
-这个方程的威力是惊人的。例如，想象一个装有水的敞口水箱被放在一辆加速启动的卡车上。 短暂的晃动之后，水面会达到一个新的稳定状态——后高前低的倾斜平面。为什么？我们可以选择一个[非惯性参考系](@article_id:348926)，即随着水箱一起运动。在这个[参考系](@article_id:345789)里，水是静止的，但受到了一个额外的“[惯性力](@article_id:347153)”，方向与加速度相反。这个[惯性力](@article_id:347153)就像一个水平方向的“人造重力”。水面，作为一个等压面，必须与这个合成的“有效重力”（真实重力与人造重力之和）的方向垂直，因此它倾斜了。这个优美的结果恰恰是动量守恒定律在[非惯性系](@article_id:347988)中的体现！类似地，一个旋转的U型管中的液面高度差，也是由旋转产生的[离心力](@article_id:323329)（另一种[惯性力](@article_id:347153)）与重[力平衡](@article_id:330889)的结果。
+这个方程的威力是惊人的。例如，想象一个装有水的敞口水箱被放在一辆加速启动的卡车上。[@problem_id:541219] 短暂的晃动之后，水面会达到一个新的稳定状态——后高前低的倾斜平面。为什么？我们可以选择一个[非惯性参考系](@keyword=non_inertial_reference_frames|lang=zh-CN|style=Feynman)，即随着水箱一起运动。在这个[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)里，水是静止的，但受到了一个额外的“[惯性力](@keyword=inertial_force|lang=zh-CN|style=Feynman)”，方向与加速度相反。这个[惯性力](@keyword=inertial_force|lang=zh-CN|style=Feynman)就像一个水平方向的“人造重力”。水面，作为一个等压面，必须与这个合成的“有效重力”（真实重力与人造重力之和）的方向垂直，因此它倾斜了。这个优美的结果恰恰是动量守恒定律在[非惯性系](@keyword=non_inertial_frames|lang=zh-CN|style=Feynman)中的体现！类似地，一个旋转的U型管中的液面高度差，也是由旋转产生的[离心力](@keyword=centrifugal_force|lang=zh-CN|style=Feynman)（另一种[惯性力](@keyword=inertial_force|lang=zh-CN|style=Feynman)）与重[力平衡](@keyword=force_balance|lang=zh-CN|style=Feynman)的结果。[@problem_id:541254]
 
-再回到那个带吸力的管道例子 ，质量的减少导致了[动量通量](@article_id:378540)的变化（因为流速 $U_c(x)$ 沿程减小）。[动量通量](@article_id:378540)的变化本身就等效于一个力（一个阻碍流动的力），这个力必须与压力梯度和壁面上的粘性摩擦力[相平衡](@article_id:297273)。因此，管道中的压力变化规律，不仅仅取决于[粘性耗散](@article_id:304140)，还取决于因质量抽吸引起的惯性效应。这清晰地展示了质量守恒和动量守恒是如何紧密地交织在一起的。
+再回到那个带吸力的管道例子 [@problem_id:541209]，质量的减少导致了[动量通量](@keyword=momentum_flux|lang=zh-CN|style=Feynman)的变化（因为流速 $U_c(x)$ 沿程减小）。[动量通量](@keyword=momentum_flux|lang=zh-CN|style=Feynman)的变化本身就等效于一个力（一个阻碍流动的力），这个力必须与压力梯度和壁面上的粘性摩擦力[相平衡](@keyword=phase_equilibrium|lang=zh-CN|style=Feynman)。因此，管道中的压力变化规律，不仅仅取决于[粘性耗散](@keyword=viscous_dissipation|lang=zh-CN|style=Feynman)，还取决于因质量抽吸引起的惯性效应。这清晰地展示了质量守恒和动量守恒是如何紧密地交织在一起的。
 
-#### [角动量守恒](@article_id:313488)：旋转的奥秘
+#### [角动量守恒](@keyword=conservation_of_angular_momentum|lang=zh-CN|style=Feynman)：旋转的奥秘
 
-最后，我们来探讨角[动量密度](@article_id:335057) $\mathbf{r} \times \rho\mathbf{v}$。与线性动量类似，一个系统的[角动量变化率](@article_id:344900)等于作用其上的所有力矩的合力，$\sum \mathbf{M} = \frac{d}{dt}(\mathbf{r} \times m\mathbf{v})$。[雷诺输运定理](@article_id:323891)再次为我们架起桥梁：
+最后，我们来探讨角[动量密度](@keyword=momentum_density|lang=zh-CN|style=Feynman) $\mathbf{r} \times \rho\mathbf{v}$。与线性动量类似，一个系统的[角动量变化率](@keyword=rate_of_change_of_angular_momentum|lang=zh-CN|style=Feynman)等于作用其上的所有力矩的合力，$\sum \mathbf{M} = \frac{d}{dt}(\mathbf{r} \times m\mathbf{v})$。[雷诺输运定理](@keyword=reynolds_transport_theorem|lang=zh-CN|style=Feynman)再次为我们架起桥梁：
 $$
 \sum \mathbf{M} = \frac{d}{dt} \int_{CV} (\mathbf{r} \times \rho\mathbf{v}) \, dV + \oint_{CS} (\mathbf{r} \times \rho\mathbf{v}) (\mathbf{v} \cdot \mathbf{n}) \, dA
 $$
-这个方程说的是：**作用于[控制体](@article_id:304313)的总力矩，等于[控制体](@article_id:304313)内角动量的变化，加上角动量的净流出通量。**
+这个方程说的是：**作用于[控制体](@keyword=control_volume|lang=zh-CN|style=Feynman)的总力矩，等于[控制体](@keyword=control_volume|lang=zh-CN|style=Feynman)内角动量的变化，加上角动量的净流出通量。**
 
-一个日常的例子就是草坪上旋转的洒水器。水从弯曲的喷头中喷出，改变了流体的角动量（因为它改变了速度的方向和相对于中心的位置）。根据角动量守恒，这个角动量的变化必然会产生一个[反作用](@article_id:382533)力矩，从而驱动洒水器旋转。或者，考虑一个固定的、有多个出口的复杂管道装置 ，流体从不同方向、不同位置流出，每个出口的流出都带走了一定的角动量。为了让整个装置保持静止，支撑结构必须施加一个[反作用](@article_id:382533)力矩，其大小恰好等于流体角[动量通量](@article_id:378540)的净变化。
+一个日常的例子就是草坪上旋转的洒水器。水从弯曲的喷头中喷出，改变了流体的角动量（因为它改变了速度的方向和相对于中心的位置）。根据角动量守恒，这个角动量的变化必然会产生一个[反作用](@keyword=backreaction|lang=zh-CN|style=Feynman)力矩，从而驱动洒水器旋转。或者，考虑一个固定的、有多个出口的复杂管道装置 [@problem_id:541290]，流体从不同方向、不同位置流出，每个出口的流出都带走了一定的角动量。为了让整个装置保持静止，支撑结构必须施加一个[反作用](@keyword=backreaction|lang=zh-CN|style=Feynman)力矩，其大小恰好等于流体角[动量通量](@keyword=momentum_flux|lang=zh-CN|style=Feynman)的净变化。
 
-然而，[角动量守恒](@article_id:313488)定律最深刻、最美丽的推论，隐藏在它的局部形式中。当我们把这个积分定律应用到无限小的流体元上，并结合[动量守恒](@article_id:321373)定律，我们最终会发现，在没有外力矩源的情况下，这个宏大的定律最终归结为一个极其简洁的几何要求：流体内部的应力张量必须是对称的！
+然而，[角动量守恒](@keyword=conservation_of_angular_momentum|lang=zh-CN|style=Feynman)定律最深刻、最美丽的推论，隐藏在它的局部形式中。当我们把这个积分定律应用到无限小的流体元上，并结合[动量守恒](@keyword=conservation_of_momentum|lang=zh-CN|style=Feynman)定律，我们最终会发现，在没有外力矩源的情况下，这个宏大的定律最终归结为一个极其简洁的几何要求：流体内部的应力张量必须是对称的！[@problem_id:2871690]
 
-这又将我们带回了旅程的起点——微观世界。[应力张量的对称性](@article_id:361050)，本质上是源于一个物理假设：分子间的相互作用力是“中心力”，即作用力方向在两个分子的连线上。 从牛顿为两个粒子设定的作用力与反作用力法则，到流体内部[应力的对称性](@article_id:361050)，再到宏观世界的[角动量守恒](@article_id:313488)——物理学内在的和谐与统一在这里展现得淋漓尽致。
+这又将我们带回了旅程的起点——微观世界。[应力张量的对称性](@keyword=symmetry_of_stress|lang=zh-CN|style=Feynman)，本质上是源于一个物理假设：分子间的相互作用力是“中心力”，即作用力方向在两个分子的连线上。[@problem_id:2871737] 从牛顿为两个粒子设定的作用力与反作用力法则，到流体内部[应力的对称性](@keyword=symmetry_of_stress|lang=zh-CN|style=Feynman)，再到宏观世界的[角动量守恒](@keyword=conservation_of_angular_momentum|lang=zh-CN|style=Feynman)——物理学内在的和谐与统一在这里展现得淋漓尽致。
 
-为了体会积[分形](@article_id:301219)式[守恒律](@article_id:307307)的威力，让我们看最后一个例子：一个装满粘性流体的圆筒，初始时与流体一起以[角速度](@article_id:323935) $\Omega_0$ 刚性旋转。在 $t=0$ 时刻，我们突然让圆筒停止转动。由于粘性，靠近壁面的流体首先减速，然后这种减速效应逐渐向中心传播，直到最终所有流体都静止下来。这个过程的细节非常复杂。但是，如果我们只想知道在整个减速过程中，流体对圆筒壁施加的总的[角冲量](@article_id:345712)（力矩对时间的积分）是多少，我们根本不需要去解那个复杂的瞬态方程！角动量守恒定律告诉我们，这个总的[角冲量](@article_id:345712)，就精确地等于流体[总角动量](@article_id:316157)的变化量——即初始的总角动量。 这就是守恒定律的力量：它让我们能够绕过过程的复杂细节，直击问题的本质。
+为了体会积[分形](@keyword=fractal|lang=zh-CN|style=Feynman)式[守恒律](@keyword=conservation_laws|lang=zh-CN|style=Feynman)的威力，让我们看最后一个例子：一个装满粘性流体的圆筒，初始时与流体一起以[角速度](@keyword=angular_velocity|lang=zh-CN|style=Feynman) $\Omega_0$ 刚性旋转。在 $t=0$ 时刻，我们突然让圆筒停止转动。由于粘性，靠近壁面的流体首先减速，然后这种减速效应逐渐向中心传播，直到最终所有流体都静止下来。这个过程的细节非常复杂。但是，如果我们只想知道在整个减速过程中，流体对圆筒壁施加的总的[角冲量](@keyword=angular_impulse|lang=zh-CN|style=Feynman)（力矩对时间的积分）是多少，我们根本不需要去解那个复杂的瞬态方程！角动量守恒定律告诉我们，这个总的[角冲量](@keyword=angular_impulse|lang=zh-CN|style=Feynman)，就精确地等于流体[总角动量](@keyword=total_angular_momentum|lang=zh-CN|style=Feynman)的变化量——即初始的总角动量。[@problem_id:541203] 这就是守恒定律的力量：它让我们能够绕过过程的复杂细节，直击问题的本质。
 
-总而言之，质量、动量和角动量的积分守恒定律，构成了我们理解和分析流体宏观运动的基石。它们源于微观的粒子动力学，通过[雷诺输运定理](@article_id:323891)这座桥梁，转化为了适用于任意[控制体](@article_id:304313)的强大分析工具，以其普适性和内在的优美，统一了从[管道流](@article_id:333935)动到[行星大气](@article_id:309087)、从微小液滴到璀璨星云的壮丽图景。
+总而言之，质量、动量和角动量的积分守恒定律，构成了我们理解和分析流体宏观运动的基石。它们源于微观的粒子动力学，通过[雷诺输运定理](@keyword=reynolds_transport_theorem|lang=zh-CN|style=Feynman)这座桥梁，转化为了适用于任意[控制体](@keyword=control_volume|lang=zh-CN|style=Feynman)的强大分析工具，以其普适性和内在的优美，统一了从[管道流](@keyword=fluid_flow_in_pipes|lang=zh-CN|style=Feynman)动到[行星大气](@keyword=planetary_atmospheres|lang=zh-CN|style=Feynman)、从微小液滴到璀璨星云的壮丽图景。
