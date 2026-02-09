@@ -23,7 +23,7 @@ $$
 
 The name "partition function" is wonderfully descriptive. The value of $Z$ indicates how the total number of particles in a large collection would be *partitioned* among the available energy states. A large $Z$ means there are many states that are thermally accessible, while a small $Z$ (approaching 1) means the system is mostly confined to its ground state.
 
-Let's make this concrete. Consider a hypothetical quantum dot that can only hold one electron, which has just three accessible energy levels given by a peculiar rule: $E_n = \epsilon_0 \ln(n+1)$ for $n=0, 1, 2$ . The energies are $E_0 = \epsilon_0 \ln(1) = 0$, $E_1 = \epsilon_0 \ln(2)$, and $E_2 = \epsilon_0 \ln(3)$. The partition function is just the sum of the three corresponding Boltzmann factors:
+Let's make this concrete. Consider a hypothetical quantum dot that can only hold one electron, which has just three accessible energy levels given by a peculiar rule: $E_n = \epsilon_0 \ln(n+1)$ for $n=0, 1, 2$ [@problem_id:1895562]. The energies are $E_0 = \epsilon_0 \ln(1) = 0$, $E_1 = \epsilon_0 \ln(2)$, and $E_2 = \epsilon_0 \ln(3)$. The partition function is just the sum of the three corresponding Boltzmann factors:
 
 $$
 Z = \exp(-0 / k_B T) + \exp(-\epsilon_0 \ln(2) / k_B T) + \exp(-\epsilon_0 \ln(3) / k_B T)
@@ -35,7 +35,7 @@ $$
 Z = 1 + 2^{-x} + 3^{-x}
 $$
 
-What if some energy levels are "degenerate," meaning several distinct quantum states share the exact same energy? We simply count all of them. Imagine a custom-built quantum information unit, a "qudit," with a ground state of energy 0, a doubly-degenerate (two states) first excited state at energy $\epsilon$, and a four-fold degenerate (four states) second excited state at energy $3\epsilon$ . The partition function becomes a sum over *energy levels*, with each term multiplied by the **degeneracy** $g_i$:
+What if some energy levels are "degenerate," meaning several distinct quantum states share the exact same energy? We simply count all of them. Imagine a custom-built quantum information unit, a "qudit," with a ground state of energy 0, a doubly-degenerate (two states) first excited state at energy $\epsilon$, and a four-fold degenerate (four states) second excited state at energy $3\epsilon$ [@problem_id:1895576]. The partition function becomes a sum over *energy levels*, with each term multiplied by the **degeneracy** $g_i$:
 
 $$
 Z = g_0 \exp\left(-\frac{E_0}{k_B T}\right) + g_1 \exp\left(-\frac{E_1}{k_B T}\right) + g_2 \exp\left(-\frac{E_2}{k_B T}\right)
@@ -58,7 +58,7 @@ $$
 \langle E \rangle = -\frac{\partial (\ln Z)}{\partial \beta}
 $$
 
-Let's pause and appreciate this. The derivative "pulls down" the energy $E_j$ from the exponent inside the sum, which is exactly what's needed to calculate a weighted average. For our simple two-level [molecular switch](@article_id:270073) from before, $Z = 1 + \exp(-\beta \epsilon)$ . The average energy of a system of $N$ such switches is:
+Let's pause and appreciate this. The derivative "pulls down" the energy $E_j$ from the exponent inside the sum, which is exactly what's needed to calculate a weighted average. For our simple two-level [molecular switch](@keyword=molecular_switch|lang=en-US|style=Feynman) from before, $Z = 1 + \exp(-\beta \epsilon)$ [@problem_id:1895611]. The average energy of a system of $N$ such switches is:
 
 $$
 \langle E \rangle = - \frac{\partial}{\partial \beta} \ln\left(Z^N\right) = -N \frac{\partial}{\partial \beta} \ln\left(1 + \exp(-\beta\epsilon)\right) = N \epsilon \frac{\exp(-\beta\epsilon)}{1 + \exp(-\beta\epsilon)} = N \epsilon \frac{1}{\exp(\beta \epsilon) + 1}
@@ -66,13 +66,13 @@ $$
 
 This tells us exactly how much energy, on average, the system will store at a given temperature. At $T \to 0$ ($\beta \to \infty$), $\langle E \rangle \to 0$; everyone is in the ground state. At $T \to \infty$ ($\beta \to 0$), $\langle E \rangle \to N \epsilon/2$; the ground and excited states are equally populated.
 
-The **heat capacity** at constant volume, $C_V$, measures how much the internal energy changes when you change the temperature, $C_V = (\partial \langle E \rangle / \partial T)_V$. It tells us how much heat the system can "soak up." A bit of calculus shows this is also directly obtainable from $Z$. In fact, it's related to the *fluctuations* in the energy :
+The **heat capacity** at constant volume, $C_V$, measures how much the internal energy changes when you change the temperature, $C_V = (\partial \langle E \rangle / \partial T)_V$. It tells us how much heat the system can "soak up." A bit of calculus shows this is also directly obtainable from $Z$. In fact, it's related to the *fluctuations* in the energy [@problem_id:1895576]:
 
 $$
 C_V = k_B \beta^2 (\langle E^2 \rangle - \langle E \rangle^2)
 $$
 
-This is a deep and beautiful result from the fluctuation-dissipation theorem. The ability of a system to absorb energy (a response, $C_V$) is directly proportional to its natural, spontaneous [energy fluctuations](@article_id:147535) (the variance, $\langle E^2 \rangle - \langle E \rangle^2$). Systems whose energy fluctuates wildly can also absorb a lot of heat for a small temperature change. For a system of molecular switches, this leads to a characteristic peak in the heat capacity known as a Schottky anomaly, which tells experimentalists about the [energy gaps](@article_id:148786) in their material .
+This is a deep and beautiful result from the fluctuation-dissipation theorem. The ability of a system to absorb energy (a response, $C_V$) is directly proportional to its natural, spontaneous [energy fluctuations](@keyword=energy_fluctuations|lang=en-US|style=Feynman) (the variance, $\langle E^2 \rangle - \langle E \rangle^2$). Systems whose energy fluctuates wildly can also absorb a lot of heat for a small temperature change. For a system of molecular switches, this leads to a characteristic peak in the heat capacity known as a Schottky anomaly, which tells experimentalists about the [energy gaps](@keyword=energy_gaps|lang=en-US|style=Feynman) in their material [@problem_id:1895604].
 
 **Pressure and Equations of State**
 
@@ -82,7 +82,7 @@ $$
 P = \frac{1}{\beta} \left(\frac{\partial \ln Z}{\partial V}\right)_{T,N}
 $$
 
-Consider a gas of $N$ molecules whizzing around on a two-dimensional surface of area $A$. The partition function for one particle is $z_1 = A/\Lambda^2$, where $\Lambda$ is a quantity called the thermal de Broglie wavelength that depends only on temperature . For $N$ [indistinguishable particles](@article_id:142261) at high temperature, the total partition function is approximately $Z = z_1^N / N!$. Let's apply our new tool to find the 2D "[surface pressure](@article_id:152362)," $\Pi$:
+Consider a gas of $N$ molecules whizzing around on a two-dimensional surface of area $A$. The partition function for one particle is $z_1 = A/\Lambda^2$, where $\Lambda$ is a quantity called the thermal de Broglie wavelength that depends only on temperature [@problem_id:1895588]. For $N$ [indistinguishable particles](@keyword=indistinguishable_particles|lang=en-US|style=Feynman) at high temperature, the total partition function is approximately $Z = z_1^N / N!$. Let's apply our new tool to find the 2D "[surface pressure](@keyword=surface_pressure|lang=en-US|style=Feynman)," $\Pi$:
 
 $$
 \Pi = \frac{1}{\beta} \left(\frac{\partial \ln Z}{\partial A}\right)_{T,N} = k_B T \frac{\partial}{\partial A} \ln\left( \frac{(A/\Lambda^2)^N}{N!} \right) = k_B T \frac{\partial}{\partial A} (N \ln A - \dots)
@@ -102,7 +102,7 @@ How do we handle more complicated systems? The partition function follows some w
 
 **Distinguishable vs. Indistinguishable Particles**
 
-If a system is made of $N$ parts that are **distinguishable and non-interacting**—like dipoles fixed in a crystal lattice  or defects at specific sites —the total partition function is simply the product of the individual partition functions:
+If a system is made of $N$ parts that are **distinguishable and non-interacting**—like dipoles fixed in a crystal lattice [@problem_id:1895592] or defects at specific sites [@problem_id:1996263]—the total partition function is simply the product of the individual partition functions:
 
 $$
 Z_N = (z_1)^N
@@ -110,22 +110,22 @@ $$
 
 This makes perfect sense: the total set of states is the combination of all possible states for each individual part.
 
-But what if the particles are **indistinguishable**, like the electrons in a metal or the atoms in a gas? Now we have to be more careful. Quantum mechanics tells us that swapping two [identical particles](@article_id:152700) does not create a new physical state.
+But what if the particles are **indistinguishable**, like the electrons in a metal or the atoms in a gas? Now we have to be more careful. Quantum mechanics tells us that swapping two [identical particles](@keyword=identical_particles|lang=en-US|style=Feynman) does not create a new physical state.
 
-Let's take two [identical particles](@article_id:152700) that can each be in a state with energy $\epsilon$ or $\epsilon + \Delta\epsilon$ . If they were distinguishable, there would be four system states: (particle 1 in $\epsilon$, particle 2 in $\epsilon$), ($\epsilon, \epsilon+\Delta\epsilon$), ($\epsilon+\Delta\epsilon, \epsilon$), and ($\epsilon+\Delta\epsilon, \epsilon+\Delta\epsilon$). But if they are identical **bosons**, which are sociable particles that don't mind sharing a state, the two middle configurations are the same! There are only three distinct states for the whole system: both in the low state (total energy $2\epsilon$), one in each state (total energy $2\epsilon + \Delta\epsilon$), and both in the high state (total energy $2\epsilon + 2\Delta\epsilon$). The partition function for bosons must be summed over these three
+Let's take two [identical particles](@keyword=identical_particles|lang=en-US|style=Feynman) that can each be in a state with energy $\epsilon$ or $\epsilon + \Delta\epsilon$ [@problem_id:1895577]. If they were distinguishable, there would be four system states: (particle 1 in $\epsilon$, particle 2 in $\epsilon$), ($\epsilon, \epsilon+\Delta\epsilon$), ($\epsilon+\Delta\epsilon, \epsilon$), and ($\epsilon+\Delta\epsilon, \epsilon+\Delta\epsilon$). But if they are identical **bosons**, which are sociable particles that don't mind sharing a state, the two middle configurations are the same! There are only three distinct states for the whole system: both in the low state (total energy $2\epsilon$), one in each state (total energy $2\epsilon + \Delta\epsilon$), and both in the high state (total energy $2\epsilon + 2\Delta\epsilon$). The partition function for bosons must be summed over these three
 *system* states.
 
-If they are identical **fermions** (like electrons), they are antisocial and obey the **Pauli exclusion principle**: no two can be in the same state. This is even more restrictive. For the two-fermion system on three levels ($0, \epsilon, 2\epsilon$), they cannot both be in level 0. They must occupy different levels. The only allowed system states are pairs of occupied levels: (0, $\epsilon$), (0, $2\epsilon$), and ($\epsilon, 2\epsilon$) . Again, we sum over these allowed system states to get the correct fermionic partition function. The rules of quantum identity are hard-coded into the very construction of $Z$.
+If they are identical **fermions** (like electrons), they are antisocial and obey the **Pauli exclusion principle**: no two can be in the same state. This is even more restrictive. For the two-fermion system on three levels ($0, \epsilon, 2\epsilon$), they cannot both be in level 0. They must occupy different levels. The only allowed system states are pairs of occupied levels: (0, $\epsilon$), (0, $2\epsilon$), and ($\epsilon, 2\epsilon$) [@problem_id:1895564]. Again, we sum over these allowed system states to get the correct fermionic partition function. The rules of quantum identity are hard-coded into the very construction of $Z$.
 
 **Separable Degrees of Freedom**
 
-Another powerful simplification occurs *within* a single, complex molecule. The total energy of a molecule can often be well approximated as a sum of independent parts: the energy of its overall motion (**translation**), its tumbling (**rotation**), its internal jiggling (**vibration**), and the arrangement of its electrons (**electronic**) .
+Another powerful simplification occurs *within* a single, complex molecule. The total energy of a molecule can often be well approximated as a sum of independent parts: the energy of its overall motion (**translation**), its tumbling (**rotation**), its internal jiggling (**vibration**), and the arrangement of its electrons (**electronic**) [@problem_id:2015723].
 
 $$
 E_{total} \approx E_{trans} + E_{rot} + E_{vib} + E_{elec}
 $$
 
-When energy is additive like this, something magical happens in the partition function. Because the exponential of a sum is the product of exponentials, the sum over all states turns into a [product of sums](@article_id:172677):
+When energy is additive like this, something magical happens in the partition function. Because the exponential of a sum is the product of exponentials, the sum over all states turns into a [product of sums](@keyword=product_of_sums|lang=en-US|style=Feynman):
 
 $$
 q_{total} = \sum \exp[-\beta(E_{trans} + E_{rot} + \dots)] = \left(\sum e^{-\beta E_{trans}}\right) \left(\sum e^{-\beta E_{rot}}\right) \dots
@@ -144,7 +144,7 @@ $$
 Z' = \sum_j \exp[-\beta(E_j + \Delta E)] = \exp(-\beta \Delta E) \sum_j \exp(-\beta E_j) = Z \exp(-\beta \Delta E)
 $$
 
-The average energy $\langle E' \rangle$ will shift by exactly $\Delta E$, which is obvious. But what about the heat capacity? The calculation for $C_V$ involves taking derivatives of $\ln Z'$. The extra term $\ln(\exp(-\beta \Delta E)) = -\beta \Delta E$ will vanish upon taking these derivatives . The heat capacity remains completely unchanged!
+The average energy $\langle E' \rangle$ will shift by exactly $\Delta E$, which is obvious. But what about the heat capacity? The calculation for $C_V$ involves taking derivatives of $\ln Z'$. The extra term $\ln(\exp(-\beta \Delta E)) = -\beta \Delta E$ will vanish upon taking these derivatives [@problem_id:189587]. The heat capacity remains completely unchanged!
 
 This tells us something profound: the heat capacity doesn't care about the absolute zero of energy. It only cares about the **energy gaps** between the levels—the structure of the energy spectrum. It is these gaps that determine how the system can rearrange its population of states as the temperature changes. The partition function contains this information in its very structure.
 

@@ -1,9 +1,9 @@
 ## Introduction
-In the study of multi-qubit systems, particularly in [quantum error correction](@entry_id:139596) and [fault-tolerant computation](@entry_id:189649), direct manipulation of Pauli operators as matrices is computationally unfeasible. The **[binary symplectic representation](@entry_id:140983)** offers a powerful solution by mapping these [quantum operators](@entry_id:137703) to a binary vector space, transforming complex algebraic problems into manageable linear algebra. This article provides a comprehensive exploration of this essential formalism. The first chapter, "Principles and Mechanisms," lays the groundwork by introducing the vector mapping, the symplectic inner product for determining commutation, and the representation of Clifford gates as [symplectic matrices](@entry_id:193807). Following this, "Applications and Interdisciplinary Connections" delves into the practical utility of this framework, showcasing its central role in [stabilizer codes](@entry_id:143150), Clifford [circuit simulation](@entry_id:271754), and its links to fields like [classical coding theory](@entry_id:139475) and quantum chemistry. Finally, "Hands-On Practices" offers a series of guided problems to reinforce these concepts and develop practical skills in applying the [symplectic formalism](@entry_id:139806).
+In the study of multi-qubit systems, particularly in quantum error correction and fault-tolerant computation, direct manipulation of Pauli operators as matrices is computationally unfeasible. The **binary symplectic representation** offers a powerful solution by mapping these quantum operators to a binary vector space, transforming complex algebraic problems into manageable linear algebra. This article provides a comprehensive exploration of this essential formalism. The first chapter, "Principles and Mechanisms," lays the groundwork by introducing the vector mapping, the symplectic inner product for determining commutation, and the representation of Clifford gates as symplectic matrices. Following this, "Applications and Interdisciplinary Connections" delves into the practical utility of this framework, showcasing its central role in stabilizer codes, Clifford circuit simulation, and its links to fields like classical coding theory and quantum chemistry. Finally, "Hands-On Practices" offers a series of guided problems to reinforce these concepts and develop practical skills in applying the symplectic formalism.
 
 ## Principles and Mechanisms
 
-The description of multi-qubit quantum systems, particularly within the contexts of [quantum error correction](@entry_id:139596) and [fault-tolerant computation](@entry_id:189649), relies heavily on the properties of the Pauli group. While manipulations of Pauli operators via their [matrix representations](@entry_id:146025) are possible, this approach quickly becomes computationally intractable as the number of qubits increases. A more powerful and scalable framework is the **[binary symplectic representation](@entry_id:140983)**, which maps the algebraic structure of the Pauli group onto a vector space over the finite field $\mathbb{F}_2$. This algebraic abstraction simplifies the analysis of operator commutation, the action of Clifford gates, and the structure of [stabilizer codes](@entry_id:143150), transforming complex quantum problems into more manageable tasks in linear algebra.
+The description of multi-qubit quantum systems, particularly within the contexts of quantum error correction and fault-tolerant computation, relies heavily on the properties of the Pauli group. While manipulations of Pauli operators via their matrix representations are possible, this approach quickly becomes computationally intractable as the number of qubits increases. A more powerful and scalable framework is the **binary symplectic representation**, which maps the algebraic structure of the Pauli group onto a vector space over the finite field $\mathbb{F}_2$. This algebraic abstraction simplifies the analysis of operator commutation, the action of Clifford gates, and the structure of stabilizer codes, transforming complex quantum problems into more manageable tasks in linear algebra.
 
 ### The Binary Symplectic Vector Space
 
@@ -26,11 +26,11 @@ The top block $x \in \mathbb{F}_2^n$ is the **X-part** of the vector, and the bo
 
 It is crucial to distinguish between two key properties associated with this representation. The first is the **Pauli weight**, $w_P(P)$, defined as the number of qubits on which the operator is not the identity $I$. The second is the **Hamming weight**, $w_H(v)$, which is the number of '1's in the binary vector $v$. These two weights are related but not identical. An operator $X_j$ or $Z_j$ has a Pauli weight of 1 and its vector contributes 1 to the total Hamming weight. However, an operator $Y_j$ also has a Pauli weight of 1, but its vector representation $(x_j=1, z_j=1)$ contributes 2 to the Hamming weight.
 
-For example, consider the task of finding all 3-qubit Pauli operators with a Pauli weight of exactly 2 and a corresponding binary vector Hamming weight of exactly 3 . A Pauli weight of 2 means two qubits have non-identity operators ($\{X, Y, Z\}$) and one has the identity. Let the non-identity operators be on qubits $i$ and $j$. The binary vector contributions from these two qubits, $h_i$ and $h_j$, must sum to 3. Since a non-identity operator can contribute a Hamming weight of 1 (for $X$ or $Z$) or 2 (for $Y$), the only way to sum to 3 is the combination $(1, 2)$ or $(2, 1)$. This means one qubit must be $Y$ (weight 2) and the other must be $X$ or $Z$ (weight 1). For a fixed pair of non-identity qubit positions, say 1 and 2, the operators could be $X_1Y_2$, $Y_1X_2$, $Z_1Y_2$, or $Y_1Z_2$. There are 4 such combinations. Since there are $\binom{3}{1}=3$ choices for the position of the [identity operator](@entry_id:204623), the total number of such operators is $3 \times 4 = 12$.
+For example, consider the task of finding all 3-qubit Pauli operators with a Pauli weight of exactly 2 and a corresponding binary vector Hamming weight of exactly 3 [@problem_id:144644]. A Pauli weight of 2 means two qubits have non-identity operators ($\{X, Y, Z\}$) and one has the identity. Let the non-identity operators be on qubits $i$ and $j$. The binary vector contributions from these two qubits, $h_i$ and $h_j$, must sum to 3. Since a non-identity operator can contribute a Hamming weight of 1 (for $X$ or $Z$) or 2 (for $Y$), the only way to sum to 3 is the combination $(1, 2)$ or $(2, 1)$. This means one qubit must be $Y$ (weight 2) and the other must be $X$ or $Z$ (weight 1). For a fixed pair of non-identity qubit positions, say 1 and 2, the operators could be $X_1Y_2$, $Y_1X_2$, $Z_1Y_2$, or $Y_1Z_2$. There are 4 such combinations. Since there are $\binom{3}{1}=3$ choices for the position of the identity operator, the total number of such operators is $3 \times 4 = 12$.
 
 ### The Symplectic Inner Product and Commutation
 
-The primary utility of the [binary symplectic representation](@entry_id:140983) lies in its elegant handling of [commutation relations](@entry_id:136780). The [commutation relation](@entry_id:150292) between any two Pauli operators, $P_a$ and $P_b$, can be determined directly from their corresponding binary vectors, $v_a$ and $v_b$. This is accomplished through the **symplectic inner product**.
+The primary utility of the binary symplectic representation lies in its elegant handling of commutation relations. The commutation relation between any two Pauli operators, $P_a$ and $P_b$, can be determined directly from their corresponding binary vectors, $v_a$ and $v_b$. This is accomplished through the **symplectic inner product**.
 
 The vector space $\mathbb{F}_2^{2n}$ is equipped with a non-degenerate, antisymmetric bilinear form defined by the matrix $\Omega$:
 
@@ -56,9 +56,9 @@ $$
 P_a P_b = (-1)^{\omega(v_a, v_b)} P_b P_a
 $$
 
-Thus, if $\omega(v_a, v_b) = 0$, the operators commute. If $\omega(v_a, v_b) = 1$, they anti-commute. This simple binary calculation replaces complex [matrix multiplication](@entry_id:156035).
+Thus, if $\omega(v_a, v_b) = 0$, the operators commute. If $\omega(v_a, v_b) = 1$, they anti-commute. This simple binary calculation replaces complex matrix multiplication.
 
-Let's illustrate this with an example on a 4-qubit system . Consider the operators $P_1 = Y \otimes I \otimes X \otimes Z$ and $P_2 = Z \otimes Y \otimes X \otimes I$. Their binary vectors are:
+Let's illustrate this with an example on a 4-qubit system [@problem_id:144648]. Consider the operators $P_1 = Y \otimes I \otimes X \otimes Z$ and $P_2 = Z \otimes Y \otimes X \otimes I$. Their binary vectors are:
 
 -   $P_1 \to v_1 = (1, 0, 1, 0 | 1, 0, 0, 1)^T$
 -   $P_2 \to v_2 = (0, 1, 1, 0 | 1, 1, 0, 0)^T$
@@ -67,19 +67,19 @@ Their symplectic inner product is $\omega(v_1, v_2) = x_1^T z_2 + z_1^T x_2$.
 -   $x_1^T z_2 = (1, 0, 1, 0) \cdot (1, 1, 0, 0)^T = 1 \cdot 1 + 0 \cdot 1 + 1 \cdot 0 + 0 \cdot 0 = 1$
 -   $z_1^T x_2 = (1, 0, 0, 1) \cdot (0, 1, 1, 0)^T = 1 \cdot 0 + 0 \cdot 1 + 0 \cdot 1 + 1 \cdot 0 = 0$
 
-Summing these modulo 2 gives $\omega(v_1, v_2) = (1 + 0) \pmod 2 = 1$. Therefore, the operators $P_1$ and $P_2$ anti-commute .
+Summing these modulo 2 gives $\omega(v_1, v_2) = (1 + 0) \pmod 2 = 1$. Therefore, the operators $P_1$ and $P_2$ anti-commute [@problem_id:136088].
 
 ### Clifford Operations and Symplectic Matrices
 
-The power of the binary formalism extends to describing the action of **Clifford gates**. The Clifford group, $\mathcal{C}_n$, is the set of [unitary operators](@entry_id:151194) $U$ that normalize the Pauli group, meaning for any Pauli operator $P$, the conjugated operator $U P U^\dagger$ is also a Pauli operator (up to a phase).
+The power of the binary formalism extends to describing the action of **Clifford gates**. The Clifford group, $\mathcal{C}_n$, is the set of unitary operators $U$ that normalize the Pauli group, meaning for any Pauli operator $P$, the conjugated operator $U P U^\dagger$ is also a Pauli operator (up to a phase).
 
-In the binary representation, this conjugation corresponds to a [linear transformation](@entry_id:143080). If $P \leftrightarrow v$, then $U P U^\dagger \leftrightarrow v'$, where:
+In the binary representation, this conjugation corresponds to a linear transformation. If $P \leftrightarrow v$, then $U P U^\dagger \leftrightarrow v'$, where:
 
 $$
 v' = S_U v \pmod 2
 $$
 
-The $2n \times 2n$ binary matrix $S_U$ is the [symplectic representation](@entry_id:183193) of the Clifford operator $U$. For this transformation to be valid, it must preserve the algebraic structure of the Pauli group—specifically, the commutation relations. This implies that the symplectic inner product must be invariant under the transformation:
+The $2n \times 2n$ binary matrix $S_U$ is the symplectic representation of the Clifford operator $U$. For this transformation to be valid, it must preserve the algebraic structure of the Pauli group—specifically, the commutation relations. This implies that the symplectic inner product must be invariant under the transformation:
 
 $$
 \omega(v'_a, v'_b) = \omega(S_U v_a, S_U v_b) = \omega(v_a, v_b)
@@ -91,29 +91,29 @@ $$
 S_U^T \Omega S_U = \Omega \pmod 2
 $$
 
-Matrices that satisfy this condition are known as **[symplectic matrices](@entry_id:193807)**, and they form the [symplectic group](@entry_id:189031) $Sp(2n, \mathbb{F}_2)$. This condition provides a definitive check for whether a given binary matrix corresponds to a valid Clifford operation . An important consequence of this condition is that the inverse of a [symplectic matrix](@entry_id:142706) is given by $S^{-1} = \Omega S^T \Omega$ (since $\Omega^2 = I$ and $\Omega^{-1} = \Omega$) .
+Matrices that satisfy this condition are known as **symplectic matrices**, and they form the symplectic group $Sp(2n, \mathbb{F}_2)$. This condition provides a definitive check for whether a given binary matrix corresponds to a valid Clifford operation [@problem_id:144745]. An important consequence of this condition is that the inverse of a symplectic matrix is given by $S^{-1} = \Omega S^T \Omega$ (since $\Omega^2 = I$ and $\Omega^{-1} = \Omega$) [@problem_id:144651].
 
-Writing a [symplectic matrix](@entry_id:142706) $S$ in $n \times n$ block form, $S = \begin{pmatrix} A & B \\ C & D \end{pmatrix}$, the symplectic condition $S^T \Omega S = \Omega$ expands into three independent constraints on the blocks:
+Writing a symplectic matrix $S$ in $n \times n$ block form, $S = \begin{pmatrix} A & B \\ C & D \end{pmatrix}$, the symplectic condition $S^T \Omega S = \Omega$ expands into three independent constraints on the blocks:
 
 1.  $A^T C + C^T A = 0_n$ (or $A^T C$ is symmetric)
 2.  $B^T D + D^T B = 0_n$ (or $B^T D$ is symmetric)
 3.  $A^T D + C^T B = I_n$
 
-These equations are invaluable for analyzing and constructing [symplectic matrices](@entry_id:193807). For example, given three of the four blocks, the fourth is often uniquely determined . They also reveal deep structural properties of the Clifford group, such as identifying specific subgroups by constraining the [block matrices](@entry_id:746887) .
+These equations are invaluable for analyzing and constructing symplectic matrices. For example, given three of the four blocks, the fourth is often uniquely determined [@problem_id:144645]. They also reveal deep structural properties of the Clifford group, such as identifying specific subgroups by constraining the block matrices [@problem_id:144622].
 
 ### Symplectic Representation of Common Gates and Circuits
 
-To find the [symplectic matrix](@entry_id:142706) $S_U$ for a given gate $U$, we can determine its [conjugation action](@entry_id:143328) on a set of $2n$ generators of the Pauli group, such as $\{X_1, \dots, X_n, Z_1, \dots, Z_n\}$. The vector representations of these generators form the standard basis of $\mathbb{F}_2^{2n}$. The transformed basis vectors then form the columns of the matrix $S_U$.
+To find the symplectic matrix $S_U$ for a given gate $U$, we can determine its conjugation action on a set of $2n$ generators of the Pauli group, such as $\{X_1, \dots, X_n, Z_1, \dots, Z_n\}$. The vector representations of these generators form the standard basis of $\mathbb{F}_2^{2n}$. The transformed basis vectors then form the columns of the matrix $S_U$.
 
-For example, the **Hadamard gate** on qubit $j$ acts as $H_j X_j H_j^\dagger = Z_j$ and $H_j Z_j H_j^\dagger = X_j$. In the binary representation, this swaps the $x_j$ and $z_j$ coordinates. The **SWAP gate** between qubits $i$ and $j$ acts as $U_{SWAP} (\sigma_i \otimes \sigma_j) U_{SWAP}^\dagger = \sigma_j \otimes \sigma_i$. This swaps the coordinate pairs $(x_i, z_i)$ and $(x_j, z_j)$ . The matrix for a general qubit permutation $\pi$ is block-diagonal: $S_\pi = \begin{pmatrix} P_\pi & 0 \\ 0 & P_\pi \end{pmatrix}$, where $P_\pi$ is the standard [permutation matrix](@entry_id:136841) for $\pi$  .
+For example, the **Hadamard gate** on qubit $j$ acts as $H_j X_j H_j^\dagger = Z_j$ and $H_j Z_j H_j^\dagger = X_j$. In the binary representation, this swaps the $x_j$ and $z_j$ coordinates. The **SWAP gate** between qubits $i$ and $j$ acts as $U_{SWAP} (\sigma_i \otimes \sigma_j) U_{SWAP}^\dagger = \sigma_j \otimes \sigma_i$. This swaps the coordinate pairs $(x_i, z_i)$ and $(x_j, z_j)$ [@problem_id:147763]. The matrix for a general qubit permutation $\pi$ is block-diagonal: $S_\pi = \begin{pmatrix} P_\pi & 0 \\ 0 & P_\pi \end{pmatrix}$, where $P_\pi$ is the standard permutation matrix for $\pi$ [@problem_id:144766] [@problem_id:144703].
 
-The **CNOT gate** with control $c$ and target $t$ transforms the binary vector coordinates according to the rules: $x_c' = x_c$, $x_t' = x_t \oplus x_c$, $z_c' = z_c \oplus z_t$, and $z_t' = z_t$. A special class of Clifford gates are those which implement classical reversible computations on the [basis states](@entry_id:152463), $U_A |x\rangle = |Ax\rangle$ for an [invertible matrix](@entry_id:142051) $A$. These have a simple block-diagonal [symplectic matrix](@entry_id:142706) $S = \begin{pmatrix} A & 0 \\ 0 & (A^T)^{-1} \end{pmatrix}$ .
+The **CNOT gate** with control $c$ and target $t$ transforms the binary vector coordinates according to the rules: $x_c' = x_c$, $x_t' = x_t \oplus x_c$, $z_c' = z_c \oplus z_t$, and $z_t' = z_t$. A special class of Clifford gates are those which implement classical reversible computations on the basis states, $U_A |x\rangle = |Ax\rangle$ for an invertible matrix $A$. These have a simple block-diagonal symplectic matrix $S = \begin{pmatrix} A & 0 \\ 0 & (A^T)^{-1} \end{pmatrix}$ [@problem_id:144665].
 
-The true power of this method becomes apparent when analyzing composite circuits. If a circuit is a sequence of gates $U = U_k \dots U_2 U_1$, the corresponding [symplectic matrix](@entry_id:142706) is simply the product of the individual matrices in the same order: $S_U = S_{U_k} \dots S_{U_2} S_{U_1}$. This allows us to find the [symplectic representation](@entry_id:183193) for any Clifford circuit by matrix multiplication  .
+The true power of this method becomes apparent when analyzing composite circuits. If a circuit is a sequence of gates $U = U_k \dots U_2 U_1$, the corresponding symplectic matrix is simply the product of the individual matrices in the same order: $S_U = S_{U_k} \dots S_{U_2} S_{U_1}$. This allows us to find the symplectic representation for any Clifford circuit by matrix multiplication [@problem_id:144656] [@problem_id:144657].
 
 ### Applications in Stabilizer Codes and Subspace Analysis
 
-The [symplectic formalism](@entry_id:139806) is the native language of stabilizer [quantum error-correcting codes](@entry_id:266787). A [stabilizer code](@entry_id:183130) is defined by an abelian subgroup $\mathcal{S}$ of the Pauli group (where $-I \notin \mathcal{S}$). In the binary representation, the generators of $\mathcal{S}$ span a subspace $W_S \subset \mathbb{F}_2^{2n}$. The condition that all generators in $\mathcal{S}$ commute with each other translates to the geometric condition that $W_S$ must be an **isotropic subspace**, meaning $\omega(v, w) = 0$ for all $v, w \in W_S$. This is equivalent to the condition $W_S \subseteq W_S^\perp$, where $W_S^\perp$ is the **symplectic complement** of $W_S$.
+The symplectic formalism is the native language of stabilizer quantum error-correcting codes. A stabilizer code is defined by an abelian subgroup $\mathcal{S}$ of the Pauli group (where $-I \notin \mathcal{S}$). In the binary representation, the generators of $\mathcal{S}$ span a subspace $W_S \subset \mathbb{F}_2^{2n}$. The condition that all generators in $\mathcal{S}$ commute with each other translates to the geometric condition that $W_S$ must be an **isotropic subspace**, meaning $\omega(v, w) = 0$ for all $v, w \in W_S$. This is equivalent to the condition $W_S \subseteq W_S^\perp$, where $W_S^\perp$ is the **symplectic complement** of $W_S$.
 
 The symplectic complement, also known as the centralizer of $\mathcal{S}$, is the set of all vectors representing Pauli operators that commute with every operator in $\mathcal{S}$:
 
@@ -121,9 +121,9 @@ $$
 W_S^\perp = \{v \in \mathbb{F}_2^{2n} \mid \omega(v, w) = 0 \text{ for all } w \in W_S\}
 $$
 
-Logical operators of the code are elements of $W_S^\perp \setminus W_S$. Analyzing the structure of these subspaces is key to understanding a code's properties. For instance, in the 3-qubit bit-flip code stabilized by $\{Z_1Z_2, Z_2Z_3\}$, the symplectic complement $W_S^\perp$ can be readily computed. One can then systematically search for operators with specific properties within this subspace, such as counting all weight-1 Pauli operators .
+Logical operators of the code are elements of $W_S^\perp \setminus W_S$. Analyzing the structure of these subspaces is key to understanding a code's properties. For instance, in the 3-qubit bit-flip code stabilized by $\{Z_1Z_2, Z_2Z_3\}$, the symplectic complement $W_S^\perp$ can be readily computed. One can then systematically search for operators with specific properties within this subspace, such as counting all weight-1 Pauli operators [@problem_id:144739].
 
-More advanced analyses delve into the algebraic structure of these subspaces. The centralizer of a single Pauli operator $G$ is the subspace $W_g = \{v \mid \omega(v,g)=0\}$. This subspace itself can be viewed as a vector space endowed with the restricted [symplectic form](@entry_id:161619), which may be degenerate. Its radical (the set of vectors orthogonal to all of $W_g$) is spanned by $g$ itself. The dimension of maximal isotropic subspaces within $W_g$ can then be calculated, a quantity relevant to fault-tolerant gate design . Furthermore, the [symplectic group](@entry_id:189031) $Sp(2n, \mathbb{F}_2)$ acts on the set of all subspaces of $\mathbb{F}_2^{2n}$. The subgroup that leaves a particular subspace invariant is called the **stabilizer** of that subspace, whose size and structure reveals symmetries in the system .
+More advanced analyses delve into the algebraic structure of these subspaces. The centralizer of a single Pauli operator $G$ is the subspace $W_g = \{v \mid \omega(v,g)=0\}$. This subspace itself can be viewed as a vector space endowed with the restricted symplectic form, which may be degenerate. Its radical (the set of vectors orthogonal to all of $W_g$) is spanned by $g$ itself. The dimension of maximal isotropic subspaces within $W_g$ can then be calculated, a quantity relevant to fault-tolerant gate design [@problem_id:144690]. Furthermore, the symplectic group $Sp(2n, \mathbb{F}_2)$ acts on the set of all subspaces of $\mathbb{F}_2^{2n}$. The subgroup that leaves a particular subspace invariant is called the **stabilizer** of that subspace, whose size and structure reveals symmetries in the system [@problem_id:144678].
 
 ### Advanced Topic: The Role of Quadratic Forms in Clifford Phases
 
@@ -135,7 +135,7 @@ $$
 U P(v) U^\dagger = (-1)^{q_U(v)} P(S_U v)
 $$
 
-The function $q_U: \mathbb{F}_2^{2n} \to \mathbb{F}_2$ is a **quadratic form** associated with the Clifford operator $U$. It is not an arbitrary function; it must satisfy a consistency condition related to the [symplectic matrix](@entry_id:142706) $S_U$ to ensure the group multiplication law of Pauli operators is respected under conjugation. This condition is:
+The function $q_U: \mathbb{F}_2^{2n} \to \mathbb{F}_2$ is a **quadratic form** associated with the Clifford operator $U$. It is not an arbitrary function; it must satisfy a consistency condition related to the symplectic matrix $S_U$ to ensure the group multiplication law of Pauli operators is respected under conjugation. This condition is:
 
 $$
 q_U(v+w) + q_U(v) + q_U(w) = \omega(v, S_U^T \Omega w) \pmod 2
@@ -147,6 +147,6 @@ $$
 q_{U_2 U_1}(v) = q_{U_1}(v) + q_{U_2}(S_{U_1} v) \pmod 2
 $$
 
-Given sufficient constraints, such as the value of the [quadratic form](@entry_id:153497) on a basis of vectors, the full polynomial expression for $q(v)$ can be derived . For a given [symplectic matrix](@entry_id:142706) $S$, the set of all possible quadratic forms $q$ that can be realized by some Clifford operator is not a single function but an affine space of dimension $2n$ over $\mathbb{F}_2$ .
+Given sufficient constraints, such as the value of the quadratic form on a basis of vectors, the full polynomial expression for $q(v)$ can be derived [@problem_id:144620]. For a given symplectic matrix $S$, the set of all possible quadratic forms $q$ that can be realized by some Clifford operator is not a single function but an affine space of dimension $2n$ over $\mathbb{F}_2$ [@problem_id:144702].
 
-This framework reveals a subtle point: two different Clifford circuits can have the exact same [symplectic matrix](@entry_id:142706) $S$ but differ in their phase behavior, corresponding to different [quadratic forms](@entry_id:154578) $q_1$ and $q_2$. The difference $q_{rel} = q_1 + q_2$ is a linear function that must be a valid [quadratic form](@entry_id:153497) itself, which implies it is a special type of quadratic form that can be classified by its **Arf invariant**. This invariant provides a way to distinguish between otherwise identical transformations, offering a deeper classification of Clifford operations .
+This framework reveals a subtle point: two different Clifford circuits can have the exact same symplectic matrix $S$ but differ in their phase behavior, corresponding to different quadratic forms $q_1$ and $q_2$. The difference $q_{rel} = q_1 + q_2$ is a linear function that must be a valid quadratic form itself, which implies it is a special type of quadratic form that can be classified by its **Arf invariant**. This invariant provides a way to distinguish between otherwise identical transformations, offering a deeper classification of Clifford operations [@problem_id:144754].

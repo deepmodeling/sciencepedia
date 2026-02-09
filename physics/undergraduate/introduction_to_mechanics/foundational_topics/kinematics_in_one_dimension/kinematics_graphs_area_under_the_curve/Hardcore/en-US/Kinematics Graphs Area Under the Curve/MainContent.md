@@ -3,7 +3,7 @@ In the study of mechanics, analyzing the motion of objects can be approached thr
 
 ## Principles and Mechanisms
 
-In our study of [kinematics](@entry_id:173318), we have established the fundamental definitions of position, velocity, and acceleration as functions of time. These quantities are deeply interconnected through the mathematical operations of [differentiation and integration](@entry_id:141565). While algebraic manipulation of [kinematic equations](@entry_id:173032) is a powerful tool, a parallel and often more intuitive approach is the analysis of kinematic graphs. This chapter explores the profound principle that the area under a kinematic graph is not merely a geometric property but represents a definite physical quantity. By mastering this graphical interpretation of integration, we can solve a wide range of problems, often with greater physical insight.
+In our study of kinematics, we have established the fundamental definitions of position, velocity, and acceleration as functions of time. These quantities are deeply interconnected through the mathematical operations of differentiation and integration. While algebraic manipulation of kinematic equations is a powerful tool, a parallel and often more intuitive approach is the analysis of kinematic graphs. This chapter explores the profound principle that the area under a kinematic graph is not merely a geometric property but represents a definite physical quantity. By mastering this graphical interpretation of integration, we can solve a wide range of problems, often with greater physical insight.
 
 ### The Velocity-Time Graph and Displacement
 
@@ -11,7 +11,7 @@ The most fundamental relationship we will explore is that between velocity and d
 
 $$ \Delta x = x(t_f) - x(t_i) = \int_{t_i}^{t_f} v(t) \, dt $$
 
-This equation holds the key: the displacement of an object over a time interval is precisely equal to the definite integral of its velocity function over that same interval. In the context of a graph of velocity versus time, this integral is represented by the **[signed area](@entry_id:169588) under the curve**.
+This equation holds the key: the displacement of an object over a time interval is precisely equal to the definite integral of its velocity function over that same interval. In the context of a graph of velocity versus time, this integral is represented by the **signed area under the curve**.
 
 #### Constant Velocity: The Simplest Case
 
@@ -19,27 +19,27 @@ Consider the most straightforward form of motion: an object moving with a consta
 
 The area of this rectangle is its height multiplied by its width. The height is the constant velocity, $v_c$, and the width is the elapsed time, $\Delta t = t_2 - t_1$. Thus, the displacement is $\Delta x = v_c (t_2 - t_1)$. This graphical result perfectly matches our algebraic understanding of motion at constant velocity.
 
-For instance, imagine a Maglev train initially at rest at a station at position $x_s$. If it begins moving at time $t_1$ and maintains a [constant velocity](@entry_id:170682) $v_c$, its position at a later time $t_2$ can be found graphically. The v-t graph would show $v=0$ for $t  t_1$ and $v=v_c$ for $t \ge t_1$. The displacement between $t_1$ and $t_2$ is the area of the rectangle of height $v_c$ and width $(t_2 - t_1)$. The final position is therefore the initial position plus this displacement: $x(t_2) = x_s + v_c(t_2 - t_1)$ .
+For instance, imagine a Maglev train initially at rest at a station at position $x_s$. If it begins moving at time $t_1$ and maintains a constant velocity $v_c$, its position at a later time $t_2$ can be found graphically. The v-t graph would show $v=0$ for $t  t_1$ and $v=v_c$ for $t \ge t_1$. The displacement between $t_1$ and $t_2$ is the area of the rectangle of height $v_c$ and width $(t_2 - t_1)$. The final position is therefore the initial position plus this displacement: $x(t_2) = x_s + v_c(t_2 - t_1)$ [@problem_id:2197269].
 
 #### Constant Acceleration: The Trapezoidal Area
 
-A more complex and common scenario is motion with [constant acceleration](@entry_id:268979), $a$. In this case, the velocity changes linearly with time according to the equation $v(t) = v_i + a(t - t_i)$, where $v_i$ is the initial velocity at time $t_i$. The v-t graph for this motion is a straight line with a non-zero slope equal to the acceleration $a$.
+A more complex and common scenario is motion with constant acceleration, $a$. In this case, the velocity changes linearly with time according to the equation $v(t) = v_i + a(t - t_i)$, where $v_i$ is the initial velocity at time $t_i$. The v-t graph for this motion is a straight line with a non-zero slope equal to the acceleration $a$.
 
 The displacement over the time interval $T = t_f - t_i$ is the area under this sloped line segment. This area forms a trapezoid. The two parallel sides of the trapezoid are the initial and final velocities, $v_i$ and $v_f$, and its height is the time interval $T$. The area of a trapezoid is given by the average of the parallel sides multiplied by the height. Therefore, the displacement is:
 
 $$ \Delta x = \frac{(v_i + v_f)}{2} T $$
 
-This elegant and powerful result shows that for constant acceleration, we can determine the displacement without even knowing the value of the acceleration itself, provided we know the initial and final velocities and the duration of the maneuver . This formula also highlights a special property of constant-acceleration motion: the [average velocity](@entry_id:267649), $\bar{v} = \Delta x / T$, is simply the [arithmetic mean](@entry_id:165355) of the initial and final velocities, $\bar{v} = (v_i + v_f)/2$.
+This elegant and powerful result shows that for constant acceleration, we can determine the displacement without even knowing the value of the acceleration itself, provided we know the initial and final velocities and the duration of the maneuver [@problem_id:2197211]. This formula also highlights a special property of constant-acceleration motion: the average velocity, $\bar{v} = \Delta x / T$, is simply the arithmetic mean of the initial and final velocities, $\bar{v} = (v_i + v_f)/2$.
 
 #### Displacement versus Distance Traveled
 
 It is critical to distinguish between **displacement** and **distance**. Displacement is a vector quantity representing the net change in position (e.g., "5 meters east"). Distance is a scalar quantity representing the total path length covered, regardless of direction (e.g., "10 meters").
 
-On a v-t graph, displacement is the **net [signed area](@entry_id:169588)**. Any area below the time axis, where the velocity is negative, is considered a negative contribution to the total displacement. If an object moves forward and then returns to its starting point, the positive area for the outbound trip is cancelled by the negative area for the return trip, resulting in a zero net displacement.
+On a v-t graph, displacement is the **net signed area**. Any area below the time axis, where the velocity is negative, is considered a negative contribution to the total displacement. If an object moves forward and then returns to its starting point, the positive area for the outbound trip is cancelled by the negative area for the return trip, resulting in a zero net displacement.
 
 In contrast, the total distance traveled is the integral of the speed, $|v(t)|$. Graphically, this corresponds to the **total unsigned area** between the v-t curve and the time axis. To calculate distance, we treat any area below the time axis as positive and add it to the areas above the axis.
 
-Consider an automated rover that accelerates forward, cruises, then decelerates, reverses direction (velocity becomes negative), and finally cruises backward . To find its final displacement, we would sum the areas of the geometric shapes on its v-t graph, subtracting the areas corresponding to backward motion. To find the total distance traveled, we would sum the absolute values of all these areas. This distinction is paramount in correctly interpreting motion from graphical data.
+Consider an automated rover that accelerates forward, cruises, then decelerates, reverses direction (velocity becomes negative), and finally cruises backward [@problem_id:2197227]. To find its final displacement, we would sum the areas of the geometric shapes on its v-t graph, subtracting the areas corresponding to backward motion. To find the total distance traveled, we would sum the absolute values of all these areas. This distinction is paramount in correctly interpreting motion from graphical data.
 
 ### The Acceleration-Time Graph and Change in Velocity
 
@@ -47,13 +47,13 @@ The graphical area principle extends naturally to the relationship between accel
 
 $$ \Delta v = v(t_f) - v(t_i) = \int_{t_i}^{t_f} a(t) \, dt $$
 
-This means that the change in an object's velocity over a time interval is equal to the **[signed area](@entry_id:169588) under the acceleration-time (a-t) graph** for that interval.
+This means that the change in an object's velocity over a time interval is equal to the **signed area under the acceleration-time (a-t) graph** for that interval.
 
 #### Calculating Velocity Changes
 
 A positive area under the a-t graph corresponds to an increase in velocity, while a negative area corresponds to a decrease in velocity. If we are given an a-t graph composed of simple geometric shapes, we can calculate the total change in velocity without performing formal integration.
 
-For example, a micro-drone that first accelerates with a constant positive acceleration $a_1$ for a duration $T_1$, and then with a constant negative acceleration $-a_2$ for a duration $T_2$, has an a-t graph consisting of two rectangles . The first rectangle has a positive area of $a_1 T_1$, representing the velocity gained during the first stage. The second rectangle has a negative area of $-a_2 T_2$, representing the velocity lost (or gained in the negative direction) during the second stage. The net change in velocity over the entire maneuver is simply the sum of these two signed areas: $\Delta v_{net} = a_1 T_1 - a_2 T_2$.
+For example, a micro-drone that first accelerates with a constant positive acceleration $a_1$ for a duration $T_1$, and then with a constant negative acceleration $-a_2$ for a duration $T_2$, has an a-t graph consisting of two rectangles [@problem_id:2197212]. The first rectangle has a positive area of $a_1 T_1$, representing the velocity gained during the first stage. The second rectangle has a negative area of $-a_2 T_2$, representing the velocity lost (or gained in the negative direction) during the second stage. The net change in velocity over the entire maneuver is simply the sum of these two signed areas: $\Delta v_{net} = a_1 T_1 - a_2 T_2$.
 
 #### Finding Extrema in Velocity
 
@@ -61,7 +61,7 @@ The a-t graph provides direct insight into how the velocity is changing. When $a
 
 It follows that a local maximum or minimum in velocity must occur at an instant when the acceleration is zero. The velocity of an object is maximal at the moment its acceleration passes from positive to negative. At this point, the object stops speeding up and is about to start slowing down. Graphically, this corresponds to the moment the a-t graph crosses the time axis from above.
 
-For a bead whose acceleration is described by $a(t) = \alpha - \beta t^2$ (where $\alpha$ and $\beta$ are positive constants), the velocity will increase as long as $a(t) > 0$. The maximum velocity is achieved at the precise time $t_{max}$ when the acceleration becomes zero, after which the acceleration becomes negative and the bead begins to slow down. By setting $a(t_{max}) = 0$, we can directly solve for this time: $\alpha - \beta t_{max}^2 = 0 \implies t_{max} = \sqrt{\alpha/\beta}$ .
+For a bead whose acceleration is described by $a(t) = \alpha - \beta t^2$ (where $\alpha$ and $\beta$ are positive constants), the velocity will increase as long as $a(t) > 0$. The maximum velocity is achieved at the precise time $t_{max}$ when the acceleration becomes zero, after which the acceleration becomes negative and the bead begins to slow down. By setting $a(t_{max}) = 0$, we can directly solve for this time: $\alpha - \beta t_{max}^2 = 0 \implies t_{max} = \sqrt{\alpha/\beta}$ [@problem_id:2197253].
 
 ### From Geometry to Calculus: Generalizing the Area Concept
 
@@ -69,7 +69,7 @@ While many introductory problems involve constant or piecewise-constant function
 
 #### Non-Constant Acceleration
 
-When acceleration is a continuous function of time, such as $a(t) = ct$ for a probe with a linearly increasing acceleration , we must use formal integration. The velocity at time $t$, starting from rest, is the area under the a-t graph from 0 to $t$. This graph is a line, so the area is a triangle: $v(t) = \text{Area} = \frac{1}{2}(\text{base})(\text{height}) = \frac{1}{2}(t)(ct) = \frac{1}{2}ct^2$.
+When acceleration is a continuous function of time, such as $a(t) = ct$ for a probe with a linearly increasing acceleration [@problem_id:2197280], we must use formal integration. The velocity at time $t$, starting from rest, is the area under the a-t graph from 0 to $t$. This graph is a line, so the area is a triangle: $v(t) = \text{Area} = \frac{1}{2}(\text{base})(\text{height}) = \frac{1}{2}(t)(ct) = \frac{1}{2}ct^2$.
 
 To find the displacement, we must then find the area under the corresponding v-t graph, which is now a curve described by $v(t) = \frac{1}{2}ct^2$. This area is not a simple geometric shape. Here, we must apply the definition of displacement as the integral of velocity:
 
@@ -79,13 +79,13 @@ This demonstrates the seamless transition from simple geometric sums to formal i
 
 #### The Physical Meaning of Average Velocity
 
-The concept of [average velocity](@entry_id:267649), $\bar{v}$, can also be generalized. For any motion over an interval from $0$ to $T$, the [average velocity](@entry_id:267649) is defined as the total displacement divided by the total time:
+The concept of average velocity, $\bar{v}$, can also be generalized. For any motion over an interval from $0$ to $T$, the average velocity is defined as the total displacement divided by the total time:
 
 $$ \bar{v} = \frac{\Delta x}{T} = \frac{1}{T} \int_0^T v(t) \, dt $$
 
-Graphically, the [average velocity](@entry_id:267649) represents the height of a rectangle with width $T$ that has the exact same area as the area under the v-t curve over that interval. The Mean Value Theorem for Integrals from calculus guarantees that for any continuous velocity function, there must be at least one time $t^*$ within the interval $(0, T)$ where the instantaneous velocity is equal to the average velocity, $v(t^*) = \bar{v}$.
+Graphically, the average velocity represents the height of a rectangle with width $T$ that has the exact same area as the area under the v-t curve over that interval. The Mean Value Theorem for Integrals from calculus guarantees that for any continuous velocity function, there must be at least one time $t^*$ within the interval $(0, T)$ where the instantaneous velocity is equal to the average velocity, $v(t^*) = \bar{v}$.
 
-Finding these moments requires first calculating the average velocity by finding the total displacement (the integral of $v(t)$) and dividing by the time, and then solving the equation $v(t^*) = \bar{v}$ for $t^*$ . This connects the graphical idea of an "equivalent rectangle" to a concrete analytical procedure.
+Finding these moments requires first calculating the average velocity by finding the total displacement (the integral of $v(t)$) and dividing by the time, and then solving the equation $v(t^*) = \bar{v}$ for $t^*$ [@problem_id:2197248]. This connects the graphical idea of an "equivalent rectangle" to a concrete analytical procedure.
 
 ### Advanced Applications: The Power of Graphical Integration
 
@@ -93,7 +93,7 @@ The method of finding a physical quantity by calculating the area under a graph 
 
 #### Finding Time from Velocity and Position
 
-Let's reconsider the definition of [instantaneous velocity](@entry_id:167797), $v = \frac{dx}{dt}$. We can rearrange this to solve for the differential time element, $dt$:
+Let's reconsider the definition of instantaneous velocity, $v = \frac{dx}{dt}$. We can rearrange this to solve for the differential time element, $dt$:
 
 $$ dt = \frac{1}{v} dx $$
 
@@ -101,7 +101,7 @@ Integrating both sides, we find the total time $\Delta t$ it takes for an object
 
 $$ \Delta t = \int_{x_1}^{x_2} \frac{1}{v(x)} \, dx $$
 
-This remarkable result shows that **time can be found as the area under a graph of reciprocal speed ($1/v$) versus position ($x$)**. If we have experimental data or a theoretical model for how an object's speed depends on its position, we can plot $1/v$ against $x$ and find the travel time by calculating the area under the curve .
+This remarkable result shows that **time can be found as the area under a graph of reciprocal speed ($1/v$) versus position ($x$)**. If we have experimental data or a theoretical model for how an object's speed depends on its position, we can plot $1/v$ against $x$ and find the travel time by calculating the area under the curve [@problem_id:2197241].
 
 #### Finding Time from Acceleration and Velocity
 
@@ -113,6 +113,6 @@ Integrating this expression gives the time interval $\Delta t$ required for the 
 
 $$ \Delta t = \int_{v_i}^{v_f} \frac{1}{a(v)} \, dv $$
 
-This reveals another powerful relationship: **time is the area under a graph of reciprocal acceleration ($1/a$) versus velocity ($v$)**. This is particularly useful in problems involving drag or propulsion systems where the [net force](@entry_id:163825), and thus the acceleration, is a known function of velocity. For an underwater probe with velocity-dependent [thrust](@entry_id:177890) and drag forces, the time to accelerate between two velocities can be found precisely by integrating the reciprocal of its acceleration function with respect to velocity .
+This reveals another powerful relationship: **time is the area under a graph of reciprocal acceleration ($1/a$) versus velocity ($v$)**. This is particularly useful in problems involving drag or propulsion systems where the net force, and thus the acceleration, is a known function of velocity. For an underwater probe with velocity-dependent thrust and drag forces, the time to accelerate between two velocities can be found precisely by integrating the reciprocal of its acceleration function with respect to velocity [@problem_id:2197238].
 
-These advanced examples underscore the universality of the graphical integration method. It is not just a collection of specific rules for specific graphs, but a general principle rooted in the [fundamental theorem of calculus](@entry_id:147280), applicable across a vast array of physical problems.
+These advanced examples underscore the universality of the graphical integration method. It is not just a collection of specific rules for specific graphs, but a general principle rooted in the fundamental theorem of calculus, applicable across a vast array of physical problems.

@@ -1,7 +1,7 @@
 ## Introduction
-The neutral kaon system, composed of the $K^0$ meson and its antiparticle $\bar{K}^0$, represents a landmark topic in particle physics, offering profound insights into the [weak force](@entry_id:158114) and the nature of fundamental symmetries. Its study has been pivotal in shaping the Standard Model, particularly through the discovery of Charge-Parity (CP) violation. This article addresses the central puzzle of the neutral kaon system: how these particles can oscillate between their matter and antimatter forms and why their decays violate a symmetry once thought to be universal. By navigating this complex yet elegant quantum system, the reader will gain a comprehensive understanding of one of physics' most fruitful theoretical and experimental arenas.
+The neutral kaon system, composed of the $K^0$ meson and its antiparticle $\bar{K}^0$, represents a landmark topic in particle physics, offering profound insights into the weak force and the nature of fundamental symmetries. Its study has been pivotal in shaping the Standard Model, particularly through the discovery of Charge-Parity (CP) violation. This article addresses the central puzzle of the neutral kaon system: how these particles can oscillate between their matter and antimatter forms and why their decays violate a symmetry once thought to be universal. By navigating this complex yet elegant quantum system, the reader will gain a comprehensive understanding of one of physics' most fruitful theoretical and experimental arenas.
 
-To achieve this, the article is structured into several sections. The **Principles and Mechanisms** section lays the theoretical groundwork, introducing the duality of flavor and mass [eigenstates](@entry_id:149904), deriving the formalism of strangeness oscillations, and parameterizing the effects of CP and CPT violation. The **Applications and Interdisciplinary Connections** section explores how this framework is applied in practice, including measuring decay asymmetries to probe symmetries, using kaons as a tool in nuclear physics, and constraining the fundamental parameters of the Standard Model. Finally, the **Hands-On Practices** provide a set of problems to solidify understanding of key calculational techniques related to kaon physics.
+To achieve this, the article is structured into several sections. The **Principles and Mechanisms** section lays the theoretical groundwork, introducing the duality of flavor and mass eigenstates, deriving the formalism of strangeness oscillations, and parameterizing the effects of CP and CPT violation. The **Applications and Interdisciplinary Connections** section explores how this framework is applied in practice, including measuring decay asymmetries to probe symmetries, using kaons as a tool in nuclear physics, and constraining the fundamental parameters of the Standard Model. Finally, the **Hands-On Practices** provide a set of problems to solidify understanding of key calculational techniques related to kaon physics.
 
 ## Principles and Mechanisms
 
@@ -9,40 +9,40 @@ The neutral kaon system, comprising the particle $|K^0\rangle$ and its antiparti
 
 ### The Duality of Flavor and Mass Eigenstates
 
-In the realm of strong interactions, which conserve the [quantum number](@entry_id:148529) of **strangeness** ($S$), the neutral kaon states are well-defined as $|K^0\rangle$ (with $S=+1$) and $|\bar{K}^0\rangle$ (with $S=-1$). These are referred to as the **flavor [eigenstates](@entry_id:149904)** or strangeness eigenstates. However, these states are not stationary states of the full Standard Model Hamiltonian because the [weak interaction](@entry_id:152942) does not conserve strangeness. Specifically, the [weak interaction](@entry_id:152942) can induce transitions between $|K^0\rangle$ and $|\bar{K}^0\rangle$.
+In the realm of strong interactions, which conserve the quantum number of **strangeness** ($S$), the neutral kaon states are well-defined as $|K^0\rangle$ (with $S=+1$) and $|\bar{K}^0\rangle$ (with $S=-1$). These are referred to as the **flavor eigenstates** or strangeness eigenstates. However, these states are not stationary states of the full Standard Model Hamiltonian because the weak interaction does not conserve strangeness. Specifically, the weak interaction can induce transitions between $|K^0\rangle$ and $|\bar{K}^0\rangle$.
 
-This mixing implies that the states that have a simple, [exponential time](@entry_id:142418) evolution—that is, the states with definite masses and lifetimes—are not the flavor eigenstates but rather specific superpositions of them. These are known as the **mass eigenstates**. The [time evolution](@entry_id:153943) of any state in the two-dimensional Hilbert space spanned by $\{|K^0\rangle, |\bar{K}^0\rangle\}$ is governed by a Schrödinger-like equation:
+This mixing implies that the states that have a simple, exponential time evolution—that is, the states with definite masses and lifetimes—are not the flavor eigenstates but rather specific superpositions of them. These are known as the **mass eigenstates**. The time evolution of any state in the two-dimensional Hilbert space spanned by $\{|K^0\rangle, |\bar{K}^0\rangle\}$ is governed by a Schrödinger-like equation:
 
 $i \frac{d}{dt} |\psi(t)\rangle = H_{\text{eff}} |\psi(t)\rangle$
 
-Here, $|\psi(t)\rangle$ is a general neutral kaon state, and $H_{\text{eff}}$ is a $2 \times 2$ **effective Hamiltonian**. Because the [neutral kaons](@entry_id:159316) can decay, probability is not conserved, and consequently, $H_{\text{eff}}$ is non-Hermitian. It is conventionally written as:
+Here, $|\psi(t)\rangle$ is a general neutral kaon state, and $H_{\text{eff}}$ is a $2 \times 2$ **effective Hamiltonian**. Because the neutral kaons can decay, probability is not conserved, and consequently, $H_{\text{eff}}$ is non-Hermitian. It is conventionally written as:
 
 $H_{\text{eff}} = M - \frac{i}{2}\Gamma$
 
-where $M$ and $\Gamma$ are both $2 \times 2$ Hermitian matrices, known as the **mass matrix** and the **decay matrix**, respectively. The eigenvalues of this effective Hamiltonian determine the properties of the mass eigenstates. Let the [eigenstates](@entry_id:149904) be $|K_S\rangle$ (for "short-lived") and $|K_L\rangle$ (for "long-lived"), with corresponding [complex eigenvalues](@entry_id:156384) $\lambda_S$ and $\lambda_L$:
+where $M$ and $\Gamma$ are both $2 \times 2$ Hermitian matrices, known as the **mass matrix** and the **decay matrix**, respectively. The eigenvalues of this effective Hamiltonian determine the properties of the mass eigenstates. Let the eigenstates be $|K_S\rangle$ (for "short-lived") and $|K_L\rangle$ (for "long-lived"), with corresponding complex eigenvalues $\lambda_S$ and $\lambda_L$:
 
 $\lambda_j = m_j - \frac{i}{2}\Gamma_j \quad (j=S, L)$
 
-Here, $m_j$ is the physical mass and $\Gamma_j = 1/\tau_j$ is the decay width (the inverse of the lifetime $\tau_j$) of the state $|K_j\rangle$. The time evolution of these mass [eigenstates](@entry_id:149904) in their rest frame is simple:
+Here, $m_j$ is the physical mass and $\Gamma_j = 1/\tau_j$ is the decay width (the inverse of the lifetime $\tau_j$) of the state $|K_j\rangle$. The time evolution of these mass eigenstates in their rest frame is simple:
 
 $|K_j(t)\rangle = \exp(-i \lambda_j t) |K_j(0)\rangle = \exp\left(-i m_j t - \frac{\Gamma_j}{2} t\right) |K_j(0)\rangle$
-(using [natural units](@entry_id:159153) where $\hbar=c=1$).
+(using natural units where $\hbar=c=1$).
 
 ### Strangeness Oscillations: The Signature of Mixing
 
 The most direct consequence of kaon mixing is the phenomenon of **strangeness oscillations**. If we begin with a beam of particles that are purely of one flavor, say $|K^0\rangle$, this initial state will evolve into a superposition of $|K^0\rangle$ and $|\bar{K}^0\rangle$ over time.
 
-To analyze this, we first consider the simplified case where **CP symmetry** is conserved. In this limit, the mass eigenstates are also [eigenstates](@entry_id:149904) of the CP operator. We define $|K_1\rangle = \frac{1}{\sqrt{2}}(|K^0\rangle + |\bar{K}^0\rangle)$ with CP eigenvalue $+1$, and $|K_2\rangle = \frac{1}{\sqrt{2}}(|K^0\rangle - |\bar{K}^0\rangle)$ with CP eigenvalue $-1$. The mass [eigenstates](@entry_id:149904) are identified with these CP [eigenstates](@entry_id:149904): $|K_S\rangle = |K_1\rangle$ and $|K_L\rangle = |K_2\rangle$. We can invert these relations to express the flavor [eigenstates](@entry_id:149904) in the mass basis:
+To analyze this, we first consider the simplified case where **CP symmetry** is conserved. In this limit, the mass eigenstates are also eigenstates of the CP operator. We define $|K_1\rangle = \frac{1}{\sqrt{2}}(|K^0\rangle + |\bar{K}^0\rangle)$ with CP eigenvalue $+1$, and $|K_2\rangle = \frac{1}{\sqrt{2}}(|K^0\rangle - |\bar{K}^0\rangle)$ with CP eigenvalue $-1$. The mass eigenstates are identified with these CP eigenstates: $|K_S\rangle = |K_1\rangle$ and $|K_L\rangle = |K_2\rangle$. We can invert these relations to express the flavor eigenstates in the mass basis:
 
 $|K^0\rangle = \frac{1}{\sqrt{2}}(|K_S\rangle + |K_L\rangle)$
 
 $|\bar{K}^0\rangle = \frac{1}{\sqrt{2}}(|K_S\rangle - |K_L\rangle)$
 
-Now, let's trace the evolution of an initial pure $|K^0\rangle$ state created at [proper time](@entry_id:192124) $t=0$:
+Now, let's trace the evolution of an initial pure $|K^0\rangle$ state created at proper time $t=0$:
 
 $|K^0(0)\rangle = \frac{1}{\sqrt{2}}(|K_S\rangle + |K_L\rangle)$
 
-Applying the [time evolution operator](@entry_id:139668), we get the state at a later time $t$:
+Applying the time evolution operator, we get the state at a later time $t$:
 
 $|\psi(t)\rangle = \frac{1}{\sqrt{2}} \left( e^{-i m_S t - \frac{\Gamma_S}{2} t} |K_S\rangle + e^{-i m_L t - \frac{\Gamma_L}{2} t} |K_L\rangle \right)$
 
@@ -68,7 +68,7 @@ Substituting these into the expression for $A_S(t)$, we arrive at a clear predic
 
 $A_S(t) = \frac{2 e^{-\frac{(\Gamma_S+\Gamma_L)t}{2}} \cos(\Delta m_K t)}{e^{-\Gamma_S t} + e^{-\Gamma_L t}}$
 
-This expression elegantly combines the effects of decay (the exponential terms involving $\Gamma_S$ and $\Gamma_L$) and oscillation (the cosine term involving $\Delta m_K$). Experimental measurement of this asymmetry was one of the first and most compelling confirmations of strangeness oscillation and allowed for a precise determination of the mass difference $\Delta m_K$ .
+This expression elegantly combines the effects of decay (the exponential terms involving $\Gamma_S$ and $\Gamma_L$) and oscillation (the cosine term involving $\Delta m_K$). Experimental measurement of this asymmetry was one of the first and most compelling confirmations of strangeness oscillation and allowed for a precise determination of the mass difference $\Delta m_K$ [@problem_id:189082].
 
 ### The Microscopic Origin of Mixing
 
@@ -80,17 +80,17 @@ $\Gamma_{12} = \sum_f \mathcal{A}(K^0 \to f) \mathcal{A}^*(\bar{K}^0 \to f)$
 
 Here, $\mathcal{A}(K \to f)$ is the decay amplitude, and the sum includes appropriate phase space factors. Note that $\Gamma_{21} = \Gamma_{12}^*$ because $\Gamma$ is a Hermitian matrix.
 
-The dominant contribution to $\Gamma_{12}$ comes from the two-pion final states $(\pi\pi)$, which can exist in total [isospin](@entry_id:156514) $I=0$ or $I=2$. By **Watson's theorem**, the decay amplitude of a kaon into a $\pi\pi$ state with definite isospin $I$ can be written as $\mathcal{A}(K^0 \to (\pi\pi)_I) = A_I e^{i\delta_I}$, where $A_I$ is a real weak amplitude (assuming CP conservation for now) and $\delta_I$ is the strong $\pi\pi$ [scattering phase shift](@entry_id:146584) for that [isospin](@entry_id:156514) channel. CPT invariance relates the particle and antiparticle decay amplitudes: $\mathcal{A}(\bar{K}^0 \to (\pi\pi)_I) = - \mathcal{A}(K^0 \to (\pi\pi)_I)^* = -A_I e^{-i\delta_I}$.
+The dominant contribution to $\Gamma_{12}$ comes from the two-pion final states $(\pi\pi)$, which can exist in total isospin $I=0$ or $I=2$. By **Watson's theorem**, the decay amplitude of a kaon into a $\pi\pi$ state with definite isospin $I$ can be written as $\mathcal{A}(K^0 \to (\pi\pi)_I) = A_I e^{i\delta_I}$, where $A_I$ is a real weak amplitude (assuming CP conservation for now) and $\delta_I$ is the strong $\pi\pi$ scattering phase shift for that isospin channel. CPT invariance relates the particle and antiparticle decay amplitudes: $\mathcal{A}(\bar{K}^0 \to (\pi\pi)_I) = - \mathcal{A}(K^0 \to (\pi\pi)_I)^* = -A_I e^{-i\delta_I}$.
 
-Using these relations, we can compute the contribution to $\Gamma_{12}$ from the two-pion states. Summing over the two [isospin](@entry_id:156514) channels ($I=0, 2$), we get:
+Using these relations, we can compute the contribution to $\Gamma_{12}$ from the two-pion states. Summing over the two isospin channels ($I=0, 2$), we get:
 
 $\Gamma_{12} \propto \sum_{I=0,2} \mathcal{A}(K^0 \to (\pi\pi)_I) \mathcal{A}^*(\bar{K}^0 \to (\pi\pi)_I) = \sum_{I=0,2} (A_I e^{i\delta_I}) (-A_I e^{-i\delta_I})^* = \sum_{I=0,2} (A_I e^{i\delta_I}) (-A_I e^{i\delta_I}) = -\sum_{I=0,2} A_I^2 e^{2i\delta_I}$
 
-This result (up to phase-space factors) explicitly connects the phenomenological parameter $\Gamma_{12}$ to the fundamental [weak isospin](@entry_id:158166) amplitudes and strong [phase shifts](@entry_id:136717), demonstrating how macroscopic mixing properties emerge from microscopic dynamics .
+This result (up to phase-space factors) explicitly connects the phenomenological parameter $\Gamma_{12}$ to the fundamental weak isospin amplitudes and strong phase shifts, demonstrating how macroscopic mixing properties emerge from microscopic dynamics [@problem_id:189070].
 
 ### CP Violation and the Parameter $\epsilon$
 
-The landmark discovery in 1964 that the long-lived kaon, $|K_L\rangle$, occasionally decays into two [pions](@entry_id:147923) demonstrated that CP symmetry is violated in weak interactions. This implies that the mass eigenstates $|K_S\rangle$ and $|K_L\rangle$ are not identical to the CP eigenstates $|K_1\rangle$ and $|K_2\rangle$. Instead, they are "tilted" mixtures:
+The landmark discovery in 1964 that the long-lived kaon, $|K_L\rangle$, occasionally decays into two pions demonstrated that CP symmetry is violated in weak interactions. This implies that the mass eigenstates $|K_S\rangle$ and $|K_L\rangle$ are not identical to the CP eigenstates $|K_1\rangle$ and $|K_2\rangle$. Instead, they are "tilted" mixtures:
 
 $|K_L\rangle = \frac{1}{\sqrt{1+|\epsilon|^2}}(|K_2\rangle + \epsilon|K_1\rangle)$
 
@@ -102,7 +102,7 @@ This phenomenological parameter $\epsilon$ can be related to the elements of the
 
 $\epsilon \approx \frac{i \text{Im}(M_{12}) - \frac{1}{2}\text{Im}(\Gamma_{12})}{\lambda_S - \lambda_L} = \frac{i \text{Im}(M_{12}) - \frac{1}{2}\text{Im}(\Gamma_{12})}{-\Delta m_K + \frac{i}{2}\Delta\Gamma_K}$
 
-where $\Delta m_K = m_L - m_S$ and $\Delta\Gamma_K = \Gamma_S - \Gamma_L$. A particularly interesting scenario is the **superweak hypothesis**, which postulates that CP violation occurs only in the [mass matrix](@entry_id:177093), meaning $\text{Im}(M_{12}) \neq 0$, while the decay matrix remains CP-conserving ($\text{Im}(\Gamma_{12})=0$). Under this assumption, the expression for $\epsilon$ simplifies significantly. Its phase, $\phi_\epsilon = \arg(\epsilon)$, becomes solely dependent on the experimentally measurable mass and width differences. The phase is given by:
+where $\Delta m_K = m_L - m_S$ and $\Delta\Gamma_K = \Gamma_S - \Gamma_L$. A particularly interesting scenario is the **superweak hypothesis**, which postulates that CP violation occurs only in the mass matrix, meaning $\text{Im}(M_{12}) \neq 0$, while the decay matrix remains CP-conserving ($\text{Im}(\Gamma_{12})=0$). Under this assumption, the expression for $\epsilon$ simplifies significantly. Its phase, $\phi_\epsilon = \arg(\epsilon)$, becomes solely dependent on the experimentally measurable mass and width differences. The phase is given by:
 
 $\phi_\epsilon = \arg\left(\frac{i \text{Im}(M_{12})}{-\Delta m_K + \frac{i}{2}\Delta\Gamma_K}\right) = \frac{\pi}{2} - \arg\left(-\Delta m_K + \frac{i}{2}\Delta\Gamma_K\right)$
 
@@ -110,7 +110,7 @@ Since $\Delta m_K = m_L - m_S > 0$ and $\Delta\Gamma_K = \Gamma_S - \Gamma_L > 0
 
 $\phi_\epsilon = \arctan\left(\frac{2\Delta m_K}{\Delta\Gamma_K}\right)$
 
-Experimentally, $\Delta m_K \approx 0.53 \times 10^{10} \hbar s^{-1}$ and $\Delta\Gamma_K \approx \Gamma_S \approx 1.12 \times 10^{10} \hbar s^{-1}$. This predicts $\phi_\epsilon \approx \arctan(2 \times 0.53 / 1.12) \approx 43.5^\circ$, which is in excellent agreement with experimental measurements, suggesting that CP violation in the kaon system is dominated by mixing effects .
+Experimentally, $\Delta m_K \approx 0.53 \times 10^{10} \hbar s^{-1}$ and $\Delta\Gamma_K \approx \Gamma_S \approx 1.12 \times 10^{10} \hbar s^{-1}$. This predicts $\phi_\epsilon \approx \arctan(2 \times 0.53 / 1.12) \approx 43.5^\circ$, which is in excellent agreement with experimental measurements, suggesting that CP violation in the kaon system is dominated by mixing effects [@problem_id:189083].
 
 ### Probing Fundamental Symmetries: CPT Violation and Unitarity
 
@@ -131,13 +131,13 @@ Notice that the sum of the asymmetries, $A_L + A_S = 4\text{Re}(\epsilon)$, meas
 
 $A_L - A_S = 4\text{Re}(\delta)$
 
-High-precision measurements of these asymmetries at facilities like the KLOE experiment have placed extremely stringent limits on $\text{Re}(\delta)$, providing one of the strongest tests of CPT invariance .
+High-precision measurements of these asymmetries at facilities like the KLOE experiment have placed extremely stringent limits on $\text{Re}(\delta)$, providing one of the strongest tests of CPT invariance [@problem_id:189046].
 
-Another powerful tool for constraining the system's parameters is the principle of **[unitarity](@entry_id:138773)**, or the conservation of probability. The fact that the eigenstates $|K_S\rangle$ and $|K_L\rangle$ are not orthogonal ($\langle K_S | K_L \rangle \approx 2\text{Re}(\epsilon) \neq 0$) leads to the celebrated **Bell-Steinberger relation**:
+Another powerful tool for constraining the system's parameters is the principle of **unitarity**, or the conservation of probability. The fact that the eigenstates $|K_S\rangle$ and $|K_L\rangle$ are not orthogonal ($\langle K_S | K_L \rangle \approx 2\text{Re}(\epsilon) \neq 0$) leads to the celebrated **Bell-Steinberger relation**:
 
 $(i\Delta m_K + \frac{\Gamma_S+\Gamma_L}{2})\langle K_S | K_L \rangle = \sum_f \mathcal{A}^*(K_S \to f) \mathcal{A}(K_L \to f)$
 
-This relation connects the mixing parameters on the left-hand side to a sum over the amplitudes of all common final decay states on the right. It allows one to relate different CP-violating [observables](@entry_id:267133). For example, consider the contribution of the final state $f = \pi^+\pi^-\pi^0$ to the sum. The ratio of CP-violating to CP-conserving amplitudes for this mode is denoted $\eta_{+-0} = \mathcal{A}(K_L \to f) / \mathcal{A}(K_S \to f)$. The term for this state in the sum is thus $|\mathcal{A}(K_S \to f)|^2 \eta_{+-0}$. We also know that the partial decay width is $\Gamma(K_S \to f) = |\mathcal{A}(K_S \to f)|^2 = \Gamma_S B_S^{(3\pi)}$, where $B_S^{(3\pi)}$ is the [branching ratio](@entry_id:157912). The contribution of this channel to the imaginary part of the right-hand side of the Bell-Steinberger relation is therefore $\Gamma_S B_S^{(3\pi)} \text{Im}(\eta_{+-0})$. This value must be consistent with the imaginary part of the left-hand side, providing a tight consistency check on the entire framework .
+This relation connects the mixing parameters on the left-hand side to a sum over the amplitudes of all common final decay states on the right. It allows one to relate different CP-violating observables. For example, consider the contribution of the final state $f = \pi^+\pi^-\pi^0$ to the sum. The ratio of CP-violating to CP-conserving amplitudes for this mode is denoted $\eta_{+-0} = \mathcal{A}(K_L \to f) / \mathcal{A}(K_S \to f)$. The term for this state in the sum is thus $|\mathcal{A}(K_S \to f)|^2 \eta_{+-0}$. We also know that the partial decay width is $\Gamma(K_S \to f) = |\mathcal{A}(K_S \to f)|^2 = \Gamma_S B_S^{(3\pi)}$, where $B_S^{(3\pi)}$ is the branching ratio. The contribution of this channel to the imaginary part of the right-hand side of the Bell-Steinberger relation is therefore $\Gamma_S B_S^{(3\pi)} \text{Im}(\eta_{+-0})$. This value must be consistent with the imaginary part of the left-hand side, providing a tight consistency check on the entire framework [@problem_id:189096].
 
 ### A Watched Kaon Never Oscillates: The Quantum Zeno Effect
 
@@ -158,11 +158,11 @@ $p(\Delta t) \approx 1 - 2\text{Re}\left(\frac{i}{2}(\lambda_S + \lambda_L)\Delt
 Since $\lambda_S + \lambda_L = (m_S+m_L) - \frac{i}{2}(\Gamma_S+\Gamma_L)$, we have:
 $\text{Re}\left(\frac{i}{2}(\lambda_S + \lambda_L)\right) = \text{Re}\left(\frac{i}{2}(m_S+m_L) + \frac{1}{4}(\Gamma_S+\Gamma_L)\right) = \frac{\Gamma_S+\Gamma_L}{4}$
 
-So, the [survival probability](@entry_id:137919) after one short interval is:
+So, the survival probability after one short interval is:
 $p(\Delta t) \approx 1 - 2\left(\frac{\Gamma_S+\Gamma_L}{4}\right)\Delta t = 1 - \frac{\Gamma_S+\Gamma_L}{2}\Delta t$
 
 Now, imagine we perform $N$ such strangeness measurements over a total time $T$, at intervals of $\Delta t = T/N$. If the particle is found to be $|K^0\rangle$ at each step, its state is repeatedly projected back to $|K^0\rangle$. The total probability of "surviving" this entire sequence of measurements is $P_N(T) = [p(\Delta t)]^N$. If we take the limit of infinitely frequent measurements ($N \to \infty$, $\Delta t \to 0$):
 
 $P_\infty(T) = \lim_{N\to\infty} \left(1 - \frac{(\Gamma_S+\Gamma_L)T}{2N}\right)^N = \exp\left(-\frac{(\Gamma_S+\Gamma_L)T}{2}\right)$
 
-This remarkable result shows that in the Zeno limit, the oscillation is completely suppressed. The initial $|K^0\rangle$ state never gets a chance to evolve into $|\bar{K}^0\rangle$. It remains a $|K^0\rangle$ but decays with a new, effective decay rate equal to the average of the $\Gamma_S$ and $\Gamma_L$ rates. This demonstrates how the act of measurement fundamentally alters the dynamics of a quantum system .
+This remarkable result shows that in the Zeno limit, the oscillation is completely suppressed. The initial $|K^0\rangle$ state never gets a chance to evolve into $|\bar{K}^0\rangle$. It remains a $|K^0\rangle$ but decays with a new, effective decay rate equal to the average of the $\Gamma_S$ and $\Gamma_L$ rates. This demonstrates how the act of measurement fundamentally alters the dynamics of a quantum system [@problem_id:189088].

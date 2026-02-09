@@ -1,47 +1,47 @@
 ## 引言
-在物理学的宏伟殿堂中，[相变](@article_id:297531)理论是理解物质世界从一种状态转变为另一种状态的基石。传统上，我们依赖朗道的[对称性破缺](@article_id:303497)理论来描述这些转变，例如水结成冰。然而，在平坦的二维世界中，物理规律变得截然不同，一种更为奇特、更为精妙的[相变](@article_id:297531)机制——贝雷津斯基-科斯特利茨-索利斯（BKT）[相变](@article_id:297531)——登上了舞台。它挑战了我们对“有序”的传统认知，并揭示了拓扑学在凝聚态物理中的深刻力量。
+在物理学的宏伟殿堂中，[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)理论是理解物质世界从一种状态转变为另一种状态的基石。传统上，我们依赖朗道的[对称性破缺](@keyword=symmetry_breaking|lang=zh-CN|style=Feynman)理论来描述这些转变，例如水结成冰。然而，在平坦的二维世界中，物理规律变得截然不同，一种更为奇特、更为精妙的[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)机制——贝雷津斯基-科斯特利茨-索利斯（BKT）[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)——登上了舞台。它挑战了我们对“有序”的传统认知，并揭示了拓扑学在凝聚态物理中的深刻力量。
 
-正如默明-[瓦格纳定理](@article_id:331287)所预言，在二维空间中，连续对称性无法在有限温度下自发破缺，这意味着传统意义上的[长程有序](@article_id:315567)是不可能存在的。这就引出了一个核心问题：二维系统是如何抵抗热涨落、建立起某种形式的有序的？[BKT相变](@article_id:297267)正是在这个看似无序的背景下，为一种名为“准长程有序”的全新[物态](@article_id:299884)提供了优雅的解释，其背后的主角并非[序参量](@article_id:305245)，而是稳定的拓扑缺陷。
+正如默明-[瓦格纳定理](@keyword=wagner_s_theorem|lang=zh-CN|style=Feynman)所预言，在二维空间中，连续对称性无法在有限温度下自发破缺，这意味着传统意义上的[长程有序](@keyword=long_range_order|lang=zh-CN|style=Feynman)是不可能存在的。这就引出了一个核心问题：二维系统是如何抵抗热涨落、建立起某种形式的有序的？[BKT相变](@keyword=berezinskii_kosterlitz_thouless_transition|lang=zh-CN|style=Feynman)正是在这个看似无序的背景下，为一种名为“准长程有序”的全新[物态](@keyword=states_of_matter|lang=zh-CN|style=Feynman)提供了优雅的解释，其背后的主角并非[序参量](@keyword=order_parameter|lang=zh-CN|style=Feynman)，而是稳定的拓扑缺陷。
 
-本文将带领读者系统地探索[BKT相变](@article_id:297267)的迷人世界。在“原理与机制”一章中，我们将深入剖析驱动[相变](@article_id:297531)的核心动力学：量子漩涡的诞生、[能量与熵](@article_id:301826)的博弈，以及[重整化群](@article_id:308131)思想如何描绘出从[束缚态](@article_id:296956)到自由态的演化图景。随后，在“应用与[交叉](@article_id:315017)学科联系”一章中，我们将见证这一理论的惊人普适性，看它如何将超冷原子、[超导体](@article_id:370061)、二维晶体乃至生物膜等看似无关的领域联系在一起。最后，“动手实践”部分将提供一系列精心设计的问题，帮助读者巩固理论知识，并将其应用于解决实际物理情境。现在，让我们首先进入[BKT相变](@article_id:297267)的核心，探寻其背后的基本原理与精妙机制。
+本文将带领读者系统地探索[BKT相变](@keyword=berezinskii_kosterlitz_thouless_transition|lang=zh-CN|style=Feynman)的迷人世界。在“原理与机制”一章中，我们将深入剖析驱动[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)的核心动力学：量子漩涡的诞生、[能量与熵](@keyword=energy_vs_entropy|lang=zh-CN|style=Feynman)的博弈，以及[重整化群](@keyword=renormalization_group|lang=zh-CN|style=Feynman)思想如何描绘出从[束缚态](@keyword=bound_states|lang=zh-CN|style=Feynman)到自由态的演化图景。随后，在“应用与[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)学科联系”一章中，我们将见证这一理论的惊人普适性，看它如何将超冷原子、[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)、二维晶体乃至生物膜等看似无关的领域联系在一起。最后，“动手实践”部分将提供一系列精心设计的问题，帮助读者巩固理论知识，并将其应用于解决实际物理情境。现在，让我们首先进入[BKT相变](@keyword=berezinskii_kosterlitz_thouless_transition|lang=zh-CN|style=Feynman)的核心，探寻其背后的基本原理与精妙机制。
 
 ## 原理与机制
 
-在上一章中，我们已经对[BKT相变](@article_id:297267)这幅奇异的物理画卷有了初步的印象。现在，让我们像一位好奇的探险家，深入其内部，去探寻驱动这一切的深刻原理与精妙机制。我们将发现，在这个看似抽象的理论背后，隐藏着物理学中最优美、最核心的一些思想：对称性、拓扑、能量与熵的博弈，以及[尺度变换](@article_id:345729)下不变的美。
+在上一章中，我们已经对[BKT相变](@keyword=berezinskii_kosterlitz_thouless_transition|lang=zh-CN|style=Feynman)这幅奇异的物理画卷有了初步的印象。现在，让我们像一位好奇的探险家，深入其内部，去探寻驱动这一切的深刻原理与精妙机制。我们将发现，在这个看似抽象的理论背后，隐藏着物理学中最优美、最核心的一些思想：对称性、拓扑、能量与熵的博弈，以及[尺度变换](@keyword=scaling_transformation|lang=zh-CN|style=Feynman)下不变的美。
 
 ### 二维世界中的奇异“漩涡”
 
-想象一片平静的湖面。在三维世界里，如果你用手指搅动它，会形成一个漩涡，水流会沿着一个轴线旋转。但在一个真正的二维世界里——比如一层薄到只有一个原子厚度的[氦原子](@article_id:310662)薄膜，或者一层[石墨烯](@article_id:303945)——情况就大为不同了。这里的“搅动”不再是形成一个三维的涡旋，而是产生了一个更为奇特的拓扑实体：一个**量子漩涡 (quantum vortex)**。
+想象一片平静的湖面。在三维世界里，如果你用手指搅动它，会形成一个漩涡，水流会沿着一个轴线旋转。但在一个真正的二维世界里——比如一层薄到只有一个原子厚度的[氦原子](@keyword=helium_atom|lang=zh-CN|style=Feynman)薄膜，或者一层[石墨烯](@keyword=graphene|lang=zh-CN|style=Feynman)——情况就大为不同了。这里的“搅动”不再是形成一个三维的涡旋，而是产生了一个更为奇特的拓扑实体：一个**量子漩涡 (quantum vortex)**。
 
-在这些二维超流体或[XY模型](@article_id:301206)中，系统的状态可以用一个复数序参量 $\psi(\mathbf{r}) = \sqrt{n_s} e^{i\theta(\mathbf{r})}$ 来描述。其中，$n_s$ 是[超流密度](@article_id:302458)，而 $\theta(\mathbf{r})$ 是一个在空间中每一点都定义了的相位角。它就像一个微小的罗盘，指向一个 $0$ 到 $2\pi$ 之间的角度。[超流体](@article_id:360117)的速度 $\mathbf{v}_s$ 完全由这个相位的梯度决定：$\mathbf{v}_s = (\hbar/m) \nabla\theta$。
+在这些二维超流体或[XY模型](@keyword=xy_model|lang=zh-CN|style=Feynman)中，系统的状态可以用一个复数序参量 $\psi(\mathbf{r}) = \sqrt{n_s} e^{i\theta(\mathbf{r})}$ 来描述。其中，$n_s$ 是[超流密度](@keyword=superfluid_density|lang=zh-CN|style=Feynman)，而 $\theta(\mathbf{r})$ 是一个在空间中每一点都定义了的相位角。它就像一个微小的罗盘，指向一个 $0$ 到 $2\pi$ 之间的角度。[超流体](@keyword=superfluids|lang=zh-CN|style=Feynman)的速度 $\mathbf{v}_s$ 完全由这个相位的梯度决定：$\mathbf{v}_s = (\hbar/m) \nabla\theta$。
 
-一个漩涡的中心是一个[奇点](@article_id:298215)，那里的[序参量](@article_id:305245)为零，超流性消失。更重要的是，如果你绕着这个中心走一圈，你会发现罗盘的指针（也就是相位 $\theta$）不多不少正好转了整数圈，比如 $2\pi$、$4\pi$ 等。这个整数被称为**卷绕数(winding number)**，它是一个[拓扑不变量](@article_id:298974)——你无法通过局部的、平滑的扰动来消除它，就像你无法在不撕裂表面的情况下解开一个面包圈上的结。
+一个漩涡的中心是一个[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)，那里的[序参量](@keyword=order_parameter|lang=zh-CN|style=Feynman)为零，超流性消失。更重要的是，如果你绕着这个中心走一圈，你会发现罗盘的指针（也就是相位 $\theta$）不多不少正好转了整数圈，比如 $2\pi$、$4\pi$ 等。这个整数被称为**卷绕数(winding number)**，它是一个[拓扑不变量](@keyword=topological_invariants|lang=zh-CN|style=Feynman)——你无法通过局部的、平滑的扰动来消除它，就像你无法在不撕裂表面的情况下解开一个面包圈上的结。
 
-这带来了一个巨大的问题。为了维持这个[相位卷绕](@article_id:342845)，[奇点](@article_id:298215)周围必须存在一个环绕的[超电流](@article_id:374478)。这个流场的能量是多少呢？如果我们计算一下，就会发现一个惊人的结果：创造一个孤立的、[卷绕数](@article_id:299155)为1的漩涡，其储存在超流场中的动能 $E_{\text{vortex}}$ 竟然与系统的尺寸 $L$ 有关。具体来说，它正比于系统尺寸 $L$ 和漩涡核心尺寸 $\xi$ 之比的对数 ：
+这带来了一个巨大的问题。为了维持这个[相位卷绕](@keyword=phase_wrapping|lang=zh-CN|style=Feynman)，[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)周围必须存在一个环绕的[超电流](@keyword=supercurrent|lang=zh-CN|style=Feynman)。这个流场的能量是多少呢？如果我们计算一下，就会发现一个惊人的结果：创造一个孤立的、[卷绕数](@keyword=winding_number|lang=zh-CN|style=Feynman)为1的漩涡，其储存在超流场中的动能 $E_{\text{vortex}}$ 竟然与系统的尺寸 $L$ 有关。具体来说，它正比于系统尺寸 $L$ 和漩涡核心尺寸 $\xi$ 之比的对数 [@problem_id:1270993]：
 $$
 E_{\text{vortex}} = K \ln\left(\frac{L}{\xi}\right)
 $$
-这里的系数 $K = \frac{\pi\hbar^2 n_s}{m}$ 是一个正比于[超流密度](@article_id:302458)的“刚度”常数。
+这里的系数 $K = \frac{\pi\hbar^2 n_s}{m}$ 是一个正比于[超流密度](@keyword=superfluid_density|lang=zh-CN|style=Feynman)的“刚度”常数。
 
-这个对数依赖关系 $E \propto \ln(L)$ 是一个灾难性的消息！它意味着在一个宏观系统（$L \rightarrow \infty$）中，创造一个孤立的漩涡需要无穷大的能量。这就像试图独自举起一座山，是热涨落无论如何也无法完成的任务。因此，在低温下，二维[超流体](@article_id:360117)中不可能存在自由的、孤立的漩涡。整个系统就像一片平滑而有序的相位海洋。
+这个对数依赖关系 $E \propto \ln(L)$ 是一个灾难性的消息！它意味着在一个宏观系统（$L \rightarrow \infty$）中，创造一个孤立的漩涡需要无穷大的能量。这就像试图独自举起一座山，是热涨落无论如何也无法完成的任务。因此，在低温下，二维[超流体](@keyword=superfluids|lang=zh-CN|style=Feynman)中不可能存在自由的、孤立的漩涡。整个系统就像一片平滑而有序的相位海洋。
 
 ### 成双成对：能量与束缚
 
-大自然是聪明的。既然单个漩涡被[能量法](@article_id:362342)则所禁止，它便找到了一个绝妙的变通之道：**成对出现**。想象一个漩涡（[卷绕数](@article_id:299155)为+1）和一个反漩涡（[卷绕数](@article_id:299155)为-1）。反漩涡的[相位卷绕](@article_id:342845)方向恰好与漩涡相反。当你从远处观察这对“情侣”，它们的相[位场](@article_id:323065)会相互抵消。就像一个正[电荷](@article_id:339187)和一个负[电荷](@article_id:339187)在远处看起来是[电中性](@article_id:299095)的一样，这个漩涡-反漩[涡对](@article_id:377918)在远处看起来就像没有拓扑缺陷的普通超流体。
+大自然是聪明的。既然单个漩涡被[能量法](@keyword=energy_methods|lang=zh-CN|style=Feynman)则所禁止，它便找到了一个绝妙的变通之道：**成对出现**。想象一个漩涡（[卷绕数](@keyword=winding_number|lang=zh-CN|style=Feynman)为+1）和一个反漩涡（[卷绕数](@keyword=winding_number|lang=zh-CN|style=Feynman)为-1）。反漩涡的[相位卷绕](@keyword=phase_wrapping|lang=zh-CN|style=Feynman)方向恰好与漩涡相反。当你从远处观察这对“情侣”，它们的相[位场](@keyword=potential_field|lang=zh-CN|style=Feynman)会相互抵消。就像一个正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)和一个负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)在远处看起来是[电中性](@keyword=charge_neutrality|lang=zh-CN|style=Feynman)的一样，这个漩涡-反漩[涡对](@keyword=vortex_pairs|lang=zh-CN|style=Feynman)在远处看起来就像没有拓扑缺陷的普通超流体。
 
-这种抵消效应极大地改变了能量图景。一个漩涡-反漩[涡对](@article_id:377918)的总能量不再是无穷大。它们之间存在一个相互作用力。将它们分开需要能量，这个能量也呈现对数形式，但这次是对它们之间的距离 $r$ 的对数依赖 ：
+这种抵消效应极大地改变了能量图景。一个漩涡-反漩[涡对](@keyword=vortex_pairs|lang=zh-CN|style=Feynman)的总能量不再是无穷大。它们之间存在一个相互作用力。将它们分开需要能量，这个能量也呈现对数形式，但这次是对它们之间的距离 $r$ 的对数依赖 [@problem_id:1270901]：
 $$
 U(r) = 2K \ln\left(\frac{r}{a}\right)
 $$
-其中 $a$ 是漩涡核心的尺寸，充当短距离的截断。这个公式告诉我们，把这对“情侣”拉开的代价随着距离的增加而缓慢增长。这就像拉伸一根非常、非常松弛的橡皮筋。即便是在各向异性的材料中，这种对数形式的相互作用依然是核心特征，只是其强度会依赖于分离的方向 。
+其中 $a$ 是漩涡核心的尺寸，充当短距离的截断。这个公式告诉我们，把这对“情侣”拉开的代价随着距离的增加而缓慢增长。这就像拉伸一根非常、非常松弛的橡皮筋。即便是在各向异性的材料中，这种对数形式的相互作用依然是核心特征，只是其强度会依赖于分离的方向 [@problem_id:1270901]。
 
-因此，在低温下，我们的二维世界里充满了这些紧密束缚的漩涡-反漩[涡对](@article_id:377918)。它们像电偶极子一样，虽然内部结构非凡，但从宏观上看是“中性”的，不会破坏系统的长程有序。我们可以把这个低温相想象成一个由大量“中性原子”（束缚对）组成的“绝缘体” 。
+因此，在低温下，我们的二维世界里充满了这些紧密束缚的漩涡-反漩[涡对](@keyword=vortex_pairs|lang=zh-CN|style=Feynman)。它们像电偶极子一样，虽然内部结构非凡，但从宏观上看是“中性”的，不会破坏系统的长程有序。我们可以把这个低温相想象成一个由大量“中性原子”（束缚对）组成的“绝缘体” [@problem_id:1270989]。
 
 ### 熵的热情之舞：解放的判决
 
-到目前为止，我们只谈了能量。但物理世界总是由能量和熵共同主宰的一场盛大舞会。能量倾向于秩序和束缚，而熵，作为混乱和无序的度量，则永远在鼓动着解放和自由。[BKT相变](@article_id:297267)正是这场[能量与熵](@article_id:301826)之间“拔河比赛”的精彩高潮。
+到目前为止，我们只谈了能量。但物理世界总是由能量和熵共同主宰的一场盛大舞会。能量倾向于秩序和束缚，而熵，作为混乱和无序的度量，则永远在鼓动着解放和自由。[BKT相变](@keyword=berezinskii_kosterlitz_thouless_transition|lang=zh-CN|style=Feynman)正是这场[能量与熵](@keyword=energy_vs_entropy|lang=zh-CN|style=Feynman)之间“拔河比赛”的精彩高潮。
 
-让我们来做一个简单的思想实验，这就是 Kosterlitz 和 Thouless 的天才洞察 。考虑一个漩涡-反漩[涡对](@article_id:377918)。
+让我们来做一个简单的思想实验，这就是 Kosterlitz 和 Thouless 的天才洞察 [@problem_id:1270904]。考虑一个漩涡-反漩[涡对](@keyword=vortex_pairs|lang=zh-CN|style=Feynman)。
 - **能量成本 (Energy cost)**：将它们从核心尺寸 $a$ 分离到距离 $r$，需要付出的能量是 $E(r) = 2K \ln(r/a)$。
 - **熵增益 (Entropy gain)**：当它们相距为 $r$ 时，这个反漩涡可以在一个半径为 $r$ 的圆周上的任何位置。我们将空间粗粒化为小格子，那么可能的位置数量正比于 $r^2$（二维空间的面积）。根据玻尔兹曼公式 $S = k_B \ln W$，熵的增益大约是 $S(r) \approx 2k_B \ln(r/a)$。
 
@@ -51,22 +51,22 @@ F(r) = 2K \ln\left(\frac{r}{a}\right) - T \left(2k_B \ln\left(\frac{r}{a}\right)
 $$
 这个方程是整个 BKT 故事的核心！
 
--   在**低温**下，$K > k_B T$。括号里的系数是正的。这意味着，将漩[涡对](@article_id:377918)拉开（增大 $r$）会增加自由能。系统不喜欢这样。因此，能量获胜，漩[涡对](@article_id:377918)倾向于紧紧地束缚在一起。
--   在**高温**下，$k_B T > K$。括号里的系数变成了负的！这意味着，将漩[涡对](@article_id:377918)拉开反而会降低自由能。熵赢得了这场拔河比赛！系统会自发地让漩[涡对](@article_id:377918)分离得越来越远，直到它们挣脱束缚，成为自由的漩涡和反漩涡。
+-   在**低温**下，$K > k_B T$。括号里的系数是正的。这意味着，将漩[涡对](@keyword=vortex_pairs|lang=zh-CN|style=Feynman)拉开（增大 $r$）会增加自由能。系统不喜欢这样。因此，能量获胜，漩[涡对](@keyword=vortex_pairs|lang=zh-CN|style=Feynman)倾向于紧紧地束缚在一起。
+-   在**高温**下，$k_B T > K$。括号里的系数变成了负的！这意味着，将漩[涡对](@keyword=vortex_pairs|lang=zh-CN|style=Feynman)拉开反而会降低自由能。熵赢得了这场拔河比赛！系统会自发地让漩[涡对](@keyword=vortex_pairs|lang=zh-CN|style=Feynman)分离得越来越远，直到它们挣脱束缚，成为自由的漩涡和反漩涡。
 
-[相变](@article_id:297531)发生的[临界点](@article_id:305080)，正是能量和熵势均力敌的那一刻，也就是自由能的对数依赖性消失的那一刻：
+[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)发生的[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)，正是能量和熵势均力敌的那一刻，也就是自由能的对数依赖性消失的那一刻：
 $$
 K - k_B T_{BKT} = 0
 $$
-在更精确的理论中，这个判据被修正为 $K(T_{BKT}) = 2 k_B T_{BKT}$，也就是在[相变](@article_id:297531)点，系统的刚度与温度之间存在一个普适关系。一旦温度超过 $T_{BKT}$，束缚对就会“电离”，整个系统变成一锅由自由漩涡和反漩涡组成的“等离子体”，长程的相位有序性被彻底摧毁。
+在更精确的理论中，这个判据被修正为 $K(T_{BKT}) = 2 k_B T_{BKT}$，也就是在[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)点，系统的刚度与温度之间存在一个普适关系。一旦温度超过 $T_{BKT}$，束缚对就会“电离”，整个系统变成一锅由自由漩涡和反漩涡组成的“等离子体”，长程的相位有序性被彻底摧毁。
 
-### 尺度下的智慧：[重整化群](@article_id:308131)的视角
+### 尺度下的智慧：[重整化群](@keyword=renormalization_group|lang=zh-CN|style=Feynman)的视角
 
-[能量与熵](@article_id:301826)的争论给出了一幅直观而美丽的图像，但要真正理解 BKT [相变](@article_id:297531)的精髓，我们必须引入一个更强大的工具——**重整化群 (Renormalization Group, RG)**。RG 的思想是，物理规律可能取决于你观察它的**尺度**。想象一下，你有一张分辨率可以任意调节的地图。在低分辨率下，你只能看到城市的轮廓；提高分辨率，你能看到街道；再提高，你能看到单个房屋。
+[能量与熵](@keyword=energy_vs_entropy|lang=zh-CN|style=Feynman)的争论给出了一幅直观而美丽的图像，但要真正理解 BKT [相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)的精髓，我们必须引入一个更强大的工具——**重整化群 (Renormalization Group, RG)**。RG 的思想是，物理规律可能取决于你观察它的**尺度**。想象一下，你有一张分辨率可以任意调节的地图。在低分辨率下，你只能看到城市的轮廓；提高分辨率，你能看到街道；再提高，你能看到单个房屋。
 
-在 BKT 系统中，我们关心的两个关键参数是**刚度** $K$ 和**漩涡逸度 (fugacity)** $y$（可以理解为产生一个漩[涡对](@article_id:377918)的“活性”或“倾向性”）。RG 告诉我们，当我们从微观尺度（比如漩涡核心大小 $a$）逐渐“放大”到宏观尺度 $L$ 时，我们观测到的有效刚度 $K(\ell)$ 和有效逸度 $y(\ell)$ 会如何演化（这里 $\ell = \ln(L/a)$ 是对数尺度）。
+在 BKT 系统中，我们关心的两个关键参数是**刚度** $K$ 和**漩涡逸度 (fugacity)** $y$（可以理解为产生一个漩[涡对](@keyword=vortex_pairs|lang=zh-CN|style=Feynman)的“活性”或“倾向性”）。RG 告诉我们，当我们从微观尺度（比如漩涡核心大小 $a$）逐渐“放大”到宏观尺度 $L$ 时，我们观测到的有效刚度 $K(\ell)$ 和有效逸度 $y(\ell)$ 会如何演化（这里 $\ell = \ln(L/a)$ 是对数尺度）。
 
-著名的 KT-RG 方程描述了这场演化  ：
+著名的 KT-RG 方程描述了这场演化 [@problem_id:1271007] [@problem_id:1013]：
 $$
 \begin{align}
 \frac{dy}{d\ell} &= (2 - \pi K) y \\
@@ -80,38 +80,38 @@ $$
 
 -   如果系统的初始刚度较小，满足 $\pi K < 2$，那么 $\frac{dy}{d\ell}$ 为正。这意味着当我们“向外放大”时，漩涡的“活性”$y$ 会急剧增长。尺度越大，我们看到的自由漩涡就越多和越活跃。这就是**高温下的无序相**。
 
-BKT [相变](@article_id:297531)就发生在这两种行为的分界线上，即当 RG 流动处于[临界状态](@article_id:321104)时：
+BKT [相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)就发生在这两种行为的分界线上，即当 RG 流动处于[临界状态](@keyword=critical_state|lang=zh-CN|style=Feynman)时：
 $$
 2 - \pi K_c = 0 \quad \implies \quad K_c = \frac{2}{\pi}
 $$
-这是一个惊人的结果！它预言，在 BKT [相变](@article_id:297531)发生的精确温度 $T_{BKT}$，系统的无量纲刚度 $K(T_{BKT})$ 必须等于一个**[普适常数](@article_id:344932)** $2/\pi$，与材料的具体微观细节无关 。这被称为**普适刚度跳变 (universal stiffness jump)**，是 BKT 理论最核心、最著名的预言之一，并已在[冷原子气体](@article_id:296716)等多种实验系统中得到了精确的验证 。RG 流动方程还蕴含着一个守恒量，它像一条条轨道，将参数空间清晰地划分为有序区和无序区，而[相变](@article_id:297531)边界就是那条特殊的“分离轨道”。
+这是一个惊人的结果！它预言，在 BKT [相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)发生的精确温度 $T_{BKT}$，系统的无量纲刚度 $K(T_{BKT})$ 必须等于一个**[普适常数](@keyword=universal_constants|lang=zh-CN|style=Feynman)** $2/\pi$，与材料的具体微观细节无关 [@problem_id:1007]。这被称为**普适刚度跳变 (universal stiffness jump)**，是 BKT 理论最核心、最著名的预言之一，并已在[冷原子气体](@keyword=cold_atomic_gases|lang=zh-CN|style=Feynman)等多种实验系统中得到了精确的验证 [@problem_id:1270991]。RG 流动方程还蕴含着一个守恒量，它像一条条轨道，将参数空间清晰地划分为有序区和无序区，而[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)边界就是那条特殊的“分离轨道”[@problem_id:1270942]。
 
 ### BKT世界的印记
 
-这个由[拓扑缺陷](@article_id:299235)主导的[相变](@article_id:297531)，会在系统中留下怎样的可观测“印记”呢？
+这个由[拓扑缺陷](@keyword=topological_defects|lang=zh-CN|style=Feynman)主导的[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)，会在系统中留下怎样的可观测“印记”呢？
 
--   **低于 $T_{BKT}$ 的低温相**：在这个区域，虽然自由漩涡被抑制，但大量的束缚对仍然存在。它们的涨落会破坏真正的长程有序。系统的关联并不像晶体那样在无穷远处保持不变，而是随着距离 $r$ 的增加而呈**[幂律衰减](@article_id:325936)**：
+-   **低于 $T_{BKT}$ 的低温相**：在这个区域，虽然自由漩涡被抑制，但大量的束缚对仍然存在。它们的涨落会破坏真正的长程有序。系统的关联并不像晶体那样在无穷远处保持不变，而是随着距离 $r$ 的增加而呈**[幂律衰减](@keyword=power_law_decay|lang=zh-CN|style=Feynman)**：
     $$
     g^{(1)}(r) \propto r^{-\eta(T)}
     $$
-    这种状态被称为**准长程有序 (quasi-long-range order)**。它介于完全有序和完全无序之间，是二维世界独有的一种奇特状态。衰减指数 $\eta(T)$ 与温度有关，它直接取决于系统的有效刚度 $K(T)$。当温度从零度升高到 $T_{BKT}$ 时，$\eta(T)$ 也从0逐渐增加到 $1/4$ 。
+    这种状态被称为**准长程有序 (quasi-long-range order)**。它介于完全有序和完全无序之间，是二维世界独有的一种奇特状态。衰减指数 $\eta(T)$ 与温度有关，它直接取决于系统的有效刚度 $K(T)$。当温度从零度升高到 $T_{BKT}$ 时，$\eta(T)$ 也从0逐渐增加到 $1/4$ [@problem_id:1270925]。
 
--   **高于 $T_{BKT}$ 的高温相**：一旦越过 $T_{BKT}$，自由漩涡的“等离子体”会彻底扰乱系统的相位。任意两点之间的相位关联都会被[随机游走](@article_id:303058)的自由漩涡破坏掉。因此，关联函数会变为**指数衰减**：
+-   **高于 $T_{BKT}$ 的高温相**：一旦越过 $T_{BKT}$，自由漩涡的“等离子体”会彻底扰乱系统的相位。任意两点之间的相位关联都会被[随机游走](@keyword=random_walk|lang=zh-CN|style=Feynman)的自由漩涡破坏掉。因此，关联函数会变为**指数衰减**：
     $$
     g^{(1)}(r) \propto \exp\left(-\frac{r}{\xi_v}\right)
     $$
     这里的 $\xi_v$ 是关联长度，大致对应于自由漩涡之间的平均距离。
 
-从[幂律衰减](@article_id:325936)到指数衰减的转变，是实验上判断 BKT [相变](@article_id:297531)发生的最重要标志。
+从[幂律衰减](@keyword=power_law_decay|lang=zh-CN|style=Feynman)到指数衰减的转变，是实验上判断 BKT [相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)发生的最重要标志。
 
 ### 为何偏偏是二维？
 
-最后，我们不禁要问：为什么这个如此精妙的 BKT [相变](@article_id:297531)机制，偏偏钟情于二维空间？
+最后，我们不禁要问：为什么这个如此精妙的 BKT [相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)机制，偏偏钟情于二维空间？
 
-答案再次回到了[能量与熵](@article_id:301826)的拔河比赛上。问题的关键在于，一个孤立[拓扑缺陷](@article_id:299235)的能量和它所能占据的“空间位置”的熵，是如何随着系统尺寸 $L$ 变化的 。
-- 在**三维**空间，一个点状[拓扑缺陷](@article_id:299235)（如磁单极子）的能量是有限的，不随系统尺寸发散。因此熵总是赢家，只要温度大于零，它们就能自由产生。而线状缺陷（如涡旋线）的能量正比于其长度 $L$，能量成本增长太快，熵永远无法抗衡，它们总是被抑制。
+答案再次回到了[能量与熵](@keyword=energy_vs_entropy|lang=zh-CN|style=Feynman)的拔河比赛上。问题的关键在于，一个孤立[拓扑缺陷](@keyword=topological_defects|lang=zh-CN|style=Feynman)的能量和它所能占据的“空间位置”的熵，是如何随着系统尺寸 $L$ 变化的 [@problem_id:1270910]。
+- 在**三维**空间，一个点状[拓扑缺陷](@keyword=topological_defects|lang=zh-CN|style=Feynman)（如磁单极子）的能量是有限的，不随系统尺寸发散。因此熵总是赢家，只要温度大于零，它们就能自由产生。而线状缺陷（如涡旋线）的能量正比于其长度 $L$，能量成本增长太快，熵永远无法抗衡，它们总是被抑制。
 - 在**一维**空间，相位的涨落异常剧烈，任何微小的热扰动都足以在任意非零温度下摧毁长程有序。
 
-唯独在**二维**空间，大自然达到了一个完美的平衡。点状拓扑缺陷（漩涡）的能量，恰好与可供其存在的空间位置的熵一样，都与系统尺寸的**对数** $\ln(L)$ 成正比。这种微妙的平衡使得能量与熵的竞争成为可能，从而在有限的[临界温度](@article_id:307101) $T_{BKT}$ 处，上演了一场从束缚到解放的宏大剧变。
+唯独在**二维**空间，大自然达到了一个完美的平衡。点状拓扑缺陷（漩涡）的能量，恰好与可供其存在的空间位置的熵一样，都与系统尺寸的**对数** $\ln(L)$ 成正比。这种微妙的平衡使得能量与熵的竞争成为可能，从而在有限的[临界温度](@keyword=critical_temperature|lang=zh-CN|style=Feynman) $T_{BKT}$ 处，上演了一场从束缚到解放的宏大剧变。
 
-因此，[BKT相变](@article_id:297267)不仅仅是某个特定系统的性质，更是二维连续对称性系统普适行为的深刻体现。它向我们展示了维度、对称性和拓扑是如何联手，共同谱写出物质世界中最令人惊叹的篇章之一。
+因此，[BKT相变](@keyword=berezinskii_kosterlitz_thouless_transition|lang=zh-CN|style=Feynman)不仅仅是某个特定系统的性质，更是二维连续对称性系统普适行为的深刻体现。它向我们展示了维度、对称性和拓扑是如何联手，共同谱写出物质世界中最令人惊叹的篇章之一。

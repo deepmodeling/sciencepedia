@@ -1,11 +1,11 @@
 ## 引言
-在物理学的发展史上，伟大的理论往往以“统一”为标志。Newton向我们揭示，下落的苹果与环绕的月球遵循着同样的[万有引力](@article_id:317939)定律。Maxwell则证明了电、磁与光不过是同一电磁现象的不同侧面。而Einstein的[狭义相对论](@article_id:339245)提供了或许是其中最深刻的统一，它不仅统一了物理定律，更统一了现实本身的基本框架——空间与时间。我们日常经验中绝对分离的空间与时间，在高速运动的世界里会展现出相对性，引发了对物理学根基的拷问。本文旨在解决这一认知上的鸿沟，带领读者进入四维[时空](@article_id:370647)的世界。你将首先学习到[时空](@article_id:370647)这个新舞台的几何规则，即不变的“时空间隔”；接着，我们将认识在这个舞台上表演的真正“演员”——四维矢量，看它们如何重新定义速度、动量和电流等物理量；最后，你将领略到这套“[时空](@article_id:370647)语言”的强大威力，见证它如何将能量与动量、电与磁等概念融为一体，展现出物理世界前所未见的和谐与统一。
+在物理学的发展史上，伟大的理论往往以“统一”为标志。Newton向我们揭示，下落的苹果与环绕的月球遵循着同样的[万有引力](@keyword=universal_gravitation|lang=zh-CN|style=Feynman)定律。Maxwell则证明了电、磁与光不过是同一电磁现象的不同侧面。而Einstein的[狭义相对论](@keyword=special_relativity_theory|lang=zh-CN|style=Feynman)提供了或许是其中最深刻的统一，它不仅统一了物理定律，更统一了现实本身的基本框架——空间与时间。我们日常经验中绝对分离的空间与时间，在高速运动的世界里会展现出相对性，引发了对物理学根基的拷问。本文旨在解决这一认知上的鸿沟，带领读者进入四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的世界。你将首先学习到[时空](@keyword=space_time|lang=zh-CN|style=Feynman)这个新舞台的几何规则，即不变的“时空间隔”；接着，我们将认识在这个舞台上表演的真正“演员”——四维矢量，看它们如何重新定义速度、动量和电流等物理量；最后，你将领略到这套“[时空](@keyword=space_time|lang=zh-CN|style=Feynman)语言”的强大威力，见证它如何将能量与动量、电与磁等概念融为一体，展现出物理世界前所未见的和谐与统一。
 
 ## 原理与机制
 
-在物理学的旅程中，我们偶尔会遇到这样的时刻：两个看似风马牛不相及的概念，在更深邃的理论框架下，竟是同一枚硬币的正反两面。牛顿告诉我们，一个下落的苹果和轨道上的月球都遵循着同一个普适法则——引力。麦克斯韦向我们展示，电、磁和光是同一个电磁之舞的不同舞姿。爱因斯坦的[狭义相对论](@article_id:339245)，或许提供了所有这些统一中最为深刻的一个；它不仅统一了物理定律，也统一了现实本身的结构，即空间和时间。
+在物理学的旅程中，我们偶尔会遇到这样的时刻：两个看似风马牛不相及的概念，在更深邃的理论框架下，竟是同一枚硬币的正反两面。牛顿告诉我们，一个下落的苹果和轨道上的月球都遵循着同一个普适法则——引力。麦克斯韦向我们展示，电、磁和光是同一个电磁之舞的不同舞姿。爱因斯坦的[狭义相对论](@keyword=special_relativity_theory|lang=zh-CN|style=Feynman)，或许提供了所有这些统一中最为深刻的一个；它不仅统一了物理定律，也统一了现实本身的结构，即空间和时间。
 
-这趟旅程的起点，是对[时空](@article_id:370647)本身的一次彻底颠覆。
+这趟旅程的起点，是对[时空](@keyword=space_time|lang=zh-CN|style=Feynman)本身的一次彻底颠覆。
 
 ### 不变的“距离”：时空间隔
 
@@ -13,36 +13,36 @@
 
 答案是肯定的，但它既不是纯粹的空间，也不是纯粹的时间。它是一种奇特的混合体，我们称之为**时空间隔**（spacetime interval）。
 
-想象一下，[时空](@article_id:370647)中发生了两个“事件”。事件A是你的飞船在空间站的原点出发的那一刻 $(t=0, x=0, y=0, z=0)$。事件B是飞船在空间站时间 $T$ 后，到达某个位置 $(\Delta x, \Delta y, \Delta z)$ 的时刻 。我们如何定义这两个事件之间的“距离”？在三维空间里，我们用毕达哥拉斯定理（[勾股定理](@article_id:351446)）：$(\Delta L)^2 = (\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2$。但在四维[时空](@article_id:370647)中，规则变了。这个新的“距离”的平方，我们用 $(\Delta s)^2$ 表示，它的定义是：
+想象一下，[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中发生了两个“事件”。事件A是你的飞船在空间站的原点出发的那一刻 $(t=0, x=0, y=0, z=0)$。事件B是飞船在空间站时间 $T$ 后，到达某个位置 $(\Delta x, \Delta y, \Delta z)$ 的时刻 [@problem_id:1799424]。我们如何定义这两个事件之间的“距离”？在三维空间里，我们用毕达哥拉斯定理（[勾股定理](@keyword=a^2=b^2+c^2|lang=zh-CN|style=Feynman)）：$(\Delta L)^2 = (\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2$。但在四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中，规则变了。这个新的“距离”的平方，我们用 $(\Delta s)^2$ 表示，它的定义是：
 
 $$ (\Delta s)^2 = (c \Delta t)^2 - (\Delta x)^2 - (\Delta y)^2 - (\Delta z)^2 $$
 
 请注意那个至关重要的减号！它不像我们熟悉的距离。时间分量 $(c\Delta t)^2$ 带正号，而所有空间分量都带负号。这个公式里的 $c$ 是光速，它的作用是把时间单位（秒）转换成和空间单位（米）一样的量纲，让它们可以公平地“相减”。
 
-这个时空间隔 $(\Delta s)^2$ 就是我们寻找的宝藏。它是一个**[洛伦兹不变量](@article_id:322224)**，意味着无论你在哪个[惯性参考系](@article_id:323792)中测量，无论你的速度有多快，你计算出的 $(\Delta s)^2$ 的值将永远是相同的。它是[时空](@article_id:370647)中一个比空间或时间本身更基本、更真实的存在。
+这个时空间隔 $(\Delta s)^2$ 就是我们寻找的宝藏。它是一个**[洛伦兹不变量](@keyword=lorentz_invariants|lang=zh-CN|style=Feynman)**，意味着无论你在哪个[惯性参考系](@keyword=inertial_frame_of_reference|lang=zh-CN|style=Feynman)中测量，无论你的速度有多快，你计算出的 $(\Delta s)^2$ 的值将永远是相同的。它是[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中一个比空间或时间本身更基本、更真实的存在。
 
-这减号还带来了更离奇的后果。在一个普通空间里，两点间的距离平方永远是正的。但[时空间隔](@article_id:315346)的平方可以是正的、负的，甚至是零！这三种可能性深刻地揭示了宇宙的因果结构 。
+这减号还带来了更离奇的后果。在一个普通空间里，两点间的距离平方永远是正的。但[时空间隔](@keyword=spacetime_interval|lang=zh-CN|style=Feynman)的平方可以是正的、负的，甚至是零！这三种可能性深刻地揭示了宇宙的因果结构 [@problem_id:1799430]。
 
-*   **[类时间隔](@article_id:333011)（Timelike Interval）：$(\Delta s)^2 > 0$**
+*   **[类时间隔](@keyword=timelike_separation|lang=zh-CN|style=Feynman)（Timelike Interval）：$(\Delta s)^2 > 0$**
     这意味着 $(c \Delta t)^2 > (\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2$。换句话说，连接两个事件所需的时间，足够让一束光（乃至任何有质量的物体）从一个事件的地点传播到另一个。这两个事件之间可以建立因果联系。比如，一颗遥远恒星的爆炸（事件A）和你今天在地球上观测到它（事件B）。对于所有观察者来说，事件A都发生在事件B之前。因果律得到了保障。有趣的是，对于一个沿着连接这两个事件的路径运动的物体来说，它的时钟所记录的时间——我们称之为**固有时**（proper time） $\Delta\tau$——恰好与时空间隔有关：$(\Delta s)^2 = (c \Delta\tau)^2$。
 
-*   **[类光间隔](@article_id:375901)（Lightlike Interval）：$(\Delta s)^2 = 0$**
-    这意味着 $(c \Delta t)^2$ 恰好等于 $(\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2$。只有以光速运动的某种东西（比如[光子](@article_id:305617)）才能连接这两个事件。这是光在真空中穿梭的轨迹。
+*   **[类光间隔](@keyword=lightlike_interval|lang=zh-CN|style=Feynman)（Lightlike Interval）：$(\Delta s)^2 = 0$**
+    这意味着 $(c \Delta t)^2$ 恰好等于 $(\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2$。只有以光速运动的某种东西（比如[光子](@keyword=photon|lang=zh-CN|style=Feynman)）才能连接这两个事件。这是光在真空中穿梭的轨迹。
 
-*   **[类空间隔](@article_id:323646)（Spacelike Interval）：$(\Delta s)^2 < 0$**
-    这意味着空间上的分离是如此之大，以至于连光都来不及在给定的时间内从一个事件传播到另一个。这两个事件之间不可能有因果联系。更奇怪的是，对于不同的观察者来说，这两个事件发生的先后顺序是可以颠倒的！这听起来像是科幻小说，但它恰恰是[相对论](@article_id:327421)的核心结论之一。不过别担心，这并不会破坏因果律，因为既然它们无法相互影响，谁先谁后也就无关紧要了。
+*   **[类空间隔](@keyword=spacelike_separation|lang=zh-CN|style=Feynman)（Spacelike Interval）：$(\Delta s)^2 < 0$**
+    这意味着空间上的分离是如此之大，以至于连光都来不及在给定的时间内从一个事件传播到另一个。这两个事件之间不可能有因果联系。更奇怪的是，对于不同的观察者来说，这两个事件发生的先后顺序是可以颠倒的！这听起来像是科幻小说，但它恰恰是[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)的核心结论之一。不过别担心，这并不会破坏因果律，因为既然它们无法相互影响，谁先谁后也就无关紧要了。
 
-### 舞台上的演员：[四维矢量](@article_id:338778)
+### 舞台上的演员：[四维矢量](@keyword=4_vectors|lang=zh-CN|style=Feynman)
 
-我们已经搭建好了[时空](@article_id:370647)这个奇特的舞台，它的几何规则由时空间隔定义。现在，物理世界中的各种“演员”——比如速度、动量、电流——该如何在这个舞台上表演呢？答案是：它们也必须“四维化”。那些在[洛伦兹变换](@article_id:355788)下（即在不同惯性系之间切换时）表现得和[时空](@article_id:370647)坐标 $(ct, x, y, z)$ 一样的量，我们称之为**四维矢量**（four-vectors）。
+我们已经搭建好了[时空](@keyword=space_time|lang=zh-CN|style=Feynman)这个奇特的舞台，它的几何规则由时空间隔定义。现在，物理世界中的各种“演员”——比如速度、动量、电流——该如何在这个舞台上表演呢？答案是：它们也必须“四维化”。那些在[洛伦兹变换](@keyword=the_lorentz_transformation|lang=zh-CN|style=Feynman)下（即在不同惯性系之间切换时）表现得和[时空](@keyword=space_time|lang=zh-CN|style=Feynman)坐标 $(ct, x, y, z)$ 一样的量，我们称之为**四维矢量**（four-vectors）。
 
-这不仅仅是为了数学上的优美，而是物理定律在所有[参考系](@article_id:345789)中保持形式不变（即协变性）的根本要求。
+这不仅仅是为了数学上的优美，而是物理定律在所有[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)中保持形式不变（即协变性）的根本要求。
 
 **四维速度 (Four-velocity)**
 
-什么是速度？是位置的变化率。但在四维[时空](@article_id:370647)中，我们应该用哪个“时间”来衡量变化呢？如果我们用某个观察者的时间 $t$，那么这个速度就会因观察者而异，这可不太好。我们需要一个所有人都同意的计时器。幸运的是，我们刚刚找到了一个：固有时 $\tau$。
+什么是速度？是位置的变化率。但在四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中，我们应该用哪个“时间”来衡量变化呢？如果我们用某个观察者的时间 $t$，那么这个速度就会因观察者而异，这可不太好。我们需要一个所有人都同意的计时器。幸运的是，我们刚刚找到了一个：固有时 $\tau$。
 
-于是，我们定义**四维速度** $u^\mu$ 为[时空](@article_id:370647)位置 $x^\mu = (ct, x, y, z)$ 相对于固有时 $\tau$ 的变化率：
+于是，我们定义**四维速度** $u^\mu$ 为[时空](@keyword=space_time|lang=zh-CN|style=Feynman)位置 $x^\mu = (ct, x, y, z)$ 相对于固有时 $\tau$ 的变化率：
 
 $$ u^\mu = \frac{dx^\mu}{d\tau} $$
 
@@ -50,29 +50,29 @@ $$ u^\mu = \frac{dx^\mu}{d\tau} $$
 
 $$ u^\mu = \gamma (c, v_x, v_y, v_z) $$
 
-其中 $\gamma = 1/\sqrt{1 - v^2/c^2}$ 是著名的洛伦兹因子。你看，四维速度的“空间分量”就是我们熟悉的（经过 $\gamma$ 修正的）速度，而它的“时间分量”则与光速 $c$ 有关。当一个粒子接近光速时，$\gamma$ 因子会急剧增大，四维速度的分量也会变得非常巨大 。
+其中 $\gamma = 1/\sqrt{1 - v^2/c^2}$ 是著名的洛伦兹因子。你看，四维速度的“空间分量”就是我们熟悉的（经过 $\gamma$ 修正的）速度，而它的“时间分量”则与光速 $c$ 有关。当一个粒子接近光速时，$\gamma$ 因子会急剧增大，四维速度的分量也会变得非常巨大 [@problem_id:1799454]。
 
-就像[时空间隔](@article_id:315346)一样，[四维矢量](@article_id:338778)也有自己的“长度”平方，而且这个长度也是洛伦兹不变量。对于四维速度，它的长度平方总是一个美妙的常数：$u_\mu u^\mu = (u^0)^2 - (u^1)^2 - (u^2)^2 - (u^3)^2 = c^2$。这是一个深刻的几何事实：在四维[时空](@article_id:370647)中，任何物体的“运动速率”都是光速！只不过这个速率的“方向”可以在时间维度和空间维度之间分配。一个静止的物体，它的[四维速度](@article_id:324807)完全指向时间方向；一个运动的物体，则把它的一部分“速度”分配给了空间方向。
+就像[时空间隔](@keyword=spacetime_interval|lang=zh-CN|style=Feynman)一样，[四维矢量](@keyword=4_vectors|lang=zh-CN|style=Feynman)也有自己的“长度”平方，而且这个长度也是洛伦兹不变量。对于四维速度，它的长度平方总是一个美妙的常数：$u_\mu u^\mu = (u^0)^2 - (u^1)^2 - (u^2)^2 - (u^3)^2 = c^2$。这是一个深刻的几何事实：在四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中，任何物体的“运动速率”都是光速！只不过这个速率的“方向”可以在时间维度和空间维度之间分配。一个静止的物体，它的[四维速度](@keyword=4_velocity|lang=zh-CN|style=Feynman)完全指向时间方向；一个运动的物体，则把它的一部分“速度”分配给了空间方向。
 
-**[四维动量](@article_id:328085) (Four-momentum)**
+**[四维动量](@keyword=4_momentum|lang=zh-CN|style=Feynman) (Four-momentum)**
 
-现在我们更进一步。如果速度有四个分量，那么动量呢？经典动量是质量乘以速度。那么，[相对论](@article_id:327421)中的动量，理应是（静止）质量 $m_0$ 乘以四维速度 $u^\mu$：
+现在我们更进一步。如果速度有四个分量，那么动量呢？经典动量是质量乘以速度。那么，[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)中的动量，理应是（静止）质量 $m_0$ 乘以四维速度 $u^\mu$：
 
 $$ p^\mu = m_0 u^\mu = m_0 \gamma (c, \vec{v}) = (\gamma m_0 c, \gamma m_0 \vec{v}) $$
 
-我们来看看这个新的四维动量 $p^\mu$ 的各个分量是什么。它的空间部分 $\vec{p} = \gamma m_0 \vec{v}$ 正是我们在[相对论](@article_id:327421)中熟悉的动量表达式。那么它的时间分量 $p^0 = \gamma m_0 c$ 是什么呢？它的单位是“质量乘以速度”，如果我们再乘上一个 $c$，得到 $p^0 c = \gamma m_0 c^2$，单位就变成了能量！这正是爱因斯坦给出的总能量 $E$ 的表达式。
+我们来看看这个新的四维动量 $p^\mu$ 的各个分量是什么。它的空间部分 $\vec{p} = \gamma m_0 \vec{v}$ 正是我们在[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)中熟悉的动量表达式。那么它的时间分量 $p^0 = \gamma m_0 c$ 是什么呢？它的单位是“质量乘以速度”，如果我们再乘上一个 $c$，得到 $p^0 c = \gamma m_0 c^2$，单位就变成了能量！这正是爱因斯坦给出的总能量 $E$ 的表达式。
 
 于是，我们有了一个惊人的发现：
 
 $$ p^\mu = (E/c, p_x, p_y, p_z) $$
 
-能量和动量，这两个在[经典物理学](@article_id:310812)中各自守恒的量，竟然是一个单一的[四维矢量](@article_id:338778)的不同侧面！能量是动量的“时间分量”，而动量是能量的“空间分量”。这种统一是何等深刻！
+能量和动量，这两个在[经典物理学](@keyword=classical_physics|lang=zh-CN|style=Feynman)中各自守恒的量，竟然是一个单一的[四维矢量](@keyword=4_vectors|lang=zh-CN|style=Feynman)的不同侧面！能量是动量的“时间分量”，而动量是能量的“空间分量”。这种统一是何等深刻！[@problem_id:1799453]
 
-现在，让我们施展一下四维矢量的魔力。我们来计算四维动量的“长度”平方 $p_\mu p^\mu$。这是一个[不变量](@article_id:309269)，在任何[参考系](@article_id:345789)下都一样。让我们在一个特别方便的[参考系](@article_id:345789)——也就是粒子自身的[静止参考系](@article_id:326411)——中来计算它 。在这个[参考系](@article_id:345789)里，粒子的三维动量 $\vec{p}' = 0$，而它的能量就是[静止能量](@article_id:327353) $E' = m_0 c^2$。所以：
+现在，让我们施展一下四维矢量的魔力。我们来计算四维动量的“长度”平方 $p_\mu p^\mu$。这是一个[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)，在任何[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)下都一样。让我们在一个特别方便的[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)——也就是粒子自身的[静止参考系](@keyword=rest_frame|lang=zh-CN|style=Feynman)——中来计算它 [@problem_id:1799452]。在这个[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)里，粒子的三维动量 $\vec{p}' = 0$，而它的能量就是[静止能量](@keyword=rest_energy|lang=zh-CN|style=Feynman) $E' = m_0 c^2$。所以：
 
 $$ p'_\mu p'^\mu = (E'/c)^2 - |\vec{p}'|^2 = (m_0 c^2 / c)^2 - 0 = (m_0 c)^2 $$
 
-因为这个值是不变的，所以在任何其他[参考系](@article_id:345789)（比如[实验室参考系](@article_id:346288)）中，它也必须等于这个值。在实验室参考系中，我们有：
+因为这个值是不变的，所以在任何其他[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)（比如[实验室参考系](@keyword=laboratory_frame|lang=zh-CN|style=Feynman)）中，它也必须等于这个值。在实验室参考系中，我们有：
 
 $$ p_\mu p^\mu = (E/c)^2 - |\vec{p}|^2 $$
 
@@ -84,24 +84,24 @@ $$ (E/c)^2 - p^2 = (m_0 c)^2 $$
 
 $$ E^2 = (pc)^2 + (m_0 c^2)^2 $$
 
-这个方程优雅地连接了能量、动量和静止质量，它不是凭空猜测出来的，而是从四维[时空](@article_id:370647)的几何结构中自然而然推导出来的！这个方程也完美地适用于没有[静止质量](@article_id:329575)的[光子](@article_id:305617)（$m_0=0 \implies E=pc$），并且在粒子物理学中，利用[四维动量守恒](@article_id:333112)来分析[粒子衰变](@article_id:320342)和碰撞过程，成为了一个极其强大的工具 。
+这个方程优雅地连接了能量、动量和静止质量，它不是凭空猜测出来的，而是从四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的几何结构中自然而然推导出来的！这个方程也完美地适用于没有[静止质量](@keyword=invariant_mass|lang=zh-CN|style=Feynman)的[光子](@keyword=photon|lang=zh-CN|style=Feynman)（$m_0=0 \implies E=pc$），并且在粒子物理学中，利用[四维动量守恒](@keyword=conservation_of_four_momentum|lang=zh-CN|style=Feynman)来分析[粒子衰变](@keyword=particle_decay|lang=zh-CN|style=Feynman)和碰撞过程，成为了一个极其强大的工具 [@problem_id:1799437]。
 
-**四维电流与[四维势](@article_id:367533) (Four-current and Four-potential)**
+**四维电流与[四维势](@keyword=4_vector_potential|lang=zh-CN|style=Feynman) (Four-current and Four-potential)**
 
-这种统一的思想并未就此止步。在[电磁学](@article_id:363853)中，我们有[电荷密度](@article_id:305099) $\rho$（单位体积的[电荷](@article_id:339187)）和电流密度 $\vec{J}$（[电荷](@article_id:339187)的流动）。它们看似不同，但在[相对论](@article_id:327421)看来，它们也是一个四维矢量的不同分量——**[四维电流密度](@article_id:326276)** $J^\mu = (\rho c, \vec{J})$ 。
+这种统一的思想并未就此止步。在[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)中，我们有[电荷密度](@keyword=charge_density|lang=zh-CN|style=Feynman) $\rho$（单位体积的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)）和电流密度 $\vec{J}$（[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的流动）。它们看似不同，但在[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)看来，它们也是一个四维矢量的不同分量——**[四维电流密度](@keyword=four_current_density|lang=zh-CN|style=Feynman)** $J^\mu = (\rho c, \vec{J})$ [@problem_id:1799459]。
 
-想象一根带静电的导线。在你看来，它只有[电荷密度](@article_id:305099) $\rho$，没有电流 $\vec{J}$。但对于一个沿着导线飞速掠过的观察者来说，这根导线上的[电荷](@article_id:339187)正在高速运动，因此他会测量到一股强大的电流！你的“纯”[电荷密度](@article_id:305099)，在他的眼里“旋转”出了一部分，变成了[电流密度](@article_id:323875)。这完美地解释了那个古老的问题：为什么运动的[电荷](@article_id:339187)会产生[磁场](@article_id:313708)？因为[电场和磁场](@article_id:325058)本身就是相对的，它们都源于统一的[电磁场](@article_id:329585)，而[电荷密度](@article_id:305099)和电流密度也是一个统一的四维矢量的不同表现 。
+想象一根带静电的导线。在你看来，它只有[电荷密度](@keyword=charge_density|lang=zh-CN|style=Feynman) $\rho$，没有电流 $\vec{J}$。但对于一个沿着导线飞速掠过的观察者来说，这根导线上的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)正在高速运动，因此他会测量到一股强大的电流！你的“纯”[电荷密度](@keyword=charge_density|lang=zh-CN|style=Feynman)，在他的眼里“旋转”出了一部分，变成了[电流密度](@keyword=current_density|lang=zh-CN|style=Feynman)。这完美地解释了那个古老的问题：为什么运动的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)会产生[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)？因为[电场和磁场](@keyword=electric_and_magnetic_fields|lang=zh-CN|style=Feynman)本身就是相对的，它们都源于统一的[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)，而[电荷密度](@keyword=charge_density|lang=zh-CN|style=Feynman)和电流密度也是一个统一的四维矢量的不同表现 [@problem_id:1799426]。
 
-电荷守恒定律——[电荷](@article_id:339187)不能凭空产生或消失——在四维语言中也变得异常简洁：$\partial_\mu J^\mu = 0$。这个方程意味着四维电流的“四维散度”为零。一个基本物理定律被浓缩成一个如此优雅的数学形式。
+电荷守恒定律——[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)不能凭空产生或消失——在四维语言中也变得异常简洁：$\partial_\mu J^\mu = 0$。这个方程意味着四维电流的“四维散度”为零。一个基本物理定律被浓缩成一个如此优雅的数学形式。
 
-更进一步，产生电场和磁场的源头是标量势 $\phi$ 和矢量势 $\vec{A}$。你可能已经猜到了，它们也组成了一个**四维势** $A^\mu = (\phi/c, \vec{A})$。在一个[参考系](@article_id:345789)中看到的纯电场（由 $\phi$ 产生），在另一个移动的[参考系](@article_id:345789)中就会变成电场和磁场（由 $\phi'$ 和 $\vec{A}'$ 共同产生）的混合体 。电和磁，最终在四维[时空](@article_id:370647)的框架下实现了统一。
+更进一步，产生电场和磁场的源头是标量势 $\phi$ 和矢量势 $\vec{A}$。你可能已经猜到了，它们也组成了一个**四维势** $A^\mu = (\phi/c, \vec{A})$。在一个[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)中看到的纯电场（由 $\phi$ 产生），在另一个移动的[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)中就会变成电场和磁场（由 $\phi'$ 和 $\vec{A}'$ 共同产生）的混合体 [@problem_id:1799447]。电和磁，最终在四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的框架下实现了统一。
 
 ### 运动的几何学
 
-最后，让我们以一个纯粹的几何洞见来结束这次探索。什么是加速度？它是速度的变化。在四维[时空](@article_id:370647)中，我们定义**[四维加速度](@article_id:326966)** $a^\mu = du^\mu/d\tau$。我们之前看到，[四维速度](@article_id:324807)的“长度”平方总是不变的 ($u_\mu u^\mu = c^2$)。对这个式子两边求导，我们会得到一个惊人的结果：
+最后，让我们以一个纯粹的几何洞见来结束这次探索。什么是加速度？它是速度的变化。在四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中，我们定义**[四维加速度](@keyword=acceleration_four_vector|lang=zh-CN|style=Feynman)** $a^\mu = du^\mu/d\tau$。我们之前看到，[四维速度](@keyword=4_velocity|lang=zh-CN|style=Feynman)的“长度”平方总是不变的 ($u_\mu u^\mu = c^2$)。对这个式子两边求导，我们会得到一个惊人的结果：
 
 $$ u_\mu a^\mu = 0 $$
 
-这意味着，一个物体的[四维加速度矢量](@article_id:326966)总是与它的[四维速度](@article_id:324807)矢量“正交”（在闵可夫斯基时空的意义下） ！这就像一个在球面[匀速运动](@article_id:340475)的物体，它的速度矢量总是与球面相切，而它的[向心加速度矢量](@article_id:362254)总是垂直于速度指向球心。在四维[时空](@article_id:370647)中，任何力所能做的，只是改变一个物体[四维速度](@article_id:324807)的“方向”，而永远不能改变它的“长度”。物理的运动定律，最终被揭示为一种深刻的几何学。
+这意味着，一个物体的[四维加速度矢量](@keyword=acceleration_four_vector|lang=zh-CN|style=Feynman)总是与它的[四维速度](@keyword=4_velocity|lang=zh-CN|style=Feynman)矢量“正交”（在闵可夫斯基时空的意义下） [@problem_id:1799415]！这就像一个在球面[匀速运动](@keyword=constant_speed_motion|lang=zh-CN|style=Feynman)的物体，它的速度矢量总是与球面相切，而它的[向心加速度矢量](@keyword=centripetal_acceleration_vector|lang=zh-CN|style=Feynman)总是垂直于速度指向球心。在四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中，任何力所能做的，只是改变一个物体[四维速度](@keyword=4_velocity|lang=zh-CN|style=Feynman)的“方向”，而永远不能改变它的“长度”。物理的运动定律，最终被揭示为一种深刻的几何学。
 
-从[时空间隔](@article_id:315346)到能量动量，再到[电磁场](@article_id:329585)，四维矢量的概念如同一根金线，将物理学的各个领域串联起来，揭示了它们内在的和谐与统一。它告诉我们，要理解宇宙的法则，我们必须首先学会用[时空](@article_id:370647)本身的语言去思考。
+从[时空间隔](@keyword=spacetime_interval|lang=zh-CN|style=Feynman)到能量动量，再到[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)，四维矢量的概念如同一根金线，将物理学的各个领域串联起来，揭示了它们内在的和谐与统一。它告诉我们，要理解宇宙的法则，我们必须首先学会用[时空](@keyword=space_time|lang=zh-CN|style=Feynman)本身的语言去思考。

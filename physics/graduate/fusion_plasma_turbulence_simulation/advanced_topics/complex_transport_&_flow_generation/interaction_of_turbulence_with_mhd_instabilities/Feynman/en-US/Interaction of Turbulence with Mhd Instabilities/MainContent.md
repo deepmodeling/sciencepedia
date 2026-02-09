@@ -5,7 +5,7 @@ This article delves into this critical interaction. The first chapter, **"Princi
 
 ## Principles and Mechanisms
 
-To understand how a star-in-a-jar can be simultaneously robust and fragile, we must journey into its interior and witness the perpetual conflict that rages within. This is not a battle of good versus evil, but a deeply physical and subtle interplay between order and chaos, structure and fluctuation. The main actors in this drama fall into two camps: the large-scale, coherent **Magnetohydrodynamic (MHD) instabilities**—the "Beasts" of the plasma—and the small-scale, chaotic sea of **[microturbulence](@entry_id:1127893)**—the "Swarm." Their interaction is the central theme of modern fusion science.
+To understand how a star-in-a-jar can be simultaneously robust and fragile, we must journey into its interior and witness the perpetual conflict that rages within. This is not a battle of good versus evil, but a deeply physical and subtle interplay between order and chaos, structure and fluctuation. The main actors in this drama fall into two camps: the large-scale, coherent **Magnetohydrodynamic (MHD) instabilities**—the "Beasts" of the plasma—and the small-scale, chaotic sea of **[microturbulence](@keyword=microturbulence|lang=en-US|style=Feynman)**—the "Swarm." Their interaction is the central theme of modern fusion science.
 
 ### A Tale of Two Scales: The Beasts and the Swarm
 
@@ -21,7 +21,7 @@ The **Beasts** are large-scale, organized motions that threaten this balance. Th
 
 Now, imagine zooming in, far past the scale of these giant instabilities. Here, we find the **Swarm**: a roiling, chaotic ocean of **microturbulence**. These are tiny, fast-paced eddies and fluctuations, driven not by the global structure, but by the microscopic gradients in the plasma's temperature and density. They are the plasma's equivalent of weather. Among the most important are:
 
-*   **Ion Temperature Gradient (ITG) modes:** Driven by steep gradients in the [ion temperature](@entry_id:191275).
+*   **Ion Temperature Gradient (ITG) modes:** Driven by steep gradients in the [ion temperature](@keyword=ion_temperature|lang=en-US|style=Feynman).
 *   **Trapped Electron Modes (TEM):** Driven by the behavior of electrons trapped in weak parts of the magnetic field.
 *   **Electron Temperature Gradient (ETG) modes:** The electron-scale cousins of ITG modes.
 
@@ -37,7 +37,7 @@ It allows us to use different tools for different jobs. For the large-scale beas
 
 ### Interaction Channel 1: Turbulence Sculpts the Environment
 
-The first, and most direct, way the swarm interacts with the beasts is by changing the landscape on which they live. The chaotic eddies of [microturbulence](@entry_id:1127893) are incredibly effective at transporting heat and particles. This "anomalous transport" acts like an additional, powerful thermal conductivity, tending to smooth out the very temperature and density gradients that exist in the plasma.
+The first, and most direct, way the swarm interacts with the beasts is by changing the landscape on which they live. The chaotic eddies of [microturbulence](@keyword=microturbulence|lang=en-US|style=Feynman) are incredibly effective at transporting heat and particles. This "anomalous transport" acts like an additional, powerful thermal conductivity, tending to smooth out the very temperature and density gradients that exist in the plasma.
 
 This can be a stabilizing influence. A ballooning mode, for instance, feeds on a steep pressure gradient. By "sanding down" that gradient, turbulence can weaken the beast or even starve it into submission.
 
@@ -61,17 +61,17 @@ These flows are the plasma's own immune system. They possess strong **shear**, m
 
 $$ |S_E| \gtrsim \gamma $$
 
-This applies to everything! The zonal flows shear apart the very turbulent eddies that created them, leading to a self-regulating predator-prey cycle that limits the intensity of the turbulence. But they can also be strong enough to rip apart the large-scale structures of MHD instabilities, be they [tearing modes](@entry_id:194294) or [ballooning modes](@entry_id:195101). This shearing action works by **resonance broadening**: it disrupts the delicate phase relationship needed for an instability to coherently extract energy from the plasma, effectively smearing out its drive.
+This applies to everything! The zonal flows shear apart the very turbulent eddies that created them, leading to a self-regulating predator-prey cycle that limits the intensity of the turbulence. But they can also be strong enough to rip apart the large-scale structures of MHD instabilities, be they [tearing modes](@keyword=tearing_modes|lang=en-US|style=Feynman) or [ballooning modes](@keyword=ballooning_modes|lang=en-US|style=Feynman). This shearing action works by **resonance broadening**: it disrupts the delicate phase relationship needed for an instability to coherently extract energy from the plasma, effectively smearing out its drive.
 
 ### Interaction Channel 3: When Turbulence Tears the Magnetic Fabric
 
-We usually think of MHD instabilities as electromagnetic (affecting $\mathbf{B}$) and [microturbulence](@entry_id:1127893) as electrostatic (affecting $\mathbf{E}$). But nature is not so cleanly divided. There exists a special class of [microturbulence](@entry_id:1127893), most notably the **Microtearing Mode (MTM)**, that is fundamentally electromagnetic. Driven by the [electron temperature gradient](@entry_id:748914), MTMs are tiny instabilities that, like their larger cousins, can cause magnetic reconnection.
+We usually think of MHD instabilities as electromagnetic (affecting $\mathbf{B}$) and [microturbulence](@keyword=microturbulence|lang=en-US|style=Feynman) as electrostatic (affecting $\mathbf{E}$). But nature is not so cleanly divided. There exists a special class of [microturbulence](@keyword=microturbulence|lang=en-US|style=Feynman), most notably the **Microtearing Mode (MTM)**, that is fundamentally electromagnetic. Driven by the [electron temperature gradient](@keyword=electron_temperature_gradient|lang=en-US|style=Feynman), MTMs are tiny instabilities that, like their larger cousins, can cause magnetic reconnection.
 
-They create a "fuzz" of countless tiny magnetic islands throughout the plasma. While these are too small to be catastrophic on their own, they can act as **seeds** for macroscopic [tearing modes](@entry_id:194294) or NTMs. It is far easier for a large [tearing mode](@entry_id:182276) to grow from a pre-existing "micro-tear" than to start from nothing. In this way, the swarm can directly trigger the birth of a beast.
+They create a "fuzz" of countless tiny magnetic islands throughout the plasma. While these are too small to be catastrophic on their own, they can act as **seeds** for macroscopic [tearing modes](@keyword=tearing_modes|lang=en-US|style=Feynman) or NTMs. It is far easier for a large [tearing mode](@keyword=tearing_mode|lang=en-US|style=Feynman) to grow from a pre-existing "micro-tear" than to start from nothing. In this way, the swarm can directly trigger the birth of a beast.
 
 ### The Final Act: A Tangle of Chaos
 
-What happens when these control mechanisms fail and the beasts run rampant? When tearing modes and NTMs grow, their magnetic islands expand. If they grow large enough, they can overlap. When this happens, the beautifully ordered, nested structure of the magnetic surfaces is destroyed. This state is called **[magnetic stochasticity](@entry_id:751634)**.
+What happens when these control mechanisms fail and the beasts run rampant? When tearing modes and NTMs grow, their magnetic islands expand. If they grow large enough, they can overlap. When this happens, the beautifully ordered, nested structure of the magnetic surfaces is destroyed. This state is called **[magnetic stochasticity](@keyword=magnetic_stochasticity|lang=en-US|style=Feynman)**.
 
 Instead of being confined to a single surface, a magnetic field line now wanders chaotically across a large region of the plasma. We can quantify this chaos with a **field line diffusion coefficient**, $D_{FL}$, which measures how quickly a field line gets "lost" as it travels around the torus. A high $D_{FL}$ means that heat and particles can escape from the hot core to the cold wall almost instantly.
 

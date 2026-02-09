@@ -13,15 +13,15 @@ We quantify this ability with a single number called **capacitance**, denoted by
 
 $$C = \frac{Q}{V}$$
 
-Here, $Q$ is the magnitude of the charge separated onto the two conductors (one conductor holds $+Q$, the other holds $-Q$), and $V$ is the [potential difference](@article_id:275230), or voltage, that appears between them as a result. Think of capacitance as a measure of "room for charge." For a given electrical "pressure" (the voltage), a capacitor with a larger $C$ can hold more charge.
+Here, $Q$ is the magnitude of the charge separated onto the two conductors (one conductor holds $+Q$, the other holds $-Q$), and $V$ is the [potential difference](@keyword=potential_difference|lang=en-US|style=Feynman), or voltage, that appears between them as a result. Think of capacitance as a measure of "room for charge." For a given electrical "pressure" (the voltage), a capacitor with a larger $C$ can hold more charge.
 
 What's remarkable is that for a given capacitor, this ratio $Q/V$ is a constant. Double the voltage, and you'll find you've stored double the charge. This means the capacitance is an intrinsic property of the device itself. It doesn't depend on how much charge is on it or what voltage is across it; it only depends on its **geometry**—the size, shape, and spacing of the conductors—and the **material** that lies between them.
 
-The simplest and most illustrative example is the **[parallel-plate capacitor](@article_id:266428)**. For two plates of area $A$ separated by a distance $d$ in a vacuum, the capacitance is:
+The simplest and most illustrative example is the **[parallel-plate capacitor](@keyword=parallel_plate_capacitor_2|lang=en-US|style=Feynman)**. For two plates of area $A$ separated by a distance $d$ in a vacuum, the capacitance is:
 
 $$C = \frac{\epsilon_0 A}{d}$$
 
-where $\epsilon_0$ is a fundamental constant of nature, the [permittivity of free space](@article_id:272329). You can see the geometry right there in the formula. Bigger plates ($A$) mean more room for charge. Smaller separation ($d$) means the positive and negative charges on opposite plates attract each other more strongly, making it "easier" to pack more charge on for a given voltage.
+where $\epsilon_0$ is a fundamental constant of nature, the [permittivity of free space](@keyword=permittivity_of_free_space|lang=en-US|style=Feynman). You can see the geometry right there in the formula. Bigger plates ($A$) mean more room for charge. Smaller separation ($d$) means the positive and negative charges on opposite plates attract each other more strongly, making it "easier" to pack more charge on for a given voltage.
 
 But the principle is universal. It works for any shape. We could have two concentric spheres, and with a bit of help from Gauss's Law, find their capacitance depends on their radii $a$ and $b$ (@problem_id:1787176). Or we could have two coaxial cylinders, like in a TV cable, and find a capacitance that depends on their radii and length. One fascinating case arises in a specially designed coaxial cable where the material between the conductors is engineered to have a radially varying property; even then, the fundamental principles of electrostatics allow us to calculate its capacitance precisely (@problem_id:1570544). The geometry changes, but the core idea, $C=Q/V$, remains steadfast.
 
@@ -37,7 +37,7 @@ These are all equivalent forms, but they offer different perspectives we'll find
 
 Now comes the big question: *where* is this energy? Is it in the metal plates? Is it in the charge itself? The profound insight of 19th-century physics, championed by Michael Faraday, is that the energy is stored in the **electric field** that now exists in the space *between* the plates. The act of charging the capacitor creates this field, and the energy is woven into the very fabric of that field.
 
-For our simple [parallel-plate capacitor](@article_id:266428), the electric field $E$ is nearly uniform between the plates. By taking the total energy $U = \frac{1}{2}CV^2$ and dividing it by the volume of the space between the plates ($A \times d$), we arrive at a beautiful and universal result for the energy stored per unit volume—the **energy density** of the electric field (@problem_id:1570537):
+For our simple [parallel-plate capacitor](@keyword=parallel_plate_capacitor_2|lang=en-US|style=Feynman), the electric field $E$ is nearly uniform between the plates. By taking the total energy $U = \frac{1}{2}CV^2$ and dividing it by the volume of the space between the plates ($A \times d$), we arrive at a beautiful and universal result for the energy stored per unit volume—the **energy density** of the electric field (@problem_id:1570537):
 
 $$u_E = \frac{1}{2} \epsilon_0 E^2$$
 
@@ -45,13 +45,13 @@ This little equation is one of the jewels of physics. It tells us that any time 
 
 ### The Dielectric's Secret: A Story of Opposition
 
-So far, we've mostly imagined our capacitor with a vacuum between the plates. What happens if we fill that space with a material, like glass, oil, or plastic? These materials are insulators, which we call **[dielectrics](@article_id:145269)**.
+So far, we've mostly imagined our capacitor with a vacuum between the plates. What happens if we fill that space with a material, like glass, oil, or plastic? These materials are insulators, which we call **[dielectrics](@keyword=dielectrics|lang=en-US|style=Feynman)**.
 
-You might think an insulator does nothing, but it has a dramatic effect. When a [dielectric material](@article_id:194204) is placed in an electric field, it becomes **polarized**. While the electrons in an insulator aren't free to roam like in a metal, they can shift slightly within their atoms or molecules. The atoms themselves become tiny stretched dipoles, with their negative ends pointing against the field and their positive ends pointing with it.
+You might think an insulator does nothing, but it has a dramatic effect. When a [dielectric material](@keyword=dielectric_material|lang=en-US|style=Feynman) is placed in an electric field, it becomes **polarized**. While the electrons in an insulator aren't free to roam like in a metal, they can shift slightly within their atoms or molecules. The atoms themselves become tiny stretched dipoles, with their negative ends pointing against the field and their positive ends pointing with it.
 
-The collective effect of these zillions of aligned microscopic dipoles is staggering. They generate their own internal electric field that *opposes* the original field from the charges on the plates. On the surface of the dielectric slab next to the positive plate, a thin layer of negative charge appears. This isn't free charge that can be conducted away; it's **[bound charge](@article_id:141650)**, tied to the molecules of the material (@problem_id:1570518). Similarly, a layer of positive [bound charge](@article_id:141650) appears on the other surface.
+The collective effect of these zillions of aligned microscopic dipoles is staggering. They generate their own internal electric field that *opposes* the original field from the charges on the plates. On the surface of the dielectric slab next to the positive plate, a thin layer of negative charge appears. This isn't free charge that can be conducted away; it's **[bound charge](@keyword=bound_charge|lang=en-US|style=Feynman)**, tied to the molecules of the material (@problem_id:1570518). Similarly, a layer of positive [bound charge](@keyword=bound_charge|lang=en-US|style=Feynman) appears on the other surface.
 
-The net effect is that the total electric field inside the dielectric is *reduced*. The factor by which the field is weakened is called the **[dielectric constant](@article_id:146220)**, $\kappa$ (kappa). A material with $\kappa=3$ will reduce the electric field within it to one-third of what it would be in a vacuum. Since voltage is just the integral of the electric field ($V = Ed$), a smaller field means a smaller voltage for the *same amount of charge $Q$* on the plates.
+The net effect is that the total electric field inside the dielectric is *reduced*. The factor by which the field is weakened is called the **[dielectric constant](@keyword=dielectric_constant|lang=en-US|style=Feynman)**, $\kappa$ (kappa). A material with $\kappa=3$ will reduce the electric field within it to one-third of what it would be in a vacuum. Since voltage is just the integral of the electric field ($V = Ed$), a smaller field means a smaller voltage for the *same amount of charge $Q$* on the plates.
 
 Look back at our definition: $C=Q/V$. If $V$ goes down while $Q$ stays the same, the capacitance $C$ must go *up*. Specifically, if the original capacitance was $C_0$, the new capacitance with the dielectric is:
 
@@ -78,10 +78,10 @@ Now imagine we perform the same actions while the capacitor remains connected to
 
 We've assumed our dielectrics are perfect insulators. But in the real world, no insulator is perfect. There's always some tiny amount of "leakage," a small current that can flow through the material. This means our "dielectric" also has a bit of **conductivity**, $\sigma$ (sigma).
 
-What happens to a charged, isolated capacitor made with such a "leaky" material? The charge won't stay put forever; it will slowly leak from one plate to the other through the material, and the voltage will decay. The material is behaving as both a capacitor (due to its [permittivity](@article_id:267856) $\epsilon$) and a resistor (due to its conductivity $\sigma$) in parallel.
+What happens to a charged, isolated capacitor made with such a "leaky" material? The charge won't stay put forever; it will slowly leak from one plate to the other through the material, and the voltage will decay. The material is behaving as both a capacitor (due to its [permittivity](@keyword=permittivity|lang=en-US|style=Feynman) $\epsilon$) and a resistor (due to its conductivity $\sigma$) in parallel.
 
 This system has a characteristic discharge time, an $RC$ time constant, $\tau$. If we calculate the resistance $R$ and capacitance $C$ for a capacitor of any shape—be it parallel plates or concentric spheres—and multiply them together, we find an astonishingly simple and profound result (@problem_id:1787176):
 
 $$\tau = RC = \frac{\epsilon}{\sigma}$$
 
-Notice what's missing: everything related to geometry! The size and shape ($A$, $d$, radii $a, b$) have all cancelled out. This [time constant](@article_id:266883), known as the **Maxwell relaxation time**, is an intrinsic property of the material itself. It represents the fundamental timescale on which charge imbalance within that material will dissipate. It's a deep connection, revealing that a material's ability to store an electric field ($\epsilon$) and its ability to conduct charge ($\sigma$) are not independent actors, but two sides of the same coin, linked by time. And it is in discovering such unexpected, unifying principles that the true beauty of physics reveals itself.
+Notice what's missing: everything related to geometry! The size and shape ($A$, $d$, radii $a, b$) have all cancelled out. This [time constant](@keyword=time_constant|lang=en-US|style=Feynman), known as the **Maxwell relaxation time**, is an intrinsic property of the material itself. It represents the fundamental timescale on which charge imbalance within that material will dissipate. It's a deep connection, revealing that a material's ability to store an electric field ($\epsilon$) and its ability to conduct charge ($\sigma$) are not independent actors, but two sides of the same coin, linked by time. And it is in discovering such unexpected, unifying principles that the true beauty of physics reveals itself.

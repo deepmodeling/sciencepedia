@@ -1,7 +1,7 @@
 ## 引言
-[统计物理学](@article_id:303380)构筑了一座连接微观粒子世界与我们日常所见的宏观物质属性的桥梁。而要理解这座桥梁的构造与运作方式，我们必须掌握它的基础语言——概率论。然而，一个深刻的问题摆在我们面前：无数微观粒子永不停歇的随机运动，是如何最终孕育出宏观世界中那些稳定、可预测的物理定律的？
+[统计物理学](@keyword=statistical_physics|lang=zh-CN|style=Feynman)构筑了一座连接微观粒子世界与我们日常所见的宏观物质属性的桥梁。而要理解这座桥梁的构造与运作方式，我们必须掌握它的基础语言——概率论。然而，一个深刻的问题摆在我们面前：无数微观粒子永不停歇的随机运动，是如何最终孕育出宏观世界中那些稳定、可预测的物理定律的？
 
-本文将带领您深入探索这个问题的答案。我们将分三步展开：首先，在“原理与机制”一章中，我们将学习如何计数[微观态](@article_id:307807)、理解熵的本质以及概率如何支配[粒子系统](@article_id:355770)。接着，在“应用的广阔天地与学科间的交响”一章中，我们将看到这些原理如何在物理学、生物学乃至工程计算领域大放异彩。最后，通过“动手实践”部分，您将有机会亲手运用这些知识来解决具体问题，从而真正掌握这套强大的分析工具。
+本文将带领您深入探索这个问题的答案。我们将分三步展开：首先，在“原理与机制”一章中，我们将学习如何计数[微观态](@keyword=microstates|lang=zh-CN|style=Feynman)、理解熵的本质以及概率如何支配[粒子系统](@keyword=system_of_particles|lang=zh-CN|style=Feynman)。接着，在“应用的广阔天地与学科间的交响”一章中，我们将看到这些原理如何在物理学、生物学乃至工程计算领域大放异彩。最后，通过“动手实践”部分，您将有机会亲手运用这些知识来解决具体问题，从而真正掌握这套强大的分析工具。
 
 现在，让我们首先踏入这座桥梁的内部，从支撑它的核心支柱——概率论的基本原理与机制开始我们的旅程。
 
@@ -13,18 +13,18 @@
 
 想象一下，我们想描述一个盒子里的一团气体。我们可以测量它的温度、压强和体积。这些都是它的**宏观性质**——我们从外部、作为一个整体所能感知到的特性。但这并不能告诉我们内部发生了什么。在那一瞬间，每一个气体分子到底在哪里？它运动得多快？
 
-如果我们拥有“上帝视角”，能够精确地知道在某一瞬间系统中**每一个**基本组分（例如原子或分子）的完整状态（比如它的位置和动量），那么我们就得到了系统的一个**微观态 (microstate)**。这个[微观态](@article_id:307807)是系统最详尽、最根本的描述。
+如果我们拥有“上帝视角”，能够精确地知道在某一瞬间系统中**每一个**基本组分（例如原子或分子）的完整状态（比如它的位置和动量），那么我们就得到了系统的一个**微观态 (microstate)**。这个[微观态](@keyword=microstates|lang=zh-CN|style=Feynman)是系统最详尽、最根本的描述。
 
-让我们从一个最简单的玩具模型开始。假设一个系统只有两个可分辨的粒子，我们叫它们“粒子1”和“粒子2”。它们各自可以待在两个能量“架子”上：一个低的能量态 $\epsilon_0$ 和一个高的能量态 $\epsilon_1$。这个系统的所有可能性有多少种呢？我们可以一一列举出来 ：
+让我们从一个最简单的玩具模型开始。假设一个系统只有两个可分辨的粒子，我们叫它们“粒子1”和“粒子2”。它们各自可以待在两个能量“架子”上：一个低的能量态 $\epsilon_0$ 和一个高的能量态 $\epsilon_1$。这个系统的所有可能性有多少种呢？我们可以一一列举出来 [@problem_id:1962759]：
 
 1.  粒子1和粒子2都在低能态：$(\epsilon_0, \epsilon_0)$
 2.  粒子1在低能态，粒子2在高能态：$(\epsilon_0, \epsilon_1)$
 3.  粒子1在高能态，粒子2在低能态：$(\epsilon_1, \epsilon_0)$
 4.  粒子1和粒子2都在高能态：$(\epsilon_1, \epsilon_1)$
 
-总共有 4 种完全不同的可能性。这每一种可能性，就是一个[微观态](@article_id:307807)。现在，统计物理学建立在一个非常大胆而强大的基本假设之上，即**等可能原理 (principle of equal a priori probability)**：对于一个孤立的系统，所有可及的微观态都是等概率出现的。
+总共有 4 种完全不同的可能性。这每一种可能性，就是一个[微观态](@keyword=microstates|lang=zh-CN|style=Feynman)。现在，统计物理学建立在一个非常大胆而强大的基本假设之上，即**等可能原理 (principle of equal a priori probability)**：对于一个孤立的系统，所有可及的微观态都是等概率出现的。
 
-这个原理的威力在于它的简单。在上例中，这意味着这 4 种[微观态](@article_id:307807)中的任何一种出现的概率都完全相同，都是 $1/4$。找到“粒子1在高能态而粒子2在低能态”这个特定微观态的概率，就像投掷两枚硬币，得到“第一枚正面，第二枚反面”的概率一样，简单明了。这个简单的计数和“机会均等”的想法，就是我们探索宏观世界的出发点。
+这个原理的威力在于它的简单。在上例中，这意味着这 4 种[微观态](@keyword=microstates|lang=zh-CN|style=Feynman)中的任何一种出现的概率都完全相同，都是 $1/4$。找到“粒子1在高能态而粒子2在低能态”这个特定微观态的概率，就像投掷两枚硬币，得到“第一枚正面，第二枚反面”的概率一样，简单明了。这个简单的计数和“机会均等”的想法，就是我们探索宏观世界的出发点。
 
 ### 身份之谜：粒子是否可分辨？
 
@@ -32,55 +32,55 @@
 
 这个看似哲学性的问题，在物理上会产生巨大的差异。如果我们的两个粒子是不可分辨的，那么“粒子1在高能态，粒子2在低能态”和“粒子1在低能态，粒子2在高能态”这两种情况就无法区分了。我们所能看到的只是“一个粒子在高能态，一个在低能态”。这样一来，微观态的总数就从 4 个减少到了 3 个。
 
-让我们把情况变得更复杂一些，来感受这种差异的巨大影响。设想我们有 $k=4$ 个粒子，需要将它们安置在 $N=6$ 个不同的能级上 。
+让我们把情况变得更复杂一些，来感受这种差异的巨大影响。设想我们有 $k=4$ 个粒子，需要将它们安置在 $N=6$ 个不同的能级上 [@problem_id:1962709]。
 
 *   **情景A：粒子是可分辨的**。这就像把 4 个不同颜色的球（红、绿、蓝、黄）放进 6 个不同的盒子里。第一个球有 6 种选择，第二个球也有 6 种选择……以此类推。总的可能性是 $6 \times 6 \times 6 \times 6 = 6^4 = 1296$ 种。一般地，对于 $k$ 个可分辨粒子和 $N$ 个能级，微观态总数是 $\Omega_A = N^k$。
 
-*   **情景B：粒子是不可分辨的，且遵循[泡利不相容原理](@article_id:302291)**。这就像电子。不相容原理说：“任何两个粒子都不能占据同一个状态（能级）。”这意味着我们必须从 6 个能级中挑选出 4 个**不同**的能级来安放这 4 个粒子。由于粒子是不可分辨的，我们选出哪 4 个能级就是唯一重要的事情，把粒子A放在1号能级、B放在2号，和把B放在1号、A放在2号，是完全一样的。问题就变成了“从6个事物中选出4个，有多少种组合？” 答案是组合数 $\binom{6}{4} = \frac{6!}{4!(6-4)!} = 15$ 种。
+*   **情景B：粒子是不可分辨的，且遵循[泡利不相容原理](@keyword=pauli_exclusion_principle|lang=zh-CN|style=Feynman)**。这就像电子。不相容原理说：“任何两个粒子都不能占据同一个状态（能级）。”这意味着我们必须从 6 个能级中挑选出 4 个**不同**的能级来安放这 4 个粒子。由于粒子是不可分辨的，我们选出哪 4 个能级就是唯一重要的事情，把粒子A放在1号能级、B放在2号，和把B放在1号、A放在2号，是完全一样的。问题就变成了“从6个事物中选出4个，有多少种组合？” 答案是组合数 $\binom{6}{4} = \frac{6!}{4!(6-4)!} = 15$ 种。
 
 看看这个数字的惊人对比：1296 与 15！粒子的“身份”问题——它们是否可分辨，是否要“保持社交距离”（不相容原理）——完全改变了我们计数的方式，也因此改变了物质的行为。金属中自由电子的海洋与绝缘体中被束缚的电子，其行为的巨大差异就源于这种量子世界的计数规则。
 
 ### 从状态到概率：最可能的样子
 
-通常，我们并不关心系统处于哪个具体的[微观态](@article_id:307807)，而是关心它的宏观性质，比如总能量。具有相同宏观性质的所有[微观态](@article_id:307807)的集合，构成了一个**[宏观态](@article_id:300449) (macrostate)**。
+通常，我们并不关心系统处于哪个具体的[微观态](@keyword=microstates|lang=zh-CN|style=Feynman)，而是关心它的宏观性质，比如总能量。具有相同宏观性质的所有[微观态](@keyword=microstates|lang=zh-CN|style=Feynman)的集合，构成了一个**[宏观态](@keyword=macrostates|lang=zh-CN|style=Feynman) (macrostate)**。
 
-让我们再次考虑一个简单的模型：一条由 $N$ 个原子组成的晶体链。每个原子可以处于能量为 $0$ 的[基态](@article_id:312876)，或能量为 $\epsilon$ 的[激发态](@article_id:325164)。我们假设所有可能的[微观态](@article_id:307807)都是等概率的 。每个原子有 2 种选择，所以总的[微观态](@article_id:307807)数量是 $2^N$。
+让我们再次考虑一个简单的模型：一条由 $N$ 个原子组成的晶体链。每个原子可以处于能量为 $0$ 的[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)，或能量为 $\epsilon$ 的[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)。我们假设所有可能的[微观态](@keyword=microstates|lang=zh-CN|style=Feynman)都是等概率的 [@problem_id:1962726]。每个原子有 2 种选择，所以总的[微观态](@keyword=microstates|lang=zh-CN|style=Feynman)数量是 $2^N$。
 
-现在，我们问一个问题：系统总能量恰好为 $E = M\epsilon$ 的概率是多少？（其中 $M$ 是一个整数）。这个[宏观态](@article_id:300449)意味着，在 $N$ 个原子中，必须有且仅有 $M$ 个原子处于[激发态](@article_id:325164)。
+现在，我们问一个问题：系统总能量恰好为 $E = M\epsilon$ 的概率是多少？（其中 $M$ 是一个整数）。这个[宏观态](@keyword=macrostates|lang=zh-CN|style=Feynman)意味着，在 $N$ 个原子中，必须有且仅有 $M$ 个原子处于[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)。
 
-有多少种[微观态](@article_id:307807)可以实现这个结果呢？这相当于问：“从 $N$ 个原子中选出 $M$ 个来激发，有多少种选法？” 答案正是我们熟悉的组合数 $\binom{N}{M}$。
+有多少种[微观态](@keyword=microstates|lang=zh-CN|style=Feynman)可以实现这个结果呢？这相当于问：“从 $N$ 个原子中选出 $M$ 个来激发，有多少种选法？” 答案正是我们熟悉的组合数 $\binom{N}{M}$。
 
-由于总共有 $2^N$ 个等可能的[微观态](@article_id:307807)，那么出现总能量为 $M\epsilon$ 这个[宏观态](@article_id:300449)的概率就是：
+由于总共有 $2^N$ 个等可能的[微观态](@keyword=microstates|lang=zh-CN|style=Feynman)，那么出现总能量为 $M\epsilon$ 这个[宏观态](@keyword=macrostates|lang=zh-CN|style=Feynman)的概率就是：
 $$
 P(E=M\epsilon) = \frac{\text{该宏观态对应的微观态数目}}{\text{所有可能的微观态总数}} = \frac{\binom{N}{M}}{2^{N}}
 $$
-这个公式正是著名的**二项分布**。当 $N$ 很大时，这个[概率分布](@article_id:306824)函数图像会呈现为一个非常尖锐的[钟形曲线](@article_id:311235)，其峰值在 $M = N/2$ 附近。这意味着，虽然系统“可能”处于所有原子都在[基态](@article_id:312876)（$M=0$）的[宏观态](@article_id:300449)，但与处于[平均能量](@article_id:306313)附近的[宏观态](@article_id:300449)相比，这种可能性小到可以忽略不计。绝大多数微观态都挤在那个钟形峰值的下面。这就是为什么当我们测量一个宏观系统的能量时，总能得到一个几乎确定的值——因为系统处于其他能量值的概率实在是太小了！
+这个公式正是著名的**二项分布**。当 $N$ 很大时，这个[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)函数图像会呈现为一个非常尖锐的[钟形曲线](@keyword=bell_curve|lang=zh-CN|style=Feynman)，其峰值在 $M = N/2$ 附近。这意味着，虽然系统“可能”处于所有原子都在[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)（$M=0$）的[宏观态](@keyword=macrostates|lang=zh-CN|style=Feynman)，但与处于[平均能量](@keyword=average_energy|lang=zh-CN|style=Feynman)附近的[宏观态](@keyword=macrostates|lang=zh-CN|style=Feynman)相比，这种可能性小到可以忽略不计。绝大多数微观态都挤在那个钟形峰值的下面。这就是为什么当我们测量一个宏观系统的能量时，总能得到一个几乎确定的值——因为系统处于其他能量值的概率实在是太小了！
 
 ### 超越离散：连续世界中的概率与平均
 
 到目前为止，我们谈论的都是离散的能级。但在经典世界里，一个粒子的位置或动量可以是连续变化的。这时，我们不能再问“粒子恰好在位置 $x$ 的概率是多少？”（因为一个点的概率是零），而应该使用**概率密度函数 (probability density function, PDF)**，记作 $P(x)$。它告诉我们，在某个位置 $x$ 附近的一个小区间 $dx$ 内找到该粒子的概率是 $P(x)dx$。
 
-概率密度函数有一个必须遵守的铁律：粒子必然存在于某个地方。因此，将它在所有可能空间内的概率密度积分起来，结果必须等于 1。这就是**[归一化](@article_id:310343) (normalization)** 条件: $\int P(x)dx = 1$。
+概率密度函数有一个必须遵守的铁律：粒子必然存在于某个地方。因此，将它在所有可能空间内的概率密度积分起来，结果必须等于 1。这就是**[归一化](@keyword=normalization|lang=zh-CN|style=Feynman) (normalization)** 条件: $\int P(x)dx = 1$。
 
-想象一个粒子被限制在 $x=0$ 到 $x=L$ 的一维“盒子”里。实验发现，它更喜欢待在中间，其[概率密度](@article_id:304297)由 $P(x) = C(Lx - x^2)$ 描述 。要让这个模型有意义，第一步就是利用[归一化条件](@article_id:316892) $\int_0^L C(Lx - x^2) dx = 1$ 来确定常数 $C$。一旦 $C$ 确定了，我们就可以回答各种有趣的问题，比如“在盒子的中间一半区域（从 $L/4$ 到 $3L/4$）找到它的概率是多少？” 答案就是简单地将 $P(x)$ 在这个区间上进行积分。
+想象一个粒子被限制在 $x=0$ 到 $x=L$ 的一维“盒子”里。实验发现，它更喜欢待在中间，其[概率密度](@keyword=probability_density|lang=zh-CN|style=Feynman)由 $P(x) = C(Lx - x^2)$ 描述 [@problem_id:1962744]。要让这个模型有意义，第一步就是利用[归一化条件](@keyword=normalization_condition|lang=zh-CN|style=Feynman) $\int_0^L C(Lx - x^2) dx = 1$ 来确定常数 $C$。一旦 $C$ 确定了，我们就可以回答各种有趣的问题，比如“在盒子的中间一半区域（从 $L/4$ 到 $3L/4$）找到它的概率是多少？” 答案就是简单地将 $P(x)$ 在这个区间上进行积分。
 
-有了[概率分布](@article_id:306824)，我们不仅可以计算事件发生的概率，还可以计算物理量的**平均值 (average value)**，也称为**[期望值](@article_id:313620) (expectation value)**。
+有了[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)，我们不仅可以计算事件发生的概率，还可以计算物理量的**平均值 (average value)**，也称为**[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman) (expectation value)**。
 
-对于一个[离散系统](@article_id:346696)，比如一个分子有三个能级 $E_0, E_1, E_2$，其占据概率分别为 $P_0, P_1, P_2$。那么它的[平均能量](@article_id:306313)就是各个能级能量的[加权平均](@article_id:304268) ：
+对于一个[离散系统](@keyword=discrete_systems|lang=zh-CN|style=Feynman)，比如一个分子有三个能级 $E_0, E_1, E_2$，其占据概率分别为 $P_0, P_1, P_2$。那么它的[平均能量](@keyword=average_energy|lang=zh-CN|style=Feynman)就是各个能级能量的[加权平均](@keyword=weighted_average|lang=zh-CN|style=Feynman) [@problem_id:1962745]：
 $$
 \langle E \rangle = \sum_i P_i E_i = P_0 E_0 + P_1 E_1 + P_2 E_2
 $$
-对于[连续系统](@article_id:357296)，求和就变成了积分。如果我们知道了气体分子的动量概率密度函数 $f(p)$，那么它的[平均动能](@article_id:306773)是多少？就是把每个可能动能 $\frac{p^2}{2m}$ 乘以它出现的[概率密度](@article_id:304297) $f(p)$，然后对所有可能的动量积分起来 ：
+对于[连续系统](@keyword=continuous_systems|lang=zh-CN|style=Feynman)，求和就变成了积分。如果我们知道了气体分子的动量概率密度函数 $f(p)$，那么它的[平均动能](@keyword=average_kinetic_energy|lang=zh-CN|style=Feynman)是多少？就是把每个可能动能 $\frac{p^2}{2m}$ 乘以它出现的[概率密度](@keyword=probability_density|lang=zh-CN|style=Feynman) $f(p)$，然后对所有可能的动量积分起来 [@problem_id:1962751]：
 $$
 \langle K \rangle = \left\langle \frac{p^2}{2m} \right\rangle = \int_{-\infty}^{\infty} \frac{p^2}{2m} f(p) dp
 $$
-这个框架的优美之处在于它的普适性。无论[概率分布](@article_id:306824)是简单的[均匀分布](@article_id:325445)，还是奇特的三[角分布](@article_id:372765)，甚至是更复杂的[麦克斯韦-玻尔兹曼分布](@article_id:304675)，计算平均值的原理是完全一样的。
+这个框架的优美之处在于它的普适性。无论[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)是简单的[均匀分布](@keyword=uniform_distribution|lang=zh-CN|style=Feynman)，还是奇特的三[角分布](@keyword=angular_distribution|lang=zh-CN|style=Feynman)，甚至是更复杂的[麦克斯韦-玻尔兹曼分布](@keyword=maxwell_boltzmann_distribution|lang=zh-CN|style=Feynman)，计算平均值的原理是完全一样的。
 
 ### 大数的力量：涨落与确定性
 
 我们日常生活中感受到的物理量，比如温度和压强，实际上都是大量粒子行为的平均结果。但系统会一直精确地处于平均状态吗？当然不。它总是在平均值附近“摇摆”，这些摇摆就是**涨落 (fluctuations)**。
 
-让我们回到那个由 $N$ 个[量子比特](@article_id:298377)组成的系统 。每个比特有 $1/2$ 的概率坍缩到‘1’。在一次测量中，我们[期望](@article_id:311378)得到 $N/2$ 个‘1’。但实际结果可能是 $N/2 + 5$ 或 $N/2 - 10$。这种偏离平均值的典型幅度由**标准差 (standard deviation)** $\sigma$ 来衡量。对于这个系统，可以算出 $\sigma = \frac{\sqrt{N}}{2}$。
+让我们回到那个由 $N$ 个[量子比特](@keyword=qubit|lang=zh-CN|style=Feynman)组成的系统 [@problem_id:1962688]。每个比特有 $1/2$ 的概率坍缩到‘1’。在一次测量中，我们[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)得到 $N/2$ 个‘1’。但实际结果可能是 $N/2 + 5$ 或 $N/2 - 10$。这种偏离平均值的典型幅度由**标准差 (standard deviation)** $\sigma$ 来衡量。对于这个系统，可以算出 $\sigma = \frac{\sqrt{N}}{2}$。
 
 现在，奇迹发生了。让我们看看这个“摇摆”的幅度相对于平均值本身有多大，即**相对涨落 (relative fluctuation)**：
 $$
@@ -88,24 +88,24 @@ $$
 $$
 这可能是整个物理学中最重要的公式之一！它告诉我们，相对涨落的大小随着粒子数 $N$ 的平方根成反比。如果 $N = 100$，相对涨落是 $1/\sqrt{100} = 0.1$，也就是 $10\%$，相当明显。但对于一杯水，其中的分子数 $N$ 约为 $10^{24}$。此时的相对涨落大约是 $1/\sqrt{10^{24}} = 10^{-12}$，小到不可思议！
 
-这就是为什么我们身边的宏观世界看起来如此确定和稳定。你桌上的杯子不会因为分子热运动而突然向上跳起，不是因为这在物理上不可能，而是因为它需要数以万亿计的分子“碰巧”同时朝一个方向运动，这个事件对应的微观态数量极少，其发生的概率小到在宇宙的生命周期里都等不到一次。宏观定律的确定性，源于微观世界随机性在大样本下的[统计平均](@article_id:314269)。这就是**[热力学极限](@article_id:303496) (thermodynamic limit)** 的威力。
+这就是为什么我们身边的宏观世界看起来如此确定和稳定。你桌上的杯子不会因为分子热运动而突然向上跳起，不是因为这在物理上不可能，而是因为它需要数以万亿计的分子“碰巧”同时朝一个方向运动，这个事件对应的微观态数量极少，其发生的概率小到在宇宙的生命周期里都等不到一次。宏观定律的确定性，源于微观世界随机性在大样本下的[统计平均](@keyword=statistical_average|lang=zh-CN|style=Feynman)。这就是**[热力学极限](@keyword=thermodynamic_limit|lang=zh-CN|style=Feynman) (thermodynamic limit)** 的威力。
 
 ### 信息与无知：熵的真面目
 
-我们已经学会了如何计数[微观态](@article_id:307807)和计算概率。这和[热力学](@article_id:359663)中那个神秘的概念——**熵 (entropy)**——有什么关系呢？
+我们已经学会了如何计数[微观态](@keyword=microstates|lang=zh-CN|style=Feynman)和计算概率。这和[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)中那个神秘的概念——**熵 (entropy)**——有什么关系呢？
 
-[路德维希·玻尔兹曼](@article_id:315620) (Ludwig Boltzmann) 给出了一个绝美的联系。他提出，熵 $S$ 与系统在给定[宏观态](@article_id:300449)下可及的微观态数目 $\Omega$ 之间，有一个简单的对数关系：
+[路德维希·玻尔兹曼](@keyword=ludwig_boltzmann|lang=zh-CN|style=Feynman) (Ludwig Boltzmann) 给出了一个绝美的联系。他提出，熵 $S$ 与系统在给定[宏观态](@keyword=macrostates|lang=zh-CN|style=Feynman)下可及的微观态数目 $\Omega$ 之间，有一个简单的对数关系：
 $$
 S = k_B \ln \Omega
 $$
-这里的 $k_B$ 是[玻尔兹曼常数](@article_id:302824)，它只是一个为了让单位匹配的转换因子。这个公式的内涵远比它的形式要深刻。它告诉我们，熵在某种意义上是**我们无知的量度**。如果我们只知道系统的宏观态（比如总能量），但不知道它究竟处于 $\Omega$ 个可能微观态中的哪一个，那么熵就量化了我们所缺失的关于系统精确状态的[信息量](@article_id:333051)。
+这里的 $k_B$ 是[玻尔兹曼常数](@keyword=boltzmann_constant|lang=zh-CN|style=Feynman)，它只是一个为了让单位匹配的转换因子。这个公式的内涵远比它的形式要深刻。它告诉我们，熵在某种意义上是**我们无知的量度**。如果我们只知道系统的宏观态（比如总能量），但不知道它究竟处于 $\Omega$ 个可能微观态中的哪一个，那么熵就量化了我们所缺失的关于系统精确状态的[信息量](@keyword=surprisal|lang=zh-CN|style=Feynman)。
 
-想象一个磁性材料，在高温下有 $\Omega_{initial} = 5$ 个微观态可供选择，它的熵就是 $S_{initial} = k_B \ln(5)$。当我们把它冷却，系统变得更加有序，只有 $\Omega_{final} = 2$ 个态是可及的。那么它的新熵就是 $S_{final} = k_B \ln(2)$。这个过程的[熵变](@article_id:298742)就是 $\Delta S = S_{final} - S_{initial} = k_B \ln(2/5)$ 。熵的减少，精确地对应于系统可能性范围的缩小，也就是我们对其状态的“确定性”增加了。
+想象一个磁性材料，在高温下有 $\Omega_{initial} = 5$ 个微观态可供选择，它的熵就是 $S_{initial} = k_B \ln(5)$。当我们把它冷却，系统变得更加有序，只有 $\Omega_{final} = 2$ 个态是可及的。那么它的新熵就是 $S_{final} = k_B \ln(2)$。这个过程的[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)就是 $\Delta S = S_{final} - S_{initial} = k_B \ln(2/5)$ [@problem_id:1962725]。熵的减少，精确地对应于系统可能性范围的缩小，也就是我们对其状态的“确定性”增加了。
 
-但如果微观态不是等概率的呢？比如在一个真实的[热平衡](@article_id:318390)系统中，能量越高的态出现的概率越低 。这时，我们需要一个更普适的公式，由约西亚·威拉德·吉布斯 (J. Willard Gibbs) 提出：
+但如果微观态不是等概率的呢？比如在一个真实的[热平衡](@keyword=thermal_balance|lang=zh-CN|style=Feynman)系统中，能量越高的态出现的概率越低 [@problem_id:1962731]。这时，我们需要一个更普适的公式，由约西亚·威拉德·吉布斯 (J. Willard Gibbs) 提出：
 $$
 S = -k_B \sum_i p_i \ln p_i
 $$
-这里 $p_i$ 是系统处于第 $i$ 个[微观态](@article_id:307807)的概率。这个公式更加强大。我们可以检验一下：如果所有 $\Omega$ 个态都是等概率的，那么 $p_i = 1/\Omega$。代入吉布斯公式，我们得到 $S = -k_B \sum_{i=1}^\Omega \frac{1}{\Omega} \ln(\frac{1}{\Omega}) = -k_B (\Omega \cdot \frac{1}{\Omega}) \ln(\frac{1}{\Omega}) = k_B \ln \Omega$。它完美地退化为了玻尔兹曼公式！
+这里 $p_i$ 是系统处于第 $i$ 个[微观态](@keyword=microstates|lang=zh-CN|style=Feynman)的概率。这个公式更加强大。我们可以检验一下：如果所有 $\Omega$ 个态都是等概率的，那么 $p_i = 1/\Omega$。代入吉布斯公式，我们得到 $S = -k_B \sum_{i=1}^\Omega \frac{1}{\Omega} \ln(\frac{1}{\Omega}) = -k_B (\Omega \cdot \frac{1}{\Omega}) \ln(\frac{1}{\Omega}) = k_B \ln \Omega$。它完美地退化为了玻尔兹曼公式！[@problem_id:1962734]
 
 这种内在的和谐与统一是令人惊叹的。熵不再是某种代表“混乱”的神秘流体。它是一个基于概率和状态计数的精确物理量，它量化了信息，连接了有序与无序，并最终构成了从微观粒子的随机舞蹈通往我们所体验的宏观世界稳定秩序的桥梁。

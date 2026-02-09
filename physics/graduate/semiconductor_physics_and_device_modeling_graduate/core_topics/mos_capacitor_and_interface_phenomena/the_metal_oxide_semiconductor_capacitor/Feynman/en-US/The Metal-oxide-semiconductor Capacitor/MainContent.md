@@ -19,7 +19,7 @@ In its neutral state, the number of mobile holes perfectly balances the number o
 
 ### A Symphony in Three Movements
 
-The gate voltage, $V_G$, applied across the oxide, acts like a powerful conductor's baton, directing the symphony of charges within the silicon. By changing its polarity and magnitude, we can orchestrate the charge distribution at the silicon surface, leading the capacitor through three distinct operational regimes, or "movements." Let's follow the journey as we sweep the gate voltage on our p-type MOS capacitor. For an n-type device, the story is simply a mirror image, with the roles of electrons and holes, and positive and negative voltages, reversed .
+The gate voltage, $V_G$, applied across the oxide, acts like a powerful conductor's baton, directing the symphony of charges within the silicon. By changing its polarity and magnitude, we can orchestrate the charge distribution at the silicon surface, leading the capacitor through three distinct operational regimes, or "movements." Let's follow the journey as we sweep the gate voltage on our p-type MOS capacitor. For an n-type device, the story is simply a mirror image, with the roles of electrons and holes, and positive and negative voltages, reversed [@problem_id:3780068].
 
 #### Accumulation: A Return to Simplicity
 
@@ -31,7 +31,7 @@ $$
 C_{ox} = \frac{\epsilon_{ox}}{t_{ox}}
 $$
 
-where $\epsilon_{ox}$ is the permittivity of the oxide. In this movement, the semiconductor's complex character is hidden, and it behaves just like a simple metal  .
+where $\epsilon_{ox}$ is the permittivity of the oxide. In this movement, the semiconductor's complex character is hidden, and it behaves just like a simple metal [@problem_id:3780024] [@problem_id:3780082].
 
 #### Depletion: The Widening Gap
 
@@ -47,7 +47,7 @@ $$
 \frac{1}{C} = \frac{1}{C_{ox}} + \frac{1}{C_d}
 $$
 
-The capacitance of the depletion layer itself is like that of a [parallel-plate capacitor](@entry_id:266922) of thickness $W_d$, so $C_d = \epsilon_s / W_d$, where $\epsilon_s$ is the silicon's permittivity . As we make the gate voltage more positive, we push the holes further away, the depletion region $W_d$ gets wider, $C_d$ gets smaller, and therefore the total capacitance $C$ continues to decrease. This beautiful and simple physical picture—the creation of a voltage-controlled insulating layer—perfectly explains the downward-sloping portion of the MOS capacitor's [characteristic curve](@entry_id:1122276).
+The capacitance of the depletion layer itself is like that of a [parallel-plate capacitor](@keyword=parallel_plate_capacitor_2|lang=en-US|style=Feynman) of thickness $W_d$, so $C_d = \epsilon_s / W_d$, where $\epsilon_s$ is the silicon's permittivity [@problem_id:3780051]. As we make the gate voltage more positive, we push the holes further away, the depletion region $W_d$ gets wider, $C_d$ gets smaller, and therefore the total capacitance $C$ continues to decrease. This beautiful and simple physical picture—the creation of a voltage-controlled insulating layer—perfectly explains the downward-sloping portion of the MOS capacitor's [characteristic curve](@keyword=characteristic_curve|lang=en-US|style=Feynman).
 
 #### Inversion: A Dramatic Reversal and the Role of Time
 
@@ -56,9 +56,9 @@ If we continue to increase the positive gate voltage, making it very strong, som
 This new sheet of mobile negative charge at the interface is called the **inversion layer**. Now, a fascinating subtlety emerges. How does the capacitance behave? The answer, surprisingly, depends on how fast you ask the question.
 
 Imagine you are measuring the capacitance with a small, oscillating AC signal.
-At **low frequencies**, the AC voltage changes slowly. The processes that generate electrons in the silicon—a mechanism known as **Shockley-Read-Hall (SRH) generation**—have enough time to produce the electrons needed for the inversion layer to swell and shrink in lockstep with the signal. This mobile inversion layer, just like the hole layer in accumulation, acts as a conducting sheet right at the interface. It effectively "shorts out" the depletion region capacitor. The structure once again behaves like a simple capacitor with the plates separated only by the oxide, and the capacitance returns to its maximum value, $C_{ox}$ .
+At **low frequencies**, the AC voltage changes slowly. The processes that generate electrons in the silicon—a mechanism known as **Shockley-Read-Hall (SRH) generation**—have enough time to produce the electrons needed for the inversion layer to swell and shrink in lockstep with the signal. This mobile inversion layer, just like the hole layer in accumulation, acts as a conducting sheet right at the interface. It effectively "shorts out" the depletion region capacitor. The structure once again behaves like a simple capacitor with the plates separated only by the oxide, and the capacitance returns to its maximum value, $C_{ox}$ [@problem_id:3780024].
 
-But at **high frequencies**, the story is completely different. The AC voltage oscillates so rapidly that the relatively slow SRH generation "factory" cannot keep up. The population of electrons in the inversion layer is essentially frozen; it can't respond to the fast signal. So where does the responsive charge come from? The only place left is the far edge of the depletion region. The AC signal causes the width of the depletion region to wiggle slightly around its maximum extent. Electrically, the device behaves as if it's still in the depletion regime. As a result, the high-frequency capacitance *remains at its minimum value*, pinned at the bottom of the curve .
+But at **high frequencies**, the story is completely different. The AC voltage oscillates so rapidly that the relatively slow SRH generation "factory" cannot keep up. The population of electrons in the inversion layer is essentially frozen; it can't respond to the fast signal. So where does the responsive charge come from? The only place left is the far edge of the depletion region. The AC signal causes the width of the depletion region to wiggle slightly around its maximum extent. Electrically, the device behaves as if it's still in the depletion regime. As a result, the high-frequency capacitance *remains at its minimum value*, pinned at the bottom of the curve [@problem_id:3780074].
 
 This frequency dependence is a profound illustration of how the microscopic dynamics of charge carriers, with their characteristic timescales, manifest as a macroscopic electrical property.
 
@@ -66,9 +66,9 @@ This frequency dependence is a profound illustration of how the microscopic dyna
 
 We have told a rather complex story involving three distinct regimes and a frequency-dependent twist. It might seem like a collection of different effects. But in physics, we are always searching for the unifying idea, the simpler, underlying principle. For the MOS capacitor, that principle is the **surface potential**, denoted $\phi_s$.
 
-The surface potential is simply the voltage drop *within* the semiconductor, from the surface to the neutral bulk. While we control the external gate voltage $V_G$, what the semiconductor itself directly responds to is $\phi_s$. The amount of band bending at the surface, determined by $\phi_s$, dictates whether the surface is in accumulation, depletion, or inversion. The entire electrostatic state of the semiconductor—the charge density, the electric field, the potential everywhere inside—is uniquely determined by this single parameter, $\phi_s$ .
+The surface potential is simply the voltage drop *within* the semiconductor, from the surface to the neutral bulk. While we control the external gate voltage $V_G$, what the semiconductor itself directly responds to is $\phi_s$. The amount of band bending at the surface, determined by $\phi_s$, dictates whether the surface is in accumulation, depletion, or inversion. The entire electrostatic state of the semiconductor—the charge density, the electric field, the potential everywhere inside—is uniquely determined by this single parameter, $\phi_s$ [@problem_id:3780033].
 
-The external gate voltage $V_G$ and the internal surface potential $\phi_s$ are linked through a simple and elegant voltage balance equation. The total applied voltage must be distributed across the structure: part of it drops across the oxide ($V_{ox}$), and part of it drops across the semiconductor ($\phi_s$), all while accounting for any intrinsic voltage offsets ($V_{FB}$, the flatband voltage). This leads to the fundamental relation :
+The external gate voltage $V_G$ and the internal surface potential $\phi_s$ are linked through a simple and elegant voltage balance equation. The total applied voltage must be distributed across the structure: part of it drops across the oxide ($V_{ox}$), and part of it drops across the semiconductor ($\phi_s$), all while accounting for any intrinsic voltage offsets ($V_{FB}$, the flatband voltage). This leads to the fundamental relation [@problem_id:3780075]:
 
 $$
 V_G = V_{FB} + \phi_s + V_{ox}
@@ -80,7 +80,7 @@ The voltage drop across the oxide, $V_{ox}$, is in turn determined by the total 
 
 Our story so far has been about an ideal device. But real devices have imperfections, and studying them often reveals even deeper physics.
 
-First, our ideal story assumed that at zero gate voltage, the semiconductor is perfectly neutral, or "flat-band." In reality, there is almost always a mismatch in the material properties of the metal and the semiconductor (the **[work function difference](@entry_id:1134131)**, $\phi_{ms}$) and some unavoidable **fixed charge** ($Q_f$) trapped in the oxide. To achieve the true neutral, flat-band starting point, we must first apply a specific **flatband voltage**, $V_{FB}$, to counteract these built-in effects. The flatband voltage is given by :
+First, our ideal story assumed that at zero gate voltage, the semiconductor is perfectly neutral, or "flat-band." In reality, there is almost always a mismatch in the material properties of the metal and the semiconductor (the **[work function difference](@keyword=work_function_difference|lang=en-US|style=Feynman)**, $\phi_{ms}$) and some unavoidable **fixed charge** ($Q_f$) trapped in the oxide. To achieve the true neutral, flat-band starting point, we must first apply a specific **flatband voltage**, $V_{FB}$, to counteract these built-in effects. The flatband voltage is given by [@problem_id:3780053]:
 
 $$
 V_{FB} = \phi_{ms} - \frac{Q_f}{C_{ox}}
@@ -88,14 +88,14 @@ $$
 
 This voltage simply shifts the entire capacitance-voltage curve left or right, telling us about the intrinsic properties of our specific device.
 
-Second, the interface between the silicon crystal and the silicon dioxide glass is one of the most perfect interfaces engineered by humankind, but it's not absolutely perfect. There exist a small number of "[dangling bonds](@entry_id:137865)" or defects, which create energy states within the [silicon bandgap](@entry_id:273301). These **interface traps** can capture and release charge as the surface potential changes. Each of these traps acts like a tiny, additional capacitor. At low frequencies, where they have time to respond, they add to the total capacitance. This effect, which can be used to measure the quality of the interface, is quantified by the interface trap capacitance, $C_{it}$, which is directly proportional to the density of these traps, $D_{it}$ :
+Second, the interface between the silicon crystal and the silicon dioxide glass is one of the most perfect interfaces engineered by humankind, but it's not absolutely perfect. There exist a small number of "[dangling bonds](@keyword=dangling_bonds|lang=en-US|style=Feynman)" or defects, which create energy states within the [silicon bandgap](@keyword=silicon_bandgap|lang=en-US|style=Feynman). These **interface traps** can capture and release charge as the surface potential changes. Each of these traps acts like a tiny, additional capacitor. At low frequencies, where they have time to respond, they add to the total capacitance. This effect, which can be used to measure the quality of the interface, is quantified by the interface trap capacitance, $C_{it}$, which is directly proportional to the density of these traps, $D_{it}$ [@problem_id:3780010]:
 
 $$
 C_{it} \approx q^2 D_{it}
 $$
 
-where $q$ is the [elementary charge](@entry_id:272261). This provides a powerful diagnostic tool, allowing us to "count" the number of defects by measuring capacitance.
+where $q$ is the [elementary charge](@keyword=elementary_charge|lang=en-US|style=Feynman). This provides a powerful diagnostic tool, allowing us to "count" the number of defects by measuring capacitance.
 
-Finally, what if the "M" in MOS is not a perfect metal? In many modern transistors, the gate is made of heavily doped polycrystalline silicon (polysilicon). But polysilicon, however heavily doped, is still a semiconductor! Under strong gate bias, the polysilicon gate itself can begin to deplete, just like the substrate. This **polysilicon depletion effect** creates a thin depletion layer within the gate, which adds another small capacitor in series with our system. This slightly reduces the total capacitance, an effect that must be accounted for in modern chip design. It is a beautiful example of symmetry, where the same physical principle of depletion we saw in the substrate reappears, unexpectedly, in the gate itself .
+Finally, what if the "M" in MOS is not a perfect metal? In many modern transistors, the gate is made of heavily doped polycrystalline silicon (polysilicon). But polysilicon, however heavily doped, is still a semiconductor! Under strong gate bias, the polysilicon gate itself can begin to deplete, just like the substrate. This **polysilicon depletion effect** creates a thin depletion layer within the gate, which adds another small capacitor in series with our system. This slightly reduces the total capacitance, an effect that must be accounted for in modern chip design. It is a beautiful example of symmetry, where the same physical principle of depletion we saw in the substrate reappears, unexpectedly, in the gate itself [@problem_id:3780066].
 
 From a simple question—what happens if a capacitor plate is made of silicon?—we have uncovered a world of rich and beautiful physics. The humble MOS capacitor is a tunable device, a miniature stage where we can direct a symphony of charges with an electric field. Its response curve is not just a graph, but a detailed biography, revealing the secrets of the materials from which it is made. This simple structure, born from a thought experiment, is the fundamental switch that powers our entire digital world.

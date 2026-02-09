@@ -1,9 +1,9 @@
 ## 引言
-在物理学的探索中，我们时常面对一些因其复杂性而无法精确求解的方程，这些方程恰恰描述着我们所处的真实世界。然而，许多复杂系统可以被看作是某个我们熟知的理想化简单系统的“微小变形”。这一洞察催生了一种极为强大的分析工具——[微扰理论](@article_id:299214)。它允许我们不追求一步到位的精确解，而是从简单解出发，系统地计算微小“扰动”所带来的层层修正，从而以极高的精度逼近真实答案。
+在物理学的探索中，我们时常面对一些因其复杂性而无法精确求解的方程，这些方程恰恰描述着我们所处的真实世界。然而，许多复杂系统可以被看作是某个我们熟知的理想化简单系统的“微小变形”。这一洞察催生了一种极为强大的分析工具——[微扰理论](@keyword=perturbation_theory|lang=zh-CN|style=Feynman)。它允许我们不追求一步到位的精确解，而是从简单解出发，系统地计算微小“扰动”所带来的层层修正，从而以极高的精度逼近真实答案。
 
-本文旨在系统阐述[微分方程](@article_id:327891)的[正则微扰](@article_id:349695)法。我们将首先揭示其核心原理与机制，学习如何将一个棘手的非线性问题分解为一系列可解的线性方程，并理解“长期项”这一危险信号的物理含义。随后，我们将穿越多个学科领域，见证这一思想在修正经典物理、分析系统稳定性，乃至连接量子力学、天体物理与生命科学等前沿领域的惊人应用。读完本文，你将掌握一种看待和解决复杂问题的全新视角。
+本文旨在系统阐述[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)的[正则微扰](@keyword=regular_perturbation|lang=zh-CN|style=Feynman)法。我们将首先揭示其核心原理与机制，学习如何将一个棘手的非线性问题分解为一系列可解的线性方程，并理解“长期项”这一危险信号的物理含义。随后，我们将穿越多个学科领域，见证这一思想在修正经典物理、分析系统稳定性，乃至连接量子力学、天体物理与生命科学等前沿领域的惊人应用。读完本文，你将掌握一种看待和解决复杂问题的全新视角。
 
-现在，让我们从第一章“原理与机制”开始，深入[微扰理论](@article_id:299214)的核心。
+现在，让我们从第一章“原理与机制”开始，深入[微扰理论](@keyword=perturbation_theory|lang=zh-CN|style=Feynman)的核心。
 
 ## 原理与机制
 
@@ -13,9 +13,9 @@
 
 ### 万事开头“易”：从代数方程开始
 
-在我们一头扎进描述动态世界的[微分方程](@article_id:327891)之前，让我们先在一个更简单的舞台上热身——[代数方程](@article_id:336361)。想象一个物理系统，其某个关键状态参量 $x$ 由一个方程决定。在理想情况下，这个方程可能很简单，但现实中的外部影响或内部的复杂性会给它加上一个小小的“尾巴”。
+在我们一头扎进描述动态世界的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)之前，让我们先在一个更简单的舞台上热身——[代数方程](@keyword=algebraic_equations|lang=zh-CN|style=Feynman)。想象一个物理系统，其某个关键状态参量 $x$ 由一个方程决定。在理想情况下，这个方程可能很简单，但现实中的外部影响或内部的复杂性会给它加上一个小小的“尾巴”。
 
-例如，在一个假想的[双稳态系统](@article_id:339659)中，一个参数 $x$ 由方程 $x^3 + \lambda x = \delta$ 决定。这里 $\lambda$ 是一个表征系统内在属性的正常数，而 $\delta$ 代表一个非常微弱的外部影响 ()。如果没有任何外部影响，即 $\delta = 0$，方程就简化为 $x_0(x_0^2 + \lambda) = 0$。因为 $\lambda > 0$，所以唯一的实数解就是 $x_0 = 0$。这是我们的“卡通”——一个未受扰动的、处于[基态](@article_id:312876)的系统。
+例如，在一个假想的[双稳态系统](@keyword=bistable_systems|lang=zh-CN|style=Feynman)中，一个参数 $x$ 由方程 $x^3 + \lambda x = \delta$ 决定。这里 $\lambda$ 是一个表征系统内在属性的正常数，而 $\delta$ 代表一个非常微弱的外部影响 ([@problem_id:1926599])。如果没有任何外部影响，即 $\delta = 0$，方程就简化为 $x_0(x_0^2 + \lambda) = 0$。因为 $\lambda > 0$，所以唯一的实数解就是 $x_0 = 0$。这是我们的“卡通”——一个未受扰动的、处于[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)的系统。
 
 现在，微小的扰动 $\delta$ 登场了。我们直觉地认为，既然 $\delta$ 很小，那么解 $x$ 应该离 $0$ 不会太远。这正是微扰思想的出发点！我们假设解可以写成一个关于 $\delta$ 的幂级数：
 
@@ -23,20 +23,20 @@ $$
 x = x_0 + \delta x_1 + \delta^2 x_2 + \dots
 $$
 
-这里的 $x_0$ 是我们的零阶解（就是刚才那个简单的解 $0$），$x_1$ 是对这个解的[一阶修正](@article_id:316304)，如此类推。$\delta$ 就像一个“记账”的工具，它前面的系数 $x_1$ 告诉我们扰动是以什么样的“力度”在修正我们的零阶解。
+这里的 $x_0$ 是我们的零阶解（就是刚才那个简单的解 $0$），$x_1$ 是对这个解的[一阶修正](@keyword=first_order_correction|lang=zh-CN|style=Feynman)，如此类推。$\delta$ 就像一个“记账”的工具，它前面的系数 $x_1$ 告诉我们扰动是以什么样的“力度”在修正我们的零阶解。
 
 将这个级数代回原方程，然后像整理账目一样，把所有 $\delta$ 的同次幂项收集在一起。因为这个等式必须对**任何**小的 $\delta$ 都成立，所以 $\delta$ 的每一阶的系数都必须各自为零。这给了我们一个“方程的层级结构”：
 
 - **零阶 ($\delta^0$) 方程**: $x_0^3 + \lambda x_0 = 0 \implies x_0 = 0$。这确认了我们出发的“卡通”是正确的。
 - **一阶 ($\delta^1$) 方程**: 当我们把 $x_0=0$ 代入整理后的一阶项中，会得到一个极其简单的方程 $\lambda x_1 - 1 = 0$，解得 $x_1 = 1/\lambda$。
 
-瞧！我们得到了一个近似解 $x \approx x_0 + \delta x_1 = \delta / \lambda$。这个简单的结果蕴含了深刻的物理：系统的响应 $x$ 与外部影响 $\delta$ 成正比，并且被系统的内在属性 $\lambda$ 所抑制。这个方法同样适用于更复杂的方程，比如描述[非线性电路](@article_id:328123)的[超越方程](@article_id:339972) ()，其基本步骤是完全一样的。这是[微扰法](@article_id:305321)的第一课：**化整为零，分而治之**。
+瞧！我们得到了一个近似解 $x \approx x_0 + \delta x_1 = \delta / \lambda$。这个简单的结果蕴含了深刻的物理：系统的响应 $x$ 与外部影响 $\delta$ 成正比，并且被系统的内在属性 $\lambda$ 所抑制。这个方法同样适用于更复杂的方程，比如描述[非线性电路](@keyword=non_linear_circuits|lang=zh-CN|style=Feynman)的[超越方程](@keyword=transcendental_equation|lang=zh-CN|style=Feynman) ([@problem_id:1926571])，其基本步骤是完全一样的。这是[微扰法](@keyword=perturbation_methods|lang=zh-CN|style=Feynman)的第一课：**化整为零，分而治之**。
 
-### 进入动态世界：当扰动随[时间演化](@article_id:314355)
+### 进入动态世界：当扰动随[时间演化](@keyword=time_evolution|lang=zh-CN|style=Feynman)
 
-现在，让我们把这个强大的工具应用到真正激动人心的地方——描述物体运动的[微分方程](@article_id:327891)。这里，我们的解不再是一个数，而是一个随时间变化的函数 $x(t)$。
+现在，让我们把这个强大的工具应用到真正激动人心的地方——描述物体运动的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)。这里，我们的解不再是一个数，而是一个随时间变化的函数 $x(t)$。
 
-想象一个理想的[弹簧振子](@article_id:356225)，它的运动由方程 $\ddot{x} + \omega_0^2 x = 0$ 描述，解是完美和谐的余弦或正弦[振动](@article_id:331484)。但真实世界的弹簧并非完美“线性”，当它的伸缩幅度稍大时，其恢复力可能就不再严格与位移成正比了。例如，一个微小的非线性效应可能引入一个 $x^2$ 的修正项 ()：
+想象一个理想的[弹簧振子](@keyword=spring_mass_system|lang=zh-CN|style=Feynman)，它的运动由方程 $\ddot{x} + \omega_0^2 x = 0$ 描述，解是完美和谐的余弦或正弦[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。但真实世界的弹簧并非完美“线性”，当它的伸缩幅度稍大时，其恢复力可能就不再严格与位移成正比了。例如，一个微小的非线性效应可能引入一个 $x^2$ 的修正项 ([@problem_id:1926627])：
 
 $$
 \ddot{x} + \omega_0^2 x + \epsilon \alpha x^2 = 0
@@ -46,17 +46,17 @@ $$
 
 - **零阶解 $x_0(t)$**：这正是那个“卡通”——理想谐振子。如果从静止位置 $A$ 释放，那么 $x_0(t) = A \cos(\omega_0 t)$。
 
-- **[一阶修正](@article_id:316304) $x_1(t)$**：代入后，我们得到 $x_1(t)$ 的方程。有趣的事情发生了：零阶解 $x_0(t)$ 通过那个 $\epsilon \alpha x_0^2$ 项，变成了一个驱动 $x_1(t)$ 的“策动力”。具体来说，这个策动力是 $-\alpha x_0^2 = -\alpha A^2 \cos^2(\omega_0 t)$。利用[三角恒等式](@article_id:344424)，我们知道 $\cos^2(\omega_0 t) = \frac{1}{2}(1 + \cos(2\omega_0 t))$。
+- **[一阶修正](@keyword=first_order_correction|lang=zh-CN|style=Feynman) $x_1(t)$**：代入后，我们得到 $x_1(t)$ 的方程。有趣的事情发生了：零阶解 $x_0(t)$ 通过那个 $\epsilon \alpha x_0^2$ 项，变成了一个驱动 $x_1(t)$ 的“策动力”。具体来说，这个策动力是 $-\alpha x_0^2 = -\alpha A^2 \cos^2(\omega_0 t)$。利用[三角恒等式](@keyword=trigonometric_identities|lang=zh-CN|style=Feynman)，我们知道 $\cos^2(\omega_0 t) = \frac{1}{2}(1 + \cos(2\omega_0 t))$。
 
-这意味着这个小小的非线性扰动，给系统带来了两种新的“驱动”：一个恒定的力，和一个频率为 $2\omega_0$ 的[振动](@article_id:331484)力！这两种驱动力产生的结果是什么呢？
-1.  恒定的力导致振子的[平衡位置](@article_id:336089)发生了一个微小的偏移。
-2.  频率为 $2\omega_0$ 的力则在原始[振动](@article_id:331484)上叠加了一个频率为其两倍的“[泛音](@article_id:323464)”。
+这意味着这个小小的非线性扰动，给系统带来了两种新的“驱动”：一个恒定的力，和一个频率为 $2\omega_0$ 的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)力！这两种驱动力产生的结果是什么呢？
+1.  恒定的力导致振子的[平衡位置](@keyword=equilibrium_position|lang=zh-CN|style=Feynman)发生了一个微小的偏移。
+2.  频率为 $2\omega_0$ 的力则在原始[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)上叠加了一个频率为其两倍的“[泛音](@keyword=overtones|lang=zh-CN|style=Feynman)”。
 
-最终，[一阶修正](@article_id:316304)解 $x_1(t)$ 就包含了这两个部分。总的运动 $x(t) \approx x_0(t) + \epsilon x_1(t)$ 不再是单纯的余弦波，它变得有点“歪斜”，但仍然是稳定、有界的[振动](@article_id:331484)。这是一种“行为良好”的微扰，它只是在原有运动的基础上增加了一些新的、和谐的频率成分，让运动图像变得更丰富。
+最终，[一阶修正](@keyword=first_order_correction|lang=zh-CN|style=Feynman)解 $x_1(t)$ 就包含了这两个部分。总的运动 $x(t) \approx x_0(t) + \epsilon x_1(t)$ 不再是单纯的余弦波，它变得有点“歪斜”，但仍然是稳定、有界的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。这是一种“行为良好”的微扰，它只是在原有运动的基础上增加了一些新的、和谐的频率成分，让运动图像变得更丰富。
 
 ### 危险的信号：“长期”项的登场
 
-[微扰法](@article_id:305321)看似一帆风顺，但物理学总是在我们最意想不到的地方展现其深刻的复杂性。考虑一个被微弱的、但频率恰好与系统[固有频率](@article_id:323276)相同的外部力驱动的[谐振子](@article_id:316032) ()：
+[微扰法](@keyword=perturbation_methods|lang=zh-CN|style=Feynman)看似一帆风顺，但物理学总是在我们最意想不到的地方展现其深刻的复杂性。考虑一个被微弱的、但频率恰好与系统[固有频率](@keyword=natural_frequency|lang=zh-CN|style=Feynman)相同的外部力驱动的[谐振子](@keyword=harmonic_oscillator|lang=zh-CN|style=Feynman) ([@problem_id:2195784])：
 
 $$
 \ddot{y} + \omega^2 y = \epsilon \cos(\omega t)
@@ -64,7 +64,7 @@ $$
 
 这就像在秋千每次荡到最高点时，都恰到好处地轻轻推它一下。直觉告诉我们，振幅会越来越大。让我们看看微扰理论会告诉我们什么。
 
-按照标准流程，我们发现[一阶修正](@article_id:316304) $y_1(t)$ 的方程是 $\ddot{y}_1 + \omega^2 y_1 = \cos(\omega t)$。这个方程的解包含一个非常奇特的项：$\frac{t}{2\omega} \sin(\omega t)$。
+按照标准流程，我们发现[一阶修正](@keyword=first_order_correction|lang=zh-CN|style=Feynman) $y_1(t)$ 的方程是 $\ddot{y}_1 + \omega^2 y_1 = \cos(\omega t)$。这个方程的解包含一个非常奇特的项：$\frac{t}{2\omega} \sin(\omega t)$。
 
 请注意这个 $t$！这个项意味着修正解的振幅会随着时间 $t$ **无限地增长**。这种与时间成正比增长的项，我们称之为**长期项 (secular term)**。我们的近似解 $y(t) \approx y_0(t) + \epsilon \frac{t}{2\omega} \sin(\omega t)$ 意味着，即使扰动 $\epsilon$ 再小，只要时间足够长，$\epsilon t$ 这一项也会变得巨大无比，使得我们的“修正”不再是修正，而是主导了整个解。这显然是荒谬的，因为一个微小的、持续的推力不可能让一个真实物理系统的振幅在短时间内就达到无穷大。
 
@@ -74,32 +74,32 @@ $$
 
 长期项的出现并非数学上的错误，而是一个深刻物理现象的“信使”。它告诉我们，我们最初的某个假设可能错了。在更复杂的非线性系统中，这个现象表现得更为微妙和普遍。
 
-考虑著名的**杜芬 (Duffing) 方程**，它描述了一个带有立方非线性的振子，比如一个摆动幅度稍大的单摆 (, )：
+考虑著名的**杜芬 (Duffing) 方程**，它描述了一个带有立方非线性的振子，比如一个摆动幅度稍大的单摆 ([@problem_id:2148822], [@problem_id:2191728])：
 
 $$
 \ddot{x} + \omega_0^2 x + \epsilon x^3 = 0
 $$
 
-这里没有任何外部驱动力。然而，当我们计算[一阶修正](@article_id:316304) $x_1(t)$ 时，它的“策动力”来自 $-x_0^3 = -(A \cos(\omega_0 t))^3$。再次使用[三角恒等式](@article_id:344424)，我们发现 $\cos^3(\omega_0 t) = \frac{1}{4}(3\cos(\omega_0 t) + \cos(3\omega_0 t))$。
+这里没有任何外部驱动力。然而，当我们计算[一阶修正](@keyword=first_order_correction|lang=zh-CN|style=Feynman) $x_1(t)$ 时，它的“策动力”来自 $-x_0^3 = -(A \cos(\omega_0 t))^3$。再次使用[三角恒等式](@keyword=trigonometric_identities|lang=zh-CN|style=Feynman)，我们发现 $\cos^3(\omega_0 t) = \frac{1}{4}(3\cos(\omega_0 t) + \cos(3\omega_0 t))$。
 
-看到了吗？尽管没有外部驱动，非线性项 $x^3$ 自身“制造”出了一个与系统[固有频率](@article_id:323276) $\omega_0$ 完全相同的驱动项！这个“自产自销”的共振驱动，不可避免地在 $x_1(t)$ 中催生出了一个长期项，形式如 $-Ct \sin(\omega_0 t)$，其中 $C$ 是一个常数。
+看到了吗？尽管没有外部驱动，非线性项 $x^3$ 自身“制造”出了一个与系统[固有频率](@keyword=natural_frequency|lang=zh-CN|style=Feynman) $\omega_0$ 完全相同的驱动项！这个“自产自销”的共振驱动，不可避免地在 $x_1(t)$ 中催生出了一个长期项，形式如 $-Ct \sin(\omega_0 t)$，其中 $C$ 是一个常数。
 
-这到底意味着什么？这意味着，非线性效应正在试图改变[振动](@article_id:331484)的**频率**。我们最初的假设是，即使有 $\epsilon x^3$ 的影响，系统的振动频率仍然是 $\omega_0$。但长期项的出现，正是数学在以一种笨拙的方式告诉我们：这个假设是错的！[振动](@article_id:331484)的真实频率其实是 $\omega = \omega(\epsilon)$，它本身也依赖于扰动的大小。
+这到底意味着什么？这意味着，非线性效应正在试图改变[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的**频率**。我们最初的假设是，即使有 $\epsilon x^3$ 的影响，系统的振动频率仍然是 $\omega_0$。但长期项的出现，正是数学在以一种笨拙的方式告诉我们：这个假设是错的！[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的真实频率其实是 $\omega = \omega(\epsilon)$，它本身也依赖于扰动的大小。
 
-你可以想象，试图用一系列固定音高（比如C调的do, re, mi...）的音符去精确地模拟一个音高略有偏差（比如比标准A音高一点点）的音符。你会发现，你需要用这些标准音符组合出一种复杂的“拍频”效果，随着时间的推移，[相位差](@article_id:333823)会越来越大。长期项就是这种“拍频”的数学体现。它标志着常规[微扰法](@article_id:305321)的局限性，并指引我们去发展更高级的微扰技术（如林德斯特-庞加莱方法），这些技术能够直接求解出频率的修正，从而一劳永逸地消除长期项 ()。
+你可以想象，试图用一系列固定音高（比如C调的do, re, mi...）的音符去精确地模拟一个音高略有偏差（比如比标准A音高一点点）的音符。你会发现，你需要用这些标准音符组合出一种复杂的“拍频”效果，随着时间的推移，[相位差](@keyword=phase_difference|lang=zh-CN|style=Feynman)会越来越大。长期项就是这种“拍频”的数学体现。它标志着常规[微扰法](@keyword=perturbation_methods|lang=zh-CN|style=Feynman)的局限性，并指引我们去发展更高级的微扰技术（如林德斯特-庞加莱方法），这些技术能够直接求解出频率的修正，从而一劳永逸地消除长期项 ([@problem_id:1926638])。
 
-### 定义边界：[正则微扰](@article_id:349695) vs. 奇异微扰
+### 定义边界：[正则微扰](@keyword=regular_perturbation|lang=zh-CN|style=Feynman) vs. 奇异微扰
 
-最后，我们需要认识到，我们目前所讨论的“[正则微扰](@article_id:349695)法”（regular perturbation）并非万能。在某些情况下，它从一开始就注定失败。
+最后，我们需要认识到，我们目前所讨论的“[正则微扰](@keyword=regular_perturbation|lang=zh-CN|style=Feynman)法”（regular perturbation）并非万能。在某些情况下，它从一开始就注定失败。
 
-考虑这样两个问题：$\epsilon y' + y = 0$ () 和 $\epsilon y'' + y = 0$ ()，其中 $\epsilon$ 是一个非常小的正数。
+考虑这样两个问题：$\epsilon y' + y = 0$ ([@problem_id:1707634]) 和 $\epsilon y'' + y = 0$ ([@problem_id:2195820])，其中 $\epsilon$ 是一个非常小的正数。
 
 请注意一个致命的细节：这个小参数 $\epsilon$ 乘在了方程的**最高阶导数项**上。如果我们天真地令 $\epsilon=0$ 来获得“简单”的零阶问题，会发生什么？
-- 对于 $\epsilon y' + y = 0$，它变成了 $y=0$。一个[一阶微分方程](@article_id:323301)（需要一个初始条件）退化成了一个[代数方程](@article_id:336361)（无法满足任意[初始条件](@article_id:313275)）。
+- 对于 $\epsilon y' + y = 0$，它变成了 $y=0$。一个[一阶微分方程](@keyword=first_order_differential_equations|lang=zh-CN|style=Feynman)（需要一个初始条件）退化成了一个[代数方程](@keyword=algebraic_equations|lang=zh-CN|style=Feynman)（无法满足任意[初始条件](@keyword=initial_conditions|lang=zh-CN|style=Feynman)）。
 - 对于 $\epsilon y'' + y = 0$，它也变成了 $y=0$。一个二阶微分方程（需要两个边界条件）同样退化成了代数方程。
 
-在这种情况下，零阶解 $y_0=0$ 根本无法满足像 $y(0)=1$ 这样的初始或边界条件。这是一种“灾难性”的失败。问题的根源在于，当 $\epsilon \to 0$ 时，问题的数学“性质”发生了根本性的改变（[微分方程的阶](@article_id:349427)数降低了）。
+在这种情况下，零阶解 $y_0=0$ 根本无法满足像 $y(0)=1$ 这样的初始或边界条件。这是一种“灾难性”的失败。问题的根源在于，当 $\epsilon \to 0$ 时，问题的数学“性质”发生了根本性的改变（[微分方程的阶](@keyword=order_of_a_differential_equation|lang=zh-CN|style=Feynman)数降低了）。
 
-这类问题被称为**奇异微扰 (singular perturbation)** 问题。它们的解通常具有一种特殊的结构：在大部分区域，解的变化非常缓慢，但在一个或多个宽度仅为 $\epsilon$ 量级的极窄区域（称为“[边界层](@article_id:299864)”），解会发生剧烈的变化。[正则微扰](@article_id:349695)法试图用一种“平滑”的级数来描述整个解，就像试图用一条平滑的曲线去拟合一个悬崖峭壁一样，必然会错过最关键的特征。处理奇异微扰需要一套完全不同的、更为精妙的数学工具，例如[匹配渐近展开法](@article_id:379254)。
+这类问题被称为**奇异微扰 (singular perturbation)** 问题。它们的解通常具有一种特殊的结构：在大部分区域，解的变化非常缓慢，但在一个或多个宽度仅为 $\epsilon$ 量级的极窄区域（称为“[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)”），解会发生剧烈的变化。[正则微扰](@keyword=regular_perturbation|lang=zh-CN|style=Feynman)法试图用一种“平滑”的级数来描述整个解，就像试图用一条平滑的曲线去拟合一个悬崖峭壁一样，必然会错过最关键的特征。处理奇异微扰需要一套完全不同的、更为精妙的数学工具，例如[匹配渐近展开法](@keyword=method_of_matched_asymptotic_expansions|lang=zh-CN|style=Feynman)。
 
-因此，在运用微扰理论时，第一步永远是检查小参数 $\epsilon$ 的位置。如果它没有乘以最高阶导数，我们便可以满怀信心地从[正则微扰](@article_id:349695)法开始我们的探索之旅，即使遇到长期项，也能从中解读出更深层的[物理信息](@article_id:312969)。但如果 $\epsilon$ 恰好坐在最[高阶导数](@article_id:301325)旁边，我们就必须保持警惕，因为我们可能正踏入一个更加奇妙和险峻的“奇异”领域。
+因此，在运用微扰理论时，第一步永远是检查小参数 $\epsilon$ 的位置。如果它没有乘以最高阶导数，我们便可以满怀信心地从[正则微扰](@keyword=regular_perturbation|lang=zh-CN|style=Feynman)法开始我们的探索之旅，即使遇到长期项，也能从中解读出更深层的[物理信息](@keyword=physical_information|lang=zh-CN|style=Feynman)。但如果 $\epsilon$ 恰好坐在最[高阶导数](@keyword=higher_order_derivatives|lang=zh-CN|style=Feynman)旁边，我们就必须保持警惕，因为我们可能正踏入一个更加奇妙和险峻的“奇异”领域。

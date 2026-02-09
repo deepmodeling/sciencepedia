@@ -1,80 +1,80 @@
 ## 应用与跨学科连接
 
-到现在为止，我们已经穿过了[松原格林函数](@article_id:307781)形式主义那片充满奇特符号和数学规则的“丛林”。我们学会了如何在虚构的时间轴上追踪粒子的轨迹，又如何通过傅里叶变换将它们带入离散的频率世界。你可能会问，这一切究竟有什么用处？我们费尽心机建立的这套体系，难道只是一场智力游戏吗？
+到现在为止，我们已经穿过了[松原格林函数](@keyword=matsubara_green_s_function|lang=zh-CN|style=Feynman)形式主义那片充满奇特符号和数学规则的“丛林”。我们学会了如何在虚构的时间轴上追踪粒子的轨迹，又如何通过傅里叶变换将它们带入离散的频率世界。你可能会问，这一切究竟有什么用处？我们费尽心机建立的这套体系，难道只是一场智力游戏吗？
 
 答案恰恰相反。这套形式理论并非一个封闭的数学王国，而是连接理论物理与真实世界的强大桥梁。它就像一台精密的显微镜，不仅能让我们“看”到物质内部深层次的运作机理，还能预测物质在各种条件下的行为，甚至揭示不同物理学分支之间意想不到的统一性。在本章中，我们将踏上一段新的发现之旅，探索这些抽象概念如何在广阔的科学天地中开花结果。
 
-### 从抽象到实在：[准粒子](@article_id:299846)与自能
+### 从抽象到实在：[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)与自能
 
-我们旅程的第一站，是理解多体系统中最核心的概念之一：[准粒子](@article_id:299846) (quasiparticle)。想象一个孤独的电子在真空中自由穿行，它的行为简单而纯粹。但当它进入一块固体，情况就变得复杂起来。它不断地与其他电子碰撞，与[晶格](@article_id:300090)的[振动](@article_id:331484)（[声子](@article_id:297589)）纠缠，仿佛一个舞者闯入了拥挤的派对。它不再是那个“裸露”的电子，而是被周围环境的相互作用“云”所包裹、所“重整化”的一个复合体。这个被“穿上新衣”的电子，就是所谓的“[准粒子](@article_id:299846)”。
+我们旅程的第一站，是理解多体系统中最核心的概念之一：[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman) (quasiparticle)。想象一个孤独的电子在真空中自由穿行，它的行为简单而纯粹。但当它进入一块固体，情况就变得复杂起来。它不断地与其他电子碰撞，与[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)（[声子](@keyword=phonons|lang=zh-CN|style=Feynman)）纠缠，仿佛一个舞者闯入了拥挤的派对。它不再是那个“裸露”的电子，而是被周围环境的相互作用“云”所包裹、所“重整化”的一个复合体。这个被“穿上新衣”的电子，就是所谓的“[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)”。
 
-[松原格林函数](@article_id:307781)理论为我们提供了一种精确描述这件“新衣”的方法，这件新衣就是**[自能](@article_id:306032) (self-energy)**，用符号 $\Sigma$ 表示。自能是一个包含了所有复杂相互作用效应的“黑匣子” 。当我们将[自能](@article_id:306032)加入到自由电子的[格林函数](@article_id:308216)中时，奇迹发生了：
+[松原格林函数](@keyword=matsubara_green_s_function|lang=zh-CN|style=Feynman)理论为我们提供了一种精确描述这件“新衣”的方法，这件新衣就是**[自能](@keyword=self_energy|lang=zh-CN|style=Feynman) (self-energy)**，用符号 $\Sigma$ 表示。自能是一个包含了所有复杂相互作用效应的“黑匣子” [@problem_id:2989955]。当我们将[自能](@keyword=self_energy|lang=zh-CN|style=Feynman)加入到自由电子的[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)中时，奇迹发生了：
 
-*   自能的**实部** ($\operatorname{Re}\Sigma$) 告诉我们，相互作用如何改变了电子的能量。这就像舞者在拥挤人群中移动时，速度和路径不得不发生改变。这导致了[能带结构](@article_id:340682)的重整化，这是计算真实材料电子性质的关键一步。
+*   自能的**实部** ($\operatorname{Re}\Sigma$) 告诉我们，相互作用如何改变了电子的能量。这就像舞者在拥挤人群中移动时，速度和路径不得不发生改变。这导致了[能带结构](@keyword=e_k_diagram|lang=zh-CN|style=Feynman)的重整化，这是计算真实材料电子性质的关键一步。
 
-*   [自能](@article_id:306032)的**[虚部](@article_id:370770)** ($\operatorname{Im}\Sigma$) 则更加深刻。一个非零的[虚部](@article_id:370770)意味着[准粒子](@article_id:299846)不再是永恒的——它有一个有限的寿命。它最终会因散射而“衰变”，失去其作为独立个体的身份。这个寿命体现在其[能谱](@article_id:361142)上，就是一个展宽的峰，而不是一个无限尖锐的 $\delta$ 函数。这完美地解释了为什么在[光谱学](@article_id:298272)实验中，我们看到的[谱线](@article_id:372357)总是有一定的宽度。
+*   [自能](@keyword=self_energy|lang=zh-CN|style=Feynman)的**[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)** ($\operatorname{Im}\Sigma$) 则更加深刻。一个非零的[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)意味着[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)不再是永恒的——它有一个有限的寿命。它最终会因散射而“衰变”，失去其作为独立个体的身份。这个寿命体现在其[能谱](@keyword=energy_spectrum|lang=zh-CN|style=Feynman)上，就是一个展宽的峰，而不是一个无限尖锐的 $\delta$ 函数。这完美地解释了为什么在[光谱学](@keyword=spectroscopy|lang=zh-CN|style=Feynman)实验中，我们看到的[谱线](@keyword=spectral_line|lang=zh-CN|style=Feynman)总是有一定的宽度。
 
-因此，[自能](@article_id:306032)这个看似抽象的数学对象，实际上是连接微观相互作用与宏观可观测物理量（如能量和寿命）的纽带。它是我们将理论应用于实验的第一步。
+因此，[自能](@keyword=self_energy|lang=zh-CN|style=Feynman)这个看似抽象的数学对象，实际上是连接微观相互作用与宏观可观测物理量（如能量和寿命）的纽带。它是我们将理论应用于实验的第一步。
 
 ### 响应的世界：材料如何“回答”
 
-物理学的一个重要任务是理解物质如何响应外部的刺激。当我们对材料施加一个力、一个电场或一个[磁场](@article_id:313708)时，它会如何“回答”？格林函数形式主义提供了一个统一而强大的框架来计算这些响应函数。
+物理学的一个重要任务是理解物质如何响应外部的刺激。当我们对材料施加一个力、一个电场或一个[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)时，它会如何“回答”？格林函数形式主义提供了一个统一而强大的框架来计算这些响应函数。
 
-#### [热力学](@article_id:359663)的一致性
+#### [热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)的一致性
 
-一个深刻的例子是[计算物质](@article_id:364287)的**[电荷](@article_id:339187)压缩率 (charge compressibility)** $\kappa_c$，它衡量的是当我们稍微改变系统的化学势 $\mu$ 时，其电子密度 $n$ 会发生多大的变化 。我们可以用两种截然不同的方式来思考这个问题：
+一个深刻的例子是[计算物质](@keyword=computational_matter|lang=zh-CN|style=Feynman)的**[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)压缩率 (charge compressibility)** $\kappa_c$，它衡量的是当我们稍微改变系统的化学势 $\mu$ 时，其电子密度 $n$ 会发生多大的变化 [@problem_id:3004447]。我们可以用两种截然不同的方式来思考这个问题：
 
-1.  **从[热力学](@article_id:359663)的角度**：我们可以直接计算粒子数密度 $n$ 作为化学势 $\mu$ 的函数，然后求其[导数](@article_id:318324) $\partial n / \partial \mu$。这是一种宏观的[热力学](@article_id:359663)方法。
-2.  **从[格林函数](@article_id:308216)的角度**：我们可以将化学势的改变看作一个微弱的、静态的、空间均匀的外部[势场](@article_id:323065)。系统的密度响应可以通过计算密度-[密度关联](@article_id:318264)函数（这是一个由两个[格林函数](@article_id:308216)构成的“气泡图”）来得到。
+1.  **从[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)的角度**：我们可以直接计算粒子数密度 $n$ 作为化学势 $\mu$ 的函数，然后求其[导数](@keyword=derivative|lang=zh-CN|style=Feynman) $\partial n / \partial \mu$。这是一种宏观的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)方法。
+2.  **从[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)的角度**：我们可以将化学势的改变看作一个微弱的、静态的、空间均匀的外部[势场](@keyword=potential_field|lang=zh-CN|style=Feynman)。系统的密度响应可以通过计算密度-[密度关联](@keyword=density_correlations|lang=zh-CN|style=Feynman)函数（这是一个由两个[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)构成的“气泡图”）来得到。
 
-惊人的是，两种方法给出了完全相同的结果！这不仅仅是一个巧合，而是闻名遐迩的**[涨落-耗散定理](@article_id:297465) (fluctuation-dissipation theorem)** 的一个具体体现。它表明，系统对外部扰动的宏观响应，本质上是由其内部微观的[量子涨落](@article_id:304814)所决定的。格林函数恰恰是捕捉这些涨落的完美工具。
+惊人的是，两种方法给出了完全相同的结果！这不仅仅是一个巧合，而是闻名遐迩的**[涨落-耗散定理](@keyword=fluctuation_dissipation_theorem|lang=zh-CN|style=Feynman) (fluctuation-dissipation theorem)** 的一个具体体现。它表明，系统对外部扰动的宏观响应，本质上是由其内部微观的[量子涨落](@keyword=quantum_fluctuations|lang=zh-CN|style=Feynman)所决定的。格林函数恰恰是捕捉这些涨落的完美工具。
 
-同样地，我们可以计算材料对外部[磁场](@article_id:313708)的响应，即**[磁化率](@article_id:307604) (magnetic susceptibility)**。例如，利用[松原形式](@article_id:297514)主义，我们可以精确推导出金属中传导电子的**[泡利顺磁性](@article_id:300527) (Pauli paramagnetism)** 及其温度依赖性 ，这是凝聚态物理学的一个经典结果。
+同样地，我们可以计算材料对外部[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的响应，即**[磁化率](@keyword=susceptibility|lang=zh-CN|style=Feynman) (magnetic susceptibility)**。例如，利用[松原形式](@keyword=imaginary_time_formalism|lang=zh-CN|style=Feynman)主义，我们可以精确推导出金属中传导电子的**[泡利顺磁性](@keyword=pauli_paramagnetism|lang=zh-CN|style=Feynman) (Pauli paramagnetism)** 及其温度依赖性 [@problem_id:3008917]，这是凝聚态物理学的一个经典结果。
 
-#### 远距离的“窃窃私语”：[RKKY相互作用](@article_id:302002)
+#### 远距离的“窃窃私语”：[RKKY相互作用](@keyword=rkky_interaction|lang=zh-CN|style=Feynman)
 
-想象一下，我们将两个磁性杂质原子（比如铁原子）放入一块非磁性的金属（比如铜）中。它们之间虽然相隔遥远，却能以一种奇特的方式相互“感知”并影响彼此的磁矩方向。这种由[导电电子](@article_id:305684)“传话”的[间接交换](@article_id:302999)作用，被称为 **RKKY 相互作用**。
+想象一下，我们将两个磁性杂质原子（比如铁原子）放入一块非磁性的金属（比如铜）中。它们之间虽然相隔遥远，却能以一种奇特的方式相互“感知”并影响彼此的磁矩方向。这种由[导电电子](@keyword=conduction_electrons|lang=zh-CN|style=Feynman)“传话”的[间接交换](@keyword=indirect_exchange|lang=zh-CN|style=Feynman)作用，被称为 **RKKY 相互作用**。
 
-[格林函数](@article_id:308216)理论为我们描绘了一幅生动的物理图像 。第一个磁性杂质会极化其周围的[导电电子](@article_id:305684)，形成一圈圈[自旋密度](@article_id:331445)交替变化的“涟漪”，这也被称为[弗里德尔振荡](@article_id:307322) (Friedel oscillation)。第二个磁性杂质如果恰好落在这片“涟漪”中，就会感受到一个有效的[磁场](@article_id:313708)，从而使其磁矩取向于某个特定方向。这种相互作用的强度不仅随距离[振荡](@article_id:331484)衰减，还强烈地依赖于温度。[松原形式](@article_id:297514)主义能够精确地计算出这种温度依赖性，它表现为一个优美的普适函数 $F(x) = x/\sinh(x)$，其中 $x$ 是与温度和距离有关的[无量纲参数](@article_id:348560)。这个结果完美解释了稀磁合金中的许多磁学现象。
+[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)理论为我们描绘了一幅生动的物理图像 [@problem_id:3014016]。第一个磁性杂质会极化其周围的[导电电子](@keyword=conduction_electrons|lang=zh-CN|style=Feynman)，形成一圈圈[自旋密度](@keyword=spin_density|lang=zh-CN|style=Feynman)交替变化的“涟漪”，这也被称为[弗里德尔振荡](@keyword=friedel_oscillations|lang=zh-CN|style=Feynman) (Friedel oscillation)。第二个磁性杂质如果恰好落在这片“涟漪”中，就会感受到一个有效的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)，从而使其磁矩取向于某个特定方向。这种相互作用的强度不仅随距离[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)衰减，还强烈地依赖于温度。[松原形式](@keyword=imaginary_time_formalism|lang=zh-CN|style=Feynman)主义能够精确地计算出这种温度依赖性，它表现为一个优美的普适函数 $F(x) = x/\sinh(x)$，其中 $x$ 是与温度和距离有关的[无量纲参数](@keyword=nondimensional_parameters|lang=zh-CN|style=Feynman)。这个结果完美解释了稀磁合金中的许多磁学现象。
 
-### 不稳定性的世界：新[物态](@article_id:299884)的诞生
+### 不稳定性的世界：新[物态](@keyword=states_of_matter|lang=zh-CN|style=Feynman)的诞生
 
-有时候，系统对某个特定扰动的响应会变得无穷大。这并不是理论的失败，恰恰相反，这是理论最激动人心的成功之一——它预示着系统内部正在发生剧变，一个全新的、更有序的[物态](@article_id:299884)即将诞生。这种现象被称为**不稳定性 (instability)**，而格林函数方法是探测和理解这些不稳定性的利器。
+有时候，系统对某个特定扰动的响应会变得无穷大。这并不是理论的失败，恰恰相反，这是理论最激动人心的成功之一——它预示着系统内部正在发生剧变，一个全新的、更有序的[物态](@keyword=states_of_matter|lang=zh-CN|style=Feynman)即将诞生。这种现象被称为**不稳定性 (instability)**，而格林函数方法是探测和理解这些不稳定性的利器。
 
-#### 超导的序曲：[库珀不稳定性](@article_id:305432)
+#### 超导的序曲：[库珀不稳定性](@keyword=cooper_instability|lang=zh-CN|style=Feynman)
 
-超导现象是宏观量子效应最壮观的展现之一。BCS 理论告诉我们，其根源在于电子之间通过[晶格振动](@article_id:374784)（[声子](@article_id:297589)）介导的微弱吸引力，使得两个电子可以配对形成“库珀对 (Cooper pair)”。
+超导现象是宏观量子效应最壮观的展现之一。BCS 理论告诉我们，其根源在于电子之间通过[晶格振动](@keyword=crystal_lattice_vibrations|lang=zh-CN|style=Feynman)（[声子](@keyword=phonons|lang=zh-CN|style=Feynman)）介导的微弱吸引力，使得两个电子可以配对形成“库珀对 (Cooper pair)”。
 
-[松原格林函数](@article_id:307781)为我们揭示了这个配对过程的萌芽 。通过计算所谓的**库珀通道（粒子-粒子） susceptibility**，我们发现，在零温下，这个[响应函数](@article_id:303067)对[能量积分](@article_id:345546)会呈现对数发散。这个发散是一个强烈的信号，表明[费米面](@article_id:298249)是不稳定的，任何微弱的吸引力都会导致电子配对。而温度扮演了一个有趣的角色：它提供了一个天然的[能量截断](@article_id:356530)，这个截断的尺度正比于 $\pi T$。随着温度的降低，这个截断能量也随之降低，发散的趋势越来越强，直到在[临界温度](@article_id:307101) $T_c$ 时，响应变得无穷大，超导态诞生。
+[松原格林函数](@keyword=matsubara_green_s_function|lang=zh-CN|style=Feynman)为我们揭示了这个配对过程的萌芽 [@problem_id:2977321]。通过计算所谓的**库珀通道（粒子-粒子） susceptibility**，我们发现，在零温下，这个[响应函数](@keyword=response_functions|lang=zh-CN|style=Feynman)对[能量积分](@keyword=energy_integral|lang=zh-CN|style=Feynman)会呈现对数发散。这个发散是一个强烈的信号，表明[费米面](@keyword=fermi_surface|lang=zh-CN|style=Feynman)是不稳定的，任何微弱的吸引力都会导致电子配对。而温度扮演了一个有趣的角色：它提供了一个天然的[能量截断](@keyword=energy_cutoff|lang=zh-CN|style=Feynman)，这个截断的尺度正比于 $\pi T$。随着温度的降低，这个截断能量也随之降低，发散的趋势越来越强，直到在[临界温度](@keyword=critical_temperature|lang=zh-CN|style=Feynman) $T_c$ 时，响应变得无穷大，超导态诞生。
 
-这个强大的框架还可以被推广到更复杂的真实材料中，例如具有多个[能带](@article_id:306995)的**多[能带](@article_id:306995)[超导体](@article_id:370061)**（如[铁基超导体](@article_id:299297)） ，或者具有非传统[配对对称性](@article_id:299978)（如 $d$-波）的**[高温超导体](@article_id:316761)** 。在后者中，该理论还能解释非磁性杂质为何会强烈抑制超[导电性](@article_id:308242)，并导致零能附近出现有限的[态密度](@article_id:308308)，这些都是与实验高度吻合的重要结论。
+这个强大的框架还可以被推广到更复杂的真实材料中，例如具有多个[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)的**多[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)**（如[铁基超导体](@keyword=iron_based_superconductors|lang=zh-CN|style=Feynman)） [@problem_id:2977329]，或者具有非传统[配对对称性](@keyword=pairing_symmetry|lang=zh-CN|style=Feynman)（如 $d$-波）的**[高温超导体](@keyword=high_temperature_superconductors|lang=zh-CN|style=Feynman)** [@problem_id:2994206]。在后者中，该理论还能解释非磁性杂质为何会强烈抑制超[导电性](@keyword=electrical_conductivity|lang=zh-CN|style=Feynman)，并导致零能附近出现有限的[态密度](@keyword=density_of_states|lang=zh-CN|style=Feynman)，这些都是与实验高度吻合的重要结论。
 
 #### 一维世界的奇迹：派尔斯不稳定性
 
-在准一维的导体中，还存在另一种有趣的不稳定性，称为**派尔斯不稳定性 (Peierls instability)** 。在这里，发散的不是粒子-粒子通道，而是**粒子-空穴通道**的[响应函数](@article_id:303067)。这种不稳定性导致电子倾向于形成周期性的密度[调制](@article_id:324353)，即**[电荷密度波](@article_id:373693) (Charge Density Wave, CDW)**，同时[晶格](@article_id:300090)也会发生相应的周期性畸变，从而在原来的费米能级处打开一个[能隙](@article_id:331619)，使系统从金属转变为绝缘体。[格林函数](@article_id:308216)方法不仅能预测这个[相变](@article_id:297531)，还能分析杂质等无序因素如何“破坏”电子和空穴的[完美配对](@article_id:366899)，从而抑制[相变温度](@article_id:356111)。这些计算的核心工具，是被称为**贝特-萨尔佩特方程 (Bethe-Salpeter Equation)** 的理论框架，它系统地描述了粒子-空穴对的集体行为 。
+在准一维的导体中，还存在另一种有趣的不稳定性，称为**派尔斯不稳定性 (Peierls instability)** [@problem_id:3009082]。在这里，发散的不是粒子-粒子通道，而是**粒子-空穴通道**的[响应函数](@keyword=response_functions|lang=zh-CN|style=Feynman)。这种不稳定性导致电子倾向于形成周期性的密度[调制](@keyword=modulation|lang=zh-CN|style=Feynman)，即**[电荷密度波](@keyword=charge_density_waves|lang=zh-CN|style=Feynman) (Charge Density Wave, CDW)**，同时[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)也会发生相应的周期性畸变，从而在原来的费米能级处打开一个[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)，使系统从金属转变为绝缘体。[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)方法不仅能预测这个[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)，还能分析杂质等无序因素如何“破坏”电子和空穴的[完美配对](@keyword=perfect_pairing|lang=zh-CN|style=Feynman)，从而抑制[相变温度](@keyword=phase_transition_temperature_(tm)|lang=zh-CN|style=Feynman)。这些计算的核心工具，是被称为**贝特-萨尔佩特方程 (Bethe-Salpeter Equation)** 的理论框架，它系统地描述了粒子-空穴对的集体行为 [@problem_id:2989907]。
 
 ### 跨越边界：从固体到宇宙
 
-[松原格林函数](@article_id:307781)方法的威力远不止于凝聚态物质。它的思想和工具已经[渗透](@article_id:361061)到物理学的各个角落，展现出惊人的普适性。
+[松原格林函数](@keyword=matsubara_green_s_function|lang=zh-CN|style=Feynman)方法的威力远不止于凝聚态物质。它的思想和工具已经[渗透](@keyword=permeation|lang=zh-CN|style=Feynman)到物理学的各个角落，展现出惊人的普适性。
 
-#### 来自虚空的力：[卡西米尔效应](@article_id:309070)
+#### 来自虚空的力：[卡西米尔效应](@keyword=casimir_effect|lang=zh-CN|style=Feynman)
 
-即便是空无一物的真空，也充满了[量子涨落](@article_id:304814)——虚光子在不断地创生和湮灭。当两个不带电的宏观物体（例如两块平行的金属板）被放置在真空中时，它们会改变这些真空涨落的模式。其结果是，物体之间会产生一种可测量的力，这就是著名的**[卡西米尔力](@article_id:310530) (Casimir force)** 。描述原子间相互作用的**范德华力 (van der Waals force)** 也是出于同源。
+即便是空无一物的真空，也充满了[量子涨落](@keyword=quantum_fluctuations|lang=zh-CN|style=Feynman)——虚光子在不断地创生和湮灭。当两个不带电的宏观物体（例如两块平行的金属板）被放置在真空中时，它们会改变这些真空涨落的模式。其结果是，物体之间会产生一种可测量的力，这就是著名的**[卡西米尔力](@keyword=casimir_force|lang=zh-CN|style=Feynman) (Casimir force)** [@problem_id:2796775]。描述原子间相互作用的**范德华力 (van der Waals force)** 也是出于同源。
 
-令人惊讶的是，计算这种力的数学工具，与我们用来计算固体中电子相互作用的工具是完全一样的！我们只需将电子的格林函数替换为[电磁场](@article_id:329585)的格林函数，通过对[松原频率求和](@article_id:373805)（或积分），就能得到这些由真空涨落产生的力。该理论还能完美地描述从近距离的非推迟区（力随距离的变化更快）到远距离的推迟区（光速的有限性变得重要，力随距离变化更慢）的优美过渡。
+令人惊讶的是，计算这种力的数学工具，与我们用来计算固体中电子相互作用的工具是完全一样的！我们只需将电子的格林函数替换为[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)的格林函数，通过对[松原频率求和](@keyword=matsubara_frequency_summation|lang=zh-CN|style=Feynman)（或积分），就能得到这些由真空涨落产生的力。该理论还能完美地描述从近距离的非推迟区（力随距离的变化更快）到远距离的推迟区（光速的有限性变得重要，力随距离变化更慢）的优美过渡。
 
 #### 计算科学的引擎
 
-理论的最终价值在于其预测能力，而这在现代科学中常常依赖于大规模的计算。[格林函数](@article_id:308216)方法正是许多前沿计算方法的核心引擎。
+理论的最终价值在于其预测能力，而这在现代科学中常常依赖于大规模的计算。[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)方法正是许多前沿计算方法的核心引擎。
 
-*   在**[量子化学](@article_id:300637)和[材料科学](@article_id:312640)**中，**GW 近似**  是一种标准的“后[密度泛函](@article_id:361917)”方法，用于精确计算材料的[电子能谱](@article_id:321218)（[准粒子](@article_id:299846)[能带结构](@article_id:340682)）。它的核心就是计算电子的自能 $\Sigma = iGW$，其中 $W$ 是由[格林函数](@article_id:308216)计算出的[屏蔽库仑相互作用](@article_id:343488)。
-*   对于处理电子之间相互作用极强的**[强关联电子](@article_id:305636)系统**，传统方法往往会失效。**[动力学平均场理论](@article_id:298905) (Dynamical Mean-Field Theory, DMFT)**  应运而生，它巧妙地将一个无限的[晶格](@article_id:300090)问题映射到一个可解的、自洽的单杂质问题上。而连接这两者的桥梁，正是**局域格林函数 (local Green's function)**。
-*   当然，从[松原频率](@article_id:376536)上的计算结果得到真实世界可观测的、依赖于实频率的光[谱函数](@article_id:308042)，需要一个被称为**[解析延拓](@article_id:307640) (analytic continuation)** 的数学步骤 。这是一个充满挑战但至关重要的环节，它将虚时间中的理论洞见转化为[实验物理学](@article_id:328504)家可以验证的真实预测。
+*   在**[量子化学](@keyword=quantum_chemistry|lang=zh-CN|style=Feynman)和[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)**中，**GW 近似** [@problem_id:2785432] 是一种标准的“后[密度泛函](@keyword=dft_functionals|lang=zh-CN|style=Feynman)”方法，用于精确计算材料的[电子能谱](@keyword=electron_energy_spectrum|lang=zh-CN|style=Feynman)（[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)[能带结构](@keyword=e_k_diagram|lang=zh-CN|style=Feynman)）。它的核心就是计算电子的自能 $\Sigma = iGW$，其中 $W$ 是由[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)计算出的[屏蔽库仑相互作用](@keyword=screened_coulomb_interaction|lang=zh-CN|style=Feynman)。
+*   对于处理电子之间相互作用极强的**[强关联电子](@keyword=strongly_correlated_electrons|lang=zh-CN|style=Feynman)系统**，传统方法往往会失效。**[动力学平均场理论](@keyword=dynamical_mean_field_theory|lang=zh-CN|style=Feynman) (Dynamical Mean-Field Theory, DMFT)** [@problem_id:3004466] 应运而生，它巧妙地将一个无限的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)问题映射到一个可解的、自洽的单杂质问题上。而连接这两者的桥梁，正是**局域格林函数 (local Green's function)**。
+*   当然，从[松原频率](@keyword=matsubara_frequency|lang=zh-CN|style=Feynman)上的计算结果得到真实世界可观测的、依赖于实频率的光[谱函数](@keyword=spectral_function|lang=zh-CN|style=Feynman)，需要一个被称为**[解析延拓](@keyword=analytic_continuation|lang=zh-CN|style=Feynman) (analytic continuation)** 的数学步骤 [@problem_id:2930204]。这是一个充满挑战但至关重要的环节，它将虚时间中的理论洞见转化为[实验物理学](@keyword=experimental_physics|lang=zh-CN|style=Feynman)家可以验证的真实预测。
 
-#### 全息和[黑洞](@article_id:318975)：终极的统一
+#### 全息和[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)：终极的统一
 
-也许最令人惊叹的联系，来自于理论物理的最前沿。近年来，一个被称为 **SYK (Sachdev-Ye-Kitaev) 模型**的“玩具模型”引起了巨大轰动 。这是一个描述大量随机相互作用的[费米子](@article_id:306655)的模型，它虽然看起来很古怪，却可以被精确求解。
+也许最令人惊叹的联系，来自于理论物理的最前沿。近年来，一个被称为 **SYK (Sachdev-Ye-Kitaev) 模型**的“玩具模型”引起了巨大轰动 [@problem_id:3014182]。这是一个描述大量随机相互作用的[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)的模型，它虽然看起来很古怪，却可以被精确求解。
 
-求解它的核心方程，正是我们已经熟悉的[格林函数](@article_id:308216)和[自能](@article_id:306032)的**[施温格-戴森方程](@article_id:306661) (Schwinger-Dyson equations)**。而这个模型的神奇之处在于，通过所谓的**[全息对偶](@article_id:307373) (holographic duality)**，它所描述的物理与一个在更高维度[时空](@article_id:370647)中的、带有[电荷](@article_id:339187)的[黑洞](@article_id:318975)的物理是等价的！这意味着，我们用来理解[超导体](@article_id:370061)和金属的格林函数方法，竟然也编码了[量子引力](@article_id:305536)和[黑洞](@article_id:318975)的某些信息。这无疑是物理学统一性之美的最深刻体现。
+求解它的核心方程，正是我们已经熟悉的[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)和[自能](@keyword=self_energy|lang=zh-CN|style=Feynman)的**[施温格-戴森方程](@keyword=schwinger_dyson_equations|lang=zh-CN|style=Feynman) (Schwinger-Dyson equations)**。而这个模型的神奇之处在于，通过所谓的**[全息对偶](@keyword=holographic_duality|lang=zh-CN|style=Feynman) (holographic duality)**，它所描述的物理与一个在更高维度[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中的、带有[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)的物理是等价的！这意味着，我们用来理解[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)和金属的格林函数方法，竟然也编码了[量子引力](@keyword=quantum_gravity|lang=zh-CN|style=Feynman)和[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)的某些信息。这无疑是物理学统一性之美的最深刻体现。
 
-从固体中一颗电子的寿命，到两块金属板之间的吸引力，再到遥远[黑洞](@article_id:318975)的奥秘，[松原格林函数](@article_id:307781)这把钥匙，为我们打开了一扇又一扇通往深刻物理实在的大门。它不仅仅是一套计算规则，更是一种思想，一种将量子、统计和相互作用融为一体的强大世界观。
+从固体中一颗电子的寿命，到两块金属板之间的吸引力，再到遥远[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)的奥秘，[松原格林函数](@keyword=matsubara_green_s_function|lang=zh-CN|style=Feynman)这把钥匙，为我们打开了一扇又一扇通往深刻物理实在的大门。它不仅仅是一套计算规则，更是一种思想，一种将量子、统计和相互作用融为一体的强大世界观。

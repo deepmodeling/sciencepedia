@@ -1,51 +1,51 @@
 ## 引言
-几个世纪以来，牛顿的[万有引力](@article_id:317939)定律以其惊人的预测精度主宰着我们对宇宙的理解。然而，在20世纪初，爱因斯坦的广义[相对论](@article_id:327421)以其革命性的时空几何观彻底重塑了引力的图景。这引发了一个核心问题：如果爱因斯坦的理论是更深层次的真理，那么它如何在其适用的领域内，重现牛顿定律的巨大成功？本文旨在搭建连接这两大理论巨塔的桥梁。我们将首先深入探讨，如何通过一系列合理的物理近似——即弱[引力场](@article_id:348648)、慢速运动和静态场——从复杂的[爱因斯坦场方程](@article_id:320403)中一步步恢复出我们熟悉的引力泊松方程。随后，我们将超越这一经典极限，探索广义[相对论](@article_id:327421)所揭示的更丰富的物理内涵，例如压力如何成为[引力源](@article_id:335249)以及[宇宙学常数](@article_id:319701)的影响。通过这次旅程，读者不仅将理解新旧理论的兼容性，更将洞察到牛顿引力背后更深刻的[时空](@article_id:370647)本质。现在，让我们开始这场从几何到力的发现之旅，首先剖析其核心的原理与机制。
+几个世纪以来，牛顿的[万有引力](@keyword=universal_gravitation|lang=zh-CN|style=Feynman)定律以其惊人的预测精度主宰着我们对宇宙的理解。然而，在20世纪初，爱因斯坦的广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)以其革命性的时空几何观彻底重塑了引力的图景。这引发了一个核心问题：如果爱因斯坦的理论是更深层次的真理，那么它如何在其适用的领域内，重现牛顿定律的巨大成功？本文旨在搭建连接这两大理论巨塔的桥梁。我们将首先深入探讨，如何通过一系列合理的物理近似——即弱[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)、慢速运动和静态场——从复杂的[爱因斯坦场方程](@keyword=einstein_s_field_equations|lang=zh-CN|style=Feynman)中一步步恢复出我们熟悉的引力泊松方程。随后，我们将超越这一经典极限，探索广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)所揭示的更丰富的物理内涵，例如压力如何成为[引力源](@keyword=sources_of_gravity|lang=zh-CN|style=Feynman)以及[宇宙学常数](@keyword=cosmological_constant|lang=zh-CN|style=Feynman)的影响。通过这次旅程，读者不仅将理解新旧理论的兼容性，更将洞察到牛顿引力背后更深刻的[时空](@keyword=space_time|lang=zh-CN|style=Feynman)本质。现在，让我们开始这场从几何到力的发现之旅，首先剖析其核心的原理与机制。
 
 ## 原理与机制
 
-在上一章中，我们领略了[爱因斯坦引力](@article_id:360176)理论的宏伟蓝图——物质告诉[时空](@article_id:370647)如何弯曲，[时空](@article_id:370647)告诉物质如何运动。这是一个充满美感和力量的革命性思想，用一套优雅的[张量](@article_id:321604)方程——[爱因斯坦场方程](@article_id:320403) (EFE) ——来描述。
+在上一章中，我们领略了[爱因斯坦引力](@keyword=einstein_gravity|lang=zh-CN|style=Feynman)理论的宏伟蓝图——物质告诉[时空](@keyword=space_time|lang=zh-CN|style=Feynman)如何弯曲，[时空](@keyword=space_time|lang=zh-CN|style=Feynman)告诉物质如何运动。这是一个充满美感和力量的革命性思想，用一套优雅的[张量](@keyword=tensor|lang=zh-CN|style=Feynman)方程——[爱因斯坦场方程](@keyword=einstein_s_field_equations|lang=zh-CN|style=Feynman) (EFE) ——来描述。
 
 $$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$
 
-然而，一个合理的问题立刻浮现在我们脑海：如果爱因斯坦是正确的，那么牛顿错了吗？几个世纪以来，牛顿的[万有引力](@article_id:317939)定律，无论是其简洁的平方反比形式还是更强大的泊松方程形式，都取得了惊人的成功。从抛出的石子到行星的轨道，牛顿的理论预测得都极为精准。一个新的理论，无论多么深刻，都必须能够在其适用的领域内，重现旧理论的成功。这不仅仅是一种检验，更是深刻理解新理论本质的途径。
+然而，一个合理的问题立刻浮现在我们脑海：如果爱因斯坦是正确的，那么牛顿错了吗？几个世纪以来，牛顿的[万有引力](@keyword=universal_gravitation|lang=zh-CN|style=Feynman)定律，无论是其简洁的平方反比形式还是更强大的泊松方程形式，都取得了惊人的成功。从抛出的石子到行星的轨道，牛顿的理论预测得都极为精准。一个新的理论，无论多么深刻，都必须能够在其适用的领域内，重现旧理论的成功。这不仅仅是一种检验，更是深刻理解新理论本质的途径。
 
-那么，爱因斯坦那复杂的[时空几何](@article_id:299944)之舞，是如何在我们熟悉的慢速、弱引力世界里，悄然简化为牛顿那熟悉的引力“力”的呢？本章的旅程，就是要揭示这背后的魔法。我们将扮演侦探的角色，通过一系列合理的“近似”，一步步地从爱因斯坦的广义[相对论](@article_id:327421)中，将牛顿引力“恢复”出来。这不仅是一次数理推导，更是一次发现之旅，它将向我们揭示，我们所熟知的“引力势”，其本质究竟为何。
+那么，爱因斯坦那复杂的[时空几何](@keyword=spacetime_geometry|lang=zh-CN|style=Feynman)之舞，是如何在我们熟悉的慢速、弱引力世界里，悄然简化为牛顿那熟悉的引力“力”的呢？本章的旅程，就是要揭示这背后的魔法。我们将扮演侦探的角色，通过一系列合理的“近似”，一步步地从爱因斯坦的广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)中，将牛顿引力“恢复”出来。这不仅是一次数理推导，更是一次发现之旅，它将向我们揭示，我们所熟知的“引力势”，其本质究竟为何。
 
-### 舞台上的演员：剖析[爱因斯坦场方程](@article_id:320403)
+### 舞台上的演员：剖析[爱因斯坦场方程](@keyword=einstein_s_field_equations|lang=zh-CN|style=Feynman)
 
 在开始简化之前，让我们先来认识一下舞台上的主要演员。爱因斯坦场方程 $G_{\mu\nu} = \kappa T_{\mu\nu}$ (这里我们用 $\kappa$ 来代表常数 $\frac{8\pi G}{c^4}$) 就像一个等式天平，一边是几何，一边是物质。
 
-*   **几何的一侧：[爱因斯坦张量](@article_id:321661) $G_{\mu\nu}$**
+*   **几何的一侧：[爱因斯坦张量](@keyword=einstein_tensor|lang=zh-CN|style=Feynman) $G_{\mu\nu}$**
 
-    它由里奇张量 $R_{\mu\nu}$ 和[里奇标量](@article_id:319338) $R$ 构成：$G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R$。这完全是关于[时空几何](@article_id:299944)的——曲率、形状和结构。计算它相当复杂。但幸运的是，通过一个简单的代数技巧，我们可以把场方程改写成一个等价但有时更方便的形式。通过对方程两边进行“缩并”（trace），我们可以得到 $R = -\kappa T$（其中 $T$ 是[应力-能量张量](@article_id:306964)的迹）。将这个关系代回原方程，我们就能得到“迹反转”形式的爱因斯坦场方程 ：
+    它由里奇张量 $R_{\mu\nu}$ 和[里奇标量](@keyword=ricci_scalar|lang=zh-CN|style=Feynman) $R$ 构成：$G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R$。这完全是关于[时空几何](@keyword=spacetime_geometry|lang=zh-CN|style=Feynman)的——曲率、形状和结构。计算它相当复杂。但幸运的是，通过一个简单的代数技巧，我们可以把场方程改写成一个等价但有时更方便的形式。通过对方程两边进行“缩并”（trace），我们可以得到 $R = -\kappa T$（其中 $T$ 是[应力-能量张量](@keyword=stress_energy_tensor|lang=zh-CN|style=Feynman)的迹）。将这个关系代回原方程，我们就能得到“迹反转”形式的爱因斯坦场方程 [@problem_id:1845481]：
 
     $$R_{\mu\nu} = \kappa \left( T_{\mu\nu} - \frac{1}{2}g_{\mu\nu}T \right)$$
 
     这个形式的好处在于，它直接将几何的核心部分 $R_{\mu\nu}$ 与物质源 $T_{\mu\nu}$联系起来。在弱引力近似下，这种形式将为我们的计算带来极大的便利。
 
-*   **物质的一侧：[应力-能量张量](@article_id:306964) $T_{\mu\nu}$**
+*   **物质的一侧：[应力-能量张量](@keyword=stress_energy_tensor|lang=zh-CN|style=Feynman) $T_{\mu\nu}$**
 
-    如果说 $G_{\mu\nu}$ 是舞台本身，那么 $T_{\mu\nu}$ 就是舞台上的演员——它描述了物质和能量的分布、动量和压力。它的 $00$ 分量 $T_{00}$ 通常代表能量密度，`$0i$` 分量代表[能量流](@article_id:303208)（也就是[动量密度](@article_id:335057)），`$ij$` 分量则代表动量流（包括压力和剪应力）。
+    如果说 $G_{\mu\nu}$ 是舞台本身，那么 $T_{\mu\nu}$ 就是舞台上的演员——它描述了物质和能量的分布、动量和压力。它的 $00$ 分量 $T_{00}$ 通常代表能量密度，`$0i$` 分量代表[能量流](@keyword=energy_flow|lang=zh-CN|style=Feynman)（也就是[动量密度](@keyword=momentum_density|lang=zh-CN|style=Feynman)），`$ij$` 分量则代表动量流（包括压力和剪应力）。
 
 ### 牛顿世界的三大定律：近似的艺术
 
-现在，让我们来定义什么是“牛顿世界”。它不是一个基本定律，而是一个在特定条件下的绝佳近似。这些条件就是我们从广义[相对论](@article_id:327421)回归牛顿引力的三把钥匙。
+现在，让我们来定义什么是“牛顿世界”。它不是一个基本定律，而是一个在特定条件下的绝佳近似。这些条件就是我们从广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)回归牛顿引力的三把钥匙。
 
-1.  **弱[引力场](@article_id:348648) (Weak Field)**
+1.  **弱[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman) (Weak Field)**
 
-    这是最关键的一步。在太阳系中，甚至在星系尺度上，引力虽然主宰一切，但它对[时空结构](@article_id:319335)的影响其实非常微弱。[时空](@article_id:370647)只是“几乎”平坦的。这启发我们将[弯曲时空](@article_id:323696)的度规[张量](@article_id:321604) $g_{\mu\nu}$ 写成平直的[闵可夫斯基度规](@article_id:315072) $\eta_{\mu\nu}$ 加上一个微小的扰动 $h_{\mu\nu}$：
+    这是最关键的一步。在太阳系中，甚至在星系尺度上，引力虽然主宰一切，但它对[时空结构](@keyword=spacetime_structure|lang=zh-CN|style=Feynman)的影响其实非常微弱。[时空](@keyword=space_time|lang=zh-CN|style=Feynman)只是“几乎”平坦的。这启发我们将[弯曲时空](@keyword=curved_spacetime|lang=zh-CN|style=Feynman)的度规[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $g_{\mu\nu}$ 写成平直的[闵可夫斯基度规](@keyword=minkowski_metric|lang=zh-CN|style=Feynman) $\eta_{\mu\nu}$ 加上一个微小的扰动 $h_{\mu\nu}$：
 
     $$g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}$$
 
-    其中 $\eta_{\mu\nu}$ 在 $(ct, x, y, z)$ 坐标下是 $\text{diag}(-1, 1, 1, 1)$，而扰动 $h_{\mu\nu}$ 的所有分量的[绝对值](@article_id:308102)都远小于1 ($|h_{\mu\nu}| \ll 1$)。这就像在平静的湖面上观察一丝微小的涟漪。
+    其中 $\eta_{\mu\nu}$ 在 $(ct, x, y, z)$ 坐标下是 $\text{diag}(-1, 1, 1, 1)$，而扰动 $h_{\mu\nu}$ 的所有分量的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)都远小于1 ($|h_{\mu\nu}| \ll 1$)。这就像在平静的湖面上观察一丝微小的涟漪。
 
-    这个“[线性化](@article_id:331373)”的假设威力巨大。它意味着任何包含两个或更多 $h_{\mu\nu}$ 乘积的项都可以被忽略，因为它们是“二阶小量”。例如，在计算逆度规时，我们可以证明 $g^{\mu\nu} \approx \eta^{\mu\nu} - h^{\mu\nu}$ 。同样，在计算[连接系数](@article_id:318023)（Christoffel 符号）等涉及[导数](@article_id:318324)的复杂量时，所有形如 $h \cdot \partial h$ 的项都因为是二阶小量而被丢弃，极大地简化了计算 。
+    这个“[线性化](@keyword=linearization|lang=zh-CN|style=Feynman)”的假设威力巨大。它意味着任何包含两个或更多 $h_{\mu\nu}$ 乘积的项都可以被忽略，因为它们是“二阶小量”。例如，在计算逆度规时，我们可以证明 $g^{\mu\nu} \approx \eta^{\mu\nu} - h^{\mu\nu}$ [@problem_id:1845502]。同样，在计算[连接系数](@keyword=connection_coefficients|lang=zh-CN|style=Feynman)（Christoffel 符号）等涉及[导数](@keyword=derivative|lang=zh-CN|style=Feynman)的复杂量时，所有形如 $h \cdot \partial h$ 的项都因为是二阶小量而被丢弃，极大地简化了计算 [@problem_id:1845544]。
 
 2.  **慢速运动 (Non-Relativistic Source)**
 
     牛顿定律适用于速度远小于光速 $c$ 的物体。这对我们的物质源——应力-能量张量 $T_{\mu\nu}$ 意味着什么？
 
-    让我们考虑一团“尘埃”（dust），这是对行星、恒星甚至星系中非相互作用物质的良好模型。它的能量主要来自其[静止质量](@article_id:329575)能 $E=mc^2$。它的动量 $p=mv$。那么，能量密度（$T_{00}$）和动量流（例如 $T_{11}$，与压力有关）之间的关系是怎样的呢？计算表明，$T_{11}/T_{00} \approx v^2/c^2$ 。对于太阳系中的行星，这个比值小得可以忽略不计！这意味着，在[非相对论极限](@article_id:362661)下，[应力-能量张量](@article_id:306964)被其 $00$ 分量完全主导。所有其他分量（代表动量和压力）相比之下都可以忽略不计。因此，$T_{\mu\nu}$ 极大地简化为：
+    让我们考虑一团“尘埃”（dust），这是对行星、恒星甚至星系中非相互作用物质的良好模型。它的能量主要来自其[静止质量](@keyword=invariant_mass|lang=zh-CN|style=Feynman)能 $E=mc^2$。它的动量 $p=mv$。那么，能量密度（$T_{00}$）和动量流（例如 $T_{11}$，与压力有关）之间的关系是怎样的呢？计算表明，$T_{11}/T_{00} \approx v^2/c^2$ [@problem_id:1845500]。对于太阳系中的行星，这个比值小得可以忽略不计！这意味着，在[非相对论极限](@keyword=non_relativistic_limit|lang=zh-CN|style=Feynman)下，[应力-能量张量](@keyword=stress_energy_tensor|lang=zh-CN|style=Feynman)被其 $00$ 分量完全主导。所有其他分量（代表动量和压力）相比之下都可以忽略不计。因此，$T_{\mu\nu}$ 极大地简化为：
 
     $$T_{00} \approx \rho c^2 \quad \text{且所有其他分量} \quad T_{\mu\nu} \approx 0$$
 
@@ -53,17 +53,17 @@ $$G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$
 
 3.  **静态场 (Static Field)**
 
-    最后，我们考虑一个不随时间变化的[引力场](@article_id:348648)，比如太阳（近似地）对其行星产生的[引力场](@article_id:348648)。这意味着度规扰动 $h_{\mu\nu}$ 的所有分量不随时间变化，即它们对时间坐标的偏导数为零 ($\partial_0 h_{\mu\nu} = 0$)。
+    最后，我们考虑一个不随时间变化的[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)，比如太阳（近似地）对其行星产生的[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)。这意味着度规扰动 $h_{\mu\nu}$ 的所有分量不随时间变化，即它们对时间坐标的偏导数为零 ($\partial_0 h_{\mu\nu} = 0$)。
 
 ### 奏响简化的交响曲
 
 现在，万事俱备。让我们将这三把钥匙插入爱因斯坦场方程，看看会发生什么。我们将聚焦于方程的 $00$ 分量。
 
-首先，我们看几何一侧，即 $R_{00}$。在广义[相对论](@article_id:327421)中，$R_{\mu\nu}$ 的完整表达式包含了一大堆度规的[二阶偏导数](@article_id:639509)，非常繁琐。但当我们应用弱场和静态场近似后，奇迹发生了。绝大多数项都因为包含 $h_{\mu\nu}$ 的高次项或时间[导数](@article_id:318324)而消失了。经过一番计算，复杂的 $R_{00}$ 最终坍缩成一个异常简洁的形式  ：
+首先，我们看几何一侧，即 $R_{00}$。在广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)中，$R_{\mu\nu}$ 的完整表达式包含了一大堆度规的[二阶偏导数](@keyword=second_partial_derivatives|lang=zh-CN|style=Feynman)，非常繁琐。但当我们应用弱场和静态场近似后，奇迹发生了。绝大多数项都因为包含 $h_{\mu\nu}$ 的高次项或时间[导数](@keyword=derivative|lang=zh-CN|style=Feynman)而消失了。经过一番计算，复杂的 $R_{00}$ 最终坍缩成一个异常简洁的形式 [@problem_id:1845507] [@problem_id:1845483]：
 
 $$R_{00} \approx -\frac{1}{2} \nabla^2 h_{00}$$
 
-其中 $\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$ 正是牛顿物理中我们所熟知的拉普拉斯算符！它衡量了一个点上的值与其周围值的平[均差](@article_id:298687)异。几何的复杂性，在这里被提炼成了我们熟悉的数学结构。
+其中 $\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$ 正是牛顿物理中我们所熟知的拉普拉斯算符！它衡量了一个点上的值与其周围值的平[均差](@keyword=divided_differences|lang=zh-CN|style=Feynman)异。几何的复杂性，在这里被提炼成了我们熟悉的数学结构。
 
 接下来，看物质一侧。我们使用迹反转形式的场方程 $R_{00} = \frac{8\pi G}{c^4} ( T_{00} - \frac{1}{2}g_{00}T )$。在我们的近似下：
 *   $T_{00} = \rho c^2$
@@ -78,34 +78,34 @@ $$R_{00} = \frac{8\pi G}{c^4} \left( \rho c^2 - \frac{1}{2}(-1)(-\rho c^2) \righ
 
 $$-\frac{1}{2} \nabla^2 h_{00} = \frac{4\pi G}{c^2}\rho$$
 
-稍作整理，我们便得到了一个惊人的结果 ：
+稍作整理，我们便得到了一个惊人的结果 [@problem_id:1845483]：
 
 $$\nabla^2 h_{00} = -\frac{8\pi G}{c^2}\rho$$
 
-这个方程看起来是不是非常眼熟？它与牛顿引力的[泊松方程](@article_id:301319) $\nabla^2 \Phi = 4\pi G \rho$ 在形式上几乎完全一样！两者都表明，[引力源](@article_id:335249)（质量密度 $\rho$）与某个场的二阶空间[导数](@article_id:318324)（拉普拉斯）成正比。唯一的区别在于常数，以及我们这里的场是 $h_{00}$，而牛顿的场是引力势 $\Phi$。
+这个方程看起来是不是非常眼熟？它与牛顿引力的[泊松方程](@keyword=poisson_s_equation|lang=zh-CN|style=Feynman) $\nabla^2 \Phi = 4\pi G \rho$ 在形式上几乎完全一样！两者都表明，[引力源](@keyword=sources_of_gravity|lang=zh-CN|style=Feynman)（质量密度 $\rho$）与某个场的二阶空间[导数](@keyword=derivative|lang=zh-CN|style=Feynman)（拉普拉斯）成正比。唯一的区别在于常数，以及我们这里的场是 $h_{00}$，而牛顿的场是引力势 $\Phi$。
 
-### 终极揭秘：[引力势](@article_id:320782)就是时间的弯曲
+### 终极揭秘：[引力势](@keyword=gravitational_potential|lang=zh-CN|style=Feynman)就是时间的弯曲
 
-这自然引出了最后一个，也是最深刻的问题：$h_{00}$ 和 $\Phi$ 之间到底有什么关系？要回答这个问题，我们必须回到广义[相对论](@article_id:327421)的基本原理：物体在弯曲时空中走的是“[测地线](@article_id:327811)”（geodesic），即最直的路径。
+这自然引出了最后一个，也是最深刻的问题：$h_{00}$ 和 $\Phi$ 之间到底有什么关系？要回答这个问题，我们必须回到广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)的基本原理：物体在弯曲时空中走的是“[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)”（geodesic），即最直的路径。
 
-描述[测地线](@article_id:327811)的方程是：
+描述[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)的方程是：
 $$\frac{d^2 x^\mu}{d\tau^2} + \Gamma^\mu_{\alpha\beta} \frac{dx^\alpha}{d\tau} \frac{dx^\beta}{d\tau} = 0$$
 
-在牛顿极限下（弱场、静态、慢速运动），这个方程同样可以被大大简化。对于一个缓慢移动的粒子，其速度 $\vec{v}$ 远小于 $c$，这意味着其[四维速度](@article_id:324807)中时间分量远大于空间分量。因此，在[测地线方程](@article_id:328056)中，$\alpha=\beta=0$ 的那一项将起主导作用。方程近似变为：
+在牛顿极限下（弱场、静态、慢速运动），这个方程同样可以被大大简化。对于一个缓慢移动的粒子，其速度 $\vec{v}$ 远小于 $c$，这意味着其[四维速度](@keyword=4_velocity|lang=zh-CN|style=Feynman)中时间分量远大于空间分量。因此，在[测地线方程](@keyword=geodesic_equations|lang=zh-CN|style=Feynman)中，$\alpha=\beta=0$ 的那一项将起主导作用。方程近似变为：
 
 $$\frac{d^2 \vec{x}}{dt^2} \approx c^2 \Gamma^i_{00} \vec{e}_i$$
 
-这里 $\Gamma^i_{00}$ 是 Christoffel 符号的一个分量。而这个符号本身又依赖于度规的[导数](@article_id:318324)。在我们的近似下，可以算出 $\Gamma^i_{00} \approx -\frac{1}{2} \frac{\partial g_{00}}{\partial x^i}$。代入上式，我们得到粒子的加速度为：
+这里 $\Gamma^i_{00}$ 是 Christoffel 符号的一个分量。而这个符号本身又依赖于度规的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)。在我们的近似下，可以算出 $\Gamma^i_{00} \approx -\frac{1}{2} \frac{\partial g_{00}}{\partial x^i}$。代入上式，我们得到粒子的加速度为：
 
 $$\frac{d^2 \vec{x}}{dt^2} \approx \frac{c^2}{2} \nabla g_{00}$$
 
 现在，让我们请出牛顿。牛顿告诉我们，引力加速度是引力势的负梯度：$\vec{a} = -\nabla \Phi$。
 
-比较这两个加速度表达式，我们立刻得到了 $\Phi$ 和 $g_{00}$ 之间的深刻联系  ：
+比较这两个加速度表达式，我们立刻得到了 $\Phi$ 和 $g_{00}$ 之间的深刻联系 [@problem_id:1845537] [@problem_id:1845517]：
 
 $$-\nabla \Phi = \frac{c^2}{2} \nabla g_{00}$$
 
-对上式进行积分，并利用边界条件（在无穷远处，引力势为零，[时空](@article_id:370647)是平直的，即 $g_{00}=-1$），我们最终确定了这个关系：
+对上式进行积分，并利用边界条件（在无穷远处，引力势为零，[时空](@keyword=space_time|lang=zh-CN|style=Feynman)是平直的，即 $g_{00}=-1$），我们最终确定了这个关系：
 
 $$\Phi = -\frac{c^2}{2}(g_{00} + 1)$$
 
@@ -113,12 +113,12 @@ $$\Phi = -\frac{c^2}{2}(g_{00} + 1)$$
 
 $$g_{00} = -1 - \frac{2\Phi}{c^2}$$
 
-这就是谜底。**我们通常所说的牛顿[引力势](@article_id:320782) $\Phi$，本质上不是别的，正是时空度规的 $g_{00}$ 分量所体现的时间弯曲！**
+这就是谜底。**我们通常所说的牛顿[引力势](@keyword=gravitational_potential|lang=zh-CN|style=Feynman) $\Phi$，本质上不是别的，正是时空度规的 $g_{00}$ 分量所体现的时间弯曲！**
 
-$g_{00}$ 决定了[固有时](@article_id:323918)（proper time）与[坐标时](@article_id:327427)（coordinate time）之间的关系。$g_{00}$ 不等于-1，就意味着时间的流逝速度在空间中是不同的。一个处于引力势更深处（$\Phi$ 更负）的时钟，其 $g_{00}$ 更接近-1但数值更小，因此它的时间走得更慢。苹果之所以会下落，行星之所以会绕着太阳转，从根本上说，是因为它们在遵循[时空](@article_id:370647)中最直的路径，而这条路径恰好指向时间流逝更慢的方向。牛顿所描述的神秘“超距作用力”，在爱因斯坦的理论中，被还原为物体在不均匀的时间流中“顺流而下”的自然倾向。
+$g_{00}$ 决定了[固有时](@keyword=proper_time|lang=zh-CN|style=Feynman)（proper time）与[坐标时](@keyword=coordinate_time|lang=zh-CN|style=Feynman)（coordinate time）之间的关系。$g_{00}$ 不等于-1，就意味着时间的流逝速度在空间中是不同的。一个处于引力势更深处（$\Phi$ 更负）的时钟，其 $g_{00}$ 更接近-1但数值更小，因此它的时间走得更慢。苹果之所以会下落，行星之所以会绕着太阳转，从根本上说，是因为它们在遵循[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中最直的路径，而这条路径恰好指向时间流逝更慢的方向。牛顿所描述的神秘“超距作用力”，在爱因斯坦的理论中，被还原为物体在不均匀的时间流中“顺流而下”的自然倾向。
 
 ### 尾声：数学工具的匠心
 
-在整个推导过程中，我们看到，物理学家会运用一些巧妙的数学“技巧”来简化问题，例如选择特定的“规范”（gauge）。这就像在解决一个力学问题时，选择一个好的[坐标系](@article_id:316753)能让问题变得简单。比如，[洛伦兹规范](@article_id:314062) ($\partial^\mu \bar{h}_{\mu\nu} = 0$) 就是一个常见的选择。施加这个条件的主要目的，是它能够将[线性化](@article_id:331373)爱因斯坦方程中复杂的[微分算子](@article_id:300589)，变成一个非常简洁优美的形式——达朗贝尔算符 $\Box$ 。这使得方程变成了一组标准的波方程，是我们非常熟悉且善于求解的。这并不是改变物理，而是在利用数学的自由度，选择一条最清晰的路径直达问题的核心。
+在整个推导过程中，我们看到，物理学家会运用一些巧妙的数学“技巧”来简化问题，例如选择特定的“规范”（gauge）。这就像在解决一个力学问题时，选择一个好的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)能让问题变得简单。比如，[洛伦兹规范](@keyword=lorenz_gauge|lang=zh-CN|style=Feynman) ($\partial^\mu \bar{h}_{\mu\nu} = 0$) 就是一个常见的选择。施加这个条件的主要目的，是它能够将[线性化](@keyword=linearization|lang=zh-CN|style=Feynman)爱因斯坦方程中复杂的[微分算子](@keyword=differentiation_operator|lang=zh-CN|style=Feynman)，变成一个非常简洁优美的形式——达朗贝尔算符 $\Box$ [@problem_id:1845542]。这使得方程变成了一组标准的波方程，是我们非常熟悉且善于求解的。这并不是改变物理，而是在利用数学的自由度，选择一条最清晰的路径直达问题的核心。
 
-至此，我们的旅程告一段落。我们从爱因斯坦宏伟而复杂的[时空](@article_id:370647)交响曲出发，通过聚焦于牛顿世界的三个核心特征——弱场、慢速、静态，成功地从中提取出了我们熟悉的主旋律——牛顿引力定律。但我们得到的远不止于此，我们窥见了熟悉的牛顿引力背后更深层次的实在：引力不是力，而是几何；引力势不是势，而是时间的涟漪。旧理论的成功被新理论以更深刻的方式加以诠释和包容，这正是物理学发展中最激动人心的篇章之一。
+至此，我们的旅程告一段落。我们从爱因斯坦宏伟而复杂的[时空](@keyword=space_time|lang=zh-CN|style=Feynman)交响曲出发，通过聚焦于牛顿世界的三个核心特征——弱场、慢速、静态，成功地从中提取出了我们熟悉的主旋律——牛顿引力定律。但我们得到的远不止于此，我们窥见了熟悉的牛顿引力背后更深层次的实在：引力不是力，而是几何；引力势不是势，而是时间的涟漪。旧理论的成功被新理论以更深刻的方式加以诠释和包容，这正是物理学发展中最激动人心的篇章之一。

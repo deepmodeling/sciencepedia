@@ -8,56 +8,56 @@
 
 **理想的旋转**
 
-当一个物体恰好绕着它的一根惯量主轴旋转时，一些美妙的事情发生了。它的[角速度矢量](@article_id:351624) $\vec{\omega}$ 和角动量矢量 $\vec{L}$ 指向完全相同的方向。这就像物体与自身达成了完美的同步。对于这种“完美”的旋转，在没有摩擦的情况下，不需要任何外力矩就能维持其状态。我们称之为**动态平衡**。许多旋转物体的设计都巧妙地利用了这一点，让它们的旋转轴与一根惯量主轴重合 。
+当一个物体恰好绕着它的一根惯量主轴旋转时，一些美妙的事情发生了。它的[角速度矢量](@keyword=angular_velocity_vector|lang=zh-CN|style=Feynman) $\vec{\omega}$ 和角动量矢量 $\vec{L}$ 指向完全相同的方向。这就像物体与自身达成了完美的同步。对于这种“完美”的旋转，在没有摩擦的情况下，不需要任何外力矩就能维持其状态。我们称之为**动态平衡**。许多旋转物体的设计都巧妙地利用了这一点，让它们的旋转轴与一根惯量主轴重合 [@problem_id:2074469]。
 
 **失衡世界的摇摆**
 
-但如果我们强迫一个物体绕着一个*非*主轴的轴线旋转会怎样呢？物体会“抗议”！此时，$\vec{\omega}$ 和 $\vec{L}$ 不再对齐。由于角动量 $\vec{L}$ 必须围绕固定的旋转轴进动，身体的转动也必须跟随，这就需要一个持续变化的外力矩来强迫它。这就是你从一个不平衡的汽车轮胎上感受到的[振动](@article_id:331484)的来源。
+但如果我们强迫一个物体绕着一个*非*主轴的轴线旋转会怎样呢？物体会“抗议”！此时，$\vec{\omega}$ 和 $\vec{L}$ 不再对齐。由于角动量 $\vec{L}$ 必须围绕固定的旋转轴进动，身体的转动也必须跟随，这就需要一个持续变化的外力矩来强迫它。这就是你从一个不平衡的汽车轮胎上感受到的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的来源。
 
-工程师们不遗余力地对旋转机械（如发动机的曲轴、喷气式发动机的涡轮叶片和飞机的螺旋桨）进行[动态平衡](@article_id:306712)。他们通过精确地增加或移除微小的质量，来调整物体的[质量分布](@article_id:318855)，从而移动其惯量主轴，直到其中一根与预定的旋转轴完美对齐。这样一来，[惯性积](@article_id:372905)便归零，从而消除了破坏性的摆动和对支撑轴的轴承产生的巨大压力  。这种不平衡的根源可能是一个不对称的形状（如一块L形的薄板 ），也可能是不均匀的[质量分布](@article_id:318855)，例如铸件内部的缺陷、一个故意开凿的孔洞，甚至是非均匀的密度   。
+工程师们不遗余力地对旋转机械（如发动机的曲轴、喷气式发动机的涡轮叶片和飞机的螺旋桨）进行[动态平衡](@keyword=allostasis|lang=zh-CN|style=Feynman)。他们通过精确地增加或移除微小的质量，来调整物体的[质量分布](@keyword=mass_distribution|lang=zh-CN|style=Feynman)，从而移动其惯量主轴，直到其中一根与预定的旋转轴完美对齐。这样一来，[惯性积](@keyword=product_of_inertia|lang=zh-CN|style=Feynman)便归零，从而消除了破坏性的摆动和对支撑轴的轴承产生的巨大压力 [@problem_id:1257281] [@problem_id:1257226]。这种不平衡的根源可能是一个不对称的形状（如一块L形的薄板 [@problem_id:608927]），也可能是不均匀的[质量分布](@keyword=mass_distribution|lang=zh-CN|style=Feynman)，例如铸件内部的缺陷、一个故意开凿的孔洞，甚至是非均匀的密度 [@problem_id:1257215] [@problem_id:1257371] [@problem_id:608769]。
 
-**[网球拍定理](@article_id:318594)：三轴一故事**
+**[网球拍定理](@keyword=tennis_racket_theorem|lang=zh-CN|style=Feynman)：三轴一故事**
 
-让我们回到旋转书本的例子。我们已经知道，绕着两个轴的旋转是稳定的。但绕着第三个轴时的混乱翻滚，是物理学中最令人愉悦的惊喜之一，被称为“[网球拍定理](@article_id:318594)”或“[中间轴定理](@article_id:318594)”。对于任何具有三个不同[主转动惯量](@article_id:311306)（$I_1  I_2  I_3$）的物体，绕着最大（$I_3$）和最小（$I_1$）转动惯量轴的旋转是稳定的。即使受到轻微的扰动，它也只会轻微地摇摆。
+让我们回到旋转书本的例子。我们已经知道，绕着两个轴的旋转是稳定的。但绕着第三个轴时的混乱翻滚，是物理学中最令人愉悦的惊喜之一，被称为“[网球拍定理](@keyword=tennis_racket_theorem|lang=zh-CN|style=Feynman)”或“[中间轴定理](@keyword=tennis_racket_theorem|lang=zh-CN|style=Feynman)”。对于任何具有三个不同[主转动惯量](@keyword=principal_moments_of_inertia|lang=zh-CN|style=Feynman)（$I_1  I_2  I_3$）的物体，绕着最大（$I_3$）和最小（$I_1$）转动惯量轴的旋转是稳定的。即使受到轻微的扰动，它也只会轻微地摇摆。
 
-然而，绕着中间大小的转动惯量轴（$I_2$）的旋转却是**不稳定**的。最微小的扰动都会被放大，导致物体猛烈地翻转，在空中混乱地翻滚，然后短暂地回到原始方向，接着再次翻转 。这不仅仅是一个新奇的现象，它对太空中卫星和其他旋转物体的姿态控制具有实际意义。
+然而，绕着中间大小的转动惯量轴（$I_2$）的旋转却是**不稳定**的。最微小的扰动都会被放大，导致物体猛烈地翻转，在空中混乱地翻滚，然后短暂地回到原始方向，接着再次翻转 [@problem_id:608944]。这不仅仅是一个新奇的现象，它对太空中卫星和其他旋转物体的姿态控制具有实际意义。
 
 **“翻身陀螺”的奇妙行为**
 
-稳定性的舞蹈甚至可以变得更加错综复杂。考虑一种被称为“翻身陀螺”（Rattleback）的船形玩具。当向一个方向旋转它时，它会平稳地转动；但当向相反方向旋转时，它会开始摇晃，最终停下并反向旋转。这种看似神奇的行为是力学中的一出杰作，其根源在于物体质量分布的惯量[主轴](@article_id:351809)与其弧形底座的几何曲率主轴之间的微小错位。这种错位与接触点的摩擦力相结合，将自旋能量转化为摇摆运动，而这种摇摆运动又反过来驱动它向那个“偏爱”的方向旋转 。这是抽象的物理轴线如何在现实世界中支配运动的一个美妙而具体的例子。
+稳定性的舞蹈甚至可以变得更加错综复杂。考虑一种被称为“翻身陀螺”（Rattleback）的船形玩具。当向一个方向旋转它时，它会平稳地转动；但当向相反方向旋转时，它会开始摇晃，最终停下并反向旋转。这种看似神奇的行为是力学中的一出杰作，其根源在于物体质量分布的惯量[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)与其弧形底座的几何曲率主轴之间的微小错位。这种错位与接触点的摩擦力相结合，将自旋能量转化为摇摆运动，而这种摇摆运动又反过来驱动它向那个“偏爱”的方向旋转 [@problem_id:1244666]。这是抽象的物理轴线如何在现实世界中支配运动的一个美妙而具体的例子。
 
 ### 宇宙与分子的舞蹈
 
 **天体的翻滚**
 
-支配一个旋转玩具的原理同样适用于宇宙的宏大舞台。小行星和彗星在亿万年的碰撞中被塑造，它们很少是完美的球体。在没有外力矩的太空真空中，它们的运动是一种令[人眼](@article_id:343903)花缭乱的自由翻滚。我们在前一章学到的**[潘索构造](@article_id:373807)（Poinsot construction）**为这种运动提供了一种惊人而优雅的几何诠释。它将物体的惯量[椭球](@article_id:345137)想象成在一个固定于空间的“[不变平面](@article_id:343167)”上[无滑滚动](@article_id:344864)。椭球与平面之间的瞬时接触点，正代表了物体瞬时的旋转轴 $\vec{\omega}$，随着物体的翻滚，这个点在物体自身上描绘出一条轨迹 。这幅美丽的几何图景完美地捕捉了[无力矩运动](@article_id:346658)中[能量守恒](@article_id:300957)和[角动量守恒](@article_id:313488)的相互作用。
+支配一个旋转玩具的原理同样适用于宇宙的宏大舞台。小行星和彗星在亿万年的碰撞中被塑造，它们很少是完美的球体。在没有外力矩的太空真空中，它们的运动是一种令[人眼](@keyword=human_eye|lang=zh-CN|style=Feynman)花缭乱的自由翻滚。我们在前一章学到的**[潘索构造](@keyword=poinsot_s_construction|lang=zh-CN|style=Feynman)（Poinsot construction）**为这种运动提供了一种惊人而优雅的几何诠释。它将物体的惯量[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)想象成在一个固定于空间的“[不变平面](@keyword=the_invariable_plane|lang=zh-CN|style=Feynman)”上[无滑滚动](@keyword=rolling_without_slipping|lang=zh-CN|style=Feynman)。椭球与平面之间的瞬时接触点，正代表了物体瞬时的旋转轴 $\vec{\omega}$，随着物体的翻滚，这个点在物体自身上描绘出一条轨迹 [@problem_id:2088164]。这幅美丽的几何图景完美地捕捉了[无力矩运动](@keyword=torque_free_motion|lang=zh-CN|style=Feynman)中[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)和[角动量守恒](@keyword=conservation_of_angular_momentum|lang=zh-CN|style=Feynman)的相互作用。
 
 **分子的形状**
 
-现在，让我们从宇宙尺度缩小到微观世界。一个分子，作为由[化学键](@article_id:305517)连接在一起的原子集合，也可以被看作一个刚体。它的旋转特性由其三个[主转动惯量](@article_id:311306)决定。这使得化学家和物理学家可以根据分子的“旋转形状”对其进行分类：
+现在，让我们从宇宙尺度缩小到微观世界。一个分子，作为由[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)连接在一起的原子集合，也可以被看作一个刚体。它的旋转特性由其三个[主转动惯量](@keyword=principal_moments_of_inertia|lang=zh-CN|style=Feynman)决定。这使得化学家和物理学家可以根据分子的“旋转形状”对其进行分类：
 
 - **线性转子**（如一氧化碳 CO）：一个转动惯量为零，另外两个相等。它们像一根简单的指挥棒一样旋转。
-- **[对称陀螺](@article_id:342962)**（如氨分子 $NH_3$）：两个[转动惯量](@article_id:354593)相等，第三个不同。它们像一个陀螺或圆盘一样旋转 。
-- **[非对称陀螺](@article_id:357090)**（如水分子 $H_2O$）：三个[转动惯量](@article_id:354593)都不同。它们的翻滚方式最为复杂。
+- **[对称陀螺](@keyword=symmetric_top|lang=zh-CN|style=Feynman)**（如氨分子 $NH_3$）：两个[转动惯量](@keyword=rotary_inertia|lang=zh-CN|style=Feynman)相等，第三个不同。它们像一个陀螺或圆盘一样旋转 [@problem_id:1257327]。
+- **[非对称陀螺](@keyword=asymmetric_top|lang=zh-CN|style=Feynman)**（如水分子 $H_2O$）：三个[转动惯量](@keyword=rotary_inertia|lang=zh-CN|style=Feynman)都不同。它们的翻滚方式最为复杂。
 
-**解读分子“条形码”：[光谱学](@article_id:298272)**
+**解读分子“条形码”：[光谱学](@keyword=spectroscopy|lang=zh-CN|style=Feynman)**
 
-我们是如何知道这些的呢？我们无法用肉眼看到一个水分子的翻滚。答案在于科学中最强大的连接之一：**[光谱学](@article_id:298272)**。分子可以吸收和发射特定频率的光（例如微波），从而在不同的转动能级之间跃迁。根据量子力学，这些允许的能级由分子的[主转动惯量](@article_id:311306)直接决定。
+我们是如何知道这些的呢？我们无法用肉眼看到一个水分子的翻滚。答案在于科学中最强大的连接之一：**[光谱学](@keyword=spectroscopy|lang=zh-CN|style=Feynman)**。分子可以吸收和发射特定频率的光（例如微波），从而在不同的转动能级之间跃迁。根据量子力学，这些允许的能级由分子的[主转动惯量](@keyword=principal_moments_of_inertia|lang=zh-CN|style=Feynman)直接决定。
 
-一个分子吸收的频率集合构成了一个独特的“条形码”——它的[转动光谱](@article_id:343048)。对于一个简单的线性转子，这个光谱是一系列整齐的、等间距的[谱线](@article_id:372357)。但对于像水这样的[非对称陀螺](@article_id:357090)，三个不同的[转动惯量](@article_id:354593)导致了一个极其复杂、[谱线](@article_id:372357)密布如森林般的光谱。通过仔细解读这个复杂的光谱，科学家们可以精确地反推出分子的[主转动惯量](@article_id:311306)，并由此推断出其精确的形状和[化学键](@article_id:305517)的长度 。惯量主轴，就这样成为了我们窥探分子世界的窗口。
+一个分子吸收的频率集合构成了一个独特的“条形码”——它的[转动光谱](@keyword=rotational_spectra|lang=zh-CN|style=Feynman)。对于一个简单的线性转子，这个光谱是一系列整齐的、等间距的[谱线](@keyword=spectral_line|lang=zh-CN|style=Feynman)。但对于像水这样的[非对称陀螺](@keyword=asymmetric_top|lang=zh-CN|style=Feynman)，三个不同的[转动惯量](@keyword=rotary_inertia|lang=zh-CN|style=Feynman)导致了一个极其复杂、[谱线](@keyword=spectral_line|lang=zh-CN|style=Feynman)密布如森林般的光谱。通过仔细解读这个复杂的光谱，科学家们可以精确地反推出分子的[主转动惯量](@keyword=principal_moments_of_inertia|lang=zh-CN|style=Feynman)，并由此推断出其精确的形状和[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)的长度 [@problem_id:2020835]。惯量主轴，就这样成为了我们窥探分子世界的窗口。
 
-### 物理学的统一：惯量[张量](@article_id:321604)的“分身”
+### 物理学的统一：惯量[张量](@keyword=tensor|lang=zh-CN|style=Feynman)的“分身”
 
-**超越质量：电[四极矩](@article_id:318122)**
+**超越质量：电[四极矩](@keyword=quadrupole_moment|lang=zh-CN|style=Feynman)**
 
-惯量[张量](@article_id:321604)的数学结构是如此基础，以至于它也出现在物理学的其他领域，用来描述质量分布之外的性质。一个典型的例子是**电[四极矩张量](@article_id:333363)**。如果说[电偶极矩](@article_id:321676)描述了正负[电荷](@article_id:339187)的分离，那么电四极矩则描述了一种更复杂的、非球形的[电荷分布](@article_id:304828)——例如，一个原子核或分子是像雪茄一样被拉长（长椭球），还是像薄饼一样被压扁（扁椭球）。
+惯量[张量](@keyword=tensor|lang=zh-CN|style=Feynman)的数学结构是如此基础，以至于它也出现在物理学的其他领域，用来描述质量分布之外的性质。一个典型的例子是**电[四极矩张量](@keyword=quadrupole_moment_tensor|lang=zh-CN|style=Feynman)**。如果说[电偶极矩](@keyword=electric_dipole_moment|lang=zh-CN|style=Feynman)描述了正负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的分离，那么电四极矩则描述了一种更复杂的、非球形的[电荷分布](@keyword=charge_distribution|lang=zh-CN|style=Feynman)——例如，一个原子核或分子是像雪茄一样被拉长（长椭球），还是像薄饼一样被压扁（扁椭球）。
 
-电[四极矩张量](@article_id:333363)的公式看起来与惯量[张量](@article_id:321604)的公式惊人地相似。对于一个同时具有均匀质量密度和均匀电荷密度的物体，这两个[张量](@article_id:321604)是直接成正比的 。这并非巧合。它们都是用来描述一个分布的“二阶矩”的数学工具——一个描述质量，另一个描述[电荷](@article_id:339187)。
+电[四极矩张量](@keyword=quadrupole_moment_tensor|lang=zh-CN|style=Feynman)的公式看起来与惯量[张量](@keyword=tensor|lang=zh-CN|style=Feynman)的公式惊人地相似。对于一个同时具有均匀质量密度和均匀电荷密度的物体，这两个[张量](@keyword=tensor|lang=zh-CN|style=Feynman)是直接成正比的 [@problem_id:1257350]。这并非巧合。它们都是用来描述一个分布的“二阶矩”的数学工具——一个描述质量，另一个描述[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。
 
-**最自然的[参考系](@article_id:345789)**
+**最自然的[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)**
 
-这种深刻的联系让我们回到了起点。当科学家报告一个分子的性质时，比如它的[电偶极矩](@article_id:321676)和电[四极矩](@article_id:318122)，他们需要一个统一的[坐标系](@article_id:316753)。该如何选择呢？**惯量主轴[坐标系](@article_id:316753)**被证明是最自然、最具物理意义的选择。
+这种深刻的联系让我们回到了起点。当科学家报告一个分子的性质时，比如它的[电偶极矩](@keyword=electric_dipole_moment|lang=zh-CN|style=Feynman)和电[四极矩](@keyword=quadrupole_moment|lang=zh-CN|style=Feynman)，他们需要一个统一的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)。该如何选择呢？**惯量主轴[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)**被证明是最自然、最具物理意义的选择。
 
-原因在于，这正是使[转动动能](@article_id:356598)对角化的[坐标系](@article_id:316753)，也是量子力学中转动问题最容易求解的[坐标系](@article_id:316753)。在此[坐标系](@article_id:316753)中报告[电偶极矩](@article_id:321676)或电[四极矩](@article_id:318122)的各个分量，便建立起了分子静态电荷分布与我们实验观测到的[转动光谱](@article_id:343048)之间的直接联系  。因此，惯量[主轴](@article_id:351809)不仅仅是一种数学上的便利，它们是描述[分子结构](@article_id:300554)与其动力学之间相互作用的自然语言。
+原因在于，这正是使[转动动能](@keyword=rotational_kinetic_energy|lang=zh-CN|style=Feynman)对角化的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)，也是量子力学中转动问题最容易求解的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)。在此[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中报告[电偶极矩](@keyword=electric_dipole_moment|lang=zh-CN|style=Feynman)或电[四极矩](@keyword=quadrupole_moment|lang=zh-CN|style=Feynman)的各个分量，便建立起了分子静态电荷分布与我们实验观测到的[转动光谱](@keyword=rotational_spectra|lang=zh-CN|style=Feynman)之间的直接联系 [@problem_id:2888160] [@problem_id:2020835]。因此，惯量[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)不仅仅是一种数学上的便利，它们是描述[分子结构](@keyword=molecular_structure|lang=zh-CN|style=Feynman)与其动力学之间相互作用的自然语言。
 
-从汽车轮胎的摇摆、网球拍的翻滚，到小行星的旋转和水分子的光谱特征，惯量主轴是解开旋转奥秘的一把万能钥匙。它们在物体的静态几何与其动态行为之间架起了一座深刻而优美的桥梁。它们揭示了物理学中一种美丽的统一性：同样的基本概念支配着宏观与微观物体的运动，力学的语言也为我们理解量子世界提供了信息。那无形的惯量[主轴](@article_id:351809)骨架无处不在，默默地为宇宙的舞蹈编排着节拍。
+从汽车轮胎的摇摆、网球拍的翻滚，到小行星的旋转和水分子的光谱特征，惯量主轴是解开旋转奥秘的一把万能钥匙。它们在物体的静态几何与其动态行为之间架起了一座深刻而优美的桥梁。它们揭示了物理学中一种美丽的统一性：同样的基本概念支配着宏观与微观物体的运动，力学的语言也为我们理解量子世界提供了信息。那无形的惯量[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)骨架无处不在，默默地为宇宙的舞蹈编排着节拍。

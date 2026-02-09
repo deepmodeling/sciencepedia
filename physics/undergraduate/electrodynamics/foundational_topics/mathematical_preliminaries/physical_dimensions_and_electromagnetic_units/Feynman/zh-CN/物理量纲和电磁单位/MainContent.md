@@ -1,9 +1,9 @@
 ## 引言
 物理定律不仅仅是一系列孤立的公式，它们共同构成了一套具有内在逻辑和语法的语言，用以描述宇宙的运行。这套“语法”的核心，就是物理学的“量纲”——诸如质量（M）、长度（L）、时间（T）和电流（I）等基本构件。任何一个有意义的物理方程，其两边的量纲都必须保持一致。这看似简单的规则，却蕴含着深刻的物理洞见，是检验理论真伪的第一道防线。
 
-然而，当我们从可感的力学世界进入抽象的电磁领域时，我们如何为那些看不见、摸不着的[电场和磁场](@article_id:325058)赋予确切的量纲？我们如何确信描述它们相互作用的复杂方程是正确无误的？这便是本文旨在解决的核心问题。我们将展示，量纲分析并非枯燥的单位换算，而是一把能解开大自然深层秘密的钥匙。
+然而，当我们从可感的力学世界进入抽象的电磁领域时，我们如何为那些看不见、摸不着的[电场和磁场](@keyword=electric_and_magnetic_fields|lang=zh-CN|style=Feynman)赋予确切的量纲？我们如何确信描述它们相互作用的复杂方程是正确无误的？这便是本文旨在解决的核心问题。我们将展示，量纲分析并非枯燥的单位换算，而是一把能解开大自然深层秘密的钥匙。
 
-在接下来的内容中，我们将首先深入“原理与机制”，学习如何从基本定律出发，为[电磁学](@article_id:363853)的核心角色确定其量纲身份，并见证这一过程如何出人意料地揭示了光速的奥秘。随后，在“应用与跨学科连接”部分，我们将把这一工具应用于更广阔的舞台，看它如何将[电路设计](@article_id:325333)、等离子体物理乃至量子力学和广义[相对论](@article_id:327421)等看似无关的领域联系起来。现在，让我们从最基本的问题开始：构成电磁世界的基本“音符”究竟是什么？
+在接下来的内容中，我们将首先深入“原理与机制”，学习如何从基本定律出发，为[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)的核心角色确定其量纲身份，并见证这一过程如何出人意料地揭示了光速的奥秘。随后，在“应用与跨学科连接”部分，我们将把这一工具应用于更广阔的舞台，看它如何将[电路设计](@keyword=circuit_design|lang=zh-CN|style=Feynman)、等离子体物理乃至量子力学和广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)等看似无关的领域联系起来。现在，让我们从最基本的问题开始：构成电磁世界的基本“音符”究竟是什么？
 
 ## 原理与机制
 
@@ -13,37 +13,37 @@
 
 我们如何为那些看不见、摸不着的角色，比如电场或磁通量，确定它们的量纲呢？答案是，从我们能测量的东西——力，开始逆向推理。
 
-我们的“罗塞塔石碑”是[洛伦兹力定律](@article_id:334434)，它描述了一个[电荷](@article_id:339187) $q$ 在[电磁场](@article_id:329585)中受到的力：$\vec{F} = q(\vec{E} + \vec{v} \times \vec{B})$。这个方程将不可见的场与可感知的力（其量纲为 $M L T^{-2}$）联系起来。
+我们的“罗塞塔石碑”是[洛伦兹力定律](@keyword=lorentz_force_law|lang=zh-CN|style=Feynman)，它描述了一个[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman) $q$ 在[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)中受到的力：$\vec{F} = q(\vec{E} + \vec{v} \times \vec{B})$。这个方程将不可见的场与可感知的力（其量纲为 $M L T^{-2}$）联系起来。
 
-从电场部分 $F_E = qE$ 出发，我们可以立刻推断出电场 $\vec{E}$ 的量纲。既然力的量纲是 $[F] = M L T^{-2}$，[电荷](@article_id:339187)的量纲是 $[q] = I T$（电流乘以时间），那么电场的量纲就必然是 $[E] = [F]/[q] = M L T^{-3} I^{-1}$。
+从电场部分 $F_E = qE$ 出发，我们可以立刻推断出电场 $\vec{E}$ 的量纲。既然力的量纲是 $[F] = M L T^{-2}$，[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的量纲是 $[q] = I T$（电流乘以时间），那么电场的量纲就必然是 $[E] = [F]/[q] = M L T^{-3} I^{-1}$。
 
-同样，对于[磁场](@article_id:313708)部分 $F_M = qvB$（我们暂时忽略矢量叉乘带来的方向问题，只关心量纲大小），我们知道速度的量纲是 $[v] = L T^{-1}$。因此，[磁场](@article_id:313708) $\vec{B}$ 的量纲就是 $[B] = [F]/([q][v]) = M T^{-2} I^{-1}$。这些看起来复杂的表达式，其实是从最基本的力的概念一步步推导出来的。更有趣的是，我们发现 $[E]/[B]$ 的量纲是 $(M L T^{-3} I^{-1}) / (M T^{-2} I^{-1}) = L T^{-1}$ —— 这正是一个速度的量纲！这是大自然给我们的第一个暗示：电和磁之间存在着某种深刻的内在联系，而这个联系似乎与“速度”有关。
+同样，对于[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)部分 $F_M = qvB$（我们暂时忽略矢量叉乘带来的方向问题，只关心量纲大小），我们知道速度的量纲是 $[v] = L T^{-1}$。因此，[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman) $\vec{B}$ 的量纲就是 $[B] = [F]/([q][v]) = M T^{-2} I^{-1}$。这些看起来复杂的表达式，其实是从最基本的力的概念一步步推导出来的。更有趣的是，我们发现 $[E]/[B]$ 的量纲是 $(M L T^{-3} I^{-1}) / (M T^{-2} I^{-1}) = L T^{-1}$ —— 这正是一个速度的量纲！这是大自然给我们的第一个暗示：电和磁之间存在着某种深刻的内在联系，而这个联系似乎与“速度”有关。[@problem_id:1596720]
 
-当然，故事还不完整。[电磁场](@article_id:329585)的舞台上还有两位重要的“幕后推手”：[真空介电常数](@article_id:382863) $\epsilon_0$ 和[真空磁导率](@article_id:365235) $\mu_0$。它们描述了真空本身对电场和磁场的“反应”。
+当然，故事还不完整。[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)的舞台上还有两位重要的“幕后推手”：[真空介电常数](@keyword=vacuum_permittivity|lang=zh-CN|style=Feynman) $\epsilon_0$ 和[真空磁导率](@keyword=vacuum_permeability|lang=zh-CN|style=Feynman) $\mu_0$。它们描述了真空本身对电场和磁场的“反应”。
 
-$\epsilon_0$ 出现在库仑定律中，描述了[电荷](@article_id:339187)如何产生电场。我们可以把它想象成真空对电场线的“容许”程度。通过分析[库仑定律](@article_id:299808) $F = \frac{1}{4\pi\epsilon_0} \frac{q_1 q_2}{r^2}$，我们可以“揪出”$\epsilon_0$ 的量纲为 $[M]^{-1} [L]^{-3} [T]^{4} [I]^{2}$。 
+$\epsilon_0$ 出现在库仑定律中，描述了[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)如何产生电场。我们可以把它想象成真空对电场线的“容许”程度。通过分析[库仑定律](@keyword=coulomb_s_law|lang=zh-CN|style=Feynman) $F = \frac{1}{4\pi\epsilon_0} \frac{q_1 q_2}{r^2}$，我们可以“揪出”$\epsilon_0$ 的量纲为 $[M]^{-1} [L]^{-3} [T]^{4} [I]^{2}$。[@problem_id:1596741] [@problem_id:1596717]
 
-而 $\mu_0$ 则出现在描述电流如何产生[磁场](@article_id:313708)的定律中，例如两根平行导线间的磁力公式。它衡量了真空支持[磁场](@article_id:313708)建立的能力。同样，通过[量纲分析](@article_id:300702)，我们能确定 $[\mu_0]$ 的量纲是 $[M][L][T]^{-2}[I]^{-2}$。 
+而 $\mu_0$ 则出现在描述电流如何产生[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的定律中，例如两根平行导线间的磁力公式。它衡量了真空支持[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)建立的能力。同样，通过[量纲分析](@keyword=dimensional_analysis|lang=zh-CN|style=Feynman)，我们能确定 $[\mu_0]$ 的量纲是 $[M][L][T]^{-2}[I]^{-2}$。[@problem_id:1596745] [@problem_id:1596717]
 
-这些常数看起来有点像人为的“账本[调整系数](@article_id:328317)”。的确，在某种程度上它们是。比如，在另一套被称为“[高斯单位制](@article_id:362713)”的体系中，[库仑定律](@article_id:299808)被写成更简洁的 $F = \frac{q'_1 q'_2}{r^2}$，$\epsilon_0$ 似乎消失了！这告诉我们，$\epsilon_0$ 的存在与我们如何定义“库仑”这个[电荷](@article_id:339187)单位息息相关，它反映了我们选择的单位制。 但请不要小看这些常数，它们虽然部分是人为定义的，但它们的组合却揭示了宇宙最深层的秘密。
+这些常数看起来有点像人为的“账本[调整系数](@keyword=adjustment_coefficient|lang=zh-CN|style=Feynman)”。的确，在某种程度上它们是。比如，在另一套被称为“[高斯单位制](@keyword=gaussian_units|lang=zh-CN|style=Feynman)”的体系中，[库仑定律](@keyword=coulomb_s_law|lang=zh-CN|style=Feynman)被写成更简洁的 $F = \frac{q'_1 q'_2}{r^2}$，$\epsilon_0$ 似乎消失了！这告诉我们，$\epsilon_0$ 的存在与我们如何定义“库仑”这个[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)单位息息相关，它反映了我们选择的单位制。[@problem_id:1596723] 但请不要小看这些常数，它们虽然部分是人为定义的，但它们的组合却揭示了宇宙最深层的秘密。
 
 ### 一致性的神力：检验物理定律的“测谎仪”
 
-手握这些基本角色的量纲，我们就有了一个强大的工具——[量纲分析](@article_id:300702)。它就像一个“测谎仪”，可以检验任何物理方程的真伪。如果一个方程两边的量纲不匹配，那它肯定是错的，就像一句话在语法上不通一样。
+手握这些基本角色的量纲，我们就有了一个强大的工具——[量纲分析](@keyword=dimensional_analysis|lang=zh-CN|style=Feynman)。它就像一个“测谎仪”，可以检验任何物理方程的真伪。如果一个方程两边的量纲不匹配，那它肯定是错的，就像一句话在语法上不通一样。
 
-历史上最精彩的案例莫过于 James Clerk Maxwell 对安培定律的修正。起初，[安培定律](@article_id:322981)的形式是 $\nabla \times \vec{B} = \mu_0\vec{J}$，它很好地描述了稳恒电流 $\vec{J}$ 如何产生[磁场](@article_id:313708)。但在处理变化的电场时，这个定律露出了破绽——它在数学上和物理上都是不完备的。
+历史上最精彩的案例莫过于 James Clerk Maxwell 对安培定律的修正。起初，[安培定律](@keyword=ampere_s_law|lang=zh-CN|style=Feynman)的形式是 $\nabla \times \vec{B} = \mu_0\vec{J}$，它很好地描述了稳恒电流 $\vec{J}$ 如何产生[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)。但在处理变化的电场时，这个定律露出了破绽——它在数学上和物理上都是不完备的。
 
-Maxwell 的天才之举，是提出了一个大胆的假设：变化的电场也能像电流一样产生[磁场](@article_id:313708)。他为此在方程中加入了新的一项，即“[位移电流](@article_id:323856)” $\vec{J}_D = \epsilon_0 \frac{\partial \vec{E}}{\partial t}$。这个新理论要站得住脚，首先必须通过量纲的检验。$\vec{J}_D$ 的量纲必须和普通[电流密度](@article_id:323875) $\vec{J}$（单位面积上的电流）的量纲 $I L^{-2}$ 完全相同。
+Maxwell 的天才之举，是提出了一个大胆的假设：变化的电场也能像电流一样产生[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)。他为此在方程中加入了新的一项，即“[位移电流](@keyword=displacement_current|lang=zh-CN|style=Feynman)” $\vec{J}_D = \epsilon_0 \frac{\partial \vec{E}}{\partial t}$。这个新理论要站得住脚，首先必须通过量纲的检验。$\vec{J}_D$ 的量纲必须和普通[电流密度](@keyword=current_density|lang=zh-CN|style=Feynman) $\vec{J}$（单位面积上的电流）的量纲 $I L^{-2}$ 完全相同。
 
 让我们来验证一下。我们已经知道 $[\epsilon_0] = M^{-1} L^{-3} T^{4} I^{2}$ 和 $[E] = M L T^{-3} I^{-1}$。那么，$[\frac{\partial \vec{E}}{\partial t}]$ 的量纲就是 $[E]/[T] = M L T^{-4} I^{-1}$。把它们乘起来：
 $$ [\epsilon_0 \frac{\partial \vec{E}}{\partial t}] = (M^{-1} L^{-3} T^{4} I^{2}) \times (M L T^{-4} I^{-1}) = L^{-2} I $$
-奇迹发生了！量纲完全吻合。这个在纸面上通过[逻辑推演](@article_id:331485)增加的项，其量纲与真实的电流密度别无二致。正是这个小小的补充，不仅使方程组变得完备和自洽，还预言了电磁波的存在。
+奇迹发生了！量纲完全吻合。这个在纸面上通过[逻辑推演](@keyword=logical_deduction|lang=zh-CN|style=Feynman)增加的项，其量纲与真实的电流密度别无二致。正是这个小小的补充，不仅使方程组变得完备和自洽，还预言了电磁波的存在。[@problem_id:1596702]
 
-这种思想的力量是巨大的。即使在今天，当物理学家探索未知领域，提出新的假想定律时，量纲分析也是他们检验新理论的第一步。例如，如果有人提出一个修正的法拉第定律 $\mathcal{E} = - C_1 \frac{d\Phi_B}{dt} - C_2 \Phi_B$，其中 $\mathcal{E}$ 是[感应电动势](@article_id:328079)。为了使方程成立，等号右边的每一项都必须具有[电动势](@article_id:373942)（能量/[电荷](@article_id:339187)）的量纲。这就要求 $[C_2] \cdot [\Phi_B] = [\mathcal{E}]$。通过简单的计算，我们可以发现 $C_2$ 的量纲必须是 $T^{-1}$，即时间的倒数。这立刻告诉我们，$C_2$ 可能与某种衰减速率或[振动频率](@article_id:330258)有关，为实验指明了方向。
+这种思想的力量是巨大的。即使在今天，当物理学家探索未知领域，提出新的假想定律时，量纲分析也是他们检验新理论的第一步。例如，如果有人提出一个修正的法拉第定律 $\mathcal{E} = - C_1 \frac{d\Phi_B}{dt} - C_2 \Phi_B$，其中 $\mathcal{E}$ 是[感应电动势](@keyword=induced_emf|lang=zh-CN|style=Feynman)。为了使方程成立，等号右边的每一项都必须具有[电动势](@keyword=electrodynamic_potentials|lang=zh-CN|style=Feynman)（能量/[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)）的量纲。这就要求 $[C_2] \cdot [\Phi_B] = [\mathcal{E}]$。通过简单的计算，我们可以发现 $C_2$ 的量纲必须是 $T^{-1}$，即时间的倒数。这立刻告诉我们，$C_2$ 可能与某种衰减速率或[振动频率](@keyword=vibrational_frequency|lang=zh-CN|style=Feynman)有关，为实验指明了方向。[@problem_id:1596769]
 
 ### 终极乐章：光速的揭示
 
-现在，让我们回到那两个看似平淡无奇的常数 $\epsilon_0$ 和 $\mu_0$。一个来自[静电学](@article_id:300932)（研究静止[电荷](@article_id:339187)），另一个来自[静磁学](@article_id:300565)（研究稳恒电流）。它们就像是两个独立剧本里的角色。Maxwell 的工作暗示它们之间有更深的联系。让我们把它们乘在一起，看看会发生什么。
+现在，让我们回到那两个看似平淡无奇的常数 $\epsilon_0$ 和 $\mu_0$。一个来自[静电学](@keyword=electrostatics|lang=zh-CN|style=Feynman)（研究静止[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)），另一个来自[静磁学](@keyword=magnetostatics|lang=zh-CN|style=Feynman)（研究稳恒电流）。它们就像是两个独立剧本里的角色。Maxwell 的工作暗示它们之间有更深的联系。让我们把它们乘在一起，看看会发生什么。
 $$ [\epsilon_0 \mu_0] = (M^{-1} L^{-3} T^{4} I^{2}) \times (M L T^{-2} I^{-2}) = L^{-2} T^2 $$
 这个结果非常简洁，它竟然是 (长度/时间)$^{-2}$，也就是速度的平方的倒数！
 
@@ -51,9 +51,9 @@ $$ [\epsilon_0 \mu_0] = (M^{-1} L^{-3} T^{4} I^{2}) \times (M L T^{-2} I^{-2}) =
 
 这正是光速 $c$。
 
-这是[物理学史](@article_id:347926)上最辉煌的时刻之一。两个从桌面实验（电池、导线、带电小球）中总结出的常数，它们的神秘组合竟然揭示了由天文学家测定的光速。电、磁、光，这三种看似风马牛不相及的现象，在这一刻被无可辩驳地统一起来。光，不过是一种在空间中传播的电磁扰动。Maxwell 的方程组，就是这首宇宙交响乐中关于光的华彩乐章。
+这是[物理学史](@keyword=history_of_physics|lang=zh-CN|style=Feynman)上最辉煌的时刻之一。两个从桌面实验（电池、导线、带电小球）中总结出的常数，它们的神秘组合竟然揭示了由天文学家测定的光速。电、磁、光，这三种看似风马牛不相及的现象，在这一刻被无可辩驳地统一起来。光，不过是一种在空间中传播的电磁扰动。Maxwell 的方程组，就是这首宇宙交响乐中关于光的华彩乐章。[@problem_id:1596717]
 
-### 一枚硬币的两面：电、磁与[相对论](@article_id:327421)
+### 一枚硬币的两面：电、磁与[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)
 
 电与磁的统一，其意义比我们想象的还要深刻。它甚至动摇了我们对空间和时间本身的看法。还记得我们之前发现 $[E]/[B]$ 的量纲是速度吗？这并非巧合。
 
@@ -61,18 +61,18 @@ $$ [\epsilon_0 \mu_0] = (M^{-1} L^{-3} T^{4} I^{2}) \times (M L T^{-2} I^{-2}) =
 $$ \frac{K_M}{K_E} = \frac{\mu_0 q^2 v^2 / r^2}{q^2 / (\epsilon_0 r^2)} = \mu_0 \epsilon_0 v^2 $$
 利用我们刚刚发现的伟大关系 $\mu_0 \epsilon_0 = 1/c^2$，这个比值变成了：
 $$ \frac{K_M}{K_E} = \frac{v^2}{c^2} $$
-这个简洁的结果令人震撼！它告诉我们，磁力与电力的相对强度，完全取决于运动速度与光速的比较。磁力并非一种与电力并列的独立存在，它更像是电力在[相对论](@article_id:327421)效应下的一个“副产品”。 在一个观察者看来是纯粹的静电场，对于一个相对于他高速运动的观察者来说，就会同时看到电场和磁场。磁现象的出现，是电现象与[时空结构](@article_id:319335)（由[相对论](@article_id:327421)描述）相互作用的结果。它们是同一枚电磁硬币的两个侧面。
+这个简洁的结果令人震撼！它告诉我们，磁力与电力的相对强度，完全取决于运动速度与光速的比较。磁力并非一种与电力并列的独立存在，它更像是电力在[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)效应下的一个“副产品”。[@problem_id:1596742] 在一个观察者看来是纯粹的静电场，对于一个相对于他高速运动的观察者来说，就会同时看到电场和磁场。磁现象的出现，是电现象与[时空结构](@keyword=spacetime_structure|lang=zh-CN|style=Feynman)（由[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)描述）相互作用的结果。它们是同一枚电磁硬币的两个侧面。
 
 ### 尾声：宇宙的“魔术数字”
 
-我们的探索从最基本的量纲 M、L、T、I 开始，一路走来，我们看到了物理定律的内在和谐、电与磁的宏[大统一](@article_id:320777)，甚至瞥见了[相对论](@article_id:327421)的影子。在旅程的终点，我们不妨再向前一步，触碰一个更深层次的谜题。
+我们的探索从最基本的量纲 M、L、T、I 开始，一路走来，我们看到了物理定律的内在和谐、电与磁的宏[大统一](@keyword=grand_unification|lang=zh-CN|style=Feynman)，甚至瞥见了[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)的影子。在旅程的终点，我们不妨再向前一步，触碰一个更深层次的谜题。
 
 物理学中，最令人着迷的是那些“无量纲常数”——它们是纯粹的数字，不依赖于任何单位制。无论你用米还是英尺，用秒还是年，这些数字永远不变。它们是宇宙出厂时就设定好的“参数”。
 
-其中最著名的就是[精细结构常数](@article_id:344801) $\alpha$。它由[基本电荷](@article_id:335958) $e$、普朗克常数 $\hbar$、光速 $c$ 和[介电常数](@article_id:332052) $\epsilon_0$ 组合而成：
+其中最著名的就是[精细结构常数](@keyword=alpha_constant|lang=zh-CN|style=Feynman) $\alpha$。它由[基本电荷](@keyword=elementary_charge|lang=zh-CN|style=Feynman) $e$、普朗克常数 $\hbar$、光速 $c$ 和[介电常数](@keyword=permittivity|lang=zh-CN|style=Feynman) $\epsilon_0$ 组合而成：
 $$ \alpha = \frac{e^2}{4\pi\epsilon_0 \hbar c} $$
-如果你有耐心，可以用我们之前的方法去验证一下，这个组合的量纲确实是1，它是一个纯数。 这个数字的值约等于 $1/137$。
+如果你有耐心，可以用我们之前的方法去验证一下，这个组合的量纲确实是1，它是一个纯数。[@problem_id:1596736] 这个数字的值约等于 $1/137$。
 
-它是什么？它是电磁[相互作用强度](@article_id:371239)的终极量度。原子为何能稳定存在？恒星为何能发光？你看到的每一种颜色，本质上都由这个小小的数字决定。如果它的值稍有不同，我们所知的宇宙将不复存在。
+它是什么？它是电磁[相互作用强度](@keyword=interaction_strength|lang=zh-CN|style=Feynman)的终极量度。原子为何能稳定存在？恒星为何能发光？你看到的每一种颜色，本质上都由这个小小的数字决定。如果它的值稍有不同，我们所知的宇宙将不复存在。
 
-为什么是 $1/137$？而不是别的什么数？没有人知道答案。伟大的物理学家 [Richard Feynman](@article_id:316284) 曾说：“所有有作为的理论物理学家都应该把这个数贴在墙上，并为之忧心忡忡。”这是一个大自然呈现在我们面前的“魔术数字”，一个沉默的谜语，或许正指向一个我们尚未理解的、更深层次的物理实在。而这一切的思考，都始于我们对物理世界最基本“语法”——量纲——的好奇与探索。
+为什么是 $1/137$？而不是别的什么数？没有人知道答案。伟大的物理学家 [Richard Feynman](@keyword=richard_feynman|lang=zh-CN|style=Feynman) 曾说：“所有有作为的理论物理学家都应该把这个数贴在墙上，并为之忧心忡忡。”这是一个大自然呈现在我们面前的“魔术数字”，一个沉默的谜语，或许正指向一个我们尚未理解的、更深层次的物理实在。而这一切的思考，都始于我们对物理世界最基本“语法”——量纲——的好奇与探索。

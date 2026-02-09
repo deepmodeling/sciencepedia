@@ -1,9 +1,9 @@
 ## Introduction
 How can we predict the long-term behavior of a system, whether it's a swinging pendulum, a developing ecosystem, or an electrical circuit? Dynamical systems provide the language to describe such evolution, but understanding the complete picture from a set of equations can be daunting. The intricate dance of trajectories often seems overwhelmingly complex, hiding the underlying rules that govern the flow.
 
-This article addresses a fundamental problem: how to classify the behavior of these systems without tracking every possible starting point. It reveals a surprisingly simple and elegant method for understanding the qualitative nature of [two-dimensional linear systems](@article_id:273307), a bedrock for analyzing more complex phenomena.
+This article addresses a fundamental problem: how to classify the behavior of these systems without tracking every possible starting point. It reveals a surprisingly simple and elegant method for understanding the qualitative nature of [two-dimensional linear systems](@keyword=two_dimensional_linear_systems|lang=en-US|style=Feynman), a bedrock for analyzing more complex phenomena.
 
-We will embark on a journey in three parts. In **Principles and Mechanisms**, we will uncover the mathematical "skeleton" of 2D linear systems, showing how two simple numbers—the trace and determinant—can predict everything from stable equilibrium to [rotational motion](@article_id:172145). Next, in **Applications and Interdisciplinary Connections**, we will see this abstract map come to life, applying it to real-world problems in engineering, physics, and biology, and witnessing how changes in a system correspond to journeys across the plane. Finally, **Hands-On Practices** will provide opportunities to apply these concepts to concrete problems, solidifying your understanding.
+We will embark on a journey in three parts. In **Principles and Mechanisms**, we will uncover the mathematical "skeleton" of 2D linear systems, showing how two simple numbers—the trace and determinant—can predict everything from stable equilibrium to [rotational motion](@keyword=rotational_motion|lang=en-US|style=Feynman). Next, in **Applications and Interdisciplinary Connections**, we will see this abstract map come to life, applying it to real-world problems in engineering, physics, and biology, and witnessing how changes in a system correspond to journeys across the plane. Finally, **Hands-On Practices** will provide opportunities to apply these concepts to concrete problems, solidifying your understanding.
 
 This framework, known as the Trace-Determinant Classification, offers a profound insight: that behind the apparent complexity of dynamic behavior lies a simple, universal, and beautiful geometric structure. Let's begin by exploring its fundamental principles.
 
@@ -11,7 +11,7 @@ This framework, known as the Trace-Determinant Classification, offers a profound
 
 Imagine you are standing at the origin of a vast, flat plain. All around you, the ground itself is flowing like a river. At every point, there is a tiny arrow painted on the ground, a vector, telling you which way the flow is moving and how fast. This is the **phase space** of a dynamical system. If you drop a leaf at some point, it will follow a path, a **trajectory**, dictated by these arrows. Our mission is to understand the entire landscape of this flow—where do things end up? Do they fly off to infinity, spiral into a whirlpool, or orbit peacefully?
 
-For [two-dimensional linear systems](@article_id:273307), of the form $\frac{d\vec{x}}{dt} = A\vec{x}$, this "flow" is surprisingly structured. The key to understanding the entire infinite landscape of trajectories lies not in tracking every possible starting point, but in finding the system's hidden "skeleton"—a set of special directions and rates that governs all motion.
+For [two-dimensional linear systems](@keyword=two_dimensional_linear_systems|lang=en-US|style=Feynman), of the form $\frac{d\vec{x}}{dt} = A\vec{x}$, this "flow" is surprisingly structured. The key to understanding the entire infinite landscape of trajectories lies not in tracking every possible starting point, but in finding the system's hidden "skeleton"—a set of special directions and rates that governs all motion.
 
 ### The Secret of Simple Motion: Eigenvalues and Eigenvectors
 
@@ -23,11 +23,11 @@ $$
 A\vec{v} = \lambda\vec{v}
 $$
 
-This is the famous **[eigenvalue equation](@article_id:272427)**. The special vectors $\vec{v}$ are called **eigenvectors**, and they represent the fundamental, straight-line-motion directions of our system. The corresponding number $\lambda$ is the **eigenvalue**, a scalar that tells us the *rate* of stretching or shrinking along that eigenvector. If $\lambda$ is positive, the flow moves away from the origin along $\vec{v}$; if $\lambda$ is negative, it moves toward the origin. If $\lambda$ is a complex number, something even more interesting happens: the motion involves rotation, which we'll see shortly. Every solution to the system is just a combination of these simple "eigen-motions".
+This is the famous **[eigenvalue equation](@keyword=eigenvalue_equation|lang=en-US|style=Feynman)**. The special vectors $\vec{v}$ are called **eigenvectors**, and they represent the fundamental, straight-line-motion directions of our system. The corresponding number $\lambda$ is the **eigenvalue**, a scalar that tells us the *rate* of stretching or shrinking along that eigenvector. If $\lambda$ is positive, the flow moves away from the origin along $\vec{v}$; if $\lambda$ is negative, it moves toward the origin. If $\lambda$ is a complex number, something even more interesting happens: the motion involves rotation, which we'll see shortly. Every solution to the system is just a combination of these simple "eigen-motions".
 
 ### Two Numbers to Rule Them All: The Trace and Determinant
 
-So, to understand the system, we need to find its eigenvalues. How do we do that? The eigenvalue equation $A\vec{v} = \lambda\vec{v}$ can be rewritten as $(A - \lambda I)\vec{v} = \vec{0}$, where $I$ is the [identity matrix](@article_id:156230). This equation has a non-zero solution for $\vec{v}$ only if the matrix $(A - \lambda I)$ is "singular"—that is, if its determinant is zero.
+So, to understand the system, we need to find its eigenvalues. How do we do that? The eigenvalue equation $A\vec{v} = \lambda\vec{v}$ can be rewritten as $(A - \lambda I)\vec{v} = \vec{0}$, where $I$ is the [identity matrix](@keyword=identity_matrix|lang=en-US|style=Feynman). This equation has a non-zero solution for $\vec{v}$ only if the matrix $(A - \lambda I)$ is "singular"—that is, if its determinant is zero.
 
 $$
 \det(A - \lambda I) = 0
@@ -57,7 +57,7 @@ So, if experimental data on some competing technologies reveals that the system 
 
 ### The Grand Atlas: Charting Dynamics on the Trace-Determinant Plane
 
-Since any 2D linear system is completely characterized by its trace $\tau$ and determinant $\Delta$, we can create a "map of all possible behaviors" on a 2D plane with $\tau$ as the horizontal axis and $\Delta$ as the vertical axis. Each point $(\tau, \Delta)$ on this plane represents a whole family of [dynamical systems](@article_id:146147) that behave in the same qualitative way. Let's explore this map.
+Since any 2D linear system is completely characterized by its trace $\tau$ and determinant $\Delta$, we can create a "map of all possible behaviors" on a 2D plane with $\tau$ as the horizontal axis and $\Delta$ as the vertical axis. Each point $(\tau, \Delta)$ on this plane represents a whole family of [dynamical systems](@keyword=dynamical_systems|lang=en-US|style=Feynman) that behave in the same qualitative way. Let's explore this map.
 
 The eigenvalues are the roots of $\lambda^2 - \tau\lambda + \Delta = 0$, given by the quadratic formula:
 
@@ -65,7 +65,7 @@ $$
 \lambda_{1,2} = \frac{\tau \pm \sqrt{\tau^2 - 4\Delta}}{2}
 $$
 
-The nature of these roots—whether they are real, complex, positive, or negative—depends critically on the signs of $\Delta$ and the [discriminant](@article_id:152126), $\tau^2 - 4\Delta$.
+The nature of these roots—whether they are real, complex, positive, or negative—depends critically on the signs of $\Delta$ and the [discriminant](@keyword=discriminant|lang=en-US|style=Feynman), $\tau^2 - 4\Delta$.
 
 **The Great Divide: The Determinant Axis ($\Delta=0$)**
 
@@ -77,18 +77,18 @@ If $\Delta$ is negative, then $\lambda_1 \lambda_2 < 0$. This means that if the 
 
 **The Upper Half-Plane: Nodes and Spirals ($\Delta > 0$)**
 
-Now for the interesting part, when $\Delta > 0$. Here, the eigenvalues either have the same sign (if real) or are a [complex conjugate pair](@article_id:149645). The behavior is governed by the discriminant, $\tau^2 - 4\Delta$.
+Now for the interesting part, when $\Delta > 0$. Here, the eigenvalues either have the same sign (if real) or are a [complex conjugate pair](@keyword=complex_conjugate_pair|lang=en-US|style=Feynman). The behavior is governed by the discriminant, $\tau^2 - 4\Delta$.
 
-*   **The Parabolic Frontier:** The boundary case is when the [discriminant](@article_id:152126) is zero: $\tau^2 - 4\Delta = 0$, or $\Delta = \frac{\tau^2}{4}$. This is a parabola opening upwards in our plane. On this exact curve, the two eigenvalues are identical, $\lambda_1 = \lambda_2 = \tau/2$. These are the [critically damped systems](@article_id:264244), often called **degenerate nodes** or star nodes.
+*   **The Parabolic Frontier:** The boundary case is when the [discriminant](@keyword=discriminant|lang=en-US|style=Feynman) is zero: $\tau^2 - 4\Delta = 0$, or $\Delta = \frac{\tau^2}{4}$. This is a parabola opening upwards in our plane. On this exact curve, the two eigenvalues are identical, $\lambda_1 = \lambda_2 = \tau/2$. These are the [critically damped systems](@keyword=critically_damped_systems|lang=en-US|style=Feynman), often called **degenerate nodes** or star nodes.
 
-*   **The Realm of Spirals:** Above the parabola, where $\tau^2 - 4\Delta < 0$, the square root is imaginary. This gives a [complex conjugate pair](@article_id:149645) of eigenvalues, $\lambda = \frac{\tau}{2} \pm i\omega$. The imaginary part, $i\omega$, creates rotation, while the real part, $\frac{\tau}{2}$, governs the amplitude.
+*   **The Realm of Spirals:** Above the parabola, where $\tau^2 - 4\Delta < 0$, the square root is imaginary. This gives a [complex conjugate pair](@keyword=complex_conjugate_pair|lang=en-US|style=Feynman) of eigenvalues, $\lambda = \frac{\tau}{2} \pm i\omega$. The imaginary part, $i\omega$, creates rotation, while the real part, $\frac{\tau}{2}$, governs the amplitude.
     *   If $\tau < 0$, the real part is negative, and we have a **stable spiral**. Trajectories spiral inward toward the origin.
     *   If $\tau > 0$, the real part is positive, and we have an **unstable spiral**. Trajectories spiral outward.
     *   If $\tau = 0$, we are on the positive $\Delta$-axis. The eigenvalues are purely imaginary, $\lambda = \pm i\omega$. The motion is a perfect, closed orbit called a **center**. There is no decay or growth, just pure oscillation.
 
 *   **The Land of Nodes:** Below the parabola (but still with $\Delta>0$), where $\tau^2 - 4\Delta > 0$, we have two distinct, real eigenvalues of the same sign (since their product $\Delta$ is positive). This creates a **node**.
     *   If $\tau < 0$, both eigenvalues are negative. All trajectories flow directly into the origin. This is a **stable node**.
-    *   If $\tau > 0$, both eigenvalues are positive. All trajectories flow away from the origin. This is an **[unstable node](@article_id:270482)**.
+    *   If $\tau > 0$, both eigenvalues are positive. All trajectories flow away from the origin. This is an **[unstable node](@keyword=unstable_node|lang=en-US|style=Feynman)**.
 
 With this, our map is complete. Just by calculating two numbers, $\tau$ and $\Delta$, from any $2 \times 2$ matrix, we can pinpoint its location on this map and immediately know the qualitative nature of its dynamics.
 
@@ -96,7 +96,7 @@ With this, our map is complete. Just by calculating two numbers, $\tau$ and $\De
 
 This classification is elegant, but is it just a mathematical trick? Not at all. The trace and determinant have profound physical and geometric interpretations that give them life.
 
-Imagine you place a tiny, flexible loop of initial points in the [phase plane](@article_id:167893). As the system evolves, this loop is carried along and distorted by the flow. Let the area of this loop at time $t$ be $\mathcal{A}(t)$. The fractional rate of change of this area turns out to be astonishingly simple:
+Imagine you place a tiny, flexible loop of initial points in the [phase plane](@keyword=phase_plane|lang=en-US|style=Feynman). As the system evolves, this loop is carried along and distorted by the flow. Let the area of this loop at time $t$ be $\mathcal{A}(t)$. The fractional rate of change of this area turns out to be astonishingly simple:
 
 $$
 \frac{1}{\mathcal{A}}\frac{d\mathcal{A}}{dt} = \nabla \cdot \vec{F} = \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y}
@@ -108,17 +108,17 @@ $$
 \frac{1}{\mathcal{A}}\frac{d\mathcal{A}}{dt} = \tau
 $$
 
-The **trace is the local rate of area expansion or contraction in the phase space.** If $\tau < 0$, any patch of initial conditions shrinks in area as it evolves, pulling the system towards an attractor. This is why the entire left-half plane ($\tau < 0$) corresponds to [stable systems](@article_id:179910) (stable nodes, stable spirals). If $\tau > 0$, areas expand, characteristic of an unstable system.
+The **trace is the local rate of area expansion or contraction in the phase space.** If $\tau < 0$, any patch of initial conditions shrinks in area as it evolves, pulling the system towards an attractor. This is why the entire left-half plane ($\tau < 0$) corresponds to [stable systems](@keyword=stable_systems|lang=en-US|style=Feynman) (stable nodes, stable spirals). If $\tau > 0$, areas expand, characteristic of an unstable system.
 
-And what about the special case when $\tau=0$? This means area is perfectly conserved! The flow just moves regions around without changing their size. Systems with this property are called **conservative** or **Hamiltonian**. This is the vertical axis on our map. It's on this line, and only this line, that we can find centers—the perfect, [periodic orbits](@article_id:274623).
+And what about the special case when $\tau=0$? This means area is perfectly conserved! The flow just moves regions around without changing their size. Systems with this property are called **conservative** or **Hamiltonian**. This is the vertical axis on our map. It's on this line, and only this line, that we can find centers—the perfect, [periodic orbits](@keyword=periodic_orbits|lang=en-US|style=Feynman).
 
-This gives us a deep insight. A novice engineer might dream of creating a "stable center"—a system that has [closed orbits](@article_id:273141) which also shrink towards the origin. But our newfound physical understanding shows this is impossible. Closed orbits (a center) require area preservation, meaning $\tau=0$. Shrinking orbits (stability) require area contraction, meaning $\tau < 0$. An object cannot be both zero and less than zero. The very request is a contradiction, a misunderstanding of the fundamental roles of trace and determinant.
+This gives us a deep insight. A novice engineer might dream of creating a "stable center"—a system that has [closed orbits](@keyword=closed_orbits|lang=en-US|style=Feynman) which also shrink towards the origin. But our newfound physical understanding shows this is impossible. Closed orbits (a center) require area preservation, meaning $\tau=0$. Shrinking orbits (stability) require area contraction, meaning $\tau < 0$. An object cannot be both zero and less than zero. The very request is a contradiction, a misunderstanding of the fundamental roles of trace and determinant.
 
 ### The Unchanging Truth: Why the Picture is Universal
 
-One last question remains. Suppose two scientists, Alice and Bob, are studying the same physical system—say, a drone's control system—but using different [coordinate systems](@article_id:148772). Alice uses variables $\vec{x}$ and gets a matrix $A$. Bob uses variables $\vec{y}$ and gets a matrix $B$. Since their coordinates are linearly related ($\vec{y} = P\vec{x}$), their matrices will be related by a **similarity transformation**: $B = PAP^{-1}$.
+One last question remains. Suppose two scientists, Alice and Bob, are studying the same physical system—say, a drone's control system—but using different [coordinate systems](@keyword=coordinate_systems|lang=en-US|style=Feynman). Alice uses variables $\vec{x}$ and gets a matrix $A$. Bob uses variables $\vec{y}$ and gets a matrix $B$. Since their coordinates are linearly related ($\vec{y} = P\vec{x}$), their matrices will be related by a **similarity transformation**: $B = PAP^{-1}$.
 
-Will Bob's classification on the [trace-determinant plane](@article_id:162963) be different from Alice's? If so, our beautiful map would be a mere artifact of our chosen perspective, not a description of physical reality. Fortunately, nature is kinder than that. It is a fundamental property of linear algebra that the trace and determinant are **invariant** under similarity transformations:
+Will Bob's classification on the [trace-determinant plane](@keyword=trace_determinant_plane|lang=en-US|style=Feynman) be different from Alice's? If so, our beautiful map would be a mere artifact of our chosen perspective, not a description of physical reality. Fortunately, nature is kinder than that. It is a fundamental property of linear algebra that the trace and determinant are **invariant** under similarity transformations:
 
 $$
 \operatorname{tr}(B) = \operatorname{tr}(PAP^{-1}) = \operatorname{tr}(A)
@@ -127,4 +127,4 @@ $$
 \det(B) = \det(PAP^{-1}) = \det(A)
 $$
 
-This is a spectacular result. It means that no matter how you look at the system, no matter what (linear) coordinates you use to describe it, the trace and determinant remain the same. The system's location on the $(\tau, \Delta)$ plane is an intrinsic, objective property. The stability of a drone, the nature of a chemical equilibrium, the behavior of an oscillator—these are facts of the world, independent of our description. The [trace-determinant plane](@article_id:162963) is not just a mathematical tool; it is a window into the invariant, underlying structure of the dynamics itself.
+This is a spectacular result. It means that no matter how you look at the system, no matter what (linear) coordinates you use to describe it, the trace and determinant remain the same. The system's location on the $(\tau, \Delta)$ plane is an intrinsic, objective property. The stability of a drone, the nature of a chemical equilibrium, the behavior of an oscillator—these are facts of the world, independent of our description. The [trace-determinant plane](@keyword=trace_determinant_plane|lang=en-US|style=Feynman) is not just a mathematical tool; it is a window into the invariant, underlying structure of the dynamics itself.

@@ -3,13 +3,13 @@ Our everyday intuition is linear. We understand addition and subtraction. Yet, f
 
 This article introduces the powerful mathematical language of logarithms and their most famous application: the decibel. We will bridge the gap between our linear intuition and the multiplicative world that governs physics, biology, and engineering. You will learn not just what a decibel is, but why it is the essential tool for taming enormous numbers and uncovering hidden patterns in data.
 
-First, in **Principles and Mechanisms**, we will demystify the decibel, exploring the core formulas for power and amplitude and the surprising arithmetic of combining signals. Next, in **Applications and Interdisciplinary Connections**, we will journey through diverse scientific fields—from [seismology](@article_id:203016) and astronomy to biology and information theory—to witness how logarithmic scales provide profound insights. Finally, the **Hands-On Practices** section will allow you to solidify your understanding by applying these concepts to solve practical problems. By the end, you will not only be able to calculate with decibels but also think logarithmically, a critical skill for any student of science or engineering.
+First, in **Principles and Mechanisms**, we will demystify the decibel, exploring the core formulas for power and amplitude and the surprising arithmetic of combining signals. Next, in **Applications and Interdisciplinary Connections**, we will journey through diverse scientific fields—from [seismology](@keyword=seismology|lang=en-US|style=Feynman) and astronomy to biology and information theory—to witness how logarithmic scales provide profound insights. Finally, the **Hands-On Practices** section will allow you to solidify your understanding by applying these concepts to solve practical problems. By the end, you will not only be able to calculate with decibels but also think logarithmically, a critical skill for any student of science or engineering.
 
 ## Principles and Mechanisms
 
-Have you ever tried to draw a map of the solar system to scale on a single sheet of paper? If you make the Sun the size of a golf ball, Earth becomes a tiny speck about 15 feet away. But Neptune, the outermost planet, would be nearly 600 feet away, far off the page, across the street, and in your neighbor's yard! The universe, and many of the phenomena within it, operates on scales so vast that our ordinary, linear way of thinking and measuring simply breaks down. Our own senses know this trick. The difference between a quiet library and a normal conversation feels significant, but the difference between a loud rock concert and a [jet engine](@article_id:198159) seems less dramatic, even though the energy difference in the latter case is monstrously larger.
+Have you ever tried to draw a map of the solar system to scale on a single sheet of paper? If you make the Sun the size of a golf ball, Earth becomes a tiny speck about 15 feet away. But Neptune, the outermost planet, would be nearly 600 feet away, far off the page, across the street, and in your neighbor's yard! The universe, and many of the phenomena within it, operates on scales so vast that our ordinary, linear way of thinking and measuring simply breaks down. Our own senses know this trick. The difference between a quiet library and a normal conversation feels significant, but the difference between a loud rock concert and a [jet engine](@keyword=jet_engine|lang=en-US|style=Feynman) seems less dramatic, even though the energy difference in the latter case is monstrously larger.
 
-Our perception doesn't register increases in energy linearly; it [registers](@article_id:170174) increases in *ratios*. Nature, it seems, often "thinks" in terms of multiplication, not addition. To keep up, we need a mathematical language that does the same. This language is the logarithm, and its most famous practical application in science and engineering is the decibel.
+Our perception doesn't register increases in energy linearly; it [registers](@keyword=registers|lang=en-US|style=Feynman) increases in *ratios*. Nature, it seems, often "thinks" in terms of multiplication, not addition. To keep up, we need a mathematical language that does the same. This language is the logarithm, and its most famous practical application in science and engineering is the decibel.
 
 ### The Decibel: A Universal Language for Ratios
 
@@ -43,7 +43,7 @@ $$
 
 This means you need to increase the sound's energy by about 26% for it to be just perceptibly louder. This is far from a linear relationship!
 
-The same logic applies to signal loss. In electronics, the performance of a filter is often characterized by its "half-power points"—the frequencies where it cuts the [signal power](@article_id:273430) in half. By how many decibels is the signal attenuated at these points? The ratio is $0.5$, so the change is $10 \log_{10}(0.5) = -10 \log_{10}(2) \approx -3.01$ dB. This is why you'll constantly hear engineers talk about the "minus 3 dB point" of a filter or an antenna; it's the universal shorthand for the edge of its effective operating range.
+The same logic applies to signal loss. In electronics, the performance of a filter is often characterized by its "half-power points"—the frequencies where it cuts the [signal power](@keyword=signal_power|lang=en-US|style=Feynman) in half. By how many decibels is the signal attenuated at these points? The ratio is $0.5$, so the change is $10 \log_{10}(0.5) = -10 \log_{10}(2) \approx -3.01$ dB. This is why you'll constantly hear engineers talk about the "minus 3 dB point" of a filter or an antenna; it's the universal shorthand for the edge of its effective operating range.
 
 ### The Plot Thickens: Amplitude versus Intensity
 
@@ -69,7 +69,7 @@ $$
 \Delta\beta = 10 \log_{10}(4) = 10 \log_{10}(2^2) = 20 \log_{10}(2) \approx 6.02 \text{ dB}
 $$
 
-This is a fantastic result. Two incoherent sources give +3 dB. Two [coherent sources](@article_id:167974) give +6 dB. The difference between 3 dB and 6 dB is the difference between adding powers and adding amplitudes. It’s a profound acoustic lesson captured in a simple number.
+This is a fantastic result. Two incoherent sources give +3 dB. Two [coherent sources](@keyword=coherent_sources|lang=en-US|style=Feynman) give +6 dB. The difference between 3 dB and 6 dB is the difference between adding powers and adding amplitudes. It’s a profound acoustic lesson captured in a simple number.
 
 ### From Ratios to Real-World Units
 
@@ -81,11 +81,11 @@ $$
 4.0 = 20 \log_{10}\left(\frac{V}{0.775 \text{ V}}\right)
 $$
 
-Solving for $V$ gives about $1.23$ volts. It's just the same decibel formula, but with a universally agreed-upon anchor point. Likewise, dBm is power relative to 1 milliwatt, dBW is power relative to 1 watt, and so on. The **Signal-to-Noise Ratio (SNR)** we met earlier is another perfect example; it's the decibel ratio of [signal power](@article_id:273430) to noise power, a critical measure of clarity in any communication system, from a faint signal from deep space to your Wi-Fi router.
+Solving for $V$ gives about $1.23$ volts. It's just the same decibel formula, but with a universally agreed-upon anchor point. Likewise, dBm is power relative to 1 milliwatt, dBW is power relative to 1 watt, and so on. The **Signal-to-Noise Ratio (SNR)** we met earlier is another perfect example; it's the decibel ratio of [signal power](@keyword=signal_power|lang=en-US|style=Feynman) to noise power, a critical measure of clarity in any communication system, from a faint signal from deep space to your Wi-Fi router.
 
 ### The Physicist's Secret Weapon: Logarithmic Plots
 
-The power of logarithms goes far beyond the decibel. It provides one of the most powerful tools in a scientist's arsenal for decoding nature's laws: the logarithmic plot. Many relationships in physics are **[power laws](@article_id:159668)** of the form $y = kx^n$. The mass of a cube is related to its side length $L$ by $M = \rho L^3$. The gravitational force between two planets is $F = G m_1 m_2 / r^2$. These are everywhere.
+The power of logarithms goes far beyond the decibel. It provides one of the most powerful tools in a scientist's arsenal for decoding nature's laws: the logarithmic plot. Many relationships in physics are **[power laws](@keyword=power_laws|lang=en-US|style=Feynman)** of the form $y = kx^n$. The mass of a cube is related to its side length $L$ by $M = \rho L^3$. The gravitational force between two planets is $F = G m_1 m_2 / r^2$. These are everywhere.
 
 How do we test if our data fits a power law, and how do we find the exponent $n$? Plotting $y$ versus $x$ gives a curve, which is hard to analyze. But what if we take the logarithm of the whole equation?
 
@@ -93,7 +93,7 @@ $$
 \log(y) = \log(kx^n) = \log(k) + \log(x^n) = \log(k) + n \log(x)
 $$
 
-Look at that! If we plot $\log(y)$ on the vertical axis against $\log(x)$ on the horizontal axis (a **[log-log plot](@article_id:273730)**), we should get a straight line with a slope of $n$. The underlying law, hidden in the curve, is laid bare as a simple straight line whose slope gives us the crucial exponent. A materials scientist measuring the mass of nanocubes of different sizes can plot the log of mass vs. the log of the side length. The fact that the points form a straight line confirms the relationship, and the slope of that line, which will be 3, directly verifies the cubic dependence and can be used to calculate the material's density.
+Look at that! If we plot $\log(y)$ on the vertical axis against $\log(x)$ on the horizontal axis (a **[log-log plot](@keyword=log_log_plot|lang=en-US|style=Feynman)**), we should get a straight line with a slope of $n$. The underlying law, hidden in the curve, is laid bare as a simple straight line whose slope gives us the crucial exponent. A materials scientist measuring the mass of nanocubes of different sizes can plot the log of mass vs. the log of the side length. The fact that the points form a straight line confirms the relationship, and the slope of that line, which will be 3, directly verifies the cubic dependence and can be used to calculate the material's density.
 
 Another common relationship is **exponential growth** or decay, $P = P_0 e^{kt}$ or $P=P_0 10^{at}$. Think of a bacterial colony growing in a dish. Take the logarithm again:
 
@@ -101,6 +101,6 @@ $$
 \log_{10}(P) = \log_{10}(P_0 10^{at}) = \log_{10}(P_0) + at
 $$
 
-If we plot $\log_{10}(P)$ on a vertical axis against time $t$ on a linear horizontal axis (a **[semi-log plot](@article_id:272963)**), we again get a straight line. The slope of this line, $a$, gives us the growth rate. A microbiologist seeing a straight line on their [semi-log plot](@article_id:272963) immediately knows they are dealing with exponential growth, and from the slope, they can instantly calculate the population's doubling time.
+If we plot $\log_{10}(P)$ on a vertical axis against time $t$ on a linear horizontal axis (a **[semi-log plot](@keyword=semi_log_plot|lang=en-US|style=Feynman)**), we again get a straight line. The slope of this line, $a$, gives us the growth rate. A microbiologist seeing a straight line on their [semi-log plot](@keyword=semi_log_plot|lang=en-US|style=Feynman) immediately knows they are dealing with exponential growth, and from the slope, they can instantly calculate the population's doubling time.
 
 From understanding sound to designing electronics, from weighing nano-crystals to tracking pandemics, the principle is the same. By moving from the linear world of addition to the multiplicative world of ratios and logarithms, we gain a tool of incredible power and unifying beauty, allowing us to see the simple, straight-line laws that govern the beautifully complex world around us.

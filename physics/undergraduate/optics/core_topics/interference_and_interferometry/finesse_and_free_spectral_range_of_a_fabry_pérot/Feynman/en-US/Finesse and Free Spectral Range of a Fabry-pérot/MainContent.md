@@ -5,7 +5,7 @@ This article addresses this by focusing on two beautifully interconnected concep
 
 ## Principles and Mechanisms
 
-Imagine you're in a hall of mirrors, but one where the mirrors are not quite perfect. They are designed to let a little bit of you—or in our case, a little bit of light—leak through. This simple-sounding setup, two parallel, partially reflective mirrors, is the heart of one of the most elegant and powerful instruments in optics: the Fabry-Pérot interferometer, or [optical cavity](@article_id:157650). Its magic lies not just in trapping light, but in being exquisitely selective about *which* light it traps and transmits. To understand this, we need to explore two beautifully interconnected concepts: the Free Spectral Range and the Finesse.
+Imagine you're in a hall of mirrors, but one where the mirrors are not quite perfect. They are designed to let a little bit of you—or in our case, a little bit of light—leak through. This simple-sounding setup, two parallel, partially reflective mirrors, is the heart of one of the most elegant and powerful instruments in optics: the Fabry-Pérot interferometer, or [optical cavity](@keyword=optical_cavity|lang=en-US|style=Feynman). Its magic lies not just in trapping light, but in being exquisitely selective about *which* light it traps and transmits. To understand this, we need to explore two beautifully interconnected concepts: the Free Spectral Range and the Finesse.
 
 ### The Cavity's Natural Rhythm: Free Spectral Range
 
@@ -19,19 +19,19 @@ $$
 \Delta \nu_{\text{FSR}} = \frac{c}{2nL}
 $$
 
-You can think of the FSR as the natural "musical scale" of the cavity. Just as a shorter guitar string produces a higher fundamental note and more widely spaced harmonics, a shorter cavity (smaller $L$) results in a larger FSR, meaning its resonant frequencies are spaced further apart  . If an engineer reduces the mirror separation of a cavity, say by 20%, the FSR will increase, and as we'll see, this has direct consequences for the properties of the transmitted light .
+You can think of the FSR as the natural "musical scale" of the cavity. Just as a shorter guitar string produces a higher fundamental note and more widely spaced harmonics, a shorter cavity (smaller $L$) results in a larger FSR, meaning its resonant frequencies are spaced further apart [@problem_id:2229556] [@problem_id:2229514]. If an engineer reduces the mirror separation of a cavity, say by 20%, the FSR will increase, and as we'll see, this has direct consequences for the properties of the transmitted light [@problem_id:2229518].
 
 ### The Art of Selectivity: Introducing Finesse
 
 Knowing the spacing between transmission peaks is one thing, but how sharp are these peaks? Are they broad hills that let a wide range of frequencies pass, or are they sharp needles that select one frequency with surgical precision? The answer to this question is quantified by a parameter with a wonderful name: **Finesse ($\mathcal{F}$)**.
 
-Finesse is defined as the ratio of the [free spectral range](@article_id:170034) to the width of a single transmission peak (measured at its half-maximum height, the FWHM or $\delta\nu$).
+Finesse is defined as the ratio of the [free spectral range](@keyword=free_spectral_range|lang=en-US|style=Feynman) to the width of a single transmission peak (measured at its half-maximum height, the FWHM or $\delta\nu$).
 
 $$
 \mathcal{F} = \frac{\Delta \nu_{\text{FSR}}}{\delta\nu}
 $$
 
-This definition is wonderfully intuitive. It literally tells you how many "peak widths" can fit into the spacing between two consecutive peaks. A cavity with a finesse of 450, designed for a communication system with a channel spacing of 100 GHz, will have transmission peaks that are incredibly narrow—only $100/450 \approx 0.222$ GHz wide . A high finesse means extreme spectral purity.
+This definition is wonderfully intuitive. It literally tells you how many "peak widths" can fit into the spacing between two consecutive peaks. A cavity with a finesse of 450, designed for a communication system with a channel spacing of 100 GHz, will have transmission peaks that are incredibly narrow—only $100/450 \approx 0.222$ GHz wide [@problem_id:2229535]. A high finesse means extreme spectral purity.
 
 So, what gives a cavity its finesse? The secret is the reflectivity, $R$, of the mirrors. To achieve high finesse, we need mirrors that are exceptionally good at reflecting light. For a cavity with two identical, lossless mirrors, the finesse is given by:
 
@@ -39,11 +39,11 @@ $$
 \mathcal{F} \approx \frac{\pi\sqrt{R}}{1-R}
 $$
 
-Look at that denominator: $1-R$. As the [reflectivity](@article_id:154899) $R$ gets very close to 1 (say, 0.99, or 0.999), the denominator becomes a tiny number, and the finesse skyrockets. This is the key to building a high-performance cavity. For example, upgrading mirrors from a [reflectivity](@article_id:154899) of $R=0.90$ to $R=0.99$ doesn't just improve things slightly; it makes the resonance peaks more than ten times narrower, dramatically increasing the cavity's filtering power . This demonstrates that while the *spacing* of the peaks (FSR) is set by the cavity's length, their *sharpness* (Finesse and [linewidth](@article_id:198534)) is governed by the quality of its mirrors .
+Look at that denominator: $1-R$. As the [reflectivity](@keyword=reflectivity|lang=en-US|style=Feynman) $R$ gets very close to 1 (say, 0.99, or 0.999), the denominator becomes a tiny number, and the finesse skyrockets. This is the key to building a high-performance cavity. For example, upgrading mirrors from a [reflectivity](@keyword=reflectivity|lang=en-US|style=Feynman) of $R=0.90$ to $R=0.99$ doesn't just improve things slightly; it makes the resonance peaks more than ten times narrower, dramatically increasing the cavity's filtering power [@problem_id:2229515]. This demonstrates that while the *spacing* of the peaks (FSR) is set by the cavity's length, their *sharpness* (Finesse and [linewidth](@keyword=linewidth|lang=en-US|style=Feynman)) is governed by the quality of its mirrors [@problem_id:2229517].
 
 ### A Photon's Long Journey: The True Meaning of Finesse
 
-Why does high reflectivity lead to such sharp resonances? To get a feel for this, let's abandon the wave picture for a moment and think about a single photon. When a photon enters a [high-finesse cavity](@article_id:190939), it doesn't just pass through or make one bounce. Since the mirrors are so reflective, it gets trapped. It bounces back and forth, back and forth, dozens, hundreds, or even thousands of times before it finally escapes through the second mirror or is lost.
+Why does high reflectivity lead to such sharp resonances? To get a feel for this, let's abandon the wave picture for a moment and think about a single photon. When a photon enters a [high-finesse cavity](@keyword=high_finesse_cavity|lang=en-US|style=Feynman), it doesn't just pass through or make one bounce. Since the mirrors are so reflective, it gets trapped. It bounces back and forth, back and forth, dozens, hundreds, or even thousands of times before it finally escapes through the second mirror or is lost.
 
 This long "storage time" is the key. Each bounce is another chance for the light to interfere with itself. Only those frequencies that are *perfectly* in sync with the cavity's round-trip path length will add up constructively over this long journey, building up into a powerful, transmitted beam. Any frequency that is even slightly off will quickly fall out of phase, and after many bounces, its contributions will average to zero through destructive interference. The more bounces, the more stringent the phase requirement becomes, and the narrower the resulting resonance peak.
 
@@ -53,20 +53,20 @@ $$
 N_{\text{eff}} \approx \frac{\mathcal{F}}{2\pi}
 $$
 
-So, a cavity with a finesse of $\mathcal{F}=350$ effectively forces a photon to make about $350 / (2\pi) \approx 56$ round trips, on average . Finesse, then, is not just some abstract ratio; it's a direct measure of how many times the light gets to "check its phase," a measure of the cavity's memory.
+So, a cavity with a finesse of $\mathcal{F}=350$ effectively forces a photon to make about $350 / (2\pi) \approx 56$ round trips, on average [@problem_id:2229491]. Finesse, then, is not just some abstract ratio; it's a direct measure of how many times the light gets to "check its phase," a measure of the cavity's memory.
 
 ### The Real World: Losses, Quality, and Perfection
 
 So far, we've spoken mostly of "ideal" lossless mirrors. But in the real world, nothing is perfect. Mirrors might have tiny imperfections that scatter light, or the coating material might absorb a small fraction of the light energy on each bounce. This changes the picture in a subtle but crucial way.
 
-For any real mirror, the fractions of light reflected ($R$), transmitted ($T$), and absorbed or scattered ($A$) must add up to one: $R+T+A=1$ . The finesse is determined by the total light lost in a round trip, which is mainly a function of $1-R$. So even if a mirror has some absorption, its finesse can be calculated from its [reflectivity](@article_id:154899) and is still very high if $R$ is high.
+For any real mirror, the fractions of light reflected ($R$), transmitted ($T$), and absorbed or scattered ($A$) must add up to one: $R+T+A=1$ [@problem_id:2229538]. The finesse is determined by the total light lost in a round trip, which is mainly a function of $1-R$. So even if a mirror has some absorption, its finesse can be calculated from its [reflectivity](@keyword=reflectivity|lang=en-US|style=Feynman) and is still very high if $R$ is high.
 
-However, the *peak brightness* of the transmitted light is another story. In an ideal, lossless cavity, constructive interference is so perfect that 100% of the light at the resonant frequency is transmitted. The cavity becomes perfectly transparent at just the right frequencies! But if there's any absorption, some of the energy that would have been transmitted is instead turned into heat in the mirror coatings. Even a tiny absorption of 0.5% in a mirror with 99% [reflectivity](@article_id:154899) can cause the peak transmission to drop from a perfect 100% to a mere 25% . This is a vital lesson for any engineer: in the world of high-finesse optics, every tiny bit of loss matters.
+However, the *peak brightness* of the transmitted light is another story. In an ideal, lossless cavity, constructive interference is so perfect that 100% of the light at the resonant frequency is transmitted. The cavity becomes perfectly transparent at just the right frequencies! But if there's any absorption, some of the energy that would have been transmitted is instead turned into heat in the mirror coatings. Even a tiny absorption of 0.5% in a mirror with 99% [reflectivity](@keyword=reflectivity|lang=en-US|style=Feynman) can cause the peak transmission to drop from a perfect 100% to a mere 25% [@problem_id:2229539]. This is a vital lesson for any engineer: in the world of high-finesse optics, every tiny bit of loss matters.
 
-Finally, it's worth connecting finesse to another universal measure of a resonator's performance, whether it's an [optical cavity](@article_id:157650), a pendulum, or an RLC circuit: the **Quality Factor (Q)**. The Q-factor is defined as the resonant frequency divided by the [linewidth](@article_id:198534), $Q = \nu/\delta\nu$. It represents the ratio of stored energy to the energy lost per oscillation cycle. Unsurprisingly, Q and Finesse are intimately related. For a resonance at the $m$-th longitudinal mode of the cavity, the relationship is:
+Finally, it's worth connecting finesse to another universal measure of a resonator's performance, whether it's an [optical cavity](@keyword=optical_cavity|lang=en-US|style=Feynman), a pendulum, or an RLC circuit: the **Quality Factor (Q)**. The Q-factor is defined as the resonant frequency divided by the [linewidth](@keyword=linewidth|lang=en-US|style=Feynman), $Q = \nu/\delta\nu$. It represents the ratio of stored energy to the energy lost per oscillation cycle. Unsurprisingly, Q and Finesse are intimately related. For a resonance at the $m$-th longitudinal mode of the cavity, the relationship is:
 
 $$
 Q = m \cdot \mathcal{F}
 $$
 
-This tells us that a [high-finesse cavity](@article_id:190939) is also a very high-Q resonator. A cavity with a modest finesse of 300, operating at its 100,000th resonance mode (a typical number), boasts a staggering Q-factor of $100,000 \times 300 = 3 \times 10^7$ . It is this ability to store energy so efficiently and resolve frequencies so finely that makes the Fabry-Pérot cavity an indispensable tool in everything from giant gravitational wave detectors to the [atomic clocks](@article_id:147355) that define our second. It is a testament to how two simple mirrors can create a universe of precision.
+This tells us that a [high-finesse cavity](@keyword=high_finesse_cavity|lang=en-US|style=Feynman) is also a very high-Q resonator. A cavity with a modest finesse of 300, operating at its 100,000th resonance mode (a typical number), boasts a staggering Q-factor of $100,000 \times 300 = 3 \times 10^7$ [@problem_id:2229536]. It is this ability to store energy so efficiently and resolve frequencies so finely that makes the Fabry-Pérot cavity an indispensable tool in everything from giant gravitational wave detectors to the [atomic clocks](@keyword=atomic_clocks|lang=en-US|style=Feynman) that define our second. It is a testament to how two simple mirrors can create a universe of precision.

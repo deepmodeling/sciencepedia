@@ -1,52 +1,52 @@
 ## 引言
-在19世纪，[麦克斯韦方程组](@article_id:311357)将电、磁、光统一在一个宏伟的理论框架下，成为[经典物理学](@article_id:310812)的巅峰成就之一。然而，这套理论的内部却隐藏着一个深刻的矛盾：它预言光速是一个普适常数，这与当时主导物理学界的[伽利略相对性原理](@article_id:325235)格格不入。这个看似微小的裂痕，预示着一场物理学革命的到来。爱因斯坦的[狭义相对论](@article_id:339245)正是为了解决这一矛盾而诞生，它重塑了我们对时间与空间的基本认知。本文旨在探讨这场革命如何反过来深化了我们对[电磁学](@article_id:363853)本身的理解。我们将看到，在[相对论](@article_id:327421)的透镜下，电场与[磁场](@article_id:313708)、[电荷](@article_id:339187)与电流不再是孤立的概念，而是同一个四维[时空](@article_id:370647)实体在不同视角下的展现。本文将分为三个部分：首先，我们将学习如何用四维矢量和[张量](@article_id:321604)的语言，将[麦克斯韦理论](@article_id:333782)重铸成一个更加简洁和谐的协变形式；接着，我们将探索这一新视角如何解决经典悖论，并应用于粒子物理、天文学和宇宙学等前沿领域；最后，通过实践练习巩固所学。现在，就让我们踏上这段旅程，从重新审视[电磁学](@article_id:363853)的基本概念开始，进入第一章：原理与机制。
+在19世纪，[麦克斯韦方程组](@keyword=maxwell_s_equations|lang=zh-CN|style=Feynman)将电、磁、光统一在一个宏伟的理论框架下，成为[经典物理学](@keyword=classical_physics|lang=zh-CN|style=Feynman)的巅峰成就之一。然而，这套理论的内部却隐藏着一个深刻的矛盾：它预言光速是一个普适常数，这与当时主导物理学界的[伽利略相对性原理](@keyword=principle_of_galilean_relativity|lang=zh-CN|style=Feynman)格格不入。这个看似微小的裂痕，预示着一场物理学革命的到来。爱因斯坦的[狭义相对论](@keyword=special_relativity_theory|lang=zh-CN|style=Feynman)正是为了解决这一矛盾而诞生，它重塑了我们对时间与空间的基本认知。本文旨在探讨这场革命如何反过来深化了我们对[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)本身的理解。我们将看到，在[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)的透镜下，电场与[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)、[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)与电流不再是孤立的概念，而是同一个四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)实体在不同视角下的展现。本文将分为三个部分：首先，我们将学习如何用四维矢量和[张量](@keyword=tensor|lang=zh-CN|style=Feynman)的语言，将[麦克斯韦理论](@keyword=maxwell_s_theory|lang=zh-CN|style=Feynman)重铸成一个更加简洁和谐的协变形式；接着，我们将探索这一新视角如何解决经典悖论，并应用于粒子物理、天文学和宇宙学等前沿领域；最后，通过实践练习巩固所学。现在，就让我们踏上这段旅程，从重新审视[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)的基本概念开始，进入第一章：原理与机制。
 
 ## 原理与机制
 
-我们已经知道，狭义相对论不仅仅是关于时钟变慢和尺子缩短的奇异故事；它是一种看待物理世界的新方式，它要求我们重新审视那些早已被认为是“板上钉钉”的物理定律。在所有的[经典物理学](@article_id:310812)理论中，麦克斯韦的[电磁学](@article_id:363853)理论可以说是最接近“[相对论](@article_id:327421)性”的。它甚至在不经意间已经预言了光速的恒定。然而，当我们戴上爱因斯坦的“四维[时空](@article_id:370647)”眼镜再来看它时，这套理论所展现出的内在和谐与统一之美，依然会让我们惊叹不已。这就像是欣赏一首熟悉的交响乐，但这一次我们拿到了总谱，看清了所有乐器声部如何交织成一个完美的整体。
+我们已经知道，狭义相对论不仅仅是关于时钟变慢和尺子缩短的奇异故事；它是一种看待物理世界的新方式，它要求我们重新审视那些早已被认为是“板上钉钉”的物理定律。在所有的[经典物理学](@keyword=classical_physics|lang=zh-CN|style=Feynman)理论中，麦克斯韦的[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)理论可以说是最接近“[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)性”的。它甚至在不经意间已经预言了光速的恒定。然而，当我们戴上爱因斯坦的“四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)”眼镜再来看它时，这套理论所展现出的内在和谐与统一之美，依然会让我们惊叹不已。这就像是欣赏一首熟悉的交响乐，但这一次我们拿到了总谱，看清了所有乐器声部如何交织成一个完美的整体。
 
-### [四维流](@article_id:324130)——统一的源
+### [四维流](@keyword=four_current|lang=zh-CN|style=Feynman)——统一的源
 
-一切电磁现象的源头是什么？是[电荷](@article_id:339187)。静止的[电荷](@article_id:339187)产生电场，运动的[电荷](@article_id:339187)（也就是电流）产生[磁场](@article_id:313708)。在经典物理中，[电荷密度](@article_id:305099) $\rho$ 和[电流密度](@article_id:323875) $\vec{J}$ 是两个不同的东西。但[相对论](@article_id:327421)告诉我们，静止和运动是相对的。想象一条静止的带电长导线 。在导线的[参考系](@article_id:345789)里，我们只测量到[均匀分布](@article_id:325445)的[电荷密度](@article_id:305099)，因此只有电场。但如果你乘坐一艘飞船高速飞过这条导线，你会看到什么？你会看到一排运动的[电荷](@article_id:339187)——这不就是电流吗！所以，你不仅会测量到电场，还会测量到一个[磁场](@article_id:313708)。
+一切电磁现象的源头是什么？是[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。静止的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)产生电场，运动的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)（也就是电流）产生[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)。在经典物理中，[电荷密度](@keyword=charge_density|lang=zh-CN|style=Feynman) $\rho$ 和[电流密度](@keyword=current_density|lang=zh-CN|style=Feynman) $\vec{J}$ 是两个不同的东西。但[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)告诉我们，静止和运动是相对的。想象一条静止的带电长导线 [@problem_id:1825729]。在导线的[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)里，我们只测量到[均匀分布](@keyword=uniform_distribution|lang=zh-CN|style=Feynman)的[电荷密度](@keyword=charge_density|lang=zh-CN|style=Feynman)，因此只有电场。但如果你乘坐一艘飞船高速飞过这条导线，你会看到什么？你会看到一排运动的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)——这不就是电流吗！所以，你不仅会测量到电场，还会测量到一个[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)。
 
-这个简单的思想实验揭示了一个深刻的真理：电荷密度和[电流密度](@article_id:323875)并非各自独立，它们只是同一个物理实在在不同观测者眼中的不同表现。为了抓住这个实在，我们必须把它们统一起来。物理学家们引入了一个绝妙的数学工具，叫做**[四维电流密度](@article_id:326276)**（four-current density），记作 $J^\mu$。它是一个四维矢量，其分量是：
+这个简单的思想实验揭示了一个深刻的真理：电荷密度和[电流密度](@keyword=current_density|lang=zh-CN|style=Feynman)并非各自独立，它们只是同一个物理实在在不同观测者眼中的不同表现。为了抓住这个实在，我们必须把它们统一起来。物理学家们引入了一个绝妙的数学工具，叫做**[四维电流密度](@keyword=four_current_density|lang=zh-CN|style=Feynman)**（four-current density），记作 $J^\mu$。它是一个四维矢量，其分量是：
 $$
 J^\mu = (c\rho, J_x, J_y, J_z) = (c\rho, \vec{J})
 $$
-这里的 $c$ 是光速，它的出现是为了让时间和空间分量拥有相同的量纲。第一个分量 $c\rho$ 是“时间”分量，代表[电荷密度](@article_id:305099)；后面三个是“空间”分量，代表我们熟悉的三维电流密度 $\vec{J}$。对于那条静止的带[电导](@article_id:325643)线，它的[四维电流密度](@article_id:326276)只在第一个分量上有值，空间分量全为零。但当你变换[参考系](@article_id:345789)后，根据[洛伦兹变换](@article_id:355788)，这些分量会相互混合，就像时间和空间会混合一样。在你的飞船上，$J'^\mu$ 的空间分量将不再是零——你看到了电流！
+这里的 $c$ 是光速，它的出现是为了让时间和空间分量拥有相同的量纲。第一个分量 $c\rho$ 是“时间”分量，代表[电荷密度](@keyword=charge_density|lang=zh-CN|style=Feynman)；后面三个是“空间”分量，代表我们熟悉的三维电流密度 $\vec{J}$。对于那条静止的带[电导](@keyword=electrical_conductance|lang=zh-CN|style=Feynman)线，它的[四维电流密度](@keyword=four_current_density|lang=zh-CN|style=Feynman)只在第一个分量上有值，空间分量全为零。但当你变换[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)后，根据[洛伦兹变换](@keyword=the_lorentz_transformation|lang=zh-CN|style=Feynman)，这些分量会相互混合，就像时间和空间会混合一样。在你的飞船上，$J'^\mu$ 的空间分量将不再是零——你看到了电流！
 
-这个统一的源遵循着一个极其重要且优美的定律：[电荷守恒](@article_id:312253)。在经典[电磁学](@article_id:363853)中，[电荷守恒](@article_id:312253)定律由一个稍显繁琐的连续性方程描述：$\frac{\partial \rho}{\partial t} + \nabla \cdot \vec{J} = 0$。它告诉我们，一个区域内[电荷](@article_id:339187)的减少量，必然等于流出该区域的电流量。这个定律当然是正确的，但在四维[时空](@article_id:370647)的语言中，它可以被写成一个无比简洁的形式：
+这个统一的源遵循着一个极其重要且优美的定律：[电荷守恒](@keyword=charge_conservation|lang=zh-CN|style=Feynman)。在经典[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)中，[电荷守恒](@keyword=charge_conservation|lang=zh-CN|style=Feynman)定律由一个稍显繁琐的连续性方程描述：$\frac{\partial \rho}{\partial t} + \nabla \cdot \vec{J} = 0$。它告诉我们，一个区域内[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的减少量，必然等于流出该区域的电流量。这个定律当然是正确的，但在四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的语言中，它可以被写成一个无比简洁的形式：
 $$
 \partial_\mu J^\mu = 0
 $$
-这里 $\partial_\mu$ 是四维梯度算符 $(\frac{1}{c}\frac{\partial}{\partial t}, \nabla)$，这个表达式实际上是四维散度的缩写。它的意思是，[四维电流密度](@article_id:326276)在[时空](@article_id:370647)中的“散度”为零。这个方程完美地包含了经典连续性方程的全部内容 ，但形式上却如此简单和对称。它不再区[分时](@article_id:338112)间和空间，而是将[电荷守恒](@article_id:312253)视为[时空](@article_id:370647)中一个统一的、几何化的基本法则。
+这里 $\partial_\mu$ 是四维梯度算符 $(\frac{1}{c}\frac{\partial}{\partial t}, \nabla)$，这个表达式实际上是四维散度的缩写。它的意思是，[四维电流密度](@keyword=four_current_density|lang=zh-CN|style=Feynman)在[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中的“散度”为零。这个方程完美地包含了经典连续性方程的全部内容 [@problem_id:1825754]，但形式上却如此简单和对称。它不再区[分时](@keyword=time_sharing|lang=zh-CN|style=Feynman)间和空间，而是将[电荷守恒](@keyword=charge_conservation|lang=zh-CN|style=Feynman)视为[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中一个统一的、几何化的基本法则。
 
-### [四维势](@article_id:367533)——无形的引导者
+### [四维势](@keyword=4_vector_potential|lang=zh-CN|style=Feynman)——无形的引导者
 
-有了统一的源，我们自然会问：这个源是如何产生场的？在经典[电磁学](@article_id:363853)中，我们引入了[标势](@article_id:339870) $\phi$ 和[矢势](@article_id:314054) $\vec{A}$。[电荷](@article_id:339187)产生标势，电流产生矢势。它们共同决定了电场 $\vec{E}$ 和[磁场](@article_id:313708) $\vec{B}$：
+有了统一的源，我们自然会问：这个源是如何产生场的？在经典[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)中，我们引入了[标势](@keyword=scalar_potential|lang=zh-CN|style=Feynman) $\phi$ 和[矢势](@keyword=vector_potential|lang=zh-CN|style=Feynman) $\vec{A}$。[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)产生标势，电流产生矢势。它们共同决定了电场 $\vec{E}$ 和[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman) $\vec{B}$：
 $$
 \vec{E} = -\nabla \phi - \frac{\partial \vec{A}}{\partial t} \\
 \vec{B} = \nabla \times \vec{A}
 $$
-既然源（$\rho$ 和 $\vec{J}$）可以统一成一个四维矢量 $J^\mu$，那么由它们产生的势（$\phi$ 和 $\vec{A}$）是否也能统一起来呢？答案是肯定的。我们构造一个**[四维势](@article_id:367533)**（four-potential）$A^\mu$：
+既然源（$\rho$ 和 $\vec{J}$）可以统一成一个四维矢量 $J^\mu$，那么由它们产生的势（$\phi$ 和 $\vec{A}$）是否也能统一起来呢？答案是肯定的。我们构造一个**[四维势](@keyword=4_vector_potential|lang=zh-CN|style=Feynman)**（four-potential）$A^\mu$：
 $$
 A^\mu = (\phi/c, A_x, A_y, A_z) = (\phi/c, \vec{A})
 $$
-这又是一个[四维矢量](@article_id:338778)！它的时间分量是[标势](@article_id:339870)，空间分量是矢势。电场和磁场的“分裂”感开始在此消融。观察上面计算 $\vec{E}$ 场的公式，你会发现电场既可以由标势的空间变化（$-\nabla\phi$）产生，也可以由矢势的时间变化（$-\frac{\partial \vec{A}}{\partial t}$）产生。
+这又是一个[四维矢量](@keyword=4_vectors|lang=zh-CN|style=Feynman)！它的时间分量是[标势](@keyword=scalar_potential|lang=zh-CN|style=Feynman)，空间分量是矢势。电场和磁场的“分裂”感开始在此消融。观察上面计算 $\vec{E}$ 场的公式，你会发现电场既可以由标势的空间变化（$-\nabla\phi$）产生，也可以由矢势的时间变化（$-\frac{\partial \vec{A}}{\partial t}$）产生。
 
-这带来一个非常有趣的问题。一个均匀的静电场，比如 $\vec{E} = E_0 \hat{z}$，我们通常认为它是由一个线性变化的标势 $\phi = -E_0 z$ 产生的，此时我们可以让[矢势](@article_id:314054) $\vec{A}$ 为零 。但我们是否可以反过来，让标势 $\phi$ 为零，而用一个随时间变化的[矢势](@article_id:314054)来产生同一个电场呢？完全可以！一个形如 $\vec{A} = -E_0 t \hat{z}$ 的[矢势](@article_id:314054)，它的时间[导数](@article_id:318324)恰好就是 $-E_0 \hat{z}$，于是 $\vec{E} = -\frac{\partial \vec{A}}{\partial t} = E_0\hat{z}$ 。
+这带来一个非常有趣的问题。一个均匀的静电场，比如 $\vec{E} = E_0 \hat{z}$，我们通常认为它是由一个线性变化的标势 $\phi = -E_0 z$ 产生的，此时我们可以让[矢势](@keyword=vector_potential|lang=zh-CN|style=Feynman) $\vec{A}$ 为零 [@problem_id:1825741]。但我们是否可以反过来，让标势 $\phi$ 为零，而用一个随时间变化的[矢势](@keyword=vector_potential|lang=zh-CN|style=Feynman)来产生同一个电场呢？完全可以！一个形如 $\vec{A} = -E_0 t \hat{z}$ 的[矢势](@keyword=vector_potential|lang=zh-CN|style=Feynman)，它的时间[导数](@keyword=derivative|lang=zh-CN|style=Feynman)恰好就是 $-E_0 \hat{z}$，于是 $\vec{E} = -\frac{\partial \vec{A}}{\partial t} = E_0\hat{z}$ [@problem_id:1825716]。
 
-这说明，对于同一个物理实在（这里的均匀电场），我们可以用不同的势来描述。势的这种不唯一性被称为**[规范自由度](@article_id:320895)**（gauge freedom）。这就像测量海拔高度，你可以选择海平面为零点，也可以选择珠穆朗玛峰顶为零点，相对高度差是不变的。物理上，我们关心的[电场和磁场](@article_id:325058)是不变的，而势本身有一定的选择自由。我们可以对[四维势](@article_id:367533)做一个特定的变换，称为规范变换：
+这说明，对于同一个物理实在（这里的均匀电场），我们可以用不同的势来描述。势的这种不唯一性被称为**[规范自由度](@keyword=gauge_freedom|lang=zh-CN|style=Feynman)**（gauge freedom）。这就像测量海拔高度，你可以选择海平面为零点，也可以选择珠穆朗玛峰顶为零点，相对高度差是不变的。物理上，我们关心的[电场和磁场](@keyword=electric_and_magnetic_fields|lang=zh-CN|style=Feynman)是不变的，而势本身有一定的选择自由。我们可以对[四维势](@keyword=4_vector_potential|lang=zh-CN|style=Feynman)做一个特定的变换，称为规范变换：
 $$
 A'^\mu = A^\mu + \partial^\mu \chi
 $$
-其中 $\chi$ 是任意一个光滑的标量函数。你会发现这个变换不会改变最终的电场和磁场。为了方便计算，物理学家常常会选择一个特定的“规范”，就像选择海平面作为海拔零点一样。一个非常常用和有用的选择是**[洛伦兹规范](@article_id:314062)**（Lorenz gauge），它要求 $\partial_\mu A^\mu = 0$。有趣的是，即使我们固定了[洛伦兹规范](@article_id:314062)，这种自由度也并未完全消失。只要规范变换函数 $\chi$ 自身满足波动方程 $\Box \chi = \partial_\mu \partial^\mu \chi = 0$，新的势 $A'^\mu$ 仍然会满足[洛伦兹规范](@article_id:314062) 。这真是太奇妙了——我们描述场的方式所拥有的“自由”，其本身就像光波一样在[时空](@article_id:370647)中传播！
+其中 $\chi$ 是任意一个光滑的标量函数。你会发现这个变换不会改变最终的电场和磁场。为了方便计算，物理学家常常会选择一个特定的“规范”，就像选择海平面作为海拔零点一样。一个非常常用和有用的选择是**[洛伦兹规范](@keyword=lorenz_gauge|lang=zh-CN|style=Feynman)**（Lorenz gauge），它要求 $\partial_\mu A^\mu = 0$。有趣的是，即使我们固定了[洛伦兹规范](@keyword=lorenz_gauge|lang=zh-CN|style=Feynman)，这种自由度也并未完全消失。只要规范变换函数 $\chi$ 自身满足波动方程 $\Box \chi = \partial_\mu \partial^\mu \chi = 0$，新的势 $A'^\mu$ 仍然会满足[洛伦兹规范](@keyword=lorenz_gauge|lang=zh-CN|style=Feynman) [@problem_id:1825737]。这真是太奇妙了——我们描述场的方式所拥有的“自由”，其本身就像光波一样在[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中传播！
 
-### [电磁张量](@article_id:335971)——E与B的华尔兹
+### [电磁张量](@keyword=electromagnetic_tensor|lang=zh-CN|style=Feynman)——E与B的华尔兹
 
-势虽然是连接源和场的桥梁，但它本身通常是不可直接测量的。我们真正能测量的是电场和磁场。我们已经看到，$\vec{E}$ 和 $\vec{B}$ 交织在一起，它们可以相互转化，且都源于同一个[四维势](@article_id:367533) $A^\mu$。那么，我们能否将 $\vec{E}$ 和 $\vec{B}$ 这六个分量也装进一个统一的几何对象里呢？
+势虽然是连接源和场的桥梁，但它本身通常是不可直接测量的。我们真正能测量的是电场和磁场。我们已经看到，$\vec{E}$ 和 $\vec{B}$ 交织在一起，它们可以相互转化，且都源于同一个[四维势](@keyword=4_vector_potential|lang=zh-CN|style=Feynman) $A^\mu$。那么，我们能否将 $\vec{E}$ 和 $\vec{B}$ 这六个分量也装进一个统一的几何对象里呢？
 
-答案再次是肯定的。这个对象就是**[电磁场张量](@article_id:321537)**（electromagnetic field tensor）$F^{\mu\nu}$，它是一个 $4 \times 4$ 的反对称矩阵，由[四维势](@article_id:367533)的“四维旋度”定义：
+答案再次是肯定的。这个对象就是**[电磁场张量](@keyword=electromagnetic_field_tensor|lang=zh-CN|style=Feynman)**（electromagnetic field tensor）$F^{\mu\nu}$，它是一个 $4 \times 4$ 的反对称矩阵，由[四维势](@keyword=4_vector_potential|lang=zh-CN|style=Feynman)的“四维旋度”定义：
 $$
 F^{\mu\nu} = \partial^\mu A^\nu - \partial^\nu A^\mu
 $$
@@ -59,42 +59,42 @@ E_y & B_z & 0 & -B_x \\
 E_z & -B_y & B_x & 0
 \end{pmatrix}
 $$
-看！$\vec{E}$ 场和 $\vec{B}$ 场的六个分量，不多不少，正好填满了这个反[对称矩阵](@article_id:303565)的所有独立位置。电场分量占据了第一行和第一列，而[磁场](@article_id:313708)分量则藏在右下角的 $3 \times 3$ 空间子块中 。
+看！$\vec{E}$ 场和 $\vec{B}$ 场的六个分量，不多不少，正好填满了这个反[对称矩阵](@keyword=symmetric_matrix|lang=zh-CN|style=Feynman)的所有独立位置。电场分量占据了第一行和第一列，而[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)分量则藏在右下角的 $3 \times 3$ 空间子块中 [@problem_id:1825744]。
 
-$\vec{E}$ 和 $\vec{B}$ 不再是两个独立的[矢量场](@article_id:322515)，它们是同一个“[电磁场](@article_id:329585)”在[时空](@article_id:370647)中的不同侧面。在一个观测者看来是纯电场的东西，在另一个高速运动的观测者看来，就会是一个混合了电场和磁场的场。它们就像一对在[时空](@article_id:370647)中翩翩起舞的舞伴，你的视角决定了你看到的是谁的正面，谁的侧面，但它们始终是一个不可分割的整体。
+$\vec{E}$ 和 $\vec{B}$ 不再是两个独立的[矢量场](@keyword=vector_field|lang=zh-CN|style=Feynman)，它们是同一个“[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)”在[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中的不同侧面。在一个观测者看来是纯电场的东西，在另一个高速运动的观测者看来，就会是一个混合了电场和磁场的场。它们就像一对在[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中翩翩起舞的舞伴，你的视角决定了你看到的是谁的正面，谁的侧面，但它们始终是一个不可分割的整体。
 
 ### 麦克斯韦方程组的交响诗
 
-现在，我们有了统一的源 $J^\mu$ 和统一的场 $F^{\mu\nu}$。那么，连接它们的物理定律——[麦克斯韦方程组](@article_id:311357)——会变成什么样子呢？[詹姆斯·克拉克·麦克斯韦](@article_id:335431)在19世纪写下的四组方程，曾被认为是[物理学史](@article_id:347926)上最伟大的成就之一。在四维[时空](@article_id:370647)的语言里，这四组复杂的矢量[微分方程](@article_id:327891)，竟然可以被压缩成两个极其简洁的[张量](@article_id:321604)方程！
+现在，我们有了统一的源 $J^\mu$ 和统一的场 $F^{\mu\nu}$。那么，连接它们的物理定律——[麦克斯韦方程组](@keyword=maxwell_s_equations|lang=zh-CN|style=Feynman)——会变成什么样子呢？[詹姆斯·克拉克·麦克斯韦](@keyword=james_clerk_maxwell|lang=zh-CN|style=Feynman)在19世纪写下的四组方程，曾被认为是[物理学史](@keyword=history_of_physics|lang=zh-CN|style=Feynman)上最伟大的成就之一。在四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的语言里，这四组复杂的矢量[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)，竟然可以被压缩成两个极其简洁的[张量](@keyword=tensor|lang=zh-CN|style=Feynman)方程！
 
 第一个方程联系场与源，被称为**非齐次麦克斯韦方程**：
 $$
 \partial_\mu F^{\mu\nu} = \mu_0 J^\nu
 $$
-这个方程说，[场张量](@article_id:365672)的四维散度等于（一个常数倍的）四维电流。它包含了两个经典方程：当 $\nu=0$ 时，我们得到[高斯定律](@article_id:301934) $\nabla \cdot \vec{E} = \rho/\epsilon_0$；当 $\nu=1,2,3$ 时，我们得到包含了麦克斯韦修正项的安培定律 $\nabla \times \vec{B} - \frac{1}{c^2}\frac{\partial \vec{E}}{\partial t} = \mu_0 \vec{J}$ 。两个方程，合二为一！
+这个方程说，[场张量](@keyword=field_tensor|lang=zh-CN|style=Feynman)的四维散度等于（一个常数倍的）四维电流。它包含了两个经典方程：当 $\nu=0$ 时，我们得到[高斯定律](@keyword=gauss_s_law|lang=zh-CN|style=Feynman) $\nabla \cdot \vec{E} = \rho/\epsilon_0$；当 $\nu=1,2,3$ 时，我们得到包含了麦克斯韦修正项的安培定律 $\nabla \times \vec{B} - \frac{1}{c^2}\frac{\partial \vec{E}}{\partial t} = \mu_0 \vec{J}$ [@problem_id:1825719]。两个方程，合二为一！
 
-第二个方程描述场本身的内在结构，被称为**齐次麦克斯韦方程**，或**[比安基恒等式](@article_id:325396)**：
+第二个方程描述场本身的内在结构，被称为**齐次麦克斯韦方程**，或**[比安基恒等式](@keyword=bianchi_identity|lang=zh-CN|style=Feynman)**：
 $$
 \partial_\lambda F_{\mu\nu} + \partial_\mu F_{\nu\lambda} + \partial_\nu F_{\lambda\mu} = 0
 $$
-这个方程实际上是我们定义 $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$ 的一个直接数学推论，它表明场不是任意的，而是某种“势”的旋度。这个方程同样包含了两个经典方程：通过选取不同的索引 $(\lambda, \mu, \nu)$，我们可以分别推导出法拉第电磁感应定律 $\nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t}$ 和[磁场](@article_id:313708)的[高斯定律](@article_id:301934) $\nabla \cdot \vec{B} = 0$ 。另外两个方程，也合二为一！
+这个方程实际上是我们定义 $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$ 的一个直接数学推论，它表明场不是任意的，而是某种“势”的旋度。这个方程同样包含了两个经典方程：通过选取不同的索引 $(\lambda, \mu, \nu)$，我们可以分别推导出法拉第电磁感应定律 $\nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t}$ 和[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的[高斯定律](@keyword=gauss_s_law|lang=zh-CN|style=Feynman) $\nabla \cdot \vec{B} = 0$ [@problem_id:1825700]。另外两个方程，也合二为一！
 
-从四组八个标量方程，到两组简洁的[张量](@article_id:321604)方程，这不仅仅是数学上的“花招”，它揭示了[电磁学](@article_id:363853)的深刻内在结构。
+从四组八个标量方程，到两组简洁的[张量](@keyword=tensor|lang=zh-CN|style=Feynman)方程，这不仅仅是数学上的“花招”，它揭示了[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)的深刻内在结构。
 
 ### 万物之理——最小作用量原理
 
-我们还能更进一步吗？有没有一个比这两个[张量](@article_id:321604)方程更根本的出发点？答案依然是肯定的。这就要提到物理学中最深刻、最强大的思想之一：**最小作用量原理**。这个原理说，自然界的一切动力学过程，都遵循一条使某个称为“作用量”的物理量取最小值（或[极值](@article_id:335356)）的路径。
+我们还能更进一步吗？有没有一个比这两个[张量](@keyword=tensor|lang=zh-CN|style=Feynman)方程更根本的出发点？答案依然是肯定的。这就要提到物理学中最深刻、最强大的思想之一：**最小作用量原理**。这个原理说，自然界的一切动力学过程，都遵循一条使某个称为“作用量”的物理量取最小值（或[极值](@keyword=extrema|lang=zh-CN|style=Feynman)）的路径。
 
-对于[电磁场](@article_id:329585)，我们可以写下一个极其简单的**[拉格朗日量](@article_id:303648)密度** $\mathcal{L}$，它是一个标量：
+对于[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)，我们可以写下一个极其简单的**[拉格朗日量](@keyword=lagrangian|lang=zh-CN|style=Feynman)密度** $\mathcal{L}$，它是一个标量：
 $$
 \mathcal{L} = -\frac{1}{4\mu_0} F_{\mu\nu}F^{\mu\nu} - J^\mu A_\mu
 $$
-这个表达式由两部分组成。第一项 $-\frac{1}{4\mu_0} F_{\mu\nu}F^{\mu\nu}$ 描述了[电磁场](@article_id:329585)自身的“能量”，它是一个[洛伦兹不变量](@article_id:322224)，意味着所有观测者看到的场能量密度结构是相同的。第二项 $-J^\mu A_\mu$ 描述了场与源之间的相互作用。整个[电磁学](@article_id:363853)的动力学，都包含在这个看似简单的表达式中。
+这个表达式由两部分组成。第一项 $-\frac{1}{4\mu_0} F_{\mu\nu}F^{\mu\nu}$ 描述了[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)自身的“能量”，它是一个[洛伦兹不变量](@keyword=lorentz_invariants|lang=zh-CN|style=Feynman)，意味着所有观测者看到的场能量密度结构是相同的。第二项 $-J^\mu A_\mu$ 描述了场与源之间的相互作用。整个[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)的动力学，都包含在这个看似简单的表达式中。
 
-当我们把这个 $\mathcal{L}$ 代入[场论](@article_id:315652)的[欧拉-拉格朗日方程](@article_id:319936)（即[最小作用量原理](@article_id:299369)的数学表述），并对[四维势](@article_id:367533) $A_\mu$ 进行变[分时](@article_id:338112)，非齐次麦克斯韦方程 $\partial_\mu F^{\mu\nu} = \mu_0 J^\nu$ 便如魔术般地自动跳了出来 。而齐次方程，如前所述，是我们用势定义场时就已经包含的几何属性。
+当我们把这个 $\mathcal{L}$ 代入[场论](@keyword=field_theory|lang=zh-CN|style=Feynman)的[欧拉-拉格朗日方程](@keyword=euler_lagrange_equations|lang=zh-CN|style=Feynman)（即[最小作用量原理](@keyword=principle_of_least_action|lang=zh-CN|style=Feynman)的数学表述），并对[四维势](@keyword=4_vector_potential|lang=zh-CN|style=Feynman) $A_\mu$ 进行变[分时](@keyword=time_sharing|lang=zh-CN|style=Feynman)，非齐次麦克斯韦方程 $\partial_\mu F^{\mu\nu} = \mu_0 J^\nu$ 便如魔术般地自动跳了出来 [@problem_id:1825710]。而齐次方程，如前所述，是我们用势定义场时就已经包含的几何属性。
 
-至此，我们完成了一次壮丽的攀登。从纷繁复杂的电磁现象出发，我们发现了[电荷](@article_id:339187)与电流的统一、标势与[矢势](@article_id:314054)的统一、电场与[磁场](@article_id:313708)的统一，最终，我们将整个电磁动力学归结为一个单一的、优美的标量——[拉格朗日量](@article_id:303648)，以及一个普适的原理——最小作用量。
+至此，我们完成了一次壮丽的攀登。从纷繁复杂的电磁现象出发，我们发现了[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)与电流的统一、标势与[矢势](@keyword=vector_potential|lang=zh-CN|style=Feynman)的统一、电场与[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的统一，最终，我们将整个电磁动力学归结为一个单一的、优美的标量——[拉格朗日量](@keyword=lagrangian|lang=zh-CN|style=Feynman)，以及一个普适的原理——最小作用量。
 
-即便是对于作为[电磁场](@article_id:329585)本身传播的光波，这种统一性也体现在其最基本的属性上。一束[平面波](@article_id:368882)可以用一个[四维波矢](@article_id:373296)量 $k^\mu = (\omega/c, \vec{k})$ 来描述。不同[参考系](@article_id:345789)的观测者会测到不同的频率 $\omega$ 和波矢 $\vec{k}$（这就是[多普勒效应](@article_id:321028)和[光行差](@article_id:326886)）。然而，在[时空](@article_id:370647)中某一个特定事件点 $x^\mu$ 的波的相位 $\phi = k_\mu x^\mu$，却是一个绝对的[洛伦兹不变量](@article_id:322224) 。所有观测者，无论他们如何运动，对于在某个[时空](@article_id:370647)点波峰是通过还是波谷是通过，他们的结论是完全一致的。在这种看似变幻莫测的相对性之下，隐藏着绝对的[不变性](@article_id:300612)。
+即便是对于作为[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)本身传播的光波，这种统一性也体现在其最基本的属性上。一束[平面波](@keyword=plane_waves|lang=zh-CN|style=Feynman)可以用一个[四维波矢](@keyword=wave_four_vector|lang=zh-CN|style=Feynman)量 $k^\mu = (\omega/c, \vec{k})$ 来描述。不同[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)的观测者会测到不同的频率 $\omega$ 和波矢 $\vec{k}$（这就是[多普勒效应](@keyword=doppler_effect|lang=zh-CN|style=Feynman)和[光行差](@keyword=aberration_of_light|lang=zh-CN|style=Feynman)）。然而，在[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中某一个特定事件点 $x^\mu$ 的波的相位 $\phi = k_\mu x^\mu$，却是一个绝对的[洛伦兹不变量](@keyword=lorentz_invariants|lang=zh-CN|style=Feynman) [@problem_id:1825736]。所有观测者，无论他们如何运动，对于在某个[时空](@keyword=space_time|lang=zh-CN|style=Feynman)点波峰是通过还是波谷是通过，他们的结论是完全一致的。在这种看似变幻莫测的相对性之下，隐藏着绝对的[不变性](@keyword=invariance|lang=zh-CN|style=Feynman)。
 
-这，就是[相对论性电磁学](@article_id:312336)的内在之美。它不是一套新的理论，而是用一种更深刻、更统一的语言，重新讲述了麦克斯韦的古老故事，并让我们得以一窥物理定律那令人心醉的和谐与对称。
+这，就是[相对论性电磁学](@keyword=relativistic_electromagnetism|lang=zh-CN|style=Feynman)的内在之美。它不是一套新的理论，而是用一种更深刻、更统一的语言，重新讲述了麦克斯韦的古老故事，并让我们得以一窥物理定律那令人心醉的和谐与对称。

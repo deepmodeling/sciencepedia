@@ -1,21 +1,21 @@
 ## 引言
-我们习惯于生活在一个由一维线条、二维平面和三维实体构成的世界中。然而，当我们审视自然界时，会发现从云朵的边缘、蜿蜒的海岸线到雪花精致的结构，无数物体都以一种不规则的、破碎的形态存在，无法用简单的整数维度来描述。这种普遍存在的[复杂性](@article_id:329807)引出了一个根本性的问题：我们该如何[量化](@article_id:312797)这些形状的“粗糙度”或“破碎度”？这正是[分形几何](@article_id:304574)试图解决的问题。
+我们习惯于生活在一个由一维线条、二维平面和三维实体构成的世界中。然而，当我们审视自然界时，会发现从云朵的边缘、蜿蜒的海岸线到雪花精致的结构，无数物体都以一种不规则的、破碎的形态存在，无法用简单的整数维度来描述。这种普遍存在的[复杂性](@keyword=complexity|lang=zh-CN|style=Feynman)引出了一个根本性的问题：我们该如何[量化](@keyword=quantization|lang=zh-CN|style=Feynman)这些形状的“粗糙度”或“破碎度”？这正是[分形几何](@keyword=fractal_geometry|lang=zh-CN|style=Feynman)试图解决的问题。
 
-本文将带领你踏上一场超越传统维度的探索之旅。在第一章“核心概念”中，你将学习[分形维数](@article_id:301100)的基本定义，理解为何一个物体的维度可以是小数。在第二章“应用与跨学科[连接](@article_id:297805)”中，你将看到这一概念如何成为[连接](@article_id:297805)[物理学](@article_id:305898)、生物学、[神经科学](@article_id:309447)乃至[天文学](@article_id:326806)等众多领域的强大工具，用以描述从[神经元](@article_id:308519)的[分支](@article_id:350830)到宇宙[大尺度结构](@article_id:319394)的复杂模式。最后，通过第三部分的动手实践，你将有机会亲自运用这些知识解决具体问题。
+本文将带领你踏上一场超越传统维度的探索之旅。在第一章“核心概念”中，你将学习[分形维数](@keyword=fractal_dimension|lang=zh-CN|style=Feynman)的基本定义，理解为何一个物体的维度可以是小数。在第二章“应用与跨学科[连接](@keyword=concatenation|lang=zh-CN|style=Feynman)”中，你将看到这一概念如何成为[连接](@keyword=concatenation|lang=zh-CN|style=Feynman)[物理学](@keyword=physics|lang=zh-CN|style=Feynman)、生物学、[神经科学](@keyword=neuroscience|lang=zh-CN|style=Feynman)乃至[天文学](@keyword=astronomy|lang=zh-CN|style=Feynman)等众多领域的强大工具，用以描述从[神经元](@keyword=neuron|lang=zh-CN|style=Feynman)的[分支](@keyword=clade|lang=zh-CN|style=Feynman)到宇宙[大尺度结构](@keyword=large_scale_structure|lang=zh-CN|style=Feynman)的复杂模式。最后，通过第三部分的动手实践，你将有机会亲自运用这些知识解决具体问题。
 
-那么，我们究竟该如何精确定义并计算这些看似怪异的[非整数维度](@article_id:319617)呢？让我们从最核心的概念开始。
+那么，我们究竟该如何精确定义并计算这些看似怪异的[非整数维度](@keyword=non_integer_dimension|lang=zh-CN|style=Feynman)呢？让我们从最核心的概念开始。
 
 ## 核心概念
 
-我们生活在一个由一维、二维和三维物体组成的世界里。一根线是一维的，一张纸是二维的，一个球是三维的。这看起来是如此地理所当然，以至于我们很少去问一个更深层次的问题：当我们说一个物体是“几维”的时候，我们到底是什么意思？我们能否用一种更普适、更强大的方式来描述一个物体的“维度”，甚至能[量化](@article_id:312797)一片雪花那错综复杂的结构，或者一条海岸线那蜿蜒曲折的轮廓？
+我们生活在一个由一维、二维和三维物体组成的世界里。一根线是一维的，一张纸是二维的，一个球是三维的。这看起来是如此地理所当然，以至于我们很少去问一个更深层次的问题：当我们说一个物体是“几维”的时候，我们到底是什么意思？我们能否用一种更普适、更强大的方式来描述一个物体的“维度”，甚至能[量化](@keyword=quantization|lang=zh-CN|style=Feynman)一片雪花那错综复杂的结构，或者一条海岸线那蜿蜒曲折的轮廓？
 
-答案是肯定的，而这趟旅程将带我们超越整数维度的熟悉世界，进入一个充满奇特几何体和[非整数维度](@article_id:319617)的迷人领域——[分形](@article_id:301219)的世界。
+答案是肯定的，而这趟旅程将带我们超越整数维度的熟悉世界，进入一个充满奇特几何体和[非整数维度](@keyword=non_integer_dimension|lang=zh-CN|style=Feynman)的迷人领域——[分形](@keyword=fractal|lang=zh-CN|style=Feynman)的世界。
 
 ### 放大镜下的维度法则
 
-让我们先从一个[思想实验](@article_id:328281)开始。想象你有一条直线段。如果我用一个放大镜，将它[线性](@article_id:316778)放大3倍，你会看到什么？你会看到一条更长的线段，但它的本质没变。更重要的是，这条放大了的线段可以看作是由 $N=3$ 条未经放大的原始线段首尾相接组成的。
+让我们先从一个[思想实验](@keyword=thought_experiments|lang=zh-CN|style=Feynman)开始。想象你有一条直线段。如果我用一个放大镜，将它[线性](@keyword=linearity|lang=zh-CN|style=Feynman)放大3倍，你会看到什么？你会看到一条更长的线段，但它的本质没变。更重要的是，这条放大了的线段可以看作是由 $N=3$ 条未经放大的原始线段首尾相接组成的。
 
-现在，我们把这个游戏应用到一个正方形上。我们将它在长和宽两个方向上都放大3倍，也就是说[线性](@article_id:316778)[放大因子](@article_id:304744) $s=3$。这个更大的正方形可以由多少个（$N$）原始的小正方形拼成呢？答案是 $3 \times 3 = 9$ 个。
+现在，我们把这个游戏应用到一个正方形上。我们将它在长和宽两个方向上都放大3倍，也就是说[线性](@keyword=linearity|lang=zh-CN|style=Feynman)[放大因子](@keyword=amplification_factor|lang=zh-CN|style=Feynman) $s=3$。这个更大的正方形可以由多少个（$N$）原始的小正方形拼成呢？答案是 $3 \times 3 = 9$ 个。
 
 再进一步，一个立方体。将它的长、宽、高都放大3倍（$s=3$），这个大立方体显然是由 $3 \times 3 \times 3 = 27$ 个（$N=27$）原始的小立方体构成的。
 
@@ -24,13 +24,13 @@
 -   对于二维正方形：$N=9$, $s=3$，我们知道维度 $D=2$，而 $9 = 3^2$。
 -   对于三维立方体：$N=27$, $s=3$，我们知道维度 $D=3$，而 $27 = 3^3$。
 
-一个优美而深刻的模式浮现出来：物体的自相似复制数量 $N$、[线性](@article_id:316778)放大倍数 $s$ 和它的维度 $D$ 之间，似乎遵循着一个[幂律](@article_id:320566)关系：
+一个优美而深刻的模式浮现出来：物体的自相似复制数量 $N$、[线性](@keyword=linearity|lang=zh-CN|style=Feynman)放大倍数 $s$ 和它的维度 $D$ 之间，似乎遵循着一个[幂律](@keyword=power_laws|lang=zh-CN|style=Feynman)关系：
 
 $$ N = s^D $$
 
-这个简单的公式就是我们通往[分形](@article_id:301219)维度的钥匙！对于我们熟悉的物体，维度 $D$ 恰好是我们熟知的整数1、2、3。但如果，我们遇到了一个不那么“循规蹈矩”的物体呢？
+这个简单的公式就是我们通往[分形](@keyword=fractal|lang=zh-CN|style=Feynman)维度的钥匙！对于我们熟悉的物体，维度 $D$ 恰好是我们熟知的整数1、2、3。但如果，我们遇到了一个不那么“循规蹈矩”的物体呢？
 
-想象一下，[材料科学](@article_id:312640)家发现了一种新奇的“[超材料](@article_id:340516)泡沫”，它具有完美的[自相似性](@article_id:305377)。通过高[分辨率](@article_id:349773)[成像](@article_id:347782)，他们发现如果将这种材料的任何一小部分[线性](@article_id:316778)放大 $s=3$ 倍，所得到的图像在统计上等同于由 $N=7$ 个未经放大的原始部分组成的结构 。
+想象一下，[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)家发现了一种新奇的“[超材料](@keyword=metamaterials|lang=zh-CN|style=Feynman)泡沫”，它具有完美的[自相似性](@keyword=self_similarity|lang=zh-CN|style=Feynman)。通过高[分辨率](@keyword=resolving_power|lang=zh-CN|style=Feynman)[成像](@keyword=image_formation|lang=zh-CN|style=Feynman)，他们发现如果将这种材料的任何一小部分[线性](@keyword=linearity|lang=zh-CN|style=Feynman)放大 $s=3$ 倍，所得到的图像在统计上等同于由 $N=7$ 个未经放大的原始部分组成的结构 [@problem_id:1678079]。
 
 现在，让我们把这两个数字代入我们的维度法则：$7 = 3^D$。为了解出 $D$，我们可以对等式两边取对数：
 
@@ -40,39 +40,39 @@ $$ \ln(7) = \ln(3^D) = D \ln(3) $$
 
 $$ D = \frac{\ln(7)}{\ln(3)} \approx 1.771 $$
 
-这到底意味着什么？一个物体的维度怎么可能不是整数？这就是[分形](@article_id:301219)维度的核心思想：它不再是一个简单的拓扑概念（点、线、面），而是变成了一个衡量物体**[复杂性](@article_id:329807)**或**空间填充能力**的指标。这个大约1.771的维度告诉我们，这种[超材料](@article_id:340516)泡沫比任何简单的曲线（维度1）都更复杂、更“密布”，但它又没有完全填满一个平面（维度2）。它是一种介于线和面之间的奇特存在。我们把这种通过[自相似性](@article_id:305377)定义的维度称为**[相似维度](@article_id:323602) (similarity dimension)**。
+这到底意味着什么？一个物体的维度怎么可能不是整数？这就是[分形](@keyword=fractal|lang=zh-CN|style=Feynman)维度的核心思想：它不再是一个简单的拓扑概念（点、线、面），而是变成了一个衡量物体**[复杂性](@keyword=complexity|lang=zh-CN|style=Feynman)**或**空间填充能力**的指标。这个大约1.771的维度告诉我们，这种[超材料](@keyword=metamaterials|lang=zh-CN|style=Feynman)泡沫比任何简单的曲线（维度1）都更复杂、更“密布”，但它又没有完全填满一个平面（维度2）。它是一种介于线和面之间的奇特存在。我们把这种通过[自相似性](@keyword=self_similarity|lang=zh-CN|style=Feynman)定义的维度称为**[相似维度](@keyword=similarity_dimension|lang=zh-CN|style=Feynman) (similarity dimension)**。
 
-我们可以用这个思想来分析各种各样通过迭代生成的美丽[分形](@article_id:301219)。例如，一个不断用五个小十字代替一个大十字而生成的“[分形](@article_id:301219)十字”，每一步都将原图形缩小到 $1/3$，并用5个复制品取而代之。这里的放大倍数是 $s=3$，复制数量是 $N=5$，因此它的维度是 $D = \frac{\ln(5)}{\ln(3)} \approx 1.465$ 。同样，一个被称为维舍克[分形](@article_id:301219)（Vicsek fractal）的二维图形，也是由 $N=5$ 个缩小为 $1/3$ 的正方形组成，其维度同样是 $\frac{\ln 5}{\ln 3}$ 。它们都是比线更复杂，比面更[稀疏](@article_id:380562)的几何体。
+我们可以用这个思想来分析各种各样通过迭代生成的美丽[分形](@keyword=fractal|lang=zh-CN|style=Feynman)。例如，一个不断用五个小十字代替一个大十字而生成的“[分形](@keyword=fractal|lang=zh-CN|style=Feynman)十字”，每一步都将原图形缩小到 $1/3$，并用5个复制品取而代之。这里的放大倍数是 $s=3$，复制数量是 $N=5$，因此它的维度是 $D = \frac{\ln(5)}{\ln(3)} \approx 1.465$ [@problem_id:1678083]。同样，一个被称为维舍克[分形](@keyword=fractal|lang=zh-CN|style=Feynman)（Vicsek fractal）的二维图形，也是由 $N=5$ 个缩小为 $1/3$ 的正方形组成，其维度同样是 $\frac{\ln 5}{\ln 3}$ [@problem_id:1678101]。它们都是比线更复杂，比面更[稀疏](@keyword=rarefaction|lang=zh-CN|style=Feynman)的几何体。
 
 ### 维度小于一的“尘埃”
 
-[分形](@article_id:301219)不仅可以“填充”空间，还可以“掏空”空间。最经典的例子是康托集（Cantor set）。让我们来看一个它的变种：我们从一条单位长度的线段 $[0, 1]$ 开始。第一步，我们将它五等分，然后挖掉第二个和第四个[开区间](@article_id:304459)，留下三段长度为 $1/5$ 的小线段。第二步，我们对这三段小线段重复同样的操作，得到九段更小的线段。如此无限地进行下去 。
+[分形](@keyword=fractal|lang=zh-CN|style=Feynman)不仅可以“填充”空间，还可以“掏空”空间。最经典的例子是康托集（Cantor set）。让我们来看一个它的变种：我们从一条单位长度的线段 $[0, 1]$ 开始。第一步，我们将它五等分，然后挖掉第二个和第四个[开区间](@keyword=open_interval|lang=zh-CN|style=Feynman)，留下三段长度为 $1/5$ 的小线段。第二步，我们对这三段小线段重复同样的操作，得到九段更小的线段。如此无限地进行下去 [@problem_id:1678111]。
 
 最终剩下的会是什么？是一个由无数个离散点组成的“尘埃”。这些点的总长度是零，但它却有着令人惊讶的结构。在每一步，我们都用 $N=3$ 个自身复制品来替换原来的线段，而每一个复制品的尺寸都缩小为原来的 $1/5$。因此，放大倍数 $s=5$。应用我们的维度法则：
 
 $$ D = \frac{\ln(3)}{\ln(5)} \approx 0.683 $$
 
-这个结果甚至比1还小！这是一个令人费解却又极其深刻的结论。这个康托集由无穷多个点构成（比单个点的0维要“多”），但它又是如此[稀疏](@article_id:380562)，以至于它甚至无法构成一条完整的线（无法达到1维）。它的维度小于1，精确地[量化](@article_id:312797)了这种介于“点集”和“线段”之间的状态。
+这个结果甚至比1还小！这是一个令人费解却又极其深刻的结论。这个康托集由无穷多个点构成（比单个点的0维要“多”），但它又是如此[稀疏](@keyword=rarefaction|lang=zh-CN|style=Feynman)，以至于它甚至无法构成一条完整的线（无法达到1维）。它的维度小于1，精确地[量化](@keyword=quantization|lang=zh-CN|style=Feynman)了这种介于“点集”和“线段”之间的状态。
 
-这里隐藏着一个更深邃的物理直觉。对于一个长度为 $L$ 的一维物体，它的“一维测度”就是其长度 $L^1$。对于一个边长为 $L$ 的二维物体，它的“二维测度”是其面积 $L^2$。[分形](@article_id:301219)维度 $D$ 恰恰是这样一个神奇的[指数](@article_id:347402)，使得物体的“$D$ 维测度”——$L^D$——在[自相似的](@article_id:337935)变换过程中保持不变 。这揭示了维度作为一个描述几何对象在不同尺度下如何变化的量的本质。
+这里隐藏着一个更深邃的物理直觉。对于一个长度为 $L$ 的一维物体，它的“一维测度”就是其长度 $L^1$。对于一个边长为 $L$ 的二维物体，它的“二维测度”是其面积 $L^2$。[分形](@keyword=fractal|lang=zh-CN|style=Feynman)维度 $D$ 恰恰是这样一个神奇的[指数](@keyword=exponent|lang=zh-CN|style=Feynman)，使得物体的“$D$ 维测度”——$L^D$——在[自相似的](@keyword=self_similar|lang=zh-CN|style=Feynman)变换过程中保持不变 [@problem_id:1419540]。这揭示了维度作为一个描述几何对象在不同尺度下如何变化的量的本质。
 
-### 真正的[分形](@article_id:301219)：当直觉遇上数学
+### 真正的[分形](@keyword=fractal|lang=zh-CN|style=Feynman)：当直觉遇上数学
 
-此时，你可能会感到困惑。我们直观地认为，维舍克[分形](@article_id:301219)  无论多么复杂，它终究是由许多相互[连接](@article_id:297805)的线段组成的，应该是一维的。这种直觉是对的，但又不完全对。
+此时，你可能会感到困惑。我们直观地认为，维舍克[分形](@keyword=fractal|lang=zh-CN|style=Feynman) [@problem_id:1678101] 无论多么复杂，它终究是由许多相互[连接](@keyword=concatenation|lang=zh-CN|style=Feynman)的线段组成的，应该是一维的。这种直觉是对的，但又不完全对。
 
 这里我们需要区分两种“维度”：
 
-1.  **拓扑维度 ($d_T$)**：这是我们日常经验中的整数维度。一个点集的拓扑维度是0，一条曲线是1，一个曲面是2。对于维舍克[分形](@article_id:301219)，因为它是一个连通的、类似曲线的结构，它的拓扑维度确实是1。
+1.  **拓扑维度 ($d_T$)**：这是我们日常经验中的整数维度。一个点集的拓扑维度是0，一条曲线是1，一个曲面是2。对于维舍克[分形](@keyword=fractal|lang=zh-CN|style=Feynman)，因为它是一个连通的、类似曲线的结构，它的拓扑维度确实是1。
 
-2.  **[分形](@article_id:301219)维度 ($d_S$)**：我们上面计算的[非整数维度](@article_id:319617)，如 $\frac{\ln 5}{\ln 3}$。它衡量的是物体在不同尺度下的[复杂性](@article_id:329807)或“粗糙度”。
+2.  **[分形](@keyword=fractal|lang=zh-CN|style=Feynman)维度 ($d_S$)**：我们上面计算的[非整数维度](@keyword=non_integer_dimension|lang=zh-CN|style=Feynman)，如 $\frac{\ln 5}{\ln 3}$。它衡量的是物体在不同尺度下的[复杂性](@keyword=complexity|lang=zh-CN|style=Feynman)或“粗糙度”。
 
-一个几何对象是**[分形](@article_id:301219)**的严格定义，就是它的[分形](@article_id:301219)维度严格大于其拓扑维度 ($d_S > d_T$)。这完美地捕捉了[分形](@article_id:301219)的本质：一个拓扑上是一维的物体，却因为其极度的“褶皱”和“卷曲”，以至于它在某种程度上开始表现出填充更高维度空间的趋势。
+一个几何对象是**[分形](@keyword=fractal|lang=zh-CN|style=Feynman)**的严格定义，就是它的[分形](@keyword=fractal|lang=zh-CN|style=Feynman)维度严格大于其拓扑维度 ($d_S > d_T$)。这完美地捕捉了[分形](@keyword=fractal|lang=zh-CN|style=Feynman)的本质：一个拓扑上是一维的物体，却因为其极度的“褶皱”和“卷曲”，以至于它在某种程度上开始表现出填充更高维度空间的趋势。
 
-那么，我们平时画的一条光滑曲线，比如一条[抛物线](@article_id:351537)，它的[分形](@article_id:301219)维度是多少呢？答案是1。为什么？因为当你用放大镜不断放大一条光滑曲线的任何一小部[分时](@article_id:338112)，它会变得越来越像一条直线段 。它不会在更小的尺度上展现出新的、更复杂的结构。它的[复杂性](@article_id:329807)不会随着尺度的缩小而增加。因此，它的[分形](@article_id:301219)维度和拓扑维度都是1，它不是一个[分形](@article_id:301219)。而[分形](@article_id:301219)，无论你放大多少倍，它细节处的[复杂性](@article_id:329807)都与整体一样，永无止境。
+那么，我们平时画的一条光滑曲线，比如一条[抛物线](@keyword=parabola|lang=zh-CN|style=Feynman)，它的[分形](@keyword=fractal|lang=zh-CN|style=Feynman)维度是多少呢？答案是1。为什么？因为当你用放大镜不断放大一条光滑曲线的任何一小部[分时](@keyword=time_sharing|lang=zh-CN|style=Feynman)，它会变得越来越像一条直线段 [@problem_id:1678092]。它不会在更小的尺度上展现出新的、更复杂的结构。它的[复杂性](@keyword=complexity|lang=zh-CN|style=Feynman)不会随着尺度的缩小而增加。因此，它的[分形](@keyword=fractal|lang=zh-CN|style=Feynman)维度和拓扑维度都是1，它不是一个[分形](@keyword=fractal|lang=zh-CN|style=Feynman)。而[分形](@keyword=fractal|lang=zh-CN|style=Feynman)，无论你放大多少倍，它细节处的[复杂性](@keyword=complexity|lang=zh-CN|style=Feynman)都与整体一样，永无止境。
 
 ### 从理论到现实：盒子计数法
 
-完美的自相似[分形](@article_id:301219)在数学世界里很美，但自然界很少如此完美。一片[蕨类植物](@article_id:332443)的叶子，一个浦肯野[神经元](@article_id:308519)的 dendritic arbor（[树突](@article_id:319907)丛），或者一条蜿蜒的海岸线，它们并不是严格[自相似的](@article_id:337935)。那么我们如何测量这些真实世界物体的[分形](@article_id:301219)维度呢？
+完美的自相似[分形](@keyword=fractal|lang=zh-CN|style=Feynman)在数学世界里很美，但自然界很少如此完美。一片[蕨类植物](@keyword=ferns|lang=zh-CN|style=Feynman)的叶子，一个浦肯野[神经元](@keyword=neuron|lang=zh-CN|style=Feynman)的 dendritic arbor（[树突](@keyword=dendrites|lang=zh-CN|style=Feynman)丛），或者一条蜿蜒的海岸线，它们并不是严格[自相似的](@keyword=self_similar|lang=zh-CN|style=Feynman)。那么我们如何测量这些真实世界物体的[分形](@keyword=fractal|lang=zh-CN|style=Feynman)维度呢？
 
 这里，一种名为**盒子计数法 (box-counting method)** 的巧妙方法应运而生。 इसका विचार आश्चर्यजनक रूप से सीधा है:
 
@@ -80,7 +80,7 @@ $$ D = \frac{\ln(3)}{\ln(5)} \approx 0.683 $$
 2.  数出有多少个盒子（我们称之为 $N(\epsilon)$）包含了物体的一部分。
 3.  然后，换用更小的盒子，重复这个过程。
 
-对于一个[分形](@article_id:301219)物体，盒子数量 $N(\epsilon)$ 和盒子大小 $\epsilon$ 之间也存在一个[幂律](@article_id:320566)关系：
+对于一个[分形](@keyword=fractal|lang=zh-CN|style=Feynman)物体，盒子数量 $N(\epsilon)$ 和盒子大小 $\epsilon$ 之间也存在一个[幂律](@keyword=power_laws|lang=zh-CN|style=Feynman)关系：
 
 $$ N(\epsilon) \propto \epsilon^{-D} $$
 
@@ -88,21 +88,21 @@ $$ N(\epsilon) \propto \epsilon^{-D} $$
 
 $$ \ln(N(\epsilon)) \approx C - D \ln(\epsilon) $$
 
-这是一个[线性关系](@article_id:331583)！如果我们以 $\ln(1/\epsilon)$ 为[横轴](@article_id:356395)，以 $\ln(N(\epsilon))$ 为纵轴绘制数据点，这些点会近似地[排列](@article_id:307545)在一条直线上，而这条直线的斜率，就是我们梦寐以求的[分形](@article_id:301219)维度 $D$！
+这是一个[线性关系](@keyword=linear_relationship|lang=zh-CN|style=Feynman)！如果我们以 $\ln(1/\epsilon)$ 为[横轴](@keyword=transverse_axis|lang=zh-CN|style=Feynman)，以 $\ln(N(\epsilon))$ 为纵轴绘制数据点，这些点会近似地[排列](@keyword=permutations|lang=zh-CN|style=Feynman)在一条直线上，而这条直线的斜率，就是我们梦寐以求的[分形](@keyword=fractal|lang=zh-CN|style=Feynman)维度 $D$！
 
-例如，一位[生物物理学](@article_id:315349)家在研究浦肯野[神经元](@article_id:308519)的复杂结构时，可以通过这种方法来[量化](@article_id:312797)其[复杂性](@article_id:329807)。假设他们测得，当盒子边长 $\epsilon_1 = 0.1$ 时，需要 $N_1=1,240,000$ 个盒子；而当盒子边长缩小到 $\epsilon_2=0.01$ 时，需要 $N_2=69,500,000$ 个盒子。通过这两组数据，就可以计算出这个[神经元](@article_id:308519)[树突](@article_id:319907)丛的盒子计数维度约为 $D \approx 1.75$ 。这个数字告诉我们，[神经元](@article_id:308519)的结构在二维图像上，其复杂程度远远超过一条简单的线，它高效地伸展自己的“触手”，以便在有限空间内最大化地接收信息。从西兰花  到[星系团](@article_id:321323)的[分布](@article_id:338885)，盒子计数法为我们提供了一把测量现实世界[复杂性](@article_id:329807)的标尺。
+例如，一位[生物物理学](@keyword=biophysics|lang=zh-CN|style=Feynman)家在研究浦肯野[神经元](@keyword=neuron|lang=zh-CN|style=Feynman)的复杂结构时，可以通过这种方法来[量化](@keyword=quantization|lang=zh-CN|style=Feynman)其[复杂性](@keyword=complexity|lang=zh-CN|style=Feynman)。假设他们测得，当盒子边长 $\epsilon_1 = 0.1$ 时，需要 $N_1=1,240,000$ 个盒子；而当盒子边长缩小到 $\epsilon_2=0.01$ 时，需要 $N_2=69,500,000$ 个盒子。通过这两组数据，就可以计算出这个[神经元](@keyword=neuron|lang=zh-CN|style=Feynman)[树突](@keyword=dendrites|lang=zh-CN|style=Feynman)丛的盒子计数维度约为 $D \approx 1.75$ [@problem_id:1678106]。这个数字告诉我们，[神经元](@keyword=neuron|lang=zh-CN|style=Feynman)的结构在二维图像上，其复杂程度远远超过一条简单的线，它高效地伸展自己的“触手”，以便在有限空间内最大化地接收信息。从西兰花 [@problem_id:1678086] 到[星系团](@keyword=galaxy_clusters|lang=zh-CN|style=Feynman)的[分布](@keyword=generalized_functions|lang=zh-CN|style=Feynman)，盒子计数法为我们提供了一把测量现实世界[复杂性](@keyword=complexity|lang=zh-CN|style=Feynman)的标尺。
 
-### 更深层的维度：信息与[熵](@article_id:301185)
+### 更深层的维度：信息与[熵](@keyword=entropy|lang=zh-CN|style=Feynman)
 
-[分形](@article_id:301219)维度的故事到这里还没有结束。在许多真实的动态过程中，比如一个[混沌系统](@article_id:299765)，它的[轨迹](@article_id:352556)并不会“均匀”地探索整个[分形](@article_id:301219)[吸引子](@article_id:338770)。某些区域可能被更频繁地访问，而另一些区域则较少。
+[分形](@keyword=fractal|lang=zh-CN|style=Feynman)维度的故事到这里还没有结束。在许多真实的动态过程中，比如一个[混沌系统](@keyword=chaotic_systems|lang=zh-CN|style=Feynman)，它的[轨迹](@keyword=trajectory|lang=zh-CN|style=Feynman)并不会“均匀”地探索整个[分形](@keyword=fractal|lang=zh-CN|style=Feynman)[吸引子](@keyword=attractors|lang=zh-CN|style=Feynman)。某些区域可能被更频繁地访问，而另一些区域则较少。
 
-为了描述这种非均匀性，科学家们引入了更精细的维度概念，其中之一就是**[信息维度](@article_id:338887) ($D_1$)**。想象一个[分形](@article_id:301219)是通过两个不同的[收缩](@article_id:311574)变换（比如 $T_1$ 和 $T_2$）随机迭代生成的，但选择 $T_1$ 的概率（比如 $p_1 = 3/4$）远大于选择 $T_2$ 的概率（$p_2 = 1/4$）。
+为了描述这种非均匀性，科学家们引入了更精细的维度概念，其中之一就是**[信息维度](@keyword=information_dimension|lang=zh-CN|style=Feynman) ($D_1$)**。想象一个[分形](@keyword=fractal|lang=zh-CN|style=Feynman)是通过两个不同的[收缩](@keyword=retraction|lang=zh-CN|style=Feynman)变换（比如 $T_1$ 和 $T_2$）随机迭代生成的，但选择 $T_1$ 的概率（比如 $p_1 = 3/4$）远大于选择 $T_2$ 的概率（$p_2 = 1/4$）[@problem_id:1678104]。
 
-简单的[相似维度](@article_id:323602)或盒子计数维度会平等地对待这两个过程产生的所有部分。而[信息维度](@article_id:338887)则会把概率权重考虑进去。它的计算涉及到[信息论](@article_id:307403)中的一个核心概念——[香农熵](@article_id:303050)（Shannon Entropy），它衡量了一个[随机过程](@article_id:332189)的“不确定性”或“[信息量](@article_id:336012)”。[信息维度](@article_id:338887)的表达式非常优美，它将一个系统的[熵](@article_id:301185)（信息特征）与它的动[力学](@article_id:312082)特征（[李雅普诺夫指数](@article_id:297279)，Lyapunov exponent）联系在一起：
+简单的[相似维度](@keyword=similarity_dimension|lang=zh-CN|style=Feynman)或盒子计数维度会平等地对待这两个过程产生的所有部分。而[信息维度](@keyword=information_dimension|lang=zh-CN|style=Feynman)则会把概率权重考虑进去。它的计算涉及到[信息论](@keyword=information_theory|lang=zh-CN|style=Feynman)中的一个核心概念——[香农熵](@keyword=shannon_entropy|lang=zh-CN|style=Feynman)（Shannon Entropy），它衡量了一个[随机过程](@keyword=random_processes|lang=zh-CN|style=Feynman)的“不确定性”或“[信息量](@keyword=information_content|lang=zh-CN|style=Feynman)”。[信息维度](@keyword=information_dimension|lang=zh-CN|style=Feynman)的表达式非常优美，它将一个系统的[熵](@keyword=entropy|lang=zh-CN|style=Feynman)（信息特征）与它的动[力学](@keyword=mechanics|lang=zh-CN|style=Feynman)特征（[李雅普诺夫指数](@keyword=lyapunov_exponents|lang=zh-CN|style=Feynman)，Lyapunov exponent）联系在一起：
 
-$$ D_1 = \frac{\text{[熵](@article_id:301185) (Entropy)}}{\text{[李雅普诺夫指数](@article_id:297279) (Lyapunov Exponent)}} $$
+$$ D_1 = \frac{\text{[熵](@keyword=entropy|lang=zh-CN|style=Feynman) (Entropy)}}{\text{[李雅普诺夫指数](@keyword=lyapunov_exponents|lang=zh-CN|style=Feynman) (Lyapunov Exponent)}} $$
 
-这个概念告诉我们，[分形](@article_id:301219)维度不仅仅是一个单一的数字，而可能是一个完整的“维度谱”。通过研究这个谱，我们可以更深刻地理解一个[复杂系统](@article_id:298515)的内在结构和动态行为。
+这个概念告诉我们，[分形](@keyword=fractal|lang=zh-CN|style=Feynman)维度不仅仅是一个单一的数字，而可能是一个完整的“维度谱”。通过研究这个谱，我们可以更深刻地理解一个[复杂系统](@keyword=complex_systems|lang=zh-CN|style=Feynman)的内在结构和动态行为。
 
-从一个简单的放大法则，到描述真实世界[复杂性](@article_id:329807)的实用工具，再到与[信息论](@article_id:307403)的深刻联系，[分形](@article_id:301219)维度的概念为我们打开了一扇窗，让我们得以窥见自然界和数学中无处不在的、令人惊叹的复杂之美。它证明了，有时最深刻的洞见，恰恰来自于对最基本概念的勇敢追问——比如，“什么，是维度？”
+从一个简单的放大法则，到描述真实世界[复杂性](@keyword=complexity|lang=zh-CN|style=Feynman)的实用工具，再到与[信息论](@keyword=information_theory|lang=zh-CN|style=Feynman)的深刻联系，[分形](@keyword=fractal|lang=zh-CN|style=Feynman)维度的概念为我们打开了一扇窗，让我们得以窥见自然界和数学中无处不在的、令人惊叹的复杂之美。它证明了，有时最深刻的洞见，恰恰来自于对最基本概念的勇敢追问——比如，“什么，是维度？”
 

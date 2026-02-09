@@ -30,7 +30,7 @@ How do we find the length of these shadows? With a little trigonometry. If a vec
 $D_x = D \cos(\theta)$
 $D_y = D \sin(\theta)$
 
-For instance, a geological survey team mapping a plot of land might describe a boundary as a vector of $1.55 \text{ km}$ at $25.0^\circ$ North of East . By setting up a coordinate system with East as the x-axis and North as the y-axis, we can immediately find the "shadows": an eastward component of $1.55 \cos(25.0^\circ)$ km and a northward component of $1.55 \sin(25.0^\circ)$ km. The beauty is that the coordinate system is our choice. If a problem uses compass bearings, where angles are measured clockwise from North, we can still find the components with a bit of care. A bearing of $\theta_B$ corresponds to a standard mathematical angle of $(90^\circ - \theta_B)$ or $(450^\circ - \theta_B)$, a simple conversion that makes the problem tractable .
+For instance, a geological survey team mapping a plot of land might describe a boundary as a vector of $1.55 \text{ km}$ at $25.0^\circ$ North of East [@problem_id:2229602]. By setting up a coordinate system with East as the x-axis and North as the y-axis, we can immediately find the "shadows": an eastward component of $1.55 \cos(25.0^\circ)$ km and a northward component of $1.55 \sin(25.0^\circ)$ km. The beauty is that the coordinate system is our choice. If a problem uses compass bearings, where angles are measured clockwise from North, we can still find the components with a bit of care. A bearing of $\theta_B$ corresponds to a standard mathematical angle of $(90^\circ - \theta_B)$ or $(450^\circ - \theta_B)$, a simple conversion that makes the problem tractable [@problem_id:2229587].
 
 ### The Art of Bookkeeping
 
@@ -41,13 +41,13 @@ Once every vector is expressed in its components, a remarkable thing happens. Al
 $R_x = d_{1x} + d_{2x} + d_{3x} + \dots$
 $R_y = d_{1y} + d_{2y} + d_{3y} + \dots$
 
-Consider an underwater ROV on a survey mission, making four separate straight-line maneuvers . Trying to find its final position by drawing four arrows head-to-tail would be a nightmare. But with components, it’s just bookkeeping. You make a table, with columns for the x- and y-components of each displacement. You calculate them, one by one, then sum the columns. The grand, winding journey is reduced to two simple sums. This method is not just easier; it is fundamentally more organized and powerful.
+Consider an underwater ROV on a survey mission, making four separate straight-line maneuvers [@problem_id:2229612]. Trying to find its final position by drawing four arrows head-to-tail would be a nightmare. But with components, it’s just bookkeeping. You make a table, with columns for the x- and y-components of each displacement. You calculate them, one by one, then sum the columns. The grand, winding journey is reduced to two simple sums. This method is not just easier; it is fundamentally more organized and powerful.
 
 ### From Shadows to Substance
 
-So, we've broken our vectors down and added their components. We are left with the components of the final [resultant vector](@article_id:175190), $R_x$ and $R_y$. These are the shadows of our answer. How do we reconstruct the final vector from its shadows? We reverse the process.
+So, we've broken our vectors down and added their components. We are left with the components of the final [resultant vector](@keyword=resultant_vector|lang=en-US|style=Feynman), $R_x$ and $R_y$. These are the shadows of our answer. How do we reconstruct the final vector from its shadows? We reverse the process.
 
-The components $R_x$ and $R_y$ form the legs of a right-angled triangle, and the [resultant vector](@article_id:175190) $\vec{R}$ is the hypotenuse. From our old friend, the **Pythagorean theorem**, the magnitude of the resultant is:
+The components $R_x$ and $R_y$ form the legs of a right-angled triangle, and the [resultant vector](@keyword=resultant_vector|lang=en-US|style=Feynman) $\vec{R}$ is the hypotenuse. From our old friend, the **Pythagorean theorem**, the magnitude of the resultant is:
 
 $R = |\vec{R}| = \sqrt{R_x^2 + R_y^2}$
 
@@ -55,9 +55,9 @@ This gives us the "how much." To find the "which way," we need the angle. The an
 
 $\theta = \arctan\left(\frac{R_y}{R_x}\right)$
 
-But be careful! Your calculator is a bit naive. The arctangent function alone can't distinguish between, say, the second and fourth quadrants. You must look at the signs of $R_x$ and $R_y$ to know where your vector truly points. For example, if a rover ends up with a negative x-component and a positive y-component, it's in the second quadrant. The antenna pointing back to the origin must therefore point into the fourth quadrant, an angle your brain must deduce, not just your calculator .
+But be careful! Your calculator is a bit naive. The arctangent function alone can't distinguish between, say, the second and fourth quadrants. You must look at the signs of $R_x$ and $R_y$ to know where your vector truly points. For example, if a rover ends up with a negative x-component and a positive y-component, it's in the second quadrant. The antenna pointing back to the origin must therefore point into the fourth quadrant, an angle your brain must deduce, not just your calculator [@problem_id:2229624].
 
-The same principles apply perfectly in three dimensions. We just add a z-axis. A position in space is described by three coordinates, and the distance between two atoms in a molecule, for example, is found by first calculating the components of the vector connecting them ($\Delta x = x_B - x_A$, etc.) and then applying Pythagoras in 3D :
+The same principles apply perfectly in three dimensions. We just add a z-axis. A position in space is described by three coordinates, and the distance between two atoms in a molecule, for example, is found by first calculating the components of the vector connecting them ($\Delta x = x_B - x_A$, etc.) and then applying Pythagoras in 3D [@problem_id:2229616]:
 
 $|\vec{r}_{AB}| = \sqrt{(\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2}$
 
@@ -65,17 +65,17 @@ $|\vec{r}_{AB}| = \sqrt{(\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2}$
 
 This method of components is far more than a tool for calculating displacements. It is a universal language used throughout physics.
 
-- **Forces:** An object responds not to individual forces, but to their net effect. When three technicians pull on a bolt from different directions, the bolt feels a single **net force**, which is simply the vector sum of the three individual forces . By breaking each force into its x- and y-components, we can easily calculate the resultant force that determines the bolt's fate. This is the **principle of superposition** in action.
+- **Forces:** An object responds not to individual forces, but to their net effect. When three technicians pull on a bolt from different directions, the bolt feels a single **net force**, which is simply the vector sum of the three individual forces [@problem_id:2229588]. By breaking each force into its x- and y-components, we can easily calculate the resultant force that determines the bolt's fate. This is the **principle of superposition** in action.
 
-- **Velocities:** Consider a ferry crossing a river . The ferry's velocity relative to the ground is the vector sum of its velocity through the water and the velocity of the river's current. If the ferry wants to go straight across, it must point itself partially upstream. Why? To use a component of its own velocity to fight the river's flow. The brilliant part is that the components have independent physical meaning. The northward component of its velocity determines how quickly it crosses the river. The east-west component determines whether it gets swept downstream. To go straight across, its westward velocity component must exactly cancel the river's eastward flow.
+- **Velocities:** Consider a ferry crossing a river [@problem_id:2229630]. The ferry's velocity relative to the ground is the vector sum of its velocity through the water and the velocity of the river's current. If the ferry wants to go straight across, it must point itself partially upstream. Why? To use a component of its own velocity to fight the river's flow. The brilliant part is that the components have independent physical meaning. The northward component of its velocity determines how quickly it crosses the river. The east-west component determines whether it gets swept downstream. To go straight across, its westward velocity component must exactly cancel the river's eastward flow.
 
-- **Fields:** The same mathematics governs the invisible world of fields. The net electric field at a point in space due to several charges is the vector sum of the electric field from each individual charge . The same method we used to track a drone's flight can tell us the direction a charged particle will be pushed by [electrostatic forces](@article_id:202885). This deep unity is one of the most beautiful aspects of physics.
+- **Fields:** The same mathematics governs the invisible world of fields. The net electric field at a point in space due to several charges is the vector sum of the electric field from each individual charge [@problem_id:2229610]. The same method we used to track a drone's flight can tell us the direction a charged particle will be pushed by [electrostatic forces](@keyword=electrostatic_forces|lang=en-US|style=Feynman). This deep unity is one of the most beautiful aspects of physics.
 
 ### Beyond the Right Angle
 
 We have been breaking vectors into perpendicular components because it’s convenient. The math is simple—just sines and cosines. But is it necessary for the components to be at right angles?
 
-Imagine a deep-space probe that needs to produce a [specific force](@article_id:265694) vector to adjust its course. It only has two thrusters, and they are not mounted at $90^\circ$ to each other . Can it still produce the desired net force?
+Imagine a deep-space probe that needs to produce a [specific force](@keyword=specific_force|lang=en-US|style=Feynman) vector to adjust its course. It only has two thrusters, and they are not mounted at $90^\circ$ to each other [@problem_id:2229597]. Can it still produce the desired net force?
 
 The answer is a resounding yes! We can still think of the desired force vector $\vec{F}$ as a sum of the two thruster forces, $\vec{F} = \vec{F}_u + \vec{F}_v$. Here, $\vec{F}_u$ and $\vec{F}_v$ are our "components," but they are along non-orthogonal (non-perpendicular) directions. We can't use simple trigonometry anymore. Instead, we set up a system of linear equations, one for each dimension (x, y, and z), and solve for the required strength of each thruster.
 

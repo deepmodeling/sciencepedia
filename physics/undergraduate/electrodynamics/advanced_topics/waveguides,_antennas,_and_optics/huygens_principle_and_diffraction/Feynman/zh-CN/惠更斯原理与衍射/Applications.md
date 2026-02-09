@@ -1,6 +1,6 @@
 ## 应用与跨学科连接
 
-在前面的章节中，我们踏上了一段旅程，去理解惠更斯那简单而深刻的洞见：[波前](@article_id:376761)的每一点都可以被看作是产生球面子波的新波源。这个看似无辜的假设，最终引导我们发现了衍射——波在遭遇障碍物时发生弯曲和[扩散](@article_id:327616)的现象。你可能会想，这不过是物理学家们在象牙塔里琢磨的又一个精巧但抽象的概念罢了。但事实远非如此！
+在前面的章节中，我们踏上了一段旅程，去理解惠更斯那简单而深刻的洞见：[波前](@keyword=wavefront|lang=zh-CN|style=Feynman)的每一点都可以被看作是产生球面子波的新波源。这个看似无辜的假设，最终引导我们发现了衍射——波在遭遇障碍物时发生弯曲和[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)的现象。你可能会想，这不过是物理学家们在象牙塔里琢磨的又一个精巧但抽象的概念罢了。但事实远非如此！
 
 衍射并非我们光学系统中的瑕疵；它是宇宙波动力学本质的印记。它既设定了我们观察能力的根本极限，也为我们提供了一套前所未有的强大工具，用以操控光、声音，乃至物质本身。一旦你学会了如何观察，你会发现衍射无处不在，从仰望星空到审视生命的最微小构件，它都在上演着一出出精彩绝伦的好戏。现在，让我们走出理论的殿堂，去看看这个原理在真实世界中是如何大放异彩的。
 
@@ -10,27 +10,27 @@
 
 #### 透过针孔看宇宙
 
-当你用望远镜凝视夜空时，你实际上是在透过一个有限的[圆形孔径](@article_id:345821)（物镜或主镜）收集星光。来自遥远恒星的光，尽管在到达我们之前近乎完美的[平面波](@article_id:368882)，在穿过这个孔径后，也不可避免地会发生衍射。它不会在你的探测器上形成一个无限小的光点，而是形成一个被称为“[艾里斑](@article_id:346846)”的特征性衍射图样：一个明亮的中心圆盘，被一系列明暗交替的同心圆环所包围。
+当你用望远镜凝视夜空时，你实际上是在透过一个有限的[圆形孔径](@keyword=circular_aperture|lang=zh-CN|style=Feynman)（物镜或主镜）收集星光。来自遥远恒星的光，尽管在到达我们之前近乎完美的[平面波](@keyword=plane_waves|lang=zh-CN|style=Feynman)，在穿过这个孔径后，也不可避免地会发生衍射。它不会在你的探测器上形成一个无限小的光点，而是形成一个被称为“[艾里斑](@keyword=airy_disk|lang=zh-CN|style=Feynman)”的特征性衍射图样：一个明亮的中心圆盘，被一系列明暗交替的同心圆环所包围。
 
-这个图样的大小，决定了望远镜的“[角分辨率](@article_id:319651)”——它能分辨出天空中两个紧邻物体的最小角距离。这就是为什么天文学家们梦寐以求更大口径的望远镜；更大的口径能将衍射效应“挤压”得更小，从而看得更清晰。有趣的是，这种关系是双向的。正如我们可以从[圆形孔径](@article_id:345821)预测出[艾里斑](@article_id:346846)图样，我们也可以通过观察一个未知的[衍射图样](@article_id:305780)来反推造成它的孔径形状。如果观测到一个明亮的中心斑点和一系列清晰的同心暗环，我们就能满怀信心地推断，产生这个图样的障碍物或孔径具有圆形对称性，比如一个圆形或环形的开口 。这就像是根据留在沙滩上的波纹，来推断是什么形状的物体扰动了水面。
+这个图样的大小，决定了望远镜的“[角分辨率](@keyword=angular_resolution|lang=zh-CN|style=Feynman)”——它能分辨出天空中两个紧邻物体的最小角距离。这就是为什么天文学家们梦寐以求更大口径的望远镜；更大的口径能将衍射效应“挤压”得更小，从而看得更清晰。有趣的是，这种关系是双向的。正如我们可以从[圆形孔径](@keyword=circular_aperture|lang=zh-CN|style=Feynman)预测出[艾里斑](@keyword=airy_disk|lang=zh-CN|style=Feynman)图样，我们也可以通过观察一个未知的[衍射图样](@keyword=diffraction_patterns|lang=zh-CN|style=Feynman)来反推造成它的孔径形状。如果观测到一个明亮的中心斑点和一系列清晰的同心暗环，我们就能满怀信心地推断，产生这个图样的障碍物或孔径具有圆形对称性，比如一个圆形或环形的开口 [@problem_id:1585017]。这就像是根据留在沙滩上的波纹，来推断是什么形状的物体扰动了水面。
 
 #### 解读星辰的“彩虹”
 
-我们是如何知道远在亿万光年之外的恒星是由什么元素组成的？答案是[光谱学](@article_id:298272)，而衍射光栅正是这项技术的“心脏”。衍射光栅本质上是一系列密集、平行的刻线或狭缝，当光照射到它上面时，不同波长（颜色）的光会在不同的角度上发生最强的相长干涉。光栅就像一个超级棱镜，能将一束白光精确地分解成其组成光谱。
+我们是如何知道远在亿万光年之外的恒星是由什么元素组成的？答案是[光谱学](@keyword=spectroscopy|lang=zh-CN|style=Feynman)，而衍射光栅正是这项技术的“心脏”。衍射光栅本质上是一系列密集、平行的刻线或狭缝，当光照射到它上面时，不同波长（颜色）的光会在不同的角度上发生最强的相长干涉。光栅就像一个超级棱镜，能将一束白光精确地分解成其组成光谱。
 
-天文学家将星光导入[光谱仪](@article_id:372138)，通过分析光谱中的吸收[线或](@article_id:349408)发射线（即某些特定波长的缺失或增强），就能像指纹识别一样，精确判断出恒星大气中的[化学成分](@article_id:299315)。为了让这项技术尽可能高效，工程师们发展出了精巧的设计，例如“[闪耀光栅](@article_id:353217)”。通过将光栅的每个微小刻面倾斜一个特定的“[闪耀角](@article_id:352040)”，可以使得绝大部分光能量都集中到某个特定的[衍射级](@article_id:353313)次和波长上，从而极大提高了仪器的灵敏度 。更进一步，通过仔细分析不同[谱线](@article_id:372357)衍射图样的重叠情况，物理学家甚至可以从复杂的混合光谱中辨认出光源的独特信息，例如一个包含两种不同发光元素的天体 。
+天文学家将星光导入[光谱仪](@keyword=spectrometer|lang=zh-CN|style=Feynman)，通过分析光谱中的吸收[线或](@keyword=wired_or|lang=zh-CN|style=Feynman)发射线（即某些特定波长的缺失或增强），就能像指纹识别一样，精确判断出恒星大气中的[化学成分](@keyword=chemical_composition|lang=zh-CN|style=Feynman)。为了让这项技术尽可能高效，工程师们发展出了精巧的设计，例如“[闪耀光栅](@keyword=blazed_grating|lang=zh-CN|style=Feynman)”。通过将光栅的每个微小刻面倾斜一个特定的“[闪耀角](@keyword=blaze_angle|lang=zh-CN|style=Feynman)”，可以使得绝大部分光能量都集中到某个特定的[衍射级](@keyword=diffraction_order|lang=zh-CN|style=Feynman)次和波长上，从而极大提高了仪器的灵敏度 [@problem_id:1584999]。更进一步，通过仔细分析不同[谱线](@keyword=spectral_line|lang=zh-CN|style=Feynman)衍射图样的重叠情况，物理学家甚至可以从复杂的混合光谱中辨认出光源的独特信息，例如一个包含两种不同发光元素的天体 [@problem_id:1585044]。
 
-#### 星[光的相干性](@article_id:344909)
+#### 星[光的相干性](@keyword=light_coherence|lang=zh-CN|style=Feynman)
 
-太阳是一个由炽热气体组成的巨大、混乱的火球，似乎是“非相干”光源的典范。然而，一个令人惊叹的事实是，当太阳光到达地球时，它在一定空间尺度上表现出了[相干性](@article_id:332655)！这意味着，如果你在地面上相隔一段微小距离取两点，这两点处的光场相位存在着某种确定的关系。
+太阳是一个由炽热气体组成的巨大、混乱的火球，似乎是“非相干”光源的典范。然而，一个令人惊叹的事实是，当太阳光到达地球时，它在一定空间尺度上表现出了[相干性](@keyword=coherence|lang=zh-CN|style=Feynman)！这意味着，如果你在地面上相隔一段微小距离取两点，这两点处的光场相位存在着某种确定的关系。
 
-这个看似矛盾的现象，可以通过凡·西特-泽尼克定理（van Cittert-Zernike theorem）来理解。直观地讲，来自太阳盘面上不同位置的光，到达地球上两个不同点的[光程](@article_id:357783)略有差异。这些微小的光程差，在足够小的空间范围内，会建立起一种可预测的相位关联。这个定理揭示了一个深刻的联系：一个[非相干光源](@article_id:364999)在远场的[空间相干性](@article_id:344441)函数，正是该光源[强度分布](@article_id:342492)的傅里叶变换。利用这个原理，我们可以计算出太阳光在地球表面的相干长度（大约几十微米），这正是能够产生[干涉条纹](@article_id:355683)的最大狭缝间距 。这个概念是现代天文学中“恒星[干涉测量术](@article_id:318915)”的基石，天文学家通过建造相隔很远（从几十米到几百米）的望远镜阵列，来合成一个巨大的虚拟口径，从而测量遥远恒星的角直径——这正是利用衍射效应来战胜衍射极限的绝佳范例。
+这个看似矛盾的现象，可以通过凡·西特-泽尼克定理（van Cittert-Zernike theorem）来理解。直观地讲，来自太阳盘面上不同位置的光，到达地球上两个不同点的[光程](@keyword=optical_path_length|lang=zh-CN|style=Feynman)略有差异。这些微小的光程差，在足够小的空间范围内，会建立起一种可预测的相位关联。这个定理揭示了一个深刻的联系：一个[非相干光源](@keyword=incoherent_light_source|lang=zh-CN|style=Feynman)在远场的[空间相干性](@keyword=spatial_coherence|lang=zh-CN|style=Feynman)函数，正是该光源[强度分布](@keyword=intensity_distribution|lang=zh-CN|style=Feynman)的傅里叶变换。利用这个原理，我们可以计算出太阳光在地球表面的相干长度（大约几十微米），这正是能够产生[干涉条纹](@keyword=interference_fringes|lang=zh-CN|style=Feynman)的最大狭缝间距 [@problem_id:1585051]。这个概念是现代天文学中“恒星[干涉测量术](@keyword=interferometry|lang=zh-CN|style=Feynman)”的基石，天文学家通过建造相隔很远（从几十米到几百米）的望远镜阵列，来合成一个巨大的虚拟口径，从而测量遥远恒星的角直径——这正是利用衍射效应来战胜衍射极限的绝佳范例。
 
 #### 小世界的极限
 
-现在，让我们把望远镜的镜头反过来，变成一台显微镜，从探索宏观宇宙转向探索微观生命。令人惊讶的是，我们遇到了完全相同的问题。当显微镜观察一个理想的点状荧光分子时，由于光波会通过物镜的有限孔径，它最终在探测器上形成的也不是一个点，而是一个三维的、模糊的衍射图样。这个图样被称为“[点扩散函数](@article_id:362465)”（Point Spread Function, PSF），它本质上就是显微镜版本的[艾里斑](@article_id:346846) 。
+现在，让我们把望远镜的镜头反过来，变成一台显微镜，从探索宏观宇宙转向探索微观生命。令人惊讶的是，我们遇到了完全相同的问题。当显微镜观察一个理想的点状荧光分子时，由于光波会通过物镜的有限孔径，它最终在探测器上形成的也不是一个点，而是一个三维的、模糊的衍射图样。这个图样被称为“[点扩散函数](@keyword=point_spread_function_2|lang=zh-CN|style=Feynman)”（Point Spread Function, PSF），它本质上就是显微镜版本的[艾里斑](@keyword=airy_disk|lang=zh-CN|style=Feynman) [@problem_id:2339927]。
 
-PSF的大小决定了显微镜的[分辨率极限](@article_id:379104)，即由德国物理学家[恩斯特·阿贝](@article_id:378403)（Ernst Abbe）在一个多世纪前指出的，光学显微镜无法分辨小于约半个波长（大概200纳米）的细节。这个“[阿贝衍射极限](@article_id:307189)”长久以来被认为是不可逾越的壁垒，意味着活细胞内许多精细的分子机器将永远隐藏在我们的视野之外。然而，正如我们即将看到的，对衍射极限的深刻理解，也催生了绕过它的天才设想。
+PSF的大小决定了显微镜的[分辨率极限](@keyword=resolution_limit|lang=zh-CN|style=Feynman)，即由德国物理学家[恩斯特·阿贝](@keyword=ernst_abbe|lang=zh-CN|style=Feynman)（Ernst Abbe）在一个多世纪前指出的，光学显微镜无法分辨小于约半个波长（大概200纳米）的细节。这个“[阿贝衍射极限](@keyword=abbe_diffraction_limit|lang=zh-CN|style=Feynman)”长久以来被认为是不可逾越的壁垒，意味着活细胞内许多精细的分子机器将永远隐藏在我们的视野之外。然而，正如我们即将看到的，对衍射极限的深刻理解，也催生了绕过它的天才设想。
 
 ### 驾驭波涛：从激光到声学透镜
 
@@ -38,23 +38,23 @@ PSF的大小决定了显微镜的[分辨率极限](@article_id:379104)，即由�
 
 #### 驯服激光
 
-激光的产生依赖于一个“[谐振腔](@article_id:338181)”，光在两面镜子之间来回反射并被放大。衍射在这里扮演了双重角色。一方面，它使得光束在传播过程中不断发散；另一方面，它也可以被巧妙地用来控制激光。例如，在[可调谐激光器](@article_id:377618)中，其中一面反射镜被替换为一块[衍射光栅](@article_id:323489)。通过精确地旋转光栅，可以使其只将特定波长的光沿原路反射回谐振腔，从而实现对激光输出波长的选择性控制。这种被称为“利特罗构型”（Littrow configuration）的设置，是许多科研和工业用[可调谐激光器](@article_id:377618)的核心技术 。
+激光的产生依赖于一个“[谐振腔](@keyword=resonant_cavity|lang=zh-CN|style=Feynman)”，光在两面镜子之间来回反射并被放大。衍射在这里扮演了双重角色。一方面，它使得光束在传播过程中不断发散；另一方面，它也可以被巧妙地用来控制激光。例如，在[可调谐激光器](@keyword=tunable_lasers|lang=zh-CN|style=Feynman)中，其中一面反射镜被替换为一块[衍射光栅](@keyword=diffraction_grating|lang=zh-CN|style=Feynman)。通过精确地旋转光栅，可以使其只将特定波长的光沿原路反射回谐振腔，从而实现对激光输出波长的选择性控制。这种被称为“利特罗构型”（Littrow configuration）的设置，是许多科研和工业用[可调谐激光器](@keyword=tunable_lasers|lang=zh-CN|style=Feynman)的核心技术 [@problem_id:1585037]。
 
-与此同时，衍射也无时无刻不在提醒我们它的存在。从[光纤](@article_id:337197)末端射出的一束光，无论在出口处被约束得多好，都会因为衍射而发散。其发散的角度，由[光纤](@article_id:337197)芯的尺寸（模场半径）和光的波长共同决定 。这个由衍射决定的基本限制，是自由空间[光通信](@article_id:378968)、[激光雷达](@article_id:371816)和所有需要长距离精确指向的应用中必须考虑的关键设计参数。
+与此同时，衍射也无时无刻不在提醒我们它的存在。从[光纤](@keyword=optical_fiber|lang=zh-CN|style=Feynman)末端射出的一束光，无论在出口处被约束得多好，都会因为衍射而发散。其发散的角度，由[光纤](@keyword=optical_fiber|lang=zh-CN|style=Feynman)芯的尺寸（模场半径）和光的波长共同决定 [@problem_id:1585054]。这个由衍射决定的基本限制，是自由空间[光通信](@keyword=optical_communications|lang=zh-CN|style=Feynman)、[激光雷达](@keyword=lidar|lang=zh-CN|style=Feynman)和所有需要长距离精确指向的应用中必须考虑的关键设计参数。
 
 #### “无形”的透镜
 
-传统的透镜通过玻璃的[折射](@article_id:323002)来弯曲光线，从而实现聚焦。但我们能否在不依赖材料折射的情况下聚焦光线呢？衍射给了我们肯定的答案。想象一下[菲涅尔波带片](@article_id:346509)（Fresnel zone plate），它是一系列同心圆环，交替地透明和不透明。它的设计思想极其巧妙：在通往焦点的路径上，精确地遮挡住那些会因相位不合适而产生相消干涉的区域，只让那些能够产生相长干涉的“惠更斯子波”通过。这样一来，光纯粹通过衍射和干涉就在焦点处汇聚起来 。
+传统的透镜通过玻璃的[折射](@keyword=refraction|lang=zh-CN|style=Feynman)来弯曲光线，从而实现聚焦。但我们能否在不依赖材料折射的情况下聚焦光线呢？衍射给了我们肯定的答案。想象一下[菲涅尔波带片](@keyword=fresnel_zone_plate|lang=zh-CN|style=Feynman)（Fresnel zone plate），它是一系列同心圆环，交替地透明和不透明。它的设计思想极其巧妙：在通往焦点的路径上，精确地遮挡住那些会因相位不合适而产生相消干涉的区域，只让那些能够产生相长干涉的“惠更斯子波”通过。这样一来，光纯粹通过衍射和干涉就在焦点处汇聚起来 [@problem_id:1585009]。
 
-这个思想可以被极大地推广。如今，物理学家和工程师们正在设计各种“[衍射光学元件](@article_id:376930)”（DOE）和“超构透镜”（metalenses）。通过在微观尺度上精确地设计一个表面结构，我们可以对通过该表面每一个点的[波阵面](@article_id:376761)相位进行独立编程。这使得我们能够制造出极薄、极轻，并能实现传统透镜无法完成的复杂功能的透镜，比如同时为多个波长消[色差](@article_id:353872)，或者将光聚焦成任意形状。这个原理不仅适用于光，也同样适用于[声波](@article_id:353278)，我们可以设计出特殊的声学透镜来聚焦声音，用于[医学超声](@article_id:334186)或[无损检测](@article_id:336905)等领域 [@problem_-id:2405783]。
+这个思想可以被极大地推广。如今，物理学家和工程师们正在设计各种“[衍射光学元件](@keyword=diffractive_optical_element|lang=zh-CN|style=Feynman)”（DOE）和“超构透镜”（metalenses）。通过在微观尺度上精确地设计一个表面结构，我们可以对通过该表面每一个点的[波阵面](@keyword=wavefront|lang=zh-CN|style=Feynman)相位进行独立编程。这使得我们能够制造出极薄、极轻，并能实现传统透镜无法完成的复杂功能的透镜，比如同时为多个波长消[色差](@keyword=chromatic_aberration|lang=zh-CN|style=Feynman)，或者将光聚焦成任意形状。这个原理不仅适用于光，也同样适用于[声波](@keyword=acoustic_waves|lang=zh-CN|style=Feynman)，我们可以设计出特殊的声学透镜来聚焦声音，用于[医学超声](@keyword=medical_ultrasound|lang=zh-CN|style=Feynman)或[无损检测](@keyword=non_destructive_testing|lang=zh-CN|style=Feynman)等领域 [@problem_-id:2405783]。
 
 #### 扭转光波
 
-我们甚至可以做得更“过分”一些——我们不仅能聚焦光，还能“扭转”它。通过一种叫做“螺旋[相位板](@article_id:350990)”的元件，可以给光束的波阵面施加一个螺旋形的相位延迟，其相位随着[方位角](@article_id:343411)的变化而线性增加。穿过这种[相位板](@article_id:350990)的光束会携带轨道角动量，形成一个中心强度为零的“甜甜圈”形状，被称为[光学涡旋](@article_id:336581) 。这种奇特的“空心”光束在[光镊](@article_id:318104)技术中可以用来捕获和旋转微小颗粒，在超分辨显微镜技术（如STED）中可以用来突破[衍射极限](@article_id:323973)，在[光通信](@article_id:378968)中则有望通过光的“形状”来编码更多信息。
+我们甚至可以做得更“过分”一些——我们不仅能聚焦光，还能“扭转”它。通过一种叫做“螺旋[相位板](@keyword=phase_plate|lang=zh-CN|style=Feynman)”的元件，可以给光束的波阵面施加一个螺旋形的相位延迟，其相位随着[方位角](@keyword=azimuthal_angle|lang=zh-CN|style=Feynman)的变化而线性增加。穿过这种[相位板](@keyword=phase_plate|lang=zh-CN|style=Feynman)的光束会携带轨道角动量，形成一个中心强度为零的“甜甜圈”形状，被称为[光学涡旋](@keyword=optical_vortices|lang=zh-CN|style=Feynman) [@problem_id:1585013]。这种奇特的“空心”光束在[光镊](@keyword=optical_tweezers|lang=zh-CN|style=Feynman)技术中可以用来捕获和旋转微小颗粒，在超分辨显微镜技术（如STED）中可以用来突破[衍射极限](@keyword=diffraction_limit|lang=zh-CN|style=Feynman)，在[光通信](@keyword=optical_communications|lang=zh-CN|style=Feynman)中则有望通过光的“形状”来编码更多信息。
 
 #### 波的自我重现
 
-衍射世界里还有一个奇特而美丽的现象——[塔尔博特效应](@article_id:359832)（Talbot effect）。当一束[平面波](@article_id:368882)垂直照射到一个周期性结构（如衍射光栅）上时，在传播过程中的某些特定距离处，光场的[强度分布](@article_id:342492)会完美地重现出光栅自身的图像，就像波给自己拍下了一张张快照 。这个“自成像”现象是波在自由空间中传播时，不同[衍射级](@article_id:353313)次之间相位演化的精巧结果。它不仅仅是一个物理学上的趣闻，更在[X射线](@article_id:366799)成像、[光刻技术](@article_id:318500)和原子干涉测量等领域有着实际应用。
+衍射世界里还有一个奇特而美丽的现象——[塔尔博特效应](@keyword=talbot_effect|lang=zh-CN|style=Feynman)（Talbot effect）。当一束[平面波](@keyword=plane_waves|lang=zh-CN|style=Feynman)垂直照射到一个周期性结构（如衍射光栅）上时，在传播过程中的某些特定距离处，光场的[强度分布](@keyword=intensity_distribution|lang=zh-CN|style=Feynman)会完美地重现出光栅自身的图像，就像波给自己拍下了一张张快照 [@problem_id:1585029]。这个“自成像”现象是波在自由空间中传播时，不同[衍射级](@keyword=diffraction_order|lang=zh-CN|style=Feynman)次之间相位演化的精巧结果。它不仅仅是一个物理学上的趣闻，更在[X射线](@keyword=x_ray|lang=zh-CN|style=Feynman)成像、[光刻技术](@keyword=photolithography|lang=zh-CN|style=Feynman)和原子干涉测量等领域有着实际应用。
 
 ### 超越光：波的普适性
 
@@ -62,17 +62,17 @@ PSF的大小决定了显微镜的[分辨率极限](@article_id:379104)，即由�
 
 #### 量子世界的涟漪
 
-二十世纪初，路易·德布罗意（Louis de Broglie）提出了一个革命性的思想：所有物质，包括电子、质子乃至你我，都具有波动性。如果物质是波，那么它就必须会衍射。这个惊人的预言很快在实验中得到了证实。当一束电子束射向一块晶体时，电子波会被晶体中周期性[排列](@article_id:296886)的原子所衍射，形成一幅与X射线衍射极为相似的图样 。
+二十世纪初，路易·德布罗意（Louis de Broglie）提出了一个革命性的思想：所有物质，包括电子、质子乃至你我，都具有波动性。如果物质是波，那么它就必须会衍射。这个惊人的预言很快在实验中得到了证实。当一束电子束射向一块晶体时，电子波会被晶体中周期性[排列](@keyword=permutation|lang=zh-CN|style=Feynman)的原子所衍射，形成一幅与X射线衍射极为相似的图样 [@problem_id:1585032]。
 
-[电子衍射](@article_id:301725)不仅是物质波理论的决定性证据，更是现代[材料科学](@article_id:312640)和[结构生物学](@article_id:311462)的基石。[电子显微镜](@article_id:322064)正是利用电子波比可见光波长短得多的特性，通过衍射和成像，让我们能够“看”到单个原子和病毒的[精细结构](@article_id:301304)。在这里，[电动力学](@article_id:319163)中的经典[波动理论](@article_id:359992)与量子力学实现了壮丽的统一。
+[电子衍射](@keyword=electron_diffraction|lang=zh-CN|style=Feynman)不仅是物质波理论的决定性证据，更是现代[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)和[结构生物学](@keyword=structural_biology|lang=zh-CN|style=Feynman)的基石。[电子显微镜](@keyword=electron_microscope|lang=zh-CN|style=Feynman)正是利用电子波比可见光波长短得多的特性，通过衍射和成像，让我们能够“看”到单个原子和病毒的[精细结构](@keyword=fine_structure|lang=zh-CN|style=Feynman)。在这里，[电动力学](@keyword=electrodynamics|lang=zh-CN|style=Feynman)中的经典[波动理论](@keyword=wave_theory|lang=zh-CN|style=Feynman)与量子力学实现了壮丽的统一。
 
 #### 共同的语言：信号与系统
 
-惠更斯的叠加原理，在数学上其实是一种卷积运算。波在空间中的传播，可以被看作是一个[线性时不变](@article_id:339980)（LSI）系统。输入信号是初始时刻的波场分布，而系统对一个点源（脉冲输入）的响应，就是惠更斯的球面子波。因此，在任意一点的最终波场，就是初始波场与这个“脉冲响应”[函数的卷积](@article_id:365259) 。
+惠更斯的叠加原理，在数学上其实是一种卷积运算。波在空间中的传播，可以被看作是一个[线性时不变](@keyword=linear_time_invariant|lang=zh-CN|style=Feynman)（LSI）系统。输入信号是初始时刻的波场分布，而系统对一个点源（脉冲输入）的响应，就是惠更斯的球面子波。因此，在任意一点的最终波场，就是初始波场与这个“脉冲响应”[函数的卷积](@keyword=convolution_of_functions|lang=zh-CN|style=Feynman) [@problem_id:1764934]。
 
-这种视角将光学与信号处理、控制论、声学等众多看似无关的领域用共同的数学语言联系起来。无论是分析[光纤](@article_id:337197)中光脉冲的传播，还是设计音频设备中的滤波器，其背后都隐藏着相同的[卷积和](@article_id:326945)傅里叶变换原理。
+这种视角将光学与信号处理、控制论、声学等众多看似无关的领域用共同的数学语言联系起来。无论是分析[光纤](@keyword=optical_fiber|lang=zh-CN|style=Feynman)中光脉冲的传播，还是设计音频设备中的滤波器，其背后都隐藏着相同的[卷积和](@keyword=convolution_sum|lang=zh-CN|style=Feynman)傅里叶变换原理。
 
-一个极其简单的例子就能说明这种跨界联系：一个[线栅偏振器](@article_id:343538)。它由一排平行的金属细丝组成。对于平行于金属丝的电场分量，它会驱动电子运动并被吸收或反射，从而起到偏振片的作用。而对于垂直于金属丝的电场分量，金属丝之间的缝隙则构成了一个完美的一维衍射光栅 。同一个物体，从不同角度审视，竟同时体现了两种深刻的物理原理。
+一个极其简单的例子就能说明这种跨界联系：一个[线栅偏振器](@keyword=wire_grid_polarizer|lang=zh-CN|style=Feynman)。它由一排平行的金属细丝组成。对于平行于金属丝的电场分量，它会驱动电子运动并被吸收或反射，从而起到偏振片的作用。而对于垂直于金属丝的电场分量，金属丝之间的缝隙则构成了一个完美的一维衍射光栅 [@problem_id:1585036]。同一个物体，从不同角度审视，竟同时体现了两种深刻的物理原理。
 
 ### 结语
 

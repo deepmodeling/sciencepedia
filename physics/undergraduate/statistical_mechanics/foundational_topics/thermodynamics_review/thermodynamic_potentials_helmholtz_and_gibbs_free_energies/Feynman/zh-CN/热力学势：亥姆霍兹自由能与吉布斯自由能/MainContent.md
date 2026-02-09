@@ -1,7 +1,7 @@
 ## 引言
-在广阔的[热力学](@article_id:359663)世界中，[熵增原理](@article_id:302722)如同北极星，为宇宙的演化指明了终极方向。然而，当我们聚焦于实验室的烧杯、生物体内的细胞或工业生产中的反应器时，直接应用“[孤立系统](@article_id:319605)总熵永不减少”这一宏大法则却变得异常困难。我们如何能在一个非孤立的、与环境不断[交换能](@article_id:297520)量和物质的系统中，简洁地预测一个过程能否自发进行？为了解决这一根本性问题，物理学家引入了“[热力学势](@article_id:300959)”这一强大工具，其中亥姆霍兹自由能（F）与[吉布斯自由能](@article_id:307192)（G）正是其最重要的代表。它们将第二定律的普适原理巧妙地转化为了特定实验条件下（如恒温恒容或恒温恒压）的实用判据，让我们得以仅通过系统本身的性质，就能洞察其未来。
+在广阔的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)世界中，[熵增原理](@keyword=principle_of_increasing_entropy|lang=zh-CN|style=Feynman)如同北极星，为宇宙的演化指明了终极方向。然而，当我们聚焦于实验室的烧杯、生物体内的细胞或工业生产中的反应器时，直接应用“[孤立系统](@keyword=isolated_systems|lang=zh-CN|style=Feynman)总熵永不减少”这一宏大法则却变得异常困难。我们如何能在一个非孤立的、与环境不断[交换能](@keyword=exchange_energy|lang=zh-CN|style=Feynman)量和物质的系统中，简洁地预测一个过程能否自发进行？为了解决这一根本性问题，物理学家引入了“[热力学势](@keyword=thermodynamic_potentials|lang=zh-CN|style=Feynman)”这一强大工具，其中亥姆霍兹自由能（F）与[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman)（G）正是其最重要的代表。它们将第二定律的普适原理巧妙地转化为了特定实验条件下（如恒温恒容或恒温恒压）的实用判据，让我们得以仅通过系统本身的性质，就能洞察其未来。
 
-本文将带领您深入探索这两种核心的自由能。在第一章“原理与机制”中，我们将揭示F与G的定义、物理意义，以及它们如何成为判断自发过程和计算[最大功](@article_id:304354)的利器。接着，在第二章“应用与跨学科关联”中，我们将走出理论，见证自由能如何在物理、化学、[材料科学](@article_id:312640)及生物学等广阔领域中，解释[相变](@article_id:297531)、驱动[化学反应](@article_id:307389)、决定[材料稳定性](@article_id:363222)甚至支配生命活动。最后，通过“动手实践”部分，您将有机会亲手应用这些概念解决具体问题，将理论知识内化为真正的分析能力。让我们一同开启这场探索之旅，去领略自由能作为理解物质世界运作法则的统一力量。
+本文将带领您深入探索这两种核心的自由能。在第一章“原理与机制”中，我们将揭示F与G的定义、物理意义，以及它们如何成为判断自发过程和计算[最大功](@keyword=maximum_work|lang=zh-CN|style=Feynman)的利器。接着，在第二章“应用与跨学科关联”中，我们将走出理论，见证自由能如何在物理、化学、[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)及生物学等广阔领域中，解释[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)、驱动[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)、决定[材料稳定性](@keyword=material_stability|lang=zh-CN|style=Feynman)甚至支配生命活动。最后，通过“动手实践”部分，您将有机会亲手应用这些概念解决具体问题，将理论知识内化为真正的分析能力。让我们一同开启这场探索之旅，去领略自由能作为理解物质世界运作法则的统一力量。
 
 ## 原理与机制
 
@@ -9,11 +9,11 @@
 
 ### 为何需要新的“势”？追寻更简洁的第二定律
 
-[热力学第二定律](@article_id:303170)无疑是物理学中最普适、最深刻的定律之一。它告诉我们，对于一个[孤立系统](@article_id:319605)（比如我们的整个宇宙），其总熵 $S_{\text{total}}$ 永远不会减少。任何自发的过程，从一杯热咖啡变凉到一颗恒星的演化，都朝着总熵增加的方向进行。这可以写成一个极其简洁的不等式：$dS_{\text{total}} \ge 0$。
+[热力学第二定律](@keyword=second_law_of_thermodynamics|lang=zh-CN|style=Feynman)无疑是物理学中最普适、最深刻的定律之一。它告诉我们，对于一个[孤立系统](@keyword=isolated_systems|lang=zh-CN|style=Feynman)（比如我们的整个宇宙），其总熵 $S_{\text{total}}$ 永远不会减少。任何自发的过程，从一杯热咖啡变凉到一颗恒星的演化，都朝着总熵增加的方向进行。这可以写成一个极其简洁的不等式：$dS_{\text{total}} \ge 0$。
 
-这一定律威力无穷，却也带来了一个巨大的麻烦。假设你是一位化学家，正在实验室的烧杯里混合两种物质，想知道它们是否会[自发反应](@article_id:301317)。难道为了判断这个反应的方向，你真的需要计算整个实验室、整栋大楼、乃至整个地球和[宇宙的熵变](@article_id:302894)吗？这显然是天方夜谭。我们渴望找到一个只与我们关心的*系统本身*相关的物理量，它能像一个路标一样，告诉我们系统在特定条件下会走向何方。
+这一定律威力无穷，却也带来了一个巨大的麻烦。假设你是一位化学家，正在实验室的烧杯里混合两种物质，想知道它们是否会[自发反应](@keyword=spontaneous_reaction|lang=zh-CN|style=Feynman)。难道为了判断这个反应的方向，你真的需要计算整个实验室、整栋大楼、乃至整个地球和[宇宙的熵变](@keyword=entropy_change_of_the_universe|lang=zh-CN|style=Feynman)吗？这显然是天方夜谭。我们渴望找到一个只与我们关心的*系统本身*相关的物理量，它能像一个路标一样，告诉我们系统在特定条件下会走向何方。
 
-这正是[热力学势](@article_id:300959)登场的时刻。它们是第二定律在特定约束条件下的“化身”，将我们从计算整个宇宙的繁重任务中解放出来，让我们只需聚焦于系统本身。其中，[亥姆霍兹自由能](@article_id:296896)和[吉布斯自由能](@article_id:307192)正是为两种最常见的实验环境——恒温恒容和恒温恒压——量身打造的。其核心思想源于一个巧妙的推导：通过将[系统与环境](@article_id:302710)（或称“[热库](@article_id:315579)”和“压力库”）作为一个整体考虑，我们可以证明，最大化总熵等价于最小化我们为系统定义的某个“势”。
+这正是[热力学势](@keyword=thermodynamic_potentials|lang=zh-CN|style=Feynman)登场的时刻。它们是第二定律在特定约束条件下的“化身”，将我们从计算整个宇宙的繁重任务中解放出来，让我们只需聚焦于系统本身。其中，[亥姆霍兹自由能](@keyword=helmholtz_free_energy|lang=zh-CN|style=Feynman)和[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman)正是为两种最常见的实验环境——恒温恒容和恒温恒压——量身打造的。其核心思想源于一个巧妙的推导：通过将[系统与环境](@keyword=system_and_surroundings|lang=zh-CN|style=Feynman)（或称“[热库](@keyword=heat_reservoir|lang=zh-CN|style=Feynman)”和“压力库”）作为一个整体考虑，我们可以证明，最大化总熵等价于最小化我们为系统定义的某个“势”。
 
 ### 受约束的世界：亥姆霍兹自由能与吉布斯自由能
 
@@ -21,45 +21,45 @@
 
 #### 恒温恒容的世界：亥姆霍兹自由能 $F$
 
-想象一个被密封在坚固容器中的系统，容器的体积 $V$ 保持不变。同时，这个容器被浸泡在一个巨大的恒温水浴中，使得系统的温度 $T$ 也保持恒定。在这种**恒温恒容**的条件下，决定系统自发变化方向的“路标”就是**[亥姆霍兹自由能](@article_id:296896) (Helmholtz Free Energy)**，其定义为：
+想象一个被密封在坚固容器中的系统，容器的体积 $V$ 保持不变。同时，这个容器被浸泡在一个巨大的恒温水浴中，使得系统的温度 $T$ 也保持恒定。在这种**恒温恒容**的条件下，决定系统自发变化方向的“路标”就是**[亥姆霍兹自由能](@keyword=helmholtz_free_energy|lang=zh-CN|style=Feynman) (Helmholtz Free Energy)**，其定义为：
 
 $$F = U - TS$$
 
 这里的 $U$ 是系统的内能，代表系统内部所有微观粒子动能和势能的总和，也就是系统的“总能量”。$T$ 是系统的温度，$S$ 是系统的熵，代表了系统的无序程度。那么，$TS$ 这一项是什么意思呢？你可以把它想象成系统在温度 $T$ 下，因内部的混乱和无序而“锁定”或“浪费”掉的那部分能量。这部分能量无法被用来做宏观的、有序的功。
 
-因此，亥姆霍兹自由能 $F$ 的物理意义就变得清晰了：它是在恒温过程中，系统总能量 $U$ 中可以“自由”地转化为功的那部分能量。这就是它被称为“自由能”的原因。在一个恒温恒容的[封闭系统](@article_id:300012)中，任何自发过程都会朝着使亥姆霍兹自由能 $F$ 减小的方向进行。当 $F$ 达到其最小值时，系统就达到了平衡状态。
+因此，亥姆霍兹自由能 $F$ 的物理意义就变得清晰了：它是在恒温过程中，系统总能量 $U$ 中可以“自由”地转化为功的那部分能量。这就是它被称为“自由能”的原因。在一个恒温恒容的[封闭系统](@keyword=closed_system|lang=zh-CN|style=Feynman)中，任何自发过程都会朝着使亥姆霍兹自由能 $F$ 减小的方向进行。当 $F$ 达到其最小值时，系统就达到了平衡状态。
 
 $\Delta F \le 0$ (恒温恒容下的自发过程)
 
-亥姆霍兹自由能的一个重要应用是计算在恒温[可逆过程](@article_id:340316)中系统所能做的[最大功](@article_id:304354)。这个功不仅仅局限于气体膨胀做的 $pV$ 功。例如，在一个设想的场景中，拉伸一根高分子链条也需要做功。在这种情况下，系统对外做的[最大功](@article_id:304354)就等于其[亥姆霍兹自由能](@article_id:296896)的减少量 ($W_{\text{max}} = -\Delta F$)。
+亥姆霍兹自由能的一个重要应用是计算在恒温[可逆过程](@keyword=reversible_processes|lang=zh-CN|style=Feynman)中系统所能做的[最大功](@keyword=maximum_work|lang=zh-CN|style=Feynman)。这个功不仅仅局限于气体膨胀做的 $pV$ 功。例如，在一个设想的场景中，拉伸一根高分子链条也需要做功。在这种情况下，系统对外做的[最大功](@keyword=maximum_work|lang=zh-CN|style=Feynman)就等于其[亥姆霍兹自由能](@keyword=helmholtz_free_energy|lang=zh-CN|style=Feynman)的减少量 ($W_{\text{max}} = -\Delta F$)。
 
 #### 恒温恒压的世界：吉布斯自由能 $G$
 
-现在，让我们转向一个更贴近日常和化学实验的场景。想象一下在敞口烧杯中发生的[化学反应](@article_id:307389)，或者我们身体细胞内的新陈代谢。这些过程的显著特点是，它们通常在与外界大气压保持一致的**恒定压力** $p$ 和恒定的体温或室温 $T$ 下进行。
+现在，让我们转向一个更贴近日常和化学实验的场景。想象一下在敞口烧杯中发生的[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)，或者我们身体细胞内的新陈代谢。这些过程的显著特点是，它们通常在与外界大气压保持一致的**恒定压力** $p$ 和恒定的体温或室温 $T$ 下进行。
 
-在这种情况下，系统不仅要与环境交换热量，当它的体积发生变化时，它还必须对环境做功（或被环境做功）来“腾出空间”。例如，如果系统膨胀了 $\Delta V$，它就必须推开周围的大气，做功 $p\Delta V$。这个功是不可避免的，通常不是我们关心的“有用功”。为了找到在这种条件下真正可用的能量，我们需要在[亥姆霍兹自由能](@article_id:296896)的基础上，再减去这部分为维持恒压而与环境交换的 $pV$ 功。由此，我们得到了**[吉布斯自由能](@article_id:307192) (Gibbs Free Energy)**：
+在这种情况下，系统不仅要与环境交换热量，当它的体积发生变化时，它还必须对环境做功（或被环境做功）来“腾出空间”。例如，如果系统膨胀了 $\Delta V$，它就必须推开周围的大气，做功 $p\Delta V$。这个功是不可避免的，通常不是我们关心的“有用功”。为了找到在这种条件下真正可用的能量，我们需要在[亥姆霍兹自由能](@keyword=helmholtz_free_energy|lang=zh-CN|style=Feynman)的基础上，再减去这部分为维持恒压而与环境交换的 $pV$ 功。由此，我们得到了**[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman) (Gibbs Free Energy)**：
 
 $$G = U - TS + pV$$
 
 我们也可以利用焓 $H = U + pV$ 的定义，将它写成更常见的形式 $G = H - TS$。从定义中我们还可以看出，吉布斯自由能与亥姆霍兹自由能之间存在一个简单的关系：$G = F + pV$。
 
-[吉布斯自由能](@article_id:307192)的物理意义是，在恒温恒压下，系统能够转化为**[非体积功](@article_id:297853)**（non-expansion work）的最大能量。什么是[非体积功](@article_id:297853)？电池驱动电路、[肌肉收缩](@article_id:313466)、[生物分子](@article_id:342457)马达搬运货物，这些都是[非体积功](@article_id:297853)的例子。它是生命活动和电化学过程中的能量“货币”。
+[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman)的物理意义是，在恒温恒压下，系统能够转化为**[非体积功](@keyword=non_pv_work|lang=zh-CN|style=Feynman)**（non-expansion work）的最大能量。什么是[非体积功](@keyword=non_pv_work|lang=zh-CN|style=Feynman)？电池驱动电路、[肌肉收缩](@keyword=muscle_contraction|lang=zh-CN|style=Feynman)、[生物分子](@keyword=biological_molecules|lang=zh-CN|style=Feynman)马达搬运货物，这些都是[非体积功](@keyword=non_pv_work|lang=zh-CN|style=Feynman)的例子。它是生命活动和电化学过程中的能量“货币”。
 
-与[亥姆霍兹自由能](@article_id:296896)类似，[吉布斯自由能](@article_id:307192)为恒温恒压下的[自发过程](@article_id:297995)提供了判断依据：任何[自发过程](@article_id:297995)都会朝着使吉布斯自由能 $G$ 减小的方向进行。当 $G$ 达到其最小值时，系统就达到了平衡。
+与[亥姆霍兹自由能](@keyword=helmholtz_free_energy|lang=zh-CN|style=Feynman)类似，[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman)为恒温恒压下的[自发过程](@keyword=spontaneous_processes|lang=zh-CN|style=Feynman)提供了判断依据：任何[自发过程](@keyword=spontaneous_processes|lang=zh-CN|style=Feynman)都会朝着使吉布斯自由能 $G$ 减小的方向进行。当 $G$ 达到其最小值时，系统就达到了平衡。
 
 $\Delta G \le 0$ (恒温恒压下的自发过程)
 
-绝大多数[化学反应](@article_id:307389)、[相变](@article_id:297531)以及生物过程都发生在恒温恒压条件下，因此吉布斯自由能成为了化学和生物学中至关重要的概念。例如，一个设计用于深海生物传感器的[分子开关](@article_id:315055)，只有在其从“关”到“开”的构象转变的[吉布斯自由能变](@article_id:298772)化 $\Delta G$ 为负时，这个过程才能自发进行。我们可以利用 $\Delta G = 0$ 这个临界条件，计算出使开关“激活”所需的最低温度 $T_{\text{act}}$。
+绝大多数[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)、[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)以及生物过程都发生在恒温恒压条件下，因此吉布斯自由能成为了化学和生物学中至关重要的概念。例如，一个设计用于深海生物传感器的[分子开关](@keyword=molecular_switches|lang=zh-CN|style=Feynman)，只有在其从“关”到“开”的构象转变的[吉布斯自由能变](@keyword=change_in_gibbs_free_energy|lang=zh-CN|style=Feynman)化 $\Delta G$ 为负时，这个过程才能自发进行。我们可以利用 $\Delta G = 0$ 这个临界条件，计算出使开关“激活”所需的最低温度 $T_{\text{act}}$。
 
 $$T_{\text{act}} = \frac{\Delta U_0 + P\Delta V_0}{\Delta S_0}$$
 
-这个简单的公式完美地体现了能量（$\Delta U_0$）、体积（$P\Delta V_0$）和熵（$\Delta S_0$）之间的竞争与平衡，最终决定了过程的自发性。同样地，通过比较一个分子在恒容和恒压条件下发生构象转变的平衡温度，我们可以清晰地看到不同约束条件如何导致不同的物理结果，这正是需要区分[亥姆霍兹自由能](@article_id:296896)和[吉布斯自由能](@article_id:307192)的根本原因。
+这个简单的公式完美地体现了能量（$\Delta U_0$）、体积（$P\Delta V_0$）和熵（$\Delta S_0$）之间的竞争与平衡，最终决定了过程的自发性。同样地，通过比较一个分子在恒容和恒压条件下发生构象转变的平衡温度，我们可以清晰地看到不同约束条件如何导致不同的物理结果，这正是需要区分[亥姆霍兹自由能](@keyword=helmholtz_free_energy|lang=zh-CN|style=Feynman)和[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman)的根本原因。
 
-### 自由能：[热力学](@article_id:359663)性质的“[母函数](@article_id:307120)”
+### 自由能：[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)性质的“[母函数](@keyword=generating_functions|lang=zh-CN|style=Feynman)”
 
-自由能的威力远不止于判断反应方向。它们是如此强大，以至于一旦我们知道了自由能作为其[自然变量](@article_id:308771)的函数表达式，例如 $F(T, V, N)$ 或 $G(T, p, N)$（其中 $N$ 是粒子数），我们原则上就可以导出该系统的所有宏观[热力学](@article_id:359663)性质。从这个意义上说，自由能就像一个“[母函数](@article_id:307120)” (Master Function)。
+自由能的威力远不止于判断反应方向。它们是如此强大，以至于一旦我们知道了自由能作为其[自然变量](@keyword=natural_variables|lang=zh-CN|style=Feynman)的函数表达式，例如 $F(T, V, N)$ 或 $G(T, p, N)$（其中 $N$ 是粒子数），我们原则上就可以导出该系统的所有宏观[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)性质。从这个意义上说，自由能就像一个“[母函数](@keyword=generating_functions|lang=zh-CN|style=Feynman)” (Master Function)。
 
-让我们看看这是如何实现的。[热力学基本关系](@article_id:304748)告诉我们 $dF$ 和 $dG$ 的微分形式：
+让我们看看这是如何实现的。[热力学基本关系](@keyword=fundamental_thermodynamic_relation|lang=zh-CN|style=Feynman)告诉我们 $dF$ 和 $dG$ 的微分形式：
 
 $dF = -SdT - pdV + \mu dN$
 $dG = -SdT + Vdp + \mu dN$
@@ -76,24 +76,24 @@ $$p = -\left(\frac{\partial F}{\partial V}\right)_{T,N}$$
 
 $$S = -\left(\frac{\partial G}{\partial T}\right)_{p,N} \quad , \quad V = \left(\frac{\partial G}{\partial p}\right)_{T,N}$$
 
-只需对给定的 $G(T, p)$ 表达式进行简单的求导，我们就能得到关于系统熵的详细信息。这种从一个“[母函数](@article_id:307120)”出发推导所有其他性质的能力，是[热力学势](@article_id:300959)理论优雅和力量的集中体现。
+只需对给定的 $G(T, p)$ 表达式进行简单的求导，我们就能得到关于系统熵的详细信息。这种从一个“[母函数](@keyword=generating_functions|lang=zh-CN|style=Feynman)”出发推导所有其他性质的能力，是[热力学势](@keyword=thermodynamic_potentials|lang=zh-CN|style=Feynman)理论优雅和力量的集中体现。
 
-### 生命的能量货币与[相变](@article_id:297531)的精细语言
+### 生命的能量货币与[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)的精细语言
 
 自由能不仅是理论物理学家的优美工具，它也深刻地描绘了我们周围的世界，从生命的核心机制到物质形态的万千变化。
 
 #### 细胞中的“功”：ATP水解
 
-我们身体里的每一个细胞都是一个在恒温恒压下运转的微型化工厂。驱动这一切生命活动的能量从何而来？答案很大程度上在于一种叫做三磷酸[腺苷](@article_id:365677) (ATP) 的分子。[ATP水解](@article_id:303419)反应 (ATP → ADP + Pᵢ) 的吉布斯自由能变化 $\Delta G$ 是一个很大的负值。根据我们之前的讨论，这意味着在细胞条件下，这个反应是高度自发的。然而，生命的神奇之处在于，细胞并非简单地将这部分能量以热的形式耗散掉，而是通过复杂的酶促反应，将 $-\Delta G$ 所代表的这部分能量“捕获”，并用它来做各种[非体积功](@article_id:297853)——驱动肌肉收缩、合成新的蛋白质、在[神经元](@article_id:324093)中泵送离子。因此，$\Delta G$ 成为了衡量生命活动能量来源的“通用货币”。
+我们身体里的每一个细胞都是一个在恒温恒压下运转的微型化工厂。驱动这一切生命活动的能量从何而来？答案很大程度上在于一种叫做三磷酸[腺苷](@keyword=adenosine|lang=zh-CN|style=Feynman) (ATP) 的分子。[ATP水解](@keyword=atp_hydrolysis|lang=zh-CN|style=Feynman)反应 (ATP → ADP + Pᵢ) 的吉布斯自由能变化 $\Delta G$ 是一个很大的负值。根据我们之前的讨论，这意味着在细胞条件下，这个反应是高度自发的。然而，生命的神奇之处在于，细胞并非简单地将这部分能量以热的形式耗散掉，而是通过复杂的酶促反应，将 $-\Delta G$ 所代表的这部分能量“捕获”，并用它来做各种[非体积功](@keyword=non_pv_work|lang=zh-CN|style=Feynman)——驱动肌肉收缩、合成新的蛋白质、在[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)中泵送离子。因此，$\Delta G$ 成为了衡量生命活动能量来源的“通用货币”。
 
-#### 解读[相变](@article_id:297531)：吉布斯自由能的“[导数](@article_id:318324)”
+#### 解读[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)：吉布斯自由能的“[导数](@keyword=derivative|lang=zh-CN|style=Feynman)”
 
-物质为何会发生[相变](@article_id:297531)，例如水结成冰，或水沸腾成蒸汽？在恒温恒压下，这些过程的本质是系统在寻找[吉布斯自由能](@article_id:307192)更低的状态。当温度变化时，不同相（固、液、气）的[吉布斯自由能](@article_id:307192)曲线会发生[交叉](@article_id:315017)，[交叉](@article_id:315017)点就是[相变](@article_id:297531)发生的温度。
+物质为何会发生[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)，例如水结成冰，或水沸腾成蒸汽？在恒温恒压下，这些过程的本质是系统在寻找[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman)更低的状态。当温度变化时，不同相（固、液、气）的[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman)曲线会发生[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)，[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)点就是[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)发生的温度。
 
-[吉布斯自由能](@article_id:307192)及其[导数](@article_id:318324)的行为，为我们提供了一种精细的语言来描述和分类[相变](@article_id:297531)。
+[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman)及其[导数](@keyword=derivative|lang=zh-CN|style=Feynman)的行为，为我们提供了一种精细的语言来描述和分类[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)。
 
-*   **[一级相变](@article_id:304949) (First-order transition)**：比如沸腾和熔化。在[相变](@article_id:297531)点，两个相的吉布斯自由能 $G$ 是相等的（所以 $G$ 的曲线是连续的），但它的**一阶[导数](@article_id:318324)**，如熵 $S = -(\partial G / \partial T)_p$ 和体积 $V = (\partial G / \partial p)_T$，是不连续的，会发生一个“跳跃”。熵的跳跃就对应着[相变过程](@article_id:308339)吸收或放出的**[潜热](@article_id:306453)** ($L=T\Delta S$)。这就像在一条平坦的道路上遇到了一个急转弯。
+*   **[一级相变](@keyword=first_order_phase_transition|lang=zh-CN|style=Feynman) (First-order transition)**：比如沸腾和熔化。在[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)点，两个相的吉布斯自由能 $G$ 是相等的（所以 $G$ 的曲线是连续的），但它的**一阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)**，如熵 $S = -(\partial G / \partial T)_p$ 和体积 $V = (\partial G / \partial p)_T$，是不连续的，会发生一个“跳跃”。熵的跳跃就对应着[相变过程](@keyword=phase_change_processes|lang=zh-CN|style=Feynman)吸收或放出的**[潜热](@keyword=latent_heat|lang=zh-CN|style=Feynman)** ($L=T\Delta S$)。这就像在一条平坦的道路上遇到了一个急转弯。
 
-*   **二级相变 (Second-order transition)**：比如某些材料中的铁磁-顺磁转变。在[相变](@article_id:297531)点，$G$ 和它的一阶[导数](@article_id:318324)（熵、体积）都是连续的，这意味着没有潜热。但是，它的**二阶[导数](@article_id:318324)**，例如[热容](@article_id:340019) $C_P = -T(\partial^2 G / \partial T^2)_p$，会发生不连续的跳跃。这就像道路本身和它的方向都是平滑连续的，但路面的曲率在某一点突然发生了改变。
+*   **二级相变 (Second-order transition)**：比如某些材料中的铁磁-顺磁转变。在[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)点，$G$ 和它的一阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)（熵、体积）都是连续的，这意味着没有潜热。但是，它的**二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)**，例如[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman) $C_P = -T(\partial^2 G / \partial T^2)_p$，会发生不连续的跳跃。这就像道路本身和它的方向都是平滑连续的，但路面的曲率在某一点突然发生了改变。
 
-通过考察[吉布斯自由能](@article_id:307192)及其[导数](@article_id:318324)的连续性，物理学家们得以用统一而深刻的视角，理解从水的沸腾到[超导转变](@article_id:302198)等各种看似无关的物理现象。这再次彰显了[热力学势](@article_id:300959)作为理论框架的强大力量。从一个避免计算全[宇宙熵](@article_id:307430)变的初衷出发，我们最终抵达了能够精微剖析物质世界基本行为的强大工具。这趟旅程，正是物理学从实用需求走向深刻洞见的经典范例。
+通过考察[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman)及其[导数](@keyword=derivative|lang=zh-CN|style=Feynman)的连续性，物理学家们得以用统一而深刻的视角，理解从水的沸腾到[超导转变](@keyword=superconducting_transition|lang=zh-CN|style=Feynman)等各种看似无关的物理现象。这再次彰显了[热力学势](@keyword=thermodynamic_potentials|lang=zh-CN|style=Feynman)作为理论框架的强大力量。从一个避免计算全[宇宙熵](@keyword=entropy_of_the_universe|lang=zh-CN|style=Feynman)变的初衷出发，我们最终抵达了能够精微剖析物质世界基本行为的强大工具。这趟旅程，正是物理学从实用需求走向深刻洞见的经典范例。

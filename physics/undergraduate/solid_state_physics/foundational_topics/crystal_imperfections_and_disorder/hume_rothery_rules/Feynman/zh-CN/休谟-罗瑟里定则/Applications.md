@@ -6,51 +6,51 @@
 
 ### 精炼的锻造艺术：设计经典合金
 
-从本质上讲，休谟-罗瑟里法则的核心应用是预测和设计金属固溶体——也就是我们常说的“合金”。当两种或多种金属的原子能够愉快地在同一个[晶格](@article_id:300090)中“混居”，形成均匀的单相结构时，我们就得到了一个固溶体。
+从本质上讲，休谟-罗瑟里法则的核心应用是预测和设计金属固溶体——也就是我们常说的“合金”。当两种或多种金属的原子能够愉快地在同一个[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中“混居”，形成均匀的单相结构时，我们就得到了一个固溶体。
 
-大自然有时会提供近乎完美的范例。比如铌（Nb）和钽（Ta），它们简直就像是元素周期表中的同卵双胞胎。它们的原子半径几乎完全相同（仅相差约0.07%），都拥有[体心立方](@article_id:302788)（BCC）[晶体结构](@article_id:300816)，[电负性](@article_id:308047)和化合价也几乎一致。根据休谟-罗瑟里法则的每一条标准来判断，它们都是天作之合。果不其然，实验证实铌和钽可以在任何比例下相互溶解，形成一个完整的、连续的[置换固溶体](@article_id:301566)，就像将一滴牛奶滴入另一滴牛奶中一样，完美地融为一体 。
+大自然有时会提供近乎完美的范例。比如铌（Nb）和钽（Ta），它们简直就像是元素周期表中的同卵双胞胎。它们的原子半径几乎完全相同（仅相差约0.07%），都拥有[体心立方](@keyword=body_centered_cubic_(bcc)|lang=zh-CN|style=Feynman)（BCC）[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)，[电负性](@keyword=electronegativity|lang=zh-CN|style=Feynman)和化合价也几乎一致。根据休谟-罗瑟里法则的每一条标准来判断，它们都是天作之合。果不其然，实验证实铌和钽可以在任何比例下相互溶解，形成一个完整的、连续的[置换固溶体](@keyword=substitutional_solid_solution|lang=zh-CN|style=Feynman)，就像将一滴牛奶滴入另一滴牛奶中一样，完美地融为一体 [@problem_id:1759785]。
 
-然而，在现实的[材料设计](@article_id:320854)中，情况往往更为复杂和有趣。想象一位[材料科学](@article_id:312640)家想要增强银（Ag）的性能。他有几个候选元素：金（Au）、锡（Sn）和碳（C）。这时，休谟-罗瑟里法则就成了一份实用的筛选清单 。
+然而，在现实的[材料设计](@keyword=materials_design|lang=zh-CN|style=Feynman)中，情况往往更为复杂和有趣。想象一位[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)家想要增强银（Ag）的性能。他有几个候选元素：金（Au）、锡（Sn）和碳（C）。这时，休谟-罗瑟里法则就成了一份实用的筛选清单 [@problem_id:1782037]。
 
--   **金（Au）**：原子半径与银完全相同，[晶体结构](@article_id:300816)同为面心立方（FCC），化合价也相同。尽管电负性有一定差异，但最重要的几个条件都完美满足。这预示着金和银能够形成非常理想的固溶体——事实也正是如此，金银合金在历史上一直被广泛使用。
--   **锡（Sn）**：[原子半径](@article_id:299705)与银很接近，但它的[晶体结构](@article_id:300816)（体心四方）与银的FCC结构不同。这是一个严重的“结构性障碍”，大大限制了它们的互溶能力。
--   **碳（C）**：碳原子太小了，与银的原子半径差异高达47%，远远超出了15%的经验阈值。而且，它们的[晶体结构](@article_id:300816)和化合价也大相径庭。因此，碳原子不可能“替换”掉银原子，而是倾向于挤进[晶格](@article_id:300090)的间隙中，形成[间隙固溶体](@article_id:300143)，这完全是另一种机制了。
+-   **金（Au）**：原子半径与银完全相同，[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)同为面心立方（FCC），化合价也相同。尽管电负性有一定差异，但最重要的几个条件都完美满足。这预示着金和银能够形成非常理想的固溶体——事实也正是如此，金银合金在历史上一直被广泛使用。
+-   **锡（Sn）**：[原子半径](@keyword=atomic_radius|lang=zh-CN|style=Feynman)与银很接近，但它的[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)（体心四方）与银的FCC结构不同。这是一个严重的“结构性障碍”，大大限制了它们的互溶能力。
+-   **碳（C）**：碳原子太小了，与银的原子半径差异高达47%，远远超出了15%的经验阈值。而且，它们的[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)和化合价也大相径庭。因此，碳原子不可能“替换”掉银原子，而是倾向于挤进[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)的间隙中，形成[间隙固溶体](@keyword=interstitial_solid_solution|lang=zh-CN|style=Feynman)，这完全是另一种机制了。
 
-通过这样系统的评估，科学家可以充满信心地预测，金是制造银基[置换固溶体](@article_id:301566)的最佳选择。
+通过这样系统的评估，科学家可以充满信心地预测，金是制造银基[置换固溶体](@keyword=substitutional_solid_solution|lang=zh-CN|style=Feynman)的最佳选择。
 
-当然，这些规则也能解释为什么某些组合会“分道扬镳”。例如，铝（Al）和铅（Pb）都具有FCC[晶体结构](@article_id:300816)，但它们的[原子半径](@article_id:299705)相差超过了20%。这个巨大的尺寸差异导致将一个大原子（Pb）硬塞进一个小原子（Al）的[晶格](@article_id:300090)中，或者反之，都会引起巨大的[晶格](@article_id:300090)畸变和能量惩罚。结果就是，尽管它们的[晶体结构](@article_id:300816)匹配，但它们在固态下几乎互不相溶 。这种情况在铅锡（Pb-Sn）合金中也同样明显，它们的[晶体结构](@article_id:300816)和原子尺寸都存在显著差异，导致它们形成了著名的低熔点[共晶混合物](@article_id:379812)，而不是广泛的固溶体 。
+当然，这些规则也能解释为什么某些组合会“分道扬镳”。例如，铝（Al）和铅（Pb）都具有FCC[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)，但它们的[原子半径](@keyword=atomic_radius|lang=zh-CN|style=Feynman)相差超过了20%。这个巨大的尺寸差异导致将一个大原子（Pb）硬塞进一个小原子（Al）的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中，或者反之，都会引起巨大的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)畸变和能量惩罚。结果就是，尽管它们的[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)匹配，但它们在固态下几乎互不相溶 [@problem_id:1782050]。这种情况在铅锡（Pb-Sn）合金中也同样明显，它们的[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)和原子尺寸都存在显著差异，导致它们形成了著名的低熔点[共晶混合物](@keyword=eutectic_mixture|lang=zh-CN|style=Feynman)，而不是广泛的固溶体 [@problem_id:1305150]。
 
-更有趣的是，我们可以在[热力学](@article_id:359663)[相图](@article_id:351832)上“看到”休谟-罗瑟里法则的作用。相图是材料的“地图”，描绘了不同温度和组分下材料的状态。对于能够形成理想固溶体的体系（如铜-镍），相图上存在一个纺锤形的液相线和固[相线](@article_id:333263)。液相线和固相线之间的距离，反映了合金在凝固过程中的成分分离程度。当两种元素的原子特性（如尺寸、结构等）越相似，它们在液态和固态下的“行为”就越接近，导致液、固[相线](@article_id:333263)之间的间隙变得非常狭窄。在最理想的情况下，两条线几乎重合。因此，一个窄的[凝固](@article_id:381105)区间，就是两种元素高度“兼容”的直观[热力学](@article_id:359663)证据，也是它们遵守休谟-罗瑟里法则的有力证明 。
+更有趣的是，我们可以在[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)上“看到”休谟-罗瑟里法则的作用。相图是材料的“地图”，描绘了不同温度和组分下材料的状态。对于能够形成理想固溶体的体系（如铜-镍），相图上存在一个纺锤形的液相线和固[相线](@keyword=phase_line|lang=zh-CN|style=Feynman)。液相线和固相线之间的距离，反映了合金在凝固过程中的成分分离程度。当两种元素的原子特性（如尺寸、结构等）越相似，它们在液态和固态下的“行为”就越接近，导致液、固[相线](@keyword=phase_line|lang=zh-CN|style=Feynman)之间的间隙变得非常狭窄。在最理想的情况下，两条线几乎重合。因此，一个窄的[凝固](@keyword=coagulation|lang=zh-CN|style=Feynman)区间，就是两种元素高度“兼容”的直观[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)证据，也是它们遵守休谟-罗瑟里法则的有力证明 [@problem_id:1782022]。
 
 ### 超越简单混合：性能与性能的权衡
 
-仅仅知道原子能否混合是不够的，真正的艺术在于理解混合之后会发生什么。一个完美的晶体就像一个寂静无人的大厅，电子可以畅通无阻地穿行。但当我们引入溶质原子时，即使它们是“守规矩”的替代者，它们仍然是“外来者”，打破了[晶格](@article_id:300090)的完美周期性。
+仅仅知道原子能否混合是不够的，真正的艺术在于理解混合之后会发生什么。一个完美的晶体就像一个寂静无人的大厅，电子可以畅通无阻地穿行。但当我们引入溶质原子时，即使它们是“守规矩”的替代者，它们仍然是“外来者”，打破了[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)的完美周期性。
 
 这种微观上的混乱，带来了两个重要的宏观后果：
 
 **1. 固溶强化 (Solid Solution Strengthening)**
 
-溶质原子与其周围的[基体](@article_id:348535)原子尺寸不同，会在其周围产生一个应[力场](@article_id:307740)，就像在紧密[排列](@article_id:296886)的人群中挤进一个胖子或一个瘦子。这个应[力场](@article_id:307740)会阻碍[位错](@article_id:299027)（晶体中的线状缺陷）的运动，而[位错](@article_id:299027)的运动是金属发生塑性变形的主要方式。阻碍了[位错](@article_id:299027)，就等于提高了材料的强度和硬度。
+溶质原子与其周围的[基体](@keyword=basal_body|lang=zh-CN|style=Feynman)原子尺寸不同，会在其周围产生一个应[力场](@keyword=force_field|lang=zh-CN|style=Feynman)，就像在紧密[排列](@keyword=permutation|lang=zh-CN|style=Feynman)的人群中挤进一个胖子或一个瘦子。这个应[力场](@keyword=force_field|lang=zh-CN|style=Feynman)会阻碍[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)（晶体中的线状缺陷）的运动，而[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)的运动是金属发生塑性变形的主要方式。阻碍了[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)，就等于提高了材料的强度和硬度。
 
-这里就体现了[材料设计](@article_id:320854)中一个美妙的权衡。如果我们严格遵守休谟-罗瑟里法则，选择尺寸完全匹配的原子，那么固溶度会很高，但几乎没有[强化](@article_id:309007)效果。相反，如果我们引入一定程度的尺寸错配（适度地“违反”尺寸法则），就会产生更强的[晶格应变](@article_id:320064)，从而获得更好的[强化](@article_id:309007)效果。然而，尺寸差异过大又会降低溶解度。因此，材料工程师的目标是在溶解度和[强化](@article_id:309007)效果之间找到最佳的[平衡点](@article_id:323137)，选择一个既能充分溶解，又能产生恰到好处[晶格](@article_id:300090)畸变的溶质元素 。
+这里就体现了[材料设计](@keyword=materials_design|lang=zh-CN|style=Feynman)中一个美妙的权衡。如果我们严格遵守休谟-罗瑟里法则，选择尺寸完全匹配的原子，那么固溶度会很高，但几乎没有[强化](@keyword=reinforcement|lang=zh-CN|style=Feynman)效果。相反，如果我们引入一定程度的尺寸错配（适度地“违反”尺寸法则），就会产生更强的[晶格应变](@keyword=lattice_strain|lang=zh-CN|style=Feynman)，从而获得更好的[强化](@keyword=reinforcement|lang=zh-CN|style=Feynman)效果。然而，尺寸差异过大又会降低溶解度。因此，材料工程师的目标是在溶解度和[强化](@keyword=reinforcement|lang=zh-CN|style=Feynman)效果之间找到最佳的[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)，选择一个既能充分溶解，又能产生恰到好处[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)畸变的溶质元素 [@problem_id:1305100]。
 
 **2. 电阻率的变化 (Electrical Resistivity)**
 
-同样的[晶格](@article_id:300090)畸变，在阻碍[位错](@article_id:299027)的同时，也阻碍了载流电子的运动。这些“外来”的溶质原子就像是电子高速公路上的减速带，它们会散射电子，从而增加材料的电阻率。这被称为[诺德海姆定则](@article_id:299004)（Nordheim's rule），是固态物理中的一个基本现象 。因此，通过固溶强化提高合金强度的同时，我们通常会牺牲其导电性。这个原理对于设计电阻丝（要求高电阻）或高导电性导线（要求低电阻）都至关重要。
+同样的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)畸变，在阻碍[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)的同时，也阻碍了载流电子的运动。这些“外来”的溶质原子就像是电子高速公路上的减速带，它们会散射电子，从而增加材料的电阻率。这被称为[诺德海姆定则](@keyword=nordheim_s_rule|lang=zh-CN|style=Feynman)（Nordheim's rule），是固态物理中的一个基本现象 [@problem_id:1782054]。因此，通过固溶强化提高合金强度的同时，我们通常会牺牲其导电性。这个原理对于设计电阻丝（要求高电阻）或高导电性导线（要求低电阻）都至关重要。
 
 ### 规则的重塑：从金属到广阔新世界
 
 休谟-罗瑟里法则的真正伟大之处在于其思想的普适性，它远远超出了金属的范畴。
 
-**1. [半导体](@article_id:301977)工业**
+**1. [半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)工业**
 
-在[半导体](@article_id:301977)工业的核心——硅（Si）的世界里，这些规则同样适用。为了制造n型[半导体](@article_id:301977)，我们需要向硅中掺入能提供额外电子的杂质。磷（P）是一个绝佳的选择。为什么呢？首先，磷原子的大小与硅原子非常接近（半径差异约4.5%），可以轻易地取代硅在[晶格](@article_id:300090)中的位置。其次，也是最关键的，磷原子有5个价电子，比硅的4个多一个。当磷取代硅后，这个额外的电子就被束缚得很弱，很容易挣脱成为自由电子，从而增加材料的导电性。这是一个“有目的”地违反化合价规则的绝佳例子，我们利用了化合价差异来实现特定的电学功能 。
+在[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)工业的核心——硅（Si）的世界里，这些规则同样适用。为了制造n型[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)，我们需要向硅中掺入能提供额外电子的杂质。磷（P）是一个绝佳的选择。为什么呢？首先，磷原子的大小与硅原子非常接近（半径差异约4.5%），可以轻易地取代硅在[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中的位置。其次，也是最关键的，磷原子有5个价电子，比硅的4个多一个。当磷取代硅后，这个额外的电子就被束缚得很弱，很容易挣脱成为自由电子，从而增加材料的导电性。这是一个“有目的”地违反化合价规则的绝佳例子，我们利用了化合价差异来实现特定的电学功能 [@problem_id:1305086]。
 
 **2. 陶瓷与地球科学**
 
-休谟-罗瑟里法则的思想甚至可以扩展到[离子化合物](@article_id:298024)（如陶瓷和矿物）中。在这里，我们比较的不再是原子半径，而是离子半径。例如，氧化镁（MgO）和氧化亚铁（FeO）在地球的地幔中很常见。$Mg^{2+}$和$Fe^{2+}$离子的半径非常接近（差异约8%），[电荷](@article_id:339187)也相同（+2），并且它们都形成相同的岩盐[晶体结构](@article_id:300816)。因此，它们可以广泛地形成固溶体，这对于理解地幔的化学和物理性质至关重要 。
+休谟-罗瑟里法则的思想甚至可以扩展到[离子化合物](@keyword=ionic_compounds|lang=zh-CN|style=Feynman)（如陶瓷和矿物）中。在这里，我们比较的不再是原子半径，而是离子半径。例如，氧化镁（MgO）和氧化亚铁（FeO）在地球的地幔中很常见。$Mg^{2+}$和$Fe^{2+}$离子的半径非常接近（差异约8%），[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)也相同（+2），并且它们都形成相同的岩盐[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)。因此，它们可以广泛地形成固溶体，这对于理解地幔的化学和物理性质至关重要 [@problem_id:2010971]。
 
-在尖端陶瓷材料中，这个原理更是被发挥到了极致。纯的氧化锆（ZrO$_2$）在冷却时会经历一个破坏性的[相变](@article_id:297531)，导致材料开裂。为了抑制这个[相变](@article_id:297531)，工程师们会加入氧化钇（Y$_2$O$_3$）或氧化钪（Sc$_2$O$_3$）来稳定其高温下的立方相。通过比较[离子半径](@article_id:300443)，我们发现$Sc^{3+}$的半径（0.87 Å）比$Y^{3+}$的半径（1.019 Å）更接近于$Zr^{4+}$的半径（0.84 Å），同时[电负性](@article_id:308047)也更接近。根据休谟-罗瑟里法则，这意味着氧化钪能更“舒适”地融入氧化锆的[晶格](@article_id:300090)中，产生更小的[晶格应变](@article_id:320064)，从而成为一个更有效的稳定剂 。这个原理被广泛应用于制造喷气发动机的耐高温[热障涂层](@article_id:379769)和高强度的人造牙冠。
+在尖端陶瓷材料中，这个原理更是被发挥到了极致。纯的氧化锆（ZrO$_2$）在冷却时会经历一个破坏性的[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)，导致材料开裂。为了抑制这个[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)，工程师们会加入氧化钇（Y$_2$O$_3$）或氧化钪（Sc$_2$O$_3$）来稳定其高温下的立方相。通过比较[离子半径](@keyword=ionic_radius|lang=zh-CN|style=Feynman)，我们发现$Sc^{3+}$的半径（0.87 Å）比$Y^{3+}$的半径（1.019 Å）更接近于$Zr^{4+}$的半径（0.84 Å），同时[电负性](@keyword=electronegativity|lang=zh-CN|style=Feynman)也更接近。根据休谟-罗瑟里法则，这意味着氧化钪能更“舒适”地融入氧化锆的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中，产生更小的[晶格应变](@keyword=lattice_strain|lang=zh-CN|style=Feynman)，从而成为一个更有效的稳定剂 [@problem_id:1305101]。这个原理被广泛应用于制造喷气发动机的耐高温[热障涂层](@keyword=thermal_barrier_coating|lang=zh-CN|style=Feynman)和高强度的人造牙冠。
 
 ### 新前沿：为复杂与无序制定规则
 
@@ -58,20 +58,20 @@
 
 **1. 电子化合物**
 
-在某些合金体系（如经典的黄铜Cu-Zn）中，人们发现决定[晶体结构](@article_id:300816)的并非组成元素的自身结构，而是一个更深层次的量子力学参数——每个原子的平均价电子数（e/a）。随着锌含量的增加，黄铜会经历一系列的[相变](@article_id:297531)：$\alpha$相（FCC）、$\beta$相（BCC）、$\gamma$相（复杂立方）和$\epsilon$相（HCP）。这些相的出现，与e/a比值达到某些特定“[幻数](@article_id:314663)”（如3/2, 21/13, 7/4）密切相关  。这可以看作是化合价规则的定量化和精细化版本，它揭示了电子能带结构对[晶体稳定性](@article_id:326947)的深刻影响。
+在某些合金体系（如经典的黄铜Cu-Zn）中，人们发现决定[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)的并非组成元素的自身结构，而是一个更深层次的量子力学参数——每个原子的平均价电子数（e/a）。随着锌含量的增加，黄铜会经历一系列的[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)：$\alpha$相（FCC）、$\beta$相（BCC）、$\gamma$相（复杂立方）和$\epsilon$相（HCP）。这些相的出现，与e/a比值达到某些特定“[幻数](@keyword=magic_numbers|lang=zh-CN|style=Feynman)”（如3/2, 21/13, 7/4）密切相关 [@problem_id:1289802] [@problem_id:1306166]。这可以看作是化合价规则的定量化和精细化版本，它揭示了电子能带结构对[晶体稳定性](@keyword=crystal_stability|lang=zh-CN|style=Feynman)的深刻影响。
 
-**2. “混乱”的艺术：[高熵合金](@article_id:364265)与金属玻璃**
+**2. “混乱”的艺术：[高熵合金](@keyword=high_entropy_alloys_(heas)|lang=zh-CN|style=Feynman)与金属玻璃**
 
-近年来，[材料科学](@article_id:312640)家们开创了两种全新的[合金设计](@article_id:318315)[范式](@article_id:329204)，它们都以一种反直觉的方式与休谟-罗瑟里法则互动。
+近年来，[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)家们开创了两种全新的[合金设计](@keyword=alloy_design|lang=zh-CN|style=Feynman)[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)，它们都以一种反直觉的方式与休谟-罗瑟里法则互动。
 
--   **[高熵合金](@article_id:364265) (High-Entropy Alloys, HEAs)**：与传统合金由一种主要元素和少量添加[元素组成](@article_id:321570)不同，[高熵合金](@article_id:364265)由五种或更多种元素以近乎相等的比例混合而成。你可能会认为这样的大杂烩会非常混乱，但恰恰是这种高度的“组分混乱”（即高构型熵），反而可能稳定一个非常简单的单相[晶体结构](@article_id:300816)（如FCC或BCC）。为了预测这种复杂混合物能否形成单相固溶体，科学家们将尺寸法则推广为一个统计参数$\delta$，它衡量了所有组分[原子半径](@article_id:299705)相对于平均半径的[均方根偏差](@article_id:349633)。经验表明，只有当$\delta$值足够小（例如小于6.5%）时，体系才倾向于形成单相固溶体 。
+-   **[高熵合金](@keyword=high_entropy_alloys_(heas)|lang=zh-CN|style=Feynman) (High-Entropy Alloys, HEAs)**：与传统合金由一种主要元素和少量添加[元素组成](@keyword=elemental_composition|lang=zh-CN|style=Feynman)不同，[高熵合金](@keyword=high_entropy_alloys_(heas)|lang=zh-CN|style=Feynman)由五种或更多种元素以近乎相等的比例混合而成。你可能会认为这样的大杂烩会非常混乱，但恰恰是这种高度的“组分混乱”（即高构型熵），反而可能稳定一个非常简单的单相[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)（如FCC或BCC）。为了预测这种复杂混合物能否形成单相固溶体，科学家们将尺寸法则推广为一个统计参数$\delta$，它衡量了所有组分[原子半径](@keyword=atomic_radius|lang=zh-CN|style=Feynman)相对于平均半径的[均方根偏差](@keyword=root_mean_square_deviation|lang=zh-CN|style=Feynman)。经验表明，只有当$\delta$值足够小（例如小于6.5%）时，体系才倾向于形成单相固溶体 [@problem_id:1782074]。
 
--   **大块[金属玻璃](@article_id:361103) (Bulk Metallic Glasses, BMGs)**：如果说[高熵合金](@article_id:364265)是在混乱中寻求有序，那么金属玻璃则是在拥抱混乱本身。要形成晶体，原子需要在冷却过程中找到并[排列](@article_id:296886)到正确的[晶格](@article_id:300090)位置上。而制造[金属玻璃](@article_id:361103)的哲学恰恰是“反休谟-罗瑟里”的：故意选择原子尺寸差异巨大、电负性显著不同、且混合时会释放大量热量（负的[混合焓](@article_id:319403)）的元素组合 。这种“原子尺寸的困惑”和强烈的化学吸引力，使得原子在快速冷却时来不及找到它们的“座位”，就被冻结在一个随机、无序的液态结构中，形成了兼具金属强度和玻璃可塑性的非晶态固体。
+-   **大块[金属玻璃](@keyword=amorphous_metals|lang=zh-CN|style=Feynman) (Bulk Metallic Glasses, BMGs)**：如果说[高熵合金](@keyword=high_entropy_alloys_(heas)|lang=zh-CN|style=Feynman)是在混乱中寻求有序，那么金属玻璃则是在拥抱混乱本身。要形成晶体，原子需要在冷却过程中找到并[排列](@keyword=permutation|lang=zh-CN|style=Feynman)到正确的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)位置上。而制造[金属玻璃](@keyword=amorphous_metals|lang=zh-CN|style=Feynman)的哲学恰恰是“反休谟-罗瑟里”的：故意选择原子尺寸差异巨大、电负性显著不同、且混合时会释放大量热量（负的[混合焓](@keyword=mixing_enthalpy|lang=zh-CN|style=Feynman)）的元素组合 [@problem_id:1305099]。这种“原子尺寸的困惑”和强烈的化学吸引力，使得原子在快速冷却时来不及找到它们的“座位”，就被冻结在一个随机、无序的液态结构中，形成了兼具金属强度和玻璃可塑性的非晶态固体。
 
-### 结论：从[经验法则](@article_id:325910)到设计蓝图
+### 结论：从[经验法则](@keyword=68_95_99.7_rule|lang=zh-CN|style=Feynman)到设计蓝图
 
-从预测简单合金的溶解性，到指导[半导体掺杂](@article_id:305715)；从解释地球深处的矿物构成，到设计航空发动机的涂层；从优化材料的强度，到创造全新的[高熵合金](@article_id:364265)与[金属玻璃](@article_id:361103)。休谟-罗瑟里法则，这套源于经验观察的简单规则，已经演变成一扇揭示原子如何构筑我们物质世界的深刻窗口。
+从预测简单合金的溶解性，到指导[半导体掺杂](@keyword=semiconductor_doping|lang=zh-CN|style=Feynman)；从解释地球深处的矿物构成，到设计航空发动机的涂层；从优化材料的强度，到创造全新的[高熵合金](@keyword=high_entropy_alloys_(heas)|lang=zh-CN|style=Feynman)与[金属玻璃](@keyword=amorphous_metals|lang=zh-CN|style=Feynman)。休谟-罗瑟里法则，这套源于经验观察的简单规则，已经演变成一扇揭示原子如何构筑我们物质世界的深刻窗口。
 
-如今，这些规则不再仅仅是材料学家们记在脑中的指南。它们被量化为特征参数，输入到机器学习模型中，用于在高维的成分空间中快速筛选和预测新材料的性能 。这正在将古老的合金艺术，转变为一门精准的现代计算科学。
+如今，这些规则不再仅仅是材料学家们记在脑中的指南。它们被量化为特征参数，输入到机器学习模型中，用于在高维的成分空间中快速筛选和预测新材料的性能 [@problem_id:1305090]。这正在将古老的合金艺术，转变为一门精准的现代计算科学。
 
 归根结底，休谟-罗瑟里法则的美妙之处在于其揭示的科学统一性：几个关于原子尺寸、化学性质和电子行为的简单思想，竟能将一根钢梁的强度、一枚芯片的功能、一颗宝石的颜色，以及未来主义合金的设计蓝图，优雅地联系在一起。这正是科学探索中最激动人心的部分——在纷繁复杂的现象背后，发现那简洁而普适的规律。

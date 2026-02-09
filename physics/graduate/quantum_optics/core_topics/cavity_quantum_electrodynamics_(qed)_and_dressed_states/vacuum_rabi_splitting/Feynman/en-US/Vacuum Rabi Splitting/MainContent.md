@@ -23,7 +23,7 @@ $$
 
 Here, $\hbar$ is the reduced Planck constant. The energy of the vacuum itself—the "zero-point" energy of the electromagnetic field—has forced the atom's energy levels apart.
 
-What if the atom and cavity are not perfectly tuned? Suppose there's a detuning $\Delta = \omega_a - \omega_c$. Our pendulums are no longer identical. The interaction still mixes the states, but less effectively. As you might intuit, the energy splitting gets modified. A careful calculation confirms this intuition, showing that the splitting between the two [dressed states](@article_id:143152) is given by a more general formula :
+What if the atom and cavity are not perfectly tuned? Suppose there's a detuning $\Delta = \omega_a - \omega_c$. Our pendulums are no longer identical. The interaction still mixes the states, but less effectively. As you might intuit, the energy splitting gets modified. A careful calculation confirms this intuition, showing that the splitting between the two [dressed states](@keyword=dressed_states|lang=en-US|style=Feynman) is given by a more general formula [@problem_id:784839]:
 
 $$
 \Delta E = \hbar\sqrt{\Delta^2 + 4g^2}
@@ -33,11 +33,11 @@ You can see that the largest splitting occurs at resonance ($\Delta=0$), where t
 
 ### Time, Oscillation, and Entanglement
 
-This [energy splitting](@article_id:192684) isn't just a static feature; it has dramatic consequences for the system's dynamics. In quantum mechanics, an energy difference $\Delta E$ between two states corresponds to an oscillation in time at a frequency $\Omega = \Delta E / \hbar$.
+This [energy splitting](@keyword=energy_splitting|lang=en-US|style=Feynman) isn't just a static feature; it has dramatic consequences for the system's dynamics. In quantum mechanics, an energy difference $\Delta E$ between two states corresponds to an oscillation in time at a frequency $\Omega = \Delta E / \hbar$.
 
-Let's return to our resonant system. Suppose we prepare it at time $t=0$ by exciting the atom, with the cavity being empty. We start the system in the [pure state](@article_id:138163) $|e,0\rangle$. Naively, you might think the atom will just stay excited. But it can't! It's coupled to the cavity. The excitation begins to flow from the atom to the cavity field, and then back. The probability of finding the atom excited oscillates in time, a phenomenon known as **vacuum Rabi oscillations**. The system cycles between $|e,0\rangle$ and $|g,1\rangle$ at a frequency of exactly $2g$. This is the time-domain signature of the energy splitting we just discussed . The atom emits a photon into the vacuum, and then, because it's trapped in the cavity, it is forced to reabsorb it.
+Let's return to our resonant system. Suppose we prepare it at time $t=0$ by exciting the atom, with the cavity being empty. We start the system in the [pure state](@keyword=pure_state|lang=en-US|style=Feynman) $|e,0\rangle$. Naively, you might think the atom will just stay excited. But it can't! It's coupled to the cavity. The excitation begins to flow from the atom to the cavity field, and then back. The probability of finding the atom excited oscillates in time, a phenomenon known as **vacuum Rabi oscillations**. The system cycles between $|e,0\rangle$ and $|g,1\rangle$ at a frequency of exactly $2g$. This is the time-domain signature of the energy splitting we just discussed [@problem_id:785044]. The atom emits a photon into the vacuum, and then, because it's trapped in the cavity, it is forced to reabsorb it.
 
-There's something even more profound happening during this oscillation. At the start, the state is $|e,0\rangle$, a simple product state—the atom is excited, the cavity is empty. After a quarter of a cycle, the system is in a superposition of the form $\frac{1}{\sqrt{2}}(|e,0\rangle - i|g,1\rangle)$. In this state, it is impossible to describe the atom's state independently of the cavity's state. Is the atom excited? We don't know. Is there a photon in the cavity? We don't know. All we know is that the atom and the field are linked in a state of maximum **entanglement**. The coherent exchange of a single photon between the atom and the cavity vacuum is a fundamental mechanism for generating entanglement, one of the most mysterious and powerful resources in the quantum world .
+There's something even more profound happening during this oscillation. At the start, the state is $|e,0\rangle$, a simple product state—the atom is excited, the cavity is empty. After a quarter of a cycle, the system is in a superposition of the form $\frac{1}{\sqrt{2}}(|e,0\rangle - i|g,1\rangle)$. In this state, it is impossible to describe the atom's state independently of the cavity's state. Is the atom excited? We don't know. Is there a photon in the cavity? We don't know. All we know is that the atom and the field are linked in a state of maximum **entanglement**. The coherent exchange of a single photon between the atom and the cavity vacuum is a fundamental mechanism for generating entanglement, one of the most mysterious and powerful resources in the quantum world [@problem_id:784905].
 
 ### Climbing the Quantum Ladder
 
@@ -51,7 +51,7 @@ $$
 \Delta E_n = 2\hbar g\sqrt{n+1}
 $$
 
-This is a stunningly beautiful quantum result . The case we first looked at, the vacuum Rabi splitting, is just the first rung of this ladder for $n=0$. The splitting for one photon is $2\hbar g\sqrt{2}$, for two photons it's $2\hbar g\sqrt{3}$, and so on. The energy levels are not spaced like a simple harmonic ladder, but in this peculiar way. This $\sqrt{n+1}$ dependence is a direct signature of the quantum nature of both the atom (a two-level system) and the light (composed of discrete photons). A classical light field would give a splitting proportional to the field amplitude, not the square root of the photon number.
+This is a stunningly beautiful quantum result [@problem_id:784832]. The case we first looked at, the vacuum Rabi splitting, is just the first rung of this ladder for $n=0$. The splitting for one photon is $2\hbar g\sqrt{2}$, for two photons it's $2\hbar g\sqrt{3}$, and so on. The energy levels are not spaced like a simple harmonic ladder, but in this peculiar way. This $\sqrt{n+1}$ dependence is a direct signature of the quantum nature of both the atom (a two-level system) and the light (composed of discrete photons). A classical light field would give a splitting proportional to the field amplitude, not the square root of the photon number.
 
 ### The Real World: Strong Coupling and Leaky Mirrors
 
@@ -59,7 +59,7 @@ Our story so far has taken place in an ideal world of perfect mirrors and infini
 
 For the coherent dance of Rabi oscillations to happen, the exchange of energy between the atom and cavity must be faster than the rate at which either partner wanders away. This leads to the condition for **strong coupling**: the coupling rate $g$ must be larger than both dissipative rates, $\gamma$ and $\kappa$.
 
-If this condition is met, we can still see the splitting, but dissipation leaves its mark. The energy levels are no longer perfectly sharp. In a spectrum, this means the peaks have a certain width. Furthermore, the splitting itself is modified by the decay rates. Including these effects, the frequency separation between the two peaks at resonance becomes :
+If this condition is met, we can still see the splitting, but dissipation leaves its mark. The energy levels are no longer perfectly sharp. In a spectrum, this means the peaks have a certain width. Furthermore, the splitting itself is modified by the decay rates. Including these effects, the frequency separation between the two peaks at resonance becomes [@problem_id:784970]:
 
 $$
 \Delta\omega = \sqrt{4g^2 - \left(\frac{\gamma-\kappa}{2}\right)^2}
@@ -67,28 +67,28 @@ $$
 
 Notice that if the decay rates are perfectly matched ($\gamma=\kappa$), the splitting is still $2g$. But if they are mismatched, the effective splitting is reduced. If the dissipation is too strong, specifically if $(\frac{\gamma-\kappa}{2})^2 > 4g^2$, the term under the square root becomes negative, the oscillation vanishes, and the two peaks merge into one. The dance is over.
 
-This gives us a practical, quantitative way to think about [strong coupling](@article_id:136297). We can say the two spectral peaks are "just resolved" when the separation between them is equal to their average width. This provides a clear experimental benchmark one must cross to truly be in the quantum regime where the atom and cavity act as a single entity .
+This gives us a practical, quantitative way to think about [strong coupling](@keyword=strong_coupling|lang=en-US|style=Feynman). We can say the two spectral peaks are "just resolved" when the separation between them is equal to their average width. This provides a clear experimental benchmark one must cross to truly be in the quantum regime where the atom and cavity act as a single entity [@problem_id:784831].
 
 ### Power in Numbers: Collective Action
 
-Reaching the [strong coupling regime](@article_id:143087) with a single atom can be technically challenging. But what if we put an entire ensemble of $N$ atoms inside the cavity?
+Reaching the [strong coupling regime](@keyword=strong_coupling_regime|lang=en-US|style=Feynman) with a single atom can be technically challenging. But what if we put an entire ensemble of $N$ atoms inside the cavity?
 
 If all $N$ atoms are identical and couple to the same cavity mode, they can act in concert. Instead of thinking about which *one* atom is excited, we can consider a collective state where a single quantum of excitation is symmetrically shared among all $N$ atoms. This is known as a **Dicke state**.
 
-This collective state now plays the role that the single $|e\rangle$ state did before. It couples to the single-photon cavity state $|g,1\rangle$. The remarkable result is that the effective coupling strength is enhanced by the number of atoms :
+This collective state now plays the role that the single $|e\rangle$ state did before. It couples to the single-photon cavity state $|g,1\rangle$. The remarkable result is that the effective coupling strength is enhanced by the number of atoms [@problem_id:785040]:
 
 $$
 g_{\text{collective}} = g\sqrt{N}
 $$
 
-The [energy splitting](@article_id:192684) at resonance becomes $2\hbar g\sqrt{N}$. This $\sqrt{N}$ enhancement is a hallmark of collective quantum phenomena. It means that with a large ensemble of atoms, it becomes dramatically easier to achieve strong coupling, even if the single-atom coupling $g$ is modest. It is the quantum version of "many hands make light work."
+The [energy splitting](@keyword=energy_splitting|lang=en-US|style=Feynman) at resonance becomes $2\hbar g\sqrt{N}$. This $\sqrt{N}$ enhancement is a hallmark of collective quantum phenomena. It means that with a large ensemble of atoms, it becomes dramatically easier to achieve strong coupling, even if the single-atom coupling $g$ is modest. It is the quantum version of "many hands make light work."
 
-Of course, reality adds another layer of detail. In a typical cavity with a standing-wave light field, atoms at different positions experience different field strengths. An atom at a node of the field doesn't couple at all, while an atom at an anti-node couples with the maximum strength $g_0$. If we average over a random distribution of atoms, we find that the collective enhancement is slightly moderated by this geometric factor, but the crucial $\sqrt{N}$ scaling remains .
+Of course, reality adds another layer of detail. In a typical cavity with a standing-wave light field, atoms at different positions experience different field strengths. An atom at a node of the field doesn't couple at all, while an atom at an anti-node couples with the maximum strength $g_0$. If we average over a random distribution of atoms, we find that the collective enhancement is slightly moderated by this geometric factor, but the crucial $\sqrt{N}$ scaling remains [@problem_id:784969].
 
 ### An Atom's Dressed Glow
 
-Perhaps the most compelling evidence for the reality of these [dressed states](@article_id:143152) comes from looking not at the light that leaks *out* of the cavity, but at the light emitted by the atoms themselves into free space—the faint glow from the side.
+Perhaps the most compelling evidence for the reality of these [dressed states](@keyword=dressed_states|lang=en-US|style=Feynman) comes from looking not at the light that leaks *out* of the cavity, but at the light emitted by the atoms themselves into free space—the faint glow from the side.
 
-If we prepare the system with one excitation and let it evolve, what does the spectrum of this "incoherent fluorescence" look like? If the atom were isolated, it would emit light only at its natural frequency $\omega_a$. But inside the strongly coupled cavity, the atom is no longer itself. It is perpetually "dressed" by its interaction with the cavity vacuum. The true energy levels are the split doublet. Consequently, the light emitted by the atom is also split into a doublet, centered around the atomic frequency, with the peaks separated by the Rabi splitting .
+If we prepare the system with one excitation and let it evolve, what does the spectrum of this "incoherent fluorescence" look like? If the atom were isolated, it would emit light only at its natural frequency $\omega_a$. But inside the strongly coupled cavity, the atom is no longer itself. It is perpetually "dressed" by its interaction with the cavity vacuum. The true energy levels are the split doublet. Consequently, the light emitted by the atom is also split into a doublet, centered around the atomic frequency, with the peaks separated by the Rabi splitting [@problem_id:785011].
 
 This is a profound observation. The very nature of the atom—its fundamental emission spectrum—has been re-engineered by the structure of the vacuum around it. It is no longer a simple two-level system. It is part of a larger quantum whole. This is the ultimate lesson of vacuum Rabi splitting: in the quantum world, there is no such thing as an isolated object. Everything is defined by its relationships and its interactions, even with the "emptiness" that surrounds it.

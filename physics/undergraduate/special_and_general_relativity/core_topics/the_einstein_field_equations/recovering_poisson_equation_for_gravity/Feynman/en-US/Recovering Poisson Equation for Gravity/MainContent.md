@@ -1,5 +1,5 @@
 ## Introduction
-General Relativity and Newtonian gravity are two of the most successful theories in the [history of physics](@article_id:168188), yet they describe the universe in fundamentally different ways. Newton envisioned gravity as a force acting instantaneously across empty space, while Einstein described it as the curvature of a dynamic spacetime fabric caused by matter and energy. This raises a crucial question: how can both be right? This article bridges that gap by demonstrating that Newton's familiar law is not overthrown by General Relativity but is instead contained within it as a specific, limiting case.
+General Relativity and Newtonian gravity are two of the most successful theories in the [history of physics](@keyword=history_of_physics|lang=en-US|style=Feynman), yet they describe the universe in fundamentally different ways. Newton envisioned gravity as a force acting instantaneously across empty space, while Einstein described it as the curvature of a dynamic spacetime fabric caused by matter and energy. This raises a crucial question: how can both be right? This article bridges that gap by demonstrating that Newton's familiar law is not overthrown by General Relativity but is instead contained within it as a specific, limiting case.
 
 You will embark on a journey from the complex geometry of Einstein's universe to the classical simplicity of Newton's. In **Principles and Mechanisms**, we will introduce the key approximations—a weak field, slow-moving sources, and a static environment—that tame the formidable Einstein Field Equations. Then, in **Applications and Interdisciplinary Connections**, we will explore the fascinating new physics that emerges when we gently relax these assumptions, discovering how pressure can gravitate and how moving masses can drag spacetime itself. Finally, **Hands-On Practices** will allow you to solidify your understanding by working through the core calculations that connect these two monumental theories.
 
@@ -11,27 +11,27 @@ This is precisely the relationship between Einstein's General Relativity and New
 
 ### Taming the Beast: The Necessary Approximations
 
-Einstein's Field Equations, $G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$, are notoriously difficult. They represent a set of ten coupled, non-[linear partial differential equations](@article_id:170591). To find our way back to Newton, we must "tame" this beast by narrowing our focus to situations where gravity behaves politely. This requires three key simplifying assumptions.
+Einstein's Field Equations, $G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$, are notoriously difficult. They represent a set of ten coupled, non-[linear partial differential equations](@keyword=linear_partial_differential_equations|lang=en-US|style=Feynman). To find our way back to Newton, we must "tame" this beast by narrowing our focus to situations where gravity behaves politely. This requires three key simplifying assumptions.
 
 #### The Weak Field: Spacetime is Almost Flat
 
-Unless you're near a black hole or a [neutron star](@article_id:146765), the gravity you experience is incredibly weak. The Sun, for all its mass, warps the spacetime around it only slightly. This means we can describe the geometry of spacetime, given by the **metric tensor** $g_{\mu\nu}$, as the simple, flat **Minkowski metric** $\eta_{\mu\nu}$ (our "flat map") plus a tiny wrinkle, a perturbation $h_{\mu\nu}$.
+Unless you're near a black hole or a [neutron star](@keyword=neutron_star|lang=en-US|style=Feynman), the gravity you experience is incredibly weak. The Sun, for all its mass, warps the spacetime around it only slightly. This means we can describe the geometry of spacetime, given by the **metric tensor** $g_{\mu\nu}$, as the simple, flat **Minkowski metric** $\eta_{\mu\nu}$ (our "flat map") plus a tiny wrinkle, a perturbation $h_{\mu\nu}$.
 
 $g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}$
 
-Here, the components of $h_{\mu\nu}$ are very small numbers, $|h_{\mu\nu}| \ll 1$. This is the **[weak-field approximation](@article_id:181726)**. It allows us to perform what's called "[linearization](@article_id:267176)." Think of it like this: if you have two very small numbers, say $0.001$ and $0.002$, their product is $0.000002$, which is *much* smaller. In physics, we often gain tremendous insight by agreeing to ignore these "super-small" terms that come from multiplying two small quantities together. This means we treat any term with two or more $h_{\mu\nu}$'s as negligible . This seemingly simple step has profound consequences. For example, it allows us to find the [inverse metric tensor](@article_id:275035), $g^{\mu\nu}$, with a beautifully simple approximation: $g^{\mu\nu} \approx \eta^{\mu\nu} - h^{\mu\nu}$ .
+Here, the components of $h_{\mu\nu}$ are very small numbers, $|h_{\mu\nu}| \ll 1$. This is the **[weak-field approximation](@keyword=weak_field_approximation|lang=en-US|style=Feynman)**. It allows us to perform what's called "[linearization](@keyword=linearization|lang=en-US|style=Feynman)." Think of it like this: if you have two very small numbers, say $0.001$ and $0.002$, their product is $0.000002$, which is *much* smaller. In physics, we often gain tremendous insight by agreeing to ignore these "super-small" terms that come from multiplying two small quantities together. This means we treat any term with two or more $h_{\mu\nu}$'s as negligible [@problem_id:1845544]. This seemingly simple step has profound consequences. For example, it allows us to find the [inverse metric tensor](@keyword=inverse_metric_tensor|lang=en-US|style=Feynman), $g^{\mu\nu}$, with a beautifully simple approximation: $g^{\mu\nu} \approx \eta^{\mu\nu} - h^{\mu\nu}$ [@problem_id:1845502].
 
 #### The Slow Source: Energy, Not Momentum, Is King
 
-Next, we look at the source of gravity, described by the **[stress-energy tensor](@article_id:146050)** $T_{\mu\nu}$. This tensor is a complete scorecard of energy and momentum. $T_{00}$ is the energy density (think of it as mass density, thanks to $E=mc^2$), $T_{i0}$ represents [momentum density](@article_id:270866), and $T_{ij}$ represents the flux of momentum—what we feel as pressure and stress.
+Next, we look at the source of gravity, described by the **[stress-energy tensor](@keyword=stress_energy_tensor|lang=en-US|style=Feynman)** $T_{\mu\nu}$. This tensor is a complete scorecard of energy and momentum. $T_{00}$ is the energy density (think of it as mass density, thanks to $E=mc^2$), $T_{i0}$ represents [momentum density](@keyword=momentum_density|lang=en-US|style=Feynman), and $T_{ij}$ represents the flux of momentum—what we feel as pressure and stress.
 
-Now, consider the [sources of gravity](@article_id:271058) in our solar system: the Sun, planets, and so on. They are "non-relativistic," meaning they move at speeds $v$ much, much slower than the speed of light $c$. What does this do to the scorecard? Let's consider a cloud of "dust" particles moving slowly. The energy density, $T_{00}$, is related to the mass density $\rho$ by $T_{00} = \rho c^2$. The pressure-like term, $T_{11}$ for example, turns out to be proportional to $\rho v^2$. The ratio of these two terms is $\frac{T_{11}}{T_{00}} \approx \frac{v^2}{c^2}$ .
+Now, consider the [sources of gravity](@keyword=sources_of_gravity|lang=en-US|style=Feynman) in our solar system: the Sun, planets, and so on. They are "non-relativistic," meaning they move at speeds $v$ much, much slower than the speed of light $c$. What does this do to the scorecard? Let's consider a cloud of "dust" particles moving slowly. The energy density, $T_{00}$, is related to the mass density $\rho$ by $T_{00} = \rho c^2$. The pressure-like term, $T_{11}$ for example, turns out to be proportional to $\rho v^2$. The ratio of these two terms is $\frac{T_{11}}{T_{00}} \approx \frac{v^2}{c^2}$ [@problem_id:1845500].
 
 For anything in our solar system, this ratio is minuscule. This means the stress-energy tensor is ridiculously lopsided. The only component that really matters is the energy density $T_{00}$. All other components are so small we can confidently set them to zero. The "source" of Newtonian gravity is, for all intents and purposes, just mass.
 
 #### The Static Field: Nothing is Changing
 
-Finally, for many common situations—like the Earth's orbit around the Sun—the gravitational field itself can be considered static, or unchanging in time. This is an idealization, of course, but a very good one. This **static field approximation** means we can assume all time derivatives of the [metric perturbation](@article_id:157404) $h_{\mu\nu}$ are zero. This is a huge mathematical convenience, as it eliminates many terms from our equations, especially those involving the complicated dance of space and time.
+Finally, for many common situations—like the Earth's orbit around the Sun—the gravitational field itself can be considered static, or unchanging in time. This is an idealization, of course, but a very good one. This **static field approximation** means we can assume all time derivatives of the [metric perturbation](@keyword=metric_perturbation|lang=en-US|style=Feynman) $h_{\mu\nu}$ are zero. This is a huge mathematical convenience, as it eliminates many terms from our equations, especially those involving the complicated dance of space and time.
 
 With these three tools—the weak field, the slow source, and the static field—we are ready to tackle Einstein's theory and reveal the Newtonian ghost in the machine.
 
@@ -41,21 +41,21 @@ General Relativity tells a two-part story. First, it describes how matter and en
 
 #### Part 1: How Matter Curves Spacetime
 
-Let's start with the Einstein Field Equations. For our weak-field scenario, it's often easier to work with a slightly rearranged version of the equations called the "trace-reversed" form . This version puts the **Ricci tensor** $R_{\mu\nu}$, a measure of curvature, by itself on one side:
+Let's start with the Einstein Field Equations. For our weak-field scenario, it's often easier to work with a slightly rearranged version of the equations called the "trace-reversed" form [@problem_id:1845481]. This version puts the **Ricci tensor** $R_{\mu\nu}$, a measure of curvature, by itself on one side:
 
 $R_{\mu\nu} = \frac{8\pi G}{c^4} \left( T_{\mu\nu} - \frac{1}{2} g_{\mu\nu} T \right)$
 
-where $T$ is the trace of the [stress-energy tensor](@article_id:146050). This form is convenient because, as we'll see, $R_{\mu\nu}$ simplifies nicely.
+where $T$ is the trace of the [stress-energy tensor](@keyword=stress_energy_tensor|lang=en-US|style=Feynman). This form is convenient because, as we'll see, $R_{\mu\nu}$ simplifies nicely.
 
 Let's focus on the '00' component of this equation. On the right side, we have our non-relativistic source, where only $T_{00} \approx \rho c^2$ is significant. The right side becomes a simple expression proportional to the mass density $\rho$.
 
-What about the left side, $R_{00}$? The full expression for the Ricci tensor is a mess of derivatives of the metric. But when we apply our 'weak' and 'static' approximations, the clouds part. The complicated expression for $R_{00}$ collapses into something remarkably clean and familiar :
+What about the left side, $R_{00}$? The full expression for the Ricci tensor is a mess of derivatives of the metric. But when we apply our 'weak' and 'static' approximations, the clouds part. The complicated expression for $R_{00}$ collapses into something remarkably clean and familiar [@problem_id:1845507]:
 
 $R_{00} \approx -\frac{1}{2} \nabla^2 h_{00}$
 
 Here, $\nabla^2$ is the good old **Laplacian operator** from introductory physics—the sum of the second partial derivatives in space.
 
-Now, we equate our simplified left and right sides. After carefully tracking all the constants (which shows the right-hand side becomes $\frac{4\pi G \rho}{c^2}$), we arrive at a powerful result that directly connects the geometry of spacetime ($h_{00}$) to the distribution of matter ($\rho$) :
+Now, we equate our simplified left and right sides. After carefully tracking all the constants (which shows the right-hand side becomes $\frac{4\pi G \rho}{c^2}$), we arrive at a powerful result that directly connects the geometry of spacetime ($h_{00}$) to the distribution of matter ($\rho$) [@problem_id:1845483]:
 
 $-\frac{1}{2} \nabla^2 h_{00} = \frac{4\pi G \rho}{c^2}$
 
@@ -63,17 +63,17 @@ This equation is the heart of the connection. It looks much like **Poisson's equ
 
 #### Part 2: How Spacetime Dictates Motion
 
-Here we turn to the other side of the story: the **[geodesic equation](@article_id:136061)**. This equation describes the "straightest possible path" a particle can take through [curved spacetime](@article_id:184444). It tells us that what we perceive as the force of gravity is simply an object trying to travel in a straight line through a curved background.
+Here we turn to the other side of the story: the **[geodesic equation](@keyword=geodesic_equation|lang=en-US|style=Feynman)**. This equation describes the "straightest possible path" a particle can take through [curved spacetime](@keyword=curved_spacetime|lang=en-US|style=Feynman). It tells us that what we perceive as the force of gravity is simply an object trying to travel in a straight line through a curved background.
 
 The full geodesic equation is also quite complex, involving objects called **Christoffel symbols** $\Gamma^\mu_{\alpha\beta}$, which are themselves built from derivatives of the metric. But once again, let's bring in our simplifying assumptions. We are considering a test particle moving very slowly ($v \ll c$) in a weak, static field.
 
 Under these conditions, the majestic geodesic equation simplifies drastically. A particle's acceleration is no longer a complex sum of many terms, but is dominated by a single Christoffel symbol, $\Gamma^i_{00}$. What is this symbol? When we calculate it for a weak, static field, we find it depends only on the spatial derivatives of the $g_{00}$ component of the metric.
 
-Comparing the simplified geodesic equation to Newton's second law, $\vec{a} = -\nabla\Phi$, a stunning identification is made. The Newtonian [gravitational potential](@article_id:159884) $\Phi$—that abstract field we use to calculate orbits and trajectories—is revealed to be nothing more than a manifestation of the curvature in the time-time component of the metric  ! The precise relationship is:
+Comparing the simplified geodesic equation to Newton's second law, $\vec{a} = -\nabla\Phi$, a stunning identification is made. The Newtonian [gravitational potential](@keyword=gravitational_potential|lang=en-US|style=Feynman) $\Phi$—that abstract field we use to calculate orbits and trajectories—is revealed to be nothing more than a manifestation of the curvature in the time-time component of the metric [@problem_id:1845537] [@problem_id:1845517]! The precise relationship is:
 
 $\Phi = -\frac{c^2}{2} (g_{00} + 1)$
 
-Since in the weak field $g_{00} = -1 + h_{00}$, this simply means $\Phi = -\frac{c^2}{2} h_{00}$. This is a truly profound insight. What Newton called "[gravitational potential](@article_id:159884)" is, in Einstein's world, a measure of the distortion of time itself. A deeper potential well doesn't "pull" you harder; it's a region where time flows more slowly relative to a distant observer. The "force" of gravity is the tendency of objects to move toward regions where time flows slower!
+Since in the weak field $g_{00} = -1 + h_{00}$, this simply means $\Phi = -\frac{c^2}{2} h_{00}$. This is a truly profound insight. What Newton called "[gravitational potential](@keyword=gravitational_potential|lang=en-US|style=Feynman)" is, in Einstein's world, a measure of the distortion of time itself. A deeper potential well doesn't "pull" you harder; it's a region where time flows more slowly relative to a distant observer. The "force" of gravity is the tendency of objects to move toward regions where time flows slower!
 
 ### The Grand Synthesis
 

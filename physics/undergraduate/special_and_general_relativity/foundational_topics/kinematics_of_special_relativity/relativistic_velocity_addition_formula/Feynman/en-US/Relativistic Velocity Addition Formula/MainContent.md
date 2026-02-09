@@ -1,5 +1,5 @@
 ## Introduction
-Our everyday experience teaches us a simple rule for motion: to find the combined speed of two objects, we just add their velocities. This "common sense" approach, known as Galilean velocity addition, works perfectly for cars on a highway or a person walking on a train. However, this intuition shatters when we approach the universe's ultimate speed limit—the speed of light. This article confronts the paradox that arises when our classical understanding of motion conflicts with the fundamental principles of Einstein's Special Relativity. We will journey from the failure of old ideas to the profound elegance of nature's [true arithmetic](@article_id:147520). In the following chapters, you will discover the **Principles and Mechanisms** behind the [relativistic velocity addition](@article_id:268613) formula, rooted in the very fabric of spacetime. We will then explore its diverse **Applications and Interdisciplinary Connections**, from particle accelerators to the unification of physical forces. Finally, you'll have the opportunity to solidify your understanding through **Hands-On Practices**.
+Our everyday experience teaches us a simple rule for motion: to find the combined speed of two objects, we just add their velocities. This "common sense" approach, known as Galilean velocity addition, works perfectly for cars on a highway or a person walking on a train. However, this intuition shatters when we approach the universe's ultimate speed limit—the speed of light. This article confronts the paradox that arises when our classical understanding of motion conflicts with the fundamental principles of Einstein's Special Relativity. We will journey from the failure of old ideas to the profound elegance of nature's [true arithmetic](@keyword=true_arithmetic|lang=en-US|style=Feynman). In the following chapters, you will discover the **Principles and Mechanisms** behind the [relativistic velocity addition](@keyword=relativistic_velocity_addition|lang=en-US|style=Feynman) formula, rooted in the very fabric of spacetime. We will then explore its diverse **Applications and Interdisciplinary Connections**, from particle accelerators to the unification of physical forces. Finally, you'll have the opportunity to solidify your understanding through **Hands-On Practices**.
 
 ## Principles and Mechanisms
 
@@ -15,7 +15,7 @@ What would our stationary observer on the space station measure? If we cling to 
 
 ### Nature's New Arithmetic
 
-When intuition fails, we must turn to the rules nature actually uses. Einstein discovered that the universe has its own, peculiar arithmetic for combining velocities. For two velocities, $v_1$ and $v_2$, that are in the same direction, the combined velocity $u$ is not simply their sum. Instead, it is given by the **[relativistic velocity addition](@article_id:268613) formula**:
+When intuition fails, we must turn to the rules nature actually uses. Einstein discovered that the universe has its own, peculiar arithmetic for combining velocities. For two velocities, $v_1$ and $v_2$, that are in the same direction, the combined velocity $u$ is not simply their sum. Instead, it is given by the **[relativistic velocity addition](@keyword=relativistic_velocity_addition|lang=en-US|style=Feynman) formula**:
 
 $$
 u = \frac{v_1 + v_2}{1 + \frac{v_1 v_2}{c^2}}
@@ -23,13 +23,13 @@ $$
 
 Let's look at this marvelous formula. The numerator, $v_1 + v_2$, is our old friend, the Galilean sum. But it's divided by a new correction factor, $1 + \frac{v_1 v_2}{c^2}$. What does this new term do? For our everyday experiences, like walking on a train, the velocities $v_1$ and $v_2$ are laughably small compared to the speed of light, $c$. The term $\frac{v_1 v_2}{c^2}$ is a tiny, tiny number, practically zero. The denominator becomes just 1, and the formula gracefully simplifies to the familiar $u \approx v_1 + v_2$. This is why Galilean addition works so perfectly in our daily lives; it’s an excellent approximation when speeds are low.
 
-But in the realm of starships and [particle accelerators](@article_id:148344), this correction term becomes the star of the show. Let's return to our starship, the *Stardust Express*, moving at $v_1 = 0.6c$, launching a probe at $v_2 = 0.3c$ . The Galilean velocity was $0.9c$. What does nature's new arithmetic say?
+But in the realm of starships and [particle accelerators](@keyword=particle_accelerators|lang=en-US|style=Feynman), this correction term becomes the star of the show. Let's return to our starship, the *Stardust Express*, moving at $v_1 = 0.6c$, launching a probe at $v_2 = 0.3c$ [@problem_id:1880158]. The Galilean velocity was $0.9c$. What does nature's new arithmetic say?
 
 $$
 u = \frac{0.6c + 0.3c}{1 + \frac{(0.6c)(0.3c)}{c^2}} = \frac{0.9c}{1 + 0.18} = \frac{0.9c}{1.18} \approx 0.763c
 $$
 
-Notice the result is *less* than the simple sum of $0.9c$. The relativistic formula always yields a result that is smaller than what our intuition would suggest. In fact, if we had used the Galilean result, we would have made an error of about 18%. Amazingly, it turns out that this relative error is not just a random number; for collinear velocities, the relative error introduced by using the classical formula is *exactly* equal to the denominator's correction term $\frac{v_1 v_2}{c^2}$, which in this case is $0.6 \times 0.3 = 0.18$, or $18\%$ .
+Notice the result is *less* than the simple sum of $0.9c$. The relativistic formula always yields a result that is smaller than what our intuition would suggest. In fact, if we had used the Galilean result, we would have made an error of about 18%. Amazingly, it turns out that this relative error is not just a random number; for collinear velocities, the relative error introduced by using the classical formula is *exactly* equal to the denominator's correction term $\frac{v_1 v_2}{c^2}$, which in this case is $0.6 \times 0.3 = 0.18$, or $18\%$ [@problem_id:1880158].
 
 What about the "impossible" case where the ship at $0.6c$ fires a projectile at $0.6c$?
 $$
@@ -43,7 +43,7 @@ This formula is undeniably correct—it has been confirmed by countless experime
 
 A velocity, after all, is just a measure of displacement in space ($dx$) divided by an interval of time ($dt$). But the genius of Einstein was to realize that space and time are not the rigid, absolute, and separate entities Newton had imagined. Instead, they are intertwined in a four-dimensional fabric called **spacetime**. Your measurement of a length and your measurement of a time interval are not absolute; they depend on your motion relative to what you are measuring.
 
-The rules for how measurements of space and time transform between two observers moving relative to each other are called the **Lorentz transformations**. Let's say you are in a moving frame $S'$ (the starship), and I am in a stationary frame $S$ (the space station). You measure a tiny step in space, $dx'$, and a tiny tick of your clock, $dt'$. The Lorentz transformations tell me how to calculate *my* corresponding measurements, $dx$ and $dt$ :
+The rules for how measurements of space and time transform between two observers moving relative to each other are called the **Lorentz transformations**. Let's say you are in a moving frame $S'$ (the starship), and I am in a stationary frame $S$ (the space station). You measure a tiny step in space, $dx'$, and a tiny tick of your clock, $dt'$. The Lorentz transformations tell me how to calculate *my* corresponding measurements, $dx$ and $dt$ [@problem_id:2051139]:
 
 $$
 dx = \gamma (dx' + v dt')
@@ -68,4 +68,4 @@ $$
 u = \frac{\frac{dx'}{dt'} + v}{1 + \frac{v}{c^2} \frac{dx'}{dt'}} = \frac{u' + v}{1 + \frac{u' v}{c^2}}
 $$
 
-And there it is. The [relativistic velocity addition](@article_id:268613) formula isn't some extra law that needs to be memorized. It falls out naturally, almost magically, as a direct and inescapable consequence of the way space and time are woven together . The universal speed limit, $c$, isn't an arbitrary traffic law; it's the fundamental conversion factor between space and time, hard-coded into the geometry of our universe. This beautiful unity—where one profound idea (the nature of spacetime) explains so many seemingly strange phenomena (like [time dilation](@article_id:157383), length contraction, and velocity addition)—is the true heart of physics.
+And there it is. The [relativistic velocity addition](@keyword=relativistic_velocity_addition|lang=en-US|style=Feynman) formula isn't some extra law that needs to be memorized. It falls out naturally, almost magically, as a direct and inescapable consequence of the way space and time are woven together [@problem_id:2051139]. The universal speed limit, $c$, isn't an arbitrary traffic law; it's the fundamental conversion factor between space and time, hard-coded into the geometry of our universe. This beautiful unity—where one profound idea (the nature of spacetime) explains so many seemingly strange phenomena (like [time dilation](@keyword=time_dilation|lang=en-US|style=Feynman), length contraction, and velocity addition)—is the true heart of physics.

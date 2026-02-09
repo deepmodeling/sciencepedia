@@ -21,7 +21,7 @@ This thermal energy acts like a restless crowd, constantly jostling our spin, so
 
 The answer lies in the **Boltzmann factor**, $\exp(-E/k_B T)$. The probability of a state is proportional to this factor. A high-energy state is exponentially less likely than a low-energy state. To get the actual probabilities, we have to sum up all the Boltzmann factors for all possible states and use that to normalize. This sum has a special name: the **partition function**, denoted by $Z$. It is, in a very real sense, the master key to understanding the system's thermal behavior.
 
-For our single spin, the partition function is beautifully simple. We just sum the Boltzmann factors for the two states :
+For our single spin, the partition function is beautifully simple. We just sum the Boltzmann factors for the two states [@problem_id:1983245]:
 
 $$
 Z_1 = \exp(-E_{\uparrow}/k_B T) + \exp(-E_{\downarrow}/k_B T) = \exp(\mu B / k_B T) + \exp(-\mu B / k_B T)
@@ -33,17 +33,17 @@ $$
 Z_1 = 2 \cosh\left(\frac{\mu B}{k_B T}\right)
 $$
 
-This little function, $Z_1$, is our "accountant of states." It knows everything there is to know about the thermal properties of a single spin. Now, what if we have a whole solid material with $N$ of these spins, perhaps sitting on a crystal lattice? If they don't interact with each other (a very good approximation for many real paramagnets), the total partition function is just the single-particle partition function raised to the power of $N$ :
+This little function, $Z_1$, is our "accountant of states." It knows everything there is to know about the thermal properties of a single spin. Now, what if we have a whole solid material with $N$ of these spins, perhaps sitting on a crystal lattice? If they don't interact with each other (a very good approximation for many real paramagnets), the total partition function is just the single-particle partition function raised to the power of $N$ [@problem_id:1983245]:
 
 $$
 Z_N = (Z_1)^N = \left[2 \cosh\left(\frac{\mu B}{k_B T}\right)\right]^N
 $$
 
-This is a profoundly powerful result. We've taken a system with $2^N$ possible [microstates](@article_id:146898)—a number that is astronomically large for any macroscopic object—and condensed its essential statistical properties into this compact formula.
+This is a profoundly powerful result. We've taken a system with $2^N$ possible [microstates](@keyword=microstates|lang=en-US|style=Feynman)—a number that is astronomically large for any macroscopic object—and condensed its essential statistical properties into this compact formula.
 
 ### From Math to Matter: Unlocking Macroscopic Secrets
 
-So we have this [grand partition function](@article_id:153961), $Z_N$. How do we use it to connect with the real world? How do we calculate things we can actually measure in a laboratory, like the material's total energy or its magnetic strength? The answer lies in the **Helmholtz Free Energy**, $F = -k_B T \ln Z_N$. This quantity is a bridge between the microscopic world of states (in $Z_N$) and the macroscopic world of thermodynamics. Once we have $F$, we can derive everything else with the elegance of calculus.
+So we have this [grand partition function](@keyword=grand_partition_function|lang=en-US|style=Feynman), $Z_N$. How do we use it to connect with the real world? How do we calculate things we can actually measure in a laboratory, like the material's total energy or its magnetic strength? The answer lies in the **Helmholtz Free Energy**, $F = -k_B T \ln Z_N$. This quantity is a bridge between the microscopic world of states (in $Z_N$) and the macroscopic world of thermodynamics. Once we have $F$, we can derive everything else with the elegance of calculus.
 
 For example, the total **average internal energy**, $U$, of the system is found by taking a derivative with respect to temperature (or more conveniently, with respect to $\beta = 1/k_B T$):
 
@@ -57,7 +57,7 @@ $$
 U = -N\mu B \tanh\left(\frac{\mu B}{k_B T}\right)
 $$
 
-This equation tells us precisely how much energy is stored in the alignment of the spins at any given temperature and field. The method is so robust that it can even handle more complex situations, like a hypothetical material where the up and down states have different magnetic moment magnitudes .
+This equation tells us precisely how much energy is stored in the alignment of the spins at any given temperature and field. The method is so robust that it can even handle more complex situations, like a hypothetical material where the up and down states have different magnetic moment magnitudes [@problem_id:1983234].
 
 Even more important for a magnetic material is its **magnetization**, $M$, which is the net magnetic moment of the entire sample. It tells us how strongly the material responds to the external field. We can find it by asking how the free energy changes as we alter the magnetic field:
 
@@ -65,7 +65,7 @@ $$
 M = -\left(\frac{\partial F}{\partial B}\right)_T = k_B T \frac{\partial (\ln Z_N)}{\partial B}
 $$
 
-When we turn the crank on this mathematical machine, a wonderfully intuitive result pops out :
+When we turn the crank on this mathematical machine, a wonderfully intuitive result pops out [@problem_id:1983228]:
 
 $$
 M = N\mu \tanh\left(\frac{\mu B}{k_B T}\right)
@@ -85,7 +85,7 @@ $$
 M \approx N\mu \left(\frac{\mu B}{k_B T}\right) = \frac{N\mu^2}{k_B} \frac{B}{T}
 $$
 
-This tells us that for hot systems, the magnetization is weak. It's directly proportional to the magnetic field $B$ (stronger field, more alignment) and inversely proportional to the temperature $T$ (hotter temperature, less alignment). This inverse relationship with temperature, often expressed for the **magnetic susceptibility** $\chi = M/H \propto 1/T$ (where $H$ is the magnetic field strength), is known as **Curie's Law** . It’s one of the earliest successes of statistical mechanics, perfectly explaining the behavior of many paramagnetic materials in everyday conditions. This principle allows us to define a material's "Curie constant," a single number that captures its intrinsic magnetic character .
+This tells us that for hot systems, the magnetization is weak. It's directly proportional to the magnetic field $B$ (stronger field, more alignment) and inversely proportional to the temperature $T$ (hotter temperature, less alignment). This inverse relationship with temperature, often expressed for the **magnetic susceptibility** $\chi = M/H \propto 1/T$ (where $H$ is the magnetic field strength), is known as **Curie's Law** [@problem_id:1983200]. It’s one of the earliest successes of statistical mechanics, perfectly explaining the behavior of many paramagnetic materials in everyday conditions. This principle allows us to define a material's "Curie constant," a single number that captures its intrinsic magnetic character [@problem_id:1983204].
 
 **Case 2: Low Temperature (or Strong Field)**
 
@@ -95,7 +95,7 @@ $$
 M \to N\mu
 $$
 
-This is the **[saturation magnetization](@article_id:142819)**, $M_{sat}$ . It means that every single one of the $N$ spins has succumbed to the field and is aligned in the low-energy state. We can't get any more magnetization out of the material; it's fully maxed out, or saturated.
+This is the **[saturation magnetization](@keyword=saturation_magnetization|lang=en-US|style=Feynman)**, $M_{sat}$ [@problem_id:1983204]. It means that every single one of the $N$ spins has succumbed to the field and is aligned in the low-energy state. We can't get any more magnetization out of the material; it's fully maxed out, or saturated.
 
 ### The Anomaly in the Heat: Understanding the Schottky Peak
 
@@ -105,26 +105,26 @@ $$
 C_B(T) = N k_{B} \left(\frac{\mu B}{k_{B} T}\right)^2 \text{sech}^2\left(\frac{\mu B}{k_{B} T}\right)
 $$
 
-where $\text{sech}(x) = 1/\cosh(x)$. If you plot this function, you'll see something very strange and beautiful. The heat capacity isn't constant, nor does it always increase with temperature. Instead, it starts at zero for $T=0$, rises to a distinct peak, and then falls back to zero as $T \to \infty$. This characteristic bump is called a **Schottky anomaly** .
+where $\text{sech}(x) = 1/\cosh(x)$. If you plot this function, you'll see something very strange and beautiful. The heat capacity isn't constant, nor does it always increase with temperature. Instead, it starts at zero for $T=0$, rises to a distinct peak, and then falls back to zero as $T \to \infty$. This characteristic bump is called a **Schottky anomaly** [@problem_id:1983206].
 
 Why does this happen? The reason is purely quantum, and it tells a fascinating story about how matter absorbs energy.
 
-*   **Near Absolute Zero ($T \to 0$):** All spins are already "frozen" into the ground state (spin-up). The thermal energy kicks ($k_B T$) are too feeble to knock any spins up to the excited state, which requires a quantum leap of energy $2\mu B$. Since the system can't absorb any energy this way, its heat capacity is zero .
+*   **Near Absolute Zero ($T \to 0$):** All spins are already "frozen" into the ground state (spin-up). The thermal energy kicks ($k_B T$) are too feeble to knock any spins up to the excited state, which requires a quantum leap of energy $2\mu B$. Since the system can't absorb any energy this way, its heat capacity is zero [@problem_id:1983186].
 
-*   **At Very High Temperatures ($T \to \infty$):** The thermal energy is overwhelming. The spins are being kicked back and forth so violently that the spin-up and spin-down states are already almost equally populated (a 50/50 mix). The system is "saturated with disorder." Adding a bit more heat barely changes this 50/50 balance, so again, the system can't effectively absorb the energy. The heat capacity falls back towards zero .
+*   **At Very High Temperatures ($T \to \infty$):** The thermal energy is overwhelming. The spins are being kicked back and forth so violently that the spin-up and spin-down states are already almost equally populated (a 50/50 mix). The system is "saturated with disorder." Adding a bit more heat barely changes this 50/50 balance, so again, the system can't effectively absorb the energy. The heat capacity falls back towards zero [@problem_id:1983186].
 
-*   **The Sweet Spot (The Peak):** The heat capacity is largest when the thermal energy $k_B T$ is roughly the same size as the energy gap between the states, $2\mu B$. This is the "sweet spot" where a small increase in temperature is most effective at promoting a large number of spins from the lower to the upper energy level, thus absorbing the most heat. A concrete calculation for a simple two-spin system shows this effect in action . This peak is a universal fingerprint of any system with a discrete, gapped energy spectrum.
+*   **The Sweet Spot (The Peak):** The heat capacity is largest when the thermal energy $k_B T$ is roughly the same size as the energy gap between the states, $2\mu B$. This is the "sweet spot" where a small increase in temperature is most effective at promoting a large number of spins from the lower to the upper energy level, thus absorbing the most heat. A concrete calculation for a simple two-spin system shows this effect in action [@problem_id:1983178]. This peak is a universal fingerprint of any system with a discrete, gapped energy spectrum.
 
 ### Order, Disorder, and the Arrow of Time: The Entropy Story
 
-Finally, let's talk about the most profound and perhaps most misunderstood quantity in all of physics: **entropy**, $S$. Entropy is, simply put, a measure of disorder, or more precisely, the number of microscopic arrangements ([microstates](@article_id:146898)) available to a system. We can calculate it from our free energy, $S = -(\partial F/\partial T)_B$.
+Finally, let's talk about the most profound and perhaps most misunderstood quantity in all of physics: **entropy**, $S$. Entropy is, simply put, a measure of disorder, or more precisely, the number of microscopic arrangements ([microstates](@keyword=microstates|lang=en-US|style=Feynman)) available to a system. We can calculate it from our free energy, $S = -(\partial F/\partial T)_B$.
 
 Let's look at our paramagnet at the two temperature extremes again.
 
-*   **At Absolute Zero ($T=0$):** Every single spin is aligned with the field. There is only **one** possible arrangement for the entire system: all spins up. According to Boltzmann's great formula, the entropy is $S = k_B \ln(W)$, where $W$ is the number of [microstates](@article_id:146898). Here, $W=1$, so $S = k_B \ln(1) = 0$. The system is in a state of perfect order. This result is a manifestation of the **Third Law of Thermodynamics**.
+*   **At Absolute Zero ($T=0$):** Every single spin is aligned with the field. There is only **one** possible arrangement for the entire system: all spins up. According to Boltzmann's great formula, the entropy is $S = k_B \ln(W)$, where $W$ is the number of [microstates](@keyword=microstates|lang=en-US|style=Feynman). Here, $W=1$, so $S = k_B \ln(1) = 0$. The system is in a state of perfect order. This result is a manifestation of the **Third Law of Thermodynamics**.
 
 *   **At Infinite Temperature ($T \to \infty$):** The thermal chaos is absolute. Each spin has a 50/50 chance of being up or down, completely independent of the field. For $N$ spins, there are $2^N$ possible combinations. All of these are equally likely. The system is in a state of maximum disorder. The entropy is $S = k_B \ln(2^N) = N k_B \ln 2$.
 
-The entire thermal history of the paramagnet is the story of its journey from $S=0$ to $S=N k_B \ln 2$ . As we add heat, we increase the disorder, providing the system with access to a vastly larger number of possible configurations. The change in entropy depends sensitively on the energy level structure, which is set by the magnetic field, a concept explored in problem .
+The entire thermal history of the paramagnet is the story of its journey from $S=0$ to $S=N k_B \ln 2$ [@problem_id:1983215]. As we add heat, we increase the disorder, providing the system with access to a vastly larger number of possible configurations. The change in entropy depends sensitively on the energy level structure, which is set by the magnetic field, a concept explored in problem [@problem_id:1983199].
 
-From a single spin with two states, we have built a complete picture of a macroscopic material. We have seen how the struggle between energy and temperature gives rise to all its thermal and magnetic properties, from the predictable obedience of Curie's Law to the strange and beautiful Schottky anomaly. This journey, powered by the machinery of the [canonical ensemble](@article_id:142864), reveals the profound unity and predictive power of statistical mechanics.
+From a single spin with two states, we have built a complete picture of a macroscopic material. We have seen how the struggle between energy and temperature gives rise to all its thermal and magnetic properties, from the predictable obedience of Curie's Law to the strange and beautiful Schottky anomaly. This journey, powered by the machinery of the [canonical ensemble](@keyword=canonical_ensemble|lang=en-US|style=Feynman), reveals the profound unity and predictive power of statistical mechanics.

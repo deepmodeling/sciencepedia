@@ -1,85 +1,85 @@
-## 应用与[交叉](@article_id:315017)学科联系
+## 应用与[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)学科联系
 
-好的，现在我们已经费力地学习了电子在浸泡于[磁场](@article_id:313708)中的[晶格](@article_id:300090)上运动所遵循的奇异新规则。你可能会好奇：“这一切到底有什么用？我们为什么要关心这个看似抽象的数学游戏？”
+好的，现在我们已经费力地学习了电子在浸泡于[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)中的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)上运动所遵循的奇异新规则。你可能会好奇：“这一切到底有什么用？我们为什么要关心这个看似抽象的数学游戏？”
 
 答案是，这远不止是一个游戏。我们一直在探索的，实际上是通向自然界中一些最深刻、最美丽现象的钥匙。这些概念不仅彻底改变了我们对物质的理解，还为我们开启了通向未来的技术之门，而这些技术我们才刚刚开始想象。就像 Richard Feynman 常常提醒我们的那样，通过深入理解一个看似简单的问题，我们往往能窥见整个宇宙的运作方式。现在，就让我们踏上这段旅程，看看磁平移不变性这把钥匙能打开哪些令人惊叹的大门。
 
-### 第一部分：凝聚态[物质的量](@article_id:305842)子化世界
+### 第一部分：凝聚态[物质的量](@keyword=amount_of_substance|lang=zh-CN|style=Feynman)子化世界
 
 我们旅程的第一站，是电子在固体材料中的奇异行为。正是在这里，我们最初的理论探索与惊人的实验发现交相辉映，共同谱写了一曲现代物理学的华彩乐章。
 
-#### [量子霍尔效应](@article_id:296737)：一场物理学革命的诞生
+#### [量子霍尔效应](@keyword=quantum_hall_effect|lang=zh-CN|style=Feynman)：一场物理学革命的诞生
 
-想象一下，一位实验物理学家正在低温下测量一块二维材料的电阻。当他们施加一个强[磁场](@article_id:313708)并改变其强度时，他们[期望](@article_id:311378)看到电阻平滑地变化。然而，他们看到的却是一幅不可思议的景象：霍尔电导率（与[霍尔电阻](@article_id:301997)相关）并非连续变化，而是在一系列极其平坦的“平台”上跳跃。更令人震惊的是，这些平台上的电导率值，不多不少，正好是[基本常数](@article_id:309193) $e^2/h$ 的整数倍！
+想象一下，一位实验物理学家正在低温下测量一块二维材料的电阻。当他们施加一个强[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)并改变其强度时，他们[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)看到电阻平滑地变化。然而，他们看到的却是一幅不可思议的景象：霍尔电导率（与[霍尔电阻](@keyword=hall_resistance|lang=zh-CN|style=Feynman)相关）并非连续变化，而是在一系列极其平坦的“平台”上跳跃。更令人震惊的是，这些平台上的电导率值，不多不少，正好是[基本常数](@keyword=fundamental_constants|lang=zh-CN|style=Feynman) $e^2/h$ 的整数倍！
 
-这便是[整数量子霍尔效应](@article_id:307233)。它的发现震惊了物理学界。为什么一个宏观测量的物理量会如此完美地被量子化？为什么这种量子化现象对材料中的杂质和缺陷“视而不见”？
+这便是[整数量子霍尔效应](@keyword=integer_quantum_hall_effect|lang=zh-CN|style=Feynman)。它的发现震惊了物理学界。为什么一个宏观测量的物理量会如此完美地被量子化？为什么这种量子化现象对材料中的杂质和缺陷“视而不见”？
 
-答案就隐藏在我们之前讨论的[霍夫斯塔特蝴蝶](@article_id:306785)（Hofstadter butterfly）[能谱](@article_id:361142)中。蝴蝶翅膀之间的“空隙”并非寻常的绝缘[能隙](@article_id:331619)。它们是拓扑非平庸的。当[费米能级](@article_id:303650)位于这些[能隙](@article_id:331619)中时，系统就处于一个量子霍尔态。每个[能隙](@article_id:331619)都携带一个[拓扑不变量](@article_id:298974)，称为[陈数](@article_id:300463)（Chern number），它是一个整数。这个整数，正是实验中测得的霍尔电导率前面的那个整数！
+答案就隐藏在我们之前讨论的[霍夫斯塔特蝴蝶](@keyword=hofstadter_butterfly|lang=zh-CN|style=Feynman)（Hofstadter butterfly）[能谱](@keyword=energy_spectrum|lang=zh-CN|style=Feynman)中。蝴蝶翅膀之间的“空隙”并非寻常的绝缘[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)。它们是拓扑非平庸的。当[费米能级](@keyword=fermi_level|lang=zh-CN|style=Feynman)位于这些[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)中时，系统就处于一个量子霍尔态。每个[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)都携带一个[拓扑不变量](@keyword=topological_invariants|lang=zh-CN|style=Feynman)，称为[陈数](@keyword=chern_number|lang=zh-CN|style=Feynman)（Chern number），它是一个整数。这个整数，正是实验中测得的霍尔电导率前面的那个整数！
 
-更奇妙的是，对于一个给定的磁通量 $\phi = p/q$，即每单位[晶胞](@article_id:303922)的[磁通量](@article_id:332645)是[磁通量子](@article_id:296883)的 $p/q$ 倍，我们可以通过一个被称为[丢番图方程](@article_id:308852)（Diophantine equation）的简单数学关系，精确地预测出第 $r$ 个[能隙](@article_id:331619)所对应的霍尔[电导](@article_id:325643)整数 。这个方程就像一个神奇的配方，将分数的[磁通量](@article_id:332645)与整数的[电导](@article_id:325643)联系起来，揭示了隐藏在复杂[能谱](@article_id:361142)下的深刻序律。
+更奇妙的是，对于一个给定的磁通量 $\phi = p/q$，即每单位[晶胞](@keyword=unit_cell|lang=zh-CN|style=Feynman)的[磁通量](@keyword=magnetic_flux|lang=zh-CN|style=Feynman)是[磁通量子](@keyword=magnetic_flux_quantum|lang=zh-CN|style=Feynman)的 $p/q$ 倍，我们可以通过一个被称为[丢番图方程](@keyword=diophantine_equations|lang=zh-CN|style=Feynman)（Diophantine equation）的简单数学关系，精确地预测出第 $r$ 个[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)所对应的霍尔[电导](@keyword=electrical_conductance|lang=zh-CN|style=Feynman)整数 [@problem_id:1168344]。这个方程就像一个神奇的配方，将分数的[磁通量](@keyword=magnetic_flux|lang=zh-CN|style=Feynman)与整数的[电导](@keyword=electrical_conductance|lang=zh-CN|style=Feynman)联系起来，揭示了隐藏在复杂[能谱](@keyword=energy_spectrum|lang=zh-CN|style=Feynman)下的深刻序律。
 
-这种惊人的精确性和对杂质的“[免疫力](@article_id:317914)”正是拓扑学的魔力所在 。一个真实世界、通常“脏乱”的材料，其内部的电子行为却受一个抽象的、完美的整数所支配。这正是物理学中“普适性”和“美”的极致体现。无论材料的具体细节如何，只要拓扑性质不变，量子化的结果就稳如磐石 。
+这种惊人的精确性和对杂质的“[免疫力](@keyword=immunity|lang=zh-CN|style=Feynman)”正是拓扑学的魔力所在 [@problem_id:2975734]。一个真实世界、通常“脏乱”的材料，其内部的电子行为却受一个抽象的、完美的整数所支配。这正是物理学中“普适性”和“美”的极致体现。无论材料的具体细节如何，只要拓扑性质不变，量子化的结果就稳如磐石 [@problem_id:1809546]。
 
-#### 真实世界的边缘：[手性边缘态](@article_id:298560)
+#### 真实世界的边缘：[手性边缘态](@keyword=chiral_edge_states|lang=zh-CN|style=Feynman)
 
-拓扑[能隙](@article_id:331619)的魔力还不止于此。一个深刻的原理，即“[体-边对应](@article_id:306807)”（bulk-boundary correspondence），告诉我们：如果一个材料的“体态”（bulk）具有非零的陈数，那么在它的“边缘”（edge）就必须存在能够导电的特殊状态。
+拓扑[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)的魔力还不止于此。一个深刻的原理，即“[体-边对应](@keyword=bulk_edge_correspondence|lang=zh-CN|style=Feynman)”（bulk-boundary correspondence），告诉我们：如果一个材料的“体态”（bulk）具有非零的陈数，那么在它的“边缘”（edge）就必须存在能够导电的特殊状态。
 
-这些边缘态是“手性”的，意味着它们只能[单向传播](@article_id:353854)，就像电子的高速单行道。一个向上运动的电子无法被散射成向下运动，因为它根本没有那样的状态可供选择！这就是量子霍尔效应中电流能够无损耗传输的秘密  。体态是绝缘的，但边缘却是完美的导体。
+这些边缘态是“手性”的，意味着它们只能[单向传播](@keyword=unidirectional_propagation|lang=zh-CN|style=Feynman)，就像电子的高速单行道。一个向上运动的电子无法被散射成向下运动，因为它根本没有那样的状态可供选择！这就是量子霍尔效应中电流能够无损耗传输的秘密 [@problem_id:2975734] [@problem_id:2830219]。体态是绝缘的，但边缘却是完美的导体。
 
-一个非常直观和优美的例子是“蛇行态”（snake states）。想象一下，我们构建一个界面，其两侧的[磁场](@article_id:313708)方向正好相反。在这个界面上，电子既不想进入左边的区域，也不想进入右边的区域，于是它被束缚在界面附近，沿着界面蜿蜒前行，就像一条贪吃蛇。这种蛇行态正是[手性边缘态](@article_id:298560)的一种生动体现，它展示了我们如何通过设计[磁场](@article_id:313708)结构来创造和控制这些奇特的量子通道 。
+一个非常直观和优美的例子是“蛇行态”（snake states）。想象一下，我们构建一个界面，其两侧的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)方向正好相反。在这个界面上，电子既不想进入左边的区域，也不想进入右边的区域，于是它被束缚在界面附近，沿着界面蜿蜒前行，就像一条贪吃蛇。这种蛇行态正是[手性边缘态](@keyword=chiral_edge_states|lang=zh-CN|style=Feynman)的一种生动体现，它展示了我们如何通过设计[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)结构来创造和控制这些奇特的量子通道 [@problem_id:1168299]。
 
-#### 更丰富的画卷：超越[基本图](@article_id:321021)像
+#### 更丰富的画卷：超越[基本图](@keyword=fundamental_diagram|lang=zh-CN|style=Feynman)像
 
-[磁场](@article_id:313708)中电子的行为还引出了一系列其他可测量的迷人现象。
+[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)中电子的行为还引出了一系列其他可测量的迷人现象。
 
-首先，电子在[晶格](@article_id:300090)中的运动不再像在真空中那样自由。[晶格](@article_id:300090)的势场和[磁场](@article_id:313708)共同作用，赋予了电子一个“有效[回旋质量](@article_id:302478)”$m_c$。这个质量直接依赖于电子[能带](@article_id:306995)的曲率，这意味着通过测量[回旋共振](@article_id:300132)，我们可以反过来推断材料内部[紧束缚模型](@article_id:303880)的参数，无论[晶格](@article_id:300090)是正方形、三角形还是其他更复杂的结构  。
+首先，电子在[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中的运动不再像在真空中那样自由。[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)的势场和[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)共同作用，赋予了电子一个“有效[回旋质量](@keyword=cyclotron_mass|lang=zh-CN|style=Feynman)”$m_c$。这个质量直接依赖于电子[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)的曲率，这意味着通过测量[回旋共振](@keyword=cyclotron_resonance|lang=zh-CN|style=Feynman)，我们可以反过来推断材料内部[紧束缚模型](@keyword=tight_binding_model|lang=zh-CN|style=Feynman)的参数，无论[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)是正方形、三角形还是其他更复杂的结构 [@problem_id:1168294] [@problem_id:1168310]。
 
-其次，在介观尺度（介于微观和宏观之间）的微小金属环中，穿过环的[磁通量](@article_id:332645)会改变电子[波函数](@article_id:307855)的相位。这导致了一个惊人的结果：即使在系统的[基态](@article_id:312876)，也会有一个持续不断的电流在环中流动，这就是“持续流”（persistent current）。这个电流不需要任何电压驱动，是纯粹的量子力学效应，是阿哈罗诺夫-玻姆效应的直接体现 。
+其次，在介观尺度（介于微观和宏观之间）的微小金属环中，穿过环的[磁通量](@keyword=magnetic_flux|lang=zh-CN|style=Feynman)会改变电子[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)的相位。这导致了一个惊人的结果：即使在系统的[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)，也会有一个持续不断的电流在环中流动，这就是“持续流”（persistent current）。这个电流不需要任何电压驱动，是纯粹的量子力学效应，是阿哈罗诺夫-玻姆效应的直接体现 [@problem_id:1168333]。
 
-更进一步，电子在[磁场](@article_id:313708)中形成的复杂轨道运动，会产生一个净的“[轨道磁矩](@article_id:319989)”，使得材料整体表现出磁性。这个宏观的磁化强度，与微观电子[能带](@article_id:306995)的拓扑陈数之间，存在着深刻的定量关系 。这再次揭示了拓扑、量子力学和[热力学](@article_id:359663)之间的奇妙联系。
+更进一步，电子在[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)中形成的复杂轨道运动，会产生一个净的“[轨道磁矩](@keyword=orbital_magnetic_moment|lang=zh-CN|style=Feynman)”，使得材料整体表现出磁性。这个宏观的磁化强度，与微观电子[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)的拓扑陈数之间，存在着深刻的定量关系 [@problem_id:1168300]。这再次揭示了拓扑、量子力学和[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)之间的奇妙联系。
 
-这些思想的普适性甚至超越了外加[磁场](@article_id:313708)的范畴。在某些具有特殊[晶体结构](@article_id:300816)和[磁序](@article_id:303641)的材料中（例如非共线反铁磁体 Mn$_3$Sn），即使没有外部[磁场](@article_id:313708)，电子的[能带](@article_id:306995)本身也可以拥有非零的贝里曲率。这源于材料内部磁矩的特殊排布破坏了时间反演对称性。其结果是，这些材料在零[磁场](@article_id:313708)下就能表现出显著的[霍尔效应](@article_id:296697)，即“[反常霍尔效应](@article_id:297600)”，这为开发新型磁性存储和传感设备开辟了全新的道路 。
+这些思想的普适性甚至超越了外加[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的范畴。在某些具有特殊[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)和[磁序](@keyword=magnetic_ordering|lang=zh-CN|style=Feynman)的材料中（例如非共线反铁磁体 Mn$_3$Sn），即使没有外部[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)，电子的[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)本身也可以拥有非零的贝里曲率。这源于材料内部磁矩的特殊排布破坏了时间反演对称性。其结果是，这些材料在零[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)下就能表现出显著的[霍尔效应](@keyword=hall_effect|lang=zh-CN|style=Feynman)，即“[反常霍尔效应](@keyword=anomalous_hall_effect|lang=zh-CN|style=Feynman)”，这为开发新型磁性存储和传感设备开辟了全新的道路 [@problem_id:2993488]。
 
 ### 第二部分：创造新世界
 
-掌握了[磁场](@article_id:313708)中电子运动的规则，我们就不再仅仅是自然的观察者，我们还可以成为新物理世界的创造者。
+掌握了[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)中电子运动的规则，我们就不再仅仅是自然的观察者，我们还可以成为新物理世界的创造者。
 
-#### 用光雕刻：[弗洛凯工程](@article_id:300160)与[合成规范场](@article_id:299751)
+#### 用光雕刻：[弗洛凯工程](@keyword=floquet_engineering|lang=zh-CN|style=Feynman)与[合成规范场](@keyword=synthetic_gauge_fields|lang=zh-CN|style=Feynman)
 
-这是一个听起来像科幻小说的想法：我们能否在没有真实[磁场](@article_id:313708)的情况下，让电子感受到磁力的作用？答案是肯定的。通过用一束精确[调制](@article_id:324353)的、周期性变化（例如圆偏振）的激光照射材料，我们可以“摇晃”[晶格](@article_id:300090)中的电子。
+这是一个听起来像科幻小说的想法：我们能否在没有真实[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的情况下，让电子感受到磁力的作用？答案是肯定的。通过用一束精确[调制](@keyword=modulation|lang=zh-CN|style=Feynman)的、周期性变化（例如圆偏振）的激光照射材料，我们可以“摇晃”[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中的电子。
 
-这种周期性的驱动，可以有效地改变电子在[晶格](@article_id:300090)格点之间跳跃时的量子力学相位。从电子的角度来看，这种人为引入的相位与真实[磁场](@article_id:313708)产生的佩尔斯相（Peierls phase）别无二致。通过精巧地设计激光场的参数，我们可以创造出几乎任意形式的“[合成磁场](@article_id:306705)”。
+这种周期性的驱动，可以有效地改变电子在[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)格点之间跳跃时的量子力学相位。从电子的角度来看，这种人为引入的相位与真实[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)产生的佩尔斯相（Peierls phase）别无二致。通过精巧地设计激光场的参数，我们可以创造出几乎任意形式的“[合成磁场](@keyword=synthetic_magnetic_fields|lang=zh-CN|style=Feynman)”[@problem_id:1168292]。
 
-这项技术被称为“[弗洛凯工程](@article_id:300160)”（Floquet Engineering）。它为我们提供了一种前所未有的强大工具，可以在实验室中“凭空”创造出具有非凡[拓扑性质](@article_id:302046)的物质状态，甚至是一些在自然界中难以找到的奇异[物态](@article_id:299884)。
+这项技术被称为“[弗洛凯工程](@keyword=floquet_engineering|lang=zh-CN|style=Feynman)”（Floquet Engineering）。它为我们提供了一种前所未有的强大工具，可以在实验室中“凭空”创造出具有非凡[拓扑性质](@keyword=topological_property|lang=zh-CN|style=Feynman)的物质状态，甚至是一些在自然界中难以找到的奇异[物态](@keyword=states_of_matter|lang=zh-CN|style=Feynman)。
 
-#### 扭转与应变：[魔角石墨烯](@article_id:301153)与[莫尔材料](@article_id:303980)
+#### 扭转与应变：[魔角石墨烯](@keyword=magic_angle_graphene|lang=zh-CN|style=Feynman)与[莫尔材料](@keyword=moiré_materials|lang=zh-CN|style=Feynman)
 
-近年来，二维材料领域掀起了一场革命。当我们将两层或多层原子级薄的材料（如石墨烯）堆叠在一起，并以一个微小的角度相互扭转时，会形成一个更大尺度的周期性图案，称为“[莫尔超晶格](@article_id:304037)”（moiré superlattice）。
+近年来，二维材料领域掀起了一场革命。当我们将两层或多层原子级薄的材料（如石墨烯）堆叠在一起，并以一个微小的角度相互扭转时，会形成一个更大尺度的周期性图案，称为“[莫尔超晶格](@keyword=moiré_superlattices|lang=zh-CN|style=Feynman)”（moiré superlattice）[@problem_id:2830178]。
 
-这个新的、更大的[晶格](@article_id:300090)周期极大地改变了电子的能带结构。在某些“[魔角](@article_id:298864)”下，电子的动能被极度压制，形成了所谓的“[平带](@article_id:299932)”。在[平带](@article_id:299932)中，电子间的相互作用占据主导地位，常常会自发地演生出新奇的量子序。
+这个新的、更大的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)周期极大地改变了电子的能带结构。在某些“[魔角](@keyword=magic_angle|lang=zh-CN|style=Feynman)”下，电子的动能被极度压制，形成了所谓的“[平带](@keyword=flat_bands|lang=zh-CN|style=Feynman)”。在[平带](@keyword=flat_bands|lang=zh-CN|style=Feynman)中，电子间的相互作用占据主导地位，常常会自发地演生出新奇的量子序。
 
-结合精巧的对称性设计，这些[莫尔材料](@article_id:303980)中的[平带](@article_id:299932)可以被设计成具有非零陈数的拓扑[能带](@article_id:306995)。当这些[能带](@article_id:306995)被整数填充时，系统便可以在零外部[磁场](@article_id:313708)下实现量子化的[霍尔效应](@article_id:296697)，即“[量子反常霍尔效应](@article_id:297036)”（Quantum Anomalous Hall Effect）。此外，对称性分析的深入，甚至揭示了比稳定[陈数](@article_id:300463)更为微妙的“[脆弱拓扑](@article_id:304260)”等前沿概念 。
+结合精巧的对称性设计，这些[莫尔材料](@keyword=moiré_materials|lang=zh-CN|style=Feynman)中的[平带](@keyword=flat_bands|lang=zh-CN|style=Feynman)可以被设计成具有非零陈数的拓扑[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)。当这些[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)被整数填充时，系统便可以在零外部[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)下实现量子化的[霍尔效应](@keyword=hall_effect|lang=zh-CN|style=Feynman)，即“[量子反常霍尔效应](@keyword=quantum_anomalous_hall_effect|lang=zh-CN|style=Feynman)”（Quantum Anomalous Hall Effect）[@problem_id:2830178]。此外，对称性分析的深入，甚至揭示了比稳定[陈数](@keyword=chern_number|lang=zh-CN|style=Feynman)更为微妙的“[脆弱拓扑](@keyword=fragile_topology|lang=zh-CN|style=Feynman)”等前沿概念 [@problem_id:3006018]。
 
-除了扭转，对材料施加机械应变也是一种调控其量子特性的有效手段。例如，在[石墨烯](@article_id:303945)中施加特定的应变，可以破坏其固有的对称性，从而打开[能隙](@article_id:331619)或者调控其独特的“谷”自由度，这为开发基于石墨烯的[机电耦合](@article_id:302976)量子器件提供了可能 。
+除了扭转，对材料施加机械应变也是一种调控其量子特性的有效手段。例如，在[石墨烯](@keyword=graphene|lang=zh-CN|style=Feynman)中施加特定的应变，可以破坏其固有的对称性，从而打开[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)或者调控其独特的“谷”自由度，这为开发基于石墨烯的[机电耦合](@keyword=electromechanical_coupling|lang=zh-CN|style=Feynman)量子器件提供了可能 [@problem_id:1168291]。
 
 ### 第三部分：宇宙的交响乐
 
-我们从电子在[磁场](@article_id:313708)中运动这个看似狭窄的问题出发，却发现其背后的原理如同一首宏大的交响乐的主旋律，在物理学的各个分支中反复回响。这些思想的普适性远远超出了电子系统。
+我们从电子在[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)中运动这个看似狭窄的问题出发，却发现其背后的原理如同一首宏大的交响乐的主旋律，在物理学的各个分支中反复回响。这些思想的普适性远远超出了电子系统。
 
-#### 超越电子：[光子](@article_id:305617)、[超导体](@article_id:370061)与[任意子](@article_id:304184)
+#### 超越电子：[光子](@keyword=photon|lang=zh-CN|style=Feynman)、[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)与[任意子](@keyword=anyons|lang=zh-CN|style=Feynman)
 
-首先，让我们看看光。在“[光子晶体](@article_id:297798)”——一种由[介电常数](@article_id:332052)周期性变化的材料构成的结构中，光的传播行为与电子在[晶格](@article_id:300090)中的运动惊人地相似。光也会形成“[光子](@article_id:305617)[能带](@article_id:306995)”和“[光子禁带](@article_id:360553)”。我们在电子系统中运用的所有关于对称性、[能带理论](@article_id:361548)和拓扑学的工具，几乎都可以原封不动地应用于[光子](@article_id:305617)系统 。这意味着，我们可以构建“拓扑[光子晶体](@article_id:297798)”，让光在边缘单向无损耗地传播，为未来超高速、低功耗的光学计算和通信带来了曙光。
+首先，让我们看看光。在“[光子晶体](@keyword=photonic_crystals|lang=zh-CN|style=Feynman)”——一种由[介电常数](@keyword=permittivity|lang=zh-CN|style=Feynman)周期性变化的材料构成的结构中，光的传播行为与电子在[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中的运动惊人地相似。光也会形成“[光子](@keyword=photon|lang=zh-CN|style=Feynman)[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)”和“[光子禁带](@keyword=photonic_stop_band|lang=zh-CN|style=Feynman)”。我们在电子系统中运用的所有关于对称性、[能带理论](@keyword=electronic_band_theory|lang=zh-CN|style=Feynman)和拓扑学的工具，几乎都可以原封不动地应用于[光子](@keyword=photon|lang=zh-CN|style=Feynman)系统 [@problem_id:2850201]。这意味着，我们可以构建“拓扑[光子晶体](@keyword=photonic_crystals|lang=zh-CN|style=Feynman)”，让光在边缘单向无损耗地传播，为未来超高速、低功耗的光学计算和通信带来了曙光。
 
-接下来是[超导体](@article_id:370061)。在某些奇异的（例如 p 波）[超导体](@article_id:370061)中，其[准粒子激发](@article_id:298923)（称为[博戈留波夫准粒子](@article_id:300007)）的行为也可以用一个类似的哈密顿量来描述。当施加[磁场](@article_id:313708)时，这些[准粒子](@article_id:299846)同样会形成[磁布洛赫能带](@article_id:303494)，并可能携带非平凡的[拓扑荷](@article_id:302762)。这使得我们能够在超导系统中探索拓扑现象，这对于实现[容错量子计算](@article_id:302938)至关重要 。
+接下来是[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)。在某些奇异的（例如 p 波）[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)中，其[准粒子激发](@keyword=quasiparticle_excitations|lang=zh-CN|style=Feynman)（称为[博戈留波夫准粒子](@keyword=bogoliubov_quasiparticles|lang=zh-CN|style=Feynman)）的行为也可以用一个类似的哈密顿量来描述。当施加[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)时，这些[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)同样会形成[磁布洛赫能带](@keyword=magnetic_bloch_bands|lang=zh-CN|style=Feynman)，并可能携带非平凡的[拓扑荷](@keyword=topological_charge|lang=zh-CN|style=Feynman)。这使得我们能够在超导系统中探索拓扑现象，这对于实现[容错量子计算](@keyword=fault_tolerant_quantum_computing|lang=zh-CN|style=Feynman)至关重要 [@problem_id:1168287]。
 
-更进一步，在某些被称为“[量子自旋液体](@article_id:296723)”的奇异[磁性材料](@article_id:298402)中，电子本身似乎“碎裂”成了更基本的粒子，例如[马约拉纳费米子](@article_id:297650)，并伴随着一个“演生”的规范场。这个演生规范场的磁通涡旋会形成超晶格，迫使[马约拉纳费米子](@article_id:297650)形成拓扑[能带](@article_id:306995)。在这里，我们讨论的磁布洛赫带理论，被应用于描述这些奇异的、仅在[多体系统](@article_id:304436)中存在的演生粒子，展现了其概念的强大生命力 。
+更进一步，在某些被称为“[量子自旋液体](@keyword=quantum_spin_liquids|lang=zh-CN|style=Feynman)”的奇异[磁性材料](@keyword=magnetic_materials|lang=zh-CN|style=Feynman)中，电子本身似乎“碎裂”成了更基本的粒子，例如[马约拉纳费米子](@keyword=majorana_fermions|lang=zh-CN|style=Feynman)，并伴随着一个“演生”的规范场。这个演生规范场的磁通涡旋会形成超晶格，迫使[马约拉纳费米子](@keyword=majorana_fermions|lang=zh-CN|style=Feynman)形成拓扑[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)。在这里，我们讨论的磁布洛赫带理论，被应用于描述这些奇异的、仅在[多体系统](@keyword=many_body_systems|lang=zh-CN|style=Feynman)中存在的演生粒子，展现了其概念的强大生命力 [@problem_id:3019853]。
 
-#### 惊鸿一瞥：[非阿贝尔规范场](@article_id:303665)
+#### 惊鸿一瞥：[非阿贝尔规范场](@keyword=non_abelian_gauge_fields|lang=zh-CN|style=Feynman)
 
-我们所熟悉的[电磁场](@article_id:329585)，其数学结构对应于一个阿贝尔群 U(1)，这意味着其相位因子都是可以交换顺序的普通复数。然而，[理论物理学](@article_id:314482)家早已设想了更复杂的“[非阿贝尔规范场](@article_id:303665)”，其对应的“相位”是不可交换的矩阵，如 [SU(2)](@article_id:296728) 群。在这样的[规范场](@article_id:320031)中，粒子运动的规则将变得更加复杂和丰富。令人兴奋的是，在凝聚态物理的理论模型中，我们已经可以构建出这样的非阿贝尔[磁场](@article_id:313708)，并研究其导致的能带结构。这不仅深化了我们对拓扑[物态](@article_id:299884)的理解，也建立起了凝聚态物理与粒子物理和量子场论之间深刻的联系 。
+我们所熟悉的[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)，其数学结构对应于一个阿贝尔群 U(1)，这意味着其相位因子都是可以交换顺序的普通复数。然而，[理论物理学](@keyword=theoretical_physics|lang=zh-CN|style=Feynman)家早已设想了更复杂的“[非阿贝尔规范场](@keyword=non_abelian_gauge_fields|lang=zh-CN|style=Feynman)”，其对应的“相位”是不可交换的矩阵，如 [SU(2)](@keyword=su(2)|lang=zh-CN|style=Feynman) 群。在这样的[规范场](@keyword=gauge_fields|lang=zh-CN|style=Feynman)中，粒子运动的规则将变得更加复杂和丰富。令人兴奋的是，在凝聚态物理的理论模型中，我们已经可以构建出这样的非阿贝尔[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)，并研究其导致的能带结构。这不仅深化了我们对拓扑[物态](@keyword=states_of_matter|lang=zh-CN|style=Feynman)的理解，也建立起了凝聚态物理与粒子物理和量子场论之间深刻的联系 [@problem_id:1168358]。
 
 ### 结语
 
-我们的旅程始于一个简单的问题：一个在磁化网格上跳跃的电子。然而，循着这条线索，我们却发现了一个壮丽的物理世界。我们看到了精确如“神谕”的量子霍尔效应，看到了电子在边缘高速公路上飞驰，学会了用光来模拟[磁场](@article_id:313708)，并窥见了[石墨烯](@article_id:303945)、量子自spin液体这些前沿材料的奥秘。
+我们的旅程始于一个简单的问题：一个在磁化网格上跳跃的电子。然而，循着这条线索，我们却发现了一个壮丽的物理世界。我们看到了精确如“神谕”的量子霍尔效应，看到了电子在边缘高速公路上飞驰，学会了用光来模拟[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)，并窥见了[石墨烯](@keyword=graphene|lang=zh-CN|style=Feynman)、量子自spin液体这些前沿材料的奥秘。
 
-这正是物理学的魅力所在。同一个基本原理——对称性、量子相位和波在周期势中的传播——以不同的面貌出现在截然不同的物理场景中，将电子学、光学、[材料科学](@article_id:312640)乃至高能物理的语言统一起来。从一块小小的[半导体](@article_id:301977)到浩瀚的理论宇宙，这首量子交响乐无处不在，等待着我们去聆听和诠释。
+这正是物理学的魅力所在。同一个基本原理——对称性、量子相位和波在周期势中的传播——以不同的面貌出现在截然不同的物理场景中，将电子学、光学、[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)乃至高能物理的语言统一起来。从一块小小的[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)到浩瀚的理论宇宙，这首量子交响乐无处不在，等待着我们去聆听和诠释。

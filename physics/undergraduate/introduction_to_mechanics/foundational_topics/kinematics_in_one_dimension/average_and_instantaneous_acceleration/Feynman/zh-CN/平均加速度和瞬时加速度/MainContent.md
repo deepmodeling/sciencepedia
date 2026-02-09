@@ -3,7 +3,7 @@
 
 日常语言中的“加速”通常仅指速度的增加，但这大大简化了其在物理学中的深刻内涵。加速度不仅包含减速，更关键的是，它还描述了运动方向的任何改变。理解这一概念的完整性是掌握运动学乃至整个经典力学的基础，也是许多人学习过程中的一个挑战。
 
-本文将系统地引导您深入理解加速度的本质。在第一部分“原理与机制”中，我们将建立核心定义，区分着眼全局的“[平均加速度](@article_id:342640)”与聚焦局部的“[瞬时加速度](@article_id:353563)”，并揭示两者间的数学联系。接着，在第二部分“应用与跨学科连接”中，我们将探索这一概念如何从日常力学延伸至生物学、[材料科学](@article_id:312640)甚至[相对论](@article_id:327421)等前沿领域。最后，通过一系列“动手实践”问题，您将有机会应用所学知识，解决具体的物理情境。
+本文将系统地引导您深入理解加速度的本质。在第一部分“原理与机制”中，我们将建立核心定义，区分着眼全局的“[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)”与聚焦局部的“[瞬时加速度](@keyword=instantaneous_acceleration|lang=zh-CN|style=Feynman)”，并揭示两者间的数学联系。接着，在第二部分“应用与跨学科连接”中，我们将探索这一概念如何从日常力学延伸至生物学、[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)甚至[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)等前沿领域。最后，通过一系列“动手实践”问题，您将有机会应用所学知识，解决具体的物理情境。
 
 现在，让我们从构建基本概念开始，深入探索加速度的原理与机制。
 
@@ -15,37 +15,37 @@
 
 ### 两种视角：平均值与瞬时值
 
-想象一下你正乘坐一部摩天大楼里的高速电梯。电梯从底层静止启动，先是猛地一推背，然后平稳上升，最后再减速停靠在顶层。如果你想向朋友描述这次体验，你可能会说：“电梯真快！” 但作为一个物理学家，我们想更精确地描述它。我们可以计算整个过程的“[平均加速度](@article_id:342640)”。
+想象一下你正乘坐一部摩天大楼里的高速电梯。电梯从底层静止启动，先是猛地一推背，然后平稳上升，最后再减速停靠在顶层。如果你想向朋友描述这次体验，你可能会说：“电梯真快！” 但作为一个物理学家，我们想更精确地描述它。我们可以计算整个过程的“[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)”。
 
-**[平均加速度](@article_id:342640)**（average acceleration）是一个非常朴素和直观的概念。它只关心起点和终点，不关心中间发生了什么。它的定义非常简单：在某一时间段内总的速度变化量除以这段时间。用数学的语言来说：
+**[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)**（average acceleration）是一个非常朴素和直观的概念。它只关心起点和终点，不关心中间发生了什么。它的定义非常简单：在某一时间段内总的速度变化量除以这段时间。用数学的语言来说：
 
 $$
 \vec{a}_{\text{avg}} = \frac{\vec{v}_f - \vec{v}_i}{t_f - t_i} = \frac{\Delta \vec{v}}{\Delta t}
 $$
 
-这里 $\vec{v}_i$ 和 $\vec{v}_f$ 分别是初始时刻 $t_i$ 和最终时刻 $t_f$ 的[速度矢量](@article_id:333350)。这个定义非常强大。无论电梯在中间是加速、减速还是[匀速](@article_id:349865)，[平均加速度](@article_id:342640)都只衡量整体的效果 。例如，在一个复杂的电梯运行剖面中，我们可以计算从启动阶段的某个时刻到减速阶段的另一个时刻之间的[平均加速度](@article_id:342640)，它给我们一个关于这段时间内速度变化的“宏观”图像。
+这里 $\vec{v}_i$ 和 $\vec{v}_f$ 分别是初始时刻 $t_i$ 和最终时刻 $t_f$ 的[速度矢量](@keyword=velocity_vector|lang=zh-CN|style=Feynman)。这个定义非常强大。无论电梯在中间是加速、减速还是[匀速](@keyword=constant_velocity|lang=zh-CN|style=Feynman)，[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)都只衡量整体的效果 [@problem_id:2178281]。例如，在一个复杂的电梯运行剖面中，我们可以计算从启动阶段的某个时刻到减速阶段的另一个时刻之间的[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)，它给我们一个关于这段时间内速度变化的“宏观”图像。
 
-但是，[平均加速度](@article_id:342640)会掩盖很多细节。在电梯启动的瞬间，你感受到的推背感远比全程的平均推力要强。你真正感受到的，是那一刻的**[瞬时加速度](@article_id:353563)**（instantaneous acceleration）。
+但是，[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)会掩盖很多细节。在电梯启动的瞬间，你感受到的推背感远比全程的平均推力要强。你真正感受到的，是那一刻的**[瞬时加速度](@keyword=instantaneous_acceleration|lang=zh-CN|style=Feynman)**（instantaneous acceleration）。
 
-[瞬时加速度](@article_id:353563)描述的是在“某个瞬间”速度是如何变化的。如何捕捉一个“瞬间”呢？这正是微积分大显身手的地方。我们可以想象把测量[平均加速度](@article_id:342640)的时间间隔 $\Delta t$ 不断缩短，短到趋近于零。在这个极限下，我们得到的就是 $t$ 时刻的[瞬时加速度](@article_id:353563)，也就是[速度矢量](@article_id:333350) $\vec{v}$ 对时间 $t$ 的[导数](@article_id:318324)：
+[瞬时加速度](@keyword=instantaneous_acceleration|lang=zh-CN|style=Feynman)描述的是在“某个瞬间”速度是如何变化的。如何捕捉一个“瞬间”呢？这正是微积分大显身手的地方。我们可以想象把测量[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)的时间间隔 $\Delta t$ 不断缩短，短到趋近于零。在这个极限下，我们得到的就是 $t$ 时刻的[瞬时加速度](@keyword=instantaneous_acceleration|lang=zh-CN|style=Feynman)，也就是[速度矢量](@keyword=velocity_vector|lang=zh-CN|style=Feynman) $\vec{v}$ 对时间 $t$ 的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)：
 
 $$
 \vec{a}(t) = \lim_{\Delta t \to 0} \frac{\Delta \vec{v}}{\Delta t} = \frac{d\vec{v}}{dt}
 $$
 
-这就像用一个超高帧率的摄像机去观察运动，每一帧都捕捉到了那一刻的精确变化。一个在微机电系统（MEMS）中[振荡](@article_id:331484)的微小质量块，其位置可能像余弦函数一样变化，$x(t) = A \cos(2\pi f t)$。它的[瞬时加速度](@article_id:353563)也随时间不停地剧烈改变。但我们依然可以计算它在任何时间段内的[平均加速度](@article_id:342640)，这对于评估设备性能至关重要 。
+这就像用一个超高帧率的摄像机去观察运动，每一帧都捕捉到了那一刻的精确变化。一个在微机电系统（MEMS）中[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的微小质量块，其位置可能像余弦函数一样变化，$x(t) = A \cos(2\pi f t)$。它的[瞬时加速度](@keyword=instantaneous_acceleration|lang=zh-CN|style=Feynman)也随时间不停地剧烈改变。但我们依然可以计算它在任何时间段内的[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)，这对于评估设备性能至关重要 [@problem_id:2178267]。
 
 ### 加速度的方向：一个不可或缺的维度
 
 我们必须时刻记住，速度和加速度都是**矢量**。它们不仅有大小（速率和加速度的大小），还有方向。这一点至关重要，却常常被忽略。如果你认为加速度仅仅意味着“越来越快”，那你就错过了物理学中最美妙的一部分。
 
-只要[速度矢量](@article_id:333350)发生任何改变，无论是大小还是方向，就一定存在加速度。
+只要[速度矢量](@keyword=velocity_vector|lang=zh-CN|style=Feynman)发生任何改变，无论是大小还是方向，就一定存在加速度。
 
-想象一个带电粒子进入均匀[磁场](@article_id:313708)，它开始做[螺旋运动](@article_id:336729)。它的运动轨迹就像一个弹簧，在前进的同时不断地绕圈。我们可以用一个位置矢量来描述它：$\vec{r}(t) = R\cos(\omega t)\hat{i} + R\sin(\omega t)\hat{j} + v_z t \hat{k}$ 。
+想象一个带电粒子进入均匀[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)，它开始做[螺旋运动](@keyword=helical_motion|lang=zh-CN|style=Feynman)。它的运动轨迹就像一个弹簧，在前进的同时不断地绕圈。我们可以用一个位置矢量来描述它：$\vec{r}(t) = R\cos(\omega t)\hat{i} + R\sin(\omega t)\hat{j} + v_z t \hat{k}$ [@problem_id:2178274]。
 
-在这个运动中，粒子沿 $z$ 轴方向的速度 $v_z$ 是恒定的。然而，在 $x-y$ 平面上，它正在做[匀速圆周运动](@article_id:357166)。匀速？是的，它的速率（速度的大小）可能保持不变。但是，它的速度**方向**在时刻不停地改变！为了维持这个圆周运动，必须有一个力，也即一个加速度，时刻指向圆心。这个指向中心的加速度，我们称之为[向心加速度](@article_id:323867)。因此，即使粒子的速率恒定，它仍然在“加速”。这正是加速度作为矢量的深刻内涵：改变方向就是改变速度，改变速度就需要加速度。
+在这个运动中，粒子沿 $z$ 轴方向的速度 $v_z$ 是恒定的。然而，在 $x-y$ 平面上，它正在做[匀速圆周运动](@keyword=uniform_circular_motion|lang=zh-CN|style=Feynman)。匀速？是的，它的速率（速度的大小）可能保持不变。但是，它的速度**方向**在时刻不停地改变！为了维持这个圆周运动，必须有一个力，也即一个加速度，时刻指向圆心。这个指向中心的加速度，我们称之为[向心加速度](@keyword=centripetal_acceleration|lang=zh-CN|style=Feynman)。因此，即使粒子的速率恒定，它仍然在“加速”。这正是加速度作为矢量的深刻内涵：改变方向就是改变速度，改变速度就需要加速度。
 
-当我们计算这个粒子在一段时间内的[平均加速度](@article_id:342640)时，我们会发现，沿 $z$ 轴方向的速度分量因为没有变化，所以对[平均加速度](@article_id:342640)没有贡献。所有的贡献都来自于 $x-y$ 平面上速度方向的改变。这再次强调了将运动分解为独立方向分量来处理的强大威力，无论是分析复杂的二维 Lissajous 图形 ，还是其他任何多维运动。
+当我们计算这个粒子在一段时间内的[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)时，我们会发现，沿 $z$ 轴方向的速度分量因为没有变化，所以对[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)没有贡献。所有的贡献都来自于 $x-y$ 平面上速度方向的改变。这再次强调了将运动分解为独立方向分量来处理的强大威力，无论是分析复杂的二维 Lissajous 图形 [@problem_id:2178235]，还是其他任何多维运动。
 
 ### 连接平均与瞬时：一个美丽的巧合？
 
@@ -53,28 +53,28 @@ $$
 
 不妨做一个思想实验。你开车在高速上行驶了1小时，总共走了100公里，那么你的平均速度是100公里/小时。那么，在这1小时内，有没有那么一个瞬间，你车上的速度表指针不多不少，正好指在“100”的位置上？直觉告诉我们，一定有。你不可能全程都低于100，也不可能全程都高于100。只要你的速度是连续变化的，你总会“路过”那个平均值。
 
-这个直觉在数学上是完全正确的，它被称为[中值定理](@article_id:301527)。对于加速度也是如此：**在任何一段连续的运动中，必然存在至少一个瞬间，其[瞬时加速度](@article_id:353563)的大小和方向与整个过程的[平均加速度](@article_id:342640)完全相同。**
+这个直觉在数学上是完全正确的，它被称为[中值定理](@keyword=mean_value_theorem|lang=zh-CN|style=Feynman)。对于加速度也是如此：**在任何一段连续的运动中，必然存在至少一个瞬间，其[瞬时加速度](@keyword=instantaneous_acceleration|lang=zh-CN|style=Feynman)的大小和方向与整个过程的[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)完全相同。**
 
-我们可以通过具体的例子来验证这个深刻的联系。比如，一辆[磁悬浮](@article_id:339464)列车的位置由复杂的时间函数描述，我们可以精确地计算出哪个时刻的[瞬时速度](@article_id:347067)等于它在某段时间内的平均速度 。我们也可以为一辆[自动驾驶](@article_id:334498)汽车设计一个分段的速度程序，然后准确地找到那个[瞬时加速度](@article_id:353563)等于[平均加速度](@article_id:342640)的时刻 $t_2$ 。
+我们可以通过具体的例子来验证这个深刻的联系。比如，一辆[磁悬浮](@keyword=magnetic_levitation|lang=zh-CN|style=Feynman)列车的位置由复杂的时间函数描述，我们可以精确地计算出哪个时刻的[瞬时速度](@keyword=instantaneous_velocity|lang=zh-CN|style=Feynman)等于它在某段时间内的平均速度 [@problem_id:2178257]。我们也可以为一辆[自动驾驶](@keyword=autonomous_driving|lang=zh-CN|style=Feynman)汽车设计一个分段的速度程序，然后准确地找到那个[瞬时加速度](@keyword=instantaneous_acceleration|lang=zh-CN|style=Feynman)等于[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)的时刻 $t_2$ [@problem_id:2178283]。
 
-这个原理有一个特别优雅的推论。想象一下猎豹在捕食过程中的一次冲刺 。它的速度从零开始，达到一个峰值，然后减慢。如果我们考察两个特殊的时间点 $t_1$ 和 $t_2$，在这两个点猎豹的速度大小正好相同（比如都是最大速度的一半）。那么，在这段时间 $[t_1, t_2]$ 内，猎豹的[平均加速度](@article_id:342640)是多少？根据定义 $\vec{a}_{\text{avg}} = (\vec{v}(t_2) - \vec{v}(t_1)) / (t_2 - t_1)$，因为 $\vec{v}(t_1)$ 和 $\vec{v}(t_2)$ 大小相同方向也相同（都是向前），所以分子为零！[平均加速度](@article_id:342640)为零。
+这个原理有一个特别优雅的推论。想象一下猎豹在捕食过程中的一次冲刺 [@problem_id:2178252]。它的速度从零开始，达到一个峰值，然后减慢。如果我们考察两个特殊的时间点 $t_1$ 和 $t_2$，在这两个点猎豹的速度大小正好相同（比如都是最大速度的一半）。那么，在这段时间 $[t_1, t_2]$ 内，猎豹的[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)是多少？根据定义 $\vec{a}_{\text{avg}} = (\vec{v}(t_2) - \vec{v}(t_1)) / (t_2 - t_1)$，因为 $\vec{v}(t_1)$ 和 $\vec{v}(t_2)$ 大小相同方向也相同（都是向前），所以分子为零！[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)为零。
 
-根据我们刚才的“巧合”原理，既然[平均加速度](@article_id:342640)为零，那么在 $t_1$ 和 $t_2$ 之间，必然有一个瞬间，[瞬时加速度](@article_id:353563)也为零。而[瞬时加速度](@article_id:353563)为零意味着什么？速度的变化率为零——这正是速度达到[极值](@article_id:335356)（最大值）的时刻！这个美妙的结论，不通过复杂的计算，仅凭一个简单的物理直觉就得到了。这就是物理学的美，它将抽象的数学定理（罗尔中值定理）赋予了生动的物理图像。
+根据我们刚才的“巧合”原理，既然[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)为零，那么在 $t_1$ 和 $t_2$ 之间，必然有一个瞬间，[瞬时加速度](@keyword=instantaneous_acceleration|lang=zh-CN|style=Feynman)也为零。而[瞬时加速度](@keyword=instantaneous_acceleration|lang=zh-CN|style=Feynman)为零意味着什么？速度的变化率为零——这正是速度达到[极值](@keyword=extrema|lang=zh-CN|style=Feynman)（最大值）的时刻！这个美妙的结论，不通过复杂的计算，仅凭一个简单的物理直觉就得到了。这就是物理学的美，它将抽象的数学定理（罗尔中值定理）赋予了生动的物理图像。
 
 ### 超越时间：当加速度依赖于其他因素
 
-到目前为止，我们遇到的加速度大多是时间 $t$ 的函数，或者是一个常数。但在现实世界中，加速度的来源——力，往往不直接依赖于时间，而是依赖于物体的位置（如[万有引力](@article_id:317939)、弹簧的力）或速度（如[空气阻力](@article_id:348198)）。
+到目前为止，我们遇到的加速度大多是时间 $t$ 的函数，或者是一个常数。但在现实世界中，加速度的来源——力，往往不直接依赖于时间，而是依赖于物体的位置（如[万有引力](@keyword=universal_gravitation|lang=zh-CN|style=Feynman)、弹簧的力）或速度（如[空气阻力](@keyword=air_resistance|lang=zh-CN|style=Feynman)）。
 
-想象一个微型探测器被发射到一种奇特的流体中。它受到的阻力，也就是产生的加速度，与它的速度 $v$ 密切相关，比如 $a(v) = -c v^{3/2}$ 。在这种情况下，我们不能直接写出 $v(t)$ 的简单表达式。我们必须回到加速度的定义 $a = dv/dt$，建立一个速度 $v$ 随时间 $t$ 变化的[微分方程](@article_id:327891)，然后通过积分来求解。这展示了微积分作为描述自然基本语言的强大力量。我们能解出在这样的阻力下，速度是如何随时间衰减的，并能预测在何时，它的[平均加速度](@article_id:342640)会下降到初始加速度的某个特定比例。
+想象一个微型探测器被发射到一种奇特的流体中。它受到的阻力，也就是产生的加速度，与它的速度 $v$ 密切相关，比如 $a(v) = -c v^{3/2}$ [@problem_id:2178244]。在这种情况下，我们不能直接写出 $v(t)$ 的简单表达式。我们必须回到加速度的定义 $a = dv/dt$，建立一个速度 $v$ 随时间 $t$ 变化的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)，然后通过积分来求解。这展示了微积分作为描述自然基本语言的强大力量。我们能解出在这样的阻力下，速度是如何随时间衰减的，并能预测在何时，它的[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)会下降到初始加速度的某个特定比例。
 
-另一个更深刻的例子是，一个粒子被一个指向原点的力吸引，这个力的大小随距离的立方成反比，即 $F(x) \propto 1/x^3$。这意味着它的加速度也依赖于位置 $a(x) \propto 1/x^3$ 。当粒子从静止位置 $x_0$ 被释放，向原点运动到 $x_f = x_0/k$ 时，会发生什么？
+另一个更深刻的例子是，一个粒子被一个指向原点的力吸引，这个力的大小随距离的立方成反比，即 $F(x) \propto 1/x^3$。这意味着它的加速度也依赖于位置 $a(x) \propto 1/x^3$ [@problem_id:2178291]。当粒子从静止位置 $x_0$ 被释放，向原点运动到 $x_f = x_0/k$ 时，会发生什么？
 
-这是一个非常复杂的问题。要计算[平均加速度](@article_id:342640) $\bar{a} = (v_f - v_i) / \Delta t$，我们需要知道末速度 $v_f$ 和总时间 $\Delta t$。我们可以借助[能量守恒](@article_id:300957)定律——另一个物理学的基石——来找到任何位置的速度。然后，我们还需要通过积分 $dt = dx/v(x)$ 来计算总时间。整个过程充满了复杂的数学推导。然而，奇迹发生了。当我们最终算出[平均加速度](@article_id:342640) $\bar{a}$，并将它与终点 $x_f$ 的[瞬时加速度](@article_id:353563) $a(x_f)$ 进行比较时，我们得到了一个惊人简单的结果：
+这是一个非常复杂的问题。要计算[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman) $\bar{a} = (v_f - v_i) / \Delta t$，我们需要知道末速度 $v_f$ 和总时间 $\Delta t$。我们可以借助[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)定律——另一个物理学的基石——来找到任何位置的速度。然后，我们还需要通过积分 $dt = dx/v(x)$ 来计算总时间。整个过程充满了复杂的数学推导。然而，奇迹发生了。当我们最终算出[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman) $\bar{a}$，并将它与终点 $x_f$ 的[瞬时加速度](@keyword=instantaneous_acceleration|lang=zh-CN|style=Feynman) $a(x_f)$ 进行比较时，我们得到了一个惊人简单的结果：
 
 $$
 \frac{\bar{a}}{a(x_f)} = \frac{1}{k^2}
 $$
 
-所有复杂的参数，如质量 $m$、力的大小、初始位置 $x_0$，全都消失了！这个比值只依赖于终点和起点位置的比值 $k$。这绝非巧合，它揭示了隐藏在特定[力场](@article_id:307740)运动背后深刻的对称性和标度不变性。这正是物理学令人着迷的地方：复杂的现象背后，往往隐藏着简洁而优美的规律。
+所有复杂的参数，如质量 $m$、力的大小、初始位置 $x_0$，全都消失了！这个比值只依赖于终点和起点位置的比值 $k$。这绝非巧合，它揭示了隐藏在特定[力场](@keyword=force_field|lang=zh-CN|style=Feynman)运动背后深刻的对称性和标度不变性。这正是物理学令人着迷的地方：复杂的现象背后，往往隐藏着简洁而优美的规律。
 
-最后，让我们回到现实中看似不可能的情况。一个游戏角色使用了“瞬时”的助推包，速度瞬间改变 。在这一瞬间，[瞬时加速度](@article_id:353563)从数学上讲是无穷大。这是否意味着我们的物理定律失效了？并非如此。我们的[平均加速度](@article_id:342640)概念依然坚如磐石。它平滑地处理了这种“[奇点](@article_id:298215)”，通过计算总的速度变化除以总时间，给出了一个完全有限且有意义的结果。这告诉我们，我们建立的物理概念具有惊人的鲁棒性，能够优雅地处理从平滑变化到极端突变的各种情况，引导我们洞察运动的全部奥秘。
+最后，让我们回到现实中看似不可能的情况。一个游戏角色使用了“瞬时”的助推包，速度瞬间改变 [@problem_id:2178253]。在这一瞬间，[瞬时加速度](@keyword=instantaneous_acceleration|lang=zh-CN|style=Feynman)从数学上讲是无穷大。这是否意味着我们的物理定律失效了？并非如此。我们的[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)概念依然坚如磐石。它平滑地处理了这种“[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)”，通过计算总的速度变化除以总时间，给出了一个完全有限且有意义的结果。这告诉我们，我们建立的物理概念具有惊人的鲁棒性，能够优雅地处理从平滑变化到极端突变的各种情况，引导我们洞察运动的全部奥秘。

@@ -1,35 +1,35 @@
 ## Introduction
-Thomson scattering is a fundamental process in [classical electrodynamics](@entry_id:270496), describing the interaction between light and free charged particles. As a cornerstone of how matter and radiation [exchange energy](@entry_id:137069), its significance extends from laboratory plasmas to the grandest cosmic scales. The central question it addresses is elementary yet profound: what happens when an [electromagnetic wave](@entry_id:269629) encounters a free electron? This article deconstructs this interaction, providing a complete picture from first principles to real-world applications.
+Thomson scattering is a fundamental process in classical electrodynamics, describing the interaction between light and free charged particles. As a cornerstone of how matter and radiation exchange energy, its significance extends from laboratory plasmas to the grandest cosmic scales. The central question it addresses is elementary yet profound: what happens when an electromagnetic wave encounters a free electron? This article deconstructs this interaction, providing a complete picture from first principles to real-world applications.
 
-To build a thorough understanding, we will first explore the foundational **Principles and Mechanisms** of the phenomenon, deriving the [scattering cross-section](@entry_id:140322) and analyzing the distinct polarization and [angular distribution](@entry_id:193827) of the radiated energy. Next, we will journey through its numerous **Applications and Interdisciplinary Connections**, showcasing how Thomson scattering serves as an indispensable diagnostic tool in plasma physics and [fusion science](@entry_id:182346), governs the structure of stars, and offers a unique window into the early universe. Finally, you will have the opportunity to solidify your knowledge through a series of **Hands-On Practices**, applying the core concepts to solve targeted problems.
+To build a thorough understanding, we will first explore the foundational **Principles and Mechanisms** of the phenomenon, deriving the scattering cross-section and analyzing the distinct polarization and angular distribution of the radiated energy. Next, we will journey through its numerous **Applications and Interdisciplinary Connections**, showcasing how Thomson scattering serves as an indispensable diagnostic tool in plasma physics and fusion science, governs the structure of stars, and offers a unique window into the early universe. Finally, you will have the opportunity to solidify your knowledge through a series of **Hands-On Practices**, applying the core concepts to solve targeted problems.
 
 ## Principles and Mechanisms
 
-The phenomenon of Thomson scattering is a cornerstone of [classical electrodynamics](@entry_id:270496), describing the elastic scattering of electromagnetic radiation by a free charged particle. Its principles are grounded in the fundamental axiom that an accelerating charge radiates energy. This chapter will deconstruct the mechanism of Thomson scattering, beginning with the electron's response to an incident wave and culminating in the observable properties of the scattered radiation, such as its intensity, angular distribution, and polarization. We will restrict our analysis to the non-relativistic regime, where the velocity of the charged particle remains much less than the speed of light ($v \ll c$) and the energy of the incident photon is much less than the particle's rest mass energy ($\hbar\omega \ll mc^2$).
+The phenomenon of Thomson scattering is a cornerstone of classical electrodynamics, describing the elastic scattering of electromagnetic radiation by a free charged particle. Its principles are grounded in the fundamental axiom that an accelerating charge radiates energy. This chapter will deconstruct the mechanism of Thomson scattering, beginning with the electron's response to an incident wave and culminating in the observable properties of the scattered radiation, such as its intensity, angular distribution, and polarization. We will restrict our analysis to the non-relativistic regime, where the velocity of the charged particle remains much less than the speed of light ($v \ll c$) and the energy of the incident photon is much less than the particle's rest mass energy ($\hbar\omega \ll mc^2$).
 
 ### The Radiating Oscillator Model
 
-The core physical process of Thomson scattering is the forced oscillation of a charged particle by the electric field of an incident electromagnetic wave. According to [classical electrodynamics](@entry_id:270496), any non-relativistically [moving point charge](@entry_id:273707) $q$ with an [instantaneous acceleration](@entry_id:174516) $\vec{a}(t)$ radiates electromagnetic power. The total [instantaneous power](@entry_id:174754) radiated is given by the **Larmor formula**:
+The core physical process of Thomson scattering is the forced oscillation of a charged particle by the electric field of an incident electromagnetic wave. According to classical electrodynamics, any non-relativistically moving point charge $q$ with an instantaneous acceleration $\vec{a}(t)$ radiates electromagnetic power. The total instantaneous power radiated is given by the **Larmor formula**:
 
 $$
 P(t) = \frac{q^2 a(t)^2}{6\pi\epsilon_0 c^3}
 $$
 
-where $a(t) = |\vec{a}(t)|$, $\epsilon_0$ is the [permittivity of free space](@entry_id:272823), and $c$ is the speed of light.
+where $a(t) = |\vec{a}(t)|$, $\epsilon_0$ is the permittivity of free space, and $c$ is the speed of light.
 
-Consider a free electron with charge $-e$ and mass $m_e$ interacting with a [monochromatic plane wave](@entry_id:263295) whose electric field at the electron's position is $\vec{E}(t) = \vec{E}_0 \cos(\omega t)$. The force exerted by the field drives the electron's motion. In the [non-relativistic limit](@entry_id:183353), the force from the wave's magnetic field is negligible compared to the [electric force](@entry_id:264587). Applying Newton's second law, the electron's acceleration is directly proportional to the driving electric field:
+Consider a free electron with charge $-e$ and mass $m_e$ interacting with a monochromatic plane wave whose electric field at the electron's position is $\vec{E}(t) = \vec{E}_0 \cos(\omega t)$. The force exerted by the field drives the electron's motion. In the non-relativistic limit, the force from the wave's magnetic field is negligible compared to the electric force. Applying Newton's second law, the electron's acceleration is directly proportional to the driving electric field:
 
 $$
 \vec{a}(t) = \frac{\vec{F}}{m_e} = -\frac{e}{m_e}\vec{E}(t) = -\frac{e\vec{E}_0}{m_e} \cos(\omega t)
 $$
 
-The magnitude squared of the acceleration is therefore $a(t)^2 = \frac{e^2 E_0^2}{m_e^2} \cos^2(\omega t)$. Substituting this into the Larmor formula gives the instantaneous [radiated power](@entry_id:274253). However, as both the incident wave and the radiated power oscillate rapidly, the physically relevant quantity is the power averaged over one cycle of oscillation. To find this, we use the time-average of the trigonometric term, $\langle \cos^2(\omega t) \rangle = \frac{1}{2}$. The time-averaged power radiated by the oscillating electron, $\langle P_{rad} \rangle$, is then found to be:
+The magnitude squared of the acceleration is therefore $a(t)^2 = \frac{e^2 E_0^2}{m_e^2} \cos^2(\omega t)$. Substituting this into the Larmor formula gives the instantaneous radiated power. However, as both the incident wave and the radiated power oscillate rapidly, the physically relevant quantity is the power averaged over one cycle of oscillation. To find this, we use the time-average of the trigonometric term, $\langle \cos^2(\omega t) \rangle = \frac{1}{2}$. The time-averaged power radiated by the oscillating electron, $\langle P_{rad} \rangle$, is then found to be:
 
 $$
 \langle P_{rad} \rangle = \frac{e^2}{6\pi\epsilon_0 c^3} \langle a(t)^2 \rangle = \frac{e^2}{6\pi\epsilon_0 c^3} \frac{e^2 E_0^2}{m_e^2} \langle \cos^2(\omega t) \rangle = \frac{e^4 E_0^2}{12\pi\epsilon_0 c^3 m_e^2}
 $$
 
-This result establishes a direct link between the amplitude of the incident field ($E_0$) and the [average power](@entry_id:271791) scattered by the electron.
+This result establishes a direct link between the amplitude of the incident field ($E_0$) and the average power scattered by the electron.
 
 ### The Thomson Scattering Cross-Section
 
@@ -45,15 +45,15 @@ $$
 \sigma = \frac{\frac{e^4 E_0^2}{12 \pi \epsilon_0 c^3 m_e^2}}{\frac{1}{2} \epsilon_0 c E_0^2} = \frac{e^4}{6 \pi \epsilon_0^2 c^4 m_e^2}
 $$
 
-A remarkable feature of this result is the absence of the angular frequency $\omega$. The Thomson [scattering cross-section](@entry_id:140322) is independent of the frequency of the incident low-energy radiation. This frequency independence arises from a cancellation: while a higher frequency wave would cause a more rapid acceleration, the energy flux of the wave (for a [fixed field](@entry_id:155430) amplitude) also changes in a way that leaves the ratio constant. Both the [radiated power](@entry_id:274253) and the incident intensity are proportional to $E_0^2$, making the cross-section a fundamental property of the particle and independent of the wave's intensity.
+A remarkable feature of this result is the absence of the angular frequency $\omega$. The Thomson scattering cross-section is independent of the frequency of the incident low-energy radiation. This frequency independence arises from a cancellation: while a higher frequency wave would cause a more rapid acceleration, the energy flux of the wave (for a fixed field amplitude) also changes in a way that leaves the ratio constant. Both the radiated power and the incident intensity are proportional to $E_0^2$, making the cross-section a fundamental property of the particle and independent of the wave's intensity.
 
-This expression, however, is for scattering of a linearly polarized wave, integrated over all angles. To arrive at the standard form, we must consider the angular distribution and average over all possible initial polarizations for an unpolarized beam. This leads to the total **Thomson cross-section**, $\sigma_T$. It is conventionally expressed in terms of a fundamental length scale known as the **[classical electron radius](@entry_id:271458)**, $r_e$. This quantity arises from a heuristic argument equating the [electrostatic potential energy](@entry_id:204009) of a spherical shell of charge $e$ and radius $r_e$ to the electron's rest-mass energy, $m_e c^2$:
+This expression, however, is for scattering of a linearly polarized wave, integrated over all angles. To arrive at the standard form, we must consider the angular distribution and average over all possible initial polarizations for an unpolarized beam. This leads to the total **Thomson cross-section**, $\sigma_T$. It is conventionally expressed in terms of a fundamental length scale known as the **classical electron radius**, $r_e$. This quantity arises from a heuristic argument equating the electrostatic potential energy of a spherical shell of charge $e$ and radius $r_e$ to the electron's rest-mass energy, $m_e c^2$:
 
 $$
 m_e c^2 = \frac{1}{4\pi\epsilon_0} \frac{e^2}{r_e} \implies r_e = \frac{e^2}{4\pi\epsilon_0 m_e c^2}
 $$
 
-Using the known values of the [fundamental constants](@entry_id:148774), the [classical electron radius](@entry_id:271458) is approximately $r_e \approx 2.818 \times 10^{-15} \text{ m}$. It is not a physical radius but rather a convenient length scale for classical electron-light interactions. As confirmed through dimensional analysis, the square of this quantity, $r_e^2$, correctly has dimensions of area ($[L^2]$).
+Using the known values of the fundamental constants, the classical electron radius is approximately $r_e \approx 2.818 \times 10^{-15} \text{ m}$. It is not a physical radius but rather a convenient length scale for classical electron-light interactions. As confirmed through dimensional analysis, the square of this quantity, $r_e^2$, correctly has dimensions of area ($[L^2]$).
 
 The total Thomson cross-section for unpolarized light is given by:
 
@@ -61,11 +61,11 @@ $$
 \sigma_T = \frac{8\pi}{3} r_e^2 = \frac{8\pi}{3} \left( \frac{e^2}{4\pi\epsilon_0 m_e c^2} \right)^2 = \frac{e^4}{6\pi \epsilon_0^2 c^4 m_e^2}
 $$
 
-Numerically, this value is $\sigma_T \approx 6.652 \times 10^{-29} \text{ m}^2$. This extremely small area underscores the relative inefficiency of Thomson scattering from a single electron. However, in environments with vast numbers of free electrons, such as [stellar interiors](@entry_id:158197) or laboratory plasmas, its cumulative effect is significant. For example, the total power scattered by a plasma of electron density $n_e$ from a laser beam of power $P_0$ passing through a length $L$ is $P_{sc} = P_0 n_e \sigma_T L$, a relationship used in [plasma diagnostics](@entry_id:189276) to measure electron density.
+Numerically, this value is $\sigma_T \approx 6.652 \times 10^{-29} \text{ m}^2$. This extremely small area underscores the relative inefficiency of Thomson scattering from a single electron. However, in environments with vast numbers of free electrons, such as stellar interiors or laboratory plasmas, its cumulative effect is significant. For example, the total power scattered by a plasma of electron density $n_e$ from a laser beam of power $P_0$ passing through a length $L$ is $P_{sc} = P_0 n_e \sigma_T L$, a relationship used in plasma diagnostics to measure electron density.
 
 ### Angular Distribution and Polarization
 
-The Larmor formula describes the total power radiated, but it does not tell us how this power is distributed in space. The [radiation pattern](@entry_id:261777) from an accelerating charge is not isotropic. The time-averaged power radiated per unit [solid angle](@entry_id:154756), $\frac{d\langle P \rangle}{d\Omega}$, depends on the angle $\alpha$ between the electron's [acceleration vector](@entry_id:175748) $\vec{a}$ and the direction of observation $\hat{n}$:
+The Larmor formula describes the total power radiated, but it does not tell us how this power is distributed in space. The radiation pattern from an accelerating charge is not isotropic. The time-averaged power radiated per unit solid angle, $\frac{d\langle P \rangle}{d\Omega}$, depends on the angle $\alpha$ between the electron's acceleration vector $\vec{a}$ and the direction of observation $\hat{n}$:
 
 $$
 \frac{d\langle P \rangle}{d\Omega} \propto \sin^2\alpha
@@ -81,12 +81,12 @@ The most interesting case is the scattering of an unpolarized incident wave. We 
 
 2.  **Parallel Component ($I_\parallel$):** The electric field and acceleration lie within the scattering plane. The angle between the acceleration vector and the observation direction is $\alpha = \pi/2 - \theta$. The scattered intensity is proportional to $\sin^2(\pi/2 - \theta) = \cos^2\theta$.
 
-For an incident unpolarized beam, these two components contribute equally. The total scattered intensity is the sum of these two incoherent intensities, leading to the [differential cross-section](@entry_id:137333) for unpolarized light:
+For an incident unpolarized beam, these two components contribute equally. The total scattered intensity is the sum of these two incoherent intensities, leading to the differential cross-section for unpolarized light:
 $$
 \frac{d\sigma}{d\Omega} = r_e^2 \frac{1+\cos^2\theta}{2}
 $$
 
-The scattered light is now a mixture of two orthogonal polarizations with different intensities. The **degree of linear polarization**, $\Pi$, is defined as $\Pi = \frac{I_{max} - I_{min}}{I_{max} + I_{min}}$. For Thomson scattering, the maximum and minimum intensities correspond to $I_\perp$ and $I_\parallel$. Therefore, the [degree of polarization](@entry_id:276690) is a function of the [scattering angle](@entry_id:171822) $\theta$:
+The scattered light is now a mixture of two orthogonal polarizations with different intensities. The **degree of linear polarization**, $\Pi$, is defined as $\Pi = \frac{I_{max} - I_{min}}{I_{max} + I_{min}}$. For Thomson scattering, the maximum and minimum intensities correspond to $I_\perp$ and $I_\parallel$. Therefore, the degree of polarization is a function of the scattering angle $\theta$:
 
 $$
 \Pi(\theta) = \frac{I_\perp - I_\parallel}{I_\perp + I_\parallel} = \frac{1 - \cos^2\theta}{1 + \cos^2\theta} = \frac{\sin^2\theta}{1+\cos^2\theta}

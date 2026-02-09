@@ -18,11 +18,11 @@ $$
 
 ### 信息的几何学：量子信息与计算
 
-如果说玻恩法则是内积的“经典”应用，那么在[量子信息科学](@article_id:310510)这个新兴领域，内积则展现了更为奇特和强大的力量。在这里，态矢量不仅描述粒子，更可以编码信息。内积的几何性质直接决定了信息的存储、传输和处理方式。
+如果说玻恩法则是内积的“经典”应用，那么在[量子信息科学](@keyword=quantum_information_science|lang=zh-CN|style=Feynman)这个新兴领域，内积则展现了更为奇特和强大的力量。在这里，态矢量不仅描述粒子，更可以编码信息。内积的几何性质直接决定了信息的存储、传输和处理方式。
 
 #### 区分不可区分之物
 
-在经典世界里，两个不同的事物总是可以被完美地区分开。一个比特要么是0，要么是1，绝无混淆。但在量子世界，事情变得微妙起来。两个不同的[量子态](@article_id:306563)，比如相干态 $|\alpha\rangle$ 和 $|\beta\rangle$（它们是构建量子光学和某些[量子计算](@article_id:303150)方案的重要基石），可能不是正交的。这意味着它们的内积 $\langle \alpha | \beta \rangle$ 不为零。
+在经典世界里，两个不同的事物总是可以被完美地区分开。一个比特要么是0，要么是1，绝无混淆。但在量子世界，事情变得微妙起来。两个不同的[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)，比如相干态 $|\alpha\rangle$ 和 $|\beta\rangle$（它们是构建量子光学和某些[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)方案的重要基石），可能不是正交的。这意味着它们的内积 $\langle \alpha | \beta \rangle$ 不为零。
 
 这个非零的重叠有着深刻的物理含义：它意味着这两个状态在本质上是“不可区分”的。如果你进行一次测量试图分辨系统处于哪个状态，总有一定的概率会把 $|\alpha\rangle$ 误认为 $|\beta\rangle$，反之亦然。这种混淆的概率，恰好与它们内积的模平方有关。对于相干态而言，它们的内积模平方有一个非常优美的形式：
 
@@ -30,13 +30,13 @@ $$
 |\langle \alpha | \beta \rangle|^2 = \exp(-|\alpha - \beta|^2)
 $$
 
-这个结果告诉我们，两个相干态的“距离”$|\alpha - \beta|$ 越大，它们之间的内积就越小，也就越容易区分。这个概念是[量子通信](@article_id:299437)保真度的基石。它警示我们，在量子领域，“不同”不等于“可分辨”，而内积正是衡量这种“相似度”或“混淆度”的精确标尺。
+这个结果告诉我们，两个相干态的“距离”$|\alpha - \beta|$ 越大，它们之间的内积就越小，也就越容易区分。这个概念是[量子通信](@keyword=quantum_communication|lang=zh-CN|style=Feynman)保真度的基石。它警示我们，在量子领域，“不同”不等于“可分辨”，而内积正是衡量这种“相似度”或“混淆度”的精确标尺。
 
 #### 知识的终极极限
 
 既然非正交态无法被完美区分，我们不禁要问：在只有一次测量机会的情况下，我们能做到的最好程度是什么？假设一个有缺陷的量子门，它可能产生正确的状态 $|\psi_1\rangle$，也可能产生错误的状态 $|\psi_2\rangle$，两者概率各半。我们想设计一个最佳的测量方案来判断到底发生了哪种情况。
 
-这正是量子信息论中的一个核心问题：[量子态](@article_id:306563)甄别。令人惊奇的是，这个问题的答案完全由这两个可能状态的内积 $\eta = |\langle \psi_1 | \psi_2 \rangle|$ 决定。通过巧妙地选择投影测量的方向，我们能够达到的最大成功识别概率（被称为 Helstrom 界）是：
+这正是量子信息论中的一个核心问题：[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)甄别。令人惊奇的是，这个问题的答案完全由这两个可能状态的内积 $\eta = |\langle \psi_1 | \psi_2 \rangle|$ 决定。通过巧妙地选择投影测量的方向，我们能够达到的最大成功识别概率（被称为 Helstrom 界）是：
 
 $$
 P_{\text{success}}^{\max} = \frac{1}{2} \left( 1 + \sqrt{1 - \eta^2} \right)
@@ -44,21 +44,21 @@ $$
 
 这个公式完美地体现了内积的威力。当两个态正交时（$\eta=0$），我们可以百分之百成功识别。当两个态几乎相同时（$\eta \to 1$），成功率趋近于 $1/2$，也就是纯粹的随机猜测。内积的几何关系，直接转化为了我们能够从系统中提取信息能力的物理极限。
 
-#### 重建未知的[量子态](@article_id:306563)
+#### 重建未知的[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)
 
-现在让我们把问题反过来。如果我们根本不知道一个[量子比特](@article_id:298377)处于什么状态 $|\psi\rangle = \alpha |0\rangle + \beta |1\rangle$，我们该如何确定它的系数 $\alpha$ 和 $\beta$ 呢？我们无法直接“看到”态矢量。
+现在让我们把问题反过来。如果我们根本不知道一个[量子比特](@keyword=qubit|lang=zh-CN|style=Feynman)处于什么状态 $|\psi\rangle = \alpha |0\rangle + \beta |1\rangle$，我们该如何确定它的系数 $\alpha$ 和 $\beta$ 呢？我们无法直接“看到”态矢量。
 
-答案是进行“[量子态层析](@article_id:301598)成像”（Quantum State Tomography）。这就像一个侦探，通过从不同角度观察犯罪现场的“影子”来拼凑出全貌。在这里，“影子”就是测量概率。通过在多个不同的基（比如计算基、Hadamard 基、圆形基等）中进行测量，我们可以获得一系列的[概率值](@article_id:296952)。每一个[概率值](@article_id:296952)都对应一个内积的模平方，比如 $P_0 = |\langle 0 | \psi \rangle|^2 = |\alpha|^2$。
+答案是进行“[量子态层析](@keyword=quantum_state_tomography|lang=zh-CN|style=Feynman)成像”（Quantum State Tomography）。这就像一个侦探，通过从不同角度观察犯罪现场的“影子”来拼凑出全貌。在这里，“影子”就是测量概率。通过在多个不同的基（比如计算基、Hadamard 基、圆形基等）中进行测量，我们可以获得一系列的[概率值](@keyword=p_value|lang=zh-CN|style=Feynman)。每一个[概率值](@keyword=p_value|lang=zh-CN|style=Feynman)都对应一个内积的模平方，比如 $P_0 = |\langle 0 | \psi \rangle|^2 = |\alpha|^2$。
 
-仅仅一个基的测量是不够的，因为它只能告诉我们系数的模，却丢失了相位信息。但如果我们收集了足够多不同基下的测量数据（比如在 $x, y, z$ 三个方向上），我们就可以建立一个方程组，反解出 $\alpha$ 和 $\beta$ 的所有信息（除去一个无关紧要的[全局相位](@article_id:308367)）。这正是[实验物理学](@article_id:328504)家在实验室中验证和表征他们制备的[量子态](@article_id:306563)所采用的标准方法。内积，再一次，成为了连接我们与微观世界的桥梁。
+仅仅一个基的测量是不够的，因为它只能告诉我们系数的模，却丢失了相位信息。但如果我们收集了足够多不同基下的测量数据（比如在 $x, y, z$ 三个方向上），我们就可以建立一个方程组，反解出 $\alpha$ 和 $\beta$ 的所有信息（除去一个无关紧要的[全局相位](@keyword=global_phase|lang=zh-CN|style=Feynman)）。这正是[实验物理学](@keyword=experimental_physics|lang=zh-CN|style=Feynman)家在实验室中验证和表征他们制备的[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)所采用的标准方法。内积，再一次，成为了连接我们与微观世界的桥梁。
 
 #### 保护量子世界的秘密
 
-[量子态](@article_id:306563)非常脆弱，容易受到环境噪声的干扰，这是实现[量子计算](@article_id:303150)的最大障碍之一。那么，我们能否利用态矢量的特性来保护我们宝贵的量子信息呢？答案是肯定的，这就是[量子纠错码](@article_id:330491)的领域。
+[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)非常脆弱，容易受到环境噪声的干扰，这是实现[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)的最大障碍之一。那么，我们能否利用态矢量的特性来保护我们宝贵的量子信息呢？答案是肯定的，这就是[量子纠错码](@keyword=quantum_error_correcting_codes|lang=zh-CN|style=Feynman)的领域。
 
-其核心思想是“冗余编码”：将一个[逻辑量子比特](@article_id:303100)的信息编码到多个[物理量子比特](@article_id:298021)的复杂纠缠态中。例如，将逻辑态 $|0_L\rangle$ 和 $|1_L\rangle$ 定义为三个物理比特的特定叠加态。
+其核心思想是“冗余编码”：将一个[逻辑量子比特](@keyword=logical_qubits|lang=zh-CN|style=Feynman)的信息编码到多个[物理量子比特](@keyword=physical_qubit|lang=zh-CN|style=Feynman)的复杂纠缠态中。例如，将逻辑态 $|0_L\rangle$ 和 $|1_L\rangle$ 定义为三个物理比特的特定叠加态。
 
-一个好的[纠错码](@article_id:314206)必须能够检测并修正错误，而又不破坏存储的信息。这里的关键判据又一次落在了内积上。以一种常见的“相位翻转”错误（由算符 $Z_1$ 代表）为例，一个有效的[纠错码](@article_id:314206)必须满足一个条件：这个错误作用在两种逻辑[基态](@article_id:312876)上时，“看起来”必须是一样的。用数学语言来说，就是错误算符在这两个态上的[期望值](@article_id:313620)必须相等：
+一个好的[纠错码](@keyword=error_correcting_codes|lang=zh-CN|style=Feynman)必须能够检测并修正错误，而又不破坏存储的信息。这里的关键判据又一次落在了内积上。以一种常见的“相位翻转”错误（由算符 $Z_1$ 代表）为例，一个有效的[纠错码](@keyword=error_correcting_codes|lang=zh-CN|style=Feynman)必须满足一个条件：这个错误作用在两种逻辑[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)上时，“看起来”必须是一样的。用数学语言来说，就是错误算符在这两个态上的[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)必须相等：
 
 $$
 \langle 0_L | Z_1 | 0_L \rangle = \langle 1_L | Z_1 | 1_L \rangle
@@ -68,20 +68,20 @@ $$
 
 ### 粒子的协奏曲：复合系统与对称性
 
-到目前为止，我们大多关注单个系统。但当多个粒子聚集在一起时，内积的概念将引导我们进入一个更加丰富、充满奇妙现象的领域——纠缠与[粒子统计](@article_id:306064)。
+到目前为止，我们大多关注单个系统。但当多个粒子聚集在一起时，内积的概念将引导我们进入一个更加丰富、充满奇妙现象的领域——纠缠与[粒子统计](@keyword=particle_statistics|lang=zh-CN|style=Feynman)。
 
 #### 可分还是纠缠？
 
-想象一个[双量子比特系统](@article_id:382074)。它的[状态空间](@article_id:323449)维度是 $2 \times 2 = 4$。有些状态是“平凡的”，比如 $|a\rangle_1 \otimes |b\rangle_2$，表示第一个比特处于 $|a\rangle$ 态，第二个比特处于 $|b\rangle$ 态，两者[相互独立](@article_id:337365)。这种态称为[可分态](@article_id:302721)。但还存在着一类更奇特的态——[纠缠态](@article_id:303351)，比如著名的贝尔态 $|\Psi^-\rangle = \frac{1}{\sqrt{2}}(|01\rangle - |10\rangle)$，它们无法写成两个独立状态的乘积。
+想象一个[双量子比特系统](@keyword=two_qubit_system|lang=zh-CN|style=Feynman)。它的[状态空间](@keyword=state_space_2|lang=zh-CN|style=Feynman)维度是 $2 \times 2 = 4$。有些状态是“平凡的”，比如 $|a\rangle_1 \otimes |b\rangle_2$，表示第一个比特处于 $|a\rangle$ 态，第二个比特处于 $|b\rangle$ 态，两者[相互独立](@keyword=mutual_independence|lang=zh-CN|style=Feynman)。这种态称为[可分态](@keyword=separable_states|lang=zh-CN|style=Feynman)。但还存在着一类更奇特的态——[纠缠态](@keyword=entangled_state|lang=zh-CN|style=Feynman)，比如著名的贝尔态 $|\Psi^-\rangle = \frac{1}{\sqrt{2}}(|01\rangle - |10\rangle)$，它们无法写成两个独立状态的乘积。
 
-内积为我们提供了一个清晰的几何判据来区分这两者。例如，我们可以问：什么样的[可分态](@article_id:302721) $|a\rangle_1 |b\rangle_2$ 会与[贝尔态](@article_id:301192) $|\Psi^-\rangle$ 正交？通过计算内积 $\langle \Psi^- | (|a\rangle_1 |b\rangle_2) \rangle = 0$，我们能得出一个非常简洁而深刻的结论：当且仅当两个比特的状态完全相同时，即 $|a\rangle = |b\rangle$ 时，它们组成的乘积态才会与这个反对称的[贝尔态](@article_id:301192)正交。这揭示了希尔伯特空间的精细结构：纠缠态占据了那些简单乘积态无法触及的“角落”，而内积正是我们探索这些角落的探照灯。
+内积为我们提供了一个清晰的几何判据来区分这两者。例如，我们可以问：什么样的[可分态](@keyword=separable_states|lang=zh-CN|style=Feynman) $|a\rangle_1 |b\rangle_2$ 会与[贝尔态](@keyword=bell_states|lang=zh-CN|style=Feynman) $|\Psi^-\rangle$ 正交？通过计算内积 $\langle \Psi^- | (|a\rangle_1 |b\rangle_2) \rangle = 0$，我们能得出一个非常简洁而深刻的结论：当且仅当两个比特的状态完全相同时，即 $|a\rangle = |b\rangle$ 时，它们组成的乘积态才会与这个反对称的[贝尔态](@keyword=bell_states|lang=zh-CN|style=Feynman)正交。这揭示了希尔伯特空间的精细结构：纠缠态占据了那些简单乘积态无法触及的“角落”，而内积正是我们探索这些角落的探照灯。
 
 #### 对称性的交响
 
-自然界对于[全同粒子](@article_id:313606)有着严格的规定。一群[玻色子](@article_id:298714)（如[光子](@article_id:305617)）必须处于一个在任意交换两个粒子时保持不变的“对称”状态；而一群[费米子](@article_id:306655)（如电子）则必须处于一个在交换时会变号的“反对称”状态。
+自然界对于[全同粒子](@keyword=identical_particles|lang=zh-CN|style=Feynman)有着严格的规定。一群[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)（如[光子](@keyword=photon|lang=zh-CN|style=Feynman)）必须处于一个在任意交换两个粒子时保持不变的“对称”状态；而一群[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)（如电子）则必须处于一个在交换时会变号的“反对称”状态。
 
-内积和投影算符是我们强制执行这些对称性规则的工具。例如，对于一个由夸克和反夸克组成的[介子](@article_id:363794)模型，物理学家常常关心它是否处于总自旋为零的“单态”（singlet state）。这个单态正是一个反对称的纠缠态。要计算一个任意制备出的双[自旋态](@article_id:309855) $|\psi\rangle$ 中含有多少“单态”的成分，我们只需将其投影到单态上，而这个投影的概率大小正是 $|\langle \text{singlet} | \psi \rangle|^2$。
+内积和投影算符是我们强制执行这些对称性规则的工具。例如，对于一个由夸克和反夸克组成的[介子](@keyword=mesons|lang=zh-CN|style=Feynman)模型，物理学家常常关心它是否处于总自旋为零的“单态”（singlet state）。这个单态正是一个反对称的纠缠态。要计算一个任意制备出的双[自旋态](@keyword=spin_states|lang=zh-CN|style=Feynman) $|\psi\rangle$ 中含有多少“单态”的成分，我们只需将其投影到单态上，而这个投影的概率大小正是 $|\langle \text{singlet} | \psi \rangle|^2$。
 
-更进一步，当我们考虑多个[玻色子](@article_id:298714)的系统时，内积揭示了与另一个数学领域的惊人联系。计算两个由不同单粒子态构成的多[玻色子](@article_id:298714)态之间的内积，会导向一个被称为矩阵“积和式”（Permanent）的计算。与更容易计算的[行列式](@article_id:303413)（Determinant）不同，计算积和式被认为是[计算复杂性理论](@article_id:382883)中的一个难题。量子物理中一个基本的重叠概率问题，竟然与计算机科学的前沿难题直接挂钩，这无疑展示了科学内在的统一与和谐之美。
+更进一步，当我们考虑多个[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)的系统时，内积揭示了与另一个数学领域的惊人联系。计算两个由不同单粒子态构成的多[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)态之间的内积，会导向一个被称为矩阵“积和式”（Permanent）的计算。与更容易计算的[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)（Determinant）不同，计算积和式被认为是[计算复杂性理论](@keyword=computer_science_complexity|lang=zh-CN|style=Feynman)中的一个难题。量子物理中一个基本的重叠概率问题，竟然与计算机科学的前沿难题直接挂钩，这无疑展示了科学内在的统一与和谐之美。
 
-总而言之，态矢量与内积的简单规则，在量子世界的各个角落开花结果。它是量子预测的引擎，是[量子信息](@article_id:298172)的文法，也是粒子间相互作用的仲裁者。从最基础的概率计算，到[量子计算](@article_id:303150)机的蓝图，再到粒子物理的深层结构，内积以其强大的普适性和深刻的几何内涵，为我们描绘了一幅贯穿现代物理学的壮丽图景。
+总而言之，态矢量与内积的简单规则，在量子世界的各个角落开花结果。它是量子预测的引擎，是[量子信息](@keyword=quantum_information|lang=zh-CN|style=Feynman)的文法，也是粒子间相互作用的仲裁者。从最基础的概率计算，到[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)机的蓝图，再到粒子物理的深层结构，内积以其强大的普适性和深刻的几何内涵，为我们描绘了一幅贯穿现代物理学的壮丽图景。
