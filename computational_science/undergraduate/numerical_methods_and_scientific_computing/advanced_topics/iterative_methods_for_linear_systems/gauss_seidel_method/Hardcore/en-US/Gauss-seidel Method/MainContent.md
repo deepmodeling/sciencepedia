@@ -1,15 +1,15 @@
 ## Introduction
-In the realm of [scientific computing](@entry_id:143987) and engineering, many complex problems—from predicting heat flow in a processor to modeling economic markets—ultimately reduce to solving a system of linear equations. While direct methods like Gaussian elimination are effective for small systems, they become computationally prohibitive for the massive, sparse systems that characterize real-world phenomena. This challenge creates the need for efficient iterative techniques, which refine an initial guess until an acceptable solution is reached. The Gauss-Seidel method stands as one of the most fundamental and insightful of these iterative approaches.
+In the realm of scientific computing and engineering, many complex problems—from predicting heat flow in a processor to modeling economic markets—ultimately reduce to solving a system of linear equations. While direct methods like Gaussian elimination are effective for small systems, they become computationally prohibitive for the massive, sparse systems that characterize real-world phenomena. This challenge creates the need for efficient iterative techniques, which refine an initial guess until an acceptable solution is reached. The Gauss-Seidel method stands as one of the most fundamental and insightful of these iterative approaches.
 
-This article provides a comprehensive exploration of the Gauss-Seidel method. It addresses the core need for an efficient solver for large [linear systems](@entry_id:147850) by delving into its mechanics, theoretical foundations, and practical utility. Across three chapters, you will gain a robust understanding of this powerful algorithm. The first chapter, "Principles and Mechanisms," dissects the iterative procedure, establishes the mathematical conditions for its convergence, and analyzes its [rate of convergence](@entry_id:146534). The second chapter, "Applications and Interdisciplinary Connections," showcases the method's broad impact, demonstrating how it is used to model phenomena in physics, engineering, data science, and [network theory](@entry_id:150028). Finally, "Hands-On Practices" will provide opportunities to apply these concepts and solidify your understanding through guided exercises.
+This article provides a comprehensive exploration of the Gauss-Seidel method. It addresses the core need for an efficient solver for large linear systems by delving into its mechanics, theoretical foundations, and practical utility. Across three chapters, you will gain a robust understanding of this powerful algorithm. The first chapter, "Principles and Mechanisms," dissects the iterative procedure, establishes the mathematical conditions for its convergence, and analyzes its rate of convergence. The second chapter, "Applications and Interdisciplinary Connections," showcases the method's broad impact, demonstrating how it is used to model phenomena in physics, engineering, data science, and network theory. Finally, "Hands-On Practices" will provide opportunities to apply these concepts and solidify your understanding through guided exercises.
 
 ## Principles and Mechanisms
 
-In the landscape of numerical methods for [solving systems of linear equations](@entry_id:136676), the Gauss-Seidel method stands as a quintessential example of an iterative technique. Unlike direct methods such as Gaussian elimination, which aim to find the exact solution through a finite sequence of operations, [iterative methods](@entry_id:139472) begin with an initial guess and progressively refine it through a repeating process. The core philosophy is to generate a sequence of approximate solutions that, under the right conditions, converge to the true solution. This chapter elucidates the fundamental mechanism of the Gauss-Seidel method, its theoretical underpinnings, and the conditions that govern its convergence and efficiency.
+In the landscape of numerical methods for solving systems of linear equations, the Gauss-Seidel method stands as a quintessential example of an iterative technique. Unlike direct methods such as Gaussian elimination, which aim to find the exact solution through a finite sequence of operations, iterative methods begin with an initial guess and progressively refine it through a repeating process. The core philosophy is to generate a sequence of approximate solutions that, under the right conditions, converge to the true solution. This chapter elucidates the fundamental mechanism of the Gauss-Seidel method, its theoretical underpinnings, and the conditions that govern its convergence and efficiency.
 
 ### The Core Iterative Procedure
 
-Consider a general system of $n$ [linear equations](@entry_id:151487) with $n$ unknowns, represented in matrix form as $A\mathbf{x} = \mathbf{b}$:
+Consider a general system of $n$ linear equations with $n$ unknowns, represented in matrix form as $A\mathbf{x} = \mathbf{b}$:
 $$
 \begin{align*}
 a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1 \\
@@ -30,9 +30,9 @@ The update rule for the Gauss-Seidel method at the $(k+1)$-th iteration can be e
 $$
 x_i^{(k+1)} = \frac{1}{a_{ii}} \left( b_i - \sum_{j=1}^{i-1} a_{ij}x_j^{(k+1)} - \sum_{j=i+1}^{n} a_{ij}x_j^{(k)} \right), \quad \text{for } i=1, 2, \ldots, n.
 $$
-Notice how the first summation term uses the already-updated components from the current iteration $(k+1)$, while the second summation uses components from the previous iteration $(k)$  .
+Notice how the first summation term uses the already-updated components from the current iteration $(k+1)$, while the second summation uses components from the previous iteration $(k)$ [@problem_id:2214512] [@problem_id:2214541].
 
-To illustrate this mechanism, consider a simplified input-output model of an economy with three sectors: Agriculture ($A$), Manufacturing ($M$), and Services ($S$). The equilibrium production levels $x_A, x_M, x_S$ satisfy the following system :
+To illustrate this mechanism, consider a simplified input-output model of an economy with three sectors: Agriculture ($A$), Manufacturing ($M$), and Services ($S$). The equilibrium production levels $x_A, x_M, x_S$ satisfy the following system [@problem_id:2214502]:
 $$
 \begin{cases}
 x_A = 0.2 x_M + 0.3 x_S + 100 \\
@@ -75,7 +75,7 @@ $$
 5x_1 - 2x_2 = 3 \\
 x_1 + 4x_2 = 10
 \end{align*}
-represents two lines in the $x_1$-$x_2$ plane. The exact solution to the system is the point where these two lines intersect .
+represents two lines in the $x_1$-$x_2$ plane. The exact solution to the system is the point where these two lines intersect [@problem_id:2214528].
 
 The Gauss-Seidel iteration for this system is defined by:
 $$
@@ -116,7 +116,7 @@ Finally, by multiplying by the inverse of $(D+L)$, we obtain the matrix form of 
 $$
 \mathbf{x}^{(k+1)} = -(D+L)^{-1}U \mathbf{x}^{(k)} + (D+L)^{-1}\mathbf{b}
 $$
-This equation is in the standard form for a linear iterative method, $\mathbf{x}^{(k+1)} = T \mathbf{x}^{(k)} + \mathbf{c}$, where the **Gauss-Seidel iteration matrix** is $T_G = -(D+L)^{-1}U$ and the constant vector is $\mathbf{c} = (D+L)^{-1}\mathbf{b}$ . This formulation is the key to understanding convergence.
+This equation is in the standard form for a linear iterative method, $\mathbf{x}^{(k+1)} = T \mathbf{x}^{(k)} + \mathbf{c}$, where the **Gauss-Seidel iteration matrix** is $T_G = -(D+L)^{-1}U$ and the constant vector is $\mathbf{c} = (D+L)^{-1}\mathbf{b}$ [@problem_id:1394854]. This formulation is the key to understanding convergence.
 
 ### The Condition for Convergence: The Spectral Radius
 
@@ -126,7 +126,7 @@ An iterative method is useful only if the sequence of approximations $\mathbf{x}
 
 The **spectral radius**, denoted $\rho(T)$, is the maximum absolute value of the eigenvalues of $T$. That is, $\rho(T) = \max_i |\lambda_i|$, where $\lambda_i$ are the eigenvalues of $T$.
 
-This theorem provides a powerful, universal criterion for convergence. Let's apply it to a physical system where the convergence depends on a parameter $\alpha$ . Consider the matrix:
+This theorem provides a powerful, universal criterion for convergence. Let's apply it to a physical system where the convergence depends on a parameter $\alpha$ [@problem_id:2214500]. Consider the matrix:
 $$
 A = \begin{pmatrix}
 2  & -\alpha  & 0 \\
@@ -168,14 +168,14 @@ $$
 $$
 A key theorem states that **if a matrix $A$ is strictly diagonally dominant, then the Gauss-Seidel method is guaranteed to converge**.
 
-Consider the matrix $A = \begin{pmatrix} 5   -2   1 \\ 3   8   -4 \\ 2   1   -3 \end{pmatrix}$ .
+Consider the matrix $A = \begin{pmatrix} 5   -2   1 \\ 3   8   -4 \\ 2   1   -3 \end{pmatrix}$ [@problem_id:1394892].
 - Row 1: $|5|  |-2| + |1| \implies 5  3$ (True)
 - Row 2: $|8|  |3| + |-4| \implies 8  7$ (True)
 - Row 3: $|-3|  |2| + |1| \implies 3  3$ (False)
 
 Since the condition fails for the third row, the matrix is not strictly diagonally dominant. It is crucial to understand that this is a *sufficient*, not necessary, condition. The failure of this test does not guarantee divergence; it simply means that this particular theorem cannot be used to guarantee convergence.
 
-In some cases, reordering the equations of the system can produce a diagonally dominant matrix. For the system :
+In some cases, reordering the equations of the system can produce a diagonally dominant matrix. For the system [@problem_id:1394837]:
 $$
 \begin{cases}
 2x_1 + 10x_2 = 26 \\
@@ -195,7 +195,7 @@ This reordered matrix $A'$ is strictly diagonally dominant, since $|3|  |-1|$ an
 
 Another powerful condition, particularly relevant in engineering and physics, involves symmetric positive-definite matrices. A matrix $A$ is **symmetric** if $A = A^T$, and it is **positive-definite** if $\mathbf{x}^T A \mathbf{x}  0$ for any non-zero vector $\mathbf{x}$.
 
-A theorem by Ciarlet and Young states that **if the matrix $A$ is symmetric and positive-definite, the Gauss-Seidel method is guaranteed to converge**. Matrices arising from the discretization of physical laws, such as those governing heat transfer or structural mechanics, are often symmetric and positive-definite, making this a widely applicable criterion .
+A theorem by Ciarlet and Young states that **if the matrix $A$ is symmetric and positive-definite, the Gauss-Seidel method is guaranteed to converge**. Matrices arising from the discretization of physical laws, such as those governing heat transfer or structural mechanics, are often symmetric and positive-definite, making this a widely applicable criterion [@problem_id:2214541].
 
 ### Rate of Convergence: How Fast is Fast Enough?
 
@@ -211,7 +211,7 @@ $$
 $$
 This relationship shows that the rate of convergence is geometric. A spectral radius close to 1 implies very slow convergence, as each iteration only minimally reduces the error. Conversely, a spectral radius close to 0 implies rapid convergence.
 
-Consider a system from a physics simulation with an iteration matrix whose spectral radius is calculated to be $\rho(T_G) = \frac{13+5\sqrt{17}}{128} \approx 0.2625$ . Suppose we want to know the minimum number of iterations, $k$, required to reduce the error by a factor of at least $10^5$, meaning we require $\frac{\|\mathbf{e}^{(k)}\|}{\|\mathbf{e}^{(0)}\|} \leq 10^{-5}$.
+Consider a system from a physics simulation with an iteration matrix whose spectral radius is calculated to be $\rho(T_G) = \frac{13+5\sqrt{17}}{128} \approx 0.2625$ [@problem_id:2214543]. Suppose we want to know the minimum number of iterations, $k$, required to reduce the error by a factor of at least $10^5$, meaning we require $\frac{\|\mathbf{e}^{(k)}\|}{\|\mathbf{e}^{(0)}\|} \leq 10^{-5}$.
 Using the approximation, we need to solve for $k$ in the inequality:
 $$
 (\rho(T_G))^k \leq 10^{-5}
@@ -224,4 +224,4 @@ Since $\rho(T_G)  1$, its logarithm is negative. Dividing by $\ln(\rho(T_G))$ re
 $$
 k \geq \frac{\ln(10^{-5})}{\ln(\rho(T_G))} = \frac{-5 \ln(10)}{\ln(0.2625)} \approx 8.61
 $$
-Since the number of iterations must be an integer, we must perform at least $k=9$ iterations to guarantee the desired error reduction. This demonstrates the practical utility of the [spectral radius](@entry_id:138984) in estimating the computational effort required to achieve a solution of a given accuracy.
+Since the number of iterations must be an integer, we must perform at least $k=9$ iterations to guarantee the desired error reduction. This demonstrates the practical utility of the spectral radius in estimating the computational effort required to achieve a solution of a given accuracy.

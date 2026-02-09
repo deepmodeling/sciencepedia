@@ -1,21 +1,21 @@
 ## Introduction
-Cellular automata (CA) offer a powerful paradigm for understanding one of the most fundamental questions in biology: how do complex, large-scale patterns and behaviors emerge from the local interactions of individual components? From the intricate morphogenesis of a developing embryo to the relentless spread of a tumor, spatial organization is key. Cellular automata provide a computationally accessible framework to explore these dynamics, representing systems as a grid of "cells" that evolve according to a simple set of local rules. This approach bridges the gap between individual [cell behavior](@entry_id:260922) and tissue-level phenomena, offering mechanistic insights that are often inaccessible to traditional [continuum models](@entry_id:190374). This article provides a graduate-level exploration of the theory and application of [cellular automata](@entry_id:273688) in [spatial biological modeling](@entry_id:755139).
+Cellular automata (CA) offer a powerful paradigm for understanding one of the most fundamental questions in biology: how do complex, large-scale patterns and behaviors emerge from the local interactions of individual components? From the intricate morphogenesis of a developing embryo to the relentless spread of a tumor, spatial organization is key. Cellular automata provide a computationally accessible framework to explore these dynamics, representing systems as a grid of "cells" that evolve according to a simple set of local rules. This approach bridges the gap between individual cell behavior and tissue-level phenomena, offering mechanistic insights that are often inaccessible to traditional continuum models. This article provides a graduate-level exploration of the theory and application of cellular automata in spatial biological modeling.
 
-This guide is structured to build your expertise from the ground up. The first chapter, **Principles and Mechanisms**, establishes the formal mathematical foundation of CAs and dissects how to translate core biological processes—such as movement, proliferation, and adhesion—into precise, local update rules. We will see how macroscopic laws, like diffusion, emerge directly from these microscopic definitions. Next, in **Applications and Interdisciplinary Connections**, we will survey the vast landscape where these models are applied, from modeling tumor growth and disease spread to simulating [gene drive](@entry_id:153412) dynamics and the [evolution of cooperation](@entry_id:261623) in [microbial communities](@entry_id:269604). Finally, the **Hands-On Practices** section challenges you to apply these concepts to solve practical problems in model design, [numerical stability](@entry_id:146550), and computational performance, cementing your theoretical knowledge with applied reasoning.
+This guide is structured to build your expertise from the ground up. The first chapter, **Principles and Mechanisms**, establishes the formal mathematical foundation of CAs and dissects how to translate core biological processes—such as movement, proliferation, and adhesion—into precise, local update rules. We will see how macroscopic laws, like diffusion, emerge directly from these microscopic definitions. Next, in **Applications and Interdisciplinary Connections**, we will survey the vast landscape where these models are applied, from modeling tumor growth and disease spread to simulating gene drive dynamics and the evolution of cooperation in microbial communities. Finally, the **Hands-On Practices** section challenges you to apply these concepts to solve practical problems in model design, numerical stability, and computational performance, cementing your theoretical knowledge with applied reasoning.
 
 ## Principles and Mechanisms
 
-This chapter delineates the fundamental principles and operational mechanisms of [cellular automata](@entry_id:273688) (CA) as applied to [spatial biological modeling](@entry_id:755139). We move from the formal mathematical construction of a CA to the practical implications of design choices, such as lattice geometry. Subsequently, we construct and analyze specific update rules that encapsulate core biological processes, including [cell motility](@entry_id:140833), proliferation, and adhesion. Throughout this exploration, we will emphasize the profound connection between simple, local rules and the emergence of complex, large-scale biological patterns, often described by continuous [partial differential equations](@entry_id:143134) (PDEs).
+This chapter delineates the fundamental principles and operational mechanisms of cellular automata (CA) as applied to spatial biological modeling. We move from the formal mathematical construction of a CA to the practical implications of design choices, such as lattice geometry. Subsequently, we construct and analyze specific update rules that encapsulate core biological processes, including cell motility, proliferation, and adhesion. Throughout this exploration, we will emphasize the profound connection between simple, local rules and the emergence of complex, large-scale biological patterns, often described by continuous partial differential equations (PDEs).
 
 ### The Formal Structure of a Cellular Automaton
 
-At its core, a [cellular automaton](@entry_id:264707) is a discrete dynamical system. Its structure is defined by a few key components which, in concert, generate rich and complex behaviors from simple local interactions.
+At its core, a cellular automaton is a discrete dynamical system. Its structure is defined by a few key components which, in concert, generate rich and complex behaviors from simple local interactions.
 
 #### Core Components: Lattice, States, and Neighborhoods
 
-A [cellular automaton](@entry_id:264707) is formally defined by a tuple of four elements: a lattice, a state set, a neighborhood, and a local rule.
+A cellular automaton is formally defined by a tuple of four elements: a lattice, a state set, a neighborhood, and a local rule.
 
-1.  **The Lattice (${\Lambda}$)**: The lattice is a grid of discrete sites, or "cells," that constitutes the spatial domain of the model. For [biological modeling](@entry_id:268911), [lattices](@entry_id:265277) are typically embedded in a one-, two-, or three-dimensional Euclidean space. For instance, a finite two-dimensional square lattice can be represented as the set of integer coordinate pairs $\Lambda = \{0, \dots, L-1\}^2 \subset \mathbb{Z}^2$ for some integer side length $L$.
+1.  **The Lattice (${\Lambda}$)**: The lattice is a grid of discrete sites, or "cells," that constitutes the spatial domain of the model. For biological modeling, lattices are typically embedded in a one-, two-, or three-dimensional Euclidean space. For instance, a finite two-dimensional square lattice can be represented as the set of integer coordinate pairs $\Lambda = \{0, \dots, L-1\}^2 \subset \mathbb{Z}^2$ for some integer side length $L$.
 
 2.  **The State Set (${S}$)**: Each site $i \in \Lambda$ is assigned a state $\sigma_i$ from a finite set of possible states, $S = \{s_1, \dots, s_q\}$. The state can represent various biological properties, such as cell type (e.g., $S = \{\text{epithelial}, \text{mesenchymal}\}$), occupancy ($S = \{\text{empty}, \text{occupied}\}$), or a discretized level of gene expression or morphogen concentration.
 
@@ -33,7 +33,7 @@ $$
 $$
 where $\mathcal{N}_i$ is the neighborhood of site $i$.
 
-For stochastic CAs, where rules are probabilistic, it is necessary to define probability measures on the [configuration space](@entry_id:149531). This is achieved through a [measurable space](@entry_id:147379) $(S^{\Lambda}, \mathcal{F})$, where $\mathcal{F}$ is a $\sigma$-algebra. The standard choice is the **cylinder $\sigma$-algebra**, generated by sets of configurations constrained on finite subsets of the lattice. For a finite lattice $\Lambda$, every singleton configuration can be expressed as a cylinder set, which implies that the cylinder $\sigma$-algebra is simply the [power set](@entry_id:137423) $\mathcal{P}(S^{\Lambda})$. This means any subset of configurations is measurable, allowing for the definition of any probability distribution over the state space.
+For stochastic CAs, where rules are probabilistic, it is necessary to define probability measures on the configuration space. This is achieved through a measurable space $(S^{\Lambda}, \mathcal{F})$, where $\mathcal{F}$ is a $\sigma$-algebra. The standard choice is the **cylinder $\sigma$-algebra**, generated by sets of configurations constrained on finite subsets of the lattice. For a finite lattice $\Lambda$, every singleton configuration can be expressed as a cylinder set, which implies that the cylinder $\sigma$-algebra is simply the power set $\mathcal{P}(S^{\Lambda})$. This means any subset of configurations is measurable, allowing for the definition of any probability distribution over the state space.
 
 #### The Role of Boundary Conditions
 
@@ -43,9 +43,9 @@ For a finite lattice, the neighborhood of a site near the boundary may extend be
 
 *   **Reflecting Boundaries**: An attempted move across the boundary is disallowed, and the particle effectively "bounces" off. For example, in a 1D motility model, an attempt to move left from site 1 could be converted into an attempt to move right to site 2. Under this rule, no particles can cross the boundary, so the net flux is identically zero.
 
-*   **Absorbing Boundaries**: A particle that moves across the boundary is removed from the system. In our 1D motility model where each cell at site $i$ attempts a move with probability $\mu$, the expected outward flux at the left boundary (site 1) is the probability of a cell being present ($c_1$), attempting a move ($\mu$), choosing left ($1/2$), and the move being successful (probability 1 for an [absorbing boundary](@entry_id:201489)). This yields an outward flux of $\frac{1}{2}\mu c_1$ particles per time step.
+*   **Absorbing Boundaries**: A particle that moves across the boundary is removed from the system. In our 1D motility model where each cell at site $i$ attempts a move with probability $\mu$, the expected outward flux at the left boundary (site 1) is the probability of a cell being present ($c_1$), attempting a move ($\mu$), choosing left ($1/2$), and the move being successful (probability 1 for an absorbing boundary). This yields an outward flux of $\frac{1}{2}\mu c_1$ particles per time step.
 
-The choice of boundary condition significantly impacts the global dynamics, especially for conserved quantities like total cell number. For a [symmetric random walk](@entry_id:273558), periodic boundaries can lead to a net flux if a density gradient exists between the boundary sites (e.g., $J_{1 \to L} \propto c_1 - c_L$), whereas [reflecting boundaries](@entry_id:199812) enforce zero net flux by construction.
+The choice of boundary condition significantly impacts the global dynamics, especially for conserved quantities like total cell number. For a symmetric random walk, periodic boundaries can lead to a net flux if a density gradient exists between the boundary sites (e.g., $J_{1 \to L} \propto c_1 - c_L$), whereas reflecting boundaries enforce zero net flux by construction.
 
 ### The Lattice: A Stage for Spatial Dynamics
 
@@ -67,11 +67,11 @@ In contrast, a hexagonal lattice with nearest-neighbor spacing $\Delta x = D$ ha
 
 #### Geometric Artifacts: Isotropy and Fidelity
 
-Lattice geometry imposes a preferred set of directions, which can conflict with processes that are isotropic (directionally uniform) in reality, such as diffusion or unbiased [random walks](@entry_id:159635).
+Lattice geometry imposes a preferred set of directions, which can conflict with processes that are isotropic (directionally uniform) in reality, such as diffusion or unbiased random walks.
 
-One way to quantify this is to analyze the [angular distribution](@entry_id:193827) of neighbor contacts. For a square lattice with a von Neumann neighborhood, all four neighbors share a contact edge of length $D$. The contact lengths are perfectly uniform, giving a contact isotropy index ([coefficient of variation](@entry_id:272423) of contact lengths) of $I_{\text{vn}} = 0$. However, if we consider the Moore neighborhood, we have four face contacts of length $D$ and four corner contacts of length 0. This high variance in contact type yields a high [isotropy](@entry_id:159159) index of $I_{\text{moore}} = 1$. A hexagonal lattice has 6 neighbors, all sharing an edge of equal length, giving an [isotropy](@entry_id:159159) index of $I_{\text{hex}} = 0$.
+One way to quantify this is to analyze the angular distribution of neighbor contacts. For a square lattice with a von Neumann neighborhood, all four neighbors share a contact edge of length $D$. The contact lengths are perfectly uniform, giving a contact isotropy index (coefficient of variation of contact lengths) of $I_{\text{vn}} = 0$. However, if we consider the Moore neighborhood, we have four face contacts of length $D$ and four corner contacts of length 0. This high variance in contact type yields a high isotropy index of $I_{\text{moore}} = 1$. A hexagonal lattice has 6 neighbors, all sharing an edge of equal length, giving an isotropy index of $I_{\text{hex}} = 0$.
 
-A more rigorous analysis involves studying how well a lattice can approximate motion in an arbitrary direction, crucial for modeling phenomena like [chemotaxis](@entry_id:149822). If we wish to model a small drift in a direction $\phi$ that lies between two available lattice directions, $\theta_1$ and $\theta_2$, we can stochastically choose between these two directions to align the mean step direction with $\phi$. The average mean-squared angular deviation from the intended direction, averaged over all possible $\phi$ within the angular sector $\Delta = \theta_2 - \theta_1$, can be shown to be $\overline{E}(\Delta) = \Delta^2 / 6$.
+A more rigorous analysis involves studying how well a lattice can approximate motion in an arbitrary direction, crucial for modeling phenomena like chemotaxis. If we wish to model a small drift in a direction $\phi$ that lies between two available lattice directions, $\theta_1$ and $\theta_2$, we can stochastically choose between these two directions to align the mean step direction with $\phi$. The average mean-squared angular deviation from the intended direction, averaged over all possible $\phi$ within the angular sector $\Delta = \theta_2 - \theta_1$, can be shown to be $\overline{E}(\Delta) = \Delta^2 / 6$.
 
 For a square lattice, the angular spacing is $\Delta_{\text{square}} = \pi/2$. For a hexagonal lattice, it is $\Delta_{\text{hex}} = \pi/3$. The ratio of their average angular errors is:
 $$
@@ -91,9 +91,9 @@ By tracking the expected occupancy of a site, $u_i(t) = \mathbb{E}[n_i(t)]$, we 
 $$
 \frac{d u_i(t)}{dt} = \frac{\alpha}{2d} \sum_{j \in \text{NN}(i)} (u_j(t) - u_i(t))
 $$
-where $\alpha$ is the microscopic hop rate and $d$ is the spatial dimension. This equation is a discrete form of the [diffusion equation](@entry_id:145865).
+where $\alpha$ is the microscopic hop rate and $d$ is the spatial dimension. This equation is a discrete form of the diffusion equation.
 
-Indeed, by performing a **hydrodynamic scaling**, where we observe the system on large spatial scales ($x = \epsilon ia$) and long time scales ($t_{\text{mac}} = \epsilon^2 t$), we can use a Taylor expansion to approximate the discrete difference operator. In the limit $\epsilon \to 0$, we recover the [classical diffusion](@entry_id:197003) equation:
+Indeed, by performing a **hydrodynamic scaling**, where we observe the system on large spatial scales ($x = \epsilon ia$) and long time scales ($t_{\text{mac}} = \epsilon^2 t$), we can use a Taylor expansion to approximate the discrete difference operator. In the limit $\epsilon \to 0$, we recover the classical diffusion equation:
 $$
 \frac{\partial u}{\partial t_{\text{mac}}} = D \nabla^2 u
 $$
@@ -107,7 +107,7 @@ The CA update rule then becomes a forward Euler step: $u_{i,j}^{n+1} = u_{i,j}^{
 
 #### Cell Proliferation and Contact Inhibition
 
-Cellular automata can also model non-conservative processes like cell division. A crucial biological mechanism is **[contact inhibition](@entry_id:260861)**, where the rate of proliferation decreases as the local cell density increases. A CA rule can implement this by making the probability of division, $p(n)$, a decreasing function of the number of occupied neighbors, $n$.
+Cellular automata can also model non-conservative processes like cell division. A crucial biological mechanism is **contact inhibition**, where the rate of proliferation decreases as the local cell density increases. A CA rule can implement this by making the probability of division, $p(n)$, a decreasing function of the number of occupied neighbors, $n$.
 
 Consider a rule on a Moore neighborhood ($z=8$) where the division probability is $p(n) = \lambda \max\{0, 1 - n/8\}$. If a cell at site $k$ divides, it attempts to place a daughter in one of its $e_k=8-n_k$ empty neighbors, chosen uniformly. Under a mean-field assumption (where neighbor states are independent), the probability that a specific occupied neighbor of an empty site will try to place a daughter there is surprisingly constant: the term $(1 - n_k/8)$ in the proliferation probability cancels with the $1/(8-n_k)$ term from neighbor selection, leaving a seeding probability of $\lambda/8$ per occupied neighbor.
 
@@ -119,21 +119,21 @@ This elegant result provides a direct link between the microscopic proliferation
 
 #### Cell Adhesion and Sorting: Energy-Based Rules
 
-Many processes in [tissue morphogenesis](@entry_id:270100), such as the sorting of different cell types, are driven by differential cell adhesion. This can be modeled using an energy-based CA framework, often called the **Cellular Potts Model (CPM)** or Glazier-Graner-Hogeweg (GGH) model.
+Many processes in tissue morphogenesis, such as the sorting of different cell types, are driven by differential cell adhesion. This can be modeled using an energy-based CA framework, often called the **Cellular Potts Model (CPM)** or Glazier-Graner-Hogeweg (GGH) model.
 
 In this framework, a configuration $\boldsymbol{\sigma}$ is assigned a global energy, typically a Hamiltonian that sums the contact energies between adjacent cells:
 $$
 E(\boldsymbol{\sigma}) = \sum_{\{i,j\} \in \mathcal{E}} J_{\sigma_{i},\sigma_{j}}
 $$
-Here, $J_{ab}$ is the [interfacial energy](@entry_id:198323) between a cell of type $a$ and a cell of type $b$. A lower value of $J$ signifies stronger adhesion (a more favorable bond). For example, if two cell types, A and B, are homophilic ($J_{AA} \lt J_{AB}$ and $J_{BB} \lt J_{AB}$), the system will tend to minimize its energy by maximizing A-A and B-B contacts, leading to [cell sorting](@entry_id:275467).
+Here, $J_{ab}$ is the interfacial energy between a cell of type $a$ and a cell of type $b$. A lower value of $J$ signifies stronger adhesion (a more favorable bond). For example, if two cell types, A and B, are homophilic ($J_{AA} \lt J_{AB}$ and $J_{BB} \lt J_{AB}$), the system will tend to minimize its energy by maximizing A-A and B-B contacts, leading to cell sorting.
 
-The system evolves via stochastic moves that tend to decrease the total energy. A common dynamic is a single-site copy attempt: a random site $k$ attempts to copy the state of a random neighbor $\ell$. This proposed change from state $\sigma_k$ to $\sigma'_k = \sigma_\ell$ would result in an energy change $\Delta E$. The move is accepted with a probability $a(\Delta E, T)$ that depends on this energy change and an [effective temperature](@entry_id:161960) $T$, which represents the level of random fluctuations in the system.
+The system evolves via stochastic moves that tend to decrease the total energy. A common dynamic is a single-site copy attempt: a random site $k$ attempts to copy the state of a random neighbor $\ell$. This proposed change from state $\sigma_k$ to $\sigma'_k = \sigma_\ell$ would result in an energy change $\Delta E$. The move is accepted with a probability $a(\Delta E, T)$ that depends on this energy change and an effective temperature $T$, which represents the level of random fluctuations in the system.
 
-To ensure the system eventually reaches a Boltzmann-Gibbs [stationary distribution](@entry_id:142542), $\pi(\boldsymbol{\sigma}) \propto \exp(-E(\boldsymbol{\sigma})/T)$, the [acceptance probability](@entry_id:138494) must satisfy the **detailed balance** condition. For a [symmetric proposal](@entry_id:755726) mechanism, this leads to the **Metropolis acceptance criterion**:
+To ensure the system eventually reaches a Boltzmann-Gibbs stationary distribution, $\pi(\boldsymbol{\sigma}) \propto \exp(-E(\boldsymbol{\sigma})/T)$, the acceptance probability must satisfy the **detailed balance** condition. For a symmetric proposal mechanism, this leads to the **Metropolis acceptance criterion**:
 $$
 a(\Delta E, T) = \min\left(1, \exp\left(-\frac{\Delta E}{T}\right)\right)
 $$
-This rule guarantees that moves lowering the energy ($\Delta E  0$) are always accepted, while moves that increase the energy are accepted with a probability that decreases exponentially with the energy cost. For example, if changing a cell from type A to B increases the local energy by $\Delta E = 0.8$ at a temperature $T=0.7$, the [acceptance probability](@entry_id:138494) is $\exp(-0.8/0.7) \approx 0.3189$, allowing the system to escape local energy minima and explore the [configuration space](@entry_id:149531).
+This rule guarantees that moves lowering the energy ($\Delta E  0$) are always accepted, while moves that increase the energy are accepted with a probability that decreases exponentially with the energy cost. For example, if changing a cell from type A to B increases the local energy by $\Delta E = 0.8$ at a temperature $T=0.7$, the acceptance probability is $\exp(-0.8/0.7) \approx 0.3189$, allowing the system to escape local energy minima and explore the configuration space.
 
 ### Synthesis: From Microscopic Rules to Macroscopic Reaction-Diffusion
 
@@ -154,15 +154,15 @@ Following a procedure analogous to our earlier derivations, we can find the macr
 
 1.  **Write the Master Equation**: Formulate an equation for the rate of change of the mean occupancy $\rho_i = \langle n_i \rangle$, accounting for all gain and loss terms from birth, death, and movement at site $i$ and its neighbors.
 
-2.  **Apply Mean-Field Closure**: Assume that correlations between sites are negligible, so that expectations of products of occupancies can be factored, e.g., $\langle n_i n_j \rangle \approx \rho_i \rho_j$. This simplifies the master equation into a closed, [nonlinear differential equation](@entry_id:172652) for the densities $\rho_i$.
+2.  **Apply Mean-Field Closure**: Assume that correlations between sites are negligible, so that expectations of products of occupancies can be factored, e.g., $\langle n_i n_j \rangle \approx \rho_i \rho_j$. This simplifies the master equation into a closed, nonlinear differential equation for the densities $\rho_i$.
 
-3.  **Take the Continuum Limit**: Assume $\rho_i$ can be represented by a smooth field $\rho(\mathbf{x}, t)$ and Taylor-expand the neighbor densities around a point $\mathbf{x}$. This converts the discrete lattice differences into continuous spatial derivatives. Assuming a [diffusive scaling](@entry_id:263802) where $ma^2$ is constant as the [lattice spacing](@entry_id:180328) $a \to 0$, the dominant movement term becomes a standard Laplacian.
+3.  **Take the Continuum Limit**: Assume $\rho_i$ can be represented by a smooth field $\rho(\mathbf{x}, t)$ and Taylor-expand the neighbor densities around a point $\mathbf{x}$. This converts the discrete lattice differences into continuous spatial derivatives. Assuming a diffusive scaling where $ma^2$ is constant as the lattice spacing $a \to 0$, the dominant movement term becomes a standard Laplacian.
 
 After these steps, the equation for the density $\rho$ takes the form:
 $$
 \frac{\partial \rho}{\partial t} = (b-d)\rho - b\rho^2 + \frac{ma^2}{2d_{\text{dim}}} \nabla^2\rho
 $$
-where $d_{\text{dim}}$ is the spatial dimension. This is a reaction-diffusion equation with [logistic growth](@entry_id:140768). By normalizing the density to the system's carrying capacity $K = (b-d)/b$ and defining $u = \rho/K$, we arrive at the canonical Fisher-KPP equation:
+where $d_{\text{dim}}$ is the spatial dimension. This is a reaction-diffusion equation with logistic growth. By normalizing the density to the system's carrying capacity $K = (b-d)/b$ and defining $u = \rho/K$, we arrive at the canonical Fisher-KPP equation:
 $$
 \frac{\partial u}{\partial t} = r u(1-u) + D \nabla^2 u
 $$
@@ -170,4 +170,4 @@ The macroscopic parameters for growth rate ($r$) and diffusion ($D$) are identif
 $$
 r = b-d \quad \text{and} \quad D = \frac{ma^2}{2d_{\text{dim}}}
 $$
-This powerful result demonstrates that one of the most fundamental equations in [mathematical biology](@entry_id:268650), used to model phenomena from spreading gene populations to tumor growth, can be seen as the large-scale limit of a simple, local, and stochastic [cellular automaton](@entry_id:264707). It provides a mechanistic grounding for macroscopic models and illustrates the unifying power of the CA framework in spatial biology.
+This powerful result demonstrates that one of the most fundamental equations in mathematical biology, used to model phenomena from spreading gene populations to tumor growth, can be seen as the large-scale limit of a simple, local, and stochastic cellular automaton. It provides a mechanistic grounding for macroscopic models and illustrates the unifying power of the CA framework in spatial biology.

@@ -33,7 +33,7 @@ A typical $g(r)$ for a simple liquid shows a distinct pattern: a value of zero u
 
 ### Counting Your Neighbors: The Coordination Number
 
-While $g(r)$ is a probability density, we often want a simpler, more tangible number: on average, how many neighbors does a particle have? This is the **[coordination number](@entry_id:143221)**. To find it, we simply "add up" all the particles in all the shells from the center out to a certain radius, $R$. In mathematical terms, we integrate the local density, $\rho g(r)$, over the volume of a sphere of radius $R$.
+While $g(r)$ is a probability density, we often want a simpler, more tangible number: on average, how many neighbors does a particle have? This is the **[coordination number](@keyword=coordination_number|lang=en-US|style=Feynman)**. To find it, we simply "add up" all the particles in all the shells from the center out to a certain radius, $R$. In mathematical terms, we integrate the local density, $\rho g(r)$, over the volume of a sphere of radius $R$.
 
 $$
 z(R) = \int_0^R \rho g(r) \, 4\pi r^2 dr
@@ -41,15 +41,15 @@ $$
 
 This integral gives us the average number of particles within a distance $R$ of any given particle. Often, the coordination number is calculated up to the first minimum of the $g(r)$ plot, which provides a natural, physically-motivated definition of the "first nearest neighbors".
 
-This relationship is so fundamental that it can be used to determine properties of the $g(r)$ itself. Imagine you have a theoretical model for the *shape* of $g(r)$ but don't know its overall amplitude or strength. If you can measure the coordination number experimentally or in a simulation, you can work backward to find the correct amplitude for your model, a technique explored in . This also elegantly shows how the geometry of space is baked into the physics; the calculation in a flat, 2D world uses a shell [volume element](@entry_id:267802) of $2\pi r dr$, leading to a different result than our familiar 3D world .
+This relationship is so fundamental that it can be used to determine properties of the $g(r)$ itself. Imagine you have a theoretical model for the *shape* of $g(r)$ but don't know its overall amplitude or strength. If you can measure the coordination number experimentally or in a simulation, you can work backward to find the correct amplitude for your model, a technique explored in [@problem_id:4081093]. This also elegantly shows how the geometry of space is baked into the physics; the calculation in a flat, 2D world uses a shell [volume element](@keyword=volume_element|lang=en-US|style=Feynman) of $2\pi r dr$, leading to a different result than our familiar 3D world [@problem_id:4081093].
 
 ### The View from the Computer: Practical Calculation and Pitfalls
 
 In the modern era, one of the most powerful ways to determine $g(r)$ is through computer simulation. We place a few hundred or thousand model particles in a box and let them move according to the laws of physics. By taking snapshots of the system, we can directly measure the distances between all pairs and build the $g(r)$ function. But, as with any real experiment, the devil is in the details.
 
-To simulate an "infinite" fluid with a small number of particles, we use a clever trick called **periodic boundary conditions (PBC)**. The simulation box is imagined to be a tile in an infinite tessellation of space. A particle that exits the box on the right simultaneously re-enters it from the left. When calculating the distance between two particles, we must use the **[minimum image convention](@entry_id:142070) (MIC)**: we always take the shortest distance, even if it's to a periodic "ghost" image of a particle in an adjacent box.
+To simulate an "infinite" fluid with a small number of particles, we use a clever trick called **periodic boundary conditions (PBC)**. The simulation box is imagined to be a tile in an infinite tessellation of space. A particle that exits the box on the right simultaneously re-enters it from the left. When calculating the distance between two particles, we must use the **[minimum image convention](@keyword=minimum_image_convention|lang=en-US|style=Feynman) (MIC)**: we always take the shortest distance, even if it's to a periodic "ghost" image of a particle in an adjacent box.
 
-This setup imposes a crucial limitation. Our "view" around any particle is limited to a cube (or [hypercube](@entry_id:273913)) centered on it. A spherical shell for calculating $g(r)$ is only truly a sphere if it is fully contained within this cube. This is only true for radii $r$ up to half the box length, $L$. For any $r > L/2$, the sphere gets truncated by the faces of the MIC cube, and the geometry is distorted. Therefore, for a simple and unbiased estimate of $g(r)$, we must restrict our analysis to distances **$r \le L/2$** .
+This setup imposes a crucial limitation. Our "view" around any particle is limited to a cube (or [hypercube](@keyword=hypercube|lang=en-US|style=Feynman)) centered on it. A spherical shell for calculating $g(r)$ is only truly a sphere if it is fully contained within this cube. This is only true for radii $r$ up to half the box length, $L$. For any $r > L/2$, the sphere gets truncated by the faces of the MIC cube, and the geometry is distorted. Therefore, for a simple and unbiased estimate of $g(r)$, we must restrict our analysis to distances **$r \le L/2$** [@problem_id:4081087].
 
 The standard algorithm for computing $g(r)$ from a simulation snapshot is a histogramming procedure:
 1.  Divide the range $[0, L/2]$ into a set of small bins of width $\Delta r$.
@@ -57,13 +57,13 @@ The standard algorithm for computing $g(r)$ from a simulation snapshot is a hist
 3.  Increment a counter for the bin into which the distance falls.
 4.  Repeat for many independent snapshots and average the counts in each bin.
 
-The final, crucial step is normalization. The raw histogram of pair counts, let's call it $n_k$ for bin $k$, must be compared to what we'd expect for a purely random gas. The correct normalization for a system of $N$ particles, as explored in , is:
+The final, crucial step is normalization. The raw histogram of pair counts, let's call it $n_k$ for bin $k$, must be compared to what we'd expect for a purely random gas. The correct normalization for a system of $N$ particles, as explored in [@problem_id:4081087], is:
 $$
 g(r_k) = \frac{V}{2\pi N^2 \Delta r} \frac{n_k}{r_k^2} \approx \frac{2V n_k}{N(N-1) \cdot 4\pi r_k^2 \Delta r}
 $$
-where $V=L^3$ is the box volume, $r_k$ is the center of the bin, and for large $N$, $N(N-1) \approx N^2$. The denominator represents the expected number of pairs in that shell for an ideal gas. This formula ensures that if we run our simulation on [non-interacting particles](@entry_id:152322), we will get $g(r) \approx 1$, as we must.
+where $V=L^3$ is the box volume, $r_k$ is the center of the bin, and for large $N$, $N(N-1) \approx N^2$. The denominator represents the expected number of pairs in that shell for an ideal gas. This formula ensures that if we run our simulation on [non-interacting particles](@keyword=non_interacting_particles|lang=en-US|style=Feynman), we will get $g(r) \approx 1$, as we must.
 
-Of course, with a finite number of samples, our calculated $g(r)$ will be noisy. This is a statistical measurement. How do we know if we've run our simulation long enough to trust the result? We can use techniques like **block averaging**, where we divide our simulation run into smaller blocks and calculate $g(r)$ for each. The variation between these block averages gives us a [statistical error](@entry_id:140054) bar on our final curve . This reminds us that every measurement, even a computational one, has an associated **uncertainty**. Choosing the right bin width, $\Delta r$, is also a delicate balance between resolving fine features (narrow bins) and reducing statistical noise (wide bins) .
+Of course, with a finite number of samples, our calculated $g(r)$ will be noisy. This is a statistical measurement. How do we know if we've run our simulation long enough to trust the result? We can use techniques like **block averaging**, where we divide our simulation run into smaller blocks and calculate $g(r)$ for each. The variation between these block averages gives us a [statistical error](@keyword=statistical_error|lang=en-US|style=Feynman) bar on our final curve [@problem_id:4081101]. This reminds us that every measurement, even a computational one, has an associated **uncertainty**. Choosing the right bin width, $\Delta r$, is also a delicate balance between resolving fine features (narrow bins) and reducing statistical noise (wide bins) [@problem_id:4081106].
 
 ### Structure and Force: The Potential of Mean Force
 
@@ -77,20 +77,20 @@ Here, $k_B$ is the Boltzmann constant and $T$ is the temperature. This equation 
 
 ### The Whole from the Part: Macroscopic Properties from $g(r)$
 
-Perhaps the most profound aspect of the [radial distribution function](@entry_id:137666) is that this microscopic picture of local structure contains deep information about the macroscopic, thermodynamic properties of the entire fluid.
+Perhaps the most profound aspect of the [radial distribution function](@keyword=radial_distribution_function|lang=en-US|style=Feynman) is that this microscopic picture of local structure contains deep information about the macroscopic, thermodynamic properties of the entire fluid.
 
-Consider a fluid of hard spheres—like microscopic billiard balls. The pressure in such a fluid comes entirely from particles colliding with each other and with the container walls. The rate of these collisions must depend on how many particles are packed right up against each other, at the "contact" distance of one diameter, $\sigma$. This means the pressure should be related to the height of the first peak of $g(r)$, or more precisely, its value at contact, $g(\sigma^+)$. The exact relation, derived from the virial theorem of statistical mechanics, is remarkably simple :
+Consider a fluid of hard spheres—like microscopic billiard balls. The pressure in such a fluid comes entirely from particles colliding with each other and with the container walls. The rate of these collisions must depend on how many particles are packed right up against each other, at the "contact" distance of one diameter, $\sigma$. This means the pressure should be related to the height of the first peak of $g(r)$, or more precisely, its value at contact, $g(\sigma^+)$. The exact relation, derived from the virial theorem of statistical mechanics, is remarkably simple [@problem_id:4081099]:
 $$
 Z = 1 + 2 \frac{\pi}{3} \rho \sigma^3 g(\sigma^+) = 1 + 4\eta g(\sigma^+)
 $$
-Here, $Z = p / (\rho k_B T)$ is the **compressibility factor** (a measure of how much the fluid's pressure deviates from an ideal gas) and $\eta$ is the **[packing fraction](@entry_id:156220)**, the fraction of volume occupied by the spheres themselves. This beautiful equation directly links a macroscopic property, pressure, to a single microscopic value describing the structure at contact.
+Here, $Z = p / (\rho k_B T)$ is the **compressibility factor** (a measure of how much the fluid's pressure deviates from an ideal gas) and $\eta$ is the **[packing fraction](@keyword=packing_fraction|lang=en-US|style=Feynman)**, the fraction of volume occupied by the spheres themselves. This beautiful equation directly links a macroscopic property, pressure, to a single microscopic value describing the structure at contact.
 
-The connections run even deeper. Think about how a fluid responds when you try to squeeze it. Its resistance to compression is measured by the **[isothermal compressibility](@entry_id:140894), $\kappa_T$**. A high compressibility means the fluid's density fluctuates wildly, while a low compressibility implies a more uniform, rigid structure. These large-scale density fluctuations must be related to how particle positions are correlated over long distances. And that is exactly what $g(r)$ describes!
+The connections run even deeper. Think about how a fluid responds when you try to squeeze it. Its resistance to compression is measured by the **[isothermal compressibility](@keyword=isothermal_compressibility|lang=en-US|style=Feynman), $\kappa_T$**. A high compressibility means the fluid's density fluctuates wildly, while a low compressibility implies a more uniform, rigid structure. These large-scale density fluctuations must be related to how particle positions are correlated over long distances. And that is exactly what $g(r)$ describes!
 
-This connection is enshrined in the **compressibility equation**, a cornerstone of [liquid state theory](@entry_id:161370) :
+This connection is enshrined in the **compressibility equation**, a cornerstone of [liquid state theory](@keyword=liquid_state_theory|lang=en-US|style=Feynman) [@problem_id:4081088]:
 $$
 \rho k_B T \kappa_T = 1 + 4\pi \rho \int_0^\infty [g(r) - 1] r^2 dr
 $$
-The integral on the right-hand side measures the total correlation in the fluid. If $g(r)$ has long-ranged oscillations and decays slowly to 1, the integral is large, signifying strong spatial correlations and large [density fluctuations](@entry_id:143540)—and thus a highly compressible fluid. If $g(r)$ decays to 1 very quickly, the correlations are short-ranged, fluctuations are small, and the fluid is [nearly incompressible](@entry_id:752387).
+The integral on the right-hand side measures the total correlation in the fluid. If $g(r)$ has long-ranged oscillations and decays slowly to 1, the integral is large, signifying strong spatial correlations and large [density fluctuations](@keyword=density_fluctuations|lang=en-US|style=Feynman)—and thus a highly compressible fluid. If $g(r)$ decays to 1 very quickly, the correlations are short-ranged, fluctuations are small, and the fluid is [nearly incompressible](@keyword=nearly_incompressible|lang=en-US|style=Feynman).
 
 This is the magic of statistical mechanics, revealed through the lens of the radial distribution function. What begins as a simple question—"Where are the neighbors?"—becomes a powerful key, unlocking a unified understanding that connects the microscopic dance of individual particles to the grand, bulk properties of matter that we experience in our everyday world.

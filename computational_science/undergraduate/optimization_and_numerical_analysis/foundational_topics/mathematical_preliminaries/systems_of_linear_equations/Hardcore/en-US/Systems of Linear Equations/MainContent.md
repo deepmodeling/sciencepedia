@@ -1,13 +1,13 @@
 ## Introduction
-Systems of [linear equations](@entry_id:151487) are a cornerstone of quantitative modeling, providing the mathematical framework to describe a vast array of phenomena from [electrical circuits](@entry_id:267403) to economic equilibria. Despite their apparent simplicity, understanding how to reliably and efficiently find their solutions presents a significant challenge, especially for large-scale or numerically sensitive problems. This article provides a comprehensive exploration of this fundamental topic. It begins by establishing the core principles and mechanisms, showing how systems are represented using matrices and vectors and detailing the direct and [iterative methods](@entry_id:139472) used to solve them. It then broadens the perspective to highlight the diverse applications and interdisciplinary connections, demonstrating how linear systems model everything from statistical data to [network flows](@entry_id:268800). Finally, the journey concludes with hands-on practices that solidify these theoretical concepts. By navigating through these sections, you will gain a robust understanding of both the theory behind [linear systems](@entry_id:147850) and the practical techniques essential for their solution in modern computational science.
+Systems of linear equations are a cornerstone of quantitative modeling, providing the mathematical framework to describe a vast array of phenomena from electrical circuits to economic equilibria. Despite their apparent simplicity, understanding how to reliably and efficiently find their solutions presents a significant challenge, especially for large-scale or numerically sensitive problems. This article provides a comprehensive exploration of this fundamental topic. It begins by establishing the core principles and mechanisms, showing how systems are represented using matrices and vectors and detailing the direct and iterative methods used to solve them. It then broadens the perspective to highlight the diverse applications and interdisciplinary connections, demonstrating how linear systems model everything from statistical data to network flows. Finally, the journey concludes with hands-on practices that solidify these theoretical concepts. By navigating through these sections, you will gain a robust understanding of both the theory behind linear systems and the practical techniques essential for their solution in modern computational science.
 
 ## Principles and Mechanisms
 
-A [system of linear equations](@entry_id:140416) is a collection of one or more [linear equations](@entry_id:151487) involving the same set of variables. These systems are foundational to countless models in science, engineering, and economics, describing everything from electrical circuits and mechanical structures to market equilibria. This chapter delves into the core principles governing such systems and the primary mechanisms—both analytical and numerical—used to solve them. We will explore their representation, the conditions for the [existence and uniqueness of solutions](@entry_id:177406), and the practical methods for finding those solutions.
+A system of linear equations is a collection of one or more linear equations involving the same set of variables. These systems are foundational to countless models in science, engineering, and economics, describing everything from electrical circuits and mechanical structures to market equilibria. This chapter delves into the core principles governing such systems and the primary mechanisms—both analytical and numerical—used to solve them. We will explore their representation, the conditions for the existence and uniqueness of solutions, and the practical methods for finding those solutions.
 
 ### From Equations to Matrices and Vectors
 
-A system of $m$ [linear equations](@entry_id:151487) in $n$ unknowns, $x_1, x_2, \dots, x_n$, is typically written as:
+A system of $m$ linear equations in $n$ unknowns, $x_1, x_2, \dots, x_n$, is typically written as:
 $$
 \begin{align*}
 a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n = b_1 \\
@@ -31,20 +31,20 @@ x_1 \\ x_2 \\ \vdots \\ x_n
 b_1 \\ b_2 \\ \vdots \\ b_m
 \end{pmatrix}
 $$
-$A$ is the **[coefficient matrix](@entry_id:151473)**, $\mathbf{x}$ is the **vector of unknowns**, and $\mathbf{b}$ is the **constant vector**. This form is not merely notational; it allows us to use the powerful tools of linear algebra to analyze and solve the system.
+$A$ is the **coefficient matrix**, $\mathbf{x}$ is the **vector of unknowns**, and $\mathbf{b}$ is the **constant vector**. This form is not merely notational; it allows us to use the powerful tools of linear algebra to analyze and solve the system.
 
-There is a third, equally important perspective: the **vector equation**. The product $A\mathbf{x}$ can be interpreted as a [linear combination](@entry_id:155091) of the columns of $A$, with the entries of $\mathbf{x}$ acting as the weights. Let $\mathbf{a}_1, \mathbf{a}_2, \dots, \mathbf{a}_n$ be the column vectors of $A$. Then the system $A\mathbf{x} = \mathbf{b}$ is equivalent to:
+There is a third, equally important perspective: the **vector equation**. The product $A\mathbf{x}$ can be interpreted as a linear combination of the columns of $A$, with the entries of $\mathbf{x}$ acting as the weights. Let $\mathbf{a}_1, \mathbf{a}_2, \dots, \mathbf{a}_n$ be the column vectors of $A$. Then the system $A\mathbf{x} = \mathbf{b}$ is equivalent to:
 $$
 x_1\mathbf{a}_1 + x_2\mathbf{a}_2 + \dots + x_n\mathbf{a}_n = \mathbf{b}
 $$
 This interpretation reframes the problem: solving the system is equivalent to finding the specific weights ($x_1, \dots, x_n$) needed to express the vector $\mathbf{b}$ as a linear combination of the column vectors of $A$.
 
-Consider a practical example from [metallurgy](@entry_id:158855) . A new alloy is to be created by blending three source alloys, A, B, and C, to achieve a target composition of 45.0 kg of Copper, 13.0 kg of Tin, and 42.0 kg of Zinc. The compositions of the source alloys are:
+Consider a practical example from metallurgy [@problem_id:1392390]. A new alloy is to be created by blending three source alloys, A, B, and C, to achieve a target composition of 45.0 kg of Copper, 13.0 kg of Tin, and 42.0 kg of Zinc. The compositions of the source alloys are:
 *   Alloy A: 60% Copper, 10% Tin, 30% Zinc
 *   Alloy B: 20% Copper, 40% Tin, 40% Zinc
 *   Alloy C: 50% Copper, 0% Tin, 50% Zinc
 
-If we let $x_A, x_B, x_C$ be the masses (in kg) of each source alloy used, the [mass balance](@entry_id:181721) for each metal gives us a system of three linear equations. For Copper, the total mass is $0.60x_A + 0.20x_B + 0.50x_C = 45.0$. Formulating similar equations for Tin and Zinc, we can express this entire problem as a single vector equation. The composition of each alloy becomes a column vector, and we seek the weights $x_A, x_B, x_C$ that combine these vectors to produce the target composition vector:
+If we let $x_A, x_B, x_C$ be the masses (in kg) of each source alloy used, the mass balance for each metal gives us a system of three linear equations. For Copper, the total mass is $0.60x_A + 0.20x_B + 0.50x_C = 45.0$. Formulating similar equations for Tin and Zinc, we can express this entire problem as a single vector equation. The composition of each alloy becomes a column vector, and we seek the weights $x_A, x_B, x_C$ that combine these vectors to produce the target composition vector:
 $$
 x_A\begin{pmatrix} 0.60 \\ 0.10 \\ 0.30 \end{pmatrix} + x_B\begin{pmatrix} 0.20 \\ 0.40 \\ 0.40 \end{pmatrix} + x_C\begin{pmatrix} 0.50 \\ 0 \\ 0.50 \end{pmatrix} = \begin{pmatrix} 45.0 \\ 13.0 \\ 42.0 \end{pmatrix}
 $$
@@ -60,7 +60,7 @@ The answer to these questions determines whether a system has no solution, exact
 
 #### Consistency and Inconsistency
 
-A [system of linear equations](@entry_id:140416) is **consistent** if it has one or more solutions. It is **inconsistent** if it has no solution. Inconsistency often arises when the equations impose contradictory constraints. For instance, consider a production plan for three experimental alloys that must satisfy the following resource constraints :
+A system of linear equations is **consistent** if it has one or more solutions. It is **inconsistent** if it has no solution. Inconsistency often arises when the equations impose contradictory constraints. For instance, consider a production plan for three experimental alloys that must satisfy the following resource constraints [@problem_id:1392357]:
 $$
 \begin{cases}
 x_1 + x_2 - 4x_3 = 1 \\
@@ -80,23 +80,23 @@ This simplifies to $x_2 + 3x_3 = \frac{9}{2}$. We have now derived two incompati
 
 #### The Structure of Solution Sets
 
-When a system $A\mathbf{x} = \mathbf{b}$ is consistent, the set of all its solutions has a remarkable geometric and algebraic structure. This structure is intimately linked to the solution set of the corresponding **[homogeneous system](@entry_id:150411)**, $A\mathbf{x} = \mathbf{0}$. The [solution set](@entry_id:154326) of the [homogeneous system](@entry_id:150411), known as the **[null space](@entry_id:151476)** of $A$, is always a subspace (i.e., it contains the origin and is closed under addition and scalar multiplication).
+When a system $A\mathbf{x} = \mathbf{b}$ is consistent, the set of all its solutions has a remarkable geometric and algebraic structure. This structure is intimately linked to the solution set of the corresponding **homogeneous system**, $A\mathbf{x} = \mathbf{0}$. The solution set of the homogeneous system, known as the **null space** of $A$, is always a subspace (i.e., it contains the origin and is closed under addition and scalar multiplication).
 
-The fundamental theorem on the [structure of solutions](@entry_id:152035) states that if $A\mathbf{x} = \mathbf{b}$ is consistent and $\mathbf{x}_p$ is any single specific solution (a **[particular solution](@entry_id:149080)**), then the complete solution set is given by:
+The fundamental theorem on the structure of solutions states that if $A\mathbf{x} = \mathbf{b}$ is consistent and $\mathbf{x}_p$ is any single specific solution (a **particular solution**), then the complete solution set is given by:
 $$
 S_{NH} = \{ \mathbf{x}_p + \mathbf{z} \mid A\mathbf{z} = \mathbf{0} \}
 $$
-In other words, every solution to the non-[homogeneous system](@entry_id:150411) is the sum of one [particular solution](@entry_id:149080) and a solution from the [homogeneous system](@entry_id:150411). Geometrically, this means the [solution set](@entry_id:154326) of $A\mathbf{x} = \mathbf{b}$ is a translation of the [null space](@entry_id:151476) of $A$ by the vector $\mathbf{x}_p$.
+In other words, every solution to the non-homogeneous system is the sum of one particular solution and a solution from the homogeneous system. Geometrically, this means the solution set of $A\mathbf{x} = \mathbf{b}$ is a translation of the null space of $A$ by the vector $\mathbf{x}_p$.
 
-For example, imagine a system in $\mathbb{R}^3$ where the homogeneous solution set $S_H$ (the [null space](@entry_id:151476)) is a line passing through the origin. If the non-[homogeneous system](@entry_id:150411) $A\mathbf{x} = \mathbf{b}$ (with $\mathbf{b} \neq \mathbf{0}$) is consistent, its solution set $S_{NH}$ will be a line parallel to $S_H$. It is the same line, just shifted away from the origin by a particular solution vector $\mathbf{x}_p$ . Since $\mathbf{b} \neq \mathbf{0}$, the [zero vector](@entry_id:156189) is not a solution to the non-[homogeneous system](@entry_id:150411), so this shifted line will not pass through the origin.
+For example, imagine a system in $\mathbb{R}^3$ where the homogeneous solution set $S_H$ (the null space) is a line passing through the origin. If the non-homogeneous system $A\mathbf{x} = \mathbf{b}$ (with $\mathbf{b} \neq \mathbf{0}$) is consistent, its solution set $S_{NH}$ will be a line parallel to $S_H$. It is the same line, just shifted away from the origin by a particular solution vector $\mathbf{x}_p$ [@problem_id:1392397]. Since $\mathbf{b} \neq \mathbf{0}$, the zero vector is not a solution to the non-homogeneous system, so this shifted line will not pass through the origin.
 
 #### Guarantees of Existence: The Role of Pivots
 
-While we can test individual systems for consistency, can we say anything about consistency based on properties of the matrix $A$ alone? A key concept here is that of a **[pivot position](@entry_id:156455)**. A [pivot position](@entry_id:156455) in a matrix is the location of a leading 1 in its [reduced row echelon form](@entry_id:150479) (or the first non-zero entry in a row of any [echelon form](@entry_id:153067)).
+While we can test individual systems for consistency, can we say anything about consistency based on properties of the matrix $A$ alone? A key concept here is that of a **pivot position**. A pivot position in a matrix is the location of a leading 1 in its reduced row echelon form (or the first non-zero entry in a row of any echelon form).
 
-A crucial theorem states: The system $A\mathbf{x} = \mathbf{b}$ is consistent for *every* vector $\mathbf{b}$ in $\mathbb{R}^m$ if and only if the matrix $A$ has a [pivot position](@entry_id:156455) in every row .
+A crucial theorem states: The system $A\mathbf{x} = \mathbf{b}$ is consistent for *every* vector $\mathbf{b}$ in $\mathbb{R}^m$ if and only if the matrix $A$ has a pivot position in every row [@problem_id:1392388].
 
-The reasoning is tied to the process of Gaussian elimination. When we row-reduce the [augmented matrix](@entry_id:150523) $[A | \mathbf{b}]$, an inconsistency appears if and only if we obtain a row of the form $[0 \ 0 \ \dots \ 0 | c]$ where $c \neq 0$. If $A$ has a pivot in every row, it means that the [echelon form](@entry_id:153067) of $A$ has no rows that are entirely zero. Consequently, it is impossible for the [row reduction](@entry_id:153590) process to generate a row of the form $[0 \ \dots \ 0 | c]$ with $c \neq 0$. This guarantees that a solution can always be found, regardless of the choice of $\mathbf{b}$. In the language of vector spaces, this condition is equivalent to stating that the columns of $A$ span the entire space $\mathbb{R}^m$, meaning any vector $\mathbf{b}$ can be formed as their [linear combination](@entry_id:155091).
+The reasoning is tied to the process of Gaussian elimination. When we row-reduce the augmented matrix $[A | \mathbf{b}]$, an inconsistency appears if and only if we obtain a row of the form $[0 \ 0 \ \dots \ 0 | c]$ where $c \neq 0$. If $A$ has a pivot in every row, it means that the echelon form of $A$ has no rows that are entirely zero. Consequently, it is impossible for the row reduction process to generate a row of the form $[0 \ \dots \ 0 | c]$ with $c \neq 0$. This guarantees that a solution can always be found, regardless of the choice of $\mathbf{b}$. In the language of vector spaces, this condition is equivalent to stating that the columns of $A$ span the entire space $\mathbb{R}^m$, meaning any vector $\mathbf{b}$ can be formed as their linear combination.
 
 ### Direct Methods for Solving Linear Systems
 
@@ -104,15 +104,15 @@ Direct methods aim to find the exact solution to a system in a finite number of 
 
 #### Gaussian Elimination and Its Computational Cost
 
-Gaussian elimination systematically transforms the [augmented matrix](@entry_id:150523) $[A|\mathbf{b}]$ into an upper triangular form $[U|\mathbf{c}]$ through a sequence of [elementary row operations](@entry_id:155518). This process is called **forward elimination**. The equivalent system $U\mathbf{x} = \mathbf{c}$ can then be solved easily by **[back substitution](@entry_id:138571)**, starting from the last equation and working upwards.
+Gaussian elimination systematically transforms the augmented matrix $[A|\mathbf{b}]$ into an upper triangular form $[U|\mathbf{c}]$ through a sequence of elementary row operations. This process is called **forward elimination**. The equivalent system $U\mathbf{x} = \mathbf{c}$ can then be solved easily by **back substitution**, starting from the last equation and working upwards.
 
-While straightforward, this process has a computational cost that is critical for large-scale problems. The dominant cost comes from the [floating-point operations](@entry_id:749454) (multiplications and divisions). For a dense $n \times n$ system, the forward elimination phase requires approximately $\frac{2}{3}n^3$ operations, while [back substitution](@entry_id:138571) requires approximately $n^2$ operations. The total number of multiplications and divisions can be shown to be approximately $\frac{n^3}{3}$. More precisely, the exact count of multiplications and divisions is $\frac{n(n^2+3n-1)}{3}$ . For a relatively small $10 \times 10$ system, this amounts to $\frac{10(100+30-1)}{3} = 430$ operations. For large $n$, the $n^3$ dependence means that doubling the size of the system increases the computation time by a factor of eight.
+While straightforward, this process has a computational cost that is critical for large-scale problems. The dominant cost comes from the floating-point operations (multiplications and divisions). For a dense $n \times n$ system, the forward elimination phase requires approximately $\frac{2}{3}n^3$ operations, while back substitution requires approximately $n^2$ operations. The total number of multiplications and divisions can be shown to be approximately $\frac{n^3}{3}$. More precisely, the exact count of multiplications and divisions is $\frac{n(n^2+3n-1)}{3}$ [@problem_id:2207648]. For a relatively small $10 \times 10$ system, this amounts to $\frac{10(100+30-1)}{3} = 430$ operations. For large $n$, the $n^3$ dependence means that doubling the size of the system increases the computation time by a factor of eight.
 
 #### Numerical Stability and the Need for Pivoting
 
-The theoretical elegance of Gaussian elimination can be deceptive. In practice, computers use [finite-precision arithmetic](@entry_id:637673), leading to [rounding errors](@entry_id:143856). These errors can be catastrophic if not handled carefully. A major source of instability occurs when a pivot element (the diagonal element $a_{kk}$ used to eliminate entries below it) is very small in magnitude compared to other entries in its column.
+The theoretical elegance of Gaussian elimination can be deceptive. In practice, computers use finite-precision arithmetic, leading to rounding errors. These errors can be catastrophic if not handled carefully. A major source of instability occurs when a pivot element (the diagonal element $a_{kk}$ used to eliminate entries below it) is very small in magnitude compared to other entries in its column.
 
-Consider a simple system representing a robotic arm control model where $\epsilon$ is a small parameter, say $\epsilon = 1.00 \times 10^{-4}$ :
+Consider a simple system representing a robotic arm control model where $\epsilon$ is a small parameter, say $\epsilon = 1.00 \times 10^{-4}$ [@problem_id:2207679]:
 $$
 \begin{align*}
 (1.00 \times 10^{-4}) x_1 + x_2 = 1 \\
@@ -132,13 +132,13 @@ Now the pivot is $1$. The multiplier is $m_{21} = 1.00 \times 10^{-4}$. The new 
 
 #### LU Factorization
 
-Gaussian elimination can be formalized through **LU factorization** (or decomposition). This process factors the [coefficient matrix](@entry_id:151473) $A$ into the product of a [lower triangular matrix](@entry_id:201877) $L$ and an upper triangular matrix $U$, such that $A = LU$. The matrix $U$ is the [upper triangular matrix](@entry_id:173038) obtained at the end of forward elimination. The matrix $L$, which typically has 1s on its diagonal (Doolittle method), stores the multipliers used during elimination.
+Gaussian elimination can be formalized through **LU factorization** (or decomposition). This process factors the coefficient matrix $A$ into the product of a lower triangular matrix $L$ and an upper triangular matrix $U$, such that $A = LU$. The matrix $U$ is the upper triangular matrix obtained at the end of forward elimination. The matrix $L$, which typically has 1s on its diagonal (Doolittle method), stores the multipliers used during elimination.
 
 Once this factorization is computed, solving $A\mathbf{x} = \mathbf{b}$ becomes a two-step process. We substitute $A=LU$ to get $LU\mathbf{x} = \mathbf{b}$. We then define an intermediate vector $\mathbf{y} = U\mathbf{x}$.
-1.  **Solve $L\mathbf{y} = \mathbf{b}$ for $\mathbf{y}$.** Since $L$ is lower triangular, this is solved efficiently using **[forward substitution](@entry_id:139277)**.
-2.  **Solve $U\mathbf{x} = \mathbf{y}$ for $\mathbf{x}$.** Since $U$ is upper triangular, this is solved efficiently using **[backward substitution](@entry_id:168868)**.
+1.  **Solve $L\mathbf{y} = \mathbf{b}$ for $\mathbf{y}$.** Since $L$ is lower triangular, this is solved efficiently using **forward substitution**.
+2.  **Solve $U\mathbf{x} = \mathbf{y}$ for $\mathbf{x}$.** Since $U$ is upper triangular, this is solved efficiently using **backward substitution**.
 
-As an illustration , suppose we have already found the LU factorization of a matrix $A$ and are given:
+As an illustration [@problem_id:2207676], suppose we have already found the LU factorization of a matrix $A$ and are given:
 $$
 L = \begin{pmatrix} 1  0  0 \\ 2  1  0 \\ -1  3  1 \end{pmatrix}, \quad
 U = \begin{pmatrix} 2  -1  3 \\ 0  5  -2 \\ 0  0  -1 \end{pmatrix}, \quad
@@ -162,9 +162,9 @@ The primary advantage of LU factorization is that the computationally expensive 
 
 The solution to a system of linear equations can be highly sensitive to small changes in the input data. The concept of **conditioning** measures this sensitivity. A system is **well-conditioned** if small perturbations in $A$ or $\mathbf{b}$ lead to small changes in the solution $\mathbf{x}$. A system is **ill-conditioned** if small perturbations can cause large changes in the solution.
 
-Geometrically, in two dimensions, an [ill-conditioned system](@entry_id:142776) corresponds to two lines that are nearly parallel. Their intersection point is poorly defined; a tiny shift in one line can cause the intersection point to move dramatically.
+Geometrically, in two dimensions, an ill-conditioned system corresponds to two lines that are nearly parallel. Their intersection point is poorly defined; a tiny shift in one line can cause the intersection point to move dramatically.
 
-Consider the system :
+Consider the system [@problem_id:2207674]:
 $$
 \begin{pmatrix} 1.0  0.99 \\ 0.99  0.98 \end{pmatrix} \mathbf{x} = \begin{pmatrix} 1.99 \\ 1.97 \end{pmatrix}
 $$
@@ -180,7 +180,7 @@ The large entries in the inverse are a hallmark of ill-conditioning. The change 
 $$
 \Delta\mathbf{x} = \begin{pmatrix} -9800  9900 \\ 9900  -10000 \end{pmatrix} \begin{pmatrix} 0 \\ 0.01 \end{pmatrix} = \begin{pmatrix} 99 \\ -100 \end{pmatrix}
 $$
-A tiny change of $0.01$ in one component of $\mathbf{b}$ has produced a massive change in the solution vector $\mathbf{x}$. The Euclidean norm of this change is $||\Delta\mathbf{x}||_2 = \sqrt{99^2 + (-100)^2} \approx 141$. This extreme sensitivity means that in the presence of even small measurement or rounding errors, the computed solution for an [ill-conditioned system](@entry_id:142776) may be meaningless.
+A tiny change of $0.01$ in one component of $\mathbf{b}$ has produced a massive change in the solution vector $\mathbf{x}$. The Euclidean norm of this change is $||\Delta\mathbf{x}||_2 = \sqrt{99^2 + (-100)^2} \approx 141$. This extreme sensitivity means that in the presence of even small measurement or rounding errors, the computed solution for an ill-conditioned system may be meaningless.
 
 ### Iterative Methods for Solving Linear Systems
 
@@ -188,11 +188,11 @@ For very large and sparse systems (where most entries in $A$ are zero), direct m
 
 #### The Fixed-Point Iteration Framework
 
-Many [iterative methods](@entry_id:139472) are based on rewriting the system $A\mathbf{x} = \mathbf{b}$ into an equivalent **fixed-point** form:
+Many iterative methods are based on rewriting the system $A\mathbf{x} = \mathbf{b}$ into an equivalent **fixed-point** form:
 $$
 \mathbf{x} = T\mathbf{x} + \mathbf{c}
 $$
-where $T$ is an **[iteration matrix](@entry_id:637346)** and $\mathbf{c}$ is a constant vector. Once in this form, we can define an iterative scheme. Starting with an initial guess $\mathbf{x}^{(0)}$, we generate a sequence of approximations:
+where $T$ is an **iteration matrix** and $\mathbf{c}$ is a constant vector. Once in this form, we can define an iterative scheme. Starting with an initial guess $\mathbf{x}^{(0)}$, we generate a sequence of approximations:
 $$
 \mathbf{x}^{(k+1)} = T\mathbf{x}^{(k)} + \mathbf{c} \quad \text{for } k=0, 1, 2, \dots
 $$
@@ -208,19 +208,19 @@ Assuming $D$ is invertible (i.e., no diagonal entries are zero), we can multiply
 $$
 \mathbf{x} = D^{-1}(L+U)\mathbf{x} + D^{-1}\mathbf{b}
 $$
-This is now in the fixed-point form $\mathbf{x} = T\mathbf{x} + \mathbf{c}$, with the Jacobi iteration matrix $T_J = D^{-1}(L+U)$ and constant vector $\mathbf{c}_J = D^{-1}\mathbf{b}$ .
+This is now in the fixed-point form $\mathbf{x} = T\mathbf{x} + \mathbf{c}$, with the Jacobi iteration matrix $T_J = D^{-1}(L+U)$ and constant vector $\mathbf{c}_J = D^{-1}\mathbf{b}$ [@problem_id:2207662].
 
 #### Convergence of Iterative Methods
 
-The crucial question for an [iterative method](@entry_id:147741) is whether the sequence $\mathbf{x}^{(k)}$ converges to the correct solution. The theoretical condition for convergence is that the **spectral radius** (the maximum absolute value of the eigenvalues) of the iteration matrix $T$ must be less than 1: $\rho(T) \lt 1$.
+The crucial question for an iterative method is whether the sequence $\mathbf{x}^{(k)}$ converges to the correct solution. The theoretical condition for convergence is that the **spectral radius** (the maximum absolute value of the eigenvalues) of the iteration matrix $T$ must be less than 1: $\rho(T) \lt 1$.
 
-Calculating the spectral radius can be as difficult as solving the system itself. Fortunately, there are simpler, [sufficient conditions](@entry_id:269617) that can be checked directly from the matrix $A$. One of the most important is **[strict diagonal dominance](@entry_id:154277)**. An $n \times n$ matrix $A$ is strictly [diagonally dominant](@entry_id:748380) if, for every row, the absolute value of the diagonal element is strictly greater than the sum of the absolute values of all other elements in that row.
+Calculating the spectral radius can be as difficult as solving the system itself. Fortunately, there are simpler, sufficient conditions that can be checked directly from the matrix $A$. One of the most important is **strict diagonal dominance**. An $n \times n$ matrix $A$ is strictly diagonally dominant if, for every row, the absolute value of the diagonal element is strictly greater than the sum of the absolute values of all other elements in that row.
 $$
 |a_{ii}| > \sum_{j \neq i} |a_{ij}| \quad \text{for all } i = 1, \dots, n
 $$
 A key theorem states that if a matrix $A$ is strictly diagonally dominant, then both the Jacobi and the **Gauss-Seidel** methods (a related iterative scheme) are guaranteed to converge to the unique solution of $A\mathbf{x}=\mathbf{b}$ for any starting vector $\mathbf{x}^{(0)}$.
 
-Let's check this condition for the following matrix :
+Let's check this condition for the following matrix [@problem_id:2207685]:
 $$
 A = \begin{pmatrix} 9  -2  3 \\ 1  -5  2 \\ -4  1  6 \end{pmatrix}
 $$
@@ -228,4 +228,4 @@ $$
 *   **Row 2:** $|-5| > |1| + |2| \implies 5 > 3$. (True)
 *   **Row 3:** $|6| > |-4| + |1| \implies 6 > 5$. (True)
 
-Since the condition holds for every row, the matrix is strictly [diagonally dominant](@entry_id:748380). Therefore, we can say with certainty, without running the iteration, that the Gauss-Seidel method (and the Jacobi method) will converge for any system involving this [coefficient matrix](@entry_id:151473). This provides a powerful and practical a priori check for the reliability of [iterative solvers](@entry_id:136910).
+Since the condition holds for every row, the matrix is strictly diagonally dominant. Therefore, we can say with certainty, without running the iteration, that the Gauss-Seidel method (and the Jacobi method) will converge for any system involving this coefficient matrix. This provides a powerful and practical a priori check for the reliability of iterative solvers.

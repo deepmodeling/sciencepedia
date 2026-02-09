@@ -1,11 +1,11 @@
 ## 引言
-[电磁波](@entry_id:269629)与物质的相互作用是宇宙中最普遍的现象之一，其行为由经典的[麦克斯韦方程组](@entry_id:150940)所支配。然而，当[电磁波](@entry_id:269629)遇到一个物体时，预测其产生的复杂散射场是一个极具挑战性的任务，这不仅是理论物理的核心问题，也是从医学成像到雷达探测等无数应用技术的基石。传统方法往往直接求解复杂的边界值问题，过程繁琐且在某些情况下数值性能不佳。本文旨在介绍一种更深刻、更优雅的替代方案：对比源[积分方程](@entry_id:138643)（CSIE）框架。该框架将我们从求解“场”的传统思路中解放出来，转向一个关于“源”的、更富物理直觉的故事。在接下来的章节中，我们将踏上一段从理论到实践的探索之旅。在“原理与机制”部分，您将理解CSIE如何通过体[等效原理](@entry_id:157518)将散射体转化为一组等效源，并掌握其核心的数学方程。随后，在“应用与[交叉](@entry_id:147634)学科联系”部分，我们将见证这一理论框架如何在先进成像、[超材料设计](@entry_id:184616)乃至[多物理场耦合](@entry_id:171389)等前沿领域大放异彩。最后，“动手实践”部分将为您提供将理论知识转化为计算能力的具体指导。通过本文，您将掌握一个分析和解决复杂电磁问题的强大思想工具。
+[电磁波](@keyword=electromagnetic_wave|lang=zh-CN|style=Feynman)与物质的相互作用是宇宙中最普遍的现象之一，其行为由经典的[麦克斯韦方程组](@keyword=maxwell_s_equations|lang=zh-CN|style=Feynman)所支配。然而，当[电磁波](@keyword=electromagnetic_wave|lang=zh-CN|style=Feynman)遇到一个物体时，预测其产生的复杂散射场是一个极具挑战性的任务，这不仅是理论物理的核心问题，也是从医学成像到雷达探测等无数应用技术的基石。传统方法往往直接求解复杂的边界值问题，过程繁琐且在某些情况下数值性能不佳。本文旨在介绍一种更深刻、更优雅的替代方案：对比源[积分方程](@keyword=integral_equations|lang=zh-CN|style=Feynman)（CSIE）框架。该框架将我们从求解“场”的传统思路中解放出来，转向一个关于“源”的、更富物理直觉的故事。在接下来的章节中，我们将踏上一段从理论到实践的探索之旅。在“原理与机制”部分，您将理解CSIE如何通过体[等效原理](@keyword=principle_of_equivalence|lang=zh-CN|style=Feynman)将散射体转化为一组等效源，并掌握其核心的数学方程。随后，在“应用与[交叉](@keyword=chiasmata|lang=zh-CN|style=Feynman)学科联系”部分，我们将见证这一理论框架如何在先进成像、[超材料设计](@keyword=metamaterials_design|lang=zh-CN|style=Feynman)乃至[多物理场耦合](@keyword=multiphysics_coupling|lang=zh-CN|style=Feynman)等前沿领域大放异彩。最后，“动手实践”部分将为您提供将理论知识转化为计算能力的具体指导。通过本文，您将掌握一个分析和解决复杂电磁问题的强大思想工具。
 
 ## 原理与机制
 
-[电磁波](@entry_id:269629)，无论是可见光、无线电波还是[X射线](@entry_id:187649)，其行为都由一套优美而强大的规则——麦克斯韦方程组——所支配。当这些波在均匀空间中传播时，它们的行为是简单可预测的，就像平静池塘上泛起的完美圆形涟漪。但当一个物体，比如一块玻璃、一滴水珠，或者我们身体里的组织，被置于波的路径上时，会发生什么呢？波会散射，向四面八方偏转，形成复杂的图样。理解和预测这种散射现象是物理学和工程学中的一个核心问题，从设计隐形飞机到通过医学成像“看见”人体内部，都离不开它。
+[电磁波](@keyword=electromagnetic_wave|lang=zh-CN|style=Feynman)，无论是可见光、无线电波还是[X射线](@keyword=x_ray|lang=zh-CN|style=Feynman)，其行为都由一套优美而强大的规则——麦克斯韦方程组——所支配。当这些波在均匀空间中传播时，它们的行为是简单可预测的，就像平静池塘上泛起的完美圆形涟漪。但当一个物体，比如一块玻璃、一滴水珠，或者我们身体里的组织，被置于波的路径上时，会发生什么呢？波会散射，向四面八方偏转，形成复杂的图样。理解和预测这种散射现象是物理学和工程学中的一个核心问题，从设计隐形飞机到通过医学成像“看见”人体内部，都离不开它。
 
-“对比源[积分方程](@entry_id:138643)”（Contrast Source Integral Equations, CSIE）提供了一种极其深刻而优雅的视角来理解这一过程。它没有直接去解复杂的边界问题，而是将我们带上了一条迂回但更富启发性的探索之旅。
+“对比源[积分方程](@keyword=integral_equations|lang=zh-CN|style=Feynman)”（Contrast Source Integral Equations, CSIE）提供了一种极其深刻而优雅的视角来理解这一过程。它没有直接去解复杂的边界问题，而是将我们带上了一条迂回但更富启发性的探索之旅。
 
 ### 将散射视为一个“源”的故事
 
@@ -21,19 +21,19 @@ $$
 \mathbf{w}(\mathbf{r}) = \chi(\mathbf{r}) \mathbf{E}(\mathbf{r})
 $$
 
-这里的 $\mathbf{r}$ 代表空间中的位置。一个至关重要的结论是，对比源 $\mathbf{w}$ 只在物体内部（即对比度 $\chi$ 不为零的地方）才存在。在物体之外的广阔空间里，$\chi(\mathbf{r})=0$，因此对比源也为零。这意味着，当我们计算散射场时，我们只需要在物体所在的有限区域内进行积分，而不需要考虑整个无限大的空间。这极大地简化了问题 。
+这里的 $\mathbf{r}$ 代表空间中的位置。一个至关重要的结论是，对比源 $\mathbf{w}$ 只在物体内部（即对比度 $\chi$ 不为零的地方）才存在。在物体之外的广阔空间里，$\chi(\mathbf{r})=0$，因此对比源也为零。这意味着，当我们计算散射场时，我们只需要在物体所在的有限区域内进行积分，而不需要考虑整个无限大的空间。这极大地简化了问题 [@problem_id:3295370]。
 
 ### 描述故事的两个基本方程
 
 现在，我们把这个关于源和场的直观故事，用数学语言写下来。我们需要两个方程，它们像一个故事的两个紧密相连的章节，共同描绘了散射的全貌。
 
-1.  **状态方程（The State Equation）**：这个方程描述了在物体内部任意一点 $\mathbf{r}$ 的总[电场](@entry_id:194326) $\mathbf{E}(\mathbf{r})$ 是如何形成的。它等于两部分之和：一部分是“如果没有物体，本来就会传播到这里”的**入射场** $\mathbf{E}^{\text{inc}}(\mathbf{r})$；另一部分则是由物体内**所有其他点** $\mathbf{r}'$ 的对比源 $\mathbf{w}(\mathbf{r}')$ 所产生的场的总和。
+1.  **状态方程（The State Equation）**：这个方程描述了在物体内部任意一点 $\mathbf{r}$ 的总[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $\mathbf{E}(\mathbf{r})$ 是如何形成的。它等于两部分之和：一部分是“如果没有物体，本来就会传播到这里”的**入射场** $\mathbf{E}^{\text{inc}}(\mathbf{r})$；另一部分则是由物体内**所有其他点** $\mathbf{r}'$ 的对比源 $\mathbf{w}(\mathbf{r}')$ 所产生的场的总和。
 
     $$
     \mathbf{E}(\mathbf{r}) = \mathbf{E}^{\text{inc}}(\mathbf{r}) + \int_V \overline{\overline{\mathbf{G}}}_b(\mathbf{r},\mathbf{r}') \,\mathbf{w}(\mathbf{r}')\, \mathrm{d}V'
     $$
 
-    这里的积分代表了对物体体积 $V$ 内所有源的贡献求和。$\overline{\overline{\mathbf{G}}}_b(\mathbf{r},\mathbf{r}')$ 是一个极其重要的函数，称为**[格林函数](@entry_id:147802)**（Green's function）。你可以把它想象成一个“[影响函数](@entry_id:168646)”：它描述了一个位于 $\mathbf{r}'$ 的单位点源，会在位置 $\mathbf{r}$ 产生多大的场。
+    这里的积分代表了对物体体积 $V$ 内所有源的贡献求和。$\overline{\overline{\mathbf{G}}}_b(\mathbf{r},\mathbf{r}')$ 是一个极其重要的函数，称为**[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)**（Green's function）。你可以把它想象成一个“[影响函数](@keyword=influence_function|lang=zh-CN|style=Feynman)”：它描述了一个位于 $\mathbf{r}'$ 的单位点源，会在位置 $\mathbf{r}$ 产生多大的场。
 
 2.  **源方程（The Source Equation）**：这个方程就是我们之前已经见过的对比源的定义。它简单地陈述了在任何一点的对比源是什么。
 
@@ -41,13 +41,13 @@ $$
     \mathbf{w}(\mathbf{r}) = \chi(\mathbf{r}) \mathbf{E}(\mathbf{r})
     $$
 
-这是一个优美的自洽系统 。场依赖于源（状态方程），而源又依赖于场（源方程）。这听起来像一个“先有鸡还是先有蛋”的悖论，但正是这种[循环依赖](@entry_id:273976)关系，完美地捕捉了散射过程中复杂的内部相互作用（即多次散射）。
+这是一个优美的自洽系统 [@problem_id:3295379]。场依赖于源（状态方程），而源又依赖于场（源方程）。这听起来像一个“先有鸡还是先有蛋”的悖论，但正是这种[循环依赖](@keyword=circular_dependency|lang=zh-CN|style=Feynman)关系，完美地捕捉了散射过程中复杂的内部相互作用（即多次散射）。
 
 ### 解开这个结：关于源的单一方程
 
 虽然这两个方程的物理图像很清晰，但在求解时，同时处理两个未知量（$\mathbf{E}$ 和 $\mathbf{w}$）和两个方程会有些繁琐。幸运的是，我们可以通过一个简单的代数步骤将它们合二为一。
 
-我们将[状态方程](@entry_id:274378)（$\mathbf{E}$ 的表达式）代入到源方程中，就得到了一个只包含未知量 $\mathbf{w}$ 的单一[积分方程](@entry_id:138643)：
+我们将[状态方程](@keyword=state_equations|lang=zh-CN|style=Feynman)（$\mathbf{E}$ 的表达式）代入到源方程中，就得到了一个只包含未知量 $\mathbf{w}$ 的单一[积分方程](@keyword=integral_equations|lang=zh-CN|style=Feynman)：
 
 $$
 \mathbf{w}(\mathbf{r}) = \chi(\mathbf{r}) \left( \mathbf{E}^{\text{inc}}(\mathbf{r}) + \int_V \overline{\overline{\mathbf{G}}}_b(\mathbf{r},\mathbf{r}') \,\mathbf{w}(\mathbf{r}')\, \mathrm{d}V' \right)
@@ -57,13 +57,13 @@ $$
 
 ### 为何要用CSIE？它的优越之处
 
-你可能会问：“这看起来绕了一个大圈子。我们为什么不直接解最初关于总场 $\mathbf{E}$ 的积分方程呢？” 这是一个很好的问题，答案揭示了CSIE框架的真正威力 。
+你可能会问：“这看起来绕了一个大圈子。我们为什么不直接解最初关于总场 $\mathbf{E}$ 的积分方程呢？” 这是一个很好的问题，答案揭示了CSIE框架的真正威力 [@problem_id:3295439]。
 
 首先，对于**高对比度**（例如，金属在空气中，$\chi$ 很大）的物体，CSIE在数值计算上通常更加**稳健**。在这种情况下，物体内部的总场 $\mathbf{E}$ 由于屏蔽效应会变得非常小，这使得直接求解 $\mathbf{E}$ 的方程变得病态和不稳定。相比之下，对比源 $\mathbf{w} = \chi \mathbf{E}$ 的行为可能要好得多，使得CSIE方程更容易被迭代求解器快速收敛。
 
-其次，也是更重要的一点，CSIE为解决**[逆散射问题](@entry_id:750808)**（Inverse Scattering Problems）提供了一个完美的框架。在医学成像、地球物理勘探等许多现实应用中，我们并不知道散射体是什么样的（即 $\chi$ 未知）。我们能做的，是在物体外部测量散射场 $\mathbf{E}^{\text{sca}}$，然后反推出物体的内部结构。
+其次，也是更重要的一点，CSIE为解决**[逆散射问题](@keyword=inverse_scattering_problems|lang=zh-CN|style=Feynman)**（Inverse Scattering Problems）提供了一个完美的框架。在医学成像、地球物理勘探等许多现实应用中，我们并不知道散射体是什么样的（即 $\chi$ 未知）。我们能做的，是在物体外部测量散射场 $\mathbf{E}^{\text{sca}}$，然后反推出物体的内部结构。
 
-CSIE天然地将这个问题分解为两个更易于处理的部分 ：
+CSIE天然地将这个问题分解为两个更易于处理的部分 [@problem_id:3295368]：
 
 *   **数据方程**：将我们未知的对比源 $\mathbf{w}$ 和我们在外部传感器上**测量**到的数据 $\mathbf{E}^{\text{meas}}$ 联系起来。
     $$
@@ -71,17 +71,17 @@ CSIE天然地将这个问题分解为两个更易于处理的部分 ：
     $$
     （这里的 $\mathcal{S}$ 是一个从源到测量数据的“感知”算子）。
 
-*   **[物态方程](@entry_id:194191)**：这就是我们上面导出的CSIE本身，它描述了在物体内部，$\mathbf{w}$ 和 $\chi$ 必须满足的物理**约束**。
+*   **[物态方程](@keyword=equations_of_state|lang=zh-CN|style=Feynman)**：这就是我们上面导出的CSIE本身，它描述了在物体内部，$\mathbf{w}$ 和 $\chi$ 必须满足的物理**约束**。
 
-这种分离结构是“对比[源反演](@entry_id:755074)”（Contrast Source Inversion）等先进成像算法的基石。这些算法通过迭代更新，交替地让 $\mathbf{w}$ 去更好地拟合测量数据（满足数据方程），同时又让 $\mathbf{w}$ 和 $\chi$ 更好地满足物理定律（满足物态方程），就像侦探利用两条独立的线索来逐步逼近案件的真相。
+这种分离结构是“对比[源反演](@keyword=source_inversion|lang=zh-CN|style=Feynman)”（Contrast Source Inversion）等先进成像算法的基石。这些算法通过迭代更新，交替地让 $\mathbf{w}$ 去更好地拟合测量数据（满足数据方程），同时又让 $\mathbf{w}$ 和 $\chi$ 更好地满足物理定律（满足物态方程），就像侦探利用两条独立的线索来逐步逼近案件的真相。
 
-### 深入“[影响函数](@entry_id:168646)”：格林函数的奇异性
+### 深入“[影响函数](@keyword=influence_function|lang=zh-CN|style=Feynman)”：格林函数的奇异性
 
-我们之前提到，格林函数 $\overline{\overline{\mathbf{G}}}_b(\mathbf{r},\mathbf{r}')$ 描述了[点源](@entry_id:196698)的影响。但是，当我们问一个点**对自己**的影响有多大时，即当 $\mathbf{r} \to \mathbf{r}'$ 时，格林函数的数学表达式会“爆炸”，趋向于无穷大。
+我们之前提到，格林函数 $\overline{\overline{\mathbf{G}}}_b(\mathbf{r},\mathbf{r}')$ 描述了[点源](@keyword=point_source|lang=zh-CN|style=Feynman)的影响。但是，当我们问一个点**对自己**的影响有多大时，即当 $\mathbf{r} \to \mathbf{r}'$ 时，格林函数的数学表达式会“爆炸”，趋向于无穷大。
 
-物理世界中没有真正的无穷大。这个“数学上的麻烦”实际上隐藏着深刻的物理。为了正确处理这个奇异性，我们需要更仔细地审视格林函数的结构 。这个无穷大可以被精确地分解为两个有意义的部分：
+物理世界中没有真正的无穷大。这个“数学上的麻烦”实际上隐藏着深刻的物理。为了正确处理这个奇异性，我们需要更仔细地审视格林函数的结构 [@problem_id:3295419]。这个无穷大可以被精确地分解为两个有意义的部分：
 
-1.  **[柯西主值](@entry_id:192761)（Cauchy Principal Value）**：格林函数中有一部分是“强奇异”的（其奇异性比 $1/|\mathbf{r}-\mathbf{r}'|$ 更强）。对于这部分，我们不能直接积分。正确的做法是，想象在[奇异点](@entry_id:199525)周围挖掉一个无限小的球，计算球外部所有源的贡献，然后再让这个小球的半径趋于零。这个过程被称为取[柯西主值](@entry_id:192761)，它给出的是一种长程、非局域的贡献。
+1.  **[柯西主值](@keyword=principal_value|lang=zh-CN|style=Feynman)（Cauchy Principal Value）**：格林函数中有一部分是“强奇异”的（其奇异性比 $1/|\mathbf{r}-\mathbf{r}'|$ 更强）。对于这部分，我们不能直接积分。正确的做法是，想象在[奇异点](@keyword=exceptional_points|lang=zh-CN|style=Feynman)周围挖掉一个无限小的球，计算球外部所有源的贡献，然后再让这个小球的半径趋于零。这个过程被称为取[柯西主值](@keyword=principal_value|lang=zh-CN|style=Feynman)，它给出的是一种长程、非局域的贡献。
 
 2.  **去极化项（Depolarization Term）**：在处理奇异性的过程中，还会分离出一个额外的、有限的**局部项**。这一项，也称为“自场项”（self-term），可以被看作是源点对其自身所在位置的直接、瞬时的响应。它的大小和形式取决于我们挖去的那个无限小球的形状，对于球形，它是一个简单的常数。
 
@@ -91,9 +91,9 @@ CSIE天然地将这个问题分解为两个更易于处理的部分 ：
 
 我们有了形式优美的CSIE，但它是一个积分方程，如何求解它呢？
 
-一种强大的方法是**迭代**。我们可以从一个初始猜测开始，然后一步步地逼近真实解 。
+一种强大的方法是**迭代**。我们可以从一个初始猜测开始，然后一步步地逼近真实解 [@problem_id:3295429]。
 
-1.  **初始猜测**：最简单的猜测是，假设物体内部的场就约等于入射场，即 $\mathbf{E} \approx \mathbf{E}^{\text{inc}}$。这给出了对比源的第一个近似，称为**[玻恩近似](@entry_id:138141)**（Born approximation）：$\mathbf{w}^{(0)} = \chi \mathbf{E}^{\text{inc}}$。这相当于只考虑了波与物体的“第一次亲密接触”。
+1.  **初始猜测**：最简单的猜测是，假设物体内部的场就约等于入射场，即 $\mathbf{E} \approx \mathbf{E}^{\text{inc}}$。这给出了对比源的第一个近似，称为**[玻恩近似](@keyword=born_approximation|lang=zh-CN|style=Feynman)**（Born approximation）：$\mathbf{w}^{(0)} = \chi \mathbf{E}^{\text{inc}}$。这相当于只考虑了波与物体的“第一次亲密接触”。
 
 2.  **迭代修正**：现在，我们将这个初步的源 $\mathbf{w}^{(0)}$ 代入CSIE的积分项中，计算它所产生的场。这个场再加上入射场，就构成了一个更准确的总场。用这个新的总场，我们能得到一个修正后的源 $\mathbf{w}^{(1)}$。这个过程可以一直重复下去：
 
@@ -101,26 +101,26 @@ CSIE天然地将这个问题分解为两个更易于处理的部分 ：
     \mathbf{w}^{(n+1)} = \chi \left( \mathbf{E}^{\text{inc}} + \int_V \overline{\overline{\mathbf{G}}}_b \,\mathbf{w}^{(n)}\, \mathrm{d}V' \right)
     $$
 
-    这个迭代序列，被称为**[玻恩级数](@entry_id:195385)**（Born series）。每一次迭代，都相当于多考虑了一次波在物体内部的“回声”或“反弹”（即多次散射）。对于弱散射体（$\chi$ 很小），这个序列会快速收敛到真实解。
+    这个迭代序列，被称为**[玻恩级数](@keyword=born_series|lang=zh-CN|style=Feynman)**（Born series）。每一次迭代，都相当于多考虑了一次波在物体内部的“回声”或“反弹”（即多次散射）。对于弱散射体（$\chi$ 很小），这个序列会快速收敛到真实解。
 
-当[玻恩近似](@entry_id:138141)的精度不足时，尤其是在需要精确计算[波的相位](@entry_id:171303)累积的透射成像问题中（如某些类型的显微镜或断层扫描），**里托夫近似**（Rytov approximation）提供了一个更佳的选择 。里托夫近似的巧妙之处在于，它不对场本身进行线性化，而是对场的**[复对数](@entry_id:174857)**（即复相位）进行线性化。它将散射过程看作是相位的不断累加，而非场的直接叠加。这种不同的视角，使得它在处理穿过较大、弱变化介质的波时，能够更准确地保持相位的正确性。
+当[玻恩近似](@keyword=born_approximation|lang=zh-CN|style=Feynman)的精度不足时，尤其是在需要精确计算[波的相位](@keyword=phase_of_a_wave|lang=zh-CN|style=Feynman)累积的透射成像问题中（如某些类型的显微镜或断层扫描），**里托夫近似**（Rytov approximation）提供了一个更佳的选择 [@problem_id:3295373]。里托夫近似的巧妙之处在于，它不对场本身进行线性化，而是对场的**[复对数](@keyword=complex_logarithm|lang=zh-CN|style=Feynman)**（即复相位）进行线性化。它将散射过程看作是相位的不断累加，而非场的直接叠加。这种不同的视角，使得它在处理穿过较大、弱变化介质的波时，能够更准确地保持相位的正确性。
 
 ### 抽象之美：算子的世界
 
-物理学家和数学家喜欢用更抽象的语言来思考，这往往能带来更深的洞察力。我们可以将CSIE中的积分看作一个**算子**（operator）$\mathcal{T}$，它就像一部机器，输入是一个源[分布](@entry_id:182848) $\mathbf{w}$，输出则是一个场[分布](@entry_id:182848)。于是，CSIE可以被写成一个极为简洁的算子方程 ：
+物理学家和数学家喜欢用更抽象的语言来思考，这往往能带来更深的洞察力。我们可以将CSIE中的积分看作一个**算子**（operator）$\mathcal{T}$，它就像一部机器，输入是一个源[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman) $\mathbf{w}$，输出则是一个场[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)。于是，CSIE可以被写成一个极为简洁的算子方程 [@problem_id:3295416]：
 
 $$
 (\overline{\overline{\mathbf{I}}} - \chi \mathcal{T})\mathbf{w} = \chi \mathbf{E}^{\text{inc}}
 $$
 
-这种抽象的观点非常强大。例如，我们可以证明，对于这类[积分方程](@entry_id:138643)，算子 $\mathcal{T}$ 具有一个称为**紧性**（compactness）的优良性质。通俗地讲，一个[紧算子](@entry_id:139189)具有“平滑”效应——它倾向于将粗糙的输入函数映射为光滑的输出函数。
+这种抽象的观点非常强大。例如，我们可以证明，对于这类[积分方程](@keyword=integral_equations|lang=zh-CN|style=Feynman)，算子 $\mathcal{T}$ 具有一个称为**紧性**（compactness）的优良性质。通俗地讲，一个[紧算子](@keyword=compact_operators|lang=zh-CN|style=Feynman)具有“平滑”效应——它倾向于将粗糙的输入函数映射为光滑的输出函数。
 
-紧性是一个近乎神奇的性质。它保证了我们的方程是“良性”的，其数值解是稳定且收敛的。更进一步，它为设计高效的**预条件子**（preconditioner）提供了理论基础 。[预条件子](@entry_id:753679)可以看作是算子 $(\overline{\overline{\mathbf{I}}} - \chi \mathcal{T})$ 的一个“近似逆”，它能将一个难以求解的复杂问题，转化为一个在计算机上可以被飞速解决的简单问题。
+紧性是一个近乎神奇的性质。它保证了我们的方程是“良性”的，其数值解是稳定且收敛的。更进一步，它为设计高效的**预条件子**（preconditioner）提供了理论基础 [@problem_id:3295400]。[预条件子](@keyword=preconditioners|lang=zh-CN|style=Feynman)可以看作是算子 $(\overline{\overline{\mathbf{I}}} - \chi \mathcal{T})$ 的一个“近似逆”，它能将一个难以求解的复杂问题，转化为一个在计算机上可以被飞速解决的简单问题。
 
 ### 应对真实世界的复杂性
 
-我们目前讨论的框架大多假设背景介质是均匀的。但如果背景本身就不是均匀的呢？例如，我们要在一个器官（其[介电常数](@entry_id:146714) $\epsilon_b(\mathbf{r})$ 是缓慢变化的）中寻找一个肿瘤（对比度 $\chi$）。此时，为均匀背景设计的简单[格林函数](@entry_id:147802)就不再精确了 。
+我们目前讨论的框架大多假设背景介质是均匀的。但如果背景本身就不是均匀的呢？例如，我们要在一个器官（其[介电常数](@keyword=dielectric_constant|lang=zh-CN|style=Feynman) $\epsilon_b(\mathbf{r})$ 是缓慢变化的）中寻找一个肿瘤（对比度 $\chi$）。此时，为均匀背景设计的简单[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)就不再精确了 [@problem_id:3295381]。
 
-面对这种复杂性，CSIE框架展现了其强大的灵活性。一种有效的策略是**区域分解**（domain decomposition）：我们将复杂的背景[区域分解](@entry_id:165934)成许多小块，每一小块都足够小，可以近似看作是均匀的。然后，我们在每个小块内部求解一个局域的CSIE，最后通过在块与块之间的交界面上强制执行物理定律（场的切向分量连续），将所有局域解“缝合”成一个全局的、精确的解。这充分证明了[积分方程方法](@entry_id:750697)作为一种思想框架，而非仅仅一个固定公式的强大生命力。
+面对这种复杂性，CSIE框架展现了其强大的灵活性。一种有效的策略是**区域分解**（domain decomposition）：我们将复杂的背景[区域分解](@keyword=domain_decomposition|lang=zh-CN|style=Feynman)成许多小块，每一小块都足够小，可以近似看作是均匀的。然后，我们在每个小块内部求解一个局域的CSIE，最后通过在块与块之间的交界面上强制执行物理定律（场的切向分量连续），将所有局域解“缝合”成一个全局的、精确的解。这充分证明了[积分方程方法](@keyword=integral_equation_methods|lang=zh-CN|style=Feynman)作为一种思想框架，而非仅仅一个固定公式的强大生命力。
 
-从一个简单的物理图像出发，通过一系列严谨而优美的推导，我们构建了对比源[积分方程](@entry_id:138643)这一强大框架。它不仅为我们理解[电磁散射](@entry_id:182193)提供了深刻的洞见，也为解决从医学成像到[材料科学](@entry_id:152226)的各种前沿应用问题，提供了坚实的理论和计算工具。
+从一个简单的物理图像出发，通过一系列严谨而优美的推导，我们构建了对比源[积分方程](@keyword=integral_equations|lang=zh-CN|style=Feynman)这一强大框架。它不仅为我们理解[电磁散射](@keyword=electromagnetic_scattering|lang=zh-CN|style=Feynman)提供了深刻的洞见，也为解决从医学成像到[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)的各种前沿应用问题，提供了坚实的理论和计算工具。

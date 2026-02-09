@@ -5,7 +5,7 @@ This exploration is divided into three parts. First, in **Principles and Mechani
 
 ## Principles and Mechanisms
 
-Imagine you want to calculate something fiendishly complex—the average price of a financial option, the mean stress on a turbine blade buffeted by turbulence, or the probability of a flood in a river basin. Nature, in its full glory, is often too intricate to be described perfectly by our equations. So, we create a simplified model, a [numerical approximation](@entry_id:161970) of reality. But this immediately presents us with a dilemma, a fundamental tug-of-war between accuracy and effort.
+Imagine you want to calculate something fiendishly complex—the average price of a financial option, the mean stress on a turbine blade buffeted by turbulence, or the probability of a flood in a river basin. Nature, in its full glory, is often too intricate to be described perfectly by our equations. So, we create a simplified model, a [numerical approximation](@keyword=numerical_approximation|lang=en-US|style=Feynman) of reality. But this immediately presents us with a dilemma, a fundamental tug-of-war between accuracy and effort.
 
 Our numerical model isn't a single entity; it's a whole family of approximations. We can choose a coarse, crude model that is quick to run but not very accurate. Or we can choose a highly refined, detailed model that is very accurate but takes an eternity to compute. This accuracy is often controlled by a parameter, let's call it a "mesh size" $h$, where smaller $h$ means a more accurate but more expensive model.
 
@@ -13,9 +13,9 @@ On top of this, the systems we're studying are often random, or stochastic. A si
 
 ### The Brute-Force Approach and Its Flaw
 
-The classic Monte Carlo method is beautifully simple. To estimate the average of some quantity, say $\mu = \mathbb{E}[X]$, you just generate $N$ [independent samples](@entry_id:177139), $X^{(1)}, X^{(2)}, \dots, X^{(N)}$, and compute their average, $\hat{\mu}_N = \frac{1}{N}\sum_{i=1}^N X^{(i)}$. How good is this estimate? The Central Limit Theorem tells us a wonderful secret: the error of your estimate shrinks in proportion to $1/\sqrt{N}$. This means if you want to halve your error, you need to quadruple your number of samples.
+The classic Monte Carlo method is beautifully simple. To estimate the average of some quantity, say $\mu = \mathbb{E}[X]$, you just generate $N$ [independent samples](@keyword=independent_samples|lang=en-US|style=Feynman), $X^{(1)}, X^{(2)}, \dots, X^{(N)}$, and compute their average, $\hat{\mu}_N = \frac{1}{N}\sum_{i=1}^N X^{(i)}$. How good is this estimate? The Central Limit Theorem tells us a wonderful secret: the error of your estimate shrinks in proportion to $1/\sqrt{N}$. This means if you want to halve your error, you need to quadruple your number of samples.
 
-To put it more precisely, if you want your root-[mean-squared error](@entry_id:175403) (RMSE) to be no larger than some small tolerance $\varepsilon$, you need to take a number of samples $N$ that scales like $N \ge \sigma^2 / \varepsilon^2$, where $\sigma^2$ is the variance of your random variable $X$. The total computational work, assuming each sample has a certain cost, is therefore proportional to $\varepsilon^{-2}$. This $\mathcal{O}(\varepsilon^{-2})$ complexity is the bedrock of Monte Carlo simulation, a sort of universal speed limit.
+To put it more precisely, if you want your root-[mean-squared error](@keyword=mean_squared_error|lang=en-US|style=Feynman) (RMSE) to be no larger than some small tolerance $\varepsilon$, you need to take a number of samples $N$ that scales like $N \ge \sigma^2 / \varepsilon^2$, where $\sigma^2$ is the variance of your random variable $X$. The total computational work, assuming each sample has a certain cost, is therefore proportional to $\varepsilon^{-2}$. This $\mathcal{O}(\varepsilon^{-2})$ complexity is the bedrock of Monte Carlo simulation, a sort of universal speed limit.
 
 But here’s the catch. This only accounts for the statistical error from averaging. What about the error from our model's imperfection? To reduce this **bias**, or systematic error, we must use a very fine model, one with a very small mesh size $h_L$. Let's say our finest model has a cost of $C_L$ per sample. The total work for this "single-level" Monte Carlo approach would be the number of samples times the cost per sample, which is roughly $W \approx \varepsilon^{-2} \times C_L$.
 
@@ -25,11 +25,11 @@ $$
 W_{\text{Single-Level}} \propto \varepsilon^{-2} \times \varepsilon^{-\gamma/\alpha} = \varepsilon^{-2 - \gamma/\alpha}
 $$
 
-This is a disaster! The exponent is worse than our baseline of $-2$. We are paying a heavy "[discretization](@entry_id:145012) penalty." To get more accuracy, we need both an exponentially more expensive model *and* the usual $\varepsilon^{-2}$ number of samples. It seems we are stuck. Is there a more clever way?
+This is a disaster! The exponent is worse than our baseline of $-2$. We are paying a heavy "[discretization](@keyword=discretization|lang=en-US|style=Feynman) penalty." To get more accuracy, we need both an exponentially more expensive model *and* the usual $\varepsilon^{-2}$ number of samples. It seems we are stuck. Is there a more clever way?
 
 ### A Stroke of Genius: Divide and Conquer
 
-The Multilevel Monte Carlo (MLMC) method, pioneered by Mike Giles, is born from a simple but profound algebraic trick. Instead of trying to estimate the expectation of our finest model, $\mathbb{E}[P_L]$, directly, we can express it as a [telescoping sum](@entry_id:262349). Let $P_l$ be the output from our model at level of refinement $l$, where $l=0$ is the coarsest, cheapest model and $l=L$ is the finest, most expensive one. We can write:
+The Multilevel Monte Carlo (MLMC) method, pioneered by Mike Giles, is born from a simple but profound algebraic trick. Instead of trying to estimate the expectation of our finest model, $\mathbb{E}[P_L]$, directly, we can express it as a [telescoping sum](@keyword=telescoping_sum|lang=en-US|style=Feynman). Let $P_l$ be the output from our model at level of refinement $l$, where $l=0$ is the coarsest, cheapest model and $l=L$ is the finest, most expensive one. We can write:
 
 $$
 \mathbb{E}[P_L] = \mathbb{E}[P_0] + \mathbb{E}[P_1 - P_0] + \mathbb{E}[P_2 - P_1] + \dots + \mathbb{E}[P_L - P_{L-1}]
@@ -53,7 +53,7 @@ This is the idea behind **coupling** in MLMC. To estimate the expectation of the
 
 Because the models at level $l$ and $l-1$ are very similar discretizations of the same underlying system, and they are driven by the same random input, their outputs $P_l$ and $P_{l-1}$ will be very, very close to each other. Consequently, their difference, $Y_l = P_l - P_{l-1}$, will be a random variable with a very small mean *and* a very small variance.
 
-This is the heart of MLMC. The variance of the correction terms, $V_l = \mathbb{V}[P_l - P_{l-1}]$, decreases as the levels get finer. We can model this decay as $V_l \propto h_l^{\beta}$, where the exponent $\beta$ is a measure of the **[strong convergence](@entry_id:139495)** of the numerical method. If we didn't use coupling, the variance of the difference would be $\mathbb{V}[P_l] + \mathbb{V}[P_{l-1}]$, which approaches a constant. Without coupling, the magic vanishes, and the method fails to provide any advantage.
+This is the heart of MLMC. The variance of the correction terms, $V_l = \mathbb{V}[P_l - P_{l-1}]$, decreases as the levels get finer. We can model this decay as $V_l \propto h_l^{\beta}$, where the exponent $\beta$ is a measure of the **[strong convergence](@keyword=strong_convergence|lang=en-US|style=Feynman)** of the numerical method. If we didn't use coupling, the variance of the difference would be $\mathbb{V}[P_l] + \mathbb{V}[P_{l-1}]$, which approaches a constant. Without coupling, the magic vanishes, and the method fails to provide any advantage.
 
 ### An Economic Approach to Computation
 
@@ -83,7 +83,7 @@ We can now assemble the full picture. Our total error has two parts: the bias fr
 
 The final complexity depends on a battle between two exponents: $\beta$, which tells us how quickly variance decays, and $\gamma$, which tells us how quickly cost grows. The behavior of the sum $\sum \sqrt{V_l C_l} \propto \sum h_l^{(\beta-\gamma)/2}$ determines everything.
 
--   **The Ideal Case ($\beta > \gamma$):** The variance of the corrections drops off faster than the cost per sample grows. The sum $\sum \sqrt{V_l C_l}$ is dominated by the coarse levels and converges to a constant. The total work becomes $\boldsymbol{W \propto \varepsilon^{-2}}$. We have achieved the Monte Carlo holy grail! We get the same [asymptotic complexity](@entry_id:149092) as an ideal method with no discretization error, completely eliminating the penalty we saw in the single-level method. For example, for SDEs, the advanced Milstein scheme often gives $\beta=2$, while the cost per sample scales with $\gamma=1$. Since $2>1$, we are in this optimal regime.
+-   **The Ideal Case ($\beta > \gamma$):** The variance of the corrections drops off faster than the cost per sample grows. The sum $\sum \sqrt{V_l C_l}$ is dominated by the coarse levels and converges to a constant. The total work becomes $\boldsymbol{W \propto \varepsilon^{-2}}$. We have achieved the Monte Carlo holy grail! We get the same [asymptotic complexity](@keyword=asymptotic_complexity|lang=en-US|style=Feynman) as an ideal method with no discretization error, completely eliminating the penalty we saw in the single-level method. For example, for SDEs, the advanced Milstein scheme often gives $\beta=2$, while the cost per sample scales with $\gamma=1$. Since $2>1$, we are in this optimal regime.
 
 -   **The Boundary Case ($\beta = \gamma$):** Variance decay and cost growth are perfectly balanced. Every level contributes about the same to the work. The sum grows logarithmically with the number of levels, which in turn grows like $\log(\varepsilon^{-1})$. The total work becomes $\boldsymbol{W \propto \varepsilon^{-2} (\log \varepsilon)^2}$. This is extremely good, only slightly worse than the ideal case. The standard Euler-Maruyama scheme for SDEs often falls into this category, with $\beta=1$ and $\gamma=1$.
 

@@ -1,7 +1,7 @@
 ## 引言
-从一杯酒的“泪珠”到我们肺部每一次呼吸的稳定，[流体界面](@entry_id:197635)上悄然上演着一场由微观分子主导的力学之舞。这场舞蹈的主角，便是表面活性剂——一种能够显著改变[流体界面](@entry_id:197635)“个性”的神奇分子。当这些分子在界面上的分布不再均匀时，便会产生一股奇特而强大的力量，即[Marangoni应力](@entry_id:155106)，它能驱动液体产生肉眼可见的宏观流动。这种由表面张力梯度引起的现象，即[Marangoni效应](@entry_id:139975)，是众多自然奇观和工程难题背后的共同物理机制。然而，如何精确地描述和预测这些复杂的[界面动力学](@entry_id:1126605)行为，将界面的微观化学与体相的宏观流体力学联系起来，是[计算复杂流体](@entry_id:1122778)领域面临的一大核心挑战。
+从一杯酒的“泪珠”到我们肺部每一次呼吸的稳定，[流体界面](@keyword=fluid_interfaces|lang=zh-CN|style=Feynman)上悄然上演着一场由微观分子主导的力学之舞。这场舞蹈的主角，便是表面活性剂——一种能够显著改变[流体界面](@keyword=fluid_interfaces|lang=zh-CN|style=Feynman)“个性”的神奇分子。当这些分子在界面上的分布不再均匀时，便会产生一股奇特而强大的力量，即[Marangoni应力](@keyword=marangoni_stress|lang=zh-CN|style=Feynman)，它能驱动液体产生肉眼可见的宏观流动。这种由表面张力梯度引起的现象，即[Marangoni效应](@keyword=marangoni_effect|lang=zh-CN|style=Feynman)，是众多自然奇观和工程难题背后的共同物理机制。然而，如何精确地描述和预测这些复杂的[界面动力学](@keyword=interfacial_kinetics|lang=zh-CN|style=Feynman)行为，将界面的微观化学与体相的宏观流体力学联系起来，是[计算复杂流体](@keyword=computational_complex_fluids|lang=zh-CN|style=Feynman)领域面临的一大核心挑战。
 
-本文旨在为读者构建一个关于表面活性剂和[Marangoni应力](@entry_id:155106)建模的完整知识框架。在“原理与机制”一章中，我们将从表面张力的物理本质出发，深入探讨表面活性剂的[吸附理论](@entry_id:182864)、描述其行为的[状态方程](@entry_id:274378)，并最终推导出包含[Marangoni效应](@entry_id:139975)的完[整流](@entry_id:197363)[体力](@entry_id:174230)学边界条件。随后，在“应用与交叉学科联系”一章中，我们将走出理论的殿堂，探索Marangoni效应在烹饪物理、生物医学、气候科学及高科技制造等多个领域的具体体现，领略其惊人的普适性。最后，在“动手实践”部分，我们提供了一系列精心设计的问题，引导读者通过无量纲化、[渐近分析](@entry_id:1121160)等方法，亲手应用所学知识来分析和解决具体的[界面流](@entry_id:1126603)[体力](@entry_id:174230)学问题，从而将理论理解转化为实践能力。
+本文旨在为读者构建一个关于表面活性剂和[Marangoni应力](@keyword=marangoni_stress|lang=zh-CN|style=Feynman)建模的完整知识框架。在“原理与机制”一章中，我们将从表面张力的物理本质出发，深入探讨表面活性剂的[吸附理论](@keyword=adsorption_theory|lang=zh-CN|style=Feynman)、描述其行为的[状态方程](@keyword=state_equations|lang=zh-CN|style=Feynman)，并最终推导出包含[Marangoni效应](@keyword=marangoni_effect|lang=zh-CN|style=Feynman)的完[整流](@keyword=rectification|lang=zh-CN|style=Feynman)[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)学边界条件。随后，在“应用与交叉学科联系”一章中，我们将走出理论的殿堂，探索Marangoni效应在烹饪物理、生物医学、气候科学及高科技制造等多个领域的具体体现，领略其惊人的普适性。最后，在“动手实践”部分，我们提供了一系列精心设计的问题，引导读者通过无量纲化、[渐近分析](@keyword=asymptotics|lang=zh-CN|style=Feynman)等方法，亲手应用所学知识来分析和解决具体的[界面流](@keyword=interfacial_flow|lang=zh-CN|style=Feynman)[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)学问题，从而将理论理解转化为实践能力。
 
 ## 原理与机制
 
@@ -9,11 +9,11 @@
 
 ### 界面的“个性”：表面张力
 
-想象一下水面。它并非一条简单的数学[分界线](@entry_id:175112)，而是一个具有独特“个性”的物理区域。身处液体内部的水分子，被四面八方的同伴们吸引，受力均衡。但位于表面的水分子却是个例外——它们之上是稀疏的气体，之下是拥挤的同伴。这种不均衡的吸[引力](@entry_id:189550)使得表层分子被向内拉扯，整个液体表面仿佛一张绷紧的弹性薄膜，总是试[图收缩](@entry_id:266418)到最小的面积。为了创造新的表面，就必须克服这种向内的拉力做功。这种创造单位面积新界面所需的能量，我们称之为**表面张力 (surface tension)**，用希腊字母 $\gamma$ 表示。表面张力是界面的基本属性，是它一切行为的能量根源。
+想象一下水面。它并非一条简单的数学[分界线](@keyword=separatrix|lang=zh-CN|style=Feynman)，而是一个具有独特“个性”的物理区域。身处液体内部的水分子，被四面八方的同伴们吸引，受力均衡。但位于表面的水分子却是个例外——它们之上是稀疏的气体，之下是拥挤的同伴。这种不均衡的吸[引力](@keyword=gravitation|lang=zh-CN|style=Feynman)使得表层分子被向内拉扯，整个液体表面仿佛一张绷紧的弹性薄膜，总是试[图收缩](@keyword=graph_contraction|lang=zh-CN|style=Feynman)到最小的面积。为了创造新的表面，就必须克服这种向内的拉力做功。这种创造单位面积新界面所需的能量，我们称之为**表面张力 (surface tension)**，用希腊字母 $\gamma$ 表示。表面张力是界面的基本属性，是它一切行为的能量根源。
 
 ### 表面活性剂：界面的“闯入者”
 
-现在，让我们引入故事的主角：**表面活性剂 (surfactant)**。这些分子通常具有一个奇特的“双重性格”：它们拥有一个亲水（hydrophilic）的“头部”和一个疏水（hydrophobic）的“尾巴”。在水中，疏水的尾巴感觉格格不入，总想逃离水分子的包围。哪里是最好的去处呢？自然是水-气界面！在界面上，它们的疏水尾巴可以伸向空气，亲[水头](@entry_id:750444)部则留在水中，如鱼得水。
+现在，让我们引入故事的主角：**表面活性剂 (surfactant)**。这些分子通常具有一个奇特的“双重性格”：它们拥有一个亲水（hydrophilic）的“头部”和一个疏水（hydrophobic）的“尾巴”。在水中，疏水的尾巴感觉格格不入，总想逃离水分子的包围。哪里是最好的去处呢？自然是水-气界面！在界面上，它们的疏水尾巴可以伸向空气，亲[水头](@keyword=hydraulic_head|lang=zh-CN|style=Feynman)部则留在水中，如鱼得水。
 
 这种自发地在界面富集的行为，我们称之为**吸附 (adsorption)**。表面活性剂就像一群不喜欢呆在拥挤“城市”（液体内部）而涌向开阔“郊区”（界面）的居民。它们的存在，极大地改变了界面的“个性”。
 
@@ -21,78 +21,78 @@
 
 物理学家如何精确描述界面上到底“多”了多少表面活性剂分子呢？真实世界里，从液体到气体的过渡是连续的。为了建立一个简洁的模型，物理学家 Josiah Willard Gibbs 提出了一个绝妙的“会计”思想。
 
-想象一下，我们用一个理想化的数学平面——**吉布斯划分界面 (Gibbs dividing surface)**——来取代真实的、模糊的界面区域 。在这个模型世界里，界面两侧是两个均匀延伸至此平面的纯粹体相（液体和气体）。现在，我们来盘点体系中表面活性剂分子的总数。这个总数与我们模型世界中两个体相所包含的分子数之差，就是被“归功于”界面的**[表面过剩](@entry_id:176410)浓度 (surface excess concentration)**，记为 $\Gamma$。
+想象一下，我们用一个理想化的数学平面——**吉布斯划分界面 (Gibbs dividing surface)**——来取代真实的、模糊的界面区域 [@problem_id:4095827]。在这个模型世界里，界面两侧是两个均匀延伸至此平面的纯粹体相（液体和气体）。现在，我们来盘点体系中表面活性剂分子的总数。这个总数与我们模型世界中两个体相所包含的分子数之差，就是被“归功于”界面的**[表面过剩](@keyword=surface_excess|lang=zh-CN|style=Feynman)浓度 (surface excess concentration)**，记为 $\Gamma$。
 
-这个划分界面的位置是我们任意选择的！这听起来可能有点令人不安：如果我们移动划分界面的位置，$\Gamma$ 的数值也会随之改变。这难道意味着我们的理论是建立在随意的基础之上吗？恰恰相反，这正是该理论的巧妙之处。物理定律的深刻之处在于，所有可测量的物理量，比如表面张力的变化，都**不依赖于**我们选择划分界面的方式 。就像无论你如何划分账目，公司的总资产和总负债是不变的一样。一种常见的约定是，我们巧妙地选择划分界面的位置，使得溶剂（比如水）的[表面过剩](@entry_id:176410)恰好为零。这样，我们就可以唯一地确定表面活性剂的[表面过剩](@entry_id:176410)浓度 $\Gamma_s$。这个 $\Gamma_s$ 虽然只是一个特定约定下的数值，但它成为了连接宏观表面张力和微观吸附的关键桥梁。
+这个划分界面的位置是我们任意选择的！这听起来可能有点令人不安：如果我们移动划分界面的位置，$\Gamma$ 的数值也会随之改变。这难道意味着我们的理论是建立在随意的基础之上吗？恰恰相反，这正是该理论的巧妙之处。物理定律的深刻之处在于，所有可测量的物理量，比如表面张力的变化，都**不依赖于**我们选择划分界面的方式 [@problem_id:4095807]。就像无论你如何划分账目，公司的总资产和总负债是不变的一样。一种常见的约定是，我们巧妙地选择划分界面的位置，使得溶剂（比如水）的[表面过剩](@keyword=surface_excess|lang=zh-CN|style=Feynman)恰好为零。这样，我们就可以唯一地确定表面活性剂的[表面过剩](@keyword=surface_excess|lang=zh-CN|style=Feynman)浓度 $\Gamma_s$。这个 $\Gamma_s$ 虽然只是一个特定约定下的数值，但它成为了连接宏观表面张力和微观吸附的关键桥梁。
 
 ### 表面定律：张力与浓度的关系式
 
-表面活性剂的富集，是如何影响表面张力 $\gamma$ 的呢？直观地想，表面活性剂分子挤在界面上，削弱了溶剂分子间的相互作用，从而降低了维持界面所需的能量。因此，$\Gamma$ 越大，$\gamma$ 越小。这种关系可以用一个优美的[热力学](@entry_id:172368)方程——**[吉布斯吸附方程](@entry_id:200063) (Gibbs adsorption equation)**——来精确描述。
+表面活性剂的富集，是如何影响表面张力 $\gamma$ 的呢？直观地想，表面活性剂分子挤在界面上，削弱了溶剂分子间的相互作用，从而降低了维持界面所需的能量。因此，$\Gamma$ 越大，$\gamma$ 越小。这种关系可以用一个优美的[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)方程——**[吉布斯吸附方程](@keyword=gibbs_adsorption_equation|lang=zh-CN|style=Feynman) (Gibbs adsorption equation)**——来精确描述。
 
-对于一个理想的稀溶液，这个方程告诉我们表面张力的变化与[表面过剩](@entry_id:176410)浓度成正比。更进一步，我们可以建立描述表面张力与浓度关系的**状态方程 (equation of state, EoS)**。
+对于一个理想的稀溶液，这个方程告诉我们表面张力的变化与[表面过剩](@keyword=surface_excess|lang=zh-CN|style=Feynman)浓度成正比。更进一步，我们可以建立描述表面张力与浓度关系的**状态方程 (equation of state, EoS)**。
 
-*   **理想二维气体模型**：在极稀疏的情况下，吸附在界面上的表面活性剂分子相距甚远，互不干扰，就像理想气体一样。此时，它们对表面张力的降低（即**[表面压](@entry_id:152856) (surface pressure)** $\Pi = \gamma_0 - \gamma$，其中 $\gamma_0$ 是纯溶剂的表面张力）与浓度成正比：$\Pi = RT\Gamma$ 。
+*   **理想二维气体模型**：在极稀疏的情况下，吸附在界面上的表面活性剂分子相距甚远，互不干扰，就像理想气体一样。此时，它们对表面张力的降低（即**[表面压](@keyword=surface_pressure|lang=zh-CN|style=Feynman) (surface pressure)** $\Pi = \gamma_0 - \gamma$，其中 $\gamma_0$ 是纯溶剂的表面张力）与浓度成正比：$\Pi = RT\Gamma$ [@problem_id:4095784]。
 
-*   **[朗缪尔模型](@entry_id:158025) (Langmuir Model)**：当浓度增加，我们必须考虑分子的**有限尺寸**。界面上的“空间”是有限的，当吸附接近饱和（达到最大吸附量 $\Gamma_\infty$）时，[表面压](@entry_id:152856)会急剧增大。[朗缪尔模型](@entry_id:158025)完美地捕捉了这一效应 。
+*   **[朗缪尔模型](@keyword=langmuir_model|lang=zh-CN|style=Feynman) (Langmuir Model)**：当浓度增加，我们必须考虑分子的**有限尺寸**。界面上的“空间”是有限的，当吸附接近饱和（达到最大吸附量 $\Gamma_\infty$）时，[表面压](@keyword=surface_pressure|lang=zh-CN|style=Feynman)会急剧增大。[朗缪尔模型](@keyword=langmuir_model|lang=zh-CN|style=Feynman)完美地捕捉了这一效应 [@problem_id:4095837]。
 
-将[吉布斯吸附方程](@entry_id:200063)与[朗缪尔吸附](@entry_id:152394)模型相结合，通过简单的积分，我们就能得到一个著名的关系式——**Szyszkowski方程**：
+将[吉布斯吸附方程](@keyword=gibbs_adsorption_equation|lang=zh-CN|style=Feynman)与[朗缪尔吸附](@keyword=langmuir_adsorption|lang=zh-CN|style=Feynman)模型相结合，通过简单的积分，我们就能得到一个著名的关系式——**Szyszkowski方程**：
 $$
 \gamma(c) = \gamma_0 - RT\Gamma_\infty \ln(1+Kc)
 $$
-这里的 $c$ 是表面活性剂在液体中的体相浓度，$K$ 是一个与吸附平衡相关的常数。这个方程优雅地将宏观可测的表面张力 $\gamma$ 与体相浓度 $c$ 联系起来，是理论与简单分子模型珠联璧合的典范 。如果我们再考虑分子间的相互作用（吸引或排斥），就可以得到更复杂的模型，如**Frumkin模型**。
+这里的 $c$ 是表面活性剂在液体中的体相浓度，$K$ 是一个与吸附平衡相关的常数。这个方程优雅地将宏观可测的表面张力 $\gamma$ 与体相浓度 $c$ 联系起来，是理论与简单分子模型珠联璧合的典范 [@problem_id:4095837]。如果我们再考虑分子间的相互作用（吸引或排斥），就可以得到更复杂的模型，如**Frumkin模型**。
 
-### 一股新力的诞生：[Marangoni效应](@entry_id:139975)
+### 一股新力的诞生：[Marangoni效应](@keyword=marangoni_effect|lang=zh-CN|style=Feynman)
 
-至此，我们讨论的都是[平衡态](@entry_id:270364)。当界面上的表面活性剂浓度**不均匀**时，真正奇妙的事情发生了。如果界面某处的 $\Gamma$ 较高，则该处的 $\gamma$ 就较低；反之亦然。这种表面张力的空间差异，就像一张弹性膜上各处的张力不同，会产生一个实实在在的切向力，试图将界面物质从低张力区（高$\Gamma$区）拉向高张力区（低$\Gamma$区）。这股由[表面张力梯度](@entry_id:156138)驱动的力，就是**[Marangoni应力](@entry_id:155106) (Marangoni stress)**。
+至此，我们讨论的都是[平衡态](@keyword=equilibrium_state|lang=zh-CN|style=Feynman)。当界面上的表面活性剂浓度**不均匀**时，真正奇妙的事情发生了。如果界面某处的 $\Gamma$ 较高，则该处的 $\gamma$ 就较低；反之亦然。这种表面张力的空间差异，就像一张弹性膜上各处的张力不同，会产生一个实实在在的切向力，试图将界面物质从低张力区（高$\Gamma$区）拉向高张力区（低$\Gamma$区）。这股由[表面张力梯度](@keyword=surface_tension_gradient|lang=zh-CN|style=Feynman)驱动的力，就是**[Marangoni应力](@keyword=marangoni_stress|lang=zh-CN|style=Feynman) (Marangoni stress)**。
 
-想象一个平坦的液面，其温度并非均匀。通常，液体的表面张力随温度升高而降低。因此，较热的区域表面张力较低，较冷的区域表面张力较高。[Marangoni效应](@entry_id:139975)会驱动液体从热点流向冷点，这种现象被称为**[热毛细对流](@entry_id:276209) (thermocapillary convection)** 。
+想象一个平坦的液面，其温度并非均匀。通常，液体的表面张力随温度升高而降低。因此，较热的区域表面张力较低，较冷的区域表面张力较高。[Marangoni效应](@keyword=marangoni_effect|lang=zh-CN|style=Feynman)会驱动液体从热点流向冷点，这种现象被称为**[热毛细对流](@keyword=thermocapillary_convection|lang=zh-CN|style=Feynman) (thermocapillary convection)** [@problem_id:4095788]。
 
-同样，界面上表面活性剂浓度的梯度 $\nabla_s \Gamma$ 会直接导致表面张力梯度 $\nabla_s \gamma$，从而产生[Marangoni应力](@entry_id:155106)，驱动**溶质毛细对流 (solutocapillary convection)**。
+同样，界面上表面活性剂浓度的梯度 $\nabla_s \Gamma$ 会直接导致表面张力梯度 $\nabla_s \gamma$，从而产生[Marangoni应力](@keyword=marangoni_stress|lang=zh-CN|style=Feynman)，驱动**溶质毛细对流 (solutocapillary convection)**。
 
 ### 完整图景：界面上的力学平衡
 
-这股诞生于界面的[Marangoni应力](@entry_id:155106)，如何与周围的流体相互作用呢？我们需要建立界面上的完整力学边界条件 。想象一个横跨界面的、极薄的“药盒”区域。根据[牛顿第二定律](@entry_id:274217)（在忽略界面自身惯性的情况下），所有作用在这个区域上的力必须平衡。
+这股诞生于界面的[Marangoni应力](@keyword=marangoni_stress|lang=zh-CN|style=Feynman)，如何与周围的流体相互作用呢？我们需要建立界面上的完整力学边界条件 [@problem_id:4095774]。想象一个横跨界面的、极薄的“药盒”区域。根据[牛顿第二定律](@keyword=newton_s_second_law|lang=zh-CN|style=Feynman)（在忽略界面自身惯性的情况下），所有作用在这个区域上的力必须平衡。
 
-这些力包括来自界面两侧流体的压力和[粘性力](@entry_id:263294)，以及界面内部的表面张力。通过严谨的推导，我们得到一个矢量方程，它描述了界面两侧流体作用于界面的总牵[引力](@entry_id:189550)（traction）跳跃，必须由界面内的力来平衡：
+这些力包括来自界面两侧流体的压力和[粘性力](@keyword=viscous_forces|lang=zh-CN|style=Feynman)，以及界面内部的表面张力。通过严谨的推导，我们得到一个矢量方程，它描述了界面两侧流体作用于界面的总牵[引力](@keyword=gravitation|lang=zh-CN|style=Feynman)（traction）跳跃，必须由界面内的力来平衡：
 $$
 (\boldsymbol{\sigma}^+ - \boldsymbol{\sigma}^-)\cdot \boldsymbol{n} = \gamma\kappa\boldsymbol{n} + \nabla_s \gamma
 $$
-其中 $\boldsymbol{\sigma}^\pm$ 是两侧流体的[应力张量](@entry_id:148973)，$\boldsymbol{n}$ 是界面的[单位法向量](@entry_id:178851)，$\kappa$ 是界面的曲率。
+其中 $\boldsymbol{\sigma}^\pm$ 是两侧流体的[应力张量](@keyword=stress_tensor|lang=zh-CN|style=Feynman)，$\boldsymbol{n}$ 是界面的[单位法向量](@keyword=unit_normal_vector|lang=zh-CN|style=Feynman)，$\kappa$ 是界面的曲率。
 
 这个方程可以分解为两个方向：
 
 *   **法向 (Normal direction)**：法向分量给出了著名的**杨-拉普拉斯方程 (Young-Laplace equation)**。它表明，跨越弯曲界面的压力差由表面张力和曲率决定。
 
-*   **切向 (Tangential direction)**：切向分量正是我们关注的**Marangoni边界条件**。它表明，界面两侧流体施加的切向[粘性应力](@entry_id:261328)跳跃，必须与[Marangoni应力](@entry_id:155106) $\nabla_s \gamma$ 相平衡。正是这个条件，将表面的[热力学](@entry_id:172368)（通过 $\gamma(\Gamma)$）与体相的流体动力学（通过[粘性应力](@entry_id:261328)）紧密地耦合在一起。
+*   **切向 (Tangential direction)**：切向分量正是我们关注的**Marangoni边界条件**。它表明，界面两侧流体施加的切向[粘性应力](@keyword=viscous_stress|lang=zh-CN|style=Feynman)跳跃，必须与[Marangoni应力](@keyword=marangoni_stress|lang=zh-CN|style=Feynman) $\nabla_s \gamma$ 相平衡。正是这个条件，将表面的[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)（通过 $\gamma(\Gamma)$）与体相的流体动力学（通过[粘性应力](@keyword=viscous_stress|lang=zh-CN|style=Feynman)）紧密地耦合在一起。
 
-此外，我们通常假设在流体-[流体界面](@entry_id:197635)上速度是连续的，即**[无滑移条件](@entry_id:275670) (no-slip condition)** 。
+此外，我们通常假设在流体-[流体界面](@keyword=fluid_interfaces|lang=zh-CN|style=Feynman)上速度是连续的，即**[无滑移条件](@keyword=no_slip_condition|lang=zh-CN|style=Feynman) (no-slip condition)** [@problem_id:4095774]。
 
 ### 动态与反馈：一个自调节的系统
 
-现在，我们拥有了所有的拼图：表面活性剂如何影响表面张力，表面张力梯度如何产生[Marangoni应力](@entry_id:155106)，以及[Marangoni应力](@entry_id:155106)如何与流体[流动相](@entry_id:197006)互作用。让我们看看它们组合在一起时，会产生怎样有趣的动态行为。
+现在，我们拥有了所有的拼图：表面活性剂如何影响表面张力，表面张力梯度如何产生[Marangoni应力](@keyword=marangoni_stress|lang=zh-CN|style=Feynman)，以及[Marangoni应力](@keyword=marangoni_stress|lang=zh-CN|style=Feynman)如何与流体[流动相](@keyword=mobile_phase|lang=zh-CN|style=Feynman)互作用。让我们看看它们组合在一起时，会产生怎样有趣的动态行为。
 
-首先，我们需要一个描述表面浓度 $\Gamma$ 如何随时间演化的方程——**表面[输运方程](@entry_id:174281) (surface transport equation)** 。这个方程本质上是一个质量守恒定律，它告诉我们 $\Gamma$ 的变化来源于几个方面：
+首先，我们需要一个描述表面浓度 $\Gamma$ 如何随时间演化的方程——**表面[输运方程](@keyword=transport_equation|lang=zh-CN|style=Feynman) (surface transport equation)** [@problem_id:4095818]。这个方程本质上是一个质量守恒定律，它告诉我们 $\Gamma$ 的变化来源于几个方面：
 1.  **对流 (Convection)**：被界面自身的流动 $\mathbf{u}_s$ “带着走”。
 2.  **拉伸 (Dilution/Concentration)**：因界面的拉伸或压缩而被稀释或浓缩。
 3.  **扩散 (Diffusion)**：分子在界面上自发的随机运动。
-4.  **吸附/[脱附](@entry_id:186847) (Adsorption/Desorption)**：对于**[可溶性](@entry_id:147610)表面活性剂**，还存在与体相之间的分子交换 。
+4.  **吸附/[脱附](@keyword=desorption|lang=zh-CN|style=Feynman) (Adsorption/Desorption)**：对于**[可溶性](@keyword=solubility|lang=zh-CN|style=Feynman)表面活性剂**，还存在与体相之间的分子交换 [@problem_id:4095836]。
 
-现在，考虑一个绝妙的负反馈例子 。想象在一个简单的[剪切流](@entry_id:266817)场中，流体带动[界面运动](@entry_id:1126592)。这种运动会把表面活性剂分子从上游“扫”到下游，从而在上游形成一个低浓度区，在下游形成一个高浓度区。这个浓度梯度随即产生一个[Marangoni应力](@entry_id:155106)，其方向与原始流动方向相反！这股[Marangoni应力](@entry_id:155106)会抵抗并减缓[界面流](@entry_id:1126603)动。在某些情况下，它甚至可以完全平衡驱动流动的[粘性力](@entry_id:263294)，使得界面的一部分变得“固定”不动，仿佛一层[凝固](@entry_id:156052)的薄膜。这种由表面活性剂引起的界面“硬化”效应，是许多[复杂流体](@entry_id:198415)现象背后的关键机制。
+现在，考虑一个绝妙的负反馈例子 [@problem_id:4095832]。想象在一个简单的[剪切流](@keyword=shear_flow|lang=zh-CN|style=Feynman)场中，流体带动[界面运动](@keyword=interface_motion|lang=zh-CN|style=Feynman)。这种运动会把表面活性剂分子从上游“扫”到下游，从而在上游形成一个低浓度区，在下游形成一个高浓度区。这个浓度梯度随即产生一个[Marangoni应力](@keyword=marangoni_stress|lang=zh-CN|style=Feynman)，其方向与原始流动方向相反！这股[Marangoni应力](@keyword=marangoni_stress|lang=zh-CN|style=Feynman)会抵抗并减缓[界面流](@keyword=interfacial_flow|lang=zh-CN|style=Feynman)动。在某些情况下，它甚至可以完全平衡驱动流动的[粘性力](@keyword=viscous_forces|lang=zh-CN|style=Feynman)，使得界面的一部分变得“固定”不动，仿佛一层[凝固](@keyword=solidification|lang=zh-CN|style=Feynman)的薄膜。这种由表面活性剂引起的界面“硬化”效应，是许多[复杂流体](@keyword=complex_fluids|lang=zh-CN|style=Feynman)现象背后的关键机制。
 
 ### 超越基础：界面的粘性
 
 到目前为止，我们都假设界面本身像理想的弹性膜。但实际上，富含表面活性剂的界面本身也可能具有粘性，就像水面上的一层蜂蜜。这意味着，当界面被剪切或拉伸时，它内部也会产生耗散应力，抵抗这种形变。
 
-描述这种行为的理论是**Boussinesq-Scriven本构律** 。它引入了两个新的材料参数：**表面剪切粘度 (surface shear viscosity)** $\eta_s$ 和**表面[拉伸粘度](@entry_id:1124791) (surface dilatational viscosity)** $\kappa_s$。这些表面粘性应力会与[Marangoni应力](@entry_id:155106)以及来自体相的[粘性应力](@entry_id:261328)共同决定界面的动态行为。在某些体系中，例如紧密堆积的蛋白质膜，表面粘性效应可能占据主导地位。
+描述这种行为的理论是**Boussinesq-Scriven本构律** [@problem_id:4095813]。它引入了两个新的材料参数：**表面剪切粘度 (surface shear viscosity)** $\eta_s$ 和**表面[拉伸粘度](@keyword=extensional_viscosity|lang=zh-CN|style=Feynman) (surface dilatational viscosity)** $\kappa_s$。这些表面粘性应力会与[Marangoni应力](@keyword=marangoni_stress|lang=zh-CN|style=Feynman)以及来自体相的[粘性应力](@keyword=viscous_stress|lang=zh-CN|style=Feynman)共同决定界面的动态行为。在某些体系中，例如紧密堆积的蛋白质膜，表面粘性效应可能占据主导地位。
 
 ### 地图的边缘：连续介质模型的局限
 
-我们建立的这套基于连续介质场的模型非常强大，但它并非万能。在结束本章之前，我们必须谦逊地认识到它的局限性 。
+我们建立的这套基于连续介质场的模型非常强大，但它并非万能。在结束本章之前，我们必须谦逊地认识到它的局限性 [@problem_id:4095784]。
 
-*   **当分子细节很重要时**：如果界面本身存在微观尺度上的不均匀性（例如，具有纳米图案的基底），或者我们关心的问题尺度接近[分子大小](@entry_id:752128)时，将浓度和表面张力视为平滑的连续场就失去了意义。此时，我们需要求助于[分子动力学模拟](@entry_id:160737)或[格子气模型](@entry_id:141303)等离散方法。
+*   **当分子细节很重要时**：如果界面本身存在微观尺度上的不均匀性（例如，具有纳米图案的基底），或者我们关心的问题尺度接近[分子大小](@keyword=molecular_size|lang=zh-CN|style=Feynman)时，将浓度和表面张力视为平滑的连续场就失去了意义。此时，我们需要求助于[分子动力学模拟](@keyword=molecular_dynamics_simulations|lang=zh-CN|style=Feynman)或[格子气模型](@keyword=lattice_gas_model_2|lang=zh-CN|style=Feynman)等离散方法。
 
-*   **当相互作用很强时**：如果表面活性剂分子间存在强烈的吸[引力](@entry_id:189550)，它们可能会在界面上发生**相分离**，形成富集区（“液滴”）和稀疏区（“气体”）。描述这种现象需要更高级的理论，如基于**Cahn-Hilliard**方程的相场模型。
+*   **当相互作用很强时**：如果表面活性剂分子间存在强烈的吸[引力](@keyword=gravitation|lang=zh-CN|style=Feynman)，它们可能会在界面上发生**相分离**，形成富集区（“液滴”）和稀疏区（“气体”）。描述这种现象需要更高级的理论，如基于**Cahn-Hilliard**方程的相场模型。
 
-*   **当“纯净”界面本身不均匀时**：我们通常假设纯溶剂的表面张力 $\gamma_0$ 是一个常数。但如果界面下的基底本身具有不均匀的化学性质，那么“裸露”界面的表面张力 $\gamma_b$ 本身就可能是一个空间函数 $\gamma_b(\mathbf{x}_s)$。在这种情况下，即使表面活性剂浓度完全均匀，$\gamma_b$ 的梯度也会产生[Marangoni流](@entry_id:261131)。我们的标准模型忽略了这种可能性 。
+*   **当“纯净”界面本身不均匀时**：我们通常假设纯溶剂的表面张力 $\gamma_0$ 是一个常数。但如果界面下的基底本身具有不均匀的化学性质，那么“裸露”界面的表面张力 $\gamma_b$ 本身就可能是一个空间函数 $\gamma_b(\mathbf{x}_s)$。在这种情况下，即使表面活性剂浓度完全均匀，$\gamma_b$ 的梯度也会产生[Marangoni流](@keyword=marangoni_flow|lang=zh-CN|style=Feynman)。我们的标准模型忽略了这种可能性 [@problem_id:4095784]。
 
-认识到这些局限性不仅无损于我们模型的优美，反而为我们指明了通向更深层次理解的道路，那里是当前[计算复杂流体](@entry_id:1122778)研究的前沿阵地。
+认识到这些局限性不仅无损于我们模型的优美，反而为我们指明了通向更深层次理解的道路，那里是当前[计算复杂流体](@keyword=computational_complex_fluids|lang=zh-CN|style=Feynman)研究的前沿阵地。

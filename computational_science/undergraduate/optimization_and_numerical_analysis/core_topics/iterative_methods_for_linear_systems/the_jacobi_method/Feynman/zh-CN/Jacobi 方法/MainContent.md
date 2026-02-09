@@ -1,15 +1,15 @@
 ## 引言
-在[科学计算](@article_id:304417)和工程设计的广阔领域中，求解大规模[线性方程组](@article_id:309362) $A\mathbf{x} = \mathbf{b}$ 是一项基础且无处不在的任务。从模拟天气变化到分析复杂的社会网络，这些方程组的解构成了我们理解和操控世界的关键。然而，当系统规模变得异常庞大时，诸如高斯消元法之类的直接求解方法会因其巨大的[计算成本](@article_id:308397)和内存需求而变得力不从心。这一挑战催生了一类更为灵活、高效的策略——迭代法。
+在[科学计算](@keyword=scientific_computing|lang=zh-CN|style=Feynman)和工程设计的广阔领域中，求解大规模[线性方程组](@keyword=systems_of_linear_equations|lang=zh-CN|style=Feynman) $A\mathbf{x} = \mathbf{b}$ 是一项基础且无处不在的任务。从模拟天气变化到分析复杂的社会网络，这些方程组的解构成了我们理解和操控世界的关键。然而，当系统规模变得异常庞大时，诸如高斯消元法之类的直接求解方法会因其巨大的[计算成本](@keyword=computational_cost|lang=zh-CN|style=Feynman)和内存需求而变得力不从心。这一挑战催生了一类更为灵活、高效的策略——迭代法。
 
-本文将聚焦于迭代法家族中最经典、最直观的成员：[雅可比方法](@article_id:334645)。我们将分步深入探索这一[算法](@article_id:331821)的奥秘。首先，在“原理与机制”一章中，我们将揭示其简单的迭代思想如何演化为严谨的[矩阵理论](@article_id:364216)，并探讨其收敛性的核心——[谱半径](@article_id:299432)。接着，在“应用与跨学科连接”一章中，我们将跨越学科边界，见证[雅可比方法](@article_id:334645)如何模拟物理世界的松弛过程、赋能[大规模并行计算](@article_id:331885)，并与优化理论、数据科学等领域产生深刻共鸣。现在，让我们从[雅可比方法](@article_id:334645)的核心思想开始，踏上这段探索之旅。
+本文将聚焦于迭代法家族中最经典、最直观的成员：[雅可比方法](@keyword=jacobian_method|lang=zh-CN|style=Feynman)。我们将分步深入探索这一[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的奥秘。首先，在“原理与机制”一章中，我们将揭示其简单的迭代思想如何演化为严谨的[矩阵理论](@keyword=matrix_theory|lang=zh-CN|style=Feynman)，并探讨其收敛性的核心——[谱半径](@keyword=spectral_radius|lang=zh-CN|style=Feynman)。接着，在“应用与跨学科连接”一章中，我们将跨越学科边界，见证[雅可比方法](@keyword=jacobian_method|lang=zh-CN|style=Feynman)如何模拟物理世界的松弛过程、赋能[大规模并行计算](@keyword=massively_parallel_computation|lang=zh-CN|style=Feynman)，并与优化理论、数据科学等领域产生深刻共鸣。现在，让我们从[雅可比方法](@keyword=jacobian_method|lang=zh-CN|style=Feynman)的核心思想开始，踏上这段探索之旅。
 
 ## 原理与机制
 
-在引言中，我们了解了求解大规模[线性方程组](@article_id:309362)的挑战，并初次见到了[雅可比方法](@article_id:334645)，一种看似朴素却威力无穷的迭代策略。现在，让我们像物理学家研究自然法则一样，深入其内部，探寻其运行的原理和机制。这一切的起点，是一个美妙而直观的想法。
+在引言中，我们了解了求解大规模[线性方程组](@keyword=systems_of_linear_equations|lang=zh-CN|style=Feynman)的挑战，并初次见到了[雅可比方法](@keyword=jacobian_method|lang=zh-CN|style=Feynman)，一种看似朴素却威力无穷的迭代策略。现在，让我们像物理学家研究自然法则一样，深入其内部，探寻其运行的原理和机制。这一切的起点，是一个美妙而直观的想法。
 
 ### 迭代：一场变量之间的“对话”
 
-想象一个庞大的方程组 $A\mathbf{x} = \mathbf{b}$。直接、暴力地求解它（例如通过[高斯消元法](@article_id:302182)），就像试图一次性解开一个巨大而复杂的绳结，对于大型问题，这可能非常缓慢且繁琐。[雅可比方法](@article_id:334645)则另辟蹊径，它将求解过程变成了一场所有未知数 $x_1, x_2, \dots, x_n$ 参与的“集体对话”。
+想象一个庞大的方程组 $A\mathbf{x} = \mathbf{b}$。直接、暴力地求解它（例如通过[高斯消元法](@keyword=gaussian_elimination|lang=zh-CN|style=Feynman)），就像试图一次性解开一个巨大而复杂的绳结，对于大型问题，这可能非常缓慢且繁琐。[雅可比方法](@keyword=jacobian_method|lang=zh-CN|style=Feynman)则另辟蹊径，它将求解过程变成了一场所有未知数 $x_1, x_2, \dots, x_n$ 参与的“集体对话”。
 
 这个“对话”的规则非常简单。对于第 $i$ 个方程：
 $ a_{i1}x_1 + a_{i2}x_2 + \dots + a_{ii}x_i + \dots + a_{in}x_n = b_i $
@@ -21,17 +21,17 @@ $ a_{ii}x_i = b_i - (a_{i1}x_1 + \dots + a_{i,i-1}x_{i-1} + a_{i,i+1}x_{i+1} + \
 
 $$ x_i^{(k+1)} = \frac{1}{a_{ii}} \left( b_i - \sum_{j=1, j \neq i}^{n} a_{ij} x_j^{(k)} \right) $$
 
-这个公式告诉了我们一些非常重要的信息。首先，为了让这个计算能够进行，分母 $a_{ii}$ 显然不能为零 。这就像对话中，每个变量 $x_i$ 都必须有一个“代言人” $a_{ii}$ 来表达自己的立场；如果代言人缺席，对话就无法进行了。
+这个公式告诉了我们一些非常重要的信息。首先，为了让这个计算能够进行，分母 $a_{ii}$ 显然不能为零 [@problem_id:1396111]。这就像对话中，每个变量 $x_i$ 都必须有一个“代言人” $a_{ii}$ 来表达自己的立场；如果代言人缺席，对话就无法进行了。
 
-其次，也是[雅可比方法](@article_id:334645)最核心的特点：请注意看右边[求和符号](@article_id:328108)里的 $x_j^{(k)}$。在计算第 $k+1$ 轮的任何一个新分量 $x_i^{(k+1)}$ 时，我们只用到了第 $k$ 轮的旧值。这意味着，计算 $x_1^{(k+1)}, x_2^{(k+1)}, \dots, x_n^{(k+1)}$ 的过程是完全[相互独立](@article_id:337365)的！
+其次，也是[雅可比方法](@keyword=jacobian_method|lang=zh-CN|style=Feynman)最核心的特点：请注意看右边[求和符号](@keyword=sigma_notation|lang=zh-CN|style=Feynman)里的 $x_j^{(k)}$。在计算第 $k+1$ 轮的任何一个新分量 $x_i^{(k+1)}$ 时，我们只用到了第 $k$ 轮的旧值。这意味着，计算 $x_1^{(k+1)}, x_2^{(k+1)}, \dots, x_n^{(k+1)}$ 的过程是完全[相互独立](@keyword=mutual_independence|lang=zh-CN|style=Feynman)的！[@problem_id:1396157]
 
-这有什么好处呢？这意味着我们可以把这 $n$ 个计算任务分配给 $n$ 个独立的处理器，让它们同时进行。这就像一个团队项目，[雅可比方法](@article_id:334645)是项目经理把任务分配下去，所有成员根据“昨天”的项目状态各自独立工作，然后在一天结束时汇总成果。而其他一些方法（如[高斯-赛德尔法](@article_id:306149)）则更像一条[流水线](@article_id:346477)，后一个工序必须等待前一个工序完成。在今天这个追求并行计算的时代，[雅可比方法](@article_id:334645)的这种天性使其具有巨大的吸引力。
+这有什么好处呢？这意味着我们可以把这 $n$ 个计算任务分配给 $n$ 个独立的处理器，让它们同时进行。这就像一个团队项目，[雅可比方法](@keyword=jacobian_method|lang=zh-CN|style=Feynman)是项目经理把任务分配下去，所有成员根据“昨天”的项目状态各自独立工作，然后在一天结束时汇总成果。而其他一些方法（如[高斯-赛德尔法](@keyword=gauss_seidel_method|lang=zh-CN|style=Feynman)）则更像一条[流水线](@keyword=pipelining|lang=zh-CN|style=Feynman)，后一个工序必须等待前一个工序完成。在今天这个追求并行计算的时代，[雅可比方法](@keyword=jacobian_method|lang=zh-CN|style=Feynman)的这种天性使其具有巨大的吸引力。
 
-这个过程，从一个初始猜测出发，通过一系列的迭代更新，产生一个解的序列 $\mathbf{x}^{(0)}, \mathbf{x}^{(1)}, \mathbf{x}^{(2)}, \dots$，正是“迭代法”这个名字的由来 。但一个更深刻的问题随之而来：这场“对话”会达成共识吗？也就是说，这个序列会收敛到真正的解 $\mathbf{x}$ 吗？
+这个过程，从一个初始猜测出发，通过一系列的迭代更新，产生一个解的序列 $\mathbf{x}^{(0)}, \mathbf{x}^{(1)}, \mathbf{x}^{(2)}, \dots$，正是“迭代法”这个名字的由来 [@problem_id:1396143]。但一个更深刻的问题随之而来：这场“对话”会达成共识吗？也就是说，这个序列会收敛到真正的解 $\mathbf{x}$ 吗？
 
 ### 收敛之舞：误差的演化
 
-为了回答这个问题，我们需要一种更强大的语言——矩阵。让我们把系数矩阵 $A$ 分解成三个部分：[对角矩阵](@article_id:642074) $D$、严格下三角部分 $L$ 和严格上三角部分 $U$。这样 $A = D+L+U$。
+为了回答这个问题，我们需要一种更强大的语言——矩阵。让我们把系数矩阵 $A$ 分解成三个部分：[对角矩阵](@keyword=diagonal_matrix|lang=zh-CN|style=Feynman) $D$、严格下三角部分 $L$ 和严格上三角部分 $U$。这样 $A = D+L+U$。
 
 - $D$ 只包含 $A$ 的对角线元素。
 - $L$ 只包含 $A$ 主对角线下方的元素。
@@ -41,21 +41,21 @@ $$ x_i^{(k+1)} = \frac{1}{a_{ii}} \left( b_i - \sum_{j=1, j \neq i}^{n} a_{ij} x
 
 $ D\mathbf{x} = \mathbf{b} - (L+U)\mathbf{x} $
 
-[雅可比方法](@article_id:334645)的迭代规则，在矩阵语言下就清晰地显现出来了：用旧的解 $\mathbf{x}^{(k)}$ 来计算右边，得到新的解 $\mathbf{x}^{(k+1)}$：
+[雅可比方法](@keyword=jacobian_method|lang=zh-CN|style=Feynman)的迭代规则，在矩阵语言下就清晰地显现出来了：用旧的解 $\mathbf{x}^{(k)}$ 来计算右边，得到新的解 $\mathbf{x}^{(k+1)}$：
 
 $ D\mathbf{x}^{(k+1)} = \mathbf{b} - (L+U)\mathbf{x}^{(k)} $
 
-因为 $D$ 是一个[对角矩阵](@article_id:642074)（我们已经假设对角元素非零），它的逆 $D^{-1}$ 非常容易计算——就是把每个对角元素取倒数。于是，我们得到了[雅可比迭代](@article_id:299683)的矩阵形式：
+因为 $D$ 是一个[对角矩阵](@keyword=diagonal_matrix|lang=zh-CN|style=Feynman)（我们已经假设对角元素非零），它的逆 $D^{-1}$ 非常容易计算——就是把每个对角元素取倒数。于是，我们得到了[雅可比迭代](@keyword=jacobi_iteration|lang=zh-CN|style=Feynman)的矩阵形式：
 
 $ \mathbf{x}^{(k+1)} = -D^{-1}(L+U)\mathbf{x}^{(k)} + D^{-1}\mathbf{b} $
 
-这正是我们熟悉的线性迭代格式 $\mathbf{x}^{(k+1)} = T_J \mathbf{x}^{(k)} + \mathbf{c}$，其中，大名鼎鼎的**[雅可比迭代](@article_id:299683)矩阵** $T_J = -D^{-1}(L+U)$，而常数向量 $\mathbf{c} = D^{-1}\mathbf{b}$  。
+这正是我们熟悉的线性迭代格式 $\mathbf{x}^{(k+1)} = T_J \mathbf{x}^{(k)} + \mathbf{c}$，其中，大名鼎鼎的**[雅可比迭代](@keyword=jacobi_iteration|lang=zh-CN|style=Feynman)矩阵** $T_J = -D^{-1}(L+U)$，而常数向量 $\mathbf{c} = D^{-1}\mathbf{b}$ [@problem_id:2216324] [@problem_id:1396116]。
 
 现在，让我们关注最美妙的部分：误差的演化。设系统的真解是 $\mathbf{x}$（即 $A\mathbf{x} = \mathbf{b}$），那么它也必须满足迭代关系的“不动点”方程：
 
 $ \mathbf{x} = -D^{-1}(L+U)\mathbf{x} + D^{-1}\mathbf{b} $
 
-定义第 $k$ 步的误差向量为 $\mathbf{e}^{(k)} = \mathbf{x} - \mathbf{x}^{(k)}$。将上面两个方程相减，常数项 $\mathbf{c}$ 恰好消掉了，我们得到了一个极其简洁和深刻的关系 ：
+定义第 $k$ 步的误差向量为 $\mathbf{e}^{(k)} = \mathbf{x} - \mathbf{x}^{(k)}$。将上面两个方程相减，常数项 $\mathbf{c}$ 恰好消掉了，我们得到了一个极其简洁和深刻的关系 [@problem_id:2216354]：
 
 $ \mathbf{e}^{(k+1)} = \mathbf{x} - \mathbf{x}^{(k+1)} = (-D^{-1}(L+U)\mathbf{x}) - (-D^{-1}(L+U)\mathbf{x}^{(k)}) = T_J (\mathbf{x} - \mathbf{x}^{(k)}) = T_J \mathbf{e}^{(k)} $
 
@@ -63,32 +63,32 @@ $ \mathbf{e}^{(k+1)} = \mathbf{x} - \mathbf{x}^{(k+1)} = (-D^{-1}(L+U)\mathbf{x}
 
 如果反复应用 $T_J$ 变换会使任何初始误差向量不断“收缩”，那么方法就是收敛的。这个“收缩”的度量，正是线性代数中的一个核心概念——**谱半径**（Spectral Radius）。
 
-### [谱半径](@article_id:299432)：收敛的终极裁判
+### [谱半径](@keyword=spectral_radius|lang=zh-CN|style=Feynman)：收敛的终极裁判
 
-一个矩阵的[谱半径](@article_id:299432)，记为 $\rho(T_J)$，定义为它所有[特征值](@article_id:315305)中[绝对值](@article_id:308102)的最大者。[特征值](@article_id:315305)，可以被直观地理解为一个矩阵在[线性变换](@article_id:376365)中固有的“[缩放因子](@article_id:337434)”。如果最大的[缩放因子](@article_id:337434)（的[绝对值](@article_id:308102)）都小于1，那么无论你从哪个误差向量 $\mathbf{e}^{(0)}$ 开始，经过足够多次的 $T_J$ 变换后，它都会不可避免地被压缩到零。
+一个矩阵的[谱半径](@keyword=spectral_radius|lang=zh-CN|style=Feynman)，记为 $\rho(T_J)$，定义为它所有[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)中[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)的最大者。[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)，可以被直观地理解为一个矩阵在[线性变换](@keyword=linear_algebra_transformations|lang=zh-CN|style=Feynman)中固有的“[缩放因子](@keyword=scaling_factor|lang=zh-CN|style=Feynman)”。如果最大的[缩放因子](@keyword=scaling_factor|lang=zh-CN|style=Feynman)（的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)）都小于1，那么无论你从哪个误差向量 $\mathbf{e}^{(0)}$ 开始，经过足够多次的 $T_J$ 变换后，它都会不可避免地被压缩到零。
 
-因此，[雅可比方法](@article_id:334645)收敛的充分必要条件是：
+因此，[雅可比方法](@keyword=jacobian_method|lang=zh-CN|style=Feynman)收敛的充分必要条件是：
 
 $ \rho(T_J) < 1 $
 
-不仅如此，[谱半径](@article_id:299432)还告诉我们收敛的“速度”。当迭代次数 $k$ 很大时，[误差范数](@article_id:355375)的比值会趋近于[谱半径](@article_id:299432) ：
+不仅如此，[谱半径](@keyword=spectral_radius|lang=zh-CN|style=Feynman)还告诉我们收敛的“速度”。当迭代次数 $k$ 很大时，[误差范数](@keyword=error_norms|lang=zh-CN|style=Feynman)的比值会趋近于[谱半径](@keyword=spectral_radius|lang=zh-CN|style=Feynman) [@problem_id:2163155]：
 $$ \lim_{k \to \infty} \frac{\|\mathbf{e}^{(k+1)}\|}{\|\mathbf{e}^{(k)}\|} = \rho(T_J) $$
 这意味着，如果 $\rho(T_J) = 0.5$，每次迭代大约能让误差减半。如果 $\rho(T_J) = 0.99$，那么收敛就会非常缓慢，像一只疲惫的乌龟在爬行。而如果 $\rho(T_J) \ge 1$，误差通常会放大或徘徊，对话将陷入混乱与争吵，永远无法达成共识。
 
-### [对角占优](@article_id:304046)：一个实用的[收敛判据](@article_id:318497)
+### [对角占优](@keyword=diagonal_dominance|lang=zh-CN|style=Feynman)：一个实用的[收敛判据](@keyword=convergence_criterion|lang=zh-CN|style=Feynman)
 
-计算一个大矩阵的谱半径本身就是一件很困难的事。我们有没有更简单、更直观的方法来判断收敛性呢？答案是肯定的，这便是“[严格对角占优](@article_id:353510)”矩阵。
+计算一个大矩阵的谱半径本身就是一件很困难的事。我们有没有更简单、更直观的方法来判断收敛性呢？答案是肯定的，这便是“[严格对角占优](@keyword=strictly_diagonally_dominant|lang=zh-CN|style=Feynman)”矩阵。
 
-一个矩阵 $A$ 如果被称为[严格对角占优](@article_id:353510)，指的是在每一行中，对角元素的[绝对值](@article_id:308102)都大于该行所有其他元素的[绝对值](@article_id:308102)之和：
+一个矩阵 $A$ 如果被称为[严格对角占优](@keyword=strictly_diagonally_dominant|lang=zh-CN|style=Feynman)，指的是在每一行中，对角元素的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)都大于该行所有其他元素的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)之和：
 $$ |a_{ii}| > \sum_{j \neq i} |a_{ij}|, \quad \text{for all } i=1, \dots, n $$
-这就像在每一场辩论（每一行）中，主角 $x_i$ 的“发言权重” $|a_{ii}|$ 都超过了所有其他配角权重之和。这种强有力的“主导地位”足以保证整个对话系统是稳定的。可以证明，如果矩阵 $A$ 是[严格对角占优](@article_id:353510)的，那么其[雅可比迭代](@article_id:299683)矩阵的[谱半径](@article_id:299432)一定小于1。
+这就像在每一场辩论（每一行）中，主角 $x_i$ 的“发言权重” $|a_{ii}|$ 都超过了所有其他配角权重之和。这种强有力的“主导地位”足以保证整个对话系统是稳定的。可以证明，如果矩阵 $A$ 是[严格对角占优](@keyword=strictly_diagonally_dominant|lang=zh-CN|style=Feynman)的，那么其[雅可比迭代](@keyword=jacobi_iteration|lang=zh-CN|style=Feynman)矩阵的[谱半径](@keyword=spectral_radius|lang=zh-CN|style=Feynman)一定小于1。
 
-这是一个非常实用的“安全保证” 。在构建一个物理模型或工程系统时，如果我们能设计出[对角占优](@article_id:304046)的系数矩阵，我们就能确信[雅可比方法](@article_id:334645)会稳健地工作。
+这是一个非常实用的“安全保证” [@problem_id:1396128]。在构建一个物理模型或工程系统时，如果我们能设计出[对角占优](@keyword=diagonal_dominance|lang=zh-CN|style=Feynman)的系数矩阵，我们就能确信[雅可比方法](@keyword=jacobian_method|lang=zh-CN|style=Feynman)会稳健地工作。
 
-然而，科学的魅力在于其精妙之处。[对角占优](@article_id:304046)是一个**充分条件**，但并非**必要条件**。这意味着，即使一个矩阵不满足[对角占优](@article_id:304046)，[雅可比方法](@article_id:334645)仍然有可能收敛。这就像[天气预报](@article_id:333867)说“乌云密布是下雨的充分条件”，但晴天也可能突然来一阵太阳雨。
+然而，科学的魅力在于其精妙之处。[对角占优](@keyword=diagonal_dominance|lang=zh-CN|style=Feynman)是一个**充分条件**，但并非**必要条件**。这意味着，即使一个矩阵不满足[对角占优](@keyword=diagonal_dominance|lang=zh-CN|style=Feynman)，[雅可比方法](@keyword=jacobian_method|lang=zh-CN|style=Feynman)仍然有可能收敛。这就像[天气预报](@keyword=weather_forecasting|lang=zh-CN|style=Feynman)说“乌云密布是下雨的充分条件”，但晴天也可能突然来一阵太阳雨。
 
-例如，考虑矩阵 $A_1 = \begin{pmatrix} 4 & -1 & 1 \\ 1 & -5 & 2 \\ -2 & 1 & 6 \end{pmatrix}$，它显然是[严格对角占优](@article_id:353510)的，所以我们知道[雅可比法](@article_id:307923)对其必然收敛。但再看另一个矩阵 $A_2 = \begin{pmatrix} 2 & -3 \\ 1 & 2 \end{pmatrix}$。在第一行，$|2|$ 并不大于 $|-3|$，所以它不是[对角占优](@article_id:304046)的。我们的简单判据失效了。我们是否就此放弃？不！通过直接计算，我们可以发现它的[迭代矩阵](@article_id:641638) $T_J$ 的谱半径 $\rho(T_J) = \sqrt{3}/2 \approx 0.866 < 1$。所以，[雅可比方法](@article_id:334645)对这个系统依然是收敛的！
+例如，考虑矩阵 $A_1 = \begin{pmatrix} 4 & -1 & 1 \\ 1 & -5 & 2 \\ -2 & 1 & 6 \end{pmatrix}$，它显然是[严格对角占优](@keyword=strictly_diagonally_dominant|lang=zh-CN|style=Feynman)的，所以我们知道[雅可比法](@keyword=jacobi_method|lang=zh-CN|style=Feynman)对其必然收敛。但再看另一个矩阵 $A_2 = \begin{pmatrix} 2 & -3 \\ 1 & 2 \end{pmatrix}$。在第一行，$|2|$ 并不大于 $|-3|$，所以它不是[对角占优](@keyword=diagonal_dominance|lang=zh-CN|style=Feynman)的。我们的简单判据失效了。我们是否就此放弃？不！通过直接计算，我们可以发现它的[迭代矩阵](@keyword=iteration_matrix|lang=zh-CN|style=Feynman) $T_J$ 的谱半径 $\rho(T_J) = \sqrt{3}/2 \approx 0.866 < 1$。所以，[雅可比方法](@keyword=jacobian_method|lang=zh-CN|style=Feynman)对这个系统依然是收敛的！[@problem_id:2216352]
 
-这个例子优雅地揭示了理论的层次：我们有一个深刻而普适的“黄金标准”（谱半径小于1），还有一个简单但覆盖范围较窄的“[经验法则](@article_id:325910)”（[对角占优](@article_id:304046)）。理解它们之间的关系，正是从一个计算者成长为一个科学家的标志。
+这个例子优雅地揭示了理论的层次：我们有一个深刻而普适的“黄金标准”（谱半径小于1），还有一个简单但覆盖范围较窄的“[经验法则](@keyword=68_95_99.7_rule|lang=zh-CN|style=Feynman)”（[对角占优](@keyword=diagonal_dominance|lang=zh-CN|style=Feynman)）。理解它们之间的关系，正是从一个计算者成长为一个科学家的标志。
 
-至此，我们已经从一个简单的迭代想法出发，穿过了矩阵的森林，最终抵达了收敛性的核心。我们发现，[雅可比方法](@article_id:334645)不仅仅是一个计算技巧，它更是一支由线性变换的几何之美与[并行计算](@article_id:299689)的工程效率共同谱写的协奏曲。
+至此，我们已经从一个简单的迭代想法出发，穿过了矩阵的森林，最终抵达了收敛性的核心。我们发现，[雅可比方法](@keyword=jacobian_method|lang=zh-CN|style=Feynman)不仅仅是一个计算技巧，它更是一支由线性变换的几何之美与[并行计算](@keyword=parallel_computing|lang=zh-CN|style=Feynman)的工程效率共同谱写的协奏曲。

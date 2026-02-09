@@ -1,7 +1,7 @@
 ## Introduction
-In the vast world of computational science, our ability to accurately predict everything from weather patterns to galactic collisions depends on translating the continuous laws of physics into the discrete language of computers. However, this translation is fraught with peril; a small misstep can cause a simulation to spiral into a meaningless chaos of numbers. The fundamental question then arises: how can we ensure our digital models remain stable and true to reality? This is the knowledge gap addressed by one of the most vital principles in [numerical analysis](@entry_id:142637): the Courant-Friedrichs-Lewy (CFL) condition. This article provides a comprehensive exploration of this cornerstone of computational stability.
+In the vast world of computational science, our ability to accurately predict everything from weather patterns to galactic collisions depends on translating the continuous laws of physics into the discrete language of computers. However, this translation is fraught with peril; a small misstep can cause a simulation to spiral into a meaningless chaos of numbers. The fundamental question then arises: how can we ensure our digital models remain stable and true to reality? This is the knowledge gap addressed by one of the most vital principles in [numerical analysis](@keyword=numerical_analysis|lang=en-US|style=Feynman): the Courant-Friedrichs-Lewy (CFL) condition. This article provides a comprehensive exploration of this cornerstone of computational stability.
 
-First, in **Principles and Mechanisms**, we will delve into the intuitive origin of the CFL condition, exploring the race between physical information and its numerical representation. We will establish its formal definition and uncover its profound connection to [consistency and convergence](@entry_id:747723) through the Lax Equivalence Theorem. Next, in **Applications and Interdisciplinary Connections**, we will witness the CFL condition's universal reach, examining how it governs simulations in fields as diverse as aerodynamics, [geophysics](@entry_id:147342), and astrophysics, and how it adapts to complex geometries and multi-timescale problems. Finally, **Hands-On Practices** will bridge theory and application, challenging you with practical exercises to implement CFL estimators and advanced adaptive strategies in modern numerical methods. By the end of this journey, you will understand not just the rule, but the deep physical reasoning that makes the CFL condition an indispensable guide for digital discovery.
+First, in **Principles and Mechanisms**, we will delve into the intuitive origin of the CFL condition, exploring the race between physical information and its numerical representation. We will establish its formal definition and uncover its profound connection to [consistency and convergence](@keyword=consistency_and_convergence|lang=en-US|style=Feynman) through the Lax Equivalence Theorem. Next, in **Applications and Interdisciplinary Connections**, we will witness the CFL condition's universal reach, examining how it governs simulations in fields as diverse as aerodynamics, [geophysics](@keyword=geophysics|lang=en-US|style=Feynman), and astrophysics, and how it adapts to complex geometries and multi-timescale problems. Finally, **Hands-On Practices** will bridge theory and application, challenging you with practical exercises to implement CFL estimators and advanced adaptive strategies in modern numerical methods. By the end of this journey, you will understand not just the rule, but the deep physical reasoning that makes the CFL condition an indispensable guide for digital discovery.
 
 ## Principles and Mechanisms
 
@@ -19,13 +19,13 @@ A computer, however, does not see the world as a smooth, continuous fabric. It s
 
 To do this, the robot follows a pre-programmed set of rules—the **numerical scheme**. An **explicit** scheme is one where the robot only needs to look at the values at the *current* time, $t^n$, to figure out the future. Typically, it can only see its immediate neighbors on the grid. The group of neighboring points it uses is called its **stencil**.
 
-If we trace the dependencies of our robot backward in time, we find that the value it computes at $(x_i, t^n)$ depends on a specific set of points on the initial line at $t=0$. This collection of initial grid points is the **[numerical domain of dependence](@entry_id:163312)**. It is the patch of the initial world that the robot's calculation could possibly be influenced by.
+If we trace the dependencies of our robot backward in time, we find that the value it computes at $(x_i, t^n)$ depends on a specific set of points on the initial line at $t=0$. This collection of initial grid points is the **[numerical domain of dependence](@keyword=numerical_domain_of_dependence|lang=en-US|style=Feynman)**. It is the patch of the initial world that the robot's calculation could possibly be influenced by.
 
 ### The Fundamental Rule of the Race
 
 Here we arrive at the brilliant insight published by Richard Courant, Kurt Friedrichs, and Hans Lewy in their now-legendary 1928 paper. They realized that for a simulation to have any hope of being correct, a simple rule must be obeyed. There is a race between the physical information, which travels along its characteristic curve, and the numerical information, which spreads through the grid via the robot's stencil. The rule is this: the robot must be able to "see" farther than the physical information can travel.
 
-More formally, the **[numerical domain of dependence](@entry_id:163312) must contain the continuous [domain of dependence](@entry_id:136381)**.
+More formally, the **[numerical domain of dependence](@keyword=numerical_domain_of_dependence|lang=en-US|style=Feynman) must contain the continuous [domain of dependence](@keyword=domain_of_dependence|lang=en-US|style=Feynman)**.
 
 If this rule is broken, the true solution depends on information that the numerical scheme has no access to. It's like trying to predict the weather in London by only looking at data from Paris—you're missing the storm system coming in from the Atlantic. The result of such ignorance in a simulation is not a small error, but a catastrophic failure. Rounding errors and other tiny imperfections are amplified at every time step, and the solution explodes into a meaningless jumble of enormous numbers. This is called **instability**.
 
@@ -35,7 +35,7 @@ $$
 |a| \Delta t \le \Delta x
 $$
 
-Rearranging this gives the famous **CFL condition**. It is often expressed in terms of the **Courant number**, $\nu = \frac{|a| \Delta t}{\Delta x}$, which must satisfy $\nu \le 1$. This principle is universal. It governs simulations of sound waves, water waves, and even the propagation of light in [computational electromagnetics](@entry_id:269494), where the speed $a$ is replaced by the ultimate cosmic speed limit, the speed of light $c$.
+Rearranging this gives the famous **CFL condition**. It is often expressed in terms of the **Courant number**, $\nu = \frac{|a| \Delta t}{\Delta x}$, which must satisfy $\nu \le 1$. This principle is universal. It governs simulations of sound waves, water waves, and even the propagation of light in [computational electromagnetics](@keyword=computational_electromagnetics|lang=en-US|style=Feynman), where the speed $a$ is replaced by the ultimate cosmic speed limit, the speed of light $c$.
 
 ### Stability is Not Enough
 
@@ -43,7 +43,7 @@ So, if we obey the CFL condition, is our simulation guaranteed to be perfect? No
 
 *   **Consistency** is about local fidelity. Does our numerical recipe on the grid actually look like the true physical law when we zoom in, making $\Delta x$ and $\Delta t$ infinitesimally small? A scheme can be consistent but still fail spectacularly.
 
-*   **Stability**, as we've seen, is about global behavior. It ensures that small errors (like computer [round-off noise](@entry_id:202216)) don't run rampant and destroy the entire solution. The CFL condition is the guardian of stability.
+*   **Stability**, as we've seen, is about global behavior. It ensures that small errors (like computer [round-off noise](@keyword=round_off_noise|lang=en-US|style=Feynman)) don't run rampant and destroy the entire solution. The CFL condition is the guardian of stability.
 
 *   **Convergence** is the holy grail. Does our computed solution get closer and closer to the true physical solution as we refine our grid?
 
@@ -57,20 +57,20 @@ In the endless pursuit of more accurate simulations, we often turn to more sophi
 
 But, as is so often the case in physics, there is no free lunch. A high-degree polynomial (say, degree $p$) can represent much finer wiggles and details than a simple constant. It contains higher "frequencies" or "modes." These fast-moving numerical modes are skittish and hard to control. They demand to be updated more frequently, with smaller time steps, to keep them from flying out of control.
 
-The result is a much stricter CFL condition. For a DG method, the maximum [stable time step](@entry_id:755325) $\Delta t_{\max}$ must shrink not only with the grid size $h$ (our old friend $\Delta x$), but also with the polynomial degree $p$. The condition typically looks like:
+The result is a much stricter CFL condition. For a DG method, the maximum [stable time step](@keyword=stable_time_step|lang=en-US|style=Feynman) $\Delta t_{\max}$ must shrink not only with the grid size $h$ (our old friend $\Delta x$), but also with the polynomial degree $p$. The condition typically looks like:
 
 $$
 \Delta t_{\max} \propto \frac{h}{|a|(2p+1)}
 $$
 
-This reveals a fundamental trade-off in scientific computing. If you want much higher spatial accuracy by increasing $p$, you must pay the price by taking many more, much smaller time steps. The design of efficient, [high-order methods](@entry_id:165413) is a delicate dance between accuracy, stability, and computational cost.
+This reveals a fundamental trade-off in scientific computing. If you want much higher spatial accuracy by increasing $p$, you must pay the price by taking many more, much smaller time steps. The design of efficient, [high-order methods](@keyword=high_order_methods|lang=en-US|style=Feynman) is a delicate dance between accuracy, stability, and computational cost.
 
 ### A Unified View
 
 The beauty of the CFL condition is its ability to unify a vast range of phenomena under a single, intuitive principle. It began as a simple picture of a race, yet its implications guide the design of the most advanced simulation codes today.
 
-The principle extends directly to complex **nonlinear problems**, such as the formation of shock waves in a fluid, modeled by the Burgers' equation. Here, the [wave speed](@entry_id:186208) depends on the solution itself. The CFL principle still holds, but we must be conservative: we must calculate our time step using the *fastest possible speed* that could ever occur anywhere in our simulation.
+The principle extends directly to complex **nonlinear problems**, such as the formation of shock waves in a fluid, modeled by the Burgers' equation. Here, the [wave speed](@keyword=wave_speed|lang=en-US|style=Feynman) depends on the solution itself. The CFL principle still holds, but we must be conservative: we must calculate our time step using the *fastest possible speed* that could ever occur anywhere in our simulation.
 
-Furthermore, the stability of a modern simulation is a marriage between the [spatial discretization](@entry_id:172158) (which creates the grid and defines the "robot's" rules) and the time-stepping algorithm. Sophisticated [time integrators](@entry_id:756005) like **Runge-Kutta (RK) methods** are the workhorses of the field. Each RK method has its own **[stability region](@entry_id:178537)**—a specific shape in the complex plane that defines the spectrum of [numerical oscillations](@entry_id:163720) it can handle without going unstable. The job of the CFL condition is to ensure that all the numerical "frequencies" produced by our spatial scheme (the eigenvalues of the discrete operator) are scaled by the chosen $\Delta t$ so they fit neatly inside the time integrator's stability region.
+Furthermore, the stability of a modern simulation is a marriage between the [spatial discretization](@keyword=spatial_discretization|lang=en-US|style=Feynman) (which creates the grid and defines the "robot's" rules) and the time-stepping algorithm. Sophisticated [time integrators](@keyword=time_integrators|lang=en-US|style=Feynman) like **Runge-Kutta (RK) methods** are the workhorses of the field. Each RK method has its own **[stability region](@keyword=stability_region|lang=en-US|style=Feynman)**—a specific shape in the complex plane that defines the spectrum of [numerical oscillations](@keyword=numerical_oscillations|lang=en-US|style=Feynman) it can handle without going unstable. The job of the CFL condition is to ensure that all the numerical "frequencies" produced by our spatial scheme (the eigenvalues of the discrete operator) are scaled by the chosen $\Delta t$ so they fit neatly inside the time integrator's stability region.
 
 What began as a simple rule of a race has blossomed into a profound and practical guide. The Courant-Friedrichs-Lewy condition is the constant, quiet reminder that in the pixelated, digital world of a computer, we can never afford to ignore the fundamental physical laws of the continuous universe we seek to understand. It is the crucial link that ensures our simulations do not spiral into chaos, but instead, converge to reality.

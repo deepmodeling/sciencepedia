@@ -1,7 +1,7 @@
 ## Introduction
 In science and engineering, a number is more than just a value; it's a statement of knowledge, complete with its own story of measurement and precision. Simply stating a result without conveying its reliability is an incomplete and potentially misleading form of communication. This article addresses this crucial gap by providing a comprehensive guide to the principles and practices of reporting significant digits and uncertainty.
 
-Over the next three chapters, you will embark on a journey to master the language of scientific honesty. In **Principles and Mechanisms**, we will dissect the fundamental concepts, distinguishing between [precision and accuracy](@article_id:174607), and learning how to interpret [significant figures](@article_id:143595) and propagate errors through calculations. Next, in **Applications and Interdisciplinary Connections**, we will see these principles in action, exploring real-world case studies from engineering, computational science, and even medicine to understand the profound impact of uncertainty on design, discovery, and decision-making. Finally, **Hands-On Practices** will allow you to apply your knowledge to solve practical problems, reinforcing your understanding of how to handle numerical data with integrity and rigor. By the end, you will not just be able to calculate correctly, but also to communicate your results with the clarity and confidence that defines sound scientific practice.
+Over the next three chapters, you will embark on a journey to master the language of scientific honesty. In **Principles and Mechanisms**, we will dissect the fundamental concepts, distinguishing between [precision and accuracy](@keyword=precision_and_accuracy|lang=en-US|style=Feynman), and learning how to interpret [significant figures](@keyword=significant_figures|lang=en-US|style=Feynman) and propagate errors through calculations. Next, in **Applications and Interdisciplinary Connections**, we will see these principles in action, exploring real-world case studies from engineering, computational science, and even medicine to understand the profound impact of uncertainty on design, discovery, and decision-making. Finally, **Hands-On Practices** will allow you to apply your knowledge to solve practical problems, reinforcing your understanding of how to handle numerical data with integrity and rigor. By the end, you will not just be able to calculate correctly, but also to communicate your results with the clarity and confidence that defines sound scientific practice.
 
 ## Principles and Mechanisms
 
@@ -11,18 +11,18 @@ Every number you see in science, from the weight of an atom to the temperature o
 
 Imagine you ask a carpenter to cut a board that is exactly `2.5` meters long. Now imagine you ask another to cut a board that is `2.500` meters long. You've asked for two very different things. The first carpenter might use a standard tape measure and get it within a few millimeters. The second has been given a much more demanding task, one that might require specialized tools, a controlled environment, and a lot more care. The extra zeros are not just for decoration; they are a promise of precision.
 
-This is the essence of **[significant figures](@article_id:143595)**. They are the digits in a number that we have some confidence in. When a scientist reports a measurement, they are implicitly making a pact with you. They are saying, "All these digits are ones I stand by, but that very last one... well, that one's a little shaky." This "shakiness" is the **uncertainty**.
+This is the essence of **[significant figures](@keyword=significant_figures|lang=en-US|style=Feynman)**. They are the digits in a number that we have some confidence in. When a scientist reports a measurement, they are implicitly making a pact with you. They are saying, "All these digits are ones I stand by, but that very last one... well, that one's a little shaky." This "shakiness" is the **uncertainty**.
 
 Let's look at two numbers from a chemist's notebook: `$1.2300$` and `$0.0001230$`. They look quite different, don't they?
-*   The first number, `$1.2300$`, has **five [significant figures](@article_id:143595)** (`1`, `2`, `3`, `0`, `0`). Those trailing zeros after the decimal point are there for a reason. They are the carpenter's promise: "I didn't just measure `1.23`, I measured all the way to the ten-thousandths place, and it came up zero." The last digit is the `$0$` in the ten-thousandths place, so the implied **[absolute uncertainty](@article_id:193085)** is about `$\pm 0.0001$` .
-*   The second number, `$0.0001230$`, has only **four [significant figures](@article_id:143595)** (`1`, `2`, `3`, `0`). The leading zeros are just placeholders to show how small the number is; they don't represent a measurement. The final zero, however, is significant. It tells us the measurement was made all the way out to the ten-millionths place. The implied **[absolute uncertainty](@article_id:193085)** here is tiny, about `$\pm 0.0000001$` .
+*   The first number, `$1.2300$`, has **five [significant figures](@keyword=significant_figures|lang=en-US|style=Feynman)** (`1`, `2`, `3`, `0`, `0`). Those trailing zeros after the decimal point are there for a reason. They are the carpenter's promise: "I didn't just measure `1.23`, I measured all the way to the ten-thousandths place, and it came up zero." The last digit is the `$0$` in the ten-thousandths place, so the implied **[absolute uncertainty](@keyword=absolute_uncertainty|lang=en-US|style=Feynman)** is about `$\pm 0.0001$` [@problem_id:2952360].
+*   The second number, `$0.0001230$`, has only **four [significant figures](@keyword=significant_figures|lang=en-US|style=Feynman)** (`1`, `2`, `3`, `0`). The leading zeros are just placeholders to show how small the number is; they don't represent a measurement. The final zero, however, is significant. It tells us the measurement was made all the way out to the ten-millionths place. The implied **[absolute uncertainty](@keyword=absolute_uncertainty|lang=en-US|style=Feynman)** here is tiny, about `$\pm 0.0000001$` [@problem_id:2952360].
 
-Notice that `$0.0001230$` has a much smaller [absolute uncertainty](@article_id:193085) than `$1.2300$`. But are they equally "good" measurements? Not necessarily. We need to consider the **[relative uncertainty](@article_id:260180)**, which is the [absolute uncertainty](@article_id:193085) divided by the value itself.
+Notice that `$0.0001230$` has a much smaller [absolute uncertainty](@keyword=absolute_uncertainty|lang=en-US|style=Feynman) than `$1.2300$`. But are they equally "good" measurements? Not necessarily. We need to consider the **[relative uncertainty](@keyword=relative_uncertainty|lang=en-US|style=Feynman)**, which is the [absolute uncertainty](@keyword=absolute_uncertainty|lang=en-US|style=Feynman) divided by the value itself.
 
-*   For `$1.2300$`, the [relative uncertainty](@article_id:260180) is `$\frac{0.0001}{1.2300} \approx \frac{1}{12300}$`.
-*   For `$0.0001230$`, the [relative uncertainty](@article_id:260180) is `$\frac{0.0000001}{0.0001230} = \frac{1}{1230}$`.
+*   For `$1.2300$`, the [relative uncertainty](@keyword=relative_uncertainty|lang=en-US|style=Feynman) is `$\frac{0.0001}{1.2300} \approx \frac{1}{12300}$`.
+*   For `$0.0001230$`, the [relative uncertainty](@keyword=relative_uncertainty|lang=en-US|style=Feynman) is `$\frac{0.0000001}{0.0001230} = \frac{1}{1230}$`.
 
-Aha! The [relative uncertainty](@article_id:260180) of the second measurement is ten times *larger* than the first . So while it was pinned down to a smaller absolute window, as a fraction of its own size, it's a less precise measurement. Significant figures, then, are a beautiful shorthand for a number's *relative* precision.
+Aha! The [relative uncertainty](@keyword=relative_uncertainty|lang=en-US|style=Feynman) of the second measurement is ten times *larger* than the first [@problem_id:2952360]. So while it was pinned down to a smaller absolute window, as a fraction of its own size, it's a less precise measurement. Significant figures, then, are a beautiful shorthand for a number's *relative* precision.
 
 ### The Anatomy of Error: Are You Precise, or Are You Right?
 
@@ -32,7 +32,7 @@ People often use the words "precise" and "accurate" as if they mean the same thi
 *   **Precision** is about repeatability. If you step on the scale five times and it reads `70.1`, `70.0`, `70.1`, `70.1`, and `70.0` kg, it's quite precise. The readings are all tightly clustered together.
 *   **Accuracy** is about truth. If your true weight (measured by a perfectly calibrated standard) is `73.2` kg, your precise scale is terribly inaccurate!
 
-This isn't just a hypothetical. A lab might have an [analytical balance](@article_id:185014) with a resolution of `0.01` mg. They weigh a standard `100.0000` mg reference weight and get readings like `101.49`, `101.50`, `101.51`, `101.50`, `101.49`, `101.50` mg. The readings are fantastically precise—they barely differ by the instrument's resolution. But they are all wrong, consistently high by about `1.5` mg. The balance has high precision but poor accuracy .
+This isn't just a hypothetical. A lab might have an [analytical balance](@keyword=analytical_balance|lang=en-US|style=Feynman) with a resolution of `0.01` mg. They weigh a standard `100.0000` mg reference weight and get readings like `101.49`, `101.50`, `101.51`, `101.50`, `101.49`, `101.50` mg. The readings are fantastically precise—they barely differ by the instrument's resolution. But they are all wrong, consistently high by about `1.5` mg. The balance has high precision but poor accuracy [@problem_id:2952351].
 
 This brings us to the two fundamental types of uncertainty, two different beasts we must tame.
 
@@ -40,11 +40,11 @@ This brings us to the two fundamental types of uncertainty, two different beasts
 
 This is the source of imprecision. It's the unpredictable "jitter" in any measurement system. It could be thermal noise in an electronic circuit, turbulence in the air, or your hand shaking slightly as you read a buret. The key feature of random error is that it's, well, random. It's just as likely to make your reading a little too high as it is a little too low.
 
-How do we fight this ghost? By averaging! If you take many measurements, the random highs and lows tend to cancel each other out. If a single measurement has a standard deviation of `$s$`, the average of `$N$` measurements will have a much smaller standard deviation (called the [standard error of the mean](@article_id:136392)) of `$\frac{s}{\sqrt{N}}$`. By taking enough measurements, we can beat down this random error to almost nothing  . This is why the mean of the balance readings, `$101.498$` mg, can be justifiably reported to a digit *finer* than the instrument's resolution (`0.01` mg)—we have gained confidence by averaging .
+How do we fight this ghost? By averaging! If you take many measurements, the random highs and lows tend to cancel each other out. If a single measurement has a standard deviation of `$s$`, the average of `$N$` measurements will have a much smaller standard deviation (called the [standard error of the mean](@keyword=standard_error_of_the_mean|lang=en-US|style=Feynman)) of `$\frac{s}{\sqrt{N}}$`. By taking enough measurements, we can beat down this random error to almost nothing [@problem_id:2952407] [@problem_id:2003662]. This is why the mean of the balance readings, `$101.498$` mg, can be justifiably reported to a digit *finer* than the instrument's resolution (`0.01` mg)—we have gained confidence by averaging [@problem_id:2952351].
 
 #### The Stubborn Gremlin: Epistemic Uncertainty (Systematic Error)
 
-This is the source of inaccuracy. It's a fixed, consistent offset or scaling error in your experiment. It's the miscalibrated balance that always reads high. It's the ruler with the worn-down end that always measures short. It's a constant bias `$b$` in your measurement model, `$y = x_{\text{true}} + b + \epsilon_{\text{random}}$` .
+This is the source of inaccuracy. It's a fixed, consistent offset or scaling error in your experiment. It's the miscalibrated balance that always reads high. It's the ruler with the worn-down end that always measures short. It's a constant bias `$b$` in your measurement model, `$y = x_{\text{true}} + b + \epsilon_{\text{random}}$` [@problem_id:2952407].
 
 Averaging measurements does absolutely *nothing* to fix a systematic error. If your scale is off by `+3` kg, taking a million readings will just give you an incredibly precise value that is still off by `+3` kg. The only way to fight this gremlin is through **calibration**—comparing your instrument to a known, trusted standard and correcting for the offset.
 
@@ -54,7 +54,7 @@ So, you've made your measurements, and you've identified your uncertainties, bot
 
 #### Adding Things Up: A Tale of Two Errors
 
-Let's imagine a beautifully simple task: stacking `$10$` precision blocks, each `$25.0$` mm long, to get a total length . Let's say each block's length has a random uncertainty of `$u_{rand} = 0.1$` mm from manufacturing variations. But there's a catch: we measured all the blocks with the same caliper, which has a systematic offset—a common error—of say `$0.02$` mm, and the uncertainty in our knowledge of this offset is `$u_{sys}$`.
+Let's imagine a beautifully simple task: stacking `$10$` precision blocks, each `$25.0$` mm long, to get a total length [@problem_id:2432431]. Let's say each block's length has a random uncertainty of `$u_{rand} = 0.1$` mm from manufacturing variations. But there's a catch: we measured all the blocks with the same caliper, which has a systematic offset—a common error—of say `$0.02$` mm, and the uncertainty in our knowledge of this offset is `$u_{sys}$`.
 
 How does the uncertainty in the total length of the stack behave?
 
@@ -62,7 +62,7 @@ How does the uncertainty in the total length of the stack behave?
 
 2.  **The Systematic, Correlated Errors:** The caliper's offset is the same for every single block. If it reads `$0.02$` mm high for the first block, it reads `$0.02$` mm high for all ten. These errors don't cancel; they gang up on you. They are perfectly correlated. The total error from the offset is `$N \times (\text{offset})$`, and the total uncertainty from this source is `$N \times u_{sys}$`. Their variances add as `$N^2 u_{sys}^2$`.
 
-The total combined uncertainty is the quadrature sum of these two effects: `$u_{combined} = \sqrt{(u_{total, rand})^2 + (u_{total, sys})^2} = \sqrt{N u_{rand}^2 + N^2 u_{sys}^2}`. This distinction between uncorrelated and correlated errors is one of the most profound and practical ideas in all of measurement science .
+The total combined uncertainty is the quadrature sum of these two effects: `$u_{combined} = \sqrt{(u_{total, rand})^2 + (u_{total, sys})^2} = \sqrt{N u_{rand}^2 + N^2 u_{sys}^2}`. This distinction between uncorrelated and correlated errors is one of the most profound and practical ideas in all of measurement science [@problem_id:2432431].
 
 #### Powers and Amplifiers
 
@@ -70,7 +70,7 @@ What about multiplication and division? Let's say we're calculating the density 
 
 When we multiply or divide, it's the **relative uncertainties** that matter. And for a quantity raised to a power, the relative uncertainty gets multiplied by that power. So if `$\rho \propto 1/V = a^{-3}$`, the relationship is:
 $$ \frac{\sigma_{\rho}}{\rho} \approx 3 \frac{\sigma_{a}}{a} $$
-If our measurement of the edge length has a relative uncertainty of `$0.05\%$` (`$0.2/389.0$`), the resulting uncertainty in the density will be three times larger, or about `$0.15\%$` . That cubic power acts as a powerful amplifier of uncertainty!
+If our measurement of the edge length has a relative uncertainty of `$0.05\%$` (`$0.2/389.0$`), the resulting uncertainty in the density will be three times larger, or about `$0.15\%$` [@problem_id:2003599]. That cubic power acts as a powerful amplifier of uncertainty!
 
 ### Reporting with Integrity: The Final Number
 
@@ -84,9 +84,9 @@ Suppose an experiment to measure gravity gives `$g = 9.81357$ $m/s^2$` with a ca
 *   Round the uncertainty first. The leading digit is 4, so we use one significant figure: `$\sigma_g \to 0.05$ $m/s^2$`.
 *   The uncertainty is now at the hundredths place.
 *   So, we must round our value of `$g$` to the hundredths place: `$9.81357 \to 9.81$`.
-*   The correct, honest report is `$g = (9.81 \pm 0.05)$ $m/s^2$` .
+*   The correct, honest report is `$g = (9.81 \pm 0.05)$ $m/s^2$` [@problem_id:1899539].
 
-To report `$9.81357 \pm 0.05$` is nonsense. The `$\pm 0.05$` tells you that the digit in the hundredths place (`1`) is already shaky; the digits `3`, `5`, and `7` after it are pure fantasy, completely buried in the noise. Similarly, if a chemical analysis yields a result of `$5.1782\%$` with an uncertainty of `$\pm 0.04\%$, the proper report is `$5.18\%$` . This discipline applies everywhere, from lab experiments to large-scale computational models. A climate model might project a `$2.5^{\circ}\text{C}$` temperature rise with a confidence interval of `$[1.5, 3.5]^{\circ}\text{C}$`. This corresponds to an uncertainty of `$\pm 1.0^{\circ}\text{C}$`. The correct report is `$2.5 \pm 1.0^{\circ}\text{C}$`. Reporting `$2.5 \pm 1^{\circ}\text{C}$` would improperly discard the precision implied by the interval's boundaries .
+To report `$9.81357 \pm 0.05$` is nonsense. The `$\pm 0.05$` tells you that the digit in the hundredths place (`1`) is already shaky; the digits `3`, `5`, and `7` after it are pure fantasy, completely buried in the noise. Similarly, if a chemical analysis yields a result of `$5.1782\%$` with an uncertainty of `$\pm 0.04\%$, the proper report is `$5.18\%$` [@problem_id:1439974]. This discipline applies everywhere, from lab experiments to large-scale computational models. A climate model might project a `$2.5^{\circ}\text{C}$` temperature rise with a confidence interval of `$[1.5, 3.5]^{\circ}\text{C}$`. This corresponds to an uncertainty of `$\pm 1.0^{\circ}\text{C}$`. The correct report is `$2.5 \pm 1.0^{\circ}\text{C}$`. Reporting `$2.5 \pm 1^{\circ}\text{C}$` would improperly discard the precision implied by the interval's boundaries [@problem_id:2432424].
 
 ### The Computational Frontier: The Limits of Knowing
 
@@ -98,7 +98,7 @@ Is your final answer `$\vec{x}$` accurate to the level of `$\tau$`? Absolutely n
 
 The total relative error in your computed answer is roughly bounded by:
 $$ \text{Relative Error} \lesssim \kappa(A) \times (\tau + \varepsilon_b) $$
-This single, powerful relationship unifies our entire discussion . It tells us there are two enemies of accuracy: the solver's inaccuracy (`$\tau$`) and the data's uncertainty (`$\varepsilon_b$`), both amplified by the problem's inherent sensitivity (`$\kappa(A)$`).
+This single, powerful relationship unifies our entire discussion [@problem_id:2432420]. It tells us there are two enemies of accuracy: the solver's inaccuracy (`$\tau$`) and the data's uncertainty (`$\varepsilon_b$`), both amplified by the problem's inherent sensitivity (`$\kappa(A)$`).
 
 If your problem is ill-conditioned with `$\kappa(A) = 7 \times 10^4` and your input data has an uncertainty of `$\varepsilon_b = 0.5 \times 10^{-7}`, then the *best possible accuracy you can ever hope for* is limited by `$\kappa(A)\varepsilon_b \approx 3.5 \times 10^{-3}$`. This means you can only trust about two significant figures in your result, no matter what! Spending a week of computer time to drive the solver tolerance `$\tau$` down to `$10^{-10}$` is a complete waste. It's like using a micrometer to measure a sponge that's dripping water. The precision of your tool is irrelevant because the object itself is fuzzy and ill-defined.
 

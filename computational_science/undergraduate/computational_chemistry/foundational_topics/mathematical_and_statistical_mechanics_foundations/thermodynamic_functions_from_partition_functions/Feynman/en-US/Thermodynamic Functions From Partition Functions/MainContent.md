@@ -1,5 +1,5 @@
 ## Introduction
-How do the strange, [quantized energy levels](@article_id:140417) of a single molecule give rise to the familiar properties of matter like temperature and pressure? The vast conceptual gap between the microscopic quantum world and macroscopic thermodynamics is one of the central challenges in physical science. This article introduces the fundamental tool that bridges this divide: the partition function. We will explore how this powerful mathematical construct acts as a Rosetta Stone, translating the language of quantum states into the language of thermodynamics. In the following chapters, you will first delve into the **Principles and Mechanisms**, learning what the partition function is and how all thermodynamic properties can be derived from it. Next, we will explore its vast reach in **Applications and Interdisciplinary Connections**, seeing how it explains everything from chemical reactions to the climate of ancient Earth. Finally, you will solidify your understanding through a series of **Hands-On Practices**, applying these concepts to solve concrete problems in [computational chemistry](@article_id:142545).
+How do the strange, [quantized energy levels](@keyword=quantized_energy_levels|lang=en-US|style=Feynman) of a single molecule give rise to the familiar properties of matter like temperature and pressure? The vast conceptual gap between the microscopic quantum world and macroscopic thermodynamics is one of the central challenges in physical science. This article introduces the fundamental tool that bridges this divide: the partition function. We will explore how this powerful mathematical construct acts as a Rosetta Stone, translating the language of quantum states into the language of thermodynamics. In the following chapters, you will first delve into the **Principles and Mechanisms**, learning what the partition function is and how all thermodynamic properties can be derived from it. Next, we will explore its vast reach in **Applications and Interdisciplinary Connections**, seeing how it explains everything from chemical reactions to the climate of ancient Earth. Finally, you will solidify your understanding through a series of **Hands-On Practices**, applying these concepts to solve concrete problems in [computational chemistry](@keyword=computational_chemistry|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
@@ -35,11 +35,11 @@ The most natural place to start is with the total energy of the system. We call 
 
 $U = -\left(\frac{\partial \ln Q}{\partial \beta}\right)_{V,N}$
 
-Let's see this in action. Consider a simple model of a solid, the Einstein solid, which is a lattice of $N$ distinguishable, non-interacting quantum harmonic oscillators. Each oscillator has energy levels $\epsilon_n = (n + 1/2)\hbar\omega$. By first calculating the single-particle partition function $q$ (by summing a [geometric series](@article_id:157996)) and then noting that for [distinguishable particles](@article_id:152617) the total partition function is simply $Q = q^N$, we can turn the mathematical crank. The result for the total internal energy is:
+Let's see this in action. Consider a simple model of a solid, the Einstein solid, which is a lattice of $N$ distinguishable, non-interacting quantum harmonic oscillators. Each oscillator has energy levels $\epsilon_n = (n + 1/2)\hbar\omega$. By first calculating the single-particle partition function $q$ (by summing a [geometric series](@keyword=geometric_series|lang=en-US|style=Feynman)) and then noting that for [distinguishable particles](@keyword=distinguishable_particles|lang=en-US|style=Feynman) the total partition function is simply $Q = q^N$, we can turn the mathematical crank. The result for the total internal energy is:
 
 $U = N \left[\frac{\hbar\omega}{2} + \frac{\hbar\omega}{\exp(\hbar\omega/k_B T) - 1}\right]$
 
-This equation is wonderful. The first term, $N\hbar\omega/2$, is the total **[zero-point energy](@article_id:141682)**—a purely quantum mechanical residue of energy that persists even at absolute zero. The second term is the thermal energy, which grows from zero as the temperature rises, representing the excitation of the oscillators to higher vibrational levels. We have derived a macroscopic property from a quantum model!
+This equation is wonderful. The first term, $N\hbar\omega/2$, is the total **[zero-point energy](@keyword=zero_point_energy|lang=en-US|style=Feynman)**—a purely quantum mechanical residue of energy that persists even at absolute zero. The second term is the thermal energy, which grows from zero as the temperature rises, representing the excitation of the oscillators to higher vibrational levels. We have derived a macroscopic property from a quantum model!
 
 #### Helmholtz Free Energy, $A$
 
@@ -47,7 +47,7 @@ While internal energy is intuitive, a more fundamental quantity in this context 
 
 $A = -k_B T \ln Q$
 
-This equation is profound. Since $Q$ is related to the number of [accessible states](@article_id:265505), $\ln Q$ is a measure of the system's disorder, or entropy. The Helmholtz energy thus represents a competition: systems tend to seek a low internal energy ($U$) but also a high entropy ($S$). The relation is $A = U - TS$. Nature, at a given temperature, tries to minimize $A$.
+This equation is profound. Since $Q$ is related to the number of [accessible states](@keyword=accessible_states|lang=en-US|style=Feynman), $\ln Q$ is a measure of the system's disorder, or entropy. The Helmholtz energy thus represents a competition: systems tend to seek a low internal energy ($U$) but also a high entropy ($S$). The relation is $A = U - TS$. Nature, at a given temperature, tries to minimize $A$.
 
 A crucial subtlety arises when our particles are not fixed in a lattice but are free to move, like in a gas. Are two identical gas molecules, one on the left and one on the right, a different state from the one with them swapped? Classically, yes. Quantum mechanically, no. They are indistinguishable. We must correct for this overcounting by dividing the partition function by $N!$, the number of ways to permute $N$ particles. For a gas of $N$ indistinguishable, non-interacting particles, this leads to $Q = q^N/N!$. Applying the formula for $A$ and using Stirling's approximation for $\ln(N!)$ gives us:
 
@@ -65,9 +65,9 @@ The power of the partition function doesn't stop at energy. It encodes everythin
 
 - **Chemical Potential ($\mu$)**: The **chemical potential** is the "energy cost" of adding one more particle to the system. It governs everything from chemical reactions to phase transitions. Its recipe involves a derivative with respect to the particle number, $N$:
   $\mu = \left(\frac{\partial A}{\partial N}\right)_{T,V} = -k_B T \left(\frac{\partial \ln Q}{\partial N}\right)_{T,V}$
-  Consider a model of gas molecules sticking to a surface with $M$ available sites. The partition function for this system accounts for both the binding energy $\epsilon$ and the number of ways to arrange $N$ particles on $M$ sites ($\binom{M}{N}$). Turning the crank for $\mu$ gives an expression that tells us exactly how the "cost" of adding another particle depends on the surface coverage $N/M$. This is the fundamental principle behind [surface catalysis](@article_id:160801) and [chemical sensors](@article_id:157373).
+  Consider a model of gas molecules sticking to a surface with $M$ available sites. The partition function for this system accounts for both the binding energy $\epsilon$ and the number of ways to arrange $N$ particles on $M$ sites ($\binom{M}{N}$). Turning the crank for $\mu$ gives an expression that tells us exactly how the "cost" of adding another particle depends on the surface coverage $N/M$. This is the fundamental principle behind [surface catalysis](@keyword=surface_catalysis|lang=en-US|style=Feynman) and [chemical sensors](@keyword=chemical_sensors|lang=en-US|style=Feynman).
 
-- **Entropy ($S$)**: We've mentioned entropy as a measure of disorder. For our simple [two-level system](@article_id:137958), we can directly calculate the entropy. In the high-temperature limit ($k_B T \gg \epsilon$), we find a beautifully simple result:
+- **Entropy ($S$)**: We've mentioned entropy as a measure of disorder. For our simple [two-level system](@keyword=two_level_system|lang=en-US|style=Feynman), we can directly calculate the entropy. In the high-temperature limit ($k_B T \gg \epsilon$), we find a beautifully simple result:
   $S = N k_B \ln(2)$
   This is Boltzmann's famous formula $S = k_B \ln W$ in disguise! At high temperatures, both energy levels are equally likely. Each of the $N$ particles has 2 choices, so there are $W = 2^N$ total microstates for the system. The statistical mechanics framework, starting from $Q$, has brought us back to one of the deepest and most intuitive definitions of entropy.
 
@@ -78,18 +78,18 @@ One of the most elegant features of this approach is its modularity. For many sy
 Because the logarithm turns products into sums ($\ln(abc) = \ln a + \ln b + \ln c$), the total internal energy becomes a simple sum: $U = U_{trans} + U_{rot} + U_{vib}$. We can analyze each mode of motion independently! For a diatomic gas at moderate temperatures, we find:
 - Translation gives $\frac{3}{2} N k_B T$ (as expected for motion in 3D).
 - Rotation gives $N k_B T$ (for a linear molecule).
-- Vibration contributes a more complex, temperature-dependent term that only "turns on" when $k_B T$ is comparable to the [vibrational energy](@article_id:157415) spacing.
+- Vibration contributes a more complex, temperature-dependent term that only "turns on" when $k_B T$ is comparable to the [vibrational energy](@keyword=vibrational_energy|lang=en-US|style=Feynman) spacing.
 
-This approach not only reproduces the classical [equipartition theorem](@article_id:136478) but also corrects it, showing precisely when and how quantum effects become important.
+This approach not only reproduces the classical [equipartition theorem](@keyword=equipartition_theorem|lang=en-US|style=Feynman) but also corrects it, showing precisely when and how quantum effects become important.
 
-This modularity also helps us understand the **heat capacity** ($C_V$), which measures how much energy a substance absorbs when its temperature is raised. It's defined as $C_V = (\partial U/\partial T)_V$. Let's revisit the [two-level system](@article_id:137958) (or any system with discrete energy levels, like electronic states).
+This modularity also helps us understand the **heat capacity** ($C_V$), which measures how much energy a substance absorbs when its temperature is raised. It's defined as $C_V = (\partial U/\partial T)_V$. Let's revisit the [two-level system](@keyword=two_level_system|lang=en-US|style=Feynman) (or any system with discrete energy levels, like electronic states).
 - At very low temperatures, $k_B T$ is too small to excite particles to the upper level. Adding heat does nothing. $C_V \approx 0$.
 - At very high temperatures, the levels are already equally populated. The system is "saturated" and cannot absorb any more energy in this mode. Again, $C_V \approx 0$.
 - In between, at a temperature where $k_B T$ is on the order of the energy gap $\epsilon$, the heat capacity goes through a maximum! The system is perfectly poised to absorb thermal energy by promoting particles to the excited state. This peak, known as a Schottky anomaly, is a direct fingerprint of an underlying quantum energy level structure.
 
 ### The Deeper Connection: Fluctuations and Response
 
-We have arrived at the most profound and beautiful truth that the partition function reveals. A system in contact with a [heat bath](@article_id:136546) doesn't have a perfectly constant energy. Its energy flickers and fluctuates, constantly exchanging tiny amounts with its surroundings. Our "internal energy" $U$ is just the time average of this frantic dance.
+We have arrived at the most profound and beautiful truth that the partition function reveals. A system in contact with a [heat bath](@keyword=heat_bath|lang=en-US|style=Feynman) doesn't have a perfectly constant energy. Its energy flickers and fluctuates, constantly exchanging tiny amounts with its surroundings. Our "internal energy" $U$ is just the time average of this frantic dance.
 
 One might think these microscopic fluctuations are forever hidden from our macroscopic view. But this is not so. Consider the heat capacity, $C_V$. We measure it macroscopically by adding a known amount of heat and measuring the temperature change. It's a bulk property, a "response" of the system.
 
@@ -99,4 +99,4 @@ $C_V = \frac{\sigma_E^2}{k_B T^2}$
 
 Think about what this means. A material with a high heat capacity (like water) is one whose microscopic energy is fluctuating wildly. It can soak up vast amounts of heat because its constituent molecules have many ways to channel that energy into their internal motions, leading to large swings in the total microscopic energy. A material with a low heat capacity is one whose internal energy is relatively placid.
 
-This **[fluctuation-response theorem](@article_id:137742)** is a window into the soul of the microscopic world. It tells us that the way a system *responds* to an external prod (like adding heat) is determined by the way it *fluctuates* on its own when left in peace. The macroscopic world and the microscopic world are not just linked; they are two sides of the same coin, and the partition function is the edge that joins them.
+This **[fluctuation-response theorem](@keyword=fluctuation_response_theorem|lang=en-US|style=Feynman)** is a window into the soul of the microscopic world. It tells us that the way a system *responds* to an external prod (like adding heat) is determined by the way it *fluctuates* on its own when left in peace. The macroscopic world and the microscopic world are not just linked; they are two sides of the same coin, and the partition function is the edge that joins them.

@@ -1,7 +1,7 @@
 ## 引言
 从掠过机翼的气流到管道中的湍急水流，流体与固体的交界面是工程世界中无处不在的舞台。正是在这个紧贴壁面的微观区域——湍流边界层内，决定了飞行器的阻力、热交换器的效率以及无数工业过程的成败。然而，这个区域内的流动既混乱又充满规律，如何准确描述和预测其中的动量与热量输运，是计算热流体工程领域一个长期存在且至关重要的挑战。传统的直接模拟方法因其高昂的计算成本而难以在工程实践中普及，因此，发展高效且精确的近壁模型成为了必然选择。
 
-本文旨在系统性地剖析[近壁湍流](@entry_id:194167)模化的理论与实践。我们将从最基本的物理原理出发，逐步深入到复杂的工程应用和前沿研究。在“原理与机制”一章中，我们将一同探索壁面单位和普适[壁面律](@entry_id:262057)的魔力，揭示近壁区域精巧的分层结构。随后，在“应用与交叉学科的联系”一章，我们将看到这些理论如何化身为CFD工程师手中的强大工具——壁面函数，并了解它们如何演化以应对粗糙度、[可压缩性](@entry_id:144559)等真实世界的[复杂流动](@entry_id:747569)。最后，通过“动手实践”环节，您将有机会亲手应用所学知识，解决具体的物理和工程问题。这趟旅程将带您领略，如何用优雅的物理定律为复杂的[湍流](@entry_id:151300)现象建立模型，并将其应用于解决实际的工程难题。
+本文旨在系统性地剖析[近壁湍流](@keyword=near_wall_turbulence|lang=zh-CN|style=Feynman)模化的理论与实践。我们将从最基本的物理原理出发，逐步深入到复杂的工程应用和前沿研究。在“原理与机制”一章中，我们将一同探索壁面单位和普适[壁面律](@keyword=logarithmic_law_of_the_wall|lang=zh-CN|style=Feynman)的魔力，揭示近壁区域精巧的分层结构。随后，在“应用与交叉学科的联系”一章，我们将看到这些理论如何化身为CFD工程师手中的强大工具——壁面函数，并了解它们如何演化以应对粗糙度、[可压缩性](@keyword=compressibility|lang=zh-CN|style=Feynman)等真实世界的[复杂流动](@keyword=complex_flows|lang=zh-CN|style=Feynman)。最后，通过“动手实践”环节，您将有机会亲手应用所学知识，解决具体的物理和工程问题。这趟旅程将带您领略，如何用优雅的物理定律为复杂的[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)现象建立模型，并将其应用于解决实际的工程难题。
 
 ## 原理与机制
 
@@ -9,30 +9,30 @@
 
 ### 寻找一把普适的尺子：壁面单位的魔力
 
-物理学家钟爱的一个强大思想是，通过找到正确的“尺度”来观察事物，看似纷繁复杂的现象背后往往隐藏着简洁的普适规律。对于壁面附近的[湍流](@entry_id:151300)，这把神奇的尺子就藏在主导这片小天地的几个物理量中：壁面切应力 $\tau_w$（流体拖拽壁面的力）、流体密度 $\rho$ 和运动粘度 $\nu$。
+物理学家钟爱的一个强大思想是，通过找到正确的“尺度”来观察事物，看似纷繁复杂的现象背后往往隐藏着简洁的普适规律。对于壁面附近的[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)，这把神奇的尺子就藏在主导这片小天地的几个物理量中：壁面切应力 $\tau_w$（流体拖拽壁面的力）、流体密度 $\rho$ 和运动粘度 $\nu$。
 
-想象一下，我们要为这个近壁世界建立一套独特的度量衡。我们需要一个[特征速度](@entry_id:165394)和一个特征长度。
+想象一下，我们要为这个近壁世界建立一套独特的度量衡。我们需要一个[特征速度](@keyword=characteristic_speeds|lang=zh-CN|style=Feynman)和一个特征长度。
 
-首先是速度。$\tau_w$ 的单位是帕斯卡，即力每单位面积，量纲为 $[M L^{-1} T^{-2}]$。$\rho$ 的量纲是 $[M L^{-3}]$。将它们相除，我们得到 $\tau_w / \rho$，其量纲为 $[L^2 T^{-2}]$，恰好是速度的平方。于是，我们定义一个[特征速度](@entry_id:165394)，称为**摩擦速度 (friction velocity)** ：
+首先是速度。$\tau_w$ 的单位是帕斯卡，即力每单位面积，量纲为 $[M L^{-1} T^{-2}]$。$\rho$ 的量纲是 $[M L^{-3}]$。将它们相除，我们得到 $\tau_w / \rho$，其量纲为 $[L^2 T^{-2}]$，恰好是速度的平方。于是，我们定义一个[特征速度](@keyword=characteristic_speeds|lang=zh-CN|style=Feynman)，称为**摩擦速度 (friction velocity)** [@problem_id:3975559]：
 $$
 u_{\tau} = \sqrt{\frac{\tau_w}{\rho}}
 $$
-$u_\tau$ 不是流体中任何一点的真实速度，但它是一个绝佳的指示器，衡量了壁面附近[湍流](@entry_id:151300)脉动的强度。$\tau_w$ 越大，意味着[湍流](@entry_id:151300)越“凶猛”，$u_\tau$ 也越大。
+$u_\tau$ 不是流体中任何一点的真实速度，但它是一个绝佳的指示器，衡量了壁面附近[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)脉动的强度。$\tau_w$ 越大，意味着[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)越“凶猛”，$u_\tau$ 也越大。
 
-接下来是长度。我们有了[特征速度](@entry_id:165394) $u_\tau$ 和流体属性 $\nu$（[运动粘度](@entry_id:275614)的量纲是 $[L^2 T^{-1}]$）。如何用它们组合出一个长度呢？很简单，将 $\nu$ 除以 $u_\tau$：
+接下来是长度。我们有了[特征速度](@keyword=characteristic_speeds|lang=zh-CN|style=Feynman) $u_\tau$ 和流体属性 $\nu$（[运动粘度](@keyword=momentum_diffusivity|lang=zh-CN|style=Feynman)的量纲是 $[L^2 T^{-1}]$）。如何用它们组合出一个长度呢？很简单，将 $\nu$ 除以 $u_\tau$：
 $$
 \ell_\nu = \frac{\nu}{u_\tau}
 $$
-这个长度被称为**粘性长度尺度 (viscous length scale)**。它大致代表了这样一个区域的厚度：在这个区域内，粘性力（使流体“粘”在壁上的力）与[湍流](@entry_id:151300)[惯性力](@entry_id:169104)（使流体“翻滚”的力）势均力敌。
+这个长度被称为**粘性长度尺度 (viscous length scale)**。它大致代表了这样一个区域的厚度：在这个区域内，粘性力（使流体“粘”在壁上的力）与[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)[惯性力](@keyword=inertial_forces|lang=zh-CN|style=Feynman)（使流体“翻滚”的力）势均力敌。
 
-有了这两个基本的“度规”，我们便可以定义一套无量纲的坐标系，即**壁面单位 (wall units)**。任何离壁面的距离 $y$ 和该处的速度 $u$，都可以用这套新单位来表示 ：
+有了这两个基本的“度规”，我们便可以定义一套无量纲的坐标系，即**壁面单位 (wall units)**。任何离壁面的距离 $y$ 和该处的速度 $u$，都可以用这套新单位来表示 [@problem_id:3975505]：
 $$
 y^+ = \frac{y}{\ell_\nu} = \frac{y u_\tau}{\nu}
 $$
 $$
 u^+ = \frac{u}{u_\tau}
 $$
-这套单位就像一个神奇的放大镜。当我们用它来观察不同流速、不同流体、甚至不同尺寸下的[近壁湍流](@entry_id:194167)时，惊人的一幕发生了：所有的数据都坍缩到了一条几乎相同的曲线上！这条曲线，就是著名的**壁面律 (Law of the Wall)**。它揭示了[近壁湍流](@entry_id:194167)世界中深刻的内在统一性。
+这套单位就像一个神奇的放大镜。当我们用它来观察不同流速、不同流体、甚至不同尺寸下的[近壁湍流](@keyword=near_wall_turbulence|lang=zh-CN|style=Feynman)时，惊人的一幕发生了：所有的数据都坍缩到了一条几乎相同的曲线上！这条曲线，就是著名的**壁面律 (Law of the Wall)**。它揭示了[近壁湍流](@keyword=near_wall_turbulence|lang=zh-CN|style=Feynman)世界中深刻的内在统一性。
 
 ### 壁面律：一个分层的宇宙
 
@@ -40,56 +40,56 @@ $$
 
 #### 粘性子层：宁静的王国 ($y^+ \lesssim 5$)
 
-最贴近壁面的区域是粘性子层。在这里，由于壁面的“无滑移”条件（流体在壁面上的速度为零），剧烈的[湍流](@entry_id:151300)脉动被粘性牢牢地抑制住了，就像一个喧闹的派对现场，紧贴墙壁的角落总是最安静的。因此，[雷诺应力](@entry_id:263788)（由[湍流](@entry_id:151300)脉动引起的表观应力）可以忽略不计，总的切应力几乎完全由粘性应力贡献，并且约等于[壁面切应力](@entry_id:263108) ：
+最贴近壁面的区域是粘性子层。在这里，由于壁面的“无滑移”条件（流体在壁面上的速度为零），剧烈的[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)脉动被粘性牢牢地抑制住了，就像一个喧闹的派对现场，紧贴墙壁的角落总是最安静的。因此，[雷诺应力](@keyword=reynolds_stresses|lang=zh-CN|style=Feynman)（由[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)脉动引起的表观应力）可以忽略不计，总的切应力几乎完全由粘性应力贡献，并且约等于[壁面切应力](@keyword=wall_shear_stress|lang=zh-CN|style=Feynman) [@problem_id:3975577]：
 $$
 \tau_w \approx \mu \frac{dU}{dy}
 $$
-其中 $\mu = \rho \nu$ 是[动力粘度](@entry_id:268228)。这是一个极其简单的[微分](@entry_id:158422)方程。我们将其用[壁面单位](@entry_id:266042)重写并积分，便能得出一个优雅的线性关系 ：
+其中 $\mu = \rho \nu$ 是[动力粘度](@keyword=dynamic_viscosity|lang=zh-CN|style=Feynman)。这是一个极其简单的[微分](@keyword=differentials|lang=zh-CN|style=Feynman)方程。我们将其用[壁面单位](@keyword=wall_units|lang=zh-CN|style=Feynman)重写并积分，便能得出一个优雅的线性关系 [@problem_id:3975532]：
 $$
 u^+ = y^+
 $$
-这个简洁的公式完美地描述了粘性子层中的速度分布。它告诉我们，在这个宁静的王国里，速度随着离壁距离线性增长。同时，研究表明，平均流动动能的粘性耗散正是在这个区域达到峰值，这里是能量被摩擦“吃掉”的主要场所 。
+这个简洁的公式完美地描述了粘性子层中的速度分布。它告诉我们，在这个宁静的王国里，速度随着离壁距离线性增长。同时，研究表明，平均流动动能的粘性耗散正是在这个区域达到峰值，这里是能量被摩擦“吃掉”的主要场所 [@problem_id:3975514]。
 
-#### 对数律层：[湍流](@entry_id:151300)的心脏地带 ($y^+ \gtrsim 30$)
+#### 对数律层：[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)的心脏地带 ($y^+ \gtrsim 30$)
 
-当 $y^+$ 增大到约30以上时，我们进入了对数律层。在这里，我们离壁面已经足够远，粘性的直接影响变得微不足道，[湍流](@entry_id:151300)涡旋的翻滚混合成为了动量交换的主导方式。粘性应力可以忽略，总应力几乎完全由雷诺应力贡献。
+当 $y^+$ 增大到约30以上时，我们进入了对数律层。在这里，我们离壁面已经足够远，粘性的直接影响变得微不足道，[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)涡旋的翻滚混合成为了动量交换的主导方式。粘性应力可以忽略，总应力几乎完全由雷诺应力贡献。
 
-如何描述这片[湍流](@entry_id:151300)的心脏地带呢？伟大的流[体力](@entry_id:174230)学家 Prandtl 提出了一个天才般的直觉模型——**混合长理论 (mixing-length theory)** 。他设想，[湍流](@entry_id:151300)中的流体微团像气体分子一样在不同层之间穿梭，但它们走过的“自由程”——即混合长 $\ell_m$——与离壁面的距离成正比，即 $\ell_m = \kappa y$。$\kappa$ 是著名的[冯·卡门常数](@entry_id:261117)，约等于 $0.41$。这个简单的假设意味着，越远离壁面，能够自由混合的[湍流](@entry_id:151300)涡旋尺寸也越大。
+如何描述这片[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)的心脏地带呢？伟大的流[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)学家 Prandtl 提出了一个天才般的直觉模型——**混合长理论 (mixing-length theory)** [@problem_id:3975565]。他设想，[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)中的流体微团像气体分子一样在不同层之间穿梭，但它们走过的“自由程”——即混合长 $\ell_m$——与离壁面的距离成正比，即 $\ell_m = \kappa y$。$\kappa$ 是著名的[冯·卡门常数](@keyword=von_kármán_constant|lang=zh-CN|style=Feynman)，约等于 $0.41$。这个简单的假设意味着，越远离壁面，能够自由混合的[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)涡旋尺寸也越大。
 
 从这个物理图像出发，经过一番推导，我们自然而然地得到了描述该区域速度分布的对数律：
 $$
 u^+ = \frac{1}{\kappa} \ln(y^+) + B
 $$
-其中 $B$ 是一个积分常数，对于光滑壁面，其值约为 $5.2$ 。这个对数关系是湍流理论中最重要、最美丽的成果之一。它表明，在[湍流](@entry_id:151300)的主导区域，速度随离壁距离的对数而增长。这个模型还告诉我们，在该区域，涡粘性（代表[湍流混合](@entry_id:202591)能力的等效粘度）$\nu_t$ 也是线性增长的：$\nu_t = \kappa u_\tau y$ 。
+其中 $B$ 是一个积分常数，对于光滑壁面，其值约为 $5.2$ [@problem_id:3975532]。这个对数关系是湍流理论中最重要、最美丽的成果之一。它表明，在[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)的主导区域，速度随离壁距离的对数而增长。这个模型还告诉我们，在该区域，涡粘性（代表[湍流混合](@keyword=turbulent_mixing|lang=zh-CN|style=Feynman)能力的等效粘度）$\nu_t$ 也是线性增长的：$\nu_t = \kappa u_\tau y$ [@problem_id:3975565]。
 
-#### [缓冲层](@entry_id:160164)：粘性与[湍流](@entry_id:151300)的战场 ($5 \lesssim y^+ \lesssim 30$)
+#### [缓冲层](@keyword=buffer_layer|lang=zh-CN|style=Feynman)：粘性与[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)的战场 ($5 \lesssim y^+ \lesssim 30$)
 
-夹在粘性子层和对数律层之间的是[缓冲层](@entry_id:160164)。顾名思义，这里是粘性影响和[湍流](@entry_id:151300)影响相互交织、激烈斗争的战场。两者都不可忽略，使得这一区域的物理过程异常复杂，难以用简单的解析式描述。然而，这个区域至关重要，因为它正是[湍流](@entry_id:151300)能量的“生产车间”。[湍流](@entry_id:151300)通过从平均流动中“窃取”能量来维持自身的存在，这个过程被称为[湍动能](@entry_id:262712)生成。其生成率的峰值就出现在缓冲层内（大约在 $y^+ \approx 12$ 附近），因为这里既有足够大的[速度梯度](@entry_id:261686)，又有显著的[湍流](@entry_id:151300)脉动 。
+夹在粘性子层和对数律层之间的是[缓冲层](@keyword=buffer_layer|lang=zh-CN|style=Feynman)。顾名思义，这里是粘性影响和[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)影响相互交织、激烈斗争的战场。两者都不可忽略，使得这一区域的物理过程异常复杂，难以用简单的解析式描述。然而，这个区域至关重要，因为它正是[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)能量的“生产车间”。[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)通过从平均流动中“窃取”能量来维持自身的存在，这个过程被称为[湍动能](@keyword=turbulent_kinetic_energy|lang=zh-CN|style=Feynman)生成。其生成率的峰值就出现在缓冲层内（大约在 $y^+ \approx 12$ 附近），因为这里既有足够大的[速度梯度](@keyword=velocity_gradient|lang=zh-CN|style=Feynman)，又有显著的[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)脉动 [@problem_id:3975532]。
 
-### 从理论到实践：CFD中的[壁面函数](@entry_id:155079)
+### 从理论到实践：CFD中的[壁面函数](@keyword=wall_functions|lang=zh-CN|style=Feynman)
 
-壁面律的美妙之处不仅在于其理论上的优雅，更在于其巨大的实用价值，尤其是在[计算流体动力学](@entry_id:142614)（CFD）领域。要精确模拟粘性子层，计算机网格的第一个节点需要布置在 $y^+ \approx 1$ 的位置。对于高雷诺数的流动（如飞机飞行），这意味着需要极其密集、计算量大得惊人的网格 。
+壁面律的美妙之处不仅在于其理论上的优雅，更在于其巨大的实用价值，尤其是在[计算流体动力学](@keyword=computational_fluid_dynamics|lang=zh-CN|style=Feynman)（CFD）领域。要精确模拟粘性子层，计算机网格的第一个节点需要布置在 $y^+ \approx 1$ 的位置。对于高雷诺数的流动（如飞机飞行），这意味着需要极其密集、计算量大得惊人的网格 [@problem_id:3975559]。
 
-**[壁面函数](@entry_id:155079) (wall functions)** 提供了一个绝妙的“捷径” 。我们不必费力去解析[缓冲层](@entry_id:160164)和粘性子层，而是直接将第一个网格节点放置在对数律层中（例如 $y^+ = 50$）。然后，利用对数律公式 $u^+ = \frac{1}{\kappa} \ln(y^+) + B$，我们可以建立壁面切应力 $\tau_w$（通过 $u_\tau$ 体现）与该网格节点上的速度 $u_P$ 之间的关系。
+**[壁面函数](@keyword=wall_functions|lang=zh-CN|style=Feynman) (wall functions)** 提供了一个绝妙的“捷径” [@problem_id:3975572]。我们不必费力去解析[缓冲层](@keyword=buffer_layer|lang=zh-CN|style=Feynman)和粘性子层，而是直接将第一个网格节点放置在对数律层中（例如 $y^+ = 50$）。然后，利用对数律公式 $u^+ = \frac{1}{\kappa} \ln(y^+) + B$，我们可以建立壁面切应力 $\tau_w$（通过 $u_\tau$ 体现）与该网格节点上的速度 $u_P$ 之间的关系。
 $$
 \frac{u_P}{u_{\tau}} = \frac{1}{\kappa}\ln\left(\frac{y_P u_{\tau}}{\nu}\right) + B
 $$
-这是一个关于未知数 $u_\tau$ 的[超越方程](@entry_id:276279)，虽然不能直接求解，但可以通过简单的迭代方法快速得到数值解。一旦求出 $u_\tau$，壁面摩擦力 $\tau_w$ 就迎刃而解。壁面函数巧妙地用一个[半解析模型](@entry_id:754676)替代了巨量的计算，是工程[湍流模拟](@entry_id:1133511)能够实现的关键技术之一。
+这是一个关于未知数 $u_\tau$ 的[超越方程](@keyword=transcendental_equation|lang=zh-CN|style=Feynman)，虽然不能直接求解，但可以通过简单的迭代方法快速得到数值解。一旦求出 $u_\tau$，壁面摩擦力 $\tau_w$ 就迎刃而解。壁面函数巧妙地用一个半解析模型替代了巨量的计算，是工程[湍流模拟](@keyword=turbulent_flow_simulation|lang=zh-CN|style=Feynman)能够实现的关键技术之一。
 
 ### 模型的完善：阻尼的艺术与雷诺比拟
 
-简单的混合长模型 $\ell_m = \kappa y$ 在对数律层工作得很好，但在靠近壁面时显然是错误的，因为它没有考虑到粘性对[湍流](@entry_id:151300)的抑制作用。为了构建一个能横跨整个[近壁区](@entry_id:1128462)域的统一模型，我们需要引入**阻尼函数 (damping functions)**。例如，van Driest 阻尼函数通过一个指数项来修正混合长 ：
+简单的混合长模型 $\ell_m = \kappa y$ 在对数律层工作得很好，但在靠近壁面时显然是错误的，因为它没有考虑到粘性对[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)的抑制作用。为了构建一个能横跨整个[近壁区](@keyword=near_wall_region|lang=zh-CN|style=Feynman)域的统一模型，我们需要引入**阻尼函数 (damping functions)**。例如，van Driest 阻尼函数通过一个指数项来修正混合长 [@problem_id:3975592]：
 $$
 \ell_m = \kappa y \left[1 - \exp\left(-\frac{y^+}{A^+}\right)\right]
 $$
-这里的指数项就像一个开关，当 $y^+$ 很大时它趋近于1，恢[复对数](@entry_id:174857)律行为；当 $y^+$ 很小时，它使得混合长迅速减小，从而“抑制”了[湍流](@entry_id:151300)效应。值得注意的是，阻尼函数的形式并非随心所欲，它必须满足严格的物理约束，即确保[湍流](@entry_id:151300)[雷诺应力](@entry_id:263788)在趋近于壁面时以正确的幂次关系（如 $(y^+)^3$）衰减，这体现了理论对模型构建的深刻指导作用 。
+这里的指数项就像一个开关，当 $y^+$ 很大时它趋近于1，恢[复对数](@keyword=complex_logarithm|lang=zh-CN|style=Feynman)律行为；当 $y^+$ 很小时，它使得混合长迅速减小，从而“抑制”了[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)效应。值得注意的是，阻尼函数的形式并非随心所欲，它必须满足严格的物理约束，即确保[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)[雷诺应力](@keyword=reynolds_stresses|lang=zh-CN|style=Feynman)在趋近于壁面时以正确的幂次关系（如 $(y^+)^3$）衰减，这体现了理论对模型构建的深刻指导作用 [@problem_id:3975564]。
 
-更有趣的是，这种[动量输运](@entry_id:139628)的规律可以被推广到其他物理量的输运，比如热量。这就是**雷诺比拟 (Reynolds Analogy)** 的思想：输运热量的[湍流](@entry_id:151300)涡旋，与输运动量的正是同一批涡旋。通过引入热物性参数，如普朗特数 $Pr$，以及一个衡量[湍流](@entry_id:151300)[输运热](@entry_id:136679)量与动量[相对效率](@entry_id:165851)的**[湍流普朗特数](@entry_id:153739)** $Pr_t$，我们可以推导出一套与速度壁面律完全平行的**温度[壁面律](@entry_id:262057)** $T^+(y^+)$ 。对于气体等常见流体，取 $Pr_t \approx 0.85$ 是一个相当不错的工程近似，这使得我们可以用相似的方法来预测壁面的传热。
+更有趣的是，这种[动量输运](@keyword=momentum_transport|lang=zh-CN|style=Feynman)的规律可以被推广到其他物理量的输运，比如热量。这就是**雷诺比拟 (Reynolds Analogy)** 的思想：输运热量的[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)涡旋，与输运动量的正是同一批涡旋。通过引入热物性参数，如普朗特数 $Pr$，以及一个衡量[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)[输运热](@keyword=heat_of_transport|lang=zh-CN|style=Feynman)量与动量[相对效率](@keyword=relative_efficiency|lang=zh-CN|style=Feynman)的**[湍流普朗特数](@keyword=turbulent_prandtl_number|lang=zh-CN|style=Feynman)** $Pr_t$，我们可以推导出一套与速度壁面律完全平行的**温度[壁面律](@keyword=logarithmic_law_of_the_wall|lang=zh-CN|style=Feynman)** $T^+(y^+)$ [@problem_id:3975576]。对于气体等常见流体，取 $Pr_t \approx 0.85$ 是一个相当不错的工程近似，这使得我们可以用相似的方法来预测壁面的传热。
 
 ### 普适性的边界：当外部世界介入
 
-然而，我们必须清醒地认识到，[壁面律](@entry_id:262057)这幅美丽的图景是在高度理想化的“平衡”边界层中描绘的。当外部流动环境变得复杂时，例如出现**[逆压梯度](@entry_id:276169)**（Adverse Pressure Gradient, APG），即流动方向上的压力不降反升时，情况就大为不同了 。
+然而，我们必须清醒地认识到，[壁面律](@keyword=logarithmic_law_of_the_wall|lang=zh-CN|style=Feynman)这幅美丽的图景是在高度理想化的“平衡”边界层中描绘的。当外部流动环境变得复杂时，例如出现**[逆压梯度](@keyword=adverse_pressure_gradient|lang=zh-CN|style=Feynman)**（Adverse Pressure Gradient, APG），即流动方向上的压力不降反升时，情况就大为不同了 [@problem_id:3975571]。
 
-[逆压梯度](@entry_id:276169)会使整个边界层内的流体减速，尤其是靠近壁面的低能量流体。这会导致边界层迅速增厚，[壁面切应力](@entry_id:263108) $C_f$ 显著降低，甚至可能降为零，引发[流动分离](@entry_id:143331)——这是飞机[失速](@entry_id:186882)、扩压管效率剧降等工程灾难的根源。
+[逆压梯度](@keyword=adverse_pressure_gradient|lang=zh-CN|style=Feynman)会使整个边界层内的流体减速，尤其是靠近壁面的低能量流体。这会导致边界层迅速增厚，[壁面切应力](@keyword=wall_shear_stress|lang=zh-CN|style=Feynman) $C_f$ 显著降低，甚至可能降为零，引发[流动分离](@keyword=flow_separation|lang=zh-CN|style=Feynman)——这是飞机[失速](@keyword=stall|lang=zh-CN|style=Feynman)、扩压管效率剧降等工程灾难的根源。
 
-更重要的是，压力梯度从根本上破坏了[壁面律](@entry_id:262057)成立的基石——“恒应力层”假设。在逆压梯度下，总切应力不再近似等于[壁面切应力](@entry_id:263108)，而是会随 $y$ 显著变化。[湍流](@entry_id:151300)的“产生”与“耗散”也不再[局部平衡](@entry_id:156295)。结果是，普适的对数律不再成立，[速度剖面](@entry_id:266404)发生扭曲。此时，基于标准对数律的[壁面函数](@entry_id:155079)就会给出错误的结果。这警示我们，任何强大的理论都有其适用边界，理解这些边界，并发展能够应对更复杂情况的模型，正是科学不断前进的动力。
+更重要的是，压力梯度从根本上破坏了[壁面律](@keyword=logarithmic_law_of_the_wall|lang=zh-CN|style=Feynman)成立的基石——“恒应力层”假设。在逆压梯度下，总切应力不再近似等于[壁面切应力](@keyword=wall_shear_stress|lang=zh-CN|style=Feynman)，而是会随 $y$ 显著变化。[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)的“产生”与“耗散”也不再[局部平衡](@keyword=local_equilibrium|lang=zh-CN|style=Feynman)。结果是，普适的对数律不再成立，[速度剖面](@keyword=velocity_profile|lang=zh-CN|style=Feynman)发生扭曲。此时，基于标准对数律的[壁面函数](@keyword=wall_functions|lang=zh-CN|style=Feynman)就会给出错误的结果。这警示我们，任何强大的理论都有其适用边界，理解这些边界，并发展能够应对更复杂情况的模型，正是科学不断前进的动力。

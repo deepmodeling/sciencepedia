@@ -1,43 +1,43 @@
 ## 引言
-在探索物质微观世界的征途上，量子力学中的“[多体问题](@entry_id:138087)”如同一座难以逾越的高山。直接求解包含众多相互作用电子的薛定谔方程，其[计算复杂性](@entry_id:204275)超出了现代计算能力的极限。为了绕过这道屏障，[密度泛函理论](@entry_id:139027)（DFT）应运而生，提供了一条革命性的路径，而作为其核心的[科恩-沈方程](@entry_id:143968)，正是将这一理论付诸实践的关键。本文旨在系统性地剖析[科恩-沈方程](@entry_id:143968)的理论精髓与实践应用，弥合抽象[量子理论](@entry_id:145435)与具体材料计算之间的鸿沟。
+在探索物质微观世界的征途上，量子力学中的“[多体问题](@keyword=many_body_problem|lang=zh-CN|style=Feynman)”如同一座难以逾越的高山。直接求解包含众多相互作用电子的薛定谔方程，其[计算复杂性](@keyword=computer_science_complexity|lang=zh-CN|style=Feynman)超出了现代计算能力的极限。为了绕过这道屏障，[密度泛函理论](@keyword=density_functional_theory|lang=zh-CN|style=Feynman)（DFT）应运而生，提供了一条革命性的路径，而作为其核心的[科恩-沈方程](@keyword=kohn–sham_equations|lang=zh-CN|style=Feynman)，正是将这一理论付诸实践的关键。本文旨在系统性地剖析[科恩-沈方程](@keyword=kohn–sham_equations|lang=zh-CN|style=Feynman)的理论精髓与实践应用，弥合抽象[量子理论](@keyword=quantum_theory|lang=zh-CN|style=Feynman)与具体材料计算之间的鸿沟。
 
-本文将分为三个核心章节，引领读者逐步深入。在“原理与机制”一章中，我们将回溯其理论源头，揭示如何巧妙地将一个复杂的[多体问题](@entry_id:138087)转化为一个可解的单粒子问题。接着，在“应用与交叉学科联系”一章，我们将探索这一强大工具在凝聚态物理、化学、[材料科学](@entry_id:152226)乃至核物理等领域的广泛应用，并讨论实现这些计算的实用技术。最后，“动手实践”部分将通过具体的计算问题，巩固理论知识并培养解决实际问题的能力。现在，让我们首先深入其内部，探究[科恩-沈方程](@entry_id:143968)优雅的理论构造和深刻的物理机制。
+本文将分为三个核心章节，引领读者逐步深入。在“原理与机制”一章中，我们将回溯其理论源头，揭示如何巧妙地将一个复杂的[多体问题](@keyword=many_body_problem|lang=zh-CN|style=Feynman)转化为一个可解的单粒子问题。接着，在“应用与交叉学科联系”一章，我们将探索这一强大工具在凝聚态物理、化学、[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)乃至核物理等领域的广泛应用，并讨论实现这些计算的实用技术。最后，“动手实践”部分将通过具体的计算问题，巩固理论知识并培养解决实际问题的能力。现在，让我们首先深入其内部，探究[科恩-沈方程](@keyword=kohn–sham_equations|lang=zh-CN|style=Feynman)优雅的理论构造和深刻的物理机制。
 
 ## 原理与机制
 
-在物理学的宏伟画卷中，最令人望而生畏的挑战之一，莫过于精确描绘一个包含多个相互作用电子的系统。想象一下，即便是像铁原子这样不起眼的存在，其内部 26 个电子的复杂舞蹈，由一个包含 78 个空间坐标的[波函数](@entry_id:147440)所主宰。直接求解这个[波函数](@entry_id:147440)的薛定谔方程，其计算量之大，足以让今天最强大的超级计算机望而却步。这便是所谓的“多体问题”——量子力学在我们试图理解真实材料时设置的一道几乎无法逾越的屏障。然而，正是在这片看似绝望的领域，一种优雅而深刻的理论——[密度泛函理论](@entry_id:139027)（DFT）——横空出世，为我们开辟了一条通往物质微观世界的全新路径。而科恩-沈（Kohn-Sham）方程，正是这一理论的心脏与灵魂。
+在物理学的宏伟画卷中，最令人望而生畏的挑战之一，莫过于精确描绘一个包含多个相互作用电子的系统。想象一下，即便是像铁原子这样不起眼的存在，其内部 26 个电子的复杂舞蹈，由一个包含 78 个空间坐标的波函数所主宰。直接求解这个波函数的薛定谔方程，其计算量之大，足以让今天最强大的超级计算机望而却步。这便是所谓的“多体问题”——量子力学在我们试图理解真实材料时设置的一道几乎无法逾越的屏障。然而，正是在这片看似绝望的领域，一种优雅而深刻的理论——[密度泛函理论](@keyword=density_functional_theory|lang=zh-CN|style=Feynman)（DFT）——横空出世，为我们开辟了一条通往物质微观世界的全新路径。而科恩-沈（Kohn-Sham）方程，正是这一理论的心脏与灵魂。
 
-### 宇宙在一滴[电荷](@entry_id:275494)中的倒影：密度作为主角
+### 宇宙在一滴[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)中的倒影：密度作为主角
 
-1964年，Pierre Hohenberg 和 Walter Kohn 提出了两条定理，其颠覆性不亚于一场科学革命。他们的核心思想是：忘掉那个令人头疼的[多体波函数](@entry_id:203043)吧，我们只需要关注一个更简单的物理量——**电子密度** $n(\mathbf{r})$。电子密度是一个只与空间中三个坐标 $(\mathbf{r})$ 相关的函数，它告诉我们在空间的每一点找到一个电子的概率有多大。
+1964年，Pierre Hohenberg 和 Walter Kohn 提出了两条定理，其颠覆性不亚于一场科学革命。他们的核心思想是：忘掉那个令人头疼的[多体波函数](@keyword=many_body_wavefunction|lang=zh-CN|style=Feynman)吧，我们只需要关注一个更简单的物理量——**电子密度** $n(\mathbf{r})$。电子密度是一个只与空间中三个坐标 $(\mathbf{r})$ 相关的函数，它告诉我们在空间的每一点找到一个电子的概率有多大。
 
-Hohenberg-Kohn 的第一条定理石破天惊地指出，对于一个处于[基态](@entry_id:150928)（最低能量状态）的电子系统，其电子密度 $n(\mathbf{r})$ 与系统所处的**外部势** $v_{\mathrm{ext}}(\mathbf{r})$ 之间存在着[一一对应](@entry_id:143935)的关系（在相差一个无足轻重的常数下）。外部势通常是由[原子核](@entry_id:167902)产生的吸引势，它就像是塑造电子行为的“地形”。这一定理意味着，电子密度 $n(\mathbf{r})$ 就像是系统独一无二的“指纹”。只要我们知道了[基态](@entry_id:150928)电子密度，原则上，我们就能唯一地确定产生这个密度的外部势，进而确定系统的[哈密顿量](@entry_id:172864)，从而获得该系统的一切[基态](@entry_id:150928)性质。这就像通过精确测量一个城市的人口[分布](@entry_id:182848)，我们就能反推出这个城市的地理布局、交通网络和基础设施（即“势”）一样。这个从 $n(\mathbf{r})$ 到 $v_{\mathrm{ext}}(\mathbf{r})$ 的映射，保证了密度作为一个基本变量的合法性 。
+Hohenberg-Kohn 的第一条定理石破天惊地指出，对于一个处于[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)（最低能量状态）的电子系统，其电子密度 $n(\mathbf{r})$ 与系统所处的**外部势** $v_{\mathrm{ext}}(\mathbf{r})$ 之间存在着[一一对应](@keyword=one_to_one_correspondence|lang=zh-CN|style=Feynman)的关系（在相差一个无足轻重的常数下）[@problem_id:3493888]。外部势通常是由[原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)产生的吸引势，它就像是塑造电子行为的“地形”。这一定理意味着，电子密度 $n(\mathbf{r})$ 就像是系统独一无二的“指纹”。只要我们知道了[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)电子密度，原则上，我们就能唯一地确定产生这个密度的外部势，进而确定系统的[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)，从而获得该系统的一切[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)性质。这就像通过精确测量一个城市的人口[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)，我们就能反推出这个城市的地理布局、交通网络和基础设施（即“势”）一样。这个从 $n(\mathbf{r})$ 到 $v_{\mathrm{ext}}(\mathbf{r})$ 的映射，保证了密度作为一个基本变量的合法性 [@problem_id:3493942]。
 
-Hohenberg-Kohn 的第二条定理则更进一步，它宣告存在一个[能量泛函](@entry_id:170311) $E[n]$，其[自变量](@entry_id:267118)正是电子密度。对于任何一个给定的系统，真实的基态密度 $n_0(\mathbf{r})$ 正是那个能够使这个能量泛函 $E[n]$ 达到最小值的密度。这彻底改变了游戏规则：求解一个极其复杂的[偏微分方程](@entry_id:141332)的问题，被转化为了一个寻找函数最小值的[变分问题](@entry_id:756445)。我们的任务，从寻找那个遥不可及的[波函数](@entry_id:147440)，变成了在所有可能的、合理的电子密度中，找到那个能量最低的“最优”密度。
+Hohenberg-Kohn 的第二条定理则更进一步，它宣告存在一个[能量泛函](@keyword=energy_functional|lang=zh-CN|style=Feynman) $E[n]$，其[自变量](@keyword=independent_variables|lang=zh-CN|style=Feynman)正是电子密度。对于任何一个给定的系统，真实的基态密度 $n_0(\mathbf{r})$ 正是那个能够使这个能量泛函 $E[n]$ 达到最小值的密度。这彻底改变了游戏规则：求解一个极其复杂的[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)的问题，被转化为了一个寻找函数最小值的[变分问题](@keyword=variational_problems|lang=zh-CN|style=Feynman)。我们的任务，从寻找那个遥不可及的波函数，变成了在所有可能的、合理的电子密度中，找到那个能量最低的“最优”密度。
 
-### 探寻圣杯：未知的“[普适泛函](@entry_id:140176)”
+### 探寻圣杯：未知的“[普适泛函](@keyword=universal_functional|lang=zh-CN|style=Feynman)”
 
-根据量子力学的基本原理，系统的总[能量泛函](@entry_id:170311) $E[n]$ 可以被形式上地分解为三个部分 ：
+根据量子力学的基本原理，系统的总[能量泛函](@keyword=energy_functional|lang=zh-CN|style=Feynman) $E[n]$ 可以被形式上地分解为三个部分 [@problem_id:3493895]：
 $$
 E[n] = T[n] + E_{\mathrm{ee}}[n] + \int n(\mathbf{r}) v_{\mathrm{ext}}(\mathbf{r}) d\mathbf{r}
 $$
-这里，最后一项 $\int n(\mathbf{r}) v_{\mathrm{ext}}(\mathbf{r}) d\mathbf{r}$ 代表电子在外部势（例如[原子核](@entry_id:167902)的吸引势）中的能量。对于一个给定的系统，这个势是已知的，所以这一项的计算非常直接。
+这里，最后一项 $\int n(\mathbf{r}) v_{\mathrm{ext}}(\mathbf{r}) d\mathbf{r}$ 代表电子在外部势（例如[原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)的吸引势）中的能量。对于一个给定的系统，这个势是已知的，所以这一项的计算非常直接。
 
-真正的挑战在于前两项。$T[n]$ 是相互作用电子系统的**动能**，$E_{\mathrm{ee}}[n]$ 是电子之间的**[相互作用能](@entry_id:264333)**。这两项的总和，$F[n] = T[n] + E_{\mathrm{ee}}[n]$，被称为 **Hohenberg-Kohn [普适泛函](@entry_id:140176)**。说它“普适”，是因为它不依赖于具体的外部势 $v_{\mathrm{ext}}$，对任何电子系统都具有相同的形式。它完全由电子自身的性质和相互作用决定。这个 $F[n]$ 就是密度泛函理论的“圣杯”。
+真正的挑战在于前两项。$T[n]$ 是相互作用电子系统的**动能**，$E_{\mathrm{ee}}[n]$ 是电子之间的**[相互作用能](@keyword=interaction_energy|lang=zh-CN|style=Feynman)**。这两项的总和，$F[n] = T[n] + E_{\mathrm{ee}}[n]$，被称为 **Hohenberg-Kohn [普适泛函](@keyword=universal_functional|lang=zh-CN|style=Feynman)**。说它“普适”，是因为它不依赖于具体的外部势 $v_{\mathrm{ext}}$，对任何电子系统都具有相同的形式。它完全由电子自身的性质和相互作用决定。这个 $F[n]$ 就是密度泛函理论的“圣杯”。
 
 然而，不幸的是，尽管我们知道这个圣杯确实存在，但它的确切形态却是一个巨大的谜团。特别是，$T[n]$，即相互作用电子的动能泛函，其形式极其复杂，我们根本不知道如何精确地用密度 $n(\mathbf{r})$ 来表达它。这成为了将 Hohenberg-Kohn 定理付诸实践的最大障碍。
 
 ### 科恩-沈的妙计：一场精彩的“骗局”
 
-面对这个难题，Walter Kohn 和 Lu Jeu Sham 在1965年提出了一个堪称天才的构想。他们的策略是：既然我们无法处理真实系统中那复杂的动能，何不“偷梁换柱”呢？ 
+面对这个难题，Walter Kohn 和 Lu Jeu Sham 在1965年提出了一个堪称天才的构想。他们的策略是：既然我们无法处理真实系统中那复杂的动能，何不“偷梁换柱”呢？ [@problem_id:3493942]
 
-他们引入了一个虚拟的、辅助性的系统——一个由**无相互作用**的电子组成的参照系。这个虚拟系统的精妙之处在于，通过精心设计一个有效的局域势 $v_{\mathrm{eff}}(\mathbf{r})$，可以使得这些无相互作用的电子在[基态](@entry_id:150928)时，形成的电子密度与我们关心的那个**真实的、相互作用系统**的基[态密度](@entry_id:147894)完全相同。
+他们引入了一个虚拟的、辅助性的系统——一个由**无相互作用**的电子组成的参照系。这个虚拟系统的精妙之处在于，通过精心设计一个有效的局域势 $v_{\mathrm{eff}}(\mathbf{r})$，可以使得这些无相互作用的电子在[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)时，形成的电子密度与我们关心的那个**真实的、相互作用系统**的基[态密度](@keyword=density_of_states|lang=zh-CN|style=Feynman)完全相同。
 
-这个想法为什么如此高明？因为对于一个无相互作用的系统，其总动能 $T_s[n]$ 是可以精确计算的！它就是构成这个系统的所有单电子轨道 $\phi_i$ 的动能之和 。
+这个想法为什么如此高明？因为对于一个无相互作用的系统，其总动能 $T_s[n]$ 是可以精确计算的！它就是构成这个系统的所有单电子轨道 $\phi_i$ 的动能之和 [@problem_id:3493934]。
 
-有了这个“可计算”的动能 $T_s[n]$，Kohn 和 Sham 对真实的[能量泛函](@entry_id:170311)进行了一次巧妙的重新组合。他们从总能量中加上并减去 $T_s[n]$，同时将[电子-电子相互作用](@entry_id:139900)能 $E_{\mathrm{ee}}[n]$ 分解为我们熟悉的经典部分和未知的部分  ：
+有了这个“可计算”的动能 $T_s[n]$，Kohn 和 Sham 对真实的[能量泛函](@keyword=energy_functional|lang=zh-CN|style=Feynman)进行了一次巧妙的重新组合。他们从总能量中加上并减去 $T_s[n]$，同时将[电子-电子相互作用](@keyword=electron_electron_interactions|lang=zh-CN|style=Feynman)能 $E_{\mathrm{ee}}[n]$ 分解为我们熟悉的经典部分和未知的部分 [@problem_id:3493895] [@problem_id:3493892]：
 
-1.  **经典静电能（哈特里能）** $E_{\mathrm{H}}[n]$：这是将电子密度云看作一团经典[电荷](@entry_id:275494)时，其自身的静电排斥能。它的表达式是已知的：$E_{\mathrm{H}}[n] = \frac{1}{2} \iint \frac{n(\mathbf{r}) n(\mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|} d\mathbf{r} d\mathbf{r}'$。
+1.  **经典静电能（哈特里能）** $E_{\mathrm{H}}[n]$：这是将电子密度云看作一团经典[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)时，其自身的静电排斥能。它的表达式是已知的：$E_{\mathrm{H}}[n] = \frac{1}{2} \iint \frac{n(\mathbf{r}) n(\mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|} d\mathbf{r} d\mathbf{r}'$。
 
 2.  **剩余部分**：所有未知的、复杂的量子效应。
 
@@ -51,42 +51,42 @@ E_{\mathrm{xc}}[n] \equiv (T[n] - T_s[n]) + (E_{\mathrm{ee}}[n] - E_{\mathrm{H}}
 $$
 这个“魔法垃圾桶”$E_{\mathrm{xc}}[n]$ 装下了所有棘手的物理：
 *   **动能关联** $(T[n] - T_s[n])$：真实电子为了躲避彼此而产生的额外动能，这部分被无相互作用动能 $T_s[n]$ 忽略了。
-*   **[交换能](@entry_id:137069)**：源于[泡利不相容原理](@entry_id:141850)，它使得自旋相同的电子倾向于相互“回避”，这是一种纯粹的量子效应。
-*   **库仑关联能**：电子运动的动态关联效应，超出了经典平均[静电排斥](@entry_id:162128)（哈特里能）的描述。
-*   **自相互作用修正**：哈特里能 $E_{\mathrm{H}}[n]$ 错误地包含了一个电子与其自身[电荷](@entry_id:275494)云的相互作用，而这必须由 $E_{\mathrm{xc}}[n]$ 来精确地抵消掉 。
+*   **[交换能](@keyword=exchange_energy|lang=zh-CN|style=Feynman)**：源于[泡利不相容原理](@keyword=pauli_exclusion_principle|lang=zh-CN|style=Feynman)，它使得自旋相同的电子倾向于相互“回避”，这是一种纯粹的量子效应。
+*   **库仑关联能**：电子运动的动态关联效应，超出了经典平均[静电排斥](@keyword=electrostatic_repulsion|lang=zh-CN|style=Feynman)（哈特里能）的描述。
+*   **自相互作用修正**：哈特里能 $E_{\mathrm{H}}[n]$ 错误地包含了一个电子与其自身[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)云的相互作用，而这必须由 $E_{\mathrm{xc}}[n]$ 来精确地抵消掉 [@problem_id:3493892]。
 
 Kohn-Sham 的妙计在于，尽管 $E_{\mathrm{xc}}[n]$ 仍然是未知的，但它在总能量中的占比通常比动能小得多，这使得对它进行近似变得更加可行和有效。
 
 ### 自洽的交响乐
 
-有了这个能量泛函，下一步就是应用变分原理，寻找能够使其最小化的那一组[科恩-沈轨道](@entry_id:171979) $\{\phi_i\}$。这个过程最终导出了一组简洁而优美的方程，即**[科恩-沈方程](@entry_id:143968)** ：
+有了这个能量泛函，下一步就是应用变分原理，寻找能够使其最小化的那一组[科恩-沈轨道](@keyword=kohn_sham_orbitals|lang=zh-CN|style=Feynman) $\{\phi_i\}$。这个过程最终导出了一组简洁而优美的方程，即**[科恩-沈方程](@keyword=kohn–sham_equations|lang=zh-CN|style=Feynman)** [@problem_id:2768067]：
 $$
 \left[ -\frac{1}{2}\nabla^2 + v_{\mathrm{eff}}(\mathbf{r}) \right] \phi_i(\mathbf{r}) = \varepsilon_i \phi_i(\mathbf{r})
 $$
-这组方程的形式与单电子的薛定谔方程惊人地相似！这里的 $\phi_i$ 是[科恩-沈轨道](@entry_id:171979)，$\varepsilon_i$ 是对应的[轨道](@entry_id:137151)能。每个虚拟的电子，都在一个共同的**有效势** $v_{\mathrm{eff}}(\mathbf{r})$ 中运动。这个[有效势](@entry_id:142581)由三部分构成：
+这组方程的形式与单电子的薛定谔方程惊人地相似！这里的 $\phi_i$ 是[科恩-沈轨道](@keyword=kohn_sham_orbitals|lang=zh-CN|style=Feynman)，$\varepsilon_i$ 是对应的[轨道](@keyword=orbit|lang=zh-CN|style=Feynman)能。每个虚拟的电子，都在一个共同的**有效势** $v_{\mathrm{eff}}(\mathbf{r})$ 中运动。这个[有效势](@keyword=effective_potential|lang=zh-CN|style=Feynman)由三部分构成：
 $$
 v_{\mathrm{eff}}(\mathbf{r}) = v_{\mathrm{ext}}(\mathbf{r}) + v_{\mathrm{H}}(\mathbf{r}) + v_{\mathrm{xc}}(\mathbf{r})
 $$
 其中，$v_{\mathrm{H}}(\mathbf{r})$ 是哈特里势，$v_{\mathrm{xc}}(\mathbf{r})$ 是交换关联势，它们分别是 $E_{\mathrm{H}}[n]$ 和 $E_{\mathrm{xc}}[n]$ 对密度 $n(\mathbf{r})$ 的泛函导数。
 
-我们可以通过一个具体的例子来感受密度与势之间的深刻联系。考虑一个假设的、球对称的双电子系统，其密度恰好为 $n(r) = 2\frac{Z^3}{\pi}\exp(-2Zr)$。通过反解[科恩-沈方程](@entry_id:143968)，我们可以精确地找出产生这个密度的[有效势](@entry_id:142581)，结果出人意料地简单：$v_{\mathrm{eff}}(r) = -Z/r$ 。这正是一个[电荷](@entry_id:275494)为 $Z$ 的[原子核](@entry_id:167902)所产生的库仑势。这个例子生动地展示了，一旦密度确定，其背后的势场也就随之确定。
+我们可以通过一个具体的例子来感受密度与势之间的深刻联系。考虑一个假设的、球对称的双电子系统，其密度恰好为 $n(r) = 2\frac{Z^3}{\pi}\exp(-2Zr)$。通过反解[科恩-沈方程](@keyword=kohn–sham_equations|lang=zh-CN|style=Feynman)，我们可以精确地找出产生这个密度的[有效势](@keyword=effective_potential|lang=zh-CN|style=Feynman)，结果出人意料地简单：$v_{\mathrm{eff}}(r) = -Z/r$ [@problem_id:2768067]。这正是一个[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)为 $Z$ 的[原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)所产生的库仑势。这个例子生动地展示了，一旦密度确定，其背后的势场也就随之确定。
 
-然而，[科恩-沈方程](@entry_id:143968)的求解并非一蹴而就。这里存在一个微妙的“鸡生蛋，蛋生鸡”的问题：有效势 $v_{\mathrm{eff}}$ 依赖于电子密度 $n$，而电子密度 $n$ 又需要通过求解依赖于 $v_{\mathrm{eff}}$ 的[科恩-沈方程](@entry_id:143968)中的[轨道](@entry_id:137151) $\phi_i$ 来计算。
+然而，[科恩-沈方程](@keyword=kohn–sham_equations|lang=zh-CN|style=Feynman)的求解并非一蹴而就。这里存在一个微妙的“鸡生蛋，蛋生鸡”的问题：有效势 $v_{\mathrm{eff}}$ 依赖于电子密度 $n$，而电子密度 $n$ 又需要通过求解依赖于 $v_{\mathrm{eff}}$ 的[科恩-沈方程](@keyword=kohn–sham_equations|lang=zh-CN|style=Feynman)中的[轨道](@keyword=orbit|lang=zh-CN|style=Feynman) $\phi_i$ 来计算。
 
-解决这个[循环依赖](@entry_id:273976)的方法，是一种被称为**[自洽场](@entry_id:136549)（Self-Consistent Field, SCF）**的迭代过程 。这个过程就像一曲和谐的交响乐，各个部分相互调整，直至达到完美的和谐：
+解决这个[循环依赖](@keyword=circular_dependency|lang=zh-CN|style=Feynman)的方法，是一种被称为**[自洽场](@keyword=self_consistent_field|lang=zh-CN|style=Feynman)（Self-Consistent Field, SCF）**的迭代过程 [@problem_id:3493899]。这个过程就像一曲和谐的交响乐，各个部分相互调整，直至达到完美的和谐：
 1.  **起始乐章**：首先，我们对电子密度进行一个合理的猜测，记为 $n^{(0)}(\mathbf{r})$。
 2.  **构建势场**：利用 $n^{(0)}$ 计算出初始的有效势 $v_{\mathrm{eff}}^{(0)}(\mathbf{r})$。
-3.  **求解乐章**：在 $v_{\mathrm{eff}}^{(0)}$ 中求解[科恩-沈方程](@entry_id:143968)，得到一组新的[轨道](@entry_id:137151) $\{\phi_i^{(1)}\}$。
-4.  **更新密度**：根据新的[轨道](@entry_id:137151)计算出新的电子密度 $n^{(1)}(\mathbf{r}) = \sum_i |\phi_i^{(1)}(\mathbf{r})|^2$。
-5.  **和谐检验**：将新的密度 $n^{(1)}$ 与旧的密度 $n^{(0)}$ 进行比较。如果两者足够接近（在预设的精度范围内），则说明系统达到了“自洽”，我们找到了基[态密度](@entry_id:147894)和能量。如果不够接近，就将新旧密度以某种方式混合，得到一个更好的猜测密度，然后回到第二步，开始新一轮的迭代。
+3.  **求解乐章**：在 $v_{\mathrm{eff}}^{(0)}$ 中求解[科恩-沈方程](@keyword=kohn–sham_equations|lang=zh-CN|style=Feynman)，得到一组新的[轨道](@keyword=orbit|lang=zh-CN|style=Feynman) $\{\phi_i^{(1)}\}$。
+4.  **更新密度**：根据新的[轨道](@keyword=orbit|lang=zh-CN|style=Feynman)计算出新的电子密度 $n^{(1)}(\mathbf{r}) = \sum_i |\phi_i^{(1)}(\mathbf{r})|^2$。
+5.  **和谐检验**：将新的密度 $n^{(1)}$ 与旧的密度 $n^{(0)}$ 进行比较。如果两者足够接近（在预设的精度范围内），则说明系统达到了“自洽”，我们找到了基[态密度](@keyword=density_of_states|lang=zh-CN|style=Feynman)和能量。如果不够接近，就将新旧密度以某种方式混合，得到一个更好的猜测密度，然后回到第二步，开始新一轮的迭代。
 
 这个迭代过程不断循环，直到输入的密度和输出的密度不再变化，仿佛整个系统达成了一种动态的平衡。
 
 ### 交易的艺术：近似未知
 
-整个[科恩-沈理论](@entry_id:141997)框架的实用性，最终落脚于我们如何处理那个未知的交换关联泛函 $E_{\mathrm{xc}}[n]$。幸运的是，我们不需要知道它的精确形式，只需要找到足够好的近似。
+整个[科恩-沈理论](@keyword=kohn_sham_theory|lang=zh-CN|style=Feynman)框架的实用性，最终落脚于我们如何处理那个未知的交换关联泛函 $E_{\mathrm{xc}}[n]$。幸运的是，我们不需要知道它的精确形式，只需要找到足够好的近似。
 
-最古老、最简单也最具启发性的近似，是**[局域密度近似](@entry_id:138982)（Local Density Approximation, LDA）**。[LDA](@entry_id:138982) 的思想非常直观：它假设在空间的每一点 $\mathbf{r}$，电子的行为都和密度等于该点局域密度 $n(\mathbf{r})$ 的**[均匀电子气](@entry_id:163911)**中的电子行为相同。[均匀电子气](@entry_id:163911)是一个理想化的模型，其中的电子[均匀分布](@entry_id:194597)在充满正[电荷](@entry_id:275494)背景的空间中。尽管简单，但这个系统的交换关联能 $\varepsilon_{\mathrm{xc}}^{\mathrm{unif}}(n)$ 是可以被精确计算或高精度模拟的 。于是，整个系统的交换关联能就可以近似为：
+最古老、最简单也最具启发性的近似，是**[局域密度近似](@keyword=local_density_approximation|lang=zh-CN|style=Feynman)（Local Density Approximation, LDA）**。[LDA](@keyword=local_density_approximation|lang=zh-CN|style=Feynman) 的思想非常直观：它假设在空间的每一点 $\mathbf{r}$，电子的行为都和密度等于该点局域密度 $n(\mathbf{r})$ 的**[均匀电子气](@keyword=uniform_electron_gas|lang=zh-CN|style=Feynman)**中的电子行为相同。[均匀电子气](@keyword=uniform_electron_gas|lang=zh-CN|style=Feynman)是一个理想化的模型，其中的电子[均匀分布](@keyword=equidistribution|lang=zh-CN|style=Feynman)在充满正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)背景的空间中。尽管简单，但这个系统的交换关联能 $\varepsilon_{\mathrm{xc}}^{\mathrm{unif}}(n)$ 是可以被精确计算或高精度模拟的 [@problem_id:3493933]。于是，整个系统的交换关联能就可以近似为：
 $$
 E_{\mathrm{xc}}^{\mathrm{LDA}}[n] = \int n(\mathbf{r}) \varepsilon_{\mathrm{xc}}^{\mathrm{unif}}(n(\mathbf{r})) d\mathbf{r}
 $$
@@ -94,12 +94,12 @@ LDA 的惊人成功，证明了电子的交换关联相互作用在很大程度�
 
 ### 阴影中的深层真理
 
-[科恩-沈理论](@entry_id:141997)的优雅之处不仅在于其实用性，更在于它揭示了量子世界中一些深刻而微妙的真理。
+[科恩-沈理论](@keyword=kohn_sham_theory|lang=zh-CN|style=Feynman)的优雅之处不仅在于其实用性，更在于它揭示了量子世界中一些深刻而微妙的真理。
 
-一个著名的问题是所谓的“[带隙问题](@entry_id:143831)”。在[半导体](@entry_id:141536)和绝缘体中，[科恩-沈轨道](@entry_id:171979)能的最高占据能级（HOMO）和最低未占据能级（LUMO）之间的差值，即科恩-沈[带隙](@entry_id:191975)，通常被用来估算材料的真实[带隙](@entry_id:191975)。然而，使用 [LDA](@entry_id:138982) 等简单近似计算出的科恩-沈[带隙](@entry_id:191975)，往往远小于实验测得的真实[带隙](@entry_id:191975)。
+一个著名的问题是所谓的“[带隙问题](@keyword=band_gap_problem|lang=zh-CN|style=Feynman)”。在[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)和绝缘体中，[科恩-沈轨道](@keyword=kohn_sham_orbitals|lang=zh-CN|style=Feynman)能的最高占据能级（HOMO）和最低未占据能级（LUMO）之间的差值，即科恩-沈[带隙](@keyword=band_gaps|lang=zh-CN|style=Feynman)，通常被用来估算材料的真实[带隙](@keyword=band_gaps|lang=zh-CN|style=Feynman)。然而，使用 [LDA](@keyword=local_density_approximation|lang=zh-CN|style=Feynman) 等简单近似计算出的科恩-沈[带隙](@keyword=band_gaps|lang=zh-CN|style=Feynman)，往往远小于实验测得的真实[带隙](@keyword=band_gaps|lang=zh-CN|style=Feynman)。
 
-这个差异的根源，在于一个深刻的理论概念——**[导数不连续性](@entry_id:136336)** 。精确的交换关联势 $v_{\mathrm{xc}}(\mathbf{r})$ 在电子数从整数 $N$ 变为 $N+\delta$（$\delta$ 为无穷小量）时，会发生一个数值上的突变，这个跳跃 $\Delta_{\mathrm{xc}}$ 是一个空间上均匀的常数。真实的[带隙](@entry_id:191975) $E_g$ 与科恩-沈[带隙](@entry_id:191975) $E_g^{\mathrm{KS}}$ 之间的关系由 Sham-Schlüter 关系式给出：$E_g = E_g^{\mathrm{KS}} + \Delta_{\mathrm{xc}}$。而像 LDA 这样的近似泛函，其对应的势函数随电子数的变化是平滑的，缺乏这种不连续性，即 $\Delta_{\mathrm{xc}} \approx 0$，这正是它们低估[带隙](@entry_id:191975)的根本原因。这个看似微小的数学特性，却承载着重要的物理现实。
+这个差异的根源，在于一个深刻的理论概念——**[导数不连续性](@keyword=derivative_discontinuity|lang=zh-CN|style=Feynman)** [@problem_id:3493928]。精确的交换关联势 $v_{\mathrm{xc}}(\mathbf{r})$ 在电子数从整数 $N$ 变为 $N+\delta$（$\delta$ 为无穷小量）时，会发生一个数值上的突变，这个跳跃 $\Delta_{\mathrm{xc}}$ 是一个空间上均匀的常数。真实的[带隙](@keyword=band_gaps|lang=zh-CN|style=Feynman) $E_g$ 与科恩-沈[带隙](@keyword=band_gaps|lang=zh-CN|style=Feynman) $E_g^{\mathrm{KS}}$ 之间的关系由 Sham-Schlüter 关系式给出：$E_g = E_g^{\mathrm{KS}} + \Delta_{\mathrm{xc}}$。而像 LDA 这样的近似泛函，其对应的势函数随电子数的变化是平滑的，缺乏这种不连续性，即 $\Delta_{\mathrm{xc}} \approx 0$，这正是它们低估[带隙](@keyword=band_gaps|lang=zh-CN|style=Feynman)的根本原因。这个看似微小的数学特性，却承载着重要的物理现实。
 
-此外，并非任何一个看起来合理的函数都能成为一个物理系统的基态密度。一个密度函数必须满足某些基本条件，例如，它所对应的动能必须是有限的。一个在某点呈现尖锐“V”字形（例如 $n(x) \propto |x|$）的密度，其对应的动能会趋于无穷大，因此它不可能是任何物理系统的基态密度 。这提醒我们，电子密度这个看似简单的量，其内部也蕴含着量子力学对平滑性和良好行为的深刻要求。
+此外，并非任何一个看起来合理的函数都能成为一个物理系统的基态密度。一个密度函数必须满足某些基本条件，例如，它所对应的动能必须是有限的。一个在某点呈现尖锐“V”字形（例如 $n(x) \propto |x|$）的密度，其对应的动能会趋于无穷大，因此它不可能是任何物理系统的基态密度 [@problem_id:3493913]。这提醒我们，电子密度这个看似简单的量，其内部也蕴含着量子力学对平滑性和良好行为的深刻要求。
 
-总而言之，[科恩-沈方程](@entry_id:143968)不仅仅是一套计算工具，它是一种看待量子多体世界的世界观。它通过一个巧妙的虚拟构造，将一个无法解决的问题转化为了一个可以近似求解的问题，并在这一过程中，为我们揭示了[电子结构理论](@entry_id:172375)中令人着迷的内在统一与美。
+总而言之，[科恩-沈方程](@keyword=kohn–sham_equations|lang=zh-CN|style=Feynman)不仅仅是一套计算工具，它是一种看待量子多体世界的世界观。它通过一个巧妙的虚拟构造，将一个无法解决的问题转化为了一个可以近似求解的问题，并在这一过程中，为我们揭示了[电子结构理论](@keyword=electronic_structure_theory|lang=zh-CN|style=Feynman)中令人着迷的内在统一与美。

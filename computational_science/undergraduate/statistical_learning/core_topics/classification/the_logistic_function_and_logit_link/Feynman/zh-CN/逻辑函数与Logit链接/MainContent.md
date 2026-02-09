@@ -1,13 +1,13 @@
 ## 引言
-在统计学和机器学习的广阔天地中，我们如何为那些只有“是”或“否”、“成功”或“失败”两种结果的事件建模？[逻辑斯谛函数](@article_id:638529)与 Logit 链接提供了一套优雅而强大的解决方案，是连接线性模型与概率世界的关键桥梁。它们不仅是分类问题的基石，更是一种深刻的思维方式，贯穿于从生物学到金融学的众多学科之中。
+在统计学和机器学习的广阔天地中，我们如何为那些只有“是”或“否”、“成功”或“失败”两种结果的事件建模？[逻辑斯谛函数](@keyword=logistic_function|lang=zh-CN|style=Feynman)与 Logit 链接提供了一套优雅而强大的解决方案，是连接线性模型与概率世界的关键桥梁。它们不仅是分类问题的基石，更是一种深刻的思维方式，贯穿于从生物学到金融学的众多学科之中。
 
 本文旨在解决一个核心问题：如何使用输出范围为整个实数轴的线性模型，来预测一个被严格限制在 $[0, 1]$ 区间内的概率。我们将带领读者深入探索这一看似矛盾问题的精妙解法，揭示其背后的数学之美和应用之广。
 
-在接下来的内容中，您将首先在“原理与机制”一章中，深入了解 Logit 变换如何将概率转换为对数发生比，以及[逻辑斯谛回归](@article_id:296840)系数的直观解释；接着，在“应用与跨学科连接”一章中，您将看到这一模型如何在垃圾邮件过滤、基因调控、[金融风险](@article_id:298546)评估等迥异的领域中大放异彩；最后，“动手实践”部分将通过具体问题，巩固您对理论知识的掌握。让我们一同开启这段探索之旅，领略[逻辑斯谛函数](@article_id:638529)如何帮助我们从不确定性中洞察规律。
+在接下来的内容中，您将首先在“原理与机制”一章中，深入了解 Logit 变换如何将概率转换为对数发生比，以及[逻辑斯谛回归](@keyword=logistic_regression|lang=zh-CN|style=Feynman)系数的直观解释；接着，在“应用与跨学科连接”一章中，您将看到这一模型如何在垃圾邮件过滤、基因调控、[金融风险](@keyword=financial_risk|lang=zh-CN|style=Feynman)评估等迥异的领域中大放异彩；最后，“动手实践”部分将通过具体问题，巩固您对理论知识的掌握。让我们一同开启这段探索之旅，领略[逻辑斯谛函数](@keyword=logistic_function|lang=zh-CN|style=Feynman)如何帮助我们从不确定性中洞察规律。
 
 ## 原理与机制
 
-在上一章中，我们已经对[逻辑斯谛函数](@article_id:638529)和 Logit 链接有了初步的印象。现在，让我们像一位探险家一样，深入这片迷人的数学大陆，揭示其内在的原理与机制。我们的旅程将从一个根本性的问题开始：我们如何用一个可以取任何值的[线性模型](@article_id:357202)，去预测一个只能在 0 和 1 之间取值的概率？
+在上一章中，我们已经对[逻辑斯谛函数](@keyword=logistic_function|lang=zh-CN|style=Feynman)和 Logit 链接有了初步的印象。现在，让我们像一位探险家一样，深入这片迷人的数学大陆，揭示其内在的原理与机制。我们的旅程将从一个根本性的问题开始：我们如何用一个可以取任何值的[线性模型](@keyword=linear_models|lang=zh-CN|style=Feynman)，去预测一个只能在 0 和 1 之间取值的概率？
 
 ### 从概率到无限：Logit 变换的桥梁
 
@@ -25,24 +25,24 @@ $$
 g(p) = \ln\left(\frac{p}{1-p}\right)
 $$
 
-这个简单的变换创造了奇迹。让我们看看它的行为 ：
-*   当概率 $p$ 趋近于 1 时（事件[几乎必然](@article_id:326226)发生），发生比趋近于正无穷，其对数也趋近于 **正无穷**。
+这个简单的变换创造了奇迹。让我们看看它的行为 [@problem_id:1931452]：
+*   当概率 $p$ 趋近于 1 时（事件[几乎必然](@keyword=almost_surely|lang=zh-CN|style=Feynman)发生），发生比趋近于正无穷，其对数也趋近于 **正无穷**。
 *   当概率 $p$ 趋近于 0 时（事件几乎不可能发生），发生比趋近于 0，其对数趋近于 **负无穷**。
 *   当概率 $p = 0.5$ 时，发生比为 1，其对数 $\ln(1) = 0$。
 
-Logit 函数成功地将一个受限的[概率值](@article_id:296952) $p \in (0, 1)$ 转换成了一个可以在整个实数轴 $(-\infty, \infty)$ 上自由驰骋的数值。它就是我们苦苦寻觅的那座完美的桥梁。例如，对于一个 germination 概率为 $p=0.9$ 的种子，其对数发生比为 $\ln(\frac{0.9}{0.1}) = \ln(9) \approx 2.197$ 。一个接近 1 的概率被映射成了一个较大的正数。
+Logit 函数成功地将一个受限的[概率值](@keyword=p_value|lang=zh-CN|style=Feynman) $p \in (0, 1)$ 转换成了一个可以在整个实数轴 $(-\infty, \infty)$ 上自由驰骋的数值。它就是我们苦苦寻觅的那座完美的桥梁。例如，对于一个 germination 概率为 $p=0.9$ 的种子，其对数发生比为 $\ln(\frac{0.9}{0.1}) = \ln(9) \approx 2.197$ [@problem_id:1931469]。一个接近 1 的概率被映射成了一个较大的正数。
 
 ### 搭建模型：将对数发生比与现实世界关联
 
-有了 Logit 这座桥梁，我们现在可以理直气壮地使用线性模型了。我们不再直接对概率 $p$ 建模，而是对它的对数发生比进行[线性建模](@article_id:350738)：
+有了 Logit 这座桥梁，我们现在可以理直气壮地使用线性模型了。我们不再直接对概率 $p$ 建模，而是对它的对数发生比进行[线性建模](@keyword=linear_modeling|lang=zh-CN|style=Feynman)：
 
 $$
 \ln\left(\frac{p}{1-p}\right) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_k x_k
 $$
 
-这就是**[逻辑斯谛回归](@article_id:296840) (Logistic Regression)** 的精髓。它本质上是一个线性模型，但它预测的不是结果本身，而是结果的对数发生比。这种设计的巧妙之处在于，模型中的系数 $\beta_j$ 具有非常直观和优美的解释。
+这就是**[逻辑斯谛回归](@keyword=logistic_regression|lang=zh-CN|style=Feynman) (Logistic Regression)** 的精髓。它本质上是一个线性模型，但它预测的不是结果本身，而是结果的对数发生比。这种设计的巧妙之处在于，模型中的系数 $\beta_j$ 具有非常直观和优美的解释。
 
-让我们从第一性原理出发来理解这一点 。假设我们想研究某个预测变量 $x_j$ 的影响，同时保持所有其他变量不变。如果我们将 $x_j$ 增加一个单位，新的对数发生比变为：
+让我们从第一性原理出发来理解这一点 [@problem_id:3185545]。假设我们想研究某个预测变量 $x_j$ 的影响，同时保持所有其他变量不变。如果我们将 $x_j$ 增加一个单位，新的对数发生比变为：
 
 $$
 \text{log-odds}_{\text{new}} = \beta_0 + \beta_1 x_1 + \dots + \beta_j (x_j+1) + \dots + \beta_k x_k
@@ -54,7 +54,7 @@ $$
 \Delta(\text{log-odds}) = \text{log-odds}_{\text{new}} - \text{log-odds}_{\text{old}} = \beta_j
 $$
 
-这个结果干净利落得令人惊叹：**在[逻辑斯谛回归](@article_id:296840)中，系数 $\beta_j$ 的值直接等于当预测变量 $x_j$ 每增加一个单位时，结果的对数发生比的变化量。**
+这个结果干净利落得令人惊叹：**在[逻辑斯谛回归](@keyword=logistic_regression|lang=zh-CN|style=Feynman)中，系数 $\beta_j$ 的值直接等于当预测变量 $x_j$ 每增加一个单位时，结果的对数发生比的变化量。**
 
 更进一步，利用对数的性质 $\ln(a) - \ln(b) = \ln(a/b)$，我们有：
 
@@ -68,27 +68,27 @@ $$
 \text{OR} = \frac{\text{odds}_{\text{new}}}{\text{odds}_{\text{old}}} = \exp(\beta_j)
 $$
 
-这意味着 $\exp(\beta_j)$ 是一个乘法因子。当 $x_j$ 每增加一个单位，事件的发生比就会乘以 $\exp(\beta_j)$。例如，在一个预测 ICU 病人死亡风险的模型中，如果“序贯器官衰竭评估”（SOFA）分数的系数是 $\beta_{\text{SOFA}} = 0.42$，那么 SOFA 分数每增加 1 分，病人死亡的发生比将乘以 $\exp(0.42) \approx 1.522$ 。这种解释的清晰度和实用性，正是逻辑斯谛回归在医学、金融和社会科学等领域大行其道的重要原因。
+这意味着 $\exp(\beta_j)$ 是一个乘法因子。当 $x_j$ 每增加一个单位，事件的发生比就会乘以 $\exp(\beta_j)$。例如，在一个预测 ICU 病人死亡风险的模型中，如果“序贯器官衰竭评估”（SOFA）分数的系数是 $\beta_{\text{SOFA}} = 0.42$，那么 SOFA 分数每增加 1 分，病人死亡的发生比将乘以 $\exp(0.42) \approx 1.522$ [@problem_id:3185545]。这种解释的清晰度和实用性，正是逻辑斯谛回归在医学、金融和社会科学等领域大行其道的重要原因。
 
 ### “平均”的艺术与模型的局限
 
-我们已经理解了斜率系数 $\beta_j$ 的含义，那么截距项 $\beta_0$ 又代表什么呢？它的解释依赖于我们如何处理数据。在实践中，一个非常普遍且明智的做法是**标准化 (standardization)** 特征，即从每个特征中减去其均值，然后除以其[标准差](@article_id:314030)。
+我们已经理解了斜率系数 $\beta_j$ 的含义，那么截距项 $\beta_0$ 又代表什么呢？它的解释依赖于我们如何处理数据。在实践中，一个非常普遍且明智的做法是**标准化 (standardization)** 特征，即从每个特征中减去其均值，然后除以其[标准差](@keyword=standard_deviation|lang=zh-CN|style=Feynman)。
 
-经过[标准化](@article_id:310343)后，一个[特征值](@article_id:315305)为 0 的观测值就代表了该特征处于样本的“平均水平”。在这种情况下，当我们把所有特征 $x_j$ 都设为 0 时，模型方程简化为 $\text{log-odds} = \beta_0$。因此，**$\beta_0$ 就代表了对于一个在所有方面都处于“平均水平”的个体，其结果的对数发生比** 。
+经过[标准化](@keyword=normalization|lang=zh-CN|style=Feynman)后，一个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)为 0 的观测值就代表了该特征处于样本的“平均水平”。在这种情况下，当我们把所有特征 $x_j$ 都设为 0 时，模型方程简化为 $\text{log-odds} = \beta_0$。因此，**$\beta_0$ 就代表了对于一个在所有方面都处于“平均水平”的个体，其结果的对数发生比** [@problem_id:3133333]。
 
-然而，一个优秀的科学家总是会追问：这个“平均个体”在现实中存在吗？或者说，这个平均轮廓有意义吗？例如，如果你的模型中有一个“是否吸烟”的[二元变量](@article_id:342193)（编码为0或1），在[标准化](@article_id:310343)后，它的均值可能在0和1之间，比如0.2。那么一个“处于平均水平”的个体就意味着他有“0.2个单位的吸烟史”，这在现实中是荒谬的。在这些情况下，截距项 $\beta_0$ 虽然在数学上是必需的，以确保模型整体的正确性，但它本身失去了直接的、符合直觉的解释，更多地是作为一个校准常数存在 。这提醒我们，解释模型不仅仅是套用公式，更是一种需要结合领域知识的艺术。
+然而，一个优秀的科学家总是会追问：这个“平均个体”在现实中存在吗？或者说，这个平均轮廓有意义吗？例如，如果你的模型中有一个“是否吸烟”的[二元变量](@keyword=binary_variables|lang=zh-CN|style=Feynman)（编码为0或1），在[标准化](@keyword=normalization|lang=zh-CN|style=Feynman)后，它的均值可能在0和1之间，比如0.2。那么一个“处于平均水平”的个体就意味着他有“0.2个单位的吸烟史”，这在现实中是荒谬的。在这些情况下，截距项 $\beta_0$ 虽然在数学上是必需的，以确保模型整体的正确性，但它本身失去了直接的、符合直觉的解释，更多地是作为一个校准常数存在 [@problem_id:3133333]。这提醒我们，解释模型不仅仅是套用公式，更是一种需要结合领域知识的艺术。
 
 ### S 形曲线：从对数发生比回到概率
 
-我们的旅程已经从概率走到了对数发生比，现在是时候返回了。如何将线性模型产生的、处于 $(-\infty, \infty)$ 的对数发生比 $\eta = \mathbf{x}^{\top}\boldsymbol{\beta}$ 变回一个位于 $(0, 1)$ 的概率 $p$？我们需要的正是 Logit 函数的[反函数](@article_id:639581)，它就是大名鼎鼎的 **[逻辑斯谛函数](@article_id:638529) (Logistic Function)**，也常被称为 **Sigmoid 函数**：
+我们的旅程已经从概率走到了对数发生比，现在是时候返回了。如何将线性模型产生的、处于 $(-\infty, \infty)$ 的对数发生比 $\eta = \mathbf{x}^{\top}\boldsymbol{\beta}$ 变回一个位于 $(0, 1)$ 的概率 $p$？我们需要的正是 Logit 函数的[反函数](@keyword=function_inverse|lang=zh-CN|style=Feynman)，它就是大名鼎鼎的 **[逻辑斯谛函数](@keyword=logistic_function|lang=zh-CN|style=Feynman) (Logistic Function)**，也常被称为 **Sigmoid 函数**：
 
 $$
 p = \sigma(\eta) = \frac{1}{1 + \exp(-\eta)}
 $$
 
-这个[函数图像](@article_id:350787)呈现出一条优美的“S”形曲线。无论输入 $\eta$ 的值有多大或多小，它都能巧妙地将其“压扁”到 $(0, 1)$ 的区间内，完美地完成了从[线性预测](@article_id:359973)值到概率的转换。
+这个[函数图像](@keyword=function_graph|lang=zh-CN|style=Feynman)呈现出一条优美的“S”形曲线。无论输入 $\eta$ 的值有多大或多小，它都能巧妙地将其“压扁”到 $(0, 1)$ 的区间内，完美地完成了从[线性预测](@keyword=linear_prediction|lang=zh-CN|style=Feynman)值到概率的转换。
 
-这里，我们必须做一个重要的澄清，以避免常见的混淆 。在生态学中，描述种群数量增长的“[逻辑斯谛增长模型](@article_id:309303)”也会产生 S 形曲线。然而，此“逻辑斯谛”非彼“逻辑斯谛”。统计学中的[逻辑斯谛函数](@article_id:638529)是一个**静态的数学变换**，用于连接[线性预测](@article_id:359973)值和概率，其横轴是某个预测变量 $x$。而生态学中的[逻辑斯谛增长模型](@article_id:309303)是一个**描述动态过程的[微分方程](@article_id:327891)**，其横轴是时间 $t$。将两者混为一谈，就像把一张地图的[等高线](@article_id:332206)误认为是过山车的轨道一样，是一种对事物本质的误解。
+这里，我们必须做一个重要的澄清，以避免常见的混淆 [@problem_id:3185529]。在生态学中，描述种群数量增长的“[逻辑斯谛增长模型](@keyword=logistic_growth_model|lang=zh-CN|style=Feynman)”也会产生 S 形曲线。然而，此“逻辑斯谛”非彼“逻辑斯谛”。统计学中的[逻辑斯谛函数](@keyword=logistic_function|lang=zh-CN|style=Feynman)是一个**静态的数学变换**，用于连接[线性预测](@keyword=linear_prediction|lang=zh-CN|style=Feynman)值和概率，其横轴是某个预测变量 $x$。而生态学中的[逻辑斯谛增长模型](@keyword=logistic_growth_model|lang=zh-CN|style=Feynman)是一个**描述动态过程的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)**，其横轴是时间 $t$。将两者混为一谈，就像把一张地图的[等高线](@keyword=level_curves|lang=zh-CN|style=Feynman)误认为是过山车的轨道一样，是一种对事物本质的误解。
 
 ### 当完美成为问题：饱和与分离性的陷阱
 
@@ -96,28 +96,28 @@ $$
 
 #### 陷阱一：完美分离性的诅咒
 
-如果我们的数据“太好”，好到可以用一条直线（或高维[超平面](@article_id:331746)）将两类样本（例如，全部垃圾邮件和全部非垃圾邮件）完美地分开，会发生什么？这种情况被称为**完美线性可分 (perfect linear separability)** 。
+如果我们的数据“太好”，好到可以用一条直线（或高维[超平面](@keyword=hyperplanes|lang=zh-CN|style=Feynman)）将两类样本（例如，全部垃圾邮件和全部非垃圾邮件）完美地分开，会发生什么？这种情况被称为**完美线性可分 (perfect linear separability)** [@problem_id:3185547]。
 
-直觉上，模型会试图变得“无限自信”。为了将所有正例的预测概率推向 1，负例的预测概率推向 0，模型需要将分隔超平面变得越来越“陡峭”。在数学上，这意味着模型的系数 $\beta$ 的大小必须趋向于无穷大！在这种情况下，[最大似然估计](@article_id:302949)（MLE）不存在一个有限的解。如果你尝试用[算法](@article_id:331821)去拟合这样的数据，你会发现系数会持续增大，永不收敛。
+直觉上，模型会试图变得“无限自信”。为了将所有正例的预测概率推向 1，负例的预测概率推向 0，模型需要将分隔超平面变得越来越“陡峭”。在数学上，这意味着模型的系数 $\beta$ 的大小必须趋向于无穷大！在这种情况下，[最大似然估计](@keyword=maximum_likelihood_estimation|lang=zh-CN|style=Feynman)（MLE）不存在一个有限的解。如果你尝试用[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)去拟合这样的数据，你会发现系数会持续增大，永不收敛。
 
 这个问题的解决方案同样优雅：**正则化 (regularization)**。通过在优化目标中加入一个惩罚项，来惩罚过大的系数值（这在贝叶斯视角下等同于为系数引入一个先验分布），我们就能“驯服”这个模型，迫使它找到一个有限且合理的解。这是现代机器学习的基石之一，它展现了在看似无解的困境中，如何通过引入合理的约束来找到有意义的答案。
 
-#### 陷阱二：[梯度消失](@article_id:642027)的饱和区
+#### 陷阱二：[梯度消失](@keyword=vanishing_gradients|lang=zh-CN|style=Feynman)的饱和区
 
-[逻辑斯谛函数](@article_id:638529)的 S 形曲线在两端是近乎平坦的。如果由于某个特征的数值特别大（例如，以美元计的年收入），导致[线性预测](@article_id:359973)值 $\eta$ 变得非常大或非常小，那么[逻辑斯谛函数](@article_id:638529)就会进入它的“饱和区” 。
+[逻辑斯谛函数](@keyword=logistic_function|lang=zh-CN|style=Feynman)的 S 形曲线在两端是近乎平坦的。如果由于某个特征的数值特别大（例如，以美元计的年收入），导致[线性预测](@keyword=linear_prediction|lang=zh-CN|style=Feynman)值 $\eta$ 变得非常大或非常小，那么[逻辑斯谛函数](@keyword=logistic_function|lang=zh-CN|style=Feynman)就会进入它的“饱和区” [@problem_id:3185540]。
 
-这会带来一个严重的问题。在模型训练过程中，我们依赖于梯度（即函数在某点的斜率）来指导参数如何更新。在[饱和区](@article_id:325982)，曲线的斜率几乎为零。这意味着梯度也几乎为零，模型参数的更新步伐会变得极其微小，导致学习过程停滞不前。这就是著名的**[梯度消失问题](@article_id:304528) (vanishing gradient problem)**。
+这会带来一个严重的问题。在模型训练过程中，我们依赖于梯度（即函数在某点的斜率）来指导参数如何更新。在[饱和区](@keyword=saturation_region|lang=zh-CN|style=Feynman)，曲线的斜率几乎为零。这意味着梯度也几乎为零，模型参数的更新步伐会变得极其微小，导致学习过程停滞不前。这就是著名的**[梯度消失问题](@keyword=vanishing_gradient_problem|lang=zh-CN|style=Feynman) (vanishing gradient problem)**。
 
-幸运的是，这个问题的实际解决方案非常简单：**[特征缩放](@article_id:335413) (feature scaling)**。通过我们之前提到的标准化等方法，将所有[特征缩放](@article_id:335413)到一个相似的、较小的范围，我们可以有效地让[线性预测](@article_id:359973)值 $\eta$ 保持在 S 形曲线中间“陡峭”的“活跃区”，从而保证梯度足够大，让学习得以高效进行。这再次体现了理论与实践的紧密结合：对函数性质的深刻理解，直接指导了[数据预处理](@article_id:324101)的关键步骤。
+幸运的是，这个问题的实际解决方案非常简单：**[特征缩放](@keyword=feature_scaling|lang=zh-CN|style=Feynman) (feature scaling)**。通过我们之前提到的标准化等方法，将所有[特征缩放](@keyword=feature_scaling|lang=zh-CN|style=Feynman)到一个相似的、较小的范围，我们可以有效地让[线性预测](@keyword=linear_prediction|lang=zh-CN|style=Feynman)值 $\eta$ 保持在 S 形曲线中间“陡峭”的“活跃区”，从而保证梯度足够大，让学习得以高效进行。这再次体现了理论与实践的紧密结合：对函数性质的深刻理解，直接指导了[数据预处理](@keyword=data_preprocessing|lang=zh-CN|style=Feynman)的关键步骤。
 
 ### 模型有多好？偏差的启示
 
-在[线性回归](@article_id:302758)中，我们使用“[残差平方和](@article_id:641452)”来衡量模型的[拟合优度](@article_id:355030)。在[逻辑斯谛回归](@article_id:296840)中，对应的概念是什么呢？答案是**偏差 (Deviance)**。你可以将它理解为模型“拟合不良度”的一种度量 。
+在[线性回归](@keyword=linear_regression|lang=zh-CN|style=Feynman)中，我们使用“[残差平方和](@keyword=residual_sum_of_squares|lang=zh-CN|style=Feynman)”来衡量模型的[拟合优度](@keyword=goodness_of_fit_2|lang=zh-CN|style=Feynman)。在[逻辑斯谛回归](@keyword=logistic_regression|lang=zh-CN|style=Feynman)中，对应的概念是什么呢？答案是**偏差 (Deviance)**。你可以将它理解为模型“拟合不良度”的一种度量 [@problem_id:3185459]。
 
 为了理解偏差，我们可以设立两个参照的“球门”：
-1.  **[饱和模型](@article_id:311200) (Saturated Model)**：这是一个为每个数据点都分配一个参数的“完美”模型。它能完美地拟合所有数据（即预测概率 $\hat{p}_i$ 恰好等于真实标签 $y_i$），但它只是“记住”了数据，没有任何泛化能力。它的[对数似然](@article_id:337478)值为 0，代表了拟合所能达到的最好程度。
+1.  **[饱和模型](@keyword=saturated_models|lang=zh-CN|style=Feynman) (Saturated Model)**：这是一个为每个数据点都分配一个参数的“完美”模型。它能完美地拟合所有数据（即预测概率 $\hat{p}_i$ 恰好等于真实标签 $y_i$），但它只是“记住”了数据，没有任何泛化能力。它的[对数似然](@keyword=log_likelihood|lang=zh-CN|style=Feynman)值为 0，代表了拟合所能达到的最好程度。
 2.  **零模型 (Null Model)**：这是一个最简单的“基线”模型，它完全忽略所有特征，只用样本整体的平均概率来作为对每个个体的预测。
 
-我们所建模型的偏差，衡量了它的拟合程度与完美的[饱和模型](@article_id:311200)之间的差距。另一方面，通过比较我们模型的偏差和[零模型](@article_id:361202)的偏差（即**零偏差 (Null Deviance)** ），我们就能知道，相比于“瞎猜一个平均值”，我们的模型到底改进了多少。偏差的减少量 $D_0 - D_1$ 反映了我们模型中加入的特征所提供的[信息价值](@article_id:364848)。
+我们所建模型的偏差，衡量了它的拟合程度与完美的[饱和模型](@keyword=saturated_models|lang=zh-CN|style=Feynman)之间的差距。另一方面，通过比较我们模型的偏差和[零模型](@keyword=null_model|lang=zh-CN|style=Feynman)的偏差（即**零偏差 (Null Deviance)** [@problem_id:3185473]），我们就能知道，相比于“瞎猜一个平均值”，我们的模型到底改进了多少。偏差的减少量 $D_0 - D_1$ 反映了我们模型中加入的特征所提供的[信息价值](@keyword=value_of_information|lang=zh-CN|style=Feynman)。
 
-从构建连接概率与实数轴的 Logit 桥梁，到利用它搭建可解释的[线性模型](@article_id:357202)；从欣赏它优美的 S 形[反函数](@article_id:639581)，到警惕它在极端情况下的“失灵”；最后到用偏差来度量它的表现。我们完成了一次对[逻辑斯谛函数](@article_id:638529)与 Logit 链接的深度探索。我们看到，这些原理和机制不仅在数学上自洽且优美，更在实际应用中充满了智慧与权衡，指引着我们如何更好地理解数据、构建模型，并最终从不确定性中洞察规律。
+从构建连接概率与实数轴的 Logit 桥梁，到利用它搭建可解释的[线性模型](@keyword=linear_models|lang=zh-CN|style=Feynman)；从欣赏它优美的 S 形[反函数](@keyword=function_inverse|lang=zh-CN|style=Feynman)，到警惕它在极端情况下的“失灵”；最后到用偏差来度量它的表现。我们完成了一次对[逻辑斯谛函数](@keyword=logistic_function|lang=zh-CN|style=Feynman)与 Logit 链接的深度探索。我们看到，这些原理和机制不仅在数学上自洽且优美，更在实际应用中充满了智慧与权衡，指引着我们如何更好地理解数据、构建模型，并最终从不确定性中洞察规律。

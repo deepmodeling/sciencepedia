@@ -1,17 +1,17 @@
 ## Introduction
-The Unbounded Knapsack Problem and the Coin Change Problem are foundational topics in computer science, serving as classic illustrations of the power and elegance of [dynamic programming](@entry_id:141107). As core problems in [combinatorial optimization](@entry_id:264983), they model countless scenarios involving resource allocation and combination counting. However, students and practitioners often face a knowledge gap: while the basic concept may be familiar, the subtle but critical differences between variants—such as minimizing coins, counting unique combinations, or counting ordered [permutations](@entry_id:147130)—can be confusing, as each requires a distinct algorithmic approach.
+The Unbounded Knapsack Problem and the Coin Change Problem are foundational topics in computer science, serving as classic illustrations of the power and elegance of dynamic programming. As core problems in combinatorial optimization, they model countless scenarios involving resource allocation and combination counting. However, students and practitioners often face a knowledge gap: while the basic concept may be familiar, the subtle but critical differences between variants—such as minimizing coins, counting unique combinations, or counting ordered permutations—can be confusing, as each requires a distinct algorithmic approach.
 
-This article bridges that gap by providing a systematic exploration of these problems and their solutions. In the first chapter, **"Principles and Mechanisms,"** we will build the [dynamic programming](@entry_id:141107) solutions from the ground up, deriving the [recurrence relations](@entry_id:276612) for the Unbounded Knapsack problem and its various Coin Change specializations. Next, **"Applications and Interdisciplinary Connections"** will reveal how these abstract models are used to solve tangible problems in fields ranging from [computational biology](@entry_id:146988) to finance. Finally, **"Hands-On Practices"** will challenge you to apply and extend your knowledge with a curated set of exercises that push the boundaries of the basic models. By the end, you will have a deep, versatile understanding of how to recognize and solve this important class of problems.
+This article bridges that gap by providing a systematic exploration of these problems and their solutions. In the first chapter, **"Principles and Mechanisms,"** we will build the dynamic programming solutions from the ground up, deriving the recurrence relations for the Unbounded Knapsack problem and its various Coin Change specializations. Next, **"Applications and Interdisciplinary Connections"** will reveal how these abstract models are used to solve tangible problems in fields ranging from computational biology to finance. Finally, **"Hands-On Practices"** will challenge you to apply and extend your knowledge with a curated set of exercises that push the boundaries of the basic models. By the end, you will have a deep, versatile understanding of how to recognize and solve this important class of problems.
 
 ## Principles and Mechanisms
 
-The Unbounded Knapsack Problem (UKP) and its close relative, the Coin Change Problem, are cornerstones of [combinatorial optimization](@entry_id:264983) and serve as exemplary models for the application of **[dynamic programming](@entry_id:141107)**. This powerful algorithmic technique solves complex problems by breaking them down into simpler, [overlapping subproblems](@entry_id:637085), solving each subproblem just once, and storing their solutions in a memory-based data structure (a "table") to avoid redundant computation. The validity of this approach rests on the **Principle of Optimality**, which asserts that an optimal solution to a problem can be constructed from optimal solutions to its subproblems.
+The Unbounded Knapsack Problem (UKP) and its close relative, the Coin Change Problem, are cornerstones of combinatorial optimization and serve as exemplary models for the application of **dynamic programming**. This powerful algorithmic technique solves complex problems by breaking them down into simpler, overlapping subproblems, solving each subproblem just once, and storing their solutions in a memory-based data structure (a "table") to avoid redundant computation. The validity of this approach rests on the **Principle of Optimality**, which asserts that an optimal solution to a problem can be constructed from optimal solutions to its subproblems.
 
-In this chapter, we will derive the fundamental [dynamic programming](@entry_id:141107) solutions for these problems from first principles. We will begin with the general form of the Unbounded Knapsack Problem, then specialize it to the various forms of the Coin Change Problem, and finally, explore advanced extensions and a comparison with alternative algorithmic strategies.
+In this chapter, we will derive the fundamental dynamic programming solutions for these problems from first principles. We will begin with the general form of the Unbounded Knapsack Problem, then specialize it to the various forms of the Coin Change Problem, and finally, explore advanced extensions and a comparison with alternative algorithmic strategies.
 
 ### The Unbounded Knapsack Problem: Maximizing Value
 
-The Unbounded Knapsack Problem provides a general framework for resource allocation under constraints. Imagine a scenario where a gambler has a variety of games to play. Each game requires a specific wager and offers a specific payout. The gambler has a total bankroll and can play any game as many times as they wish. The goal is to choose a combination of plays that maximizes the total payout without exceeding the bankroll .
+The Unbounded Knapsack Problem provides a general framework for resource allocation under constraints. Imagine a scenario where a gambler has a variety of games to play. Each game requires a specific wager and offers a specific payout. The gambler has a total bankroll and can play any game as many times as they wish. The goal is to choose a combination of plays that maximizes the total payout without exceeding the bankroll [@problem_id:3221735].
 
 Formally, we have a set of $n$ items. Each item $i$ has a **weight** $w_i$ (the wager) and a **value** $v_i$ (the payout). Given a knapsack with a maximum capacity $W$ (the bankroll), we want to select a quantity $x_i \ge 0$ of each item to maximize the total value, subject to the total weight not exceeding the capacity. The term "unbounded" signifies that the quantities $x_i$ are not limited to 0 or 1; we can take any number of copies of each item.
 
@@ -27,7 +27,7 @@ $$
 dp[0] = 0
 $$
 
-For any capacity $c > 0$, an optimal solution can be constructed by making a final, optimal choice. Suppose in an optimal packing for capacity $c$, one of the items included is item $j$. If we remove that single item $j$, the remaining items must constitute an optimal packing for the remaining capacity, which is $c - w_j$. The value contributed by this configuration is thus $v_j + dp[c - w_j]$. Since we do not know which item $j$ is the best final choice, we must consider all possibilities. We can try adding each possible item $i$ (where $w_i \le c$) to an optimal solution for capacity $c - w_i$ and take the best outcome. This leads to the **[recurrence relation](@entry_id:141039)**:
+For any capacity $c > 0$, an optimal solution can be constructed by making a final, optimal choice. Suppose in an optimal packing for capacity $c$, one of the items included is item $j$. If we remove that single item $j$, the remaining items must constitute an optimal packing for the remaining capacity, which is $c - w_j$. The value contributed by this configuration is thus $v_j + dp[c - w_j]$. Since we do not know which item $j$ is the best final choice, we must consider all possibilities. We can try adding each possible item $i$ (where $w_i \le c$) to an optimal solution for capacity $c - w_i$ and take the best outcome. This leads to the **recurrence relation**:
 
 $$
 dp[c] = \max_{i \,:\, w_i \le c} \{ v_i + dp[c - w_i] \}
@@ -42,11 +42,11 @@ The algorithm is as follows:
 4.  If the item's weight $w_i$ is less than or equal to the current capacity $c$, consider the possibility of including it. Update the value for capacity $c$:
     $$ dp[c] = \max(dp[c], v_i + dp[c - w_i]) $$
 
-After the loops complete, $dp[W]$ will hold the maximum value for a capacity of $W$. Note that this formulation inherently handles the $\le W$ constraint, as the value for a capacity $c$ can be carried over from $c-1$ if no item is added (which is implicitly handled by the max operation against the existing $dp[c]$ value if it were propagated from $dp[c-1]$). The standard implementation above is sufficient. The [time complexity](@entry_id:145062) is $O(n \cdot W)$ and the [space complexity](@entry_id:136795) is $O(W)$.
+After the loops complete, $dp[W]$ will hold the maximum value for a capacity of $W$. Note that this formulation inherently handles the $\le W$ constraint, as the value for a capacity $c$ can be carried over from $c-1$ if no item is added (which is implicitly handled by the max operation against the existing $dp[c]$ value if it were propagated from $dp[c-1]$). The standard implementation above is sufficient. The time complexity is $O(n \cdot W)$ and the space complexity is $O(W)$.
 
 ### The Coin Change Problem: Key Variants
 
-The Coin Change Problem can be viewed as a family of special cases of the Unbounded Knapsack Problem. Here, the "weights" are the coin denominations, and the "capacity" is the target amount $N$ we wish to form. However, the objective can vary, leading to different problems that require subtle but crucial modifications to the DP formulation .
+The Coin Change Problem can be viewed as a family of special cases of the Unbounded Knapsack Problem. Here, the "weights" are the coin denominations, and the "capacity" is the target amount $N$ we wish to form. However, the objective can vary, leading to different problems that require subtle but crucial modifications to the DP formulation [@problem_id:3221780].
 
 #### Minimizing the Number of Coins
 
@@ -60,7 +60,7 @@ Here, $c_i$ is the denomination of coin type $i$, and $x_i$ is the number of coi
 We define our DP state $dp[a]$ as the minimum number of coins required to make change for amount $a$.
 - **Base Case**: To form an amount of $0$, we need $0$ coins. So, $dp[0] = 0$.
 - **Initialization**: For all other amounts $a > 0$, we initialize $dp[a] = \infty$ to signify that we have not yet found a way to form them. This large value will be replaced as soon as a valid coin combination is found.
-- **Recurrence Relation**: Similar to the UKP, any optimal solution for amount $a$ must have a last coin, say $c_i$. Removing it leaves an [optimal solution](@entry_id:171456) for amount $a - c_i$. The total number of coins is $1 + dp[a - c_i]$. We minimize over all possible last coins:
+- **Recurrence Relation**: Similar to the UKP, any optimal solution for amount $a$ must have a last coin, say $c_i$. Removing it leaves an optimal solution for amount $a - c_i$. The total number of coins is $1 + dp[a - c_i]$. We minimize over all possible last coins:
 $$
 dp[a] = \min_{i \,:\, c_i \le a} \{ 1 + dp[a - c_i] \}
 $$
@@ -71,9 +71,9 @@ The bottom-up implementation is straightforward and follows the UKP structure. I
 
 A fundamentally different objective is to count the number of distinct ways to make change for amount $N$. Here, "distinct ways" refers to combinations of coins, meaning the order in which coins are selected does not matter. For example, the multiset of coins $\{2, 3, 5\}$ is one way to make change for 10, and it is considered the same as $\{5, 3, 2\}$.
 
-This can be stated formally as finding the number of distinct sequences of coins $\langle c_1, \dots, c_k \rangle$ that sum to $N$ and are sorted in non-decreasing order . This sorted sequence is a [canonical representation](@entry_id:146693) for the multiset.
+This can be stated formally as finding the number of distinct sequences of coins $\langle c_1, \dots, c_k \rangle$ that sum to $N$ and are sorted in non-decreasing order [@problem_id:3221767]. This sorted sequence is a canonical representation for the multiset.
 
-To solve this, we must design our DP update step carefully to avoid counting [permutations](@entry_id:147130). Let $dp[a]$ be the number of ways to make change for amount $a$.
+To solve this, we must design our DP update step carefully to avoid counting permutations. Let $dp[a]$ be the number of ways to make change for amount $a$.
 - **Base Case**: There is exactly one way to form the amount $0$: by choosing no coins. So, $dp[0] = 1$.
 - **Recurrence and Implementation**: The key insight is to build the solution by considering one coin denomination at a time. We iterate through each coin $c_i$ in our set of denominations. For each coin, we update the `dp` table for all amounts that this coin can contribute to.
 
@@ -87,9 +87,9 @@ Let's analyze why this loop structure works. When we process coin $c_i$, we are 
 
 #### Counting Permutations (Order Matters)
 
-What if the order of coins *does* matter? For instance, in a game where scores are accumulated, the sequence of scores $(2, 3)$ might be different from $(3, 2)$ . We are now counting ordered sequences, not multisets.
+What if the order of coins *does* matter? For instance, in a game where scores are accumulated, the sequence of scores $(2, 3)$ might be different from $(3, 2)$ [@problem_id:3221794]. We are now counting ordered sequences, not multisets.
 
-The DP state definition remains the same: $dp[a]$ is the number of ordered sequences that sum to $a$. The [base case](@entry_id:146682) is also the same: $dp[0] = 1$ (for the empty sequence). However, the [recurrence relation](@entry_id:141039) changes its interpretation, leading to a different loop structure.
+The DP state definition remains the same: $dp[a]$ is the number of ordered sequences that sum to $a$. The base case is also the same: $dp[0] = 1$ (for the empty sequence). However, the recurrence relation changes its interpretation, leading to a different loop structure.
 
 - **Recurrence Relation**: An ordered sequence summing to $a$ must have a last element. This last element could be any coin $c_i$ (where $c_i \le a$). If the last coin is $c_i$, the preceding part of the sequence must sum to $a - c_i$. The number of ways to form such a preceding sequence is $dp[a-c_i]$. By the rule of addition, we can sum over all possibilities for the last coin:
 $$
@@ -104,7 +104,7 @@ The algorithm is:
 4.  If $a \ge c_i$:
     $$ dp[a] = dp[a] + dp[a - c_i] $$
 
-By making the outer loop iterate over amounts $a$, we ensure that when we compute $dp[a]$, all values $dp[j]$ for $j  a$ are final. The inner loop then correctly sums up the contributions from all possible preceding sequences, regardless of which coin was used last in those sub-solutions. This correctly counts all [permutations](@entry_id:147130).
+By making the outer loop iterate over amounts $a$, we ensure that when we compute $dp[a]$, all values $dp[j]$ for $j  a$ are final. The inner loop then correctly sums up the contributions from all possible preceding sequences, regardless of which coin was used last in those sub-solutions. This correctly counts all permutations.
 
 ### Extending the Dynamic Programming Models
 
@@ -112,7 +112,7 @@ The true power of dynamic programming lies in its adaptability. The fundamental 
 
 #### Augmenting the DP State
 
-Consider a problem where we must count the ways to make change for $N$, but only those combinations that use an **even number of coins** are valid . A simple `dp[a]` state is no longer sufficient, as we cannot determine if adding a coin will lead to a valid (even) or invalid (odd) total count without knowing the parity of the coin count for the subproblem.
+Consider a problem where we must count the ways to make change for $N$, but only those combinations that use an **even number of coins** are valid [@problem_id:3221725]. A simple `dp[a]` state is no longer sufficient, as we cannot determine if adding a coin will lead to a valid (even) or invalid (odd) total count without knowing the parity of the coin count for the subproblem.
 
 The solution is to **augment the state** to track this extra piece of information. We define a 2D DP table:
 - $dp[a][0]$: the number of ways to make amount $a$ using an even number of coins.
@@ -127,11 +127,11 @@ $$
 dp[a][0] \leftarrow dp[a][0] + dp[a-c_i][1] \\
 dp[a][1] \leftarrow dp[a][1] + dp[a-c_i][0]
 $$
-The final answer is simply $dp[N][0]$. This principle of [state augmentation](@entry_id:140869) is broadly applicable to many problems with side constraints.
+The final answer is simply $dp[N][0]$. This principle of state augmentation is broadly applicable to many problems with side constraints.
 
 #### Hybrid Approaches: DP with Enumeration
 
-Sometimes, a problem contains a mix of unbounded and bounded constraints. For instance, what if we need to find the minimum number of coins to make change for $N$, but one specific denomination $d_k$ can be used at most $L$ times, while all others remain unlimited? 
+Sometimes, a problem contains a mix of unbounded and bounded constraints. For instance, what if we need to find the minimum number of coins to make change for $N$, but one specific denomination $d_k$ can be used at most $L$ times, while all others remain unlimited? [@problem_id:3221776]
 
 A direct DP formulation becomes complicated. A more elegant solution is a **hybrid approach**. We can isolate the constrained element and enumerate its possibilities. Here, the special coin $d_k$ can be used $j$ times, where $j \in \{0, 1, \dots, L\}$. For each fixed choice of $j$, the problem reduces to a standard one:
 1.  Assume we use coin $d_k$ exactly $j$ times.
@@ -153,7 +153,7 @@ This decomposition strategy is extremely effective when a constraint applies to 
 
 #### Advanced State Transitions for Complex Costs
 
-Consider a variant where using any coin of type $i$ (denomination $d_i$) incurs a one-time "production cost" $p_i$. The goal is to minimize the sum of the coin count and the total production costs incurred .
+Consider a variant where using any coin of type $i$ (denomination $d_i$) incurs a one-time "production cost" $p_i$. The goal is to minimize the sum of the coin count and the total production costs incurred [@problem_id:3221718].
 
 This fixed cost component complicates the standard recurrence because the cost of adding a coin depends on whether a coin of its type has already been used. We can handle this by processing coin types one by one and maintaining two DP tables during each step. Let `dp[a]` be the minimum cost to make amount `a` using the coin types processed so far. When we introduce a new coin type $(d, p)$:
 
@@ -166,16 +166,16 @@ This fixed cost component complicates the standard recurrence because the cost o
     $$
     dp_{new}[a] = \min(dp_{old}[a], temp\_dp[a])
     $$
-This [iterative refinement](@entry_id:167032) correctly captures the state-dependent fixed costs and demonstrates a sophisticated DP technique.
+This iterative refinement correctly captures the state-dependent fixed costs and demonstrates a sophisticated DP technique.
 
 ### Dynamic Programming vs. Greedy Algorithms
 
 Given the computational cost of dynamic programming, typically $O(n \cdot W)$, it is natural to ask if a simpler, faster approach might suffice. A **greedy algorithm** is one such alternative. It builds a solution by repeatedly making a locally optimal choice—for example, always taking the largest denomination coin that is less than or equal to the remaining amount.
 
-While appealing, [greedy algorithms](@entry_id:260925) do not guarantee a globally optimal solution for all problems. Their correctness depends on the problem possessing the **[greedy-choice property](@entry_id:634218)**.
+While appealing, greedy algorithms do not guarantee a globally optimal solution for all problems. Their correctness depends on the problem possessing the **greedy-choice property**.
 
-Consider the Unbounded Knapsack Problem with weights that are powers of two (e.g., $1, 2, 4, 8, \dots$) . A greedy strategy might be to select items corresponding to the binary representation of the capacity $W$. If item values are arbitrary, this can fail spectacularly. For a capacity $W=4$, with items of weights $\{1, 2, 4\}$ and values $\{3, 5, 8\}$, the greedy choice is one item of weight 4, for a value of 8. The optimal solution, however, is two items of weight 2, for a value of $5+5=10$. In fact, one can construct examples where the ratio of the greedy solution's value to the optimal value is arbitrarily close to zero. However, if the values are proportional to the weights (e.g., $v_i = \alpha \cdot w_i$), the greedy strategy of maximizing the total weight used *is* optimal.
+Consider the Unbounded Knapsack Problem with weights that are powers of two (e.g., $1, 2, 4, 8, \dots$) [@problem_id:3221736]. A greedy strategy might be to select items corresponding to the binary representation of the capacity $W$. If item values are arbitrary, this can fail spectacularly. For a capacity $W=4$, with items of weights $\{1, 2, 4\}$ and values $\{3, 5, 8\}$, the greedy choice is one item of weight 4, for a value of 8. The optimal solution, however, is two items of weight 2, for a value of $5+5=10$. In fact, one can construct examples where the ratio of the greedy solution's value to the optimal value is arbitrarily close to zero. However, if the values are proportional to the weights (e.g., $v_i = \alpha \cdot w_i$), the greedy strategy of maximizing the total weight used *is* optimal.
 
-For the coin change minimization problem, the standard greedy approach is only optimal for certain "canonical" coin systems. Most real-world currency systems (like USD or Euro) are canonical. Another interesting example is a system composed of Fibonacci numbers . For denominations $\{1, 2, 3, 5, 8, \dots\}$, the [greedy algorithm](@entry_id:263215) of always taking the largest possible Fibonacci coin is guaranteed to produce a solution with the minimum number of coins. This algorithm runs in $O(\log N)$ time, far outperforming the $O(N \cdot |D|)$ DP solution.
+For the coin change minimization problem, the standard greedy approach is only optimal for certain "canonical" coin systems. Most real-world currency systems (like USD or Euro) are canonical. Another interesting example is a system composed of Fibonacci numbers [@problem_id:3221783]. For denominations $\{1, 2, 3, 5, 8, \dots\}$, the greedy algorithm of always taking the largest possible Fibonacci coin is guaranteed to produce a solution with the minimum number of coins. This algorithm runs in $O(\log N)$ time, far outperforming the $O(N \cdot |D|)$ DP solution.
 
 In conclusion, dynamic programming is the more general and robust tool. It guarantees optimality for this entire class of problems. A greedy algorithm should only be employed when the problem is known to have the specific structure required for it to work. When in doubt, the systematic exploration offered by dynamic programming is the correct and reliable path to a solution.

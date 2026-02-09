@@ -1,7 +1,7 @@
 ## 引言
 在科学与工程的广阔天地中，我们常常需要用数学函数来描述、逼近或预测复杂的现象。多项式，以其简洁的形式和易于处理的特性，成为了我们最直观、最首选的工具。然而，这种直觉背后隐藏着一个巨大的陷阱：最“自然”的单项式基 $\{1, x, x^2, \dots\}$ 在实际计算中往往表现得极其糟糕，导致模型不稳定且结果不可靠。这一现象构成了数值计算中的一个核心挑战，即如何找到一套更优良的“构建模块”来描述函数。
 
-本文旨在揭开这一问题的面纱，[并系](@article_id:342721)统地介绍一个强大而优雅的解决方案——[正交多项式](@article_id:307335)。我们将带领你踏上一段从发现问题到掌握工具的旅程。在“原则与机理”一章中，我们将深入探讨单项式基的“病态”本质，并引入函数的“正交”概念，学习如何通过[Gram-Schmidt过程](@article_id:301502)和[三项递推关系](@article_id:355806)等方法，铸造出数值性能优越的正交多项式。接着，在“应用与[交叉](@article_id:315017)学科联系”一章中，我们将见证这些工具在解决现实问题中的惊人威力，从高精度的[数据拟合](@article_id:309426)、神奇的[高斯积分](@article_id:379252)，到在机器学习和量子物理等前沿领域的深刻应用。最后，“动手实践”部分将提供具体的练习，让你亲手体验和巩固这些强大的计算思想。
+本文旨在揭开这一问题的面纱，[并系](@keyword=paraphyly|lang=zh-CN|style=Feynman)统地介绍一个强大而优雅的解决方案——[正交多项式](@keyword=orthogonal_polynomials|lang=zh-CN|style=Feynman)。我们将带领你踏上一段从发现问题到掌握工具的旅程。在“原则与机理”一章中，我们将深入探讨单项式基的“病态”本质，并引入函数的“正交”概念，学习如何通过[Gram-Schmidt过程](@keyword=gram_schmidt_process|lang=zh-CN|style=Feynman)和[三项递推关系](@keyword=three_term_recurrence_relation|lang=zh-CN|style=Feynman)等方法，铸造出数值性能优越的正交多项式。接着，在“应用与[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)学科联系”一章中，我们将见证这些工具在解决现实问题中的惊人威力，从高精度的[数据拟合](@keyword=data_fitting|lang=zh-CN|style=Feynman)、神奇的[高斯积分](@keyword=gaussian_integrals|lang=zh-CN|style=Feynman)，到在机器学习和量子物理等前沿领域的深刻应用。最后，“动手实践”部分将提供具体的练习，让你亲手体验和巩固这些强大的计算思想。
 
 通过这趟旅程，你将不仅学会一种新的数学工具，更将领悟一种在计算世界中更稳定、更深刻的思考方式。
 
@@ -19,11 +19,11 @@
 $$
 A = \begin{pmatrix} 1 & 0 \\ 1 & \epsilon \end{pmatrix}
 $$
-当我们试图求解这个系统时，它的稳定性如何呢？一个衡量标准是**条件数**（condition number）。一个巨大的条件数意味着，你测量数据中任何微小的、不可避免的误差（比如仪器的[抖动](@article_id:326537)或读数的一点偏差），都会被极大地放大，导致你计算出的系数 $c_0$ 和 $c_1$ 发生剧烈的、不可靠的摆动。对于这个简单的例子，我们可以计算出其[条件数](@article_id:305575)大约是 $\frac{2}{\epsilon}$ 。当 $\epsilon$ 趋向于零时，这个条件数会爆炸式地增长！这意味着，当你的数据点靠得很近时，用单项式基进行拟合会变得极其不稳定。
+当我们试图求解这个系统时，它的稳定性如何呢？一个衡量标准是**条件数**（condition number）。一个巨大的条件数意味着，你测量数据中任何微小的、不可避免的误差（比如仪器的[抖动](@keyword=dither|lang=zh-CN|style=Feynman)或读数的一点偏差），都会被极大地放大，导致你计算出的系数 $c_0$ 和 $c_1$ 发生剧烈的、不可靠的摆动。对于这个简单的例子，我们可以计算出其[条件数](@keyword=condition_number|lang=zh-CN|style=Feynman)大约是 $\frac{2}{\epsilon}$ [@problem_id:2192787]。当 $\epsilon$ 趋向于零时，这个条件数会爆炸式地增长！这意味着，当你的数据点靠得很近时，用单项式基进行拟合会变得极其不稳定。
 
 从几何上看，当 $\epsilon$ 很小时，基函数 $1$ 和 $t$ 在这个小区间上的图像几乎是平行的。试图用两个几乎指向同一方向的“坐标轴”来精确描述一个点的位置，其结果必然是混乱和不精确的。对于更高阶的多项式 $x^k$ 和 $x^{k+1}$，在区间 $[-1, 1]$ 上，它们的图像也会高度相似，使得这个问题更加严重。
 
-这种现象在统计学中有一个名字，叫做**[多重共线性](@article_id:302038)**（multicollinearity）。它意味着你的预测变量（在这里是 $x, x^2, x^3, \dots$）彼此之间高度相关，不是真正的“独立”输入。我们可以用一个叫做**[方差膨胀因子](@article_id:343070)**（Variance Inflation Factor, VIF）的指标来量化这个问题。对于单项式基，即使我们做一些简单的处理（如中心化），其 VIF 值也可能非常大。这表明，模型估计出的系数的方差被不成比例地放大了，使得我们对结果的信任度大打折扣 。
+这种现象在统计学中有一个名字，叫做**[多重共线性](@keyword=multicollinearity|lang=zh-CN|style=Feynman)**（multicollinearity）。它意味着你的预测变量（在这里是 $x, x^2, x^3, \dots$）彼此之间高度相关，不是真正的“独立”输入。我们可以用一个叫做**[方差膨胀因子](@keyword=variance_inflation_factor|lang=zh-CN|style=Feynman)**（Variance Inflation Factor, VIF）的指标来量化这个问题。对于单项式基，即使我们做一些简单的处理（如中心化），其 VIF 值也可能非常大。这表明，模型估计出的系数的方差被不成比例地放大了，使得我们对结果的信任度大打折扣 [@problem_id:3150303]。
 
 所以，我们面临一个严峻的结论：那个最“自然”、最“简单”的单项式基，在数值计算的实践中，是一个糟糕的选择。我们需要一套更好的“积木”——一套彼此独立、互不干扰的构建模块。
 
@@ -31,25 +31,25 @@ $$
 
 为了找到更好的构建模块，我们需要换一个角度看问题。在熟悉的三维空间中，什么是一套“好”的基？通常是三个互相垂直的向量，比如 $x, y, z$ 轴。它们是**正交**的。这个特性使得描述空间中任何一点都变得异常简单和稳定。
 
-那么，我们能否将这种“正交”的概念推广到[函数空间](@article_id:303911)呢？两个函数怎样才算“垂直”？
+那么，我们能否将这种“正交”的概念推广到[函数空间](@keyword=function_spaces|lang=zh-CN|style=Feynman)呢？两个函数怎样才算“垂直”？
 
-答案在于引入**内积**（inner product）的概念。正如向量的[点积](@article_id:309438) $u \cdot v$ 告诉我们两个向量之间的几何关系，[函数的内积](@article_id:307563) $\langle f, g \rangle$ 也揭示了两个函数之间的关系。对于在区间 $[-1, 1]$ 上定义的函数，最常见的内积是：
+答案在于引入**内积**（inner product）的概念。正如向量的[点积](@keyword=dot_product|lang=zh-CN|style=Feynman) $u \cdot v$ 告诉我们两个向量之间的几何关系，[函数的内积](@keyword=inner_product_of_functions|lang=zh-CN|style=Feynman) $\langle f, g \rangle$ 也揭示了两个函数之间的关系。对于在区间 $[-1, 1]$ 上定义的函数，最常见的内积是：
 $$
 \langle f, g \rangle = \int_{-1}^{1} f(x)g(x)dx
 $$
 这个积分直观上衡量了两个函数在整个区间上的“重叠”或“相似”程度。如果 $\langle f, g \rangle = 0$，我们就说这两个函数是**正交**的。这意味着，从某种深刻的几何意义上说，它们是“不相关的”、“独立的”。
 
-内积的定义并非一成不变，它可以非常灵活。我们可以根据问题的需要“定制”内积。例如，在某些问题中，函数的[导数](@article_id:318324)值可能比函数值本身更重要。这时，我们可以定义一个像下面这样的内积 ：
+内积的定义并非一成不变，它可以非常灵活。我们可以根据问题的需要“定制”内积。例如，在某些问题中，函数的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)值可能比函数值本身更重要。这时，我们可以定义一个像下面这样的内积 [@problem_id:2192788]：
 $$
 \langle f, g \rangle = \int_0^1 f'(x) g'(x) dx + f(0)g(0)
 $$
 这不仅仅是数学游戏。这样的定义使得我们在寻找“最佳近似”时，能够同时考虑到函数的变化率和它在起点的取值。
 
-我们甚至可以更进一步，引入**权重函数**（weight function） $w(x)$，定义一个**[加权内积](@article_id:343281)** ：
+我们甚至可以更进一步，引入**权重函数**（weight function） $w(x)$，定义一个**[加权内积](@keyword=weighted_inner_product|lang=zh-CN|style=Feynman)** [@problem_id:2192757]：
 $$
 \langle f, g \rangle_w = \int_{a}^{b} f(x)g(x)w(x)dx
 $$
-权重函数 $w(x)$ 就像一个放大镜，它允许我们对区间内的不同部分赋予不同的“重要性”。在某些点 $w(x)$ 较大，意味着在这些点上函数的匹配度对内积的贡献更大。许多著名的[正交多项式](@article_id:307335)族，比如切比雪夫多项式，就是在一个[加权内积](@article_id:343281)下正交的。
+权重函数 $w(x)$ 就像一个放大镜，它允许我们对区间内的不同部分赋予不同的“重要性”。在某些点 $w(x)$ 较大，意味着在这些点上函数的匹配度对内积的贡献更大。许多著名的[正交多项式](@keyword=orthogonal_polynomials|lang=zh-CN|style=Feynman)族，比如切比雪夫多项式，就是在一个[加权内积](@keyword=weighted_inner_product|lang=zh-CN|style=Feynman)下正交的。
 
 有了内积这个强大的工具，我们的目标就明确了：从简单的单项式 $\{1, x, x^2, \dots\}$ 出发，构建一个全新的多项式集合 $\{P_0(x), P_1(x), P_2(x), \dots\}$，使得它们在某个特定的内积下，两两正交。
 
@@ -57,21 +57,21 @@ $$
 
 现在我们知道了想要什么，问题是怎么得到它？
 
-最基本、最经典的方法是**格拉姆-施密特（Gram-Schmidt）[正交化](@article_id:309627)过程**。这个过程的逻辑非常直观 。想象一下你有一组非正交的向量（在这里是单项式 $1, x, x^2, \dots$）：
+最基本、最经典的方法是**格拉姆-施密特（Gram-Schmidt）[正交化](@keyword=orthogonalization|lang=zh-CN|style=Feynman)过程**。这个过程的逻辑非常直观 [@problem_id:2192756]。想象一下你有一组非正交的向量（在这里是单项式 $1, x, x^2, \dots$）：
 1.  取第一个向量 $v_0=1$，它自己构成了我们新基的第一个成员 $p_0 = v_0$。
 2.  取第二个向量 $v_1=x$。它在 $p_0$ 方向上会有一个“影子”（投影）。我们从 $v_1$ 中减掉这个影子，剩下的部分 $p_1 = v_1 - \text{proj}_{p_0}(v_1)$ 就必然与 $p_0$ 垂直（正交）。
 3.  取第三个向量 $v_2=x^2$。我们从 $v_2$ 中减掉它在 $p_0$ 和 $p_1$ 上的所有影子。剩下的部分 $p_2$ 就同时与 $p_0$ 和 $p_1$ 正交。
-4.  以此类推，每一步都取一个新的单项式，并从中剔除其在所有已构建好的[正交多项式](@article_id:307335)上的投影分量。
+4.  以此类推，每一步都取一个新的单项式，并从中剔除其在所有已构建好的[正交多项式](@keyword=orthogonal_polynomials|lang=zh-CN|style=Feynman)上的投影分量。
 
-这个过程保证了我们能一步一步地构建出一整套[正交多项式](@article_id:307335)。例如，在区间 $[-1, 1]$ 上使用标准内积对 $\{1, x, x^2, \dots\}$ 进行[正交化](@article_id:309627)，我们就会得到著名的**[勒让德多项式](@article_id:301951)**（Legendre polynomials）。
+这个过程保证了我们能一步一步地构建出一整套[正交多项式](@keyword=orthogonal_polynomials|lang=zh-CN|style=Feynman)。例如，在区间 $[-1, 1]$ 上使用标准内积对 $\{1, x, x^2, \dots\}$ 进行[正交化](@keyword=orthogonalization|lang=zh-CN|style=Feynman)，我们就会得到著名的**[勒让德多项式](@keyword=legendre_polynomials|lang=zh-CN|style=Feynman)**（Legendre polynomials）。
 
-[格拉姆-施密特过程](@article_id:301502)是理论的基石，但在实际操作中可能相当繁琐。幸运的是，数学家们发现了一些更优雅的“秘方”。其中一个就是**[罗德里格斯公式](@article_id:371672)**（Rodrigues' formula）。以勒让德多项式为例，它的[罗德里格斯公式](@article_id:371672)是 ：
+[格拉姆-施密特过程](@keyword=gram_schmidt_process|lang=zh-CN|style=Feynman)是理论的基石，但在实际操作中可能相当繁琐。幸运的是，数学家们发现了一些更优雅的“秘方”。其中一个就是**[罗德里格斯公式](@keyword=rodrigues_s_formula|lang=zh-CN|style=Feynman)**（Rodrigues' formula）。以勒让德多项式为例，它的[罗德里格斯公式](@keyword=rodrigues_s_formula|lang=zh-CN|style=Feynman)是 [@problem_id:2192767]：
 $$
 P_n(x) = \frac{1}{2^n n!} \frac{d^n}{dx^n} \left[ (x^2 - 1)^n \right]
 $$
-这个公式简直是个奇迹！它告诉你，要得到第 $n$ 个[勒让德多项式](@article_id:301951)，你只需要取 $(x^2-1)^n$ 这个简单的表达式，对它求 $n$ 次[导数](@article_id:318324)，再乘上一个系数即可。这是一个何等简洁而强大的创造工具！
+这个公式简直是个奇迹！它告诉你，要得到第 $n$ 个[勒让德多项式](@keyword=legendre_polynomials|lang=zh-CN|style=Feynman)，你只需要取 $(x^2-1)^n$ 这个简单的表达式，对它求 $n$ 次[导数](@keyword=derivative|lang=zh-CN|style=Feynman)，再乘上一个系数即可。这是一个何等简洁而强大的创造工具！
 
-然而，对于计算机来说，最高效的生成方式来自[正交多项式](@article_id:307335)的一个核心特性——**[三项递推关系](@article_id:355806)**（three-term recurrence relation）。这个性质表明，任何一个[正交多项式](@article_id:307335)族都遵循一个简单的[递推公式](@article_id:309884) ：
+然而，对于计算机来说，最高效的生成方式来自[正交多项式](@keyword=orthogonal_polynomials|lang=zh-CN|style=Feynman)的一个核心特性——**[三项递推关系](@keyword=three_term_recurrence_relation|lang=zh-CN|style=Feynman)**（three-term recurrence relation）。这个性质表明，任何一个[正交多项式](@keyword=orthogonal_polynomials|lang=zh-CN|style=Feynman)族都遵循一个简单的[递推公式](@keyword=reduction_formula|lang=zh-CN|style=Feynman) [@problem_id:2192742]：
 $$
 P_{n+1}(x) = (A_n x - B_n) P_n(x) - C_n P_{n-1}(x)
 $$
@@ -81,24 +81,24 @@ $$
 
 正交多项式不仅仅是好用的工具，它们的内在结构中还蕴藏着令人惊叹的和谐与美。
 
-首先是它们的**根**（roots）。对于一个 $n$ 阶的[正交多项式](@article_id:307335) $P_n(x)$，它的 $n$ 个根全部是**实数**，**互不相同**，并且都严格位于它们被定义的那个区间内部。这对于一个普通的多项式来说是完全无法保证的！
+首先是它们的**根**（roots）。对于一个 $n$ 阶的[正交多项式](@keyword=orthogonal_polynomials|lang=zh-CN|style=Feynman) $P_n(x)$，它的 $n$ 个根全部是**实数**，**互不相同**，并且都严格位于它们被定义的那个区间内部。这对于一个普通的多项式来说是完全无法保证的！
 
-更奇妙的是**根的交错性质**（interlacing property）。想象一下 $P_n(x)$ 的根和 $P_{n-1}(x)$ 的根。这个性质告诉我们，在 $P_n(x)$ 的任意两个相邻的根之间，都恰好存在一个 $P_{n-1}(x)$ 的根 。它们就像两把梳子的齿一样，完美地交错在一起。这绝非巧合，而是一种深刻的结构规律，它也是一种极其强大的数值积分方法——[高斯求积](@article_id:357162)（Gaussian quadrature）——的理论基础。
+更奇妙的是**根的交错性质**（interlacing property）。想象一下 $P_n(x)$ 的根和 $P_{n-1}(x)$ 的根。这个性质告诉我们，在 $P_n(x)$ 的任意两个相邻的根之间，都恰好存在一个 $P_{n-1}(x)$ 的根 [@problem_id:2192743]。它们就像两把梳子的齿一样，完美地交错在一起。这绝非巧合，而是一种深刻的结构规律，它也是一种极其强大的数值积分方法——[高斯求积](@keyword=gauss_quadrature|lang=zh-CN|style=Feynman)（Gaussian quadrature）——的理论基础。
 
-我们不禁要问，这些多项式为何如此“特别”？它们从何而来？许多[正交多项式](@article_id:307335)族，实际上是物理学中一些重要[微分方程](@article_id:327891)的解。例如，[勒让德多项式](@article_id:301951)就源于**[勒让德微分方程](@article_id:353601)**。这类方程属于一个更广泛的类别，其核心是一个**[自伴算子](@article_id:312602)**（self-adjoint operator）。一个深刻的数学原理（Sturm-Liouville 理论）告诉我们：一个[自伴算子](@article_id:312602)的、对应于不同[特征值](@article_id:315305)的[特征函数](@article_id:365996)（也就是方程的解），彼此之间必然是正交的！ 。
+我们不禁要问，这些多项式为何如此“特别”？它们从何而来？许多[正交多项式](@keyword=orthogonal_polynomials|lang=zh-CN|style=Feynman)族，实际上是物理学中一些重要[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)的解。例如，[勒让德多项式](@keyword=legendre_polynomials|lang=zh-CN|style=Feynman)就源于**[勒让德微分方程](@keyword=legendre_s_differential_equation|lang=zh-CN|style=Feynman)**。这类方程属于一个更广泛的类别，其核心是一个**[自伴算子](@keyword=self_adjoint_operators|lang=zh-CN|style=Feynman)**（self-adjoint operator）。一个深刻的数学原理（Sturm-Liouville 理论）告诉我们：一个[自伴算子](@keyword=self_adjoint_operators|lang=zh-CN|style=Feynman)的、对应于不同[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)的[特征函数](@keyword=indicator_functions|lang=zh-CN|style=Feynman)（也就是方程的解），彼此之间必然是正交的！ [@problem_id:2192764]。
 
-这意味着正交性并非数学家凭空构造的概念，它是物理世界基本规律的自然体现。从量子力学中求解[氢原子能级](@article_id:311823)的薛定谔方程，到描述热量传导和波动的方程，处处都能看到这些[正交函数](@article_id:321340)的身影。它们是描述自然的“本征语言”。
+这意味着正交性并非数学家凭空构造的概念，它是物理世界基本规律的自然体现。从量子力学中求解[氢原子能级](@keyword=hydrogen_atom_energy_levels|lang=zh-CN|style=Feynman)的薛定谔方程，到描述热量传导和波动的方程，处处都能看到这些[正交函数](@keyword=orthogonal_functions|lang=zh-CN|style=Feynman)的身影。它们是描述自然的“本征语言”。
 
 ### 回报：实践中的稳定性与效率
 
-现在，让我们回到最初的[曲线拟合](@article_id:304569)问题。手握正交多项式这把利器，我们该如何行动？
+现在，让我们回到最初的[曲线拟合](@keyword=curve_fitting|lang=zh-CN|style=Feynman)问题。手握正交多项式这把利器，我们该如何行动？
 
-当我们使用[正交多项式](@article_id:307335)作为[基函数](@article_id:307485)时，之前那个病态的范德蒙德矩阵，变成了一个近乎对角化的、条件数极小的“健康”矩阵。统计学中的多重共线性问题也迎刃而解，VIF 值会降至理想的 1 。我们终于可以稳定、可靠地求解出拟合系数了。
+当我们使用[正交多项式](@keyword=orthogonal_polynomials|lang=zh-CN|style=Feynman)作为[基函数](@keyword=basis_functions|lang=zh-CN|style=Feynman)时，之前那个病态的范德蒙德矩阵，变成了一个近乎对角化的、条件数极小的“健康”矩阵。统计学中的多重共线性问题也迎刃而解，VIF 值会降至理想的 1 [@problem_id:3150303]。我们终于可以稳定、可靠地求解出拟合系数了。
 
 但故事还没结束。找到了这些系数 $c_k$，得到了多项式 $p(x) = \sum c_k P_k(x)$，我们该如何使用它来计算在某一点的函数值呢？
 
-一个“自然”的想法可能是：既然我们熟悉单项式，不如把这个表达式转换回 $a_0 + a_1 x + \dots$ 的形式，然后用我们熟悉的方法去计算。这是一个致命的错误！正如  中的计算所揭示的，当你试图将一组在[正交基](@article_id:327731)下稳定表示的系数 $\{c_k\}$，转换成在单项式基下的系数 $\{a_j\}$ 时，这个转换过程本身就是个病态的、会引入巨大数值误差的操作。你千辛万苦避开的魔鬼，又被你自己从后门请了回来。
+一个“自然”的想法可能是：既然我们熟悉单项式，不如把这个表达式转换回 $a_0 + a_1 x + \dots$ 的形式，然后用我们熟悉的方法去计算。这是一个致命的错误！正如 [@problem_id:3260519] 中的计算所揭示的，当你试图将一组在[正交基](@keyword=orthogonal_basis|lang=zh-CN|style=Feynman)下稳定表示的系数 $\{c_k\}$，转换成在单项式基下的系数 $\{a_j\}$ 时，这个转换过程本身就是个病态的、会引入巨大数值误差的操作。你千辛万苦避开的魔鬼，又被你自己从后门请了回来。
 
-正确的做法是：**始终停留在正交的世界里**。要计算多项式的值，我们应该直接利用它的[正交展开](@article_id:333291)式。这正是**[克伦肖算法](@article_id:350562)**（Clenshaw's algorithm）的用武之地。这个[算法](@article_id:331821)巧妙地利用了我们前面提到的[三项递推关系](@article_id:355806)，能够直接、稳定、高效地从系数 $\{c_k\}$ 计算出多项式的值。
+正确的做法是：**始终停留在正交的世界里**。要计算多项式的值，我们应该直接利用它的[正交展开](@keyword=orthogonal_expansion|lang=zh-CN|style=Feynman)式。这正是**[克伦肖算法](@keyword=clenshaw_s_algorithm|lang=zh-CN|style=Feynman)**（Clenshaw's algorithm）的用武之地。这个[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)巧妙地利用了我们前面提到的[三项递推关系](@keyword=three_term_recurrence_relation|lang=zh-CN|style=Feynman)，能够直接、稳定、高效地从系数 $\{c_k\}$ 计算出多项式的值。
 
-这给我们带来了最终的、也是最深刻的启示：[正交多项式](@article_id:307335)不仅是一种解决问题的工具，它更是一种思考方式，一种更自然、更稳定的描述函数的“语言”。从构建模型，到求解系数，再到最终的评估和使用，我们都应该拥抱这种语言。这趟旅程始于对一个简单方法的质疑，最终通向一个完整、优雅且在实践中极其强大的解决方案。这，就是科学与数学之美。
+这给我们带来了最终的、也是最深刻的启示：[正交多项式](@keyword=orthogonal_polynomials|lang=zh-CN|style=Feynman)不仅是一种解决问题的工具，它更是一种思考方式，一种更自然、更稳定的描述函数的“语言”。从构建模型，到求解系数，再到最终的评估和使用，我们都应该拥抱这种语言。这趟旅程始于对一个简单方法的质疑，最终通向一个完整、优雅且在实践中极其强大的解决方案。这，就是科学与数学之美。

@@ -1,7 +1,7 @@
 ## 引言
-在模拟复杂几何形状（如飞机机翼或人体血管）周围的[流体运动](@entry_id:182721)时，我们必须告别简单的笛卡尔坐标系，转而拥抱能够贴合物体外形的[曲线坐标系](@entry_id:172561)。然而，这种坐标的“扭曲”给我们带来了一个根本性的挑战：我们如何在这样一个变形的参照系中准确地描述物理定律，特别是那些代表质量、动量和能量产生与消耗的“[源项](@entry_id:269111)”？错误的处理不仅会歪曲物理现实，甚至可能在数值模拟中凭空制造出虚假的流动，导致整个计算的失败。本文旨在系统性地解决这一知识鸿沟。
+在模拟复杂几何形状（如飞机机翼或人体血管）周围的[流体运动](@keyword=fluid_motion|lang=zh-CN|style=Feynman)时，我们必须告别简单的笛卡尔坐标系，转而拥抱能够贴合物体外形的[曲线坐标系](@keyword=curvilinear_coordinate_systems|lang=zh-CN|style=Feynman)。然而，这种坐标的“扭曲”给我们带来了一个根本性的挑战：我们如何在这样一个变形的参照系中准确地描述物理定律，特别是那些代表质量、动量和能量产生与消耗的“[源项](@keyword=source_term|lang=zh-CN|style=Feynman)”？错误的处理不仅会歪曲物理现实，甚至可能在数值模拟中凭空制造出虚假的流动，导致整个计算的失败。本文旨在系统性地解决这一知识鸿沟。
 
-本文将分为三个核心部分。在“原理与机制”一章中，我们将深入探讨物理源项和几何[源项](@entry_id:269111)的本质区别，揭示[雅可比行列式](@entry_id:137120)与克里斯托费尔符号扮演的关键角色，并直面离散化带来的陷阱，如[几何守恒律](@entry_id:170384)（GCL）和守恒配平格式的必要性。接着，在“应用与跨学科连接”一章中，我们将看到这些理论如何在地球物理学、[涡轮机械](@entry_id:276962)、[城市气候](@entry_id:184294)模拟等真实世界问题中发挥作用，理解错误处理[源项](@entry_id:269111)所带来的严重后果。最后，“动手实践”部分将提供具体的编程练习，让您亲身体验和解决与[源项处理](@entry_id:755077)相关的数值问题。通过本次学习，您将掌握在复杂[坐标系](@entry_id:156346)下稳健、准确地进行[流体动力学模拟](@entry_id:142279)的核心技能。
+本文将分为三个核心部分。在“原理与机制”一章中，我们将深入探讨物理源项和几何[源项](@keyword=source_term|lang=zh-CN|style=Feynman)的本质区别，揭示[雅可比行列式](@keyword=jacobian_determinant|lang=zh-CN|style=Feynman)与克里斯托费尔符号扮演的关键角色，并直面离散化带来的陷阱，如[几何守恒律](@keyword=geometric_conservation_law|lang=zh-CN|style=Feynman)（GCL）和守恒配平格式的必要性。接着，在“应用与跨学科连接”一章中，我们将看到这些理论如何在地球物理学、[涡轮机械](@keyword=turbomachinery|lang=zh-CN|style=Feynman)、[城市气候](@keyword=urban_climate|lang=zh-CN|style=Feynman)模拟等真实世界问题中发挥作用，理解错误处理[源项](@keyword=source_term|lang=zh-CN|style=Feynman)所带来的严重后果。最后，“动手实践”部分将提供具体的编程练习，让您亲身体验和解决与[源项处理](@keyword=source_term_treatment|lang=zh-CN|style=Feynman)相关的数值问题。通过本次学习，您将掌握在复杂[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)下稳健、准确地进行[流体动力学模拟](@keyword=fluid_dynamics_simulation|lang=zh-CN|style=Feynman)的核心技能。
 
 ## 原理与机制
 
@@ -13,41 +13,41 @@
 
 > 一个区域内“财富”的变化率 = 流入的量 - 流出的量 + 内部产生的量
 
-这个等式是物理学的心脏。流入和流出的部分由“通量”描述，代表着财富如何穿过区域的边界。而等式右边的最后一项——“内部产生的量”——就是我们今天的主角：**物理[源项](@entry_id:269111)（physical source term）** $S$。它代表了在空间中每一点、每一刻，由于真实的物理过程（如[化学反应](@entry_id:146973)、重力做功、[热辐射](@entry_id:145102)等）所产生的财富。它是一个客观存在，不以我们的观测方式为转移。
+这个等式是物理学的心脏。流入和流出的部分由“通量”描述，代表着财富如何穿过区域的边界。而等式右边的最后一项——“内部产生的量”——就是我们今天的主角：**物理[源项](@keyword=source_term|lang=zh-CN|style=Feynman)（physical source term）** $S$。它代表了在空间中每一点、每一刻，由于真实的物理过程（如[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)、重力做功、[热辐射](@keyword=thermal_radiation|lang=zh-CN|style=Feynman)等）所产生的财富。它是一个客观存在，不以我们的观测方式为转移。
 
-现在，想象一下，你不再使用标准的方格账本纸，而是换成了一张可以拉伸和压缩的橡胶薄膜来绘制你的记账网格。这就是我们在计算流体力学（CFD）中遇到的情况。为了模拟飞机机翼或人体血管周围的流动，我们必须使用贴合这些复杂形状的**[曲线坐标系](@entry_id:172561)（curvilinear coordinate system）**。我们的“账本”被“扭曲”了。这会给我们的记账工作带来什么麻烦呢？
+现在，想象一下，你不再使用标准的方格账本纸，而是换成了一张可以拉伸和压缩的橡胶薄膜来绘制你的记账网格。这就是我们在计算流体力学（CFD）中遇到的情况。为了模拟飞机机翼或人体血管周围的流动，我们必须使用贴合这些复杂形状的**[曲线坐标系](@keyword=curvilinear_coordinate_systems|lang=zh-CN|style=Feynman)（curvilinear coordinate system）**。我们的“账本”被“扭曲”了。这会给我们的记账工作带来什么麻烦呢？
 
-### 空间的“汇率”：[雅可比行列式](@entry_id:137120)
+### 空间的“汇率”：[雅可比行列式](@keyword=jacobian_determinant|lang=zh-CN|style=Feynman)
 
 最直接的问题是，橡胶账本上的一个“标准方格”（计算空间中的一个单位体积）在真实物理世界中对应多大的体积？在网格被拉伸的地方，一个小方格可能代表巨大的物理空间；在被压缩的地方，一个大方格可能只代表很小的物理空间。
 
-这种从“计算体积”到“物理体积”的“汇率”，由一个被称为**[雅可比行列式](@entry_id:137120)（Jacobian determinant）**的数学量 $J$ 来度量。如果在一个点上 $J=2$，意味着计算空间中一个微小的立方体，在物理空间中对应着两倍于其大小的体积。
+这种从“计算体积”到“物理体积”的“汇率”，由一个被称为**[雅可比行列式](@keyword=jacobian_determinant|lang=zh-CN|style=Feynman)（Jacobian determinant）**的数学量 $J$ 来度量。如果在一个点上 $J=2$，意味着计算空间中一个微小的立方体，在物理空间中对应着两倍于其大小的体积。[@problem_id:3363893]
 
-这个“汇率”对于正确处理物理[源项](@entry_id:269111)至关重要。假设一个[化学反应](@entry_id:146973)在物理空间中以 $S_{phys}$ 的速率（单位物理体积/单位时间）产生某种物质。当我们在计算空间的一个单元格内计算总产量时，我们不能简单地将 $S_{phys}$ 乘以这个单元格的计算体积。我们必须考虑“汇率” $J$。一个物理体积为 $\mathrm{d}V$ 的微元，其总产量是 $S_{phys} \mathrm{d}V$。转换到计算空间，由于 $\mathrm{d}V = J \mathrm{d}\boldsymbol{\xi}$（其中 $\mathrm{d}\boldsymbol{\xi}$ 是计算空间的体积微元），总产量就变成了 $J S_{phys} \mathrm{d}\boldsymbol{\xi}$。
+这个“汇率”对于正确处理物理[源项](@keyword=source_term|lang=zh-CN|style=Feynman)至关重要。假设一个[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)在物理空间中以 $S_{phys}$ 的速率（单位物理体积/单位时间）产生某种物质。当我们在计算空间的一个单元格内计算总产量时，我们不能简单地将 $S_{phys}$ 乘以这个单元格的计算体积。我们必须考虑“汇率” $J$。一个物理体积为 $\mathrm{d}V$ 的微元，其总产量是 $S_{phys} \mathrm{d}V$。转换到计算空间，由于 $\mathrm{d}V = J \mathrm{d}\boldsymbol{\xi}$（其中 $\mathrm{d}\boldsymbol{\xi}$ 是计算空间的体积微元），总产量就变成了 $J S_{phys} \mathrm{d}\boldsymbol{\xi}$。
 
-因此，当我们将守恒律方程从物理空间转换到计算空间时，原始的物理源项 $S_{phys}$ 必须乘以[雅可比行列式](@entry_id:137120) $J$，变成 $J S_{phys}$，才能保证总体的收支平衡。
+因此，当我们将守恒律方程从物理空间转换到计算空间时，原始的物理源项 $S_{phys}$ 必须乘以[雅可比行列式](@keyword=jacobian_determinant|lang=zh-CN|style=Feynman) $J$，变成 $J S_{phys}$，才能保证总体的收支平衡。[@problem_id:3363907]
 
-这个看似简单的数学步骤，却有一个深刻的物理含义。即使物理源项 $S_0$ 在整个物理空间中是一个常数（比如均匀的重[力场](@entry_id:147325)），只要我们的计算网格是非均匀的（即 $J$ 不是常数），那么在计算空间中，与之对应的[源项](@entry_id:269111) $J(\boldsymbol{\xi}) S_0$ 就会随着位置 $\boldsymbol{\xi}$ 而变化！ 计算机看到的“源”，是一个被空间本身的几何形态所调制的量。这提醒我们，我们看到的未必是“真实”，而是“真实”在特定[坐标系](@entry_id:156346)下的投影。
+这个看似简单的数学步骤，却有一个深刻的物理含义。即使物理源项 $S_0$ 在整个物理空间中是一个常数（比如均匀的重[力场](@keyword=force_field|lang=zh-CN|style=Feynman)），只要我们的计算网格是非均匀的（即 $J$ 不是常数），那么在计算空间中，与之对应的[源项](@keyword=source_term|lang=zh-CN|style=Feynman) $J(\boldsymbol{\xi}) S_0$ 就会随着位置 $\boldsymbol{\xi}$ 而变化！[@problem_id:3363932] 计算机看到的“源”，是一个被空间本身的几何形态所调制的量。这提醒我们，我们看到的未必是“真实”，而是“真实”在特定[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)下的投影。
 
-### 旋转木马的幻觉：几何[源项](@entry_id:269111)的登场
+### 旋转木马的幻觉：几何[源项](@keyword=source_term|lang=zh-CN|style=Feynman)的登场
 
-坐标变换带来的影响不止于此。有时，它甚至会无中生有地创造出一些看起来像[源项](@entry_id:269111)，但实际上并不产生任何物理实体的东西。我们称之为**几何源项（geometric source terms）**。
+坐标变换带来的影响不止于此。有时，它甚至会无中生有地创造出一些看起来像[源项](@keyword=source_term|lang=zh-CN|style=Feynman)，但实际上并不产生任何物理实体的东西。我们称之为**几何源项（geometric source terms）**。
 
-一个绝佳的例子是离心力。当你坐在旋转木马上，你会感到一股将你向外推的力。但对于站在地面上的观察者来说，这个“力”根本不存在。他们看到的只是你的身体由于惯性，想要保持直线运动，而木马的座位通过向心力强迫你改变方向。你感受到的“离心力”是你所在旋转坐标系的产物，它是一种几何效应，而非像重力或[电磁力](@entry_id:196024)那样的基本物理相互作用。
+一个绝佳的例子是离心力。当你坐在旋转木马上，你会感到一股将你向外推的力。但对于站在地面上的观察者来说，这个“力”根本不存在。他们看到的只是你的身体由于惯性，想要保持直线运动，而木马的座位通过向心力强迫你改变方向。你感受到的“离心力”是你所在旋转坐标系的产物，它是一种几何效应，而非像重力或[电磁力](@keyword=electromagnetic_forces|lang=zh-CN|style=Feynman)那样的基本物理相互作用。[@problem_id:3363953]
 
-在[流体力学](@entry_id:136788)中，当我们用[曲线坐标](@entry_id:178535)描述动量守恒（牛顿第二定律）时，类似的事情就会发生。动量是一个矢量，它有大小和方向。在[笛卡尔坐标系](@entry_id:169789)中，“x方向”在任何地方都是同一个方向。但在[曲线坐标系](@entry_id:172561)中，代表“$\xi$方向”的[基矢](@entry_id:199546)量本身就可能随空间位置而弯曲。当一个流体微元沿着这样一条弯曲的坐标线运动时，即使它的速度大小不变，其[速度矢量](@entry_id:269648)的方向也在改变，这意味着它在经历加速度。这个由[坐标系](@entry_id:156346)弯曲所导致的加速度项，在[动量方程](@entry_id:197225)中表现得就像一个额外的力，也就是几何源项。
+在[流体力学](@keyword=fluid_dynamics|lang=zh-CN|style=Feynman)中，当我们用[曲线坐标](@keyword=curvilinear_coordinates|lang=zh-CN|style=Feynman)描述动量守恒（牛顿第二定律）时，类似的事情就会发生。动量是一个矢量，它有大小和方向。在[笛卡尔坐标系](@keyword=cartesian_coordinate_system|lang=zh-CN|style=Feynman)中，“x方向”在任何地方都是同一个方向。但在[曲线坐标系](@keyword=curvilinear_coordinate_systems|lang=zh-CN|style=Feynman)中，代表“$\xi$方向”的[基矢](@keyword=basis_vector|lang=zh-CN|style=Feynman)量本身就可能随空间位置而弯曲。当一个流体微元沿着这样一条弯曲的坐标线运动时，即使它的速度大小不变，其[速度矢量](@keyword=velocity_vector|lang=zh-CN|style=Feynman)的方向也在改变，这意味着它在经历加速度。这个由[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)弯曲所导致的加速度项，在[动量方程](@keyword=momentum_equation|lang=zh-CN|style=Feynman)中表现得就像一个额外的力，也就是几何源项。[@problem_id:3363971]
 
-这些几何源项通常与**克里斯托费尔符号（Christoffel symbols）**有关，它们精确地量化了[基矢](@entry_id:199546)量的空间变化率。它们不是物理源，因为它们并不会真正地创造或毁灭动量。一旦你切换回简单的笛卡尔坐标系，这些项就会自动消失。
+这些几何源项通常与**克里斯托费尔符号（Christoffel symbols）**有关，它们精确地量化了[基矢](@keyword=basis_vector|lang=zh-CN|style=Feynman)量的空间变化率。它们不是物理源，因为它们并不会真正地创造或毁灭动量。一旦你切换回简单的笛卡尔坐标系，这些项就会自动消失。
 
 因此，我们必须清晰地分辨两类源项：
-1.  **物理源项**：代表真实的物理过程，如重力、[化学反应](@entry_id:146973)。在[坐标变换](@entry_id:172727)下，它们通过与[雅可比行列式](@entry_id:137120) $J$ 相乘来保持其物理意义。对于矢量[源项](@entry_id:269111)（如重力），我们还需将其分量正确地从笛卡尔基投影到[曲线坐标](@entry_id:178535)基上。
-2.  **几何[源项](@entry_id:269111)**：是[坐标系](@entry_id:156346)自身属性（如弯曲或运动）的数学体现。它们不代表物理实体产生，但对于在特定[坐标系](@entry_id:156346)下正确描述物理过程至关重要。
+1.  **物理源项**：代表真实的物理过程，如重力、[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)。在[坐标变换](@keyword=coordinate_transformations|lang=zh-CN|style=Feynman)下，它们通过与[雅可比行列式](@keyword=jacobian_determinant|lang=zh-CN|style=Feynman) $J$ 相乘来保持其物理意义。对于矢量[源项](@keyword=source_term|lang=zh-CN|style=Feynman)（如重力），我们还需将其分量正确地从笛卡尔基投影到[曲线坐标](@keyword=curvilinear_coordinates|lang=zh-CN|style=Feynman)基上。[@problem_id:3363929]
+2.  **几何[源项](@keyword=source_term|lang=zh-CN|style=Feynman)**：是[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)自身属性（如弯曲或运动）的数学体现。它们不代表物理实体产生，但对于在特定[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)下正确描述物理过程至关重要。
 
 ### 机器中的幽灵：离散化及其陷阱
 
 到目前为止，我们的讨论都停留在优美的连续数学层面。然而，计算机只能处理离散的数字。当我们把连续的方程“翻译”成计算机能够执行的离散算法（这个过程称为**离散化**）时，新的“幽灵”便可能出现。
 
-#### 维持“无”的状态：[几何守恒律 (GCL)](@entry_id:749845)
+#### 维持“无”的状态：[几何守恒律 (GCL)](@keyword=geometric_conservation_law_gcl|lang=zh-CN|style=Feynman)
 
 想象一片绝对均匀、静止的空气，没有任何外力作用（物理源项为零）。根据物理直觉，它应该永远保持均匀和静止。这在连续的数学方程中是显然的。
 
@@ -55,28 +55,28 @@
 
 其结果是，即使在物理上什么都不应该发生的情况下，计算机会凭空制造出一个非零的“力”或“源”，导致静止的空气开始流动，或者均匀的流场产生波纹。这种错误是灾难性的，因为它源于算法对几何的误解，而不是对物理的误解。
 
-为了避免这种“无中生有”的尴尬，我们的[数值算法](@entry_id:752770)必须遵守一个严格的戒律，称为**[几何守恒律](@entry_id:170384)（Geometric Conservation Law, GCL）**。GCL 本质上是一个对离散化方案的约束：它必须足够“聪明”，能够精确地识别并保持一个[均匀流](@entry_id:272775)场的状态，无论网格多么扭曲或如何运动。它要求所有离散的几何项必须以一种相互协调的方式计算，从而保证它们的总和精确为零。  违反GCL，就如同让一个会计师用几把不一致的尺子去丈量账本，结果必然是一团糟。
+为了避免这种“无中生有”的尴尬，我们的[数值算法](@keyword=numerical_algorithms|lang=zh-CN|style=Feynman)必须遵守一个严格的戒律，称为**[几何守恒律](@keyword=geometric_conservation_law|lang=zh-CN|style=Feynman)（Geometric Conservation Law, GCL）**。GCL 本质上是一个对离散化方案的约束：它必须足够“聪明”，能够精确地识别并保持一个[均匀流](@keyword=uniform_flow|lang=zh-CN|style=Feynman)场的状态，无论网格多么扭曲或如何运动。它要求所有离散的几何项必须以一种相互协调的方式计算，从而保证它们的总和精确为零。[@problem_id:3363921] [@problem_id:3363896] 违反GCL，就如同让一个会计师用几把不一致的尺子去丈量账本，结果必然是一团糟。
 
 #### 维持“平衡”：守恒配平格式
 
-GCL保证了我们的算法能够正确处理“无”的状态。但现实世界中，更多的是“有”但“平衡”的状态。一个经典的例子是静止的湖水或大气。在其中，向下的重力（一个物理源项）与向上的压力梯度（一个通量项）精确地相互抵消，达到**[静力平衡](@entry_id:163498)**。
+GCL保证了我们的算法能够正确处理“无”的状态。但现实世界中，更多的是“有”但“平衡”的状态。一个经典的例子是静止的湖水或大气。在其中，向下的重力（一个物理源项）与向上的压力梯度（一个通量项）精确地相互抵消，达到**[静力平衡](@keyword=static_equilibrium|lang=zh-CN|style=Feynman)**。
 
-在一个非均匀的网格上，离散化的压力梯度项和离散化的重力源项都变得非常复杂，都与局部的网格几何有关。如果一个标准的数值格式分别对这两项进行离散化，几乎不可避免地会引入微小的、不一致的离散误差。这种不一致打破了物理世界中那微妙的平衡。其后果是，一个本应静止的模拟湖泊可能会无故产生虚假的流动和波浪，仿佛被一个看不见的手搅动。这种误差通常是 $O(1)$ 级别的，意味着无论你如何加密网格，它都不会消失。
+在一个非均匀的网格上，离散化的压力梯度项和离散化的重力源项都变得非常复杂，都与局部的网格几何有关。如果一个标准的数值格式分别对这两项进行离散化，几乎不可避免地会引入微小的、不一致的离散误差。这种不一致打破了物理世界中那微妙的平衡。其后果是，一个本应静止的模拟湖泊可能会无故产生虚假的流动和波浪，仿佛被一个看不见的手搅动。这种误差通常是 $O(1)$ 级别的，意味着无论你如何加密网格，它都不会消失。[@problem_id:3363927]
 
-为了解决这个问题，研究者们发展了更为精巧的**守恒配平格式（well-balanced schemes）**。这种格式的核心思想是，不再孤立地处理通量梯度和源项，而是将它们视为一个需要共同处理的整体。通过特殊设计的[数值通量](@entry_id:752791)或[源项](@entry_id:269111)重构，确保在离散层面，通量梯度和源项能够像在连续世界中一样完美地相互抵消，从而在计算机中精确地维持这种物理平衡。这对于模拟海洋、大气以及天体物理中的现象至关重要。
+为了解决这个问题，研究者们发展了更为精巧的**守恒配平格式（well-balanced schemes）**。这种格式的核心思想是，不再孤立地处理通量梯度和源项，而是将它们视为一个需要共同处理的整体。通过特殊设计的[数值通量](@keyword=numerical_fluxes|lang=zh-CN|style=Feynman)或[源项](@keyword=source_term|lang=zh-CN|style=Feynman)重构，确保在离散层面，通量梯度和源项能够像在连续世界中一样完美地相互抵消，从而在计算机中精确地维持这种物理平衡。这对于模拟海洋、大气以及天体物理中的现象至关重要。[@problem_id:3363927]
 
-### 最后的话：最小者的暴政与[数值刚性](@entry_id:752836)
+### 最后的话：最小者的暴政与[数值刚性](@keyword=numerical_stiffness|lang=zh-CN|style=Feynman)
 
-我们已经看到，[坐标变换](@entry_id:172727)通过[雅可比行列式](@entry_id:137120) $J$ 深刻地影响了[源项](@entry_id:269111)的表达。这不仅仅是理论上的优雅，更有实际的计算后果。在半离散的[有限体积法](@entry_id:749372)中，一个单元格[内状态变量](@entry_id:750754) $\phi$ 的演化方程大致可以写成：
+我们已经看到，[坐标变换](@keyword=coordinate_transformations|lang=zh-CN|style=Feynman)通过[雅可比行列式](@keyword=jacobian_determinant|lang=zh-CN|style=Feynman) $J$ 深刻地影响了[源项](@keyword=source_term|lang=zh-CN|style=Feynman)的表达。这不仅仅是理论上的优雅，更有实际的计算后果。在半离散的[有限体积法](@keyword=finite_volume_methods|lang=zh-CN|style=Feynman)中，一个单元格[内状态变量](@keyword=internal_state_variables|lang=zh-CN|style=Feynman) $\phi$ 的演化方程大致可以写成：
 
 $$
 m_P \frac{\mathrm{d}\bar{\phi}_P}{\mathrm{d}t} = \text{通量项} + \text{源项}
 $$
 
-其中，$m_P = \int J \rho \mathrm{d}\boldsymbol{\xi}$ 是这个单元格的总质量。可以看到，单元格的质量 $m_P$ 成为了时间演化的“惯性”。[源项](@entry_id:269111)对系统演化速度的贡献，被这个质量所调制。
+其中，$m_P = \int J \rho \mathrm{d}\boldsymbol{\xi}$ 是这个单元格的总质量。可以看到，单元格的质量 $m_P$ 成为了时间演化的“惯性”。[源项](@keyword=source_term|lang=zh-CN|style=Feynman)对系统演化速度的贡献，被这个质量所调制。
 
-现在，如果某个区域的网格非常精细（导致 $J$ 很小），或者流体密度 $\rho$ 很低，那么这个单元格的“惯性”$m_P$ 就会非常小。即使物理[源项](@entry_id:269111)本身并不极端，但由于分母 $m_P$ 很小，它可能导致 $\mathrm{d}\bar{\phi}_P/\mathrm{d}t$ 变得极大。这意味着该单元格的状态会以极快的速度变化，其特征时间尺度 $\tau_S$ 会变得非常短。
+现在，如果某个区域的网格非常精细（导致 $J$ 很小），或者流体密度 $\rho$ 很低，那么这个单元格的“惯性”$m_P$ 就会非常小。即使物理[源项](@keyword=source_term|lang=zh-CN|style=Feynman)本身并不极端，但由于分母 $m_P$ 很小，它可能导致 $\mathrm{d}\bar{\phi}_P/\mathrm{d}t$ 变得极大。这意味着该单元格的状态会以极快的速度变化，其特征时间尺度 $\tau_S$ 会变得非常短。[@problem_id:3363966]
 
-这就是所谓的**[数值刚性](@entry_id:752836)（stiffness）**。为了捕捉这种飞速的变化并保持计算稳定，整个模拟系统（包括所有变化缓慢的“大”单元格）被迫采用极小的时间步长，由这个“最小者”来发号施令。这就是“最小者的暴政”。理解源项如何通过坐标变换与局部几何和物理量相互作用，是诊断和解决这类实际计算难题的关键一步。
+这就是所谓的**[数值刚性](@keyword=numerical_stiffness|lang=zh-CN|style=Feynman)（stiffness）**。为了捕捉这种飞速的变化并保持计算稳定，整个模拟系统（包括所有变化缓慢的“大”单元格）被迫采用极小的时间步长，由这个“最小者”来发号施令。这就是“最小者的暴政”。理解源项如何通过坐标变换与局部几何和物理量相互作用，是诊断和解决这类实际计算难题的关键一步。
 
-从一个简单的会计法则出发，通过扭曲我们的“账本”，我们不仅重新发现了[源项](@entry_id:269111)的本质，还遇到了因[坐标变换](@entry_id:172727)而生的几何幻象，并最终直面了将连续世界转化为离散数字时所遇到的深层挑战。这趟旅程揭示了[计算物理学](@entry_id:146048)的美妙与艰辛：它不仅要求我们理解物理，更要求我们理解我们用以描述物理的语言——数学和算法——本身的特性和脾气。
+从一个简单的会计法则出发，通过扭曲我们的“账本”，我们不仅重新发现了[源项](@keyword=source_term|lang=zh-CN|style=Feynman)的本质，还遇到了因[坐标变换](@keyword=coordinate_transformations|lang=zh-CN|style=Feynman)而生的几何幻象，并最终直面了将连续世界转化为离散数字时所遇到的深层挑战。这趟旅程揭示了[计算物理学](@keyword=computational_physics|lang=zh-CN|style=Feynman)的美妙与艰辛：它不仅要求我们理解物理，更要求我们理解我们用以描述物理的语言——数学和算法——本身的特性和脾气。

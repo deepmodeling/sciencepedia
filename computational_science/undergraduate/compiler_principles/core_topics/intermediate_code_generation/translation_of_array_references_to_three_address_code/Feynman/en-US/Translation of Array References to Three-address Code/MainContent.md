@@ -3,7 +3,7 @@ To a programmer, an array is an intuitive, grid-like structure. To a computer, m
 
 This article demystifies the art and science of translating array references into executable code. We will explore how a simple mathematical formula becomes the key to accessing data and how compilers leverage algebraic truths to generate exceptionally fast and efficient instructions. By dissecting this process, we uncover the deep connection between software logic and hardware reality.
 
-Across the following chapters, you will gain a comprehensive understanding of this essential compiler function. "Principles and Mechanisms" will lay the foundation, breaking down the core formulas, layout strategies, and [optimization techniques](@entry_id:635438) like [strength reduction](@entry_id:755509) and [range analysis](@entry_id:754055). "Applications and Interdisciplinary Connections" will broaden the perspective, showing how these principles enable everything from high-performance computing and deep learning to system security. Finally, "Hands-On Practices" will offer concrete exercises to solidify your grasp of generating [three-address code](@entry_id:755950) for various array access patterns.
+Across the following chapters, you will gain a comprehensive understanding of this essential compiler function. "Principles and Mechanisms" will lay the foundation, breaking down the core formulas, layout strategies, and [optimization techniques](@keyword=optimization_techniques|lang=en-US|style=Feynman) like [strength reduction](@keyword=strength_reduction|lang=en-US|style=Feynman) and [range analysis](@keyword=range_analysis|lang=en-US|style=Feynman). "Applications and Interdisciplinary Connections" will broaden the perspective, showing how these principles enable everything from high-performance computing and deep learning to system security. Finally, "Hands-On Practices" will offer concrete exercises to solidify your grasp of generating [three-address code](@keyword=three_address_code|lang=en-US|style=Feynman) for various array access patterns.
 
 ## Principles and Mechanisms
 
@@ -29,7 +29,7 @@ You might think the compiler just plugs numbers into this formula. But a good co
 
 $$i = (3k + 14) - (2k - 6) + (4 - 1) + ((5) - (3))$$
 
-A naive approach would be to compute this `i` every single time, and then plug it into our address formula. But the compiler is smarter. It examines this expression at compile time, long before the program ever runs. It sees sub-expressions like `(4 - 1)` and `(5 - 3)` that contain only constants. It evaluates them immediately, replacing them with `3` and `2`. This optimization is called **[constant folding](@entry_id:747743)**.
+A naive approach would be to compute this `i` every single time, and then plug it into our address formula. But the compiler is smarter. It examines this expression at compile time, long before the program ever runs. It sees sub-expressions like `(4 - 1)` and `(5 - 3)` that contain only constants. It evaluates them immediately, replacing them with `3` and `2`. This optimization is called **[constant folding](@keyword=constant_folding|lang=en-US|style=Feynman)**.
 
 But it doesn't stop there. The compiler knows the rules of algebra. It rearranges the expression to group all the `k` terms and all the constant terms together:
 
@@ -39,11 +39,11 @@ It then folds these parts, too, simplifying the entire expression down to $i = k
 
 $$ \text{address} = 4096 + (k + 25) \times 8 = 4096 + 8k + 200 = 8k + 4296 $$
 
-Look at what happened! A messy calculation was transformed into a single multiplication and a single addition. The compiler did the heavy lifting upfront, making the code that actually runs incredibly lean and fast. This is a recurring theme: compilers use algebraic truths to transform what you write into what the machine can execute most efficiently .
+Look at what happened! A messy calculation was transformed into a single multiplication and a single addition. The compiler did the heavy lifting upfront, making the code that actually runs incredibly lean and fast. This is a recurring theme: compilers use algebraic truths to transform what you write into what the machine can execute most efficiently [@problem_id:3677283].
 
 ### Building Grids: The Row-Major Strategy
 
-Now, for the client who wants a grid. How do we flatten a 2D array, `A[i][j]`, into our 1D memory? The most common convention is called **[row-major layout](@entry_id:754438)**. It's exactly how you read a book: you read all the characters in the first line (the first row), then all the characters in the second line (the second row), and so on.
+Now, for the client who wants a grid. How do we flatten a 2D array, `A[i][j]`, into our 1D memory? The most common convention is called **[row-major layout](@keyword=row_major_layout|lang=en-US|style=Feynman)**. It's exactly how you read a book: you read all the characters in the first line (the first row), then all the characters in the second line (the second row), and so on.
 
 To find the address of `A[i][j]` in an array with $m$ columns, the compiler thinks like this:
 1.  "I need to get to row `i`. To do that, I must skip over all the rows before it (rows 0, 1, ..., `i-1`)." There are `i` such rows.
@@ -54,11 +54,11 @@ The total number of elements to skip from the very beginning is $(i \times m + j
 
 $$ \text{address}(A[i][j]) = \text{base} + (i \times m + j) \times w $$
 
-This convention is so common (it's used by C, C++, Python, and many others) that we often take it for granted. But it's just a convention! Languages like Fortran traditionally use **column-major layout**, where you go down the first column, then down the second, and so on. In that case, the formula becomes $\text{address}(A[i][j]) = \text{base} + (j \times n + i) \times w$, where $n$ is the number of rows . The choice of layout can have real performance consequences, especially when you're looping through the array. For the fastest access, you want your loops to "walk" through memory the same way the data is laid out, like reading a book instead of picking one word from each page at random.
+This convention is so common (it's used by C, C++, Python, and many others) that we often take it for granted. But it's just a convention! Languages like Fortran traditionally use **column-major layout**, where you go down the first column, then down the second, and so on. In that case, the formula becomes $\text{address}(A[i][j]) = \text{base} + (j \times n + i) \times w$, where $n$ is the number of rows [@problem_id:3677324]. The choice of layout can have real performance consequences, especially when you're looping through the array. For the fastest access, you want your loops to "walk" through memory the same way the data is laid out, like reading a book instead of picking one word from each page at random.
 
 ### The Art of Efficient Traversal
 
-Let's say we're doing something more interesting than just accessing a single element. Imagine we're processing an image, and for each pixel, we need to look at its immediate neighbors—a classic operation in [image filtering](@entry_id:141673) called a convolution. If we naively calculate the full address formula for each of the nine pixels in a $3 \times 3$ window, we'd be doing a lot of redundant multiplication.
+Let's say we're doing something more interesting than just accessing a single element. Imagine we're processing an image, and for each pixel, we need to look at its immediate neighbors—a classic operation in [image filtering](@keyword=image_filtering|lang=en-US|style=Feynman) called a convolution. If we naively calculate the full address formula for each of the nine pixels in a $3 \times 3$ window, we'd be doing a lot of redundant multiplication.
 
 Again, the compiler (or a clever programmer) finds a better way. Let's say we've already calculated the address of our center pixel, `I[y][x]`. What is the address of its top-left neighbor, $I[y-1][x-1]$?
 
@@ -70,7 +70,7 @@ $$ \text{address} = (\text{base} + (y \times W + x) \times s) + (d_y \times W + 
 
 The first part is just the address of our center pixel! The address of any neighbor is simply the center pixel's address plus a constant offset, $(d_y \times W + d_x) \times s$. For the top-left neighbor ($d_y=-1, d_x=-1$), the offset is simply $-W \times s - s$. Notice that $W \times s$ is just the size of one full row in bytes—a value we can call the **row stride**.
 
-This leads to a beautiful optimization called **[strength reduction](@entry_id:755509)**. Instead of re-computing the address from scratch for each neighbor (which involves expensive multiplications), we calculate the center address once. Then, we find the neighbors by adding or subtracting the pre-computed row stride and element size. This replaces nine multiplications with eight simple additions/subtractions inside our [image processing](@entry_id:276975) loop, a massive performance win .
+This leads to a beautiful optimization called **[strength reduction](@keyword=strength_reduction|lang=en-US|style=Feynman)**. Instead of re-computing the address from scratch for each neighbor (which involves expensive multiplications), we calculate the center address once. Then, we find the neighbors by adding or subtracting the pre-computed row stride and element size. This replaces nine multiplications with eight simple additions/subtractions inside our [image processing](@keyword=image_processing|lang=en-US|style=Feynman) loop, a massive performance win [@problem_id:3677331].
 
 ### Pointers and Arrays: Two Sides of the Same Coin
 
@@ -80,36 +80,36 @@ When you write `p = [k]`, you're telling the compiler: "Calculate the address of
 
 Later, when you access `p[i]`, the language defines this to mean: "Start at the address stored in `p`, and then step forward `i` elements." The address for `p[i]` is therefore `p + i * w`.
 
-Now for the "aha!" moment. If the compiler substitutes the value of `p`, the address for `p[i]` becomes `(base + k * w) + i * w`. A naive compiler might perform two multiplications here (`k * w` and `i * w`). But a smart compiler uses the [distributive property](@entry_id:144084) to see that this is equivalent to:
+Now for the "aha!" moment. If the compiler substitutes the value of `p`, the address for `p[i]` becomes `(base + k * w) + i * w`. A naive compiler might perform two multiplications here (`k * w` and `i * w`). But a smart compiler uses the [distributive property](@keyword=distributive_property|lang=en-US|style=Feynman) to see that this is equivalent to:
 
 $$ \text{address}(p[i]) = \text{base} + (k + i) \times w $$
 
-It folds the integer offsets `k` and `i` together *first*, and only then performs a single multiplication by the element width. This reveals a deep truth: pointer arithmetic is just a different syntax for the same underlying address calculations we use for arrays. The expression `p[i]` is ultimately just a way of saying `A[k+i]` .
+It folds the integer offsets `k` and `i` together *first*, and only then performs a single multiplication by the element width. This reveals a deep truth: pointer arithmetic is just a different syntax for the same underlying address calculations we use for arrays. The expression `p[i]` is ultimately just a way of saying `A[k+i]` [@problem_id:3677238].
 
 ### Beyond the Basics: Real-World Complications
 
 Our simple world of 0-indexed global arrays is a good start, but reality is more complex.
 
-What if an array is indexed from 2 to 5, like `A[2..5]`? The compiler handles this by normalizing the index. When you ask for `A[i]`, it first calculates a zero-based index `i' = i - 2`. Then it uses this `i'` in the familiar formula. This generalizes to multiple dimensions with arbitrary lower bounds, where we build the final offset from strides and normalized indices for each dimension  .
+What if an array is indexed from 2 to 5, like `A[2..5]`? The compiler handles this by normalizing the index. When you ask for `A[i]`, it first calculates a zero-based index `i' = i - 2`. Then it uses this `i'` in the familiar formula. This generalizes to multiple dimensions with arbitrary lower bounds, where we build the final offset from strides and normalized indices for each dimension [@problem_id:3677206] [@problem_id:3677268].
 
-What about local variables inside a function? Their `base` address isn't a single number known at compile time. Instead, when a function is called, a block of memory called an **[activation record](@entry_id:636889)** (or stack frame) is created on the program's stack. A special register, the **[frame pointer](@entry_id:749568)** ($bp$), points to a fixed reference point within this record. The array `A` will be stored at a constant offset from this pointer, say, 64 bytes. So, the base address of `A` becomes a runtime calculation: $base = bp + 64$. The full address of `A[i][j]` is then $(bp + 64) + (i \times m + j) \times w$ . The principle is the same, but the `base` is now dynamic and tied to the function call machinery.
+What about local variables inside a function? Their `base` address isn't a single number known at compile time. Instead, when a function is called, a block of memory called an **[activation record](@keyword=activation_record|lang=en-US|style=Feynman)** (or stack frame) is created on the program's stack. A special register, the **[frame pointer](@keyword=frame_pointer|lang=en-US|style=Feynman)** ($bp$), points to a fixed reference point within this record. The array `A` will be stored at a constant offset from this pointer, say, 64 bytes. So, the base address of `A` becomes a runtime calculation: $base = bp + 64$. The full address of `A[i][j]` is then $(bp + 64) + (i \times m + j) \times w$ [@problem_id:3677198]. The principle is the same, but the `base` is now dynamic and tied to the function call machinery.
 
 ### Safety Without Chains: The Magic of Range Analysis
 
-A major source of bugs and security vulnerabilities in languages like C is accessing an array out of bounds, like `A[-1]` or `A[1000]` when the array only has 10 elements. Modern languages prevent this with **[bounds checking](@entry_id:746954)**. A naive translation would insert a check before every single array access:
+A major source of bugs and security vulnerabilities in languages like C is accessing an array out of bounds, like `A[-1]` or `A[1000]` when the array only has 10 elements. Modern languages prevent this with **bounds checking**. A naive translation would insert a check before every single array access:
 
 ```
 if (i < 0 || i >= length) throw_exception;
 value = memory[base + i * w];
 ```
 
-This is safe, but it can be slow, adding overhead to every access. Must we pay this price for safety? Not necessarily. Here, the compiler performs one of its most impressive feats of "detective work," known as **[range analysis](@entry_id:754055)**.
+This is safe, but it can be slow, adding overhead to every access. Must we pay this price for safety? Not necessarily. Here, the compiler performs one of its most impressive feats of "detective work," known as **[range analysis](@keyword=range_analysis|lang=en-US|style=Feynman)**.
 
 Consider a loop `for i from 10 to 159`. Inside this loop, you access `A[i]`, where `A` has a length of 200. The compiler can analyze the loop and *prove*, with mathematical certainty, that the value of `i` will always be between 10 and 159. Since this range is safely within the valid index range of `[0, 199]`, the explicit bounds check is redundant. The compiler can simply remove it.
 
 It can do this for more complex expressions, too. If another access is `B[i + 40]` and array `B` has length 220, the compiler deduces the range of `i + 40` is `[50, 199]`, which is also safely within bounds. It can even handle `C[199 - i]`, deducing its range to be `[40, 189]`.
 
-The result is magical: the compiler proves the code is safe and then eliminates the very checks it inserted, giving you the performance of unsafe code with the guaranteed safety of a modern language. For a loop running 150 times with four such provably safe accesses, this optimization eliminates 600 dynamic checks .
+The result is magical: the compiler proves the code is safe and then eliminates the very checks it inserted, giving you the performance of unsafe code with the guaranteed safety of a modern language. For a loop running 150 times with four such provably safe accesses, this optimization eliminates 600 dynamic checks [@problem_id:3677197].
 
 ### The Dope Vector: Arrays for a Dynamic World
 
@@ -125,6 +125,6 @@ When the code needs to access `A[i]`, it first reads these values from the dope 
 
 $$ \text{address}(A[i]) = b + (i - \ell) \times s \times w $$
 
-This powerful mechanism allows for truly flexible and [dynamic arrays](@entry_id:637218). It's the culmination of all our principles, packaging the base, bounds, and layout information into a single runtime bundle, allowing our address calculation logic to work in the most general of cases .
+This powerful mechanism allows for truly flexible and [dynamic arrays](@keyword=dynamic_arrays|lang=en-US|style=Feynman). It's the culmination of all our principles, packaging the base, bounds, and layout information into a single runtime bundle, allowing our address calculation logic to work in the most general of cases [@problem_id:3677311].
 
-From a simple formula to complex optimizations and dynamic [data structures](@entry_id:262134), the translation of array references is a perfect illustration of the compiler's role: to create a seamless, efficient, and safe bridge between the world of human ideas and the stark, linear reality of the machine.
+From a simple formula to complex optimizations and dynamic [data structures](@keyword=data_structures|lang=en-US|style=Feynman), the translation of array references is a perfect illustration of the compiler's role: to create a seamless, efficient, and safe bridge between the world of human ideas and the stark, linear reality of the machine.

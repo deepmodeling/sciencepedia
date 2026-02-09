@@ -1,17 +1,17 @@
 ## Introduction
 The behavior of thermal-fluid systems is governed by a set of complex differential equations that, in their raw form, can conceal the essential physics at play. To move from mathematical complexity to engineering insight, we must distill these systems down to their fundamental competing forces. This is the role of dimensionless numbers—powerful parameters that emerge from the non-dimensionalization of the governing equations, providing a universal language to describe whether flow is laminar or turbulent, whether conduction or convection dominates, or how quickly a material will melt. This article provides a comprehensive exploration of these pivotal numbers.
 
-Across three chapters, this article will build your mastery of [dimensionless analysis](@entry_id:188181). First, in "Principles and Mechanisms," we will derive the most important dimensionless numbers from first principles, uncovering their deep physical meaning as ratios of competing phenomena. Next, "Applications and Interdisciplinary Connections" will demonstrate how these numbers are used to design and predict the behavior of real-world engineering systems, from batteries to nuclear reactors, and how they bridge disparate fields like materials science and chemical engineering. Finally, "Hands-On Practices" will provide curated problems that challenge you to apply these concepts, connecting theoretical derivations to practical analysis and computational methods.
+Across three chapters, this article will build your mastery of [dimensionless analysis](@keyword=dimensionless_analysis|lang=en-US|style=Feynman). First, in "Principles and Mechanisms," we will derive the most important dimensionless numbers from first principles, uncovering their deep physical meaning as ratios of competing phenomena. Next, "Applications and Interdisciplinary Connections" will demonstrate how these numbers are used to design and predict the behavior of real-world engineering systems, from batteries to nuclear reactors, and how they bridge disparate fields like materials science and chemical engineering. Finally, "Hands-On Practices" will provide curated problems that challenge you to apply these concepts, connecting theoretical derivations to practical analysis and computational methods.
 
 ## Principles and Mechanisms
 
-The laws of nature, in their most majestic form, are written in the language of mathematics—specifically, in the language of differential equations. These equations describe the conservation of mass, momentum, and energy, forming the bedrock of [thermal engineering](@entry_id:139895). Yet, in their raw, dimensional form, they can be daunting, a thicket of variables and properties that obscure the underlying story. How do we find the plot? How do we discover which forces are the main characters and which are merely supporting cast? The secret lies in a beautifully simple yet profound technique: non-dimensionalization.
+The laws of nature, in their most majestic form, are written in the language of mathematics—specifically, in the language of differential equations. These equations describe the conservation of mass, momentum, and energy, forming the bedrock of [thermal engineering](@keyword=thermal_engineering|lang=en-US|style=Feynman). Yet, in their raw, dimensional form, they can be daunting, a thicket of variables and properties that obscure the underlying story. How do we find the plot? How do we discover which forces are the main characters and which are merely supporting cast? The secret lies in a beautifully simple yet profound technique: non-dimensionalization.
 
-This isn't just a mathematical trick to get rid of units. It is an art of scaling, a way of looking at the physics through a new lens that reveals the inherent structure and hierarchy of the phenomena at play. By choosing characteristic scales for length, velocity, and temperature that are relevant to our specific problem, we recast the governing equations into a universal, dimensionless form. In this process, the physical properties and parameters of the problem coalesce into a small number of [dimensionless groups](@entry_id:156314). These groups, these "numbers," are not arbitrary. They emerge directly from the physics, each one telling a story of a contest—a tug-of-war—between different physical mechanisms. They are the true arbiters of the system's behavior, telling us whether flow is smooth or chaotic, whether heat is carried by the current or spreads out on its own, or whether friction can make a fluid boil. Let's embark on a journey to meet some of these pivotal characters of thermal science.
+This isn't just a mathematical trick to get rid of units. It is an art of scaling, a way of looking at the physics through a new lens that reveals the inherent structure and hierarchy of the phenomena at play. By choosing characteristic scales for length, velocity, and temperature that are relevant to our specific problem, we recast the governing equations into a universal, dimensionless form. In this process, the physical properties and parameters of the problem coalesce into a small number of [dimensionless groups](@keyword=dimensionless_groups|lang=en-US|style=Feynman). These groups, these "numbers," are not arbitrary. They emerge directly from the physics, each one telling a story of a contest—a tug-of-war—between different physical mechanisms. They are the true arbiters of the system's behavior, telling us whether flow is smooth or chaotic, whether heat is carried by the current or spreads out on its own, or whether friction can make a fluid boil. Let's embark on a journey to meet some of these pivotal characters of thermal science.
 
 ### The Big Three of Convection: A Tale of Flow, Diffusion, and Heat
 
-Imagine a fluid flowing through a channel, heated from the walls. This scenario, simple as it sounds, is governed by a rich interplay of forces. Our first step in understanding it is to non-dimensionalize the governing equations of mass, momentum (Navier-Stokes), and energy, a process that serves as a powerful genesis for our first three dimensionless numbers .
+Imagine a fluid flowing through a channel, heated from the walls. This scenario, simple as it sounds, is governed by a rich interplay of forces. Our first step in understanding it is to non-dimensionalize the governing equations of mass, momentum (Navier-Stokes), and energy, a process that serves as a powerful genesis for our first three dimensionless numbers [@problem_id:3946606].
 
 First, we confront the **Reynolds number ($Re$)**, arguably the most famous character in all of fluid mechanics. It emerges from the momentum equation when we compare the magnitude of the inertia term, $\rho(\mathbf{u} \cdot \nabla)\mathbf{u}$, which represents the tendency of the fluid to continue in its path, to the viscous term, $\mu \nabla^2 \mathbf{u}$, which represents the internal friction trying to smooth out velocity differences. The ratio of these two forces is:
 
@@ -19,7 +19,7 @@ $$
 Re = \frac{\text{Inertial forces}}{\text{Viscous forces}} \sim \frac{\rho U^2 / L}{\mu U / L^2} = \frac{\rho U L}{\mu} = \frac{U L}{\nu}
 $$
 
-Here, $\rho$ is the fluid density, $U$ is a characteristic velocity, $L$ is a characteristic length, $\mu$ is the [dynamic viscosity](@entry_id:268228), and $\nu = \mu/\rho$ is the [kinematic viscosity](@entry_id:261275). The Reynolds number is the undisputed ruler of the flow regime. At low $Re$, viscosity wins the tug-of-war; disturbances are damped out, and the flow is smooth, orderly, and **laminar**. At high $Re$, inertia dominates; the fluid's momentum overcomes the calming influence of viscosity, leading to chaotic, swirling, and **turbulent** flow.
+Here, $\rho$ is the fluid density, $U$ is a characteristic velocity, $L$ is a characteristic length, $\mu$ is the [dynamic viscosity](@keyword=dynamic_viscosity|lang=en-US|style=Feynman), and $\nu = \mu/\rho$ is the [kinematic viscosity](@keyword=kinematic_viscosity|lang=en-US|style=Feynman). The Reynolds number is the undisputed ruler of the flow regime. At low $Re$, viscosity wins the tug-of-war; disturbances are damped out, and the flow is smooth, orderly, and **laminar**. At high $Re$, inertia dominates; the fluid's momentum overcomes the calming influence of viscosity, leading to chaotic, swirling, and **turbulent** flow.
 
 Next, we meet the **Prandtl number ($Pr$)**, a character that describes the fluid's intrinsic "personality" when it comes to transporting momentum versus heat. It doesn't depend on the flow or the geometry, only on the fluid's properties. It arises from comparing the diffusivities of momentum and heat:
 
@@ -27,15 +27,15 @@ $$
 Pr = \frac{\text{Momentum Diffusivity}}{\text{Thermal Diffusivity}} = \frac{\nu}{\alpha} = \frac{\mu / \rho}{k / (\rho c_p)} = \frac{\mu c_p}{k}
 $$
 
-where $\alpha$ is the thermal diffusivity, $k$ is the thermal conductivity, and $c_p$ is the specific heat. The Prandtl number gives us a beautiful physical intuition about the relative thicknesses of the velocity and thermal boundary layers—the regions near a surface where the fluid is affected by its presence . The ratio of the thermal [boundary layer thickness](@entry_id:269100), $\delta_T$, to the velocity [boundary layer thickness](@entry_id:269100), $\delta$, scales as $\delta_T / \delta \sim Pr^{-1/2}$. For oils ($Pr \gg 1$), momentum diffuses much more readily than heat, so the velocity boundary layer is much thicker than the thermal one. For [liquid metals](@entry_id:263875) ($Pr \ll 1$), heat zips through the fluid far faster than momentum can, resulting in a very thick thermal boundary layer. For air and many gases, $Pr \approx 0.7$, meaning the two boundary layers have comparable thicknesses.
+where $\alpha$ is the thermal diffusivity, $k$ is the thermal conductivity, and $c_p$ is the specific heat. The Prandtl number gives us a beautiful physical intuition about the relative thicknesses of the velocity and thermal boundary layers—the regions near a surface where the fluid is affected by its presence [@problem_id:3946575]. The ratio of the thermal [boundary layer thickness](@keyword=boundary_layer_thickness|lang=en-US|style=Feynman), $\delta_T$, to the velocity [boundary layer thickness](@keyword=boundary_layer_thickness|lang=en-US|style=Feynman), $\delta$, scales as $\delta_T / \delta \sim Pr^{-1/2}$. For oils ($Pr \gg 1$), momentum diffuses much more readily than heat, so the velocity boundary layer is much thicker than the thermal one. For [liquid metals](@keyword=liquid_metals|lang=en-US|style=Feynman) ($Pr \ll 1$), heat zips through the fluid far faster than momentum can, resulting in a very thick thermal boundary layer. For air and many gases, $Pr \approx 0.7$, meaning the two boundary layers have comparable thicknesses.
 
-Finally, we have the **Nusselt number ($Nu$)**, which is often the grand prize we seek. While $Re$ and $Pr$ describe the conditions of the problem, $Nu$ describes the result. It quantifies the effectiveness of convective heat transfer. It is the ratio of the actual convective heat transfer to the heat transfer that would occur by pure conduction across the same fluid layer. For a situation with an imposed heat flux $q''$ resulting in a temperature difference $\Delta T$ :
+Finally, we have the **Nusselt number ($Nu$)**, which is often the grand prize we seek. While $Re$ and $Pr$ describe the conditions of the problem, $Nu$ describes the result. It quantifies the effectiveness of convective heat transfer. It is the ratio of the actual convective heat transfer to the heat transfer that would occur by pure conduction across the same fluid layer. For a situation with an imposed heat flux $q''$ resulting in a temperature difference $\Delta T$ [@problem_id:3946606]:
 
 $$
 Nu = \frac{\text{Convective Heat Transfer}}{\text{Conductive Heat Transfer}} = \frac{hL}{k} = \frac{(q''/\Delta T)L}{k} = \frac{q'' L}{k \Delta T}
 $$
 
-where $h$ is the [convective heat transfer coefficient](@entry_id:151029). A Nusselt number of $1$ means convection is no better than conduction, which happens in a stagnant fluid. A large Nusselt number signifies that the fluid motion is tremendously effective at transporting heat. The ultimate goal of many convection analyses is to find a relationship of the form $Nu = f(Re, Pr)$, a compact and powerful expression of complex physical phenomena.
+where $h$ is the [convective heat transfer coefficient](@keyword=convective_heat_transfer_coefficient|lang=en-US|style=Feynman). A Nusselt number of $1$ means convection is no better than conduction, which happens in a stagnant fluid. A large Nusselt number signifies that the fluid motion is tremendously effective at transporting heat. The ultimate goal of many convection analyses is to find a relationship of the form $Nu = f(Re, Pr)$, a compact and powerful expression of complex physical phenomena.
 
 ### Expanding the Stage: New Characters, New Physics
 
@@ -43,7 +43,7 @@ With our primary cast established, we can explore more nuanced physical scenario
 
 #### Advection, Diffusion, and the Tides of Heat
 
-In [convective heat transfer](@entry_id:151349), heat is transported by two main mechanisms: **advection**, where heat is carried along with the bulk motion of the fluid, and **diffusion** (conduction), where heat spreads due to random molecular motion. The **Péclet number ($Pe$)** is the dimensionless group that tells us which mechanism is in charge . It's the ratio of the rate of [heat transport](@entry_id:199637) by advection to the rate of transport by diffusion. We can also think of it as the ratio of the time it takes for heat to diffuse across a characteristic length $L$, $t_{\text{diff}} = L^2/\alpha$, to the time it takes for the fluid to flow that same distance, $t_{\text{adv}} = L/U$:
+In [convective heat transfer](@keyword=convective_heat_transfer|lang=en-US|style=Feynman), heat is transported by two main mechanisms: **advection**, where heat is carried along with the bulk motion of the fluid, and **diffusion** (conduction), where heat spreads due to random molecular motion. The **Péclet number ($Pe$)** is the dimensionless group that tells us which mechanism is in charge [@problem_id:3946651]. It's the ratio of the rate of [heat transport](@keyword=heat_transport|lang=en-US|style=Feynman) by advection to the rate of transport by diffusion. We can also think of it as the ratio of the time it takes for heat to diffuse across a characteristic length $L$, $t_{\text{diff}} = L^2/\alpha$, to the time it takes for the fluid to flow that same distance, $t_{\text{adv}} = L/U$:
 
 $$
 Pe = \frac{\text{Advective Transport}}{\text{Diffusive Transport}} \sim \frac{\rho c_p U (\Delta T / L)}{k (\Delta T / L^2)} = \frac{U L}{\alpha} = \frac{t_{\text{diff}}}{t_{\text{adv}}}
@@ -53,39 +53,39 @@ Notice something wonderful? We can write the Péclet number as the product of tw
 
 #### When Heat Creates Flow: Natural and Mixed Convection
 
-What if there is no external pump or fan forcing the fluid to move? A fluid heated from below becomes less dense and rises, while a fluid cooled from above becomes denser and sinks. This [buoyancy-driven flow](@entry_id:155190) is known as **[natural convection](@entry_id:140507)**. The dimensionless number that governs this phenomenon is the **Grashof number ($Gr$)**. It emerges from the momentum equation when we consider the Boussinesq approximation, where density variations only matter in the gravity term . The Grashof number represents the ratio of the buoyancy force driving the flow to the viscous force resisting it:
+What if there is no external pump or fan forcing the fluid to move? A fluid heated from below becomes less dense and rises, while a fluid cooled from above becomes denser and sinks. This [buoyancy-driven flow](@keyword=buoyancy_driven_flow|lang=en-US|style=Feynman) is known as **[natural convection](@keyword=natural_convection|lang=en-US|style=Feynman)**. The dimensionless number that governs this phenomenon is the **Grashof number ($Gr$)**. It emerges from the momentum equation when we consider the Boussinesq approximation, where density variations only matter in the gravity term [@problem_id:3946610]. The Grashof number represents the ratio of the buoyancy force driving the flow to the viscous force resisting it:
 
 $$
 Gr = \frac{\text{Buoyancy Force}}{\text{Viscous Force}} \sim \frac{g \beta \Delta T L^3}{\nu^2}
 $$
 
-where $g$ is the [acceleration due to gravity](@entry_id:173411) and $\beta$ is the volumetric [thermal expansion coefficient](@entry_id:150685). A large $Gr$ indicates a strong [natural convection](@entry_id:140507) flow.
+where $g$ is the [acceleration due to gravity](@keyword=acceleration_due_to_gravity|lang=en-US|style=Feynman) and $\beta$ is the volumetric [thermal expansion coefficient](@keyword=thermal_expansion_coefficient|lang=en-US|style=Feynman). A large $Gr$ indicates a strong [natural convection](@keyword=natural_convection|lang=en-US|style=Feynman) flow.
 
-Now, what if we have both a forced flow (like a fan blowing air over a hot surface) and significant buoyancy effects? This is **[mixed convection](@entry_id:154925)**. Which effect dominates? The **Richardson number ($Ri$)** is the arbiter in this contest . It arises naturally as the ratio of the buoyancy term to the inertial term in the non-dimensionalized momentum equation. It is elegantly expressed as the ratio of the Grashof number to the square of the Reynolds number:
+Now, what if we have both a forced flow (like a fan blowing air over a hot surface) and significant buoyancy effects? This is **[mixed convection](@keyword=mixed_convection|lang=en-US|style=Feynman)**. Which effect dominates? The **Richardson number ($Ri$)** is the arbiter in this contest [@problem_id:3946609]. It arises naturally as the ratio of the buoyancy term to the inertial term in the non-dimensionalized momentum equation. It is elegantly expressed as the ratio of the Grashof number to the square of the Reynolds number:
 
 $$
 Ri = \frac{\text{Buoyancy Term}}{\text{Inertial Term}} = \frac{g \beta \Delta T L}{U^2} = \frac{Gr}{Re^2}
 $$
 
-If $Ri \ll 1$, forced convection dominates and buoyancy is a minor perturbation. If $Ri \gg 1$, [natural convection](@entry_id:140507) is the main driver, and the forced flow is just a small nudge. When $Ri \approx 1$, both are equally important, leading to complex and fascinating flow patterns. The Richardson number beautifully unifies the worlds of forced and natural convection into a single, [continuous spectrum](@entry_id:153573).
+If $Ri \ll 1$, forced convection dominates and buoyancy is a minor perturbation. If $Ri \gg 1$, [natural convection](@keyword=natural_convection|lang=en-US|style=Feynman) is the main driver, and the forced flow is just a small nudge. When $Ri \approx 1$, both are equally important, leading to complex and fascinating flow patterns. The Richardson number beautifully unifies the worlds of forced and natural convection into a single, [continuous spectrum](@keyword=continuous_spectrum|lang=en-US|style=Feynman).
 
 ### The Dynamics of Change: Phase, Speed, and Time
 
-The world of [thermal engineering](@entry_id:139895) is not limited to single-phase flows. It involves melting, boiling, high-speed flight, and transient processes. Each of these introduces new physics and, with them, new dimensionless numbers.
+The world of [thermal engineering](@keyword=thermal_engineering|lang=en-US|style=Feynman) is not limited to single-phase flows. It involves melting, boiling, high-speed flight, and transient processes. Each of these introduces new physics and, with them, new dimensionless numbers.
 
 #### The Cost of Changing Phase: Stefan and Jakob Numbers
 
-When a substance melts, freezes, boils, or condenses, a tremendous amount of energy is absorbed or released as **latent heat**, without any change in temperature. This is in addition to the **sensible heat** associated with temperature changes. The **Stefan number ($Ste$)** and **Jakob number ($Ja$)** quantify the ratio of sensible to latent heat in phase-change problems . For the melting of a subcooled solid, the Stefan number is:
+When a substance melts, freezes, boils, or condenses, a tremendous amount of energy is absorbed or released as **latent heat**, without any change in temperature. This is in addition to the **sensible heat** associated with temperature changes. The **Stefan number ($Ste$)** and **Jakob number ($Ja$)** quantify the ratio of sensible to latent heat in phase-change problems [@problem_id:3946665]. For the melting of a subcooled solid, the Stefan number is:
 
 $$
 Ste = \frac{\text{Sensible Heat}}{\text{Latent Heat}} = \frac{c_p (T_m - T_i)}{h_{fg}}
 $$
 
-where $T_m$ is the [melting temperature](@entry_id:195793), $T_i$ is the initial temperature of the solid, and $h_{fg}$ is the latent heat of fusion. A small $Ste$ means the latent heat required to melt is huge compared to the sensible heat needed to bring the solid to its melting point. In this case, the melting front moves quickly. Conversely, a large $Ste$ means a significant amount of energy must first be invested in heating the solid, slowing the overall melting process. The Jakob number plays an analogous role in boiling, comparing the sensible heat in the superheated liquid to the latent heat of vaporization.
+where $T_m$ is the [melting temperature](@keyword=melting_temperature|lang=en-US|style=Feynman), $T_i$ is the initial temperature of the solid, and $h_{fg}$ is the latent heat of fusion. A small $Ste$ means the latent heat required to melt is huge compared to the sensible heat needed to bring the solid to its melting point. In this case, the melting front moves quickly. Conversely, a large $Ste$ means a significant amount of energy must first be invested in heating the solid, slowing the overall melting process. The Jakob number plays an analogous role in boiling, comparing the sensible heat in the superheated liquid to the latent heat of vaporization.
 
 #### The Timescale of Diffusion: The Fourier Number
 
-Many thermal processes are transient—temperatures change with time. How quickly does a temperature change at a boundary propagate into the interior of a body? The **Fourier number ($Fo$)** answers this question. It arises from the [non-dimensionalization](@entry_id:274879) of the transient heat conduction equation . It represents the ratio of the elapsed time to the characteristic time for thermal diffusion:
+Many thermal processes are transient—temperatures change with time. How quickly does a temperature change at a boundary propagate into the interior of a body? The **Fourier number ($Fo$)** answers this question. It arises from the [non-dimensionalization](@keyword=non_dimensionalization|lang=en-US|style=Feynman) of the transient heat conduction equation [@problem_id:3946668]. It represents the ratio of the elapsed time to the characteristic time for thermal diffusion:
 
 $$
 Fo = \frac{\alpha t}{L^2}
@@ -95,7 +95,7 @@ The Fourier number is essentially a dimensionless time. A small $Fo$ means that 
 
 #### Conduction vs. Convection: The Biot Number
 
-When an object is cooled or heated by a surrounding fluid, there are two resistances to heat flow in series: the internal resistance to conduction within the object and the external resistance to convection at its surface. The **Biot number ($Bi$)** is the ratio of these two resistances :
+When an object is cooled or heated by a surrounding fluid, there are two resistances to heat flow in series: the internal resistance to conduction within the object and the external resistance to convection at its surface. The **Biot number ($Bi$)** is the ratio of these two resistances [@problem_id:3946668]:
 
 $$
 Bi = \frac{\text{Internal Conductive Resistance}}{\text{External Convective Resistance}} = \frac{L/k}{1/h} = \frac{hL}{k}
@@ -105,13 +105,13 @@ Wait, this looks identical to the Nusselt number! But their physical meanings ar
 
 #### The Heat of Friction: The Eckert Number
 
-In most everyday flows, the heat generated by [fluid friction](@entry_id:268568) (viscous dissipation) is negligible. But in high-speed flows—such as in jet engines or during atmospheric reentry—this effect can become tremendously important. The **Eckert number ($Ec$)** tells us when we need to worry about this. It is the ratio of the flow's characteristic kinetic energy to its characteristic enthalpy difference :
+In most everyday flows, the heat generated by [fluid friction](@keyword=fluid_friction|lang=en-US|style=Feynman) (viscous dissipation) is negligible. But in high-speed flows—such as in jet engines or during atmospheric reentry—this effect can become tremendously important. The **Eckert number ($Ec$)** tells us when we need to worry about this. It is the ratio of the flow's characteristic kinetic energy to its characteristic enthalpy difference [@problem_id:3946649]:
 
 $$
 Ec = \frac{\text{Kinetic Energy}}{\text{Enthalpy}} = \frac{U^2}{c_p \Delta T}
 $$
 
-If $Ec \ll 1$, the kinetic energy of the flow is small compared to the thermal energy changes, and [viscous heating](@entry_id:161646) can be ignored. If $Ec$ is of order 1 or larger, enough kinetic energy can be converted into thermal energy through viscous friction to significantly raise the fluid's temperature, a crucial effect in [high-speed aerodynamics](@entry_id:272086). The dimensionless group that actually appears multiplying the dissipation term in the [energy equation](@entry_id:156281) is the **Brinkman number ($Br$)$**, which is related to the Eckert number through the Prandtl number: $Br = Ec \cdot Pr$.
+If $Ec \ll 1$, the kinetic energy of the flow is small compared to the thermal energy changes, and [viscous heating](@keyword=viscous_heating|lang=en-US|style=Feynman) can be ignored. If $Ec$ is of order 1 or larger, enough kinetic energy can be converted into thermal energy through viscous friction to significantly raise the fluid's temperature, a crucial effect in [high-speed aerodynamics](@keyword=high_speed_aerodynamics|lang=en-US|style=Feynman). The dimensionless group that actually appears multiplying the dissipation term in the [energy equation](@keyword=energy_equation|lang=en-US|style=Feynman) is the **Brinkman number ($Br$)$**, which is related to the Eckert number through the Prandtl number: $Br = Ec \cdot Pr$.
 
 ### The Grand Analogy and the Edge of the Continuum
 
@@ -119,7 +119,7 @@ Our journey ends by broadening our perspective, looking at the beautiful analogi
 
 #### The Kinship of Heat and Mass: The Lewis Number
 
-Consider a wet surface over which dry air flows. Water evaporates, which involves mass transfer (water vapor moving into the air) and heat transfer (latent heat of vaporization cooling the surface). The governing equations for heat and mass concentration are strikingly similar. This hints at a deep analogy. The **Lewis number ($Le$)** is the dimensionless group that solidifies this connection . It is the ratio of the thermal diffusivity to the mass diffusivity, $D$:
+Consider a wet surface over which dry air flows. Water evaporates, which involves mass transfer (water vapor moving into the air) and heat transfer (latent heat of vaporization cooling the surface). The governing equations for heat and mass concentration are strikingly similar. This hints at a deep analogy. The **Lewis number ($Le$)** is the dimensionless group that solidifies this connection [@problem_id:3946648]. It is the ratio of the thermal diffusivity to the mass diffusivity, $D$:
 
 $$
 Le = \frac{\text{Thermal Diffusivity}}{\text{Mass Diffusivity}} = \frac{\alpha}{D}
@@ -131,7 +131,7 @@ If $Le=1$, heat and mass diffuse at the same rate. This leads to the powerful he
 
 All the numbers we've discussed so far—Re, Pr, Nu, and the rest—are born from continuum mechanics. They are based on the assumption that the fluid can be treated as a continuous medium, where properties like density and velocity are defined at every point. But what happens if the gas is so rarefied, or the length scale so small (as in micro- or nano-channels), that this assumption fails?
 
-This is the domain of the **Knudsen number ($Kn$)**. It is the ratio of the molecular **mean free path**, $\lambda$ (the average distance a molecule travels between collisions), to the characteristic length scale of the system, $L$ :
+This is the domain of the **Knudsen number ($Kn$)**. It is the ratio of the molecular **mean free path**, $\lambda$ (the average distance a molecule travels between collisions), to the characteristic length scale of the system, $L$ [@problem_id:3946624]:
 
 $$
 Kn = \frac{\lambda}{L}

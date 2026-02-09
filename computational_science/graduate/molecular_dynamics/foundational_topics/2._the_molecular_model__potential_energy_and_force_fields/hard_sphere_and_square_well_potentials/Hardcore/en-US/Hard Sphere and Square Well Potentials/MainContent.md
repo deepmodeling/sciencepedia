@@ -1,7 +1,7 @@
 ## Introduction
-In the vast landscape of statistical mechanics, understanding the collective behavior of matter from its constituent particles is the ultimate goal. Real intermolecular forces are notoriously complex, making direct theoretical treatment difficult. To bridge this gap, physicists and chemists rely on simplified, idealized models that capture the essential physics. Among the most powerful and instructive of these are the hard-sphere and square-well potentials. By reducing interactions to their core components—impenetrable volume and short-range attraction—these models provide a tractable yet profound foundation for exploring the origins of fluid structure, thermodynamics, and [transport phenomena](@entry_id:147655).
+In the vast landscape of statistical mechanics, understanding the collective behavior of matter from its constituent particles is the ultimate goal. Real intermolecular forces are notoriously complex, making direct theoretical treatment difficult. To bridge this gap, physicists and chemists rely on simplified, idealized models that capture the essential physics. Among the most powerful and instructive of these are the hard-sphere and square-well potentials. By reducing interactions to their core components—impenetrable volume and short-range attraction—these models provide a tractable yet profound foundation for exploring the origins of fluid structure, thermodynamics, and transport phenomena.
 
-This article provides a comprehensive exploration of these two cornerstone models. The first section, **Principles and Mechanisms**, delves into the mathematical formulation of the potentials, the unique event-driven dynamics they produce, and their direct link to equilibrium structure and thermodynamic properties. Following this, **Applications and Interdisciplinary Connections** showcases the versatility of these models, from their role in perturbation theories of liquids to their use in understanding complex systems like associating fluids and [self-assembling materials](@entry_id:204210). Finally, **Hands-On Practices** presents a series of problems designed to solidify these concepts through practical application, from analytical derivations to simulation design. We begin by examining the fundamental principles that govern the behavior of these idealized particles.
+This article provides a comprehensive exploration of these two cornerstone models. The first section, **Principles and Mechanisms**, delves into the mathematical formulation of the potentials, the unique event-driven dynamics they produce, and their direct link to equilibrium structure and thermodynamic properties. Following this, **Applications and Interdisciplinary Connections** showcases the versatility of these models, from their role in perturbation theories of liquids to their use in understanding complex systems like associating fluids and self-assembling materials. Finally, **Hands-On Practices** presents a series of problems designed to solidify these concepts through practical application, from analytical derivations to simulation design. We begin by examining the fundamental principles that govern the behavior of these idealized particles.
 
 ## Principles and Mechanisms
 
@@ -9,11 +9,11 @@ This chapter delves into the principles and mechanisms governing systems of part
 
 ### The Idealized Interaction Potentials
 
-The foundation of any molecular model is the [pair potential](@entry_id:203104), $u(r)$, which describes the potential energy between two particles as a function of their separation distance, $r$. For simplicity and [isotropy](@entry_id:159159), we consider spherically symmetric particles.
+The foundation of any molecular model is the pair potential, $u(r)$, which describes the potential energy between two particles as a function of their separation distance, $r$. For simplicity and isotropy, we consider spherically symmetric particles.
 
 #### The Hard-Sphere Potential
 
-The most elementary model for a particle is the **hard sphere (HS)**, which represents a perfectly impenetrable, non-interacting sphere of a given diameter, $\sigma$. The interaction potential is a simple [step function](@entry_id:158924), representing the ultimate idealization of short-range repulsion. Mathematically, the hard-sphere [pair potential](@entry_id:203104), $u_{\text{HS}}(r)$, is defined as:
+The most elementary model for a particle is the **hard sphere (HS)**, which represents a perfectly impenetrable, non-interacting sphere of a given diameter, $\sigma$. The interaction potential is a simple step function, representing the ultimate idealization of short-range repulsion. Mathematically, the hard-sphere pair potential, $u_{\text{HS}}(r)$, is defined as:
 
 $$
 u_{\text{HS}}(r) =
@@ -23,19 +23,19 @@ u_{\text{HS}}(r) =
 \end{cases}
 $$
 
-The physical implications of this definition are profound and define the unique characteristics of hard-sphere systems .
+The physical implications of this definition are profound and define the unique characteristics of hard-sphere systems [@problem_id:3415460].
 
-First, the infinite potential energy for any separation $r  \sigma$ makes such configurations physically impossible. In equilibrium statistical mechanics, the probability of a configuration is proportional to its Boltzmann factor, $\exp(-\beta U)$, where $U$ is the total potential energy and $\beta = 1/(k_B T)$. If any pair of particles overlaps, $U = +\infty$, causing the Boltzmann factor to become zero. Consequently, the accessible [configuration space](@entry_id:149531) for a [hard-sphere fluid](@entry_id:182892) is strictly limited to the set of all non-overlapping particle arrangements.
+First, the infinite potential energy for any separation $r  \sigma$ makes such configurations physically impossible. In equilibrium statistical mechanics, the probability of a configuration is proportional to its Boltzmann factor, $\exp(-\beta U)$, where $U$ is the total potential energy and $\beta = 1/(k_B T)$. If any pair of particles overlaps, $U = +\infty$, causing the Boltzmann factor to become zero. Consequently, the accessible configuration space for a hard-sphere fluid is strictly limited to the set of all non-overlapping particle arrangements.
 
 Second, for separations $r > \sigma$, the potential is zero. This means that hard spheres do not interact at a distance—they are "unaware" of each other until they are in direct contact. The force between particles, given by the negative gradient of the potential, $\mathbf{F}(r) = - \nabla u(r)$, is therefore zero for all $r > \sigma$.
 
-At the exact point of contact, $r = \sigma$, the potential exhibits a discontinuity. The force at this point is not a regular function but can be understood as an infinitely strong repulsive impulse that acts instantaneously to prevent overlap. This impulsive nature is a defining feature of hard-sphere dynamics. Formally, the radial force can be described using a Dirac delta function, $F(r) \propto \delta(r-\sigma)$ . Since the potential energy is zero immediately before and after contact (conventionally, $u_{\text{HS}}(\sigma)$ is taken as 0, though its value does not affect equilibrium integrals as it is a [set of measure zero](@entry_id:198215)), any collision between hard spheres is perfectly elastic, conserving both kinetic energy and momentum.
+At the exact point of contact, $r = \sigma$, the potential exhibits a discontinuity. The force at this point is not a regular function but can be understood as an infinitely strong repulsive impulse that acts instantaneously to prevent overlap. This impulsive nature is a defining feature of hard-sphere dynamics. Formally, the radial force can be described using a Dirac delta function, $F(r) \propto \delta(r-\sigma)$ [@problem_id:3415460]. Since the potential energy is zero immediately before and after contact (conventionally, $u_{\text{HS}}(\sigma)$ is taken as 0, though its value does not affect equilibrium integrals as it is a set of measure zero), any collision between hard spheres is perfectly elastic, conserving both kinetic energy and momentum.
 
 #### The Square-Well Potential
 
-The **square-well (SW) potential** is a logical extension of the [hard-sphere model](@entry_id:145542) that introduces a simplified form of attraction. It retains the impenetrable hard core but adds a region of constant negative potential energy just outside the core, representing a finite-range attractive force. This simple addition is sufficient to endow the model with a rich phase diagram, including liquid-gas coexistence and a critical point.
+The **square-well (SW) potential** is a logical extension of the hard-sphere model that introduces a simplified form of attraction. It retains the impenetrable hard core but adds a region of constant negative potential energy just outside the core, representing a finite-range attractive force. This simple addition is sufficient to endow the model with a rich phase diagram, including liquid-gas coexistence and a critical point.
 
-The square-well potential is defined by three parameters: the hard-core diameter $\sigma$, the well depth $\varepsilon > 0$, and the relative attractive range $\lambda > 1$. The potential is given by :
+The square-well potential is defined by three parameters: the hard-core diameter $\sigma$, the well depth $\varepsilon > 0$, and the relative attractive range $\lambda > 1$. The potential is given by [@problem_id:3415371]:
 
 $$
 u_{\text{SW}}(r) =
@@ -54,37 +54,37 @@ The piecewise-constant nature of both the HS and SW potentials leads to a unique
 
 #### Impulsive Forces and Event-Driven Dynamics
 
-Since the force is the negative derivative of the potential, for any region where the potential is constant, the force is zero. For both HS and SW particles, this means that between collisions, they travel in straight lines at constant velocity, as if they were in a vacuum . Interactions occur only as instantaneous "events" when the interparticle separation $r$ reaches one of the points of discontinuity: $r=\sigma$ or, for SW particles, $r=\lambda\sigma$.
+Since the force is the negative derivative of the potential, for any region where the potential is constant, the force is zero. For both HS and SW particles, this means that between collisions, they travel in straight lines at constant velocity, as if they were in a vacuum [@problem_id:3415407]. Interactions occur only as instantaneous "events" when the interparticle separation $r$ reaches one of the points of discontinuity: $r=\sigma$ or, for SW particles, $r=\lambda\sigma$.
 
-This behavior is perfectly suited for a simulation algorithm known as **Event-Driven Molecular Dynamics (EDMD)**. Instead of integrating Newton's [equations of motion](@entry_id:170720) at discrete time steps (as in conventional MD), EDMD proceeds by analytically calculating the exact time of the next collision event for every pair of particles in the system. The simulation clock is then advanced directly to the time of the most imminent event, the velocities of the colliding pair are updated instantaneously according to the appropriate collision rules, and new event times are calculated for the particles involved.
+This behavior is perfectly suited for a simulation algorithm known as **Event-Driven Molecular Dynamics (EDMD)**. Instead of integrating Newton's equations of motion at discrete time steps (as in conventional MD), EDMD proceeds by analytically calculating the exact time of the next collision event for every pair of particles in the system. The simulation clock is then advanced directly to the time of the most imminent event, the velocities of the colliding pair are updated instantaneously according to the appropriate collision rules, and new event times are calculated for the particles involved.
 
-To find the time $t$ until a pair of particles with initial [relative position](@entry_id:274838) $\mathbf{r}_0$ and [relative velocity](@entry_id:178060) $\mathbf{v}$ reaches an event surface at radius $R$, we solve for the [positive roots](@entry_id:199264) of the equation $|\mathbf{r}_0 + \mathbf{v}t|^2 = R^2$. This yields a quadratic equation for $t$:
+To find the time $t$ until a pair of particles with initial relative position $\mathbf{r}_0$ and relative velocity $\mathbf{v}$ reaches an event surface at radius $R$, we solve for the positive roots of the equation $|\mathbf{r}_0 + \mathbf{v}t|^2 = R^2$. This yields a quadratic equation for $t$:
 
 $$
 (v^2) t^2 + 2(\mathbf{r}_0 \cdot \mathbf{v}) t + (r_0^2 - R^2) = 0
 $$
 
-where $v^2 = \mathbf{v} \cdot \mathbf{v}$ and $r_0^2 = \mathbf{r}_0 \cdot \mathbf{r}_0$. The smallest positive real root for all possible event surfaces ($R=\sigma$ and $R=\lambda\sigma$ for SW) determines the next event time for that pair .
+where $v^2 = \mathbf{v} \cdot \mathbf{v}$ and $r_0^2 = \mathbf{r}_0 \cdot \mathbf{r}_0$. The smallest positive real root for all possible event surfaces ($R=\sigma$ and $R=\lambda\sigma$ for SW) determines the next event time for that pair [@problem_id:3415353].
 
 #### Kinematics of Collisions
 
 At each event, particle velocities change according to conservation laws.
--   **Hard-Sphere Collision ($r=\sigma$):** This is a [perfectly elastic collision](@entry_id:176075). The impulse acts along the line of centers, reversing the component of the relative velocity along that line while leaving the tangential component unchanged. Total kinetic energy and momentum of the pair are conserved.
--   **Square-Well Boundary Crossing ($r=\lambda\sigma$):** This event is not a "collision" in the same sense, but an entry into or exit from the attractive well. As a particle pair crosses this boundary, their total energy $E = K + u(r)$ must be conserved. Since the potential energy $u(r)$ changes discontinuously by $\varepsilon$, the kinetic energy $K$ must also change discontinuously to compensate. Because the potential is central, angular momentum is also conserved. Conservation of angular momentum implies that the tangential component of the [relative velocity](@entry_id:178060) remains unchanged. Therefore, only the radial component of the relative velocity changes instantaneously to ensure energy conservation .
+-   **Hard-Sphere Collision ($r=\sigma$):** This is a perfectly elastic collision. The impulse acts along the line of centers, reversing the component of the relative velocity along that line while leaving the tangential component unchanged. Total kinetic energy and momentum of the pair are conserved.
+-   **Square-Well Boundary Crossing ($r=\lambda\sigma$):** This event is not a "collision" in the same sense, but an entry into or exit from the attractive well. As a particle pair crosses this boundary, their total energy $E = K + u(r)$ must be conserved. Since the potential energy $u(r)$ changes discontinuously by $\varepsilon$, the kinetic energy $K$ must also change discontinuously to compensate. Because the potential is central, angular momentum is also conserved. Conservation of angular momentum implies that the tangential component of the relative velocity remains unchanged. Therefore, only the radial component of the relative velocity changes instantaneously to ensure energy conservation [@problem_id:3415407].
 
 #### Practical Simulation: Periodic Boundary Conditions
 
-To simulate a bulk fluid and minimize surface effects, [molecular dynamics simulations](@entry_id:160737) are typically performed in a box with **Periodic Boundary Conditions (PBC)**. The simulation box is imagined to be surrounded by an infinite lattice of identical copies of itself. When a particle exits the central box through one face, it re-enters through the opposite face.
+To simulate a bulk fluid and minimize surface effects, molecular dynamics simulations are typically performed in a box with **Periodic Boundary Conditions (PBC)**. The simulation box is imagined to be surrounded by an infinite lattice of identical copies of itself. When a particle exits the central box through one face, it re-enters through the opposite face.
 
-When calculating distances and forces, the **Minimum Image Convention (MIC)** is applied. For any pair of particles, the interaction is calculated based on the shortest distance between them, considering all periodic images of one of the particles. For a cubic box of side length $L$, the MIC ensures that the interaction distance $r_{ij}$ for any pair is always less than or equal to $L/2$ in each Cartesian direction. This leads to a critical constraint: for the interaction to be uniquely defined and to avoid a particle interacting with multiple images of another particle (or with itself), the potential [cutoff radius](@entry_id:136708) $r_c$ must be less than half the box length, i.e., $r_c  L/2$ . For a square-well fluid, this means the simulation box must be large enough that $\lambda\sigma  L/2$.
+When calculating distances and forces, the **Minimum Image Convention (MIC)** is applied. For any pair of particles, the interaction is calculated based on the shortest distance between them, considering all periodic images of one of the particles. For a cubic box of side length $L$, the MIC ensures that the interaction distance $r_{ij}$ for any pair is always less than or equal to $L/2$ in each Cartesian direction. This leads to a critical constraint: for the interaction to be uniquely defined and to avoid a particle interacting with multiple images of another particle (or with itself), the potential cutoff radius $r_c$ must be less than half the box length, i.e., $r_c  L/2$ [@problem_id:3415451]. For a square-well fluid, this means the simulation box must be large enough that $\lambda\sigma  L/2$.
 
 ### Equilibrium Structure and Pair Correlations
 
-The microscopic interactions dictate the spatial arrangement of particles in the fluid. This structure is quantified by correlation functions, most importantly the [radial distribution function](@entry_id:137666).
+The microscopic interactions dictate the spatial arrangement of particles in the fluid. This structure is quantified by correlation functions, most importantly the radial distribution function.
 
 #### The Radial Distribution Function
 
-The **[radial distribution function](@entry_id:137666) (RDF)**, denoted $g(r)$, provides a measure of the probability of finding a particle at a distance $r$ from a central, reference particle, relative to the probability for a completely random (ideal gas) distribution. Formally, if the average [number density](@entry_id:268986) of the fluid is $\rho$, then $\rho g(r)$ is the local number density at distance $r$ from a given particle. The quantity $\rho g(r) 4\pi r^2 dr$ gives the average number of particles in a spherical shell of radius $r$ and thickness $dr$ around a central particle .
+The **radial distribution function (RDF)**, denoted $g(r)$, provides a measure of the probability of finding a particle at a distance $r$ from a central, reference particle, relative to the probability for a completely random (ideal gas) distribution. Formally, if the average number density of the fluid is $\rho$, then $\rho g(r)$ is the local number density at distance $r$ from a given particle. The quantity $\rho g(r) 4\pi r^2 dr$ gives the average number of particles in a spherical shell of radius $r$ and thickness $dr$ around a central particle [@problem_id:3415418].
 
 For any potential with a hard core of diameter $\sigma$, it is impossible for particle centers to be closer than $\sigma$. Therefore, a universal feature of $g(r)$ for both HS and SW fluids is:
 $$
@@ -99,7 +99,7 @@ While the RDF describes the structure, it is often more convenient to analyze th
 $$
 y(r) = g(r) \exp(\beta u(r))
 $$
-The cavity function is related to the work required to insert a particle at a given position and, unlike $g(r)$, is a continuous function of $r$ for potentials with finite discontinuities like the SW model. The continuity of $y(r)$ is a powerful principle for understanding the structure of fluids .
+The cavity function is related to the work required to insert a particle at a given position and, unlike $g(r)$, is a continuous function of $r$ for potentials with finite discontinuities like the SW model. The continuity of $y(r)$ is a powerful principle for understanding the structure of fluids [@problem_id:3415418].
 
 Let's apply this principle to the square-well fluid at the edge of the attractive well, $r = \lambda\sigma$. Just inside the well (as $r \to (\lambda\sigma)^-$), $u(r) = -\varepsilon$. Just outside (as $r \to (\lambda\sigma)^+$), $u(r) = 0$. The continuity of $y(r)$ implies $y((\lambda\sigma)^-) = y((\lambda\sigma)^+)$, which leads to:
 $$
@@ -108,28 +108,28 @@ $$
 $$
 g((\lambda\sigma)^-) = g((\lambda\sigma)^+) \exp(-\beta\varepsilon)
 $$
-Since $\varepsilon > 0$, the factor $\exp(\beta\varepsilon)$ is greater than 1. This shows that $g(r)$ must be discontinuous at the well boundary . The local density of particles is higher just inside the attractive well than just outside it, reflecting the accumulation of particles due to the attractive force. A similar discontinuity occurs at $r=\sigma$. The value of $g(r)$ at contact, $g(\sigma^+)$, is particularly important as it is directly related to the pressure of the fluid through the virial theorem.
+Since $\varepsilon > 0$, the factor $\exp(\beta\varepsilon)$ is greater than 1. This shows that $g(r)$ must be discontinuous at the well boundary [@problem_id:3415407]. The local density of particles is higher just inside the attractive well than just outside it, reflecting the accumulation of particles due to the attractive force. A similar discontinuity occurs at $r=\sigma$. The value of $g(r)$ at contact, $g(\sigma^+)$, is particularly important as it is directly related to the pressure of the fluid through the virial theorem.
 
 ### From Microscopic Interactions to Macroscopic Thermodynamics
 
-Statistical mechanics provides the tools to connect the microscopic details of the [pair potential](@entry_id:203104) to the macroscopic thermodynamic properties of the system, such as the [equation of state](@entry_id:141675).
+Statistical mechanics provides the tools to connect the microscopic details of the pair potential to the macroscopic thermodynamic properties of the system, such as the equation of state.
 
 #### The Virial Expansion and the Second Virial Coefficient
 
-For a dilute gas, the [equation of state](@entry_id:141675) can be expressed as a [power series](@entry_id:146836) in the number density $\rho$, known as the **[virial expansion](@entry_id:144842)**:
+For a dilute gas, the equation of state can be expressed as a power series in the number density $\rho$, known as the **virial expansion**:
 $$
 \frac{P}{k_B T} = \rho + B_2(T)\rho^2 + B_3(T)\rho^3 + \dots
 $$
-The term $P/(\rho k_B T)$ is the [compressibility factor](@entry_id:142312), $Z$. The ideal gas law, $Z=1$, is recovered at zero density. The **second virial coefficient**, $B_2(T)$, captures the leading-order correction due to pairwise interactions. It can be calculated directly from the [pair potential](@entry_id:203104) $u(r)$ via the integral:
+The term $P/(\rho k_B T)$ is the compressibility factor, $Z$. The ideal gas law, $Z=1$, is recovered at zero density. The **second virial coefficient**, $B_2(T)$, captures the leading-order correction due to pairwise interactions. It can be calculated directly from the pair potential $u(r)$ via the integral:
 $$
 B_2(T) = -2\pi \int_0^\infty \left[ \exp(-\beta u(r)) - 1 \right] r^2 dr
 $$
-For the square-well potential, this integral can be evaluated by splitting it into the three regions :
+For the square-well potential, this integral can be evaluated by splitting it into the three regions [@problem_id:3415407]:
 1.  $0 \le r  \sigma$: The integrand is $-1$.
 2.  $\sigma \le r  \lambda\sigma$: The integrand is $\exp(\beta\varepsilon) - 1$.
 3.  $r \ge \lambda\sigma$: The integrand is $0$.
 
-Performing the integration yields the exact expression for the [second virial coefficient](@entry_id:141764) of a square-well fluid :
+Performing the integration yields the exact expression for the second virial coefficient of a square-well fluid [@problem_id:3415440]:
 $$
 B_2(T) = \frac{2\pi\sigma^3}{3} \left[ 1 - (\lambda^3 - 1)(\exp(\beta\varepsilon) - 1) \right]
 $$
@@ -145,50 +145,50 @@ Solving for $T_B$ gives:
 $$
 T_B = \frac{\varepsilon}{k_B \ln\left( \frac{\lambda^3}{\lambda^3 - 1} \right)}
 $$
-This result demonstrates how the temperature at which attractive and repulsive effects balance depends on the geometry ($\lambda$) and energy scale ($\varepsilon$) of the potential .
+This result demonstrates how the temperature at which attractive and repulsive effects balance depends on the geometry ($\lambda$) and energy scale ($\varepsilon$) of the potential [@problem_id:3415440].
 
 #### The Liquid-Gas Phase Transition
 
-The simple attraction in the square-well model is sufficient to cause a [liquid-gas phase transition](@entry_id:145615), culminating in a critical point $(T_c, \rho_c)$. The location of this critical point is strongly dependent on the potential parameters $\lambda$ and $\varepsilon$ .
+The simple attraction in the square-well model is sufficient to cause a liquid-gas phase transition, culminating in a critical point $(T_c, \rho_c)$. The location of this critical point is strongly dependent on the potential parameters $\lambda$ and $\varepsilon$ [@problem_id:3415409].
 
 A mean-field van der Waals-like treatment predicts that the critical temperature is proportional to the overall strength of the attraction, scaling as $T_c \propto \varepsilon(\lambda^3 - 1)$. This suggests that as the attraction becomes longer-ranged (increasing $\lambda$), the critical temperature increases without bound.
 
-More sophisticated theories based on the [virial expansion](@entry_id:144842) and the [principle of corresponding states](@entry_id:140229) suggest a more nuanced picture. They correctly predict that as the attractive range becomes very short ($\lambda \to 1^+$), the critical temperature plummets ($T_c \to 0$). For sufficiently short-ranged potentials, the liquid-gas [coexistence curve](@entry_id:153066) becomes submerged within the fluid-solid coexistence region of the phase diagram, rendering the liquid phase thermodynamically metastable with respect to the solid phase . This highlights the crucial role of the attractive range in stabilizing a liquid phase.
+More sophisticated theories based on the virial expansion and the principle of corresponding states suggest a more nuanced picture. They correctly predict that as the attractive range becomes very short ($\lambda \to 1^+$), the critical temperature plummets ($T_c \to 0$). For sufficiently short-ranged potentials, the liquid-gas coexistence curve becomes submerged within the fluid-solid coexistence region of the phase diagram, rendering the liquid phase thermodynamically metastable with respect to the solid phase [@problem_id:3415409]. This highlights the crucial role of the attractive range in stabilizing a liquid phase.
 
 ### Kinetic Theory and Transport Properties
 
-Beyond equilibrium properties, these simple potentials serve as cornerstones for the [kinetic theory of gases](@entry_id:140543) and liquids, which seeks to explain macroscopic transport phenomena like diffusion and viscosity from the details of microscopic collisions.
+Beyond equilibrium properties, these simple potentials serve as cornerstones for the kinetic theory of gases and liquids, which seeks to explain macroscopic transport phenomena like diffusion and viscosity from the details of microscopic collisions.
 
 #### Hard-Sphere Collision Cross-Section and Mean Free Path
 
-The [hard-sphere model](@entry_id:145542) is particularly central to [kinetic theory](@entry_id:136901). A two-body collision can be analyzed in the [center-of-mass frame](@entry_id:158134) as the scattering of a point particle from a fixed sphere of radius $\sigma$. From simple geometry, one can derive that the scattering is isotropic (equally probable in all directions), and the [differential cross-section](@entry_id:137333) is a constant:
+The hard-sphere model is particularly central to kinetic theory. A two-body collision can be analyzed in the center-of-mass frame as the scattering of a point particle from a fixed sphere of radius $\sigma$. From simple geometry, one can derive that the scattering is isotropic (equally probable in all directions), and the differential cross-section is a constant:
 $$
 \frac{d\sigma}{d\Omega} = \frac{\sigma^2}{4}
 $$
-Integrating this over all solid angles gives the **[total cross-section](@entry_id:151809)**, $\sigma_{\text{tot}}$, which represents the [effective area](@entry_id:197911) one particle presents to another for a collision:
+Integrating this over all solid angles gives the **total cross-section**, $\sigma_{\text{tot}}$, which represents the effective area one particle presents to another for a collision:
 $$
 \sigma_{\text{tot}} = \int_{4\pi} \frac{d\sigma}{d\Omega} d\Omega = \pi\sigma^2
 $$
-This is simply the area of a circle with radius $\sigma$ .
+This is simply the area of a circle with radius $\sigma$ [@problem_id:3415427].
 
-The total cross-section is the key ingredient for calculating the **[mean free path](@entry_id:139563)**, $\ell$, which is the average distance a particle travels between collisions. For a dilute gas of identical particles with number density $\rho$, the mean free path is given by:
+The total cross-section is the key ingredient for calculating the **mean free path**, $\ell$, which is the average distance a particle travels between collisions. For a dilute gas of identical particles with number density $\rho$, the mean free path is given by:
 $$
 \ell = \frac{1}{\sqrt{2} \rho \sigma_{\text{tot}}} = \frac{1}{\sqrt{2} \rho \pi \sigma^2}
 $$
-The factor of $\sqrt{2}$ arises from correctly averaging over the relative velocities of the moving target particles in a Maxwell-Boltzmann distribution, rather than assuming stationary targets .
+The factor of $\sqrt{2}$ arises from correctly averaging over the relative velocities of the moving target particles in a Maxwell-Boltzmann distribution, rather than assuming stationary targets [@problem_id:3415427].
 
 #### Long-Time Tails and Finite-Size Effects in Transport
 
-While simple [kinetic theory](@entry_id:136901) assumes collisions are independent, the collective nature of motion in a dense fluid leads to subtle, long-lasting correlations. A key manifestation is in the **[velocity autocorrelation function](@entry_id:142421) (VACF)**, $C_v(t) = \langle \mathbf{v}_i(t) \cdot \mathbf{v}_i(0) \rangle$. While one might naively expect this function to decay exponentially, hydrodynamic theory predicts that for any fluid with [conserved momentum](@entry_id:177921) (including HS and SW fluids), the VACF has a long-time power-law tail:
+While simple kinetic theory assumes collisions are independent, the collective nature of motion in a dense fluid leads to subtle, long-lasting correlations. A key manifestation is in the **velocity autocorrelation function (VACF)**, $C_v(t) = \langle \mathbf{v}_i(t) \cdot \mathbf{v}_i(0) \rangle$. While one might naively expect this function to decay exponentially, hydrodynamic theory predicts that for any fluid with conserved momentum (including HS and SW fluids), the VACF has a long-time power-law tail:
 $$
 C_v(t) \sim t^{-d/2}
 $$
-where $d$ is the dimensionality of the system. For a 3D fluid, this decay goes as $t^{-3/2}$ . This "[long-time tail](@entry_id:157875)" arises because the motion of a particle creates a vortex in the surrounding fluid, which takes a long time to dissipate and can "push back" on the original particle, sustaining a correlation in its velocity.
+where $d$ is the dimensionality of the system. For a 3D fluid, this decay goes as $t^{-3/2}$ [@problem_id:3415367]. This "long-time tail" arises because the motion of a particle creates a vortex in the surrounding fluid, which takes a long time to dissipate and can "push back" on the original particle, sustaining a correlation in its velocity.
 
-This non-exponential decay has profound consequences for [transport coefficients](@entry_id:136790) like the [self-diffusion coefficient](@entry_id:754666), $D$, which is related to the integral of the VACF by the Green-Kubo relation: $D = \frac{1}{3} \int_0^\infty C_v(t) dt$.
+This non-exponential decay has profound consequences for transport coefficients like the self-diffusion coefficient, $D$, which is related to the integral of the VACF by the Green-Kubo relation: $D = \frac{1}{3} \int_0^\infty C_v(t) dt$.
 
-In computer simulations with periodic boundary conditions, the finite size of the simulation box ($L$) imposes a cutoff on the [hydrodynamic modes](@entry_id:159722) responsible for the tail. The longest-lived modes decay on a timescale proportional to $L^2/\nu$, where $\nu$ is the [kinematic viscosity](@entry_id:261275). This finite size leads to a systematic underestimation of the diffusion coefficient. The leading [finite-size correction](@entry_id:749366) has been shown to scale as:
+In computer simulations with periodic boundary conditions, the finite size of the simulation box ($L$) imposes a cutoff on the hydrodynamic modes responsible for the tail. The longest-lived modes decay on a timescale proportional to $L^2/\nu$, where $\nu$ is the kinematic viscosity. This finite size leads to a systematic underestimation of the diffusion coefficient. The leading finite-size correction has been shown to scale as:
 $$
 D(L) - D(\infty) \propto - \frac{k_B T}{\eta L}
 $$
-where $\eta$ is the [shear viscosity](@entry_id:141046) and $D(\infty)$ is the true bulk diffusion coefficient. This $1/L$ dependence is a crucial consideration when extracting bulk [transport properties](@entry_id:203130) from finite-size simulations .
+where $\eta$ is the shear viscosity and $D(\infty)$ is the true bulk diffusion coefficient. This $1/L$ dependence is a crucial consideration when extracting bulk transport properties from finite-size simulations [@problem_id:3415367].

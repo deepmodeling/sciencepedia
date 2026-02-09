@@ -1,5 +1,5 @@
 ## Introduction
-In the world of [mathematical optimization](@article_id:165046), finding the minimum of a function is a common goal. But what happens when that search is bound by rules and limitations? This is the challenge of constrained optimization, where we must find the best solution while staying within prescribed boundaries, much like seeking the lowest point in a valley but being forced to stay on a narrow path. Standard optimization techniques often fail in this complex landscape, leaving us in need of a more clever strategy.
+In the world of [mathematical optimization](@keyword=mathematical_optimization|lang=en-US|style=Feynman), finding the minimum of a function is a common goal. But what happens when that search is bound by rules and limitations? This is the challenge of constrained optimization, where we must find the best solution while staying within prescribed boundaries, much like seeking the lowest point in a valley but being forced to stay on a narrow path. Standard optimization techniques often fail in this complex landscape, leaving us in need of a more clever strategy.
 
 This article introduces the Penalty Method, an intuitive yet powerful technique that elegantly sidesteps this challenge. Instead of treating constraints as rigid walls, the method transforms them into "soft" barriers, imposing a cost for straying from the feasible region. This converts the difficult constrained problem into a more manageable unconstrained one. Across the following chapters, you will embark on a journey to master this method:
 
@@ -13,7 +13,7 @@ Let's begin by imagining you are tasked with finding the lowest point in a hilly
 
 Imagine you are tasked with a seemingly simple goal: find the lowest point in a hilly park. But there's a catch—you are not allowed to leave a specific, winding footpath. This is the essence of a **constrained optimization** problem. We want to minimize a function, which we can call our "landscape" $f(\mathbf{x})$, but we must obey a set of rules, our "constraints," like staying on the path $g(\mathbf{x}) = 0$.
 
-How can we possibly solve this? A blindfolded person searching for the lowest point would have no idea about the path. They would wander off immediately. We need a guide, something that nudges them back whenever they stray. The **[penalty method](@article_id:143065)** offers a wonderfully clever and intuitive solution: instead of building an unbreakable fence, we'll just make straying from the path incredibly unpleasant.
+How can we possibly solve this? A blindfolded person searching for the lowest point would have no idea about the path. They would wander off immediately. We need a guide, something that nudges them back whenever they stray. The **[penalty method](@keyword=penalty_method|lang=en-US|style=Feynman)** offers a wonderfully clever and intuitive solution: instead of building an unbreakable fence, we'll just make straying from the path incredibly unpleasant.
 
 ### The Art of Legal Transgression
 
@@ -26,7 +26,7 @@ This penalty acts like a "restoring force." If a point, say $P_0$, is in the "il
 
 ### Building the Walls: The Mathematics of Penalties
 
-Let's translate this analogy into the precise language of mathematics. We create an augmented [objective function](@article_id:266769) $P(\mathbf{x}; \mu)$ that looks like this:
+Let's translate this analogy into the precise language of mathematics. We create an augmented [objective function](@keyword=objective_function|lang=en-US|style=Feynman) $P(\mathbf{x}; \mu)$ that looks like this:
 
 $$
 P(\mathbf{x}; \mu) = f(\mathbf{x}) + \text{Penalty Term}
@@ -36,13 +36,13 @@ The term $f(\mathbf{x})$ is our original objective, the natural landscape. The p
 
 How we build the penalty term depends on the type of constraint.
 
-*   **Equality Constraints:** If we must stay on a path defined by $g(\mathbf{x}) = 0$, a good penalty is the **[quadratic penalty](@article_id:637283)**, $\frac{\mu}{2} [g(\mathbf{x})]^2$. This term has a beautiful property: it's zero *only if* $g(\mathbf{x}) = 0$, meaning we are perfectly on the path. The moment we step off, $g(\mathbf{x})$ becomes non-zero, and the squared term ensures the penalty is positive and grows the farther we stray. This creates our smooth, parabolic canyon around the path.
+*   **Equality Constraints:** If we must stay on a path defined by $g(\mathbf{x}) = 0$, a good penalty is the **[quadratic penalty](@keyword=quadratic_penalty|lang=en-US|style=Feynman)**, $\frac{\mu}{2} [g(\mathbf{x})]^2$. This term has a beautiful property: it's zero *only if* $g(\mathbf{x}) = 0$, meaning we are perfectly on the path. The moment we step off, $g(\mathbf{x})$ becomes non-zero, and the squared term ensures the penalty is positive and grows the farther we stray. This creates our smooth, parabolic canyon around the path.
 
 *   **Inequality Constraints:** What if the rule isn't to stay on a path, but to stay *inside* a fenced area, say $g(\mathbf{x}) \le 0$? Now, we should only be penalized if we are *outside* the fence, where $g(\mathbf{x}) > 0$. If we are inside, where $g(\mathbf{x}) < 0$, we've broken no rules and there should be no penalty. A simple term like $[g(\mathbf{x})]^2$ would be a disaster—it would penalize us for being "too far inside" the feasible region, which is nonsensical. It could lead us to a completely wrong answer.
 
     The correct formulation is wonderfully elegant: $\frac{\mu}{2} (\max\{0, g(\mathbf{x})\})^2$. This expression cleverly captures our intent. If $g(\mathbf{x}) \le 0$ (we are inside or on the boundary of the feasible region), $\max\{0, g(\mathbf{x})\}$ is 0, and the penalty vanishes. If $g(\mathbf{x}) > 0$ (we have strayed outside), the penalty kicks in, and its magnitude grows with the square of the violation.
 
-Because the penalty term is only active outside the feasible region, these methods are often called **exterior [penalty methods](@article_id:635596)**. The approximate solutions they generate typically lie in the infeasible region, approaching the true solution from the "exterior" as we make the penalty more severe.
+Because the penalty term is only active outside the feasible region, these methods are often called **exterior [penalty methods](@keyword=penalty_methods|lang=en-US|style=Feynman)**. The approximate solutions they generate typically lie in the infeasible region, approaching the true solution from the "exterior" as we make the penalty more severe.
 
 ### The Beautiful Imperfection of the Compromise
 
@@ -66,15 +66,15 @@ $$
 $$
 This magical number, $\lambda^*$, the Lagrange multiplier, tells us how sensitive the optimal solution is to a small change in the constraint. It measures the "force" the constraint exerts.
 
-Now look again at our [penalty method](@article_id:143065)'s optimality condition:
+Now look again at our [penalty method](@keyword=penalty_method|lang=en-US|style=Feynman)'s optimality condition:
 $$
 \nabla f(\mathbf{x}^*(\mu)) = - \big[ \mu g(\mathbf{x}^*(\mu)) \big] \nabla g(\mathbf{x}^*(\mu))
 $$
-The similarity is striking! As $\mu \to \infty$, our approximate solution $\mathbf{x}^*(\mu)$ approaches the true solution $\mathbf{x}^*$. By comparing the two equations, we uncover a beautiful connection: the quantity $\mu g(\mathbf{x}^*(\mu))$ in our [penalty method](@article_id:143065) is an approximation to the Lagrange multiplier $\lambda^*$!
+The similarity is striking! As $\mu \to \infty$, our approximate solution $\mathbf{x}^*(\mu)$ approaches the true solution $\mathbf{x}^*$. By comparing the two equations, we uncover a beautiful connection: the quantity $\mu g(\mathbf{x}^*(\mu))$ in our [penalty method](@keyword=penalty_method|lang=en-US|style=Feynman) is an approximation to the Lagrange multiplier $\lambda^*$!
 $$
 \lambda^* \approx \mu g(\mathbf{x}^*(\mu))
 $$
-This is a remarkable piece of insight. Our seemingly brute-force method of building "walls" has a hidden elegance. It doesn't just find the location of the minimum; it also implicitly calculates an estimate for one of the most important theoretical quantities associated with the problem. While an **exact [penalty method](@article_id:143065)**, such as one using an absolute value penalty $|g(\mathbf{x})|$, might find the exact solution for a finite $\mu$, it often comes at the cost of non-differentiability. The [quadratic penalty](@article_id:637283), while not exact for finite $\mu$, gives us this wonderful connection back to classical theory and a smoother problem to solve.
+This is a remarkable piece of insight. Our seemingly brute-force method of building "walls" has a hidden elegance. It doesn't just find the location of the minimum; it also implicitly calculates an estimate for one of the most important theoretical quantities associated with the problem. While an **exact [penalty method](@keyword=penalty_method|lang=en-US|style=Feynman)**, such as one using an absolute value penalty $|g(\mathbf{x})|$, might find the exact solution for a finite $\mu$, it often comes at the cost of non-differentiability. The [quadratic penalty](@keyword=quadratic_penalty|lang=en-US|style=Feynman), while not exact for finite $\mu$, gives us this wonderful connection back to classical theory and a smoother problem to solve.
 
 ### The Peril of the Steep Wall: A Tale of Stiffness
 
@@ -90,4 +90,4 @@ So we face a fundamental trade-off:
 *   A **small $\mu$** leads to a well-conditioned, easy-to-solve numerical problem, but its solution is a poor approximation of the true answer.
 *   A **large $\mu$** leads to a solution that is very close to the true answer, but the numerical problem is ill-conditioned and fiendishly difficult to solve.
 
-The elegant way out of this dilemma is the **[sequential penalty method](@article_id:169088)**. We don't jump to the impossibly steep wall right away. Instead, we start with a modest value for $\mu$ and solve that easier problem. Then, we take that solution as our starting guess for a problem with a slightly larger $\mu$. We repeat this process, gradually increasing $\mu$, tracing a path of solutions that gets ever closer to the true constrained optimum. In this way, we reap the benefits of accuracy without ever having to tackle the full numerical horror of an infinitely steep wall in one go. It’s a journey of successive refinement, a practical and beautiful demonstration of how to tame infinity.
+The elegant way out of this dilemma is the **[sequential penalty method](@keyword=sequential_penalty_method|lang=en-US|style=Feynman)**. We don't jump to the impossibly steep wall right away. Instead, we start with a modest value for $\mu$ and solve that easier problem. Then, we take that solution as our starting guess for a problem with a slightly larger $\mu$. We repeat this process, gradually increasing $\mu$, tracing a path of solutions that gets ever closer to the true constrained optimum. In this way, we reap the benefits of accuracy without ever having to tackle the full numerical horror of an infinitely steep wall in one go. It’s a journey of successive refinement, a practical and beautiful demonstration of how to tame infinity.

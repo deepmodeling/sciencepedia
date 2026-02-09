@@ -1,8 +1,8 @@
 ## 应用与交叉学科联系
 
-在前面的章节中，我们已经深入探讨了后验分布的原理与机制。我们发现，贝叶斯推断的最终产物并非一个单一的“答案”，而是一个完整的[概率分布](@entry_id:146404)。现在，我们面临一个至关重要的问题：“所以呢？” 我们费尽心力得到整个[后验分布](@entry_id:145605)，而不是仅仅满足于最可能的那一个点（即[最大后验概率估计](@entry_id:751774)，Maximum A Posteriori, MAP），这究竟有何意义？
+在前面的章节中，我们已经深入探讨了后验分布的原理与机制。我们发现，贝叶斯推断的最终产物并非一个单一的“答案”，而是一个完整的[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)。现在，我们面临一个至关重要的问题：“所以呢？” 我们费尽心力得到整个[后验分布](@keyword=posterior_distribution|lang=zh-CN|style=Feynman)，而不是仅仅满足于最可能的那一个点（即[最大后验概率估计](@keyword=maximum_a_posteriori_(map)_estimation|lang=zh-CN|style=Feynman)，Maximum A Posteriori, MAP），这究竟有何意义？
 
-答案是，意义非凡。从单一的[点估计](@entry_id:174544)走向完整的[分布](@entry_id:182848)，是从仅仅知道一个事实到理解其背后全部背景的飞跃。想象一下，告诉你一只老虎的“平均位置”可能没什么用，甚至很危险；但如果给你一张描绘它全部活动范围和出没概率的地图，你就能安全地规划路线。后验分布，就是这样一张描绘“真理”所在疆域的地图。本章我们将探索，如何利用这张地图在决策、实验设计、[工程控制](@entry_id:177543)等领域做出更明智、更稳健的选择，领略[后验分布](@entry_id:145605)在真实世界中展现出的深刻智慧与美感。
+答案是，意义非凡。从单一的[点估计](@keyword=point_estimation|lang=zh-CN|style=Feynman)走向完整的[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)，是从仅仅知道一个事实到理解其背后全部背景的飞跃。想象一下，告诉你一只老虎的“平均位置”可能没什么用，甚至很危险；但如果给你一张描绘它全部活动范围和出没概率的地图，你就能安全地规划路线。后验分布，就是这样一张描绘“真理”所在疆域的地图。本章我们将探索，如何利用这张地图在决策、实验设计、[工程控制](@keyword=engineering_controls|lang=zh-CN|style=Feynman)等领域做出更明智、更稳健的选择，领略[后验分布](@keyword=posterior_distribution|lang=zh-CN|style=Feynman)在真实世界中展现出的深刻智慧与美感。
 
 ### 更明智的决策：不确定性的经济学
 
@@ -12,15 +12,15 @@
 
 许多决策的后果并非对称。比如，修建一座防洪大坝，低估了最高水位（导致大坝过低）的代价，要远高于高估了最高水位（导致大坝过高、成本稍增）的代价。在这种情况下，我们需要的不是一个“平均”的估计，而是一个“安全”的估计。
 
-后验分布完美地解决了这个问题。假设参数 $\theta$ 代表最高水位，我们的行动 $a$ 是修建大坝的高度。一个简单的[非对称损失函数](@entry_id:174543)可以是：如果低估了（$a  \theta$），每米罚金为 $\lambda_+$；如果高估了（$a > \theta$），每米罚金为 $\lambda_-$。如果我们只知道 $\hat{\theta}_{MAP}$，我们可能会把大坝建在那个高度。但贝叶斯决策理论告诉我们，为了最小化“期望损失”（即平均损失），最优的行动 $a^\star$ 并非 MAP 估计，而是[后验分布](@entry_id:145605)的一个**分位数** 。具体来说，最优高度 $a^\star$ 应该满足：低于它的概率与高于它的概率之比，正好等于高估与低估的罚金之比。如果低估的代价 $\lambda_+$ 远大于高估的代价 $\lambda_-$，那么最优决策就会被“推”向后验分布的高处，以极大的概率确保大坝高于真实水位，即使这意味着几乎肯定会“浪费”一些建材。这体现了一种深刻的智慧：决策的[重心](@entry_id:273519)不应是“最可能”的场景，而应是所有可能场景经代价加权后的风险中心。
+后验分布完美地解决了这个问题。假设参数 $\theta$ 代表最高水位，我们的行动 $a$ 是修建大坝的高度。一个简单的[非对称损失函数](@keyword=asymmetric_loss_function|lang=zh-CN|style=Feynman)可以是：如果低估了（$a  \theta$），每米罚金为 $\lambda_+$；如果高估了（$a > \theta$），每米罚金为 $\lambda_-$。如果我们只知道 $\hat{\theta}_{MAP}$，我们可能会把大坝建在那个高度。但贝叶斯决策理论告诉我们，为了最小化“期望损失”（即平均损失），最优的行动 $a^\star$ 并非 MAP 估计，而是[后验分布](@keyword=posterior_distribution|lang=zh-CN|style=Feynman)的一个**分位数** [@problem_id:3383420]。具体来说，最优高度 $a^\star$ 应该满足：低于它的概率与高于它的概率之比，正好等于高估与低估的罚金之比。如果低估的代价 $\lambda_+$ 远大于高估的代价 $\lambda_-$，那么最优决策就会被“推”向后验分布的高处，以极大的概率确保大坝高于真实水位，即使这意味着几乎肯定会“浪费”一些建材。这体现了一种深刻的智慧：决策的[重心](@keyword=center_of_gravity|lang=zh-CN|style=Feynman)不应是“最可能”的场景，而应是所有可能场景经代价加权后的风险中心。
 
-#### [非线性](@entry_id:637147)的风险
+#### [非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)的风险
 
-即使[损失函数](@entry_id:634569)是完全对称的，[点估计](@entry_id:174544)也可能误导我们。想象一下，我们有两个选择，A 和 B。在 MAP 估计点 $\hat{u}_{MAP}$ 上，两个选择的损失都为零，看起来没有区别。但是，A 的损失随误差二次方增长（$L_A \propto (u - \hat{u}_{MAP})^2$），而 B 的损失随误差的二次方和四次方增长（$L_B \propto (u - \hat{u}_{MAP})^2 + \gamma(u - \hat{u}_{MAP})^4$）。
+即使[损失函数](@keyword=loss_functions|lang=zh-CN|style=Feynman)是完全对称的，[点估计](@keyword=point_estimation|lang=zh-CN|style=Feynman)也可能误导我们。想象一下，我们有两个选择，A 和 B。在 MAP 估计点 $\hat{u}_{MAP}$ 上，两个选择的损失都为零，看起来没有区别。但是，A 的损失随误差二次方增长（$L_A \propto (u - \hat{u}_{MAP})^2$），而 B 的损失随误差的二次方和四次方增长（$L_B \propto (u - \hat{u}_{MAP})^2 + \gamma(u - \hat{u}_{MAP})^4$）[@problem_id:3383436]。
 
-这意味着什么呢？选择 B 像是在玩一种“要么没事，要么彻底完蛋”的游戏。只要参数的真实值 $u$ 稍微偏离中心，损失就会急剧放大。要评估这两个选择的真实风险，我们必须计算损失在**整个[后验分布](@entry_id:145605)**上的[期望值](@entry_id:153208)。对于选择 A，期望损失正比于后验分布的[方差](@entry_id:200758)——这是对不确定性的直接度量。而对于选择 B，期望损失不仅依赖于[方差](@entry_id:200758)，还依赖于后验分布的四阶矩，即所谓的“峰度”。一个具有“[肥尾](@entry_id:140093)”的[后验分布](@entry_id:145605)，即使其 MAP 估计和[方差](@entry_id:200758)与另一个[分布](@entry_id:182848)相同，也可能因为在远离中心处有不可忽略的概率，而使得选择 B 的期望损失变得极其巨大。
+这意味着什么呢？选择 B 像是在玩一种“要么没事，要么彻底完蛋”的游戏。只要参数的真实值 $u$ 稍微偏离中心，损失就会急剧放大。要评估这两个选择的真实风险，我们必须计算损失在**整个[后验分布](@keyword=posterior_distribution|lang=zh-CN|style=Feynman)**上的[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)。对于选择 A，期望损失正比于后验分布的[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)——这是对不确定性的直接度量。而对于选择 B，期望损失不仅依赖于[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)，还依赖于后验分布的四阶矩，即所谓的“峰度”。一个具有“[肥尾](@keyword=fat_tails|lang=zh-CN|style=Feynman)”的[后验分布](@keyword=posterior_distribution|lang=zh-CN|style=Feynman)，即使其 MAP 估计和[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)与另一个[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)相同，也可能因为在远离中心处有不可忽略的概率，而使得选择 B 的期望损失变得极其巨大。
 
-这个道理在气候科学等高风险领域尤为重要 。假设 $\theta$ 是气候敏感度参数，我们面临两个政策：$a_0$（维持现状）和 $a_1$（立即采取代价高昂的减排措施）。损失函数可能是关于 $\theta$ 超出某个阈值 $T$ 的二次函数，代表着灾难性后果。$\hat{\theta}_{MAP}$ 可能位于安全区内，让“维持现状”看起来很诱人。然而，气候敏感度的后验分布是出了名的非高斯、向右长“[肥尾](@entry_id:140093)”的。这意味着，虽然极高的敏感度不是最可能的情况，但其可能性并非为零。当我们计算期望损失时，这个长长的尾巴，乘以急剧增长的损失函数，可能会贡献巨大的风险值。最终，完整的[贝叶斯分析](@entry_id:271788)可能会告诉我们，尽管 MAP 看起来很安全，但考虑到整个不确定性谱系，立即行动才是唯一理性的选择。[点估计](@entry_id:174544)只看到了冰山一角，而完整的后验分布揭示了水下那庞大而危险的整体。
+这个道理在气候科学等高风险领域尤为重要 [@problem_id:3383437]。假设 $\theta$ 是气候敏感度参数，我们面临两个政策：$a_0$（维持现状）和 $a_1$（立即采取代价高昂的减排措施）。损失函数可能是关于 $\theta$ 超出某个阈值 $T$ 的二次函数，代表着灾难性后果。$\hat{\theta}_{MAP}$ 可能位于安全区内，让“维持现状”看起来很诱人。然而，气候敏感度的后验分布是出了名的非高斯、向右长“[肥尾](@keyword=fat_tails|lang=zh-CN|style=Feynman)”的。这意味着，虽然极高的敏感度不是最可能的情况，但其可能性并非为零。当我们计算期望损失时，这个长长的尾巴，乘以急剧增长的损失函数，可能会贡献巨大的风险值。最终，完整的[贝叶斯分析](@keyword=bayesian_analysis|lang=zh-CN|style=Feynman)可能会告诉我们，尽管 MAP 看起来很安全，但考虑到整个不确定性谱系，立即行动才是唯一理性的选择。[点估计](@keyword=point_estimation|lang=zh-CN|style=Feynman)只看到了冰山一角，而完整的后验分布揭示了水下那庞大而危险的整体。
 
 ### 更聪明的实验设计：信息的价值
 
@@ -28,17 +28,17 @@
 
 #### 信息的价值是什么？
 
-我们为什么要花钱做实验？直觉上是为了“让我们的知识更精确”。贝叶斯决策理论将这个直觉精确化了。信息的期望价值（Expected Value of Sample Information, EVSI）被定义为：进行实验前的期望损失，减去进行实验后（对所有可能的实验结果取平均）的期望损失 。
+我们为什么要花钱做实验？直觉上是为了“让我们的知识更精确”。贝叶斯决策理论将这个直觉精确化了。信息的期望价值（Expected Value of Sample Information, EVSI）被定义为：进行实验前的期望损失，减去进行实验后（对所有可能的实验结果取平均）的期望损失 [@problem_id:3383443]。
 
-在一个标准的[线性高斯模型](@entry_id:268963)中，这个定义导出了一个极为优美的结论：信息的价值正比于**先验[方差](@entry_id:200758)与后验[方差](@entry_id:200758)之差的期望**。换句话说，一个实验的价值，直接等于它有望在多大程度上“压缩”我们关于未知参数的不确定性（[方差](@entry_id:200758)）。这个价值的计算，完全依赖于我们对[先验和后验分布](@entry_id:634565)“尺寸”的理解，而与任何特定的[点估计](@entry_id:174544)值无关。在实验开始前，我们并不知道测量结果会是多少，所以也无从知晓 MAP 估计会落在哪里。我们能预期的，是实验将如何改变我们知识的整体形态。
+在一个标准的[线性高斯模型](@keyword=linear_gaussian_models|lang=zh-CN|style=Feynman)中，这个定义导出了一个极为优美的结论：信息的价值正比于**先验[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)与后验[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)之差的期望**。换句话说，一个实验的价值，直接等于它有望在多大程度上“压缩”我们关于未知参数的不确定性（[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)）。这个价值的计算，完全依赖于我们对[先验和后验分布](@keyword=prior_and_posterior_distribution|lang=zh-CN|style=Feynman)“尺寸”的理解，而与任何特定的[点估计](@keyword=point_estimation|lang=zh-CN|style=Feynman)值无关。在实验开始前，我们并不知道测量结果会是多少，所以也无从知晓 MAP 估计会落在哪里。我们能预期的，是实验将如何改变我们知识的整体形态。
 
 #### 该往哪里看？
 
-既然信息的价值在于减小后验的不确定性，那么一个好的实验设计就应该以最大化这种“压缩”为目标。这引出了[贝叶斯优化](@entry_id:175791)实验设计（Bayesian Optimal Experimental Design, OED）的理念。常用的准则，如 A-最优和 D-最优，分别旨在最小化[后验协方差矩阵](@entry_id:753631)的迹（各参数边际[方差](@entry_id:200758)之和）和其[行列式](@entry_id:142978)（不确定性椭球的体积）。
+既然信息的价值在于减小后验的不确定性，那么一个好的实验设计就应该以最大化这种“压缩”为目标。这引出了[贝叶斯优化](@keyword=bayesian_optimization|lang=zh-CN|style=Feynman)实验设计（Bayesian Optimal Experimental Design, OED）的理念。常用的准则，如 A-最优和 D-最优，分别旨在最小化[后验协方差矩阵](@keyword=posterior_covariance_matrix|lang=zh-CN|style=Feynman)的迹（各参数边际[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)之和）和其[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)（不确定性椭球的体积）[@problem_id:3383379]。
 
-这些准则的核心在于[后验协方差矩阵](@entry_id:753631) $C_{post}$。$C_{post}$ 描述了我们推断的不确定性的大小、方向和相关性。而一个[点估计](@entry_id:174544)，如 MAP，只是这个不确定性椭球的[中心点](@entry_id:636820)，它本身不包含任何关于体积或形状的信息。因此，优化实验设计本质上是一个关于[后验分布](@entry_id:145605)几何形态的任务，[点估计](@entry_id:174544)对此无能为力。
+这些准则的核心在于[后验协方差矩阵](@keyword=posterior_covariance_matrix|lang=zh-CN|style=Feynman) $C_{post}$。$C_{post}$ 描述了我们推断的不确定性的大小、方向和相关性。而一个[点估计](@keyword=point_estimation|lang=zh-CN|style=Feynman)，如 MAP，只是这个不确定性椭球的[中心点](@keyword=medoid|lang=zh-CN|style=Feynman)，它本身不包含任何关于体积或形状的信息。因此，优化实验设计本质上是一个关于[后验分布](@keyword=posterior_distribution|lang=zh-CN|style=Feynman)几何形态的任务，[点估计](@keyword=point_estimation|lang=zh-CN|style=Feynman)对此无能为力。
 
-更有趣的是，当参数不止一个时，它们之间的**后验相关性**也至关重要。假设我们要估计两个参数 $\theta_1$ 和 $\theta_2$，它们的先验知识告诉我们它们很可能是正相关的。这意味着，我们的不确定性椭球是“斜着”的。一个天真的实验设计可能会选择去测量那个边际[方差](@entry_id:200758)最大的参数。但是，D-最优设计告诉我们，最有效的测量方向是沿着不确定性椭球的**最长轴** 。这个方向通常是一个特定的组合，既不是 $\theta_1$ 也不是 $\theta_2$。只有通过完整的后验（协[方差](@entry_id:200758)）分析，我们才能发现这个隐藏的“最弱环节”，并设计实验来最有效地攻克它。
+更有趣的是，当参数不止一个时，它们之间的**后验相关性**也至关重要。假设我们要估计两个参数 $\theta_1$ 和 $\theta_2$，它们的先验知识告诉我们它们很可能是正相关的。这意味着，我们的不确定性椭球是“斜着”的。一个天真的实验设计可能会选择去测量那个边际[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)最大的参数。但是，D-最优设计告诉我们，最有效的测量方向是沿着不确定性椭球的**最长轴** [@problem_id:3383389]。这个方向通常是一个特定的组合，既不是 $\theta_1$ 也不是 $\theta_2$。只有通过完整的后验（协[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)）分析，我们才能发现这个隐藏的“最弱环节”，并设计实验来最有效地攻克它。
 
 ### 更稳健诚实的系统：从预测到控制
 
@@ -46,34 +46,34 @@
 
 #### 诚实的预测
 
-做出预测时，给出一个数字远不如给出一个带有可信度的区间来得有用。完整的贝叶斯方法自然地产生**[后验预测分布](@entry_id:167931)**，它包含了所有[不确定性的来源](@entry_id:164809)：不仅有测量噪声，还有我们对模型参数本身的不确定性。
+做出预测时，给出一个数字远不如给出一个带有可信度的区间来得有用。完整的贝叶斯方法自然地产生**[后验预测分布](@keyword=posterior_predictive_distribution|lang=zh-CN|style=Feynman)**，它包含了所有[不确定性的来源](@keyword=sources_of_uncertainty|lang=zh-CN|style=Feynman)：不仅有测量噪声，还有我们对模型参数本身的不确定性。
 
-在一个水文模型中，我们需要预测未来的河流流量 $y_t$，模型是 $y_t = \theta x_t + \varepsilon_t$，其中 $x_t$ 是降雨量，$\theta$ 是未知的径流系数。一个[点估计](@entry_id:174544)方法会先用历史数据估计出 $\hat{\theta}_{MAP}$，然后用它来预测，其预测的不确定性只来源于未来的噪声 $\varepsilon_t$。而贝叶斯方法则会考虑 $\theta$ 本身的后验分布。它的预测[方差](@entry_id:200758)会包含两项：一项是噪声[方差](@entry_id:200758) $\sigma^2$，另一项是来自[参数不确定性](@entry_id:264387)的[方差](@entry_id:200758) $(x_t)^2 \tau_n^2$（其中 $\tau_n^2$ 是 $\theta$ 的后验[方差](@entry_id:200758)）。
+在一个水文模型中，我们需要预测未来的河流流量 $y_t$，模型是 $y_t = \theta x_t + \varepsilon_t$，其中 $x_t$ 是降雨量，$\theta$ 是未知的径流系数。一个[点估计](@keyword=point_estimation|lang=zh-CN|style=Feynman)方法会先用历史数据估计出 $\hat{\theta}_{MAP}$，然后用它来预测，其预测的不确定性只来源于未来的噪声 $\varepsilon_t$。而贝叶斯方法则会考虑 $\theta$ 本身的后验分布。它的预测[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)会包含两项：一项是噪声[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman) $\sigma^2$，另一项是来自[参数不确定性](@keyword=parametric_uncertainty|lang=zh-CN|style=Feynman)的[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman) $(x_t)^2 \tau_n^2$（其中 $\tau_n^2$ 是 $\theta$ 的后验[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)）[@problem_id:3383417]。
 
-这种差异是根本性的。[点估计](@entry_id:174544)方法会系统性地低估预测的不确定性，给出的[预测区间](@entry_id:635786)过窄，显得“过于自信”。当现实超出这个狭窄的区间时，我们会感到“惊讶”。而一个完整的[贝叶斯预测](@entry_id:746731)，因为它“诚实地”计入了所有已知的不确定性来源，其[预测区间](@entry_id:635786)会更宽，也因此具有更好的**校准**（calibration）特性。这意味着，它所声称的“95%可信区间”，在长期看来，确实有大约 95% 的时间能包含真实结果。
+这种差异是根本性的。[点估计](@keyword=point_estimation|lang=zh-CN|style=Feynman)方法会系统性地低估预测的不确定性，给出的[预测区间](@keyword=prediction_intervals|lang=zh-CN|style=Feynman)过窄，显得“过于自信”。当现实超出这个狭窄的区间时，我们会感到“惊讶”。而一个完整的[贝叶斯预测](@keyword=bayesian_prediction|lang=zh-CN|style=Feynman)，因为它“诚实地”计入了所有已知的不确定性来源，其[预测区间](@keyword=prediction_intervals|lang=zh-CN|style=Feynman)会更宽，也因此具有更好的**校准**（calibration）特性。这意味着，它所声称的“95%可信区间”，在长期看来，确实有大约 95% 的时间能包含真实结果。
 
 #### 稳健的控制
 
-在[机器人学](@entry_id:150623)或自动化控制中，我们设计的控制器需要在各种不确定性下都能良好工作。假设我们要为一个[系统设计](@entry_id:755777)一个[反馈控制](@entry_id:272052)器 $u_t = -k x_t$，其动态特性取决于一个我们不确定的[摩擦系数](@entry_id:150354) $\theta$ 。
+在[机器人学](@keyword=robotics|lang=zh-CN|style=Feynman)或自动化控制中，我们设计的控制器需要在各种不确定性下都能良好工作。假设我们要为一个[系统设计](@keyword=system_design|lang=zh-CN|style=Feynman)一个[反馈控制](@keyword=feedback_control|lang=zh-CN|style=Feynman)器 $u_t = -k x_t$，其动态特性取决于一个我们不确定的[摩擦系数](@keyword=friction_factor|lang=zh-CN|style=Feynman) $\theta$ [@problem_id:3383435]。
 
-[点估计](@entry_id:174544)方法会首先估计出一个 $\hat{\theta}_{MAP}$，然后设计一个在该 $\theta$ 值下表现最优的控制器 $k_{MAP}$。这个控制器可能是“专才”，在 $\theta$ 恰好等于 $\hat{\theta}_{MAP}$ 时完美无瑕，但当真实 $\theta$ 稍有偏离时，其性能就可能急剧下降。
+[点估计](@keyword=point_estimation|lang=zh-CN|style=Feynman)方法会首先估计出一个 $\hat{\theta}_{MAP}$，然后设计一个在该 $\theta$ 值下表现最优的控制器 $k_{MAP}$。这个控制器可能是“专才”，在 $\theta$ 恰好等于 $\hat{\theta}_{MAP}$ 时完美无瑕，但当真实 $\theta$ 稍有偏离时，其性能就可能急剧下降。
 
-相比之下，风险敏感的贝叶斯方法则会寻找一个在 $\theta$ 的**整个后验分布**上平均性能最好的控制器 $k_{Bayes}$。它通过最小化在所有可能的 $\theta$ 值（按[后验概率](@entry_id:153467)加权）上的期望代价来找到最优的 $k$。这个 $k_{Bayes}$ 是一个“通才”，它可能在任何单一的 $\theta$ 值上都不是绝对最优的，但它在整个不确定性范围内都表现得相当不错。这种设计理念产生的控制器更加**稳健**，尤其是在面对真实世界中模型参数可能发生漂移或与我们估计不完全相符的情况时，它的优势尤为明显。
+相比之下，风险敏感的贝叶斯方法则会寻找一个在 $\theta$ 的**整个后验分布**上平均性能最好的控制器 $k_{Bayes}$。它通过最小化在所有可能的 $\theta$ 值（按[后验概率](@keyword=posterior_probability|lang=zh-CN|style=Feynman)加权）上的期望代价来找到最优的 $k$。这个 $k_{Bayes}$ 是一个“通才”，它可能在任何单一的 $\theta$ 值上都不是绝对最优的，但它在整个不确定性范围内都表现得相当不错。这种设计理念产生的控制器更加**稳健**，尤其是在面对真实世界中模型参数可能发生漂移或与我们估计不完全相符的情况时，它的优势尤为明显。
 
 #### 等级模型：不出户，知天下
 
-后验分布最奇妙的应用之一，莫过于在等级模型（hierarchical models）中“[借力](@entry_id:167067)”的能力 。想象一下，我们要估计全美各个县的癌症[发病率](@entry_id:172563)。有些县人口稀少，观测数据很少，导致其[发病率](@entry_id:172563)的[点估计](@entry_id:174544)（例如，样本平均值）波动性极大，很不稳定。
+后验分布最奇妙的应用之一，莫过于在等级模型（hierarchical models）中“[借力](@keyword=borrowing_strength|lang=zh-CN|style=Feynman)”的能力 [@problem_id:3383430]。想象一下，我们要估计全美各个县的癌症[发病率](@keyword=incidence_rate|lang=zh-CN|style=Feynman)。有些县人口稀少，观测数据很少，导致其[发病率](@keyword=incidence_rate|lang=zh-CN|style=Feynman)的[点估计](@keyword=point_estimation|lang=zh-CN|style=Feynman)（例如，样本平均值）波动性极大，很不稳定。
 
-一个等级贝叶斯模型会这样思考：虽然每个县的[发病率](@entry_id:172563) $\theta_i$ 各不相同，但它们可能都共同来自于一个全国性的总体[分布](@entry_id:182848)，这个总体[分布](@entry_id:182848)由一个超参数 $\mu$（例如全国平均[发病率](@entry_id:172563)）所刻画。通过对所有县的数据进行联合推断，我们不仅可以估计每个 $\theta_i$，还能同时估计超参数 $\mu$ 的[后验分布](@entry_id:145605)。
+一个等级贝叶斯模型会这样思考：虽然每个县的[发病率](@keyword=incidence_rate|lang=zh-CN|style=Feynman) $\theta_i$ 各不相同，但它们可能都共同来自于一个全国性的总体[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)，这个总体[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)由一个超参数 $\mu$（例如全国平均[发病率](@keyword=incidence_rate|lang=zh-CN|style=Feynman)）所刻画。通过对所有县的数据进行联合推断，我们不仅可以估计每个 $\theta_i$，还能同时估计超参数 $\mu$ 的[后验分布](@keyword=posterior_distribution|lang=zh-CN|style=Feynman)。
 
-奇迹就此发生：对任何一个特定县 $i$ 的[发病率](@entry_id:172563)的后验估计，并不仅仅依赖于本县的数据 $\bar{y}_i$，它还会被“拉向”或“收缩”到从所有其他县的数据中学习到的全局[后验均值](@entry_id:173826) $\mathbb{E}[\mu|y]$。这种“收缩”的程度取决于本县数据量的多少。数据量越少的县，其估计就越会向全局均值靠拢，从而“借用”了来自其他数据更丰富的县的信息，使得估计更加稳定和可靠。而数据量充足的县，其估计则主要由自身数据决定。
+奇迹就此发生：对任何一个特定县 $i$ 的[发病率](@keyword=incidence_rate|lang=zh-CN|style=Feynman)的后验估计，并不仅仅依赖于本县的数据 $\bar{y}_i$，它还会被“拉向”或“收缩”到从所有其他县的数据中学习到的全局[后验均值](@keyword=posterior_mean|lang=zh-CN|style=Feynman) $\mathbb{E}[\mu|y]$。这种“收缩”的程度取决于本县数据量的多少。数据量越少的县，其估计就越会向全局均值靠拢，从而“借用”了来自其他数据更丰富的县的信息，使得估计更加稳定和可靠。而数据量充足的县，其估计则主要由自身数据决定。
 
-这是一种深刻的统计智慧，是[点估计](@entry_id:174544)思维无法企及的。孤立地为每个县计算 MAP 估计，会让我们被小样本的随机噪声所愚弄。而完整的后验分析，通过等级结构，揭示了看似无关的数据点之间内在的联系，实现了“不出户，知天下”的洞察力。
+这是一种深刻的统计智慧，是[点估计](@keyword=point_estimation|lang=zh-CN|style=Feynman)思维无法企及的。孤立地为每个县计算 MAP 估计，会让我们被小样本的随机噪声所愚弄。而完整的后验分析，通过等级结构，揭示了看似无关的数据点之间内在的联系，实现了“不出户，知天下”的洞察力。
 
 ### 结论：知识的形态
 
-我们从一个简单的问题开始：为什么需要完整的[后验分布](@entry_id:145605)？一路走来，我们看到，后验分布远不止是一系列可能性的清单。它是一个几何对象，拥有中心（均值/众数）、尺寸（[方差](@entry_id:200758)/协[方差](@entry_id:200758)）和形态（[偏度](@entry_id:178163)、峰度、多峰性、相关性）。
+我们从一个简单的问题开始：为什么需要完整的[后验分布](@keyword=posterior_distribution|lang=zh-CN|style=Feynman)？一路走来，我们看到，后验分布远不止是一系列可能性的清单。它是一个几何对象，拥有中心（均值/众数）、尺寸（[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)/协[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)）和形态（[偏度](@keyword=skewness|lang=zh-CN|style=Feynman)、峰度、多峰性、相关性）。
 
-[点估计](@entry_id:174544)仅仅告诉我们这个对象的中心在哪里。然而，真正的智慧——用于做出明智的决策、设计巧妙的实验、构建稳健的系统——蕴含在对这个对象整体形态的理解之中。是[后验分布](@entry_id:145605)的**尾巴**，决定了高风险决策的走向；是后验分布的**体积**，指引我们去探索未知；是后验分布的**形状**，让我们能够构建出在不确定性面前从容不迫的系统。
+[点估计](@keyword=point_estimation|lang=zh-CN|style=Feynman)仅仅告诉我们这个对象的中心在哪里。然而，真正的智慧——用于做出明智的决策、设计巧妙的实验、构建稳健的系统——蕴含在对这个对象整体形态的理解之中。是[后验分布](@keyword=posterior_distribution|lang=zh-CN|style=Feynman)的**尾巴**，决定了高风险决策的走向；是后验分布的**体积**，指引我们去探索未知；是后验分布的**形状**，让我们能够构建出在不确定性面前从容不迫的系统。
 
-从一个点，到一个[分布](@entry_id:182848)，这不仅是数学上的扩展，更是认知世界方式的升华。它要求我们拥抱不确定性，并将其作为知识本身不可分割的一部分。正如物理学揭示了时空的几何形态，[贝叶斯推断](@entry_id:146958)也揭示了知识的几何形态。在这片由概率构成的风景中，[后验分布](@entry_id:145605)就是我们最精确、最诚实的地图。
+从一个点，到一个[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)，这不仅是数学上的扩展，更是认知世界方式的升华。它要求我们拥抱不确定性，并将其作为知识本身不可分割的一部分。正如物理学揭示了时空的几何形态，[贝叶斯推断](@keyword=bayesian_inference|lang=zh-CN|style=Feynman)也揭示了知识的几何形态。在这片由概率构成的风景中，[后验分布](@keyword=posterior_distribution|lang=zh-CN|style=Feynman)就是我们最精确、最诚实的地图。

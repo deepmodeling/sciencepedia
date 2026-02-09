@@ -1,7 +1,7 @@
 ## Introduction
-Arithmetic coding stands as one of the most powerful techniques for [lossless data compression](@entry_id:266417), capable of approaching the theoretical limits predicted by information theory. Unlike methods that replace one symbol with a specific code, [arithmetic coding](@entry_id:270078) ingeniously encodes an entire message into a single, high-precision fraction. This approach raises a fundamental question: how can a sequence of symbols be uniquely represented by a single point on the number line, and how does this lead to superior compression? This article demystifies the elegant mathematics behind this process.
+Arithmetic coding stands as one of the most powerful techniques for lossless data compression, capable of approaching the theoretical limits predicted by information theory. Unlike methods that replace one symbol with a specific code, arithmetic coding ingeniously encodes an entire message into a single, high-precision fraction. This approach raises a fundamental question: how can a sequence of symbols be uniquely represented by a single point on the number line, and how does this lead to superior compression? This article demystifies the elegant mathematics behind this process.
 
-Across the following chapters, we will build a comprehensive understanding of [interval representation](@entry_id:264745). The "Principles and Mechanisms" chapter will lay the groundwork, explaining how a message is mapped to a shrinking interval and how to reverse the process. "Applications and Interdisciplinary Connections" will explore the vital synergy between [arithmetic coding](@entry_id:270078) and [statistical modeling](@entry_id:272466), showing how its modular design makes it a cornerstone of modern compression systems. Finally, "Hands-On Practices" will provide opportunities to solidify your understanding through practical problem-solving. Let's begin by exploring the foundational principles that make this remarkable technique possible.
+Across the following chapters, we will build a comprehensive understanding of interval representation. The "Principles and Mechanisms" chapter will lay the groundwork, explaining how a message is mapped to a shrinking interval and how to reverse the process. "Applications and Interdisciplinary Connections" will explore the vital synergy between arithmetic coding and statistical modeling, showing how its modular design makes it a cornerstone of modern compression systems. Finally, "Hands-On Practices" will provide opportunities to solidify your understanding through practical problem-solving. Let's begin by exploring the foundational principles that make this remarkable technique possible.
 
 ## Principles and Mechanisms
 
@@ -9,7 +9,7 @@ Arithmetic coding represents a paradigm shift from symbol-by-symbol replacement,
 
 ### The Core Principle: Mapping Sequences to Intervals
 
-The foundational concept of **[arithmetic coding](@entry_id:270078)** is the representation of a sequence of source symbols as a unique sub-interval of the half-open unit interval $[0, 1)$. The process begins with this full interval, which represents the complete set of all possible messages the source could generate. As each symbol in a specific message is processed, this interval is recursively partitioned and narrowed, progressively homing in on a smaller sub-interval that uniquely corresponds to the sequence encoded thus far.
+The foundational concept of **arithmetic coding** is the representation of a sequence of source symbols as a unique sub-interval of the half-open unit interval $0, 1)$. The process begins with this full interval, which represents the complete set of all possible messages the source could generate. As each symbol in a specific message is processed, this interval is recursively partitioned and narrowed, progressively homing in on a smaller sub-interval that uniquely corresponds to the sequence encoded thus far.
 
 The partitioning is not arbitrary; it is governed directly by the statistical model of the source. For an alphabet $\mathcal{A} = \{s_1, s_2, \dots, s_m\}$ with associated probabilities $P(s_1), P(s_2), \dots, P(s_m)$, the initial interval $[0, 1)$ is divided into $m$ contiguous sub-intervals. The width of each sub-interval is precisely equal to the probability of the corresponding symbol.
 
@@ -22,11 +22,11 @@ Using this, the symbol $s_k$ is allocated the sub-interval $[C_{k-1}, C_k)$. For
 - Symbol B: $[0.5, 0.5+0.3) = [0.5, 0.8)$
 - Symbol C: $[0.8, 0.8+0.2) = [0.8, 1.0)$
 
-The more probable a symbol, the larger the portion of the number line it is assigned. This direct correspondence between probability and interval width is the key to the compression efficiency of [arithmetic coding](@entry_id:270078).
+The more probable a symbol, the larger the portion of the number line it is assigned. This direct correspondence between probability and interval width is the key to the compression efficiency of [arithmetic coding.
 
 ### The Encoding Algorithm: A Recursive Refinement
 
-The encoding process is an iterative application of this partitioning principle. Let the current interval, representing the sequence processed so far, be $[L, U)$. To encode the next symbol $s_k$, we narrow this interval to the portion that corresponds to $s_k$. This new interval, $[L', U')$, is calculated by scaling the symbol's base interval $[C_{k-1}, C_k)$ to the dimensions of the current interval $[L, U)$.
+The encoding process is an iterative application of this partitioning principle. Let the current interval, representing the sequence processed so far, be $L, U)$. To encode the next symbol $s_k$, we narrow this interval to the portion that corresponds to $s_k$. This new interval, $[L', U')$, is calculated by scaling the symbol's base interval $[C_{k-1}, C_k)$ to the dimensions of the current interval $[L, U)$.
 
 The update formulas are:
 $W = U - L \quad \text{(current interval width)}$
@@ -62,7 +62,7 @@ This process can continue for any length of sequence, with each step producing a
 
 ### Fundamental Properties of Interval Representation
 
-The recursive mapping process gives rise to several crucial properties that are central to how [arithmetic coding](@entry_id:270078) works and achieves compression.
+The recursive mapping process gives rise to several crucial properties that are central to how [arithmetic coding works and achieves compression.
 
 #### Property 1: Interval Width and Sequence Probability
 
@@ -71,13 +71,13 @@ There is a profound and direct relationship between the geometry of the final in
 Let a sequence be $x_1, x_2, \dots, x_n$.
 The width of the interval after the first symbol $x_1$ is $P(x_1)$.
 The width after the second symbol $x_2$ is $P(x_1) \cdot P(x_2)$.
-Continuing this process, the width of the final interval $[L_n, U_n)$ is:
+Continuing this process, the width of the final interval $L_n, U_n)$ is:
 $W_n = U_n - L_n = \prod_{i=1}^{n} P(x_i) = P(x_1, x_2, \dots, x_n)$
 (assuming a memoryless source).
 
-This property is the essence of [arithmetic coding](@entry_id:270078)'s efficiency. High-probability sequences, which are common, are mapped to relatively wide intervals. Low-probability sequences, which are rare, are mapped to extremely narrow intervals. As we will see, the number of bits needed to specify an interval is related to the negative logarithm of its width, so narrower intervals (rarer events) require more bits, and wider intervals (more common events) require fewer bits, which is precisely the goal of data compression.
+This property is the essence of [arithmetic coding's efficiency. High-probability sequences, which are common, are mapped to relatively wide intervals. Low-probability sequences, which are rare, are mapped to extremely narrow intervals. As we will see, the number of bits needed to specify an interval is related to the negative logarithm of its width, so narrower intervals (rarer events) require more bits, and wider intervals (more common events) require fewer bits, which is precisely the goal of data compression.
 
-For example, for a source with $P(A)=0.8$ and $P(B)=0.2$, the sequence 'AA' has probability $0.8 \times 0.8 = 0.64$. The encoding process yields the interval $[0, 0.64)$, which has a width of $0.64$. Similarly, the sequence 'BB' has probability $0.2 \times 0.2 = 0.04$, and its interval, $[0.96, 1.0)$, has a width of $0.04$.
+For example, for a source with $P(A)=0.8$ and $P(B)=0.2$, the sequence 'AA' has probability $0.8 \times 0.8 = 0.64$. The encoding process yields the interval $0, 0.64)$, which has a width of $0.64$. Similarly, the sequence 'BB' has probability $0.2 \times 0.2 = 0.04$, and its interval, $[0.96, 1.0)$, has a width of $0.04$.
 
 #### Property 2: The Nesting and Ordering of Intervals
 
@@ -85,9 +85,9 @@ Two structural properties ensure that every sequence has a unique home on the nu
 
 First is the **prefix property**: the interval for any sequence is always a sub-interval of the interval for any of its prefixes. This is a direct consequence of the recursive refinement process.
 
-Second is the **[lexicographical ordering](@entry_id:143032) property**: if the source sequences are sorted in lexicographical (i.e., dictionary) order, their corresponding intervals will appear in ascending numerical order on the interval $[0, 1)$. This is because the initial partitioning of $[0, 1)$ is based on a fixed symbol order (e.g., A, B, C). Any sequence starting with 'A' will be in a lower interval than any sequence starting with 'B'. Within all sequences starting with 'A', those whose second symbol is 'A' will be in a lower interval than those whose second symbol is 'B', and so on.
+Second is the **[lexicographical ordering property**: if the source sequences are sorted in lexicographical (i.e., dictionary) order, their corresponding intervals will appear in ascending numerical order on the interval $0, 1)$. This is because the initial partitioning of $[0, 1)$ is based on a fixed symbol order (e.g., A, B, C). Any sequence starting with 'A' will be in a lower interval than any sequence starting with 'B'. Within all sequences starting with 'A', those whose second symbol is 'A' will be in a lower interval than those whose second symbol is 'B', and so on.
 
-This property implies that to find the sequence with the numerically largest interval, one should look for the sequence that is lexicographically last. For example, given the symbols A, B, C and all [permutations](@entry_id:147130) of length three, the sequence 'CBA' is lexicographically last and will correspond to the interval with the highest lower and upper bounds. This ordering is not merely an interesting curiosity; it is the essential feature that makes decoding possible.
+This property implies that to find the sequence with the numerically largest interval, one should look for the sequence that is lexicographically last. For example, given the symbols A, B, C and all [permutations of length three, the sequence 'CBA' is lexicographically last and will correspond to the interval with the highest lower and upper bounds. This ordering is not merely an interesting curiosity; it is the essential feature that makes decoding possible.
 
 ### The Decoding Algorithm: Reversing the Process
 
@@ -95,7 +95,7 @@ Decoding is the process of retrieving the original sequence of symbols from a si
 
 The process mirrors encoding:
 
-1.  Start with the received tag value, let's call it $V$, and the full interval $[0, 1)$.
+1.  Start with the received tag value, let's call it $V$, and the full interval $0, 1)$.
 2.  Using the model, determine which symbol's base interval $[C_{k-1}, C_k)$ contains $V$. This is the first symbol of the message.
 3.  Output this symbol.
 4.  To find the next symbol, "zoom in" on the interval of the symbol just decoded. This is done by rescaling the tag $V$ to lie within a $[0, 1)$ range relative to that symbol's interval. The formula for the new tag value $V'$ is:
@@ -114,11 +114,11 @@ Thus, the first two symbols of the message are 'B', 'A'.
 
 ### From Theory to Practice: Implementation Challenges
 
-Translating the elegant mathematics of [arithmetic coding](@entry_id:270078) into a working implementation on physical hardware presents several important challenges.
+Translating the elegant mathematics of [arithmetic coding into a working implementation on physical hardware presents several important challenges.
 
 #### Transmitting a Single Number
 
-The output of the encoding algorithm is an interval $[L, U)$, not a single number. For transmission, we must select one number from this interval. Any binary fraction that lies within $[L, U)$ will suffice. To be efficient, we want to choose a fraction that can be represented with the minimum number of bits.
+The output of the encoding algorithm is an interval $L, U)$, not a single number. For transmission, we must select one number from this interval. Any binary fraction that lies within $[L, U)$ will suffice. To be efficient, we want to choose a fraction that can be represented with the minimum number of bits.
 
 A binary fraction with $k$ bits has the form $m/2^k$ for some integer $m$. A $k$-bit fraction can be found within the interval $[L, U)$ if and only if the interval is wide enough to guarantee it contains such a point. This is true if the width $W = U - L$ is greater than the distance between adjacent $k$-bit fractions, which is $2^{-k}$. Therefore, we need to find the smallest integer $k$ such that there exists an integer $m$ with $L \le \frac{m}{2^k} \lt U$. A slightly more conservative and easier-to-use condition is that the width of the interval must be large enough, leading to the requirement $k \ge \lceil -\log_2(W) \rceil$.
 
@@ -136,4 +136,4 @@ Practical arithmetic coders solve this critical problem using a technique called
 
 The source model is paramount. If a symbol is encountered that was assigned a probability of zero in the model, its interval width is zero. The encoding formulas will produce a new interval where $L'=U'$, collapsing the range to a single point. Further encoding becomes impossible as the interval width is now zero. This highlights the importance of using robust models, often adaptive ones, that can handle previously unseen symbols.
 
-To circumvent [floating-point precision](@entry_id:138433) issues entirely, many modern implementations of [arithmetic coding](@entry_id:270078) use **integer arithmetic**. In this approach, the interval $[0, 1)$ is mapped to a large range of integers, like $[0, 2^{32}-1)$. Probabilities are approximated by integer frequency counts, e.g., $P(s_k) \approx c_k / C$, where $C$ is the total count. While this avoids [floating-point](@entry_id:749453) issues, it introduces rounding errors from the [integer division](@entry_id:154296). These small errors can accumulate and slightly reduce compression efficiency. The design of integer arithmetic coders involves careful number-theoretic considerations to minimize this loss. For instance, under certain conditions, it is possible to choose the integer counts $(c_1, \dots, c_m)$ such that rounding errors are completely eliminated for the first few symbols of a message, which requires the total count $C$ to have specific divisibility properties with respect to the individual counts. This demonstrates the deep interplay between information theory and number theory in the practical art of [data compression](@entry_id:137700).
+To circumvent [floating-point precision issues entirely, many modern implementations of arithmetic coding use **integer arithmetic**. In this approach, the interval $0, 1)$ is mapped to a large range of integers, like $[0, 2^{32}-1)$. Probabilities are approximated by integer frequency counts, e.g., $P(s_k) \approx c_k / C$, where $C$ is the total count. While this avoids [floating-point issues, it introduces rounding errors from the integer division. These small errors can accumulate and slightly reduce compression efficiency. The design of integer arithmetic coders involves careful number-theoretic considerations to minimize this loss. For instance, under certain conditions, it is possible to choose the integer counts $(c_1, \dots, c_m)$ such that rounding errors are completely eliminated for the first few symbols of a message, which requires the total count $C$ to have specific divisibility properties with respect to the individual counts. This demonstrates the deep interplay between information theory and number theory in the practical art of data compression.

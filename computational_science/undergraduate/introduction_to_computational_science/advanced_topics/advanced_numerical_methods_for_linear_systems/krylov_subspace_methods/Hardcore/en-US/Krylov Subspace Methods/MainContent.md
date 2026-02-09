@@ -3,7 +3,7 @@ In the world of computational science, many of the most significant challenges, 
 
 ## Principles and Mechanisms
 
-Krylov subspace methods form the cornerstone of modern iterative [numerical linear algebra](@entry_id:144418). They provide a powerful framework for solving large-scale linear systems of equations and for approximating eigenvalues and eigenvectors of large matrices. The core idea is to project a large, high-dimensional problem onto a smaller, computationally tractable subspace known as a Krylov subspace. By solving the problem within this subspace, we obtain an approximate solution to the original problem. The elegance and efficiency of these methods stem from the specific structure of this subspace.
+Krylov subspace methods form the cornerstone of modern iterative numerical linear algebra. They provide a powerful framework for solving large-scale linear systems of equations and for approximating eigenvalues and eigenvectors of large matrices. The core idea is to project a large, high-dimensional problem onto a smaller, computationally tractable subspace known as a Krylov subspace. By solving the problem within this subspace, we obtain an approximate solution to the original problem. The elegance and efficiency of these methods stem from the specific structure of this subspace.
 
 ### The Krylov Subspace: A Foundation for Iterative Methods
 
@@ -20,7 +20,7 @@ $$
 K_m(A, b) = \begin{pmatrix} |  |   | \\ b  Ab  \dots  A^{m-1}b \\ |  |   | \end{pmatrix}
 $$
 
-Let's consider a concrete example . Suppose we have a $3 \times 3$ [circulant matrix](@entry_id:143620) $A$ whose first row is $(2, -1, 3)$ and a starting vector $b = e_1 = (1, 0, 0)^T$. The full matrix $A$ is:
+Let's consider a concrete example [@problem_id:2183341]. Suppose we have a $3 \times 3$ circulant matrix $A$ whose first row is $(2, -1, 3)$ and a starting vector $b = e_1 = (1, 0, 0)^T$. The full matrix $A$ is:
 $$
 A = \begin{pmatrix} 2  -1  3 \\ 3  2  -1 \\ -1  3  2 \end{pmatrix}
 $$
@@ -31,23 +31,23 @@ To construct the Krylov subspace $\mathcal{K}_3(A, b)$, we compute the first thr
 
 The resulting Krylov subspace $\mathcal{K}_3(A, b)$ is the span of these three vectors.
 
-An important consideration is the dimension of the Krylov subspace. While $\mathcal{K}_m(A, b)$ is defined by $m$ vectors, its dimension may be less than $m$. This occurs if the vectors $\{b, Ab, \dots, A^{m-1}b\}$ become linearly dependent. Let $k$ be the smallest integer for which $A^kb$ is a [linear combination](@entry_id:155091) of the preceding vectors $\{b, Ab, \dots, A^{k-1}b\}$. In this case, the dimension of $\mathcal{K}_m(A, b)$ is $k$ for all $m \ge k$.
+An important consideration is the dimension of the Krylov subspace. While $\mathcal{K}_m(A, b)$ is defined by $m$ vectors, its dimension may be less than $m$. This occurs if the vectors $\{b, Ab, \dots, A^{m-1}b\}$ become linearly dependent. Let $k$ be the smallest integer for which $A^kb$ is a linear combination of the preceding vectors $\{b, Ab, \dots, A^{k-1}b\}$. In this case, the dimension of $\mathcal{K}_m(A, b)$ is $k$ for all $m \ge k$.
 
-For example, consider the matrix $A = \begin{pmatrix} 1  2 \\ 2  4 \end{pmatrix}$ and the vector $b = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$ . The first vector is $b$ itself. The second vector is $Ab = \begin{pmatrix} 5 \\ 10 \end{pmatrix}$. We can immediately see that $Ab = 5b$. The vectors are linearly dependent. Therefore, the Krylov subspace $\mathcal{K}_2(A, b) = \text{span}\{b, Ab\}$ is actually just $\text{span}\{b\}$, a one-dimensional subspace. Consequently, a vector like $w = \begin{pmatrix} -1 \\ 3 \end{pmatrix}$, which is not a multiple of $b$, does not lie in $\mathcal{K}_2(A, b)$. This phenomenon of early linear dependence has profound implications, as we will see.
+For example, consider the matrix $A = \begin{pmatrix} 1  2 \\ 2  4 \end{pmatrix}$ and the vector $b = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$ [@problem_id:2183313]. The first vector is $b$ itself. The second vector is $Ab = \begin{pmatrix} 5 \\ 10 \end{pmatrix}$. We can immediately see that $Ab = 5b$. The vectors are linearly dependent. Therefore, the Krylov subspace $\mathcal{K}_2(A, b) = \text{span}\{b, Ab\}$ is actually just $\text{span}\{b\}$, a one-dimensional subspace. Consequently, a vector like $w = \begin{pmatrix} -1 \\ 3 \end{pmatrix}$, which is not a multiple of $b$, does not lie in $\mathcal{K}_2(A, b)$. This phenomenon of early linear dependence has profound implications, as we will see.
 
 ### Orthonormal Bases for Krylov Subspaces: The Arnoldi and Lanczos Iterations
 
-The basis $\{b, Ab, \dots, A^{m-1}b\}$, often called the **power basis**, is intuitive but numerically problematic. As $m$ increases, the vectors $A^j b$ tend to align with the direction of the [dominant eigenvector](@entry_id:148010) of $A$, making the basis vectors nearly linearly dependent. This leads to an ill-conditioned basis, which is unsuitable for numerical computations.
+The basis $\{b, Ab, \dots, A^{m-1}b\}$, often called the **power basis**, is intuitive but numerically problematic. As $m$ increases, the vectors $A^j b$ tend to align with the direction of the dominant eigenvector of $A$, making the basis vectors nearly linearly dependent. This leads to an ill-conditioned basis, which is unsuitable for numerical computations.
 
-To overcome this, we construct an [orthonormal basis](@entry_id:147779) for the Krylov subspace. The **Arnoldi iteration** is a robust algorithm that accomplishes this using a procedure similar to the Gram-Schmidt process. Starting with $q_1 = b/\|b\|_2$, the algorithm iteratively generates a set of [orthonormal vectors](@entry_id:152061) $\{q_1, q_2, \dots, q_m\}$ that span $\mathcal{K}_m(A, b)$.
+To overcome this, we construct an orthonormal basis for the Krylov subspace. The **Arnoldi iteration** is a robust algorithm that accomplishes this using a procedure similar to the Gram-Schmidt process. Starting with $q_1 = b/\|b\|_2$, the algorithm iteratively generates a set of orthonormal vectors $\{q_1, q_2, \dots, q_m\}$ that span $\mathcal{K}_m(A, b)$.
 
-The core of the Arnoldi iteration at step $j$ is to take the vector $Aq_j$, which lies in $\mathcal{K}_{j+1}(A, b)$, and orthogonalize it against all previously generated basis vectors $\{q_1, \dots, q_j\}$. The result is a new vector, which, when normalized, becomes $q_{j+1}$. The coefficients used in this [orthogonalization](@entry_id:149208) process are collected into an $m \times m$ **upper Hessenberg matrix** $H_m$. An upper Hessenberg matrix is one that has zero entries below the first subdiagonal ($h_{ij} = 0$ for $i > j+1$).
+The core of the Arnoldi iteration at step $j$ is to take the vector $Aq_j$, which lies in $\mathcal{K}_{j+1}(A, b)$, and orthogonalize it against all previously generated basis vectors $\{q_1, \dots, q_j\}$. The result is a new vector, which, when normalized, becomes $q_{j+1}$. The coefficients used in this orthogonalization process are collected into an $m \times m$ **upper Hessenberg matrix** $H_m$. An upper Hessenberg matrix is one that has zero entries below the first subdiagonal ($h_{ij} = 0$ for $i > j+1$).
 
 The process at step $j$ is as follows:
 1.  Compute a new vector: $v = A q_j$.
 2.  Orthogonalize against the existing basis: for $i=1, \dots, j$, compute $h_{ij} = q_i^T v$ and update $v \leftarrow v - h_{ij} q_i$.
 3.  Compute the norm of the resulting vector: $h_{j+1, j} = \|v\|_2$.
-4.  If $h_{j+1, j} \neq 0$, normalize to get the next [basis vector](@entry_id:199546): $q_{j+1} = v / h_{j+1, j}$.
+4.  If $h_{j+1, j} \neq 0$, normalize to get the next basis vector: $q_{j+1} = v / h_{j+1, j}$.
 
 This process generates the fundamental **Arnoldi relation**:
 $$
@@ -55,41 +55,41 @@ A Q_m = Q_m H_m + h_{m+1, m} q_{m+1} e_m^T
 $$
 where $Q_m = [q_1 | \dots | q_m]$ is the $n \times m$ matrix with orthonormal columns, and $e_m$ is the $m$-th standard basis vector. This relation states that the action of $A$ on the subspace spanned by $Q_m$ is almost entirely captured within that same subspace, with the action described by the small matrix $H_m$. The only component that leaves the subspace is in the direction of the new vector $q_{m+1}$.
 
-If at some step $k  n$, we find that $h_{k+1, k} = 0$, the algorithm terminates. This event, known as a "lucky breakdown", signifies that the vector $Aq_k$ is already in the subspace $\mathcal{K}_k(A, b) = \text{span}\{q_1, \dots, q_k\}$. This implies that $\mathcal{K}_k(A, b)$ is an **[invariant subspace](@entry_id:137024)** of $A$; that is, for any vector $v \in \mathcal{K}_k(A, b)$, the vector $Av$ is also in $\mathcal{K}_k(A, b)$ . When this happens, the Arnoldi relation simplifies to $AQ_k = Q_k H_k$. The eigenvalues of the small $k \times k$ Hessenberg matrix $H_k$ are then exact eigenvalues of the large matrix $A$.
+If at some step $k  n$, we find that $h_{k+1, k} = 0$, the algorithm terminates. This event, known as a "lucky breakdown", signifies that the vector $Aq_k$ is already in the subspace $\mathcal{K}_k(A, b) = \text{span}\{q_1, \dots, q_k\}$. This implies that $\mathcal{K}_k(A, b)$ is an **invariant subspace** of $A$; that is, for any vector $v \in \mathcal{K}_k(A, b)$, the vector $Av$ is also in $\mathcal{K}_k(A, b)$ [@problem_id:2183310]. When this happens, the Arnoldi relation simplifies to $AQ_k = Q_k H_k$. The eigenvalues of the small $k \times k$ Hessenberg matrix $H_k$ are then exact eigenvalues of the large matrix $A$.
 
-A critical simplification occurs when the matrix $A$ is **symmetric** ($A = A^T$). In this case, the Arnoldi iteration simplifies to the **Lanczos iteration**. The resulting upper Hessenberg matrix $H_m$ also becomes symmetric. A symmetric Hessenberg matrix is necessarily **tridiagonal**. Let us denote this [tridiagonal matrix](@entry_id:138829) by $T_m$, with diagonal elements $\alpha_j = h_{jj}$ and off-diagonal elements $\beta_j = h_{j, j-1} = h_{j-1, j}$.
+A critical simplification occurs when the matrix $A$ is **symmetric** ($A = A^T$). In this case, the Arnoldi iteration simplifies to the **Lanczos iteration**. The resulting upper Hessenberg matrix $H_m$ also becomes symmetric. A symmetric Hessenberg matrix is necessarily **tridiagonal**. Let us denote this tridiagonal matrix by $T_m$, with diagonal elements $\alpha_j = h_{jj}$ and off-diagonal elements $\beta_j = h_{j, j-1} = h_{j-1, j}$.
 
-The consequence is that the long [orthogonalization](@entry_id:149208) process of Arnoldi, which requires comparing against all previous $q_i$, collapses into a short **[three-term recurrence relation](@entry_id:176845)**:
+The consequence is that the long orthogonalization process of Arnoldi, which requires comparing against all previous $q_i$, collapses into a short **three-term recurrence relation**:
 $$
 \beta_{j+1} q_{j+1} = A q_j - \alpha_j q_j - \beta_j q_{j-1}
 $$
-where $\alpha_j = q_j^T A q_j$ and $\beta_{j+1}$ is determined by normalization. Each new [basis vector](@entry_id:199546) $q_{j+1}$ depends only on the two preceding vectors, $q_j$ and $q_{j-1}$. This is a tremendous computational advantage. We can observe this by applying one step of the algorithm to a symmetric matrix $A = \begin{pmatrix} 2  1 \\ 1  3 \end{pmatrix}$ with $b = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$. Normalizing $b$ gives $q_1 = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix}$. The first diagonal element is $\alpha_1 = q_1^T A q_1 = 7/2$, and the first off-diagonal element is $\beta_2 = \|A q_1 - \alpha_1 q_1\|_2 = 1/2$ . The resulting $2 \times 2$ [tridiagonal matrix](@entry_id:138829) starts with these values. Continuing this process on a [symmetric matrix](@entry_id:143130) confirms the tridiagonal structure .
+where $\alpha_j = q_j^T A q_j$ and $\beta_{j+1}$ is determined by normalization. Each new basis vector $q_{j+1}$ depends only on the two preceding vectors, $q_j$ and $q_{j-1}$. This is a tremendous computational advantage. We can observe this by applying one step of the algorithm to a symmetric matrix $A = \begin{pmatrix} 2  1 \\ 1  3 \end{pmatrix}$ with $b = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$. Normalizing $b$ gives $q_1 = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix}$. The first diagonal element is $\alpha_1 = q_1^T A q_1 = 7/2$, and the first off-diagonal element is $\beta_2 = \|A q_1 - \alpha_1 q_1\|_2 = 1/2$ [@problem_id:2183327]. The resulting $2 \times 2$ tridiagonal matrix starts with these values. Continuing this process on a symmetric matrix confirms the tridiagonal structure [@problem_id:2183301].
 
 ### Applications in Solving Linear Systems: GMRES and CG
 
-The primary application of Krylov subspaces is in [solving large linear systems](@entry_id:145591) $Ax=b$. The strategy, known as a **[projection method](@entry_id:144836)**, is to find an approximate solution $x_m$ within the affine Krylov subspace $x_0 + \mathcal{K}_m(A, r_0)$, where $x_0$ is an initial guess and $r_0 = b - Ax_0$ is the initial residual. The problem is thus reduced from finding a solution in the $n$-dimensional space $\mathbb{R}^n$ to finding an optimal solution in an $m$-dimensional subspace, where $m \ll n$.
+The primary application of Krylov subspaces is in solving large linear systems $Ax=b$. The strategy, known as a **projection method**, is to find an approximate solution $x_m$ within the affine Krylov subspace $x_0 + \mathcal{K}_m(A, r_0)$, where $x_0$ is an initial guess and $r_0 = b - Ax_0$ is the initial residual. The problem is thus reduced from finding a solution in the $n$-dimensional space $\mathbb{R}^n$ to finding an optimal solution in an $m$-dimensional subspace, where $m \ll n$.
 
 #### GMRES: The Generalized Minimal Residual Method
 
-For general, [non-symmetric matrices](@entry_id:153254) $A$, the **Generalized Minimal Residual (GMRES)** method is a popular choice. At each step $m$, GMRES finds the vector $x_m \in x_0 + \mathcal{K}_m(A, r_0)$ that **minimizes the Euclidean norm of the residual**, $\|r_m\|_2 = \|b - Ax_m\|_2$.
+For general, non-symmetric matrices $A$, the **Generalized Minimal Residual (GMRES)** method is a popular choice. At each step $m$, GMRES finds the vector $x_m \in x_0 + \mathcal{K}_m(A, r_0)$ that **minimizes the Euclidean norm of the residual**, $\|r_m\|_2 = \|b - Ax_m\|_2$.
 
-GMRES uses the Arnoldi iteration to build an orthonormal basis $Q_m$ for $\mathcal{K}_m(A, r_0)$. Any candidate solution can be written as $x_m = x_0 + Q_m y$ for some coefficient vector $y \in \mathbb{R}^m$. The task is to find the optimal $y$. Using the Arnoldi relation, the [residual norm](@entry_id:136782) can be rewritten as:
+GMRES uses the Arnoldi iteration to build an orthonormal basis $Q_m$ for $\mathcal{K}_m(A, r_0)$. Any candidate solution can be written as $x_m = x_0 + Q_m y$ for some coefficient vector $y \in \mathbb{R}^m$. The task is to find the optimal $y$. Using the Arnoldi relation, the residual norm can be rewritten as:
 $$
 \|r_m\|_2 = \|b - A(x_0 + Q_m y)\|_2 = \|r_0 - A Q_m y\|_2 = \|\beta e_1 - \bar{H}_m y\|_2
 $$
-where $\beta = \|r_0\|_2$ and $\bar{H}_m$ is the $(m+1) \times m$ Hessenberg matrix from the Arnoldi process. The minimization problem for $x_m$ in the $n$-dimensional space is thus transformed into an $m$-dimensional [least-squares problem](@entry_id:164198) for $y$:
+where $\beta = \|r_0\|_2$ and $\bar{H}_m$ is the $(m+1) \times m$ Hessenberg matrix from the Arnoldi process. The minimization problem for $x_m$ in the $n$-dimensional space is thus transformed into an $m$-dimensional least-squares problem for $y$:
 $$
 y_m = \arg\min_{y \in \mathbb{R}^m} \|\beta e_1 - \bar{H}_m y\|_2
 $$
-Once this small problem is solved for $y_m$, the approximate solution is constructed as $x_m = x_0 + Q_m y_m$ . A key drawback of GMRES is that, due to the long recurrence of Arnoldi, it must store all the basis vectors in $Q_m$, so its memory and computational cost per iteration grow linearly with $m$. This often necessitates restarting the algorithm periodically.
+Once this small problem is solved for $y_m$, the approximate solution is constructed as $x_m = x_0 + Q_m y_m$ [@problem_id:2183333]. A key drawback of GMRES is that, due to the long recurrence of Arnoldi, it must store all the basis vectors in $Q_m$, so its memory and computational cost per iteration grow linearly with $m$. This often necessitates restarting the algorithm periodically.
 
 #### CG: The Conjugate Gradient Method
 
 When the matrix $A$ is **symmetric and positive-definite (SPD)**, the method of choice is the **Conjugate Gradient (CG)** method. It is one of the most celebrated algorithms in numerical computing. The CG method finds the iterate $x_m \in x_0 + \mathcal{K}_m(A, r_0)$ that **minimizes the A-norm of the error**, $\|e_m\|_A$, where $e_m = x - x_m$ is the error vector and the A-norm is defined as $\|v\|_A = \sqrt{v^T A v}$. Minimizing this "energy norm" is equivalent to minimizing the quadratic function $\phi(x) = \frac{1}{2}x^T A x - x^T b$.
 
-The magic of CG lies in its connection to the Lanczos iteration. Because the underlying [orthogonalization](@entry_id:149208) process for symmetric matrices is the three-term Lanczos recurrence, the CG algorithm can also be formulated using short recurrences. This means that to compute the next iterate $x_{m+1}$, residual $r_{m+1}$, and search direction $p_{m+1}$, one only needs access to the current vectors ($x_m, r_m, p_m$). There is no need to store the entire history of basis vectors.
+The magic of CG lies in its connection to the Lanczos iteration. Because the underlying orthogonalization process for symmetric matrices is the three-term Lanczos recurrence, the CG algorithm can also be formulated using short recurrences. This means that to compute the next iterate $x_{m+1}$, residual $r_{m+1}$, and search direction $p_{m+1}$, one only needs access to the current vectors ($x_m, r_m, p_m$). There is no need to store the entire history of basis vectors.
 
-This leads to a remarkable property: the CG algorithm has a **low and constant storage requirement**, regardless of the iteration number . This efficiency is a direct consequence of the symmetry of the matrix $A$, which enables the [three-term recurrence](@entry_id:755957) of the Lanczos process. This makes CG exceptionally well-suited for solving extremely large SPD systems.
+This leads to a remarkable property: the CG algorithm has a **low and constant storage requirement**, regardless of the iteration number [@problem_id:2183325]. This efficiency is a direct consequence of the symmetry of the matrix $A$, which enables the three-term recurrence of the Lanczos process. This makes CG exceptionally well-suited for solving extremely large SPD systems.
 
 ### The Polynomial Interpretation of Krylov Methods
 
@@ -107,7 +107,7 @@ Similarly, the error vector can be expressed as $e_k = P_k(A) e_0$.
 
 From this perspective, Krylov methods are implicitly finding a polynomial $P_k$ that minimizes some norm of the residual or error.
 
-*   **GMRES** finds the polynomial $P_k \in \mathcal{P}_k^1$ (the set of polynomials of degree at most $k$ with $P_k(0)=1$) that **minimizes $\|r_k\|_2 = \|P_k(A)r_0\|_2$** . This is a vector-norm minimization that depends on the specific initial residual $r_0$.
+*   **GMRES** finds the polynomial $P_k \in \mathcal{P}_k^1$ (the set of polynomials of degree at most $k$ with $P_k(0)=1$) that **minimizes $\|r_k\|_2 = \|P_k(A)r_0\|_2$** [@problem_id:2183343]. This is a vector-norm minimization that depends on the specific initial residual $r_0$.
 
 *   **Conjugate Gradient** finds the polynomial $P_k \in \mathcal{P}_k^1$ that **minimizes $\|e_k\|_A = \|P_k(A)e_0\|_A$**.
 
@@ -115,6 +115,6 @@ This polynomial viewpoint is essential for analyzing the convergence of these me
 $$
 \frac{\|e_k\|_A}{\|e_0\|_A} \leq \min_{P_k \in \mathcal{P}_k^1} \max_{\lambda \in \sigma(A)} |P_k(\lambda)|
 $$
-where $\sigma(A)$ is the set of eigenvalues of $A$. The problem of bounding the convergence of CG is thus reduced to a classic [polynomial approximation](@entry_id:137391) problem: find the polynomial of degree at most $k$ that is 1 at the origin and has the smallest possible maximum magnitude over the interval containing the eigenvalues of $A$ . This problem is solved by appropriately scaled and shifted **Chebyshev polynomials**, which explains the often rapid convergence of the Conjugate Gradient method.
+where $\sigma(A)$ is the set of eigenvalues of $A$. The problem of bounding the convergence of CG is thus reduced to a classic polynomial approximation problem: find the polynomial of degree at most $k$ that is 1 at the origin and has the smallest possible maximum magnitude over the interval containing the eigenvalues of $A$ [@problem_id:2183321]. This problem is solved by appropriately scaled and shifted **Chebyshev polynomials**, which explains the often rapid convergence of the Conjugate Gradient method.
 
 In summary, Krylov subspace methods provide an elegant and efficient iterative framework. They build a small subspace that captures the essential action of a matrix and then solve a projected problem within that subspace. The specific properties of the matrix, such as symmetry, determine the structure of the underlying recurrence and give rise to highly efficient algorithms like the Conjugate Gradient method. The polynomial interpretation provides a powerful theoretical tool for understanding and analyzing the remarkable effectiveness of these methods.

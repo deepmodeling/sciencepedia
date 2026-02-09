@@ -1,7 +1,7 @@
 ## Introduction
-In a universe where the very fabric of space is expanding, our familiar, static rulers and [coordinate systems](@entry_id:149266) fail. Describing the motion of galaxies and the evolution of cosmic structures requires a new language—one that moves with the cosmos itself. The central challenge is to disentangle motion *through* space, like a galaxy orbiting a cluster, from the motion *of* space, the [cosmic expansion](@entry_id:161002) that carries all galaxies away from each other. Without a proper framework, the laws of physics become needlessly complex, muddled by the expansion of the background.
+In a universe where the very fabric of space is expanding, our familiar, static rulers and [coordinate systems](@keyword=coordinate_systems|lang=en-US|style=Feynman) fail. Describing the motion of galaxies and the evolution of cosmic structures requires a new language—one that moves with the cosmos itself. The central challenge is to disentangle motion *through* space, like a galaxy orbiting a cluster, from the motion *of* space, the [cosmic expansion](@keyword=cosmic_expansion|lang=en-US|style=Feynman) that carries all galaxies away from each other. Without a proper framework, the laws of physics become needlessly complex, muddled by the expansion of the background.
 
-This article introduces the elegant solution: the comoving coordinate system. In "Principles and Mechanisms," we will build this framework from the ground up, defining the scale factor, Hubble flow, and peculiar velocity, and exploring how [matter density](@entry_id:263043) and structure evolve within it. In "Applications and Interdisciplinary Connections," we will see how this perspective is indispensable for both observational cosmology and the grand computational simulations that recreate the universe in a box. Finally, "Hands-On Practices" will guide you through implementing these core concepts, translating theory into computational skill. By adopting the universe's own rest frame, we will transform the dizzying complexity of an expanding cosmos into a set of powerful and intuitive rules, beginning with the fundamental principles of the comoving canvas.
+This article introduces the elegant solution: the comoving coordinate system. In "Principles and Mechanisms," we will build this framework from the ground up, defining the scale factor, Hubble flow, and peculiar velocity, and exploring how [matter density](@keyword=matter_density|lang=en-US|style=Feynman) and structure evolve within it. In "Applications and Interdisciplinary Connections," we will see how this perspective is indispensable for both observational cosmology and the grand computational simulations that recreate the universe in a box. Finally, "Hands-On Practices" will guide you through implementing these core concepts, translating theory into computational skill. By adopting the universe's own rest frame, we will transform the dizzying complexity of an expanding cosmos into a set of powerful and intuitive rules, beginning with the fundamental principles of the comoving canvas.
 
 ## Principles and Mechanisms
 
@@ -13,11 +13,11 @@ This is the central challenge and the profound beauty of modern cosmology. The "
 
 ### The Comoving Grid: A Cosmologist's Ruler
 
-Physicists love coordinates, but the familiar Cartesian grid from high school physics, fixed and rigid, is of little use in an [expanding universe](@entry_id:161442). Instead, cosmologists use a coordinate system that is "painted" onto the expanding fabric of space itself. This is called the **comoving coordinate system**, which we can label with the vector $\mathbf{x}$.
+Physicists love coordinates, but the familiar Cartesian grid from high school physics, fixed and rigid, is of little use in an [expanding universe](@keyword=expanding_universe|lang=en-US|style=Feynman). Instead, cosmologists use a coordinate system that is "painted" onto the expanding fabric of space itself. This is called the **comoving coordinate system**, which we can label with the vector $\mathbf{x}$.
 
-Think of it this way: imagine you take a snapshot of the universe today and draw a three-dimensional grid over it, assigning a unique coordinate $\mathbf{x}$ to every galaxy. If a galaxy is carried along purely by the [cosmic expansion](@entry_id:161002) (the "Hubble flow"), its comoving coordinate $\mathbf{x}$ will *never change*. It is "comoving" with the universe.
+Think of it this way: imagine you take a snapshot of the universe today and draw a three-dimensional grid over it, assigning a unique coordinate $\mathbf{x}$ to every galaxy. If a galaxy is carried along purely by the [cosmic expansion](@keyword=cosmic_expansion|lang=en-US|style=Feynman) (the "Hubble flow"), its comoving coordinate $\mathbf{x}$ will *never change*. It is "comoving" with the universe.
 
-So where does the expansion come in? We introduce a time-dependent quantity called the **[scale factor](@entry_id:157673)**, denoted by $a(t)$. This single number tells us the "zoom level" of the universe at any given time $t$. By convention, we set $a(t_{\text{today}}) = 1$. In the past, $a(t)$ was smaller than 1; in the future, it will be larger.
+So where does the expansion come in? We introduce a time-dependent quantity called the **[scale factor](@keyword=scale_factor|lang=en-US|style=Feynman)**, denoted by $a(t)$. This single number tells us the "zoom level" of the universe at any given time $t$. By convention, we set $a(t_{\text{today}}) = 1$. In the past, $a(t)$ was smaller than 1; in the future, it will be larger.
 
 The physical position $\mathbf{r}$ of our galaxy, the one you would measure with a hypothetical meter stick at time $t$, is then simply related to its fixed comoving address $\mathbf{x}$ by a beautiful, simple equation:
 
@@ -25,9 +25,9 @@ $$
 \mathbf{r}(t) = a(t)\mathbf{x}
 $$
 
-This single equation is the cornerstone of cosmological [kinematics](@entry_id:173318)  . A galaxy at a fixed [comoving distance](@entry_id:158059) $\Delta\mathbf{x}$ from us will have a physical, or **proper distance**, of $D_p(t) = a(t)\Delta\chi$ (where $\Delta\chi$ is the magnitude of the comoving separation vector). As the universe expands, $a(t)$ increases, and the [proper distance](@entry_id:162052) grows, even though the galaxies haven't "gone" anywhere on the comoving grid.
+This single equation is the cornerstone of cosmological [kinematics](@keyword=kinematics|lang=en-US|style=Feynman) [@problem_id:3506211] [@problem_id:3506156]. A galaxy at a fixed [comoving distance](@keyword=comoving_distance|lang=en-US|style=Feynman) $\Delta\mathbf{x}$ from us will have a physical, or **proper distance**, of $D_p(t) = a(t)\Delta\chi$ (where $\Delta\chi$ is the magnitude of the comoving separation vector). As the universe expands, $a(t)$ increases, and the [proper distance](@keyword=proper_distance|lang=en-US|style=Feynman) grows, even though the galaxies haven't "gone" anywhere on the comoving grid.
 
-It's important to remember that this simple, elegant scaling is an exact global description for a universe with flat spatial geometry. If the universe has intrinsic curvature (like the surface of a sphere), this relationship is more of a local approximation. You cannot, after all, wrap a flat sheet of grid paper around a globe without distorting it . Fortunately, our universe appears to be extremely close to flat, so this simple picture works remarkably well.
+It's important to remember that this simple, elegant scaling is an exact global description for a universe with flat spatial geometry. If the universe has intrinsic curvature (like the surface of a sphere), this relationship is more of a local approximation. You cannot, after all, wrap a flat sheet of grid paper around a globe without distorting it [@problem_id:3506149]. Fortunately, our universe appears to be extremely close to flat, so this simple picture works remarkably well.
 
 ### The Cosmic Symphony of Motion
 
@@ -47,15 +47,15 @@ $$
 $$
 This is the famous **Hubble Flow**. It is the velocity a galaxy has simply because space itself is expanding. Notice that this velocity increases with distance $\mathbf{r}$. This is not a motion *through* space in the traditional sense, which is why objects at great distances can have recession velocities exceeding the speed of light without violating special relativity.
 
-The second term, $a(t)\dot{\mathbf{x}}(t)$, is the galaxy's motion relative to the comoving grid, converted into physical units by the [scale factor](@entry_id:157673) $a(t)$. This is its **peculiar velocity**, $\mathbf{v}_{\text{pec}}$. This is the "normal" velocity driven by local gravitational forces.
+The second term, $a(t)\dot{\mathbf{x}}(t)$, is the galaxy's motion relative to the comoving grid, converted into physical units by the [scale factor](@keyword=scale_factor|lang=en-US|style=Feynman) $a(t)$. This is its **peculiar velocity**, $\mathbf{v}_{\text{pec}}$. This is the "normal" velocity driven by local gravitational forces.
 
-So, any physical velocity in the cosmos is the sum of these two parts  :
+So, any physical velocity in the cosmos is the sum of these two parts [@problem_id:3506211] [@problem_id:3506149]:
 
 $$
 \mathbf{v} = H(t)\mathbf{r} + \mathbf{v}_{\text{pec}}
 $$
 
-This equation is not just a theoretical curiosity; it is the practical bread-and-butter of computational astrophysicists. When they run simulations of cosmic evolution, their codes track the comoving positions $\mathbf{x}_i$ and comoving velocities $\dot{\mathbf{x}}_i$ of millions of particles. To compare their simulation with what we actually observe in the sky, they must use this very formula to calculate the total physical velocity of each simulated galaxy .
+This equation is not just a theoretical curiosity; it is the practical bread-and-butter of computational astrophysicists. When they run simulations of cosmic evolution, their codes track the comoving positions $\mathbf{x}_i$ and comoving velocities $\dot{\mathbf{x}}_i$ of millions of particles. To compare their simulation with what we actually observe in the sky, they must use this very formula to calculate the total physical velocity of each simulated galaxy [@problem_id:3506179].
 
 ### Matter, Density, and the Unfolding Universe
 
@@ -65,19 +65,19 @@ $$
 V_{\text{prop}}(t) = (a(t) L_{\text{com}})^3 = a(t)^3 V_{\text{com}}
 $$
 
-Now, let's say we have $N$ particles (representing stars, dark matter, or entire galaxies) inside this box. As long as these particles are not moving too fast and crossing the boundaries, the number $N$ inside our comoving box remains constant. But the physical volume is growing. The physical [number density](@entry_id:268986) $n_{\text{prop}}$, which is the number of particles per unit of physical volume, must therefore decrease.
+Now, let's say we have $N$ particles (representing stars, dark matter, or entire galaxies) inside this box. As long as these particles are not moving too fast and crossing the boundaries, the number $N$ inside our comoving box remains constant. But the physical volume is growing. The physical [number density](@keyword=number_density|lang=en-US|style=Feynman) $n_{\text{prop}}$, which is the number of particles per unit of physical volume, must therefore decrease.
 
 From the principle of number conservation, $N = n_{\text{com}} V_{\text{com}} = n_{\text{prop}} V_{\text{prop}}$, we can immediately see the relationship:
 $$
 n_{\text{prop}}(t) = \frac{N}{V_{\text{prop}}(t)} = \frac{N}{a(t)^3 V_{\text{com}}} = \frac{n_{\text{com}}}{a(t)^3}
 $$
-The same logic applies to mass density, $\rho$. The physical mass density of matter in the universe dilutes as the inverse cube of the scale factor: $\rho(t) \propto a(t)^{-3}$  . This simple law has profound consequences. It tells us that the universe was unimaginably dense in the past, leading directly to the concept of a hot, dense initial state: the Big Bang.
+The same logic applies to mass density, $\rho$. The physical mass density of matter in the universe dilutes as the inverse cube of the scale factor: $\rho(t) \propto a(t)^{-3}$ [@problem_id:3506211] [@problem_id:3506170]. This simple law has profound consequences. It tells us that the universe was unimaginably dense in the past, leading directly to the concept of a hot, dense initial state: the Big Bang.
 
 ### The Birth of Structure: From Smoothness to Galaxies
 
-The picture so far is of a perfectly uniform expansion, with matter density smoothly decreasing everywhere. But our universe is not smooth; it is a stunning tapestry of galaxy clusters, filaments, and vast empty voids known as the [cosmic web](@entry_id:162042). Where did this structure come from?
+The picture so far is of a perfectly uniform expansion, with matter density smoothly decreasing everywhere. But our universe is not smooth; it is a stunning tapestry of galaxy clusters, filaments, and vast empty voids known as the [cosmic web](@keyword=cosmic_web|lang=en-US|style=Feynman). Where did this structure come from?
 
-The answer lies in understanding that the expansion was not perfectly uniform. Tiny [quantum fluctuations](@entry_id:144386) in the primordial universe seeded minuscule variations in density. These variations grew over billions of years due to gravity. Regions that were slightly denser than average expanded a little slower; regions that were less dense expanded a little faster.
+The answer lies in understanding that the expansion was not perfectly uniform. Tiny [quantum fluctuations](@keyword=quantum_fluctuations|lang=en-US|style=Feynman) in the primordial universe seeded minuscule variations in density. These variations grew over billions of years due to gravity. Regions that were slightly denser than average expanded a little slower; regions that were less dense expanded a little faster.
 
 We can describe this process with breathtaking elegance by distinguishing between a particle's initial comoving position, its "birth address" which we call the **Lagrangian coordinate** $\mathbf{q}$, and its final comoving position at a later time, the **Eulerian coordinate** $\mathbf{x}$. The entire history of cosmic flow is encapsulated in the mapping $\mathbf{x}(\mathbf{q}, t)$.
 
@@ -89,7 +89,7 @@ $$
 \rho_c(\mathbf{x}, t) = \bar{\rho}_c \frac{d^3q}{d^3x} = \frac{\bar{\rho}_c}{\det(\mathbf{J})}
 $$
 
-The local comoving density is simply the average density divided by the local volume deformation factor! From this, we can define the **[density contrast](@entry_id:157948)**, $\delta$, which measures the fractional overdensity. The result is pure geometric poetry :
+The local comoving density is simply the average density divided by the local volume deformation factor! From this, we can define the **[density contrast](@keyword=density_contrast|lang=en-US|style=Feynman)**, $\delta$, which measures the fractional overdensity. The result is pure geometric poetry [@problem_id:3506178]:
 
 $$
 \delta \equiv \frac{\rho_c - \bar{\rho}_c}{\bar{\rho}_c} = \frac{1}{\det(\mathbf{J})} - 1
@@ -99,18 +99,18 @@ This equation tells us everything. Where the flow of matter has converged ($\det
 
 ### The Cosmologist's Toolkit: A Change of Perspective
 
-To study the universe's evolution, especially with computer simulations, physicists have developed a toolkit of mathematical transformations that make the [equations of motion](@entry_id:170720) simpler and more elegant. A key trick is to change the variable we use to track time.
+To study the universe's evolution, especially with computer simulations, physicists have developed a toolkit of mathematical transformations that make the [equations of motion](@keyword=equations_of_motion|lang=en-US|style=Feynman) simpler and more elegant. A key trick is to change the variable we use to track time.
 
-Instead of using physical time $t$ (in seconds), which spans many orders of magnitude and makes the early universe computationally difficult, cosmologists often use the scale factor $a$ itself as the "clock". Even better is the use of **[conformal time](@entry_id:263727)**, $\eta$, defined by the simple relation $d\eta = dt/a(t)$.
+Instead of using physical time $t$ (in seconds), which spans many orders of magnitude and makes the early universe computationally difficult, cosmologists often use the scale factor $a$ itself as the "clock". Even better is the use of **[conformal time](@keyword=conformal_time|lang=en-US|style=Feynman)**, $\eta$, defined by the simple relation $d\eta = dt/a(t)$.
 
-Why is [conformal time](@entry_id:263727) so useful? For one, it simplifies the paths of light rays: they travel in straight lines in diagrams of comoving position versus [conformal time](@entry_id:263727). It also "stretches out" the very early moments of the universe when $a(t)$ was small, making the rapid initial evolution more manageable to simulate .
+Why is [conformal time](@keyword=conformal_time|lang=en-US|style=Feynman) so useful? For one, it simplifies the paths of light rays: they travel in straight lines in diagrams of comoving position versus [conformal time](@keyword=conformal_time|lang=en-US|style=Feynman). It also "stretches out" the very early moments of the universe when $a(t)$ was small, making the rapid initial evolution more manageable to simulate [@problem_id:3506160].
 
-Most importantly, using [comoving coordinates](@entry_id:271238) and [conformal time](@entry_id:263727) cleans up the equations of physics. Consider the [peculiar velocity](@entry_id:157964) of a particle. As the universe expands, this velocity is not constant; it decays. A particle moving through the comoving grid feels a kind of friction or "drag" from the [cosmic expansion](@entry_id:161002) itself. This **Hubble drag** is beautifully described in [conformal time](@entry_id:263727) by the simple equation $v' + \mathcal{H}v = 0$, where the prime is a derivative with respect to $\eta$ and $\mathcal{H}$ is the conformal Hubble parameter .
+Most importantly, using [comoving coordinates](@keyword=comoving_coordinates|lang=en-US|style=Feynman) and [conformal time](@keyword=conformal_time|lang=en-US|style=Feynman) cleans up the equations of physics. Consider the [peculiar velocity](@keyword=peculiar_velocity|lang=en-US|style=Feynman) of a particle. As the universe expands, this velocity is not constant; it decays. A particle moving through the comoving grid feels a kind of friction or "drag" from the [cosmic expansion](@keyword=cosmic_expansion|lang=en-US|style=Feynman) itself. This **Hubble drag** is beautifully described in [conformal time](@keyword=conformal_time|lang=en-US|style=Feynman) by the simple equation $v' + \mathcal{H}v = 0$, where the prime is a derivative with respect to $\eta$ and $\mathcal{H}$ is the conformal Hubble parameter [@problem_id:3506202].
 
-The same magic happens for fluid dynamics. The full [continuity equation](@entry_id:145242), which describes mass conservation, looks very complicated in physical coordinates. But when transformed into the [comoving frame](@entry_id:266800) and expressed in terms of the [density contrast](@entry_id:157948) $\delta$ and peculiar velocity $\mathbf{u}$, it takes on a familiar, compact form :
+The same magic happens for fluid dynamics. The full [continuity equation](@keyword=continuity_equation|lang=en-US|style=Feynman), which describes mass conservation, looks very complicated in physical coordinates. But when transformed into the [comoving frame](@keyword=comoving_frame|lang=en-US|style=Feynman) and expressed in terms of the [density contrast](@keyword=density_contrast|lang=en-US|style=Feynman) $\delta$ and peculiar velocity $\mathbf{u}$, it takes on a familiar, compact form [@problem_id:3506162]:
 
 $$
 \frac{\partial\delta}{\partial\eta} + \nabla_{\mathbf{x}} \cdot ((1+\delta)\mathbf{u}) = 0
 $$
 
-All the complex terms related to the background expansion have vanished! They haven't truly disappeared, of course; they have been absorbed into the very definition of our coordinates and our clock. This is the ultimate triumph of the comoving framework: it allows us to separate the universal expansion from the local physics of structure formation, letting us study each with clarity and precision. By choosing the right perspective, the right canvas, the [complex dynamics](@entry_id:171192) of the cosmos resolve into a set of elegant and powerful rules.
+All the complex terms related to the background expansion have vanished! They haven't truly disappeared, of course; they have been absorbed into the very definition of our coordinates and our clock. This is the ultimate triumph of the comoving framework: it allows us to separate the universal expansion from the local physics of structure formation, letting us study each with clarity and precision. By choosing the right perspective, the right canvas, the [complex dynamics](@keyword=complex_dynamics|lang=en-US|style=Feynman) of the cosmos resolve into a set of elegant and powerful rules.

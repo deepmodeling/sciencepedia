@@ -3,7 +3,7 @@
 
 埃卡特-杨-米尔斯基（Eckart-Young-Mirsky）定理正是对这一问题的权威回答。它不仅提供了一个出人意料的简洁答案，更揭示了矩阵结构深处的美学与秩序。这一定理是连接纯粹数学与应用科学的桥梁，是理解现代数据分析和科学计算众多算法的基石。
 
-本文将带领您深入探索这一优雅而强大的定理。在**第一章：原理与机制**中，我们将剖析定理的数学内核，从[奇异值分解](@entry_id:138057)（SVD）的几何直觉出发，理解范数作为“度量尺”的作用，并逐步揭示定理证明的精妙之处。在**第二章：应用与[交叉](@entry_id:147634)学科联系**中，我们将走出纯粹的数学世界，看该定理如何在[图像压缩](@entry_id:156609)、推荐系统、[模型降阶](@entry_id:171175)和机器学习等前沿领域大显身手，成为解决实际问题的关键。最后，在**第三章：动手实践**中，您将通过一系列精心设计的问题，亲手应用该定理，将抽象的理论知识转化为具体的计算能力。
+本文将带领您深入探索这一优雅而强大的定理。在**第一章：原理与机制**中，我们将剖析定理的数学内核，从[奇异值分解](@keyword=singular_value_decomposition|lang=zh-CN|style=Feynman)（SVD）的几何直觉出发，理解范数作为“度量尺”的作用，并逐步揭示定理证明的精妙之处。在**第二章：应用与[交叉](@keyword=chiasmata|lang=zh-CN|style=Feynman)学科联系**中，我们将走出纯粹的数学世界，看该定理如何在[图像压缩](@keyword=image_compression|lang=zh-CN|style=Feynman)、推荐系统、[模型降阶](@keyword=model_reduction|lang=zh-CN|style=Feynman)和机器学习等前沿领域大显身手，成为解决实际问题的关键。最后，在**第三章：动手实践**中，您将通过一系列精心设计的问题，亲手应用该定理，将抽象的理论知识转化为具体的计算能力。
 
 让我们一同踏上这段旅程，领略简单性如何战胜复杂性，以及一个数学定理如何塑造我们理解和改造数字世界的方式。
 
@@ -15,14 +15,14 @@
 
 首先，我们必须改变看待矩阵的方式。一个矩阵，例如 $A$，远不止是一个数字网格。它是一个动态的实体，一个能对空间进行变换的“机器”。当你用一个向量 $x$ 去乘以矩阵 $A$ 时，你实际上是将向量 $x$ 投入这台机器，然后得到一个被变换后的新向量 $Ax$。这个变换过程，本质上可以分解为一系列纯粹的几何动作：旋转、反射和拉伸。
 
-而**奇异值分解（Singular Value Decomposition, SVD）**正是揭示这一系列动作的通用秘籍。任何一个矩阵 $A$ 都可以被分解为三个矩阵的乘积：$A = U \Sigma V^*$。这里的 $U$ 和 $V$ 是**幺[正矩阵](@entry_id:149490)**（在[实数域](@entry_id:151347)中即为[正交矩阵](@entry_id:169220)），它们代表着旋转和反射——这些变换不改变向量的长度，就像转动一个刚体。而中间的 $\Sigma$ 是一个[对角矩阵](@entry_id:637782)，它的对角[线元](@entry_id:196833)素——**奇异值**（$\sigma_1, \sigma_2, \dots$）——则代表着在特定方向上的纯粹拉伸或压缩。
+而**奇异值分解（Singular Value Decomposition, SVD）**正是揭示这一系列动作的通用秘籍。任何一个矩阵 $A$ 都可以被分解为三个矩阵的乘积：$A = U \Sigma V^*$。这里的 $U$ 和 $V$ 是**幺[正矩阵](@keyword=positive_matrices|lang=zh-CN|style=Feynman)**（在[实数域](@keyword=real_numbers_field|lang=zh-CN|style=Feynman)中即为[正交矩阵](@keyword=orthonormal_matrix|lang=zh-CN|style=Feynman)），它们代表着旋转和反射——这些变换不改变向量的长度，就像转动一个刚体。而中间的 $\Sigma$ 是一个[对角矩阵](@keyword=diagonal_matrix|lang=zh-CN|style=Feynman)，它的对角[线元](@keyword=line_element|lang=zh-CN|style=Feynman)素——**奇异值**（$\sigma_1, \sigma_2, \dots$）——则代表着在特定方向上的纯粹拉伸或压缩。
 
-想象一下，SVD 告诉我们，任何复杂的[线性变换](@entry_id:149133)，无论它看起来多么扭曲和复杂，都可以通过以下三步完成：
-1.  首先，通过 $V^*$ 对整个[坐标系](@entry_id:156346)进行一次旋转。
+想象一下，SVD 告诉我们，任何复杂的[线性变换](@keyword=linear_transformations|lang=zh-CN|style=Feynman)，无论它看起来多么扭曲和复杂，都可以通过以下三步完成：
+1.  首先，通过 $V^*$ 对整个[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)进行一次旋转。
 2.  然后，沿着新的坐标轴，对每个轴进行独立的拉伸或压缩，拉伸的比例就是对应的奇异值 $\sigma_i$。
 3.  最后，通过 $U$ 再进行一次旋转，到达最终的位置。
 
-奇异值按照从大到小的顺序[排列](@entry_id:136432)（$\sigma_1 \ge \sigma_2 \ge \dots \ge 0$），它们是[矩阵变换](@entry_id:156789)“能量”的量度。$\sigma_1$ 描述了最主要的拉伸方向和强度，$\sigma_2$ 描述了次要的，以此类推。因此，奇异值的大小直接反映了[矩阵变换](@entry_id:156789)中各个“主成分”的重要性。
+奇异值按照从大到小的顺序[排列](@keyword=permutation|lang=zh-CN|style=Feynman)（$\sigma_1 \ge \sigma_2 \ge \dots \ge 0$），它们是[矩阵变换](@keyword=matrix_transformations|lang=zh-CN|style=Feynman)“能量”的量度。$\sigma_1$ 描述了最主要的拉伸方向和强度，$\sigma_2$ 描述了次要的，以此类推。因此，奇异值的大小直接反映了[矩阵变换](@keyword=matrix_transformations|lang=zh-CN|style=Feynman)中各个“主成分”的重要性。
 
 ### 寻找最佳投影：近似问题的提出
 
@@ -34,54 +34,54 @@
 
 要衡量“接近”程度，我们需要一把尺子——在数学中，这被称为**范数 (norm)**。范数用于度量一个矩阵的“大小”或两个矩阵之间的“距离”。
 
-最直观的一把尺子是**[弗罗贝尼乌斯范数](@entry_id:143384) (Frobenius norm)**，记作 $\| \cdot \|_F$。它的定义简单而优美：将矩阵所有元素的平方和加起来，然后开方，即 $\|A\|_F = (\sum_{i,j} |a_{ij}|^2)^{1/2}$。这无非就是我们熟悉的勾股定理在高维[矩阵空间](@entry_id:261335)中的推广，它衡量的是两个矩阵在元素层面上的欧几里得距离。
+最直观的一把尺子是**[弗罗贝尼乌斯范数](@keyword=frobenius_norm|lang=zh-CN|style=Feynman) (Frobenius norm)**，记作 $\| \cdot \|_F$。它的定义简单而优美：将矩阵所有元素的平方和加起来，然后开方，即 $\|A\|_F = (\sum_{i,j} |a_{ij}|^2)^{1/2}$。这无非就是我们熟悉的勾股定理在高维[矩阵空间](@keyword=matrix_spaces|lang=zh-CN|style=Feynman)中的推广，它衡量的是两个矩阵在元素层面上的欧几里得距离。[@problem_id:3587159]
 
-另一把重要的尺子是**[谱范数](@entry_id:143091) (spectral norm)**，记作 $\| \cdot \|_2$。它从变换的角度出发，衡量一个矩阵能将一个[单位向量](@entry_id:165907)拉伸到多长，即 $\|A\|_2 = \max_{\|x\|=1} \|Ax\|$。这对应着最大的[奇异值](@entry_id:152907) $\sigma_1$。
+另一把重要的尺子是**[谱范数](@keyword=spectral_norm|lang=zh-CN|style=Feynman) (spectral norm)**，记作 $\| \cdot \|_2$。它从变换的角度出发，衡量一个矩阵能将一个[单位向量](@keyword=unit_vectors|lang=zh-CN|style=Feynman)拉伸到多长，即 $\|A\|_2 = \max_{\|x\|=1} \|Ax\|$。这对应着最大的[奇异值](@keyword=singular_values|lang=zh-CN|style=Feynman) $\sigma_1$。[@problem_id:3587176]
 
 有了这些度量距离的工具，我们的问题变得更加明确：在所有秩不超过 $k$ 的矩阵 $X$ 中，找到那个能让 $\|A - X\|$ 最小的 $X$。
 
-### 幺正[不变性](@entry_id:140168)：对称性的胜利
+### 幺正[不变性](@keyword=invariance|lang=zh-CN|style=Feynman)：对称性的胜利
 
-在选择度量尺时，物理学家会提出一个深刻的要求：这把尺子必须是“公平”的。也就是说，它不应该因为我们观察[坐标系](@entry_id:156346)的选择而改变度量结果。如果我们将整个空间旋转一下，矩阵所代表的内在变换并未改变，其“大小”也理应不变。这种性质，就是**幺正[不变性](@entry_id:140168) (unitary invariance)**。
+在选择度量尺时，物理学家会提出一个深刻的要求：这把尺子必须是“公平”的。也就是说，它不应该因为我们观察[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)的选择而改变度量结果。如果我们将整个空间旋转一下，矩阵所代表的内在变换并未改变，其“大小”也理应不变。这种性质，就是**幺正[不变性](@keyword=invariance|lang=zh-CN|style=Feynman) (unitary invariance)**。
 
-一个范数 $\| \cdot \|$ 如果满足 $\|UAV\| = \|A\|$（其中 $U, V$ 是任意幺[正矩阵](@entry_id:149490)），它就是幺正不变的。幸运的是，我们前面提到的[弗罗贝尼乌斯范数](@entry_id:143384)和[谱范数](@entry_id:143091)都满足这个优雅的性质。
+一个范数 $\| \cdot \|$ 如果满足 $\|UAV\| = \|A\|$（其中 $U, V$ 是任意幺[正矩阵](@keyword=positive_matrices|lang=zh-CN|style=Feynman)），它就是幺正不变的。幸运的是，我们前面提到的[弗罗贝尼乌斯范数](@keyword=frobenius_norm|lang=zh-CN|style=Feynman)和[谱范数](@keyword=spectral_norm|lang=zh-CN|style=Feynman)都满足这个优雅的性质。[@problem_id:3587178]
 
-这一性质带来了惊人的简化。回到 SVD，$A = U \Sigma V^*$。根据幺正[不变性](@entry_id:140168)，我们立刻得到：
+这一性质带来了惊人的简化。回到 SVD，$A = U \Sigma V^*$。根据幺正[不变性](@keyword=invariance|lang=zh-CN|style=Feynman)，我们立刻得到：
 $$ \|A\| = \|U \Sigma V^*\| = \|\Sigma\| $$
-这意味着，对于任何一把“公平”的尺子，矩阵 $A$ 的大小完全由它的奇异值矩阵 $\Sigma$ 决定，而与那些代表旋转的 $U$ 和 $V$ 无关！ [奇异值](@entry_id:152907)，正是矩阵大小的内在本质。如果两个矩阵拥有相同的[奇异值](@entry_id:152907)，那么在任何幺正不变范数的度量下，它们的大小都是完全一样的。
+这意味着，对于任何一把“公平”的尺子，矩阵 $A$ 的大小完全由它的奇异值矩阵 $\Sigma$ 决定，而与那些代表旋转的 $U$ 和 $V$ 无关！[@problem_id:3587178] [奇异值](@keyword=singular_values|lang=zh-CN|style=Feynman)，正是矩阵大小的内在本质。如果两个矩阵拥有相同的[奇异值](@keyword=singular_values|lang=zh-CN|style=Feynman)，那么在任何幺正不变范数的度量下，它们的大小都是完全一样的。[@problem_id:3587178]
 
-反之，如果一把尺子不具备幺正[不变性](@entry_id:140168)，会发生什么呢？想象一把“加权”的尺子，它对矩阵的某些位置格外敏感。在这种“不公平”的度量下，SVD 的魔力就会失效，基于 SVD 的近似方法可能不再是最佳选择。这恰恰说明了幺正不变性是[埃卡特-杨-米尔斯基定理](@entry_id:149772)的核心基石，而非一个可有可无的技术假设。
+反之，如果一把尺子不具备幺正[不变性](@keyword=invariance|lang=zh-CN|style=Feynman)，会发生什么呢？想象一把“加权”的尺子，它对矩阵的某些位置格外敏感。在这种“不公平”的度量下，SVD 的魔力就会失效，基于 SVD 的近似方法可能不再是最佳选择。这恰恰说明了幺正不变性是[埃卡特-杨-米尔斯基定理](@keyword=eckart_young_mirsky_theorem|lang=zh-CN|style=Feynman)的核心基石，而非一个可有可无的技术假设。[@problem_id:3587175]
 
-### [埃卡特-杨-米尔斯基定理](@entry_id:149772)：简单即为最优
+### [埃卡特-杨-米尔斯基定理](@keyword=eckart_young_mirsky_theorem|lang=zh-CN|style=Feynman)：简单即为最优
 
 现在，我们拥有了所有工具，准备破解低秩近似之谜。我们的目标是最小化 $\|A - X\|_F$，其中 $\operatorname{rank}(X) \le k$。
 
 利用幺正不变性，我们可以进行一次精彩的“变量代换”：
 $$ \|A - X\|_F^2 = \|U \Sigma V^* - X\|_F^2 = \|U^*(A - X)V\|_F^2 = \|\Sigma - U^*XV\|_F^2 $$
-令 $Y = U^*XV$，由于 $U,V$ 可逆，$\operatorname{rank}(Y) = \operatorname{rank}(X)$。于是，原问题等价于在一个简单的“[奇异值](@entry_id:152907)世界”里，最小化 $\|\Sigma - Y\|_F^2$，其中 $\operatorname{rank}(Y) \le k$。
+令 $Y = U^*XV$，由于 $U,V$ 可逆，$\operatorname{rank}(Y) = \operatorname{rank}(X)$。于是，原问题等价于在一个简单的“[奇异值](@keyword=singular_values|lang=zh-CN|style=Feynman)世界”里，最小化 $\|\Sigma - Y\|_F^2$，其中 $\operatorname{rank}(Y) \le k$。[@problem_id:3587159]
 
-这个问题几乎不言自明！$\Sigma$ 是一个[对角矩阵](@entry_id:637782)，其对角元为 $\sigma_1, \sigma_2, \dots$。为了用一个秩为 $k$ 的矩阵 $Y$ 最好地逼近 $\Sigma$，我们应该怎么做？为了让[误差平方和](@entry_id:149299) $\sum (\sigma_i - Y_{ii})^2 + \sum_{i \ne j} Y_{ij}^2$ 最小，我们显然应该让所有非对角元的 $Y_{ij}$ 都为零，使 $Y$ 也成为一个[对角矩阵](@entry_id:637782)。而为了满足秩的约束并使误差最小，我们应该保留 $\Sigma$ 中最大的 $k$ 个对角元，并将其他对角元设为零。因为奇异值已经按重要性排好序，保留最大的，就是保留了最多的“能量”，丢弃最小的，就是将损失降到最低。
+这个问题几乎不言自明！$\Sigma$ 是一个[对角矩阵](@keyword=diagonal_matrix|lang=zh-CN|style=Feynman)，其对角元为 $\sigma_1, \sigma_2, \dots$。为了用一个秩为 $k$ 的矩阵 $Y$ 最好地逼近 $\Sigma$，我们应该怎么做？为了让[误差平方和](@keyword=sum_of_squared_errors|lang=zh-CN|style=Feynman) $\sum (\sigma_i - Y_{ii})^2 + \sum_{i \ne j} Y_{ij}^2$ 最小，我们显然应该让所有非对角元的 $Y_{ij}$ 都为零，使 $Y$ 也成为一个[对角矩阵](@keyword=diagonal_matrix|lang=zh-CN|style=Feynman)。而为了满足秩的约束并使误差最小，我们应该保留 $\Sigma$ 中最大的 $k$ 个对角元，并将其他对角元设为零。因为奇异值已经按重要性排好序，保留最大的，就是保留了最多的“能量”，丢弃最小的，就是将损失降到最低。
 
-于是，最优的 $Y$ 就是一个[对角矩阵](@entry_id:637782) $Y_k$，其对角元为 $(\sigma_1, \dots, \sigma_k, 0, \dots, 0)$。这个矩阵我们记作 $\Sigma_k$。现在，将解从“奇异值世界”变换回原始世界，我们便得到了最佳近似矩阵 $A_k$：
+于是，最优的 $Y$ 就是一个[对角矩阵](@keyword=diagonal_matrix|lang=zh-CN|style=Feynman) $Y_k$，其对角元为 $(\sigma_1, \dots, \sigma_k, 0, \dots, 0)$。这个矩阵我们记作 $\Sigma_k$。现在，将解从“奇异值世界”变换回原始世界，我们便得到了最佳近似矩阵 $A_k$：
 $$ A_k = U \Sigma_k V^* $$
-这就是**埃卡特-杨-米尔斯基 (Eckart-Young-Mirsky) 定理**的核心结论：**矩阵的最佳低秩近似，就是将其 SVD 展开，保留前 $k$ 个最大的[奇异值](@entry_id:152907)项，并舍弃其余所有项。** 这个过程，我们称之为**[截断奇异值分解](@entry_id:637574) (Truncated SVD)**。
+这就是**埃卡特-杨-米尔斯基 (Eckart-Young-Mirsky) 定理**的核心结论：**矩阵的最佳低秩近似，就是将其 SVD 展开，保留前 $k$ 个最大的[奇异值](@keyword=singular_values|lang=zh-CN|style=Feynman)项，并舍弃其余所有项。** 这个过程，我们称之为**[截断奇异值分解](@keyword=truncated_singular_value_decomposition|lang=zh-CN|style=Feynman) (Truncated SVD)**。
 
-这个结论的美妙之处在于其普适性与简洁性。它不仅对[弗罗贝尼乌斯范数](@entry_id:143384)成立，对[谱范数](@entry_id:143091)也同样成立。  事实上，由米尔斯基 (Mirsky) 证明，这个结论对于**所有**幺正不变范数都成立！ 每一种“公平”的度量方式，都指向同一个简单而优雅的答案。
+这个结论的美妙之处在于其普适性与简洁性。它不仅对[弗罗贝尼乌斯范数](@keyword=frobenius_norm|lang=zh-CN|style=Feynman)成立，对[谱范数](@keyword=spectral_norm|lang=zh-CN|style=Feynman)也同样成立。[@problem_id:3587159] [@problem_id:3587176] 事实上，由米尔斯基 (Mirsky) 证明，这个结论对于**所有**幺正不变范数都成立！[@problem_id:3587145] 每一种“公平”的度量方式，都指向同一个简单而优雅的答案。
 
 对于不同的范数，只是计算误差的方式不同。这个最小误差，就是我们丢掉的那部分“尾巴”的大小：$\|A - A_k\|$。
-*   在[弗罗贝尼乌斯范数](@entry_id:143384)下，误差是 $\sqrt{\sigma_{k+1}^2 + \sigma_{k+2}^2 + \dots}$。
-*   在[谱范数](@entry_id:143091)下，误差就是 $\sigma_{k+1}$，即被丢弃的最大奇异值。
-*   在更一般的幺正不变范数下，其大小由一个作用于奇异值向量的**对称[规范函数](@entry_id:749731)** $\phi$ 决定，误差为 $\phi(0, \dots, 0, \sigma_{k+1}, \sigma_{k+2}, \dots)$。 
+*   在[弗罗贝尼乌斯范数](@keyword=frobenius_norm|lang=zh-CN|style=Feynman)下，误差是 $\sqrt{\sigma_{k+1}^2 + \sigma_{k+2}^2 + \dots}$。
+*   在[谱范数](@keyword=spectral_norm|lang=zh-CN|style=Feynman)下，误差就是 $\sigma_{k+1}$，即被丢弃的最大奇异值。
+*   在更一般的幺正不变范数下，其大小由一个作用于奇异值向量的**对称规范函数** $\phi$ 决定，误差为 $\phi(0, \dots, 0, \sigma_{k+1}, \sigma_{k+2}, \dots)$。[@problem_id:3587139] [@problem_id:3587145]
 
-### 深入几何：[流形](@entry_id:153038)上的最短距离
+### 深入几何：[流形](@keyword=manifold|lang=zh-CN|style=Feynman)上的最短距离
 
-[埃卡特-杨-米尔斯基定理](@entry_id:149772)还有一个极为深刻的几何解释。想象一下，所有 $m \times n$ 的矩阵构成了一个高维的[欧几里得空间](@entry_id:138052)。在这个空间里，所有秩不超过 $k$ 的矩阵 $\mathcal{M}_k$ 构成了一个光滑的、弯曲的[子空间](@entry_id:150286)，我们称之为**代数簇**或**[流形](@entry_id:153038)**。
+[埃卡特-杨-米尔斯基定理](@keyword=eckart_young_mirsky_theorem|lang=zh-CN|style=Feynman)还有一个极为深刻的几何解释。想象一下，所有 $m \times n$ 的矩阵构成了一个高维的[欧几里得空间](@keyword=euclidean_space|lang=zh-CN|style=Feynman)。在这个空间里，所有秩不超过 $k$ 的矩阵 $\mathcal{M}_k$ 构成了一个光滑的、弯曲的[子空间](@keyword=subspace|lang=zh-CN|style=Feynman)，我们称之为**代数簇**或**[流形](@keyword=manifold|lang=zh-CN|style=Feynman)**。
 
-我们的问题——寻找 $A$ 的最佳秩 $k$ 近似——从几何上看，等价于在这个高维空间中，从点 $A$ 出发，找到[流形](@entry_id:153038) $\mathcal{M}_k$ 上的一个点 $X$，使得 $A$ 与 $X$ 之间的距离最短。
+我们的问题——寻找 $A$ 的最佳秩 $k$ 近似——从几何上看，等价于在这个高维空间中，从点 $A$ 出发，找到[流形](@keyword=manifold|lang=zh-CN|style=Feynman) $\mathcal{M}_k$ 上的一个点 $X$，使得 $A$ 与 $X$ 之间的距离最短。
 
-从基本几何直觉我们知道，连接点 $A$ 与其在[流形](@entry_id:153038)上最近点 $A_k$ 的向量 $A - A_k$，必须与[流形](@entry_id:153038)在 $A_k$ 点的**[切空间](@entry_id:199137)**相垂直（正交）。换句话说，向量 $A - A_k$ 必须位于该点的**法空间**内。
+从基本几何直觉我们知道，连接点 $A$ 与其在[流形](@keyword=manifold|lang=zh-CN|style=Feynman)上最近点 $A_k$ 的向量 $A - A_k$，必须与[流形](@keyword=manifold|lang=zh-CN|style=Feynman)在 $A_k$ 点的**[切空间](@keyword=tangent_spaces|lang=zh-CN|style=Feynman)**相垂直（正交）。换句话说，向量 $A - A_k$ 必须位于该点的**法空间**内。
 
-通过[微分几何](@entry_id:145818)的工具，我们可以精确地计算出在 $A_k$ 点的切空间和法空间。令人惊叹的结果是，法空间恰好是由那些被我们丢弃的[奇异向量](@entry_id:143538)张成的空间，即形式为 $\sum_{i=k+1}^p c_i u_i v_i^*$ 的矩阵集合。而我们计算出的误差矩阵 $R = A - A_k = \sum_{i=k+1}^p \sigma_i u_i v_i^*$，正好就落在这个法空间里！
+通过[微分几何](@keyword=differential_geometry|lang=zh-CN|style=Feynman)的工具，我们可以精确地计算出在 $A_k$ 点的切空间和法空间。令人惊叹的结果是，法空间恰好是由那些被我们丢弃的[奇异向量](@keyword=singular_vectors|lang=zh-CN|style=Feynman)张成的空间，即形式为 $\sum_{i=k+1}^p c_i u_i v_i^*$ 的矩阵集合。而我们计算出的误差矩阵 $R = A - A_k = \sum_{i=k+1}^p \sigma_i u_i v_i^*$，正好就落在这个法空间里！[@problem_id:3587183]
 
 代数上的最优解，与几何上的最短距离条件，在这里完美地统一了。这揭示了 SVD 不仅是一种代数分解，它还精确地捕捉了矩阵空间的内在几何结构。
 
@@ -89,18 +89,18 @@ $$ A_k = U \Sigma_k V^* $$
 
 最佳的近似解总是唯一的吗？答案是：不一定。
 
-想象一下，在排序的奇异值中，恰好在“截断点”上出现了相等的情况，例如 $\sigma_k = \sigma_{k+1}$。我们需要保留 $k$ 个最大的[奇异值](@entry_id:152907)。对于前 $k-1$ 个，我们毫无疑问地保留。但对于第 $k$ 个名额，我们面临一个选择：是保留与 $u_k, v_k$ 相关的分量，还是与 $u_{k+1}, v_{k+1}$ 相关的分量？由于它们对应的奇异值相等，它们的重要性也完全相同。
+想象一下，在排序的奇异值中，恰好在“截断点”上出现了相等的情况，例如 $\sigma_k = \sigma_{k+1}$。我们需要保留 $k$ 个最大的[奇异值](@keyword=singular_values|lang=zh-CN|style=Feynman)。对于前 $k-1$ 个，我们毫无疑问地保留。但对于第 $k$ 个名额，我们面临一个选择：是保留与 $u_k, v_k$ 相关的分量，还是与 $u_{k+1}, v_{k+1}$ 相关的分量？由于它们对应的奇异值相等，它们的重要性也完全相同。
 
-这种模糊性导致了解的不唯一。我们可以在与这个重复奇异值相对应的[子空间](@entry_id:150286)中，任意选择一个 $k-(s-1)$ 维的[子空间](@entry_id:150286)（其中 $s$ 是该重复[奇异值](@entry_id:152907)的起始索引），由此构造出的任何近似矩阵都是“最佳”的。所有这些最佳解构成了一个新的、更复杂的几何对象，称为**格拉斯曼[流形](@entry_id:153038) (Grassmannian manifold)**。  这个发现告诉我们，即使在如此清晰的理论中，也隐藏着丰富而微妙的结构。
+这种模糊性导致了解的不唯一。我们可以在与这个重复奇异值相对应的[子空间](@keyword=subspace|lang=zh-CN|style=Feynman)中，任意选择一个 $k-(s-1)$ 维的[子空间](@keyword=subspace|lang=zh-CN|style=Feynman)（其中 $s$ 是该重复[奇异值](@keyword=singular_values|lang=zh-CN|style=Feynman)的起始索引），由此构造出的任何近似矩阵都是“最佳”的。所有这些最佳解构成了一个新的、更复杂的几何对象，称为**格拉斯曼[流形](@keyword=manifold|lang=zh-CN|style=Feynman) (Grassmannian manifold)**。[@problem_id:3587181] [@problem_id:3587176] 这个发现告诉我们，即使在如此清晰的理论中，也隐藏着丰富而微妙的结构。
 
 ### 超越矩阵：张量的奇异世界
 
-既然我们为矩阵找到了如此完美的低秩[近似理论](@entry_id:138536)，一个自然的问题是：它能否推广到更高维度的数组——**张量 (tensor)** 上去？
+既然我们为矩阵找到了如此完美的低秩[近似理论](@keyword=approximation_theory|lang=zh-CN|style=Feynman)，一个自然的问题是：它能否推广到更高维度的数组——**张量 (tensor)** 上去？
 
 答案令人既沮丧又着迷：**不能。**
 
-对于张量，我们有类似的概念，如 CP 分解和 CP 秩。然而，[埃卡特-杨-米尔斯基定理](@entry_id:149772)那样的普适美感在这里荡然无存。我们可以构造一个简单的三阶张量，它的最佳秩-1 近似，并不能通过类似 SVD 的方法（如[高阶奇异值分解](@entry_id:197696) [HOSVD](@entry_id:197696)）得到。分别优化每个维度上的投影，并不能保证得到[全局最优解](@entry_id:175747)。
+对于张量，我们有类似的概念，如 CP 分解和 CP 秩。然而，[埃卡特-杨-米尔斯基定理](@keyword=eckart_young_mirsky_theorem|lang=zh-CN|style=Feynman)那样的普适美感在这里荡然无存。我们可以构造一个简单的三阶张量，它的最佳秩-1 近似，并不能通过类似 SVD 的方法（如[高阶奇异值分解](@keyword=hosvd|lang=zh-CN|style=Feynman) [HOSVD](@keyword=hosvd|lang=zh-CN|style=Feynman)）得到。分别优化每个维度上的投影，并不能保证得到[全局最优解](@keyword=global_optimum|lang=zh-CN|style=Feynman)。[@problem_id:3587161]
 
-更奇异的是，对于某些张量，其“最佳”低秩近似甚至可能**不存在**！我们可以构造一个秩为 2 的张量序列，它无限逼近一个秩为 3 的目标张量，但永远无法达到。这意味着，尽管我们可以让近似误差任意小，但我们永远找不到一个秩为 2 的“最佳”矩阵来实现这个误差为零的[下确界](@entry_id:140118)。这个目标张量的**边界秩 (border rank)** 是 2，但其本身的秩是 3。
+更奇异的是，对于某些张量，其“最佳”低秩近似甚至可能**不存在**！我们可以构造一个秩为 2 的张量序列，它无限逼近一个秩为 3 的目标张量，但永远无法达到。这意味着，尽管我们可以让近似误差任意小，但我们永远找不到一个秩为 2 的“最佳”矩阵来实现这个误差为零的[下确界](@keyword=infimum|lang=zh-CN|style=Feynman)。这个目标张量的**边界秩 (border rank)** 是 2，但其本身的秩是 3。[@problem_id:3587161]
 
-这为我们打开了一个全新的、充满未知与挑战的世界。它提醒我们，尽管[埃卡特-杨-米尔斯基定理](@entry_id:149772)为二维的矩阵世界描绘了一幅近乎完美的图景，但更高维度的数据宇宙中，还隐藏着更多等待我们去探索的奥秘。
+这为我们打开了一个全新的、充满未知与挑战的世界。它提醒我们，尽管[埃卡特-杨-米尔斯基定理](@keyword=eckart_young_mirsky_theorem|lang=zh-CN|style=Feynman)为二维的矩阵世界描绘了一幅近乎完美的图景，但更高维度的数据宇宙中，还隐藏着更多等待我们去探索的奥秘。

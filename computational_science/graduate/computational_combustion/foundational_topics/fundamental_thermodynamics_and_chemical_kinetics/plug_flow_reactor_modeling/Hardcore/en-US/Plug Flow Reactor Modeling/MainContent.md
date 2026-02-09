@@ -1,15 +1,15 @@
 ## Introduction
-The Plug Flow Reactor (PFR) model is a cornerstone of quantitative analysis in [chemical reaction engineering](@entry_id:151477) and computational combustion. It provides a foundational mathematical framework for describing how chemical species evolve in continuous, flowing systems. While the ideal PFR offers an elegant simplification, its true power is realized when it is extended to capture the intricate interplay of chemical kinetics, thermodynamics, and transport phenomena that govern real-world processes. This article bridges the gap between the idealized concept and the complex realities of industrial and research applications.
+The Plug Flow Reactor (PFR) model is a cornerstone of quantitative analysis in chemical reaction engineering and computational combustion. It provides a foundational mathematical framework for describing how chemical species evolve in continuous, flowing systems. While the ideal PFR offers an elegant simplification, its true power is realized when it is extended to capture the intricate interplay of chemical kinetics, thermodynamics, and transport phenomena that govern real-world processes. This article bridges the gap between the idealized concept and the complex realities of industrial and research applications.
 
-This comprehensive guide will lead you from first principles to advanced computational practices. In the "Principles and Mechanisms" chapter, we will deconstruct the ideal PFR model, explore the concept of residence time, and introduce the complexities of non-[ideal flow](@entry_id:261917) and stiff kinetics. Following this, the "Applications and Interdisciplinary Connections" chapter demonstrates the model's versatility in tackling challenges such as thermal runaway, [catalyst deactivation](@entry_id:152780), and process optimization, highlighting its use in materials science and systems engineering. Finally, the "Hands-On Practices" chapter provides targeted problems to solidify your understanding and build practical skills in PFR simulation and analysis.
+This comprehensive guide will lead you from first principles to advanced computational practices. In the "Principles and Mechanisms" chapter, we will deconstruct the ideal PFR model, explore the concept of residence time, and introduce the complexities of non-ideal flow and stiff kinetics. Following this, the "Applications and Interdisciplinary Connections" chapter demonstrates the model's versatility in tackling challenges such as thermal runaway, catalyst deactivation, and process optimization, highlighting its use in materials science and systems engineering. Finally, the "Hands-On Practices" chapter provides targeted problems to solidify your understanding and build practical skills in PFR simulation and analysis.
 
 ## Principles and Mechanisms
 
-This chapter delves into the fundamental principles and mechanisms that underpin the Plug Flow Reactor (PFR) model, a cornerstone of [chemical reaction engineering](@entry_id:151477) and [computational combustion](@entry_id:1122776). We begin with the idealized construct of the PFR, progressively introducing layers of complexity—including variable fluid properties, non-[ideal mixing](@entry_id:150763), and [reversible kinetics](@entry_id:203531)—to build a comprehensive understanding. Finally, we will examine the critical conservation laws and numerical challenges that arise when applying the PFR model to complex reacting systems such as those found in combustion.
+This chapter delves into the fundamental principles and mechanisms that underpin the Plug Flow Reactor (PFR) model, a cornerstone of chemical reaction engineering and computational combustion. We begin with the idealized construct of the PFR, progressively introducing layers of complexity—including variable fluid properties, non-ideal mixing, and reversible kinetics—to build a comprehensive understanding. Finally, we will examine the critical conservation laws and numerical challenges that arise when applying the PFR model to complex reacting systems such as those found in combustion.
 
 ### The Ideal Plug Flow Reactor: Foundational Assumptions
 
-The **Plug Flow Reactor (PFR)** is an idealized model used to describe chemical reactions in continuous, flowing systems confined within a tube or channel. The central concept is that of "plugs" of fluid moving through the reactor in an orderly fashion, with each plug acting as a miniature batch reactor. This behavior emerges from a specific set of simplifying assumptions that define the ideal PFR. When deriving the PFR model from the general [species conservation equation](@entry_id:151288) provided by the Reynolds Transport Theorem, we systematically apply these assumptions .
+The **Plug Flow Reactor (PFR)** is an idealized model used to describe chemical reactions in continuous, flowing systems confined within a tube or channel. The central concept is that of "plugs" of fluid moving through the reactor in an orderly fashion, with each plug acting as a miniature batch reactor. This behavior emerges from a specific set of simplifying assumptions that define the ideal PFR. When deriving the PFR model from the general species conservation equation provided by the Reynolds Transport Theorem, we systematically apply these assumptions [@problem_id:4051571].
 
 The four cardinal assumptions of the ideal PFR are:
 
@@ -17,11 +17,11 @@ The four cardinal assumptions of the ideal PFR are:
 
 2.  **One-Dimensionality:** All properties of the flow—such as velocity, temperature, and species concentrations—are assumed to be uniform across any cross-section perpendicular to the direction of flow. Gradients exist only in the axial direction, typically denoted as the $z$-coordinate. This implies there is no variation in the radial or transverse directions ($ \partial/\partial x = \partial/\partial y = 0 $ for properties averaged over the cross-section).
 
-3.  **No Axial Mixing:** In an ideal PFR, fluid elements are assumed to translate along the reactor's length without mixing with the elements ahead of or behind them. This corresponds to the complete absence of diffusion or dispersion in the axial direction. This is the idealized limit where [convective transport](@entry_id:149512) completely dominates axial dispersive transport, corresponding to an infinite **axial Péclet number**.
+3.  **No Axial Mixing:** In an ideal PFR, fluid elements are assumed to translate along the reactor's length without mixing with the elements ahead of or behind them. This corresponds to the complete absence of diffusion or dispersion in the axial direction. This is the idealized limit where convective transport completely dominates axial dispersive transport, corresponding to an infinite **axial Péclet number**.
 
 4.  **Constant Cross-Sectional Area:** While not strictly required for the concept, the PFR model is most commonly formulated for a reactor of constant cross-sectional area, $A$.
 
-Under these assumptions, a mole or mass balance for a species $i$ over a differential control volume $A \, dz$ simplifies significantly. The absence of time dependence eliminates the accumulation term. The one-dimensionality assumption ensures that fluxes across the reactor walls (unless they are [catalytic surfaces](@entry_id:1122127)) and within the cross-sectional plane are zero. The "no axial mixing" assumption eliminates the diffusive flux term in the axial direction. The balance thus reduces to a statement that the change in the convective flow of a species along $dz$ must be equal to the amount of that species generated by chemical reaction within the volume $A \, dz$.
+Under these assumptions, a mole or mass balance for a species $i$ over a differential control volume $A \, dz$ simplifies significantly. The absence of time dependence eliminates the accumulation term. The one-dimensionality assumption ensures that fluxes across the reactor walls (unless they are catalytic surfaces) and within the cross-sectional plane are zero. The "no axial mixing" assumption eliminates the diffusive flux term in the axial direction. The balance thus reduces to a statement that the change in the convective flow of a species along $dz$ must be equal to the amount of that species generated by chemical reaction within the volume $A \, dz$.
 
 Letting $F_i(z)$ be the molar flow rate of species $i$ at axial position $z$, and $\dot{\omega}_i$ be the net molar rate of production of species $i$ per unit volume due to chemical reactions, this balance takes the form of a first-order ordinary differential equation (ODE):
 
@@ -29,13 +29,13 @@ $$
 \frac{dF_i}{dz} = A \dot{\omega}_i
 $$
 
-Here, the molar flow rate is $F_i(z) = u(z) C_i(z) A$, where $u(z)$ is the axial velocity and $C_i(z)$ is the [molar concentration](@entry_id:1128100) of species $i$.
+Here, the molar flow rate is $F_i(z) = u(z) C_i(z) A$, where $u(z)$ is the axial velocity and $C_i(z)$ is the molar concentration of species $i$.
 
-It is instructive to contrast the PFR with its conceptual counterpart, the **Continuous Stirred-Tank Reactor (CSTR)**. A CSTR operates under the assumption of perfect mixing, meaning that the properties are uniform throughout the *entire reactor volume*. In a CSTR, the outlet composition is identical to the composition at every point inside the reactor. This leads to an algebraic species balance equation over the entire reactor volume $V$, rather than a differential one . The PFR, with its continuous spatial variation, and the CSTR, with its complete spatial uniformity, represent the two limiting ideals of reactor mixing.
+It is instructive to contrast the PFR with its conceptual counterpart, the **Continuous Stirred-Tank Reactor (CSTR)**. A CSTR operates under the assumption of perfect mixing, meaning that the properties are uniform throughout the *entire reactor volume*. In a CSTR, the outlet composition is identical to the composition at every point inside the reactor. This leads to an algebraic species balance equation over the entire reactor volume $V$, rather than a differential one [@problem_id:4051571]. The PFR, with its continuous spatial variation, and the CSTR, with its complete spatial uniformity, represent the two limiting ideals of reactor mixing.
 
 ### The Lagrangian Viewpoint: Space as Time
 
-A powerful way to conceptualize the PFR is from a Lagrangian perspective, where we follow a single "plug" of fluid as it travels through the reactor. From the viewpoint of this fluid parcel, the changes it experiences are purely temporal. The axial position $z$ in the reactor's fixed (Eulerian) frame of reference becomes a proxy for time in the fluid parcel's moving (Lagrangian) frame. This transforms the spatial problem of what happens along the reactor length into a temporal problem of what happens to a fluid parcel over time .
+A powerful way to conceptualize the PFR is from a Lagrangian perspective, where we follow a single "plug" of fluid as it travels through the reactor. From the viewpoint of this fluid parcel, the changes it experiences are purely temporal. The axial position $z$ in the reactor's fixed (Eulerian) frame of reference becomes a proxy for time in the fluid parcel's moving (Lagrangian) frame. This transforms the spatial problem of what happens along the reactor length into a temporal problem of what happens to a fluid parcel over time [@problem_id:3894990].
 
 We can formalize this by defining the **residence time**, $\tau$, as the time a fluid parcel has spent in the reactor to reach a position $z$. For a parcel traveling a differential distance $dz'$, the time elapsed is $d\tau = dz'/u(z')$. The total residence time to reach position $z$ is therefore the integral:
 
@@ -43,7 +43,7 @@ $$
 \tau(z) = \int_0^z \frac{dz'}{u(z')}
 $$
 
-Note that this definition of residence time is distinct from the often-used **[space time](@entry_id:191632)**, which is defined as the reactor volume divided by the *inlet* volumetric flow rate, $\tau_{space} = V / \dot{V}_0$. In general, especially for [compressible flows](@entry_id:747589) where density and thus velocity change along the reactor, the [mean residence time](@entry_id:181819) and [space time](@entry_id:191632) are not equal . The [mean residence time](@entry_id:181819) correctly accounts for the local velocity changes, whereas [space time](@entry_id:191632) is a simpler metric based only on inlet conditions. Only for incompressible flow with constant density is the velocity $u$ constant, leading to $\tau(z) = z/u$ and a [mean residence time](@entry_id:181819) equal to the [space time](@entry_id:191632).
+Note that this definition of residence time is distinct from the often-used **space time**, which is defined as the reactor volume divided by the *inlet* volumetric flow rate, $\tau_{space} = V / \dot{V}_0$. In general, especially for compressible flows where density and thus velocity change along the reactor, the mean residence time and space time are not equal [@problem_id:4051550]. The mean residence time correctly accounts for the local velocity changes, whereas space time is a simpler metric based only on inlet conditions. Only for incompressible flow with constant density is the velocity $u$ constant, leading to $\tau(z) = z/u$ and a mean residence time equal to the space time.
 
 For the simplest case of an incompressible, isothermal PFR where velocity $u$ is constant, the species balance $u \frac{dC_i}{dz} = \dot{\omega}_i$ can be transformed using the chain rule. Since $d\tau = dz/u$, we have $\frac{dC_i}{d\tau} = \frac{dC_i}{dz} \frac{dz}{d\tau} = u \frac{dC_i}{dz}$. Substituting this into the species balance yields:
 
@@ -59,7 +59,7 @@ $$
 \frac{d(uC_i)}{dz} = \dot{\omega}_i
 $$
 
-Expanding this using the [product rule](@entry_id:144424), $u\frac{dC_i}{dz} + C_i\frac{du}{dz} = \dot{\omega}_i$, reveals an extra term $C_i\frac{du}{dz}$ that accounts for the dilution (or concentration) effect of fluid expansion (or contraction). The simple relation $\frac{dC_i}{d\tau} = \dot{\omega}_i$ no longer holds. Instead, a correct transformation yields a more complex form, such as $\frac{d(u C_i)}{d\tau} = \dot{\omega}_i u$ .
+Expanding this using the product rule, $u\frac{dC_i}{dz} + C_i\frac{du}{dz} = \dot{\omega}_i$, reveals an extra term $C_i\frac{du}{dz}$ that accounts for the dilution (or concentration) effect of fluid expansion (or contraction). The simple relation $\frac{dC_i}{d\tau} = \dot{\omega}_i$ no longer holds. Instead, a correct transformation yields a more complex form, such as $\frac{d(u C_i)}{d\tau} = \dot{\omega}_i u$ [@problem_id:3894990].
 
 ### Analytical Solutions for Simple Isothermal Kinetics
 
@@ -69,43 +69,43 @@ To build intuition for PFR behavior, we can solve the governing equations for si
 
 Consider a single irreversible reaction $A \to \text{Products}$ with a rate law $r = k c_A^n$, where $r$ is the rate of consumption of $A$. The species balance for reactant $A$ is $u \frac{dc_A}{dz} = -k c_A^n$. This is a separable ODE that can be integrated from the inlet condition $c_A(0) = c_{A,0}$ to find the concentration profile $c_A(z)$.
 
-It is often more convenient to work with the fractional **conversion** of reactant $A$, defined as $X_A(z) = (c_{A,0} - c_A(z)) / c_{A,0}$. For a general [reaction order](@entry_id:142981) $n \neq 1$, the integrated expression for conversion is :
+It is often more convenient to work with the fractional **conversion** of reactant $A$, defined as $X_A(z) = (c_{A,0} - c_A(z)) / c_{A,0}$. For a general reaction order $n \neq 1$, the integrated expression for conversion is [@problem_id:3894975]:
 
 $$
 X_A(z) = 1 - \left[1 + (n-1) \frac{k c_{A,0}^{n-1}}{u} z \right]^{\frac{1}{1-n}}
 $$
 
-For the special case of a [first-order reaction](@entry_id:136907) ($n=1$), the profile is $X_A(z) = 1 - \exp(-\frac{kz}{u})$.
+For the special case of a first-order reaction ($n=1$), the profile is $X_A(z) = 1 - \exp(-\frac{kz}{u})$.
 
-An important characteristic of these profiles for any positive [reaction order](@entry_id:142981) ($n>0$) is that they are **concave down**. The slope of the conversion profile, $\frac{dX_A}{dz}$, is proportional to the reaction rate. As the reaction proceeds down the reactor, the concentration of reactant $A$ decreases. For $n>0$, this decrease in concentration causes the reaction rate to slow down. A continuously decreasing slope results in a concave-down function. This means the highest rate of conversion occurs at the reactor inlet, where the reactant concentration is at its maximum.
+An important characteristic of these profiles for any positive reaction order ($n>0$) is that they are **concave down**. The slope of the conversion profile, $\frac{dX_A}{dz}$, is proportional to the reaction rate. As the reaction proceeds down the reactor, the concentration of reactant $A$ decreases. For $n>0$, this decrease in concentration causes the reaction rate to slow down. A continuously decreasing slope results in a concave-down function. This means the highest rate of conversion occurs at the reactor inlet, where the reactant concentration is at its maximum.
 
 #### Reversible First-Order Reaction
 
-Now consider a reversible isomerization reaction, $A \rightleftharpoons B$, with a net [rate of reaction](@entry_id:185114) $r_{\text{net}} = k_f c_A - k_r c_B$. The species balance for $A$ is $u \frac{dc_A}{dz} = -r_{\text{net}} = k_r c_B - k_f c_A$. By expressing the concentrations $c_A$ and $c_B$ in terms of the conversion $X_A$, we can solve for the conversion profile. For a feed of pure $A$, the solution is :
+Now consider a reversible isomerization reaction, $A \rightleftharpoons B$, with a net rate of reaction $r_{\text{net}} = k_f c_A - k_r c_B$. The species balance for $A$ is $u \frac{dc_A}{dz} = -r_{\text{net}} = k_r c_B - k_f c_A$. By expressing the concentrations $c_A$ and $c_B$ in terms of the conversion $X_A$, we can solve for the conversion profile. For a feed of pure $A$, the solution is [@problem_id:3894907]:
 
 $$
 X_A(z) = \frac{k_f}{k_f + k_r} \left[ 1 - \exp\left(-\frac{(k_f + k_r)z}{u}\right) \right]
 $$
 
-This solution reveals a crucial feature of [reversible reactions](@entry_id:202665). As the reactor length $z$ (and thus residence time) approaches infinity, the exponential term decays to zero. The conversion does not approach unity but instead approaches a finite limit:
+This solution reveals a crucial feature of reversible reactions. As the reactor length $z$ (and thus residence time) approaches infinity, the exponential term decays to zero. The conversion does not approach unity but instead approaches a finite limit:
 
 $$
 X_{A,eq} = \lim_{z \to \infty} X_A(z) = \frac{k_f}{k_f + k_r} = \frac{K_c}{1+K_c}
 $$
 
-where $K_c = k_f/k_r$ is the concentration equilibrium constant. This **equilibrium conversion**, $X_{A,eq}$, represents the [thermodynamic limit](@entry_id:143061) for the reaction under the given conditions. No matter how long the reactor is, the net reaction rate will approach zero as the composition approaches equilibrium, and the conversion cannot exceed this value.
+where $K_c = k_f/k_r$ is the concentration equilibrium constant. This **equilibrium conversion**, $X_{A,eq}$, represents the thermodynamic limit for the reaction under the given conditions. No matter how long the reactor is, the net reaction rate will approach zero as the composition approaches equilibrium, and the conversion cannot exceed this value.
 
 ### Departures from Ideality: The Axial Dispersion Model
 
-The ideal PFR assumption of "no axial mixing" is a useful simplification, but real reactors always exhibit some degree of back-mixing due to [molecular diffusion](@entry_id:154595) and turbulent eddies. The **[axial dispersion model](@entry_id:1121291)** provides a more realistic description by adding a Fickian-like dispersive flux term to the species balance. The governing steady-state equation for a species $i$ becomes:
+The ideal PFR assumption of "no axial mixing" is a useful simplification, but real reactors always exhibit some degree of back-mixing due to molecular diffusion and turbulent eddies. The **axial dispersion model** provides a more realistic description by adding a Fickian-like dispersive flux term to the species balance. The governing steady-state equation for a species $i$ becomes:
 
 $$
 u \frac{dC_i}{dz} = D_{ax} \frac{d^2C_i}{dz^2} + \nu_i r
 $$
 
-where $D_{ax}$ is the axial dispersion coefficient, and $\nu_i r$ represents the volumetric production rate of species $i$ . The equation is now a second-order ODE, requiring two boundary conditions for its solution.
+where $D_{ax}$ is the axial dispersion coefficient, and $\nu_i r$ represents the volumetric production rate of species $i$ [@problem_id:4051578]. The equation is now a second-order ODE, requiring two boundary conditions for its solution.
 
-The selection of physically consistent boundary conditions is critical. The widely accepted **Danckwerts boundary conditions** are derived by considering the flux continuity at the reactor inlet ($z=0$) and outlet ($z=L$). The setup assumes that the fluid upstream of the reactor ($z0$) is in pure [plug flow](@entry_id:263994) (no dispersion) with concentration $C_{i, \text{in}}$. At the inlet, this purely convective flux must equal the sum of the convective and dispersive fluxes just inside the reactor ($z=0^+$). This gives the inlet condition:
+The selection of physically consistent boundary conditions is critical. The widely accepted **Danckwerts boundary conditions** are derived by considering the flux continuity at the reactor inlet ($z=0$) and outlet ($z=L$). The setup assumes that the fluid upstream of the reactor ($z0$) is in pure plug flow (no dispersion) with concentration $C_{i, \text{in}}$. At the inlet, this purely convective flux must equal the sum of the convective and dispersive fluxes just inside the reactor ($z=0^+$). This gives the inlet condition:
 
 $$
 u C_{i, \text{in}} = u C_i(0) - D_{ax} \left. \frac{dC_i}{dz} \right|_{z=0}
@@ -119,16 +119,16 @@ $$
 \left. \frac{dC_i}{dz} \right|_{z=L} = 0
 $$
 
-The [axial dispersion model](@entry_id:1121291) bridges the gap between the ideal PFR ($D_{ax}=0$) and the ideal CSTR ($D_{ax} \to \infty$).
+The axial dispersion model bridges the gap between the ideal PFR ($D_{ax}=0$) and the ideal CSTR ($D_{ax} \to \infty$).
 
 ### Criteria for Approximating a Real Reactor as a PFR
 
-Given that the ideal PFR is a mathematical abstraction, under what conditions can a real tubular reactor be accurately represented by this model? The answer lies in comparing the characteristic timescales of the various transport and reaction processes occurring within the reactor . The PFR model is valid when a clear [separation of scales](@entry_id:270204) exists.
+Given that the ideal PFR is a mathematical abstraction, under what conditions can a real tubular reactor be accurately represented by this model? The answer lies in comparing the characteristic timescales of the various transport and reaction processes occurring within the reactor [@problem_id:3894934]. The PFR model is valid when a clear separation of scales exists.
 
 1.  **Negligible Axial Dispersion:** The PFR model assumes convection dominates axial transport. The ratio of convective to dispersive transport is quantified by the **axial Péclet number**, $\mathrm{Pe}_z = uL / D_{ax,e}$, where $D_{ax,e}$ is the *effective* axial dispersion coefficient. The ideal PFR approximation is justified when $\mathrm{Pe}_z \gg 1$. A common engineering rule of thumb is to require $\mathrm{Pe}_z \ge 100$.
 
 2.  **Negligible Radial Gradients:** The PFR model assumes flat profiles of concentration and temperature. This requires radial mixing to be much faster than any process that could create radial gradients.
-    *   **Wall Transfer:** Heat or [mass transfer](@entry_id:151080) at the reactor wall can create gradients. The **Biot numbers** for heat ($\mathrm{Bi}_{r,h} = hR/k_e$) and mass ($\mathrm{Bi}_{r,m} = k_m R / D_{r,e}$) compare the internal resistance to transport (within the fluid) to the external resistance (at the wall film). For radial gradients to be negligible, the internal resistance must be small, which requires $\mathrm{Bi}_{r,h} \ll 1$ and $\mathrm{Bi}_{r,m} \ll 1$.
+    *   **Wall Transfer:** Heat or mass transfer at the reactor wall can create gradients. The **Biot numbers** for heat ($\mathrm{Bi}_{r,h} = hR/k_e$) and mass ($\mathrm{Bi}_{r,m} = k_m R / D_{r,e}$) compare the internal resistance to transport (within the fluid) to the external resistance (at the wall film). For radial gradients to be negligible, the internal resistance must be small, which requires $\mathrm{Bi}_{r,h} \ll 1$ and $\mathrm{Bi}_{r,m} \ll 1$.
     *   **Reaction and Convection:** Radial mixing must also be fast compared to both the reaction timescale ($\tau_{\mathrm{rxn}}$) and the residence time ($\tau_{\mathrm{res}}$). This ensures that any non-uniformities created by the reaction or imperfect inlet distribution are quickly smoothed out. These conditions are expressed as $\tau_{\mathrm{mix},r} \ll \tau_{\mathrm{rxn}}$ and $\tau_{\mathrm{mix},r} \ll \tau_{\mathrm{res}}$.
 
 3.  **Continuum Turbulence Model:** In turbulent flows, effective dispersion coefficients are used to model the mixing effect of eddies. This approach is valid only if the largest turbulent eddies (of size $\ell_t$) are much smaller than the reactor dimensions ($L, R$), and their turnover time ($\tau_e$) is much shorter than the fluid residence time.
@@ -141,9 +141,9 @@ When modeling complex reacting flows, such as those in combustion, the PFR equat
 
 #### Atomic Element Conservation
 
-Chemical reactions rearrange atoms into new molecules, but they do not create or destroy atoms. This fundamental principle of **atomic conservation** imposes a strict set of linear algebraic constraints on the chemical source terms. For any element $e$ (e.g., C, H, O), the net rate of its production in the gas phase must be zero. This can be expressed in matrix form .
+Chemical reactions rearrange atoms into new molecules, but they do not create or destroy atoms. This fundamental principle of **atomic conservation** imposes a strict set of linear algebraic constraints on the chemical source terms. For any element $e$ (e.g., C, H, O), the net rate of its production in the gas phase must be zero. This can be expressed in matrix form [@problem_id:4051615].
 
-Let $\boldsymbol{S}(z)$ be a column vector of the species molar production rates per unit length, $\mathcal{S}_i(z)$. Let $\boldsymbol{A}$ be the [elemental composition matrix](@entry_id:1124364), where each entry $a_{ei}$ is the number of atoms of element $e$ in species $i$. The principle of atomic conservation requires that:
+Let $\boldsymbol{S}(z)$ be a column vector of the species molar production rates per unit length, $\mathcal{S}_i(z)$. Let $\boldsymbol{A}$ be the elemental composition matrix, where each entry $a_{ei}$ is the number of atoms of element $e$ in species $i$. The principle of atomic conservation requires that:
 
 $$
 \boldsymbol{A} \boldsymbol{S}(z) = \mathbf{0}
@@ -153,22 +153,22 @@ This equation must hold at every point $z$ along the reactor. This implies that 
 
 #### Thermomechanical Coupling in Compressible Flow
 
-In a compressible gas-phase PFR, the governing equations for mass, momentum, species, and energy are inextricably linked. Consider a reacting flow with wall friction .
+In a compressible gas-phase PFR, the governing equations for mass, momentum, species, and energy are inextricably linked. Consider a reacting flow with wall friction [@problem_id:4051614].
 
 *   **Momentum:** Wall friction causes a pressure drop along the reactor, described by an equation like $\frac{dP}{dz} = - \frac{2f}{D_h}\rho u^2$. Furthermore, changes in fluid density can lead to acceleration or deceleration, which also contributes to the pressure gradient.
 *   **Energy:** Exothermic or endothermic reactions cause the temperature $\bar{T}$ to change.
-*   **Mass  State:** Reactions change the species composition ($Y_i$) and potentially the average molecular weight ($\bar{W}$). The [ideal gas law](@entry_id:146757), $P = \rho R \bar{T} / \bar{W}$, connects all these state variables.
+*   **Mass  State:** Reactions change the species composition ($Y_i$) and potentially the average molecular weight ($\bar{W}$). The ideal gas law, $P = \rho R \bar{T} / \bar{W}$, connects all these state variables.
 
-This creates a complex feedback loop. For example, an exothermic reaction increases $\bar{T}$. This temperature rise, combined with the pressure drop from friction, typically causes the density $\rho$ to decrease. Since the total [mass flow rate](@entry_id:264194) $\dot{m} = \rho u A$ is constant, a decrease in $\rho$ forces the velocity $u$ to increase. This, in turn, reduces the residence time per unit length, $d\tau/dz = 1/u$. The reaction rate itself, $r$, depends on both concentration (which is proportional to $\rho$) and temperature (exponentially, via the Arrhenius term). Therefore, to accurately model the system, one must solve a coupled system of ODEs for all species mass fractions, temperature, and pressure simultaneously.
+This creates a complex feedback loop. For example, an exothermic reaction increases $\bar{T}$. This temperature rise, combined with the pressure drop from friction, typically causes the density $\rho$ to decrease. Since the total mass flow rate $\dot{m} = \rho u A$ is constant, a decrease in $\rho$ forces the velocity $u$ to increase. This, in turn, reduces the residence time per unit length, $d\tau/dz = 1/u$. The reaction rate itself, $r$, depends on both concentration (which is proportional to $\rho$) and temperature (exponentially, via the Arrhenius term). Therefore, to accurately model the system, one must solve a coupled system of ODEs for all species mass fractions, temperature, and pressure simultaneously.
 
 ### Numerical Considerations: The Challenge of Stiffness
 
 Solving the coupled ODE system for a detailed combustion PFR model presents a formidable numerical challenge known as **stiffness**. A system of ODEs, $d\boldsymbol{y}/dz = \boldsymbol{f}(\boldsymbol{y})$, is stiff when its Jacobian matrix, $\boldsymbol{J} = \partial \boldsymbol{f} / \partial \boldsymbol{y}$, has eigenvalues that are widely separated in magnitude.
 
-In [combustion chemistry](@entry_id:202796), stiffness arises naturally from the vast range of reaction timescales . The [elementary reactions](@entry_id:177550) involving highly reactive radical species (e.g., H, O, OH) can have characteristic times on the order of nanoseconds or microseconds, while the overall consumption of the primary fuel may occur on a millisecond or second timescale. These disparate physical timescales are directly reflected in the eigenvalues of the Jacobian, which can span many orders of magnitude. The ratio of the largest to [smallest eigenvalue](@entry_id:177333) magnitudes, known as the [stiffness ratio](@entry_id:142692), can easily exceed $10^6$.
+In combustion chemistry, stiffness arises naturally from the vast range of reaction timescales [@problem_id:4051552]. The elementary reactions involving highly reactive radical species (e.g., H, O, OH) can have characteristic times on the order of nanoseconds or microseconds, while the overall consumption of the primary fuel may occur on a millisecond or second timescale. These disparate physical timescales are directly reflected in the eigenvalues of the Jacobian, which can span many orders of magnitude. The ratio of the largest to smallest eigenvalue magnitudes, known as the stiffness ratio, can easily exceed $10^6$.
 
 The choice of numerical integrator is dictated by this stiffness.
 
-*   **Explicit Methods:** Methods like the popular **Runge-Kutta (RK)** schemes have bounded [stability regions](@entry_id:166035). For a stable integration, the step size $h$ must be small enough to ensure that $h\lambda$ lies within the stability region for all eigenvalues $\lambda$. This constraint is dominated by the fastest timescale (largest eigenvalue, $\lambda_{\max}$), forcing the condition $h \lesssim C / |\lambda_{\max}|$, where $C$ is a constant of order one. For a combustion problem where $|\lambda_{\max}|$ might be $10^8 \, \mathrm{s}^{-1}$, this would require a step size of about $10^{-8} \, \mathrm{s}$, even if the bulk properties are changing slowly. This makes explicit methods prohibitively expensive.
+*   **Explicit Methods:** Methods like the popular **Runge-Kutta (RK)** schemes have bounded stability regions. For a stable integration, the step size $h$ must be small enough to ensure that $h\lambda$ lies within the stability region for all eigenvalues $\lambda$. This constraint is dominated by the fastest timescale (largest eigenvalue, $\lambda_{\max}$), forcing the condition $h \lesssim C / |\lambda_{\max}|$, where $C$ is a constant of order one. For a combustion problem where $|\lambda_{\max}|$ might be $10^8 \, \mathrm{s}^{-1}$, this would require a step size of about $10^{-8} \, \mathrm{s}$, even if the bulk properties are changing slowly. This makes explicit methods prohibitively expensive.
 
-*   **Implicit Methods:** To overcome this limitation, **implicit methods** are required. Methods such as the **Backward Differentiation Formulas (BDF)** are designed for stiff systems. Low-order BDF methods are **A-stable**, meaning their stability region includes the entire left half of the complex plane. This property allows them to remain stable for any step size, irrespective of the magnitude of the eigenvalues. Consequently, the step size $h$ can be chosen based on the accuracy needed to resolve the *slowest* components of the solution, rather than the stability limit imposed by the fastest ones. This allows for step sizes orders of magnitude larger than those permissible for explicit methods. The trade-off is that each step of an [implicit method](@entry_id:138537) requires solving a (typically large) system of nonlinear algebraic equations, usually with a Newton-like method. For computational combustion, the use of specialized stiff ODE solvers is not just a matter of efficiency; it is an absolute necessity.
+*   **Implicit Methods:** To overcome this limitation, **implicit methods** are required. Methods such as the **Backward Differentiation Formulas (BDF)** are designed for stiff systems. Low-order BDF methods are **A-stable**, meaning their stability region includes the entire left half of the complex plane. This property allows them to remain stable for any step size, irrespective of the magnitude of the eigenvalues. Consequently, the step size $h$ can be chosen based on the accuracy needed to resolve the *slowest* components of the solution, rather than the stability limit imposed by the fastest ones. This allows for step sizes orders of magnitude larger than those permissible for explicit methods. The trade-off is that each step of an implicit method requires solving a (typically large) system of nonlinear algebraic equations, usually with a Newton-like method. For computational combustion, the use of specialized stiff ODE solvers is not just a matter of efficiency; it is an absolute necessity.

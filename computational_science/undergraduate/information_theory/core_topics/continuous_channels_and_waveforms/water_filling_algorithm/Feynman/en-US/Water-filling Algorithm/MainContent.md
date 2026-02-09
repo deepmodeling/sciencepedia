@@ -3,7 +3,7 @@ In our connected world, speed is everything. From streaming high-definition vide
 
 The answer lies in a beautifully intuitive and powerful method from information theory known as the water-filling algorithm. This algorithm provides a mathematically optimal solution for allocating a finite resource to maximize overall return, mirroring the simple physical process of water settling in an uneven container. This article will guide you through this fundamental concept.
 
-We will begin in the "Principles and Mechanisms" chapter by exploring the core intuition behind water-filling, its connection to Shannon's capacity formula, and how it adapts to different power levels. Next, in "Applications and Interdisciplinary Connections," we will see the algorithm in action, from its native home in Wi-Fi and 5G systems to surprising appearances in [game theory](@article_id:140236), [signal compression](@article_id:262444), and even economics. Finally, "Hands-On Practices" will offer you the chance to apply these principles to concrete problems, solidifying your understanding of this elegant and essential tool.
+We will begin in the "Principles and Mechanisms" chapter by exploring the core intuition behind water-filling, its connection to Shannon's capacity formula, and how it adapts to different power levels. Next, in "Applications and Interdisciplinary Connections," we will see the algorithm in action, from its native home in Wi-Fi and 5G systems to surprising appearances in [game theory](@keyword=game_theory|lang=en-US|style=Feynman), [signal compression](@keyword=signal_compression|lang=en-US|style=Feynman), and even economics. Finally, "Hands-On Practices" will offer you the chance to apply these principles to concrete problems, solidifying your understanding of this elegant and essential tool.
 
 ## Principles and Mechanisms
 
@@ -13,7 +13,7 @@ This is not just a problem for Wall Street; it is the fundamental challenge face
 
 ### Channels, Noise, and Capacity
 
-To understand how to allocate power, we first need to understand what makes a [communication channel](@article_id:271980) "good" or "bad." In the world of information theory, pioneered by the great Claude Shannon, the capacity of a channel—its maximum error-free data rate—is determined by the tug-of-war between the signal we send and the ever-present background noise.
+To understand how to allocate power, we first need to understand what makes a [communication channel](@keyword=communication_channel|lang=en-US|style=Feynman) "good" or "bad." In the world of information theory, pioneered by the great Claude Shannon, the capacity of a channel—its maximum error-free data rate—is determined by the tug-of-war between the signal we send and the ever-present background noise.
 
 For many systems, we can model the communication medium as a set of parallel, independent channels. Think of this as a multi-lane highway for data. Each lane, however, has a different quality. The quality of a channel $i$ is typically defined by two key parameters:
 
@@ -27,7 +27,7 @@ $$
 C_i = B \log_2\left(1 + \frac{|h_i|^2 P_i}{N_i}\right)
 $$
 
-where $P_i$ is the power we allocate to that channel and $B$ is its bandwidth (which we'll assume is the same for all channels for simplicity). The quantity $\frac{|h_i|^2 P_i}{N_i}$ is the famous **[signal-to-noise ratio](@article_id:270702) (SNR)**. It’s a measure of how loud our signal is compared to the background noise.
+where $P_i$ is the power we allocate to that channel and $B$ is its bandwidth (which we'll assume is the same for all channels for simplicity). The quantity $\frac{|h_i|^2 P_i}{N_i}$ is the famous **[signal-to-noise ratio](@keyword=signal_to_noise_ratio|lang=en-US|style=Feynman) (SNR)**. It’s a measure of how loud our signal is compared to the background noise.
 
 The crucial feature of this formula is the logarithm. It tells us that we get **diminishing returns**. The first watt of power you add to a channel gives you a significant capacity boost. The hundredth watt, however, adds much less. This is the key to our optimization problem: if we blindly spread our power evenly, we might be wasting a lot of it on a "bad" channel where it yields very little return, while a "good" channel is starved for power it could have used much more effectively.
 
@@ -69,7 +69,7 @@ If yes, great! We've found our solution. If not—say, our calculated $\mu$ is l
 
 ### The Dynamics of Allocation: From Scarcity to Abundance
 
-The water-filling analogy also gives us powerful insights into how the [power allocation](@article_id:275068) strategy changes as our resources change.
+The water-filling analogy also gives us powerful insights into how the [power allocation](@keyword=power_allocation|lang=en-US|style=Feynman) strategy changes as our resources change.
 
 -   **When Power is Scarce:** If your total power budget $P_{\text{total}}$ is very small, you only have a little "water." This water will pool only in the very deepest part of the container. This means only the single best channel (the one with the absolute lowest effective noise) will receive any power. As you gradually increase the total power, the water level $\mu$ rises. At some point, it will reach the level of the second-best channel's floor and begin to fill it as well. And so on. The order in which channels are "activated" is determined simply by sorting them from best to worst.
 

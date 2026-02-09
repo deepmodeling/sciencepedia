@@ -30,15 +30,15 @@ At each step, the LZ77 encoder searches for the longest prefix of the lookahead 
 
 After emitting this triplet, the encoder advances its position in the input stream by $L+1$ characters, effectively sliding the window forward.
 
-A crucial aspect of the LZ77 mechanism is how it handles the absence of a match. If the very first character at the start of the lookahead buffer does not appear anywhere in the search buffer, no match of length $L \ge 1$ is possible. In this scenario, the algorithm must encode the character as a literal. This is achieved by outputting a special triplet where the offset and length are zero: $(0, 0, C)$, where $C$ is that unmatched character. This specific output format is guaranteed whenever a character is encountered for the first time in the context of the current search buffer .
+A crucial aspect of the LZ77 mechanism is how it handles the absence of a match. If the very first character at the start of the lookahead buffer does not appear anywhere in the search buffer, no match of length $L \ge 1$ is possible. In this scenario, the algorithm must encode the character as a literal. This is achieved by outputting a special triplet where the offset and length are zero: $(0, 0, C)$, where $C$ is that unmatched character. This specific output format is guaranteed whenever a character is encountered for the first time in the context of the current search buffer [@problem_id:1617484].
 
-Perhaps the most ingenious and non-obvious feature of LZ77 is its ability to perform **[self-referencing](@entry_id:170448) copies**. This occurs when the length of the match ($L$) is greater than the offset ($O$). Consider encoding the string `BLAHBLAHBLAH`. After encoding the first `BLAH`, the search buffer contains `BLAH` and the lookahead buffer begins with `BLAHBLAH`. The encoder finds a match for `BLAH` at an offset of 4. However, the algorithm can specify a length greater than 4. For instance, an output of $(4, 8, \$)$ (where `$` denotes the end of the string) instructs the decoder to: "Go back 4 characters and copy 8 characters to the output." The decoder starts copying `B`, then `L`, `A`, `H`. By the time it needs the fifth character, it refers back to the position 4 characters before its *current writing position*. The character at that location is the `B` it just wrote. This process continues, with the decoder effectively reading from the very output it is generating, allowing it to compactly represent long, simple repetitions .
+Perhaps the most ingenious and non-obvious feature of LZ77 is its ability to perform **self-referencing copies**. This occurs when the length of the match ($L$) is greater than the offset ($O$). Consider encoding the string `BLAHBLAHBLAH`. After encoding the first `BLAH`, the search buffer contains `BLAH` and the lookahead buffer begins with `BLAHBLAH`. The encoder finds a match for `BLAH` at an offset of 4. However, the algorithm can specify a length greater than 4. For instance, an output of $(4, 8, \$)$ (where `$` denotes the end of the string) instructs the decoder to: "Go back 4 characters and copy 8 characters to the output." The decoder starts copying `B`, then `L`, `A`, `H`. By the time it needs the fifth character, it refers back to the position 4 characters before its *current writing position*. The character at that location is the `B` it just wrote. This process continues, with the decoder effectively reading from the very output it is generating, allowing it to compactly represent long, simple repetitions [@problem_id:1617517].
 
-From a practical standpoint, the memory requirement of an LZ77 decoder is determined by the size of its search buffer, which is a fixed-size window of previously decoded data. This makes its memory usage constant and predictable, unlike its successors .
+From a practical standpoint, the memory requirement of an LZ77 decoder is determined by the size of its search buffer, which is a fixed-size window of previously decoded data. This makes its memory usage constant and predictable, unlike its successors [@problem_id:1617524].
 
 ### The LZ78 Family: Building an Explicit Dictionary
 
-In contrast to LZ77's implicit, sliding-window dictionary, the Lempel-Ziv 78 (LZ78) algorithm and its descendants are based on building an **explicit, indexed dictionary** of phrases encountered during compression. This marks a fundamental architectural divergence from the LZ77 model .
+In contrast to LZ77's implicit, sliding-window dictionary, the Lempel-Ziv 78 (LZ78) algorithm and its descendants are based on building an **explicit, indexed dictionary** of phrases encountered during compression. This marks a fundamental architectural divergence from the LZ77 model [@problem_id:1617536].
 
 #### The LZ78 Algorithm
 
@@ -59,7 +59,7 @@ For example, to reconstruct a string from the LZ78-encoded sequence `(0, 'S'), (
 2.  Receive `(0, 'T')`: Output `'' + 'T' = 'T'`. Add `D[2] = 'T'`.
 3.  Receive `(1, 'A')`: Output `D[1] + 'A' = 'SA'`. Add `D[3] = 'SA'`.
 4.  Receive `(2, 'R')`: Output `D[2] + 'R' = 'TR'`. Add `D[4] = 'TR'`.
-5.  And so on. The fully decoded string would be `STSATRTRSSTTASAR` .
+5.  And so on. The fully decoded string would be `STSATRTRSSTTASAR` [@problem_id:1617525].
 
 #### LZW: An Optimized Successor
 
@@ -69,7 +69,7 @@ The Lempel-Ziv-Welch (LZW) algorithm is a widely used modification of LZ78 that 
 2.  **Code-Only Output**: LZW outputs only dictionary indices (codes). The "new character" component of the LZ78 pair is eliminated from the output, making the compressed stream more compact.
 3.  **Modified Update Rule**: The logic for adding new entries to the dictionary is subtly different. LZW reads the longest string `w` from the input that is currently in the dictionary. Let the next character be `C`. If `w+C` is also in the dictionary, it extends `w` to `w+C` and continues. If `w+C` is *not* in the dictionary, the algorithm outputs the code for `w`, adds `w+C` to the dictionary, and then begins the next search starting with `C`.
 
-The difference in dictionary-building logic between LZ78 and LZW is critical. Let's trace the encoding of the string `BABA` over the alphabet $\Sigma=\{A, B\}$ for both algorithms to highlight this .
+The difference in dictionary-building logic between LZ78 and LZW is critical. Let's trace the encoding of the string `BABA` over the alphabet $\Sigma=\{A, B\}$ for both algorithms to highlight this [@problem_id:1617530].
 
 *   **LZ78 (starts with empty dictionary):**
     1.  Parse `B`: Longest known prefix is empty (index 0). Next char is `B`. Output `(0, 'B')`. Add `D[1] = 'B'`.
@@ -91,30 +91,30 @@ This example clearly shows how LZW's "greedy" matching and delayed update rule l
 
 A common point of confusion for students of LZW is how the decoder can possibly stay synchronized with the encoder's dictionary. The encoder adds the entry `w+C` to its dictionary, but it only transmits the code for `w`. How can the decoder know the character `C` to create the same dictionary entry?
 
-The solution lies in the lock-step nature of the algorithm. The character `C` that the decoder needs is precisely the **first character of the string corresponding to the *next* code** it receives. The decoder is always one dictionary entry behind the encoder. When it decodes a string `S_i`, it can then look at the first character of `S_i` to complete the dictionary entry from the *previous* step, which was `S_{i-1}` + (first character of `S_i`) .
+The solution lies in the lock-step nature of the algorithm. The character `C` that the decoder needs is precisely the **first character of the string corresponding to the *next* code** it receives. The decoder is always one dictionary entry behind the encoder. When it decodes a string `S_i`, it can then look at the first character of `S_i` to complete the dictionary entry from the *previous* step, which was `S_{i-1}` + (first character of `S_i`) [@problem_id:1617489].
 
 This elegant system has one special edge case. What happens if the encoder encounters a string of the form `KwKwK`, where `K` is a character and `w` is a string? The encoder might process `Kw`, output its code, and add `KwC` (where `C` is the first character of `w`) to the dictionary. If the very next string it needs to encode is `KwC`, it will output the code for `KwC`—a code it *just* created.
 
-When the decoder receives this new code, it will not be in its dictionary. This is the only situation in which this can happen. The rule to handle this case is simple: the decoder knows the new string must be formed by concatenating the previously decoded string (`P`) with its own first character. That is, the missing entry is `P + firstChar(P)`. This allows the decoder to correctly reconstruct strings like `XYXYXYX` from a code sequence like `0, 1, 2, 4` (where `D(0)='X', D(1)='Y'`), even when code `4` is received before it has been formally defined in the decoder's dictionary .
+When the decoder receives this new code, it will not be in its dictionary. This is the only situation in which this can happen. The rule to handle this case is simple: the decoder knows the new string must be formed by concatenating the previously decoded string (`P`) with its own first character. That is, the missing entry is `P + firstChar(P)`. This allows the decoder to correctly reconstruct strings like `XYXYXYX` from a code sequence like `0, 1, 2, 4` (where `D(0)='X', D(1)='Y'`), even when code `4` is received before it has been formally defined in the decoder's dictionary [@problem_id:1617552].
 
 ### Practical Considerations and Theoretical Limits
 
 #### Memory and Error Propagation
 
 The different dictionary strategies of LZ77, LZ78, and LZW have direct consequences for implementation.
-*   **Memory**: The LZ77 decoder requires a fixed-size buffer to act as its sliding window. In contrast, LZ78 and LZW decoders must store an explicit dictionary that grows during decompression, which can potentially consume more memory. While often capped at a certain size (e.g., 4096 entries), their memory profile is dynamic, whereas LZ77's is static .
-*   **Error Propagation**: The stateful nature of the LZ78 and LZW decoders makes them vulnerable to transmission errors. If a single code is corrupted, the decoder's dictionary will diverge from the encoder's. Since future decoded strings depend on the integrity of the dictionary, this single error can cascade, corrupting all subsequent output. For example, if the received code sequence `[1, 2, 2, 3, 6, 1]` is corrupted to `[1, 2, 3, 3, 6, 1]`, the third dictionary entry created by the decoder will be wrong, and this error will propagate through the rest of the decompression process, leading to a significantly different output string . LZ77 is generally more robust; the effect of an error is typically limited to the scope of the sliding window.
+*   **Memory**: The LZ77 decoder requires a fixed-size buffer to act as its sliding window. In contrast, LZ78 and LZW decoders must store an explicit dictionary that grows during decompression, which can potentially consume more memory. While often capped at a certain size (e.g., 4096 entries), their memory profile is dynamic, whereas LZ77's is static [@problem_id:1617524].
+*   **Error Propagation**: The stateful nature of the LZ78 and LZW decoders makes them vulnerable to transmission errors. If a single code is corrupted, the decoder's dictionary will diverge from the encoder's. Since future decoded strings depend on the integrity of the dictionary, this single error can cascade, corrupting all subsequent output. For example, if the received code sequence `[1, 2, 2, 3, 6, 1]` is corrupted to `[1, 2, 3, 3, 6, 1]`, the third dictionary entry created by the decoder will be wrong, and this error will propagate through the rest of the decompression process, leading to a significantly different output string [@problem_id:1617541]. LZ77 is generally more robust; the effect of an error is typically limited to the scope of the sliding window.
 
 #### Connection to Entropy
 
-Beyond its practical utility, the LZ78 algorithm possesses a profound connection to the theoretical limits of compression. Ziv and Lempel proved that for any stationary ergodic source with an [entropy rate](@entry_id:263355) of $H$ bits per symbol, the compression ratio achieved by LZ78 asymptotically approaches the entropy limit. This is formalized in a remarkable theorem relating the number of phrases, $c(n)$, generated by parsing a string of length $n$:
+Beyond its practical utility, the LZ78 algorithm possesses a profound connection to the theoretical limits of compression. Ziv and Lempel proved that for any stationary ergodic source with an entropy rate of $H$ bits per symbol, the compression ratio achieved by LZ78 asymptotically approaches the entropy limit. This is formalized in a remarkable theorem relating the number of phrases, $c(n)$, generated by parsing a string of length $n$:
 
 $$ H = \lim_{n \to \infty} \frac{c(n) \log_2 n}{n} $$
 
 This means that the number of distinct phrases discovered by the algorithm is directly related to the source's inherent complexity or randomness. A highly redundant, low-entropy source will be parsed into a small number of long phrases, leading to a low value for $c(n)$. Conversely, a random, high-entropy source will be parsed into many short phrases, yielding a large $c(n)$.
 
-This relationship allows us to use the LZ78 algorithm not just for compression, but as a universal tool to **estimate the [entropy rate](@entry_id:263355) of a source** without any prior knowledge of its statistical properties. For instance, if [parsing](@entry_id:274066) a genetic sequence of length $n = 2.50 \times 10^7$ yields $c(n) = 2.85 \times 10^5$ phrases, we can estimate the [entropy rate](@entry_id:263355) as:
+This relationship allows us to use the LZ78 algorithm not just for compression, but as a universal tool to **estimate the entropy rate of a source** without any prior knowledge of its statistical properties. For instance, if parsing a genetic sequence of length $n = 2.50 \times 10^7$ yields $c(n) = 2.85 \times 10^5$ phrases, we can estimate the entropy rate as:
 
 $$ \widehat{H} = \frac{c(n) \log_2 n}{n} = \frac{(2.85 \times 10^5) \log_2(2.50 \times 10^7)}{2.50 \times 10^7} \approx 0.280 \text{ bits/symbol} $$
 
-This demonstrates that dictionary-based compression is not merely a practical heuristic but is deeply rooted in the fundamental principles of information theory .
+This demonstrates that dictionary-based compression is not merely a practical heuristic but is deeply rooted in the fundamental principles of information theory [@problem_id:1617505].

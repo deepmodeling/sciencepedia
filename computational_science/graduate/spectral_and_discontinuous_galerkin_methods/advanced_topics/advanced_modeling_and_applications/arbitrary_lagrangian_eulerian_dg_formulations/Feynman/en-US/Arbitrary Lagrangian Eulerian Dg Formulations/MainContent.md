@@ -17,17 +17,17 @@ Second, there is the **Lagrangian** perspective. Now, imagine you are in a small
 
 Neither viewpoint is perfect. One gives you a nice grid but moving boundaries; the other gives you fixed boundaries but a messy grid. So, why not have the best of both worlds? This is the core idea of ALE. The "Arbitrary" in ALE is the key: we declare that the motion of our computational grid is *independent* of the fluid's motion. We, the scientists, get to choose how the grid moves. We can command the grid points on a boundary to stick to that boundary (like a Lagrangian observer) while letting the grid points in the interior relax and move smoothly to avoid getting tangled (like an Eulerian grid).
 
-This freedom is incredibly powerful. Consider a simple wave moving with speed $a$. In an Eulerian frame, the grid velocity $\mathbf{w}$ is zero, and we see the wave move at speed $a$. In a Lagrangian frame, we move with the fluid, so $\mathbf{w} = a$, and the wave appears to stand still relative to us—the relative speed is $a - \mathbf{w} = 0$. In an ALE frame, we can choose any $\mathbf{w}$ we like. The crucial physical quantity is always the **relative velocity**, $a - \mathbf{w}$, as this is the speed at which information (the wave) propagates *relative to our moving observation points* . This simple concept is the bedrock of all ALE formulations.
+This freedom is incredibly powerful. Consider a simple wave moving with speed $a$. In an Eulerian frame, the grid velocity $\mathbf{w}$ is zero, and we see the wave move at speed $a$. In a Lagrangian frame, we move with the fluid, so $\mathbf{w} = a$, and the wave appears to stand still relative to us—the relative speed is $a - \mathbf{w} = 0$. In an ALE frame, we can choose any $\mathbf{w}$ we like. The crucial physical quantity is always the **relative velocity**, $a - \mathbf{w}$, as this is the speed at which information (the wave) propagates *relative to our moving observation points* [@problem_id:3364679]. This simple concept is the bedrock of all ALE formulations.
 
 ### The Language of a Moving World
 
-To speak about physics in this flexible framework, we need a precise language. The trick is to imagine two worlds. First, there's the messy, time-dependent **physical domain**, $\Omega(t)$, where the real action happens. Let's call the coordinates here $\mathbf{x}$. Second, there's a pristine, simple, and unchanging **reference domain**, $\Omega_0$. This is our ideal world, perhaps a [perfect square](@entry_id:635622) or cube, where the coordinates, let's call them $\mathbf{X}$, are fixed for all time.
+To speak about physics in this flexible framework, we need a precise language. The trick is to imagine two worlds. First, there's the messy, time-dependent **physical domain**, $\Omega(t)$, where the real action happens. Let's call the coordinates here $\mathbf{x}$. Second, there's a pristine, simple, and unchanging **reference domain**, $\Omega_0$. This is our ideal world, perhaps a [perfect square](@keyword=perfect_square|lang=en-US|style=Feynman) or cube, where the coordinates, let's call them $\mathbf{X}$, are fixed for all time.
 
 The bridge between these two worlds is a mathematical mapping, $\mathbf{x} = \chi(\mathbf{X}, t)$. This function tells us where the point that was at $\mathbf{X}$ in our ideal world has moved to in the physical world at time $t$. This mapping embodies the motion of our computational grid.
 
-From this simple idea, a few key characters emerge :
+From this simple idea, a few key characters emerge [@problem_id:3364683]:
 
-*   The **Deformation Gradient**, $F = \nabla_X \mathbf{x}$. This is a matrix that tells us how the mapping stretches and rotates space. If you imagine a tiny square in the reference world, the [deformation gradient](@entry_id:163749) transforms it into a parallelogram in the physical world.
+*   The **Deformation Gradient**, $F = \nabla_X \mathbf{x}$. This is a matrix that tells us how the mapping stretches and rotates space. If you imagine a tiny square in the reference world, the [deformation gradient](@keyword=deformation_gradient|lang=en-US|style=Feynman) transforms it into a parallelogram in the physical world.
 
 *   The **Jacobian**, $J = \det(F)$. This is a number that tells us how the *volume* of that tiny square has changed. If $J > 1$, the space has expanded; if $J  1$, it has compressed. For the mapping to make physical sense (no turning space inside-out), we must always have $J > 0$.
 
@@ -41,13 +41,13 @@ So, how do our familiar conservation laws, like $\partial_t U + \nabla \cdot \ma
 
 The key is to consider the flux not in absolute terms, but relative to the moving grid. Think about measuring rainfall. If you use a stationary bucket, you just collect the rain that falls into it. But if your bucket is moving, the amount of rain you collect depends not only on the rain's velocity but also on your bucket's velocity.
 
-The same principle applies here. When we write down a conservation law on a control volume that is itself moving with velocity $\mathbf{w}$, the flux of the quantity $U$ across the boundary is not just the physical flux $\mathbf{F}(U)$. We also have to account for the "flux" created by the boundary's motion itself, which is $-U\mathbf{w}^T$. The total effective flux, the one that matters from the grid's perspective, is the **ALE relative flux** :
+The same principle applies here. When we write down a conservation law on a control volume that is itself moving with velocity $\mathbf{w}$, the flux of the quantity $U$ across the boundary is not just the physical flux $\mathbf{F}(U)$. We also have to account for the "flux" created by the boundary's motion itself, which is $-U\mathbf{w}^T$. The total effective flux, the one that matters from the grid's perspective, is the **ALE relative flux** [@problem_id:3364726]:
 
 $$
 \mathbf{F}_{\text{ALE}} = \mathbf{F}(U) - U\mathbf{w}^T
 $$
 
-This is a beautiful and central result. The laws of physics in the ALE frame look almost the same as in the Eulerian frame; you just have to replace the physical flux with this new, relative flux. For example, for the famous Euler equations governing gas dynamics, where $U$ is the vector of density, momentum, and energy, the new flux is simply the original fluid dynamics flux minus the contribution from the grid's motion . The mathematical structure is preserved.
+This is a beautiful and central result. The laws of physics in the ALE frame look almost the same as in the Eulerian frame; you just have to replace the physical flux with this new, relative flux. For example, for the famous Euler equations governing gas dynamics, where $U$ is the vector of density, momentum, and energy, the new flux is simply the original fluid dynamics flux minus the contribution from the grid's motion [@problem_id:3364690]. The mathematical structure is preserved.
 
 ### A Deeper Invariance: Constant Physics, Shifting Speeds
 
@@ -55,7 +55,7 @@ This leads us to a truly profound insight, one that Feynman would have appreciat
 
 In fluid dynamics, information propagates via waves (like sound waves). The nature of these waves—their shape and properties—is determined by the physics of the fluid itself. In a numerical context, these wave structures are described by the eigenvectors of the flux Jacobian matrix, while their speeds are the corresponding eigenvalues.
 
-When we move from a fixed Eulerian frame to a moving ALE frame, we are essentially asking: how do these waves look from our moving viewpoint? The remarkable result is that the eigenvectors of the ALE flux Jacobian are *identical* to the eigenvectors of the Eulerian flux Jacobian. The fundamental wave structures, which represent the core physics, are completely unchanged. What *does* change are the eigenvalues. The new eigenvalues are simply the old ones shifted by the grid speed :
+When we move from a fixed Eulerian frame to a moving ALE frame, we are essentially asking: how do these waves look from our moving viewpoint? The remarkable result is that the eigenvectors of the ALE flux Jacobian are *identical* to the eigenvectors of the Eulerian flux Jacobian. The fundamental wave structures, which represent the core physics, are completely unchanged. What *does* change are the eigenvalues. The new eigenvalues are simply the old ones shifted by the grid speed [@problem_id:3364689]:
 
 $$
 \lambda_{\text{ALE}} = \lambda_{\text{Eulerian}} - w
@@ -67,16 +67,16 @@ This is the mathematical echo of the simple relative velocity idea we started wi
 
 The incredible flexibility of the ALE method comes with one non-negotiable condition, a golden rule known as the **Geometric Conservation Law (GCL)**. The GCL is the mathematical embodiment of common sense. It says: if you take an empty volume of space and do nothing but move and deform it, it should remain empty. A numerical scheme that creates "stuff" out of thin air just by moving the grid is fundamentally broken.
 
-At its heart, the GCL is an identity of pure geometry, connecting the change in volume to the motion of the boundaries. It states that the rate of change of the Jacobian (volume change) must equal the divergence of the grid velocity (how fast the boundaries are spreading apart) :
+At its heart, the GCL is an identity of pure geometry, connecting the change in volume to the motion of the boundaries. It states that the rate of change of the Jacobian (volume change) must equal the divergence of the grid velocity (how fast the boundaries are spreading apart) [@problem_id:3364683]:
 
 $$
 \frac{\partial J}{\partial t} = J (\nabla_{\mathbf{x}} \cdot \mathbf{w})
 $$
 
-While this is an exact identity for a smooth mapping, it poses a strict requirement on our numerical method. We perform calculations using discrete operators—for instance, approximating spatial derivatives with a [differentiation matrix](@entry_id:149870). The GCL demands that our discrete approximation for the time derivative of the Jacobian must be perfectly consistent with our discrete approximation for the spatial derivative of the grid velocity .
+While this is an exact identity for a smooth mapping, it poses a strict requirement on our numerical method. We perform calculations using discrete operators—for instance, approximating spatial derivatives with a [differentiation matrix](@keyword=differentiation_matrix|lang=en-US|style=Feynman). The GCL demands that our discrete approximation for the time derivative of the Jacobian must be perfectly consistent with our discrete approximation for the spatial derivative of the grid velocity [@problem_id:3364678].
 
 If this consistency is broken—for example, by using an exact analytical formula for one part and a discrete matrix operator for the other—the numerical scheme will violate the GCL. The consequence is immediate and disastrous: the scheme will fail to preserve even a constant state. It will generate spurious sources or sinks, polluting the solution with errors that arise purely from the grid motion.
 
-This principle of consistency is so fundamental that it extends to every part of the algorithm. To build a robust ALE scheme, the [numerical fluxes](@entry_id:752791) at the interfaces between elements must be consistent with the relative ALE flux, and they must be defined uniquely at each face to ensure conservation . Furthermore, the time-integration method itself must respect the GCL. The [numerical quadrature](@entry_id:136578) used to advance from one time step to the next must compute the total change in the mass matrix (which depends on $J$) in a way that is perfectly consistent with the integrated geometric source terms over that time step .
+This principle of consistency is so fundamental that it extends to every part of the algorithm. To build a robust ALE scheme, the [numerical fluxes](@keyword=numerical_fluxes|lang=en-US|style=Feynman) at the interfaces between elements must be consistent with the relative ALE flux, and they must be defined uniquely at each face to ensure conservation [@problem_id:3364688]. Furthermore, the time-integration method itself must respect the GCL. The [numerical quadrature](@keyword=numerical_quadrature|lang=en-US|style=Feynman) used to advance from one time step to the next must compute the total change in the mass matrix (which depends on $J$) in a way that is perfectly consistent with the integrated geometric source terms over that time step [@problem_id:3364682].
 
-The Arbitrary Lagrangian-Eulerian method is thus a story of powerful freedom balanced by profound responsibility. It gives us the flexibility to tackle problems on domains that twist, stretch, and fly, but in return, it demands that we build our numerical world with such mathematical consistency that the [geometry of motion](@entry_id:174687) itself never creates an illusion of physics. When we succeed, we have a tool that reveals the unchanging beauty of physical laws, no matter how unsteady our point of view.
+The Arbitrary Lagrangian-Eulerian method is thus a story of powerful freedom balanced by profound responsibility. It gives us the flexibility to tackle problems on domains that twist, stretch, and fly, but in return, it demands that we build our numerical world with such mathematical consistency that the [geometry of motion](@keyword=geometry_of_motion|lang=en-US|style=Feynman) itself never creates an illusion of physics. When we succeed, we have a tool that reveals the unchanging beauty of physical laws, no matter how unsteady our point of view.

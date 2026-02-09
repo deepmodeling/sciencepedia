@@ -1,7 +1,7 @@
 ## Introduction
-The universe is replete with processes that unfold with an element of chance, from the jittery dance of a pollen grain on water to the fluctuating prices of a stock market. How can we make sense of this randomness and predict the future evolution of such systems? This challenge lies at the heart of the theory of [stochastic processes](@entry_id:141566). The key to unlocking this predictive power is not to track every possible chaotic path, but to find a unifying principle that governs the flow of probability itself. This principle is the Chapman-Kolmogorov equation, a deceptively simple yet profoundly powerful statement about memoryless processes.
+The universe is replete with processes that unfold with an element of chance, from the jittery dance of a pollen grain on water to the fluctuating prices of a stock market. How can we make sense of this randomness and predict the future evolution of such systems? This challenge lies at the heart of the theory of [stochastic processes](@keyword=stochastic_processes|lang=en-US|style=Feynman). The key to unlocking this predictive power is not to track every possible chaotic path, but to find a unifying principle that governs the flow of probability itself. This principle is the Chapman-Kolmogorov equation, a deceptively simple yet profoundly powerful statement about memoryless processes.
 
-This article delves into the theoretical underpinnings and practical utility of the Chapman-Kolmogorov equation. In the first chapter, **Principles and Mechanisms**, we will dissect the equation's core logic, born from the marriage of [path decomposition](@entry_id:272857) and the Markov property. We will see how it provides a universal framework for discrete chains and continuous diffusions alike. Following this, **Applications and Interdisciplinary Connections** will showcase the equation's vast impact, revealing its role as a blueprint for simulations in physics and finance, a tool for inference in data science and machine learning, and a gold standard for [model validation](@entry_id:141140) in computational biology. Finally, **Hands-On Practices** will provide you with the opportunity to apply these concepts directly, cementing your understanding through targeted problems that bridge theory and computation. Let us begin by exploring the elegant principle that allows us to find order in chaos.
+This article delves into the theoretical underpinnings and practical utility of the Chapman-Kolmogorov equation. In the first chapter, **Principles and Mechanisms**, we will dissect the equation's core logic, born from the marriage of [path decomposition](@keyword=path_decomposition|lang=en-US|style=Feynman) and the Markov property. We will see how it provides a universal framework for discrete chains and continuous diffusions alike. Following this, **Applications and Interdisciplinary Connections** will showcase the equation's vast impact, revealing its role as a blueprint for simulations in physics and finance, a tool for inference in data science and machine learning, and a gold standard for [model validation](@keyword=model_validation|lang=en-US|style=Feynman) in computational biology. Finally, **Hands-On Practices** will provide you with the opportunity to apply these concepts directly, cementing your understanding through targeted problems that bridge theory and computation. Let us begin by exploring the elegant principle that allows us to find order in chaos.
 
 ## Principles and Mechanisms
 
@@ -13,7 +13,7 @@ And yet, there is a principle of stunning simplicity and power that cuts through
 
 Let’s give our dust speck a name, $X$, and track its position over time, $X_t$. The core insight of Andrey Kolmogorov and Sydney Chapman was to realize that any journey can be broken down into smaller legs. To get from a starting point $x_0$ at time $t_0$ to a final destination $z$ at time $t_2$, the speck *must* pass through some intermediate position $y$ at an intermediate time $t_1$. This is not an assumption; it is a certainty.
 
-The magic happens when we combine this simple observation with one crucial physical assumption: the **Markov property**. This property, also known as "[memorylessness](@entry_id:268550)," asserts that the future evolution of the process depends *only* on its current state, not on the intricate history of how it got there. Once our dust speck is at position $y$ at time $t_1$, the probabilities for its subsequent motion are the same regardless of whether it arrived there after a frantic zig-zag or a lazy drift. It has no memory of its past.  
+The magic happens when we combine this simple observation with one crucial physical assumption: the **Markov property**. This property, also known as "[memorylessness](@keyword=memorylessness|lang=en-US|style=Feynman)," asserts that the future evolution of the process depends *only* on its current state, not on the intricate history of how it got there. Once our dust speck is at position $y$ at time $t_1$, the probabilities for its subsequent motion are the same regardless of whether it arrived there after a frantic zig-zag or a lazy drift. It has no memory of its past. [@problem_id:2976946] [@problem_id:3063148]
 
 This "amnesia" allows us to do something remarkable. We can calculate the total probability of the journey from $x_0$ to $z$ by summing up the probabilities of all possible routes through all possible intermediate points $y$. The probability of one specific route $x_0 \to y \to z$ is the probability of the first leg, $P(\text{go from } x_0 \text{ to } y)$, multiplied by the probability of the second leg, $P(\text{go from } y \text{ to } z)$. The Markov property guarantees that this second probability doesn't depend on $x_0$.
 
@@ -22,35 +22,35 @@ If we let $p(s, t, x, z)$ be the **transition density**—the probability densit
 $$
 p(s, t, x, z) = \int_{\text{all possible states } y} p(u, t, y, z) \, p(s, u, x, y) \, dy
 $$
-
+[@problem_id:3082909]
 
 This is the Chapman-Kolmogorov equation in its full glory. It is nothing more than the law of total probability, weaponized by the Markov assumption. It is an expression of profound simplicity, stating that the probability distribution for a long time interval is a "composition" of the distributions for shorter, intervening intervals. If the process is **time-homogeneous**, meaning the rules of the random walk don't change over time, the densities depend only on the time duration, and the equation looks even cleaner:
 
 $$
 p(t+s, x, z) = \int p(s, y, z) \, p(t, x, y) \, dy
 $$
+[@problem_id:3082899]
 
-
-This equation is the fundamental consistency condition that any family of [transition probabilities](@entry_id:158294) for a Markov process must obey. 
+This equation is the fundamental consistency condition that any family of [transition probabilities](@keyword=transition_probabilities|lang=en-US|style=Feynman) for a Markov process must obey. [@problem_id:2998429]
 
 ### An Engine for Prediction
 
-The Chapman-Kolmogorov equation is not just a pretty formula; it is a powerful engine for predicting the future. If we know the [transition probabilities](@entry_id:158294) over a very short time interval—the "elementary steps" of the process—we can chain them together using the equation to construct the probabilities over any longer duration.
+The Chapman-Kolmogorov equation is not just a pretty formula; it is a powerful engine for predicting the future. If we know the [transition probabilities](@keyword=transition_probabilities|lang=en-US|style=Feynman) over a very short time interval—the "elementary steps" of the process—we can chain them together using the equation to construct the probabilities over any longer duration.
 
-In the simplest case of a Markov chain on a finite number of states (say, $\{1, 2, 3\}$), the [transition probabilities](@entry_id:158294) for one step can be written in a matrix, $P$. The probability of going from state $i$ to state $j$ in two steps is then found by summing over all possible intermediate states $k$: $P^{(2)}(i, j) = \sum_k P(i, k) P(k, j)$. But this is just the definition of [matrix multiplication](@entry_id:156035)! The two-step transition matrix is simply $P^2$. By induction, the $n$-step transition matrix is $P^n$.  This is the Chapman-Kolmogorov equation in a discrete world. The long-term behavior of the chain is captured by the powers of its transition matrix, and can be elegantly understood through its [eigenvalues and eigenvectors](@entry_id:138808), which represent the stable patterns or "modes" of the process's evolution.
+In the simplest case of a Markov chain on a finite number of states (say, $\{1, 2, 3\}$), the [transition probabilities](@keyword=transition_probabilities|lang=en-US|style=Feynman) for one step can be written in a matrix, $P$. The probability of going from state $i$ to state $j$ in two steps is then found by summing over all possible intermediate states $k$: $P^{(2)}(i, j) = \sum_k P(i, k) P(k, j)$. But this is just the definition of [matrix multiplication](@keyword=matrix_multiplication|lang=en-US|style=Feynman)! The two-step transition matrix is simply $P^2$. By induction, the $n$-step transition matrix is $P^n$. [@problem_id:3293463] This is the Chapman-Kolmogorov equation in a discrete world. The long-term behavior of the chain is captured by the powers of its transition matrix, and can be elegantly understood through its [eigenvalues and eigenvectors](@keyword=eigenvalues_and_eigenvectors|lang=en-US|style=Feynman), which represent the stable patterns or "modes" of the process's evolution.
 
 For continuous processes, the idea is the same, but the language becomes that of operators. We can define an operator $T_t$ that takes a probability distribution at time $0$ and evolves it to the distribution at time $t$. The Chapman-Kolmogorov equation is then equivalent to the statement that these operators form a **semigroup**: applying the operator for a duration $t$ and then for a duration $s$ is the same as applying the operator for the total duration $t+s$.
 
 $$
 T_{t+s} = T_t T_s
 $$
-
+[@problem_id:3082845]
 
 This operator viewpoint is incredibly powerful. It unifies the description of all Markov processes, from the discrete hopping of a molecule on a lattice to the continuous diffusion of heat in a metal bar, under a single algebraic framework.
 
 ### A Walk Through a Changing Landscape
 
-Let's see this engine in action with a concrete example. Consider a particle whose position $X_t$ is described by a simple linear equation, but where the "rules of the road" change over time. From time $0$ to $\tau$, it is pulled toward the origin with a strength $a_1$, and from time $\tau$ to $T$, the pull strength changes to $a_2$. In both periods, it is also being randomly kicked around by noise of strength $\sigma$. This is a time-inhomogeneous process. 
+Let's see this engine in action with a concrete example. Consider a particle whose position $X_t$ is described by a simple linear equation, but where the "rules of the road" change over time. From time $0$ to $\tau$, it is pulled toward the origin with a strength $a_1$, and from time $\tau$ to $T$, the pull strength changes to $a_2$. In both periods, it is also being randomly kicked around by noise of strength $\sigma$. This is a time-inhomogeneous process. [@problem_id:3293481]
 
 How can we find the probability distribution of the particle at the final time $T$, given it started at $x_0$? The changing rules make this tricky. But the Chapman-Kolmogorov equation gives us a clear strategy: break the problem at time $\tau$, where the rules change.
 
@@ -58,15 +58,15 @@ How can we find the probability distribution of the particle at the final time $
 
 2.  **Second Leg ($\tau \to T$):** Now consider the journey from time $\tau$ to $T$. The process is again an Ornstein-Uhlenbeck process, but now with coefficient $a_2$. If the particle is at some intermediate position $y$ at time $\tau$, its final position at time $T$ will also be a Gaussian random variable, with a mean $\mu_2(y)$ and variance $V_2$ that depend on $y, a_2, \sigma$, and the time duration $T-\tau$.
 
-3.  **Stitching it Together:** The Chapman-Kolmogorov equation tells us that to get the final distribution, we must integrate (or "convolve") the distribution from the first leg with the one from the second leg. A beautiful property of Gaussian distributions is that their convolution is another Gaussian. We don't even need to perform the full integral; we can simply calculate the mean and variance of the final distribution. The final mean is what you'd get by just evolving the initial mean through both legs. The final variance is more subtle: it's the variance from the second leg ($V_2$) plus the variance from the first leg ($V_1$), but faded by the deterministic decay it would have experienced during the second leg. 
+3.  **Stitching it Together:** The Chapman-Kolmogorov equation tells us that to get the final distribution, we must integrate (or "convolve") the distribution from the first leg with the one from the second leg. A beautiful property of Gaussian distributions is that their convolution is another Gaussian. We don't even need to perform the full integral; we can simply calculate the mean and variance of the final distribution. The final mean is what you'd get by just evolving the initial mean through both legs. The final variance is more subtle: it's the variance from the second leg ($V_2$) plus the variance from the first leg ($V_1$), but faded by the deterministic decay it would have experienced during the second leg. [@problem_id:3293462]
 
-This example beautifully illustrates the power of [path decomposition](@entry_id:272857). A complex problem with changing rules is solved by breaking it into simpler pieces, solving each piece, and then stitching the solutions together using the universal logic of the Chapman-Kolmogorov equation. This is also precisely the logic a computer would use to simulate such a process. 
+This example beautifully illustrates the power of [path decomposition](@keyword=path_decomposition|lang=en-US|style=Feynman). A complex problem with changing rules is solved by breaking it into simpler pieces, solving each piece, and then stitching the solutions together using the universal logic of the Chapman-Kolmogorov equation. This is also precisely the logic a computer would use to simulate such a process. [@problem_id:3293451]
 
 ### The Unity of the Principle
 
-One of the marks of a truly fundamental principle is its robustness and generality. What if the landscape our particle wanders through is not infinite? What if it's a finite interval $[0, L]$, and if the particle hits either end, it is "absorbed"—it gets stuck and the process stops? This is the classic "Gambler's Ruin" problem, where $0$ and $L$ are the bankruptcy and house-[limit points](@entry_id:140908).
+One of the marks of a truly fundamental principle is its robustness and generality. What if the landscape our particle wanders through is not infinite? What if it's a finite interval $[0, L]$, and if the particle hits either end, it is "absorbed"—it gets stuck and the process stops? This is the classic "Gambler's Ruin" problem, where $0$ and $L$ are the bankruptcy and house-[limit points](@keyword=limit_points|lang=en-US|style=Feynman).
 
-How does our [path decomposition](@entry_id:272857) principle fare? It holds perfectly. 
+How does our [path decomposition](@keyword=path_decomposition|lang=en-US|style=Feynman) principle fare? It holds perfectly. [@problem_id:3082891]
 
 To find the probability of being at a point $z \in (0,L)$ at time $t+s$ without having been absorbed, the particle must have come from some intermediate point $y \in (0,L)$ at time $t$, also without having been absorbed. The logic is identical. The only change to our equation is that the integral over "all possible states" is now restricted to the domain where the particle is allowed to exist:
 
@@ -78,12 +78,12 @@ Here, $D=(0,L)$ is the safe domain, and $p^D$ is the transition density for the 
 
 ### From Steps to Flow: The Bridge to Differential Equations
 
-The Chapman-Kolmogorov equation relates probabilities over finite time steps. What happens if we take one of those time steps to be infinitesimally small? This question opens the door to the world of differential equations. The [integral equation](@entry_id:165305) transforms into a differential equation that governs the continuous flow of probability.
+The Chapman-Kolmogorov equation relates probabilities over finite time steps. What happens if we take one of those time steps to be infinitesimally small? This question opens the door to the world of differential equations. The [integral equation](@keyword=integral_equation|lang=en-US|style=Feynman) transforms into a differential equation that governs the continuous flow of probability.
 
-This transformation gives rise to two of the most important equations in the theory of [stochastic processes](@entry_id:141566):
+This transformation gives rise to two of the most important equations in the theory of [stochastic processes](@keyword=stochastic_processes|lang=en-US|style=Feynman):
 - The **Kolmogorov Forward Equation (or Fokker-Planck Equation)**, which describes how the probability density at a fixed point evolves forward in time.
 - The **Kolmogorov Backward Equation**, which describes how the probability density (or related quantities) depends on the initial starting point.
 
-For instance, in our Gambler's Ruin problem, the probability $u(x)$ of hitting the boundary at $L$ before hitting $0$, starting from $x$, satisfies a simple [ordinary differential equation](@entry_id:168621): $\frac{1}{2}\sigma^2 u''(x) + b u'(x) = 0$.  This equation is the "[infinitesimal generator](@entry_id:270424)" of the process acting on $u(x)$, and it is the shadow of the Chapman-Kolmogorov relation in the limit of infinitesimal time.
+For instance, in our Gambler's Ruin problem, the probability $u(x)$ of hitting the boundary at $L$ before hitting $0$, starting from $x$, satisfies a simple [ordinary differential equation](@keyword=ordinary_differential_equation|lang=en-US|style=Feynman): $\frac{1}{2}\sigma^2 u''(x) + b u'(x) = 0$. [@problem_id:3293469] This equation is the "[infinitesimal generator](@keyword=infinitesimal_generator|lang=en-US|style=Feynman)" of the process acting on $u(x)$, and it is the shadow of the Chapman-Kolmogorov relation in the limit of infinitesimal time.
 
-Thus, the Chapman-Kolmogorov equation is the grand parent, the integral source from which the more familiar differential equations of diffusion flow. It is the central, unifying hub connecting the discrete and the continuous, the finite and the infinitesimal, in the beautiful world of [random walks](@entry_id:159635). It reminds us that even in the face of overwhelming randomness, simple, powerful logic can be found by carefully considering the anatomy of a journey.
+Thus, the Chapman-Kolmogorov equation is the grand parent, the integral source from which the more familiar differential equations of diffusion flow. It is the central, unifying hub connecting the discrete and the continuous, the finite and the infinitesimal, in the beautiful world of [random walks](@keyword=random_walks|lang=en-US|style=Feynman). It reminds us that even in the face of overwhelming randomness, simple, powerful logic can be found by carefully considering the anatomy of a journey.

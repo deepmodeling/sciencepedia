@@ -1,29 +1,29 @@
 ## 引言
-在量子世界中，粒子间的相互作用构成了我们理解[物质结构](@entry_id:269505)与演化的核心。描述这些相互作用，尤其是散射过程——即一个粒子与目标碰撞后改变其运动状态——是量子力学的一项基本任务。虽然薛定谔方程为我们提供了描述粒子行为的根本法则，但直接求解它来描述一个真实的[散射实验](@entry_id:173304)却面临着一个棘手的挑战：如何精确地施加正确的物理边界条件，即一个入射的[平面波](@entry_id:189798)与一个向外[扩散](@entry_id:141445)的散射[波的叠加](@entry_id:166456)？这一知识空白使得从理论到实验的连接变得困难。
+在量子世界中，粒子间的相互作用构成了我们理解[物质结构](@keyword=structure_of_matter|lang=zh-CN|style=Feynman)与演化的核心。描述这些相互作用，尤其是散射过程——即一个粒子与目标碰撞后改变其运动状态——是量子力学的一项基本任务。虽然薛定谔方程为我们提供了描述粒子行为的根本法则，但直接求解它来描述一个真实的[散射实验](@keyword=scattering_experiment|lang=zh-CN|style=Feynman)却面临着一个棘手的挑战：如何精确地施加正确的物理边界条件，即一个入射的[平面波](@keyword=plane_waves|lang=zh-CN|style=Feynman)与一个向外[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)的散射[波的叠加](@keyword=wave_superposition|lang=zh-CN|style=Feynman)？这一知识空白使得从理论到实验的连接变得困难。
 
-利普曼-施温格方程的提出，正是为了优雅地解决这一难题。它革命性地将一个带有复杂边界条件的[微分方程](@entry_id:264184)问题，转化为一个结构更为简洁明了的[积分方程](@entry_id:138643)。这种形式的巨大优势在于，它将散射过程的物理直觉——“最终状态 = 初始状态 + 相互作用的累积效应”——直接体现在了数学形式中，并将复杂的边界条件巧妙地蕴含在被称为[格林函数](@entry_id:147802)的数学工具里。
+利普曼-施温格方程的提出，正是为了优雅地解决这一难题。它革命性地将一个带有复杂边界条件的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)问题，转化为一个结构更为简洁明了的[积分方程](@keyword=integral_equations|lang=zh-CN|style=Feynman)。这种形式的巨大优势在于，它将散射过程的物理直觉——“最终状态 = 初始状态 + 相互作用的累积效应”——直接体现在了数学形式中，并将复杂的边界条件巧妙地蕴含在被称为[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)的数学工具里。
 
-在接下来的内容中，我们将踏上一段深入的探索之旅。第一章“原理与机制”将为您揭示[Lippmann-Schwinger方程](@entry_id:142814)的数学构造与物理内涵，从格林函数的$i\epsilon$规则到[玻恩级数](@entry_id:195385)的物理图像。第二章“应用与交叉学科联系”将展示该方程如何作为核物理的基石，并延伸至[材料科学](@entry_id:152226)、电磁学乃至前沿计算科学等广阔领域。最后，在“动手实践”部分，您将有机会通过具体的编程练习，亲手将这些理论转化为强大的计算工具。
+在接下来的内容中，我们将踏上一段深入的探索之旅。第一章“原理与机制”将为您揭示[Lippmann-Schwinger方程](@keyword=lippmann_schwinger_equation|lang=zh-CN|style=Feynman)的数学构造与物理内涵，从格林函数的$i\epsilon$规则到[玻恩级数](@keyword=born_series|lang=zh-CN|style=Feynman)的物理图像。第二章“应用与交叉学科联系”将展示该方程如何作为核物理的基石，并延伸至[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)、电磁学乃至前沿计算科学等广阔领域。最后，在“动手实践”部分，您将有机会通过具体的编程练习，亲手将这些理论转化为强大的计算工具。
 
 ## 原理与机制
 
-在物理学中，我们最钟爱的故事之一就是关于“相遇”的故事。想象一束粒子，比如中子，像一阵微风一样穿过空间，朝着一个[原子核](@entry_id:167902)目标飞去。在绝大多数时间里，它们相安无事，仿佛彼此不存在。但当它们足够接近时，一场短暂而激烈的“对话”发生了——粒子与[原子核](@entry_id:167902)通过核力相互作用，然后粒子改变方向，飞向远方，就像一颗台球撞击后弹开一样。这就是一次**散射**（scattering）过程。我们如何用数学语言来精确地描述这个故事呢？
+在物理学中，我们最钟爱的故事之一就是关于“相遇”的故事。想象一束粒子，比如中子，像一阵微风一样穿过空间，朝着一个[原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)目标飞去。在绝大多数时间里，它们相安无事，仿佛彼此不存在。但当它们足够接近时，一场短暂而激烈的“对话”发生了——粒子与[原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)通过核力相互作用，然后粒子改变方向，飞向远方，就像一颗台球撞击后弹开一样。这就是一次**散射**（scattering）过程。我们如何用数学语言来精确地描述这个故事呢？
 
-### [量子散射](@entry_id:147453)问题
+### 量子散射问题
 
-描述粒子行为的通用法则是薛定谔方程。对于散射问题，我们通常关心的是不随时间变化的[定态](@entry_id:137260)情形，也就是所谓的**定态薛定谔方程**：
+描述粒子行为的通用法则是薛定谔方程。对于散射问题，我们通常关心的是不随时间变化的[定态](@keyword=stationary_states|lang=zh-CN|style=Feynman)情形，也就是所谓的**定态薛定谔方程**：
 $$
 (H_0 + V) |\psi\rangle = E |\psi\rangle
 $$
-这里，$H_0$ 是粒子的动能（自由[哈密顿量](@entry_id:172864)），$V$ 是粒子与靶核之间的相互作用势，$E$ 是系统的总能量，而 $|\psi\rangle$ 则是我们想要寻找的描述整个散射过程的[波函数](@entry_id:147440)。
+这里，$H_0$ 是粒子的动能（自由[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)），$V$ 是粒子与靶核之间的相互作用势，$E$ 是系统的总能量，而 $|\psi\rangle$ 则是我们想要寻找的描述整个散射过程的波函数。
 
-这个方程本身是一个[微分方程](@entry_id:264184)，它的解有无穷多个。我们需要的不是任意一个解，而是那个能完美描绘我们实验场景的**特定解**。这个解应该是什么样子呢？在远离靶核的地方（渐近区域），我们期望[波函数](@entry_id:147440) $|\psi\rangle$ 包含两个部分：一部分是入射的**平面波**（plane wave），比如 $e^{i\mathbf{k}\cdot\mathbf{r}}$，代表着从远方直直飞来的粒子束；另一部分则是从靶核中心向四周[扩散](@entry_id:141445)的**[出射球面波](@entry_id:201591)**（outgoing spherical wave），形式如 $f(\theta) \frac{e^{ikr}}{r}$，代表着被散射后飞向四面八方的粒子。这里的 $f(\theta)$ 被称为**散射振幅**（scattering amplitude），它描述了粒子被散射到不同角度 $\theta$ 的概率，而实验中测量的**[微分散射截面](@entry_id:172304)**（differential cross section）就正比于它的平方，即 $\frac{d\sigma}{d\Omega} = |f(\theta)|^2$ 。
+这个方程本身是一个[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)，它的解有无穷多个。我们需要的不是任意一个解，而是那个能完美描绘我们实验场景的**特定解**。这个解应该是什么样子呢？在远离靶核的地方（渐近区域），我们期望波函数 $|\psi\rangle$ 包含两个部分：一部分是入射的**平面波**（plane wave），比如 $e^{i\mathbf{k}\cdot\mathbf{r}}$，代表着从远方直直飞来的粒子束；另一部分则是从靶核中心向四周[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)的**[出射球面波](@keyword=outgoing_spherical_wave|lang=zh-CN|style=Feynman)**（outgoing spherical wave），形式如 $f(\theta) \frac{e^{ikr}}{r}$，代表着被散射后飞向四面八方的粒子。这里的 $f(\theta)$ 被称为**散射振幅**（scattering amplitude），它描述了粒子被散射到不同角度 $\theta$ 的概率，而实验中测量的**[微分散射截面](@keyword=differential_scattering_cross_section|lang=zh-CN|style=Feynman)**（differential cross section）就正比于它的平方，即 $\frac{d\sigma}{d\Omega} = |f(\theta)|^2$ [@problem_id:3603430]。
 
-所以，我们的任务变成了：如何在薛定谔方程的众多解中，精确地挑选出这一个满足“入射平面波 + [出射球面波](@entry_id:201591)”边界条件的物理情境？这正是**Lippmann-Schwinger 方程**登场的舞台。
+所以，我们的任务变成了：如何在薛定谔方程的众多解中，精确地挑选出这一个满足“入射平面波 + [出射球面波](@keyword=outgoing_spherical_wave|lang=zh-CN|style=Feynman)”边界条件的物理情境？这正是**Lippmann-Schwinger 方程**登场的舞台。
 
-### 从[微分](@entry_id:158718)到积分的叙事
+### 从[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)到积分的叙事
 
-Lippmann-Schwinger 方程巧妙地将求解一个带有复杂边界条件的[微分方程](@entry_id:264184)问题，转化为了求解一个**积分方程**（integral equation）。它的形式看起来非常优雅：
+Lippmann-Schwinger 方程巧妙地将求解一个带有复杂边界条件的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)问题，转化为了求解一个**积分方程**（integral equation）。它的形式看起来非常优雅：
 $$
 |\psi\rangle = |\phi\rangle + G_0 V |\psi\rangle
 $$
@@ -33,15 +33,15 @@ $$
 
 这种积分形式的巨大优势在于，它将我们苦苦追寻的边界条件——“出射波”——直接内嵌在了传播子 $G_0$ 的定义之中。只要我们正确地定义了 $G_0$，方程的解就自然而然地包含了我们想要的物理。
 
-### [格林函数](@entry_id:147802)：量子池塘中的涟漪
+### [格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)：量子池塘中的涟漪
 
-这个神奇的[传播子](@entry_id:139558) $G_0$ 是什么呢？它被称为**自由格林算符**（free Green's operator），或者叫[自由分解](@entry_id:266531)算符（free resolvent），其定义为：
+这个神奇的[传播子](@keyword=propagator|lang=zh-CN|style=Feynman) $G_0$ 是什么呢？它被称为**自由格林算符**（free Green's operator），或者叫[自由分解](@keyword=free_resolution|lang=zh-CN|style=Feynman)算符（free resolvent），其定义为：
 $$
 G_0(E) = \frac{1}{E - H_0}
 $$
 它的物理意义是什么？想象一个平静的量子池塘。格林函数描述的就是当你向池塘中投入一颗小石子（一个点状的扰动）后，产生的涟漪是如何向外传播的。在散射问题中，这个“扰动”就是相互作用 $V$。
 
-然而，这个定义立刻就遇到了一个麻烦。在散射实验中，粒子能量 $E$ 总是正的，这个能量值恰好也属于自由粒子[哈密顿量](@entry_id:172864) $H_0$ 的本征能量范围（[连续谱](@entry_id:155477)）。这意味着算符 $(E - H_0)$ 作用在某些态上会得到零，所以它的逆——格林算符 $G_0(E)$——在数学上是未良好定义的，它的分母上有一个“零”。
+然而，这个定义立刻就遇到了一个麻烦。在散射实验中，粒子能量 $E$ 总是正的，这个能量值恰好也属于自由粒子[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman) $H_0$ 的本征能量范围（[连续谱](@keyword=continuum_spectrum|lang=zh-CN|style=Feynman)）。这意味着算符 $(E - H_0)$ 作用在某些态上会得到零，所以它的逆——格林算符 $G_0(E)$——在数学上是未良好定义的，它的分母上有一个“零”。
 
 物理学家们用一个看似微小却蕴含深刻物理的技巧解决了这个问题，这就是著名的 **$i\epsilon$ 规则**。我们不直接计算能量为 $E$ 时的格林函数，而是先计算能量为一个复数 $E \pm i\epsilon$ 时的值，其中 $\epsilon$ 是一个无穷小的正数，最后再取 $\epsilon \to 0$ 的极限。这样，分母就永远不会严格为零了。
 $$
@@ -49,42 +49,42 @@ G_0^{(\pm)}(E) = \frac{1}{E - H_0 \pm i\epsilon}
 $$
 这个小小的 $\pm i\epsilon$ 如同一个神奇的开关，决定了宇宙的**因果律**（causality）。
 
-选择 “$+i\epsilon$” 会得到**[推迟格林函数](@entry_id:139183)**（[retarded Green's function](@entry_id:139183)）。它所描述的涟漪只会向未来传播，效应永远发生在原因之后。在散射问题中，这意味着由相互作用产生的波只会向外传播，形成**[出射球面波](@entry_id:201591)** $e^{+ikr}/r$。这完美地对应了我们的标准[散射实验](@entry_id:173304)：粒子进来，发生作用，然后飞向远处的探测器。这也被称为满足**[索末菲辐射条件](@entry_id:168772)**（Sommerfeld radiation condition）。计算散射波的径向[概率流密度](@entry_id:152013)可以清晰地看到，"+" 号对应着一个正的、向外的通量 。
+选择 “$+i\epsilon$” 会得到**推迟格林函数**（retarded Green's function）。它所描述的涟漪只会向未来传播，效应永远发生在原因之后。在散射问题中，这意味着由相互作用产生的波只会向外传播，形成**[出射球面波](@keyword=outgoing_spherical_wave|lang=zh-CN|style=Feynman)** $e^{+ikr}/r$。这完美地对应了我们的标准[散射实验](@keyword=scattering_experiment|lang=zh-CN|style=Feynman)：粒子进来，发生作用，然后飞向远处的探测器。这也被称为满足**[索末菲辐射条件](@keyword=sommerfeld_radiation_condition|lang=zh-CN|style=Feynman)**（Sommerfeld radiation condition）[@problem_id:3603487]。计算散射波的径向[概率流密度](@keyword=probability_current_density|lang=zh-CN|style=Feynman)可以清晰地看到，"+" 号对应着一个正的、向外的通量 [@problem_id:3603420]。
 
-选择 “$-i\epsilon$” 则会得到**超前[格林函数](@entry_id:147802)**（advanced Green's function）。它描述的是一个时间倒流的宇宙，效应发生在原因之前。这会产生一个**入射球面波** $e^{-ikr}/r$，仿佛所有波都在向着靶核汇聚。虽然这在典型的[散射实验](@entry_id:173304)中不常见，但它在理论上描述了散射过程的[时间反演](@entry_id:182076)图像 。
+选择 “$-i\epsilon$” 则会得到**超前[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)**（advanced Green's function）。它描述的是一个时间倒流的宇宙，效应发生在原因之前。这会产生一个**入射球面波** $e^{-ikr}/r$，仿佛所有波都在向着靶核汇聚。虽然这在典型的[散射实验](@keyword=scattering_experiment|lang=zh-CN|style=Feynman)中不常见，但它在理论上描述了散射过程的[时间反演](@keyword=time_reversal_2|lang=zh-CN|style=Feynman)图像 [@problem_id:3603420]。
 
-因此，通过选择 $G_0^{(+)}$，我们便将“只有出射波”这一物理边界条件，严谨地注入了[Lippmann-Schwinger方程](@entry_id:142814)的数学结构中。这个 $i\epsilon$ 规则的背后，是更为深刻的数学原理，即**Sokhotski–Plemelj 定理**。它告诉我们，这个带有 $i\epsilon$ 的分母可以分解为一个**[柯西主值](@entry_id:192761)**（Cauchy principal value）[部分和](@entry_id:162077)一个**狄拉克 $\delta$ 函数**部分。[主值](@entry_id:189577)部分描述了“虚”的、局域的量子涨落，而 $\delta$ 函数部分则把粒子“放回”能量为 $E$ 的**在壳**（on-shell）状态，使其能够作为真实的物理粒子传播到无穷远 。
+因此，通过选择 $G_0^{(+)}$，我们便将“只有出射波”这一物理边界条件，严谨地注入了[Lippmann-Schwinger方程](@keyword=lippmann_schwinger_equation|lang=zh-CN|style=Feynman)的数学结构中。这个 $i\epsilon$ 规则的背后，是更为深刻的数学原理，即**Sokhotski–Plemelj 定理**。它告诉我们，这个带有 $i\epsilon$ 的分母可以分解为一个**[柯西主值](@keyword=principal_value|lang=zh-CN|style=Feynman)**（Cauchy principal value）[部分和](@keyword=partial_sums|lang=zh-CN|style=Feynman)一个**狄拉克 $\delta$ 函数**部分。[主值](@keyword=principal_values|lang=zh-CN|style=Feynman)部分描述了“虚”的、局域的量子涨落，而 $\delta$ 函数部分则把粒子“放回”能量为 $E$ 的**在壳**（on-shell）状态，使其能够作为真实的物理粒子传播到无穷远 [@problem_id:3603465]。
 
-### [T矩阵](@entry_id:145367)与[玻恩级数](@entry_id:195385)：一场多次相遇的传奇
+### [T矩阵](@keyword=t_matrix|lang=zh-CN|style=Feynman)与[玻恩级数](@keyword=born_series|lang=zh-CN|style=Feynman)：一场多次相遇的传奇
 
-为了更深入地理解散射过程，物理学家引入了**[T矩阵](@entry_id:145367)**（T-matrix），也叫跃迁算符。它被定义为作用在入射波 $|\phi\rangle$ 上，产生出与 $V|\psi\rangle$ 完全相同的效果，即 $T|\phi\rangle = V|\psi\rangle$。你可以将 T 矩阵看作是一个“有效相互作用”，它包含了裸相互作用 $V$ 以及由它引起的所有后续效应。
+为了更深入地理解散射过程，物理学家引入了**[T矩阵](@keyword=t_matrix|lang=zh-CN|style=Feynman)**（T-matrix），也叫跃迁算符。它被定义为作用在入射波 $|\phi\rangle$ 上，产生出与 $V|\psi\rangle$ 完全相同的效果，即 $T|\phi\rangle = V|\psi\rangle$。你可以将 T 矩阵看作是一个“有效相互作用”，它包含了裸相互作用 $V$ 以及由它引起的所有后续效应。
 
 将 T 矩阵的定义代入 Lippmann-Schwinger 方程，我们可以得到一个关于 T 矩阵自身的方程：
 $$
 T = V + V G_0^{(+)} T
 $$
-这是一个自洽的方程：T 矩阵等于裸相互作用 $V$，再加上一项由 $V$ 驱动、通过格林函数 $G_0^{(+)}$ 传播、并再次由 T 矩阵自身作用而产生的复杂过程 。
+这是一个自洽的方程：T 矩阵等于裸相互作用 $V$，再加上一项由 $V$ 驱动、通过格林函数 $G_0^{(+)}$ 传播、并再次由 T 矩阵自身作用而产生的复杂过程 [@problem_id:3603496]。
 
-这个方程最美妙的地方在于，我们可以通过迭代来“解”它，从而得到一个[无穷级数](@entry_id:143366)——**[玻恩级数](@entry_id:195385)**（Born series）：
+这个方程最美妙的地方在于，我们可以通过迭代来“解”它，从而得到一个[无穷级数](@keyword=infinite_series|lang=zh-CN|style=Feynman)——**[玻恩级数](@keyword=born_series|lang=zh-CN|style=Feynman)**（Born series）：
 $$
 T = V + V G_0^{(+)} V + V G_0^{(+)} V G_0^{(+)} V + \dots
 $$
-这个级数描绘了一幅生动无比的物理图像 ：
--   第一项 $V$：粒子与靶核只发生**一次**相互作用就飞走了。这被称为**[一阶玻恩近似](@entry_id:201729)**（First Born Approximation）。
+这个级数描绘了一幅生动无比的物理图像 [@problem_id:3596073]：
+-   第一项 $V$：粒子与靶核只发生**一次**相互作用就飞走了。这被称为**[一阶玻恩近似](@keyword=first_born_approximation|lang=zh-CN|style=Feynman)**（First Born Approximation）。
 -   第二项 $V G_0^{(+)} V$：粒子与靶核作用一次，然后自由传播一段距离（由 $G_0^{(+)}$ 描述），接着再作用**第二次**。
 -   第三项 $V G_0^{(+)} V G_0^{(+)} V$：粒子经历了**三次**相互作用。
 -   依此类推……
 
-T 矩阵就是所有这些可能的“散射路径”的相干叠加。实验中测量的[散射振幅](@entry_id:155369) $f(\theta)$ 与 T 矩阵的在壳[矩阵元](@entry_id:186505)（即入射和出射粒子都满足[能量守恒](@entry_id:140514) $E = p^2/2\mu$）直接成正比。因此，[玻恩级数](@entry_id:195385)为我们提供了一个系统地计算散射过程并与实验结果对比的强大框架。
+T 矩阵就是所有这些可能的“散射路径”的相干叠加。实验中测量的[散射振幅](@keyword=scattering_amplitudes|lang=zh-CN|style=Feynman) $f(\theta)$ 与 T 矩阵的在壳[矩阵元](@keyword=matrix_elements|lang=zh-CN|style=Feynman)（即入射和出射粒子都满足[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman) $E = p^2/2\mu$）直接成正比。因此，[玻恩级数](@keyword=born_series|lang=zh-CN|style=Feynman)为我们提供了一个系统地计算散射过程并与实验结果对比的强大框架。
 
 ### 超越基础：形式理论的丰富内涵
 
 Lippmann-Schwinger 方程的威力远不止于此。它的框架极为灵活，足以容纳物理世界中更为复杂的现象。
 
-首先，在[玻恩级数](@entry_id:195385)的每一次“自由传播” $G_0^{(+)}$ 过程中，粒子的中间状态的能量并不需要等于总能量 $E$。这些中间状态被称为**离壳**（off-shell）状态。在简单的[二体散射](@entry_id:144358)中，我们最终只关心在壳的 T 矩阵元，因为只有它们对应真实的、可被探测到的出射粒子。然而，当这个二体相互作用被置于一个更复杂的环境中，比如在[原子核](@entry_id:167902)内部，一个[核子](@entry_id:158389)与另一个[核子](@entry_id:158389)相互作用时，周围还有其他[核子](@entry_id:158389)。这时，相互作用过程中的离壳行为就变得至关重要。不同的核力模型即使给出完全相同的在壳散射数据（即相同的[散射相移](@entry_id:138129)），它们的离壳行为也可能大相径庭，从而导致对[原子核结合能](@entry_id:147209)等性质的预言截然不同。因此，离壳 T 矩阵是连接两体物理与多体世界的关键桥梁，也是构建[核物理](@entry_id:136661)中各种有效相互作用理论（如 $V_{\text{low-}k}$）的基石 。
+首先，在[玻恩级数](@keyword=born_series|lang=zh-CN|style=Feynman)的每一次“自由传播” $G_0^{(+)}$ 过程中，粒子的中间状态的能量并不需要等于总能量 $E$。这些中间状态被称为**离壳**（off-shell）状态。在简单的[二体散射](@keyword=two_body_scattering|lang=zh-CN|style=Feynman)中，我们最终只关心在壳的 T 矩阵元，因为只有它们对应真实的、可被探测到的出射粒子。然而，当这个二体相互作用被置于一个更复杂的环境中，比如在[原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)内部，一个[核子](@keyword=nucleon|lang=zh-CN|style=Feynman)与另一个[核子](@keyword=nucleon|lang=zh-CN|style=Feynman)相互作用时，周围还有其他[核子](@keyword=nucleon|lang=zh-CN|style=Feynman)。这时，相互作用过程中的离壳行为就变得至关重要。不同的核力模型即使给出完全相同的在壳散射数据（即相同的[散射相移](@keyword=scattering_phase_shifts|lang=zh-CN|style=Feynman)），它们的离壳行为也可能大相径庭，从而导致对[原子核结合能](@keyword=nuclear_binding_energy|lang=zh-CN|style=Feynman)等性质的预言截然不同。因此，离壳 T 矩阵是连接两体物理与多体世界的关键桥梁，也是构建[核物理](@keyword=nuclear_physics|lang=zh-CN|style=Feynman)中各种有效相互作用理论（如 $V_{\text{low-}k}$）的基石 [@problem_id:3603436]。
 
-其次，如果相互作用力比较复杂，比如[核子](@entry_id:158389)间的**[张量力](@entry_id:161961)**（tensor force），它可以在一次碰撞中改变粒子的轨道角动量。例如，在构成氘核的质子-中子系统中，[张量力](@entry_id:161961)会把 $L=0$ 的 $^3S_1$ 态和 $L=2$ 的 $^3D_1$ 态耦合起来。在这种情况下，Lippmann-Schwinger 方程优雅地演变为一个矩阵（或称**耦合渠道**）方程，T 矩阵和 V 势都变成了 $2 \times 2$ 的矩阵，描述了粒子在不同[量子态](@entry_id:146142)之间来回“跳跃”的散射过程 。
+其次，如果相互作用力比较复杂，比如[核子](@keyword=nucleon|lang=zh-CN|style=Feynman)间的**[张量力](@keyword=tensor_force|lang=zh-CN|style=Feynman)**（tensor force），它可以在一次碰撞中改变粒子的轨道角动量。例如，在构成氘核的质子-中子系统中，[张量力](@keyword=tensor_force|lang=zh-CN|style=Feynman)会把 $L=0$ 的 $^3S_1$ 态和 $L=2$ 的 $^3D_1$ 态耦合起来。在这种情况下，Lippmann-Schwinger 方程优雅地演变为一个矩阵（或称**耦合渠道**）方程，T 矩阵和 V 势都变成了 $2 \times 2$ 的矩阵，描述了粒子在不同[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)之间来回“跳跃”的散射过程 [@problem_id:3603493]。
 
-最后，我们必须认识到任何理论框架都有其适用边界。我们构建 Lippmann-Schwinger 方程的基石——入射粒子在无穷远处是自由平面波——对于像核力这样的[短程力](@entry_id:142823)是成立的。但对于像[库仑力](@entry_id:174598)这样的长程力（$1/r$ 行为），这个假设本身就失效了。由于库仑力的“长臂”，[带电粒子](@entry_id:160311)即使在无穷远处也无法摆脱它的影响，其[波函数](@entry_id:147440)会带有一个对数形式的相位畸变。因此，标准的 Lippmann-Schwinger 方程对于[库仑散射](@entry_id:181914)是失效的。但这并不意味着我们束手无策。物理学家们发展了所谓的**[畸变波](@entry_id:197437)理论**（distorted-wave theory），其思想是：既然无法摆脫库仑力，那我们就把它纳入“自由”运动的定义中。我们先精确求解粒子在库仑场中的运动状态（即“[畸变波](@entry_id:197437)”），然后以此为基础，再用 Lippmann-Schwinger 方程来处理额外的短程核力。这展现了物理学在面对困难时，如何通过修正基本假设来扩展理论框架的强大生命力 。
+最后，我们必须认识到任何理论框架都有其适用边界。我们构建 Lippmann-Schwinger 方程的基石——入射粒子在无穷远处是自由平面波——对于像核力这样的[短程力](@keyword=short_range_forces|lang=zh-CN|style=Feynman)是成立的。但对于像[库仑力](@keyword=coulomb_force|lang=zh-CN|style=Feynman)这样的长程力（$1/r$ 行为），这个假设本身就失效了。由于库仑力的“长臂”，[带电粒子](@keyword=charged_particle|lang=zh-CN|style=Feynman)即使在无穷远处也无法摆脱它的影响，其波函数会带有一个对数形式的相位畸变。因此，标准的 Lippmann-Schwinger 方程对于[库仑散射](@keyword=coulomb_scattering|lang=zh-CN|style=Feynman)是失效的。但这并不意味着我们束手无策。物理学家们发展了所谓的**[畸变波](@keyword=distortional_waves|lang=zh-CN|style=Feynman)理论**（distorted-wave theory），其思想是：既然无法摆脫库仑力，那我们就把它纳入“自由”运动的定义中。我们先精确求解粒子在库仑场中的运动状态（即“[畸变波](@keyword=distortional_waves|lang=zh-CN|style=Feynman)”），然后以此为基础，再用 Lippmann-Schwinger 方程来处理额外的短程核力。这展现了物理学在面对困难时，如何通过修正基本假设来扩展理论框架的强大生命力 [@problem_id:3603429]。
 
-从一个简单的散射问题出发，Lippmann-Schwinger 方程引领我们深入到[量子动力学](@entry_id:138183)的核心，揭示了因果律的数学表达、多重散射的物理图像，并为处理从[核子](@entry_id:158389)到[原子核](@entry_id:167902)、从[短程力](@entry_id:142823)到[长程力](@entry_id:181779)的广泛问题提供了统一而优美的理论框架。只要我们理解了其中的原理与机制，我们就掌握了一把解锁量子世界相互作用奥秘的钥匙。这一切的基石，是对方程[解的唯一性](@entry_id:143619)的深刻信念，这种唯一性由我们施加的物理边界条件和系统本身的谱特性所保证 。而这一套非相对论的优美框架，也可以被推广到相对论领域，与 Bethe-Salpeter 方程等更基本的理论建立联系 。
+从一个简单的散射问题出发，Lippmann-Schwinger 方程引领我们深入到[量子动力学](@keyword=quantum_dynamics|lang=zh-CN|style=Feynman)的核心，揭示了因果律的数学表达、多重散射的物理图像，并为处理从[核子](@keyword=nucleon|lang=zh-CN|style=Feynman)到[原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)、从[短程力](@keyword=short_range_forces|lang=zh-CN|style=Feynman)到[长程力](@keyword=long_range_forces|lang=zh-CN|style=Feynman)的广泛问题提供了统一而优美的理论框架。只要我们理解了其中的原理与机制，我们就掌握了一把解锁量子世界相互作用奥秘的钥匙。这一切的基石，是对方程[解的唯一性](@keyword=uniqueness_of_solutions|lang=zh-CN|style=Feynman)的深刻信念，这种唯一性由我们施加的物理边界条件和系统本身的谱特性所保证 [@problem_id:3603499]。而这一套非相对论的优美框架，也可以被推广到相对论领域，与 Bethe-Salpeter 方程等更基本的理论建立联系 [@problem_id:3603445]。

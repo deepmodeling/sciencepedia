@@ -1,36 +1,36 @@
 ## 引言
-在现代科学与工程中，从[高超声速飞行器设计](@entry_id:181295)到宇宙星云的演化，[精确模拟](@entry_id:749142)[可压缩流体](@entry_id:164617)的复杂行为至关重要。这些流动现象由[欧拉方程](@entry_id:177914)等双曲型守恒律所支配，其核心特征是信息以波（如激波和[稀疏波](@entry_id:168428)）的形式传播。对于使用有限体积法等离散化技术的[计算流体力学](@entry_id:747620)(CFD)而言，最大的挑战在于如何准确且高效地计算离散单元格之间的通量，从而捕捉这些关键的物理过程。直接求解每个界面上的精确黎曼问题虽然物理上最可靠，但计算成本极高，这催生了“[近似黎曼求解器](@entry_id:267136)”这一充满智慧与艺术的领域。
+在现代科学与工程中，从[高超声速飞行器设计](@keyword=hypersonic_vehicle_design|lang=zh-CN|style=Feynman)到宇宙星云的演化，[精确模拟](@keyword=exact_simulation|lang=zh-CN|style=Feynman)[可压缩流体](@keyword=compressible_fluids|lang=zh-CN|style=Feynman)的复杂行为至关重要。这些流动现象由[欧拉方程](@keyword=euler_s_equations|lang=zh-CN|style=Feynman)等双曲型守恒律所支配，其核心特征是信息以波（如激波和[稀疏波](@keyword=rarefaction_waves|lang=zh-CN|style=Feynman)）的形式传播。对于使用有限体积法等离散化技术的[计算流体力学](@keyword=computational_hydrodynamics|lang=zh-CN|style=Feynman)(CFD)而言，最大的挑战在于如何准确且高效地计算离散单元格之间的通量，从而捕捉这些关键的物理过程。直接求解每个界面上的精确黎曼问题虽然物理上最可靠，但计算成本极高，这催生了“[近似黎曼求解器](@keyword=approximate_riemann_solvers|lang=zh-CN|style=Feynman)”这一充满智慧与艺术的领域。
 
 本文将系统性地引导您深入这一CFD的核心技术。我们将分三个章节展开：
 
-*   在**原理与机制**中，我们将回到物理第一性原理，探索[欧拉方程](@entry_id:177914)的[双曲性](@entry_id:262766)、黎曼问题的波系结构，并剖析[Godunov方法](@entry_id:749952)的革命性思想。在此基础上，我们将详细对比几种主流[近似黎曼求解器](@entry_id:267136)（如Roe、HLL、FVS）的设计哲学、数学构造及其内在的优缺点。
-*   在**应用与[交叉](@entry_id:147634)学科联系**中，我们将视野从一维理论扩展到多维现实世界，探讨这些求解器如何与[高阶格式](@entry_id:150564)、复杂网格和物理边界条件协同工作，以及它们在航空航天、天体物理和磁[流体力学](@entry_id:136788)等前沿领域的惊人适应性与普适性。
+*   在**原理与机制**中，我们将回到物理第一性原理，探索[欧拉方程](@keyword=euler_s_equations|lang=zh-CN|style=Feynman)的[双曲性](@keyword=hyperbolicity|lang=zh-CN|style=Feynman)、黎曼问题的波系结构，并剖析[Godunov方法](@keyword=godunov_methods|lang=zh-CN|style=Feynman)的革命性思想。在此基础上，我们将详细对比几种主流[近似黎曼求解器](@keyword=approximate_riemann_solvers|lang=zh-CN|style=Feynman)（如Roe、HLL、FVS）的设计哲学、数学构造及其内在的优缺点。
+*   在**应用与[交叉](@keyword=chiasmata|lang=zh-CN|style=Feynman)学科联系**中，我们将视野从一维理论扩展到多维现实世界，探讨这些求解器如何与[高阶格式](@keyword=higher_order_schemes|lang=zh-CN|style=Feynman)、复杂网格和物理边界条件协同工作，以及它们在航空航天、天体物理和磁[流体力学](@keyword=fluid_dynamics|lang=zh-CN|style=Feynman)等前沿领域的惊人适应性与普适性。
 *   最后，在**动手实践**部分，我们提供了一系列精心设计的问题，旨在将理论知识转化为实际的编程与分析能力，加深您对关键概念的理解。
 
 我们的探索之旅，始于理解这些流动背后最基本的语言——波的传播。
 
 ## 原理与机制
 
-在[可压缩流体](@entry_id:164617)的世界里，一切都关乎波的传播。想象一下，当一枚子弹划破空气，或当星际气体云在自身[引力](@entry_id:175476)下坍缩时，信息——关于压力、密度和速度的变化——是如何传递的？答案并非瞬时，而是通过波，以有限的速度在介质中穿行。我们探索[近似黎曼求解器](@entry_id:267136)的旅程，始于理解这些波的内在规律，这正是流体运动的“音乐”。
+在[可压缩流体](@keyword=compressible_fluids|lang=zh-CN|style=Feynman)的世界里，一切都关乎波的传播。想象一下，当一枚子弹划破空气，或当星际气体云在自身[引力](@keyword=gravitational_force|lang=zh-CN|style=Feynman)下坍缩时，信息——关于压力、密度和速度的变化——是如何传递的？答案并非瞬时，而是通过波，以有限的速度在介质中穿行。我们探索[近似黎曼求解器](@keyword=approximate_riemann_solvers|lang=zh-CN|style=Feynman)的旅程，始于理解这些波的内在规律，这正是流体运动的“音乐”。
 
-### 波的乐章：[双曲性](@entry_id:262766)与黎曼问题
+### 波的乐章：[双曲性](@keyword=hyperbolicity|lang=zh-CN|style=Feynman)与黎曼问题
 
-描述无粘性、[可压缩流体](@entry_id:164617)运动的数学语言是**欧拉方程**。我们不必将它们视为一堆令人生畏的[偏微分方程](@entry_id:141332)，而应视其为物理学中最基本、最优雅的[守恒定律](@entry_id:269268)的体现：[质量守恒](@entry_id:204015)、动量守恒和[能量守恒](@entry_id:140514)。简而言之，在一个封闭空间里，“进出的量必相等”。
+描述无粘性、[可压缩流体](@keyword=compressible_fluids|lang=zh-CN|style=Feynman)运动的数学语言是**欧拉方程**。我们不必将它们视为一堆令人生畏的[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)，而应视其为物理学中最基本、最优雅的[守恒定律](@keyword=conservation_law|lang=zh-CN|style=Feynman)的体现：[质量守恒](@keyword=mass_conservation|lang=zh-CN|style=Feynman)、动量守恒和[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)。简而言之，在一个封闭空间里，“进出的量必相等”。
 
-这些守恒律有一个至关重要的数学特性，称为**[双曲性](@entry_id:262766)**(hyperbolicity)。这个术语听起来可能有些抽象，但它的物理意义却非常直观：信息以有限的速度传播。就像池塘里的涟漪，扰动不会瞬间影响到所有地方。这些[传播速度](@entry_id:189384)，即所谓的**特征速度**，是系统的一个内在属性，由一个特殊矩阵（通量[雅可比矩阵](@entry_id:264467)）的[特征值](@entry_id:154894)决定。对于[理想气体](@entry_id:200096)，在任何给定点，存在三个这样的速度：流体自身的速度$u$，以及相对于流体以声速$a$向前和向后传播的两个声波的速度，$u+a$和$u-a$。
+这些守恒律有一个至关重要的数学特性，称为**[双曲性](@keyword=hyperbolicity|lang=zh-CN|style=Feynman)**(hyperbolicity)[@problem_id:3291757]。这个术语听起来可能有些抽象，但它的物理意义却非常直观：信息以有限的速度传播。就像池塘里的涟漪，扰动不会瞬间影响到所有地方。这些[传播速度](@keyword=propagation_velocity|lang=zh-CN|style=Feynman)，即所谓的**特征速度**，是系统的一个内在属性，由一个特殊矩阵（通量[雅可比矩阵](@keyword=jacobian|lang=zh-CN|style=Feynman)）的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)决定。对于[理想气体](@keyword=perfect_gases|lang=zh-CN|style=Feynman)，在任何给定点，存在三个这样的速度：流体自身的速度$u$，以及相对于流体以声速$a$向前和向后传播的两个声波的速度，$u+a$和$u-a$。
 
-只要我们处理的是真实的气体（即密度$\rho > 0$且压力$p > 0$），声速$a = \sqrt{\gamma p / \rho}$就是一个实数。因此，我们总能得到三个实实在在的、各不相同的波速。这种性质被称为**严格[双曲性](@entry_id:262766)**(strict hyperbolicity)。它保证了波的结构是清晰且可预测的，为我们后续的分析奠定了坚实的物理和数学基础。
+只要我们处理的是真实的气体（即密度$\rho > 0$且压力$p > 0$），声速$a = \sqrt{\gamma p / \rho}$就是一个实数。因此，我们总能得到三个实实在在的、各不相同的波速。这种性质被称为**严格[双曲性](@keyword=hyperbolicity|lang=zh-CN|style=Feynman)**(strict hyperbolicity)[@problem_id:3291757]。它保证了波的结构是清晰且可预测的，为我们后续的分析奠定了坚实的物理和数学基础。
 
-现在，让我们提出一个最简单却也最深刻的问题：如果在流体中突然出现一个[不连续面](@entry_id:180188)，其两侧的状态（比如密度和压力）截然不同，接下来会发生什么？这便是著名的**[黎曼问题](@entry_id:171440)**(Riemann problem)。它就像在流体世界里引爆了一场微型的“宇宙大爆炸”。
+现在，让我们提出一个最简单却也最深刻的问题：如果在流体中突然出现一个[不连续面](@keyword=surface_of_discontinuity|lang=zh-CN|style=Feynman)，其两侧的状态（比如密度和压力）截然不同，接下来会发生什么？这便是著名的**[黎曼问题](@keyword=riemann_problem|lang=zh-CN|style=Feynman)**(Riemann problem)[@problem_id:3291828]。它就像在流体世界里引爆了一场微型的“宇宙大爆炸”。
 
-令人惊奇的是，初始的突变并不会演变成一团混沌。相反，它会以一种极其优美和有序的方式自我消解。解的结构是**[自相似](@entry_id:274241)**的，意味着它只依赖于空间和时间的比值$x/t$。初始的[不连续面](@entry_id:180188)会“分裂”成一个由三道波组成的扇形结构，这些波将初始的左右状态与两个新的中间状态连接起来。这个过程好比一道棱镜将白光分解成[光谱](@entry_id:185632)，[欧拉方程](@entry_id:177914)也将初始的跳变分解成了它最基本的“特征”组分。
+令人惊奇的是，初始的突变并不会演变成一团混沌。相反，它会以一种极其优美和有序的方式自我消解。解的结构是**[自相似](@keyword=self_similar|lang=zh-CN|style=Feynman)**的，意味着它只依赖于空间和时间的比值$x/t$。初始的[不连续面](@keyword=surface_of_discontinuity|lang=zh-CN|style=Feynman)会“分裂”成一个由三道波组成的扇形结构，这些波将初始的左右状态与两个新的中间状态连接起来。这个过程好比一道棱镜将白光分解成[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)，[欧拉方程](@keyword=euler_s_equations|lang=zh-CN|style=Feynman)也将初始的跳变分解成了它最基本的“特征”组分。
 
-这三道波的构成是固定的：
+这三道波的构成是固定的[@problem_id:3291828]：
 1.  一道向左传播的**声波**。
 2.  一道向右传播的**声波**。
 3.  一道以流体速度$u$移动的**接触不连续**(contact discontinuity)，夹在两道声波之间。
 
-声波可以是急剧变陡形成的**激波**(shock)，也可以是平滑过渡的**[稀疏波](@entry_id:168428)**(rarefaction)。而接触不连续则更为奇特：跨过它，流体的压力和速度保持不变，但密度和温度却可以发生跳变。想象一下，一团热空气和一团冷空气并排而行，它们之间没有压力差，这就是一个接触不连续。因此，对于任意的初始左右状态，解的结构必然是这四种组合之一：激波-接触-激波、[稀疏波](@entry_id:168428)-接触-[稀疏波](@entry_id:168428)，或是两者的混合。这个优雅的波系结构，是所有现代高精度计算[流体力学](@entry_id:136788)(CFD)格式试图捕捉的“物理真实”。
+声波可以是急剧变陡形成的**激波**(shock)，也可以是平滑过渡的**[稀疏波](@keyword=rarefaction_waves|lang=zh-CN|style=Feynman)**(rarefaction)。而接触不连续则更为奇特：跨过它，流体的压力和速度保持不变，但密度和温度却可以发生跳变。想象一下，一团热空气和一团冷空气并排而行，它们之间没有压力差，这就是一个接触不连续。因此，对于任意的初始左右状态，解的结构必然是这四种组合之一：激波-接触-激波、[稀疏波](@keyword=rarefaction_waves|lang=zh-CN|style=Feynman)-接触-[稀疏波](@keyword=rarefaction_waves|lang=zh-CN|style=Feynman)，或是两者的混合。这个优雅的波系结构，是所有现代高精度计算[流体力学](@keyword=fluid_dynamics|lang=zh-CN|style=Feynman)(CFD)格式试图捕捉的“物理真实”。
 
 ### 从连续到离散：戈杜诺夫的构想
 
@@ -38,52 +38,52 @@
 
 那么，这些单元格之间如何“沟通”呢？一个单元格的状态之所以会改变，是因为有物质（质量、动量、能量）通过其边界流入或流出。计算这些跨越边界的**通量**(flux)成了问题的核心。
 
-这里，俄罗斯数学家戈杜诺夫(S. K. Godunov)提出了一个天才般的构想。他指出，在任意两个相邻单元格的交界面上，我们都面临着一个微型的黎曼问题！左边单元格的平均状态是$U_L$，右边的是$U_R$。那么，通过这个界面的通量应该由什么决定呢？答案就藏在这个局部黎曼问题的解中。具体来说，界面上的通量就是[自相似解](@entry_id:164839)在$x/t=0$这条线上的状态所对应的物理通量。
+这里，俄罗斯数学家戈杜诺夫(S. K. Godunov)提出了一个天才般的构想[@problem_id:3291802]。他指出，在任意两个相邻单元格的交界面上，我们都面临着一个微型的黎曼问题！左边单元格的平均状态是$U_L$，右边的是$U_R$。那么，通过这个界面的通量应该由什么决定呢？答案就藏在这个局部黎曼问题的解中。具体来说，界面上的通量就是[自相似解](@keyword=self_similar_solutions|lang=zh-CN|style=Feynman)在$x/t=0$这条线上的状态所对应的物理通量。
 
-这是一个极其深刻的物理思想。我们不再使用某种随意的数学插值来猜测界面通量，而是直接“请教”物理定律本身——[欧拉方程](@entry_id:177914)——在这样的不连续条件下，通量应该是什么。这个思想完美地体现了**迎风**(upwinding)的精髓：计算出的通量自然而然地包含了信息传播方向的信息，因为它源于对[波的传播](@entry_id:144063)的直接求解。[戈杜诺夫方法](@entry_id:176545)将离散的计算与连续的物理定律完美地联系在了一起。
+这是一个极其深刻的物理思想。我们不再使用某种随意的数学插值来猜测界面通量，而是直接“请教”物理定律本身——[欧拉方程](@keyword=euler_s_equations|lang=zh-CN|style=Feynman)——在这样的不连续条件下，通量应该是什么。这个思想完美地体现了**迎风**(upwinding)的精髓：计算出的通量自然而然地包含了信息传播方向的信息，因为它源于对[波的传播](@keyword=wave_propagation|lang=zh-CN|style=Feynman)的直接求解。[戈杜诺夫方法](@keyword=godunov_s_method|lang=zh-CN|style=Feynman)将离散的计算与连续的物理定律完美地联系在了一起。
 
-### 近似的艺术：[黎曼求解器](@entry_id:754362)大观园
+### 近似的艺术：[黎曼求解器](@keyword=riemann_solvers|lang=zh-CN|style=Feynman)大观园
 
-然而，精确求解每个界面上的黎曼问题既复杂又耗时。我们能否用一个更简单、更快速的**近似**方法来代替？答案是肯定的，而这正是“[近似黎曼求解器](@entry_id:267136)”这门“艺术”的用武之地。它们构成了一个丰富多彩的“动物园”，每种求解器都有其独特的个性和优缺点。
+然而，精确求解每个界面上的黎曼问题既复杂又耗时。我们能否用一个更简单、更快速的**近似**方法来代替？答案是肯定的，而这正是“[近似黎曼求解器](@keyword=approximate_riemann_solvers|lang=zh-CN|style=Feynman)”这门“艺术”的用武之地。它们构成了一个丰富多彩的“动物园”，每种求解器都有其独特的个性和优缺点。
 
-#### 精准而脆弱的艺术家：[Roe求解器](@entry_id:754403)
+#### 精准而脆弱的艺术家：[Roe求解器](@keyword=roe_s_solver|lang=zh-CN|style=Feynman)
 
-首先登场的是一位广受赞誉的“艺术家”——**[Roe求解器](@entry_id:754403)**。Roe的思想是：我们能否用一个简单的**线性**问题来代替复杂的[非线性](@entry_id:637147)黎曼问题，只要这个线性问题能够精确地描述状态之间的**跳变**关系就行？ 这种方法被称为**Roe线性化**。
+首先登场的是一位广受赞誉的“艺术家”——**[Roe求解器](@keyword=roe_s_solver|lang=zh-CN|style=Feynman)**。Roe的思想是：我们能否用一个简单的**线性**问题来代替复杂的[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)黎曼问题，只要这个线性问题能够精确地描述状态之间的**跳变**关系就行？[@problem_id:3291827] 这种方法被称为**Roe线性化**。
 
-[Roe求解器](@entry_id:754403)必须满足几个关键属性：它必须是**一致的**（当左右状态相同时，它退化为物理通量），**守恒的**（精确满足通量跳变与状态跳变之间的关系，即所谓的“Property U”），并且其线性化矩阵本身必须是**双曲的**。
+[Roe求解器](@keyword=roe_s_solver|lang=zh-CN|style=Feynman)必须满足几个关键属性：它必须是**一致的**（当左右状态相同时，它退化为物理通量），**守恒的**（精确满足通量跳变与状态跳变之间的关系，即所谓的“Property U”），并且其线性化矩阵本身必须是**双曲的**。
 
-[Roe求解器](@entry_id:754403)的“魔力”在于它惊人的精准度。例如，对于一个静止的接触不连续（即压力和速度相同，仅密度和温度不同），[Roe求解器](@entry_id:754403)能够识别出这个跳变完全沿着零速度的接触波方向。结果，它产生的[数值耗散](@entry_id:168584)恰好为零，从而完美地、不带任何模糊地保持了接触不连续的锋利性。
+[Roe求解器](@keyword=roe_s_solver|lang=zh-CN|style=Feynman)的“魔力”在于它惊人的精准度。例如，对于一个静止的接触不连续（即压力和速度相同，仅密度和温度不同），[Roe求解器](@keyword=roe_s_solver|lang=zh-CN|style=Feynman)能够识别出这个跳变完全沿着零速度的接触波方向。结果，它产生的[数值耗散](@keyword=numerical_smearing|lang=zh-CN|style=Feynman)恰好为零，从而完美地、不带任何模糊地保持了接触不连续的锋利性[@problem_id:3291780]。
 
-但正如许多伟大的艺术家一样，[Roe求解器](@entry_id:754403)也有其“悲剧性”的缺陷。它有时会被一种称为**[跨音速稀疏波](@entry_id:756129)**(transonic rarefaction)的情况所“欺骗”。在这种情况下，物理上本应平滑扩展的[稀疏波](@entry_id:168428)，在[Roe求解器](@entry_id:754403)眼中却成了一个不符合物理规律的“膨胀激波”，这会违反[热力学第二定律](@entry_id:142732)（即**[熵条件](@entry_id:166346)**），甚至可能计算出负压力或负密度这样的荒谬结果。为了修正这个缺陷，人们必须引入所谓的**“[熵修正](@entry_id:749021)”**(entropy fix)——这就像一位画家小心翼翼地在画布上轻点几笔，以修正一处瑕疵，在需要的地方精确地增加一点点耗散。
+但正如许多伟大的艺术家一样，[Roe求解器](@keyword=roe_s_solver|lang=zh-CN|style=Feynman)也有其“悲剧性”的缺陷。它有时会被一种称为**[跨音速稀疏波](@keyword=transonic_rarefaction|lang=zh-CN|style=Feynman)**(transonic rarefaction)的情况所“欺骗”[@problem_id:3291846][@problem_id:3291776]。在这种情况下，物理上本应平滑扩展的[稀疏波](@keyword=rarefaction_waves|lang=zh-CN|style=Feynman)，在[Roe求解器](@keyword=roe_s_solver|lang=zh-CN|style=Feynman)眼中却成了一个不符合物理规律的“膨胀激波”，这会违反[热力学第二定律](@keyword=second_law_of_thermodynamics|lang=zh-CN|style=Feynman)（即**[熵条件](@keyword=entropy_condition|lang=zh-CN|style=Feynman)**），甚至可能计算出负压力或负密度这样的荒谬结果[@problem_id:3291808]。为了修正这个缺陷，人们必须引入所谓的**“[熵修正](@keyword=entropy_fix|lang=zh-CN|style=Feynman)”**(entropy fix)——这就像一位画家小心翼翼地在画布上轻点几笔，以修正一处瑕疵，在需要的地方精确地增加一点点耗散。
 
 #### 皮实耐劳的“工兵”：HLL家族求解器
 
-与精准但脆弱的[Roe求解器](@entry_id:754403)形成鲜明对比的是一类更为“粗犷”但异常稳健的求解器——**HLL家族**。
+与精准但脆弱的[Roe求解器](@keyword=roe_s_solver|lang=zh-CN|style=Feynman)形成鲜明对比的是一类更为“粗犷”但异常稳健的求解器——**HLL家族**。
 
-最基础的**[HLL求解器](@entry_id:178607)**的思想异常简单：我们干脆假设黎曼问题的解只包含两道最外围的波，所有中间的复杂结构（包括接触不连续）都被压缩成一个单一的平均状态。这显然是一个非常粗糙的近似，它会把接触不连续完全模糊掉。
+最基础的**[HLL求解器](@keyword=hll_solver|lang=zh-CN|style=Feynman)**的思想异常简单：我们干脆假设黎曼问题的解只包含两道最外围的波，所有中间的复杂结构（包括接触不连续）都被压缩成一个单一的平均状态[@problem_id:3291780]。这显然是一个非常粗糙的近似，它会把接触不连续完全模糊掉。
 
-然而，这种粗糙正是其力量的源泉。通过将所有波“一锅炖”，并施加足够的数值耗散来覆盖所有可能性，[HLL求解器](@entry_id:178607)变得异常**稳健**(robust)。只要给定合适的[波速](@entry_id:186208)估计和时间步长，它就能保证**[正定性](@entry_id:149643)**(positivity-preserving)，即绝不会从物理的初始状态（正密度、正压力）演化出非物理的负值结果。
+然而，这种粗糙正是其力量的源泉。通过将所有波“一锅炖”，并施加足够的数值耗散来覆盖所有可能性，[HLL求解器](@keyword=hll_solver|lang=zh-CN|style=Feynman)变得异常**稳健**(robust)。只要给定合适的[波速](@keyword=wave_speed|lang=zh-CN|style=Feynman)估计和时间步长，它就能保证**[正定性](@keyword=positive_definiteness|lang=zh-CN|style=Feynman)**(positivity-preserving)，即绝不会从物理的初始状态（正密度、正压力）演化出非物理的负值结果[@problem_id:3291776][@problem_id:3291785]。
 
-当然，HLL的过度耗散也催生了改进。**[HLLC求解器](@entry_id:750352)**应运而生，它的理念是：“HLL太粗糙了，我们至少应该把最重要的中间波——接触波——给加回来。” HLLC采用了一个三波模型（左[行波](@entry_id:185008)、接触波、右行波），这使得它在捕捉接触不连续时几乎和Roe同样精准。然而，作为代价，它也部分继承了Roe的脆弱性。
+当然，HLL的过度耗散也催生了改进。**[HLLC求解器](@keyword=hllc_solver|lang=zh-CN|style=Feynman)**应运而生，它的理念是：“HLL太粗糙了，我们至少应该把最重要的中间波——接触波——给加回来。”[@problem_id:3291780] HLLC采用了一个三波模型（左[行波](@keyword=traveling_waves|lang=zh-CN|style=Feynman)、接触波、右行波），这使得它在捕捉接触不连续时几乎和Roe同样精准。然而，作为代价，它也部分继承了Roe的脆弱性。
 
-#### 另一种[迎风](@entry_id:756372)思路：[通量矢量分裂](@entry_id:749491)
+#### 另一种[迎风](@keyword=upwinding|lang=zh-CN|style=Feynman)思路：[通量矢量分裂](@keyword=flux_vector_splitting|lang=zh-CN|style=Feynman)
 
-除了上述基于黎曼问题“解”的近似，还存在另一种完全不同的哲学：**[通量矢量分裂](@entry_id:749491)**(Flux Vector Splitting, FVS)。这种方法的思路是，我们不去近似求解黎曼问题，而是直接将物理通量函数$F(U)$本身**分裂**成一个“向前传播”的部分$F^+$和一个“向后传播”的部分$F^-$。在界面处，我们从左侧状态取$F^+$，从右侧状态取$F^-$，然后将它们相加得到总通量。这是一种实现迎风思想的替代路径。FVS方法通常也非常稳健，但缺点是在接触不连续和[声速点](@entry_id:755066)附近会引入过多的数值耗散，导致解的精度下降。
+除了上述基于黎曼问题“解”的近似，还存在另一种完全不同的哲学：**[通量矢量分裂](@keyword=flux_vector_splitting|lang=zh-CN|style=Feynman)**(Flux Vector Splitting, FVS)[@problem_id:3291823]。这种方法的思路是，我们不去近似求解黎曼问题，而是直接将物理通量函数$F(U)$本身**分裂**成一个“向前传播”的部分$F^+$和一个“向后传播”的部分$F^-$。在界面处，我们从左侧状态取$F^+$，从右侧状态取$F^-$，然后将它们相加得到总通量。这是一种实现迎风思想的替代路径。FVS方法通常也非常稳健，但缺点是在接触不连续和[声速点](@keyword=sonic_point|lang=zh-CN|style=Feynman)附近会引入过多的数值耗散，导致解的精度下降。
 
 ### 超越一维画布：更深的真理与潜伏的幽灵
 
 我们已经在一维世界里探索了各种求解器的设计哲学及其优劣。然而，当我们把目光投向更高维度时，一些更深层次的真理和潜伏的问题便会浮现。
 
-#### 对数学完美的追求：[熵稳定性](@entry_id:749023)
+#### 对数学完美的追求：[熵稳定性](@keyword=entropy_stability|lang=zh-CN|style=Feynman)
 
-让我们再次回到[熵条件](@entry_id:166346)。一个数值解不应凭空创造能量，也不应违反[热力学第二定律](@entry_id:142732)。我们能否设计出一种求解器，从数学上**严格保证**其满足[熵不等式](@entry_id:184404)的离散形式？
+让我们再次回到[熵条件](@keyword=entropy_condition|lang=zh-CN|style=Feynman)。一个数值解不应凭空创造能量，也不应违反[热力学第二定律](@keyword=second_law_of_thermodynamics|lang=zh-CN|style=Feynman)。我们能否设计出一种求解器，从数学上**严格保证**其满足[熵不等式](@keyword=entropy_inequality|lang=zh-CN|style=Feynman)的离散形式？[@problem_id:3291808]
 
-答案是肯定的，这引领我们进入了**熵稳定**(entropy stable)格式的现代领域。这类格式的构建方式极为精妙：首先构造一个**[熵守恒](@entry_id:749018)**的通量（这对于激波来说是错误的，因为它不产生熵），然后在此基础上，以一种非常特殊、经过精心设计的方式，添加恰到好处的[数值耗散](@entry_id:168584)项。这种方法将物理定律的深刻数学结构直接融入到离散格式的设计中，代表了该领域在追求数学完美性上的前沿。
+答案是肯定的，这引领我们进入了**熵稳定**(entropy stable)格式的现代领域。这类格式的构建方式极为精妙：首先构造一个**[熵守恒](@keyword=entropy_conservation|lang=zh-CN|style=Feynman)**的通量（这对于激波来说是错误的，因为它不产生熵），然后在此基础上，以一种非常特殊、经过精心设计的方式，添加恰到好处的[数值耗散](@keyword=numerical_smearing|lang=zh-CN|style=Feynman)项。这种方法将物理定律的深刻数学结构直接融入到离散格式的设计中，代表了该领域在追求数学完美性上的前沿。
 
 #### “Carbuncle”：机器中的幽灵
 
-我们拥有了如此多出色的一维求解器，当把它们应用到二维或三维问题时会发生什么呢？在大多数情况下，它们工作得很好。然而，在模拟与网格方向完全对齐的强激波时，一个被称为**“Carbuncle”**（红玉、痈）的怪异数值不稳定性现象可能会出现。一个本应平滑的激波[波前](@entry_id:197956)，会莫名其妙地长出一个非物理的“疙瘩”。
+我们拥有了如此多出色的一维求解器，当把它们应用到二维或三维问题时会发生什么呢？在大多数情况下，它们工作得很好。然而，在模拟与网格方向完全对齐的强激波时，一个被称为**“Carbuncle”**（红玉、痈）的怪异数值不稳定性现象可能会出现[@problem_id:3291835]。一个本应平滑的激波[波前](@keyword=wavefront|lang=zh-CN|style=Feynman)，会莫名其妙地长出一个非物理的“疙瘩”。
 
-这个“幽灵”现象的根源在于我们一维求解器的**各向异性**(anisotropy)。这些求解器在处理垂直于单元边界的波时非常出色，但对于沿着边界传播的扰动却可能“视而不见”。对于像Roe这样精准的求解器，它为沿着激波波前传播的横向扰动（剪切波）所施加的[数值耗散](@entry_id:168584)极低。这种耗散的缺失使得微小的数值扰动得以放大，它们在波前不断地来回“穿梭”，最终将质量和动量堆积在某个局部，形成了“Carbuncle”。
+这个“幽灵”现象的根源在于我们一维求解器的**各向异性**(anisotropy)。这些求解器在处理垂直于单元边界的波时非常出色，但对于沿着边界传播的扰动却可能“视而不见”。对于像Roe这样精准的求解器，它为沿着激波波前传播的横向扰动（剪切波）所施加的[数值耗散](@keyword=numerical_smearing|lang=zh-CN|style=Feynman)极低。这种耗散的缺失使得微小的数值扰动得以放大，它们在波前不断地来回“穿梭”，最终将质量和动量堆积在某个局部，形成了“Carbuncle”。
 
-有趣的是，稳健但“笨拙”的HLLE求解器却不会受此困扰，因为它那“一视同仁”的、各向同性的巨大耗散，从一开始就扼杀了这些横向扰动。这揭示了一个深刻的道理：在[数值模拟](@entry_id:137087)的世界里，“更聪明”（更低耗散、更高阶）有时并非总是更好。在准确性与稳健性之间，永远存在着一种微妙的平衡与权衡。而从一维到多维的跨越，也总能揭示出我们在一维视角下未曾察觉的、潜藏在物理与算法深处的“幽灵”。
+有趣的是，稳健但“笨拙”的HLLE求解器却不会受此困扰，因为它那“一视同仁”的、各向同性的巨大耗散，从一开始就扼杀了这些横向扰动。这揭示了一个深刻的道理：在[数值模拟](@keyword=numerical_simulation|lang=zh-CN|style=Feynman)的世界里，“更聪明”（更低耗散、更高阶）有时并非总是更好。在准确性与稳健性之间，永远存在着一种微妙的平衡与权衡。而从一维到多维的跨越，也总能揭示出我们在一维视角下未曾察觉的、潜藏在物理与算法深处的“幽灵”。

@@ -1,10 +1,10 @@
 ## 引言
-是什么决定了一个化学反应的速度？又是什么让它最终停止？从一块方糖在热茶中的溶解，到地球深处岩石的演变，这些过程的快慢与终点似乎都遵循着某种普遍规律。长期以来，科学家们试图建立能够准确描述[反应速率](@entry_id:185114)的数学模型，但许多经验公式在描述反应[趋于平衡](@entry_id:150414)时的行为时，会与基本的热力学定律相矛盾。这暴露了一个核心的知识鸿沟：如何将描述反应“趋势”的[热力学](@entry_id:172368)与描述反应“速度”的动力学无缝地统一起来？
+是什么决定了一个化学反应的速度？又是什么让它最终停止？从一块方糖在热茶中的溶解，到地球深处岩石的演变，这些过程的快慢与终点似乎都遵循着某种普遍规律。长期以来，科学家们试图建立能够准确描述[反应速率](@keyword=rate_of_reaction|lang=zh-CN|style=Feynman)的数学模型，但许多经验公式在描述反应[趋于平衡](@keyword=approach_to_equilibrium|lang=zh-CN|style=Feynman)时的行为时，会与基本的热力学定律相矛盾。这暴露了一个核心的知识鸿沟：如何将描述反应“趋势”的[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)与描述反应“速度”的动力学无缝地统一起来？
 
-本文旨在填补这一鸿沟，系统介绍一个强大而优美的理论——基于亲和势的[动力学速率定律](@entry_id:1126935)。它为我们提供了一种从基本[物理化学](@entry_id:145220)原理出发，构建既符合微观机理又尊重宏观[热力学约束](@entry_id:755911)的[反应速率](@entry_id:185114)模型的方法。
+本文旨在填补这一鸿沟，系统介绍一个强大而优美的理论——基于亲和势的[动力学速率定律](@keyword=kinetic_rate_laws|lang=zh-CN|style=Feynman)。它为我们提供了一种从基本[物理化学](@keyword=physical_chemistry|lang=zh-CN|style=Feynman)原理出发，构建既符合微观机理又尊重宏观[热力学约束](@keyword=thermodynamic_constraints|lang=zh-CN|style=Feynman)的[反应速率](@keyword=rate_of_reaction|lang=zh-CN|style=Feynman)模型的方法。
 
 在接下来的章节中，你将学到：
-- 在 **“原则与机制”** 一章中，我们将从吉布斯自由能出发，定义化学反应的真正驱动力——化学亲和势，并基于[过渡态理论](@entry_id:168144)推导出连接速率与亲和势的核心方程。
+- 在 **“原则与机制”** 一章中，我们将从吉布斯自由能出发，定义化学反应的真正驱动力——化学亲和势，并基于[过渡态理论](@keyword=transition_state_theory_(tst)|lang=zh-CN|style=Feynman)推导出连接速率与亲和势的核心方程。
 - 在 **“应用与交叉学科联系”** 一章中，我们将看到这一理论如何跨越学科界限，统一地解释地球化学、生物学、医学和免疫学中的多样化现象。
 - 最后，在 **“动手实践”** 部分，你将有机会通过具体的计算练习，将理论应用于数据分析和动态模拟，亲身体验这一框架的强大功能。
 
@@ -16,7 +16,7 @@
 
 这个简单的过程提出了几个深刻的问题：是什么驱动了溶解？为什么它会开始，又为什么会停止？最有趣的是，溶解的“速度”与它距离“终点”的“远近”之间是否存在某种普适的联系？
 
-答案是肯定的。自然界中所有化学反应，从岩石的风化到我们体内的呼吸作用，都遵循着一套优雅的规则，将反应的**[热力学驱动力](@entry_id:1133063)（thermodynamic driving force）**与它的**动力学速率（kinetic rate）**联系起来。这套规则的核心，就是**基于亲和势的[动力学速率定律](@entry_id:1126935)（affinity-based kinetic rate laws）**。接下来，我们将像物理学家一样，从最基本的原理出发，一步步揭开这背后的美丽画卷。
+答案是肯定的。自然界中所有化学反应，从岩石的风化到我们体内的呼吸作用，都遵循着一套优雅的规则，将反应的**[热力学驱动力](@keyword=thermodynamic_driving_force|lang=zh-CN|style=Feynman)（thermodynamic driving force）**与它的**动力学速率（kinetic rate）**联系起来。这套规则的核心，就是**基于亲和势的[动力学速率定律](@keyword=kinetic_rate_laws|lang=zh-CN|style=Feynman)（affinity-based kinetic rate laws）**。接下来，我们将像物理学家一样，从最基本的原理出发，一步步揭开这背后的美丽画卷。
 
 ### 驱动力：什么是化学亲和势？
 
@@ -24,92 +24,92 @@
 
 那么，我们如何量化一个反应距离“山谷底部”有多远呢？这里我们需要两个关键的量：
 
-首先是**[反应商](@entry_id:145217)（reaction quotient）**，记作 $Q$。它衡量了反应体系在**任意时刻**的组分状态。对于一个通用反应，比如一块方解石（$\mathrm{CaCO_3(s)}$）溶解在水中：
+首先是**[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman)（reaction quotient）**，记作 $Q$。它衡量了反应体系在**任意时刻**的组分状态。对于一个通用反应，比如一块方解石（$\mathrm{CaCO_3(s)}$）溶解在水中：
 $$ \mathrm{CaCO_3(s)} \rightleftharpoons \mathrm{Ca^{2+}} + \mathrm{CO_3^{2-}} $$
-它的[反应商](@entry_id:145217)就是此刻水中两种离子**活度（activity）**的乘积，$Q = a_{\mathrm{Ca^{2+}}} a_{\mathrm{CO_3^{2-}}}$。活度是浓度的“有效”版本，考虑了离子间的相互作用 。而对于纯固体和作为溶剂的水，按照惯例，它们的活度被视为1，因此在 $Q$ 的表达式中被省略了 。
+它的[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman)就是此刻水中两种离子**活度（activity）**的乘积，$Q = a_{\mathrm{Ca^{2+}}} a_{\mathrm{CO_3^{2-}}}$。活度是浓度的“有效”版本，考虑了离子间的相互作用 [@problem_id:4068587]。而对于纯固体和作为溶剂的水，按照惯例，它们的活度被视为1，因此在 $Q$ 的表达式中被省略了 [@problem_id:4068589]。
 
-其次是**平衡常数（equilibrium constant）**，记作 $K$。它本质上就是反应在达到平衡时（即山谷底部）的那个**特殊的[反应商](@entry_id:145217)**。它的值由反应的[标准吉布斯自由能变](@entry_id:168647) $\Delta_r G^\circ$ 唯一确定：$K(T) = \exp(-\Delta_r G^\circ(T)/RT)$  。
+其次是**平衡常数（equilibrium constant）**，记作 $K$。它本质上就是反应在达到平衡时（即山谷底部）的那个**特殊的[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman)**。它的值由反应的[标准吉布斯自由能变](@keyword=standard_gibbs_free_energy_change|lang=zh-CN|style=Feynman) $\Delta_r G^\circ$ 唯一确定：$K(T) = \exp(-\Delta_r G^\circ(T)/RT)$ [@problem_id:4068529] [@problem_id:4068587]。
 
-有了这两个量，我们就可以定义化学反应的真正驱动力了。这个驱动力被称为**化学亲和势（chemical affinity）**，由伟大的比利时[物理化学](@entry_id:145220)家 Théophile De Donder 引入，符号为 $A$。它被干净利落地定义为反应[吉布斯自由能变](@entry_id:138324)的负值：$A \equiv -\Delta_r G$。这一定义非常巧妙，因为[自发反应](@entry_id:140874)的条件是 $\Delta_r G  0$，这恰好意味着 $A > 0$。于是，亲和势 $A$ 成为了一个直观的、正向的“力”，推动反应朝着我们书写的方向前进。
+有了这两个量，我们就可以定义化学反应的真正驱动力了。这个驱动力被称为**化学亲和势（chemical affinity）**，由伟大的比利时[物理化学](@keyword=physical_chemistry|lang=zh-CN|style=Feynman)家 Théophile De Donder 引入，符号为 $A$。它被干净利落地定义为反应[吉布斯自由能变](@keyword=change_in_gibbs_free_energy|lang=zh-CN|style=Feynman)的负值：$A \equiv -\Delta_r G$。这一定义非常巧妙，因为[自发反应](@keyword=spontaneous_reaction|lang=zh-CN|style=Feynman)的条件是 $\Delta_r G  0$，这恰好意味着 $A > 0$。于是，亲和势 $A$ 成为了一个直观的、正向的“力”，推动反应朝着我们书写的方向前进。
 
-[结合热力学](@entry_id:203006)的基本关系，我们可以推导出一个极其优美的公式，它将亲和势与 $Q$ 和 $K$ 联系起来 ：
+[结合热力学](@keyword=thermodynamics_of_binding|lang=zh-CN|style=Feynman)的基本关系，我们可以推导出一个极其优美的公式，它将亲和势与 $Q$ 和 $K$ 联系起来 [@problem_id:4068522]：
 $$ A = RT \ln\left(\frac{K}{Q}\right) $$
 这个公式告诉我们一切！亲和势 $A$ 的大小，正比于平衡状态 ($K$) 与当前状态 ($Q$) 之间的“距离”的对数。
-- 当系统[远离平衡](@entry_id:185355)时（例如，纯水中 $Q \approx 0$），$K/Q$ 是个巨大的数字，亲和势 $A$ 很大，反应驱动力强劲。
+- 当系统[远离平衡](@keyword=far_from_equilibrium|lang=zh-CN|style=Feynman)时（例如，纯水中 $Q \approx 0$），$K/Q$ 是个巨大的数字，亲和势 $A$ 很大，反应驱动力强劲。
 - 当系统接近平衡时（$Q \to K$），$K/Q \to 1$，$\ln(1) = 0$，亲和势 $A$ 趋于零，驱动力消失。
-- 如果系统处于[过饱和](@entry_id:200794)状态（$Q > K$），那么 $K/Q  1$，亲和势 $A$ 会变成负值。这又意味着什么呢？它意味着反应会自发地向**相反**的方向进行——例如，沉淀而不是溶解。
+- 如果系统处于[过饱和](@keyword=supersaturation|lang=zh-CN|style=Feynman)状态（$Q > K$），那么 $K/Q  1$，亲和势 $A$ 会变成负值。这又意味着什么呢？它意味着反应会自发地向**相反**的方向进行——例如，沉淀而不是溶解。
 
-值得注意的是，亲和势 $A$ 的正负号取决于你如何书写[化学方程式](@entry_id:145755)。例如，对于石英-水体系 ：
-1.  写成溶解反应：$\mathrm{SiO_2(s)} + 2\mathrm{H_2O} \rightleftharpoons \mathrm{H_4SiO_4(aq)}$。在不[饱和溶液](@entry_id:141420)中，$Q  K$，于是 $A > 0$，驱动溶解。
-2.  写成[沉淀反应](@entry_id:138389)：$\mathrm{H_4SiO_4(aq)} \rightleftharpoons \mathrm{SiO_2(s)} + 2\mathrm{H_2O}$。对于同样的不[饱和溶液](@entry_id:141420)，这个反应的[平衡常数](@entry_id:141040)和[反应商](@entry_id:145217)互为倒数，导致其亲和势 $A' = -A  0$。负的亲和势意味着这个“正向”（沉淀）反应无法自发进行。
+值得注意的是，亲和势 $A$ 的正负号取决于你如何书写[化学方程式](@keyword=chemical_equation|lang=zh-CN|style=Feynman)。例如，对于石英-水体系 [@problem_id:4068522]：
+1.  写成溶解反应：$\mathrm{SiO_2(s)} + 2\mathrm{H_2O} \rightleftharpoons \mathrm{H_4SiO_4(aq)}$。在不[饱和溶液](@keyword=saturated_solution|lang=zh-CN|style=Feynman)中，$Q  K$，于是 $A > 0$，驱动溶解。
+2.  写成[沉淀反应](@keyword=precipitation_reactions|lang=zh-CN|style=Feynman)：$\mathrm{H_4SiO_4(aq)} \rightleftharpoons \mathrm{SiO_2(s)} + 2\mathrm{H_2O}$。对于同样的不[饱和溶液](@keyword=saturated_solution|lang=zh-CN|style=Feynman)，这个反应的[平衡常数](@keyword=equilibrium_constant|lang=zh-CN|style=Feynman)和[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman)互为倒数，导致其亲和势 $A' = -A  0$。负的亲和势意味着这个“正向”（沉淀）反应无法自发进行。
 
 因此，$A>0$ 的物理意义永远是：**反应会自发地向当前书写的方向进行**。
 
 ### 运动定律：连接驱动力与速率
 
-现在我们有了“力”（亲和势 $A$），下一步就是找到“速度”（[反应速率](@entry_id:185114) $r$）。最简单的想法莫过于假设速度正比于力，即 $r \propto A$。这在物理学中很常见，比如[欧姆定律](@entry_id:276027)。事实上，在非常接近平衡的条件下，这个线性关系是成立的，它源于**非平衡热力学（Non-Equilibrium Thermodynamics, NET）** 。
+现在我们有了“力”（亲和势 $A$），下一步就是找到“速度”（[反应速率](@keyword=rate_of_reaction|lang=zh-CN|style=Feynman) $r$）。最简单的想法莫过于假设速度正比于力，即 $r \propto A$。这在物理学中很常见，比如[欧姆定律](@keyword=v_=_ir|lang=zh-CN|style=Feynman)。事实上，在非常接近平衡的条件下，这个线性关系是成立的，它源于**非平衡热力学（Non-Equilibrium Thermodynamics, NET）** [@problem_id:4068606]。
 
-然而，这种线性关系并不普适。更糟糕的是，许多地质学家和化学家过去使用的经验性速率公式，例如简单地将速率表达为反应物活度的[幂函数](@entry_id:166538)之和（如 $r = k_A a_A + k_B a_B$），存在一个致命缺陷：它们无法在数学上保证当系统达到平衡（$Q=K$）时，净速率 $r$ 精确地等于零 。这就像一个[永动机](@entry_id:184397)，违背了[热力学](@entry_id:172368)基本原理。
+然而，这种线性关系并不普适。更糟糕的是，许多地质学家和化学家过去使用的经验性速率公式，例如简单地将速率表达为反应物活度的[幂函数](@keyword=power_function|lang=zh-CN|style=Feynman)之和（如 $r = k_A a_A + k_B a_B$），存在一个致命缺陷：它们无法在数学上保证当系统达到平衡（$Q=K$）时，净速率 $r$ 精确地等于零 [@problem_id:4068606]。这就像一个[永动机](@keyword=perpetual_motion|lang=zh-CN|style=Feynman)，违背了[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)基本原理。
 
-那么，正确的形式应该是什么样的？答案来自一个更基本的物理图像：**[微观可逆性原理](@entry_id:137392)（principle of microscopic reversibility）**。任何化学反应都同时存在正向和反向两个过程。净速率 $r$ 应该是正向速率 $r_f$ 与反向速率 $r_b$ 之差：
+那么，正确的形式应该是什么样的？答案来自一个更基本的物理图像：**[微观可逆性原理](@keyword=principle_of_microscopic_reversibility|lang=zh-CN|style=Feynman)（principle of microscopic reversibility）**。任何化学反应都同时存在正向和反向两个过程。净速率 $r$ 应该是正向速率 $r_f$ 与反向速率 $r_b$ 之差：
 $$ r = r_f - r_b $$
-在平衡状态时，净速率为零，这意味着 $r_f = r_b$。这个看似简单的平衡条件，引出了[速率常数](@entry_id:140362)与[平衡常数](@entry_id:141040)之间的深刻联系：$K = k_f/k_r$ 。
+在平衡状态时，净速率为零，这意味着 $r_f = r_b$。这个看似简单的平衡条件，引出了[速率常数](@keyword=rate_constant|lang=zh-CN|style=Feynman)与[平衡常数](@keyword=equilibrium_constant|lang=zh-CN|style=Feynman)之间的深刻联系：$K = k_f/k_r$ [@problem_id:4068529]。
 
 利用这一点，我们可以对净速率表达式进行代数变形：
 $$ r = r_f - r_b = r_f \left(1 - \frac{r_b}{r_f}\right) $$
-由于速率与活度成正比，我们可以证明 $r_b/r_f = Q/K$。于是，我们得到了一个具有普遍性的[速率定律](@entry_id:276849)形式：
+由于速率与活度成正比，我们可以证明 $r_b/r_f = Q/K$。于是，我们得到了一个具有普遍性的[速率定律](@keyword=rate_laws|lang=zh-CN|style=Feynman)形式：
 $$ r = r_f \left(1 - \frac{Q}{K}\right) $$
-这个形式是完美的！它告诉我们，净速率等于正向速率 $r_f$ 乘以一个括号项。这个括号项 $(1-Q/K)$ 扮演了“[热力学](@entry_id:172368)刹车”的角色。当 $Q \ll K$ 时，它约等于1，净速率几乎就是正向速率。当 $Q \to K$ 时，它趋于0，平稳地将净速率降为零，从而完美地满足了[热力学约束](@entry_id:755911)。
+这个形式是完美的！它告诉我们，净速率等于正向速率 $r_f$ 乘以一个括号项。这个括号项 $(1-Q/K)$ 扮演了“[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)刹车”的角色。当 $Q \ll K$ 时，它约等于1，净速率几乎就是正向速率。当 $Q \to K$ 时，它趋于0，平稳地将净速率降为零，从而完美地满足了[热力学约束](@keyword=thermodynamic_constraints|lang=zh-CN|style=Feynman)。
 
-现在，让我们把亲和势 $A$ 带回来。我们知道 $A = RT \ln(K/Q)$，所以 $Q/K = \exp(-A/RT)$。代入上式，我们得到了基于**过渡态理论（Transition State Theory, TST）**的经典速率方程 ：
+现在，让我们把亲和势 $A$ 带回来。我们知道 $A = RT \ln(K/Q)$，所以 $Q/K = \exp(-A/RT)$。代入上式，我们得到了基于**过渡态理论（Transition State Theory, TST）**的经典速率方程 [@problem_id:4068601]：
 $$ r = r_f \left(1 - \exp\left(-\frac{A}{RT}\right)\right) $$
-这个公式是本章的核心。它优雅地将一个纯粹的动力学项（正向速率 $r_f$）和一个纯粹的[热力学](@entry_id:172368)项（由亲和势 $A$ 决定的括号）结合在一起。
+这个公式是本章的核心。它优雅地将一个纯粹的动力学项（正向速率 $r_f$）和一个纯粹的[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)项（由亲和势 $A$ 决定的括号）结合在一起。
 
-在实际应用中，你可能会看到一些变体。例如，定义饱和度指数 $\Omega = Q/K$，上面的 TST 方程可以精确地写成 $r = r_f(1-\Omega)$。另一个常见的经验公式是幂律形式 $r = k(1-\Omega)^n$。有趣的是，当系统接近平衡时（$\Omega \approx 1$），这两个看似不同的公式会变得非常相似 。这告诉我们，尽管具体的数学形式可能不同，但它们都必须捕捉到那个核心思想：速率必须在平衡点平滑地归零。
+在实际应用中，你可能会看到一些变体。例如，定义饱和度指数 $\Omega = Q/K$，上面的 TST 方程可以精确地写成 $r = r_f(1-\Omega)$。另一个常见的经验公式是幂律形式 $r = k(1-\Omega)^n$。有趣的是，当系统接近平衡时（$\Omega \approx 1$），这两个看似不同的公式会变得非常相似 [@problem_id:4068482]。这告诉我们，尽管具体的数学形式可能不同，但它们都必须捕捉到那个核心思想：速率必须在平衡点平滑地归零。
 
 ### 更深层次的审视：速率从何而来？
 
-我们已经知道净速率 $r$ 的形式，但那个神秘的正向速率 $r_f$ 究竟是什么？它代表了在没有任何“倒车”（反向反应）的情况下，[反应能](@entry_id:143747)跑多快，也就是反应的“[固有速度](@entry_id:274617)极限”。
+我们已经知道净速率 $r$ 的形式，但那个神秘的正向速率 $r_f$ 究竟是什么？它代表了在没有任何“倒车”（反向反应）的情况下，[反应能](@keyword=reaction_energy|lang=zh-CN|style=Feynman)跑多快，也就是反应的“[固有速度](@keyword=proper_velocity|lang=zh-CN|style=Feynman)极限”。
 
-要理解 $r_f$，我们需要深入到分子的微观世界，借助**过渡态理论（Transition State Theory, TST）**。这个理论描绘了一幅生动的图像：化学反应并非一蹴而就，反应物分子需要“爬”过一个能量壁垒——我们称之为**活化能垒（activation energy barrier）**，其顶端就是**过渡态（transition state）**。这个能垒的高度，即**[活化吉布斯自由能](@entry_id:178672)（Gibbs free energy of activation）** $\Delta G^\ddagger$，决定了反应的难易程度。
+要理解 $r_f$，我们需要深入到分子的微观世界，借助**过渡态理论（Transition State Theory, TST）**。这个理论描绘了一幅生动的图像：化学反应并非一蹴而就，反应物分子需要“爬”过一个能量壁垒——我们称之为**活化能垒（activation energy barrier）**，其顶端就是**过渡态（transition state）**。这个能垒的高度，即**[活化吉布斯自由能](@keyword=gibbs_free_energy_of_activation|lang=zh-CN|style=Feynman)（Gibbs free energy of activation）** $\Delta G^\ddagger$，决定了反应的难易程度。
 
-根据著名的**[艾林方程](@entry_id:151546)（Eyring equation）**，正向速率与这个能垒的高度呈指数关系 ：
+根据著名的**[艾林方程](@keyword=eyring_equation|lang=zh-CN|style=Feynman)（Eyring equation）**，正向速率与这个能垒的高度呈指数关系 [@problem_id:4068601]：
 $$ r_f \propto \frac{k_B T}{h} \exp\left(-\frac{\Delta G^\ddagger}{RT}\right) $$
-这里的 $k_B$ 是[玻尔兹曼常数](@entry_id:142384)，$h$ 是普朗克常数。$k_B T/h$ 这一项可以被看作是分子尝试跨越能垒的“普适攻击频率”，它源于统计力学和量子力学的基础。
+这里的 $k_B$ 是[玻尔兹曼常数](@keyword=boltzmann_constant|lang=zh-CN|style=Feynman)，$h$ 是普朗克常数。$k_B T/h$ 这一项可以被看作是分子尝试跨越能垒的“普适攻击频率”，它源于统计力学和量子力学的基础。
 
-现在，我们可以写出完整的、由第一性原理驱动的[速率定律](@entry_id:276849)了：
+现在，我们可以写出完整的、由第一性原理驱动的[速率定律](@keyword=rate_laws|lang=zh-CN|style=Feynman)了：
 $$ r = \left[ C \cdot \frac{k_B T}{h} \exp\left(-\frac{\Delta G^\ddagger}{RT}\right) \right] \left(1 - \exp\left(-\frac{A}{RT}\right)\right) $$
-这里的 $C$ 是一个包含反应位点密度等信息的常数。这个公式是何等的美妙！左边的方括号是纯粹的**动力学**部分，由微观的活化能垒决定。右边的括号是纯粹的**[热力学](@entry_id:172368)**部分，由宏观的化学亲和势决定。两者相乘，就得到了真实的净[反应速率](@entry_id:185114)。
+这里的 $C$ 是一个包含反应位点密度等信息的常数。这个公式是何等的美妙！左边的方括号是纯粹的**动力学**部分，由微观的活化能垒决定。右边的括号是纯粹的**[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)**部分，由宏观的化学亲和势决定。两者相乘，就得到了真实的净[反应速率](@keyword=rate_of_reaction|lang=zh-CN|style=Feynman)。
 
 ### 真实世界的复杂之美
 
-当然，真实世界的地球化学过程远比理想模型要复杂。但这个框架最强大的地方在于它的**模块化**和**[可扩展性](@entry_id:636611)**。我们可以保持核心的 $(1-\exp(-A/RT))$ 不变，而去修饰代表正向速率 $r_f$ 的动力学部分，以容纳各种复杂的机制。
+当然，真实世界的地球化学过程远比理想模型要复杂。但这个框架最强大的地方在于它的**模块化**和**[可扩展性](@keyword=scalability|lang=zh-CN|style=Feynman)**。我们可以保持核心的 $(1-\exp(-A/RT))$ 不变，而去修饰代表正向速率 $r_f$ 的动力学部分，以容纳各种复杂的机制。
 
 **案例一：催化作用（Catalysis）**
-许多[矿物溶解](@entry_id:1127916)过程会被水中的质子（$\mathrm{H^+}$）所催化。例如，一个硅酸盐矿物的表面位点可能需要先吸附 $m$ 个质子，形成一个活化的前体络合物，然后才能更容易地脱离矿物[晶格](@entry_id:148274)。在这种机制下，正向速率 $r_f$ 将正比于质子活度的 $m$ 次方，即 $r_f \propto a_{\mathrm{H^+}}^m$ 。
+许多[矿物溶解](@keyword=mineral_dissolution|lang=zh-CN|style=Feynman)过程会被水中的质子（$\mathrm{H^+}$）所催化。例如，一个硅酸盐矿物的表面位点可能需要先吸附 $m$ 个质子，形成一个活化的前体络合物，然后才能更容易地脱离矿物[晶格](@keyword=crystal_lattices|lang=zh-CN|style=Feynman)。在这种机制下，正向速率 $r_f$ 将正比于质子活度的 $m$ 次方，即 $r_f \propto a_{\mathrm{H^+}}^m$ [@problem_id:4068535]。
 最终的净速率定律就变成了：
 $$ r = k' a_{\mathrm{H^+}}^m \left(1 - \exp\left(-\frac{A}{RT}\right)\right) $$
-你看，[热力学](@entry_id:172368)“刹车”部分保持不变，我们只是根据具体的微观机理更新了动力学“引擎”部分。
+你看，[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)“刹车”部分保持不变，我们只是根据具体的微观机理更新了动力学“引擎”部分。
 
 **案例二：抑制作用（Inhibition）**
-有时候，反应的产物会“反过来”吸附在矿物表面，堵塞住能够发生反应的活性位点，从而减慢[反应速率](@entry_id:185114)。假设矿物表面总的活性位点密度为 $N_s$，而被产物占据的位点分数为 $\theta$。那么，可供反应的自由位点分数就是 $(1-\theta)$。
-如果这种堵塞效应只减少了[反应场](@entry_id:177491)所，而不改变单个位点本身的反应活性，那么宏观的总速率就会被简单地缩减 ：
+有时候，反应的产物会“反过来”吸附在矿物表面，堵塞住能够发生反应的活性位点，从而减慢[反应速率](@keyword=rate_of_reaction|lang=zh-CN|style=Feynman)。假设矿物表面总的活性位点密度为 $N_s$，而被产物占据的位点分数为 $\theta$。那么，可供反应的自由位点分数就是 $(1-\theta)$。
+如果这种堵塞效应只减少了[反应场](@keyword=reaction_field|lang=zh-CN|style=Feynman)所，而不改变单个位点本身的反应活性，那么宏观的总速率就会被简单地缩减 [@problem_id:4068481]：
 $$ r(A) = N_s (1-\theta(A)) \cdot r_s(A) $$
-这里 $r_s(A)$ 是单个活性位点的净速率。这个结果非常直观：总速率就是单个位点的速率乘以有效位点的数量。我们再次看到，复杂性被优雅地整合进了动力学模型中，而没有破坏其[热力学](@entry_id:172368)根基。
+这里 $r_s(A)$ 是单个活性位点的净速率。这个结果非常直观：总速率就是单个位点的速率乘以有效位点的数量。我们再次看到，复杂性被优雅地整合进了动力学模型中，而没有破坏其[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)根基。
 
-### 终极检验：[热力学](@entry_id:172368)第二定律的优雅约束
+### 终极检验：[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)第二定律的优雅约束
 
-我们建立的这套理论是否与宇宙最基本的定律——[热力学](@entry_id:172368)第二定律——相容呢？[热力学](@entry_id:172368)第二定律告诉我们，任何[自发过程](@entry_id:137544)都必须导致宇宙的总[熵增](@entry_id:138799)加。对于一个化学反应，这意味着它的**熵产生速率（entropy production rate）** $\sigma$ 必须是非负的。
+我们建立的这套理论是否与宇宙最基本的定律——[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)第二定律——相容呢？[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)第二定律告诉我们，任何[自发过程](@keyword=spontaneous_processes|lang=zh-CN|style=Feynman)都必须导致宇宙的总[熵增](@keyword=entropy_generation|lang=zh-CN|style=Feynman)加。对于一个化学反应，这意味着它的**熵产生速率（entropy production rate）** $\sigma$ 必须是非负的。
 
-根据非[平衡热力学](@entry_id:139780)，化学反应的熵产生速率由一个极为简洁的公式给出 ：
+根据非[平衡热力学](@keyword=thermodynamics_of_equilibrium|lang=zh-CN|style=Feynman)，化学反应的熵产生速率由一个极为简洁的公式给出 [@problem_id:4068532]：
 $$ \sigma = \frac{r A}{T} $$
-[熵产生](@entry_id:141771)速率等于速率与亲和势的乘积，再除以温度。现在，回顾一下我们的发现：
+[熵产生](@keyword=entropy_production|lang=zh-CN|style=Feynman)速率等于速率与亲和势的乘积，再除以温度。现在，回顾一下我们的发现：
 - 当反应自发正向进行时，$A > 0$，我们的速率定律也预言 $r > 0$。
 - 当反应自发逆向进行时，$A  0$，我们的速率定律也预言 $r  0$。
 - 当反应处于平衡时，$A = 0$，速率定律预言 $r = 0$。
 
 这意味着，无论反应朝哪个方向进行，速率 $r$ 和亲和势 $A$ 的符号总是相同的！因此，它们的乘积 $rA$ 永远是大于或等于零的。
 $$ \sigma = \frac{rA}{T} \ge 0 $$
-这简直太完美了！我们从微观机理和动力学出发建立的[速率定律](@entry_id:276849)，竟然天然地、自动地、精确地满足了宏观宇宙的[热力学](@entry_id:172368)第二定律。这不仅仅是一个巧合，它揭示了化学动力学和[热力学](@entry_id:172368)之间深刻的内在统一性。我们对“反应有多快”的描述，内在地包含了“时间之箭”的方向。
+这简直太完美了！我们从微观机理和动力学出发建立的[速率定律](@keyword=rate_laws|lang=zh-CN|style=Feynman)，竟然天然地、自动地、精确地满足了宏观宇宙的[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)第二定律。这不仅仅是一个巧合，它揭示了化学动力学和[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)之间深刻的内在统一性。我们对“反应有多快”的描述，内在地包含了“时间之箭”的方向。
 
 从一块方糖的溶解出发，我们最终抵达了宇宙最根本的法则之一。这正是科学的魅力所在——从看似平凡的现象中，发掘出普适而优美的规律，并体验到理解自然时的那份无与伦比的喜悦。

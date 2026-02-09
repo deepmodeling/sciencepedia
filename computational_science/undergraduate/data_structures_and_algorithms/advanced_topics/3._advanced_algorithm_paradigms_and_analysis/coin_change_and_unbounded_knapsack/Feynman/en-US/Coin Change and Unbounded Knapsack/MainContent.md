@@ -28,7 +28,7 @@ $dp[3] = dp[3-1] + dp[3-3] = dp[2] + dp[0] = 1 + 1 = 2$
 $$
 dp[i] = \sum_{c \in C} dp[i-c]
 $$
-where $C$ is the set of available coin denominations . This simple machine systematically builds the solution from the ground up, just by considering the "last piece" of the puzzle.
+where $C$ is the set of available coin denominations [@problem_id:3221794]. This simple machine systematically builds the solution from the ground up, just by considering the "last piece" of the puzzle.
 
 ### Does Order Matter? From Sequences to Sets
 
@@ -49,44 +49,44 @@ for all amounts $j$ from $3$ to $N$. You then repeat this process for the $4$-ce
 3.    For each amount $j$ from $c$ to $N$:
 4.       $dp[j] \leftarrow dp[j] + dp[j-c]$
 
-By iterating through the coins in the outer loop, we are implicitly imposing a canonical order of construction (e.g., "first use all the $1$s you need, then add the $3$s, then add the $4$s..."). This structure elegantly prevents the overcounting of permutations. Any given combination, say $\{1,1,4\}$, will be counted exactly once, when we are processing the $4$-cent coin and we add it to the existing combination $\{1,1\}$. This is the standard method for the "coin change" problem, which asks for the number of ways to make change when order is irrelevant  .
+By iterating through the coins in the outer loop, we are implicitly imposing a canonical order of construction (e.g., "first use all the $1$s you need, then add the $3$s, then add the $4$s..."). This structure elegantly prevents the overcounting of permutations. Any given combination, say $\{1,1,4\}$, will be counted exactly once, when we are processing the $4$-cent coin and we add it to the existing combination $\{1,1\}$. This is the standard method for the "coin change" problem, which asks for the number of ways to make change when order is irrelevant [@problem_id:3221780] [@problem_id:3221767].
 
 ### Beyond Counting: The Art of Optimization
 
 Our DP machine is more than just a counter. By changing the operation at its core, we can ask it to optimize instead. Instead of summing up all possibilities, we can ask it to find the *best* one.
 
-Suppose we want the **minimum number of coins** to make change for $N$. The logic is almost identical. To find the minimum coins for amount $i$, we again consider the last coin $c$ we could have added. If we did, we would have used $1$ coin plus the minimum number of coins needed for amount $i-c$. We want the best choice over all possible last coins. So the [recurrence](@article_id:260818) becomes:
+Suppose we want the **minimum number of coins** to make change for $N$. The logic is almost identical. To find the minimum coins for amount $i$, we again consider the last coin $c$ we could have added. If we did, we would have used $1$ coin plus the minimum number of coins needed for amount $i-c$. We want the best choice over all possible last coins. So the [recurrence](@keyword=recurrence|lang=en-US|style=Feynman) becomes:
 $$
 dp[i] = 1 + \min_{c \in C} \{dp[i-c]\}
 $$
-We initialize $dp[0]=0$ and all other $dp[i]$ to infinity. The machine chugs along, but instead of adding counts, it keeps track of the minimum it has seen so far for each amount .
+We initialize $dp[0]=0$ and all other $dp[i]$ to infinity. The machine chugs along, but instead of adding counts, it keeps track of the minimum it has seen so far for each amount [@problem_id:3221780].
 
-Now for the most famous variation: the **Unbounded Knapsack problem**. Imagine you're a gambler choosing from several games . Each game $i$ costs $w_i$ to play and gives a payout of $v_i$. You have a total bankroll of $W$. How do you play to maximize your total payout? Here, the denominations are "weights" $w_i$, the target amount is the "capacity" $W$, and we want to maximize total "value" $v_i$.
+Now for the most famous variation: the **Unbounded Knapsack problem**. Imagine you're a gambler choosing from several games [@problem_id:3221735]. Each game $i$ costs $w_i$ to play and gives a payout of $v_i$. You have a total bankroll of $W$. How do you play to maximize your total payout? Here, the denominations are "weights" $w_i$, the target amount is the "capacity" $W$, and we want to maximize total "value" $v_i$.
 
 The logic is the same! The maximum value we can get for a capacity of $i$, let's call it $dp[i]$, is found by considering the last item we could have added. If we added item $c$ (with weight $w_c$ and value $v_c$), our total value would be $v_c$ plus the maximum value we had already figured out for the remaining capacity, $i-w_c$. We want the best choice among all items. The recurrence is:
 $$
 dp[i] = \max_{c \in C} \{v_c + dp[i-w_c]\}
 $$
-Whether we're counting combinations, minimizing coins, or maximizing value, the underlying structure of breaking the problem down by its "last piece" remains the same. The DP framework is a unified way of thinking about all these problems .
+Whether we're counting combinations, minimizing coins, or maximizing value, the underlying structure of breaking the problem down by its "last piece" remains the same. The DP framework is a unified way of thinking about all these problems [@problem_id:3221780].
 
 ### The Seductive, Dangerous Allure of Greed
 
 The DP method is methodical, careful, and always correct. But it can feel a bit like using a sledgehammer to crack a nut. Isn't there a simpler way? What if we just act "greedily"? To make change for $N$, just take the biggest coin denomination that's less than or equal to the remaining amount, and repeat. This feels intuitive and fast.
 
-Does it work? Sometimes, it works beautifully. If your coin system consists of the Fibonacci numbers ($1, 2, 3, 5, 8, \dots$), the greedy approach is not only fast, running in $O(\log N)$ time, but it is also *guaranteed* to give you the minimum number of coins. Such systems are called "canonical," and they are mathematically elegant .
+Does it work? Sometimes, it works beautifully. If your coin system consists of the Fibonacci numbers ($1, 2, 3, 5, 8, \dots$), the greedy approach is not only fast, running in $O(\log N)$ time, but it is also *guaranteed* to give you the minimum number of coins. Such systems are called "canonical," and they are mathematically elegant [@problem_id:3221783].
 
 But beware! Greed is not always good. Consider a system with weights $\{1, 4, 5\}$ and corresponding values $\{1, 5, 6\}$. To fill a knapsack of capacity 8, the greedy strategy would first take the largest item less than 8, which is the 5-unit item (value 6). The remaining capacity is 3. The largest item we can take is the 1-unit item (value 1), three times. Total greedy value: $6 + 1 + 1 + 1 = 9$. But the optimal solution is to take two 4-unit items, for a total value of $5+5=10$. The greedy approach failed.
 
-In fact, for some seemingly simple systems, like weights that are [powers of two](@article_id:195834), the greedy approach can be arbitrarily bad. You can construct scenarios where the greedy solution is worth only a tiny fraction of the optimal one . The lesson is profound: our simple intuitions can be misleading. While [greedy algorithms](@article_id:260431) are fast and appealing, the slow and steady DP approach is our guarantee of finding the true optimum.
+In fact, for some seemingly simple systems, like weights that are [powers of two](@keyword=powers_of_two|lang=en-US|style=Feynman), the greedy approach can be arbitrarily bad. You can construct scenarios where the greedy solution is worth only a tiny fraction of the optimal one [@problem_id:3221736]. The lesson is profound: our simple intuitions can be misleading. While [greedy algorithms](@keyword=greedy_algorithms|lang=en-US|style=Feynman) are fast and appealing, the slow and steady DP approach is our guarantee of finding the true optimum.
 
 ### The Swiss Army Knife: Customizing the DP Machine
 
 The true power of dynamic programming lies not in a fixed formula, but in its adaptability. It's a way of thinking that lets us build custom "machines" to solve wonderfully complex problems.
 
-- **Adding Extra Constraints:** What if we need to make change for $N$, but we are only interested in combinations that use an **even number of coins**? We can simply add another dimension to our state. Let $dp[i][p]$ be the number of ways to make amount $i$ using a number of coins with parity $p$ (where $p=0$ for even, $p=1$ for odd). When we add a coin, it flips the parity. Our [recurrence](@article_id:260818) just needs to keep track: to get an even count for amount $i$, we must have started with an odd count for amount $i-c$. The machine gets a little bigger, but the core logic is unchanged .
+- **Adding Extra Constraints:** What if we need to make change for $N$, but we are only interested in combinations that use an **even number of coins**? We can simply add another dimension to our state. Let $dp[i][p]$ be the number of ways to make amount $i$ using a number of coins with parity $p$ (where $p=0$ for even, $p=1$ for odd). When we add a coin, it flips the parity. Our [recurrence](@keyword=recurrence|lang=en-US|style=Feynman) just needs to keep track: to get an even count for amount $i$, we must have started with an odd count for amount $i-c$. The machine gets a little bigger, but the core logic is unchanged [@problem_id:3221725].
 
-- **Handling Hybrid Constraints:** What if we have unlimited supply of most coins, but one special coin can only be used up to $L$ times? We can master this complexity through **decomposition**. We can simply loop through all possibilities for the special coin: "What if I use it 0 times? 1 time? 2 times? ... up to $L$ times?" For each choice, we calculate the remaining amount needed and solve a standard unbounded [coin change problem](@article_id:633919) for it using our DP machine. By checking every case for the constrained resource, we are guaranteed to find the [global optimum](@article_id:175253) .
+- **Handling Hybrid Constraints:** What if we have unlimited supply of most coins, but one special coin can only be used up to $L$ times? We can master this complexity through **decomposition**. We can simply loop through all possibilities for the special coin: "What if I use it 0 times? 1 time? 2 times? ... up to $L$ times?" For each choice, we calculate the remaining amount needed and solve a standard unbounded [coin change problem](@keyword=coin_change_problem|lang=en-US|style=Feynman) for it using our DP machine. By checking every case for the constrained resource, we are guaranteed to find the [global optimum](@keyword=global_optimum|lang=en-US|style=Feynman) [@problem_id:3221776].
 
-- **Modeling Complex Costs:** What if, to use any coin of a certain type, you have to pay a one-time "production cost"? This is a tricky problem because the cost of adding a coin depends on whether you've used that type before. We can enhance our DP setup. As we introduce each new coin type, we can use a temporary DP table to compute the costs *assuming* this new coin is used. Then, we merge this with our main DP table, at each step choosing the minimum between using the new coin type and not using it. This sophisticated design shows how the DP framework can model complex, state-dependent costs .
+- **Modeling Complex Costs:** What if, to use any coin of a certain type, you have to pay a one-time "production cost"? This is a tricky problem because the cost of adding a coin depends on whether you've used that type before. We can enhance our DP setup. As we introduce each new coin type, we can use a temporary DP table to compute the costs *assuming* this new coin is used. Then, we merge this with our main DP table, at each step choosing the minimum between using the new coin type and not using it. This sophisticated design shows how the DP framework can model complex, state-dependent costs [@problem_id:3221718].
 
 From simple counting to intricate optimization, dynamic programming provides a unified and powerful lens. It teaches us to see the solution to a grand problem hidden within the solutions to its smaller, simpler selves, building complexity from simplicity, one step at a time.

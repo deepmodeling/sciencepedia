@@ -1,11 +1,11 @@
 ## Introduction
-Finding the roots of equations is a fundamental task in nearly every scientific and engineering discipline. While simple methods exist, they often face limitations in speed, reliability, or the ability to find all types of solutions. The Müller method emerges as a sophisticated and powerful iterative algorithm that addresses these challenges. By approximating a function with a parabola rather than a line, it achieves rapid convergence and, remarkably, can locate [complex roots](@entry_id:172941) even from real starting points—a crucial advantage in many real-world problems.
+Finding the roots of equations is a fundamental task in nearly every scientific and engineering discipline. While simple methods exist, they often face limitations in speed, reliability, or the ability to find all types of solutions. The Müller method emerges as a sophisticated and powerful iterative algorithm that addresses these challenges. By approximating a function with a parabola rather than a line, it achieves rapid convergence and, remarkably, can locate complex roots even from real starting points—a crucial advantage in many real-world problems.
 
-This article provides a comprehensive guide to understanding and applying the Müller method. In the first chapter, **Principles and Mechanisms**, we will dissect the core theory of quadratic interpolation, derive the iterative formula, and analyze its convergence properties and numerical stability. Next, the **Applications and Interdisciplinary Connections** chapter will demonstrate the method's versatility by exploring its use in solving [eigenvalue problems](@entry_id:142153), analyzing financial instruments, and its role in robust hybrid numerical strategies. Finally, the **Hands-On Practices** chapter offers a series of guided problems to solidify your understanding and build practical skills in implementing the algorithm.
+This article provides a comprehensive guide to understanding and applying the Müller method. In the first chapter, **Principles and Mechanisms**, we will dissect the core theory of quadratic interpolation, derive the iterative formula, and analyze its convergence properties and numerical stability. Next, the **Applications and Interdisciplinary Connections** chapter will demonstrate the method's versatility by exploring its use in solving eigenvalue problems, analyzing financial instruments, and its role in robust hybrid numerical strategies. Finally, the **Hands-On Practices** chapter offers a series of guided problems to solidify your understanding and build practical skills in implementing the algorithm.
 
 ## Principles and Mechanisms
 
-The Müller method is a powerful iterative algorithm for finding the roots of a function, $f(x)=0$. It extends the logic of the [secant method](@entry_id:147486), which approximates the function locally with a line, by using a more sophisticated [quadratic approximation](@entry_id:270629). This use of a parabola allows the method to model the function's curvature, often leading to faster convergence and providing a natural mechanism for locating [complex roots](@entry_id:172941).
+The Müller method is a powerful iterative algorithm for finding the roots of a function, $f(x)=0$. It extends the logic of the secant method, which approximates the function locally with a line, by using a more sophisticated quadratic approximation. This use of a parabola allows the method to model the function's curvature, often leading to faster convergence and providing a natural mechanism for locating complex roots.
 
 ### The Principle of Quadratic Interpolation
 
@@ -13,7 +13,7 @@ At its core, Müller's method generates a sequence of approximations to a root b
 
 Let the three points on the function be $(x_0, f(x_0))$, $(x_1, f(x_1))$, and $(x_2, f(x_2))$. The algorithm constructs a unique quadratic polynomial, $p(x)$, that passes through these three points. The next approximation, $x_3$, is then determined by finding a root of this interpolating parabola, i.e., by solving $p(x)=0$. The process is then repeated with the set of points $\{x_1, x_2, x_3\}$ to find $x_4$, and so on, until the desired accuracy is achieved.
 
-This quadratic approach is a direct generalization of the secant method. In the special case where the three points $(x_0, f(x_0))$, $(x_1, f(x_1))$, and $(x_2, f(x_2))$ happen to be collinear, the interpolating "parabola" degenerates into a straight line. As we will see, the Müller method update formula then simplifies precisely to that of the [secant method](@entry_id:147486)  .
+This quadratic approach is a direct generalization of the secant method. In the special case where the three points $(x_0, f(x_0))$, $(x_1, f(x_1))$, and $(x_2, f(x_2))$ happen to be collinear, the interpolating "parabola" degenerates into a straight line. As we will see, the Müller method update formula then simplifies precisely to that of the secant method [@problem_id:2188401] [@problem_id:2188397].
 
 ### The Iterative Formulation
 
@@ -32,11 +32,11 @@ $$
 c = p(x_2) = f(x_2)
 $$
 
-The coefficients $a$ and $b$ can be found by solving the system of equations that arises from the other two points, $p(x_1) = f(x_1)$ and $p(x_0) = f(x_0)$ . However, a more systematic and computationally stable approach is to use **[divided differences](@entry_id:138238)**.
+The coefficients $a$ and $b$ can be found by solving the system of equations that arises from the other two points, $p(x_1) = f(x_1)$ and $p(x_0) = f(x_0)$ [@problem_id:2188361]. However, a more systematic and computationally stable approach is to use **divided differences**.
 
 Let us define the following quantities:
 - The step sizes: $h_1 = x_1 - x_0$ and $h_2 = x_2 - x_1$.
-- The first-order [divided differences](@entry_id:138238) (slopes of secant lines): 
+- The first-order divided differences (slopes of secant lines): 
 $$
 \delta_1 = \frac{f(x_1) - f(x_0)}{h_1} \quad \text{and} \quad \delta_2 = \frac{f(x_2) - f(x_1)}{h_2}
 $$
@@ -65,30 +65,30 @@ The standard quadratic formula yields two possible solutions for $\delta$:
 $$
 \delta = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 $$
-However, this formula can suffer from a critical numerical instability. If $b^2$ is much larger than $4ac$, then $\sqrt{b^2 - 4ac} \approx |b|$. If $b$ and the square root term have the same sign, the numerator involves the subtraction of two nearly equal numbers, an operation known as **[subtractive cancellation](@entry_id:172005)**, which can lead to a significant loss of precision in [floating-point arithmetic](@entry_id:146236).
+However, this formula can suffer from a critical numerical instability. If $b^2$ is much larger than $4ac$, then $\sqrt{b^2 - 4ac} \approx |b|$. If $b$ and the square root term have the same sign, the numerator involves the subtraction of two nearly equal numbers, an operation known as **subtractive cancellation**, which can lead to a significant loss of precision in floating-point arithmetic.
 
 To circumvent this, an algebraically equivalent but numerically superior formula is used. By rationalizing the numerator, we obtain:
 $$
 \delta = \frac{-2c}{b \pm \sqrt{b^2 - 4ac}}
 $$
-The issue of [subtractive cancellation](@entry_id:172005) now appears in the denominator. To ensure stability, we choose the sign in the denominator to *avoid* subtraction. This is achieved by matching the sign of the radical to the sign of $b$. This choice maximizes the magnitude of the denominator, thereby minimizing the effect of any rounding errors . The standard Müller method update for the step $\delta$ is therefore:
+The issue of subtractive cancellation now appears in the denominator. To ensure stability, we choose the sign in the denominator to *avoid* subtraction. This is achieved by matching the sign of the radical to the sign of $b$. This choice maximizes the magnitude of the denominator, thereby minimizing the effect of any rounding errors [@problem_id:2188359]. The standard Müller method update for the step $\delta$ is therefore:
 $$
 \delta = \frac{-2c}{b + \text{sign}(b)\sqrt{b^2 - 4ac}}
 $$
 where $\text{sign}(b)$ is $+1$ if $b \ge 0$ and $-1$ if $b  0$. The next iterate is then $x_3 = x_2 + \delta$.
 
-An important consequence of this choice is that by maximizing the magnitude of the denominator, we are simultaneously minimizing the magnitude of the update step $|\delta|$. This means the algorithm automatically selects the root of the parabola that is **closest to the current iterate $x_2$**, a sensible heuristic that promotes [stable convergence](@entry_id:199422) toward a nearby root .
+An important consequence of this choice is that by maximizing the magnitude of the denominator, we are simultaneously minimizing the magnitude of the update step $|\delta|$. This means the algorithm automatically selects the root of the parabola that is **closest to the current iterate $x_2$**, a sensible heuristic that promotes stable convergence toward a nearby root [@problem_id:2188362].
 
 ### A Worked Example
 
-Let us apply one iteration of Müller's method to find a root of the characteristic equation for a non-linear electronic component, given by $f(V) = V^3 - 7V - 6 = 0$. We are given the initial guesses $V_0 = 2.0$, $V_1 = 4.0$, and $V_2 = 5.0$ .
+Let us apply one iteration of Müller's method to find a root of the characteristic equation for a non-linear electronic component, given by $f(V) = V^3 - 7V - 6 = 0$. We are given the initial guesses $V_0 = 2.0$, $V_1 = 4.0$, and $V_2 = 5.0$ [@problem_id:2188340].
 
 1.  **Evaluate the function** at the initial points:
     $f(V_0) = f(2) = 2^3 - 7(2) - 6 = -12$
     $f(V_1) = f(4) = 4^3 - 7(4) - 6 = 30$
     $f(V_2) = f(5) = 5^3 - 7(5) - 6 = 84$
 
-2.  **Calculate step sizes and [divided differences](@entry_id:138238)**:
+2.  **Calculate step sizes and divided differences**:
     $h_1 = V_1 - V_0 = 4 - 2 = 2$
     $h_2 = V_2 - V_1 = 5 - 4 = 1$
     $\delta_1 = \frac{f(V_1) - f(V_0)}{h_1} = \frac{30 - (-12)}{2} = 21$
@@ -113,24 +113,24 @@ Let us apply one iteration of Müller's method to find a root of the characteris
 
 #### Order of Convergence
 
-For finding a [simple root](@entry_id:635422) (a [root of multiplicity](@entry_id:166923) one), Müller's method exhibits **super-[linear convergence](@entry_id:163614)**. The [order of convergence](@entry_id:146394), $p$, is the real root of the polynomial $x^3 - x^2 - x - 1 = 0$, which is approximately $p \approx 1.839$.
+For finding a simple root (a root of multiplicity one), Müller's method exhibits **super-linear convergence**. The order of convergence, $p$, is the real root of the polynomial $x^3 - x^2 - x - 1 = 0$, which is approximately $p \approx 1.839$.
 
-This places Müller's method in an interesting position relative to its peers :
-- It is asymptotically faster than the **Secant Method**, which has an [order of convergence](@entry_id:146394) $p = \frac{1+\sqrt{5}}{2} \approx 1.618$.
-- It is asymptotically slower than **Newton's Method**, which boasts [quadratic convergence](@entry_id:142552) ($p=2$), provided the derivative $f'(x)$ is available and inexpensive to compute.
+This places Müller's method in an interesting position relative to its peers [@problem_id:2188389]:
+- It is asymptotically faster than the **Secant Method**, which has an order of convergence $p = \frac{1+\sqrt{5}}{2} \approx 1.618$.
+- It is asymptotically slower than **Newton's Method**, which boasts quadratic convergence ($p=2$), provided the derivative $f'(x)$ is available and inexpensive to compute.
 
-In practice, this means that as the iterates get close to a [simple root](@entry_id:635422), the number of correct significant digits in the approximation roughly multiplies by a factor of $1.84$ with each step.
+In practice, this means that as the iterates get close to a simple root, the number of correct significant digits in the approximation roughly multiplies by a factor of $1.84$ with each step.
 
 #### Finding Complex Roots
 
-A significant advantage of Müller's method is its innate ability to find [complex roots](@entry_id:172941), even when all initial guesses are real numbers . This arises naturally from the quadratic nature of the approximation. The discriminant of the interpolating parabola, $D = b^2 - 4ac$, can be negative, even if all inputs $x_0, x_1, x_2$ and their corresponding function values are real.
+A significant advantage of Müller's method is its innate ability to find complex roots, even when all initial guesses are real numbers [@problem_id:2188395]. This arises naturally from the quadratic nature of the approximation. The discriminant of the interpolating parabola, $D = b^2 - 4ac$, can be negative, even if all inputs $x_0, x_1, x_2$ and their corresponding function values are real.
 
-For example, if we apply the method to the function $f(x) = x^3 - 4x + 6$ with initial points $x_0=2$, $x_1=1$, and $x_2=0$, the resulting interpolating parabola is $p(x) = 3x^2 - 6x + 6$. The discriminant is $D = (-6)^2 - 4(3)(6) = 36 - 72 = -36$ .
+For example, if we apply the method to the function $f(x) = x^3 - 4x + 6$ with initial points $x_0=2$, $x_1=1$, and $x_2=0$, the resulting interpolating parabola is $p(x) = 3x^2 - 6x + 6$. The discriminant is $D = (-6)^2 - 4(3)(6) = 36 - 72 = -36$ [@problem_id:2188344].
 
-When the discriminant is negative, its square root is imaginary, and the update step $\delta$ will be a complex number. The algorithm seamlessly transitions into complex arithmetic, allowing it to converge to a non-real root. This is a marked contrast to Newton's method, which, if started with a real guess for a real-valued function, will be confined to the [real number line](@entry_id:147286) and cannot discover [complex roots](@entry_id:172941) on its own.
+When the discriminant is negative, its square root is imaginary, and the update step $\delta$ will be a complex number. The algorithm seamlessly transitions into complex arithmetic, allowing it to converge to a non-real root. This is a marked contrast to Newton's method, which, if started with a real guess for a real-valued function, will be confined to the real number line and cannot discover complex roots on its own.
 
 #### Performance on Multiple Roots
 
-Like most [root-finding algorithms](@entry_id:146357), the performance of Müller's method degrades when it is applied to find a root with a multiplicity greater than one. The theoretical analysis of convergence is based on the assumption of a [simple root](@entry_id:635422). When a function $Q(x)$ has a multiple root at $x=r$ (e.g., $Q(r)=Q'(r)=0$), the local geometry is much flatter than around a [simple root](@entry_id:635422).
+Like most root-finding algorithms, the performance of Müller's method degrades when it is applied to find a root with a multiplicity greater than one. The theoretical analysis of convergence is based on the assumption of a simple root. When a function $Q(x)$ has a multiple root at $x=r$ (e.g., $Q(r)=Q'(r)=0$), the local geometry is much flatter than around a simple root.
 
-For a multiple root, the convergence of Müller's method is no longer super-linear. Instead, it degrades to **[linear convergence](@entry_id:163614)** (order $p=1$) . While the method will still typically converge, it does so at a much slower rate. This is an important practical consideration, and if a root is known or suspected to have high [multiplicity](@entry_id:136466), modified methods may be required for efficient computation.
+For a multiple root, the convergence of Müller's method is no longer super-linear. Instead, it degrades to **linear convergence** (order $p=1$) [@problem_id:2188412]. While the method will still typically converge, it does so at a much slower rate. This is an important practical consideration, and if a root is known or suspected to have high multiplicity, modified methods may be required for efficient computation.

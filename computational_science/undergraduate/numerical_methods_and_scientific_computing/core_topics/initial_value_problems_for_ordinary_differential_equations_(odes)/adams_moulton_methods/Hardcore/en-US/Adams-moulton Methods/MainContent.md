@@ -1,13 +1,13 @@
 ## Introduction
-The numerical solution of [ordinary differential equations](@entry_id:147024) (ODEs) is a fundamental task in science and engineering, modeling everything from [planetary motion](@entry_id:170895) to chemical reactions. While simple methods provide a starting point, the demand for greater accuracy and efficiency, especially for challenging "stiff" systems, leads us to more advanced techniques. This article addresses this need by providing a comprehensive exploration of the Adams-Moulton methods, a powerful family of implicit multistep solvers renowned for their excellent stability and [high-order accuracy](@entry_id:163460).
+The numerical solution of ordinary differential equations (ODEs) is a fundamental task in science and engineering, modeling everything from planetary motion to chemical reactions. While simple methods provide a starting point, the demand for greater accuracy and efficiency, especially for challenging "stiff" systems, leads us to more advanced techniques. This article addresses this need by providing a comprehensive exploration of the Adams-Moulton methods, a powerful family of implicit multistep solvers renowned for their excellent stability and high-order accuracy.
 
 ## Principles and Mechanisms
 
-Following our introduction to [linear multistep methods](@entry_id:139528), this chapter delves into the principles and mechanisms of a particularly important family: the Adams-Moulton methods. These methods are renowned for their high accuracy and excellent stability properties, which make them a cornerstone of modern [numerical solvers](@entry_id:634411) for ordinary differential equations (ODEs). We will explore their derivation, their inherent implicitness, practical implementation strategies, and their fundamental theoretical properties.
+Following our introduction to linear multistep methods, this chapter delves into the principles and mechanisms of a particularly important family: the Adams-Moulton methods. These methods are renowned for their high accuracy and excellent stability properties, which make them a cornerstone of modern numerical solvers for ordinary differential equations (ODEs). We will explore their derivation, their inherent implicitness, practical implementation strategies, and their fundamental theoretical properties.
 
 ### Derivation from Integral Form: Interpolation vs. Extrapolation
 
-The foundation for all Adams-type methods lies in the exact integral form of a first-order [initial value problem](@entry_id:142753), $y'(t) = f(t, y(t))$:
+The foundation for all Adams-type methods lies in the exact integral form of a first-order initial value problem, $y'(t) = f(t, y(t))$:
 
 $$y(t_{n+1}) = y(t_n) + \int_{t_n}^{t_{n+1}} f(t, y(t)) dt$$
 
@@ -23,7 +23,7 @@ A numerical method is **implicit** if the equation for the new state, $y_{n+1}$,
 
 $$y_{n+1} = y_n + h \sum_{j=0}^{k-1} \beta_j f(t_{n+1-j}, y_{n+1-j})$$
 
-Here, $h$ is the step size and the $\beta_j$ are constants determined by the method's order. The summation term is the result of integrating the [interpolating polynomial](@entry_id:750764). The key to the method's implicitness lies in the $j=0$ term of the sum: $\beta_0 f(t_{n+1}, y_{n+1})$. Since the function $f$ is evaluated at the future time $t_{n+1}$ with the unknown solution $y_{n+1}$, the value we are trying to compute, $y_{n+1}$, appears on the right-hand side of the equation. For any Adams-Moulton method, the coefficient $\beta_0$ is non-zero.
+Here, $h$ is the step size and the $\beta_j$ are constants determined by the method's order. The summation term is the result of integrating the interpolating polynomial. The key to the method's implicitness lies in the $j=0$ term of the sum: $\beta_0 f(t_{n+1}, y_{n+1})$. Since the function $f$ is evaluated at the future time $t_{n+1}$ with the unknown solution $y_{n+1}$, the value we are trying to compute, $y_{n+1}$, appears on the right-hand side of the equation. For any Adams-Moulton method, the coefficient $\beta_0$ is non-zero.
 
 To make this concrete, let's consider the three-step Adams-Moulton method (which has order four):
 
@@ -41,19 +41,19 @@ This may be recognized as the well-known **Trapezoidal Rule** for numerical inte
 
 The implicit nature of Adams-Moulton methods means that each time step requires solving a (generally nonlinear) algebraic equation for $y_{n+1}$. Let's represent the AM formula abstractly as $y_{n+1} = G(y_{n+1})$. We need to find the value of $y_{n+1}$ that satisfies this equation.
 
-A common approach is to reframe this as a [root-finding problem](@entry_id:174994). If we define a function $g(w)$ such that $g(w) = w - G(w)$, then our goal is to find the root of $g(w)=0$, where $w$ is our stand-in for $y_{n+1}$. For instance, using the third-order AM method to solve $y'(t) = t - \cos(y(t))$, with known values at steps $i$ and $i-1$, the equation for $y_{i+1}$ can be rearranged into the form $g(y_{i+1}) = 0$, where $g(w)$ is a function of the single variable $w=y_{i+1}$. Once in this form, any standard [root-finding algorithm](@entry_id:176876), such as Newton's method, can be applied.
+A common approach is to reframe this as a root-finding problem. If we define a function $g(w)$ such that $g(w) = w - G(w)$, then our goal is to find the root of $g(w)=0$, where $w$ is our stand-in for $y_{n+1}$. For instance, using the third-order AM method to solve $y'(t) = t - \cos(y(t))$, with known values at steps $i$ and $i-1$, the equation for $y_{i+1}$ can be rearranged into the form $g(y_{i+1}) = 0$, where $g(w)$ is a function of the single variable $w=y_{i+1}$. Once in this form, any standard root-finding algorithm, such as Newton's method, can be applied.
 
-However, a simpler and more common technique for this class of problems is **[fixed-point iteration](@entry_id:137769)**. The AM formula itself provides a natural [iterative map](@entry_id:274839). Given an initial guess for the solution, which we denote $y_{i+1}^{(0)}$, we can generate a sequence of improved approximations:
+However, a simpler and more common technique for this class of problems is **fixed-point iteration**. The AM formula itself provides a natural iterative map. Given an initial guess for the solution, which we denote $y_{i+1}^{(0)}$, we can generate a sequence of improved approximations:
 
 $$ y_{i+1}^{(k+1)} = y_i + \frac{h}{2} \left[ f(t_i, y_i) + f(t_{i+1}, y_{i+1}^{(k)}) \right] $$
 
-This example shows the [fixed-point iteration](@entry_id:137769) for the Trapezoidal Rule (second-order AM). We iterate this formula for $k=0, 1, 2, \dots$ until the value of $y_{i+1}^{(k)}$ converges.
+This example shows the fixed-point iteration for the Trapezoidal Rule (second-order AM). We iterate this formula for $k=0, 1, 2, \dots$ until the value of $y_{i+1}^{(k)}$ converges.
 
-The efficiency of this iteration hinges on a good initial guess, $y_{i+1}^{(0)}$. A poor guess might require many iterations or even cause the iteration to diverge. This is where **[predictor-corrector schemes](@entry_id:637533)** come into play. The primary role of a "predictor" is to provide a high-quality initial estimate for the unknown $y_{n+1}$. Typically, an explicit method, such as an Adams-Bashforth method of the same order, is used for this purpose. For example, to solve the implicit second-order AM equation, one might first "predict" a value using the explicit second-order Adams-Bashforth formula:
+The efficiency of this iteration hinges on a good initial guess, $y_{i+1}^{(0)}$. A poor guess might require many iterations or even cause the iteration to diverge. This is where **predictor-corrector schemes** come into play. The primary role of a "predictor" is to provide a high-quality initial estimate for the unknown $y_{n+1}$. Typically, an explicit method, such as an Adams-Bashforth method of the same order, is used for this purpose. For example, to solve the implicit second-order AM equation, one might first "predict" a value using the explicit second-order Adams-Bashforth formula:
 
 $$y_{n+1}^{(0)} = y_n + h\left( \frac{3}{2} f(t_n, y_n) - \frac{1}{2} f(t_{n-1}, y_{n-1}) \right) \quad (\text{Predictor})$$
 
-This predicted value $y_{n+1}^{(0)}$ is then used as the initial guess in the [fixed-point iteration](@entry_id:137769) for the AM formula, which now acts as a "corrector":
+This predicted value $y_{n+1}^{(0)}$ is then used as the initial guess in the fixed-point iteration for the AM formula, which now acts as a "corrector":
 
 $$y_{n+1}^{(k+1)} = y_n + \frac{h}{2} \left( f(t_n, y_n) + f(t_{n+1}, y_{n+1}^{(k)}) \right) \quad (\text{Corrector})$$
 
@@ -65,7 +65,7 @@ The widespread use of Adams-Moulton methods stems from their favorable theoretic
 
 #### Local Truncation Error and Order
 
-The **Local Truncation Error (LTE)** is the error incurred in a single step, assuming the exact solution was known at all previous steps. For a method of order $p$, the LTE is proportional to $h^{p+1}$. A key result for Adams-Moulton methods is that a $k$-step method, which uses an [interpolating polynomial](@entry_id:750764) through $k+1$ points, achieves an [order of accuracy](@entry_id:145189) $p = k+1$. The leading term of its LTE has the general form:
+The **Local Truncation Error (LTE)** is the error incurred in a single step, assuming the exact solution was known at all previous steps. For a method of order $p$, the LTE is proportional to $h^{p+1}$. A key result for Adams-Moulton methods is that a $k$-step method, which uses an interpolating polynomial through $k+1$ points, achieves an order of accuracy $p = k+1$. The leading term of its LTE has the general form:
 
 $$\tau_{n+1}(h) = C_{p+1} h^{p+1} y^{(p+1)}(\xi_n) + O(h^{p+2})$$
 
@@ -73,7 +73,7 @@ where $C_{p+1}$ is a method-specific error constant and $\xi_n$ is a point withi
 
 #### Zero-Stability
 
-For any [linear multistep method](@entry_id:751318) to be convergent, it must be **zero-stable**. This property ensures that the numerical solution does not grow uncontrollably as the step size $h$ approaches zero. Zero-stability depends only on the coefficients $\alpha_j$ that multiply the solution values $y_{n+j}$. These are captured in the **first [characteristic polynomial](@entry_id:150909)**, $\rho(z)$. For a $k$-step Adams-Moulton method, the formula $y_{n+1} - y_n = h(\dots)$ implies that $\alpha_k=1$, $\alpha_{k-1}=-1$, and all other $\alpha_j$ are zero (in a shifted index formulation). This yields the polynomial:
+For any linear multistep method to be convergent, it must be **zero-stable**. This property ensures that the numerical solution does not grow uncontrollably as the step size $h$ approaches zero. Zero-stability depends only on the coefficients $\alpha_j$ that multiply the solution values $y_{n+j}$. These are captured in the **first characteristic polynomial**, $\rho(z)$. For a $k$-step Adams-Moulton method, the formula $y_{n+1} - y_n = h(\dots)$ implies that $\alpha_k=1$, $\alpha_{k-1}=-1$, and all other $\alpha_j$ are zero (in a shifted index formulation). This yields the polynomial:
 
 $$\rho(z) = z^k - z^{k-1} = z^{k-1}(z-1)$$
 
@@ -81,16 +81,16 @@ A method is zero-stable if all roots of $\rho(z)$ have a magnitude less than or 
 
 #### Absolute Stability and A-Stability
 
-The most compelling reason to use implicit methods like Adams-Moulton is their superior **[absolute stability](@entry_id:165194)**. This property governs the method's behavior when applied to **[stiff equations](@entry_id:136804)**—problems where the solution has components that decay at vastly different rates. The stability is analyzed using the test equation $y' = \lambda y$, where $\lambda$ is a complex number. A method is stable for a given step size $h$ if the numerical solution does not grow for values of $z = h\lambda$ that lie in the method's **region of [absolute stability](@entry_id:165194)**.
+The most compelling reason to use implicit methods like Adams-Moulton is their superior **absolute stability**. This property governs the method's behavior when applied to **stiff equations**—problems where the solution has components that decay at vastly different rates. The stability is analyzed using the test equation $y' = \lambda y$, where $\lambda$ is a complex number. A method is stable for a given step size $h$ if the numerical solution does not grow for values of $z = h\lambda$ that lie in the method's **region of absolute stability**.
 
-For [stiff problems](@entry_id:142143), $\lambda$ has a large negative real part, so we desire methods whose [stability regions](@entry_id:166035) contain as much of the left half of the complex plane as possible. Explicit methods, like Adams-Bashforth, have strictly bounded [stability regions](@entry_id:166035). In contrast, implicit Adams-Moulton methods have much larger [stability regions](@entry_id:166035).
+For stiff problems, $\lambda$ has a large negative real part, so we desire methods whose stability regions contain as much of the left half of the complex plane as possible. Explicit methods, like Adams-Bashforth, have strictly bounded stability regions. In contrast, implicit Adams-Moulton methods have much larger stability regions.
 
-The most desirable property for stiff solvers is **A-stability**, where the region of [absolute stability](@entry_id:165194) includes the entire left half of the complex plane ($\Re(z) \le 0$). The second-order Adams-Moulton method (Trapezoidal Rule) is A-stable. The second-order Adams-Bashforth method is not. This is a fundamental trade-off: the AM2 method requires solving an implicit equation at each step, but it is [unconditionally stable](@entry_id:146281) for any stable linear ODE, allowing for much larger step sizes than the explicit AB2 method.
+The most desirable property for stiff solvers is **A-stability**, where the region of absolute stability includes the entire left half of the complex plane ($\Re(z) \le 0$). The second-order Adams-Moulton method (Trapezoidal Rule) is A-stable. The second-order Adams-Bashforth method is not. This is a fundamental trade-off: the AM2 method requires solving an implicit equation at each step, but it is unconditionally stable for any stable linear ODE, allowing for much larger step sizes than the explicit AB2 method.
 
 ### Theoretical Limitations: The Dahlquist Stability Barriers
 
 Given the excellent properties of the A-stable Trapezoidal Rule (AM, order 2), a natural question arises: can we construct A-stable Adams-Moulton methods of arbitrarily high order? The answer, unfortunately, is no. This is a consequence of the famous **Dahlquist stability barriers**.
 
-The second Dahlquist barrier states that the maximum order of an A-stable [linear multistep method](@entry_id:751318) is two. The Trapezoidal Rule achieves this limit. Why can't higher-order AM methods be A-stable? The reason lies in their behavior for large, negative values of $z=h\lambda$, which corresponds to the "infinitely stiff" limit. In this limit, the roots of the method's full characteristic stability polynomial, $\rho(\xi) - z\sigma(\xi) = 0$, converge to the roots of the **second characteristic polynomial**, $\sigma(\xi)$. For A-stability, it is necessary that all roots of $\sigma(\xi)$ lie within or on the unit circle.
+The second Dahlquist barrier states that the maximum order of an A-stable linear multistep method is two. The Trapezoidal Rule achieves this limit. Why can't higher-order AM methods be A-stable? The reason lies in their behavior for large, negative values of $z=h\lambda$, which corresponds to the "infinitely stiff" limit. In this limit, the roots of the method's full characteristic stability polynomial, $\rho(\xi) - z\sigma(\xi) = 0$, converge to the roots of the **second characteristic polynomial**, $\sigma(\xi)$. For A-stability, it is necessary that all roots of $\sigma(\xi)$ lie within or on the unit circle.
 
-For the Adams-Moulton family, this condition holds only for the methods of order 1 (Backward Euler) and order 2 (Trapezoidal Rule). For any AM method with order $p > 2$, the corresponding polynomial $\sigma(\xi)$ has at least one root with magnitude greater than 1. Consequently, as $\Re(z) \to -\infty$, at least one root of the stability polynomial will grow beyond the unit circle, violating the condition for A-stability. This profound result establishes a hard limit on the achievable combination of order and stability for this family of methods, cementing the unique and important role of the second-order Trapezoidal Rule in the numerical solution of [stiff differential equations](@entry_id:139505).
+For the Adams-Moulton family, this condition holds only for the methods of order 1 (Backward Euler) and order 2 (Trapezoidal Rule). For any AM method with order $p > 2$, the corresponding polynomial $\sigma(\xi)$ has at least one root with magnitude greater than 1. Consequently, as $\Re(z) \to -\infty$, at least one root of the stability polynomial will grow beyond the unit circle, violating the condition for A-stability. This profound result establishes a hard limit on the achievable combination of order and stability for this family of methods, cementing the unique and important role of the second-order Trapezoidal Rule in the numerical solution of stiff differential equations.

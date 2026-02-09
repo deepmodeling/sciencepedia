@@ -1,7 +1,7 @@
 ## Introduction
-The universe is in constant motion, and the language used to describe this continuous change is the differential equation. From the orbit of a planet to the spread of a disease, [ordinary differential equations](@article_id:146530) (ODEs) are fundamental to science and engineering. However, solving these equations exactly is often impossible. This forces us to turn to numerical methods, which approximate solutions by taking small, discrete steps through time. The simplest of these, Euler's method, is conceptually easy but suffers from a critical flaw: its accuracy quickly degrades. The core problem is that it assumes the rate of change is constant over each step, an assumption that is rarely true in the real world. This article addresses this gap by introducing a more powerful and accurate family of techniques: the second-order Runge-Kutta methods.
+The universe is in constant motion, and the language used to describe this continuous change is the differential equation. From the orbit of a planet to the spread of a disease, [ordinary differential equations](@keyword=ordinary_differential_equations|lang=en-US|style=Feynman) (ODEs) are fundamental to science and engineering. However, solving these equations exactly is often impossible. This forces us to turn to numerical methods, which approximate solutions by taking small, discrete steps through time. The simplest of these, Euler's method, is conceptually easy but suffers from a critical flaw: its accuracy quickly degrades. The core problem is that it assumes the rate of change is constant over each step, an assumption that is rarely true in the real world. This article addresses this gap by introducing a more powerful and accurate family of techniques: the second-order Runge-Kutta methods.
 
-This article will guide you from the basic principles of these advanced methods to their far-reaching applications. In the "Principles and Mechanisms" chapter, we will dissect the clever strategies, such as Heun's method and the Midpoint method, that allow us to achieve higher accuracy by probing the interval more intelligently, and uncover the unifying mathematical theory behind them. Next, in "Applications and Interdisciplinary Connections," we will embark on a tour through physics, biology, and even astronomy to see how this single numerical tool is used to model everything from [projectile motion](@article_id:173850) to the structure of stars. Finally, the "Hands-On Practices" section will provide concrete problems to solidify your understanding and allow you to apply these methods yourself. Let's begin by exploring the elegant mechanisms that make second-order methods a cornerstone of scientific computing.
+This article will guide you from the basic principles of these advanced methods to their far-reaching applications. In the "Principles and Mechanisms" chapter, we will dissect the clever strategies, such as Heun's method and the Midpoint method, that allow us to achieve higher accuracy by probing the interval more intelligently, and uncover the unifying mathematical theory behind them. Next, in "Applications and Interdisciplinary Connections," we will embark on a tour through physics, biology, and even astronomy to see how this single numerical tool is used to model everything from [projectile motion](@keyword=projectile_motion|lang=en-US|style=Feynman) to the structure of stars. Finally, the "Hands-On Practices" section will provide concrete problems to solidify your understanding and allow you to apply these methods yourself. Let's begin by exploring the elegant mechanisms that make second-order methods a cornerstone of scientific computing.
 
 ## Principles and Mechanisms
 
@@ -27,7 +27,7 @@ This leads to the "corrector" step, which forms the final update for **Heun's me
 $$
 y_{n+1} = y_n + \frac{h}{2} (k_1 + k_2)
 $$
-Look at that formula. It's beautiful. It's essentially the [trapezoidal rule](@article_id:144881) from calculus applied to our differential equation. We're approximating the area under the slope curve not with a simple rectangle (like Euler), but with a more accurate trapezoid. By averaging the initial slope with an estimate of the final slope, we account for the way the slope changes over the interval, effectively canceling out the most significant source of error in Euler's method.
+Look at that formula. It's beautiful. It's essentially the [trapezoidal rule](@keyword=trapezoidal_rule|lang=en-US|style=Feynman) from calculus applied to our differential equation. We're approximating the area under the slope curve not with a simple rectangle (like Euler), but with a more accurate trapezoid. By averaging the initial slope with an estimate of the final slope, we account for the way the slope changes over the interval, effectively canceling out the most significant source of error in Euler's method.
 
 #### Strategy 2: The Midpoint Strike
 
@@ -57,7 +57,7 @@ y(t_{n+1}) = y_n + h f + \frac{h^2}{2} \left( \frac{\partial f}{\partial t} + f 
 $$
 where $f$ and its partial derivatives are all evaluated at $(t_n, y_n)$.
 
-Euler's method, $y_{n+1} = y_n + hf$, only matches the Taylor series up to the term with $h$. That's why it is a **[first-order method](@article_id:173610)**. The goal of a second-order method is to match this series up to the $h^2$ term, but—and this is the ingenious part—to do so *without* ever needing to compute the messy partial derivatives of $f$.
+Euler's method, $y_{n+1} = y_n + hf$, only matches the Taylor series up to the term with $h$. That's why it is a **[first-order method](@keyword=first_order_method|lang=en-US|style=Feynman)**. The goal of a second-order method is to match this series up to the $h^2$ term, but—and this is the ingenious part—to do so *without* ever needing to compute the messy partial derivatives of $f$.
 
 The trick is to use a second evaluation of the function $f$ to gather the necessary information. A general two-stage explicit Runge-Kutta method can be written as:
 $$
@@ -85,15 +85,15 @@ And here is the beautiful unifying moment.
 -   For **Heun's Method**, the choice is $b_1 = 1/2, b_2 = 1/2, c_2 = 1, a_{21} = 1$. Let's check: $1/2 + 1/2 = 1$, and $(1/2) \times 1 = 1/2$. The conditions hold!
 -   For the **Midpoint Method**, the choice is $b_1 = 0, b_2 = 1, c_2 = 1/2, a_{21} = 1/2$. Let's check: $0 + 1 = 1$, and $1 \times (1/2) = 1/2$. The conditions hold!
 
-So, Heun's method and the Midpoint method are not just two separate clever ideas; they are two different members of an infinite family of methods that all share the same fundamental property of [second-order accuracy](@article_id:137382). They are brothers, born from the same mathematical principle.
+So, Heun's method and the Midpoint method are not just two separate clever ideas; they are two different members of an infinite family of methods that all share the same fundamental property of [second-order accuracy](@keyword=second_order_accuracy|lang=en-US|style=Feynman). They are brothers, born from the same mathematical principle.
 
 ### The Payoff: Why the Extra Work is Worth It
 
 Now, there is no free lunch. Both Heun's and the Midpoint method require us to calculate two slopes, $k_1$ and $k_2$. This means we must evaluate the function $f(t,y)$ twice for every single step we take, double the work of Euler's method. So, what did we buy with this extra computational cost? We bought a dramatic increase in accuracy.
 
-To understand this, we must distinguish between two types of error. The **[local truncation error](@article_id:147209) (LTE)** is the error we introduce in a single step, assuming we started the step from the exact solution. For an RK2 method, because it matches the Taylor series up to $h^2$, the first term it gets wrong is the $h^3$ term. Thus, its LTE is of order $O(h^3)$.
+To understand this, we must distinguish between two types of error. The **[local truncation error](@keyword=local_truncation_error|lang=en-US|style=Feynman) (LTE)** is the error we introduce in a single step, assuming we started the step from the exact solution. For an RK2 method, because it matches the Taylor series up to $h^2$, the first term it gets wrong is the $h^3$ term. Thus, its LTE is of order $O(h^3)$.
 
-However, we are more interested in the **[global error](@article_id:147380)**, which is the total accumulated error after many steps. To get from a starting time $t_0$ to a final time $T$, we must take $N = (T-t_0)/h$ steps. At each step, we introduce a small error of about $h^3$. The global error is roughly the sum of all these local errors. Summing up an error of size $O(h^3)$ a total of $O(1/h)$ times gives a [global error](@article_id:147380) of order $O(h^2)$.
+However, we are more interested in the **[global error](@keyword=global_error|lang=en-US|style=Feynman)**, which is the total accumulated error after many steps. To get from a starting time $t_0$ to a final time $T$, we must take $N = (T-t_0)/h$ steps. At each step, we introduce a small error of about $h^3$. The global error is roughly the sum of all these local errors. Summing up an error of size $O(h^3)$ a total of $O(1/h)$ times gives a [global error](@keyword=global_error|lang=en-US|style=Feynman) of order $O(h^2)$.
 
 Let's compare:
 -   **Euler's Method (RK1):** Global error is $O(h)$.

@@ -1,5 +1,5 @@
 ## Introduction
-In the world of [large-scale machine learning](@entry_id:634451) and deep learning, optimizing models with millions of parameters over massive datasets presents a significant computational challenge. Traditional methods like full-batch Gradient Descent, which require processing the entire dataset for a single update, quickly become impractical. This computational bottleneck creates a critical need for a more efficient optimization strategy. Stochastic Gradient Descent (SGD) emerges as the powerful and elegant solution, forming the backbone of how modern neural networks are trained.
+In the world of large-scale machine learning and deep learning, optimizing models with millions of parameters over massive datasets presents a significant computational challenge. Traditional methods like full-batch Gradient Descent, which require processing the entire dataset for a single update, quickly become impractical. This computational bottleneck creates a critical need for a more efficient optimization strategy. Stochastic Gradient Descent (SGD) emerges as the powerful and elegant solution, forming the backbone of how modern neural networks are trained.
 
 This article provides a comprehensive journey into the theory and practice of SGD. Over the following chapters, you will gain a deep understanding of this foundational algorithm.
 
@@ -11,11 +11,11 @@ We will begin by delving into the fundamental principles that allow SGD to trade
 
 ## Principles and Mechanisms
 
-In the optimization landscape of modern machine learning, where [loss functions](@entry_id:634569) are often defined over millions of parameters and gigantic datasets, efficiency is paramount. The traditional method of Gradient Descent (GD), while foundational, faces a significant computational bottleneck. This chapter delves into the principles and mechanisms of Stochastic Gradient Descent (SGD), a powerful and widely used alternative that addresses this challenge by fundamentally changing how gradients are utilized.
+In the optimization landscape of modern machine learning, where loss functions are often defined over millions of parameters and gigantic datasets, efficiency is paramount. The traditional method of Gradient Descent (GD), while foundational, faces a significant computational bottleneck. This chapter delves into the principles and mechanisms of Stochastic Gradient Descent (SGD), a powerful and widely used alternative that addresses this challenge by fundamentally changing how gradients are utilized.
 
 ### From Batch to Stochastic Gradient Updates
 
-The objective in most [supervised learning](@entry_id:161081) tasks is to find a set of parameters $\mathbf{w}$ that minimizes a loss function $F(\mathbf{w})$. This total loss is typically an average over the individual losses computed for each of the $N$ data points in a training set:
+The objective in most supervised learning tasks is to find a set of parameters $\mathbf{w}$ that minimizes a loss function $F(\mathbf{w})$. This total loss is typically an average over the individual losses computed for each of the $N$ data points in a training set:
 
 $$F(\mathbf{w}) = \frac{1}{N} \sum_{i=1}^{N} f_i(\mathbf{w})$$
 
@@ -23,7 +23,7 @@ Here, $f_i(\mathbf{w})$ represents the loss associated with the $i$-th data poin
 
 $$\mathbf{w}_{k+1} = \mathbf{w}_k - \eta \nabla F(\mathbf{w}_k) = \mathbf{w}_k - \eta \frac{1}{N} \sum_{i=1}^{N} \nabla f_i(\mathbf{w}_k)$$
 
-where $\eta$ is the **learning rate**, a hyperparameter that controls the step size. The term "batch" or "full-batch" refers to the fact that the entire dataset is used to compute the gradient for a single parameter update. When $N$ is very large, as is common in deep learning, computing this sum becomes prohibitively expensive, leading to very infrequent parameter updates. 
+where $\eta$ is the **learning rate**, a hyperparameter that controls the step size. The term "batch" or "full-batch" refers to the fact that the entire dataset is used to compute the gradient for a single parameter update. When $N$ is very large, as is common in deep learning, computing this sum becomes prohibitively expensive, leading to very infrequent parameter updates. [@problem_id:2206672]
 
 **Stochastic Gradient Descent (SGD)** offers a simple yet profound solution. Instead of computing the full, expensive average, SGD approximates the gradient using just a single, randomly selected data point at each step. The update rule for this "pure" form of SGD is:
 
@@ -39,7 +39,7 @@ Notice that the step taken was not in the direction of the true gradient. This "
 
 $$\mathbf{w}_2 = \mathbf{w}_1 - \eta \mathbf{g}_1 = (0.4, 3.8) - 0.1(2.0, 6.0) = (0.2, 3.2)$$
 
-After two steps, the parameters have moved from $(1.0, 4.0)$ to $(0.2, 3.2)$, progressing towards the minimum at $(0,0)$ via a jagged, indirect path.  This example raises a critical question: if the updates are noisy and not always pointing in the best direction, why does this algorithm work at all? The answer lies in the statistical properties of the stochastic gradient.
+After two steps, the parameters have moved from $(1.0, 4.0)$ to $(0.2, 3.2)$, progressing towards the minimum at $(0,0)$ via a jagged, indirect path. [@problem_id:2206688] This example raises a critical question: if the updates are noisy and not always pointing in the best direction, why does this algorithm work at all? The answer lies in the statistical properties of the stochastic gradient.
 
 ### Statistical Properties of the Stochastic Gradient
 
@@ -61,7 +61,7 @@ The expected value of the stochastic gradient at $w=3$, assuming we pick one of 
 
 $$E[\nabla f_i(3)] = \frac{1}{3}(28 - 8 + 6) = \frac{26}{3}$$
 
-This is exactly equal to the true gradient of the full objective function, $\nabla F(w) = \frac{1}{3}((8w+4) + (2w-14) + (2w)) = 4w - \frac{10}{3}$, evaluated at $w=3$, which is $\nabla F(3) = 12 - \frac{10}{3} = \frac{26}{3}$. This confirms that the stochastic estimate is, on average, correct. 
+This is exactly equal to the true gradient of the full objective function, $\nabla F(w) = \frac{1}{3}((8w+4) + (2w-14) + (2w)) = 4w - \frac{10}{3}$, evaluated at $w=3$, which is $\nabla F(3) = 12 - \frac{10}{3} = \frac{26}{3}$. This confirms that the stochastic estimate is, on average, correct. [@problem_id:2206635]
 
 #### The Inherent Variance of the Stochastic Gradient
 
@@ -79,7 +79,7 @@ The variance is defined as $\text{Var}(g(1)) = E[g(1)^2] - (E[g(1)])^2$. First, 
 $$E[g(1)^2] = 0.5(-2)^2 + 0.5(6)^2 = 0.5(4 + 36) = 20$$
 Therefore, the variance is:
 $$\text{Var}(g(1)) = 20 - 2^2 = 16$$
-This non-zero variance of $16$ signifies that any single [gradient estimate](@entry_id:200714) at $x=1$ will be quite noisy, deviating substantially from the true gradient value of $2$. 
+This non-zero variance of $16$ signifies that any single gradient estimate at $x=1$ will be quite noisy, deviating substantially from the true gradient value of $2$. [@problem_id:2206620]
 
 ### The Role of Minibatches
 
@@ -89,13 +89,13 @@ $$\mathbf{w}_{k+1} = \mathbf{w}_k - \eta \left( \frac{1}{b} \sum_{j=1}^{b} \nabl
 
 Minibatching has two primary benefits. First, modern hardware like GPUs can process data in parallel, making the computation of a gradient for a minibatch of size $b$ (e.g., $b=32$ or $b=64$) nearly as fast as for a single sample. Second, averaging over a minibatch reduces the variance of the stochastic gradient estimator.
 
-If the variance of the single-point gradient estimator is $\sigma^2(\mathbf{w}) = \text{Var}_{i}[\nabla f_i(\mathbf{w})]$, then the variance of the minibatch estimator, assuming [sampling with replacement](@entry_id:274194), is:
+If the variance of the single-point gradient estimator is $\sigma^2(\mathbf{w}) = \text{Var}_{i}[\nabla f_i(\mathbf{w})]$, then the variance of the minibatch estimator, assuming sampling with replacement, is:
 
 $$\text{Var}[g_B(\mathbf{w})] = \frac{\sigma^2(\mathbf{w})}{b}$$
 
-This is a fundamental result from statistics: the variance of the sample mean of $b$ independent, identically distributed random variables is the variance of the original variable divided by $b$. This equation clearly shows the trade-off: larger batch sizes reduce noise but at the cost of computing more individual gradients per update. 
+This is a fundamental result from statistics: the variance of the sample mean of $b$ independent, identically distributed random variables is the variance of the original variable divided by $b$. This equation clearly shows the trade-off: larger batch sizes reduce noise but at the cost of computing more individual gradients per update. [@problem_id:2206679]
 
-This leads to a crucial insight regarding [computational efficiency](@entry_id:270255). A single pass over the entire dataset is called an **epoch**. In one epoch, all methods process each of the $N$ data points once. Therefore, the total computational cost per epoch is approximately the same for full-batch GD, pure SGD, and minibatch SGD. However, the number of parameter updates they perform is vastly different :
+This leads to a crucial insight regarding computational efficiency. A single pass over the entire dataset is called an **epoch**. In one epoch, all methods process each of the $N$ data points once. Therefore, the total computational cost per epoch is approximately the same for full-batch GD, pure SGD, and minibatch SGD. However, the number of parameter updates they perform is vastly different [@problem_id:2206672]:
 
 *   **Full-batch GD:** 1 update per epoch.
 *   **Pure SGD:** $N$ updates per epoch.
@@ -105,7 +105,7 @@ Minibatch SGD hits a sweet spot: it provides frequent updates, allowing for rapi
 
 ### Convergence Dynamics of SGD
 
-The presence of [gradient noise](@entry_id:165895) fundamentally alters the optimization dynamics compared to the smooth, deterministic path of full-batch Gradient Descent.
+The presence of gradient noise fundamentally alters the optimization dynamics compared to the smooth, deterministic path of full-batch Gradient Descent.
 
 #### The Impact of a Constant Learning Rate
 
@@ -115,44 +115,44 @@ Let's analyze this for a simple one-dimensional quadratic objective $f(x) = \fra
 
 $$E_{\infty} = \frac{\eta \sigma^2}{a(2 - a\eta)}$$
 
-This equation  is highly instructive. It reveals that the final expected error is not zero. It is directly proportional to the learning rate $\eta$ and the gradient variance $\sigma^2$. To get closer to the true minimum, one must either decrease the [learning rate](@entry_id:140210) or decrease the gradient variance (e.g., by increasing the [batch size](@entry_id:174288)). If $\eta$ is held constant, a residual error is unavoidable.
+This equation [@problem_id:2206687] is highly instructive. It reveals that the final expected error is not zero. It is directly proportional to the learning rate $\eta$ and the gradient variance $\sigma^2$. To get closer to the true minimum, one must either decrease the learning rate or decrease the gradient variance (e.g., by increasing the batch size). If $\eta$ is held constant, a residual error is unavoidable.
 
 #### The Necessity of a Decaying Learning Rate
 
-To achieve true convergence to the minimizer (i.e., for the expected error to approach zero), the learning rate cannot remain constant. It must be decreased, or **annealed**, over the course of training. This allows the algorithm to take large steps early on when it is far from the minimum and then smaller, more cautious steps as it approaches the target, dampening the effect of the [gradient noise](@entry_id:165895).
+To achieve true convergence to the minimizer (i.e., for the expected error to approach zero), the learning rate cannot remain constant. It must be decreased, or **annealed**, over the course of training. This allows the algorithm to take large steps early on when it is far from the minimum and then smaller, more cautious steps as it approaches the target, dampening the effect of the gradient noise.
 
-Theoretical conditions for [guaranteed convergence](@entry_id:145667) (known as the Robbins-Monro conditions) suggest that the [learning rate schedule](@entry_id:637198) $\eta_k$ must satisfy:
+Theoretical conditions for guaranteed convergence (known as the Robbins-Monro conditions) suggest that the learning rate schedule $\eta_k$ must satisfy:
 
 $$\sum_{k=1}^{\infty} \eta_k = \infty \quad \text{and} \quad \sum_{k=1}^{\infty} \eta_k^2  \infty$$
 
 The first condition ensures the learning rate is large enough in total to traverse any distance, while the second ensures it shrinks fast enough to quell the noise. A common schedule that satisfies this is $\eta_k \propto 1/k$.
 
-A direct comparison illustrates the benefit. Imagine we have two SGD processes starting from the same point. One uses a constant [learning rate](@entry_id:140210) $\eta_A$, while the other uses a decaying schedule $\eta_{k,B} = 1/(k+1)$. If we choose $\eta_A$ cleverly so that both schedules produce the same expected error after the first step, we might find that the decaying schedule already produces a smaller expected error by the second step, demonstrating its long-term advantage in achieving higher precision. 
+A direct comparison illustrates the benefit. Imagine we have two SGD processes starting from the same point. One uses a constant learning rate $\eta_A$, while the other uses a decaying schedule $\eta_{k,B} = 1/(k+1)$. If we choose $\eta_A$ cleverly so that both schedules produce the same expected error after the first step, we might find that the decaying schedule already produces a smaller expected error by the second step, demonstrating its long-term advantage in achieving higher precision. [@problem_id:2206665]
 
 ### The "Blessing of Noise": Navigating Complex Landscapes
 
-The variance in SGD is not merely a nuisance to be tolerated. In the complex, non-convex landscapes of [deep learning models](@entry_id:635298), this noise can be a significant advantage, enabling the optimizer to navigate treacherous terrain more effectively than its deterministic counterpart.
+The variance in SGD is not merely a nuisance to be tolerated. In the complex, non-convex landscapes of deep learning models, this noise can be a significant advantage, enabling the optimizer to navigate treacherous terrain more effectively than its deterministic counterpart.
 
 #### Escaping Suboptimal Local Minima
 
-A classic challenge in [non-convex optimization](@entry_id:634987) is the presence of suboptimal **local minima**, points where the gradient is zero but the loss is higher than the [global minimum](@entry_id:165977). Standard Gradient Descent, if initialized within the basin of attraction of such a minimum, will converge to it and become permanently stuck.
+A classic challenge in non-convex optimization is the presence of suboptimal **local minima**, points where the gradient is zero but the loss is higher than the global minimum. Standard Gradient Descent, if initialized within the basin of attraction of such a minimum, will converge to it and become permanently stuck.
 
-The noise in SGD acts as a form of random exploration. Consider a loss function $L(w) = \frac{1}{4}w^4 - \frac{1}{3}w^3 - 3w^2$, which has a [local minimum](@entry_id:143537) at $w=-2$ (where $L'(w)=0$) and a [global minimum](@entry_id:165977) at $w=3$. If we start an optimization at $w_0 = -2$, standard GD will make no progress. The SGD update, however, is $w_1 = w_0 - \eta(L'(w_0) + \xi_0)$, where $\xi_0$ is the [gradient noise](@entry_id:165895). Since $L'(w_0)=0$, the update is purely noise-driven: $w_1 = w_0 - \eta\xi_0$. If the noise term $\xi_0$ is sufficiently large and points in the right direction, it can "kick" the parameter out of the [local minimum](@entry_id:143537) and over the [potential barrier](@entry_id:147595), giving it a chance to discover the deeper, global minimum. 
+The noise in SGD acts as a form of random exploration. Consider a loss function $L(w) = \frac{1}{4}w^4 - \frac{1}{3}w^3 - 3w^2$, which has a local minimum at $w=-2$ (where $L'(w)=0$) and a global minimum at $w=3$. If we start an optimization at $w_0 = -2$, standard GD will make no progress. The SGD update, however, is $w_1 = w_0 - \eta(L'(w_0) + \xi_0)$, where $\xi_0$ is the gradient noise. Since $L'(w_0)=0$, the update is purely noise-driven: $w_1 = w_0 - \eta\xi_0$. If the noise term $\xi_0$ is sufficiently large and points in the right direction, it can "kick" the parameter out of the local minimum and over the potential barrier, giving it a chance to discover the deeper, global minimum. [@problem_id:2206623]
 
 #### Escaping Saddle Points
 
-In the high-dimensional spaces common to neural networks, it has been observed that **saddle points** are far more prevalent than local minima. A saddle point is a critical point (where the gradient is zero) that is a minimum along some dimensions but a maximum along others. GD is also crippled by [saddle points](@entry_id:262327), as the zero gradient causes the updates to halt.
+In the high-dimensional spaces common to neural networks, it has been observed that **saddle points** are far more prevalent than local minima. A saddle point is a critical point (where the gradient is zero) that is a minimum along some dimensions but a maximum along others. GD is also crippled by saddle points, as the zero gradient causes the updates to halt.
 
 SGD, however, can readily escape them. The key is that while the *true* gradient $\nabla F(\mathbf{w})$ is zero at a saddle, the *stochastic* gradient $\nabla f_i(\mathbf{w})$ for a single data point or minibatch is almost never zero.
 
-Consider an objective whose surface near the origin behaves like $L(x, y) = x^2 - y^2$, which has a saddle point at $(0,0)$. The true gradient is $\nabla L = (2x, -2y)$, which is $(0,0)$ at the origin. Suppose this loss arises from two components, $L_1(x,y) = (x+a)^2 - y^2$ and $L_2(x,y) = (x-a)^2 - y^2$. At the saddle point $(0,0)$, the respective gradients are $\nabla L_1 = (2a, 0)$ and $\nabla L_2 = (-2a, 0)$. An SGD step will randomly choose one of these non-zero gradients, pushing the parameter vector away from the saddle point along the $x$-axis (the direction of positive curvature). Because the noise pushes the optimizer into regions where the true gradient is non-zero, it can then proceed downhill, effectively escaping the saddle's trap. 
+Consider an objective whose surface near the origin behaves like $L(x, y) = x^2 - y^2$, which has a saddle point at $(0,0)$. The true gradient is $\nabla L = (2x, -2y)$, which is $(0,0)$ at the origin. Suppose this loss arises from two components, $L_1(x,y) = (x+a)^2 - y^2$ and $L_2(x,y) = (x-a)^2 - y^2$. At the saddle point $(0,0)$, the respective gradients are $\nabla L_1 = (2a, 0)$ and $\nabla L_2 = (-2a, 0)$. An SGD step will randomly choose one of these non-zero gradients, pushing the parameter vector away from the saddle point along the $x$-axis (the direction of positive curvature). Because the noise pushes the optimizer into regions where the true gradient is non-zero, it can then proceed downhill, effectively escaping the saddle's trap. [@problem_id:2206615]
 
 ### The Challenge of Ill-Conditioning
 
-Despite its strengths, SGD has a significant weakness when faced with **ill-conditioned** [loss landscapes](@entry_id:635571). A problem is ill-conditioned if its curvature varies dramatically along different parameter directions. This is visualized as having highly elliptical or elongated level sets (contours of equal loss), as opposed to the spherical or circular level sets of a well-conditioned problem.
+Despite its strengths, SGD has a significant weakness when faced with **ill-conditioned** loss landscapes. A problem is ill-conditioned if its curvature varies dramatically along different parameter directions. This is visualized as having highly elliptical or elongated level sets (contours of equal loss), as opposed to the spherical or circular level sets of a well-conditioned problem.
 
-Consider the loss function $L(w_1, w_2) = 25w_1^2 + w_2^2$. The loss is 25 times more sensitive to changes in $w_1$ than in $w_2$. This is a classic [ill-conditioned problem](@entry_id:143128). The gradient is $\nabla L = (50w_1, 2w_2)$. At a point like $(1, 10)$, the gradient is $(50, 20)$, which does not point directly toward the minimum at $(0,0)$. More problematically for SGD, if an update is based on a component loss like $L_1 = 25w_1^2$, the stochastic gradient is $(50w_1, 0)$. This update moves purely horizontally, which can be nearly orthogonal to the true path to the minimum. The result is an inefficient zig-zagging trajectory, where the optimizer overshoots in the steep direction and makes slow progress in the shallow direction.
+Consider the loss function $L(w_1, w_2) = 25w_1^2 + w_2^2$. The loss is 25 times more sensitive to changes in $w_1$ than in $w_2$. This is a classic ill-conditioned problem. The gradient is $\nabla L = (50w_1, 2w_2)$. At a point like $(1, 10)$, the gradient is $(50, 20)$, which does not point directly toward the minimum at $(0,0)$. More problematically for SGD, if an update is based on a component loss like $L_1 = 25w_1^2$, the stochastic gradient is $(50w_1, 0)$. This update moves purely horizontally, which can be nearly orthogonal to the true path to the minimum. The result is an inefficient zig-zagging trajectory, where the optimizer overshoots in the steep direction and makes slow progress in the shallow direction.
 
-A powerful conceptual solution is **preconditioning**, which involves rescaling the [parameter space](@entry_id:178581) to make the problem better conditioned. For our example, a change of variables $v_1 = 5w_1$ and $v_2 = w_2$ transforms the loss into $G(v_1, v_2) = v_1^2 + v_2^2$. This is a perfectly well-conditioned function with circular [level sets](@entry_id:151155). In this new $\mathbf{v}$-space, the gradient always points toward the minimum, and SGD steps are far more effective. The alignment between the SGD update direction and the direct path to the minimum is dramatically improved. 
+A powerful conceptual solution is **preconditioning**, which involves rescaling the parameter space to make the problem better conditioned. For our example, a change of variables $v_1 = 5w_1$ and $v_2 = w_2$ transforms the loss into $G(v_1, v_2) = v_1^2 + v_2^2$. This is a perfectly well-conditioned function with circular level sets. In this new $\mathbf{v}$-space, the gradient always points toward the minimum, and SGD steps are far more effective. The alignment between the SGD update direction and the direct path to the minimum is dramatically improved. [@problem_id:2206652]
 
 While manually finding such transformations is generally infeasible, this principle motivates a class of more advanced adaptive optimization algorithms (such as Adagrad, RMSprop, and Adam). These methods dynamically estimate the curvature for each parameter and adapt the learning rate on a per-parameter basis, effectively performing a form of automatic preconditioning.

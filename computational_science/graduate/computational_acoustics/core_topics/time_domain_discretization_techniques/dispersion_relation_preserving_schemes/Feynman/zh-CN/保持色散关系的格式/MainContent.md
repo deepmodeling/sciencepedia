@@ -1,11 +1,11 @@
 ## 引言
-在物理世界中，从音乐厅悠扬的和声到地球深处[地震波](@entry_id:164985)的传播，波无处不在，而准确地模拟其行为是现代科学与工程的核心挑战之一。然而，当我们将连续的波动现象搬入计算机的离散世界时，一个根本性的难题浮现出来：[数值误差](@entry_id:635587)。传统的数值方法，即使在理论上具有很高的“[精度阶数](@entry_id:145189)”，在长距离或长时间模拟后，也常常因为累积的相位误差而导致波形严重失真，这种现象被称为[数值色散](@entry_id:145368)。这使得预测结果的可靠性大打[折扣](@entry_id:139170)，尤其是在计算声学、[地震学](@entry_id:203510)和航空声学等对相位保真度要求极高的领域。
+在物理世界中，从音乐厅悠扬的和声到地球深处[地震波](@keyword=seismic_waves|lang=zh-CN|style=Feynman)的传播，波无处不在，而准确地模拟其行为是现代科学与工程的核心挑战之一。然而，当我们将连续的波动现象搬入计算机的离散世界时，一个根本性的难题浮现出来：[数值误差](@keyword=numerical_errors|lang=zh-CN|style=Feynman)。传统的数值方法，即使在理论上具有很高的“[精度阶数](@keyword=order_of_accuracy|lang=zh-CN|style=Feynman)”，在长距离或长时间模拟后，也常常因为累积的相位误差而导致波形严重失真，这种现象被称为[数值色散](@keyword=numerical_dispersion|lang=zh-CN|style=Feynman)。这使得预测结果的可靠性大打[折扣](@keyword=discounting|lang=zh-CN|style=Feynman)，尤其是在计算声学、[地震学](@keyword=seismology|lang=zh-CN|style=Feynman)和航空声学等对相位保真度要求极高的领域。
 
-为了解决这一知识鸿沟，一种更符合物理直觉的数值设计哲学应运而生——保[色散关系](@entry_id:140395)（Dispersion-Relation-Preserving, DRP）格式。它不再拘泥于数学上的局部完美，而是致力于在整个波的旅途中守护其物理本质。本文将系统地引导您深入理解这一强大工具。
+为了解决这一知识鸿沟，一种更符合物理直觉的数值设计哲学应运而生——保[色散关系](@keyword=dispersion_relations|lang=zh-CN|style=Feynman)（Dispersion-Relation-Preserving, DRP）格式。它不再拘泥于数学上的局部完美，而是致力于在整个波的旅途中守护其物理本质。本文将系统地引导您深入理解这一强大工具。
 
 在接下来的内容中，我们将分三步展开：
-*   在 **原理与机制** 章节，我们将揭示[数值色散](@entry_id:145368)的根源——[修正波数](@entry_id:141354)，并阐述DRP格式如何从根本上对抗这种误差，以及时空离散误差如何能够巧妙地相互抵消。
-*   在 **应用与交叉学科联系** 章节，我们将探索DRP思想如何从理想的一维问题走向真实世界的复杂应用，包括处理复杂几何、声学边界、[非线性](@entry_id:637147)效应，并跨越到地震学等交叉学科。
+*   在 **原理与机制** 章节，我们将揭示[数值色散](@keyword=numerical_dispersion|lang=zh-CN|style=Feynman)的根源——[修正波数](@keyword=modified_wavenumber|lang=zh-CN|style=Feynman)，并阐述DRP格式如何从根本上对抗这种误差，以及时空离散误差如何能够巧妙地相互抵消。
+*   在 **应用与交叉学科联系** 章节，我们将探索DRP思想如何从理想的一维问题走向真实世界的复杂应用，包括处理复杂几何、声学边界、[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)效应，并跨越到地震学等交叉学科。
 *   最后，在 **动手实践** 环节，您将通过具体的计算练习，将理论知识转化为评估和比较不同数值格式性能的实践能力。
 
 让我们一同开始这段旅程，探索如何在数字世界中谱写出最接近真实的波动交响曲。
@@ -22,82 +22,82 @@
 
 ### 修正波数：万恶（与万善）之源
 
-为了模拟波的传播，我们需要计算它的空间导数 $\partial u / \partial x$。在离散的网格上，我们用**[有限差分](@entry_id:167874)**来近似它。例如，一个相当不错的近似是四阶精度的五点中心差分格式 ：
+为了模拟波的传播，我们需要计算它的空间导数 $\partial u / \partial x$。在离散的网格上，我们用**[有限差分](@keyword=finite_differences|lang=zh-CN|style=Feynman)**来近似它。例如，一个相当不错的近似是四阶精度的五点中心差分格式 [@problem_id:4120634]：
 $$
 \left.\frac{\partial u}{\partial x}\right|_{x=x_{j}} \approx \frac{1}{h}\left(\frac{2}{3}(u_{j+1}-u_{j-1}) - \frac{1}{12}(u_{j+2}-u_{j-2})\right)
 $$
 其中 $h$ 是网格间距 $\Delta x$。
 
-现在，让我们看看这个离散的导数算子作用在一个数字化的平面波 $u_j = \exp(ikx_j)$ 上时会发生什么。经过一番基于[欧拉公式](@entry_id:176440)的推导，我们会发现一个惊人的结果：这个复杂的差分运算，其效果等价于将原始的平面波乘以一个纯虚数 $i k^*$。也就是说，对于离散世界中的波，$D_x u_j \approx i k^* u_j$。
+现在，让我们看看这个离散的导数算子作用在一个数字化的平面波 $u_j = \exp(ikx_j)$ 上时会发生什么。经过一番基于[欧拉公式](@keyword=euler_s_formula|lang=zh-CN|style=Feynman)的推导，我们会发现一个惊人的结果：这个复杂的差分运算，其效果等价于将原始的平面波乘以一个纯虚数 $i k^*$。也就是说，对于离散世界中的波，$D_x u_j \approx i k^* u_j$。
 
-这里的 $k^*$ 是什么？它不再是原始的波数 $k$，而是一个依赖于 $k$ 和网格间距 $h$ 的新量，我们称之为**修正波数** (modified wavenumber)。对于上面那个四阶格式，它的修正波数是 ：
+这里的 $k^*$ 是什么？它不再是原始的波数 $k$，而是一个依赖于 $k$ 和网格间距 $h$ 的新量，我们称之为**修正波数** (modified wavenumber)。对于上面那个四阶格式，它的修正波数是 [@problem_id:4120634]：
 $$
 k^*(k) = \frac{2}{h} \left[ \frac{2}{3} \sin(kh) - \frac{1}{12} \sin(2kh) \right]
 $$
-这个[修正波数](@entry_id:141354) $k^*$ 正是我们故事的核心。在计算机模拟的半离散世界里（空间离散，时间连续），声[波的色散](@entry_id:275520)关系不再是 $\omega = ck$，而是变成了：
+这个[修正波数](@keyword=modified_wavenumber|lang=zh-CN|style=Feynman) $k^*$ 正是我们故事的核心。在计算机模拟的半离散世界里（空间离散，时间连续），声[波的色散](@keyword=dispersion_of_waves|lang=zh-CN|style=Feynman)关系不再是 $\omega = ck$，而是变成了：
 $$
 \omega = c k^*(k)
 $$
-波的行为不再由它“真实”的波数 $k$ 决定，而是由它的“数字身份”——[修正波数](@entry_id:141354) $k^*$ 来主宰。$k^*$ 与 $k$ 的偏离，正是所有[数值模拟误差](@entry_id:1128979)的根源。
+波的行为不再由它“真实”的波数 $k$ 决定，而是由它的“数字身份”——[修正波数](@keyword=modified_wavenumber|lang=zh-CN|style=Feynman) $k^*$ 来主宰。$k^*$ 与 $k$ 的偏离，正是所有[数值模拟误差](@keyword=numerical_modeling_error|lang=zh-CN|style=Feynman)的根源。
 
-我们可以画出[无量纲化](@entry_id:136704)的修正波数 $k^*h$ 与真实无量纲波数 $kh$ 之间的关系。理想情况应该是一条穿过原点的直线 $y=x$。但实际的曲线在 $kh$ 较小时与理想直线贴合得很好，但随着 $kh$ 的增大（即波长变短，相对于网格越来越难以分辨），曲线会显著地偏离直线。这意味着，短波在数字世界里被严重“扭曲”，它们的有效波数与真实波数大相径庭。
+我们可以画出无量纲化的修正波数 $k^*h$ 与真实无量纲波数 $kh$ 之间的关系。理想情况应该是一条穿过原点的直线 $y=x$。但实际的曲线在 $kh$ 较小时与理想直线贴合得很好，但随着 $kh$ 的增大（即波长变短，相对于网格越来越难以分辨），曲线会显著地偏离直线。这意味着，短波在数字世界里被严重“扭曲”，它们的有效波数与真实波数大相径庭。
 
 ### 离散化的“原罪”：色散与耗散
 
-这种 $k^*$ 与 $k$ 的差异，会给我们的模拟带来两种主要的“原罪”：数值色散和[数值耗散](@entry_id:168584)。
+这种 $k^*$ 与 $k$ 的差异，会给我们的模拟带来两种主要的“原罪”：数值色散和[数值耗散](@keyword=numerical_smearing|lang=zh-CN|style=Feynman)。
 
 #### 色散（相位之罪）
 
-由于[修正波数](@entry_id:141354) $k^*$ 的存在，[数值模拟](@entry_id:146043)中的相速度变成了 $c_{p, \text{num}} = \omega/k = c(k^*/k)$。因为它依赖于 $k$，所以它不再是一个常数！不同频率（不同 $k$）的波在计算机里会以不同的速度传播。我们之前那个和谐的交响乐和弦，在模拟中将会“瓦解”，高音和低音会逐渐分离。这种由数值方法引入的人为色散现象，被称为**[数值色散](@entry_id:145368)** (numerical dispersion)。
+由于[修正波数](@keyword=modified_wavenumber|lang=zh-CN|style=Feynman) $k^*$ 的存在，[数值模拟](@keyword=numerical_modeling|lang=zh-CN|style=Feynman)中的相速度变成了 $c_{p, \text{num}} = \omega/k = c(k^*/k)$。因为它依赖于 $k$，所以它不再是一个常数！不同频率（不同 $k$）的波在计算机里会以不同的速度传播。我们之前那个和谐的交响乐和弦，在模拟中将会“瓦解”，高音和低音会逐渐分离。这种由数值方法引入的人为色散现象，被称为**[数值色散](@keyword=numerical_dispersion|lang=zh-CN|style=Feynman)** (numerical dispersion)。
 
-你可能会觉得，如果 $k^*$ 和 $k$ 的差别很小，比如只有 $0.1\%$，那应该无伤大雅吧？但问题在于，这种微小的误差会随着传播距离而累积 。假设一个波传播了一个波长的距离，它产生的[相位误差](@entry_id:162993)很小。但如果它传播了 $N$ 个波长的距离，总的累积[相位误差](@entry_id:162993) $\Delta \phi$ 将正比于 $N$：
+你可能会觉得，如果 $k^*$ 和 $k$ 的差别很小，比如只有 $0.1\%$，那应该无伤大雅吧？但问题在于，这种微小的误差会随着传播距离而累积 [@problem_id:4120636]。假设一个波传播了一个波长的距离，它产生的[相位误差](@keyword=phase_error|lang=zh-CN|style=Feynman)很小。但如果它传播了 $N$ 个波长的距离，总的累积[相位误差](@keyword=phase_error|lang=zh-CN|style=Feynman) $\Delta \phi$ 将正比于 $N$：
 $$
 |\Delta \phi| \approx 2\pi N |\varepsilon_c(k)|
 $$
-其中 $\varepsilon_c(k) = (c_{p, \text{num}} - c)/c$ 是相对[相速度误差](@entry_id:1129602)。对于长距离[声传播](@entry_id:1120706)问题，比如在海洋中追踪潜艇的声呐信号，或者在地球内部研究地震波，波需要传播成千上万个波长。即使是一个微不足道的 $\varepsilon_c$，乘以巨大的 $N$ 之后，也会导致相位完全错乱，使得依赖相位的[相干叠加](@entry_id:170209)和[干涉图样](@entry_id:181379)分析变得毫无意义。为了保证在传播 $N$ 个波长后[相位误差](@entry_id:162993)仍在可控范围内（例如小于 $\pi/4$），我们必须要求相对[相速度误差](@entry_id:1129602)小到 $|\varepsilon_c(k)| \lesssim 1/(8N)$ 的量级 。这无疑是一个极高的要求。
+其中 $\varepsilon_c(k) = (c_{p, \text{num}} - c)/c$ 是相对[相速度误差](@keyword=phase_velocity_error|lang=zh-CN|style=Feynman)。对于长距离[声传播](@keyword=acoustic_propagation|lang=zh-CN|style=Feynman)问题，比如在海洋中追踪潜艇的声呐信号，或者在地球内部研究地震波，波需要传播成千上万个波长。即使是一个微不足道的 $\varepsilon_c$，乘以巨大的 $N$ 之后，也会导致相位完全错乱，使得依赖相位的[相干叠加](@keyword=coherent_superposition|lang=zh-CN|style=Feynman)和[干涉图样](@keyword=interference_pattern|lang=zh-CN|style=Feynman)分析变得毫无意义。为了保证在传播 $N$ 个波长后[相位误差](@keyword=phase_error|lang=zh-CN|style=Feynman)仍在可控范围内（例如小于 $\pi/4$），我们必须要求相对[相速度误差](@keyword=phase_velocity_error|lang=zh-CN|style=Feynman)小到 $|\varepsilon_c(k)| \lesssim 1/(8N)$ 的量级 [@problem_id:4120636]。这无疑是一个极高的要求。
 
 #### 耗散（振幅之罪）
 
-更糟糕的是，有些数值格式还会导致波的能量凭空消失。这发生在当离散格式产生的频率 $\omega$ 是一个复数时，$\omega(k) = \text{Re}[\omega(k)] + i \text{Im}[\omega(k)]$ 。它的虚部 $\text{Im}[\omega(k)]$ 会导致波的振幅随时间指数衰减（如果 $\text{Im}[\omega(k)]  0$）或增长（如果 $\text{Im}[\omega(k)] > 0$，导致不稳定）。这种人为的振幅衰减被称为**[数值耗散](@entry_id:168584)** (numerical dissipation)。
+更糟糕的是，有些数值格式还会导致波的能量凭空消失。这发生在当离散格式产生的频率 $\omega$ 是一个复数时，$\omega(k) = \text{Re}[\omega(k)] + i \text{Im}[\omega(k)]$ [@problem_id:4120590]。它的虚部 $\text{Im}[\omega(k)]$ 会导致波的振幅随时间指数衰减（如果 $\text{Im}[\omega(k)]  0$）或增长（如果 $\text{Im}[\omega(k)] > 0$，导致不稳定）。这种人为的振幅衰减被称为**[数值耗散](@keyword=numerical_smearing|lang=zh-CN|style=Feynman)** (numerical dissipation)。
 
-我们可以精确地计算出，每传播一个波长的距离，波的振幅会变为原来的多少倍。这个振幅比率 $R_\lambda$ 由下式给出 ：
+我们可以精确地计算出，每传播一个波长的距离，波的振幅会变为原来的多少倍。这个振幅比率 $R_\lambda$ 由下式给出 [@problem_id:4120590]：
 $$
 R_\lambda = \exp\left( \frac{2\pi\,\text{Im}[\omega(k)]}{\text{Re}[\omega(k)]} \right)
 $$
-在许多应用中，我们希望模拟的是无损传播，因此任何[数值耗散](@entry_id:168584)都是我们想要极力避免的。幸运的是，像我们之前提到的那种[中心对称的](@entry_id:1122209)差分格式，其修正波数 $k^*$ 是实数，因此它们对于半离散的平流方程是天然无耗散的，这本身就是一个非常优美的数学特性。
+在许多应用中，我们希望模拟的是无损传播，因此任何[数值耗散](@keyword=numerical_smearing|lang=zh-CN|style=Feynman)都是我们想要极力避免的。幸运的是，像我们之前提到的那种[中心对称的](@keyword=centrosymmetric|lang=zh-CN|style=Feynman)差分格式，其修正波数 $k^*$ 是实数，因此它们对于半离散的平流方程是天然无耗散的，这本身就是一个非常优美的数学特性。
 
 ### 对抗误差的两种哲学
 
 既然我们知道了误差的来源，该如何设计更好的数值格式来对抗它们呢？在计算科学领域，存在着两种主要的哲学思想。
 
-#### 传统主义者：[泰勒级数](@entry_id:147154)的信徒
+#### 传统主义者：[泰勒级数](@keyword=taylor_series|lang=zh-CN|style=Feynman)的信徒
 
-第一种哲学是追求**精度阶数** (order of accuracy)。它的思想根植于微积分的[泰勒级数展开](@entry_id:138468)。一个数值格式被称为 $p$ 阶精确，如果它对导数的近似，其泰勒展开式与真实导数的前几项完全吻合，误差项出现在 $(\Delta x)^p$。例如，一个六阶精度的格式 ，其系数 $\lbrace a_m \rbrace$ 必须满足一系列的“[矩条件](@entry_id:136365)”：
+第一种哲学是追求**精度阶数** (order of accuracy)。它的思想根植于微积分的[泰勒级数展开](@keyword=taylor_series_expansion|lang=zh-CN|style=Feynman)。一个数值格式被称为 $p$ 阶精确，如果它对导数的近似，其泰勒展开式与真实导数的前几项完全吻合，误差项出现在 $(\Delta x)^p$。例如，一个六阶精度的格式 [@problem_id:4120645]，其系数 $\lbrace a_m \rbrace$ 必须满足一系列的“[矩条件](@keyword=moment_conditions|lang=zh-CN|style=Feynman)”：
 $$
 \sum_{m=1}^{M} m a_m = \frac{1}{2}, \qquad \sum_{m=1}^{M} m^3 a_m = 0, \qquad \sum_{m=1}^{M} m^5 a_m = 0
 $$
-这种方法的优点是，在极限情况下（$\Delta x \to 0$），[高阶格式](@entry_id:150564)收敛得更快。它致力于在 $k=0$ 这个点上做到“无限”完美。但问题是，对于有限的 $\Delta x$ 和我们关心的非零波数 $k$，这种在零点的完美并不能保证在整个波[数域](@entry_id:155558)内都有良好的表现。它的精度可能会在远离 $k=0$ 后迅速下降。
+这种方法的优点是，在极限情况下（$\Delta x \to 0$），[高阶格式](@keyword=higher_order_schemes|lang=zh-CN|style=Feynman)收敛得更快。它致力于在 $k=0$ 这个点上做到“无限”完美。但问题是，对于有限的 $\Delta x$ 和我们关心的非零波数 $k$，这种在零点的完美并不能保证在整个波[数域](@keyword=number_fields|lang=zh-CN|style=Feynman)内都有良好的表现。它的精度可能会在远离 $k=0$ 后迅速下降。
 
 #### 实用主义者：DRP的拥护者
 
-第二种哲学则更加务实。它问：我们为什么要在 $k=0$ 那一个点上追求极致的完美，而牺牲掉在其他我们真正关心的波数上的表现呢？为什么我们不直接去优化整个“感兴趣的波数频带”上的性能呢？这正是**保[色散关系](@entry_id:140395) (Dispersion-Relation-Preserving, DRP)** 格式的核心哲学 。
+第二种哲学则更加务实。它问：我们为什么要在 $k=0$ 那一个点上追求极致的完美，而牺牲掉在其他我们真正关心的波数上的表现呢？为什么我们不直接去优化整个“感兴趣的波数频带”上的性能呢？这正是**保[色散关系](@keyword=dispersion_relations|lang=zh-CN|style=Feynman) (Dispersion-Relation-Preserving, DRP)** 格式的核心哲学 [@problem_id:4120589]。
 
-DRP格式的设计目标，不再是匹配泰勒级数的项，而是直接让修正波数 $k^*$ 在一个预设的波数范围 $[0, k_{\max}]$ 内，尽可能地逼近真实的波数 $k$。这通常被构建成一个约束优化问题 ：在满足最基本的[一致性条件](@entry_id:637057)（例如 $\sum m a_m = 1/2$）下，[选择差](@entry_id:276336)分系数 $\lbrace a_m \rbrace$ 来最小化积分平方误差：
+DRP格式的设计目标，不再是匹配泰勒级数的项，而是直接让修正波数 $k^*$ 在一个预设的波数范围 $[0, k_{\max}]$ 内，尽可能地逼近真实的波数 $k$。这通常被构建成一个约束优化问题 [@problem_id:4120614]：在满足最基本的[一致性条件](@keyword=consistency_conditions|lang=zh-CN|style=Feynman)（例如 $\sum m a_m = 1/2$）下，[选择差](@keyword=selection_differential|lang=zh-CN|style=Feynman)分系数 $\lbrace a_m \rbrace$ 来最小化积分平方误差：
 $$
 \min \int_{0}^{k_{\max}} (k^*(k) - k)^2 dk
 $$
-这种方法放弃了在 $k=0$ 点的“理论完美”，换来的是在整个实用频带上的“整体优秀”。对于波动问题，这被证明是一种远为高效和精确的策略。这种哲学不仅适用于简单的显式差分格式，也适用于求解二阶导数 ，甚至可以推广到更高效的**紧致差分格式** (compact schemes)，它们通过一个隐式的[矩阵方程](@entry_id:203695)来定义导数，能够在非常小的计算模板（stencil）上实现极高的色散保真度 。
+这种方法放弃了在 $k=0$ 点的“理论完美”，换来的是在整个实用频带上的“整体优秀”。对于波动问题，这被证明是一种远为高效和精确的策略。这种哲学不仅适用于简单的显式差分格式，也适用于求解二阶导数 [@problem_id:4120585]，甚至可以推广到更高效的**紧致差分格式** (compact schemes)，它们通过一个隐式的[矩阵方程](@keyword=matrix_equations|lang=zh-CN|style=Feynman)来定义导数，能够在非常小的计算模板（stencil）上实现极高的色散保真度 [@problem_id:4120618]。
 
 ### 一曲优美的交响：时空误差的平衡
 
-到目前为止，我们的讨论都集中在[空间离散化](@entry_id:172158)带来的误差上。但别忘了，我们还有时间上的离散化！我们用龙格-库塔 (Runge-Kutta) 等方法来求解时间演化，而这些[时间积分方法](@entry_id:136323)同样会引入它们自己的误差，尤其是相位误差 。例如，经典的四阶龙格-库塔方法，其 amplification factor 经过一个时间步长 $\Delta t$ 后的相位变化，与理想的相位变化 $\omega \Delta t$ 之间存在一个微小的差值。这相当于说，我们模拟中的“时钟”也走不准，并且它的快慢还依赖于波的频率 $\omega$。
+到目前为止，我们的讨论都集中在[空间离散化](@keyword=spatial_discretization|lang=zh-CN|style=Feynman)带来的误差上。但别忘了，我们还有时间上的离散化！我们用龙格-库塔 (Runge-Kutta) 等方法来求解时间演化，而这些[时间积分方法](@keyword=time_integration_methods|lang=zh-CN|style=Feynman)同样会引入它们自己的误差，尤其是相位误差 [@problem_id:4120620]。例如，经典的四阶龙格-库塔方法，其 amplification factor 经过一个时间步长 $\Delta t$ 后的相位变化，与理想的相位变化 $\omega \Delta t$ 之间存在一个微小的差值。这相当于说，我们模拟中的“时钟”也走不准，并且它的快慢还依赖于波的频率 $\omega$。
 
-现在，我们故事的高潮来临了。我们有两个误差来源：空间离散化引入的[相位误差](@entry_id:162993)（通常使得[波速](@entry_id:186208)变慢，导致相位滞后），和时间离散化引入的相位误差（对于很多显式方法，这会使得[波速](@entry_id:186208)变快，导致相位超前）。一个让波变慢，一个让波变快。我们能否巧妙地选择参数，让这两种误差正好相互抵消呢？
+现在，我们故事的高潮来临了。我们有两个误差来源：空间离散化引入的[相位误差](@keyword=phase_error|lang=zh-CN|style=Feynman)（通常使得[波速](@keyword=wave_speed|lang=zh-CN|style=Feynman)变慢，导致相位滞后），和时间离散化引入的相位误差（对于很多显式方法，这会使得[波速](@keyword=wave_speed|lang=zh-CN|style=Feynman)变快，导致相位超前）。一个让波变慢，一个让波变快。我们能否巧妙地选择参数，让这两种误差正好相互抵消呢？
 
-答案是肯定的，而且结果出奇地优美。我们可以证明 ，对于一个给定的空间差分格式（其[色散误差](@entry_id:748555)由某个参数 $\beta_3$ 描述）和一个[时间积分格式](@entry_id:165373)（例如[二阶龙格-库塔法](@entry_id:169096)），存在一个**最佳的CFL数** $\nu_{\text{opt}}$，使得两种误差的[主导项](@entry_id:167418)在数值上完全抵消！例如，对于问题中给出的特定组合，这个最佳值为：
+答案是肯定的，而且结果出奇地优美。我们可以证明 [@problem_id:4120617]，对于一个给定的空间差分格式（其[色散误差](@keyword=dispersion_error|lang=zh-CN|style=Feynman)由某个参数 $\beta_3$ 描述）和一个[时间积分格式](@keyword=time_integration_schemes|lang=zh-CN|style=Feynman)（例如[二阶龙格-库塔法](@keyword=second_order_runge_kutta|lang=zh-CN|style=Feynman)），存在一个**最佳的CFL数** $\nu_{\text{opt}}$，使得两种误差的[主导项](@keyword=dominant_term|lang=zh-CN|style=Feynman)在数值上完全抵消！例如，对于问题中给出的特定组合，这个最佳值为：
 $$
 \nu_{\text{opt}} = \sqrt{-6\beta_3}
 $$
-（这要求空间格式的[色散误差](@entry_id:748555)参数 $\beta_3$ 为负，而这对于大多数[中心差分格式](@entry_id:1122205)是成立的。）
+（这要求空间格式的[色散误差](@keyword=dispersion_error|lang=zh-CN|style=Feynman)参数 $\beta_3$ 为负，而这对于大多数[中心差分格式](@keyword=central_differencing_scheme|lang=zh-CN|style=Feynman)是成立的。）
 
-这是一个极为深刻的结论。它揭示了空间和时间的离散化并非两个孤立的问题，而是构成了一个紧密耦合的统一体。通过理解它们之间的相互作用，我们可以像调校乐器一样，精心调整我们的数值参数（CFL数 $\nu = c\Delta t / \Delta x$），让空间和时间“合奏”出一曲[误差最小化](@entry_id:163081)的完美交响。这不仅是数值计算的技巧，更是物理与数学和谐统一之美的体现。
+这是一个极为深刻的结论。它揭示了空间和时间的离散化并非两个孤立的问题，而是构成了一个紧密耦合的统一体。通过理解它们之间的相互作用，我们可以像调校乐器一样，精心调整我们的数值参数（CFL数 $\nu = c\Delta t / \Delta x$），让空间和时间“合奏”出一曲[误差最小化](@keyword=error_minimization|lang=zh-CN|style=Feynman)的完美交响。这不仅是数值计算的技巧，更是物理与数学和谐统一之美的体现。

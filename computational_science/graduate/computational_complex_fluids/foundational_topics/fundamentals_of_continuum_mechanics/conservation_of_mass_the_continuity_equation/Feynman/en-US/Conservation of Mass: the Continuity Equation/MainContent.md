@@ -1,7 +1,7 @@
 ## Introduction
 The conservation of mass is one of the most intuitive and inviolable laws of physics: matter can neither be created nor destroyed. In the study of fluid dynamics, this simple truth blossoms into a powerful and elegant mathematical framework known as the continuity equation. This article aims to bridge the gap between the intuitive concept of mass conservation and its rigorous application, revealing the equation not as an abstract formula, but as a versatile tool for understanding and predicting the behavior of fluids. We will explore how this single principle governs phenomena across a breathtaking range of scales, from the design of aircraft to the diagnosis of heart disease and the evolution of the cosmos.
 
-This exploration is structured to build a comprehensive understanding. The "Principles and Mechanisms" chapter will derive the continuity equation from first principles, contrasting the Lagrangian and Eulerian viewpoints and uncovering the deep physical meaning of the [divergence operator](@entry_id:265975). In "Applications and Interdisciplinary Connections," we will witness the equation in action, tracing its influence through engineering, medicine, geophysics, and even cosmology. Finally, "Hands-On Practices" will translate theory into practice, introducing key computational techniques used to enforce mass conservation in modern fluid dynamics simulations. By the end, you will appreciate the continuity equation as a cornerstone of physical science, a simple law with profound consequences.
+This exploration is structured to build a comprehensive understanding. The "Principles and Mechanisms" chapter will derive the continuity equation from first principles, contrasting the Lagrangian and Eulerian viewpoints and uncovering the deep physical meaning of the [divergence operator](@keyword=divergence_operator|lang=en-US|style=Feynman). In "Applications and Interdisciplinary Connections," we will witness the equation in action, tracing its influence through engineering, medicine, geophysics, and even cosmology. Finally, "Hands-On Practices" will translate theory into practice, introducing key computational techniques used to enforce mass conservation in modern fluid dynamics simulations. By the end, you will appreciate the continuity equation as a cornerstone of physical science, a simple law with profound consequences.
 
 ## Principles and Mechanisms
 
@@ -31,11 +31,11 @@ $$
 \frac{d}{dt} \int_{V} \rho \, dV = - \oint_{\partial V} (\rho \mathbf{u}) \cdot \mathbf{n} \, dS
 $$
 
-Here, $\mathbf{n}$ is the [outward-pointing normal](@entry_id:753030) vector on the surface, ensuring that an outflowing velocity gives a positive flux. This equation is a perfect, ironclad statement of mass conservation for any fixed volume. It's the fluid dynamicist's balance sheet. 
+Here, $\mathbf{n}$ is the [outward-pointing normal](@keyword=outward_pointing_normal|lang=en-US|style=Feynman) vector on the surface, ensuring that an outflowing velocity gives a positive flux. This equation is a perfect, ironclad statement of mass conservation for any fixed volume. It's the fluid dynamicist's balance sheet. 
 
 ### From Global Balance to a Local Law
 
-The integral form is powerful, but it tells us about the whole volume. What is the law at a single point in space? To find out, we perform a wonderful piece of mathematical magic. The divergence theorem of Gauss tells us that the total flux coming out of a volume is equal to the sum of the "sourciness" at every point inside it. This "sourciness" of the mass [flux vector](@entry_id:273577) field is its divergence, $\nabla \cdot (\rho \mathbf{u})$. Applying this theorem, our balance sheet becomes:
+The integral form is powerful, but it tells us about the whole volume. What is the law at a single point in space? To find out, we perform a wonderful piece of mathematical magic. The divergence theorem of Gauss tells us that the total flux coming out of a volume is equal to the sum of the "sourciness" at every point inside it. This "sourciness" of the mass [flux vector](@keyword=flux_vector|lang=en-US|style=Feynman) field is its divergence, $\nabla \cdot (\rho \mathbf{u})$. Applying this theorem, our balance sheet becomes:
 
 $$
 \int_{V} \frac{\partial \rho}{\partial t} \, dV = - \int_{V} \nabla \cdot (\rho \mathbf{u}) \, dV
@@ -47,7 +47,7 @@ $$
 \int_{V} \left( \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{u}) \right) dV = 0
 $$
 
-Now, here's the crucial step. Since this equation must be true for *any* control volume $V$ we choose, no matter how small, the only way the integral can always be zero is if the quantity inside the parentheses is itself zero everywhere. This gives us the celebrated **continuity equation** in its [differential form](@entry_id:174025):
+Now, here's the crucial step. Since this equation must be true for *any* control volume $V$ we choose, no matter how small, the only way the integral can always be zero is if the quantity inside the parentheses is itself zero everywhere. This gives us the celebrated **continuity equation** in its [differential form](@keyword=differential_form|lang=en-US|style=Feynman):
 
 $$
 \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{u}) = 0
@@ -57,7 +57,7 @@ This compact equation is a local, pointwise statement of mass conservation. It s
 
 ### The True Meaning of Divergence
 
-What does the [divergence operator](@entry_id:265975), $\nabla \cdot$, really mean physically? We can uncover its secret by a little rearrangement. Using the product rule on the continuity equation gives us $\frac{\partial \rho}{\partial t} + \mathbf{u} \cdot \nabla \rho + \rho (\nabla \cdot \mathbf{u}) = 0$. The first two terms are just the **[material derivative](@entry_id:266939)** of density, $\frac{D\rho}{Dt}$, which is the rate of change of density for a fluid parcel moving with the flow. This gives us a profound re-expression of the continuity equation:
+What does the [divergence operator](@keyword=divergence_operator|lang=en-US|style=Feynman), $\nabla \cdot$, really mean physically? We can uncover its secret by a little rearrangement. Using the product rule on the continuity equation gives us $\frac{\partial \rho}{\partial t} + \mathbf{u} \cdot \nabla \rho + \rho (\nabla \cdot \mathbf{u}) = 0$. The first two terms are just the **[material derivative](@keyword=material_derivative|lang=en-US|style=Feynman)** of density, $\frac{D\rho}{Dt}$, which is the rate of change of density for a fluid parcel moving with the flow. This gives us a profound re-expression of the continuity equation:
 
 $$
 \nabla \cdot \mathbf{u} = -\frac{1}{\rho} \frac{D\rho}{Dt}
@@ -77,11 +77,11 @@ This doesn't mean the fluid is static! It just means that the velocity field is 
 
 In reality, every fluid is compressible. If you squeeze it, its density will increase. So, when is it valid to use the much simpler incompressible model, $\nabla \cdot \mathbf{u} = 0$? The continuity equation, combined with the art of scaling, gives us the answer.
 
-Let's imagine a flow with a [characteristic speed](@entry_id:173770) $U$ and length scale $L$. The density varies slightly around a reference value $\rho_0$, with fluctuations of a typical size $\Delta \rho$. By making the continuity equation dimensionless, we find that the terms related to density variation are governed by the small dimensionless parameter $\epsilon = \Delta \rho / \rho_0$. 
+Let's imagine a flow with a [characteristic speed](@keyword=characteristic_speed|lang=en-US|style=Feynman) $U$ and length scale $L$. The density varies slightly around a reference value $\rho_0$, with fluctuations of a typical size $\Delta \rho$. By making the continuity equation dimensionless, we find that the terms related to density variation are governed by the small dimensionless parameter $\epsilon = \Delta \rho / \rho_0$. 
 
-But what determines the size of these [density fluctuations](@entry_id:143540)? In many flows, like the air moving around a car, they are caused by pressure changes. The [dynamic pressure](@entry_id:262240) variations scale with $\rho_0 U^2$. Basic thermodynamics tells us that for small pressure changes $\delta p$, the density change $\delta \rho$ is roughly $\delta p / c^2$, where $c$ is the speed of sound. Putting this all together, we find a remarkable result: the [relative density](@entry_id:184864) fluctuation $\Delta \rho / \rho_0$ scales with $(U/c)^2$, which is the square of the **Mach number**, $Ma$. 
+But what determines the size of these [density fluctuations](@keyword=density_fluctuations|lang=en-US|style=Feynman)? In many flows, like the air moving around a car, they are caused by pressure changes. The [dynamic pressure](@keyword=dynamic_pressure|lang=en-US|style=Feynman) variations scale with $\rho_0 U^2$. Basic thermodynamics tells us that for small pressure changes $\delta p$, the density change $\delta \rho$ is roughly $\delta p / c^2$, where $c$ is the speed of sound. Putting this all together, we find a remarkable result: the [relative density](@keyword=relative_density|lang=en-US|style=Feynman) fluctuation $\Delta \rho / \rho_0$ scales with $(U/c)^2$, which is the square of the **Mach number**, $Ma$. 
 
-This means that our term for velocity divergence, $\nabla \cdot \mathbf{u}$, which we found was tied to density changes, scales with $Ma^2 (U/L)$. For a car traveling at 60 mph, the Mach number is about $0.08$, so $Ma^2$ is less than $0.01$. The divergence is tiny! The air, though compressible, is behaving in a [nearly incompressible](@entry_id:752387) way. This is why we can use the incompressible model for nearly all low-speed aerodynamic and hydrodynamic problems—not because the fluid is truly incompressible, but because the dynamics of the flow don't produce significant density changes. The continuity equation, through scaling analysis, gives us permission to simplify.
+This means that our term for velocity divergence, $\nabla \cdot \mathbf{u}$, which we found was tied to density changes, scales with $Ma^2 (U/L)$. For a car traveling at 60 mph, the Mach number is about $0.08$, so $Ma^2$ is less than $0.01$. The divergence is tiny! The air, though compressible, is behaving in a [nearly incompressible](@keyword=nearly_incompressible|lang=en-US|style=Feynman) way. This is why we can use the incompressible model for nearly all low-speed aerodynamic and hydrodynamic problems—not because the fluid is truly incompressible, but because the dynamics of the flow don't produce significant density changes. The continuity equation, through scaling analysis, gives us permission to simplify.
 
 ### Subtle Mechanisms for Creating Divergence
 
@@ -105,7 +105,7 @@ The continuity equation we have discussed is already an averaged description, gl
 
 If we apply a spatial filter (an averaging operator) to the continuity equation, we run into a classic problem. The flux term becomes $\overline{\rho \mathbf{u}}$, the average of a product. In general, this is *not* equal to the product of the averages, $\overline{\rho} \overline{\mathbf{u}}$. This difference, arising from correlations between density and velocity fluctuations at the sub-filter scale, is an unclosed term that requires a model. It seems our beautiful equation gets messy.
 
-But there is a remarkable way to restore its elegance. If we define a special **mass-weighted** [average velocity](@entry_id:267649), known as the **Favre average**, $\tilde{\mathbf{u}} = \overline{\rho \mathbf{u}} / \overline{\rho}$, something magical happens. By its very definition, $\overline{\rho \mathbf{u}} = \overline{\rho} \tilde{\mathbf{u}}$. Substituting this into the filtered equation, we get:
+But there is a remarkable way to restore its elegance. If we define a special **mass-weighted** [average velocity](@keyword=average_velocity|lang=en-US|style=Feynman), known as the **Favre average**, $\tilde{\mathbf{u}} = \overline{\rho \mathbf{u}} / \overline{\rho}$, something magical happens. By its very definition, $\overline{\rho \mathbf{u}} = \overline{\rho} \tilde{\mathbf{u}}$. Substituting this into the filtered equation, we get:
 
 $$
 \frac{\partial \overline{\rho}}{\partial t} + \nabla \cdot (\overline{\rho} \tilde{\mathbf{u}}) = 0

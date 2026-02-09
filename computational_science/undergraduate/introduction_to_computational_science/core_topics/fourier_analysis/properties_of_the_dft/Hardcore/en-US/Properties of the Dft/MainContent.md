@@ -1,11 +1,11 @@
 ## Introduction
 The Discrete Fourier Transform (DFT) is one of the most powerful tools in computational science, enabling us to analyze the frequency content of signals and data. However, to truly harness its power, one must move beyond viewing it as a black-box algorithm and delve into the elegant mathematical properties that govern its behavior. These principles are the engine behind the DFT's vast utility, providing the shortcuts and insights necessary for efficient computation and deep analysis. This article bridges the gap between the DFT's definition and its application, exploring the "why" behind this foundational transform.
 
-In the chapters that follow, we will build a comprehensive understanding of the DFT. We begin in "Principles and Mechanisms" by systematically exploring the core properties, such as linearity, symmetry, convolution, and duality, which form the theoretical bedrock of the DFT. Next, "Applications and Interdisciplinary Connections" demonstrates how these abstract principles are leveraged to solve concrete problems in [digital signal processing](@entry_id:263660), physics, linear algebra, and data science. Finally, "Hands-On Practices" will provide you with the opportunity to apply this knowledge, reinforcing these critical concepts through targeted exercises.
+In the chapters that follow, we will build a comprehensive understanding of the DFT. We begin in "Principles and Mechanisms" by systematically exploring the core properties, such as linearity, symmetry, convolution, and duality, which form the theoretical bedrock of the DFT. Next, "Applications and Interdisciplinary Connections" demonstrates how these abstract principles are leveraged to solve concrete problems in digital signal processing, physics, linear algebra, and data science. Finally, "Hands-On Practices" will provide you with the opportunity to apply this knowledge, reinforcing these critical concepts through targeted exercises.
 
 ## Principles and Mechanisms
 
-The Discrete Fourier Transform (DFT) is more than a mere computational recipe; it is a rich mathematical structure governed by a set of elegant and powerful properties. These properties are not just theoretical curiosities; they are the very engine that drives the DFT's utility in signal processing, [scientific computing](@entry_id:143987), and data analysis. Understanding these principles allows us to predict the transform's behavior, simplify complex calculations, and develop efficient algorithms. This chapter systematically explores the core properties of the DFT, using illustrative examples to build a deep and intuitive grasp of its inner workings.
+The Discrete Fourier Transform (DFT) is more than a mere computational recipe; it is a rich mathematical structure governed by a set of elegant and powerful properties. These properties are not just theoretical curiosities; they are the very engine that drives the DFT's utility in signal processing, scientific computing, and data analysis. Understanding these principles allows us to predict the transform's behavior, simplify complex calculations, and develop efficient algorithms. This chapter systematically explores the core properties of the DFT, using illustrative examples to build a deep and intuitive grasp of its inner workings.
 
 ### Linearity
 
@@ -17,7 +17,7 @@ $$
 
 This property allows us to decompose complex signals into simpler, canonical components, analyze them individually in the frequency domain, and then recombine the results.
 
-To see linearity in action, consider a signal defined as $y[n] = A - B\delta[n-n_0]$ for $0 \le n \le N-1$, where $A$ and $B$ are constants, and $\delta[n-n_0]$ is a Kronecker delta function representing an impulse at sample $n_0$ . We can view $y[n]$ as a linear combination of two elementary signals: a constant signal $x_1[n] = A$ and a [shifted impulse](@entry_id:265965) $x_2[n] = -B\delta[n-n_0]$.
+To see linearity in action, consider a signal defined as $y[n] = A - B\delta[n-n_0]$ for $0 \le n \le N-1$, where $A$ and $B$ are constants, and $\delta[n-n_0]$ is a Kronecker delta function representing an impulse at sample $n_0$ [@problem_id:1744301]. We can view $y[n]$ as a linear combination of two elementary signals: a constant signal $x_1[n] = A$ and a shifted impulse $x_2[n] = -B\delta[n-n_0]$.
 
 The DFT of the constant signal $x_1[n] = A$ is:
 $$
@@ -31,7 +31,7 @@ Next, the DFT of the signal component $-B\delta[n-n_0]$ is:
 $$
 \mathcal{F}\{-B\delta[n-n_0]\} = -B \sum_{n=0}^{N-1} \delta[n-n_0] \exp\left(-j\frac{2\pi nk}{N}\right)
 $$
-By the [sifting property](@entry_id:265662) of the [delta function](@entry_id:273429), the sum collapses to a single term evaluated at $n=n_0$:
+By the sifting property of the delta function, the sum collapses to a single term evaluated at $n=n_0$:
 $$
 \mathcal{F}\{-B\delta[n-n_0]\} = -B \exp\left(-j\frac{2\pi n_0 k}{N}\right)
 $$
@@ -43,7 +43,7 @@ This example demonstrates how linearity, combined with knowledge of a few basic 
 
 ### Periodicity
 
-The DFT operates on finite-length sequences, but it implicitly treats these sequences as one period of an infinitely repeating signal. This conceptual model, known as [periodic extension](@entry_id:176490), implies that the DFT spectrum itself is also periodic. For an $N$-point DFT $X[k]$, the spectrum repeats every $N$ samples:
+The DFT operates on finite-length sequences, but it implicitly treats these sequences as one period of an infinitely repeating signal. This conceptual model, known as periodic extension, implies that the DFT spectrum itself is also periodic. For an $N$-point DFT $X[k]$, the spectrum repeats every $N$ samples:
 
 $$
 X[k] = X[k + mN] \quad \text{for any integer } m
@@ -51,7 +51,7 @@ $$
 
 This means that while the DFT is typically computed and analyzed over the fundamental interval $k \in \{0, 1, \dots, N-1\}$, the frequency information is well-defined for any integer index $k$. Any index outside the fundamental interval can be mapped back into it using the modulo operator. For example, the coefficient $X[-1]$ is equivalent to $X[-1+N]$, and $X[N]$ is equivalent to $X[0]$.
 
-Consider a practical application of this property. Suppose a 14-point DFT, $X[k]$, has been computed for a signal, and we need to evaluate the expression $S = X[16] - X[-2] + X[30]$ . Instead of needing new information, we can use [periodicity](@entry_id:152486) with $N=14$ to find the equivalent coefficients within the fundamental range $k \in \{0, \dots, 13\}$:
+Consider a practical application of this property. Suppose a 14-point DFT, $X[k]$, has been computed for a signal, and we need to evaluate the expression $S = X[16] - X[-2] + X[30]$ [@problem_id:1744310]. Instead of needing new information, we can use periodicity with $N=14$ to find the equivalent coefficients within the fundamental range $k \in \{0, \dots, 13\}$:
 - $X[16] = X[16 - 14] = X[2]$
 - $X[-2] = X[-2 + 14] = X[12]$
 - $X[30] = X[30 - 2 \cdot 14] = X[30 - 28] = X[2]$
@@ -68,7 +68,7 @@ The DFT exhibits a range of symmetry properties that are immensely useful, parti
 
 #### Conjugate Symmetry for Real Signals
 
-When the input sequence $x[n]$ is purely real-valued, its DFT exhibits a special form of symmetry known as **[conjugate symmetry](@entry_id:144131)**. The relationship is given by:
+When the input sequence $x[n]$ is purely real-valued, its DFT exhibits a special form of symmetry known as **conjugate symmetry**. The relationship is given by:
 
 $$
 X[k] = X^*[(N-k) \pmod N] \quad \text{or equivalently} \quad X[k] = X^*[-k]
@@ -80,11 +80,11 @@ where $*$ denotes the complex conjugate. This means the DFT coefficient at frequ
 - The magnitude is circularly even: $|X[k]| = |X[N-k]|$.
 - The phase is circularly odd: $\angle X[k] = -\angle X[N-k]$.
 
-Due to this redundancy, for an $N$-point DFT of a real signal, we only need to compute and store approximately half of the coefficients. For instance, if $N=8$, the coefficient $X[7]$ is determined by $X[1]$, $X[6]$ by $X[2]$, and $X[5]$ by $X[3]$. Specifically, $X[7] = X^*[1]$ and $X[5] = X^*[3]$ . If we know that $X[1] = 2.5 - j3.1$ and $X[3] = 1.4 + j0.8$, we can immediately deduce that $X[7] = 2.5 + j3.1$ and $X[5] = 1.4 - j0.8$.
+Due to this redundancy, for an $N$-point DFT of a real signal, we only need to compute and store approximately half of the coefficients. For instance, if $N=8$, the coefficient $X[7]$ is determined by $X[1]$, $X[6]$ by $X[2]$, and $X[5]$ by $X[3]$. Specifically, $X[7] = X^*[1]$ and $X[5] = X^*[3]$ [@problem_id:1744313]. If we know that $X[1] = 2.5 - j3.1$ and $X[3] = 1.4 + j0.8$, we can immediately deduce that $X[7] = 2.5 + j3.1$ and $X[5] = 1.4 - j0.8$.
 
 Furthermore, the coefficients at $k=0$ (the DC component) and, if $N$ is even, at $k=N/2$ (the Nyquist frequency) must be their own complex conjugates, meaning they must be purely real.
 
-The power of this property is evident when reconstructing incomplete spectral data . Imagine an 8-point real signal where we only know $X[0]=10$, $X[1]=a+j2$, $X[2]=1+jb$, $X[3]=4-j3$, and $X[4]=2$. Using [conjugate symmetry](@entry_id:144131), we can instantly fill in the rest of the spectrum:
+The power of this property is evident when reconstructing incomplete spectral data [@problem_id:1744268]. Imagine an 8-point real signal where we only know $X[0]=10$, $X[1]=a+j2$, $X[2]=1+jb$, $X[3]=4-j3$, and $X[4]=2$. Using conjugate symmetry, we can instantly fill in the rest of the spectrum:
 - $X[7] = X^*[1] = a-j2$
 - $X[6] = X^*[2] = 1-jb$
 - $X[5] = X^*[3] = 4+j3$
@@ -96,7 +96,7 @@ Deeper symmetries arise when the real-valued input signal $x[n]$ is itself circu
 - If $x[n]$ is real and even, its DFT $X[k]$ is purely real.
 - If $x[n]$ is real and odd, its DFT $X[k]$ is purely imaginary.
 
-A classic example involves the DFT of cosine and sine functions . A cosine function, such as $\cos(2\pi m n/N)$, is a real and even sequence. Its DFT will therefore be purely real, consisting of two impulses. Conversely, a sine function, $\sin(2\pi m n/N)$, is a real and odd sequence, and its DFT will be purely imaginary.
+A classic example involves the DFT of cosine and sine functions [@problem_id:1744273]. A cosine function, such as $\cos(2\pi m n/N)$, is a real and even sequence. Its DFT will therefore be purely real, consisting of two impulses. Conversely, a sine function, $\sin(2\pi m n/N)$, is a real and odd sequence, and its DFT will be purely imaginary.
 
 Consider a signal composed of even and odd parts, such as $x[n] = A + B \cos\left(\frac{2\pi n}{6}\right) + C \sin\left(\frac{4\pi n}{6}\right)$. The terms $A$ and $B \cos(\dots)$ are even, while the term $C \sin(\dots)$ is odd. By linearity, the DFT of $x[n]$ will be the sum of the DFTs of its parts. The DFT from the even components will be purely real, and the DFT from the odd component will be purely imaginary. Consequently, the real part of the total DFT, $\text{Re}\{X[k]\}$, is determined solely by the even components of the signal ($A$ and $B$), while the imaginary part, $\text{Im}\{X[k]\}$, is determined solely by the odd component ($C$).
 
@@ -115,11 +115,11 @@ $$
 \text{If } \quad x[n] \quad \overset{\mathcal{F}}{\longleftrightarrow} \quad X[k], \quad \text{then} \quad X[n] \quad \overset{\mathcal{F}}{\longleftrightarrow} \quad N x[(-k) \pmod N]
 $$
 
-A canonical example illustrates this perfectly . We have already seen that a [unit impulse](@entry_id:272155) at time zero, $x_1[n] = \delta[n]$, has a DFT that is constant: $X_1[k] = 1$. Now, let's use duality to find the DFT of a constant signal, $x_2[n] = 1$. We can identify this new signal with the spectrum of the first, i.e., $x_2[n] = X_1[n]$. Applying the [duality theorem](@entry_id:137804), the DFT of $x_2[n]$ must be:
+A canonical example illustrates this perfectly [@problem_id:1744274]. We have already seen that a unit impulse at time zero, $x_1[n] = \delta[n]$, has a DFT that is constant: $X_1[k] = 1$. Now, let's use duality to find the DFT of a constant signal, $x_2[n] = 1$. We can identify this new signal with the spectrum of the first, i.e., $x_2[n] = X_1[n]$. Applying the duality theorem, the DFT of $x_2[n]$ must be:
 $$
 X_2[k] = N x_1[(-k) \pmod N] = N \delta[(-k) \pmod N]
 $$
-Since the Kronecker delta is an [even function](@entry_id:164802), $\delta[-k] = \delta[k]$, this simplifies to:
+Since the Kronecker delta is an even function, $\delta[-k] = \delta[k]$, this simplifies to:
 $$
 X_2[k] = N\delta[k]
 $$
@@ -137,9 +137,9 @@ $$
 Y[k] = \exp\left(-j\frac{2\pi k n_0}{N}\right) X[k]
 $$
 
-This means a [circular shift](@entry_id:177315) in the time domain does not change the frequency components themselves, but rather introduces a **linear phase shift** in the frequency domain. The amount of phase shift at each frequency $k$ is proportional to both $k$ and the time shift $n_0$.
+This means a circular shift in the time domain does not change the frequency components themselves, but rather introduces a **linear phase shift** in the frequency domain. The amount of phase shift at each frequency $k$ is proportional to both $k$ and the time shift $n_0$.
 
-A crucial consequence of this property concerns the [magnitude spectrum](@entry_id:265125) . The magnitude of the complex exponential term is always one:
+A crucial consequence of this property concerns the magnitude spectrum [@problem_id:1744278]. The magnitude of the complex exponential term is always one:
 $$
 \left|\exp\left(-j\frac{2\pi k n_0}{N}\right)\right| = 1
 $$
@@ -151,33 +151,33 @@ The **DFT magnitude is invariant to circular shifts in the time domain**. This p
 
 #### Circular Frequency Shift (Modulation)
 
-The dual of the [time-shift property](@entry_id:271247) is the frequency-shift property, also known as the **[modulation property](@entry_id:189105)**. It states that a [circular shift](@entry_id:177315) in the frequency domain corresponds to multiplication by a complex sinusoid ([modulation](@entry_id:260640)) in the time domain.
+The dual of the time-shift property is the frequency-shift property, also known as the **modulation property**. It states that a circular shift in the frequency domain corresponds to multiplication by a complex sinusoid (modulation) in the time domain.
 
-If we have a spectrum $Y[k]$ that is a circularly shifted version of another spectrum $X[k]$, such that $Y[k] = X[(k-k_0) \pmod N]$, then the corresponding time-domain sequence $y[n]$ is given by :
+If we have a spectrum $Y[k]$ that is a circularly shifted version of another spectrum $X[k]$, such that $Y[k] = X[(k-k_0) \pmod N]$, then the corresponding time-domain sequence $y[n]$ is given by [@problem_id:1744291]:
 
 $$
 y[n] = \exp\left(j\frac{2\pi k_0 n}{N}\right) x[n]
 $$
 
-This property is the basis for [modulation](@entry_id:260640) schemes used in communications and for designing digital filters by shifting the frequency response of a prototype low-pass filter.
+This property is the basis for modulation schemes used in communications and for designing digital filters by shifting the frequency response of a prototype low-pass filter.
 
 ### Convolution and Multiplication
 
-Among the most significant properties of the DFT for practical applications, especially in [digital filtering](@entry_id:139933), are those that relate convolution and multiplication.
+Among the most significant properties of the DFT for practical applications, especially in digital filtering, are those that relate convolution and multiplication.
 
 #### The Circular Convolution Theorem
 
-The [convolution theorem](@entry_id:143495) states that [circular convolution](@entry_id:147898) in the time domain is equivalent to element-wise multiplication in the frequency domain. If $y[n]$ is the $N$-point [circular convolution](@entry_id:147898) of $x[n]$ and $h[n]$, defined as $y[n] = \sum_{m=0}^{N-1} x[m] h[(n-m) \pmod N]$, then their DFTs are related by a simple multiplication:
+The convolution theorem states that circular convolution in the time domain is equivalent to element-wise multiplication in the frequency domain. If $y[n]$ is the $N$-point circular convolution of $x[n]$ and $h[n]$, defined as $y[n] = \sum_{m=0}^{N-1} x[m] h[(n-m) \pmod N]$, then their DFTs are related by a simple multiplication:
 
 $$
 Y[k] = X[k]H[k]
 $$
 
-This theorem transforms the computationally intensive process of convolution (which has a complexity of $O(N^2)$) into a much faster process involving two DFTs, an element-wise multiplication ($O(N)$), and an inverse DFT. This is the foundation of [fast convolution](@entry_id:191823) algorithms using the Fast Fourier Transform (FFT).
+This theorem transforms the computationally intensive process of convolution (which has a complexity of $O(N^2)$) into a much faster process involving two DFTs, an element-wise multiplication ($O(N)$), and an inverse DFT. This is the foundation of fast convolution algorithms using the Fast Fourier Transform (FFT).
 
-As an example, consider finding the DFT of a sequence $y[n]$ formed by convolving a signal $x[n]$ with an alternating sequence $h[n]=(-1)^n$, assuming $N$ is even . First, we find the DFT of $h[n]$. The sequence $(-1)^n$ can be written as $\exp(j\pi n) = \exp(j \frac{2\pi n(N/2)}{N})$. This is a complex sinusoid corresponding to the frequency index $k=N/2$. Its DFT is therefore a single impulse: $H[k] = N\delta[k-N/2]$.
+As an example, consider finding the DFT of a sequence $y[n]$ formed by convolving a signal $x[n]$ with an alternating sequence $h[n]=(-1)^n$, assuming $N$ is even [@problem_id:1744290]. First, we find the DFT of $h[n]$. The sequence $(-1)^n$ can be written as $\exp(j\pi n) = \exp(j \frac{2\pi n(N/2)}{N})$. This is a complex sinusoid corresponding to the frequency index $k=N/2$. Its DFT is therefore a single impulse: $H[k] = N\delta[k-N/2]$.
 
-Applying the [convolution theorem](@entry_id:143495), the DFT of the output is:
+Applying the convolution theorem, the DFT of the output is:
 $$
 Y[k] = X[k] H[k] = X[k] \cdot N\delta[k-N/2]
 $$
@@ -185,14 +185,14 @@ This product is non-zero only at the single frequency bin $k=N/2$. The resulting
 
 #### The Multiplication Property
 
-The dual of the convolution theorem states that element-wise multiplication in the time domain is equivalent to scaled [circular convolution](@entry_id:147898) in the frequency domain. If $y[n] = x_1[n] x_2[n]$, their DFTs are related by:
+The dual of the convolution theorem states that element-wise multiplication in the time domain is equivalent to scaled circular convolution in the frequency domain. If $y[n] = x_1[n] x_2[n]$, their DFTs are related by:
 
 $$
 Y[k] = \frac{1}{N} \left(X_1[k] \circledast_N X_2[k]\right)
 $$
-where $\circledast_N$ denotes $N$-point [circular convolution](@entry_id:147898). This property is key to understanding the spectral effects of windowing a signal or analyzing [non-linear systems](@entry_id:276789).
+where $\circledast_N$ denotes $N$-point circular convolution. This property is key to understanding the spectral effects of windowing a signal or analyzing non-linear systems.
 
-For instance, if we multiply two cosine waves in the time domain, say $x_1[n] = \cos(\frac{2\pi n}{8})$ and $x_2[n] = \cos(\frac{4\pi n}{8})$ , their respective DFTs, $X_1[k]$ and $X_2[k]$, are pairs of impulses. The DFT of their product, $Y[k]$, will be the [circular convolution](@entry_id:147898) of these impulse pairs, scaled by $1/N$. This convolution operation results in new impulses at frequencies corresponding to the sums and differences of the original frequencies, a phenomenon that directly reflects the trigonometric product-to-sum identities.
+For instance, if we multiply two cosine waves in the time domain, say $x_1[n] = \cos(\frac{2\pi n}{8})$ and $x_2[n] = \cos(\frac{4\pi n}{8})$ [@problem_id:1744292], their respective DFTs, $X_1[k]$ and $X_2[k]$, are pairs of impulses. The DFT of their product, $Y[k]$, will be the circular convolution of these impulse pairs, scaled by $1/N$. This convolution operation results in new impulses at frequencies corresponding to the sums and differences of the original frequencies, a phenomenon that directly reflects the trigonometric product-to-sum identities.
 
 ### Parseval's Relation: Conservation of Energy
 
@@ -204,10 +204,10 @@ $$
 
 This theorem expresses a form of energy conservation: the total energy of a signal is the same whether measured in the time domain or the frequency domain (up to the scaling factor $1/N$, which depends on the specific DFT definition used).
 
-This relation is highly useful for calculations that are simpler in one domain than the other. For example, if a signal's DFT is known to be a single impulse, $X[k] = C \delta[k-k_0]$, calculating its energy in the frequency domain is trivial . The sum of squared magnitudes is:
+This relation is highly useful for calculations that are simpler in one domain than the other. For example, if a signal's DFT is known to be a single impulse, $X[k] = C \delta[k-k_0]$, calculating its energy in the frequency domain is trivial [@problem_id:1744269]. The sum of squared magnitudes is:
 $$
 \sum_{k=0}^{N-1} |X[k]|^2 = \sum_{k=0}^{N-1} |C \delta[k-k_0]|^2 = |C|^2
 $$
-Using Parseval's relation, the time-domain energy is immediately found to be $E = \frac{|C|^2}{N}$, without ever needing to compute the time-domain signal $x[n]$ itself. This principle was also a key tool in the problem of reconstructing a spectrum from partial data, where the known total energy provided a powerful constraint for solving for unknown coefficients .
+Using Parseval's relation, the time-domain energy is immediately found to be $E = \frac{|C|^2}{N}$, without ever needing to compute the time-domain signal $x[n]$ itself. This principle was also a key tool in the problem of reconstructing a spectrum from partial data, where the known total energy provided a powerful constraint for solving for unknown coefficients [@problem_id:1744268].
 
-In summary, the properties of linearity, [periodicity](@entry_id:152486), symmetry, duality, shifting, and convolution form a coherent mathematical framework. This framework not only facilitates the analysis of [signals and systems](@entry_id:274453) but also underpins the [computational efficiency](@entry_id:270255) that has made the DFT an indispensable tool in modern science and engineering.
+In summary, the properties of linearity, periodicity, symmetry, duality, shifting, and convolution form a coherent mathematical framework. This framework not only facilitates the analysis of signals and systems but also underpins the computational efficiency that has made the DFT an indispensable tool in modern science and engineering.

@@ -1,25 +1,25 @@
 ## 引言
-我们生活在一个由[概率法则](@article_id:331962)支配的世界中，从抛硬币到基因遗传，大数定律告诉我们，在大量重复试验中，结果会趋于其理论平均值。然而，那些偏离平均的“非典型”或“罕见”事件，尽管发生的可能性极低，却往往是系统崩溃、科学突破或重大发现的关键。我们如何超越“极不可能”的模糊直觉，去精确地量化这些罕见事件的发生概率？这正是[大偏差理论](@article_id:337060)所要解决的核心问题，而[萨诺夫定理](@article_id:299956)（Sanov's Theorem）是该领域中最强大、最优雅的工具之一。
+我们生活在一个由[概率法则](@keyword=rules_of_probability|lang=zh-CN|style=Feynman)支配的世界中，从抛硬币到基因遗传，大数定律告诉我们，在大量重复试验中，结果会趋于其理论平均值。然而，那些偏离平均的“非典型”或“罕见”事件，尽管发生的可能性极低，却往往是系统崩溃、科学突破或重大发现的关键。我们如何超越“极不可能”的模糊直觉，去精确地量化这些罕见事件的发生概率？这正是[大偏差理论](@keyword=large_deviations_theory|lang=zh-CN|style=Feynman)所要解决的核心问题，而[萨诺夫定理](@keyword=sanov_s_theorem|lang=zh-CN|style=Feynman)（Sanov's Theorem）是该领域中最强大、最优雅的工具之一。
 
-本文将带领读者深入探索[萨诺夫定理](@article_id:299956)的精髓。在第一章中，我们将建立核心概念，介绍衡量[概率分布](@article_id:306824)差异的关键工具——[KL散度](@article_id:327627)，并揭示[萨诺夫定理](@article_id:299956)如何利用它来为罕见事件的概率赋予一个优美的指数定律。在第二章中，我们将跨越学科的边界，见证这一定理如何统一地解释从统计物理、信息论到人工智能公平性等不同领域中的现象。最后，在第三章中，您将通过一系列精心设计的实践问题，将理论知识转化为解决实际问题的能力。
+本文将带领读者深入探索[萨诺夫定理](@keyword=sanov_s_theorem|lang=zh-CN|style=Feynman)的精髓。在第一章中，我们将建立核心概念，介绍衡量[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)差异的关键工具——[KL散度](@keyword=relative_entropy|lang=zh-CN|style=Feynman)，并揭示[萨诺夫定理](@keyword=sanov_s_theorem|lang=zh-CN|style=Feynman)如何利用它来为罕见事件的概率赋予一个优美的指数定律。在第二章中，我们将跨越学科的边界，见证这一定理如何统一地解释从统计物理、信息论到人工智能公平性等不同领域中的现象。最后，在第三章中，您将通过一系列精心设计的实践问题，将理论知识转化为解决实际问题的能力。
 
-现在，让我们从构建理论基础开始，深入理解[萨诺夫定理](@article_id:299956)的原理与机制。
+现在，让我们从构建理论基础开始，深入理解[萨诺夫定理](@keyword=sanov_s_theorem|lang=zh-CN|style=Feynman)的原理与机制。
 
 ## 原理与机制
 
-我们生活在一个由概率主宰的世界里。从抛硬币到股票市场的波动，从放射性衰变到基因在后代中的传递，随机性无处不在。对于这些过程，我们有一个非常强大的直觉，那就是“[大数定律](@article_id:301358)”。如果你抛一枚公平的硬币一千次，你不会指望恰好得到500次正面，但你会非常惊讶地发现竟然有900次是正面。大数定律告诉我们，随着试验次数的增加，事件发生的频率会趋向于其理论概率。换句话说，在大量的重复中，“典型”的结果将会出现。
+我们生活在一个由概率主宰的世界里。从抛硬币到股票市场的波动，从放射性衰变到基因在后代中的传递，随机性无处不在。对于这些过程，我们有一个非常强大的直觉，那就是“[大数定律](@keyword=law_of_large_numbers|lang=zh-CN|style=Feynman)”。如果你抛一枚公平的硬币一千次，你不会指望恰好得到500次正面，但你会非常惊讶地发现竟然有900次是正面。大数定律告诉我们，随着试验次数的增加，事件发生的频率会趋向于其理论概率。换句话说，在大量的重复中，“典型”的结果将会出现。
 
 但这恰恰引发了一个更深刻、更有趣的问题：那些“非典型”的事件呢？它们发生的可能性有多大？虽然我们直觉上知道抛1000次硬币得到900次正面的概率极低，但它究竟“有多低”？是百万分之一，还是比宇宙中所有原子数量还要小的数字？我们能否有一个精确的、普适的框架来量化这些罕见事件的“罕见程度”？
 
-这正是[大偏差理论](@article_id:337060)（Large Deviation Theory）试图回答的问题，而[萨诺夫定理](@article_id:299956)（Sanov's Theorem）则是这顶皇冠上最璀璨的明珠之一。它以一种惊人的方式，将概率论与信息论联系起来，为我们提供了一个衡量“意外”的尺度。
+这正是[大偏差理论](@keyword=large_deviations_theory|lang=zh-CN|style=Feynman)（Large Deviation Theory）试图回答的问题，而[萨诺夫定理](@keyword=sanov_s_theorem|lang=zh-CN|style=Feynman)（Sanov's Theorem）则是这顶皇冠上最璀璨的明珠之一。它以一种惊人的方式，将概率论与信息论联系起来，为我们提供了一个衡量“意外”的尺度。
 
 ### 一种衡量“意外”的标尺：KL散度
 
-在量化一个“意外”的观测结果有多意外之前，我们首先需要一个数学工具来衡量我们的观测结果（一个经验[概率分布](@article_id:306824)）与“真实”的[概率分布](@article_id:306824)之间的“差异”或“距离”。
+在量化一个“意外”的观测结果有多意外之前，我们首先需要一个数学工具来衡量我们的观测结果（一个经验[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)）与“真实”的[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)之间的“差异”或“距离”。
 
-想象一下，你以为一个六面骰子是公平的，即每个点数出现的概率都是 $Q(i) = 1/6$。但经过长期观察，你发现实际出现的[频率分布](@article_id:355957)其实是 $P$。例如，你可能发现点数“6”出现的频率特别高。你所观察到的分布 $P$ 与你预期的分布 $Q$ 之间有多大的“偏差”？
+想象一下，你以为一个六面骰子是公平的，即每个点数出现的概率都是 $Q(i) = 1/6$。但经过长期观察，你发现实际出现的[频率分布](@keyword=frequency_distribution|lang=zh-CN|style=Feynman)其实是 $P$。例如，你可能发现点数“6”出现的频率特别高。你所观察到的分布 $P$ 与你预期的分布 $Q$ 之间有多大的“偏差”？
 
-信息论为我们提供了一个绝妙的工具，叫做**[Kullback-Leibler散度](@article_id:300447)**（KL散度），也称为[相对熵](@article_id:327627)。它从分布 $Q$ 到分布 $P$ 的[KL散度](@article_id:327627)定义为：
+信息论为我们提供了一个绝妙的工具，叫做**[Kullback-Leibler散度](@keyword=kullback_leibler_divergence|lang=zh-CN|style=Feynman)**（KL散度），也称为[相对熵](@keyword=relative_entropy|lang=zh-CN|style=Feynman)。它从分布 $Q$ 到分布 $P$ 的[KL散度](@keyword=relative_entropy|lang=zh-CN|style=Feynman)定义为：
 
 $$
 D_{KL}(P || Q) = \sum_{x} P(x) \ln\left(\frac{P(x)}{Q(x)}\right)
@@ -32,13 +32,13 @@ $$
 2.  $D_{KL}(P || Q) = 0$ 当且仅当 $P$ 和 $Q$ 是完全相同的分布。
 3.  它不是一个真正的“距离”，因为它不满足对称性，即 $D_{KL}(P || Q) \neq D_{KL}(Q || P)$。从 $Q$ 到 $P$ 的惊讶程度和从 $P$ 到 $Q$ 是不同的。
 
-这个量不仅仅是一个数学上的构造，它告诉我们，当我们用一个“错误”的假设（比如一个[均匀分布](@article_id:325445)的模型）去解释一个“真实”的现象（比如一个有偏的分布）时，我们平均需要付出多少“信息代价”。
+这个量不仅仅是一个数学上的构造，它告诉我们，当我们用一个“错误”的假设（比如一个[均匀分布](@keyword=uniform_distribution|lang=zh-CN|style=Feynman)的模型）去解释一个“真实”的现象（比如一个有偏的分布）时，我们平均需要付出多少“信息代价”。
 
-### [萨诺夫定理](@article_id:299956)：罕见事件的指数律
+### [萨诺夫定理](@keyword=sanov_s_theorem|lang=zh-CN|style=Feynman)：罕见事件的指数律
 
-有了KL散度这个强大的工具，我们现在可以回到最初的问题了。[萨诺夫定理](@article_id:299956)给出了一个简洁而优美的答案。
+有了KL散度这个强大的工具，我们现在可以回到最初的问题了。[萨诺夫定理](@keyword=sanov_s_theorem|lang=zh-CN|style=Feynman)给出了一个简洁而优美的答案。
 
-它指出，如果我们从一个真实的[概率分布](@article_id:306824) $Q$ 中进行 $n$ 次[独立同分布](@article_id:348300)的重复试验，那么观察到[经验分布](@article_id:337769)恰好是某个特定分布 $P$ 的概率，大约为：
+它指出，如果我们从一个真实的[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman) $Q$ 中进行 $n$ 次[独立同分布](@keyword=independent_and_identically_distributed|lang=zh-CN|style=Feynman)的重复试验，那么观察到[经验分布](@keyword=empirical_distributions|lang=zh-CN|style=Feynman)恰好是某个特定分布 $P$ 的概率，大约为：
 
 $$
 \text{Prob}(\text{观测结果} \approx P) \approx e^{-n D_{KL}(P || Q)}
@@ -48,17 +48,17 @@ $$
 
 第一，罕见事件的概率随着试验次数 $n$ 的增加而**指数级衰减**。这解释了为什么在大量试验中，我们几乎不可能看到巨大的偏差。每增加一次试验，看到这个“错误”分布的概率就会乘以一个小于1的因子 $e^{-D_{KL}(P || Q)}$。
 
-第二，指数衰减的速率（rate function）恰好就是[KL散度](@article_id:327627) $D_{KL}(P || Q)$。这意味着，我们观测到的[经验分布](@article_id:337769) $P$ 与真实分布 $Q$ 之间的“信息距离”越大，这个事件发生的概率就越以一个更快的指数速率趋向于零。
+第二，指数衰减的速率（rate function）恰好就是[KL散度](@keyword=relative_entropy|lang=zh-CN|style=Feynman) $D_{KL}(P || Q)$。这意味着，我们观测到的[经验分布](@keyword=empirical_distributions|lang=zh-CN|style=Feynman) $P$ 与真实分布 $Q$ 之间的“信息距离”越大，这个事件发生的概率就越以一个更快的指数速率趋向于零。
 
-第三，这个定律具有惊人的普适性。它不关心你是在掷骰子、分析[随机数生成器](@article_id:302131)，还是在研究聚合物的合成过程。只要你面对的是独立同分布的[随机变量](@article_id:324024)，这个原理就成立。
+第三，这个定律具有惊人的普适性。它不关心你是在掷骰子、分析[随机数生成器](@keyword=random_number_generator_(rng)|lang=zh-CN|style=Feynman)，还是在研究聚合物的合成过程。只要你面对的是独立同分布的[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman)，这个原理就成立。
 
-让我们通过一个具体的例子来感受它的威力。假设一个硬件真[随机数生成器](@article_id:302131)（TRNG）被设计用来以完全均匀的概率产生集合 $\{1, 2, 3, 4\}$ 中的整数，即真实分布是 $Q = (1/4, 1/4, 1/4, 1/4)$。现在，我们想知道在大量的测试中，碰巧观测到_经验_分布为 $P_{\text{fail}} = (1/2, 1/8, 1/8, 1/4)$ 的概率有多大。根据[萨诺夫定理](@article_id:299956)，这个概率的指数衰减率就是 $D_{KL}(P_{\text{fail}} || Q)$。通过计算 ()，这个衰减率 $\Lambda = D_{KL}(P_{\text{fail}} || Q) = \frac{1}{4} \ln(2)$。这意味着，观测到这种特定“故障模式”的概率大约是 $e^{-n (\frac{1}{4}\ln 2)}$。$n$ 越大，这个概率就越是小得不可思议。同样，如果一个生化过程本应以 $Q = (1/2, 1/3, 1/6)$ 的概率选择三种不同的[单体](@article_id:297013)来合成聚合物，但我们却发现一条长链中三种[单体](@article_id:297013)的频率惊人地均匀，即 $P=(1/3,1/3,1/3)$，我们也可以精确地计算出这种“意外”的指数衰减率 ()。
+让我们通过一个具体的例子来感受它的威力。假设一个硬件真[随机数生成器](@keyword=random_number_generator_(rng)|lang=zh-CN|style=Feynman)（TRNG）被设计用来以完全均匀的概率产生集合 $\{1, 2, 3, 4\}$ 中的整数，即真实分布是 $Q = (1/4, 1/4, 1/4, 1/4)$。现在，我们想知道在大量的测试中，碰巧观测到_经验_分布为 $P_{\text{fail}} = (1/2, 1/8, 1/8, 1/4)$ 的概率有多大。根据[萨诺夫定理](@keyword=sanov_s_theorem|lang=zh-CN|style=Feynman)，这个概率的指数衰减率就是 $D_{KL}(P_{\text{fail}} || Q)$。通过计算 ([@problem_id:1631997])，这个衰减率 $\Lambda = D_{KL}(P_{\text{fail}} || Q) = \frac{1}{4} \ln(2)$。这意味着，观测到这种特定“故障模式”的概率大约是 $e^{-n (\frac{1}{4}\ln 2)}$。$n$ 越大，这个概率就越是小得不可思议。同样，如果一个生化过程本应以 $Q = (1/2, 1/3, 1/6)$ 的概率选择三种不同的[单体](@keyword=monomer|lang=zh-CN|style=Feynman)来合成聚合物，但我们却发现一条长链中三种[单体](@keyword=monomer|lang=zh-CN|style=Feynman)的频率惊人地均匀，即 $P=(1/3,1/3,1/3)$，我们也可以精确地计算出这种“意外”的指数衰减率 ([@problem_id:1655885])。
 
-### 最可能发生的“不可能”：[信息投影](@article_id:329545)
+### 最可能发生的“不可能”：[信息投影](@keyword=information_projection|lang=zh-CN|style=Feynman)
 
-在现实世界中，我们通常不只关心某一个特定的罕见事件，而是关心一整类满足某种条件的罕见事件。例如，在一个质量控制系统中，我们可能不关心错误的确切[频率分布](@article_id:355957)，只关心“次品率是否超过了5%” ()。或者在一个粒子物理实验中，科学家可能根据某个能量态的出现频率是否超过某个阈值来判断是哪种粒子源 ()。
+在现实世界中，我们通常不只关心某一个特定的罕见事件，而是关心一整类满足某种条件的罕见事件。例如，在一个质量控制系统中，我们可能不关心错误的确切[频率分布](@keyword=frequency_distribution|lang=zh-CN|style=Feynman)，只关心“次品率是否超过了5%” ([@problem_id:1603176])。或者在一个粒子物理实验中，科学家可能根据某个能量态的出现频率是否超过某个阈值来判断是哪种粒子源 ([@problem_id:1655871])。
 
-[萨诺夫定理](@article_id:299956)可以优雅地推广到这种情况。假设我们感兴趣的是[经验分布](@article_id:337769) $P$ 落入某个分布集合 $\mathcal{E}$ 中的概率。这个集合 $\mathcal{E}$ 可能代表了所有“异常”的分布，例如“平均分大于等于1”的所有分布 ()，或者“偶数出现频率是奇数三倍以上”的所有分布 ()。
+[萨诺夫定理](@keyword=sanov_s_theorem|lang=zh-CN|style=Feynman)可以优雅地推广到这种情况。假设我们感兴趣的是[经验分布](@keyword=empirical_distributions|lang=zh-CN|style=Feynman) $P$ 落入某个分布集合 $\mathcal{E}$ 中的概率。这个集合 $\mathcal{E}$ 可能代表了所有“异常”的分布，例如“平均分大于等于1”的所有分布 ([@problem_id:1654967])，或者“偶数出现频率是奇数三倍以上”的所有分布 ([@problem_id:1655913])。
 
 定理告诉我们，这个事件的概率由集合 $\mathcal{E}$ 中“最容易发生”的那一个事件主导：
 
@@ -72,18 +72,18 @@ $$
 I^* = \inf_{P' \in \mathcal{E}} D_{KL}(P' || Q)
 $$
 
-这个原理背后隐藏着一个美妙的几何图像。想象一下，所有可能的[概率分布](@article_id:306824)构成了一个高维空间。真实分布 $Q$ 是这个空间中的一个点。我们感兴趣的事件集合 $\mathcal{E}$ 是这个空间中的一个区域。[萨诺夫定理](@article_id:299956)说，系统从 $Q$ 点“[随机游走](@article_id:303058)”最终进入区域 $\mathcal{E}$ 的概率，几乎完全由它进入 $\mathcal{E}$ 的“最短路径”决定。而这个“最短路径”的终点，正是在KL散度意义下，$\mathcal{E}$ 中距离 $Q$ 最近的那个点 $P^*$。这个点 $P^*$ 被称为 $Q$ 在集合 $\mathcal{E}$ 上的**[信息投影](@article_id:329545)（I-projection）**。
+这个原理背后隐藏着一个美妙的几何图像。想象一下，所有可能的[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)构成了一个高维空间。真实分布 $Q$ 是这个空间中的一个点。我们感兴趣的事件集合 $\mathcal{E}$ 是这个空间中的一个区域。[萨诺夫定理](@keyword=sanov_s_theorem|lang=zh-CN|style=Feynman)说，系统从 $Q$ 点“[随机游走](@keyword=random_walk|lang=zh-CN|style=Feynman)”最终进入区域 $\mathcal{E}$ 的概率，几乎完全由它进入 $\mathcal{E}$ 的“最短路径”决定。而这个“最短路径”的终点，正是在KL散度意义下，$\mathcal{E}$ 中距离 $Q$ 最近的那个点 $P^*$。这个点 $P^*$ 被称为 $Q$ 在集合 $\mathcal{E}$ 上的**[信息投影](@keyword=information_projection|lang=zh-CN|style=Feynman)（I-projection）**。
 
-一旦找到了这个“最不意外的意外”分布 $P^*$，整个事件的概率衰减率也就确定了。其他所有进入 $\mathcal{E}$ 的方式都因为“路途更远”（[KL散度](@article_id:327627)更大）而变得指数级地更不可能。这就像一个球从山谷（$Q$）的最低点出发，要想到达一片高地（$\mathcal{E}$），它最有可能沿着最省力的路径到达高地的边缘。这个寻找[信息投影](@article_id:329545)的过程，是解决复杂大偏差问题的关键，例如确定[经验分布](@article_id:337769)呈现单调非增模式这种奇特现象的概率 ()，或是[经验分布](@article_id:337769)落入一个由多个基础分布构成的复杂[多胞体](@article_id:639885)内的概率 ()。
+一旦找到了这个“最不意外的意外”分布 $P^*$，整个事件的概率衰减率也就确定了。其他所有进入 $\mathcal{E}$ 的方式都因为“路途更远”（[KL散度](@keyword=relative_entropy|lang=zh-CN|style=Feynman)更大）而变得指数级地更不可能。这就像一个球从山谷（$Q$）的最低点出发，要想到达一片高地（$\mathcal{E}$），它最有可能沿着最省力的路径到达高地的边缘。这个寻找[信息投影](@keyword=information_projection|lang=zh-CN|style=Feynman)的过程，是解决复杂大偏差问题的关键，例如确定[经验分布](@keyword=empirical_distributions|lang=zh-CN|style=Feynman)呈现单调非增模式这种奇特现象的概率 ([@problem_id:1655914])，或是[经验分布](@keyword=empirical_distributions|lang=zh-CN|style=Feynman)落入一个由多个基础分布构成的复杂[多胞体](@keyword=polytopes|lang=zh-CN|style=Feynman)内的概率 ([@problem_id:1655919])。
 
 ### 统一的力量：从偏差到独立性
 
-[萨诺夫定理](@article_id:299956)的美妙之处在于其强大的统一性。例如，统计学中关于样本均值大偏差的[克拉默定理](@article_id:337103)（Cramér's theorem），可以被看作是[萨诺夫定理](@article_id:299956)在一个更简单情况下的投影 ()。样本均值只是[经验分布](@article_id:337769)的一个函数，其行为由整个[经验分布](@article_id:337769)的行为所决定。
+[萨诺夫定理](@keyword=sanov_s_theorem|lang=zh-CN|style=Feynman)的美妙之处在于其强大的统一性。例如，统计学中关于样本均值大偏差的[克拉默定理](@keyword=cramér_s_theorem|lang=zh-CN|style=Feynman)（Cramér's theorem），可以被看作是[萨诺夫定理](@keyword=sanov_s_theorem|lang=zh-CN|style=Feynman)在一个更简单情况下的投影 ([@problem_id:1655917])。样本均值只是[经验分布](@keyword=empirical_distributions|lang=zh-CN|style=Feynman)的一个函数，其行为由整个[经验分布](@keyword=empirical_distributions|lang=zh-CN|style=Feynman)的行为所决定。
 
-而最令人惊叹的联系或许体现在对“独立性”的理解上。想象一个系统，比如两个耦合的[量子比特](@article_id:298377)，它们的测量结果 $(X, Y)$ 是相关的，其真实的联合分布是 $Q(x,y)$。现在我们问一个问题：在大量的测量中，我们有多大的可能性会碰巧看到一组数据，其经验联合分布 $P(x,y)$ 看起来像是完全独立的，即 $P(x,y) = P(x)P(y)$？ ()
+而最令人惊叹的联系或许体现在对“独立性”的理解上。想象一个系统，比如两个耦合的[量子比特](@keyword=qubit|lang=zh-CN|style=Feynman)，它们的测量结果 $(X, Y)$ 是相关的，其真实的联合分布是 $Q(x,y)$。现在我们问一个问题：在大量的测量中，我们有多大的可能性会碰巧看到一组数据，其经验联合分布 $P(x,y)$ 看起来像是完全独立的，即 $P(x,y) = P(x)P(y)$？ ([@problem_id:1655920])
 
-这正是[萨诺夫定理](@article_id:299956)可以回答的问题。所有独立分布构成了[概率空间](@article_id:324204)中的一个特定集合 $\mathcal{E}$。我们只需要找到这个集合中与真实分布 $Q$“最接近”的那个独立分布 $P^*$，就可以计算出这种“误判”为独立事件的概率衰减率。
+这正是[萨诺夫定理](@keyword=sanov_s_theorem|lang=zh-CN|style=Feynman)可以回答的问题。所有独立分布构成了[概率空间](@keyword=probability_space|lang=zh-CN|style=Feynman)中的一个特定集合 $\mathcal{E}$。我们只需要找到这个集合中与真实分布 $Q$“最接近”的那个独立分布 $P^*$，就可以计算出这种“误判”为独立事件的概率衰减率。
 
-令人拍案叫绝的是，这个最小的KL散度 $D_{KL}(P^* || Q)$，在信息论中有一个我们非常熟悉的名字——**互信息（Mutual Information）**！它正是衡量两个[随机变量](@article_id:324024)之间依赖程度的根本度量。因此，[大偏差理论](@article_id:337060)为互信息提供了一个深刻的、可操作的物理意义：[互信息](@article_id:299166)就是当你想把一个相关的世界误认为是一个独立的[世界时](@article_id:338897)，大自然让你付出的指数级概率代价。
+令人拍案叫绝的是，这个最小的KL散度 $D_{KL}(P^* || Q)$，在信息论中有一个我们非常熟悉的名字——**互信息（Mutual Information）**！它正是衡量两个[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman)之间依赖程度的根本度量。因此，[大偏差理论](@keyword=large_deviations_theory|lang=zh-CN|style=Feynman)为互信息提供了一个深刻的、可操作的物理意义：[互信息](@keyword=mutual_information|lang=zh-CN|style=Feynman)就是当你想把一个相关的世界误认为是一个独立的[世界时](@keyword=universal_time|lang=zh-CN|style=Feynman)，大自然让你付出的指数级概率代价。
 
-就这样，从一个关于抛硬币的简单问题出发，我们通过[萨诺夫定理](@article_id:299956)，最终触及了概率、统计和信息论之间深刻而美丽的统一性。它揭示了宇宙在随机性表象之下隐藏的深刻秩序：一切意外皆有代价，而这代价，可以用信息来衡量。
+就这样，从一个关于抛硬币的简单问题出发，我们通过[萨诺夫定理](@keyword=sanov_s_theorem|lang=zh-CN|style=Feynman)，最终触及了概率、统计和信息论之间深刻而美丽的统一性。它揭示了宇宙在随机性表象之下隐藏的深刻秩序：一切意外皆有代价，而这代价，可以用信息来衡量。

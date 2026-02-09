@@ -1,17 +1,17 @@
 ## 引言
-在[图论](@article_id:301242)的广阔世界中，寻找两个地点之间的最短路径是一个基本而重要的问题。但当我们需要计算网络中**所有**节点对之间的[最短路径](@article_id:317973)时，即“所有顶点对最短路径”（APSP）问题，挑战便升级了。对于一个边权全为正的简单网络，我们可以重复运行[Dijkstra算法](@article_id:337638)来解决；然而，一旦网络中出现代表“折扣”或“收益”的负权边，Dijkstra的贪心策略便会失效，而重复运行更稳健的[Bellman-Ford算法](@article_id:328827)又往往效率过低。这一知识鸿沟正是[Johnson算法](@article_id:638670)所要解决的核心难题。它为[稀疏图](@article_id:325150)上的APSP问题提供了一个既能处理负权、又兼具高效率的优雅解决方案。
+在[图论](@keyword=graph_theory|lang=zh-CN|style=Feynman)的广阔世界中，寻找两个地点之间的最短路径是一个基本而重要的问题。但当我们需要计算网络中**所有**节点对之间的[最短路径](@keyword=shortest_path|lang=zh-CN|style=Feynman)时，即“所有顶点对最短路径”（APSP）问题，挑战便升级了。对于一个边权全为正的简单网络，我们可以重复运行[Dijkstra算法](@keyword=dijkstra_s_algorithm|lang=zh-CN|style=Feynman)来解决；然而，一旦网络中出现代表“折扣”或“收益”的负权边，Dijkstra的贪心策略便会失效，而重复运行更稳健的[Bellman-Ford算法](@keyword=bellman_ford_algorithm|lang=zh-CN|style=Feynman)又往往效率过低。这一知识鸿沟正是[Johnson算法](@keyword=johnson_s_algorithm|lang=zh-CN|style=Feynman)所要解决的核心难题。它为[稀疏图](@keyword=sparse_graphs|lang=zh-CN|style=Feynman)上的APSP问题提供了一个既能处理负权、又兼具高效率的优雅解决方案。
 
-本文将带领你深入剖析[Johnson算法](@article_id:638670)的精妙之处。在“原理与机制”一章中，我们将揭示其如何通过“势能重赋权”这一炼金术般的技巧驯服负权边。接着，在“应用与[交叉](@article_id:315017)学科联系”中，我们将探索该[算法](@article_id:331821)如何超越其初始目的，在金融、生物化学乃至人工智能等多个领域激发出深刻的洞见。最后，通过“动手实践”环节，你将有机会亲手实现并验证这一强大[算法](@article_id:331821)。
+本文将带领你深入剖析[Johnson算法](@keyword=johnson_s_algorithm|lang=zh-CN|style=Feynman)的精妙之处。在“原理与机制”一章中，我们将揭示其如何通过“势能重赋权”这一炼金术般的技巧驯服负权边。接着，在“应用与[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)学科联系”中，我们将探索该[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)如何超越其初始目的，在金融、生物化学乃至人工智能等多个领域激发出深刻的洞见。最后，通过“动手实践”环节，你将有机会亲手实现并验证这一强大[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)。
 
 ## 原理与机制
 
-在上一章中，我们已经对寻找图中所有顶点对之间的[最短路径](@article_id:317973)（All-Pairs Shortest Paths, APSP）问题有了初步的认识。对于一个所有“路费”（边权）都是正数的交通网络，我们似乎有一个直观且高效的策略：从每个城市（顶点）出发，各自独立地运行一次我们熟悉且高效的[Dijkstra算法](@article_id:337638)。然而，当网络中出现“补贴”或“折扣”（负权边）时，这个看似明智的策略便会瞬间瓦解。本章，我们将像物理学家剖析自然法则一样，深入探索[Johnson算法](@article_id:638670)的内在原理与精妙机制，揭示它是如何驯服负权这头猛兽，并最终优雅地解决[稀疏图](@article_id:325150)上的APSP问题的。
+在上一章中，我们已经对寻找图中所有顶点对之间的[最短路径](@keyword=shortest_path|lang=zh-CN|style=Feynman)（All-Pairs Shortest Paths, APSP）问题有了初步的认识。对于一个所有“路费”（边权）都是正数的交通网络，我们似乎有一个直观且高效的策略：从每个城市（顶点）出发，各自独立地运行一次我们熟悉且高效的[Dijkstra算法](@keyword=dijkstra_s_algorithm|lang=zh-CN|style=Feynman)。然而，当网络中出现“补贴”或“折扣”（负权边）时，这个看似明智的策略便会瞬间瓦解。本章，我们将像物理学家剖析自然法则一样，深入探索[Johnson算法](@keyword=johnson_s_algorithm|lang=zh-CN|style=Feynman)的内在原理与精妙机制，揭示它是如何驯服负权这头猛兽，并最终优雅地解决[稀疏图](@keyword=sparse_graphs|lang=zh-CN|style=Feynman)上的APSP问题的。
 
 ### 负权的“诅咒”：为何简单方法会失效
 
-想象一下[Dijkstra算法](@article_id:337638)是一位极其精明但目光短浅的旅行者。他每到一个十字路口，总是选择通往下一个目的地的、看起来“最近”的那条路。当所有道路的长度都是正数时，这种“贪心”策略是完美的。因为一旦他到达一个地点，就绝无可能通过绕远路再回来，从而找到一条更短的路径。他访问过的每一个地方，其最短距离都被永久地确定了下来。
+想象一下[Dijkstra算法](@keyword=dijkstra_s_algorithm|lang=zh-CN|style=Feynman)是一位极其精明但目光短浅的旅行者。他每到一个十字路口，总是选择通往下一个目的地的、看起来“最近”的那条路。当所有道路的长度都是正数时，这种“贪心”策略是完美的。因为一旦他到达一个地点，就绝无可能通过绕远路再回来，从而找到一条更短的路径。他访问过的每一个地方，其最短距离都被永久地确定了下来。
 
-然而，负权边的出现彻底打破了这一基本假设。负权边就像是一段能给你返现的魔法路段。你走过它，不仅不花钱，反而还能赚钱。让我们来看一个极简的例子，它深刻地揭示了问题的本质 。
+然而，负权边的出现彻底打破了这一基本假设。负权边就像是一段能给你返现的魔法路段。你走过它，不仅不花钱，反而还能赚钱。让我们来看一个极简的例子，它深刻地揭示了问题的本质 [@problem_id:3242420]。
 
 假设有三个城市：起点 $s$、中转站 $a$ 和终点 $t$。存在两条路线：
 1.  一条从 $s$ 直达 $t$ 的高速公路，路程为 $w(s,t)$。
@@ -21,15 +21,15 @@
 
 此时，从 $s$ 出发的Dijkstra旅行者会怎么做？他首先看到，直达 $t$ 的路程 $w(s,t)$ 比去中转站 $a$ 的路程 $w(s,a)$ 更短。于是，他毫不犹豫地选择了高速公路，并得意地宣布：“我已经找到了到 $t$ 的最短路径，就是 $w(s,t)$！”。然而，他错了。他被眼前的“局部最优”蒙蔽了双眼，错过了那条虽然起步更远、但包含了负权补贴从而整体更优的路线。一旦他将 $t$ 标记为“已访问”，他就再也不会回头审视是否还有其他通往 $t$ 的更短路径了。
 
-这个简单的例子说明，负权的存在使得“贪心”策略失效。我们需要一种更全局、更深刻的视野。直接从每个顶点运行[Dijkstra算法](@article_id:337638)的朴素想法，在负权面前是行不通的。
+这个简单的例子说明，负权的存在使得“贪心”策略失效。我们需要一种更全局、更深刻的视野。直接从每个顶点运行[Dijkstra算法](@keyword=dijkstra_s_algorithm|lang=zh-CN|style=Feynman)的朴素想法，在负权面前是行不通的。
 
 ### 炼金术的秘密：不改路径，只变权重
 
-面对负权的挑战，我们可能会想到另一个更稳健的[算法](@article_id:331821)：Bellman-Ford。它不像Dijkstra那样“急功近利”，而是通过反复迭代，稳扎稳打地处理负权。但它的代价是速度慢得多。如果对每个顶点都运行一次Bellman-Ford，对于一个有 $n$ 个顶点和 $m$ 条边的图，总时间复杂度将是 $O(n^2 m)$，在顶点众多的网络中这几乎是不可接受的。
+面对负权的挑战，我们可能会想到另一个更稳健的[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)：Bellman-Ford。它不像Dijkstra那样“急功近利”，而是通过反复迭代，稳扎稳打地处理负权。但它的代价是速度慢得多。如果对每个顶点都运行一次Bellman-Ford，对于一个有 $n$ 个顶点和 $m$ 条边的图，总时间复杂度将是 $O(n^2 m)$，在顶点众多的网络中这几乎是不可接受的。
 
-我们是否陷入了两难境地？有没有一种方法，既能享受[Dijkstra算法](@article_id:337638)的高效，又能规避负权的风险？这听起来像是一种“炼金术”：我们能否施展一种魔法，将所有负权边“点石成金”变为非负的，同时又不改变图中真正的[最短路径](@article_id:317973)是谁？
+我们是否陷入了两难境地？有没有一种方法，既能享受[Dijkstra算法](@keyword=dijkstra_s_algorithm|lang=zh-CN|style=Feynman)的高效，又能规避负权的风险？这听起来像是一种“炼金术”：我们能否施展一种魔法，将所有负权边“点石成金”变为非负的，同时又不改变图中真正的[最短路径](@keyword=shortest_path|lang=zh-CN|style=Feynman)是谁？
 
-答案是肯定的，而这正是[Johnson算法](@article_id:638670)的核心思想——**势能重赋权（potential reweighting）**。
+答案是肯定的，而这正是[Johnson算法](@keyword=johnson_s_algorithm|lang=zh-CN|style=Feynman)的核心思想——**势能重赋权（potential reweighting）**。
 
 这个魔法的咒语是一个简单的公式。我们为图中的每个顶点 $v$ 赋予一个数值，称为它的**势 (potential)**，记作 $h(v)$。然后，对于每一条从顶点 $u$ 到顶点 $v$ 的边，它的新权重 $w'(u,v)$ 被定义为：
 $$w'(u,v) = w(u,v) + h(u) - h(v)$$
@@ -38,12 +38,12 @@ $$w'(u,v) = w(u,v) + h(u) - h(v)$$
 
 这个简单的变换带来了一个惊人的效果。考虑任意一条从起点 $s$ 到终点 $t$ 的路径 $P = \langle v_0, v_1, \dots, v_k \rangle$（其中 $v_0=s, v_k=t$）。这条路径在重赋权后的总长度 $w'(P)$ 是：
 $$w'(P) = \sum_{i=0}^{k-1} w'(v_i, v_{i+1}) = \sum_{i=0}^{k-1} (w(v_i, v_{i+1}) + h(v_i) - h(v_{i+1}))$$
-展开这个和式，我们会发现中间项形成了一个**[伸缩和](@article_id:326058) (telescoping sum)**：
+展开这个和式，我们会发现中间项形成了一个**[伸缩和](@keyword=telescoping_sum|lang=zh-CN|style=Feynman) (telescoping sum)**：
 $$w'(P) = \left( \sum_{i=0}^{k-1} w(v_i, v_{i+1}) \right) + (h(v_0) - h(v_1)) + (h(v_1) - h(v_2)) + \dots + (h(v_{k-1}) - h(v_k))$$
 所有中间的 $h(\cdot)$ 项都相互抵消了，只剩下路径的起点和终点：
 $$w'(P) = w(P) + h(s) - h(t)$$
 
-这是一个美妙的结论！对于连接同一对起点 $s$ 和终点 $t$ 的任何路径，其权重的变化量 $h(s) - h(t)$ 都是一个常数。这意味着，如果一条路径在原始权重下比另一条路径短，那么在重赋权后它依然会更短。最短的路径依然是那条最短的路径！我们的“炼金术”成功了：它改变了每条边的权重，却没有改变任何两点间的最短路径的“身份”。这个变换是完全可逆的，如果我们知道了新权重和势函数，就能精确地恢复原始权重，正如一个有趣的逆向工程问题所展示的那样 。
+这是一个美妙的结论！对于连接同一对起点 $s$ 和终点 $t$ 的任何路径，其权重的变化量 $h(s) - h(t)$ 都是一个常数。这意味着，如果一条路径在原始权重下比另一条路径短，那么在重赋权后它依然会更短。最短的路径依然是那条最短的路径！我们的“炼金术”成功了：它改变了每条边的权重，却没有改变任何两点间的最短路径的“身份”。这个变换是完全可逆的，如果我们知道了新权重和势函数，就能精确地恢复原始权重，正如一个有趣的逆向工程问题所展示的那样 [@problem_id:3242442]。
 
 ### 寻找合适的“势”：贝尔曼-福德的前奏
 
@@ -52,44 +52,44 @@ $$w(u,v) + h(u) - h(v) \ge 0$$
 移项后，我们得到一个更清晰的形式：
 $$h(v) \le h(u) + w(u,v)$$
 
-这个不等式是整个[算法](@article_id:331821)能够成立的基石 。它应该让你感到眼熟，这不就是[最短路径](@article_id:317973)的**三角不等式**吗？它说的是：“从某地到 $v$ 的最短距离，不会比先走一条到 $u$ 的最短路径，再从 $u$ 走一步到 $v$ 更长。”
+这个不等式是整个[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)能够成立的基石 [@problem_id:3242431]。它应该让你感到眼熟，这不就是[最短路径](@keyword=shortest_path|lang=zh-CN|style=Feynman)的**三角不等式**吗？它说的是：“从某地到 $v$ 的最短距离，不会比先走一条到 $u$ 的最短路径，再从 $u$ 走一步到 $v$ 更长。”
 
-这启发我们：或许，势函数 $h(v)$ 本身就是从某个特定源点出发的**[最短路径](@article_id:317973)距离**！
+这启发我们：或许，势函数 $h(v)$ 本身就是从某个特定源点出发的**[最短路径](@keyword=shortest_path|lang=zh-CN|style=Feynman)距离**！
 
-但这又带来了新问题：我们应该选择哪个顶点作为计算势能的源点呢？如果我们随意挑选一个图中已有的顶点 $r$ 作为源点，可能会遇到一个致命的障碍：$r$ 可能无法到达图中的所有其他顶点。对于那些 $r$ 无法到达的顶点，它们的“势”将是无穷大，这会导致我们的重赋权公式崩溃 。
+但这又带来了新问题：我们应该选择哪个顶点作为计算势能的源点呢？如果我们随意挑选一个图中已有的顶点 $r$ 作为源点，可能会遇到一个致命的障碍：$r$ 可能无法到达图中的所有其他顶点。对于那些 $r$ 无法到达的顶点，它们的“势”将是无穷大，这会导致我们的重赋权公式崩溃 [@problem_id:3242492]。
 
-为了解决这个问题，[Johnson算法](@article_id:638670)采取了一个极其聪明的步骤：**凭空创造一个“上帝视角”的源点**。我们引入一个全新的虚拟顶点，称之为 $s_0$。然后，从 $s_0$ 向图中所有原有的顶点 $v$ 连接一条权重为 $0$ 的边。这样一来，在这个增强后的新图 $G'$ 中，$s_0$ 显然可以到达任何一个原始顶点。
+为了解决这个问题，[Johnson算法](@keyword=johnson_s_algorithm|lang=zh-CN|style=Feynman)采取了一个极其聪明的步骤：**凭空创造一个“上帝视角”的源点**。我们引入一个全新的虚拟顶点，称之为 $s_0$。然后，从 $s_0$ 向图中所有原有的顶点 $v$ 连接一条权重为 $0$ 的边。这样一来，在这个增强后的新图 $G'$ 中，$s_0$ 显然可以到达任何一个原始顶点。
 
-现在，我们就可以安全地从 $s_0$ 出发，计算它到所有其他顶点的[最短路径](@article_id:317973)距离了。但使用什么[算法](@article_id:331821)呢？由于原始图中可能存在负权边，我们必须使用能够处理负权边的[Bellman-Ford算法](@article_id:328827)。运行一次Bellman-Ford后，我们得到了从 $s_0$ 到每个顶点 $v$ 的最短路径距离 $\text{dist}(s_0, v)$。我们就将这个距离定义为顶点 $v$ 的势：
+现在，我们就可以安全地从 $s_0$ 出发，计算它到所有其他顶点的[最短路径](@keyword=shortest_path|lang=zh-CN|style=Feynman)距离了。但使用什么[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)呢？由于原始图中可能存在负权边，我们必须使用能够处理负权边的[Bellman-Ford算法](@keyword=bellman_ford_algorithm|lang=zh-CN|style=Feynman)。运行一次Bellman-Ford后，我们得到了从 $s_0$ 到每个顶点 $v$ 的最短路径距离 $\text{dist}(s_0, v)$。我们就将这个距离定义为顶点 $v$ 的势：
 $$h(v) = \text{dist}(s_0, v)$$
 
-由于这些 $h(v)$ 值是真实的最短路径距离，它们自然而然地满足了[三角不等式](@article_id:304181) $h(v) \le h(u) + w(u,v)$。于是，我们便找到了一套完美的势函数，它能保证所有重赋权后的边权 $w'(u,v)$ 都非负 。这个看似为解决一个问题而引入的步骤，却优雅地满足了我们所有的要求。
+由于这些 $h(v)$ 值是真实的最短路径距离，它们自然而然地满足了[三角不等式](@keyword=triangle_inequality|lang=zh-CN|style=Feynman) $h(v) \le h(u) + w(u,v)$。于是，我们便找到了一套完美的势函数，它能保证所有重赋权后的边权 $w'(u,v)$ 都非负 [@problem_id:3242450]。这个看似为解决一个问题而引入的步骤，却优雅地满足了我们所有的要求。
 
-### 不可饶恕之罪：[负权环](@article_id:640676)
+### 不可饶恕之罪：[负权环](@keyword=negative_cycles|lang=zh-CN|style=Feynman)
 
-[Bellman-Ford算法](@article_id:328827)在[Johnson算法](@article_id:638670)中扮演的角色，不仅仅是势函数的计算者，它还是一个严格的“守门员”。它负责甄别一种让所有[最短路径算法](@article_id:639159)都束手无策的“绝症”——**[负权环](@article_id:640676) (negative-weight cycle)**。
+[Bellman-Ford算法](@keyword=bellman_ford_algorithm|lang=zh-CN|style=Feynman)在[Johnson算法](@keyword=johnson_s_algorithm|lang=zh-CN|style=Feynman)中扮演的角色，不仅仅是势函数的计算者，它还是一个严格的“守门员”。它负责甄别一种让所有[最短路径算法](@keyword=shortest_path_algorithms|lang=zh-CN|style=Feynman)都束手无策的“绝症”——**[负权环](@keyword=negative_cycles|lang=zh-CN|style=Feynman) (negative-weight cycle)**。
 
-一个[负权环](@article_id:640676)，是指一条总权重为负的闭合回路。想象一下，在交通网络中发现一条这样的环路，你每绕一圈，不仅不花钱，反而还能从系统里“套利”。如果你想让路费尽可能地低，那你就会无休止地在这个环上兜圈子，使得总路费趋向于负无穷。
+一个[负权环](@keyword=negative_cycles|lang=zh-CN|style=Feynman)，是指一条总权重为负的闭合回路。想象一下，在交通网络中发现一条这样的环路，你每绕一圈，不仅不花钱，反而还能从系统里“套利”。如果你想让路费尽可能地低，那你就会无休止地在这个环上兜圈子，使得总路费趋向于负无穷。
 
-在这种情况下，最短路径的定义本身就失去了意义。对于任何能够进入这个环、并从环中去往终点的路径，其“最短”距离都将是 $-\infty$ 。这样的问题是无解的。
+在这种情况下，最短路径的定义本身就失去了意义。对于任何能够进入这个环、并从环中去往终点的路径，其“最短”距离都将是 $-\infty$ [@problem_id:3242409]。这样的问题是无解的。
 
-幸运的是，[Bellman-Ford算法](@article_id:328827)天生就是[负权环](@article_id:640676)的探测器 。在一个有 $N$ 个顶点的图中，任何不包含环路的[最短路径](@article_id:317973)最多包含 $N-1$ 条边。[Bellman-Ford算法](@article_id:328827)正是基于这个原理，通过进行 $N-1$ 轮“松弛”操作来逐步逼近最短路径。如果在第 $N-1$ 轮之后，我们发现还有可以被缩短的路径，这唯一的解释就是图中存在一个可以被利用的[负权环](@article_id:640676) 。此时，[Johnson算法](@article_id:638670)会果断地终止，并报告问题无解。这并非[算法](@article_id:331821)的失败，而是它对问题性质的正确诊断。
+幸运的是，[Bellman-Ford算法](@keyword=bellman_ford_algorithm|lang=zh-CN|style=Feynman)天生就是[负权环](@keyword=negative_cycles|lang=zh-CN|style=Feynman)的探测器 [@problem_id:3242564]。在一个有 $N$ 个顶点的图中，任何不包含环路的[最短路径](@keyword=shortest_path|lang=zh-CN|style=Feynman)最多包含 $N-1$ 条边。[Bellman-Ford算法](@keyword=bellman_ford_algorithm|lang=zh-CN|style=Feynman)正是基于这个原理，通过进行 $N-1$ 轮“松弛”操作来逐步逼近最短路径。如果在第 $N-1$ 轮之后，我们发现还有可以被缩短的路径，这唯一的解释就是图中存在一个可以被利用的[负权环](@keyword=negative_cycles|lang=zh-CN|style=Feynman) [@problem_id:3242459]。此时，[Johnson算法](@keyword=johnson_s_algorithm|lang=zh-CN|style=Feynman)会果断地终止，并报告问题无解。这并非[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的失败，而是它对问题性质的正确诊断。
 
-### 协奏之美：[算法](@article_id:331821)的交响
+### 协奏之美：[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的交响
 
-现在，我们可以欣赏[Johnson算法](@article_id:638670)的全貌了。它如同一部结构精巧的交响乐，由几个逻辑清晰、配合默契的乐章组成：
+现在，我们可以欣赏[Johnson算法](@keyword=johnson_s_algorithm|lang=zh-CN|style=Feynman)的全貌了。它如同一部结构精巧的交响乐，由几个逻辑清晰、配合默契的乐章组成：
 
-1.  **构建与勘探 (Construction & Exploration):** 首先，引入虚拟源点 $s_0$ 并构建增强图 $G'$。接着，以[Bellman-Ford算法](@article_id:328827)为探路先锋，从 $s_0$ 出发进行一次[单源最短路径](@article_id:640792)计算。此举一箭双雕：要么成功计算出所有顶点的[势函数](@article_id:332364) $h(v)$，要么探测到[负权环](@article_id:640676)并宣告问题无解。
+1.  **构建与勘探 (Construction & Exploration):** 首先，引入虚拟源点 $s_0$ 并构建增强图 $G'$。接着，以[Bellman-Ford算法](@keyword=bellman_ford_algorithm|lang=zh-CN|style=Feynman)为探路先锋，从 $s_0$ 出发进行一次[单源最短路径](@keyword=single_source_shortest_paths|lang=zh-CN|style=Feynman)计算。此举一箭双雕：要么成功计算出所有顶点的[势函数](@keyword=potential_function|lang=zh-CN|style=Feynman) $h(v)$，要么探测到[负权环](@keyword=negative_cycles|lang=zh-CN|style=Feynman)并宣告问题无解。
 
-2.  **权重炼金术 (Weight Alchemy):** 利用第一步得到的[势函数](@article_id:332364)，对原图中的每一条边 $(u,v)$ 进行重赋权，得到一个全新的、所有边权都非负的图 $G''$。新权重为 $w'(u,v) = w(u,v) + h(u) - h(v)$。
+2.  **权重炼金术 (Weight Alchemy):** 利用第一步得到的[势函数](@keyword=potential_function|lang=zh-CN|style=Feynman)，对原图中的每一条边 $(u,v)$ 进行重赋权，得到一个全新的、所有边权都非负的图 $G''$。新权重为 $w'(u,v) = w(u,v) + h(u) - h(v)$。
 
-3.  **迪杰斯特拉闪电战 (Dijkstra Blitz):** 在这片已经变得“安全”（无负权）的新大陆上，我们终于可以发挥出更快的[Dijkstra算法](@article_id:337638)的全部威力。我们从每个顶点出发，运行 $n$ 次[Dijkstra算法](@article_id:337638)，高效地计算出在重赋[权图](@article_id:383230) $G''$ 中所有顶点对之间的最短路径距离 $\text{dist}'(u,v)$。
+3.  **迪杰斯特拉闪电战 (Dijkstra Blitz):** 在这片已经变得“安全”（无负权）的新大陆上，我们终于可以发挥出更快的[Dijkstra算法](@keyword=dijkstra_s_algorithm|lang=zh-CN|style=Feynman)的全部威力。我们从每个顶点出发，运行 $n$ 次[Dijkstra算法](@keyword=dijkstra_s_algorithm|lang=zh-CN|style=Feynman)，高效地计算出在重赋[权图](@keyword=weight_diagrams|lang=zh-CN|style=Feynman) $G''$ 中所有顶点对之间的最短路径距离 $\text{dist}'(u,v)$。
 
-4.  **回归现实 (Reversion to Reality):** 最后，我们利用我们的“炼金术”公式的逆变换，将这些在新世界里测得的距离还原回现实世界。任意两点 $u,v$ 之间的真实[最短路径](@article_id:317973)距离 $\text{dist}(u,v)$ 为：
+4.  **回归现实 (Reversion to Reality):** 最后，我们利用我们的“炼金术”公式的逆变换，将这些在新世界里测得的距离还原回现实世界。任意两点 $u,v$ 之间的真实[最短路径](@keyword=shortest_path|lang=zh-CN|style=Feynman)距离 $\text{dist}(u,v)$ 为：
     $$\text{dist}(u,v) = \text{dist}'(u,v) - h(u) + h(v)$$
 
-[Johnson算法](@article_id:638670)的魅力在于其设计的整体性与和谐性。它并没有发明一个全新的、包罗万象的工具，而是像一位智慧的工程师，将Bellman-Ford的稳健和Dijkstra的高效这两种已有的工具，完美地结合在一起。Bellman-Ford扮演了那个小心翼翼、能涉险滩的侦察兵角色，它只出动一次，就为后续部队扫清了所有障碍。而Dijkstra则是那支轻装上阵、行动神速的突击队，在被证实的“安全区”内展开了 $n$ 次闪电般的冲锋。
+[Johnson算法](@keyword=johnson_s_algorithm|lang=zh-CN|style=Feynman)的魅力在于其设计的整体性与和谐性。它并没有发明一个全新的、包罗万象的工具，而是像一位智慧的工程师，将Bellman-Ford的稳健和Dijkstra的高效这两种已有的工具，完美地结合在一起。Bellman-Ford扮演了那个小心翼翼、能涉险滩的侦察兵角色，它只出动一次，就为后续部队扫清了所有障碍。而Dijkstra则是那支轻装上阵、行动神速的突击队，在被证实的“安全区”内展开了 $n$ 次闪电般的冲锋。
 
-更令人赞叹的是，这个复杂的[算法](@article_id:331821)与简单情境实现了无缝的统一。如果一个图从一开始就没有任何负权边，那么[Johnson算法](@article_id:638670)在第一步中计算出的[势函数](@article_id:332364) $h(v)$ 将全部为零。这意味着重赋权后的权重与原始权重完全相同。在这种情况下，[Johnson算法](@article_id:638670)就自然而然地退化为了“从每个顶点运行一次[Dijkstra算法](@article_id:337638)”这一简单策略 。它没有做任何多余的工作，优雅地证明了自己是一个更普适、更强大的理论框架。
+更令人赞叹的是，这个复杂的[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)与简单情境实现了无缝的统一。如果一个图从一开始就没有任何负权边，那么[Johnson算法](@keyword=johnson_s_algorithm|lang=zh-CN|style=Feynman)在第一步中计算出的[势函数](@keyword=potential_function|lang=zh-CN|style=Feynman) $h(v)$ 将全部为零。这意味着重赋权后的权重与原始权重完全相同。在这种情况下，[Johnson算法](@keyword=johnson_s_algorithm|lang=zh-CN|style=Feynman)就自然而然地退化为了“从每个顶点运行一次[Dijkstra算法](@keyword=dijkstra_s_algorithm|lang=zh-CN|style=Feynman)”这一简单策略 [@problem_id:3242411]。它没有做任何多余的工作，优雅地证明了自己是一个更普适、更强大的理论框架。
 
-这种从一个棘手的问题出发，通过一系列巧妙的变换，将其转化为一个我们熟知且能高效解决的经典问题，最后再将答案变换回来的思想，是算法设计乃至整个科学研究中一种深刻而优美的方法论。对于充满好奇心的读者，我们还可以进一步探索，势函数的[解空间](@article_id:379194)性质与图的拓扑结构（如[强连通性](@article_id:336242)）之间存在着深刻的代数关联 ，这更揭示了[图论](@article_id:301242)世界中代数与几何的和谐统一。
+这种从一个棘手的问题出发，通过一系列巧妙的变换，将其转化为一个我们熟知且能高效解决的经典问题，最后再将答案变换回来的思想，是算法设计乃至整个科学研究中一种深刻而优美的方法论。对于充满好奇心的读者，我们还可以进一步探索，势函数的[解空间](@keyword=solution_space|lang=zh-CN|style=Feynman)性质与图的拓扑结构（如[强连通性](@keyword=strong_connectivity|lang=zh-CN|style=Feynman)）之间存在着深刻的代数关联 [@problem_id:32510]，这更揭示了[图论](@keyword=graph_theory|lang=zh-CN|style=Feynman)世界中代数与几何的和谐统一。

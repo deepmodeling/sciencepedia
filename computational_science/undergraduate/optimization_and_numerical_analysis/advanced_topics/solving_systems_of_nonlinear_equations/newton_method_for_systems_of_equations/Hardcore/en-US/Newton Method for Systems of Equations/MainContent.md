@@ -1,11 +1,11 @@
 ## Introduction
-Systems of nonlinear equations appear everywhere in science, engineering, and economics, modeling everything from [planetary orbits](@entry_id:179004) to [market equilibrium](@entry_id:138207). Unlike their linear counterparts, these systems rarely have simple, analytical solutions, creating a significant challenge for practitioners. This gap is filled by numerical [root-finding algorithms](@entry_id:146357), among which Newton's method is one of the most powerful and widely used for its remarkable speed.
+Systems of nonlinear equations appear everywhere in science, engineering, and economics, modeling everything from planetary orbits to market equilibrium. Unlike their linear counterparts, these systems rarely have simple, analytical solutions, creating a significant challenge for practitioners. This gap is filled by numerical root-finding algorithms, among which Newton's method is one of the most powerful and widely used for its remarkable speed.
 
-This article provides a comprehensive exploration of Newton's method for systems of equations, designed to build a strong theoretical and practical foundation. In the first chapter, **Principles and Mechanisms**, we will dissect the method's core logic, generalizing from a single equation to multiple dimensions by introducing the crucial concept of the Jacobian matrix. We will cover implementation details, computational costs, and the conditions that govern its rapid convergence. Following this, the **Applications and Interdisciplinary Connections** chapter will demonstrate the method's versatility by showcasing how diverse problems—from [unconstrained optimization](@entry_id:137083) to [solving partial differential equations](@entry_id:136409)—can be formulated and solved using this framework. Finally, the **Hands-On Practices** section will allow you to solidify your understanding by working through targeted problems that highlight the method's mechanics, strengths, and potential pitfalls.
+This article provides a comprehensive exploration of Newton's method for systems of equations, designed to build a strong theoretical and practical foundation. In the first chapter, **Principles and Mechanisms**, we will dissect the method's core logic, generalizing from a single equation to multiple dimensions by introducing the crucial concept of the Jacobian matrix. We will cover implementation details, computational costs, and the conditions that govern its rapid convergence. Following this, the **Applications and Interdisciplinary Connections** chapter will demonstrate the method's versatility by showcasing how diverse problems—from unconstrained optimization to solving partial differential equations—can be formulated and solved using this framework. Finally, the **Hands-On Practices** section will allow you to solidify your understanding by working through targeted problems that highlight the method's mechanics, strengths, and potential pitfalls.
 
 ## Principles and Mechanisms
 
-The previous chapter introduced the challenge of solving [systems of nonlinear equations](@entry_id:178110), a ubiquitous problem across science and engineering. While analytical solutions are rare, numerical methods provide powerful tools for finding approximate roots. Among these, Newton's method stands out for its elegance and rapid convergence. This chapter delves into the principles and mechanisms of Newton's method for systems, building from its one-dimensional counterpart to its application in high-dimensional spaces.
+The previous chapter introduced the challenge of solving systems of nonlinear equations, a ubiquitous problem across science and engineering. While analytical solutions are rare, numerical methods provide powerful tools for finding approximate roots. Among these, Newton's method stands out for its elegance and rapid convergence. This chapter delves into the principles and mechanisms of Newton's method for systems, building from its one-dimensional counterpart to its application in high-dimensional spaces.
 
 ### From One Dimension to Many: The Core Idea
 
@@ -13,7 +13,7 @@ To understand Newton's method for systems, it is instructive to first recall its
 
 $x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}$
 
-The core idea is to replace the nonlinear function $f(x)$ with a [linear approximation](@entry_id:146101) (its [tangent line](@entry_id:268870)) at the current iterate and solve this simpler problem to find the next, hopefully better, approximation of the root.
+The core idea is to replace the nonlinear function $f(x)$ with a linear approximation (its tangent line) at the current iterate and solve this simpler problem to find the next, hopefully better, approximation of the root.
 
 To generalize this to a system of $n$ nonlinear equations with $n$ variables, we express the problem in vector form: $\mathbf{F}(\mathbf{x}) = \mathbf{0}$, where $\mathbf{x} \in \mathbb{R}^n$ and $\mathbf{F}: \mathbb{R}^n \to \mathbb{R}^n$.
 $$
@@ -24,7 +24,7 @@ The multivariable analogue of the first derivative $f'(x)$ is the **Jacobian mat
 
 $\mathbf{F}(\mathbf{x}) \approx \mathbf{F}(\mathbf{x}_k) + J_F(\mathbf{x}_k)(\mathbf{x} - \mathbf{x}_k)$
 
-Following the logic of the single-variable case, we seek the next iterate $\mathbf{x}_{k+1}$ by setting this [linear approximation](@entry_id:146101) to zero:
+Following the logic of the single-variable case, we seek the next iterate $\mathbf{x}_{k+1}$ by setting this linear approximation to zero:
 
 $\mathbf{0} = \mathbf{F}(\mathbf{x}_k) + J_F(\mathbf{x}_k)(\mathbf{x}_{k+1} - \mathbf{x}_k)$
 
@@ -32,7 +32,7 @@ Rearranging this equation to solve for $\mathbf{x}_{k+1}$ gives the Newton itera
 
 $\mathbf{x}_{k+1} = \mathbf{x}_k - [J_F(\mathbf{x}_k)]^{-1} \mathbf{F}(\mathbf{x}_k)$
 
-Here, $[J_F(\mathbf{x}_k)]^{-1}$ represents the inverse of the Jacobian matrix evaluated at $\mathbf{x}_k$. This formula is a direct generalization of the single-variable case. If we consider $n=1$, the vector $\mathbf{x}$ becomes a scalar $x$, the function $\mathbf{F}$ becomes a scalar function $f(x)$, and the $1 \times 1$ Jacobian matrix $J_F(x_k)$ is simply $[f'(x_k)]$. Its inverse is $[1/f'(x_k)]$. Substituting these into the general formula immediately recovers the familiar single-variable update rule, demonstrating the conceptual consistency of the method across dimensions .
+Here, $[J_F(\mathbf{x}_k)]^{-1}$ represents the inverse of the Jacobian matrix evaluated at $\mathbf{x}_k$. This formula is a direct generalization of the single-variable case. If we consider $n=1$, the vector $\mathbf{x}$ becomes a scalar $x$, the function $\mathbf{F}$ becomes a scalar function $f(x)$, and the $1 \times 1$ Jacobian matrix $J_F(x_k)$ is simply $[f'(x_k)]$. Its inverse is $[1/f'(x_k)]$. Substituting these into the general formula immediately recovers the familiar single-variable update rule, demonstrating the conceptual consistency of the method across dimensions [@problem_id:2190463].
 
 ### The Jacobian Matrix and Geometric Interpretation
 
@@ -46,24 +46,24 @@ As a concrete example, consider finding the intersection of a circle $x^2 + y^2 
 
 $\mathbf{F}(\mathbf{x}) = \begin{pmatrix} f_1(x, y) \\ f_2(x, y) \end{pmatrix} = \begin{pmatrix} x^2 + y^2 - R^2 \\ y - A \exp(\beta x) \end{pmatrix} = \mathbf{0}$
 
-To apply Newton's method, we must first compute the Jacobian matrix. Calculating the [partial derivatives](@entry_id:146280) of each component function yields:
+To apply Newton's method, we must first compute the Jacobian matrix. Calculating the partial derivatives of each component function yields:
 $\frac{\partial f_1}{\partial x} = 2x$, $\frac{\partial f_1}{\partial y} = 2y$
 $\frac{\partial f_2}{\partial x} = -A \beta \exp(\beta x)$, $\frac{\partial f_2}{\partial y} = 1$
 
-Assembling these into the matrix gives the Jacobian for this system :
+Assembling these into the matrix gives the Jacobian for this system [@problem_id:2190471]:
 $J_F(\mathbf{x}) = \begin{pmatrix} 2x & 2y \\ -A \beta \exp(\beta x) & 1 \end{pmatrix}$
 
-The geometric interpretation of the Newton step provides a deeper understanding of the algorithm. In one dimension, the next iterate is the x-intercept of the [tangent line](@entry_id:268870). In two dimensions, we are trying to find a point $(x, y)$ that satisfies both $f_1(x, y) = 0$ and $f_2(x, y) = 0$. We can visualize the functions $z_1 = f_1(x, y)$ and $z_2 = f_2(x, y)$ as two surfaces in 3D space. The solution to the system is a point in the $xy$-plane that lies on the intersection curve of these two surfaces *and* on the $xy$-plane itself (where $z=0$).
+The geometric interpretation of the Newton step provides a deeper understanding of the algorithm. In one dimension, the next iterate is the x-intercept of the tangent line. In two dimensions, we are trying to find a point $(x, y)$ that satisfies both $f_1(x, y) = 0$ and $f_2(x, y) = 0$. We can visualize the functions $z_1 = f_1(x, y)$ and $z_2 = f_2(x, y)$ as two surfaces in 3D space. The solution to the system is a point in the $xy$-plane that lies on the intersection curve of these two surfaces *and* on the $xy$-plane itself (where $z=0$).
 
 At an initial guess $(x_0, y_0)$, the point is likely not a solution, so the function values $f_1(x_0, y_0)$ and $f_2(x_0, y_0)$ are non-zero. The Newton step linearizes both surfaces at this point, creating two tangent planes:
 $z = f_1(x_0, y_0) + \nabla f_1(x_0, y_0) \cdot \begin{pmatrix} x - x_0 \\ y - y_0 \end{pmatrix}$
 $z = f_2(x_0, y_0) + \nabla f_2(x_0, y_0) \cdot \begin{pmatrix} x - x_0 \\ y - y_0 \end{pmatrix}$
 
-These two planes will generally intersect in a line. The next Newton iterate, $(x_1, y_1)$, is precisely the $(x, y)$-coordinate of the point where this line of intersection pierces the $z=0$ plane. In essence, we replace the difficult problem of finding the intersection of two curved surfaces with the $xy$-plane with the much simpler problem of finding the intersection of two planes with the $xy$-plane .
+These two planes will generally intersect in a line. The next Newton iterate, $(x_1, y_1)$, is precisely the $(x, y)$-coordinate of the point where this line of intersection pierces the $z=0$ plane. In essence, we replace the difficult problem of finding the intersection of two curved surfaces with the $xy$-plane with the much simpler problem of finding the intersection of two planes with the $xy$-plane [@problem_id:2190481].
 
 ### Implementation and Computational Cost
 
-While the update formula $\mathbf{x}_{k+1} = \mathbf{x}_k - [J_F(\mathbf{x}_k)]^{-1} \mathbf{F}(\mathbf{x}_k)$ is theoretically elegant, explicitly calculating the [matrix inverse](@entry_id:140380) $[J_F(\mathbf{x}_k)]^{-1}$ is computationally expensive (an $O(n^3)$ operation) and can be numerically unstable. A more practical and robust approach is to solve an equivalent system of linear equations.
+While the update formula $\mathbf{x}_{k+1} = \mathbf{x}_k - [J_F(\mathbf{x}_k)]^{-1} \mathbf{F}(\mathbf{x}_k)$ is theoretically elegant, explicitly calculating the matrix inverse $[J_F(\mathbf{x}_k)]^{-1}$ is computationally expensive (an $O(n^3)$ operation) and can be numerically unstable. A more practical and robust approach is to solve an equivalent system of linear equations.
 
 Let the **Newton update step** be $\mathbf{s}_k = \mathbf{x}_{k+1} - \mathbf{x}_k$. Substituting this into the rearranged Newton equation gives:
 
@@ -76,9 +76,9 @@ Each iteration of Newton's method thus consists of three main stages:
 2.  Solve the linear system $J_F(\mathbf{x}_k) \mathbf{s}_k = -\mathbf{F}(\mathbf{x}_k)$ to find the update step $\mathbf{s}_k$.
 3.  Update the solution: $\mathbf{x}_{k+1} = \mathbf{x}_k + \mathbf{s}_k$.
 
-For a system with $n$ equations, evaluating $\mathbf{F}$ and a dense Jacobian typically costs $O(n^2)$ operations. The dominant computational cost for large $n$ lies in step 2: solving the dense $n \times n$ linear system. Using standard methods like LU factorization, this step has a computational complexity of $O(n^3)$ . This cubic scaling is a critical consideration for the feasibility of Newton's method in large-scale applications.
+For a system with $n$ equations, evaluating $\mathbf{F}$ and a dense Jacobian typically costs $O(n^2)$ operations. The dominant computational cost for large $n$ lies in step 2: solving the dense $n \times n$ linear system. Using standard methods like LU factorization, this step has a computational complexity of $O(n^3)$ [@problem_id:2190441]. This cubic scaling is a critical consideration for the feasibility of Newton's method in large-scale applications.
 
-Let's illustrate with a numerical example . Consider the system:
+Let's illustrate with a numerical example [@problem_id:2190455]. Consider the system:
 $f_1(x, y) = x^2 + y - 3 = 0$
 $f_2(x, y) = \sin(x) + y^2 - 2 = 0$
 
@@ -97,24 +97,24 @@ Newton's method is celebrated for its **local quadratic convergence**. This mean
 
 $\|\mathbf{e}_{k+1}\| \le C \|\mathbf{e}_k\|^2$
 
-This rapid convergence implies that the number of correct [significant digits](@entry_id:636379) in the solution roughly doubles with each iteration, a remarkable rate. However, this property is not unconditional. It relies on the function $\mathbf{F}$ being sufficiently smooth (e.g., having continuous second derivatives) and, crucially, on a condition related to the Jacobian at the root . The fundamental requirement for local quadratic convergence is that the **Jacobian matrix at the root, $J_F(\mathbf{x}^*)$, must be nonsingular** (i.e., invertible).
+This rapid convergence implies that the number of correct significant digits in the solution roughly doubles with each iteration, a remarkable rate. However, this property is not unconditional. It relies on the function $\mathbf{F}$ being sufficiently smooth (e.g., having continuous second derivatives) and, crucially, on a condition related to the Jacobian at the root [@problem_id:2190468]. The fundamental requirement for local quadratic convergence is that the **Jacobian matrix at the root, $J_F(\mathbf{x}^*)$, must be nonsingular** (i.e., invertible).
 
-If $J_F(\mathbf{x}^*)$ is singular, the root is considered a multiple or non-[simple root](@entry_id:635422). At or near such a root, the Newton iteration is ill-defined or numerically unstable. If the algorithm does converge, the rate of convergence typically degrades from quadratic to linear. Furthermore, if an iterate $\mathbf{x}_k$ happens to be a point where $J_F(\mathbf{x}_k)$ is singular (even if it's not a root), the method fails because the linear system for the update step does not have a unique solution .
+If $J_F(\mathbf{x}^*)$ is singular, the root is considered a multiple or non-simple root. At or near such a root, the Newton iteration is ill-defined or numerically unstable. If the algorithm does converge, the rate of convergence typically degrades from quadratic to linear. Furthermore, if an iterate $\mathbf{x}_k$ happens to be a point where $J_F(\mathbf{x}_k)$ is singular (even if it's not a root), the method fails because the linear system for the update step does not have a unique solution [@problem_id:2190493].
 
-Another major challenge is the "local" nature of the convergence guarantee. If the initial guess $\mathbf{x}_0$ is far from any root, the [linear approximation](@entry_id:146101) can be poor, and the Newton step can send the next iterate even further away, leading to divergence. To improve the method's robustness and expand its basin of attraction, a **damped Newton's method** (or [line search method](@entry_id:175906)) is often employed. The update rule is modified with a [damping parameter](@entry_id:167312) or step length, $\alpha_k$:
+Another major challenge is the "local" nature of the convergence guarantee. If the initial guess $\mathbf{x}_0$ is far from any root, the linear approximation can be poor, and the Newton step can send the next iterate even further away, leading to divergence. To improve the method's robustness and expand its basin of attraction, a **damped Newton's method** (or line search method) is often employed. The update rule is modified with a damping parameter or step length, $\alpha_k$:
 
 $\mathbf{x}_{k+1} = \mathbf{x}_k + \alpha_k \mathbf{s}_k$, where $\alpha_k \in (0, 1]$
 
-The full Newton step $\mathbf{s}_k$ is treated as a search direction. The parameter $\alpha_k$ is chosen to ensure that progress is made towards the solution at each step. A common strategy is to ensure a [sufficient decrease](@entry_id:174293) in a [merit function](@entry_id:173036), often the squared norm of the residual, $g(\mathbf{x}) = \frac{1}{2}\|\mathbf{F}(\mathbf{x})\|_2^2$. A simple **[backtracking line search](@entry_id:166118)** starts with $\alpha_k=1$ (the full Newton step) and successively reduces it (e.g., by half) until a condition like $\|\mathbf{F}(\mathbf{x}_k + \alpha_k \mathbf{s}_k)\|_2  \|\mathbf{F}(\mathbf{x}_k)\|_2$ is met. This [globalization strategy](@entry_id:177837) prevents large, unhelpful steps and significantly increases the likelihood of convergence from a poor initial guess .
+The full Newton step $\mathbf{s}_k$ is treated as a search direction. The parameter $\alpha_k$ is chosen to ensure that progress is made towards the solution at each step. A common strategy is to ensure a sufficient decrease in a merit function, often the squared norm of the residual, $g(\mathbf{x}) = \frac{1}{2}\|\mathbf{F}(\mathbf{x})\|_2^2$. A simple **backtracking line search** starts with $\alpha_k=1$ (the full Newton step) and successively reduces it (e.g., by half) until a condition like $\|\mathbf{F}(\mathbf{x}_k + \alpha_k \mathbf{s}_k)\|_2  \|\mathbf{F}(\mathbf{x}_k)\|_2$ is met. This globalization strategy prevents large, unhelpful steps and significantly increases the likelihood of convergence from a poor initial guess [@problem_id:2190498].
 
 ### Advanced Perspectives: Jacobian-Free Methods
 
 The power of Newton's method comes at a cost: forming and solving the Jacobian system. For large-scale problems where $n$ can be in the millions, forming, storing, and factoring the $n \times n$ Jacobian matrix is computationally infeasible. This has led to the development of **Jacobian-free Newton-Krylov (JFNK)** methods.
 
-These methods retain the outer Newton iteration but solve the linear system $J_F(\mathbf{x}_k) \mathbf{s}_k = -\mathbf{F}(\mathbf{x}_k)$ using an [iterative linear solver](@entry_id:750893), such as the Generalized Minimal Residual Method (GMRES). The key insight is that Krylov subspace methods like GMRES do not need to know the matrix $J_F(\mathbf{x}_k)$ explicitly; they only require a function that can compute matrix-vector products of the form $J_F(\mathbf{x}_k) \mathbf{v}$ for a given vector $\mathbf{v}$.
+These methods retain the outer Newton iteration but solve the linear system $J_F(\mathbf{x}_k) \mathbf{s}_k = -\mathbf{F}(\mathbf{x}_k)$ using an iterative linear solver, such as the Generalized Minimal Residual Method (GMRES). The key insight is that Krylov subspace methods like GMRES do not need to know the matrix $J_F(\mathbf{x}_k)$ explicitly; they only require a function that can compute matrix-vector products of the form $J_F(\mathbf{x}_k) \mathbf{v}$ for a given vector $\mathbf{v}$.
 
-This matrix-vector product can be approximated using a [finite difference](@entry_id:142363), without ever forming the Jacobian :
+This matrix-vector product can be approximated using a finite difference, without ever forming the Jacobian [@problem_id:2190443]:
 $J_F(\mathbf{x}_k) \mathbf{v} \approx \frac{\mathbf{F}(\mathbf{x}_k + \epsilon \mathbf{v}) - \mathbf{F}(\mathbf{x}_k)}{\epsilon}$
 for a small perturbation parameter $\epsilon$.
 
-Each step of the inner Krylov iteration requires one extra evaluation of the function $\mathbf{F}$, but it completely avoids the $O(n^2)$ storage and $O(n^3)$ factorization cost of the full Jacobian. JFNK methods represent a powerful fusion of ideas, making Newton-like methods applicable to some of the largest problems in computational science. They also highlight a key distinction from simpler methods like [fixed-point iteration](@entry_id:137769); Newton's method, in all its forms, is fundamentally about leveraging derivative information—either explicitly or implicitly—to achieve its characteristic speed and power .
+Each step of the inner Krylov iteration requires one extra evaluation of the function $\mathbf{F}$, but it completely avoids the $O(n^2)$ storage and $O(n^3)$ factorization cost of the full Jacobian. JFNK methods represent a powerful fusion of ideas, making Newton-like methods applicable to some of the largest problems in computational science. They also highlight a key distinction from simpler methods like fixed-point iteration; Newton's method, in all its forms, is fundamentally about leveraging derivative information—either explicitly or implicitly—to achieve its characteristic speed and power [@problem_id:2190462].

@@ -9,9 +9,9 @@ The Grid Convergence Index (GCI) methodology provides a standardized, quantitati
 
 ### The Origin and Nature of Discretization Error
 
-In [computational engineering](@entry_id:178146), we solve a set of mathematical equations that represent a physical model. These equations are almost always continuous partial differential equations (PDEs). To solve them on a computer, we must first discretize them, transforming the infinite-dimensional PDE problem into a finite-dimensional system of algebraic equations defined on a computational grid. This process of discretization is the fundamental source of **discretization error**.
+In computational engineering, we solve a set of mathematical equations that represent a physical model. These equations are almost always continuous partial differential equations (PDEs). To solve them on a computer, we must first discretize them, transforming the infinite-dimensional PDE problem into a finite-dimensional system of algebraic equations defined on a computational grid. This process of discretization is the fundamental source of **discretization error**.
 
-It is crucial to distinguish discretization error from other sources of uncertainty  . The total error in a simulation can be viewed as the sum of several components:
+It is crucial to distinguish discretization error from other sources of uncertainty [@problem_id:3958804] [@problem_id:3958793]. The total error in a simulation can be viewed as the sum of several components:
 
 1.  **Modeling Error**: The discrepancy between the chosen mathematical model (e.g., the Reynolds-Averaged Navier-Stokes equations) and the true physical reality. This error is independent of the grid and is assessed during the **validation** phase by comparing simulation results to experimental data.
 
@@ -21,13 +21,13 @@ It is crucial to distinguish discretization error from other sources of uncertai
 
 The GCI methodology is strictly a tool for verification; it quantifies the discretization error and provides no information about the modeling error. A simulation can be perfectly verified (i.e., have a very small, well-quantified discretization error) but still be invalid if the underlying physical model is a poor representation of reality.
 
-To understand how discretization error can be estimated, we must first distinguish it from a related concept: **local truncation error** . Consider a one-dimensional steady heat conduction problem governed by the equation $L[u] \equiv \frac{d^2 u}{dx^2} = s(x)$, where $u(x)$ is the temperature. A common [finite difference approximation](@entry_id:1124978) for the second derivative on a uniform grid with spacing $h$ is the discrete operator $L_h[u]_i = \frac{u(x_{i+1}) - 2u(x_i) + u(x_{i-1})}{h^2}$.
+To understand how discretization error can be estimated, we must first distinguish it from a related concept: **local truncation error** [@problem_id:3958806]. Consider a one-dimensional steady heat conduction problem governed by the equation $L[u] \equiv \frac{d^2 u}{dx^2} = s(x)$, where $u(x)$ is the temperature. A common finite difference approximation for the second derivative on a uniform grid with spacing $h$ is the discrete operator $L_h[u]_i = \frac{u(x_{i+1}) - 2u(x_i) + u(x_{i-1})}{h^2}$.
 
-The **[local truncation error](@entry_id:147703)**, denoted $\tau_h$, is defined as the residual that results from applying the discrete operator to the exact, continuous solution $u(x)$:
+The **local truncation error**, denoted $\tau_h$, is defined as the residual that results from applying the discrete operator to the exact, continuous solution $u(x)$:
 $$
 \tau_h(x_i) \equiv L_h[u]_i - L[u]_i = L_h[u]_i - s(x_i)
 $$
-By performing a Taylor [series expansion](@entry_id:142878) of $u(x)$ around the point $x_i$, we can analyze the behavior of $\tau_h$. For the centered second-derivative operator, the odd-powered terms cancel, and we find:
+By performing a Taylor series expansion of $u(x)$ around the point $x_i$, we can analyze the behavior of $\tau_h$. For the centered second-derivative operator, the odd-powered terms cancel, and we find:
 $$
 L_h[u]_i = \frac{d^2u}{dx^2}\bigg|_{x_i} + \frac{h^2}{12} \frac{d^4u}{dx^4}\bigg|_{x_i} + O(h^4) = s(x_i) + \frac{h^2}{12} u^{(4)}(x_i) + O(h^4)
 $$
@@ -35,7 +35,7 @@ Therefore, the truncation error is:
 $$
 \tau_h(x_i) = \frac{h^2}{12} u^{(4)}(x_i) + O(h^4)
 $$
-The truncation error is said to be of order $h^2$, and we write $\tau_h = O(h^2)$. The exponent, 2, is the **formal [order of accuracy](@entry_id:145189)** of the discrete operator, often denoted by $p$.
+The truncation error is said to be of order $h^2$, and we write $\tau_h = O(h^2)$. The exponent, 2, is the **formal order of accuracy** of the discrete operator, often denoted by $p$.
 
 In contrast, the **discretization error**, denoted $\delta_h$, is the error in the final solution: $\delta_h(x_i) \equiv u_h(x_i) - u(x_i)$, where $u_h$ is the numerical solution that satisfies $L_h[u_h]_i = s(x_i)$. By subtracting the equation for the numerical solution from the definition of the truncation error, we arrive at the fundamental **error equation**:
 $$
@@ -44,15 +44,15 @@ $$
 $$
 L_h[\delta_h]_i = -\tau_h(x_i)
 $$
-This equation reveals that the [global discretization error](@entry_id:749921), $\delta_h$, is governed by a discrete problem where the source term is the negative of the local truncation error. For a stable numerical scheme, the magnitude of the solution is proportional to the magnitude of the source term. Therefore, if the truncation error is of order $p$, i.e., $\tau_h = O(h^p)$, then the [global discretization error](@entry_id:749921) will also be of order $p$, $\delta_h = O(h^p)$. This crucial relationship is the theoretical foundation upon which the GCI methodology is built.
+This equation reveals that the global discretization error, $\delta_h$, is governed by a discrete problem where the source term is the negative of the local truncation error. For a stable numerical scheme, the magnitude of the solution is proportional to the magnitude of the source term. Therefore, if the truncation error is of order $p$, i.e., $\tau_h = O(h^p)$, then the global discretization error will also be of order $p$, $\delta_h = O(h^p)$. This crucial relationship is the theoretical foundation upon which the GCI methodology is built.
 
 ### The Asymptotic Error Model and Richardson Extrapolation
 
-The analysis above leads to a powerful model for the behavior of discretization error. For a sufficiently fine grid, where the grid spacing $h$ is small enough that the leading error term dominates all higher-order terms, the solution is said to be in the **[asymptotic range](@entry_id:1121163) of convergence**. In this range, the error in any computed scalar quantity of interest, $\phi$, can be expressed as:
+The analysis above leads to a powerful model for the behavior of discretization error. For a sufficiently fine grid, where the grid spacing $h$ is small enough that the leading error term dominates all higher-order terms, the solution is said to be in the **asymptotic range of convergence**. In this range, the error in any computed scalar quantity of interest, $\phi$, can be expressed as:
 $$
 \phi_h \approx \phi_{\text{ext}} + C h^p
 $$
-where $\phi_h$ is the value computed on a grid with characteristic spacing $h$, $\phi_{\text{ext}}$ is the exact continuum value of the quantity (the solution for $h \to 0$), $p$ is the order of accuracy of the scheme, and $C$ is a constant that depends on the solution's higher derivatives but is independent of $h$  .
+where $\phi_h$ is the value computed on a grid with characteristic spacing $h$, $\phi_{\text{ext}}$ is the exact continuum value of the quantity (the solution for $h \to 0$), $p$ is the order of accuracy of the scheme, and $C$ is a constant that depends on the solution's higher derivatives but is independent of $h$ [@problem_id:3963933] [@problem_id:3326390].
 
 This predictable error behavior can be exploited to obtain a more accurate estimate of $\phi_{\text{ext}}$ and to estimate the error itself. This technique is known as **Richardson Extrapolation**. Consider two simulations performed on a fine grid (spacing $h_1$, solution $\phi_1$) and a coarser grid (spacing $h_2$, solution $\phi_2$), with a refinement ratio $r = h_2/h_1 > 1$. We have a system of two equations with two unknowns ($\phi_{\text{ext}}$ and $C$):
 $$
@@ -69,13 +69,13 @@ This extrapolated value is a higher-order estimate of the continuum solution. Mo
 
 ### The Grid Convergence Index (GCI)
 
-The Grid Convergence Index formalizes the use of Richardson [extrapolation](@entry_id:175955) for reporting discretization uncertainty . It provides a conservative confidence band around the fine-grid solution. The GCI is defined as the magnitude of the estimated relative error, multiplied by a **Factor of Safety**, $F_s$:
+The Grid Convergence Index formalizes the use of Richardson extrapolation for reporting discretization uncertainty [@problem_id:3958843]. It provides a conservative confidence band around the fine-grid solution. The GCI is defined as the magnitude of the estimated relative error, multiplied by a **Factor of Safety**, $F_s$:
 $$
 GCI_{fine} = F_s \frac{|E_{a,1}|}{|\phi_1|} = F_s \frac{|\phi_1 - \phi_2|}{(r^p - 1)|\phi_1|}
 $$
-The result of a GCI study is typically reported as: "The value of $\phi$ on the fine grid is $\phi_1$ with a [numerical uncertainty](@entry_id:752838) of $\pm GCI_{fine} \times \phi_1$." This interval, $[\phi_1 - GCI_{fine} \times |\phi_1|, \phi_1 + GCI_{fine} \times |\phi_1|]$, is expected to contain the exact continuum value $\phi_{\text{ext}}$ with high confidence.
+The result of a GCI study is typically reported as: "The value of $\phi$ on the fine grid is $\phi_1$ with a numerical uncertainty of $\pm GCI_{fine} \times \phi_1$." This interval, $[\phi_1 - GCI_{fine} \times |\phi_1|, \phi_1 + GCI_{fine} \times |\phi_1|]$, is expected to contain the exact continuum value $\phi_{\text{ext}}$ with high confidence.
 
-The **Factor of Safety**, $F_s$, is an essential component that makes the GCI a conservative estimate. It accounts for the fact that the underlying assumptions of the asymptotic error model may not be perfectly met in practice. Real-world simulations may not be fully in the [asymptotic range](@entry_id:1121163), higher-order error terms may not be entirely negligible, and the order of accuracy $p$ is often an estimate itself, subject to uncertainty . By choosing $F_s > 1$, the estimated error band is widened to provide a more reliable bound.
+The **Factor of Safety**, $F_s$, is an essential component that makes the GCI a conservative estimate. It accounts for the fact that the underlying assumptions of the asymptotic error model may not be perfectly met in practice. Real-world simulations may not be fully in the asymptotic range, higher-order error terms may not be entirely negligible, and the order of accuracy $p$ is often an estimate itself, subject to uncertainty [@problem_id:3958843]. By choosing $F_s > 1$, the estimated error band is widened to provide a more reliable bound.
 
 ### A Practical Protocol for GCI Studies
 
@@ -83,7 +83,7 @@ Executing a rigorous GCI study requires careful planning and adherence to a stri
 
 #### Selecting the Quantity of Interest
 
-The GCI methodology should be applied to **scalar functionals** of the solution, such as an integrated force coefficient, a domain-averaged heat transfer rate, or a mass flow rate, rather than to raw field values at a specific point . There are two primary reasons for this. First, a scalar functional is defined globally and yields a single, directly comparable number for each grid, avoiding the need for interpolation between non-coincident grid points, which would introduce its own contaminating error. Second, the integration process inherent in many functionals has a smoothing effect on the local discretization error, leading to more stable and predictable convergence behavior that is more likely to conform to the asymptotic model.
+The GCI methodology should be applied to **scalar functionals** of the solution, such as an integrated force coefficient, a domain-averaged heat transfer rate, or a mass flow rate, rather than to raw field values at a specific point [@problem_id:3958856]. There are two primary reasons for this. First, a scalar functional is defined globally and yields a single, directly comparable number for each grid, avoiding the need for interpolation between non-coincident grid points, which would introduce its own contaminating error. Second, the integration process inherent in many functionals has a smoothing effect on the local discretization error, leading to more stable and predictable convergence behavior that is more likely to conform to the asymptotic model.
 
 #### Systematic Grid Generation
 
@@ -93,31 +93,31 @@ For complex, multi-dimensional, unstructured meshes, a single characteristic gri
 $$
 h = \left(\frac{\mathcal{V}}{N}\right)^{1/d}
 $$
-This definition is dimensionally correct (yielding units of length) and scales properly under a uniform [geometric transformation](@entry_id:167502), ensuring its compatibility with the asymptotic error model .
+This definition is dimensionally correct (yielding units of length) and scales properly under a uniform geometric transformation, ensuring its compatibility with the asymptotic error model [@problem_id:3958811].
 
 The grids must be generated with a constant **refinement ratio**, $r = h_{k+1}/h_k > 1$, where grid $k+1$ is coarser than grid $k$. For the methodology to be effective, it is recommended that $r$ be chosen in the range of $1.3$ to $2.0$.
 
 #### Controlled Numerical Experiment
 
-The [grid refinement study](@entry_id:750067) must be a controlled experiment where the only significant parameter being changed is the grid resolution. This means the physical model (e.g., [turbulence model](@entry_id:203176) and its constants), the [numerical schemes](@entry_id:752822) (e.g., [second-order upwind](@entry_id:754605)), and the boundary conditions must be held identical across all simulations . Furthermore, the iterative error must be reduced to a level far below the expected discretization error to avoid contamination.
+The grid refinement study must be a controlled experiment where the only significant parameter being changed is the grid resolution. This means the physical model (e.g., turbulence model and its constants), the numerical schemes (e.g., second-order upwind), and the boundary conditions must be held identical across all simulations [@problem_id:3958793]. Furthermore, the iterative error must be reduced to a level far below the expected discretization error to avoid contamination.
 
 #### Assessing the Asymptotic Range
 
-The validity of the GCI rests on the assumption that the simulations are in the [asymptotic range](@entry_id:1121163). Several diagnostic checks are essential before proceeding with the calculation.
+The validity of the GCI rests on the assumption that the simulations are in the asymptotic range. Several diagnostic checks are essential before proceeding with the calculation.
 
-First, one must check for **monotonic convergence**. As the grid is refined, the solution should approach the asymptotic value from one side. Using three solutions on grids $1$ (fine), $2$ (medium), and $3$ (coarse), this implies that the solution differences $\epsilon_{21} = \phi_1 - \phi_2$ and $\epsilon_{32} = \phi_2 - \phi_3$ should have the same sign. It also implies that the magnitude of the changes should decrease with refinement, i.e., $|\epsilon_{21}|  |\epsilon_{32}|$ . If the solution exhibits oscillatory behavior (alternating signs), the simple asymptotic model is violated, and the standard GCI method is not applicable.
+First, one must check for **monotonic convergence**. As the grid is refined, the solution should approach the asymptotic value from one side. Using three solutions on grids $1$ (fine), $2$ (medium), and $3$ (coarse), this implies that the solution differences $\epsilon_{21} = \phi_1 - \phi_2$ and $\epsilon_{32} = \phi_2 - \phi_3$ should have the same sign. It also implies that the magnitude of the changes should decrease with refinement, i.e., $|\epsilon_{21}|  |\epsilon_{32}|$ [@problem_id:3958780]. If the solution exhibits oscillatory behavior (alternating signs), the simple asymptotic model is violated, and the standard GCI method is not applicable.
 
-Second, with three or more grids, one can calculate the **observed [order of accuracy](@entry_id:145189)**, $p_{obs}$:
+Second, with three or more grids, one can calculate the **observed order of accuracy**, $p_{obs}$:
 $$
 p_{obs} = \frac{\ln\left(\frac{\phi_3 - \phi_2}{\phi_2 - \phi_1}\right)}{\ln(r)}
 $$
-A powerful diagnostic, especially with four or more grids, is to check for the **stabilization of $p_{obs}$** . For instance, with four grids, one can compute $p_{123}$ from the three coarsest grids and $p_{234}$ from the three finest grids. If $p_{123} \approx p_{234}$, and this value is close to the formal order of the numerical scheme, it provides strong evidence that the solutions are well within the [asymptotic range](@entry_id:1121163).
+A powerful diagnostic, especially with four or more grids, is to check for the **stabilization of $p_{obs}$** [@problem_id:3326390]. For instance, with four grids, one can compute $p_{123}$ from the three coarsest grids and $p_{234}$ from the three finest grids. If $p_{123} \approx p_{234}$, and this value is close to the formal order of the numerical scheme, it provides strong evidence that the solutions are well within the asymptotic range.
 
 #### Calculation and Reporting
 
 If the diagnostic checks are passed, one can confidently calculate the GCI. For a three-grid study, it is recommended to use the observed order $p_{obs}$ in the GCI formula.
 
-**Example Calculation**: Consider a study with three grids, $r=2$, and solutions $\phi_1=1.001$, $\phi_2=1.004$, and $\phi_3=1.016$ .
+**Example Calculation**: Consider a study with three grids, $r=2$, and solutions $\phi_1=1.001$, $\phi_2=1.004$, and $\phi_3=1.016$ [@problem_id:3963933].
 1.  **Check for monotonic convergence**: $\phi_1  \phi_2  \phi_3$, so convergence is monotonic.
 2.  **Calculate $p_{obs}$**:
     $$
@@ -133,24 +133,24 @@ The result would be reported as $\phi_1 = 1.001$ with an estimated fractional un
 
 #### Justification of the Safety Factor
 
-The choice of the safety factor $F_s$ is not arbitrary. It can be rigorously derived by modeling the uncertainty in the order of accuracy, $p$. If we treat the true order $p$ as a random variable with some uncertainty around our best estimate $\hat{p}$, we can determine the value of $F_s$ required to ensure that the GCI provides a bound on the true error with a specified level of confidence (e.g., 95%) . This analysis shows that:
+The choice of the safety factor $F_s$ is not arbitrary. It can be rigorously derived by modeling the uncertainty in the order of accuracy, $p$. If we treat the true order $p$ as a random variable with some uncertainty around our best estimate $\hat{p}$, we can determine the value of $F_s$ required to ensure that the GCI provides a bound on the true error with a specified level of confidence (e.g., 95%) [@problem_id:3958838]. This analysis shows that:
 
 -   For well-behaved, three-grid monotonic studies where the uncertainty in $p$ is small, a safety factor of **$F_s=1.25$** is appropriate.
--   For two-grid studies, where $p$ must be assumed (typically taken as the formal order of the scheme), the uncertainty is much larger. A more conservative safety factor of **$F_s=3.0$** is recommended to maintain confidence in the [error bound](@entry_id:161921).
+-   For two-grid studies, where $p$ must be assumed (typically taken as the formal order of the scheme), the uncertainty is much larger. A more conservative safety factor of **$F_s=3.0$** is recommended to maintain confidence in the error bound.
 
 #### Limitations and Failure Modes
 
-The GCI methodology is robust but has important limitations. Its foundational assumption is that the solution is sufficiently smooth for the Taylor series expansions underlying the asymptotic error model to be valid. When a solution contains strong singularities or discontinuities, this assumption is violated, and the GCI method can fail .
+The GCI methodology is robust but has important limitations. Its foundational assumption is that the solution is sufficiently smooth for the Taylor series expansions underlying the asymptotic error model to be valid. When a solution contains strong singularities or discontinuities, this assumption is violated, and the GCI method can fail [@problem_id:3958781].
 
-For example, in a heat transfer problem with a finite thermal contact resistance, the temperature profile exhibits a [jump discontinuity](@entry_id:139886) at the interface. An attempt to compute GCI for a quantity dominated by the interface behavior (like the interface heat flux) will likely show non-monotonic, oscillatory convergence. A calculation of the observed order $p_{obs}$ may even yield a complex number, which is a definitive indicator that the asymptotic model has broken down. In such cases, the GCI is not a reliable estimator of uncertainty.
+For example, in a heat transfer problem with a finite thermal contact resistance, the temperature profile exhibits a jump discontinuity at the interface. An attempt to compute GCI for a quantity dominated by the interface behavior (like the interface heat flux) will likely show non-monotonic, oscillatory convergence. A calculation of the observed order $p_{obs}$ may even yield a complex number, which is a definitive indicator that the asymptotic model has broken down. In such cases, the GCI is not a reliable estimator of uncertainty.
 
 #### GCI in the Broader VV Context
 
-Finally, it is essential to place the GCI within the full framework of simulation [uncertainty quantification](@entry_id:138597) . The GCI provides an estimate for the **[numerical uncertainty](@entry_id:752838)** due to discretization. This is a [systematic error](@entry_id:142393), and its magnitude is best treated as a **bias-like uncertainty**.
+Finally, it is essential to place the GCI within the full framework of simulation uncertainty quantification [@problem_id:3958804]. The GCI provides an estimate for the **numerical uncertainty** due to discretization. This is a systematic error, and its magnitude is best treated as a **bias-like uncertainty**.
 
-In a comprehensive validation study, this [numerical uncertainty](@entry_id:752838) must be combined with all other identified sources of error. A defensible procedure is as follows:
+In a comprehensive validation study, this numerical uncertainty must be combined with all other identified sources of error. A defensible procedure is as follows:
 1.  Combine all independent **random standard uncertainties** (e.g., from experimental measurements, variability in input properties) in quadrature (Root-Sum-Square).
-2.  Combine all **bias-like uncertainty limits** (e.g., the GCI estimate, estimated [model-form error](@entry_id:274198) from the turbulence model) by linear addition for a conservative total bias limit.
+2.  Combine all **bias-like uncertainty limits** (e.g., the GCI estimate, estimated model-form error from the turbulence model) by linear addition for a conservative total bias limit.
 3.  The total validation uncertainty is then formed by adding the total bias limit to a multiple (e.g., 2 for ~95% confidence) of the combined random standard uncertainty.
 
 This hierarchical approach ensures that each error source is treated appropriately, leading to a credible and defensible statement about the total uncertainty of a simulation when compared against physical reality.

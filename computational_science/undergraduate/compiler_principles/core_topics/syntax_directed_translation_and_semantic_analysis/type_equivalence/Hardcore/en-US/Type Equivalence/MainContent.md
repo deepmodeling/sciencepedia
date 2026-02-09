@@ -3,9 +3,9 @@ In the realm of programming language design and compiler construction, static ty
 
 This article provides a thorough exploration of type equivalence, dissecting the principles, applications, and practical implications of this fundamental compiler concept.
 - The first chapter, **Principles and Mechanisms**, will introduce the foundational dichotomy between name and structural equivalence. It will detail the algorithms and rules compilers use to compare basic, composite, and even recursive types under both regimes.
-- The second chapter, **Applications and Interdisciplinary Connections**, will broaden the scope to show how these theoretical rules have a tangible impact on language features like `newtypes`, modular programming, runtime systems, and even connect to deep principles in [mathematical logic](@entry_id:140746).
+- The second chapter, **Applications and Interdisciplinary Connections**, will broaden the scope to show how these theoretical rules have a tangible impact on language features like `newtypes`, modular programming, runtime systems, and even connect to deep principles in mathematical logic.
 - Finally, **Hands-On Practices** will offer a series of targeted problems designed to solidify your understanding of these concepts, challenging you to apply the rules of type equivalence in concrete scenarios.
-By navigating these chapters, you will gain a comprehensive understanding of not just what type equivalence is, but why it is one of the most important concepts in modern [programming language theory](@entry_id:753800) and practice.
+By navigating these chapters, you will gain a comprehensive understanding of not just what type equivalence is, but why it is one of the most important concepts in modern programming language theory and practice.
 
 ## Principles and Mechanisms
 
@@ -15,11 +15,11 @@ In the study of statically typed programming languages, a central function of th
 
 At the highest level, programming languages approach type equivalence from one of two philosophical standpoints: **name equivalence** or **structural equivalence**.
 
-**Name equivalence**, also known as nominative or nominal typing, is the principle that two types are equivalent if and only if they share the same name, which in practice means they originate from the very same type declaration. Under this regime, a type's identity is bound to its declaration. Two separately declared types are never considered equivalent, even if they describe the exact same [data structure](@entry_id:634264). The focus is on the *intent* behind a type, as captured by its name.
+**Name equivalence**, also known as nominative or nominal typing, is the principle that two types are equivalent if and only if they share the same name, which in practice means they originate from the very same type declaration. Under this regime, a type's identity is bound to its declaration. Two separately declared types are never considered equivalent, even if they describe the exact same data structure. The focus is on the *intent* behind a type, as captured by its name.
 
 **Structural equivalence**, in contrast, is the principle that two types are equivalent if and only if they have the same structure. The names given to types are treated as convenient, but ultimately insignificant, aliases for the underlying structure. The type checker recursively compares the makeup of two types to determine if they are the same. The focus is on the *shape* and *behavior* of the data, not the name given to it.
 
-To make this distinction concrete, consider two record type declarations in a hypothetical language :
+To make this distinction concrete, consider two record type declarations in a hypothetical language [@problem_id:3681432]:
 - $\;T = \text{record}\{\mathtt{x}:\mathtt{int},\,\mathtt{y}:\mathtt{float}\}\;$
 - $\;S = \text{record}\{\mathtt{y}:\mathtt{float},\,\mathtt{x}:\mathtt{int}\}\;$
 
@@ -27,7 +27,7 @@ In a language using **name equivalence**, $T$ and $S$ are declared separately. T
 
 In a language using **structural equivalence**, the compiler ignores the names $T$ and $S$ and looks at their definitions. If the language's rule for record equivalence is that the set of field labels and their corresponding types must match, regardless of order, then the compiler sees that both types represent a mapping from the label $\mathtt{x}$ to $\mathtt{int}$ and the label $\mathtt{y}$ to $\mathtt{float}$. Since these mappings are identical, the types are considered equivalent: $T \equiv S$.
 
-This simple example reveals the trade-off. Name equivalence is stricter, providing strong guarantees that a `PartNumber` cannot be accidentally used where a `SocialSecurityNumber` is expected, even if both happen to be represented as integers. This enhances type safety by preventing logical errors. Structural equivalence is more flexible, allowing for [interoperability](@entry_id:750761) between types from different libraries that were not explicitly designed to work together but happen to share a common structure.
+This simple example reveals the trade-off. Name equivalence is stricter, providing strong guarantees that a `PartNumber` cannot be accidentally used where a `SocialSecurityNumber` is expected, even if both happen to be represented as integers. This enhances type safety by preventing logical errors. Structural equivalence is more flexible, allowing for interoperability between types from different libraries that were not explicitly designed to work together but happen to share a common structure.
 
 ### Name Equivalence in Practice
 
@@ -37,9 +37,9 @@ In a system with pure name equivalence, every `type`, `struct`, or `class` decla
 
 A common source of confusion is the `typedef` construct found in languages like C and C++. A `typedef` declaration introduces a new name, but it does not necessarily introduce a new *type*. Most often, it creates a **transparent alias**, which is simply a synonym for an existing type.
 
-For instance, consider the declaration `typedef int A;` . In a language with transparent aliases, the name `A` is treated by the type checker as being completely interchangeable with `int`. The type equivalence check $A \equiv \mathtt{int}$ would hold true because the compiler effectively expands or replaces `A` with `int` before comparison. This is not pure name equivalence; it is a hybrid system where aliases are resolved before a final comparison, which is a structural operation.
+For instance, consider the declaration `typedef int A;` [@problem_id:3681412]. In a language with transparent aliases, the name `A` is treated by the type checker as being completely interchangeable with `int`. The type equivalence check $A \equiv \mathtt{int}$ would hold true because the compiler effectively expands or replaces `A` with `int` before comparison. This is not pure name equivalence; it is a hybrid system where aliases are resolved before a final comparison, which is a structural operation.
 
-To understand pure name equivalence, we must consider a system where structural similarities are completely ignored. Let's analyze a language where distinct `struct` declarations create distinct types, and `typedef` is a transparent alias .
+To understand pure name equivalence, we must consider a system where structural similarities are completely ignored. Let's analyze a language where distinct `struct` declarations create distinct types, and `typedef` is a transparent alias [@problem_id:3681300].
 - `A = struct{x: \mathtt{int}};`
 - `B = struct{x: \mathtt{int}};`
 - `T = typedef A;`
@@ -55,13 +55,13 @@ This principle applies recursively to compound types built from named types. An 
 
 ### The Mechanics of Structural Equivalence
 
-Structural equivalence is defined by a [recursive algorithm](@entry_id:633952). To check if type $T_1$ is equivalent to type $T_2$:
+Structural equivalence is defined by a recursive algorithm. To check if type $T_1$ is equivalent to type $T_2$:
 1. If $T_1$ and $T_2$ are the same primitive type (e.g., $\mathtt{int}$), they are equivalent.
 2. If $T_1$ and $T_2$ are type aliases, replace them with their definitions and repeat the check.
 3. If $T_1$ and $T_2$ are formed by the same type constructor (e.g., both are pointer types), they are equivalent if their component types are structurally equivalent.
 4. Otherwise, they are not equivalent.
 
-A key part of this process is the "unraveling" of type aliases. A compiler might encounter a complex type built upon layers of `typedef`s . For example, given:
+A key part of this process is the "unraveling" of type aliases. A compiler might encounter a complex type built upon layers of `typedef`s [@problem_id:3681301]. For example, given:
 - `typedef int R1;`
 - `typedef R1 R2;`
 - `typedef float P1;`
@@ -75,16 +75,16 @@ To compare $T$ and $S$, the compiler must first resolve all aliases in the defin
 
 The seemingly simple idea of "same structure" hides important design decisions that vary between languages.
 
-**Record Types**: As previously seen, a key choice for records is whether the order of fields matters .
+**Record Types**: As previously seen, a key choice for records is whether the order of fields matters [@problem_id:3681388].
 - **Order-insensitive equivalence** treats records as mappings from labels to types. This is common for records with named fields.
-- **Order-sensitive equivalence** treats records as ordered tuples of (label, type) pairs. This is stricter and may be used in contexts where [memory layout](@entry_id:635809) is directly tied to declaration order.
+- **Order-sensitive equivalence** treats records as ordered tuples of (label, type) pairs. This is stricter and may be used in contexts where memory layout is directly tied to declaration order.
 
-**Function Types**: For function types, the "structure" can include several components :
+**Function Types**: For function types, the "structure" can include several components [@problem_id:3681303]:
 - **Arity**: The number of parameters. This must almost always match.
 - **Parameter and Return Types**: The types of the parameters (usually in order) and the return value are compared for structural equivalence.
 - **Parameter Labels**: Are the names of parameters part of the type? Comparing $T = (\mathtt{int}\ x, \mathtt{int}\ y) \to \mathtt{int}$ and $S = (\mathtt{int}\ a, \mathtt{int}\ b) \to \mathtt{int}$, a language could decide that labels are insignificant documentation, making $T \equiv S$. Alternatively, a language could require labels to match, making $T \not\equiv S$.
 
-The principle of structural equivalence is highly general. Any syntactically distinct information in a type expression can be considered part of its structure. For example, some languages allow specifying function "effects," such as whether a function may throw an exception . Consider:
+The principle of structural equivalence is highly general. Any syntactically distinct information in a type expression can be considered part of its structure. For example, some languages allow specifying function "effects," such as whether a function may throw an exception [@problem_id:3681325]. Consider:
 - $T = \text{function } \mathtt{noexcept}(\mathtt{int}) \to \mathtt{int}$
 - $S = \text{function } (\mathtt{int}) \to \mathtt{int}$ (defaults to $\mathtt{maythrow}$)
 
@@ -96,7 +96,7 @@ Under structural equivalence where the effect is part of the type's structure, $
 
 Many important data structures, like lists and trees, are recursive. A type system must be able to express this. For example, a list of integers could be defined as `type IntList = Pair(int, IntList)`. To formalize this, we use a recursive type binder, $\mu$ (mu). Our integer list would be $\mu\alpha.\,\text{Pair}(\mathtt{int}, \alpha)$. This reads as "the type $\alpha$ such that $\alpha$ is a pair of an integer and another $\alpha$."
 
-How does equivalence work for these types? Again, there are two main approaches :
+How does equivalence work for these types? Again, there are two main approaches [@problem_id:3681339]:
 
 1.  **Equirecursive Semantics**: This is a structural approach. A recursive type is held to be *definitionally equal* to its one-step unfolding. That is, $\mu\alpha.\,F(\alpha) \equiv F(\mu\alpha.\,F(\alpha))$. Type checking for these types involves a coinductive algorithm that assumes two types are equal and checks if this assumption holds after unfolding. In this system, the type $T = \mu\alpha.\,\text{Pair}(\alpha, \mathtt{int})$ is equivalent to its unfolding $S = \text{Pair}(\mu\beta.\,\text{Pair}(\beta, \mathtt{int}), \mathtt{int})$. Note that the change of bound variable from $\alpha$ to $\beta$ is irrelevant, just as variable names in a calculus are.
 
@@ -104,7 +104,7 @@ How does equivalence work for these types? Again, there are two main approaches 
 
 #### Modules, Abstraction, and Equivalence
 
-Type equivalence rules have a critical interaction with a language's module system, which is designed for managing namespaces and controlling abstraction . A module can choose to export a type **transparently** (exposing its definition) or **opaquely** (hiding its definition, creating an abstract type). The combination of equivalence discipline and export policy determines the level of abstraction.
+Type equivalence rules have a critical interaction with a language's module system, which is designed for managing namespaces and controlling abstraction [@problem_id:3681390]. A module can choose to export a type **transparently** (exposing its definition) or **opaquely** (hiding its definition, creating an abstract type). The combination of equivalence discipline and export policy determines the level of abstraction.
 
 Consider two modules, $M$ and $N$, that both define a type based on `int`:
 - In $M$: `type A = int;` exported as $T$.
@@ -121,8 +121,8 @@ This matrix shows how language designers can provide programmers with fine-grain
 
 ### Source Equivalence vs. Binary Compatibility
 
-Finally, it is crucial to distinguish between the logical rules of type equivalence at the source code level and the physical reality of **binary compatibility** at the machine code level. The latter is governed by the platform's **Application Binary Interface (ABI)**, which dictates data size, [memory layout](@entry_id:635809), and [calling conventions](@entry_id:747094).
+Finally, it is crucial to distinguish between the logical rules of type equivalence at the source code level and the physical reality of **binary compatibility** at the machine code level. The latter is governed by the platform's **Application Binary Interface (ABI)**, which dictates data size, memory layout, and calling conventions.
 
-A type checker might determine two types are equivalent, yet their compiled representations might be incompatible. Consider a type `record { x: int }` . If one module is compiled for a 32-bit platform where `int` is 32 bits, and another is compiled for a 64-bit platform where `int` is 64 bits, the resulting record structures will have different sizes. Passing one to a function expecting the other will lead to memory corruption, even though they are structurally equivalent at the source level.
+A type checker might determine two types are equivalent, yet their compiled representations might be incompatible. Consider a type `record { x: int }` [@problem_id:3681321]. If one module is compiled for a 32-bit platform where `int` is 32 bits, and another is compiled for a 64-bit platform where `int` is 64 bits, the resulting record structures will have different sizes. Passing one to a function expecting the other will lead to memory corruption, even though they are structurally equivalent at the source level.
 
 Conversely, two types can be inequivalent in the source language but be binary-compatible. If a language uses name equivalence, two separately declared types `T = record { x: int }` and `S = record { x: int }` are not equivalent. A function `f(p: T)` cannot be called with an argument of type `S`. However, if both are compiled for the same platform, their memory layouts will be identical. This demonstrates that type equivalence is a compile-time, logical concept designed to enforce programmer intent and prevent errors, and it does not always align with the physical representation of data.

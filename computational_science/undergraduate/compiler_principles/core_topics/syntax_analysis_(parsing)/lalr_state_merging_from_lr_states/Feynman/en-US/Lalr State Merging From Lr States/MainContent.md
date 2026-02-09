@@ -19,18 +19,18 @@ Let's break this down like a physicist reading an equation. This item tells us: 
 
 As we build the complete map of all possible LR(1) states, we might notice something curious. We might find two, or ten, or a hundred different states that, despite having different lookahead information, seem to be structurally identical. They might all be in the middle of recognizing the same set of grammar rules, at the exact same positions. The only difference is the context—the different paths through the grammar that led to these states gave them different "crystal ball" predictions for the symbol that comes next.
 
-This shared structural identity is what we call the **core** of a state . To find the core, we perform a simple but profound act: we take all the "driving" items in a state—the so-called **kernel items**—and we erase their lookaheads. The kernel items are the ones that define the state's primary identity; other items, called closure items, are just consequences of the kernel and the grammar rules. What's left is the state's soul: a set of **LR(0) items** that simply say, "We are working on these rules, and we are at these positions" . The core captures the essence of the parsing situation, stripped of the specific context that generated its lookaheads.
+This shared structural identity is what we call the **core** of a state [@problem_id:3648832]. To find the core, we perform a simple but profound act: we take all the "driving" items in a state—the so-called **kernel items**—and we erase their lookaheads. The kernel items are the ones that define the state's primary identity; other items, called closure items, are just consequences of the kernel and the grammar rules. What's left is the state's soul: a set of **LR(0) items** that simply say, "We are working on these rules, and we are at these positions" [@problem_id:3648907]. The core captures the essence of the parsing situation, stripped of the specific context that generated its lookaheads.
 
 ### The Grand Unification: Merging by Cores
 
-The LALR(1) construction looks at this situation and proposes a radical idea. If a group of LR(1) states share the exact same core, let's treat them as different perspectives on the same fundamental situation. Let's merge them. This "[grand unification](@entry_id:160373)" is the heart of the LALR(1) algorithm.
+The LALR(1) construction looks at this situation and proposes a radical idea. If a group of LR(1) states share the exact same core, let's treat them as different perspectives on the same fundamental situation. Let's merge them. This "[grand unification](@keyword=grand_unification|lang=en-US|style=Feynman)" is the heart of the LALR(1) algorithm.
 
 The process is elegant:
 1.  Partition the entire set of LR(1) states into groups, where every state in a group has the same core.
 2.  For each group, create a single new LALR(1) state.
-3.  The items in this new state will have the shared core. What about the lookaheads we erased? We bring them back, but in a combined form. For each core item, its new lookahead set is the **union** of all the [lookahead sets](@entry_id:751462) it had in the original, unmerged states .
+3.  The items in this new state will have the shared core. What about the lookaheads we erased? We bring them back, but in a combined form. For each core item, its new lookahead set is the **union** of all the [lookahead sets](@keyword=lookahead_sets|lang=en-US|style=Feynman) it had in the original, unmerged states [@problem_id:3648851].
 
-Let's see this magic in action with a simple, carefully crafted grammar :
+Let's see this magic in action with a simple, carefully crafted grammar [@problem_id:3648857]:
 - $S \to xAy \mid xBz \mid uBy \mid uAz$
 - $A \to v$
 - $B \to v$
@@ -49,25 +49,25 @@ We have taken two distinct, unambiguous situations and combined them into one. W
 
 Look closely at our newly minted LALR(1) state. What should the parser do if the next symbol is `y`? The first item, $[A \to v \bullet, \{y, z\}]$, screams "Reduce using the rule $A \to v$!". But the second item, $[B \to v \bullet, \{y, z\}]$, simultaneously screams "No, reduce using the rule $B \to v$!". The machine is paralyzed by indecision.
 
-This is a **[reduce-reduce conflict](@entry_id:754169)**. It wasn't present in either of the original LR(1) states, but it was born from the act of merging them  . By uniting the [lookahead sets](@entry_id:751462), we conflated two previously distinct contexts. We "forgot" whether we got here via an `x` or a `u`, and that piece of information turned out to be critical.
+This is a **[reduce-reduce conflict](@keyword=reduce_reduce_conflict|lang=en-US|style=Feynman)**. It wasn't present in either of the original LR(1) states, but it was born from the act of merging them [@problem_id:3648850] [@problem_id:3648847]. By uniting the [lookahead sets](@keyword=lookahead_sets|lang=en-US|style=Feynman), we conflated two previously distinct contexts. We "forgot" whether we got here via an `x` or a `u`, and that piece of information turned out to be critical.
 
-This is the fundamental tradeoff of LALR(1) [parsing](@entry_id:274066). It's an interesting and deep result that this merging process *only* ever introduces reduce-reduce conflicts. It can be proven that if the original LR(1) parser had no shift-reduce conflicts (a conflict between shifting the next symbol or reducing by a rule), the LALR(1) parser won't have any new ones either.
+This is the fundamental tradeoff of LALR(1) [parsing](@keyword=parsing|lang=en-US|style=Feynman). It's an interesting and deep result that this merging process *only* ever introduces reduce-reduce conflicts. It can be proven that if the original LR(1) parser had no shift-reduce conflicts (a conflict between shifting the next symbol or reducing by a rule), the LALR(1) parser won't have any new ones either.
 
-Of course, this doesn't happen for all grammars. Many grammars, including the one for typical arithmetic expressions, are "LALR(1)-safe". For these, the merging process is harmless and results in a smaller, faster, conflict-free parser. In some cases, like the grammar for expressions involving nullable productions, it might even turn out that no two states share a core in the first place, making the LR(1) and LALR(1) parsers identical . The safety of merging is a deep property of the grammar's structure itself .
+Of course, this doesn't happen for all grammars. Many grammars, including the one for typical arithmetic expressions, are "LALR(1)-safe". For these, the merging process is harmless and results in a smaller, faster, conflict-free parser. In some cases, like the grammar for expressions involving nullable productions, it might even turn out that no two states share a core in the first place, making the LR(1) and LALR(1) parsers identical [@problem_id:3648830]. The safety of merging is a deep property of the grammar's structure itself [@problem_id:3648887].
 
 ### An Engineer's Tradeoff: Space, Time, and Power
 
 So why would anyone risk introducing these conflicts? Why not just stick with the powerful, pristine LR(1) machine? The answer is a classic engineering tradeoff between perfection and practicality.
 
-The relationship between LR(1) merging and the well-known process of **DFA minimization** from [automata theory](@entry_id:276038) is illuminating . DFA minimization is "safe" because it only merges states that are truly indistinguishable—no matter what sequence of future inputs you provide, you can't tell them apart. LALR(1) merging, on the other hand, is a much more aggressive optimization. It merges states that are distinguishable (by their one-symbol lookahead!), betting that this loss of information won't matter. Sometimes the bet pays off, and sometimes it doesn't.
+The relationship between LR(1) merging and the well-known process of **DFA minimization** from [automata theory](@keyword=automata_theory|lang=en-US|style=Feynman) is illuminating [@problem_id:3648887]. DFA minimization is "safe" because it only merges states that are truly indistinguishable—no matter what sequence of future inputs you provide, you can't tell them apart. LALR(1) merging, on the other hand, is a much more aggressive optimization. It merges states that are distinguishable (by their one-symbol lookahead!), betting that this loss of information won't matter. Sometimes the bet pays off, and sometimes it doesn't.
 
-The potential payoff is huge. Consider a realistic programming language grammar :
+The potential payoff is huge. Consider a realistic programming language grammar [@problem_id:3648885]:
 - An LR(1) parser might have **1200 states**.
 - The corresponding LALR(1) parser might have only **360 states**.
 
-Let's put a number on that saving. If each state's entry in the [parsing](@entry_id:274066) tables takes up, say, 960 bytes, the reduction from 1200 to 360 states saves $(1200 - 360) \times 960 = 806,400$ bytes of memory. That's a massive reduction, especially for the computers of the 1970s and 80s when these techniques were developed.
+Let's put a number on that saving. If each state's entry in the [parsing](@keyword=parsing|lang=en-US|style=Feynman) tables takes up, say, 960 bytes, the reduction from 1200 to 360 states saves $(1200 - 360) \times 960 = 806,400$ bytes of memory. That's a massive reduction, especially for the computers of the 1970s and 80s when these techniques were developed.
 
-Now for the cost. In our hypothetical example, suppose this merging introduced a total of **252 conflict entries** in the parser table. This gives us a fascinating metric: we saved $806,400 / 252 \approx 3200$ bytes for every conflict we created! This frames the choice perfectly. Do you want a parser that is guaranteed to work for the widest possible range of grammars, or do you want a parser that is an [order of magnitude](@entry_id:264888) smaller and faster, at the cost of being slightly less powerful?
+Now for the cost. In our hypothetical example, suppose this merging introduced a total of **252 conflict entries** in the parser table. This gives us a fascinating metric: we saved $806,400 / 252 \approx 3200$ bytes for every conflict we created! This frames the choice perfectly. Do you want a parser that is guaranteed to work for the widest possible range of grammars, or do you want a parser that is an [order of magnitude](@keyword=order_of_magnitude|lang=en-US|style=Feynman) smaller and faster, at the cost of being slightly less powerful?
 
 For decades, the answer has been overwhelmingly in favor of the smaller, faster LALR(1) parser. Tools like Yacc and Bison, which have been used to build compilers for countless languages, are built on this very principle. They accept the tradeoff, generate an LALR(1) parser, and if conflicts arise, they report them to the programmer, who can often resolve them with minor tweaks to the grammar.
 

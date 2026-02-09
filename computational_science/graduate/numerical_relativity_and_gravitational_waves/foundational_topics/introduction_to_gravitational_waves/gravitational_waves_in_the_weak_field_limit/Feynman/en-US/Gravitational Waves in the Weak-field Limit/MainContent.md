@@ -1,11 +1,11 @@
 ## Introduction
-Albert Einstein's theory of General Relativity reshaped our understanding of gravity, recasting it not as a force, but as the curvature of spacetime itself. One of its most profound predictions is that massive, accelerating objects can create ripples in this fabric—gravitational waves that propagate across the cosmos at the speed of light. While the full theory describing these phenomena is notoriously complex, a vast range of astrophysical events can be understood through a powerful and elegant simplification: the [weak-field limit](@entry_id:199592). This approximation addresses the challenge of nonlinearity by treating gravity as a small disturbance on an otherwise flat spacetime, providing deep insights into the fundamental nature of [gravitational radiation](@entry_id:266024).
+Albert Einstein's theory of General Relativity reshaped our understanding of gravity, recasting it not as a force, but as the curvature of spacetime itself. One of its most profound predictions is that massive, accelerating objects can create ripples in this fabric—gravitational waves that propagate across the cosmos at the speed of light. While the full theory describing these phenomena is notoriously complex, a vast range of astrophysical events can be understood through a powerful and elegant simplification: the [weak-field limit](@keyword=weak_field_limit|lang=en-US|style=Feynman). This approximation addresses the challenge of nonlinearity by treating gravity as a small disturbance on an otherwise flat spacetime, providing deep insights into the fundamental nature of [gravitational radiation](@keyword=gravitational_radiation|lang=en-US|style=Feynman).
 
 This article provides a comprehensive exploration of gravitational waves within this linearized framework. It is structured to build your understanding from foundational principles to practical applications.
 
-- The first chapter, **Principles and Mechanisms**, delves into the mathematics of linearization. You will learn how Einstein's equations transform into a familiar wave equation, uncover the properties of these [spacetime ripples](@entry_id:159317), and understand the crucial [quadrupole formula](@entry_id:160883) that governs their generation.
+- The first chapter, **Principles and Mechanisms**, delves into the mathematics of linearization. You will learn how Einstein's equations transform into a familiar wave equation, uncover the properties of these [spacetime ripples](@keyword=spacetime_ripples|lang=en-US|style=Feynman), and understand the crucial [quadrupole formula](@keyword=quadrupole_formula|lang=en-US|style=Feynman) that governs their generation.
 
-- The second chapter, **Applications and Interdisciplinary Connections**, takes these theoretical ideas and applies them to the real universe. We will explore the cosmic orchestra of sources—from [binary black holes](@entry_id:264093) to [supernovae](@entry_id:161773)—and discuss the technology used to detect their faint signals, unlocking a new era of astronomy.
+- The second chapter, **Applications and Interdisciplinary Connections**, takes these theoretical ideas and applies them to the real universe. We will explore the cosmic orchestra of sources—from [binary black holes](@keyword=binary_black_holes|lang=en-US|style=Feynman) to [supernovae](@keyword=supernovae|lang=en-US|style=Feynman)—and discuss the technology used to detect their faint signals, unlocking a new era of astronomy.
 
 - Finally, the **Hands-On Practices** section provides a set of problems designed to solidify your grasp of key concepts, bridging the gap between abstract theory and computational practice.
 
@@ -29,15 +29,15 @@ Here, $h_{\mu\nu}$ represents the tiny ripples, and the condition that they are 
 
 ### The Equations of Motion: A Symphony of Waves
 
-What equation governs these [spacetime ripples](@entry_id:159317)? We must start with Einstein's masterpiece, the field equations of General Relativity:
+What equation governs these [spacetime ripples](@keyword=spacetime_ripples|lang=en-US|style=Feynman)? We must start with Einstein's masterpiece, the field equations of General Relativity:
 
 $$
 G_{\mu\nu} = 8\pi T_{\mu\nu}
 $$
 
-This equation relates the geometry of spacetime ($G_{\mu\nu}$, the Einstein tensor) to the distribution of energy and momentum within it ($T_{\mu\nu}$, the [stress-energy tensor](@entry_id:146544)). Unfortunately, in its full glory, this is a monstrous set of ten coupled, [nonlinear partial differential equations](@entry_id:168847). To make progress, we apply our [weak-field approximation](@entry_id:182220), keeping only the terms that are of the first order in our tiny perturbation $h_{\mu\nu}$.
+This equation relates the geometry of spacetime ($G_{\mu\nu}$, the Einstein tensor) to the distribution of energy and momentum within it ($T_{\mu\nu}$, the [stress-energy tensor](@keyword=stress_energy_tensor|lang=en-US|style=Feynman)). Unfortunately, in its full glory, this is a monstrous set of ten coupled, [nonlinear partial differential equations](@keyword=nonlinear_partial_differential_equations|lang=en-US|style=Feynman). To make progress, we apply our [weak-field approximation](@keyword=weak_field_approximation|lang=en-US|style=Feynman), keeping only the terms that are of the first order in our tiny perturbation $h_{\mu\nu}$.
 
-Even after this "[linearization](@entry_id:267670)," the resulting equation for $h_{\mu\nu}$ is a tangled mess. The different components of the ripple are all coupled to each other in a complicated way. Here, we see the true art of the theoretical physicist at play. It turns out that a clever [change of variables](@entry_id:141386) can bring order to this chaos. We define a new quantity, the **trace-reversed perturbation** $\bar{h}_{\mu\nu}$:
+Even after this "[linearization](@keyword=linearization|lang=en-US|style=Feynman)," the resulting equation for $h_{\mu\nu}$ is a tangled mess. The different components of the ripple are all coupled to each other in a complicated way. Here, we see the true art of the theoretical physicist at play. It turns out that a clever [change of variables](@keyword=change_of_variables|lang=en-US|style=Feynman) can bring order to this chaos. We define a new quantity, the **trace-reversed perturbation** $\bar{h}_{\mu\nu}$:
 
 $$
 \bar{h}_{\mu\nu} = h_{\mu\nu} - \frac{1}{2}\eta_{\mu\nu}h
@@ -45,7 +45,7 @@ $$
 
 where $h$ is the trace of the original perturbation ($h = \eta^{\alpha\beta}h_{\alpha\beta}$). This specific combination isn't just a random mathematical trick; it is precisely the form needed to elegantly absorb many of the messy terms in the linearized equations.
 
-Even with this new variable, the equations are not yet at their simplest. We have another powerful tool at our disposal: **[gauge freedom](@entry_id:160491)**. This concept is a direct descendant of the profound [principle of general covariance](@entry_id:157638) in the full theory, which states that the laws of physics must be independent of our choice of coordinate system. In our linearized theory, this means we can change our coordinates by a small amount, which in turn changes the form of $h_{\mu\nu}$. Parts of $h_{\mu\nu}$ are not physically real; they are merely "wrinkles in our graph paper," not in the underlying sheet. We can use this freedom to impose a condition that simplifies our equations. A particularly convenient choice is the **Lorenz gauge**, which, in terms of our new variable, takes the beautifully simple form:
+Even with this new variable, the equations are not yet at their simplest. We have another powerful tool at our disposal: **[gauge freedom](@keyword=gauge_freedom|lang=en-US|style=Feynman)**. This concept is a direct descendant of the profound [principle of general covariance](@keyword=principle_of_general_covariance|lang=en-US|style=Feynman) in the full theory, which states that the laws of physics must be independent of our choice of coordinate system. In our linearized theory, this means we can change our coordinates by a small amount, which in turn changes the form of $h_{\mu\nu}$. Parts of $h_{\mu\nu}$ are not physically real; they are merely "wrinkles in our graph paper," not in the underlying sheet. We can use this freedom to impose a condition that simplifies our equations. A particularly convenient choice is the **Lorenz gauge**, which, in terms of our new variable, takes the beautifully simple form:
 
 $$
 \partial^\mu \bar{h}_{\mu\nu} = 0
@@ -57,13 +57,13 @@ $$
 \Box \bar{h}_{\mu\nu} = -16\pi T_{\mu\nu}
 $$
 
-Here, $\Box$ is the d'Alembertian operator, the protagonist of wave phenomena throughout physics. We have found that in the [weak-field limit](@entry_id:199592), gravity is described by a wave equation. The ripples of spacetime are not just a metaphor; they are a direct mathematical consequence of Einstein's theory.
+Here, $\Box$ is the d'Alembertian operator, the protagonist of wave phenomena throughout physics. We have found that in the [weak-field limit](@keyword=weak_field_limit|lang=en-US|style=Feynman), gravity is described by a wave equation. The ripples of spacetime are not just a metaphor; they are a direct mathematical consequence of Einstein's theory.
 
 ### The Nature of the Wave: Light-Speed and Causal
 
-Let's examine the nature of these waves. Far from any source, in the vacuum of empty space, the [stress-energy tensor](@entry_id:146544) $T_{\mu\nu}$ is zero, and our equation becomes the homogeneous wave equation, $\Box \bar{h}_{\mu\nu} = 0$. What does this tell us?
+Let's examine the nature of these waves. Far from any source, in the vacuum of empty space, the [stress-energy tensor](@keyword=stress_energy_tensor|lang=en-US|style=Feynman) $T_{\mu\nu}$ is zero, and our equation becomes the homogeneous wave equation, $\Box \bar{h}_{\mu\nu} = 0$. What does this tell us?
 
-We can look for simple solutions, like a [plane wave](@entry_id:263752) propagating through space, of the form $\bar{h}_{\mu\nu} \propto \exp(i k_\alpha x^\alpha)$, where $k_\alpha$ is the wave covector that encodes the frequency and direction of the wave. When we substitute this into the wave equation, we immediately find a fundamental constraint:
+We can look for simple solutions, like a [plane wave](@keyword=plane_wave|lang=en-US|style=Feynman) propagating through space, of the form $\bar{h}_{\mu\nu} \propto \exp(i k_\alpha x^\alpha)$, where $k_\alpha$ is the wave covector that encodes the frequency and direction of the wave. When we substitute this into the wave equation, we immediately find a fundamental constraint:
 
 $$
 k^\alpha k_\alpha = 0
@@ -77,7 +77,7 @@ To solve the wave equation, we must also ensure our solutions are physically sen
 
 ### The True Message of the Wave: Degrees of Freedom
 
-We started with a [symmetric tensor](@entry_id:144567) $h_{\mu\nu}$, which has 10 independent components. Does this mean a gravitational wave carries ten different kinds of information? This seems unlikely. Let's return to the crucial concept of [gauge freedom](@entry_id:160491).
+We started with a [symmetric tensor](@keyword=symmetric_tensor|lang=en-US|style=Feynman) $h_{\mu\nu}$, which has 10 independent components. Does this mean a gravitational wave carries ten different kinds of information? This seems unlikely. Let's return to the crucial concept of [gauge freedom](@keyword=gauge_freedom|lang=en-US|style=Feynman).
 
 The 10 components of $h_{\mu\nu}$ are redundant. Some of them simply describe our choice of coordinate grid and have no intrinsic physical reality. The freedom to choose our coordinates is described by four arbitrary functions, $\xi^\mu(x)$, which allows us to eliminate four of the ten components of $h_{\mu\nu}$—they are pure gauge.
 
@@ -99,20 +99,20 @@ The two functions, $h_+(t-z)$ and $h_\times(t-z)$, are the two independent polar
 
 ### Sourcing the Ripples: The Quadrupole Formula
 
-Now that we understand the nature of the waves, we must ask: what creates them? The source is the [stress-energy tensor](@entry_id:146544), $T_{\mu\nu}$. To generate a wave, a source must have changing components of its stress-energy.
+Now that we understand the nature of the waves, we must ask: what creates them? The source is the [stress-energy tensor](@keyword=stress_energy_tensor|lang=en-US|style=Feynman), $T_{\mu\nu}$. To generate a wave, a source must have changing components of its stress-energy.
 
-Through a mathematical procedure known as a [multipole expansion](@entry_id:144850), we can analyze how different aspects of a source's motion contribute to the radiation. This is only valid under specific conditions: the source must be moving much slower than light ($v \ll c$), its size $R$ must be much smaller than the wavelength $\lambda$ of the radiation it emits ($R \ll \lambda$), and we, the observers, must be in the "far zone," many wavelengths away ($r \gg \lambda$).
+Through a mathematical procedure known as a [multipole expansion](@keyword=multipole_expansion|lang=en-US|style=Feynman), we can analyze how different aspects of a source's motion contribute to the radiation. This is only valid under specific conditions: the source must be moving much slower than light ($v \ll c$), its size $R$ must be much smaller than the wavelength $\lambda$ of the radiation it emits ($R \ll \lambda$), and we, the observers, must be in the "far zone," many wavelengths away ($r \gg \lambda$).
 
-When these conditions hold, a beautiful simplification occurs. Due to the conservation of mass-energy and momentum in general relativity, there is no monopole radiation (from a simple pulsating object) or [dipole radiation](@entry_id:271907) (from a simple oscillating object). The first non-vanishing type of radiation comes from the **[mass quadrupole moment](@entry_id:158661)**, which measures how the shape of the [mass distribution](@entry_id:158451) deviates from being a perfect sphere. The amplitude of the emitted gravitational wave is proportional to the second time derivative of this quadrupole moment.
+When these conditions hold, a beautiful simplification occurs. Due to the conservation of mass-energy and momentum in general relativity, there is no monopole radiation (from a simple pulsating object) or [dipole radiation](@keyword=dipole_radiation|lang=en-US|style=Feynman) (from a simple oscillating object). The first non-vanishing type of radiation comes from the **[mass quadrupole moment](@keyword=mass_quadrupole_moment|lang=en-US|style=Feynman)**, which measures how the shape of the [mass distribution](@keyword=mass_distribution|lang=en-US|style=Feynman) deviates from being a perfect sphere. The amplitude of the emitted gravitational wave is proportional to the second time derivative of this quadrupole moment.
 
-This is the famous **[quadrupole formula](@entry_id:160883)**. It tells us that to generate gravitational waves, you need a changing, non-spherically symmetric distribution of mass. A perfectly spinning sphere will not radiate. But a spinning, lumpy neutron star, or a pair of black holes orbiting each other, will churn spacetime and send ripples across the cosmos.
+This is the famous **[quadrupole formula](@keyword=quadrupole_formula|lang=en-US|style=Feynman)**. It tells us that to generate gravitational waves, you need a changing, non-spherically symmetric distribution of mass. A perfectly spinning sphere will not radiate. But a spinning, lumpy neutron star, or a pair of black holes orbiting each other, will churn spacetime and send ripples across the cosmos.
 
 ### The Energy of a Ripple: A Subtle Concept
 
 If gravitational waves can cause detectors on Earth to jiggle, they must carry energy. But defining the energy of gravity is one of the most subtle and profound problems in general relativity. According to the equivalence principle, at any single point, you can always choose a coordinate system where gravity locally vanishes. If it can "disappear," how can it have a well-defined energy density?
 
-The resolution is that [gravitational energy](@entry_id:193726) is not localizable. It does not reside at this point or that point, but in the relationships *between* points, in the gradients of the gravitational field. To make this idea precise, we use a powerful technique known as the **two-scale approximation**. We assume the gravitational wave has a very short wavelength $\lambda$ compared to the length scale $L$ over which the background spacetime curves.
+The resolution is that [gravitational energy](@keyword=gravitational_energy|lang=en-US|style=Feynman) is not localizable. It does not reside at this point or that point, but in the relationships *between* points, in the gradients of the gravitational field. To make this idea precise, we use a powerful technique known as the **two-scale approximation**. We assume the gravitational wave has a very short wavelength $\lambda$ compared to the length scale $L$ over which the background spacetime curves.
 
 With this assumption, we can perform a spacetime average over a region larger than a wavelength but smaller than the background curvature scale. The rapid oscillations of the wave itself average to zero, but their quadratic effects—their energy and momentum—do not. What remains is a smooth, effective stress-energy tensor for the gravitational waves, the **Isaacson tensor**. This tensor describes how the waves, on average, carry energy and momentum and contribute to the large-scale curvature of spacetime. It is a gauge-invariant and conserved quantity, providing a robust and physically meaningful way to talk about the energy carried by the ripples of spacetime.
 
-This journey into the [weak-field limit](@entry_id:199592) has been a tour of the physicist's toolkit. By making a simple approximation, we uncovered a rich structure. We saw that gravity, in this limit, behaves as a [field theory](@entry_id:155241) on a fixed background, revealing its nature as a massless [spin-2 field](@entry_id:158247) that propagates at the speed of light. Yet, even in this approximation, we find hints of the deeper, nonlinear nature of the full theory, for instance, in the subtle problem of defining the energy of the waves themselves. This beautiful picture is not "wrong" relativity; it is a powerful lens that reveals the fundamental wave-like character of gravity.
+This journey into the [weak-field limit](@keyword=weak_field_limit|lang=en-US|style=Feynman) has been a tour of the physicist's toolkit. By making a simple approximation, we uncovered a rich structure. We saw that gravity, in this limit, behaves as a [field theory](@keyword=field_theory|lang=en-US|style=Feynman) on a fixed background, revealing its nature as a massless [spin-2 field](@keyword=spin_2_field|lang=en-US|style=Feynman) that propagates at the speed of light. Yet, even in this approximation, we find hints of the deeper, nonlinear nature of the full theory, for instance, in the subtle problem of defining the energy of the waves themselves. This beautiful picture is not "wrong" relativity; it is a powerful lens that reveals the fundamental wave-like character of gravity.

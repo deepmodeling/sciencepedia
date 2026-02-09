@@ -1,7 +1,7 @@
 ## 引言
-在数字化的世界里，从一条短信、一段代码到人类的基因组，字符串无处不在，它们是信息的基本载体。然而，如何从这些看似简单的字符序列中高效地提取模式、结构与意义，是计算机科学面临的核心挑战之一。单纯的暴力搜索在面对海量文本数据时显得力不从心，这促使我们必须将字符串本身视为一种复杂的数据结构，并为其设计专门的、高效的[算法](@article_id:331821)。
+在数字化的世界里，从一条短信、一段代码到人类的基因组，字符串无处不在，它们是信息的基本载体。然而，如何从这些看似简单的字符序列中高效地提取模式、结构与意义，是计算机科学面临的核心挑战之一。单纯的暴力搜索在面对海量文本数据时显得力不从心，这促使我们必须将字符串本身视为一种复杂的数据结构，并为其设计专门的、高效的[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)。
 
-本文将带领读者深入探索字符串作为高级[数据结构](@article_id:325845)的奥秘。在“原理与机制”一章中，我们将揭示KMP、[后缀数组](@article_id:335036)和[后缀自动机](@article_id:641926)等经典[算法](@article_id:331821)的内部工作原理，理解它们如何巧妙地利用重复与对称性。接着，在“应用与跨学科连接”一章，我们将看到这些理论如何赋能现实世界的技术，从文本编辑器的智能补全，到[生物信息学](@article_id:307177)中的基因测序。最后，“动手实践”部分将提供精选的编程问题，帮助读者将理论知识转化为实践能力。
+本文将带领读者深入探索字符串作为高级[数据结构](@keyword=data_structures|lang=zh-CN|style=Feynman)的奥秘。在“原理与机制”一章中，我们将揭示KMP、[后缀数组](@keyword=suffix_array|lang=zh-CN|style=Feynman)和[后缀自动机](@keyword=suffix_automaton|lang=zh-CN|style=Feynman)等经典[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的内部工作原理，理解它们如何巧妙地利用重复与对称性。接着，在“应用与跨学科连接”一章，我们将看到这些理论如何赋能现实世界的技术，从文本编辑器的智能补全，到[生物信息学](@keyword=bioinformatics|lang=zh-CN|style=Feynman)中的基因测序。最后，“动手实践”部分将提供精选的编程问题，帮助读者将理论知识转化为实践能力。
 
 现在，让我们开启这段旅程，首先进入字符串的内部世界，探索其最基本的构成法则。
 
@@ -13,13 +13,13 @@
 
 一个字符串最引人入胜的特质是什么？是其内部的模式和重复。想象一下“abracadabra”这个词，你几乎可以立刻感觉到它的节奏感。这种感觉源于一种被称为 **“border”（边界）** 的结构。一个字符串的 **border** 是它自身的一个前缀，同时也是它的一个后缀，但又不是字符串本身。例如，对于“abracadabra”，“abra”就是一个长度为 4 的 border。对于“ababa”，“aba”是其最长的 border，长度为 3。
 
-寻找最长的 border 似乎很简单，我们可以暴力尝试所有可能的长度。但如果字符串长达数百万个字符呢？暴力破解就像试图逐个沙粒地数清整个撒哈拉沙漠，效率太低，[时间复杂度](@article_id:305487)高达 $O(|S|^2)$。我们需要更聪明的办法。
+寻找最长的 border 似乎很简单，我们可以暴力尝试所有可能的长度。但如果字符串长达数百万个字符呢？暴力破解就像试图逐个沙粒地数清整个撒哈拉沙漠，效率太低，[时间复杂度](@keyword=time_complexity|lang=zh-CN|style=Feynman)高达 $O(|S|^2)$。我们需要更聪明的办法。
 
-这正是计算机科学家施展才华的地方。他们发明了一种名为 **KMP 前缀函数**（通常记为 $\pi$ 数组）的绝妙[算法](@article_id:331821)，它能在线性时间 $O(|S|)$ 内完成这项任务。其核心思想是一种优雅的动态规划：为了计算字符串前缀 `S[0..i]` 的最长 border，我们可以利用已经计算出的、更短前缀 `S[0..i-1]` 的结果。
+这正是计算机科学家施展才华的地方。他们发明了一种名为 **KMP 前缀函数**（通常记为 $\pi$ 数组）的绝妙[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)，它能在线性时间 $O(|S|)$ 内完成这项任务。其核心思想是一种优雅的动态规划：为了计算字符串前缀 `S[0..i]` 的最长 border，我们可以利用已经计算出的、更短前缀 `S[0..i-1]` 的结果。
 
 想象我们正在逐个字符地扩展我们的前缀。当我们处理到第 $i$ 个字符时，我们已经知道 `S[0..i-1]` 的最长 border 长度，比如说 `length`。这意味着 `S[0..length-1]` 和 `S[i-length..i-1]` 是完全相同的。现在，我们只需要比较下一个字符：`S[length]` 和 `S[i]`。如果它们相等，太棒了！我们成功地将 border 的长度扩展了 1，所以 `S[0..i]` 的最长 border 长度就是 `length + 1`。
 
-但如果不相等呢？这就是 KMP [算法](@article_id:331821)的精髓所在。我们不必从头再来。`S[0..i-1]` 的最长 border (`S[0..length-1]`) 本身也可能拥有更短的 border。这个更短的 border 的长度，恰好就存储在 `pi[length - 1]` 中。于是，我们“回退”到一个更短的候选 border，然后再次尝试比较。这个过程就像是沿着一条预先计算好的“失败路径”进行高效的回溯，直到找到一个可以扩展的 border，或者最终确认不存在非零长度的 border。这个过程避免了任何不必要的字符比较，通过一种巧妙的“[摊还分析](@article_id:333701)”，可以证明其总时间是线性的 。这就像在一段复杂的乐谱中寻找重复的旋律，当一个音符不匹配时，一个训练有素的音乐家不会回到乐谱的开头，而是会根据已经确认的节奏模式，跳转到下一个最可能匹配的位置。
+但如果不相等呢？这就是 KMP [算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的精髓所在。我们不必从头再来。`S[0..i-1]` 的最长 border (`S[0..length-1]`) 本身也可能拥有更短的 border。这个更短的 border 的长度，恰好就存储在 `pi[length - 1]` 中。于是，我们“回退”到一个更短的候选 border，然后再次尝试比较。这个过程就像是沿着一条预先计算好的“失败路径”进行高效的回溯，直到找到一个可以扩展的 border，或者最终确认不存在非零长度的 border。这个过程避免了任何不必要的字符比较，通过一种巧妙的“[摊还分析](@keyword=amortized_analysis|lang=zh-CN|style=Feynman)”，可以证明其总时间是线性的 [@problem_id:3276209]。这就像在一段复杂的乐谱中寻找重复的旋律，当一个音符不匹配时，一个训练有素的音乐家不会回到乐谱的开头，而是会根据已经确认的节奏模式，跳转到下一个最可能匹配的位置。
 
 ### 字符串的韵律：周期性
 
@@ -29,59 +29,59 @@
 
 **周期性-边界定理** (Periodicity Lemma) 的一个推论告诉我们一个深刻的事实：一个长度为 $n$ 的字符串 $S$ 拥有一个长度为 $b$ 的 border，当且仅当它拥有一个长度为 $p = n - b$ 的周期。
 
-这太奇妙了！这意味着，寻找一个字符串的 **最短周期**，等价于寻找它的 **最长 border**。我们刚刚掌握的、用于计算最长 border 的高效 KMP 前缀函数[算法](@article_id:331821)，现在立刻可以被用来揭示字符串的内在韵律。只需计算出整个字符串 $S$ 的最长 border 长度 $b_{max} = \pi[n-1]$，它的最短周期长度就是 $n - b_{max}$ 。一个单一的、优雅的工具，同时解决了两个看起来截然不同的问题。这正是科学之美的体现——发现不同现象背后统一的规律。
+这太奇妙了！这意味着，寻找一个字符串的 **最短周期**，等价于寻找它的 **最长 border**。我们刚刚掌握的、用于计算最长 border 的高效 KMP 前缀函数[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)，现在立刻可以被用来揭示字符串的内在韵律。只需计算出整个字符串 $S$ 的最长 border 长度 $b_{max} = \pi[n-1]$，它的最短周期长度就是 $n - b_{max}$ [@problem_id:3276273]。一个单一的、优雅的工具，同时解决了两个看起来截然不同的问题。这正是科学之美的体现——发现不同现象背后统一的规律。
 
-### 另一副透镜：Z-[算法](@article_id:331821)
+### 另一副透镜：Z-[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)
 
-条条大路通罗马。除了 KMP，还有没有其他方法来洞察字符串的模式呢？答案是肯定的。让我们认识一下 **Z-[算法](@article_id:331821) (Z-Algorithm)**。
+条条大路通罗马。除了 KMP，还有没有其他方法来洞察字符串的模式呢？答案是肯定的。让我们认识一下 **Z-[算法](@keyword=algorithm|lang=zh-CN|style=Feynman) (Z-Algorithm)**。
 
-KMP 的 $\pi$ 数组比较的是“前缀的前缀”和“前缀的后缀”。而 Z-[算法](@article_id:331821)则采取了更直接的视角：它比较的是字符串的 **每一个后缀** 与 **整个字符串本身**。对于一个字符串 $S$，它的 Z-数组 $Z$ 被定义为：$Z[i]$ 是 $S$ 的从第 $i$ 个位置开始的后缀 `S[i..]` 与 $S$ 整个字符串的最长公共前缀的长度。
+KMP 的 $\pi$ 数组比较的是“前缀的前缀”和“前缀的后缀”。而 Z-[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)则采取了更直接的视角：它比较的是字符串的 **每一个后缀** 与 **整个字符串本身**。对于一个字符串 $S$，它的 Z-数组 $Z$ 被定义为：$Z[i]$ 是 $S$ 的从第 $i$ 个位置开始的后缀 `S[i..]` 与 $S$ 整个字符串的最长公共前缀的长度。
 
-Z-[算法](@article_id:331821)同样拥有线性时间的魔法。它通过维护一个“Z-box”——一个已经匹配到最右端的区间 $[l, r]$——来智能地跳过大量不必要的比较。如果当前的索引 $i$ 位于这个 Z-box 内，[算法](@article_id:331821)就可以利用已经计算出的 $Z$ 值来为 $Z[i]$ 提供一个初始的下界，从而避免从零开始比较。这又是一个通过[摊还分析](@article_id:333701)证明其线性的[算法](@article_id:331821)典范。
+Z-[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)同样拥有线性时间的魔法。它通过维护一个“Z-box”——一个已经匹配到最右端的区间 $[l, r]$——来智能地跳过大量不必要的比较。如果当前的索引 $i$ 位于这个 Z-box 内，[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)就可以利用已经计算出的 $Z$ 值来为 $Z[i]$ 提供一个初始的下界，从而避免从零开始比较。这又是一个通过[摊还分析](@keyword=amortized_analysis|lang=zh-CN|style=Feynman)证明其线性的[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)典范。
 
-有趣的是，Z-[算法](@article_id:331821)同样可以用来发现周期性。如果 $p + Z[p] \ge n$，就意味着从 $p$ 开始的后缀一直匹配到了字符串的末尾，这恰恰证明了 $p$ 是 $S$ 的一个周期 。
+有趣的是，Z-[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)同样可以用来发现周期性。如果 $p + Z[p] \ge n$，就意味着从 $p$ 开始的后缀一直匹配到了字符串的末尾，这恰恰证明了 $p$ 是 $S$ 的一个周期 [@problem_id:3276237]。
 
-现在，一个更深刻的问题摆在我们面前：KMP 的 border 世界和 Z-[算法](@article_id:331821)的“全局前缀”世界，看起来如此不同，它们之间是否也有内在的联系？答案依然是肯定的。存在一个同样在线性时间内运行的优美[算法](@article_id:331821)，可以将一个 Z-数组精确地转换为一个 KMP 的 $\pi$ 数组，反之亦然 。这就像物理学中，我们发现电和磁虽然现象不同，但本质上是同一枚硬币的两面。在字符串的世界里，不同的高效[算法](@article_id:331821)，往往只是从不同角度对同一深层结构进行的观察和描述。
+现在，一个更深刻的问题摆在我们面前：KMP 的 border 世界和 Z-[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的“全局前缀”世界，看起来如此不同，它们之间是否也有内在的联系？答案依然是肯定的。存在一个同样在线性时间内运行的优美[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)，可以将一个 Z-数组精确地转换为一个 KMP 的 $\pi$ 数组，反之亦然 [@problem_id:3276184]。这就像物理学中，我们发现电和磁虽然现象不同，但本质上是同一枚硬币的两面。在字符串的世界里，不同的高效[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)，往往只是从不同角度对同一深层结构进行的观察和描述。
 
 ### 超越单个字符串：Trie 树与字典
 
 到目前为止，我们的探索都聚焦于单个字符串。但现实世界中，我们常常需要处理成千上万个字符串，比如一个字典、一个基因数据库，或者搜索引擎的查询建议。
 
-处理字符串集合最自然的[数据结构](@article_id:325845)是 **Trie 树**，也叫[前缀树](@article_id:638244)。它的结构非常直观：从根节点出发的每一条路径都代表一个前缀。所有共享某个前缀的字符串，都会在 Trie 树中经过同一条路径。
+处理字符串集合最自然的[数据结构](@keyword=data_structures|lang=zh-CN|style=Feynman)是 **Trie 树**，也叫[前缀树](@keyword=trie_data_structure|lang=zh-CN|style=Feynman)。它的结构非常直观：从根节点出发的每一条路径都代表一个前缀。所有共享某个前缀的字符串，都会在 Trie 树中经过同一条路径。
 
-然而，标准的 Trie 树可能很“浪费”。如果有一系列节点都只有一个孩子，它们就会形成一条长长的、毫无[信息量](@article_id:333051)的“链条”。为了追求优雅和效率，我们将其压缩，得到了 **压缩 Trie 树 (Compressed Trie)**，也叫[基数](@article_id:298224)树 (Radix Tree)。在压缩 Trie 树中，一条边可以代表一整个字符串片段，而不仅仅是单个字符。
+然而，标准的 Trie 树可能很“浪费”。如果有一系列节点都只有一个孩子，它们就会形成一条长长的、毫无[信息量](@keyword=surprisal|lang=zh-CN|style=Feynman)的“链条”。为了追求优雅和效率，我们将其压缩，得到了 **压缩 Trie 树 (Compressed Trie)**，也叫[基数](@keyword=cardinality|lang=zh-CN|style=Feynman)树 (Radix Tree)。在压缩 Trie 树中，一条边可以代表一整个字符串片段，而不仅仅是单个字符。
 
-这种结构威力巨大。例如，在自动补全系统中，我们需要为用户输入的每个词找到最短的、能唯一标识它的前缀。利用压缩 Trie 树，这个问题迎刃而解。我们只需在构建树时，为每个节点记录一个 `pass_count`——有多少个原始字符串的路径经过此节点。当我们沿着代表某个单词的路径遍历时，一旦我们进入一个 `pass_count` 为 1 的子树，就意味着从这里开始的路径是唯一的。这个单词的最短唯一前缀，就是到达前一个 `pass_count > 1` 的节点路径，再加上通往这个 `pass_count = 1` 节点的边上的第一个字符 。
+这种结构威力巨大。例如，在自动补全系统中，我们需要为用户输入的每个词找到最短的、能唯一标识它的前缀。利用压缩 Trie 树，这个问题迎刃而解。我们只需在构建树时，为每个节点记录一个 `pass_count`——有多少个原始字符串的路径经过此节点。当我们沿着代表某个单词的路径遍历时，一旦我们进入一个 `pass_count` 为 1 的子树，就意味着从这里开始的路径是唯一的。这个单词的最短唯一前缀，就是到达前一个 `pass_count > 1` 的节点路径，再加上通往这个 `pass_count = 1` 节点的边上的第一个字符 [@problem_id:3276249]。
 
-### 审视所有后缀：[后缀数组](@article_id:335036)与[后缀树](@article_id:641497)之力
+### 审视所有后缀：[后缀数组](@keyword=suffix_array|lang=zh-CN|style=Feynman)与[后缀树](@keyword=suffix_tree|lang=zh-CN|style=Feynman)之力
 
 让我们再次回到单个字符串的分析，但这一次，我们将采取一个更大胆、更全局的视角：同时审视一个字符串的 **所有后缀**。这听起来可能有些疯狂，但正是这一视角，为我们打开了通往现代字符串处理核心技术的大门。
 
-首先登场的是 **[后缀数组](@article_id:335036) (Suffix Array, SA)**。它的定义异常简单：就是一个整数数组，存储了将字符串所有后缀按[字典序排序](@article_id:303467)后，这些后缀在原字符串中的起始位置。它本身不存储任何字符串，只是一个关于“顺序”的索引。
+首先登场的是 **[后缀数组](@keyword=suffix_array|lang=zh-CN|style=Feynman) (Suffix Array, SA)**。它的定义异常简单：就是一个整数数组，存储了将字符串所有后缀按[字典序排序](@keyword=lexicographical_ordering|lang=zh-CN|style=Feynman)后，这些后缀在原字符串中的起始位置。它本身不存储任何字符串，只是一个关于“顺序”的索引。
 
-如果说[后缀数组](@article_id:335036)是骨架，那么 **LCP 数组 (Longest Common Prefix Array)** 就是连接骨架的肌腱。LCP 数组与[后缀数组](@article_id:335036)相伴而生，`LCP[i]` 记录了在排好序的[后缀数组](@article_id:335036)中，第 $i$ 个后缀与第 $i-1$ 个后缀的最长公共前缀的长度。
+如果说[后缀数组](@keyword=suffix_array|lang=zh-CN|style=Feynman)是骨架，那么 **LCP 数组 (Longest Common Prefix Array)** 就是连接骨架的肌腱。LCP 数组与[后缀数组](@keyword=suffix_array|lang=zh-CN|style=Feynman)相伴而生，`LCP[i]` 记录了在排好序的[后缀数组](@keyword=suffix_array|lang=zh-CN|style=Feynman)中，第 $i$ 个后缀与第 $i-1$ 个后缀的最长公共前缀的长度。
 
-构建 LCP 数组同样存在一个名为 **Kasai [算法](@article_id:331821)** 的线性时间奇迹 。它的核心不等式 $h(i) \ge h(i-1) - 1$ 揭示了，当我们按照后缀在 **原字符串** 中的顺序（而非[字典序](@article_id:314060)）来考察 LCP 值时，它们之间存在着一种隐藏的、可预测的关联。这使得计算 LCP 值时，我们总能从一个已知的下界开始，从而避免了大量冗余工作。
+构建 LCP 数组同样存在一个名为 **Kasai [算法](@keyword=algorithm|lang=zh-CN|style=Feynman)** 的线性时间奇迹 [@problem_id:3276114]。它的核心不等式 $h(i) \ge h(i-1) - 1$ 揭示了，当我们按照后缀在 **原字符串** 中的顺序（而非[字典序](@keyword=dictionary_order|lang=zh-CN|style=Feynman)）来考察 LCP 值时，它们之间存在着一种隐藏的、可预测的关联。这使得计算 LCP 值时，我们总能从一个已知的下界开始，从而避免了大量冗余工作。
 
-[后缀数组](@article_id:335036)和 LCP 数组的组合威力无穷。它们是 **[后缀树](@article_id:641497) (Suffix Tree)** 的一种间接但等价的表示。[后缀树](@article_id:641497)可以被看作是字符串所有后缀构成的压缩 Trie 树。[后缀数组](@article_id:335036)给出了[后缀树](@article_id:641497)所有叶子节点的[字典序](@article_id:314060)[排列](@article_id:296886)，而 LCP 数组则告诉我们这些叶子节点的父节点——也就是内部节点——的深度信息 。有了 SA 和 LCP，我们几乎就拥有了[后缀树](@article_id:641497)的所有结构信息。
+[后缀数组](@keyword=suffix_array|lang=zh-CN|style=Feynman)和 LCP 数组的组合威力无穷。它们是 **[后缀树](@keyword=suffix_tree|lang=zh-CN|style=Feynman) (Suffix Tree)** 的一种间接但等价的表示。[后缀树](@keyword=suffix_tree|lang=zh-CN|style=Feynman)可以被看作是字符串所有后缀构成的压缩 Trie 树。[后缀数组](@keyword=suffix_array|lang=zh-CN|style=Feynman)给出了[后缀树](@keyword=suffix_tree|lang=zh-CN|style=Feynman)所有叶子节点的[字典序](@keyword=dictionary_order|lang=zh-CN|style=Feynman)[排列](@keyword=permutation|lang=zh-CN|style=Feynman)，而 LCP 数组则告诉我们这些叶子节点的父节点——也就是内部节点——的深度信息 [@problem_id:3276147]。有了 SA 和 LCP，我们几乎就拥有了[后缀树](@keyword=suffix_tree|lang=zh-CN|style=Feynman)的所有结构信息。
 
-例如，想计算一个字符串中有多少个不同的子串吗？所有子串的总数是 $\frac{n(n+1)}{2}$。而当我们按[字典序](@article_id:314060)考察所有后缀时，每个后缀新贡献的、前所未见的子串数量，恰好是该后缀的长度减去它与前一个后缀的 LCP 值。因此，不同的子串总数就是所有后缀长度之和，减去所有 LCP 值的总和 。一个复杂的计数问题，就这样被一个简单的算式解决了。
+例如，想计算一个字符串中有多少个不同的子串吗？所有子串的总数是 $\frac{n(n+1)}{2}$。而当我们按[字典序](@keyword=dictionary_order|lang=zh-CN|style=Feynman)考察所有后缀时，每个后缀新贡献的、前所未见的子串数量，恰好是该后缀的长度减去它与前一个后缀的 LCP 值。因此，不同的子串总数就是所有后缀长度之和，减去所有 LCP 值的总和 [@problem_id:3276147]。一个复杂的计数问题，就这样被一个简单的算式解决了。
 
-### 终极字符串机器：[后缀自动机](@article_id:641926)
+### 终极字符串机器：[后缀自动机](@keyword=suffix_automaton|lang=zh-CN|style=Feynman)
 
-我们已经见过了处理前缀的 Trie 树，处理后缀的[后缀树](@article_id:641497)。是否存在一种集大成者，一种终极的字符串[数据结构](@article_id:325845)？
+我们已经见过了处理前缀的 Trie 树，处理后缀的[后缀树](@keyword=suffix_tree|lang=zh-CN|style=Feynman)。是否存在一种集大成者，一种终极的字符串[数据结构](@keyword=data_structures|lang=zh-CN|style=Feynman)？
 
-答案是 **[后缀自动机](@article_id:641926) (Suffix Automaton, SA)**，有时也被称为有向无环词图 (DAWG)。它被定义为能够识别一个字符串 **所有子串** 的 **最小** [确定性有限自动机](@article_id:325047) (DFA)。这听起来非常抽象，但它的内在结构美得令人窒息。
+答案是 **[后缀自动机](@keyword=suffix_automaton|lang=zh-CN|style=Feynman) (Suffix Automaton, SA)**，有时也被称为有向无环词图 (DAWG)。它被定义为能够识别一个字符串 **所有子串** 的 **最小** [确定性有限自动机](@keyword=deterministic_finite_automaton|lang=zh-CN|style=Feynman) (DFA)。这听起来非常抽象，但它的内在结构美得令人窒息。
 
-*   **状态 (States)**：[后缀自动机](@article_id:641926)的状态不再仅仅代表前缀或后缀。它代表了更深刻的概念——**`endpos` [等价类](@article_id:316440)**。所有在原字符串中结束位置集合完全相同的子串，都属于同一个等价类，对应自动机中的同一个状态。
-*   **后缀链接 (Suffix Links)**：这是[后缀自动机](@article_id:641926)的“灵魂”。每个状态（除了初始状态）都有一个后缀链接，它像一条[时空](@article_id:370647)隧道，直接将代表字符串 $w$ 的状态，连接到代表 $w$ 的最长真后缀所在的状态。所有后缀链接组合在一起，形成了一棵能精确捕捉字符串内部所有后缀关系的树状结构。
+*   **状态 (States)**：[后缀自动机](@keyword=suffix_automaton|lang=zh-CN|style=Feynman)的状态不再仅仅代表前缀或后缀。它代表了更深刻的概念——**`endpos` [等价类](@keyword=equivalence_classes|lang=zh-CN|style=Feynman)**。所有在原字符串中结束位置集合完全相同的子串，都属于同一个等价类，对应自动机中的同一个状态。
+*   **后缀链接 (Suffix Links)**：这是[后缀自动机](@keyword=suffix_automaton|lang=zh-CN|style=Feynman)的“灵魂”。每个状态（除了初始状态）都有一个后缀链接，它像一条[时空](@keyword=space_time|lang=zh-CN|style=Feynman)隧道，直接将代表字符串 $w$ 的状态，连接到代表 $w$ 的最长真后缀所在的状态。所有后缀链接组合在一起，形成了一棵能精确捕捉字符串内部所有后缀关系的树状结构。
 
-[后缀自动机](@article_id:641926)的威力是惊人的。想计算字符串中所有子串的总出现次数？我们只需构建出[后缀自动机](@article_id:641926)，然后沿着后缀链接构成的树，从叶节点向根节点传递每个状态的出现次数（一个状态的出现次数是其 `endpos` 集合的大小）。最后，将每个状态代表的子串数量乘以该状态的出现次数，再求和，就得到了最终答案 。整个过程行云流水，且同样是线性时间复杂度。
+[后缀自动机](@keyword=suffix_automaton|lang=zh-CN|style=Feynman)的威力是惊人的。想计算字符串中所有子串的总出现次数？我们只需构建出[后缀自动机](@keyword=suffix_automaton|lang=zh-CN|style=Feynman)，然后沿着后缀链接构成的树，从叶节点向根节点传递每个状态的出现次数（一个状态的出现次数是其 `endpos` 集合的大小）。最后，将每个状态代表的子串数量乘以该状态的出现次数，再求和，就得到了最终答案 [@problem_id:3276148]。整个过程行云流水，且同样是线性时间复杂度。
 
-最后，让我们将这一切串联起来。[后缀自动机](@article_id:641926)是这些结构中最紧凑的。我们可以证明，对于同一个字符串，其[后缀自动机](@article_id:641926)的状态数 $q$，总是不超过其[后缀树](@article_id:641497)的节点数 $V$ 。这从理论上确立了它作为识别子串的“最小”完美机器的地位。
+最后，让我们将这一切串联起来。[后缀自动机](@keyword=suffix_automaton|lang=zh-CN|style=Feynman)是这些结构中最紧凑的。我们可以证明，对于同一个字符串，其[后缀自动机](@keyword=suffix_automaton|lang=zh-CN|style=Feynman)的状态数 $q$，总是不超过其[后缀树](@keyword=suffix_tree|lang=zh-CN|style=Feynman)的节点数 $V$ [@problem_id:3276147]。这从理论上确立了它作为识别子串的“最小”完美机器的地位。
 
 ### 结语：经典与前沿
 
-值得注意的是，我们讨论的这些经典数据结构——KMP 的 $\pi$ 数组、Z-数组、[后缀数组](@article_id:335036)、[后缀树](@article_id:641497)、[后缀自动机](@article_id:641926)——它们的[空间复杂度](@article_id:297247)通常都是 $O(n)$，即与字符串长度成正比。即使对于像斐波那契字符串或 `a...a` 这样高度重复的文本，这些 **经典** 结构仍然需要线性的空间来存储其 $\Theta(n)$ 个节点、指针或索引 。
+值得注意的是，我们讨论的这些经典数据结构——KMP 的 $\pi$ 数组、Z-数组、[后缀数组](@keyword=suffix_array|lang=zh-CN|style=Feynman)、[后缀树](@keyword=suffix_tree|lang=zh-CN|style=Feynman)、[后缀自动机](@keyword=suffix_automaton|lang=zh-CN|style=Feynman)——它们的[空间复杂度](@keyword=space_complexity|lang=zh-CN|style=Feynman)通常都是 $O(n)$，即与字符串长度成正比。即使对于像斐波那契字符串或 `a...a` 这样高度重复的文本，这些 **经典** 结构仍然需要线性的空间来存储其 $\Theta(n)$ 个节点、指针或索引 [@problem_id:3276288]。
 
-这为我们指明了前沿的方向。在处理[基因组学](@article_id:298572)等领域中极其巨大且高度重复的字符串时，研究者们开发出了新一代的 **压缩数据结构**。这些结构能够利用字符串的内在重[复性](@article_id:342184)，将空间开销降低到与其信息内容（例如 [Lempel-Ziv](@article_id:327886) 压缩后的大小）相关的水平，突破了 $O(n)$ 的经典界限。而这一切，都建立在我们今天所探索的这些优美而深刻的基本原理之上。
+这为我们指明了前沿的方向。在处理[基因组学](@keyword=genomics|lang=zh-CN|style=Feynman)等领域中极其巨大且高度重复的字符串时，研究者们开发出了新一代的 **压缩数据结构**。这些结构能够利用字符串的内在重[复性](@keyword=renaturation|lang=zh-CN|style=Feynman)，将空间开销降低到与其信息内容（例如 [Lempel-Ziv](@keyword=lempel_ziv|lang=zh-CN|style=Feynman) 压缩后的大小）相关的水平，突破了 $O(n)$ 的经典界限。而这一切，都建立在我们今天所探索的这些优美而深刻的基本原理之上。

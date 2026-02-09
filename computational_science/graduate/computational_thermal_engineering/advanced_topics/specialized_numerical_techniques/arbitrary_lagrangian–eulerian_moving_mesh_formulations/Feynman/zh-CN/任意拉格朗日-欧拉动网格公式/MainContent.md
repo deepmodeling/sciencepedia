@@ -1,7 +1,7 @@
 ## 引言
-在计算科学与工程领域，尤其是在热流科学中，准确模拟包含运动或变形边界的物理系统是一项长期存在的挑战。传统的数值方法通常依赖于两种截然不同的观察视角：拉格朗日方法和欧拉方法。[拉格朗日方法](@entry_id:142825)跟随物[质点](@entry_id:186768)运动，能直观地追踪界面，但在[大变形](@entry_id:167243)下会导致网格严重扭曲；而欧拉方法使用固定的空间网格，虽能轻松处理复杂的流动拓扑，却难以精确描述运动的边界。这种固有的矛盾构成了一个知识鸿沟：我们如何才能既精确捕捉边界的动态，又避免灾难性的网格失效？
+在计算科学与工程领域，尤其是在热流科学中，准确模拟包含运动或变形边界的物理系统是一项长期存在的挑战。传统的数值方法通常依赖于两种截然不同的观察视角：拉格朗日方法和欧拉方法。[拉格朗日方法](@keyword=lagrangian_method|lang=zh-CN|style=Feynman)跟随物[质点](@keyword=point_mass|lang=zh-CN|style=Feynman)运动，能直观地追踪界面，但在[大变形](@keyword=large_deformations|lang=zh-CN|style=Feynman)下会导致网格严重扭曲；而欧拉方法使用固定的空间网格，虽能轻松处理复杂的流动拓扑，却难以精确描述运动的边界。这种固有的矛盾构成了一个知识鸿沟：我们如何才能既精确捕捉边界的动态，又避免灾难性的网格失效？
 
-任意拉格朗日-欧拉（Arbitrary Lagrangian–Eulerian, ALE）方法正是为了解决这一难题而生。它引入了一种革命性的思想，即[计算网格](@entry_id:168560)的运动可以独立于物质运动和空间坐标系，从而兼具两种经典方法的优点。本文旨在系统性地剖析[ALE方法](@entry_id:174313)。在接下来的章节中，你将学到：第一章“**原理与机制**”将深入探讨ALE方法的数学基础，包括其核心方程、几何守恒律以及对稳定性和精度的影响。第二章“**应用与跨学科连接**”将展示ALE如何在流固耦合、生物力学和天体物理学等前沿领域大放异彩。最后，第三章“**动手实践**”将通过具体的编码和分析练习，帮助你将理论知识转化为实践能力。让我们首先进入第一章，揭开[ALE方法](@entry_id:174313)巧妙结合[拉格朗日与欧拉](@entry_id:270774)视角的数学面纱。
+任意拉格朗日-欧拉（Arbitrary Lagrangian–Eulerian, ALE）方法正是为了解决这一难题而生。它引入了一种革命性的思想，即[计算网格](@keyword=computational_mesh|lang=zh-CN|style=Feynman)的运动可以独立于物质运动和空间坐标系，从而兼具两种经典方法的优点。本文旨在系统性地剖析[ALE方法](@keyword=arbitrary_lagrangian_eulerian|lang=zh-CN|style=Feynman)。在接下来的章节中，你将学到：第一章“**原理与机制**”将深入探讨ALE方法的数学基础，包括其核心方程、几何守恒律以及对稳定性和精度的影响。第二章“**应用与跨学科连接**”将展示ALE如何在流固耦合、生物力学和天体物理学等前沿领域大放异彩。最后，第三章“**动手实践**”将通过具体的编码和分析练习，帮助你将理论知识转化为实践能力。让我们首先进入第一章，揭开[ALE方法](@keyword=arbitrary_lagrangian_eulerian|lang=zh-CN|style=Feynman)巧妙结合[拉格朗日与欧拉](@keyword=lagrangian_and_eulerian|lang=zh-CN|style=Feynman)视角的数学面纱。
 
 ## 原理与机制
 
@@ -13,11 +13,11 @@
 
 ### 三种视角：拉格朗日、欧拉与“任意”观察者
 
-[ALE方法](@entry_id:174313)的思想既简单又深刻：它引入了一个“任意”的观察者。我们的观察点（即计算网格）不再被强制要求静止不动（欧拉），也不必完全跟随物质运动（拉格朗日）。相反，我们可以根据需要，以任意的速度[移动网格](@entry_id:752196)。
+[ALE方法](@keyword=arbitrary_lagrangian_eulerian|lang=zh-CN|style=Feynman)的思想既简单又深刻：它引入了一个“任意”的观察者。我们的观察点（即计算网格）不再被强制要求静止不动（欧拉），也不必完全跟随物质运动（拉格朗日）。相反，我们可以根据需要，以任意的速度移动网格。
 
 我们可以把这想象成一位技艺高超的摄影师在拍摄一场激烈的足球比赛。拉格朗日摄像机被绑在足球上，画面会天旋地转，最终变得毫无用处。欧拉摄像机被固定在看台上，当比赛在球场另一端进行时，它就无能为力了。而ALE摄像机则由一位聪明的摄影师操作，他可以自由地平移、缩放镜头，始终将关键球员和动作保持在画面中心，既不与任何一个球员绑定，也不完全静止。这位摄影师移动摄像机的速度，就是我们所说的**网格速度 (mesh velocity)**，记作 $\boldsymbol{w}$。
 
-这个简单的理念赋予了我们巨大的灵活性。在流固耦合问题中，我们可以让网格在固体边界上精确地跟随固体运动（即在边界上 $\boldsymbol{w}$ 等于固体速度），而在远离边界的流体内部，让[网格平滑](@entry_id:167649)地移动甚至保持静止，从而避免[拉格朗日方法](@entry_id:142825)中的网格扭曲问题。
+这个简单的理念赋予了我们巨大的灵活性。在流固耦合问题中，我们可以让网格在固体边界上精确地跟随固体运动（即在边界上 $\boldsymbol{w}$ 等于固体速度），而在远离边界的流体内部，让[网格平滑](@keyword=mesh_smoothing|lang=zh-CN|style=Feynman)地移动甚至保持静止，从而避免[拉格朗日方法](@keyword=lagrangian_method|lang=zh-CN|style=Feynman)中的网格扭曲问题。
 
 ### 运动参考系下的物理定律：方程如何变形？
 
@@ -29,43 +29,43 @@ $$
 
 现在，我们换到一个以速度 $\boldsymbol{w}$ 运动的ALE参考系中。在这个参考系里，流体看起来是以什么样的速度在运动呢？答案是**相对对流速度 (relative convective velocity)** $\boldsymbol{c} = \boldsymbol{u} - \boldsymbol{w}$。这正是流体相对于我们移动的网格的速度。
 
-相应地，物理方程中的对流项也必须用这个[相对速度](@entry_id:178060)来描述。更进一步，时间导数的含义也发生了变化。在ALE框架下，我们关心的是在某个**固定网格点**上的变化率，记为 $\left.\frac{\partial T}{\partial t}\right|_{\chi}$。它与固定空间点上的欧拉时间导数 $\frac{\partial T}{\partial t}$ 的关系可以通过简单的[链式法则](@entry_id:190743)建立起来：
+相应地，物理方程中的对流项也必须用这个[相对速度](@keyword=relative_velocity|lang=zh-CN|style=Feynman)来描述。更进一步，时间导数的含义也发生了变化。在ALE框架下，我们关心的是在某个**固定网格点**上的变化率，记为 $\left.\frac{\partial T}{\partial t}\right|_{\chi}$。它与固定空间点上的欧拉时间导数 $\frac{\partial T}{\partial t}$ 的关系可以通过简单的[链式法则](@keyword=derivative_of_composite_functions|lang=zh-CN|style=Feynman)建立起来：
 $$
 \left.\frac{\partial T}{\partial t}\right|_{\chi} = \frac{\partial T}{\partial t} + \boldsymbol{w} \cdot \nabla T
 $$
 这个关系告诉我们，一个移动的观察者所看到的变化率，等于一个静止观察者看到的变化率，叠加上由于自身穿过场（例如温度场）而引起的变化。
 
-将这个关系代入最初的欧拉方程，经过简单的整理，我们就得到了普适的ALE形式的热[输运方程](@entry_id:174281)：
+将这个关系代入最初的欧拉方程，经过简单的整理，我们就得到了普适的ALE形式的热[输运方程](@keyword=transport_equation|lang=zh-CN|style=Feynman)：
 $$
 \rho c \left( \left.\frac{\partial T}{\partial t}\right|_{\chi} + (\boldsymbol{u} - \boldsymbol{w}) \cdot \nabla T \right) = \nabla \cdot (k \nabla T) + \dot{q}
 $$
 这个方程的美妙之处在于它的统一性。
--   当我们选择让网格静止，即 $\boldsymbol{w} = \boldsymbol{0}$，对流项就变回了 $\boldsymbol{u} \cdot \nabla T$，方程也自然地退化为我们熟悉的**[欧拉形式](@entry_id:637896)**。
--   当我们选择让网格完全跟随流体运动，即 $\boldsymbol{w} = \boldsymbol{u}$，相对对流速度为零，对流项 $(\boldsymbol{u} - \boldsymbol{w}) \cdot \nabla T$ 整个消失了！方程变为 $\rho c \frac{\mathrm{D}T}{\mathrm{D}t} = \nabla \cdot (k \nabla T) + \dot{q}$，其中 $\frac{\mathrm{D}T}{\mathrm{D}t}$ 就是[物质导数](@entry_id:262900)。这正是简洁的**[拉格朗日形式](@entry_id:145697)**。
+-   当我们选择让网格静止，即 $\boldsymbol{w} = \boldsymbol{0}$，对流项就变回了 $\boldsymbol{u} \cdot \nabla T$，方程也自然地退化为我们熟悉的**[欧拉形式](@keyword=euler_form|lang=zh-CN|style=Feynman)**。
+-   当我们选择让网格完全跟随流体运动，即 $\boldsymbol{w} = \boldsymbol{u}$，相对对流速度为零，对流项 $(\boldsymbol{u} - \boldsymbol{w}) \cdot \nabla T$ 整个消失了！方程变为 $\rho c \frac{\mathrm{D}T}{\mathrm{D}t} = \nabla \cdot (k \nabla T) + \dot{q}$，其中 $\frac{\mathrm{D}T}{\mathrm{D}t}$ 就是[物质导数](@keyword=convective_derivative|lang=zh-CN|style=Feynman)。这正是简洁的**[拉格朗日形式](@keyword=lagrange_form|lang=zh-CN|style=Feynman)**。
 
 因此，ALE方程不是一个全新的发明，而是将两种经典描述统一在一个更广义的框架下的“主方程”。我们通过自由选择网格速度 $\boldsymbol{w}$，可以在纯欧拉和纯拉格朗日之间的任意状态进行切换和权衡。
 
 ### 运动的几何学：追踪空间本身的流动
 
-当网格在运动和变形时，我们面临一个更深层次的问题：我们用来[度量空间](@entry_id:138860)的“尺子”和“量杯”本身也在变化。我们如何精确地描述和计算这种变化？
+当网格在运动和变形时，我们面临一个更深层次的问题：我们用来[度量空间](@keyword=metric_spaces|lang=zh-CN|style=Feynman)的“尺子”和“量杯”本身也在变化。我们如何精确地描述和计算这种变化？
 
 为了解决这个问题，数学家们引入了**参考域 (reference domain)** $\hat{\Omega}$ 的概念。我们可以把它想象成一个永远不变的、简单的几何形状（比如一个单位正方形或立方体），它的坐标用 $\boldsymbol{\Xi}$ 表示。而我们真正在物理世界中看到的、不断变形的区域，则被称为**物理域 (physical domain)** $\Omega(t)$，坐标用 $\boldsymbol{x}$ 表示。连接这两个域的桥梁，就是**ALE映射** $\boldsymbol{x} = \boldsymbol{\chi}(\boldsymbol{\Xi}, t)$。
 
-这个映射的局部拉伸和旋转特性，可以用一个称为**变形梯度 (deformation gradient)** 的矩阵 $\boldsymbol{F} = \frac{\partial \boldsymbol{\chi}}{\partial \boldsymbol{\Xi}}$ 来描述。而这个[矩阵的行列式](@entry_id:148198)，就是大名鼎鼎的**雅可比行列式 (Jacobian)** $J = \det(\boldsymbol{F})$。
+这个映射的局部拉伸和旋转特性，可以用一个称为**变形梯度 (deformation gradient)** 的矩阵 $\boldsymbol{F} = \frac{\partial \boldsymbol{\chi}}{\partial \boldsymbol{\Xi}}$ 来描述。而这个[矩阵的行列式](@keyword=determinant_of_a_matrix|lang=zh-CN|style=Feynman)，就是大名鼎鼎的**雅可比行列式 (Jacobian)** $J = \det(\boldsymbol{F})$。
 
 雅可比行列式 $J$ 绝不仅仅是一个抽象的数学符号。它有着极其重要的物理意义：它代表了局部的体积（或面积）缩放因子。一个在参考域中体积为 $d\hat{\Omega}$ 的无穷小单元，在经过ALE映射后，其在物理域中的体积就变成了 $d\Omega = J d\hat{\Omega}$。同样，物理空间中的梯度算子 $\nabla_{\boldsymbol{x}}$ 和参考空间中的梯度算子 $\nabla_{\boldsymbol{\Xi}}$ 也通过 $\boldsymbol{F}$ 相互关联。
 
 这引出了一个至关重要的结论：既然空间本身可以被看作是在以速度 $\boldsymbol{w}$ “流动”，那么我们计算单元的体积也必定在随时间变化。要保证计算的准确性，我们必须有一个定律来精确地描述几何本身的演化。
 
-### 你可能从未听过却至关重要的定律：[几何守恒律](@entry_id:170384)
+### 你可能从未听过却至关重要的定律：[几何守恒律](@keyword=geometric_conservation_law|lang=zh-CN|style=Feynman)
 
 现在，我们来到了ALE原理的核心，一个微妙但绝对关键的概念。让我们思考一个思想实验：假设流体完全静止（$\boldsymbol{u} = \boldsymbol{0}$），且整个空间中充满了温度均匀的空气（比如 $T = 20^\circ C$）。在这种情况下，如果我们仅仅是为了优化网格质量而移动计算网格（$\boldsymbol{w} \neq \boldsymbol{0}$），物理上应该发生什么？
 
 答案是显而易见的：什么也不应该发生。温度场应该始终保持均匀的 $20^\circ C$。
 
-然而，我们的[数值算法](@entry_id:752770)可能会“背叛”物理直觉。在离散的计算中，如果我们对一个单元体积的变化计算得不准确，或者说，单元体积的增加量与通过其边界流入的“体积通量”不完全匹配，那么即使在没有任何物理源项的情况下，我们的程序也会凭空“创造”或“消灭”热量。这就像一个会计做账，如果现金的增减和流水账对不上，那一定是哪里出了错。这种错误在数值计算中是不可饶恕的。
+然而，我们的[数值算法](@keyword=numerical_algorithms|lang=zh-CN|style=Feynman)可能会“背叛”物理直觉。在离散的计算中，如果我们对一个单元体积的变化计算得不准确，或者说，单元体积的增加量与通过其边界流入的“体积通量”不完全匹配，那么即使在没有任何物理源项的情况下，我们的程序也会凭空“创造”或“消灭”热量。这就像一个会计做账，如果现金的增减和流水账对不上，那一定是哪里出了错。这种错误在数值计算中是不可饶恕的。
 
-为了防止这种数值“幽灵”的产生，我们必须遵循一条关于几何运动学的铁律，这就是**[几何守恒律](@entry_id:170384) (Geometric Conservation Law, GCL)**。其[微分形式](@entry_id:146747)优美而简洁：
+为了防止这种数值“幽灵”的产生，我们必须遵循一条关于几何运动学的铁律，这就是**[几何守恒律](@keyword=geometric_conservation_law|lang=zh-CN|style=Feynman) (Geometric Conservation Law, GCL)**。其[微分形式](@keyword=differential_forms|lang=zh-CN|style=Feynman)优美而简洁：
 $$
 \frac{\partial J}{\partial t} = J (\nabla \cdot \boldsymbol{w})
 $$
@@ -77,18 +77,18 @@ $$
 
 这些深刻的原理将直接影响到计算科学家的日常工作：保证计算的稳定性和精度。
 
-首先是**稳定性**。对于显式时间积分格式，每一步的时间步长 $\Delta t$ 都受到著名的**CFL条件 (Courant–Friedrichs–Lewy condition)** 的限制。这个条件本质上是说，在一个时间步内，[信息传播](@entry_id:1126500)的距离不能超过一个网格单元的大小。在ALE框架下，[信息传播](@entry_id:1126500)的速度不再是单纯的[流体速度](@entry_id:267320) $|\boldsymbol{u}|$，而是物理波（如声波）相对于[移动网格](@entry_id:752196)的速度。对于可压缩流动，这个关键速度是 $|\boldsymbol{u} - \boldsymbol{w}| + c$（其中 $c$ 是声速）。这意味着，如果我们能聪明地选择网格速度 $\boldsymbol{w}$，让它尽可能地“跟上”流体（即 $\boldsymbol{w} \approx \boldsymbol{u}$），我们就能减小[相对速度](@entry_id:178060) $|\boldsymbol{u} - \boldsymbol{w}|$，从而允许使用更大的、[计算效率](@entry_id:270255)更高的时间步长。
+首先是**稳定性**。对于显式时间积分格式，每一步的时间步长 $\Delta t$ 都受到著名的**CFL条件 (Courant–Friedrichs–Lewy condition)** 的限制。这个条件本质上是说，在一个时间步内，[信息传播](@keyword=information_propagation|lang=zh-CN|style=Feynman)的距离不能超过一个网格单元的大小。在ALE框架下，[信息传播](@keyword=information_propagation|lang=zh-CN|style=Feynman)的速度不再是单纯的[流体速度](@keyword=fluid_velocity|lang=zh-CN|style=Feynman) $|\boldsymbol{u}|$，而是物理波（如声波）相对于移动网格的速度。对于可压缩流动，这个关键速度是 $|\boldsymbol{u} - \boldsymbol{w}| + c$（其中 $c$ 是声速）。这意味着，如果我们能聪明地选择网格速度 $\boldsymbol{w}$，让它尽可能地“跟上”流体（即 $\boldsymbol{w} \approx \boldsymbol{u}$），我们就能减小[相对速度](@keyword=relative_velocity|lang=zh-CN|style=Feynman) $|\boldsymbol{u} - \boldsymbol{w}|$，从而允许使用更大的、[计算效率](@keyword=computational_efficiency|lang=zh-CN|style=Feynman)更高的时间步长。
 
-其次是**精度**。在对流占主导的问题中，标准的中心差分等离散格式很容易产生非物理的[数值振荡](@entry_id:163720)（“小尾巴”）。这种现象的剧烈程度可以用一个[无量纲数](@entry_id:260863)——**单元[佩克莱数](@entry_id:141791) (Péclet number)** 来衡量。在ALE框架下，它的定义是 $Pe_h = \frac{|\boldsymbol{u} - \boldsymbol{w}| h}{\alpha}$，其中 $h$ 是单元尺寸，$\alpha$ 是[热扩散率](@entry_id:144337)。同样地，通过让网格跟随流动，我们可以显著减小 $Pe_h$，使得问题在数值上看起来更偏向于扩散主导，从而抑制数值振荡，提高计算精度。
+其次是**精度**。在对流占主导的问题中，标准的中心差分等离散格式很容易产生非物理的[数值振荡](@keyword=numerical_oscillations|lang=zh-CN|style=Feynman)（“小尾巴”）。这种现象的剧烈程度可以用一个[无量纲数](@keyword=dimensionless_number|lang=zh-CN|style=Feynman)——**单元[佩克莱数](@keyword=péclet_number|lang=zh-CN|style=Feynman) (Péclet number)** 来衡量。在ALE框架下，它的定义是 $Pe_h = \frac{|\boldsymbol{u} - \boldsymbol{w}| h}{\alpha}$，其中 $h$ 是单元尺寸，$\alpha$ 是[热扩散率](@keyword=thermal_diffusivity|lang=zh-CN|style=Feynman)。同样地，通过让网格跟随流动，我们可以显著减小 $Pe_h$，使得问题在数值上看起来更偏向于扩散主导，从而抑制数值振荡，提高计算精度。
 
-这两个例子清晰地表明，选择网格速度 $\boldsymbol{w}$ 远不止是“防止网格缠绕”那么简单，它是一个强大的工具，可以用来主动地调控[数值方法的稳定性](@entry_id:165924)和精度。
+这两个例子清晰地表明，选择网格速度 $\boldsymbol{w}$ 远不止是“防止网格缠绕”那么简单，它是一个强大的工具，可以用来主动地调控[数值方法的稳定性](@keyword=stability_of_numerical_methods|lang=zh-CN|style=Feynman)和精度。
 
-### [网格运动](@entry_id:163293)的艺术：如何选择 $\boldsymbol{w}$？
+### [网格运动](@keyword=mesh_motion|lang=zh-CN|style=Feynman)的艺术：如何选择 $\boldsymbol{w}$？
 
 行文至此，我们自然会问：既然 $\boldsymbol{w}$ 如此重要，我们应该如何选择它呢？这是一个没有唯一正确答案的问题，更像是一门需要权衡和取舍的艺术。
 
 我们知道，在物理边界上，网格必须与边界保持一致。但如何移动内部的网格节点，则有多种策略。常见的策略包括：
--   **光滑化方法**：我们可以把网格想象成一张富有弹性的渔网。当我们拉动渔网的边缘时，内部的节点会平滑地移动。在数学上，这等价于为网格位移或速度求解一个[偏微分](@entry_id:194612)方程，比如**[拉普拉斯方程](@entry_id:143689)**（$\nabla^2 \boldsymbol{w} = \boldsymbol{0}$）或**线弹性方程**。这种方法能有效地将边界的运动平滑地传递到内部，防止网格单元过度扭曲或翻转。
+-   **光滑化方法**：我们可以把网格想象成一张富有弹性的渔网。当我们拉动渔网的边缘时，内部的节点会平滑地移动。在数学上，这等价于为网格位移或速度求解一个[偏微分](@keyword=partial_differentiation|lang=zh-CN|style=Feynman)方程，比如**[拉普拉斯方程](@keyword=laplace_s_equation|lang=zh-CN|style=Feynman)**（$\nabla^2 \boldsymbol{w} = \boldsymbol{0}$）或**线弹性方程**。这种方法能有效地将边界的运动平滑地传递到内部，防止网格单元过度扭曲或翻转。
 -   **自适应方法**：我们还可以更进一步，让网格变得“智能”，自动向物理场变化剧烈的区域（例如激波、边界层或温度梯度大的地方）聚集，从而用更少的计算资源捕捉到关键的物理现象。
 
-最终，网格运动策略的选择是在**保证网格质量**、**降低网格更新的计算成本**以及**严格满足GCL**这几个目标之间寻求最佳平衡的过程。这正是[ALE方法](@entry_id:174313)在理论深度之外，展现其工程应用魅力的所在。
+最终，网格运动策略的选择是在**保证网格质量**、**降低网格更新的计算成本**以及**严格满足GCL**这几个目标之间寻求最佳平衡的过程。这正是[ALE方法](@keyword=arbitrary_lagrangian_eulerian|lang=zh-CN|style=Feynman)在理论深度之外，展现其工程应用魅力的所在。

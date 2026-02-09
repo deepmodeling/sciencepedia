@@ -1,11 +1,11 @@
 ## Introduction
-In the design of [reliable communication](@entry_id:276141) systems, a central challenge lies in navigating the fundamental trade-off between the amount of information transmitted and the system's ability to correct errors. Error-correcting codes are the mathematical tools that manage this balance, but how much error correction can we achieve for a given code length and size? This question highlights the need for rigorous, quantitative limits that guide engineers and theorists alike. The Plotkin bound provides a powerful answer, establishing a sharp upper limit on the size of a code, particularly for codes that demand a high degree of error-correction capability.
+In the design of reliable communication systems, a central challenge lies in navigating the fundamental trade-off between the amount of information transmitted and the system's ability to correct errors. Error-correcting codes are the mathematical tools that manage this balance, but how much error correction can we achieve for a given code length and size? This question highlights the need for rigorous, quantitative limits that guide engineers and theorists alike. The Plotkin bound provides a powerful answer, establishing a sharp upper limit on the size of a code, particularly for codes that demand a high degree of error-correction capability.
 
 This article provides a comprehensive journey into the Plotkin bound, from its elegant theoretical foundations to its practical applications. In the first chapter, **Principles and Mechanisms**, we will derive the bound from first principles using a clever averaging argument, explore the precise conditions under which it applies, and examine its profound asymptotic consequences. Following this, the chapter on **Applications and Interdisciplinary Connections** will demonstrate how the bound serves as an indispensable tool for assessing code feasibility, benchmarking constructions, and making critical design trade-offs, while also exploring its influence on fields like quantum computing. Finally, the **Hands-On Practices** section will allow you to solidify your understanding by applying the bound to solve practical design and analysis problems.
 
 ## Principles and Mechanisms
 
-In the study of [error-correcting codes](@entry_id:153794), a central theme is the inherent trade-off between the number of codewords, which relates to the amount of information that can be transmitted, and the minimum distance between them, which determines the code's ability to detect and correct errors. The Plotkin bound is a foundational result that provides a sharp, quantitative limit on this trade-off, particularly for codes that prioritize high error-correction capability (i.e., large minimum distance) relative to their length. This chapter will derive the bound from first principles, explore its implications, and examine its generalizations, revealing the elegant averaging argument that lies at its core.
+In the study of error-correcting codes, a central theme is the inherent trade-off between the number of codewords, which relates to the amount of information that can be transmitted, and the minimum distance between them, which determines the code's ability to detect and correct errors. The Plotkin bound is a foundational result that provides a sharp, quantitative limit on this trade-off, particularly for codes that prioritize high error-correction capability (i.e., large minimum distance) relative to their length. This chapter will derive the bound from first principles, explore its implications, and examine its generalizations, revealing the elegant averaging argument that lies at its core.
 
 ### The Averaging Argument: A Foundation on Pairwise Distances
 
@@ -23,7 +23,7 @@ $\binom{M}{2} - \sum_{a=1}^{q} \binom{n_{i,a}}{2} = \frac{M(M-1)}{2} - \sum_{a=1
 
 Since $\sum_{a=1}^{q} n_{i,a} = M$, this simplifies to $\frac{1}{2} \left( M^2 - \sum_{a=1}^{q} n_{i,a}^2 \right)$.
 
-To find an upper bound, we must find the *minimum* possible value for the term $\sum_{a=1}^{q} n_{i,a}^2$. By the Cauchy-Schwarz inequality, or by observing that the [sum of squares](@entry_id:161049) is a [convex function](@entry_id:143191), this sum is minimized when the counts $n_{i,a}$ are as equal as possible, i.e., $n_{i,a} = M/q$ for all $a$. This gives the lower bound:
+To find an upper bound, we must find the *minimum* possible value for the term $\sum_{a=1}^{q} n_{i,a}^2$. By the Cauchy-Schwarz inequality, or by observing that the sum of squares is a convex function, this sum is minimized when the counts $n_{i,a}$ are as equal as possible, i.e., $n_{i,a} = M/q$ for all $a$. This gives the lower bound:
 
 $\sum_{a=1}^{q} n_{i,a}^2 \ge q \left( \frac{M}{q} \right)^2 = \frac{M^2}{q}$
 
@@ -31,7 +31,7 @@ Substituting this into our expression for the contribution from position $i$, we
 
 $S \le \sum_{i=1}^{n} \frac{1}{2} \left( M^2 - \frac{M^2}{q} \right) = \frac{n}{2} M^2 \left( 1 - \frac{1}{q} \right) = \frac{n(q-1)}{2q} M^2$
 
-By combining our lower and [upper bounds](@entry_id:274738) on $S$, we arrive at the central inequality:
+By combining our lower and upper bounds on $S$, we arrive at the central inequality:
 
 $\frac{d M(M-1)}{2} \le \frac{n(q-1)}{2q} M^2$
 
@@ -61,7 +61,7 @@ For the important special case of **binary codes** ($q=2$), the applicability co
 
 $M \le \frac{2d}{2d - n}$
 
-To illustrate the importance of the applicability condition, consider a hypothetical [binary code](@entry_id:266597) design with length $n=20$ and minimum distance $d=9$. For this code, $n(1-1/q) = 20(1/2) = 10$. Since $d=9 \le 10$, the condition for a non-trivial bound is not met. Attempting to formally calculate the bound's expression gives $\frac{2d}{2d-n} = \frac{18}{18-20} = -9$. An upper bound of $-9$ on a positive quantity like $M$ is nonsensical and simply confirms that the bound is uninformative in this parameter regime.
+To illustrate the importance of the applicability condition, consider a hypothetical binary code design with length $n=20$ and minimum distance $d=9$. For this code, $n(1-1/q) = 20(1/2) = 10$. Since $d=9 \le 10$, the condition for a non-trivial bound is not met. Attempting to formally calculate the bound's expression gives $\frac{2d}{2d-n} = \frac{18}{18-20} = -9$. An upper bound of $-9$ on a positive quantity like $M$ is nonsensical and simply confirms that the bound is uninformative in this parameter regime.
 
 ### Consequences and Interpretations
 
@@ -117,7 +117,7 @@ Plugging this $d_{\text{eff}}$ into the generalized bound $M \le \frac{2d_{\text
 
 ### Asymptotic Implications: The Plotkin Region
 
-The Plotkin bound has profound implications for the asymptotic performance of families of codes as their length $n \to \infty$. Two key metrics for such families are the **[code rate](@entry_id:176461)** $R = \frac{\log_q M}{n}$ and the **relative distance** $\delta = d/n$.
+The Plotkin bound has profound implications for the asymptotic performance of families of codes as their length $n \to \infty$. Two key metrics for such families are the **code rate** $R = \frac{\log_q M}{n}$ and the **relative distance** $\delta = d/n$.
 
 The Plotkin bound's applicability condition, $d > n(1-1/q)$, can be rewritten in terms of the relative distance as $\delta > 1-1/q$. This domain of high relative distance is sometimes referred to as the Plotkin region. Any family of codes that resides in this region is subject to a severe constraint on its rate.
 
@@ -125,11 +125,11 @@ Let's investigate a family of codes whose relative distance is designed to appro
 
 $M \le \frac{n(1-1/q) + c}{(n(1-1/q) + c) - n(1-1/q)} = \frac{n(1-1/q) + c}{c}$
 
-This result is striking: it shows that for the number of codewords $M$ can grow at most linearly with the block length $n$. Now consider the [code rate](@entry_id:176461):
+This result is striking: it shows that for the number of codewords $M$ can grow at most linearly with the block length $n$. Now consider the code rate:
 
 $R(n) = \frac{\log_q M(n)}{n} \le \frac{\log_q \left(\frac{n(1-1/q) + c}{c}\right)}{n}$
 
-As $n \to \infty$, the numerator grows as $\log_q(n)$, while the denominator grows as $n$. Since the linear term dominates the logarithmic term, the limit of the [code rate](@entry_id:176461) is zero:
+As $n \to \infty$, the numerator grows as $\log_q(n)$, while the denominator grows as $n$. Since the linear term dominates the logarithmic term, the limit of the code rate is zero:
 
 $\lim_{n \to \infty} R(n) = 0$
 

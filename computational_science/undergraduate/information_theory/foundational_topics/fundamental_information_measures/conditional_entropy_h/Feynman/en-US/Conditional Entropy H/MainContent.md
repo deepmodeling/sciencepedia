@@ -1,7 +1,7 @@
 ## Introduction
 In a world awash with data, a fundamental challenge is to measure the value of new information. How much does one fact tell us about another? We intuitively understand that a clue can shrink the pool of possibilities, but how can we quantify this reduction in uncertainty? This is the central problem addressed by conditional entropy, a cornerstone of information theory that provides a rigorous framework for measuring the knowledge gained.
 
-This article will guide you from the intuitive concept to its powerful applications across diverse scientific and engineering fields. First, in **Principles and Mechanisms**, we will break down the core definition of [conditional entropy](@article_id:136267), exploring how it quantifies the average remaining uncertainty and what it means for uncertainty to vanish completely. Next, in **Applications and Interdisciplinary Connections**, we embark on a journey to see how this concept is applied everywhere, from securing communications and building computational models to understanding the laws of physics and the logic of life. Finally, the **Hands-On Practices** section offers a chance to apply these principles, solidifying your understanding by tackling classic problems and building your intuition.
+This article will guide you from the intuitive concept to its powerful applications across diverse scientific and engineering fields. First, in **Principles and Mechanisms**, we will break down the core definition of [conditional entropy](@keyword=conditional_entropy|lang=en-US|style=Feynman), exploring how it quantifies the average remaining uncertainty and what it means for uncertainty to vanish completely. Next, in **Applications and Interdisciplinary Connections**, we embark on a journey to see how this concept is applied everywhere, from securing communications and building computational models to understanding the laws of physics and the logic of life. Finally, the **Hands-On Practices** section offers a chance to apply these principles, solidifying your understanding by tackling classic problems and building your intuition.
 
 ## Principles and Mechanisms
 
@@ -9,15 +9,15 @@ Imagine you are a detective at the scene of a crime. There are a million possibi
 
 But by how much? Can we put a number on it?
 
-This is the central question that [conditional entropy](@article_id:136267) answers. It’s not about the *meaning* of the clue, but about its raw power to narrow down the possibilities. It quantifies the famous saying of Sherlock Holmes: "When you have eliminated the impossible, whatever remains, however improbable, must be the truth." Conditional entropy is the measure of "what remains."
+This is the central question that [conditional entropy](@keyword=conditional_entropy|lang=en-US|style=Feynman) answers. It’s not about the *meaning* of the clue, but about its raw power to narrow down the possibilities. It quantifies the famous saying of Sherlock Holmes: "When you have eliminated the impossible, whatever remains, however improbable, must be the truth." Conditional entropy is the measure of "what remains."
 
 ### The Value of a Clue
 
 Let's trade the detective's trench coat for a data analyst's spreadsheet. Suppose you're analyzing student performance in a large online course. You have a giant table connecting student attendance ('Low', 'Medium', 'High') to their final grade ('Pass', 'Fail'). Overall, let's say it's about a 50-50 split between passing and failing, so your initial uncertainty about a random student's grade is high—one bit, to be precise.
 
-Now, I give you a clue: a particular student, let's call her Alice, had 'High' attendance. Does this mean she passed for certain? Probably not. But your uncertainty has surely decreased. By looking at just the group of students with 'High' attendance, you might find that, say, 8 out of 9 of them passed . Your state of knowledge has been updated. There’s still a chance of failure, but the odds have shifted dramatically.
+Now, I give you a clue: a particular student, let's call her Alice, had 'High' attendance. Does this mean she passed for certain? Probably not. But your uncertainty has surely decreased. By looking at just the group of students with 'High' attendance, you might find that, say, 8 out of 9 of them passed [@problem_id:1612383]. Your state of knowledge has been updated. There’s still a chance of failure, but the odds have shifted dramatically.
 
-The remaining uncertainty, given this *specific* piece of information, is what we call a **specific [conditional entropy](@article_id:136267)**. We can calculate it using the same entropy formula we've seen before, but we apply it to this smaller, more informed world where we *know* attendance was 'High'. If the probabilities for ('Pass', 'Fail') given 'High' attendance are $P(\text{Pass} | \text{High}) = \frac{8}{9}$ and $P(\text{Fail} | \text{High}) = \frac{1}{9}$, the remaining uncertainty is:
+The remaining uncertainty, given this *specific* piece of information, is what we call a **specific [conditional entropy](@keyword=conditional_entropy|lang=en-US|style=Feynman)**. We can calculate it using the same entropy formula we've seen before, but we apply it to this smaller, more informed world where we *know* attendance was 'High'. If the probabilities for ('Pass', 'Fail') given 'High' attendance are $P(\text{Pass} | \text{High}) = \frac{8}{9}$ and $P(\text{Fail} | \text{High}) = \frac{1}{9}$, the remaining uncertainty is:
 
 $$
 H(G \mid A=\text{'High'}) = -\left[ \frac{8}{9} \log_{2}\left(\frac{8}{9}\right) + \frac{1}{9} \log_{2}\left(\frac{1}{9}\right) \right] \approx 0.503 \text{ bits}
@@ -50,7 +50,7 @@ If they tell you the sum is $Z=12$, you know both dice must be 6. Again, your re
 
 But what if they tell you the sum is $Z=7$? The possibilities for the red die $X$ are now $\{1, 2, 3, 4, 5, 6\}$. There are six equally likely possibilities, so your remaining uncertainty is $\log_{2}(6)$ bits. In this case, knowing the sum was 7 told you nothing at all about the red die!
 
-The [conditional entropy](@article_id:136267) $H(X|Z)$ is the average of all these scenarios, weighted by the probability of each sum occurring . You'd calculate the uncertainty for a sum of 2, 3, 4, and so on, and average them all together. The final number tells you, on average, how much ambiguity about the first die remains once the sum is known. It’s a beautifully complete description of the predictive power of $Z$ on $X$. A similar calculation could tell a factory manager the average uncertainty about a microchip's quality ('Defective' or 'Functional') given the production line it came from .
+The [conditional entropy](@keyword=conditional_entropy|lang=en-US|style=Feynman) $H(X|Z)$ is the average of all these scenarios, weighted by the probability of each sum occurring [@problem_id:1612382]. You'd calculate the uncertainty for a sum of 2, 3, 4, and so on, and average them all together. The final number tells you, on average, how much ambiguity about the first die remains once the sum is known. It’s a beautifully complete description of the predictive power of $Z$ on $X$. A similar calculation could tell a factory manager the average uncertainty about a microchip's quality ('Defective' or 'Functional') given the production line it came from [@problem_id:1612399].
 
 ### The Beautiful Sound of Silence: When Uncertainty Vanishes
 
@@ -67,7 +67,7 @@ $$
 H(f(X)|X) = 0
 $$
 
-This is a crucial piece of intuition  . It tells us that if there is a known, fixed rule that connects an input to an output, then knowing the input leaves no questions unanswered about the output. All the formulas and summations collapse to this beautiful, simple zero. It's a sanity check from nature, telling us our definition of [conditional entropy](@article_id:136267) makes perfect sense.
+This is a crucial piece of intuition [@problem_id:1612368] [@problem_id:1612369]. It tells us that if there is a known, fixed rule that connects an input to an output, then knowing the input leaves no questions unanswered about the output. All the formulas and summations collapse to this beautiful, simple zero. It's a sanity check from nature, telling us our definition of [conditional entropy](@keyword=conditional_entropy|lang=en-US|style=Feynman) makes perfect sense.
 
 ### Lingering Whispers: When Uncertainty Remains
 
@@ -75,31 +75,31 @@ The world, of course, is rarely so deterministic. More often, we work backwards:
 
 #### Noisy channels and Equivocation
 
-Imagine a deep-space probe sending a stream of 0s and 1s back to Earth. Let the original bit sent be $X$. The channel is noisy—[cosmic rays](@article_id:158047) might flip a bit—so what we receive is $Y$. This is often modeled as a **Binary Symmetric Channel**, where each bit has some probability $p$ of being flipped .
+Imagine a deep-space probe sending a stream of 0s and 1s back to Earth. Let the original bit sent be $X$. The channel is noisy—[cosmic rays](@keyword=cosmic_rays|lang=en-US|style=Feynman) might flip a bit—so what we receive is $Y$. This is often modeled as a **Binary Symmetric Channel**, where each bit has some probability $p$ of being flipped [@problem_id:1612410].
 
-If we receive a 1, was a 1 actually sent? Maybe. But it could also have been a 0 that got flipped. Knowing $Y$ does not determine $X$ perfectly. The remaining uncertainty about the input, $H(X|Y)$, is called the **[equivocation](@article_id:276250)** of the channel. It’s the average amount of ambiguity the noise creates. For a BSC with a 50/50 input distribution, this remaining uncertainty turns out to be:
+If we receive a 1, was a 1 actually sent? Maybe. But it could also have been a 0 that got flipped. Knowing $Y$ does not determine $X$ perfectly. The remaining uncertainty about the input, $H(X|Y)$, is called the **[equivocation](@keyword=equivocation|lang=en-US|style=Feynman)** of the channel. It’s the average amount of ambiguity the noise creates. For a BSC with a 50/50 input distribution, this remaining uncertainty turns out to be:
 
 $$
 H(X|Y) = H_b(p) = -p \log_{2}(p) - (1-p) \log_{2}(1-p)
 $$
 
-This is the famous [binary entropy function](@article_id:268509)! It tells us that if the channel is perfect ($p=0$), the [equivocation](@article_id:276250) is 0. If the channel is pure chaos ($p=0.5$, a flip is as likely as not), receiving a bit tells us absolutely nothing about what was sent, and the [equivocation](@article_id:276250) is 1 bit—all of the original uncertainty remains.
+This is the famous [binary entropy function](@keyword=binary_entropy_function|lang=en-US|style=Feynman)! It tells us that if the channel is perfect ($p=0$), the [equivocation](@keyword=equivocation|lang=en-US|style=Feynman) is 0. If the channel is pure chaos ($p=0.5$, a flip is as likely as not), receiving a bit tells us absolutely nothing about what was sent, and the [equivocation](@keyword=equivocation|lang=en-US|style=Feynman) is 1 bit—all of the original uncertainty remains.
 
 #### The Secrets in the Code
 
 This idea of remaining uncertainty is the very essence of cryptography. A good encryption scheme should maximize the eavesdropper's uncertainty about the original message (the plaintext, $P$), even after they've intercepted the encrypted message (the ciphertext, $C$). We want to make $H(P|C)$ as large as possible.
 
-Consider a simple Caesar cipher, but with a twist: to encrypt each letter, the key isn't fixed, but is randomly chosen from a small set of possibilities . For instance, maybe we shift by 5 letters with probability $\frac{1}{4}$, and by 18 letters with probability $\frac{3}{4}$. Now, if an attacker intercepts the ciphertext letter 'F', they can't be sure what the original was. It could have been 'A' (if the key was 5) or 'N' (if the key was 18, wrapping around).
+Consider a simple Caesar cipher, but with a twist: to encrypt each letter, the key isn't fixed, but is randomly chosen from a small set of possibilities [@problem_id:1612374]. For instance, maybe we shift by 5 letters with probability $\frac{1}{4}$, and by 18 letters with probability $\frac{3}{4}$. Now, if an attacker intercepts the ciphertext letter 'F', they can't be sure what the original was. It could have been 'A' (if the key was 5) or 'N' (if the key was 18, wrapping around).
 
-Because the attacker knows the probabilities of the keys, they can assign a posterior probability to each of these two possibilities. The [conditional entropy](@article_id:136267) $H(P|C)$ is then simply the entropy of this small probability distribution. It's the residual uncertainty that the probabilistic key protects, a lingering secret that persists even after the ciphertext is known.
+Because the attacker knows the probabilities of the keys, they can assign a posterior probability to each of these two possibilities. The [conditional entropy](@keyword=conditional_entropy|lang=en-US|style=Feynman) $H(P|C)$ is then simply the entropy of this small probability distribution. It's the residual uncertainty that the probabilistic key protects, a lingering secret that persists even after the ciphertext is known.
 
 ### Information in Motion and Structure
 
-The power of [conditional entropy](@article_id:136267) extends far beyond simple pairs of variables. It can describe the flow of information in complex systems that evolve over time.
+The power of [conditional entropy](@keyword=conditional_entropy|lang=en-US|style=Feynman) extends far beyond simple pairs of variables. It can describe the flow of information in complex systems that evolve over time.
 
-Consider a single bit in a computer's memory that has a tendency to be unstable. A 0 might spontaneously flip to a 1 with some probability, and a 1 might flip to a 0 with another . This is a simple **Markov chain**. The uncertainty of the bit's state *now*, $X_i$, given its state in the *previous* moment, $X_{i-1}$, is given by the conditional entropy $H(X_i | X_{i-1})$. This single number captures the inherent unpredictability of the system from one moment to the next. It’s the "information cost" to propagate the state forward one step in time.
+Consider a single bit in a computer's memory that has a tendency to be unstable. A 0 might spontaneously flip to a 1 with some probability, and a 1 might flip to a 0 with another [@problem_id:1612396]. This is a simple **Markov chain**. The uncertainty of the bit's state *now*, $X_i$, given its state in the *previous* moment, $X_{i-1}$, is given by the conditional entropy $H(X_i | X_{i-1})$. This single number captures the inherent unpredictability of the system from one moment to the next. It’s the "information cost" to propagate the state forward one step in time.
 
-Finally, let's connect back to the fundamental idea of counting. Suppose I have a 6-bit binary string, and all $2^6=64$ strings are equally likely. The initial uncertainty is $\log_2(64) = 6$ bits. Now I give you a piece of structural information: the string has a **Hamming weight** of exactly 2, meaning it contains exactly two 1s . How many such strings are there? The answer from [combinatorics](@article_id:143849) is $\binom{6}{2} = 15$.
+Finally, let's connect back to the fundamental idea of counting. Suppose I have a 6-bit binary string, and all $2^6=64$ strings are equally likely. The initial uncertainty is $\log_2(64) = 6$ bits. Now I give you a piece of structural information: the string has a **Hamming weight** of exactly 2, meaning it contains exactly two 1s [@problem_id:1612416]. How many such strings are there? The answer from [combinatorics](@keyword=combinatorics|lang=en-US|style=Feynman) is $\binom{6}{2} = 15$.
 
 By telling you the weight is 2, I've reduced the set of possibilities from 64 to 15. Since all these 15 strings are still equally likely, the remaining uncertainty is simply $\log_2(15)$ bits. This shows the beautiful, direct link between entropy and counting possibilities. Information gain is equivalent to reducing the size of the set of possible solutions.
 

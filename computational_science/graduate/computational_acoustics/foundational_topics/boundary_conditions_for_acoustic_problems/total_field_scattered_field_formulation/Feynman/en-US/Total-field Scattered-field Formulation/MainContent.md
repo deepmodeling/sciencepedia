@@ -1,5 +1,5 @@
 ## Introduction
-In the study of wave phenomena, from the echo of a sonar ping to the scattering of a radar signal, the primary interest often lies not in the initial wave, but in the disturbance it creates. Simulating these scattering events computationally presents a significant challenge: how can we efficiently model the interaction of an object with an incident wave that may extend infinitely, without wasting resources on regions far from the object? This is the fundamental problem that the Total-Field/Scattered-Field (TF/SF) formulation elegantly solves. It is a powerful "divide and conquer" strategy that allows computational physicists and engineers to isolate the scattered field in a well-defined region, making complex scattering problems tractable. This article provides a comprehensive exploration of this vital technique. We will begin by dissecting the core **Principles and Mechanisms**, exploring how the linearity of wave equations allows us to decompose the field and implement this separation on a computational grid. Next, we will journey through its diverse **Applications and Interdisciplinary Connections**, demonstrating its versatility in fields from [aeroacoustics](@entry_id:266763) to photonics. Finally, a series of **Hands-On Practices** will provide concrete exercises to bridge theory with practical implementation. We begin our exploration by uncovering the physical principles and numerical wizardry that make the TF/SF method possible.
+In the study of wave phenomena, from the echo of a sonar ping to the scattering of a radar signal, the primary interest often lies not in the initial wave, but in the disturbance it creates. Simulating these scattering events computationally presents a significant challenge: how can we efficiently model the interaction of an object with an incident wave that may extend infinitely, without wasting resources on regions far from the object? This is the fundamental problem that the Total-Field/Scattered-Field (TF/SF) formulation elegantly solves. It is a powerful "divide and conquer" strategy that allows computational physicists and engineers to isolate the scattered field in a well-defined region, making complex scattering problems tractable. This article provides a comprehensive exploration of this vital technique. We will begin by dissecting the core **Principles and Mechanisms**, exploring how the linearity of wave equations allows us to decompose the field and implement this separation on a computational grid. Next, we will journey through its diverse **Applications and Interdisciplinary Connections**, demonstrating its versatility in fields from [aeroacoustics](@keyword=aeroacoustics|lang=en-US|style=Feynman) to photonics. Finally, a series of **Hands-On Practices** will provide concrete exercises to bridge theory with practical implementation. We begin our exploration by uncovering the physical principles and numerical wizardry that make the TF/SF method possible.
 
 ## Principles and Mechanisms
 
@@ -9,7 +9,7 @@ The answer lies in a beautifully simple yet powerful idea called the **Total-Fie
 
 ### The Magic of Linearity and Superposition
 
-The world of acoustics, at least for the small-amplitude waves of everyday sound, is wonderfully linear. This linearity is a gift, and it brings with it the powerful **[principle of superposition](@entry_id:148082)**. It means that if you have two different sound waves, the total sound you get by playing them together is simply their sum. If wave A is a solution to the laws of acoustics, and wave B is also a solution, then wave A + B is a solution too.
+The world of acoustics, at least for the small-amplitude waves of everyday sound, is wonderfully linear. This linearity is a gift, and it brings with it the powerful **[principle of superposition](@keyword=principle_of_superposition|lang=en-US|style=Feynman)**. It means that if you have two different sound waves, the total sound you get by playing them together is simply their sum. If wave A is a solution to the laws of acoustics, and wave B is also a solution, then wave A + B is a solution too.
 
 The TF/SF method exploits this to its fullest. We say that the **total field** $(p, \mathbf{v})$, which is the actual, physical pressure and velocity field everywhere, can be split into two parts: a known **incident field** $(p^{\mathrm{inc}}, \mathbf{v}^{\mathrm{inc}})$ and an unknown **scattered field** $(p^{\mathrm{scat}}, \mathbf{v}^{\mathrm{scat}})$.
 
@@ -20,9 +20,9 @@ $$
 \mathbf{v} = \mathbf{v}^{\mathrm{inc}} + \mathbf{v}^{\mathrm{scat}}
 $$
 
-The incident field is the wave that would exist if the scattering object wasn't there—a simple, often analytically known wave like a [plane wave](@entry_id:263752). The scattered field is everything else; it is the disturbance, the echo, the shadow created by the object's presence.
+The incident field is the wave that would exist if the scattering object wasn't there—a simple, often analytically known wave like a [plane wave](@keyword=plane_wave|lang=en-US|style=Feynman). The scattered field is everything else; it is the disturbance, the echo, the shadow created by the object's presence.
 
-Because the governing equations of acoustics are linear, and because both the total field and the incident field must obey these laws, a wonderful thing happens: their difference, the scattered field, must also obey the very same laws! . This decomposition isn't just a clever trick; it's a unique and necessary consequence of the physics. For a given physical problem, there is only one possible scattered field that makes the equation work .
+Because the governing equations of acoustics are linear, and because both the total field and the incident field must obey these laws, a wonderful thing happens: their difference, the scattered field, must also obey the very same laws! [@problem_id:4148489]. This decomposition isn't just a clever trick; it's a unique and necessary consequence of the physics. For a given physical problem, there is only one possible scattered field that makes the equation work [@problem_id:4148540].
 
 ### Building the Invisible Wall
 
@@ -45,7 +45,7 @@ $$
 p^{\mathrm{T}} |_{\Gamma} - p^{\mathrm{S}} |_{\Gamma} = p^{\mathrm{inc}} |_{\Gamma}
 $$
 
-The same logic applies to the component of velocity normal to the boundary, $\mathbf{v} \cdot \mathbf{n}$. This gives us a set of "[jump conditions](@entry_id:750965)" that must be enforced at our invisible wall . These equations are the heart of the mechanism. They tell the simulation precisely how to inject the incident wave into the total-field region while simultaneously cancelling it out to create the pure scattered-field region outside.
+The same logic applies to the component of velocity normal to the boundary, $\mathbf{v} \cdot \mathbf{n}$. This gives us a set of "jump conditions" that must be enforced at our invisible wall [@problem_id:4148507]. These equations are the heart of the mechanism. They tell the simulation precisely how to inject the incident wave into the total-field region while simultaneously cancelling it out to create the pure scattered-field region outside.
 
 ### From Physics to Code: A Tale of Staggered Grids
 
@@ -55,29 +55,29 @@ Now, consider a pressure point $p$ in the TF region, right next to the interface
 
 The value is missing its incident part! The solution is beautifully simple: we just add it back in. The FDTD update equation is modified with a **corrective source term**. This term is calculated from the known analytical formula for the incident velocity right at that location on the interface.
 
-For example, for a pressure update at cell $(i_{\Gamma}, j, k)$ just inside the TF region, the correction term looks something like this :
+For example, for a pressure update at cell $(i_{\Gamma}, j, k)$ just inside the TF region, the correction term looks something like this [@problem_id:4148515]:
 
 $$
 S_p = -\frac{\kappa \Delta t}{\Delta x} v_{x,\text{inc}}
 $$
 
-This term precisely compensates for the missing incident velocity flux across the interface. It's the computer's way of enforcing the [jump condition](@entry_id:176163) we derived from physics. A similar correction is applied to the velocity updates on the interface itself.
+This term precisely compensates for the missing incident velocity flux across the interface. It's the computer's way of enforcing the [jump condition](@keyword=jump_condition|lang=en-US|style=Feynman) we derived from physics. A similar correction is applied to the velocity updates on the interface itself.
 
 ### The Perils of a Digital World: Leakage and Dispersion
 
 This elegant scheme seems perfect, but the digital world of the grid has its own quirky rules, which can lead to subtle problems.
 
-One such problem is **numerical leakage**. Remember our staggered grid, where pressure and velocity live in different places? This has a curious consequence. If our interface $\Gamma$ runs along the grid lines where velocity is defined, trying to enforce the [jump condition](@entry_id:176163) using pressure values requires interpolation—estimating a pressure value where none is explicitly stored. This interpolation is never perfect and acts like a small crack in our invisible wall, allowing a bit of the incident field to "leak" into the scattered-field region, contaminating our results. The solution is to be smart about what we enforce. If the interface is aligned with velocity nodes, we should enforce the velocity [jump condition](@entry_id:176163), as the required values are naturally available without interpolation. This minimizes leakage .
+One such problem is **numerical leakage**. Remember our staggered grid, where pressure and velocity live in different places? This has a curious consequence. If our interface $\Gamma$ runs along the grid lines where velocity is defined, trying to enforce the [jump condition](@keyword=jump_condition|lang=en-US|style=Feynman) using pressure values requires interpolation—estimating a pressure value where none is explicitly stored. This interpolation is never perfect and acts like a small crack in our invisible wall, allowing a bit of the incident field to "leak" into the scattered-field region, contaminating our results. The solution is to be smart about what we enforce. If the interface is aligned with velocity nodes, we should enforce the velocity [jump condition](@keyword=jump_condition|lang=en-US|style=Feynman), as the required values are naturally available without interpolation. This minimizes leakage [@problem_id:4148514].
 
-A deeper, more fundamental issue is **numerical dispersion**. In the continuous world, a simple sound wave travels at the speed of sound, $c$, regardless of its frequency or direction. Not so on a grid. On a discrete grid, the speed of a wave depends on its direction relative to the grid axes and its wavelength. It's like a wave traveling through a crystal; the underlying lattice structure affects its propagation. A wave traveling diagonally across the grid cells moves at a different speed than one traveling along a grid axis .
+A deeper, more fundamental issue is **numerical dispersion**. In the continuous world, a simple sound wave travels at the speed of sound, $c$, regardless of its frequency or direction. Not so on a grid. On a discrete grid, the speed of a wave depends on its direction relative to the grid axes and its wavelength. It's like a wave traveling through a crystal; the underlying lattice structure affects its propagation. A wave traveling diagonally across the grid cells moves at a different speed than one traveling along a grid axis [@problem_id:4148491].
 
-This means that when we inject our "perfect" incident [plane wave](@entry_id:263752), defined by the continuous-world wavenumber $k = \omega/c$, the grid can't propagate it perfectly. The wave is forced to travel at the grid's preferred speed, which corresponds to a different, numerical wavenumber $\tilde{k}$. This mismatch between the injected wave and what the grid can naturally support acts as a constant source of non-physical, spurious scattering all along the TF/SF interface.
+This means that when we inject our "perfect" incident [plane wave](@keyword=plane_wave|lang=en-US|style=Feynman), defined by the continuous-world wavenumber $k = \omega/c$, the grid can't propagate it perfectly. The wave is forced to travel at the grid's preferred speed, which corresponds to a different, numerical wavenumber $\tilde{k}$. This mismatch between the injected wave and what the grid can naturally support acts as a constant source of non-physical, spurious scattering all along the TF/SF interface.
 
 ### Taming the Digital Wave: The Art of Correction
 
 So, the grid has its own rules. Can we use this to our advantage? Absolutely. Since we can calculate the grid's dispersion relation—the exact rule connecting frequency $\omega$ and numerical wavenumber $\tilde{k}$—we can turn the problem on its head.
 
-Instead of injecting the "physically correct" incident wave and having the grid corrupt it, we can design a "numerically correct" incident wave from the start. We ask: for our given frequency $\omega$ and direction $\theta$, what is the exact wavenumber $k_d$ that *is* a perfect solution to the discrete FDTD equations? We can solve the [numerical dispersion relation](@entry_id:752786) for this **dispersion-corrected wavenumber** $k_d(\theta, \omega)$ .
+Instead of injecting the "physically correct" incident wave and having the grid corrupt it, we can design a "numerically correct" incident wave from the start. We ask: for our given frequency $\omega$ and direction $\theta$, what is the exact wavenumber $k_d$ that *is* a perfect solution to the discrete FDTD equations? We can solve the [numerical dispersion relation](@keyword=numerical_dispersion_relation|lang=en-US|style=Feynman) for this **dispersion-corrected wavenumber** $k_d(\theta, \omega)$ [@problem_id:4148509].
 
 When we use this corrected wavenumber to define our incident field, we are injecting a wave that is perfectly adapted to the grid. It propagates without generating spurious scattering, making the TF/SF interface almost perfectly transparent to the numerical scheme. This is a beautiful example of how a deep understanding of the numerical method's properties allows us to create a more elegant and accurate simulation.
 
@@ -85,7 +85,7 @@ When we use this corrected wavenumber to define our incident field, we are injec
 
 Our simulation is finite. The scattered waves propagating outwards will eventually hit the edge of our computational box. To prevent them from reflecting back and contaminating the solution, we surround the domain with an artificial absorbing material called a **Perfectly Matched Layer (PML)**. This layer is like acoustic quicksand, designed to absorb outgoing waves without a whisper of reflection.
 
-However, the PML is a specialist. It is "perfectly matched" only for waves that obey the source-free acoustic equations of the background medium. This has a crucial implication for our TF/SF setup .
+However, the PML is a specialist. It is "perfectly matched" only for waves that obey the source-free acoustic equations of the background medium. This has a crucial implication for our TF/SF setup [@problem_id:4148476].
 
 -   The scattered field, $(p^{\mathrm{s}}, \mathbf{v}^{\mathrm{s}})$, in the region outside the scatterer, is a solution to the source-free equations. The PML is designed to absorb it perfectly.
 -   The total field, $(p^{\mathrm{T}}, \mathbf{v}^{\mathrm{T}})$, contains the scatterer and the TF/SF source terms. It is *not* what the PML is designed for.
@@ -96,9 +96,9 @@ Therefore, the only sensible arrangement is to place the TF/SF box entirely with
 
 So far, we've imagined our wave traveling in a single, uniform medium. What if the TF/SF interface $\Gamma$ also happens to be a real, physical boundary between two different materials, say, with different densities $\rho$ and sound speeds $c$? Here, the simple jump conditions are not enough.
 
-We must dig deeper into the heart of wave physics, using **characteristic analysis**. This technique breaks a wave down into its most fundamental components: information traveling to the right and information traveling to the left. The propagation of these components is governed by a crucial property of the medium: its **[acoustic impedance](@entry_id:267232)**, $Z = \rho c$ .
+We must dig deeper into the heart of wave physics, using **characteristic analysis**. This technique breaks a wave down into its most fundamental components: information traveling to the right and information traveling to the left. The propagation of these components is governed by a crucial property of the medium: its **[acoustic impedance](@keyword=acoustic_impedance|lang=en-US|style=Feynman)**, $Z = \rho c$ [@problem_id:4148493].
 
-At the interface between two materials, the TF/SF conditions become a sophisticated traffic control system based on these characteristics .
+At the interface between two materials, the TF/SF conditions become a sophisticated traffic control system based on these characteristics [@problem_id:4148518].
 
 1.  On the Total-Field side, we only prescribe the *incoming* characteristic, setting it equal to the incoming part of the incident wave. We let the outgoing characteristic be determined by the physics of scattering and reflection inside the region.
 2.  On the Scattered-Field side, we also only prescribe the *incoming* characteristic, setting it to zero to ensure no incident wave is injected. We let the outgoing characteristic be determined by whatever is transmitted through the interface from the TF side.
