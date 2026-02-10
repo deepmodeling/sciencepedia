@@ -1,9 +1,9 @@
 ## 引言
-在动态系统的研究中，某些特性以不总是显而易见的方式支配着系统的行为。除了简单的稳定性之外，还存在一种更微妙的分类，它将响应可预测的系统与那些会产生反直觉延迟和初始方[向错](@article_id:321627)误运动的系统区分开来。这就是[最小相位系统](@article_id:331925)与[非最小相位系统](@article_id:346390)之间的关键区别。这一概念所要解决的核心问题是：为什么两个具有相同[幅频响应](@article_id:334812)的系统会在时域上表现出截然不同的行为。理解这种差异对于设计鲁棒的控制系统、高效的信号处理[算法](@article_id:331821)以及解释物理现象的行为至关重要。本文将引导您深入了解这一基本主题。我们将首先揭示“原理与机制”，通过极点和零点的视角来定义[最小相位](@article_id:337314)的含义，并探讨其在相位、延迟和可逆性方面的影响。随后，我们将在“应用与跨学科联系”部分中连接理论与实践，揭示这一概念如何对控制系统施加基本限制，并在信号处理中提供有力的选择。
+在动态系统的研究中，某些特性以不总是显而易见的方式支配着系统的行为。除了简单的稳定性之外，还存在一种更微妙的分类，它将响应可预测的系统与那些会产生反直觉延迟和初始方[向错](@keyword=disclinations|lang=zh-CN|style=Feynman)误运动的系统区分开来。这就是[最小相位系统](@keyword=minimum_phase_systems_2|lang=zh-CN|style=Feynman)与[非最小相位系统](@keyword=nonminimum_phase_systems|lang=zh-CN|style=Feynman)之间的关键区别。这一概念所要解决的核心问题是：为什么两个具有相同[幅频响应](@keyword=magnitude_response|lang=zh-CN|style=Feynman)的系统会在时域上表现出截然不同的行为。理解这种差异对于设计鲁棒的控制系统、高效的信号处理[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)以及解释物理现象的行为至关重要。本文将引导您深入了解这一基本主题。我们将首先揭示“原理与机制”，通过极点和零点的视角来定义[最小相位](@keyword=minimum_phase_2|lang=zh-CN|style=Feynman)的含义，并探讨其在相位、延迟和可逆性方面的影响。随后，我们将在“应用与跨学科联系”部分中连接理论与实践，揭示这一概念如何对控制系统施加基本限制，并在信号处理中提供有力的选择。
 
 ## 原理与机制
 
-在引言之后，我们现在准备深入问题的核心。究竟是什么让一个系统成为“[最小相位](@article_id:337314)”系统？更重要的是，我们为什么要在意？答案不在于复杂的方程式，而在于一个关于位置、行为和后果的优美故事。这个故事是用[复平面](@article_id:318633)的语言讲述的，但对从机器人学到音频工程的方方面面都有着非常现实的影响。
+在引言之后，我们现在准备深入问题的核心。究竟是什么让一个系统成为“[最小相位](@keyword=minimum_phase_2|lang=zh-CN|style=Feynman)”系统？更重要的是，我们为什么要在意？答案不在于复杂的方程式，而在于一个关于位置、行为和后果的优美故事。这个故事是用[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)的语言讲述的，但对从机器人学到音频工程的方方面面都有着非常现实的影响。
 
 ### 系统的指纹：一个关于极点和零点的故事
 
@@ -13,66 +13,66 @@
 
 但**零点**呢？零点是这样一些复频率，在这些频率下，无论输入是什么，系统的输出都会被完全抵消。它们是反谐振点。如果说极点决定了一个系统是否会自行崩溃，那么零点则塑造了它对外部指令的响应方式。
 
-关键的区别就在于此：一个系统被分类为**[最小相位](@article_id:337314)**还是**非最小相位**，*完全取决于其零点的位置*  。
+关键的区别就在于此：一个系统被分类为**[最小相位](@keyword=minimum_phase_2|lang=zh-CN|style=Feynman)**还是**非最小相位**，*完全取决于其零点的位置* [@problem_id:1599988] [@problem_id:1591617]。
 
-如果一个系统的所有零点（和极点）都位于[复平面](@article_id:318633)的左半部分，则该系统为**[最小相位](@article_id:337314)**系统。
+如果一个系统的所有零点（和极点）都位于[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)的左半部分，则该系统为**[最小相位](@keyword=minimum_phase_2|lang=zh-CN|style=Feynman)**系统。
 
-如果一个系统是稳定的（所有极点都在左半平面），但至少有一个零点在**右半平面（RHP）**，则该系统为**非[最小相位](@article_id:337314)**系统。
+如果一个系统是稳定的（所有极点都在左半平面），但至少有一个零点在**右半平面（RHP）**，则该系统为**非[最小相位](@keyword=minimum_phase_2|lang=zh-CN|style=Feynman)**系统。
 
-考虑一个传递函数为 $G(s) = \frac{s-2}{s^2+6s+10}$ 的系统 。其极点位于 $s = -3 \pm j$，安全地落在[左半平面](@article_id:334428)，因此系统是稳定的。然而，在 $s=2$ 处有一个零点，它位于右半平面。这个单一的“流氓”零点使得整个系统成为[非最小相位系统](@article_id:346390)。即使极点都很好，也无济于事；零点的位置已经给这个系统打上了烙印。即使是右半平面中的[共轭复数](@article_id:353921)零点对，例如由分子 $s^2 - s + 2$ 产生的位于 $s = \frac{1}{2} \pm j\frac{\sqrt{7}}{2}$ 的零点，也会使系统成为[非最小相位系统](@article_id:346390) 。
+考虑一个传递函数为 $G(s) = \frac{s-2}{s^2+6s+10}$ 的系统 [@problem_id:1591617]。其极点位于 $s = -3 \pm j$，安全地落在[左半平面](@keyword=left_half_plane|lang=zh-CN|style=Feynman)，因此系统是稳定的。然而，在 $s=2$ 处有一个零点，它位于右半平面。这个单一的“流氓”零点使得整个系统成为[非最小相位系统](@keyword=nonminimum_phase_systems|lang=zh-CN|style=Feynman)。即使极点都很好，也无济于事；零点的位置已经给这个系统打上了烙印。即使是右半平面中的[共轭复数](@keyword=complex_conjugate|lang=zh-CN|style=Feynman)零点对，例如由分子 $s^2 - s + 2$ 产生的位于 $s = \frac{1}{2} \pm j\frac{\sqrt{7}}{2}$ 的零点，也会使系统成为[非最小相位系统](@keyword=nonminimum_phase_systems|lang=zh-CN|style=Feynman) [@problem_id:1591634]。
 
 ### 下冲的“背叛”：一个“流氓”零点的作用
 
-你可能会说：“好吧，一个零点跑到了‘错误’的位置。它究竟有什么作用？”其影响不容小觑。它通常是反直觉且极具问题的。[非最小相位系统](@article_id:346390)最著名的标志是**[初始逆响应](@article_id:324403)**，或称**下冲**。
+你可能会说：“好吧，一个零点跑到了‘错误’的位置。它究竟有什么作用？”其影响不容小觑。它通常是反直觉且极具问题的。[非最小相位系统](@keyword=nonminimum_phase_systems|lang=zh-CN|style=Feynman)最著名的标志是**[初始逆响应](@keyword=initial_inverse_response|lang=zh-CN|style=Feynman)**，或称**下冲**。
 
-想象一下你在驾驶一艘大船。你向左舷（左）转动船舵，[期望](@article_id:311378)船头开始向左转。但是，如果船头*先*向右舷（右）轻微摆动片刻，然后才最终开始向左转呢？这就是[非最小相位系统](@article_id:346390)的一种物理表现。对于高精度的机械臂或飞行控制系统，这种初始的错误方向运动可能是灾难性的。
+想象一下你在驾驶一艘大船。你向左舷（左）转动船舵，[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)船头开始向左转。但是，如果船头*先*向右舷（右）轻微摆动片刻，然后才最终开始向左转呢？这就是[非最小相位系统](@keyword=nonminimum_phase_systems|lang=zh-CN|style=Feynman)的一种物理表现。对于高精度的机械臂或飞行控制系统，这种初始的错误方向运动可能是灾难性的。
 
-一个绝妙的思想实验完美地说明了这一点 。让我们比较两个简单的稳定系统。系统A是[最小相位系统](@article_id:331925)，其零点在 $s = -z_0$（左半平面）；系统B是[非最小相位系统](@article_id:346390)，其零点在 $s = +z_0$（右半平面）。我们给它们一个相同的极点，位于 $s = -p$。它们的传递函数如下：
+一个绝妙的思想实验完美地说明了这一点 [@problem_id:1591623]。让我们比较两个简单的稳定系统。系统A是[最小相位系统](@keyword=minimum_phase_systems_2|lang=zh-CN|style=Feynman)，其零点在 $s = -z_0$（左半平面）；系统B是[非最小相位系统](@keyword=nonminimum_phase_systems|lang=zh-CN|style=Feynman)，其零点在 $s = +z_0$（右半平面）。我们给它们一个相同的极点，位于 $s = -p$。它们的传递函数如下：
 
-系统A（[最小相位](@article_id:337314)）：$G_A(s) = \frac{1 + s/z_0}{1 + s/p}$
+系统A（[最小相位](@keyword=minimum_phase_2|lang=zh-CN|style=Feynman)）：$G_A(s) = \frac{1 + s/z_0}{1 + s/p}$
 
-系统B（非[最小相位](@article_id:337314)）：$G_B(s) = \frac{1 - s/z_0}{1 + s/p}$
+系统B（非[最小相位](@keyword=minimum_phase_2|lang=zh-CN|style=Feynman)）：$G_B(s) = \frac{1 - s/z_0}{1 + s/p}$
 
-如果我们对这两个系统都施加一个简单的阶跃输入（就像突然将船舵转到一个新的固定位置），它们的响应 $y_A(t)$ 和 $y_B(t)$ 会截然不同。[最小相位系统](@article_id:331925)A会立即开始向其最终值移动。然而，[非最小相位系统](@article_id:346390)B最初会向*相反*方向移动。它的响应以一个负值 $y_B(0^+) = -p/z_0$ 开始，然后才自我纠正并朝向最终目标。它产生了下冲。这就是分子中那个小小的符号翻转，那个零点越过右半平面的直接而具体的结果。
+如果我们对这两个系统都施加一个简单的阶跃输入（就像突然将船舵转到一个新的固定位置），它们的响应 $y_A(t)$ 和 $y_B(t)$ 会截然不同。[最小相位系统](@keyword=minimum_phase_systems_2|lang=zh-CN|style=Feynman)A会立即开始向其最终值移动。然而，[非最小相位系统](@keyword=nonminimum_phase_systems|lang=zh-CN|style=Feynman)B最初会向*相反*方向移动。它的响应以一个负值 $y_B(0^+) = -p/z_0$ 开始，然后才自我纠正并朝向最终目标。它产生了下冲。这就是分子中那个小小的符号翻转，那个零点越过右半平面的直接而具体的结果。
 
 ### 相位的代价：为相同幅值付出额外代价
 
-[非最小相位系统](@article_id:346390)的戏剧性也在[频域](@article_id:320474)中展开。假设你为滤波器设定了一个特定的幅频响应——例如，你想增强音频信号中的低音。结果表明，有无数个滤波器可以实现完全相同的[幅频响应](@article_id:334812)。然而，在所有这些可能性中，有一个是特殊的：[最小相位滤波器](@article_id:376235)。
+[非最小相位系统](@keyword=nonminimum_phase_systems|lang=zh-CN|style=Feynman)的戏剧性也在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中展开。假设你为滤波器设定了一个特定的幅频响应——例如，你想增强音频信号中的低音。结果表明，有无数个滤波器可以实现完全相同的[幅频响应](@keyword=magnitude_response|lang=zh-CN|style=Feynman)。然而，在所有这些可能性中，有一个是特殊的：[最小相位滤波器](@keyword=minimum_phase_filter|lang=zh-CN|style=Feynman)。
 
-任何[非最小相位系统](@article_id:346390)都可以看作是两部分的级联：一个具有[期望](@article_id:311378)[幅频响应](@article_id:334812)的[最小相位系统](@article_id:331925)，以及一个或多个**[全通滤波器](@article_id:324157)**。[全通滤波器](@article_id:324157)是一种奇特的装置；它让所有频率以相同的幅值通过，但会改变它们的相位 。一个对应于[右半平面零点](@article_id:327330) $s=a$ 的简单[全通滤波器](@article_id:324157)具有形式 $\frac{a-s}{a+s}$。
+任何[非最小相位系统](@keyword=nonminimum_phase_systems|lang=zh-CN|style=Feynman)都可以看作是两部分的级联：一个具有[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)[幅频响应](@keyword=magnitude_response|lang=zh-CN|style=Feynman)的[最小相位系统](@keyword=minimum_phase_systems_2|lang=zh-CN|style=Feynman)，以及一个或多个**[全通滤波器](@keyword=all_pass_filter|lang=zh-CN|style=Feynman)**。[全通滤波器](@keyword=all_pass_filter|lang=zh-CN|style=Feynman)是一种奇特的装置；它让所有频率以相同的幅值通过，但会改变它们的相位 [@problem_id:1612997]。一个对应于[右半平面零点](@keyword=right_half_plane_zero_2|lang=zh-CN|style=Feynman) $s=a$ 的简单[全通滤波器](@keyword=all_pass_filter|lang=zh-CN|style=Feynman)具有形式 $\frac{a-s}{a+s}$。
 
-用这样一个滤波器级联一个系统不会改变整体的幅频响应，但会增加额外的**[相位滞后](@article_id:323284)**。这就是在右半平面有一个零点所付出的代价。对于给定的[幅频响应](@article_id:334812)，[最小相位系统](@article_id:331925)是在所有频率上具有*最小可能相位滞后*的系统。这正是它名字的由来！任何非[最小相位](@article_id:337314)-对应系统总是会表现出更多的延迟。如  所示，这种额外的[相位滞后](@article_id:323284)会累积，当频率趋于无穷大时，每个实数[右半平面零点](@article_id:327330)都会导致整整 $-\pi$ 弧度（180度）的滞后。当多个系统串联在一起时，这个属性是“会传染的”：只要有一个组件是非最小相位，整个[级联系统](@article_id:355710)就变成非最小相位 。
+用这样一个滤波器级联一个系统不会改变整体的幅频响应，但会增加额外的**[相位滞后](@keyword=phase_lag|lang=zh-CN|style=Feynman)**。这就是在右半平面有一个零点所付出的代价。对于给定的[幅频响应](@keyword=magnitude_response|lang=zh-CN|style=Feynman)，[最小相位系统](@keyword=minimum_phase_systems_2|lang=zh-CN|style=Feynman)是在所有频率上具有*最小可能相位滞后*的系统。这正是它名字的由来！任何非[最小相位](@keyword=minimum_phase_2|lang=zh-CN|style=Feynman)-对应系统总是会表现出更多的延迟。如 [@problem_id:1612997] 所示，这种额外的[相位滞后](@keyword=phase_lag|lang=zh-CN|style=Feynman)会累积，当频率趋于无穷大时，每个实数[右半平面零点](@keyword=right_half_plane_zero_2|lang=zh-CN|style=Feynman)都会导致整整 $-\pi$ 弧度（180度）的滞后。当多个系统串联在一起时，这个属性是“会传染的”：只要有一个组件是非最小相位，整个[级联系统](@keyword=cascading_systems|lang=zh-CN|style=Feynman)就变成非最小相位 [@problem_id:1591616]。
 
-这引出了由**Kramers-Kronig关系**揭示的一个深刻见解：对于一个[最小相位系统](@article_id:331925)，其[幅频响应](@article_id:334812)唯一地决定了其相频响应 。它们是同一枚硬币的两面。如果你知道其中一个，原则上你就可以计算出另一个。对于[非最小相位系统](@article_id:346390)，这种紧密的关系被打破了；相同的幅频响应可以对应许多不同的相频响应，每一种都比最小相位的滞后更多。
+这引出了由**Kramers-Kronig关系**揭示的一个深刻见解：对于一个[最小相位系统](@keyword=minimum_phase_systems_2|lang=zh-CN|style=Feynman)，其[幅频响应](@keyword=magnitude_response|lang=zh-CN|style=Feynman)唯一地决定了其相频响应 [@problem_id:821287]。它们是同一枚硬币的两面。如果你知道其中一个，原则上你就可以计算出另一个。对于[非最小相位系统](@keyword=nonminimum_phase_systems|lang=zh-CN|style=Feynman)，这种紧密的关系被打破了；相同的幅频响应可以对应许多不同的相频响应，每一种都比最小相位的滞后更多。
 
 ### 高效的信使：最小延迟与前置能量
 
-[最小相位](@article_id:337314)中的“最小”不仅指相位，还指另外两个微妙但至关重要的特性：能量延迟和[群延迟](@article_id:330900) 。
+[最小相位](@keyword=minimum_phase_2|lang=zh-CN|style=Feynman)中的“最小”不仅指相位，还指另外两个微妙但至关重要的特性：能量延迟和[群延迟](@keyword=group_delay|lang=zh-CN|style=Feynman) [@problem_id:2901270]。
 
-想象一个滤波器的**冲激响应**——它对零时刻单个尖锐冲击的反应。这是滤波器最基本的个性特征。对于所有共享相同幅频响应的滤波器，[最小相位](@article_id:337314)版本具有独特的特性：其能量最大程度地集中在响应的开始部分。这就是**最小能量延迟**特性。它尽可能快地“直奔主题”。其最大相位对应物（所有零点都沿虚轴反射到右半平面）则相反；其能量集中在冲激响应的末尾。
+想象一个滤波器的**冲激响应**——它对零时刻单个尖锐冲击的反应。这是滤波器最基本的个性特征。对于所有共享相同幅频响应的滤波器，[最小相位](@keyword=minimum_phase_2|lang=zh-CN|style=Feynman)版本具有独特的特性：其能量最大程度地集中在响应的开始部分。这就是**最小能量延迟**特性。它尽可能快地“直奔主题”。其最大相位对应物（所有零点都沿虚轴反射到右半平面）则相反；其能量集中在冲激响应的末尾。
 
-这对[系统响应](@article_id:327859)的建立方式有直接影响。当输入信号开启时，[最小相位滤波器](@article_id:376235)的输出会更快地“稳定”到其[稳态](@article_id:326048)行为，因为其大部分响应都发生在[前期](@article_id:349358)。
+这对[系统响应](@keyword=system_response|lang=zh-CN|style=Feynman)的建立方式有直接影响。当输入信号开启时，[最小相位滤波器](@keyword=minimum_phase_filter|lang=zh-CN|style=Feynman)的输出会更快地“稳定”到其[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)行为，因为其大部分响应都发生在[前期](@keyword=prophase|lang=zh-CN|style=Feynman)。
 
-与此密切相关的是**群延迟**的概念，它衡量一小段频带通过系统所需的时间。名副其实，[最小相位滤波器](@article_id:376235)具有**[最小群延迟](@article_id:329720)**。对于其给定的滤波特性，它以可能最小的量延迟信号。而[非最小相位系统](@article_id:346390)，由于其额外的相位滞后，不可避免地会引入更多延迟。
+与此密切相关的是**群延迟**的概念，它衡量一小段频带通过系统所需的时间。名副其实，[最小相位滤波器](@keyword=minimum_phase_filter|lang=zh-CN|style=Feynman)具有**[最小群延迟](@keyword=minimum_group_delay|lang=zh-CN|style=Feynman)**。对于其给定的滤波特性，它以可能最小的量延迟信号。而[非最小相位系统](@keyword=nonminimum_phase_systems|lang=zh-CN|style=Feynman)，由于其额外的相位滞后，不可避免地会引入更多延迟。
 
 ### 不可破解的密码：为什么可逆性是关键
 
-或许，对[最小相位系统](@article_id:331925)最深刻的定义来自于一个简单的问题：我们能撤销系统所做的事情吗？如果我们将一个信号通过一个滤波器，我们能否设计一个“反滤波器”来完美地恢复原始信号？这个“反滤波器”就是**逆系统**。
+或许，对[最小相位系统](@keyword=minimum_phase_systems_2|lang=zh-CN|style=Feynman)最深刻的定义来自于一个简单的问题：我们能撤销系统所做的事情吗？如果我们将一个信号通过一个滤波器，我们能否设计一个“反滤波器”来完美地恢复原始信号？这个“反滤波器”就是**逆系统**。
 
-逆系统的传递函数 $H_{inv}(z)$ 就是 $1/H(z)$。这意味着原系统的零点成为逆系统的极点，而原[系统的极点](@article_id:325329)成为逆系统的零点。
+逆系统的传递函数 $H_{inv}(z)$ 就是 $1/H(z)$。这意味着原系统的零点成为逆系统的极点，而原[系统的极点](@keyword=poles_of_a_system|lang=zh-CN|style=Feynman)成为逆系统的零点。
 
-现在，为了让这个逆系统在现实世界中有用，它本身必须既是**因果的**（不能对尚未发生的输入做出反应），又是**稳定的**（不会崩溃）。对于[离散时间系统](@article_id:348701)，这要求其所有极点都位于复z平面的[单位圆](@article_id:311954)内。
+现在，为了让这个逆系统在现实世界中有用，它本身必须既是**因果的**（不能对尚未发生的输入做出反应），又是**稳定的**（不会崩溃）。对于[离散时间系统](@keyword=discrete_time_system|lang=zh-CN|style=Feynman)，这要求其所有极点都位于复z平面的[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)内。
 
-这引出了最基本的定义 ：一个系统是**[最小相位](@article_id:337314)**的，当且仅当该系统*及其*逆系统都是因果且稳定的。
+这引出了最基本的定义 [@problem_id:1745101]：一个系统是**[最小相位](@keyword=minimum_phase_2|lang=zh-CN|style=Feynman)**的，当且仅当该系统*及其*逆系统都是因果且稳定的。
 
-这立刻告诉我们为什么零点如此重要。为了使原系统稳定，其极点必须在[单位圆](@article_id:311954)内。为了使其*逆*系统稳定，逆[系统的极点](@article_id:325329)——也就是原系统的零点——也*必须*位于[单位圆](@article_id:311954)内。就是这样！这就是为什么[最小相位系统](@article_id:331925)的所有极点和零点都必须在“稳定”区域的深层原因。如果一个系统是非[最小相位](@article_id:337314)的（其零点在[单位圆](@article_id:311954)外），它的逆系统就会有一个极点在[单位圆](@article_id:311954)外，使其变得不稳定。试图完美地[解卷积](@article_id:300181)或撤销[非最小相位系统](@article_id:346390)的影响，在根本上是一个不稳定的过程。
+这立刻告诉我们为什么零点如此重要。为了使原系统稳定，其极点必须在[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)内。为了使其*逆*系统稳定，逆[系统的极点](@keyword=poles_of_a_system|lang=zh-CN|style=Feynman)——也就是原系统的零点——也*必须*位于[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)内。就是这样！这就是为什么[最小相位系统](@keyword=minimum_phase_systems_2|lang=zh-CN|style=Feynman)的所有极点和零点都必须在“稳定”区域的深层原因。如果一个系统是非[最小相位](@keyword=minimum_phase_2|lang=zh-CN|style=Feynman)的（其零点在[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)外），它的逆系统就会有一个极点在[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)外，使其变得不稳定。试图完美地[解卷积](@keyword=data_unfolding|lang=zh-CN|style=Feynman)或撤销[非最小相位系统](@keyword=nonminimum_phase_systems|lang=zh-CN|style=Feynman)的影响，在根本上是一个不稳定的过程。
 
-### 非线性世界的回响：[零动态](@article_id:323446)的秘密
+### 非线性世界的回响：[零动态](@keyword=zero_dynamics|lang=zh-CN|style=Feynman)的秘密
 
-你可能认为极点和零点只是[线性系统](@article_id:308264)的一个巧妙的人为产物。但这个核心思想是如此强大，以至于它回响在复杂的非线性动力学世界中。
+你可能认为极点和零点只是[线性系统](@keyword=linear_systems|lang=zh-CN|style=Feynman)的一个巧妙的人为产物。但这个核心思想是如此强大，以至于它回响在复杂的非线性动力学世界中。
 
-对任何系统，无论是线性的还是非线性的，我们都可以提出一个引人入胜的问题：“如果我们施加一个非常特定的控制输入，迫使系统输出在所有时间内都精确为零，那么系统的内部动态会发生什么？” 描述这种内部、隐藏行为的方程被称为系统的**[零动态](@article_id:323446)** 。
+对任何系统，无论是线性的还是非线性的，我们都可以提出一个引人入胜的问题：“如果我们施加一个非常特定的控制输入，迫使系统输出在所有时间内都精确为零，那么系统的内部动态会发生什么？” 描述这种内部、隐藏行为的方程被称为系统的**[零动态](@keyword=zero_dynamics|lang=zh-CN|style=Feynman)** [@problem_id:2707979]。
 
-对于线性系统，这些[零动态](@article_id:323446)的稳定性由[传递函数零点](@article_id:335426)的位置决定。如果所有零点都在[左半平面](@article_id:334428)，[零动态](@article_id:323446)是稳定的。如果右半平面有零点，[零动态](@article_id:323446)就是不稳定的。
+对于线性系统，这些[零动态](@keyword=zero_dynamics|lang=zh-CN|style=Feynman)的稳定性由[传递函数零点](@keyword=transfer_function_zeros|lang=zh-CN|style=Feynman)的位置决定。如果所有零点都在[左半平面](@keyword=left_half_plane|lang=zh-CN|style=Feynman)，[零动态](@keyword=zero_dynamics|lang=zh-CN|style=Feynman)是稳定的。如果右半平面有零点，[零动态](@keyword=zero_dynamics|lang=zh-CN|style=Feynman)就是不稳定的。
 
-这个概念提供了一个绝佳的推广：如果一个非线性系统的[零动态](@article_id:323446)是稳定的，那么它就被称为[最小相位系统](@article_id:331925)。我们在驾船例子中看到的[初始下冲](@article_id:325728)就是这些不稳定[零动态](@article_id:323446)的表现。当你试图强迫输出（船的航向）改变时，不稳定的内部状态（[零动态](@article_id:323446)）会在被控制输入驯服之前，有短暂的、相反的自主运动。这揭示了一个优美的、统一的原则，它将线性滤波器中一个简单零点的位置与火箭和[化学反应](@article_id:307389)堆等现实世界[非线性系统](@article_id:323160)的复杂内部行为联系起来。[最小相位](@article_id:337314)的故事是一个关于稳定性的故事，不仅是系统本身的稳定性，也是其隐藏的内部世界的稳定性。
+这个概念提供了一个绝佳的推广：如果一个非线性系统的[零动态](@keyword=zero_dynamics|lang=zh-CN|style=Feynman)是稳定的，那么它就被称为[最小相位系统](@keyword=minimum_phase_systems_2|lang=zh-CN|style=Feynman)。我们在驾船例子中看到的[初始下冲](@keyword=initial_undershoot|lang=zh-CN|style=Feynman)就是这些不稳定[零动态](@keyword=zero_dynamics|lang=zh-CN|style=Feynman)的表现。当你试图强迫输出（船的航向）改变时，不稳定的内部状态（[零动态](@keyword=zero_dynamics|lang=zh-CN|style=Feynman)）会在被控制输入驯服之前，有短暂的、相反的自主运动。这揭示了一个优美的、统一的原则，它将线性滤波器中一个简单零点的位置与火箭和[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)堆等现实世界[非线性系统](@keyword=nonlinear_systems|lang=zh-CN|style=Feynman)的复杂内部行为联系起来。[最小相位](@keyword=minimum_phase_2|lang=zh-CN|style=Feynman)的故事是一个关于稳定性的故事，不仅是系统本身的稳定性，也是其隐藏的内部世界的稳定性。

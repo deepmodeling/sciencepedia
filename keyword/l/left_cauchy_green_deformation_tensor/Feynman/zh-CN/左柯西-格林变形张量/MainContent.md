@@ -1,7 +1,7 @@
 ## 引言
-我们如何精确描述材料的拉伸、扭转和剪切？[连续介质力学](@article_id:315536)中的这个基本问题需要一种严谨的数学语言，来连接物体的初始形状与其最终的变形状态。虽然存在多种工具，但它们通常采用不同的视角——有些从原始物体的“记忆”出发看待变形，而另一些则从当前变形空间中观察者的角度来描述变形。本文将重点介绍后一种方法中的一个关键角色：左柯西-格林变形[张量](@article_id:321604)。通过深入探讨这一概念，我们将揭示支配物质形态变化的深层几何原理。
+我们如何精确描述材料的拉伸、扭转和剪切？[连续介质力学](@keyword=continuum_mechanics|lang=zh-CN|style=Feynman)中的这个基本问题需要一种严谨的数学语言，来连接物体的初始形状与其最终的变形状态。虽然存在多种工具，但它们通常采用不同的视角——有些从原始物体的“记忆”出发看待变形，而另一些则从当前变形空间中观察者的角度来描述变形。本文将重点介绍后一种方法中的一个关键角色：左柯西-格林变形[张量](@keyword=tensor|lang=zh-CN|style=Feynman)。通过深入探讨这一概念，我们将揭示支配物质形态变化的深层几何原理。
 
-以下各节将引导您了解这个核心主题。我们将首先探讨“原理与机制”，定义该[张量](@article_id:321604)，揭示其与伸长和旋转相关的物理意义，并建立它与其他变形度量之间的深刻联系。随后，在“应用与跨学科联系”中，我们将看到这个抽象工具如何成为预测现实世界现象的基石——从橡皮筋中的应力到[复杂流体](@article_id:377207)的流动，从而揭示其在[材料科学](@article_id:312640)和工程中不可或缺的作用。
+以下各节将引导您了解这个核心主题。我们将首先探讨“原理与机制”，定义该[张量](@keyword=tensor|lang=zh-CN|style=Feynman)，揭示其与伸长和旋转相关的物理意义，并建立它与其他变形度量之间的深刻联系。随后，在“应用与跨学科联系”中，我们将看到这个抽象工具如何成为预测现实世界现象的基石——从橡皮筋中的应力到[复杂流体](@keyword=complex_fluids|lang=zh-CN|style=Feynman)的流动，从而揭示其在[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)和工程中不可或缺的作用。
 
 ## 原理与机制
 
@@ -11,29 +11,29 @@
 
 我们需要的第一个工具是连接“变形前”和“变形后”的桥梁。这个工具是一个数学对象，称为**变形梯度**，用符号 $F$ 表示。你可以把 $F$ 想象成原始物体中每一点 $X$ 处的一本小型指导手册。如果你在 $X$ 点画一个小箭头 $dX$，变形梯度就会告诉你这个箭头在变形后会变成什么样。变形后物体中的新箭头 $dx$ 由一个看似简单的法则给出：$dx = F dX$。
 
-现在，让我们提出一个自然的问题：如果我们拉伸橡皮泥，长度会如何变化？一个原始长度为 $ds_0$ 的微小纤维会变成一个新长度为 $ds$ 的纤维。在这里，长度的平方是关键，它们的关系是 $ds^2 = dx \cdot dx$。代入我们的法则，得到 $ds^2 = (F dX) \cdot (F dX)$。通过一些转置的代数变换，可以发现这等同于 $dX \cdot (F^T F dX)$。这引导我们定义一个[张量](@article_id:321604) $C = F^T F$，即**[右柯西-格林张量](@article_id:353212)**。它是一个“物质”[张量](@article_id:321604)——它作用于一个原始向量 $dX$，通过内积 $dX \cdot (C dX)$ 告诉我们其新的长度平方。它从原始、未变形的物体的角度看待变形。
+现在，让我们提出一个自然的问题：如果我们拉伸橡皮泥，长度会如何变化？一个原始长度为 $ds_0$ 的微小纤维会变成一个新长度为 $ds$ 的纤维。在这里，长度的平方是关键，它们的关系是 $ds^2 = dx \cdot dx$。代入我们的法则，得到 $ds^2 = (F dX) \cdot (F dX)$。通过一些转置的代数变换，可以发现这等同于 $dX \cdot (F^T F dX)$。这引导我们定义一个[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $C = F^T F$，即**[右柯西-格林张量](@keyword=right_cauchy_green_tensor|lang=zh-CN|style=Feynman)**。它是一个“物质”[张量](@keyword=tensor|lang=zh-CN|style=Feynman)——它作用于一个原始向量 $dX$，通过内积 $dX \cdot (C dX)$ 告诉我们其新的长度平方。它从原始、未变形的物体的角度看待变形。
 
-但如果我们是生活在*变形后*的世界中的观察者呢？我们看到的是一个被拉伸和剪切的物质网格，我们想要一个能从*我们*的空间视角描述变形的工具。这就是我们今天的主角——**左柯西-格林变形[张量](@article_id:321604)** $B$ 登场的地方。它的定义很简单，只需交换乘法的顺序：$B = F F^T$ 。
+但如果我们是生活在*变形后*的世界中的观察者呢？我们看到的是一个被拉伸和剪切的物质网格，我们想要一个能从*我们*的空间视角描述变形的工具。这就是我们今天的主角——**左柯西-格林变形[张量](@keyword=tensor|lang=zh-CN|style=Feynman)** $B$ 登场的地方。它的定义很简单，只需交换乘法的顺序：$B = F F^T$ [@problem_id:1536971]。
 
-起初，这似乎只是一个微不足道的变化，但它从根本上改变了我们的视角。[张量](@article_id:321604) $B$ 是一个**[空间张量](@article_id:365009)**；它存在于变形后的物体中并对其进行操作。它是一个作用在当前构型切空间上的对称正定对象 。那么它究竟有何作用？它回答了与 $C$ 所回答的问题对偶的问题。如果你在变形后的橡皮泥中选取一个微小向量 $dx$，其逆[张量](@article_id:321604) $B^{-1}$ 可以告诉你*变成* $dx$ 的原始纤维的长度平方。这个关系具有优美的对称性：$ds_0^2 = dX \cdot dX = dx \cdot (B^{-1} dx)$ 。因此，当 $C$ 从过去（参考向量）预测未来（变形后长度）时，$B^{-1}$ 则从现在（变形后向量）重构过去（参考长度）。
+起初，这似乎只是一个微不足道的变化，但它从根本上改变了我们的视角。[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $B$ 是一个**[空间张量](@keyword=spatial_tensor|lang=zh-CN|style=Feynman)**；它存在于变形后的物体中并对其进行操作。它是一个作用在当前构型切空间上的对称正定对象 [@problem_id:2681405]。那么它究竟有何作用？它回答了与 $C$ 所回答的问题对偶的问题。如果你在变形后的橡皮泥中选取一个微小向量 $dx$，其逆[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $B^{-1}$ 可以告诉你*变成* $dx$ 的原始纤维的长度平方。这个关系具有优美的对称性：$ds_0^2 = dX \cdot dX = dx \cdot (B^{-1} dx)$ [@problem_id:2681405]。因此，当 $C$ 从过去（参考向量）预测未来（变形后长度）时，$B^{-1}$ 则从现在（变形后向量）重构过去（参考长度）。
 
 ### B 的真实度量：伸长与方向
 
-这些都相当抽象。让我们把它具体化。从*物理*上讲，[左柯西-格林张量](@article_id:365366)是什么？想象一下最简单的变形：取一个单位立方体，并沿 $x$、$y$ 和 $z$ 轴分别拉伸 $\lambda_1$、$\lambda_2$ 和 $\lambda_3$ 倍。这些 $\lambda$ 值就是**[主伸长](@article_id:373569)**。
+这些都相当抽象。让我们把它具体化。从*物理*上讲，[左柯西-格林张量](@keyword=left_cauchy_green_tensor|lang=zh-CN|style=Feynman)是什么？想象一下最简单的变形：取一个单位立方体，并沿 $x$、$y$ 和 $z$ 轴分别拉伸 $\lambda_1$、$\lambda_2$ 和 $\lambda_3$ 倍。这些 $\lambda$ 值就是**[主伸长](@keyword=principal_stretches|lang=zh-CN|style=Feynman)**。
 
-在这个简单的情况下，变形梯度 $F$ 是一个[对角矩阵](@article_id:642074)，对角线上的元素是[主伸长](@article_id:373569)。让我们计算 $B = FF^T$。由于 $F$ 是对角矩阵，其转置 $F^T$ 就是它本身。乘积也是[对角矩阵](@article_id:642074)：
+在这个简单的情况下，变形梯度 $F$ 是一个[对角矩阵](@keyword=diagonal_matrix|lang=zh-CN|style=Feynman)，对角线上的元素是[主伸长](@keyword=principal_stretches|lang=zh-CN|style=Feynman)。让我们计算 $B = FF^T$。由于 $F$ 是对角矩阵，其转置 $F^T$ 就是它本身。乘积也是[对角矩阵](@keyword=diagonal_matrix|lang=zh-CN|style=Feynman)：
 $$
 F = \begin{pmatrix} \lambda_1 & 0 & 0 \\ 0 & \lambda_2 & 0 \\ 0 & 0 & \lambda_3 \end{pmatrix} \quad \implies \quad B = F F^T = \begin{pmatrix} \lambda_1^2 & 0 & 0 \\ 0 & \lambda_2^2 & 0 \\ 0 & 0 & \lambda_3^2 \end{pmatrix}
 $$
-这一刻，一切豁然开朗 ！在这个主[坐标系](@article_id:316753)中，[左柯西-格林张量](@article_id:365366)是一个[对角矩阵](@article_id:642074)，其元素是*[主伸长](@article_id:373569)的平方*。这就告诉了我们一切。$B$ [张量](@article_id:321604)的[特征值](@article_id:315305)是[主伸长](@article_id:373569)的平方，其[特征向量](@article_id:312227)指向这些[主伸长](@article_id:373569)的最终变形方向。因此，[张量](@article_id:321604) $B$ 巧妙地包含了变形后物体中某一点拉伸的大小和方向的所有信息。
+这一刻，一切豁然开朗 [@problem_id:1536967]！在这个主[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中，[左柯西-格林张量](@keyword=left_cauchy_green_tensor|lang=zh-CN|style=Feynman)是一个[对角矩阵](@keyword=diagonal_matrix|lang=zh-CN|style=Feynman)，其元素是*[主伸长](@keyword=principal_stretches|lang=zh-CN|style=Feynman)的平方*。这就告诉了我们一切。$B$ [张量](@keyword=tensor|lang=zh-CN|style=Feynman)的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)是[主伸长](@keyword=principal_stretches|lang=zh-CN|style=Feynman)的平方，其[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)指向这些[主伸长](@keyword=principal_stretches|lang=zh-CN|style=Feynman)的最终变形方向。因此，[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $B$ 巧妙地包含了变形后物体中某一点拉伸的大小和方向的所有信息。
 
 ### 伸长与旋转之舞：统一 B 与 C
 
-我们已经确定 $C = F^T F$ 和 $B = F F^T$ 是代表两种不同视角的两个不同[张量](@article_id:321604)。但它们描述的是*同一种*变形。它们之间有何关联？答案在于力学中最优雅的思想之一：**[极分解](@article_id:375742)**。
+我们已经确定 $C = F^T F$ 和 $B = F F^T$ 是代表两种不同视角的两个不同[张量](@keyword=tensor|lang=zh-CN|style=Feynman)。但它们描述的是*同一种*变形。它们之间有何关联？答案在于力学中最优雅的思想之一：**[极分解](@keyword=a=up_decomposition|lang=zh-CN|style=Feynman)**。
 
-任何变形都可以看作是一个两步过程：首先是纯拉伸（和剪切），然后是刚体旋转。[极分解](@article_id:375742)定理通过指出我们总能将 $F$ 写成 $F = R U$ 的形式来精确地描述这一点，其中 $U$ 是**右[拉伸张量](@article_id:372157)**（一个实现纯拉伸的对称[正定张量](@article_id:383010)），$R$ 是一个**[旋转张量](@article_id:370993)**。
+任何变形都可以看作是一个两步过程：首先是纯拉伸（和剪切），然后是刚体旋转。[极分解](@keyword=a=up_decomposition|lang=zh-CN|style=Feynman)定理通过指出我们总能将 $F$ 写成 $F = R U$ 的形式来精确地描述这一点，其中 $U$ 是**右[拉伸张量](@keyword=stretch_tensor|lang=zh-CN|style=Feynman)**（一个实现纯拉伸的对称[正定张量](@keyword=positive_definite_tensor|lang=zh-CN|style=Feynman)），$R$ 是一个**[旋转张量](@keyword=rotation_tensor|lang=zh-CN|style=Feynman)**。
 
-让我们将此代入我们的定义中。对于[右柯西-格林张量](@article_id:353212)：
+让我们将此代入我们的定义中。对于[右柯西-格林张量](@keyword=right_cauchy_green_tensor|lang=zh-CN|style=Feynman)：
 $$
 C = F^T F = (R U)^T (R U) = U^T R^T R U
 $$
@@ -41,9 +41,9 @@ $$
 $$
 C = U I U = U^2
 $$
-所以，[右柯西-格林张量](@article_id:353212)就是纯[拉伸张量](@article_id:372157)的平方！它捕捉了变形的拉伸部分，但没有包含关于最终旋转 $R$ 的任何信息。它存在于*未旋转的*、纯拉伸物体的[坐标系](@article_id:316753)中。
+所以，[右柯西-格林张量](@keyword=right_cauchy_green_tensor|lang=zh-CN|style=Feynman)就是纯[拉伸张量](@keyword=stretch_tensor|lang=zh-CN|style=Feynman)的平方！它捕捉了变形的拉伸部分，但没有包含关于最终旋转 $R$ 的任何信息。它存在于*未旋转的*、纯拉伸物体的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中。
 
-现在来看[左柯西-格林张量](@article_id:365366)：
+现在来看[左柯西-格林张量](@keyword=left_cauchy_green_tensor|lang=zh-CN|style=Feynman)：
 $$
 B = F F^T = (R U) (R U)^T = R U U^T R^T = R U^2 R^T
 $$
@@ -51,32 +51,32 @@ $$
 $$
 B = R C R^T
 $$
-这一个方程就讲述了整个故事  。[左柯西-格林张量](@article_id:365366) $B$ 与内禀的[拉伸张量](@article_id:372157) $C$ 是*相同的*，但它被 $R$ “旋转”到了最终的空间构型中。它们是同一对象的两种不同视角：$C$ 是最终旋转前的拉伸形状，而 $B$ 是旋转后的拉伸形状。它们共享相同的内禀属性，相同的[特征值](@article_id:315305) ($\lambda_i^2$)，但存在于不同的方向上。这就是物质视角和空间视角之间的内在统一性。
+这一个方程就讲述了整个故事 [@problem_id:1537026] [@problem_id:2681405]。[左柯西-格林张量](@keyword=left_cauchy_green_tensor|lang=zh-CN|style=Feynman) $B$ 与内禀的[拉伸张量](@keyword=stretch_tensor|lang=zh-CN|style=Feynman) $C$ 是*相同的*，但它被 $R$ “旋转”到了最终的空间构型中。它们是同一对象的两种不同视角：$C$ 是最终旋转前的拉伸形状，而 $B$ 是旋转后的拉伸形状。它们共享相同的内禀属性，相同的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) ($\lambda_i^2$)，但存在于不同的方向上。这就是物质视角和空间视角之间的内在统一性。
 
-### 变化中的不变：[不变量](@article_id:309269)与物理定律
+### 变化中的不变：[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)与物理定律
 
-如果你旋转一个物体，它的长度不会改变。同样，如果你[旋转坐标系](@article_id:349521)，其底层的物理规律也不应改变。物理定律必须独立于观察者的[参考系](@article_id:345789)。对这类旋转免疫的量被称为**[不变量](@article_id:309269)**。
+如果你旋转一个物体，它的长度不会改变。同样，如果你[旋转坐标系](@keyword=rotating_coordinate_systems|lang=zh-CN|style=Feynman)，其底层的物理规律也不应改变。物理定律必须独立于观察者的[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)。对这类旋转免疫的量被称为**[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)**。
 
-由于 $B$ 和 $C$ 通过一次旋转相关联 ($B = RCR^T$)，它们的[不变量](@article_id:309269)必须相同。例如，矩阵的迹（对角元素之和）就是一个[不变量](@article_id:309269)。让我们来验证一下：
+由于 $B$ 和 $C$ 通过一次旋转相关联 ($B = RCR^T$)，它们的[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)必须相同。例如，矩阵的迹（对角元素之和）就是一个[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)。让我们来验证一下：
 $$
 \mathrm{tr}(B) = \mathrm{tr}(R C R^T)
 $$
-利用[迹的循环性质](@article_id:313515) $\mathrm{tr}(XYZ) = \mathrm{tr}(ZXY)$，我们可以写出：
+利用[迹的循环性质](@keyword=cyclic_property_of_trace|lang=zh-CN|style=Feynman) $\mathrm{tr}(XYZ) = \mathrm{tr}(ZXY)$，我们可以写出：
 $$
 \mathrm{tr}(R C R^T) = \mathrm{tr}(R^T R C) = \mathrm{tr}(I C) = \mathrm{tr}(C)
 $$
-确实，它们的第一[不变量](@article_id:309269)是相同的，$I_1 = \mathrm{tr}(B) = \mathrm{tr}(C)$ 。对于其他[不变量](@article_id:309269)，如[行列式](@article_id:303413)，也同样成立。我们发现 $\det(B) = \det(C) = (\det(F))^2 = J^2$。值 $J = \det(F)$ 度量了变形后体积与原始体积之比。这为我们提供了一个强有力的物理洞见：对于像橡胶或水这样的**不可压缩**材料，体积不能改变，因此 $J=1$。这对我们的变形[张量](@article_id:321604)施加了一个约束：$\det(B) = 1$ 。
+确实，它们的第一[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)是相同的，$I_1 = \mathrm{tr}(B) = \mathrm{tr}(C)$ [@problem_id:1537009]。对于其他[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)，如[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)，也同样成立。我们发现 $\det(B) = \det(C) = (\det(F))^2 = J^2$。值 $J = \det(F)$ 度量了变形后体积与原始体积之比。这为我们提供了一个强有力的物理洞见：对于像橡胶或水这样的**不可压缩**材料，体积不能改变，因此 $J=1$。这对我们的变形[张量](@keyword=tensor|lang=zh-CN|style=Feynman)施加了一个约束：$\det(B) = 1$ [@problem_id:1536991]。
 
-这些[不变量](@article_id:309269) ($I_1, I_2, I_3 = \det(B)$) 是[材料科学](@article_id:312640)的基石。一块压缩橡胶中储存的能量不取决于你从侧面还是从顶面观察它；它只取决于变形的内禀量。因此，描述这种能量的定律通常只用 $B$ 或 $C$ 的[不变量](@article_id:309269)来表示。这些[不变量](@article_id:309269)构成了一种“绝对”的变形度量，剥离了任何任意的[坐标系](@article_id:316753)选择。它们之间的关系，例如 $I_2 = \frac{1}{2}[(\mathrm{tr}(B))^2 - \mathrm{tr}(B^2)]$ ，揭示了支配变形物理学的深层数学结构。
+这些[不变量](@keyword=invariant|lang=zh-CN|style=Feynman) ($I_1, I_2, I_3 = \det(B)$) 是[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)的基石。一块压缩橡胶中储存的能量不取决于你从侧面还是从顶面观察它；它只取决于变形的内禀量。因此，描述这种能量的定律通常只用 $B$ 或 $C$ 的[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)来表示。这些[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)构成了一种“绝对”的变形度量，剥离了任何任意的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)选择。它们之间的关系，例如 $I_2 = \frac{1}{2}[(\mathrm{tr}(B))^2 - \mathrm{tr}(B^2)]$ [@problem_id:1560638]，揭示了支配变形物理学的深层数学结构。
 
 ### 超越静态：运动中的 B
 
-到目前为止，我们主要想象的是一次单一、已完成的变形。但如果物体在持续变形，比如管道中流动的水或被拉伸的太妃糖，情况又如何呢？我们的[张量](@article_id:321604) $B$ 必须随时间变化。它是如何演化的？
+到目前为止，我们主要想象的是一次单一、已完成的变形。但如果物体在持续变形，比如管道中流动的水或被拉伸的太妃糖，情况又如何呢？我们的[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $B$ 必须随时间变化。它是如何演化的？
 
-在空间[参考系](@article_id:345789)中，变形的变化率由**[空间速度梯度](@article_id:366361)** $L$ 描述。可以证明，$B$ 的物质时间导数（即一个物[质粒](@article_id:327484)子在运动时 $B$ 如何变化）由一个优美而紧凑的公式给出：
+在空间[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)中，变形的变化率由**[空间速度梯度](@keyword=spatial_velocity_gradient|lang=zh-CN|style=Feynman)** $L$ 描述。可以证明，$B$ 的物质时间导数（即一个物[质粒](@keyword=plasmid|lang=zh-CN|style=Feynman)子在运动时 $B$ 如何变化）由一个优美而紧凑的公式给出：
 $$
 \dot{B} = L B + B L^T
 $$
-这个表达式  被称为 $B$ 的 **Oldroyd [导数](@article_id:318324)**，在[复杂流体](@article_id:377207)和[粘弹性](@article_id:308464)研究中至关重要。它告诉我们由 $B$ 表示的“应变[椭球](@article_id:345137)”是如何被局部[速度场](@article_id:335158)拉伸和旋转的。这弥合了固[体力](@article_id:353281)学和[流体动力学](@article_id:319275)之间的鸿沟，表明同一个几何概念可以用于描述从钢梁到[聚合物熔体](@article_id:371069)的各种事物。
+这个表达式 [@problem_id:1537033] 被称为 $B$ 的 **Oldroyd [导数](@keyword=derivative|lang=zh-CN|style=Feynman)**，在[复杂流体](@keyword=complex_fluids|lang=zh-CN|style=Feynman)和[粘弹性](@keyword=viscoelasticity|lang=zh-CN|style=Feynman)研究中至关重要。它告诉我们由 $B$ 表示的“应变[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)”是如何被局部[速度场](@keyword=velocity_field|lang=zh-CN|style=Feynman)拉伸和旋转的。这弥合了固[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)学和[流体动力学](@keyword=hydrodynamics|lang=zh-CN|style=Feynman)之间的鸿沟，表明同一个几何概念可以用于描述从钢梁到[聚合物熔体](@keyword=polymer_melts|lang=zh-CN|style=Feynman)的各种事物。
 
-此外，[张量](@article_id:321604) $B$ 是构建其他有用应变度量的基础。例如，度量相对于最终构型的应变的 **Euler-Almansi 应变张量** $e$，可以优雅地表示为 $e = \frac{1}{2}(I - B^{-1})$ 。[左柯西-格林张量](@article_id:365366)并不仅仅是众[多工](@article_id:329938)具中的一个；它是一个中心支柱，为物质如何改变形状提供了一个稳健、物理上直观且几何上丰富的描述。
+此外，[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $B$ 是构建其他有用应变度量的基础。例如，度量相对于最终构型的应变的 **Euler-Almansi 应变张量** $e$，可以优雅地表示为 $e = \frac{1}{2}(I - B^{-1})$ [@problem_id:1549172]。[左柯西-格林张量](@keyword=left_cauchy_green_tensor|lang=zh-CN|style=Feynman)并不仅仅是众[多工](@keyword=multiplexing|lang=zh-CN|style=Feynman)具中的一个；它是一个中心支柱，为物质如何改变形状提供了一个稳健、物理上直观且几何上丰富的描述。

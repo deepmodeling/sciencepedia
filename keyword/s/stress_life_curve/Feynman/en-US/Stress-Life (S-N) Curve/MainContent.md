@@ -3,12 +3,12 @@ Fatigue is the silent adversary of engineered structures, a process of progressi
 
 This article provides a comprehensive exploration of the S-N curve, bridging fundamental theory with practical application. The following chapters will guide you through this essential topic:
 
-- **Principles and Mechanisms** will deconstruct the S-N curve, examining how it is created and what it reveals. We will explore the mathematical model of the Basquin relation, the crucial concept of the endurance limit, and the deep connection between fatigue behavior and the [atomic structure](@article_id:136696) of materials.
+- **Principles and Mechanisms** will deconstruct the S-N curve, examining how it is created and what it reveals. We will explore the mathematical model of the Basquin relation, the crucial concept of the endurance limit, and the deep connection between fatigue behavior and the [atomic structure](@keyword=atomic_structure|lang=en-US|style=Feynman) of materials.
 
 - **Applications and Interdisciplinary Connections** will demonstrate how the idealized S-N curve is adapted for real-world engineering. We will cover methods for handling complex factors like mean stress, variable load histories, stress concentrations, and the insidious effects of corrosion, showing how the S-N curve serves as a gateway to fields like fracture mechanics and materials science.
 
 
-*Figure 1: A schematic S-N curve, the "life chart" of a material. For some materials like steel, a 'safe' stress level, the [endurance limit](@article_id:158551), exists below which failure is not expected. Other materials, like aluminum, lack this feature.*
+*Figure 1: A schematic S-N curve, the "life chart" of a material. For some materials like steel, a 'safe' stress level, the [endurance limit](@keyword=endurance_limit|lang=en-US|style=Feynman), exists below which failure is not expected. Other materials, like aluminum, lack this feature.*
 
 ## Principles and Mechanisms
 
@@ -24,4 +24,4 @@ The "stress level" isn't just one number. In a typical cycle, the stress oscilla
 
 $$ \sigma_a = \frac{\sigma_{\max} - \sigma_{\min}}{2} \quad , \quad \sigma_m = \frac{\sigma_{\max} + \sigma_{\min}}{2} $$
 
-A convenient way to capture the nature of the cycle is the **[stress ratio](@article_id:194782)**, $R = \sigma_{\min}/\sigma_{\max}$. A [stress ratio](@article_id:194782) of $R=-1$ means the loading is fully reversed (e.g., from tension to equal compression), so the mean stress is zero. An S-N curve is a plot of the stress amplitude, $\sigma_a$, on the vertical axis versus the number of cycles to failure, $N_f$, on the horizontal axis, usually for a fixed [stress ratio](@article_id:194782) . The story it tells is the one our paperclip intuition already knows: the higher the [stress amplitude](@article_id:191184), the shorter the life.
+A convenient way to capture the nature of the cycle is the **[stress ratio](@keyword=stress_ratio|lang=en-US|style=Feynman)**, $R = \sigma_{\min}/\sigma_{\max}$. A [stress ratio](@keyword=stress_ratio|lang=en-US|style=Feynman) of $R=-1$ means the loading is fully reversed (e.g., from tension to equal compression), so the mean stress is zero. An S-N curve is a plot of the stress amplitude, $\sigma_a$, on the vertical axis versus the number of cycles to failure, $N_f$, on the horizontal axis, usually for a fixed [stress ratio](@keyword=stress_ratio|lang=en-US|style=Feynman) [@problem_id:2682690]. The story it tells is the one our paperclip intuition already knows: the higher the [stress amplitude](@keyword=stress_amplitude|lang=en-US|style=Feynman), the shorter the life.

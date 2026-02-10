@@ -1,7 +1,7 @@
 ## Introduction
-Many phenomena in science and engineering are not one-off events but the result of iterative processes—[feedback loops](@article_id:264790), reflections, and cumulative chains of influence. From an echo bouncing in a canyon to a [particle scattering](@article_id:152447) through a medium, an initial event triggers a cascade of subsequent effects. How can we mathematically capture this cumulative impact, especially in [continuous systems](@article_id:177903) where a function's behavior depends on its own past values? This challenge is central to the study of integral equations, which model such self-referential systems. The solution lies in a powerful and elegant mathematical tool: the iterated kernel, which systematically tracks the influence of a system on itself through successive steps.
+Many phenomena in science and engineering are not one-off events but the result of iterative processes—[feedback loops](@keyword=feedback_loops|lang=en-US|style=Feynman), reflections, and cumulative chains of influence. From an echo bouncing in a canyon to a [particle scattering](@keyword=particle_scattering|lang=en-US|style=Feynman) through a medium, an initial event triggers a cascade of subsequent effects. How can we mathematically capture this cumulative impact, especially in [continuous systems](@keyword=continuous_systems|lang=en-US|style=Feynman) where a function's behavior depends on its own past values? This challenge is central to the study of integral equations, which model such self-referential systems. The solution lies in a powerful and elegant mathematical tool: the iterated kernel, which systematically tracks the influence of a system on itself through successive steps.
 
-This article explores the theory and broad significance of the iterated kernel. The first chapter, **"Principles and Mechanisms,"** will demystify the core concept, illustrating how these "echoes" are calculated and how they assemble into the Neumann series to solve integral equations. Subsequently, the **"Applications and Interdisciplinary Connections"** chapter will broaden our perspective, revealing the surprising and profound reach of this idea. We will see how it provides a common language for describing everything from quantum particle interactions and transport phenomena to the structure of networks and the [foundations of probability](@article_id:186810), unifying disparate fields under the simple, powerful logic of iteration.
+This article explores the theory and broad significance of the iterated kernel. The first chapter, **"Principles and Mechanisms,"** will demystify the core concept, illustrating how these "echoes" are calculated and how they assemble into the Neumann series to solve integral equations. Subsequently, the **"Applications and Interdisciplinary Connections"** chapter will broaden our perspective, revealing the surprising and profound reach of this idea. We will see how it provides a common language for describing everything from quantum particle interactions and transport phenomena to the structure of networks and the [foundations of probability](@keyword=foundations_of_probability|lang=en-US|style=Feynman), unifying disparate fields under the simple, powerful logic of iteration.
 
 ## Principles and Mechanisms
 
@@ -27,11 +27,11 @@ At first glance, this looks like a mess. But watch what happens if we re-arrange
 
 $$ (T^2 f)(x) = \int_a^b \left( \int_a^b K(x,z) K(z,t) dz \right) f(t) dt $$
 
-Look closely at the expression in the parentheses. It depends only on $x$ and $t$, not on the function $f$ we started with. It's a new kernel! This is the essence of the matter. The operator $T^2$ is itself an [integral operator](@article_id:147018), and its kernel, which we'll call $K_2(x,t)$, is defined by that inner integral:
+Look closely at the expression in the parentheses. It depends only on $x$ and $t$, not on the function $f$ we started with. It's a new kernel! This is the essence of the matter. The operator $T^2$ is itself an [integral operator](@keyword=integral_operator|lang=en-US|style=Feynman), and its kernel, which we'll call $K_2(x,t)$, is defined by that inner integral:
 
 $$ K_2(x,t) = \int_a^b K(x,z) K(z,t) dz $$
 
-This is a profoundly beautiful idea. The kernel for "two steps" of the process is found by integrating the original kernel, $K_1(x,t) = K(x,t)$, against itself over all possible intermediate points $z$. It’s the continuous version of [matrix multiplication](@article_id:155541). If you think of the indices of a matrix as discrete points, [matrix multiplication](@article_id:155541) $(AB)_{it} = \sum_j A_{ij} B_{jt}$ is about summing over all intermediate "paths" $j$. Our integral for $K_2(x,t)$ does the exact same thing, but for a continuous infinity of paths.
+This is a profoundly beautiful idea. The kernel for "two steps" of the process is found by integrating the original kernel, $K_1(x,t) = K(x,t)$, against itself over all possible intermediate points $z$. It’s the continuous version of [matrix multiplication](@keyword=matrix_multiplication|lang=en-US|style=Feynman). If you think of the indices of a matrix as discrete points, [matrix multiplication](@keyword=matrix_multiplication|lang=en-US|style=Feynman) $(AB)_{it} = \sum_j A_{ij} B_{jt}$ is about summing over all intermediate "paths" $j$. Our integral for $K_2(x,t)$ does the exact same thing, but for a continuous infinity of paths.
 
 This logic extends naturally. The kernel for the operator $T^n$, which we call the **$n$-th iterated kernel** $K_n(x,t)$, is found by iterating this process:
 
@@ -41,7 +41,7 @@ Each iterated kernel $K_n(x,t)$ tells us the total influence that a point $t$ ha
 
 ### Let's Play a Few Rounds
 
-To get a feel for this, let's compute a few iterated kernels for a simple case. Consider a **Volterra operator**, which is a special type where the integral's upper limit is $x$ instead of a fixed $b$. This often represents systems where the future depends on the past, but not vice-versa. Let's take the simplest non-trivial kernel: a constant, $K(x,t) = c$, for $0 \le t \le x$ .
+To get a feel for this, let's compute a few iterated kernels for a simple case. Consider a **Volterra operator**, which is a special type where the integral's upper limit is $x$ instead of a fixed $b$. This often represents systems where the future depends on the past, but not vice-versa. Let's take the simplest non-trivial kernel: a constant, $K(x,t) = c$, for $0 \le t \le x$ [@problem_id:1115268].
 
 The first kernel is just the original:
 $$ K_1(x,t) = c $$
@@ -58,13 +58,13 @@ $$ K_4(x,t) = \int_t^x c \cdot K_3(z,t) dz = \int_t^x c \cdot \left(\frac{c^3(z-
 
 A pattern is emerging! Notice that $2=2!$ and $6=3!$. We can guess the general formula:
 $$ K_n(x,t) = \frac{c^n (x-t)^{n-1}}{(n-1)!} $$
-This looks suspiciously like the terms in the Taylor series for an [exponential function](@article_id:160923). This is no accident; it is a deep clue about the nature of these iterative processes. We can prove this general formula by induction, and similar patterns appear for many other kernels  .
+This looks suspiciously like the terms in the Taylor series for an [exponential function](@keyword=exponential_function|lang=en-US|style=Feynman). This is no accident; it is a deep clue about the nature of these iterative processes. We can prove this general formula by induction, and similar patterns appear for many other kernels [@problem_id:1125237] [@problem_id:1125333].
 
-For some kernels, the pattern is even simpler. Consider the **[degenerate kernel](@article_id:192482)** $K(x,t)=x(1-t)$ on the interval $[0,1]$ . It's called degenerate or separable because it's a product of a function of $x$ and a function of $t$.
+For some kernels, the pattern is even simpler. Consider the **[degenerate kernel](@keyword=degenerate_kernel|lang=en-US|style=Feynman)** $K(x,t)=x(1-t)$ on the interval $[0,1]$ [@problem_id:1115150]. It's called degenerate or separable because it's a product of a function of $x$ and a function of $t$.
 $$ K_1(x,t) = xt $$
 $$ K_2(x,t) = \int_0^1 (xz)(zt) dz = xt \int_0^1 z^2 dz = \frac{1}{3}xt $$
 $$ K_3(x,t) = \int_0^1 (xz)\left(\frac{1}{3}zt\right) dz = \frac{1}{3}xt \int_0^1 z^2 dz = \left(\frac{1}{3}\right)^2 xt $$
-The pattern here is a simple [geometric progression](@article_id:269976): $K_n(x,t) = \left(\frac{1}{3}\right)^{n-1} xt$.
+The pattern here is a simple [geometric progression](@keyword=geometric_progression|lang=en-US|style=Feynman): $K_n(x,t) = \left(\frac{1}{3}\right)^{n-1} xt$.
 
 ### The Grand Purpose: Assembling the Solution
 
@@ -72,7 +72,7 @@ Why do we bother calculating all these echoes? Because they are the building blo
 
 $$ y(x) = f(x) + \lambda \int_a^b K(x,t) y(t) dt $$
 
-Here, $f(x)$ is some initial input or "[forcing function](@article_id:268399)," and the integral term is a feedback loop where the function $y(x)$ influences itself. Writing this in operator notation, we have $y = f + \lambda Ty$. If this were simple algebra, we'd write $(1-\lambda T)y = f$ and find $y = (1-\lambda T)^{-1}f$.
+Here, $f(x)$ is some initial input or "[forcing function](@keyword=forcing_function|lang=en-US|style=Feynman)," and the integral term is a feedback loop where the function $y(x)$ influences itself. Writing this in operator notation, we have $y = f + \lambda Ty$. If this were simple algebra, we'd write $(1-\lambda T)y = f$ and find $y = (1-\lambda T)^{-1}f$.
 
 Amazingly, we can do something very similar with operators! If $\lambda$ is small enough, we can use the geometric series expansion for the inverse operator:
 $$ (I-\lambda T)^{-1} = I + \lambda T + \lambda^2 T^2 + \lambda^3 T^3 + \dots $$
@@ -80,26 +80,26 @@ This is called the **Neumann series**. Applying this to our function $f$, we get
 $$ y = f + \lambda Tf + \lambda^2 T^2 f + \lambda^3 T^3 f + \dots $$
 The solution is a superposition of the original input ($f$), its first echo ($\lambda Tf$), its second echo ($\lambda^2 T^2 f$), and so on, ad infinitum.
 
-Now, we can bring our iterated kernels back into the picture. Each term $T^n f$ is an integral with kernel $K_n$. We can bundle the entire [infinite series](@article_id:142872) of integrals into a single integral:
+Now, we can bring our iterated kernels back into the picture. Each term $T^n f$ is an integral with kernel $K_n$. We can bundle the entire [infinite series](@keyword=infinite_series|lang=en-US|style=Feynman) of integrals into a single integral:
 $$ y(x) = f(x) + \lambda \int_a^b \left( \sum_{n=0}^{\infty} \lambda^n K_{n+1}(x,t) \right) f(t) dt $$
 
-The magnificent sum inside the parentheses is the star of our show. It is the **[resolvent kernel](@article_id:197931)**, $R(x,t;\lambda)$.
+The magnificent sum inside the parentheses is the star of our show. It is the **[resolvent kernel](@keyword=resolvent_kernel|lang=en-US|style=Feynman)**, $R(x,t;\lambda)$.
 $$ R(x,t;\lambda) = \sum_{n=0}^{\infty} \lambda^n K_{n+1}(x,t) = K_1 + \lambda K_2 + \lambda^2 K_3 + \dots $$
-The [resolvent kernel](@article_id:197931) is the "effective" kernel of the system. It encapsulates the infinite cascade of echoes into a single, master function that tells you how the input $f(t)$ directly produces the feedback part of the solution $y(x)$.
+The [resolvent kernel](@keyword=resolvent_kernel|lang=en-US|style=Feynman) is the "effective" kernel of the system. It encapsulates the infinite cascade of echoes into a single, master function that tells you how the input $f(t)$ directly produces the feedback part of the solution $y(x)$.
 
 ### The Payoff: Taming Infinity
 
-The true beauty of this method appears when we can sum the Neumann series and find a simple, [closed-form expression](@article_id:266964) for the [resolvent kernel](@article_id:197931). Let's return to our examples.
+The true beauty of this method appears when we can sum the Neumann series and find a simple, [closed-form expression](@keyword=closed_form_expression|lang=en-US|style=Feynman) for the [resolvent kernel](@keyword=resolvent_kernel|lang=en-US|style=Feynman). Let's return to our examples.
 
-For the Volterra kernel $K(x,t) = k e^{\alpha(x-t)}$, a slightly more general version of the exponential kernel we saw earlier, one can show through induction that the iterated kernels are  :
+For the Volterra kernel $K(x,t) = k e^{\alpha(x-t)}$, a slightly more general version of the exponential kernel we saw earlier, one can show through induction that the iterated kernels are [@problem_id:1115041] [@problem_id:1125084]:
 $$ K_{n+1}(x,t) = \frac{k^{n+1}(x-t)^n}{n!} e^{\alpha(x-t)} $$
-Plugging this into the series for the [resolvent kernel](@article_id:197931) gives:
+Plugging this into the series for the [resolvent kernel](@keyword=resolvent_kernel|lang=en-US|style=Feynman) gives:
 $$ R(x,t;\lambda) = \sum_{n=0}^{\infty} \lambda^n \frac{k^{n+1}(x-t)^n}{n!} e^{\alpha(x-t)} = k e^{\alpha(x-t)} \sum_{n=0}^{\infty} \frac{(\lambda k (x-t))^n}{n!} $$
 We immediately recognize the sum as the Taylor series for an exponential function! The result is breathtakingly simple:
 $$ R(x,t;\lambda) = k e^{\alpha(x-t)} e^{\lambda k (x-t)} = k e^{(\alpha + \lambda k)(x-t)} $$
-An entire infinite series of increasingly [complex integrals](@article_id:202264) collapses into a single, clean [exponential function](@article_id:160923).
+An entire infinite series of increasingly [complex integrals](@keyword=complex_integrals|lang=en-US|style=Feynman) collapses into a single, clean [exponential function](@keyword=exponential_function|lang=en-US|style=Feynman).
 
-Let's try the [degenerate kernel](@article_id:192482) $K(x,t)=x(1-t)$ on $[0,1]$ . Its iterated kernels follow a [geometric progression](@article_id:269976), $K_{n+1}(x,t) = (\frac{1}{6})^n x(1-t)$. The [resolvent kernel](@article_id:197931) becomes a geometric series:
+Let's try the [degenerate kernel](@keyword=degenerate_kernel|lang=en-US|style=Feynman) $K(x,t)=x(1-t)$ on $[0,1]$ [@problem_id:1125069]. Its iterated kernels follow a [geometric progression](@keyword=geometric_progression|lang=en-US|style=Feynman), $K_{n+1}(x,t) = (\frac{1}{6})^n x(1-t)$. The [resolvent kernel](@keyword=resolvent_kernel|lang=en-US|style=Feynman) becomes a geometric series:
 $$ R(x,t;\lambda) = \sum_{n=0}^{\infty} \lambda^n \left(\frac{1}{6}\right)^n x(1-t) = x(1-t) \sum_{n=0}^{\infty} \left(\frac{\lambda}{6}\right)^n $$
 As long as $|\lambda/6|  1$, this series converges to:
 $$ R(x,t;\lambda) = \frac{x(1-t)}{1-\lambda/6} $$

@@ -8,17 +8,17 @@
 
 想一想蛋白质。它不仅仅是一串氨基酸；它是一个纳米工程的奇迹，折叠成一个精确的三维形状，使其能够执行其生物功能。它是如何做到的？在近乎无限种可能的扭曲方式中，它以惊人的可靠性找到了正确的那一种。这就是著名的蛋白质折叠问题。
 
-其核心在于，这是一个[统计力](@article_id:373880)学问题。我们可以想象一个简化的蛋白质，一串珠子，其中一些是“油性”的（疏水），另一些是“亲水”的（极性）。油性部分想要躲避周围的水，在核心处聚集在一起。每一种可能的折叠形状，或称“构象”，都与一定的能量相关联，这取决于有多少油性珠子接触。[配分函数](@article_id:371907)是这个过程的总会计师。它系统地对蛋白质可以采取的每一种可能形状——从最伸展到最蜷缩的——求和，并根据其玻尔兹曼因子对每种形状进行加权。能量最低的构象——即油性部分愉快地聚集在一起的构象——对这个总和的贡献最大。通过分析配分函数，我们可以确定最可能的折叠状态，并理解驱动这场复杂分子舞蹈的[热力学力](@article_id:322310)量。
+其核心在于，这是一个[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学问题。我们可以想象一个简化的蛋白质，一串珠子，其中一些是“油性”的（疏水），另一些是“亲水”的（极性）。油性部分想要躲避周围的水，在核心处聚集在一起。每一种可能的折叠形状，或称“构象”，都与一定的能量相关联，这取决于有多少油性珠子接触。[配分函数](@keyword=sum_over_states_2|lang=zh-CN|style=Feynman)是这个过程的总会计师。它系统地对蛋白质可以采取的每一种可能形状——从最伸展到最蜷缩的——求和，并根据其玻尔兹曼因子对每种形状进行加权[@problem_id:228824]。能量最低的构象——即油性部分愉快地聚集在一起的构象——对这个总和的贡献最大。通过分析配分函数，我们可以确定最可能的折叠状态，并理解驱动这场复杂分子舞蹈的[热力学力](@keyword=thermodynamic_forces|lang=zh-CN|style=Feynman)量。
 
-但大自然并非总是如此井然有序。当系统变得异常复杂，具有一个充满丘陵和山谷的“[崎岖能量景观](@article_id:297568)”时，会发生什么？这就是玻璃和其他[无序系统](@article_id:305841)的世界。液体在冷却时，想要找到其能量最低的状态——有序的晶体。但如果你冷却得足够快，分子可能会“卡”在一个无序的、类似玻璃的[排列](@article_id:296886)中。它们没有足够的能量找到通往真正晶体[基态](@article_id:312876)的路径。
+但大自然并非总是如此井然有序。当系统变得异常复杂，具有一个充满丘陵和山谷的“[崎岖能量景观](@keyword=rugged_energy_landscape|lang=zh-CN|style=Feynman)”时，会发生什么？这就是玻璃和其他[无序系统](@keyword=disordered_systems|lang=zh-CN|style=Feynman)的世界。液体在冷却时，想要找到其能量最低的状态——有序的晶体。但如果你冷却得足够快，分子可能会“卡”在一个无序的、类似玻璃的[排列](@keyword=permutation|lang=zh-CN|style=Feynman)中。它们没有足够的能量找到通往真正晶体[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)的路径。
 
-理论家们利用诸如[随机能量模型](@article_id:311138)（REM）之类的思想来模拟这一点，其中无数可能构象的能量被假定为从某个分布（如高斯分布）中抽取的[随机变量](@article_id:324024)。利用配分函数，我们可以计算系统的*[构型熵](@article_id:308234)*——这是对可及的低能态数量的一种度量。一个非凡的预测由此产生：在一个特定的温度，即所谓的Kauzmann温度下，这个熵可能消失！系统耗尽了可及的构象，并冻结成玻璃。配分函数再次作为我们的向导，一个预测从流体到冻结的无序状态这一戏剧性转变的理论晴雨表。
+理论家们利用诸如[随机能量模型](@keyword=random_energy_model|lang=zh-CN|style=Feynman)（REM）之类的思想来模拟这一点，其中无数可能构象的能量被假定为从某个分布（如高斯分布）中抽取的[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman)。利用配分函数，我们可以计算系统的*[构型熵](@keyword=configurational_entropy|lang=zh-CN|style=Feynman)*——这是对可及的低能态数量的一种度量。一个非凡的预测由此产生：在一个特定的温度，即所谓的Kauzmann温度下，这个熵可能消失！系统耗尽了可及的构象，并冻结成玻璃。配分函数再次作为我们的向导，一个预测从流体到冻结的无序状态这一戏剧性转变的理论晴雨表[@problem_id:228665]。
 
 ### 量子领域：一个系统及其所处的世界
 
-当我们踏入量子世界时，配分函数变得更加不可或缺。在这里，能级是量子化的，是能量阶梯上离散的梯级。求和变成了对这些特定[量子态](@article_id:306563)的求和。
+当我们踏入量子世界时，配分函数变得更加不可或缺。在这里，能级是量子化的，是能量阶梯上离散的梯级。求和变成了对这些特定[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)的求和。
 
-考虑物理学中最基本的问题之一：当一个微小的量子系统与它周围的广阔世界相互作用时会发生什么？没有哪个原子，没有哪个[量子比特](@article_id:298377)是真正孤立的。它不断地被其环境，或称“[热浴](@article_id:297491)”，推挤和碰撞。为了理解这一点，我们可以构建一个玩具模型：一个单独的量子谐振子（我们的“系统”）与另一个（我们的“热浴”）耦合。*组合*系统的配分函数掌握着关键。诀窍是找到“[简正模](@article_id:300087)式”——耦合系统的真实、独立的[振动](@article_id:331484)。一旦做到这一点，看似复杂的哈密顿量就变成了两个独立振子的简单求和。[总配分函数](@article_id:369254)就是它们各自配分函数的乘积。通过研究这一点，我们可以理解诸如[热化](@article_id:302828)（我们的系统如何达到与其环境相同的温度）和退相干（量子奇异性如何泄漏到更广阔的世界中）等现象。可以说，宇宙的配分函数决定了其最小组成部分的行为。
+考虑物理学中最基本的问题之一：当一个微小的量子系统与它周围的广阔世界相互作用时会发生什么？没有哪个原子，没有哪个[量子比特](@keyword=qubit|lang=zh-CN|style=Feynman)是真正孤立的。它不断地被其环境，或称“[热浴](@keyword=heat_bath|lang=zh-CN|style=Feynman)”，推挤和碰撞。为了理解这一点，我们可以构建一个玩具模型：一个单独的量子谐振子（我们的“系统”）与另一个（我们的“热浴”）耦合[@problem_id:474118]。*组合*系统的配分函数掌握着关键。诀窍是找到“[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman)式”——耦合系统的真实、独立的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。一旦做到这一点，看似复杂的哈密顿量就变成了两个独立振子的简单求和。[总配分函数](@keyword=overall_partition_function|lang=zh-CN|style=Feynman)就是它们各自配分函数的乘积。通过研究这一点，我们可以理解诸如[热化](@keyword=thermalization|lang=zh-CN|style=Feynman)（我们的系统如何达到与其环境相同的温度）和退相干（量子奇异性如何泄漏到更广阔的世界中）等现象。可以说，宇宙的配分函数决定了其最小组成部分的行为。
 
 ### 计算的新前沿：配分函数中的量子算法
 
@@ -26,20 +26,20 @@
 
 伊辛模型，一个简单的磁性模型，其配分函数是用真实世界的能量和温度计算的。这是一个经典问题。但如果我们允许参数——自旋之间的相互作用强度——是*复数*，会发生什么？这听起来像是一个数学家不切实际的幻想，与物理现实毫无关联。然而，它却引出了现代物理学中最深刻的见解之一。
 
-事实证明，用某些精心挑选的复数参数来计算[二维伊辛模型](@article_id:299570)的[配分函数](@article_id:371907)是一个极其困难的问题。它如此之难，以至于被认为是“BQP-难”的。这意味着它至少和任何可以被[通用量子计算](@article_id:297651)机有效解决的问题一样困难。一个单一数字——[配分函数](@article_id:371907)的计算——可以封装整个量子算法的结果！
+事实证明，用某些精心挑选的复数参数来计算[二维伊辛模型](@keyword=2d_ising_model|lang=zh-CN|style=Feynman)的[配分函数](@keyword=sum_over_states_2|lang=zh-CN|style=Feynman)是一个极其困难的问题。它如此之难，以至于被认为是“BQP-难”的。这意味着它至少和任何可以被[通用量子计算](@keyword=universal_quantum_computation|lang=zh-CN|style=Feynman)机有效解决的问题一样困难[@problem_id:148863]。一个单一数字——[配分函数](@keyword=sum_over_states_2|lang=zh-CN|style=Feynman)的计算——可以封装整个量子算法的结果！
 
-这怎么可能？其思想是构建一个代表量子电路中[量子比特](@article_id:298377)演化的自旋[晶格](@article_id:300090)。[量子算法](@article_id:307761)的构建模块——[量子门](@article_id:309182)，是通过巧妙的“小工具”——即具有定制复数相互作用的自旋的局部小组态——来实现的。通过对这些小工具中的辅助自旋状态求和，可以产生模拟[量子计算](@article_id:303150)中复杂相位旋转的有效相互作用。整个[晶格](@article_id:300090)的最终配分函数，即对所有这些自旋构象的总和，成为了[量子计算](@article_id:303150)输出的物理体现。卑微的[配分函数](@article_id:371907)转变成了在[统计力](@article_id:373880)学和[量子计算](@article_id:303150)之间进行翻译的罗塞塔石碑。
+这怎么可能？其思想是构建一个代表量子电路中[量子比特](@keyword=qubit|lang=zh-CN|style=Feynman)演化的自旋[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)。[量子算法](@keyword=quantum_algorithms|lang=zh-CN|style=Feynman)的构建模块——[量子门](@keyword=quantum_computing_gates|lang=zh-CN|style=Feynman)，是通过巧妙的“小工具”——即具有定制复数相互作用的自旋的局部小组态——来实现的。通过对这些小工具中的辅助自旋状态求和，可以产生模拟[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)中复杂相位旋转的有效相互作用[@problem_id:148986]。整个[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)的最终配分函数，即对所有这些自旋构象的总和，成为了[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)输出的物理体现。卑微的[配分函数](@keyword=sum_over_states_2|lang=zh-CN|style=Feynman)转变成了在[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学和[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)之间进行翻译的罗塞塔石碑。
 
 ### 空间的形状与现实的织锦
 
-我们已经从分子旅行到[量子计算](@article_id:303150)机，但[配分函数](@article_id:371907)的旅程尚未结束。它的最终目的地是所有目标中最雄心勃勃的：空间、时间和现实的本质。
+我们已经从分子旅行到[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)机，但[配分函数](@keyword=sum_over_states_2|lang=zh-CN|style=Feynman)的旅程尚未结束。它的最终目的地是所有目标中最雄心勃勃的：空间、时间和现实的本质。
 
-在一次激进的智识飞跃中，物理学家和数学家发展出一种叫做[拓扑量子场论](@article_id:302865)（TQFT）的东西。在TQFT中，[配分函数](@article_id:371907)不再是温度的函数。相反，它为一个空间本身的*形状*，或拓扑，分配一个数字，一个[不变量](@article_id:309269)。
+在一次激进的智识飞跃中，物理学家和数学家发展出一种叫做[拓扑量子场论](@keyword=topological_quantum_field_theory|lang=zh-CN|style=Feynman)（TQFT）的东西。在TQFT中，[配分函数](@keyword=sum_over_states_2|lang=zh-CN|style=Feynman)不再是温度的函数。相反，它为一个空间本身的*形状*，或拓扑，分配一个数字，一个[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)。
 
-其中一个最令人惊叹的例子是它与纽结理论的联系。一个纽结，就像一根绳子上的三叶结，是一个拓扑对象。你可以拉伸和变形它，但如果不切断绳子，你就无法解开它。它有捕捉其“纽结度”的数学[不变量](@article_id:309269)。令人惊讶的是，其中最强大的[不变量](@article_id:309269)之一，[琼斯多项式](@article_id:305323)，可以被计算为一个[统计力](@article_id:373880)学模型（[Potts模型](@article_id:299809)）在某个特殊“临界”点上的[配分函数](@article_id:371907)。一个物理系统的热学性质竟然秘密地编码了纽结的抽象[拓扑性质](@article_id:302046)。
+其中一个最令人惊叹的例子是它与纽结理论的联系。一个纽结，就像一根绳子上的三叶结，是一个拓扑对象。你可以拉伸和变形它，但如果不切断绳子，你就无法解开它。它有捕捉其“纽结度”的数学[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)。令人惊讶的是，其中最强大的[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)之一，[琼斯多项式](@keyword=jones_polynomial|lang=zh-CN|style=Feynman)，可以被计算为一个[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学模型（[Potts模型](@keyword=potts_model|lang=zh-CN|style=Feynman)）在某个特殊“临界”点上的[配分函数](@keyword=sum_over_states_2|lang=zh-CN|style=Feynman)[@problem_id:139230]。一个物理系统的热学性质竟然秘密地编码了纽结的抽象[拓扑性质](@keyword=topological_property|lang=zh-CN|style=Feynman)。
 
-这个思想发展成一个惊人普适的框架。像[Chern-Simons理论](@article_id:298049)或阿贝尔BF理论这样的TQFT，为一个完整的[三维流](@article_id:328971)形（例如，我们宇宙可能的一种形状）分配一个[配分函数](@article_id:371907) $Z(M)$ 。这个数字，通过[对流](@article_id:302247)形上所有可能的“平坦联络”或其他场构型求和来计算，就像一个精密的指纹，一个帮助分类[流形的拓扑](@article_id:331537)[不变量](@article_id:309269)。更奇特的理论，如用于拓扑量子计算机模型的斐波那契TQFT，为复杂的[3-流形](@article_id:377799)提供[配分函数](@article_id:371907)，这些[流形](@article_id:313450)可以通过对像Whitehead环这样的环进行“Dehn手术”——一种拓扑剪贴操作——来构建。配分函数已成为探索空间本身架构的工具。
+这个思想发展成一个惊人普适的框架。像[Chern-Simons理论](@keyword=chern_simons_theory|lang=zh-CN|style=Feynman)或阿贝尔BF理论这样的TQFT，为一个完整的[三维流](@keyword=three_dimensional_flow|lang=zh-CN|style=Feynman)形（例如，我们宇宙可能的一种形状）分配一个[配分函数](@keyword=sum_over_states_2|lang=zh-CN|style=Feynman) $Z(M)$ [@problem_id:287695]。这个数字，通过[对流](@keyword=convection|lang=zh-CN|style=Feynman)形上所有可能的“平坦联络”或其他场构型求和来计算，就像一个精密的指纹，一个帮助分类[流形的拓扑](@keyword=topology_of_manifolds|lang=zh-CN|style=Feynman)[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)[@problem_id:1078092]。更奇特的理论，如用于拓扑量子计算机模型的斐波那契TQFT，为复杂的[3-流形](@keyword=3_manifolds|lang=zh-CN|style=Feynman)提供[配分函数](@keyword=sum_over_states_2|lang=zh-CN|style=Feynman)，这些[流形](@keyword=manifold|lang=zh-CN|style=Feynman)可以通过对像Whitehead环这样的环进行“Dehn手术”——一种拓扑剪贴操作——来构建[@problem_id:342851]。配分函数已成为探索空间本身架构的工具。
 
-这条路的终点在哪里？是最终的奖赏：一个[量子引力](@article_id:305536)理论。在像[圈量子引力](@article_id:360555)这样的理论中，物理学家试图写下[时空](@article_id:370647)本身的[配分函数](@article_id:371907)。这个“[历史求和](@article_id:317107)”被表述为“自旋泡沫”，即对所有可能的几何[量子态](@article_id:306563)的求和。求和中的每一项都对应于宇宙演化的一个离散的、量子的历史。在这种背景下，配分函数正是宇宙以给定边界存在的振幅。
+这条路的终点在哪里？是最终的奖赏：一个[量子引力](@keyword=quantum_gravity|lang=zh-CN|style=Feynman)理论。在像[圈量子引力](@keyword=loop_quantum_gravity|lang=zh-CN|style=Feynman)这样的理论中，物理学家试图写下[时空](@keyword=space_time|lang=zh-CN|style=Feynman)本身的[配分函数](@keyword=sum_over_states_2|lang=zh-CN|style=Feynman)。这个“[历史求和](@keyword=sum_over_histories|lang=zh-CN|style=Feynman)”被表述为“自旋泡沫”，即对所有可能的几何[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)的求和[@problem_id:899742]。求和中的每一项都对应于宇宙演化的一个离散的、量子的历史。在这种背景下，配分函数正是宇宙以给定边界存在的振幅。
 
-从一个计算气体压力的简单工具，[配分函数](@article_id:371907)已升格为我们探索宇宙最深层故事的核心角色。它是连接微观与宏观、具体与抽象、物理定律与数学真理的桥梁。它象征着我们探索宇宙背后那深刻而时常隐藏的统一性。
+从一个计算气体压力的简单工具，[配分函数](@keyword=sum_over_states_2|lang=zh-CN|style=Feynman)已升格为我们探索宇宙最深层故事的核心角色。它是连接微观与宏观、具体与抽象、物理定律与数学真理的桥梁。它象征着我们探索宇宙背后那深刻而时常隐藏的统一性。

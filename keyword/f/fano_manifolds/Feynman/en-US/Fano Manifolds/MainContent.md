@@ -25,13 +25,13 @@ However, this scaling freedom *does* allow for a convenient normalization. If a 
 
 ### A Tale of Three Curvatures
 
-The nature of our quest depends entirely on the sign of this [topological invariant](@article_id:141534), the first Chern class.
+The nature of our quest depends entirely on the sign of this [topological invariant](@keyword=topological_invariant|lang=en-US|style=Feynman), the first Chern class.
 
 *   **Negative ($c_1(X)  0$) and Zero ($c_1(X) = 0$):** These cases, as it turned out, are the "easy" ones. In the 1970s, the groundbreaking work of Thierry Aubin and Shing-Tung Yau showed that a Kähler-Einstein metric *always* exists on these manifolds. The geometry here is cooperative. The negative or zero curvature acts like a gentle, restoring force. If you try to build the metric, any deviation from the perfect solution gets naturally smoothed out. The problem guides you to the answer.
 
-*   **Positive ($c_1(X) > 0$):** This is the wild frontier. These manifolds are called **Fano manifolds**. Here, the [intrinsic curvature](@article_id:161207) is positive, acting like an explosive force. Instead of guiding you to a solution, it threatens to blow up. The quest becomes vastly more difficult and interesting. Do perfect shapes exist in this turbulent world?
+*   **Positive ($c_1(X) > 0$):** This is the wild frontier. These manifolds are called **Fano manifolds**. Here, the [intrinsic curvature](@keyword=intrinsic_curvature|lang=en-US|style=Feynman) is positive, acting like an explosive force. Instead of guiding you to a solution, it threatens to blow up. The quest becomes vastly more difficult and interesting. Do perfect shapes exist in this turbulent world?
 
-Sometimes, they do! The most fundamental example of a Fano manifold is **[complex projective space](@article_id:267908), $\mathbb{CP}^n$**. You can think of it as the space of all lines passing through the origin in an $(n+1)$-dimensional space. This highly [symmetric space](@article_id:182689) comes with a natural, beautiful metric called the **Fubini-Study metric**. And when you do the calculation, you find—lo and behold—it perfectly satisfies the Kähler-Einstein equation. This was a beacon of hope: perfect forms *can* exist in the Fano world. But it also posed the central question: why here, and not everywhere?
+Sometimes, they do! The most fundamental example of a Fano manifold is **[complex projective space](@keyword=complex_projective_space|lang=en-US|style=Feynman), $\mathbb{CP}^n$**. You can think of it as the space of all lines passing through the origin in an $(n+1)$-dimensional space. This highly [symmetric space](@keyword=symmetric_space|lang=en-US|style=Feynman) comes with a natural, beautiful metric called the **Fubini-Study metric**. And when you do the calculation, you find—lo and behold—it perfectly satisfies the Kähler-Einstein equation. This was a beacon of hope: perfect forms *can* exist in the Fano world. But it also posed the central question: why here, and not everywhere?
 
 ### Obstructions on the Path: When Perfection is Elusive
 
@@ -39,7 +39,7 @@ The reason not all Fano manifolds admit a KE metric is because of **obstructions
 
 What are these geometric forms of lopsidedness?
 
-1.  **The Wrong Kind of Symmetries:** All manifolds have symmetries, transformations that preserve their structure, called **automorphisms**. A key insight, from a classic result called **Matsushima's Theorem**, is that if a Fano manifold has a KE metric, its group of symmetries must be of a special "nice" type, called **reductive**. A non-reductive group contains shearing motions, a kind of inherent "wobble" that is incompatible with the perfect rigidity of an Einstein metric. Some Fano manifolds, like the space you get by "blowing up" a point on the [projective plane](@article_id:266007), have these wobbly symmetries and are therefore disqualified from the quest.
+1.  **The Wrong Kind of Symmetries:** All manifolds have symmetries, transformations that preserve their structure, called **automorphisms**. A key insight, from a classic result called **Matsushima's Theorem**, is that if a Fano manifold has a KE metric, its group of symmetries must be of a special "nice" type, called **reductive**. A non-reductive group contains shearing motions, a kind of inherent "wobble" that is incompatible with the perfect rigidity of an Einstein metric. Some Fano manifolds, like the space you get by "blowing up" a point on the [projective plane](@keyword=projective_plane|lang=en-US|style=Feynman), have these wobbly symmetries and are therefore disqualified from the quest.
 
 2.  **The Futaki Invariant:** Even if the symmetries are of the right "type", they might still be unbalanced. In the 1980s, Akito Futaki discovered a brilliant way to measure this. He defined a number, now called the **Futaki invariant**, for each infinitesimal symmetry. He proved that if a KE metric exists, this invariant must be zero for every single symmetry. A non-zero Futaki invariant is a definitive "No Go". It's a precise measure of lopsidedness that obstructs the existence of a balanced metric.
 
@@ -51,7 +51,7 @@ For a long time, the story seemed to be about finding and eliminating these obst
 
 What does it mean for a geometric object to be stable? The most powerful analogy comes from physics. A physical system is stable when it settles into its state of lowest possible energy. A ball in a valley is stable; a ball on a hilltop is unstable. Geometers defined an "energy" for metrics, a functional now called the **Mabuchi K-energy**. The bold conjecture was that a Kähler-Einstein metric, the "perfect shape," should correspond to the state of absolute minimum energy. The existence of a KE metric would then be equivalent to the manifold's energy being bounded below—it can't fall forever.
 
-This was a beautiful physical intuition, but how could you test it? The true genius of the Yau-Tian-Donaldson (YTD) conjecture was to translate this analytic idea of energy minimization into a purely algebraic concept: **K-[polystability](@article_id:193665)**.
+This was a beautiful physical intuition, but how could you test it? The true genius of the Yau-Tian-Donaldson (YTD) conjecture was to translate this analytic idea of energy minimization into a purely algebraic concept: **K-[polystability](@keyword=polystability|lang=en-US|style=Feynman)**.
 
 Imagine taking your Fano manifold and trying to break it. You consider all possible ways it could degenerate or fall apart into something uglier. These degenerations are called **test configurations**. For each one, you can calculate a number—a generalization of Futaki's invariant called the **Donaldson-Futaki invariant**—that tells you if this degeneration is "energy-lowering".
 
@@ -59,16 +59,16 @@ A manifold is **K-polystable** if it resists all such attempts to break it. For 
 
 ### The Grand Unification: The Yau-Tian-Donaldson Theorem
 
-The YTD conjecture proposed a breathtaking equivalence: the existence of a solution to a difficult geometric partial differential equation (the KE equation) is exactly the same as a combinatorial, algebraic stability condition (K-[polystability](@article_id:193665)).
+The YTD conjecture proposed a breathtaking equivalence: the existence of a solution to a difficult geometric partial differential equation (the KE equation) is exactly the same as a combinatorial, algebraic stability condition (K-[polystability](@keyword=polystability|lang=en-US|style=Feynman)).
 
 $$
 \text{Existence of a KE metric} \iff \text{K-polystability}
 $$
 
-This connected two worlds. On one side, the world of analysis: curvature, metrics, and monstrous PDEs like the **complex Monge-Ampère equation** that one must solve to find the metric. On the other side, the world of [algebraic geometry](@article_id:155806): symmetries, polynomial equations, and the abstract stability of shapes.
+This connected two worlds. On one side, the world of analysis: curvature, metrics, and monstrous PDEs like the **complex Monge-Ampère equation** that one must solve to find the metric. On the other side, the world of [algebraic geometry](@keyword=algebraic_geometry|lang=en-US|style=Feynman): symmetries, polynomial equations, and the abstract stability of shapes.
 
 After decades of intense effort by mathematicians worldwide, this conjecture was proven to be true in a series of landmark papers by Xiuxiong Chen, Simon Donaldson, and Song Sun. The Yau-Tian-Donaldson theorem is the crowning achievement of this quest. It gives a complete and profound answer to the question of which Fano manifolds admit a "perfect" shape.
 
-The proof itself is a monumental synthesis of ideas. To show that K-[polystability](@article_id:193665) implies existence, one must solve the KE equation. A key strategy is the **[continuity method](@article_id:195099)**: you start with an easy problem you *can* solve, and you slowly deform it into the hard problem you *want* to solve, tracking the solution as you go. The biggest danger is that the solution path might break, or your metric might degenerate into something horrible. A crucial step to prevent this—to "box in" the solutions—is a deep result known as the **partial $C^0$ estimate**. It guarantees that a sequence of KE Fano manifolds can't just dissolve into geometric dust; their limit is always a well-behaved algebraic object, providing the essential compactness to make the entire strategy work.
+The proof itself is a monumental synthesis of ideas. To show that K-[polystability](@keyword=polystability|lang=en-US|style=Feynman) implies existence, one must solve the KE equation. A key strategy is the **[continuity method](@keyword=continuity_method|lang=en-US|style=Feynman)**: you start with an easy problem you *can* solve, and you slowly deform it into the hard problem you *want* to solve, tracking the solution as you go. The biggest danger is that the solution path might break, or your metric might degenerate into something horrible. A crucial step to prevent this—to "box in" the solutions—is a deep result known as the **partial $C^0$ estimate**. It guarantees that a sequence of KE Fano manifolds can't just dissolve into geometric dust; their limit is always a well-behaved algebraic object, providing the essential compactness to make the entire strategy work.
 
 The quest that began with a simple question about curvature has led us to a deep and beautiful unity in mathematics, a place where the shape of space is governed by the laws of stability.

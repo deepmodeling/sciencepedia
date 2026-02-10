@@ -6,38 +6,38 @@
 
 ### 精准的艺术：两种几何构型的故事
 
-HWE 反应首要且最著名的才能是其立体化学忠实性。当使用“稳定的”[膦酸酯](@article_id:370345)试剂——即[碳负离子](@article_id:361186)被相邻的[吸电子基团](@article_id:363953)稳定化的试剂——时，反应表现出一种强烈、近乎固执的偏好，倾向于形成 $(E)$-烯烃，其中新双键两侧最大的基团位于彼此相对的位置。这是[热力学](@article_id:359663)上更有利、更稳定的构型。
+HWE 反应首要且最著名的才能是其立体化学忠实性。当使用“稳定的”[膦酸酯](@keyword=phosphonate_ester|lang=zh-CN|style=Feynman)试剂——即[碳负离子](@keyword=carbanions|lang=zh-CN|style=Feynman)被相邻的[吸电子基团](@keyword=electron_withdrawing_groups|lang=zh-CN|style=Feynman)稳定化的试剂——时，反应表现出一种强烈、近乎固执的偏好，倾向于形成 $(E)$-烯烃，其中新双键两侧最大的基团位于彼此相对的位置。这是[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)上更有利、更稳定的构型。
 
-这种可靠性是其应用价值的基石。无论你是将一个简单的醛与[膦酸酯](@article_id:370345)偶联以制造[共轭](@article_id:312168)分子，如苯[乙烯](@article_id:315597)基-呋喃衍生物 ()，还是处理一个更具空间挑战性的伙伴，如 2-金刚烷酮的刚性笼状结构 ()，HWE 反应都能自信地提供 $(E)$-产物。这就像拥有一把永远精准的木工角尺；你可以依赖它每次都将角落建造成完美的九十度角。
+这种可靠性是其应用价值的基石。无论你是将一个简单的醛与[膦酸酯](@keyword=phosphonate_ester|lang=zh-CN|style=Feynman)偶联以制造[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)分子，如苯[乙烯](@keyword=ethylene|lang=zh-CN|style=Feynman)基-呋喃衍生物 ([@problem_id:2211223])，还是处理一个更具空间挑战性的伙伴，如 2-金刚烷酮的刚性笼状结构 ([@problem_id:2211206])，HWE 反应都能自信地提供 $(E)$-产物。这就像拥有一把永远精准的木工角尺；你可以依赖它每次都将角落建造成完美的九十度角。
 
-但如果你的分子蓝图要求相反的构型呢？如果你需要不太稳定的 $(Z)$-[烯烃](@article_id:362809)呢？这正是化学家天才闪耀的地方。他们没有与反应对抗，而是学会了与它对话。他们推断，如果 $(E)$-产物是[热力学平衡](@article_id:302101)的结果，或许他们可以通过[动力学控制](@article_id:315291)来强制产生不同的结果——即让通往 $(Z)$-产物的路径更快且不可逆。
+但如果你的分子蓝图要求相反的构型呢？如果你需要不太稳定的 $(Z)$-[烯烃](@keyword=alkenes|lang=zh-CN|style=Feynman)呢？这正是化学家天才闪耀的地方。他们没有与反应对抗，而是学会了与它对话。他们推断，如果 $(E)$-产物是[热力学平衡](@keyword=thermodynamic_equilibrium|lang=zh-CN|style=Feynman)的结果，或许他们可以通过[动力学控制](@keyword=kinetic_control|lang=zh-CN|style=Feynman)来强制产生不同的结果——即让通往 $(Z)$-产物的路径更快且不可逆。
 
-这催生了卓越的 Still-Gennari 改良法。化学家们发现，通过改变磷原子本身的基团，用如三氟乙氧基这样的强[吸电子基团](@article_id:363953)取代简单的烷氧基，可以改变中间体的电[子环](@article_id:314606)境。结合特定的碱和用于在低温下捕获钾抗衡离子的[冠醚](@article_id:302658)，这种“调整后”的试剂现在会迅速沿着一条不同的路径前进，果断地生成所需的 $(Z)$-[烯烃](@article_id:362809) ()。这是一个精彩的例子，说明了对机理的深刻理解如何让我们不仅能使用工具，还能修改工具，使其为我们所用。
+这催生了卓越的 Still-Gennari 改良法。化学家们发现，通过改变磷原子本身的基团，用如三氟乙氧基这样的强[吸电子基团](@keyword=electron_withdrawing_groups|lang=zh-CN|style=Feynman)取代简单的烷氧基，可以改变中间体的电[子环](@keyword=subring|lang=zh-CN|style=Feynman)境。结合特定的碱和用于在低温下捕获钾抗衡离子的[冠醚](@keyword=crown_ethers|lang=zh-CN|style=Feynman)，这种“调整后”的试剂现在会迅速沿着一条不同的路径前进，果断地生成所需的 $(Z)$-[烯烃](@keyword=alkenes|lang=zh-CN|style=Feynman) ([@problem_id:2211227])。这是一个精彩的例子，说明了对机理的深刻理解如何让我们不仅能使用工具，还能修改工具，使其为我们所用。
 
 ### 有目的地建造：从链到环和建筑奇迹
 
-化学家的世界不是平面的，而是三维的。一个巨大的挑战是引导长而柔韧的原子链折叠并连接，形成复杂的环和笼。HWE 反应证明了自己是这门手艺的大师。如果[膦酸酯](@article_id:370345)和羰基位于同一个分子中，用碱轻轻一推，就能说服它们在分子内拥抱中发生反应。
+化学家的世界不是平面的，而是三维的。一个巨大的挑战是引导长而柔韧的原子链折叠并连接，形成复杂的环和笼。HWE 反应证明了自己是这门手艺的大师。如果[膦酸酯](@keyword=phosphonate_ester|lang=zh-CN|style=Feynman)和羰基位于同一个分子中，用碱轻轻一推，就能说服它们在分子内拥抱中发生反应。
 
-这种策略对于构建中等大小的环，如八元环，异常强大，而使用其他方法合成这类环是出了名的困难 ()。HWE 的[热力学](@article_id:359663)驱动力——形成一个非常强的磷氧键——就像一个强力绞车，将链的两端拉拢，并“咔嗒”一声将环闭合。
+这种策略对于构建中等大小的环，如八元环，异常强大，而使用其他方法合成这类环是出了名的困难 ([@problem_id:2211235])。HWE 的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)驱动力——形成一个非常强的磷氧键——就像一个强力绞车，将链的两端拉拢，并“咔嗒”一声将环闭合。
 
-当这些原理被应用于更复杂的结构时，真正的艺术性便显现出来。考虑一个本身就具有手性的分子，其手性并非来自立体中心，而是因为其结构在空间中扭曲，像一个螺旋桨。这被称为[轴手性](@article_id:374277)。一个令人惊叹的分子内 HWE 应用涉及使用这样一种[轴手性](@article_id:374277)起始物料来构建一个大环——一个非常大的环。骨架中预先存在的扭曲充当了舵，引导关环反应沿着唯一的、有利的路径进行。在一次非凡的“手性转移”展示中，起始物料的[轴手性](@article_id:374277)完美地转化为最终刚性环蕃产物的平面手性，实现了近乎完美的立体控制 ()。这是最高境界的分子折纸艺术，其中编码在一种三维结构形式中的信息被用来指导另一种三维结构的创造。
+当这些原理被应用于更复杂的结构时，真正的艺术性便显现出来。考虑一个本身就具有手性的分子，其手性并非来自立体中心，而是因为其结构在空间中扭曲，像一个螺旋桨。这被称为[轴手性](@keyword=axial_chirality|lang=zh-CN|style=Feynman)。一个令人惊叹的分子内 HWE 应用涉及使用这样一种[轴手性](@keyword=axial_chirality|lang=zh-CN|style=Feynman)起始物料来构建一个大环——一个非常大的环。骨架中预先存在的扭曲充当了舵，引导关环反应沿着唯一的、有利的路径进行。在一次非凡的“手性转移”展示中，起始物料的[轴手性](@keyword=axial_chirality|lang=zh-CN|style=Feynman)完美地转化为最终刚性环蕃产物的平面手性，实现了近乎完美的立体控制 ([@problem_id:2211214])。这是最高境界的分子折纸艺术，其中编码在一种三维结构形式中的信息被用来指导另一种三维结构的创造。
 
 ### 化学家的巧思：选择性与分子多米诺
 
-现实世界的合成通常涉及的分子并非简单，而是装饰着多个反应位点。对于任何试剂来说，一个关键问题是：它如何知道在哪里反应？这是[化学选择性](@article_id:309945)的挑战。在这方面，HWE 反应也显示出其智能。当面对一个既有标准酮基又有反应性较低的[共轭体系](@article_id:324023)（它也可能发生加成）的底物时，HWE 叶立德会准确无误地选择更具[亲电性](@article_id:366713)的酮羰基，而忽略另一条路径 ()。
+现实世界的合成通常涉及的分子并非简单，而是装饰着多个反应位点。对于任何试剂来说，一个关键问题是：它如何知道在哪里反应？这是[化学选择性](@keyword=chemoselectivity|lang=zh-CN|style=Feynman)的挑战。在这方面，HWE 反应也显示出其智能。当面对一个既有标准酮基又有反应性较低的[共轭体系](@keyword=conjugated_systems|lang=zh-CN|style=Feynman)（它也可能发生加成）的底物时，HWE 叶立德会准确无误地选择更具[亲电性](@keyword=electrophilicity|lang=zh-CN|style=Feynman)的酮羰基，而忽略另一条路径 ([@problem_id:2211268])。
 
-当 HWE 反应与另一个著名反应——[羟醛缩合](@article_id:374958)反应直接竞争时，这种选择性变得更加引人注目。在一个巧妙设计的分子中，包含了进行分子内 HWE 反应和[分子内羟醛反应](@article_id:363381)的所有必要组分，哪条路径会胜出？答案揭示了 HWE 的王牌。形成[膦酸酯碳负离子](@article_id:362162)的去质子化通常更有利，而随后的烯化步骤本质上是不可逆且[热力学](@article_id:359663)上是下坡的。HWE 路径赢得了这场竞赛，果断地生成了环戊烯产物，而羟醛路径则被远远甩在后面 ()。
+当 HWE 反应与另一个著名反应——[羟醛缩合](@keyword=aldol_condensation|lang=zh-CN|style=Feynman)反应直接竞争时，这种选择性变得更加引人注目。在一个巧妙设计的分子中，包含了进行分子内 HWE 反应和[分子内羟醛反应](@keyword=intramolecular_aldol_reaction|lang=zh-CN|style=Feynman)的所有必要组分，哪条路径会胜出？答案揭示了 HWE 的王牌。形成[膦酸酯碳负离子](@keyword=phosphonate_carbanion|lang=zh-CN|style=Feynman)的去质子化通常更有利，而随后的烯化步骤本质上是不可逆且[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)上是下坡的。HWE 路径赢得了这场竞赛，果断地生成了环戊烯产物，而羟醛路径则被远远甩在后面 ([@problem_id:2208074])。
 
-也许最优雅的应用是“串联”或“多米诺”反应，其中一个事件触发一系列键形成转化，迅速构建复杂性。HWE 试剂可以成为这类[串联反应](@article_id:382539)的绝佳引发剂。在一个优美的例子中，[膦酸酯](@article_id:370345)叶立德首先与硝基[烯烃](@article_id:362809)发生 Michael 加成。生成的中间体随后经历一次惊人的[分子内环化](@article_id:383365)，其中[膦酸酯](@article_id:370345)部分在完成其初始任务后，扮演了[离去基团](@article_id:379459)的角色，闭合了一个三元环 ()。这是合成中的“买一送一”交易：在一次高效的操作中形成了两个新的碳-碳键。
+也许最优雅的应用是“串联”或“多米诺”反应，其中一个事件触发一系列键形成转化，迅速构建复杂性。HWE 试剂可以成为这类[串联反应](@keyword=a____b____c_reaction|lang=zh-CN|style=Feynman)的绝佳引发剂。在一个优美的例子中，[膦酸酯](@keyword=phosphonate_ester|lang=zh-CN|style=Feynman)叶立德首先与硝基[烯烃](@keyword=alkenes|lang=zh-CN|style=Feynman)发生 Michael 加成。生成的中间体随后经历一次惊人的[分子内环化](@keyword=intramolecular_cyclization|lang=zh-CN|style=Feynman)，其中[膦酸酯](@keyword=phosphonate_ester|lang=zh-CN|style=Feynman)部分在完成其初始任务后，扮演了[离去基团](@keyword=leaving_group|lang=zh-CN|style=Feynman)的角色，闭合了一个三元环 ([@problem_id:2211267])。这是合成中的“买一送一”交易：在一次高效的操作中形成了两个新的碳-碳键。
 
-在另一个巧妙的序列中，HWE 反应作为压轴大戏。首先，一个丙二酸[酯](@article_id:367058)构件被连接到一个包含[膦酸酯](@article_id:370345)的定制系链上。然后，碱引发分子内 HWE 反应，但这一次叶立德攻击的是一个*酯*羰基。产物不是简单的烯烃，而是一个[乙烯](@article_id:315597)基[醚](@article_id:363404)——一种有价值且用途广泛的官能团，[嵌入](@article_id:311541)在一个新形成的六元环中 ()。
+在另一个巧妙的序列中，HWE 反应作为压轴大戏。首先，一个丙二酸[酯](@keyword=ester|lang=zh-CN|style=Feynman)构件被连接到一个包含[膦酸酯](@keyword=phosphonate_ester|lang=zh-CN|style=Feynman)的定制系链上。然后，碱引发分子内 HWE 反应，但这一次叶立德攻击的是一个*酯*羰基。产物不是简单的烯烃，而是一个[乙烯](@keyword=ethylene|lang=zh-CN|style=Feynman)基[醚](@keyword=ethers|lang=zh-CN|style=Feynman)——一种有价值且用途广泛的官能团，[嵌入](@keyword=embedding|lang=zh-CN|style=Feynman)在一个新形成的六元环中 ([@problem_id:2182920])。
 
 ### 扩展工具箱
 
-HWE 的多功能性不仅限于制造碳-碳键。通过修改与[膦酸酯](@article_id:370345)稳定碳相连的原子，化学家可以引入其他元素。例如，使用甲硫基[膦酸酯](@article_id:370345)试剂可以合成[乙烯](@article_id:315597)基硫醚 ()。这些化合物本身不仅有趣，而且是[有机合成](@article_id:309173)中宝贵的中间体，可作为进一步转化的关键节点。这表明 HWE 不是一招鲜的伎俩，而是一个支持广泛分子创新的平台。
+HWE 的多功能性不仅限于制造碳-碳键。通过修改与[膦酸酯](@keyword=phosphonate_ester|lang=zh-CN|style=Feynman)稳定碳相连的原子，化学家可以引入其他元素。例如，使用甲硫基[膦酸酯](@keyword=phosphonate_ester|lang=zh-CN|style=Feynman)试剂可以合成[乙烯](@keyword=ethylene|lang=zh-CN|style=Feynman)基硫醚 ([@problem_id:2211258])。这些化合物本身不仅有趣，而且是[有机合成](@keyword=organic_synthesis|lang=zh-CN|style=Feynman)中宝贵的中间体，可作为进一步转化的关键节点。这表明 HWE 不是一招鲜的伎俩，而是一个支持广泛分子创新的平台。
 
 ### HWE 在科学宏伟画卷中的地位
 
-从可靠地形成 $(E)$-[烯烃](@article_id:362809)到巧妙地合成 $(Z)$-异构体；从闭合大大小小的环到在[化学选择性](@article_id:309945)的险峻地势中导航，并引发优雅的反应串联——Horner-Wadsworth-Emmons 反应是化学原理力量与美的证明。
+从可靠地形成 $(E)$-[烯烃](@keyword=alkenes|lang=zh-CN|style=Feynman)到巧妙地合成 $(Z)$-异构体；从闭合大大小小的环到在[化学选择性](@keyword=chemoselectivity|lang=zh-CN|style=Feynman)的险峻地势中导航，并引发优雅的反应串联——Horner-Wadsworth-Emmons 反应是化学原理力量与美的证明。
 
-这些应用远非单纯的学术练习。我们所探讨的策略正是科学家们用来构建改变我们世界的分子所使用的策略。具有强大生物活性的天然产物（如维生素 A 和各种抗生素）的合成在很大程度上依赖于这类化学。新药、农用化学品以及用于[有机发光二极管](@article_id:307149)（OLED）等先进材料的聚合物的创造，都取决于精确、高效地构建碳-碳双键的能力。HWE 反应是这项事业的基石，是在理解、创造和改善定义我们生活的分子这一宏伟探索中一个安静但不可或缺的功臣。
+这些应用远非单纯的学术练习。我们所探讨的策略正是科学家们用来构建改变我们世界的分子所使用的策略。具有强大生物活性的天然产物（如维生素 A 和各种抗生素）的合成在很大程度上依赖于这类化学。新药、农用化学品以及用于[有机发光二极管](@keyword=oleds|lang=zh-CN|style=Feynman)（OLED）等先进材料的聚合物的创造，都取决于精确、高效地构建碳-碳双键的能力。HWE 反应是这项事业的基石，是在理解、创造和改善定义我们生活的分子这一宏伟探索中一个安静但不可或缺的功臣。

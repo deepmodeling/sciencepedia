@@ -25,7 +25,7 @@ On the left side, every single term has a $p$ in it. We can factor it out:
 
 $$p(12p^2 + 16pq - 41q^2) = 15q^3$$
 
-This equation tells us something remarkable. The integer $p$, multiplied by some other integer in the parentheses, gives us $15q^3$. This means $p$ must be a [divisor](@article_id:187958) of $15q^3$. But wait! We said from the start that $p$ and $q$ have no common factors. That means $p$ can't share any factors with $q$, or $q^2$, or $q^3$. So, if $p$ divides the product $15q^3$ but has nothing to do with $q^3$, it must have everything to do with $15$. In other words, **$p$ must be an integer [divisor](@article_id:187958) of the constant term, $-15$**.
+This equation tells us something remarkable. The integer $p$, multiplied by some other integer in the parentheses, gives us $15q^3$. This means $p$ must be a [divisor](@keyword=divisor|lang=en-US|style=Feynman) of $15q^3$. But wait! We said from the start that $p$ and $q$ have no common factors. That means $p$ can't share any factors with $q$, or $q^2$, or $q^3$. So, if $p$ divides the product $15q^3$ but has nothing to do with $q^3$, it must have everything to do with $15$. In other words, **$p$ must be an integer [divisor](@keyword=divisor|lang=en-US|style=Feynman) of the constant term, $-15$**.
 
 We can play the same trick again, but this time, let's isolate the first term of our equation:
 
@@ -35,13 +35,13 @@ Now the right side has a $q$ in every term:
 
 $$12p^3 = q(-16p^2 + 41pq + 15q^2)$$
 
-By the same logic, $q$ must divide $12p^3$. Since $q$ shares no factors with $p^3$, it must be that **$q$ must be an integer [divisor](@article_id:187958) of the leading coefficient, $12$**.
+By the same logic, $q$ must divide $12p^3$. Since $q$ shares no factors with $p^3$, it must be that **$q$ must be an integer [divisor](@keyword=divisor|lang=en-US|style=Feynman) of the leading coefficient, $12$**.
 
-Look what we've done!  Without solving a thing, we've discovered a strict set of rules. Any rational root $p/q$ of this polynomial must have a numerator $p$ that divides $-15$ (so $p$ could be $\pm 1, \pm 3, \pm 5, \pm 15$) and a denominator $q$ that divides $12$ (so $q$ could be $1, 2, 3, 4, 6, 12$).
+Look what we've done! [@problem_id:1798478] Without solving a thing, we've discovered a strict set of rules. Any rational root $p/q$ of this polynomial must have a numerator $p$ that divides $-15$ (so $p$ could be $\pm 1, \pm 3, \pm 5, \pm 15$) and a denominator $q$ that divides $12$ (so $q$ could be $1, 2, 3, 4, 6, 12$).
 
-This is the famous **Rational Root Theorem**. It acts like a sieve. Instead of searching the infinite ocean of rational numbers, we now have a small, finite list of candidates to test . It’s a spectacular reduction in work! For our example, testing the candidates reveals the roots are $\frac{3}{2}, -\frac{1}{3},$ and $-\frac{5}{2}$. A seemingly impossible problem becomes a simple checklist.
+This is the famous **Rational Root Theorem**. It acts like a sieve. Instead of searching the infinite ocean of rational numbers, we now have a small, finite list of candidates to test [@problem_id:1813389]. It’s a spectacular reduction in work! For our example, testing the candidates reveals the roots are $\frac{3}{2}, -\frac{1}{3},$ and $-\frac{5}{2}$. A seemingly impossible problem becomes a simple checklist.
 
-And here’s a pro tip from the trenches, a consequence of what mathematicians call Gauss's Lemma. If you have a polynomial like $P(x) = 6x^3 + 10x^2 - 4x + 12$, you'll notice all the coefficients are divisible by 2. You can simplify it to its **primitive** form, $P_{prim}(x) = 3x^3 + 5x^2 - 2x + 6$, by dividing out this common factor. These two polynomials have the exact same roots, but applying the Rational Root Theorem to the primitive one gives a much shorter list of candidates to check, making your life even easier .
+And here’s a pro tip from the trenches, a consequence of what mathematicians call Gauss's Lemma. If you have a polynomial like $P(x) = 6x^3 + 10x^2 - 4x + 12$, you'll notice all the coefficients are divisible by 2. You can simplify it to its **primitive** form, $P_{prim}(x) = 3x^3 + 5x^2 - 2x + 6$, by dividing out this common factor. These two polynomials have the exact same roots, but applying the Rational Root Theorem to the primitive one gives a much shorter list of candidates to check, making your life even easier [@problem_id:1814432].
 
 ### Roots, Reducibility, and the Rational Dust
 
@@ -53,13 +53,13 @@ Let's try to factor it. Could it be the product of two quadratic polynomials? Ma
 
 $$P(x) = (x^2 - 3x + 1)(x^2 + 3x + 1)$$
 
-It *is* reducible!  It broke into two pieces. The polynomial itself has no rational roots, but its *factors* do have roots—they're just not rational. (The roots of $x^2 - 3x + 1$ are $\frac{3 \pm \sqrt{5}}{2}$). This is a profound lesson: the world of polynomials is richer than just the rational numbers they might contain. Sometimes the story is in how they break apart.
+It *is* reducible! [@problem_id:1794142] It broke into two pieces. The polynomial itself has no rational roots, but its *factors* do have roots—they're just not rational. (The roots of $x^2 - 3x + 1$ are $\frac{3 \pm \sqrt{5}}{2}$). This is a profound lesson: the world of polynomials is richer than just the rational numbers they might contain. Sometimes the story is in how they break apart.
 
 This brings us to a wonderful puzzle. We know that rational numbers are **dense**. Pick any two different real numbers, no matter how close together, and I can always find a rational number sitting between them. They are like a fine dust covering the entire number line. Yet, we've just seen that any single polynomial with integer coefficients can only ever have a *finite* number of rational roots. How can these two facts possibly coexist? It feels like having a fishing net with a few, specific holes that can only ever catch a finite number of fish, yet claiming that the entire ocean is made of fish!
 
 The resolution is as elegant as the paradox itself. While any *one* polynomial can only "catch" a finite number of rational numbers, there are infinitely many polynomials with integer coefficients. In fact, they are **countably infinite**. For any rational number you can imagine, say $\frac{17}{42}$, we can easily build a polynomial for which it is a root: $42x - 17 = 0$. So, every single rational number is a root of *some* simple, integer-coefficient polynomial.
 
-The entire, dense dust of rational numbers is the result of taking the union of all the finite sets of roots from every single one of these countably infinite polynomials . Each polynomial grabs its own little handful of rationals, and together, they account for all of them. What a beautiful, intricate structure!
+The entire, dense dust of rational numbers is the result of taking the union of all the finite sets of roots from every single one of these countably infinite polynomials [@problem_id:1295766]. Each polynomial grabs its own little handful of rationals, and together, they account for all of them. What a beautiful, intricate structure!
 
 ### A New Kind of Solution: The Art of Approximation
 
@@ -71,13 +71,13 @@ The gold standard for a "good" approximation is given by the inequality:
 
 $$ \left| \alpha - \frac{p}{q} \right|  \frac{1}{q^2} $$
 
-Here, $\alpha$ is the irrational number we're trying to approximate. The $q^2$ in the denominator is a powerful statement. It says the error shrinks not just in proportion to $1/q$, but to its square. Finding a rational $p/q$ that satisfies this is like hitting a tiny target. Yet, a wonderful result called **Dirichlet's [approximation theorem](@article_id:266852)** tells us that for *any* irrational number $\alpha$, we can find infinitely many rational numbers $p/q$ that meet this high standard.
+Here, $\alpha$ is the irrational number we're trying to approximate. The $q^2$ in the denominator is a powerful statement. It says the error shrinks not just in proportion to $1/q$, but to its square. Finding a rational $p/q$ that satisfies this is like hitting a tiny target. Yet, a wonderful result called **Dirichlet's [approximation theorem](@keyword=approximation_theorem|lang=en-US|style=Feynman)** tells us that for *any* irrational number $\alpha$, we can find infinitely many rational numbers $p/q$ that meet this high standard.
 
 This opens up a new way to classify numbers. We can ask: for a given number $\alpha$, what is the largest possible exponent $\mu$ we can put in the denominator,
 
 $$ \left| \alpha - \frac{p}{q} \right|  \frac{1}{q^{\mu}} $$
 
-such that the inequality still has infinitely many rational solutions $p/q$? This value, $\mu(\alpha)$, is called the **[irrationality exponent](@article_id:186496)**. It’s a measure of how "approximable" a number is. A larger $\mu$ means the number is easier to snuggle up to with rational fractions. From Dirichlet's theorem, we know $\mu(\alpha) \ge 2$ for all [irrational numbers](@article_id:157826).
+such that the inequality still has infinitely many rational solutions $p/q$? This value, $\mu(\alpha)$, is called the **[irrationality exponent](@keyword=irrationality_exponent|lang=en-US|style=Feynman)**. It’s a measure of how "approximable" a number is. A larger $\mu$ means the number is easier to snuggle up to with rational fractions. From Dirichlet's theorem, we know $\mu(\alpha) \ge 2$ for all [irrational numbers](@keyword=irrational_numbers|lang=en-US|style=Feynman).
 
 ### A Surprising Order in the Chaos
 
@@ -85,18 +85,18 @@ You might expect that different numbers have different irrationality exponents, 
 
 $$ L = \sum_{n=1}^{\infty} \frac{1}{10^{n!}} = 0.1100010000000000000000010\dots $$
 
-The ones appear at positions $1!, 2!, 3!, \dots$ (1st, 2nd, 6th, 24th, etc.). By chopping off the series at each [factorial](@article_id:266143) term, we create rational approximations that are astronomically good, so good that the [irrationality exponent](@article_id:186496) of $L$ is infinite: $\mu(L) = \infty$ . Numbers like this, whose [irrationality exponent](@article_id:186496) is infinite, are called **Liouville numbers**, and they were the first numbers proven to be **transcendental**—meaning they are not the root of any polynomial with integer coefficients.
+The ones appear at positions $1!, 2!, 3!, \dots$ (1st, 2nd, 6th, 24th, etc.). By chopping off the series at each [factorial](@keyword=factorial|lang=en-US|style=Feynman) term, we create rational approximations that are astronomically good, so good that the [irrationality exponent](@keyword=irrationality_exponent|lang=en-US|style=Feynman) of $L$ is infinite: $\mu(L) = \infty$ [@problem_id:3029839]. Numbers like this, whose [irrationality exponent](@keyword=irrationality_exponent|lang=en-US|style=Feynman) is infinite, are called **Liouville numbers**, and they were the first numbers proven to be **transcendental**—meaning they are not the root of any polynomial with integer coefficients.
 
-Now for the shocker. What about all the "normal" [irrational numbers](@article_id:157826) we know and love, like $\sqrt{2}$, $\sqrt{3}$, or the golden ratio $\phi = \frac{1+\sqrt{5}}{2}$? All of these are **algebraic numbers**, because they are roots of simple polynomials (e.g., $x^2 - 2 = 0$).
+Now for the shocker. What about all the "normal" [irrational numbers](@keyword=irrational_numbers|lang=en-US|style=Feynman) we know and love, like $\sqrt{2}$, $\sqrt{3}$, or the golden ratio $\phi = \frac{1+\sqrt{5}}{2}$? All of these are **algebraic numbers**, because they are roots of simple polynomials (e.g., $x^2 - 2 = 0$).
 
-One might guess they have a whole spectrum of irrationality exponents. But in one of the most stunning results of 20th-century mathematics, the **Thue-Siegel-Roth Theorem** (or simply Roth's Theorem) showed that this is not true. It states that for *every single irrational [algebraic number](@article_id:156216)* $\alpha$, the [irrationality exponent](@article_id:186496) is exactly 2.
+One might guess they have a whole spectrum of irrationality exponents. But in one of the most stunning results of 20th-century mathematics, the **Thue-Siegel-Roth Theorem** (or simply Roth's Theorem) showed that this is not true. It states that for *every single irrational [algebraic number](@keyword=algebraic_number|lang=en-US|style=Feynman)* $\alpha$, the [irrationality exponent](@keyword=irrationality_exponent|lang=en-US|style=Feynman) is exactly 2.
 
 $$ \mu(\alpha) = 2 \quad (\text{for all irrational algebraic } \alpha) $$
 
-  This is astonishing. No matter how complicated the polynomial it comes from, every algebraic irrational resists [rational approximation](@article_id:136221) with the same fierce tenacity. They are all "badly approximable," right at the boundary set by Dirichlet's theorem . For any tiny push beyond 2, say an exponent of $2+\epsilon$, the number of rational approximations that can meet this standard abruptly drops from infinite to finite.
+[@problem_id:3029875] [@problem_id:3029839] This is astonishing. No matter how complicated the polynomial it comes from, every algebraic irrational resists [rational approximation](@keyword=rational_approximation|lang=en-US|style=Feynman) with the same fierce tenacity. They are all "badly approximable," right at the boundary set by Dirichlet's theorem [@problem_id:3031066]. For any tiny push beyond 2, say an exponent of $2+\epsilon$, the number of rational approximations that can meet this standard abruptly drops from infinite to finite.
 
-The [golden ratio](@article_id:138603), $\phi$, is an extreme example of this. It's often called the "most irrational" number because it is, in a specific sense, the hardest to approximate with rationals. For the inequality $|\phi - p/q|  1/(cq^2)$, the threshold between infinitely and finitely many solutions occurs exactly at $c = \sqrt{5}$ . But even for this champion of irrationality, the exponent on $q$ is still just 2.
+The [golden ratio](@keyword=golden_ratio|lang=en-US|style=Feynman), $\phi$, is an extreme example of this. It's often called the "most irrational" number because it is, in a specific sense, the hardest to approximate with rationals. For the inequality $|\phi - p/q|  1/(cq^2)$, the threshold between infinitely and finitely many solutions occurs exactly at $c = \sqrt{5}$ [@problem_id:1285053]. But even for this champion of irrationality, the exponent on $q$ is still just 2.
 
-Think about what this means. There is a "wild" class of transcendental numbers, like Liouville's constant, that are incredibly easy to approximate. And then there is the vast, orderly kingdom of [algebraic numbers](@article_id:150394), all of which share the exact same [irrationality measure](@article_id:180386), $\mu=2$. What is even more surprising is that a separate result from metric number theory shows that "almost all" real numbers (in a measure-theoretic sense) also have $\mu=2$ . So the algebraic numbers, which form a "small" [set of measure zero](@article_id:197721), behave, in this one profound way, exactly like the "typical" real number. The true exceptions are not the [algebraic numbers](@article_id:150394), but the [transcendental numbers](@article_id:154417) that are *too easy* to approximate.
+Think about what this means. There is a "wild" class of transcendental numbers, like Liouville's constant, that are incredibly easy to approximate. And then there is the vast, orderly kingdom of [algebraic numbers](@keyword=algebraic_numbers|lang=en-US|style=Feynman), all of which share the exact same [irrationality measure](@keyword=irrationality_measure|lang=en-US|style=Feynman), $\mu=2$. What is even more surprising is that a separate result from metric number theory shows that "almost all" real numbers (in a measure-theoretic sense) also have $\mu=2$ [@problem_id:3023087]. So the algebraic numbers, which form a "small" [set of measure zero](@keyword=set_of_measure_zero|lang=en-US|style=Feynman), behave, in this one profound way, exactly like the "typical" real number. The true exceptions are not the [algebraic numbers](@keyword=algebraic_numbers|lang=en-US|style=Feynman), but the [transcendental numbers](@keyword=transcendental_numbers|lang=en-US|style=Feynman) that are *too easy* to approximate.
 
 Our journey, which began with a simple trick for solving high-school equations, has led us to a deep and unexpected hierarchy in the universe of numbers, a hidden order that classifies every number by its fundamental relationship with the simple, humble fractions.

@@ -9,15 +9,15 @@ So, we have met oxalyl chloride. But what is it, *really*? To a synthetic chemis
 
 ### The Art of Activation: Turning "Off" to "On"
 
-Imagine you have a carboxylic acid, probably one of the most common [functional groups](@article_id:138985) in the organic world. It’s a sturdy, reliable fellow. In fact, it's a bit *too* reliable. It's stable. The carbonyl carbon, the business end of the molecule, is not particularly eager to react. Why? Because it’s saddled with a hydroxyl ($-\text{OH}$) group. If a nucleophile—some molecule looking to form a new bond—were to attack the carbonyl carbon, the $-OH$ group would have to leave. And an $-OH$ group is a notoriously poor leaving group; it’s like a guest who refuses to leave the party.
+Imagine you have a carboxylic acid, probably one of the most common [functional groups](@keyword=functional_groups|lang=en-US|style=Feynman) in the organic world. It’s a sturdy, reliable fellow. In fact, it's a bit *too* reliable. It's stable. The carbonyl carbon, the business end of the molecule, is not particularly eager to react. Why? Because it’s saddled with a hydroxyl ($-\text{OH}$) group. If a nucleophile—some molecule looking to form a new bond—were to attack the carbonyl carbon, the $-OH$ group would have to leave. And an $-OH$ group is a notoriously poor leaving group; it’s like a guest who refuses to leave the party.
 
 To get anything done, we need to convert this stable, "off" state into a reactive, "on" state. The classic way to do this is to transform the carboxylic acid into an **acid chloride**. By swapping the stubborn $-OH$ for a chlorine atom ($-Cl$), we create a molecule that is vastly more reactive and ready to participate in all sorts of wonderful transformations.
 
-Now, how do we perform this swap? We need a chlorinating agent. The chemist’s toolbox contains several, such as [thionyl chloride](@article_id:185553) ($SOCl_2$) and phosphorus pentachloride ($PCl_5$). Oxalyl chloride, $(COCl)_2$, is another esteemed member of this club. Each has its own personality and quirks, but all of them are designed to solve this fundamental problem of activating a carboxylic acid . So, what makes oxalyl chloride so special?
+Now, how do we perform this swap? We need a chlorinating agent. The chemist’s toolbox contains several, such as [thionyl chloride](@keyword=thionyl_chloride|lang=en-US|style=Feynman) ($SOCl_2$) and phosphorus pentachloride ($PCl_5$). Oxalyl chloride, $(COCl)_2$, is another esteemed member of this club. Each has its own personality and quirks, but all of them are designed to solve this fundamental problem of activating a carboxylic acid [@problem_id:2163558]. So, what makes oxalyl chloride so special?
 
 ### The Elegance of Disappearance
 
-Look at the structure of oxalyl chloride: $Cl-C(=O)-C(=O)-Cl$. It's essentially two [acyl chloride](@article_id:184144) groups fused together. Its name, in fact, comes from its parent dicarboxylic acid, oxalic acid (or ethanedioic acid), in the same way "propanedioyl dichloride" comes from propanedioic acid . This conjoined structure is the key to its genius.
+Look at the structure of oxalyl chloride: $Cl-C(=O)-C(=O)-Cl$. It's essentially two [acyl chloride](@keyword=acyl_chloride|lang=en-US|style=Feynman) groups fused together. Its name, in fact, comes from its parent dicarboxylic acid, oxalic acid (or ethanedioic acid), in the same way "propanedioyl dichloride" comes from propanedioic acid [@problem_id:2204700]. This conjoined structure is the key to its genius.
 
 When you mix a carboxylic acid with oxalyl chloride, a wonderfully clean reaction takes place. Let's take a general carboxylic acid, $RCOOH$. The overall transformation is:
 
@@ -25,27 +25,27 @@ $$
 RCOOH + (COCl)_2 \to RCOCl + \text{CO} + \text{CO}_2 + \text{HCl}
 $$
 
-Notice the byproducts: carbon monoxide ($\text{CO}$), carbon dioxide ($\text{CO}_2$), and hydrogen chloride ($\text{HCl}$). Under normal reaction conditions, what do these three substances have in common? They are all **gases**!  
+Notice the byproducts: carbon monoxide ($\text{CO}$), carbon dioxide ($\text{CO}_2$), and hydrogen chloride ($\text{HCl}$). Under normal reaction conditions, what do these three substances have in common? They are all **gases**! [@problem_id:2163621] [@problem_id:2163591]
 
-This is not just a tidy bit of chemical housekeeping; it is a profound and powerful feature. As the reaction proceeds, the gaseous byproducts simply bubble out of the solution and vanish into the [fume hood](@article_id:267291). According to a fundamental principle of equilibrium known as Le Châtelier's principle, if you constantly remove the products of a reaction, the reaction will relentlessly push forward to make more. The formation of these gases acts like a powerful vacuum, pulling the reaction to completion.
+This is not just a tidy bit of chemical housekeeping; it is a profound and powerful feature. As the reaction proceeds, the gaseous byproducts simply bubble out of the solution and vanish into the [fume hood](@keyword=fume_hood|lang=en-US|style=Feynman). According to a fundamental principle of equilibrium known as Le Châtelier's principle, if you constantly remove the products of a reaction, the reaction will relentlessly push forward to make more. The formation of these gases acts like a powerful vacuum, pulling the reaction to completion.
 
-This has a tremendous practical advantage. Because the reaction drives itself so effectively, it can often be run at room temperature or even colder. This makes oxalyl chloride an exceptionally **mild** reagent, the perfect choice for chemists working with delicate, expensive, or temperature-sensitive molecules that would be destroyed by harsher conditions or the heat required by other methods . Furthermore, cleanup is a dream. There are no messy, non-volatile byproducts to separate. You are left with your desired acid chloride in the solvent, pure and simple. It's a masterpiece of chemical design.
+This has a tremendous practical advantage. Because the reaction drives itself so effectively, it can often be run at room temperature or even colder. This makes oxalyl chloride an exceptionally **mild** reagent, the perfect choice for chemists working with delicate, expensive, or temperature-sensitive molecules that would be destroyed by harsher conditions or the heat required by other methods [@problem_id:2163615]. Furthermore, cleanup is a dream. There are no messy, non-volatile byproducts to separate. You are left with your desired acid chloride in the solvent, pure and simple. It's a masterpiece of chemical design.
 
 ### A Glimpse Inside: The Mixed Anhydride Cascade
 
 But *how* does this elegant transformation happen? The clean overall equation hides a beautiful, fleeting dance of electrons and atoms. The secret lies in not trying to do the impossible. We said that the $-\text{OH}$ group is a terrible leaving group. So, the mechanism doesn't try to force it out. Instead, it cleverly disguises it as something that is itching to leave.
 
-The first step is a [nucleophilic attack](@article_id:151402) from the oxygen of the carboxylic acid's $-\text{OH}$ group onto one of the carbonyl carbons of oxalyl chloride. After a proton is lost, this forms a crucial, unstable intermediate known as a **mixed anhydride**. Its structure looks like this:
+The first step is a [nucleophilic attack](@keyword=nucleophilic_attack|lang=en-US|style=Feynman) from the oxygen of the carboxylic acid's $-\text{OH}$ group onto one of the carbonyl carbons of oxalyl chloride. After a proton is lost, this forms a crucial, unstable intermediate known as a **mixed anhydride**. Its structure looks like this:
 
 $$
 R-C(=O)-O-C(=O)-C(=O)-Cl
 $$
 
-This molecule is the heart of the matter . Look at what we’ve done. We have attached the entire carboxylic acid group (as an acyloxy group) to the oxalyl chloride backbone. We've converted the poor hydroxyl leaving group into a large, complex, and—most importantly—fantastically good leaving group .
+This molecule is the heart of the matter [@problem_id:2163594]. Look at what we’ve done. We have attached the entire carboxylic acid group (as an acyloxy group) to the oxalyl chloride backbone. We've converted the poor hydroxyl leaving group into a large, complex, and—most importantly—fantastically good leaving group [@problem_id:2163583].
 
 Now, a chloride ion (which was conveniently produced in the first step) can attack the original carbonyl carbon of our carboxylic acid. This is the moment of truth. As the chloride forges a new bond, the entire oxalyl-derived fragment is ejected.
 
-And here is the climax of our story. This ejected [leaving group](@article_id:200245) does not persist. It is incredibly unstable and immediately collapses in an irreversible cascade. It fragments into three simple, stable, gaseous molecules: a molecule of carbon dioxide ($\text{CO}_2$), a molecule of carbon monoxide ($\text{CO}$), and a chloride ion. This explosive decomposition provides a massive thermodynamic driving force, making the entire process a one-way street. The reaction doesn't just happen; it plunges forward with an energetic imperative, driven by the formation of those stable gas molecules.
+And here is the climax of our story. This ejected [leaving group](@keyword=leaving_group|lang=en-US|style=Feynman) does not persist. It is incredibly unstable and immediately collapses in an irreversible cascade. It fragments into three simple, stable, gaseous molecules: a molecule of carbon dioxide ($\text{CO}_2$), a molecule of carbon monoxide ($\text{CO}$), and a chloride ion. This explosive decomposition provides a massive thermodynamic driving force, making the entire process a one-way street. The reaction doesn't just happen; it plunges forward with an energetic imperative, driven by the formation of those stable gas molecules.
 
 ### The Catalyst's Gambit: A Deeper Mechanism
 
@@ -57,14 +57,14 @@ $$
 \left[\text{Me}_2\text{N}=\text{CHCl}\right]^{+}
 $$
 
-This ion, with its positively charged nitrogen and an electron-hungry carbon-nitrogen double bond, is an incredibly potent electrophile  . *This* is the species that actually activates the carboxylic acid. The acid reacts with the Vilsmeier salt, and after a few more steps, the desired acid chloride is formed, and—crucially—the DMF molecule is regenerated, ready to start the cycle all over again. This is the definition of a catalyst: it facilitates the reaction, provides a lower-energy pathway, and emerges unscathed at the end. It's a beautiful example of chemical efficiency.
+This ion, with its positively charged nitrogen and an electron-hungry carbon-nitrogen double bond, is an incredibly potent electrophile [@problem_id:2163577] [@problem_id:2163622]. *This* is the species that actually activates the carboxylic acid. The acid reacts with the Vilsmeier salt, and after a few more steps, the desired acid chloride is formed, and—crucially—the DMF molecule is regenerated, ready to start the cycle all over again. This is the definition of a catalyst: it facilitates the reaction, provides a lower-energy pathway, and emerges unscathed at the end. It's a beautiful example of chemical efficiency.
 
 ### A Universal Tool: The Swern Oxidation and the Unity of Activation
 
-The genius of oxalyl chloride isn't limited to making [acid chlorides](@article_id:191374). Its true identity is that of a master **activator**. The principle of using its self-destructive nature to energize another molecule is universal. A perfect illustration of this is the **Swern oxidation**.
+The genius of oxalyl chloride isn't limited to making [acid chlorides](@keyword=acid_chlorides|lang=en-US|style=Feynman). Its true identity is that of a master **activator**. The principle of using its self-destructive nature to energize another molecule is universal. A perfect illustration of this is the **Swern oxidation**.
 
 Here, the goal is different: to gently oxidize an alcohol into an aldehyde or a ketone. The reagent that does the oxidizing is dimethyl sulfoxide (DMSO), but like a carboxylic acid, DMSO is fairly placid on its own. It needs to be activated.
 
-Enter oxalyl chloride. In the first step of the Swern oxidation, typically performed at a frigid $-78~^{\circ}\text{C}$, oxalyl chloride is added to DMSO. And what happens? The exact same principle applies. The DMSO attacks the oxalyl chloride, and the oxalyl backbone promptly decomposes into gaseous $\text{CO}$ and $\text{CO}_2$ . What’s left behind is a highly reactive, electrophilic sulfur species—an "activated DMSO." This [activated complex](@article_id:152611) is now powerful enough to react with the alcohol, setting in motion the steps that lead to oxidation.
+Enter oxalyl chloride. In the first step of the Swern oxidation, typically performed at a frigid $-78~^{\circ}\text{C}$, oxalyl chloride is added to DMSO. And what happens? The exact same principle applies. The DMSO attacks the oxalyl chloride, and the oxalyl backbone promptly decomposes into gaseous $\text{CO}$ and $\text{CO}_2$ [@problem_id:2213720]. What’s left behind is a highly reactive, electrophilic sulfur species—an "activated DMSO." This [activated complex](@keyword=activated_complex|lang=en-US|style=Feynman) is now powerful enough to react with the alcohol, setting in motion the steps that lead to oxidation.
 
 Notice the beautiful unity in these two seemingly different reactions. In both cases—making an acid chloride and performing a Swern oxidation—oxalyl chloride plays the same fundamental role. It is a chemical sacrificial lamb, consuming itself to generate gaseous byproducts and, in doing so, converting a stable molecule (a carboxylic acid or DMSO) into a highly reactive intermediate ready to do the chemist's bidding. It’s a powerful reminder that in chemistry, as in physics, understanding the underlying principles allows you to see the connections between disparate phenomena, revealing a unified and elegant whole.

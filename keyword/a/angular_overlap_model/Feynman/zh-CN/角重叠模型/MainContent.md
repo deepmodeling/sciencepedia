@@ -1,19 +1,19 @@
 ## 引言
-在配位化学的世界里，理解[中心金属离子](@article_id:300142)与其周围配体之间错综复杂的关系至关重要。多年来，[晶体场理论 (CFT)](@article_id:314173) 通过将配体简单地视为[点电荷](@article_id:327323)，提供了一幅简洁但不完整的图景。这种静电方法虽然有用，却忽略了[化学键](@article_id:305517)根本的[共价性](@article_id:315130)质，导致我们对电子结构如何决定[配合物](@article_id:317067)性质的真正理解上存在空白。[角重叠模型](@article_id:372671) (AOM) 应运而生，填补了这一空白，它提供了一个更直观、更符合物理现实的框架，其基础是分子轨道理论的原理。
+在配位化学的世界里，理解[中心金属离子](@keyword=central_metal_ion|lang=zh-CN|style=Feynman)与其周围配体之间错综复杂的关系至关重要。多年来，[晶体场理论 (CFT)](@keyword=crystal_field_theory_(cft)|lang=zh-CN|style=Feynman) 通过将配体简单地视为[点电荷](@keyword=point_charges|lang=zh-CN|style=Feynman)，提供了一幅简洁但不完整的图景。这种静电方法虽然有用，却忽略了[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)根本的[共价性](@keyword=covalent_character|lang=zh-CN|style=Feynman)质，导致我们对电子结构如何决定[配合物](@keyword=coordination_compound|lang=zh-CN|style=Feynman)性质的真正理解上存在空白。[角重叠模型](@keyword=angular_overlap_model|lang=zh-CN|style=Feynman) (AOM) 应运而生，填补了这一空白，它提供了一个更直观、更符合物理现实的框架，其基础是分子轨道理论的原理。
 
-本文将深入探讨 AOM 强大的概念工具。在第一章 **原理与机制** 中，我们将把[金属-配体键](@article_id:311078)分解为简单的、有[方向性](@article_id:329799)的“量子握手”——即 σ 和 π 相互作用——并学习如何从头开始构建[配合物](@article_id:317067)的[能级图](@article_id:365685)。在第二章 **应用与[交叉](@article_id:315017)学科联系** 中，我们将探索该模型如何统一各种化学现象，从解释光谱和磁学性质，到为生物系统中金属离子的功能提供深刻见解，从而展示 AOM 作为连接理论与现实世界的桥梁所扮演的角色。
+本文将深入探讨 AOM 强大的概念工具。在第一章 **原理与机制** 中，我们将把[金属-配体键](@keyword=metal_ligand_bond|lang=zh-CN|style=Feynman)分解为简单的、有[方向性](@keyword=directivity|lang=zh-CN|style=Feynman)的“量子握手”——即 σ 和 π 相互作用——并学习如何从头开始构建[配合物](@keyword=coordination_compound|lang=zh-CN|style=Feynman)的[能级图](@keyword=energy_level_diagrams|lang=zh-CN|style=Feynman)。在第二章 **应用与[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)学科联系** 中，我们将探索该模型如何统一各种化学现象，从解释光谱和磁学性质，到为生物系统中金属离子的功能提供深刻见解，从而展示 AOM 作为连接理论与现实世界的桥梁所扮演的角色。
 
 ## 原理与机制
 
-想象一下，你正试图描述[配位化合物](@article_id:317067)中原子的复杂舞蹈，其中一个[中心金属离子](@article_id:300142)被一群称为**配体**的随从分子包围。旧的思维方式，即**[晶体场理论 (CFT)](@article_id:314173)**，有点像仅通过人们在房间里移动时相互排斥的程度来描述一场舞会。它将配体描绘成简单的负[电荷](@article_id:339187)点，静电地推斥金属的外层电子，这些电子生活在称为**d-轨道**的云状空间区域中。虽然这幅图景正确地预测了d-轨道会分裂成不同的能级，但它感觉并不完整。成键不仅仅是排斥；它是关于连接，关于电子的共享。它是关于共价性的。
+想象一下，你正试图描述[配位化合物](@keyword=coordination_compound|lang=zh-CN|style=Feynman)中原子的复杂舞蹈，其中一个[中心金属离子](@keyword=central_metal_ion|lang=zh-CN|style=Feynman)被一群称为**配体**的随从分子包围。旧的思维方式，即**[晶体场理论 (CFT)](@keyword=crystal_field_theory_(cft)|lang=zh-CN|style=Feynman)**，有点像仅通过人们在房间里移动时相互排斥的程度来描述一场舞会。它将配体描绘成简单的负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)点，静电地推斥金属的外层电子，这些电子生活在称为**d-轨道**的云状空间区域中。虽然这幅图景正确地预测了d-轨道会分裂成不同的能级，但它感觉并不完整。成键不仅仅是排斥；它是关于连接，关于电子的共享。它是关于共价性的。
 
-这时，一个更优美、更直观的思想应运而生：**[角重叠模型](@article_id:372671) (AOM)**。AOM 不再将配体视为没有面目的[点电荷](@article_id:327323)，而是将金属-配体相互作用视为其本质——一种[化学键](@article_id:305517)，一种轨道之间的“量子握手”。就像握手一样，这些相互作用根据其方向有不同的方式和强度。
+这时，一个更优美、更直观的思想应运而生：**[角重叠模型](@keyword=angular_overlap_model|lang=zh-CN|style=Feynman) (AOM)**。AOM 不再将配体视为没有面目的[点电荷](@keyword=point_charges|lang=zh-CN|style=Feynman)，而是将金属-配体相互作用视为其本质——一种[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)，一种轨道之间的“量子握手”。就像握手一样，这些相互作用根据其方向有不同的方式和强度。
 
 ### 化学握手：$\sigma$ 键和 $\pi$ 键
 
 让我们从最简单、最强的相互作用类型开始。想象一个配体迎头朝金属离子靠近。如果金属的一个d-轨道的瓣直接指向迎面而来的配体，它们会发生显著的重叠。这种直接的、头对头的重叠被称为 **$\sigma$ (sigma) 相互作用**。从金属d-轨道的角度来看，这是一种**反键**相互作用——就像两个电子云试图占据同一空间，从而提高了轨道的能量。AOM 为这种完美的头对头相互作用的能量代价起了一个名字：**$e_{\sigma}$**。这个单一的参数量化了特定金属-配体对的 $\sigma$ 握手的内在强度。更高的 $e_{\sigma}$ 意味着更强的握手和更大的去稳定作用。
 
-那么，五个d-轨道中，哪些擅长这种相互作用呢？如果我们将配体沿着[坐标系](@article_id:316753)的x、y和z轴放置，就像在典型的八面体配合物中那样，我们会看到一些非凡的现象。被称为 $d_{z^2}$ 和 $d_{x^2-y^2}$ 的轨道，它们的瓣正好沿着这些轴指向。它们天生就是为 $\sigma$ 相互作用而生的。因此，我们将它们归为一组，称为 **$e_g$ 轨道**。
+那么，五个d-轨道中，哪些擅长这种相互作用呢？如果我们将配体沿着[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)的x、y和z轴放置，就像在典型的八面体配合物中那样，我们会看到一些非凡的现象。被称为 $d_{z^2}$ 和 $d_{x^2-y^2}$ 的轨道，它们的瓣正好沿着这些轴指向。它们天生就是为 $\sigma$ 相互作用而生的。因此，我们将它们归为一组，称为 **$e_g$ 轨道**。
 
 另外三个d-轨道——$d_{xy}$、$d_{xz}$ 和 $d_{yz}$——则另当别论。它们的瓣指向坐标轴*之间*。如果一个配体沿着坐标轴靠近，它会遇到这些轨道的**节面**，这是一个电子密度为零的区域。你不能与鬼魂握手！因此，这些轨道完全不经历 $\sigma$ 相互作用。我们将这三个轨道归为一组，称为 **$t_{2g}$ 轨道**。
 
@@ -25,7 +25,7 @@
 
 2.  **π-接受：** 现在考虑一个像一氧化碳（$CO$）这样的配体。它有空的 $\pi^*$ 轨道，可以用来*接受*来自金属的电子密度。金属可以将其部分 $t_{2g}$ 电子密度卸载到配体中。这种共享是稳定化的；它*降低*了 $t_{2g}$ 轨道的能量。这种著名的效应，称为**反馈π键**，用一个负的能量参数 $e_{\pi}  0$ 来描述。
 
-### 一次一键，构建[配合物](@article_id:317067)
+### 一次一键，构建[配合物](@keyword=coordination_compound|lang=zh-CN|style=Feynman)
 
 AOM 的核心魔力在于其优美的简洁性：任何一个d-轨道的总能量移动都只是来自每个独立配体贡献的总和。这是一个加和性模型。让我们构建一个标准的八面体配合物 $[ML_6]$，其中六个相同的配体位于笛卡尔坐标轴上。
 
@@ -43,23 +43,23 @@ $$
 
 ### 全景图：解释化学的色彩
 
-我们现在已经从头构建了八面体配合物的d-[轨道能级](@article_id:312167)图！$e_g$ 轨道的能量在 $3e_{\sigma}$，$t_{2g}$ 轨道的能量在 $4e_{\pi}$。它们之间的[能隙](@article_id:331619)是[配位化学](@article_id:314183)中最重要的量之一，即**八面体[配体场](@article_id:315547)分裂参数，$\Delta_o$**。这个参数决定了[配合物的颜色](@article_id:311044)和磁学性质。从我们的 AOM 能量，我们得到了一个优美简洁且强大的方程：
+我们现在已经从头构建了八面体配合物的d-[轨道能级](@keyword=orbital_energy_levels|lang=zh-CN|style=Feynman)图！$e_g$ 轨道的能量在 $3e_{\sigma}$，$t_{2g}$ 轨道的能量在 $4e_{\pi}$。它们之间的[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)是[配位化学](@keyword=coordination_chemistry|lang=zh-CN|style=Feynman)中最重要的量之一，即**八面体[配体场](@keyword=ligand_field|lang=zh-CN|style=Feynman)分裂参数，$\Delta_o$**。这个参数决定了[配合物的颜色](@keyword=color_of_complexes|lang=zh-CN|style=Feynman)和磁学性质。从我们的 AOM 能量，我们得到了一个优美简洁且强大的方程：
 
 $$
 \Delta_o = E(e_g) - E(t_{2g}) = 3e_{\sigma} - 4e_{\pi}
 $$
-这个单一的方程解释了著名的**[光谱化学序列](@article_id:298386)**，即根据配体分裂d-轨道的能力对其进行的经验排序。让我们看看它是如何做到的：
+这个单一的方程解释了著名的**[光谱化学序列](@keyword=spectrochemical_series|lang=zh-CN|style=Feynman)**，即根据配体分裂d-轨道的能力对其进行的经验排序。让我们看看它是如何做到的：
 
 -   **纯 $\sigma$-给予体**配体（如氨，$NH_3$）具有 $e_{\pi} \approx 0$。所以，$\Delta_o \approx 3e_{\sigma}$。分裂能与其 $\sigma$-给予强度成正比。
 
--   **$\pi$-给予体**配体（如氯离子，$Cl^-$）具有正的 $e_{\pi}$。方程变为 $\Delta_o = 3e_{\sigma} - (\text{一个正数})$。π-给予作用*减小*了分裂能，将这些配体置于[光谱化学序列](@article_id:298386)的较低位置。
+-   **$\pi$-给予体**配体（如氯离子，$Cl^-$）具有正的 $e_{\pi}$。方程变为 $\Delta_o = 3e_{\sigma} - (\text{一个正数})$。π-给予作用*减小*了分裂能，将这些配体置于[光谱化学序列](@keyword=spectrochemical_series|lang=zh-CN|style=Feynman)的较低位置。
 
--   **$\pi$-接受体**配体（如氰离子，$CN^-$）具有负的 $e_{\pi}$。方程变为 $\Delta_o = 3e_{\sigma} - (\text{一个负数}) = 3e_{\sigma} + (\text{一个正数})$。π-接受作用极大地*增加*了分裂能，将这些配体置于[光谱化学序列](@article_id:298386)的高端。
+-   **$\pi$-接受体**配体（如氰离子，$CN^-$）具有负的 $e_{\pi}$。方程变为 $\Delta_o = 3e_{\sigma} - (\text{一个负数}) = 3e_{\sigma} + (\text{一个正数})$。π-接受作用极大地*增加*了分裂能，将这些配体置于[光谱化学序列](@keyword=spectrochemical_series|lang=zh-CN|style=Feynman)的高端。
 
 这个框架甚至可以解释一些表面上的悖论。一个没有π能力但很强的 $\sigma$-给予体和一个中等的 $\sigma$-给予体但同时是很好的 $\pi$-接受体，为何能产生几乎相同的 $\Delta_o$？AOM 方程精确地向我们展示了原因！对于第一个配体，$\Delta_o$ 之所以大，是因为 $3e_{\sigma}$ 很大。对于第二个配体，一个较小的 $3e_{\sigma}$ 项被来自π-接受的一个大的正项 $+4|e_{\pi}|$ 所提升。最终的数值可能几乎相同。观测到的分裂能是各部分的总和，是不同类型化学握手之间的权衡。
 
 ### 超越完美形状：AOM的真正力量
 
-也许AOM最优雅的特点是其参数的**可转移性**。$e_{\sigma}$ 和 $e_{\pi}$ 的值是特定金属-配体*键*的性质，而不是整个[配合物](@article_id:317067)的性质。这意味着我们可以将在[八面体配合物](@article_id:309624)中确定的参数用于预测具有不同几何构型的[配合物](@article_id:317067)的电子结构——比如畸变的八面体或三角[配合物](@article_id:317067)。我们所需要做的就是为新的配体位置重新计算几何上的“角重叠”因子，并使用相同的 $e_{\sigma}$ 和 $e_{\pi}$ 值将它们加起来。
+也许AOM最优雅的特点是其参数的**可转移性**。$e_{\sigma}$ 和 $e_{\pi}$ 的值是特定金属-配体*键*的性质，而不是整个[配合物](@keyword=coordination_compound|lang=zh-CN|style=Feynman)的性质。这意味着我们可以将在[八面体配合物](@keyword=octahedral_complexes|lang=zh-CN|style=Feynman)中确定的参数用于预测具有不同几何构型的[配合物](@keyword=coordination_compound|lang=zh-CN|style=Feynman)的电子结构——比如畸变的八面体或三角[配合物](@keyword=coordination_compound|lang=zh-CN|style=Feynman)。我们所需要做的就是为新的配体位置重新计算几何上的“角重叠”因子，并使用相同的 $e_{\sigma}$ 和 $e_{\pi}$ 值将它们加起来。
 
-这使得AOM成为一个比旧的[点电荷](@article_id:327323)模型强大得多、也更符合物理现实的工具。通过关注[共价键](@article_id:301906)的基本性质，并将其分解为简单的、加和性的和可转移的组分，[角重叠模型](@article_id:372671)将一个复杂的量子问题转化为一种化学直觉的练习。它不仅让我们能够描述，更能让我们*理解*赋予[配位化学](@article_id:314183)世界结构、反应性和鲜艳色彩的电子之舞。
+这使得AOM成为一个比旧的[点电荷](@keyword=point_charges|lang=zh-CN|style=Feynman)模型强大得多、也更符合物理现实的工具。通过关注[共价键](@keyword=covalent_bonding|lang=zh-CN|style=Feynman)的基本性质，并将其分解为简单的、加和性的和可转移的组分，[角重叠模型](@keyword=angular_overlap_model|lang=zh-CN|style=Feynman)将一个复杂的量子问题转化为一种化学直觉的练习。它不仅让我们能够描述，更能让我们*理解*赋予[配位化学](@keyword=coordination_chemistry|lang=zh-CN|style=Feynman)世界结构、反应性和鲜艳色彩的电子之舞。

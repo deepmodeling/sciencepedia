@@ -1,7 +1,7 @@
 ## Introduction
-In the vast lexicon of science, it's not uncommon for a single term to find multiple homes. One such fascinating case is "D-prime," a name shared by two powerful but distinct concepts from separate scientific worlds. This ambiguity often leads to confusion: one D-prime ($d'$) hails from psychology and neuroscience, quantifying our ability to distinguish a signal from noise, while the other ($D'$) comes from [population genetics](@article_id:145850), measuring the tendency of genes to be inherited together. This article addresses the apparent disconnect between these two ideas. It embarks on a journey to demystify both D-primes, revealing not a simple coincidence, but a shared intellectual strategy for extracting meaningful patterns from complex data.
+In the vast lexicon of science, it's not uncommon for a single term to find multiple homes. One such fascinating case is "D-prime," a name shared by two powerful but distinct concepts from separate scientific worlds. This ambiguity often leads to confusion: one D-prime ($d'$) hails from psychology and neuroscience, quantifying our ability to distinguish a signal from noise, while the other ($D'$) comes from [population genetics](@keyword=population_genetics|lang=en-US|style=Feynman), measuring the tendency of genes to be inherited together. This article addresses the apparent disconnect between these two ideas. It embarks on a journey to demystify both D-primes, revealing not a simple coincidence, but a shared intellectual strategy for extracting meaningful patterns from complex data.
 
-In the following chapters, we will first delve into the "Principles and Mechanisms" of each D-prime. We will explore how Signal Detection Theory uses $d'$ to measure perceptual sensitivity and how population genetics uses $D'$ to measure [linkage disequilibrium](@article_id:145709). Subsequently, in "Applications and Interdisciplinary Connections," we will witness these concepts in action, from explaining the brain's ability to overcome noise to reading the history of our species in our DNA. Ultimately, this exploration will illuminate a unifying thread of scientific thought, showing how the same fundamental logic helps us find the signal in the noise, whether in perception or in genetics.
+In the following chapters, we will first delve into the "Principles and Mechanisms" of each D-prime. We will explore how Signal Detection Theory uses $d'$ to measure perceptual sensitivity and how population genetics uses $D'$ to measure [linkage disequilibrium](@keyword=linkage_disequilibrium|lang=en-US|style=Feynman). Subsequently, in "Applications and Interdisciplinary Connections," we will witness these concepts in action, from explaining the brain's ability to overcome noise to reading the history of our species in our DNA. Ultimately, this exploration will illuminate a unifying thread of scientific thought, showing how the same fundamental logic helps us find the signal in the noise, whether in perception or in genetics.
 
 ## Principles and Mechanisms
 
@@ -19,13 +19,13 @@ In the language of **Signal Detection Theory**, we can often approximate these t
 
 So, how do we quantify this ability? We need a number that measures the inherent distinguishability of the two signals, independent of your personal bias or strategy. This number is the **sensitivity index**, or **$d'$ (d-prime)**.
 
-The idea behind $d'$ is one of breathtaking simplicity and power. It's a [signal-to-noise ratio](@article_id:270702). The "signal" is the difference between the average sensory experience of the model ($\mu_M$) and the mimic ($\mu_m$). The "noise" is the inherent fuzziness or spread of those experiences, which we can represent by their common standard deviation, $\sigma$. And so, the formula is born:
+The idea behind $d'$ is one of breathtaking simplicity and power. It's a [signal-to-noise ratio](@keyword=signal_to_noise_ratio|lang=en-US|style=Feynman). The "signal" is the difference between the average sensory experience of the model ($\mu_M$) and the mimic ($\mu_m$). The "noise" is the inherent fuzziness or spread of those experiences, which we can represent by their common standard deviation, $\sigma$. And so, the formula is born:
 
 $$d' = \frac{|\mu_M - \mu_m|}{\sigma}$$
 
 That's it. It’s the separation between the centers of the two bell curves, measured in units of their spread.
 
-Let's consider a hypothetical scenario from a [behavioral ecology](@article_id:152768) study . Suppose a researcher measures the predator's perceptual signals and finds that for the toxic model, the average signal is $\mu_M = 5$, while for the tasty mimic it's $\mu_m = 3$. The variability in both signals is the same, with a standard deviation of $\sigma = 1$. The discriminability for this predator is:
+Let's consider a hypothetical scenario from a [behavioral ecology](@keyword=behavioral_ecology|lang=en-US|style=Feynman) study [@problem_id:2549484]. Suppose a researcher measures the predator's perceptual signals and finds that for the toxic model, the average signal is $\mu_M = 5$, while for the tasty mimic it's $\mu_m = 3$. The variability in both signals is the same, with a standard deviation of $\sigma = 1$. The discriminability for this predator is:
 
 $$d' = \frac{5 - 3}{1} = 2$$
 
@@ -41,25 +41,25 @@ Now, let's leave the world of perception and fly to the world within our cells, 
 
 Consider two genes, sitting on the same chromosome. Each gene can come in different versions, or **alleles**. Let's say gene 1 has alleles $A$ and $a$, and gene 2 has alleles $B$ and $b$. When a parent produces sperm or eggs, their chromosomes are shuffled in a process called **recombination**. If the two genes are very far apart on the chromosome, or on different chromosomes entirely, recombination will shuffle them independently. They will be dealt out like cards from two separate, well-shuffled decks.
 
-This situation, where alleles at different loci are statistically independent, is called **linkage equilibrium**. If we are at equilibrium, the probability of finding a specific combination of alleles—a **haplotype** like $AB$—on a single chromosome is simply the product of the individual [allele frequencies](@article_id:165426). If the frequency of allele $A$ in the population is $p_A$ and the frequency of allele $B$ is $p_B$, then the expected frequency of the $AB$ haplotype is $P_{AB}^{\text{exp}} = p_A p_B$.
+This situation, where alleles at different loci are statistically independent, is called **linkage equilibrium**. If we are at equilibrium, the probability of finding a specific combination of alleles—a **haplotype** like $AB$—on a single chromosome is simply the product of the individual [allele frequencies](@keyword=allele_frequencies|lang=en-US|style=Feynman). If the frequency of allele $A$ in the population is $p_A$ and the frequency of allele $B$ is $p_B$, then the expected frequency of the $AB$ haplotype is $P_{AB}^{\text{exp}} = p_A p_B$.
 
 But what if the genes are physically close to each other on the chromosome? Now, recombination is less likely to occur between them. They tend to be inherited together as a single block. The deck is not being shuffled properly. When the observed frequency of a haplotype, $P_{AB}^{\text{obs}}$, is different from the expected frequency, $p_A p_B$, we have what is known as **linkage disequilibrium (LD)**.
 
-The most basic measure of this is the **LD coefficient, $D$**. It's simply the difference between the observed and expected [haplotype](@article_id:267864) frequency:
+The most basic measure of this is the **LD coefficient, $D$**. It's simply the difference between the observed and expected [haplotype](@keyword=haplotype|lang=en-US|style=Feynman) frequency:
 
 $$D = P_{AB}^{\text{obs}} - p_A p_B$$
 
-A value of $D=0$ means we are at equilibrium. A non-zero $D$ is a sign that something interesting is happening—the alleles are associated. For example, a famous case in the human immune system involves the HLA genes . The frequency of the HLA-A1 allele is about 0.15 and the HLA-B8 allele is about 0.10. By chance, we'd expect the A1-B8 [haplotype](@article_id:267864) to appear with a frequency of $0.15 \times 0.10 = 0.015$. In reality, it is found with a frequency of about 0.08, nearly five times more often! This gives a large positive value for $D$, telling us these two alleles are strongly associated. The most direct cause for this strong association is that the HLA-A and HLA-B genes are physically very close on chromosome 6, so they are rarely separated by recombination.
+A value of $D=0$ means we are at equilibrium. A non-zero $D$ is a sign that something interesting is happening—the alleles are associated. For example, a famous case in the human immune system involves the HLA genes [@problem_id:1498390]. The frequency of the HLA-A1 allele is about 0.15 and the HLA-B8 allele is about 0.10. By chance, we'd expect the A1-B8 [haplotype](@keyword=haplotype|lang=en-US|style=Feynman) to appear with a frequency of $0.15 \times 0.10 = 0.015$. In reality, it is found with a frequency of about 0.08, nearly five times more often! This gives a large positive value for $D$, telling us these two alleles are strongly associated. The most direct cause for this strong association is that the HLA-A and HLA-B genes are physically very close on chromosome 6, so they are rarely separated by recombination.
 
 But there's a problem with using $D$ alone. The maximum possible value that $D$ can take depends entirely on the frequencies of the alleles involved. A $D$ of 0.05 might be the maximum possible for a pair of rare alleles, but a tiny fraction of the maximum for common alleles. This makes it impossible to compare the strength of LD between different pairs of genes.
 
-This is where the geneticist's **$D'$ (D-prime)** saves the day. The idea is exactly analogous to what we saw before: we standardize the raw measure. We take our calculated value of $D$ and divide it by the maximum value it *could possibly have taken*, $D_{max}$, given the [allele frequencies](@article_id:165426) in the population.
+This is where the geneticist's **$D'$ (D-prime)** saves the day. The idea is exactly analogous to what we saw before: we standardize the raw measure. We take our calculated value of $D$ and divide it by the maximum value it *could possibly have taken*, $D_{max}$, given the [allele frequencies](@keyword=allele_frequencies|lang=en-US|style=Feynman) in the population.
 
 $$D' = \frac{D}{D_{max}}$$
 
 This simple act of normalization scales the measure to a convenient and universal range (typically from -1 to 1). A $D'$ of 1 or -1 signifies "complete" disequilibrium, meaning that at least one of the four possible two-allele haplotypes ($AB$, $Ab$, $aB$, $ab$) is completely absent from the population—the alleles are so tightly linked that one combination is never formed. A $D'$ of 0 indicates perfect linkage equilibrium.
 
-Let's make this concrete with some data from a hypothetical genetics study  . Imagine we count 100 chromosomes and find 46 $AB$ haplotypes, 14 $Ab$, 14 $aB$, and 26 $ab$.
+Let's make this concrete with some data from a hypothetical genetics study [@problem_id:2732241] [@problem_id:2402434]. Imagine we count 100 chromosomes and find 46 $AB$ haplotypes, 14 $Ab$, 14 $aB$, and 26 $ab$.
 
 1.  **Haplotype Frequencies:** $\hat{p}_{AB}=0.46$, $\hat{p}_{Ab}=0.14$, $\hat{p}_{aB}=0.14$, $\hat{p}_{ab}=0.26$.
 2.  **Allele Frequencies:** The frequency of $A$ is $\hat{p}_A = \hat{p}_{AB} + \hat{p}_{Ab} = 0.46 + 0.14 = 0.60$. The frequency of $B$ is $\hat{p}_B = \hat{p}_{AB} + \hat{p}_{aB} = 0.46 + 0.14 = 0.60$.
@@ -73,14 +73,14 @@ This $D'$ value of roughly 0.42 gives us a standardized way to talk about the st
 
 We have become comfortable analyzing the world in pairs: a mimic and a model, two genes on a chromosome. But nature is often more complex, with intricate interactions woven between many players. Can our pairwise measures of LD capture the full story?
 
-Consider a thought-provoking puzzle involving three genes: $A$, $B$, and $C$ . A geneticist meticulously analyzes a population and finds something astonishing.
+Consider a thought-provoking puzzle involving three genes: $A$, $B$, and $C$ [@problem_id:2732258]. A geneticist meticulously analyzes a population and finds something astonishing.
 - When they look at genes $A$ and $B$, they find $D'_{AB}=0$. No association.
 - When they look at genes $B$ and $C$, they find $D'_{BC}=0$. No association.
 - When they look at genes $A$ and $C$, they find $D'_{AC}=0$. No association.
 
-The researcher might conclude that these three genes are all assorting independently. But they would be wrong. Looking at the full three-gene [haplotypes](@article_id:177455), a bizarre pattern emerges: the only haplotypes that exist in the entire population are $ABC$, $Abc$, $aBc$, and $abC$. All other four possibilities are missing.
+The researcher might conclude that these three genes are all assorting independently. But they would be wrong. Looking at the full three-gene [haplotypes](@keyword=haplotypes|lang=en-US|style=Feynman), a bizarre pattern emerges: the only haplotypes that exist in the entire population are $ABC$, $Abc$, $aBc$, and $abC$. All other four possibilities are missing.
 
-This is a profound form of **higher-order linkage disequilibrium**, or **[epistasis](@article_id:136080)**. There is no pairwise association, but there is a perfect three-way association! Knowing the alleles at any two of the loci immediately tells you what the allele must be at the third. For example, if a chromosome has allele $A$ and allele $b$, it *must* have allele $c$. This is a powerful, deterministic relationship that is completely invisible to the standard two-locus $D'$ analysis.
+This is a profound form of **higher-order linkage disequilibrium**, or **[epistasis](@keyword=epistasis|lang=en-US|style=Feynman)**. There is no pairwise association, but there is a perfect three-way association! Knowing the alleles at any two of the loci immediately tells you what the allele must be at the third. For example, if a chromosome has allele $A$ and allele $b$, it *must* have allele $c$. This is a powerful, deterministic relationship that is completely invisible to the standard two-locus $D'$ analysis.
 
 This demonstrates that the architecture of our genome can contain hidden layers of complexity, like a secret code that can only be understood by looking at whole words (three or more loci) instead of just pairs of letters. There are, in fact, ways to define a three-locus disequilibrium, $D_{ABC}$, that captures this residual, higher-order interaction. In our example, all the pairwise $D$ values are zero, but $D_{ABC}$ would be strongly non-zero, revealing the hidden structure.
 

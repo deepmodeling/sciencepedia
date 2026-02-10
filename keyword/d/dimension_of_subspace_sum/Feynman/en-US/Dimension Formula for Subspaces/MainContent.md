@@ -1,11 +1,11 @@
 ## Introduction
 In linear algebra, vector subspaces provide the fundamental building blocks for describing structures, from simple geometric planes to complex sets of functions. A central question arises when we combine these structures: if we merge two subspaces, what is the dimension of the new, larger space they form? A naive addition of their dimensions is often incorrect, as it fails to account for the elements they share in common. This article addresses this fundamental problem by introducing one of linear algebra's most elegant and useful principles. Across the following sections, we will unpack this concept, leading you from its intuitive core to its profound implications.
 
-The journey begins as we explore the "Principles and Mechanisms" behind the dimension formula, uncovering how it logically accounts for any overlap between subspaces. We will see how this simple rule of accounting governs the geometry of [vector spaces](@article_id:136343). Then, in "Applications and Interdisciplinary Connections," we will witness the formula's surprising versatility, demonstrating its relevance in diverse fields ranging from [matrix algebra](@article_id:153330) and polynomial functions to the very fabric of quantum mechanics, revealing it as a universal language of structure.
+The journey begins as we explore the "Principles and Mechanisms" behind the dimension formula, uncovering how it logically accounts for any overlap between subspaces. We will see how this simple rule of accounting governs the geometry of [vector spaces](@keyword=vector_spaces|lang=en-US|style=Feynman). Then, in "Applications and Interdisciplinary Connections," we will witness the formula's surprising versatility, demonstrating its relevance in diverse fields ranging from [matrix algebra](@keyword=matrix_algebra|lang=en-US|style=Feynman) and polynomial functions to the very fabric of quantum mechanics, revealing it as a universal language of structure.
 
 ## Principles and Mechanisms
 
-Imagine you and a friend are building with LEGO bricks. You have a collection of red and blue bricks, and your friend has a collection of blue and yellow bricks. If we want to know how many *different kinds* of bricks you have together, you wouldn't just add the number of kinds you have to the number of kinds your friend has. Why not? Because you'd be counting the blue bricks twice. The sensible thing to do is to add your kinds (red, blue) to their kinds (blue, yellow) and then subtract the kinds you both have in common (blue). This simple, almost childish piece of logic is the very heart of one of the most elegant and powerful principles in linear algebra. It's the [principle of inclusion-exclusion](@article_id:275561), and when we apply it to the concept of dimensions, it reveals a profound truth about how different "worlds," or subspaces, can combine.
+Imagine you and a friend are building with LEGO bricks. You have a collection of red and blue bricks, and your friend has a collection of blue and yellow bricks. If we want to know how many *different kinds* of bricks you have together, you wouldn't just add the number of kinds you have to the number of kinds your friend has. Why not? Because you'd be counting the blue bricks twice. The sensible thing to do is to add your kinds (red, blue) to their kinds (blue, yellow) and then subtract the kinds you both have in common (blue). This simple, almost childish piece of logic is the very heart of one of the most elegant and powerful principles in linear algebra. It's the [principle of inclusion-exclusion](@keyword=principle_of_inclusion_exclusion|lang=en-US|style=Feynman), and when we apply it to the concept of dimensions, it reveals a profound truth about how different "worlds," or subspaces, can combine.
 
 ### The Art of Combination: Sums and Intersections
 
@@ -17,13 +17,13 @@ But just as you and your friend shared blue LEGOs, these subspaces might share s
 
 ### The Dimension Formula: An Accountant's Guide to Reality
 
-Here is the central question: if we know the dimension of $U$ and the dimension of $W$, what is the dimension of their sum, $U+W$? Naively, one might guess we just add them up. But like with the LEGOs, that would be a mistake. We would be [double-counting](@article_id:152493) the part they share. The beautiful truth, a cornerstone of linear algebra, is given by a simple formula:
+Here is the central question: if we know the dimension of $U$ and the dimension of $W$, what is the dimension of their sum, $U+W$? Naively, one might guess we just add them up. But like with the LEGOs, that would be a mistake. We would be [double-counting](@keyword=double_counting|lang=en-US|style=Feynman) the part they share. The beautiful truth, a cornerstone of linear algebra, is given by a simple formula:
 
 $$
 \dim(U+W) = \dim(U) + \dim(W) - \dim(U \cap W)
 $$
 
-This isn't just a formula; it's a statement about the fundamental grammar of space. It tells us that the number of independent directions in the combined world is the sum of the directions in each individual world, corrected for the overlap . Every direction that belongs to the intersection, $U \cap W$, was counted once in $\dim(U)$ and again in $\dim(W)$. To get the true, unique count for the combined space, we must subtract this over-count, which is precisely $\dim(U \cap W)$.
+This isn't just a formula; it's a statement about the fundamental grammar of space. It tells us that the number of independent directions in the combined world is the sum of the directions in each individual world, corrected for the overlap [@problem_id:1065776]. Every direction that belongs to the intersection, $U \cap W$, was counted once in $\dim(U)$ and again in $\dim(W)$. To get the true, unique count for the combined space, we must subtract this over-count, which is precisely $\dim(U \cap W)$.
 
 Let's see this magic in action. Suppose we have three independent directions in space, given by vectors $v_1, v_2, v_3$. Let's create two subspaces: $U = \text{span}\{v_1, v_2\}$ (a plane defined by the first two directions) and $W = \text{span}\{v_2, v_3\}$ (another plane defined by the second and third directions). Clearly, $\dim(U)=2$ and $\dim(W)=2$. What do they share? They share any vector that is a multiple of $v_2$. So, their intersection $U \cap W$ is the line spanned by $v_2$, which means $\dim(U \cap W) = 1$.
 
@@ -31,7 +31,7 @@ Now, let's apply our formula:
 $$
 \dim(U+W) = \dim(U) + \dim(W) - \dim(U \cap W) = 2 + 2 - 1 = 3
 $$
-The result is 3. And this makes perfect sense! The combined space $U+W$ is spanned by all three vectors $\{v_1, v_2, v_3\}$, and since they are linearly independent, they define a 3-dimensional space . The formula perfectly predicted the outcome. Whether we are dealing with abstract vectors or concrete vectors in $\mathbb{R}^4$  , this principle holds true.
+The result is 3. And this makes perfect sense! The combined space $U+W$ is spanned by all three vectors $\{v_1, v_2, v_3\}$, and since they are linearly independent, they define a 3-dimensional space [@problem_id:24599]. The formula perfectly predicted the outcome. Whether we are dealing with abstract vectors or concrete vectors in $\mathbb{R}^4$ [@problem_id:24592] [@problem_id:24597], this principle holds true.
 
 ### Illuminating the Extremes: Complete Overlap and Perfect Separation
 
@@ -42,7 +42,7 @@ Given $W \subseteq U$, we have $U \cap W = W$ and $U+W = U$. The formula becomes
 $$
 \dim(U) = \dim(U) + \dim(W) - \dim(W)
 $$
-It balances perfectly! This isn't just for geometric lines and planes. Consider the space of all $2 \times 2$ matrices. Let $U$ be the 2-dimensional subspace of all [diagonal matrices](@article_id:148734), and let $W$ be the 1-dimensional subspace of all scalar matrices (multiples of the identity). Every scalar matrix is, by definition, a [diagonal matrix](@article_id:637288), so $W \subseteq U$. The formula correctly predicts that their sum, $U+W$, is just $U$, and its dimension is 2  .
+It balances perfectly! This isn't just for geometric lines and planes. Consider the space of all $2 \times 2$ matrices. Let $U$ be the 2-dimensional subspace of all [diagonal matrices](@keyword=diagonal_matrices|lang=en-US|style=Feynman), and let $W$ be the 1-dimensional subspace of all scalar matrices (multiples of the identity). Every scalar matrix is, by definition, a [diagonal matrix](@keyword=diagonal_matrix|lang=en-US|style=Feynman), so $W \subseteq U$. The formula correctly predicts that their sum, $U+W$, is just $U$, and its dimension is 2 [@problem_id:24601] [@problem_id:24640].
 
 Now for the other extreme: **perfect separation**. What if the two subspaces $U$ and $W$ have *no* overlap, other than the mandatory origin point, ${\bf 0}$? Their intersection is $U \cap W = \{{\bf 0}\}$, which is the zero-dimensional subspace. In this special case, our formula simplifies beautifully:
 $$
@@ -77,4 +77,4 @@ $$
 \dim(U+W) = 5 - 1 = 4
 $$
 
-The dimension of their sum must be 4. This means that this particular plane and this particular 3D subspace, when combined, span the *entire* 4D world they live in . Without knowing a single specific vector, but by simply understanding the logic of dimensions, we have uncovered a deep structural fact about their arrangement. This is the true power and elegance of mathematics: to find universal truths that govern all possible worlds we can imagine.
+The dimension of their sum must be 4. This means that this particular plane and this particular 3D subspace, when combined, span the *entire* 4D world they live in [@problem_id:24627]. Without knowing a single specific vector, but by simply understanding the logic of dimensions, we have uncovered a deep structural fact about their arrangement. This is the true power and elegance of mathematics: to find universal truths that govern all possible worlds we can imagine.

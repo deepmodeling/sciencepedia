@@ -1,15 +1,15 @@
 ## 引言
-在[材料科学](@article_id:312640)领域，一些我们最信赖的规则偶尔会误导我们，暗示着一个更深刻、更复杂的现实。其中一条基础规则——能带理论，预测具有部分填充电子[能带](@article_id:306995)的材料应该能导电，表现为金属。然而，一类被称为[莫特绝缘体](@article_id:301128)的材料公然违反了这一预测，顽固地保持绝缘性。这种差异凸显了简单的独立电[子图](@article_id:337037)像中的一个根本性缺陷：它忽略了电子间相互作用的强大且往往是决定性的作用。
+在[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)领域，一些我们最信赖的规则偶尔会误导我们，暗示着一个更深刻、更复杂的现实。其中一条基础规则——能带理论，预测具有部分填充电子[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)的材料应该能导电，表现为金属。然而，一类被称为[莫特绝缘体](@keyword=mott_insulators|lang=zh-CN|style=Feynman)的材料公然违反了这一预测，顽固地保持绝缘性。这种差异凸显了简单的独立电[子图](@keyword=subgraph|lang=zh-CN|style=Feynman)像中的一个根本性缺陷：它忽略了电子间相互作用的强大且往往是决定性的作用。
 
-本文深入探讨迷人的[莫特物理](@article_id:373396)世界，以解释这一悖论。它揭示了电子的“社交生活”，特别是它们之间的相互排斥，如何能使它们戛然而止，将一个本应是金属的材料转变为绝缘体。这段旅程将探索支配这种集体行为的核心概念，并揭示其在现代科学技术中的深远影响。首先，我们将审视其原理和机制，从能带理论的失效开始，并引入[哈伯德模型](@article_id:304405)，该模型将此现象描述为相互竞争的能量之间的一场战斗。然后，我们将莫特绝缘体的独特性质与其他类型的绝缘体进行比较，以加深我们的理解。随后，我们将探索[莫特物理](@article_id:373396)广泛的应用和跨学科联系，从解释高温超导体的奥秘到开启量[子模](@article_id:309341)拟的新前沿，展示一个简单的电子交通堵塞如何催生出自然界中一些最非凡的现象。
+本文深入探讨迷人的[莫特物理](@keyword=mott_physics|lang=zh-CN|style=Feynman)世界，以解释这一悖论。它揭示了电子的“社交生活”，特别是它们之间的相互排斥，如何能使它们戛然而止，将一个本应是金属的材料转变为绝缘体。这段旅程将探索支配这种集体行为的核心概念，并揭示其在现代科学技术中的深远影响。首先，我们将审视其原理和机制，从能带理论的失效开始，并引入[哈伯德模型](@keyword=hubbard_model|lang=zh-CN|style=Feynman)，该模型将此现象描述为相互竞争的能量之间的一场战斗。然后，我们将莫特绝缘体的独特性质与其他类型的绝缘体进行比较，以加深我们的理解。随后，我们将探索[莫特物理](@keyword=mott_physics|lang=zh-CN|style=Feynman)广泛的应用和跨学科联系，从解释高温超导体的奥秘到开启量[子模](@keyword=submodule|lang=zh-CN|style=Feynman)拟的新前沿，展示一个简单的电子交通堵塞如何催生出自然界中一些最非凡的现象。
 
 ## 原理与机制
 
 ### 一个难题：当金属拒绝导电
 
-想象一个完美的晶体，一个由原子构成的美丽有序的城市。现在，假设每个原子慷慨地贡献出一个电子，在这个城市中自由穿行。我们关于电子世界最简单也最可靠的指南，**能带理论**，给出了一个明确的预测：这种材料必定是金属。为什么？因为这些电子可用的能量“座位”形成一个连续的[能带](@article_id:306995)，而这个[能带](@article_id:306995)只有一半被填满。在电场的微小推动下，电子可以轻易地跳到它们上方紧邻的空座位上开始移动，从而产生电流。根据能带理论，半满[能带](@article_id:306995)正是金属的定义。
+想象一个完美的晶体，一个由原子构成的美丽有序的城市。现在，假设每个原子慷慨地贡献出一个电子，在这个城市中自由穿行。我们关于电子世界最简单也最可靠的指南，**能带理论**，给出了一个明确的预测：这种材料必定是金属。为什么？因为这些电子可用的能量“座位”形成一个连续的[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)，而这个[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)只有一半被填满。在电场的微小推动下，电子可以轻易地跳到它们上方紧邻的空座位上开始移动，从而产生电流。根据能带理论，半满[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)正是金属的定义。
 
-然而，自然界充满了惊喜。我们发现有些材料完美符合这种描述——[晶格](@article_id:300090)上的半满[能带](@article_id:306995)——但它们却坚定地、顽固地呈绝缘性。它们拒绝导电。这并非与我们的理论有细微出入，而是彻头彻尾的矛盾。它告诉我们，我们简单的指南——[能带理论](@article_id:361548)——遗漏了故事的关键部分。它将电子视为孤独、独立的漫游者，忽略了它们最有趣的特性：它们会相互作用，而且往往是剧烈的。独立电子图像的这种失效，为我们打开了一个全新的、更丰富的“[莫特物理](@article_id:373396)”世界的大门，而理解它正是我们的任务。
+然而，自然界充满了惊喜。我们发现有些材料完美符合这种描述——[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)上的半满[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)——但它们却坚定地、顽固地呈绝缘性。它们拒绝导电。这并非与我们的理论有细微出入，而是彻头彻尾的矛盾。它告诉我们，我们简单的指南——[能带理论](@keyword=electronic_band_theory|lang=zh-CN|style=Feynman)——遗漏了故事的关键部分。它将电子视为孤独、独立的漫游者，忽略了它们最有趣的特性：它们会相互作用，而且往往是剧烈的。独立电子图像的这种失效，为我们打开了一个全新的、更丰富的“[莫特物理](@keyword=mott_physics|lang=zh-CN|style=Feynman)”世界的大门，而理解它正是我们的任务。[@problem_id:1789860]
 
 ### 电子的社交生活：两种能量的故事
 
@@ -19,72 +19,72 @@
 
 这就是莫特绝缘体的本质。电子被困住了，每个原子上一个，不是因为没有可用的能量态，而是为了避免为占据同一位点而支付巨大的能量代价。
 
-物理学家用一个异常简单的模型——**哈伯德模型**——捕捉了这一戏剧性过程。它只有两个主角，两种相互竞争的能量标度：
+物理学家用一个异常简单的模型——**哈伯德模型**——捕捉了这一戏剧性过程。它只有两个主角，两种相互竞争的能量标度[@problem_id:2983211]：
 
-1.  **跃迁能 ($t$)**：这一项代表电子通过跳跃到相邻原子而获得的动能。它偏爱离域和自由。一个大的 $t$ 会促使电子散开并自由移动，形成一个宽度为 $W$ 的宽[能带](@article_id:306995)。这一项希望材料成为**金属**。
+1.  **跃迁能 ($t$)**：这一项代表电子通过跳跃到相邻原子而获得的动能。它偏爱离域和自由。一个大的 $t$ 会促使电子散开并自由移动，形成一个宽度为 $W$ 的宽[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)。这一项希望材料成为**金属**。
 
 2.  **在位排斥能 ($U$)**：这是“反社交”的能量。如果一个电子落在一个已经被另一个（自旋相反的）电子占据的原子上，它就必须支付巨大的势能代价。一个大的 $U$ 厌恶双占据，希望电子各自停留在自己的位点上，每个原子一个。这一项希望材料成为**绝缘体**。
 
-哈伯德模型的哈密顿量，即总[能量方程](@article_id:316688)，可以写成：
+哈伯德模型的哈密顿量，即总[能量方程](@keyword=energy_equation|lang=zh-CN|style=Feynman)，可以写成：
 $$
 H = -t\sum_{\langle ij\rangle,\sigma} (c^\dagger_{i\sigma} c_{j\sigma} + \text{h.c.}) + U\sum_i n_{i\uparrow} n_{i\downarrow}
 $$
-第一部分是动能（跃迁 $t$），第二部分是势能（排斥 $U$）。材料的命运——金属还是绝缘体——悬于 $t$ 和 $U$ 之间的巨大拉锯战。当带宽 $W$（与 $t$ 成正比）远大于排斥能 $U$ 时，动能获胜。通过四处跳跃获得的能量足以克服偶尔双占据的代价。我们得到的是一个（关联的）金属。
+第一部分是动能（跃迁 $t$），第二部分是势能（排斥 $U$）。材料的命运——金属还是绝缘体——悬于 $t$ 和 $U$ 之间的巨大拉锯战[@problem_id:2842825]。当带宽 $W$（与 $t$ 成正比）远大于排斥能 $U$ 时，动能获胜。通过四处跳跃获得的能量足以克服偶尔双占据的代价。我们得到的是一个（关联的）金属。
 
-然而，当 $U$ 远大于 $W$ 时，势能获胜。产生一个双占据位点的代价实在太高了。为了避免这种惩罚，电子放弃了移动的自由，变得局域化，每个原子上一个。系统变成了[莫特绝缘体](@article_id:301128)。导电所需的[能隙](@article_id:331619)不再是关于[禁带](@article_id:354952)，而是关于产生一个[电荷](@article_id:339187)激发所需的能量——将一个电子从一个位点移动到另一个位点，从而产生一个[空位](@article_id:308249)（“空穴”）和一个双占据位点（“双占子”）。这一移动的代价约为 $U$ 的量级。
+然而，当 $U$ 远大于 $W$ 时，势能获胜。产生一个双占据位点的代价实在太高了。为了避免这种惩罚，电子放弃了移动的自由，变得局域化，每个原子上一个。系统变成了[莫特绝缘体](@keyword=mott_insulators|lang=zh-CN|style=Feynman)。导电所需的[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)不再是关于[禁带](@keyword=forbidden_zone|lang=zh-CN|style=Feynman)，而是关于产生一个[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)激发所需的能量——将一个电子从一个位点移动到另一个位点，从而产生一个[空位](@keyword=vacancies|lang=zh-CN|style=Feynman)（“空穴”）和一个双占据位点（“双占子”）。这一移动的代价约为 $U$ 的量级。
 
 ### 绝缘体大观园：一份现场指南
 
 世界充满了不同种类的绝缘体，要真正欣赏莫特绝缘体的独特性，将其与同类进行比较会很有帮助。这就像通过比较林中各种鸟类的特征来学习识别一种特定鸟类。
 
-#### 莫特绝缘体 vs. [能带](@article_id:306995)绝缘体
+#### 莫特绝缘体 vs. [能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)绝缘体
 
-这是最根本的区别。**[能带](@article_id:306995)绝缘体**，如金刚石，可以被我们开始时提到的简单[能带理论](@article_id:361548)完美解释。其绝缘性源于[晶格](@article_id:300090)本身的周期性势场，这在完全填满的价带和完全空的导带之间产生了一个[能隙](@article_id:331619)。附近没有可供电子移动的空能态。关键在于：这甚至无需考虑电子-电子间的排斥作用就可以解释。相比之下，**[莫特绝缘体](@article_id:301128)**是[能带理论](@article_id:361548)失效的产物。它有一个*本应*是金属性的部分填充[能带](@article_id:306995)，但正是强烈的电子-电子排斥能 $U$ 动态地打开了一个[能隙](@article_id:331619)。
+这是最根本的区别。**[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)绝缘体**，如金刚石，可以被我们开始时提到的简单[能带理论](@keyword=electronic_band_theory|lang=zh-CN|style=Feynman)完美解释。其绝缘性源于[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)本身的周期性势场，这在完全填满的价带和完全空的导带之间产生了一个[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)。附近没有可供电子移动的空能态。关键在于：这甚至无需考虑电子-电子间的排斥作用就可以解释。相比之下，**[莫特绝缘体](@keyword=mott_insulators|lang=zh-CN|style=Feynman)**是[能带理论](@keyword=electronic_band_theory|lang=zh-CN|style=Feynman)失效的产物。它有一个*本应*是金属性的部分填充[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)，但正是强烈的电子-电子排斥能 $U$ 动态地打开了一个[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)。[@problem_id:1789860]
 
-#### [莫特绝缘体](@article_id:301128) vs. Peierls绝缘体
+#### [莫特绝缘体](@keyword=mott_insulators|lang=zh-CN|style=Feynman) vs. Peierls绝缘体
 
-想象一条一维原子链，这是[金属-绝缘体相变](@article_id:307966)的经典模型。在这里，另一种机制可以发挥作用。**Peierls绝缘体**源于电子与[晶格振动](@article_id:374784)（[声子](@article_id:297589)）之间的耦合。[晶格](@article_id:300090)可以自发畸变，例如通过形成原子对（[二聚化](@article_id:334813)）。这种畸变使原胞尺寸加倍，从而使[电子能带结构](@article_id:297147)折叠，并恰好在费米能级处打开一个[能隙](@article_id:331619)，将金属转变为绝缘体。驱动力是**[电子-声子耦合](@article_id:299645)**。而[莫特相变](@article_id:297663)则可以发生在完全刚性、无畸变的[晶格](@article_id:300090)上。其驱动力纯粹是**电子-[电子耦合](@article_id:371803)**。
+想象一条一维原子链，这是[金属-绝缘体相变](@keyword=metal_insulator_transition|lang=zh-CN|style=Feynman)的经典模型。在这里，另一种机制可以发挥作用。**Peierls绝缘体**源于电子与[晶格振动](@keyword=crystal_lattice_vibrations|lang=zh-CN|style=Feynman)（[声子](@keyword=phonons|lang=zh-CN|style=Feynman)）之间的耦合。[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)可以自发畸变，例如通过形成原子对（[二聚化](@keyword=dimerization|lang=zh-CN|style=Feynman)）。这种畸变使原胞尺寸加倍，从而使[电子能带结构](@keyword=electronic_band_structure|lang=zh-CN|style=Feynman)折叠，并恰好在费米能级处打开一个[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)，将金属转变为绝缘体。驱动力是**[电子-声子耦合](@keyword=electron_phonon_coupling|lang=zh-CN|style=Feynman)**。而[莫特相变](@keyword=mott_transition|lang=zh-CN|style=Feynman)则可以发生在完全刚性、无畸变的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)上。其驱动力纯粹是**电子-[电子耦合](@keyword=electronic_coupling|lang=zh-CN|style=Feynman)**。[@problem_id:1789838]
 
-#### [莫特绝缘体](@article_id:301128) vs. [Anderson绝缘体](@article_id:299292)
+#### [莫特绝缘体](@keyword=mott_insulators|lang=zh-CN|style=Feynman) vs. [Anderson绝缘体](@keyword=anderson_insulator|lang=zh-CN|style=Feynman)
 
-如果我们的晶体城市并非完美无瑕怎么办？如果它充满了随机的坑洼和路障（杂质和缺陷）呢？这就是**[Anderson绝缘体](@article_id:299292)**的领域。在这里，绝缘行为源于[量子干涉](@article_id:299575)。当一个电子波在这个无序的景观中传播时，从不同[缺陷散射](@article_id:336763)出的波会发生[相消干涉](@article_id:350137)，导致电子被困，或称“局域化”在某个区域。[Anderson绝缘体](@article_id:299292)的奇妙之处在于它不需要态密度中存在真正的[能隙](@article_id:331619)。[费米能](@article_id:304407)量处可以有可用的能级，但这些态本身是局域化的，无法在材料中[传导电流](@article_id:329049)。莫特绝缘体则根本不同：它源于一个完美*洁净*系统中的相互作用，其特征是[能谱](@article_id:361142)中存在一个真正的关联[能隙](@article_id:331619)。没有低能态可用于导电。
+如果我们的晶体城市并非完美无瑕怎么办？如果它充满了随机的坑洼和路障（杂质和缺陷）呢？这就是**[Anderson绝缘体](@keyword=anderson_insulator|lang=zh-CN|style=Feynman)**的领域。在这里，绝缘行为源于[量子干涉](@keyword=quantum_interference|lang=zh-CN|style=Feynman)。当一个电子波在这个无序的景观中传播时，从不同[缺陷散射](@keyword=defect_scattering|lang=zh-CN|style=Feynman)出的波会发生[相消干涉](@keyword=destructive_interference|lang=zh-CN|style=Feynman)，导致电子被困，或称“局域化”在某个区域。[Anderson绝缘体](@keyword=anderson_insulator|lang=zh-CN|style=Feynman)的奇妙之处在于它不需要态密度中存在真正的[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)。[费米能](@keyword=fermi_energy|lang=zh-CN|style=Feynman)量处可以有可用的能级，但这些态本身是局域化的，无法在材料中[传导电流](@keyword=conduction_current|lang=zh-CN|style=Feynman)。莫特绝缘体则根本不同：它源于一个完美*洁净*系统中的相互作用，其特征是[能谱](@keyword=energy_spectrum|lang=zh-CN|style=Feynman)中存在一个真正的关联[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)。没有低能态可用于导电。[@problem_id:3006219]
 
 #### 莫特绝缘体 vs. Slater绝缘体
 
-这是一个微妙但至关重要的区别。[莫特绝缘体](@article_id:301128)中的局域化电子仍然拥有自旋。为了降低能量，相邻原子上的自旋通常倾向于以交替的“上-下-上-下”模式[排列](@article_id:296886)，这种状态称为**[反铁磁性](@article_id:320808)**。这种磁有序，就像Peierls绝缘体中的[晶格](@article_id:300090)畸变一样，也产生了一个新的、更大的周期性[原胞](@article_id:319758)。这也可能在费米能级处打开一个[能隙](@article_id:331619)。当[能隙](@article_id:331619)主要是在[弱相互作用](@article_id:317984)体系中这种磁有序的结果时，我们称之为**Slater绝缘体**。
+这是一个微妙但至关重要的区别。[莫特绝缘体](@keyword=mott_insulators|lang=zh-CN|style=Feynman)中的局域化电子仍然拥有自旋。为了降低能量，相邻原子上的自旋通常倾向于以交替的“上-下-上-下”模式[排列](@keyword=permutation|lang=zh-CN|style=Feynman)，这种状态称为**[反铁磁性](@keyword=anti_ferromagnetism|lang=zh-CN|style=Feynman)**。这种磁有序，就像Peierls绝缘体中的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)畸变一样，也产生了一个新的、更大的周期性[原胞](@keyword=primitive_unit_cell|lang=zh-CN|style=Feynman)。这也可能在费米能级处打开一个[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)。当[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)主要是在[弱相互作用](@keyword=weak_nuclear_force|lang=zh-CN|style=Feynman)体系中这种磁有序的结果时，我们称之为**Slater绝缘体**。
 
-那么，莫特绝缘体只是一个伪装的Slater绝缘体吗？不是。关键在于当你加热材料时会发生什么。当你升高温度时，长程磁有序最终会在一个临界温度（[奈尔温度](@article_id:322568)，$T_N$）下被破坏。在一个Slater绝缘体中，[能隙](@article_id:331619)在$T_N$处关闭，材料变为金属性。而在一个真正的[莫特绝缘体](@article_id:301128)中，其[能隙](@article_id:331619)主要由巨大的$U$引起，即使在$T_N$以上的顺磁相中，材料仍然**保持绝缘性**。关联[能隙](@article_id:331619)是主要特征；磁性通常只是一个低温下的次要结果。
+那么，莫特绝缘体只是一个伪装的Slater绝缘体吗？不是。关键在于当你加热材料时会发生什么。当你升高温度时，长程磁有序最终会在一个临界温度（[奈尔温度](@keyword=néel_temperature|lang=zh-CN|style=Feynman)，$T_N$）下被破坏。在一个Slater绝缘体中，[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)在$T_N$处关闭，材料变为金属性。而在一个真正的[莫特绝缘体](@keyword=mott_insulators|lang=zh-CN|style=Feynman)中，其[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)主要由巨大的$U$引起，即使在$T_N$以上的顺磁相中，材料仍然**保持绝缘性**。关联[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)是主要特征；磁性通常只是一个低温下的次要结果。[@problem_id:3006254]
 
 ### 电子的消失
 
-我们如何量化[莫特相变](@article_id:297663)时发生的奇异现象？在金属理论（称为[费米液体理论](@article_id:304499)）中，我们真正处理的不是“裸”电子，而是**[准粒子](@article_id:299846)**。一个[准粒子](@article_id:299846)是一个被其他[电荷](@article_id:339187)组成的屏蔽云包围的裸电子，这有效地“装扮”了它。它的行为像一个自由粒子，但具有不同的（通常更重的）[有效质量](@article_id:303315)$m^*$。
+我们如何量化[莫特相变](@keyword=mott_transition|lang=zh-CN|style=Feynman)时发生的奇异现象？在金属理论（称为[费米液体理论](@keyword=fermi_liquid_theory|lang=zh-CN|style=Feynman)）中，我们真正处理的不是“裸”电子，而是**[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)**。一个[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)是一个被其他[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)组成的屏蔽云包围的裸电子，这有效地“装扮”了它。它的行为像一个自由粒子，但具有不同的（通常更重的）[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)$m^*$。
 
-我们可以用一个称为**[准粒子权重](@article_id:300545)**或残留的量$Z$来衡量一个[准粒子](@article_id:299846)的“裸电子含量”。在一个简单的[无相互作用系统](@article_id:303499)中，$Z=1$。在真实的金属中，相互作用“稀释”了裸电子，所以$Z$是某个小于1的数。
+我们可以用一个称为**[准粒子权重](@keyword=quasiparticle_weight|lang=zh-CN|style=Feynman)**或残留的量$Z$来衡量一个[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)的“裸电子含量”。在一个简单的[无相互作用系统](@keyword=non_interacting_systems|lang=zh-CN|style=Feynman)中，$Z=1$。在真实的金属中，相互作用“稀释”了裸电子，所以$Z$是某个小于1的数。
 
-[Brinkman-Rice图像](@article_id:298982)利用这个概念对[莫特相变](@article_id:297663)提供了惊人的洞见。当我们增加相互作用强度$U$并接近[临界点](@article_id:305080)$U_c$时，[准粒子](@article_id:299846)变得越来越重。[准粒子权重](@article_id:300545)$Z$变得越来越小。一个简单而强大的公式捕捉了这种行为：
+[Brinkman-Rice图像](@keyword=brinkman_rice_picture|lang=zh-CN|style=Feynman)利用这个概念对[莫特相变](@keyword=mott_transition|lang=zh-CN|style=Feynman)提供了惊人的洞见。当我们增加相互作用强度$U$并接近[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)$U_c$时，[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)变得越来越重。[准粒子权重](@keyword=quasiparticle_weight|lang=zh-CN|style=Feynman)$Z$变得越来越小。一个简单而强大的公式捕捉了这种行为：
 $$
 Z(U) = 1 - \left(\frac{U}{U_c}\right)^2
 $$
-正当[相变](@article_id:297531)发生时，当$U \to U_c$，我们发现$Z \to 0$。有效质量，其标度关系为$m^* \propto 1/Z$，发散到无穷大！ 这就是[准粒子](@article_id:299846)的“死亡”。在金属中携带电流的实体就这样消失了，其权重完全转移到了非相干的、混乱的多体激发海洋中。[电荷](@article_id:339187)载流子变得无限重，意味着它们完[全局域](@article_id:375398)化了。金属变成了绝缘体。
+正当[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)发生时，当$U \to U_c$，我们发现$Z \to 0$。有效质量，其标度关系为$m^* \propto 1/Z$，发散到无穷大！[@problem_id:2995549] 这就是[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)的“死亡”。在金属中携带电流的实体就这样消失了，其权重完全转移到了非相干的、混乱的多体激发海洋中。[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)载流子变得无限重，意味着它们完[全局域](@keyword=global_fields|lang=zh-CN|style=Feynman)化了。金属变成了绝缘体。
 
 ### 程度问题：温度的角色
 
-能量标度$U$和$W$之间的简单拉锯战是一个零温下的故事。当我们加热时会发生什么？[热力学](@article_id:359663)登场了，我们不仅要考虑能量，还要考虑**熵**——一个衡量无序度的量。
+能量标度$U$和$W$之间的简单拉锯战是一个零温下的故事。当我们加热时会发生什么？[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)登场了，我们不仅要考虑能量，还要考虑**熵**——一个衡量无序度的量。
 
-再次考虑我们正好处于[相变](@article_id:297531)点的两个相互竞争的状态。
-- **金属性态**：它是一个有序、相干的[量子态](@article_id:306563)。在低温下，它的熵非常小。
-- **莫特绝缘体态**：它是一系列局域化的电子。但每个电子都有一个自旋，可以指向上或下。如果这些自旋是随机取向的（在顺[磁相](@article_id:321776)中），这就代表了巨大的无序度，因此具有很大的熵（具体来说，每个位点$k_B \ln 2$）。
+再次考虑我们正好处于[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)点的两个相互竞争的状态。
+- **金属性态**：它是一个有序、相干的[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)。在低温下，它的熵非常小。
+- **莫特绝缘体态**：它是一系列局域化的电子。但每个电子都有一个自旋，可以指向上或下。如果这些自旋是随机取向的（在顺[磁相](@keyword=magnetic_phases|lang=zh-CN|style=Feynman)中），这就代表了巨大的无序度，因此具有很大的熵（具体来说，每个位点$k_B \ln 2$）。
 
-自然界寻求最小化的不是能量，而是*自由能*，$F = E - TS$，其中$T$是温度，$S$是熵。在有限温度下，一个高熵的状态会获得很大的优势。绝缘体态，凭借其巨大的自旋熵，即使其能量略高于金属性态，也可能在加热时成为更受青睐的状态！
+自然界寻求最小化的不是能量，而是*自由能*，$F = E - TS$，其中$T$是温度，$S$是熵。在有限温度下，一个高熵的状态会获得很大的优势。绝缘体态，凭借其巨大的自旋熵，即使其能量略高于金属性态，也可能在加热时成为更受青睐的状态！[@problem_id:2974486]
 
-这种竞争导致了一个引人入胜的[相图](@article_id:351832)，一个更先进的理论——[动力学平均场理论](@article_id:298905)（DMFT）——完美地捕捉了这一点。在某个[临界温度](@article_id:307101)$T_c$以下，金属和绝缘体之间的[相变](@article_id:297531)是**[一级相变](@article_id:304949)**，就像水沸腾成蒸汽一样。存在一个两种相都可以存在的共存区，并且性质上出现不连续的跳跃。在$T_c$以上，两种状态之间的区别变得模糊，[相变](@article_id:297531)平滑地过渡为一个渡越。在$U-T$平面上的[相图](@article_id:351832)，其一级相变线终止于一个[临界点](@article_id:305080)，看起来与我们熟悉的液-气[相图](@article_id:351832)惊人地相似。
+这种竞争导致了一个引人入胜的[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)，一个更先进的理论——[动力学平均场理论](@keyword=dynamical_mean_field_theory|lang=zh-CN|style=Feynman)（DMFT）——完美地捕捉了这一点。在某个[临界温度](@keyword=critical_temperature|lang=zh-CN|style=Feynman)$T_c$以下，金属和绝缘体之间的[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)是**[一级相变](@keyword=first_order_phase_transition|lang=zh-CN|style=Feynman)**，就像水沸腾成蒸汽一样。存在一个两种相都可以存在的共存区，并且性质上出现不连续的跳跃。在$T_c$以上，两种状态之间的区别变得模糊，[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)平滑地过渡为一个渡越。在$U-T$平面上的[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)，其一级相变线终止于一个[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)，看起来与我们熟悉的液-气[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)惊人地相似。[@problem_id:3006232]
 
 ### 更宏大的图景：王座之争
 
 哈伯德模型及其在位排斥能$U$是一个绝妙的简化，但如果其他相互作用也很重要呢？如果电子除了厌恶待在同一位点外，还对处于*相邻*位点有轻微的反感呢？我们可以通过一个最近邻排斥项$V$将其加入我们的模型中。这就得到了**扩展哈伯德模型**。
 
-这个新角色$V$彻底改变了游戏规则。现在，莫特态不再是唯一可能的绝缘态。如果$V$很强，它会惩罚莫特态，因为在莫特态中，每个位点都有被占据的邻居。一个新的竞争者出现了：**[电荷密度波](@article_id:373693)（CDW）**。在这种状态下，电子决定完全放弃每隔一个原子。[晶格](@article_id:300090)分离成一个由双占据位点和[空位](@article_id:308249)点组成的棋盘格图案。从$U$的角度看，这种构型非常糟糕（大量的双占据），但从$V$的角度看却非常理想（没有被占据的邻居）。
+这个新角色$V$彻底改变了游戏规则。现在，莫特态不再是唯一可能的绝缘态。如果$V$很强，它会惩罚莫特态，因为在莫特态中，每个位点都有被占据的邻居。一个新的竞争者出现了：**[电荷密度波](@keyword=charge_density_waves|lang=zh-CN|style=Feynman)（CDW）**。在这种状态下，电子决定完全放弃每隔一个原子。[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)分离成一个由双占据位点和[空位](@keyword=vacancies|lang=zh-CN|style=Feynman)点组成的棋盘格图案。从$U$的角度看，这种构型非常糟糕（大量的双占据），但从$V$的角度看却非常理想（没有被占据的邻居）。
 
-现在我们有了新的竞争，这是离域动能$t$、在位排斥$U$和最近邻排斥$V$之间的三方大战。在动能可以忽略不计的简单极限下（$t=0$），[基态](@article_id:312876)由$U$和$V$的直接对决决定。如果$U$大于所有邻居的总排斥能（$U > zV$，其中$z$是最近邻居的数量），莫特态获胜。如果$zV > U$，CD[W态](@article_id:360055)获胜。
+现在我们有了新的竞争，这是离域动能$t$、在位排斥$U$和最近邻排斥$V$之间的三方大战。在动能可以忽略不计的简单极限下（$t=0$），[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)由$U$和$V$的直接对决决定。如果$U$大于所有邻居的总排斥能（$U > zV$，其中$z$是最近邻居的数量），莫特态获胜。如果$zV > U$，CD[W态](@keyword=w_state|lang=zh-CN|style=Feynman)获胜。[@problem_id:3019459]
 
-这最后的转折揭示了凝聚态物理的一个深刻真理。我们观察到的[物态](@article_id:299884)是许多不同能量和熵标度之间复杂竞争中脱颖而出的、精妙的、涌现的胜利者。[莫特绝缘体](@article_id:301128)，诞生于[电子排斥](@article_id:324540)这个简单的想法，是这个错综复杂世界的基石，是通往理解使材料世界无穷迷人的丰富集体行为的大门。
+这最后的转折揭示了凝聚态物理的一个深刻真理。我们观察到的[物态](@keyword=states_of_matter|lang=zh-CN|style=Feynman)是许多不同能量和熵标度之间复杂竞争中脱颖而出的、精妙的、涌现的胜利者。[莫特绝缘体](@keyword=mott_insulators|lang=zh-CN|style=Feynman)，诞生于[电子排斥](@keyword=electron_repulsion|lang=zh-CN|style=Feynman)这个简单的想法，是这个错综复杂世界的基石，是通往理解使材料世界无穷迷人的丰富集体行为的大门。

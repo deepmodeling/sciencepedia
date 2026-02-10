@@ -1,5 +1,5 @@
 ## 引言
-[碟状液晶](@article_id:372337)代表了一种迷人的[物质状态](@article_id:299884)，其中碟形分子在液体的完全无序和固体的刚性有序之间达到了一种独特的[平衡](@article_id:305473)。这种行为虽然引起了科学界的好奇，但也提供了一个重要的机遇：将其分子堆叠的基本原理转化为实用[功能材料](@article_id:373791)。本文旨在通过探索[碟状液晶](@article_id:372337)的世界，从其底层物理原理到其变革性应用，来填补这一空白。文章首先探讨了支配其[自组装](@article_id:303822)成有序柱状结构的核心“原理与机制”。随后，“应用与跨学科联系”一章将揭示如何利用这种受控的[分子结构](@article_id:300554)来制造[分子导线](@article_id:376808)、光敏致动器和[自组装](@article_id:303822)纳米管，展示物理学和化学如何成为下一代工程技术的基础。
+[碟状液晶](@keyword=discotic_liquid_crystals|lang=zh-CN|style=Feynman)代表了一种迷人的[物质状态](@keyword=states_of_matter|lang=zh-CN|style=Feynman)，其中碟形分子在液体的完全无序和固体的刚性有序之间达到了一种独特的[平衡](@keyword=equilibrium|lang=zh-CN|style=Feynman)。这种行为虽然引起了科学界的好奇，但也提供了一个重要的机遇：将其分子堆叠的基本原理转化为实用[功能材料](@keyword=functional_materials|lang=zh-CN|style=Feynman)。本文旨在通过探索[碟状液晶](@keyword=discotic_liquid_crystals|lang=zh-CN|style=Feynman)的世界，从其底层物理原理到其变革性应用，来填补这一空白。文章首先探讨了支配其[自组装](@keyword=self_assembly|lang=zh-CN|style=Feynman)成有序柱状结构的核心“原理与机制”。随后，“应用与跨学科联系”一章将揭示如何利用这种受控的[分子结构](@keyword=molecular_structure|lang=zh-CN|style=Feynman)来制造[分子导线](@keyword=molecular_wires|lang=zh-CN|style=Feynman)、光敏致动器和[自组装](@keyword=self_assembly|lang=zh-CN|style=Feynman)纳米管，展示物理学和化学如何成为下一代工程技术的基础。
 
 ## 原理与机制
 

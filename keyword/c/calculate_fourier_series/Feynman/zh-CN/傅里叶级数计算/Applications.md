@@ -6,40 +6,40 @@
 
 ### 信号与系统的交响曲
 
-也许[傅里叶级数](@article_id:299903)最直接、最具变革性的应用在于信号与系统的世界，这是电气工程、通信和控制理论的基石。其核心思想优雅得令人惊叹。我们构建的许多系统——从简单的电子电路到复杂的音频滤波器——都是“线性时不变”（LTI）系统。这是一个花哨的名字，但它描述了一个简单而关键的特性：系统对输入之和的响应就是对其各个输入的响应之和，并且其行为不随时间改变。
+也许[傅里叶级数](@keyword=fourier_series|lang=zh-CN|style=Feynman)最直接、最具变革性的应用在于信号与系统的世界，这是电气工程、通信和控制理论的基石。其核心思想优雅得令人惊叹。我们构建的许多系统——从简单的电子电路到复杂的音频滤波器——都是“线性时不变”（LTI）系统。这是一个花哨的名字，但它描述了一个简单而关键的特性：系统对输入之和的响应就是对其各个输入的响应之和，并且其行为不随时间改变。
 
-那么，当你向这样的系统输入一个纯[正弦波](@article_id:338691)时会发生什么？输出是……另一个频率完全相同的[正弦波](@article_id:338691)！它可能会被放大或衰减，其相位可能会发生偏移，但频率保持不变。从某种意义上说，[正弦波](@article_id:338691)是[LTI系统](@article_id:335643)的“[特征函数](@article_id:365996)”。
+那么，当你向这样的系统输入一个纯[正弦波](@keyword=sinusoid|lang=zh-CN|style=Feynman)时会发生什么？输出是……另一个频率完全相同的[正弦波](@keyword=sinusoid|lang=zh-CN|style=Feynman)！它可能会被放大或衰减，其相位可能会发生偏移，但频率保持不变。从某种意义上说，[正弦波](@keyword=sinusoid|lang=zh-CN|style=Feynman)是[LTI系统](@keyword=lti_systems|lang=zh-CN|style=Feynman)的“[特征函数](@keyword=indicator_functions|lang=zh-CN|style=Feynman)”。
 
-这就是魔术所在：既然傅里叶级数告诉我们*任何*周期信号都可以写成[正弦波](@article_id:338691)的和，我们就可以通过观察系统如何响应其每一个简单的正弦分量，来预测系统对一个非常复杂的输入的响应。时域中纠缠不清的[微分方程](@article_id:327891)，通常由一个称为卷积的可怕运算来描述，在[频域](@article_id:320474)中变成了简单的乘法。输入信号的每个[傅里叶系数](@article_id:305311)只需乘以该特定频率下的一个因子——即系统的“频率响应”——便可得到相应的输出系数 。
+这就是魔术所在：既然傅里叶级数告诉我们*任何*周期信号都可以写成[正弦波](@keyword=sinusoid|lang=zh-CN|style=Feynman)的和，我们就可以通过观察系统如何响应其每一个简单的正弦分量，来预测系统对一个非常复杂的输入的响应。时域中纠缠不清的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)，通常由一个称为卷积的可怕运算来描述，在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中变成了简单的乘法。输入信号的每个[傅里叶系数](@keyword=fourier_coefficients|lang=zh-CN|style=Feynman)只需乘以该特定频率下的一个因子——即系统的“频率响应”——便可得到相应的输出系数 [@problem_id:2891380]。
 
-想象一个[交流电路](@article_id:381756)，其中的电流是一个[锯齿波](@article_id:320160)。通过直接对这个笨拙的函数进行积分来计算[电容器](@article_id:331067)上累积的[电荷](@article_id:339187)将是乏味的。但通过将电流表示为傅里叶级数，问题就转变了。运算 $I(t) = dQ/dt$ 意味着要从[电荷](@article_id:339187)级数得到电流级数，可以[逐项微分](@article_id:303420)。反过来，要从电流 $I(t)$ 求得[电荷](@article_id:339187) $Q(t)$，我们可以对级数[逐项积分](@article_id:299144)。这将一个微积分问题转化为一个简单的代数问题，[电荷](@article_id:339187)级数的系数就是电流级数的系数除以 $n\omega_0$ 。同样的原理也让我们能找到像 `erf(x)` 这样的函数的傅里叶级数，它没有[初等函数](@article_id:360898)表达式，只需对其性质良好的[导数](@article_id:318324)的已知级数进行积分即可 。
+想象一个[交流电路](@keyword=ac_circuits|lang=zh-CN|style=Feynman)，其中的电流是一个[锯齿波](@keyword=sawtooth_wave|lang=zh-CN|style=Feynman)。通过直接对这个笨拙的函数进行积分来计算[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)上累积的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)将是乏味的。但通过将电流表示为傅里叶级数，问题就转变了。运算 $I(t) = dQ/dt$ 意味着要从[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)级数得到电流级数，可以[逐项微分](@keyword=term_by_term_differentiation|lang=zh-CN|style=Feynman)。反过来，要从电流 $I(t)$ 求得[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman) $Q(t)$，我们可以对级数[逐项积分](@keyword=term_by_term_integration|lang=zh-CN|style=Feynman)。这将一个微积分问题转化为一个简单的代数问题，[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)级数的系数就是电流级数的系数除以 $n\omega_0$ [@problem_id:2137474]。同样的原理也让我们能找到像 `erf(x)` 这样的函数的傅里叶级数，它没有[初等函数](@keyword=elementary_functions|lang=zh-CN|style=Feynman)表达式，只需对其性质良好的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)的已知级数进行积分即可 [@problem_id:2137432]。
 
-这种“[频域](@article_id:320474)”视角不仅用于分析，也用于设计。假设你有一个特定的滤波器，并且希望输出一个完美的方波。你知道所需方波的傅里叶系数，也知道你的滤波器的频率响应。然后你就可以求解出为达到目标而必须创建的输入信号的傅里叶系数——这是一个逐个谐波地反向工程输入信号的过程 。
+这种“[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)”视角不仅用于分析，也用于设计。假设你有一个特定的滤波器，并且希望输出一个完美的方波。你知道所需方波的傅里叶系数，也知道你的滤波器的频率响应。然后你就可以求解出为达到目标而必须创建的输入信号的傅里叶系数——这是一个逐个谐波地反向工程输入信号的过程 [@problem_id:1721543]。
 
 ### 帕塞瓦尔定理：能量的核算
 
-除了研究系统响应，[傅里叶级数](@article_id:299903)还为能量或功率的概念提供了深刻的物理洞察。帕塞瓦尔定理是其中的关键。简单来说，它指出，一个信号的总能量（正比于其幅值平方在一个周期内的积分）等于其各个傅里叶分量能量的总和。
+除了研究系统响应，[傅里叶级数](@keyword=fourier_series|lang=zh-CN|style=Feynman)还为能量或功率的概念提供了深刻的物理洞察。帕塞瓦尔定理是其中的关键。简单来说，它指出，一个信号的总能量（正比于其幅值平方在一个周期内的积分）等于其各个傅里叶分量能量的总和。
 
-这是一条普适的核算原则。它告诉你，无论你是在时域还是[频域](@article_id:320474)中看待信号，能量都是守恒的。这就像说你钱包里钱的总价值是一样的，不管你是逐个硬币数，还是先把它们分成一分、二角五分和一角的堆，然后再加总每堆的价值。
+这是一条普适的核算原则。它告诉你，无论你是在时域还是[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中看待信号，能量都是守恒的。这就像说你钱包里钱的总价值是一样的，不管你是逐个硬币数，还是先把它们分成一分、二角五分和一角的堆，然后再加总每堆的价值。
 
-这并非纯粹的数学抽象。设想一位工程师正在设计一个复杂的[天线阵列](@article_id:335256)。其辐射到空间的总功率正比于其远场[辐射方向图](@article_id:325488)平方的积分——这是一个观测角的函数 。直接计算这个积分可能极其困难。然而，如果工程师首先计算[辐射方向图](@article_id:325488)的[傅里叶级数](@article_id:299903)，帕塞瓦尔定理为求解答案提供了一条后门。总功率就是傅里叶系数幅值平方的和。一个棘手的微积分问题被简化为一个代数求和，这通常是一个简单得多的任务。
+这并非纯粹的数学抽象。设想一位工程师正在设计一个复杂的[天线阵列](@keyword=antenna_arrays|lang=zh-CN|style=Feynman)。其辐射到空间的总功率正比于其远场[辐射方向图](@keyword=radiation_pattern|lang=zh-CN|style=Feynman)平方的积分——这是一个观测角的函数 [@problem_id:500285]。直接计算这个积分可能极其困难。然而，如果工程师首先计算[辐射方向图](@keyword=radiation_pattern|lang=zh-CN|style=Feynman)的[傅里叶级数](@keyword=fourier_series|lang=zh-CN|style=Feynman)，帕塞瓦尔定理为求解答案提供了一条后门。总功率就是傅里叶系数幅值平方的和。一个棘手的微积分问题被简化为一个代数求和，这通常是一个简单得多的任务。
 
-这个原理的美妙之处在于其普适性。它可以被反过来用来解决纯数学中看似与能量或功率无关的问题。例如，我们可以通过将被积函数识别为某个已知[傅里叶级数](@article_id:299903)的函数的平方，来计算一个具有挑战性的[反常积分](@article_id:305454)，如 $\left[ \ln(2\sin x) \right]^2$ 的积分。[帕塞瓦尔定理](@article_id:299663)在此建立了一座桥梁，将该积分的值与一个简单无穷级数的和联系起来，例如著名的[巴塞尔问题](@article_id:297664)的结果 $\sum_{n=1}^\infty 1/n^2 = \pi^2/6$ 。一个关于能量的物理直觉引导我们得到了一个深刻的数学真理。
+这个原理的美妙之处在于其普适性。它可以被反过来用来解决纯数学中看似与能量或功率无关的问题。例如，我们可以通过将被积函数识别为某个已知[傅里叶级数](@keyword=fourier_series|lang=zh-CN|style=Feynman)的函数的平方，来计算一个具有挑战性的[反常积分](@keyword=infinite_integrals|lang=zh-CN|style=Feynman)，如 $\left[ \ln(2\sin x) \right]^2$ 的积分。[帕塞瓦尔定理](@keyword=parseval_s_theorem|lang=zh-CN|style=Feynman)在此建立了一座桥梁，将该积分的值与一个简单无穷级数的和联系起来，例如著名的[巴塞尔问题](@keyword=basel_problem|lang=zh-CN|style=Feynman)的结果 $\sum_{n=1}^\infty 1/n^2 = \pi^2/6$ [@problem_id:455731]。一个关于能量的物理直觉引导我们得到了一个深刻的数学真理。
 
 ### 天体谐音
 
-你可能会以为傅里YE级数主要是一个用于信号和电路等人造世界的工具。但大自然也用频率说话。思考一下行星绕太阳椭圆轨道运行的壮丽运动。[开普勒定律](@article_id:298780)描述了一种周期性但不均匀的运动。行星靠近太阳时速度加快，远离时则减速。它与太阳的距离也以一种复杂的、非正弦的方式[振荡](@article_id:331484)。
+你可能会以为傅里YE级数主要是一个用于信号和电路等人造世界的工具。但大自然也用频率说话。思考一下行星绕太阳椭圆轨道运行的壮丽运动。[开普勒定律](@keyword=kepler_s_laws|lang=zh-CN|style=Feynman)描述了一种周期性但不均匀的运动。行星靠近太阳时速度加快，远离时则减速。它与太阳的距离也以一种复杂的、非正弦的方式[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。
 
-然而，这种错综复杂的宇宙之舞可以被解码成一个傅里叶级数。行星与太阳的距离 $r$ 可以表示为时间的函数（或一个相关变量，平近点角 $M$）。结果是一个[傅里叶余弦级数](@article_id:356957) 。级数中最大的项是一个常数，代表平均半径。下一项，即基波[谐波](@article_id:360901)，描述了主要的[振荡](@article_id:331484)——一次轨道运行中的主要[往复运动](@article_id:373714)。但为了捕捉椭圆的精确形状，自然界加入了更高次的[谐波](@article_id:360901)：在基频的两倍、三倍和四倍处进行更小的修正。每一项都对运动进行精细调整，将基波的简单圆形路径弯曲成正确的椭圆。傅里叶分析让天文学家能将这种复杂的周期性运动分解为一系列更简单、“更纯粹”的谐波运动之和，为[天体力学](@article_id:307804)中的预测和分析提供了极其强大的工具。
+然而，这种错综复杂的宇宙之舞可以被解码成一个傅里叶级数。行星与太阳的距离 $r$ 可以表示为时间的函数（或一个相关变量，平近点角 $M$）。结果是一个[傅里叶余弦级数](@keyword=fourier_cosine_series|lang=zh-CN|style=Feynman) [@problem_id:1249472]。级数中最大的项是一个常数，代表平均半径。下一项，即基波[谐波](@keyword=harmonic_waves|lang=zh-CN|style=Feynman)，描述了主要的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)——一次轨道运行中的主要[往复运动](@keyword=oscillatory_motion|lang=zh-CN|style=Feynman)。但为了捕捉椭圆的精确形状，自然界加入了更高次的[谐波](@keyword=harmonic_waves|lang=zh-CN|style=Feynman)：在基频的两倍、三倍和四倍处进行更小的修正。每一项都对运动进行精细调整，将基波的简单圆形路径弯曲成正确的椭圆。傅里叶分析让天文学家能将这种复杂的周期性运动分解为一系列更简单、“更纯粹”的谐波运动之和，为[天体力学](@keyword=celestial_mechanics|lang=zh-CN|style=Feynman)中的预测和分析提供了极其强大的工具。
 
 ### 深入数学的深渊
 
-傅里叶级数不仅仅是一个计算工具；它还是通往更深层次数学结构的门户。许多物理学中最重要的[偏微分方程](@article_id:301773)——如热传导方程和波动方程——的解都最自然地用[傅里叶级数](@article_id:299903)这种语言来表达。“分离变量法”几乎神奇地引导出以傅里叶级数形式写出的解，其中每一项都代表一种[振动](@article_id:331484)或热量分布的[基本模式](@article_id:344550)。
+傅里叶级数不仅仅是一个计算工具；它还是通往更深层次数学结构的门户。许多物理学中最重要的[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)——如热传导方程和波动方程——的解都最自然地用[傅里叶级数](@keyword=fourier_series|lang=zh-CN|style=Feynman)这种语言来表达。“分离变量法”几乎神奇地引导出以傅里叶级数形式写出的解，其中每一项都代表一种[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)或热量分布的[基本模式](@keyword=fundamental_mode|lang=zh-CN|style=Feynman)。
 
-这个思想在[格林函数](@article_id:308216)理论中得到了优美的体现。格林函数可以被看作是系统对单个、无限尖銳的“戳刺”（一个[狄拉克δ函数](@article_id:313711)）的响应。如果你知道这个基本响应，你就可以通过将构成任意力的所有“戳刺”的效果相加，来构建对该力的响应。对于许多重要的物理系统，这个基本解，即[格林函数](@article_id:308216)本身，可以优雅地表示为系统固有模式或特征函数的[傅里叶级数](@article_id:299903) 。
+这个思想在[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)理论中得到了优美的体现。格林函数可以被看作是系统对单个、无限尖銳的“戳刺”（一个[狄拉克δ函数](@keyword=dirac_delta_function|lang=zh-CN|style=Feynman)）的响应。如果你知道这个基本响应，你就可以通过将构成任意力的所有“戳刺”的效果相加，来构建对该力的响应。对于许多重要的物理系统，这个基本解，即[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)本身，可以优雅地表示为系统固有模式或特征函数的[傅里叶级数](@keyword=fourier_series|lang=zh-CN|style=Feynman) [@problem_id:2103352]。
 
-这个框架也揭示了数学本身内部令人惊奇和优美的联系。通过构建一个巧妙选择的函数（如 $\cosh(ax)$）的[傅里叶级数](@article_id:299903)，然后在一个特定点求值，人们可以得到一个原本难以处理的无穷级数的和，例如 $\sum_{n=1}^{\infty} 1/(n^2+a^2)$ 。这感觉就像从帽子里变出一只兔子，但它展示了函数与其[频谱](@article_id:340514)之间深刻的二元性。
+这个框架也揭示了数学本身内部令人惊奇和优美的联系。通过构建一个巧妙选择的函数（如 $\cosh(ax)$）的[傅里叶级数](@keyword=fourier_series|lang=zh-CN|style=Feynman)，然后在一个特定点求值，人们可以得到一个原本难以处理的无穷级数的和，例如 $\sum_{n=1}^{\infty} 1/(n^2+a^2)$ [@problem_id:1076036]。这感觉就像从帽子里变出一只兔子，但它展示了函数与其[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)之间深刻的二元性。
 
-最后，级数本身的结构也蕴含着深意。对于任何傅里叶级数，都可以定义一个“[共轭](@article_id:312168)”级数，其中正弦和余弦的角色互换。这个运算被称为[希尔伯特变换](@article_id:301569)，它并不是一个随意的游戏。它与物理系统中的因果性概念紧密相连，并引出强大的关系式，如克拉默-克若尼关系，这些关系式连接了[系统响应](@article_id:327859)的[实部和虚部](@article_id:343615)。计算这个[共轭](@article_id:312168)函数使我们能够评估其他类别的[特殊函数](@article_id:303669)和级数，进一步凸显了傅里叶级数所帮助阐明的那个丰富而相互关联的数学网络 。
+最后，级数本身的结构也蕴含着深意。对于任何傅里叶级数，都可以定义一个“[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)”级数，其中正弦和余弦的角色互换。这个运算被称为[希尔伯特变换](@keyword=hilbert_transform|lang=zh-CN|style=Feynman)，它并不是一个随意的游戏。它与物理系统中的因果性概念紧密相连，并引出强大的关系式，如克拉默-克若尼关系，这些关系式连接了[系统响应](@keyword=system_response|lang=zh-CN|style=Feynman)的[实部和虚部](@keyword=real_and_imaginary_parts|lang=zh-CN|style=Feynman)。计算这个[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)函数使我们能够评估其他类别的[特殊函数](@keyword=special_functions|lang=zh-CN|style=Feynman)和级数，进一步凸显了傅里叶级数所帮助阐明的那个丰富而相互关联的数学网络 [@problem_id:688167]。
 
-从电路到天体力学，从天线到抽象积分，傅里叶级数一次又一次地证明了它的价值。它远不止是一种数学技术。它是一种视角，一种新的观察方式，揭示了世界复杂表象下隐藏的[谐波](@article_id:360901)结构。
+从电路到天体力学，从天线到抽象积分，傅里叶级数一次又一次地证明了它的价值。它远不止是一种数学技术。它是一种视角，一种新的观察方式，揭示了世界复杂表象下隐藏的[谐波](@keyword=harmonic_waves|lang=zh-CN|style=Feynman)结构。

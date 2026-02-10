@@ -3,7 +3,7 @@ The simulation of quantum systems, such as complex molecules and novel materials
 
 This article delves into qubitization, an elegant and powerful quantum algorithmic technique that masterfully resolves this problem. It provides a highly efficient and precise method for determining the energy levels of a quantum system. You will learn how qubitization "smuggles" a Hamiltonian onto a quantum computer by embedding it within a larger unitary operator and then uses the principles of a quantum walk to extract the desired information. The following chapters will first unpack the core machinery of this technique and then explore its transformative applications.
 
-The chapter **"Principles and Mechanisms"** will guide you through the foundational concepts of block-encoding, the [linear combination](@article_id:154597) of unitaries (LCU) method, and the quantum walk that translates [energy eigenvalues](@article_id:143887) into measurable rotation angles. Subsequently, the chapter **"Applications and Interdisciplinary Connections"** will demonstrate the profound impact of qubitization, showcasing its role in revolutionizing quantum chemistry and materials science, its extension into quantum linear algebra, and its potential to accelerate the timeline for achieving [quantum advantage](@article_id:136920).
+The chapter **"Principles and Mechanisms"** will guide you through the foundational concepts of block-encoding, the [linear combination](@keyword=linear_combination|lang=en-US|style=Feynman) of unitaries (LCU) method, and the quantum walk that translates [energy eigenvalues](@keyword=energy_eigenvalues|lang=en-US|style=Feynman) into measurable rotation angles. Subsequently, the chapter **"Applications and Interdisciplinary Connections"** will demonstrate the profound impact of qubitization, showcasing its role in revolutionizing quantum chemistry and materials science, its extension into quantum linear algebra, and its potential to accelerate the timeline for achieving [quantum advantage](@keyword=quantum_advantage|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
@@ -11,11 +11,11 @@ Suppose you are a watchmaker, but not for any ordinary timepiece. Your task is t
 
 There’s a problem, though. Our quantum computer toolkit is filled with operations that are **unitary**. Think of them as perfectly reversible steps, like turning a screw forward and then backward perfectly. The Hamiltonian $H$, however, isn't usually unitary. It describes energy, not a process in time. You can't just "run" $H$ on a quantum computer. So how do we use our unitary tools to probe a non-unitary object?
 
-This is where the genius of qubitization comes in. The strategy is wonderfully elegant: if you can't put $H$ directly into your circuit, then hide it inside something you *can* run. We'll build a larger, perfectly valid [unitary operator](@article_id:154671) $U$ that has our Hamiltonian $H$ secretly embedded within it.
+This is where the genius of qubitization comes in. The strategy is wonderfully elegant: if you can't put $H$ directly into your circuit, then hide it inside something you *can* run. We'll build a larger, perfectly valid [unitary operator](@keyword=unitary_operator|lang=en-US|style=Feynman) $U$ that has our Hamiltonian $H$ secretly embedded within it.
 
 ### The Trojan Horse: Block-Encoding
 
-The technique for hiding our Hamiltonian is called **block-encoding**. Imagine a large matrix representing our [unitary operator](@article_id:154671) $U$. This operator acts on a bigger space than our molecule's electrons alone; it also involves a few extra "helper" qubits, which we call **ancilla qubits**. If we prepare these ancilla qubits in a special starting state, say $|0\cdots0\rangle$, and look at what our operator $U$ does *only* in that sector, we find our Hamiltonian! Mathematically, this looks like:
+The technique for hiding our Hamiltonian is called **block-encoding**. Imagine a large matrix representing our [unitary operator](@keyword=unitary_operator|lang=en-US|style=Feynman) $U$. This operator acts on a bigger space than our molecule's electrons alone; it also involves a few extra "helper" qubits, which we call **ancilla qubits**. If we prepare these ancilla qubits in a special starting state, say $|0\cdots0\rangle$, and look at what our operator $U$ does *only* in that sector, we find our Hamiltonian! Mathematically, this looks like:
 
 $$
 \left(\langle 0\cdots0| \otimes I_{\text{system}}\right) U \left(|0\cdots0\rangle \otimes I_{\text{system}}\right) = \frac{H}{\alpha}
@@ -33,9 +33,9 @@ $$
 H = \sum_{j} c_j P_j
 $$
 
-Here, each $P_j$ is a simple [unitary operator](@article_id:154671)—typically a tensor product of Pauli matrices ($I, X, Y, Z$), which are the fundamental building blocks of qubit operations. The coefficients $c_j$ are just numbers that tell us how much of each piece to mix in. For a real-world chemistry problem, this sum can contain millions of terms, each with its own coefficient .
+Here, each $P_j$ is a simple [unitary operator](@keyword=unitary_operator|lang=en-US|style=Feynman)—typically a tensor product of Pauli matrices ($I, X, Y, Z$), which are the fundamental building blocks of qubit operations. The coefficients $c_j$ are just numbers that tell us how much of each piece to mix in. For a real-world chemistry problem, this sum can contain millions of terms, each with its own coefficient [@problem_id:2797419].
 
-This LCU form is our recipe for building the block-encoding. We'll absorb the signs of the coefficients $c_j$ into the unitaries $P_j$ and define non-negative weights $w_j = |c_j|$. The normalization factor $\alpha$ is then simply the sum of all these weights, $\alpha = \sum_j w_j$ .
+This LCU form is our recipe for building the block-encoding. We'll absorb the signs of the coefficients $c_j$ into the unitaries $P_j$ and define non-negative weights $w_j = |c_j|$. The normalization factor $\alpha$ is then simply the sum of all these weights, $\alpha = \sum_j w_j$ [@problem_id:2797419].
 
 With this recipe, we can design two special-purpose circuits, or "oracles":
 
@@ -43,19 +43,19 @@ With this recipe, we can design two special-purpose circuits, or "oracles":
 
 2.  **SELECT ($U_{\text{sel}}$)**: This is a large controlled operation. It reads the state $|j\rangle$ of the ancilla and, based on that, applies the corresponding unitary $V_j = \text{sgn}(c_j) P_j$ to the main system qubits. It "selects" the correct operation from our list.
 
-By cleverly combining these two oracles, as in $U = (U_{\text{prep}}^\dagger \otimes I) U_{\text{sel}} (U_{\text{prep}} \otimes I)$, we can construct the exact block-encoding unitary we need . We have successfully built our Trojan Horse.
+By cleverly combining these two oracles, as in $U = (U_{\text{prep}}^\dagger \otimes I) U_{\text{sel}} (U_{\text{prep}} \otimes I)$, we can construct the exact block-encoding unitary we need [@problem_id:2917687]. We have successfully built our Trojan Horse.
 
 ### The Reveal: A Quantum Walk
 
-Now that we've smuggled our Hamiltonian onto the quantum processor, how do we extract its secrets—the [energy eigenvalues](@article_id:143887)? Simply applying the block-encoding unitary $U$ is not enough. An [eigenstate](@article_id:201515) of $H$ is not an [eigenstate](@article_id:201515) of $U$.
+Now that we've smuggled our Hamiltonian onto the quantum processor, how do we extract its secrets—the [energy eigenvalues](@keyword=energy_eigenvalues|lang=en-US|style=Feynman)? Simply applying the block-encoding unitary $U$ is not enough. An [eigenstate](@keyword=eigenstate|lang=en-US|style=Feynman) of $H$ is not an [eigenstate](@keyword=eigenstate|lang=en-US|style=Feynman) of $U$.
 
 The key insight of qubitization is to perform a **quantum walk**. A walk is a repeated sequence of steps. Think of standing between two parallel mirrors. Your reflection seems to go on forever. If you then tilt one mirror slightly, your reflections will appear to rotate away. The product of two reflections is a rotation! Qubitization uses this exact principle.
 
 We construct a walk operator, $W$, by combining our block-encoding unitary (or its components) with reflections. A reflection is an operation that flips the sign of certain states while leaving others untouched. A key reflection, let's call it $R$, flips the sign of any state *unless* the ancilla is in its starting state $|0\cdots0\rangle$.
 
-There are several "recipes" for the walk operator $W$. One common construction is $W = U R U^\dagger R$  . Another related one is $W = R \cdot U_{\text{sel}}$ . While the details differ, the result is conceptually the same and utterly beautiful.
+There are several "recipes" for the walk operator $W$. One common construction is $W = U R U^\dagger R$ [@problem_id:2931309] [@problem_id:2797538]. Another related one is $W = R \cdot U_{\text{sel}}$ [@problem_id:2917687]. While the details differ, the result is conceptually the same and utterly beautiful.
 
-Let's consider an eigenstate $|\psi\rangle$ of our Hamiltonian, with an unknown energy $E$. So, $H|\psi\rangle = E|\psi\rangle$. Although the state $|0\cdots0\rangle \otimes |\psi\rangle$ is not an [eigenstate](@article_id:201515) of the walk operator $W$, it lives in a tiny, two-dimensional subspace that is *invariant* under the walk. Within this private 2D world, the complex action of $W$ simplifies to become a pure rotation.
+Let's consider an eigenstate $|\psi\rangle$ of our Hamiltonian, with an unknown energy $E$. So, $H|\psi\rangle = E|\psi\rangle$. Although the state $|0\cdots0\rangle \otimes |\psi\rangle$ is not an [eigenstate](@keyword=eigenstate|lang=en-US|style=Feynman) of the walk operator $W$, it lives in a tiny, two-dimensional subspace that is *invariant* under the walk. Within this private 2D world, the complex action of $W$ simplifies to become a pure rotation.
 
 ### The Magic Angle
 
@@ -78,6 +78,6 @@ $$
 E = \alpha \cos\left(\frac{\varphi}{2}\right)
 $$
 
-By finding the rotation angles for all the different [invariant subspaces](@article_id:152335), we can map out the entire energy spectrum of our Hamiltonian. The cost of this procedure is dominated by the need to implement our oracles, but the precision we gain is phenomenal, making it a leading method for future quantum simulations.
+By finding the rotation angles for all the different [invariant subspaces](@keyword=invariant_subspaces|lang=en-US|style=Feynman), we can map out the entire energy spectrum of our Hamiltonian. The cost of this procedure is dominated by the need to implement our oracles, but the precision we gain is phenomenal, making it a leading method for future quantum simulations.
 
-Even without the full machinery of QPE, the block-encoding itself is a powerful primitive. This block-encoding primitive is also a foundational component for advanced Hamiltonian simulation algorithms, which use a sequence of operations based on $U$ to construct a highly accurate approximation of the [time-evolution operator](@article_id:185780) $e^{-iH\tau}$ . This highlights the deep connection between the block-encoding and the dynamics of the system, revealing the fundamental unity of these quantum algorithmic concepts.
+Even without the full machinery of QPE, the block-encoding itself is a powerful primitive. This block-encoding primitive is also a foundational component for advanced Hamiltonian simulation algorithms, which use a sequence of operations based on $U$ to construct a highly accurate approximation of the [time-evolution operator](@keyword=time_evolution_operator_2|lang=en-US|style=Feynman) $e^{-iH\tau}$ [@problem_id:165019]. This highlights the deep connection between the block-encoding and the dynamics of the system, revealing the fundamental unity of these quantum algorithmic concepts.

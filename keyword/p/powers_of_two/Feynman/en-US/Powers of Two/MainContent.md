@@ -18,7 +18,7 @@ Let's look at them:
 
 Do you see the pattern? Isn't it wonderfully simple? A power of two in binary is just a single digit '1' followed by a string of zeros. It is the purest, most fundamental non-zero number in the binary world. It’s like a single, perfect note played in an otherwise silent room. Every other number, say $6$ (`110`) or $13$ (`1101`), is a more complex chord, a combination of these pure notes.
 
-This unique structure is not just a curiosity. It has profound implications for how computers represent and manipulate numbers. Imagine a simple processor that uses 5 bits to store a number, with one bit for the sign and four for the magnitude . In such a system, numbers whose magnitude is a power of two form a special, sparse set—`0001`, `0010`, `0100`, `1000`. These are the [fundamental units](@article_id:148384) of value the machine can work with.
+This unique structure is not just a curiosity. It has profound implications for how computers represent and manipulate numbers. Imagine a simple processor that uses 5 bits to store a number, with one bit for the sign and four for the magnitude [@problem_id:1960316]. In such a system, numbers whose magnitude is a power of two form a special, sparse set—`0001`, `0010`, `0100`, `1000`. These are the [fundamental units](@keyword=fundamental_units|lang=en-US|style=Feynman) of value the machine can work with.
 
 ### A Magician's Trick: The Power-of-Two Test
 
@@ -50,11 +50,11 @@ Let's do the AND:
 -------
   1000  (8)
 ```
-The result is not zero. The `` operation essentially "peeled off" the least significant '1' from the original number, but because there was *another* '1' left over, the result wasn't zero. The expression `x  (x - 1)` is zero only when there is just one '1' to begin with .
+The result is not zero. The `` operation essentially "peeled off" the least significant '1' from the original number, but because there was *another* '1' left over, the result wasn't zero. The expression `x  (x - 1)` is zero only when there is just one '1' to begin with [@problem_id:1440595].
 
-This isn't just a party trick; it's a cornerstone of [high-performance computing](@article_id:169486) and hardware design. When engineers design circuits in languages like Verilog, they don't write long `if (x==1 || x==2 || x==4 ...)` statements. That would be horribly inefficient. Instead, they use this exact principle, creating a compact and lightning-fast circuit with a statement like `assign y = (x != 0)  ((x  (x - 1)) == 0);`  . It's a piece of mathematical poetry translated directly into silicon.
+This isn't just a party trick; it's a cornerstone of [high-performance computing](@keyword=high_performance_computing|lang=en-US|style=Feynman) and hardware design. When engineers design circuits in languages like Verilog, they don't write long `if (x==1 || x==2 || x==4 ...)` statements. That would be horribly inefficient. Instead, they use this exact principle, creating a compact and lightning-fast circuit with a statement like `assign y = (x != 0)  ((x  (x - 1)) == 0);` [@problem_id:1926002] [@problem_id:1975745]. It's a piece of mathematical poetry translated directly into silicon.
 
-There's another, equally beautiful trick: for a positive number $x$, `(x  (-x)) == x` is true only if $x$ is a power of two. This one relies on the clever way computers represent negative numbers (two's complement), where `-x` is typically computed as `~x + 1`. This operation has the magical property of isolating the least significant '1' bit of $x$. So, if a number only has one '1' bit to begin with (i.e., it's a power of two), the result of this operation is the number itself .
+There's another, equally beautiful trick: for a positive number $x$, `(x  (-x)) == x` is true only if $x$ is a power of two. This one relies on the clever way computers represent negative numbers (two's complement), where `-x` is typically computed as `~x + 1`. This operation has the magical property of isolating the least significant '1' bit of $x$. So, if a number only has one '1' bit to begin with (i.e., it's a power of two), the result of this operation is the number itself [@problem_id:1440595].
 
 ### The Gatekeepers of Geometry
 
@@ -62,15 +62,15 @@ For centuries, the ancient Greeks wrestled with a set of famous problems using o
 
 For over 2000 years, these problems remained unsolved. It took the development of abstract algebra in the 19th century to finally prove them impossible. And at the very heart of this proof, we find powers of two acting as rigid gatekeepers.
 
-The connection is this: a length is **constructible** with a [straightedge and compass](@article_id:151017) if and only if it can be expressed using only integers, the four basic arithmetic operations (+, -, ×, ÷), and square roots. This led to a stunning discovery: a number $\alpha$ is constructible only if the **degree** of its minimal polynomial (the simplest polynomial with rational coefficients that has $\alpha$ as a root) is a power of two.
+The connection is this: a length is **constructible** with a [straightedge and compass](@keyword=straightedge_and_compass|lang=en-US|style=Feynman) if and only if it can be expressed using only integers, the four basic arithmetic operations (+, -, ×, ÷), and square roots. This led to a stunning discovery: a number $\alpha$ is constructible only if the **degree** of its minimal polynomial (the simplest polynomial with rational coefficients that has $\alpha$ as a root) is a power of two.
 
-Why? Because each construction step corresponds to solving equations. A straightedge gives you [linear equations](@article_id:150993) (degree 1), and a compass gives you quadratic equations (degree 2). Every time you take a square root, you are performing an operation of degree 2. So, any number you can build up must have come from a series of steps whose degrees multiply to a power of two: $2 \times 2 \times \dots \times 2 = 2^k$.
+Why? Because each construction step corresponds to solving equations. A straightedge gives you [linear equations](@keyword=linear_equations|lang=en-US|style=Feynman) (degree 1), and a compass gives you quadratic equations (degree 2). Every time you take a square root, you are performing an operation of degree 2. So, any number you can build up must have come from a series of steps whose degrees multiply to a power of two: $2 \times 2 \times \dots \times 2 = 2^k$.
 
-Let's consider the problem of doubling the cube. If our original cube has a side of length 1, its volume is $1^3=1$. A cube with double the volume must have a volume of 2, so its side length must be $\sqrt[3]{2}$. The [minimal polynomial](@article_id:153104) for this number is $x^3 - 2 = 0$. The degree of this polynomial is 3.
+Let's consider the problem of doubling the cube. If our original cube has a side of length 1, its volume is $1^3=1$. A cube with double the volume must have a volume of 2, so its side length must be $\sqrt[3]{2}$. The [minimal polynomial](@keyword=minimal_polynomial|lang=en-US|style=Feynman) for this number is $x^3 - 2 = 0$. The degree of this polynomial is 3.
 
-Is 3 a power of two? No. And that's it. The door slams shut. It is *impossible* to construct $\sqrt[3]{2}$ with a [straightedge and compass](@article_id:151017) . It's not that we aren't clever enough; the rules of the game, dictated by the degrees of polynomials, forbid it. The order of the Galois group associated with this polynomial is 6, which is not a power of two, sealing the deal from an even more advanced perspective.
+Is 3 a power of two? No. And that's it. The door slams shut. It is *impossible* to construct $\sqrt[3]{2}$ with a [straightedge and compass](@keyword=straightedge_and_compass|lang=en-US|style=Feynman) [@problem_id:1802290]. It's not that we aren't clever enough; the rules of the game, dictated by the degrees of polynomials, forbid it. The order of the Galois group associated with this polynomial is 6, which is not a power of two, sealing the deal from an even more advanced perspective.
 
-On the other hand, a number like $\sqrt{3+\sqrt{5}}$ *is* constructible. If you work through the algebra, you find its [minimal polynomial](@article_id:153104) is $x^4 - 6x^2 + 4 = 0$ . The degree is 4, which is $2^2$. The gate is open! The power of two gives us the green light.
+On the other hand, a number like $\sqrt{3+\sqrt{5}}$ *is* constructible. If you work through the algebra, you find its [minimal polynomial](@keyword=minimal_polynomial|lang=en-US|style=Feynman) is $x^4 - 6x^2 + 4 = 0$ [@problem_id:1802538]. The degree is 4, which is $2^2$. The gate is open! The power of two gives us the green light.
 
 ### The Echo of Chaos: The Surprising Statistics of Numbers
 
@@ -78,14 +78,14 @@ Let's end with one last, truly mind-bending appearance of our hero. Make a list 
 
 What's the most common first digit? Your intuition might say they are all equally likely. But they are not. The digit '1' appears far more often than any other. Why?
 
-The answer comes from a field called [ergodic theory](@article_id:158102), which studies systems that "mix" over time, like milk stirred into coffee. A number starts with the digit '1' if it lies between $10^k$ and $2 \times 10^k$ for some integer $k$. Taking the base-10 logarithm of everything, this is the same as saying that $\log_{10}(2^n)$ lies between $k$ and $k + \log_{10}(2)$.
+The answer comes from a field called [ergodic theory](@keyword=ergodic_theory|lang=en-US|style=Feynman), which studies systems that "mix" over time, like milk stirred into coffee. A number starts with the digit '1' if it lies between $10^k$ and $2 \times 10^k$ for some integer $k$. Taking the base-10 logarithm of everything, this is the same as saying that $\log_{10}(2^n)$ lies between $k$ and $k + \log_{10}(2)$.
 
-More simply, the first digit of $2^n$ is '1' if the *[fractional part](@article_id:274537)* of $n \times \log_{10}(2)$ falls into the interval $[0, \log_{10}(2))$.
+More simply, the first digit of $2^n$ is '1' if the *[fractional part](@keyword=fractional_part|lang=en-US|style=Feynman)* of $n \times \log_{10}(2)$ falls into the interval $[0, \log_{10}(2))$.
 
 Here's the crucial fact: $\log_{10}(2)$ is an irrational number (approximately 0.30103...). Because it's irrational, as you keep adding it to itself ($1\alpha, 2\alpha, 3\alpha, \dots$, where $\alpha = \log_{10}(2)$) and taking the result modulo 1, the points you generate will never perfectly repeat. Instead, they will eventually cover the entire interval from 0 to 1 in a perfectly uniform, evenly distributed spray.
 
 This means the sequence $\{n \log_{10}(2)\}$ spends a fraction of its "time" in any sub-interval that is equal to the length of that sub-interval. The interval corresponding to the leading digit '1' is $[0, \log_{10}(2))$, which has a length of $\log_{10}(2) \approx 0.301$.
 
-So, the probability that a randomly chosen power of two starts with the digit '1' is about 30.1% . This beautiful result, known as a specific case of Benford's Law, tells us that the perfectly deterministic sequence of powers of two contains an echo of randomness and chaos, all because of the properties of logarithms and the number two.
+So, the probability that a randomly chosen power of two starts with the digit '1' is about 30.1% [@problem_id:871604]. This beautiful result, known as a specific case of Benford's Law, tells us that the perfectly deterministic sequence of powers of two contains an echo of randomness and chaos, all because of the properties of logarithms and the number two.
 
 From the bits in a computer to the limits of geometry and the statistical laws of numbers, the powers of two are there, not as mere bystanders, but as the fundamental architects of the rules. They are a testament to the hidden unity in mathematics, showing how a simple idea can ripple across wildly different fields with profound and beautiful consequences.

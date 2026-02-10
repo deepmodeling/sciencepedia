@@ -1,9 +1,9 @@
 ## Introduction
-In computational mathematics and modern science, many complex problems are naturally expressed in the language of matrices. However, solving equations where the unknown is itself a matrix trapped between other matrices can be notoriously difficult. How do we bridge the gap between this intricate matrix algebra and the straightforward [linear systems](@article_id:147356), like $K\mathbf{x} = \mathbf{c}$, that computers are designed to solve efficiently?
+In computational mathematics and modern science, many complex problems are naturally expressed in the language of matrices. However, solving equations where the unknown is itself a matrix trapped between other matrices can be notoriously difficult. How do we bridge the gap between this intricate matrix algebra and the straightforward [linear systems](@keyword=linear_systems|lang=en-US|style=Feynman), like $K\mathbf{x} = \mathbf{c}$, that computers are designed to solve efficiently?
 
-This article introduces **vectorization**, a powerful yet deceptively simple technique that serves as a universal translator. It addresses the challenge of solving complex [matrix equations](@article_id:203201) by systematically reorganizing a matrix into a single column vector. This simple act of rearrangement unlocks a new perspective, transforming daunting matrix problems into familiar territory.
+This article introduces **vectorization**, a powerful yet deceptively simple technique that serves as a universal translator. It addresses the challenge of solving complex [matrix equations](@keyword=matrix_equations|lang=en-US|style=Feynman) by systematically reorganizing a matrix into a single column vector. This simple act of rearrangement unlocks a new perspective, transforming daunting matrix problems into familiar territory.
 
-The following sections will guide you through this transformative concept. First, we will delve into the **Principles and Mechanisms**, exploring the simple idea of stacking columns, its deeper mathematical properties as an isomorphism, and the crucial role of the Kronecker product in making it a practical tool. Following that, in **Applications and Interdisciplinary Connections**, we will see vectorization in action, demonstrating how it tames a zoo of [matrix equations](@article_id:203201) from control theory, enables the analysis of [dynamical systems](@article_id:146147), and even provides a new way of seeing physics and optimizing modern computational workflows.
+The following sections will guide you through this transformative concept. First, we will delve into the **Principles and Mechanisms**, exploring the simple idea of stacking columns, its deeper mathematical properties as an isomorphism, and the crucial role of the Kronecker product in making it a practical tool. Following that, in **Applications and Interdisciplinary Connections**, we will see vectorization in action, demonstrating how it tames a zoo of [matrix equations](@keyword=matrix_equations|lang=en-US|style=Feynman) from control theory, enables the analysis of [dynamical systems](@keyword=dynamical_systems|lang=en-US|style=Feynman), and even provides a new way of seeing physics and optimizing modern computational workflows.
 
 ## Principles and Mechanisms
 
@@ -25,25 +25,25 @@ $$
 \text{vec}(A) = \begin{pmatrix} a_{11} \\ a_{21} \\ a_{12} \\ a_{22} \\ a_{13} \\ a_{23} \end{pmatrix}
 $$
 
-And that's it! That's the great secret. This operation, which we call **vectorization** and denote with $\text{vec}(\cdot)$, is just a systematic way of rearranging numbers from a rectangular grid into a single, tall column . It's so straightforward it feels almost trivial. But don't be fooled. This simple act of re-stacking is the key that unlocks a whole new way of thinking.
+And that's it! That's the great secret. This operation, which we call **vectorization** and denote with $\text{vec}(\cdot)$, is just a systematic way of rearranging numbers from a rectangular grid into a single, tall column [@problem_id:22525]. It's so straightforward it feels almost trivial. But don't be fooled. This simple act of re-stacking is the key that unlocks a whole new way of thinking.
 
 ### More Than Just Reshuffling: A Bridge Between Worlds
 
 You might be thinking, "Okay, that's a cute parlor trick. But have we really done anything? Have we gained anything, or have we just made a mess?" This is a fantastic question. The answer is that we have gained a bridge.
 
-This transformation, $T(A) = \text{vec}(A)$, isn't just a random reshuffling; it's a profoundly well-behaved mathematical map. It's a **linear transformation**. What does that mean? It means it plays nicely with the two most basic operations we have: addition and [scalar multiplication](@article_id:155477). If you take two matrices $A$ and $B$, you can either add them first and then vectorize, or vectorize them first and then add. You get the same result.
+This transformation, $T(A) = \text{vec}(A)$, isn't just a random reshuffling; it's a profoundly well-behaved mathematical map. It's a **linear transformation**. What does that mean? It means it plays nicely with the two most basic operations we have: addition and [scalar multiplication](@keyword=scalar_multiplication|lang=en-US|style=Feynman). If you take two matrices $A$ and $B$, you can either add them first and then vectorize, or vectorize them first and then add. You get the same result.
 
 $$
 \text{vec}(A+B) = \text{vec}(A) + \text{vec}(B)
 $$
 
-Similarly, if you scale a matrix by a number $c$, it doesn't matter if you do it before or after you vectorize .
+Similarly, if you scale a matrix by a number $c$, it doesn't matter if you do it before or after you vectorize [@problem_id:22538].
 
 $$
 \text{vec}(cA) = c \, \text{vec}(A)
 $$
 
-This linearity is nice, but the true nature of the bridge is even stronger. The vectorization map is an **isomorphism**. That's a fancy word, but the idea is simple and beautiful. It means that for every matrix in the space of, say, $2 \times 2$ matrices, there is exactly one corresponding vector in the space of $4 \times 1$ vectors, and vice-versa. It's a perfect, [one-to-one correspondence](@article_id:143441). No information is lost, and no new information is created. The world of $2 \times 2$ matrices ($M_2(\mathbb{R})$) and the world of $4$-dimensional vectors ($\mathbb{R}^4$) are, from a certain point of view, the *same* world. One is just arranged as a square, the other as a line . We haven't broken anything by rearranging the numbers; we've just changed our perspective.
+This linearity is nice, but the true nature of the bridge is even stronger. The vectorization map is an **isomorphism**. That's a fancy word, but the idea is simple and beautiful. It means that for every matrix in the space of, say, $2 \times 2$ matrices, there is exactly one corresponding vector in the space of $4 \times 1$ vectors, and vice-versa. It's a perfect, [one-to-one correspondence](@keyword=one_to_one_correspondence|lang=en-US|style=Feynman). No information is lost, and no new information is created. The world of $2 \times 2$ matrices ($M_2(\mathbb{R})$) and the world of $4$-dimensional vectors ($\mathbb{R}^4$) are, from a certain point of view, the *same* world. One is just arranged as a square, the other as a line [@problem_id:974252]. We haven't broken anything by rearranging the numbers; we've just changed our perspective.
 
 ### Translating the Dictionary: Operations in the New World
 
@@ -57,19 +57,19 @@ $$
 \text{vec}(A)^T \text{vec}(A) = \begin{pmatrix} a_{11}  a_{21}  \cdots  a_{mn} \end{pmatrix} \begin{pmatrix} a_{11} \\ a_{21} \\ \vdots \\ a_{mn} \end{pmatrix} = \sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}^2
 $$
 
-Look at that! It's simply the sum of the squares of all the original elements of the matrix. This quantity, known as the squared **Frobenius norm** ($\|A\|_F^2$), seems like a natural way to define the "size" of a matrix. Our vectorization bridge tells us it's just the good old-fashioned squared Euclidean length, but in disguise! The two concepts are one and the same .
+Look at that! It's simply the sum of the squares of all the original elements of the matrix. This quantity, known as the squared **Frobenius norm** ($\|A\|_F^2$), seems like a natural way to define the "size" of a matrix. Our vectorization bridge tells us it's just the good old-fashioned squared Euclidean length, but in disguise! The two concepts are one and the same [@problem_id:22515].
 
-What about a matrix operation, like taking the transpose, $A^T$? In the matrix world, we swap rows and columns. What happens in the vector world? If we take a matrix $A$, vectorize it, and then vectorize its transpose $A^T$, we get two different vectors. But they contain the same numbers, just shuffled around. For any operation that is just a shuffling of components, there must be a **[permutation matrix](@article_id:136347)** that does the job. And indeed there is! There exists a special matrix, sometimes called a **[commutation matrix](@article_id:198016)** $P$, that precisely describes this reshuffling.
+What about a matrix operation, like taking the transpose, $A^T$? In the matrix world, we swap rows and columns. What happens in the vector world? If we take a matrix $A$, vectorize it, and then vectorize its transpose $A^T$, we get two different vectors. But they contain the same numbers, just shuffled around. For any operation that is just a shuffling of components, there must be a **[permutation matrix](@keyword=permutation_matrix|lang=en-US|style=Feynman)** that does the job. And indeed there is! There exists a special matrix, sometimes called a **[commutation matrix](@keyword=commutation_matrix|lang=en-US|style=Feynman)** $P$, that precisely describes this reshuffling.
 
 $$
 \text{vec}(A^T) = P \, \text{vec}(A)
 $$
 
-For a $2 \times 2$ matrix, you can work out that this shuffling matrix is a simple but elegant pattern of 1s and 0s . The specific form isn't the main point. The point is profound: a [fundamental matrix](@article_id:275144) operation (transpose) becomes a [matrix multiplication](@article_id:155541) in the vectorized space.
+For a $2 \times 2$ matrix, you can work out that this shuffling matrix is a simple but elegant pattern of 1s and 0s [@problem_id:22551]. The specific form isn't the main point. The point is profound: a [fundamental matrix](@keyword=fundamental_matrix|lang=en-US|style=Feynman) operation (transpose) becomes a [matrix multiplication](@keyword=matrix_multiplication|lang=en-US|style=Feynman) in the vectorized space.
 
 ### The Grand Prize: Solving the Unsolvable
 
-So far, this is all very elegant, but you might still be waiting for the punchline. Why go to all this trouble? The answer is to solve equations. Specifically, [matrix equations](@article_id:203201) where the unknown, $X$, is a matrix itself, and it's trapped in the middle of a product, like this:
+So far, this is all very elegant, but you might still be waiting for the punchline. Why go to all this trouble? The answer is to solve equations. Specifically, [matrix equations](@keyword=matrix_equations|lang=en-US|style=Feynman) where the unknown, $X$, is a matrix itself, and it's trapped in the middle of a product, like this:
 
 $$
 AXB = C
@@ -83,7 +83,7 @@ $$
 \text{vec}(AXB) = \text{vec}(C)
 $$
 
-Now, what is $\text{vec}(AXB)$? It's not immediately obvious. This is the moment where we introduce one last piece of machinery: the **Kronecker product**, denoted by the symbol $\otimes$. For two matrices $A$ and $B$, their Kronecker product $A \otimes B$ is a larger matrix that you get by taking every element of $A$ and multiplying it by the *entire* matrix $B$, and arranging these new blocks in the same pattern as the elements of $A$ .
+Now, what is $\text{vec}(AXB)$? It's not immediately obvious. This is the moment where we introduce one last piece of machinery: the **Kronecker product**, denoted by the symbol $\otimes$. For two matrices $A$ and $B$, their Kronecker product $A \otimes B$ is a larger matrix that you get by taking every element of $A$ and multiplying it by the *entire* matrix $B$, and arranging these new blocks in the same pattern as the elements of $A$ [@problem_id:22507].
 
 It sounds a bit complicated, but it's the key to the most important identity in this whole business:
 
@@ -93,7 +93,7 @@ $$
 
 Let's pause and appreciate this. It's truly remarkable. This identity tells us how to "factor" the matrices $A$ and $B$ out of the sandwich. The matrix product $AXB$, when vectorized, becomes a new, bigger matrix $(B^T \otimes A)$ multiplying the vector $\text{vec}(X)$.
 
-Suddenly, our difficult [matrix equation](@article_id:204257), $AXB = C$, transforms into:
+Suddenly, our difficult [matrix equation](@keyword=matrix_equation|lang=en-US|style=Feynman), $AXB = C$, transforms into:
 
 $$
 (B^T \otimes A) \text{vec}(X) = \text{vec}(C)
@@ -109,7 +109,7 @@ This is a standard system of linear equations! It's the first thing you learn in
 
 ### Putting the Tool to Work: Taming Matrix Equations
 
-This isn't just a theoretical curiosity; it's an immensely practical tool used in fields like control theory, [robotics](@article_id:150129), and economics. Many important relationships are naturally expressed as [matrix equations](@article_id:203201).
+This isn't just a theoretical curiosity; it's an immensely practical tool used in fields like control theory, [robotics](@keyword=robotics|lang=en-US|style=Feynman), and economics. Many important relationships are naturally expressed as [matrix equations](@keyword=matrix_equations|lang=en-US|style=Feynman).
 
 Consider the **Stein equation**, which is crucial for analyzing discrete-time dynamical systems:
 
@@ -135,9 +135,9 @@ $$
 (I - B^T \otimes A)\text{vec}(X) = \text{vec}(C)
 $$
 
-And there it is again. It's just $M\mathbf{x} = \mathbf{c}$ where $M = (I - B^T \otimes A)$ . Another seemingly tough equation tamed.
+And there it is again. It's just $M\mathbf{x} = \mathbf{c}$ where $M = (I - B^T \otimes A)$ [@problem_id:22532]. Another seemingly tough equation tamed.
 
-The same trick works for the famous **Lyapunov equation** from [stability theory](@article_id:149463), $AX + XA^T = -C$ , and even more general forms like the **Sylvester equation**, $AXB + CXD = E$ . Linearity allows us to vectorize term by term, and the Kronecker product identity lets us pop the unknown $X$ out of each sandwich, ready to be solved for.
+The same trick works for the famous **Lyapunov equation** from [stability theory](@keyword=stability_theory|lang=en-US|style=Feynman), $AX + XA^T = -C$ [@problem_id:1087777], and even more general forms like the **Sylvester equation**, $AXB + CXD = E$ [@problem_id:1086811]. Linearity allows us to vectorize term by term, and the Kronecker product identity lets us pop the unknown $X$ out of each sandwich, ready to be solved for.
 
 ### A Look Under the Hood: Commutators and Null Spaces
 
@@ -165,6 +165,6 @@ $$
 (I \otimes A - A^T \otimes I)\text{vec}(X) = \mathbf{0}
 $$
 
-What this tells us is extraordinary. The conceptual problem of finding all matrices $X$ that commute with $A$ is *identical* to the computational problem of finding the **null space** of the giant matrix $K_A = I \otimes A - A^T \otimes I$ . The structure of the matrices that commute with $A$ is encoded entirely within the [null space](@article_id:150982) of $K_A$. The dimension of this [null space](@article_id:150982) even tells you *how many* linearly independent matrices commute with $A$, a number that depends intimately on the deepest structure of $A$ (its Jordan form).
+What this tells us is extraordinary. The conceptual problem of finding all matrices $X$ that commute with $A$ is *identical* to the computational problem of finding the **null space** of the giant matrix $K_A = I \otimes A - A^T \otimes I$ [@problem_id:1370652]. The structure of the matrices that commute with $A$ is encoded entirely within the [null space](@keyword=null_space|lang=en-US|style=Feynman) of $K_A$. The dimension of this [null space](@keyword=null_space|lang=en-US|style=Feynman) even tells you *how many* linearly independent matrices commute with $A$, a number that depends intimately on the deepest structure of $A$ (its Jordan form).
 
-And so, we see the full journey. We started with a simple, almost childish idea of stacking columns of numbers. By following this idea logically, we built a bridge to a new world. This bridge allowed us to translate familiar concepts, revealing hidden unity. And finally, it gave us a powerful, unexpected tool to transform daunting [matrix equations](@article_id:203201) into the comfortable, solved territory of $K\mathbf{x}=\mathbf{c}$. It is a beautiful illustration of how a change in perspective can render the complex simple.
+And so, we see the full journey. We started with a simple, almost childish idea of stacking columns of numbers. By following this idea logically, we built a bridge to a new world. This bridge allowed us to translate familiar concepts, revealing hidden unity. And finally, it gave us a powerful, unexpected tool to transform daunting [matrix equations](@keyword=matrix_equations|lang=en-US|style=Feynman) into the comfortable, solved territory of $K\mathbf{x}=\mathbf{c}$. It is a beautiful illustration of how a change in perspective can render the complex simple.

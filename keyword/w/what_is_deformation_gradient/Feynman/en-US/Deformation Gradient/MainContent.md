@@ -1,11 +1,11 @@
 ## Introduction
-In the field of [continuum mechanics](@article_id:154631), describing how a material changes shape is a fundamental challenge. While it's easy to see an object stretch, twist, or compress, capturing this local rearrangement of matter with mathematical precision is complex. This article addresses this challenge by introducing the [deformation gradient](@article_id:163255), a powerful tensor that serves as a complete local instruction manual for deformation. Across the following chapters, we will unravel this cornerstone concept. The first chapter, "Principles and Mechanisms," will delve into its mathematical definition, explaining how it distinguishes between stretch, shear, and rotation, and how it can be decomposed into physically meaningful parts. Subsequently, the "Applications and Interdisciplinary Connections" chapter will demonstrate the vast utility of the [deformation gradient](@article_id:163255), showing how it bridges theory and practice in fields ranging from materials science and engineering to the cutting-edge of machine learning.
+In the field of [continuum mechanics](@keyword=continuum_mechanics|lang=en-US|style=Feynman), describing how a material changes shape is a fundamental challenge. While it's easy to see an object stretch, twist, or compress, capturing this local rearrangement of matter with mathematical precision is complex. This article addresses this challenge by introducing the [deformation gradient](@keyword=deformation_gradient|lang=en-US|style=Feynman), a powerful tensor that serves as a complete local instruction manual for deformation. Across the following chapters, we will unravel this cornerstone concept. The first chapter, "Principles and Mechanisms," will delve into its mathematical definition, explaining how it distinguishes between stretch, shear, and rotation, and how it can be decomposed into physically meaningful parts. Subsequently, the "Applications and Interdisciplinary Connections" chapter will demonstrate the vast utility of the [deformation gradient](@keyword=deformation_gradient|lang=en-US|style=Feynman), showing how it bridges theory and practice in fields ranging from materials science and engineering to the cutting-edge of machine learning.
 
 ## Principles and Mechanisms
 
 Imagine you're sculpting with a piece of clay. You can move it around, you can spin it, but the interesting part happens when you start to *deform* it—when you squeeze it, stretch it, or twist it. When you do this, you're not just changing the clay's location; you're changing the very arrangement of its internal parts. The distance between neighboring particles of clay is changing. The angles between imaginary lines drawn within it are changing. How can we possibly describe this complex, local scrambling of matter in a precise, scientific way? It seems like a daunting task.
 
-This is the challenge of [continuum mechanics](@article_id:154631). And the answer, as is so often the case in physics, is an idea of breathtaking elegance and power: a single mathematical entity known as the **[deformation gradient](@article_id:163255)**. Don't let the name intimidate you. Think of it as a complete, local instruction manual for deformation. It’s a concept that allows us to understand everything from the bounce of a rubber ball to the flow of glaciers and the forging of metals.
+This is the challenge of [continuum mechanics](@keyword=continuum_mechanics|lang=en-US|style=Feynman). And the answer, as is so often the case in physics, is an idea of breathtaking elegance and power: a single mathematical entity known as the **[deformation gradient](@keyword=deformation_gradient|lang=en-US|style=Feynman)**. Don't let the name intimidate you. Think of it as a complete, local instruction manual for deformation. It’s a concept that allows us to understand everything from the bounce of a rubber ball to the flow of glaciers and the forging of metals.
 
 ### The Deformation Gradient: A Local Instruction Manual
 
@@ -19,7 +19,7 @@ $$
 d\mathbf{x} = \mathbf{F} \, d\mathbf{X}
 $$
 
-Mathematically, $\mathbf{F}$ is the gradient of the motion map with respect to the original coordinates, $\mathbf{F} = \frac{\partial \mathbf{x}}{\partial \mathbf{X}}$. If we think of the deformation in terms of a **displacement field**, $\mathbf{u}(\mathbf{X}) = \mathbf{x}(\mathbf{X}) - \mathbf{X}$, which tells us how far each point has moved, the relationship becomes even clearer. The "do nothing" deformation is just the identity map, $\mathbf{x} = \mathbf{X}$, for which $\mathbf{F}$ is the identity tensor $\mathbf{I}$. Any change from this is due to the displacement, so we find that $\mathbf{F} = \mathbf{I} + \nabla_{\mathbf{X}}\mathbf{u}$, where $\nabla_{\mathbf{X}}\mathbf{u}$ is the gradient of the displacement. In essence, the [deformation gradient](@article_id:163255) is the sum of "staying put" ($\mathbf{I}$) and "how the displacement changes from point to point" ($\nabla_{\mathbf{X}}\mathbf{u}$). At every single point in the body, there's a specific $\mathbf{F}$ that acts as the complete, local recipe for the deformation at that spot.
+Mathematically, $\mathbf{F}$ is the gradient of the motion map with respect to the original coordinates, $\mathbf{F} = \frac{\partial \mathbf{x}}{\partial \mathbf{X}}$. If we think of the deformation in terms of a **displacement field**, $\mathbf{u}(\mathbf{X}) = \mathbf{x}(\mathbf{X}) - \mathbf{X}$, which tells us how far each point has moved, the relationship becomes even clearer. The "do nothing" deformation is just the identity map, $\mathbf{x} = \mathbf{X}$, for which $\mathbf{F}$ is the identity tensor $\mathbf{I}$. Any change from this is due to the displacement, so we find that $\mathbf{F} = \mathbf{I} + \nabla_{\mathbf{X}}\mathbf{u}$, where $\nabla_{\mathbf{X}}\mathbf{u}$ is the gradient of the displacement. In essence, the [deformation gradient](@keyword=deformation_gradient|lang=en-US|style=Feynman) is the sum of "staying put" ($\mathbf{I}$) and "how the displacement changes from point to point" ($\nabla_{\mathbf{X}}\mathbf{u}$). At every single point in the body, there's a specific $\mathbf{F}$ that acts as the complete, local recipe for the deformation at that spot.
 
 ### Decoding the Message: Stretch, Shear, and Volume
 
@@ -33,15 +33,15 @@ $$
 |d\mathbf{x}|^2 = (\mathbf{F} \, d\mathbf{X}) \cdot (\mathbf{F} \, d\mathbf{X}) = d\mathbf{X} \cdot (\mathbf{F}^T \mathbf{F} \, d\mathbf{X})
 $$
 
-This is a beautiful and profound result. Notice what happened. The change in length doesn't depend on $\mathbf{F}$ directly, but on the combination $\mathbf{C} = \mathbf{F}^T \mathbf{F}$. This new tensor, $\mathbf{C}$, is called the **right Cauchy-Green deformation tensor**. It's symmetric and tells us everything we need to know about how lengths and angles have changed in the neighborhood of a point, conveniently stripped of any pure [rigid-body rotation](@article_id:268129) that might have occurred.
+This is a beautiful and profound result. Notice what happened. The change in length doesn't depend on $\mathbf{F}$ directly, but on the combination $\mathbf{C} = \mathbf{F}^T \mathbf{F}$. This new tensor, $\mathbf{C}$, is called the **right Cauchy-Green deformation tensor**. It's symmetric and tells us everything we need to know about how lengths and angles have changed in the neighborhood of a point, conveniently stripped of any pure [rigid-body rotation](@keyword=rigid_body_rotation_2|lang=en-US|style=Feynman) that might have occurred.
 
-Let's consider a simple case: a material is stretched by a factor of $\lambda$ in one direction and contracts by a factor of $\lambda^{-1/2}$ in the other two directions to keep its volume constant. This is similar to what happens when you stretch a rubber band. The [deformation gradient](@article_id:163255) would be a simple [diagonal matrix](@article_id:637288), for example:
+Let's consider a simple case: a material is stretched by a factor of $\lambda$ in one direction and contracts by a factor of $\lambda^{-1/2}$ in the other two directions to keep its volume constant. This is similar to what happens when you stretch a rubber band. The [deformation gradient](@keyword=deformation_gradient|lang=en-US|style=Feynman) would be a simple [diagonal matrix](@keyword=diagonal_matrix|lang=en-US|style=Feynman), for example:
 
 $$
 \mathbf{F} = \begin{pmatrix} \lambda & 0 & 0 \\ 0 & \lambda^{-1/2} & 0 \\ 0 & 0 & \lambda^{-1/2} \end{pmatrix}
 $$
 
-In this special case of **pure stretch**, the deformation is entirely about changing lengths along the coordinate axes, with no rotation. The diagonal elements are the **[principal stretches](@article_id:194170)** themselves.
+In this special case of **pure stretch**, the deformation is entirely about changing lengths along the coordinate axes, with no rotation. The diagonal elements are the **[principal stretches](@keyword=principal_stretches|lang=en-US|style=Feynman)** themselves.
 
 #### Change in Shape: The Heart of Shear
 
@@ -53,21 +53,21 @@ $$
 \mathbf{F} = \begin{pmatrix} 1 & \gamma & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}
 $$
 
-The off-diagonal term $\gamma$ is the signature of shearing. If we take two initially orthogonal fibers along the $X_1$ and $X_2$ axes, what is the angle between them after deformation? A careful calculation shows that the change in angle, $\Delta\theta$, from the initial $\pi/2$ (90 degrees) is exactly $\Delta\theta = -\arctan(\gamma)$. For very small shears, this is approximately just $-\gamma$. But for large shears, like in a flowing liquid or a heavily deformed metal, this [linear approximation](@article_id:145607) fails completely. The full theory of the [deformation gradient](@article_id:163255) is essential to get the right answer.
+The off-diagonal term $\gamma$ is the signature of shearing. If we take two initially orthogonal fibers along the $X_1$ and $X_2$ axes, what is the angle between them after deformation? A careful calculation shows that the change in angle, $\Delta\theta$, from the initial $\pi/2$ (90 degrees) is exactly $\Delta\theta = -\arctan(\gamma)$. For very small shears, this is approximately just $-\gamma$. But for large shears, like in a flowing liquid or a heavily deformed metal, this [linear approximation](@keyword=linear_approximation|lang=en-US|style=Feynman) fails completely. The full theory of the [deformation gradient](@keyword=deformation_gradient|lang=en-US|style=Feynman) is essential to get the right answer.
 
 ### The Grand Decompositions: Unscrambling the Deformation
 
-The true genius of the [deformation gradient](@article_id:163255) concept lies in its ability to be "unpacked" or "decomposed" into physically meaningful parts. It allows us to take a complex, tangled process and see its constituent elements with perfect clarity.
+The true genius of the [deformation gradient](@keyword=deformation_gradient|lang=en-US|style=Feynman) concept lies in its ability to be "unpacked" or "decomposed" into physically meaningful parts. It allows us to take a complex, tangled process and see its constituent elements with perfect clarity.
 
 #### The Polar Decomposition: Stretch First, Then Rotate
 
-Any deformation, no matter how complex, can be seen as a two-step process: a pure stretch and shear, followed by a pure [rigid-body rotation](@article_id:268129). The **polar decomposition theorem** guarantees this. It states that any invertible $\mathbf{F}$ can be uniquely written as:
+Any deformation, no matter how complex, can be seen as a two-step process: a pure stretch and shear, followed by a pure [rigid-body rotation](@keyword=rigid_body_rotation_2|lang=en-US|style=Feynman). The **polar decomposition theorem** guarantees this. It states that any invertible $\mathbf{F}$ can be uniquely written as:
 
 $$
 \mathbf{F} = \mathbf{R} \mathbf{U}
 $$
 
-Here, $\mathbf{U}$ is a symmetric tensor called the **[right stretch tensor](@article_id:193262)** (it's the unique positive-definite square root of $\mathbf{C}$, so $\mathbf{U} = \sqrt{\mathbf{C}}$), and $\mathbf{R}$ is a [proper rotation](@article_id:141337) tensor.
+Here, $\mathbf{U}$ is a symmetric tensor called the **[right stretch tensor](@keyword=right_stretch_tensor|lang=en-US|style=Feynman)** (it's the unique positive-definite square root of $\mathbf{C}$, so $\mathbf{U} = \sqrt{\mathbf{C}}$), and $\mathbf{R}$ is a [proper rotation](@keyword=proper_rotation|lang=en-US|style=Feynman) tensor.
 
 The physical meaning is crystal clear. Imagine a tiny cube of material. The tensor $\mathbf{U}$ deforms it into a parallelepiped (a skewed box) without changing its overall orientation. Then, the tensor $\mathbf{R}$ takes this deformed shape and simply rotates it, as a rigid unit, into its final orientation in space. This wonderful mathematical trick allows us to separate the "shape-changing" part of the deformation ($\mathbf{U}$) from the pure "orientation-changing" part ($\mathbf{R}$).
 
@@ -85,4 +85,4 @@ $$
 
 Here, $J^{1/3}$ represents a uniform, isotropic stretch in all directions that accounts for the entire volume change. The remaining part, $\bar{\mathbf{F}}$, is the **isochoric** (volume-preserving) part of the deformation, which has a determinant of 1 and thus only describes the change in shape. This is immensely practical. Materials like rubber are easy to deform in shape (small resistance to $\bar{\mathbf{F}}$) but very difficult to compress or expand (large resistance to $J$ changing from 1). This decomposition provides the perfect language to describe such behavior.
 
-In the end, the [deformation gradient](@article_id:163255) $\mathbf{F}$ is far more than a mere mathematical abstraction. It is the language of change in the physical world. In its nine simple components, it holds the complete, nuanced story of how an object is locally stretched, sheared, rotated, and changed in volume. It is a testament to the power of mathematics to find unity and clarity in the face of what seems, at first, to be bewildering complexity.
+In the end, the [deformation gradient](@keyword=deformation_gradient|lang=en-US|style=Feynman) $\mathbf{F}$ is far more than a mere mathematical abstraction. It is the language of change in the physical world. In its nine simple components, it holds the complete, nuanced story of how an object is locally stretched, sheared, rotated, and changed in volume. It is a testament to the power of mathematics to find unity and clarity in the face of what seems, at first, to be bewildering complexity.

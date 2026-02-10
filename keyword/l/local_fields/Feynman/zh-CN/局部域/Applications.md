@@ -10,27 +10,27 @@
 
 #### 破解素数的密码
 
-想象一下，你得到了一个新的数系，由像 $m_{\alpha}(x) = x^{4} - 14 x + 7$ 这样的[多项式的根](@article_id:315027)定义。一个基本问题是：一个我们熟悉的素数，比如7，在这个新系统中表现如何？它还保持为素数，还是“分裂”成新[素理想](@article_id:314438)的乘积？从全局角度看这个问题可能会令人困惑。
+想象一下，你得到了一个新的数系，由像 $m_{\alpha}(x) = x^{4} - 14 x + 7$ 这样的[多项式的根](@keyword=roots_of_polynomials|lang=zh-CN|style=Feynman)定义。一个基本问题是：一个我们熟悉的素数，比如7，在这个新系统中表现如何？它还保持为素数，还是“分裂”成新[素理想](@keyword=prime_ideals|lang=zh-CN|style=Feynman)的乘积？从全局角度看这个问题可能会令人困惑。
 
-局部域方法改变了游戏规则。我们戴上“7-进眼镜”，考虑的多项式不是在有理数上，而是在局部域 $\mathbb{Q}_7$ 上。突然，这个多项式揭示出一种特殊的结构：对于素数 $p=7$，其系数能被7以一种恰到好处的方式整除，使其成为一个“Eisenstein多项式”。在 $\mathbb{Q}_7$ 的局部世界里，这是一个非常具体和极端行为的标志：扩张是“[完全分歧](@article_id:369048)的”。这个单一的局部观察，即扩张 $\mathbb{Q}_7(\alpha)/\mathbb{Q}_7$ 是[完全分歧](@article_id:369048)的，[分歧指数](@article_id:365576) $e=4$，[惯性次数](@article_id:374487) $f=1$ ，可以转化回一个精确的全局陈述。它告诉我们，在原始的[数域](@article_id:315968)中，素数7根本不分裂，而是成为单个新[素理想](@article_id:314438)的四次方。
+局部域方法改变了游戏规则。我们戴上“7-进眼镜”，考虑的多项式不是在有理数上，而是在局部域 $\mathbb{Q}_7$ 上。突然，这个多项式揭示出一种特殊的结构：对于素数 $p=7$，其系数能被7以一种恰到好处的方式整除，使其成为一个“Eisenstein多项式”。在 $\mathbb{Q}_7$ 的局部世界里，这是一个非常具体和极端行为的标志：扩张是“[完全分歧](@keyword=totally_ramified|lang=zh-CN|style=Feynman)的”。这个单一的局部观察，即扩张 $\mathbb{Q}_7(\alpha)/\mathbb{Q}_7$ 是[完全分歧](@keyword=totally_ramified|lang=zh-CN|style=Feynman)的，[分歧指数](@keyword=ramification_index|lang=zh-CN|style=Feynman) $e=4$，[惯性次数](@keyword=inertia_degree|lang=zh-CN|style=Feynman) $f=1$ [@problem_id:3020043]，可以转化回一个精确的全局陈述。它告诉我们，在原始的[数域](@keyword=number_fields|lang=zh-CN|style=Feynman)中，素数7根本不分裂，而是成为单个新[素理想](@keyword=prime_ideals|lang=zh-CN|style=Feynman)的四次方。
 
-这种从局部到全局的原理惊人地强大。通过分析一个多项式在局部域 $\mathbb{Q}_p$ 上如何分解，我们可以精确地确定素数 $p$ 在全局数域中是如何分解的。这对任何不会引起某些技术困难（与[多项式的判别式](@article_id:310522)有关）的素数都有效。例如，在研究包含 $n$ 次[单位根](@article_id:303737)的扩张时，局部分析揭示，对于一个不整除 $n$ 的素数 $p$，局部域的扩张是“非[分歧](@article_id:372077)的”（$e=1$）。[惯性次数](@article_id:374487) $f$ 就是 $p$ 模 $n$ 的[乘法阶](@article_id:640816)。这个局部数据，$e=1$ 和 $f = \text{ord}_n(p)$，完美地描述了素数 $p$ 在全局[分圆域](@article_id:314240)中的分裂方式 。曾经关于不同数域的一堆零散事实，在局部显微镜下变成了一幅统一的图景。
+这种从局部到全局的原理惊人地强大。通过分析一个多项式在局部域 $\mathbb{Q}_p$ 上如何分解，我们可以精确地确定素数 $p$ 在全局数域中是如何分解的。这对任何不会引起某些技术困难（与[多项式的判别式](@keyword=discriminant_of_a_polynomial|lang=zh-CN|style=Feynman)有关）的素数都有效。例如，在研究包含 $n$ 次[单位根](@keyword=unit_root|lang=zh-CN|style=Feynman)的扩张时，局部分析揭示，对于一个不整除 $n$ 的素数 $p$，局部域的扩张是“非[分歧](@keyword=ramification|lang=zh-CN|style=Feynman)的”（$e=1$）。[惯性次数](@keyword=inertia_degree|lang=zh-CN|style=Feynman) $f$ 就是 $p$ 模 $n$ 的[乘法阶](@keyword=multiplicative_order|lang=zh-CN|style=Feynman)。这个局部数据，$e=1$ 和 $f = \text{ord}_n(p)$，完美地描述了素数 $p$ 在全局[分圆域](@keyword=cyclotomic_fields|lang=zh-CN|style=Feynman)中的分裂方式 [@problem_id:3022154]。曾经关于不同数域的一堆零散事实，在局部显微镜下变成了一幅统一的图景。
 
-#### [互反律](@article_id:367348)与局部语言
+#### [互反律](@keyword=reciprocity_laws|lang=zh-CN|style=Feynman)与局部语言
 
-局部域显微镜不仅能看到静态结构，还能揭示支配它们的深层定律。数论中的一个经典主题是“[互反律](@article_id:367348)”。它探讨一个方程模一个素数的可解性如何与它模另一个素数的可解性相关联。局部域为这些定律提供了天然的语言。
+局部域显微镜不仅能看到静态结构，还能揭示支配它们的深层定律。数论中的一个经典主题是“[互反律](@keyword=reciprocity_laws|lang=zh-CN|style=Feynman)”。它探讨一个方程模一个素数的可解性如何与它模另一个素数的可解性相关联。局部域为这些定律提供了天然的语言。
 
-考虑一个看似简单的问题：对于域 $K$ 中的两个数 $a$ 和 $b$，什么时候 $a$ 是某个来自[二次扩张](@article_id:383213) $K(\sqrt{b})$ 的元素的范数？这等价于问方程 $x^2 - by^2 = a$ 是否有解。在全局上，这可能是一个非常困难的问题。然而，在局部域上，这个问题要容易得多，答案被一个优美而简单的对象所捕捉：[Hilbert符号](@article_id:360207) $(a,b)_K$ 。如果方程在局部可解，这个符号取值1，如果不可解则取值-1。这个符号具有优雅的代数性质，并与其他结构有着深刻的联系。例如，$(a,b)_K = 1$ 当且仅当一个相关的四维二次型，即Pfister型 $\langle\langle a,b \rangle\rangle$，是“迷向的”——意味着它有一个非平凡的零点 。这在可解性问题和二次型的几何理论之间架起了一座桥梁。[类域论](@article_id:316097)的伟大洞见在于，这些在每个素数处的简单局部规则，编码在[Hilbert符号](@article_id:360207)中，可以被组合起来支配全局行为，最终完全理解了这类方程何时在有理数上可解。
+考虑一个看似简单的问题：对于域 $K$ 中的两个数 $a$ 和 $b$，什么时候 $a$ 是某个来自[二次扩张](@keyword=quadratic_extensions|lang=zh-CN|style=Feynman) $K(\sqrt{b})$ 的元素的范数？这等价于问方程 $x^2 - by^2 = a$ 是否有解。在全局上，这可能是一个非常困难的问题。然而，在局部域上，这个问题要容易得多，答案被一个优美而简单的对象所捕捉：[Hilbert符号](@keyword=hilbert_symbol|lang=zh-CN|style=Feynman) $(a,b)_K$ [@problem_id:3026924]。如果方程在局部可解，这个符号取值1，如果不可解则取值-1。这个符号具有优雅的代数性质，并与其他结构有着深刻的联系。例如，$(a,b)_K = 1$ 当且仅当一个相关的四维二次型，即Pfister型 $\langle\langle a,b \rangle\rangle$，是“迷向的”——意味着它有一个非平凡的零点 [@problem_id:3026990]。这在可解性问题和二次型的几何理论之间架起了一座桥梁。[类域论](@keyword=class_field_theory|lang=zh-CN|style=Feynman)的伟大洞见在于，这些在每个素数处的简单局部规则，编码在[Hilbert符号](@keyword=hilbert_symbol|lang=zh-CN|style=Feynman)中，可以被组合起来支配全局行为，最终完全理解了这类方程何时在有理数上可解。
 
-这引向了该理论的最高成就：局部[互反律](@article_id:367348) 。对于任何局部域的阿贝尔扩张——即其对称性构成一个[交换群](@article_id:305570)的扩张——这一定律建立了一种深刻的对偶性。它提供了一本“词典”，一个名为Artin映射的同构，它在局部域的算术（特别是其乘法群）和其扩张的对称性（[伽罗瓦群](@article_id:312272)）之间进行转换 。关于域扩张的问题可以被翻译成关于数的问题，反之亦然。扩张的“复杂性”，由其分歧程度来衡量，被这种对应关系的一个称为导子的分析性质精确量化 。这种算术与对称性的完美结合是局部[类域论](@article_id:316097)的核心，也是现代数论大部分内容的基础。
+这引向了该理论的最高成就：局部[互反律](@keyword=reciprocity_laws|lang=zh-CN|style=Feynman) [@problem_id:3024808]。对于任何局部域的阿贝尔扩张——即其对称性构成一个[交换群](@keyword=abelian_groups|lang=zh-CN|style=Feynman)的扩张——这一定律建立了一种深刻的对偶性。它提供了一本“词典”，一个名为Artin映射的同构，它在局部域的算术（特别是其乘法群）和其扩张的对称性（[伽罗瓦群](@keyword=galois_group|lang=zh-CN|style=Feynman)）之间进行转换 [@problem_id:3024337]。关于域扩张的问题可以被翻译成关于数的问题，反之亦然。扩张的“复杂性”，由其分歧程度来衡量，被这种对应关系的一个称为导子的分析性质精确量化 [@problem_id:3021869]。这种算术与对称性的完美结合是局部[类域论](@keyword=class_field_theory|lang=zh-CN|style=Feynman)的核心，也是现代数论大部分内容的基础。
 
 #### 探测无限
 
-当我们把局部分析推向极限，大胆地研究数域的无限塔时，它的威力真正显现出来。在[Iwasawa理论](@article_id:375894)中，人们考虑一整串域 $K_n$，每个域都建立在前一个之上，形成一个无限的塔，并追问像[单位群](@article_id:363298)这样的算术对象的行为。人们可能会[期望](@article_id:311378)在每一层都发现无限的复杂性。
+当我们把局部分析推向极限，大胆地研究数域的无限塔时，它的威力真正显现出来。在[Iwasawa理论](@keyword=iwasawa_theory|lang=zh-CN|style=Feynman)中，人们考虑一整串域 $K_n$，每个域都建立在前一个之上，形成一个无限的塔，并追问像[单位群](@keyword=unit_group|lang=zh-CN|style=Feynman)这样的算术对象的行为。人们可能会[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)在每一层都发现无限的复杂性。
 
-然而，当我们将局部显微镜应用于分圆塔中素数 $p$ 之上的[素理想](@article_id:314438)时，奇迹发生了。这些局部扩张都是[完全分歧](@article_id:369048)的，根据局部域理论，这意味着塔中每一层的局部单位群之间的范数映射都是[满射](@article_id:638955)的 。这意味着从局部角度看，将单位从较低层提升到较高层根本没有任何障碍。局部图像简单到了极致。
+然而，当我们将局部显微镜应用于分圆塔中素数 $p$ 之上的[素理想](@keyword=prime_ideals|lang=zh-CN|style=Feynman)时，奇迹发生了。这些局部扩张都是[完全分歧](@keyword=totally_ramified|lang=zh-CN|style=Feynman)的，根据局部域理论，这意味着塔中每一层的局部单位群之间的范数映射都是[满射](@keyword=surjection|lang=zh-CN|style=Feynman)的 [@problem_id:3020416]。这意味着从局部角度看，将单位从较低层提升到较高层根本没有任何障碍。局部图像简单到了极致。
 
-这种惊人的简化揭示了一个深刻的真理：理解这些塔中单位的巨大困难不是一个局部问题。局部分析像一个完美的过滤器，剥离了问题中易于处理的部分，并表明剩下的、深邃的谜团——封装在一个著名的未解问题，即[Leopoldt猜想](@article_id:373495)中——纯粹是一个全局性的事情。局部域没有解决全局问题，但它澄清了问题，将深刻的部分与程序性的部分分离开来。
+这种惊人的简化揭示了一个深刻的真理：理解这些塔中单位的巨大困难不是一个局部问题。局部分析像一个完美的过滤器，剥离了问题中易于处理的部分，并表明剩下的、深邃的谜团——封装在一个著名的未解问题，即[Leopoldt猜想](@keyword=leopoldt_s_conjecture|lang=zh-CN|style=Feynman)中——纯粹是一个全局性的事情。局部域没有解决全局问题，但它澄清了问题，将深刻的部分与程序性的部分分离开来。
 
 ### 物理学家的探针：物质中的局部场
 
@@ -38,19 +38,19 @@
 
 #### 原子的真实电世界
 
-考虑一块置于外部电场 $\mathbf{E}_0$ 中的电介质材料——如玻璃或塑料等[电绝缘体](@article_id:367538)。材料会变得极化，其组成原子和分子伸展成微小的偶极子。这些偶极子产生它们自己的电场，即“[退极化场](@article_id:330287)”，它与外部电场方向相反。材料内部的宏观场 $\mathbf{E}_{\mathrm{int}}$ 是这两者之和。
+考虑一块置于外部电场 $\mathbf{E}_0$ 中的电介质材料——如玻璃或塑料等[电绝缘体](@keyword=electrical_insulators|lang=zh-CN|style=Feynman)。材料会变得极化，其组成原子和分子伸展成微小的偶极子。这些偶极子产生它们自己的电场，即“[退极化场](@keyword=depolarizing_field|lang=zh-CN|style=Feynman)”，它与外部电场方向相反。材料内部的宏观场 $\mathbf{E}_{\mathrm{int}}$ 是这两者之和。
 
-但原子不是光滑介质中的一个抽象点；它居住在一个特定的[晶格](@article_id:300090)位置上。为了找到它所经历的真实局部场，荷兰物理学家Hendrik Lorentz 设计了一个绝妙的思想实验。想象一下，在所讨论的原子周围挖出一个小的、概念上空无一物的球体。它感受到的局部场 $\mathbf{E}_{\mathrm{loc}}$ 是所有远处物质产生的宏观场 $\mathbf{E}_{\mathrm{int}}$，*加上*出现在其新挖出的球形空腔表面的[电荷](@article_id:339187)所产生的额外贡献。对于[各向同性材料](@article_id:349861)，这个额外的场，即著名的洛伦兹场，是 $\mathbf{P}/(3\epsilon_0)$，其中 $\mathbf{P}$ 是材料的均匀极化强度。
+但原子不是光滑介质中的一个抽象点；它居住在一个特定的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)位置上。为了找到它所经历的真实局部场，荷兰物理学家Hendrik Lorentz 设计了一个绝妙的思想实验。想象一下，在所讨论的原子周围挖出一个小的、概念上空无一物的球体。它感受到的局部场 $\mathbf{E}_{\mathrm{loc}}$ 是所有远处物质产生的宏观场 $\mathbf{E}_{\mathrm{int}}$，*加上*出现在其新挖出的球形空腔表面的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)所产生的额外贡献。对于[各向同性材料](@keyword=isotropic_materials|lang=zh-CN|style=Feynman)，这个额外的场，即著名的洛伦兹场，是 $\mathbf{P}/(3\epsilon_0)$，其中 $\mathbf{P}$ 是材料的均匀极化强度。
 
-因此，总的局部场为 $\mathbf{E}_{\mathrm{loc}} = \mathbf{E}_{\mathrm{int}} + \mathbf{P}/(3\epsilon_0)$ 。这不仅仅是一个学术上的修正。局部场可能与宏观场显著不同，正是这个局部场决定了材料对光的基本响应（其[折射率](@article_id:299093)）以及其储存电能的能力（其[介电常数](@article_id:332052)）。物质的宏观性质源于原子的集体舞蹈，而这场舞蹈的编排者正是它们各[自感](@article_id:329482)受到的局部场。
+因此，总的局部场为 $\mathbf{E}_{\mathrm{loc}} = \mathbf{E}_{\mathrm{int}} + \mathbf{P}/(3\epsilon_0)$ [@problem_id:2836884]。这不仅仅是一个学术上的修正。局部场可能与宏观场显著不同，正是这个局部场决定了材料对光的基本响应（其[折射率](@keyword=refractive_index|lang=zh-CN|style=Feynman)）以及其储存电能的能力（其[介电常数](@keyword=permittivity|lang=zh-CN|style=Feynman)）。物质的宏观性质源于原子的集体舞蹈，而这场舞蹈的编排者正是它们各[自感](@keyword=self_inductance|lang=zh-CN|style=Feynman)受到的局部场。
 
 #### 一个μ子进入磁性心脏的旅程
 
 我们不仅可以计算这些局部场；在某些情况下，我们还可以直接测量它们。想象一下，你可以把一个带着微型磁力计的物理学家缩小，并派他们到晶体内部进行一次旅行。虽然这仍然是科幻小说，但我们可以做仅次于此的事情：我们可以送进一个μ子。
 
-μ子是一种基本粒子，是电子的较重表亲，具有内禀自旋和磁矩。这使它成为一个完美的微观间谍。在一项名为μ子自旋旋转（muSR）的技术中，一束自旋极化的μ子被注入到材料样本中。一旦进入内部，每个μ子的自旋就会在其停留位置的局部[磁场](@article_id:313708)中像一个微小的摇摆陀螺一样进动。这个进动频率直接衡量了局部场的强度。在[μ子衰变](@article_id:321362)之前，它们会广播出自己的进动信号，外面的物理学家可以监听。
+μ子是一种基本粒子，是电子的较重表亲，具有内禀自旋和磁矩。这使它成为一个完美的微观间谍。在一项名为μ子自旋旋转（muSR）的技术中，一束自旋极化的μ子被注入到材料样本中。一旦进入内部，每个μ子的自旋就会在其停留位置的局部[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)中像一个微小的摇摆陀螺一样进动。这个进动频率直接衡量了局部场的强度。在[μ子衰变](@keyword=muon_decay|lang=zh-CN|style=Feynman)之前，它们会广播出自己的进动信号，外面的物理学家可以监听。
 
-通过观察整个μ子系综的初始集体自旋极化如何随时间弛豫，我们可以推断出材料内部这些局部[磁场](@article_id:313708)的统计分布。在非磁性固体中，这些场的主要来源通常是原子核本身拥有的微小磁矩海洋。在这种情况下观察到的特征信号是一条优美的曲线，称为Kubo-Toyabe弛豫函数。其独特的形状——一个初始类高斯衰减，然后恢复到初始极化强度的三分之一处的“尾巴”——是静态、随机、各向同性的局部场分布的一个明确无误的指纹 。因此，muSR提供了一种极其灵敏、非侵入性的探针，让物理学家能够一次一个局部场地绘制出[超导体](@article_id:370061)、磁体和其他奇特材料内部隐藏的磁性景观。
+通过观察整个μ子系综的初始集体自旋极化如何随时间弛豫，我们可以推断出材料内部这些局部[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的统计分布。在非磁性固体中，这些场的主要来源通常是原子核本身拥有的微小磁矩海洋。在这种情况下观察到的特征信号是一条优美的曲线，称为Kubo-Toyabe弛豫函数。其独特的形状——一个初始类高斯衰减，然后恢复到初始极化强度的三分之一处的“尾巴”——是静态、随机、各向同性的局部场分布的一个明确无误的指纹 [@problem_id:3006833]。因此，muSR提供了一种极其灵敏、非侵入性的探针，让物理学家能够一次一个局部场地绘制出[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)、磁体和其他奇特材料内部隐藏的磁性景观。
 
 ### 视角的统一
 

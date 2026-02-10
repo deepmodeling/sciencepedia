@@ -4,41 +4,41 @@
 
 ### 伟大的守恒定律：来自力学的遗产
 
-我们的旅程始于经典力学的庄严世界，那是 Newton、Lagrange 和 Hamilton 的领域。在这里，一个系统——无论是行星、钟摆还是一团气体分子——的状态，都完全由一个抽象空间中的单一点来描述，这个空间被称为“相空间”。这个空间为系统中每个粒子的每个位置和每个动量都设置了维度 。随着系统随时间演化，这个点描绘出一条路径，即它的轨迹。
+我们的旅程始于经典力学的庄严世界，那是 Newton、Lagrange 和 Hamilton 的领域。在这里，一个系统——无论是行星、钟摆还是一团气体分子——的状态，都完全由一个抽象空间中的单一点来描述，这个空间被称为“相空间”。这个空间为系统中每个粒子的每个位置和每个动量都设置了维度 [@problem_id:2771849]。随着系统随时间演化，这个点描绘出一条路径，即它的轨迹。
 
-那个时代一个真正非凡的发现是[刘维尔定理](@article_id:303525)。它指出，如果你在相空间中取一小“团”初始状态，当整团状态演化时，其体积保持完全恒定。这团状态可能会被拉伸成长而细的丝状物，或扭曲成奇异的形状，但其总的 $6N$ 维体积是守恒的。这不仅仅是一个奇特的现象，它是[统计力](@article_id:373880)学的基石。但*为什么*这是真的呢？
+那个时代一个真正非凡的发现是[刘维尔定理](@keyword=liouville_s_theorem|lang=zh-CN|style=Feynman)。它指出，如果你在相空间中取一小“团”初始状态，当整团状态演化时，其体积保持完全恒定。这团状态可能会被拉伸成长而细的丝状物，或扭曲成奇异的形状，但其总的 $6N$ 维体积是守恒的。这不仅仅是一个奇特的现象，它是[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学的基石。但*为什么*这是真的呢？
 
-秘密就在于雅可比流。[体积守恒](@article_id:340278)在数学上等同于一个陈述：相空间流的雅可比矩阵的[行列式](@article_id:303413)始终等于一：对于所有时间 $t$，$\det(J_t) = 1$  。对于描述守恒物理的[哈密顿系统](@article_id:303966)，相空间中一点的“速度”具有非常特殊的数学结构。它的散度总是零。通过一个被称为[刘维尔公式](@article_id:330737)的结果，该公式指出[行列式](@article_id:303413)的变化率与散度成正比，我们发现[行列式](@article_id:303413)必须是常数。由于它从1开始（在 $t=0$ 时的流只是单位映射），它将永远保持为1 。
+秘密就在于雅可比流。[体积守恒](@keyword=conservation_of_volume|lang=zh-CN|style=Feynman)在数学上等同于一个陈述：相空间流的雅可比矩阵的[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)始终等于一：对于所有时间 $t$，$\det(J_t) = 1$ [@problem_id:2771849] [@problem_id:1259999]。对于描述守恒物理的[哈密顿系统](@keyword=hamiltonian_systems|lang=zh-CN|style=Feynman)，相空间中一点的“速度”具有非常特殊的数学结构。它的散度总是零。通过一个被称为[刘维尔公式](@keyword=liouville_s_formula|lang=zh-CN|style=Feynman)的结果，该公式指出[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)的变化率与散度成正比，我们发现[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)必须是常数。由于它从1开始（在 $t=0$ 时的流只是单位映射），它将永远保持为1 [@problem_id:2771849]。
 
-这不仅仅是一个抽象的证明。我们可以看到它的实际作用。考虑一个由哈密顿量 $H(q,p) = qp$ 描述的简单（尽管可能看起来奇怪）系统。通过解哈密顿方程，我们可以显式地计算出流映射并找到其[雅可比矩阵](@article_id:303923)。直接计算表明，无论系统演化多久，其[行列式](@article_id:303413)确实精确地为1 。
+这不仅仅是一个抽象的证明。我们可以看到它的实际作用。考虑一个由哈密顿量 $H(q,p) = qp$ 描述的简单（尽管可能看起来奇怪）系统。通过解哈密顿方程，我们可以显式地计算出流映射并找到其[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)。直接计算表明，无论系统演化多久，其[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)确实精确地为1 [@problem_id:1259999]。
 
-如果一个系统不是完美的哈密顿系统会怎样？假设存在其他力，比如摩擦力，导致系统失去或获得能量。刘维尔的规则就被打破了。雅可比流为*如何*打破它提供了精确的配方。如果我们有一个由[矢量场](@article_id:322515) $V$ 驱动的流，一个区域的体积会改变一个因子 $\det(J_t)$。这种变化的速率由 $V$ 的散度决定。对于一个带有某种线性耗散或增益的力学系统，我们可以很漂亮地看到这一点。系统的[矢量场](@article_id:322515)中，源于哈密顿量的部[分散度](@article_id:342530)为零，试图保持体积，而耗散或增益项会引入非[零散度](@article_id:370028)。例如，若此散度为常数 $2\alpha$，则会导致体积以 $\exp(2\alpha t)$ 的形式指数级收缩（若 $\alpha  0$）或增长（若 $\alpha > 0$）。因此，雅可比流扮演着一个精确的记账员角色，追踪[相空间体积](@article_id:315608)的守恒或耗散。
+如果一个系统不是完美的哈密顿系统会怎样？假设存在其他力，比如摩擦力，导致系统失去或获得能量。刘维尔的规则就被打破了。雅可比流为*如何*打破它提供了精确的配方。如果我们有一个由[矢量场](@keyword=vector_field|lang=zh-CN|style=Feynman) $V$ 驱动的流，一个区域的体积会改变一个因子 $\det(J_t)$。这种变化的速率由 $V$ 的散度决定。对于一个带有某种线性耗散或增益的力学系统，我们可以很漂亮地看到这一点。系统的[矢量场](@keyword=vector_field|lang=zh-CN|style=Feynman)中，源于哈密顿量的部[分散度](@keyword=dispersity|lang=zh-CN|style=Feynman)为零，试图保持体积，而耗散或增益项会引入非[零散度](@keyword=divergence_free|lang=zh-CN|style=Feynman)。例如，若此散度为常数 $2\alpha$，则会导致体积以 $\exp(2\alpha t)$ 的形式指数级收缩（若 $\alpha  0$）或增长（若 $\alpha > 0$）[@problem_id:1665953]。因此，雅可比流扮演着一个精确的记账员角色，追踪[相空间体积](@keyword=phase_space_volume|lang=zh-CN|style=Feynman)的守恒或耗散。
 
-### 混沌的起源：[拉伸与折叠](@article_id:333105)
+### 混沌的起源：[拉伸与折叠](@keyword=stretching_and_folding|lang=zh-CN|style=Feynman)
 
-尽管经典力学的观点是可预测的、钟表式的秩序，但我们现在知道，即使是简单的[确定性系统](@article_id:353602)也能表现出复杂到看似随机的行为。这就是混沌的世界。混沌的标志是对[初始条件](@article_id:313275)的极端敏感性：两个初始时无穷接近的轨迹将以指数速率发散。我们如何量化这种发散？雅可比流再次成为我们的向导。
+尽管经典力学的观点是可预测的、钟表式的秩序，但我们现在知道，即使是简单的[确定性系统](@keyword=deterministic_system|lang=zh-CN|style=Feynman)也能表现出复杂到看似随机的行为。这就是混沌的世界。混沌的标志是对[初始条件](@keyword=initial_conditions|lang=zh-CN|style=Feynman)的极端敏感性：两个初始时无穷接近的轨迹将以指数速率发散。我们如何量化这种发散？雅可比流再次成为我们的向导。
 
-一个初始[分离矢量](@article_id:332170) $\delta\mathbf{z}_0$ 演化为 $\delta\mathbf{z}(t) = J_t \delta\mathbf{z}_0$。在一个[混沌系统](@article_id:299765)中，雅可比矩阵 $J_t$ 成为一个巨大拉伸的工具。对于长时，其最大[特征值](@article_id:315305)呈[指数增长](@article_id:302310)，而这种增长的速率定义了系统的*[最大李雅普诺夫指数](@article_id:367982)* $\lambda_L$。这个单一的数字是衡量一个系统混沌程度最根本的指标。
+一个初始[分离矢量](@keyword=separation_vector|lang=zh-CN|style=Feynman) $\delta\mathbf{z}_0$ 演化为 $\delta\mathbf{z}(t) = J_t \delta\mathbf{z}_0$。在一个[混沌系统](@keyword=chaotic_systems|lang=zh-CN|style=Feynman)中，雅可比矩阵 $J_t$ 成为一个巨大拉伸的工具。对于长时，其最大[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)呈[指数增长](@keyword=exponential_growth|lang=zh-CN|style=Feynman)，而这种增长的速率定义了系统的*[最大李雅普诺夫指数](@keyword=top_lyapunov_exponent|lang=zh-CN|style=Feynman)* $\lambda_L$。这个单一的数字是衡量一个系统混沌程度最根本的指标。
 
-这个思想在[湍流](@article_id:318989)流体的研究中得到了强有力的应用。为了理解海洋或大气中的混合过程，科学家们追踪流体块的形变。他们使用一种称为有限时间李雅普诺夫指数（FTLE）的工具，这本质上是对雅可比流在有限时间间隔 $T$ 内完成的拉伸进行的实际计算 。高 FTLE 值的区域充当了流的“骨架”，揭示了那些组织着看似随机的[湍流](@article_id:318989)的无形动态屏障，通常被称为拉格朗日[相干结构](@article_id:362239)。
+这个思想在[湍流](@keyword=turbulence|lang=zh-CN|style=Feynman)流体的研究中得到了强有力的应用。为了理解海洋或大气中的混合过程，科学家们追踪流体块的形变。他们使用一种称为有限时间李雅普诺夫指数（FTLE）的工具，这本质上是对雅可比流在有限时间间隔 $T$ 内完成的拉伸进行的实际计算 [@problem_id:860834]。高 FTLE 值的区域充当了流的“骨架”，揭示了那些组织着看似随机的[湍流](@keyword=turbulence|lang=zh-CN|style=Feynman)的无形动态屏障，通常被称为拉格朗日[相干结构](@keyword=coherent_structures|lang=zh-CN|style=Feynman)。
 
-同样的拉伸原理适用于宇宙尺度和微观尺度。在天体物理学中，星系中的恒星在集体[引力势](@article_id:320782)中运动。在轨道是混沌的区域，相空间中任何初始的恒星团块都会被雅可比流拉伸成长而细的丝状物。这个过程被称为“相混合”。一个惊人的结果是，恒星[分布函数](@article_id:306050)的梯度 $\nabla f$ 的变换方式与[分离矢量](@article_id:332170)完全相同。因此，在流是混沌的地方，[分布函数](@article_id:306050)的梯度以李雅普诺夫指数 $\lambda_L$ 给出的速率指数增长，导致在星系的相空间中迅速形成极其精细的结构 。描述茶杯中[湍流](@article_id:318989)的数学同样描述了星系中恒星的混合。类似地，雅可比流无情的拉伸过程，加上有界系统中必须发生的折叠，正是生成那些自然界中无处不在的、被称为[分形](@article_id:301219)的复杂自相似图案的机制 。
+同样的拉伸原理适用于宇宙尺度和微观尺度。在天体物理学中，星系中的恒星在集体[引力势](@keyword=gravitational_potential|lang=zh-CN|style=Feynman)中运动。在轨道是混沌的区域，相空间中任何初始的恒星团块都会被雅可比流拉伸成长而细的丝状物。这个过程被称为“相混合”。一个惊人的结果是，恒星[分布函数](@keyword=distribution_function|lang=zh-CN|style=Feynman)的梯度 $\nabla f$ 的变换方式与[分离矢量](@keyword=separation_vector|lang=zh-CN|style=Feynman)完全相同。因此，在流是混沌的地方，[分布函数](@keyword=distribution_function|lang=zh-CN|style=Feynman)的梯度以李雅普诺夫指数 $\lambda_L$ 给出的速率指数增长，导致在星系的相空间中迅速形成极其精细的结构 [@problem_id:285517]。描述茶杯中[湍流](@keyword=turbulence|lang=zh-CN|style=Feynman)的数学同样描述了星系中恒星的混合。类似地，雅可比流无情的拉伸过程，加上有界系统中必须发生的折叠，正是生成那些自然界中无处不在的、被称为[分形](@keyword=fractal|lang=zh-CN|style=Feynman)的复杂自相似图案的机制 [@problem_id:875696]。
 
 ### 驾驭不确定性：随机世界中的雅可比矩阵
 
-到目前为止，我们的世界是确定性的。但如果运动规则本身就受到随机的[抖动](@article_id:326537)和冲击呢？这就是[随机微分方程](@article_id:307037)（SDEs）的领域，它们在金融、神经科学和[化学物理](@article_id:378335)等领域中不可或缺。我们的雅可比流概念在这个随机世界中还能存在吗？
+到目前为止，我们的世界是确定性的。但如果运动规则本身就受到随机的[抖动](@keyword=dither|lang=zh-CN|style=Feynman)和冲击呢？这就是[随机微分方程](@keyword=stochastic_differential_equations|lang=zh-CN|style=Feynman)（SDEs）的领域，它们在金融、神经科学和[化学物理](@keyword=chemical_physics|lang=zh-CN|style=Feynman)等领域中不可或缺。我们的雅可比流概念在这个随机世界中还能存在吗？
 
-它不仅存在，而且变得更加深刻。由 SDE 生成的流映射本身就是一个随机映射。它的[雅可比矩阵](@article_id:303923)，即[导数](@article_id:318324)流，不再是一个确定性矩阵，而是一个*矩阵值的[随机过程](@article_id:333307)*。它随时间随机摆动和演化。而且，值得注意的是，它遵循自己的 SDE 。雅可比流的演化由系统[漂移和扩散](@article_id:309235)系数的[导数](@article_id:318324)驱动——这是对确定性情况的一个优美推广。
+它不仅存在，而且变得更加深刻。由 SDE 生成的流映射本身就是一个随机映射。它的[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)，即[导数](@keyword=derivative|lang=zh-CN|style=Feynman)流，不再是一个确定性矩阵，而是一个*矩阵值的[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)*。它随时间随机摆动和演化。而且，值得注意的是，它遵循自己的 SDE [@problem_id:2997483]。雅可比流的演化由系统[漂移和扩散](@keyword=drift_and_diffusion|lang=zh-CN|style=Feynman)系数的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)驱动——这是对确定性情况的一个优美推广。
 
-我们伟大的守恒定律呢？在随机世界里，是否存在刘维尔定理的一个版本？是的，存在。对于作为许多模型基石的线性 SDE，人们可以推导出 Abel-Jacobi-Liouville 恒等式的随机版本。雅可比行列式不再是常数，但它的对数进行着[随机游走](@article_id:303058)。对数[行列式](@article_id:303413)的[平均变化率](@article_id:372381)由系统漂移矩阵的迹给出，而其随机波动由[扩散矩阵](@article_id:362287)的迹控制。这与确定性结果精确平行，在确定性结果中，变化率是散度（[速度梯度](@article_id:325397)的迹）。我们再次看到一个统一的原则从确定性世界延伸到随机世界。
+我们伟大的守恒定律呢？在随机世界里，是否存在刘维尔定理的一个版本？是的，存在。对于作为许多模型基石的线性 SDE，人们可以推导出 Abel-Jacobi-Liouville 恒等式的随机版本。雅可比行列式不再是常数，但它的对数进行着[随机游走](@keyword=random_walk|lang=zh-CN|style=Feynman)。对数[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)的[平均变化率](@keyword=average_rate_of_change|lang=zh-CN|style=Feynman)由系统漂移矩阵的迹给出，而其随机波动由[扩散矩阵](@keyword=diffusion_matrix|lang=zh-CN|style=Feynman)的迹控制。这与确定性结果精确平行，在确定性结果中，变化率是散度（[速度梯度](@keyword=velocity_gradient|lang=zh-CN|style=Feynman)的迹）[@problem_id:2983721]。我们再次看到一个统一的原则从确定性世界延伸到随机世界。
 
 ### 平滑性的基础：从随机到正则
 
-也许雅可比流最令人惊讶和现代的应用来自一个被称为 Malliavin 分析或“随机变分分析”的领域。它解决了一个非常深刻的问题：如果一个系统在随机影响下演化，它在稍后时间的[概率分布](@article_id:306824)是什么样的？概率是平滑地分布开来，还是集中在某个低维表面上？
+也许雅可比流最令人惊讶和现代的应用来自一个被称为 Malliavin 分析或“随机变分分析”的领域。它解决了一个非常深刻的问题：如果一个系统在随机影响下演化，它在稍后时间的[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)是什么样的？概率是平滑地分布开来，还是集中在某个低维表面上？
 
-令人惊讶的是，答案由雅可比流决定。关键对象是*Malliavin 协方差矩阵* $\Gamma_t$。这个矩阵是通过将一个涉及雅可比流的量在从时间 $0$ 到 $t$ 的整个过程历史上积分来构建的  。
+令人惊讶的是，答案由雅可比流决定。关键对象是*Malliavin 协方差矩阵* $\Gamma_t$。这个矩阵是通过将一个涉及雅可比流的量在从时间 $0$ 到 $t$ 的整个过程历史上积分来构建的 [@problem_id:2999714] [@problem_id:2980982]。
 
-让我们对此建立一些直觉。[扩散矩阵](@article_id:362287) $\sigma(X_s)$ 告诉我们在瞬时 $s$ 随机噪声可以在哪些方向“推动”系统。雅可比流 $J_{t,s}$ 告诉我们时间 $s$ 的一次推动如何被动力学传播和转换，以影响时间 $t$ 的最终状态。Malliavin 矩阵 $\Gamma_t$ 在整个时间区间内累积了这些被传播的推动。如果这个最终的矩阵是可逆的，这意味着通过结合来自不同时间的推动，系统可以在其[状态空间](@article_id:323449)中的*任何*方向被轻推。如果系统的最终状态可以被噪声向任何方向移动，它的概率就不可能被限制在一条[线或](@article_id:349408)一个表面上。它必须是平滑地分布开来，承认一个正常的[概率密度函数](@article_id:301053)。$\Gamma_t$ 的可逆性，在被称为 Hörmander's 条件下得到保证，正是这一思想的数学体现  。在一个美丽的转折中，我们最初作为理解确定性演化工具的雅可比流，成为了一个由偶然性主导的世界中正则性与平滑性的最终仲裁者。
+让我们对此建立一些直觉。[扩散矩阵](@keyword=diffusion_matrix|lang=zh-CN|style=Feynman) $\sigma(X_s)$ 告诉我们在瞬时 $s$ 随机噪声可以在哪些方向“推动”系统。雅可比流 $J_{t,s}$ 告诉我们时间 $s$ 的一次推动如何被动力学传播和转换，以影响时间 $t$ 的最终状态。Malliavin 矩阵 $\Gamma_t$ 在整个时间区间内累积了这些被传播的推动。如果这个最终的矩阵是可逆的，这意味着通过结合来自不同时间的推动，系统可以在其[状态空间](@keyword=state_space_2|lang=zh-CN|style=Feynman)中的*任何*方向被轻推。如果系统的最终状态可以被噪声向任何方向移动，它的概率就不可能被限制在一条[线或](@keyword=wired_or|lang=zh-CN|style=Feynman)一个表面上。它必须是平滑地分布开来，承认一个正常的[概率密度函数](@keyword=probability_density_function|lang=zh-CN|style=Feynman)。$\Gamma_t$ 的可逆性，在被称为 Hörmander's 条件下得到保证，正是这一思想的数学体现 [@problem_id:2999714] [@problem_id:2980982]。在一个美丽的转折中，我们最初作为理解确定性演化工具的雅可比流，成为了一个由偶然性主导的世界中正则性与平滑性的最终仲裁者。
 
 ### 形变的普适语言
 

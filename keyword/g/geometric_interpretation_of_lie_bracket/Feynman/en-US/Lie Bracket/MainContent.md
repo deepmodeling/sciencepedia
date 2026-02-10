@@ -11,7 +11,7 @@ Imagine you are programming a simple robot arm. You give it two commands: "Rotat
 
 ### The Commutator's Telltale Gap
 
-Let's make this idea concrete. Imagine a microscopic robot moving on a flat surface, described by coordinates $(x, y)$. We can control it with two systems :
+Let's make this idea concrete. Imagine a microscopic robot moving on a flat surface, described by coordinates $(x, y)$. We can control it with two systems [@problem_id:1518409]:
 
 1.  **System A (Translation):** Moves the robot horizontally. Activating it for a time $t$ sends the robot from $(x, y)$ to $(x+t, y)$. This corresponds to motion along the vector field $V = \partial_x$.
 
@@ -31,21 +31,21 @@ Naively, you might think this little "box step" should bring the robot right bac
 - After step 3: $(x_0, y_0 + x_0\epsilon + \epsilon^2)$
 - After step 4: $(x_0, y_0 + x_0\epsilon + \epsilon^2 - x_0\epsilon) = (x_0, y_0 + \epsilon^2)$
 
-The final position is $(x_0, y_0 + \epsilon^2)$. The robot is not back home! It has been displaced purely in the vertical direction by an amount $\epsilon^2$. This tiny residual displacement, which appears only at the second order in $\epsilon$, is a direct manifestation of the [non-commutativity](@article_id:153051) of the two motions. This "commutator path" has revealed a hidden motion.
+The final position is $(x_0, y_0 + \epsilon^2)$. The robot is not back home! It has been displaced purely in the vertical direction by an amount $\epsilon^2$. This tiny residual displacement, which appears only at the second order in $\epsilon$, is a direct manifestation of the [non-commutativity](@keyword=non_commutativity|lang=en-US|style=Feynman) of the two motions. This "commutator path" has revealed a hidden motion.
 
-This is the geometric heart of the Lie bracket. For any two [vector fields](@article_id:160890), $V$ and $W$, their **Lie bracket**, denoted $[V, W]$, is a new vector field. This new field has a profound physical meaning: it points in the direction of the net displacement after performing an infinitesimal commutator loop, and the magnitude of that displacement is proportional to the area of the loop ($\epsilon^2$).
+This is the geometric heart of the Lie bracket. For any two [vector fields](@keyword=vector_fields|lang=en-US|style=Feynman), $V$ and $W$, their **Lie bracket**, denoted $[V, W]$, is a new vector field. This new field has a profound physical meaning: it points in the direction of the net displacement after performing an infinitesimal commutator loop, and the magnitude of that displacement is proportional to the area of the loop ($\epsilon^2$).
 
-For our robot, the [vector fields](@article_id:160890) are $V = \partial_x$ and $W = x\partial_y$. A quick calculation gives their Lie bracket:
+For our robot, the [vector fields](@keyword=vector_fields|lang=en-US|style=Feynman) are $V = \partial_x$ and $W = x\partial_y$. A quick calculation gives their Lie bracket:
 $$
 [V, W] = [\partial_x, x\partial_y] = (\partial_x x)\partial_y + x[\partial_x, \partial_y] = 1 \cdot \partial_y + 0 = \partial_y
 $$
-The Lie bracket is the vector field $\partial_y$, which represents a pure upward motion. This is exactly the direction of the displacement $(0, \epsilon^2)$ we found! The geometric picture and the algebraic calculation tell the same beautiful story. The Lie bracket $[V, W]$ captures the infinitesimal "wobble" that arises from switching the order of movements along $V$ and $W$ .
+The Lie bracket is the vector field $\partial_y$, which represents a pure upward motion. This is exactly the direction of the displacement $(0, \epsilon^2)$ we found! The geometric picture and the algebraic calculation tell the same beautiful story. The Lie bracket $[V, W]$ captures the infinitesimal "wobble" that arises from switching the order of movements along $V$ and $W$ [@problem_id:983998].
 
 ### The Sound of Silence: When the Bracket Vanishes
 
 If a non-zero bracket means the flows don't commute, what does a zero bracket mean? It means the flows commute perfectly! The order of operations doesn't matter.
 
-Consider two fundamental transformations of the plane: uniform scaling from the origin and rotation about the origin .
+Consider two fundamental transformations of the plane: uniform scaling from the origin and rotation about the origin [@problem_id:2987419].
 -   The vector field for scaling is $X = x\partial_x + y\partial_y$. Following its flow lines pushes every point radially away from (or towards) the origin.
 -   The vector field for rotation is $Y = -y\partial_x + x\partial_y$. Its flow lines are circles centered at the origin.
 
@@ -56,35 +56,35 @@ $$
 $$
 [X, Y]^y = X(Y^y) - Y(X^y) = (x\partial_x + y\partial_y)(x) - (-y\partial_x + x\partial_y)(y) = x - x = 0
 $$
-The result is $[X, Y] = \mathbf{0}$, the zero vector field. The algebra confirms our geometric intuition: scaling and rotation commute. The "commutator loop" closes perfectly every time. So we have our first grand principle :
+The result is $[X, Y] = \mathbf{0}$, the zero vector field. The algebra confirms our geometric intuition: scaling and rotation commute. The "commutator loop" closes perfectly every time. So we have our first grand principle [@problem_id:1522217]:
 
-**The Lie bracket $[X, Y]$ of two [vector fields](@article_id:160890) is zero if and only if their corresponding flows commute.**
+**The Lie bracket $[X, Y]$ of two [vector fields](@keyword=vector_fields|lang=en-US|style=Feynman) is zero if and only if their corresponding flows commute.**
 
 ### The Hidden Twist of a Coordinate Grid
 
-This leads to a fascinating consequence. Think about any standard coordinate system, like the Cartesian grid $(x, y)$ or polar coordinates $(r, \theta)$. The vector fields that move you along the grid lines, like $\partial_x$ and $\partial_y$, are called **[coordinate basis](@article_id:269655) vectors**. A fundamental fact of [differential geometry](@article_id:145324) is that for any coordinate system, the Lie bracket of its basis vectors is always zero.
+This leads to a fascinating consequence. Think about any standard coordinate system, like the Cartesian grid $(x, y)$ or polar coordinates $(r, \theta)$. The vector fields that move you along the grid lines, like $\partial_x$ and $\partial_y$, are called **[coordinate basis](@keyword=coordinate_basis|lang=en-US|style=Feynman) vectors**. A fundamental fact of [differential geometry](@keyword=differential_geometry|lang=en-US|style=Feynman) is that for any coordinate system, the Lie bracket of its basis vectors is always zero.
 $$
 [\partial_x, \partial_y] = 0, \quad [\partial_r, \partial_\theta] = 0, \quad \text{etc.}
 $$
-Why? Because a coordinate system is, by definition, a smooth grid. If you trace a tiny rectangle along the grid lines—over by $du$, up by $dv$, back by $du$, down by $dv$—you must end up where you started. If you didn't, the grid itself would be torn and inconsistent. This closure is guaranteed by the equality of [mixed partial derivatives](@article_id:138840) ($\partial_u \partial_v f = \partial_v \partial_u f$), which is the algebraic bedrock of this geometric fact .
+Why? Because a coordinate system is, by definition, a smooth grid. If you trace a tiny rectangle along the grid lines—over by $du$, up by $dv$, back by $du$, down by $dv$—you must end up where you started. If you didn't, the grid itself would be torn and inconsistent. This closure is guaranteed by the equality of [mixed partial derivatives](@keyword=mixed_partial_derivatives|lang=en-US|style=Feynman) ($\partial_u \partial_v f = \partial_v \partial_u f$), which is the algebraic bedrock of this geometric fact [@problem_id:1688607].
 
 But here lies a subtlety of profound importance. In polar coordinates, $\partial_r$ points radially outward, and $\partial_\theta$ points in the angular direction. While they commute, they are not of equal "physical" standing. A step of one unit in $r$ is always a step of one meter. But a step of one radian in $\theta$ is a much larger physical journey if you are far from the origin ($r$ is large) than if you are close to it.
 
-To do physics, we often use a **normalized frame**, an [orthonormal basis](@article_id:147285) at every point. For polar coordinates, this would be $\vec{E}_r = \partial_r$ and $\vec{E}_\theta = \frac{1}{r}\partial_\theta$. Now both vectors have unit length. What happens if we compute the bracket of these "physical" [vector fields](@article_id:160890)?
+To do physics, we often use a **normalized frame**, an [orthonormal basis](@keyword=orthonormal_basis|lang=en-US|style=Feynman) at every point. For polar coordinates, this would be $\vec{E}_r = \partial_r$ and $\vec{E}_\theta = \frac{1}{r}\partial_\theta$. Now both vectors have unit length. What happens if we compute the bracket of these "physical" [vector fields](@keyword=vector_fields|lang=en-US|style=Feynman)?
 $$
 [\vec{E}_r, \vec{E}_\theta] = [\partial_r, \frac{1}{r}\partial_\theta] = \partial_r(\frac{1}{r})\partial_\theta + \frac{1}{r}[\partial_r, \partial_\theta] = -\frac{1}{r^2}\partial_\theta + 0 = -\frac{1}{r} (\frac{1}{r}\partial_\theta) = -\frac{1}{r}\vec{E}_\theta
 $$
-The bracket is not zero ! The result, $-\frac{1}{r}\vec{E}_\theta$, tells us something deep. It says that if you perform the commutator loop with these physical frame vectors, there is a net displacement. It means the [orthonormal frame](@article_id:189208) itself is "twisting". As you move radially outwards (along $\vec{E}_r$), the direction you call "angular" (the direction of $\vec{E}_\theta$) rotates relative to you. This non-vanishing bracket is a quantitative measure of the intrinsic curvature of the coordinate system itself.
+The bracket is not zero [@problem_id:1658157]! The result, $-\frac{1}{r}\vec{E}_\theta$, tells us something deep. It says that if you perform the commutator loop with these physical frame vectors, there is a net displacement. It means the [orthonormal frame](@keyword=orthonormal_frame|lang=en-US|style=Feynman) itself is "twisting". As you move radially outwards (along $\vec{E}_r$), the direction you call "angular" (the direction of $\vec{E}_\theta$) rotates relative to you. This non-vanishing bracket is a quantitative measure of the intrinsic curvature of the coordinate system itself.
 
 ### Can You Weave a Surface? The Frobenius Test
 
-We now have all the tools to ask a truly grand question. Imagine you're in three-dimensional space. At every single point, I give you a small, flat plane—a tiny 2D [tangent space](@article_id:140534). You can think of this as a field of "surface elements." The question is: can you always "thread" these planes together to form a consistent, smooth 2D surface, much like weaving individual threads into a continuous sheet of fabric?
+We now have all the tools to ask a truly grand question. Imagine you're in three-dimensional space. At every single point, I give you a small, flat plane—a tiny 2D [tangent space](@keyword=tangent_space|lang=en-US|style=Feynman). You can think of this as a field of "surface elements." The question is: can you always "thread" these planes together to form a consistent, smooth 2D surface, much like weaving individual threads into a continuous sheet of fabric?
 
 The answer, surprisingly, is no. And the Lie bracket is the judge.
 
-Let's say at each point $p$, your plane $\Delta_p$ is spanned by two [vector fields](@article_id:160890), $X_p$ and $Y_p$. The condition for these planes to be "integrable" into a surface is given by the **Frobenius Theorem**. It states that an integral surface exists if and only if the distribution of planes is **involutive**. This is a fancy word for a simple condition: the Lie bracket $[X, Y]$ must also lie within the plane $\Delta_p$ at every point. The set of vectors spanning the planes must be closed under the Lie bracket operation.
+Let's say at each point $p$, your plane $\Delta_p$ is spanned by two [vector fields](@keyword=vector_fields|lang=en-US|style=Feynman), $X_p$ and $Y_p$. The condition for these planes to be "integrable" into a surface is given by the **Frobenius Theorem**. It states that an integral surface exists if and only if the distribution of planes is **involutive**. This is a fancy word for a simple condition: the Lie bracket $[X, Y]$ must also lie within the plane $\Delta_p$ at every point. The set of vectors spanning the planes must be closed under the Lie bracket operation.
 
-If $[X, Y]$ points *out* of the plane, the distribution has a "twist" that makes it impossible to weave a surface. Attempting to move in a small commutator loop, which should keep you on the surface, instead causes you to spiral off it, precisely in the direction of the errant Lie bracket component .
+If $[X, Y]$ points *out* of the plane, the distribution has a "twist" that makes it impossible to weave a surface. Attempting to move in a small commutator loop, which should keep you on the surface, instead causes you to spiral off it, precisely in the direction of the errant Lie bracket component [@problem_id:1675044].
 
 A classic example is the distribution in $\mathbb{R}^3$ spanned by $X = \frac{\partial}{\partial x} + y \frac{\partial}{\partial z}$ and $Y = \frac{\partial}{\partial y}$. At the origin, this is just the $xy$-plane. Let's compute the bracket:
 $$
@@ -92,4 +92,4 @@ $$
 $$
 The bracket is a vector pointing purely in the $z$-direction! It "escapes" the $xy$-plane defined by $X$ and $Y$ at the origin. This fatal twist means you can never find a surface whose tangent planes are given by this distribution. This principle is not just a mathematical curiosity; it is the foundation of control theory (can a robot arm reach every orientation?), and it lies at the heart of thermodynamics and general relativity.
 
-The Lie bracket, which began as a simple measure of a "gap" in a robot's motion, has become a powerful tool to determine the very existence of surfaces and to probe the deep geometric structure of space itself. Its properties are so consistent that they form a beautiful algebraic system. The famous **Jacobi Identity**, $[[X, Y], Z] + [[Y, Z], X] + [[Z, X], Y] = 0$, which is always true for any three [vector fields](@article_id:160890), ensures that the space of all possible motions on a manifold, together with this bracket operation, forms a **Lie algebra**—the fundamental algebraic language of symmetry and continuous transformation in the universe  .
+The Lie bracket, which began as a simple measure of a "gap" in a robot's motion, has become a powerful tool to determine the very existence of surfaces and to probe the deep geometric structure of space itself. Its properties are so consistent that they form a beautiful algebraic system. The famous **Jacobi Identity**, $[[X, Y], Z] + [[Y, Z], X] + [[Z, X], Y] = 0$, which is always true for any three [vector fields](@keyword=vector_fields|lang=en-US|style=Feynman), ensures that the space of all possible motions on a manifold, together with this bracket operation, forms a **Lie algebra**—the fundamental algebraic language of symmetry and continuous transformation in the universe [@problem_id:1677529] [@problem_id:1520837].

@@ -3,7 +3,7 @@
 
 ## 原理与机制
 
-想象你是一位物理学家，或者只是一个好奇的人，试图理解这个世界。你最先学会的事情之一就是如何测量距离。一个物体如果离你近，它就是“小”的。这个我们熟悉的关于大小的概念，被形式化为[绝对值](@article_id:308102)，是我们从有理数 $\mathbb{Q}$ 构建实数 $\mathbb{R}$ 的基础。这是一个“阿基米德”世界，你总可以将一把小尺子自身相加足够多次，来测量一个很长的距离。但如果我们决定用一种完全不同，甚至有些反常的方式来衡量“大小”呢？
+想象你是一位物理学家，或者只是一个好奇的人，试图理解这个世界。你最先学会的事情之一就是如何测量距离。一个物体如果离你近，它就是“小”的。这个我们熟悉的关于大小的概念，被形式化为[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)，是我们从有理数 $\mathbb{Q}$ 构建实数 $\mathbb{R}$ 的基础。这是一个“阿基米德”世界，你总可以将一把小尺子自身相加足够多次，来测量一个很长的距离。但如果我们决定用一种完全不同，甚至有些反常的方式来衡量“大小”呢？
 
 ### 一种新的大小观：局部视角
 
@@ -11,54 +11,54 @@
 
 这不仅仅是个游戏；它是一个深刻数学思想的核心。我们可以用**$p$-进赋值**来形式化这个概念，记作 $v_p(x)$。对任意整数 $n$，$v_p(n)$ 就是 $p$ 在其素数分解中的指数。所以，$v_5(50) = v_5(2 \cdot 5^2) = 2$。对于分数，我们只需做减法：$v_5(50/3) = v_5(50) - v_5(3) = 2 - 0 = 2$。按照约定，$v_p(0) = \infty$。
 
-从这个赋值，我们定义了一个新的[绝对值](@article_id:308102)，即**$p$-进[绝对值](@article_id:308102)**：
+从这个赋值，我们定义了一个新的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)，即**$p$-进[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)**：
 $$|x|_p = p^{-v_p(x)}$$
-看看它起了什么作用！对于 $x=50$，有 $|50|_5 = 5^{-2} = 1/25$。对于 $x=3$，有 $|3|_5 = 5^0 = 1$。一个数被 $p$ 整除的程度越高，其 $p$-进[绝对值](@article_id:308102)就越小。
+看看它起了什么作用！对于 $x=50$，有 $|50|_5 = 5^{-2} = 1/25$。对于 $x=3$，有 $|3|_5 = 5^0 = 1$。一个数被 $p$ 整除的程度越高，其 $p$-进[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)就越小。
 
-这种新的大小概念引向一个奇异而美丽的几何世界。它遵循一个比我们熟悉的三角不等式更强的规则，即**[超度量不等式](@article_id:641828)**（也称[强三角不等式](@article_id:641828)）：
+这种新的大小概念引向一个奇异而美丽的几何世界。它遵循一个比我们熟悉的三角不等式更强的规则，即**[超度量不等式](@keyword=strong_triangle_inequality|lang=zh-CN|style=Feynman)**（也称[强三角不等式](@keyword=strong_triangle_inequality|lang=zh-CN|style=Feynman)）：
 $$|x+y|_p \le \max(|x|_p, |y|_p)$$
-这个看似无害的公式带来了惊人的后果。它意味着在任何“三角形”中，必有两条边的长度相等。它还意味着一个圆盘内的任何点都是其圆心！这个“非阿基米德”性质是我们即将进入的这个奇特新宇宙的第一瞥 ()。
+这个看似无害的公式带来了惊人的后果。它意味着在任何“三角形”中，必有两条边的长度相等。它还意味着一个圆盘内的任何点都是其圆心！这个“非阿基米德”性质是我们即将进入的这个奇特新宇宙的第一瞥 ([@problem_id:3020573])。
 
 ### $p$-进数的世界
 
-正如我们用标准[绝对值](@article_id:308102)来完备有理数 $\mathbb{Q}$ 得到实数 $\mathbb{R}$ 一样，我们也可以用 $p$-进[绝对值](@article_id:308102) $|\cdot|_p$ 来完备 $\mathbb{Q}$。其结果是一个新的域，它以自己的方式是完备和完美的：**$p$-进数**域，记作 $\mathbb{Q}_p$。这是非阿基米德**局部域**的最典型例子 ()。
+正如我们用标准[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)来完备有理数 $\mathbb{Q}$ 得到实数 $\mathbb{R}$ 一样，我们也可以用 $p$-进[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman) $|\cdot|_p$ 来完备 $\mathbb{Q}$。其结果是一个新的域，它以自己的方式是完备和完美的：**$p$-进数**域，记作 $\mathbb{Q}_p$。这是非阿基米德**局部域**的最典型例子 ([@problem_id:3020573])。
 
-这些数到底长什么样？它们可以被看作是 $p$ 的幂级数，但有点特别。一个实数的[小数展开](@article_id:302732)可以向小数点*右边*无限延伸（例如，$\pi = 3.14159...$），而一个 $p$-进数可以有一个向*左边*无限延伸的展开。例如，在 $\mathbb{Q}_7$ 中，数 $-1/6$ 的表示为：
+这些数到底长什么样？它们可以被看作是 $p$ 的幂级数，但有点特别。一个实数的[小数展开](@keyword=decimal_expansion|lang=zh-CN|style=Feynman)可以向小数点*右边*无限延伸（例如，$\pi = 3.14159...$），而一个 $p$-进数可以有一个向*左边*无限延伸的展开。例如，在 $\mathbb{Q}_7$ 中，数 $-1/6$ 的表示为：
 $$... + 1 \cdot 7^2 + 1 \cdot 7^1 + 1 \cdot 7^0 = ...111_7$$
-这来自于[几何级数](@article_id:318894) $1 + 7 + 7^2 + ... = \frac{1}{1-7} = -1/6$。在这个世界里，即使一个序列的项在普通意义上变得越来越大，它也可能收敛！
+这来自于[几何级数](@keyword=geometric_series|lang=zh-CN|style=Feynman) $1 + 7 + 7^2 + ... = \frac{1}{1-7} = -1/6$。在这个世界里，即使一个序列的项在普通意义上变得越来越大，它也可能收敛！
 
 在这个广阔的域 $\mathbb{Q}_p$ 中，我们找到了与我们熟知并喜爱的结构相似但具有新性质的结构。
 
-- **$p$-进整数环 $\mathbb{Z}_p$**: 这些是满足 $|x|_p \le 1$ 的 $p$-进数 $x$。它们是在其展开式中不含 $p$ 的负次幂的数。在我们的类比中，它们是这个世界的“整数”。但与普通整数 $\mathbb{Z}$ 不同，集合 $\mathbb{Z}_p$ 是**紧的**。这意味着它在拓扑意义上是“小的”和“自足的”，就像实数中的闭区间 $[a,b]$ 一样。0有一个[紧邻域](@article_id:332760)的这个性质，使得这些域成为“局部的”，并因此非常强大。
+- **$p$-进整数环 $\mathbb{Z}_p$**: 这些是满足 $|x|_p \le 1$ 的 $p$-进数 $x$。它们是在其展开式中不含 $p$ 的负次幂的数。在我们的类比中，它们是这个世界的“整数”。但与普通整数 $\mathbb{Z}$ 不同，集合 $\mathbb{Z}_p$ 是**紧的**。这意味着它在拓扑意义上是“小的”和“自足的”，就像实数中的闭区间 $[a,b]$ 一样。0有一个[紧邻域](@keyword=compact_neighborhood|lang=zh-CN|style=Feynman)的这个性质，使得这些域成为“局部的”，并因此非常强大。
 
-- **[极大理想](@article_id:311786) $p\mathbb{Z}_p$**: 在 $\mathbb{Z}_p$ 内部，我们有那些严格“小于”1的数 $x$，即 $|x|_p < 1$。这些数恰好是能被 $p$ 整除的 $p$-进整数。这个集合不仅仅是一个奇特之物；它是环 $\mathbb{Z}_p$ 的唯一**极大理想** ()。
+- **[极大理想](@keyword=maximal_ideals|lang=zh-CN|style=Feynman) $p\mathbb{Z}_p$**: 在 $\mathbb{Z}_p$ 内部，我们有那些严格“小于”1的数 $x$，即 $|x|_p < 1$。这些数恰好是能被 $p$ 整除的 $p$-进整数。这个集合不仅仅是一个奇特之物；它是环 $\mathbb{Z}_p$ 的唯一**极大理想** ([@problem_id:3020573])。
 
-- **剩余域**: 如果我们决定无法区分两个[相差](@article_id:318112)为 $p$ 的倍数的 $p$-进整数，会发生什么？实际上，我们是在取商 $\mathbb{Z}_p / p\mathbb{Z}_p$。结果惊人地简单：我们得到了具有 $p$ 个元素的[有限域](@article_id:302546) $\mathbb{F}_p$，即 $\{0, 1, ..., p-1\}$。这个微小的、有限的世界被称为**剩余域**，它的性质在整个 $\mathbb{Q}_p$ 的结构中回响。这是一个基本原则：要理解无限复杂的局部域 $\mathbb{Q}_p$，我们首先要看它的简单投影——有限域 $\mathbb{F}_p$ ()。
+- **剩余域**: 如果我们决定无法区分两个[相差](@keyword=phase_contrast|lang=zh-CN|style=Feynman)为 $p$ 的倍数的 $p$-进整数，会发生什么？实际上，我们是在取商 $\mathbb{Z}_p / p\mathbb{Z}_p$。结果惊人地简单：我们得到了具有 $p$ 个元素的[有限域](@keyword=finite_fields|lang=zh-CN|style=Feynman) $\mathbb{F}_p$，即 $\{0, 1, ..., p-1\}$。这个微小的、有限的世界被称为**剩余域**，它的性质在整个 $\mathbb{Q}_p$ 的结构中回响。这是一个基本原则：要理解无限复杂的局部域 $\mathbb{Q}_p$，我们首先要看它的简单投影——有限域 $\mathbb{F}_p$ ([@problem_id:3020573])。
 
 ### 局部域的解剖
 
-域 $\mathbb{Q}_p$ 仅仅是个开始。**非阿基米德局部域**的一般定义是：一个域，它对于一个离散赋值（如 $v_p$）是完备的，并且有一个有限剩余域 (, )。事实证明，所有这类域有一个惊人简单的分类。
+域 $\mathbb{Q}_p$ 仅仅是个开始。**非阿基米德局部域**的一般定义是：一个域，它对于一个离散赋值（如 $v_p$）是完备的，并且有一个有限剩余域 ([@problem_id:3017197], [@problem_id:3020573])。事实证明，所有这类域有一个惊人简单的分类。
 
-1.  **等特征域**：这些域的本身与其剩余域具有相同的特征 $p$。它们都是 $\mathbb{F}_q((t))$ 的形式，即系数在[有限域](@article_id:302546) $\mathbb{F}_q$ 中的形式[洛朗级数](@article_id:350170)域。可以把它们想象成可以有无限多 $t$ 的负次幂的 $t$ 和 $t^{-1}$ 的多项式。令人惊讶的是，它们的结构完全由其剩余域的大小 $q$ 决定。所有具有相同剩余[域的特征](@article_id:315025)为 $p$ 的局部域都是同构的！ ()。
+1.  **等特征域**：这些域的本身与其剩余域具有相同的特征 $p$。它们都是 $\mathbb{F}_q((t))$ 的形式，即系数在[有限域](@keyword=finite_fields|lang=zh-CN|style=Feynman) $\mathbb{F}_q$ 中的形式[洛朗级数](@keyword=laurent_series|lang=zh-CN|style=Feynman)域。可以把它们想象成可以有无限多 $t$ 的负次幂的 $t$ 和 $t^{-1}$ 的多项式。令人惊讶的是，它们的结构完全由其剩余域的大小 $q$ 决定。所有具有相同剩余[域的特征](@keyword=characteristic_of_a_field|lang=zh-CN|style=Feynman)为 $p$ 的局部域都是同构的！ ([@problem_id:3017227])。
 
-2.  **混合特征域**：这些是特征为0（像有理数一样）的域，但其剩余[域的特征](@article_id:315025)为 $p > 0$。它们中的每一个都是某个 $\mathbb{Q}_p$ 的[有限扩张](@article_id:312825)。这个家族是与经典数论的大多数深刻而微妙的联系所在。在这里，剩余域*不足以*对它们进行分类。例如，对于一个奇素数 $p$，域 $\mathbb{Q}_p(\sqrt{p})$ 和 $\mathbb{Q}_p(\sqrt{up})$ （其中 $u$ 是一个模 $p$ 非平方的单位）是不同的域，尽管它们都有相同的剩余域 $\mathbb{F}_p$ ()。这种丰富性是无尽魅力的源泉。
+2.  **混合特征域**：这些是特征为0（像有理数一样）的域，但其剩余[域的特征](@keyword=characteristic_of_a_field|lang=zh-CN|style=Feynman)为 $p > 0$。它们中的每一个都是某个 $\mathbb{Q}_p$ 的[有限扩张](@keyword=finite_extensions|lang=zh-CN|style=Feynman)。这个家族是与经典数论的大多数深刻而微妙的联系所在。在这里，剩余域*不足以*对它们进行分类。例如，对于一个奇素数 $p$，域 $\mathbb{Q}_p(\sqrt{p})$ 和 $\mathbb{Q}_p(\sqrt{up})$ （其中 $u$ 是一个模 $p$ 非平方的单位）是不同的域，尽管它们都有相同的剩余域 $\mathbb{F}_p$ ([@problem_id:3017227])。这种丰富性是无尽魅力的源泉。
 
-### 探索新领域：[域扩张](@article_id:313599)
+### 探索新领域：[域扩张](@keyword=field_extensions|lang=zh-CN|style=Feynman)
 
-正如我们研究从实数到复数的扩张 $\mathbb{C}/\mathbb{R}$ 一样，数论学家研究局部域的扩张 $L/K$。一个包含较小域 $K$ 的较大域 $L$ 可被视为 $K$ 上的一个[向量空间](@article_id:297288)，其维数即为次数 $[L:K]$。这个扩张的结构仅由两个数控制，即**[惯性次数](@article_id:374487) $f$** 和**[分歧指数](@article_id:365576) $e$**。它们被美丽的​​基本恒等式所约束：
+正如我们研究从实数到复数的扩张 $\mathbb{C}/\mathbb{R}$ 一样，数论学家研究局部域的扩张 $L/K$。一个包含较小域 $K$ 的较大域 $L$ 可被视为 $K$ 上的一个[向量空间](@keyword=vector_spaces|lang=zh-CN|style=Feynman)，其维数即为次数 $[L:K]$。这个扩张的结构仅由两个数控制，即**[惯性次数](@keyword=inertia_degree|lang=zh-CN|style=Feynman) $f$** 和**[分歧指数](@keyword=ramification_index|lang=zh-CN|style=Feynman) $e$**。它们被美丽的​​基本恒等式所约束：
 $$ef = [L:K]$$
 
-- **[惯性次数](@article_id:374487) $f$** 告诉我们剩余域是如何增长的。它是剩余[域扩张的次数](@article_id:309849)，$f = [k_L : k_K]$。[非分歧扩张](@article_id:374588)是指那些 $e=1$ 从而 $f=[L:K]$ 的扩张。这些是“最温顺”的扩张，其结构完全是代数的。它们的[伽罗瓦群](@article_id:312272)总是循环的，由神奇的**[弗罗贝尼乌斯自同构](@article_id:314887)**生成，这个元素在剩余域上的作用就是取 $q$ 次幂 ()。
+- **[惯性次数](@keyword=inertia_degree|lang=zh-CN|style=Feynman) $f$** 告诉我们剩余域是如何增长的。它是剩余[域扩张的次数](@keyword=degree_of_field_extension|lang=zh-CN|style=Feynman)，$f = [k_L : k_K]$。[非分歧扩张](@keyword=unramified_extension|lang=zh-CN|style=Feynman)是指那些 $e=1$ 从而 $f=[L:K]$ 的扩张。这些是“最温顺”的扩张，其结构完全是代数的。它们的[伽罗瓦群](@keyword=galois_group|lang=zh-CN|style=Feynman)总是循环的，由神奇的**[弗罗贝尼乌斯自同构](@keyword=frobenius_automorphism|lang=zh-CN|style=Feynman)**生成，这个元素在剩余域上的作用就是取 $q$ 次幂 ([@problem_id:3017212])。
 
-- **[分歧指数](@article_id:365576) $e$** 是衡量赋值本身如何变化的度量。基域 $K$ 的一个素元 $\pi_K$（像 $\mathbb{Q}_p$ 中的 $p$）在更大的域 $L$ 中可能不再是素元。相反，它分解为 $\pi_K = u \cdot \pi_L^e$，其中 $u$ 是某个单位，$\pi_L$ 是 $L$ 的一个素元。**[完全分歧](@article_id:369048)**扩张是指 $f=1$ 且 $e=[L:K]$ 的扩张。举一个生动的例子，考虑 $K=\mathbb{Q}_5$ 上的扩张 $L = \mathbb{Q}_5(\alpha)$，其中 $\alpha^4 = 5$。在这里，$\mathbb{Q}_5$ 的素元 $5$ 现在是 $L$ 中元素 $\alpha$ 的四次方。元素 $\alpha$ 成为 $L$ 的新素元，[分歧指数](@article_id:365576)为 $e=4$ ()。
+- **[分歧指数](@keyword=ramification_index|lang=zh-CN|style=Feynman) $e$** 是衡量赋值本身如何变化的度量。基域 $K$ 的一个素元 $\pi_K$（像 $\mathbb{Q}_p$ 中的 $p$）在更大的域 $L$ 中可能不再是素元。相反，它分解为 $\pi_K = u \cdot \pi_L^e$，其中 $u$ 是某个单位，$\pi_L$ 是 $L$ 的一个素元。**[完全分歧](@keyword=totally_ramified|lang=zh-CN|style=Feynman)**扩张是指 $f=1$ 且 $e=[L:K]$ 的扩张。举一个生动的例子，考虑 $K=\mathbb{Q}_5$ 上的扩张 $L = \mathbb{Q}_5(\alpha)$，其中 $\alpha^4 = 5$。在这里，$\mathbb{Q}_5$ 的素元 $5$ 现在是 $L$ 中元素 $\alpha$ 的四次方。元素 $\alpha$ 成为 $L$ 的新素元，[分歧指数](@keyword=ramification_index|lang=zh-CN|style=Feynman)为 $e=4$ ([@problem_id:3022179])。
 
 ### 驯与野：分歧的两面性
 
-深入探究，我们发现并非所有的分歧都是一样的。一个扩张的行为关键取决于其[分歧指数](@article_id:365576) $e$ 是否能被剩余[域的特征](@article_id:315025) $p$ 整除。
+深入探究，我们发现并非所有的分歧都是一样的。一个扩张的行为关键取决于其[分歧指数](@keyword=ramification_index|lang=zh-CN|style=Feynman) $e$ 是否能被剩余[域的特征](@keyword=characteristic_of_a_field|lang=zh-CN|style=Feynman) $p$ 整除。
 
-- **驯分歧**：如果 $p$ 不整除 $e$，则扩张是**驯[分歧](@article_id:372077)的**。这些扩张的行为相对良好。通过添加 $p$ 次单位根得到的的[分圆扩张](@article_id:315527) $\mathbb{Q}_p(\zeta_p)$ 是一个经典例子。它是[完全分歧](@article_id:369048)的，[分歧指数](@article_id:365576)为 $e=p-1$，不能被 $p$ 整除 ()。
+- **驯分歧**：如果 $p$ 不整除 $e$，则扩张是**驯[分歧](@keyword=ramification|lang=zh-CN|style=Feynman)的**。这些扩张的行为相对良好。通过添加 $p$ 次单位根得到的的[分圆扩张](@keyword=cyclotomic_extensions|lang=zh-CN|style=Feynman) $\mathbb{Q}_p(\zeta_p)$ 是一个经典例子。它是[完全分歧](@keyword=totally_ramified|lang=zh-CN|style=Feynman)的，[分歧指数](@keyword=ramification_index|lang=zh-CN|style=Feynman)为 $e=p-1$，不能被 $p$ 整除 ([@problem_id:3022181])。
 
-- **[野分歧](@article_id:309669)**：如果 $p$ *确实*整除 $e$，则扩张是**[野分歧](@article_id:309669)的**。这里的数学景象变得错综复杂且富有挑战性。这些扩张的行为远为微妙，是现代数论的核心。例如，对于 $n \ge 2$，扩张 $\mathbb{Q}_p(\zeta_{p^n})$ 是[野分歧](@article_id:309669)的，因为它的[分歧指数](@article_id:365576) $e = p^{n-1}(p-1)$ 可以被 $p$ 整除 (, )。这种驯/野二分法深刻地影响着一切，从伽罗瓦群的结构到显式计算公式 ()。
+- **[野分歧](@keyword=wild_ramification|lang=zh-CN|style=Feynman)**：如果 $p$ *确实*整除 $e$，则扩张是**[野分歧](@keyword=wild_ramification|lang=zh-CN|style=Feynman)的**。这里的数学景象变得错综复杂且富有挑战性。这些扩张的行为远为微妙，是现代数论的核心。例如，对于 $n \ge 2$，扩张 $\mathbb{Q}_p(\zeta_{p^n})$ 是[野分歧](@keyword=wild_ramification|lang=zh-CN|style=Feynman)的，因为它的[分歧指数](@keyword=ramification_index|lang=zh-CN|style=Feynman) $e = p^{n-1}(p-1)$ 可以被 $p$ 整除 ([@problem_id:3022181], [@problem_id:3017199])。这种驯/野二分法深刻地影响着一切，从伽罗瓦群的结构到显式计算公式 ([@problem_id:3017199])。
 
 ### 动力室：解构乘法群
 
@@ -68,14 +68,14 @@ $$ef = [L:K]$$
 $$a = \pi_K^m u$$
 这里，$m$ 就是赋值 $v_K(a)$，而 $u$ 是单位群 $\mathcal{O}_K^\times$ 中的一个元素。这给出了一个基本的结构分解：
 $$K^\times \cong \pi_K^{\mathbb{Z}} \times \mathcal{O}_K^\times$$
-这将群的“离散”部分（$\pi_K$的幂，只是$\mathbb{Z}$的一个副本）与“紧”部分（[单位群](@article_id:363298) $\mathcal{O}_K^\times$）分离开来 (, )。
+这将群的“离散”部分（$\pi_K$的幂，只是$\mathbb{Z}$的一个副本）与“紧”部分（[单位群](@keyword=unit_group|lang=zh-CN|style=Feynman) $\mathcal{O}_K^\times$）分离开来 ([@problem_id:3026957], [@problem_id:3017197])。
 
 真正的魔力在于第二个分解。单位群 $\mathcal{O}_K^\times$ 本身也分裂为两部分：
 $$\mathcal{O}_K^\times \cong \mu_{q-1} \times U^1$$
-- 群 $\mu_{q-1}$ 由存在于 $K$ 内部的 $(q-1)$ 次**单位根**组成。它是一个循环群，是剩余域乘法群 $\mathbb{F}_q^\times$ 的完美镜像。在 $p$-进整数中[嵌入](@article_id:311541)这样一个剩余域乘法结构的原始副本，是被称为**[Hensel引理](@article_id:297556)**的强大工具所保证的奇迹。直观地说，[Hensel引理](@article_id:297556)表明，如果你能找到一个多项式模 $p$ 的近似根，你就可以将其提升为 $\mathbb{Z}_p$ 中唯一的、精确的根。这就像拥有将粗略草图精炼成完美雕塑的超能力 ()。
+- 群 $\mu_{q-1}$ 由存在于 $K$ 内部的 $(q-1)$ 次**单位根**组成。它是一个循环群，是剩余域乘法群 $\mathbb{F}_q^\times$ 的完美镜像。在 $p$-进整数中[嵌入](@keyword=embedding|lang=zh-CN|style=Feynman)这样一个剩余域乘法结构的原始副本，是被称为**[Hensel引理](@keyword=hensel_s_lemma|lang=zh-CN|style=Feynman)**的强大工具所保证的奇迹。直观地说，[Hensel引理](@keyword=hensel_s_lemma|lang=zh-CN|style=Feynman)表明，如果你能找到一个多项式模 $p$ 的近似根，你就可以将其提升为 $\mathbb{Z}_p$ 中唯一的、精确的根。这就像拥有将粗略草图精炼成完美雕塑的超能力 ([@problem_id:3027004])。
 
-- 群 $U^1$ 是**[主单位](@article_id:367841)**群，由形如 $1 + x$ 的元素组成，其中 $x$ 属于[极大理想](@article_id:311786)（即能被 $\pi_K$ 整除）。这个群捕捉了局部域真正的分析性、连续性的灵魂。它是一个庞大而复杂的**pro-$p$群**，意味着它是由其阶为 $p$ 的幂的[有限群](@article_id:300157)的极限构建而成的。
+- 群 $U^1$ 是**[主单位](@keyword=principal_units|lang=zh-CN|style=Feynman)**群，由形如 $1 + x$ 的元素组成，其中 $x$ 属于[极大理想](@keyword=maximal_ideals|lang=zh-CN|style=Feynman)（即能被 $\pi_K$ 整除）。这个群捕捉了局部域真正的分析性、连续性的灵魂。它是一个庞大而复杂的**pro-$p$群**，意味着它是由其阶为 $p$ 的幂的[有限群](@keyword=finite_groups|lang=zh-CN|style=Feynman)的极限构建而成的。
 
-这个分解是驱动局部域计算的引擎。它告诉我们，任何单位都是一个单位根（“驯”部分）和一个[主单位](@article_id:367841)（“野”部分）的乘积。理解这个结构使我们能够回答深刻的问题，比如哪些元素是平方数，这对于像[Hilbert符号](@article_id:360207)和二次型这样的应用至关重要。驯/野二分法再次出现：$U^1$ 中平方数的结构根据剩余特征 $p$ 是2还是奇素数而表现得非常不同 ()。
+这个分解是驱动局部域计算的引擎。它告诉我们，任何单位都是一个单位根（“驯”部分）和一个[主单位](@keyword=principal_units|lang=zh-CN|style=Feynman)（“野”部分）的乘积。理解这个结构使我们能够回答深刻的问题，比如哪些元素是平方数，这对于像[Hilbert符号](@keyword=hilbert_symbol|lang=zh-CN|style=Feynman)和二次型这样的应用至关重要。驯/野二分法再次出现：$U^1$ 中平方数的结构根据剩余特征 $p$ 是2还是奇素数而表现得非常不同 ([@problem_id:3027004])。
 
-从一个简单而奇特的关于大小的想法出发，我们构建了一个丰富而有序的宇宙。其原理很少——[完备性](@article_id:304263)、离散赋值、有限剩余域——但它们产生的机制却是无穷深度和美丽的源泉，将代数、分析和几何统一于一幅图景之中。
+从一个简单而奇特的关于大小的想法出发，我们构建了一个丰富而有序的宇宙。其原理很少——[完备性](@keyword=completeness|lang=zh-CN|style=Feynman)、离散赋值、有限剩余域——但它们产生的机制却是无穷深度和美丽的源泉，将代数、分析和几何统一于一幅图景之中。

@@ -1,5 +1,5 @@
 ## 引言
-在现代物理学所描述的宇宙中，空间和时间并非静止的舞台，而是一块动态、弯曲的织物。在穿越这种复杂几何结构时，任何物体如何能保持其完美、毫不动摇的朝向？这个问题引出了平行旋量的概念——一个在几何学和理论物理学中都具有深远意义的数学实体。当大多数物体因空间曲率而扭曲和转动时，平行旋量却能保持完美恒定，为我们提供了一个窥探宇宙中最对称、最有序结构的稀有窗口。本文将通过其核心原理和强大应用来探索这一非凡的概念。在“原理与机制”一节中，我们将深入探讨平行旋量的数学定义，探索其存在本身如何与[特殊和乐](@article_id:319293)的概念以及对独特几何的分类联系在一起。紧接着，“应用与跨学科联系”一节将揭示平行旋量深邃的物理意义，展示其作为[超对称](@article_id:316186)基石、[弦理论](@article_id:306111)中隐藏维度的构建者，以及证明宇宙基本定律之关键的角色。
+在现代物理学所描述的宇宙中，空间和时间并非静止的舞台，而是一块动态、弯曲的织物。在穿越这种复杂几何结构时，任何物体如何能保持其完美、毫不动摇的朝向？这个问题引出了平行旋量的概念——一个在几何学和理论物理学中都具有深远意义的数学实体。当大多数物体因空间曲率而扭曲和转动时，平行旋量却能保持完美恒定，为我们提供了一个窥探宇宙中最对称、最有序结构的稀有窗口。本文将通过其核心原理和强大应用来探索这一非凡的概念。在“原理与机制”一节中，我们将深入探讨平行旋量的数学定义，探索其存在本身如何与[特殊和乐](@keyword=special_holonomy|lang=zh-CN|style=Feynman)的概念以及对独特几何的分类联系在一起。紧接着，“应用与跨学科联系”一节将揭示平行旋量深邃的物理意义，展示其作为[超对称](@keyword=supersymmetry|lang=zh-CN|style=Feynman)基石、[弦理论](@keyword=string_theory|lang=zh-CN|style=Feynman)中隐藏维度的构建者，以及证明宇宙基本定律之关键的角色。
 
 ## 原理与机制
 
@@ -9,61 +9,61 @@
 
 ### 不变之罗盘：何为平行旋量？
 
-在物理学中，旋量是一种基本的数学对象，比矢量更基本，它是描述具有[内禀角动量](@article_id:368811)（即“自旋”）的粒子（如电子）所必需的。你可以将空间中某一点的[旋量](@article_id:318458)想象成一种抽象的“箭头”或“指针”。
+在物理学中，旋量是一种基本的数学对象，比矢量更基本，它是描述具有[内禀角动量](@keyword=intrinsic_angular_momentum|lang=zh-CN|style=Feynman)（即“自旋”）的粒子（如电子）所必需的。你可以将空间中某一点的[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)想象成一种抽象的“箭头”或“指针”。
 
-当我们把这个[旋量](@article_id:318458)在弯曲空间中从一点移动到另一点时，我们使用一种叫做**协变导数**的工具，记作 $\nabla$。这个[导数](@article_id:318324)是普通[导数](@article_id:318324)的一种推广，它巧妙地考虑了空间的曲率，就像我们的蚂蚁为了保持箭头“笔直”而必须考虑球面的弯曲一样。如果一个[旋量](@article_id:318458)场 $\psi$ 的[协变导数](@article_id:312889)处处为零，我们就说它是平行的，或**协变常数**：
+当我们把这个[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)在弯曲空间中从一点移动到另一点时，我们使用一种叫做**协变导数**的工具，记作 $\nabla$。这个[导数](@keyword=derivative|lang=zh-CN|style=Feynman)是普通[导数](@keyword=derivative|lang=zh-CN|style=Feynman)的一种推广，它巧妙地考虑了空间的曲率，就像我们的蚂蚁为了保持箭头“笔直”而必须考虑球面的弯曲一样。如果一个[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)场 $\psi$ 的[协变导数](@keyword=covariant_derivative|lang=zh-CN|style=Feynman)处处为零，我们就说它是平行的，或**协变常数**：
 
 $$ \nabla \psi = 0 $$
 
-这个方程是一个深刻的陈述。它意味着当[旋量](@article_id:318458)在弯曲[流形](@article_id:313450)中移动时，它*完全*不发生任何改变。它是终极的“不变罗盘”，在每一点都与几何结构完美对齐。这样一个场——该方程的一个[全局解](@article_id:360384)——的存在，并非理所当然。这是一个极其罕见且强大的条件，它对其所处的空间结构本身施加了深刻的约束。
+这个方程是一个深刻的陈述。它意味着当[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)在弯曲[流形](@keyword=manifold|lang=zh-CN|style=Feynman)中移动时，它*完全*不发生任何改变。它是终极的“不变罗盘”，在每一点都与几何结构完美对齐。这样一个场——该方程的一个[全局解](@keyword=global_solution|lang=zh-CN|style=Feynman)——的存在，并非理所当然。这是一个极其罕见且强大的条件，它对其所处的空间结构本身施加了深刻的约束。
 
 ### 最简单的世界：平环面
 
-为了理解平行旋量有多么特殊，让我们从最简单的非平凡宇宙开始：一个平坦的[二维环面](@article_id:329695)，就像经典街机游戏《小行星》（*Asteroids*）的屏幕一样。我们可以通过取一张平坦的纸并将其对边粘合在一起来想象它。由于这个空间是由一张平坦的纸构建的，它的[内蕴曲率](@article_id:322105)处处为零。
+为了理解平行旋量有多么特殊，让我们从最简单的非平凡宇宙开始：一个平坦的[二维环面](@keyword=2_torus|lang=zh-CN|style=Feynman)，就像经典街机游戏《小行星》（*Asteroids*）的屏幕一样。我们可以通过取一张平坦的纸并将其对边粘合在一起来想象它。由于这个空间是由一张平坦的纸构建的，它的[内蕴曲率](@keyword=intrinsic_curvature|lang=zh-CN|style=Feynman)处处为零。
 
-在这个平坦的世界里，协变导数就是普通[导数](@article_id:318324)。条件 $\nabla \psi = 0$ 仅仅意味着[旋量](@article_id:318458)场 $\psi$ 在纸的每一处都必须是常数。现在，当我们粘合边缘形成环面时，一个全局场必须在接缝处匹配。这引入了一个称为**[自旋结构](@article_id:322066)**的拓扑学考量。对于环面，存在四种不同的可能性，这取决于[旋量](@article_id:318458)场在穿过粘合边缘时是必须保持相同（周期性）还是必须反号（反周期性）。
+在这个平坦的世界里，协变导数就是普通[导数](@keyword=derivative|lang=zh-CN|style=Feynman)。条件 $\nabla \psi = 0$ 仅仅意味着[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)场 $\psi$ 在纸的每一处都必须是常数。现在，当我们粘合边缘形成环面时，一个全局场必须在接缝处匹配。这引入了一个称为**[自旋结构](@keyword=spin_structures|lang=zh-CN|style=Feynman)**的拓扑学考量。对于环面，存在四种不同的可能性，这取决于[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)场在穿过粘合边缘时是必须保持相同（周期性）还是必须反号（反周期性）[@problem_id:1540072]。
 
-一个常数旋量场 $\psi(x, y) = \psi_0$，只有在两个方向的边界条件都是周期性的时候才能满足。如果任一方向要求[旋量](@article_id:318458)反号，那么满足 $\psi_0 = -\psi_0$ 的唯一方法就是旋量处处为零，即 $\psi_0=0$。因此，非零平行[旋量](@article_id:318458)只在唯一的、完全周期性的[自旋结构](@article_id:322066)下才能存在于平环面上。
+一个常数旋量场 $\psi(x, y) = \psi_0$，只有在两个方向的边界条件都是周期性的时候才能满足。如果任一方向要求[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)反号，那么满足 $\psi_0 = -\psi_0$ 的唯一方法就是旋量处处为零，即 $\psi_0=0$。因此，非零平行[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)只在唯一的、完全周期性的[自旋结构](@keyword=spin_structures|lang=zh-CN|style=Feynman)下才能存在于平环面上。
 
-这个简单的例子揭示了一个关键教训：平行[旋量](@article_id:318458)的存在不仅取决于局部几何（曲率），还取决于全局拓扑（[自旋结构](@article_id:322066)）。在这种平凡和乐（即沿任何闭环的平行移动不引起旋转）的最简单情况下，独立平行旋量的数量就是旋量空间本身的维数，对于一个 $n$ 维空间，该维数为 $2^{\lfloor n/2 \rfloor}$ 。任何常数[旋量](@article_id:318458)都是一个有效的解，所以我们拥有它们的一整套“基底”。
+这个简单的例子揭示了一个关键教训：平行[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)的存在不仅取决于局部几何（曲率），还取决于全局拓扑（[自旋结构](@keyword=spin_structures|lang=zh-CN|style=Feynman)）。在这种平凡和乐（即沿任何闭环的平行移动不引起旋转）的最简单情况下，独立平行旋量的数量就是旋量空间本身的维数，对于一个 $n$ 维空间，该维数为 $2^{\lfloor n/2 \rfloor}$ [@problem_id:2995184]。任何常数[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)都是一个有效的解，所以我们拥有它们的一整套“基底”。
 
 ### 曲率的否决权
 
-现在我们回到弯曲空间。正如我们在球面上的蚂蚁所发现的，沿闭合回路的平行移动会引起旋转。在某一点上，所有这些可能的旋转的集合构成一个群，即**[和乐群](@article_id:370491)**。这个群编码了关于空间曲率的全部信息。
+现在我们回到弯曲空间。正如我们在球面上的蚂蚁所发现的，沿闭合回路的平行移动会引起旋转。在某一点上，所有这些可能的旋转的集合构成一个群，即**[和乐群](@keyword=holonomy_groups|lang=zh-CN|style=Feynman)**。这个群编码了关于空间曲率的全部信息。
 
-要使平行旋量存在，它在围绕*任何*闭合回路移动时都必须保持完全不变。这意味着该旋量必须是[和乐群](@article_id:370491)的一个[不变量](@article_id:309269)；它必须是一个被群中每一个变换都保持不变的矢量。
+要使平行旋量存在，它在围绕*任何*闭合回路移动时都必须保持完全不变。这意味着该旋量必须是[和乐群](@keyword=holonomy_groups|lang=zh-CN|style=Feynman)的一个[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)；它必须是一个被群中每一个变换都保持不变的矢量。
 
-这是一个极其强大的约束！一个一般[黎曼流形](@article_id:324872)的和乐群是完整的[特殊正交群](@article_id:306838) $\mathrm{SO}(n)$。当我们观察这个群如何作用于[旋量](@article_id:318458)时，我们发现它不固定任何非零旋量。因此，一个一般的弯曲空间*不可能*拥有平行[旋量](@article_id:318458)。最一般形式的曲率禁止了它的存在。
+这是一个极其强大的约束！一个一般[黎曼流形](@keyword=riemannian_manifolds|lang=zh-CN|style=Feynman)的和乐群是完整的[特殊正交群](@keyword=special_orthogonal_group|lang=zh-CN|style=Feynman) $\mathrm{SO}(n)$。当我们观察这个群如何作用于[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)时，我们发现它不固定任何非零旋量。因此，一个一般的弯曲空间*不可能*拥有平行[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)。最一般形式的曲率禁止了它的存在。
 
-只有当几何是特殊的，即其和乐群小于 $\mathrm{SO}(n)$ 时，平行旋量才可能存在。这被称为**[特殊和乐](@article_id:319293)**。平行[旋量](@article_id:318458)的存在表明，宇宙的曲率并非随机或混乱的，而是高度组织化和对称的。
+只有当几何是特殊的，即其和乐群小于 $\mathrm{SO}(n)$ 时，平行旋量才可能存在。这被称为**[特殊和乐](@keyword=special_holonomy|lang=zh-CN|style=Feynman)**。平行[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)的存在表明，宇宙的曲率并非随机或混乱的，而是高度组织化和对称的。
 
-这种组织性的第一个普适后果体现在里奇曲率上。通过一个称为里奇恒等式的基本关系，平行[旋量](@article_id:318458)的存在直接与黎曼曲率张量相关联。为了使非零平行旋量存在，曲率必须以平凡的方式作用于它。这通常迫使[流形](@article_id:313450)的[里奇标量曲率](@article_id:317952)为零（），意味着该空间是[里奇平坦](@article_id:319501)的——这是爱因斯坦场方程的一个[真空解](@article_id:332649)。这种约束甚至能将几何与空间中存在的其他场（如[电磁场](@article_id:329585)）联系起来 。
+这种组织性的第一个普适后果体现在里奇曲率上。通过一个称为里奇恒等式的基本关系，平行[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)的存在直接与黎曼曲率张量相关联。为了使非零平行旋量存在，曲率必须以平凡的方式作用于它。这通常迫使[流形](@keyword=manifold|lang=zh-CN|style=Feynman)的[里奇标量曲率](@keyword=scalar_curvature|lang=zh-CN|style=Feynman)为零（[@problem_id:1540065]），意味着该空间是[里奇平坦](@keyword=ricci_flat|lang=zh-CN|style=Feynman)的——这是爱因斯坦场方程的一个[真空解](@keyword=vacuum_solution|lang=zh-CN|style=Feynman)。这种约束甚至能将几何与空间中存在的其他场（如[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)）联系起来 [@problem_id:1876072]。
 
-### [特殊几何](@article_id:373477)一览
+### [特殊几何](@keyword=special_geometry|lang=zh-CN|style=Feynman)一览
 
-法国数学家 Marcel Berger 在一项不朽的成就中，对不可约、非对称的[黎曼流形](@article_id:324872)的可能和乐群进行了分类。通过检查这些特殊群中有哪些承认一个不变[旋量](@article_id:318458)，我们得到了一个惊人简短的列表，列出了唯一可能支持平行旋量的“宇宙”。其中每一个都对应着现代几何学和物理学的一颗瑰宝。
+法国数学家 Marcel Berger 在一项不朽的成就中，对不可约、非对称的[黎曼流形](@keyword=riemannian_manifolds|lang=zh-CN|style=Feynman)的可能和乐群进行了分类。通过检查这些特殊群中有哪些承认一个不变[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)，我们得到了一个惊人简短的列表，列出了唯一可能支持平行旋量的“宇宙”[@problem_id:2968904]。其中每一个都对应着现代几何学和物理学的一颗瑰宝。
 
-*   **$\mathrm{SU}(n)$ [和乐](@article_id:297502)：Calabi-Yau [流形](@article_id:313450)**
-    这些是实维数为 $2n$ 的复流形，在[弦理论](@article_id:306111)中处于核心地位。一个具有 $\mathrm{SU}(n)$ [和乐](@article_id:297502)的[流形](@article_id:313450)恰好有两个复平行[旋量](@article_id:318458) 。我们甚至不必将它们视为抽象对象。通过[凯勒几何](@article_id:320718)（Kähler geometry）中一个非凡的同构，这两个平行旋量可以被识别为具体的几何对象：一个只是一个常数函数，另一个则是[流形](@article_id:313450)上唯一的全纯体积形式的[复共轭](@article_id:353729) $\overline{\Omega}$ 。正是这个平行形式的存在，将[和乐群](@article_id:370491)从[酉群](@article_id:299050) $\mathrm{U}(n)$ 约化为[特殊酉群](@article_id:298594) $\mathrm{SU}(n)$。
+*   **$\mathrm{SU}(n)$ [和乐](@keyword=holonomy|lang=zh-CN|style=Feynman)：Calabi-Yau [流形](@keyword=manifold|lang=zh-CN|style=Feynman)**
+    这些是实维数为 $2n$ 的复流形，在[弦理论](@keyword=string_theory|lang=zh-CN|style=Feynman)中处于核心地位。一个具有 $\mathrm{SU}(n)$ [和乐](@keyword=holonomy|lang=zh-CN|style=Feynman)的[流形](@keyword=manifold|lang=zh-CN|style=Feynman)恰好有两个复平行[旋量](@keyword=spinors|lang=zh-CN|style=Feynman) [@problem_id:2968888]。我们甚至不必将它们视为抽象对象。通过[凯勒几何](@keyword=kähler_geometry|lang=zh-CN|style=Feynman)（Kähler geometry）中一个非凡的同构，这两个平行旋量可以被识别为具体的几何对象：一个只是一个常数函数，另一个则是[流形](@keyword=manifold|lang=zh-CN|style=Feynman)上唯一的全纯体积形式的[复共轭](@keyword=complex_conjugation|lang=zh-CN|style=Feynman) $\overline{\Omega}$ [@problem_id:2990666]。正是这个平行形式的存在，将[和乐群](@keyword=holonomy_groups|lang=zh-CN|style=Feynman)从[酉群](@keyword=unitary_group|lang=zh-CN|style=Feynman) $\mathrm{U}(n)$ 约化为[特殊酉群](@keyword=special_unitary_group|lang=zh-CN|style=Feynman) $\mathrm{SU}(n)$。
 
-*   **$\mathrm{Sp}(n)$ [和乐](@article_id:297502)：[超凯勒流形](@article_id:320164) (Hyperkähler Manifolds)**
-    这些是实维数为 $4n$ 的[流形](@article_id:313450)，其结构基于[四元数](@article_id:307439)。它们拥有更丰富的平行[旋量](@article_id:318458)结构。在一个[超凯勒流形](@article_id:320164)上，平行[旋量](@article_id:318458)空间的维数是 $n+1$ ()。这些旋量都具有单一的“手性”或手征性，并且可以由定义超凯勒结构的平行[辛形式](@article_id:345220)的幂来构造。
+*   **$\mathrm{Sp}(n)$ [和乐](@keyword=holonomy|lang=zh-CN|style=Feynman)：[超凯勒流形](@keyword=hyperkähler_manifold|lang=zh-CN|style=Feynman) (Hyperkähler Manifolds)**
+    这些是实维数为 $4n$ 的[流形](@keyword=manifold|lang=zh-CN|style=Feynman)，其结构基于[四元数](@keyword=quaternions|lang=zh-CN|style=Feynman)。它们拥有更丰富的平行[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)结构。在一个[超凯勒流形](@keyword=hyperkähler_manifold|lang=zh-CN|style=Feynman)上，平行[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)空间的维数是 $n+1$ ([@problem_id:2968953])。这些旋量都具有单一的“手性”或手征性，并且可以由定义超凯勒结构的平行[辛形式](@keyword=symplectic_forms|lang=zh-CN|style=Feynman)的幂来构造。
 
-*   **7 维空间中的 $\mathrm{G}_2$ [和乐](@article_id:297502)**
-    这里我们进入了“例外”[和乐群](@article_id:370491)的领域。对于一个 7 维[流形](@article_id:313450)，群 $\mathrm{G}_2$ 被近乎奇迹般地定义为 $\mathrm{Spin}(7)$ 中稳定单个一般旋量的[子群](@article_id:306585) 。因此，一个[流形](@article_id:313450)具有 $\mathrm{G}_2$ 和乐*等价于*它拥有恰好一个实平行旋量 。几何与[旋量](@article_id:318458)相互定义。
+*   **7 维空间中的 $\mathrm{G}_2$ [和乐](@keyword=holonomy|lang=zh-CN|style=Feynman)**
+    这里我们进入了“例外”[和乐群](@keyword=holonomy_groups|lang=zh-CN|style=Feynman)的领域。对于一个 7 维[流形](@keyword=manifold|lang=zh-CN|style=Feynman)，群 $\mathrm{G}_2$ 被近乎奇迹般地定义为 $\mathrm{Spin}(7)$ 中稳定单个一般旋量的[子群](@keyword=subgroup|lang=zh-CN|style=Feynman) [@problem_id:2968905]。因此，一个[流形](@keyword=manifold|lang=zh-CN|style=Feynman)具有 $\mathrm{G}_2$ 和乐*等价于*它拥有恰好一个实平行旋量 [@problem_id:1027672]。几何与[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)相互定义。
 
-*   **8 维空间中的 $\mathrm{Spin}(7)$ [和乐](@article_id:297502)**
-    在另一个例外情况下，一个 8 维[流形](@article_id:313450)的[和乐群](@article_id:370491)可以是 $\mathrm{Spin}(7)$。与 $\mathrm{G}_2$ 的情况类似，$\mathrm{Spin}(7)$ 可以被定义为 8 维空间中稳定单个手性[旋量](@article_id:318458)的[子群](@article_id:306585) 。具有特定手性的平行[旋量](@article_id:318458)的存在是这些非凡 8 维空间的定义性特征。
+*   **8 维空间中的 $\mathrm{Spin}(7)$ [和乐](@keyword=holonomy|lang=zh-CN|style=Feynman)**
+    在另一个例外情况下，一个 8 维[流形](@keyword=manifold|lang=zh-CN|style=Feynman)的[和乐群](@keyword=holonomy_groups|lang=zh-CN|style=Feynman)可以是 $\mathrm{Spin}(7)$。与 $\mathrm{G}_2$ 的情况类似，$\mathrm{Spin}(7)$ 可以被定义为 8 维空间中稳定单个手性[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)的[子群](@keyword=subgroup|lang=zh-CN|style=Feynman) [@problem_id:2968905]。具有特定手性的平行[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)的存在是这些非凡 8 维空间的定义性特征。
 
 ### 物理意义：超对称
 
-平行[旋量](@article_id:318458)的存在远非仅仅是数学上的奇趣。在[理论物理学](@article_id:314482)中，特别是在**超对称**理论中，它具有深远的物理意义。超对称是一个推测的原理，它将两类基本粒子联系起来：[玻色子](@article_id:298714)（力的载体）和[费米子](@article_id:306655)（物[质粒](@article_id:327484)子）。
+平行[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)的存在远非仅仅是数学上的奇趣。在[理论物理学](@keyword=theoretical_physics|lang=zh-CN|style=Feynman)中，特别是在**超对称**理论中，它具有深远的物理意义。超对称是一个推测的原理，它将两类基本粒子联系起来：[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)（力的载体）和[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)（物[质粒](@keyword=plasmid|lang=zh-CN|style=Feynman)子）。
 
-在超对称理论中，存在一个“超荷”算符，它能将[玻色子](@article_id:298714)转变为[费米子](@article_id:306655)，反之亦然。在弯曲时空背景下，如果一个态被这个[超荷](@article_id:365837)算符湮灭，那么它就是[超对称](@article_id:316186)的。这一条件的数学表示恰好就是平行旋量方程 $\nabla \psi = 0$。
+在超对称理论中，存在一个“超荷”算符，它能将[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)转变为[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)，反之亦然。在弯曲时空背景下，如果一个态被这个[超荷](@keyword=hypercharge|lang=zh-CN|style=Feynman)算符湮灭，那么它就是[超对称](@keyword=supersymmetry|lang=zh-CN|style=Feynman)的。这一条件的数学表示恰好就是平行旋量方程 $\nabla \psi = 0$。
 
-因此，一个[流形](@article_id:313450)上线性无关的平行旋量的数量等于该理论在相应背景下所允许的未破缺超对称的数量。
--   平坦空间拥有最大可能数量的平行[旋量](@article_id:318458)，是“最大超对称”的。
--   我们刚刚遇到的[特殊几何](@article_id:373477)——Calabi-Yau、超凯勒、$\mathrm{G}_2$ 和 $\mathrm{Spin}(7)$ [流形](@article_id:313450)——恰恰是那些保留了总[超对称](@article_id:316186)一部分的弯曲空间。
-这就是为什么 Calabi-Yau [流形](@article_id:313450)在弦理论中如此关键：它们提供了一种“[紧化](@article_id:310936)”额外维度的方法，同时保留了恰到好处的超对称，以使理论在数学上自洽并具有潜在的现实性。
+因此，一个[流形](@keyword=manifold|lang=zh-CN|style=Feynman)上线性无关的平行旋量的数量等于该理论在相应背景下所允许的未破缺超对称的数量。
+-   平坦空间拥有最大可能数量的平行[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)，是“最大超对称”的。
+-   我们刚刚遇到的[特殊几何](@keyword=special_geometry|lang=zh-CN|style=Feynman)——Calabi-Yau、超凯勒、$\mathrm{G}_2$ 和 $\mathrm{Spin}(7)$ [流形](@keyword=manifold|lang=zh-CN|style=Feynman)——恰恰是那些保留了总[超对称](@keyword=supersymmetry|lang=zh-CN|style=Feynman)一部分的弯曲空间。
+这就是为什么 Calabi-Yau [流形](@keyword=manifold|lang=zh-CN|style=Feynman)在弦理论中如此关键：它们提供了一种“[紧化](@keyword=compactification|lang=zh-CN|style=Feynman)”额外维度的方法，同时保留了恰到好处的超对称，以使理论在数学上自洽并具有潜在的现实性。
 
-平行旋量的故事是现代科学统一性的一个完美例证。它是一条线索，将群论的抽象代数、微分几何的复杂结构、拓扑学的全局性质以及基础物理学的最深层原理联系在一起。找到一个平行[旋量](@article_id:318458)，就是发现一个具有非凡秩序、平衡与美的空间。
+平行旋量的故事是现代科学统一性的一个完美例证。它是一条线索，将群论的抽象代数、微分几何的复杂结构、拓扑学的全局性质以及基础物理学的最深层原理联系在一起。找到一个平行[旋量](@keyword=spinors|lang=zh-CN|style=Feynman)，就是发现一个具有非凡秩序、平衡与美的空间。

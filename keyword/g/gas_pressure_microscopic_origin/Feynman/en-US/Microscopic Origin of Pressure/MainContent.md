@@ -3,7 +3,7 @@ Pressure is one of the most fundamental properties of a gas, a quantity we measu
 
 First, in "Principles and Mechanisms," we will build the concept of pressure from the ground up. Starting with a single particle in a box and scaling up to trillions, we will derive the celebrated Ideal Gas Law from first principles and uncover the true physical meaning of temperature. The journey will take us from a classical "bouncing ball" model to the deeper quantum mechanical foundations of pressure, and finally to the real-world complexities of interacting molecules.
 
-Following this, "Applications and Interdisciplinary Connections" will demonstrate the remarkable power of this microscopic viewpoint. We will see how this single idea unifies diverse concepts in chemistry, such as [partial pressures](@article_id:168433) and reaction energies, and extends to explain phenomena at interfaces, in biological systems, and at the frontiers of physics. Prepare to see the familiar concept of pressure in a new, more fundamental light.
+Following this, "Applications and Interdisciplinary Connections" will demonstrate the remarkable power of this microscopic viewpoint. We will see how this single idea unifies diverse concepts in chemistry, such as [partial pressures](@keyword=partial_pressures|lang=en-US|style=Feynman) and reaction energies, and extends to explain phenomena at interfaces, in biological systems, and at the frontiers of physics. Prepare to see the familiar concept of pressure in a new, more fundamental light.
 
 ## Principles and Mechanisms
 
@@ -21,7 +21,7 @@ $$
 F_{\text{one particle}} = \frac{\text{Momentum kick}}{\text{Time between kicks}} = \frac{2mv_x}{2L/v_x} = \frac{mv_x^2}{L}
 $$
 
-Pressure is just force spread over an area, $A = L^2$. So the pressure from this one particle is $P_{\text{one particle}} = F/A = mv_x^2 / (L \cdot L^2) = mv_x^2 / V$, where $V = L^3$ is the volume of the box. This is a remarkable starting point: the pressure exerted by a particle is directly related to its mass and the square of its velocity component towards the wall .
+Pressure is just force spread over an area, $A = L^2$. So the pressure from this one particle is $P_{\text{one particle}} = F/A = mv_x^2 / (L \cdot L^2) = mv_x^2 / V$, where $V = L^3$ is the volume of the box. This is a remarkable starting point: the pressure exerted by a particle is directly related to its mass and the square of its velocity component towards the wall [@problem_id:2939935].
 
 ### From One to a Trillion: The Emergence of a Law
 
@@ -41,7 +41,7 @@ $$
 P = \frac{N m \langle v_x^2 \rangle}{L^3} = \frac{Nm}{V} \left( \frac{1}{3}\langle v^2 \rangle \right) \implies PV = \frac{1}{3}N m \langle v^2 \rangle
 $$
 
-Look at what we have done! We have connected the macroscopic, measurable quantities of pressure and volume to the microscopic world of particle number, mass, and average motion  .
+Look at what we have done! We have connected the macroscopic, measurable quantities of pressure and volume to the microscopic world of particle number, mass, and average motion [@problem_id:2939935] [@problem_id:2924184].
 
 ### The True Meaning of Temperature
 
@@ -51,13 +51,13 @@ $$
 PV = \frac{2}{3} N \langle K \rangle
 $$
 
-This tells us that the product of pressure and volume is simply two-thirds of the total [internal kinetic energy](@article_id:167312) of the gas . This is a profound statement. Now for the final leap. What is temperature? A thermometer measures something, but what? In physics, **absolute temperature** ($T$) is nothing more than a direct measure of the average translational kinetic energy of the particles. Their relationship is beautifully simple:
+This tells us that the product of pressure and volume is simply two-thirds of the total [internal kinetic energy](@keyword=internal_kinetic_energy|lang=en-US|style=Feynman) of the gas [@problem_id:2959879]. This is a profound statement. Now for the final leap. What is temperature? A thermometer measures something, but what? In physics, **absolute temperature** ($T$) is nothing more than a direct measure of the average translational kinetic energy of the particles. Their relationship is beautifully simple:
 
 $$
 \langle K \rangle = \frac{3}{2} k_B T
 $$
 
-The constant $k_B$ is the **Boltzmann constant**, a fundamental constant of nature that acts as a conversion factor, bridging the human-defined scale of temperature (in Kelvin) and the physical scale of energy (in Joules). It’s because of this direct proportionality that if you, say, double the [root-mean-square speed](@article_id:145452) of the molecules in a tire, you quadruple their [average kinetic energy](@article_id:145859), which quadruples the temperature, and thus quadruples the pressure . It is also this strict proportionality that ensures that if we measure pressure to be proportional to temperature in an experiment, we can be confident that kinetic energy must also be proportional to temperature .
+The constant $k_B$ is the **Boltzmann constant**, a fundamental constant of nature that acts as a conversion factor, bridging the human-defined scale of temperature (in Kelvin) and the physical scale of energy (in Joules). It’s because of this direct proportionality that if you, say, double the [root-mean-square speed](@keyword=root_mean_square_speed|lang=en-US|style=Feynman) of the molecules in a tire, you quadruple their [average kinetic energy](@keyword=average_kinetic_energy|lang=en-US|style=Feynman), which quadruples the temperature, and thus quadruples the pressure [@problem_id:1871893]. It is also this strict proportionality that ensures that if we measure pressure to be proportional to temperature in an experiment, we can be confident that kinetic energy must also be proportional to temperature [@problem_id:2023517].
 
 Let's substitute this definition of temperature into our grand equation:
 
@@ -65,24 +65,24 @@ $$
 PV = \frac{2}{3} N \left(\frac{3}{2} k_B T\right) = N k_B T
 $$
 
-This is it. The **Ideal Gas Law**, derived from first principles. It's not a magical formula from a textbook; it's the logical conclusion of atoms in motion. Every variable has a clear, physical meaning: pressure from collisions, volume of the container, number of particles, and temperature as their average kinetic energy .
+This is it. The **Ideal Gas Law**, derived from first principles. It's not a magical formula from a textbook; it's the logical conclusion of atoms in motion. Every variable has a clear, physical meaning: pressure from collisions, volume of the container, number of particles, and temperature as their average kinetic energy [@problem_id:2924208].
 
 ### The Great Equalizer: Avogadro's Democratic Principle
 
 Take a second look at the final equation: $PV = N k_B T$. Do you see what's missing? The mass of the particle, $m$, has completely vanished! This is a stunning and deeply important result. It means that at a given temperature, the pressure exerted by a gas depends only on how many particles there are, not what kind of particles they are.
 
-How can this be? At a given temperature, a heavy particle and a light particle have the *same average kinetic energy*. For that to be true, the heavy particle must be moving more slowly, on average, than the light one ($\langle K \rangle = \frac{1}{2} m \langle v^2 \rangle$). The pressure depends on the product $m \langle v^2 \rangle$, which is just twice the [average kinetic energy](@article_id:145859). Since the kinetic energy is the same for all particles at a given temperature, so is their contribution to pressure. A heavy particle hits the wall less frequently but with more momentum each time; a light particle hits more often but with a softer tap. The two effects perfectly cancel out, so the total pressure is independent of the particle's mass .
+How can this be? At a given temperature, a heavy particle and a light particle have the *same average kinetic energy*. For that to be true, the heavy particle must be moving more slowly, on average, than the light one ($\langle K \rangle = \frac{1}{2} m \langle v^2 \rangle$). The pressure depends on the product $m \langle v^2 \rangle$, which is just twice the [average kinetic energy](@keyword=average_kinetic_energy|lang=en-US|style=Feynman). Since the kinetic energy is the same for all particles at a given temperature, so is their contribution to pressure. A heavy particle hits the wall less frequently but with more momentum each time; a light particle hits more often but with a softer tap. The two effects perfectly cancel out, so the total pressure is independent of the particle's mass [@problem_id:2924184].
 
 This is the microscopic foundation of **Avogadro's Law**: equal volumes of any ideal gases, at the same temperature and pressure, contain the same number of molecules. It’s a perfect democracy of particles.
-Chemists like to count particles in large groups called **moles**, where one mole is about $6.022 \times 10^{23}$ particles (this giant number is **Avogadro's number**, $N_A$). If we have $n$ moles of gas, the total number of particles is $N = n N_A$. Our equation becomes $PV = (n N_A) k_B T$. We can group the two fundamental constants, $N_A$ and $k_B$, into a single new constant called the **[universal gas constant](@article_id:136349)**, $R = N_A k_B$. This gives us the more familiar form of the [ideal gas law](@article_id:146263):
+Chemists like to count particles in large groups called **moles**, where one mole is about $6.022 \times 10^{23}$ particles (this giant number is **Avogadro's number**, $N_A$). If we have $n$ moles of gas, the total number of particles is $N = n N_A$. Our equation becomes $PV = (n N_A) k_B T$. We can group the two fundamental constants, $N_A$ and $k_B$, into a single new constant called the **[universal gas constant](@keyword=universal_gas_constant|lang=en-US|style=Feynman)**, $R = N_A k_B$. This gives us the more familiar form of the [ideal gas law](@keyword=ideal_gas_law|lang=en-US|style=Feynman):
 
 $$
 PV = nRT
 $$
 
-The two forms are just different ways of counting: by particle or by group . This equation works whether you're using Joules and Pascals or atmospheres and liters, as long as you use the value of $R$ with the corresponding units .
+The two forms are just different ways of counting: by particle or by group [@problem_id:2924208]. This equation works whether you're using Joules and Pascals or atmospheres and liters, as long as you use the value of $R$ with the corresponding units [@problem_id:2939935].
 
-And it might be surprising to learn that this pressure, which seems like such a classical, mechanical property, is invariant to your own motion. If you were to fly past the container in a spaceship at a [constant velocity](@article_id:170188), your measurement of the intrinsic pressure of the gas—the relentless patter of particles against their own container wall—would be exactly the same . Pressure is a property of the gas's internal state, not of your perspective.
+And it might be surprising to learn that this pressure, which seems like such a classical, mechanical property, is invariant to your own motion. If you were to fly past the container in a spaceship at a [constant velocity](@keyword=constant_velocity|lang=en-US|style=Feynman), your measurement of the intrinsic pressure of the gas—the relentless patter of particles against their own container wall—would be exactly the same [@problem_id:1835207]. Pressure is a property of the gas's internal state, not of your perspective.
 
 ### The Quantum Foundation of Pressure
 
@@ -96,22 +96,22 @@ $$
 P_n = \frac{2E_n}{V}
 $$
 
-For a gas, the macroscopic pressure is the average of this quantity over all the occupied quantum states. And when you extend this to three dimensions, you arrive at the exact same relationship we found classically: $PV = \frac{2}{3} \langle E \rangle$ . This is no coincidence. It shows that [gas pressure](@article_id:140203) is fundamentally a quantum mechanical phenomenon. It's the energy cost of squeezing a particle's [wave function](@article_id:147778) into a smaller space. The classical "bouncing" is just a different language for describing the same physical reality.
+For a gas, the macroscopic pressure is the average of this quantity over all the occupied quantum states. And when you extend this to three dimensions, you arrive at the exact same relationship we found classically: $PV = \frac{2}{3} \langle E \rangle$ [@problem_id:2913784]. This is no coincidence. It shows that [gas pressure](@keyword=gas_pressure|lang=en-US|style=Feynman) is fundamentally a quantum mechanical phenomenon. It's the energy cost of squeezing a particle's [wave function](@keyword=wave_function|lang=en-US|style=Feynman) into a smaller space. The classical "bouncing" is just a different language for describing the same physical reality.
 
 ### Beyond Perfection: The Real World of Gases
 
-Our [ideal gas model](@article_id:180664) is built on two lies—very useful lies, but lies nonetheless. We assumed particles are zero-volume points and that they don't interact. What happens when we tell the truth?
+Our [ideal gas model](@keyword=ideal_gas_model|lang=en-US|style=Feynman) is built on two lies—very useful lies, but lies nonetheless. We assumed particles are zero-volume points and that they don't interact. What happens when we tell the truth?
 
 1.  **Particles have size**: Real molecules are not points. They take up space. This "excluded volume" means the effective volume available for a particle to roam is slightly less than the container volume $V$. This effect tends to cause more collisions than in an ideal gas, **increasing the pressure**. This is the role of the $b$ parameter in the famous van der Waals equation.
 
 2.  **Particles attract each other**: When molecules are not too close, they feel a weak, long-range attraction (van der Waals forces). Imagine a particle about to strike the wall. It is being gently pulled back by the other particles behind it. This softens the blow, **reducing the pressure** compared to the ideal case. This corresponds to the $a$ parameter in the van der Waals equation.
 
-We can track these deviations using the **[compressibility factor](@article_id:141818)**, $Z = \frac{PV}{nRT}$. For an ideal gas, $Z=1$ always. For a real gas, $Z$ can be greater or less than 1, depending on which effect—repulsion or attraction—is winning.
+We can track these deviations using the **[compressibility factor](@keyword=compressibility_factor|lang=en-US|style=Feynman)**, $Z = \frac{PV}{nRT}$. For an ideal gas, $Z=1$ always. For a real gas, $Z$ can be greater or less than 1, depending on which effect—repulsion or attraction—is winning.
 
 At low temperatures, molecules move slowly and the long-range attraction dominates, so $Z  1$. At high temperatures, molecules move so fast that they barely feel the fleeting attractions, and the short-range repulsion from their finite size dominates, so $Z > 1$.
 
-This leads to a fascinating idea: there must be a special temperature where these two effects perfectly cancel each other out, at least initially. This is called the **Boyle Temperature**, $T_B$. At this temperature, a [real gas](@article_id:144749) behaves almost ideally as the pressure approaches zero, because the initial tendency for attraction to lower the pressure is perfectly balanced by the tendency for repulsion to raise it. However, this ideal behavior is fragile. As pressure increases, more complex interactions involving three, four, or more particles come into play, and the gas quickly deviates from ideality again  .
+This leads to a fascinating idea: there must be a special temperature where these two effects perfectly cancel each other out, at least initially. This is called the **Boyle Temperature**, $T_B$. At this temperature, a [real gas](@keyword=real_gas|lang=en-US|style=Feynman) behaves almost ideally as the pressure approaches zero, because the initial tendency for attraction to lower the pressure is perfectly balanced by the tendency for repulsion to raise it. However, this ideal behavior is fragile. As pressure increases, more complex interactions involving three, four, or more particles come into play, and the gas quickly deviates from ideality again [@problem_id:2954622] [@problem_id:2954622].
 
-The [ideal gas law](@article_id:146263), $PV=nRT$, is thus the first term in a more complete story, a series called the [virial expansion](@article_id:144348). The fact that $Z=1$ for an ideal gas is equivalent to saying all the correction terms (the [virial coefficients](@article_id:146193)) are zero . And this perfection itself only holds in what we call the **[thermodynamic limit](@article_id:142567)** (infinite particles in infinite volume at constant density) and the **classical regime**, where quantum statistical effects—a strange "attraction" between bosons and "repulsion" between fermions even without forces—can be ignored.
+The [ideal gas law](@keyword=ideal_gas_law|lang=en-US|style=Feynman), $PV=nRT$, is thus the first term in a more complete story, a series called the [virial expansion](@keyword=virial_expansion|lang=en-US|style=Feynman). The fact that $Z=1$ for an ideal gas is equivalent to saying all the correction terms (the [virial coefficients](@keyword=virial_coefficients|lang=en-US|style=Feynman)) are zero [@problem_id:2800874]. And this perfection itself only holds in what we call the **[thermodynamic limit](@keyword=thermodynamic_limit|lang=en-US|style=Feynman)** (infinite particles in infinite volume at constant density) and the **classical regime**, where quantum statistical effects—a strange "attraction" between bosons and "repulsion" between fermions even without forces—can be ignored.
 
 The journey from a single bouncing particle to the intricate dance of real molecules reveals the true nature of science: we start with a simple, beautiful lie, and then we add layers of truth, making our picture richer, more complex, and ever closer to reality.

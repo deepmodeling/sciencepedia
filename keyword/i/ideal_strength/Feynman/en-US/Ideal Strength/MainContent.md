@@ -3,7 +3,7 @@ What is the ultimate strength of a material? If we could construct a substance f
 
 ## Principles and Mechanisms
 
-Imagine you want to pull apart a solid object. What are you really doing? At the most fundamental level, you are fighting against the [electromagnetic forces](@article_id:195530) that bind atoms together. You are stretching and, eventually, breaking countless microscopic bonds. Let’s embark on a thought experiment, much as physicists love to do, to understand the ultimate strength of a material if it were absolutely perfect. This idealized limit is what we call the **ideal strength** or **[theoretical cohesive strength](@article_id:195116)**.
+Imagine you want to pull apart a solid object. What are you really doing? At the most fundamental level, you are fighting against the [electromagnetic forces](@keyword=electromagnetic_forces|lang=en-US|style=Feynman) that bind atoms together. You are stretching and, eventually, breaking countless microscopic bonds. Let’s embark on a thought experiment, much as physicists love to do, to understand the ultimate strength of a material if it were absolutely perfect. This idealized limit is what we call the **ideal strength** or **[theoretical cohesive strength](@keyword=theoretical_cohesive_strength|lang=en-US|style=Feynman)**.
 
 ### The Anatomy of Separation: A Thought Experiment
 
@@ -17,7 +17,7 @@ This relationship between traction and separation, the $T(\delta)$ curve, is the
 
 ### Force, Energy, and the Point of No Return
 
-There’s another way to look at this process: through the lens of energy. To separate the crystal, we must do work against the [cohesive forces](@article_id:274330). This work is stored as potential energy in the stretched bonds. The total work done per unit area to achieve complete separation is what creates two new surfaces, and in a [reversible process](@article_id:143682), this work is exactly equal to twice the **[surface energy](@article_id:160734)**, $\gamma$, of the material.
+There’s another way to look at this process: through the lens of energy. To separate the crystal, we must do work against the [cohesive forces](@keyword=cohesive_forces|lang=en-US|style=Feynman). This work is stored as potential energy in the stretched bonds. The total work done per unit area to achieve complete separation is what creates two new surfaces, and in a [reversible process](@keyword=reversible_process|lang=en-US|style=Feynman), this work is exactly equal to twice the **[surface energy](@keyword=surface_energy|lang=en-US|style=Feynman)**, $\gamma$, of the material.
 
 Mathematically, the work is the integral of force over distance. Therefore, the total work of a separation that creates two new surfaces is the total area under our traction-separation curve:
 $$
@@ -26,11 +26,11 @@ $$
 
 This reveals a beautiful and subtle point. The ideal strength, $\sigma_{th}$, is the *peak height* of the $T(\delta)$ curve, while the work of separation, $2\gamma$, is the *total area* under the curve. Knowing one does not automatically give you the other! You could have a "short and broad" curve or a "tall and narrow" one with the exact same area. The shape of the curve, which is dictated by the specific nature of the atomic bonds, is crucial. Physicists and engineers model this curve with various functions—from simple sinusoids to more sophisticated exponential forms—each capturing a different material character, but all sharing this rise-and-fall-to-zero structure.
 
-So why is the peak so special? It represents the point of no return. Imagine you are controlling the pulling force (the traction). As you increase the force, the separation increases to match it. But once you reach the peak, $\sigma_{th}$, any attempt to pull just a little bit harder finds no equilibrium. The material's resisting force starts to drop, and the two halves will fly apart catastrophically. The peak traction marks the onset of an instability; it is the true limit of [cohesion](@article_id:187985).
+So why is the peak so special? It represents the point of no return. Imagine you are controlling the pulling force (the traction). As you increase the force, the separation increases to match it. But once you reach the peak, $\sigma_{th}$, any attempt to pull just a little bit harder finds no equilibrium. The material's resisting force starts to drop, and the two halves will fly apart catastrophically. The peak traction marks the onset of an instability; it is the true limit of [cohesion](@keyword=cohesion|lang=en-US|style=Feynman).
 
 ### An Estimate of Perfection: The Ideal Strength
 
-Can we estimate this ideal strength? Yes, and the result is astonishingly simple and powerful. We need two ingredients from macroscopic physics: the material's stiffness, represented by its **Young's modulus** $E$, and its surface energy $\gamma$. The Young's modulus tells us how steep the initial part of the $T(\delta)$ curve is—how much force it takes to stretch the bonds just a little. The [surface energy](@article_id:160734) tells us the total area under the curve.
+Can we estimate this ideal strength? Yes, and the result is astonishingly simple and powerful. We need two ingredients from macroscopic physics: the material's stiffness, represented by its **Young's modulus** $E$, and its surface energy $\gamma$. The Young's modulus tells us how steep the initial part of the $T(\delta)$ curve is—how much force it takes to stretch the bonds just a little. The [surface energy](@keyword=surface_energy|lang=en-US|style=Feynman) tells us the total area under the curve.
 
 Let’s approximate the complex curve with something simple, like a single sine wave, and use these two constraints. Performing the calculation reveals a remarkably general relationship:
 $$
@@ -52,7 +52,7 @@ These defects are the Achilles' heel of materials. A calculation for a typical c
 
 The man who solved the puzzle was A. A. Griffith, an English engineer, during World War I. He realized that a crack in a material acts as a powerful **stress concentrator**. Think of it like a lever. The tip of a crack is atomically sharp, and when a load is applied to the bulk material, all of that force gets focused onto this minuscule point.
 
-The local stress right at the [crack tip](@article_id:182313) can easily reach the material's ideal strength, $\sigma_{th}$, even when the overall applied stress is very low. Once the bonds at the tip break, the crack advances, and the material fails in a chain reaction. Griffith formulated this not in terms of stress, but in terms of energy: a crack will grow if the elastic energy released by its advance is sufficient to provide the surface energy needed for the new crack surfaces it creates. This beautiful energy balance gives us the failure stress for a cracked body:
+The local stress right at the [crack tip](@keyword=crack_tip|lang=en-US|style=Feynman) can easily reach the material's ideal strength, $\sigma_{th}$, even when the overall applied stress is very low. Once the bonds at the tip break, the crack advances, and the material fails in a chain reaction. Griffith formulated this not in terms of stress, but in terms of energy: a crack will grow if the elastic energy released by its advance is sufficient to provide the surface energy needed for the new crack surfaces it creates. This beautiful energy balance gives us the failure stress for a cracked body:
 $$
 \sigma_{f} \approx \sqrt{\frac{E \gamma}{a}}
 $$

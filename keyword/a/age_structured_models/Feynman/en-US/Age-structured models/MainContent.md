@@ -13,7 +13,7 @@ Imagine you are a meticulous census-taker for a population. Instead of one big c
 
 $$ \mathbf{n}_t = \begin{pmatrix} N_1(t) \\ N_2(t) \\ N_3(t) \end{pmatrix} $$
 
-Now, how do we predict the population at the next time step, $t+1$? We need a set of rules—a machine that takes the [population structure](@entry_id:148599) now and calculates the structure of the future. This machine is the brilliant invention of Patrick Leslie: the **Leslie matrix**, denoted by $L$. The entire future of the population is contained in this simple equation:
+Now, how do we predict the population at the next time step, $t+1$? We need a set of rules—a machine that takes the [population structure](@keyword=population_structure|lang=en-US|style=Feynman) now and calculates the structure of the future. This machine is the brilliant invention of Patrick Leslie: the **Leslie matrix**, denoted by $L$. The entire future of the population is contained in this simple equation:
 
 $$ \mathbf{n}_{t+1} = L \mathbf{n}_t $$
 
@@ -25,9 +25,9 @@ The first row of the Leslie matrix is all about new life. It answers the questio
 
 $$ N_1(t+1) = L_{11} N_1(t) + L_{12} N_2(t) + L_{13} N_3(t) $$
 
-Each element $L_{1j}$ is a **[fecundity](@entry_id:181291)** term. It represents the average number of new offspring (that survive to be counted in the first age class) produced by a single individual currently in age class $j$. For many species, the young are pre-reproductive, so $L_{11}$ would be zero. In some life histories, like a particular species of moth that reproduces only at the very end of its life, only the very last fertility term might be non-zero .
+Each element $L_{1j}$ is a **[fecundity](@keyword=fecundity|lang=en-US|style=Feynman)** term. It represents the average number of new offspring (that survive to be counted in the first age class) produced by a single individual currently in age class $j$. For many species, the young are pre-reproductive, so $L_{11}$ would be zero. In some life histories, like a particular species of moth that reproduces only at the very end of its life, only the very last fertility term might be non-zero [@problem_id:1830248].
 
-For instance, to calculate a fertility term like $L_{12}$, we might need to combine several biological facts: the average number of births per female in age class 2 ($f_2$), the fraction of births that are female ($g$), and the probability that a newborn survives its first interval of life to be counted in the census ($\sigma_0$). The combined fertility contribution would then be $L_{12} = \sigma_0 g f_2$ . The first row, in essence, is the population's engine of reproduction.
+For instance, to calculate a fertility term like $L_{12}$, we might need to combine several biological facts: the average number of births per female in age class 2 ($f_2$), the fraction of births that are female ($g$), and the probability that a newborn survives its first interval of life to be counted in the census ($\sigma_0$). The combined fertility contribution would then be $L_{12} = \sigma_0 g f_2$ [@problem_id:4999530]. The first row, in essence, is the population's engine of reproduction.
 
 #### The Subdiagonal: The Inexorable March of Time
 
@@ -37,7 +37,7 @@ This simple, profound fact gives the Leslie matrix its characteristic structure.
 
 $$ N_2(t+1) = s_1 N_1(t) $$
 
-Here, $s_1$ is the probability of surviving and moving from class 1 to class 2. Similarly, $N_3(t+1) = s_2 N_2(t)$. This means the only non-zero elements outside the first row are on the **subdiagonal**—the diagonal just below the main one. The entry $L_{i+1,i}$ is the [survival probability](@entry_id:137919) $s_i$. All other entries are zero. You can't go backward in age, and you can't stand still.
+Here, $s_1$ is the probability of surviving and moving from class 1 to class 2. Similarly, $N_3(t+1) = s_2 N_2(t)$. This means the only non-zero elements outside the first row are on the **subdiagonal**—the diagonal just below the main one. The entry $L_{i+1,i}$ is the [survival probability](@keyword=survival_probability|lang=en-US|style=Feynman) $s_i$. All other entries are zero. You can't go backward in age, and you can't stand still.
 
 Putting it all together, a typical Leslie matrix looks like this:
 
@@ -49,22 +49,22 @@ s_1 & 0 & 0 \\
 \end{pmatrix}
 $$
 
-This structure isn't an arbitrary mathematical choice; it is the embodiment of the biological process of aging. The model assumes that the probability of surviving and reproducing depends only on an individual's current age, not its past history. This "memoryless" property is known as the **Markov property**, and it's a cornerstone of these models .
+This structure isn't an arbitrary mathematical choice; it is the embodiment of the biological process of aging. The model assumes that the probability of surviving and reproducing depends only on an individual's current age, not its past history. This "memoryless" property is known as the **Markov property**, and it's a cornerstone of these models [@problem_id:3860244].
 
 ### The Deeper Meaning: Eigenvalues and Evolutionary Fitness
 
-So, we have our "crystal ball," the matrix $L$. We can start with any [population structure](@entry_id:148599) $\mathbf{n}_0$ and repeatedly multiply by $L$ to see how the population evolves year after year. What do we find?
+So, we have our "crystal ball," the matrix $L$. We can start with any [population structure](@keyword=population_structure|lang=en-US|style=Feynman) $\mathbf{n}_0$ and repeatedly multiply by $L$ to see how the population evolves year after year. What do we find?
 
 After a few generations, something remarkable happens. The proportion of individuals in each age class stabilizes. The population settles into a fixed **stable age distribution**. From that point on, the entire population grows (or shrinks) by the same constant factor each and every year.
 
-This magical factor is the **[dominant eigenvalue](@entry_id:142677)** of the Leslie matrix, denoted by the Greek letter lambda, $\lambda$. The stable age distribution is its corresponding **eigenvector**. This is a profound result from linear algebra: for the type of matrices we see in [population biology](@entry_id:153663), there is a unique, positive [dominant eigenvalue](@entry_id:142677) that governs the long-term behavior of the system.
+This magical factor is the **[dominant eigenvalue](@keyword=dominant_eigenvalue|lang=en-US|style=Feynman)** of the Leslie matrix, denoted by the Greek letter lambda, $\lambda$. The stable age distribution is its corresponding **eigenvector**. This is a profound result from linear algebra: for the type of matrices we see in [population biology](@keyword=population_biology|lang=en-US|style=Feynman), there is a unique, positive [dominant eigenvalue](@keyword=dominant_eigenvalue|lang=en-US|style=Feynman) that governs the long-term behavior of the system.
 
 The value of $\lambda$ tells us the ultimate fate of the population:
 - If $\lambda > 1$, the population grows exponentially.
 - If $\lambda < 1$, the population declines towards extinction.
 - If $\lambda = 1$, the population size is stable over the long term.
 
-This number, $\lambda$, is more than just a [growth factor](@entry_id:634572); in many contexts, it is the ultimate measure of **[evolutionary fitness](@entry_id:276111)**. Imagine two species colonizing a new island, each with a different life strategy. One is a "fast-life" species: it reproduces early and prolifically but has low survival. The other is a "slow-life" species: it invests in survival, reproducing later in life . We can build a Leslie matrix for each. Which one will win the race to populate the island? The one with the higher $\lambda$. Natural selection, in a race for growth, favors the life history that maximizes this single, powerful number . It elegantly combines the trade-offs between survival and reproduction over an organism's entire life into one quantity that determines evolutionary success.
+This number, $\lambda$, is more than just a [growth factor](@keyword=growth_factor|lang=en-US|style=Feynman); in many contexts, it is the ultimate measure of **[evolutionary fitness](@keyword=evolutionary_fitness|lang=en-US|style=Feynman)**. Imagine two species colonizing a new island, each with a different life strategy. One is a "fast-life" species: it reproduces early and prolifically but has low survival. The other is a "slow-life" species: it invests in survival, reproducing later in life [@problem_id:1859267]. We can build a Leslie matrix for each. Which one will win the race to populate the island? The one with the higher $\lambda$. Natural selection, in a race for growth, favors the life history that maximizes this single, powerful number [@problem_id:2728432]. It elegantly combines the trade-offs between survival and reproduction over an organism's entire life into one quantity that determines evolutionary success.
 
 ### Beyond Discrete Steps: The Continuum of Life
 
@@ -76,25 +76,25 @@ Science often progresses by taking a beautiful discrete idea and seeing how it g
 
 Instead of a vector of counts, let's describe our population with a density function, $n(a,t)$, which tells us how many individuals there are per unit age $a$ at time $t$. The total population is now an integral, not a sum.
 
-How does this density change? Let's follow a small group of individuals, a cohort, as they age. In a small time interval $dt$, their age increases by $da = dt$. They are "flowing" along the age axis. As they flow, some are lost to mortality. This intuitive picture leads to one of the most elegant equations in [mathematical biology](@entry_id:268650), the **McKendrick-von Foerster equation** :
+How does this density change? Let's follow a small group of individuals, a cohort, as they age. In a small time interval $dt$, their age increases by $da = dt$. They are "flowing" along the age axis. As they flow, some are lost to mortality. This intuitive picture leads to one of the most elegant equations in [mathematical biology](@keyword=mathematical_biology|lang=en-US|style=Feynman), the **McKendrick-von Foerster equation** [@problem_id:5262957]:
 
 $$ \frac{\partial n}{\partial t} + \frac{\partial n}{\partial a} = -\mu(a) n(a,t) $$
 
 Let's appreciate what this says. The term $\frac{\partial n}{\partial t}$ is the rate of change of the population density at a *fixed age*. This change is caused by two things: the net flow of individuals aging past that point ($\frac{\partial n}{\partial a}$) and the loss of individuals due to death ($-\mu(a)n(a,t)$), where $\mu(a)$ is the age-dependent death rate.
 
-The solution to this equation reveals that the population at any point $(a,t)$ is a mixture of two groups: survivors who were already alive at time $t=0$, and individuals who were born since then . Each cohort, born at a specific time, marches along a "characteristic line" through the age-time plane, its numbers dwindling according to the death rate $\mu(a)$.
+The solution to this equation reveals that the population at any point $(a,t)$ is a mixture of two groups: survivors who were already alive at time $t=0$, and individuals who were born since then [@problem_id:2181486]. Each cohort, born at a specific time, marches along a "characteristic line" through the age-time plane, its numbers dwindling according to the death rate $\mu(a)$.
 
-But where do new individuals come from? We need a source. This is the **[renewal equation](@entry_id:264802)**, which serves as a boundary condition at age zero. It states that the influx of newborns, $n(0,t)$, is the sum (or integral) of the reproductive output of all individuals across all ages .
+But where do new individuals come from? We need a source. This is the **[renewal equation](@keyword=renewal_equation|lang=en-US|style=Feynman)**, which serves as a boundary condition at age zero. It states that the influx of newborns, $n(0,t)$, is the sum (or integral) of the reproductive output of all individuals across all ages [@problem_id:3860265].
 
 $$ n(0,t) = \int_{0}^{\infty} b(a) n(a,t) da $$
 
-Here, $b(a)$ is the per-capita birth rate for an individual of age $a$. We can picture the population as a "river" flowing along the age axis. The flow at the source, $n(0,t)$, is fed by countless small tributaries, each representing the contribution from a different age group. It is a beautiful, self-consistent picture of population renewal .
+Here, $b(a)$ is the per-capita birth rate for an individual of age $a$. We can picture the population as a "river" flowing along the age axis. The flow at the source, $n(0,t)$, is fed by countless small tributaries, each representing the contribution from a different age group. It is a beautiful, self-consistent picture of population renewal [@problem_id:5262957].
 
 #### Integral Projection Models: The Grand Unification
 
 The McKendrick-von Foerster equation masterfully handles continuous age. But what if the key trait is size, $z$, where individuals can grow, stay the same size (stasis), or even shrink? The one-way street of age no longer applies.
 
-This calls for an even more general framework: the **Integral Projection Model (IPM)**. It takes the core logic of the Leslie matrix and elevates it to the continuous world . The state of the population is now a continuous size distribution, $\phi(z,t)$, and the projection to the next time step is done with an [integral operator](@entry_id:147512):
+This calls for an even more general framework: the **Integral Projection Model (IPM)**. It takes the core logic of the Leslie matrix and elevates it to the continuous world [@problem_id:3908631]. The state of the population is now a continuous size distribution, $\phi(z,t)$, and the projection to the next time step is done with an [integral operator](@keyword=integral_operator|lang=en-US|style=Feynman):
 
 $$ \phi(z', t+1) = \int K(z',z) \phi(z,t) dz $$
 
@@ -104,6 +104,6 @@ Just like the Leslie matrix, we can understand the kernel by breaking it into it
 
 $$ K(z',z) = P(z',z) + F(z',z) $$
 
-Here, $P(z',z) = s(z)g(z'|z)$ is the **survival-and-growth** part. An individual of size $z$ survives with probability $s(z)$, and *given* it survives, it grows to size $z'$ with a probability density $g(z'|z)$. The term $F(z',z) = f(z)c(z'|z)$ is the **[fecundity](@entry_id:181291)** part. An individual of size $z$ produces an average of $f(z)$ offspring, whose sizes are distributed according to the probability density $c(z'|z)$.
+Here, $P(z',z) = s(z)g(z'|z)$ is the **survival-and-growth** part. An individual of size $z$ survives with probability $s(z)$, and *given* it survives, it grows to size $z'$ with a probability density $g(z'|z)$. The term $F(z',z) = f(z)c(z'|z)$ is the **[fecundity](@keyword=fecundity|lang=en-US|style=Feynman)** part. An individual of size $z$ produces an average of $f(z)$ offspring, whose sizes are distributed according to the probability density $c(z'|z)$.
 
-This framework is remarkably powerful. It unifies discrete [matrix models](@entry_id:148799) and continuous PDE approaches under a single conceptual umbrella. The fundamental principle is always the same: a meticulous accounting of survival, state transition, and reproduction. Whether we use a matrix for discrete ages, a PDE for continuous age, or an [integral operator](@entry_id:147512) for continuous size, we are simply applying this same beautiful logic to describe the grand, structured dance of life.
+This framework is remarkably powerful. It unifies discrete [matrix models](@keyword=matrix_models|lang=en-US|style=Feynman) and continuous PDE approaches under a single conceptual umbrella. The fundamental principle is always the same: a meticulous accounting of survival, state transition, and reproduction. Whether we use a matrix for discrete ages, a PDE for continuous age, or an [integral operator](@keyword=integral_operator|lang=en-US|style=Feynman) for continuous size, we are simply applying this same beautiful logic to describe the grand, structured dance of life.

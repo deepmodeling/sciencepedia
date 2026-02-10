@@ -13,15 +13,15 @@ Before we can interpret a test result, we must understand the test's own inheren
 
 $$ \text{Sensitivity} = P(T^+ | D) $$
 
-A test with 95% sensitivity will correctly flag 95 out of every 100 people who are truly sick. It's the "fire-spotting" ability of our smoke detector.  
+A test with 95% sensitivity will correctly flag 95 out of every 100 people who are truly sick. It's the "fire-spotting" ability of our smoke detector. [@problem_id:4450584] [@problem_id:4332248]
 
 **Specificity**, on the other hand, is the test's ability to correctly identify those who are healthy. It answers the question: "If a person does *not* have the disease, what is the probability the test will be negative?" This is the true negative rate. Using $D^c$ for no disease and $T^-$ for a negative test:
 
 $$ \text{Specificity} = P(T^- | D^c) $$
 
-A test with 99% specificity will correctly give a negative result to 99 out of every 100 healthy people. This is our smoke detector's ability to ignore the burnt toast. The complement of specificity, $1 - \text{Specificity} = P(T^+ | D^c)$, gives us the **[false positive rate](@entry_id:636147)**—the probability that a healthy person will incorrectly test positive.
+A test with 99% specificity will correctly give a negative result to 99 out of every 100 healthy people. This is our smoke detector's ability to ignore the burnt toast. The complement of specificity, $1 - \text{Specificity} = P(T^+ | D^c)$, gives us the **[false positive rate](@keyword=false_positive_rate|lang=en-US|style=Feynman)**—the probability that a healthy person will incorrectly test positive.
 
-It is crucial to see that both sensitivity and specificity are conditioned on the true disease status. They are intrinsic properties of the assay's technology and chemistry. They do not depend on how rare or common the disease is in the population being tested. Confusing $P(T^+ | D)$ with $P(D | T^+)$ is a common but profound error—the probability of a positive test given disease is not the same as the probability of disease given a positive test. To get the latter, we are missing one critical ingredient. 
+It is crucial to see that both sensitivity and specificity are conditioned on the true disease status. They are intrinsic properties of the assay's technology and chemistry. They do not depend on how rare or common the disease is in the population being tested. Confusing $P(T^+ | D)$ with $P(D | T^+)$ is a common but profound error—the probability of a positive test given disease is not the same as the probability of disease given a positive test. To get the latter, we are missing one critical ingredient. [@problem_id:4450584]
 
 ### The Missing Ingredient: How Common is the Disease?
 
@@ -30,7 +30,7 @@ The piece of information that bridges the gap between the test's intrinsic prope
 Why does this matter? Let’s use a thought experiment. Imagine a new test for a disease that is extremely rare, say, affecting 1 in 10,000 people. The test is excellent, with 99% sensitivity and 99% specificity. This means its false positive rate is $1 - 0.99 = 0.01$, or 1%. Now let's screen one million people.
 
 -   **Sick People:** With a prevalence of 1 in 10,000, we expect 100 people in this group to have the disease. With 99% sensitivity, the test will correctly identify 99 of them (True Positives).
--   **Healthy People:** The remaining 999,900 people are healthy. With a 1% [false positive rate](@entry_id:636147), the test will incorrectly flag $0.01 \times 999,900 \approx 9,999$ of them (False Positives).
+-   **Healthy People:** The remaining 999,900 people are healthy. With a 1% [false positive rate](@keyword=false_positive_rate|lang=en-US|style=Feynman), the test will incorrectly flag $0.01 \times 999,900 \approx 9,999$ of them (False Positives).
 
 Now, if you get a positive test, what group are you in? There are a total of $99 + 9,999 \approx 10,098$ positive tests. Only 99 of them are true. Your chance of actually having the disease is $\frac{99}{10,098}$, which is less than 1%!
 
@@ -44,11 +44,11 @@ This formula elegantly unites the three key pieces of information: the test's tw
 
 The strong dependence of PPV on prevalence has profound and often non-intuitive consequences that are critical in medicine, public health, and even machine learning.
 
-Consider a diagnostic test with a very good sensitivity of $0.95$ and specificity of $0.99$. If this test is used in a high-risk clinic where the disease prevalence is $20\%$, the PPV is a very confidence-inspiring $96\%$. A positive test almost certainly means you have the disease. However, take that exact same test and use it in a low-risk, general population screening program where the prevalence is only $1\%$. The PPV plummets to a mere $49\%$. A positive result is now slightly more likely to be a false alarm than a true diagnosis.  This phenomenon, where a test's predictive power changes dramatically based on the population, is a fundamental challenge.
+Consider a diagnostic test with a very good sensitivity of $0.95$ and specificity of $0.99$. If this test is used in a high-risk clinic where the disease prevalence is $20\%$, the PPV is a very confidence-inspiring $96\%$. A positive test almost certainly means you have the disease. However, take that exact same test and use it in a low-risk, general population screening program where the prevalence is only $1\%$. The PPV plummets to a mere $49\%$. A positive result is now slightly more likely to be a false alarm than a true diagnosis. [@problem_id:4450584] This phenomenon, where a test's predictive power changes dramatically based on the population, is a fundamental challenge.
 
-This isn't just a theoretical curiosity; it has massive real-world implications. For instance, an Artificial Intelligence (AI) classifier for cancer detection might be trained and validated at a major referral hospital, where the prevalence of cancer among the reviewed slides is high (e.g., $20\%$). It may achieve an impressive PPV of $66\%$. But if this successful AI is then deployed to a community screening program where the prevalence is only $5\%$, its PPV will drop to just $29\%$. Suddenly, pathologists using the AI find themselves reviewing a deluge of false positives, undermining the very efficiency the tool was meant to create. The AI didn't get "dumber"; the context it was operating in simply changed. 
+This isn't just a theoretical curiosity; it has massive real-world implications. For instance, an Artificial Intelligence (AI) classifier for cancer detection might be trained and validated at a major referral hospital, where the prevalence of cancer among the reviewed slides is high (e.g., $20\%$). It may achieve an impressive PPV of $66\%$. But if this successful AI is then deployed to a community screening program where the prevalence is only $5\%$, its PPV will drop to just $29\%$. Suddenly, pathologists using the AI find themselves reviewing a deluge of false positives, undermining the very efficiency the tool was meant to create. The AI didn't get "dumber"; the context it was operating in simply changed. [@problem_id:4352839]
 
-This also forms the basis for stratified medicine. Instead of a "one-size-fits-all" approach, we can use a patient's risk factors to estimate their individual pre-test probability. For the same test, a positive result for a high-risk individual (say, with prevalence $15\%$) might yield a PPV of nearly $80\%$, while for a low-risk individual (prevalence $3\%$), the PPV could be as low as $40\%$. 
+This also forms the basis for stratified medicine. Instead of a "one-size-fits-all" approach, we can use a patient's risk factors to estimate their individual pre-test probability. For the same test, a positive result for a high-risk individual (say, with prevalence $15\%$) might yield a PPV of nearly $80\%$, while for a low-risk individual (prevalence $3\%$), the PPV could be as low as $40\%$. [@problem_id:4623697]
 
 ### A More Dynamic View: Likelihood Ratios
 
@@ -60,7 +60,7 @@ The beauty of the LR is that it allows us to update our belief using a simple mu
 
 $$ \text{Post-test Odds} = \text{Pre-test Odds} \times \text{Likelihood Ratio} $$
 
-Consider a test with an $\text{LR}^+ = 6$. For a high-risk patient with a pre-test probability of $0.20$ (odds of $0.25$), a positive test yields post-test odds of $0.25 \times 6 = 1.5$, which translates back to a post-test probability (PPV) of $0.60$. For a low-risk patient with a pre-test probability of $0.02$ (odds of about $0.0204$), the same positive result from the same test yields post-test odds of only $0.0204 \times 6 \approx 0.122$, a PPV of just $0.1091$.  The test provides the same "strength of evidence" (the LR multiplier), but the final conclusion is firmly anchored to the starting point.
+Consider a test with an $\text{LR}^+ = 6$. For a high-risk patient with a pre-test probability of $0.20$ (odds of $0.25$), a positive test yields post-test odds of $0.25 \times 6 = 1.5$, which translates back to a post-test probability (PPV) of $0.60$. For a low-risk patient with a pre-test probability of $0.02$ (odds of about $0.0204$), the same positive result from the same test yields post-test odds of only $0.0204 \times 6 \approx 0.122$, a PPV of just $0.1091$. [@problem_id:4557310] The test provides the same "strength of evidence" (the LR multiplier), but the final conclusion is firmly anchored to the starting point.
 
 ### From Prediction to Policy: Engineering a Better Test
 
@@ -70,8 +70,8 @@ Given this policy and a test with a fixed sensitivity (e.g., $0.95$), we can ask
 
 $$ \text{Specificity} \ge \frac{1 - 9.55p}{1 - p} $$
 
-For a disease with a prevalence of 1 in 10,000 ($p=0.0001$), this formula demands a specificity of at least $0.99914$. For a prevalence of 1 in 100,000 ($p=0.00001$), the required specificity jumps to $0.999914$. To achieve even a modest 10% PPV for rare diseases, we need tests with near-perfect specificity. This mathematical reality drives the relentless pursuit of better diagnostic technologies. 
+For a disease with a prevalence of 1 in 10,000 ($p=0.0001$), this formula demands a specificity of at least $0.99914$. For a prevalence of 1 in 100,000 ($p=0.00001$), the required specificity jumps to $0.999914$. To achieve even a modest 10% PPV for rare diseases, we need tests with near-perfect specificity. This mathematical reality drives the relentless pursuit of better diagnostic technologies. [@problem_id:4363902]
 
-This interplay also explains why we sometimes choose a test with lower sensitivity if its specificity is much higher. Consider a scenario with two possible test thresholds: one with high sensitivity ($0.95$) but mediocre specificity ($0.90$), and another with lower sensitivity ($0.80$) but excellent specificity ($0.99$). In a setting where the cost of a false positive (anxiety, unnecessary procedures) is much higher than the cost of a false negative, the second threshold is far superior. Despite catching fewer true cases, its much higher PPV ($81\%$ vs $33\%$) means it generates far fewer costly false alarms, making it the more rational choice both economically and ethically. When the cost of being wrong in one direction is high, we must favor the metric—in this case **precision**, another name for PPV—that best guards against that error. 
+This interplay also explains why we sometimes choose a test with lower sensitivity if its specificity is much higher. Consider a scenario with two possible test thresholds: one with high sensitivity ($0.95$) but mediocre specificity ($0.90$), and another with lower sensitivity ($0.80$) but excellent specificity ($0.99$). In a setting where the cost of a false positive (anxiety, unnecessary procedures) is much higher than the cost of a false negative, the second threshold is far superior. Despite catching fewer true cases, its much higher PPV ($81\%$ vs $33\%$) means it generates far fewer costly false alarms, making it the more rational choice both economically and ethically. When the cost of being wrong in one direction is high, we must favor the metric—in this case **precision**, another name for PPV—that best guards against that error. [@problem_id:4561214]
 
 The Positive Predictive Value is therefore more than just a formula. It is the nexus where technology, probability, and human values meet. It teaches us that in a world of uncertainty, the answer to a question almost always depends on the information we had before we even asked.

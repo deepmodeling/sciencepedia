@@ -1,7 +1,7 @@
 ## Introduction
 In the study of probability, fully describing a random outcome requires more than one perspective. While it's intuitive to ask for the probability of a single, specific event, many real-world questions revolve around ranges of outcomes—'at most,' 'at least,' or 'between' certain values. Understanding how to navigate between these point-specific and cumulative viewpoints is a crucial skill for anyone working with uncertainty.
 
-This article demystifies the two primary tools for this task: the Probability Mass Function (PMF) and the Cumulative Distribution Function (CDF). We examine how these two functions provide different but complementary descriptions of the same underlying [random process](@article_id:269111). The article aims to bridge the gap between their definitions and their practical application, showing that the ability to switch between them is a powerful problem-solving technique.
+This article demystifies the two primary tools for this task: the Probability Mass Function (PMF) and the Cumulative Distribution Function (CDF). We examine how these two functions provide different but complementary descriptions of the same underlying [random process](@keyword=random_process|lang=en-US|style=Feynman). The article aims to bridge the gap between their definitions and their practical application, showing that the ability to switch between them is a powerful problem-solving technique.
 
 In the first section, "Principles and Mechanisms," we will explore the formal definitions of PMF and CDF, visualizing their relationship as a staircase and showing the simple arithmetic that connects them. Following this, the "Applications and Interdisciplinary Connections" section will demonstrate how this conceptual duality is not just a theoretical nicety but a powerful problem-solving technique applied in engineering, finance, and the core of scientific inference.
 
@@ -43,7 +43,7 @@ This is our "city-by-city" list, the PMF. Now, let's build the "running total" l
 - When we reach $y=1.5$, we pick up another chunk of probability. For any $y$ from $1.5$ up to (but not including) $2.5$, the total accumulated probability is $P(Y=0.5) + P(Y=1.5) = \frac{1}{3} + \frac{1}{3} = \frac{2}{3}$.
 - Finally, once we reach $y=2.5$, we gather the last piece. For any $y \ge 2.5$, we have passed all possible outcomes, so the total probability must be 1.
 
-If you plot this CDF, you get a beautiful **[staircase function](@article_id:183024)**. It's flat, then it *jumps* up, is flat again, jumps again, until it reaches the top floor at a height of 1. This visualization is key: **the CDF of a discrete variable is a staircase, and the height of each step is exactly the probability mass (the PMF value) at that point** .
+If you plot this CDF, you get a beautiful **[staircase function](@keyword=staircase_function|lang=en-US|style=Feynman)**. It's flat, then it *jumps* up, is flat again, jumps again, until it reaches the top floor at a height of 1. This visualization is key: **the CDF of a discrete variable is a staircase, and the height of each step is exactly the probability mass (the PMF value) at that point** [@problem_id:1294979].
 
 ### Deconstructing the Staircase: From CDF to PMF
 
@@ -51,7 +51,7 @@ This leads to a wonderfully simple and profound conclusion. If the height of eac
 
 Of course! It's just simple subtraction.
 
-Imagine a professor provides the CDF for student scores on a quiz, where scores can be integers from 1 to 5 . They tell you that $F_X(3) = P(X \le 3) = 0.75$ and $F_X(2) = P(X \le 2) = 0.40$. How can we find the probability of scoring *exactly* 3, i.e., $P(X=3)$?
+Imagine a professor provides the CDF for student scores on a quiz, where scores can be integers from 1 to 5 [@problem_id:1355137]. They tell you that $F_X(3) = P(X \le 3) = 0.75$ and $F_X(2) = P(X \le 2) = 0.40$. How can we find the probability of scoring *exactly* 3, i.e., $P(X=3)$?
 
 The logic is airtight. The event "the score is less than or equal to 3" is composed of two non-overlapping parts: the event "the score is less than or equal to 2" and the event "the score is exactly 3". Therefore, their probabilities must add up:
 $$ P(X \le 3) = P(X \le 2) + P(X=3) $$
@@ -59,17 +59,17 @@ Rearranging this gives us our prize:
 $$ P(X=3) = F_X(3) - F_X(2) $$
 Plugging in the numbers gives $P(X=3) = 0.75 - 0.40 = 0.35$.
 
-This isn't just a one-off trick; it's the fundamental relationship. For any [discrete random variable](@article_id:262966) $X$ taking integer values, the probability of it being exactly $k$ is the jump in the CDF at that point:
+This isn't just a one-off trick; it's the fundamental relationship. For any [discrete random variable](@keyword=discrete_random_variable|lang=en-US|style=Feynman) $X$ taking integer values, the probability of it being exactly $k$ is the jump in the CDF at that point:
 $$ p_X(k) = F_X(k) - F_X(k-1) $$
-This single, elegant idea can be applied everywhere. It doesn't matter if we're talking about student quiz scores, the number of active channels in a cellular network , or symbols being generated by a computer source  . The principle remains the same: the PMF is found in the jumps of the CDF.
+This single, elegant idea can be applied everywhere. It doesn't matter if we're talking about student quiz scores, the number of active channels in a cellular network [@problem_id:1294981], or symbols being generated by a computer source [@problem_id:1615427] [@problem_id:4294]. The principle remains the same: the PMF is found in the jumps of the CDF.
 
 ### The Power of Generality: From Steps to Formulas
 
 So far, our CDFs have been defined "piecewise," like a set of instructions. But what if the CDF is given by a single, slick mathematical formula? Does our method of finding the jumps still work?
 
-You bet it does! This is where the true beauty and power of the idea shines. Let's say a certain [random process](@article_id:269111) is described by the following CDF for any non-negative integer $k$:
+You bet it does! This is where the true beauty and power of the idea shines. Let's say a certain [random process](@keyword=random_process|lang=en-US|style=Feynman) is described by the following CDF for any non-negative integer $k$:
 $$ F(k) = 1 - \frac{1}{k+a} $$
-where $a$ is just some constant greater than 1 . The function doesn't look like a staircase at first glance, but it is—it's just described more compactly.
+where $a$ is just some constant greater than 1 [@problem_id:14355]. The function doesn't look like a staircase at first glance, but it is—it's just described more compactly.
 
 How do we find the probability mass at, say, $k=2$? We apply the exact same logic. We need to find the size of the jump at 2.
 $p(2) = F(2) - F(1)$
@@ -77,6 +77,6 @@ We just plug our formula in:
 $$ p(2) = \left(1 - \frac{1}{2+a}\right) - \left(1 - \frac{1}{1+a}\right) $$
 A little bit of algebra, and a beautiful simplification occurs:
 $$ p(2) = 1 - \frac{1}{a+2} - 1 + \frac{1}{a+1} = \frac{1}{a+1} - \frac{1}{a+2} = \frac{(a+2) - (a+1)}{(a+1)(a+2)} = \frac{1}{(a+1)(a+2)} $$
-Look at that! The same simple subtraction revealed the hidden probability mass. This principle is so powerful that we can use it to derive a general formula for the *entire* PMF. Whether the CDF is given by powers like $\frac{(k+1)^a}{(N+1)^a}$  or involves more exotic functions like the [floor function](@article_id:264879) , the method is unwavering: $p_X(k) = F_X(k) - F_X(k-1)$.
+Look at that! The same simple subtraction revealed the hidden probability mass. This principle is so powerful that we can use it to derive a general formula for the *entire* PMF. Whether the CDF is given by powers like $\frac{(k+1)^a}{(N+1)^a}$ [@problem_id:4321] or involves more exotic functions like the [floor function](@keyword=floor_function|lang=en-US|style=Feynman) [@problem_id:4288], the method is unwavering: $p_X(k) = F_X(k) - F_X(k-1)$.
 
 This journey, from counting outcomes of a die roll to applying a universal algebraic rule, reveals a deep unity. The PMF and CDF are two different languages for telling the same story about uncertainty. And the translation between them is always just a matter of addition or subtraction. Knowing this doesn't just help you solve problems—it gives you a deeper, more intuitive feel for the structure of probability itself.

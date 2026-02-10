@@ -4,4 +4,4 @@ Now that we have acquainted ourselves with the principles governing a charged pa
 
 ### A Ruler for the Cosmos: From Our Atmosphere to Interstellar Space
 
-Let's begin close to home, in the upper reaches of our own atmosphere. When the [solar wind](@article_id:194084), a stream of charged particles from the Sun, collides with the Earth's magnetic field, some of these particles are funneled towards the poles. There, they strike atoms and molecules like nitrogen and oxygen, causing them to glow in the breathtaking spectacle of the aurora. The Larmor radius dictates the fine details of this process.
+Let's begin close to home, in the upper reaches of our own atmosphere. When the [solar wind](@keyword=solar_wind|lang=en-US|style=Feynman), a stream of charged particles from the Sun, collides with the Earth's magnetic field, some of these particles are funneled towards the poles. There, they strike atoms and molecules like nitrogen and oxygen, causing them to glow in the breathtaking spectacle of the aurora. The Larmor radius dictates the fine details of this process.

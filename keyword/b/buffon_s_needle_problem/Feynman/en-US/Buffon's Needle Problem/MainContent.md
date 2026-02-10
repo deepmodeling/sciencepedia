@@ -5,7 +5,7 @@ This article explores how a game of chance can become a tool for calculation and
 
 ## Principles and Mechanisms
 
-So, we have a needle, a floor with [parallel lines](@article_id:168513), and a healthy dose of randomness. It sounds like the setup for a game of chance, and in many ways, it is. But is it *all* chance? Or is there an underlying order, a set of rules that governs the outcome even in this chaos? The moment we begin to dissect this simple-sounding problem, we find ourselves on a delightful journey into the heart of geometry, probability, and calculus, discovering surprising connections along the way.
+So, we have a needle, a floor with [parallel lines](@keyword=parallel_lines|lang=en-US|style=Feynman), and a healthy dose of randomness. It sounds like the setup for a game of chance, and in many ways, it is. But is it *all* chance? Or is there an underlying order, a set of rules that governs the outcome even in this chaos? The moment we begin to dissect this simple-sounding problem, we find ourselves on a delightful journey into the heart of geometry, probability, and calculus, discovering surprising connections along the way.
 
 ### The Anatomy of a Random Drop
 
@@ -21,7 +21,7 @@ So, the seemingly infinite complexity of a random drop collapses into just two n
 
 Now for the main event: when does the needle actually cross a line? Let's picture a needle of length $L$. For this basic case, we'll assume the needle is shorter than the line spacing, so $L \lt D$. This prevents the needle from crossing two lines at once and keeps things simple.
 
-Fix the angle $\phi$. The needle's length projected onto the vertical direction—its "height," if you will—is $L \sin(\phi)$. If the needle's center is at a distance $y$ from the nearest line, its tips extend a vertical distance of $\frac{L}{2} \sin(\phi)$ above and below its center. The needle will touch or cross the line if this distance is greater than or equal to the center's distance from the line. In the language of mathematics, the condition for a crossing is beautifully simple :
+Fix the angle $\phi$. The needle's length projected onto the vertical direction—its "height," if you will—is $L \sin(\phi)$. If the needle's center is at a distance $y$ from the nearest line, its tips extend a vertical distance of $\frac{L}{2} \sin(\phi)$ above and below its center. The needle will touch or cross the line if this distance is greater than or equal to the center's distance from the line. In the language of mathematics, the condition for a crossing is beautifully simple [@problem_id:1420051]:
 
 $$
 y \le \frac{L}{2} \sin(\phi)
@@ -55,13 +55,13 @@ By rearranging the formula, we get an estimate for $\pi$:
 $$
 \pi \approx \frac{2L}{D \cdot \bar{X}_n}
 $$
-Now, this method is famously inefficient. To get even a couple of decimal places of $\pi$ with any confidence, you'd need a staggering number of trials. For example, for a needle of length 5 on lines 10 units apart, to be 95% sure your estimate is within 0.01 of the true probability, you would need over 43,000 simulated drops !
+Now, this method is famously inefficient. To get even a couple of decimal places of $\pi$ with any confidence, you'd need a staggering number of trials. For example, for a needle of length 5 on lines 10 units apart, to be 95% sure your estimate is within 0.01 of the true probability, you would need over 43,000 simulated drops [@problem_id:1345701]!
 
-This process of generating random candidates and checking if they satisfy a condition ties Buffon's problem to a modern computational technique called **[acceptance-rejection sampling](@article_id:137701)**. Imagine you want to generate random numbers that follow a certain weird probability distribution. A common trick is to generate simple random numbers (like our uniform $\phi$ and $y$) and then "accept" them with a probability that sculpts them into the desired distribution. In our case, the intersection event itself acts as the "acceptance" rule, providing a physical model for this abstract algorithm . It's a beautiful confluence of 18th-century geometry and 21st-century computational science.
+This process of generating random candidates and checking if they satisfy a condition ties Buffon's problem to a modern computational technique called **[acceptance-rejection sampling](@keyword=acceptance_rejection_sampling|lang=en-US|style=Feynman)**. Imagine you want to generate random numbers that follow a certain weird probability distribution. A common trick is to generate simple random numbers (like our uniform $\phi$ and $y$) and then "accept" them with a probability that sculpts them into the desired distribution. In our case, the intersection event itself acts as the "acceptance" rule, providing a physical model for this abstract algorithm [@problem_id:2370821]. It's a beautiful confluence of 18th-century geometry and 21st-century computational science.
 
 ### The Elegance of Expectation: Generalizing the Game
 
-What if we make the problem more complicated? What if, instead of a single needle of length $L$, we have a whole bucket of needles of different lengths, and we pick one at random before each drop? For instance, suppose the length $L$ is a random variable, uniformly chosen from the interval $[0, 2D]$ . Calculating the probability of a cross directly becomes a much hairier integral.
+What if we make the problem more complicated? What if, instead of a single needle of length $L$, we have a whole bucket of needles of different lengths, and we pick one at random before each drop? For instance, suppose the length $L$ is a random variable, uniformly chosen from the interval $[0, 2D]$ [@problem_id:1928889]. Calculating the probability of a cross directly becomes a much hairier integral.
 
 This is where a change of perspective, a classic physicist's trick, reveals a path of stunning simplicity. Instead of asking for the *probability* of a crossing, let's ask for the **expected number** of crossings, denoted $\mathbb{E}[N]$. For a needle with $L \lt D$, the number of crossings is either 0 or 1, so the expected number is just the probability of crossing. But the concept of expectation is more powerful. A wonderful generalization of Buffon's puzzle (sometimes called Buffon's "noodle" problem) states that for *any* curve of length $L$, the expected number of lines it crosses is $\frac{2L}{\pi D}$.
 
@@ -77,15 +77,15 @@ This is an incredibly powerful result! The overall average number of crossings d
 $$
 \mathbb{E}[N] = \frac{2}{\pi D} \cdot D = \frac{2}{\pi}
 $$
-The parameter $D$ vanishes completely! The result is a pure, universal number. This is the power of asking the right question. By shifting from probability to expectation, a complicated problem became shockingly simple. This same powerful idea of averaging allows us to tackle other variations, like dropping a needle of fixed length onto a grid where the line spacing $D$ is random , or even changing the object from a needle to a disk whose radius is random . The core mechanism—averaging a simple geometric rule over some distribution—remains the unifying principle.
+The parameter $D$ vanishes completely! The result is a pure, universal number. This is the power of asking the right question. By shifting from probability to expectation, a complicated problem became shockingly simple. This same powerful idea of averaging allows us to tackle other variations, like dropping a needle of fixed length onto a grid where the line spacing $D$ is random [@problem_id:785484], or even changing the object from a needle to a disk whose radius is random [@problem_id:749240]. The core mechanism—averaging a simple geometric rule over some distribution—remains the unifying principle.
 
 ### A World of "What Ifs": The Power of Conditioning
 
 Finally, let's ask one more, subtler question. We know the overall probability of a cross. But what can we say about the situation *given that a cross has already happened*? This is the world of **conditional probability**. We're no longer looking at the entire map of possibilities, but shrinking our universe to just the "winning territory."
 
-For instance, what is the average distance from the center to the line, $y$, for those needles that *do* cross? Intuitively, it must be smaller than the overall average distance of $D/4$, since being close to the line is a prerequisite for crossing. But how much smaller? A careful calculation, which involves averaging the value of $y$ only over the "crossing" region of our map, gives a specific, elegant answer :
+For instance, what is the average distance from the center to the line, $y$, for those needles that *do* cross? Intuitively, it must be smaller than the overall average distance of $D/4$, since being close to the line is a prerequisite for crossing. But how much smaller? A careful calculation, which involves averaging the value of $y$ only over the "crossing" region of our map, gives a specific, elegant answer [@problem_id:1350519]:
 
 $$
 \mathbb{E}[Y | \text{A cross occurred}] = \frac{\pi L}{16}
 $$
-This kind of question demonstrates the true depth of [probabilistic reasoning](@article_id:272803). It's not just about predicting an outcome, but about updating our knowledge based on new information. Learning that a needle crossed a line isn't just a yes/no fact; it fundamentally changes the probabilities of its position and orientation, painting a more refined picture of its state. From a simple game of chance, we have uncovered a rich tapestry of mathematical principles that connect geometry, calculus, and the very way we reason about uncertainty.
+This kind of question demonstrates the true depth of [probabilistic reasoning](@keyword=probabilistic_reasoning|lang=en-US|style=Feynman). It's not just about predicting an outcome, but about updating our knowledge based on new information. Learning that a needle crossed a line isn't just a yes/no fact; it fundamentally changes the probabilities of its position and orientation, painting a more refined picture of its state. From a simple game of chance, we have uncovered a rich tapestry of mathematical principles that connect geometry, calculus, and the very way we reason about uncertainty.

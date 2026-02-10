@@ -4,7 +4,7 @@ Many systems in science and engineering cannot be described by dynamic laws of m
 This article introduces Differential-Algebraic Equations (DAEs), the mathematical language designed to model such constrained systems. By reading, you will gain a comprehensive understanding of what DAEs are and why they are essential. The following chapters will guide you through this powerful topic:
 
 - **Principles and Mechanisms** delves into the core theory, defining DAEs, explaining the crucial concept of the differential index, and uncovering the numerical challenges associated with solving these complex systems.
-- **Applications and Interdisciplinary Connections** explores the vast utility of DAEs, showcasing how they are used to model real-world phenomena in mechanics, [robotics](@article_id:150129), control theory, electrical engineering, and even [systems biology](@article_id:148055).
+- **Applications and Interdisciplinary Connections** explores the vast utility of DAEs, showcasing how they are used to model real-world phenomena in mechanics, [robotics](@keyword=robotics|lang=en-US|style=Feynman), control theory, electrical engineering, and even [systems biology](@keyword=systems_biology|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
@@ -14,7 +14,7 @@ The first kind of law tells you about change. It says, "If you are in *this* sta
 
 But there's a second kind of law. This law doesn't talk about the future; it talks about the *now*. It says, "Regardless of what happened before or what will happen next, your state *must*, at this very moment, satisfy this condition." This is an algebraic constraint. Think of a train on a track. The differential equations might describe its engine power and braking, but the algebraic constraint is simple: the train is *on the track*. It can't suddenly be in the field next to it.
 
-An Ordinary Differential Equation (ODE) system is a world with only the first kind of law. A **Differential-Algebraic Equation (DAE)** system is a world that has both. It’s a mixture of rules about *becoming* and rules about *being*. This mix makes DAEs the natural language for describing a vast range of real-world systems, from the intricate dance of components in an electrical circuit to the constrained motion of a robotic arm .
+An Ordinary Differential Equation (ODE) system is a world with only the first kind of law. A **Differential-Algebraic Equation (DAE)** system is a world that has both. It’s a mixture of rules about *becoming* and rules about *being*. This mix makes DAEs the natural language for describing a vast range of real-world systems, from the intricate dance of components in an electrical circuit to the constrained motion of a robotic arm [@problem_id:1690771].
 
 ### The Index: A Measure of Hidden Complexity
 
@@ -29,13 +29,13 @@ $$
 \mathbf{0} &= \mathbf{g}(\mathbf{x}, \mathbf{z})
 \end{align*}
 $$
-Here, $\mathbf{x}$ are the "differential variables" (whose derivatives we know) and $\mathbf{z}$ are the "algebraic variables" (which seem to be along for the ride). In a linear index-1 system like the one explored in question , the constraint might be $\mathbf{0} = C\mathbf{x} + D\mathbf{z}$. If the matrix $D$ is invertible, we can simply rearrange the equation to solve for $\mathbf{z}$ directly: $\mathbf{z} = -D^{-1}C\mathbf{x}$.
+Here, $\mathbf{x}$ are the "differential variables" (whose derivatives we know) and $\mathbf{z}$ are the "algebraic variables" (which seem to be along for the ride). In a linear index-1 system like the one explored in question [@problem_id:439389], the constraint might be $\mathbf{0} = C\mathbf{x} + D\mathbf{z}$. If the matrix $D$ is invertible, we can simply rearrange the equation to solve for $\mathbf{z}$ directly: $\mathbf{z} = -D^{-1}C\mathbf{x}$.
 
-It's like having a puzzle where one piece is just sitting there, waiting to be slotted in. Once you solve for $\mathbf{z}$ in terms of $\mathbf{x}$, you can substitute it back into the differential part, and poof! The whole system collapses into a standard, comfortable ODE: $\dot{\mathbf{x}} = (A - BD^{-1}C)\mathbf{x}$. The algebraic variable was just a shorthand for a more complex expression involving the differential variables. In the general nonlinear case, this is possible as long as the Jacobian matrix $\frac{\partial \mathbf{g}}{\partial \mathbf{z}}$ is nonsingular (invertible), allowing us to use the Implicit Function Theorem to do the same trick . Life is good.
+It's like having a puzzle where one piece is just sitting there, waiting to be slotted in. Once you solve for $\mathbf{z}$ in terms of $\mathbf{x}$, you can substitute it back into the differential part, and poof! The whole system collapses into a standard, comfortable ODE: $\dot{\mathbf{x}} = (A - BD^{-1}C)\mathbf{x}$. The algebraic variable was just a shorthand for a more complex expression involving the differential variables. In the general nonlinear case, this is possible as long as the Jacobian matrix $\frac{\partial \mathbf{g}}{\partial \mathbf{z}}$ is nonsingular (invertible), allowing us to use the Implicit Function Theorem to do the same trick [@problem_id:2431421]. Life is good.
 
 #### Index-2 and Beyond: The Detective Story
 
-But what happens if the constraint equation doesn't even contain the algebraic variable $\mathbf{z}$? Consider the system from problem :
+But what happens if the constraint equation doesn't even contain the algebraic variable $\mathbf{z}$? Consider the system from problem [@problem_id:2865897]:
 $$
 \begin{cases}
 \dot{x}(t) = z(t) + u(t) \\
@@ -60,7 +60,7 @@ $$
 $$
 It took us **two** differentiations of the original algebraic constraint to arrive at a full ODE system (one for $\dot{x}$, one for $\dot{z}$). That's why this system is **index-2**.
 
-This can get even more complex. In problem , by setting a parameter $\alpha$ to zero, a system is constructed that requires three full differentiations to unravel, making it **index-3**. Each differentiation peels back a layer of the system, revealing a new, "hidden" constraint that was an implicit consequence of the original rules. For instance, in our index-2 example, $z(t) = -u(t)$ is a hidden constraint. It wasn't written in the original laws, but it was an unavoidable consequence of them. Even in [nonlinear systems](@article_id:167853), this principle holds, as seen in problem , where differentiating the geometric constraint $x^2 + y^2 = 1$ is the only way to relate the system's variables.
+This can get even more complex. In problem [@problem_id:1128776], by setting a parameter $\alpha$ to zero, a system is constructed that requires three full differentiations to unravel, making it **index-3**. Each differentiation peels back a layer of the system, revealing a new, "hidden" constraint that was an implicit consequence of the original rules. For instance, in our index-2 example, $z(t) = -u(t)$ is a hidden constraint. It wasn't written in the original laws, but it was an unavoidable consequence of them. Even in [nonlinear systems](@keyword=nonlinear_systems|lang=en-US|style=Feynman), this principle holds, as seen in problem [@problem_id:439385], where differentiating the geometric constraint $x^2 + y^2 = 1$ is the only way to relate the system's variables.
 
 ### The Price of Constraints: Traps and Allergies
 
@@ -70,15 +70,15 @@ So, why does this index number matter so much? Because a high index doesn't just
 
 With a standard ODE, say $\dot{x} = -x$, you can start your system anywhere you like. Pick any $x(0)$ and the laws of the system will happily tell you where to go from there. With DAEs, you lose this freedom. Your starting point must respect the constraints.
 
-For an index-1 system, this is straightforward: the initial state $(\mathbf{x}_0, \mathbf{z}_0)$ must simply satisfy the explicit algebraic rule, $\mathbf{g}(\mathbf{x}_0, \mathbf{z}_0) = \mathbf{0}$ .
+For an index-1 system, this is straightforward: the initial state $(\mathbf{x}_0, \mathbf{z}_0)$ must simply satisfy the explicit algebraic rule, $\mathbf{g}(\mathbf{x}_0, \mathbf{z}_0) = \mathbf{0}$ [@problem_id:439686].
 
-But for a higher-index system, you're in a minefield. You must not only satisfy the given constraint, but also all the *hidden* constraints you uncovered during your detective work! In our index-2 example from problem , the initial state must satisfy both the original constraint, $y_2(0)=0$, and the hidden one we found, $z(0)=0$. If you choose an "inconsistent" initial condition that violates any of these rules, a mathematical simulation will likely break down, and a real physical system would experience an almost instantaneous, violent adjustment to get back onto the valid state manifold.
+But for a higher-index system, you're in a minefield. You must not only satisfy the given constraint, but also all the *hidden* constraints you uncovered during your detective work! In our index-2 example from problem [@problem_id:2431421], the initial state must satisfy both the original constraint, $y_2(0)=0$, and the hidden one we found, $z(0)=0$. If you choose an "inconsistent" initial condition that violates any of these rules, a mathematical simulation will likely break down, and a real physical system would experience an almost instantaneous, violent adjustment to get back onto the valid state manifold.
 
 #### The Numerical Allergy
 
 The second pitfall is that most standard numerical ODE solvers are "allergic" to higher-index DAEs. They are designed for a world where you can evaluate $\dot{y}$ anywhere, but in a higher-index DAE, the state space is a lower-dimensional surface. A small step in the wrong direction can land you off this surface, leading to numerical instability and garbage results.
 
-The connection between very stiff ODEs and DAEs gives us a beautiful intuition for this. As shown in problem , a DAE can be seen as the limit of a stiff ODE where one of a system's timescales becomes infinitely fast. For instance, the system
+The connection between very stiff ODEs and DAEs gives us a beautiful intuition for this. As shown in problem [@problem_id:2442974], a DAE can be seen as the limit of a stiff ODE where one of a system's timescales becomes infinitely fast. For instance, the system
 $$
 \begin{cases}
 \varepsilon \dot{x} = -x + y \\
@@ -91,6 +91,6 @@ This insight explains why certain numerical methods work and others fail spectac
 
 ### The Fabric of a System's Laws
 
-The world of DAEs shows us that the laws of nature can have a rich and subtle structure. Sometimes, a system's character can change dramatically just by tweaking a parameter, flipping its nature from a simple ODE to a constrained DAE when a key matrix becomes singular . And sometimes, the set of rules we write down might contain a fundamental contradiction. The process of differentiating the constraints might lead not to a solution, but to an impossible statement like $t^2 = 2t$ for all $t$. This means the system is **structurally inconsistent**, and the mathematics is telling us our model is simply wrong .
+The world of DAEs shows us that the laws of nature can have a rich and subtle structure. Sometimes, a system's character can change dramatically just by tweaking a parameter, flipping its nature from a simple ODE to a constrained DAE when a key matrix becomes singular [@problem_id:1128753]. And sometimes, the set of rules we write down might contain a fundamental contradiction. The process of differentiating the constraints might lead not to a solution, but to an impossible statement like $t^2 = 2t$ for all $t$. This means the system is **structurally inconsistent**, and the mathematics is telling us our model is simply wrong [@problem_id:1128885].
 
 Understanding DAEs is to understand these hidden layers. It's about appreciating that a system is defined not just by its motion, but by the rigid web of constraints that binds it, a web that can be simple and obvious, or tangled and deep. It is the art of making sure that what *must be* and what *will be* can coexist in harmony.
