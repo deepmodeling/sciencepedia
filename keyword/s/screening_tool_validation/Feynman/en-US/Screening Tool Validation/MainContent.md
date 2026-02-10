@@ -9,7 +9,7 @@ Imagine you are a watchmaker. Your task is not to build a perfect timepiece—fo
 
 At the heart of any screening test lies a simple, unavoidable fact: it can be wrong. There are precisely two ways this can happen. A test can miss a person who truly has the condition, an error we call a **False Negative**. Or, it can raise a false alarm for a healthy person, an error known as a **False Positive**. Correspondingly, there are two ways it can be right: correctly identifying someone with the condition (**True Positive**) and correctly clearing someone who is healthy (**True Negative**).
 
-Everything we need to know about a test's performance in a study is contained in a simple but powerful grid, a $2 \times 2$ [contingency table](@entry_id:164487). Let's make this concrete. Imagine a hospital is validating a new screening tool for decision-making capacity. In a study of $240$ patients, they compare the quick screening tool to a "gold-standard" psychiatric assessment .
+Everything we need to know about a test's performance in a study is contained in a simple but powerful grid, a $2 \times 2$ [contingency table](@keyword=contingency_table|lang=en-US|style=Feynman). Let's make this concrete. Imagine a hospital is validating a new screening tool for decision-making capacity. In a study of $240$ patients, they compare the quick screening tool to a "gold-standard" psychiatric assessment [@problem_id:4721591].
 
 Here is the world, divided into four neat boxes:
 
@@ -25,7 +25,7 @@ This table is our Rosetta Stone. With it, we can begin to ask precise questions 
 
 Before we can ask what a test result means for our patient, we must first understand the test itself. What are its factory specifications? What is its innate personality? These questions are answered by two fundamental properties: sensitivity and specificity.
 
-**Sensitivity** is the tool's ability to detect the condition when it is actually present. Think of it as the tool’s "power of perception." Of all the people who genuinely lack capacity, what fraction did our tool successfully flag? This is the [conditional probability](@entry_id:151013) of a positive test *given* the presence of the disease, written as $P(T^+ | D^+)$.
+**Sensitivity** is the tool's ability to detect the condition when it is actually present. Think of it as the tool’s "power of perception." Of all the people who genuinely lack capacity, what fraction did our tool successfully flag? This is the [conditional probability](@keyword=conditional_probability|lang=en-US|style=Feynman) of a positive test *given* the presence of the disease, written as $P(T^+ | D^+)$.
 
 For our capacity screening tool, we look at the first column of our table. There are $60$ patients who truly lack capacity. The tool caught $48$ of them.
 
@@ -43,7 +43,7 @@ $$
 \text{Specificity} = \frac{\text{True Negatives}}{\text{True Negatives} + \text{False Positives}} = \frac{150}{150 + 30} = \frac{150}{180} \approx 0.8333
 $$
 
-This tool has a specificity of about $0.8333$. It correctly clears about $83\%$ of all patients who have capacity. The other $17\%$ are the False Positives—the ones who were needlessly worried. These two numbers, sensitivity and specificity, are the intrinsic characteristics of the test. They don't depend on how common the disease is, only on how well the test technology distinguishes "signal" from "noise" .
+This tool has a specificity of about $0.8333$. It correctly clears about $83\%$ of all patients who have capacity. The other $17\%$ are the False Positives—the ones who were needlessly worried. These two numbers, sensitivity and specificity, are the intrinsic characteristics of the test. They don't depend on how common the disease is, only on how well the test technology distinguishes "signal" from "noise" [@problem_id:5206114].
 
 ### The Twist: What a Test Result Actually Means
 
@@ -53,7 +53,7 @@ This brings us to the predictive values.
 
 The **Positive Predictive Value (PPV)** answers this crucial question. Given a positive test result, what is the probability that the person actually has the condition? It is the conditional probability $P(D^+ | T^+)$.
 
-Let's return to our table . A total of $78$ people tested positive (the first row). Of those $78$ people, only $48$ truly lacked capacity.
+Let's return to our table [@problem_id:4721591]. A total of $78$ people tested positive (the first row). Of those $78$ people, only $48$ truly lacked capacity.
 
 $$
 \text{PPV} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}} = \frac{48}{48 + 30} = \frac{48}{78} \approx 0.6154
@@ -85,7 +85,7 @@ Let's dissect this. The numerator is the fraction of the whole population that a
 
 The power of this formula is that it allows us to predict how a test will behave in a new population, provided we know its sensitivity, specificity, and the new population's prevalence. And it reveals a stunning secret of the universe: for rare diseases, most positive test results are wrong.
 
-Consider a screening test for a severe psychiatric condition, schizoaffective disorder, which has a very low prevalence in the general population, say $p = 0.003$ (or $0.3\%$). Let's assume we have a very good screening tool with sensitivity $0.85$ and specificity $0.90$ . What is the PPV?
+Consider a screening test for a severe psychiatric condition, schizoaffective disorder, which has a very low prevalence in the general population, say $p = 0.003$ (or $0.3\%$). Let's assume we have a very good screening tool with sensitivity $0.85$ and specificity $0.90$ [@problem_id:4755842]. What is the PPV?
 
 $$
 \text{PPV} = \frac{0.85 \times 0.003}{0.85 \times 0.003 + (1 - 0.90) \times (1 - 0.003)} = \frac{0.00255}{0.00255 + 0.10 \times 0.997} = \frac{0.00255}{0.10225} \approx 0.0249
@@ -93,13 +93,13 @@ $$
 
 This result should send a shiver down your spine. For a patient who tests positive with this excellent tool, there is only a $2.5\%$ chance they actually have the disorder. A staggering $97.5\%$ of positive results are false alarms! Why? Because the disease is so rare that the small percentage of errors on a huge number of healthy people (the false positives) completely swamps the large percentage of correct hits on a tiny number of sick people (the true positives).
 
-Contrast this with screening for a condition in a high-risk group, like Gender-Based Violence (GBV) in a post-conflict clinic where prevalence might be as high as $0.30$ . Using a test with similar characteristics ($\text{Se}=0.85, \text{Sp}=0.90$), the PPV soars:
+Contrast this with screening for a condition in a high-risk group, like Gender-Based Violence (GBV) in a post-conflict clinic where prevalence might be as high as $0.30$ [@problem_id:4978197]. Using a test with similar characteristics ($\text{Se}=0.85, \text{Sp}=0.90$), the PPV soars:
 
 $$
 \text{PPV} = \frac{0.85 \times 0.30}{0.85 \times 0.30 + (1 - 0.90) \times (1 - 0.30)} = \frac{0.255}{0.255 + 0.07} = \frac{0.255}{0.325} \approx 0.7846
 $$
 
-Here, a positive result is much more meaningful, carrying a $78\%$ probability of being correct. It is the same test, but in a different context, its predictive meaning is transformed. This is the profound lesson of Bayes' theorem in action . Whether we calculate it using probabilities directly or through the equivalent language of odds and likelihood ratios , the message is the same: context is everything.
+Here, a positive result is much more meaningful, carrying a $78\%$ probability of being correct. It is the same test, but in a different context, its predictive meaning is transformed. This is the profound lesson of Bayes' theorem in action [@problem_id:4712780]. Whether we calculate it using probabilities directly or through the equivalent language of odds and likelihood ratios [@problem_id:5107776], the message is the same: context is everything.
 
 ### The Art of the Trade-Off: ROC Curves
 
@@ -111,21 +111,21 @@ This trade-off can be visualized with one of the most elegant diagrams in all of
 
 A test with no discriminative power would be a straight diagonal line from $(0,0)$ to $(1,1)$. It's no better than flipping a coin. A perfect test would shoot straight up the y-axis to a sensitivity of $1.0$ and then across, hugging the top-left corner of the plot. Real-world tests live in the space between.
 
-The overall performance of a test, across all possible thresholds, is captured by a single number: the **Area Under the Curve (AUC)**. An AUC of $0.5$ corresponds to the useless coin-flip test. An AUC of $1.0$ corresponds to the mythical perfect test. A good screening tool might have an AUC of $0.75$ to $0.90$. By calculating the AUC for different tools, we can compare their overall discriminative power, independent of any single, arbitrary cutoff . The ROC curve doesn't tell us which threshold to choose, but it beautifully lays out all the possible consequences of our choice.
+The overall performance of a test, across all possible thresholds, is captured by a single number: the **Area Under the Curve (AUC)**. An AUC of $0.5$ corresponds to the useless coin-flip test. An AUC of $1.0$ corresponds to the mythical perfect test. A good screening tool might have an AUC of $0.75$ to $0.90$. By calculating the AUC for different tools, we can compare their overall discriminative power, independent of any single, arbitrary cutoff [@problem_id:5132875]. The ROC curve doesn't tell us which threshold to choose, but it beautifully lays out all the possible consequences of our choice.
 
 ### The Hidden Traps: Where Do the Numbers Come From?
 
 Our entire discussion has rested on the assumption that we have reliable numbers for sensitivity and specificity. But how are these numbers obtained? They come from validation studies, and these studies are fraught with potential pitfalls that can mislead us. A wise scientist must be a skeptical one.
 
-One of the most insidious traps is **[spectrum bias](@entry_id:189078)**. A test’s sensitivity can vary with the severity of the disease. For instance, a depression screener is much better at detecting severe depression than mild depression. If researchers validate their tool only in a specialty psychiatry clinic, where most patients have severe disease, they will report a high, optimistic sensitivity. But when that same tool is used in a primary care setting, where depression is often milder, its real-world sensitivity will be much lower. The reported performance won't generalize because the validation study was done on an unrepresentative "spectrum" of the disease . A robust validation study must recruit a representative sample of patients across all relevant settings and severities.
+One of the most insidious traps is **[spectrum bias](@keyword=spectrum_bias|lang=en-US|style=Feynman)**. A test’s sensitivity can vary with the severity of the disease. For instance, a depression screener is much better at detecting severe depression than mild depression. If researchers validate their tool only in a specialty psychiatry clinic, where most patients have severe disease, they will report a high, optimistic sensitivity. But when that same tool is used in a primary care setting, where depression is often milder, its real-world sensitivity will be much lower. The reported performance won't generalize because the validation study was done on an unrepresentative "spectrum" of the disease [@problem_id:4977351]. A robust validation study must recruit a representative sample of patients across all relevant settings and severities.
 
-Another trap is **verification bias**. Suppose a clinic decides to give the expensive, gold-standard diagnostic interview to everyone who screens positive, but only to a small, random fraction of those who screen negative. This seems efficient, but it can catastrophically skew the results. By preferentially verifying the positives, the study sample becomes artificially enriched with true positives and false positives. When sensitivity and specificity are calculated naively from this biased sample, they will be distorted—typically, sensitivity will appear higher and specificity lower than they truly are . Correcting for this requires careful statistical methods, like [inverse probability](@entry_id:196307) weighting, to account for the unequal verification rates.
+Another trap is **verification bias**. Suppose a clinic decides to give the expensive, gold-standard diagnostic interview to everyone who screens positive, but only to a small, random fraction of those who screen negative. This seems efficient, but it can catastrophically skew the results. By preferentially verifying the positives, the study sample becomes artificially enriched with true positives and false positives. When sensitivity and specificity are calculated naively from this biased sample, they will be distorted—typically, sensitivity will appear higher and specificity lower than they truly are [@problem_id:5099055]. Correcting for this requires careful statistical methods, like [inverse probability](@keyword=inverse_probability|lang=en-US|style=Feynman) weighting, to account for the unequal verification rates.
 
 ### The Final Arbiter: The Human in the Loop
 
 We have journeyed from the simple $2 \times 2$ table to the subtleties of Bayesian reasoning and the pitfalls of study design. But the journey ends where it began: in the clinic, with a single patient. What happens when a validated tool gives a result that contradicts a clinician’s expert judgment?
 
-Consider a clinician evaluating an 82-year-old woman for elder abuse . The screening tool, administered under coercive conditions, comes back negative. Yet, the clinician observes bruises in different stages of healing, missed medications, and suspicious financial activity. The tool says "no," but the evidence screams "yes."
+Consider a clinician evaluating an 82-year-old woman for elder abuse [@problem_id:4859757]. The screening tool, administered under coercive conditions, comes back negative. Yet, the clinician observes bruises in different stages of healing, missed medications, and suspicious financial activity. The tool says "no," but the evidence screams "yes."
 
 This is a failure of **external validity**. The screening tool was validated on a population of cognitively intact, English-speaking adults. The current patient does not fit this profile. For her, with cognitive impairment and under the watchful eye of a potential abuser, the tool's true sensitivity is likely far lower than its published value. The negative result is statistically close to meaningless.
 

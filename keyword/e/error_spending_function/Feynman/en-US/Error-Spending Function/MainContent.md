@@ -13,9 +13,9 @@ And yet, for decades, statisticians warned that this kind of repeated "peeking" 
 
 Let's start with a simpler game. Suppose someone claims they can influence a coin to land on heads. To test this, you decide to use the standard scientific benchmark: you'll only believe them if the result you see is so extreme that it would happen by pure chance less than 5% of the time (a **Type I error** rate, or **p-value**, of $\alpha = 0.05$). If you plan to flip the coin 100 times and test the result just once at the end, the math is straightforward.
 
-But what if you're impatient? You decide to check the results after 20 flips, then 40, 60, 80, and finally 100. Each time you peek, you give random chance another opportunity to fool you. A random cluster of heads at 20 flips might look significant. If not, another random fluctuation at 40 flips might. The more you look, the higher your chances of being misled by a fluke. Your overall probability of making a false discovery—of crying "Eureka!" when the coin is perfectly normal—creeps up. With five looks, your true Type I error rate isn't 5% anymore; it's closer to 14%! 
+But what if you're impatient? You decide to check the results after 20 flips, then 40, 60, 80, and finally 100. Each time you peek, you give random chance another opportunity to fool you. A random cluster of heads at 20 flips might look significant. If not, another random fluctuation at 40 flips might. The more you look, the higher your chances of being misled by a fluke. Your overall probability of making a false discovery—of crying "Eureka!" when the coin is perfectly normal—creeps up. With five looks, your true Type I error rate isn't 5% anymore; it's closer to 14%! [@problem_id:4744844]
 
-This inflation of error from repeated testing over time is a version of the **[look-elsewhere effect](@entry_id:751461)**. Just as looking for a signal at many different places in a dataset increases your chance of finding a random blip, looking at many different points in *time* does the same. This is the crux of the problem with *ad hoc* interim analyses in clinical trials . We need a system that lets us look, but corrects for the fact that we're looking multiple times.
+This inflation of error from repeated testing over time is a version of the **[look-elsewhere effect](@keyword=look_elsewhere_effect|lang=en-US|style=Feynman)**. Just as looking for a signal at many different places in a dataset increases your chance of finding a random blip, looking at many different points in *time* does the same. This is the crux of the problem with *ad hoc* interim analyses in clinical trials [@problem_id:3539400]. We need a system that lets us look, but corrects for the fact that we're looking multiple times.
 
 ### Taming Chance: An Error Budget
 
@@ -31,21 +31,21 @@ If you're running a trial for a new headache medicine, the "progress" of the tri
 
 Statisticians formalize this with a concept called **Fisher Information**. Intuitively, Fisher information, denoted $I$, quantifies how much a piece of data tells you about the quantity you're trying to measure (like the effectiveness of a drug). In many trials, it's roughly proportional to the number of patients with an observed outcome. For event-driven trials, it's proportional to the number of events.
 
-This leads to the brilliant concept of **information time** (or information fraction). If we plan our trial to run until we have a maximum amount of information, $I_{\max}$, then at any point where we've gathered $I_k$ [units of information](@entry_id:262428), the information time is simply:
+This leads to the brilliant concept of **information time** (or information fraction). If we plan our trial to run until we have a maximum amount of information, $I_{\max}$, then at any point where we've gathered $I_k$ [units of information](@keyword=units_of_information|lang=en-US|style=Feynman), the information time is simply:
 
 $$
 t_k = \frac{I_k}{I_{\max}}
 $$
 
-This value, $t_k$, which runs from 0 to 1, is the true clock of the trial . It's a universal measure of progress, independent of the vagaries of patient recruitment or event rates. The error-spending function $A(t)$ is a function of this profound timescale.
+This value, $t_k$, which runs from 0 to 1, is the true clock of the trial [@problem_id:4519415]. It's a universal measure of progress, independent of the vagaries of patient recruitment or event rates. The error-spending function $A(t)$ is a function of this profound timescale.
 
 ### From Budget to Boundary: A Concrete Calculation
 
 Now we have the two key ingredients: the spending budget $A(t)$ and the information clock $t$. How do they combine to give us a concrete rule for when to stop a trial?
 
-The rule at each interim analysis (or "look") is based on a **[test statistic](@entry_id:167372)**, usually a $Z$-score, which measures how far the observed result is from the null hypothesis (no effect). A large $Z$-score suggests the drug is working. We stop if the statistic $Z(t_k)$ at information time $t_k$ crosses some pre-determined boundary, $b_k$. That is, if $Z(t_k) \ge b_k$.
+The rule at each interim analysis (or "look") is based on a **[test statistic](@keyword=test_statistic|lang=en-US|style=Feynman)**, usually a $Z$-score, which measures how far the observed result is from the null hypothesis (no effect). A large $Z$-score suggests the drug is working. We stop if the statistic $Z(t_k)$ at information time $t_k$ crosses some pre-determined boundary, $b_k$. That is, if $Z(t_k) \ge b_k$.
 
-The error-spending function tells us how to set these boundaries. Let's take the simplest case: the very first look, at information time $t_1$ . The cumulative alpha we are allowed to spend by this point is $A(t_1)$. Since it's the first look, there's no prior spending. The probability of falsely stopping is simply the probability that our statistic crosses the boundary by chance, $P(Z(t_1) \ge b_1)$. So, we just set them equal:
+The error-spending function tells us how to set these boundaries. Let's take the simplest case: the very first look, at information time $t_1$ [@problem_id:4892125]. The cumulative alpha we are allowed to spend by this point is $A(t_1)$. Since it's the first look, there's no prior spending. The probability of falsely stopping is simply the probability that our statistic crosses the boundary by chance, $P(Z(t_1) \ge b_1)$. So, we just set them equal:
 
 $$
 P(Z(t_1) \ge b_1) = A(t_1)
@@ -57,7 +57,7 @@ $$
 1 - \Phi(b_1) = A(t_1)
 $$
 
-Let's make this real. Suppose our total [one-sided error](@entry_id:263989) rate is $\alpha=0.02$. We choose a spending function $A(t) = \alpha t^2$. We plan our first look when half the information is in, so $t_1 = 0.5$.
+Let's make this real. Suppose our total [one-sided error](@keyword=one_sided_error|lang=en-US|style=Feynman) rate is $\alpha=0.02$. We choose a spending function $A(t) = \alpha t^2$. We plan our first look when half the information is in, so $t_1 = 0.5$.
 
 1.  **Calculate the budget:** The cumulative alpha we can spend by $t_1=0.5$ is $A(0.5) = 0.02 \times (0.5)^2 = 0.005$.
 2.  **Set up the equation:** $1 - \Phi(b_1) = 0.005$, which means $\Phi(b_1) = 0.995$.
@@ -71,14 +71,14 @@ This might already seem like a clever system. But the true genius of the Lan-DeM
 
 The error-spending function, because it is defined on the *continuous* scale of information time, doesn't care about the planned schedule [@problem_id:4744844, 4799106]. Imagine we planned looks at $t=(0.3, 0.6, 1)$ with a simple linear spending function $A(t) = \alpha t$. The budget for the look at $t=0.6$ is the *increment* in spending: $A(0.6) - A(0.3) = 0.6\alpha - 0.3\alpha = 0.3\alpha$.
 
-Now, suppose the trial's independent monitoring committee requests an unexpected look at $t=0.45$. No problem. The budget for this new look is simply the alpha increment from the last look ($t=0.3$) to this one ($t=0.45$), which is $A(0.45) - A(0.3) = 0.45\alpha - 0.3\alpha = 0.15\alpha$. The budget for the next look at $t=0.6$ is then recalculated as $A(0.6) - A(0.45) = 0.15\alpha$ . The budget is reallocated on the fly. This flexibility was revolutionary, allowing trials to adapt to real-world events without compromising their integrity.
+Now, suppose the trial's independent monitoring committee requests an unexpected look at $t=0.45$. No problem. The budget for this new look is simply the alpha increment from the last look ($t=0.3$) to this one ($t=0.45$), which is $A(0.45) - A(0.3) = 0.45\alpha - 0.3\alpha = 0.15\alpha$. The budget for the next look at $t=0.6$ is then recalculated as $A(0.6) - A(0.45) = 0.15\alpha$ [@problem_id:4774416]. The budget is reallocated on the fly. This flexibility was revolutionary, allowing trials to adapt to real-world events without compromising their integrity.
 
 ### Styles of Spending: Aggressive versus Conservative
 
 The final piece of the puzzle is deciding what the spending function $A(t)$ should look like. This choice isn't merely technical; it's a strategic one that reflects the trial's philosophy. Two main "families" of functions dominate practice [@problem_id:4987240, 4544984].
 
-**Pocock-Style Spending:** This is the more "aggressive" strategy. It spends the $\alpha$ budget relatively evenly throughout the trial. A linear function, $A(t) = \alpha t$, is a classic example. This makes the boundaries for [early stopping](@entry_id:633908) easier to cross. If you think the drug might have a strong, rapid effect, this approach gives you a good chance of discovering it early. The trade-off is that because you spend a good chunk of your error budget early, the boundary for the final analysis must be more stringent (harder to cross) to stay within the total budget $\alpha$.
+**Pocock-Style Spending:** This is the more "aggressive" strategy. It spends the $\alpha$ budget relatively evenly throughout the trial. A linear function, $A(t) = \alpha t$, is a classic example. This makes the boundaries for [early stopping](@keyword=early_stopping|lang=en-US|style=Feynman) easier to cross. If you think the drug might have a strong, rapid effect, this approach gives you a good chance of discovering it early. The trade-off is that because you spend a good chunk of your error budget early, the boundary for the final analysis must be more stringent (harder to cross) to stay within the total budget $\alpha$.
 
-**O'Brien-Fleming (OBF)-Style Spending:** This is the "conservative" approach. The spending function is convex, meaning it is very flat at the beginning and gets very steep at the end. It hoards the $\alpha$ budget, spending almost nothing at the early looks. A common functional form is $A(t) = 2 - 2\Phi(z_{\alpha/2}/\sqrt{t})$ . The $1/\sqrt{t}$ term in this formula means that for small $t$ (early in the trial), the boundary is astronomically high. You need an extraordinarily powerful effect to stop early. The great advantage is that if the trial runs to completion, you have almost your entire $\alpha$ budget left to spend. This means the final analysis is nearly as powerful as a trial that had no interim looks at all, and the final stopping boundary is very close to the familiar standard (e.g., a $Z$-score of 1.96 for a two-sided test with $\alpha=0.05$).
+**O'Brien-Fleming (OBF)-Style Spending:** This is the "conservative" approach. The spending function is convex, meaning it is very flat at the beginning and gets very steep at the end. It hoards the $\alpha$ budget, spending almost nothing at the early looks. A common functional form is $A(t) = 2 - 2\Phi(z_{\alpha/2}/\sqrt{t})$ [@problem_id:4774447]. The $1/\sqrt{t}$ term in this formula means that for small $t$ (early in the trial), the boundary is astronomically high. You need an extraordinarily powerful effect to stop early. The great advantage is that if the trial runs to completion, you have almost your entire $\alpha$ budget left to spend. This means the final analysis is nearly as powerful as a trial that had no interim looks at all, and the final stopping boundary is very close to the familiar standard (e.g., a $Z$-score of 1.96 for a two-sided test with $\alpha=0.05$).
 
-This reveals the beautiful unity of the theory. We started with a simple problem of repeated peeking and arrived at a sophisticated framework that not only solves the problem but gives us a rich toolkit for designing intelligent, adaptive, and ethical clinical trials. It allows us to balance the desire for early answers with the need for ultimate scientific certainty, all while holding fast to the rigorous principles of [statistical inference](@entry_id:172747).
+This reveals the beautiful unity of the theory. We started with a simple problem of repeated peeking and arrived at a sophisticated framework that not only solves the problem but gives us a rich toolkit for designing intelligent, adaptive, and ethical clinical trials. It allows us to balance the desire for early answers with the need for ultimate scientific certainty, all while holding fast to the rigorous principles of [statistical inference](@keyword=statistical_inference|lang=en-US|style=Feynman).

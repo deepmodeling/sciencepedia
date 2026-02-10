@@ -3,11 +3,11 @@ The body’s "fight or flight" response, orchestrated by catecholamines like epi
 
 ## Principles and Mechanisms
 
-To truly grasp the violent nature of a catecholamine crisis, let us embark on a journey from the molecular to the systemic. Imagine the body as a marvelously complex engine, designed to idle quietly but capable of roaring to life in an instant. Catecholamines are the high-octane fuel for that roar—the "fight or flight" response. A crisis occurs when a rogue element, a tumor known as a **[pheochromocytoma](@entry_id:176635)**, hot-wires the fuel pump, flooding the engine with this potent chemical mixture without pause and without purpose. The principles that govern this chaos are not new; they are the very same principles that govern the body's normal, elegant response to stress, but pushed to a terrifying and destructive extreme.
+To truly grasp the violent nature of a catecholamine crisis, let us embark on a journey from the molecular to the systemic. Imagine the body as a marvelously complex engine, designed to idle quietly but capable of roaring to life in an instant. Catecholamines are the high-octane fuel for that roar—the "fight or flight" response. A crisis occurs when a rogue element, a tumor known as a **[pheochromocytoma](@keyword=pheochromocytoma|lang=en-US|style=Feynman)**, hot-wires the fuel pump, flooding the engine with this potent chemical mixture without pause and without purpose. The principles that govern this chaos are not new; they are the very same principles that govern the body's normal, elegant response to stress, but pushed to a terrifying and destructive extreme.
 
 ### The Actors and The Stage: Hormones and Receptors
 
-Our story begins with two key chemical messengers, or hormones: **[epinephrine](@entry_id:141672)** (adrenaline) and **norepinephrine** (noradrenaline). Normally, they are released from the adrenal glands in carefully measured bursts to prepare us for intense action: sharpening our focus, readying our muscles, and optimizing our circulation.
+Our story begins with two key chemical messengers, or hormones: **[epinephrine](@keyword=epinephrine|lang=en-US|style=Feynman)** (adrenaline) and **norepinephrine** (noradrenaline). Normally, they are released from the adrenal glands in carefully measured bursts to prepare us for intense action: sharpening our focus, readying our muscles, and optimizing our circulation.
 
 These hormones do not act indiscriminately. They exert their effects by fitting into specific molecular locks, known as **adrenergic receptors**, which are scattered throughout the body. The beauty of this system lies in its specificity. There are different types of receptors, primarily **alpha ($\alpha$)** and **beta ($\beta$)**, and the same hormone can have vastly different effects depending on which receptor it binds to. A catecholamine crisis is a symphony of overstimulation played on all these receptors at once.
 
@@ -19,7 +19,7 @@ $$
 MAP = CO \times SVR
 $$
 
-Here, **Mean Arterial Pressure (MAP)** is the product of **Cardiac Output (CO)**—how much blood the heart pumps per minute—and **Systemic Vascular Resistance (SVR)**—the resistance the blood encounters as it flows through the body's network of small arteries (arterioles). In a [pheochromocytoma](@entry_id:176635) crisis, both of these factors are driven to their absolute limits simultaneously, creating a "perfect storm" of hypertension.
+Here, **Mean Arterial Pressure (MAP)** is the product of **Cardiac Output (CO)**—how much blood the heart pumps per minute—and **Systemic Vascular Resistance (SVR)**—the resistance the blood encounters as it flows through the body's network of small arteries (arterioles). In a [pheochromocytoma](@keyword=pheochromocytoma|lang=en-US|style=Feynman) crisis, both of these factors are driven to their absolute limits simultaneously, creating a "perfect storm" of hypertension.
 
 #### The Great Squeeze: Alpha-1 Receptors and SVR
 
@@ -37,7 +37,7 @@ The result is the sensation of a racing, pounding heart known as **palpitations*
 
 The third piece of the classic triad of symptoms is profuse, drenching sweat, or **diaphoresis**. One might assume this is another direct effect of catecholamines, but nature has a subtle twist for us. The eccrine sweat glands responsible for temperature regulation are part of the sympathetic ("fight or flight") nervous system, but their nerve endings release **acetylcholine**, the neurotransmitter typically associated with the parasympathetic ("rest and digest") system.
 
-A catecholamine crisis is not just a flood of hormones from the tumor; it represents a state of maximal central [sympathetic nervous system](@entry_id:151565) activation. This intense drive activates these unique sympathetic cholinergic fibers all over the body, causing the glands to pour out sweat. This isn't just a detail; it's a beautiful illustration of the intricate and sometimes counter-intuitive wiring of our nervous system.
+A catecholamine crisis is not just a flood of hormones from the tumor; it represents a state of maximal central [sympathetic nervous system](@keyword=sympathetic_nervous_system|lang=en-US|style=Feynman) activation. This intense drive activates these unique sympathetic cholinergic fibers all over the body, causing the glands to pour out sweat. This isn't just a detail; it's a beautiful illustration of the intricate and sometimes counter-intuitive wiring of our nervous system.
 
 ### The Aftermath: Paradoxes and Perils
 
@@ -47,19 +47,19 @@ What happens when the storm of catecholamines subsides? The hormones themselves 
 
 Two crucial changes occur. First, the adrenergic receptors, having been screamed at by unimaginably high levels of hormones, become temporarily "deaf." This process, called **agonist-dependent desensitization**, involves the cell pulling the receptors inward, away from the surface, to protect itself from overstimulation. This deafness can last for hours, long after the catecholamines have been cleared.
 
-Second, the body's fluid balance is tricked. The chronic, intense vasoconstriction raises blood pressure so much that the kidneys are fooled into thinking the body is severely overloaded with fluid. They respond by excreting large amounts of salt and water, a process called [pressure natriuresis](@entry_id:152640). Over time, this leads to a state of chronically depleted intravascular volume—the "tank" is effectively half-empty.
+Second, the body's fluid balance is tricked. The chronic, intense vasoconstriction raises blood pressure so much that the kidneys are fooled into thinking the body is severely overloaded with fluid. They respond by excreting large amounts of salt and water, a process called [pressure natriuresis](@keyword=pressure_natriuresis|lang=en-US|style=Feynman). Over time, this leads to a state of chronically depleted intravascular volume—the "tank" is effectively half-empty.
 
 #### The Paradox of Dizziness
 
-These two factors conspire to create a seemingly contradictory symptom: **[orthostatic hypotension](@entry_id:153129)**, or a sharp drop in blood pressure upon standing that causes dizziness and lightheadedness. Normally, when we stand, our sympathetic nervous system fires to constrict blood vessels in our legs, preventing blood from pooling and ensuring enough returns to the brain. This reflex depends on functional $\alpha_1$ receptors and adequate blood volume.
+These two factors conspire to create a seemingly contradictory symptom: **[orthostatic hypotension](@keyword=orthostatic_hypotension|lang=en-US|style=Feynman)**, or a sharp drop in blood pressure upon standing that causes dizziness and lightheadedness. Normally, when we stand, our sympathetic nervous system fires to constrict blood vessels in our legs, preventing blood from pooling and ensuring enough returns to the brain. This reflex depends on functional $\alpha_1$ receptors and adequate blood volume.
 
-In a patient between [pheochromocytoma](@entry_id:176635) episodes, both are compromised. The receptors are deaf, and the volume is low. When they stand, the reflex fails. Blood pools in the legs, venous return to the heart plummets, and blood pressure collapses. This explains how a patient can suffer from the most extreme hypertension one moment and be at risk of fainting from low blood pressure the next.
+In a patient between [pheochromocytoma](@keyword=pheochromocytoma|lang=en-US|style=Feynman) episodes, both are compromised. The receptors are deaf, and the volume is low. When they stand, the reflex fails. Blood pools in the legs, venous return to the heart plummets, and blood pressure collapses. This explains how a patient can suffer from the most extreme hypertension one moment and be at risk of fainting from low blood pressure the next.
 
 A similar, even more dramatic event can occur during the induction of anesthesia. Anesthetics suppress the central sympathetic drive that, through the tumor's output, is the only thing propping up the patient's blood pressure. When this prop is suddenly kicked away, and anesthetic-induced venodilation allows the scant blood volume to pool in the veins, the result is a catastrophic and immediate circulatory collapse.
 
 ### Taming the Storm: The Art of Adrenergic Blockade
 
-Understanding these principles is not merely an academic exercise; it is the key to survival. The management of [pheochromocytoma](@entry_id:176635) is one of the most elegant applications of pharmacology in all of medicine. The cardinal rule is **"alpha-blockade, then beta-blockade."**
+Understanding these principles is not merely an academic exercise; it is the key to survival. The management of [pheochromocytoma](@keyword=pheochromocytoma|lang=en-US|style=Feynman) is one of the most elegant applications of pharmacology in all of medicine. The cardinal rule is **"alpha-blockade, then beta-blockade."**
 
 First, one must administer a drug that blocks the $\alpha_1$ receptors (e.g., phenoxybenzamine). This addresses the primary problem: the life-threatening vasoconstriction and high SVR. It gently re-opens the vascular system, lowering blood pressure and unmasking the hidden volume depletion, which can then be corrected with intravenous fluids.
 
@@ -71,6 +71,6 @@ Repeated catecholamine surges are not benign events. They inflict direct physica
 
 At the cellular level, the intense $\beta_1$ stimulation causes a flood of calcium ions into the heart muscle cells. Calcium is the trigger for contraction, but in these pathological concentrations, it becomes a toxin. The muscle fibers are driven into a state of irreversible hypercontraction, clumping together and fragmenting. Under a microscope, this appears as dark bands across the dead cells—a hallmark called **contraction band necrosis**.
 
-On a larger scale, this cellular damage can manifest as **catecholamine-induced cardiomyopathy**. Intriguingly, this often takes the form of **stress (Takotsubo) cardiomyopathy**, where the apex (tip) of the heart suddenly stops contracting while the base beats furiously, creating a balloon-like appearance. One leading theory for this strange pattern is that at the extreme concentrations of [epinephrine](@entry_id:141672) seen in a crisis, the $\beta_2$-receptors, which are more concentrated at the apex, can "switch" their internal signaling from a stimulatory pathway ($G_s$) to an inhibitory one ($G_i$), stunning the muscle locally.
+On a larger scale, this cellular damage can manifest as **catecholamine-induced cardiomyopathy**. Intriguingly, this often takes the form of **stress (Takotsubo) cardiomyopathy**, where the apex (tip) of the heart suddenly stops contracting while the base beats furiously, creating a balloon-like appearance. One leading theory for this strange pattern is that at the extreme concentrations of [epinephrine](@keyword=epinephrine|lang=en-US|style=Feynman) seen in a crisis, the $\beta_2$-receptors, which are more concentrated at the apex, can "switch" their internal signaling from a stimulatory pathway ($G_s$) to an inhibitory one ($G_i$), stunning the muscle locally.
 
 Over the long term, the repeated cycles of injury and inflammation heal with scarring, or **fibrosis**. This stiffens the heart muscle, impairs its ability to relax and fill, and can lead to chronic heart failure, a permanent scar left by the storm. A pheochromocytoma crisis is therefore more than just a passing danger; it is a profound lesson in physiology, where understanding the intricate dance of molecules and receptors allows us to predict paradox, prevent disaster, and ultimately restore balance from chaos.

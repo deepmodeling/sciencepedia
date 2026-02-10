@@ -5,7 +5,7 @@ The following chapters will guide you through this complex topic. First, in "Pri
 
 ## Principles and Mechanisms
 
-To understand how a tumor, often a tiny and distant speck in the lung, can wreak havoc on the entire body's metabolism, we must first appreciate the beautiful system it corrupts. Imagine the body's [stress response](@entry_id:168351) as a finely tuned orchestra, a three-tiered command structure known as the **Hypothalamic-Pituitary-Adrenal (HPA) axis**.
+To understand how a tumor, often a tiny and distant speck in the lung, can wreak havoc on the entire body's metabolism, we must first appreciate the beautiful system it corrupts. Imagine the body's [stress response](@keyword=stress_response|lang=en-US|style=Feynman) as a finely tuned orchestra, a three-tiered command structure known as the **Hypothalamic-Pituitary-Adrenal (HPA) axis**.
 
 ### The Orchestra of Homeostasis
 
@@ -13,7 +13,7 @@ At the very top, nestled deep within the brain, sits the hypothalamus. This is o
 
 This $CRH$ signal travels a short distance to the pituitary gland, the orchestra's section leader. Stirred by the conductor's cue, specialized pituitary cells, known as corticotrophs, release their own messenger into the bloodstream: **Adrenocorticotropic Hormone ($ACTH$)**.
 
-$ACTH$ is a powerful courier. It travels throughout the body until it reaches its target audience: a pair of small glands sitting atop the kidneys, the adrenal glands. These are the musicians of our orchestra. Specifically, $ACTH$ instructs a region of these glands called the [adrenal cortex](@entry_id:152383) to produce and release the powerful [steroid hormone](@entry_id:164250), **cortisol**. Cortisol is the symphony's crescendo—it mobilizes energy, sharpens focus, and modulates the immune system, preparing the body to meet the challenge at hand.
+$ACTH$ is a powerful courier. It travels throughout the body until it reaches its target audience: a pair of small glands sitting atop the kidneys, the adrenal glands. These are the musicians of our orchestra. Specifically, $ACTH$ instructs a region of these glands called the [adrenal cortex](@keyword=adrenal_cortex|lang=en-US|style=Feynman) to produce and release the powerful [steroid hormone](@keyword=steroid_hormone|lang=en-US|style=Feynman), **cortisol**. Cortisol is the symphony's crescendo—it mobilizes energy, sharpens focus, and modulates the immune system, preparing the body to meet the challenge at hand.
 
 But no orchestra can play at full volume indefinitely. The true genius of the HPA axis lies in its elegant self-regulation. Cortisol itself is the signal to quiet down. As its levels rise in the blood, cortisol travels back to the brain and acts on both the conductor (the hypothalamus) and the section leader (the pituitary), inhibiting their release of $CRH$ and $ACTH$, respectively. This is a classic example of **negative feedback**, a fundamental principle of engineering and biology. The product of the pathway regulates its own creation, ensuring that the response is proportional and temporary. When the stressor passes, cortisol levels fall, the inhibition is lifted, and the axis returns to a quiet standby, ready for the next performance. This delicate balance ensures stability, or **homeostasis**.
 
@@ -41,9 +41,9 @@ The first step is to measure the amount of $ACTH$ in the patient's blood. If the
 
 Now, the investigation must distinguish between a disobedient pituitary cell and a true outsider. This is done with dynamic tests that act as physiological lie detectors.
 
-The **dexamethasone suppression test** is a perfect example. Dexamethasone is a potent synthetic cortisol, designed to deliver an overwhelmingly strong "quiet down" signal. A [pituitary adenoma](@entry_id:171230), while abnormal, is still of pituitary origin and often retains some of its original feedback programming. Presented with a very high dose of dexamethasone, it will often show some degree of suppression. An ectopic tumor, however, has no such programming. It completely ignores the signal. A failure to suppress cortisol production in the face of high-dose dexamethasone is a strong indicator of an ectopic source.
+The **dexamethasone suppression test** is a perfect example. Dexamethasone is a potent synthetic cortisol, designed to deliver an overwhelmingly strong "quiet down" signal. A [pituitary adenoma](@keyword=pituitary_adenoma|lang=en-US|style=Feynman), while abnormal, is still of pituitary origin and often retains some of its original feedback programming. Presented with a very high dose of dexamethasone, it will often show some degree of suppression. An ectopic tumor, however, has no such programming. It completely ignores the signal. A failure to suppress cortisol production in the face of high-dose dexamethasone is a strong indicator of an ectopic source.
 
-The **CRH stimulation test** provides a complementary piece of evidence. Here, clinicians administer a dose of $CRH$, the "work harder" command. A [pituitary adenoma](@entry_id:171230), being composed of pituitary-like cells, usually retains receptors for $CRH$ and will respond with a surge of $ACTH$ and cortisol. An ectopic tumor, having arisen from a different cell type, typically lacks these receptors and shows a flat, unresponsive profile. This differential response is a powerful clue to the tumor's identity.
+The **CRH stimulation test** provides a complementary piece of evidence. Here, clinicians administer a dose of $CRH$, the "work harder" command. A [pituitary adenoma](@keyword=pituitary_adenoma|lang=en-US|style=Feynman), being composed of pituitary-like cells, usually retains receptors for $CRH$ and will respond with a surge of $ACTH$ and cortisol. An ectopic tumor, having arisen from a different cell type, typically lacks these receptors and shows a flat, unresponsive profile. This differential response is a powerful clue to the tumor's identity.
 
 **Clue #3: Pinpointing the Source**
 

@@ -24,11 +24,11 @@ At its core, any case definition is just a rule for sorting people into one of t
 *   **False Positive:** A healthy person is incorrectly labeled a "Case."
 *   **False Negative:** A sick person is incorrectly labeled "Not a Case."
 
-The performance of any case definition can be described by two key properties. **Sensitivity** is its ability to find the true positives. A highly sensitive definition is like a wide net that catches almost every sick person . Clinicians love high sensitivity because it minimizes the dreaded false negative. **Specificity**, on the other hand, is the ability to correctly identify the true negatives. A highly specific definition is like a lock that only a very specific key can open; it's excellent at filtering out healthy people and avoiding false alarms . Epidemiologists value high specificity because it minimizes false positives, which create noise in their data.
+The performance of any case definition can be described by two key properties. **Sensitivity** is its ability to find the true positives. A highly sensitive definition is like a wide net that catches almost every sick person [@problem_id:4836649]. Clinicians love high sensitivity because it minimizes the dreaded false negative. **Specificity**, on the other hand, is the ability to correctly identify the true negatives. A highly specific definition is like a lock that only a very specific key can open; it's excellent at filtering out healthy people and avoiding false alarms [@problem_id:4836649]. Epidemiologists value high specificity because it minimizes false positives, which create noise in their data.
 
 The profound consequence of this trade-off is that two places with the exact same underlying level of disease can look completely different, simply because they use different definitions.
 
-Imagine a hypothetical scenario where two provinces, X and Y, each have $5{,}000$ people who show up at clinics with a fever. In both provinces, the true number of people with a specific disease is exactly $1{,}000$. The truth is identical. However, they use different case definitions .
+Imagine a hypothetical scenario where two provinces, X and Y, each have $5{,}000$ people who show up at clinics with a fever. In both provinces, the true number of people with a specific disease is exactly $1{,}000$. The truth is identical. However, they use different case definitions [@problem_id:4974942].
 
 *   **Province X** uses a broad, clinical-style definition: high sensitivity ($0.95$) but lower specificity ($0.90$). It's designed not to miss anyone.
     *   True positives it finds: $0.95 \times 1{,}000 = 950$.
@@ -40,7 +40,7 @@ Imagine a hypothetical scenario where two provinces, X and Y, each have $5{,}000
     *   False positives it creates: $(1 - 0.99) \times 4{,}000 = 40$.
     *   Total cases reported by Province Y: $700 + 40 = 740$.
 
-The result is stunning. Province X appears to have nearly double the number of cases as Province Y ($1{,}350$ vs. $740$), yet we know the reality is identical. This isn't magic; it's the mathematics of measurement. Without a **standardized** definition, comparing the two provinces is meaningless. It’s like one is measuring in inches and the other in centimeters and trying to declare a winner. This is why public health agencies like the CDC's National Healthcare Safety Network (NHSN) create extremely rigid, objective surveillance definitions for things like catheter-associated urinary tract infections (CAUTI)—they strip out clinical judgment, subjective symptoms, and even tests like urinalysis, relying only on objective criteria like temperature and specific lab culture results. The goal is to ensure that a "case" in a hospital in California means the exact same thing as a "case" in Florida .
+The result is stunning. Province X appears to have nearly double the number of cases as Province Y ($1{,}350$ vs. $740$), yet we know the reality is identical. This isn't magic; it's the mathematics of measurement. Without a **standardized** definition, comparing the two provinces is meaningless. It’s like one is measuring in inches and the other in centimeters and trying to declare a winner. This is why public health agencies like the CDC's National Healthcare Safety Network (NHSN) create extremely rigid, objective surveillance definitions for things like catheter-associated urinary tract infections (CAUTI)—they strip out clinical judgment, subjective symptoms, and even tests like urinalysis, relying only on objective criteria like temperature and specific lab culture results. The goal is to ensure that a "case" in a hospital in California means the exact same thing as a "case" in Florida [@problem_id:4664485].
 
 ### The Tyranny of the Denominator and the Perils of Low Prevalence
 
@@ -48,19 +48,19 @@ The trade-off gets even more interesting when we ask a question that every patie
 
 You might think that a test with 95% "accuracy" means that if you test positive, you have a 95% chance of being sick. This is one of the most common and dangerous misconceptions. The PPV of a test depends critically on how common the disease is in the population being tested (the **prevalence**).
 
-Let’s return to the measles example . In a population where vaccination is common, measles is rare. Imagine a clinic sees 200 people with a rash, but only 5 of them truly have measles (a prevalence of $2.5\%$). A broad surveillance definition with high sensitivity ($95\%$) but modest specificity ($90\%$) might be used. It correctly flags about $4.75$ of the 5 true cases, but it also incorrectly flags $19.5$ of the $195$ healthy people. In total, about $24$ people test positive. The PPV is thus $\frac{4.75}{24} \approx 0.20$, or $20\%$. Think about that: for every five people who get a positive result, four are false alarms. A positive result from this screen is more likely to be wrong than right.
+Let’s return to the measles example [@problem_id:4836649]. In a population where vaccination is common, measles is rare. Imagine a clinic sees 200 people with a rash, but only 5 of them truly have measles (a prevalence of $2.5\%$). A broad surveillance definition with high sensitivity ($95\%$) but modest specificity ($90\%$) might be used. It correctly flags about $4.75$ of the 5 true cases, but it also incorrectly flags $19.5$ of the $195$ healthy people. In total, about $24$ people test positive. The PPV is thus $\frac{4.75}{24} \approx 0.20$, or $20\%$. Think about that: for every five people who get a positive result, four are false alarms. A positive result from this screen is more likely to be wrong than right.
 
-This leads to a truly paradoxical result: a surveillance system can actually *overestimate* the number of cases, even when using a test that misses a lot of them. Consider a respiratory virus surveillance system that uses a rapid test with $70\%$ sensitivity and $98\%$ specificity. Suppose in a town of $10{,}000$ people, the true prevalence is $5\%$, meaning there are $500$ sick people and $9{,}500$ healthy people .
+This leads to a truly paradoxical result: a surveillance system can actually *overestimate* the number of cases, even when using a test that misses a lot of them. Consider a respiratory virus surveillance system that uses a rapid test with $70\%$ sensitivity and $98\%$ specificity. Suppose in a town of $10{,}000$ people, the true prevalence is $5\%$, meaning there are $500$ sick people and $9{,}500$ healthy people [@problem_id:4592178].
 
 *   Because the sensitivity is only $70\%$, the system will miss $30\%$ of the true cases. It will only find $0.70 \times 500 = 350$ sick people.
-*   But the specificity is not perfect. It's $98\%$, meaning it has a $2\%$ [false positive rate](@entry_id:636147). Applied to the huge pool of healthy people, this creates false alarms: $0.02 \times 9{,}500 = 190$ false positives.
+*   But the specificity is not perfect. It's $98\%$, meaning it has a $2\%$ [false positive rate](@keyword=false_positive_rate|lang=en-US|style=Feynman). Applied to the huge pool of healthy people, this creates false alarms: $0.02 \times 9{,}500 = 190$ false positives.
 *   The total number of cases reported by the surveillance system is the sum of the true and false positives: $350 + 190 = 540$.
 
-The system reports $540$ cases, when the truth is only $500$. It overestimates the burden by $8\%$! This is the **tyranny of the denominator**. Even a tiny error rate (a $2\%$ [false positive rate](@entry_id:636147)) applied to a vast number of healthy individuals can generate a mountain of false alarms that overwhelms the signal from the true cases.
+The system reports $540$ cases, when the truth is only $500$. It overestimates the burden by $8\%$! This is the **tyranny of the denominator**. Even a tiny error rate (a $2\%$ [false positive rate](@keyword=false_positive_rate|lang=en-US|style=Feynman)) applied to a vast number of healthy individuals can generate a mountain of false alarms that overwhelms the signal from the true cases.
 
 ### A Hierarchy of Certainty: From Suspicion to Confirmation
 
-So how do public health officials navigate this minefield of uncertainty? They don't rely on a single definition; they use a tiered system, a ladder of increasing certainty .
+So how do public health officials navigate this minefield of uncertainty? They don't rely on a single definition; they use a tiered system, a ladder of increasing certainty [@problem_id:4977776].
 
 1.  **Suspected Case:** This is the widest net, designed for maximum sensitivity. It's often based on simple clinical symptoms alone (e.g., "fever and cough"). The goal here is not to be right, but to ensure no potential case is missed early on. The PPV is low, and everyone knows it.
 
@@ -72,9 +72,9 @@ This hierarchy is a beautiful, practical application of Bayesian reasoning. Each
 
 ### When the Measurement Becomes the Target
 
-The separation between a clinical tool and a surveillance tool is essential. But in the real world, these concepts can collide, sometimes with dangerous consequences. This is best illustrated by the public reporting of hospital-acquired infections .
+The separation between a clinical tool and a surveillance tool is essential. But in the real world, these concepts can collide, sometimes with dangerous consequences. This is best illustrated by the public reporting of hospital-acquired infections [@problem_id:4664534].
 
-Hospitals are now often required to publicly report their rates of infections like CAUTI, using the rigid NHSN surveillance definition. The goal is noble: to create transparency and incentivize hospitals to improve safety. And hospitals respond. They implement bundles of best practices: better [sterile technique](@entry_id:181691) during catheter insertion, daily reviews to see if a catheter can be removed. These actions reduce the *true* number of infections. This is a win for everyone.
+Hospitals are now often required to publicly report their rates of infections like CAUTI, using the rigid NHSN surveillance definition. The goal is noble: to create transparency and incentivize hospitals to improve safety. And hospitals respond. They implement bundles of best practices: better [sterile technique](@keyword=sterile_technique|lang=en-US|style=Feynman) during catheter insertion, daily reviews to see if a catheter can be removed. These actions reduce the *true* number of infections. This is a win for everyone.
 
 But there is another way to lower the reported rate. The NHSN definition for a CAUTI requires several components, one of which is a positive urine culture. What if a hospital, under pressure to lower its numbers, institutes a new policy of "diagnostic stewardship"? It might instruct its doctors not to order a urine culture on a catheterized patient with a fever unless other, more specific signs are present.
 

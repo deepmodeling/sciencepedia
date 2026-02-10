@@ -36,7 +36,7 @@ This leads to a stunning therapeutic decision. A patient with a high $INR$ who d
 
 The concept of rebalanced hemostasis is a unifying thread that weaves through many fields of medicine, connecting them in unexpected ways.
 
-In **Pharmacology**, it forces a re-evaluation of how we use and monitor [anticoagulant drugs](@entry_id:154234). For a cirrhotic patient on warfarin, the baseline $INR$ is already elevated due to liver disease, making the $INR$ a completely unreliable measure of the drug's effect. Similarly, for the newer Direct Oral Anticoagulants (DOACs), the failing liver's ability to metabolize these drugs is impaired. The degree of this impairment depends on the specific drug, meaning a deep understanding of both liver physiology and pharmacology is needed for safe use.
+In **Pharmacology**, it forces a re-evaluation of how we use and monitor [anticoagulant drugs](@keyword=anticoagulant_drugs|lang=en-US|style=Feynman). For a cirrhotic patient on warfarin, the baseline $INR$ is already elevated due to liver disease, making the $INR$ a completely unreliable measure of the drug's effect. Similarly, for the newer Direct Oral Anticoagulants (DOACs), the failing liver's ability to metabolize these drugs is impaired. The degree of this impairment depends on the specific drug, meaning a deep understanding of both liver physiology and pharmacology is needed for safe use.
 
 In **Emergency Medicine** and **Gastroenterology**, it explains why for a patient with a variceal bleed, the focus should be on procedures to stop the bleeding and drugs to lower portal pressure, not on transfusing plasma to chase an $INR$ target.
 

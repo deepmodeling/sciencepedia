@@ -35,7 +35,7 @@ This risk classification determines the intensity of the IRB's scrutiny, creatin
 
 *   **Expedited Review:** For research that involves no more than minimal risk. Consider a study that involves looking back at thousands of existing, identifiable medical records to build a predictive algorithm. It would be impossible to contact every patient, and the main risk is a breach of privacy, which can be managed with strong data security. Since the risk is minimal, the review can be "expedited," meaning it is handled by one or two experienced IRB members without needing a full committee meeting.
 
-*   **Full Board Review:** For research that involves greater than minimal risk. Imagine a prospective [pilot study](@entry_id:172791) where that same algorithm is now used to help guide chemotherapy dosing. Now, there are real physical risks—the algorithm could be wrong, leading to under-dosing or over-dosing. The stakes are higher, so the protocol must be debated by the full, convened IRB—a diverse group of scientists, non-scientists, and community members who can collectively weigh the complex ethics.
+*   **Full Board Review:** For research that involves greater than minimal risk. Imagine a prospective [pilot study](@keyword=pilot_study|lang=en-US|style=Feynman) where that same algorithm is now used to help guide chemotherapy dosing. Now, there are real physical risks—the algorithm could be wrong, leading to under-dosing or over-dosing. The stakes are higher, so the protocol must be debated by the full, convened IRB—a diverse group of scientists, non-scientists, and community members who can collectively weigh the complex ethics.
 
 ### The Sovereign Participant: Autonomy and Consent
 

@@ -9,11 +9,11 @@ The fundamental principle of Time-of-Flight Positron Emission Tomography (TOF-PE
 
 ### From Time to Space: The Fundamental Exchange
 
-When a positron meets an electron in the body, they annihilate, creating a pair of high-energy photons that fly off in almost perfectly opposite directions. A ring of detectors surrounding the patient catches these photons. When two detectors on opposite sides of the ring fire at the same time—in "coincidence"—we know an [annihilation](@entry_id:159364) happened somewhere on the straight line connecting them. This line is called the **Line of Response (LOR)**.
+When a positron meets an electron in the body, they annihilate, creating a pair of high-energy photons that fly off in almost perfectly opposite directions. A ring of detectors surrounding the patient catches these photons. When two detectors on opposite sides of the ring fire at the same time—in "coincidence"—we know an [annihilation](@keyword=annihilation|lang=en-US|style=Feynman) happened somewhere on the straight line connecting them. This line is called the **Line of Response (LOR)**.
 
 For decades, this was all that conventional PET could tell us. The event happened *somewhere* on that line, but we didn't know where. It's like hearing a clap in a long hallway; you know the sound is in the hall, but you can't tell if it came from the near end, the far end, or the middle.
 
-Time-of-Flight PET adds a beautifully simple, yet profoundly powerful, new piece of information: the arrival time of each photon. Imagine the [annihilation](@entry_id:159364) happens not at the exact center of the LOR, but at a position offset by a distance $x$. One photon has to travel a distance of $(L/2 - x)$ to its detector, while its twin has to travel farther, a distance of $(L/2 + x)$. Since both travel at the speed of light, $c$, the second photon will arrive slightly later. The difference in their arrival times, $\Delta t = t_1 - t_2$, is directly related to the path difference:
+Time-of-Flight PET adds a beautifully simple, yet profoundly powerful, new piece of information: the arrival time of each photon. Imagine the [annihilation](@keyword=annihilation|lang=en-US|style=Feynman) happens not at the exact center of the LOR, but at a position offset by a distance $x$. One photon has to travel a distance of $(L/2 - x)$ to its detector, while its twin has to travel farther, a distance of $(L/2 + x)$. Since both travel at the speed of light, $c$, the second photon will arrive slightly later. The difference in their arrival times, $\Delta t = t_1 - t_2$, is directly related to the path difference:
 
 $$
 c \cdot \Delta t = (L/2 + x) - (L/2 - x) = 2x
@@ -47,7 +47,7 @@ $$
 \sigma_{\text{single}}^2 = \sigma_{\text{scint}}^2 + \sigma_{\text{PD}}^2 + \sigma_{\text{elec}}^2 + \sigma_{\text{geom}}^2 + \dots
 $$
 
-Here, $\sigma_{\text{scint}}^2$ is the variance from the scintillation process itself, $\sigma_{\text{PD}}^2$ from the [photodetector](@entry_id:264291), $\sigma_{\text{elec}}^2$ from the electronics, and $\sigma_{\text{geom}}^2$ from geometric effects within the crystal.
+Here, $\sigma_{\text{scint}}^2$ is the variance from the scintillation process itself, $\sigma_{\text{PD}}^2$ from the [photodetector](@keyword=photodetector|lang=en-US|style=Feynman), $\sigma_{\text{elec}}^2$ from the electronics, and $\sigma_{\text{geom}}^2$ from geometric effects within the crystal.
 
 Because the final CTR is based on the *difference* in time between two independent and identical detectors ($t_1$ and $t_2$), their variances also add. The variance of the time difference, $\sigma_{\Delta t}^2$, is:
 
@@ -61,11 +61,11 @@ This means the standard deviation of our final measurement is $\sigma_{\Delta t}
 
 Everything begins inside a special crystal called a **scintillator**. When a $511$ keV gamma photon from the annihilation slams into this crystal, its energy is absorbed and re-emitted as a tiny, brief flash of visible or ultraviolet light. This flash, however, is not an instantaneous "click." It's more like a tiny firework, a cascade of thousands of light photons that are born over a period of time.
 
-The temporal shape of this light pulse is described by a **[rise time](@entry_id:263755)** (how quickly it gets bright) and a **decay time** (how long it takes to fade away). For precise timing, we want to know exactly when the gamma photon first hit. The best way to do that is to catch the very first photons of the light flash, a technique called "leading-edge timing." This is where the properties of the scintillator material become absolutely critical.
+The temporal shape of this light pulse is described by a **[rise time](@keyword=rise_time|lang=en-US|style=Feynman)** (how quickly it gets bright) and a **decay time** (how long it takes to fade away). For precise timing, we want to know exactly when the gamma photon first hit. The best way to do that is to catch the very first photons of the light flash, a technique called "leading-edge timing." This is where the properties of the scintillator material become absolutely critical.
 
 Two properties are paramount: **light yield** and **decay time**.
 *   **Light Yield** refers to the number of light photons produced per unit of energy deposited. More photons are like having more witnesses to a crime; with more "votes," our statistical confidence in determining the event's start time increases.
-*   **Decay Time** (and the related [rise time](@entry_id:263755)) determines how quickly those photons are released. A fast scintillator spits out its photons in a rapid, concentrated burst. A slow one dribbles them out over a longer period.
+*   **Decay Time** (and the related [rise time](@keyword=rise_time|lang=en-US|style=Feynman)) determines how quickly those photons are released. A fast scintillator spits out its photons in a rapid, concentrated burst. A slow one dribbles them out over a longer period.
 
 For timing, a concentrated burst is far better. It creates a signal with a very steep leading edge, making the "start" of the event much less ambiguous. The contribution of scintillation to timing uncertainty often follows a simple scaling: the timing standard deviation, $\sigma_{scint}$, is proportional to the characteristic decay time $\tau$ and inversely proportional to the square root of the number of detected photons $N$:
 
@@ -73,11 +73,11 @@ $$
 \sigma_{scint} \propto \frac{\tau}{\sqrt{N}}
 $$
 
-This simple relationship explains a crucial choice in modern PET design: why are crystals like Lutetium Yttrium Orthosilicate (LYSO) used instead of, say, Bismuth Germanate (BGO)? BGO is denser, meaning it's slightly better at stopping gamma photons. But it is dim (low light yield) and incredibly slow ($\tau \approx 300$ ns). LYSO is over three times brighter and nearly eight times faster ($\tau \approx 40$ ns). When you plug these numbers into the scaling relationship, you find that LYSO's timing performance is over an [order of magnitude](@entry_id:264888) better than BGO's. For the ultimate goal of TOF-PET, this massive timing advantage is a decisive victory, making LYSO the material of choice.
+This simple relationship explains a crucial choice in modern PET design: why are crystals like Lutetium Yttrium Orthosilicate (LYSO) used instead of, say, Bismuth Germanate (BGO)? BGO is denser, meaning it's slightly better at stopping gamma photons. But it is dim (low light yield) and incredibly slow ($\tau \approx 300$ ns). LYSO is over three times brighter and nearly eight times faster ($\tau \approx 40$ ns). When you plug these numbers into the scaling relationship, you find that LYSO's timing performance is over an [order of magnitude](@keyword=order_of_magnitude|lang=en-US|style=Feynman) better than BGO's. For the ultimate goal of TOF-PET, this massive timing advantage is a decisive victory, making LYSO the material of choice.
 
 ### From Light to Logic: The Photodetector and Electronics
 
-The faint scintillation flash must be captured and converted into an electrical signal. This is the job of the **[photodetector](@entry_id:264291)**. Historically, this was done with Photomultiplier Tubes (PMTs), but modern systems increasingly use Silicon Photomultipliers (SiPMs).
+The faint scintillation flash must be captured and converted into an electrical signal. This is the job of the **[photodetector](@keyword=photodetector|lang=en-US|style=Feynman)**. Historically, this was done with Photomultiplier Tubes (PMTs), but modern systems increasingly use Silicon Photomultipliers (SiPMs).
 
 *   In a **PMT**, a photon strikes a photocathode, releasing an electron. This electron is then accelerated through a series of plates (dynodes), creating an avalanche of millions of electrons. However, the paths these electrons take are not all identical, and they don't all travel at the same speed. This variation introduces a timing jitter known as **Transit Time Spread (TTS)**.
 
@@ -87,17 +87,17 @@ This technological shift from PMTs to SiPMs has been a key driver in improving C
 
 Once we have an electrical pulse, the final step is to assign it a precise timestamp. The electronics that do this face a beautiful and intuitive challenge. Imagine the rising edge of the electrical pulse is a ramp. The electronics need to determine the exact moment this ramp crosses a fixed voltage level, the "threshold." The problem is that all electronic signals are plagued by a background of random voltage fluctuations, or **noise** ($\sigma_V$). This noise makes the ramp "shaky."
 
-Now, picture two ramps. One is extremely steep (a high **[slew rate](@entry_id:272061)**, $S$), and one is shallow (a low [slew rate](@entry_id:272061)). Both are equally shaky. For the steep ramp, the vertical shakiness translates into a very small horizontal, or timing, uncertainty. For the shallow ramp, the same vertical shakiness causes a much larger timing uncertainty. This leads to a wonderfully elegant relationship for the electronic timing jitter:
+Now, picture two ramps. One is extremely steep (a high **[slew rate](@keyword=slew_rate|lang=en-US|style=Feynman)**, $S$), and one is shallow (a low [slew rate](@keyword=slew_rate|lang=en-US|style=Feynman)). Both are equally shaky. For the steep ramp, the vertical shakiness translates into a very small horizontal, or timing, uncertainty. For the shallow ramp, the same vertical shakiness causes a much larger timing uncertainty. This leads to a wonderfully elegant relationship for the electronic timing jitter:
 
 $$
 \sigma_t = \frac{\sigma_V}{S}
 $$
 
-To get good timing, we need low noise and, critically, a high [slew rate](@entry_id:272061). And what gives us a high [slew rate](@entry_id:272061)? A bright, fast scintillator that produces a rapidly rising pulse. We have come full circle: the fundamental properties of the crystal at the very beginning of the signal chain dictate the performance at the very end. Every part of the system is deeply interconnected.
+To get good timing, we need low noise and, critically, a high [slew rate](@keyword=slew_rate|lang=en-US|style=Feynman). And what gives us a high [slew rate](@keyword=slew_rate|lang=en-US|style=Feynman)? A bright, fast scintillator that produces a rapidly rising pulse. We have come full circle: the fundamental properties of the crystal at the very beginning of the signal chain dictate the performance at the very end. Every part of the system is deeply interconnected.
 
 ### The Art of the Practical: Calibration and Compromise
 
-So far, we have focused on random jitter—the unpredictable, statistical fluctuations that blur our measurement. But in any real-world instrument, we must also confront **[systematic errors](@entry_id:755765)**—fixed, repeatable biases that can be even more insidious.
+So far, we have focused on random jitter—the unpredictable, statistical fluctuations that blur our measurement. But in any real-world instrument, we must also confront **systematic errors**—fixed, repeatable biases that can be even more insidious.
 
 Imagine building two detector channels that are supposed to be identical. In reality, one might have a slightly longer cable, or its electronic components might introduce a minuscule, but constant, extra delay. This means that even for a perfectly centered event, the timestamp from one channel, $t_1$, will be systematically offset from the other, $t_2$, by a fixed amount $\delta\tau = \tau_1 - \tau_2$. If this offset is not corrected, our position estimate will have a permanent bias:
 
@@ -105,7 +105,7 @@ $$
 \delta x_{\text{bias}} = \frac{c \cdot \delta\tau}{2}
 $$
 
-This is where **calibration** becomes essential. Before a PET scanner can be used, it must undergo a meticulous procedure to measure these tiny offsets for every single one of its millions of possible detector pairings. These offsets are then stored in a "[lookup table](@entry_id:177908)" and subtracted from every measurement in real time. The precision required is staggering. To ensure that the systematic position bias is kept to, say, less than one-tenth of the random positional blur, the residual timing offset between two channels must be controlled to an incredible degree. For a system with a 300 ps CTR, this means the timing between two detectors must be aligned to within about **13 picoseconds**. A failure to achieve this level of calibration would render the TOF information unreliable and severely degrade the final image.
+This is where **calibration** becomes essential. Before a PET scanner can be used, it must undergo a meticulous procedure to measure these tiny offsets for every single one of its millions of possible detector pairings. These offsets are then stored in a "[lookup table](@keyword=lookup_table|lang=en-US|style=Feynman)" and subtracted from every measurement in real time. The precision required is staggering. To ensure that the systematic position bias is kept to, say, less than one-tenth of the random positional blur, the residual timing offset between two channels must be controlled to an incredible degree. For a system with a 300 ps CTR, this means the timing between two detectors must be aligned to within about **13 picoseconds**. A failure to achieve this level of calibration would render the TOF information unreliable and severely degrade the final image.
 
 Finally, building a high-performance detector is an exercise in managing competing goals. Consider the challenge of determining the **Depth of Interaction (DOI)**—the location along the crystal's depth where the gamma photon hit. Knowing the DOI can help reduce parallax errors and sharpen the image. We could achieve this by optically segmenting the crystal into layers. However, introducing more optical surfaces increases light loss, reducing the number of photons, $N$, that reach the sensor.
 

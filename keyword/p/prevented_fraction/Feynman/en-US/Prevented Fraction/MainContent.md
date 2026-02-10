@@ -1,17 +1,17 @@
 ## Introduction
 When a new vaccine is introduced or a public health campaign is launched, a simple but profound question arises: how effective was it? Answering this question requires more than just intuition; it demands a precise framework for quantifying prevention. This article explores the concept of the **Prevented Fraction**, a cornerstone metric in epidemiology and public health designed to measure the impact of protective exposures and interventions. It addresses the challenge of moving from a simple observation—that fewer people in a protected group got sick—to a robust, quantitative statement about an intervention's success.
 
-We will first navigate the foundational **Principles and Mechanisms**, learning how to calculate the prevented fraction for both individuals and populations, and uncovering its elegant mathematical relationships with other key epidemiological measures. Subsequently, the article will explore the diverse **Applications and Interdisciplinary Connections**, demonstrating how this powerful concept informs everything from [vaccine efficacy](@entry_id:194367) trials and clinical decision-making to the forecasting of large-scale public health policies. By the end, you will have a comprehensive understanding of not just how to calculate prevention, but how to think critically about its measurement and real-world impact.
+We will first navigate the foundational **Principles and Mechanisms**, learning how to calculate the prevented fraction for both individuals and populations, and uncovering its elegant mathematical relationships with other key epidemiological measures. Subsequently, the article will explore the diverse **Applications and Interdisciplinary Connections**, demonstrating how this powerful concept informs everything from [vaccine efficacy](@keyword=vaccine_efficacy|lang=en-US|style=Feynman) trials and clinical decision-making to the forecasting of large-scale public health policies. By the end, you will have a comprehensive understanding of not just how to calculate prevention, but how to think critically about its measurement and real-world impact.
 
 ## Principles and Mechanisms
 
-Suppose a new vaccine becomes available. Some people get it, others don’t. At the end of the flu season, we count the sick. We find, as we might expect, that fewer vaccinated people got the flu. The simple question is: how much good did the vaccine do? This question seems straightforward, but answering it properly is a journey into the heart of [scientific reasoning](@entry_id:754574). It forces us to be precise about what we mean by "good," for whom, and under what circumstances. The tools we develop along the way are not just for epidemiologists; they are fundamental ways of thinking about cause, effect, and prevention in a complex world.
+Suppose a new vaccine becomes available. Some people get it, others don’t. At the end of the flu season, we count the sick. We find, as we might expect, that fewer vaccinated people got the flu. The simple question is: how much good did the vaccine do? This question seems straightforward, but answering it properly is a journey into the heart of [scientific reasoning](@keyword=scientific_reasoning|lang=en-US|style=Feynman). It forces us to be precise about what we mean by "good," for whom, and under what circumstances. The tools we develop along the way are not just for epidemiologists; they are fundamental ways of thinking about cause, effect, and prevention in a complex world.
 
 ### The View from the Individual: Efficacy and the Prevented Fraction
 
-Let’s start with the most direct comparison. We have two groups of people, alike in all important ways except one: one group received a vaccine, and the other did not. This is the classic setup of a cohort study . Over one season, we measure the **risk** for each group—simply the proportion of people who became ill.
+Let’s start with the most direct comparison. We have two groups of people, alike in all important ways except one: one group received a vaccine, and the other did not. This is the classic setup of a cohort study [@problem_id:4572094]. Over one season, we measure the **risk** for each group—simply the proportion of people who became ill.
 
-Let's call the risk in the vaccinated (exposed) group $R_e$ and the risk in the unvaccinated (unexposed) group $R_u$. Suppose in a study, we find that the risk for the vaccinated is 3 in 100 ($R_e = 0.03$), while the risk for the unvaccinated is 10 in 100 ($R_u = 0.10$) .
+Let's call the risk in the vaccinated (exposed) group $R_e$ and the risk in the unvaccinated (unexposed) group $R_u$. Suppose in a study, we find that the risk for the vaccinated is 3 in 100 ($R_e = 0.03$), while the risk for the unvaccinated is 10 in 100 ($R_u = 0.10$) [@problem_id:4632235].
 
 The first, most immediate way to compare these risks is to take their ratio, the **Relative Risk ($RR$)**:
 
@@ -27,7 +27,7 @@ This beautiful little formula quantifies the proportion of risk that was elimina
 
 $$PF_e = \frac{R_u}{R_u} - \frac{R_e}{R_u} = 1 - RR$$
 
-This relationship is profound in its simplicity . It tells us that these two ideas, the ratio of remaining risk ($RR$) and the fraction of prevented risk ($PF_e$), are two sides of the same coin. If the relative risk is $0.30$, the prevented fraction is simply $1 - 0.30 = 0.70$. This means that for the people who got the shot, the vaccine eliminated 70% of the cases that would have otherwise occurred. This quantity, $PF_e$, is what is often called **vaccine efficacy**. In another study, a vaccine might have a relative risk of $0.20$, which immediately tells us its efficacy is $1 - 0.20 = 0.80$, or 80% .
+This relationship is profound in its simplicity [@problem_id:4632235]. It tells us that these two ideas, the ratio of remaining risk ($RR$) and the fraction of prevented risk ($PF_e$), are two sides of the same coin. If the relative risk is $0.30$, the prevented fraction is simply $1 - 0.30 = 0.70$. This means that for the people who got the shot, the vaccine eliminated 70% of the cases that would have otherwise occurred. This quantity, $PF_e$, is what is often called **vaccine efficacy**. In another study, a vaccine might have a relative risk of $0.20$, which immediately tells us its efficacy is $1 - 0.20 = 0.80$, or 80% [@problem_id:4572094].
 
 ### The Other Side of the Coin: The Attributable Fraction
 
@@ -55,7 +55,7 @@ Let's verify with our example: $0.70 = -(0.3) \times (-2.333...)$. It works! Thi
 
 ### Scaling Up: The View from the Population
 
-A vaccine's 80% efficacy is a triumph of medicine, but a mayor or a public health director needs to know more. They must ask, "My city has a vaccination program with 60% coverage. What is the benefit for the *entire community*?" . An individual’s benefit doesn't automatically translate to the population's benefit.
+A vaccine's 80% efficacy is a triumph of medicine, but a mayor or a public health director needs to know more. They must ask, "My city has a vaccination program with 60% coverage. What is the benefit for the *entire community*?" [@problem_id:4506617]. An individual’s benefit doesn't automatically translate to the population's benefit.
 
 To answer this, we need to know the overall risk in the population, $R_p$. This is simply a weighted average of the risks in the two groups, weighted by their size in the population. If the proportion of the population that is vaccinated (the exposure prevalence) is $P_e$, then:
 
@@ -65,17 +65,17 @@ Now we can define a **Population Prevented Fraction ($PF_p$)**. This measures th
 
 $$PF_p = \frac{R_u - R_p}{R_u}$$
 
-Let's use the numbers from a study where $R_u=0.025$, $R_e=0.005$, and vaccination coverage $P_e=0.60$. The overall population risk is $R_p = (0.005 \times 0.60) + (0.025 \times 0.40) = 0.003 + 0.010 = 0.013$. The population prevented fraction is then $PF_p = \frac{0.025 - 0.013}{0.025} = 0.48$ .
+Let's use the numbers from a study where $R_u=0.025$, $R_e=0.005$, and vaccination coverage $P_e=0.60$. The overall population risk is $R_p = (0.005 \times 0.60) + (0.025 \times 0.40) = 0.003 + 0.010 = 0.013$. The population prevented fraction is then $PF_p = \frac{0.025 - 0.013}{0.025} = 0.48$ [@problem_id:4572094].
 
 This seems a bit cumbersome. Is there a more intuitive way? Yes. Just as before, a simple and beautiful relationship is hiding in plain sight. The total benefit to the population ($PF_p$) is simply the benefit conferred on each exposed person ($PF_e$) scaled by the fraction of the population that is actually exposed ($P_e$).
 
 $$PF_p = P_e \times PF_e$$
 
-This formula is incredibly powerful . In our example, the [vaccine efficacy](@entry_id:194367) was $PF_e = 1 - (0.005/0.025) = 0.80$. With 60% of the population vaccinated, the population prevented fraction is $PF_p = 0.60 \times 0.80 = 0.48$. This means that the vaccination program, as it currently exists, has prevented 48% of the cases that would have occurred in the entire city if no one had been vaccinated. The connection is direct and intuitive: the population benefit is the individual benefit times the program's reach. This also opens up other questions, like what proportion of *current* cases could be avoided if we expanded vaccination to everyone .
+This formula is incredibly powerful [@problem_id:4544810]. In our example, the [vaccine efficacy](@keyword=vaccine_efficacy|lang=en-US|style=Feynman) was $PF_e = 1 - (0.005/0.025) = 0.80$. With 60% of the population vaccinated, the population prevented fraction is $PF_p = 0.60 \times 0.80 = 0.48$. This means that the vaccination program, as it currently exists, has prevented 48% of the cases that would have occurred in the entire city if no one had been vaccinated. The connection is direct and intuitive: the population benefit is the individual benefit times the program's reach. This also opens up other questions, like what proportion of *current* cases could be avoided if we expanded vaccination to everyone [@problem_id:4544819].
 
 ### The Causal Leap: From Association to Intervention
 
-We have calculated that a program "prevented" 48% of cases. But hold on. We've been very careful with our calculations, but we have made a colossal leap of faith in our language. We've assumed that the numbers we crunched from our observed data reflect a true **causal** reality. Is that leap justified? .
+We have calculated that a program "prevented" 48% of cases. But hold on. We've been very careful with our calculations, but we have made a colossal leap of faith in our language. We've assumed that the numbers we crunched from our observed data reflect a true **causal** reality. Is that leap justified? [@problem_id:4572134].
 
 What we have calculated is an **associational** prevented fraction. It describes a statistical relationship in the data we collected. What we want to claim is a **causal** prevented fraction—a statement about what would happen in a counterfactual world where we intervened and removed the exposure.
 
@@ -83,7 +83,7 @@ To make this leap, we must believe that our unexposed group is a perfect stand-i
 
 -   **Exchangeability (or No Confounding):** Were the vaccinated and unvaccinated groups truly comparable from the start? Or did healthier, more cautious people choose to get vaccinated, while those with underlying illnesses or who engage in more risky behaviors did not? If the groups differed in these other ways, we are not just measuring the effect of the vaccine, but the effect of being a healthy, cautious person. This is called confounding, and it is the great nemesis of observational research.
 
--   **Consistency and SUTVA:** What do we mean by "vaccinated"? Was it the same vaccine, same dose, for everyone? And, crucially for infectious diseases, did my vaccination have no effect on my unvaccinated neighbor's risk? This idea of "no interference" between individuals is a core assumption called the Stable Unit Treatment Value Assumption (SUTVA). For vaccines, which can reduce transmission, this assumption is often violated, leading to a phenomenon called [herd immunity](@entry_id:139442), which our simple formulas don't capture.
+-   **Consistency and SUTVA:** What do we mean by "vaccinated"? Was it the same vaccine, same dose, for everyone? And, crucially for infectious diseases, did my vaccination have no effect on my unvaccinated neighbor's risk? This idea of "no interference" between individuals is a core assumption called the Stable Unit Treatment Value Assumption (SUTVA). For vaccines, which can reduce transmission, this assumption is often violated, leading to a phenomenon called [herd immunity](@keyword=herd_immunity|lang=en-US|style=Feynman), which our simple formulas don't capture.
 
 -   **Positivity:** For every type of person in our study (e.g., a 70-year-old with diabetes), do we actually have some who were vaccinated and some who were not? If all 70-year-olds with diabetes were vaccinated, we have no data to estimate what their risk would have been otherwise.
 

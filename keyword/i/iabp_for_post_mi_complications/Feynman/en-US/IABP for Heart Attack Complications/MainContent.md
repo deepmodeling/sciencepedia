@@ -9,7 +9,7 @@ First, in "Principles and Mechanisms," we will explore the dangerous window afte
 
 A heart attack, or **myocardial infarction**, is a moment of profound crisis for the body's most vital pump. It is not merely a transient pain but a structural event. A blockage in a coronary artery chokes off the blood supply to a region of the heart muscle, and without oxygen, the muscle tissue begins to die. But what happens next is a dramatic story of biology and physics, a race against time where the very integrity of the heart hangs in the balance.
 
-For the first day or two, the dead tissue, or **infarct**, remains relatively firm. But then, a remarkable and dangerous process begins. The body’s cleanup crew—specialized [white blood cells](@entry_id:196577) like neutrophils and macrophages—arrives at the scene. They release powerful enzymes to digest and remove the dead cardiac cells. While this is a necessary step in the healing process, it comes at a great cost. Between the second and seventh day after a heart attack, the infarcted wall loses its structural integrity. It becomes soft, weak, and friable, a state known as **myomalacia**. Before new collagen and scar tissue can be laid down to provide strength, the heart wall is at its most vulnerable, like wet blotting paper trying to contain immense pressure. It is during this precarious window that mechanical disaster can strike.
+For the first day or two, the dead tissue, or **infarct**, remains relatively firm. But then, a remarkable and dangerous process begins. The body’s cleanup crew—specialized [white blood cells](@keyword=white_blood_cells|lang=en-US|style=Feynman) like neutrophils and macrophages—arrives at the scene. They release powerful enzymes to digest and remove the dead cardiac cells. While this is a necessary step in the healing process, it comes at a great cost. Between the second and seventh day after a heart attack, the infarcted wall loses its structural integrity. It becomes soft, weak, and friable, a state known as **myomalacia**. Before new collagen and scar tissue can be laid down to provide strength, the heart wall is at its most vulnerable, like wet blotting paper trying to contain immense pressure. It is during this precarious window that mechanical disaster can strike.
 
 ### When Walls Come Tumbling Down: Two Mechanical Catastrophes
 
@@ -27,7 +27,7 @@ Whether from a VSR or acute MR, the fundamental hemodynamic problem is the same:
 
 The flow of any fluid, including blood, through a conduit or an opening can be described by a simple and elegant relationship, a hydraulic analogue of Ohm's law in electronics:
 $$Q = \frac{\Delta P}{R}$$
-Here, $Q$ is the [volumetric flow rate](@entry_id:265771), $\Delta P$ is the pressure gradient driving the flow, and $R$ is the resistance to that flow.
+Here, $Q$ is the [volumetric flow rate](@keyword=volumetric_flow_rate|lang=en-US|style=Feynman), $\Delta P$ is the pressure gradient driving the flow, and $R$ is the resistance to that flow.
 
 In both VSR and MR, the left ventricle is pumping against two competing pathways: the normal path out to the body (the aorta) and the abnormal shunt path. The distribution of blood flow between these two is a battle of pressures and resistances.
 
@@ -38,7 +38,7 @@ In both scenarios, the central villain is the high systolic pressure generated b
 
 ### Counterpulsation: A Rhythmic Rescue
 
-The answer lies in a remarkable piece of [biomedical engineering](@entry_id:268134): the **Intra-Aortic Balloon Pump (IABP)**. The device itself is deceptively simple: a long, thin balloon mounted on a catheter, which is threaded up through an artery in the leg and positioned in the aorta, the body's largest artery, just outside the heart.
+The answer lies in a remarkable piece of [biomedical engineering](@keyword=biomedical_engineering|lang=en-US|style=Feynman): the **Intra-Aortic Balloon Pump (IABP)**. The device itself is deceptively simple: a long, thin balloon mounted on a catheter, which is threaded up through an artery in the leg and positioned in the aorta, the body's largest artery, just outside the heart.
 
 The IABP's true genius is not in its form, but in its function: a precisely timed dance with the heart's own rhythm, a principle called **counterpulsation**. It is programmed to do the exact opposite of the heart.
 

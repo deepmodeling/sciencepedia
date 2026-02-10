@@ -21,7 +21,7 @@ The number we truly care about is the **effective reproduction number**, or $R_t
 
 $$R_t = R_0 \times s_t$$
 
-This is the master equation of epidemic control . It tells us everything. The entire grand strategy of public health, in all its complexity, boils down to one goal: **get $R_t$ below 1**. If $R_t > 1$, the epidemic grows. If $R_t < 1$, it shrinks and eventually dies out. If $R_t = 1$, it smolders at a steady state. This single equation reveals our two fundamental levers of control: we can either try to shrink $R_0$ directly, or we can shrink the fraction of susceptible people, $s_t$.
+This is the master equation of epidemic control [@problem_id:4972339]. It tells us everything. The entire grand strategy of public health, in all its complexity, boils down to one goal: **get $R_t$ below 1**. If $R_t > 1$, the epidemic grows. If $R_t < 1$, it shrinks and eventually dies out. If $R_t = 1$, it smolders at a steady state. This single equation reveals our two fundamental levers of control: we can either try to shrink $R_0$ directly, or we can shrink the fraction of susceptible people, $s_t$.
 
 ### A Toolkit for Taming $R_t$
 
@@ -29,19 +29,19 @@ Every public health measure you've ever heard of is simply a tactic to push down
 
 #### The Sledgehammer and the Scalpel: Manipulating Contact
 
-The most direct way to lower $R_0$ is to reduce the contact rate, $c$. The tools to do this exist on a spectrum from the broadest "sledgehammers" to the most precise "scalpels" .
+The most direct way to lower $R_0$ is to reduce the contact rate, $c$. The tools to do this exist on a spectrum from the broadest "sledgehammers" to the most precise "scalpels" [@problem_id:4564357].
 *   **Shelter-in-place** orders are population-wide directives for everyone to stay home. This is a sledgehammer approach that reduces all contacts, indiscriminately.
 *   A **cordon sanitaire**, or a "sanitary line," is a geographic barrier, preventing people from moving in or out of a specific zone. It’s more targeted than a general shelter-in-place order but is still a blunt instrument affecting everyone within the line.
 *   **Quarantine** is the scalpel. It doesn't target everyone, only those who have been exposed to the pathogen but are not yet sick. It’s a probabilistic bet: by restricting their movement, we hope to stop them from spreading the disease if they do become infectious.
 *   **Isolation** is the most precise tool of all. It applies only to individuals who are known to be infectious. By separating them from the susceptible population, we directly break chains of transmission.
 
-Of course, to use a scalpel, you need to know where to cut. That requires intelligence. **Contact tracing** is the detective work—the shoe-leather epidemiology—of finding the people who need to be quarantined . In the digital age, this work is aided by technologies like Bluetooth proximity data, but this brings us face-to-face with a profound societal challenge: the balance between public health and personal privacy.
+Of course, to use a scalpel, you need to know where to cut. That requires intelligence. **Contact tracing** is the detective work—the shoe-leather epidemiology—of finding the people who need to be quarantined [@problem_id:4502250]. In the digital age, this work is aided by technologies like Bluetooth proximity data, but this brings us face-to-face with a profound societal challenge: the balance between public health and personal privacy.
 
 #### Attacking the Source: Reducing Pathogen Load
 
 Another, often overlooked, way to control an outbreak is to reduce the amount of pathogen a person sheds or the duration they are infectious. This involves both medical treatment and a fundamental principle called **source control**.
 
-Imagine an infection not as a vague illness, but as a physical factory producing pathogens. In some cases, like a bone infection (osteomyelitis), this factory is a pocket of pus and necrotic tissue walled off inside the body. The intense pressure from this abscess can be so high that it physically collapses the tiny capillaries that are supposed to deliver antibiotics. It's a perfect fortress. A doctor can pump a patient full of drugs, but the medicine can't reach the target .
+Imagine an infection not as a vague illness, but as a physical factory producing pathogens. In some cases, like a bone infection (osteomyelitis), this factory is a pocket of pus and necrotic tissue walled off inside the body. The intense pressure from this abscess can be so high that it physically collapses the tiny capillaries that are supposed to deliver antibiotics. It's a perfect fortress. A doctor can pump a patient full of drugs, but the medicine can't reach the target [@problem_id:5180020].
 
 The solution? **Source control.** A surgeon goes in, drains the pus, and removes the dead tissue. This accomplishes two things. First, it lowers the pressure, allowing blood flow to resume and the antibiotics to finally reach the battlefield. Second, and just as important, it physically removes a massive number of bacteria. It dismantles the factory. This principle applies everywhere: draining an abscess, removing an infected medical device, or even the simple act of wearing a mask to reduce the number of viral particles you spray into the air. It’s a beautiful intersection of physics, biology, and medicine.
 
@@ -53,20 +53,20 @@ We have our toolkit. We understand the physics of the epidemic. But we are not p
 
 The central tension in public health is between individual autonomy and the collective good. Why should the government be able to compel you to do something for your health? The answer lies in a concept from philosophy called the **harm principle**.
 
-Consider two programs : one offers [statins](@entry_id:167025) to people at high risk of a heart attack, and the other mandates flu shots for residents of large apartment buildings. The statin program must be voluntary and require explicit informed consent, because the decision to take the drug primarily affects only the person taking it. Your high cholesterol doesn't harm your neighbor.
+Consider two programs [@problem_id:4556530]: one offers [statins](@keyword=statins|lang=en-US|style=Feynman) to people at high risk of a heart attack, and the other mandates flu shots for residents of large apartment buildings. The statin program must be voluntary and require explicit informed consent, because the decision to take the drug primarily affects only the person taking it. Your high cholesterol doesn't harm your neighbor.
 
-But the flu is different. Your decision not to get vaccinated creates an **[externality](@entry_id:189875)**—a risk that spills over onto others. You might infect an elderly neighbor or a child too young to be vaccinated. Because your choice can cause direct harm to others, the harm principle gives society a compelling interest in that choice. This is the ethical bedrock that allows for public health actions that limit individual liberty, from vaccine mandates to isolation orders. It's not about protecting you from yourself; it's about protecting others from you.
+But the flu is different. Your decision not to get vaccinated creates an **[externality](@keyword=externality|lang=en-US|style=Feynman)**—a risk that spills over onto others. You might infect an elderly neighbor or a child too young to be vaccinated. Because your choice can cause direct harm to others, the harm principle gives society a compelling interest in that choice. This is the ethical bedrock that allows for public health actions that limit individual liberty, from vaccine mandates to isolation orders. It's not about protecting you from yourself; it's about protecting others from you.
 
 #### The Chain of Command: From Local Clinics to Global Governance
 
 If society can act, who exactly gets to decide? This authority is not arbitrary; it is a carefully constructed **chain of command** [@problem_id:4586534, @problem_id:4475919].
 *   In a country like the United States, the primary authority for public health rests with the states, under a concept called "police powers"—the inherent power of a state to protect the health, safety, and welfare of its people.
 *   The federal government’s power is more limited, derived from its constitutional authority to regulate interstate and international commerce. This is why a federal agency like the CDC can issue quarantine orders for international travelers or to prevent the spread of a disease across state lines.
-*   But pathogens don’t carry passports. To manage global threats, the world’s nations have agreed to a common set of rules: the **International Health Regulations (IHR)** . This legally binding treaty requires countries to report potential global threats to the World Health Organization (WHO) and to maintain core public health capacities. It creates a global surveillance network, an early warning system for the planet.
+*   But pathogens don’t carry passports. To manage global threats, the world’s nations have agreed to a common set of rules: the **International Health Regulations (IHR)** [@problem_id:4564323]. This legally binding treaty requires countries to report potential global threats to the World Health Organization (WHO) and to maintain core public health capacities. It creates a global surveillance network, an early warning system for the planet.
 
 #### A Five-Point Test for Just Action
 
-This power—to isolate, to quarantine, to mandate—is immense. To prevent its abuse, human rights law provides a strict five-point test, often summarized by the **Siracusa Principles** . Any measure that restricts a fundamental right must be:
+This power—to isolate, to quarantine, to mandate—is immense. To prevent its abuse, human rights law provides a strict five-point test, often summarized by the **Siracusa Principles** [@problem_id:4489324]. Any measure that restricts a fundamental right must be:
 1.  **Prescribed by Law:** It cannot be an arbitrary decree; it must be based on a clear, public law.
 2.  **In Pursuit of a Legitimate Aim:** The protection of public health is one such aim.
 3.  **Strictly Necessary:** It must be proven by evidence that the measure is needed to achieve the goal.
@@ -77,7 +77,7 @@ An order based on science, limited in time, and applied fairly passes this test.
 
 #### Case Study in Proportionality: A Doctor's Duty
 
-Let's see this test in action with a classic dilemma: a doctor's duty of confidentiality versus the duty to report a communicable disease . When a doctor reports a patient's case to the health department without their consent, they are breaching one of medicine’s most sacred trusts. This is only permissible if it passes the five-point test.
+Let's see this test in action with a classic dilemma: a doctor's duty of confidentiality versus the duty to report a communicable disease [@problem_id:4487741]. When a doctor reports a patient's case to the health department without their consent, they are breaching one of medicine’s most sacred trusts. This is only permissible if it passes the five-point test.
 *   **Legality:** There must be a law that mandates reporting for that specific disease.
 *   **Legitimate Aim:** The aim is to enable contact tracing and control the outbreak.
 *   **Necessity:** The reporting of identifiable data must be necessary. If anonymized data would suffice, then reporting a name is not necessary. But for contact tracing, a name is essential.

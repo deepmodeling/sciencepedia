@@ -33,7 +33,7 @@ $$ \frac{dB}{dt} = (\alpha - \beta) B + S $$
 
 Here, $(\alpha - \beta)B$ represents the net growth of bacteria already circulating in the system; $\alpha$ is their replication rate, and $\beta$ is the rate at which they are killed by the immune system and antibiotics. To save the patient, we need to make $\frac{dB}{dt}$ strongly negative. We can give powerful antibiotics to increase the kill rate, $\beta$. But in necrotizing pancreatitis, the real enemy is the term $S$: the **source**. The infected necrotic cavity is not a static pool of germs; it is a relentless factory, continuously spewing bacteria, toxins, and inflammatory triggers into the body. As long as $S$ is large, no amount of antibiotics can win the war.
 
-The old strategy of open necrosectomy was a sledgehammer approach to eliminate $S$ in one go, but at an unacceptable physiologic cost. The step-up approach, by contrast, is a masterclass in [finesse](@entry_id:178824). It asks a more subtle question: Can we reduce $S$ *just enough* to tilt the battle in the patient's favor, without delivering a devastating "second hit"? This reframing of the goal, from eradication to control, is the heart of the modern revolution in treating this disease.
+The old strategy of open necrosectomy was a sledgehammer approach to eliminate $S$ in one go, but at an unacceptable physiologic cost. The step-up approach, by contrast, is a masterclass in [finesse](@keyword=finesse|lang=en-US|style=Feynman). It asks a more subtle question: Can we reduce $S$ *just enough* to tilt the battle in the patient's favor, without delivering a devastating "second hit"? This reframing of the goal, from eradication to control, is the heart of the modern revolution in treating this disease.
 
 ### The "Step-Up" in Practice: A Ladder of Intervention
 
@@ -45,7 +45,7 @@ The first rung on the ladder is almost always **percutaneous catheter drainage (
 
 To avoid hitting blood vessels on this journey, they use Doppler ultrasound. The physics is beautiful: a sound wave bouncing off moving blood cells returns with a shifted frequency. The machine detects this shift, but only if the ultrasound beam is not perfectly perpendicular ($\theta = 90^\circ$) to the vessel, because the cosine of $90^\circ$ is zero. The operator must skillfully angle the probe to "light up" the vessels and steer clear. Once the needle is in, a guidewire is passed, the tract is dilated, and a large-bore plastic drain is left in place.
 
-This drain immediately begins to [siphon](@entry_id:276514) off the liquid pus, depressurizing the cavity and dramatically reducing the source term, $S$. For about a third to a half of patients, this is enough. The fever breaks, the organ dysfunction reverses, and the body, freed from the overwhelming septic load, begins to heal. In some cases, where the collection is perfectly situated against the stomach or duodenum, this initial drainage can be performed endoscopically, punching a hole from the inside out.
+This drain immediately begins to [siphon](@keyword=siphon|lang=en-US|style=Feynman) off the liquid pus, depressurizing the cavity and dramatically reducing the source term, $S$. For about a third to a half of patients, this is enough. The fever breaks, the organ dysfunction reverses, and the body, freed from the overwhelming septic load, begins to heal. In some cases, where the collection is perfectly situated against the stomach or duodenum, this initial drainage can be performed endoscopically, punching a hole from the inside out.
 
 #### Step 2: Reassessment and Escalation
 

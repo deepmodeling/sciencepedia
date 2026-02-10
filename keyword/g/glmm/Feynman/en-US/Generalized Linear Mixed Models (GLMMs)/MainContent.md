@@ -3,7 +3,7 @@ In the real world, data is rarely a simple, flat collection of independent point
 
 This article introduces a powerful statistical framework designed to handle both of these challenges simultaneously: the Generalized Linear Mixed Model (GLMM). GLMMs provide a unified approach to analyzing complex, structured data, allowing us to ask more nuanced questions and obtain more reliable answers.
 
-This guide will walk you through this versatile tool in two parts. First, in "Principles and Mechanisms," we will demystify how GLMMs work by breaking down their core components, from fixed and random effects to the clever mathematics of [link functions](@entry_id:636388) and approximation. Following this, the "Applications and Interdisciplinary Connections" chapter will showcase the remarkable utility of GLMMs in solving real-world problems across diverse fields like medicine, ecology, and genetics.
+This guide will walk you through this versatile tool in two parts. First, in "Principles and Mechanisms," we will demystify how GLMMs work by breaking down their core components, from fixed and random effects to the clever mathematics of [link functions](@keyword=link_functions|lang=en-US|style=Feynman) and approximation. Following this, the "Applications and Interdisciplinary Connections" chapter will showcase the remarkable utility of GLMMs in solving real-world problems across diverse fields like medicine, ecology, and genetics.
 
 ## Principles and Mechanisms
 
@@ -29,28 +29,28 @@ The linear model works beautifully when our outcome is a continuous number that 
 
 Trying to fit a straight line to a yes/no outcome is a recipe for disaster. A straight line can easily predict a "probability" of having a stroke that is less than 0 or greater than 1, which is nonsense. This is where the "Generalized" part of GLMMs makes its grand entrance.
 
-Generalized models employ a brilliant device called a **link function**. Think of it as a mathematical "lens" that transforms our tricky outcome into a space where a linear model can work its magic. For a [binary outcome](@entry_id:191030), the most common lens is the **logit [link function](@entry_id:170001)**. Instead of modeling the probability $p$ directly, we model the *log-odds* of the probability, which is $\ln(p / (1-p))$. The [log-odds](@entry_id:141427) can happily range from negative infinity to positive infinity. Our model now looks like this:
+Generalized models employ a brilliant device called a **link function**. Think of it as a mathematical "lens" that transforms our tricky outcome into a space where a linear model can work its magic. For a [binary outcome](@keyword=binary_outcome|lang=en-US|style=Feynman), the most common lens is the **logit [link function](@keyword=link_function|lang=en-US|style=Feynman)**. Instead of modeling the probability $p$ directly, we model the *log-odds* of the probability, which is $\ln(p / (1-p))$. The [log-odds](@keyword=log_odds|lang=en-US|style=Feynman) can happily range from negative infinity to positive infinity. Our model now looks like this:
 
 $ \ln\left(\frac{p}{1-p}\right) = (\text{Fixed Effects}) + (\text{Random Effects}) $
 
-Once the model estimates the [log-odds](@entry_id:141427), it uses the inverse of the [link function](@entry_id:170001) (the [logistic function](@entry_id:634233)) to transform it back into a sensible probability between 0 and 1. Other links exist for different data types: the **probit link** is another popular choice for binary data, while the **log link** is the natural choice for count data, ensuring the predicted count is always positive.
+Once the model estimates the [log-odds](@keyword=log_odds|lang=en-US|style=Feynman), it uses the inverse of the [link function](@keyword=link_function|lang=en-US|style=Feynman) (the [logistic function](@keyword=logistic_function|lang=en-US|style=Feynman)) to transform it back into a sensible probability between 0 and 1. Other links exist for different data types: the **probit link** is another popular choice for binary data, while the **log link** is the natural choice for count data, ensuring the predicted count is always positive.
 
-By combining the hierarchical structure of mixed models with the flexibility of [generalized linear models](@entry_id:171019), we arrive at the **Generalized Linear Mixed Model (GLMM)**: a powerful framework for modeling structured, non-continuous data.
+By combining the hierarchical structure of mixed models with the flexibility of [generalized linear models](@keyword=generalized_linear_models|lang=en-US|style=Feynman), we arrive at the **Generalized Linear Mixed Model (GLMM)**: a powerful framework for modeling structured, non-continuous data.
 
 ### The Two Personalities of an Effect: Subject-Specific vs. Population-Average
 
-Here we arrive at one of the most subtle, profound, and practically important concepts in GLMMs. When we move from the simple world of [linear mixed models](@entry_id:139702) to the non-linear world of GLMMs, the interpretation of our fixed effects undergoes a dramatic change.
+Here we arrive at one of the most subtle, profound, and practically important concepts in GLMMs. When we move from the simple world of [linear mixed models](@keyword=linear_mixed_models|lang=en-US|style=Feynman) to the non-linear world of GLMMs, the interpretation of our fixed effects undergoes a dramatic change.
 
 In a Linear Mixed Model (LMM), life is simple. If a drug lowers blood pressure by 5 points on average across the whole population, it also lowers the expected blood pressure *for a specific patient* by 5 points. The population-average effect and the subject-specific effect are one and the same.
 
-This is *not* true in a GLMM. Because the [link function](@entry_id:170001) is a non-linear transformation (like the S-shaped logistic curve), the beautiful symmetry breaks. This property is known as **non-collapsibility**.
+This is *not* true in a GLMM. Because the [link function](@keyword=link_function|lang=en-US|style=Feynman) is a non-linear transformation (like the S-shaped logistic curve), the beautiful symmetry breaks. This property is known as **non-collapsibility**.
 
 Imagine a new medication that doubles the odds of a patient's symptoms going into remission. The GLMM for a patient in a specific clinic might look like this:
 $ \text{logit}(p_{ij}) = \gamma_0 + \gamma_1 \times (\text{On Therapy}) + \gamma_2 \times (\text{Time}) + u_{0i} $
 
 Here, $\exp(\gamma_1)$ represents the odds ratio of remission for a patient on therapy versus off therapy, *within the same clinic* (i.e., holding the random effect $u_{0i}$ constant). This is a **subject-specific** (or cluster-specific) effect. It's the answer a doctor might want when advising an individual patient.
 
-However, if a public health official asks, "What is the average effect of this therapy across the entire population?", we need to average the probabilities over all the different clinic effects. Due to the non-linear [logistic function](@entry_id:634233), the average effect is no longer simply $\exp(\gamma_1)$. The process of averaging over the random effects "flattens" the curve, resulting in a **population-averaged** effect that is always attenuated, or closer to 1 (no effect), than the subject-specific odds ratio.
+However, if a public health official asks, "What is the average effect of this therapy across the entire population?", we need to average the probabilities over all the different clinic effects. Due to the non-linear [logistic function](@keyword=logistic_function|lang=en-US|style=Feynman), the average effect is no longer simply $\exp(\gamma_1)$. The process of averaging over the random effects "flattens" the curve, resulting in a **population-averaged** effect that is always attenuated, or closer to 1 (no effect), than the subject-specific odds ratio.
 
 This is not a flaw; it's a fundamental feature of reality. A GLMM estimates the conditional, subject-specific effect. If you need the population-averaged effect, you would either need to perform further calculations on the GLMM output or use a different class of models, like Generalized Estimating Equations (GEE), which are designed to target the population-average effect directly.
 
@@ -60,13 +60,13 @@ So how does a GLMM actually accomplish this remarkable feat? The process involve
 
 #### The Impossible Integral and the Art of Approximation
 
-To find the best estimates for our fixed effects and [variance components](@entry_id:267561), we need to calculate the **marginal likelihood** of the data. This means we have to consider all possible values the random effects could have taken, weight them by their probability (from the normal distribution), and average them all out. This involves solving a complex integral. For LMMs, this integral is wonderfully tractable. But for most GLMMs, like one with a [logit link](@entry_id:162579), this integral has no [closed-form solution](@entry_id:270799). It's mathematically impossible to solve exactly.
+To find the best estimates for our fixed effects and [variance components](@keyword=variance_components|lang=en-US|style=Feynman), we need to calculate the **marginal likelihood** of the data. This means we have to consider all possible values the random effects could have taken, weight them by their probability (from the normal distribution), and average them all out. This involves solving a complex integral. For LMMs, this integral is wonderfully tractable. But for most GLMMs, like one with a [logit link](@keyword=logit_link|lang=en-US|style=Feynman), this integral has no closed-form solution. It's mathematically impossible to solve exactly.
 
 Statisticians, being clever practitioners of the art of the possible, have developed powerful approximation methods. Two common ones are:
 1.  **Laplace Approximation**: This method approximates the complex function inside the integral with a simple, bell-shaped Gaussian curve. It's fast, but can be biased, especially when clusters are small or the outcome is very discrete (like binary data).
-2.  **Adaptive Gauss-Hermite Quadrature (AGHQ)**: This is a more sophisticated approach. Instead of using one simple curve, it intelligently picks several points to evaluate the function and performs a weighted average. It's more accurate but computationally more expensive. The number of points needed grows exponentially with the number of random effects, a phenomenon known as the "[curse of dimensionality](@entry_id:143920)".
+2.  **Adaptive Gauss-Hermite Quadrature (AGHQ)**: This is a more sophisticated approach. Instead of using one simple curve, it intelligently picks several points to evaluate the function and performs a weighted average. It's more accurate but computationally more expensive. The number of points needed grows exponentially with the number of random effects, a phenomenon known as the "[curse of dimensionality](@keyword=curse_of_dimensionality|lang=en-US|style=Feynman)".
 
-Because [model selection criteria](@entry_id:147455) like AIC and BIC are based on the log-likelihood, the choice of approximation method can sometimes change which model appears to be the "best".
+Because [model selection criteria](@keyword=model_selection_criteria|lang=en-US|style=Feynman) like AIC and BIC are based on the log-likelihood, the choice of approximation method can sometimes change which model appears to be the "best".
 
 #### Borrowing Strength: Empirical Bayes and Shrinkage
 
@@ -78,18 +78,18 @@ A GLMM agrees. It calculates a posterior estimate for each hospital's effect ($b
 1.  The data from that specific hospital (the likelihood).
 2.  The overall distribution of effects from all hospitals (the prior, $b_j \sim \mathcal{N}(0, \sigma_b^2)$).
 
-The result is that the "unreliable" 0% estimate for Hospital A gets "shrunk" towards the overall average of all hospitals. The estimate for Hospital B, based on much more data, is trusted more and is shrunk very little. This principle of "[borrowing strength](@entry_id:167067) from the crowd" prevents us from over-interpreting noisy data from small groups and provides more stable and realistic estimates for every single group. The amount of shrinkage is exquisitely tuned by the data itself: it increases for smaller groups and for populations that are more homogeneous (smaller $\sigma_b^2$).
+The result is that the "unreliable" 0% estimate for Hospital A gets "shrunk" towards the overall average of all hospitals. The estimate for Hospital B, based on much more data, is trusted more and is shrunk very little. This principle of "[borrowing strength](@keyword=borrowing_strength|lang=en-US|style=Feynman) from the crowd" prevents us from over-interpreting noisy data from small groups and provides more stable and realistic estimates for every single group. The amount of shrinkage is exquisitely tuned by the data itself: it increases for smaller groups and for populations that are more homogeneous (smaller $\sigma_b^2$).
 
 #### Partitioning the Variance
 
-GLMMs also give us a way to quantify the importance of the clustering itself. We can ask: "How much of the [total variation](@entry_id:140383) in the outcome is due to differences between clusters?" The answer is the **Intra-class Correlation Coefficient (ICC)**.
+GLMMs also give us a way to quantify the importance of the clustering itself. We can ask: "How much of the [total variation](@keyword=total_variation|lang=en-US|style=Feynman) in the outcome is due to differences between clusters?" The answer is the **Intra-class Correlation Coefficient (ICC)**.
 
 To understand this, we can imagine a **latent variable**—an unobserved, continuous "propensity" for the outcome. For a logistic GLMM, the total variance on this latent scale is the sum of two parts: the variance of the random intercepts (variation *between* clinics, $\sigma_u^2$) and a fixed residual variance inherent to the logistic distribution (variation *within* clinics, which is always $\pi^2/3$).
 
 The ICC is then simply the ratio of the between-clinic variance to the total variance:
 $ \text{ICC} = \frac{\sigma_u^2}{\sigma_u^2 + \pi^2/3} $
 
-This elegant formula tells us what proportion of the variability in patient outcomes is attributable to which clinic they visit, providing a powerful measure of institutional impact. A similar logic applies to other GLMMs, allowing us to partition variance in a way that is meaningful for the specific scientific context, such as estimating the [heritability](@entry_id:151095) of a trait in evolutionary biology.
+This elegant formula tells us what proportion of the variability in patient outcomes is attributable to which clinic they visit, providing a powerful measure of institutional impact. A similar logic applies to other GLMMs, allowing us to partition variance in a way that is meaningful for the specific scientific context, such as estimating the [heritability](@keyword=heritability|lang=en-US|style=Feynman) of a trait in evolutionary biology.
 
 ### A Word of Caution: Correlation is Not Causation
 

@@ -1,7 +1,7 @@
 ## Introduction
 In nearly every field of science, from medicine to particle physics, a fundamental challenge persists: how do we reliably distinguish a signal from noise? Whether diagnosing a disease, identifying a subatomic particle, or predicting an ecological collapse, we rely on tests and models that are rarely perfect. They make errors, forcing us into a delicate balancing act between correctly identifying cases of interest and incorrectly flagging those that are not. A single performance metric is often insufficient to capture this complex trade-off, creating a knowledge gap in how we evaluate and compare the true power of our classifiers.
 
-This article provides a comprehensive guide to the Receiver Operating Characteristic (ROC) curve, a powerful and elegant tool designed to address this very problem. The first chapter, "Principles and Mechanisms," will deconstruct the core concepts of sensitivity, specificity, and decision thresholds, showing how the ROC curve and its associated metric, the Area Under the Curve (AUC), provide a complete, prevalence-independent picture of a classifier's discriminatory ability. Subsequently, the chapter on "Applications and Interdisciplinary Connections" will journey through diverse fields to reveal the ROC curve's universal utility, demonstrating how this single framework helps solve [classification problems](@entry_id:637153) in medicine, genomics, physics, and beyond. By the end, you will understand not just how to build and interpret an ROC curve, but also how to use it wisely, appreciating both its power and its critical limitations.
+This article provides a comprehensive guide to the Receiver Operating Characteristic (ROC) curve, a powerful and elegant tool designed to address this very problem. The first chapter, "Principles and Mechanisms," will deconstruct the core concepts of sensitivity, specificity, and decision thresholds, showing how the ROC curve and its associated metric, the Area Under the Curve (AUC), provide a complete, prevalence-independent picture of a classifier's discriminatory ability. Subsequently, the chapter on "Applications and Interdisciplinary Connections" will journey through diverse fields to reveal the ROC curve's universal utility, demonstrating how this single framework helps solve [classification problems](@keyword=classification_problems|lang=en-US|style=Feynman) in medicine, genomics, physics, and beyond. By the end, you will understand not just how to build and interpret an ROC curve, but also how to use it wisely, appreciating both its power and its critical limitations.
 
 ## Principles and Mechanisms
 
@@ -13,7 +13,7 @@ This is the fundamental dilemma at the heart of nearly every diagnostic or class
 
 To navigate this trade-off, we first need a clear language to describe a test's performance. We can boil it down to two fundamental questions.
 
-First, "Of all the people who are truly sick, what fraction does our test correctly identify?" This is the test’s **sensitivity**, also known as the **True Positive Rate (TPR)**. It’s the probability that a sick person will test positive. A test with 100% sensitivity catches every single case. Formally, we can write it as a [conditional probability](@entry_id:151013):
+First, "Of all the people who are truly sick, what fraction does our test correctly identify?" This is the test’s **sensitivity**, also known as the **True Positive Rate (TPR)**. It’s the probability that a sick person will test positive. A test with 100% sensitivity catches every single case. Formally, we can write it as a [conditional probability](@keyword=conditional_probability|lang=en-US|style=Feynman):
 
 $$
 \text{Sensitivity} = \text{TPR} = P(\text{Test Positive} \mid \text{Disease Present})
@@ -31,17 +31,17 @@ These two metrics, sensitivity and the false positive rate, are the building blo
 
 ### The Threshold: Turning the Dial of Diagnosis
 
-Modern diagnostic tests, from a blood test for [phenylketonuria](@entry_id:202323) in newborns to a sophisticated biomarker for sepsis in the emergency room, rarely return a simple "yes" or "no". Instead, they provide a continuous score—a concentration, an intensity, a risk value. It is we, the users, who must choose a **decision threshold** to turn this score into a binary decision.
+Modern diagnostic tests, from a blood test for [phenylketonuria](@keyword=phenylketonuria|lang=en-US|style=Feynman) in newborns to a sophisticated biomarker for sepsis in the emergency room, rarely return a simple "yes" or "no". Instead, they provide a continuous score—a concentration, an intensity, a risk value. It is we, the users, who must choose a **decision threshold** to turn this score into a binary decision.
 
 This threshold is like a dial. As we turn it, we directly manipulate the balance between sensitivity and specificity.
 
 Imagine the test scores for healthy and sick people form two overlapping bell curves, as illustrated by a hypothetical infection biomarker. The scores for sick people are, on average, higher than for healthy people, but the distributions overlap.
 
--   If we set a **low threshold**, we make the test very lenient. We will correctly identify almost all the sick individuals (high sensitivity). However, our threshold is so low that it also cuts into the distribution of healthy people, flagging many of them as positive (high [false positive rate](@entry_id:636147)).
+-   If we set a **low threshold**, we make the test very lenient. We will correctly identify almost all the sick individuals (high sensitivity). However, our threshold is so low that it also cuts into the distribution of healthy people, flagging many of them as positive (high [false positive rate](@keyword=false_positive_rate|lang=en-US|style=Feynman)).
 
--   If we set a **high threshold**, we make the test very strict. We will correctly clear almost all the healthy individuals (low [false positive rate](@entry_id:636147)). But our threshold is now so high that it misses a large number of sick people who happen to have lower scores (low sensitivity).
+-   If we set a **high threshold**, we make the test very strict. We will correctly clear almost all the healthy individuals (low [false positive rate](@keyword=false_positive_rate|lang=en-US|style=Feynman)). But our threshold is now so high that it misses a large number of sick people who happen to have lower scores (low sensitivity).
 
-A single pair of sensitivity and specificity values only tells us the story for *one* specific setting of this dial. To truly understand the [power of a test](@entry_id:175836), we need to see its performance across *all* possible settings.
+A single pair of sensitivity and specificity values only tells us the story for *one* specific setting of this dial. To truly understand the [power of a test](@keyword=power_of_a_test|lang=en-US|style=Feynman), we need to see its performance across *all* possible settings.
 
 ### The Grand Picture: The ROC Curve
 
@@ -73,7 +73,7 @@ This probabilistic interpretation makes the concept concrete. Imagine we have te
 
 The ROC curve shows us all possible trade-offs, and the AUC summarizes the overall performance. But in a real clinical setting, we must ultimately choose a single threshold to apply. Where on the curve should we operate?
 
-The answer depends entirely on the clinical context. For a fatal but treatable disease, we might prefer a very high sensitivity to avoid missing any cases, even if it means accepting a higher false positive rate. For a screening test with an invasive follow-up procedure, we might prioritize a very low [false positive rate](@entry_id:636147) to avoid alarming and harming healthy people.
+The answer depends entirely on the clinical context. For a fatal but treatable disease, we might prefer a very high sensitivity to avoid missing any cases, even if it means accepting a higher false positive rate. For a screening test with an invasive follow-up procedure, we might prioritize a very low [false positive rate](@keyword=false_positive_rate|lang=en-US|style=Feynman) to avoid alarming and harming healthy people.
 
 One common strategy for finding a "balanced" threshold is to locate the point on the ROC curve that is furthest vertically from the diagonal line of chance. This vertical distance is given by $\text{TPR} - \text{FPR}$. Maximizing this distance is equivalent to maximizing the sum $\text{Sensitivity} + \text{Specificity} - 1$, a quantity known as the **Youden Index**, $J$. The threshold that achieves this maximum represents a point where the test gives the greatest separation between the rates of true positives and false positives.
 

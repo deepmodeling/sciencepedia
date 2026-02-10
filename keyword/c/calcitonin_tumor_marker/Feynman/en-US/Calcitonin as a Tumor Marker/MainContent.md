@@ -9,7 +9,7 @@ Imagine the thyroid gland not as a single, uniform organ, but as a bustling city
 
 ### A Tale of Two Cells
 
-The vast majority of the thyroid's "city" is populated by **follicular cells**. These are the workhorses, diligently producing the [thyroid hormones](@entry_id:150248) that regulate our metabolism. Their signature product, a large protein they use to build and store hormones, is called **thyroglobulin**. A key part of their job description is a unique skill: they are masters of capturing iodine from the bloodstream, a crucial ingredient for their hormonal creations.
+The vast majority of the thyroid's "city" is populated by **follicular cells**. These are the workhorses, diligently producing the [thyroid hormones](@keyword=thyroid_hormones|lang=en-US|style=Feynman) that regulate our metabolism. Their signature product, a large protein they use to build and store hormones, is called **thyroglobulin**. A key part of their job description is a unique skill: they are masters of capturing iodine from the bloodstream, a crucial ingredient for their hormonal creations.
 
 But tucked away in the spaces between the follicles are the residents of another, much smaller neighborhood: the **parafollicular cells**, or **C-cells**. These cells have a completely different ancestry and a different job. They are part of the body's neuroendocrine system, and their main task is to produce **calcitonin**, a peptide hormone that helps regulate calcium levels in the a_blood. They have no need for iodine and do not make thyroglobulin.
 
@@ -19,7 +19,7 @@ This fundamental duality is the bedrock principle. If a doctor suspects MTC, the
 
 ### The Pathologist's Magnifying Glass
 
-A blood test giving a high calcitonin level is a strong accusation, but for a final verdict, we must see the crime scene itself: the tumor tissue. This is the job of the pathologist, who uses a technique of exquisite beauty called **[immunohistochemistry](@entry_id:178404) (IHC)**. Think of it as using molecular "dyes" of incredible specificity. These dyes are antibodies, each designed to seek out and stick to just one type of protein.
+A blood test giving a high calcitonin level is a strong accusation, but for a final verdict, we must see the crime scene itself: the tumor tissue. This is the job of the pathologist, who uses a technique of exquisite beauty called **[immunohistochemistry](@keyword=immunohistochemistry|lang=en-US|style=Feynman) (IHC)**. Think of it as using molecular "dyes" of incredible specificity. These dyes are antibodies, each designed to seek out and stick to just one type of protein.
 
 To confirm a diagnosis of MTC, a pathologist will apply a panel of these dyes to a slice of the tumor. The expected pattern is a story told in colors:
 
@@ -41,7 +41,7 @@ This isn't just an academic exercise; it is one of the most powerful prognostic 
 
 The story gets even more fascinating when we track more than one marker, such as calcitonin and CEA. What are we to make of a situation where the two markers tell different stories? Imagine a patient whose calcitonin level is rising very slowly, with a doubling time of over seven years, but whose CEA level is skyrocketing, doubling every six months.
 
-This isn't a measurement error. This is a profound biological message. It is a sign of **[dedifferentiation](@entry_id:162707)**. The tumor is evolving, and for the worse. It is shedding the specialized characteristics of its C-cell origin—like the efficient production of calcitonin—and reverting to a more primitive, aggressive cancerous state. This more generic malignant cell might produce less calcitonin but, for reasons not fully understood, continues to produce CEA, and does so at a rate that reflects its true, aggressive growth.
+This isn't a measurement error. This is a profound biological message. It is a sign of **[dedifferentiation](@keyword=dedifferentiation|lang=en-US|style=Feynman)**. The tumor is evolving, and for the worse. It is shedding the specialized characteristics of its C-cell origin—like the efficient production of calcitonin—and reverting to a more primitive, aggressive cancerous state. This more generic malignant cell might produce less calcitonin but, for reasons not fully understood, continues to produce CEA, and does so at a rate that reflects its true, aggressive growth.
 
 This discordance, a rapidly rising CEA in the face of a slowly rising or even falling calcitonin, is a critical warning sign. It tells the clinician that the tumor is more dangerous than the calcitonin level alone would suggest, and that a more aggressive treatment strategy may be needed. Here we see the true art of medicine: interpreting the pattern, not just the numbers.
 

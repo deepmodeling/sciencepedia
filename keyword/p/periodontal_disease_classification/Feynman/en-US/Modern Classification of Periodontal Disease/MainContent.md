@@ -21,7 +21,7 @@ With a reliable measure in hand, the next step in any rigorous science is to ens
 
 Observed attachment loss is not always periodontitis. Consider a few of these mimics:
 
-*   **Traumatic Recession:** The gum tissue can be physically pushed away by forces like aggressive toothbrushing or a lip piercing. This is mechanical [erosion](@entry_id:187476), like a riverbank worn away by a fast current, not a biological disease process originating from plaque.
+*   **Traumatic Recession:** The gum tissue can be physically pushed away by forces like aggressive toothbrushing or a lip piercing. This is mechanical [erosion](@keyword=erosion|lang=en-US|style=Feynman), like a riverbank worn away by a fast current, not a biological disease process originating from plaque.
 *   **Cervical Caries:** A cavity developing at the neck of the tooth can physically destroy the CEJ landmark. If our "sea level" reference is gone, any measurement of attachment loss becomes unreliable.
 *   **Endodontic Lesions and Root Fractures:** Sometimes, the problem starts from *inside* the tooth (an infection of the pulp) or from a structural failure of the root itself. These can create deep, isolated pockets of bone loss that look like periodontitis but have a completely different cause.
 
@@ -41,7 +41,7 @@ This led to the creation of the 2017 classification, a unified framework that de
 
 The **Stage** provides a static picture of the disease at a single point in time. It describes the **severity** of the destruction and the **complexity** of managing the case.
 
-**Severity** is primarily determined by the amount of attachment loss at the most affected site in the mouth. This can be measured with clinical attachment level (CAL) or by looking at **Radiographic Bone Loss (RBL)** on an [x-ray](@entry_id:187649). RBL is cleverly expressed as a percentage of the total root length, a ratio that automatically corrects for differences in tooth size or [x-ray](@entry_id:187649) magnification. The severity thresholds are intuitive:
+**Severity** is primarily determined by the amount of attachment loss at the most affected site in the mouth. This can be measured with clinical attachment level (CAL) or by looking at **Radiographic Bone Loss (RBL)** on an [x-ray](@keyword=x_ray|lang=en-US|style=Feynman). RBL is cleverly expressed as a percentage of the total root length, a ratio that automatically corrects for differences in tooth size or [x-ray](@keyword=x_ray|lang=en-US|style=Feynman) magnification. The severity thresholds are intuitive:
 *   **Stage I:** Mild disease, with $1-2$ mm of CAL.
 *   **Stage II:** Moderate disease, with $3-4$ mm of CAL.
 *   **Stage III/IV:** Severe disease, with $5$ mm or more of CAL.

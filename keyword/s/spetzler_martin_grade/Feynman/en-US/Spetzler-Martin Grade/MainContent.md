@@ -15,11 +15,11 @@ How does a surgeon weigh the risk of a future hemorrhage against the risk of the
 
 ### A Simple Rule for a Complex Problem: The Spetzler-Martin Grade
 
-In 1986, neurosurgeons Robert Spetzler and Neil Martin proposed a system that distilled this terrifyingly complex decision into just three simple questions. Its beauty lies not in its complexity, but in its profound simplicity, capturing the essence of the surgical challenge . To calculate the risk, the surgeon asks:
+In 1986, neurosurgeons Robert Spetzler and Neil Martin proposed a system that distilled this terrifyingly complex decision into just three simple questions. Its beauty lies not in its complexity, but in its profound simplicity, capturing the essence of the surgical challenge [@problem_id:4466000]. To calculate the risk, the surgeon asks:
 
 #### 1. How big is it? (Size)
 
-This is the most intuitive question. A bigger mess is harder to clean up. A small, compact AVM is like a single weed in a garden; it can be plucked out with minimal disturbance. A large AVM, however, is like a deeply [rooted tree](@entry_id:266860). Its removal requires a much wider surgical corridor, disturbing more healthy brain tissue. It has more feeding arteries that must be meticulously identified and clipped, and its removal causes a more dramatic shift in the brain's blood flow, which can be dangerous in itself.
+This is the most intuitive question. A bigger mess is harder to clean up. A small, compact AVM is like a single weed in a garden; it can be plucked out with minimal disturbance. A large AVM, however, is like a deeply [rooted tree](@keyword=rooted_tree|lang=en-US|style=Feynman). Its removal requires a much wider surgical corridor, disturbing more healthy brain tissue. It has more feeding arteries that must be meticulously identified and clipped, and its removal causes a more dramatic shift in the brain's blood flow, which can be dangerous in itself.
 
 The Spetzler-Martin system quantifies this with a simple scale:
 -   **Small** (nidus diameter $\lt 3$ cm): $1$ point
@@ -30,7 +30,7 @@ The Spetzler-Martin system quantifies this with a simple scale:
 
 Not all brain tissue is created equal. You could lose a small piece of your frontal lobe and perhaps only experience a subtle change in personality. But lose the same amount of tissue in the wrong place, and you might never speak, see, or move your hand again. This concept is called **eloquence**. An "eloquent" brain region is one whose injury is known to cause a major, disabling neurological deficit.
 
-These are the brain's crown jewels: the **sensorimotor cortex** that controls movement and sensation, the **language centers** (Broca's and Wernicke's areas) that allow us to communicate, the **visual cortex** at the back of the brain, and the deep, critical relay stations like the **thalamus**, **hypothalamus**, and **brainstem** .
+These are the brain's crown jewels: the **sensorimotor cortex** that controls movement and sensation, the **language centers** (Broca's and Wernicke's areas) that allow us to communicate, the **visual cortex** at the back of the brain, and the deep, critical relay stations like the **thalamus**, **hypothalamus**, and **brainstem** [@problem_id:4466064].
 
 The grading system treats this as a simple but critical binary choice:
 -   Located in **non-eloquent** brain: $0$ points
@@ -48,7 +48,7 @@ Therefore, the presence of any deep drainage significantly escalates the surgica
 -   **Superficial** venous drainage only: $0$ points
 -   **Any component** of deep venous drainage: $1$ point
 
-Even a small vein draining into the deep system acts as a surgical booby trap and merits the point .
+Even a small vein draining into the deep system acts as a surgical booby trap and merits the point [@problem_id:4393935].
 
 ### The Sum of All Fears: From Grade to Class
 
@@ -58,31 +58,31 @@ $$ \text{Spetzler-Martin Grade} = \text{Size} + \text{Eloquence} + \text{Venous 
 
 The resulting score, from I to V, provides a remarkably accurate estimate of the risk of surgery. A Grade I AVM (small, non-eloquent, superficial drainage) might carry a very low risk of complications, while a Grade V AVM (large, eloquent, deep drainage) could have a risk so high as to be prohibitive.
 
-To make this even more practical, these grades were later grouped into the **Spetzler-Ponce classes**, which function like a traffic light for surgical decision-making :
+To make this even more practical, these grades were later grouped into the **Spetzler-Ponce classes**, which function like a traffic light for surgical decision-making [@problem_id:4465981]:
 
 -   **Class A (Grade I-II):** Green light. For these AVMs, the risk of surgery is generally low, and the benefits of eliminating the hemorrhage risk often make it the best choice.
 
 -   **Class B (Grade III):** Yellow light. These are the gray-zone cases. The risks of surgery and the natural history of the disease are more balanced. The decision is difficult and highly individualized, often involving a combination of treatments.
 
--   **Class C (Grade IV-V):** Red light. The risk of surgery is typically very high. These AVMs are often considered "inoperable" by conventional microsurgical means, and alternative or palliative strategies are sought .
+-   **Class C (Grade IV-V):** Red light. The risk of surgery is typically very high. These AVMs are often considered "inoperable" by conventional microsurgical means, and alternative or palliative strategies are sought [@problem_id:4466012].
 
 ### Beyond the Grade: The Hidden Dangers
 
 The Spetzler-Martin grade is a brilliant map, but it doesn't show all the monsters lurking in the territory. The grade predicts the difficulty of the *surgery*, but what predicts the likelihood that the AVM will bleed in the first place? The two are related, but not identical.
 
-One of the most significant hidden dangers is the presence of **aneurysms**, small, fragile blisters on the blood vessels, which are particularly prone to rupture. In the high-flow environment of an AVM, two main types can form :
+One of the most significant hidden dangers is the presence of **aneurysms**, small, fragile blisters on the blood vessels, which are particularly prone to rupture. In the high-flow environment of an AVM, two main types can form [@problem_id:4466009]:
 
 1.  **Flow-related Aneurysms:** These form on the arteries *feeding* the AVM. Imagine a garden hose with the nozzle clamped shut; the immense back-pressure can cause the hose itself to bulge and weaken. This is what happens to the feeding arteries under the relentless hemodynamic stress.
 
 2.  **Intranidal Aneurysms:** These are even more sinister. They are weak, bulging spots located *within* the chaotic nidus of the AVM itself. They are thought to represent the absolute weakest point in the entire structure, the true "fuse" on the time bomb, and their presence is strongly associated with a history of hemorrhage.
 
-This highlights a crucial subtlety: a small (Size=1), deep (Eloquence=1, Drainage=1) AVM would be a Spetzler-Martin Grade III. But its deep location and drainage are known to be strong independent risk factors for hemorrhage. Conversely, a very large (Size=3), non-eloquent (Eloquence=0), superficially-draining (Drainage=0) AVM is also a Grade III. It might be a surgically challenging case due to its size, but its features suggest a lower intrinsic risk of rupture. The grade is the same, but the clinical picture is entirely different . The SM grade is a guide for the surgeon, not a crystal ball for the natural history of the disease.
+This highlights a crucial subtlety: a small (Size=1), deep (Eloquence=1, Drainage=1) AVM would be a Spetzler-Martin Grade III. But its deep location and drainage are known to be strong independent risk factors for hemorrhage. Conversely, a very large (Size=3), non-eloquent (Eloquence=0), superficially-draining (Drainage=0) AVM is also a Grade III. It might be a surgically challenging case due to its size, but its features suggest a lower intrinsic risk of rupture. The grade is the same, but the clinical picture is entirely different [@problem_id:4393935]. The SM grade is a guide for the surgeon, not a crystal ball for the natural history of the disease.
 
 ### Is the Map Wrong? When Anatomy and Function Diverge
 
 The Spetzler-Martin system is based on a standard, anatomical map of the brain—the kind you see in textbooks. But what if a patient's map is different? A congenital lesion like an AVM, present from birth, can cause the brain to reorganize itself over a person's lifetime. The function you'd expect to find in one place might have migrated somewhere else. The eloquent cortex might not be where you think it is.
 
-This is where modern technology allows us to move beyond the static map and create a personalized, *functional* map for each patient .
+This is where modern technology allows us to move beyond the static map and create a personalized, *functional* map for each patient [@problem_id:4466064].
 
 -   **Functional MRI (fMRI):** This technique watches blood flow to see which parts of the brain "light up" during a task, like moving a hand. Near an AVM, however, this can be misleading. The AVM's abnormal plumbing can "steal" blood flow from adjacent healthy tissue, causing a functionally active area to appear quiet—a phenomenon called **neurovascular uncoupling**.
 
@@ -94,21 +94,21 @@ These tools don't replace the Spetzler-Martin grade, but they refine it, transfo
 
 ### The Ghost in the Machine: Recurrence and the Living Lesion
 
-What happens when a surgeon performs a perfect operation on a low-grade AVM, and the post-operative angiogram—the gold standard imaging—shows complete obliteration? The bomb has been defused. Or has it? In a small number of cases, particularly in children, the AVM can come back. This phenomenon of **recurrence** reveals that an AVM is not just a static plumbing problem; it is a living, biological entity .
+What happens when a surgeon performs a perfect operation on a low-grade AVM, and the post-operative angiogram—the gold standard imaging—shows complete obliteration? The bomb has been defused. Or has it? In a small number of cases, particularly in children, the AVM can come back. This phenomenon of **recurrence** reveals that an AVM is not just a static plumbing problem; it is a living, biological entity [@problem_id:4466044].
 
 How can this happen? There are several compelling theories that work together:
 
 1.  **The Limits of Vision:** Our best imaging, the digital subtraction angiogram (DSA), has a resolution limit. It may not be able to see microscopic residual nests of AVM cells. The surgeon removes what can be seen, but an invisible "ember" remains.
 
-2.  **The Biology of Regrowth:** A child's brain is a hotbed of growth and plasticity. Their vascular cells are primed to proliferate and form new vessels—a process called **[angiogenesis](@entry_id:149600)**. The surgery itself can create a local inflammatory environment rich in growth factors (like VEGF), which can act like fertilizer on that leftover ember, fanning it back into a full-blown AVM.
+2.  **The Biology of Regrowth:** A child's brain is a hotbed of growth and plasticity. Their vascular cells are primed to proliferate and form new vessels—a process called **[angiogenesis](@keyword=angiogenesis|lang=en-US|style=Feynman)**. The surgery itself can create a local inflammatory environment rich in growth factors (like VEGF), which can act like fertilizer on that leftover ember, fanning it back into a full-blown AVM.
 
-3.  **The Genetic Blueprint:** We are now discovering that many AVMs have [somatic mutations](@entry_id:276057) in their DNA, particularly in signaling pathways like the **MAPK pathway**, that essentially act as a stuck "on" switch for vessel growth . The AVM has a genetic program telling it to grow, and even after resection, this drive can persist in any remaining cells.
+3.  **The Genetic Blueprint:** We are now discovering that many AVMs have [somatic mutations](@keyword=somatic_mutations|lang=en-US|style=Feynman) in their DNA, particularly in signaling pathways like the **MAPK pathway**, that essentially act as a stuck "on" switch for vessel growth [@problem_id:4466044]. The AVM has a genetic program telling it to grow, and even after resection, this drive can persist in any remaining cells.
 
 This reveals a deeper truth: treating an AVM is not just a mechanical repair. It's an intervention on a dynamic biological process, one that can have a stubborn, life-like persistence.
 
 ### A Random Walk Through a Minefield: The ARUBA Trial and the Nature of Risk
 
-The Spetzler-Martin grade gives us a powerful tool to estimate surgical risk. But it doesn't answer the ultimate question: for an AVM that has *not* yet bled, should we intervene at all? This was the question tackled by a famous and controversial clinical trial: **ARUBA** (A Randomized trial of Unruptured Brain Arteriovenous malformations) .
+The Spetzler-Martin grade gives us a powerful tool to estimate surgical risk. But it doesn't answer the ultimate question: for an AVM that has *not* yet bled, should we intervene at all? This was the question tackled by a famous and controversial clinical trial: **ARUBA** (A Randomized trial of Unruptured Brain Arteriovenous malformations) [@problem_id:4465986].
 
 The results were stunning. Over the trial's relatively short follow-up period, patients who received medical management (i.e., were simply watched) did *better*—they had fewer strokes or deaths—than patients who underwent intervention. This seemed to turn decades of neurosurgical practice on its head.
 

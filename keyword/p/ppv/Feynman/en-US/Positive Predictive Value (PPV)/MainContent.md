@@ -13,11 +13,11 @@ This question, as natural as it is, does not have a simple answer printed on the
 
 When scientists develop and validate a diagnostic test, they are concerned with its intrinsic performance. They ask two main questions, which assume they already know who is sick and who is healthy (perhaps by using a "gold standard" reference like a biopsy or long-term follow-up).
 
-1.  **If a person *has* the disease, how often does our test correctly identify them?** This is the **sensitivity** of the test. It's the "[true positive rate](@entry_id:637442)." A highly sensitive test is like a vigilant guard dog that reliably barks at intruders. In the language of probability, it's the probability of a positive test ($T+$) given the presence of disease ($D$), written as $P(T+ \mid D)$  .
+1.  **If a person *has* the disease, how often does our test correctly identify them?** This is the **sensitivity** of the test. It's the "[true positive rate](@keyword=true_positive_rate|lang=en-US|style=Feynman)." A highly sensitive test is like a vigilant guard dog that reliably barks at intruders. In the language of probability, it's the probability of a positive test ($T+$) given the presence of disease ($D$), written as $P(T+ \mid D)$ [@problem_id:4585402] [@problem_id:5231207].
 
-2.  **If a person does *not* have the disease, how often does our test correctly give them the all-clear?** This is the **specificity** of the test. It's the "true negative rate." A highly specific test is like a calm guard dog that doesn't bark at the mail carrier. It correctly identifies the non-threatening situations. This is the probability of a negative test ($T-$) given the absence of disease ($\neg D$), written as $P(T- \mid \neg D)$ .
+2.  **If a person does *not* have the disease, how often does our test correctly give them the all-clear?** This is the **specificity** of the test. It's the "true negative rate." A highly specific test is like a calm guard dog that doesn't bark at the mail carrier. It correctly identifies the non-threatening situations. This is the probability of a negative test ($T-$) given the absence of disease ($\neg D$), written as $P(T- \mid \neg D)$ [@problem_id:4572353].
 
-These two metrics, sensitivity and specificity, are often called "test-centric" . They are inherent properties of the assay, measured under controlled conditions. They are independent of how common or rare the disease is in any particular group of people . They tell us how the test behaves *given* a certain health status.
+These two metrics, sensitivity and specificity, are often called "test-centric" [@problem_id:4572353]. They are inherent properties of the assay, measured under controlled conditions. They are independent of how common or rare the disease is in any particular group of people [@problem_id:4826765]. They tell us how the test behaves *given* a certain health status.
 
 But this is the reverse of the situation in the clinic. You and your doctor don't know your true health status; that's why you took the test in the first place! You know the *result* of the test, and you want to infer the probability of your health status. This leads to two different, "patient-centric" questions:
 
@@ -29,7 +29,7 @@ The central surprise of diagnostic testing is that PPV is *not* the same as sens
 
 ### The Crucial Twist: The Tyranny of the Base Rate
 
-Prevalence, also known as the base rate, is simply how common the disease is in the population being tested. Let's explore this with a thought experiment, which mirrors the scenarios found in many medical contexts   .
+Prevalence, also known as the base rate, is simply how common the disease is in the population being tested. Let's explore this with a thought experiment, which mirrors the scenarios found in many medical contexts [@problem_id:4446791] [@problem_id:4663719] [@problem_id:4826765].
 
 Imagine an excellent test with 99% sensitivity and 99% specificity. This means it correctly identifies 99 out of 100 sick people and correctly clears 99 out of 100 healthy people.
 
@@ -57,7 +57,7 @@ $$PPV = \frac{\text{True Positives}}{\text{All Positives}} = \frac{99}{99 + 9,99
 
 This is a shocking and profound result. With the same "99% accurate" test, a positive result now means you have less than a 1% chance of actually having the disease! The overwhelming majority of positive results are false alarms. Why? Because even a tiny false positive rate (1%), when applied to a massive number of healthy people, generates a mountain of false positives that completely dwarfs the small hill of true positives from the rare disease.
 
-This "base rate effect" is not a flaw in the test; it is the fundamental logic of probability. It explains why a positive screening result for a rare genetic disorder from a direct-to-consumer test should be viewed with extreme skepticism until confirmed , and why the PPV of a test for the same disease can be over 28 times higher in a high-risk family than in the general public . The same principle shows that as prevalence rises, PPV increases, but NPV tends to decrease .
+This "base rate effect" is not a flaw in the test; it is the fundamental logic of probability. It explains why a positive screening result for a rare genetic disorder from a direct-to-consumer test should be viewed with extreme skepticism until confirmed [@problem_id:4333552], and why the PPV of a test for the same disease can be over 28 times higher in a high-risk family than in the general public [@problem_id:1493279]. The same principle shows that as prevalence rises, PPV increases, but NPV tends to decrease [@problem_id:4572353].
 
 ### The Unifying Logic: A Glimpse at Bayes' Theorem
 
@@ -65,13 +65,13 @@ The elegant mathematical tool that governs this entire process is **Bayes' Theor
 
 $$ PPV = P(D \mid T+) = \frac{P(T+ \mid D) P(D)}{P(T+ \mid D) P(D) + P(T+ \mid \neg D) P(\neg D)} $$
 
-Let's translate this from symbols into ideas  :
+Let's translate this from symbols into ideas [@problem_id:4345285] [@problem_id:4606787]:
 
 $$ PPV = \frac{(\text{Sensitivity}) \times (\text{Prevalence})}{(\text{Sensitivity}) \times (\text{Prevalence}) + (\text{False Positive Rate}) \times (1 - \text{Prevalence})} $$
 
 The numerator is the proportion of the entire population who are true positives. The denominator is the proportion of the entire population who will test positive for any reason (true positives plus false positives). The PPV is simply the ratio of these two groups. This formula beautifully encapsulates how sensitivity, specificity (since False Positive Rate = $1 - \text{Specificity}$), and prevalence all conspire to determine the meaning of a positive test.
 
-Another intuitive way to see this is through the odds form of Bayes' theorem :
+Another intuitive way to see this is through the odds form of Bayes' theorem [@problem_id:5231207]:
 
 $$ \text{Posterior Odds} = \text{Prior Odds} \times \text{Likelihood Ratio} $$
 

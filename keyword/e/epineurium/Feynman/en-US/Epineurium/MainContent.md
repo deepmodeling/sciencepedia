@@ -5,11 +5,11 @@ In the first chapter, "Principles and Mechanisms," we will dissect this hierarch
 
 ## Principles and Mechanisms
 
-To truly appreciate the nervous system, we must venture beyond the grand architecture of the brain and spinal cord into the intricate highways that connect the central command to the rest of the body. These highways are the peripheral nerves, and they are far more than simple wires. Each nerve is a marvel of [biological engineering](@entry_id:270890), a sophisticated, living cable designed for resilience, protection, and high-fidelity communication. To understand its function, we must, like a curious engineer, dissect it layer by layer.
+To truly appreciate the nervous system, we must venture beyond the grand architecture of the brain and spinal cord into the intricate highways that connect the central command to the rest of the body. These highways are the peripheral nerves, and they are far more than simple wires. Each nerve is a marvel of [biological engineering](@keyword=biological_engineering|lang=en-US|style=Feynman), a sophisticated, living cable designed for resilience, protection, and high-fidelity communication. To understand its function, we must, like a curious engineer, dissect it layer by layer.
 
 ### The Nerve as a Cable: A Symphony of Sheaths
 
-Imagine you have a heavy-duty industrial cable. If you were to slice it open, you wouldn't find just one thick copper core. You would find that the tough outer rubber jacket contains multiple, smaller insulated wires, and each of those, in turn, contains even finer filaments. Nature, in its infinite wisdom, settled on a strikingly similar design for our peripheral nerves . This hierarchical structure is a beautiful solution to the problem of protecting millions of delicate nerve fibers, or **axons**, as they traverse the dynamic and often hostile environment of the body.
+Imagine you have a heavy-duty industrial cable. If you were to slice it open, you wouldn't find just one thick copper core. You would find that the tough outer rubber jacket contains multiple, smaller insulated wires, and each of those, in turn, contains even finer filaments. Nature, in its infinite wisdom, settled on a strikingly similar design for our peripheral nerves [@problem_id:1724399]. This hierarchical structure is a beautiful solution to the problem of protecting millions of delicate nerve fibers, or **axons**, as they traverse the dynamic and often hostile environment of the body.
 
 This organization consists of three distinct layers of connective tissue, like a set of Russian nesting dolls:
 
@@ -23,7 +23,7 @@ This elegant, multi-layered design is the key to both the nerve's robustness and
 
 ### Form Follows Function: The Genius of the Layers
 
-Why did evolution go to the trouble of creating this elaborate three-tiered system? Because each layer solves a different, critical problem. The composition of each sheath is perfectly tailored to its unique role, a principle beautifully illustrated when we examine their microscopic structure and a few of their clever properties .
+Why did evolution go to the trouble of creating this elaborate three-tiered system? Because each layer solves a different, critical problem. The composition of each sheath is perfectly tailored to its unique role, a principle beautifully illustrated when we examine their microscopic structure and a few of their clever properties [@problem_id:5144441].
 
 #### Epineurium: The Rugged Protector
 
@@ -45,16 +45,16 @@ The elegance of this design—a tough outer shell, a selective inner barrier, an
 
 #### The Dark Side of Design: Perineural Invasion
 
-The perineurium's role as a barrier is a double-edged sword. Certain highly aggressive cancers, such as adenoid cystic carcinoma of the salivary glands or some squamous cell carcinomas, have a sinister affinity for nerves  . When these tumor cells encounter a nerve, they face the formidable perineurial barrier. Unable to easily breach the [tight junctions](@entry_id:143539), the cancer cells often take the path of least resistance. They begin to grow within the looser, more compliant tissue of the **epineurium**, spreading along the outside of the fascicles.
+The perineurium's role as a barrier is a double-edged sword. Certain highly aggressive cancers, such as adenoid cystic carcinoma of the salivary glands or some squamous cell carcinomas, have a sinister affinity for nerves [@problem_id:5039552] [@problem_id:4343844]. When these tumor cells encounter a nerve, they face the formidable perineurial barrier. Unable to easily breach the [tight junctions](@keyword=tight_junctions|lang=en-US|style=Feynman), the cancer cells often take the path of least resistance. They begin to grow within the looser, more compliant tissue of the **epineurium**, spreading along the outside of the fascicles.
 
 In this tragic turn of events, the nerve sheath, a structure designed for protection, becomes a superhighway for the cancer. The tumor can track along the nerve for centimeters, far from its original site, like a vine creeping along a trellis. This "perineural invasion" makes the cancer incredibly difficult to remove surgically and is a sign of a poor prognosis, as the cancer can silently spread into areas that appear perfectly healthy to the naked eye.
 
 #### The Surgeon's Dilemma: Mending a Broken Cable
 
-The distinct properties of the nerve sheaths also present a profound challenge to the surgeon tasked with repairing a severed nerve . Imagine the nerve is a cleanly cut cable. The surgeon has two main options.
+The distinct properties of the nerve sheaths also present a profound challenge to the surgeon tasked with repairing a severed nerve [@problem_id:5144467]. Imagine the nerve is a cleanly cut cable. The surgeon has two main options.
 
 The first is an **epineurial repair**. In this approach, the surgeon carefully brings the two cut ends of the nerve together and stitches the tough outer epineurium. This is a relatively quick and straightforward procedure that minimizes trauma to the delicate fascicles inside. The trade-off, however, is a lack of precision. The fascicles within are only grossly aligned, and there's a significant chance that axons will regrow into the wrong channels—a motor axon might end up trying to connect to a sensory receptor, leading to poor functional recovery.
 
-The second, more technically demanding option is a **perineurial repair** (or fascicular repair). Here, the surgeon opens the epineurium to identify the individual fascicles and then painstakingly sutures the perineurium of each corresponding fascicle together. In nerves with a well-defined geography of motor and sensory fascicles, this approach offers the best chance of guiding the regenerating axons to their correct targets, potentially leading to a much better functional outcome. But this precision comes at a high price. The increased manipulation risks damaging the delicate perineurium, disrupting the blood-nerve barrier, and compromising the fascicles' blood supply. Too many stitches, or stitches pulled too tight, can cause excessive scarring (fibrosis) that can choke off regeneration altogether .
+The second, more technically demanding option is a **perineurial repair** (or fascicular repair). Here, the surgeon opens the epineurium to identify the individual fascicles and then painstakingly sutures the perineurium of each corresponding fascicle together. In nerves with a well-defined geography of motor and sensory fascicles, this approach offers the best chance of guiding the regenerating axons to their correct targets, potentially leading to a much better functional outcome. But this precision comes at a high price. The increased manipulation risks damaging the delicate perineurium, disrupting the blood-nerve barrier, and compromising the fascicles' blood supply. Too many stitches, or stitches pulled too tight, can cause excessive scarring (fibrosis) that can choke off regeneration altogether [@problem_id:5144467].
 
 This surgical dilemma perfectly encapsulates the functional duality of the nerve's architecture. The epineurium provides the robust, suturable sheath for a basic repair, while the perineurium holds the key to a more precise, but far riskier, functional restoration. It is a testament to a design where every layer has a purpose, and understanding that purpose is the very foundation of modern neuroscience and medicine.

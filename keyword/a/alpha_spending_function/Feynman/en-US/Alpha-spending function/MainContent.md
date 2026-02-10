@@ -5,7 +5,7 @@ This article introduces the alpha-spending function, an elegant statistical meth
 
 First, in "Principles and Mechanisms," we will explore the core concepts that make this method possible. We will define the problem of Type I error inflation, introduce the unifying idea of "information time," and explain how a pre-specified spending function budgets the acceptable error ($\alpha$) across the duration of a study. We will also examine different "spending philosophies" that reflect various strategic priorities.
 
-Following this, the chapter on "Applications and Interdisciplinary Connections" will demonstrate the profound impact of this method. We will see how it has revolutionized the design and execution of modern clinical trials, from simple studies to complex platform trials, and explore how the same fundamental principle provides intellectual rigor in fields as diverse as [high-energy physics](@entry_id:181260) and machine learning.
+Following this, the chapter on "Applications and Interdisciplinary Connections" will demonstrate the profound impact of this method. We will see how it has revolutionized the design and execution of modern clinical trials, from simple studies to complex platform trials, and explore how the same fundamental principle provides intellectual rigor in fields as diverse as [high-energy physics](@keyword=high_energy_physics|lang=en-US|style=Feynman) and machine learning.
 
 ## Principles and Mechanisms
 
@@ -25,7 +25,7 @@ The first breakthrough in solving this problem was to change how we measure time
 
 In statistics, **Fisher information** is a way of quantifying the precision of our data. Think of it as the "resolution" of our picture of the treatment's effect. At the start, the picture is blurry and noisy. As more patients enroll and, crucially, as more clinical outcomes (like recoveries or, in cancer trials, disease events) are observed, our information grows, and the picture becomes sharper.
 
-This leads to the beautiful and unifying concept of **information time ($t$)**. We can normalize the clock of any trial, regardless of its length or subject matter, to run from $t=0$ (the start, with zero information) to $t=1$ (the planned end of the trial, with $100\%$ of the [expected information](@entry_id:163261)). An interim analysis that occurs after half the expected number of events have been recorded happens at information time $t=0.5$. This puts every trial on a common, universal scale of progress, a scale measured not in seconds, but in knowledge.
+This leads to the beautiful and unifying concept of **information time ($t$)**. We can normalize the clock of any trial, regardless of its length or subject matter, to run from $t=0$ (the start, with zero information) to $t=1$ (the planned end of the trial, with $100\%$ of the [expected information](@keyword=expected_information|lang=en-US|style=Feynman)). An interim analysis that occurs after half the expected number of events have been recorded happens at information time $t=0.5$. This puts every trial on a common, universal scale of progress, a scale measured not in seconds, but in knowledge.
 
 ### The Alpha Budget: The Spending Function
 
@@ -52,7 +52,7 @@ Of course, these are just two examples. A spending function can be designed with
 
 ### The Ultimate Trade-Off: Power, Patients, and Ethics
 
-This choice of spending philosophy is not merely a statistical trifle; it's a decision with profound practical and ethical consequences. There is a fundamental trade-off at the heart of [sequential analysis](@entry_id:176451). For a fixed maximum number of patients ($N_{\max}$), the very act of conducting interim analyses introduces a small "power cost." To maintain the overall $\alpha$, the boundaries at every stage must be more stringent than in a single, final analysis. This slightly reduces the overall probability of detecting a true effect (the trial's **power**).
+This choice of spending philosophy is not merely a statistical trifle; it's a decision with profound practical and ethical consequences. There is a fundamental trade-off at the heart of [sequential analysis](@keyword=sequential_analysis|lang=en-US|style=Feynman). For a fixed maximum number of patients ($N_{\max}$), the very act of conducting interim analyses introduces a small "power cost." To maintain the overall $\alpha$, the boundaries at every stage must be more stringent than in a single, final analysis. This slightly reduces the overall probability of detecting a true effect (the trial's **power**).
 
 So why do it? Because the reward is a potential reduction in the *expected* sample size. If the drug is a dud, the trial will likely run to the end. But if the drug is a blockbuster, a well-designed sequential trial can stop early, having used far fewer patients than $N_{\max}$. This saves money and resources, but more importantly, it means a beneficial drug gets to the public sooner, and fewer trial participants are randomized to receive what has now been shown to be an inferior treatment.
 

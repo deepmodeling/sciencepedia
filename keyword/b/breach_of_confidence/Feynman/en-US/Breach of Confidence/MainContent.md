@@ -7,7 +7,7 @@ The trust between a patient and a clinician is built on a sacred promise: confid
 
 Imagine you tell your doctor something in absolute confidence—a fear, a diagnosis, a personal struggle. You do so with the unspoken understanding that your words are safe, locked away in a vault of professional trust. This isn't just a matter of politeness; it's the very bedrock of medicine. This principle, known as **confidentiality**, is the sacred pact between patient and practitioner. Without it, trust evaporates. Patients would hesitate to share vital information, diagnoses would be missed, and the entire enterprise of healing would falter.
 
-In the language of ethics, confidentiality is what we call a **prima facie duty**. The term might sound academic, but its meaning is simple and powerful: it is a duty that is binding and must be upheld in all but the most exceptional circumstances. It is a default setting, the rule you must follow unless a stronger, more compelling duty forces you to reconsider . It is the promise that what is said in the clinic, stays in the clinic.
+In the language of ethics, confidentiality is what we call a **prima facie duty**. The term might sound academic, but its meaning is simple and powerful: it is a duty that is binding and must be upheld in all but the most exceptional circumstances. It is a default setting, the rule you must follow unless a stronger, more compelling duty forces you to reconsider [@problem_id:4514133]. It is the promise that what is said in the clinic, stays in the clinic.
 
 But what happens when that promise comes into conflict with another, equally profound duty? What happens when the secret itself becomes a source of danger?
 
@@ -23,25 +23,25 @@ This is not a failure of ethics; it is the very heart of ethical reasoning. It i
 
 History often provides the clearest signposts. In 1976, a landmark legal case in California, *Tarasoff v. Regents of the University of California*, etched a new line in the sand. A patient had confided in his psychologist his intent to kill a young woman named Tatiana Tarasoff. The psychologist, bound by confidentiality, struggled with what to do. The patient was briefly detained by campus police but then released. Tragically, he later carried out his threat.
 
-The court's subsequent ruling sent [shockwaves](@entry_id:191964) through the medical and legal worlds. It declared that when a therapist determines that their patient presents a serious danger of violence to another, the duty of confidentiality is overridden by a **duty to protect** the foreseeable victim. This duty was not a vague suggestion; it was a professional obligation.
+The court's subsequent ruling sent [shockwaves](@keyword=shockwaves|lang=en-US|style=Feynman) through the medical and legal worlds. It declared that when a therapist determines that their patient presents a serious danger of violence to another, the duty of confidentiality is overridden by a **duty to protect** the foreseeable victim. This duty was not a vague suggestion; it was a professional obligation.
 
-This single case provided the raw material for a set of clear, actionable principles that define the threshold for such a momentous decision  . To justify breaking the sacred trust of confidentiality, the situation must typically meet three critical conditions:
+This single case provided the raw material for a set of clear, actionable principles that define the threshold for such a momentous decision [@problem_id:4392674] [@problem_id:4482818]. To justify breaking the sacred trust of confidentiality, the situation must typically meet three critical conditions:
 
 1.  **A Serious and Foreseeable Threat of Harm**: The risk cannot be trivial or speculative. It must be a credible threat of significant physical violence or death.
-2.  **An Identifiable Victim**: The threat must be aimed at a specific person or a reasonably identifiable group. A patient’s generalized anger at the world does not trigger this duty; a detailed plan against a named ex-partner does .
+2.  **An Identifiable Victim**: The threat must be aimed at a specific person or a reasonably identifiable group. A patient’s generalized anger at the world does not trigger this duty; a detailed plan against a named ex-partner does [@problem_id:4876825].
 3.  **Imminence**: The threat must be time-sensitive, likely to occur in the near future if no action is taken. A plan for "tomorrow morning" carries far more weight than a fantasy about some distant future.
 
-Consider the stark scenario of a patient who reveals a detailed plan to attack a former partner the next day, and confirms having the weapon to do so . Here, all three conditions are met. The threat is serious (violence), the victim is identifiable (the partner), and the danger is imminent (the next day). In this moment, the abstract ethical conflict becomes a concrete call to action.
+Consider the stark scenario of a patient who reveals a detailed plan to attack a former partner the next day, and confirms having the weapon to do so [@problem_id:4392674]. Here, all three conditions are met. The threat is serious (violence), the victim is identifiable (the partner), and the danger is imminent (the next day). In this moment, the abstract ethical conflict becomes a concrete call to action.
 
 ### The Moral Calculus: A Logic of Intervention
 
 Once the line is crossed and the duty to protect is triggered, the decision-making process is not a panicked free-for-all. It follows a rigorous, almost mathematical logic, governed by two more beautiful principles: **proportionality** and **least infringement**.
 
-The **principle of least infringement** dictates that you must always start with the smallest possible intervention. Have you tried to reason with the patient? Can they be persuaded to accept voluntary hospitalization? A breach of confidentiality is a last resort, taken only when less intrusive options are insufficient or have failed .
+The **principle of least infringement** dictates that you must always start with the smallest possible intervention. Have you tried to reason with the patient? Can they be persuaded to accept voluntary hospitalization? A breach of confidentiality is a last resort, taken only when less intrusive options are insufficient or have failed [@problem_id:4392674].
 
-The **principle of proportionality** demands that the action must be tailored to the goal. If a breach is necessary, it must be executed with surgical precision. The clinician must disclose only the **minimum necessary** information, and only to those people who are in a position to actually mitigate the risk—typically, the potential victim and law enforcement. Sharing all the details with the victim's family or the patient's employer would be a disproportionate and unethical violation .
+The **principle of proportionality** demands that the action must be tailored to the goal. If a breach is necessary, it must be executed with surgical precision. The clinician must disclose only the **minimum necessary** information, and only to those people who are in a position to actually mitigate the risk—typically, the potential victim and law enforcement. Sharing all the details with the victim's family or the patient's employer would be a disproportionate and unethical violation [@problem_id:4876825].
 
-This balancing act can be expressed with surprising clarity using a simple mathematical idea. Imagine we could assign a value to the harms and benefits. A breach is justified when the expected harm it prevents is greater than the harm caused by the breach itself. We can write this down as an inequality  :
+This balancing act can be expressed with surprising clarity using a simple mathematical idea. Imagine we could assign a value to the harms and benefits. A breach is justified when the expected harm it prevents is greater than the harm caused by the breach itself. We can write this down as an inequality [@problem_id:4672619] [@problem_id:4869154]:
 
 $$ p \cdot H \cdot \eta > C $$
 
@@ -52,9 +52,9 @@ Let's break this down.
 - $p \cdot H \cdot \eta$ is therefore the total *harm averted* by your action.
 - $C$ is the cost of your action—the harm done to the patient's privacy and the therapeutic trust.
 
-The rule simply states that you should act only if the benefit outweighs the cost. This isn't just for violent threats. It applies equally to an ophthalmologist deciding whether to report a visually impaired patient who insists on driving, posing a risk to the public , or a doctor considering warning the partner of a patient with a communicable disease .
+The rule simply states that you should act only if the benefit outweighs the cost. This isn't just for violent threats. It applies equally to an ophthalmologist deciding whether to report a visually impaired patient who insists on driving, posing a risk to the public [@problem_id:4672619], or a doctor considering warning the partner of a patient with a communicable disease [@problem_id:4869154].
 
-We can distill this logic even further into a single, elegant formula. The decision to act depends on your certainty that harm will occur. We can define a probability threshold, $p^{*}$, above which you must act. This threshold is given by a beautiful piece of Bayesian decision theory :
+We can distill this logic even further into a single, elegant formula. The decision to act depends on your certainty that harm will occur. We can define a probability threshold, $p^{*}$, above which you must act. This threshold is given by a beautiful piece of Bayesian decision theory [@problem_id:4868560]:
 
 $$ p^{*} = \frac{C_{FP}}{C_{FP} + C_{FN}} $$
 
@@ -66,10 +66,10 @@ This equation reveals something profound. The threshold for action, $p^{*}$, dep
 
 Our elegant formulas rely on one crucial input: the probability of harm, $p$. But where does this number come from? It must come from careful, individualized clinical judgment. One of the greatest pitfalls in this process is what's known as the **base rate fallacy**.
 
-Imagine a screening tool designed to flag "high-risk" patients, and let's say it's quite good—90% sensitive (it catches 90% of true threats) and 90% specific (it correctly clears 90% of non-threats). Now, consider a clinic where the actual prevalence, or "base rate," of patients who pose a serious, imminent threat is very low, say 0.5%. What happens if we test 10,000 patients? 
+Imagine a screening tool designed to flag "high-risk" patients, and let's say it's quite good—90% sensitive (it catches 90% of true threats) and 90% specific (it correctly clears 90% of non-threats). Now, consider a clinic where the actual prevalence, or "base rate," of patients who pose a serious, imminent threat is very low, say 0.5%. What happens if we test 10,000 patients? [@problem_id:4868474]
 
 -   The number of truly dangerous patients is $10,000 \times 0.005 = 50$. The tool, with 90% sensitivity, will correctly flag $50 \times 0.90 = 45$ of them. These are the **true positives**.
--   The number of non-dangerous patients is $9,950$. The tool's specificity is 90%, meaning its [false positive rate](@entry_id:636147) is 10%. It will incorrectly flag $9,950 \times 0.10 = 995$ of these harmless patients. These are the **false positives**.
+-   The number of non-dangerous patients is $9,950$. The tool's specificity is 90%, meaning its [false positive rate](@keyword=false_positive_rate|lang=en-US|style=Feynman) is 10%. It will incorrectly flag $9,950 \times 0.10 = 995$ of these harmless patients. These are the **false positives**.
 
 The result is staggering. The tool flags a total of $45 + 995 = 1,040$ people as "high-risk." But of those 1,040 people, only 45 are actually a threat. The probability that someone with a "high-risk" label is truly dangerous—the Positive Predictive Value—is a mere $45 / 1040$, or about 4%.
 
@@ -77,7 +77,7 @@ This is the base rate fallacy in action. In a low-prevalence setting, even a goo
 
 ### Law's Two Faces: Civil Wrong and Criminal Offense
 
-Finally, what happens when a breach does occur? The law, like ethics, makes careful distinctions. An unauthorized disclosure can be viewed through two different lenses: civil law and criminal law .
+Finally, what happens when a breach does occur? The law, like ethics, makes careful distinctions. An unauthorized disclosure can be viewed through two different lenses: civil law and criminal law [@problem_id:4508553].
 
 Imagine a physician carelessly discusses a patient's case by name in a crowded hospital elevator. A stranger overhears and posts the details online. This is a **civil wrong**. The patient (the plaintiff) can sue the physician for damages in a civil court. The goal is compensation for the harm done to their privacy. The standard of proof is the **balance of probabilities**—is it more likely than not that the breach occurred and caused harm?
 

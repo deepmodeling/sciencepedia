@@ -1,5 +1,5 @@
 ## Introduction
-In healthcare, a clinical document is more than just a collection of words; it is a legal record, a snapshot of a patient's story, and a critical communication tool that must endure over time. The fundamental challenge in digital health has been to create a format that preserves this rich, human-centric narrative while also making the underlying data structured and computable for machines. How can a single document be both a legally attestable story for a clinician and a reliable data source for an automated safety alert system? This knowledge gap is precisely what the Health Level Seven (HL7) Clinical Document Architecture (CDA) was designed to bridge. This article provides a comprehensive exploration of this pivotal standard. In the first section, "Principles and Mechanisms," we will delve into the core philosophy and intricate structure that make CDA a trustworthy and robust standard. Following that, in "Applications and Interdisciplinary Connections," we will examine how CDA functions in the real world, interacting with other standards and enabling advanced applications from clinical decision support to [public health surveillance](@entry_id:170581).
+In healthcare, a clinical document is more than just a collection of words; it is a legal record, a snapshot of a patient's story, and a critical communication tool that must endure over time. The fundamental challenge in digital health has been to create a format that preserves this rich, human-centric narrative while also making the underlying data structured and computable for machines. How can a single document be both a legally attestable story for a clinician and a reliable data source for an automated safety alert system? This knowledge gap is precisely what the Health Level Seven (HL7) Clinical Document Architecture (CDA) was designed to bridge. This article provides a comprehensive exploration of this pivotal standard. In the first section, "Principles and Mechanisms," we will delve into the core philosophy and intricate structure that make CDA a trustworthy and robust standard. Following that, in "Applications and Interdisciplinary Connections," we will examine how CDA functions in the real world, interacting with other standards and enabling advanced applications from clinical decision support to [public health surveillance](@keyword=public_health_surveillance|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
@@ -17,7 +17,7 @@ These are precisely the five properties that define a clinical document in the C
 
 *   **Stewardship**: A document doesn't appear from nowhere. An identifiable person, group, or organization is responsible for its creation and maintenance. The CDA header explicitly names the authors and custodians, establishing a clear chain of responsibility.
 
-*   **Potential for Authentication**: Because it can be a legal record, a clinical document must be capable of being signed in a legally binding way. CDA provides the hooks for [digital signatures](@entry_id:269311), allowing a clinician to attest to the document's content. While not every CDA document *must* be signed, the potential is always there.
+*   **Potential for Authentication**: Because it can be a legal record, a clinical document must be capable of being signed in a legally binding way. CDA provides the hooks for [digital signatures](@keyword=digital_signatures|lang=en-US|style=Feynman), allowing a clinician to attest to the document's content. While not every CDA document *must* be signed, the potential is always there.
 
 *   **Context**: A clinical statement like "blood pressure 120/80" is meaningless without context. When was it taken? During what hospital stay? Who was the patient? CDA wraps every clinical story in a rich, structured **Header** that acts as the document's passport, detailing the who, what, when, where, and why of the clinical encounter.
 
@@ -47,7 +47,7 @@ While the narrative serves the human reader, a section *may* also contain **stru
 
 This is where true semantic interoperability begins. A computer doesn't need to understand English to process this entry. It can automatically check if the systolic blood pressure is below a certain threshold for a quality measure, or trigger an alert.
 
-This dual structure represents a brilliant trade-off. Documents with only narrative (Level 1) are easier for organizations to produce, leading to wider, faster adoption. Documents with rich structured entries (Level 3) are more difficult to create but unlock the full power of automated data analysis and clinical decision support. A national health system must weigh this trade-off between the breadth of participation and the depth of data [computability](@entry_id:276011).
+This dual structure represents a brilliant trade-off. Documents with only narrative (Level 1) are easier for organizations to produce, leading to wider, faster adoption. Documents with rich structured entries (Level 3) are more difficult to create but unlock the full power of automated data analysis and clinical decision support. A national health system must weigh this trade-off between the breadth of participation and the depth of data [computability](@keyword=computability|lang=en-US|style=Feynman).
 
 ### The Universal Grammar of Clinical Statements
 
@@ -71,9 +71,9 @@ Similarly, the language of these entries relies on controlled vocabularies—sta
 
 A clinical document, once finalized and signed, enters a state of sacred immutability. It is a legal record, and its integrity must be absolute. But medicine is not static; patients get better, diagnoses are refined, and errors are found. How can CDA reconcile the need for an unchangeable record with the reality of evolving information?
 
-The answer lies in a combination of [modern cryptography](@entry_id:274529) and a clever versioning model.
+The answer lies in a combination of [modern cryptography](@keyword=modern_cryptography|lang=en-US|style=Feynman) and a clever versioning model.
 
-First, the document is sealed. A **[digital signature](@entry_id:263024)** is not just a name at the bottom of a page. It is a cryptographic lock created by computing a unique mathematical fingerprint (a **hash**) of the *entire* document content and then encrypting that hash with the signer's private key. Any change to the document, no matter how small—even adding a single space—will produce a completely different hash, breaking the seal and invalidating the signature. This gives us mathematical certainty that the document we are looking at is the exact one the clinician signed.
+First, the document is sealed. A **[digital signature](@keyword=digital_signature|lang=en-US|style=Feynman)** is not just a name at the bottom of a page. It is a cryptographic lock created by computing a unique mathematical fingerprint (a **hash**) of the *entire* document content and then encrypting that hash with the signer's private key. Any change to the document, no matter how small—even adding a single space—will produce a completely different hash, breaking the seal and invalidating the signature. This gives us mathematical certainty that the document we are looking at is the exact one the clinician signed.
 
 So, if you find a mistake, you cannot simply edit the document. Instead, you create a *new* one. This is where CDA's lifecycle management shines:
 

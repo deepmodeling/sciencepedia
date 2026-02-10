@@ -3,7 +3,7 @@ Often seen merely as a tool for billing, medical coding is in fact the universal
 
 ## Principles and Mechanisms
 
-Imagine trying to build a modern skyscraper using only the tools of a Roman engineer. You might erect a structure, but it would lack the precision, complexity, and functionality required for the modern world. The same is true in medicine. For centuries, physicians communicated through narrative prose—a rich but often ambiguous medium. As medicine grew into a global, [data-driven science](@entry_id:167217), it needed a new set of tools, a universal language to describe the vast landscape of human health and disease. This is the world of medical coding, a system of breathtaking complexity and profound internal logic. It’s far more than a tool for billing; it's the very architecture of modern health information.
+Imagine trying to build a modern skyscraper using only the tools of a Roman engineer. You might erect a structure, but it would lack the precision, complexity, and functionality required for the modern world. The same is true in medicine. For centuries, physicians communicated through narrative prose—a rich but often ambiguous medium. As medicine grew into a global, [data-driven science](@keyword=data_driven_science|lang=en-US|style=Feynman), it needed a new set of tools, a universal language to describe the vast landscape of human health and disease. This is the world of medical coding, a system of breathtaking complexity and profound internal logic. It’s far more than a tool for billing; it's the very architecture of modern health information.
 
 ### A Tale of Two Questions: Why vs. What
 

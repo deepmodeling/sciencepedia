@@ -17,18 +17,18 @@ Now, these two alleles are not always identical. They can have slight variations
 
 A single gene, like the famous drug-metabolizing gene **CYP2D6** (short for Cytochrome P450 2D6), can have hundreds of known variants. Cataloging every single variant for every person would be a chaotic nightmare. To bring order to this complexity, scientists developed a more elegant system. They realized that specific sets of variants are often inherited together on the same chromosome in a single block. This co-inherited package of variants is called a **haplotype**. You can think of it not as a single LEGO brick, but as a pre-assembled component, like the wheel assembly of a LEGO car.
 
-To standardize the naming of these [haplotypes](@entry_id:177949) across the globe, researchers created the **star allele ('*') nomenclature**. Each functionally distinct haplotype is given a stable, unique name, like `CYP2D6*1` or `CYP2D6*4`. By convention, the `*1` allele is usually the "reference" version of the gene, which produces a fully functional, "normal" enzyme. Other star alleles, like `*4`, `*10`, or `*41`, represent specific, defined sets of variants that lead to an enzyme with altered function  . International bodies, such as the Pharmacogene Variation Consortium (PharmVar), act as the official librarians, meticulously curating and defining what variants constitute each star allele.
+To standardize the naming of these [haplotypes](@keyword=haplotypes|lang=en-US|style=Feynman) across the globe, researchers created the **star allele ('*') nomenclature**. Each functionally distinct haplotype is given a stable, unique name, like `CYP2D6*1` or `CYP2D6*4`. By convention, the `*1` allele is usually the "reference" version of the gene, which produces a fully functional, "normal" enzyme. Other star alleles, like `*4`, `*10`, or `*41`, represent specific, defined sets of variants that lead to an enzyme with altered function [@problem_id:4813984] [@problem_id:2836699]. International bodies, such as the Pharmacogene Variation Consortium (PharmVar), act as the official librarians, meticulously curating and defining what variants constitute each star allele.
 
-An individual’s genetic makeup for a particular gene is therefore described by the pair of star alleles they possess—one on each of their two homologous chromosomes. This pair is called a **diplotype**. For instance, a person might have the diplotype `CYP2D6*1/*4`. This simple notation is a powerful summary of their genetic potential to produce the CYP2D6 enzyme .
+An individual’s genetic makeup for a particular gene is therefore described by the pair of star alleles they possess—one on each of their two homologous chromosomes. This pair is called a **diplotype**. For instance, a person might have the diplotype `CYP2D6*1/*4`. This simple notation is a powerful summary of their genetic potential to produce the CYP2D6 enzyme [@problem_id:5227660].
 
 ### The Activity Score: A Simple Sum for a Complex Machine
 
 Now for the beautiful part. How do we turn a diplotype, like `*1/*4`, into a quantitative prediction of enzyme function? The answer is a remarkably simple and effective model: the **Activity Score (AS)**.
 
-The model assigns a numerical value to each star allele based on its empirically measured function. While the exact values can be refined over time, a standard, widely used system is as follows  :
+The model assigns a numerical value to each star allele based on its empirically measured function. While the exact values can be refined over time, a standard, widely used system is as follows [@problem_id:4386231] [@problem_id:5227660]:
 
 *   **Normal function allele** (e.g., `*1`, `*2`): contributes a value of $1.0$.
-*   **Decreased function allele** (e.g., `*10`, `*41`): contributes a value of $0.5$. (Some systems use more granular values, like $0.25$ for certain alleles like `*10` ).
+*   **Decreased function allele** (e.g., `*10`, `*41`): contributes a value of $0.5$. (Some systems use more granular values, like $0.25$ for certain alleles like `*10` [@problem_id:5041964]).
 *   **No function allele** (e.g., `*4`): contributes a value of $0.0$.
 
 The total activity score for an individual is simply the sum of the values of their two alleles. It’s an additive model, assuming that each allele contributes independently to the total enzyme capacity in the cell.
@@ -48,13 +48,13 @@ Nature, of course, is more inventive than our simple models. The genetic bluepri
 
 Sometimes, the cellular machinery that copies DNA makes a mistake, either deleting a gene entirely or duplicating it. This is called **Copy Number Variation (CNV)**. The activity score model elegantly accommodates this.
 
-A whole-[gene deletion](@entry_id:193267) is often designated as its own star allele, like `CYP2D6*5`, which has an activity value of $0$. A diplotype of `*4/*5` would mean one non-functional allele and one deleted allele, for a total score of $0 + 0 = 0$ .
+A whole-[gene deletion](@keyword=gene_deletion|lang=en-US|style=Feynman) is often designated as its own star allele, like `CYP2D6*5`, which has an activity value of $0$. A diplotype of `*4/*5` would mean one non-functional allele and one deleted allele, for a total score of $0 + 0 = 0$ [@problem_id:4969687].
 
-More dramatically, a gene can be duplicated. This is often denoted with an `xN` suffix, where `N` is the number of copies on that chromosome. For example, a haplotype of `CYP2D6*1x2` means that the `*1` allele is present in two copies, side-by-side on the same chromosome. Since our model is additive, this duplicated allele contributes twice its normal value to the total score. A person with a diplotype of `*1x2/*1` has a total of three normal-function gene copies, and their activity score is $(1.0 \times 2) + 1.0 = 3.0$  . This is how we identify individuals with exceptionally high enzyme activity.
+More dramatically, a gene can be duplicated. This is often denoted with an `xN` suffix, where `N` is the number of copies on that chromosome. For example, a haplotype of `CYP2D6*1x2` means that the `*1` allele is present in two copies, side-by-side on the same chromosome. Since our model is additive, this duplicated allele contributes twice its normal value to the total score. A person with a diplotype of `*1x2/*1` has a total of three normal-function gene copies, and their activity score is $(1.0 \times 2) + 1.0 = 3.0$ [@problem_id:4386231] [@problem_id:5227660]. This is how we identify individuals with exceptionally high enzyme activity.
 
 #### The Phasing Problem: Cis versus Trans
 
-Another layer of complexity arises when our laboratory tools have limitations. Imagine a genotyping test detects two different variants in a person, but it can't determine if those two variants are on the *same* chromosome (a configuration called **in cis**) or on *opposite* [homologous chromosomes](@entry_id:145316) (**in trans**). This is known as the **phasing problem**, and it can dramatically change the interpretation .
+Another layer of complexity arises when our laboratory tools have limitations. Imagine a genotyping test detects two different variants in a person, but it can't determine if those two variants are on the *same* chromosome (a configuration called **in cis**) or on *opposite* [homologous chromosomes](@keyword=homologous_chromosomes|lang=en-US|style=Feynman) (**in trans**). This is known as the **phasing problem**, and it can dramatically change the interpretation [@problem_id:4329868].
 
 Let's consider a patient who is heterozygous for two different variants: one that defines a no-function allele (let's call it Variant A) and one that defines a decreased-function allele (Variant B).
 
@@ -65,22 +65,22 @@ The unphased genetic data is identical in both cases, but the biological reality
 
 $E[\text{AS}] = (\text{AS}_{\text{trans}} \times P(\text{trans})) + (\text{AS}_{\text{cis}} \times P(\text{cis})) = (0.5 \times 0.8) + (1.0 \times 0.2) = 0.4 + 0.2 = 0.6$
 
-This probabilistic approach provides a more nuanced prediction that honestly reflects the underlying uncertainty in the data .
+This probabilistic approach provides a more nuanced prediction that honestly reflects the underlying uncertainty in the data [@problem_id:4814040].
 
 ### From Score to Action: The Metabolizer Phenotype
 
-The raw activity score is a powerful number, but for clinical use, it's often translated into a simpler, qualitative category. Based on the score, an individual's predicted metabolic phenotype is classified. For many enzymes, including CYP2D6, the standard categories are :
+The raw activity score is a powerful number, but for clinical use, it's often translated into a simpler, qualitative category. Based on the score, an individual's predicted metabolic phenotype is classified. For many enzymes, including CYP2D6, the standard categories are [@problem_id:5041964]:
 
 -   **Poor Metabolizer (PM)**: Has little to no enzyme function (e.g., $AS = 0$).
 -   **Intermediate Metabolizer (IM)**: Has reduced enzyme function (e.g., $AS > 0 \text{ and } \le 1.0$).
 -   **Normal Metabolizer (NM)**: Has fully functional enzyme activity (e.g., $AS > 1.0 \text{ and } \le 2.25$).
 -   **Ultrarapid Metabolizer (UM)**: Has higher-than-normal enzyme activity, usually due to gene duplication (e.g., $AS > 2.25$).
 
-These categories, standardized by groups like the Clinical Pharmacogenetics Implementation Consortium (CPIC), give clinicians a clear and actionable prediction to guide drug choice and dosage. Interestingly, there can be subtleties. An activity score of $1.0$ could result from a `*1/*4` diplotype (one normal, one absent) or a `*10/*41` diplotype (two half-functional). Some guidelines classify both as IMs, while others might distinguish them, highlighting that the path to the score can sometimes matter as much as the score itself .
+These categories, standardized by groups like the Clinical Pharmacogenetics Implementation Consortium (CPIC), give clinicians a clear and actionable prediction to guide drug choice and dosage. Interestingly, there can be subtleties. An activity score of $1.0$ could result from a `*1/*4` diplotype (one normal, one absent) or a `*10/*41` diplotype (two half-functional). Some guidelines classify both as IMs, while others might distinguish them, highlighting that the path to the score can sometimes matter as much as the score itself [@problem_id:4969687].
 
 ### Genotype is Not Destiny: The Reality of Phenoconversion
 
-Finally, it is crucial to remember that the activity score predicts the *genetic potential* for enzyme function. The actual, observable phenotype in a living person can be influenced by other factors. This phenomenon, where a non-genetic factor makes a person's metabolic phenotype mimic that of a different genotype, is called **phenoconversion** .
+Finally, it is crucial to remember that the activity score predicts the *genetic potential* for enzyme function. The actual, observable phenotype in a living person can be influenced by other factors. This phenomenon, where a non-genetic factor makes a person's metabolic phenotype mimic that of a different genotype, is called **phenoconversion** [@problem_id:5236886].
 
 The most common cause is drug-drug interactions. Consider our patient with the `*1x2/*1` genotype and an activity score of $3.0$—a clear Ultrarapid Metabolizer. Now, suppose this patient starts taking another medication that is a strong inhibitor of the CYP2D6 enzyme, blocking 90% of its activity.
 
@@ -88,4 +88,4 @@ We can calculate an **effective activity score** for this person while on the in
 
 $\text{Effective AS} = \text{Baseline AS} \times (\text{Residual Activity}) = 3.0 \times (1 - 0.9) = 0.3$
 
-Suddenly, this patient with a UM *genotype* now exhibits an IM *phenotype* (score of $0.3$). Their body behaves as if they have a genetically low-functioning enzyme. This is not a failure of the activity score model; rather, it is a beautiful illustration of its power. The model gives us the baseline, upon which we can layer other physiological and pharmacological knowledge to arrive at a truly personalized understanding of [drug response](@entry_id:182654) . The genetic blueprint is the starting point of the story, not the end.
+Suddenly, this patient with a UM *genotype* now exhibits an IM *phenotype* (score of $0.3$). Their body behaves as if they have a genetically low-functioning enzyme. This is not a failure of the activity score model; rather, it is a beautiful illustration of its power. The model gives us the baseline, upon which we can layer other physiological and pharmacological knowledge to arrive at a truly personalized understanding of [drug response](@keyword=drug_response|lang=en-US|style=Feynman) [@problem_id:4949294]. The genetic blueprint is the starting point of the story, not the end.

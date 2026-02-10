@@ -21,7 +21,7 @@ A low-grade tumor is like a lazy, slumbering animal. It might grow and cause pro
 *   **Stage I** tumors are low-grade.
 *   **Stage II** tumors are high-grade.
 
-This distinction is paramount because it defines the baseline level of aggression we must counter .
+This distinction is paramount because it defines the baseline level of aggression we must counter [@problem_id:4419670].
 
 #### Where Is It, and Is It Contained? (Anatomic Site, $T$)
 
@@ -31,31 +31,31 @@ The Enneking system asks whether the tumor is still respecting these boundaries.
 *   **Intracompartmental ($T_1$)**: The tumor is confined within its original compartment, like a person staying within a single room.
 *   **Extracompartmental ($T_2$)**: The tumor has breached its container. It has eroded through the bone's cortex or pushed through a fascial wall into an adjacent compartment. It has stepped out into the hallway.
 
-This 'A' vs. 'B' sub-classification refines the stage. A low-grade, contained tumor is Stage IA. If that same low-grade tumor breaks out, it becomes Stage IB. A high-grade tumor that is still contained is Stage IIA, but if it has become extracompartmental, it is classified as the much more concerning Stage IIB . This concept of compartmentalization is the system's anatomical soul, providing the map for surgical planning .
+This 'A' vs. 'B' sub-classification refines the stage. A low-grade, contained tumor is Stage IA. If that same low-grade tumor breaks out, it becomes Stage IB. A high-grade tumor that is still contained is Stage IIA, but if it has become extracompartmental, it is classified as the much more concerning Stage IIB [@problem_id:4419670]. This concept of compartmentalization is the system's anatomical soul, providing the map for surgical planning [@problem_id:5181841].
 
 #### Has It Traveled? (Metastasis, $M$)
 
 The final question is the most sobering. Has the tumor spread to distant parts of the body, like embers from a fire landing on a faraway rooftop? This is **metastasis**.
 
-In the Enneking system, the answer is a stark binary. If a tumor has metastasized—to the lungs, to another bone, anywhere—it is immediately classified as **Stage III**. Its grade and compartmental status no longer matter for this primary classification. A Stage III designation signifies that the disease is no longer a purely local problem; it is now a systemic one. This single factor, the presence of distant disease, is the most powerful predictor of a patient's outcome .
+In the Enneking system, the answer is a stark binary. If a tumor has metastasized—to the lungs, to another bone, anywhere—it is immediately classified as **Stage III**. Its grade and compartmental status no longer matter for this primary classification. A Stage III designation signifies that the disease is no longer a purely local problem; it is now a systemic one. This single factor, the presence of distant disease, is the most powerful predictor of a patient's outcome [@problem_id:5180142].
 
 ### A Unified System: Staging Benign Tumors
 
 The genius of Enneking's framework is that its logic extends beyond cancer. It provides an equally elegant system for staging benign tumors, classifying them not by their potential to metastasize, but by their local behavior, which can often be inferred directly from medical images.
 
-*   **Stage 1 (Latent):** A quiescent, sleeping lesion. It is often discovered by accident and is defined by a thick, bright white border on an X-ray, known as a **sclerotic rim**. This is the bone's way of building a strong fence around the inactive tumor. Such a lesion poses little threat .
+*   **Stage 1 (Latent):** A quiescent, sleeping lesion. It is often discovered by accident and is defined by a thick, bright white border on an X-ray, known as a **sclerotic rim**. This is the bone's way of building a strong fence around the inactive tumor. Such a lesion poses little threat [@problem_id:4374434].
 
-*   **Stage 2 (Active):** A growing but still contained lesion. It is causing symptoms, expanding the bone and thinning its cortex, but has not broken through. The defensive sclerotic rim is absent. This is a tumor that needs to be addressed, but the house is still intact .
+*   **Stage 2 (Active):** A growing but still contained lesion. It is causing symptoms, expanding the bone and thinning its cortex, but has not broken through. The defensive sclerotic rim is absent. This is a tumor that needs to be addressed, but the house is still intact [@problem_id:4374434].
 
-*   **Stage 3 (Aggressive):** An aggressive benign tumor that has broken its confines. Imaging shows a **cortical breach** and often a **soft-tissue mass** extending outside the bone. Though it is not "cancer" in the sense that it won't metastasize, its local behavior is destructive and requires an aggressive surgical approach. This is precisely the scenario where a tumor, though technically benign, behaves so aggressively that it blurs the lines and demands a cancer-like resection to prevent its return .
+*   **Stage 3 (Aggressive):** An aggressive benign tumor that has broken its confines. Imaging shows a **cortical breach** and often a **soft-tissue mass** extending outside the bone. Though it is not "cancer" in the sense that it won't metastasize, its local behavior is destructive and requires an aggressive surgical approach. This is precisely the scenario where a tumor, though technically benign, behaves so aggressively that it blurs the lines and demands a cancer-like resection to prevent its return [@problem_id:4374434].
 
 ### From Stage to Scalpel: The Philosophy of Surgical Margins
 
 The entire purpose of this staging is to arrive at a logical surgical plan. The stage dictates the necessary **surgical margin**—the amount of healthy tissue the surgeon must remove around the tumor to ensure no cells are left behind.
 
-The Enneking system defines four types of surgical margins, each with different implications for the risk of local recurrence  :
+The Enneking system defines four types of surgical margins, each with different implications for the risk of local recurrence [@problem_id:4419667] [@problem_id:5181788]:
 
-*   **Intralesional:** The surgeon cuts *into* the tumor, scooping it out. This is appropriate for active benign tumors (Stage 2), where the cavity is then treated with other methods (like [liquid nitrogen](@entry_id:138895) or bone cement) to kill any remaining microscopic cells. For a sarcoma, this is an incomplete operation.
+*   **Intralesional:** The surgeon cuts *into* the tumor, scooping it out. This is appropriate for active benign tumors (Stage 2), where the cavity is then treated with other methods (like [liquid nitrogen](@keyword=liquid_nitrogen|lang=en-US|style=Feynman) or bone cement) to kill any remaining microscopic cells. For a sarcoma, this is an incomplete operation.
 
 *   **Marginal:** The dissection plane is right on the edge of the tumor, through the inflamed "reactive zone" or pseudocapsule that surrounds it. This is like peeling an orange and risking a nick in the fruit. It carries a high risk of leaving microscopic disease.
 
@@ -63,11 +63,11 @@ The Enneking system defines four types of surgical margins, each with different 
 
 *   **Radical:** The most extensive procedure, where the entire anatomical compartment containing the tumor is removed. For a sarcoma in the quadriceps muscle group, this would mean removing all four muscles from the hip to the knee. For a tumor in the femur, it could mean removing the entire bone.
 
-The logic is clear: a more aggressive stage requires a more aggressive margin. A Stage 3 aggressive benign tumor or a Stage IIB sarcoma that has broken out of its compartment demands a **wide resection** to minimize the high probability of it coming back .
+The logic is clear: a more aggressive stage requires a more aggressive margin. A Stage 3 aggressive benign tumor or a Stage IIB sarcoma that has broken out of its compartment demands a **wide resection** to minimize the high probability of it coming back [@problem_id:4374434].
 
 ### The Surgeon's Plan vs. The Pathologist's Verdict
 
-It is crucial to understand one final, subtle distinction. The surgical margin (marginal, wide) describes the surgeon's *plan* and the physical extent of the operation. It is a statement of intent. But the ultimate success of that plan is determined by the pathologist, who uses a different system: the **Residual Tumor (R) classification** .
+It is crucial to understand one final, subtle distinction. The surgical margin (marginal, wide) describes the surgeon's *plan* and the physical extent of the operation. It is a statement of intent. But the ultimate success of that plan is determined by the pathologist, who uses a different system: the **Residual Tumor (R) classification** [@problem_id:5185172].
 
 After the surgeon removes the specimen, it is sent to the pathology lab. The pathologist inks the entire outer surface. Then, after processing the tissue, they examine the inked edges under a microscope.
 
@@ -75,6 +75,6 @@ After the surgeon removes the specimen, it is sent to the pathology lab. The pat
 *   **R1 Resection:** The pathologist finds microscopic tumor cells at the inked edge. Despite the surgeon's best efforts, some disease was likely left behind.
 *   **R2 Resection:** Macroscopic, visible tumor was left in the patient.
 
-A surgeon might plan a wide resection and achieve an R0 result. But sometimes, a tumor is wrapped around a critical artery or nerve. To save the limb, the surgeon might have to perform a planned **marginal** dissection right on the surface of the vessel. They accept the high risk of an **R1** margin at that one spot to preserve function, knowing that [adjuvant](@entry_id:187218) treatments like radiation will be needed to clean up the remaining microscopic cells .
+A surgeon might plan a wide resection and achieve an R0 result. But sometimes, a tumor is wrapped around a critical artery or nerve. To save the limb, the surgeon might have to perform a planned **marginal** dissection right on the surface of the vessel. They accept the high risk of an **R1** margin at that one spot to preserve function, knowing that [adjuvant](@keyword=adjuvant|lang=en-US|style=Feynman) treatments like radiation will be needed to clean up the remaining microscopic cells [@problem_id:5185172].
 
 The Enneking system, therefore, is a beautiful and practical intellectual tool. It creates a common language for the entire medical team, linking what is seen on an X-ray to what is seen under a microscope, and translating that combined knowledge into a rational, life-saving surgical act. It is a testament to the power of systematic thinking in the face of one of medicine's most complex challenges.

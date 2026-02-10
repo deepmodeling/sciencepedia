@@ -15,11 +15,11 @@ This is a profoundly counterintuitive result, and before we scrap the campaign, 
 
 If we look at the raw, pooled data, we are mixing apples and oranges. We are comparing a largely high-risk "exposed" group to a largely low-risk "unexposed" group. The difference we see might have nothing to do with the campaign itself, but everything to do with the pre-existing differences between the regions.
 
-This is the essence of **confounding**. A confounder is a "[lurking variable](@entry_id:172616)"—in this case, the region—that is associated with both our exposure (the campaign) and our outcome (hospitalization), creating a spurious link between them.
+This is the essence of **confounding**. A confounder is a "[lurking variable](@keyword=lurking_variable|lang=en-US|style=Feynman)"—in this case, the region—that is associated with both our exposure (the campaign) and our outcome (hospitalization), creating a spurious link between them.
 
 The solution? We must resist the urge to look at the crude, overall picture. Instead, we must slice the data. Let's look at the results *within* Region 1 and *within* Region 2, separately. When we do this, a new picture emerges. In both the high-risk region and the low-risk region, the campaign is associated with a *lower* rate of hospitalization. The intervention was beneficial all along!
 
-This baffling situation, where a trend that appears in different groups of data disappears or reverses when these groups are combined, is a famous statistical illusion known as **Simpson's Paradox**. It is a powerful demonstration that to find the truth, we must first make our comparisons fair. The first principle of the Mantel-Haenszel method, therefore, is **stratification**: slicing our data into homogeneous layers (or **strata**) based on the [confounding variable](@entry_id:261683) to control its influence.
+This baffling situation, where a trend that appears in different groups of data disappears or reverses when these groups are combined, is a famous statistical illusion known as **Simpson's Paradox**. It is a powerful demonstration that to find the truth, we must first make our comparisons fair. The first principle of the Mantel-Haenszel method, therefore, is **stratification**: slicing our data into homogeneous layers (or **strata**) based on the [confounding variable](@keyword=confounding_variable|lang=en-US|style=Feynman) to control its influence.
 
 ### A Weighted Democracy: Combining the Evidence
 
@@ -35,7 +35,7 @@ This is where the genius of Nathan Mantel and William Haenszel comes into play. 
 
 $$ \hat{\theta}_{MH} = \frac{\sum_{k} \frac{a_k d_k}{n_k}}{\sum_{k} \frac{b_k c_k}{n_k}} $$
 
-Here, for each stratum $k$, $a_k$ and $d_k$ are the cell counts for the "concordant pairs" (exposed cases and unexposed non-cases), while $b_k$ and $c_k$ are the counts for "[discordant pairs](@entry_id:166371)" (exposed non-cases and unexposed cases), and $n_k$ is the total size of the stratum.
+Here, for each stratum $k$, $a_k$ and $d_k$ are the cell counts for the "concordant pairs" (exposed cases and unexposed non-cases), while $b_k$ and $c_k$ are the counts for "[discordant pairs](@keyword=discordant_pairs|lang=en-US|style=Feynman)" (exposed non-cases and unexposed cases), and $n_k$ is the total size of the stratum.
 
 The structure of this formula is beautiful. It effectively weights the contribution of each stratum by a term related to its precision. Strata that provide more information about the association (i.e., those with more balanced distributions and larger sample sizes) will naturally contribute more to the numerator and denominator sums. It's an incredibly clever way to pool the information that is both computationally simple and statistically profound.
 
@@ -53,7 +53,7 @@ The CMH test statistic then aggregates the evidence across all strata. It compar
 
 $$ \chi^2_{\text{CMH}} = \frac{\left( \sum_{k} (a_k - E[a_k]) \right)^2}{\sum_{k} \operatorname{Var}(a_k)} $$
 
-For large samples, this statistic follows a [chi-squared distribution](@entry_id:165213) with one degree of freedom, giving us a p-value to quantify the strength of our evidence against the null hypothesis of no association.
+For large samples, this statistic follows a [chi-squared distribution](@keyword=chi_squared_distribution|lang=en-US|style=Feynman) with one degree of freedom, giving us a p-value to quantify the strength of our evidence against the null hypothesis of no association.
 
 ### When to Pool and When to Split: The Rule of Homogeneity
 
@@ -74,4 +74,4 @@ The Mantel-Haenszel method is more than just a statistical recipe; it is a tool 
 
 Finally, it's worth noting a curious feature of the odds ratio: it is **non-collapsible**. This means that even in a randomized trial where there is no confounding, the crude odds ratio (from the pooled table) will not necessarily equal the stratum-specific odds ratio, simply because the stratifying variable is a risk factor for the outcome. This is a mathematical subtlety that reminds us that statistical measures have their own distinct personalities.
 
-The Mantel-Haenszel method, in its elegance and simplicity, stands as a pillar of modern epidemiology. It is a non-parametric, [closed-form solution](@entry_id:270799) that is asymptotically equivalent to its more modern, model-based cousin, **conditional [logistic regression](@entry_id:136386)**, in the simple case of a single binary exposure. While [logistic regression](@entry_id:136386) offers greater flexibility for handling multiple and continuous variables, the Mantel-Haenszel approach remains a testament to the power of clear principles: slice your data to make comparisons fair, and combine the evidence in a way that is both simple and wise.
+The Mantel-Haenszel method, in its elegance and simplicity, stands as a pillar of modern epidemiology. It is a non-parametric, closed-form solution that is asymptotically equivalent to its more modern, model-based cousin, **conditional [logistic regression](@keyword=logistic_regression|lang=en-US|style=Feynman)**, in the simple case of a single binary exposure. While [logistic regression](@keyword=logistic_regression|lang=en-US|style=Feynman) offers greater flexibility for handling multiple and continuous variables, the Mantel-Haenszel approach remains a testament to the power of clear principles: slice your data to make comparisons fair, and combine the evidence in a way that is both simple and wise.

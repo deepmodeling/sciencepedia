@@ -11,7 +11,7 @@ So, how do we begin to map this invisible architecture? How do we trace the wiri
 
 ### A Three-Dimensional View of Power
 
-Let’s think like a physicist for a moment. When we study motion, we don't just say an object is "moving." We break it down into components: motion in the $x$ direction, the $y$ direction, and the $z$ direction. We can do the same for a concept as slippery as power. Imagine power as a vector, a quantity with both magnitude and direction, which we can represent with a simple triplet: $P = (p_e, p_a, p_m)$. 
+Let’s think like a physicist for a moment. When we study motion, we don't just say an object is "moving." We break it down into components: motion in the $x$ direction, the $y$ direction, and the $z$ direction. We can do the same for a concept as slippery as power. Imagine power as a vector, a quantity with both magnitude and direction, which we can represent with a simple triplet: $P = (p_e, p_a, p_m)$. [@problem_id:4972080]
 
 *   **Material Power ($p_m$)**: This is the most visible dimension. It's the power over "stuff"—money, resources, infrastructure, technology. Who controls the flow of funds in a global health program? Who owns the laboratories and the factories? This is the dimension of power you can often count and measure directly.
 
@@ -23,15 +23,15 @@ The coloniality of power, at its core, is a system where these three dimensions 
 
 ### The Governance of Life Itself
 
-One of the most powerful mechanisms of coloniality operates through a channel you might least expect: medicine and public health. Imagine a cholera outbreak in British-ruled South Asia around 1902. The colonial authorities, in the name of "public health," institute a series of measures: compulsory quarantines, police-enforced vaccinations, and travel passes tied to sanitary certificates. The clinic registers sort people by race and caste.  On the surface, this might seem like a rational response to an epidemic.
+One of the most powerful mechanisms of coloniality operates through a channel you might least expect: medicine and public health. Imagine a cholera outbreak in British-ruled South Asia around 1902. The colonial authorities, in the name of "public health," institute a series of measures: compulsory quarantines, police-enforced vaccinations, and travel passes tied to sanitary certificates. The clinic registers sort people by race and caste. [@problem_id:4749491] On the surface, this might seem like a rational response to an epidemic.
 
 But look closer. This is a form of power the philosopher Michel Foucault called **biopower**: the governance of entire populations by managing their bodies, their health, their births, their deaths, and their movements. Medicine here is not just about healing; it is about control. Patient accounts from such periods speak not of care, but of humiliation, coercion, and the strategic refusal of procedures to protect one's livelihood. The patient's body becomes a site where the authority of the empire is directly enacted.
 
-This logic was central to the very field of **tropical medicine**. This field of knowledge was not simply "medicine for hot climates." It was an imperial knowledge system whose research priorities were shaped by the needs of the colonial state.  Consider the massive campaigns against sleeping sickness in Africa. The primary goal was often not the universal welfare of African populations, but the protection of the colonial labor supply and the stability of the administration. Research was directed toward vector control and population management strategies that served these governance objectives. In our power framework, this is a clear exercise of agenda-setting power ($p_a$): the problem of "disease" was framed in a way that served colonial economic interests. Populations were often seen not as patients to be healed, but as "reservoirs of risk" to be managed or contained. 
+This logic was central to the very field of **tropical medicine**. This field of knowledge was not simply "medicine for hot climates." It was an imperial knowledge system whose research priorities were shaped by the needs of the colonial state. [@problem_id:4779346] Consider the massive campaigns against sleeping sickness in Africa. The primary goal was often not the universal welfare of African populations, but the protection of the colonial labor supply and the stability of the administration. Research was directed toward vector control and population management strategies that served these governance objectives. In our power framework, this is a clear exercise of agenda-setting power ($p_a$): the problem of "disease" was framed in a way that served colonial economic interests. Populations were often seen not as patients to be healed, but as "reservoirs of risk" to be managed or contained. [@problem_id:4779346]
 
 ### The Architecture of Ignorance
 
-If biopower is an engine of control, then the control of knowledge—epistemic power—is its operating system. Coloniality doesn’t just work by brute force; it works by building an architecture of ignorance, systematically devaluing and erasing other ways of knowing. Social philosophers have given us a precise vocabulary for this phenomenon. 
+If biopower is an engine of control, then the control of knowledge—epistemic power—is its operating system. Coloniality doesn’t just work by brute force; it works by building an architecture of ignorance, systematically devaluing and erasing other ways of knowing. Social philosophers have given us a precise vocabulary for this phenomenon. [@problem_id:4972083]
 
 Imagine a global health study on the mental health of an Indigenous community. The researchers find that the community's own healing practices and "idioms of distress" are effective. But then the machinery of coloniality kicks in.
 
@@ -45,7 +45,7 @@ This architecture of ignorance is what maintains the concentration of epistemic 
 
 ### The Grooves of History: Path Dependency
 
-You might ask, "Even if this was true in the past, why do these patterns persist today?" The answer lies in a powerful concept from historical science: **[path dependency](@entry_id:186326)**. 
+You might ask, "Even if this was true in the past, why do these patterns persist today?" The answer lies in a powerful concept from historical science: **[path dependency](@keyword=path_dependency|lang=en-US|style=Feynman)**. [@problem_id:4972112]
 
 Imagine the first person walking through a dense forest. They create a faint trail. The next few people are likely to follow it, as it’s now the path of least resistance. Over time, that trail becomes a well-worn path, then a dirt road, and eventually a paved highway. At that point, the idea of forging a completely new path through the forest seems incredibly difficult and costly. The initial choice has "locked in" a trajectory that is very hard to change.
 
@@ -58,7 +58,7 @@ This is how coloniality reproduces itself. It’s not necessarily that today's l
 
 ### The New Frontier: Data Colonialism
 
-This enduring logic is not just a relic of the past; it is being updated for our digital age. The latest chapter in this story is **data colonialism**.  The resource being extracted is no longer rubber, gold, or labor, but something far more personal: our data.
+This enduring logic is not just a relic of the past; it is being updated for our digital age. The latest chapter in this story is **data colonialism**. [@problem_id:4972088] The resource being extracted is no longer rubber, gold, or labor, but something far more personal: our data.
 
 Consider a modern-day partnership. A large tech firm from a wealthy country provides a mobile app to community health workers in a low-resource setting. The app collects vast amounts of health data—symptom logs, geolocation traces, household histories. This raw data is then transferred abroad and used to train valuable predictive AI models, which the company then commercializes for immense profit.
 

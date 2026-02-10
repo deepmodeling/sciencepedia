@@ -7,7 +7,7 @@ To unmask a condition as subtle and deceptive as an insulinoma, we embark on a j
 
 ### The Foundational Clue: Whipple’s Triad
 
-Imagine the body’s energy supply is mysteriously vanishing. Before we can hunt for the culprit, we must first prove that a crime has even been committed. This is the job of **Whipple's triad**, a three-part test of causality that is the cornerstone of our investigation. To satisfy the triad, we must establish three facts :
+Imagine the body’s energy supply is mysteriously vanishing. Before we can hunt for the culprit, we must first prove that a crime has even been committed. This is the job of **Whipple's triad**, a three-part test of causality that is the cornerstone of our investigation. To satisfy the triad, we must establish three facts [@problem_id:4879963]:
 
 1.  **The Symptoms:** The individual must experience symptoms consistent with a bodily energy crisis—the brain being starved of its primary fuel, glucose. This can manifest as confusion, blurred vision, or seizures (**neuroglycopenia**), or as the body’s alarm bells ringing through tremor, sweating, and palpitations (an **autonomic** response).
 
@@ -19,11 +19,11 @@ Fulfilling Whipple's triad is absolutely necessary. It confirms we are dealing w
 
 ### The Lineup: Insulin-Mediated vs. Non-Insulin-Mediated Hypoglycemia
 
-The central question in our investigation is this: is **insulin** the weapon? Insulin is the body's primary hormone for storing energy. Its main job is to tell the cells to absorb glucose from the blood and to signal the liver to stop producing more. In a healthy person who is fasting, insulin levels should plummet. This allows the body to switch to its backup generator: burning fat to produce an alternative fuel called **ketones** (like **[beta-hydroxybutyrate](@entry_id:173523)**).
+The central question in our investigation is this: is **insulin** the weapon? Insulin is the body's primary hormone for storing energy. Its main job is to tell the cells to absorb glucose from the blood and to signal the liver to stop producing more. In a healthy person who is fasting, insulin levels should plummet. This allows the body to switch to its backup generator: burning fat to produce an alternative fuel called **ketones** (like **[beta-hydroxybutyrate](@keyword=beta_hydroxybutyrate|lang=en-US|style=Feynman)**).
 
 Herein lies our first major clue. If blood sugar is low, a healthy body should be cranking out ketones. If we find that a person is hypoglycemic but their ketone levels are suppressed, it’s a glaring sign that something is screaming "stop burning fat!" That "something" is almost always insulin.
 
-This insight divides our suspects into two groups :
+This insight divides our suspects into two groups [@problem_id:4879988]:
 
 -   **Non-insulin-mediated hypoglycemia:** Here, the problem is not excess insulin. It might be a failure of the body’s counter-regulatory systems, like in **adrenal insufficiency** where a lack of cortisol cripples the liver's ability to make new glucose. Or, in severe critical illness, the body's energy demands may simply overwhelm its production capacity. In these cases, during hypoglycemia, insulin levels are appropriately low and ketone levels are appropriately high.
 
@@ -31,7 +31,7 @@ This insight divides our suspects into two groups :
 
 ### The Interrogation: The 72-Hour Fast
 
-Having identified insulin as our weapon of choice, we must now find its source. Is it a rogue tumor secreting insulin autonomously (an **insulinoma**), or is there another explanation? To find out, we must set a trap. We recreate the conditions under which the crime is most likely to occur: we ask the patient to fast in a safe, medically supervised setting. This is the famous **supervised 72-hour fast** .
+Having identified insulin as our weapon of choice, we must now find its source. Is it a rogue tumor secreting insulin autonomously (an **insulinoma**), or is there another explanation? To find out, we must set a trap. We recreate the conditions under which the crime is most likely to occur: we ask the patient to fast in a safe, medically supervised setting. This is the famous **supervised 72-hour fast** [@problem_id:4850051].
 
 The logic is simple and beautiful. A healthy pancreas is a disciplined factory; when glucose levels fall, it obediently shuts down the insulin production line. An insulinoma, however, is a rogue factory. It operates outside the chain of command, churning out insulin regardless of the body’s needs. The fast is designed to expose this insubordination. As the hours pass and glucose levels naturally decline, we wait for the moment the rogue factory reveals itself by continuing its illicit production, driving blood sugar to dangerously low levels.
 
@@ -45,7 +45,7 @@ The story of what truly happened is written in the molecules of this critical sa
 
 The most elegant piece of evidence comes from understanding how insulin is made. The pancreas doesn't produce insulin directly. It first makes a precursor molecule, **proinsulin**. Inside the beta cell, this precursor is snipped into two pieces: the active **insulin** molecule and a connecting fragment called **C-peptide**. They are then packaged and released together in a one-to-one ratio. C-peptide is like the "Made in the Pancreas" tag that comes with every new molecule of insulin.
 
-This fact is the key to solving a major puzzle: is the insulin coming from inside the body (**endogenous**) or from an injection (**exogenous**)? 
+This fact is the key to solving a major puzzle: is the insulin coming from inside the body (**endogenous**) or from an injection (**exogenous**)? [@problem_id:4879981]
 
 -   **High Insulin, High C-peptide:** If we find inappropriately high levels of both insulin and C-peptide during hypoglycemia, we know the insulin is endogenous. The body's own factory is in overdrive. Our suspects are now an insulinoma or a drug that forces the pancreas to over-secrete.
 
@@ -53,22 +53,22 @@ This fact is the key to solving a major puzzle: is the insulin coming from insid
 
 #### Proinsulin: The Mark of a Sloppy Factory
 
-Let’s say we've confirmed endogenous hyperinsulinism. How do we distinguish a well-behaved pancreas being whipped by a drug from a genuinely cancerous tumor? We can look at the quality of the product. A healthy beta cell is a master craftsman, efficiently processing nearly all of its proinsulin into mature insulin. An insulinoma, being a tumor, is often a sloppy, chaotic factory. It releases large amounts of unprocessed or partially processed proinsulin. Therefore, finding a disproportionately high fraction of **proinsulin** relative to the total insulin is a strong hallmark of an insulinoma, pointing to its defective manufacturing process .
+Let’s say we've confirmed endogenous hyperinsulinism. How do we distinguish a well-behaved pancreas being whipped by a drug from a genuinely cancerous tumor? We can look at the quality of the product. A healthy beta cell is a master craftsman, efficiently processing nearly all of its proinsulin into mature insulin. An insulinoma, being a tumor, is often a sloppy, chaotic factory. It releases large amounts of unprocessed or partially processed proinsulin. Therefore, finding a disproportionately high fraction of **proinsulin** relative to the total insulin is a strong hallmark of an insulinoma, pointing to its defective manufacturing process [@problem_id:4880002].
 
 #### The Sulfonylurea Screen: Unmasking the Impersonator
 
-There is one more major suspect to consider: surreptitious use of drugs called **sulfonylureas** or **meglitinides**. These drugs are designed to treat type $2$ diabetes by binding to a channel on the beta cell (the **KATP channel**) and essentially hot-wiring it to release insulin, regardless of the glucose level . In doing so, they perfectly mimic the biochemical signature of an insulinoma, causing the release of both insulin and C-peptide. The only way to tell these two scenarios apart is to directly test for the presence of the drug itself. A **plasma or urine sulfonylurea screen** is the definitive test to unmask this impersonator . A diagnosis of insulinoma is one of exclusion; these other causes must be ruled out first.
+There is one more major suspect to consider: surreptitious use of drugs called **sulfonylureas** or **meglitinides**. These drugs are designed to treat type $2$ diabetes by binding to a channel on the beta cell (the **KATP channel**) and essentially hot-wiring it to release insulin, regardless of the glucose level [@problem_id:4879943]. In doing so, they perfectly mimic the biochemical signature of an insulinoma, causing the release of both insulin and C-peptide. The only way to tell these two scenarios apart is to directly test for the presence of the drug itself. A **plasma or urine sulfonylurea screen** is the definitive test to unmask this impersonator [@problem_id:4879981]. A diagnosis of insulinoma is one of exclusion; these other causes must be ruled out first.
 
 ### Unusual Suspects and Special Conditions
 
 While this logical pathway solves most cases, nature occasionally throws us a curveball.
 
--   **Autoimmune Insulin Syndrome (AIS):** In this bizarre condition, the body produces autoantibodies that bind to its own insulin. This creates a massive, circulating reservoir of insulin. Standard lab tests for "total insulin" can be tricked by this reservoir, showing astronomically high levels, while C-peptide may be low due to feedback suppression. The key to diagnosis is to specifically test for the **insulin autoantibodies** and to use special techniques to measure the "free," biologically active insulin, which is often much lower than the total .
+-   **Autoimmune Insulin Syndrome (AIS):** In this bizarre condition, the body produces autoantibodies that bind to its own insulin. This creates a massive, circulating reservoir of insulin. Standard lab tests for "total insulin" can be tricked by this reservoir, showing astronomically high levels, while C-peptide may be low due to feedback suppression. The key to diagnosis is to specifically test for the **insulin autoantibodies** and to use special techniques to measure the "free," biologically active insulin, which is often much lower than the total [@problem_id:4879916].
 
--   **Postprandial Hypoglycemia:** What if the energy thief only strikes after a meal, not during a long fast? This pattern points away from the classic, constantly-secreting insulinoma and towards a different pathology, like an exaggerated insulin response to food, as seen in **non-insulinoma pancreatogenous hypoglycemia syndrome (NIPHS)**. In this case, the 72-hour fast is the wrong trap. Instead, the detective must recreate the scene of the crime by using a **mixed-meal test** to provoke the symptoms and capture the biochemical evidence in the post-meal period .
+-   **Postprandial Hypoglycemia:** What if the energy thief only strikes after a meal, not during a long fast? This pattern points away from the classic, constantly-secreting insulinoma and towards a different pathology, like an exaggerated insulin response to food, as seen in **non-insulinoma pancreatogenous hypoglycemia syndrome (NIPHS)**. In this case, the 72-hour fast is the wrong trap. Instead, the detective must recreate the scene of the crime by using a **mixed-meal test** to provoke the symptoms and capture the biochemical evidence in the post-meal period [@problem_id:4879906].
 
 ### The Art of Measurement: Getting the Truth
 
-Finally, all this elegant [deductive reasoning](@entry_id:147844) is worthless if the evidence itself is corrupted. Blood is a living tissue. The red blood cells in a sample tube will continue to consume glucose, artificially lowering the measured value. If a sample is drawn and left on a countertop, a normal glucose level could look like a hypoglycemic one within an hour. This is a classic **preanalytical error**.
+Finally, all this elegant [deductive reasoning](@keyword=deductive_reasoning|lang=en-US|style=Feynman) is worthless if the evidence itself is corrupted. Blood is a living tissue. The red blood cells in a sample tube will continue to consume glucose, artificially lowering the measured value. If a sample is drawn and left on a countertop, a normal glucose level could look like a hypoglycemic one within an hour. This is a classic **preanalytical error**.
 
-The solution is simple yet critical to the scientific integrity of the diagnosis. To get a true glucose reading, we must halt this process by either drawing the blood into a special tube containing a **glycolysis inhibitor** (typically sodium fluoride, in a grey-top tube) or by immediately placing the sample on ice and rapidly separating the plasma from the cells. This meticulous attention to detail is not just a technicality; it is the foundation upon which the entire diagnostic edifice is built . From a simple clinical observation to the precise handling of a blood sample, the diagnosis of insulinoma is a masterful symphony of logic, physiology, and careful scientific practice.
+The solution is simple yet critical to the scientific integrity of the diagnosis. To get a true glucose reading, we must halt this process by either drawing the blood into a special tube containing a **glycolysis inhibitor** (typically sodium fluoride, in a grey-top tube) or by immediately placing the sample on ice and rapidly separating the plasma from the cells. This meticulous attention to detail is not just a technicality; it is the foundation upon which the entire diagnostic edifice is built [@problem_id:4879932]. From a simple clinical observation to the precise handling of a blood sample, the diagnosis of insulinoma is a masterful symphony of logic, physiology, and careful scientific practice.

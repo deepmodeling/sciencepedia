@@ -1,5 +1,5 @@
 ## Introduction
-Twin-to-Twin Transfusion Syndrome (TTTS) is a rare but life-threatening condition that can occur in identical twin pregnancies sharing a single placenta. This imbalance, where one twin receives too much blood flow at the expense of the other, leads to a cascade of severe complications that can be fatal for both if left untreated. While the diagnosis is devastating, modern medicine has developed a remarkably precise intervention to correct the underlying problem. This article delves into the science and practice of fetoscopic laser photocoagulation, the gold-standard treatment for severe TTTS. In the following chapters, we will explore the fundamental "Principles and Mechanisms" that cause the syndrome and allow the laser procedure to work, from the [physics of fluid dynamics](@entry_id:165784) in the placenta to the physiology of fetal distress. Subsequently, we will examine the "Applications and Interdisciplinary Connections," detailing how clinicians decide when and how to intervene, the limitations of the procedure, and how this advanced surgery represents a convergence of multiple scientific fields to save the most vulnerable of patients.
+Twin-to-Twin Transfusion Syndrome (TTTS) is a rare but life-threatening condition that can occur in identical twin pregnancies sharing a single placenta. This imbalance, where one twin receives too much blood flow at the expense of the other, leads to a cascade of severe complications that can be fatal for both if left untreated. While the diagnosis is devastating, modern medicine has developed a remarkably precise intervention to correct the underlying problem. This article delves into the science and practice of fetoscopic laser photocoagulation, the gold-standard treatment for severe TTTS. In the following chapters, we will explore the fundamental "Principles and Mechanisms" that cause the syndrome and allow the laser procedure to work, from the [physics of fluid dynamics](@keyword=physics_of_fluid_dynamics|lang=en-US|style=Feynman) in the placenta to the physiology of fetal distress. Subsequently, we will examine the "Applications and Interdisciplinary Connections," detailing how clinicians decide when and how to intervene, the limitations of the procedure, and how this advanced surgery represents a convergence of multiple scientific fields to save the most vulnerable of patients.
 
 ## Principles and Mechanisms
 
@@ -17,7 +17,7 @@ The true culprits behind Twin-to-Twin Transfusion Syndrome (TTTS) are the deep, 
 
 ### The Unbalanced Equation of Life
 
-Let's look at this like a physicist. The flow of a fluid through a pipe is governed by a relationship very similar to Ohm's law for [electrical circuits](@entry_id:267403). Volumetric blood flow, $Q$, is equal to the pressure difference, $\Delta P$, divided by the resistance of the vessel, $R$.
+Let's look at this like a physicist. The flow of a fluid through a pipe is governed by a relationship very similar to Ohm's law for [electrical circuits](@keyword=electrical_circuits|lang=en-US|style=Feynman). Volumetric blood flow, $Q$, is equal to the pressure difference, $\Delta P$, divided by the resistance of the vessel, $R$.
 
 $$Q = \frac{\Delta P}{R}$$
 
@@ -25,7 +25,7 @@ In TTTS, we have a few pathways in parallel. Let's imagine a scenario with two o
 
 The flow through a compensatory AA shunt, however, is driven by the difference between the two twins' arterial pressures, $P_{dA}$ and $P_{rA}$. These pressures are usually quite similar; perhaps the recipient's is slightly higher due to the incoming volume, say $P_{rA} = 47 \text{ mmHg}$. So the pressure gradient is tiny, maybe $45 - 47 = -2 \text{ mmHg}$ (a small push *back* to the donor). Furthermore, these superficial AA vessels are often of higher resistance.
 
-When you do the math, the conclusion is inescapable. The large, [unidirectional flow](@entry_id:262401) through the low-resistance AV "superhighways" completely overwhelms the tiny, bidirectional trickle through the high-resistance AA "local road." The result is a persistent, net transfer of blood volume, minute by minute, hour by hour, from the donor twin to the recipient twin. This is the central defect, the prime mover of the entire tragedy of TTTS.
+When you do the math, the conclusion is inescapable. The large, [unidirectional flow](@keyword=unidirectional_flow|lang=en-US|style=Feynman) through the low-resistance AV "superhighways" completely overwhelms the tiny, bidirectional trickle through the high-resistance AA "local road." The result is a persistent, net transfer of blood volume, minute by minute, hour by hour, from the donor twin to the recipient twin. This is the central defect, the prime mover of the entire tragedy of TTTS.
 
 ### A Tale of Two Twins: Starvation and Deluge
 
@@ -33,7 +33,7 @@ This chronic, unbalanced blood flow sets off a devastating cascade of consequenc
 
 **The Donor Twin: A World of Drought**
 
-The donor twin is chronically "donating" its lifeblood. It becomes hypovolemic (low blood volume) and hypotensive (low blood pressure). The fetus's body, sensing a state of perpetual dehydration and shock, does what any advanced organism would do: it pulls out all the stops to survive. It floods its system with powerful survival hormones. The **[renin-angiotensin-aldosterone system](@entry_id:154575) (RAAS)** goes into overdrive, constricting blood vessels to keep the pressure up in vital organs like the brain and heart. It tells the kidneys to conserve every last drop of water.
+The donor twin is chronically "donating" its lifeblood. It becomes hypovolemic (low blood volume) and hypotensive (low blood pressure). The fetus's body, sensing a state of perpetual dehydration and shock, does what any advanced organism would do: it pulls out all the stops to survive. It floods its system with powerful survival hormones. The **[renin-angiotensin-aldosterone system](@keyword=renin_angiotensin_aldosterone_system|lang=en-US|style=Feynman) (RAAS)** goes into overdrive, constricting blood vessels to keep the pressure up in vital organs like the brain and heart. It tells the kidneys to conserve every last drop of water.
 
 The result is a vicious cycle. The intense vasoconstriction includes the arteries leading to the kidneys, drastically reducing blood flow and filtration. The kidneys essentially shut down. Since fetal urine is the primary source of amniotic fluid after the first trimester, the donor's amniotic sac deflates. The twin becomes trapped in a dry, shrinking space, seemingly "stuck" against the uterine wall with an empty bladder—a condition called **oligohydramnios**.
 
@@ -65,7 +65,7 @@ Performing this procedure is an incredible feat of medicine, skill, and applied 
 
 **Navigating the Terrain:** The surgeon's first challenge is access. If the shared placenta is on the anterior (front) wall of the uterus, a direct approach is impossible. Instead, the surgeon must use a masterful understanding of geometry and optics, entering from the side of the abdomen with a low, tangential trajectory to "skim" along the inside of the uterus and gain a view of the placental surface. Using angled scopes ($30^\circ$ lenses) and dynamic rotation, the surgeon can overcome the challenging viewing angle, much like a cinematographer finding the perfect shot in a difficult location.
 
-**Reading the Map:** Once inside, the surgeon must become a cartographer. The goal is to find the "vascular equator"—the winding, invisible border where the donor's vascular territory meets the recipient's. This is done by painstakingly tracing vessels across the placental surface. Arteries can be identified because they are typically seen [crossing over](@entry_id:136998) veins and exhibit a subtle pulsatility. By following each vessel back towards its origin at one of the two umbilical cord insertions, the surgeon can definitively map which vessel belongs to which twin.
+**Reading the Map:** Once inside, the surgeon must become a cartographer. The goal is to find the "vascular equator"—the winding, invisible border where the donor's vascular territory meets the recipient's. This is done by painstakingly tracing vessels across the placental surface. Arteries can be identified because they are typically seen [crossing over](@keyword=crossing_over|lang=en-US|style=Feynman) veins and exhibit a subtle pulsatility. By following each vessel back towards its origin at one of the two umbilical cord insertions, the surgeon can definitively map which vessel belongs to which twin.
 
 **Drawing a Line in the Sand:** The surgeon then uses a hair-thin laser fiber passed through the fetoscope to coagulate and seal every single connecting vessel crossing the equator. The initial approach was to do this selectively, targeting only the visible anastomoses. But experience revealed a subtle flaw. Sometimes, the twins remained connected by microscopic shunts too small to be seen.
 
@@ -73,7 +73,7 @@ This led to the development of the **Solomon technique**. After coagulating all 
 
 ### The Tyranny of the Fourth Power
 
-Why is the Solomon technique's "line in the sand" so crucial? The answer lies in another beautiful piece of physics: **Poiseuille's law**. This law describes fluid flow in a narrow tube, and it contains a startling revelation. The [volumetric flow rate](@entry_id:265771), $Q$, is proportional not to the radius of the tube, but to the radius raised to the fourth power ($r^4$).
+Why is the Solomon technique's "line in the sand" so crucial? The answer lies in another beautiful piece of physics: **Poiseuille's law**. This law describes fluid flow in a narrow tube, and it contains a startling revelation. The [volumetric flow rate](@keyword=volumetric_flow_rate|lang=en-US|style=Feynman), $Q$, is proportional not to the radius of the tube, but to the radius raised to the fourth power ($r^4$).
 
 $$Q = \frac{\pi r^4 \Delta P}{8 \eta L}$$
 

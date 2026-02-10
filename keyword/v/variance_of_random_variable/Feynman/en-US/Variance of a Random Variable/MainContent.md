@@ -7,9 +7,9 @@ The following chapters will guide you through this essential concept. First, in 
 
 Imagine you are an art critic assessing two abstract painters. Both painters, on average, place their brushstrokes right in the center of the canvas. The first painter's strokes are tight, forming a dense, focused cluster. The second painter's strokes are scattered wildly, from corner to corner. While their "average" position is the same, the character of their work is completely different. To capture this difference, you need a language to describe not just the center, but the *spread*. In the world of data and chance, this language is built around the concept of **variance**.
 
-The mean, or expected value, gives us the center of gravity of a random variable, but it tells us nothing about the wobble or dispersion around that center. How do we quantify this spread? A first thought might be to look at each outcome's deviation from the mean, $X - E[X]$, and find the average deviation. But here we hit a lovely little snag: by the very definition of the mean as a [center of gravity](@entry_id:273519), the positive and negative deviations always perfectly cancel out. The average deviation is always zero, telling us nothing.
+The mean, or expected value, gives us the center of gravity of a random variable, but it tells us nothing about the wobble or dispersion around that center. How do we quantify this spread? A first thought might be to look at each outcome's deviation from the mean, $X - E[X]$, and find the average deviation. But here we hit a lovely little snag: by the very definition of the mean as a [center of gravity](@keyword=center_of_gravity|lang=en-US|style=Feynman), the positive and negative deviations always perfectly cancel out. The average deviation is always zero, telling us nothing.
 
-Nature gives us a beautiful way out of this trap. To get rid of the signs, we can simply square the deviations. Each term $(X - E[X])^2$ is now guaranteed to be non-negative. By taking the average of these squared deviations, we arrive at a robust [measure of spread](@entry_id:178320). This is the very heart of the concept:
+Nature gives us a beautiful way out of this trap. To get rid of the signs, we can simply square the deviations. Each term $(X - E[X])^2$ is now guaranteed to be non-negative. By taking the average of these squared deviations, we arrive at a robust [measure of spread](@keyword=measure_of_spread|lang=en-US|style=Feynman). This is the very heart of the concept:
 
 The **variance** of a random variable $X$, denoted $Var(X)$, is the expected value of the squared deviation from its mean.
 $$
@@ -22,7 +22,7 @@ This isn't just a clever trick; it's a profound choice. By squaring the deviatio
 
 From this simple, elegant definition, a host of beautiful properties emerge.
 
-First, and most fundamentally, variance can never be negative. Since it's the average of squared numbers, which are themselves non-negative, the result must be non-negative. A [measure of spread](@entry_id:178320) cannot be less than nothing. So, when can the variance be exactly zero? Only when there is no spread at all. This happens only if the random variable isn't random—if it's a constant, always equal to its mean. In that case, every deviation is zero, and so is the variance.
+First, and most fundamentally, variance can never be negative. Since it's the average of squared numbers, which are themselves non-negative, the result must be non-negative. A [measure of spread](@keyword=measure_of_spread|lang=en-US|style=Feynman) cannot be less than nothing. So, when can the variance be exactly zero? Only when there is no spread at all. This happens only if the random variable isn't random—if it's a constant, always equal to its mean. In that case, every deviation is zero, and so is the variance.
 
 While the definition $E[(X - E[X])^2]$ is conceptually pure, it can be cumbersome for calculations. A little bit of algebra reveals a wonderfully practical alternative. Let's write $\mu = E[X]$ for short.
 $$
@@ -58,7 +58,7 @@ Now, what if you scale the variable by a factor of $a$, creating $Y = aX$? The n
 $$
 Var(aX) = a^2 Var(X)
 $$
-Scaling a variable by $a$ scales its variance by $a^2$. This makes perfect sense if you think about units. If $X$ is a length in meters, $Var(X)$ is in meters squared. If you change units to centimeters, you scale $X$ by 100. The new variance will be scaled by $100^2 = 10000$. This property combines with the shift property, giving us the general rule for [linear transformations](@entry_id:149133):
+Scaling a variable by $a$ scales its variance by $a^2$. This makes perfect sense if you think about units. If $X$ is a length in meters, $Var(X)$ is in meters squared. If you change units to centimeters, you scale $X$ by 100. The new variance will be scaled by $100^2 = 10000$. This property combines with the shift property, giving us the general rule for [linear transformations](@keyword=linear_transformations|lang=en-US|style=Feynman):
 $$
 Var(aX+b) = a^2 Var(X)
 $$
@@ -70,9 +70,9 @@ Perhaps the most important property relates to sums of variables. A common mista
 
 To truly grasp variance, it helps to look at simple, tangible examples.
 
-Consider the simplest random event: a single coin flip, or any [binary outcome](@entry_id:191030). Let's model it with a variable $X$ that is $a$ with probability $p$ and $0$ with probability $1-p$. Using our computational formula, we find its variance is $Var(X) = a^2p(1-p)$. When is this system most "random" or "unpredictable"? That is, when is its variance maximized? The term $p(1-p)$ is a simple parabola that reaches its peak when $p=1/2$. This is a profound result: the uncertainty in a binary choice is greatest when both outcomes are equally likely. A fair coin is, in a sense, the most random coin.
+Consider the simplest random event: a single coin flip, or any [binary outcome](@keyword=binary_outcome|lang=en-US|style=Feynman). Let's model it with a variable $X$ that is $a$ with probability $p$ and $0$ with probability $1-p$. Using our computational formula, we find its variance is $Var(X) = a^2p(1-p)$. When is this system most "random" or "unpredictable"? That is, when is its variance maximized? The term $p(1-p)$ is a simple parabola that reaches its peak when $p=1/2$. This is a profound result: the uncertainty in a binary choice is greatest when both outcomes are equally likely. A fair coin is, in a sense, the most random coin.
 
-Now for a puzzle. Imagine two random sources. One is a [digital switch](@entry_id:164729), $B$, which is either off (0) or on (1) with equal probability, $p=1/2$. The other is an analog dial, $U$, which can point to any real number between 0 and 1 with uniform likelihood. Both have the same mean of $1/2$. Which one has more variability?
+Now for a puzzle. Imagine two random sources. One is a [digital switch](@keyword=digital_switch|lang=en-US|style=Feynman), $B$, which is either off (0) or on (1) with equal probability, $p=1/2$. The other is an analog dial, $U$, which can point to any real number between 0 and 1 with uniform likelihood. Both have the same mean of $1/2$. Which one has more variability?
 
 Let's calculate. For the switch, $B$, its variance is $p(1-p) = \frac{1}{2}(1-\frac{1}{2}) = \frac{1}{4}$. For the dial, $U$, we need to do some integration to find $E[U^2] = 1/3$, which gives $Var(U) = E[U^2]-(E[U])^2 = \frac{1}{3} - (\frac{1}{2})^2 = \frac{1}{12}$.
 
@@ -82,9 +82,9 @@ The result is surprising: the variance of the simple on/off switch ($1/4 = 3/12$
 
 As problems get more complex, calculating variance by direct integration or summation can become a chore. Physicists and mathematicians, in their eternal quest for elegance and efficiency, have developed more powerful tools: **generating functions**.
 
-The **Moment-Generating Function (MGF)** of a random variable $X$ is defined as $M_X(t) = E[e^{tX}]$. This function acts like a mathematical blueprint, containing all the information about the variable's moments ($E[X], E[X^2], E[X^3], \dots$) neatly packaged into one expression. By taking derivatives of the MGF with respect to $t$ and then setting $t=0$, we can unpack these moments one by one. Specifically, $E[X] = M_X'(0)$ and $E[X^2] = M_X''(0)$. This provides an often slick and automated way to find the two ingredients we need for our variance formula. For the Poisson distribution, which models events like the number of [solar flares](@entry_id:204045) in a day, this method instantly reveals that its mean and variance are identical.
+The **Moment-Generating Function (MGF)** of a random variable $X$ is defined as $M_X(t) = E[e^{tX}]$. This function acts like a mathematical blueprint, containing all the information about the variable's moments ($E[X], E[X^2], E[X^3], \dots$) neatly packaged into one expression. By taking derivatives of the MGF with respect to $t$ and then setting $t=0$, we can unpack these moments one by one. Specifically, $E[X] = M_X'(0)$ and $E[X^2] = M_X''(0)$. This provides an often slick and automated way to find the two ingredients we need for our variance formula. For the Poisson distribution, which models events like the number of [solar flares](@keyword=solar_flares|lang=en-US|style=Feynman) in a day, this method instantly reveals that its mean and variance are identical.
 
-Taking this elegance one step further, we can look at the natural logarithm of the MGF, a quantity called the **Cumulant-Generating Function (CGF)**, $K_X(t) = \ln(M_X(t))$. The derivatives of the CGF, called [cumulants](@entry_id:152982), are even more fundamental statistical properties. The first cumulant, $K_X'(0)$, is the mean. And, remarkably, the second cumulant, $K_X''(0)$, is the variance itself.
+Taking this elegance one step further, we can look at the natural logarithm of the MGF, a quantity called the **Cumulant-Generating Function (CGF)**, $K_X(t) = \ln(M_X(t))$. The derivatives of the CGF, called [cumulants](@keyword=cumulants|lang=en-US|style=Feynman), are even more fundamental statistical properties. The first cumulant, $K_X'(0)$, is the mean. And, remarkably, the second cumulant, $K_X''(0)$, is the variance itself.
 
 $$
 Var(X) = K_X''(0)

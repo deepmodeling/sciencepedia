@@ -20,7 +20,7 @@ The same principle protects participants in clinical research. The threshold for
 
 ### The Sliding Scale as an Instrument of Justice in Economics and Policy
 
-Having seen the sliding scale as a guardian of autonomy in individual decision-making, we can now pivot and witness its second, equally profound role: as an instrument of [distributive justice](@entry_id:185929). The core idea remains the same—proportionality—but the subject changes from a person's cognitive ability to their financial ability. The question is no longer "How much understanding is enough?" but rather "What is a fair price to pay?"
+Having seen the sliding scale as a guardian of autonomy in individual decision-making, we can now pivot and witness its second, equally profound role: as an instrument of [distributive justice](@keyword=distributive_justice|lang=en-US|style=Feynman). The core idea remains the same—proportionality—but the subject changes from a person's cognitive ability to their financial ability. The question is no longer "How much understanding is enough?" but rather "What is a fair price to pay?"
 
 In healthcare economics and social policy, the sliding-scale model provides a powerful framework for allocating benefits and burdens fairly. Consider the simple act of visiting a doctor. A health system might institute a flat copayment, say $p = 20$ dollars, for every visit. This appears "equal," but it is deeply inequitable. For a person with a high income, $20$ is a nuisance; for a person with a low income, it can be a prohibitive barrier to essential care. Such a policy is regressive—it imposes a far greater relative financial burden on the least advantaged.
 

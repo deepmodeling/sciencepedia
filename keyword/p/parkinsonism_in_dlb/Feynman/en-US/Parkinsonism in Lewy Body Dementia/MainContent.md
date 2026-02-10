@@ -5,13 +5,13 @@ Across the following sections, you will gain a clear and reasoned understanding 
 
 ## Principles and Mechanisms
 
-To truly understand a phenomenon, we must peel back its layers, moving from what we can see to the hidden machinery that makes it so. The parkinsonism of Dementia with Lewy Bodies (DLB) is no mere symptom; it is a profound expression of a deep biological story. It is a story of [misfolded proteins](@entry_id:192457), dying cells, and faltering circuits that elegantly, and tragically, connect our ability to move with our ability to think. Let us embark on a journey to understand this story, not by memorizing facts, but by reasoning from first principles.
+To truly understand a phenomenon, we must peel back its layers, moving from what we can see to the hidden machinery that makes it so. The parkinsonism of Dementia with Lewy Bodies (DLB) is no mere symptom; it is a profound expression of a deep biological story. It is a story of [misfolded proteins](@keyword=misfolded_proteins|lang=en-US|style=Feynman), dying cells, and faltering circuits that elegantly, and tragically, connect our ability to move with our ability to think. Let us embark on a journey to understand this story, not by memorizing facts, but by reasoning from first principles.
 
 ### The Parkinsonian Portrait: A Different Kind of Stillness
 
 When we hear the word “parkinsonism,” our minds often conjure the image of a person with a shaking hand—the classic “pill-rolling” tremor of Parkinson’s disease. But this is only one part of the picture. Parkinsonism is formally defined by the presence of **bradykinesia**, a Greek term meaning “slow movement,” combined with either muscular **rigidity** (stiffness) or a resting tremor.
 
-In Dementia with Lewy Bodies, the parkinsonian portrait often has a distinct character, different from what we might expect from Parkinson’s disease alone. This is what we call **spontaneous parkinsonism**—a motor syndrome that arises from the disease process itself, not as a side effect of medication . Its features often include:
+In Dementia with Lewy Bodies, the parkinsonian portrait often has a distinct character, different from what we might expect from Parkinson’s disease alone. This is what we call **spontaneous parkinsonism**—a motor syndrome that arises from the disease process itself, not as a side effect of medication [@problem_id:4722106]. Its features often include:
 
 *   **Symmetry:** Whereas Parkinson’s disease famously begins on one side of the body, the parkinsonism of DLB often emerges more symmetrically, affecting both left and right sides with similar severity.
 
@@ -19,11 +19,11 @@ In Dementia with Lewy Bodies, the parkinsonian portrait often has a distinct cha
 
 *   **Gait Instability:** The combination of axial rigidity and bradykinesia leads to a characteristic shuffling walk, difficulty initiating steps, and a stooped posture, making falls a serious and early concern.
 
-This specific pattern of motor symptoms is our first major clue. It hints that while the problem is related to Parkinson’s disease, its anatomical and functional expression within the brain has its own unique signature  .
+This specific pattern of motor symptoms is our first major clue. It hints that while the problem is related to Parkinson’s disease, its anatomical and functional expression within the brain has its own unique signature [@problem_id:4722106] [@problem_id:4475144].
 
 ### A Tale of Two Pathways: The Brain's Gatekeeper for Movement
 
-To understand why a person might become slow and stiff, we must venture into the brain’s engine room for movement control: the **basal ganglia**. These are a collection of deep brain structures that don't initiate movement themselves, but rather act as a sophisticated gatekeeper. They receive signals from the cortex—the brain's executive command center—about potential movements and, through a [complex series](@entry_id:191035) of checks and balances, give a "green light" to the desired action while suppressing all other unwanted movements.
+To understand why a person might become slow and stiff, we must venture into the brain’s engine room for movement control: the **basal ganglia**. These are a collection of deep brain structures that don't initiate movement themselves, but rather act as a sophisticated gatekeeper. They receive signals from the cortex—the brain's executive command center—about potential movements and, through a [complex series](@keyword=complex_series|lang=en-US|style=Feynman) of checks and balances, give a "green light" to the desired action while suppressing all other unwanted movements.
 
 Imagine this gatekeeper uses two fundamental circuits:
 
@@ -35,22 +35,22 @@ For smooth, controlled action, these two pathways must be in perfect harmony. An
 
 ### The Dying Embers: Dopamine Deficiency and the Silent Brain
 
-Now we can understand the tragedy of DLB. At its core, DLB is a disease characterized by the death of neurons, including the very dopamine-producing cells of the [substantia nigra](@entry_id:150587). When these cells die, the supply of dopamine to the basal ganglia dwindles.
+Now we can understand the tragedy of DLB. At its core, DLB is a disease characterized by the death of neurons, including the very dopamine-producing cells of the [substantia nigra](@keyword=substantia_nigra|lang=en-US|style=Feynman). When these cells die, the supply of dopamine to the basal ganglia dwindles.
 
-Without dopamine, the delicate balance of the gatekeeper circuits is shattered :
+Without dopamine, the delicate balance of the gatekeeper circuits is shattered [@problem_id:4475144]:
 
 *   The "Go" pathway loses its crucial stimulation and becomes sluggish.
 *   The "Stop" pathway is freed from its dopaminergic inhibition and becomes overactive.
 
 Both of these failures converge on the same outcome: the basal ganglia’s output becomes overwhelmingly inhibitory. The gate is effectively jammed in the "off" position. The thalamus is suppressed, the motor cortex receives no clear command to move, and the clinical result is bradykinesia (it’s hard to get going) and rigidity (competing muscles are not properly suppressed).
 
-This process is not just a theoretical model. We can witness it directly using a brain imaging technique called **Dopamine Transporter Single-Photon Emission Computed Tomography (DAT-SPECT)**. This scan uses a tracer that binds to the [dopamine transporter](@entry_id:171092), a protein found on the terminals of dopamine neurons. A bright scan indicates a healthy population of dopamine nerve endings. In DLB, the scan is often dramatically dark, particularly in a region of the striatum called the posterior putamen. This darkness is a stark and direct visualization of the dying embers of the nigrostriatal system  . The often-symmetric loss seen on the scan beautifully mirrors the symmetric parkinsonian symptoms experienced by the patient.
+This process is not just a theoretical model. We can witness it directly using a brain imaging technique called **Dopamine Transporter Single-Photon Emission Computed Tomography (DAT-SPECT)**. This scan uses a tracer that binds to the [dopamine transporter](@keyword=dopamine_transporter|lang=en-US|style=Feynman), a protein found on the terminals of dopamine neurons. A bright scan indicates a healthy population of dopamine nerve endings. In DLB, the scan is often dramatically dark, particularly in a region of the striatum called the posterior putamen. This darkness is a stark and direct visualization of the dying embers of the nigrostriatal system [@problem_id:4729738] [@problem_id:4475144]. The often-symmetric loss seen on the scan beautifully mirrors the symmetric parkinsonian symptoms experienced by the patient.
 
 ### A Spectrum of Synucleinopathy: The One-Year Rule
 
 If both Parkinson's disease and DLB are caused by the loss of the same dopamine cells, what truly separates them? The answer lies in recognizing that they are not entirely separate diseases, but rather different clinical presentations of the same underlying pathology: they are both **alpha-synucleinopathies**. The culprit is a misfolded protein called $\alpha$-synuclein, which clumps together to form the toxic **Lewy bodies** that give the disease its name.
 
-The distinction we make in the clinic is a practical one, based on the timing of the major symptoms. This is known as the **"one-year rule"**  :
+The distinction we make in the clinic is a practical one, based on the timing of the major symptoms. This is known as the **"one-year rule"** [@problem_id:4733714] [@problem_id:4722274]:
 
 *   If parkinsonism begins, and significant cognitive decline (dementia) only appears more than a year later, we call it **Parkinson’s disease dementia (PDD)**.
 *   If dementia begins *before*, *at the same time as*, or *within one year* of the onset of parkinsonism, we call it **Dementia with Lewy Bodies (DLB)**.
@@ -59,13 +59,13 @@ This rule doesn't describe a fundamental biological difference, but it defines t
 
 ### The Gathering Storm: A Bottom-Up Propagation
 
-This leads to a deeper question: why does the timing of symptoms vary? A beautiful and compelling theory suggests that the disease propagates through the brain in a predictable, bottom-up fashion . The misfolded $\alpha$-synuclein protein may act like a "seed," spreading from one neuron to the next along the brain's intricate wiring.
+This leads to a deeper question: why does the timing of symptoms vary? A beautiful and compelling theory suggests that the disease propagates through the brain in a predictable, bottom-up fashion [@problem_id:4722176]. The misfolded $\alpha$-synuclein protein may act like a "seed," spreading from one neuron to the next along the brain's intricate wiring.
 
-Evidence suggests this pathological cascade may begin in the [peripheral nervous system](@entry_id:152549), potentially in the gut or the olfactory bulb. From there, it ascends into the brainstem like a slow fire climbing a rope. This progression elegantly explains the sequence of symptoms that often precede the core diagnosis:
+Evidence suggests this pathological cascade may begin in the [peripheral nervous system](@keyword=peripheral_nervous_system|lang=en-US|style=Feynman), potentially in the gut or the olfactory bulb. From there, it ascends into the brainstem like a slow fire climbing a rope. This progression elegantly explains the sequence of symptoms that often precede the core diagnosis:
 
-1.  **Early Brainstem Involvement:** The pathology first strikes the lower brainstem. This disrupts the nuclei controlling autonomic functions (leading to constipation or orthostatic hypotension) and, critically, the center that paralyzes our muscles during REM sleep. When this center fails, people begin to physically act out their dreams, a condition called **REM Sleep Behavior Disorder (RBD)**. This is why RBD is considered a powerful prodromal marker—a sign that the synucleinopathy has already begun its climb, years before the more obvious symptoms appear .
+1.  **Early Brainstem Involvement:** The pathology first strikes the lower brainstem. This disrupts the nuclei controlling autonomic functions (leading to constipation or orthostatic hypotension) and, critically, the center that paralyzes our muscles during REM sleep. When this center fails, people begin to physically act out their dreams, a condition called **REM Sleep Behavior Disorder (RBD)**. This is why RBD is considered a powerful prodromal marker—a sign that the synucleinopathy has already begun its climb, years before the more obvious symptoms appear [@problem_id:4475128].
 
-2.  **Ascension to the Midbrain:** As the pathology continues upward, it reaches the midbrain and infiltrates the [substantia nigra](@entry_id:150587), killing dopamine neurons and giving rise to **parkinsonism**.
+2.  **Ascension to the Midbrain:** As the pathology continues upward, it reaches the midbrain and infiltrates the [substantia nigra](@keyword=substantia_nigra|lang=en-US|style=Feynman), killing dopamine neurons and giving rise to **parkinsonism**.
 
 3.  **Widespread Cortical Invasion:** Finally, the process spreads throughout the cerebral cortex, the seat of higher cognition. This widespread disruption leads to the core cognitive features of DLB: dementia, severe fluctuations in attention, and vivid visual hallucinations.
 
@@ -73,6 +73,6 @@ This model unifies the entire constellation of DLB symptoms into a single, progr
 
 ### A Network-Wide Disruption
 
-The ultimate expression of DLB is a failure not just of individual cells, but of entire brain networks. The parkinsonism and the cognitive deficits, particularly in attention and executive function (planning, problem-solving), are two sides of the same coin. They both reflect the breakdown of the great **frontostriatal circuits**—the massive feedback loops that connect the frontal lobes with the basal ganglia . Because dopamine is a key modulator of these circuits, its loss degrades the brain's ability to gate both motor actions *and* cognitive processes.
+The ultimate expression of DLB is a failure not just of individual cells, but of entire brain networks. The parkinsonism and the cognitive deficits, particularly in attention and executive function (planning, problem-solving), are two sides of the same coin. They both reflect the breakdown of the great **frontostriatal circuits**—the massive feedback loops that connect the frontal lobes with the basal ganglia [@problem_id:4475131]. Because dopamine is a key modulator of these circuits, its loss degrades the brain's ability to gate both motor actions *and* cognitive processes.
 
-This stands in stark contrast to Alzheimer’s disease, where the primary pathology targets a different large-scale network—the **Default Mode Network (DMN)**, which is crucial for memory and introspection. This explains why the hallmark of early Alzheimer's is memory loss, while motor function remains relatively intact. In DLB, the assault on the dopaminergic and frontostriatal systems places parkinsonism and executive dysfunction front and center, painting a clinical picture that is unmistakably, and mechanistically, distinct .
+This stands in stark contrast to Alzheimer’s disease, where the primary pathology targets a different large-scale network—the **Default Mode Network (DMN)**, which is crucial for memory and introspection. This explains why the hallmark of early Alzheimer's is memory loss, while motor function remains relatively intact. In DLB, the assault on the dopaminergic and frontostriatal systems places parkinsonism and executive dysfunction front and center, painting a clinical picture that is unmistakably, and mechanistically, distinct [@problem_id:4686775].

@@ -9,9 +9,9 @@ To the uninitiated, the world of process improvement can seem like a jungle of a
 
 ### The Anatomy of Discovery: A Universal Framework
 
-At its heart, **DMAIC**—which stands for **Define, Measure,Analyze, Improve, and Control**—is a five-act play for systematic problem-solving. It’s a roadmap we use when we have an *existing* process that isn’t performing as well as we’d like. Imagine a hospital’s Emergency Department (ED) where triage, the critical first step in sorting patients, is only accurate $88\%$ of the time. The process exists, but it’s flawed. DMAIC is the perfect tool to diagnose and cure its ailments .
+At its heart, **DMAIC**—which stands for **Define, Measure,Analyze, Improve, and Control**—is a five-act play for systematic problem-solving. It’s a roadmap we use when we have an *existing* process that isn’t performing as well as we’d like. Imagine a hospital’s Emergency Department (ED) where triage, the critical first step in sorting patients, is only accurate $88\%$ of the time. The process exists, but it’s flawed. DMAIC is the perfect tool to diagnose and cure its ailments [@problem_id:4379097].
 
-This focus on improving what's already there distinguishes DMAIC from its sibling, **DMADV** (**Define, Measure, Analyze, Design, Verify**). You would turn to DMADV when you’re not just fixing a process, but creating one from whole cloth—like launching a brand-new telehealth service where no process existed before. DMADV is about architectural design; DMAIC is about expert renovation . Both are far more rigorous than the rapid, iterative learning cycles of a **Plan-Do-Study-Act (PDSA)** model, which is better suited for quick, small-scale tests of change rather than solving deep, complex problems with unknown root causes .
+This focus on improving what's already there distinguishes DMAIC from its sibling, **DMADV** (**Define, Measure, Analyze, Design, Verify**). You would turn to DMADV when you’re not just fixing a process, but creating one from whole cloth—like launching a brand-new telehealth service where no process existed before. DMADV is about architectural design; DMAIC is about expert renovation [@problem_id:4379129]. Both are far more rigorous than the rapid, iterative learning cycles of a **Plan-Do-Study-Act (PDSA)** model, which is better suited for quick, small-scale tests of change rather than solving deep, complex problems with unknown root causes [@problem_id:4391039].
 
 The power of DMAIC lies in its logical, unyielding progression. You cannot analyze what you have not measured, and you cannot measure what you have not defined. Let’s walk this path of discovery, phase by phase.
 
@@ -21,9 +21,9 @@ Before we can solve a problem, we must agree on what the problem *is*. This soun
 
 A beautifully simple and powerful tool for this is the **SIPOC** diagram, which stands for **Suppliers, Inputs, Process, Outputs, and Customers**. It’s a high-level map that forces us to establish clear boundaries. Imagine a project to improve the accuracy of medication lists given to patients at hospital discharge. The list is riddled with errors, but where does the process of creating that list actually begin and end?
 
-A well-crafted SIPOC brings immediate clarity. The **Process** is "Discharge Medication Reconciliation." The **Start Event** could be "Physician signs the discharge order," and the **Stop Event** is "Reconciled list is handed to the patient and transmitted to their pharmacy." The **Output** is the "reconciled discharge medication list." The **Customers** are the "patient" and the "community pharmacist," whose needs define what "accurate" means. The **Suppliers** are the "prescriber" and "nurse," and the **Inputs** they provide are things like "[allergy](@entry_id:188097) information" and the "discharge order."
+A well-crafted SIPOC brings immediate clarity. The **Process** is "Discharge Medication Reconciliation." The **Start Event** could be "Physician signs the discharge order," and the **Stop Event** is "Reconciled list is handed to the patient and transmitted to their pharmacy." The **Output** is the "reconciled discharge medication list." The **Customers** are the "patient" and the "community pharmacist," whose needs define what "accurate" means. The **Suppliers** are the "prescriber" and "nurse," and the **Inputs** they provide are things like "[allergy](@keyword=allergy|lang=en-US|style=Feynman) information" and the "discharge order."
 
-By explicitly defining these, we see what's *out* of scope. The pharmacy's inventory system? Out. A 30-day follow-up program to check if the patient is taking their meds? That’s a different process—out. We’ve defined the game board. Now we can start playing .
+By explicitly defining these, we see what's *out* of scope. The pharmacy's inventory system? Out. A 30-day follow-up program to check if the patient is taking their meds? That’s a different process—out. We’ve defined the game board. Now we can start playing [@problem_id:4379048].
 
 ### The Measure Phase: Trusting Your Eyes (and Your Instruments)
 
@@ -31,7 +31,7 @@ Once we know what we’re looking at, we must ensure we can see it clearly. The 
 
 This step is absolutely critical, and its importance cannot be overstated. Consider a hospital trying to reduce pressure injuries. The key metric is the number of "Stage II" or higher injuries, as classified by bedside nurses. But is a Stage II injury to one nurse the same as to another? This human judgment *is* the measurement system.
 
-Let's imagine a scenario where a wound specialist (our "gold standard") identifies 20 true Stage II injuries. However, when three different nurses assess the same wounds, their biases and inconsistencies lead them to collectively report an average of 26 such injuries. They are overcounting by 30%! If the true rate is $2.0$ injuries per $1{,}000$ patient-days, the flawed measurement system reports a rate of $2.6$. Without knowing this, the hospital might launch a massive, expensive project to solve a problem that is 30% smaller than it appears, or worse, chase phantom signals on a control chart that are just caused by which nurse was on duty that day .
+Let's imagine a scenario where a wound specialist (our "gold standard") identifies 20 true Stage II injuries. However, when three different nurses assess the same wounds, their biases and inconsistencies lead them to collectively report an average of 26 such injuries. They are overcounting by 30%! If the true rate is $2.0$ injuries per $1{,}000$ patient-days, the flawed measurement system reports a rate of $2.6$. Without knowing this, the hospital might launch a massive, expensive project to solve a problem that is 30% smaller than it appears, or worse, chase phantom signals on a control chart that are just caused by which nurse was on duty that day [@problem_id:4379021].
 
 MSA uses techniques like **Gage Repeatability  Reproducibility (Gage R)** for continuous data or **Attribute Agreement Analysis** for categorical judgments (like staging a wound) to quantify this measurement error. **Repeatability** asks: if the same person measures the same thing multiple times, how much do their answers vary? **Reproducibility** asks: when different people measure the same thing, how much do their answers vary? Only when the variation from our measurement system is small compared to the variation in the process itself can we trust our data and proceed to the next phase.
 
@@ -41,7 +41,7 @@ Armed with trustworthy data, we now become detectives. We know the process isn't
 
 A symptom is the observable failure—a mislabeled blood sample, for instance. A root cause is the underlying, systemic reason that allowed the failure to happen. Blaming a "careless" phlebotomist is not root cause analysis; it's an intellectual dead end.
 
-Two simple yet powerful tools guide this hunt. The first is the **Ishikawa diagram**, also known as a **fishbone diagram**. It provides a framework to brainstorm potential causes, organizing them into categories like People, Methods, Machines, Materials, and Environment. It helps a team think broadly before they start digging .
+Two simple yet powerful tools guide this hunt. The first is the **Ishikawa diagram**, also known as a **fishbone diagram**. It provides a framework to brainstorm potential causes, organizing them into categories like People, Methods, Machines, Materials, and Environment. It helps a team think broadly before they start digging [@problem_id:5237595].
 
 The second tool, the **5 Whys**, is an iterative technique for drilling down from the symptom to the root. Imagine a lab sees an increase in mislabeled specimens after introducing new bedside printers.
 
@@ -51,7 +51,7 @@ The second tool, the **5 Whys**, is an iterative technique for drilling down fro
 4.  *Why* does the printer allow this? Because the software doesn’t have a confirmation dialog or a hard stop for the "reprint" command.
 5.  *Why* doesn't the software have this feature? Because it wasn't specified as a requirement during the system's design.
 
-Aha! We’ve moved from blaming a person to identifying a fixable flaw in the system. The symptom was the mislabeled tube; the root cause is a missing IT control . This is also where we might distinguish between problems of **waste**, which are best tackled with **Lean** tools (like mapping out the physical motion of a nurse to see wasted steps), and problems of **variation**, which are the specialty of **Six Sigma**'s statistical toolset .
+Aha! We’ve moved from blaming a person to identifying a fixable flaw in the system. The symptom was the mislabeled tube; the root cause is a missing IT control [@problem_id:5237595]. This is also where we might distinguish between problems of **waste**, which are best tackled with **Lean** tools (like mapping out the physical motion of a nurse to see wasted steps), and problems of **variation**, which are the specialty of **Six Sigma**'s statistical toolset [@problem_id:4379091].
 
 ### The Improve Phase: Engineering the Solution
 
@@ -61,11 +61,11 @@ This is where **Design of Experiments (DOE)** comes into play. DOE is a brillian
 
 Imagine we are trying to optimize a chemical assay by adjusting three factors: reagent concentration ($A$), temperature ($B$), and time ($C$). Instead of testing each one separately, we can use DOE.
 
--   A **fractional [factorial design](@entry_id:166667)** lets us run a small, cleverly chosen subset of all possible combinations to quickly screen for the most important factors. It’s the most information you can get for the least amount of work—a very Lean principle.
--   If we suspect factors interact (e.g., the best temperature depends on the reagent concentration), we might augment our experiment to a **full [factorial design](@entry_id:166667)**, which tests every combination and reveals these interactions.
--   Finally, once we’ve zeroed in on the important factors, we can use a **response surface design**. This involves adding specific experimental runs (like "center points" and "axial points") that allow us to fit a quadratic equation to the data. This reveals the curvature of the performance landscape, allowing us to find the precise combination of settings that gives the optimal result—the peak of the mountain .
+-   A **fractional [factorial design](@keyword=factorial_design|lang=en-US|style=Feynman)** lets us run a small, cleverly chosen subset of all possible combinations to quickly screen for the most important factors. It’s the most information you can get for the least amount of work—a very Lean principle.
+-   If we suspect factors interact (e.g., the best temperature depends on the reagent concentration), we might augment our experiment to a **full [factorial design](@keyword=factorial_design|lang=en-US|style=Feynman)**, which tests every combination and reveals these interactions.
+-   Finally, once we’ve zeroed in on the important factors, we can use a **response surface design**. This involves adding specific experimental runs (like "center points" and "axial points") that allow us to fit a quadratic equation to the data. This reveals the curvature of the performance landscape, allowing us to find the precise combination of settings that gives the optimal result—the peak of the mountain [@problem_id:5237602].
 
-DOE transforms improvement from a trial-and-error guessing game into a sophisticated engineering exercise, guiding us directly to the best possible [process design](@entry_id:196705).
+DOE transforms improvement from a trial-and-error guessing game into a sophisticated engineering exercise, guiding us directly to the best possible [process design](@keyword=process_design|lang=en-US|style=Feynman).
 
 ### The Control Phase: Making It Stick
 
@@ -79,6 +79,6 @@ A robust control plan has several key elements. Let’s return to our allergy ve
 -   **Who Owns It:** A specific person, like the triage nurse lead, who is accountable for the metric.
 -   **The Response Plan:** An explicit, pre-agreed-upon action to take if things go wrong. For example, "If the defect rate exceeds a threshold of $T=0.05$ for two consecutive days, the owner must initiate a root-cause check within 24 hours."
 
-This control plan acts like a thermostat. It quietly monitors the process and only triggers an alarm when it detects a meaningful deviation. It closes the loop on the DMAIC cycle, transforming a one-time project into a continuously managed, high-performing system .
+This control plan acts like a thermostat. It quietly monitors the process and only triggers an alarm when it detects a meaningful deviation. It closes the loop on the DMAIC cycle, transforming a one-time project into a continuously managed, high-performing system [@problem_id:4379079].
 
 From the initial ambiguity of the Define phase to the lasting stability of the Control phase, the DMAIC framework is a powerful testament to the idea that even the most complex human systems are not governed by magic or chaos. They are governed by cause and effect, and with the right method—a method of relentless inquiry and rigorous validation—we can uncover their laws and shape them for the better.

@@ -7,7 +7,7 @@ This article provides a comprehensive overview of the Average Treatment Effect (
 
 ### The Heart of the Matter: A Question of Two Worlds
 
-Imagine you are sitting in a doctor's office. A new drug has been developed that might improve your condition. The doctor has access to vast databases of patient information, but the fundamental question you have is intensely personal: "If *I* take this drug, will *I* be better off?"  This simple question strikes at the very heart of causal inference, and it reveals a profound, almost philosophical, challenge.
+Imagine you are sitting in a doctor's office. A new drug has been developed that might improve your condition. The doctor has access to vast databases of patient information, but the fundamental question you have is intensely personal: "If *I* take this drug, will *I* be better off?" [@problem_id:4621172] This simple question strikes at the very heart of causal inference, and it reveals a profound, almost philosophical, challenge.
 
 To truly know the drug's effect on you, we would need to see what happens in two parallel worlds. In World A, you take the drug. In World B, you don't. The causal effect for you is the difference in your health between these two worlds. This is what scientists call the **fundamental problem of causal inference**: we can only ever observe one of these worlds. Once you take the drug, the world where you didn't is lost to us forever, and vice versa.
 
@@ -27,7 +27,7 @@ $$ATE = \mathbb{E}[Y(1) - Y(0)]$$
 
 The symbol $\mathbb{E}[\cdot]$ stands for expectation, which is just a fancy word for "average." To visualize the ATE, let's return to our parallel worlds. Imagine we could clone an entire population. We send one entire population to World A, where everyone gets the treatment, and we measure their average health, $\mathbb{E}[Y(1)]$. We send the other population to World B, where no one gets the treatment, and measure their average health, $\mathbb{E}[Y(0)]$. The ATE is the difference between the average outcomes in these two hypothetical universes.
 
-This number is enormously useful. If a hospital wants to decide whether to make a new sepsis bundle the standard of care for everyone, the ATE is exactly what they need to know. It answers the grand, system-wide question: "On average, what would be the change in patient survival if we moved from our current practice to this new one for *everybody*?" 
+This number is enormously useful. If a hospital wants to decide whether to make a new sepsis bundle the standard of care for everyone, the ATE is exactly what they need to know. It answers the grand, system-wide question: "On average, what would be the change in patient survival if we moved from our current practice to this new one for *everybody*?" [@problem_id:4961043]
 
 ### A Tale of Different Averages: Who Are We Talking About?
 
@@ -35,31 +35,31 @@ Now, any good physicist or statistician knows that an "average" can hide a multi
 
 A natural first slice is to look at the people who actually received the treatment versus those who didn't. This gives us two new, more specific kinds of average effects.
 
-First, there is the **Average Treatment Effect on the Treated (ATT)**. This is the average effect for the sub-population of people who, for whatever reason, ended up taking the treatment ($T=1$). 
+First, there is the **Average Treatment Effect on the Treated (ATT)**. This is the average effect for the sub-population of people who, for whatever reason, ended up taking the treatment ($T=1$). [@problem_id:4501620]
 
 $$ATT = \mathbb{E}[Y(1) - Y(0) \mid T=1]$$
 
-The policy question for ATT is one of evaluation: "For the patients who are *already* receiving our new program, what good is it doing them?"  It tells us if an existing program is working for its current audience.
+The policy question for ATT is one of evaluation: "For the patients who are *already* receiving our new program, what good is it doing them?" [@problem_id:4961043] It tells us if an existing program is working for its current audience.
 
-Second, there is the **Average Treatment Effect on the Controls (ATC)**, sometimes called the effect on the untreated. This is the average effect for those who ended up *not* taking the treatment ($T=0$). 
+Second, there is the **Average Treatment Effect on the Controls (ATC)**, sometimes called the effect on the untreated. This is the average effect for those who ended up *not* taking the treatment ($T=0$). [@problem_id:4845620]
 
 $$ATC = \mathbb{E}[Y(1) - Y(0) \mid T=0]$$
 
 The policy question for ATC is one of expansion: "For the patients we are *not* currently treating, what benefit would they get if we started?" This is crucial for deciding whether to expand a program to new groups.
 
-In a perfect world—specifically, a randomized controlled trial where a coin flip decides who gets the treatment—the treated and untreated groups are, on average, identical. In that special case, $ATE = ATT = ATC$. The effect is the same regardless of which group you look at, because the groups are not systematically different.  But in the real world, people who choose to get a flu shot might be more health-conscious to begin with than those who don't. This "selection bias" means that the treated and untreated groups are different, and as a result, the ATE, ATT, and ATC can all be different numbers, each telling a distinct and important part of the causal story.
+In a perfect world—specifically, a randomized controlled trial where a coin flip decides who gets the treatment—the treated and untreated groups are, on average, identical. In that special case, $ATE = ATT = ATC$. The effect is the same regardless of which group you look at, because the groups are not systematically different. [@problem_id:4845620] But in the real world, people who choose to get a flu shot might be more health-conscious to begin with than those who don't. This "selection bias" means that the treated and untreated groups are different, and as a result, the ATE, ATT, and ATC can all be different numbers, each telling a distinct and important part of the causal story.
 
 ### Beyond Averages: The Dawn of Precision Medicine
 
-We can slice the population even more finely. The effect of a drug for depression might be different for younger versus older patients, or for those with different [genetic markers](@entry_id:202466). This idea of **treatment effect heterogeneity** is the driving force behind precision medicine.
+We can slice the population even more finely. The effect of a drug for depression might be different for younger versus older patients, or for those with different [genetic markers](@keyword=genetic_markers|lang=en-US|style=Feynman). This idea of **treatment effect heterogeneity** is the driving force behind precision medicine.
 
 Instead of asking about broad groups like "the treated," we can ask about the average effect for a group of people with a specific set of characteristics, or covariates, $X$. This gives us the **Conditional Average Treatment Effect (CATE)**.
 
 $$CATE(x) = \mathbb{E}[Y(1) - Y(0) \mid X=x]$$
 
-The CATE is a function, not just a single number. You plug in a person's characteristics ($x$), and it tells you the average effect for people *like them*.  This is as close as we can get to answering the patient's original, personal question. We can't tell you *your* ITE, but we can tell you the average effect for people of your age, with your medical history, and your genetic profile. Today, powerful machine learning methods are being developed to estimate this very function from complex data, holding the promise of truly personalized medical advice.
+The CATE is a function, not just a single number. You plug in a person's characteristics ($x$), and it tells you the average effect for people *like them*. [@problem_id:4689942] This is as close as we can get to answering the patient's original, personal question. We can't tell you *your* ITE, but we can tell you the average effect for people of your age, with your medical history, and your genetic profile. Today, powerful machine learning methods are being developed to estimate this very function from complex data, holding the promise of truly personalized medical advice.
 
-And what is the ATE in this more detailed picture? It is simply the grand average of all the little CATEs across the entire population distribution. 
+And what is the ATE in this more detailed picture? It is simply the grand average of all the little CATEs across the entire population distribution. [@problem_id:4845573]
 
 ### A Clever Trick for a Messy World: Instrumental Variables
 
@@ -78,7 +78,7 @@ If we find such an instrument, we can work some magic. But there's a fascinating
 
 ### The Local Hero: What an Instrument Really Tells Us
 
-What does the IV trick actually estimate? It turns out it doesn't estimate the effect for everyone. The dorm distance only influences the behavior of a certain type of student. Let's classify them :
+What does the IV trick actually estimate? It turns out it doesn't estimate the effect for everyone. The dorm distance only influences the behavior of a certain type of student. Let's classify them [@problem_id:4574205]:
 -   **Always-Takers**: These students will attend the review session no matter what. They'll make the long trek even if they live far away.
 -   **Never-Takers**: These students will never attend, even if the session is held in their own dorm lounge.
 -   **Compliers**: These are the students on the fence. They will attend if it's convenient (they live nearby) but won't if it's a hassle (they live far away). Their behavior is changed by the instrument.
@@ -86,7 +86,7 @@ What does the IV trick actually estimate? It turns out it doesn't estimate the e
 
 The crucial insight, discovered by economists Guido Imbens and Joshua Angrist, is that the instrument gives us no leverage at all over the always-takers and never-takers. Their behavior is fixed. The only group whose behavior is "randomized" by the instrument is the compliers. Therefore, the causal effect that the IV method identifies is the effect *only for the compliers*.
 
-This is called the **Local Average Treatment Effect (LATE)**. It's not the effect for the whole population (ATE), but the effect "local" to the subpopulation of individuals who are induced to take up the treatment by the instrument. 
+This is called the **Local Average Treatment Effect (LATE)**. It's not the effect for the whole population (ATE), but the effect "local" to the subpopulation of individuals who are induced to take up the treatment by the instrument. [@problem_id:4916921]
 
 $$LATE = \mathbb{E}[Y(1) - Y(0) \mid \text{individual is a complier}]$$
 
@@ -94,6 +94,6 @@ The famous IV formula, known as the Wald estimator, reveals this intuitively:
 
 $$ LATE = \frac{\mathbb{E}[Y \mid Z=1] - \mathbb{E}[Y \mid Z=0]}{\mathbb{E}[T \mid Z=1] - \mathbb{E}[T \mid Z=0]} = \frac{\text{Effect of Instrument on Outcome}}{\text{Effect of Instrument on Treatment}} $$
 
-In our analogy, it's the effect of dorm distance on exam scores, divided by the effect of dorm distance on session attendance. The division scales the effect, isolating the impact of attendance itself, but only for that group whose attendance was affected by the distance. 
+In our analogy, it's the effect of dorm distance on exam scores, divided by the effect of dorm distance on session attendance. The division scales the effect, isolating the impact of attendance itself, but only for that group whose attendance was affected by the distance. [@problem_id:4912828]
 
 This is a beautiful and humbling result. In the face of confounding, we cannot learn the average effect for everyone. But by using a clever instrument, we can learn the true causal effect for the specific group of people who are on the margin—the very people who might be swayed by a new policy or encouragement. We trade the breadth of the ATE for the clean, causal depth of the LATE. And in doing so, we turn an impossible question into a solvable, albeit more specific, one.

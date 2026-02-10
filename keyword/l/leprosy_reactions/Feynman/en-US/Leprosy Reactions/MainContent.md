@@ -9,7 +9,7 @@ To understand the perplexing phenomena known as leprosy reactions, we must first
 
 ### A Tale of Two Responses: The Immune System's Double-Edged Sword
 
-Imagine the immune system as an army. When faced with an invader like *Mycobacterium leprae*, it can choose one of two primary strategies. This choice creates a beautiful, [continuous spectrum](@entry_id:153573) of disease, a concept elegantly captured in the **Ridley-Jopling classification**.
+Imagine the immune system as an army. When faced with an invader like *Mycobacterium leprae*, it can choose one of two primary strategies. This choice creates a beautiful, [continuous spectrum](@keyword=continuous_spectrum|lang=en-US|style=Feynman) of disease, a concept elegantly captured in the **Ridley-Jopling classification**.
 
 At one end of this spectrum lies **tuberculoid leprosy (TT)**. Here, the immune system deploys its elite ground forces: a powerful **cell-mediated immunity (CMI)**. This response, orchestrated by T-helper 1 ($Th1$) cells, is ruthlessly efficient. It dispatches macrophages to hunt down the bacteria and contain them within tight, organized formations called granulomas. The result is a paucibacillary state—few bacteria—but the intense, localized fighting can leave significant collateral damage, particularly to nerves. The army is strong, the containment is effective, but the battlefield is scarred.
 
@@ -19,9 +19,9 @@ Between these two poles lies the vast, unstable territory of **borderline lepros
 
 ### Reaction Type 1: The Sleeping Giant Awakens (Reversal Reactions)
 
-Let us consider a patient in the borderline spectrum. Their immune system is in a delicate, unstable truce with the bacterial invaders. Now, what happens when we intervene with powerful multidrug therapy (MDT)? A drug like [rifampicin](@entry_id:174255) is a bactericidal thunderclap, causing the mass death of millions of [bacilli](@entry_id:171007).
+Let us consider a patient in the borderline spectrum. Their immune system is in a delicate, unstable truce with the bacterial invaders. Now, what happens when we intervene with powerful multidrug therapy (MDT)? A drug like [rifampicin](@keyword=rifampicin|lang=en-US|style=Feynman) is a bactericidal thunderclap, causing the mass death of millions of [bacilli](@keyword=bacilli|lang=en-US|style=Feynman).
 
-This sudden slaughter floods the tissues with mycobacterial components—the antigens—that were previously hidden away inside cells. The immune system's reconnaissance patrols (antigen-presenting cells) are suddenly swamped with intelligence. They process these antigens and present them to T-helper cells. In a borderline patient with a capable, but previously suppressed, CMI, this flood of information can awaken a dormant power. The $Th1$ response, the elite ground force, roars back to life. This is not a failure of treatment, but an **upgrading** of immunity, a "reversal" of the previous [immune suppression](@entry_id:190778).
+This sudden slaughter floods the tissues with mycobacterial components—the antigens—that were previously hidden away inside cells. The immune system's reconnaissance patrols (antigen-presenting cells) are suddenly swamped with intelligence. They process these antigens and present them to T-helper cells. In a borderline patient with a capable, but previously suppressed, CMI, this flood of information can awaken a dormant power. The $Th1$ response, the elite ground force, roars back to life. This is not a failure of treatment, but an **upgrading** of immunity, a "reversal" of the previous [immune suppression](@keyword=immune_suppression|lang=en-US|style=Feynman).
 
 This phenomenon is a classic example of a **Type IV delayed-type hypersensitivity (DTH)**. It is not mediated by antibodies but by T-cells and the macrophages they command, the very same mechanism that causes the skin to swell in a positive tuberculosis test. It is a sign that the body is finally mounting the *correct* kind of fight.
 

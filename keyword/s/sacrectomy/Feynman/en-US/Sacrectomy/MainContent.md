@@ -5,7 +5,7 @@ This article explores the complex world of sacrectomy, moving from its core scie
 
 ## Principles and Mechanisms
 
-To understand a sacrectomy is to stand at the crossroads of several great scientific disciplines. It is not merely a surgical procedure; it is a profound exercise in oncology, [structural engineering](@entry_id:152273), [neurophysiology](@entry_id:140555), and ultimately, a deep reflection on the nature of medical decision-making. We must peel back the layers one by one, starting with the most fundamental question: why would anyone ever need to remove a piece of the very foundation of the human skeleton?
+To understand a sacrectomy is to stand at the crossroads of several great scientific disciplines. It is not merely a surgical procedure; it is a profound exercise in oncology, [structural engineering](@keyword=structural_engineering|lang=en-US|style=Feynman), [neurophysiology](@keyword=neurophysiology|lang=en-US|style=Feynman), and ultimately, a deep reflection on the nature of medical decision-making. We must peel back the layers one by one, starting with the most fundamental question: why would anyone ever need to remove a piece of the very foundation of the human skeleton?
 
 ### A Question of Boundaries: The Oncologic Imperative
 
@@ -17,7 +17,7 @@ Here, the oncologic imperative becomes stark. To achieve an R0 resection, the su
 
 ### The Keystone of the Body: Biomechanics of the Sacrum
 
-In removing a piece of the sacrum, however, we are meddling with a masterpiece of [biological engineering](@entry_id:270890). The sacrum is not just another bone; it is the **keystone** of the pelvic arch. The entire weight of your head, torso, and arms is transmitted down the spinal column, landing squarely on the sacrum. The sacrum then distributes this load sideways to the iliac bones (the large wings of the pelvis) through two massive, incredibly strong joints: the **sacroiliac joints**. From there, the forces travel down through your legs to the ground. This structure is what allows you to stand, walk, and run.
+In removing a piece of the sacrum, however, we are meddling with a masterpiece of [biological engineering](@keyword=biological_engineering|lang=en-US|style=Feynman). The sacrum is not just another bone; it is the **keystone** of the pelvic arch. The entire weight of your head, torso, and arms is transmitted down the spinal column, landing squarely on the sacrum. The sacrum then distributes this load sideways to the iliac bones (the large wings of the pelvis) through two massive, incredibly strong joints: the **sacroiliac joints**. From there, the forces travel down through your legs to the ground. This structure is what allows you to stand, walk, and run.
 
 This presents the surgeon with a monumental engineering problem. How much of this keystone can you remove before the entire structure collapses? The answer lies in a critical anatomical landmark: the second sacral vertebra, or $S2$.
 

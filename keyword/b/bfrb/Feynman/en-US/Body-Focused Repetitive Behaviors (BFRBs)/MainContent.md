@@ -9,7 +9,7 @@ Everyone has habits. We bite our nails while thinking, twirl a strand of hair wh
 
 ### The Thin Line: When Habits Become Chains
 
-Imagine a collector who lovingly curates their stamp collection, spending hours organizing and admiring it, feeling nothing but joy. Now imagine someone who feels an unrelenting urge to pick at their skin, spending those same hours in a trance-like state, only to be filled with shame and regret when they see the damage they’ve done. The amount of time spent might be similar, but the experiences are worlds apart. The difference does not lie in the behavior itself, but in two fundamental factors: **loss of control** and **significant distress or impairment** .
+Imagine a collector who lovingly curates their stamp collection, spending hours organizing and admiring it, feeling nothing but joy. Now imagine someone who feels an unrelenting urge to pick at their skin, spending those same hours in a trance-like state, only to be filled with shame and regret when they see the damage they’ve done. The amount of time spent might be similar, but the experiences are worlds apart. The difference does not lie in the behavior itself, but in two fundamental factors: **loss of control** and **significant distress or impairment** [@problem_id:4694884].
 
 A behavior becomes a Body-Focused Repetitive Behavior (BFRB) disorder when the person feels they have lost control over it. They make repeated, often desperate, attempts to stop or cut back, but find they cannot. It's as if a part of their brain is on autopilot, and they are merely a passenger. This loss of control is then coupled with real-world consequences. The behavior might cause physical harm, like skin lesions from picking or hair loss from pulling. It might consume so much time that it interferes with work or school. Or it might lead to such profound feelings of shame, anxiety, and embarrassment that the person avoids social situations, hiding themselves from the world.
 
@@ -17,7 +17,7 @@ It is this combination—the feeling of being trapped by a behavior and the tang
 
 ### The Engine of the Habit: A Tale of Urges and Rituals
 
-To understand what drives a BFRB, it’s helpful to compare it to a more familiar condition: Obsessive-Compulsive Disorder (OCD)  . On the surface, they can look similar—both involve repetitive behaviors that are hard to stop. But if we look under the hood, we find they are powered by entirely different engines.
+To understand what drives a BFRB, it’s helpful to compare it to a more familiar condition: Obsessive-Compulsive Disorder (OCD) [@problem_id:4489465] [@problem_id:4735051]. On the surface, they can look similar—both involve repetitive behaviors that are hard to stop. But if we look under the hood, we find they are powered by entirely different engines.
 
 OCD is typically driven by a cycle of obsessions and compulsions. It begins with an **obsession**: an intrusive, unwanted, and terrifying thought, image, or urge (e.g., "My hands are covered in deadly germs"). This thought creates immense anxiety. The **compulsion** (e.g., washing hands for ten minutes) is a goal-directed ritual performed to neutralize that specific threat and reduce the anxiety. It’s a transaction: "If I do this ritual, the bad thing won't happen."
 
@@ -27,7 +27,7 @@ This distinction is not merely academic; it explains why treatments that are hig
 
 ### The Autopilot Brain: How Habits Become Unshakable
 
-To truly grasp the stubborn nature of BFRBs, we must think of them as deeply ingrained **habits**. In neuroscience, a habit is not just something you do often. It is a specific type of behavior controlled by a distinct brain system. Think of the difference between navigating to a new restaurant and your daily commute home from work .
+To truly grasp the stubborn nature of BFRBs, we must think of them as deeply ingrained **habits**. In neuroscience, a habit is not just something you do often. It is a specific type of behavior controlled by a distinct brain system. Think of the difference between navigating to a new restaurant and your daily commute home from work [@problem_id:4694768].
 
 To find the new restaurant, you use **goal-directed control**. You consult a map, think about the turns, and your actions are constantly guided by your goal: getting to dinner. If you learn the restaurant is closed, you immediately stop and make a new plan. Your behavior is flexible and sensitive to the value of the outcome.
 
@@ -35,13 +35,13 @@ Your daily commute, however, is a **habit**. You get in the car, and your brain 
 
 BFRBs are like that commute. They are governed by the brain's habit system. A sensory cue ($S$)—like feeling a rough patch of skin—can automatically trigger the picking behavior ($R$) because, in the past, that action was reinforced by a rewarding outcome (a brief moment of relief).
 
-We can see this distinction clearly in a thought experiment . If we could magically reduce the inner tension that drives picking (devaluing the "relief" outcome), a goal-directed system would stop. But a habit system would not; the cue of a bumpy patch of skin would still trigger the autopilot. However, if we change the cue itself—for example, by wearing gloves or putting a bandage on the spot—the autopilot is disrupted. The trigger is gone, and the habit is blocked. This is precisely why **stimulus control** is a cornerstone of BFRB treatment.
+We can see this distinction clearly in a thought experiment [@problem_id:4694768]. If we could magically reduce the inner tension that drives picking (devaluing the "relief" outcome), a goal-directed system would stop. But a habit system would not; the cue of a bumpy patch of skin would still trigger the autopilot. However, if we change the cue itself—for example, by wearing gloves or putting a bandage on the spot—the autopilot is disrupted. The trigger is gone, and the habit is blocked. This is precisely why **stimulus control** is a cornerstone of BFRB treatment.
 
-This isn't just a theory. Sophisticated experiments, like the "two-step task," confirm that individuals with BFRBs tend to rely more on this rigid, model-free habit system than on the flexible, goal-directed planning system, even in situations where planning would lead to better results . Their brains are biased toward the autopilot.
+This isn't just a theory. Sophisticated experiments, like the "two-step task," confirm that individuals with BFRBs tend to rely more on this rigid, model-free habit system than on the flexible, goal-directed planning system, even in situations where planning would lead to better results [@problem_id:4694778]. Their brains are biased toward the autopilot.
 
 ### A Look Under the Hood: The Brain's Habit Highway
 
-This behavioral pattern has a direct physical correlate in the brain. The "habit highway" is a set of interconnected structures known as the **Cortico-Striato-Thalamo-Cortical (CSTC) loops**. Neuroimaging studies have begun to map how these circuits behave in people with BFRBs .
+This behavioral pattern has a direct physical correlate in the brain. The "habit highway" is a set of interconnected structures known as the **Cortico-Striato-Thalamo-Cortical (CSTC) loops**. Neuroimaging studies have begun to map how these circuits behave in people with BFRBs [@problem_id:4489477].
 
 When individuals with BFRBs are exposed to triggers and feel their urges rise, two key areas light up:
 
@@ -53,23 +53,23 @@ Furthermore, studies show that as the urge intensifies, the functional connectio
 
 ### The Molecular Machinery: A Tale of Glutamate and Cysteine
 
-Why is this habit highway so overactive? The answer may lie at the molecular level, in the brain's primary "go" signal, a neurotransmitter called **glutamate** . Think of glutamate as the gas pedal for brain circuits. In the CSTC loops of people with BFRBs, this gas pedal seems to be pushed down too hard and too often.
+Why is this habit highway so overactive? The answer may lie at the molecular level, in the brain's primary "go" signal, a neurotransmitter called **glutamate** [@problem_id:4489466]. Think of glutamate as the gas pedal for brain circuits. In the CSTC loops of people with BFRBs, this gas pedal seems to be pushed down too hard and too often.
 
 This glutamatergic hyperactivity might arise from a "perfect storm" of two problems. First, the brain's cleanup crew may be impaired. Under conditions of high **oxidative stress**, the cellular pumps (EAAT2 transporters) that normally mop up excess glutamate from the synapse can become damaged and inefficient. This leaves too much "gas" lingering around. Second, the neurons themselves may be releasing too much glutamate in big, powerful bursts.
 
-This is where a surprisingly simple compound, **N-acetylcysteine (NAC)**, enters the story with an elegant mechanism. NAC is a precursor to the amino acid [cysteine](@entry_id:186378). When NAC is administered, it boosts the brain's supply of [cysteine](@entry_id:186378). This has two beneficial effects:
+This is where a surprisingly simple compound, **N-acetylcysteine (NAC)**, enters the story with an elegant mechanism. NAC is a precursor to the amino acid [cysteine](@keyword=cysteine|lang=en-US|style=Feynman). When NAC is administered, it boosts the brain's supply of [cysteine](@keyword=cysteine|lang=en-US|style=Feynman). This has two beneficial effects:
 
-1.  **Antioxidant Defense**: Cysteine is a building block for glutathione, the body's master antioxidant. By boosting [glutathione](@entry_id:152671), NAC helps protect the brain from oxidative stress, potentially repairing the damaged glutamate pumps over time.
+1.  **Antioxidant Defense**: Cysteine is a building block for glutathione, the body's master antioxidant. By boosting [glutathione](@keyword=glutathione|lang=en-US|style=Feynman), NAC helps protect the brain from oxidative stress, potentially repairing the damaged glutamate pumps over time.
 
-2.  **Restoring the Brakes**: This is the more immediate and clever mechanism. Glial cells in the brain have a special [antiporter](@entry_id:138442) (system $x_c^-$) that swaps extracellular [cystine](@entry_id:188429) for intracellular glutamate. By providing more [cystine](@entry_id:188429), NAC encourages these [glial cells](@entry_id:139163) to release a slow, steady "drizzle" of glutamate into the space *between* synapses. This low, tonic level of glutamate acts on [presynaptic autoreceptors](@entry_id:169175) ($m\text{GluR}_{2/3}$), which function like a governor on an engine. They sense the ambient glutamate and send a signal back to the neuron saying, "Okay, things are active enough out here, ease up on releasing those big bursts of gas."
+2.  **Restoring the Brakes**: This is the more immediate and clever mechanism. Glial cells in the brain have a special [antiporter](@keyword=antiporter|lang=en-US|style=Feynman) (system $x_c^-$) that swaps extracellular [cystine](@keyword=cystine|lang=en-US|style=Feynman) for intracellular glutamate. By providing more [cystine](@keyword=cystine|lang=en-US|style=Feynman), NAC encourages these [glial cells](@keyword=glial_cells|lang=en-US|style=Feynman) to release a slow, steady "drizzle" of glutamate into the space *between* synapses. This low, tonic level of glutamate acts on [presynaptic autoreceptors](@keyword=presynaptic_autoreceptors|lang=en-US|style=Feynman) ($m\text{GluR}_{2/3}$), which function like a governor on an engine. They sense the ambient glutamate and send a signal back to the neuron saying, "Okay, things are active enough out here, ease up on releasing those big bursts of gas."
 
-In essence, NAC doesn't block the gas pedal; it helps the brain restore its own braking system, gently dampening the overactive circuit and weakening the powerful habit over time .
+In essence, NAC doesn't block the gas pedal; it helps the brain restore its own braking system, gently dampening the overactive circuit and weakening the powerful habit over time [@problem_id:4489466].
 
 ### The Unfolding Story: A Chronic Habit, A Surprising Clue
 
-Given these deep-seated mechanisms—a powerful reinforcement loop, a hardwired habit system, and underlying molecular dysregulation—it is not surprising that BFRBs typically follow a **chronic course** . The symptoms tend to **wax and wane** over a person's life, often worsening during periods of stress, which amplify the internal aversive states that trigger the habit loop. While some cases that begin in early childhood may resolve on their own, those that start in adolescence or adulthood tend to persist. Remission is possible, especially with engagement in therapies like Habit Reversal Training that directly target these mechanisms, but the path is often long, and relapses can occur.
+Given these deep-seated mechanisms—a powerful reinforcement loop, a hardwired habit system, and underlying molecular dysregulation—it is not surprising that BFRBs typically follow a **chronic course** [@problem_id:4489470]. The symptoms tend to **wax and wane** over a person's life, often worsening during periods of stress, which amplify the internal aversive states that trigger the habit loop. While some cases that begin in early childhood may resolve on their own, those that start in adolescence or adulthood tend to persist. Remission is possible, especially with engagement in therapies like Habit Reversal Training that directly target these mechanisms, but the path is often long, and relapses can occur.
 
-The scientific story of BFRBs is also still unfolding, and it is full of surprises. To study these behaviors, scientists often turn to animal models. One of the most famous is the **Hoxb8 mutant mouse**, a mouse that grooms itself so excessively it develops bald patches and skin lesions—a striking parallel to human BFRBs . For a long time, researchers assumed this was a model of a purely neuronal "wiring" problem in the brain's habit circuits.
+The scientific story of BFRBs is also still unfolding, and it is full of surprises. To study these behaviors, scientists often turn to animal models. One of the most famous is the **Hoxb8 mutant mouse**, a mouse that grooms itself so excessively it develops bald patches and skin lesions—a striking parallel to human BFRBs [@problem_id:4489442]. For a long time, researchers assumed this was a model of a purely neuronal "wiring" problem in the brain's habit circuits.
 
 The twist came from a brilliant experiment. Scientists took bone marrow from healthy mice and transplanted it into the Hoxb8 mutant mice. The grooming behavior stopped. Conversely, when they transplanted bone marrow from the mutant mice into healthy mice, the healthy mice began to groom excessively. The origin of the problem was not in the neurons, but in the hematopoietic system—the system that gives rise to blood cells and, crucially, to **microglia**, the brain's resident immune cells.
 

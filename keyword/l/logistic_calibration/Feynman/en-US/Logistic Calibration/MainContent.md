@@ -9,13 +9,13 @@ Imagine you have a new, highly sophisticated weather forecasting model. To trust
 
 Let's stick with our weather forecaster. Suppose on every single day that it eventually rained, the forecaster had predicted a higher chance of rain than on any day it stayed dry. You might be impressed! This model has perfect **discrimination**. It flawlessly separates rainy days from dry ones. In statistical terms, it would have an **Area Under the Receiver Operating Characteristic (ROC) Curve (AUC)** of 1.0, which is the highest possible score for discrimination.
 
-But what if, for every rainy day, it predicted "60% chance of rain," and for every dry day, it predicted "40% chance of rain"? While it has perfect sorting ability, it's not a very useful forecaster. The numbers "60%" and "40%" don't mean what they say. You can't take them at face value to decide whether to carry an umbrella. This model has perfect discrimination but poor calibration .
+But what if, for every rainy day, it predicted "60% chance of rain," and for every dry day, it predicted "40% chance of rain"? While it has perfect sorting ability, it's not a very useful forecaster. The numbers "60%" and "40%" don't mean what they say. You can't take them at face value to decide whether to carry an umbrella. This model has perfect discrimination but poor calibration [@problem_id:4914674].
 
 This distinction is not just academic; it is at the heart of building reliable predictive tools. **Discrimination** is about whether the model's risk scores can correctly rank individuals from low to high risk. **Calibration** is about whether a predicted risk of, say, 30% corresponds to a true risk of 30% in the real world. A high AUC tells you your model is good at ranking, but it tells you nothing about whether the probabilities it outputs are trustworthy. For that, we need to look deeper.
 
 ### The Language of Prediction: A Glimpse into the Log-Odds World
 
-To understand how we diagnose and treat miscalibration, we must first learn the "native language" of a [logistic regression model](@entry_id:637047). These models don't think in terms of probabilities, which are squashed between 0 and 1. They think on a much more convenient, infinite scale called **log-odds**.
+To understand how we diagnose and treat miscalibration, we must first learn the "native language" of a [logistic regression model](@keyword=logistic_regression_model|lang=en-US|style=Feynman). These models don't think in terms of probabilities, which are squashed between 0 and 1. They think on a much more convenient, infinite scale called **log-odds**.
 
 The odds of an event are the probability of it happening divided by the probability of it not happening. For a probability $p$, the odds are $\frac{p}{1-p}$. The log-odds, or **logit**, is simply the natural logarithm of the odds:
 
@@ -29,19 +29,19 @@ $$
 lp_* = x_*^\top \hat{\beta}
 $$
 
-This linear predictor *is* the model's internal assessment of risk, expressed in log-odds. To translate this back into a human-readable probability, we apply the inverse of the logit function, known as the [logistic sigmoid function](@entry_id:146135) :
+This linear predictor *is* the model's internal assessment of risk, expressed in log-odds. To translate this back into a human-readable probability, we apply the inverse of the logit function, known as the [logistic sigmoid function](@keyword=logistic_sigmoid_function|lang=en-US|style=Feynman) [@problem_id:4940062]:
 
 $$
 \hat{p}_* = \text{logit}^{-1}(lp_*) = \frac{1}{1 + \exp(-lp_*)}
 $$
 
-Understanding that the model's "brain" operates on the [log-odds](@entry_id:141427) scale is the key to understanding how we assess its calibration.
+Understanding that the model's "brain" operates on the [log-odds](@keyword=log_odds|lang=en-US|style=Feynman) scale is the key to understanding how we assess its calibration.
 
 ### A Check-Up for Your Model: Diagnosing Calibration
 
 So, we've built a model, and it's making predictions. How do we give it a check-up to see if it's honest? We take it to a new group of patients—an external validation dataset—and see how its predictions hold up.
 
-The central tool for this diagnosis is to fit a new logistic model. This time, we're not predicting the outcome from the patient's clinical features, but from our original model's own predictions. Specifically, we model the relationship between the *true* log-odds of the outcome and the *predicted* [log-odds](@entry_id:141427) from our model  :
+The central tool for this diagnosis is to fit a new logistic model. This time, we're not predicting the outcome from the patient's clinical features, but from our original model's own predictions. Specifically, we model the relationship between the *true* log-odds of the outcome and the *predicted* [log-odds](@keyword=log_odds|lang=en-US|style=Feynman) from our model [@problem_id:5223332] [@problem_id:4802788]:
 
 $$
 \text{logit}(\text{True Probability}) = \alpha + \beta \cdot \text{logit}(\hat{p})
@@ -51,7 +51,7 @@ Here, $\hat{p}$ is the probability our original model predicted. The parameters 
 - $\alpha$ is the **calibration intercept**.
 - $\beta$ is the **calibration slope**.
 
-If our original model were perfectly calibrated and transferred flawlessly to this new group of patients, the true probability would equal the predicted probability. On the [log-odds](@entry_id:141427) scale, this means $\text{logit}(\text{True Probability}) = \text{logit}(\hat{p})$. For this to be true, we would need to find that $\alpha = 0$ and $\beta = 1$. This is our "certificate of perfect health." Any deviation from this ideal state tells us something specific is wrong  .
+If our original model were perfectly calibrated and transferred flawlessly to this new group of patients, the true probability would equal the predicted probability. On the [log-odds](@keyword=log_odds|lang=en-US|style=Feynman) scale, this means $\text{logit}(\text{True Probability}) = \text{logit}(\hat{p})$. For this to be true, we would need to find that $\alpha = 0$ and $\beta = 1$. This is our "certificate of perfect health." Any deviation from this ideal state tells us something specific is wrong [@problem_id:4914674] [@problem_id:5223332].
 
 ### Interpreting the Diagnosis: What the Numbers Mean
 
@@ -59,28 +59,28 @@ When the check-up reveals that $\alpha \neq 0$ or $\beta \neq 1$, we have a diag
 
 #### The Intercept ($\alpha$): The Problem of "Calibration-in-the-Large"
 
-The calibration intercept, $\alpha$, diagnoses a systematic, across-the-board bias. It's like a scale that's always off by two pounds, no matter who steps on it. This is known as **calibration-in-the-large**  .
+The calibration intercept, $\alpha$, diagnoses a systematic, across-the-board bias. It's like a scale that's always off by two pounds, no matter who steps on it. This is known as **calibration-in-the-large** [@problem_id:4802788] [@problem_id:4526965].
 
--   **If $\boldsymbol{\alpha  0}$**, the true log-odds are systematically lower than the model's predicted [log-odds](@entry_id:141427). This means the model is a pessimist: it consistently **overpredicts** risk. For example, a study might find that a model predicts an average risk of 20% for a certain condition, but the actual rate of the condition in the validation group is only 10% . This is a common issue when a model trained in a high-risk hospital setting is applied to a general population with a lower baseline risk.
+-   **If $\boldsymbol{\alpha  0}$**, the true log-odds are systematically lower than the model's predicted [log-odds](@keyword=log_odds|lang=en-US|style=Feynman). This means the model is a pessimist: it consistently **overpredicts** risk. For example, a study might find that a model predicts an average risk of 20% for a certain condition, but the actual rate of the condition in the validation group is only 10% [@problem_id:4531989]. This is a common issue when a model trained in a high-risk hospital setting is applied to a general population with a lower baseline risk.
 
--   **If $\boldsymbol{\alpha > 0}$**, the model is an optimist: it systematically **underpredicts** the risk . The true log-odds are consistently higher than what the model claims.
+-   **If $\boldsymbol{\alpha > 0}$**, the model is an optimist: it systematically **underpredicts** the risk [@problem_id:5223332]. The true log-odds are consistently higher than what the model claims.
 
 #### The Slope ($\beta$): The Problem of Confidence
 
 The calibration slope, $\beta$, diagnoses the model's level of confidence. It tells us if the model's predictions are appropriately spread out or if they are too extreme or too timid.
 
--   **If $\boldsymbol{\beta  1}$**, the model is **overconfident**. The true [log-odds](@entry_id:141427) change less than the predicted log-odds. This means the model's high-risk predictions are too high, and its low-risk predictions are too low. Its predictions are "too extreme" and need to be shrunk towards the average. This is a classic symptom of **overfitting**, where the model has learned the noise from its training data too well, leading to overly aggressive predictions  .
+-   **If $\boldsymbol{\beta  1}$**, the model is **overconfident**. The true [log-odds](@keyword=log_odds|lang=en-US|style=Feynman) change less than the predicted log-odds. This means the model's high-risk predictions are too high, and its low-risk predictions are too low. Its predictions are "too extreme" and need to be shrunk towards the average. This is a classic symptom of **overfitting**, where the model has learned the noise from its training data too well, leading to overly aggressive predictions [@problem_id:4793255] [@problem_id:4802788].
 
--   **If $\boldsymbol{\beta > 1}$**, the model is **underconfident**. Its predictions are too conservative or "timid," huddled closer to the average risk than they should be. The true [log-odds](@entry_id:141427) are more extreme than the model predicts. This can be a sign of **[underfitting](@entry_id:634904)**, but interestingly, it's also a common side effect of using strong **regularization** techniques like LASSO or Ridge regression. These methods shrink model coefficients to prevent overfitting, but in doing so, they can make the model overly cautious in its predictions, requiring them to be "stretched out" to match reality  .
+-   **If $\boldsymbol{\beta > 1}$**, the model is **underconfident**. Its predictions are too conservative or "timid," huddled closer to the average risk than they should be. The true [log-odds](@keyword=log_odds|lang=en-US|style=Feynman) are more extreme than the model predicts. This can be a sign of **[underfitting](@keyword=underfitting|lang=en-US|style=Feynman)**, but interestingly, it's also a common side effect of using strong **regularization** techniques like LASSO or Ridge regression. These methods shrink model coefficients to prevent overfitting, but in doing so, they can make the model overly cautious in its predictions, requiring them to be "stretched out" to match reality [@problem_id:4553925] [@problem_id:4793255].
 
 ### Why Honesty Is the Best Policy: The Clinical Cost of Miscalibration
 
-A model with great discrimination (high AUC) but poor calibration can be more than just misleading; it can be actively harmful. In clinical practice, decisions are often based on whether a patient's predicted risk, $\hat{p}$, crosses a specific **threshold** . For example, a guideline might state: "If predicted 5-year risk of heart attack is greater than 10%, begin statin therapy."
+A model with great discrimination (high AUC) but poor calibration can be more than just misleading; it can be actively harmful. In clinical practice, decisions are often based on whether a patient's predicted risk, $\hat{p}$, crosses a specific **threshold** [@problem_id:5223332]. For example, a guideline might state: "If predicted 5-year risk of heart attack is greater than 10%, begin statin therapy."
 
 -   An **overpredicting** model ($\alpha  0$) will push more patients over this threshold than is warranted. This leads to **overtreatment**: people receive medications they don't need, incurring costs and the risk of side effects.
 -   An **underpredicting** model ($\alpha > 0$) will fail to push deserving patients over the threshold. This leads to **undertreatment**: people who could benefit from a preventive therapy miss out, potentially leading to avoidable adverse events.
 
-In both cases, the clinical utility of the model is diminished, even if its ability to rank patients is excellent. This is why overall performance metrics like the **Brier Score**, which penalizes the squared difference between predicted probabilities and actual outcomes ($0$ or $1$), are so valuable. The Brier score is sensitive to both poor discrimination *and* poor calibration, giving a more holistic view of a model's real-world performance  . For making decisions, a model's honesty is paramount.
+In both cases, the clinical utility of the model is diminished, even if its ability to rank patients is excellent. This is why overall performance metrics like the **Brier Score**, which penalizes the squared difference between predicted probabilities and actual outcomes ($0$ or $1$), are so valuable. The Brier score is sensitive to both poor discrimination *and* poor calibration, giving a more holistic view of a model's real-world performance [@problem_id:4531989] [@problem_id:5223332]. For making decisions, a model's honesty is paramount.
 
 ### The Art of Recalibration: Teaching an Old Model New Tricks
 
@@ -92,16 +92,16 @@ $$
 \hat{p}^{\text{recal}} = \text{logit}^{-1}\left(\hat{\alpha} + \hat{\beta} \cdot \text{logit}(\hat{p})\right)
 $$
 
-This procedure, often called **Platt Scaling** or logistic recalibration, creates a new model that is (by design) better calibrated for the population on which we performed the diagnosis . Crucially, because this adjustment is a strictly increasing transformation (assuming $\hat{\beta}>0$), it does not change the rank-ordering of the predictions. The model's AUC remains the same, but its probabilities are now more reliable . For more complex forms of miscalibration, other non-parametric techniques like **Isotonic Regression** can be used, which fit a more flexible, non-linear (but still monotonic) correction .
+This procedure, often called **Platt Scaling** or logistic recalibration, creates a new model that is (by design) better calibrated for the population on which we performed the diagnosis [@problem_id:4526965]. Crucially, because this adjustment is a strictly increasing transformation (assuming $\hat{\beta}>0$), it does not change the rank-ordering of the predictions. The model's AUC remains the same, but its probabilities are now more reliable [@problem_id:4531989]. For more complex forms of miscalibration, other non-parametric techniques like **Isotonic Regression** can be used, which fit a more flexible, non-linear (but still monotonic) correction [@problem_id:4526965].
 
 ### The Scientist’s Dilemma: How to Avoid Lying to Ourselves
 
-There is one final, crucial trap we must avoid: self-deception. Imagine you train your predictive model, then you use the *same data* to estimate the calibration parameters $(\alpha, \beta)$, and then you use that same data *again* to evaluate how well your recalibrated model works. What will you find? Perfect calibration! Of course, you will. You've tuned the correction on the very data you are using to test it. This is a cardinal sin in statistics, as it gives a wildly optimistic and biased view of how the model will perform on new data .
+There is one final, crucial trap we must avoid: self-deception. Imagine you train your predictive model, then you use the *same data* to estimate the calibration parameters $(\alpha, \beta)$, and then you use that same data *again* to evaluate how well your recalibrated model works. What will you find? Perfect calibration! Of course, you will. You've tuned the correction on the very data you are using to test it. This is a cardinal sin in statistics, as it gives a wildly optimistic and biased view of how the model will perform on new data [@problem_id:4793256].
 
-To get an honest estimate of our entire modeling *strategy* (which includes both initial training and subsequent recalibration), we must use a more rigorous evaluation protocol. The gold standard is **[nested cross-validation](@entry_id:176273)**. While the details can be intricate, the principle is simple and beautiful:
+To get an honest estimate of our entire modeling *strategy* (which includes both initial training and subsequent recalibration), we must use a more rigorous evaluation protocol. The gold standard is **[nested cross-validation](@keyword=nested_cross_validation|lang=en-US|style=Feynman)**. While the details can be intricate, the principle is simple and beautiful:
 
 1.  **The Outer Loop (for Testing):** We divide our data into, say, 10 folds. We set one fold aside as our pristine test set. It will not be touched.
-2.  **The Inner Loop (for Training):** On the remaining 9 folds, we perform our entire modeling strategy. This might itself involve another layer of [cross-validation](@entry_id:164650) to train the base model and then derive a stable recalibration map ($\hat{\alpha}, \hat{\beta}$) .
+2.  **The Inner Loop (for Training):** On the remaining 9 folds, we perform our entire modeling strategy. This might itself involve another layer of [cross-validation](@keyword=cross_validation|lang=en-US|style=Feynman) to train the base model and then derive a stable recalibration map ($\hat{\alpha}, \hat{\beta}$) [@problem_id:4957928].
 3.  **Honest Assessment:** Once the full model-plus-recalibration-strategy has been trained on the 9 folds, we apply it *once* to the held-out test fold and measure its performance (AUC, Brier score, and its final calibration).
 4.  **Repeat:** We repeat this process 10 times, with each fold getting a turn as the test set.
 
