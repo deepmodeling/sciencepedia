@@ -1,11 +1,11 @@
 ## 引言
-在物理学的基本问题中，最深刻的问题之一也恰恰是最简单的问题之一：为什么物体有质量？几十年来，作为我们对亚原子世界最佳描述的[粒子物理学](@article_id:305677)[标准模型](@article_id:297875)一直是不完整的，因为它无法解释为什么像[W和Z玻色子](@article_id:313290)这样的粒子是重的，而[光子](@article_id:305617)却是无质量的。解决方案以一个革命性的思想形式出现：一个弥漫于整个宇宙的无形能量场，现在被称为希格斯场。本文旨在填补我们理解上的这一关键空白，探索最终解释了基本粒子[质量起源](@article_id:321831)的理论。
+在物理学的基本问题中，最深刻的问题之一也恰恰是最简单的问题之一：为什么物体有质量？几十年来，作为我们对亚原子世界最佳描述的[粒子物理学](@keyword=particle_physics|lang=zh-CN|style=Feynman)[标准模型](@keyword=standard_model|lang=zh-CN|style=Feynman)一直是不完整的，因为它无法解释为什么像[W和Z玻色子](@keyword=w_and_z_bosons|lang=zh-CN|style=Feynman)这样的粒子是重的，而[光子](@keyword=photon|lang=zh-CN|style=Feynman)却是无质量的。解决方案以一个革命性的思想形式出现：一个弥漫于整个宇宙的无形能量场，现在被称为希格斯场。本文旨在填补我们理解上的这一关键空白，探索最终解释了基本粒子[质量起源](@keyword=mass_generation|lang=zh-CN|style=Feynman)的理论。
 
-这段探索之旅将分为两个主要章节展开。在“原理与机制”中，我们将深入探讨[希格斯场](@article_id:320485)本身奇特而优美的性质，探索其独特的“墨西哥帽”势以及自发对称性破缺的概念，后者在宇宙诞生的最初瞬间改变了宇宙。您将了解到该场如何像“宇宙糖浆”一样，通过相互作用产生质量，以及著名的[希格斯玻色子](@article_id:315970)如何作为该场中的涟漪出现。随后，“应用与跨学科联系”一章将揭示希格斯机制惊人的应用范围，展示它如何不仅巩固了标准模型，还为大统一理论提供了蓝图，预测了如[磁单极子](@article_id:303253)等奇异现象，甚至与宇宙自身的膨胀相联系。
+这段探索之旅将分为两个主要章节展开。在“原理与机制”中，我们将深入探讨[希格斯场](@keyword=higgs_field|lang=zh-CN|style=Feynman)本身奇特而优美的性质，探索其独特的“墨西哥帽”势以及自发对称性破缺的概念，后者在宇宙诞生的最初瞬间改变了宇宙。您将了解到该场如何像“宇宙糖浆”一样，通过相互作用产生质量，以及著名的[希格斯玻色子](@keyword=higgs_boson|lang=zh-CN|style=Feynman)如何作为该场中的涟漪出现。随后，“应用与跨学科联系”一章将揭示希格斯机制惊人的应用范围，展示它如何不仅巩固了标准模型，还为大统一理论提供了蓝图，预测了如[磁单极子](@keyword=magnetic_monopoles|lang=zh-CN|style=Feynman)等奇异现象，甚至与宇宙自身的膨胀相联系。
 
 ## 原理与机制
 
-想象你身处一个完全对称、美轮美奂的房间。无论朝哪个方向看，一切都完全相同。现在，你在中心放置了一件精美绝伦的雕塑。房间本身没有改变，但它的*状态*改变了。对称性被打破了。现在有了一个特殊的点——雕塑，以及特殊的方向——朝向它和远离它。[希格斯场](@article_id:320485)的故事就是一个关于此类[对称性破缺](@article_id:303497)的故事，但它并非发生在一个房间里，而是在宇宙诞生之初的瞬间，横跨整个宇宙。
+想象你身处一个完全对称、美轮美奂的房间。无论朝哪个方向看，一切都完全相同。现在，你在中心放置了一件精美绝伦的雕塑。房间本身没有改变，但它的*状态*改变了。对称性被打破了。现在有了一个特殊的点——雕塑，以及特殊的方向——朝向它和远离它。[希格斯场](@keyword=higgs_field|lang=zh-CN|style=Feynman)的故事就是一个关于此类[对称性破缺](@keyword=symmetry_breaking|lang=zh-CN|style=Feynman)的故事，但它并非发生在一个房间里，而是在宇宙诞生之初的瞬间，横跨整个宇宙。
 
 ### 空无的形状：希格斯势
 
@@ -21,48 +21,48 @@ $$
 
 ### 伟大的宇宙破缺：自发对称性破缺
 
-在早期宇宙的炽热中，能量非常高，以至于[希格斯场](@article_id:320485)在其[势能景观](@article_id:304087)中到处翻滚，实际上在中心峰顶处的平均值为零。物理定律拥有一种完美、纯粹的对称性。但随着宇宙冷却，该场就像我们的弹珠一样，必须稳定到其最低能量状态。它必须从中心的峰顶滚落到下面的圆形山谷中。
+在早期宇宙的炽热中，能量非常高，以至于[希格斯场](@keyword=higgs_field|lang=zh-CN|style=Feynman)在其[势能景观](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)中到处翻滚，实际上在中心峰顶处的平均值为零。物理定律拥有一种完美、纯粹的对称性。但随着宇宙冷却，该场就像我们的弹珠一样，必须稳定到其最低能量状态。它必须从中心的峰顶滚落到下面的圆形山谷中。
 
 但是，山谷中的哪一点呢？圆形凹槽中的每一点都具有完全相同的最低能量。该场必须“选择”一个。这就像一支铅笔竖立在笔尖上；它必然会倒下，但倒向哪个方向是随机的。一旦场在凹槽中选定了一个特定的点，这个选择虽然是任意的，但却为整个宇宙做出了。原初的对称性被隐藏了起来，或者说“自发破缺”了。宇宙现在有了一个由希格斯场稳定下来的特定值所定义的新的背景“方向”。
 
 ### 一个充满宇宙糖浆的宇宙
 
-在这个低能凹槽中，希格斯场的值不为零。我们称这个非零的背景值为**[真空期望值](@article_id:306760)（VEV）**，用 $v$ 表示。其通过实验测得的值约为 $v = 246.22$ GeV。这是自然界中最基本的数字之一。它意味着我们所谓的“空无的空间”或“真空”并非真正的空无。它处处充满了恒定、无形的希格斯场。你可以把整个宇宙想象成被一种宇宙糖浆或一种稠密的透明[以太](@article_id:338926)所[渗透](@article_id:361061)。
+在这个低能凹槽中，希格斯场的值不为零。我们称这个非零的背景值为**[真空期望值](@keyword=vacuum_expectation_value|lang=zh-CN|style=Feynman)（VEV）**，用 $v$ 表示。其通过实验测得的值约为 $v = 246.22$ GeV。这是自然界中最基本的数字之一。它意味着我们所谓的“空无的空间”或“真空”并非真正的空无。它处处充满了恒定、无形的希格斯场。你可以把整个宇宙想象成被一种宇宙糖浆或一种稠密的透明[以太](@keyword=luminiferous_ether|lang=zh-CN|style=Feynman)所[渗透](@keyword=permeation|lang=zh-CN|style=Feynman)。
 
-这个背景场是基本粒子之舞上演的舞台。正如我们将看到的，它们与这种糖浆的相互作用正是它们[质量的起源](@article_id:322156)。
+这个背景场是基本粒子之舞上演的舞台。正如我们将看到的，它们与这种糖浆的相互作用正是它们[质量的起源](@keyword=origin_of_mass|lang=zh-CN|style=Feynman)。
 
-### [质量的起源](@article_id:322156)：对现实的拖拽
+### [质量的起源](@keyword=origin_of_mass|lang=zh-CN|style=Feynman)：对现实的拖拽
 
-在[希格斯场](@article_id:320485)稳定到其[真空期望值](@article_id:306760)之前，许多粒子，如携带[弱核力](@article_id:317984)的[W和Z玻色子](@article_id:313290)，都像携带光的[光子](@article_id:305617)一样是无质量的。它们以光速飞驰。但一旦宇宙糖浆形成，一切都改变了。
+在[希格斯场](@keyword=higgs_field|lang=zh-CN|style=Feynman)稳定到其[真空期望值](@keyword=vacuum_expectation_value|lang=zh-CN|style=Feynman)之前，许多粒子，如携带[弱核力](@keyword=weak_nuclear_force|lang=zh-CN|style=Feynman)的[W和Z玻色子](@keyword=w_and_z_bosons|lang=zh-CN|style=Feynman)，都像携带光的[光子](@keyword=photon|lang=zh-CN|style=Feynman)一样是无质量的。它们以光速飞驰。但一旦宇宙糖浆形成，一切都改变了。
 
-一些粒子与[希格斯场](@article_id:320485)相互作用，而另一些则不。对于那些相互作用的粒子来说，在真[空中运动](@article_id:351682)不再是毫不费力的。它们感受到来自背景希格斯场的“拖拽”。这种对被加速的阻力，正是我们所说的**惯性**，即**质量**。一个与希格斯场相互作用非常强的粒子会感受到很大的拖拽，因此非常重。一个相互作用弱的粒子则非常轻。而像**[光子](@article_id:305617)**这样完全不与它相互作用的粒子，则感受不到任何拖拽，并保持无质量状态。
+一些粒子与[希格斯场](@keyword=higgs_field|lang=zh-CN|style=Feynman)相互作用，而另一些则不。对于那些相互作用的粒子来说，在真[空中运动](@keyword=aerial_locomotion|lang=zh-CN|style=Feynman)不再是毫不费力的。它们感受到来自背景希格斯场的“拖拽”。这种对被加速的阻力，正是我们所说的**惯性**，即**质量**。一个与希格斯场相互作用非常强的粒子会感受到很大的拖拽，因此非常重。一个相互作用弱的粒子则非常轻。而像**[光子](@keyword=photon|lang=zh-CN|style=Feynman)**这样完全不与它相互作用的粒子，则感受不到任何拖拽，并保持无质量状态。
 
-这就是**希格斯机制**的核心。并非希格斯*赋予*粒子一小块质量。相反，质量是粒子与背景[希格斯场](@article_id:320485)相互作用的一种涌现属性。
+这就是**希格斯机制**的核心。并非希格斯*赋予*粒子一小块质量。相反，质量是粒子与背景[希格斯场](@keyword=higgs_field|lang=zh-CN|style=Feynman)相互作用的一种涌现属性。
 
-*   **[规范玻色子](@article_id:378987)的质量：**对于像W或[Z玻色子](@article_id:322410)这样的规范玻色子，其质量与它同[希格斯场](@article_id:320485)的[相互作用强度](@article_id:371239)（我们称之为它的“荷”，$q$）以及场本身的[真空期望值](@article_id:306760)成正比：$m_A = qv$。这一简单而优雅的关系，在简化模型   中得到了探讨，展示了对称性破缺的[能标](@article_id:375070) $v$ 如何直接设定了粒子质量的标度。
+*   **[规范玻色子](@keyword=gauge_bosons|lang=zh-CN|style=Feynman)的质量：**对于像W或[Z玻色子](@keyword=z_boson|lang=zh-CN|style=Feynman)这样的规范玻色子，其质量与它同[希格斯场](@keyword=higgs_field|lang=zh-CN|style=Feynman)的[相互作用强度](@keyword=interaction_strength|lang=zh-CN|style=Feynman)（我们称之为它的“荷”，$q$）以及场本身的[真空期望值](@keyword=vacuum_expectation_value|lang=zh-CN|style=Feynman)成正比：$m_A = qv$。这一简单而优雅的关系，在简化模型 [@problem_id:1114382] [@problem_id:1143226] 中得到了探讨，展示了对称性破缺的[能标](@keyword=energy_scales|lang=zh-CN|style=Feynman) $v$ 如何直接设定了粒子质量的标度。
 
-*   **[费米子](@article_id:306655)的质量：**对于像电子和夸克这样的物[质粒](@article_id:327484)子，情况也是如此。它们的质量源于它们通过所谓的**[汤川耦合](@article_id:315362)**与希格斯糖浆的相互作用。[标准模型](@article_id:297875)一个优美的预测是，希格斯玻色子与一个[费米子](@article_id:306655)之间的相互作用强度与该[费米子](@article_id:306655)的质量成正比。耦合常数 $g_{hff}$ 就是[费米子](@article_id:306655)质量 $m_f$ 除以[真空期望值](@article_id:306760)：$g_{hff} = m_f/v$ 。这就是为什么作为最重基本粒子的顶夸克与希格斯场相互作用最强，而轻的电子相互作用非常弱。因此，希格斯机制解释了[费米子](@article_id:306655)质量巨大且看似随意的等级结构。
+*   **[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)的质量：**对于像电子和夸克这样的物[质粒](@keyword=plasmid|lang=zh-CN|style=Feynman)子，情况也是如此。它们的质量源于它们通过所谓的**[汤川耦合](@keyword=yukawa_couplings|lang=zh-CN|style=Feynman)**与希格斯糖浆的相互作用。[标准模型](@keyword=standard_model|lang=zh-CN|style=Feynman)一个优美的预测是，希格斯玻色子与一个[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)之间的相互作用强度与该[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)的质量成正比。耦合常数 $g_{hff}$ 就是[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)质量 $m_f$ 除以[真空期望值](@keyword=vacuum_expectation_value|lang=zh-CN|style=Feynman)：$g_{hff} = m_f/v$ [@problem_id:707910]。这就是为什么作为最重基本粒子的顶夸克与希格斯场相互作用最强，而轻的电子相互作用非常弱。因此，希格斯机制解释了[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)质量巨大且看似随意的等级结构。
 
-### [希格斯玻色子](@article_id:315970)：场中的涟漪
+### [希格斯玻色子](@keyword=higgs_boson|lang=zh-CN|style=Feynman)：场中的涟漪
 
-那么，如果宇宙充满了这个[希格斯场](@article_id:320485)，著名的希格斯玻色子又在哪里呢？希格斯*[玻色子](@article_id:298714)*并非场本身。它是场的一个**量子激发**——一个涟漪，就像[光子](@article_id:305617)是[电磁场](@article_id:329585)的量子激发一样。如果你能在某个地方“敲击”一下宇宙糖浆，一个波就会向外传播。那个传播的波，那个涟漪，就是希格斯玻色子。
+那么，如果宇宙充满了这个[希格斯场](@keyword=higgs_field|lang=zh-CN|style=Feynman)，著名的希格斯玻色子又在哪里呢？希格斯*[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)*并非场本身。它是场的一个**量子激发**——一个涟漪，就像[光子](@keyword=photon|lang=zh-CN|style=Feynman)是[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)的量子激发一样。如果你能在某个地方“敲击”一下宇宙糖浆，一个波就会向外传播。那个传播的波，那个涟漪，就是希格斯玻色子。
 
-*   **涟漪的质量：**是什么决定了希格斯玻色子本身的质量？是势的形状。想象我们的弹珠静止在圆形山谷中。希格斯玻色子的质量对应于将弹珠*沿山谷壁向上*推所需要的能量。更陡峭的壁意味着一个“更硬”的场，需要更多能量来产生涟漪，因此[希格斯玻色子](@article_id:315970)也更重。结果表明，希格斯玻色子的质量平方 $m_h^2$ 与自耦合常数 $\lambda$（陡峭程度）和[真空期望值](@article_id:306760)的平方 $v^2$（它设定了山谷的位置）成正比：$m_h^2 = 2\lambda v^2$ 。通过测量希格斯质量（$m_H \approx 125.25$ GeV）和[真空期望值](@article_id:306760)（$v \approx 246.22$ GeV），我们可以计算出基本参数 $\lambda \approx 0.129$，从而直接探测宇宙基本势的形状。
+*   **涟漪的质量：**是什么决定了希格斯玻色子本身的质量？是势的形状。想象我们的弹珠静止在圆形山谷中。希格斯玻色子的质量对应于将弹珠*沿山谷壁向上*推所需要的能量。更陡峭的壁意味着一个“更硬”的场，需要更多能量来产生涟漪，因此[希格斯玻色子](@keyword=higgs_boson|lang=zh-CN|style=Feynman)也更重。结果表明，希格斯玻色子的质量平方 $m_h^2$ 与自耦合常数 $\lambda$（陡峭程度）和[真空期望值](@keyword=vacuum_expectation_value|lang=zh-CN|style=Feynman)的平方 $v^2$（它设定了山谷的位置）成正比：$m_h^2 = 2\lambda v^2$ [@problem_id:1939872]。通过测量希格斯质量（$m_H \approx 125.25$ GeV）和[真空期望值](@keyword=vacuum_expectation_value|lang=zh-CN|style=Feynman)（$v \approx 246.22$ GeV），我们可以计算出基本参数 $\lambda \approx 0.129$，从而直接探测宇宙基本势的形状。
 
-*   **涟漪的[自相互作用](@article_id:380031)：**因为势能的山谷不是一个完美的抛物线U形，希格斯涟漪可以以复杂的方式相互作用。势的精确形状决定了这些[自相互作用](@article_id:380031)。例如，理论预测存在一个**三线性自耦合**——一个顶点，在此一个希格斯玻色子可以分裂成两个，或者两个可以合并成一个——其强度由 $\frac{3m_h^2}{v}$ 给出 。测量这种自相互作用是大型强子对撞机的最高优先级之一，因为它将是[对势能](@article_id:381748)形状的决定性确认。
+*   **涟漪的[自相互作用](@keyword=self_interaction|lang=zh-CN|style=Feynman)：**因为势能的山谷不是一个完美的抛物线U形，希格斯涟漪可以以复杂的方式相互作用。势的精确形状决定了这些[自相互作用](@keyword=self_interaction|lang=zh-CN|style=Feynman)。例如，理论预测存在一个**三线性自耦合**——一个顶点，在此一个希格斯玻色子可以分裂成两个，或者两个可以合并成一个——其强度由 $\frac{3m_h^2}{v}$ 给出 [@problem_id:707998]。测量这种自相互作用是大型强子对撞机的最高优先级之一，因为它将是[对势能](@keyword=pair_potential|lang=zh-CN|style=Feynman)形状的决定性确认。
 
 ### 预测之网
 
-希格斯机制不仅解释了质量；它还将物理学的不同部分统一成一个惊人连贯的网络。例如，在希格斯理论之前，弱力的强度由**费米常数** $G_F$ 描述，该常数是通过中子等粒子的[放射性衰变](@article_id:302595)测得的。它只是一个来自实验的数字。[希格斯机制](@article_id:304844)提供了一个更深层次的起源。它表明，费米常数从根本上由[希格斯场](@article_id:320485)的[真空期望值](@article_id:306760)决定：$v^2 = 1/(\sqrt{2}G_F)$。
+希格斯机制不仅解释了质量；它还将物理学的不同部分统一成一个惊人连贯的网络。例如，在希格斯理论之前，弱力的强度由**费米常数** $G_F$ 描述，该常数是通过中子等粒子的[放射性衰变](@keyword=radioactive_decay|lang=zh-CN|style=Feynman)测得的。它只是一个来自实验的数字。[希格斯机制](@keyword=higgs_mechanism|lang=zh-CN|style=Feynman)提供了一个更深层次的起源。它表明，费米常数从根本上由[希格斯场](@keyword=higgs_field|lang=zh-CN|style=Feynman)的[真空期望值](@keyword=vacuum_expectation_value|lang=zh-CN|style=Feynman)决定：$v^2 = 1/(\sqrt{2}G_F)$。
 
-这使我们能够写下强有力的自洽关系。通过结合我们对希格斯质量和[真空期望值](@article_id:306760)的表达式，我们发现希格斯质量与费米常数和希格斯自耦合直接相关：$m_h^2 = \sqrt{2}\lambda / G_F$ 。这个方程非同寻常。左边是我们于2012年发现的一个粒子的质量。右边是两个数字：一个 $\lambda$ 描述了真空势的基本形状，另一个 $G_F$ 是几十年来从低能核物理中测得的。该理论完美地将它们联系在一起。
+这使我们能够写下强有力的自洽关系。通过结合我们对希格斯质量和[真空期望值](@keyword=vacuum_expectation_value|lang=zh-CN|style=Feynman)的表达式，我们发现希格斯质量与费米常数和希格斯自耦合直接相关：$m_h^2 = \sqrt{2}\lambda / G_F$ [@problem_id:188872]。这个方程非同寻常。左边是我们于2012年发现的一个粒子的质量。右边是两个数字：一个 $\lambda$ 描述了真空势的基本形状，另一个 $G_F$ 是几十年来从低能核物理中测得的。该理论完美地将它们联系在一起。
 
-此外，由该机制产生的粒子质量并非[相互独立](@article_id:337365)的。在简化模型中，矢量[玻色子](@article_id:298714)和希格斯玻色子的质量平方之比仅取决于理论的基本[耦合常数](@article_id:321083)，例如 $\frac{m_A^2}{m_h^2} = \frac{e^2}{2\lambda}$ 。质量不再是内禀属性，而是 underlying 对称性及其破缺的计算结果。
+此外，由该机制产生的粒子质量并非[相互独立](@keyword=mutual_independence|lang=zh-CN|style=Feynman)的。在简化模型中，矢量[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)和希格斯玻色子的质量平方之比仅取决于理论的基本[耦合常数](@keyword=coupling_constant|lang=zh-CN|style=Feynman)，例如 $\frac{m_A^2}{m_h^2} = \frac{e^2}{2\lambda}$ [@problem_id:1095010]。质量不再是内禀属性，而是 underlying 对称性及其破缺的计算结果。
 
 ### 希格斯作为物理客体与通往未知的门户
 
-一个微妙但至关重要的点是，希格斯场 $\Phi$ 本身及其所有分量都不是直接可观测的。它受到**规范对称性**——我们描述中一种数学冗余——的制约。物理现实必须独立于这些描述性选择。真正物理的、可观测的量是场的*模*，$\sqrt{2\Phi^\dagger\Phi}$。物理的希格斯玻色子 $H_{phys}$ 是这个规范不变的模围绕其真空值 $v$ 的涨落 。
+一个微妙但至关重要的点是，希格斯场 $\Phi$ 本身及其所有分量都不是直接可观测的。它受到**规范对称性**——我们描述中一种数学冗余——的制约。物理现实必须独立于这些描述性选择。真正物理的、可观测的量是场的*模*，$\sqrt{2\Phi^\dagger\Phi}$。物理的希格斯玻色子 $H_{phys}$ 是这个规范不变的模围绕其真空值 $v$ 的涨落 [@problem_id:920081]。
 
-这个物理场具有可触摸的实在性。它的质量 $m_H$ 在我们的宇宙中定义了一个基本长度标度，即“愈合长度” $\xi = \hbar / (m_H c)$，这是如果[希格斯场](@article_id:320485)受到某种扰动，它会恢复到其[真空期望值](@article_id:306760)所需的特征距离 。在一个奇妙的思想实验中，人们可以问，这个量子[愈合长度](@article_id:299576)与一个质量与[希格斯玻色子](@article_id:315970)相同的假想[黑洞](@article_id:318975)的引力尺寸（[史瓦西半径](@article_id:327704)，$R_S$）相比如何。这个比值是一个意义深远的[无量纲数](@article_id:297266)，$\frac{\xi}{R_S} = \frac{\hbar c}{2Gm_H^2}$，它将量子力学（$\hbar$）、[相对论](@article_id:327421)（$c$）和引力（$G$）的常数相互对立，而所有这些都由希格斯质量联系在一起。
+这个物理场具有可触摸的实在性。它的质量 $m_H$ 在我们的宇宙中定义了一个基本长度标度，即“愈合长度” $\xi = \hbar / (m_H c)$，这是如果[希格斯场](@keyword=higgs_field|lang=zh-CN|style=Feynman)受到某种扰动，它会恢复到其[真空期望值](@keyword=vacuum_expectation_value|lang=zh-CN|style=Feynman)所需的特征距离 [@problem_id:1939802]。在一个奇妙的思想实验中，人们可以问，这个量子[愈合长度](@keyword=healing_length|lang=zh-CN|style=Feynman)与一个质量与[希格斯玻色子](@keyword=higgs_boson|lang=zh-CN|style=Feynman)相同的假想[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)的引力尺寸（[史瓦西半径](@keyword=schwarzschild_radius|lang=zh-CN|style=Feynman)，$R_S$）相比如何。这个比值是一个意义深远的[无量纲数](@keyword=dimensionless_numbers|lang=zh-CN|style=Feynman)，$\frac{\xi}{R_S} = \frac{\hbar c}{2Gm_H^2}$，它将量子力学（$\hbar$）、[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)（$c$）和引力（$G$）的常数相互对立，而所有这些都由希格斯质量联系在一起。
 
-[希格斯玻色子](@article_id:315970)的发现补全了[标准模型](@article_id:297875)，但对它的研究才刚刚开始。希格斯是独一无二的。它是我们所知的唯一基本标量（自旋为0）粒子，并且与真空本身的结构密切相关。真空势是否就是标准模型所假设的简单形式？或者是否存在其他更微妙的项，或许是来自无法想象的高能量下新物理的残余？诸如 $(\Phi^\dagger \Phi)^3$ 算符之类的项可能会轻微改变希格斯的自相互作用 。通过以越来越高的精度测量[希格斯玻色子](@article_id:315970)的性质，我们不仅是在研究一个粒子——我们是在探测真空本身的结构，寻找通往超越我们当前理解的下一个伟大理论的线索。希格斯场打破了[早期宇宙](@article_id:320572)的完美对称性，但在此过程中，它给了我们一个充满迷人复杂性的宇宙，以及一扇独特的回溯自然基本法则的窗口。
+[希格斯玻色子](@keyword=higgs_boson|lang=zh-CN|style=Feynman)的发现补全了[标准模型](@keyword=standard_model|lang=zh-CN|style=Feynman)，但对它的研究才刚刚开始。希格斯是独一无二的。它是我们所知的唯一基本标量（自旋为0）粒子，并且与真空本身的结构密切相关。真空势是否就是标准模型所假设的简单形式？或者是否存在其他更微妙的项，或许是来自无法想象的高能量下新物理的残余？诸如 $(\Phi^\dagger \Phi)^3$ 算符之类的项可能会轻微改变希格斯的自相互作用 [@problem_id:707867]。通过以越来越高的精度测量[希格斯玻色子](@keyword=higgs_boson|lang=zh-CN|style=Feynman)的性质，我们不仅是在研究一个粒子——我们是在探测真空本身的结构，寻找通往超越我们当前理解的下一个伟大理论的线索。希格斯场打破了[早期宇宙](@keyword=early_universe|lang=zh-CN|style=Feynman)的完美对称性，但在此过程中，它给了我们一个充满迷人复杂性的宇宙，以及一扇独特的回溯自然基本法则的窗口。

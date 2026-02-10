@@ -1,5 +1,5 @@
 ## Introduction
-In mathematics, continuity describes a function whose graph can be drawn without lifting the pen—a local property of [connectedness](@article_id:141572). A stricter condition, uniform continuity, offers a global guarantee: for any desired output precision, a single input tolerance works everywhere across the function's domain. But what happens when this global promise fails? This article tackles the concept of [non-uniform continuity](@article_id:157572), addressing the crucial question of how to identify, prove, and understand the implications of this breakdown in stability. The reader will first delve into the theoretical underpinnings and practical proof techniques in the chapter on **Principles and Mechanisms**. Following this, the chapter on **Applications and Interdisciplinary Connections** will reveal how this seemingly abstract idea manifests as critical points of instability and sensitivity in fields ranging from stochastic finance to [computational biology](@article_id:146494), demonstrating its profound real-world significance.
+In mathematics, continuity describes a function whose graph can be drawn without lifting the pen—a local property of [connectedness](@keyword=connectedness|lang=en-US|style=Feynman). A stricter condition, uniform continuity, offers a global guarantee: for any desired output precision, a single input tolerance works everywhere across the function's domain. But what happens when this global promise fails? This article tackles the concept of [non-uniform continuity](@keyword=non_uniform_continuity|lang=en-US|style=Feynman), addressing the crucial question of how to identify, prove, and understand the implications of this breakdown in stability. The reader will first delve into the theoretical underpinnings and practical proof techniques in the chapter on **Principles and Mechanisms**. Following this, the chapter on **Applications and Interdisciplinary Connections** will reveal how this seemingly abstract idea manifests as critical points of instability and sensitivity in fields ranging from stochastic finance to [computational biology](@keyword=computational_biology|lang=en-US|style=Feynman), demonstrating its profound real-world significance.
 
 ## Principles and Mechanisms
 
@@ -17,13 +17,13 @@ Consider one of the simplest, most elegant functions you know: $f(x) = x^2$. On 
 
 Let's say we want to find two points, $x$ and $y$, such that the function's value changes by at least 1, i.e., $|f(x) - f(y)| \ge 1$. If we are near the origin, say $x=0.1$ and $y=0.2$, the difference $|0.2^2 - 0.1^2| = 0.03$ is tiny. To get a difference of 1, we might need to pick $x=2$ and $y=2.25$, where $|2.25^2 - 2^2| \approx 1$. The distance is $|x-y|=0.25$. Now, let's go way out to $x=100$. To get a difference of 1, we can use the approximation $|(x+\delta)^2 - x^2| \approx 2x\delta$. So $1 \approx 2(100)\delta$, which means $\delta \approx 1/200 = 0.005$. Out at $x=1000$, we'd need $\delta \approx 0.0005$.
 
-Do you see the pattern? To achieve the same "altitude change" $\varepsilon$, the horizontal distance $\delta$ we can afford shrinks as we move further out. No single $\delta$ works for the whole real line! For any $\delta$ you propose, I can just go far enough out on the x-axis to find two points closer than $\delta$ whose squares are more than 1 unit apart. This is the essence of [non-uniform continuity](@article_id:157572), and it's precisely the behavior dissected in the scenario of problem .
+Do you see the pattern? To achieve the same "altitude change" $\varepsilon$, the horizontal distance $\delta$ we can afford shrinks as we move further out. No single $\delta$ works for the whole real line! For any $\delta$ you propose, I can just go far enough out on the x-axis to find two points closer than $\delta$ whose squares are more than 1 unit apart. This is the essence of [non-uniform continuity](@keyword=non_uniform_continuity|lang=en-US|style=Feynman), and it's precisely the behavior dissected in the scenario of problem [@problem_id:444184].
 
-This "runaway slope" isn't limited to functions of one variable. Imagine an idealized analog frequency mixer in electronics, whose output voltage is the product of its two input voltages, $M(v_1, v_2) = v_1 v_2$. If we fix one input at a high voltage, say $v_2 = 1000$ V, the output becomes $1000 v_1$. A tiny wiggle in $v_1$ now causes a thousand-fold larger wiggle in the output. The "steepness" of the function depends on where you are, and it can be arbitrarily large. As demonstrated in problem , you can always find two input pairs that are incredibly close, yet their outputs are far apart, just by choosing them in a region where one of the inputs is very large.
+This "runaway slope" isn't limited to functions of one variable. Imagine an idealized analog frequency mixer in electronics, whose output voltage is the product of its two input voltages, $M(v_1, v_2) = v_1 v_2$. If we fix one input at a high voltage, say $v_2 = 1000$ V, the output becomes $1000 v_1$. A tiny wiggle in $v_1$ now causes a thousand-fold larger wiggle in the output. The "steepness" of the function depends on where you are, and it can be arbitrarily large. As demonstrated in problem [@problem_id:1905163], you can always find two input pairs that are incredibly close, yet their outputs are far apart, just by choosing them in a region where one of the inputs is very large.
 
 #### The Infinite Plunge
 
-Another way uniformity can fail is when a function approaches a vertical asymptote. The classic case is $f(x) = \frac{1}{x}$. Let's look at it on two different domains, as explored in problem .
+Another way uniformity can fail is when a function approaches a vertical asymptote. The classic case is $f(x) = \frac{1}{x}$. Let's look at it on two different domains, as explored in problem [@problem_id:1342184].
 
 First, consider the domain $I_2 = [1, \infty)$. Here, the graph of $f(x) = 1/x$ is steep at the beginning (at $x=1$, the slope is -1) but then progressively flattens out as $x$ increases. The steepest it ever gets is at $x=1$. Because the steepness has a maximum value, the function is "tame." It is, in fact, uniformly continuous on this domain. We can find a single step-size $\delta$ that guarantees a certain altitude change $\varepsilon$ everywhere on this part of the path.
 
@@ -40,7 +40,7 @@ Think of it as finding a series of increasingly treacherous spots in our landsca
 
 #### Failure by Jumps
 
-A perfect example is the [floor function](@article_id:264879), $f(x) = \lfloor x \rfloor$, which rounds a number down to the nearest integer. Its graph is a series of steps. Let's apply our sequential criterion, as prompted by problem .
+A perfect example is the [floor function](@keyword=floor_function|lang=en-US|style=Feynman), $f(x) = \lfloor x \rfloor$, which rounds a number down to the nearest integer. Its graph is a series of steps. Let's apply our sequential criterion, as prompted by problem [@problem_id:2315701].
 
 Let's choose our sequences to straddle an integer jump. For each integer $n$, let's pick a point just below it and the integer itself:
 -   $x_n = n - \frac{1}{n}$
@@ -52,11 +52,11 @@ Now, look at the function values:
 -   $f(x_n) = \lfloor n - 1/n \rfloor = n-1$ (for $n > 1$)
 -   $f(y_n) = \lfloor n \rfloor = n$
 
-The difference is $|f(x_n) - f(y_n)| = |(n-1) - n| = 1$. This difference doesn't shrink at all! It's always 1. So, with $\varepsilon_0 = 1$, condition (2) is met. We have found our sequences, and we can declare with certainty: the [floor function](@article_id:264879) is not uniformly continuous on $\mathbb{R}$.
+The difference is $|f(x_n) - f(y_n)| = |(n-1) - n| = 1$. This difference doesn't shrink at all! It's always 1. So, with $\varepsilon_0 = 1$, condition (2) is met. We have found our sequences, and we can declare with certainty: the [floor function](@keyword=floor_function|lang=en-US|style=Feynman) is not uniformly continuous on $\mathbb{R}$.
 
 #### Failure by a Thousand Cuts
 
-The sequential criterion can uncover more subtle failures. Consider the strange but beautiful function from problem . It's built from an infinite series of triangular "hats": $f(x) = \sum_{n=1}^{\infty} \phi(2^n(x-n))$, where $\phi$ is a simple triangle of height 1 and base width 2 centered at 0.
+The sequential criterion can uncover more subtle failures. Consider the strange but beautiful function from problem [@problem_id:2315688]. It's built from an infinite series of triangular "hats": $f(x) = \sum_{n=1}^{\infty} \phi(2^n(x-n))$, where $\phi$ is a simple triangle of height 1 and base width 2 centered at 0.
 
 This function looks like a series of bumps. For each integer $n$, there is a bump centered at $x=n$. All bumps have height 1. However, the $n$-th bump has a base width of only $2/2^n$. This means as $n$ increases, the bumps get incredibly narrow and, therefore, incredibly steep. The slope of the side of the $n$-th bump is $2^n$.
 
@@ -73,7 +73,7 @@ The difference is $|f(x_n) - f(y_n)| = |1 - 0| = 1$. Again, the difference remai
 
 ### The Havens of Stability: Guaranteeing Uniform Continuity
 
-Lest we think [uniform continuity](@article_id:140454) is a rare miracle, let's explore the conditions that guarantee it. Where can we find these havens of stability?
+Lest we think [uniform continuity](@keyword=uniform_continuity|lang=en-US|style=Feynman) is a rare miracle, let's explore the conditions that guarantee it. Where can we find these havens of stability?
 
 #### The Speed Limit: Bounded Derivatives
 
@@ -83,16 +83,16 @@ If a function $f$ is differentiable and its derivative $f'$ is bounded, meaning 
 
 This property is called **Lipschitz continuity**, and it's a powerful sufficient condition for uniform continuity. To satisfy the $\varepsilon$-$\delta$ game, if we are given an $\varepsilon$, we simply choose $\delta = \varepsilon/K$. This choice works everywhere!
 
-A good example is the function $f(x) = \tanh(kx)$ from problem . Its derivative is $f'(x) = k \operatorname{sech}^2(kx)$, which is always less than or equal to $k$. Because its derivative is bounded on the entire real line, the function is uniformly continuous on $\mathbb{R}$, even though the domain is unbounded.
+A good example is the function $f(x) = \tanh(kx)$ from problem [@problem_id:444066]. Its derivative is $f'(x) = k \operatorname{sech}^2(kx)$, which is always less than or equal to $k$. Because its derivative is bounded on the entire real line, the function is uniformly continuous on $\mathbb{R}$, even though the domain is unbounded.
 
 #### The Power of Confinement: Compact Domains
 
-The most profound guarantee of uniform continuity comes from a [topological property](@article_id:141111) called **compactness**. For subsets of the real line, "compact" is just a fancy word for "closed and bounded" (e.g., an interval like $[0, 1]$). The celebrated **Heine-Cantor theorem** states that any continuous function on a compact domain is automatically uniformly continuous.
+The most profound guarantee of uniform continuity comes from a [topological property](@keyword=topological_property|lang=en-US|style=Feynman) called **compactness**. For subsets of the real line, "compact" is just a fancy word for "closed and bounded" (e.g., an interval like $[0, 1]$). The celebrated **Heine-Cantor theorem** states that any continuous function on a compact domain is automatically uniformly continuous.
 
 This is a remarkably powerful result. It means that the wild behaviors we've seen—the runaway slope of $f(x)=x^2$ and the infinite plunge of $f(x)=1/x$—are tamed the moment we confine them to a closed, bounded interval. On $[-1000, 1000]$, $f(x)=x^2$ is uniformly continuous. On $[0.001, 1]$, $f(x)=1/x$ is uniformly continuous. The "infinite steepness" was pushed out of the domain.
 
-This theorem explains why many operations that preserve continuity also preserve [uniform continuity](@article_id:140454) *on compact sets*. For example, if $f$ and $g$ are continuous on $[0,1]$, their product $h(x) = f(x)g(x)$ is also continuous. Because the domain is compact, $f$, $g$, and $h$ are all guaranteed to be uniformly continuous. The proof structure shown in problem  relies on the fact that on a [compact set](@article_id:136463), $f$ and $g$ must also be bounded, which is crucial for taming the product.
+This theorem explains why many operations that preserve continuity also preserve [uniform continuity](@keyword=uniform_continuity|lang=en-US|style=Feynman) *on compact sets*. For example, if $f$ and $g$ are continuous on $[0,1]$, their product $h(x) = f(x)g(x)$ is also continuous. Because the domain is compact, $f$, $g$, and $h$ are all guaranteed to be uniformly continuous. The proof structure shown in problem [@problem_id:1317556] relies on the fact that on a [compact set](@keyword=compact_set|lang=en-US|style=Feynman), $f$ and $g$ must also be bounded, which is crucial for taming the product.
 
-The idea of confinement even extends to functions on unbounded domains, provided the function itself is "confined." A continuous function with **[compact support](@article_id:275720)** (meaning it's non-zero only on a bounded region) must be uniformly continuous on all of $\mathbb{R}$ . Outside its little active region, the function is just zero, which is perfectly uniform. Inside the active region, it's a [continuous function on a compact set](@article_id:199406). The combination is globally uniform.
+The idea of confinement even extends to functions on unbounded domains, provided the function itself is "confined." A continuous function with **[compact support](@keyword=compact_support|lang=en-US|style=Feynman)** (meaning it's non-zero only on a bounded region) must be uniformly continuous on all of $\mathbb{R}$ [@problem_id:1414619]. Outside its little active region, the function is just zero, which is perfectly uniform. Inside the active region, it's a [continuous function on a compact set](@keyword=continuous_function_on_a_compact_set|lang=en-US|style=Feynman). The combination is globally uniform.
 
-In the end, [uniform continuity](@article_id:140454) is not just an abstract test for mathematicians to puzzle over. It is a fundamental measure of stability and predictability. It tells us when a system, be it a mathematical function, an electronic circuit, or a physical process, will respond predictably to small perturbations, no matter its current state. Understanding where this property holds, and where it fails, is to understand a deep truth about the structure of change itself.
+In the end, [uniform continuity](@keyword=uniform_continuity|lang=en-US|style=Feynman) is not just an abstract test for mathematicians to puzzle over. It is a fundamental measure of stability and predictability. It tells us when a system, be it a mathematical function, an electronic circuit, or a physical process, will respond predictably to small perturbations, no matter its current state. Understanding where this property holds, and where it fails, is to understand a deep truth about the structure of change itself.

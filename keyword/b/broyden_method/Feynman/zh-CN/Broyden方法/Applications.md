@@ -1,6 +1,6 @@
 ## 应用与跨学科联系
 
-既然我们已经深入了解了[Broyden方法](@article_id:299195)的内部机制，探索了它在没有完美地图的情况下导航至解决方案的巧妙机制，我们可以提出最令人兴奋的问题：它*用在*哪里？这块优雅的数学瑰宝在哪里找到了它的用武之地？你可能会感到惊讶。寻求[非线性方程组](@article_id:357020)的根并非某种晦涩的数学游戏；它是一个基本模式，在整个科学和工程领域以各种伪装反复出现。
+既然我们已经深入了解了[Broyden方法](@keyword=broyden_s_method|lang=zh-CN|style=Feynman)的内部机制，探索了它在没有完美地图的情况下导航至解决方案的巧妙机制，我们可以提出最令人兴奋的问题：它*用在*哪里？这块优雅的数学瑰宝在哪里找到了它的用武之地？你可能会感到惊讶。寻求[非线性方程组](@keyword=systems_of_nonlinear_equations|lang=zh-CN|style=Feynman)的根并非某种晦涩的数学游戏；它是一个基本模式，在整个科学和工程领域以各种伪装反复出现。
 
 为了看到这一点，让我们开始一段旅程。我们将看到，当我们试图确定钟摆的静止位置、一种新材料的特性、机翼上的气流、原子的结构，甚至整个经济的轨迹时，完全相同的逻辑挑战——以及通常是完全相同的计算工具——是如何出现的。
 
@@ -8,36 +8,36 @@
 
 从很多方面来说，自然是“懒惰”的。系统倾向于稳定在能量最低的状态，此时所有力和力矩都完美平衡。这种静止的状态就是我们所说的平衡。找到这种状态通常是我们理解一个物理系统的首要目标，但这可能出奇地困难。
 
-想象一个复杂的机械装置，比如一个带有弹簧和外力的[双摆](@article_id:347172)。要找到它的静态[平衡位置](@article_id:336089)，我们需要找到使系统总势能最小的精确角度。其条件是势能对每个角度的[导数](@article_id:318324)必须为零。这给我们留下了一个耦合的[非线性方程组](@article_id:357020)——角度纠缠在[三角函数](@article_id:357794)内部，一个角度的变化会影响另一个角度上的力。这里正是[Broyden方法](@article_id:299195)的绝佳舞台。我们可以从一个角度的猜测开始，让[算法](@article_id:331821)迭代地调整它们，利用其对过去尝试的记忆，智能地摸索出所有力矩相互抵消、系统处于平静状态的构型。
+想象一个复杂的机械装置，比如一个带有弹簧和外力的[双摆](@keyword=double_pendulum|lang=zh-CN|style=Feynman)。要找到它的静态[平衡位置](@keyword=equilibrium_position|lang=zh-CN|style=Feynman)，我们需要找到使系统总势能最小的精确角度。其条件是势能对每个角度的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)必须为零。这给我们留下了一个耦合的[非线性方程组](@keyword=systems_of_nonlinear_equations|lang=zh-CN|style=Feynman)——角度纠缠在[三角函数](@keyword=trigonometric_functions|lang=zh-CN|style=Feynman)内部，一个角度的变化会影响另一个角度上的力[@problem_id:2422737]。这里正是[Broyden方法](@keyword=broyden_s_method|lang=zh-CN|style=Feynman)的绝佳舞台。我们可以从一个角度的猜测开始，让[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)迭代地调整它们，利用其对过去尝试的记忆，智能地摸索出所有力矩相互抵消、系统处于平静状态的构型。
 
-这种平衡思想远远超出了简单的力学范畴。考虑一下表征用于[核反应堆](@article_id:299224)的新型复合材料的挑战。我们知道热量如何流动——它由一个[微分方程](@article_id:327891)控制——但我们不知道材料的[热导率](@article_id:307691)，它可能随位置而变化。然而，我们可以在几个关键点测量温度。问题于是变成了一个“[逆问题](@article_id:303564)”：热导率必须是多少，才能使温度分布与我们的测量结果相匹配？我们可以把它变成一个[求根问题](@article_id:354025)。我们猜测材料的属性，解[热方程](@article_id:304863)，并计算我们计算出的温度与测量值之间的“误差”或“[残差](@article_id:348682)”。目标是找到使这个[残差](@article_id:348682)为零的材料属性。同样，我们有一个[非线性方程组](@article_id:357020)，[Broyden方法](@article_id:299195)可以用来求解它，找到使我们的模型与现实达到平衡的隐藏参数。
+这种平衡思想远远超出了简单的力学范畴。考虑一下表征用于[核反应堆](@keyword=nuclear_reactor|lang=zh-CN|style=Feynman)的新型复合材料的挑战。我们知道热量如何流动——它由一个[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)控制——但我们不知道材料的[热导率](@keyword=thermal_conductivity|lang=zh-CN|style=Feynman)，它可能随位置而变化。然而，我们可以在几个关键点测量温度。问题于是变成了一个“[逆问题](@keyword=inverse_problems|lang=zh-CN|style=Feynman)”：热导率必须是多少，才能使温度分布与我们的测量结果相匹配？我们可以把它变成一个[求根问题](@keyword=root_finding_problem|lang=zh-CN|style=Feynman)。我们猜测材料的属性，解[热方程](@keyword=heat_equation|lang=zh-CN|style=Feynman)，并计算我们计算出的温度与测量值之间的“误差”或“[残差](@keyword=residue|lang=zh-CN|style=Feynman)”。目标是找到使这个[残差](@keyword=residue|lang=zh-CN|style=Feynman)为零的材料属性[@problem_id:1127760]。同样，我们有一个[非线性方程组](@keyword=systems_of_nonlinear_equations|lang=zh-CN|style=Feynman)，[Broyden方法](@keyword=broyden_s_method|lang=zh-CN|style=Feynman)可以用来求解它，找到使我们的模型与现实达到平衡的隐藏参数。
 
-也许最令人惊讶的是，同样的逻辑也适用于抽象的经济学世界。经济学家构建整个经济体的复杂模型，描述生产、消费和投资选择如何相互作用。他们常常寻求一个“一般均衡”路径，即所有市场出清，代理人的计划在时间上保持一致。为了找到描述代理人在这种均衡中行为的规则，即“[策略函数](@article_id:297399)”，他们必须求解一个连接现在与未来的大型方程组。就像钟摆一样，一切都依赖于其他一切。投影方法将这种对[经济均衡](@article_id:298517)的探索转化为一个具体的[求根问题](@article_id:354025)，而[Broyden方法](@article_id:299195)是解决该问题的一种著名且高效的求解器。
+也许最令人惊讶的是，同样的逻辑也适用于抽象的经济学世界。经济学家构建整个经济体的复杂模型，描述生产、消费和投资选择如何相互作用。他们常常寻求一个“一般均衡”路径，即所有市场出清，代理人的计划在时间上保持一致。为了找到描述代理人在这种均衡中行为的规则，即“[策略函数](@keyword=policy_function|lang=zh-CN|style=Feynman)”，他们必须求解一个连接现在与未来的大型方程组。就像钟摆一样，一切都依赖于其他一切。投影方法将这种对[经济均衡](@keyword=economic_equilibrium|lang=zh-CN|style=Feynman)的探索转化为一个具体的[求根问题](@keyword=root_finding_problem|lang=zh-CN|style=Feynman)，而[Broyden方法](@keyword=broyden_s_method|lang=zh-CN|style=Feynman)是解决该问题的一种著名且高效的求解器[@problem_id:2422778]。
 
 ### 动态系统的引擎
 
-世界并非总是静止的；它在不断运动。从咖啡中奶油的漩涡到[化学反应](@article_id:307389)的复杂舞蹈，描述随时间的变化是[微分方程](@article_id:327891)的目的。但是我们如何在只能进行离散步骤的计算机上求解它们呢？
+世界并非总是静止的；它在不断运动。从咖啡中奶油的漩涡到[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的复杂舞蹈，描述随时间的变化是[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)的目的。但是我们如何在只能进行离散步骤的计算机上求解它们呢？
 
-对于许多问题，特别是那些涉及在截然不同的时间尺度上发生的现象（即所谓的“刚性”系统），我们必须使用[隐式方法](@article_id:297524)。[隐式方法](@article_id:297524)通过求解一个涉及未来时刻未知状态的方程，从当前时间 $t$ 前进到下一个时间 $t+h$。换句话说，我们模拟时钟的每一次“滴答”都需要我们求解一个非线性[代数方程](@article_id:336361)组，以确定系统下一步的状态。
+对于许多问题，特别是那些涉及在截然不同的时间尺度上发生的现象（即所谓的“刚性”系统），我们必须使用[隐式方法](@keyword=implicit_methods|lang=zh-CN|style=Feynman)。[隐式方法](@keyword=implicit_methods|lang=zh-CN|style=Feynman)通过求解一个涉及未来时刻未知状态的方程，从当前时间 $t$ 前进到下一个时间 $t+h$。换句话说，我们模拟时钟的每一次“滴答”都需要我们求解一个非线性[代数方程](@keyword=algebraic_equations|lang=zh-CN|style=Feynman)组，以确定系统下一步的状态[@problem_id:2374974]。
 
-这是一项艰巨的任务。一个模拟可能涉及成千上万个时间步，每一步都必须解决一个新的难题。用牛顿法来做这件事，需要在每一步都计算一个新的、精确的雅可比矩阵，这通常是极其昂贵的。这时，[Broyden方法](@article_id:299195)成为了故事的主角。通过继承并廉价地更新雅可比矩阵的近似，它提供了一个快速而稳健的引擎，推动模拟一步步前进。这项技术是现代软件模拟从电路到生物细胞等一切事物的核心。
+这是一项艰巨的任务。一个模拟可能涉及成千上万个时间步，每一步都必须解决一个新的难题。用牛顿法来做这件事，需要在每一步都计算一个新的、精确的雅可比矩阵，这通常是极其昂贵的。这时，[Broyden方法](@keyword=broyden_s_method|lang=zh-CN|style=Feynman)成为了故事的主角。通过继承并廉价地更新雅可比矩阵的近似，它提供了一个快速而稳健的引擎，推动模拟一步步前进。这项技术是现代软件模拟从电路到生物细胞等一切事物的核心。
 
-这类挑战最宏大的舞台或许是计算流体力学（CFD）。控制流体流动的Navier-Stokes方程是出了名的复杂[非线性微分方程](@article_id:344071)。为了模拟像由移动顶盖驱动的盒子内部的空气流动这样的情况，我们将[空间离散化](@article_id:351289)成一个精细的网格。在每个网格点，速度和压力必须满足[运动方程](@article_id:349901)，并与所有邻近点保持一致。这个过程将[微分方程](@article_id:327891)转化为一个巨大的耦合非线性[代数方程](@article_id:336361)组——可能包含数百万个方程。找到这个系统的解就等同于找到[稳态流](@article_id:339357)动模式。对于这种规模的问题，避免构造完整[雅可比矩阵](@article_id:303923)的方法至关重要，而像[Broyden方法](@article_id:299195)这样的拟牛顿技术是该领域的基石之一。
+这类挑战最宏大的舞台或许是计算流体力学（CFD）。控制流体流动的Navier-Stokes方程是出了名的复杂[非线性微分方程](@keyword=nonlinear_differential_equations|lang=zh-CN|style=Feynman)。为了模拟像由移动顶盖驱动的盒子内部的空气流动这样的情况，我们将[空间离散化](@keyword=spatial_discretization|lang=zh-CN|style=Feynman)成一个精细的网格。在每个网格点，速度和压力必须满足[运动方程](@keyword=equations_of_motion|lang=zh-CN|style=Feynman)，并与所有邻近点保持一致。这个过程将[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)转化为一个巨大的耦合非线性[代数方程](@keyword=algebraic_equations|lang=zh-CN|style=Feynman)组——可能包含数百万个方程。找到这个系统的解就等同于找到[稳态流](@keyword=steady_state_flow|lang=zh-CN|style=Feynman)动模式。对于这种规模的问题，避免构造完整[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)的方法至关重要，而像[Broyden方法](@keyword=broyden_s_method|lang=zh-CN|style=Feynman)这样的拟牛顿技术是该领域的基石之一[@problem_id:2415381]。
 
 ### 量子宇宙：对自洽性的追求
 
 现在让我们将视角从宏观的流体世界缩小到原子和材料中电子的奇异领域。在这里，核心挑战不是平衡力，而是找到“自洽性”。
 
-在量子力学中，材料的性质由其电子的集体行为决定。电子产生一个电场，但这个电场反过来又决定了电子自身的行为方式。这是一个典型的“先有鸡还是先有蛋”的问题。电子密度产生一个势，这个势决定了电子的[波函数](@article_id:307855)，而[波函数](@article_id:307855)又决定了密度。
+在量子力学中，材料的性质由其电子的集体行为决定。电子产生一个电场，但这个电场反过来又决定了电子自身的行为方式。这是一个典型的“先有鸡还是先有蛋”的问题。电子密度产生一个势，这个势决定了电子的[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)，而[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)又决定了密度。
 
-在像[密度泛函理论](@article_id:299475)（DFT）或[Hartree-Fock方法](@article_id:298512)中，计算的目标是找到一个“自洽”的解——一个电子密度，它产生的势在求解方程后能反过来得到相同的密度。我们正在寻找计算映射的一个不动点。一种简单的迭代方法——将上一步的输出密度作为下一步的输入——通常会惨败。密度可能会剧烈[振荡](@article_id:331484)，这种现象被形象地称为“[电荷](@article_id:339187)晃动”，因为系统可能对微小变化反应过度。
+在像[密度泛函理论](@keyword=density_functional_theory|lang=zh-CN|style=Feynman)（DFT）或[Hartree-Fock方法](@keyword=hartree_fock_method|lang=zh-CN|style=Feynman)中，计算的目标是找到一个“自洽”的解——一个电子密度，它产生的势在求解方程后能反过来得到相同的密度。我们正在寻找计算映射的一个不动点[@problem_id:1768561]。一种简单的迭代方法——将上一步的输出密度作为下一步的输入——通常会惨败。密度可能会剧烈[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，这种现象被形象地称为“[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)晃动”，因为系统可能对微小变化反应过度。
 
-这正是[Broyden方法](@article_id:299195)旨在解决的不稳定性。通过将寻找自洽性视为一个[求根问题](@article_id:354025)（其中[残差](@article_id:348682)是输入和输出密度之间的差异），[Broyden方法](@article_id:299195)利用这些[振荡](@article_id:331484)的历史来了解系统的响应——它的“雅可比矩阵”。它建立一个关于整个系统如何反应的近似模型，并用它来采取一个更智能、更平缓的步骤，迈向真正的自洽解。这种对过去尝试的“混合”几乎是所有现代电子结构软件中的标准和关键技术，从[量子化学](@article_id:300637)到[材料科学](@article_id:312640)都是如此。同样的原理在动态[平均场理论](@article_id:305762)（DMFT）等前沿研究领域被推向极致，[Broyden方法](@article_id:299195)被用来为[强关联材料](@article_id:377722)求解更复杂的[自洽循环](@article_id:298607)。
+这正是[Broyden方法](@keyword=broyden_s_method|lang=zh-CN|style=Feynman)旨在解决的不稳定性。通过将寻找自洽性视为一个[求根问题](@keyword=root_finding_problem|lang=zh-CN|style=Feynman)（其中[残差](@keyword=residue|lang=zh-CN|style=Feynman)是输入和输出密度之间的差异），[Broyden方法](@keyword=broyden_s_method|lang=zh-CN|style=Feynman)利用这些[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的历史来了解系统的响应——它的“雅可比矩阵”。它建立一个关于整个系统如何反应的近似模型，并用它来采取一个更智能、更平缓的步骤，迈向真正的自洽解。这种对过去尝试的“混合”几乎是所有现代电子结构软件中的标准和关键技术，从[量子化学](@keyword=quantum_chemistry|lang=zh-CN|style=Feynman)到[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)都是如此[@problem_id:2803964]。同样的原理在动态[平均场理论](@keyword=mean_field_theory|lang=zh-CN|style=Feynman)（DMFT）等前沿研究领域被推向极致，[Broyden方法](@keyword=broyden_s_method|lang=zh-CN|style=Feynman)被用来为[强关联材料](@keyword=strongly_correlated_materials|lang=zh-CN|style=Feynman)求解更复杂的[自洽循环](@keyword=self_consistent_cycle|lang=zh-CN|style=Feynman)[@problem_id:2983232]。
 
 ### 实践的艺术
 
-最后，我们必须认识到，选择[数值方法](@article_id:300571)既是一门艺术也是一门科学。它涉及对各种权衡的务实平衡。[牛顿法](@article_id:300368)就像一位拥有完整而完美工具集（精确的雅可比矩阵）的大师级工匠。它可以用很少的、精确的步骤完成工作。[Broyden方法](@article_id:299195)更像一个聪明的学徒，他从一把简单的扳手开始，但学会了用废金属（[秩一更新](@article_id:297994)）随时制作新工具。它需要更多的步骤，但每一步的成本要低得多，因为它不需要每次都制造一套全新的工具。
+最后，我们必须认识到，选择[数值方法](@keyword=numerical_methods|lang=zh-CN|style=Feynman)既是一门艺术也是一门科学。它涉及对各种权衡的务实平衡。[牛顿法](@keyword=newton_method|lang=zh-CN|style=Feynman)就像一位拥有完整而完美工具集（精确的雅可比矩阵）的大师级工匠。它可以用很少的、精确的步骤完成工作。[Broyden方法](@keyword=broyden_s_method|lang=zh-CN|style=Feynman)更像一个聪明的学徒，他从一把简单的扳手开始，但学会了用废金属（[秩一更新](@keyword=rank_one_update|lang=zh-CN|style=Feynman)）随时制作新工具。它需要更多的步骤，但每一步的成本要低得多，因为它不需要每次都制造一套全新的工具。
 
-哪个更好？这取决于信息的成本。在用于评估[结构可靠性](@article_id:365561)的大规模[有限元分析](@article_id:357307)中，计算精确的[Hessian矩阵](@article_id:299588)（二阶[导数](@article_id:318324)，优化中完整的[牛顿步](@article_id:356024)需要）与计算梯度相比，可能极其昂贵。在这种情况下，使用许多廉价的基于梯度的步骤的拟[牛顿法](@article_id:300368)几乎肯定比使用少数非常昂贵的基于[Hessian矩阵](@article_id:299588)的步骤更有效。同样的逻辑也适用于在[经济建模](@article_id:304481)中比较[Broyden方法](@article_id:299195)和牛顿方法。如果雅可比矩阵计算起来非常复杂，那么Broyden的巧妙方法就会胜出。如果相对容易获得，那么牛顿法的强大功能可能更可取。
+哪个更好？这取决于信息的成本。在用于评估[结构可靠性](@keyword=structural_reliability|lang=zh-CN|style=Feynman)的大规模[有限元分析](@keyword=fem_analysis|lang=zh-CN|style=Feynman)中，计算精确的[Hessian矩阵](@keyword=hessian_matrix|lang=zh-CN|style=Feynman)（二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)，优化中完整的[牛顿步](@keyword=newton_step|lang=zh-CN|style=Feynman)需要）与计算梯度相比，可能极其昂贵[@problem_id:2680570]。在这种情况下，使用许多廉价的基于梯度的步骤的拟[牛顿法](@keyword=newton_method|lang=zh-CN|style=Feynman)几乎肯定比使用少数非常昂贵的基于[Hessian矩阵](@keyword=hessian_matrix|lang=zh-CN|style=Feynman)的步骤更有效。同样的逻辑也适用于在[经济建模](@keyword=economic_modeling|lang=zh-CN|style=Feynman)中比较[Broyden方法](@keyword=broyden_s_method|lang=zh-CN|style=Feynman)和牛顿方法[@problem_id:2422778]。如果雅可比矩阵计算起来非常复杂，那么Broyden的巧妙方法就会胜出。如果相对容易获得，那么牛顿法的强大功能可能更可取。
 
-从钟摆的静谧平衡到量子世界的自洽嗡鸣，宇宙充满了错综复杂的相互关联之谜。[Broyden方法](@article_id:299195)不仅仅是一种[算法](@article_id:331821)；它更是从经验中学习的力量的证明。通过记忆过去的步伐，它获得了解决那些原本棘手问题的直觉，揭示了一条贯穿人类知识不同领域的美丽而统一的线索。
+从钟摆的静谧平衡到量子世界的自洽嗡鸣，宇宙充满了错综复杂的相互关联之谜。[Broyden方法](@keyword=broyden_s_method|lang=zh-CN|style=Feynman)不仅仅是一种[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)；它更是从经验中学习的力量的证明。通过记忆过去的步伐，它获得了解决那些原本棘手问题的直觉，揭示了一条贯穿人类知识不同领域的美丽而统一的线索。

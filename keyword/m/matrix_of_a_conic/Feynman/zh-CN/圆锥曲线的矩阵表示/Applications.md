@@ -1,39 +1,39 @@
 ## 应用与跨学科联系
 
-现在我们已经熟悉了将[圆锥曲线](@article_id:354149)表示为矩阵的原理，你可能会问一个非常合理的问题：为什么要费这么大劲？为什么要用这个抽象的对称矩阵和[齐次坐标](@article_id:314981)世界来换取我们熟悉的 $ax^2 + bxy + \dots = 0$ 的舒适区？答案是，而且是一个令人愉快的答案，这种形式主义并非为了抽象而抽象。它是一个具有深远力量的工具。它将凌乱的几何问题转化为线性代数这种清晰、可预测的语言——现代计算的母语。通过将[圆锥曲线](@article_id:354149)打包成一个矩阵，我们为自己提供了一个可以抓住的把手，一个可以移动、扭曲和分析世界的杠杆。
+现在我们已经熟悉了将[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)表示为矩阵的原理，你可能会问一个非常合理的问题：为什么要费这么大劲？为什么要用这个抽象的对称矩阵和[齐次坐标](@keyword=homogeneous_coordinates|lang=zh-CN|style=Feynman)世界来换取我们熟悉的 $ax^2 + bxy + \dots = 0$ 的舒适区？答案是，而且是一个令人愉快的答案，这种形式主义并非为了抽象而抽象。它是一个具有深远力量的工具。它将凌乱的几何问题转化为线性代数这种清晰、可预测的语言——现代计算的母语。通过将[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)打包成一个矩阵，我们为自己提供了一个可以抓住的把手，一个可以移动、扭曲和分析世界的杠杆。
 
 让我们踏上一段旅程，看看在哪些领域，这个优雅的想法不仅是一种好奇心，而且是不可或缺的工具。
 
-### [计算机辅助设计](@article_id:317971)与工程：数字绘图板
+### [计算机辅助设计](@keyword=computer_aided_design|lang=zh-CN|style=Feynman)与工程：数字绘图板
 
-想象你是一位正在设计零件的工程师，或者是一位正在模拟材料应力的物理学家。你会不断地与曲线打交道。你可能会对一个椭圆齿轮或一个双曲线应力[等值线](@article_id:332206)提出的一个基本问题是：“它的中心在哪里？”这个中心通常是物理对称性或稳定性的点。使用一般方程会很麻烦。但有了[矩阵表示](@article_id:306446)法，过程就变得异常直接。[圆锥曲线](@article_id:354149)的中心就是其二次型[梯度消失](@article_id:642027)的点，这转化为求解一个直接从[矩阵元素](@article_id:365690)导出的简单线性方程组。寻找一个形状的几何核心变成了一个直接的代数计算  。
+想象你是一位正在设计零件的工程师，或者是一位正在模拟材料应力的物理学家。你会不断地与曲线打交道。你可能会对一个椭圆齿轮或一个双曲线应力[等值线](@keyword=level_curves|lang=zh-CN|style=Feynman)提出的一个基本问题是：“它的中心在哪里？”这个中心通常是物理对称性或稳定性的点。使用一般方程会很麻烦。但有了[矩阵表示](@keyword=matrix_representations|lang=zh-CN|style=Feynman)法，过程就变得异常直接。[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)的中心就是其二次型[梯度消失](@keyword=vanishing_gradients|lang=zh-CN|style=Feynman)的点，这转化为求解一个直接从[矩阵元素](@keyword=matrix_elements|lang=zh-CN|style=Feynman)导出的简单线性方程组。寻找一个形状的几何核心变成了一个直接的代数计算 [@problem_id:2111685] [@problem_id:1366418]。
 
-但从一开始如何定义一个形状呢？假设你正在为机器人手臂或电影片场的摄影机滑车设计一条路径。你没有方程；你有一组它必须经过的路径点。你如何生成一条连接它们的平滑、可预测的曲线？事实证明，任意五个点，只要没有三点共线，就能唯一确定一条圆锥曲线。矩阵表示法使我们能够将其视为一个线性方程组。每个点为圆锥曲线矩阵的未知元素提供一个方程。给计算机五个点，它就能解出描述连接所有这些点的优美弧线的矩阵。这不仅仅是一个理论练习；它是[机器人学](@article_id:311041)和运动规划中使用的实用方法，用于将一组离散的约束转化为连续的运动 。
+但从一开始如何定义一个形状呢？假设你正在为机器人手臂或电影片场的摄影机滑车设计一条路径。你没有方程；你有一组它必须经过的路径点。你如何生成一条连接它们的平滑、可预测的曲线？事实证明，任意五个点，只要没有三点共线，就能唯一确定一条圆锥曲线。矩阵表示法使我们能够将其视为一个线性方程组。每个点为圆锥曲线矩阵的未知元素提供一个方程。给计算机五个点，它就能解出描述连接所有这些点的优美弧线的矩阵。这不仅仅是一个理论练习；它是[机器人学](@keyword=robotics|lang=zh-CN|style=Feynman)和运动规划中使用的实用方法，用于将一组离散的约束转化为连续的运动 [@problem_id:2144399]。
 
-### 变换的魔力：[计算机图形学](@article_id:308496)
+### 变换的魔力：[计算机图形学](@keyword=computer_graphics|lang=zh-CN|style=Feynman)
 
-这里是矩阵形式主义真正大放异彩的地方。任何使用过图形程序来调整大小、旋转或倾斜图像的人，都见证了[矩阵变换](@article_id:317195)的作用。如果一个点 $(x,y)$ 被变换到一个新点 $(x', y')$，那么由这些点组成的[圆锥曲线](@article_id:354149)形状是如何变换的呢？
+这里是矩阵形式主义真正大放异彩的地方。任何使用过图形程序来调整大小、旋转或倾斜图像的人，都见证了[矩阵变换](@keyword=matrix_transformations|lang=zh-CN|style=Feynman)的作用。如果一个点 $(x,y)$ 被变换到一个新点 $(x', y')$，那么由这些点组成的[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)形状是如何变换的呢？
 
-假设我们的[圆锥曲线](@article_id:354149)由矩阵 $C$ 定义，因此其上的任何点 $\mathbf{p}$ 都满足 $\mathbf{p}^T C \mathbf{p} = 0$。现在，我们对平面上的每个点应用一个由矩阵 $M$ 描述的变换，使得新点为 $\mathbf{p}' = M\mathbf{p}$。新点 $\mathbf{p}'$ 的集合构成一个新的圆锥曲线。它的矩阵 $C'$ 是什么？推导过程惊人地简单，并揭示了规则：$C' = (M^{-1})^T C M^{-1}$ 。
+假设我们的[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)由矩阵 $C$ 定义，因此其上的任何点 $\mathbf{p}$ 都满足 $\mathbf{p}^T C \mathbf{p} = 0$。现在，我们对平面上的每个点应用一个由矩阵 $M$ 描述的变换，使得新点为 $\mathbf{p}' = M\mathbf{p}$。新点 $\mathbf{p}'$ 的集合构成一个新的圆锥曲线。它的矩阵 $C'$ 是什么？推导过程惊人地简单，并揭示了规则：$C' = (M^{-1})^T C M^{-1}$ [@problem_id:1366412]。
 
-想想这意味着什么！你想拉伸一个椭圆？你不需要重新推导它的方程。你只需定义一个缩放变换矩阵 $M$，然后应用这个公式。瞬间，你就得到了新的、被拉伸的椭圆的矩阵 。这个原理是2D和3D图形背后的引擎。每当你在屏幕上看到一个物体移动或改变形状时，你很可能看到的是[矩阵乘法](@article_id:316443)在默默地、高效地变换着底层的几何数据。这个过程甚至可以用来找到将一个[圆锥曲线](@article_id:354149)（如一个完美的圆）映射到另一个（如一个给定的椭圆）的特定变换，这是对齐和识别形状的一项基本任务 。
+想想这意味着什么！你想拉伸一个椭圆？你不需要重新推导它的方程。你只需定义一个缩放变换矩阵 $M$，然后应用这个公式。瞬间，你就得到了新的、被拉伸的椭圆的矩阵 [@problem_id:2144386]。这个原理是2D和3D图形背后的引擎。每当你在屏幕上看到一个物体移动或改变形状时，你很可能看到的是[矩阵乘法](@keyword=matrix_multiplication|lang=zh-CN|style=Feynman)在默默地、高效地变换着底层的几何数据。这个过程甚至可以用来找到将一个[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)（如一个完美的圆）映射到另一个（如一个给定的椭圆）的特定变换，这是对齐和识别形状的一项基本任务 [@problem_id:2144398]。
 
 ### 切割、阴影与三维视觉
 
 我们的世界是三维的，但我们对它的感知——无论是在屏幕上还是通过我们的眼睛——通常是一个二维投影。圆锥曲线的矩阵是连接这些维度的关键环节。
 
-考虑一个三维[曲面](@article_id:331153)，如[椭球](@article_id:345137)或[双曲面](@article_id:349917)，称为[二次曲面](@article_id:328097)。这些[曲面](@article_id:331153)也有一个矩阵表示，使用一个 $4 \times 4$ 矩阵。如果我们用一个平面切过这个三维形状会发生什么？交集，正如你可能猜到的，是一个[圆锥曲线](@article_id:354149)。例如，如果我们用平面 $z=0$ 切割一个二次曲面，所得到的二维[圆锥曲线](@article_id:354149)的矩阵可以通过简单地取该二次曲面 $4 \times 4$ 矩阵表示的左上角 $3 \times 3$ 子矩阵来找到。这在从[医学成像](@article_id:333351)（CT扫描仪获取身体的二维“切片”）到工程学（必须了解设计零件横截面的形状）等领域都有直接应用 。
+考虑一个三维[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，如[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)或[双曲面](@keyword=hyperboloid|lang=zh-CN|style=Feynman)，称为[二次曲面](@keyword=quadric_surfaces|lang=zh-CN|style=Feynman)。这些[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)也有一个矩阵表示，使用一个 $4 \times 4$ 矩阵。如果我们用一个平面切过这个三维形状会发生什么？交集，正如你可能猜到的，是一个[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)。例如，如果我们用平面 $z=0$ 切割一个二次曲面，所得到的二维[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)的矩阵可以通过简单地取该二次曲面 $4 \times 4$ 矩阵表示的左上角 $3 \times 3$ 子矩阵来找到。这在从[医学成像](@keyword=medical_imaging|lang=zh-CN|style=Feynman)（CT扫描仪获取身体的二维“切片”）到工程学（必须了解设计零件横截面的形状）等领域都有直接应用 [@problem_id:2143883]。
 
-现在来看一个更美的现象：阴影。想象一个椭球漂浮在太空中，被来自太阳的平行光线照射。它在垂直墙壁上投下的阴影是一个椭圆。这个阴影椭圆的形状与原始[椭球](@article_id:345137)有何关系？同样，[矩阵代数](@article_id:314236)给了我们一个直接而优雅的答案。阴影[圆锥曲线](@article_id:354149)的矩阵可以直接从三维二次曲面的矩阵和光线方向计算出来。这不仅仅是一种好奇心；它是[计算机图形学](@article_id:308496)中渲染逼真场景的基本计算。为了创造一个光影世界，计算机必须不断地解决这个问题 。
+现在来看一个更美的现象：阴影。想象一个椭球漂浮在太空中，被来自太阳的平行光线照射。它在垂直墙壁上投下的阴影是一个椭圆。这个阴影椭圆的形状与原始[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)有何关系？同样，[矩阵代数](@keyword=matrix_algebra|lang=zh-CN|style=Feynman)给了我们一个直接而优雅的答案。阴影[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)的矩阵可以直接从三维二次曲面的矩阵和光线方向计算出来。这不仅仅是一种好奇心；它是[计算机图形学](@keyword=computer_graphics|lang=zh-CN|style=Feynman)中渲染逼真场景的基本计算。为了创造一个光影世界，计算机必须不断地解决这个问题 [@problem_id:2143892]。
 
-### 更深层的统一：[射影几何](@article_id:316647)
+### 更深层的统一：[射影几何](@keyword=projective_geometry|lang=zh-CN|style=Feynman)
 
-也许最深刻的联系在于[射影几何](@article_id:316647)领域，这是透视的数学框架。在这种观点下，圆锥曲线的矩阵甚至持有更深的秘密。
+也许最深刻的联系在于[射影几何](@keyword=projective_geometry|lang=zh-CN|style=Feynman)领域，这是透视的数学框架。在这种观点下，圆锥曲线的矩阵甚至持有更深的秘密。
 
-其中一个秘密是*对偶*原理。一条[圆锥曲线](@article_id:354149)可以被看作是一系列点的集合。但它也可以被看作是其所有切线的*包络*。这些切线的集合构成了另一条圆锥曲线，称为*对偶[圆锥曲线](@article_id:354149)*。两者之间有什么关系？如果点圆锥曲线由矩阵 $M$ 描述，那么其切线的对偶[圆锥曲线](@article_id:354149)则由 $M^*$ 描述，而 $M^*$ 恰好是 $M$ 的[伴随矩阵](@article_id:316015)（或者，在差一个标量的情况下，是[逆矩阵](@article_id:300823)）！这个惊人简单的关系以一种深刻而对称的方式连接了点和线，这是[射影几何](@article_id:316647)的基石 。
+其中一个秘密是*对偶*原理。一条[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)可以被看作是一系列点的集合。但它也可以被看作是其所有切线的*包络*。这些切线的集合构成了另一条圆锥曲线，称为*对偶[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)*。两者之间有什么关系？如果点圆锥曲线由矩阵 $M$ 描述，那么其切线的对偶[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)则由 $M^*$ 描述，而 $M^*$ 恰好是 $M$ 的[伴随矩阵](@keyword=adjugate_matrix|lang=zh-CN|style=Feynman)（或者，在差一个标量的情况下，是[逆矩阵](@keyword=matrix_inverse|lang=zh-CN|style=Feynman)）！这个惊人简单的关系以一种深刻而对称的方式连接了点和线，这是[射影几何](@keyword=projective_geometry|lang=zh-CN|style=Feynman)的基石 [@problem_id:2144342]。
 
-这种对偶性与*[极点和极线](@article_id:342320)*的概念有关。对于不在[圆锥曲线](@article_id:354149)上的任何点 $\mathbf{p}_0$，都有一条与之对应的线，称为其极线，其坐标由简单的乘积 $\mathbf{l} = M \mathbf{p}_0$ 给出。如果该点在圆锥曲线外部，这条线会穿过从 $\mathbf{p}_0$ 引出的两条切线的[切点](@article_id:351997)。如果该点移动到圆锥曲线上，极线就变成了在该点的切线。这单一的矩阵乘法将切线和其他几何构造的概念统一到一个操作中 。
+这种对偶性与*[极点和极线](@keyword=pole_and_polar|lang=zh-CN|style=Feynman)*的概念有关。对于不在[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)上的任何点 $\mathbf{p}_0$，都有一条与之对应的线，称为其极线，其坐标由简单的乘积 $\mathbf{l} = M \mathbf{p}_0$ 给出。如果该点在圆锥曲线外部，这条线会穿过从 $\mathbf{p}_0$ 引出的两条切线的[切点](@keyword=point_of_tangency|lang=zh-CN|style=Feynman)。如果该点移动到圆锥曲线上，极线就变成了在该点的切线。这单一的矩阵乘法将切线和其他几何构造的概念统一到一个操作中 [@problem_id:2144365]。
 
-最后，这个框架让我们明白，在[射影几何](@article_id:316647)的眼中，所有非退化的[圆锥曲线](@article_id:354149)都是相同的。一个相机从某个角度看一个圆形的餐盘会看到一个椭圆。将世界中的[圆映射](@article_id:372403)到图像中椭圆的变换是一个[射影变换](@article_id:342651)，或者说*单应性*（homography）。这些变换是计算机视觉的基础，让我们能够校正图像、从不同视点识别物体，并从照片中构建三维模型。关系 $M_2 \propto (H^{-1})^T M_1 H^{-1}$ 是解锁我们计算这些变[换能](@article_id:300266)力的关键，在某种意义上，也是教会机器如何“看”的关键 。
+最后，这个框架让我们明白，在[射影几何](@keyword=projective_geometry|lang=zh-CN|style=Feynman)的眼中，所有非退化的[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)都是相同的。一个相机从某个角度看一个圆形的餐盘会看到一个椭圆。将世界中的[圆映射](@keyword=circle_maps|lang=zh-CN|style=Feynman)到图像中椭圆的变换是一个[射影变换](@keyword=projective_transformation|lang=zh-CN|style=Feynman)，或者说*单应性*（homography）。这些变换是计算机视觉的基础，让我们能够校正图像、从不同视点识别物体，并从照片中构建三维模型。关系 $M_2 \propto (H^{-1})^T M_1 H^{-1}$ 是解锁我们计算这些变[换能](@keyword=transduction|lang=zh-CN|style=Feynman)力的关键，在某种意义上，也是教会机器如何“看”的关键 [@problem_id:2144398]。
 
-从工程设计到[计算机图形学](@article_id:308496)的架构，再到视觉的基本理论，[圆锥曲线](@article_id:354149)的矩阵远不止是一种数学上的简写。它是一个统一的概念，一个计算工具，也是一扇通向几何学美丽、相互关联结构的窗口。
+从工程设计到[计算机图形学](@keyword=computer_graphics|lang=zh-CN|style=Feynman)的架构，再到视觉的基本理论，[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)的矩阵远不止是一种数学上的简写。它是一个统一的概念，一个计算工具，也是一扇通向几何学美丽、相互关联结构的窗口。

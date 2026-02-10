@@ -5,13 +5,13 @@ In the landscape of complex analysis, functions are typically smooth and predict
 
 Imagine the complex plane as a vast, flat sheet of rubber. A complex function, $f(z)$, assigns a value (another complex number) to every point $z$ on this sheet. For the most part, this landscape is smooth and well-behaved. But at certain special points, called **singularities**, the function goes wild. The rubber sheet is pinched up to an infinite height or plunges into an infinitely deep abyss. These are the places where the function "blows up," and they are, paradoxically, the most interesting points on the entire map.
 
-The **residue** is a single, magical number that captures the essential character of a function's behavior right at one of these singularities. It tells us, in a very precise way, *how* the function is blowing up. It is the secret ingredient that unlocks the power of [complex integration](@article_id:167231), allowing us to solve real-world problems that seem, at first glance, to have nothing to do with imaginary numbers. Let's peel back the layers and see how we can calculate this all-important number.
+The **residue** is a single, magical number that captures the essential character of a function's behavior right at one of these singularities. It tells us, in a very precise way, *how* the function is blowing up. It is the secret ingredient that unlocks the power of [complex integration](@keyword=complex_integration|lang=en-US|style=Feynman), allowing us to solve real-world problems that seem, at first glance, to have nothing to do with imaginary numbers. Let's peel back the layers and see how we can calculate this all-important number.
 
 ### The Anatomy of a Singularity: Simple Poles
 
-The most common and well-behaved type of singularity is a **simple pole**. Think of it as a whirlpool with a simple, predictable structure. If you get closer to the center, the speed of the water increases in a simple inverse relationship to the distance—halve the distance, double the speed. For a function $f(z)$ with a [simple pole](@article_id:163922) at $z_0$, its magnitude behaves like $1/|z-z_0|$ nearby.
+The most common and well-behaved type of singularity is a **simple pole**. Think of it as a whirlpool with a simple, predictable structure. If you get closer to the center, the speed of the water increases in a simple inverse relationship to the distance—halve the distance, double the speed. For a function $f(z)$ with a [simple pole](@keyword=simple_pole|lang=en-US|style=Feynman) at $z_0$, its magnitude behaves like $1/|z-z_0|$ nearby.
 
-How do we find the residue at such a point? If our function can be written as a fraction, $f(z) = \frac{g(z)}{h(z)}$, where the denominator $h(z)$ is zero at $z_0$ but the numerator $g(z)$ is not, then we have a pole. If the zero in the denominator is "simple" (meaning $h'(z_0) \neq 0$), then we have a [simple pole](@article_id:163922). In this case, there's a wonderfully straightforward formula for the residue:
+How do we find the residue at such a point? If our function can be written as a fraction, $f(z) = \frac{g(z)}{h(z)}$, where the denominator $h(z)$ is zero at $z_0$ but the numerator $g(z)$ is not, then we have a pole. If the zero in the denominator is "simple" (meaning $h'(z_0) \neq 0$), then we have a [simple pole](@keyword=simple_pole|lang=en-US|style=Feynman). In this case, there's a wonderfully straightforward formula for the residue:
 
 $$
 \operatorname{Res}(f; z_0) = \frac{g(z_0)}{h'(z_0)}
@@ -25,13 +25,13 @@ $$
 
 The residue is, by definition, the coefficient of the $(z-z_0)^{-1}$ term in the function's local expansion. And there it is, plain as day: $\frac{g(z_0)}{h'(z_0)}$.
 
-Let's see this tool in action. Consider a function like $f(z) = \frac{\exp(cz)}{z^2 + a^2}$ . The poles are where $z^2 + a^2 = 0$, which gives $z = \pm ia$. Let's find the residue at the pole in the upper half-plane, $z_0 = ia$. Here, our numerator is $g(z) = \exp(cz)$ and our denominator is $h(z) = z^2 + a^2$. The derivative of the denominator is $h'(z) = 2z$. Plugging our values into the formula:
+Let's see this tool in action. Consider a function like $f(z) = \frac{\exp(cz)}{z^2 + a^2}$ [@problem_id:2241840]. The poles are where $z^2 + a^2 = 0$, which gives $z = \pm ia$. Let's find the residue at the pole in the upper half-plane, $z_0 = ia$. Here, our numerator is $g(z) = \exp(cz)$ and our denominator is $h(z) = z^2 + a^2$. The derivative of the denominator is $h'(z) = 2z$. Plugging our values into the formula:
 
 $$
 \operatorname{Res}(f; ia) = \frac{g(ia)}{h'(ia)} = \frac{\exp(c(ia))}{2(ia)} = \frac{\exp(iac)}{2ia}
 $$
 
-It's that simple! The formula works just as well for poles that aren't neatly on an axis. For the function $f(z) = \frac{z}{z^2 + 2z + 5}$, the quadratic formula tells us the poles are at $z = -1 \pm 2i$ . At the pole $z_0 = -1+2i$, we have $g(z)=z$ and $h(z)=z^2+2z+5$, so $h'(z)=2z+2$. The residue is:
+It's that simple! The formula works just as well for poles that aren't neatly on an axis. For the function $f(z) = \frac{z}{z^2 + 2z + 5}$, the quadratic formula tells us the poles are at $z = -1 \pm 2i$ [@problem_id:2241841]. At the pole $z_0 = -1+2i$, we have $g(z)=z$ and $h(z)=z^2+2z+5$, so $h'(z)=2z+2$. The residue is:
 
 $$
 \operatorname{Res}(f; -1+2i) = \frac{-1+2i}{2(-1+2i)+2} = \frac{-1+2i}{4i} = \frac{1}{2} + \frac{1}{4}i
@@ -51,19 +51,19 @@ $$
 
 This formula looks intimidating, but the idea behind it is clever. First, we multiply $f(z)$ by $(z-z_0)^m$. This is just the right factor to perfectly cancel out the "exploding" part of the denominator, leaving us with a nice, well-behaved function, let's call it $\phi(z) = (z-z_0)^m f(z)$. The original function was roughly $\frac{c_{-m}}{(z-z_0)^m} + \dots + \frac{c_{-1}}{(z-z_0)} + c_0 + \dots$. After multiplication, we have $\phi(z) = c_{-m} + \dots + c_{-1}(z-z_0)^{m-1} + c_0(z-z_0)^m + \dots$. This is now a simple Taylor series! How do we extract the coefficient $c_{-1}$ that we want? From calculus, we know that the coefficient of the $(z-z_0)^{m-1}$ term in a Taylor series is $\frac{\phi^{(m-1)}(z_0)}{(m-1)!}$. And that is precisely what the formula tells us to compute!
 
-Let's tackle a function with a double pole ($m=2$), like $f(z) = \frac{z}{(z^2 - 2z + 2)^2}$ . The denominator is zero when $z^2-2z+2=0$, which gives poles at $z=1 \pm i$. Let's find the residue at $z_0=1+i$. Since the term in the denominator is squared, this is a pole of order 2. Our formula becomes:
+Let's tackle a function with a double pole ($m=2$), like $f(z) = \frac{z}{(z^2 - 2z + 2)^2}$ [@problem_id:2241646]. The denominator is zero when $z^2-2z+2=0$, which gives poles at $z=1 \pm i$. Let's find the residue at $z_0=1+i$. Since the term in the denominator is squared, this is a pole of order 2. Our formula becomes:
 
 $$
 \operatorname{Res}(f; 1+i) = \frac{1}{(2-1)!} \lim_{z \to 1+i} \frac{d}{dz} \left[ (z-(1+i))^2 f(z) \right]
 $$
 
-After some algebraic manipulation and differentiation, we find the residue is $-\frac{i}{4}$. The process is more mechanical, involving derivatives and limits, but the principle is a beautiful extension of the simple case. This same method works for even more exotic poles, such as those at the [roots of unity](@article_id:142103) .
+After some algebraic manipulation and differentiation, we find the residue is $-\frac{i}{4}$. The process is more mechanical, involving derivatives and limits, but the principle is a beautiful extension of the simple case. This same method works for even more exotic poles, such as those at the [roots of unity](@keyword=roots_of_unity|lang=en-US|style=Feynman) [@problem_id:2272479].
 
 ### The Physicist's Toolkit: Residues from Series
 
 Formulas are great, but sometimes they are clumsy, or the order of the pole isn't obvious. In these moments, we return to the fundamental definition: the residue is the coefficient of the $(z-z_0)^{-1}$ term in the Laurent series expansion of the function around the pole. For a physicist, using series expansions is second nature. It’s like putting the function under a microscope to see its structure near a point.
 
-Consider a function from a physics model, $F(z) = \frac{e^{ikz} - 1 - ikz}{z^2 (\sinh(\alpha z) - \alpha z)}$ . Trying to determine the order of the pole at $z=0$ and applying the derivative formula would be a nightmare. The elegant approach is to expand everything in a Taylor series around $z=0$.
+Consider a function from a physics model, $F(z) = \frac{e^{ikz} - 1 - ikz}{z^2 (\sinh(\alpha z) - \alpha z)}$ [@problem_id:826079]. Trying to determine the order of the pole at $z=0$ and applying the derivative formula would be a nightmare. The elegant approach is to expand everything in a Taylor series around $z=0$.
 
 The numerator is:
 $e^{ikz} - 1 - ikz = (1 + ikz - \frac{k^2 z^2}{2} - \frac{ik^3 z^3}{6} + \dots) - 1 - ikz = -\frac{k^2 z^2}{2} - \frac{ik^3 z^3}{6} + \dots$
@@ -75,13 +75,13 @@ So our function $F(z)$ looks like:
 $$
 F(z) = \frac{-\frac{k^2}{2}z^2 - \frac{ik^3}{6}z^3 + \dots}{\frac{\alpha^3}{6}z^5 + \frac{\alpha^5}{120}z^7 + \dots} = \frac{-\frac{k^2}{2} - \frac{ik^3}{6}z + \dots}{\frac{\alpha^3}{6}z^3 + \frac{\alpha^5}{120}z^5 + \dots}
 $$
-The lowest power of $z$ in the denominator is $z^3$, so this is a pole of order 3. By performing [polynomial long division](@article_id:271886) (or by factoring out the leading terms), we can painstakingly isolate the coefficient of $z^{-1}$ to find the residue. This method is universal and powerful; it reveals the very nature of the singularity.
+The lowest power of $z$ in the denominator is $z^3$, so this is a pole of order 3. By performing [polynomial long division](@keyword=polynomial_long_division|lang=en-US|style=Feynman) (or by factoring out the leading terms), we can painstakingly isolate the coefficient of $z^{-1}$ to find the residue. This method is universal and powerful; it reveals the very nature of the singularity.
 
 ### The Elegance of the Unknown
 
 Here is where we find some true mathematical magic. Is it possible to find a residue *without even knowing the exact location of the pole*? The answer, astonishingly, is yes.
 
-Consider the function $f(z) = \frac{1}{z - \tan z}$ . Its poles are the solutions to the transcendental equation $z = \tan z$. There is no simple way to write down these solutions, $z_k$. And yet, we can find the residue at any of these non-zero poles. The poles are simple, so we can use our formula $\operatorname{Res}(f; z_k) = \frac{g(z_k)}{h'(z_k)}$. Here $g(z)=1$ and $h(z) = z - \tan z$. The derivative is $h'(z) = 1 - \sec^2 z$. So,
+Consider the function $f(z) = \frac{1}{z - \tan z}$ [@problem_id:806752]. Its poles are the solutions to the transcendental equation $z = \tan z$. There is no simple way to write down these solutions, $z_k$. And yet, we can find the residue at any of these non-zero poles. The poles are simple, so we can use our formula $\operatorname{Res}(f; z_k) = \frac{g(z_k)}{h'(z_k)}$. Here $g(z)=1$ and $h(z) = z - \tan z$. The derivative is $h'(z) = 1 - \sec^2 z$. So,
 
 $$
 \operatorname{Res}(f; z_k) = \frac{1}{1 - \sec^2 z_k}
@@ -93,11 +93,11 @@ $$
 \operatorname{Res}(f; z_k) = \frac{1}{1 - (1 + \tan^2 z_k)} = \frac{1}{-\tan^2 z_k} = -\frac{1}{z_k^2}
 $$
 
-This is a spectacular result. The residue at a pole we can't even write down has a beautifully simple form that depends only on the pole's value itself. The answer was not in the value of the pole, but in the *condition* it satisfied. A similar elegance appears when finding residues for functions like $f(z) = \frac{1}{\cos(z^N)}$ , where the residue can be expressed symbolically in terms of $N$ and $\pi$.
+This is a spectacular result. The residue at a pole we can't even write down has a beautifully simple form that depends only on the pole's value itself. The answer was not in the value of the pole, but in the *condition* it satisfied. A similar elegance appears when finding residues for functions like $f(z) = \frac{1}{\cos(z^N)}$ [@problem_id:815567], where the residue can be expressed symbolically in terms of $N$ and $\pi$.
 
 ### The Cosmic Balance Sheet: The Residue Sum Theorem
 
-So far, we have been looking at singularities one by one. Now we zoom out and view the entire complex plane. If we add one more point, the "[point at infinity](@article_id:154043)," we can imagine the complex plane as the surface of a sphere, called the **Riemann sphere**. On this sphere, a function's journey is complete.
+So far, we have been looking at singularities one by one. Now we zoom out and view the entire complex plane. If we add one more point, the "[point at infinity](@keyword=point_at_infinity|lang=en-US|style=Feynman)," we can imagine the complex plane as the surface of a sphere, called the **Riemann sphere**. On this sphere, a function's journey is complete.
 
 A truly profound statement, the **Residue Sum Theorem**, declares that for any function with a finite number of singularities on the Riemann sphere, the sum of all its residues is exactly zero.
 
@@ -107,9 +107,9 @@ $$
 
 This is a kind of global conservation law. It’s as if every source must be balanced by a sink. The local behaviors at all the special points must conspire to cancel each other out perfectly across the entire landscape. This theorem isn't just a philosophical curiosity; it's an incredibly powerful tool for calculation.
 
-Suppose you need to find the sum of residues of a complicated function, like $f(z) = \frac{\alpha z^{2n-1}}{(z^n - a^n)^2}$ . Calculating the $n$ individual residues at the poles and adding them up would be a Herculean task. The Residue Sum Theorem provides a stunningly simple alternative. The sum we want is simply the negative of the [residue at infinity](@article_id:178015). By analyzing the function for very large $z$, we find that $\operatorname{Res}(f; \infty) = -\alpha$. Therefore, the sum of all the finite residues is simply $\alpha$. A formidable calculation is reduced to a few lines of algebra.
+Suppose you need to find the sum of residues of a complicated function, like $f(z) = \frac{\alpha z^{2n-1}}{(z^n - a^n)^2}$ [@problem_id:904996]. Calculating the $n$ individual residues at the poles and adding them up would be a Herculean task. The Residue Sum Theorem provides a stunningly simple alternative. The sum we want is simply the negative of the [residue at infinity](@keyword=residue_at_infinity|lang=en-US|style=Feynman). By analyzing the function for very large $z$, we find that $\operatorname{Res}(f; \infty) = -\alpha$. Therefore, the sum of all the finite residues is simply $\alpha$. A formidable calculation is reduced to a few lines of algebra.
 
-The theorem can also be used in reverse, as a kind of "Sherlock Holmes" method. To find one very difficult residue, we can instead calculate all the *other*, easier residues and use the theorem to deduce the one we want. Consider finding the residue of $f(z) = \frac{\cos(1/z)}{(z-a)^2}$ at its "essential" singularity at $z=0$ . A direct calculation is horrible. But the residue at the double pole $z=a$ is easy to find ($\frac{\sin(1/a)}{a^2}$), and the [residue at infinity](@article_id:178015) turns out to be zero. The theorem tells us:
+The theorem can also be used in reverse, as a kind of "Sherlock Holmes" method. To find one very difficult residue, we can instead calculate all the *other*, easier residues and use the theorem to deduce the one we want. Consider finding the residue of $f(z) = \frac{\cos(1/z)}{(z-a)^2}$ at its "essential" singularity at $z=0$ [@problem_id:807092]. A direct calculation is horrible. But the residue at the double pole $z=a$ is easy to find ($\frac{\sin(1/a)}{a^2}$), and the [residue at infinity](@keyword=residue_at_infinity|lang=en-US|style=Feynman) turns out to be zero. The theorem tells us:
 
 $$
 \operatorname{Res}(f; 0) + \operatorname{Res}(f; a) + \operatorname{Res}(f; \infty) = 0 \implies \operatorname{Res}(f; 0) + \frac{\sin(1/a)}{a^2} + 0 = 0
@@ -117,10 +117,10 @@ $$
 
 The difficult residue simply falls into our lap: $\operatorname{Res}(f; 0) = -\frac{\sin(1/a)}{a^2}$. We cornered our suspect by accounting for everyone else in the room.
 
-The world of residues is one of surprising connections. As a final taste of this magic, consider the function $f(z) = \Gamma(z) \cos(\pi z)$, where $\Gamma(z)$ is the famous Gamma function . This function has [simple poles](@article_id:175274) at all the non-positive integers ($0, -1, -2, \dots$). The residue at pole $z=-n$ turns out to be exactly $\frac{1}{n!}$. If we sum the residues at all of its poles, we get:
+The world of residues is one of surprising connections. As a final taste of this magic, consider the function $f(z) = \Gamma(z) \cos(\pi z)$, where $\Gamma(z)$ is the famous Gamma function [@problem_id:633643]. This function has [simple poles](@keyword=simple_poles|lang=en-US|style=Feynman) at all the non-positive integers ($0, -1, -2, \dots$). The residue at pole $z=-n$ turns out to be exactly $\frac{1}{n!}$. If we sum the residues at all of its poles, we get:
 
 $$
 \sum_{\text{all poles}} \operatorname{Res}(f; z_p) = \sum_{n=0}^{\infty} \frac{1}{n!} = 1 + 1 + \frac{1}{2!} + \frac{1}{3!} + \dots = e
 $$
 
-The sum of the local behaviors of this arcane complex function over its infinite collection of poles gives us one of the most [fundamental constants](@article_id:148280) of the real world, Euler's number $e$. It is in these moments that we truly appreciate the profound and beautiful unity that complex analysis brings to the world of mathematics.
+The sum of the local behaviors of this arcane complex function over its infinite collection of poles gives us one of the most [fundamental constants](@keyword=fundamental_constants|lang=en-US|style=Feynman) of the real world, Euler's number $e$. It is in these moments that we truly appreciate the profound and beautiful unity that complex analysis brings to the world of mathematics.

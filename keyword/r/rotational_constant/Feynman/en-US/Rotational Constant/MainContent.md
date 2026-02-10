@@ -1,7 +1,7 @@
 ## Introduction
 How can we measure the precise architecture of a molecule, a structure far too small for any conventional microscope to see? The answer lies not in looking, but in listening to the "music" molecules play as they interact with light. In the realm of quantum mechanics, molecules can only rotate with specific, quantized amounts of energy. The key to decoding this rotational behavior and unlocking a molecule's structural secrets is a single, powerful parameter: the rotational constant. This constant acts as a Rosetta Stone, translating the language of light absorbed by a molecule into the concrete language of its size and shape.
 
-This article delves into the foundational role of the rotational constant in the physical sciences. It addresses the fundamental problem of determining molecular structure through indirect measurement, showcasing how the rotational constant provides the solution. Over the next two chapters, you will embark on a journey into the world of [molecular rotation](@article_id:263349). We will first explore the "Principles and Mechanisms," starting with the simple yet powerful [rigid rotor model](@article_id:152746) and building up to more nuanced concepts that account for the real-life stretching and vibrating of chemical bonds. Following this, we will uncover the widespread "Applications and Interdisciplinary Connections" of the rotational constant, revealing how it serves as an atomic-scale ruler in [structural chemistry](@article_id:176189), a probe for intermolecular forces, and a bridge to the macroscopic world of thermodynamics.
+This article delves into the foundational role of the rotational constant in the physical sciences. It addresses the fundamental problem of determining molecular structure through indirect measurement, showcasing how the rotational constant provides the solution. Over the next two chapters, you will embark on a journey into the world of [molecular rotation](@keyword=molecular_rotation|lang=en-US|style=Feynman). We will first explore the "Principles and Mechanisms," starting with the simple yet powerful [rigid rotor model](@keyword=rigid_rotor_model|lang=en-US|style=Feynman) and building up to more nuanced concepts that account for the real-life stretching and vibrating of chemical bonds. Following this, we will uncover the widespread "Applications and Interdisciplinary Connections" of the rotational constant, revealing how it serves as an atomic-scale ruler in [structural chemistry](@keyword=structural_chemistry|lang=en-US|style=Feynman), a probe for intermolecular forces, and a bridge to the macroscopic world of thermodynamics.
 
 ## Principles and Mechanisms
 
@@ -9,7 +9,7 @@ Imagine trying to understand the inner workings of a clock you can't open. You m
 
 ### A Molecule's Moment of Truth: Inertia
 
-Let's begin with the simplest possible picture. Picture a [diatomic molecule](@article_id:194019), like hydrogen chloride (HCl) or carbon monoxide (CO), as a tiny dumbbell: two atoms (the weights) connected by a rigid, massless rod (the chemical bond). This beautifully simple abstraction is called the **[rigid rotor model](@article_id:152746)**.
+Let's begin with the simplest possible picture. Picture a [diatomic molecule](@keyword=diatomic_molecule|lang=en-US|style=Feynman), like hydrogen chloride (HCl) or carbon monoxide (CO), as a tiny dumbbell: two atoms (the weights) connected by a rigid, massless rod (the chemical bond). This beautifully simple abstraction is called the **[rigid rotor model](@keyword=rigid_rotor_model|lang=en-US|style=Feynman)**.
 
 Now, imagine spinning this dumbbell. How much effort does it take? It depends not just on the masses of the atoms, but also on how far apart they are. This resistance to being spun is a familiar concept from classical physics: the **moment of inertia**, denoted by the symbol $I$. For our diatomic dumbbell, its moment of inertia is given by a wonderfully compact formula:
 
@@ -21,7 +21,7 @@ Here, $r$ is the length of the bond connecting the two atoms. The other term, $\
 
 The moment of inertia is the crucial link between a molecule's physical structure (its masses and bond length) and its rotational behavior. A molecule with heavy atoms or a long bond will have a large moment of inertia and be sluggish—hard to spin up. Conversely, a molecule with light atoms and a short bond, like molecular hydrogen (H₂), will have a minuscule moment of inertia and zip around with ease.
 
-This is where the rotational constant, $B$, makes its grand entrance. The rotational constant is, in its essence, simply the inverse of the moment of inertia, wrapped in some [fundamental constants](@article_id:148280). In its most fundamental form, expressed in units of energy, it is defined as:
+This is where the rotational constant, $B$, makes its grand entrance. The rotational constant is, in its essence, simply the inverse of the moment of inertia, wrapped in some [fundamental constants](@keyword=fundamental_constants|lang=en-US|style=Feynman). In its most fundamental form, expressed in units of energy, it is defined as:
 
 $$
 B = \frac{\hbar^2}{2I}
@@ -31,7 +31,7 @@ where $\hbar$ is the reduced Planck's constant. This inverse relationship, $B \p
 
 ### The Quantum Ladder
 
-Why is this constant so important? Because in the quantum world, things are not continuous. A molecule cannot spin with just any amount of energy. Instead, it must occupy one of several discrete, allowed energy levels, like being restricted to standing on the rungs of a ladder. The [rigid rotor model](@article_id:152746), when solved using the Schrödinger equation, reveals a beautifully simple formula for these allowed rotational energy levels, $E_J$:
+Why is this constant so important? Because in the quantum world, things are not continuous. A molecule cannot spin with just any amount of energy. Instead, it must occupy one of several discrete, allowed energy levels, like being restricted to standing on the rungs of a ladder. The [rigid rotor model](@keyword=rigid_rotor_model|lang=en-US|style=Feynman), when solved using the Schrödinger equation, reveals a beautifully simple formula for these allowed rotational energy levels, $E_J$:
 
 $$
 E_J = B J(J+1)
@@ -55,7 +55,7 @@ Regardless of the units, the physics is the same. Measuring the spectral lines g
 
 This is where the magic happens. We've used light to measure $B$. What does that tell us? It tells us everything. Since we have a direct mathematical link between the experimentally measured $B$ and the molecule's moment of inertia $I$, we can turn the equation around. If we know the masses of the atoms in our molecule, we can use our measured value of $B$ to calculate the moment of inertia, and from that, we can determine the one remaining unknown: the **bond length**, $r$.
 
-Think about that for a moment. By analyzing light that has passed through a gas, we can measure the distance between two atoms to an incredible precision—a distance on the order of $10^{-10}$ meters. The rotational constant is the Rosetta Stone that allows us to translate the language of light into the language of [molecular structure](@article_id:139615).
+Think about that for a moment. By analyzing light that has passed through a gas, we can measure the distance between two atoms to an incredible precision—a distance on the order of $10^{-10}$ meters. The rotational constant is the Rosetta Stone that allows us to translate the language of light into the language of [molecular structure](@keyword=molecular_structure|lang=en-US|style=Feynman).
 
 This tool becomes even more powerful when we consider isotopes—atoms of the same element with different masses. Let's compare hydrogen chloride (H³⁵Cl) with its heavier cousin, deuterium chloride (D³⁵Cl), where deuterium is a hydrogen atom with an extra neutron. The chemical bond is an electronic phenomenon, so to a very good approximation (known as the Born-Oppenheimer approximation), the bond length $r$ is identical in both molecules. However, since deuterium is about twice as heavy as hydrogen, the reduced mass $\mu$ of D³⁵Cl is significantly larger than that of H³⁵Cl.
 
@@ -63,26 +63,26 @@ What is the consequence? A larger $\mu$ means a larger moment of inertia $I$. An
 
 ### When Rigid Rods Bend and Stretch
 
-The [rigid rotor model](@article_id:152746) is a triumph of [scientific modeling](@article_id:171493)—simple, elegant, and incredibly effective. But, of course, nature is always a little more subtle. A chemical bond isn't a truly rigid rod; it's more like a stiff spring. Molecules are not static; they are constantly vibrating, even in their lowest energy state.
+The [rigid rotor model](@keyword=rigid_rotor_model|lang=en-US|style=Feynman) is a triumph of [scientific modeling](@keyword=scientific_modeling|lang=en-US|style=Feynman)—simple, elegant, and incredibly effective. But, of course, nature is always a little more subtle. A chemical bond isn't a truly rigid rod; it's more like a stiff spring. Molecules are not static; they are constantly vibrating, even in their lowest energy state.
 
-What happens when we account for this vibration? Think about a vibrating spring. While it oscillates, its average length is slightly longer than its true equilibrium length. And the more vigorously it vibrates (i.e., the higher its vibrational energy state, labeled by the [quantum number](@article_id:148035) $v$), the more it stretches on average.
+What happens when we account for this vibration? Think about a vibrating spring. While it oscillates, its average length is slightly longer than its true equilibrium length. And the more vigorously it vibrates (i.e., the higher its vibrational energy state, labeled by the [quantum number](@keyword=quantum_number|lang=en-US|style=Feynman) $v$), the more it stretches on average.
 
-This has a direct effect on the rotational constant. If a molecule is in a higher vibrational state (e.g., $v=1$ versus $v=0$), its average bond length $\langle r \rangle$ is slightly larger. This means its average moment of inertia is larger, and therefore, its effective rotational constant, now denoted $B_v$, will be slightly *smaller*. This **[vibration-rotation interaction](@article_id:184761)** is beautifully described by a simple linear relationship:
+This has a direct effect on the rotational constant. If a molecule is in a higher vibrational state (e.g., $v=1$ versus $v=0$), its average bond length $\langle r \rangle$ is slightly larger. This means its average moment of inertia is larger, and therefore, its effective rotational constant, now denoted $B_v$, will be slightly *smaller*. This **[vibration-rotation interaction](@keyword=vibration_rotation_interaction|lang=en-US|style=Feynman)** is beautifully described by a simple linear relationship:
 
 $$
 B_v = B_e - \alpha_e \left( v + \frac{1}{2} \right)
 $$
 
-Here, $B_e$ is the hypothetical rotational constant the molecule would have at its perfect, non-vibrating equilibrium bond length, and $\alpha_e$ is the **[vibration-rotation interaction](@article_id:184761) constant**. By carefully measuring the [rotational constants](@article_id:191294) in both the ground ($v=0$) and first excited ($v=1$) vibrational states, we can solve for both $B_e$ and $\alpha_e$. This gives us an even deeper, more refined picture of the molecule's structure and the true nature of its chemical bond.
+Here, $B_e$ is the hypothetical rotational constant the molecule would have at its perfect, non-vibrating equilibrium bond length, and $\alpha_e$ is the **[vibration-rotation interaction](@keyword=vibration_rotation_interaction|lang=en-US|style=Feynman) constant**. By carefully measuring the [rotational constants](@keyword=rotational_constants|lang=en-US|style=Feynman) in both the ground ($v=0$) and first excited ($v=1$) vibrational states, we can solve for both $B_e$ and $\alpha_e$. This gives us an even deeper, more refined picture of the molecule's structure and the true nature of its chemical bond.
 
 There's one more beautiful subtlety. What happens when a molecule spins very, very fast (a high $J$ value)? Just as an ice skater's arms fly outward during a rapid spin, the bond between the atoms stretches due to **centrifugal force**. This means that as $J$ increases, the bond length $r$ increases slightly, the moment of inertia $I$ increases, and the rotational energy levels become slightly closer together than the simple rigid rotor formula $B J(J+1)$ would predict.
 
-This effect is called **[centrifugal distortion](@article_id:155701)**. It is a tiny correction, but it is measurable! The energy levels are more accurately described by:
+This effect is called **[centrifugal distortion](@keyword=centrifugal_distortion|lang=en-US|style=Feynman)**. It is a tiny correction, but it is measurable! The energy levels are more accurately described by:
 
 $$
 F(J) = \frac{E_J}{hc} = B J(J+1) - D J^2(J+1)^2
 $$
 
-The new parameter, $D$, is the **[centrifugal distortion constant](@article_id:267868)**. It's a measure of how easily the bond is stretched by rotation. A "floppy" bond will have a larger $D$ than a very "stiff" bond. And here lies the final, beautiful connection: this stiffness is nothing other than the molecule's [vibrational frequency](@article_id:266060), $\omega$. In fact, the two are related by the approximate formula $D \approx 4B^3/\omega^2$. By measuring this tiny deviation from the [rigid rotor model](@article_id:152746), we gain yet another independent way to probe the strength of the chemical bond!
+The new parameter, $D$, is the **[centrifugal distortion constant](@keyword=centrifugal_distortion_constant|lang=en-US|style=Feynman)**. It's a measure of how easily the bond is stretched by rotation. A "floppy" bond will have a larger $D$ than a very "stiff" bond. And here lies the final, beautiful connection: this stiffness is nothing other than the molecule's [vibrational frequency](@keyword=vibrational_frequency|lang=en-US|style=Feynman), $\omega$. In fact, the two are related by the approximate formula $D \approx 4B^3/\omega^2$. By measuring this tiny deviation from the [rigid rotor model](@keyword=rigid_rotor_model|lang=en-US|style=Feynman), we gain yet another independent way to probe the strength of the chemical bond!
 
 From a simple model of a spinning dumbbell, the rotational constant has led us on a journey. It is the key that unlocks molecular dimensions, reveals the presence of isotopes, and gives us a window into the subtle, dynamic dance of vibrating and stretching that characterizes a real, "living" molecule.

@@ -1,7 +1,7 @@
 ## Introduction
 What does it mean for something to belong to *neither* one group *nor* another? This simple question holds the key to a surprisingly powerful principle in logic and mathematics. The concept, known as the complement of a union, formalizes our everyday intuition and provides a robust tool for solving problems that seem complex at first glance. This article demystifies this idea, often expressed through De Morgan's Laws, by showing that to be outside a collection of sets, an element must be outside each of those sets individually.
 
-In the sections that follow, we will first explore the "Principles and Mechanisms," using simple analogies and concrete examples to build a solid understanding of how and why this rule works. Then, in "Applications and Interdisciplinary Connections," we will journey through its diverse uses, revealing how this single piece of [set theory](@article_id:137289) provides blueprints for engineering, clarifies probability, and helps define the very structure of abstract mathematical spaces.
+In the sections that follow, we will first explore the "Principles and Mechanisms," using simple analogies and concrete examples to build a solid understanding of how and why this rule works. Then, in "Applications and Interdisciplinary Connections," we will journey through its diverse uses, revealing how this single piece of [set theory](@keyword=set_theory|lang=en-US|style=Feynman) provides blueprints for engineering, clarifies probability, and helps define the very structure of abstract mathematical spaces.
 
 *Imagine a diagram here: On the left, two overlapping circles are shaded, and then a second image shows everything *outside* this combined shape shaded. On the right, one image shows everything outside the first circle shaded, a second image shows everything outside the second circle shaded, and a final image shows the intersection of these two shaded regions. The final images on the left and right are identical.*
 
@@ -11,7 +11,7 @@ At the heart of our discussion lies a wonderfully simple, yet surprisingly power
 
 ### The Logic of "Neither... Nor"
 
-Imagine you're at a party and you're offered a choice of desserts. Let's say you're avoiding cake and you're also avoiding ice cream. If someone asks what you're willing to eat, you might say, "Anything, as long as it's *not* cake and *not* ice cream." You have just, without realizing it, stated one of the most fundamental rules in all of [set theory](@article_id:137289).
+Imagine you're at a party and you're offered a choice of desserts. Let's say you're avoiding cake and you're also avoiding ice cream. If someone asks what you're willing to eat, you might say, "Anything, as long as it's *not* cake and *not* ice cream." You have just, without realizing it, stated one of the most fundamental rules in all of [set theory](@keyword=set_theory|lang=en-US|style=Feynman).
 
 Let's translate this into the language of sets. Let the set of all desserts be our "universe," $U$. Let $A$ be the set of all cake-based desserts and $B$ be the set of all ice cream-based desserts. The group of desserts you are avoiding is anything that is in set $A$ *or* in set $B$. This is the **union** of the two sets, written as $A \cup B$. The set of desserts you are willing to eat is everything else—the **complement** of this union, written as $(A \cup B)^c$.
 
@@ -31,7 +31,7 @@ Consider a small universe, the set $U$ of non-negative single-digit integers: $U
 
 Our goal is to find the set of numbers that are in *neither* of these groups—in other words, to find $(A \cup B)^c$.
 
-Let's first find the union, $A \cup B$. This is the collection of all numbers that are either prime or a [perfect square](@article_id:635128):
+Let's first find the union, $A \cup B$. This is the collection of all numbers that are either prime or a [perfect square](@keyword=perfect_square|lang=en-US|style=Feynman):
 $$ A \cup B = \{0, 1, 2, 3, 4, 5, 7, 9\} $$
 Now, we find the complement of this set. What's left in our universe $U$ when we remove all these numbers?
 $$ (A \cup B)^c = U \setminus (A \cup B) = \{6, 8\} $$

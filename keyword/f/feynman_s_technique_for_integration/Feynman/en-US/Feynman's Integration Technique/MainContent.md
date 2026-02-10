@@ -1,9 +1,9 @@
 ## Introduction
-When faced with a seemingly impossible integral, the standard tools of calculus can prove insufficient, leaving mathematicians and scientists at a frustrating impasse. What if the solution was not to simplify, but to strategically add complexity? This is the counterintuitive genius behind [differentiation under the integral sign](@article_id:157805), a powerful method famously championed by physicist Richard Feynman. This technique offers an elegant escape route for problems that resist conventional approaches. This article demystifies Feynman's technique for integration. In the first chapter, "Principles and Mechanisms," we will dissect the core methodology, learning how to introduce parameters and transform intractable integrals into solvable differential equations. Following this, the "Applications and Interdisciplinary Connections" chapter will showcase the method's far-reaching impact, from taming [special functions in physics](@article_id:170717) to solving complex problems in probability theory, revealing the deep unity this simple trick uncovers across the sciences.
+When faced with a seemingly impossible integral, the standard tools of calculus can prove insufficient, leaving mathematicians and scientists at a frustrating impasse. What if the solution was not to simplify, but to strategically add complexity? This is the counterintuitive genius behind [differentiation under the integral sign](@keyword=differentiation_under_the_integral_sign|lang=en-US|style=Feynman), a powerful method famously championed by physicist Richard Feynman. This technique offers an elegant escape route for problems that resist conventional approaches. This article demystifies Feynman's technique for integration. In the first chapter, "Principles and Mechanisms," we will dissect the core methodology, learning how to introduce parameters and transform intractable integrals into solvable differential equations. Following this, the "Applications and Interdisciplinary Connections" chapter will showcase the method's far-reaching impact, from taming [special functions in physics](@keyword=special_functions_in_physics|lang=en-US|style=Feynman) to solving complex problems in probability theory, revealing the deep unity this simple trick uncovers across the sciences.
 
 ## Principles and Mechanisms
 
-Imagine you’re faced with a monster of an integral. It’s got logarithms, [trigonometric functions](@article_id:178424), and fractions all tangled up in a way that seems utterly hopeless. The standard tools of [integration by parts](@article_id:135856) or substitution barely make a dent. What do you do? Well, sometimes the most creative way to solve a problem is to make it *more complicated*. This sounds like madness, but it’s the heart of one of the most elegant and powerful techniques in a mathematician's arsenal: [differentiation under the integral sign](@article_id:157805), a method so beloved by the physicist Richard Feynman that it’s often called "Feynman's technique."
+Imagine you’re faced with a monster of an integral. It’s got logarithms, [trigonometric functions](@keyword=trigonometric_functions|lang=en-US|style=Feynman), and fractions all tangled up in a way that seems utterly hopeless. The standard tools of [integration by parts](@keyword=integration_by_parts|lang=en-US|style=Feynman) or substitution barely make a dent. What do you do? Well, sometimes the most creative way to solve a problem is to make it *more complicated*. This sounds like madness, but it’s the heart of one of the most elegant and powerful techniques in a mathematician's arsenal: [differentiation under the integral sign](@keyword=differentiation_under_the_integral_sign|lang=en-US|style=Feynman), a method so beloved by the physicist Richard Feynman that it’s often called "Feynman's technique."
 
 ### The Magician's Trick: Turning a Monster into a Mouse
 
@@ -65,7 +65,7 @@ $$
 I = \int_0^\infty \frac{\arctan(ax) - \arctan(bx)}{x(1+cx^2)} dx
 $$
 
-This integral, explored in problems like , , and , has three constants: $a$, $b$, and $c$. They are all perfect candidates for parameters. Let's treat this as a function $I(a, b, c)$ and differentiate with respect to $a$. The derivative of $\arctan(u)$ is $\frac{1}{1+u^2}$, so $\frac{\partial}{\partial a}\arctan(ax) = \frac{x}{1+(ax)^2}$.
+This integral, explored in problems like [@problem_id:871959], [@problem_id:455965], and [@problem_id:803044], has three constants: $a$, $b$, and $c$. They are all perfect candidates for parameters. Let's treat this as a function $I(a, b, c)$ and differentiate with respect to $a$. The derivative of $\arctan(u)$ is $\frac{1}{1+u^2}$, so $\frac{\partial}{\partial a}\arctan(ax) = \frac{x}{1+(ax)^2}$.
 
 $$
 \frac{\partial I}{\partial a} = \int_0^\infty \frac{1}{x(1+cx^2)} \left( \frac{x}{1+a^2x^2} \right) dx = \int_0^\infty \frac{1}{(1+a^2x^2)(1+cx^2)} dx
@@ -105,13 +105,13 @@ Think of it this way. The integral $\int f(x, a) dx$ is a sum of the values of $
 
 This is usually true. Imagine a long line of flowers, and you want to know how fast the total height of all flowers is increasing. You could measure the total height today and again tomorrow, or you could measure the growth rate of each individual flower and add them all up. You'd expect to get the same answer.
 
-The situations where this breaks down are when some of the flowers suddenly grow infinitely fast, or behave in some other pathological way. The mathematicians, our diligent safety inspectors, have given us a powerful guarantee called the **Lebesgue Dominated Convergence Theorem** (). You don't need to know the fine print to use the tool, but the essence is this: as long as the function you get after differentiating, $\frac{\partial f}{\partial a}$, is "dominated" by some other function $g(x)$ that is itself integrable (meaning $\int g(x) dx$ is finite) and doesn't depend on $a$, then the swap is perfectly legal. For most of the well-behaved functions you'll encounter in physics and engineering, this condition holds, and the magic is on solid ground.
+The situations where this breaks down are when some of the flowers suddenly grow infinitely fast, or behave in some other pathological way. The mathematicians, our diligent safety inspectors, have given us a powerful guarantee called the **Lebesgue Dominated Convergence Theorem** ([@problem_id:565924]). You don't need to know the fine print to use the tool, but the essence is this: as long as the function you get after differentiating, $\frac{\partial f}{\partial a}$, is "dominated" by some other function $g(x)$ that is itself integrable (meaning $\int g(x) dx$ is finite) and doesn't depend on $a$, then the swap is perfectly legal. For most of the well-behaved functions you'll encounter in physics and engineering, this condition holds, and the magic is on solid ground.
 
 ### The Rabbit Out of the Hat: Deeper and More Surprising Results
 
 Once you're comfortable with the basic recipe, you can use it to pull off some truly spectacular feats of mathematical wizardry.
 
-Consider this beast from problem :
+Consider this beast from problem [@problem_id:510098]:
 
 $$
 I(a,b) = \int_0^\infty \frac{e^{-a^2 x^2} - \cos(bx)}{x^2} \, dx
@@ -157,7 +157,7 @@ $$
 
 This is a beautiful example of a nested application of the technique—a puzzle box that, when opened, reveals another puzzle box inside.
 
-The method is not just for familiar functions, either. It can lead us to surprising connections between different areas of mathematics. For example, consider this integral involving an inverse hyperbolic function from problem :
+The method is not just for familiar functions, either. It can lead us to surprising connections between different areas of mathematics. For example, consider this integral involving an inverse hyperbolic function from problem [@problem_id:873453]:
 
 $$
 I(a) = \int_0^1 \frac{\operatorname{arctanh}(ax)}{x \sqrt{1-x^2}} dx

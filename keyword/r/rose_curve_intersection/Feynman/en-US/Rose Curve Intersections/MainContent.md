@@ -11,68 +11,68 @@ Now that we have been introduced to the captivating world of rose curves, let's 
 
 ### The Rendezvous: Where Do Curves Meet?
 
-Imagine you are looking at a map with two roads drawn on it. An intersection is simply a point that lies on both roads. It’s the same with curves in a plane. To begin, let’s consider the simplest possible rendezvous: the meeting of a [rose curve](@article_id:173580) and a circle.
+Imagine you are looking at a map with two roads drawn on it. An intersection is simply a point that lies on both roads. It’s the same with curves in a plane. To begin, let’s consider the simplest possible rendezvous: the meeting of a [rose curve](@keyword=rose_curve|lang=en-US|style=Feynman) and a circle.
 
 A circle centered at the origin, with a radius of, say, $1/2$, is described by the wonderfully simple polar equation $r = 1/2$. This equation is a declaration: "I am the collection of all points in the universe that are exactly $1/2$ a unit away from the center."
 
-Now, let's introduce a four-petaled rose, described by the equation $r = \cos(2\theta)$ . This equation is a dynamic rule. For every angle $\theta$ you choose, it tells you the corresponding radius $r$. To find where the rose and the circle intersect, we are asking a very direct question: "For which angles $\theta$ is a point on the [rose curve](@article_id:173580) *also* exactly $1/2$ a unit away from the origin?"
+Now, let's introduce a four-petaled rose, described by the equation $r = \cos(2\theta)$ [@problem_id:2135473]. This equation is a dynamic rule. For every angle $\theta$ you choose, it tells you the corresponding radius $r$. To find where the rose and the circle intersect, we are asking a very direct question: "For which angles $\theta$ is a point on the [rose curve](@keyword=rose_curve|lang=en-US|style=Feynman) *also* exactly $1/2$ a unit away from the origin?"
 
-The answer seems obvious: we just set the two expressions for $r$ equal to each other. But this is where our investigation takes a fascinating turn. The [radial coordinate](@article_id:164692) $r$ in the polar system is a subtle creature. It can be negative! A positive $r$ means "walk forward from the origin in the direction $\theta$," but a negative $r$ means "walk *backward* from the origin in the direction $\theta$." However, the *distance* from the origin, which is what our circle cares about, must always be positive. This distance is not $r$, but its absolute value, $|r|$.
+The answer seems obvious: we just set the two expressions for $r$ equal to each other. But this is where our investigation takes a fascinating turn. The [radial coordinate](@keyword=radial_coordinate|lang=en-US|style=Feynman) $r$ in the polar system is a subtle creature. It can be negative! A positive $r$ means "walk forward from the origin in the direction $\theta$," but a negative $r$ means "walk *backward* from the origin in the direction $\theta$." However, the *distance* from the origin, which is what our circle cares about, must always be positive. This distance is not $r$, but its absolute value, $|r|$.
 
-This is the first crucial principle. A geometric intersection occurs when the *distances* from the origin are equal. For our [rose curve](@article_id:173580) $r = \cos(2\theta)$ and circle $r=1/2$, the condition is not $\cos(2\theta) = 1/2$, but rather:
+This is the first crucial principle. A geometric intersection occurs when the *distances* from the origin are equal. For our [rose curve](@keyword=rose_curve|lang=en-US|style=Feynman) $r = \cos(2\theta)$ and circle $r=1/2$, the condition is not $\cos(2\theta) = 1/2$, but rather:
 
 $$
 |\cos(2\theta)| = \frac{1}{2}
 $$
 
-This small detail—the absolute value signs—is the key that unlocks the full picture. It splits our single problem into two separate inquiries, each yielding its own set of solutions .
+This small detail—the absolute value signs—is the key that unlocks the full picture. It splits our single problem into two separate inquiries, each yielding its own set of solutions [@problem_id:2130707].
 
 ### The Phantom of the Pole: A Curious Case of Coordinates
 
-Let's follow the clues from our master equation, $|\cos(2\theta)| = 1/2$. This leads to two distinct possibilities  :
+Let's follow the clues from our master equation, $|\cos(2\theta)| = 1/2$. This leads to two distinct possibilities [@problem_id:2135473] [@problem_id:2130724]:
 
 1.  $\cos(2\theta) = 1/2$
 2.  $\cos(2\theta) = -1/2$
 
-The first case is straightforward. We solve for $\theta$ and find a set of angles where the [rose curve](@article_id:173580)'s radius is positive and equal to $1/2$. These are "direct hits"—points where the petal itself visibly crosses the circle. For our four-petaled rose, this happens at four distinct angles, giving us four intersection points.
+The first case is straightforward. We solve for $\theta$ and find a set of angles where the [rose curve](@keyword=rose_curve|lang=en-US|style=Feynman)'s radius is positive and equal to $1/2$. These are "direct hits"—points where the petal itself visibly crosses the circle. For our four-petaled rose, this happens at four distinct angles, giving us four intersection points.
 
 But what about the second case, $\cos(2\theta) = -1/2$? Here, the radius $r$ is negative. This is where the "phantom" appears. Imagine you are standing at the origin and pointing your arm in a direction $\theta$ for which $r = -1/2$. The equation tells you to take $1/2$ a step *backwards*. Where do you land? You land at a distance of $1/2$ from the origin, but in the exact opposite direction, at the angle $\theta + \pi$.
 
 This is a fundamental duality of polar coordinates: the point represented by $(r, \theta)$ is the very same geometric location as the point $(-r, \theta + \pi)$.
 
-So, the angles that satisfy $\cos(2\theta) = -1/2$ also produce intersection points! The [rose curve](@article_id:173580)'s mathematical description is pointing one way, but the physical point lands on the circle somewhere else entirely. These are our "phantom hits." For the four-petaled rose, this second case also yields four distinct points.
+So, the angles that satisfy $\cos(2\theta) = -1/2$ also produce intersection points! The [rose curve](@keyword=rose_curve|lang=en-US|style=Feynman)'s mathematical description is pointing one way, but the physical point lands on the circle somewhere else entirely. These are our "phantom hits." For the four-petaled rose, this second case also yields four distinct points.
 
 Adding them up—four direct hits and four phantom hits—we discover a total of **eight** intersection points! This is a beautiful illustration of how a hidden symmetry in the coordinate system can double the complexity and richness of the outcome. Without appreciating the dual nature of $(r, \theta)$, we would have missed half of the solution.
 
 ### The Rhythm of the Rose: Uncovering the Patterns of `$n$`
 
-Now that we've mastered a single case, let's become true scientists and generalize. What happens when we change the [rose curve](@article_id:173580) to $r = 2\cos(n\theta)$ and intersect it with a circle $r=a$? How does the number of intersections depend on the integer $n$? .
+Now that we've mastered a single case, let's become true scientists and generalize. What happens when we change the [rose curve](@keyword=rose_curve|lang=en-US|style=Feynman) to $r = 2\cos(n\theta)$ and intersect it with a circle $r=a$? How does the number of intersections depend on the integer $n$? [@problem_id:2130727].
 
 The key lies in the behavior of the rose itself. As you may have noticed, the number of petals depends on $n$. If $n$ is **odd** (like in $r=\cos(3\theta)$), the curve has $n$ petals. If $n$ is **even** (like in $r=\cos(2\theta)$), it has $2n$ petals. This isn't just a coincidence; it's a direct consequence of the $(-r, \theta+\pi)$ identity we just discussed. For odd $n$, a point generated at angle $\theta+\pi$ retraces the same path as the point at angle $\theta$. For even $n$, it traces a new petal on the opposite side.
 
 This very property governs the number of intersections. When we solve the general intersection equation $|\cos(n\theta)| = a/2$ for a value $a$ between $0$ and $2$, we find:
 
--   If **$n$ is odd**: The solutions for $\theta$ come in pairs that are $\pi$ [radians](@article_id:171199) apart, but these pairs represent the *same* geometric point. This redundancy means an $n$-petaled rose intersects the circle in $2n$ places. For example, for $n=3$ and $a=1$, we find $2 \times 3 = 6$ intersections, not 3 .
+-   If **$n$ is odd**: The solutions for $\theta$ come in pairs that are $\pi$ [radians](@keyword=radians|lang=en-US|style=Feynman) apart, but these pairs represent the *same* geometric point. This redundancy means an $n$-petaled rose intersects the circle in $2n$ places. For example, for $n=3$ and $a=1$, we find $2 \times 3 = 6$ intersections, not 3 [@problem_id:2130727].
 
--   If **$n$ is even**: The solutions for $\theta$ that are $\pi$ [radians](@article_id:171199) apart now correspond to different points on opposite sides of the origin. There is no redundancy. This results in a total of $4n$ intersections!
+-   If **$n$ is even**: The solutions for $\theta$ that are $\pi$ [radians](@keyword=radians|lang=en-US|style=Feynman) apart now correspond to different points on opposite sides of the origin. There is no redundancy. This results in a total of $4n$ intersections!
 
-The situation changes slightly for the special case when the circle just touches the tips of the petals (i.e., $a=2$). Here, pairs of intersection points merge into a single point of tangency. The counts then become $n$ for odd $n$ and $2n$ for even $n$ .
+The situation changes slightly for the special case when the circle just touches the tips of the petals (i.e., $a=2$). Here, pairs of intersection points merge into a single point of tangency. The counts then become $n$ for odd $n$ and $2n$ for even $n$ [@problem_id:2130727].
 
 ### A Dance of Two Roses
 
-What if we stage a dance between two different rose curves? The principles are the same, but the choreography is more intricate. Consider the intersection of $r = \cos(2\theta)$ and $r = \sin(2\theta)$ . We are looking for a point in space that satisfies both rules simultaneously. Again, the duality of [polar coordinates](@article_id:158931) gives us two scenarios to check for:
+What if we stage a dance between two different rose curves? The principles are the same, but the choreography is more intricate. Consider the intersection of $r = \cos(2\theta)$ and $r = \sin(2\theta)$ [@problem_id:2135441]. We are looking for a point in space that satisfies both rules simultaneously. Again, the duality of [polar coordinates](@keyword=polar_coordinates|lang=en-US|style=Feynman) gives us two scenarios to check for:
 
 1.  **A Shared Point in Sync:** The curves arrive at the same location $(r, \theta)$ at the same "time" (i.e., for the same angle parameter $\theta$). This leads to the equation: $\cos(2\theta) = \sin(2\theta)$.
 
 2.  **An Offset Rendezvous:** One curve is at $(r, \theta)$ while the other is at the same location, but described by $(-r, \theta+\pi)$. This leads to a second condition, which for these specific curves simplifies to: $\cos(2\theta) = -\sin(2\theta)$.
 
-Solving these two trigonometric equations gives us a collection of angles. The radii at these angles are all $|r| = \sqrt{2}/2$. When we plot these intersection points, we are rewarded with a delightful surprise. The eight points of intersection are not randomly scattered; they form the vertices of a perfect, regular octagon! This is a stunning example of hidden order. What began as a dry algebraic problem transforms into an object of geometric beauty. These same principles allow us to tackle intersections between any two polar curves, such as a [cardioid](@article_id:162106) and a rose .
+Solving these two trigonometric equations gives us a collection of angles. The radii at these angles are all $|r| = \sqrt{2}/2$. When we plot these intersection points, we are rewarded with a delightful surprise. The eight points of intersection are not randomly scattered; they form the vertices of a perfect, regular octagon! This is a stunning example of hidden order. What began as a dry algebraic problem transforms into an object of geometric beauty. These same principles allow us to tackle intersections between any two polar curves, such as a [cardioid](@keyword=cardioid|lang=en-US|style=Feynman) and a rose [@problem_id:2130697].
 
 ### Of Generic and Special Encounters
 
 Let's push our understanding one step further with a truly profound question. Is the number of intersections a stable, robust property? What if we slightly perturb one of the curves?
 
-Imagine two rose curves, $C_1: r = a \cos(7\theta)$ and a phase-shifted version, $C_2: r = a \sin(7(\theta - \phi))$ . The parameter $\phi$ acts like a knob we can turn to rotate the second rose relative to the first. For almost any value of $\phi$ you choose, the curves will intersect a fixed number of times. We call this the **generic** number of intersections. In this case, for $n=7$, it is 15 (the origin, which is common to both, plus 14 other points).
+Imagine two rose curves, $C_1: r = a \cos(7\theta)$ and a phase-shifted version, $C_2: r = a \sin(7(\theta - \phi))$ [@problem_id:2135432]. The parameter $\phi$ acts like a knob we can turn to rotate the second rose relative to the first. For almost any value of $\phi$ you choose, the curves will intersect a fixed number of times. We call this the **generic** number of intersections. In this case, for $n=7$, it is 15 (the origin, which is common to both, plus 14 other points).
 
 But what happens if we turn the $\phi$ knob to a very specific, "special" setting? For certain discrete values of $\phi$, the curves align in a conspiratorial way. In the given problem, there is a special phase shift where all 14 non-origin intersections suddenly slide along the petals and merge together at the origin. In this **special** configuration, the number of distinct intersection points dramatically drops from 15 to 1!
 

@@ -1,11 +1,11 @@
 ## Introduction
-How do we capture the simple elegance of a straight line in the language of mathematics? While several equations can describe a line, the **point-slope form** stands out as the most intuitive, directly translating the geometric idea of a point and a direction into algebra. This form is not just another formula to memorize; it's a foundational concept that reveals the deep connection between algebra, geometry, and calculus. It addresses the fundamental problem of defining a linear path from minimal information. This article explores the power and breadth of the point-slope form. First, in "Principles and Mechanisms," we will deconstruct the formula, deriving it from basic algebra and the principles of calculus to understand its core identity. Following that, in "Applications and Interdisciplinary Connections," we will journey through its far-reaching implications, from solving geometric puzzles and modeling physical laws to forming the basis of [linear approximation](@article_id:145607), one of the most powerful tools in science and engineering.
+How do we capture the simple elegance of a straight line in the language of mathematics? While several equations can describe a line, the **point-slope form** stands out as the most intuitive, directly translating the geometric idea of a point and a direction into algebra. This form is not just another formula to memorize; it's a foundational concept that reveals the deep connection between algebra, geometry, and calculus. It addresses the fundamental problem of defining a linear path from minimal information. This article explores the power and breadth of the point-slope form. First, in "Principles and Mechanisms," we will deconstruct the formula, deriving it from basic algebra and the principles of calculus to understand its core identity. Following that, in "Applications and Interdisciplinary Connections," we will journey through its far-reaching implications, from solving geometric puzzles and modeling physical laws to forming the basis of [linear approximation](@keyword=linear_approximation|lang=en-US|style=Feynman), one of the most powerful tools in science and engineering.
 
 ## Principles and Mechanisms
 
 What is a straight line? The question seems almost childishly simple. You can draw one with a ruler. It’s the shortest path between two points. We see them everywhere: the edge of a book, a beam of light, the path of a ball thrown straight up. But how do we capture this intuitive idea in the language of mathematics? How do we write down its soul, its very essence, in an equation?
 
-There are many disguises for the equation of a line—the [slope-intercept form](@article_id:163524), the general form, the intercept form. But today we will explore what is arguably the most intuitive and fundamental of them all: the **point-slope form**. It is not just another formula to memorize; it is the direct translation of what a line *is*.
+There are many disguises for the equation of a line—the [slope-intercept form](@keyword=slope_intercept_form|lang=en-US|style=Feynman), the general form, the intercept form. But today we will explore what is arguably the most intuitive and fundamental of them all: the **point-slope form**. It is not just another formula to memorize; it is the direct translation of what a line *is*.
 
 ### The Essence of a Line: A Point and a Direction
 
@@ -31,7 +31,7 @@ That’s it. This beautiful little equation contains everything we need. It says
 
 There is an even more profound way to think about this, which connects to the world of calculus and change. A straight line can be defined as a curve whose direction *never changes*. Imagine you are walking along a path, and you keep your compass pointed at a fixed angle, say $\phi_k$, relative to due East (our positive x-axis). The path you trace will be a straight line.
 
-In calculus, the "direction" of a curve at any point is given by the slope of its tangent line, $\frac{dy}{dx}$. This slope is precisely the tangent of that compass angle, $m = \tan(\phi_k)$. The defining property of a straight line is that this slope is constant everywhere along its length .
+In calculus, the "direction" of a curve at any point is given by the slope of its tangent line, $\frac{dy}{dx}$. This slope is precisely the tangent of that compass angle, $m = \tan(\phi_k)$. The defining property of a straight line is that this slope is constant everywhere along its length [@problem_id:2117649].
 
 So, we have a simple differential equation:
 
@@ -61,7 +61,7 @@ Let’s see how this works.
 
 #### From Point-Slope to Slope-Intercept
 
-Perhaps the most familiar form is the **[slope-intercept form](@article_id:163524)**, $y = mx + b$. This form is useful because it immediately tells you the slope $m$ and the **y-intercept** $b$, which is where the line crosses the vertical axis. In a [physics simulation](@article_id:139368), for instance, this might represent the initial position of a particle whose path is a straight line .
+Perhaps the most familiar form is the **[slope-intercept form](@keyword=slope_intercept_form|lang=en-US|style=Feynman)**, $y = mx + b$. This form is useful because it immediately tells you the slope $m$ and the **y-intercept** $b$, which is where the line crosses the vertical axis. In a [physics simulation](@keyword=physics_simulation|lang=en-US|style=Feynman), for instance, this might represent the initial position of a particle whose path is a straight line [@problem_id:2175970].
 
 Converting from point-slope to slope-intercept is as simple as solving for $y$. Starting with $y - y_1 = m(x - x_1)$, we get:
 
@@ -69,30 +69,30 @@ $$
 y = m(x - x_1) + y_1 = mx - mx_1 + y_1
 $$
 
-By comparing this to $y = mx + b$, we can see that the [y-intercept](@article_id:168195) is simply $b = y_1 - mx_1$. So, if a data scientist knows their model's performance increases with a slope of $m=6.2$ and that one measurement gave a runtime of $41.5$ minutes for a dataset of size $5.5$, they can instantly find the model's "initialization overhead" $b$ using this relationship .
+By comparing this to $y = mx + b$, we can see that the [y-intercept](@keyword=y_intercept|lang=en-US|style=Feynman) is simply $b = y_1 - mx_1$. So, if a data scientist knows their model's performance increases with a slope of $m=6.2$ and that one measurement gave a runtime of $41.5$ minutes for a dataset of size $5.5$, they can instantly find the model's "initialization overhead" $b$ using this relationship [@problem_id:2117664].
 
-An interesting thing to notice here is that the final equation for the line, $y=mx+b$, does not depend on which point $(x_1, y_1)$ you chose! You could pick any point on the line, plug it into the point-slope form, and after simplifying, you would always arrive at the exact same slope-intercept equation . The line is a single entity; the point-slope form is just one of many equally valid "points of view" from which to describe it.
+An interesting thing to notice here is that the final equation for the line, $y=mx+b$, does not depend on which point $(x_1, y_1)$ you chose! You could pick any point on the line, plug it into the point-slope form, and after simplifying, you would always arrive at the exact same slope-intercept equation [@problem_id:2117679]. The line is a single entity; the point-slope form is just one of many equally valid "points of view" from which to describe it.
 
 #### From Point-Slope to Standard Form
 
-Another important representation is the **standard form**, $Ax + By = C$. This form is particularly elegant because it treats $x$ and $y$ more symmetrically and can represent all lines, including vertical ones (which the slope-based forms cannot). Often, for reasons of mathematical tidiness or computational requirements, we want the coefficients $A$, $B$, and $C$ to be integers with no common factors .
+Another important representation is the **standard form**, $Ax + By = C$. This form is particularly elegant because it treats $x$ and $y$ more symmetrically and can represent all lines, including vertical ones (which the slope-based forms cannot). Often, for reasons of mathematical tidiness or computational requirements, we want the coefficients $A$, $B$, and $C$ to be integers with no common factors [@problem_id:2117695].
 
 To get here from the point-slope form, we typically follow a simple recipe:
 1.  Distribute the slope $m$.
 2.  If the slope or coordinates are fractions, multiply the entire equation by the least common multiple of all denominators to clear them.
 3.  Rearrange the terms so that the $x$ and $y$ terms are on one side and the constant is on the other.
 
-For example, a line through $(-\frac{2}{3}, \frac{5}{6})$ with slope $m = -\frac{3}{4}$ starts as $y - \frac{5}{6} = -\frac{3}{4}(x + \frac{2}{3})$. After some algebraic housekeeping—multiplying by 12, distributing, and rearranging—it transforms beautifully into $9x + 12y = 4$ . This process can be applied to convert from any other form as well, often using the point-slope form as an intermediate step  .
+For example, a line through $(-\frac{2}{3}, \frac{5}{6})$ with slope $m = -\frac{3}{4}$ starts as $y - \frac{5}{6} = -\frac{3}{4}(x + \frac{2}{3})$. After some algebraic housekeeping—multiplying by 12, distributing, and rearranging—it transforms beautifully into $9x + 12y = 4$ [@problem_id:2117695]. This process can be applied to convert from any other form as well, often using the point-slope form as an intermediate step [@problem_id:2117670] [@problem_id:2117661].
 
 #### Connecting to Other Forms
 
-The point-slope structure is hidden inside other descriptions, too. Consider the **[symmetric form](@article_id:153105)**:
+The point-slope structure is hidden inside other descriptions, too. Consider the **[symmetric form](@keyword=symmetric_form|lang=en-US|style=Feynman)**:
 
 $$
 \frac{x - x_1}{a} = \frac{y - y_1}{b}
 $$
 
-This form tells us that the line passes through $(x_1, y_1)$ and has a "[direction vector](@article_id:169068)" $(a, b)$. The slope is simply the ratio of the vector's components, $m = b/a$. With one quick multiplication, we can see this is just a rearranged point-slope equation: $y - y_1 = \frac{b}{a}(x - x_1)$ .
+This form tells us that the line passes through $(x_1, y_1)$ and has a "[direction vector](@keyword=direction_vector|lang=en-US|style=Feynman)" $(a, b)$. The slope is simply the ratio of the vector's components, $m = b/a$. With one quick multiplication, we can see this is just a rearranged point-slope equation: $y - y_1 = \frac{b}{a}(x - x_1)$ [@problem_id:2117640].
 
 ### Navigating the Boundaries: Horizontal and Vertical Lines
 
@@ -104,7 +104,7 @@ $$
 y - k = 0 \cdot (x - x_p)
 $$
 
-This simplifies to $y - k = 0$, or $y=k$. The equation holds perfectly . It correctly tells us that the change in $y$ is always zero, no matter the change in $x$.
+This simplifies to $y - k = 0$, or $y=k$. The equation holds perfectly [@problem_id:2117681]. It correctly tells us that the change in $y$ is always zero, no matter the change in $x$.
 
 But what about a **vertical line**, like $x=c$? Here, we hit a snag. To calculate the slope, we would have to divide by the change in $x$, which is always zero for a vertical line. Division by zero is undefined, so a vertical line has an "infinite" slope. The point-slope form, and any form that explicitly uses $m$, cannot be written down for a vertical line. This isn't a failure of the line; it's a limitation of this particular way of describing it. It's a reminder that every mathematical tool has its domain of applicability. Other forms, like the standard form $1 \cdot x + 0 \cdot y = c$, handle this case with no trouble at all.
 

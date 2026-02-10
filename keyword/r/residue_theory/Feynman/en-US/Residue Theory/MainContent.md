@@ -3,11 +3,11 @@ In the realm of mathematics, few concepts offer the elegant blend of profound th
 
 ## Principles and Mechanisms
 
-Imagine the world of complex numbers as a vast, flat plain. A function, say $f(z)$, assigns a height (and a twist, but let's stick to height for now) to every point $z$ on this plain. For the most part, this landscape is smooth and gently rolling—these are the regions where the function is called **analytic**. If you walk in a closed loop in these regions, you will always return to your starting altitude. In the language of calculus, the [contour integral](@article_id:164220) over any closed path in an analytic region is zero. This is Cauchy's Integral Theorem, a foundational, but frankly, somewhat boring result. The interesting things in any landscape are not the flat plains, but the mountains, volcanoes, and whirlpools.
+Imagine the world of complex numbers as a vast, flat plain. A function, say $f(z)$, assigns a height (and a twist, but let's stick to height for now) to every point $z$ on this plain. For the most part, this landscape is smooth and gently rolling—these are the regions where the function is called **analytic**. If you walk in a closed loop in these regions, you will always return to your starting altitude. In the language of calculus, the [contour integral](@keyword=contour_integral|lang=en-US|style=Feynman) over any closed path in an analytic region is zero. This is Cauchy's Integral Theorem, a foundational, but frankly, somewhat boring result. The interesting things in any landscape are not the flat plains, but the mountains, volcanoes, and whirlpools.
 
 ### The Heart of the Matter: Singularities are the Stars
 
-In the complex plane, the points of high drama are the **singularities**—points where the function is not analytic, often because its value blows up to infinity. These are not mere blemishes; they are the sources of all the "action." The most common and well-behaved of these are called **poles**. A [simple pole](@article_id:163922) at a point $z_0$ behaves like $1/(z-z_0)$, a double pole like $1/(z-z_0)^2$, and so on.
+In the complex plane, the points of high drama are the **singularities**—points where the function is not analytic, often because its value blows up to infinity. These are not mere blemishes; they are the sources of all the "action." The most common and well-behaved of these are called **poles**. A [simple pole](@keyword=simple_pole|lang=en-US|style=Feynman) at a point $z_0$ behaves like $1/(z-z_0)$, a double pole like $1/(z-z_0)^2$, and so on.
 
 The supreme insight of 19th-century mathematician Augustin-Louis Cauchy, encapsulated in his **Residue Theorem**, is this: the integral of a function around a closed loop depends *only* on the singularities enclosed by that loop. The long, winding path you take is irrelevant! All that matters is which "volcanoes" you circled. Each singularity contributes a specific, characteristic amount to the integral, and this contribution is called its **residue**. The theorem is breathtakingly simple:
 
@@ -31,13 +31,13 @@ Therefore, the residue is nothing more and nothing less than the coefficient $a_
 
 ### From Theory to Reality: Reconstructing a Signal
 
-Let's see this powerhouse in action. In signal processing, we often work with the **Z-transform**, which converts a [discrete-time signal](@article_id:274896) $x[n]$ (a sequence of numbers) into a continuous function $X(z)$ in the complex plane. To get the signal back, we must perform an inverse transform, which is defined by a contour integral:
+Let's see this powerhouse in action. In signal processing, we often work with the **Z-transform**, which converts a [discrete-time signal](@keyword=discrete_time_signal|lang=en-US|style=Feynman) $x[n]$ (a sequence of numbers) into a continuous function $X(z)$ in the complex plane. To get the signal back, we must perform an inverse transform, which is defined by a contour integral:
 
 $$
 x[n] = \frac{1}{2\pi i} \oint_C X(z) z^{n-1} dz
 $$
 
-Suppose an engineer has a system whose Z-transform is $X(z) = \frac{1}{(z - 1/2)(z - 3)}$ . This function has two [simple poles](@article_id:175274), one at $z=1/2$ and another at $z=3$. The system is stable only for inputs whose "complex frequencies" $z$ lie in the [annulus](@article_id:163184) defined by $1/2 \lt |z| \lt 3$. This is our **Region of Convergence (ROC)**, and it dictates where we must draw our integration contour $C$.
+Suppose an engineer has a system whose Z-transform is $X(z) = \frac{1}{(z - 1/2)(z - 3)}$ [@problem_id:2910935]. This function has two [simple poles](@keyword=simple_poles|lang=en-US|style=Feynman), one at $z=1/2$ and another at $z=3$. The system is stable only for inputs whose "complex frequencies" $z$ lie in the [annulus](@keyword=annulus|lang=en-US|style=Feynman) defined by $1/2 \lt |z| \lt 3$. This is our **Region of Convergence (ROC)**, and it dictates where we must draw our integration contour $C$.
 
 Let's find the value of the signal at time $n=2$. The integral we need to compute is:
 
@@ -47,7 +47,7 @@ $$
 
 Our contour $C$ must lie in the ROC, for example, a circle $|z|=1$. This contour encloses the pole at $z=1/2$ but leaves the pole at $z=3$ outside. According to the residue theorem, the entire integral collapses to just the residue of the integrand at the single enclosed pole!
 
-The integrand is $f(z) = \frac{z}{(z - 1/2)(z - 3)}$. To find the residue at the [simple pole](@article_id:163922) $z_0=1/2$, we use a handy shortcut: $\text{Res}(f, z_0) = \lim_{z \to z_0} (z-z_0)f(z)$.
+The integrand is $f(z) = \frac{z}{(z - 1/2)(z - 3)}$. To find the residue at the [simple pole](@keyword=simple_pole|lang=en-US|style=Feynman) $z_0=1/2$, we use a handy shortcut: $\text{Res}(f, z_0) = \lim_{z \to z_0} (z-z_0)f(z)$.
 
 $$
 \text{Res}\left(f, \frac{1}{2}\right) = \lim_{z \to \frac{1}{2}} \left(z - \frac{1}{2}\right) \frac{z}{(z - \frac{1}{2})(z - 3)} = \lim_{z \to \frac{1}{2}} \frac{z}{z-3} = \frac{1/2}{1/2 - 3} = -\frac{1}{5}
@@ -57,11 +57,11 @@ So, $x[2] = \frac{1}{2\pi i} \times (2\pi i \times \text{Res}) = -1/5$. An entir
 
 ### The Art of Perspective: Contour Gymnastics
 
-The choice of contour is not just a technicality; it's a strategy. Sometimes, a clever change of perspective can make an impossible calculation trivial. Consider again our inverse Z-transform. The procedure we just used works beautifully for $n \ge 0$. But what about for negative time, $n  0$? .
+The choice of contour is not just a technicality; it's a strategy. Sometimes, a clever change of perspective can make an impossible calculation trivial. Consider again our inverse Z-transform. The procedure we just used works beautifully for $n \ge 0$. But what about for negative time, $n  0$? [@problem_id:2879345].
 
 For $n0$, the term $z^{n-1}$ in the integrand $X(z)z^{n-1}$ has a large negative power. This means that as $|z|$ becomes very large, the integrand dies off extremely quickly (at least as fast as $1/|z|^2$). This rapid decay at infinity is a gift. It allows us to do something audacious.
 
-Instead of just considering the contour $C$ and the poles inside it, we can think about the *entire* complex plane. The sum of residues of a rational function over *all* its poles in the [extended complex plane](@article_id:164739) (including a possible [residue at infinity](@article_id:178015)) is zero. This implies that the sum of residues inside a contour is equal to the negative of the sum of residues outside it.
+Instead of just considering the contour $C$ and the poles inside it, we can think about the *entire* complex plane. The sum of residues of a rational function over *all* its poles in the [extended complex plane](@keyword=extended_complex_plane|lang=en-US|style=Feynman) (including a possible [residue at infinity](@keyword=residue_at_infinity|lang=en-US|style=Feynman)) is zero. This implies that the sum of residues inside a contour is equal to the negative of the sum of residues outside it.
 
 For our Z-transform problem when $n  0$, the integrand vanishes on a circle of infinite radius. This allows us to say that our original integral around $C$ is equal to the *negative* of the sum of the residues at all the poles *outside* $C$. Instead of looking inward, we look outward!
 
@@ -71,27 +71,27 @@ So, for $n  0$, we would calculate $x[n]$ not from the pole at $z=1/2$ (inside),
 
 The residue theorem is a deal we make with analytic functions. What happens when the integrand is not analytic? Is the deal off? Not necessarily. Sometimes a little ingenuity is all that's needed.
 
-Consider the integral $I = \oint_C \frac{\bar{z}^3}{z-a} dz$, where $C$ is a circle of radius $R$ centered at the origin, and $|a| \lt R$ . The presence of $\bar{z}$, the complex conjugate of $z$, is a deal-breaker. The function is not analytic, and the residue theorem, as stated, does not apply.
+Consider the integral $I = \oint_C \frac{\bar{z}^3}{z-a} dz$, where $C$ is a circle of radius $R$ centered at the origin, and $|a| \lt R$ [@problem_id:898060]. The presence of $\bar{z}$, the complex conjugate of $z$, is a deal-breaker. The function is not analytic, and the residue theorem, as stated, does not apply.
 
 But let's not give up. We must use every piece of information we have. The key is the contour itself. For any point $z$ on the circle $|z|=R$, we know that $z \bar{z} = |z|^2 = R^2$. This gives us a beautiful way to eliminate the troublesome $\bar{z}$: on the contour $C$, we can substitute $\bar{z} = R^2/z$.
 
-Our seemingly ill-behaved [integral transforms](@article_id:185715) into:
+Our seemingly ill-behaved [integral transforms](@keyword=integral_transforms|lang=en-US|style=Feynman) into:
 
 $$
 I = \oint_C \frac{(R^2/z)^3}{z-a} dz = R^6 \oint_C \frac{1}{z^3(z-a)} dz
 $$
 
-Suddenly, we are back in business! The new integrand is a [rational function](@article_id:270347) of $z$, perfectly suited for the [residue theorem](@article_id:164384). It has a [simple pole](@article_id:163922) at $z=a$ and a pole of order 3 at $z=0$, both of which are inside our circle. We calculate their residues: the residue at $z=a$ is $R^6/a^3$, and the residue at the third-order pole at $z=0$ turns out to be $-R^6/a^3$.
+Suddenly, we are back in business! The new integrand is a [rational function](@keyword=rational_function|lang=en-US|style=Feynman) of $z$, perfectly suited for the [residue theorem](@keyword=residue_theorem|lang=en-US|style=Feynman). It has a [simple pole](@keyword=simple_pole|lang=en-US|style=Feynman) at $z=a$ and a pole of order 3 at $z=0$, both of which are inside our circle. We calculate their residues: the residue at $z=a$ is $R^6/a^3$, and the residue at the third-order pole at $z=0$ turns out to be $-R^6/a^3$.
 
-The sum of the residues is $R^6/a^3 - R^6/a^3 = 0$. Therefore, the integral is $2\pi i \times 0 = 0$. The lesson is profound: the properties of the path can be as important as the properties of the function. By exploiting the geometry of the problem, we turned an invalid problem for the [residue theorem](@article_id:164384) into a textbook case.
+The sum of the residues is $R^6/a^3 - R^6/a^3 = 0$. Therefore, the integral is $2\pi i \times 0 = 0$. The lesson is profound: the properties of the path can be as important as the properties of the function. By exploiting the geometry of the problem, we turned an invalid problem for the [residue theorem](@keyword=residue_theorem|lang=en-US|style=Feynman) into a textbook case.
 
 ### Taming the Chaos: Essential Singularities
 
 We've focused on poles, where a function goes to infinity in a somewhat predictable manner. But there exists a wilder, more chaotic type of singularity: the **essential singularity**. Near such a point, a function behaves with mind-boggling complexity, taking on almost every complex value infinitely often (a result known as Picard's Great Theorem).
 
-Surely, such chaos must break our elegant theorem? Remarkably, it does not. The definition of the residue as the $a_{-1}$ coefficient of the Laurent series holds true for *any* [isolated singularity](@article_id:177855), including essential ones.
+Surely, such chaos must break our elegant theorem? Remarkably, it does not. The definition of the residue as the $a_{-1}$ coefficient of the Laurent series holds true for *any* [isolated singularity](@keyword=isolated_singularity|lang=en-US|style=Feynman), including essential ones.
 
-Let's test this with the function $X(z) = \exp(\alpha/z)$, which has an essential singularity at $z=0$ . To find its inverse Z-transform $x[n]$, we need the residue of $f(z) = \exp(\alpha/z)z^{n-1}$ at $z=0$. We simply write out the Laurent series for $\exp(\alpha/z)$ by using the standard series for the exponential function:
+Let's test this with the function $X(z) = \exp(\alpha/z)$, which has an essential singularity at $z=0$ [@problem_id:2879350]. To find its inverse Z-transform $x[n]$, we need the residue of $f(z) = \exp(\alpha/z)z^{n-1}$ at $z=0$. We simply write out the Laurent series for $\exp(\alpha/z)$ by using the standard series for the exponential function:
 
 $$
 \exp(\alpha/z) = 1 + \frac{\alpha}{z} + \frac{\alpha^2}{2! z^2} + \dots + \frac{\alpha^k}{k! z^k} + \dots
@@ -105,7 +105,7 @@ $$
 
 The residue is the coefficient of the $z^{-1}$ term. We are looking for the term where the exponent is $-1$, so we set $n-1-k = -1$, which implies $k=n$. If $n$ is a non-negative integer, we can find this term in the series. Its coefficient is $\alpha^n / n!$. If $n$ is negative, there is no such term, so the coefficient is 0.
 
-And that's it. The [residue theorem](@article_id:164384) works flawlessly. The inverse signal is simply:
+And that's it. The [residue theorem](@keyword=residue_theorem|lang=en-US|style=Feynman) works flawlessly. The inverse signal is simply:
 
 $$
 x[n] = \begin{cases} \frac{\alpha^n}{n!}  \text{if } n \ge 0 \\ 0  \text{if } n  0 \end{cases}

@@ -21,9 +21,9 @@ $$
 \lambda_k(A) + \lambda_1(B) \le \lambda_k(A+B) \le \lambda_k(A) + \lambda_n(B)
 $$
 
-This is a wonderfully intuitive statement. It says that the $k$-th eigenvalue of the sum is just the original $k$-th eigenvalue of $A$, plus or minus a shift that's contained within the spectral range of $B$. The difference between the [upper and lower bounds](@article_id:272828), $(\lambda_k(A) + \lambda_n(B)) - (\lambda_k(A) + \lambda_1(B)) = \lambda_n(B) - \lambda_1(B)$, is simply the total spread of $B$'s eigenvalues. This "Weyl bound gap" gives us an initial window for the new eigenvalue  .
+This is a wonderfully intuitive statement. It says that the $k$-th eigenvalue of the sum is just the original $k$-th eigenvalue of $A$, plus or minus a shift that's contained within the spectral range of $B$. The difference between the [upper and lower bounds](@keyword=upper_and_lower_bounds|lang=en-US|style=Feynman), $(\lambda_k(A) + \lambda_n(B)) - (\lambda_k(A) + \lambda_1(B)) = \lambda_n(B) - \lambda_1(B)$, is simply the total spread of $B$'s eigenvalues. This "Weyl bound gap" gives us an initial window for the new eigenvalue [@problem_id:1110895] [@problem_id:1110869].
 
-Is this rule actually true? Let's perform a check-up with some real numbers. Suppose we have two simple $2 \times 2$ Hermitian matrices :
+Is this rule actually true? Let's perform a check-up with some real numbers. Suppose we have two simple $2 \times 2$ Hermitian matrices [@problem_id:1110903]:
 
 $$
 A = \begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix}, \quad B = \begin{pmatrix} 0 & 2 \\ 2 & 0 \end{pmatrix}
@@ -63,15 +63,15 @@ This leads to a more refined set of inequalities that give us the tightest possi
 - **The Ceiling (Upper Bound):** The eigenvalue $\lambda_k(C)$ must be less than or equal to the smallest value you can get by summing $\lambda_i(A) + \lambda_j(B)$ where the indices must satisfy the rule $i+j = k+n$.
     $$ \lambda_k(A+B) \le \min_{i+j=k+n} \{ \lambda_i(A) + \lambda_j(B) \} $$
 
-This is a beautiful result! It's like a conservation law for indices. To find the floor for $\lambda_2(C)$, for instance, you must check all pairs of eigenvalues from $A$ and $B$ whose indices sum to $2+1=3$, namely $(\lambda_1(A), \lambda_2(B))$ and $(\lambda_2(A), \lambda_1(B))$. The larger of these two sums forms the tightest possible lower bound . To find the ceiling for $\lambda_2(C)$ in a $3 \times 3$ case, you check pairs whose indices sum to $2+3=5$, namely $(\lambda_2(A), \lambda_3(B))$ and $(\lambda_3(A), \lambda_2(B))$, and take the smaller sum . This "interlacing" property allows us to construct a much narrower, more accurate interval for each eigenvalue of the sum .
+This is a beautiful result! It's like a conservation law for indices. To find the floor for $\lambda_2(C)$, for instance, you must check all pairs of eigenvalues from $A$ and $B$ whose indices sum to $2+1=3$, namely $(\lambda_1(A), \lambda_2(B))$ and $(\lambda_2(A), \lambda_1(B))$. The larger of these two sums forms the tightest possible lower bound [@problem_id:1110939]. To find the ceiling for $\lambda_2(C)$ in a $3 \times 3$ case, you check pairs whose indices sum to $2+3=5$, namely $(\lambda_2(A), \lambda_3(B))$ and $(\lambda_3(A), \lambda_2(B))$, and take the smaller sum [@problem_id:1110838]. This "interlacing" property allows us to construct a much narrower, more accurate interval for each eigenvalue of the sum [@problem_id:1110907].
 
-This framework is also beautifully versatile. What if you want to find the bounds for a difference, say $A-B$? You simply treat it as a sum, $A+(-B)$. The eigenvalues of $-B$ are just the negative of the eigenvalues of $B$, so you can apply the exact same recipes . Similarly, for a scaled matrix like $A+2B$, the eigenvalues of $2B$ are just twice those of $B$, and the machinery works perfectly .
+This framework is also beautifully versatile. What if you want to find the bounds for a difference, say $A-B$? You simply treat it as a sum, $A+(-B)$. The eigenvalues of $-B$ are just the negative of the eigenvalues of $B$, so you can apply the exact same recipes [@problem_id:1110995]. Similarly, for a scaled matrix like $A+2B$, the eigenvalues of $2B$ are just twice those of $B$, and the machinery works perfectly [@problem_id:1110859].
 
 ### From Inequality to Equality: The Power of Symmetry
 
 So far, we have been content with finding bounds. We draw a box and know the answer is inside. But can we ever know the answer exactly? Can the inequality ever become an equality? The answer is a resounding yes, and it happens in a situation of profound simplicity and symmetry.
 
-Consider the special case where one of the matrices, say $A$, has all its eigenvalues equal to the same value, $c$. For a Hermitian matrix, this is only possible if $A$ is a scalar multiple of the [identity matrix](@article_id:156230), $A = cI$. The identity matrix $I$ is the most [symmetric matrix](@article_id:142636) of all; it represents a transformation that uniformly scales space in all directions without any rotation or shearing. It's a perfect sphere.
+Consider the special case where one of the matrices, say $A$, has all its eigenvalues equal to the same value, $c$. For a Hermitian matrix, this is only possible if $A$ is a scalar multiple of the [identity matrix](@keyword=identity_matrix|lang=en-US|style=Feynman), $A = cI$. The identity matrix $I$ is the most [symmetric matrix](@keyword=symmetric_matrix|lang=en-US|style=Feynman) of all; it represents a transformation that uniformly scales space in all directions without any rotation or shearing. It's a perfect sphere.
 
 What happens when you add this perfectly symmetric matrix to another matrix $B$? Adding $cI$ to $B$ doesn't change $B$'s fundamental directions (its eigenvectors). It has the simplest effect imaginable: it just shifts every single eigenvalue of $B$ by the constant amount $c$.
 
@@ -79,6 +79,6 @@ $$
 \lambda_k(A+B) = \lambda_k(cI+B) = c + \lambda_k(B)
 $$
 
-In this case, Weyl's inequality doesn't just give a bound; it collapses to a precise prediction. If we are told that a $2 \times 2$ matrix $A$ has eigenvalues $\{5, 5\}$, we know immediately that $A=5I$. If we then add a matrix $B$ with eigenvalues $\{1, 3\}$, we don't need to find a *range* for the largest eigenvalue of $A+B$. We know *exactly* what it is: $5 + \lambda_{\text{max}}(B) = 5+3=8$ .
+In this case, Weyl's inequality doesn't just give a bound; it collapses to a precise prediction. If we are told that a $2 \times 2$ matrix $A$ has eigenvalues $\{5, 5\}$, we know immediately that $A=5I$. If we then add a matrix $B$ with eigenvalues $\{1, 3\}$, we don't need to find a *range* for the largest eigenvalue of $A+B$. We know *exactly* what it is: $5 + \lambda_{\text{max}}(B) = 5+3=8$ [@problem_id:1110884].
 
 This is a beautiful lesson. Weyl's inequalities provide a powerful and general framework for constraining the unknown. They describe the universal rules governing how systems combine. But within this general framework, when a system possesses a high degree of symmetry, the uncertainty vanishes, and the bounds of the inequality sharpen into the certainty of an equation. The rules of the dance are so strict that there is only one possible step.

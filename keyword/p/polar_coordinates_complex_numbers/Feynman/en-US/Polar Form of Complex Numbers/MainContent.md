@@ -1,7 +1,7 @@
 ## Introduction
-Complex numbers, often introduced in the rectangular form $z = a + bi$, provide a powerful framework for solving equations that are impossible in the [real number system](@article_id:157280). While this form is straightforward for addition and subtraction, it obscures the geometric meaning of multiplication, reducing it to a seemingly arbitrary algebraic rule. This gap in understanding poses a significant challenge: how can we visualize one of the most fundamental operations in a way that is as intuitive as the operations themselves?
+Complex numbers, often introduced in the rectangular form $z = a + bi$, provide a powerful framework for solving equations that are impossible in the [real number system](@keyword=real_number_system|lang=en-US|style=Feynman). While this form is straightforward for addition and subtraction, it obscures the geometric meaning of multiplication, reducing it to a seemingly arbitrary algebraic rule. This gap in understanding poses a significant challenge: how can we visualize one of the most fundamental operations in a way that is as intuitive as the operations themselves?
 
-This article addresses this challenge by introducing a new perspective: the [polar form of complex numbers](@article_id:178517). By representing numbers by their distance and direction instead of their rectangular coordinates, we unlock a profound geometric insight. The following chapters will guide you through this transformative concept. First, under "Principles and Mechanisms," we will explore the foundations of the polar form, the power of Euler's formula, and how it elegantly transforms multiplication and division into simple acts of scaling and rotation. Then, in "Applications and Interdisciplinary Connections," we will journey through various fields—from engineering and linear algebra to physics—to witness how this single idea provides a powerful, unified language for describing phenomena involving rotation, oscillation, and waves.
+This article addresses this challenge by introducing a new perspective: the [polar form of complex numbers](@keyword=polar_form_of_complex_numbers|lang=en-US|style=Feynman). By representing numbers by their distance and direction instead of their rectangular coordinates, we unlock a profound geometric insight. The following chapters will guide you through this transformative concept. First, under "Principles and Mechanisms," we will explore the foundations of the polar form, the power of Euler's formula, and how it elegantly transforms multiplication and division into simple acts of scaling and rotation. Then, in "Applications and Interdisciplinary Connections," we will journey through various fields—from engineering and linear algebra to physics—to witness how this single idea provides a powerful, unified language for describing phenomena involving rotation, oscillation, and waves.
 
 ## Principles and Mechanisms
 
@@ -15,7 +15,7 @@ This is often the case in physics and mathematics. The way you choose to describ
 
 ### A New Way of Seeing: Distance and Direction
 
-Let's go back to our treasure map. Instead of "paces east" and "paces north," what if we said, "From the old oak tree, walk 50 paces in the direction of the rising sun"? This is the **[polar form](@article_id:167918)**. We specify a distance from the origin (the radius, $r$) and an angle of direction ($\theta$). Any point in the plane can be described this way. The point $(3, 4)$ in the rectangular system is the same as the point with distance $r = \sqrt{3^2 + 4^2} = 5$ and angle $\theta = \arctan(4/3)$.
+Let's go back to our treasure map. Instead of "paces east" and "paces north," what if we said, "From the old oak tree, walk 50 paces in the direction of the rising sun"? This is the **[polar form](@keyword=polar_form|lang=en-US|style=Feynman)**. We specify a distance from the origin (the radius, $r$) and an angle of direction ($\theta$). Any point in the plane can be described this way. The point $(3, 4)$ in the rectangular system is the same as the point with distance $r = \sqrt{3^2 + 4^2} = 5$ and angle $\theta = \arctan(4/3)$.
 
 This might seem like just a change of language, but it's a profound shift in worldview. We're no longer thinking in terms of a rigid grid but in terms of circles and rays emanating from a central point. This perspective is tailor-made for describing things that spin or spiral or radiate outwards—phenomena that are everywhere in the natural world.
 
@@ -29,7 +29,7 @@ $$
 
 Don't let the strange exponent $i$ scare you. Think of $\exp(i\theta)$ as a command, a recipe for generating a point on the **unit circle** (a circle with radius 1). It says: "Start at the number 1 on the real axis, and rotate counter-clockwise by an angle $\theta$." The final coordinates will be $(\cos\theta, \sin\theta)$, which corresponds to the complex number $\cos\theta + i\sin\theta$.
 
-With this, any complex number $z$ can be written in its glorious [polar form](@article_id:167918). If it's at a distance $r$ and angle $\theta$, it's just the point on the unit circle at angle $\theta$, scaled up by a factor of $r$:
+With this, any complex number $z$ can be written in its glorious [polar form](@keyword=polar_form|lang=en-US|style=Feynman). If it's at a distance $r$ and angle $\theta$, it's just the point on the unit circle at angle $\theta$, scaled up by a factor of $r$:
 
 $$
 z = r(\cos\theta + i\sin\theta) = r\exp(i\theta)
@@ -50,11 +50,11 @@ Look at what happened! The messy, opaque formula from the rectangular world has 
 1.  **Multiply their moduli (distances):** The new distance is $r_1 r_2$.
 2.  **Add their arguments (angles):** The new direction is $\theta_1 + \theta_2$.
 
-Multiplication is just a combination of scaling and rotation! This is the fundamental mechanism. For example, if we multiply a number at [polar coordinates](@article_id:158931) $(5/2, 2\pi/3)$ by another at $(6, 5\pi/4)$, the result is a new number at a distance of $5/2 \times 6 = 15$ and an angle of $2\pi/3 + 5\pi/4 = 23\pi/12$ . It's that easy.
+Multiplication is just a combination of scaling and rotation! This is the fundamental mechanism. For example, if we multiply a number at [polar coordinates](@keyword=polar_coordinates|lang=en-US|style=Feynman) $(5/2, 2\pi/3)$ by another at $(6, 5\pi/4)$, the result is a new number at a distance of $5/2 \times 6 = 15$ and an angle of $2\pi/3 + 5\pi/4 = 23\pi/12$ [@problem_id:2148473]. It's that easy.
 
-This also gives us a clear picture of division. To divide $z_1$ by $z_2$, you **divide the moduli** and **subtract the angles**. This makes finding the inverse of a number trivial: the inverse of $z = r\exp(i\theta)$ is simply $z^{-1} = (1/r)\exp(-i\theta)$. It's a point at the reciprocal distance, rotated by the opposite angle .
+This also gives us a clear picture of division. To divide $z_1$ by $z_2$, you **divide the moduli** and **subtract the angles**. This makes finding the inverse of a number trivial: the inverse of $z = r\exp(i\theta)$ is simply $z^{-1} = (1/r)\exp(-i\theta)$. It's a point at the reciprocal distance, rotated by the opposite angle [@problem_id:1806537].
 
-This geometric insight allows us to answer conceptual questions almost instantly. When is the quotient $z_1/z_2$ a positive real number? A positive real number is any number with an argument of $0$ (or $2\pi, 4\pi, \dots$). For the quotient's argument to be zero, we need $\theta_1 - \theta_2 = 0$, which means $\theta_1 = \theta_2$. Geometrically, this says that the two points $P_1$ and $P_2$ must lie on the same ray from the origin . No complicated algebra needed, just a clear picture.
+This geometric insight allows us to answer conceptual questions almost instantly. When is the quotient $z_1/z_2$ a positive real number? A positive real number is any number with an argument of $0$ (or $2\pi, 4\pi, \dots$). For the quotient's argument to be zero, we need $\theta_1 - \theta_2 = 0$, which means $\theta_1 = \theta_2$. Geometrically, this says that the two points $P_1$ and $P_2$ must lie on the same ray from the origin [@problem_id:2242841]. No complicated algebra needed, just a clear picture.
 
 ### The Elegant Dance of Powers and Roots
 
@@ -64,9 +64,9 @@ $$
 z^n = (r\exp(i\theta))^n = r^n \exp(in\theta)
 $$
 
-This is incredibly powerful. Imagine an animator creating a spiraling pattern. They start with a point $P_0$ at $(4, 0)$. In each step, they want to double its distance from the origin and rotate it by $60^\circ$ counter-clockwise. This is exactly what multiplying by the complex number $w = 2\exp(i\pi/3)$ does. After five steps, the new point $P_5$ is simply the original point $P_0$ (represented by the complex number $z_0 = 4$) multiplied by $w^5$. The calculation is a breeze: $z_5 = z_0 w^5 = 4 \times (2\exp(i\pi/3))^5 = 4 \times 32\exp(i5\pi/3) = 128\exp(i5\pi/3)$. Converting this back to rectangular coordinates gives the final position without having to track each step individually . This is also why calculating something like $(2\exp(i2\pi/3))^3$ is so much easier than expanding $(2(-1/2 + i\sqrt{3}/2))^3$ .
+This is incredibly powerful. Imagine an animator creating a spiraling pattern. They start with a point $P_0$ at $(4, 0)$. In each step, they want to double its distance from the origin and rotate it by $60^\circ$ counter-clockwise. This is exactly what multiplying by the complex number $w = 2\exp(i\pi/3)$ does. After five steps, the new point $P_5$ is simply the original point $P_0$ (represented by the complex number $z_0 = 4$) multiplied by $w^5$. The calculation is a breeze: $z_5 = z_0 w^5 = 4 \times (2\exp(i\pi/3))^5 = 4 \times 32\exp(i5\pi/3) = 128\exp(i5\pi/3)$. Converting this back to rectangular coordinates gives the final position without having to track each step individually [@problem_id:2258329]. This is also why calculating something like $(2\exp(i2\pi/3))^3$ is so much easier than expanding $(2(-1/2 + i\sqrt{3}/2))^3$ [@problem_id:2240230].
 
-The true magic, however, appears when we go in reverse and ask: what are the $n$-th roots of a complex number? Let's try to find the square roots of $w = -4 + 4i\sqrt{3}$ . Instead of a messy algebraic approach, let's use our new perspective. First, we find the polar form of $w$. Its distance is $|w| = \sqrt{(-4)^2 + (4\sqrt{3})^2} = \sqrt{16+48} = 8$. Its angle is $\theta = 2\pi/3$. So, $w = 8\exp(i2\pi/3)$.
+The true magic, however, appears when we go in reverse and ask: what are the $n$-th roots of a complex number? Let's try to find the square roots of $w = -4 + 4i\sqrt{3}$ [@problem_id:2226949]. Instead of a messy algebraic approach, let's use our new perspective. First, we find the polar form of $w$. Its distance is $|w| = \sqrt{(-4)^2 + (4\sqrt{3})^2} = \sqrt{16+48} = 8$. Its angle is $\theta = 2\pi/3$. So, $w = 8\exp(i2\pi/3)$.
 
 We are looking for a number $z = r\exp(i\phi)$ such that $z^2 = w$. This means $r^2\exp(i2\phi) = 8\exp(i2\pi/3)$.
 Comparing the moduli gives $r^2=8$, so $r=\sqrt{8}=2\sqrt{2}$.
@@ -79,11 +79,11 @@ $$
 z_k = \sqrt[n]{R} \exp\left(i\frac{\Theta + 2k\pi}{n}\right) \quad \text{for } k = 0, 1, 2, \dots, n-1
 $$
 
-Geometrically, the $n$ roots all lie on a circle of radius $\sqrt[n]{R}$, and they form the vertices of a regular $n$-sided polygon. For instance, the three solutions to $z^3 = -8i$ form a perfect equilateral triangle. This triangle is just a scaled (by a factor of $2$, the cube root of $|-8i|=8$) and rotated version of the triangle formed by the 3rd roots of unity . This underlying geometric order is a direct consequence of the polar representation.
+Geometrically, the $n$ roots all lie on a circle of radius $\sqrt[n]{R}$, and they form the vertices of a regular $n$-sided polygon. For instance, the three solutions to $z^3 = -8i$ form a perfect equilateral triangle. This triangle is just a scaled (by a factor of $2$, the cube root of $|-8i|=8$) and rotated version of the triangle formed by the 3rd roots of unity [@problem_id:1399133]. This underlying geometric order is a direct consequence of the polar representation.
 
 ### The Right Tool for the Job
 
-The polar form is not just an alternative; it's a lens that reveals the hidden structure of complex operations. Consider a seemingly nasty equation like $z|z| = \sqrt{2}(1+i)$ . Trying to solve this by substituting $z=x+iy$ leads to a tangled web of coupled equations in $x$ and $y$.
+The polar form is not just an alternative; it's a lens that reveals the hidden structure of complex operations. Consider a seemingly nasty equation like $z|z| = \sqrt{2}(1+i)$ [@problem_id:898775]. Trying to solve this by substituting $z=x+iy$ leads to a tangled web of coupled equations in $x$ and $y$.
 
 But watch what happens when we switch to the polar perspective. Let $z = r\exp(i\theta)$. Then $|z|=r$. The equation becomes:
 

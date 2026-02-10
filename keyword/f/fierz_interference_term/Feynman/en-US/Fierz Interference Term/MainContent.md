@@ -3,7 +3,7 @@ The Standard Model of particle physics stands as one of science's most successfu
 
 ## Principles and Mechanisms
 
-Now that we have a sense of the quest—the search for subtle cracks in our current understanding of the universe—let's roll up our sleeves and look at the machinery underneath. How does this search work in practice? It turns out to be a beautiful story where abstract mathematics, the kind that describes the very fabric of spacetime and matter, leaves a tangible fingerprint on a measurable physical process. Our journey will take us from the grammar of quantum fields to the [energy spectrum](@article_id:181286) of a decaying nucleus.
+Now that we have a sense of the quest—the search for subtle cracks in our current understanding of the universe—let's roll up our sleeves and look at the machinery underneath. How does this search work in practice? It turns out to be a beautiful story where abstract mathematics, the kind that describes the very fabric of spacetime and matter, leaves a tangible fingerprint on a measurable physical process. Our journey will take us from the grammar of quantum fields to the [energy spectrum](@keyword=energy_spectrum|lang=en-US|style=Feynman) of a decaying nucleus.
 
 ### The Grammar of Interaction
 
@@ -19,15 +19,15 @@ $$
 (\bar{\psi}_1 \Gamma_A \psi_2)(\bar{\psi}_3 \Gamma_B \psi_4) = \sum_{I,J} C_{IJ} (\bar{\psi}_1 \Gamma_I \psi_4)(\bar{\psi}_3 \Gamma_J \psi_2)
 $$
 
-The coefficients $C_{IJ}$ are not arbitrary; they are fixed numbers determined by the algebra of the gamma matrices. What is fascinating is that these rules reveal a deep underlying structure. Sometimes, a proposed rearrangement is simply impossible—the coefficient turns out to be exactly zero! For example, if you try to Fierz-transform a product of a scalar and a pseudoscalar current into a vector-vector current, the rules of the game, derived from trace calculations over [gamma matrices](@article_id:146906), tell you the coefficient is zero. The rearrangement simply doesn't exist in the expansion . Likewise, certain other transformations, such as attempting to generate a "[pseudotensor](@article_id:192554)" structure from a vector-axial product, are also forbidden . This isn't a coincidence; it's a reflection of [fundamental symmetries](@article_id:160762), such as those related to [chirality](@article_id:143611) (the "handedness" of particles), which can forbid certain interactions from interfering with each other .
+The coefficients $C_{IJ}$ are not arbitrary; they are fixed numbers determined by the algebra of the gamma matrices. What is fascinating is that these rules reveal a deep underlying structure. Sometimes, a proposed rearrangement is simply impossible—the coefficient turns out to be exactly zero! For example, if you try to Fierz-transform a product of a scalar and a pseudoscalar current into a vector-vector current, the rules of the game, derived from trace calculations over [gamma matrices](@keyword=gamma_matrices|lang=en-US|style=Feynman), tell you the coefficient is zero. The rearrangement simply doesn't exist in the expansion [@problem_id:1103264]. Likewise, certain other transformations, such as attempting to generate a "[pseudotensor](@keyword=pseudotensor|lang=en-US|style=Feynman)" structure from a vector-axial product, are also forbidden [@problem_id:1103169]. This isn't a coincidence; it's a reflection of [fundamental symmetries](@keyword=fundamental_symmetries|lang=en-US|style=Feynman), such as those related to [chirality](@keyword=chirality|lang=en-US|style=Feynman) (the "handedness" of particles), which can forbid certain interactions from interfering with each other [@problem_id:200416].
 
 ### The Signature of Interference in Beta Decay
 
-So, we have this powerful mathematical tool. How does it connect to the real world? Its most famous application is in the study of nuclear [beta decay](@article_id:142410), where it gives rise to the **Fierz interference term**.
+So, we have this powerful mathematical tool. How does it connect to the real world? Its most famous application is in the study of nuclear [beta decay](@keyword=beta_decay|lang=en-US|style=Feynman), where it gives rise to the **Fierz interference term**.
 
-Let's imagine that the [weak force](@article_id:157620) isn't purely V-A. Suppose there's a small "contamination" from a Scalar (S) interaction, or a Tensor (T) one, arising from some new physics beyond the Standard Model. The total interaction is then a sum, a "superposition," of these different types. Just like overlapping waves on a pond, these different interaction types can interfere with each other. The Fierz identity is the key that allows us to calculate this interference.
+Let's imagine that the [weak force](@keyword=weak_force|lang=en-US|style=Feynman) isn't purely V-A. Suppose there's a small "contamination" from a Scalar (S) interaction, or a Tensor (T) one, arising from some new physics beyond the Standard Model. The total interaction is then a sum, a "superposition," of these different types. Just like overlapping waves on a pond, these different interaction types can interfere with each other. The Fierz identity is the key that allows us to calculate this interference.
 
-When all the dust settles, this interference manifests as a small modification to the [energy spectrum](@article_id:181286) of the electron emitted in beta decay. The number of electrons detected at a given energy $E_e$ gets modified by a factor:
+When all the dust settles, this interference manifests as a small modification to the [energy spectrum](@keyword=energy_spectrum|lang=en-US|style=Feynman) of the electron emitted in beta decay. The number of electrons detected at a given energy $E_e$ gets modified by a factor:
 
 $$
 \left(1 + b \frac{m_e c^2}{E_e}\right)
@@ -39,7 +39,7 @@ Here, $m_e$ is the electron mass, and $b$ is the famous **Fierz interference ter
 
 So, what determines the value of $b$? It's not a new fundamental constant of nature. Rather, it's a composite parameter that depends on two main things: the strengths of the fundamental interactions and the properties of the specific nucleus that is decaying.
 
-Let's look at its structure, which we can derive directly from the theory . The Fierz term $b$ is essentially a ratio:
+Let's look at its structure, which we can derive directly from the theory [@problem_id:384495]. The Fierz term $b$ is essentially a ratio:
 
 $$
 b = \frac{\text{Interference Part}}{\text{Main Decay Part}}
@@ -53,16 +53,16 @@ But there's another crucial ingredient. Nuclear beta decays come in two main "al
 *   **Fermi transitions**, where the spins of the proton and neutron that interconvert are aligned. These are sensitive to Scalar and Vector interactions.
 *   **Gamow-Teller transitions**, where the spins flip. These are sensitive to Axial-vector and Tensor interactions.
 
-Most decays are a mixture of the two. The Fierz term elegantly incorporates this nuclear physics. For a mixed transition, the formula for $b$ takes the form :
+Most decays are a mixture of the two. The Fierz term elegantly incorporates this nuclear physics. For a mixed transition, the formula for $b$ takes the form [@problem_id:384495]:
 
 $$
 b = 2 \frac{C_S C_V + C_A C_T R}{ (C_S^2 + C_V^2) + (C_A^2 + C_T^2) R }
 $$
 
-Here, $R$ is the ratio of the probabilities for the decay to proceed through a Gamow-Teller versus a Fermi channel, $R = |M_{GT}|^2 / |M_F|^2$. This equation is remarkable. It shows how the search for fundamental couplings ($C_S, C_T$) is inextricably linked to the detailed [nuclear structure](@article_id:160972) ($R$) of the atom we choose to study. For a pure Gamow-Teller decay, for instance, the Fermi matrix element is zero ($|M_F|^2=0$), $R$ goes to infinity, and the formula simplifies beautifully to depend only on the A and T couplings . Conversely, for a hypothetical decay involving only S and V couplings in a Fermi transition, the Fierz term depends only on $g_S$ and $g_V$ . By studying different types of decays (with different values of $R$), physicists can untangle the contributions from different potential new interactions.
+Here, $R$ is the ratio of the probabilities for the decay to proceed through a Gamow-Teller versus a Fermi channel, $R = |M_{GT}|^2 / |M_F|^2$. This equation is remarkable. It shows how the search for fundamental couplings ($C_S, C_T$) is inextricably linked to the detailed [nuclear structure](@keyword=nuclear_structure|lang=en-US|style=Feynman) ($R$) of the atom we choose to study. For a pure Gamow-Teller decay, for instance, the Fermi matrix element is zero ($|M_F|^2=0$), $R$ goes to infinity, and the formula simplifies beautifully to depend only on the A and T couplings [@problem_id:416240]. Conversely, for a hypothetical decay involving only S and V couplings in a Fermi transition, the Fierz term depends only on $g_S$ and $g_V$ [@problem_id:1216596]. By studying different types of decays (with different values of $R$), physicists can untangle the contributions from different potential new interactions.
 
 ### The Experimentalist's Clue
 
 The true beauty of the Fierz term is its clear, unmistakable experimental signature. The correction is inversely proportional to the electron's energy, $E_e$. This means its effect is most pronounced at *low energies*. A non-zero $b$ will cause a characteristic distortion—a tilt or slope—at the low-energy end of the beta spectrum. It's a subtle effect, but with modern precision experiments, it's a searchable one. Experimentalists can painstakingly measure the shape of the spectrum and fit it to this functional form to extract a value for $b$.
 
-This distortion of the spectrum shape also has a knock-on effect: it changes the total number of decays that happen per second, i.e., the total decay rate . Every non-zero measurement of $b$, or even a stringent upper limit, provides a powerful constraint on what kind of new physics might be lurking just beyond the reach of our current theories, waiting to be discovered. It's a testament to how the most abstract rules of quantum field theory can leave a clue in a place as "down-to-earth" as the decay of an atomic nucleus.
+This distortion of the spectrum shape also has a knock-on effect: it changes the total number of decays that happen per second, i.e., the total decay rate [@problem_id:391290]. Every non-zero measurement of $b$, or even a stringent upper limit, provides a powerful constraint on what kind of new physics might be lurking just beyond the reach of our current theories, waiting to be discovered. It's a testament to how the most abstract rules of quantum field theory can leave a clue in a place as "down-to-earth" as the decay of an atomic nucleus.

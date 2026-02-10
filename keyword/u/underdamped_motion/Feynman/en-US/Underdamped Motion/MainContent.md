@@ -9,19 +9,19 @@ Imagine plucking a guitar string. It leaps into motion, vibrating back and forth
 
 ### The Universal Equation of Motion
 
-Remarkably, a vast array of physical systems, from the swaying of a skyscraper in the wind to the trembling of a microscopic [cantilever](@article_id:273166) in an [atomic force microscope](@article_id:162917), can be described by the same fundamental story. This story is told in the language of mathematics, through a beautiful and powerful second-order linear differential equation:
+Remarkably, a vast array of physical systems, from the swaying of a skyscraper in the wind to the trembling of a microscopic [cantilever](@keyword=cantilever|lang=en-US|style=Feynman) in an [atomic force microscope](@keyword=atomic_force_microscope|lang=en-US|style=Feynman), can be described by the same fundamental story. This story is told in the language of mathematics, through a beautiful and powerful second-order linear differential equation:
 
 $$
 m\frac{d^2x}{dt^2} + c\frac{dx}{dt} + kx = 0
 $$
 
-Let’s not be intimidated by the symbols. This equation tells a very physical tale. The term $kx$ represents the restoring force—like the stiffness of a spring—always trying to pull the system, with displacement $x$, back to its [equilibrium position](@article_id:271898) ($x=0$). The constant $k$ is its strength, or its "stubbornness." The term $m\frac{d^2x}{dt^2}$ is Newton's famous second law, where $m$ is the mass, representing the system's inertia—its tendency to keep moving. And finally, the crucial term $c\frac{dx}{dt}$ represents the damping or friction, a force that opposes the velocity and tries to bring everything to a halt. The constant $c$ measures the strength of this drag.
+Let’s not be intimidated by the symbols. This equation tells a very physical tale. The term $kx$ represents the restoring force—like the stiffness of a spring—always trying to pull the system, with displacement $x$, back to its [equilibrium position](@keyword=equilibrium_position|lang=en-US|style=Feynman) ($x=0$). The constant $k$ is its strength, or its "stubbornness." The term $m\frac{d^2x}{dt^2}$ is Newton's famous second law, where $m$ is the mass, representing the system's inertia—its tendency to keep moving. And finally, the crucial term $c\frac{dx}{dt}$ represents the damping or friction, a force that opposes the velocity and tries to bring everything to a halt. The constant $c$ measures the strength of this drag.
 
 ### A Fork in the Road: The Damping Ratio
 
-The fate of our oscillating system—how it behaves after being disturbed—depends entirely on the outcome of the battle between the restorative springiness ($k$) and the dissipative damping ($c$). Imagine you are an engineer designing a seismic damper for a building . This damper can be modeled by our universal equation. You find that by adjusting the stiffness parameter, $k$, you can fundamentally change the building's response to a tremor. Below a certain critical stiffness, the building just slowly oozes back to its original position after a shake—no oscillation at all. But if you increase the stiffness just past that critical point, the building's response suddenly changes: it now sways back and forth in a decaying oscillation before settling down.
+The fate of our oscillating system—how it behaves after being disturbed—depends entirely on the outcome of the battle between the restorative springiness ($k$) and the dissipative damping ($c$). Imagine you are an engineer designing a seismic damper for a building [@problem_id:2165512]. This damper can be modeled by our universal equation. You find that by adjusting the stiffness parameter, $k$, you can fundamentally change the building's response to a tremor. Below a certain critical stiffness, the building just slowly oozes back to its original position after a shake—no oscillation at all. But if you increase the stiffness just past that critical point, the building's response suddenly changes: it now sways back and forth in a decaying oscillation before settling down.
 
-This dramatic change in behavior highlights a critical threshold. Physicists and engineers have captured the essence of this balance in a single, elegant, dimensionless number: the **damping ratio**, denoted by the Greek letter zeta, $\zeta$. It is formally defined as the ratio of the actual damping coefficient, $c$, to the *[critical damping](@article_id:154965) coefficient*, $c_{crit} = 2\sqrt{mk}$, which is the precise amount of damping needed to return to equilibrium as fast as possible *without* oscillating.
+This dramatic change in behavior highlights a critical threshold. Physicists and engineers have captured the essence of this balance in a single, elegant, dimensionless number: the **damping ratio**, denoted by the Greek letter zeta, $\zeta$. It is formally defined as the ratio of the actual damping coefficient, $c$, to the *[critical damping](@keyword=critical_damping|lang=en-US|style=Feynman) coefficient*, $c_{crit} = 2\sqrt{mk}$, which is the precise amount of damping needed to return to equilibrium as fast as possible *without* oscillating.
 
 $$
 \zeta = \frac{c}{c_{crit}} = \frac{c}{2\sqrt{mk}}
@@ -35,7 +35,7 @@ The value of $\zeta$ determines the character of the motion:
 
 ### Anatomy of a Decaying Wave
 
-For our underdamped case, the solution to the universal equation takes the form of a beautiful decaying sinusoid :
+For our underdamped case, the solution to the universal equation takes the form of a beautiful decaying sinusoid [@problem_id:2178368]:
 
 $$
 x(t) = A_0 e^{-\sigma t} \cos(\omega_d t + \phi)
@@ -51,29 +51,29 @@ $$
 \sigma = \zeta \omega_n
 $$
 
-This [decay rate](@article_id:156036) has a very real, tangible meaning. If you have a damped structure, you might want to know how long it takes for a vibration's amplitude to fall to just 1% of its initial value. By solving for time in the decay envelope equation, one finds that this time depends directly on the [decay rate](@article_id:156036) $\sigma$ . A larger $\zeta$ means a faster decay, and the oscillation dies out more quickly.
+This [decay rate](@keyword=decay_rate|lang=en-US|style=Feynman) has a very real, tangible meaning. If you have a damped structure, you might want to know how long it takes for a vibration's amplitude to fall to just 1% of its initial value. By solving for time in the decay envelope equation, one finds that this time depends directly on the [decay rate](@keyword=decay_rate|lang=en-US|style=Feynman) $\sigma$ [@problem_id:2165196]. A larger $\zeta$ means a faster decay, and the oscillation dies out more quickly.
 
 #### The Slowed Heartbeat: The Damped Frequency
 
-Now look at the cosine term, $\cos(\omega_d t + \phi)$. This is the "heartbeat" of the motion. Notice that the frequency is not the natural frequency $\omega_n$, but a new frequency, $\omega_d$, called the **damped natural frequency**. The damping, in its effort to slow things down, literally makes the oscillations take longer. The system is "heavier," sluggish. This observed frequency is always less than the natural frequency, and its relationship to $\omega_n$ is governed, once again, by our master parameter, $\zeta$  :
+Now look at the cosine term, $\cos(\omega_d t + \phi)$. This is the "heartbeat" of the motion. Notice that the frequency is not the natural frequency $\omega_n$, but a new frequency, $\omega_d$, called the **damped natural frequency**. The damping, in its effort to slow things down, literally makes the oscillations take longer. The system is "heavier," sluggish. This observed frequency is always less than the natural frequency, and its relationship to $\omega_n$ is governed, once again, by our master parameter, $\zeta$ [@problem_id:2743487] [@problem_id:1579834]:
 
 $$
 \omega_d = \omega_n \sqrt{1 - \zeta^2}
 $$
 
-This formula reveals something fascinating. As the damping $\zeta$ increases from 0, the damped frequency $\omega_d$ decreases. Let's consider an extreme case from a MEMS accelerometer design . Suppose an engineer wants to design a system where the oscillation period is ten times longer than it would be without damping. This means the damped frequency $\omega_d$ must be one-tenth of the natural frequency $\omega_n$. Plugging this into our formula reveals that the damping ratio $\zeta$ must be approximately $0.995$. This is incredibly close to the critical damping value of 1! It tells us that to slow the oscillation down that much, the damping has to be so strong that it has almost killed the oscillation entirely. The system is on the very brink of becoming overdamped.
+This formula reveals something fascinating. As the damping $\zeta$ increases from 0, the damped frequency $\omega_d$ decreases. Let's consider an extreme case from a MEMS accelerometer design [@problem_id:2167779]. Suppose an engineer wants to design a system where the oscillation period is ten times longer than it would be without damping. This means the damped frequency $\omega_d$ must be one-tenth of the natural frequency $\omega_n$. Plugging this into our formula reveals that the damping ratio $\zeta$ must be approximately $0.995$. This is incredibly close to the critical damping value of 1! It tells us that to slow the oscillation down that much, the damping has to be so strong that it has almost killed the oscillation entirely. The system is on the very brink of becoming overdamped.
 
 ### Quantifying the Dance
 
-We now have the tools to move beyond a qualitative description and precisely measure the characteristics of any [underdamped system](@article_id:178395). The beauty is that many key [performance metrics](@article_id:176830) depend only on the damping ratio, $\zeta$.
+We now have the tools to move beyond a qualitative description and precisely measure the characteristics of any [underdamped system](@keyword=underdamped_system|lang=en-US|style=Feynman). The beauty is that many key [performance metrics](@keyword=performance_metrics|lang=en-US|style=Feynman) depend only on the damping ratio, $\zeta$.
 
 #### How Many "Rings"?
 
-Consider two tiny, identical mechanical resonators . One operates in a near-vacuum ($\zeta_A = 0.02$), while the other operates in a viscous gas ($\zeta_B = 0.35$). If you "pluck" both with the same initial displacement, how much longer does the one in the vacuum "ring"? By calculating the number of oscillations each completes before its amplitude decays to a small fraction of the start, we find the resonator in the vacuum oscillates nearly 19 times more than its counterpart in the gas! This gives us a visceral feel for what a small damping ratio means: the system has very little dissipation and can sustain its oscillation for a long time.
+Consider two tiny, identical mechanical resonators [@problem_id:1567724]. One operates in a near-vacuum ($\zeta_A = 0.02$), while the other operates in a viscous gas ($\zeta_B = 0.35$). If you "pluck" both with the same initial displacement, how much longer does the one in the vacuum "ring"? By calculating the number of oscillations each completes before its amplitude decays to a small fraction of the start, we find the resonator in the vacuum oscillates nearly 19 times more than its counterpart in the gas! This gives us a visceral feel for what a small damping ratio means: the system has very little dissipation and can sustain its oscillation for a long time.
 
 #### The Energy Toll
 
-Damping is, fundamentally, a process of energy dissipation. With every swing, the system pays an "energy tax" to the [dissipative forces](@article_id:166476). What is the tax rate? Let's look at the fraction of [mechanical energy](@article_id:162495) lost in one full cycle of oscillation . One might expect this to depend on the mass, the stiffness, or how large the swing is. The astonishing answer is that it depends *only on the damping ratio $\zeta$*. The fractional energy loss per cycle is given by:
+Damping is, fundamentally, a process of energy dissipation. With every swing, the system pays an "energy tax" to the [dissipative forces](@keyword=dissipative_forces|lang=en-US|style=Feynman). What is the tax rate? Let's look at the fraction of [mechanical energy](@keyword=mechanical_energy|lang=en-US|style=Feynman) lost in one full cycle of oscillation [@problem_id:1567686]. One might expect this to depend on the mass, the stiffness, or how large the swing is. The astonishing answer is that it depends *only on the damping ratio $\zeta$*. The fractional energy loss per cycle is given by:
 
 $$
 \frac{\Delta E}{E} = 1 - \exp\left(-\frac{4\pi \zeta}{\sqrt{1-\zeta^2}}\right)
@@ -83,7 +83,7 @@ This is a profound statement of universality. A skyscraper swaying in the wind a
 
 #### The Price of Speed: Overshoot
 
-In many engineering applications, like [robotics](@article_id:150129) or flight control, we want a system to move to a new position as quickly as possible. An [underdamped system](@article_id:178395) gets there fast, but it pays a price: it **overshoots** the target before settling down. The amount of this overshoot is a critical performance metric. The **Percentage Overshoot (PO)** is defined as the maximum amount the system surpasses its final destination, expressed as a percentage of the final value. Once again, for a standard step input, the result is a beautiful function that depends only on $\zeta$ :
+In many engineering applications, like [robotics](@keyword=robotics|lang=en-US|style=Feynman) or flight control, we want a system to move to a new position as quickly as possible. An [underdamped system](@keyword=underdamped_system|lang=en-US|style=Feynman) gets there fast, but it pays a price: it **overshoots** the target before settling down. The amount of this overshoot is a critical performance metric. The **Percentage Overshoot (PO)** is defined as the maximum amount the system surpasses its final destination, expressed as a percentage of the final value. Once again, for a standard step input, the result is a beautiful function that depends only on $\zeta$ [@problem_id:1153005]:
 
 $$
 \text{PO} = 100 \exp\left(-\frac{\pi \zeta}{\sqrt{1 - \zeta^2}}\right)

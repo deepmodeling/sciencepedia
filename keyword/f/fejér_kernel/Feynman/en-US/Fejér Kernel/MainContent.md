@@ -1,5 +1,5 @@
 ## Introduction
-The theory of Fourier analysis provides a powerful lens through which to view the world, allowing us to decompose complex signals and functions into a spectrum of simple sine waves. A fundamental challenge, however, arises when we attempt to reconstruct a function from a finite portion of this spectrum. A naive approach of simply summing the first several components often leads to frustrating and persistent errors, most notably the [ringing artifact](@article_id:165856) known as the Gibbs phenomenon. This issue reveals a subtle flaw in our initial reconstruction tool and highlights a knowledge gap: how can we reliably reassemble a function from its Fourier components without introducing these distortions?
+The theory of Fourier analysis provides a powerful lens through which to view the world, allowing us to decompose complex signals and functions into a spectrum of simple sine waves. A fundamental challenge, however, arises when we attempt to reconstruct a function from a finite portion of this spectrum. A naive approach of simply summing the first several components often leads to frustrating and persistent errors, most notably the [ringing artifact](@keyword=ringing_artifact|lang=en-US|style=Feynman) known as the Gibbs phenomenon. This issue reveals a subtle flaw in our initial reconstruction tool and highlights a knowledge gap: how can we reliably reassemble a function from its Fourier components without introducing these distortions?
 
 This article introduces the elegant solution to this problem: the Fejér kernel. We will embark on a journey to understand this remarkable mathematical object, revealing how a simple yet profound insight transforms a problematic series into a beautifully convergent one. In the chapter on "Principles and Mechanisms," we will dissect the shortcomings of the standard Dirichlet kernel, uncover the genius of Cesàro summation, and explore the superior properties of the Fejér kernel that allow it to conquer the Gibbs phenomenon. Following this, the chapter on "Applications and Interdisciplinary Connections" will broaden our perspective, showcasing how the Fejér kernel transcends its origins to become a vital tool in signal processing, a key concept in physics, and even an object of study in pure mathematics, demonstrating its unifying power across scientific disciplines.
 
@@ -9,7 +9,7 @@ Imagine you have a beautiful, complex musical chord. The theory of Fourier analy
 
 ### The Peril of the Perfect Cutoff: Meet the Dirichlet Kernel
 
-Our first, most naive attempt to rebuild a function from its Fourier components is to simply add up the terms from the lowest frequency up to some cutoff, say $N$. This process, mathematically, is equivalent to taking our original function and "convolving" it with a special function called the **Dirichlet kernel**, $D_N(t)$. For a [periodic function](@article_id:197455), this kernel is given by:
+Our first, most naive attempt to rebuild a function from its Fourier components is to simply add up the terms from the lowest frequency up to some cutoff, say $N$. This process, mathematically, is equivalent to taking our original function and "convolving" it with a special function called the **Dirichlet kernel**, $D_N(t)$. For a [periodic function](@keyword=periodic_function|lang=en-US|style=Feynman), this kernel is given by:
 
 $$
 D_N(t) = \sum_{k=-N}^{N} e^{ikt} = \frac{\sin\left(\left(N + \frac{1}{2}\right)t\right)}{\sin\left(\frac{t}{2}\right)}
@@ -35,7 +35,7 @@ This seemingly minor tweak—this act of averaging—has a miraculous effect. Th
 
 ### Anatomy of an Ideal Smoother: The Properties of the Fejér Kernel
 
-By performing the summation (a lovely exercise in telescoping trigonometric series), we can find a compact, [closed-form expression](@article_id:266964) for the Fejér kernel:
+By performing the summation (a lovely exercise in telescoping trigonometric series), we can find a compact, [closed-form expression](@keyword=closed_form_expression|lang=en-US|style=Feynman) for the Fejér kernel:
 
 $$
 F_N(t) = \frac{1}{N+1} \left( \frac{\sin\left(\frac{N+1}{2}t\right)}{\sin\left(\frac{t}{2}\right)} \right)^2
@@ -43,7 +43,7 @@ $$
 
 Looking at this formula, one property immediately jumps out: because of the squared term, **the Fejér kernel is always non-negative**. $F_N(t) \ge 0$ for all $t$. This isn't just a coincidence of this particular formula; one can also show that the Fejér kernel is proportional to the squared magnitude of a different complex sum, reinforcing the idea that its positivity is fundamental to its structure. This single property is the magic bullet that slays the Gibbs phenomenon.
 
-The Fejér kernel retains the good properties of the Dirichlet kernel while discarding the bad. We can summarize the key features of $F_N(t)$ that make it an "[approximation to the identity](@article_id:158257)":
+The Fejér kernel retains the good properties of the Dirichlet kernel while discarding the bad. We can summarize the key features of $F_N(t)$ that make it an "[approximation to the identity](@keyword=approximation_to_the_identity|lang=en-US|style=Feynman)":
 
 1.  **Positivity:** $F_N(t) \ge 0$ for all $t$. As we saw, this prevents overshoot.
 
@@ -53,9 +53,9 @@ The Fejér kernel retains the good properties of the Dirichlet kernel while disc
 
 ### The Ghost Vanishes: Conquering the Gibbs Phenomenon
 
-With these properties in hand, let's return to our square wave. When we reconstruct it using the Fejér kernel, the [convolution integral](@article_id:155371) becomes a weighted average where all the weights (the values of $F_N(t)$) are positive. It's a fundamental mathematical principle that a weighted average of a set of numbers can never be greater than the largest number in the set, nor smaller than the smallest.
+With these properties in hand, let's return to our square wave. When we reconstruct it using the Fejér kernel, the [convolution integral](@keyword=convolution_integral|lang=en-US|style=Feynman) becomes a weighted average where all the weights (the values of $F_N(t)$) are positive. It's a fundamental mathematical principle that a weighted average of a set of numbers can never be greater than the largest number in the set, nor smaller than the smallest.
 
-Since the values of our square wave are only $-1$ and $+1$, any reconstruction formed by averaging these values must also lie between $-1$ and $+1$. Overshoot is mathematically impossible! The Gibbs phenomenon is completely vanquished. The Fejér averages provide a smooth transition across the jump that, while not perfectly sharp for any finite $N$, converges beautifully to the true function without any [ringing artifacts](@article_id:146683).
+Since the values of our square wave are only $-1$ and $+1$, any reconstruction formed by averaging these values must also lie between $-1$ and $+1$. Overshoot is mathematically impossible! The Gibbs phenomenon is completely vanquished. The Fejér averages provide a smooth transition across the jump that, while not perfectly sharp for any finite $N$, converges beautifully to the true function without any [ringing artifacts](@keyword=ringing_artifacts|lang=en-US|style=Feynman).
 
 This reveals a deep principle in analysis and signal processing. The Dirichlet kernel corresponds to using a sharp "brick-wall" filter in the frequency domain—we keep all frequencies up to $N$ and discard all others abruptly. This sharp cutoff in frequency causes ringing in the time domain. The Fejér kernel, on the other hand, corresponds to a gentler, triangular filter. Its Fourier coefficients are given by the elegant formula $c_k = 1 - \frac{|k|}{N+1}$ for $|k| \le N$ and $c_k = 0$ otherwise. Instead of an abrupt cutoff, it smoothly tapers the higher frequencies to zero. This gentle touch in the frequency domain is what produces the smooth, non-oscillatory behavior in the time domain.
 
@@ -63,9 +63,9 @@ This reveals a deep principle in analysis and signal processing. The Dirichlet k
 
 So what does this sequence of ever-taller, ever-narrower, non-negative functions with constant area represent? Where is this process leading? It is leading to one of the most powerful and abstract concepts in physics and engineering: the **Dirac delta distribution**, $\delta(t)$.
 
-The Dirac delta is not a function in the traditional sense. It's an idealized object imagined to be zero everywhere except at $t=0$, where it is infinitely tall, in such a way that its total integral is exactly 1. Its defining feature is the "[sifting property](@article_id:265168)": when you integrate it against any well-behaved test function $\phi(t)$, it plucks out the value of that function at a single point.
+The Dirac delta is not a function in the traditional sense. It's an idealized object imagined to be zero everywhere except at $t=0$, where it is infinitely tall, in such a way that its total integral is exactly 1. Its defining feature is the "[sifting property](@keyword=sifting_property|lang=en-US|style=Feynman)": when you integrate it against any well-behaved test function $\phi(t)$, it plucks out the value of that function at a single point.
 
-The sequence of Fejér kernels is a concrete, rigorous realization of this abstract idea. The three properties—positivity, normalization, and concentration—are precisely the mathematical requirements for a [sequence of functions](@article_id:144381) to converge to the Dirac delta. This means that for any continuous function $\phi(t)$, the following holds:
+The sequence of Fejér kernels is a concrete, rigorous realization of this abstract idea. The three properties—positivity, normalization, and concentration—are precisely the mathematical requirements for a [sequence of functions](@keyword=sequence_of_functions|lang=en-US|style=Feynman) to converge to the Dirac delta. This means that for any continuous function $\phi(t)$, the following holds:
 
 $$
 \lim_{N \to \infty} \frac{1}{2\pi}\int_{-\pi}^{\pi} \phi(t) F_N(t - t_0) dt = \phi(t_0)

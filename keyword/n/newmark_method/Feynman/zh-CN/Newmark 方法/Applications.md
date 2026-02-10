@@ -4,54 +4,54 @@
 
 ### 基石：守护我们的世界免受地震之害
 
-[时间积分方法](@article_id:296777)最深刻和至关重要的应用，或许在于[结构动力学](@article_id:351803)，特别是在地震工程中。想象一座摩天大楼、一座桥梁或一所医院。在肉眼看来，它是一个静态的、不可移动的庞然大物。但对工程师来说，它是一个活的实体，一个由质量（楼板、梁）、弹簧（柱子）和阻尼器（专门设备和材料固有属性）组成的复杂交响乐团，等待着被启动。当它脚下的大地开始震动时，这个乐团开始演奏，而这曲调可能关乎生死。
+[时间积分方法](@keyword=time_integration_methods|lang=zh-CN|style=Feynman)最深刻和至关重要的应用，或许在于[结构动力学](@keyword=structural_dynamics|lang=zh-CN|style=Feynman)，特别是在地震工程中。想象一座摩天大楼、一座桥梁或一所医院。在肉眼看来，它是一个静态的、不可移动的庞然大物。但对工程师来说，它是一个活的实体，一个由质量（楼板、梁）、弹簧（柱子）和阻尼器（专门设备和材料固有属性）组成的复杂交响乐团，等待着被启动。当它脚下的大地开始震动时，这个乐团开始演奏，而这曲调可能关乎生死。
 
-我们如何预测建筑物在地震中的舞蹈？我们不可能通过摇晃一座真实的摩天大楼直到它倒塌来进行测试。取而代之的是，我们建立一个*[数字孪生](@article_id:323264)体*。工程师们使用像有限元法这样的技术，将建筑物建模为一个由成千上万甚至数百万个相互连接的自由度组成的系统。其结果是一个庞大的方程组：$\mathbf{M}\ddot{\mathbf{u}} + \mathbf{C}\dot{\mathbf{u}} + \mathbf{K}\mathbf{u} = \mathbf{f}(t)$。在这里，激振函数 $\mathbf{f}(t)$ 不是直接的推或拉，而是地面本身的剧烈加速度，通过建筑基础传递。
+我们如何预测建筑物在地震中的舞蹈？我们不可能通过摇晃一座真实的摩天大楼直到它倒塌来进行测试。取而代之的是，我们建立一个*[数字孪生](@keyword=digital_twin|lang=zh-CN|style=Feynman)体*。工程师们使用像有限元法这样的技术，将建筑物建模为一个由成千上万甚至数百万个相互连接的自由度组成的系统。其结果是一个庞大的方程组：$\mathbf{M}\ddot{\mathbf{u}} + \mathbf{C}\dot{\mathbf{u}} + \mathbf{K}\mathbf{u} = \mathbf{f}(t)$。在这里，激振函数 $\mathbf{f}(t)$ 不是直接的推或拉，而是地面本身的剧烈加速度，通过建筑基础传递。
 
-这就是 Newmark 方法登场的地方，它不仅是一个工具，更是一个拯救生命的预言家。通过应用[平均加速度](@article_id:342640) Newmark 格式（$\gamma = 1/2, \beta = 1/4$），工程师们可以以毫秒为单位向[前推](@article_id:319122)进时间，计算结构每一部分的位移、速度和加速度 。因为这种特定的参数选择对于线性系统是[无条件稳定的](@article_id:306701)，所以模拟保持了稳健性和可靠性，免受数值爆炸的风险，让工程师能够专注于物理本身。这些模拟使得设计巧妙的保护系统成为可能，例如基础隔震，即将建筑物放置在一层柔性支座上，就像一个巨大的[减震器](@article_id:356831)。通过模拟有无此系统的响应，工程师们可以在施工开始前很久就证明，该建筑能够安然度过风暴，保护其中的生命和财产。
+这就是 Newmark 方法登场的地方，它不仅是一个工具，更是一个拯救生命的预言家。通过应用[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman) Newmark 格式（$\gamma = 1/2, \beta = 1/4$），工程师们可以以毫秒为单位向[前推](@keyword=pushforward|lang=zh-CN|style=Feynman)进时间，计算结构每一部分的位移、速度和加速度 [@problem_id:2446632]。因为这种特定的参数选择对于线性系统是[无条件稳定的](@keyword=unconditionally_stable|lang=zh-CN|style=Feynman)，所以模拟保持了稳健性和可靠性，免受数值爆炸的风险，让工程师能够专注于物理本身。这些模拟使得设计巧妙的保护系统成为可能，例如基础隔震，即将建筑物放置在一层柔性支座上，就像一个巨大的[减震器](@keyword=shock_absorber|lang=zh-CN|style=Feynman)。通过模拟有无此系统的响应，工程师们可以在施工开始前很久就证明，该建筑能够安然度过风暴，保护其中的生命和财产。
 
 ### 超越线性：模拟非线性世界
 
-当然，世界并非总是线性的。弹簧的拉力并不总是与你拉伸它的距离成正比。想想橡皮筋、我们身体里的软组织，或者超级英雄斗篷的戏剧性运动。这是*[非线性动力学](@article_id:301287)*的领域，正是在这里，Newmark 方法，特别是其隐式形式，展现了其真正的力量和复杂性。
+当然，世界并非总是线性的。弹簧的拉力并不总是与你拉伸它的距离成正比。想想橡皮筋、我们身体里的软组织，或者超级英雄斗篷的戏剧性运动。这是*[非线性动力学](@keyword=nonlinear_dynamics|lang=zh-CN|style=Feynman)*的领域，正是在这里，Newmark 方法，特别是其隐式形式，展现了其真正的力量和复杂性。
 
 当一个系统是非线性的时，其刚度 $\mathbf{K}$ 不再是一个常数矩阵，而是当前变形的函数，即 $\mathbf{K}(\mathbf{u})$。这带来了一个深刻的转折。在线性问题中，我们可以一次性组装我们的“有效刚度”矩阵并求解。在非线性问题中，游戏的规则每一步都在改变。
 
-隐式 Newmark 方法大胆地应对了这一挑战。在每个时间步，它不仅仅是计算未来，而是与未来进行*协商*。[运动方程](@article_id:349901)变成了一个复杂的非线性谜题，必须求解才能找到 $t_{n+1}$ 时刻的状态。解决这个谜题的标准方法是一种类似于引导式猜测的程序：牛顿-拉夫逊方法（[Newton-Raphson](@article_id:356378) method）。在每次猜测时，我们对问题进行[线性化](@article_id:331373)，形成一个代表系统瞬时属性的[切线刚度矩阵](@article_id:350027)，并求解一个修正量。我们迭代——猜测、检查、修正、重复——直到我们收敛到满足物理定律达到我们[期望](@article_id:311378)精度的解 。
+隐式 Newmark 方法大胆地应对了这一挑战。在每个时间步，它不仅仅是计算未来，而是与未来进行*协商*。[运动方程](@keyword=equations_of_motion|lang=zh-CN|style=Feynman)变成了一个复杂的非线性谜题，必须求解才能找到 $t_{n+1}$ 时刻的状态。解决这个谜题的标准方法是一种类似于引导式猜测的程序：牛顿-拉夫逊方法（[Newton-Raphson](@keyword=newton_raphson|lang=zh-CN|style=Feynman) method）。在每次猜测时，我们对问题进行[线性化](@keyword=linearization|lang=zh-CN|style=Feynman)，形成一个代表系统瞬时属性的[切线刚度矩阵](@keyword=tangent_stiffness_matrix|lang=zh-CN|style=Feynman)，并求解一个修正量。我们迭代——猜测、检查、修正、重复——直到我们收敛到满足物理定律达到我们[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)精度的解 [@problem_id:2545057]。
 
 这个迭代过程计算成本高昂，但它为我们换来了宝贵的东西：稳定性。它使我们能够采取比显式方法大得多的时间步长，而显式方法必须采取微小、谨慎的步长以避免数值混乱。这种权衡是许多现代模拟的核心。
 
-例如，在**[计算机图形学](@article_id:308496)**中，动画师需要为电影和视频游戏模拟布料、头发和软体的逼真运动。模拟必须稳定，并且必须跟上显示器的帧率，比如每秒 60 帧。隐式 Newmark 格式允许他们采取一个大的、稳定的 $1/60$ 秒的步长，即使对于会使显式方法瘫痪的非常刚硬的材料也是如此。尽管每一步都涉及求解一个大型[线性系统](@article_id:308264)（通常使用[预条件](@article_id:301646)共轭梯度法等迭代方法），但这通常是实时实现所需真实感的唯一可行方式 。
+例如，在**[计算机图形学](@keyword=computer_graphics|lang=zh-CN|style=Feynman)**中，动画师需要为电影和视频游戏模拟布料、头发和软体的逼真运动。模拟必须稳定，并且必须跟上显示器的帧率，比如每秒 60 帧。隐式 Newmark 格式允许他们采取一个大的、稳定的 $1/60$ 秒的步长，即使对于会使显式方法瘫痪的非常刚硬的材料也是如此。尽管每一步都涉及求解一个大型[线性系统](@keyword=linear_systems|lang=zh-CN|style=Feynman)（通常使用[预条件](@keyword=preconditioning|lang=zh-CN|style=Feynman)共轭梯度法等迭代方法），但这通常是实时实现所需真实感的唯一可行方式 [@problem_id:2446591]。
 
-同样的原理也延伸到力学中最困难的现象之一：**接触**。当两个物体碰撞时，它们的相互作用方式是极其非线性的。当它们分开时，它们之间的力为零；当它们接触时，力突然变得非常大。隐式 Newmark 框架足够强大以处理这种情况。“无穿透”条件以及[接触力](@article_id:344437)只能推不能拉的事实，被转化为一组代数不等式。然后，这些不等式在每个时间步被直接编织到牛顿-拉夫逊求解过程中，形成了所谓的半光滑牛顿法 。这种能力对于汽车碰撞模拟、虚拟手术训练器和机器人夹持器的设计至关重要。
+同样的原理也延伸到力学中最困难的现象之一：**接触**。当两个物体碰撞时，它们的相互作用方式是极其非线性的。当它们分开时，它们之间的力为零；当它们接触时，力突然变得非常大。隐式 Newmark 框架足够强大以处理这种情况。“无穿透”条件以及[接触力](@keyword=contact_force|lang=zh-CN|style=Feynman)只能推不能拉的事实，被转化为一组代数不等式。然后，这些不等式在每个时间步被直接编织到牛顿-拉夫逊求解过程中，形成了所谓的半光滑牛顿法 [@problem_id:2568088]。这种能力对于汽车碰撞模拟、虚拟手术训练器和机器人夹持器的设计至关重要。
 
 ### 极端工程：从裂纹到航天器
 
-Newmark 方法的稳健性使其成为工程师们挑战性能和安全极限时值得信赖的伙伴。考虑**断裂力学**领域，该领域研究材料中裂纹如何萌生和扩展。预测飞机机翼或[压力容器](@article_id:370911)中的微小缺陷在动态载荷（如[湍流](@article_id:318989)或冲击）下是否会导致灾难性故障，是一项至关重要的任务。
+Newmark 方法的稳健性使其成为工程师们挑战性能和安全极限时值得信赖的伙伴。考虑**断裂力学**领域，该领域研究材料中裂纹如何萌生和扩展。预测飞机机翼或[压力容器](@keyword=pressure_vessel|lang=zh-CN|style=Feynman)中的微小缺陷在动态载荷（如[湍流](@keyword=turbulence|lang=zh-CN|style=Feynman)或冲击）下是否会导致灾难性故障，是一项至关重要的任务。
 
-诸如[扩展有限元法](@article_id:342298)（XFEM）等先进的模拟技术，使我们能够模拟裂纹而无需网格与其几何形状相符。为了捕捉[裂纹扩展](@article_id:320520)的动力学过程，这些方法必须与一个可靠的[时间积分](@article_id:350065)器配对。再一次，[无条件稳定的](@article_id:306701) Newmark 方法成为首选工具。它提供了时域步进的骨干，使工程师能够计算随时间变化的[应力强度因子](@article_id:362353)——这些作为预示即将发生破坏的晴雨表的关键量 。
+诸如[扩展有限元法](@keyword=extended_finite_element_method|lang=zh-CN|style=Feynman)（XFEM）等先进的模拟技术，使我们能够模拟裂纹而无需网格与其几何形状相符。为了捕捉[裂纹扩展](@keyword=crack_propagation|lang=zh-CN|style=Feynman)的动力学过程，这些方法必须与一个可靠的[时间积分](@keyword=time_integration|lang=zh-CN|style=Feynman)器配对。再一次，[无条件稳定的](@keyword=unconditionally_stable|lang=zh-CN|style=Feynman) Newmark 方法成为首选工具。它提供了时域步进的骨干，使工程师能够计算随时间变化的[应力强度因子](@keyword=stress_intensity_factors|lang=zh-CN|style=Feynman)——这些作为预示即将发生破坏的晴雨表的关键量 [@problem_id:2637825]。
 
-当处理其属性随时间突变的系统时，该方法的适应性也得以展现。想象一枚火箭抛弃助推级，或者一架直升机投放有效载荷。在释放的瞬间，系统的质量突然减少。我们的模拟方法会崩溃吗？Newmark 方法不会。因为它基于过去的状态和*新*时刻的控制定律来计算未来状态，所以它能自然地处理这种变化。位移和速度是连续的（物体不能瞬移或瞬间改变其速度），但加速度必须跳变以满足新质量下的牛顿定律。隐式公式正确地捕捉到了这种跳变，从而在[不连续点](@article_id:367714)上提供了平滑且物理上准确的模拟 。
+当处理其属性随时间突变的系统时，该方法的适应性也得以展现。想象一枚火箭抛弃助推级，或者一架直升机投放有效载荷。在释放的瞬间，系统的质量突然减少。我们的模拟方法会崩溃吗？Newmark 方法不会。因为它基于过去的状态和*新*时刻的控制定律来计算未来状态，所以它能自然地处理这种变化。位移和速度是连续的（物体不能瞬移或瞬间改变其速度），但加速度必须跳变以满足新质量下的牛顿定律。隐式公式正确地捕捉到了这种跳变，从而在[不连续点](@keyword=discontinuities|lang=zh-CN|style=Feynman)上提供了平滑且物理上准确的模拟 [@problem_id:2446596]。
 
 ### 惊人的统一：热量与运动的数学
 
-在这里，我们来到了一个真正展现科学之美的时刻。你可能会问，一座桥梁隆隆的[振动](@article_id:331484)与台面上冷却的比萨饼究竟有何共同之处？一个是关于运动、波和惯性；另一个是关于热量的温和、[扩散](@article_id:327616)性传播。它们由不同的物理定律支配，导致不同类型的[微分方程](@article_id:327891)：运动是二阶（时间上）双曲型方程，而热量是一阶抛物线型方程。
+在这里，我们来到了一个真正展现科学之美的时刻。你可能会问，一座桥梁隆隆的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)与台面上冷却的比萨饼究竟有何共同之处？一个是关于运动、波和惯性；另一个是关于热量的温和、[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)性传播。它们由不同的物理定律支配，导致不同类型的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)：运动是二阶（时间上）双曲型方程，而热量是一阶抛物线型方程。
 
-然而，通过数值方法的透镜，我们发现了一种深刻而出乎意料的联系。事实证明，你可以“欺骗”一个基于 Newmark 方法的[结构动力学](@article_id:351803)代码来解决一个热传导问题 。这个技巧是一个巧妙的变量替换。如果你将温度 $\mathbf{T}$ 等同于结构速度 $\dot{\mathbf{u}}$，那么温度变化率 $\dot{\mathbf{T}}$ 就对应于加速度 $\ddot{\mathbf{u}}$。
+然而，通过数值方法的透镜，我们发现了一种深刻而出乎意料的联系。事实证明，你可以“欺骗”一个基于 Newmark 方法的[结构动力学](@keyword=structural_dynamics|lang=zh-CN|style=Feynman)代码来解决一个热传导问题 [@problem_id:2446567]。这个技巧是一个巧妙的变量替换。如果你将温度 $\mathbf{T}$ 等同于结构速度 $\dot{\mathbf{u}}$，那么温度变化率 $\dot{\mathbf{T}}$ 就对应于加速度 $\ddot{\mathbf{u}}$。
 
-通过这种映射，[半离散化](@article_id:345001)的热方程 $\mathbf{C}_\theta \dot{\mathbf{T}} + \mathbf{K}_\theta \mathbf{T} = \mathbf{q}$，转变为一个看起来像 $\mathbf{C}_\theta \ddot{\mathbf{u}} + \mathbf{K}_\theta \dot{\mathbf{u}} = \mathbf{q}$ 的方程。这只是[结构动力学](@article_id:351803)方程的一个特例，其中[刚度矩阵](@article_id:323515) $\mathbf{K}$ 为零，而“质量”和“阻尼”矩阵分别被[热容](@article_id:340019)和[热导](@article_id:368121)矩阵所取代。
+通过这种映射，[半离散化](@keyword=semi_discrete_formulation|lang=zh-CN|style=Feynman)的热方程 $\mathbf{C}_\theta \dot{\mathbf{T}} + \mathbf{K}_\theta \mathbf{T} = \mathbf{q}$，转变为一个看起来像 $\mathbf{C}_\theta \ddot{\mathbf{u}} + \mathbf{K}_\theta \dot{\mathbf{u}} = \mathbf{q}$ 的方程。这只是[结构动力学](@keyword=structural_dynamics|lang=zh-CN|style=Feynman)方程的一个特例，其中[刚度矩阵](@keyword=stiffness_matrix|lang=zh-CN|style=Feynman) $\mathbf{K}$ 为零，而“质量”和“阻尼”矩阵分别被[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)和[热导](@keyword=thermal_conductance|lang=zh-CN|style=Feynman)矩阵所取代。
 
-如果我们将这个系统输入一个使用[平均加速度](@article_id:342640)参数（$\gamma=1/2, \beta=1/4$）的 Newmark 求解器，该[算法](@article_id:331821)由于对其模拟的物理过程一无所知，会自行简化并产生一个在数学上与著名的**Crank-Nicolson 方法**完全相同的更新格式，而后者是扩散问题的中坚力量！这是一个惊人的发现。它表明，底层的数学结构才是真正重要的，并且在一个领域开发的强大数值工具可以在另一个领域找到出人意料且富有成效的应用。它证明了我们用来描述宇宙的数学语言所固有的统一性。
+如果我们将这个系统输入一个使用[平均加速度](@keyword=average_acceleration|lang=zh-CN|style=Feynman)参数（$\gamma=1/2, \beta=1/4$）的 Newmark 求解器，该[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)由于对其模拟的物理过程一无所知，会自行简化并产生一个在数学上与著名的**Crank-Nicolson 方法**完全相同的更新格式，而后者是扩散问题的中坚力量！这是一个惊人的发现。它表明，底层的数学结构才是真正重要的，并且在一个领域开发的强大数值工具可以在另一个领域找到出人意料且富有成效的应用。它证明了我们用来描述宇宙的数学语言所固有的统一性。
 
 ### 最后的疆域：驾驭不确定性
 
-我们的旅程在计算科学的前沿领域结束：**[不确定性量化](@article_id:299045)（UQ）**的世界。在之前所有的例子中，我们都假设我们精确地知道材料属性、尺寸和载荷。但现实是混乱的。钢的杨氏模量不是一个单一的数字，而是一个统计分布。风或地震的载荷是一个[随机过程](@article_id:333307)。面对这种不确定性，我们如何做出可靠的预测？
+我们的旅程在计算科学的前沿领域结束：**[不确定性量化](@keyword=uncertainty_quantification|lang=zh-CN|style=Feynman)（UQ）**的世界。在之前所有的例子中，我们都假设我们精确地知道材料属性、尺寸和载荷。但现实是混乱的。钢的杨氏模量不是一个单一的数字，而是一个统计分布。风或地震的载荷是一个[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)。面对这种不确定性，我们如何做出可靠的预测？
 
-最强大的现代技术之一是[随机伽辽金法](@article_id:357055)（Stochastic Galerkin Method）。我们不再将输入视为固定数字，而是将它们视为[随机变量](@article_id:324024)。我们寻求的解——位移——不再是时间的确定性函数，而是一个[随机过程](@article_id:333307)。然后我们使用一个特殊的多项式基来表示这个随机解，这种技术称为[多项式混沌展开](@article_id:342224)（Polynomial Chaos Expansion）。
+最强大的现代技术之一是[随机伽辽金法](@keyword=stochastic_galerkin_method|lang=zh-CN|style=Feynman)（Stochastic Galerkin Method）。我们不再将输入视为固定数字，而是将它们视为[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman)。我们寻求的解——位移——不再是时间的确定性函数，而是一个[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)。然后我们使用一个特殊的多项式基来表示这个随机解，这种技术称为[多项式混沌展开](@keyword=polynomial_chaos_expansions|lang=zh-CN|style=Feynman)（Polynomial Chaos Expansion）。
 
-其魔力在于：通过将原始的随机微分方程投影到这个多项式基上，我们将其转化为一个规模巨大得多、但完全*确定性*的方程组 。我们用一个简单但随机的问题换来了一个庞大但可预测的问题。这个新系统仍然具有[结构动力学](@article_id:351803)问题的形式，
+其魔力在于：通过将原始的随机微分方程投影到这个多项式基上，我们将其转化为一个规模巨大得多、但完全*确定性*的方程组 [@problem_id:2671669]。我们用一个简单但随机的问题换来了一个庞大但可预测的问题。这个新系统仍然具有[结构动力学](@keyword=structural_dynamics|lang=zh-CN|style=Feynman)问题的形式，
 $$\mathbf{M}_g \ddot{\mathbf{U}} + \mathbf{K}_g \mathbf{U} = \mathbf{F}_g$$
-但其矩阵是对称的块结构，耦合了解的[统计矩](@article_id:332247)。
+但其矩阵是对称的块结构，耦合了解的[统计矩](@keyword=statistical_moments|lang=zh-CN|style=Feynman)。
 
-我们用什么工具来解这个庞大的系统呢？当然是 Newmark 方法。因为它的稳定性只取决于矩阵的数学属性（对称性和正定性），而这些属性通过[伽辽金投影](@article_id:306035)得以保持，所以它可以被直接应用。一个条件稳定的显式格式的时间步长会随着我们增加更多不确定性项而缩小，但一个[无条件稳定的](@article_id:306701)隐式 Newmark 格式则保持稳健。这使得科学家和工程师能够建立不仅能给出一个答案，而且能给出一系列可能结果及其概率的“[数字孪生](@article_id:323264)体”。这就是模拟的未来：不仅仅是预测将要发生什么，而是预测*所有可能发生的事情*的概率。
+我们用什么工具来解这个庞大的系统呢？当然是 Newmark 方法。因为它的稳定性只取决于矩阵的数学属性（对称性和正定性），而这些属性通过[伽辽金投影](@keyword=galerkin_projection|lang=zh-CN|style=Feynman)得以保持，所以它可以被直接应用。一个条件稳定的显式格式的时间步长会随着我们增加更多不确定性项而缩小，但一个[无条件稳定的](@keyword=unconditionally_stable|lang=zh-CN|style=Feynman)隐式 Newmark 格式则保持稳健。这使得科学家和工程师能够建立不仅能给出一个答案，而且能给出一系列可能结果及其概率的“[数字孪生](@keyword=digital_twin|lang=zh-CN|style=Feynman)体”。这就是模拟的未来：不仅仅是预测将要发生什么，而是预测*所有可能发生的事情*的概率。
 
-从土木工程的坚实土地到[计算机图形学](@article_id:308496)的奇幻世界，从材料断裂的微观细节到不确定性的宏大统计舞蹈，Newmark 方法已经证明它不仅仅是一个[算法](@article_id:331821)。它是一个简单思想力量的证明，一把多功能的钥匙，持续解锁我们对一个复杂而动态的宇宙的理解。
+从土木工程的坚实土地到[计算机图形学](@keyword=computer_graphics|lang=zh-CN|style=Feynman)的奇幻世界，从材料断裂的微观细节到不确定性的宏大统计舞蹈，Newmark 方法已经证明它不仅仅是一个[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)。它是一个简单思想力量的证明，一把多功能的钥匙，持续解锁我们对一个复杂而动态的宇宙的理解。

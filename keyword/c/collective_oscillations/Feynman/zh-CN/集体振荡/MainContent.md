@@ -1,7 +1,7 @@
 ## 引言
-在物质研究中，我们常常关注原子和电子等单个粒子的性质。然而，材料一些最基本、最可观测的性质并非源于单个参与者，而是源于它们[同步](@article_id:339180)的集体舞蹈。本文深入探讨**集体振荡**的世界，这是一种[涌现现象](@article_id:305563)，其中无数相互作用的粒子协同运动，创造出任何单个粒子都无法实现的全新行为。我们从一个关键的历史难题入手——经典物理学无法解释固体在低温下如何储存热量——这一难题揭示了集体思维的必要性。
+在物质研究中，我们常常关注原子和电子等单个粒子的性质。然而，材料一些最基本、最可观测的性质并非源于单个参与者，而是源于它们[同步](@keyword=entrainment|lang=zh-CN|style=Feynman)的集体舞蹈。本文深入探讨**集体振荡**的世界，这是一种[涌现现象](@keyword=emergent_phenomena|lang=zh-CN|style=Feynman)，其中无数相互作用的粒子协同运动，创造出任何单个粒子都无法实现的全新行为。我们从一个关键的历史难题入手——经典物理学无法解释固体在低温下如何储存热量——这一难题揭示了集体思维的必要性。
 
-本次探索分为两部分。首先，在“原理与机制”中，我们将探讨[集体振荡](@article_id:319377)背后的基本概念，将早期的[独立粒子模型](@article_id:321459)与 Debye 成功的[集体模式](@article_id:297580)理论进行对比。我们将引入[准粒子](@article_id:299846)的核心思想，重点关注[声子](@article_id:297589)（晶格振动的量子）和等离激元（电子气[振荡](@article_id:331484)的量子）。然后，在“应用与跨学科联系”中，我们将看到这些强大的概念并不仅限于固态物理学，而是为理解从金属的光泽、超流体的奇异行为，到[生物钟](@article_id:327857)的精确节律等各种现象提供了一个统一的框架。
+本次探索分为两部分。首先，在“原理与机制”中，我们将探讨[集体振荡](@keyword=collective_oscillations|lang=zh-CN|style=Feynman)背后的基本概念，将早期的[独立粒子模型](@keyword=independent_particle_model|lang=zh-CN|style=Feynman)与 Debye 成功的[集体模式](@keyword=collective_modes|lang=zh-CN|style=Feynman)理论进行对比。我们将引入[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)的核心思想，重点关注[声子](@keyword=phonons|lang=zh-CN|style=Feynman)（晶格振动的量子）和等离激元（电子气[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的量子）。然后，在“应用与跨学科联系”中，我们将看到这些强大的概念并不仅限于固态物理学，而是为理解从金属的光泽、超流体的奇异行为，到[生物钟](@keyword=biological_clocks|lang=zh-CN|style=Feynman)的精确节律等各种现象提供了一个统一的框架。
 
 ## 原理与机制
 
@@ -9,45 +9,45 @@
 
 ### 独奏者与管弦乐队：集体思维为何重要
 
-我们的故事始于一个困扰19世纪物理学家的难题：[固体的热容](@article_id:305362)。经典的**[杜隆-珀蒂定律](@article_id:298832)**，基于这样一种思想：晶体中的每个原子都像一个微小的[谐振子](@article_id:316032)一样独立[振动](@article_id:331484)。该定律预测，无论温度如何，固体能储存的热量应为常数。这在室温下非常有效。但当科学家将固体冷却到接近绝对[零度](@article_id:316692)时，该定律却彻底失效。[热容](@article_id:340019)骤降至零，仿佛原子们拒绝储存能量。
+我们的故事始于一个困扰19世纪物理学家的难题：[固体的热容](@keyword=heat_capacity_of_solids|lang=zh-CN|style=Feynman)。经典的**[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman)**，基于这样一种思想：晶体中的每个原子都像一个微小的[谐振子](@keyword=harmonic_oscillator|lang=zh-CN|style=Feynman)一样独立[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。该定律预测，无论温度如何，固体能储存的热量应为常数。这在室温下非常有效。但当科学家将固体冷却到接近绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)时，该定律却彻底失效。[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)骤降至零，仿佛原子们拒绝储存能量。
 
-Albert Einstein 在他1905年“奇迹年”的一篇论文中提出了一个绝妙的解决方案。他提出，这些原子[振动](@article_id:331484)的能量必须是量子化的，正如 Max Planck 对光所提出的那样。在 Einstein 的模型中，每个原子都是一个微小的、独立的量子振子。在高温下，能量充足，原子自由[振动](@article_id:331484)，表现出经典行为并遵循[杜隆-珀蒂定律](@article_id:298832)。但在低温下，热能 $k_\text{B} T$ 不足以激发哪怕一个[振动能](@article_id:318313)量子 $\hbar\omega_E$。[振动](@article_id:331484)被“冻结”，[热容](@article_id:340019)下降。
+Albert Einstein 在他1905年“奇迹年”的一篇论文中提出了一个绝妙的解决方案。他提出，这些原子[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的能量必须是量子化的，正如 Max Planck 对光所提出的那样。在 Einstein 的模型中，每个原子都是一个微小的、独立的量子振子。在高温下，能量充足，原子自由[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，表现出经典行为并遵循[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman)。但在低温下，热能 $k_\text{B} T$ 不足以激发哪怕一个[振动能](@keyword=vibrational_energy|lang=zh-CN|style=Feynman)量子 $\hbar\omega_E$。[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)被“冻结”，[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)下降。
 
-Einstein 的模型取得了里程碑式的成功，将量子理论引入了物质研究，并正确预测了[热容](@article_id:340019)的下降。然而，它并不完全正确。实验表明，在极低温下，[热容](@article_id:340019)遵循精确的 $C_V \propto T^3$ 定律，而 Einstein 的模型预测的是更快的指数级下降 。究竟缺少了什么？
+Einstein 的模型取得了里程碑式的成功，将量子理论引入了物质研究，并正确预测了[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)的下降。然而，它并不完全正确。实验表明，在极低温下，[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)遵循精确的 $C_V \propto T^3$ 定律，而 Einstein 的模型预测的是更快的指数级下降 [@problem_id:2644233]。究竟缺少了什么？
 
-Einstein 构想中的缺陷在于“独立”这个词。他把晶体看作一个由独奏家组成的管弦乐队，每个人都演奏自己的曲调，而不倾听邻居的声音。但晶体中的原子并非孤立的。它们通过强大的[电磁力](@article_id:374898)联系在一起——就像连接每个原子的微小弹簧。某一点的[振动](@article_id:331484)不会停留在原地，而是像波一样在整个晶体中传播。错误在于关注单个乐手而不是整个交响乐。这一根本局限性意味着，对于[热输运](@article_id:378385)至关重要的概念，例如波之间的散射过程，在[爱因斯坦模型](@article_id:303625)中根本无法定义。它缺乏具有明确动量的传播波这一基本思想，而这正是描述碰撞的先决条件 。
+Einstein 构想中的缺陷在于“独立”这个词。他把晶体看作一个由独奏家组成的管弦乐队，每个人都演奏自己的曲调，而不倾听邻居的声音。但晶体中的原子并非孤立的。它们通过强大的[电磁力](@keyword=electromagnetic_forces|lang=zh-CN|style=Feynman)联系在一起——就像连接每个原子的微小弹簧。某一点的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)不会停留在原地，而是像波一样在整个晶体中传播。错误在于关注单个乐手而不是整个交响乐。这一根本局限性意味着，对于[热输运](@keyword=heat_transport|lang=zh-CN|style=Feynman)至关重要的概念，例如波之间的散射过程，在[爱因斯坦模型](@keyword=einstein_model|lang=zh-CN|style=Feynman)中根本无法定义。它缺乏具有明确动量的传播波这一基本思想，而这正是描述碰撞的先决条件 [@problem_id:1788017]。
 
-### 晶体的交响乐：[声子](@article_id:297589)
+### 晶体的交响乐：[声子](@keyword=phonons|lang=zh-CN|style=Feynman)
 
-Peter Debye 修正了这一图像，他将原子[振动](@article_id:331484)视为其本质：在晶体的弹性介质中传播的集体、协同的波。他没有将固体建模为独立振子的集合，而是看作一个可以维持不同频率[声波](@article_id:353278)的连续“果冻”。就像吉他弦有[基频](@article_id:331884)和一系列泛音一样，晶体也有一整套[振动](@article_id:331484)模式谱。通过考虑这个[集体模式](@article_id:297580)的[连续谱](@article_id:313985)，特别是长波长的声学波，Debye 推导出了态密度 $g(\omega) \propto \omega^2$。这个看似微小的改变带来了深远的影响：它完美地再现了实验观测到的低温下 $C_V \propto T^3$ 定律，同时在高温下仍能恢复到[杜隆-珀蒂定律](@article_id:298832) 。
+Peter Debye 修正了这一图像，他将原子[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)视为其本质：在晶体的弹性介质中传播的集体、协同的波。他没有将固体建模为独立振子的集合，而是看作一个可以维持不同频率[声波](@keyword=acoustic_waves|lang=zh-CN|style=Feynman)的连续“果冻”。就像吉他弦有[基频](@keyword=fundamental_frequency|lang=zh-CN|style=Feynman)和一系列泛音一样，晶体也有一整套[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式谱。通过考虑这个[集体模式](@keyword=collective_modes|lang=zh-CN|style=Feynman)的[连续谱](@keyword=continuous_spectrum|lang=zh-CN|style=Feynman)，特别是长波长的声学波，Debye 推导出了态密度 $g(\omega) \propto \omega^2$。这个看似微小的改变带来了深远的影响：它完美地再现了实验观测到的低温下 $C_V \propto T^3$ 定律，同时在高温下仍能恢复到[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman) [@problem_id:2644233]。
 
-德拜模型的成功给我们上了一堂关键的课：晶体中的基本激发不是单个原子的[振动](@article_id:331484)，而是整个[晶格](@article_id:300090)的集体[简正模](@article_id:300087)式。当我们将量子力学规则应用于这些集体波时，神奇的事情发生了。每个[振动](@article_id:331484)模式的能量只能以离散的包或量子的形式存在。我们给这些[晶格振动](@article_id:374784)的量子起了一个特殊的名字：**[声子](@article_id:297589)**。
+德拜模型的成功给我们上了一堂关键的课：晶体中的基本激发不是单个原子的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，而是整个[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)的集体[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman)式。当我们将量子力学规则应用于这些集体波时，神奇的事情发生了。每个[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式的能量只能以离散的包或量子的形式存在。我们给这些[晶格振动](@keyword=crystal_lattice_vibrations|lang=zh-CN|style=Feynman)的量子起了一个特殊的名字：**[声子](@keyword=phonons|lang=zh-CN|style=Feynman)**。
 
-### 什么是[准粒子](@article_id:299846)？
+### 什么是[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)？
 
-[声子](@article_id:297589)是我们遇到的第一个也是最著名的**[准粒子](@article_id:299846)**的例子。它在很多方面表现得像一个真正的粒子——它携带确定量的能量 $\hbar\omega$ 和一种称为晶体动量的动量形式 $\hbar\mathbf{k}$。然而，它是一个“准”粒子，或者说“有点像”粒子。为什么呢？
+[声子](@keyword=phonons|lang=zh-CN|style=Feynman)是我们遇到的第一个也是最著名的**[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)**的例子。它在很多方面表现得像一个真正的粒子——它携带确定量的能量 $\hbar\omega$ 和一种称为晶体动量的动量形式 $\hbar\mathbf{k}$。然而，它是一个“准”粒子，或者说“有点像”粒子。为什么呢？
 
-关键在于，[声子](@article_id:297589)不像电子或[光子](@article_id:305617)那样是基本实体。它是*介质*的一种涌现激发。[声子](@article_id:297589)不能存在于真空中；它本质上是晶体中原子[集体运动](@article_id:320301)的表现。如果你熔化晶体，有序的[晶格](@article_id:300090)消失，随之，明确定义的[声子模式](@article_id:379912)也不复存在 。[声子](@article_id:297589)的概念与其所依赖的晶体的存在密不可分。
+关键在于，[声子](@keyword=phonons|lang=zh-CN|style=Feynman)不像电子或[光子](@keyword=photon|lang=zh-CN|style=Feynman)那样是基本实体。它是*介质*的一种涌现激发。[声子](@keyword=phonons|lang=zh-CN|style=Feynman)不能存在于真空中；它本质上是晶体中原子[集体运动](@keyword=collective_motion|lang=zh-CN|style=Feynman)的表现。如果你熔化晶体，有序的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)消失，随之，明确定义的[声子模式](@keyword=phonon_modes|lang=zh-CN|style=Feynman)也不复存在 [@problem_id:1794547]。[声子](@keyword=phonons|lang=zh-CN|style=Feynman)的概念与其所依赖的晶体的存在密不可分。
 
-[准粒子](@article_id:299846)的本质在于它代表了*[集体运动](@article_id:320301)*的一个能量量子 。回想一下体育场的人浪。它在看台上传播，拥有能量，似乎有自己的生命。但它不是一个*物体*；它是一种人们站起又坐下的协同模式。[声子](@article_id:297589)就是那种体育场人浪的量子力学版本，其中“人”是原子，“站起”是它们偏离平衡位置的位移。[热容](@article_id:340019)的丰富物理现象可以理解为这些[声子](@article_id:297589)组成的气体。例如，困扰早期物理学家的低温行为现在被看作是这些集体[声学模](@article_id:327623)式的直接标志 。
+[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)的本质在于它代表了*[集体运动](@keyword=collective_motion|lang=zh-CN|style=Feynman)*的一个能量量子 [@problem_id:1796932]。回想一下体育场的人浪。它在看台上传播，拥有能量，似乎有自己的生命。但它不是一个*物体*；它是一种人们站起又坐下的协同模式。[声子](@keyword=phonons|lang=zh-CN|style=Feynman)就是那种体育场人浪的量子力学版本，其中“人”是原子，“站起”是它们偏离平衡位置的位移。[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)的丰富物理现象可以理解为这些[声子](@keyword=phonons|lang=zh-CN|style=Feynman)组成的气体。例如，困扰早期物理学家的低温行为现在被看作是这些集体[声学模](@keyword=acoustic_modes|lang=zh-CN|style=Feynman)式的直接标志 [@problem_id:2644177]。
 
 ### 电子海的咆哮：等离激元
 
-[集体振荡](@article_id:319377)的思想太过强大，不应局限于晃动的原子。让我们将注意力转向金属。金属可以被描绘成一个刚性的正离子[晶格](@article_id:300090)，浸没在自由移动的传导电子“海洋”中。很长一段时间里，物理学家将这些电子视为独立粒子的[理想气体](@article_id:378832)，这种图像被称为[自由电子模型](@article_id:368910)。这很有用，但它忽略了电子最重要的特性：它们带电，并通过长程库仑力相互排斥。
+[集体振荡](@keyword=collective_oscillations|lang=zh-CN|style=Feynman)的思想太过强大，不应局限于晃动的原子。让我们将注意力转向金属。金属可以被描绘成一个刚性的正离子[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)，浸没在自由移动的传导电子“海洋”中。很长一段时间里，物理学家将这些电子视为独立粒子的[理想气体](@keyword=perfect_gases|lang=zh-CN|style=Feynman)，这种图像被称为[自由电子模型](@keyword=free_electron_model_2|lang=zh-CN|style=Feynman)。这很有用，但它忽略了电子最重要的特性：它们带电，并通过长程库仑力相互排斥。
 
-当你考虑这种相互作用时会发生什么？想象一下，你可以抓住整个电子海，并将其整体向右移动一小段距离 。这样，左边会暴露出一个薄薄的正离子背景层，右边则会形成一个过剩的负[电荷](@article_id:339187)区域。在这两层之间会出现一个巨大的电场，将电子海向左[拉回](@article_id:321220)。这个恢复力非常巨大，电子海迅速弹回，越过其[平衡位置](@article_id:336089)，并开始以极高的频率来回晃动。这种整个[电子气](@article_id:301135)的自持、集体纵向[振荡](@article_id:331484)被称为**[等离子体振荡](@article_id:306608)** 。其特征频率，即**等离子体频率** $\omega_p = \sqrt{\frac{ne^2}{\varepsilon_0 m}}$，仅取决于电子密度 $n$ 和基本常数。
+当你考虑这种相互作用时会发生什么？想象一下，你可以抓住整个电子海，并将其整体向右移动一小段距离 [@problem_id:2983003]。这样，左边会暴露出一个薄薄的正离子背景层，右边则会形成一个过剩的负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)区域。在这两层之间会出现一个巨大的电场，将电子海向左[拉回](@keyword=pullback|lang=zh-CN|style=Feynman)。这个恢复力非常巨大，电子海迅速弹回，越过其[平衡位置](@keyword=equilibrium_position|lang=zh-CN|style=Feynman)，并开始以极高的频率来回晃动。这种整个[电子气](@keyword=electron_gas|lang=zh-CN|style=Feynman)的自持、集体纵向[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)被称为**[等离子体振荡](@keyword=plasma_oscillations|lang=zh-CN|style=Feynman)** [@problem_id:3010182]。其特征频率，即**等离子体频率** $\omega_p = \sqrt{\frac{ne^2}{\varepsilon_0 m}}$，仅取决于电子密度 $n$ 和基本常数。
 
-就像我们量子化[晶格](@article_id:300090)波得到[声子](@article_id:297589)一样，我们也可以量子化这些[等离子体振荡](@article_id:306608)。由此产生的[准粒子](@article_id:299846)——集体电子[振荡](@article_id:331484)的量子——被称为**等离激元**。一个等离激元的能量 $\hbar\omega_p$ 是一个独特的、大的能量尺度，与任何单个电子的能量有着根本的不同 。它是电子海集体“咆哮”的能量。
+就像我们量子化[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)波得到[声子](@keyword=phonons|lang=zh-CN|style=Feynman)一样，我们也可以量子化这些[等离子体振荡](@keyword=plasma_oscillations|lang=zh-CN|style=Feynman)。由此产生的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)——集体电子[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的量子——被称为**等离激元**。一个等离激元的能量 $\hbar\omega_p$ 是一个独特的、大的能量尺度，与任何单个电子的能量有着根本的不同 [@problem_id:1761601]。它是电子海集体“咆哮”的能量。
 
-这种集体行为不仅仅是理论上的好奇心；它完全主导了[金属的光学性质](@article_id:333421)。入射的电磁波只有在其频率 $\omega > \omega_p$ 时才能在金属中传播。如果 $\omega  \omega_p$，电子海会集体响应，屏蔽掉电磁波的电场，导致其被反射。这就是为什么金属既有光泽又不透明！金属闪亮的表面是其电子集体舞蹈的直接、宏观表现 。
+这种集体行为不仅仅是理论上的好奇心；它完全主导了[金属的光学性质](@keyword=optical_properties_of_metals|lang=zh-CN|style=Feynman)。入射的电磁波只有在其频率 $\omega > \omega_p$ 时才能在金属中传播。如果 $\omega  \omega_p$，电子海会集体响应，屏蔽掉电磁波的电场，导致其被反射。这就是为什么金属既有光泽又不透明！金属闪亮的表面是其电子集体舞蹈的直接、宏观表现 [@problem_id:2983003]。
 
-### [集体激发](@article_id:305451)的宇宙
+### [集体激发](@keyword=collective_excitations|lang=zh-CN|style=Feynman)的宇宙
 
-单粒子行为与集体模式之间的区别是清晰且定量的。对于任何给定的[动量转移](@article_id:308128)，单个电子可以在一个能量连续谱上被激发，这个区域被称为粒子-空穴连续区。然而，等离激元是一个尖锐、明确定义的模式，在长波长下，它存在于一个有限的能量 $\hbar\omega_p$ 处，远高于单粒子激发。甚至存在一个临界波数 $q_c$，超过该值，[等离激元](@article_id:306605)可以衰变成单粒子激发，并失去其独特性。在此阈值以下，集体描述不仅方便，而且是必不可少的 。
+单粒子行为与集体模式之间的区别是清晰且定量的。对于任何给定的[动量转移](@keyword=momentum_transfer|lang=zh-CN|style=Feynman)，单个电子可以在一个能量连续谱上被激发，这个区域被称为粒子-空穴连续区。然而，等离激元是一个尖锐、明确定义的模式，在长波长下，它存在于一个有限的能量 $\hbar\omega_p$ 处，远高于单粒子激发。甚至存在一个临界波数 $q_c$，超过该值，[等离激元](@keyword=plasmons|lang=zh-CN|style=Feynman)可以衰变成单粒子激发，并失去其独特性。在此阈值以下，集体描述不仅方便，而且是必不可少的 [@problem_id:3014555]。
 
-这个原理具有惊人的普适性。只要有大量相互作用的实体，你很可能就会发现[集体模式](@article_id:297580)及其对应的[准粒子](@article_id:299846)。
--   在[晶格](@article_id:300090)中，**原子位置**的[集体振荡](@article_id:319377)产生**[声子](@article_id:297589)** 。
--   在金属中，**电子[电荷密度](@article_id:305099)**的[集体振荡](@article_id:319377)产生**等离激元** 。
--   在磁体中，原子具有[排列](@article_id:296886)整齐的磁矩（自旋）。这些**自旋**的集体、波状进动产生了**[磁振子](@article_id:300256)**，即自旋波的量子 。
+这个原理具有惊人的普适性。只要有大量相互作用的实体，你很可能就会发现[集体模式](@keyword=collective_modes|lang=zh-CN|style=Feynman)及其对应的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)。
+-   在[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中，**原子位置**的[集体振荡](@keyword=collective_oscillations|lang=zh-CN|style=Feynman)产生**[声子](@keyword=phonons|lang=zh-CN|style=Feynman)** [@problem_id:1794547]。
+-   在金属中，**电子[电荷密度](@keyword=charge_density|lang=zh-CN|style=Feynman)**的[集体振荡](@keyword=collective_oscillations|lang=zh-CN|style=Feynman)产生**等离激元** [@problem_id:1796932]。
+-   在磁体中，原子具有[排列](@keyword=permutation|lang=zh-CN|style=Feynman)整齐的磁矩（自旋）。这些**自旋**的集体、波状进动产生了**[磁振子](@keyword=magnons|lang=zh-CN|style=Feynman)**，即自旋波的量子 [@problem_id:1804016]。
 
-在每种情况下，方法都是相同的：识别一个集体自由度，找到其波状的[振荡](@article_id:331484)模式，然后将它们量子化。结果就是一个[准粒子](@article_id:299846)，一个涌现出的“粒子”，它优雅地描述了系统复杂的的[多体物理学](@article_id:304954)。固体内部的世界是这些[准粒子](@article_id:299846)的一个繁华动物园，是一曲有组织的运动交响乐，赋予了材料独特而通常美丽的性质。理解它们就是理解物质本身的音乐。
+在每种情况下，方法都是相同的：识别一个集体自由度，找到其波状的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)模式，然后将它们量子化。结果就是一个[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)，一个涌现出的“粒子”，它优雅地描述了系统复杂的的[多体物理学](@keyword=many_body_physics_2|lang=zh-CN|style=Feynman)。固体内部的世界是这些[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)的一个繁华动物园，是一曲有组织的运动交响乐，赋予了材料独特而通常美丽的性质。理解它们就是理解物质本身的音乐。

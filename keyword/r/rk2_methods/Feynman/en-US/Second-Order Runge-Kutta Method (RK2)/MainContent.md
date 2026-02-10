@@ -13,7 +13,7 @@ Let's make this concrete. Consider a system whose state $y$ changes over time $t
 
 This seems reasonable, but how good is it? The exact answer, which we can find with some calculus, is about $0.8293$. Our simple step has an error of about $0.0293$. Can we do better?
 
-This is where the second-order Runge-Kutta (RK2) methods enter the stage. Using a common RK2 technique called the **Midpoint Method** for the same problem, we get an answer of $0.828$. The error is now a mere $0.0013$. Let that sink in: with just a little more cleverness, our new method is more than 22 times more accurate than the naive approach!  This isn't just a small improvement; it's a leap in quality. So, what is the secret?
+This is where the second-order Runge-Kutta (RK2) methods enter the stage. Using a common RK2 technique called the **Midpoint Method** for the same problem, we get an answer of $0.828$. The error is now a mere $0.0013$. Let that sink in: with just a little more cleverness, our new method is more than 22 times more accurate than the naive approach! [@problem_id:2200985] This isn't just a small improvement; it's a leap in quality. So, what is the secret?
 
 ### The Secret of the Second Look
 
@@ -28,7 +28,7 @@ The **Midpoint Method** is beautifully intuitive. Instead of using the slope at 
 3.  At this estimated midpoint, we calculate a new slope, $k_2$. This is our "corrected" slope.
 4.  Finally, we go back to our original starting point and take the *full* step using this much-improved midpoint slope $k_2$.
 
-This is like a scout running halfway down the path, reporting back on the direction of the road, and then the whole party moving forward based on that better information. 
+This is like a scout running halfway down the path, reporting back on the direction of the road, and then the whole party moving forward based on that better information. [@problem_id:2200984]
 
 #### Heun's Method: The Predictor-Corrector
 
@@ -38,9 +38,9 @@ This is like a scout running halfway down the path, reporting back on the direct
 2.  **Evaluate:** Now, at this predicted endpoint, it calculates the slope, let's call it $k_2$. We now have two slope estimates: the one at the very beginning ($k_1$) and one at the very end ($k_2$).
 3.  **Correct:** The final step is to average these two slopes, $(\frac{k_1 + k_2}{2})$, and use this average slope to take the real step from the original starting point.
 
-This is analogous to the [trapezoidal rule](@article_id:144881) for integration. Instead of a rectangle (Euler's method), we're using a trapezoid to approximate the area under the curve, which is a much better fit. 
+This is analogous to the [trapezoidal rule](@keyword=trapezoidal_rule|lang=en-US|style=Feynman) for integration. Instead of a rectangle (Euler's method), we're using a trapezoid to approximate the area under the curve, which is a much better fit. [@problem_id:2200984]
 
-While their philosophies differ—one peeking at the midpoint, the other averaging the endpoints—both methods achieve a similar goal. If we apply them to the same problem, say $y' = t^2 - y$ starting at $y(0)=2$ with a step of $h=0.5$, their calculated "effective slopes" will be slightly different ($-\frac{23}{16}$ for Midpoint vs. $-\frac{11}{8}$ for Heun's), but both are vastly superior to the simple starting slope of $-2$. 
+While their philosophies differ—one peeking at the midpoint, the other averaging the endpoints—both methods achieve a similar goal. If we apply them to the same problem, say $y' = t^2 - y$ starting at $y(0)=2$ with a step of $h=0.5$, their calculated "effective slopes" will be slightly different ($-\frac{23}{16}$ for Midpoint vs. $-\frac{11}{8}$ for Heun's), but both are vastly superior to the simple starting slope of $-2$. [@problem_id:2201000]
 
 ### A Family United by Math
 
@@ -48,7 +48,7 @@ Are the Midpoint and Heun's methods just two lucky tricks? Not at all. They are 
 
 The true goal of a second-order method is to match the **Taylor series expansion** of the solution up to the second-order term ($h^2$) without ever needing to analytically compute the second derivative ($y''$). The Taylor expansion tells us the true solution is approximately $y(t_n+h) \approx y(t_n) + h y'(t_n) + \frac{h^2}{2} y''(t_n) + \dots$.
 
-Euler's method only matches the first-order term, $h y'$. RK2 methods, through their clever two-stage evaluation, manage to construct a term that implicitly approximates $\frac{h^2}{2} y''$. When we use Heun's method on an equation like $y' = t+y$, the terms naturally arrange themselves to produce a coefficient for $h^2$ that is exactly $\frac{1+y'(0)}{2}$, which happens to be the true value of $\frac{1}{2}y''(0)$!  The method discovers the second derivative on its own, just by sampling the function $f(t,y)$.
+Euler's method only matches the first-order term, $h y'$. RK2 methods, through their clever two-stage evaluation, manage to construct a term that implicitly approximates $\frac{h^2}{2} y''$. When we use Heun's method on an equation like $y' = t+y$, the terms naturally arrange themselves to produce a coefficient for $h^2$ that is exactly $\frac{1+y'(0)}{2}$, which happens to be the true value of $\frac{1}{2}y''(0)$! [@problem_id:2197369] The method discovers the second derivative on its own, just by sampling the function $f(t,y)$.
 
 This is not an accident. Any two-stage explicit Runge-Kutta method can be written in a general form with four parameters: $a_1, a_2, \alpha, \beta$. For the method to be second-order accurate, these parameters must satisfy three simple algebraic equations:
 
@@ -56,16 +56,16 @@ This is not an accident. Any two-stage explicit Runge-Kutta method can be writte
 2.  $a_2 \alpha = \frac{1}{2}$
 3.  $a_2 \beta = \frac{1}{2}$
 
-Any set of parameters that solves these equations gives you a valid RK2 method. If we choose $a_1=0$ and $a_2=1$, the equations force $\alpha = \frac{1}{2}$ and $\beta = \frac{1}{2}$. This defines the Midpoint Method. If we choose $a_1 = a_2 = \frac{1}{2}$, the equations force $\alpha=1$ and $\beta=1$. This defines Heun's Method.  What looked like two different tricks is revealed to be two solutions to the same underlying problem, a beautiful piece of mathematical unity.
+Any set of parameters that solves these equations gives you a valid RK2 method. If we choose $a_1=0$ and $a_2=1$, the equations force $\alpha = \frac{1}{2}$ and $\beta = \frac{1}{2}$. This defines the Midpoint Method. If we choose $a_1 = a_2 = \frac{1}{2}$, the equations force $\alpha=1$ and $\beta=1$. This defines Heun's Method. [@problem_id:2200972] What looked like two different tricks is revealed to be two solutions to the same underlying problem, a beautiful piece of mathematical unity.
 
 ### The Payoff: Accuracy and Cost
 
 So we have this powerful family of methods. What does being "second-order" mean for us in practice? It comes down to a trade-off between accuracy and cost.
 
-The **cost** is straightforward. To get that "second look," every single step of an RK2 method requires two evaluations of the function $f(t,y)$. To simulate a system for 10 seconds with a step size of 0.25, you would need to take $\frac{10}{0.25} = 40$ steps. Since each step costs two function evaluations, the total cost is $40 \times 2 = 80$ evaluations.  This is double the cost of Euler's method, but as we saw, the gain in accuracy is often astronomical.
+The **cost** is straightforward. To get that "second look," every single step of an RK2 method requires two evaluations of the function $f(t,y)$. To simulate a system for 10 seconds with a step size of 0.25, you would need to take $\frac{10}{0.25} = 40$ steps. Since each step costs two function evaluations, the total cost is $40 \times 2 = 80$ evaluations. [@problem_id:2200971] This is double the cost of Euler's method, but as we saw, the gain in accuracy is often astronomical.
 
-The **accuracy** is where things get really interesting. We must distinguish between two types of error. The **[local truncation error](@article_id:147209)** is the error we make in a *single* step. For an RK2 method, this error is proportional to the cube of the step size, or $O(h^3)$. This is incredibly powerful. It means if you reduce your step size by a factor of 3, the error you introduce in that one step decreases by a factor of $3^3 = 27$! 
+The **accuracy** is where things get really interesting. We must distinguish between two types of error. The **[local truncation error](@keyword=local_truncation_error|lang=en-US|style=Feynman)** is the error we make in a *single* step. For an RK2 method, this error is proportional to the cube of the step size, or $O(h^3)$. This is incredibly powerful. It means if you reduce your step size by a factor of 3, the error you introduce in that one step decreases by a factor of $3^3 = 27$! [@problem_id:2201001]
 
-However, we are usually interested in the **[global error](@article_id:147380)**, which is the total accumulated error after many steps. To cross a fixed interval of time, you need to take a number of steps that is proportional to $1/h$. If you make a tiny error of order $h^3$ in each of your $1/h$ steps, you might guess the total error would be something like $\frac{1}{h} \times h^3 = h^2$. And that is exactly right! The [global error](@article_id:147380) of any stable RK2 method is of order $O(h^2)$.  
+However, we are usually interested in the **[global error](@keyword=global_error|lang=en-US|style=Feynman)**, which is the total accumulated error after many steps. To cross a fixed interval of time, you need to take a number of steps that is proportional to $1/h$. If you make a tiny error of order $h^3$ in each of your $1/h$ steps, you might guess the total error would be something like $\frac{1}{h} \times h^3 = h^2$. And that is exactly right! The [global error](@keyword=global_error|lang=en-US|style=Feynman) of any stable RK2 method is of order $O(h^2)$. [@problem_id:2200986] [@problem_id:2200998]
 
 This $O(h^2)$ relationship is the practical payoff. It gives us a predictable and powerful way to improve our simulations. If you need more accuracy, you simply reduce the step size. Halving the step size ($h \to h/2$) will quarter the global error. Halving it again will quarter it again. This predictable scaling is the hallmark of a robust numerical method and the reason why second-order Runge-Kutta methods, in all their beautiful variations, form the bedrock of modern scientific computation. They represent a perfect balance: a little extra work for a massive gain in our ability to predict the future.

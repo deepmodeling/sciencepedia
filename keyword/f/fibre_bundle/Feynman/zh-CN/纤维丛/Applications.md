@@ -6,49 +6,49 @@
 
 ### 拓扑学家的工具箱：探测空间的形状
 
-[纤维丛](@article_id:319969)最直接、最强大的应用之一，是作为代数拓扑中的计算工具。拓扑学家就像侦探，试图推断一个未知形状的性质。他们的线索是“[不变量](@article_id:309269)”——如[拓扑群](@article_id:316074)或同调群等数量——这些量在空间被弯曲或拉伸时保持不变。但是为一个复杂的空间计算这些[不变量](@article_id:309269)可能是一场噩梦。
+[纤维丛](@keyword=fibre_bundle|lang=zh-CN|style=Feynman)最直接、最强大的应用之一，是作为代数拓扑中的计算工具。拓扑学家就像侦探，试图推断一个未知形状的性质。他们的线索是“[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)”——如[拓扑群](@keyword=topological_groups|lang=zh-CN|style=Feynman)或同调群等数量——这些量在空间被弯曲或拉伸时保持不变。但是为一个复杂的空间计算这些[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)可能是一场噩梦。
 
-这时，[纤维丛](@article_id:319969)就来解围了。一个[纤维化](@article_id:381971) $F \to E \to B$ 的存在提供了一个神奇的工具，叫做“同伦群长正合序列”。这个序列是一种代数方程，它严格地将总空间 $E$、底空间 $B$ 和纤维 $F$ 的同伦群联系起来。如果你知道其中两个空间的群，你通常可以解出第三个空间的群。
+这时，[纤维丛](@keyword=fibre_bundle|lang=zh-CN|style=Feynman)就来解围了。一个[纤维化](@keyword=fibrosis|lang=zh-CN|style=Feynman) $F \to E \to B$ 的存在提供了一个神奇的工具，叫做“同伦群长正合序列”。这个序列是一种代数方程，它严格地将总空间 $E$、底空间 $B$ 和纤维 $F$ 的同伦群联系起来。如果你知道其中两个空间的群，你通常可以解出第三个空间的群。
 
-一个经典且令人惊叹的例子是 Hopf 纤维化的推广，它将 $(2n+1)$ 维球面 $S^{2n+1}$ 呈现为一个以 $n$ 维[复射影空间](@article_id:332104) $\mathbb{C}P^n$ 为底、以圆 $S^1$ 为纤维的丛：$S^1 \to S^{2n+1} \to \mathbb{C}P^n$。现在，球面是拓扑学中研究最多的对象之一，我们对其[同伦群](@article_id:320289)相当了解（即使它们异常复杂！）。另一方面，[复射影空间](@article_id:332104)则是一个更为神秘的怪兽。但是，通过将 $S^1$ 和 $S^{2n+1}$ 的已知群代入长正合序列，机器开始运转，然后得出一个优美的结果：[复射影空间](@article_id:332104)的第二[同伦群](@article_id:320289) $\pi_2(\mathbb{C}P^n)$ 同构于整数集 $\mathbb{Z}$ ()。我们利用了对“更简单”空间的知识，推断出了一个更复杂空间的非显而易见的性质。
+一个经典且令人惊叹的例子是 Hopf 纤维化的推广，它将 $(2n+1)$ 维球面 $S^{2n+1}$ 呈现为一个以 $n$ 维[复射影空间](@keyword=complex_projective_space|lang=zh-CN|style=Feynman) $\mathbb{C}P^n$ 为底、以圆 $S^1$ 为纤维的丛：$S^1 \to S^{2n+1} \to \mathbb{C}P^n$。现在，球面是拓扑学中研究最多的对象之一，我们对其[同伦群](@keyword=homotopy_groups|lang=zh-CN|style=Feynman)相当了解（即使它们异常复杂！）。另一方面，[复射影空间](@keyword=complex_projective_space|lang=zh-CN|style=Feynman)则是一个更为神秘的怪兽。但是，通过将 $S^1$ 和 $S^{2n+1}$ 的已知群代入长正合序列，机器开始运转，然后得出一个优美的结果：[复射影空间](@keyword=complex_projective_space|lang=zh-CN|style=Feynman)的第二[同伦群](@keyword=homotopy_groups|lang=zh-CN|style=Feynman) $\pi_2(\mathbb{C}P^n)$ 同构于整数集 $\mathbb{Z}$ ([@problem_id:1685481])。我们利用了对“更简单”空间的知识，推断出了一个更复杂空间的非显而易见的性质。
 
-这种“分而治之”的原则具有惊人的普适性。[李群](@article_id:298110)的复杂结构——它们是物理学中[连续对称性](@article_id:297708)的数学体现——可以通过[纤维化](@article_id:381971)来揭示。例如，描述5维空间中旋转的[特殊正交群](@article_id:306838) $SO(5)$，可以被理解为一个以4维球面 $S^4$ 为底、以群 $SO(4)$ 为纤维的丛。这种关系 $SO(4) \to SO(5) \to S^4$ 再次让我们能够关联它们的拓扑不变量，并计算出否则将非常难以处理的[同伦群](@article_id:320289) ()。同样，$\mathbb{C}^3$ 中的“完全旗”空间——一个在[表示论](@article_id:298447)中很重要的几何对象——可以被揭示为一个迭代[纤维化](@article_id:381971)，这使我们能够通过将其分解为一个以[复射影空间](@article_id:332104)为纤维和底的丛之塔，出乎意料地轻松确定其基本群 ()。
+这种“分而治之”的原则具有惊人的普适性。[李群](@keyword=lie_groups|lang=zh-CN|style=Feynman)的复杂结构——它们是物理学中[连续对称性](@keyword=continuous_symmetry|lang=zh-CN|style=Feynman)的数学体现——可以通过[纤维化](@keyword=fibrosis|lang=zh-CN|style=Feynman)来揭示。例如，描述5维空间中旋转的[特殊正交群](@keyword=special_orthogonal_group|lang=zh-CN|style=Feynman) $SO(5)$，可以被理解为一个以4维球面 $S^4$ 为底、以群 $SO(4)$ 为纤维的丛。这种关系 $SO(4) \to SO(5) \to S^4$ 再次让我们能够关联它们的拓扑不变量，并计算出否则将非常难以处理的[同伦群](@keyword=homotopy_groups|lang=zh-CN|style=Feynman) ([@problem_id:704320])。同样，$\mathbb{C}^3$ 中的“完全旗”空间——一个在[表示论](@keyword=representation_theory|lang=zh-CN|style=Feynman)中很重要的几何对象——可以被揭示为一个迭代[纤维化](@keyword=fibrosis|lang=zh-CN|style=Feynman)，这使我们能够通过将其分解为一个以[复射影空间](@keyword=complex_projective_space|lang=zh-CN|style=Feynman)为纤维和底的丛之塔，出乎意料地轻松确定其基本群 ([@problem_id:1649262])。
 
-这种代数联系延伸到其他[不变量](@article_id:309269)。欧拉示性数 $\chi(X)$，一个你可以通过[三角剖分](@article_id:335950)一个[曲面](@article_id:331153)并计算顶点、边和面的数量来计算的数，有一个深刻的同调定义。对于一个[纤维化](@article_id:381971)，这个[不变量](@article_id:309269)遵循一个非常简单的乘法法则：$\chi(\text{总空间}) = \chi(\text{底空间}) \times \chi(\text{纤维})$。对于最初的 Hopf [纤维化](@article_id:381971) $S^1 \to S^3 \to S^2$，我们可以计算出 $\chi(S^1)=0$, $\chi(S^2)=2$ 和 $\chi(S^3)=0$。的确，$0 = 2 \times 0$，这证实了该法则，并加强了我们的直觉：一个丛在某种深刻的意义上是一个“扭曲的乘积” ()。
+这种代数联系延伸到其他[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)。欧拉示性数 $\chi(X)$，一个你可以通过[三角剖分](@keyword=triangulation|lang=zh-CN|style=Feynman)一个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)并计算顶点、边和面的数量来计算的数，有一个深刻的同调定义。对于一个[纤维化](@keyword=fibrosis|lang=zh-CN|style=Feynman)，这个[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)遵循一个非常简单的乘法法则：$\chi(\text{总空间}) = \chi(\text{底空间}) \times \chi(\text{纤维})$。对于最初的 Hopf [纤维化](@keyword=fibrosis|lang=zh-CN|style=Feynman) $S^1 \to S^3 \to S^2$，我们可以计算出 $\chi(S^1)=0$, $\chi(S^2)=2$ 和 $\chi(S^3)=0$。的确，$0 = 2 \times 0$，这证实了该法则，并加强了我们的直觉：一个丛在某种深刻的意义上是一个“扭曲的乘积” ([@problem_id:1669521])。
 
 ### 划清界限：当一个结构不是丛时
 
-要充分领会纤维丛定义的精确性和威力，同样重要的是要看清楚什么*不是*纤维丛。“[局部平凡性](@article_id:320729)”——即底空间上的每个点都必须有一个邻域，在该邻域上丛看起来像一个简单的乘积——这个条件不仅仅是一个技术细节；它是问题的核心。它确保了纤维在各处都是统一的。
+要充分领会纤维丛定义的精确性和威力，同样重要的是要看清楚什么*不是*纤维丛。“[局部平凡性](@keyword=local_triviality|lang=zh-CN|style=Feynman)”——即底空间上的每个点都必须有一个邻域，在该邻域上丛看起来像一个简单的乘积——这个条件不仅仅是一个技术细节；它是问题的核心。它确保了纤维在各处都是统一的。
 
-想象一个8字图的“[切空间](@article_id:377902)”。在远离[交叉](@article_id:315017)点的地方，该图看起来像一条简单的线，其切空间也只是一条线，$\mathbb{R}$。但在中心交点处，两个环相遇的地方，[切空间](@article_id:377902)是*两条*线的[楔和](@article_id:334307)，一个像'X'的形状。如果我们试图构建一个以8字图为底的“[切丛](@article_id:321698)”，我们立即会遇到一个问题。远离交点的任何一点上的纤维是 $\mathbb{R}$，但在交点上的纤维是一个不同的拓扑空间，$\mathbb{R} \vee \mathbb{R}$。无论你在那个交点周围取多小的邻域，它都会包含纤维是一条线的点和一个纤维是十字[交叉](@article_id:315017)的点。没有办法让这在局部上看起来像一个统一的乘积 $U \times F$。该结构在交点处未能通过[局部平凡性](@article_id:320729)测试，因此它不是一个纤维丛 ()。这个简单的例子优美地说明了纤维的统一性是一个刚性的、本质的要求。
+想象一个8字图的“[切空间](@keyword=tangent_spaces|lang=zh-CN|style=Feynman)”。在远离[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)点的地方，该图看起来像一条简单的线，其切空间也只是一条线，$\mathbb{R}$。但在中心交点处，两个环相遇的地方，[切空间](@keyword=tangent_spaces|lang=zh-CN|style=Feynman)是*两条*线的[楔和](@keyword=wedge_sum|lang=zh-CN|style=Feynman)，一个像'X'的形状。如果我们试图构建一个以8字图为底的“[切丛](@keyword=tangent_bundle|lang=zh-CN|style=Feynman)”，我们立即会遇到一个问题。远离交点的任何一点上的纤维是 $\mathbb{R}$，但在交点上的纤维是一个不同的拓扑空间，$\mathbb{R} \vee \mathbb{R}$。无论你在那个交点周围取多小的邻域，它都会包含纤维是一条线的点和一个纤维是十字[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)的点。没有办法让这在局部上看起来像一个统一的乘积 $U \times F$。该结构在交点处未能通过[局部平凡性](@keyword=local_triviality|lang=zh-CN|style=Feynman)测试，因此它不是一个纤维丛 ([@problem_id:1649267])。这个简单的例子优美地说明了纤维的统一性是一个刚性的、本质的要求。
 
-### 几何、扭转与[时空](@article_id:370647)之布
+### 几何、扭转与[时空](@keyword=space_time|lang=zh-CN|style=Feynman)之布
 
-[纤维丛](@article_id:319969)不仅仅是抽象的工具；它们是具体的几何对象。考虑圆上两个不同且有序的点的所有可能[排列](@article_id:296886)所构成的空间。这被称为[位形空间](@article_id:309950)，$C_2(S^1)$，这个概念在机器人学（机器人手臂可能状态的空间）和物理学（粒子的状态空间）中至关重要。我们可以将这个空间看作一个以圆 $S^1$ 为底的[纤维丛](@article_id:319969)，使用的[投影映射](@article_id:314871)仅仅是“忘记”第二个点的位置，只告诉我们第一个点的位置。纤维是什么？对于第一个点的固定位置，纤维是第二个点所有可能位置的空间——这恰好是移除了第一个点位置的整个圆。一个移除了一点的圆在拓扑上等价于实线 $\mathbb{R}$。因此，这个[位形空间](@article_id:309950)是一个以圆为底、以实线为纤维的[纤维丛](@article_id:319969) ()。
+[纤维丛](@keyword=fibre_bundle|lang=zh-CN|style=Feynman)不仅仅是抽象的工具；它们是具体的几何对象。考虑圆上两个不同且有序的点的所有可能[排列](@keyword=permutation|lang=zh-CN|style=Feynman)所构成的空间。这被称为[位形空间](@keyword=configuration_space|lang=zh-CN|style=Feynman)，$C_2(S^1)$，这个概念在机器人学（机器人手臂可能状态的空间）和物理学（粒子的状态空间）中至关重要。我们可以将这个空间看作一个以圆 $S^1$ 为底的[纤维丛](@keyword=fibre_bundle|lang=zh-CN|style=Feynman)，使用的[投影映射](@keyword=projection_maps|lang=zh-CN|style=Feynman)仅仅是“忘记”第二个点的位置，只告诉我们第一个点的位置。纤维是什么？对于第一个点的固定位置，纤维是第二个点所有可能位置的空间——这恰好是移除了第一个点位置的整个圆。一个移除了一点的圆在拓扑上等价于实线 $\mathbb{R}$。因此，这个[位形空间](@keyword=configuration_space|lang=zh-CN|style=Feynman)是一个以圆为底、以实线为纤维的[纤维丛](@keyword=fibre_bundle|lang=zh-CN|style=Feynman) ([@problem_id:1649293])。
 
-最直观的非平凡丛是[莫比乌斯带](@article_id:312802)，它是一个以圆为底、以区间为纤维的丛。当我们用更复杂的纤维来玩这个概念时会发生什么？考虑圆上的非平凡2阶向量丛，可以把它想象成一个“平面的莫比乌斯带”。如果我们取这个丛的*射影化*——将每个纤维（一个平面，$\mathbb{R}^2$）替换为该平面中穿过原点的所有直线的空间（一条射影直线，$\mathbb{R}P^1 \cong S^1$）——我们创造了一个新的[纤维丛](@article_id:319969)。底是一个圆，纤维是一个圆，所以你可能会猜总空间是一个环面（$S^1 \times S^1$）。但你错了！原始[向量丛](@article_id:320021)中固有的“扭转”迫使结果空间也产生扭转。总空间不是一个环面，而是一个[克莱因瓶](@article_id:310080)——一个无法在3D空间中[嵌入](@article_id:311541)而不自相交的[曲面](@article_id:331153) ()。丛的拓扑结构直接决定了结果[流形的拓扑](@article_id:331537)结构，其方式往往出人意料。
+最直观的非平凡丛是[莫比乌斯带](@keyword=möbius_strip|lang=zh-CN|style=Feynman)，它是一个以圆为底、以区间为纤维的丛。当我们用更复杂的纤维来玩这个概念时会发生什么？考虑圆上的非平凡2阶向量丛，可以把它想象成一个“平面的莫比乌斯带”。如果我们取这个丛的*射影化*——将每个纤维（一个平面，$\mathbb{R}^2$）替换为该平面中穿过原点的所有直线的空间（一条射影直线，$\mathbb{R}P^1 \cong S^1$）——我们创造了一个新的[纤维丛](@keyword=fibre_bundle|lang=zh-CN|style=Feynman)。底是一个圆，纤维是一个圆，所以你可能会猜总空间是一个环面（$S^1 \times S^1$）。但你错了！原始[向量丛](@keyword=vector_bundles|lang=zh-CN|style=Feynman)中固有的“扭转”迫使结果空间也产生扭转。总空间不是一个环面，而是一个[克莱因瓶](@keyword=klein_bottle|lang=zh-CN|style=Feynman)——一个无法在3D空间中[嵌入](@keyword=embedding|lang=zh-CN|style=Feynman)而不自相交的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman) ([@problem_id:1693923])。丛的拓扑结构直接决定了结果[流形的拓扑](@keyword=topology_of_manifolds|lang=zh-CN|style=Feynman)结构，其方式往往出人意料。
 
-底空间和总空间的拓扑之间的这种相互作用可能非常微妙。例如，它们的[可定向性](@article_id:310196)之间有什么关系？如果你在一个不可定向的底空间（如莫比乌斯带）上构建一个[纤维丛](@article_id:319969)，总空间也会是不可定向的吗？假设纤维本身是可定向的，答案是肯定的。但故事并未就此结束。每个不可定向的[流形](@article_id:313450)都有一个连通的、可定向的“二重覆盖”，它环绕其两圈（想象一下双重覆盖莫比乌斯带的圆柱）。一个优美的定理指出，总空间的可定向二重覆盖恰好是原始丛到基地可定向二重覆盖的[拉回](@article_id:321220) ()。这是一个深刻一致性的陈述：要“解开”整个结构的扭转，你必须首先“解开”它所构建于其上的底的扭转。
+底空间和总空间的拓扑之间的这种相互作用可能非常微妙。例如，它们的[可定向性](@keyword=orientability|lang=zh-CN|style=Feynman)之间有什么关系？如果你在一个不可定向的底空间（如莫比乌斯带）上构建一个[纤维丛](@keyword=fibre_bundle|lang=zh-CN|style=Feynman)，总空间也会是不可定向的吗？假设纤维本身是可定向的，答案是肯定的。但故事并未就此结束。每个不可定向的[流形](@keyword=manifold|lang=zh-CN|style=Feynman)都有一个连通的、可定向的“二重覆盖”，它环绕其两圈（想象一下双重覆盖莫比乌斯带的圆柱）。一个优美的定理指出，总空间的可定向二重覆盖恰好是原始丛到基地可定向二重覆盖的[拉回](@keyword=pullback|lang=zh-CN|style=Feynman) ([@problem_id:1688107])。这是一个深刻一致性的陈述：要“解开”整个结构的扭转，你必须首先“解开”它所构建于其上的底的扭转。
 
-### 现代物理学的语言：规范场与[磁单极子](@article_id:303253)
+### 现代物理学的语言：规范场与[磁单极子](@keyword=magnetic_monopoles|lang=zh-CN|style=Feynman)
 
-也许纤维丛最惊人的应用位于20世纪物理学的核心。[标准模型](@article_id:297875)，我们对自然界基本力（除引力外）的最佳描述，完全是用*[规范场](@article_id:320031)论*的语言写成的。而[规范场](@article_id:320031)论就是[纤维丛](@article_id:319969)的物理学。在这个图景中，力不是“拉”或“推”，而是几何的体现。一个[力场](@article_id:307740)（如[电磁场](@article_id:329585)）是主[纤维丛](@article_id:319969)上的一个*联络*。
+也许纤维丛最惊人的应用位于20世纪物理学的核心。[标准模型](@keyword=standard_model|lang=zh-CN|style=Feynman)，我们对自然界基本力（除引力外）的最佳描述，完全是用*[规范场](@keyword=gauge_fields|lang=zh-CN|style=Feynman)论*的语言写成的。而[规范场](@keyword=gauge_fields|lang=zh-CN|style=Feynman)论就是[纤维丛](@keyword=fibre_bundle|lang=zh-CN|style=Feynman)的物理学。在这个图景中，力不是“拉”或“推”，而是几何的体现。一个[力场](@keyword=force_field|lang=zh-CN|style=Feynman)（如[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)）是主[纤维丛](@keyword=fibre_bundle|lang=zh-CN|style=Feynman)上的一个*联络*。
 
-最典型的例子是对磁单极子的描述。Paul Dirac 预测，如果宇宙中存在一个单独的磁荷（磁单极子），它将解释为什么[电荷](@article_id:339187)以离散单位出现。虽然尚未明确观测到[磁单极子](@article_id:303253)，但其数学结构是现代理论的基石。这个结构不是别的，正是 Hopf [纤维化](@article_id:381971)，$U(1) \to S^3 \to S^2$！()。
+最典型的例子是对磁单极子的描述。Paul Dirac 预测，如果宇宙中存在一个单独的磁荷（磁单极子），它将解释为什么[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)以离散单位出现。虽然尚未明确观测到[磁单极子](@keyword=magnetic_monopoles|lang=zh-CN|style=Feynman)，但其数学结构是现代理论的基石。这个结构不是别的，正是 Hopf [纤维化](@keyword=fibrosis|lang=zh-CN|style=Feynman)，$U(1) \to S^3 \to S^2$！([@problem_id:1671654])。
 
 在这个模型中：
--   底空间 $S^2$ 代表了普通空间中环绕[磁单极子](@article_id:303253)的方向球面。
+-   底空间 $S^2$ 代表了普通空间中环绕[磁单极子](@keyword=magnetic_monopoles|lang=zh-CN|style=Feynman)的方向球面。
 -   纤维 $U(1)$（圆群）代表了带电粒子（如电子）的量子力学“相位”。
--   总空间 $S^3$ 是[量子态空间](@article_id:376681)。
+-   总空间 $S^3$ 是[量子态空间](@keyword=quantum_state_space|lang=zh-CN|style=Feynman)。
 
-关键事实是这个丛是*非平凡的*。它的“扭转”由一个称为[第一陈类](@article_id:380096)的拓扑不变量来量化，对于 Hopf 丛，该值为 $\pm 1$。这个非零整数，令人震惊地，就是[磁单极子](@article_id:303253)的磁荷！丛的非平凡性具有直接的物理意义：无法在环绕磁单极子的整个球面上定义一个单一、光滑的磁矢量势。必须使用至少两个重叠的“片区”（如北半球和南半球），这一特征曾困扰物理学家多年，但从丛的视角来看却非常自然。一个基本物理量——磁荷——的存在，被揭示为一个底层[纤维丛](@article_id:319969)的拓扑性质。
+关键事实是这个丛是*非平凡的*。它的“扭转”由一个称为[第一陈类](@keyword=first_chern_class|lang=zh-CN|style=Feynman)的拓扑不变量来量化，对于 Hopf 丛，该值为 $\pm 1$。这个非零整数，令人震惊地，就是[磁单极子](@keyword=magnetic_monopoles|lang=zh-CN|style=Feynman)的磁荷！丛的非平凡性具有直接的物理意义：无法在环绕磁单极子的整个球面上定义一个单一、光滑的磁矢量势。必须使用至少两个重叠的“片区”（如北半球和南半球），这一特征曾困扰物理学家多年，但从丛的视角来看却非常自然。一个基本物理量——磁荷——的存在，被揭示为一个底层[纤维丛](@keyword=fibre_bundle|lang=zh-CN|style=Feynman)的拓扑性质。
 
 ### 宇宙蓝图：所有可能世界的目录
 
-纤维丛的强大和普遍性引出了一个终极的宏大问题：我们能否对它们进行全部分类？是否存在一个所有可能“扭曲”结构的终极目录？答案是[代数拓扑学](@article_id:298641)的最高成就之一：是的。
+纤维丛的强大和普遍性引出了一个终极的宏大问题：我们能否对它们进行全部分类？是否存在一个所有可能“扭曲”结构的终极目录？答案是[代数拓扑学](@keyword=algebraic_topology|lang=zh-CN|style=Feynman)的最高成就之一：是的。
 
-对于任何给定类型的纤维和结构群（如n阶[复向量丛](@article_id:339916)），存在一个“[分类空间](@article_id:308841)”，通常记为 $BU(n)$。这个空间虽然是无限维和抽象的，但它充当了该类型所有丛的通用库或主蓝图 ()。它承载着一个“万有丛”，其中包含了所有可能的拓扑扭转。
+对于任何给定类型的纤维和结构群（如n阶[复向量丛](@keyword=complex_vector_bundles|lang=zh-CN|style=Feynman)），存在一个“[分类空间](@keyword=classifying_spaces|lang=zh-CN|style=Feynman)”，通常记为 $BU(n)$。这个空间虽然是无限维和抽象的，但它充当了该类型所有丛的通用库或主蓝图 ([@problem_id:3026514])。它承载着一个“万有丛”，其中包含了所有可能的拓扑扭转。
 
-该定理指出，对于任何行为良好的底空间 $M$，其上的每个[向量丛](@article_id:320021)都可以通过一种标准方式构建：只需定义一个从 $M$ 到[分类空间](@article_id:308841) $BU(n)$ 的连续映射。这个映射就像一张“借书卡”，告诉你从通用目录中提取哪个蓝图来构建你的特定丛。两个丛是同构的，当且仅当它们的分类映射是[同伦](@article_id:299714)的（可以连续地变形为彼此）。
+该定理指出，对于任何行为良好的底空间 $M$，其上的每个[向量丛](@keyword=vector_bundles|lang=zh-CN|style=Feynman)都可以通过一种标准方式构建：只需定义一个从 $M$ 到[分类空间](@keyword=classifying_spaces|lang=zh-CN|style=Feynman) $BU(n)$ 的连续映射。这个映射就像一张“借书卡”，告诉你从通用目录中提取哪个蓝图来构建你的特定丛。两个丛是同构的，当且仅当它们的分类映射是[同伦](@keyword=homotopy|lang=zh-CN|style=Feynman)的（可以连续地变形为彼此）。
 
-这是一个惊人的统一。所有可能空间上千变万化的[向量丛](@article_id:320021)动物园，被完全组织和编码到进入单个通用空间的映射中。从李群的形状到[磁单极子](@article_id:303253)的[电荷](@article_id:339187)，我们所见过的各种现象都只是这些通用结构性质的不同反映。[纤维丛](@article_id:319969)确实是一个统一的原则，是自然用以书写世界的语言中的一段深刻语法。
+这是一个惊人的统一。所有可能空间上千变万化的[向量丛](@keyword=vector_bundles|lang=zh-CN|style=Feynman)动物园，被完全组织和编码到进入单个通用空间的映射中。从李群的形状到[磁单极子](@keyword=magnetic_monopoles|lang=zh-CN|style=Feynman)的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，我们所见过的各种现象都只是这些通用结构性质的不同反映。[纤维丛](@keyword=fibre_bundle|lang=zh-CN|style=Feynman)确实是一个统一的原则，是自然用以书写世界的语言中的一段深刻语法。

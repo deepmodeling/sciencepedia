@@ -7,7 +7,7 @@ This article delves into this pivotal concept. In the first section, **Principle
 
 Imagine you are a detective at the scene of a crime. On a table, you find a single, crucial clue: a handwritten note. Your task is to infer the identity of the person who wrote it. Two scenarios could have led to this discovery. In the first, you were told to search the house for exactly one hour, and in that time, you found only this one note. In the second, you were told to search until you found the first piece of evidence, and this note was it.
 
-Now, a question that gets to the very heart of [scientific reasoning](@entry_id:754574): Does *how* you were instructed to search change the evidential meaning of the note itself? Once you have the note in your hand, does your search strategy matter for deducing who the author is?
+Now, a question that gets to the very heart of [scientific reasoning](@keyword=scientific_reasoning|lang=en-US|style=Feynman): Does *how* you were instructed to search change the evidential meaning of the note itself? Once you have the note in your hand, does your search strategy matter for deducing who the author is?
 
 Most people’s intuition screams, "Of course not! The note is the note. Its handwriting, its ink, its message—that's the evidence. My search protocol is irrelevant." If your intuition aligns with this, you have just grasped the spirit of one of the most profound and controversial ideas in the philosophy of science: the **Likelihood Principle**. It is a principle of beautiful simplicity, yet its consequences ripple through the foundations of statistics, drawing a bright line between two major schools of thought.
 
@@ -15,9 +15,9 @@ Most people’s intuition screams, "Of course not! The note is the note. Its han
 
 To formalize this intuition, we need a tool. That tool is the **likelihood function**. It’s a bit of a backward-sounding idea at first, but it's the key to everything. Let's say we're flipping a coin, not to see what comes up, but to deduce the coin's intrinsic nature—its probability of landing heads, a parameter we can call $p$. If $p=0.5$, it's a fair coin; if $p=0.8$, it's heavily biased toward heads. The parameter $p$ is the "culprit" we are trying to identify.
 
-Suppose we flip the coin 10 times and get a specific sequence: HTHHHTHTTT. The probability of this [exact sequence](@entry_id:149883), for a coin with a given bias $p$, is $p \times (1-p) \times p \times \dots = p^5 (1-p)^5$.
+Suppose we flip the coin 10 times and get a specific sequence: HTHHHTHTTT. The probability of this [exact sequence](@keyword=exact_sequence|lang=en-US|style=Feynman), for a coin with a given bias $p$, is $p \times (1-p) \times p \times \dots = p^5 (1-p)^5$.
 
-Now, let's turn this on its head. We have the data—the sequence of flips. What does it tell us about $p$? We can construct a function, $L(p; \text{data})$, which asks, for every possible value of $p$, "How probable was my observed data, assuming this value of $p$ is the truth?" This function is the [likelihood function](@entry_id:141927).
+Now, let's turn this on its head. We have the data—the sequence of flips. What does it tell us about $p$? We can construct a function, $L(p; \text{data})$, which asks, for every possible value of $p$, "How probable was my observed data, assuming this value of $p$ is the truth?" This function is the [likelihood function](@keyword=likelihood_function|lang=en-US|style=Feynman).
 
 $$L(p; \text{data}) = P(\text{data} | p)$$
 
@@ -25,7 +25,7 @@ This is not the probability of $p$. It's the probability of the data, but we are
 
 ### The Tale of Two Scientists
 
-This brings us back to our detective's dilemma, now cast in a scientific light. Consider two scientists, both trying to estimate the prevalence of a certain [genetic mutation](@entry_id:166469), which has an unknown probability $\theta$.  
+This brings us back to our detective's dilemma, now cast in a scientific light. Consider two scientists, both trying to estimate the prevalence of a certain [genetic mutation](@keyword=genetic_mutation|lang=en-US|style=Feynman), which has an unknown probability $\theta$. [@problem_id:4318483] [@problem_id:4922851]
 
 -   **Scientist A** decides on a **fixed-sample design**. She will collect exactly $n=20$ tissue samples and count how many have the mutation. She runs her experiment and observes $s=12$ positive results.
 
@@ -47,9 +47,9 @@ But here is the crucial insight: with respect to the parameter of interest, $\th
 
 This leads us to the formal statement of the **Likelihood Principle**:
 
-> All of the evidence about a parameter $\theta$ which is obtained from an experiment is contained in the likelihood function for $\theta$ given the data. Two experiments that yield proportional likelihood functions contain the same evidence and should lead to identical inferences about $\theta$.  
+> All of the evidence about a parameter $\theta$ which is obtained from an experiment is contained in the likelihood function for $\theta$ given the data. Two experiments that yield proportional likelihood functions contain the same evidence and should lead to identical inferences about $\theta$. [@problem_id:4969236] [@problem_id:3506252]
 
-According to this principle, Scientist A and Scientist B have the same evidence and must draw the same conclusion. The [stopping rule](@entry_id:755483)—the private intention of the scientist that determined when the experiment would end—is irrelevant to the interpretation of the data once it's collected. The only thing that matters is what *did* happen, not what *might have* happened.
+According to this principle, Scientist A and Scientist B have the same evidence and must draw the same conclusion. The [stopping rule](@keyword=stopping_rule|lang=en-US|style=Feynman)—the private intention of the scientist that determined when the experiment would end—is irrelevant to the interpretation of the data once it's collected. The only thing that matters is what *did* happen, not what *might have* happened.
 
 ### The Great Divide: What Might Have Been
 
@@ -57,17 +57,17 @@ Why on earth would this be controversial? It seems so obvious. The controversy a
 
 For a frequentist, the reliability of a procedure is judged by its long-run performance over hypothetical repetitions of the experiment. To calculate a **p-value**, for instance, one asks: "Assuming the null hypothesis is true (e.g., the coin is fair, $\theta=0.5$), what is the probability of observing data as extreme, or more extreme, than what I actually saw?"
 
-Here's the catch: the set of "more extreme" outcomes depends entirely on the [stopping rule](@entry_id:755483)!  
+Here's the catch: the set of "more extreme" outcomes depends entirely on the [stopping rule](@keyword=stopping_rule|lang=en-US|style=Feynman)! [@problem_id:4828664] [@problem_id:4912574]
 
--   For Scientist A (fixed $n=20$), "more extreme" means getting 13, 14, ..., up to 20 heads. Her [sample space](@entry_id:270284) of possibilities is finite. The p-value for her result (12 heads out of 20, testing against $\theta > 0.5$) is about $0.252$.
+-   For Scientist A (fixed $n=20$), "more extreme" means getting 13, 14, ..., up to 20 heads. Her [sample space](@keyword=sample_space|lang=en-US|style=Feynman) of possibilities is finite. The p-value for her result (12 heads out of 20, testing against $\theta > 0.5$) is about $0.252$.
 
--   For Scientist B (fixed $s=12$), "more extreme" means needing 19, 18, or fewer flips to get her 12 heads. Her [sample space](@entry_id:270284) is different. The p-value for her result (getting 12 heads in 20 flips) is about $0.180$.
+-   For Scientist B (fixed $s=12$), "more extreme" means needing 19, 18, or fewer flips to get her 12 heads. Her [sample space](@keyword=sample_space|lang=en-US|style=Feynman) is different. The p-value for her result (getting 12 heads in 20 flips) is about $0.180$.
 
 Think about that! With the exact same data, Scientist A concludes her result is not statistically significant ($p > 0.05$), while Scientist B finds her result is bordering on significance. A frequentist is forced to conclude that the scientists' intentions change the meaning of the data. This is a direct violation of the Likelihood Principle.
 
 This isn't just a quirk of coin flips. It applies everywhere.
--   In a high-energy physics experiment at the LHC, one team might run their detector for a fixed amount of time (analogous to Scientist A), while another team runs it until they see a certain number of interesting particle events (analogous to Scientist B). If they happen to stop with the same data, the Likelihood Principle says their inference about the underlying physics should be identical, but frequentist [confidence intervals](@entry_id:142297) would differ. 
--   In [survey sampling](@entry_id:755685), one team might draw a simple random sample of 200 patients (fixed size), while another uses a method where each patient in the hospital has a 2% chance of being included, which happens to result in a sample of 200. Again, the data is the same, but the design-based (frequentist) estimates of variance would be different, because they depend on the sampling *process*. 
+-   In a high-energy physics experiment at the LHC, one team might run their detector for a fixed amount of time (analogous to Scientist A), while another team runs it until they see a certain number of interesting particle events (analogous to Scientist B). If they happen to stop with the same data, the Likelihood Principle says their inference about the underlying physics should be identical, but frequentist [confidence intervals](@keyword=confidence_intervals|lang=en-US|style=Feynman) would differ. [@problem_id:3506252]
+-   In survey sampling, one team might draw a simple random sample of 200 patients (fixed size), while another uses a method where each patient in the hospital has a 2% chance of being included, which happens to result in a sample of 200. Again, the data is the same, but the design-based (frequentist) estimates of variance would be different, because they depend on the sampling *process*. [@problem_id:4827465]
 
 ### Bayesian Inference and the Unity of Evidence
 
@@ -76,10 +76,10 @@ There is another way. **Bayesian inference** provides a framework that naturally
 $$ \text{Posterior belief} \propto \text{Likelihood} \times \text{Prior belief} $$
 $$ p(\theta | \text{data}) \propto L(\theta; \text{data}) \times p(\theta) $$
 
-Look at the formula! The data enters *only* through the [likelihood function](@entry_id:141927). If Scientist A and Scientist B start with the same prior beliefs about $\theta$, and their likelihood functions $L_A(\theta)$ and $L_B(\theta)$ are proportional, then their posterior beliefs $p_A(\theta | \text{data})$ and $p_B(\theta | \text{data})$ *must* be identical. The different combinatorial coefficients from their stopping rules are just constants that get absorbed into the final normalization of the posterior distribution. The [stopping rule](@entry_id:755483) becomes irrelevant, just as our intuition demanded. 
+Look at the formula! The data enters *only* through the [likelihood function](@keyword=likelihood_function|lang=en-US|style=Feynman). If Scientist A and Scientist B start with the same prior beliefs about $\theta$, and their likelihood functions $L_A(\theta)$ and $L_B(\theta)$ are proportional, then their posterior beliefs $p_A(\theta | \text{data})$ and $p_B(\theta | \text{data})$ *must* be identical. The different combinatorial coefficients from their stopping rules are just constants that get absorbed into the final normalization of the posterior distribution. The [stopping rule](@keyword=stopping_rule|lang=en-US|style=Feynman) becomes irrelevant, just as our intuition demanded. [@problem_id:4844455]
 
-This is a beautiful result. It shows that the Bayesian framework provides a unified way of understanding evidence. The evidence is what it is, and its meaning doesn't depend on the private thoughts or intentions of the experimenter. Even in more complex scenarios, like a medical trial where the number of patients in the treatment and control groups is random, the same logic holds. Conditioning on facts that don't depend on the parameter of interest (like the final group sizes) leads to proportional likelihoods and shouldn't change our inference, yet it can and does change the results of frequentist tests. 
+This is a beautiful result. It shows that the Bayesian framework provides a unified way of understanding evidence. The evidence is what it is, and its meaning doesn't depend on the private thoughts or intentions of the experimenter. Even in more complex scenarios, like a medical trial where the number of patients in the treatment and control groups is random, the same logic holds. Conditioning on facts that don't depend on the parameter of interest (like the final group sizes) leads to proportional likelihoods and shouldn't change our inference, yet it can and does change the results of frequentist tests. [@problem_id:4849920]
 
-This principle is not just a philosophical curiosity. It is the [logical consequence](@entry_id:155068) of accepting even more basic ideas. A famous result by Allan Birnbaum in 1962 showed that if you accept two seemingly self-evident principles—the **Sufficiency Principle** (that you can summarize data with a [sufficient statistic](@entry_id:173645) without losing information) and the **Conditionality Principle** (that you should only consider the experiment you actually performed, not other experiments you could have performed )—then you are logically forced to accept the Likelihood Principle. 
+This principle is not just a philosophical curiosity. It is the [logical consequence](@keyword=logical_consequence|lang=en-US|style=Feynman) of accepting even more basic ideas. A famous result by Allan Birnbaum in 1962 showed that if you accept two seemingly self-evident principles—the **Sufficiency Principle** (that you can summarize data with a [sufficient statistic](@keyword=sufficient_statistic|lang=en-US|style=Feynman) without losing information) and the **Conditionality Principle** (that you should only consider the experiment you actually performed, not other experiments you could have performed [@problem_id:4922053])—then you are logically forced to accept the Likelihood Principle. [@problem_id:4828664]
 
-The Likelihood Principle, therefore, stands as a central guidepost in the theory of evidence. It challenges us to think deeply about what it means to learn from data. It suggests that the most direct and purest representation of what the data has to say is captured by the elegant shape of the [likelihood function](@entry_id:141927), a profile of plausibility for every possibility we seek to understand.
+The Likelihood Principle, therefore, stands as a central guidepost in the theory of evidence. It challenges us to think deeply about what it means to learn from data. It suggests that the most direct and purest representation of what the data has to say is captured by the elegant shape of the [likelihood function](@keyword=likelihood_function|lang=en-US|style=Feynman), a profile of plausibility for every possibility we seek to understand.

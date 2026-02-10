@@ -5,7 +5,7 @@ The following chapters will guide you through this essential concept. First, in 
 
 ## Principles and Mechanisms
 
-In the world of classical physics, stability is a concept of serene perfection. Imagine a marble resting at the bottom of a perfectly smooth bowl. If you give it a small nudge, it oscillates for a bit and settles back to the bottom. If you simply release it from the bottom, it stays put. This is the essence of what mathematicians call **[asymptotic stability](@article_id:149249)**. The system, left to its own devices, will always return to its equilibrium, its state of rest. For a long time, this was our primary understanding of stability. But the real world is rarely a place of perfect calm. What happens to our marble if there is a persistent, gentle breeze blowing through the bowl? Will it still return to the bottom? Or could this tiny, nagging disturbance eventually push it out of the bowl entirely? This question reveals the fragility of the classical view and beckons us toward a more robust, more realistic understanding of stability.
+In the world of classical physics, stability is a concept of serene perfection. Imagine a marble resting at the bottom of a perfectly smooth bowl. If you give it a small nudge, it oscillates for a bit and settles back to the bottom. If you simply release it from the bottom, it stays put. This is the essence of what mathematicians call **[asymptotic stability](@keyword=asymptotic_stability|lang=en-US|style=Feynman)**. The system, left to its own devices, will always return to its equilibrium, its state of rest. For a long time, this was our primary understanding of stability. But the real world is rarely a place of perfect calm. What happens to our marble if there is a persistent, gentle breeze blowing through the bowl? Will it still return to the bottom? Or could this tiny, nagging disturbance eventually push it out of the bowl entirely? This question reveals the fragility of the classical view and beckons us toward a more robust, more realistic understanding of stability.
 
 ### Beyond Perfect Calm: The Need for Robustness
 
@@ -23,7 +23,7 @@ Let's imagine this input $u$ is just a tiny, constant positive value, say $\bar{
 
 For small values of $x$, the linear term $-x$ dominates, and the system is pulled towards the origin. But there is a tipping point. If the state $x$ becomes large enough, the $x^2$ term will overwhelm the $-x$ term, and the net force will push the state *away* from the origin, faster and faster. This tipping point is precisely at $x = 1/\bar{u}$.
 
-Here is the shocking result: if we start our system anywhere beyond this point, with an initial condition $x_0 > 1/\bar{u}$, the state will not return to zero. Instead, it will race off to infinity in a finite amount of time!  . An arbitrarily small but persistent disturbance can cause a complete, catastrophic failure of a system that we previously certified as perfectly stable. Our classical notion of stability is not robust. It is a fair-weather friend. We need a new contract for stability, one that holds up in the stormy, unpredictable real world.
+Here is the shocking result: if we start our system anywhere beyond this point, with an initial condition $x_0 > 1/\bar{u}$, the state will not return to zero. Instead, it will race off to infinity in a finite amount of time! [@problem_id:2722269] [@problem_id:2713318]. An arbitrarily small but persistent disturbance can cause a complete, catastrophic failure of a system that we previously certified as perfectly stable. Our classical notion of stability is not robust. It is a fair-weather friend. We need a new contract for stability, one that holds up in the stormy, unpredictable real world.
 
 ### A New Contract for Stability: The ISS Definition
 
@@ -43,21 +43,21 @@ With this language, the ISS contract is written as a single, elegant inequality.
 $$
 |x(t)| \le \beta(|x_0|, t) + \gamma\left(\sup_{0 \le \tau \le t} |u(\tau)|\right)
 $$
- . Let's break this down. The term $\beta(|x_0|, t)$ is the transient part that depends on the initial condition $|x_0|$ and disappears as $t \to \infty$. The term $\gamma\left(\sup_{0 \le \tau \le t} |u(\tau)|\right)$ is the persistent part. It depends on the largest magnitude the input has reached up to time $t$. As time goes on, the first term vanishes, and the state is ultimately confined to a region whose size is determined by the gain function $\gamma$ acting on the overall size of the input.
+[@problem_id:2714053] [@problem_id:2713219]. Let's break this down. The term $\beta(|x_0|, t)$ is the transient part that depends on the initial condition $|x_0|$ and disappears as $t \to \infty$. The term $\gamma\left(\sup_{0 \le \tau \le t} |u(\tau)|\right)$ is the persistent part. It depends on the largest magnitude the input has reached up to time $t$. As time goes on, the first term vanishes, and the state is ultimately confined to a region whose size is determined by the gain function $\gamma$ acting on the overall size of the input.
 
-If the input is zero, $u \equiv 0$, then $\sup|u| = 0$. Since $\gamma(0)=0$, the inequality reduces to $|x(t)| \le \beta(|x_0|, t)$, which is precisely the definition of [global asymptotic stability](@article_id:187135). ISS is therefore a true and natural generalization of our classical notion, but one that is infinitely more powerful because it doesn't ignore the world outside the system.
+If the input is zero, $u \equiv 0$, then $\sup|u| = 0$. Since $\gamma(0)=0$, the inequality reduces to $|x(t)| \le \beta(|x_0|, t)$, which is precisely the definition of [global asymptotic stability](@keyword=global_asymptotic_stability|lang=en-US|style=Feynman). ISS is therefore a true and natural generalization of our classical notion, but one that is infinitely more powerful because it doesn't ignore the world outside the system.
 
 ### The Engine of Stability: The ISS-Lyapunov Function
 
 The ISS definition is a beautiful promise, but how can we ever verify it? We cannot possibly test every single possible input signal! We need a universal tool, an "X-ray machine" that lets us peer into the inner workings of the system and certify its stability without exhaustive testing. This magical tool is, once again, a **Lyapunov function**.
 
-Think of a Lyapunov function $V(x)$ as a generalized energy of the system. For a classical [stable system](@article_id:266392) without inputs, its energy must always decrease along any trajectory ($\dot{V}  0$), flowing downhill towards the minimum energy state at the equilibrium. But when there are external inputs, they can "pump energy" into the system. So, we can't expect the energy to *always* decrease.
+Think of a Lyapunov function $V(x)$ as a generalized energy of the system. For a classical [stable system](@keyword=stable_system|lang=en-US|style=Feynman) without inputs, its energy must always decrease along any trajectory ($\dot{V}  0$), flowing downhill towards the minimum energy state at the equilibrium. But when there are external inputs, they can "pump energy" into the system. So, we can't expect the energy to *always* decrease.
 
-The genius of the ISS framework lies in how it redefines this condition. A system is ISS if and only if we can find a Lyapunov-like function $V(x)$ whose rate of change, $\dot{V}$, satisfies the following **[dissipation inequality](@article_id:188140)**:
+The genius of the ISS framework lies in how it redefines this condition. A system is ISS if and only if we can find a Lyapunov-like function $V(x)$ whose rate of change, $\dot{V}$, satisfies the following **[dissipation inequality](@keyword=dissipation_inequality|lang=en-US|style=Feynman)**:
 $$
 \dot{V}(x, u) \le -\alpha_3(|x|) + \chi(|u|)
 $$
-. Here, $\alpha_3$ and $\chi$ are both class $\mathcal{K}$ functions. This inequality describes a tug-of-war.
+[@problem_id:2721576]. Here, $\alpha_3$ and $\chi$ are both class $\mathcal{K}$ functions. This inequality describes a tug-of-war.
 
 *   The term $-\alpha_3(|x|)$ represents the system's **natural dissipation**. It's an internal process that always tries to reduce the system's energy, and this effect gets stronger as the state $|x|$ gets larger. It's the "stabilizing" force.
 
@@ -65,9 +65,9 @@ $$
 
 A system is ISS if, for any fixed level of energy injection from the input, the natural dissipation will eventually win out if the state becomes large enough. No matter how strong the disturbance $\chi(|u|)$ is, we can always find a state magnitude $|x|$ for which the dissipation $-\alpha_3(|x|)$ is even stronger, forcing the total energy change $\dot{V}$ to be negative. This guarantees that the state can never run away to infinity.
 
-Let's revisit our two examples. For the non-robust system $\dot{x} = -x + x^2 u$, with $V = \frac{1}{2}x^2$, the derivative is $\dot{V} = -x^2 + x^3 u$ . The destabilizing term $x^3 u$ grows with $x$ faster than the stabilizing term $-x^2$. The dissipation can't guarantee a win. The ISS-Lyapunov condition fails, correctly predicting the system's fragility.
+Let's revisit our two examples. For the non-robust system $\dot{x} = -x + x^2 u$, with $V = \frac{1}{2}x^2$, the derivative is $\dot{V} = -x^2 + x^3 u$ [@problem_id:2722269]. The destabilizing term $x^3 u$ grows with $x$ faster than the stabilizing term $-x^2$. The dissipation can't guarantee a win. The ISS-Lyapunov condition fails, correctly predicting the system's fragility.
 
-In contrast, consider a system like $\dot{x} = -\eta x^3 + u$ . With $V = \frac{1}{2}x^2$, we get $\dot{V} = -\eta x^4 + xu$. Here, the stabilizing term $-\eta x^4$ grows much more powerfully with $x$ than the input coupling term $xu$. We can always show that this satisfies the [dissipation inequality](@article_id:188140). The dissipation term is overwhelmingly dominant for large states, guaranteeing this system is robustly stable, or ISS.
+In contrast, consider a system like $\dot{x} = -\eta x^3 + u$ [@problem_id:2201822]. With $V = \frac{1}{2}x^2$, we get $\dot{V} = -\eta x^4 + xu$. Here, the stabilizing term $-\eta x^4$ grows much more powerfully with $x$ than the input coupling term $xu$. We can always show that this satisfies the [dissipation inequality](@keyword=dissipation_inequality|lang=en-US|style=Feynman). The dissipation term is overwhelmingly dominant for large states, guaranteeing this system is robustly stable, or ISS.
 
 ### Extensions and Perspectives: The Power of the Framework
 
@@ -75,7 +75,7 @@ The ISS framework is far more than a simple definition; it's a powerful and flex
 
 #### Assembling Stable Systems: The Small-Gain Theorem
 
-What if we build a large, complex system by connecting many smaller components in a feedback network, like a power grid, a [biological network](@article_id:264393), or the internet? The **Nonlinear Small-Gain Theorem** provides an astonishingly simple rule for guaranteeing the stability of the whole network . If each subsystem is ISS, it has an associated gain $\gamma_i$ that quantifies how much it amplifies its inputs. The theorem states that if the composition of gains around any feedback loop is less than unity (meaning a signal gets smaller after one full trip around the loop, expressed as $\gamma_1 \circ \gamma_2 (r)  r$), then the entire interconnected system is guaranteed to be ISS. This allows for a modular, bottom-up design of complex, provably [stable systems](@article_id:179910).
+What if we build a large, complex system by connecting many smaller components in a feedback network, like a power grid, a [biological network](@keyword=biological_network|lang=en-US|style=Feynman), or the internet? The **Nonlinear Small-Gain Theorem** provides an astonishingly simple rule for guaranteeing the stability of the whole network [@problem_id:2754173]. If each subsystem is ISS, it has an associated gain $\gamma_i$ that quantifies how much it amplifies its inputs. The theorem states that if the composition of gains around any feedback loop is less than unity (meaning a signal gets smaller after one full trip around the loop, expressed as $\gamma_1 \circ \gamma_2 (r)  r$), then the entire interconnected system is guaranteed to be ISS. This allows for a modular, bottom-up design of complex, provably [stable systems](@keyword=stable_systems|lang=en-US|style=Feynman).
 
 #### Stability in an Imperfect World: Practical Stability
 
@@ -83,7 +83,7 @@ In many real-world applications, like digital control, our control signals are q
 $$
 |x(t)| \le \beta(|x_0|, t) + \gamma(|u|) + b
 $$
-. The new constant $b$ represents the size of this ultimate, "practical" stability region. This shows how the theory can be tailored to provide meaningful guarantees even in the face of practical hardware limitations.
+[@problem_id:2696269]. The new constant $b$ represents the size of this ultimate, "practical" stability region. This shows how the theory can be tailored to provide meaningful guarantees even in the face of practical hardware limitations.
 
 #### Seeing vs. Being: Input-to-Output Stability
 
@@ -91,6 +91,6 @@ Finally, it's crucial to ask: what exactly are we stabilizing? Consider a system
 $$
 \dot{x}_1 = -x_1 + u \quad \text{and} \quad \dot{x}_2 = x_2
 $$
-Suppose we only care about the "output" $y = x_1$. The dynamics of $y$ are perfectly stable and satisfy an ISS-like property with respect to the input $u$. We call this **Input-to-Output Stability (IOS)**. However, hidden from our view, the internal state $x_2(t) = x_2(0)e^t$ is exponentially unstable! The system is IOS, but it is certainly not ISS . This critical distinction teaches us that stabilizing what we can see (the output) is not the same as ensuring the health of the entire system (the state). The ISS property provides this stronger, internal guarantee. Similarly, some systems might be stable only for small inputs but become unstable for large ones, a failure of *global* ISS .
+Suppose we only care about the "output" $y = x_1$. The dynamics of $y$ are perfectly stable and satisfy an ISS-like property with respect to the input $u$. We call this **Input-to-Output Stability (IOS)**. However, hidden from our view, the internal state $x_2(t) = x_2(0)e^t$ is exponentially unstable! The system is IOS, but it is certainly not ISS [@problem_id:2714043]. This critical distinction teaches us that stabilizing what we can see (the output) is not the same as ensuring the health of the entire system (the state). The ISS property provides this stronger, internal guarantee. Similarly, some systems might be stable only for small inputs but become unstable for large ones, a failure of *global* ISS [@problem_id:2721921].
 
 The journey from classical stability to Input-to-State Stability is a journey from an idealized world to the real one. It replaces a fragile, brittle notion of stability with a powerful, flexible, and robust framework. It gives us the language to define stability in the presence of disturbances, the tools to prove it, and the principles to design complex systems that can withstand the perpetual, noisy reality of our universe.

@@ -11,43 +11,43 @@
 
 让我们从一个相当奇怪的问题开始：你如何证明某件事是不可能的？假设你声称，没有任何机器，无论多么巧妙，能够执行某项特定任务。为了证明这一点，你不能仅仅造几台机器然后证明它们失败了。你必须为“所有可能被构想出来的机器”来证明这一点。这到底要怎么做？
 
-这正是1930年[代数学](@article_id:316869)家们面对希尔伯特著名的 *Entscheidungsproblem*（“[判定问题](@article_id:338952)”）时所面临的挑战。该问题要求一个通用的、分步骤的程序——一个“[算法](@article_id:331821)”——能够判定任何给定的逻辑陈述是否普遍为真。在很长一段时间里，“[算法](@article_id:331821)”的概念只是一个直观的想法。但是，为了证明不存在这样的[算法](@article_id:331821)，像 Alonzo Church 和 Alan Turing 这样的数学家意识到他们必须做一些激进的事情。他们必须创造一个形式化的数学定义，以捕捉“直观有效方法”的整个范畴。
+这正是1930年[代数学](@keyword=algebra|lang=zh-CN|style=Feynman)家们面对希尔伯特著名的 *Entscheidungsproblem*（“[判定问题](@keyword=decision_problems|lang=zh-CN|style=Feynman)”）时所面临的挑战。该问题要求一个通用的、分步骤的程序——一个“[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)”——能够判定任何给定的逻辑陈述是否普遍为真。在很长一段时间里，“[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)”的概念只是一个直观的想法。但是，为了证明不存在这样的[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)，像 Alonzo Church 和 Alan Turing 这样的数学家意识到他们必须做一些激进的事情。他们必须创造一个形式化的数学定义，以捕捉“直观有效方法”的整个范畴。
 
-Turing 设想了一台简单的抽象机器——一条纸带，一个读写符号的读写头——并提出，任何我们直观上称为“可计算”的东西，都可以由这台机器计算出来。这不是一个可以证明的定理，因为等式的一边（“直观可计算”）是一个非形式化的、哲学的概念。这是一个论题，现在被称为**[丘奇-图灵论题](@article_id:298662)** (Church-Turing thesis)  。通过创建一个明确的分类——将所有问题分为“图灵可计算”和“非图灵可计算”——他们得以构建一个包含了“所有可能[算法](@article_id:331821)”的盒子。一旦这个盒子被构建起来，他们就可以证明 *Entscheidungsproblem* 的解（以及其他问题，如著名的[停机问题](@article_id:328947)）都在盒子之外。他们证明了某件事是不可能的，并在此过程中为整个数字世界奠定了基础。了解自身极限的第一步，是为你的整个领地绘制一幅地图。
+Turing 设想了一台简单的抽象机器——一条纸带，一个读写符号的读写头——并提出，任何我们直观上称为“可计算”的东西，都可以由这台机器计算出来。这不是一个可以证明的定理，因为等式的一边（“直观可计算”）是一个非形式化的、哲学的概念。这是一个论题，现在被称为**[丘奇-图灵论题](@keyword=church_turing_thesis|lang=zh-CN|style=Feynman)** (Church-Turing thesis) [@problem_id:1405474] [@problem_id:1450168]。通过创建一个明确的分类——将所有问题分为“图灵可计算”和“非图灵可计算”——他们得以构建一个包含了“所有可能[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)”的盒子。一旦这个盒子被构建起来，他们就可以证明 *Entscheidungsproblem* 的解（以及其他问题，如著名的[停机问题](@keyword=the_halting_problem|lang=zh-CN|style=Feynman)）都在盒子之外。他们证明了某件事是不可能的，并在此过程中为整个数字世界奠定了基础。了解自身极限的第一步，是为你的整个领地绘制一幅地图。
 
 ### 你是什么？你的变换告诉我
 
-让我们从抽象的计算世界转向物理的[时空](@article_id:370647)世界。想象一下，你是爱因斯坦狭义相对论之后的一位物理学家。你正在测量一个新的物理量，由一组四个数字表示，我们称之为 $A_\mu$。你将这些数字与你观察到的任何粒子的[四维速度](@article_id:324807) $v^\mu$ 结合，使用规则 $S = A_\mu v^\mu$。你发现了一些惊人的事情：无论粒子运动多快，或者你使用哪个[惯性参考系](@article_id:323792)来测量它，结果 $S$ 总是一个相同的数值，一个**标量**。
+让我们从抽象的计算世界转向物理的[时空](@keyword=space_time|lang=zh-CN|style=Feynman)世界。想象一下，你是爱因斯坦狭义相对论之后的一位物理学家。你正在测量一个新的物理量，由一组四个数字表示，我们称之为 $A_\mu$。你将这些数字与你观察到的任何粒子的[四维速度](@keyword=4_velocity|lang=zh-CN|style=Feynman) $v^\mu$ 结合，使用规则 $S = A_\mu v^\mu$。你发现了一些惊人的事情：无论粒子运动多快，或者你使用哪个[惯性参考系](@keyword=inertial_frame_of_reference|lang=zh-CN|style=Feynman)来测量它，结果 $S$ 总是一个相同的数值，一个**标量**。
 
-你发现了什么？宇宙正在告诉你一些关于你的对象 $A_\mu$ 本质的深刻信息。由于这个关系对“任何”四维速度都成立，$A_\mu$ 的变换性质必须被完美地定制，以“抵消”[四维速度](@article_id:324807) $v^\mu$ 在洛伦兹变换下的变换，从而使乘积保持不变。这迫使 $A_\mu$ 属于一个特定的数学类别：它必须是一个**[协变矢量](@article_id:327624)**（或1阶[协变张量](@article_id:638789)）。
+你发现了什么？宇宙正在告诉你一些关于你的对象 $A_\mu$ 本质的深刻信息。由于这个关系对“任何”四维速度都成立，$A_\mu$ 的变换性质必须被完美地定制，以“抵消”[四维速度](@keyword=4_velocity|lang=zh-CN|style=Feynman) $v^\mu$ 在洛伦兹变换下的变换，从而使乘积保持不变。这迫使 $A_\mu$ 属于一个特定的数学类别：它必须是一个**[协变矢量](@keyword=covariant_vectors|lang=zh-CN|style=Feynman)**（或1阶[协变张量](@keyword=covariant_tensors|lang=zh-CN|style=Feynman)）[@problem_id:1555199]。
 
-这是**商定律** (Quotient Law) 的一个例子。这是一种美妙的推理方式，它允许你根据一个未知对象与你已经理解的对象组合时的行为来对其进行分类。这就像通过发现一把钥匙能打开一整类锁来弄清楚这把钥匙的形状。一个对象的本质——无论是标量、矢量，还是像[张量](@article_id:321604)这样更奇特的东西——不在于它在某个特定[坐标系](@article_id:316753)中的数值，而在于当你改变视角时它所遵循的规则。它的身份由其变换来定义。
+这是**商定律** (Quotient Law) 的一个例子。这是一种美妙的推理方式，它允许你根据一个未知对象与你已经理解的对象组合时的行为来对其进行分类。这就像通过发现一把钥匙能打开一整类锁来弄清楚这把钥匙的形状。一个对象的本质——无论是标量、矢量，还是像[张量](@keyword=tensor|lang=zh-CN|style=Feynman)这样更奇特的东西——不在于它在某个特定[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中的数值，而在于当你改变视角时它所遵循的规则。它的身份由其变换来定义。
 
 ### 事物的形态：曲率与特性
 
-科学中许多最重要的分类来自于分析抽象景观上事物的“形态”。这不一定是物理景观，而是一个**[势能面](@article_id:307856) (potential energy surface, PES)**，它将系统每一个可能的构型映射到一个值，比如能量。这个[曲面](@article_id:331153)的“形态”——它的局部曲率——告诉了你关于系统行为的一切。
+科学中许多最重要的分类来自于分析抽象景观上事物的“形态”。这不一定是物理景观，而是一个**[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman) (potential energy surface, PES)**，它将系统每一个可能的构型映射到一个值，比如能量。这个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的“形态”——它的局部曲率——告诉了你关于系统行为的一切。
 
-让我们涉足化学领域。分子并非静止的物体，其原子在不停地[振动](@article_id:331484)。我们可以想象一个巨大的高维景观，其中每一点都代表系统中所有原子的一种可能[排列](@article_id:296886)。景观在任何一点的高度就是它的势能。一个稳定的分子，比如静止的水分子，安然地坐落在山谷的底部——这是[势能面](@article_id:307856)上的一个局部**极小值点**。在这一点上，能量的梯度为零（没有净力），并且在所有可能方向上的曲率都为正。任何轻微的推动，它都会滚回谷底。
+让我们涉足化学领域。分子并非静止的物体，其原子在不停地[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。我们可以想象一个巨大的高维景观，其中每一点都代表系统中所有原子的一种可能[排列](@keyword=permutation|lang=zh-CN|style=Feynman)。景观在任何一点的高度就是它的势能。一个稳定的分子，比如静止的水分子，安然地坐落在山谷的底部——这是[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)上的一个局部**极小值点**。在这一点上，能量的梯度为零（没有净力），并且在所有可能方向上的曲率都为正。任何轻微的推动，它都会滚回谷底。
 
-但[化学反应](@article_id:307389)是如何发生的呢？$H_2 + I_2$ 是如何变成 $2\text{HI}$ 的？这些分子必须爬出它们所在的山谷，越过一个山口，然后下降到代表产物的新山谷中。那个山口是关键。它不是山顶（极大值点），而是一种叫做**[鞍点](@article_id:303016)**的特殊点。具体来说，对于一个基元反应，它是一个**[一阶鞍点](@article_id:344514)**，也被称为**过渡态**。在这一点，能量沿着[反应路径](@article_id:343144)这一个特定方向是极大值，但在所有其他垂直方向上是极小值。
+但[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)是如何发生的呢？$H_2 + I_2$ 是如何变成 $2\text{HI}$ 的？这些分子必须爬出它们所在的山谷，越过一个山口，然后下降到代表产物的新山谷中。那个山口是关键。它不是山顶（极大值点），而是一种叫做**[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)**的特殊点。具体来说，对于一个基元反应，它是一个**[一阶鞍点](@keyword=first_order_saddle_point|lang=zh-CN|style=Feynman)**，也被称为**过渡态**。在这一点，能量沿着[反应路径](@keyword=reaction_path|lang=zh-CN|style=Feynman)这一个特定方向是极大值，但在所有其他垂直方向上是极小值。
 
-我们如何使其精确化？我们使用一个叫做**[海森矩阵](@article_id:299588) (Hessian matrix)** 的数学工具，它就是能量所有二阶[导数](@article_id:318324)（曲率）的集合。通过分析这个矩阵的[特征值](@article_id:315305)，我们可以对任何驻点进行分类。
--   **极小值点（稳定分子）：** 所有海森[矩阵[特征](@article_id:316772)值](@article_id:315305)为正。景观在每个方向上都向上弯曲。
--   **[一阶鞍点](@article_id:344514)（[过渡态](@article_id:313517)）：** 海森矩阵恰好有“一个”负[特征值](@article_id:315305)，其余均为正值  。这个唯一的负[特征值](@article_id:315305)对应于沿反应坐标——越过山口的路径——的不稳定运动。
+我们如何使其精确化？我们使用一个叫做**[海森矩阵](@keyword=hessian_matrix|lang=zh-CN|style=Feynman) (Hessian matrix)** 的数学工具，它就是能量所有二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)（曲率）的集合。通过分析这个矩阵的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)，我们可以对任何驻点进行分类。
+-   **极小值点（稳定分子）：** 所有海森[矩阵[特征](@keyword=matrix_eigenvalues|lang=zh-CN|style=Feynman)值](@article_id:315305)为正。景观在每个方向上都向上弯曲。
+-   **[一阶鞍点](@keyword=first_order_saddle_point|lang=zh-CN|style=Feynman)（[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)）：** 海森矩阵恰好有“一个”负[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)，其余均为正值 [@problem_id:2827304] [@problem_id:2934089]。这个唯一的负[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)对应于沿反应坐标——越过山口的路径——的不稳定运动。
 
-一个“指数为$k$”的[鞍点](@article_id:303016)将有 $k$ 个负[特征值](@article_id:315305)，代表在 $k$ 个独立方向上的不稳定性。这就不再是两个山谷之间的一个简单山口，而是一个更复杂的地形特征。因此，对能量[曲面](@article_id:331153)上一个点的数学分类，可以告诉化学家他们是找到了一个稳定的分子、一个特定反应的短暂过渡态，还是别的什么东西。
+一个“指数为$k$”的[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)将有 $k$ 个负[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)，代表在 $k$ 个独立方向上的不稳定性。这就不再是两个山谷之间的一个简单山口，而是一个更复杂的地形特征。因此，对能量[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上一个点的数学分类，可以告诉化学家他们是找到了一个稳定的分子、一个特定反应的短暂过渡态，还是别的什么东西。
 
-同样的想法——通过局部曲率进行分类——也同样适用于[偏微分方程](@article_id:301773) (PDEs) 的世界，它们支配着从[流体流动](@article_id:379727)到量子力学的一切。对于一大类[偏微分方程](@article_id:301773)，它们的基本特性由其最[高阶导数](@article_id:301325)的系数决定。这种分析将它们分为三大类：
--   **双曲型：** 这[类方程](@article_id:304856)，如波动方程，具有以有限速度传播信息的特征线。想象一下石头投入池塘中泛起的涟漪。
--   **抛物线型：** 这类方程，如热方程，描述[扩散过程](@article_id:349878)，其中扰动会随时间扩散并平滑。想象一下一滴墨水滴入水中。
--   **椭圆型：** 这类方程，如[拉普拉斯方程](@article_id:304121)，描述[稳态](@article_id:326048)系统，其中每一点的解都取决于整个区域的边界。想象一下拉伸在金属丝框架上的肥[皂膜](@article_id:331331)的形状。
+同样的想法——通过局部曲率进行分类——也同样适用于[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman) (PDEs) 的世界，它们支配着从[流体流动](@keyword=fluid_flow|lang=zh-CN|style=Feynman)到量子力学的一切。对于一大类[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)，它们的基本特性由其最[高阶导数](@keyword=higher_order_derivatives|lang=zh-CN|style=Feynman)的系数决定。这种分析将它们分为三大类：
+-   **双曲型：** 这[类方程](@keyword=class_equation|lang=zh-CN|style=Feynman)，如波动方程，具有以有限速度传播信息的特征线。想象一下石头投入池塘中泛起的涟漪。
+-   **抛物线型：** 这类方程，如热方程，描述[扩散过程](@keyword=diffusion_processes|lang=zh-CN|style=Feynman)，其中扰动会随时间扩散并平滑。想象一下一滴墨水滴入水中。
+-   **椭圆型：** 这类方程，如[拉普拉斯方程](@keyword=laplace_s_equation|lang=zh-CN|style=Feynman)，描述[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)系统，其中每一点的解都取决于整个区域的边界。想象一下拉伸在金属丝框架上的肥[皂膜](@keyword=soap_film|lang=zh-CN|style=Feynman)的形状。
 
-一个优美而关键的事实是，这种分类是方程本身“内在”的。它不依赖于你对一个问题施加的特定初始值或边界条件 。知道一个方程组是双曲型的，会立刻告诉你正在处理波状现象，并且你需要提供[初始条件](@article_id:313275)（如弦的初始位置和速度）来预测其未来。分类告诉你哪些问题是合理的，以及系统将如何表现，远在你尝试求解它之前。
+一个优美而关键的事实是，这种分类是方程本身“内在”的。它不依赖于你对一个问题施加的特定初始值或边界条件 [@problem_id:2092449]。知道一个方程组是双曲型的，会立刻告诉你正在处理波状现象，并且你需要提供[初始条件](@keyword=initial_conditions|lang=zh-CN|style=Feynman)（如弦的初始位置和速度）来预测其未来。分类告诉你哪些问题是合理的，以及系统将如何表现，远在你尝试求解它之前。
 
 ### 超越标签：更深的结构与更精细的划分
 
-分类可以更加深刻，揭示出两个表面上看起来完全不同的系统，实际上在结构上是相同的。在[抽象代数](@article_id:305640)中，这就是**同构**的概念。考虑两个群：$G_1$，有理数在加法下的群（忽略整数部分，就像一个从0到1的钟面）；和 $G_2$，所有单位[复根](@article_id:352053)在乘法下的群。一个涉及分数相加，另一个涉及在圆上旋转点。然而，存在一个完美的映射，一本“字典”，可以将 $G_1$ 中的每个元素和运算转换到 $G_2$ 中对应的元素和运算，而不会丢失任何结构信息。它们是同构的——它们是完全相同的底层抽象结构的两种不同外衣 。这也许是分类的终极目标：找到超越表面现象的抽象蓝图。数学中的宏伟工程，如[有限单群](@article_id:304009)或[单李代数](@article_id:365974)的完全分类 ，是现代的“元素周期表”，它们在一度看似无限且混乱的结构荒野中，揭示出一种隐藏的、有限的、优雅的秩序。
+分类可以更加深刻，揭示出两个表面上看起来完全不同的系统，实际上在结构上是相同的。在[抽象代数](@keyword=abstract_algebra|lang=zh-CN|style=Feynman)中，这就是**同构**的概念。考虑两个群：$G_1$，有理数在加法下的群（忽略整数部分，就像一个从0到1的钟面）；和 $G_2$，所有单位[复根](@keyword=complex_roots|lang=zh-CN|style=Feynman)在乘法下的群。一个涉及分数相加，另一个涉及在圆上旋转点。然而，存在一个完美的映射，一本“字典”，可以将 $G_1$ 中的每个元素和运算转换到 $G_2$ 中对应的元素和运算，而不会丢失任何结构信息。它们是同构的——它们是完全相同的底层抽象结构的两种不同外衣 [@problem_id:1626971]。这也许是分类的终极目标：找到超越表面现象的抽象蓝图。数学中的宏伟工程，如[有限单群](@keyword=finite_simple_groups|lang=zh-CN|style=Feynman)或[单李代数](@keyword=simple_lie_algebras|lang=zh-CN|style=Feynman)的完全分类 [@problem_id:639738]，是现代的“元素周期表”，它们在一度看似无限且混乱的结构荒野中，揭示出一种隐藏的、有限的、优雅的秩序。
 
-当然，大自然并不总是那么整洁。有时我们简单的分类盒子——双曲型、抛物线型、椭圆型——是不够的。描述[浅水波](@article_id:330934)的 **Korteweg-de Vries (KdV) 方程**有一个三阶[导数](@article_id:318324)。它不像抛物线型方程那样是[扩散](@article_id:327616)性的；相反，它是**[色散](@article_id:376945)性**的，意味着不同波长的波以不同速度传播 。模拟合金中相分离的 **Cahn-Hilliard 方程**是一个四阶方程。它的主导项导致一种“上坡”扩散，从而形成图案，而一个更高阶的项则抑制了非常小的涨落 。这些方程挑战了简单的三分类法，迫使我们发明更丰富的词汇来描述它们的行为。
+当然，大自然并不总是那么整洁。有时我们简单的分类盒子——双曲型、抛物线型、椭圆型——是不够的。描述[浅水波](@keyword=shallow_water_waves|lang=zh-CN|style=Feynman)的 **Korteweg-de Vries (KdV) 方程**有一个三阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)。它不像抛物线型方程那样是[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)性的；相反，它是**[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)性**的，意味着不同波长的波以不同速度传播 [@problem_id:2377151]。模拟合金中相分离的 **Cahn-Hilliard 方程**是一个四阶方程。它的主导项导致一种“上坡”扩散，从而形成图案，而一个更高阶的项则抑制了非常小的涨落 [@problemid:2377136]。这些方程挑战了简单的三分类法，迫使我们发明更丰富的词汇来描述它们的行为。
 
-这不是分类的失败，而是它最大的优势。它表明科学是与自然的一场动态对话。我们创造标签来组织我们所见的，而当自然呈现出不符合标签的东西时，我们不会抛弃贴标签的想法。我们完善我们的语言，创造新的类别，并在此过程中，对世界错综复杂的机制有了更深刻、更细致的理解。从可判定与不可判定，到[时空](@article_id:370647)的结构，再到[化学反应](@article_id:307389)的舞蹈，数学分类是我们寻找将宇宙联系在一起的模式的最强大工具。
+这不是分类的失败，而是它最大的优势。它表明科学是与自然的一场动态对话。我们创造标签来组织我们所见的，而当自然呈现出不符合标签的东西时，我们不会抛弃贴标签的想法。我们完善我们的语言，创造新的类别，并在此过程中，对世界错综复杂的机制有了更深刻、更细致的理解。从可判定与不可判定，到[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的结构，再到[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的舞蹈，数学分类是我们寻找将宇宙联系在一起的模式的最强大工具。

@@ -1,7 +1,7 @@
 ## Introduction
-The circle is one of the first shapes we learn, a symbol of perfection and infinity. But how do we capture this perfect form in the precise language of mathematics? How can we describe its location, size, and properties not just with a [compass and straightedge](@article_id:154505), but with the power of algebra? This transition from pure geometry to [analytic geometry](@article_id:163772) is where the true utility of the circle is unlocked, allowing it to describe phenomena far beyond the drawing board. This article bridges that gap, providing a comprehensive exploration of the circle's equation.
+The circle is one of the first shapes we learn, a symbol of perfection and infinity. But how do we capture this perfect form in the precise language of mathematics? How can we describe its location, size, and properties not just with a [compass and straightedge](@keyword=compass_and_straightedge|lang=en-US|style=Feynman), but with the power of algebra? This transition from pure geometry to [analytic geometry](@keyword=analytic_geometry|lang=en-US|style=Feynman) is where the true utility of the circle is unlocked, allowing it to describe phenomena far beyond the drawing board. This article bridges that gap, providing a comprehensive exploration of the circle's equation.
 
-In the first chapter, "Principles and Mechanisms," we will derive the standard equation of a circle from its fundamental definition of distance. We will uncover the hidden information within the general form of the equation and learn the algebraic techniques, like [completing the square](@article_id:264986), to decode it. We'll also see how different mathematical perspectives, from coordinate shifts to Thales' Theorem, converge on the same elegant structure. Following this, the chapter "Applications and Interdisciplinary Connections" will take us on a journey beyond pure geometry. We will see how the circle's equation acts as a master tool for solving complex geometric puzzles and how it appears in different mathematical languages like [polar coordinates](@article_id:158931) and complex numbers. Most surprisingly, we will discover the circle's equation describing the invisible flow of power in an electrical circuit, demonstrating its profound connection to the physical world.
+In the first chapter, "Principles and Mechanisms," we will derive the standard equation of a circle from its fundamental definition of distance. We will uncover the hidden information within the general form of the equation and learn the algebraic techniques, like [completing the square](@keyword=completing_the_square|lang=en-US|style=Feynman), to decode it. We'll also see how different mathematical perspectives, from coordinate shifts to Thales' Theorem, converge on the same elegant structure. Following this, the chapter "Applications and Interdisciplinary Connections" will take us on a journey beyond pure geometry. We will see how the circle's equation acts as a master tool for solving complex geometric puzzles and how it appears in different mathematical languages like [polar coordinates](@keyword=polar_coordinates|lang=en-US|style=Feynman) and complex numbers. Most surprisingly, we will discover the circle's equation describing the invisible flow of power in an electrical circuit, demonstrating its profound connection to the physical world.
 
 ## Principles and Mechanisms
 
@@ -11,16 +11,16 @@ That’s it. That’s the entire geometric soul of a circle. The fixed point is 
 
 ### From Geometry to Algebra: The Standard Equation
 
-Now, how do we take this beautifully simple geometric idea and teach it to a computer, or use it in an equation? We need the language of algebra. This is the great leap of [analytic geometry](@article_id:163772), pioneered by minds like René Descartes and Pierre de Fermat. Let's place our circle on a Cartesian plane, a grid of $x$ and $y$ coordinates.
+Now, how do we take this beautifully simple geometric idea and teach it to a computer, or use it in an equation? We need the language of algebra. This is the great leap of [analytic geometry](@keyword=analytic_geometry|lang=en-US|style=Feynman), pioneered by minds like René Descartes and Pierre de Fermat. Let's place our circle on a Cartesian plane, a grid of $x$ and $y$ coordinates.
 
 Suppose we place the center at a point we'll call $(h, k)$, and we say the radius is $r$. Now, pick any point $(x, y)$ on the circle. Our definition demands that the distance between $(x, y)$ and $(h, k)$ must be $r$. How do we write down the distance between two points? We use the wonderful Pythagorean theorem! The horizontal distance is $|x-h|$ and the vertical distance is $|y-k|$. These form the two legs of a right triangle, and the distance between the points is the hypotenuse.
 
 So, Pythagoras tells us:
 $$(x-h)^2 + (y-k)^2 = r^2$$
 
-And there it is. This is the **standard equation of a circle**. It's not just a formula to be memorized; it is the Pythagorean theorem dressed up in the clothes of [coordinate geometry](@article_id:162685). It is the direct algebraic translation of the circle's fundamental definition. It holds within it everything you need to know: the center $(h, k)$ and the radius $r$.
+And there it is. This is the **standard equation of a circle**. It's not just a formula to be memorized; it is the Pythagorean theorem dressed up in the clothes of [coordinate geometry](@keyword=coordinate_geometry|lang=en-US|style=Feynman). It is the direct algebraic translation of the circle's fundamental definition. It holds within it everything you need to know: the center $(h, k)$ and the radius $r$.
 
-Imagine you're an engineer tracking a probe, and your instruments tell you its path is a circle whose diameter stretches between two beacons, one at $A(-1, 3)$ and another at $B(5, -7)$. How would you write down the equation for this path? The center of the circle must be the midpoint of the diameter, and the radius is half the diameter's length. A little calculation finds the center is $(2, -2)$ and the radius-squared is $34$. So, the path is described perfectly by $(x-2)^2 + (y-(-2))^2 = 34$, or $(x-2)^2 + (y+2)^2 = 34$ . The equation isn't just abstract symbols; it's a complete description of the circle's location and size.
+Imagine you're an engineer tracking a probe, and your instruments tell you its path is a circle whose diameter stretches between two beacons, one at $A(-1, 3)$ and another at $B(5, -7)$. How would you write down the equation for this path? The center of the circle must be the midpoint of the diameter, and the radius is half the diameter's length. A little calculation finds the center is $(2, -2)$ and the radius-squared is $34$. So, the path is described perfectly by $(x-2)^2 + (y-(-2))^2 = 34$, or $(x-2)^2 + (y+2)^2 = 34$ [@problem_id:2116611]. The equation isn't just abstract symbols; it's a complete description of the circle's location and size.
 
 ### Shifting Your Point of View
 
@@ -33,7 +33,7 @@ We can always make this simplification. Suppose you have a circle centered at $(
 $$((x'+a)-a)^2 + ((y'+b)-b)^2 = R^2$$
 $$x'^2 + y'^2 = R^2$$
 
-By simply shifting our point of view, we've made the equation look as simple as possible . This tells us something profound: every circle is fundamentally the same, just shifted around on the plane. The standard form $(x-h)^2 + (y-k)^2 = r^2$ beautifully captures this idea: it's the simplest circle ($x^2+y^2=r^2$) that has been translated by $h$ units horizontally and $k$ units vertically.
+By simply shifting our point of view, we've made the equation look as simple as possible [@problem_id:2157394]. This tells us something profound: every circle is fundamentally the same, just shifted around on the plane. The standard form $(x-h)^2 + (y-k)^2 = r^2$ beautifully captures this idea: it's the simplest circle ($x^2+y^2=r^2$) that has been translated by $h$ units horizontally and $k$ units vertically.
 
 ### The Mystery of the General Form
 
@@ -55,7 +55,7 @@ $$((x-3)^2 - 9) + ((y+5)^2 - 25) + 9 = 0$$
 $$(x-3)^2 + (y+5)^2 - 25 = 0$$
 $$(x-3)^2 + (y+5)^2 = 25$$
 
-And just like that, the hidden simplicity is revealed! . This is a circle with its center at $(3, -5)$ and a radius of $\sqrt{25} = 5$. The general form was just the standard form in disguise. This process gives us a "decoder ring" for any general equation: the center is always at $(h, k) = (-\frac{D}{2}, -\frac{E}{2})$  and the radius squared is $r^2 = h^2+k^2-F = (\frac{D}{2})^2 + (\frac{E}{2})^2 - F$ .
+And just like that, the hidden simplicity is revealed! [@problem_id:2130949]. This is a circle with its center at $(3, -5)$ and a radius of $\sqrt{25} = 5$. The general form was just the standard form in disguise. This process gives us a "decoder ring" for any general equation: the center is always at $(h, k) = (-\frac{D}{2}, -\frac{E}{2})$ [@problem_id:2130920] and the radius squared is $r^2 = h^2+k^2-F = (\frac{D}{2})^2 + (\frac{E}{2})^2 - F$ [@problem_id:2130946].
 
 ### A Circle, a Point, or Nothing at All?
 
@@ -65,7 +65,7 @@ $$r^2 = \frac{D^2 + E^2}{4} - F$$
 The existence of our geometric circle depends entirely on the value of $r^2$.
 1.  **If $D^2 + E^2 - 4F > 0$**: Then $r^2$ is positive, and we can take its square root to find a real, positive radius $r$. We have a genuine circle.
 2.  **If $D^2 + E^2 - 4F = 0$**: Then $r^2 = 0$, meaning the radius is zero. The set of points "at a distance of 0" from the center is just the center itself. Our circle has collapsed into a single **point**.
-3.  **If $D^2 + E^2 - 4F  0$**: Then $r^2$ is negative. This is a strange and wonderful situation. There is no *real* number whose square is negative. This means there are no real points $(x, y)$ in the plane that can satisfy the equation. Algebraically, we have an equation, but geometrically, it has no picture. This is sometimes called an **"imaginary circle"** . It is a ghost in the machine of algebra.
+3.  **If $D^2 + E^2 - 4F  0$**: Then $r^2$ is negative. This is a strange and wonderful situation. There is no *real* number whose square is negative. This means there are no real points $(x, y)$ in the plane that can satisfy the equation. Algebraically, we have an equation, but geometrically, it has no picture. This is sometimes called an **"imaginary circle"** [@problem_id:2132632]. It is a ghost in the machine of algebra.
 
 ### A More Elegant Definition?
 
@@ -77,7 +77,7 @@ $$\vec{PA} \cdot \vec{PB} = 0$$
 Let's test this. Suppose beacon $A$ is at $(1, 5)$ and beacon $B$ is at $(7, -1)$, and a probe $P(x,y)$ moves such that $\vec{PA} \cdot \vec{PB} = 0$. The vectors are $\vec{PA} = (1-x, 5-y)$ and $\vec{PB} = (7-x, -1-y)$. Their dot product is:
 $$(1-x)(7-x) + (5-y)(-1-y) = 0$$
 
-If you multiply this all out and [complete the square](@article_id:194337)—a fun exercise!—you will find the equation becomes $(x-4)^2 + (y-2)^2 = 18$ . This is the equation of a circle! What's more, the center $(4,2)$ is the midpoint of $A$ and $B$, and the diameter is the distance between $A$ and $B$. It's the very same circle we would have found using our original midpoint-and-distance method. Isn't that remarkable? Two completely different starting points—one about constant distance, one about right angles—lead to the exact same algebraic structure. This is the kind of underlying unity that makes mathematics so powerful and beautiful.
+If you multiply this all out and [complete the square](@keyword=complete_the_square|lang=en-US|style=Feynman)—a fun exercise!—you will find the equation becomes $(x-4)^2 + (y-2)^2 = 18$ [@problem_id:2162798]. This is the equation of a circle! What's more, the center $(4,2)$ is the midpoint of $A$ and $B$, and the diameter is the distance between $A$ and $B$. It's the very same circle we would have found using our original midpoint-and-distance method. Isn't that remarkable? Two completely different starting points—one about constant distance, one about right angles—lead to the exact same algebraic structure. This is the kind of underlying unity that makes mathematics so powerful and beautiful.
 
 ### On, Inside, and Outside the Boundary
 
@@ -88,6 +88,6 @@ Let's define a quantity, which you can think of as a "location function," $g(x,y
 -   If a point $(x,y)$ is **inside** the circle, its distance from the center is *less than* $r$, so its distance squared is less than $r^2$. This means $g(x,y)  0$.
 -   If a point $(x,y)$ is **outside** the circle, its distance from the center is *greater than* $r$, so its distance squared is greater than $r^2$. This means $g(x,y) > 0$.
 
-Suddenly, we have more than just an equation for a line; we have an inequality for a region. For the general equation $x^2 + y^2 + Dx + Ey + F = 0$, the "location function" is just the left-hand side. A point is inside the circle if $x^2 + y^2 + Dx + Ey + F  0$. This gives us a simple test. For example, is the origin $(0,0)$ inside this circle? We just plug in $x=0, y=0$ and check: $0^2 + 0^2 + D(0) + E(0) + F  0$, which simplifies to the beautifully simple condition $F  0$ .
+Suddenly, we have more than just an equation for a line; we have an inequality for a region. For the general equation $x^2 + y^2 + Dx + Ey + F = 0$, the "location function" is just the left-hand side. A point is inside the circle if $x^2 + y^2 + Dx + Ey + F  0$. This gives us a simple test. For example, is the origin $(0,0)$ inside this circle? We just plug in $x=0, y=0$ and check: $0^2 + 0^2 + D(0) + E(0) + F  0$, which simplifies to the beautifully simple condition $F  0$ [@problem_id:2130943].
 
-This simple idea—of an equation defining a boundary and an inequality defining a region—is a cornerstone of mathematics, appearing everywhere from [optimization problems](@article_id:142245) to the study of potential energy wells in physics. It all begins here, with the humble and perfect circle.
+This simple idea—of an equation defining a boundary and an inequality defining a region—is a cornerstone of mathematics, appearing everywhere from [optimization problems](@keyword=optimization_problems|lang=en-US|style=Feynman) to the study of potential energy wells in physics. It all begins here, with the humble and perfect circle.

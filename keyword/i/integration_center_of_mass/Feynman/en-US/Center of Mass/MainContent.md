@@ -3,13 +3,13 @@ Have you ever wondered how physicists can predict the majestic dance of planets 
 
 ## Principles and Mechanisms
 
-If you've ever tried to balance a broomstick on your finger, you've engaged in an intuitive search for a very special point: the **center of mass**. It’s the one point where, if you were to support the object, it would balance perfectly, no matter how you turned it. But this simple idea of a balance point is merely the gateway to a concept of profound importance, one that weaves through mechanics, astronomy, and even the [thermodynamics of gases](@article_id:150650). It’s a concept that allows physicists to replace a complex, sprawling object with a single, representative point, simplifying the seemingly intractable. Let's embark on a journey to understand this point, not just as a parlor trick, but as a deep principle of the physical world.
+If you've ever tried to balance a broomstick on your finger, you've engaged in an intuitive search for a very special point: the **center of mass**. It’s the one point where, if you were to support the object, it would balance perfectly, no matter how you turned it. But this simple idea of a balance point is merely the gateway to a concept of profound importance, one that weaves through mechanics, astronomy, and even the [thermodynamics of gases](@keyword=thermodynamics_of_gases|lang=en-US|style=Feynman). It’s a concept that allows physicists to replace a complex, sprawling object with a single, representative point, simplifying the seemingly intractable. Let's embark on a journey to understand this point, not just as a parlor trick, but as a deep principle of the physical world.
 
 ### The Democratic Balance Point
 
 Imagine you have a collection of objects. Where is their collective balance point? The answer is a kind of "democratic average" of their positions, but not every object gets an equal vote. The vote of each object is weighted by its mass. Heavier objects have more say in where the center of mass lies.
 
-Let's make this concrete with a simple sculpture made of three identical, uniform rods, each of mass $m$ and length $L$, arranged to form a squared "C" shape (). We have one rod on the x-axis from $(0,0)$ to $(L,0)$, one on the y-axis from $(0,0)$ to $(0,L)$, and a third from $(0,L)$ to $(L,L)$.
+Let's make this concrete with a simple sculpture made of three identical, uniform rods, each of mass $m$ and length $L$, arranged to form a squared "C" shape ([@problem_id:2181418]). We have one rod on the x-axis from $(0,0)$ to $(L,0)$, one on the y-axis from $(0,0)$ to $(0,L)$, and a third from $(0,L)$ to $(L,L)$.
 
 To find the center of mass of the whole sculpture, we can use a wonderful trick: we can replace each uniform rod with a single point particle of the same mass, located at that rod's own center of mass. For a uniform rod, this is just its geometric center.
 -   Rod 1 (on the x-axis) has its center of mass at $(\frac{L}{2}, 0)$.
@@ -34,9 +34,9 @@ The formula for the center of mass, $\vec{r}_{CM} = \frac{\sum m_i \vec{r}_i}{\s
 $$
 \vec{r}_{CM} = \frac{\int \vec{r} \, dm}{\int dm}
 $$
-The denominator, $\int dm$, is simply the instruction to "sum up all the tiny pieces of mass," which gives us the total mass, $M$. The numerator, $\int \vec{r} \, dm$, is called the **first [moment of mass](@article_id:162633)**. It's the sum of each tiny mass piece's position vector, weighted by its mass.
+The denominator, $\int dm$, is simply the instruction to "sum up all the tiny pieces of mass," which gives us the total mass, $M$. The numerator, $\int \vec{r} \, dm$, is called the **first [moment of mass](@keyword=moment_of_mass|lang=en-US|style=Feynman)**. It's the sum of each tiny mass piece's position vector, weighted by its mass.
 
-Let’s see this magic in action. Consider a solid formed by rotating the parabola $z = c y^2$ around the z-axis, creating a bowl-like shape of height $H$ (). By symmetry, the center of mass must lie somewhere on the z-axis. To find its height, $z_{CM}$, we can slice the [paraboloid](@article_id:264219) into a stack of thin horizontal disks. A disk at height $z$ has a certain radius $y$, and thus a certain area $A(z) = \pi y^2 = \pi \frac{z}{c}$. Its infinitesimal volume is $dV = A(z)dz$, and its mass is $dm = \rho \, dV$, where $\rho$ is the constant density.
+Let’s see this magic in action. Consider a solid formed by rotating the parabola $z = c y^2$ around the z-axis, creating a bowl-like shape of height $H$ ([@problem_id:2038097]). By symmetry, the center of mass must lie somewhere on the z-axis. To find its height, $z_{CM}$, we can slice the [paraboloid](@keyword=paraboloid|lang=en-US|style=Feynman) into a stack of thin horizontal disks. A disk at height $z$ has a certain radius $y$, and thus a certain area $A(z) = \pi y^2 = \pi \frac{z}{c}$. Its infinitesimal volume is $dV = A(z)dz$, and its mass is $dm = \rho \, dV$, where $\rho$ is the constant density.
 
 Now we apply our integral formula:
 $$
@@ -46,17 +46,17 @@ The constants $\rho$, $\pi$, and $c$ appear in both the numerator and the denomi
 $$
 z_{CM} = \frac{\int_0^H z^2 \, dz}{\int_0^H z \, dz} = \frac{[z^3/3]_0^H}{[z^2/2]_0^H} = \frac{H^3/3}{H^2/2} = \frac{2}{3}H
 $$
-This is a beautiful and simple result. For a [paraboloid](@article_id:264219) of height $H$, the balance point is two-thirds of the way up from its tip. Why not at the halfway point, $\frac{1}{2}H$? Because the slices get wider as we go up ($A(z)$ is proportional to $z$), there is more mass in the upper parts of the [paraboloid](@article_id:264219). These upper portions have a "louder vote" in our weighted average, pulling the center of mass upward from the geometric midpoint. This same powerful method of slices can be used on all sorts of shapes, from spherical caps  to pyramids, revealing how an object's geometry dictates its balance point.
+This is a beautiful and simple result. For a [paraboloid](@keyword=paraboloid|lang=en-US|style=Feynman) of height $H$, the balance point is two-thirds of the way up from its tip. Why not at the halfway point, $\frac{1}{2}H$? Because the slices get wider as we go up ($A(z)$ is proportional to $z$), there is more mass in the upper parts of the [paraboloid](@keyword=paraboloid|lang=en-US|style=Feynman). These upper portions have a "louder vote" in our weighted average, pulling the center of mass upward from the geometric midpoint. This same powerful method of slices can be used on all sorts of shapes, from spherical caps [@problem_id:2180907] to pyramids, revealing how an object's geometry dictates its balance point.
 
 ### When Density Isn't Fair: The Weighted Vote
 
-We've assumed so far that our objects are made of a uniform material. But what if the density itself changes from place to place? Imagine a hypothetical block submerged in the ocean, made of a strange material whose density is proportional to the surrounding water pressure (). Since pressure increases with depth, the bottom of our block is denser than the top.
+We've assumed so far that our objects are made of a uniform material. But what if the density itself changes from place to place? Imagine a hypothetical block submerged in the ocean, made of a strange material whose density is proportional to the surrounding water pressure ([@problem_id:2191352]). Since pressure increases with depth, the bottom of our block is denser than the top.
 
 The geometric center of this block is, of course, halfway down its height, at $z = H/2$. But the center of mass won't be there. The lower, denser layers of the block contain more mass per slice. In our "democratic election" for the center of mass, these lower layers get a stronger vote. Consequently, they pull the balance point down towards them. The center of mass will be located *below* the geometric center. The distribution of mass is no longer symmetric, even if the shape is. The principle is clear: **the center of mass is biased towards regions of higher density**. This is exactly what happens in a real-world object like a planet; the dense iron core pulls the planet's center of mass towards its physical center. Or consider an ordinary object like a hammer; its center of mass is not in the middle of the handle, but shifted far towards the heavy metal head.
 
 ### The Center of Mass on the Grand Stage
 
-So, we can calculate this special point for various objects. But what is it really *for*? Why is it one of the most important concepts in all of mechanics? To answer this, let’s zoom out, leave the Earth, and visit a lumpy, potato-shaped asteroid ().
+So, we can calculate this special point for various objects. But what is it really *for*? Why is it one of the most important concepts in all of mechanics? To answer this, let’s zoom out, leave the Earth, and visit a lumpy, potato-shaped asteroid ([@problem_id:1936283]).
 
 If you are a spaceship orbiting close to this asteroid, you're in for a bumpy ride. The force of gravity changes depending on whether you are over a massive mountain or a hollow crater. The pull is a complex, orientation-dependent mess.
 
@@ -68,9 +68,9 @@ This is the grand secret of the center of mass. For any observer far away, a com
 
 ### An Unexpected Guest: Temperature and the Center of Mass
 
-If you thought the center of mass was just about balancing objects and [celestial mechanics](@article_id:146895), prepare for a final, beautiful surprise. Let's return to Earth and consider something as mundane as the air in a tall room.
+If you thought the center of mass was just about balancing objects and [celestial mechanics](@keyword=celestial_mechanics|lang=en-US|style=Feynman), prepare for a final, beautiful surprise. Let's return to Earth and consider something as mundane as the air in a tall room.
 
-The air molecules are in a constant battle. Gravity pulls them downwards, trying to pile them all up on the floor. At the same time, their thermal energy—what we perceive as temperature—sends them zipping around in all directions, causing them to spread out. The result of this tug-of-war is a compromise: the air is densest near the floor and becomes progressively thinner as you go up. This density profile is described by the famous **Boltzmann distribution**, where the density at a height $z$ is proportional to $\exp(-\frac{mgz}{k_B T})$ ().
+The air molecules are in a constant battle. Gravity pulls them downwards, trying to pile them all up on the floor. At the same time, their thermal energy—what we perceive as temperature—sends them zipping around in all directions, causing them to spread out. The result of this tug-of-war is a compromise: the air is densest near the floor and becomes progressively thinner as you go up. This density profile is described by the famous **Boltzmann distribution**, where the density at a height $z$ is proportional to $\exp(-\frac{mgz}{k_B T})$ ([@problem_id:561625]).
 
 Now let's ask a purely mechanical question about this thermal system: where is the center of mass for the entire column of gas? It seems like an impossibly complex calculation, involving the average position of trillions upon trillions of frantic molecules. But the magic of statistical mechanics is that this microscopic chaos averages out to something wonderfully simple. When we perform the integration over the entire semi-infinite column, we find the height of the center of mass is:
 $$
@@ -78,4 +78,4 @@ z_{CM} = \frac{k_B T}{mg}
 $$
 Take a moment to appreciate this equation. It's stunning. The collective balance point of the gas, a mechanical property, is directly proportional to its temperature $T$, a thermodynamic property. If you heat the gas, its center of mass rises. If you cool it, the center of mass falls. A hot gas is "puffier" and more spread out, so its average position is higher.
 
-This simple formula beautifully demonstrates the profound unity of physics. The center of mass, a concept we began exploring by balancing a simple sculpture, has led us on a path through calculus, gravity, and now into the heart of [statistical thermodynamics](@article_id:146617). It is one of those fundamental, recurring themes that reveals the interconnected elegance of the laws of nature. It is far more than just a balance point; it is a point of view from which the universe becomes simpler and more comprehensible.
+This simple formula beautifully demonstrates the profound unity of physics. The center of mass, a concept we began exploring by balancing a simple sculpture, has led us on a path through calculus, gravity, and now into the heart of [statistical thermodynamics](@keyword=statistical_thermodynamics|lang=en-US|style=Feynman). It is one of those fundamental, recurring themes that reveals the interconnected elegance of the laws of nature. It is far more than just a balance point; it is a point of view from which the universe becomes simpler and more comprehensible.

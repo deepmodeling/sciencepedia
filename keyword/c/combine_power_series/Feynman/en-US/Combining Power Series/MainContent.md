@@ -1,7 +1,7 @@
 ## Introduction
 Power series are one of mathematics' most powerful tools, allowing us to construct complicated functions from an infinite sequence of simple polynomial terms. This approach provides an astonishingly versatile language for describing the natural world. However, a significant challenge arises when we need to combine different power series, particularly when solving the differential equations that govern physics and engineering. Operations like differentiation shift the powers and starting points of a series, making it impossible to combine terms directly. How can we merge these mismatched series into a single, coherent expression?
 
-This article addresses this fundamental problem head-on. It serves as a comprehensive guide to the art of combining [power series](@article_id:146342), taking you from the foundational mechanics to their profound applications. In the following chapters, you will gain a clear understanding of the principles that make this possible. The first chapter, "Principles and Mechanisms," will demystify the elegant technique of index shifting and demonstrate how to align and merge series to derive powerful recurrence relations. Following this, the "Applications and Interdisciplinary Connections" chapter will showcase how this single skill unlocks solutions to problems in differential equations, quantum mechanics, and engineering, revealing the deep connections between seemingly unrelated functions and phenomena.
+This article addresses this fundamental problem head-on. It serves as a comprehensive guide to the art of combining [power series](@keyword=power_series|lang=en-US|style=Feynman), taking you from the foundational mechanics to their profound applications. In the following chapters, you will gain a clear understanding of the principles that make this possible. The first chapter, "Principles and Mechanisms," will demystify the elegant technique of index shifting and demonstrate how to align and merge series to derive powerful recurrence relations. Following this, the "Applications and Interdisciplinary Connections" chapter will showcase how this single skill unlocks solutions to problems in differential equations, quantum mechanics, and engineering, revealing the deep connections between seemingly unrelated functions and phenomena.
 
 ## Principles and Mechanisms
 
@@ -34,7 +34,7 @@ Putting it all together, we find that:
 $$
 \sum_{n=2}^{\infty} n(n-1)c_n x^{n-2} \quad \text{is exactly the same series as} \quad \sum_{k=0}^{\infty} (k+2)(k+1)c_{k+2} x^k
 $$
-We haven't changed the sum itself—if you were to write out the first few terms of each, they would be identical. We've only changed our notation, our way of counting. This elegant relabeling is the fundamental mechanism that allows us to combine different series .
+We haven't changed the sum itself—if you were to write out the first few terms of each, they would be identical. We've only changed our notation, our way of counting. This elegant relabeling is the fundamental mechanism that allows us to combine different series [@problem_id:2193712].
 
 ### Assembling the Puzzle: A Symphony of Series
 
@@ -58,17 +58,17 @@ First, let's bring the $x$ inside the second sum: $x \sum_{n=0}^{\infty} c_n x^n
     $$
     2c_2 + \sum_{k=1}^{\infty} (k+2)(k+1)c_{k+2} x^k - \sum_{k=1}^{\infty} c_{k-1} x^k = 0
     $$
-    This technique of isolating initial terms is a common and crucial step  .
+    This technique of isolating initial terms is a common and crucial step [@problem_id:2193734] [@problem_id:2193705].
 
 3.  **Combine:** Now that both summations run over the exact same range of indices, we can merge them into a single symphony of terms:
     $$
     2c_2 + \sum_{k=1}^{\infty} \left[ (k+2)(k+1)c_{k+2} - c_{k-1} \right] x^k = 0
     $$
-    This single, unified expression is the hard-won result of our careful alignment .
+    This single, unified expression is the hard-won result of our careful alignment [@problem_id:2193723].
 
 ### The Payoff: Unlocking the Secret Formula
 
-Why go through all this trouble? The equation we just derived holds the key to solving the entire problem. The **Identity Principle** for [power series](@article_id:146342) is a statement of profound importance: if a power series is equal to zero over an entire interval of $x$ values, then every single one of its coefficients must be zero.
+Why go through all this trouble? The equation we just derived holds the key to solving the entire problem. The **Identity Principle** for [power series](@keyword=power_series|lang=en-US|style=Feynman) is a statement of profound importance: if a power series is equal to zero over an entire interval of $x$ values, then every single one of its coefficients must be zero.
 
 This single line gives us an infinite number of equations for free!
 *   First, the constant term (the coefficient of $x^0$) must be zero: $2c_2 = 0$, which immediately tells us that $c_2=0$.
@@ -78,7 +78,7 @@ By rearranging this second result, we get:
 $$
 c_{k+2} = \frac{c_{k-1}}{(k+2)(k+1)}
 $$
-This is a **recurrence relation**. It is a recipe, a secret formula, that allows us to compute coefficients from previous ones. It connects $c_3$ to $c_0$, $c_4$ to $c_1$, $c_5$ to $c_2$ (which we know is 0, so $c_5=0$), and so on. We can generate the entire infinite list of coefficients, and thus the entire solution, starting with just two arbitrary values, $c_0$ and $c_1$. This is the magic of the [power series method](@article_id:160419), and it is entirely powered by our ability to combine series .
+This is a **recurrence relation**. It is a recipe, a secret formula, that allows us to compute coefficients from previous ones. It connects $c_3$ to $c_0$, $c_4$ to $c_1$, $c_5$ to $c_2$ (which we know is 0, so $c_5=0$), and so on. We can generate the entire infinite list of coefficients, and thus the entire solution, starting with just two arbitrary values, $c_0$ and $c_1$. This is the magic of the [power series method](@keyword=power_series_method|lang=en-US|style=Feynman), and it is entirely powered by our ability to combine series [@problem_id:2193727].
 
 ### A Creative Toolbox for Functions
 
@@ -95,8 +95,8 @@ If we subtract the second series from the first, the even-powered terms cancel p
 $$
 \frac{e^z - e^{-z}}{2} = z + \frac{z^3}{3!} + \frac{z^5}{5!} + \dots = \sum_{k=0}^{\infty} \frac{z^{2k+1}}{(2k+1)!}
 $$
-This is precisely the Maclaurin series for the hyperbolic sine function, $\sinh(z)$, which we have just derived through simple algebraic combination .
+This is precisely the Maclaurin series for the hyperbolic sine function, $\sinh(z)$, which we have just derived through simple algebraic combination [@problem_id:2258776].
 
-This generative power extends even further. The humble [geometric series](@article_id:157996), $\frac{1}{1-w} = \sum_{n=0}^\infty w^n$, can be a master template. By substituting things like $w=-x^2$, we get the series for $\frac{1}{1+x^2}$ . By then integrating that series term-by-term, we can derive the series for $\arctan(x)$. Multiplying that result by $x$ gives us the series for $x \arctan(x)$ . Through these simple operations—substitution, addition, integration, differentiation—a whole universe of functions can be built from a single starting point .
+This generative power extends even further. The humble [geometric series](@keyword=geometric_series|lang=en-US|style=Feynman), $\frac{1}{1-w} = \sum_{n=0}^\infty w^n$, can be a master template. By substituting things like $w=-x^2$, we get the series for $\frac{1}{1+x^2}$ [@problem_id:2258827]. By then integrating that series term-by-term, we can derive the series for $\arctan(x)$. Multiplying that result by $x$ gives us the series for $x \arctan(x)$ [@problem_id:1324366]. Through these simple operations—substitution, addition, integration, differentiation—a whole universe of functions can be built from a single starting point [@problem_id:6483].
 
 The ability to combine and manipulate series is the ability to see the deep, underlying relationships between functions that, on the surface, may appear to have nothing to do with one another. It reveals the unity and interconnectedness of the mathematical world.

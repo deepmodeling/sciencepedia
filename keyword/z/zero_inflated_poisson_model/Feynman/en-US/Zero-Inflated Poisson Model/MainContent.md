@@ -1,7 +1,7 @@
 ## Introduction
-In the quest to understand our world, we frequently rely on counting: the number of patient readmissions, the frequency of a rare [genetic mutation](@entry_id:166469), or the daily tally of customer complaints. For decades, the Poisson distribution served as the primary statistical tool for modeling such count data. However, as data collection grew more sophisticated, particularly in fields like medicine and biology, a persistent anomaly emerged: the data often contained far more zeros than the classic model could explain. This phenomenon of "excess zeros," coupled with variance that far exceeded the mean (overdispersion), revealed a critical gap in our analytical toolkit.
+In the quest to understand our world, we frequently rely on counting: the number of patient readmissions, the frequency of a rare [genetic mutation](@keyword=genetic_mutation|lang=en-US|style=Feynman), or the daily tally of customer complaints. For decades, the Poisson distribution served as the primary statistical tool for modeling such count data. However, as data collection grew more sophisticated, particularly in fields like medicine and biology, a persistent anomaly emerged: the data often contained far more zeros than the classic model could explain. This phenomenon of "excess zeros," coupled with variance that far exceeded the mean (overdispersion), revealed a critical gap in our analytical toolkit.
 
-This article explores the elegant solution to this problem: the **Zero-Inflated Poisson (ZIP) model**. Rather than viewing excess zeros as a statistical nuisance, the ZIP model treats them as a crucial clue, suggesting that the data is not from a single uniform group, but from a mixture of two distinct populations hiding in plain sight. We will unpack this powerful idea across two main sections. First, the chapter on **Principles and Mechanisms** will deconstruct the mathematical foundations of the ZIP model, explaining how its two-part structure elegantly solves the puzzles of both excess zeros and [overdispersion](@entry_id:263748). Following that, the chapter on **Applications and Interdisciplinary Connections** will journey through real-world examples in medicine, public health, and biology, demonstrating how the ZIP model provides deeper, more nuanced insights than its predecessors and helps scientists choose the right statistical story for their data.
+This article explores the elegant solution to this problem: the **Zero-Inflated Poisson (ZIP) model**. Rather than viewing excess zeros as a statistical nuisance, the ZIP model treats them as a crucial clue, suggesting that the data is not from a single uniform group, but from a mixture of two distinct populations hiding in plain sight. We will unpack this powerful idea across two main sections. First, the chapter on **Principles and Mechanisms** will deconstruct the mathematical foundations of the ZIP model, explaining how its two-part structure elegantly solves the puzzles of both excess zeros and [overdispersion](@keyword=overdispersion|lang=en-US|style=Feynman). Following that, the chapter on **Applications and Interdisciplinary Connections** will journey through real-world examples in medicine, public health, and biology, demonstrating how the ZIP model provides deeper, more nuanced insights than its predecessors and helps scientists choose the right statistical story for their data.
 
 ## Principles and Mechanisms
 
@@ -17,7 +17,7 @@ A remarkable feature of this Poisson world is its perfect balance. The mean numb
 
 For a while, this was a beautiful and satisfying picture of the world. But as we started counting more complex things, especially in fields like biology and medicine, we noticed the picture didn't always fit.
 
-Consider tracking the number of unplanned hospital visits for a group of patients with a chronic illness over a year. We might find the average number of visits is low, perhaps just $0.6$ visits per patient. If this were a simple Poisson world, we would expect the variance to also be around $0.6$. But when we measure it, we might find the variance is something much larger, like $2.5$. The data is far more spread out than the Poisson model predicts—a condition known as **[overdispersion](@entry_id:263748)**.
+Consider tracking the number of unplanned hospital visits for a group of patients with a chronic illness over a year. We might find the average number of visits is low, perhaps just $0.6$ visits per patient. If this were a simple Poisson world, we would expect the variance to also be around $0.6$. But when we measure it, we might find the variance is something much larger, like $2.5$. The data is far more spread out than the Poisson model predicts—a condition known as **[overdispersion](@keyword=overdispersion|lang=en-US|style=Feynman)**.
 
 Even more puzzling is the number of zeros. Our Poisson model, with an average rate of $\lambda=0.6$, would predict that about $55\%$ of patients would have zero visits ($\exp(-0.6) \approx 0.55$). But in our real data, we might find that a whopping $70\%$ of patients had no visits at all. There are far more zeros than can be explained by random chance in a single, uniform population. This is the problem of **excess zeros**. The simple, elegant Poisson world is breaking down.
 
@@ -51,7 +51,7 @@ And with these two simple equations, we have the complete probability distributi
 
 ### How Mixing Breeds Variance
 
-Now for the magic. How does this idea solve the overdispersion problem? We can calculate the mean and variance of this new distribution using the laws of total [expectation and variance](@entry_id:199481).
+Now for the magic. How does this idea solve the overdispersion problem? We can calculate the mean and variance of this new distribution using the laws of total [expectation and variance](@keyword=expectation_and_variance|lang=en-US|style=Feynman).
 
 The overall mean is intuitive. Since the fraction $\pi$ of the population always contributes zero, only the at-risk fraction $1-\pi$ contributes to the average, giving:
 $$ E[Y] = (1-\pi)\lambda $$
@@ -61,7 +61,7 @@ The first term is the familiar Poisson variance, scaled down by the size of the 
 
 If we look at the ratio of the variance to the mean—a key measure of dispersion—we find a stunningly simple result:
 $$ \frac{\operatorname{Var}(Y)}{E[Y]} = 1 + \pi\lambda $$
-This equation reveals the beauty and unity of the model. For a standard Poisson model, this ratio is exactly $1$. For the ZIP model, as long as there is any zero-inflation ($\pi > 0$) and any risk of events ($\lambda > 0$), the ratio is *always* greater than $1$. The model is inherently overdispersed, and the degree of that [overdispersion](@entry_id:263748) is directly and elegantly quantified by the product of the two core parameters, $\pi$ and $\lambda$.
+This equation reveals the beauty and unity of the model. For a standard Poisson model, this ratio is exactly $1$. For the ZIP model, as long as there is any zero-inflation ($\pi > 0$) and any risk of events ($\lambda > 0$), the ratio is *always* greater than $1$. The model is inherently overdispersed, and the degree of that [overdispersion](@keyword=overdispersion|lang=en-US|style=Feynman) is directly and elegantly quantified by the product of the two core parameters, $\pi$ and $\lambda$.
 
 ### Telling Two Stories at Once: The ZIP Regression
 
@@ -71,13 +71,13 @@ The power of the ZIP model truly shines when we introduce covariates—the expla
 
 2.  **The Count Story:** For those individuals who *are* at risk, what factors influence their event rate $\lambda$? We can model this using a standard **Poisson regression**. For example, a higher comorbidity score ($C_i$) might increase the event rate *among the susceptible patients*.
 
-This two-part structure provides incredibly rich interpretations. A variable might influence one part of the story but not the other, or it could affect both in different ways. A key subtlety is that a covariate's effect on the at-risk rate ($\lambda$) is a conditional effect; it's not the same as its effect on the overall [population mean](@entry_id:175446), which is a complex combination of both stories.
+This two-part structure provides incredibly rich interpretations. A variable might influence one part of the story but not the other, or it could affect both in different ways. A key subtlety is that a covariate's effect on the at-risk rate ($\lambda$) is a conditional effect; it's not the same as its effect on the overall [population mean](@keyword=population_mean|lang=en-US|style=Feynman), which is a complex combination of both stories.
 
 ### Choosing the Right Story
 
-The ZIP model tells a compelling story about population heterogeneity. But it's not the only story we can tell about [overdispersion](@entry_id:263748) and excess zeros.
+The ZIP model tells a compelling story about population heterogeneity. But it's not the only story we can tell about [overdispersion](@keyword=overdispersion|lang=en-US|style=Feynman) and excess zeros.
 
--   The **Negative Binomial (NB) model**, for instance, tells a story of continuous heterogeneity. Instead of two distinct groups, it imagines that every individual has their own personal event rate, drawn from a continuous Gamma distribution. This also leads to [overdispersion](@entry_id:263748) but doesn't explicitly invoke a "structural zero" mechanism.
+-   The **Negative Binomial (NB) model**, for instance, tells a story of continuous heterogeneity. Instead of two distinct groups, it imagines that every individual has their own personal event rate, drawn from a continuous Gamma distribution. This also leads to [overdispersion](@keyword=overdispersion|lang=en-US|style=Feynman) but doesn't explicitly invoke a "structural zero" mechanism.
 
 -   The **Hurdle model** tells yet another story, one of a two-step process. First, every individual must clear a "hurdle" to have any events at all. Then, *if* they clear the hurdle, a separate process determines how many events they have. Unlike the ZIP model, where zeros can come from two sources, in a hurdle model all zeros come from failing to clear the hurdle.
 

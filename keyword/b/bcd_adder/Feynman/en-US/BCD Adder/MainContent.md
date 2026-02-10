@@ -1,7 +1,7 @@
 ## Introduction
-In a world built on binary logic, the need to accurately compute in the decimal system we use every day presents a fundamental challenge for digital systems. From financial calculators to cash [registers](@article_id:170174), exact decimal representation is non-negotiable. This article explores the ingenious solution to this problem: the BCD (Binary-Coded Decimal) adder. It tackles the core issue that arises when a standard binary adder, a workhorse of computing, produces invalid results for simple decimal sums. By journeying through the design of a BCD adder, you will understand not just a piece of hardware, but a core principle of bridging the gap between human-centric decimal math and machine-native binary computation.
+In a world built on binary logic, the need to accurately compute in the decimal system we use every day presents a fundamental challenge for digital systems. From financial calculators to cash [registers](@keyword=registers|lang=en-US|style=Feynman), exact decimal representation is non-negotiable. This article explores the ingenious solution to this problem: the BCD (Binary-Coded Decimal) adder. It tackles the core issue that arises when a standard binary adder, a workhorse of computing, produces invalid results for simple decimal sums. By journeying through the design of a BCD adder, you will understand not just a piece of hardware, but a core principle of bridging the gap between human-centric decimal math and machine-native binary computation.
 
-The first chapter, "Principles and Mechanisms," will deconstruct the problem, revealing precisely why [binary addition](@article_id:176295) fails for BCD numbers and how the elegant "add 6" correction method resolves the issue. We will derive the Boolean logic that governs this correction and see how this simple unit can be a building block for larger systems. Following this, the "Applications and Interdisciplinary Connections" chapter will explore the BCD adder's versatility, showing how it forms the heart of complete decimal Arithmetic Logic Units (ALUs) and why BCD is indispensable for fields requiring financial precision, despite the raw speed advantage of pure binary for other tasks.
+The first chapter, "Principles and Mechanisms," will deconstruct the problem, revealing precisely why [binary addition](@keyword=binary_addition|lang=en-US|style=Feynman) fails for BCD numbers and how the elegant "add 6" correction method resolves the issue. We will derive the Boolean logic that governs this correction and see how this simple unit can be a building block for larger systems. Following this, the "Applications and Interdisciplinary Connections" chapter will explore the BCD adder's versatility, showing how it forms the heart of complete decimal Arithmetic Logic Units (ALUs) and why BCD is indispensable for fields requiring financial precision, despite the raw speed advantage of pure binary for other tasks.
 
 ## Principles and Mechanisms
 
@@ -11,13 +11,13 @@ But let's not celebrate too soon. What if we try $7 + 5$?
 
 ### The Base-10 Dream in a Base-2 World
 
-Our trusty binary adder takes the BCD for 7 (`0111`) and the BCD for 5 (`0101`) and, following the rules of [binary arithmetic](@article_id:173972), computes their sum:
+Our trusty binary adder takes the BCD for 7 (`0111`) and the BCD for 5 (`0101`) and, following the rules of [binary arithmetic](@keyword=binary_arithmetic|lang=en-US|style=Feynman), computes their sum:
 
 $$
 0111_{2} + 0101_{2} = 1100_{2}
 $$
 
-Now we face a puzzle. The result, `1100`, is equivalent to the decimal number 12. But in the BCD system, this pattern is meaningless. The BCD codes only go up to `1001` (for the digit 9). The binary patterns for 10 through 15—`1010`, `1011`, `1100`, `1101`, `1110`, `1111`—are "illegal aliens" in the land of BCD. They don't represent any decimal digit. Our calculator, if it could speak, would be utterly confused, unable to display a valid result . We have a correct binary sum, but an incorrect BCD representation.
+Now we face a puzzle. The result, `1100`, is equivalent to the decimal number 12. But in the BCD system, this pattern is meaningless. The BCD codes only go up to `1001` (for the digit 9). The binary patterns for 10 through 15—`1010`, `1011`, `1100`, `1101`, `1110`, `1111`—are "illegal aliens" in the land of BCD. They don't represent any decimal digit. Our calculator, if it could speak, would be utterly confused, unable to display a valid result [@problem_id:1958694]. We have a correct binary sum, but an incorrect BCD representation.
 
 This is the central challenge of BCD arithmetic: we are using a tool designed for a base-2 (or base-16, for a 4-bit group) world to solve problems in our familiar base-10 world. The two systems align beautifully for small sums, but diverge as soon as we cross the threshold of 9.
 
@@ -25,7 +25,7 @@ This is the central challenge of BCD arithmetic: we are using a tool designed fo
 
 To build a machine that can navigate this mismatch, we must first understand precisely when it occurs. Let's look closely at the output of our 4-bit binary adder. When we add two 4-bit numbers, say $A$ and $B$, it produces a 4-bit sum, let's call it $S = S_3S_2S_1S_0$, and a single-bit carry-out, which we'll call $K$. The full result is a 5-bit number. A correction is needed if this 5-bit result represents a value greater than 9. This happens in two distinct situations.
 
-1.  **The sum is invalid:** As in our $7+5$ example, the decimal sum is 12. The 4-bit binary adder gives us $S = 1100$ and a carry-out $K=0$. The sum $S$ itself is one of the six illegal BCD codes. This situation occurs for any sum from 10 to 15 .
+1.  **The sum is invalid:** As in our $7+5$ example, the decimal sum is 12. The 4-bit binary adder gives us $S = 1100$ and a carry-out $K=0$. The sum $S$ itself is one of the six illegal BCD codes. This situation occurs for any sum from 10 to 15 [@problem_id:1914691].
 
 2.  **A carry is generated:** Let's try adding $9+8$. In BCD, this is `1001 + 1000`. The binary adder computes:
     $$
@@ -39,7 +39,7 @@ So, the rule for our machine is simple: we must intervene and apply a correction
 
 How do we correct the result? The answer lies in understanding what we're trying to achieve. Our 4-bit adder works naturally in a system with $2^4 = 16$ states. We, however, want it to behave like a base-10 counter, which "resets" after 9. There is a gap of $16 - 10 = 6$ states that our binary adder happily counts through but which have no meaning in BCD. The correction, then, is to add this difference—6—to push the result past this forbidden zone and back into alignment with the decimal system.
 
-This isn't just a happy coincidence. Imagine we were designing a "Quint-Coded Decimal" system using 5 bits per decimal digit. Here, we would have $2^5 = 32$ possible states. To make it behave in a base-10 fashion, we would need to skip the $32 - 10 = 22$ invalid states. The correction factor in that hypothetical system would be 22! . The principle is universal: the correction factor is always $2^n - 10$, where $n$ is the number of bits. For BCD, $n=4$, so the magic number is indeed 6.
+This isn't just a happy coincidence. Imagine we were designing a "Quint-Coded Decimal" system using 5 bits per decimal digit. Here, we would have $2^5 = 32$ possible states. To make it behave in a base-10 fashion, we would need to skip the $32 - 10 = 22$ invalid states. The correction factor in that hypothetical system would be 22! [@problem_id:1913583]. The principle is universal: the correction factor is always $2^n - 10$, where $n$ is the number of bits. For BCD, $n=4$, so the magic number is indeed 6.
 
 Let's see this magic in action.
 
@@ -47,7 +47,7 @@ Let's see this magic in action.
     $$
     1110_{2} + 0110_{2} = 10100_{2}
     $$
-    The result is a 5-bit number. The new carry-out is 1, and the new 4-bit sum is `0100` (which is 4 in BCD). The answer is `1 0100`, representing a carry of 1 and a digit of 4—exactly 14 in BCD . The addition of 6 has forced the sum to "wrap around" and produce the correct carry, just as you would carry the '1' when adding $6+8$ on paper. The same logic fixes our $7+5=12$ problem: `1100 + 0110 = 1 0010`, which is BCD for 12 .
+    The result is a 5-bit number. The new carry-out is 1, and the new 4-bit sum is `0100` (which is 4 in BCD). The answer is `1 0100`, representing a carry of 1 and a digit of 4—exactly 14 in BCD [@problem_id:1913603]. The addition of 6 has forced the sum to "wrap around" and produce the correct carry, just as you would carry the '1' when adding $6+8$ on paper. The same logic fixes our $7+5=12$ problem: `1100 + 0110 = 1 0010`, which is BCD for 12 [@problem_id:1908618].
 
 -   **Case 2 (K=1):** Take $9+9=18$. The initial binary sum is `1 0010`. So, $K=1$ and $S=0010$. Our rule says we must correct because $K=1$. We add 6 to the sum part $S$:
     $$
@@ -65,7 +65,7 @@ The condition "$S > 9$" applies to the binary patterns from `1010` to `1111`. Le
 
 Notice that for any number greater than 9, $S_3$ must be 1. And additionally, *either* $S_2$ must be 1 (for sums 12-15) *or* $S_1$ must be 1 (for sums 10-11). So, the Boolean expression for "$S>9$" is simply $S_3S_2 + S_3S_1$.
 
-Combining this with the carry condition, we get the complete logic for the correction signal    :
+Combining this with the carry condition, we get the complete logic for the correction signal [@problem_id:1909141] [@problem_id:1913600] [@problem_id:1935535] [@problem_id:1913340]:
 
 $$
 \text{CORRECT} = K + S_3S_2 + S_3S_1
@@ -77,4 +77,4 @@ This elegant expression is the "brain" of the BCD adder. It's a perfect translat
 
 This single-digit BCD adder is more than just a clever trick; it's a fundamental building block. Real-world calculators need to add numbers with many digits. How do they do it? They simply chain these single-digit adders together. The final carry-out from one digit's addition becomes the carry-in for the next higher-order digit's addition, mimicking exactly how we perform long addition by hand.
 
-By designing the adder to handle a carry-in bit, $C_{in}$, as well as the two BCD digits, we create a modular unit that can be scaled up to handle any number of digits . This reveals a beautiful principle of digital design: complexity is built from the elegant repetition of simple, well-understood ideas. The journey from a puzzling glitch in a simple addition to a scalable, multi-digit arithmetic unit shows the inherent beauty and unity of engineering logic.
+By designing the adder to handle a carry-in bit, $C_{in}$, as well as the two BCD digits, we create a modular unit that can be scaled up to handle any number of digits [@problem_id:1922815]. This reveals a beautiful principle of digital design: complexity is built from the elegant repetition of simple, well-understood ideas. The journey from a puzzling glitch in a simple addition to a scalable, multi-digit arithmetic unit shows the inherent beauty and unity of engineering logic.

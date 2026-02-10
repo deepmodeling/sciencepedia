@@ -17,7 +17,7 @@ Let's take this apart piece by piece, because it tells a wonderful story. $P$ is
 
 So, the whole expression tells us that $K$ is the amount of pressure required to cause a certain *fractional* decrease in volume. A material with a high bulk modulus, like diamond, requires an astronomical amount of pressure to be compressed even a little. A material with a low bulk modulus, like a marshmallow, squishes easily.
 
-Now, here is a rather beautiful and surprising insight. What are the units of bulk modulus? Looking at the formula, you might think it's something complicated, perhaps pressure divided by volume. But let's look closer. The term $\frac{dP}{dV}$ has units of pressure per volume. When we multiply it by volume, $V$, the volume units cancel out! The fractional change in volume, $\frac{dV}{V}$, is a ratio of two volumes, so it is a pure, [dimensionless number](@article_id:260369). This means that the bulk modulus, $K$, has the exact same dimensions as pressure  . The SI unit for $K$ is the Pascal ($Pa$), just like for pressure.
+Now, here is a rather beautiful and surprising insight. What are the units of bulk modulus? Looking at the formula, you might think it's something complicated, perhaps pressure divided by volume. But let's look closer. The term $\frac{dP}{dV}$ has units of pressure per volume. When we multiply it by volume, $V$, the volume units cancel out! The fractional change in volume, $\frac{dV}{V}$, is a ratio of two volumes, so it is a pure, [dimensionless number](@keyword=dimensionless_number|lang=en-US|style=Feynman). This means that the bulk modulus, $K$, has the exact same dimensions as pressure [@problem_id:2016545] [@problem_id:1885537]. The SI unit for $K$ is the Pascal ($Pa$), just like for pressure.
 
 This isn't just a mathematical curiosity; it's a deep physical insight. The bulk modulus is a kind of inherent pressure within the material that fights back against your attempt to squeeze it. It's the material's own internal declaration of its personal space.
 
@@ -27,7 +27,7 @@ To get a feel for what these numbers mean in the real world, let's leave our tab
 
 Imagine we are designing a deep-sea research vehicle. A critical component is a small, spherical sensor housing made from a tough ceramic, silicon nitride ($\text{Si}_3\text{N}_4$), which has a bulk modulus $K$ of about $252$ Gigapascals ($252 \times 10^9 \text{ Pa}$). Let's send it down to a depth of $10$ kilometers.
 
-First, what pressure is our little sphere experiencing? The pressure under a column of fluid is given by $p = \rho g h$, where $\rho$ is the density of seawater (about $1025 \text{ kg/m}^3$), $g$ is the acceleration due to gravity ($9.81 \text{ m/s}^2$), and $h$ is the depth ($10,000 \text{ m}$). This gives a pressure of about $100$ million Pascals ($1.0 \times 10^8 \text{ Pa}$), or about 1,000 times the [atmospheric pressure](@article_id:147138) at sea level!
+First, what pressure is our little sphere experiencing? The pressure under a column of fluid is given by $p = \rho g h$, where $\rho$ is the density of seawater (about $1025 \text{ kg/m}^3$), $g$ is the acceleration due to gravity ($9.81 \text{ m/s}^2$), and $h$ is the depth ($10,000 \text{ m}$). This gives a pressure of about $100$ million Pascals ($1.0 \times 10^8 \text{ Pa}$), or about 1,000 times the [atmospheric pressure](@keyword=atmospheric_pressure|lang=en-US|style=Feynman) at sea level!
 
 So, how much does our sphere actually shrink? For a pressure change $\Delta P$, the fractional change in volume $\epsilon_V = \frac{\Delta V}{V_0}$ is given by a simple approximation of our defining formula:
 
@@ -41,7 +41,7 @@ $$
 \epsilon_V \approx -\frac{1.0 \times 10^8 \text{ Pa}}{252 \times 10^9 \text{ Pa}} \approx -0.0004
 $$
 
-This means the sphere's volume decreases by only about $0.04\%$. Its radius shrinks by an even smaller amount, about a third of that. Despite being subjected to a pressure that would instantly crush a person, this stiff ceramic barely notices. This calculation  beautifully illustrates why, in our daily lives, we can get away with thinking of solids and liquids as perfectly "incompressible." They aren't, but you need an ocean's worth of weight to prove it.
+This means the sphere's volume decreases by only about $0.04\%$. Its radius shrinks by an even smaller amount, about a third of that. Despite being subjected to a pressure that would instantly crush a person, this stiff ceramic barely notices. This calculation [@problem_id:1296137] beautifully illustrates why, in our daily lives, we can get away with thinking of solids and liquids as perfectly "incompressible." They aren't, but you need an ocean's worth of weight to prove it.
 
 ### The Symphony of Stiffness: A Unified View of Elasticity
 
@@ -51,7 +51,7 @@ You might think these are three completely independent properties. A material co
 
 The conductor of this symphony is a fascinating property called **Poisson's ratio**, $\nu$. When you stretch a rubber band, it gets thinner. Poisson's ratio is the measure of how much it thins sideways for a given amount of stretch. It’s the material’s characteristic "squish factor."
 
-The relationship between our three moduli is captured in wonderfully compact formulas. For example, the bulk modulus can be expressed in terms of Young's modulus and Poisson's ratio :
+The relationship between our three moduli is captured in wonderfully compact formulas. For example, the bulk modulus can be expressed in terms of Young's modulus and Poisson's ratio [@problem_id:2208243]:
 
 $$
 K = \frac{E}{3(1 - 2\nu)}
@@ -59,13 +59,13 @@ $$
 
 This isn't just an equation to memorize; it's a story. It tells us that if a material has a Poisson's ratio close to $0.5$ (like rubber), the denominator $(1 - 2\nu)$ becomes very small, making the bulk modulus $K$ enormous. Such a material is nearly impossible to compress in volume; when you squeeze it, it just bulges out somewhere else. Conversely, a material like cork has a Poisson's ratio near zero. It doesn't shrink sideways much when you compress it. The formula tells us its bulk modulus is simply $E/3$.
 
-Engineers use these relationships all the time. If they measure the Young's modulus and Poisson's ratio of a material like fused silica for a submersible viewport, they can immediately calculate its bulk modulus and shear modulus without having to perform separate, difficult experiments . For physicists delving deeper, all these properties can be derived from just two [fundamental constants](@article_id:148280) for an [isotropic material](@article_id:204122), the **Lamé parameters** $\lambda$ and $\mu$, further underscoring the beautiful unity of elastic behavior .
+Engineers use these relationships all the time. If they measure the Young's modulus and Poisson's ratio of a material like fused silica for a submersible viewport, they can immediately calculate its bulk modulus and shear modulus without having to perform separate, difficult experiments [@problem_id:1295907]. For physicists delving deeper, all these properties can be derived from just two [fundamental constants](@keyword=fundamental_constants|lang=en-US|style=Feynman) for an [isotropic material](@keyword=isotropic_material|lang=en-US|style=Feynman), the **Lamé parameters** $\lambda$ and $\mu$, further underscoring the beautiful unity of elastic behavior [@problem_id:1497957].
 
 ### The Price of Existence: Energy, Stability, and the Bulk Modulus
 
-Why do materials resist being squeezed? Where does this "[internal pressure](@article_id:153202)" of the bulk modulus come from? The answer, as is so often the case in physics, lies in energy.
+Why do materials resist being squeezed? Where does this "[internal pressure](@keyword=internal_pressure|lang=en-US|style=Feynman)" of the bulk modulus come from? The answer, as is so often the case in physics, lies in energy.
 
-When you compress a spring, you do work on it, and that work is stored as potential energy. The same is true when you compress a material. The amount of energy stored per unit volume is called the **[strain energy density](@article_id:199591)**, $W$. For a pure volumetric compression, this energy has a beautifully simple form :
+When you compress a spring, you do work on it, and that work is stored as potential energy. The same is true when you compress a material. The amount of energy stored per unit volume is called the **[strain energy density](@keyword=strain_energy_density|lang=en-US|style=Feynman)**, $W$. For a pure volumetric compression, this energy has a beautifully simple form [@problem_id:1548278]:
 
 $$
 W = \frac{1}{2}K\epsilon_V^2
@@ -73,9 +73,9 @@ $$
 
 Look at that! It's a perfect analogy to the energy stored in a spring, $W = \frac{1}{2}kx^2$. The bulk modulus $K$ acts as the "spring constant" for the volume of the material, and the fractional volume change $\epsilon_V$ is the "displacement." This gives us a new, powerful intuition for $K$: it's a measure of how much energy it costs to change a material's volume.
 
-This energy perspective leads to a profound conclusion about the nature of matter itself. A fundamental principle of stability is that any physical system, left to itself, will try to move to a state of lower energy. This means that if you deform a stable material, you must be *adding* energy to it. The [strain energy density](@article_id:199591) $W$ must always be positive or zero.
+This energy perspective leads to a profound conclusion about the nature of matter itself. A fundamental principle of stability is that any physical system, left to itself, will try to move to a state of lower energy. This means that if you deform a stable material, you must be *adding* energy to it. The [strain energy density](@keyword=strain_energy_density|lang=en-US|style=Feynman) $W$ must always be positive or zero.
 
-Since the term $\epsilon_V^2$ (the square of the strain) is always positive, for the [strain energy](@article_id:162205) $W$ to always be positive, the coefficient in front must be positive. This gives us a fundamental constraint on matter :
+Since the term $\epsilon_V^2$ (the square of the strain) is always positive, for the [strain energy](@keyword=strain_energy|lang=en-US|style=Feynman) $W$ to always be positive, the coefficient in front must be positive. This gives us a fundamental constraint on matter [@problem_id:1548282]:
 
 $$
 K \ge 0
@@ -91,9 +91,9 @@ Think about pumping up a bicycle tire. If you pump very slowly, the pump stays c
 
 The same principle applies to our bulk modulus. A slow compression allows the material to stay at a constant temperature, and we measure the **isothermal bulk modulus**, $K_T$. A rapid compression traps the energy of compression, heats the material, and causes its atoms to vibrate more vigorously and push back harder. This gives a higher, **adiabatic bulk modulus**, $K_S$. It is always true that $K_S \ge K_T$.
 
-For most solids and liquids, the difference is small. For water, $K_S$ is only about $2\%$ larger than $K_T$, meaning it takes about $2\%$ more pressure to compress water rapidly by a certain amount than to do it slowly . But for gases, the difference is substantial.
+For most solids and liquids, the difference is small. For water, $K_S$ is only about $2\%$ larger than $K_T$, meaning it takes about $2\%$ more pressure to compress water rapidly by a certain amount than to do it slowly [@problem_id:1754092]. But for gases, the difference is substantial.
 
-Here is the grand finale, a truly stunning piece of physics that bridges the worlds of mechanics and thermodynamics. The ratio of these two moduli is not just some arbitrary number; it is precisely equal to another fundamental quantity, the ratio of the material's heat capacities, $\gamma = C_P/C_V$ .
+Here is the grand finale, a truly stunning piece of physics that bridges the worlds of mechanics and thermodynamics. The ratio of these two moduli is not just some arbitrary number; it is precisely equal to another fundamental quantity, the ratio of the material's heat capacities, $\gamma = C_P/C_V$ [@problem_id:437575].
 
 $$
 \frac{K_S}{K_T} = \gamma

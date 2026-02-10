@@ -32,15 +32,15 @@ We have a problem. The limit of the integrals is 1, but the integral of the limi
 
 ### A Safe Harbor: Uniform Convergence
 
-The first, and most intuitive, safety condition is called **[uniform convergence](@article_id:145590)**. Let's think about a sequence of functions $f_n(x)$ converging to a limit function $f(x)$.
+The first, and most intuitive, safety condition is called **[uniform convergence](@keyword=uniform_convergence|lang=en-US|style=Feynman)**. Let's think about a sequence of functions $f_n(x)$ converging to a limit function $f(x)$.
 
 *   **Pointwise convergence** means that for any single point $x$ you pick, the sequence of values $f_n(x)$ gets closer and closer to $f(x)$. It’s like a group of runners all starting a race; each runner will eventually cross the finish line, but they can do so at very different times.
 
 *   **Uniform convergence** is much stronger. It means that *all* the functions $f_n(x)$ get closer to $f(x)$ at roughly the same rate, across the entire domain. It’s like a troop of soldiers marching in tight formation. The entire line of soldiers moves forward as one. Mathematically, it means the maximum distance between $f_n(x)$ and $f(x)$ at any point, $\sup_x |f_n(x) - f(x)|$, goes to zero.
 
-If a [sequence of functions](@article_id:144381) converges uniformly on a finite, closed interval like $[a, b]$, it's as if the graph of $f_n$ is being "shrink-wrapped" onto the graph of $f$. It's then no surprise that the area under $f_n$ must converge to the area under $f$. This gives us our first powerful theorem: if $f_n$ are continuous and converge uniformly to $f$ on $[a, b]$, the swap is legal.
+If a [sequence of functions](@keyword=sequence_of_functions|lang=en-US|style=Feynman) converges uniformly on a finite, closed interval like $[a, b]$, it's as if the graph of $f_n$ is being "shrink-wrapped" onto the graph of $f$. It's then no surprise that the area under $f_n$ must converge to the area under $f$. This gives us our first powerful theorem: if $f_n$ are continuous and converge uniformly to $f$ on $[a, b]$, the swap is legal.
 
-Consider the simple, elegant example from problem :
+Consider the simple, elegant example from problem [@problem_id:3836]:
 $$
 \lim_{n \to \infty} \int_0^2 \frac{\sin(x)}{n + x^2} \, dx
 $$
@@ -64,7 +64,7 @@ The first is the **Monotone Convergence Theorem (MCT)**. The idea is beautiful i
 
 Imagine you're filling a swimming pool. $f_n(x)$ represents the water level at position $x$ at time $n$. The condition is that the water level never goes down. The total volume of water at time $n$ is $\int f_n(x) dx$. The MCT tells us that the final volume of water in the pool will be the limit of the volumes at each step. In this process, no water can magically "leak out" to infinity.
 
-A classic example is the sequence $f_n(x) = (1 - x/n)^n$ on the interval $[0, 1]$ from problem . It can be shown that this sequence is always non-negative and that $f_n(x) \le f_{n+1}(x)$ for all $x \in [0, 1]$. Each function is a stepping stone on a path that only leads upward. The pointwise limit is a famous one:
+A classic example is the sequence $f_n(x) = (1 - x/n)^n$ on the interval $[0, 1]$ from problem [@problem_id:7549]. It can be shown that this sequence is always non-negative and that $f_n(x) \le f_{n+1}(x)$ for all $x \in [0, 1]$. Each function is a stepping stone on a path that only leads upward. The pointwise limit is a famous one:
 $$
 \lim_{n \to \infty} \left(1 - \frac{x}{n}\right)^n = e^{-x}
 $$
@@ -72,23 +72,23 @@ Because the conditions for MCT are met, we can confidently swap the limit and in
 $$
 \lim_{n \to \infty} \int_0^1 \left(1 - \frac{x}{n}\right)^n dx = \int_0^1 e^{-x} dx = \left[-e^{-x}\right]_0^1 = 1 - e^{-1}
 $$
-The same principle applies beautifully to other monotonically increasing sequences, like the one in problem . The MCT is powerful, but what happens if the functions don't just go up? What if they oscillate?
+The same principle applies beautifully to other monotonically increasing sequences, like the one in problem [@problem_id:7517]. The MCT is powerful, but what happens if the functions don't just go up? What if they oscillate?
 
 ### The Grand Synthesis: The Dominated Convergence Theorem
 
-This brings us to the king of [convergence theorems](@article_id:140398), the **Lebesgue Dominated Convergence Theorem (DCT)**. This is the ultimate tool for taming [sequences of functions](@article_id:145113).
+This brings us to the king of [convergence theorems](@keyword=convergence_theorems|lang=en-US|style=Feynman), the **Lebesgue Dominated Convergence Theorem (DCT)**. This is the ultimate tool for taming [sequences of functions](@keyword=sequences_of_functions|lang=en-US|style=Feynman).
 
-The central idea is **domination**. Suppose our functions $f_n(x)$ are bouncing around, not necessarily monotonically. The DCT says that if we can find *one single, fixed function* $g(x)$ that acts as a ceiling for all of them—that is, $|f_n(x)| \le g(x)$ for all $n$—and this [ceiling function](@article_id:261966) has a finite total area, $\int g(x) dx < \infty$, then we are safe. The sequence is "dominated" by an integrable function $g(x)$.
+The central idea is **domination**. Suppose our functions $f_n(x)$ are bouncing around, not necessarily monotonically. The DCT says that if we can find *one single, fixed function* $g(x)$ that acts as a ceiling for all of them—that is, $|f_n(x)| \le g(x)$ for all $n$—and this [ceiling function](@keyword=ceiling_function|lang=en-US|style=Feynman) has a finite total area, $\int g(x) dx < \infty$, then we are safe. The sequence is "dominated" by an integrable function $g(x)$.
 
 Think of the functions $f_n(x)$ as a troupe of unruly acrobats. They can jump, flip, and oscillate wildly. The function $g(x)$ is the "big top" tent under which they perform. As long as the tent has a finite size (is integrable) and none of the acrobats ever jump outside of it, we can be sure that none of their collective "area" can escape to infinity.
 
 Finding this dominating "tent" is often the crucial and most creative part of the problem.
-*   Sometimes it's straightforward. In problem , for $f_k(x) = (1+x/k)^k e^{-ax}$ with $a>1$, we can use the well-known inequality $(1+x/k)^k \le e^x$. This immediately gives us a dominating function $g(x) = e^x e^{-ax} = e^{(1-a)x}$, which has a finite integral precisely because $a>1$.
-*   Sometimes it requires more cunning. In problem , we analyze the function $f_n(x) = n^2 (1 - \cos(x/n)) \frac{e^{-x}}{x^2}$. The term $n^2(1-\cos(x/n))$ looks tricky. But a physicist or engineer would immediately think of a Taylor expansion for small angles! The inequality $1 - \cos(u) \le u^2/2$ reveals the hidden dominator. Substituting $u = x/n$, we find $|f_n(x)| \le \frac{x^2/2}{x^2} e^{-x} = \frac{1}{2}e^{-x}$. Our tent is $g(x) = \frac{1}{2}e^{-x}$, which is beautifully integrable.
+*   Sometimes it's straightforward. In problem [@problem_id:31532], for $f_k(x) = (1+x/k)^k e^{-ax}$ with $a>1$, we can use the well-known inequality $(1+x/k)^k \le e^x$. This immediately gives us a dominating function $g(x) = e^x e^{-ax} = e^{(1-a)x}$, which has a finite integral precisely because $a>1$.
+*   Sometimes it requires more cunning. In problem [@problem_id:566020], we analyze the function $f_n(x) = n^2 (1 - \cos(x/n)) \frac{e^{-x}}{x^2}$. The term $n^2(1-\cos(x/n))$ looks tricky. But a physicist or engineer would immediately think of a Taylor expansion for small angles! The inequality $1 - \cos(u) \le u^2/2$ reveals the hidden dominator. Substituting $u = x/n$, we find $|f_n(x)| \le \frac{x^2/2}{x^2} e^{-x} = \frac{1}{2}e^{-x}$. Our tent is $g(x) = \frac{1}{2}e^{-x}$, which is beautifully integrable.
 
 #### Peeking Under the Hood: Why Domination Works
 
-Why is this "tent" so effective? The proof is a masterpiece of intuition, beautifully illustrated by the argument in problem . To show that $\lim \int f_n = \int \lim f_n$, we need to show that the total error, $\int |f_n - f| \,dx$, goes to zero.
+Why is this "tent" so effective? The proof is a masterpiece of intuition, beautifully illustrated by the argument in problem [@problem_id:444204]. To show that $\lim \int f_n = \int \lim f_n$, we need to show that the total error, $\int |f_n - f| \,dx$, goes to zero.
 
 Let's break the problem down. We split the infinite domain into two regions: a large central "body" from $-A$ to $A$, and the infinite "tails" outside this region.
 
@@ -96,11 +96,11 @@ Let's break the problem down. We split the infinite domain into two regions: a l
 
 2.  **Controlling the Body:** Now we focus on the finite central region $[-A, A]$. On this finite interval, we know $f_n(x)$ converges pointwise to $f(x)$. Even if the convergence isn't uniform, we can still argue that for a large enough $n$, $f_n(x)$ gets very close to $f(x)$ over this fixed, finite region. This means we can choose an $N$ so large that for any $n > N$, the integral of the difference, $\int_{-A}^A |f_n - f| \,dx$, is also as small as we wish (say, less than $\varepsilon/2$).
 
-Putting it together: For any desired error tolerance $\varepsilon$, we first pick a wide enough "body" $[-A, A]$ to make the tail error less than $\varepsilon/2$. Then, for that fixed body, we wait long enough (choose $n > N$) to make the body error less than $\varepsilon/2$. The total error is then less than $\varepsilon/2 + \varepsilon/2 = \varepsilon$. This two-step "[divide and conquer](@article_id:139060)" strategy is the heart of why the Dominated Convergence Theorem works. It’s not magic; it’s a brilliant and intuitive argument.
+Putting it together: For any desired error tolerance $\varepsilon$, we first pick a wide enough "body" $[-A, A]$ to make the tail error less than $\varepsilon/2$. Then, for that fixed body, we wait long enough (choose $n > N$) to make the body error less than $\varepsilon/2$. The total error is then less than $\varepsilon/2 + \varepsilon/2 = \varepsilon$. This two-step "[divide and conquer](@keyword=divide_and_conquer|lang=en-US|style=Feynman)" strategy is the heart of why the Dominated Convergence Theorem works. It’s not magic; it’s a brilliant and intuitive argument.
 
 ### A Hint of Greater Power
 
-These principles are not just abstract tools for solving contrived limit problems. They are fundamental to many areas of science and engineering. One beautiful application is in justifying **[differentiation under the integral sign](@article_id:157805)**, as seen in .
+These principles are not just abstract tools for solving contrived limit problems. They are fundamental to many areas of science and engineering. One beautiful application is in justifying **[differentiation under the integral sign](@keyword=differentiation_under_the_integral_sign|lang=en-US|style=Feynman)**, as seen in [@problem_id:428171].
 
 Suppose we want to find the derivative of a function defined by an integral, like $F(x) = \int_0^\pi \sin(x\cos(t)) dt$. The definition of the derivative is a limit:
 $$

@@ -4,9 +4,9 @@
 
 ### 幂与根的几何学
 
-让我们从一个简单的问题开始：当你将一个复数与自身反复相乘时，会发生什么？在 $z = x+iy$ 的直角坐标世界里，计算 $z^2, z^3, z^4, \dots$ 很快就会变成一场[二项式展开](@article_id:333305)的噩梦。但在指数世界里，这却是一个启示。如果 $z = re^{i\theta}$，那么将其升至 $n$ 次幂就是简单的 $(re^{i\theta})^n = r^n e^{in\theta}$。
+让我们从一个简单的问题开始：当你将一个复数与自身反复相乘时，会发生什么？在 $z = x+iy$ 的直角坐标世界里，计算 $z^2, z^3, z^4, \dots$ 很快就会变成一场[二项式展开](@keyword=binomial_expansion|lang=zh-CN|style=Feynman)的噩梦。但在指数世界里，这却是一个启示。如果 $z = re^{i\theta}$，那么将其升至 $n$ 次幂就是简单的 $(re^{i\theta})^n = r^n e^{in\theta}$。
 
-代数运算微不足道，但几何洞见却十分深刻。每次乘以 $z$，你都将长度缩放 $r$ 倍，并旋转一个角度 $\theta$。因此，将 $z$ 升至 $n$ 次幂就意味着执行这个操作 $n$ 次：最终的长度是 $r^n$，最终的角度是 $n\theta$ 。这就是著名的[棣莫弗公式](@article_id:355150)，但从这个角度看，它不是需要记忆的东西——它是[复数乘法](@article_id:347354)意义的显而易见的推论。
+代数运算微不足道，但几何洞见却十分深刻。每次乘以 $z$，你都将长度缩放 $r$ 倍，并旋转一个角度 $\theta$。因此，将 $z$ 升至 $n$ 次幂就意味着执行这个操作 $n$ 次：最终的长度是 $r^n$，最终的角度是 $n\theta$ [@problem_id:2274067]。这就是著名的[棣莫弗公式](@keyword=de_moivre_s_formula|lang=zh-CN|style=Feynman)，但从这个角度看，它不是需要记忆的东西——它是[复数乘法](@keyword=complex_multiplication|lang=zh-CN|style=Feynman)意义的显而易见的推论。
 
 这个思想是如此基础，以至于在其他数学领域（如线性代数）中也占有一席之地。二维平面上的旋转可以用一个矩阵来表示，
 $$
@@ -16,20 +16,20 @@ $$
 $$
 R(n\phi) = \begin{pmatrix} \cos(n\phi)  -\sin(n\phi) \\ \sin(n\phi)  \cos(n\phi) \end{pmatrix}
 $$
-这个优美的平行关系为[棣莫弗公式](@article_id:355150)提供了一个完全独立的、可视化的证明，展示了复数的思想和[几何变换](@article_id:311067)是多么深度地交织在一起 。
+这个优美的平行关系为[棣莫弗公式](@keyword=de_moivre_s_formula|lang=zh-CN|style=Feynman)提供了一个完全独立的、可视化的证明，展示了复数的思想和[几何变换](@keyword=geometric_transformations|lang=zh-CN|style=Feynman)是多么深度地交织在一起 [@problem_id:2237317]。
 
-真正的魔力始于我们逆转这个过程。如果 $n$ 次幂将角度乘以 $n$，那么取 $n$ 次根就必须将角度除以 $n$。但这里有一个微妙之处：角度 $\theta$ 与 $\theta+2\pi$、$\theta+4\pi$ 等是相同的。这些不同的角度表示对于原始数字来说没有区别，但当你将它们除以 $n$ 时，会得到截然不同的结果。例如，$n$ 次根的角度可能是 $\frac{\theta}{n}$，或 $\frac{\theta+2\pi}{n}$，或 $\frac{\theta+4\pi}{n}$，一直到 $\frac{\theta+2\pi(n-1)}{n}$。这就是我们如何发现每个非零复数都有恰好 $n$ 个不同的 $n$ 次根，它们在[复平面](@article_id:318633)上构成一个完美的正多边形。指数形式使得寻找这些根——即方程 $z^n=w$ 的解——不仅成为可能，而且变得微不足道 。
+真正的魔力始于我们逆转这个过程。如果 $n$ 次幂将角度乘以 $n$，那么取 $n$ 次根就必须将角度除以 $n$。但这里有一个微妙之处：角度 $\theta$ 与 $\theta+2\pi$、$\theta+4\pi$ 等是相同的。这些不同的角度表示对于原始数字来说没有区别，但当你将它们除以 $n$ 时，会得到截然不同的结果。例如，$n$ 次根的角度可能是 $\frac{\theta}{n}$，或 $\frac{\theta+2\pi}{n}$，或 $\frac{\theta+4\pi}{n}$，一直到 $\frac{\theta+2\pi(n-1)}{n}$。这就是我们如何发现每个非零复数都有恰好 $n$ 个不同的 $n$ 次根，它们在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上构成一个完美的正多边形。指数形式使得寻找这些根——即方程 $z^n=w$ 的解——不仅成为可能，而且变得微不足道 [@problem_id:2237326]。
 
-一个特殊且尤为重要的例子是“[单位根](@article_id:303737)”，即方程 $z^n=1$ 的解。这些数是内接于[单位圆](@article_id:311954)的正 $n$ 边形的顶点。它们在乘法下构成一个[有限群](@article_id:300157)，是[抽象代数](@article_id:305640)和数论许多领域的基础构件。例如，问虚数单位 $i$ 何时是 $n$ 次单位根，就等同于解 $i^n=1$。将 $i$ 写成 $i = e^{i\pi/2}$，我们需要 $e^{in\pi/2} = 1 = e^{i 2\pi k}$ 对于某个整数 $k$ 成立。这立刻告诉我们 $n/2$ 必须是一个偶数，即 $n$ 必须是4的倍数 。同样的原理也帮助我们理解由重复乘法生成的序列，这些序列在平面上描绘出美丽的循环模式 。
+一个特殊且尤为重要的例子是“[单位根](@keyword=unit_root|lang=zh-CN|style=Feynman)”，即方程 $z^n=1$ 的解。这些数是内接于[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)的正 $n$ 边形的顶点。它们在乘法下构成一个[有限群](@keyword=finite_groups|lang=zh-CN|style=Feynman)，是[抽象代数](@keyword=abstract_algebra|lang=zh-CN|style=Feynman)和数论许多领域的基础构件。例如，问虚数单位 $i$ 何时是 $n$ 次单位根，就等同于解 $i^n=1$。将 $i$ 写成 $i = e^{i\pi/2}$，我们需要 $e^{in\pi/2} = 1 = e^{i 2\pi k}$ 对于某个整数 $k$ 成立。这立刻告诉我们 $n/2$ 必须是一个偶数，即 $n$ 必须是4的倍数 [@problem_id:2278848]。同样的原理也帮助我们理解由重复乘法生成的序列，这些序列在平面上描绘出美丽的循环模式 [@problem_id:1778632]。
 
-### [振荡](@article_id:331484)、信号与工程语言
+### [振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)、信号与工程语言
 
-表达式 $e^{i\omega t}$ 描述了一个点以恒定速率绕原点做圆周运动。它的实部 $\cos(\omega t)$ 和虚部 $\sin(\omega t)$ 是[简谐运动](@article_id:309163)的经典表示——声音的纯音、钟摆的[振荡](@article_id:331484)、我们墙壁里的交流电。指数形式本质上是波和[振动](@article_id:331484)的自然语言。正是由于这个原因，它已成为物理学家和工程师不可或缺的工具。
+表达式 $e^{i\omega t}$ 描述了一个点以恒定速率绕原点做圆周运动。它的实部 $\cos(\omega t)$ 和虚部 $\sin(\omega t)$ 是[简谐运动](@keyword=simple_harmonic_motion|lang=zh-CN|style=Feynman)的经典表示——声音的纯音、钟摆的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)、我们墙壁里的交流电。指数形式本质上是波和[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的自然语言。正是由于这个原因，它已成为物理学家和工程师不可或缺的工具。
 
-在电气工程和信号处理中，系统通常通过其对不同频率的响应来表征。这种“频率响应”是每个频率 $\omega$ 对应的一个复数：其模长告诉你系统对该频率的放大或衰减程度，其幅角告诉你它使波的[相位移](@article_id:314754)动了多少。通过观察[复平面](@article_id:318633)上的“极点”和“零点”，可以理解一个滤波器的全部行为。在频率 $\omega$ 处的频率响应可以通过从这些极点和零点到[单位圆](@article_id:311954)上点 $e^{i\omega}$ 绘制向量来几何地找到。指数形式是驱动这些计算的引擎，使工程师能够设计出能从噪声中分离出人声的滤波器，或将收音机调谐到正确的电台 。
+在电气工程和信号处理中，系统通常通过其对不同频率的响应来表征。这种“频率响应”是每个频率 $\omega$ 对应的一个复数：其模长告诉你系统对该频率的放大或衰减程度，其幅角告诉你它使波的[相位移](@keyword=phase_shift|lang=zh-CN|style=Feynman)动了多少。通过观察[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上的“极点”和“零点”，可以理解一个滤波器的全部行为。在频率 $\omega$ 处的频率响应可以通过从这些极点和零点到[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)上点 $e^{i\omega}$ 绘制向量来几何地找到。指数形式是驱动这些计算的引擎，使工程师能够设计出能从噪声中分离出人声的滤波器，或将收音机调谐到正确的电台 [@problem_id:2874563]。
 
-控制理论，处理如恒温器或飞机[自动驾驶](@article_id:334498)仪等[自调节系统](@article_id:319116)的设计，也严重依赖于[复分析](@article_id:304792)。一些物理过程，如[热扩散](@article_id:309159)，最好用“分数阶”系统来描述。考虑一个传递函数为 $G(s) = 1/\sqrt{s}$ 的系统。这可能看起来很抽象，但其[频率响应](@article_id:323629)可以通过设置 $s=j\omega$ 来找到。我们如何计算 $(j\omega)^{-1/2}$？使用指数形式，这很简单：因为 $j=e^{i\pi/2}$，我们有 $\sqrt{j} = e^{i\pi/4}$。因此，$G(j\omega) = \omega^{-1/2} e^{-i\pi/4}$。这立即告诉我们一些非凡的事情：这个系统在*所有*频率下都引入一个恒定的 $-45$ 度相移，这种行为恰好位于纯电阻（0度）和纯电容（-90度）之间。指数形式使得这些原本深奥的系统变得可以理解 。
+控制理论，处理如恒温器或飞机[自动驾驶](@keyword=autonomous_driving|lang=zh-CN|style=Feynman)仪等[自调节系统](@keyword=self_regulating_systems|lang=zh-CN|style=Feynman)的设计，也严重依赖于[复分析](@keyword=complex_analysis|lang=zh-CN|style=Feynman)。一些物理过程，如[热扩散](@keyword=thermodiffusion|lang=zh-CN|style=Feynman)，最好用“分数阶”系统来描述。考虑一个传递函数为 $G(s) = 1/\sqrt{s}$ 的系统。这可能看起来很抽象，但其[频率响应](@keyword=frequency_response|lang=zh-CN|style=Feynman)可以通过设置 $s=j\omega$ 来找到。我们如何计算 $(j\omega)^{-1/2}$？使用指数形式，这很简单：因为 $j=e^{i\pi/2}$，我们有 $\sqrt{j} = e^{i\pi/4}$。因此，$G(j\omega) = \omega^{-1/2} e^{-i\pi/4}$。这立即告诉我们一些非凡的事情：这个系统在*所有*频率下都引入一个恒定的 $-45$ 度相移，这种行为恰好位于纯电阻（0度）和纯电容（-90度）之间。指数形式使得这些原本深奥的系统变得可以理解 [@problem_id:1564957]。
 
-也许最令人惊叹的应用之一是在[X射线晶体学](@article_id:313940)中。为了确定像DNA或蛋白质这样的分子的结构，科学家用[X射线](@article_id:366799)轰击材料的晶体，并观察散射波的图样。晶体中的每个原子都会散射入射波，探测器测得的总波是所有这些散射子波的总和。每个子波都有一个振幅和一个相位，其中相位由原子的位置决定。总散射振幅的公式，即所谓的结构因子，是 $S_\mathbf{G} = \sum_{j} f_j e^{-i \mathbf{G} \cdot \mathbf{r}_j}$。它实际上就是指数形式复数的总和。[衍射图样](@article_id:305780)中的亮点出现在这些复数相长干涉的地方，暗点则出现在它们相消干涉的地方。通过分析这个图样，科学家可以反向工程这个总和，并计算出原子们的位置 $\mathbf{r}_j$，从而揭示生命构件的结构。这是一项获得诺贝尔奖的技术，其核心是在[复平面](@article_id:318633)上添加旋转向量的简单行为 。有趣的是，虽然[结构因子](@article_id:319027)本身会获得一个取决于晶体原点选择的相位因子，但可测量的强度（与 $|S_\mathbf{G}|^2$ 成正比）保持不变——这是一个令人欣慰的结果，因为晶体的物理现实不能依赖于我们的[坐标系](@article_id:316753)。
+也许最令人惊叹的应用之一是在[X射线晶体学](@keyword=x_ray_crystallography|lang=zh-CN|style=Feynman)中。为了确定像DNA或蛋白质这样的分子的结构，科学家用[X射线](@keyword=x_ray|lang=zh-CN|style=Feynman)轰击材料的晶体，并观察散射波的图样。晶体中的每个原子都会散射入射波，探测器测得的总波是所有这些散射子波的总和。每个子波都有一个振幅和一个相位，其中相位由原子的位置决定。总散射振幅的公式，即所谓的结构因子，是 $S_\mathbf{G} = \sum_{j} f_j e^{-i \mathbf{G} \cdot \mathbf{r}_j}$。它实际上就是指数形式复数的总和。[衍射图样](@keyword=diffraction_patterns|lang=zh-CN|style=Feynman)中的亮点出现在这些复数相长干涉的地方，暗点则出现在它们相消干涉的地方。通过分析这个图样，科学家可以反向工程这个总和，并计算出原子们的位置 $\mathbf{r}_j$，从而揭示生命构件的结构。这是一项获得诺贝尔奖的技术，其核心是在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上添加旋转向量的简单行为 [@problem_id:1821547]。有趣的是，虽然[结构因子](@keyword=the_structure_factor|lang=zh-CN|style=Feynman)本身会获得一个取决于晶体原点选择的相位因子，但可测量的强度（与 $|S_\mathbf{G}|^2$ 成正比）保持不变——这是一个令人欣慰的结果，因为晶体的物理现实不能依赖于我们的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)。
 
-从求解多项式方程到设计先进电子设备和解码[分子结构](@article_id:300554)，[复数的指数形式](@article_id:343102)证明了它远不止是一种数学上的便利。它是一个深刻而统一的原则，是一个镜头，通过它，许多复杂问题背后隐藏的几何简洁性被清晰、优美地呈现出来。
+从求解多项式方程到设计先进电子设备和解码[分子结构](@keyword=molecular_structure|lang=zh-CN|style=Feynman)，[复数的指数形式](@keyword=exponential_form_of_complex_numbers|lang=zh-CN|style=Feynman)证明了它远不止是一种数学上的便利。它是一个深刻而统一的原则，是一个镜头，通过它，许多复杂问题背后隐藏的几何简洁性被清晰、优美地呈现出来。

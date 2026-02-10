@@ -1,27 +1,27 @@
 ## 引言
-宇宙由变化的法则所支配，而这些法则通常用复杂的[微分方程](@article_id:327891)语言来描述。从钟摆的[振荡](@article_id:331484)到量子系统内部的复杂相互作用，这些方程可能看起来异常复杂。然而，在这份复杂性之中，隐藏着一种深刻而优雅的简洁性。本文将探讨其中一项原理：[阿贝尔恒等式](@article_id:343792)，这是一把数学的万能钥匙，它能让我们在无需解决那些通常很棘手的完整方程的情况下，深刻理解线性系统。它回答了一个基本问题：一个系统的所有可能解所构成的空间是如何演化的，并揭示了一条惊人简洁的类守恒定律。
+宇宙由变化的法则所支配，而这些法则通常用复杂的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)语言来描述。从钟摆的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)到量子系统内部的复杂相互作用，这些方程可能看起来异常复杂。然而，在这份复杂性之中，隐藏着一种深刻而优雅的简洁性。本文将探讨其中一项原理：[阿贝尔恒等式](@keyword=abel_s_identity|lang=zh-CN|style=Feynman)，这是一把数学的万能钥匙，它能让我们在无需解决那些通常很棘手的完整方程的情况下，深刻理解线性系统。它回答了一个基本问题：一个系统的所有可能解所构成的空间是如何演化的，并揭示了一条惊人简洁的类守恒定律。
 
-本文将通过两个主要部分引导您理解这个优美的概念。首先，在“原理与机制”部分，我们将推导二阶方程的[阿贝尔恒等式](@article_id:343792)，探索其与[朗斯基行列式](@article_id:348237)的联系，以及其在方程组中的强大推广形式，即[刘维尔公式](@article_id:330737)。随后，“应用与跨学科联系”部分将展示该恒等式在各个领域的卓越效用，说明它如何为振子的稳定性、物理学中[特殊函数](@article_id:303669)的基本结构以及经典力学中动力学的几何性质提供关键见解。
+本文将通过两个主要部分引导您理解这个优美的概念。首先，在“原理与机制”部分，我们将推导二阶方程的[阿贝尔恒等式](@keyword=abel_s_identity|lang=zh-CN|style=Feynman)，探索其与[朗斯基行列式](@keyword=wronskian_determinant|lang=zh-CN|style=Feynman)的联系，以及其在方程组中的强大推广形式，即[刘维尔公式](@keyword=liouville_s_formula|lang=zh-CN|style=Feynman)。随后，“应用与跨学科联系”部分将展示该恒等式在各个领域的卓越效用，说明它如何为振子的稳定性、物理学中[特殊函数](@keyword=special_functions|lang=zh-CN|style=Feynman)的基本结构以及经典力学中动力学的几何性质提供关键见解。
 
 ## 原理与机制
 
-想象一下，你正在观察一艘在湖面上上下浮动的船。它的运动可以用一个数学规则——一个[微分方程](@article_id:327891)来描述。对于这类现象，比如弹簧的[振动](@article_id:331484)、吉他弦的[振动](@article_id:331484)或电路中电流的流动，一个非常普遍且强大的规则是二阶[线性齐次微分方程](@article_id:344764)：
+想象一下，你正在观察一艘在湖面上上下浮动的船。它的运动可以用一个数学规则——一个[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)来描述。对于这类现象，比如弹簧的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)、吉他弦的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)或电路中电流的流动，一个非常普遍且强大的规则是二阶[线性齐次微分方程](@keyword=linear_homogeneous_differential_equations|lang=zh-CN|style=Feynman)：
 
 $$y''(x) + p(x)y'(x) + q(x)y(x) = 0$$
 
-让我们像物理学家一样思考这个方程。项 $y(x)$ 代表我们系统的状态，比如船的位移。项 $y''(x)$ 是它的加速度。项 $q(x)y(x)$ 通常像一个恢复力，总是试图将船[拉回](@article_id:321220)平衡位置，就像连接在码头上的弹簧。项 $p(x)y'(x)$ 则更有趣；它与速度 $y'(x)$ 成正比，因此它就像一个摩擦阻力或[阻尼力](@article_id:329410)——水的阻力。
+让我们像物理学家一样思考这个方程。项 $y(x)$ 代表我们系统的状态，比如船的位移。项 $y''(x)$ 是它的加速度。项 $q(x)y(x)$ 通常像一个恢复力，总是试图将船[拉回](@keyword=pullback|lang=zh-CN|style=Feynman)平衡位置，就像连接在码头上的弹簧。项 $p(x)y'(x)$ 则更有趣；它与速度 $y'(x)$ 成正比，因此它就像一个摩擦阻力或[阻尼力](@keyword=damping_force|lang=zh-CN|style=Feynman)——水的阻力。
 
 为了完全理解船所有可能的运动方式，事实证明我们需要两种不同且基本的运动模式，我们称之为 $y_1(x)$ 和 $y_2(x)$。系统的任何允许的运动都只是这两者的组合。但它们“不同”是什么意思呢？这意味着一个不仅仅是另一个的放大版。它们必须是真正不同的。
 
 ### 解的秘密生活
 
-数学家们有一个非常优雅的工具来衡量这种“不同性”：**[朗斯基行列式](@article_id:348237)** (Wronskian)。它可能看起来只是另一个公式，但它有一个优美而直观的含义。对于我们的两个解 $y_1$ 和 $y_2$，朗斯基行列式 $W(x)$ 定义为：
+数学家们有一个非常优雅的工具来衡量这种“不同性”：**[朗斯基行列式](@keyword=wronskian_determinant|lang=zh-CN|style=Feynman)** (Wronskian)。它可能看起来只是另一个公式，但它有一个优美而直观的含义。对于我们的两个解 $y_1$ 和 $y_2$，朗斯基行列式 $W(x)$ 定义为：
 
 $$W(y_1, y_2)(x) = y_1(x)y_2'(x) - y_2(x)y_1'(x)$$
 
-可以把每个解在某点 $x$ 的状态想象成一个抽象“[状态空间](@article_id:323449)”中的小向量，其坐标是位置和速度：$\vec{v_1} = (y_1(x), y_1'(x))$ 和 $\vec{v_2} = (y_2(x), y_2'(x))$。[朗斯基行列式](@article_id:348237)就是由这两个向量构成的平行四边形的（有向）面积。如果这个面积为零，意味着这两个向量在同一条直线上——一个解的状态只是另一个解的倍数。它们不是真正独立的。但如果面积不为零，它们就指向不同的方向，捕捉了系统运动的两个独立方面。
+可以把每个解在某点 $x$ 的状态想象成一个抽象“[状态空间](@keyword=state_space_2|lang=zh-CN|style=Feynman)”中的小向量，其坐标是位置和速度：$\vec{v_1} = (y_1(x), y_1'(x))$ 和 $\vec{v_2} = (y_2(x), y_2'(x))$。[朗斯基行列式](@keyword=wronskian_determinant|lang=zh-CN|style=Feynman)就是由这两个向量构成的平行四边形的（有向）面积。如果这个面积为零，意味着这两个向量在同一条直线上——一个解的状态只是另一个解的倍数。它们不是真正独立的。但如果面积不为零，它们就指向不同的方向，捕捉了系统运动的两个独立方面。
 
-这就引出了一个自然且关键的问题：当我们的系统随着 $x$（可以是时间或位置）演化时，这个[解空间](@article_id:379194)的“面积”，即朗斯基行列式，是如何变化的？它是增大、缩小，还是保持不变？你可能会猜测它的行为会是阻尼力 $p(x)$ 和恢复力 $q(x)$ 共同作用下的复杂舞蹈。但你会大吃一惊。
+这就引出了一个自然且关键的问题：当我们的系统随着 $x$（可以是时间或位置）演化时，这个[解空间](@keyword=solution_space|lang=zh-CN|style=Feynman)的“面积”，即朗斯基行列式，是如何变化的？它是增大、缩小，还是保持不变？你可能会猜测它的行为会是阻尼力 $p(x)$ 和恢复力 $q(x)$ 共同作用下的复杂舞蹈。但你会大吃一惊。
 
 ### 惊人的简洁：Abel 的发现
 
@@ -33,7 +33,7 @@ $y_1'y_2'$ 项相互抵消，剩下：
 
 $$W'(x) = y_1y_2'' - y_2y_1''$$
 
-现在，我们利用我们对 $y_1$ 和 $y_2$ 的唯一了解：它们是我们原始[微分方程](@article_id:327891)的解。所以我们可以替换它们的二阶[导数](@article_id:318324)：$y'' = -p(x)y' - q(x)y$。
+现在，我们利用我们对 $y_1$ 和 $y_2$ 的唯一了解：它们是我们原始[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)的解。所以我们可以替换它们的二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)：$y'' = -p(x)y' - q(x)y$。
 
 $$W'(x) = y_1(-p(x)y_2' - q(x)y_2) - y_2(-p(x)y_1' - q(x)y_1)$$
 
@@ -41,58 +41,58 @@ $$W'(x) = y_1(-p(x)y_2' - q(x)y_2) - y_2(-p(x)y_1' - q(x)y_1)$$
 
 $$W'(x) = -p(x)(y_1y_2' - y_2y_1') = -p(x)W(x)$$
 
-这就是**[阿贝尔恒等式](@article_id:343792)**，它美不胜收。它告诉我们，[朗斯基行列式](@article_id:348237)——我们[解空间](@article_id:379194)的“面积”——的变化率*仅*取决于[阻尼系数](@article_id:343129) $p(x)$。恢复力 $q(x)$，无论多么复杂，都对其没有任何影响。朗斯基行列式的演化由最简单的[微分方程](@article_id:327891)决定，我们可以立即解出它：
+这就是**[阿贝尔恒等式](@keyword=abel_s_identity|lang=zh-CN|style=Feynman)**，它美不胜收。它告诉我们，[朗斯基行列式](@keyword=wronskian_determinant|lang=zh-CN|style=Feynman)——我们[解空间](@keyword=solution_space|lang=zh-CN|style=Feynman)的“面积”——的变化率*仅*取决于[阻尼系数](@keyword=damping_coefficient|lang=zh-CN|style=Feynman) $p(x)$。恢复力 $q(x)$，无论多么复杂，都对其没有任何影响。朗斯基行列式的演化由最简单的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)决定，我们可以立即解出它：
 
 $$W(x) = C \exp\left(-\int p(x) \, dx\right)$$
 
 这里，$C$ 是一个常数，取决于我们开始时选择的两个基本解。
 
-让我们看看它的实际应用。假设我们正在研究一个由 $xy'' - y' + x^2y = 0$（对于 $x > 0$）控制的系统。首先，我们通过除以 $x$ 将其化为标准形式：$y'' - \frac{1}{x}y' + xy = 0$。我们可以立即看出 $p(x) = -1/x$。[阿贝尔恒等式](@article_id:343792)告诉我们，任意两个解的朗斯基行列式将是 $W(x) = C \exp\left(-\int (-\frac{1}{x}) \, dx\right) = C \exp(\ln(x)) = Cx$。如果一个实验告诉我们，在 $x=1$ 处的朗斯基行列式是 3，我们知道 $W(1) = C(1) = 3$，所以 $C=3$。该系统的朗斯基行列式就是 $W(x) = 3x$。我们找到了这个结果，却完全不知道解 $y_1$ 和 $y_2$ 的具体形式！
+让我们看看它的实际应用。假设我们正在研究一个由 $xy'' - y' + x^2y = 0$（对于 $x > 0$）控制的系统。首先，我们通过除以 $x$ 将其化为标准形式：$y'' - \frac{1}{x}y' + xy = 0$。我们可以立即看出 $p(x) = -1/x$。[阿贝尔恒等式](@keyword=abel_s_identity|lang=zh-CN|style=Feynman)告诉我们，任意两个解的朗斯基行列式将是 $W(x) = C \exp\left(-\int (-\frac{1}{x}) \, dx\right) = C \exp(\ln(x)) = Cx$。如果一个实验告诉我们，在 $x=1$ 处的朗斯基行列式是 3，我们知道 $W(1) = C(1) = 3$，所以 $C=3$。该系统的朗斯基行列式就是 $W(x) = 3x$。我们找到了这个结果，却完全不知道解 $y_1$ 和 $y_2$ 的具体形式！[@problem_id:39017]
 
-这还揭示了另一个秘密。虽然[朗斯基行列式](@article_id:348237)的值取决于常数 $C$（我们选择的解），但[朗斯基行列式](@article_id:348237)在两个不同点上的*比值*却不依赖于它。例如，对于数学物理中一个著名的方程——Kummer 方程 $z y'' + (3 - z)y' - 2y = 0$，[阿贝尔恒等式](@article_id:343792)预测比值 $W(4)/W(1)$ 精确地为 $e^3/64$。这个比值是该方程的一个普适常数，对你能找到的任何一对独立解都成立。[解空间](@article_id:379194)体积的相对变化已经内嵌在方程本身的结构之中。
+这还揭示了另一个秘密。虽然[朗斯基行列式](@keyword=wronskian_determinant|lang=zh-CN|style=Feynman)的值取决于常数 $C$（我们选择的解），但[朗斯基行列式](@keyword=wronskian_determinant|lang=zh-CN|style=Feynman)在两个不同点上的*比值*却不依赖于它。例如，对于数学物理中一个著名的方程——Kummer 方程 $z y'' + (3 - z)y' - 2y = 0$，[阿贝尔恒等式](@keyword=abel_s_identity|lang=zh-CN|style=Feynman)预测比值 $W(4)/W(1)$ 精确地为 $e^3/64$。这个比值是该方程的一个普适常数，对你能找到的任何一对独立解都成立。[解空间](@keyword=solution_space|lang=zh-CN|style=Feynman)体积的相对变化已经内嵌在方程本身的结构之中。[@problem_id:702366]
 
 ### 从独奏者到交响乐团：方程组
 
 真实世界很少只有一个粒子；它是一个由相互作用部分组成的交响乐团。现代物理、工程和经济学的语言不是单个二阶方程，而是一阶方程组：$\mathbf{x}'(t) = A(t)\mathbf{x}(t)$。这里，$\mathbf{x}(t)$ 是一个表示系统完整状态（例如，所有粒子的位置和速度）的向量，而 $A(t)$ 是一个决定动力学的矩阵。
 
-在这个更宏大的图景中，朗斯基行列式是什么？我们现在有一组解向量，它们构成了一个“[基本矩阵](@article_id:339331)”$\Psi(t)$ 的列。朗斯基行列式就是这个[矩阵的行列式](@article_id:308617)，$W(t) = \det(\Psi(t))$。在几何上，这代表了由基本解[向量张成](@article_id:313295)的空间块（一个平行[多面体](@article_id:642202)）的体积。
+在这个更宏大的图景中，朗斯基行列式是什么？我们现在有一组解向量，它们构成了一个“[基本矩阵](@keyword=fundamental_matrix|lang=zh-CN|style=Feynman)”$\Psi(t)$ 的列。朗斯基行列式就是这个[矩阵的行列式](@keyword=determinant_of_a_matrix|lang=zh-CN|style=Feynman)，$W(t) = \det(\Psi(t))$。在几何上，这代表了由基本解[向量张成](@keyword=vector_span|lang=zh-CN|style=Feynman)的空间块（一个平行[多面体](@keyword=polyhedra|lang=zh-CN|style=Feynman)）的体积。
 
-而[阿贝尔恒等式](@article_id:343792)呢？它以惊人的优雅形式得到了推广。它变成了通常所说的**[刘维尔公式](@article_id:330737)**：
+而[阿贝尔恒等式](@keyword=abel_s_identity|lang=zh-CN|style=Feynman)呢？它以惊人的优雅形式得到了推广。它变成了通常所说的**[刘维尔公式](@keyword=liouville_s_formula|lang=zh-CN|style=Feynman)**：
 
 $$W'(t) = \mathrm{tr}(A(t)) W(t)$$
 
 阻尼项 $-p(x)$ 的角色现在由矩阵 $A(t)$ 的**迹** (trace)——其对角元素之和——来扮演。这是一个深刻的论断：在考虑解体积如何演化时，矩阵 $A(t)$ 内部所有复杂的相互作用网络都可以被忽略。所有重要的只是迹。
 
-想象一个具有复杂、时变[动力学矩阵](@article_id:368874)的系统，如问题 1105199 中的那个。要找出其解的体积从 $t=0$ 到 $t=\pi$ 是如何演化的，我们不需要解这个系统。我们只需要计算矩阵的迹 $\mathrm{tr}(A(t))$，将其从 $0$ 积分到 $\pi$，然后对结果取指数。代表系统不同部分之间复杂耦合的非对角项，对于这个特定问题是无关紧要的。 这个原理可以推广到任何维度，无论是一个三阶常微分方程还是一个包含100个耦合方程的系统；解体积的演化总是由一个单一、易于识别的项所决定。
+想象一个具有复杂、时变[动力学矩阵](@keyword=dynamical_matrix|lang=zh-CN|style=Feynman)的系统，如问题 1105199 中的那个。要找出其解的体积从 $t=0$ 到 $t=\pi$ 是如何演化的，我们不需要解这个系统。我们只需要计算矩阵的迹 $\mathrm{tr}(A(t))$，将其从 $0$ 积分到 $\pi$，然后对结果取指数。代表系统不同部分之间复杂耦合的非对角项，对于这个特定问题是无关紧要的。[@problem_id:1105199] 这个原理可以推广到任何维度，无论是一个三阶常微分方程还是一个包含100个耦合方程的系统；解体积的演化总是由一个单一、易于识别的项所决定。[@problem_id:1119437]
 
 ### 解锁秘密的万能钥匙
 
-[阿贝尔恒等式](@article_id:343792)远不止是一个数学上的奇巧淫技。它是一个强大而实用的工具——一把能以多种令人惊讶的方式解锁[微分方程](@article_id:327891)秘密的万能钥匙。
+[阿贝尔恒等式](@keyword=abel_s_identity|lang=zh-CN|style=Feynman)远不止是一个数学上的奇巧淫技。它是一个强大而实用的工具——一把能以多种令人惊讶的方式解锁[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)秘密的万能钥匙。
 
 #### 逆问题：重构机器
 
-到目前为止，我们一直用方程来预测朗斯基行列式。我们能反过来做吗？如果实验数据让我们能够确定一个系统的[朗斯基行列式](@article_id:348237)，我们能推断出其底层的物理定律吗？是的！从 $W'(x) = -p(x)W(x)$，我们可以解出阻尼系数：
+到目前为止，我们一直用方程来预测朗斯基行列式。我们能反过来做吗？如果实验数据让我们能够确定一个系统的[朗斯基行列式](@keyword=wronskian_determinant|lang=zh-CN|style=Feynman)，我们能推断出其底层的物理定律吗？是的！从 $W'(x) = -p(x)W(x)$，我们可以解出阻尼系数：
 
 $$p(x) = -\frac{W'(x)}{W(x)} = -\frac{d}{dx}\ln(W(x))$$
 
-如果我们观察到一个系统的朗斯基行列式表现为 $W(x) = \exp(ax^2 + b\cosh(x))$，我们可以立即推断出系统中的阻尼必须由函数 $p(x) = -(2ax + b\sinh(x))$ 来描述。我们变成了科学侦探，从观察到的行为重构了系统的运作机制。
+如果我们观察到一个系统的朗斯基行列式表现为 $W(x) = \exp(ax^2 + b\cosh(x))$，我们可以立即推断出系统中的阻尼必须由函数 $p(x) = -(2ax + b\sinh(x))$ 来描述。我们变成了科学侦探，从观察到的行为重构了系统的运作机制。[@problem_id:1119260]
 
 #### 搭建桥梁：从一个解到两个解
 
-如果我们很幸运，猜出了方程的一个解 $y_1$，怎么办？寻找第二个独立解 $y_2$ 可能很困难。这就是**[降阶法](@article_id:347095)**大显身手的地方，而[阿贝尔恒等式](@article_id:343792)是其核心。我们假设第二个解通过某个未知函数 $v(t)$ 与第一个解相关，即 $y_2(t) = v(t)y_1(t)$。如果你直接计算 $y_1$ 和 $y_2$ 的[朗斯基行列式](@article_id:348237)，你会发现它简化为 $W(t) = y_1(t)^2 v'(t)$。
+如果我们很幸运，猜出了方程的一个解 $y_1$，怎么办？寻找第二个独立解 $y_2$ 可能很困难。这就是**[降阶法](@keyword=method_of_reduction_of_order|lang=zh-CN|style=Feynman)**大显身手的地方，而[阿贝尔恒等式](@keyword=abel_s_identity|lang=zh-CN|style=Feynman)是其核心。我们假设第二个解通过某个未知函数 $v(t)$ 与第一个解相关，即 $y_2(t) = v(t)y_1(t)$。如果你直接计算 $y_1$ 和 $y_2$ 的[朗斯基行列式](@keyword=wronskian_determinant|lang=zh-CN|style=Feynman)，你会发现它简化为 $W(t) = y_1(t)^2 v'(t)$。
 
-但我们还有一个来自[阿贝尔恒等式](@article_id:343792)的 $W(t)$ 的表达式！通过让两者相等，我们得到了一个关于 $v'(t)$ 的直接方程：
+但我们还有一个来自[阿贝尔恒等式](@keyword=abel_s_identity|lang=zh-CN|style=Feynman)的 $W(t)$ 的表达式！通过让两者相等，我们得到了一个关于 $v'(t)$ 的直接方程：
 
 $$v'(t) = \frac{W(t)}{y_1(t)^2} = \frac{C \exp(-\int p(t) dt)}{y_1(t)^2}$$
 
-现在我们可以找到 $v'(t)$，积分得到 $v(t)$，从而构造出我们的第二个解 $y_2(t)$。[阿贝尔恒等式](@article_id:343792)提供了连接已知解与未知解的关键桥梁。
+现在我们可以找到 $v'(t)$，积分得到 $v(t)$，从而构造出我们的第二个解 $y_2(t)$。[阿贝尔恒等式](@keyword=abel_s_identity|lang=zh-CN|style=Feynman)提供了连接已知解与未知解的关键桥梁。[@problem_id:1119378]
 
-#### 驯服无穷：[奇点](@article_id:298215)与[特殊函数](@article_id:303669)
+#### 驯服无穷：[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)与[特殊函数](@keyword=special_functions|lang=zh-CN|style=Feynman)
 
-科学中许多最著名的方程，如 Bessel 方程，描述了具有[特殊几何](@article_id:373477)或行为的系统。对于 Bessel 方程 $x^2 y'' + x y' + (x^2 - \nu^2) y = 0$，其标准形式有 $p(x) = 1/x$。[阿贝尔恒等式](@article_id:343792)立即告诉我们，它的两个著名解 $J_\nu(x)$ 和 $Y_\nu(x)$ 的[朗斯基行列式](@article_id:348237)必须是 $W(x) = C \exp(-\int \frac{1}{x} dx) = C/x$。这意味着乘积 $xW(J_\nu, Y_\nu)(x)$ 是一个[普适常数](@article_id:344932)，既不依赖于 $x$ 也不依赖于阶数 $\nu$！这是一个非凡的事实，几乎不费吹灰之力就得到了。进一步的分析表明这个常数是 $2/\pi$，但[阿贝尔恒等式](@article_id:343792)为我们提供了这个关系的基本结构。
+科学中许多最著名的方程，如 Bessel 方程，描述了具有[特殊几何](@keyword=special_geometry|lang=zh-CN|style=Feynman)或行为的系统。对于 Bessel 方程 $x^2 y'' + x y' + (x^2 - \nu^2) y = 0$，其标准形式有 $p(x) = 1/x$。[阿贝尔恒等式](@keyword=abel_s_identity|lang=zh-CN|style=Feynman)立即告诉我们，它的两个著名解 $J_\nu(x)$ 和 $Y_\nu(x)$ 的[朗斯基行列式](@keyword=wronskian_determinant|lang=zh-CN|style=Feynman)必须是 $W(x) = C \exp(-\int \frac{1}{x} dx) = C/x$。这意味着乘积 $xW(J_\nu, Y_\nu)(x)$ 是一个[普适常数](@keyword=universal_constants|lang=zh-CN|style=Feynman)，既不依赖于 $x$ 也不依赖于阶数 $\nu$！这是一个非凡的事实，几乎不费吹灰之力就得到了。进一步的分析表明这个常数是 $2/\pi$，但[阿贝尔恒等式](@keyword=abel_s_identity|lang=zh-CN|style=Feynman)为我们提供了这个关系的基本结构。[@problem_id:2090539]
 
-在处理**[奇点](@article_id:298215)**——即方程系数发散的地方——时，该恒等式也是我们的向导。对于一个**[正则奇点](@article_id:344693)** $x_0$，阻尼项的行为类似于 $p(x) \approx p_0/(x-x_0)$。这对解意味着什么？[阿贝尔恒等式](@article_id:343792)预测朗斯基行列式的行为必然是 $W(x) \approx K(x-x_0)^{-p_0}$。这精确地告诉我们，当我们接近[奇点](@article_id:298215)时，“[解空间](@article_id:379194)”是如何拉伸或压缩的，而这一切都基于一个单一的数字 $p_0$。
+在处理**[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)**——即方程系数发散的地方——时，该恒等式也是我们的向导。对于一个**[正则奇点](@keyword=regular_singular_points|lang=zh-CN|style=Feynman)** $x_0$，阻尼项的行为类似于 $p(x) \approx p_0/(x-x_0)$。这对解意味着什么？[阿贝尔恒等式](@keyword=abel_s_identity|lang=zh-CN|style=Feynman)预测朗斯基行列式的行为必然是 $W(x) \approx K(x-x_0)^{-p_0}$。这精确地告诉我们，当我们接近[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)时，“[解空间](@keyword=solution_space|lang=zh-CN|style=Feynman)”是如何拉伸或压缩的，而这一切都基于一个单一的数字 $p_0$。[@problem_id:2195578]
 
-甚至还存在更奇特的联系。像 Riccati 方程这样的非线性方程可以变换成一个线性的二阶方程。[阿贝尔恒等式](@article_id:343792)在这两个世界之间充当了翻译。例如，通过要求隐藏的线性方程的[朗斯基行列式](@article_id:348237)是一个简单的常数，我们可以推导出对原始、更复杂的非线性方程参数的精确约束，从而揭示出一种深刻而隐藏的结构。
+甚至还存在更奇特的联系。像 Riccati 方程这样的非线性方程可以变换成一个线性的二阶方程。[阿贝尔恒等式](@keyword=abel_s_identity|lang=zh-CN|style=Feynman)在这两个世界之间充当了翻译。例如，通过要求隐藏的线性方程的[朗斯基行列式](@keyword=wronskian_determinant|lang=zh-CN|style=Feynman)是一个简单的常数，我们可以推导出对原始、更复杂的非线性方程参数的精确约束，从而揭示出一种深刻而隐藏的结构。[@problem_id:1128581]
 
-最终，[阿贝尔恒等式](@article_id:343792)不仅仅是一个公式。它是一项揭示某种守恒形式的基本原理。它告诉我们，在[线性微分方程](@article_id:310783)所描述的复杂世界里，[解空间](@article_id:379194)的“体积”以可以想象的最简单的方式演化，仅由一个代表耗散的项所决定。这证明了在支配我们宇宙的数学法则核心处，存在着深刻而常常被隐藏的简洁性。
+最终，[阿贝尔恒等式](@keyword=abel_s_identity|lang=zh-CN|style=Feynman)不仅仅是一个公式。它是一项揭示某种守恒形式的基本原理。它告诉我们，在[线性微分方程](@keyword=linear_differential_equations|lang=zh-CN|style=Feynman)所描述的复杂世界里，[解空间](@keyword=solution_space|lang=zh-CN|style=Feynman)的“体积”以可以想象的最简单的方式演化，仅由一个代表耗散的项所决定。这证明了在支配我们宇宙的数学法则核心处，存在着深刻而常常被隐藏的简洁性。

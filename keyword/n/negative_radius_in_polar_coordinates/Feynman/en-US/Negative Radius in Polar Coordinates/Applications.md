@@ -6,7 +6,7 @@ Let us embark on a journey to see where this seemingly strange notion takes us. 
 
 ### The Inner Beauty of Curves: A Geometer's View
 
-Imagine you are an artist or an engineer trying to draw a complex, self-intersecting curve. A classic example is the *limaçon*, a wonderfully varied family of shapes. Consider a specific limaçon with an inner loop, whose form is given by the equation $r = b(1 - 2\cos\theta)$, where $b$ is some positive constant that sets the scale .
+Imagine you are an artist or an engineer trying to draw a complex, self-intersecting curve. A classic example is the *limaçon*, a wonderfully varied family of shapes. Consider a specific limaçon with an inner loop, whose form is given by the equation $r = b(1 - 2\cos\theta)$, where $b$ is some positive constant that sets the scale [@problem_id:2130719].
 
 Let's trace the curve as the angle $\theta$ sweeps through a full circle, from $0$ to $2\pi$.
 
@@ -22,9 +22,9 @@ The magic here is not just that we can draw a pretty shape. The magic is that *o
 
 ### The Dance of Physics: Motion in a Rotating World
 
-Let's now leave the static world of geometry and enter the dynamic realm of physics. Imagine a vast, rotating space station designed to simulate gravity. An observer floats motionlessly in an [inertial frame](@article_id:275010) at the station's center. On the station, a maintenance robot starts at the central hub and moves outwards along a straight spoke at a constant speed relative to the floor. What path does the inertial observer see? 
+Let's now leave the static world of geometry and enter the dynamic realm of physics. Imagine a vast, rotating space station designed to simulate gravity. An observer floats motionlessly in an [inertial frame](@keyword=inertial_frame|lang=en-US|style=Feynman) at the station's center. On the station, a maintenance robot starts at the central hub and moves outwards along a straight spoke at a constant speed relative to the floor. What path does the inertial observer see? [@problem_id:1872468]
 
-From the observer's perspective, the robot has two motions simultaneously: a radial motion outwards and a [circular motion](@article_id:268641) as it's carried along by the rotating station. The combination of these two simple movements results in a beautiful trajectory—an Archimedean spiral. Its path can be described by the surprisingly simple polar equation $r = k\theta$, where $k$ is a constant determined by the robot's speed and the station's rotation rate.
+From the observer's perspective, the robot has two motions simultaneously: a radial motion outwards and a [circular motion](@keyword=circular_motion|lang=en-US|style=Feynman) as it's carried along by the rotating station. The combination of these two simple movements results in a beautiful trajectory—an Archimedean spiral. Its path can be described by the surprisingly simple polar equation $r = k\theta$, where $k$ is a constant determined by the robot's speed and the station's rotation rate.
 
 This equation directly links the robot's distance from the center, $r$, to the total angle it has swept through, $\theta$. As time moves forward from $t=0$, both $\theta$ and $r$ increase, and the observer watches the robot spiral outwards.
 

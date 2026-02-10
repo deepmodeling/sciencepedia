@@ -1,7 +1,7 @@
 ## Introduction
 The concept of an infinite series—a sum of infinitely many numbers—is a cornerstone of mathematics, appearing everywhere from physics to finance. While we can often prove that a series converges to a finite value, finding that exact value can be incredibly difficult. This presents a practical problem: if we approximate the sum by adding up a finite number of its terms, how large is our error? The portion of the series we neglect, known as the remainder, holds the key to answering this question. This article demystifies the remainder and introduces a powerful tool for controlling it.
 
-The following chapters will guide you through the theory and application of the Remainder Estimate for the Integral Test. In "Principles and Mechanisms," you will learn how to use integrals to "tame the infinite tail" of a series, putting a concrete numerical bound on the [approximation error](@article_id:137771). We will also explore the practical implications of this, such as determining the computational cost required for a desired level of accuracy. Then, in "Applications and Interdisciplinary Connections," we will journey beyond pure mathematics to see how this concept of the remainder is not just an error to be managed, but a source of profound insight in fields like computational science, quantum physics, and even geometry and number theory.
+The following chapters will guide you through the theory and application of the Remainder Estimate for the Integral Test. In "Principles and Mechanisms," you will learn how to use integrals to "tame the infinite tail" of a series, putting a concrete numerical bound on the [approximation error](@keyword=approximation_error|lang=en-US|style=Feynman). We will also explore the practical implications of this, such as determining the computational cost required for a desired level of accuracy. Then, in "Applications and Interdisciplinary Connections," we will journey beyond pure mathematics to see how this concept of the remainder is not just an error to be managed, but a source of profound insight in fields like computational science, quantum physics, and even geometry and number theory.
 
 ## Principles and Mechanisms
 
@@ -29,19 +29,19 @@ Putting it all together, we have "sandwiched" the remainder between two integral
 
 $$ \int_{N+1}^{\infty} f(x) \, dx \le R_N \le \int_{N}^{\infty} f(x) \, dx $$
 
-This is the **Remainder Estimate for the Integral Test**. It's a remarkably powerful tool. It transforms the difficult problem of summing an infinite number of discrete terms into the often much easier problem of calculating a single [definite integral](@article_id:141999).
+This is the **Remainder Estimate for the Integral Test**. It's a remarkably powerful tool. It transforms the difficult problem of summing an infinite number of discrete terms into the often much easier problem of calculating a single [definite integral](@keyword=definite_integral|lang=en-US|style=Feynman).
 
-Let's see it in action. Suppose we approximate the series $\sum_{n=1}^{\infty} \frac{1}{n^3}$ by its first three terms, $S_3 = 1 + \frac{1}{8} + \frac{1}{27}$. What's the maximum error we could be making? We just need to calculate the upper bound from our inequality with $N=3$ and $f(x) = 1/x^3$. 
+Let's see it in action. Suppose we approximate the series $\sum_{n=1}^{\infty} \frac{1}{n^3}$ by its first three terms, $S_3 = 1 + \frac{1}{8} + \frac{1}{27}$. What's the maximum error we could be making? We just need to calculate the upper bound from our inequality with $N=3$ and $f(x) = 1/x^3$. [@problem_id:21488]
 
 $$ R_3 \le \int_{3}^{\infty} \frac{1}{x^3} \, dx = \left[ -\frac{1}{2x^2} \right]_{3}^{\infty} = 0 - \left( -\frac{1}{2 \cdot 3^2} \right) = \frac{1}{18} $$
 
-Just like that, we know the sum of all the infinite terms from the fourth one onwards is no more than $\frac{1}{18} \approx 0.056$. We have successfully tamed the infinite tail. This method is wonderfully general; it works just as well for series like $\sum \frac{1}{(2n+1)^3}$, where the corresponding integral is $\int \frac{1}{(2x+1)^3} dx$. 
+Just like that, we know the sum of all the infinite terms from the fourth one onwards is no more than $\frac{1}{18} \approx 0.056$. We have successfully tamed the infinite tail. This method is wonderfully general; it works just as well for series like $\sum \frac{1}{(2n+1)^3}$, where the corresponding integral is $\int \frac{1}{(2x+1)^3} dx$. [@problem_id:21449]
 
 ### The Price of Precision
 
-This is where the idea becomes truly practical. Instead of asking what the error *is*, we can now ask a more engineering-oriented question: "How many terms do I need to sum to guarantee my error is smaller than some tolerance?" This is exactly what a computational mathematician or a physicist running a simulation needs to know. 
+This is where the idea becomes truly practical. Instead of asking what the error *is*, we can now ask a more engineering-oriented question: "How many terms do I need to sum to guarantee my error is smaller than some tolerance?" This is exactly what a computational mathematician or a physicist running a simulation needs to know. [@problem_id:1303158]
 
-Imagine a project requires you to calculate the value of $\zeta(4) = \sum_{n=1}^{\infty} \frac{1}{n^4}$ with an error less than $5 \times 10^{-4}$. How many terms, $N$, must you compute? 
+Imagine a project requires you to calculate the value of $\zeta(4) = \sum_{n=1}^{\infty} \frac{1}{n^4}$ with an error less than $5 \times 10^{-4}$. How many terms, $N$, must you compute? [@problem_id:1333701]
 
 We don't know $R_N$, but we know it's less than or equal to the integral from $N$ to infinity. So, if we force the integral to be less than our tolerance, we guarantee the remainder will be too. We need to solve for $N$:
 
@@ -65,12 +65,12 @@ We need to find the smallest integer $N$ whose cube is greater than $666.67$. We
 
 We can push this idea further. Is there a deeper, more general relationship between the desired precision, let's call it $\epsilon$, and the number of terms, $N$, we need to compute? How does $N$ grow as we demand ever-smaller errors (as $\epsilon \to 0$)?
 
-Let's look at the general [p-series](@article_id:139213), $\sum \frac{1}{n^p}$. Our condition is $\int_N^\infty \frac{1}{x^p} dx < \epsilon$.
+Let's look at the general [p-series](@keyword=p_series|lang=en-US|style=Feynman), $\sum \frac{1}{n^p}$. Our condition is $\int_N^\infty \frac{1}{x^p} dx < \epsilon$.
 The integral is $\frac{1}{(p-1)N^{p-1}}$. So we have:
 
 $$ \frac{1}{(p-1)N^{p-1}} < \epsilon \implies N > \left( \frac{1}{(p-1)\epsilon} \right)^{\frac{1}{p-1}} $$
 
-This tells us that for very small $\epsilon$, $N$ is approximately proportional to $\epsilon^{-1/(p-1)}$. This is a universal [scaling law](@article_id:265692) for the error of [p-series](@article_id:139213)! 
+This tells us that for very small $\epsilon$, $N$ is approximately proportional to $\epsilon^{-1/(p-1)}$. This is a universal [scaling law](@keyword=scaling_law|lang=en-US|style=Feynman) for the error of [p-series](@keyword=p_series|lang=en-US|style=Feynman)! [@problem_id:533336]
 
 What does this mean in practice?
 - For the series $\sum \frac{1}{n^2}$ (where $p=2$), we have $N \propto \epsilon^{-1}$. To get 10 times more precision (make $\epsilon$ 10 times smaller), you need roughly 10 times more terms. The relationship is linear.
@@ -84,9 +84,9 @@ So far, we've treated the remainder $R_n$ as a pesky error to be bounded. But wh
 
 Our integral bounds, $\frac{1}{(p-1)(n+1)^{p-1}} < R_n < \frac{1}{(p-1)n^{p-1}}$, tell us something very precise about how $R_n$ behaves for large $n$. They tell us that $R_n$ is "asymptotically equivalent" to $\frac{1}{(p-1)n^{p-1}}$. We write this as $R_n \sim \frac{1}{(p-1)n^{p-1}}$.
 
-This is a powerful piece of information. It means we can treat the sequence $R_n$ as if it were a simpler sequence, at least for questions about convergence. For example, consider the rather abstract question from problem : for what positive values of $\alpha$ does the new series $\sum_{n=1}^\infty (R_n)^\alpha$ converge, where $R_n$ is the remainder of the $\sum \frac{1}{k^4}$ series?
+This is a powerful piece of information. It means we can treat the sequence $R_n$ as if it were a simpler sequence, at least for questions about convergence. For example, consider the rather abstract question from problem [@problem_id:2321650]: for what positive values of $\alpha$ does the new series $\sum_{n=1}^\infty (R_n)^\alpha$ converge, where $R_n$ is the remainder of the $\sum \frac{1}{k^4}$ series?
 
-Since we know $R_n \sim \frac{1}{3n^3}$ (because $p=4$), the term $(R_n)^\alpha$ behaves like $(\frac{1}{3n^3})^\alpha = \frac{1}{3^\alpha n^{3\alpha}}$. The series $\sum (R_n)^\alpha$ will therefore behave just like the [p-series](@article_id:139213) $\sum \frac{1}{n^{3\alpha}}$. And we know that a [p-series](@article_id:139213) converges if and only if its exponent is greater than 1.
+Since we know $R_n \sim \frac{1}{3n^3}$ (because $p=4$), the term $(R_n)^\alpha$ behaves like $(\frac{1}{3n^3})^\alpha = \frac{1}{3^\alpha n^{3\alpha}}$. The series $\sum (R_n)^\alpha$ will therefore behave just like the [p-series](@keyword=p_series|lang=en-US|style=Feynman) $\sum \frac{1}{n^{3\alpha}}$. And we know that a [p-series](@keyword=p_series|lang=en-US|style=Feynman) converges if and only if its exponent is greater than 1.
 
 So, our condition for convergence is $3\alpha > 1$, or $\alpha > \frac{1}{3}$. This is a beautiful result. We used our error-bounding tool not to control an error, but to determine the exact asymptotic behavior of the error term, and then used that knowledge to analyze the convergence of a completely new series built from those errors. The ideas fold back on themselves in a wonderfully coherent way.
 
@@ -96,12 +96,12 @@ Finally, it's always good to ask: is this the whole story? Is the integral bound
 
 The integral estimate is essentially saying that the sum $\sum_{n=N+1}^\infty f(n)$ is well-approximated by the integral $\int_N^\infty f(x) dx$. But the sum is discrete and jumpy, while the integral is smooth. There must be correction terms that account for this difference.
 
-This is precisely what the **Euler-Maclaurin formula** provides. It gives an entire series expansion for the remainder, with our integral as the leading term. For the [p-series](@article_id:139213), it looks like this:
+This is precisely what the **Euler-Maclaurin formula** provides. It gives an entire series expansion for the remainder, with our integral as the leading term. For the [p-series](@keyword=p_series|lang=en-US|style=Feynman), it looks like this:
 
 $$ R_N(p) = \underbrace{\int_N^\infty \frac{1}{x^p} dx}_{\text{Our Estimate}} - \underbrace{\frac{1}{2N^p}}_{\text{1st Correction}} - \underbrace{\frac{p}{12N^{p+1}}}_{\text{2nd Correction}} - \dots $$
 
-The standard [integral test](@article_id:141045) remainder gives us the first term. The error in *that* approximation is dominated by the next term, $-\frac{1}{2N^p}$. But what if we include that first correction term in our approximation? As problem  explores, this new, "corrected" approximation is vastly more accurate. Its error is now dominated by the *second* correction term, which is on the order of $\frac{p}{12N^{p+1}}$.
+The standard [integral test](@keyword=integral_test|lang=en-US|style=Feynman) remainder gives us the first term. The error in *that* approximation is dominated by the next term, $-\frac{1}{2N^p}$. But what if we include that first correction term in our approximation? As problem [@problem_id:2324502] explores, this new, "corrected" approximation is vastly more accurate. Its error is now dominated by the *second* correction term, which is on the order of $\frac{p}{12N^{p+1}}$.
 
 By comparing the error of the simple integral approximation ($\epsilon_A \sim \frac{1}{2N^p}$) with the error of the corrected one ($\epsilon_B \sim \frac{p}{12N^{p+1}}$), we find their ratio $\epsilon_B / \epsilon_A$ is proportional to $1/N$. This means that for large $N$, the corrected approximation isn't just a little better—it becomes infinitely better.
 
-This reveals the true nature of the [integral test](@article_id:141045) estimate. It is the powerful, simple, leading-order approximation in a sophisticated hierarchy of ever more accurate formulas. It provides the fundamental insight, the correct scale of the error, and a robust tool for practical calculations. And yet, it is also a doorway, inviting us to explore the deeper and more intricate connections between the discrete world of sums and the continuous world of integrals.
+This reveals the true nature of the [integral test](@keyword=integral_test|lang=en-US|style=Feynman) estimate. It is the powerful, simple, leading-order approximation in a sophisticated hierarchy of ever more accurate formulas. It provides the fundamental insight, the correct scale of the error, and a robust tool for practical calculations. And yet, it is also a doorway, inviting us to explore the deeper and more intricate connections between the discrete world of sums and the continuous world of integrals.

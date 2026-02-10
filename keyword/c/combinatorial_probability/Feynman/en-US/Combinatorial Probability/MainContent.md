@@ -1,7 +1,7 @@
 ## Introduction
-How do we quantify chance? From the odds of a winning lottery ticket to the likelihood of a specific [genetic mutation](@article_id:165975), the answer often lies not in [complex calculus](@article_id:166788), but in the simple, elegant art of counting. This is the domain of combinatorial probability, a field that translates questions about "what if" into concrete ratios of possibilities. It addresses the fundamental problem of calculating probabilities in finite systems by systematically accounting for every possible outcome. This article provides a foundational understanding of this powerful framework.
+How do we quantify chance? From the odds of a winning lottery ticket to the likelihood of a specific [genetic mutation](@keyword=genetic_mutation|lang=en-US|style=Feynman), the answer often lies not in [complex calculus](@keyword=complex_calculus|lang=en-US|style=Feynman), but in the simple, elegant art of counting. This is the domain of combinatorial probability, a field that translates questions about "what if" into concrete ratios of possibilities. It addresses the fundamental problem of calculating probabilities in finite systems by systematically accounting for every possible outcome. This article provides a foundational understanding of this powerful framework.
 
-In the first chapter, "Principles and Mechanisms," we will explore the core tools of the trade, from the versatile binomial coefficient to the distinct worlds of sampling with and without replacement. We will see how counting pairs of molecules can define the laws of chemistry. Following this, the chapter on "Applications and Interdisciplinary Connections" will demonstrate how these principles are not just abstract exercises but are essential for solving real-world problems in genetic engineering, [drug design](@article_id:139926), ecology, and even materials science, revealing the unified logic that governs chance across the scientific landscape.
+In the first chapter, "Principles and Mechanisms," we will explore the core tools of the trade, from the versatile binomial coefficient to the distinct worlds of sampling with and without replacement. We will see how counting pairs of molecules can define the laws of chemistry. Following this, the chapter on "Applications and Interdisciplinary Connections" will demonstrate how these principles are not just abstract exercises but are essential for solving real-world problems in genetic engineering, [drug design](@keyword=drug_design|lang=en-US|style=Feynman), ecology, and even materials science, revealing the unified logic that governs chance across the scientific landscape.
 
 ## Principles and Mechanisms
 
@@ -9,7 +9,7 @@ At its heart, probability theory is a game of counting. But it's not the simple 
 
 ### The Art of Drawing from a Bag – Sampling Without Replacement
 
-Let's begin our journey with the oldest trick in the book: pulling balls out of an opaque bag. This simple model is more powerful than it looks; it is the essence of any situation where we sample from a small, finite population. This could be dealing cards from a deck, inspecting a batch of manufactured parts, or selecting individuals for a jury. The key feature is that once we pick something, it's gone. The pool of possibilities shrinks and changes with every draw. This is called **[sampling without replacement](@article_id:276385)**.
+Let's begin our journey with the oldest trick in the book: pulling balls out of an opaque bag. This simple model is more powerful than it looks; it is the essence of any situation where we sample from a small, finite population. This could be dealing cards from a deck, inspecting a batch of manufactured parts, or selecting individuals for a jury. The key feature is that once we pick something, it's gone. The pool of possibilities shrinks and changes with every draw. This is called **[sampling without replacement](@keyword=sampling_without_replacement|lang=en-US|style=Feynman)**.
 
 Imagine you are a detective. A bag contains 10 balls, some red and some blue. You don't know how many are red. You are allowed to draw a sample of 2 balls, and you find that the probability of drawing 2 red balls is exactly $\frac{1}{3}$. How many red balls were in the bag to begin with?
 
@@ -23,7 +23,7 @@ The probability is simply the ratio of these counts:
 $$
 P(\text{2 red}) = \frac{\text{Ways to choose 2 red balls}}{\text{Total ways to choose 2 balls}} = \frac{\binom{R}{2}}{\binom{10}{2}}
 $$
-We are told this probability is $\frac{1}{3}$. We can calculate $\binom{10}{2} = \frac{10 \times 9}{2} = 45$. So, we have the equation $\frac{\binom{R}{2}}{45} = \frac{1}{3}$, which tells us that $\binom{R}{2}$ must be $15$. What number $R$ gives $\frac{R(R-1)}{2} = 15$? A quick check shows that $R=6$ works perfectly. And just like that, our combinatorial reasoning has solved the mystery: there were 6 red balls in the bag .
+We are told this probability is $\frac{1}{3}$. We can calculate $\binom{10}{2} = \frac{10 \times 9}{2} = 45$. So, we have the equation $\frac{\binom{R}{2}}{45} = \frac{1}{3}$, which tells us that $\binom{R}{2}$ must be $15$. What number $R$ gives $\frac{R(R-1)}{2} = 15$? A quick check shows that $R=6$ works perfectly. And just like that, our combinatorial reasoning has solved the mystery: there were 6 red balls in the bag [@problem_id:8701].
 
 This type of calculation is so fundamental that it has its own name: the **Hypergeometric Distribution**. It governs the probability of getting $k$ successes in a sample of size $n$ drawn without replacement from a population of size $N$ that contains $K$ successes.
 
@@ -35,13 +35,13 @@ The total number of ways to choose the first $k$ components to test (the order m
 $$
 P(\text{first } k \text{ are non-defective}) = \frac{\binom{N-D}{k}}{\binom{N}{k}}
 $$
-This beautiful and compact formula gives us the "[survival function](@article_id:266889)" for this testing process, telling us the likelihood of going $k$ steps without an event . It all comes down to counting combinations.
+This beautiful and compact formula gives us the "[survival function](@keyword=survival_function|lang=en-US|style=Feynman)" for this testing process, telling us the likelihood of going $k$ steps without an event [@problem_id:1392297]. It all comes down to counting combinations.
 
 ### Worlds of Endless Possibilities – Sampling with Replacement
 
-What happens if our bag of balls is so unimaginably vast that taking one out doesn't meaningfully change the proportions? Or, what if we simply put each ball back after we draw it? This is **[sampling with replacement](@article_id:273700)**. In this world, every draw is an independent event; the past has no bearing on the future. This describes flipping a coin, rolling a die, or polling voters from a very large country.
+What happens if our bag of balls is so unimaginably vast that taking one out doesn't meaningfully change the proportions? Or, what if we simply put each ball back after we draw it? This is **[sampling with replacement](@keyword=sampling_with_replacement|lang=en-US|style=Feynman)**. In this world, every draw is an independent event; the past has no bearing on the future. This describes flipping a coin, rolling a die, or polling voters from a very large country.
 
-Let's take the case of a political poll with four candidates . The true support for candidates 1, 2, 3, and 4 in the population are the probabilities $p_1, p_2, p_3, p_4$. We survey $n$ voters. What is the probability that we find exactly $n_1$ supporters for candidate 1, $n_2$ for candidate 2, and so on?
+Let's take the case of a political poll with four candidates [@problem_id:12537]. The true support for candidates 1, 2, 3, and 4 in the population are the probabilities $p_1, p_2, p_3, p_4$. We survey $n$ voters. What is the probability that we find exactly $n_1$ supporters for candidate 1, $n_2$ for candidate 2, and so on?
 
 First, let's imagine a *specific* sequence of survey results. For instance, the first $n_1$ people all support candidate 1, the next $n_2$ support candidate 2, etc. Because the choices are independent, the probability of this specific ordered outcome is simply:
 $$
@@ -49,7 +49,7 @@ p_1^{n_1} p_2^{n_2} p_3^{n_3} p_4^{n_4}
 $$
 But we don't care about the *order* in which we found the supporters, only the final tally. So, we must ask our favorite question: how many different ways could this have happened? How many distinct sequences of $n$ voters give us the final counts $(n_1, n_2, n_3, n_4)$?
 
-This is not a simple [binomial coefficient](@article_id:155572) anymore, because we have more than two outcomes. The answer is the **[multinomial coefficient](@article_id:261793)**:
+This is not a simple [binomial coefficient](@keyword=binomial_coefficient|lang=en-US|style=Feynman) anymore, because we have more than two outcomes. The answer is the **[multinomial coefficient](@keyword=multinomial_coefficient|lang=en-US|style=Feynman)**:
 $$
 \binom{n}{n_1, n_2, n_3, n_4} = \frac{n!}{n_1! n_2! n_3! n_4!}
 $$
@@ -71,27 +71,27 @@ If we label the molecules $X_1, X_2, \dots, X_x$, the pair $\{X_1, X_2\}$ is a p
 $$
 \text{Number of pairs} = \binom{x}{2} = \frac{x(x-1)}{2}
 $$
-If the probability for any *single specific pair* to react in a tiny time interval $\Delta t$ is $c \cdot \Delta t$, then the total probability for *any* reaction to happen is the sum over all possible pairs. Since each pair has the same chance, the total [reaction propensity](@article_id:262392) is simply the number of pairs times the rate for one pair .
+If the probability for any *single specific pair* to react in a tiny time interval $\Delta t$ is $c \cdot \Delta t$, then the total probability for *any* reaction to happen is the sum over all possible pairs. Since each pair has the same chance, the total [reaction propensity](@keyword=reaction_propensity|lang=en-US|style=Feynman) is simply the number of pairs times the rate for one pair [@problem_id:2777137].
 $$
 a(x) = (\text{Number of pairs}) \times (\text{Rate per pair}) = \frac{c}{2} x(x-1)
 $$
-This is a profound result. The rate of this reaction is not proportional to $x$, but to $x(x-1)$. This quadratic dependence, which comes directly from a simple [combinatorial argument](@article_id:265822), is a cornerstone of chemical kinetics and is verified in countless experiments. The abstract mathematics of choosing pairs is literally the law governing how things are built in the microscopic world.
+This is a profound result. The rate of this reaction is not proportional to $x$, but to $x(x-1)$. This quadratic dependence, which comes directly from a simple [combinatorial argument](@keyword=combinatorial_argument|lang=en-US|style=Feynman), is a cornerstone of chemical kinetics and is verified in countless experiments. The abstract mathematics of choosing pairs is literally the law governing how things are built in the microscopic world.
 
 ### The View from Afar – When Numbers Get Large
 
 The combinatorial formulas we've derived are exact and beautiful. But they have a practical problem. They involve factorials, and factorials grow mind-bogglingly fast. What happens when our numbers are not 10 balls in a bag, but $10^{23}$ atoms in a mole? Calculating $\binom{10^{23}}{10^{22}}$ is not just difficult; it's impossible. Does our framework break down?
 
-No. Something magical happens. As numbers become enormous, the jagged, discrete nature of [combinatorial counting](@article_id:140592) smooths out into simple, continuous curves. The microscopic complexity washes away to reveal a simple, elegant macroscopic law. This is one of the deepest themes in all of science.
+No. Something magical happens. As numbers become enormous, the jagged, discrete nature of [combinatorial counting](@keyword=combinatorial_counting|lang=en-US|style=Feynman) smooths out into simple, continuous curves. The microscopic complexity washes away to reveal a simple, elegant macroscopic law. This is one of the deepest themes in all of science.
 
-Let's look at the **[central binomial coefficient](@article_id:634602)**, $\binom{2n}{n}$. This [number counts](@article_id:159711), for example, the number of paths on a grid from one corner to the opposite that take an equal number of steps right and down. For large $n$, we can use a remarkable tool called **Stirling's approximation**, which tells us what the [factorial function](@article_id:139639) "looks like" for large numbers: $n! \approx \sqrt{2\pi n} (\frac{n}{e})^n$.
+Let's look at the **[central binomial coefficient](@keyword=central_binomial_coefficient|lang=en-US|style=Feynman)**, $\binom{2n}{n}$. This [number counts](@keyword=number_counts|lang=en-US|style=Feynman), for example, the number of paths on a grid from one corner to the opposite that take an equal number of steps right and down. For large $n$, we can use a remarkable tool called **Stirling's approximation**, which tells us what the [factorial function](@keyword=factorial_function|lang=en-US|style=Feynman) "looks like" for large numbers: $n! \approx \sqrt{2\pi n} (\frac{n}{e})^n$.
 
-If we plug this approximation into the formula for $\binom{2n}{n} = \frac{(2n)!}{(n!)^2}$, the algebra unfolds almost like magic. The exponential terms $(\frac{...}{e})^{...}$ cancel out, and we are left with a stunningly simple result :
+If we plug this approximation into the formula for $\binom{2n}{n} = \frac{(2n)!}{(n!)^2}$, the algebra unfolds almost like magic. The exponential terms $(\frac{...}{e})^{...}$ cancel out, and we are left with a stunningly simple result [@problem_id:776748]:
 $$
 \binom{2n}{n} \approx \frac{4^n}{\sqrt{\pi n}}
 $$
-All the intricate, step-by-step complexity of the factorial is replaced by a [smooth function](@article_id:157543) involving powers and a square root. This allows physicists and mathematicians to understand the behavior of systems with enormous numbers of components, which is to say, nearly every system in the real world.
+All the intricate, step-by-step complexity of the factorial is replaced by a [smooth function](@keyword=smooth_function|lang=en-US|style=Feynman) involving powers and a square root. This allows physicists and mathematicians to understand the behavior of systems with enormous numbers of components, which is to say, nearly every system in the real world.
 
-This transition to large numbers also unifies our two worlds of sampling. When we analyzed [sampling without replacement](@article_id:276385) from a finite population, the results were always slightly different from [sampling with replacement](@article_id:273700). For instance, the variance of a measured frequency from a finite library of $N$ variants is not quite the binomial variance $\frac{p(1-p)}{n}$. Instead, it includes a **[finite population correction factor](@article_id:261552)** :
+This transition to large numbers also unifies our two worlds of sampling. When we analyzed [sampling without replacement](@keyword=sampling_without_replacement|lang=en-US|style=Feynman) from a finite population, the results were always slightly different from [sampling with replacement](@keyword=sampling_with_replacement|lang=en-US|style=Feynman). For instance, the variance of a measured frequency from a finite library of $N$ variants is not quite the binomial variance $\frac{p(1-p)}{n}$. Instead, it includes a **[finite population correction factor](@keyword=finite_population_correction_factor|lang=en-US|style=Feynman)** [@problem_id:2851675]:
 $$
 \mathrm{Var}(\hat{f}) = \frac{p(1-p)}{n} \left( \frac{N-n}{N-1} \right)
 $$

@@ -19,7 +19,7 @@ Here, $L$ is simply the **length of the path** $C$, a concept straight out of ge
 
 Finding the length $L$ of a path is usually a straightforward exercise. A line segment's length is found using the Pythagorean theorem, and a circular arc's length is its radius times the angle it subtends. The real art, and the fun, lies in finding a good value for $M$.
 
-Let's start with a basic scenario. Suppose we want to bound the integral of $f(z) = z^2 + 2z$ along the straight line from $z=2$ to $z=2i$ . The path length $L$ is the distance between these points, $|2i - 2| = \sqrt{(-2)^2 + 2^2} = 2\sqrt{2}$. Now for $M$. We need to find the largest value of $|f(z)| = |z^2 + 2z|$ on this line. We can use the trusty [triangle inequality](@article_id:143256): $|a+b| \le |a| + |b|$.
+Let's start with a basic scenario. Suppose we want to bound the integral of $f(z) = z^2 + 2z$ along the straight line from $z=2$ to $z=2i$ [@problem_id:2257397]. The path length $L$ is the distance between these points, $|2i - 2| = \sqrt{(-2)^2 + 2^2} = 2\sqrt{2}$. Now for $M$. We need to find the largest value of $|f(z)| = |z^2 + 2z|$ on this line. We can use the trusty [triangle inequality](@keyword=triangle_inequality|lang=en-US|style=Feynman): $|a+b| \le |a| + |b|$.
 
 $$
 |f(z)| = |z^2 + 2z| \le |z|^2 + 2|z|
@@ -27,7 +27,7 @@ $$
 
 So, if we can find the maximum value of $|z|$ on our path, we can find a ceiling for $|f(z)|$. Since the path is a straight line between two points that are both a distance of 2 from the origin, it turns out that every point on this line is at a distance of at most 2 from the origin, so $|z| \le 2$. Plugging this in, we get $|f(z)| \le 2^2 + 2(2) = 8$. We can confidently choose $M=8$. Our final bound is $M \cdot L = 8 \cdot 2\sqrt{2} = 16\sqrt{2}$. We now know the magnitude of our integral, whatever its true value may be, is no larger than $16\sqrt{2}$.
 
-To get the *tightest* possible bound, we need to find the true maximum of $|f(z)|$, not just any old upper bound. Consider the function $f(z) = e^{z^2}$ on a circle of radius $R$ . A point on this circle is $z = Re^{i\theta}$. Let's find $|f(z)|$:
+To get the *tightest* possible bound, we need to find the true maximum of $|f(z)|$, not just any old upper bound. Consider the function $f(z) = e^{z^2}$ on a circle of radius $R$ [@problem_id:898198]. A point on this circle is $z = Re^{i\theta}$. Let's find $|f(z)|$:
 
 $$
 |f(z)| = |e^{z^2}| = |e^{(Re^{i\theta})^2}| = |e^{R^2 e^{2i\theta}}| = |e^{R^2 (\cos(2\theta) + i\sin(2\theta))}| = e^{R^2 \cos(2\theta)}
@@ -35,7 +35,7 @@ $$
 
 The magnitude depends only on the real part of the exponent. To maximize this, we need to maximize $\cos(2\theta)$, which has a maximum value of 1. So, the sharpest possible $M$ is $e^{R^2}$. The length of the circle is $L = 2\pi R$. The tightest bound from the Estimation Lemma is thus $2\pi R e^{R^2}$.
 
-Sometimes, finding $M$ requires a bit more cunning, especially with fractions. To bound a fraction, you need an *upper* bound for the numerator and a *lower* bound for the denominator . For the denominator, we often use the **[reverse triangle inequality](@article_id:145608)**: $|a+b| \ge ||a| - |b||$. For a function like $f(z) = 1/(z^2+2)$ on the unit circle $|z|=1$, we can bound the denominator from below:
+Sometimes, finding $M$ requires a bit more cunning, especially with fractions. To bound a fraction, you need an *upper* bound for the numerator and a *lower* bound for the denominator [@problem_id:2257382]. For the denominator, we often use the **[reverse triangle inequality](@keyword=reverse_triangle_inequality|lang=en-US|style=Feynman)**: $|a+b| \ge ||a| - |b||$. For a function like $f(z) = 1/(z^2+2)$ on the unit circle $|z|=1$, we can bound the denominator from below:
 
 $$
 |z^2 + 2| \ge |2| - |z^2| = 2 - |z|^2 = 2 - 1^2 = 1
@@ -47,7 +47,7 @@ Since the denominator is at least 1, the magnitude of our function, $|f(z)|$, is
 
 It seems obvious that the path length $L$ affects our bound. But the choice of path has a more subtle and profound influence. Imagine traveling from San Francisco to Los Angeles. You could take the direct coastal highway or a long, winding detour through the mountains. Not only will the lengths be different, but the maximum elevation ($M$) you reach will also be different.
 
-Let's see this in action by integrating $f(z) = \frac{1}{z^2+2}$ from $z=-1$ to $z=1$ along two different routes .
+Let's see this in action by integrating $f(z) = \frac{1}{z^2+2}$ from $z=-1$ to $z=1$ along two different routes [@problem_id:2278363].
 
 **Path 1: The Semicircle.** We take the upper semicircle of the unit circle. Its length is $L_1 = \pi$. As we saw before, on the unit circle, $|f(z)| \le 1$, so we can take $M_1=1$. The bound is $B_1 = M_1 L_1 = \pi$.
 
@@ -57,11 +57,11 @@ Notice that $\pi \approx 3.14$ and $2\sqrt{2} \approx 2.82$. The bounds are diff
 
 ### The Vanishing Act
 
-Now we arrive at the Estimation Lemma's most celebrated application: proving that certain integrals disappear. This is the heart of using complex analysis to solve real-world integrals. The typical strategy involves a contour that includes the real axis and a large semicircle of radius $R$ in the [upper half-plane](@article_id:198625), which we'll call $\Gamma_R$. We evaluate the integral over this whole closed loop using the powerful [residue theorem](@article_id:164384), and then we hope that the contribution from the semicircular part vanishes as we let its radius $R$ grow to infinity.
+Now we arrive at the Estimation Lemma's most celebrated application: proving that certain integrals disappear. This is the heart of using complex analysis to solve real-world integrals. The typical strategy involves a contour that includes the real axis and a large semicircle of radius $R$ in the [upper half-plane](@keyword=upper_half_plane|lang=en-US|style=Feynman), which we'll call $\Gamma_R$. We evaluate the integral over this whole closed loop using the powerful [residue theorem](@keyword=residue_theorem|lang=en-US|style=Feynman), and then we hope that the contribution from the semicircular part vanishes as we let its radius $R$ grow to infinity.
 
 The Estimation Lemma tells us exactly when this hope is justified. The length of our semicircle is $L_R = \pi R$. For the integral over $\Gamma_R$ to vanish, we need $M_R \cdot L_R \to 0$ as $R \to \infty$.
 
-Let's consider a rational function $f(z) = P(z)/Q(z)$, where $P$ and $Q$ are polynomials . When $R$ is very large, $|z|=R$ is large, and the polynomials are dominated by their leading terms. So, $|f(z)|$ behaves roughly like $R^{\deg P} / R^{\deg Q} = R^{\deg P - \deg Q}$. For simplicity, let's say $|f(z)| \approx C/R^k$ for some constant $C$, where $k = \deg Q - \deg P$.
+Let's consider a rational function $f(z) = P(z)/Q(z)$, where $P$ and $Q$ are polynomials [@problem_id:2270635]. When $R$ is very large, $|z|=R$ is large, and the polynomials are dominated by their leading terms. So, $|f(z)|$ behaves roughly like $R^{\deg P} / R^{\deg Q} = R^{\deg P - \deg Q}$. For simplicity, let's say $|f(z)| \approx C/R^k$ for some constant $C$, where $k = \deg Q - \deg P$.
 
 Our bound becomes:
 $$
@@ -73,18 +73,18 @@ $$
 \deg Q \ge \deg P + 2
 $$
 
-If the degree of the denominator is at least 2 more than the degree of the numerator, the integral over the large semicircle is guaranteed to vanish! The Estimation Lemma provides a rigorous justification for this rule that is central to solving a vast number of [improper integrals](@article_id:138300).
+If the degree of the denominator is at least 2 more than the degree of the numerator, the integral over the large semicircle is guaranteed to vanish! The Estimation Lemma provides a rigorous justification for this rule that is central to solving a vast number of [improper integrals](@keyword=improper_integrals|lang=en-US|style=Feynman).
 
 ### When the Estimate Isn't Good Enough
 
-What happens when the condition isn't met? For instance, what if $\deg Q = \deg P + 1$? Our simple analysis suggests the bound $M_R \cdot L_R$ will approach a non-zero constant . Does this mean the integral *doesn't* vanish?
+What happens when the condition isn't met? For instance, what if $\deg Q = \deg P + 1$? Our simple analysis suggests the bound $M_R \cdot L_R$ will approach a non-zero constant [@problem_id:2249020]. Does this mean the integral *doesn't* vanish?
 
 Not necessarily! This is a moment for caution and deeper insight. The lemma gives an *upper bound*. If the bound is $\pi$, the true value could be $\pi$, or it could be $1$, or it could be $0$. Our tool is simply too crude to tell the difference.
 
-This is precisely the situation for integrals involving terms like $e^{i\alpha z}$ with $\alpha > 0$ . Consider a function like $f(z) = \frac{z}{z^2+4} e^{iz}$. The rational part $|z/(z^2+4)|$ behaves like $1/R$ for large $R$. The term $|e^{iz}|$ has a maximum value of 1 on the upper semicircle. So the standard ML-inequality gives a bound that approaches $\pi$, which is inconclusive.
+This is precisely the situation for integrals involving terms like $e^{i\alpha z}$ with $\alpha > 0$ [@problem_id:2249026]. Consider a function like $f(z) = \frac{z}{z^2+4} e^{iz}$. The rational part $|z/(z^2+4)|$ behaves like $1/R$ for large $R$. The term $|e^{iz}|$ has a maximum value of 1 on the upper semicircle. So the standard ML-inequality gives a bound that approaches $\pi$, which is inconclusive.
 
 However, the standard estimate is blind to a crucial subtlety. The term $|e^{iz}| = |e^{i(x+iy)}| = e^{-y}$. On the upper semicircle, $y = R\sin\theta$ is positive. This is an *exponential decay* factor! The function's magnitude is $1$ only on the real axis ($\theta=0, \pi$) but gets exponentially smaller as we move up into the complex plane. The simple Estimation Lemma, by focusing only on the maximum value, misses this completely. To handle this, a more refined tool is needed: **Jordan's Lemma**. It is a cousin of the Estimation Lemma, custom-built for functions with this type of exponential factor, and it successfully shows that the integral does, in fact, vanish.
 
-Finally, we must always be vigilant. What if the function, far from decaying, actually *grows* on our contour? Trying to use a semicircular contour to evaluate an integral involving $\cosh(z)$ is a cautionary tale . Since $\cosh(z) = (e^z + e^{-z})/2$, the $e^z$ term explodes in magnitude as we move into the right half-plane where the real part of $z$ is large and positive. The exponential growth of the numerator overwhelms any polynomial decay in the denominator, and the integral over the arc diverges to infinity. The vanishing act fails spectacularly.
+Finally, we must always be vigilant. What if the function, far from decaying, actually *grows* on our contour? Trying to use a semicircular contour to evaluate an integral involving $\cosh(z)$ is a cautionary tale [@problem_id:2265341]. Since $\cosh(z) = (e^z + e^{-z})/2$, the $e^z$ term explodes in magnitude as we move into the right half-plane where the real part of $z$ is large and positive. The exponential growth of the numerator overwhelms any polynomial decay in the denominator, and the integral over the arc diverges to infinity. The vanishing act fails spectacularly.
 
 The Estimation Lemma, then, is more than a formula. It's a way of thinking—a lens through which we can gauge the behavior of complex functions on paths. It gives us the power to make firm conclusions, but it also teaches us the wisdom to know the limits of our tools and to appreciate when a deeper, more nuanced analysis is required.

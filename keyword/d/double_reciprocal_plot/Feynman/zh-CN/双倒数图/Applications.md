@@ -4,40 +4,40 @@
 
 ### 抑制作用的视觉现场指南
 
-也许Lineweaver-Burk图最著名的用途是在[药理学](@article_id:302851)和生物化学领域，这些领域的目标通常是寻找能够抑制[酶活性](@article_id:304278)的分子。想象一下，您是一位生物化学家，刚刚合成了一种新的候选药物。您不仅想知道它*是否*有效，还想知道它*如何*起作用。它是与酶的天然底物争夺同一个停车位，还是一个更微妙的破坏者，从远处扰乱机器？Lineweaver-Burk图一目了然地给出了答案。
+也许Lineweaver-Burk图最著名的用途是在[药理学](@keyword=pharmacology|lang=zh-CN|style=Feynman)和生物化学领域，这些领域的目标通常是寻找能够抑制[酶活性](@keyword=enzyme_activity|lang=zh-CN|style=Feynman)的分子。想象一下，您是一位生物化学家，刚刚合成了一种新的候选药物。您不仅想知道它*是否*有效，还想知道它*如何*起作用。它是与酶的天然底物争夺同一个停车位，还是一个更微妙的破坏者，从远处扰乱机器？Lineweaver-Burk图一目了然地给出了答案。
 
 您进行两个实验：一个是用酶及其底物，另一个是加入您的抑制剂。您将两个实验的结果绘制在同一张图上。
 
-如果您的抑制剂是**[竞争性抑制剂](@article_id:356454)**——一种物理上阻断酶活性位点的抑制剂——如果您用足够多的底物充斥系统，它就会被击败。在无限[底物浓度](@article_id:303528)下（此时$1/[S]$为零），抑制剂没有效果，反应达到相同的最大速率$V_{\max}$。在图形上，这意味着y轴截距（等于$1/V_{\max}$）保持不变。被抑制和未被抑制反应的直线将围绕y轴上的这个共同点旋转。这种经典的模式是您的药物与底物直接竞争的明确标志。
+如果您的抑制剂是**[竞争性抑制剂](@keyword=competitive_inhibitor|lang=zh-CN|style=Feynman)**——一种物理上阻断酶活性位点的抑制剂——如果您用足够多的底物充斥系统，它就会被击败。在无限[底物浓度](@keyword=substrate_concentration|lang=zh-CN|style=Feynman)下（此时$1/[S]$为零），抑制剂没有效果，反应达到相同的最大速率$V_{\max}$。在图形上，这意味着y轴截距（等于$1/V_{\max}$）保持不变。被抑制和未被抑制反应的直线将围绕y轴上的这个共同点旋转。这种经典的模式是您的药物与底物直接竞争的明确标志。
 
-但如果您图上的直线没有在y轴上相交呢？假设它们在*x轴*上[交叉](@article_id:315017)。这讲述了一个完全不同的故事。不变的x轴截距意味着表观$K_M$没有改变；抑制剂没有影响底物的结合能力。然而，y轴截距增加了，意味着$V_{\max}$下降了。无论您添加多少底物，抑制剂都在降低酶的[催化效率](@article_id:307367)。这是**纯[非竞争性抑制](@article_id:298514)剂**的标志，这种分子结合到不同位置（[变构位点](@article_id:300363)），像一个调光器一样，降低酶的整体功率，而不干扰底物结合。
+但如果您图上的直线没有在y轴上相交呢？假设它们在*x轴*上[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)。这讲述了一个完全不同的故事。不变的x轴截距意味着表观$K_M$没有改变；抑制剂没有影响底物的结合能力。然而，y轴截距增加了，意味着$V_{\max}$下降了。无论您添加多少底物，抑制剂都在降低酶的[催化效率](@keyword=catalytic_efficiency|lang=zh-CN|style=Feynman)。这是**纯[非竞争性抑制](@keyword=non_competitive_inhibition|lang=zh-CN|style=Feynman)剂**的标志，这种分子结合到不同位置（[变构位点](@keyword=allosteric_site|lang=zh-CN|style=Feynman)），像一个调光器一样，降低酶的整体功率，而不干扰底物结合。
 
-然后是最具视觉冲击力的情况：两条线完全平行。这种奇特而美丽的模式标志着**[反竞争性抑制](@article_id:316511)**。它揭示了一种特别投机的抑制剂，它会等待底物首先与酶结合。只有在那时，它才看到一个它喜欢的停靠位点，结合到[酶-底物复合物](@article_id:362780)上，并将其锁定在一个非活性状态。$V_{\max}$和$K_M$都以相同的因子减少，导致两条斜率相同、永不相交的直线。
+然后是最具视觉冲击力的情况：两条线完全平行。这种奇特而美丽的模式标志着**[反竞争性抑制](@keyword=uncompetitive_inhibition|lang=zh-CN|style=Feynman)**。它揭示了一种特别投机的抑制剂，它会等待底物首先与酶结合。只有在那时，它才看到一个它喜欢的停靠位点，结合到[酶-底物复合物](@keyword=enzyme_substrate_complex|lang=zh-CN|style=Feynman)上，并将其锁定在一个非活性状态。$V_{\max}$和$K_M$都以相同的因子减少，导致两条斜率相同、永不相交的直线。
 
-这三种模式——在y轴上相交、在x轴上相交或平行——为[酶学](@article_id:360828)家提供了一份基本的视觉现场指南，一种对大量药物和[毒素作用机制](@article_id:346272)进行分类的简单方法。
+这三种模式——在y轴上相交、在x轴上相交或平行——为[酶学](@keyword=enzymology|lang=zh-CN|style=Feynman)家提供了一份基本的视觉现场指南，一种对大量药物和[毒素作用机制](@keyword=toxin_mechanism_of_action|lang=zh-CN|style=Feynman)进行分类的简单方法。
 
 ### 从图形到效力：定量的视角
 
-识别抑制的*类型*只是第一步。在药物开发中，我们需要知道抑制剂的*效力如何*。Lineweaver-Burk图再次提供了答案。斜率或截距的变化程度不是任意的；它与抑制剂的浓度及其[结合亲和力](@article_id:325433)（即[抑制常数](@article_id:350182)$K_i$）直接相关。
+识别抑制的*类型*只是第一步。在药物开发中，我们需要知道抑制剂的*效力如何*。Lineweaver-Burk图再次提供了答案。斜率或截距的变化程度不是任意的；它与抑制剂的浓度及其[结合亲和力](@keyword=binding_affinity|lang=zh-CN|style=Feynman)（即[抑制常数](@keyword=ki_dissociation_constant|lang=zh-CN|style=Feynman)$K_i$）直接相关。
 
-对于[竞争性抑制剂](@article_id:356454)，在抑制剂存在下直线的斜率由$\frac{K_M}{V_{\max}} \left(1 + \frac{[I]}{K_i}\right)$给出。通过测量被抑制的直线比对照组陡峭多少，研究人员可以精确计算$K_i$，这是一个量化抑制剂效力的关键数字。$K_i$越小，意味着药物越有效。这将图从定性诊断工具转变为定量工程仪器，对设计和优化新药至关重要。
+对于[竞争性抑制剂](@keyword=competitive_inhibitor|lang=zh-CN|style=Feynman)，在抑制剂存在下直线的斜率由$\frac{K_M}{V_{\max}} \left(1 + \frac{[I]}{K_i}\right)$给出。通过测量被抑制的直线比对照组陡峭多少，研究人员可以精确计算$K_i$，这是一个量化抑制剂效力的关键数字。$K_i$越小，意味着药物越有效。这将图从定性诊断工具转变为定量工程仪器，对设计和优化新药至关重要。
 
 ### 当线条弯曲时：来自复杂性的线索
 
 到目前为止，我们一直假设我们的图能产生完美的直线。但自然界通常更为复杂，有时最有趣的故事是由偏离理想状态的现象讲述的。当Lineweaver-Burk图出现弯曲时，这并非实验失败的迹象，而是表明有更复杂的机制在起作用。
 
-例如，有些酶在浓度过高时会被其自身的底物所抑制。在低底物浓度下，图可能看起来正常，但当您接近y轴（高底物浓度）时，直线会神秘地向上弯曲，趋向于无穷大而不是一个有限的截距。这种向上的弯曲是**底物抑制**的明确标志，揭示了酶有一个第二、较低亲和力的[底物结合](@article_id:379832)位点，当该位点被占据时，会关闭催化作用。
+例如，有些酶在浓度过高时会被其自身的底物所抑制。在低底物浓度下，图可能看起来正常，但当您接近y轴（高底物浓度）时，直线会神秘地向上弯曲，趋向于无穷大而不是一个有限的截距。这种向上的弯曲是**底物抑制**的明确标志，揭示了酶有一个第二、较低亲和力的[底物结合](@keyword=substrate_binding|lang=zh-CN|style=Feynman)位点，当该位点被占据时，会关闭催化作用。
 
-在其他情况下，一个酶可能由多个“相互交谈”的亚[基组](@article_id:320713)成。一个底物分子的结合可以使下一个分子更容易（或更难）结合。这种现象，被称为**变构协同性**，会产生一个S形速率曲线，在双倒数图上转化为一条连续弯曲的线。凸向（向上弯曲远离原点）的曲线表示[正协同性](@article_id:332362)——随着更多底物结合，酶变得更活跃——而凹向的曲线则表明[负协同性](@article_id:356188)。这些弯曲的图表明，该酶不是一个简单的机器，而是一个能够进行复杂调控的动态、响应性系统。
+在其他情况下，一个酶可能由多个“相互交谈”的亚[基组](@keyword=basis_set|lang=zh-CN|style=Feynman)成。一个底物分子的结合可以使下一个分子更容易（或更难）结合。这种现象，被称为**变构协同性**，会产生一个S形速率曲线，在双倒数图上转化为一条连续弯曲的线。凸向（向上弯曲远离原点）的曲线表示[正协同性](@keyword=positive_cooperativity|lang=zh-CN|style=Feynman)——随着更多底物结合，酶变得更活跃——而凹向的曲线则表明[负协同性](@keyword=negative_cooperativity|lang=zh-CN|style=Feynman)。这些弯曲的图表明，该酶不是一个简单的机器，而是一个能够进行复杂调控的动态、响应性系统。
 
 ### 跨学科的回响
 
-[米氏动力学](@article_id:307544)及其Lineweaver-Burk表示法的原理是如此基础，以至于它们的回响远远超出了生物化学的范畴。
+[米氏动力学](@keyword=michaelis_menten_kinetics|lang=zh-CN|style=Feynman)及其Lineweaver-Burk表示法的原理是如此基础，以至于它们的回响远远超出了生物化学的范畴。
 
-同样的数学也描述了工业化学中许多形式的**[均相催化](@article_id:304003)**。想象一个[化学反应](@article_id:307389)，其产物本身可以重新结合到[催化剂](@article_id:298981)上并抑制它——这是一种被称为**[产物抑制](@article_id:346264)**的常见现象。如果这种抑制是竞争性的，那么为该系统推导出的速率方程在形式上与具有[竞争性抑制剂](@article_id:356454)的酶的方程相同。由此产生的Lineweaver-Burk图将显示在y轴上相交的直线，正如我们之前看到的那样。这展示了控制[催化原理](@article_id:382534)的优美统一性，无论[催化剂](@article_id:298981)是进化锻造的蛋白质还是实验室设计的金属[配合物](@article_id:317067)。
+同样的数学也描述了工业化学中许多形式的**[均相催化](@keyword=homogeneous_catalysis|lang=zh-CN|style=Feynman)**。想象一个[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)，其产物本身可以重新结合到[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)上并抑制它——这是一种被称为**[产物抑制](@keyword=product_inhibition|lang=zh-CN|style=Feynman)**的常见现象。如果这种抑制是竞争性的，那么为该系统推导出的速率方程在形式上与具有[竞争性抑制剂](@keyword=competitive_inhibitor|lang=zh-CN|style=Feynman)的酶的方程相同。由此产生的Lineweaver-Burk图将显示在y轴上相交的直线，正如我们之前看到的那样。这展示了控制[催化原理](@keyword=catalysis_principles|lang=zh-CN|style=Feynman)的优美统一性，无论[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)是进化锻造的蛋白质还是实验室设计的金属[配合物](@keyword=coordination_compound|lang=zh-CN|style=Feynman)。
 
-在现代**系统生物学**中，Lineweaver-Burk图作为一种外科手术工具，用于剖析复杂的分子机器。考虑巨大的[丙酮酸](@article_id:306851)[脱氢酶](@article_id:365063)（PDH）复合物，这是细胞呼吸所必需的多酶工厂。通过实验上用前两个酶（E1和E2）的底物使系统饱和，科学家可以有效地使它们在动力学上“[隐形](@article_id:376268)”，确保总速率仅由第三个酶E3及其底物NAD+决定。如果此时加入一种特异性损害E3催化功能而不影响其[底物结合](@article_id:379832)的抑制剂，那么得到的Lineweaver-Burk图（速率对[NAD+]）将显示[非竞争性抑制](@article_id:298514)的经典特征。这种巧妙的[实验设计](@article_id:302887)使研究人员能够使用一个简单的图来探测一个庞大、复杂的生物机器中单个组件的功能。
+在现代**系统生物学**中，Lineweaver-Burk图作为一种外科手术工具，用于剖析复杂的分子机器。考虑巨大的[丙酮酸](@keyword=pyruvate|lang=zh-CN|style=Feynman)[脱氢酶](@keyword=dehydrogenase|lang=zh-CN|style=Feynman)（PDH）复合物，这是细胞呼吸所必需的多酶工厂。通过实验上用前两个酶（E1和E2）的底物使系统饱和，科学家可以有效地使它们在动力学上“[隐形](@keyword=cloaking|lang=zh-CN|style=Feynman)”，确保总速率仅由第三个酶E3及其底物NAD+决定。如果此时加入一种特异性损害E3催化功能而不影响其[底物结合](@keyword=substrate_binding|lang=zh-CN|style=Feynman)的抑制剂，那么得到的Lineweaver-Burk图（速率对[NAD+]）将显示[非竞争性抑制](@keyword=non_competitive_inhibition|lang=zh-CN|style=Feynman)的经典特征。这种巧妙的[实验设计](@keyword=experimental_design|lang=zh-CN|style=Feynman)使研究人员能够使用一个简单的图来探测一个庞大、复杂的生物机器中单个组件的功能。
 
-即使在[分子生物学](@article_id:300774)的前沿，研究像**[CRISPR基因编辑](@article_id:309223)技术**这样的系统时，双倒数图仍然是分析工具包的基石。当科学家发现细菌用来防御[CRISPR](@article_id:304245)的新型[抗CRISPR](@article_id:363027)（Acr）蛋白时，他们首先问的问题之一是它们*如何*抑制CRISPR酶。通过将使用Lineweaver-Burk图的[稳态动力学](@article_id:336379)分析与更先进的技术（如预[稳态](@article_id:326048)[爆发动力学](@article_id:376345)）相结合，他们可以构建一幅完整的图景。图可能揭示一种Acr蛋白是竞争性的，而爆发分析可能显示这种竞争导致可用于第一次快速切割事件的活性酶比例减少。通过这种方式，一个90年历史的图形方法与尖端技术携手合作，阐明新发现的生物系统的机制。
+即使在[分子生物学](@keyword=molecular_biology|lang=zh-CN|style=Feynman)的前沿，研究像**[CRISPR基因编辑](@keyword=crispr_gene_editing|lang=zh-CN|style=Feynman)技术**这样的系统时，双倒数图仍然是分析工具包的基石。当科学家发现细菌用来防御[CRISPR](@keyword=crispr|lang=zh-CN|style=Feynman)的新型[抗CRISPR](@keyword=anti_crispr|lang=zh-CN|style=Feynman)（Acr）蛋白时，他们首先问的问题之一是它们*如何*抑制CRISPR酶。通过将使用Lineweaver-Burk图的[稳态动力学](@keyword=steady_state_kinetics|lang=zh-CN|style=Feynman)分析与更先进的技术（如预[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)[爆发动力学](@keyword=burst_kinetics|lang=zh-CN|style=Feynman)）相结合，他们可以构建一幅完整的图景。图可能揭示一种Acr蛋白是竞争性的，而爆发分析可能显示这种竞争导致可用于第一次快速切割事件的活性酶比例减少。通过这种方式，一个90年历史的图形方法与尖端技术携手合作，阐明新发现的生物系统的机制。
 
-从其作为[线性化](@article_id:331373)技术的卑微起源，双倒数图已被证明是一种非常通用和富有洞察力的工具。它证明了找到正确视角的力量——通过简单地颠倒看世界，我们常常能以惊人的清晰度看到其内部的运作方式。
+从其作为[线性化](@keyword=linearization|lang=zh-CN|style=Feynman)技术的卑微起源，双倒数图已被证明是一种非常通用和富有洞察力的工具。它证明了找到正确视角的力量——通过简单地颠倒看世界，我们常常能以惊人的清晰度看到其内部的运作方式。

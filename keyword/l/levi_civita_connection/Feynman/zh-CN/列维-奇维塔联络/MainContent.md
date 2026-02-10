@@ -1,31 +1,31 @@
 ## 引言
-在熟悉的欧几里得几何的平直世界中，方向、直线和[导数](@article_id:318324)等概念都简单明了。但我们如何将这些思想扩展到弯曲空间，例如球面或[时空](@article_id:370647)织物本身呢？在弯曲[流形](@article_id:313450)上，比较不同点的矢量成为一个非平凡的挑战，这在我们的微积分能力上造成了一个根本性的鸿沟。本文将探讨由列维-奇维塔联络提供的优雅解决方案。
+在熟悉的欧几里得几何的平直世界中，方向、直线和[导数](@keyword=derivative|lang=zh-CN|style=Feynman)等概念都简单明了。但我们如何将这些思想扩展到弯曲空间，例如球面或[时空](@keyword=space_time|lang=zh-CN|style=Feynman)织物本身呢？在弯曲[流形](@keyword=manifold|lang=zh-CN|style=Feynman)上，比较不同点的矢量成为一个非平凡的挑战，这在我们的微积分能力上造成了一个根本性的鸿沟。本文将探讨由列维-奇维塔联络提供的优雅解决方案。
 
-我们的探索始于“原理与机制”部分，在那里我们将解决一个核心问题：在无数种可能的方式中，哪一种是在弯曲空间上定义[微分](@article_id:319122)最自然的方式？我们将看到，两个简单的要求——联络保持长度和角度，并且没有内在的扭曲——如何引出[黎曼几何基本定理](@article_id:368283)，该定理保证了[列维-奇维塔联络](@article_id:321511)的存在性和唯一性。随后，“应用与跨学科联系”部分将揭示这种独特联络的深远力量。我们将看到它不仅定义了几何学中“尽可能直的路径”，还作为现代物理学的基础语言，描述了从广义[相对论](@article_id:327421)中的时空曲率到量子场行为的万事万物。
+我们的探索始于“原理与机制”部分，在那里我们将解决一个核心问题：在无数种可能的方式中，哪一种是在弯曲空间上定义[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)最自然的方式？我们将看到，两个简单的要求——联络保持长度和角度，并且没有内在的扭曲——如何引出[黎曼几何基本定理](@keyword=fundamental_theorem_of_riemannian_geometry|lang=zh-CN|style=Feynman)，该定理保证了[列维-奇维塔联络](@keyword=levi_civita_connection|lang=zh-CN|style=Feynman)的存在性和唯一性。随后，“应用与跨学科联系”部分将揭示这种独特联络的深远力量。我们将看到它不仅定义了几何学中“尽可能直的路径”，还作为现代物理学的基础语言，描述了从广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)中的时空曲率到量子场行为的万事万物。
 
 ## 原理与机制
 
 想象你是一只生活在一张巨大、起伏不平的表面上的蚂蚁，比如一张巨大的、布满褶皱的纸。你的世界是弯曲的。你想沿“直线”行走。在平直的世界里，这很容易：你只需一直走，不要转弯。但在你所在的弯曲纸面上，“不转弯”究竟意味着什么？如果你从A点走到B点，你怎么知道自己保持了最初的方向？A点的“前进”方向与B点的“前进”方向是不同的概念，因为你脚下的地面已经倾斜了。
 
-这就是弯曲空间几何学的核心问题：我们如何比较不同点的矢量，比如你的行进方向？当我们使用的[坐标系](@article_id:316753)本身从一处到另一处发生扭曲和拉伸时，我们如何对[矢量场](@article_id:322515)进行微分？为此，我们需要一个规则，一个将矢量从一点“滑动”到邻近点，并尽可能在弯曲空间中保持其方向的程序。这个规则就是数学家所称的**[仿射联络](@article_id:320556)**（affine connection），它是在弯曲世界中进行微积分的机制。
+这就是弯曲空间几何学的核心问题：我们如何比较不同点的矢量，比如你的行进方向？当我们使用的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)本身从一处到另一处发生扭曲和拉伸时，我们如何对[矢量场](@keyword=vector_field|lang=zh-CN|style=Feynman)进行微分？为此，我们需要一个规则，一个将矢量从一点“滑动”到邻近点，并尽可能在弯曲空间中保持其方向的程序。这个规则就是数学家所称的**[仿射联络](@keyword=affine_connection|lang=zh-CN|style=Feynman)**（affine connection），它是在弯曲世界中进行微积分的机制。
 
 ### 对自然联络的探寻
 
-当我们试图创造一个联络时，我们面临着令人眼花缭乱的选择。人们可以设计出无数种规则来[平行输运](@article_id:382271)一个矢量。对于给定的几何，哪一种是“自然的”？哪种联络真正捕捉了空间的内在属性，而没有添加任何任意、无关的结构？
+当我们试图创造一个联络时，我们面临着令人眼花缭乱的选择。人们可以设计出无数种规则来[平行输运](@keyword=vector_transport_on_curved_space|lang=zh-CN|style=Feynman)一个矢量。对于给定的几何，哪一种是“自然的”？哪种联络真正捕捉了空间的内在属性，而没有添加任何任意、无关的结构？
 
 为了挑选出这个特殊的联络，我们可以提出两个非常合理、物理上直观的要求。这两个源于我们在平直世界中经验的要求，将被证明具有惊人的力量。
 
 #### 要求1：标尺和量角器神圣不可侵犯
 
-首先，如果我们有办法在每一点测量距离和角度——这正是**度规[张量](@article_id:321604)**（metric tensor）$g$ 所提供的功能——那么要求我们的平行输运过程尊重这些测量似乎是理所当然的。如果你滑动一个长度为1米的矢量，它在目的地应该仍然长1米。如果你滑动两个相互垂直的矢量，它们应该保持垂直。换句话说，联络不应扭曲它本应存在于其中的几何结构。由度规提供的标尺和量角器，从我们联络的角度来看，必须是恒定的。
+首先，如果我们有办法在每一点测量距离和角度——这正是**度规[张量](@keyword=tensor|lang=zh-CN|style=Feynman)**（metric tensor）$g$ 所提供的功能——那么要求我们的平行输运过程尊重这些测量似乎是理所当然的。如果你滑动一个长度为1米的矢量，它在目的地应该仍然长1米。如果你滑动两个相互垂直的矢量，它们应该保持垂直。换句话说，联络不应扭曲它本应存在于其中的几何结构。由度规提供的标尺和量角器，从我们联络的角度来看，必须是恒定的。
 
-这一原则被称为**度规相容性**（metric compatibility）。在数学上，这是一个优雅的陈述，即度规[张量](@article_id:321604)本身的协变导数处处为零：
+这一原则被称为**度规相容性**（metric compatibility）。在数学上，这是一个优雅的陈述，即度规[张量](@keyword=tensor|lang=zh-CN|style=Feynman)本身的协变导数处处为零：
 
 $$
 \nabla g = 0
 $$
 
-这意味着对于我们用来定义微分方向的任何[矢量场](@article_id:322515) $X$，$（\nabla_X g）$ 都为零。展开后，这个简单的陈述表明，两个[矢量场](@article_id:322515) $Y$ 和 $Z$ 的内积沿第三个方向 $X$ 的变化，完全由 $Y$ 和 $Z$ 自身的变化来解释，而没有来自度规变化的额外贡献：
+这意味着对于我们用来定义微分方向的任何[矢量场](@keyword=vector_field|lang=zh-CN|style=Feynman) $X$，$（\nabla_X g）$ 都为零。展开后，这个简单的陈述表明，两个[矢量场](@keyword=vector_field|lang=zh-CN|style=Feynman) $Y$ 和 $Z$ 的内积沿第三个方向 $X$ 的变化，完全由 $Y$ 和 $Z$ 自身的变化来解释，而没有来自度规变化的额外贡献：
 
 $$
 X(g(Y, Z)) = g(\nabla_X Y, Z) + g(Y, \nabla_X Z)
@@ -37,27 +37,27 @@ $$
 
 第二个要求更为微妙。想象你身处一个十字路口。你先向东走一步，再向北走一步。你记下你最终的朝向。现在，你回到起点，但这次你先向北走一步，再向东走一步。你最终的朝向与第一次匹配吗？在我们日常的平直世界中，是的。这个属性反映了空间织物中缺乏内在的“扭曲性”。
 
-这个思想由**挠率**（torsion）的概念所捕捉。如果无穷小回路“向东，然后向北”减去“向北，然后向东”能够完美闭合，没有任何因坐标轴本身可能扭曲（由坐标[矢量场](@article_id:322515)的李括号描述）而未被解释的旋转失配，那么我们就说一个联络是**无挠的**（torsion-free）。
+这个思想由**挠率**（torsion）的概念所捕捉。如果无穷小回路“向东，然后向北”减去“向北，然后向东”能够完美闭合，没有任何因坐标轴本身可能扭曲（由坐标[矢量场](@keyword=vector_field|lang=zh-CN|style=Feynman)的李括号描述）而未被解释的旋转失配，那么我们就说一个联络是**无挠的**（torsion-free）。
 
-在一个标准[坐标系](@article_id:316753)中，[基矢](@article_id:378298)量是可交换的，这个条件大大简化。联络的“系数”，即著名的**[克里斯托费尔符号](@article_id:320235)**（Christoffel symbols）$\Gamma^k_{ij}$，必须在其下方的两个指标上对称：
+在一个标准[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中，[基矢](@keyword=basis_vector|lang=zh-CN|style=Feynman)量是可交换的，这个条件大大简化。联络的“系数”，即著名的**[克里斯托费尔符号](@keyword=christoffel_symbols|lang=zh-CN|style=Feynman)**（Christoffel symbols）$\Gamma^k_{ij}$，必须在其下方的两个指标上对称：
 
 $$
 \Gamma^k_{ij} = \Gamma^k_{ji}
 $$
 
-这个条件本质上是说，下方指标的[微分](@article_id:319122)顺序无关紧要，这与我们对[导数](@article_id:318324)行为的直觉相符。相比之下，一个有挠率的联络意味着空间在每一点都有一个固有的“漩涡”，这是在更奇特的理论中研究的属性，但我们在寻求最基础、“纯粹”的联络时选择排除它。
+这个条件本质上是说，下方指标的[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)顺序无关紧要，这与我们对[导数](@keyword=derivative|lang=zh-CN|style=Feynman)行为的直觉相符。相比之下，一个有挠率的联络意味着空间在每一点都有一个固有的“漩涡”，这是在更奇特的理论中研究的属性，但我们在寻求最基础、“纯粹”的联络时选择排除它。
 
 ### 基本定理：奇迹般的唯一性
 
-至此，我们来到了现代几何学的一块基石，一个如此优美和深刻的成果，以至于被称为**[黎曼几何基本定理](@article_id:368283)**（Fundamental Theorem of Riemannian Geometry）。它指出，对于任何给定的[黎曼流形](@article_id:324872)——即任何配备了度规 $g$ 的空间——存在**唯一且仅唯一**一个[仿射联络](@article_id:320556)，同时满足我们两个合理的要求：它既是度规相容的，又是无挠的。
+至此，我们来到了现代几何学的一块基石，一个如此优美和深刻的成果，以至于被称为**[黎曼几何基本定理](@keyword=fundamental_theorem_of_riemannian_geometry|lang=zh-CN|style=Feynman)**（Fundamental Theorem of Riemannian Geometry）。它指出，对于任何给定的[黎曼流形](@keyword=riemannian_manifolds|lang=zh-CN|style=Feynman)——即任何配备了度规 $g$ 的空间——存在**唯一且仅唯一**一个[仿射联络](@keyword=affine_connection|lang=zh-CN|style=Feynman)，同时满足我们两个合理的要求：它既是度规相容的，又是无挠的。
 
 这个独特的、天造地设的联络就是**列维-奇维塔联络**。
 
-花点时间来体会这意味着什么。度规[张量](@article_id:321604) $g$ 似乎只包含关于测量距离和角度的信息，但它秘密地包含了*定义微积分所需的所有信息*。没有额外的选择，没有歧义。[微分](@article_id:319122)的规则直接且唯一地从测量的规则中诞生。度规和空间[导数](@article_id:318324)结构之间这种深刻的统一，是几何学和物理学中反复出现的主题。这个唯一联络的存在性是有保证的，甚至可以写下一个明确但复杂的公式，称为[Koszul公式](@article_id:360730)，它仅使用度规及其[导数](@article_id:318324)来构造联络。
+花点时间来体会这意味着什么。度规[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $g$ 似乎只包含关于测量距离和角度的信息，但它秘密地包含了*定义微积分所需的所有信息*。没有额外的选择，没有歧义。[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)的规则直接且唯一地从测量的规则中诞生。度规和空间[导数](@keyword=derivative|lang=zh-CN|style=Feynman)结构之间这种深刻的统一，是几何学和物理学中反复出现的主题。这个唯一联络的存在性是有保证的，甚至可以写下一个明确但复杂的公式，称为[Koszul公式](@keyword=koszul_formula|lang=zh-CN|style=Feynman)，它仅使用度规及其[导数](@keyword=derivative|lang=zh-CN|style=Feynman)来构造联络。
 
 ### 机制的实际运作
 
-那么，这在实践中是如何运作的呢？列维-奇维塔联络的分量，即克里斯托费尔符号 $\Gamma^k_{ij}$，是实际应用的主力。它们告诉我们[坐标基](@article_id:333850)矢量本身如何随点变化，并且它们直接由度规[张量](@article_id:321604) $g_{ij}$ 及其偏导数计算得出：
+那么，这在实践中是如何运作的呢？列维-奇维塔联络的分量，即克里斯托费尔符号 $\Gamma^k_{ij}$，是实际应用的主力。它们告诉我们[坐标基](@keyword=coordinate_basis|lang=zh-CN|style=Feynman)矢量本身如何随点变化，并且它们直接由度规[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $g_{ij}$ 及其偏导数计算得出：
 
 $$
 \Gamma^{k}_{ij} = \frac{1}{2} g^{k\ell} \left( \partial_i g_{j\ell} + \partial_j g_{i\ell} - \partial_\ell g_{ij} \right)
@@ -67,25 +67,25 @@ $$
 
 让我们测试一下这个宏伟的机器。
 
-**情况1：[平直空间](@article_id:383214)的舒适区**
-考虑最简单的空间：普通的平直[欧几里得空间](@article_id:298501) $\mathbb{R}^n$。在标准[笛卡尔坐标系](@article_id:323200)中，度规就是[克罗内克δ](@article_id:329027)，$g_{ij} = \delta_{ij}$。其分量是常数：对角线上为1，其他地方为0。当我们把这个代入公式时，每个[偏导数](@article_id:306700) $\partial_k g_{ij}$ 都为零。结果呢？所有的克里斯托费尔符号都消失了：
+**情况1：[平直空间](@keyword=flat_space|lang=zh-CN|style=Feynman)的舒适区**
+考虑最简单的空间：普通的平直[欧几里得空间](@keyword=euclidean_space|lang=zh-CN|style=Feynman) $\mathbb{R}^n$。在标准[笛卡尔坐标系](@keyword=cartesian_coordinate_system|lang=zh-CN|style=Feynman)中，度规就是[克罗内克δ](@keyword=kronecker_delta|lang=zh-CN|style=Feynman)，$g_{ij} = \delta_{ij}$。其分量是常数：对角线上为1，其他地方为0。当我们把这个代入公式时，每个[偏导数](@keyword=partial_derivatives|lang=zh-CN|style=Feynman) $\partial_k g_{ij}$ 都为零。结果呢？所有的克里斯托费尔符号都消失了：
 $$
 \Gamma^k_{ij} = 0
 $$
-这是一个完美的合理性检验！在平直空间中，[基矢](@article_id:378298)量不发生变化，[列维-奇维塔联络](@article_id:321511)告诉我们[协变微分](@article_id:327688)就是我们在初等微积分中学到的普通[偏微分](@article_id:373521)。
+这是一个完美的合理性检验！在平直空间中，[基矢](@keyword=basis_vector|lang=zh-CN|style=Feynman)量不发生变化，[列维-奇维塔联络](@keyword=levi_civita_connection|lang=zh-CN|style=Feynman)告诉我们[协变微分](@keyword=covariant_differentiation|lang=zh-CN|style=Feynman)就是我们在初等微积分中学到的普通[偏微分](@keyword=partial_differentiation|lang=zh-CN|style=Feynman)。
 
 **情况2：弯曲空间的壮丽**
-现在来一个更激动人心的测试：一个半径为 $R$ 的球面。使用[球坐标](@article_id:306475) $(\theta, \varphi)$，度规分量不再是常数；例如，$g_{\varphi\varphi} = R^2 \sin^2\theta$。因为度规随位置（具体来说，随 $\theta$）而变化，其[导数](@article_id:318324)非零。将这些代入公式，我们发现一些[克里斯托费尔符号](@article_id:320235)现在非零。例如：
+现在来一个更激动人心的测试：一个半径为 $R$ 的球面。使用[球坐标](@keyword=spherical_coordinates|lang=zh-CN|style=Feynman) $(\theta, \varphi)$，度规分量不再是常数；例如，$g_{\varphi\varphi} = R^2 \sin^2\theta$。因为度规随位置（具体来说，随 $\theta$）而变化，其[导数](@keyword=derivative|lang=zh-CN|style=Feynman)非零。将这些代入公式，我们发现一些[克里斯托费尔符号](@keyword=christoffel_symbols|lang=zh-CN|style=Feynman)现在非零。例如：
 $$
 \Gamma^\theta_{\varphi\varphi} = -\sin\theta \cos\theta \quad \text{和} \quad \Gamma^\varphi_{\theta\varphi} = \cot\theta
 $$
 这些数字是关于如何在球面上平行输运一个矢量的精确指令。它们编码了球面的曲率。
 
-有了这些符号，我们就可以定义[流形](@article_id:313450)上“尽可能直的路径”。**[测地线](@article_id:327811)**（geodesic）是一条平行输运其自身切矢量的路径。可以将其看作是牛顿第一定律在弯曲空间中的体现：一个不受力的物体沿着协变加速度为零的路径运动，即 $\nabla_{\dot{\gamma}} \dot{\gamma} = 0$。在坐标中，这变成了著名的**[测地线方程](@article_id:328056)**（geodesic equation）：
+有了这些符号，我们就可以定义[流形](@keyword=manifold|lang=zh-CN|style=Feynman)上“尽可能直的路径”。**[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)**（geodesic）是一条平行输运其自身切矢量的路径。可以将其看作是牛顿第一定律在弯曲空间中的体现：一个不受力的物体沿着协变加速度为零的路径运动，即 $\nabla_{\dot{\gamma}} \dot{\gamma} = 0$。在坐标中，这变成了著名的**[测地线方程](@keyword=geodesic_equations|lang=zh-CN|style=Feynman)**（geodesic equation）：
 $$
 \frac{d^2 x^k}{dt^2} + \Gamma^k_{ij} \frac{dx^i}{dt} \frac{dx^j}{dt} = 0
 $$
-对于平直空间，其中 $\Gamma^k_{ij}=0$，这给出 $\ddot{x}^k=0$，其解是直线，正如我们所预期的。对于球面，非零的克里斯托费尔符号给出一组更复杂的[微分方程](@article_id:327891)。这些方程的解恰好是**[大圆](@article_id:332672)**——球面上的真正“直线”。
+对于平直空间，其中 $\Gamma^k_{ij}=0$，这给出 $\ddot{x}^k=0$，其解是直线，正如我们所预期的。对于球面，非零的克里斯托费尔符号给出一组更复杂的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)。这些方程的解恰好是**[大圆](@keyword=great_circle|lang=zh-CN|style=Feynman)**——球面上的真正“直线”。
 
 ### 为何两个条件都至关重要
 
@@ -93,12 +93,12 @@ $$
 
 一个联络可以无挠但与任何度规都不相容吗？可以。我们可以创造一组联络系数，它们在下方的指标上是对称的（保证零挠率），但发现度规相容性方程导致矛盾，迫使度规退化（即根本不是一个有效的度规）。这表明，“无扭曲”是不够的；联络还必须尊重空间的距离结构。
 
-如果一个联络与度规相容但有挠率呢？这也是可能的。这样的联络存在并用于需要考虑[内禀角动量](@article_id:368811)（自旋）的物理理论中，但它们不是[列维-奇维塔联络](@article_id:321511)。一个有趣的微妙之处在于，测地线方程只依赖于联络系数的对称部分。这意味着一个有挠联络的“直线”可以与一个[无挠联络](@article_id:366884)的“直线”完全相同！挠率通过其他方式表现出来，比如平行四边形的行为。
+如果一个联络与度规相容但有挠率呢？这也是可能的。这样的联络存在并用于需要考虑[内禀角动量](@keyword=intrinsic_angular_momentum|lang=zh-CN|style=Feynman)（自旋）的物理理论中，但它们不是[列维-奇维塔联络](@keyword=levi_civita_connection|lang=zh-CN|style=Feynman)。一个有趣的微妙之处在于，测地线方程只依赖于联络系数的对称部分。这意味着一个有挠联络的“直线”可以与一个[无挠联络](@keyword=symmetric_connection|lang=zh-CN|style=Feynman)的“直线”完全相同！挠率通过其他方式表现出来，比如平行四边形的行为。
 
-### 最后的宏[大统一](@article_id:320777)
+### 最后的宏[大统一](@keyword=grand_unification|lang=zh-CN|style=Feynman)
 
-故事并不止于球面和其他友好的、正曲率的[曲面](@article_id:331153)。整个逻辑结构——度规相容性和零挠率这两个要求导出一个唯一的联络——对于任何光滑、对称、*非退化*的度规都成立。它不一定是正定的。
+故事并不止于球面和其他友好的、正曲率的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)。整个逻辑结构——度规相容性和零挠率这两个要求导出一个唯一的联络——对于任何光滑、对称、*非退化*的度规都成立。它不一定是正定的。
 
-这把我们带到了现代物理学的领域。在爱因斯坦的广义[相对论](@article_id:327421)中，[时空](@article_id:370647)由一个不是黎曼度规而是**伪黎曼**（pseudo-Riemannian）度规（具体来说是[洛伦兹度规](@article_id:363658)）来描述。它具有像 $(-1, 1, 1, 1)$ 这样的号差，这意味着某些方向（类时方向）具有“负的平方长度”。然而，由于度规是非退化的，基本定理同样适用。
+这把我们带到了现代物理学的领域。在爱因斯坦的广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)中，[时空](@keyword=space_time|lang=zh-CN|style=Feynman)由一个不是黎曼度规而是**伪黎曼**（pseudo-Riemannian）度规（具体来说是[洛伦兹度规](@keyword=lorentzian_metric|lang=zh-CN|style=Feynman)）来描述。它具有像 $(-1, 1, 1, 1)$ 这样的号差，这意味着某些方向（类时方向）具有“负的平方长度”。然而，由于度规是非退化的，基本定理同样适用。
 
-我们宇宙的[时空](@article_id:370647)存在一个唯一的列维-奇维塔联络。由这个联络定义的[测地线](@article_id:327811)，是物[质粒](@article_id:327484)子和光线在[引力场](@article_id:348648)中自由运动时所遵循的路径。[时空](@article_id:370647)的“曲率”，编码在度规的[导数](@article_id:318324)中并通过[克里斯托费尔符号](@article_id:320235)表达出来，就是我们所感知的引力。那个在球面上描绘[大圆](@article_id:332672)的数学原理，同样也决定了行星围绕恒星的轨道。以这种深刻的方式，[列维-奇维塔联络](@article_id:321511)作为一个中心支柱，将抽象空间的几何学与宇宙的物理定律统一起来。
+我们宇宙的[时空](@keyword=space_time|lang=zh-CN|style=Feynman)存在一个唯一的列维-奇维塔联络。由这个联络定义的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)，是物[质粒](@keyword=plasmid|lang=zh-CN|style=Feynman)子和光线在[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)中自由运动时所遵循的路径。[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的“曲率”，编码在度规的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)中并通过[克里斯托费尔符号](@keyword=christoffel_symbols|lang=zh-CN|style=Feynman)表达出来，就是我们所感知的引力。那个在球面上描绘[大圆](@keyword=great_circle|lang=zh-CN|style=Feynman)的数学原理，同样也决定了行星围绕恒星的轨道。以这种深刻的方式，[列维-奇维塔联络](@keyword=levi_civita_connection|lang=zh-CN|style=Feynman)作为一个中心支柱，将抽象空间的几何学与宇宙的物理定律统一起来。

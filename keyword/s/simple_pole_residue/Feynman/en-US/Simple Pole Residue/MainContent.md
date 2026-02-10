@@ -1,11 +1,11 @@
 ## Introduction
-In the landscape of complex analysis, functions are often smooth and predictable. However, their most interesting features often lie at points where they break down—at singularities. Understanding these "infinities" is not just a mathematical curiosity; it is essential for solving problems across science and engineering. This article addresses the challenge of quantifying the simplest and most common type of singularity: the [simple pole](@article_id:163922). The key to unlocking its behavior is a single, powerful number known as the residue. We will explore how this concept provides a complete description of a singularity's local character. The first chapter, "Principles and Mechanisms," will delve into the definition of a [simple pole](@article_id:163922) residue, demonstrate how to uncover it using Laurent series, and introduce elegant shortcuts for its calculation. Following this, the "Applications and Interdisciplinary Connections" chapter will reveal how this seemingly abstract concept becomes a practical tool for solving real-world problems in fields ranging from calculus and number theory to control engineering and fundamental physics.
+In the landscape of complex analysis, functions are often smooth and predictable. However, their most interesting features often lie at points where they break down—at singularities. Understanding these "infinities" is not just a mathematical curiosity; it is essential for solving problems across science and engineering. This article addresses the challenge of quantifying the simplest and most common type of singularity: the [simple pole](@keyword=simple_pole|lang=en-US|style=Feynman). The key to unlocking its behavior is a single, powerful number known as the residue. We will explore how this concept provides a complete description of a singularity's local character. The first chapter, "Principles and Mechanisms," will delve into the definition of a [simple pole](@keyword=simple_pole|lang=en-US|style=Feynman) residue, demonstrate how to uncover it using Laurent series, and introduce elegant shortcuts for its calculation. Following this, the "Applications and Interdisciplinary Connections" chapter will reveal how this seemingly abstract concept becomes a practical tool for solving real-world problems in fields ranging from calculus and number theory to control engineering and fundamental physics.
 
 ## Principles and Mechanisms
 
 Imagine you are an explorer charting a vast, unknown landscape. This landscape is the complex plane, and the elevation at any point $z$ is given by the value of a function, $f(z)$. Much of this landscape is smooth and rolling; these are the regions where the function is "analytic," or well-behaved. But here and there, the terrain goes wild. You might find an infinitely deep pit or an infinitely high mountain spire. These are the **singularities**, points where the function breaks down and flies off to infinity.
 
-A physicist or an engineer encountering such a singularity doesn't just throw up their hands. They ask a crucial question: "How, exactly, is it infinite?" Is it a gentle, predictable infinity, or a chaotic, untamable one? The **residue** is the single, most important number that answers this question for the most common and well-behaved type of singularity: the **[simple pole](@article_id:163922)**. It is the secret code that unlocks the behavior of the function around its most interesting points.
+A physicist or an engineer encountering such a singularity doesn't just throw up their hands. They ask a crucial question: "How, exactly, is it infinite?" Is it a gentle, predictable infinity, or a chaotic, untamable one? The **residue** is the single, most important number that answers this question for the most common and well-behaved type of singularity: the **[simple pole](@keyword=simple_pole|lang=en-US|style=Feynman)**. It is the secret code that unlocks the behavior of the function around its most interesting points.
 
 ### The Anatomy of an Infinity: What is a Residue?
 
@@ -17,7 +17,7 @@ The part with negative powers is called the **principal part**, and it's what de
 
 The coefficient of this crucial term, $a_{-1}$, is defined as the **residue** of the function at $z_0$. It’s a single complex number that captures the entire "strength" and "character" of that simple infinity.
 
-Let's see this in action. Consider the function $f(z) = \frac{1 - \cos(z)}{z^3}$ . At a glance, the $z^3$ in the denominator suggests a nasty singularity at $z=0$. But let's look closer. We know the Taylor series for cosine starts as $\cos(z) = 1 - \frac{z^2}{2!} + \frac{z^4}{4!} - \dots$. Substituting this in, we get:
+Let's see this in action. Consider the function $f(z) = \frac{1 - \cos(z)}{z^3}$ [@problem_id:2250054]. At a glance, the $z^3$ in the denominator suggests a nasty singularity at $z=0$. But let's look closer. We know the Taylor series for cosine starts as $\cos(z) = 1 - \frac{z^2}{2!} + \frac{z^4}{4!} - \dots$. Substituting this in, we get:
 
 $$ f(z) = \frac{1 - (1 - \frac{z^2}{2!} + \frac{z^4}{4!} - \dots)}{z^3} = \frac{\frac{z^2}{2!} - \frac{z^4}{4!} + \dots}{z^3} = \frac{1}{2! \cdot z} - \frac{z}{4!} + \dots $$
 
@@ -25,7 +25,7 @@ Look at that! The seemingly ferocious singularity tamed itself. The Laurent seri
 
 ### A Magician's Toolkit for Finding Residues
 
-While finding the full Laurent series is the fundamental way to get the residue, it's often like building a clock just to tell the time. For [simple poles](@article_id:175274), mathematicians have developed two wonderfully elegant shortcuts.
+While finding the full Laurent series is the fundamental way to get the residue, it's often like building a clock just to tell the time. For [simple poles](@keyword=simple_poles|lang=en-US|style=Feynman), mathematicians have developed two wonderfully elegant shortcuts.
 
 **The Limit Trick**
 
@@ -37,7 +37,7 @@ All we have to do is take the limit as $z$ gets infinitesimally close to $z_0$, 
 
 $$ \text{Res}(f, z_0) = \lim_{z \to z_0} (z-z_0) f(z) $$
 
-Let's try this on the function $f(z) = \frac{z}{z^2 - 4}$ . The poles are clearly at $z=2$ and $z=-2$. To find the residue at $z=2$, we compute:
+Let's try this on the function $f(z) = \frac{z}{z^2 - 4}$ [@problem_id:2281696]. The poles are clearly at $z=2$ and $z=-2$. To find the residue at $z=2$, we compute:
 
 $$ \text{Res}(f, 2) = \lim_{z \to 2} (z-2) \frac{z}{(z-2)(z+2)} = \lim_{z \to 2} \frac{z}{z+2} = \frac{2}{2+2} = \frac{1}{2} $$
 
@@ -45,7 +45,7 @@ It's that easy! For the pole at $z=-2$, we get:
 
 $$ \text{Res}(f, -2) = \lim_{z \to -2} (z+2) \frac{z}{(z-2)(z+2)} = \lim_{z \to -2} \frac{z}{z-2} = \frac{-2}{-2-2} = \frac{1}{2} $$
 
-This technique is clean and direct, working even for more complicated-looking functions like $f(z) = \frac{\tan z}{z^2 - (\pi/4)^2}$ at the pole $z=\pi/4$ .
+This technique is clean and direct, working even for more complicated-looking functions like $f(z) = \frac{\tan z}{z^2 - (\pi/4)^2}$ at the pole $z=\pi/4$ [@problem_id:827013].
 
 **The Engineer's Formula**
 
@@ -57,15 +57,15 @@ As $z$ approaches $z_0$, $p(z)$ just becomes $p(z_0)$. So we have $f(z) \approx 
 
 $$ \text{Res}(f, z_0) = \frac{p(z_0)}{q'(z_0)} $$
 
-This formula is incredibly powerful. For the function $f(z) = \frac{z+3}{z^2 - z - 2}$ at the pole $z=2$ , we have $p(z)=z+3$ and $q(z)=z^2-z-2$. The derivative is $q'(z)=2z-1$. The residue is simply:
+This formula is incredibly powerful. For the function $f(z) = \frac{z+3}{z^2 - z - 2}$ at the pole $z=2$ [@problem_id:2272441], we have $p(z)=z+3$ and $q(z)=z^2-z-2$. The derivative is $q'(z)=2z-1$. The residue is simply:
 
 $$ \text{Res}(f, 2) = \frac{p(2)}{q'(2)} = \frac{2+3}{2(2)-1} = \frac{5}{3} $$
 
-No limits, no fuss. This formula shines with more complex functions. For $f(z) = \frac{\exp(az)}{\sin(\pi z)}$ at $z=2$ , finding the Laurent series would be a Herculean task. But with our formula, we have $p(z)=\exp(az)$ and $q(z)=\sin(\pi z)$, so $q'(z)=\pi \cos(\pi z)$. The residue is a thing of beauty:
+No limits, no fuss. This formula shines with more complex functions. For $f(z) = \frac{\exp(az)}{\sin(\pi z)}$ at $z=2$ [@problem_id:2241836], finding the Laurent series would be a Herculean task. But with our formula, we have $p(z)=\exp(az)$ and $q(z)=\sin(\pi z)$, so $q'(z)=\pi \cos(\pi z)$. The residue is a thing of beauty:
 
 $$ \text{Res}(f, 2) = \frac{\exp(a \cdot 2)}{\pi \cos(2\pi)} = \frac{\exp(2a)}{\pi} $$
 
-The formula even works in abstract situations. For the function $f(z) = \frac{1}{z - \cos(z)}$ , we are told there is a pole $z_0$ where $z_0 = \cos(z_0)$. We don't know the value of $z_0$, but we can still find the residue! Here $p(z)=1$ and $q(z)=z-\cos(z)$. The derivative is $q'(z)=1+\sin(z)$. So, the residue at $z_0$ must be:
+The formula even works in abstract situations. For the function $f(z) = \frac{1}{z - \cos(z)}$ [@problem_id:2241805], we are told there is a pole $z_0$ where $z_0 = \cos(z_0)$. We don't know the value of $z_0$, but we can still find the residue! Here $p(z)=1$ and $q(z)=z-\cos(z)$. The derivative is $q'(z)=1+\sin(z)$. So, the residue at $z_0$ must be:
 
 $$ \text{Res}(f, z_0) = \frac{1}{1+\sin(z_0)} $$
 
@@ -75,7 +75,7 @@ The method gives us a meaningful answer even without a number. This is the mark 
 
 So far, we have been deconstructing functions to find their residues. But can we go the other way? Can we use residues to *construct* a function? The answer is a resounding yes, and it reveals the deep role residues play.
 
-Imagine you are given a set of specifications : "Build me a function that has only two [simple poles](@article_id:175274): one at $z=i$ with residue $1$, and another at $z=-i$ with residue $-1$. Oh, and make it fade to zero far away from the origin."
+Imagine you are given a set of specifications [@problem_id:2253535]: "Build me a function that has only two [simple poles](@keyword=simple_poles|lang=en-US|style=Feynman): one at $z=i$ with residue $1$, and another at $z=-i$ with residue $-1$. Oh, and make it fade to zero far away from the origin."
 
 Let's start with the building blocks. The simplest possible function with a pole at $z=i$ and residue $1$ is $\frac{1}{z-i}$. The simplest function with a pole at $z=-i$ and residue $-1$ is $\frac{-1}{z+i}$.
 
@@ -99,7 +99,7 @@ $$ \oint_{\gamma} f(z) dz = 2\pi i \times (\text{Sum of residues of poles inside
 
 Think about what this means. You could have a hugely complicated path and a bizarre function, but the value of the integral—a "global" property of the path—boils down to a simple sum of a few local numbers!
 
-To get an intuition for this, we can draw on an analogy from physics . Imagine a thin sheet of water flowing smoothly. This is like an [analytic function](@article_id:142965). If you draw a loop and measure how much water flows across the boundary, the net flow will be zero; whatever flows in must flow out. This is the essence of Cauchy's Integral Theorem, which states that the integral of an analytic function around a closed loop is zero.
+To get an intuition for this, we can draw on an analogy from physics [@problem_id:521338]. Imagine a thin sheet of water flowing smoothly. This is like an [analytic function](@keyword=analytic_function|lang=en-US|style=Feynman). If you draw a loop and measure how much water flows across the boundary, the net flow will be zero; whatever flows in must flow out. This is the essence of Cauchy's Integral Theorem, which states that the integral of an analytic function around a closed loop is zero.
 
 But what if there are sources or sinks within your loop, points where water is being pumped in or drained out? Now, the net flow across the boundary will no longer be zero. It will be exactly equal to the total strength of the sources and sinks inside.
 

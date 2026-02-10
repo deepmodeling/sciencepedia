@@ -17,7 +17,7 @@ $$
 \det(AB) = \det(A)\det(B)
 $$
 
-This isn't just a dry algebraic rule; it’s a narrative of composite actions. You do one thing, then another, and the total effect on volume is the product of the individual effects. This beautiful property holds true even for transformations involving complex numbers .
+This isn't just a dry algebraic rule; it’s a narrative of composite actions. You do one thing, then another, and the total effect on volume is the product of the individual effects. This beautiful property holds true even for transformations involving complex numbers [@problem_id:3365].
 
 This multiplicative nature lets us deduce other properties with surprising ease. For instance, consider a sequence of operations: stretch by $A$, stretch by $B$, then *undo* the stretch from $A$, and finally *undo* the stretch from $B$. This sequence is represented by the matrix product $ABA^{-1}B^{-1}$, known as the commutator. What is its determinant? Using our rule, it must be $\det(A) \det(B) \det(A^{-1}) \det(B^{-1})$. Since undoing a transformation must reverse its effect on volume, the determinant of an inverse matrix is simply the reciprocal: $\det(A^{-1}) = 1/\det(A)$. Putting it all together, we get:
 
@@ -25,9 +25,9 @@ $$
 \det(ABA^{-1}B^{-1}) = \det(A)\det(B)\frac{1}{\det(A)}\frac{1}{\det(B)} = 1
 $$
 
-No matter how complicated the matrices $A$ and $B$ are, this particular dance of transformations will always result in a net volume scaling of 1 .
+No matter how complicated the matrices $A$ and $B$ are, this particular dance of transformations will always result in a net volume scaling of 1 [@problem_id:16961].
 
-But beware of a common trap! If the determinant is so well-behaved with multiplication, does it also play nice with addition? If you add two transformations, $A+B$, is the resulting determinant simply $\det(A) + \det(B)$? The answer is a resounding no. Imagine two different stretches; their sum doesn't correspond to a simple addition of their area-scaling effects. The geometry is far more intertwined and complex. A quick calculation with simple matrices confirms this intuition: $\det(A+B)$ is almost never equal to $\det(A) + \det(B)$ . The determinant respects composition (multiplication), not superposition (addition).
+But beware of a common trap! If the determinant is so well-behaved with multiplication, does it also play nice with addition? If you add two transformations, $A+B$, is the resulting determinant simply $\det(A) + \det(B)$? The answer is a resounding no. Imagine two different stretches; their sum doesn't correspond to a simple addition of their area-scaling effects. The geometry is far more intertwined and complex. A quick calculation with simple matrices confirms this intuition: $\det(A+B)$ is almost never equal to $\det(A) + \det(B)$ [@problem_id:1354047]. The determinant respects composition (multiplication), not superposition (addition).
 
 ### The Point of No Return: Zero Determinant and Invertibility
 
@@ -41,21 +41,21 @@ This establishes a profound and absolutely critical link:
 
 > A square matrix $M$ is invertible if and only if its determinant is non-zero.
 
-These two statements are logically equivalent. Knowing one is true immediately tells you the other is true. Knowing one is false tells you the other is false. They are two sides of the same coin, a cornerstone of linear algebra .
+These two statements are logically equivalent. Knowing one is true immediately tells you the other is true. Knowing one is false tells you the other is false. They are two sides of the same coin, a cornerstone of linear algebra [@problem_id:1360229].
 
 ### The Computational Machinery: A Recursive Recipe
 
-So we know what the determinant *means* and what it *does*. But for a large $n \times n$ matrix, how do we actually compute this volume scaling factor? For a $2 \times 2$ matrix $\begin{pmatrix} a & b \\ c & d \end{pmatrix}$, the formula is the familiar $ad-bc$. For larger matrices, we use a clever recursive method called **[cofactor expansion](@article_id:150428)**.
+So we know what the determinant *means* and what it *does*. But for a large $n \times n$ matrix, how do we actually compute this volume scaling factor? For a $2 \times 2$ matrix $\begin{pmatrix} a & b \\ c & d \end{pmatrix}$, the formula is the familiar $ad-bc$. For larger matrices, we use a clever recursive method called **[cofactor expansion](@keyword=cofactor_expansion|lang=en-US|style=Feynman)**.
 
-Imagine trying to calculate the volume of a complicated 3D shape. One way is to slice it into a series of 2D [cross-sections](@article_id:167801), find the area of each slice, and add them up in a specific way. Cofactor expansion is the n-dimensional version of this. It breaks down the calculation of an $n \times n$ determinant into a sum of scaled $(n-1) \times (n-1)$ determinants. Each of these can be broken down further, until you're left with simple $2 \times 2$ determinants that you can calculate directly.
+Imagine trying to calculate the volume of a complicated 3D shape. One way is to slice it into a series of 2D [cross-sections](@keyword=cross_sections|lang=en-US|style=Feynman), find the area of each slice, and add them up in a specific way. Cofactor expansion is the n-dimensional version of this. It breaks down the calculation of an $n \times n$ determinant into a sum of scaled $(n-1) \times (n-1)$ determinants. Each of these can be broken down further, until you're left with simple $2 \times 2$ determinants that you can calculate directly.
 
-The "scaling" in this process involves two parts: the value of a matrix entry and a sign. This sign comes from a "checkerboard" pattern of pluses and minuses, determined by the position of the entry, $(-1)^{i+j}$ . This sign pattern is the algebraic bookkeeping required to keep track of the orientation (the "handedness" of the space) as we recursively slice our [n-dimensional volume](@article_id:189852).
+The "scaling" in this process involves two parts: the value of a matrix entry and a sign. This sign comes from a "checkerboard" pattern of pluses and minuses, determined by the position of the entry, $(-1)^{i+j}$ [@problem_id:1354036]. This sign pattern is the algebraic bookkeeping required to keep track of the orientation (the "handedness" of the space) as we recursively slice our [n-dimensional volume](@keyword=n_dimensional_volume|lang=en-US|style=Feynman).
 
-One of the beautiful symmetries revealed by this method is that you can perform the expansion along *any* row or *any* column and you will always get the same number. This implies something remarkable: if you take a matrix and flip it across its main diagonal (an operation called the **transpose**, turning rows into columns and vice-versa), the determinant does not change. The volume scaling factor is immune to this operation  .
+One of the beautiful symmetries revealed by this method is that you can perform the expansion along *any* row or *any* column and you will always get the same number. This implies something remarkable: if you take a matrix and flip it across its main diagonal (an operation called the **transpose**, turning rows into columns and vice-versa), the determinant does not change. The volume scaling factor is immune to this operation [@problem_id:1354013] [@problem_id:1399346].
 
 ### The Inner Workings: Determinants and the Inverse Matrix
 
-The [cofactor expansion](@article_id:150428) isn't just a computational trick; it gives us a stunning formula for the [inverse of a matrix](@article_id:154378). If you gather all the [cofactors](@article_id:137009) (the signed sub-determinants) of a matrix $A$ and arrange them in a special way (transposing them, to be precise), you get a new matrix called the **adjugate** of $A$, denoted $\text{adj}(A)$. The inverse matrix is then given by this elegant formula:
+The [cofactor expansion](@keyword=cofactor_expansion|lang=en-US|style=Feynman) isn't just a computational trick; it gives us a stunning formula for the [inverse of a matrix](@keyword=inverse_of_a_matrix|lang=en-US|style=Feynman). If you gather all the [cofactors](@keyword=cofactors|lang=en-US|style=Feynman) (the signed sub-determinants) of a matrix $A$ and arrange them in a special way (transposing them, to be precise), you get a new matrix called the **adjugate** of $A$, denoted $\text{adj}(A)$. The inverse matrix is then given by this elegant formula:
 
 $$
 A^{-1} = \frac{1}{\det(A)} \text{adj}(A)
@@ -63,14 +63,14 @@ $$
 
 This formula is the culmination of our journey. It explicitly shows why a matrix is invertible only if its determinant is non-zero—if $\det(A)=0$, the formula requires division by zero, an impossibility!
 
-This formula also leads to beautiful, non-obvious results. Consider a matrix $A$ whose entries are all integers. Its cofactors are determinants of smaller integer matrices, so they are also integers. This means $\text{adj}(A)$ is also an [integer matrix](@article_id:151148). Now, what if we are told that $\det(A)$ is either $1$ or $-1$? According to our formula, $A^{-1} = \pm \text{adj}(A)$. Since $\text{adj}(A)$ is an [integer matrix](@article_id:151148), the inverse, $A^{-1}$, must also be an [integer matrix](@article_id:151148)! This is a fascinating result in number theory and group theory, and it falls right out of this powerful formula .
+This formula also leads to beautiful, non-obvious results. Consider a matrix $A$ whose entries are all integers. Its cofactors are determinants of smaller integer matrices, so they are also integers. This means $\text{adj}(A)$ is also an [integer matrix](@keyword=integer_matrix|lang=en-US|style=Feynman). Now, what if we are told that $\det(A)$ is either $1$ or $-1$? According to our formula, $A^{-1} = \pm \text{adj}(A)$. Since $\text{adj}(A)$ is an [integer matrix](@keyword=integer_matrix|lang=en-US|style=Feynman), the inverse, $A^{-1}$, must also be an [integer matrix](@keyword=integer_matrix|lang=en-US|style=Feynman)! This is a fascinating result in number theory and group theory, and it falls right out of this powerful formula [@problem_id:1387477].
 
 ### The True Essence: A Coordinate-Free Idea
 
 Throughout this discussion, we've talked about matrices, which are just grids of numbers. But a matrix is only a representation of a linear transformation with respect to a chosen coordinate system (a basis). If we choose a different basis, the same transformation will be represented by a different matrix. Does the determinant, then, depend on our choice of coordinates?
 
-The beautiful truth is that it does not. The determinant is an **intrinsic property of the [linear operator](@article_id:136026) itself**. The factor by which a transformation scales volume is a fundamental truth about that operator, independent of how we write it down.
+The beautiful truth is that it does not. The determinant is an **intrinsic property of the [linear operator](@keyword=linear_operator|lang=en-US|style=Feynman) itself**. The factor by which a transformation scales volume is a fundamental truth about that operator, independent of how we write it down.
 
-We can see this by considering transformations on more abstract spaces, like spaces of polynomials. An operator like $T(p(x)) = p(x) + x p'(x)$ acts on polynomials. We can choose a basis, like $\{1, x, x^2\}$, write down a matrix for $T$, and compute its determinant. But more fundamentally, we can ask: how does $T$ transform the "volume" spanned by our basis elements? By applying the transformation to each [basis vector](@article_id:199052) and seeing how the resulting "hyper-parallelepiped" volume changes, we find the determinant is 6. If we had chosen a different basis for the polynomials, the matrix for $T$ would be different, but its determinant would still be 6 . The determinant is a property of the stretching, not the ruler you use to measure it.
+We can see this by considering transformations on more abstract spaces, like spaces of polynomials. An operator like $T(p(x)) = p(x) + x p'(x)$ acts on polynomials. We can choose a basis, like $\{1, x, x^2\}$, write down a matrix for $T$, and compute its determinant. But more fundamentally, we can ask: how does $T$ transform the "volume" spanned by our basis elements? By applying the transformation to each [basis vector](@keyword=basis_vector|lang=en-US|style=Feynman) and seeing how the resulting "hyper-parallelepiped" volume changes, we find the determinant is 6. If we had chosen a different basis for the polynomials, the matrix for $T$ would be different, but its determinant would still be 6 [@problem_id:1357337]. The determinant is a property of the stretching, not the ruler you use to measure it.
 
 And so, from a simple picture of stretching rubber sheets, we arrive at a deep and powerful concept that lies at the very heart of linear algebra, connecting geometry, algebra, and the fundamental nature of linear transformations.

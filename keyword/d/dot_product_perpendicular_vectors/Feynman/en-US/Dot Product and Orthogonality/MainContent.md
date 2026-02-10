@@ -23,15 +23,15 @@ Here, $|\vec{a}|$ and $|\vec{b}|$ are the lengths (magnitudes) of the vectors, a
 
 ### The Magic of Zero: Unveiling Perpendicularity
 
-Now for the crucial question: what happens if the dot product is zero? Assuming neither vector has zero length (they aren't just points at the origin), for $|\vec{a}| |\vec{b}| \cos(\theta)$ to be zero, the only term that can be zero is $\cos(\theta)$. And when is $\cos(\theta)$ equal to zero? Precisely when the angle $\theta$ is $90^\circ$ (or $\frac{\pi}{2}$ [radians](@article_id:171199)).
+Now for the crucial question: what happens if the dot product is zero? Assuming neither vector has zero length (they aren't just points at the origin), for $|\vec{a}| |\vec{b}| \cos(\theta)$ to be zero, the only term that can be zero is $\cos(\theta)$. And when is $\cos(\theta)$ equal to zero? Precisely when the angle $\theta$ is $90^\circ$ (or $\frac{\pi}{2}$ [radians](@keyword=radians|lang=en-US|style=Feynman)).
 
 This is the central idea, the absolute bedrock of what follows:
 
 **If the dot product of two non-zero vectors is zero, the vectors are perpendicular (or orthogonal).**
 
-This isn't just a definition; it's a profound link between a simple algebraic calculation and a fundamental geometric property. Suddenly, we have a universal test for "right angles." Does a line with direction $\vec{d}_1$ meet another with direction $\vec{d}_2$ at a right angle? We don't need a protractor; we just need to calculate $\vec{d}_1 \cdot \vec{d}_2$ and see if it's zero .
+This isn't just a definition; it's a profound link between a simple algebraic calculation and a fundamental geometric property. Suddenly, we have a universal test for "right angles." Does a line with direction $\vec{d}_1$ meet another with direction $\vec{d}_2$ at a right angle? We don't need a protractor; we just need to calculate $\vec{d}_1 \cdot \vec{d}_2$ and see if it's zero [@problem_id:2115557].
 
-This principle gives us an immediate and practical way to construct perpendicular vectors. In a 2D plane, if you have a vector $\vec{v} = \langle a, b \rangle$, you can instantly write down a vector perpendicular to it: $\vec{w} = \langle -b, a \rangle$. Why? Just check the dot product: $\vec{v} \cdot \vec{w} = (a)(-b) + (b)(a) = -ab + ab = 0$. This simple trick, used to find [perpendicular lines](@article_id:173653) , is a direct consequence of this deep principle.
+This principle gives us an immediate and practical way to construct perpendicular vectors. In a 2D plane, if you have a vector $\vec{v} = \langle a, b \rangle$, you can instantly write down a vector perpendicular to it: $\vec{w} = \langle -b, a \rangle$. Why? Just check the dot product: $\vec{v} \cdot \vec{w} = (a)(-b) + (b)(a) = -ab + ab = 0$. This simple trick, used to find [perpendicular lines](@keyword=perpendicular_lines|lang=en-US|style=Feynman) [@problem_id:2114997], is a direct consequence of this deep principle.
 
 ### Pythagoras Unleashed: Right Angles in Any Dimension
 
@@ -43,7 +43,7 @@ $$
 \|\vec{u} + \vec{v}\|^2 = (\vec{u} + \vec{v}) \cdot (\vec{u} + \vec{v})
 $$
 
-Using the [distributive property](@article_id:143590) of the dot product (it works just like regular multiplication), we get:
+Using the [distributive property](@keyword=distributive_property|lang=en-US|style=Feynman) of the dot product (it works just like regular multiplication), we get:
 
 $$
 \|\vec{u} + \vec{v}\|^2 = \vec{u} \cdot \vec{u} + \vec{u} \cdot \vec{v} + \vec{v} \cdot \vec{u} + \vec{v} \cdot \vec{v} = \|\vec{u}\|^2 + 2(\vec{u} \cdot \vec{v}) + \|\vec{v}\|^2
@@ -55,7 +55,7 @@ $$
 \|\vec{u} + \vec{v}\|^2 = \|\vec{u}\|^2 + \|\vec{v}\|^2
 $$
 
-There it is. The Pythagorean theorem, derived from the first principles of vectors. But here is the astonishing part: our definition of the dot product and orthogonality works in *any* number of dimensions. The derivation we just did makes no mention of 2D or 3D space. It is completely general. This means that if you have two [orthogonal vectors](@article_id:141732) in a 5-dimensional space, say $\vec{v}_1 = (0, 5, 0, 0, 0)$ and $\vec{v}_2 = (0, 0, 0, 12, 0)$, the Pythagorean theorem still holds perfectly  . We have liberated Pythagoras from the flat plane and unleashed his theorem across the universe of [vector spaces](@article_id:136343)!
+There it is. The Pythagorean theorem, derived from the first principles of vectors. But here is the astonishing part: our definition of the dot product and orthogonality works in *any* number of dimensions. The derivation we just did makes no mention of 2D or 3D space. It is completely general. This means that if you have two [orthogonal vectors](@keyword=orthogonal_vectors|lang=en-US|style=Feynman) in a 5-dimensional space, say $\vec{v}_1 = (0, 5, 0, 0, 0)$ and $\vec{v}_2 = (0, 0, 0, 12, 0)$, the Pythagorean theorem still holds perfectly [@problem_id:1397506] [@problem_id:7086]. We have liberated Pythagoras from the flat plane and unleashed his theorem across the universe of [vector spaces](@keyword=vector_spaces|lang=en-US|style=Feynman)!
 
 ### A Vector Toolkit: Forging Orthogonality
 
@@ -63,15 +63,15 @@ The dot product is a fantastic test for perpendicularity, but how do we *find* o
 
 #### The Cross Product: A 3D Specialty
 
-In our familiar 3-dimensional world, we have a magical operation called the **[cross product](@article_id:156255)**. Written as $\vec{u} \times \vec{v}$, it takes two vectors and produces a *third* vector that is, by its very nature, orthogonal to both of the original vectors. This is an incredibly powerful construction tool.
+In our familiar 3-dimensional world, we have a magical operation called the **[cross product](@keyword=cross_product|lang=en-US|style=Feynman)**. Written as $\vec{u} \times \vec{v}$, it takes two vectors and produces a *third* vector that is, by its very nature, orthogonal to both of the original vectors. This is an incredibly powerful construction tool.
 
-Imagine you're designing an experimental fusion reactor . The laser beam for a diagnostic tool must travel along the line where two magnetic field planes intersect. How do you find the direction of that line? Well, a line lying in a plane is perpendicular to that plane's [normal vector](@article_id:263691). So, the line of intersection must be perpendicular to *both* planes' normal vectors. The cross product is tailor-made for this: take the [cross product](@article_id:156255) of the two normal vectors, and you get the direction vector for your laser beam!
+Imagine you're designing an experimental fusion reactor [@problem_id:2115537]. The laser beam for a diagnostic tool must travel along the line where two magnetic field planes intersect. How do you find the direction of that line? Well, a line lying in a plane is perpendicular to that plane's [normal vector](@keyword=normal_vector|lang=en-US|style=Feynman). So, the line of intersection must be perpendicular to *both* planes' normal vectors. The cross product is tailor-made for this: take the [cross product](@keyword=cross_product|lang=en-US|style=Feynman) of the two normal vectors, and you get the direction vector for your laser beam!
 
-The fundamental property that $(\vec{u} \times \vec{v})$ is orthogonal to both $\vec{u}$ and $\vec{v}$ can be verified with the dot product. We always find that $(\vec{u} \times \vec{v}) \cdot \vec{u} = 0$ and $(\vec{u} \times \vec{v}) \cdot \vec{v} = 0$. This is not a coincidence; it's the defining geometric feature of the cross product . This also leads to a wonderful geometric interpretation for three vectors: if three vectors $\vec{u}, \vec{v}, \vec{w}$ lie in the same plane (they are coplanar), then $\vec{w}$ must be perpendicular to the vector $\vec{u} \times \vec{v}$ which is normal to the plane. Thus, the condition for coplanarity is that their **scalar triple product** is zero: $\vec{w} \cdot (\vec{u} \times \vec{v}) = 0$ .
+The fundamental property that $(\vec{u} \times \vec{v})$ is orthogonal to both $\vec{u}$ and $\vec{v}$ can be verified with the dot product. We always find that $(\vec{u} \times \vec{v}) \cdot \vec{u} = 0$ and $(\vec{u} \times \vec{v}) \cdot \vec{v} = 0$. This is not a coincidence; it's the defining geometric feature of the cross product [@problem_id:1356851]. This also leads to a wonderful geometric interpretation for three vectors: if three vectors $\vec{u}, \vec{v}, \vec{w}$ lie in the same plane (they are coplanar), then $\vec{w}$ must be perpendicular to the vector $\vec{u} \times \vec{v}$ which is normal to the plane. Thus, the condition for coplanarity is that their **scalar triple product** is zero: $\vec{w} \cdot (\vec{u} \times \vec{v}) = 0$ [@problem_id:1356841].
 
 #### Projection: Casting Shadows to Find the Perpendicular
 
-The [cross product](@article_id:156255) is a 3D-only trick. What about higher dimensions? Or what if we want to break a vector down relative to just one other vector? The tool for this is **projection**.
+The [cross product](@keyword=cross_product|lang=en-US|style=Feynman) is a 3D-only trick. What about higher dimensions? Or what if we want to break a vector down relative to just one other vector? The tool for this is **projection**.
 
 Any vector $\vec{v}$ can be split into two parts relative to a reference vector $\vec{a}$: a component parallel to $\vec{a}$ ($\vec{v}_{\parallel}$) and a component perpendicular to $\vec{a}$ ($\vec{v}_{\perp}$).
 
@@ -91,7 +91,7 @@ $$
 \vec{v}_{\perp} = \vec{v} - \vec{v}_{\parallel} = \vec{v} - \left( \frac{\vec{v} \cdot \vec{a}}{|\vec{a}|^2} \right) \vec{a}
 $$
 
-By its very construction, $\vec{v}_{\perp}$ is guaranteed to be orthogonal to $\vec{a}$. This method, called the Gram-Schmidt process, is a general-purpose machine for building [orthogonal vectors](@article_id:141732) from any set of initial vectors, and it is used constantly in physics and engineering . There are even more elegant (if initially more opaque) ways to isolate these components, such as using the **[vector triple product](@article_id:162448)**. The expression $\vec{a} \times (\vec{v} \times \vec{a})$ turns out to be a compact formula for calculating the perpendicular component $\vec{v}_{\perp}$, scaled by $|\vec{a}|^2$ .
+By its very construction, $\vec{v}_{\perp}$ is guaranteed to be orthogonal to $\vec{a}$. This method, called the Gram-Schmidt process, is a general-purpose machine for building [orthogonal vectors](@keyword=orthogonal_vectors|lang=en-US|style=Feynman) from any set of initial vectors, and it is used constantly in physics and engineering [@problem_id:2120751]. There are even more elegant (if initially more opaque) ways to isolate these components, such as using the **[vector triple product](@keyword=vector_triple_product|lang=en-US|style=Feynman)**. The expression $\vec{a} \times (\vec{v} \times \vec{a})$ turns out to be a compact formula for calculating the perpendicular component $\vec{v}_{\perp}$, scaled by $|\vec{a}|^2$ [@problem_id:2175532].
 
 ### The Grand Synthesis: Orthogonality in Matrices
 
@@ -107,6 +107,6 @@ $$
 A^T A = \begin{pmatrix} \|\vec{v}_1\|^2 & 0 & \dots & 0 \\ 0 & \|\vec{v}_2\|^2 & \dots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \dots & \|\vec{v}_n\|^2 \end{pmatrix}
 $$
 
-This is a profound result . The geometric property of orthogonality simplifies the algebraic structure dramatically. The determinant of this matrix, which geometrically represents the squared volume of the parallelepiped spanned by the column vectors, is now trivial to compute: it's just the product of the diagonal entries, $\|\vec{v}_1\|^2 \|\vec{v}_2\|^2 \dots \|\vec{v}_n\|^2$.
+This is a profound result [@problem_id:16999]. The geometric property of orthogonality simplifies the algebraic structure dramatically. The determinant of this matrix, which geometrically represents the squared volume of the parallelepiped spanned by the column vectors, is now trivial to compute: it's just the product of the diagonal entries, $\|\vec{v}_1\|^2 \|\vec{v}_2\|^2 \dots \|\vec{v}_n\|^2$.
 
-From a simple rule about a dot product being zero, we have journeyed through a generalized Pythagorean theorem, built tools for constructing [perpendicular lines](@article_id:173653) and vectors, and uncovered a deep structural property of matrices. This is the way of physics and mathematics: a simple, intuitive idea, when pursued with curiosity, reveals a hidden unity and elegance that underpins the world around us. The humble dot product is not just arithmetic; it's a window into the geometry of the universe.
+From a simple rule about a dot product being zero, we have journeyed through a generalized Pythagorean theorem, built tools for constructing [perpendicular lines](@keyword=perpendicular_lines|lang=en-US|style=Feynman) and vectors, and uncovered a deep structural property of matrices. This is the way of physics and mathematics: a simple, intuitive idea, when pursued with curiosity, reveals a hidden unity and elegance that underpins the world around us. The humble dot product is not just arithmetic; it's a window into the geometry of the universe.

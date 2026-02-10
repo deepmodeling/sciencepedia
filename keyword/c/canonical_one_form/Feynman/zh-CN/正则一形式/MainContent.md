@@ -1,7 +1,7 @@
 ## 引言
-在物理学这一宏伟事业中，最终目标不仅是描述运动，更是揭示支配运动的基本原理。虽然[运动方程](@article_id:349901)告诉我们系统*如何*演化，但更深层次的理解来自于那些决定了方程*为何*呈现其形式的几何结构。[经典动力学](@article_id:356307)的舞台是相空间，这是一个包含系统状态（其位置和动量）完整信息的抽象空间。本文要探讨的核心问题是：在这个空间中是否存在一种内在的、坐标无关的结构，能够统一运动定律？
+在物理学这一宏伟事业中，最终目标不仅是描述运动，更是揭示支配运动的基本原理。虽然[运动方程](@keyword=equations_of_motion|lang=zh-CN|style=Feynman)告诉我们系统*如何*演化，但更深层次的理解来自于那些决定了方程*为何*呈现其形式的几何结构。[经典动力学](@keyword=classical_dynamics|lang=zh-CN|style=Feynman)的舞台是相空间，这是一个包含系统状态（其位置和动量）完整信息的抽象空间。本文要探讨的核心问题是：在这个空间中是否存在一种内在的、坐标无关的结构，能够统一运动定律？
 
-答案在于一个极其优雅的数学对象——**正则一形式**。本文旨在引导读者理解这一现代物理学的基石。在第一章“原理与机制”中，我们将揭开这一形式的神秘面纱，探讨它的定义、其在[坐标变换](@article_id:323290)下深刻的[不变性](@article_id:300612)，以及它如何产生出位于[哈密顿力学](@article_id:306622)核心的辛形式。随后的“应用与跨学科联系”一章将揭示该一形式的真正威力，展示它如何被用于理解对称性、简化复杂问题，并在经典世界与量子世界之间建立起令人惊奇的联系。
+答案在于一个极其优雅的数学对象——**正则一形式**。本文旨在引导读者理解这一现代物理学的基石。在第一章“原理与机制”中，我们将揭开这一形式的神秘面纱，探讨它的定义、其在[坐标变换](@keyword=coordinate_transformations|lang=zh-CN|style=Feynman)下深刻的[不变性](@keyword=invariance|lang=zh-CN|style=Feynman)，以及它如何产生出位于[哈密顿力学](@keyword=hamiltonian_mechanics|lang=zh-CN|style=Feynman)核心的辛形式。随后的“应用与跨学科联系”一章将揭示该一形式的真正威力，展示它如何被用于理解对称性、简化复杂问题，并在经典世界与量子世界之间建立起令人惊奇的联系。
 
 ## 原理与机制
 
@@ -15,25 +15,25 @@
 
 $$ \theta = p \, dq $$
 
-这就是著名的**正则一形式**，有时也称为**刘维尔形式 (Liouville form)**。表达式 $\theta = p\,dq$ 究竟*意味着*什么？它是一个配方。它说：“在相空间中进行任意一次无穷小行程。找到该行程中对应于位置变化的分量 $dq$。然后，将该变化乘以该点处的动量值 $p$。忽略动量的任何变化 $dp$。” 。这是一种非常特定的测量。它有点像“位置”高速公路上的一个收费站，根据你的动量收取相应的费用。而对于这个收费站来说，“动量”高速公路是免费的。
+这就是著名的**正则一形式**，有时也称为**刘维尔形式 (Liouville form)**。表达式 $\theta = p\,dq$ 究竟*意味着*什么？它是一个配方。它说：“在相空间中进行任意一次无穷小行程。找到该行程中对应于位置变化的分量 $dq$。然后，将该变化乘以该点处的动量值 $p$。忽略动量的任何变化 $dp$。” [@problem_id:1669583]。这是一种非常特定的测量。它有点像“位置”高速公路上的一个收费站，根据你的动量收取相应的费用。而对于这个收费站来说，“动量”高速公路是免费的。
 
 这个想法可以完美地推广。如果我们的粒子在二维平面上运动，其位置为 $(q_1, q_2)$（或者你也可以用 $(x,y)$），动量为 $(p_1, p_2)$。此时相空间是四维的。那么正则一形式是什么呢？它就是各个方向上“过路费”的总和：
 
 $$ \theta = p_1 dq_1 + p_2 dq_2 $$
 
-如果你给我这个相空间中某个复杂的运动，比如一个[向量场](@article_id:322515) $V = y \frac{\partial}{\partial x} + x \frac{\partial}{\partial y} + p_y \frac{\partial}{\partial p_x} + p_x \frac{\partial}{\partial p_y}$，我们的一次形式 $\theta$ 可以“测量”它。通过应用那个配方——将 $V$ 的 $dx$ 分量乘以 $p_x$，将 $dy$ 分量乘以 $p_y$——我们得到一个函数 $\theta(V) = p_x(y) + p_y(x) = y p_x + x p_y$ 。这不再是一个抽象的形式；它是一个具体的、在相空间中逐点变化的物理量。
+如果你给我这个相空间中某个复杂的运动，比如一个[向量场](@keyword=vector_field|lang=zh-CN|style=Feynman) $V = y \frac{\partial}{\partial x} + x \frac{\partial}{\partial y} + p_y \frac{\partial}{\partial p_x} + p_x \frac{\partial}{\partial p_y}$，我们的一次形式 $\theta$ 可以“测量”它。通过应用那个配方——将 $V$ 的 $dx$ 分量乘以 $p_x$，将 $dy$ 分量乘以 $p_y$——我们得到一个函数 $\theta(V) = p_x(y) + p_y(x) = y p_x + x p_y$ [@problem_id:1545996]。这不再是一个抽象的形式；它是一个具体的、在相空间中逐点变化的物理量。
 
 ### 永不改变的形式
 
-现在是见证奇迹的时刻。我们用笛卡尔坐标 $(x,y)$ 描述粒子，但这只是一种选择。我们本可以用[极坐标](@article_id:319829) $(r, \phi)$。物理学不应该依赖于我们选择的描述方式！那么，我们的正则一形式 $\theta = p_x dx + p_y dy$ 会发生什么变化呢？
+现在是见证奇迹的时刻。我们用笛卡尔坐标 $(x,y)$ 描述粒子，但这只是一种选择。我们本可以用[极坐标](@keyword=polar_coordinates|lang=zh-CN|style=Feynman) $(r, \phi)$。物理学不应该依赖于我们选择的描述方式！那么，我们的正则一形式 $\theta = p_x dx + p_y dy$ 会发生什么变化呢？
 
 让我们来做这个变换。我们知道 $x = r \cos(\phi)$ 和 $y = r \sin(\phi)$。一点微积分知识就能告诉我们微分之间的关系：$dx = \cos(\phi)dr - r\sin(\phi)d\phi$ 和 $dy = \sin(\phi)dr + r\cos(\phi)d\phi$。如果我们将这些代入 $\theta$ 的表达式，会得到一团有点乱的东西：
 
 $$ \theta = \left(p_{x}\cos(\phi) + p_{y}\sin(\phi)\right)dr + r\left(-p_{x}\sin(\phi) + p_{y}\cos(\phi)\right)d\phi $$
 
-这是正确的表达式  ，但它看起来很复杂。我们那优美简洁的形式 $\sum p_i dq^i$ 似乎被破坏了。
+这是正确的表达式 [@problem_id:2060171] [@problem_id:2060150]，但它看起来很复杂。我们那优美简洁的形式 $\sum p_i dq^i$ 似乎被破坏了。
 
-但是等等！我们只改变了位置坐标。我们还没有确定在这个新系统中*动量*应该是什么。什么是“$r$方向”的动量 $p_r$，或者“$\phi$方向”的角动量 $p_\phi$？正则一形式本身就给出了答案！新的动量被*定义*为乘以新[微分](@article_id:319122)的那些系数。我们只需声明：
+但是等等！我们只改变了位置坐标。我们还没有确定在这个新系统中*动量*应该是什么。什么是“$r$方向”的动量 $p_r$，或者“$\phi$方向”的角动量 $p_\phi$？正则一形式本身就给出了答案！新的动量被*定义*为乘以新[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)的那些系数。我们只需声明：
 
 $$ p_r = p_{x}\cos(\phi) + p_{y}\sin(\phi) $$
 $$ p_\phi = r\left(-p_{x}\sin(\phi) + p_{y}\cos(\phi)\right) $$
@@ -42,7 +42,7 @@ $$ p_\phi = r\left(-p_{x}\sin(\phi) + p_{y}\cos(\phi)\right) $$
 
 $$ \theta = p_r dr + p_\phi d\phi $$
 
-它回来了！形式是相同的：(动量坐标) 乘以 (相应位置坐标的[微分](@article_id:319122)) 的总和 。这是一个惊人的结果。正则一形式的结构是不变的。它不依赖于你用来描述系统位形的坐标。这就是为什么它被称为“正则”——它是相空间上一种与生俱来的结构，而非人为的发明。它是重言的；它就是那个在你切换[坐标系](@article_id:316753)时*定义*了[共轭动量](@article_id:351333)是什么的东西。
+它回来了！形式是相同的：(动量坐标) 乘以 (相应位置坐标的[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)) 的总和 [@problem_id:1669571]。这是一个惊人的结果。正则一形式的结构是不变的。它不依赖于你用来描述系统位形的坐标。这就是为什么它被称为“正则”——它是相空间上一种与生俱来的结构，而非人为的发明。它是重言的；它就是那个在你切换[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)时*定义*了[共轭动量](@keyword=conjugate_momentum|lang=zh-CN|style=Feynman)是什么的东西。
 
 ### 力学的心跳
 
@@ -50,30 +50,30 @@ $$ \theta = p_r dr + p_\phi d\phi $$
 
 $$ \omega = d\theta = d\left(\sum_{i=1}^n p_i dq^i\right) = \sum_{i=1}^n dp_i \wedge dq^i $$
 
-这个新对象 $\omega$ 被称为**正则辛形式** 。如果说一次形式测量的是“有向长度”，那么二次形式测量的就是“[有向面积](@article_id:348805)”。这个特定的二次形式测量的是相空间中一种特殊的面积。为什么这很重要呢？因为事实证明，运动定律——哈密顿方程——正是这样一个陈述：物理系统随时间的演化必须保持这个辛面积不变。所有的[经典动力学](@article_id:356307)都编码在这种形式的几何之中！
+这个新对象 $\omega$ 被称为**正则辛形式** [@problem_id:1665979]。如果说一次形式测量的是“有向长度”，那么二次形式测量的就是“[有向面积](@keyword=signed_area|lang=zh-CN|style=Feynman)”。这个特定的二次形式测量的是相空间中一种特殊的面积。为什么这很重要呢？因为事实证明，运动定律——哈密顿方程——正是这样一个陈述：物理系统随时间的演化必须保持这个辛面积不变。所有的[经典动力学](@keyword=classical_dynamics|lang=zh-CN|style=Feynman)都编码在这种形式的几何之中！
 
-要使 $\omega$ 成为一个合格的几何结构，它必须是**非退化**的。这是一个花哨的术语，但思想很简单：它没有“盲点”。对于相空间中任何可能的运动方向，总能找到另一个方向与之配对，从而得到一个非零的面积。我们可以用一种非常具体的方式来验证这个性质。我们可以通过观察 $\omega$ 如何作用于相空间的[基向量](@article_id:378298) $(\frac{\partial}{\partial q^i}, \frac{\partial}{\partial p_j})$，将其表示为一个 $2n \times 2n$ 的矩阵 $\Omega$。结果是一个异常简洁的矩阵：
+要使 $\omega$ 成为一个合格的几何结构，它必须是**非退化**的。这是一个花哨的术语，但思想很简单：它没有“盲点”。对于相空间中任何可能的运动方向，总能找到另一个方向与之配对，从而得到一个非零的面积。我们可以用一种非常具体的方式来验证这个性质。我们可以通过观察 $\omega$ 如何作用于相空间的[基向量](@keyword=basis_vector|lang=zh-CN|style=Feynman) $(\frac{\partial}{\partial q^i}, \frac{\partial}{\partial p_j})$，将其表示为一个 $2n \times 2n$ 的矩阵 $\Omega$。结果是一个异常简洁的矩阵：
 
 $$ \Omega = \begin{pmatrix} 0 & -I_n \\ I_n & 0 \end{pmatrix} $$
 
-其中 $I_n$ 是 $n \times n$ 的[单位矩阵](@article_id:317130)。这个[矩阵的行列式](@article_id:308617)是多少？它恒为 1！。[行列式](@article_id:303413)为 1 意味着矩阵是可逆的，并且该形式绝对是非退化的。这个简单的[分块矩阵](@article_id:308854)就是经典力学心跳的矩阵表示。
+其中 $I_n$ 是 $n \times n$ 的[单位矩阵](@keyword=identity_matrix|lang=zh-CN|style=Feynman)。这个[矩阵的行列式](@keyword=determinant_of_a_matrix|lang=zh-CN|style=Feynman)是多少？它恒为 1！[@problem_id:1546230]。[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)为 1 意味着矩阵是可逆的，并且该形式绝对是非退化的。这个简单的[分块矩阵](@keyword=block_matrix|lang=zh-CN|style=Feynman)就是经典力学心跳的矩阵表示。
 
 ### 让形式发挥作用
 
 让我们把话题从抽象的几何学高地带回到具体的物理世界。这套机制告诉我们关于粒子在空间中运动的什么信息呢？
 
-让我们观察一个系统根据其哈密顿量 $H$（即其总能量）随[时间演化](@article_id:314355)。这个时间演化在相空间中定义了一个流，由**[哈密顿向量场](@article_id:334396)** $X_H$ 表示。如果我们用正则一形式 $\theta$ 来“测量”这个流，会发生什么？结果是极其简单且具有深刻物理意义的：
+让我们观察一个系统根据其哈密顿量 $H$（即其总能量）随[时间演化](@keyword=time_evolution|lang=zh-CN|style=Feynman)。这个时间演化在相空间中定义了一个流，由**[哈密顿向量场](@keyword=hamiltonian_vector_fields|lang=zh-CN|style=Feynman)** $X_H$ 表示。如果我们用正则一形式 $\theta$ 来“测量”这个流，会发生什么？结果是极其简单且具有深刻物理意义的：
 
 $$ \theta(X_H) = 2T $$
 
-其中 $T$ 是系统的动能 。正则一形式在测量产生系统自然运动的[向量场](@article_id:322515)时，精确地给出了系统动能的两倍！这是相空间的抽象几何与一个基本物理量之间的深刻联系。
+其中 $T$ 是系统的动能 [@problem_id:1527999]。正则一形式在测量产生系统自然运动的[向量场](@keyword=vector_field|lang=zh-CN|style=Feynman)时，精确地给出了系统动能的两倍！这是相空间的抽象几何与一个基本物理量之间的深刻联系。
 
-[微分几何](@article_id:306240)的机制也为我们提供了像**李导数** $\mathcal{L}_X \theta$ 这样的工具，它告诉我们当沿着一个任意流 $X$ 拖动形式 $\theta$ 时，$\theta$ 是如何变化的 。这使我们不仅可以研究时间演化，还可以研究相空间的任何无穷小变换。
+[微分几何](@keyword=differential_geometry|lang=zh-CN|style=Feynman)的机制也为我们提供了像**李导数** $\mathcal{L}_X \theta$ 这样的工具，它告诉我们当沿着一个任意流 $X$ 拖动形式 $\theta$ 时，$\theta$ 是如何变化的 [@problem_id:1679320]。这使我们不仅可以研究时间演化，还可以研究相空间的任何无穷小变换。
 
-也许最重要的是，这个框架帮助我们理解**[正则变换](@article_id:357070)**——那些保持运动方程形式不变的哈密顿力学的“对称性”变换。相空间上的一个变换 $\Phi$ 是正则的，如果它保持[辛形式](@article_id:345220)不变，即 $\Phi^*\omega = \omega$。因为 $\omega = d\theta$，这与 $\theta$ 本身的变换方式有关。对于一大类重要的变换，[拉回](@article_id:321220)形式 $\Phi^*\theta$ 与 $\theta$ 并不相同，但它们的差是某个函数 $S$ 的微分，这个函数被称为**生成函数**：
+也许最重要的是，这个框架帮助我们理解**[正则变换](@keyword=canonical_transformations|lang=zh-CN|style=Feynman)**——那些保持运动方程形式不变的哈密顿力学的“对称性”变换。相空间上的一个变换 $\Phi$ 是正则的，如果它保持[辛形式](@keyword=symplectic_forms|lang=zh-CN|style=Feynman)不变，即 $\Phi^*\omega = \omega$。因为 $\omega = d\theta$，这与 $\theta$ 本身的变换方式有关。对于一大类重要的变换，[拉回](@keyword=pullback|lang=zh-CN|style=Feynman)形式 $\Phi^*\theta$ 与 $\theta$ 并不相同，但它们的差是某个函数 $S$ 的微分，这个函数被称为**生成函数**：
 
 $$ \Phi^*\theta - \theta = dS $$
 
-对两边取[外微分](@article_id:367610)得到 $\Phi^*\omega - \omega = d(dS) = 0$，证明了该变换是正则的 。生成函数的概念是解锁解决复杂力学问题的强大技术的关键，它允许我们切换到动力学变得极其简单的[坐标系](@article_id:316753)。
+对两边取[外微分](@keyword=exterior_calculus|lang=zh-CN|style=Feynman)得到 $\Phi^*\omega - \omega = d(dS) = 0$，证明了该变换是正则的 [@problem_id:1669823]。生成函数的概念是解锁解决复杂力学问题的强大技术的关键，它允许我们切换到动力学变得极其简单的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)。
 
-从简单、直观的定义 $\theta = p\,dq$ 出发，我们揭示了一个定义动量、在坐标变换下保持不变、产生主导动力学的[辛形式](@article_id:345220)并掌握力学对称性秘密的结构。这一个数学对象统一并阐明了整个[经典物理学](@article_id:310812)的图景。
+从简单、直观的定义 $\theta = p\,dq$ 出发，我们揭示了一个定义动量、在坐标变换下保持不变、产生主导动力学的[辛形式](@keyword=symplectic_forms|lang=zh-CN|style=Feynman)并掌握力学对称性秘密的结构。这一个数学对象统一并阐明了整个[经典物理学](@keyword=classical_physics|lang=zh-CN|style=Feynman)的图景。

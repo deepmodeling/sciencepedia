@@ -15,7 +15,7 @@ $$
 \tan\theta = \left|\frac{m_{2} - m_{1}}{1 + m_{1} m_{2}}\right|
 $$
 
-This little machine is wonderfully practical. Whether a line is defined by its inclination, like a light path in a simulation , or by its equation in the general form $Ax + By + C = 0$, from which we can easily find the slope as $m = -A/B$ , we can plug the slopes $m_1$ and $m_2$ into our formula and get the angle. It’s a perfect example of how algebra can be used to solve geometric problems.
+This little machine is wonderfully practical. Whether a line is defined by its inclination, like a light path in a simulation [@problem_id:2107305], or by its equation in the general form $Ax + By + C = 0$, from which we can easily find the slope as $m = -A/B$ [@problem_id:2107350], we can plug the slopes $m_1$ and $m_2$ into our formula and get the angle. It’s a perfect example of how algebra can be used to solve geometric problems.
 
 However, this method has a slight inelegance. What about vertical lines? Their slope is infinite, and our formula breaks down. This is a hint from nature that perhaps slope isn't the most fundamental way to think about direction. We need a more robust, more universal idea.
 
@@ -35,9 +35,9 @@ $$
 \cos\theta = \frac{\vec{u} \cdot \vec{v}}{\|\vec{u}\| \|\vec{v}\|}
 $$
 
-This is breathtakingly general. Imagine engineers planning the paths of two massive Tunnel Boring Machines deep underground . Their paths are lines in 3D space, each with a vector equation giving its direction vector. With the dot product, calculating the angle at which they approach each other becomes a straightforward and reliable calculation. The same principle applies to aligning fiber optic cables in a telecommunications hub  or pylons in an architectural design .
+This is breathtakingly general. Imagine engineers planning the paths of two massive Tunnel Boring Machines deep underground [@problem_id:2174774]. Their paths are lines in 3D space, each with a vector equation giving its direction vector. With the dot product, calculating the angle at which they approach each other becomes a straightforward and reliable calculation. The same principle applies to aligning fiber optic cables in a telecommunications hub [@problem_id:2120454] or pylons in an architectural design [@problem_id:2120772].
 
-A key insight from this vector approach is that only the *direction* matters. In a design program, you might represent a pylon's orientation with [direction ratios](@article_id:166332) like $(a, -2a, 2a)$, where 'a' is just a scaling factor. When you calculate the angle, these scaling factors magically cancel out . The angle is a property of the directions themselves, not of the particular vectors we choose to represent them.
+A key insight from this vector approach is that only the *direction* matters. In a design program, you might represent a pylon's orientation with [direction ratios](@keyword=direction_ratios|lang=en-US|style=Feynman) like $(a, -2a, 2a)$, where 'a' is just a scaling factor. When you calculate the angle, these scaling factors magically cancel out [@problem_id:2120772]. The angle is a property of the directions themselves, not of the particular vectors we choose to represent them.
 
 ### The Secret of the Normal Vector
 
@@ -51,17 +51,17 @@ $$
 \cos\theta = \frac{|\vec{n}_1 \cdot \vec{n}_2|}{\|\vec{n}_1\| \|\vec{n}_2\|}
 $$
 
-This method is often far more elegant than wrestling with slopes, especially when we want to find the cosine of the angle directly . It unifies the 2D and 3D perspectives. The tangent formula using slopes and the cosine formula using vectors are just two different dialects for speaking the same geometric language.
+This method is often far more elegant than wrestling with slopes, especially when we want to find the cosine of the angle directly [@problem_id:2133162]. It unifies the 2D and 3D perspectives. The tangent formula using slopes and the cosine formula using vectors are just two different dialects for speaking the same geometric language.
 
-This vector viewpoint makes certain questions incredibly simple. For instance, when are two lines perpendicular? When the angle between them is $90^\circ$. This means $\cos(90^\circ) = 0$. For the cosine to be zero, the numerator of our formula—the dot product—must be zero. This gives us a wonderfully simple algebraic condition for perpendicularity: two lines are orthogonal if and only if the dot product of their direction vectors (or normal vectors) is zero . The deep geometric property of "being at a right angle" is translated into the simple arithmetic statement $\vec{u} \cdot \vec{v} = 0$. This is the kind of profound unity we are looking for.
+This vector viewpoint makes certain questions incredibly simple. For instance, when are two lines perpendicular? When the angle between them is $90^\circ$. This means $\cos(90^\circ) = 0$. For the cosine to be zero, the numerator of our formula—the dot product—must be zero. This gives us a wonderfully simple algebraic condition for perpendicularity: two lines are orthogonal if and only if the dot product of their direction vectors (or normal vectors) is zero [@problem_id:2120435]. The deep geometric property of "being at a right angle" is translated into the simple arithmetic statement $\vec{u} \cdot \vec{v} = 0$. This is the kind of profound unity we are looking for.
 
 ### Geometry in Motion: Angles Under Transformation
 
 Let’s become gods of our own Cartesian plane and start playing with its fabric. What happens to our angles if we stretch or shrink the whole space?
 
-Consider a **uniform scaling**, where every point $(x, y)$ is moved to $(kx, ky)$. This is like looking at your drawing through a perfect magnifying glass. Everything gets bigger, but all the shapes remain proportionally the same. A line $y = mx + c$ becomes $y' = mx' + kc$. The slope $m$ remains unchanged! And since the angle formula depends only on the slopes, the angle between any two lines is **invariant** under uniform scaling .
+Consider a **uniform scaling**, where every point $(x, y)$ is moved to $(kx, ky)$. This is like looking at your drawing through a perfect magnifying glass. Everything gets bigger, but all the shapes remain proportionally the same. A line $y = mx + c$ becomes $y' = mx' + kc$. The slope $m$ remains unchanged! And since the angle formula depends only on the slopes, the angle between any two lines is **invariant** under uniform scaling [@problem_id:2152513].
 
-But what if we apply a **non-uniform scaling**, say, stretching the space differently in the x and y directions? Let's map $(x, y)$ to $(ax, by)$ where $a \neq b$. Now, our line $y = mx + c$ transforms into a new line whose slope is $m' = \frac{b}{a}m$. The slopes change! A circle is squashed into an ellipse, and squares become rectangles. Because the slopes are altered, the angles between lines are generally *not* preserved . An angle, therefore, is not an absolute property of two lines, but a property that depends on the geometric "rules" of the space they inhabit. This tells us that the Euclidean geometry we are used to is special; its properties are preserved by rotations, translations, and uniform scaling, but not by distortions.
+But what if we apply a **non-uniform scaling**, say, stretching the space differently in the x and y directions? Let's map $(x, y)$ to $(ax, by)$ where $a \neq b$. Now, our line $y = mx + c$ transforms into a new line whose slope is $m' = \frac{b}{a}m$. The slopes change! A circle is squashed into an ellipse, and squares become rectangles. Because the slopes are altered, the angles between lines are generally *not* preserved [@problem_id:2152513]. An angle, therefore, is not an absolute property of two lines, but a property that depends on the geometric "rules" of the space they inhabit. This tells us that the Euclidean geometry we are used to is special; its properties are preserved by rotations, translations, and uniform scaling, but not by distortions.
 
 ### The Shape of Space Itself
 
@@ -73,12 +73,12 @@ $$
 \langle \mathbf{u}, \mathbf{v} \rangle = \mathbf{u}^T A \mathbf{v}
 $$
 
-The standard dot product is just the special case where $A$ is the identity matrix. But if $A$ is a different matrix (specifically, a [symmetric positive-definite](@article_id:145392) one), it defines a perfectly valid, albeit non-Euclidean, geometry. It provides a new "ruler" for measuring vector lengths ($\|\mathbf{w}\| = \sqrt{\langle \mathbf{w}, \mathbf{w} \rangle}$) and a new "protractor" for measuring angles:
+The standard dot product is just the special case where $A$ is the identity matrix. But if $A$ is a different matrix (specifically, a [symmetric positive-definite](@keyword=symmetric_positive_definite_2|lang=en-US|style=Feynman) one), it defines a perfectly valid, albeit non-Euclidean, geometry. It provides a new "ruler" for measuring vector lengths ($\|\mathbf{w}\| = \sqrt{\langle \mathbf{w}, \mathbf{w} \rangle}$) and a new "protractor" for measuring angles:
 
 $$
 \cos\theta = \frac{\langle \mathbf{u}, \mathbf{v} \rangle}{\|\mathbf{u}\| \|\mathbf{v}\|}
 $$
 
-Let's see what happens. In our familiar world, the lines $y=0$ (the x-axis) and $y=x$ are $45^\circ$ apart. But what if we measure them using the geometry induced by the matrix $A = \begin{pmatrix} 3 & -1 \\ -1 & 2 \end{pmatrix}$? We pick their direction vectors, $\vec{u} = \langle 1, 0 \rangle$ and $\vec{v} = \langle 1, 1 \rangle$, and compute their inner product and norms using this new rule. When the dust settles, we find that the angle between them is no longer $45^\circ$, but $\arccos(2/3)$ .
+Let's see what happens. In our familiar world, the lines $y=0$ (the x-axis) and $y=x$ are $45^\circ$ apart. But what if we measure them using the geometry induced by the matrix $A = \begin{pmatrix} 3 & -1 \\ -1 & 2 \end{pmatrix}$? We pick their direction vectors, $\vec{u} = \langle 1, 0 \rangle$ and $\vec{v} = \langle 1, 1 \rangle$, and compute their inner product and norms using this new rule. When the dust settles, we find that the angle between them is no longer $45^\circ$, but $\arccos(2/3)$ [@problem_id:2107352].
 
 This is a profound realization. The angle between two lines is not an intrinsic property of the lines alone; it is a property of the lines *and* the space they live in. By changing the **metric**—the rule for measuring distance and angle—we change the geometry itself. This is not just an abstract mathematical game. It's the very principle that underlies Einstein's theory of General Relativity, where the presence of mass and energy warps the fabric of spacetime, changing the local geometry and thus dictating how objects move. Our humble investigation into the angle between two lines has led us to the doorstep of one of the deepest ideas in modern physics: geometry is a physical, dynamic entity. And it all started with a simple question.
