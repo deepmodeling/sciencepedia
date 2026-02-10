@@ -1,7 +1,7 @@
 ## Introduction
-In the high-stakes world of [capital budgeting](@article_id:139574), selecting the right projects can define a company's future. For decades, managers have relied on the Internal Rate of Return (IRR), an intuitive single-percentage metric that seemingly simplifies complex investment decisions. However, this trusted guide harbors critical flaws, particularly when faced with real-world complexities like projects with unconventional cash flows, which can lead to paradoxical or misleading results. This article addresses this knowledge gap by introducing a more robust and honest tool: the Modified Internal Rate of Return (MIRR). This exploration will provide a clear understanding of why a more sophisticated approach is necessary for sound financial stewardship.
+In the high-stakes world of [capital budgeting](@keyword=capital_budgeting|lang=en-US|style=Feynman), selecting the right projects can define a company's future. For decades, managers have relied on the Internal Rate of Return (IRR), an intuitive single-percentage metric that seemingly simplifies complex investment decisions. However, this trusted guide harbors critical flaws, particularly when faced with real-world complexities like projects with unconventional cash flows, which can lead to paradoxical or misleading results. This article addresses this knowledge gap by introducing a more robust and honest tool: the Modified Internal Rate of Return (MIRR). This exploration will provide a clear understanding of why a more sophisticated approach is necessary for sound financial stewardship.
 
-The following chapters will guide you through this powerful concept. First, in "Principles and Mechanisms," we will dissect the problems inherent in the IRR and demonstrate how MIRR's unique structure—separating financing costs from reinvestment returns—solves these issues. Subsequently, "Applications and Interdisciplinary Connections" will showcase MIRR's practical utility, moving beyond theory to illustrate its role in resolving strategic financial dilemmas and its surprising relevance in fields like engineering, public policy, and [environmental management](@article_id:182057).
+The following chapters will guide you through this powerful concept. First, in "Principles and Mechanisms," we will dissect the problems inherent in the IRR and demonstrate how MIRR's unique structure—separating financing costs from reinvestment returns—solves these issues. Subsequently, "Applications and Interdisciplinary Connections" will showcase MIRR's practical utility, moving beyond theory to illustrate its role in resolving strategic financial dilemmas and its surprising relevance in fields like engineering, public policy, and [environmental management](@keyword=environmental_management|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
@@ -11,19 +11,19 @@ To truly appreciate the Modified Internal Rate of Return (MIRR), we must first e
 
 Imagine you are a financial manager. Your team brings you a project proposal. They tell you, "The IRR on this project is 20%." This sounds wonderful! It's a single, intuitive number that suggests the project's intrinsic, percentage-per-year earning power. If your company's cost of borrowing is, say, 10%, a 20% return seems like a clear winner. The appeal of IRR is its simplicity. It boils a complex series of future cash flows down to one compelling figure.
 
-The IRR is formally defined as the [discount rate](@article_id:145380) that makes the Net Present Value (NPV) of all cash flows equal to zero.
+The IRR is formally defined as the [discount rate](@keyword=discount_rate|lang=en-US|style=Feynman) that makes the Net Present Value (NPV) of all cash flows equal to zero.
 $$
 \text{NPV} = \sum_{t=0}^{T} \frac{C_t}{(1+\text{IRR})^t} = 0
 $$
 For a "conventional" project—an initial investment (a negative cash flow) followed by a series of positive returns—this works beautifully. There is only one positive IRR, and the decision rule is simple: if IRR is greater than your cost of capital, accept.
 
-But what happens when the world isn't so simple? Consider a project that requires an initial investment, produces a large return in the middle of its life, but then requires a significant cost at the very end for, say, [environmental cleanup](@article_id:194823) or decommissioning. Such a project has **[non-conventional cash flows](@article_id:141504)**, with the signs of the cash flows changing more than once (e.g., negative, then positive, then negative again).
+But what happens when the world isn't so simple? Consider a project that requires an initial investment, produces a large return in the middle of its life, but then requires a significant cost at the very end for, say, [environmental cleanup](@keyword=environmental_cleanup|lang=en-US|style=Feynman) or decommissioning. Such a project has **[non-conventional cash flows](@keyword=non_conventional_cash_flows|lang=en-US|style=Feynman)**, with the signs of the cash flows changing more than once (e.g., negative, then positive, then negative again).
 
 Let's explore a a hypothetical scenario like this. A project costs $100$ today, pays out $233$ next year, but requires a final cleanup of $135$ the year after. To find the IRR, we must solve:
 $$
 -100 + \frac{233}{1+r} - \frac{135}{(1+r)^2} = 0
 $$
-If you dust off your high-school algebra, you'll find this isn't a simple equation—it's a quadratic. And quadratic equations can have *two* solutions. For this specific project, the math reveals two completely different IRRs: one at $8\%$ and another at $25\%$ .
+If you dust off your high-school algebra, you'll find this isn't a simple equation—it's a quadratic. And quadratic equations can have *two* solutions. For this specific project, the math reveals two completely different IRRs: one at $8\%$ and another at $25\%$ [@problem_id:2413634].
 
 This presents a paradox. If your company's hurdle rate is 15%, what do you do? One IRR ($8\%$) tells you to reject the project, while the other ($25\%$) screams for you to accept it. The IRR, our once-trusted guide, is now speaking in riddles. This isn't just a mathematical curiosity; it's a fundamental breakdown of the decision-making rule. We need a better way.
 
@@ -59,11 +59,11 @@ This structure is mathematically guaranteed to produce one, and only one, soluti
 
 So, MIRR gives us a single, unambiguous answer. But it comes at a price—or rather, a responsibility. *We* must supply the financing and reinvestment rates. One might argue this is a weakness, as the final MIRR now depends on our subjective choices.
 
-But this is precisely its greatest strength. Consider another project with multiple IRRs . If we assume the financing and reinvestment rates are both equal to the company's general cost of capital, say $12\%$, we might calculate a MIRR of $10.47\%$. Since this is less than our $12\%$ hurdle rate, we would reject the project.
+But this is precisely its greatest strength. Consider another project with multiple IRRs [@problem_id:2403019]. If we assume the financing and reinvestment rates are both equal to the company's general cost of capital, say $12\%$, we might calculate a MIRR of $10.47\%$. Since this is less than our $12\%$ hurdle rate, we would reject the project.
 
 However, what if the manager has access to a special line of credit and high-growth opportunities? They might argue for using more optimistic rates, perhaps $20\%$. Using these new assumptions, the MIRR for the very same project jumps to $20.60\%$, leading to an "accept" decision.
 
-Instead of hiding its assumption like IRR does, MIRR acts as an "honest broker." It forces a crucial discussion: "What are our *real* financing costs and reinvestment opportunities?" It makes the assumptions transparent and debatable. This turns a simple calculation into a strategic conversation, which is the heart of good financial [decision-making](@article_id:137659).
+Instead of hiding its assumption like IRR does, MIRR acts as an "honest broker." It forces a crucial discussion: "What are our *real* financing costs and reinvestment opportunities?" It makes the assumptions transparent and debatable. This turns a simple calculation into a strategic conversation, which is the heart of good financial [decision-making](@keyword=decision_making|lang=en-US|style=Feynman).
 
 ### From a Simple Fix to a Powerful Framework
 
@@ -71,7 +71,7 @@ The true beauty of the MIRR concept is that it's not just a clever patch. It's a
 
 We started by choosing a single, constant reinvestment rate for the life of the project. But in the real world, interest rates change. What if we expect rates to be low next year but higher in five years? The MIRR framework handles this with elegance.
 
-Instead of using a single rate to compound our earnings forward, we can use a complete **term structure of rates**—a different expected rate for each future year. A cash flow from year one would be compounded at year two's rate, then that total would be compounded at year three's rate, and so on. The math gets a bit more complex, involving products of growth factors instead of simple exponents, but the logic is identical .
+Instead of using a single rate to compound our earnings forward, we can use a complete **term structure of rates**—a different expected rate for each future year. A cash flow from year one would be compounded at year two's rate, then that total would be compounded at year three's rate, and so on. The math gets a bit more complex, involving products of growth factors instead of simple exponents, but the logic is identical [@problem_id:2402998].
 $$
 \text{MIRR}^{\text{TS}} = \left(\dfrac{\text{Terminal Value using term structure}}{\text{Present Value using term structure}}\right)^{\tfrac{1}{T}} - 1
 $$

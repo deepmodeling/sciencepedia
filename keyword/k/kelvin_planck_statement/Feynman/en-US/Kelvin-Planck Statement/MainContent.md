@@ -3,7 +3,7 @@ The idea of a ship powered by the immense thermal energy of the ocean seems plau
 
 ## Principles and Mechanisms
 
-Imagine standing at the edge of the ocean, a seemingly endless reservoir of thermal energy. The water holds a staggering amount of heat. Why can't we build a ship that simply sucks in this heat, converts it into work to turn its propellers, and sails across the globe, leaving a trail of slightly cooler water in its wake?  This idea seems perfectly reasonable from the perspective of the First Law of Thermodynamics, which is all about balancing the books of energy. Heat is energy, work is energy—why not trade one for the other?
+Imagine standing at the edge of the ocean, a seemingly endless reservoir of thermal energy. The water holds a staggering amount of heat. Why can't we build a ship that simply sucks in this heat, converts it into work to turn its propellers, and sails across the globe, leaving a trail of slightly cooler water in its wake? [@problem_id:1903275] This idea seems perfectly reasonable from the perspective of the First Law of Thermodynamics, which is all about balancing the books of energy. Heat is energy, work is energy—why not trade one for the other?
 
 And yet, it is impossible. Not just difficult or impractical, but fundamentally, cosmically impossible. This prohibition is the essence of the **Kelvin-Planck statement**, one of the pillars of the second law of thermodynamics. It is nature’s most profound "no free lunch" policy when it comes to thermal energy.
 
@@ -13,21 +13,21 @@ The First Law of Thermodynamics tells us we can't create energy from nothing. Th
 
 The Kelvin-Planck statement formalizes this restriction:
 
-> **It is impossible to construct a device that, operating in a cycle, produces no effect other than the extraction of heat from a single [thermal reservoir](@article_id:143114) and the performance of an equivalent amount of work.**
+> **It is impossible to construct a device that, operating in a cycle, produces no effect other than the extraction of heat from a single [thermal reservoir](@keyword=thermal_reservoir|lang=en-US|style=Feynman) and the performance of an equivalent amount of work.**
 
-Let's break this down. The "operates in a cycle" part is crucial; it means the engine itself must return to its initial state, ready to do it again. It can't be a one-shot device. The "single [thermal reservoir](@article_id:143114)" is the key. Our hypothetical ocean-powered ship is a perfect example of such a forbidden device, a **perpetual motion machine of the second kind**. It tries to create work by interacting with only one body of uniform temperature. This, the Second Law tells us, cannot happen. 
+Let's break this down. The "operates in a cycle" part is crucial; it means the engine itself must return to its initial state, ready to do it again. It can't be a one-shot device. The "single [thermal reservoir](@keyword=thermal_reservoir|lang=en-US|style=Feynman)" is the key. Our hypothetical ocean-powered ship is a perfect example of such a forbidden device, a **perpetual motion machine of the second kind**. It tries to create work by interacting with only one body of uniform temperature. This, the Second Law tells us, cannot happen. [@problem_id:1896563]
 
 ### The Price of Work: Why Waste Heat is Inevitable
 
 So, how *do* we get work from heat? The answer is that heat must flow. Just as a water wheel generates power from water flowing from a high place to a low place, a **heat engine** generates work from heat flowing from a *hot* place to a *cold* place.
 
-To get useful work, you need two reservoirs at different temperatures, a hot source ($T_H$) and a [cold sink](@article_id:138923) ($T_C$). The engine sits between them, and as a quantity of heat $Q_H$ flows from the hot source into the engine, some of it is converted into work $W$, and the rest, an unavoidable quantity of **[waste heat](@article_id:139466)** $Q_C$, is rejected into the [cold sink](@article_id:138923). The work you get is the difference: $W = Q_H - Q_C$.
+To get useful work, you need two reservoirs at different temperatures, a hot source ($T_H$) and a [cold sink](@keyword=cold_sink|lang=en-US|style=Feynman) ($T_C$). The engine sits between them, and as a quantity of heat $Q_H$ flows from the hot source into the engine, some of it is converted into work $W$, and the rest, an unavoidable quantity of **[waste heat](@keyword=waste_heat|lang=en-US|style=Feynman)** $Q_C$, is rejected into the [cold sink](@keyword=cold_sink|lang=en-US|style=Feynman). The work you get is the difference: $W = Q_H - Q_C$.
 
-This raises a tantalizing question: could we make the [waste heat](@article_id:139466) $Q_C$ equal to zero? This would mean 100% efficiency! The great French engineer Sadi Carnot showed that the maximum possible efficiency for any engine operating between these two temperatures is given by the famous Carnot efficiency:
+This raises a tantalizing question: could we make the [waste heat](@keyword=waste_heat|lang=en-US|style=Feynman) $Q_C$ equal to zero? This would mean 100% efficiency! The great French engineer Sadi Carnot showed that the maximum possible efficiency for any engine operating between these two temperatures is given by the famous Carnot efficiency:
 $$
 \eta_{Carnot} = 1 - \frac{T_C}{T_H}
 $$
-For the efficiency $\eta$ to be 1 (or 100%), the fraction $\frac{T_C}{T_H}$ must be zero. Since the hot temperature $T_H$ is finite, this demands that the [cold sink](@article_id:138923) be at a temperature of absolute zero, $T_C = 0$ K. 
+For the efficiency $\eta$ to be 1 (or 100%), the fraction $\frac{T_C}{T_H}$ must be zero. Since the hot temperature $T_H$ is finite, this demands that the [cold sink](@keyword=cold_sink|lang=en-US|style=Feynman) be at a temperature of absolute zero, $T_C = 0$ K. [@problem_id:1855721]
 
 But here, another fundamental law of nature, the Third Law of Thermodynamics, steps in. It states that absolute zero is unattainable in any finite number of steps. You can get incredibly close, but you can never quite reach it. Therefore, 100% efficient conversion of heat into work is fundamentally impossible. Some heat must *always* be wasted. Nature has built a universal speed limit on efficiency, a tax on every energy conversion.
 
@@ -39,11 +39,11 @@ At first glance, the Kelvin-Planck statement seems a bit abstract. There's anoth
 
 This sounds like common sense. Heat flows from hot to cold; a cold drink warms up on a summer day, it doesn't spontaneously get colder by heating the room. A refrigerator can pump heat "uphill" from its cold interior to the warmer kitchen, but its "sole effect" is not just that; it requires work from a compressor, and it dumps extra waste heat into the room.
 
-The astonishing beauty of physics is that these two statements—the abstract one from Kelvin and Planck and the common-sense one from Clausius—are logically identical. If one were false, the other would have to be false too. We can prove this with a clever thought experiment known as a *[reductio ad absurdum](@article_id:276110)*.
+The astonishing beauty of physics is that these two statements—the abstract one from Kelvin and Planck and the common-sense one from Clausius—are logically identical. If one were false, the other would have to be false too. We can prove this with a clever thought experiment known as a *[reductio ad absurdum](@keyword=reductio_ad_absurdum|lang=en-US|style=Feynman)*.
 
 **Part 1: A Fake Engine Breaks the Law of Refrigerators**
 
-Let’s assume for a moment that Kelvin-Planck is wrong. We have a magical device, a Kelvin-Planck Violator (KPV), that does what our ocean ship dreamed of: it takes heat $Q_K$ from a single hot reservoir at $T_H$ and turns it completely into work, $W_K = Q_K$. 
+Let’s assume for a moment that Kelvin-Planck is wrong. We have a magical device, a Kelvin-Planck Violator (KPV), that does what our ocean ship dreamed of: it takes heat $Q_K$ from a single hot reservoir at $T_H$ and turns it completely into work, $W_K = Q_K$. [@problem_id:453232]
 
 What can we do with this "free" work? We can use it to power a perfectly normal, law-abiding refrigerator. This refrigerator will use our work $W_K$ to pump a quantity of heat $Q_C$ from a cold reservoir at $T_C$ and deliver a total heat of $Q_H' = Q_C + W_K$ to the hot reservoir.
 
@@ -52,19 +52,19 @@ Now, let's look at the combined system (KPV + Refrigerator) as a single black bo
 *   The hot reservoir gives heat $Q_K$ to the KPV but receives $Q_H' = Q_C + W_K = Q_C + Q_K$ from the refrigerator. The net effect on the hot reservoir is that it *gains* an amount of heat $Q_C$.
 *   The cold reservoir loses an amount of heat $Q_C$.
 
-The *sole effect* of our composite machine is to transfer heat $Q_C$ from the cold reservoir to the hot reservoir with no work input. This is a direct violation of the Clausius statement!  Therefore, if a Kelvin-Planck violator could exist, the Clausius statement would be false.
+The *sole effect* of our composite machine is to transfer heat $Q_C$ from the cold reservoir to the hot reservoir with no work input. This is a direct violation of the Clausius statement! [@problem_id:2521095] Therefore, if a Kelvin-Planck violator could exist, the Clausius statement would be false.
 
 **Part 2: A Fake Refrigerator Breaks the Law of Engines**
 
-Now let's flip the argument. Assume Clausius is wrong. We have a magical [refrigerator](@article_id:200925) that transfers heat $Q_C$ from a cold reservoir at $T_C$ to a hot reservoir at $T_H$ with no work required. 
+Now let's flip the argument. Assume Clausius is wrong. We have a magical [refrigerator](@keyword=refrigerator|lang=en-US|style=Feynman) that transfers heat $Q_C$ from a cold reservoir at $T_C$ to a hot reservoir at $T_H$ with no work required. [@problem_id:514316]
 
-Let's pair this magical device with a standard, reversible Carnot engine operating between the same two reservoirs. We set up the Carnot engine to absorb heat $Q_H$ from the hot reservoir, produce work $W_E$, and reject heat $Q_C$ to the cold reservoir.  This means the cold reservoir experiences no net change; it's a closed loop for that reservoir.
+Let's pair this magical device with a standard, reversible Carnot engine operating between the same two reservoirs. We set up the Carnot engine to absorb heat $Q_H$ from the hot reservoir, produce work $W_E$, and reject heat $Q_C$ to the cold reservoir. [@problem_id:1860658] This means the cold reservoir experiences no net change; it's a closed loop for that reservoir.
 
-What about the hot reservoir? It loses heat $Q_H$ to the engine, but it gains heat $Q_C$ from the magic [refrigerator](@article_id:200925). The [engine efficiency](@article_id:146183) tells us that $Q_H = Q_C \frac{T_H}{T_C}$, so the net heat drawn from the hot reservoir is $Q_{net, H} = Q_H - Q_C = Q_C \frac{T_H}{T_C} - Q_C = Q_C (\frac{T_H-T_C}{T_C})$.
+What about the hot reservoir? It loses heat $Q_H$ to the engine, but it gains heat $Q_C$ from the magic [refrigerator](@keyword=refrigerator|lang=en-US|style=Feynman). The [engine efficiency](@keyword=engine_efficiency|lang=en-US|style=Feynman) tells us that $Q_H = Q_C \frac{T_H}{T_C}$, so the net heat drawn from the hot reservoir is $Q_{net, H} = Q_H - Q_C = Q_C \frac{T_H}{T_C} - Q_C = Q_C (\frac{T_H-T_C}{T_C})$.
 
 Notice something? The work done by the engine is $W_{net} = Q_H - Q_C = Q_C \frac{T_H}{T_C} - Q_C = Q_C (\frac{T_H-T_C}{T_C})$. They are exactly the same!
 
-Our composite machine produces net work $W_{net}$ while its only net thermal interaction is drawing heat from the *single* hot reservoir. This is a perpetual motion machine of the second kind—a violation of the Kelvin-Planck statement! 
+Our composite machine produces net work $W_{net}$ while its only net thermal interaction is drawing heat from the *single* hot reservoir. This is a perpetual motion machine of the second kind—a violation of the Kelvin-Planck statement! [@problem_id:514316]
 
 The conclusion is inescapable. The two statements stand or fall together. They are different faces of a single, profound truth about the universe's directionality.
 
@@ -72,11 +72,11 @@ The conclusion is inescapable. The two statements stand or fall together. They a
 
 This same line of reasoning leads to another monumental discovery. What if someone claims to have built an engine 'X' that is more efficient than a reversible Carnot engine 'R' operating between the same two temperatures, $\eta_X > \eta_R$? We can use their own engine against them to prove them wrong.
 
-We run the super-efficient engine X forward, taking in heat $Q_H$ and producing a large amount of work $W_X = \eta_X Q_H$. We then use this work to drive the [reversible engine](@article_id:144634) R *in reverse* (as a [refrigerator](@article_id:200925)). Running in reverse, it takes less work $W_R = \eta_R Q_H$ to return the same amount of heat $Q_H$ to the hot reservoir.
+We run the super-efficient engine X forward, taking in heat $Q_H$ and producing a large amount of work $W_X = \eta_X Q_H$. We then use this work to drive the [reversible engine](@keyword=reversible_engine|lang=en-US|style=Feynman) R *in reverse* (as a [refrigerator](@keyword=refrigerator|lang=en-US|style=Feynman)). Running in reverse, it takes less work $W_R = \eta_R Q_H$ to return the same amount of heat $Q_H$ to the hot reservoir.
 
-Since $\eta_X > \eta_R$, we have $W_X > W_R$. We have leftover work! The hot reservoir has no net change in heat. The composite machine's only net effect is to extract some heat from the cold reservoir and convert it into this leftover work. This is, once again, a violation of the Kelvin-Planck statement. 
+Since $\eta_X > \eta_R$, we have $W_X > W_R$. We have leftover work! The hot reservoir has no net change in heat. The composite machine's only net effect is to extract some heat from the cold reservoir and convert it into this leftover work. This is, once again, a violation of the Kelvin-Planck statement. [@problem_id:453178]
 
-The implication is staggering: **All reversible [heat engines](@article_id:142892) operating between the same two temperatures have exactly the same efficiency, and no irreversible engine can be more efficient.** This efficiency is a universal constant determined only by the temperatures, independent of the engine’s design, materials, or working fluid. It sets a fundamental speed limit on what is possible.
+The implication is staggering: **All reversible [heat engines](@keyword=heat_engines|lang=en-US|style=Feynman) operating between the same two temperatures have exactly the same efficiency, and no irreversible engine can be more efficient.** This efficiency is a universal constant determined only by the temperatures, independent of the engine’s design, materials, or working fluid. It sets a fundamental speed limit on what is possible.
 
 ### From Engines to Everything: The Clausius Inequality
 
@@ -86,10 +86,10 @@ Imagine any system—a chemical reaction, a living cell, a star—undergoing any
 
 Our composite system (the original system plus all the little auxiliary engines) now interacts thermally with only a single reservoir at $T_0$. According to the Kelvin-Planck statement, this composite system cannot produce a net amount of work; its total work output, $W_{net}$, must be less than or equal to zero.
 
-When you translate this physical statement ($W_{net} \le 0$) into the language of mathematics, it leads directly to the famous **Clausius inequality**: 
+When you translate this physical statement ($W_{net} \le 0$) into the language of mathematics, it leads directly to the famous **Clausius inequality**: [@problem_id:339396]
 $$
 \oint \frac{dQ}{T} \le 0
 $$
-Here, the circle on the integral sign means we sum up the quantity $dQ/T$ over the entire cycle. This powerful inequality must hold for *any* [thermodynamic cycle](@article_id:146836) in the universe. The equality holds for a perfectly reversible process, and the inequality ($0$) holds for any real-world, [irreversible process](@article_id:143841). This inequality is the second law in its most general and potent form. Even if a process involves internal, irreversible changes that increase the device's own entropy, the total entropy of the universe (device + reservoirs) must never decrease. 
+Here, the circle on the integral sign means we sum up the quantity $dQ/T$ over the entire cycle. This powerful inequality must hold for *any* [thermodynamic cycle](@keyword=thermodynamic_cycle|lang=en-US|style=Feynman) in the universe. The equality holds for a perfectly reversible process, and the inequality ($0$) holds for any real-world, [irreversible process](@keyword=irreversible_process|lang=en-US|style=Feynman). This inequality is the second law in its most general and potent form. Even if a process involves internal, irreversible changes that increase the device's own entropy, the total entropy of the universe (device + reservoirs) must never decrease. [@problem_id:1860623]
 
-What started as a simple, powerful statement about the impossibility of a "free lunch" ocean engine has led us, through a series of stunningly elegant logical steps, to a universal law that dictates the [arrow of time](@article_id:143285) and the direction of all natural change. This is the beauty and unity of physics, a journey from a concrete prohibition to an abstract, all-encompassing principle.
+What started as a simple, powerful statement about the impossibility of a "free lunch" ocean engine has led us, through a series of stunningly elegant logical steps, to a universal law that dictates the [arrow of time](@keyword=arrow_of_time|lang=en-US|style=Feynman) and the direction of all natural change. This is the beauty and unity of physics, a journey from a concrete prohibition to an abstract, all-encompassing principle.

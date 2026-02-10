@@ -15,7 +15,7 @@ To figure this out, we can use a beautiful idea from calculus. We can think of t
 
 Now, what is the *width* of this ribbon? It’s not just a straight width $dx$ along the axis, because the horn's wall is slanted. The true width is a tiny piece of the curve itself, which we call $ds$. Using a dash of geometry—essentially the Pythagorean theorem for infinitesimally small triangles—we find this slanted width is $ds = \sqrt{1 + [y'(x)]^2} \,dx$, where $y'(x)$ is the slope of the curve at that point.
 
-So, the area of one tiny ribbon is its [circumference](@article_id:263108) times its width: $dA = (2\pi y) \times ds = 2\pi \frac{1}{x} \sqrt{1 + [y'(x)]^2} \,dx$. To get the total area, we just have to add up all these little ribbons, from our starting point (say, $x=1$) all the way to infinity. This "adding up" is precisely what an integral does. For a finite piece of the horn, say from $x=R$ to $x=5R$, we would calculate a definite number representing the area needed for that section, a task that, while involving some tricky calculus, gives a perfectly reasonable, finite answer .
+So, the area of one tiny ribbon is its [circumference](@keyword=circumference|lang=en-US|style=Feynman) times its width: $dA = (2\pi y) \times ds = 2\pi \frac{1}{x} \sqrt{1 + [y'(x)]^2} \,dx$. To get the total area, we just have to add up all these little ribbons, from our starting point (say, $x=1$) all the way to infinity. This "adding up" is precisely what an integral does. For a finite piece of the horn, say from $x=R$ to $x=5R$, we would calculate a definite number representing the area needed for that section, a task that, while involving some tricky calculus, gives a perfectly reasonable, finite answer [@problem_id:1523469].
 
 But we are interested in the whole, infinite horn. The full surface area $S$ is given by:
 
@@ -37,9 +37,9 @@ And this is an old friend to any student of calculus. The integral of $1/x$ is t
 
 This result is so strange that it begs for confirmation. "Infinity" is a slippery concept. Can we see this happening in a more concrete way? Absolutely. We can't build an infinitely long horn, but we can instruct a computer to calculate the surface area for a horn that is very, very long and see what happens.
 
-Using numerical integration techniques—powerful algorithms that can approximate integrals with incredible precision—we can compute the area $S(a) = \int_{1}^{a} \frac{2\pi\sqrt{x^4+1}}{x^3} dx$ for progressively larger values of the endpoint, $a$. We might ask the computer for the area up to $x=10$, then $x=100$, then $x=1000$, and so on .
+Using numerical integration techniques—powerful algorithms that can approximate integrals with incredible precision—we can compute the area $S(a) = \int_{1}^{a} \frac{2\pi\sqrt{x^4+1}}{x^3} dx$ for progressively larger values of the endpoint, $a$. We might ask the computer for the area up to $x=10$, then $x=100$, then $x=1000$, and so on [@problem_id:2435306].
 
-When we do this, we don't see the area settling down to some final value. Instead, we see a slow, relentless increase, perfectly matching the logarithmic growth we predicted. The computer doesn't "know" about infinity, but it shows us the signature of infinity—a value that refuses to converge. These computational experiments give us confidence that our mathematical reasoning isn't just a trick; it's describing the genuine character of the shape .
+When we do this, we don't see the area settling down to some final value. Instead, we see a slow, relentless increase, perfectly matching the logarithmic growth we predicted. The computer doesn't "know" about infinity, but it shows us the signature of infinity—a value that refuses to converge. These computational experiments give us confidence that our mathematical reasoning isn't just a trick; it's describing the genuine character of the shape [@problem_id:2371886].
 
 ### The Secret of the Saddle
 
@@ -58,15 +58,15 @@ $$
 
 The details of the formula are less important than the result. For any positive value of $x$, the numerator is negative and the denominator is positive. This means that the Gaussian curvature $K$ is *always negative*.
 
-This is an astonishing revelation! **Every single point on the surface of Gabriel's Horn is a hyperbolic, or saddle-shaped, point** . Imagine you are an infinitesimally small ant walking on the horn. No matter where you stand, your local world looks like a saddle. The horn isn't just a funnel; it's a surface constructed entirely from an infinite collection of saddles, stitched together seamlessly. This permanent [negative curvature](@article_id:158841) gives the surface an inherent "openness" or "flaredness" that is key to its strange properties.
+This is an astonishing revelation! **Every single point on the surface of Gabriel's Horn is a hyperbolic, or saddle-shaped, point** [@problem_id:1629371]. Imagine you are an infinitesimally small ant walking on the horn. No matter where you stand, your local world looks like a saddle. The horn isn't just a funnel; it's a surface constructed entirely from an infinite collection of saddles, stitched together seamlessly. This permanent [negative curvature](@keyword=negative_curvature|lang=en-US|style=Feynman) gives the surface an inherent "openness" or "flaredness" that is key to its strange properties.
 
 ### The Unity of Shape and Paradox
 
-We have now uncovered two bizarre features of Gabriel's Horn: its infinite surface area and its everywhere-[hyperbolic geometry](@article_id:157960). Are these just two separate curiosities? Or are they, as is so often the case in nature, two faces of the same coin?
+We have now uncovered two bizarre features of Gabriel's Horn: its infinite surface area and its everywhere-[hyperbolic geometry](@keyword=hyperbolic_geometry|lang=en-US|style=Feynman). Are these just two separate curiosities? Or are they, as is so often the case in nature, two faces of the same coin?
 
 The answer lies in going back to the very beginning, to the simple rule that created the horn in the first place: $y = 1/x$. This rule dictates everything.
 
-As we saw, the circumference of the horn at any distance $x$ is $C(x) = 2\pi/x$. This rate of shrinking is the source of the paradox. The circumference shrinks, but it shrinks *too slowly* compared to the length being added. The area of the new slivers we add as we go down the horn, roughly $(2\pi/x)dx$, doesn't decrease fast enough for their sum to be finite. The rigorous way to talk about distance on a surface is through its **metric tensor**. For our horn, the component of this tensor related to the circumference turns out to be a simple function of $x$, namely $(1/x)^2$, directly reflecting this property .
+As we saw, the circumference of the horn at any distance $x$ is $C(x) = 2\pi/x$. This rate of shrinking is the source of the paradox. The circumference shrinks, but it shrinks *too slowly* compared to the length being added. The area of the new slivers we add as we go down the horn, roughly $(2\pi/x)dx$, doesn't decrease fast enough for their sum to be finite. The rigorous way to talk about distance on a surface is through its **metric tensor**. For our horn, the component of this tensor related to the circumference turns out to be a simple function of $x$, namely $(1/x)^2$, directly reflecting this property [@problem_id:575196].
 
 This same rule, $y=1/x$, is also what dictates the curvature. The specific way the radius $y$ and the slope $y'$ change in relation to each other is precisely what conspires to make the Gaussian curvature negative everywhere.
 

@@ -21,7 +21,7 @@ $$
 g(\mathbf{r}, E) = \sum_n |\psi_n(\mathbf{r})|^2 \delta(E - E_n)
 $$
 
-This quantity is *local* because of the $|\psi_n(\mathbf{r})|^2$ term—it can be very large in one place (e.g., on top of an atom) and very small in another (e.g., between atoms). This is why a map of the LDOS is not uniform; it reveals the intricate electronic patterns that define chemical bonds, defects, and surface phenomena. It's the fundamental canvas upon which chemistry happens .
+This quantity is *local* because of the $|\psi_n(\mathbf{r})|^2$ term—it can be very large in one place (e.g., on top of an atom) and very small in another (e.g., between atoms). This is why a map of the LDOS is not uniform; it reveals the intricate electronic patterns that define chemical bonds, defects, and surface phenomena. It's the fundamental canvas upon which chemistry happens [@problem_id:2822471].
 
 ### The Quantum Spectrometer: How it Works
 
@@ -35,7 +35,7 @@ The flow of these tunneling electrons creates a tiny electrical current, $I$, wh
 
 Simply measuring the total current $I$ for a given voltage $V$ isn't enough. The total current is an accumulation of all tunneling possibilities within the energy window from the Fermi level up to $eV$. It’s like knowing the total volume of water in a bucket, but not the rate at which the tap is flowing.
 
-To find the [density of states](@article_id:147400) at a *specific* energy, we need a more subtle approach. Imagine we slowly increase the voltage from $V$ to $V+dV$. This opens up a tiny, additional sliver of energy, $dE = e dV$, for tunneling to occur. The extra current we measure, $dI$, must be coming from electrons tunneling into this new energy sliver. Therefore, this additional current $dI$ is directly proportional to the number of available states within that sliver—which is precisely the LDOS at that energy!
+To find the [density of states](@keyword=density_of_states|lang=en-US|style=Feynman) at a *specific* energy, we need a more subtle approach. Imagine we slowly increase the voltage from $V$ to $V+dV$. This opens up a tiny, additional sliver of energy, $dE = e dV$, for tunneling to occur. The extra current we measure, $dI$, must be coming from electrons tunneling into this new energy sliver. Therefore, this additional current $dI$ is directly proportional to the number of available states within that sliver—which is precisely the LDOS at that energy!
 
 This gives us the central, beautiful relationship in STS:
 
@@ -43,9 +43,9 @@ $$
 \frac{dI}{dV} \propto g(\mathbf{r}_0, E = eV)
 $$
 
-The differential conductance, $dI/dV$, is directly proportional to the sample's Local Density of States at the position of the tip ($\mathbf{r}_0$) and at an energy $E$ equal to the bias energy $eV$  . By sweeping the voltage $V$ and recording $dI/dV$ at each step, we trace out the LDOS spectrum, note by note.
+The differential conductance, $dI/dV$, is directly proportional to the sample's Local Density of States at the position of the tip ($\mathbf{r}_0$) and at an energy $E$ equal to the bias energy $eV$ [@problem_id:1469803] [@problem_id:1282030]. By sweeping the voltage $V$ and recording $dI/dV$ at each step, we trace out the LDOS spectrum, note by note.
 
-A positive sample voltage ($V \gt 0$) means electrons from the tip tunnel into the sample. This probes the empty, or **unoccupied states** of the sample at energies above its Fermi level. A peak in the $dI/dV$ spectrum at, say, $V = +0.5$ V indicates a high density of available electronic states $0.5$ eV *above* the sample's Fermi level . Conversely, a negative sample voltage ($V \lt 0$) pulls electrons *out* of the sample into the tip, thereby probing the **occupied states** below the Fermi level.
+A positive sample voltage ($V \gt 0$) means electrons from the tip tunnel into the sample. This probes the empty, or **unoccupied states** of the sample at energies above its Fermi level. A peak in the $dI/dV$ spectrum at, say, $V = +0.5$ V indicates a high density of available electronic states $0.5$ eV *above* the sample's Fermi level [@problem_id:1800354]. Conversely, a negative sample voltage ($V \lt 0$) pulls electrons *out* of the sample into the tip, thereby probing the **occupied states** below the Fermi level.
 
 ### The Fine Print: Assumptions and Real-World Complexities
 
@@ -53,11 +53,11 @@ This beautifully simple proportionality is, like many things in physics, an eleg
 
 #### The Ideal Probe
 
-For the magic of $dI/dV \propto \text{LDOS}$ to work perfectly, our experimental setup should be ideal  . This means:
+For the magic of $dI/dV \propto \text{LDOS}$ to work perfectly, our experimental setup should be ideal [@problem_id:2813738] [@problem_id:2480663]. This means:
 
-1.  **A "Boring" Tip:** The tip itself must be electronically "flat." Its own [density of states](@article_id:147400) should be constant over the energy range we are measuring. If the tip has its own peaks and valleys in its DOS, they will get mixed in with the sample's signal, like trying to listen to a violin over a noisy radio. We want a featureless, metallic tip.
+1.  **A "Boring" Tip:** The tip itself must be electronically "flat." Its own [density of states](@keyword=density_of_states|lang=en-US|style=Feynman) should be constant over the energy range we are measuring. If the tip has its own peaks and valleys in its DOS, they will get mixed in with the sample's signal, like trying to listen to a violin over a noisy radio. We want a featureless, metallic tip.
 
-2.  **Transparent Tunneling:** The probability of an [electron tunneling](@article_id:272235) through the vacuum barrier must be the same for all electrons, regardless of their energy. In reality, this probability (the tunneling matrix element) has some energy dependence, but for small bias voltages, we can often ignore this.
+2.  **Transparent Tunneling:** The probability of an [electron tunneling](@keyword=electron_tunneling|lang=en-US|style=Feynman) through the vacuum barrier must be the same for all electrons, regardless of their energy. In reality, this probability (the tunneling matrix element) has some energy dependence, but for small bias voltages, we can often ignore this.
 
 3.  **An Absolute Zero World:** The derivation assumes the experiment is done at a temperature of absolute zero ($T=0$ K). At this temperature, the electron energy levels in a metal are filled neatly up to the Fermi level and are completely empty above it, creating a perfectly sharp "sea level."
 
@@ -65,28 +65,28 @@ For the magic of $dI/dV \propto \text{LDOS}$ to work perfectly, our experimental
 
 Of course, we don't live at absolute zero. At any finite temperature $T$, the electronic "sea level" is not perfectly calm; it's fuzzy. The electrons' energies are smeared out by thermal energy, following the **Fermi-Dirac distribution**. This means some states just below the Fermi level are empty, and some just above are filled.
 
-This thermal fuzziness acts like a blurry lens on our [spectrometer](@article_id:192687). Instead of measuring the true, sharp LDOS, we measure the LDOS convolved (or smeared) with a thermal broadening function. The width of this blur is determined by the temperature. The full-width at half-maximum (FWHM) of this broadening is found to be:
+This thermal fuzziness acts like a blurry lens on our [spectrometer](@keyword=spectrometer|lang=en-US|style=Feynman). Instead of measuring the true, sharp LDOS, we measure the LDOS convolved (or smeared) with a thermal broadening function. The width of this blur is determined by the temperature. The full-width at half-maximum (FWHM) of this broadening is found to be:
 
 $$
 \Delta E_{\text{thermal}} = 4 k_B T \ln(1 + \sqrt{2}) \approx 3.5 k_B T
 $$
 
-where $k_B$ is the Boltzmann constant. For a typical experiment conducted at [liquid helium](@article_id:138946) temperature ($T=4.2$ K), this thermal broadening sets a fundamental [resolution limit](@article_id:199884) of about $1.3$ meV  . Any features in the true LDOS that are sharper than this will be blurred out in our measurement.
+where $k_B$ is the Boltzmann constant. For a typical experiment conducted at [liquid helium](@keyword=liquid_helium|lang=en-US|style=Feynman) temperature ($T=4.2$ K), this thermal broadening sets a fundamental [resolution limit](@keyword=resolution_limit|lang=en-US|style=Feynman) of about $1.3$ meV [@problem_id:1800370] [@problem_id:2988543]. Any features in the true LDOS that are sharper than this will be blurred out in our measurement.
 
 #### Other Wrinkles in the Measurement
 
-The real world introduces other fascinating complications. When studying semiconductors, for instance, the strong electric field from the tip can penetrate the sample and bend the [energy bands](@article_id:146082), shifting the very states we want to measure. This effect, known as **[tip-induced band bending](@article_id:198613)**, means the simple relation $E=eV$ no longer holds, and careful modeling is needed to interpret the spectra .
+The real world introduces other fascinating complications. When studying semiconductors, for instance, the strong electric field from the tip can penetrate the sample and bend the [energy bands](@keyword=energy_bands|lang=en-US|style=Feynman), shifting the very states we want to measure. This effect, known as **[tip-induced band bending](@keyword=tip_induced_band_bending|lang=en-US|style=Feynman)**, means the simple relation $E=eV$ no longer holds, and careful modeling is needed to interpret the spectra [@problem_id:2480663].
 
-Clever experimentalists have developed techniques to counteract some of these issues. For example, sometimes the tip-sample distance can fluctuate. Since the tunneling current depends exponentially on this distance, this can distort the spectrum. One trick is to measure a **normalized conductance**, typically $(dI/dV)/(I/V)$. In this quantity, the exponential dependence on distance largely cancels out, giving a cleaner look at the electronic structure .
+Clever experimentalists have developed techniques to counteract some of these issues. For example, sometimes the tip-sample distance can fluctuate. Since the tunneling current depends exponentially on this distance, this can distort the spectrum. One trick is to measure a **normalized conductance**, typically $(dI/dV)/(I/V)$. In this quantity, the exponential dependence on distance largely cancels out, giving a cleaner look at the electronic structure [@problem_id:2856413].
 
 ### The Ultimate Limit: A Tale of Time and Uncertainty
 
-What is the absolute, final limit on how sharp our energy measurement can be? It is tempting to think about the time it takes for an electron to "traverse" the vacuum gap. An [electron tunneling](@article_id:272235) is a quantum event, and one might think the [time-energy uncertainty principle](@article_id:185778), $\Delta E \Delta t \gtrsim \hbar/2$, connects a short traversal time to a large energy uncertainty. This, however, is a common but misleading idea . STS is a steady-state measurement of a continuous current, not a [time-of-flight](@article_id:158977) experiment for a single electron. The traversal time does not define the [energy resolution](@article_id:179836).
+What is the absolute, final limit on how sharp our energy measurement can be? It is tempting to think about the time it takes for an electron to "traverse" the vacuum gap. An [electron tunneling](@keyword=electron_tunneling|lang=en-US|style=Feynman) is a quantum event, and one might think the [time-energy uncertainty principle](@keyword=time_energy_uncertainty_principle|lang=en-US|style=Feynman), $\Delta E \Delta t \gtrsim \hbar/2$, connects a short traversal time to a large energy uncertainty. This, however, is a common but misleading idea [@problem_id:2959699]. STS is a steady-state measurement of a continuous current, not a [time-of-flight](@keyword=time_of_flight|lang=en-US|style=Feynman) experiment for a single electron. The traversal time does not define the [energy resolution](@keyword=energy_resolution|lang=en-US|style=Feynman).
 
 The uncertainty principle does, however, play two crucial—and much more subtle—roles.
 
-First, there is the experimental integration time. At each voltage point, we measure the current for some duration, $\tau_{\text{int}}$, which might be a few milliseconds. The uncertainty principle states that this finite measurement time imposes a limit on our [energy resolution](@article_id:179836) of $\Delta E \gtrsim \hbar/(2\tau_{\text{int}})$. For a typical $\tau_{\text{int}} = 10$ ms, this limit is an incredibly tiny $\sim 10^{-14}$ eV. This is astronomically smaller than any other broadening effect, like thermal broadening, and is therefore completely negligible .
+First, there is the experimental integration time. At each voltage point, we measure the current for some duration, $\tau_{\text{int}}$, which might be a few milliseconds. The uncertainty principle states that this finite measurement time imposes a limit on our [energy resolution](@keyword=energy_resolution|lang=en-US|style=Feynman) of $\Delta E \gtrsim \hbar/(2\tau_{\text{int}})$. For a typical $\tau_{\text{int}} = 10$ ms, this limit is an incredibly tiny $\sim 10^{-14}$ eV. This is astronomically smaller than any other broadening effect, like thermal broadening, and is therefore completely negligible [@problem_id:2959699].
 
-The second role is far more profound. The electronic states we are measuring within the material are not immortal. They are **quasiparticles**—excitations that exist only for a finite **lifetime**, $\tau_{\text{life}}$, before they are scattered by other electrons or vibrations. And here, the uncertainty principle strikes with full force. A state that lives for only a short time $\tau_{\text{life}}$ cannot have a perfectly defined energy. It must have an intrinsic energy width, or **[lifetime broadening](@article_id:273918)**, of $\Delta E_{\text{life}} \approx \hbar/\tau_{\text{life}}$.
+The second role is far more profound. The electronic states we are measuring within the material are not immortal. They are **quasiparticles**—excitations that exist only for a finite **lifetime**, $\tau_{\text{life}}$, before they are scattered by other electrons or vibrations. And here, the uncertainty principle strikes with full force. A state that lives for only a short time $\tau_{\text{life}}$ cannot have a perfectly defined energy. It must have an intrinsic energy width, or **[lifetime broadening](@keyword=lifetime_broadening|lang=en-US|style=Feynman)**, of $\Delta E_{\text{life}} \approx \hbar/\tau_{\text{life}}$.
 
-For a typical [quasiparticle lifetime](@article_id:144959) of 10 femtoseconds ($10^{-14}$ s), the intrinsic energy broadening is about 66 meV. This is an inherent quantum fuzziness of the state itself. No instrument, no matter how perfect or cold, can ever measure this state with a better resolution. This is not a failure of our experiment; it is a fundamental property of the universe, and STS allows us to measure it directly. We are not just listening to the notes; we are hearing how long they last before they fade away.
+For a typical [quasiparticle lifetime](@keyword=quasiparticle_lifetime|lang=en-US|style=Feynman) of 10 femtoseconds ($10^{-14}$ s), the intrinsic energy broadening is about 66 meV. This is an inherent quantum fuzziness of the state itself. No instrument, no matter how perfect or cold, can ever measure this state with a better resolution. This is not a failure of our experiment; it is a fundamental property of the universe, and STS allows us to measure it directly. We are not just listening to the notes; we are hearing how long they last before they fade away.

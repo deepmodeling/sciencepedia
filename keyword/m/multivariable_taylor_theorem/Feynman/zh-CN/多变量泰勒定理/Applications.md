@@ -1,20 +1,20 @@
 ## 应用与跨学科联系
 
-所以，我们有了这个奇妙的数学机器——[多变量泰勒定理](@article_id:374500)。我们已经看到了它是如何工作的，如何将一个复杂、弯曲的多维函数景观，变成一个简单、平坦或微曲的局部地图。这有点像为一座巨大、复杂结构的任何微小部分都拥有一套完美的建筑蓝图。它确实很优雅。但它到底有何*用处*？
+所以，我们有了这个奇妙的数学机器——[多变量泰勒定理](@keyword=taylor_theorem_multivariable|lang=zh-CN|style=Feynman)。我们已经看到了它是如何工作的，如何将一个复杂、弯曲的多维函数景观，变成一个简单、平坦或微曲的局部地图。这有点像为一座巨大、复杂结构的任何微小部分都拥有一套完美的建筑蓝图。它确实很优雅。但它到底有何*用处*？
 
 答案是，几乎*所有*事情。
 
-在一个充满非线性的世界里——在这个世界里，结果很少简单地与其原因成正比——这个定理不仅仅是一个数学上的奇趣。它是我们用来理解、预测和控制我们周围复杂系统的主要工具。它是从纷繁复杂、无法解决的现实通往易于处理、[线性近似](@article_id:302749)的桥梁。让我们漫步于几个领域，看看这个思想在其中不仅有用，甚至是颠覆性的。
+在一个充满非线性的世界里——在这个世界里，结果很少简单地与其原因成正比——这个定理不仅仅是一个数学上的奇趣。它是我们用来理解、预测和控制我们周围复杂系统的主要工具。它是从纷繁复杂、无法解决的现实通往易于处理、[线性近似](@keyword=tangent_line_approximation|lang=zh-CN|style=Feynman)的桥梁。让我们漫步于几个领域，看看这个思想在其中不仅有用，甚至是颠覆性的。
 
 ### 预测与控制：在非线性世界中导航
 
-想象一下，你正在尝试建造一个机器人，比如一个自平衡滑板车或一个复杂的机械臂。支配其运动的物理学——即动力学——是一堆美妙而混乱的正弦、余弦和平方项的集合。如果你想告诉机器人下一步该做什么，你不可能在它倒下前的微秒瞬间解出这些复杂的[非线性方程](@article_id:306274)。情况似乎毫无希望。
+想象一下，你正在尝试建造一个机器人，比如一个自平衡滑板车或一个复杂的机械臂。支配其运动的物理学——即动力学——是一堆美妙而混乱的正弦、余弦和平方项的集合。如果你想告诉机器人下一步该做什么，你不可能在它倒下前的微秒瞬间解出这些复杂的[非线性方程](@keyword=nonlinear_equations|lang=zh-CN|style=Feynman)。情况似乎毫无希望。
 
-但并非如此！这正是我们的定理发挥作用的地方。在任何给定时刻，对于机器人当前的状态（其位置、速度、姿态），我们可以使用一阶[泰勒展开](@article_id:305482)来创建一个其动力学的*线性化*模型。我们问：“如果我稍微调整一下控制，作为[一阶近似](@article_id:307974)，状态会如何改变？”答案由[雅可比矩阵](@article_id:303923)给出，即所有一阶[偏导数](@article_id:306700)的集合。这个矩阵告诉我们控制输入的改变和系统状态改变之间的[局部线性](@article_id:330684)关系。
+但并非如此！这正是我们的定理发挥作用的地方。在任何给定时刻，对于机器人当前的状态（其位置、速度、姿态），我们可以使用一阶[泰勒展开](@keyword=taylor_expansion|lang=zh-CN|style=Feynman)来创建一个其动力学的*线性化*模型。我们问：“如果我稍微调整一下控制，作为[一阶近似](@keyword=first_order_approximation|lang=zh-CN|style=Feynman)，状态会如何改变？”答案由[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)给出，即所有一阶[偏导数](@keyword=partial_derivatives|lang=zh-CN|style=Feynman)的集合。这个矩阵告诉我们控制输入的改变和系统状态改变之间的[局部线性](@keyword=local_linearity|lang=zh-CN|style=Feynman)关系。
 
-工程师们在一项名为**[模型预测控制](@article_id:334376)（MPC）**的强大技术中运用这一技巧。控制器使用这个简化的[线性模型](@article_id:357202)“预测”未来一小段距离，并计算出使机器人保持在[期望](@article_id:311378)路径上的[最优控制](@article_id:298927)动作序列。然后，它应用该序列中的第一个动作，观察新的状态，围绕这个新点重新线性化动力学，并重复整个过程，每秒数千次。这就像在夜间沿着蜿蜒的山路行驶，把接下来的几英尺路当作直线，然后在每一步都重新评估。这种动力学的[线性化](@article_id:331373)是使我们能够控制从火星上的探测器到化工厂的一切事物的核心原则 。
+工程师们在一项名为**[模型预测控制](@keyword=receding_horizon_control|lang=zh-CN|style=Feynman)（MPC）**的强大技术中运用这一技巧。控制器使用这个简化的[线性模型](@keyword=linear_models|lang=zh-CN|style=Feynman)“预测”未来一小段距离，并计算出使机器人保持在[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)路径上的[最优控制](@keyword=optimal_control|lang=zh-CN|style=Feynman)动作序列。然后，它应用该序列中的第一个动作，观察新的状态，围绕这个新点重新线性化动力学，并重复整个过程，每秒数千次。这就像在夜间沿着蜿蜒的山路行驶，把接下来的几英尺路当作直线，然后在每一步都重新评估。这种动力学的[线性化](@keyword=linearization|lang=zh-CN|style=Feynman)是使我们能够控制从火星上的探测器到化工厂的一切事物的核心原则 [@problem_id:2884310]。
 
-同样的想法也适用于感知。机器人如何知道它在哪里？它使用传感器——相机、GPS、激光扫描仪——其测量值通常是其真实状态的非线性函数。为了整合一个新的测量值，像**[扩展卡尔曼滤波器](@article_id:324143)（EKF）**这样的[算法](@article_id:331821)会围绕其当前对状态的最佳猜测来[线性化](@article_id:331373)传感器模型。测量函数的[雅可比矩阵](@article_id:303923)变成一个“灵敏度矩阵”，告诉滤波器它应该在多大程度上信任新数据来更新其状态估计的每个分量 。从本质上讲，我们不断地构建简单的局部模型来理解一个复杂、非线性的现实。
+同样的想法也适用于感知。机器人如何知道它在哪里？它使用传感器——相机、GPS、激光扫描仪——其测量值通常是其真实状态的非线性函数。为了整合一个新的测量值，像**[扩展卡尔曼滤波器](@keyword=extended_kalman_filter|lang=zh-CN|style=Feynman)（EKF）**这样的[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)会围绕其当前对状态的最佳猜测来[线性化](@keyword=linearization|lang=zh-CN|style=Feynman)传感器模型。测量函数的[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)变成一个“灵敏度矩阵”，告诉滤波器它应该在多大程度上信任新数据来更新其状态估计的每个分量 [@problem_id:2720577]。从本质上讲，我们不断地构建简单的局部模型来理解一个复杂、非线性的现实。
 
 ### 驯服不确定性：误差的传播
 
@@ -24,9 +24,9 @@
 $$
 \Delta g \approx \frac{\partial g}{\partial X} \Delta X + \frac{\partial g}{\partial Y} \Delta Y
 $$
-通过取这个表达式的方差，我们得出了一个关于不确定性如何传播的优美公式。偏导数作为[灵敏度系数](@article_id:337247)，告诉我们函数对输入不确定性的放大或减弱程度。如果输入变量是相关的——也就是说，它们倾向于一起变化——[泰勒展开](@article_id:305482)的形式很自然地处理了这一点，将它们的协方差也包含进来。这种方法在从物理到生物的每一个实验科学中都是不可或缺的，它使我们能够根据初始测量的不确定性严格地量化派生结果的不确定性  。
+通过取这个表达式的方差，我们得出了一个关于不确定性如何传播的优美公式。偏导数作为[灵敏度系数](@keyword=sensitivity_coefficient|lang=zh-CN|style=Feynman)，告诉我们函数对输入不确定性的放大或减弱程度。如果输入变量是相关的——也就是说，它们倾向于一起变化——[泰勒展开](@keyword=taylor_expansion|lang=zh-CN|style=Feynman)的形式很自然地处理了这一点，将它们的协方差也包含进来。这种方法在从物理到生物的每一个实验科学中都是不可或缺的，它使我们能够根据初始测量的不确定性严格地量化派生结果的不确定性 [@problem_id:1947846] [@problem_id:1947647]。
 
-在[分析化学](@article_id:298050)等领域，这种严谨性至关重要。当化学家校准仪器时，他们会对一组标准品进行线性拟合。得到的斜率和截距不仅仅是数字；它们是带有方差的估计值，并且至关重要的是，它们具有非零的协方差（因为一个使斜率估计偏高的误差可能倾向于使截距估计偏低）。在计算未知样品浓度时，一个忽略这种[协方差](@article_id:312296)的朴素[误差传播](@article_id:306993)方法是不诚实的。完整的多元泰勒展开提供了诚实的公式，考虑了所有方差和协方差的来源，从而给出了最终不确定性的真实画面 。它是支撑科学结果统计完整性的工具。
+在[分析化学](@keyword=analytical_chemistry|lang=zh-CN|style=Feynman)等领域，这种严谨性至关重要。当化学家校准仪器时，他们会对一组标准品进行线性拟合。得到的斜率和截距不仅仅是数字；它们是带有方差的估计值，并且至关重要的是，它们具有非零的协方差（因为一个使斜率估计偏高的误差可能倾向于使截距估计偏低）。在计算未知样品浓度时，一个忽略这种[协方差](@keyword=covariance|lang=zh-CN|style=Feynman)的朴素[误差传播](@keyword=uncertainty_propagation|lang=zh-CN|style=Feynman)方法是不诚实的。完整的多元泰勒展开提供了诚实的公式，考虑了所有方差和协方差的来源，从而给出了最终不确定性的真实画面 [@problem_id:1428248]。它是支撑科学结果统计完整性的工具。
 
 ### 揭示自然结构：从生物学到机器学习
 
@@ -38,24 +38,24 @@ $$
 $$
 w_{\mathrm{rel}}(z) \approx w_{\mathrm{rel}}(\mu) + (\nabla w_{\mathrm{rel}}(\mu))^T (z-\mu) + \frac{1}{2} (z-\mu)^T H(\mu) (z-\mu)
 $$
-这个展开式中的各项具有直接而深刻的生物学解释。[梯度向量](@article_id:301622) $\nabla w_{\mathrm{rel}}(\mu)$ 是**方向[选择梯度](@article_id:313008)**。它指向适应度景观上最陡峭的上升方向——即最受选择青睐的性状组合。海森矩阵 $H(\mu)$ 描述了景观的*曲率*。
-- 对角[线元](@article_id:324062)素 $\frac{\partial^2 w_{\mathrm{rel}}}{\partial z_i^2}$ 告诉我们关于单个性状的选择。负值意味着景观是峰状的，有利于中间值（**[稳定性选择](@article_id:299261)**）。正值意味着景观是谷状的，有利于极端值（**分裂[性选择](@article_id:298874)**）。
-- 非对角线元素 $\frac{\partial^2 w_{\mathrm{rel}}}{\partial z_i \partial z_j}$ 可能是最美妙的部分。它们描述了**相关[性选择](@article_id:298874)**——即对一个性状的选择依赖于另一个性状的值。一个正值可能意味着同时又高又快是好的，但又高又慢是坏的。
+这个展开式中的各项具有直接而深刻的生物学解释。[梯度向量](@keyword=gradient_vector|lang=zh-CN|style=Feynman) $\nabla w_{\mathrm{rel}}(\mu)$ 是**方向[选择梯度](@keyword=selection_gradient|lang=zh-CN|style=Feynman)**。它指向适应度景观上最陡峭的上升方向——即最受选择青睐的性状组合。海森矩阵 $H(\mu)$ 描述了景观的*曲率*。
+- 对角[线元](@keyword=line_element|lang=zh-CN|style=Feynman)素 $\frac{\partial^2 w_{\mathrm{rel}}}{\partial z_i^2}$ 告诉我们关于单个性状的选择。负值意味着景观是峰状的，有利于中间值（**[稳定性选择](@keyword=stabilizing_selection|lang=zh-CN|style=Feynman)**）。正值意味着景观是谷状的，有利于极端值（**分裂[性选择](@keyword=sexual_selection|lang=zh-CN|style=Feynman)**）。
+- 非对角线元素 $\frac{\partial^2 w_{\mathrm{rel}}}{\partial z_i \partial z_j}$ 可能是最美妙的部分。它们描述了**相关[性选择](@keyword=sexual_selection|lang=zh-CN|style=Feynman)**——即对一个性状的选择依赖于另一个性状的值。一个正值可能意味着同时又高又快是好的，但又高又慢是坏的。
 
-通过这种方式，梯度和海森矩阵这些抽象的数学对象被直接映射到进化的基本力量上。[泰勒展开](@article_id:305482)为现代自然选择的定量研究提供了根本的语言 。
+通过这种方式，梯度和海森矩阵这些抽象的数学对象被直接映射到进化的基本力量上。[泰勒展开](@keyword=taylor_expansion|lang=zh-CN|style=Feynman)为现代自然选择的定量研究提供了根本的语言 [@problem_id:2737198]。
 
-同样的想法——通过其[局部线性](@article_id:330684)或[二次近似](@article_id:334329)来理解复杂景观——也是现代人工智能的核心。当我们训练一个[神经网络](@article_id:305336)时，我们试图找到一组权重 $w$，以最小化一个高度复杂、高维的“[损失函数](@article_id:638865)” $L(w)$。这个函数的景观是难以想象的扭曲。完成此任务的主力[算法](@article_id:331821)，**[梯度下降](@article_id:306363)**，不过是一阶[泰勒展开](@article_id:305482)的迭代应用 。在每一步，[算法](@article_id:331821)都用一个简单的线性平面 $L(w) \approx L(w_k) + \nabla L(w_k)^T (w - w_k)$ 来近似[损失函数](@article_id:638865)，并沿着该平面上最陡峭的[下降方向](@article_id:641351)迈出一小步。整个[深度学习](@article_id:302462)的大厦就是建立在这个简单的迭代过程之上：“假装世界在微小邻域内是线性的”，迈出一步，然后重新评估。
+同样的想法——通过其[局部线性](@keyword=local_linearity|lang=zh-CN|style=Feynman)或[二次近似](@keyword=quadratic_approximation|lang=zh-CN|style=Feynman)来理解复杂景观——也是现代人工智能的核心。当我们训练一个[神经网络](@keyword=neural_networks|lang=zh-CN|style=Feynman)时，我们试图找到一组权重 $w$，以最小化一个高度复杂、高维的“[损失函数](@keyword=loss_functions|lang=zh-CN|style=Feynman)” $L(w)$。这个函数的景观是难以想象的扭曲。完成此任务的主力[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)，**[梯度下降](@keyword=gradient_descent|lang=zh-CN|style=Feynman)**，不过是一阶[泰勒展开](@keyword=taylor_expansion|lang=zh-CN|style=Feynman)的迭代应用 [@problem_id:2398895]。在每一步，[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)都用一个简单的线性平面 $L(w) \approx L(w_k) + \nabla L(w_k)^T (w - w_k)$ 来近似[损失函数](@keyword=loss_functions|lang=zh-CN|style=Feynman)，并沿着该平面上最陡峭的[下降方向](@keyword=descent_directions|lang=zh-CN|style=Feynman)迈出一小步。整个[深度学习](@keyword=deep_learning|lang=zh-CN|style=Feynman)的大厦就是建立在这个简单的迭代过程之上：“假装世界在微小邻域内是线性的”，迈出一步，然后重新评估。
 
 ### 基础科学的语言
 
-[泰勒展开](@article_id:305482)的用途并不止于工程、统计或生物学。它出现在我们最基础理论的根基之中。
+[泰勒展开](@keyword=taylor_expansion|lang=zh-CN|style=Feynman)的用途并不止于工程、统计或生物学。它出现在我们最基础理论的根基之中。
 
-在物理学和数学中，我们使用李群和[李代数](@article_id:298403)的语言来研究对称性。例如，3D空间中所有旋转的集合构成了李群 $SO(3)$。一个“无穷小”的旋转可以被认为是相应[李代数](@article_id:298403) $\mathfrak{so}(3)$ 的一个元素 $X$。你如何从一个无穷小的旋转得到一个完整的、有限的旋转？答案是矩阵指数，$R = \exp(X)$。而[指数函数](@article_id:321821)，到底是什么？它是由其[泰勒级数](@article_id:307569)定义的！
+在物理学和数学中，我们使用李群和[李代数](@keyword=lie_algebras|lang=zh-CN|style=Feynman)的语言来研究对称性。例如，3D空间中所有旋转的集合构成了李群 $SO(3)$。一个“无穷小”的旋转可以被认为是相应[李代数](@keyword=lie_algebras|lang=zh-CN|style=Feynman) $\mathfrak{so}(3)$ 的一个元素 $X$。你如何从一个无穷小的旋转得到一个完整的、有限的旋转？答案是矩阵指数，$R = \exp(X)$。而[指数函数](@keyword=exponential_function|lang=zh-CN|style=Feynman)，到底是什么？它是由其[泰勒级数](@keyword=taylor_series|lang=zh-CN|style=Feynman)定义的！
 $$
 \exp(X) = I + X + \frac{1}{2!}X^2 + \dots
 $$
-这个展开式精确地告诉你，一个偏离无旋转状态（$I$）的微小扰动 $X$ 是如何累积成一个完整旋转的。对于微小的旋转，$\exp(X) \approx I + X$。这个近似是物理学家模拟系统在[连续对称性](@article_id:297708)下行为的基石，从经典力学到量子[场论](@article_id:315652) 。
+这个展开式精确地告诉你，一个偏离无旋转状态（$I$）的微小扰动 $X$ 是如何累积成一个完整旋转的。对于微小的旋转，$\exp(X) \approx I + X$。这个近似是物理学家模拟系统在[连续对称性](@keyword=continuous_symmetry|lang=zh-CN|style=Feynman)下行为的基石，从经典力学到量子[场论](@keyword=field_theory|lang=zh-CN|style=Feynman) [@problem_id:1666728]。
 
-泰勒展开的精神甚至延伸到了随机性领域。在[随机过程](@article_id:333307)的世界里——它模拟了从股票价格到水中花粉粒的[抖动](@article_id:326537)等一切事物——有一个著名的结果叫做**伊藤引理（Itô's Lemma）**。它本质上是针对由布朗运动驱动的[随机过程](@article_id:333307)函数的[泰勒展开](@article_id:305482)。由于布朗运动无限锯齿的特性，伊藤公式包含一个额外的二阶项，这在普通微积分中是不存在的。这个“随机[泰勒定理](@article_id:304683)”是[量化金融](@article_id:299568)中为[衍生品定价](@article_id:304438)的基础工具。它也是**[费曼-卡茨公式](@article_id:336126)（Feynman-Kac formula）**的关键组成部分，这是一个深刻而优美的结果，将[随机过程](@article_id:333307)的世界（[随机微分方程](@article_id:307037)）与确定性场的领域（[偏微分方程](@article_id:301773)）联系起来，而[多变量泰勒展开](@article_id:332160)正是锻造这种联系的智力纽带 。
+泰勒展开的精神甚至延伸到了随机性领域。在[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)的世界里——它模拟了从股票价格到水中花粉粒的[抖动](@keyword=dither|lang=zh-CN|style=Feynman)等一切事物——有一个著名的结果叫做**伊藤引理（Itô's Lemma）**。它本质上是针对由布朗运动驱动的[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)函数的[泰勒展开](@keyword=taylor_expansion|lang=zh-CN|style=Feynman)。由于布朗运动无限锯齿的特性，伊藤公式包含一个额外的二阶项，这在普通微积分中是不存在的。这个“随机[泰勒定理](@keyword=taylor_s_theorem|lang=zh-CN|style=Feynman)”是[量化金融](@keyword=quantitative_finance|lang=zh-CN|style=Feynman)中为[衍生品定价](@keyword=derivative_pricing|lang=zh-CN|style=Feynman)的基础工具。它也是**[费曼-卡茨公式](@keyword=feynman_kac_formula|lang=zh-CN|style=Feynman)（Feynman-Kac formula）**的关键组成部分，这是一个深刻而优美的结果，将[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)的世界（[随机微分方程](@keyword=stochastic_differential_equations|lang=zh-CN|style=Feynman)）与确定性场的领域（[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)）联系起来，而[多变量泰勒展开](@keyword=multivariable_taylor_expansion|lang=zh-CN|style=Feynman)正是锻造这种联系的智力纽带 [@problem_id:2977072]。
 
-从控制机器人，到理解进化，到训练神经网络，再到描述自然界的基本对称性，[多变量泰勒定理](@article_id:374500)无处不在。它是我们窥探非线性幽暗，并清晰地看到其中蕴含的简单结构的通用方法。它是一个简单而优美的思想如何照亮世界隐藏运作方式的明证。
+从控制机器人，到理解进化，到训练神经网络，再到描述自然界的基本对称性，[多变量泰勒定理](@keyword=taylor_theorem_multivariable|lang=zh-CN|style=Feynman)无处不在。它是我们窥探非线性幽暗，并清晰地看到其中蕴含的简单结构的通用方法。它是一个简单而优美的思想如何照亮世界隐藏运作方式的明证。

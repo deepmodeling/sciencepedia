@@ -11,9 +11,9 @@ How can one walk a truer line? You wouldn't just stare at your feet. You would l
 
 ### The Art of a Single Step: Probing the Path Ahead
 
-Instead of relying on a single measurement of the slope at the start of a step, RK4 cleverly probes the landscape four times to get a much richer sense of the terrain ahead.  It’s like a skilled navigator sending out short-range scouts before committing to a direction. Let's say our differential equation is given by $y'(t) = f(t, y)$, our current position is $(t_n, y_n)$, and we want to take a step of size $h$. The four probes, or "stages," unfold like this:
+Instead of relying on a single measurement of the slope at the start of a step, RK4 cleverly probes the landscape four times to get a much richer sense of the terrain ahead. [@problem_id:2197395] It’s like a skilled navigator sending out short-range scouts before committing to a direction. Let's say our differential equation is given by $y'(t) = f(t, y)$, our current position is $(t_n, y_n)$, and we want to take a step of size $h$. The four probes, or "stages," unfold like this:
 
-1.  **The First Probe ($k_1$):** We begin by simply measuring the slope right where we are. This is our initial, Euler-like direction. It's the most basic piece of information we have. 
+1.  **The First Probe ($k_1$):** We begin by simply measuring the slope right where we are. This is our initial, Euler-like direction. It's the most basic piece of information we have. [@problem_id:2202827]
     $$
     k_1 = f(t_n, y_n)
     $$
@@ -33,7 +33,7 @@ Instead of relying on a single measurement of the slope at the start of a step, 
     k_4 = f(t_n + h, y_n + h k_3)
     $$
 
-At the conclusion of this process, which can be followed step-by-step for any given equation  , we have not yet moved. Instead, we have gathered four crucial pieces of intelligence: the slope at the beginning ($k_1$), two refined estimates of the slope in the middle ($k_2$ and $k_3$), and an estimate for the slope at the end ($k_4$). Now, how do we combine them to take our final, definitive step?
+At the conclusion of this process, which can be followed step-by-step for any given equation [@problem_id:2174161] [@problem_id:2219949], we have not yet moved. Instead, we have gathered four crucial pieces of intelligence: the slope at the beginning ($k_1$), two refined estimates of the slope in the middle ($k_2$ and $k_3$), and an estimate for the slope at the end ($k_4$). Now, how do we combine them to take our final, definitive step?
 
 ### The Magic in the Mixture: Simpson's Legacy
 
@@ -51,7 +51,7 @@ $$
 y_{n+1} - y_n \approx \frac{h}{6} \left[ f(t_n) + 4f\left(t_n + \frac{h}{2}\right) + f(t_n + h) \right]
 $$
 
-This is none other than **Simpson's 1/3 Rule**, a classic and highly accurate method for numerical integration!  Simpson's rule works by fitting a parabola to the start, middle, and end points of an interval and calculating the exact area under that parabola. The fact that RK4 reduces to Simpson's rule is no coincidence. It reveals that the Runge-Kutta method is, in its soul, a sophisticated generalization of this idea. It gives more weight to the midpoint slopes because, for a curving path, the slope in the middle is a much better representative of the *average* slope across the entire step than the slopes at the endpoints.
+This is none other than **Simpson's 1/3 Rule**, a classic and highly accurate method for numerical integration! [@problem_id:2174183] Simpson's rule works by fitting a parabola to the start, middle, and end points of an interval and calculating the exact area under that parabola. The fact that RK4 reduces to Simpson's rule is no coincidence. It reveals that the Runge-Kutta method is, in its soul, a sophisticated generalization of this idea. It gives more weight to the midpoint slopes because, for a curving path, the slope in the middle is a much better representative of the *average* slope across the entire step than the slopes at the endpoints.
 
 ### The Secret of its Strength: Matching Taylor's Blueprint
 
@@ -62,28 +62,28 @@ y(t_{n+1}) = y(t_n) + h y'(t_n) + \frac{h^2}{2} y''(t_n) + \frac{h^3}{6} y'''(t_
 $$
 
 The goal of any numerical method is to create a formula whose own expansion in powers of $h$ matches this true blueprint for as many terms as possible.
--   **Euler's method** matches only the first two terms. Its first mistake—its **[local truncation error](@article_id:147209)**—is of order $h^2$.
+-   **Euler's method** matches only the first two terms. Its first mistake—its **[local truncation error](@keyword=local_truncation_error|lang=en-US|style=Feynman)**—is of order $h^2$.
 -   **The RK4 method** is a masterpiece of construction. When its final formula is expanded, it is found to match the Taylor series perfectly up to and including the term with $h^4$. The first term it gets wrong is of order $h^5$.
 
-This is the fundamental reason for RK4's celebrated accuracy. It is not just a "good approximation"; it is an algorithm specifically designed to replicate the true solution's local behavior with incredible fidelity, getting the position, velocity, acceleration, jerk, and snap all correct. 
+This is the fundamental reason for RK4's celebrated accuracy. It is not just a "good approximation"; it is an algorithm specifically designed to replicate the true solution's local behavior with incredible fidelity, getting the position, velocity, acceleration, jerk, and snap all correct. [@problem_id:2181201]
 
 ### The Payoff of Precision: The Power of Fourth-Order Accuracy
 
-This high-order local accuracy has a spectacular payoff in practice. While the error made in a single step is tiny (order $h^5$), over thousands of steps, these errors accumulate. For a method whose local error is $O(h^{p+1})$, the total, or **[global error](@article_id:147380)**, is typically of order $h^p$.
+This high-order local accuracy has a spectacular payoff in practice. While the error made in a single step is tiny (order $h^5$), over thousands of steps, these errors accumulate. For a method whose local error is $O(h^{p+1})$, the total, or **[global error](@keyword=global_error|lang=en-US|style=Feynman)**, is typically of order $h^p$.
 
-Since RK4 is a fourth-order method ($p=4$), its [global error](@article_id:147380) is proportional to $h^4$. The practical consequence of this is astounding. Suppose you need to increase your solution's accuracy.
+Since RK4 is a fourth-order method ($p=4$), its [global error](@keyword=global_error|lang=en-US|style=Feynman) is proportional to $h^4$. The practical consequence of this is astounding. Suppose you need to increase your solution's accuracy.
 
 -   With first-order Euler, if you reduce the step size by a factor of 10, the error also reduces by a factor of 10. Fair, but not very efficient.
--   With fourth-order RK4, if you reduce the step size by a factor of 10, the error plummets by a factor of $10^4 = 10,000$. 
+-   With fourth-order RK4, if you reduce the step size by a factor of 10, the error plummets by a factor of $10^4 = 10,000$. [@problem_id:2197376]
 
 This phenomenal scaling allows us to achieve high levels of precision that would be computationally impossible with lower-order methods. It is the reason RK4 is a workhorse of scientific and engineering simulation.
 
 ### A Dose of Reality: Cost, Stability, and the Road Ahead
 
-Of course, this power is not free. The four function evaluations per step make RK4 more computationally expensive than simpler methods.  It's a classic trade-off: each step is harder work, but you need far fewer steps to reach your destination accurately.
+Of course, this power is not free. The four function evaluations per step make RK4 more computationally expensive than simpler methods. [@problem_id:2181222] It's a classic trade-off: each step is harder work, but you need far fewer steps to reach your destination accurately.
 
-Furthermore, RK4 is not a magic bullet. If you try to take steps that are too large, the numerical solution can become unstable and diverge wildly from reality, especially for systems that oscillate. There is a maximum allowable step size, determined by the problem's properties, beyond which the simulation "blows up." For an undamped oscillator, for instance, this critical step size is related to its natural frequency. 
+Furthermore, RK4 is not a magic bullet. If you try to take steps that are too large, the numerical solution can become unstable and diverge wildly from reality, especially for systems that oscillate. There is a maximum allowable step size, determined by the problem's properties, beyond which the simulation "blows up." For an undamped oscillator, for instance, this critical step size is related to its natural frequency. [@problem_id:2219402]
 
-This highlights a key limitation: for many real-world problems, the solution has periods of slow, gentle change and periods of rapid, violent activity. A small, fixed step size that is safe for the "fast" regions is wastefully inefficient in the "slow" regions. This is where the story of Runge-Kutta methods continues. Advanced techniques, known as **[adaptive step-size](@article_id:136211) methods** (like RKF45), build directly on the RK4 foundation. They use an embedded pair of Runge-Kutta formulas to *estimate the error* at each step, automatically shrinking the step size when the solution changes quickly and increasing it when the solution is smooth. 
+This highlights a key limitation: for many real-world problems, the solution has periods of slow, gentle change and periods of rapid, violent activity. A small, fixed step size that is safe for the "fast" regions is wastefully inefficient in the "slow" regions. This is where the story of Runge-Kutta methods continues. Advanced techniques, known as **[adaptive step-size](@keyword=adaptive_step_size|lang=en-US|style=Feynman) methods** (like RKF45), build directly on the RK4 foundation. They use an embedded pair of Runge-Kutta formulas to *estimate the error* at each step, automatically shrinking the step size when the solution changes quickly and increasing it when the solution is smooth. [@problem_id:2202821]
 
 These modern solvers are the engines driving discovery in fields from astrophysics to molecular biology. But at their core lies the elegant logic of the classical RK4 method—a timeless lesson in how to navigate the complex landscapes of change, not just by looking at one's feet, but by intelligently and gracefully scouting the path ahead.

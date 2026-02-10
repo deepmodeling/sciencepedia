@@ -1,5 +1,5 @@
 ## 引言
-当我们的身体只有一套有限的遗传指令时，它如何抵御似乎无穷无尽的病原体？这个免疫学的核心悖论由一项被称为[V(D)J重组](@article_id:302020)的卓越[细胞工程](@article_id:367359)技艺所解决。该过程使发育中的免疫细胞能够创建一支独特且个性化的受体军队，能够识别几乎任何可以想象的入侵者。[V(D)J重组](@article_id:302020)的核心是一种通过[体细胞基因编辑](@article_id:339354)产生巨大多样性的系统，通过永久性地重写细胞的DNA来创造一种新颖的防御工具。
+当我们的身体只有一套有限的遗传指令时，它如何抵御似乎无穷无尽的病原体？这个免疫学的核心悖论由一项被称为[V(D)J重组](@keyword=v(d)j_recombination|lang=zh-CN|style=Feynman)的卓越[细胞工程](@keyword=cellular_engineering|lang=zh-CN|style=Feynman)技艺所解决。该过程使发育中的免疫细胞能够创建一支独特且个性化的受体军队，能够识别几乎任何可以想象的入侵者。[V(D)J重组](@keyword=v(d)j_recombination|lang=zh-CN|style=Feynman)的核心是一种通过[体细胞基因编辑](@keyword=somatic_gene_editing|lang=zh-CN|style=Feynman)产生巨大多样性的系统，通过永久性地重写细胞的DNA来创造一种新颖的防御工具。
 
 本文深入探讨了V(D)J重组这个精妙而复杂的世界，全面概述了这一适应性免疫的基石。通过探索其基本原理和深远应用，我们将揭示这一单一的生物学机制如何塑造健康、疾病以及我们对个体性本身的定义。
 
@@ -11,40 +11,40 @@
 
 ### 有限蓝图，无限可能
 
-我们的基因组，即每个细胞中完整的DNA指令集，包含约20,000个基因。这是那个有限的图书馆。然而，由[B细胞和T细胞](@article_id:348508)组成的适应性免疫系统，必须能够识别并对几乎无穷无尽的潜在入侵者——病毒、细菌和其他病原体——发起防御，每种入侵者都展示着独特的[分子标记](@article_id:351479)，即抗原。如果每次识别都需要一个专门的、预先写好的基因，我们的基因组将会大得不可思议。然而，自然要聪明得多。它没有预先写下数十亿个不同的故事，而是设计了一个系统来按需生成它们。这个系统就是**[V(D)J重组](@article_id:302020)**。
+我们的基因组，即每个细胞中完整的DNA指令集，包含约20,000个基因。这是那个有限的图书馆。然而，由[B细胞和T细胞](@keyword=b_cells_and_t_cells|lang=zh-CN|style=Feynman)组成的适应性免疫系统，必须能够识别并对几乎无穷无尽的潜在入侵者——病毒、细菌和其他病原体——发起防御，每种入侵者都展示着独特的[分子标记](@keyword=molecular_markers|lang=zh-CN|style=Feynman)，即抗原。如果每次识别都需要一个专门的、预先写好的基因，我们的基因组将会大得不可思议。然而，自然要聪明得多。它没有预先写下数十亿个不同的故事，而是设计了一个系统来按需生成它们。这个系统就是**[V(D)J重组](@keyword=v(d)j_recombination|lang=zh-CN|style=Feynman)**。
 
-从本质上讲，[V(D)J重组](@article_id:302020)是在单个发育中的免疫细胞内进行的一种基因手术。它不是一个临时的编辑，也不是简单的复制粘贴。与大多数基因表达过程（修改基因的临时RNA拷贝）不同，[V(D)J重组](@article_id:302020)对细胞自身的DNA蓝图进行永久且不可逆的改变。当一个[B细胞](@article_id:382150)在[骨髓](@article_id:381003)中或一个[T细胞](@article_id:360929)在胸腺中诞生时，其包含抗原受体基因的DNA是一大堆可互换的部件——标记为**可变(V)**、**多样性(D)**和**连接(J)**的基因片段。细胞的任务是每种片段各选一个（对于某些受体链，则选一个V和一个J），将它们从原始位置剪切下来，然后粘贴在一起，形成一个单一的功能性基因。这个新组装的基因将编码该细胞及其所有后代终生携带的[B细胞](@article_id:382150)或T细胞受体的独特抗原结合区。
+从本质上讲，[V(D)J重组](@keyword=v(d)j_recombination|lang=zh-CN|style=Feynman)是在单个发育中的免疫细胞内进行的一种基因手术。它不是一个临时的编辑，也不是简单的复制粘贴。与大多数基因表达过程（修改基因的临时RNA拷贝）不同，[V(D)J重组](@keyword=v(d)j_recombination|lang=zh-CN|style=Feynman)对细胞自身的DNA蓝图进行永久且不可逆的改变[@problem_id:2258176]。当一个[B细胞](@keyword=b_cell_2|lang=zh-CN|style=Feynman)在[骨髓](@keyword=bone_marrow|lang=zh-CN|style=Feynman)中或一个[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)在胸腺中诞生时，其包含抗原受体基因的DNA是一大堆可互换的部件——标记为**可变(V)**、**多样性(D)**和**连接(J)**的基因片段。细胞的任务是每种片段各选一个（对于某些受体链，则选一个V和一个J），将它们从原始位置剪切下来，然后粘贴在一起，形成一个单一的功能性基因。这个新组装的基因将编码该细胞及其所有后代终生携带的[B细胞](@keyword=b_cell_2|lang=zh-CN|style=Feynman)或T细胞受体的独特抗原结合区。
 
-### 分子手术刀：被[驯化](@article_id:316817)的寄生者
+### 分子手术刀：被[驯化](@keyword=acclimation|lang=zh-CN|style=Feynman)的寄生者
 
-一个细胞是如何有胆量对自身最神圣的文本——基因组——进行手术的呢？答案是一个关于进化中“旧物新用”的惊人故事。事实证明，V(D)J重组的机制是一个古老的[自私遗传元件](@article_id:354946)——[转座子](@article_id:313986)或称“[跳跃基因](@article_id:313986)”——的“[驯化](@article_id:316817)”版本。
+一个细胞是如何有胆量对自身最神圣的文本——基因组——进行手术的呢？答案是一个关于进化中“旧物新用”的惊人故事。事实证明，V(D)J重组的机制是一个古老的[自私遗传元件](@keyword=selfish_genetic_elements|lang=zh-CN|style=Feynman)——[转座子](@keyword=jumping_genes|lang=zh-CN|style=Feynman)或称“[跳跃基因](@keyword=jumping_genes|lang=zh-CN|style=Feynman)”——的“[驯化](@keyword=acclimation|lang=zh-CN|style=Feynman)”版本[@problem_id:1782695]。
 
-数亿年前，一个转座子侵入了一个有颌脊椎动物祖先的基因组。该[转座子](@article_id:313986)包含一个编码酶（转座酶）的基因，两侧是特殊的识别序列。[转座酶](@article_id:337171)会将整个元件剪切下来，并粘贴到基因组的其他位置。在进化过程中，发生了一件了不起的事情。[转座酶](@article_id:337171)基因与其识别位点分离，被[驯化](@article_id:316817)，其表达被限制在发育中的淋巴细胞中。这个祖先的转座酶基因演变成了我们现在所说的**[重组激活基因](@article_id:366423)(Recombination-Activating Genes)**，即**RAG1**和**RAG2**。
+数亿年前，一个转座子侵入了一个有颌脊椎动物祖先的基因组。该[转座子](@keyword=jumping_genes|lang=zh-CN|style=Feynman)包含一个编码酶（转座酶）的基因，两侧是特殊的识别序列。[转座酶](@keyword=transposase|lang=zh-CN|style=Feynman)会将整个元件剪切下来，并粘贴到基因组的其他位置。在进化过程中，发生了一件了不起的事情。[转座酶](@keyword=transposase|lang=zh-CN|style=Feynman)基因与其识别位点分离，被[驯化](@keyword=acclimation|lang=zh-CN|style=Feynman)，其表达被限制在发育中的淋巴细胞中。这个祖先的转座酶基因演变成了我们现在所说的**[重组激活基因](@keyword=recombination_activating_gene|lang=zh-CN|style=Feynman)(Recombination-Activating Genes)**，即**RAG1**和**RAG2**。
 
-现在，RAG1和RAG2蛋白形成一个复合物，充当V(D)J重组的分子手术刀。最初转座酶用于结合的识别位点现在散布在整个基因组中，位于每个V、D和J基因片段的两侧。这些位点现在被称为**[重组信号序列](@article_id:370420)(Recombination Signal Sequences, RSSs)**，是RAG复合物的“在此剪切”标记。RAG复合物以一种对其过往的美妙呼应的方式，结合到这些RSSs上并发起剪切-粘贴过程，但它不再移动自身，而是[重排](@article_id:369331)宿主自身的基因片段，从而打造出[适应性免疫](@article_id:297970)的工具。
+现在，RAG1和RAG2蛋白形成一个复合物，充当V(D)J重组的分子手术刀。最初转座酶用于结合的识别位点现在散布在整个基因组中，位于每个V、D和J基因片段的两侧。这些位点现在被称为**[重组信号序列](@keyword=recombination_signal_sequences|lang=zh-CN|style=Feynman)(Recombination Signal Sequences, RSSs)**，是RAG复合物的“在此剪切”标记。RAG复合物以一种对其过往的美妙呼应的方式，结合到这些RSSs上并发起剪切-粘贴过程，但它不再移动自身，而是[重排](@keyword=derangement|lang=zh-CN|style=Feynman)宿主自身的基因片段，从而打造出[适应性免疫](@keyword=adaptive_immunity|lang=zh-CN|style=Feynman)的工具[@problem_id:2865379]。
 
 ### 组装规则：混沌中的秩序
 
 这种基因手术并非疯狂、随机的剪切，而是由确保产物功能性的严格规则所支配。首要且最重要的是**12/23规则**。每个RSS包含一个保守的7个碱基对的区块（七聚体）和一个9个碱基对的区块（九聚体），中间由12或23个碱基对的间隔区隔开。RAG复合物的构造决定了它只能将两个基因片段连接在一起，前提是其中一个片段侧翼是12 bp间隔区的RSS，而另一个是23 bp间隔区的RSS。
 
-把它想象成一套有两种连接器的拼图。一个“12-间隔区”的拼块只能连接到一个“23-间隔区”的拼块。这个简单的规则巧妙地保证了正确的组装顺序。对于[抗体](@article_id:307222)重链，V片段可能有一个23-间隔区，D片段两边各有一个12-间隔区，而J片段有一个23-间隔区。这确保了V只能与D连接，D只能与J连接。它防止了像V-V或J-J这样无意义的连接，从而保留了最终基因的基本V-D-J结构。
+把它想象成一套有两种连接器的拼图。一个“12-间隔区”的拼块只能连接到一个“23-间隔区”的拼块。这个简单的规则巧妙地保证了正确的组装顺序。对于[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)重链，V片段可能有一个23-间隔区，D片段两边各有一个12-间隔区，而J片段有一个23-间隔区。这确保了V只能与D连接，D只能与J连接。它防止了像V-V或J-J这样无意义的连接，从而保留了最终基因的基本V-D-J结构[@problem_id:2865379]。
 
-但即使片段以正确的顺序连接，最终的指令也必须有意义。遗传密码是以三个字母的“单词”（[密码子](@article_id:337745)）来读取的。随机连接过程很容易增加或删除非三的倍数的DNA字母，导致**[移码突变](@article_id:299296)**。这会打乱其余的[遗传信息](@article_id:352538)，通常导致提前出现终止信号和产生被截短的无用蛋白。一个成功避免此命运、创造出连续可翻译序列的[重排](@article_id:369331)，被称为**“有效”[重排](@article_id:369331)**。
+但即使片段以正确的顺序连接，最终的指令也必须有意义。遗传密码是以三个字母的“单词”（[密码子](@keyword=codon|lang=zh-CN|style=Feynman)）来读取的。随机连接过程很容易增加或删除非三的倍数的DNA字母，导致**[移码突变](@keyword=frameshift_mutation|lang=zh-CN|style=Feynman)**。这会打乱其余的[遗传信息](@keyword=genetic_information|lang=zh-CN|style=Feynman)，通常导致提前出现终止信号和产生被截短的无用蛋白。一个成功避免此命运、创造出连续可翻译序列的[重排](@keyword=derangement|lang=zh-CN|style=Feynman)，被称为**“有效”[重排](@keyword=derangement|lang=zh-CN|style=Feynman)**[@problem_id:2218465]。
 
-然而，细胞有不止一次的机会来做对这件事。它有每个[染色体](@article_id:340234)的两个拷贝。如果第一条[染色体](@article_id:340234)上的重组导致了无效[重排](@article_id:369331)，细胞不会放弃；它会简单地在第二条[染色体](@article_id:340234)上开始这个过程。此外，对于T细胞受体α链，其[基因座](@article_id:356874)的[排列](@article_id:296886)方式允许在*同一*[染色体](@article_id:340234)上进行多次连续的尝试。如果第一次V-J连接是无效的，细胞可以选择一个更上游的V片段，并将其连接到一个更下游的J片段，在此过程中切除掉之前失败的尝试。这种“自我编辑”机制极大地增加了成功的概率。
+然而，细胞有不止一次的机会来做对这件事。它有每个[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)的两个拷贝。如果第一条[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)上的重组导致了无效[重排](@keyword=derangement|lang=zh-CN|style=Feynman)，细胞不会放弃；它会简单地在第二条[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)上开始这个过程[@problem_id:2263177]。此外，对于T细胞受体α链，其[基因座](@keyword=gene_locus|lang=zh-CN|style=Feynman)的[排列](@keyword=permutation|lang=zh-CN|style=Feynman)方式允许在*同一*[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)上进行多次连续的尝试。如果第一次V-J连接是无效的，细胞可以选择一个更上游的V片段，并将其连接到一个更下游的J片段，在此过程中切除掉之前失败的尝试。这种“自我编辑”机制极大地增加了成功的概率[@problem_id:2271932]。
 
 ### 不精确的艺术：从“错误”中产生多样性
 
-系统的最深层的美妙之处就在于此。虽然像12/23规则这样的规定提供了秩序，但[V(D)J重组](@article_id:302020)的真正力量来自于其精心设计的不精确性。仅仅通过组合不同的V、D和J片段所产生的多样性是巨大的，但与它们之间连接处创造的多样性相比，就相形见绌了。这种**[连接多样性](@article_id:383386)**源于一系列乍看起来像是错误的操作步骤。
+系统的最深层的美妙之处就在于此。虽然像12/23规则这样的规定提供了秩序，但[V(D)J重组](@keyword=v(d)j_recombination|lang=zh-CN|style=Feynman)的真正力量来自于其精心设计的不精确性。仅仅通过组合不同的V、D和J片段所产生的多样性是巨大的，但与它们之间连接处创造的多样性相比，就相形见绌了。这种**[连接多样性](@keyword=junctional_diversity|lang=zh-CN|style=Feynman)**源于一系列乍看起来像是错误的操作步骤。
 
-该过程遵循一个严格的序列。首先，RAG复合物在RSS处切开DNA。被释放的DNA末端接着攻击另一条链，在编码片段（V、D或J）的末端形成一个共价密封的**[DNA发夹结构](@article_id:371596)**。这个发夹是下一个酶**Artemis**的底物。Artemis是一种核酸酶，其任务是打开这个发夹。它很少完美地在顶端切割。相反，它常常在偏离中心的位置进行剪切，形成一个短的单链悬垂。当DNA聚合酶来填补缺失的链时，这个悬垂的序列被用作模板，从而产生一个短的[回文序列](@article_id:349442)。这些被称为**P-[核苷酸](@article_id:339332)**（“Palindromic”的首字母），是连接处新序列的一个微妙但重要的来源。
+该过程遵循一个严格的序列[@problem_id:2266184]。首先，RAG复合物在RSS处切开DNA。被释放的DNA末端接着攻击另一条链，在编码片段（V、D或J）的末端形成一个共价密封的**[DNA发夹结构](@keyword=dna_hairpin|lang=zh-CN|style=Feynman)**。这个发夹是下一个酶**Artemis**的底物。Artemis是一种核酸酶，其任务是打开这个发夹。它很少完美地在顶端切割。相反，它常常在偏离中心的位置进行剪切，形成一个短的单链悬垂。当DNA聚合酶来填补缺失的链时，这个悬垂的序列被用作模板，从而产生一个短的[回文序列](@keyword=palindromic_sequence|lang=zh-CN|style=Feynman)。这些被称为**P-[核苷酸](@keyword=nucleotide|lang=zh-CN|style=Feynman)**（“Palindromic”的首字母），是连接处新序列的一个微妙但重要的来源[@problem_id:2236506]。
 
-接下来是创造性混沌的大师：**[末端脱氧核苷酸转移酶](@article_id:363956)(Terminal deoxynucleotidyl Transferase, TdT)**。TdT识别处理过的DNA末端（现在有一个单链3'悬垂），并做一件了不起的事情：它开始凭空添加随机的DNA碱基，无需模板。这些被称为**N-[核苷酸](@article_id:339332)**（“Non-templated”的首字母）。它可能会在连接处添加五个、十个甚至二十个随机字母。这是一种刻意引入的“胡言乱语”，一种纯粹的即兴创作。但正是这种随机性，极大地扩展了抗原受体的潜在多样性，在每个连接处创造出宇宙历史上可能从未有过的独特序列。
+接下来是创造性混沌的大师：**[末端脱氧核苷酸转移酶](@keyword=terminal_deoxynucleotidyl_transferase|lang=zh-CN|style=Feynman)(Terminal deoxynucleotidyl Transferase, TdT)**。TdT识别处理过的DNA末端（现在有一个单链3'悬垂），并做一件了不起的事情：它开始凭空添加随机的DNA碱基，无需模板[@problem_id:2242882]。这些被称为**N-[核苷酸](@keyword=nucleotide|lang=zh-CN|style=Feynman)**（“Non-templated”的首字母）。它可能会在连接处添加五个、十个甚至二十个随机字母。这是一种刻意引入的“胡言乱语”，一种纯粹的即兴创作。但正是这种随机性，极大地扩展了抗原受体的潜在多样性，在每个连接处创造出宇宙历史上可能从未有过的独特序列。
 
 ### 重组定生死
 
-这个过程的风险是绝对的。对于一个发育中的淋巴细胞来说，成功意味着生命，一张离开骨髓或胸腺的通行证，以及一次加入免疫巡逻队的机会。失败则意味着死亡。如果一个细胞用尽了所有机会，仍未能在其任何一条[染色体](@article_id:340234)上完成一次有效[重排](@article_id:369331)，它就没有任何功能性的抗原受体。没有这个受体，它就无法接收完成其成熟所必需的存活信号，并被指令进行程序性细胞死亡，即凋亡。
+这个过程的风险是绝对的。对于一个发育中的淋巴细胞来说，成功意味着生命，一张离开骨髓或胸腺的通行证，以及一次加入免疫巡逻队的机会。失败则意味着死亡。如果一个细胞用尽了所有机会，仍未能在其任何一条[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)上完成一次有效[重排](@keyword=derangement|lang=zh-CN|style=Feynman)，它就没有任何功能性的抗原受体。没有这个受体，它就无法接收完成其成熟所必需的存活信号，并被指令进行程序性细胞死亡，即凋亡。
 
-这一点在那些[RAG酶](@article_id:368280)失活的遗传缺陷个体中得到了鲜明的体现。没有了分子手术刀，[V(D)J重组](@article_id:302020)无法启动。[B细胞](@article_id:382150)或[T细胞](@article_id:360929)都无法生成。结果是适应性免疫系统的灾难性衰竭，这种情况被称为**[重症联合免疫缺陷](@article_id:360281)(Severe Combined Immunodeficiency, SCID)** 。患有SCID的病人对那些对健康人来说微不足道的感染也极其脆弱。这是一个严酷的提醒：我们对抗疾病的能力，是被写入并重写于我们免疫细胞的DNA之中的。
+这一点在那些[RAG酶](@keyword=rag_enzymes|lang=zh-CN|style=Feynman)失活的遗传缺陷个体中得到了鲜明的体现。没有了分子手术刀，[V(D)J重组](@keyword=v(d)j_recombination|lang=zh-CN|style=Feynman)无法启动。[B细胞](@keyword=b_cell_2|lang=zh-CN|style=Feynman)或[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)都无法生成。结果是适应性免疫系统的灾难性衰竭，这种情况被称为**[重症联合免疫缺陷](@keyword=severe_combined_immunodeficiency|lang=zh-CN|style=Feynman)(Severe Combined Immunodeficiency, SCID)** [@problem_id:2316769]。患有SCID的病人对那些对健康人来说微不足道的感染也极其脆弱。这是一个严酷的提醒：我们对抗疾病的能力，是被写入并重写于我们免疫细胞的DNA之中的。
 
-从被[驯化](@article_id:316817)的寄生者到分子手术刀，从严格的规则到精心设计的混沌，[V(D)J重组](@article_id:302020)是进化创造力的大师级课程。正是这个过程赋予我们每个人独特的免疫学身份，一个拥有数十亿个故事的活体图书馆，每个故事都准备好识别一个不同的敌人，而所有这些都源于一个有限的、共享的蓝图。
+从被[驯化](@keyword=acclimation|lang=zh-CN|style=Feynman)的寄生者到分子手术刀，从严格的规则到精心设计的混沌，[V(D)J重组](@keyword=v(d)j_recombination|lang=zh-CN|style=Feynman)是进化创造力的大师级课程。正是这个过程赋予我们每个人独特的免疫学身份，一个拥有数十亿个故事的活体图书馆，每个故事都准备好识别一个不同的敌人，而所有这些都源于一个有限的、共享的蓝图。

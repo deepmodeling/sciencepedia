@@ -5,7 +5,7 @@ The journey begins in the **Principles and Mechanisms** chapter, where we will d
 
 ## Principles and Mechanisms
 
-So, you have a tangled mess of rope in front of you. How can you be absolutely sure if it's a true, bona fide knot, or just a convoluted loop that will fall apart if you pull on its ends? You could tug and pull, but some tangles are devilishly complex. What we need is a more methodical, almost magical, procedure—a recipe that takes a drawing of the knot and spits out a unique signature, something that doesn’t change no matter how much you wiggle and stretch the rope (as long as you don’t cut it!). This signature is what we call a **[knot invariant](@article_id:136985)**, and the Jones polynomial is one of the most remarkable and insightful of them all.
+So, you have a tangled mess of rope in front of you. How can you be absolutely sure if it's a true, bona fide knot, or just a convoluted loop that will fall apart if you pull on its ends? You could tug and pull, but some tangles are devilishly complex. What we need is a more methodical, almost magical, procedure—a recipe that takes a drawing of the knot and spits out a unique signature, something that doesn’t change no matter how much you wiggle and stretch the rope (as long as you don’t cut it!). This signature is what we call a **[knot invariant](@keyword=knot_invariant|lang=en-US|style=Feynman)**, and the Jones polynomial is one of the most remarkable and insightful of them all.
 
 But how do we build such a magical recipe? Let's invent one. We’ll play a little game on the two-dimensional drawing of the knot.
 
@@ -27,11 +27,11 @@ $$
 \langle L \cup \bigcirc \rangle = (-A^2 - A^{-2}) \langle L \rangle
 $$
 
-By applying these two rules repeatedly , we can take any knot diagram and reduce it to a polynomial in the variable $A$. This resulting polynomial is called the **Kauffman bracket**, denoted $\langle K \rangle$.
+By applying these two rules repeatedly [@problem_id:184748], we can take any knot diagram and reduce it to a polynomial in the variable $A$. This resulting polynomial is called the **Kauffman bracket**, denoted $\langle K \rangle$.
 
 ### Fixing the Rules: Writhe and the True Invariant
 
-We've invented a fun game, but does it work? Does it give us a true [knot invariant](@article_id:136985)? Almost! If you try computing the Kauffman bracket for a simple loop with a twist in it (what mathematicians call a Reidemeister I move), you'll find the answer is different from the bracket of a simple loop with no twist. The result of our game depends on the trivial twists in the diagram! This is a bug in our system.
+We've invented a fun game, but does it work? Does it give us a true [knot invariant](@keyword=knot_invariant|lang=en-US|style=Feynman)? Almost! If you try computing the Kauffman bracket for a simple loop with a twist in it (what mathematicians call a Reidemeister I move), you'll find the answer is different from the bracket of a simple loop with no twist. The result of our game depends on the trivial twists in the diagram! This is a bug in our system.
 
 Fortunately, there's a fix. The problem is that our rules treat "over" and "under" crossings identically. We need to account for the "handedness" of the crossings. Let's define a quantity called the **writhe** of a diagram, denoted $w(D)$. It's fantastically simple: just go through all the crossings, assign a $+1$ to each right-handed twist and a $-1$ to each left-handed twist, and add them all up.
 
@@ -43,13 +43,13 @@ $$
 
 This is the **Jones polynomial**! That strange-looking factor $(-A^3)^{-w(D)}$ is a piece of mathematical genius; it is precisely engineered to cancel out the dependency on those trivial twists. The final substitution, $A = t^{-1/4}$, is just a convention to make the final polynomial look a bit neater. Now, we have a true invariant—one that stays the same for any diagram of the same knot.
 
-For the famous **figure-eight knot** ($4_1$), one can draw a diagram with four crossings: two positive and two negative, giving a total writhe of $w=0$. In this case, the Jones polynomial is just the Kauffman bracket with the substitution. The calculation   yields the beautiful, palindromic expression:
+For the famous **figure-eight knot** ($4_1$), one can draw a diagram with four crossings: two positive and two negative, giving a total writhe of $w=0$. In this case, the Jones polynomial is just the Kauffman bracket with the substitution. The calculation [@problem_id:342829] [@problem_id:96035] yields the beautiful, palindromic expression:
 
 $$
 V(4_1;t) = t^2 - t + 1 - t^{-1} + t^{-2}
 $$
 
-This normalization procedure also sheds light on the concept of **framing**. The writhe of a diagram corresponds to a specific choice of framing (a "ribbon" around the knot) called the [blackboard framing](@article_id:138655). The Jones polynomial, by explicitly removing the writhe dependence, becomes an invariant of the unframed knot itself. The relationship between a framed invariant and the unframed one is simply that writhe-dependent correction factor .
+This normalization procedure also sheds light on the concept of **framing**. The writhe of a diagram corresponds to a specific choice of framing (a "ribbon" around the knot) called the [blackboard framing](@keyword=blackboard_framing|lang=en-US|style=Feynman). The Jones polynomial, by explicitly removing the writhe dependence, becomes an invariant of the unframed knot itself. The relationship between a framed invariant and the unframed one is simply that writhe-dependent correction factor [@problem_id:182705].
 
 ### A Deeper Order: Braids and the Algebra of Weaving
 
@@ -57,7 +57,7 @@ The diagrammatic game is wonderfully visual, but there's another, completely dif
 
 This process of weaving has a beautiful mathematical structure called the **braid group**. For $n$ strands, the fundamental moves are swapping adjacent strands. Let's call the move where strand $i$ crosses *over* strand $i+1$ by the name $\sigma_i$. Any complex braid can be described as a sequence of these elementary moves—a "word" made from the letters $\sigma_i$.
 
-Here's where it gets amazing. We can represent these elementary braid moves as matrices. There are specific rules, rooted in the algebra of quantum groups, that assign a matrix to each generator $\sigma_i$ . A long, complicated braid word like $\beta = \sigma_1 \sigma_2^{-1} \sigma_1^2$ simply becomes a product of the corresponding matrices, encoding the entire weaving pattern into one final matrix. And the Jones polynomial of the knot you get by closing this braid? It can be calculated directly from this matrix using a specialized trace operation and a normalization factor.
+Here's where it gets amazing. We can represent these elementary braid moves as matrices. There are specific rules, rooted in the algebra of quantum groups, that assign a matrix to each generator $\sigma_i$ [@problem_id:145590]. A long, complicated braid word like $\beta = \sigma_1 \sigma_2^{-1} \sigma_1^2$ simply becomes a product of the corresponding matrices, encoding the entire weaving pattern into one final matrix. And the Jones polynomial of the knot you get by closing this braid? It can be calculated directly from this matrix using a specialized trace operation and a normalization factor.
 
 Stop and think about this for a second. One method involves drawing pictures, applying local rules everywhere, and summing up the results. The other involves abstract algebra, writing words, and multiplying matrices. They are completely different procedures, yet they produce the *exact same invariant*. When something like this happens in science, it’s not a coincidence. It's a giant signpost pointing toward a profound, underlying truth.
 
@@ -65,9 +65,9 @@ Stop and think about this for a second. One method involves drawing pictures, ap
 
 So what is this profound truth? The stunning answer, discovered by physicist Edward Witten, is that nature itself plays this game. The Jones polynomial is not just a mathematician's invention; it is a physical quantity in a theoretical universe governed by **Chern-Simons theory**.
 
-Chern-Simons theory is a type of Topological Quantum Field Theory (TQFT). In this framework, one can calculate the quantum-mechanical "[vacuum expectation value](@article_id:145846)" of an observable called a **Wilson loop**. You can think of a Wilson loop as the path, or worldline, traced out by a particle that travels through spacetime and returns to its starting point. If this path is knotted, we have a knotted Wilson loop.
+Chern-Simons theory is a type of Topological Quantum Field Theory (TQFT). In this framework, one can calculate the quantum-mechanical "[vacuum expectation value](@keyword=vacuum_expectation_value|lang=en-US|style=Feynman)" of an observable called a **Wilson loop**. You can think of a Wilson loop as the path, or worldline, traced out by a particle that travels through spacetime and returns to its starting point. If this path is knotted, we have a knotted Wilson loop.
 
-Witten's monumental discovery was that the [expectation value](@article_id:150467) of an $SU(2)$ Wilson loop in a 3-dimensional spacetime is *exactly* the Jones polynomial of the knot .
+Witten's monumental discovery was that the [expectation value](@keyword=expectation_value|lang=en-US|style=Feynman) of an $SU(2)$ Wilson loop in a 3-dimensional spacetime is *exactly* the Jones polynomial of the knot [@problem_id:799854].
 
 Suddenly, all the pieces fall into place. The abstract variable $t$ is no longer just a placeholder. It acquires a physical meaning, related to a fundamental constant of the theory called the **level**, $k$:
 
@@ -75,7 +75,7 @@ $$
 t = \exp\left(\frac{2\pi i}{k+2}\right)
 $$
 
-The Jones polynomial, a Laurent polynomial, becomes a complex number whose value depends on the properties of the physical theory. For example, the VEV for the figure-eight knot turns from a polynomial into a concrete trigonometric expression depending on the level $k$ . This connection transformed knot theory, revealing that its arcane structures were, in fact, describing the behavior of quantum fields.
+The Jones polynomial, a Laurent polynomial, becomes a complex number whose value depends on the properties of the physical theory. For example, the VEV for the figure-eight knot turns from a polynomial into a concrete trigonometric expression depending on the level $k$ [@problem_id:799854]. This connection transformed knot theory, revealing that its arcane structures were, in fact, describing the behavior of quantum fields.
 
 ### Painting with Quantum Colors
 
@@ -83,15 +83,15 @@ The connection to physics deepens even further. In quantum mechanics, particles 
 
 This leads to a vast generalization of the Jones polynomial. For each integer $N \ge 2$, corresponding to the dimension of the representation, we get a different, more powerful invariant: the $N$-th **colored Jones polynomial**, $J_N(K;q)$. The original Jones polynomial is just the simplest case, $J_2(K;q)$.
 
-These higher polynomials are more complex but also more discerning; they can sometimes distinguish between knots that the original Jones polynomial cannot. For instance, the $N=3$ colored polynomial for the figure-eight knot is a much more intricate beast than its $N=2$ cousin .
+These higher polynomials are more complex but also more discerning; they can sometimes distinguish between knots that the original Jones polynomial cannot. For instance, the $N=3$ colored polynomial for the figure-eight knot is a much more intricate beast than its $N=2$ cousin [@problem_id:95953].
 
-This entire ornate structure—the different colors, the braid representations, the [skein relations](@article_id:161209)—emerges from the representation theory of an exotic algebraic object called a **quantum group**, specifically $U_q(sl_2)$. This "quantum deformation" of the classical Lie group $SU(2)$ is the powerhouse engine driving the entire theory of Jones polynomials and their generalizations .
+This entire ornate structure—the different colors, the braid representations, the [skein relations](@keyword=skein_relations|lang=en-US|style=Feynman)—emerges from the representation theory of an exotic algebraic object called a **quantum group**, specifically $U_q(sl_2)$. This "quantum deformation" of the classical Lie group $SU(2)$ is the powerhouse engine driving the entire theory of Jones polynomials and their generalizations [@problem_id:342759].
 
 ### Echoes and Perturbations: The Vassiliev Invariants
 
 The Jones polynomial is an incredibly rich object. It's so rich, in fact, that you can extract other invariants from it. This is a favorite trick of physicists: when faced with a complicated function, see what it looks like in a limiting case. Let's set $t=e^x$ and consider what happens when $t$ is very close to 1 (i.e., $x$ is very small).
 
-If we expand the Jones polynomial $V(K; e^x)$ as a [power series](@article_id:146342) in $x$, the coefficients of this expansion form a tower of simpler [knot invariants](@article_id:157221) known as **Vassiliev invariants** (or finite-type invariants). An easy way to calculate the first few of these is to take derivatives of the polynomial and evaluate them at $t=1$. The second derivative, for example, gives the type-2 Vassiliev invariant, $v_2(K)$ . For the figure-eight knot ($4_1$), this value is a simple integer:
+If we expand the Jones polynomial $V(K; e^x)$ as a [power series](@keyword=power_series|lang=en-US|style=Feynman) in $x$, the coefficients of this expansion form a tower of simpler [knot invariants](@keyword=knot_invariants|lang=en-US|style=Feynman) known as **Vassiliev invariants** (or finite-type invariants). An easy way to calculate the first few of these is to take derivatives of the polynomial and evaluate them at $t=1$. The second derivative, for example, gives the type-2 Vassiliev invariant, $v_2(K)$ [@problem_id:95988]. For the figure-eight knot ($4_1$), this value is a simple integer:
 
 $$
 v_2(4_1) = \frac{d^2}{dt^2} \left( t^2 - t + 1 - t^{-1} + t^{-2} \right) \bigg|_{t=1} = 6

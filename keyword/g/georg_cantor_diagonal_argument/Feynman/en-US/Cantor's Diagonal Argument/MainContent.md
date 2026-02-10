@@ -1,17 +1,17 @@
 ## Introduction
-The idea that one infinity can be larger than another is one of the most counter-intuitive yet profound concepts in mathematics. For centuries, infinity was a monolithic idea, but the groundbreaking work of Georg Cantor shattered that notion forever. The key that unlocked this new universe of varying infinities was his elegant and powerful proof technique: the [diagonal argument](@article_id:202204). This method provided a concrete way to demonstrate that some infinite sets, such as the real numbers, are fundamentally "more numerous" than others, like the integers.
+The idea that one infinity can be larger than another is one of the most counter-intuitive yet profound concepts in mathematics. For centuries, infinity was a monolithic idea, but the groundbreaking work of Georg Cantor shattered that notion forever. The key that unlocked this new universe of varying infinities was his elegant and powerful proof technique: the [diagonal argument](@keyword=diagonal_argument|lang=en-US|style=Feynman). This method provided a concrete way to demonstrate that some infinite sets, such as the real numbers, are fundamentally "more numerous" than others, like the integers.
 
-However, the power of Cantor's argument extends far beyond simply comparing sets of numbers. It reveals a fundamental pattern of [self-reference](@article_id:152774) and limitation that echoes across logic, philosophy, and computer science. This article delves into the heart of this remarkable idea. In the "Principles and Mechanisms" chapter, we will dissect the argument itself, understanding its step-by-step construction, the critical role of the diagonal, and the precise conditions under which it works—and fails. Following that, the "Applications and Interdisciplinary Connections" chapter will broaden our perspective, revealing how the same logical DNA powers proofs of fundamental limits in fields far from its origin, from [set theory paradoxes](@article_id:148015) to the boundaries of what computers can ever know.
+However, the power of Cantor's argument extends far beyond simply comparing sets of numbers. It reveals a fundamental pattern of [self-reference](@keyword=self_reference|lang=en-US|style=Feynman) and limitation that echoes across logic, philosophy, and computer science. This article delves into the heart of this remarkable idea. In the "Principles and Mechanisms" chapter, we will dissect the argument itself, understanding its step-by-step construction, the critical role of the diagonal, and the precise conditions under which it works—and fails. Following that, the "Applications and Interdisciplinary Connections" chapter will broaden our perspective, revealing how the same logical DNA powers proofs of fundamental limits in fields far from its origin, from [set theory paradoxes](@keyword=set_theory_paradoxes|lang=en-US|style=Feynman) to the boundaries of what computers can ever know.
 
 ## Principles and Mechanisms
 
-Alright, so we've been introduced to this peculiar idea that some infinities are bigger than others. It sounds like something from a fantasy novel, but it's one of the most profound discoveries in all of mathematics. The tool that unlocked this discovery, Georg Cantor's [diagonal argument](@article_id:202204), is not just a clever trick; it's a lens through which we can see the deep structure of logic and sets. Our mission in this chapter is to take this tool apart, see how it works, understand why it's so powerful, and discover its surprising connections to other big ideas.
+Alright, so we've been introduced to this peculiar idea that some infinities are bigger than others. It sounds like something from a fantasy novel, but it's one of the most profound discoveries in all of mathematics. The tool that unlocked this discovery, Georg Cantor's [diagonal argument](@keyword=diagonal_argument|lang=en-US|style=Feynman), is not just a clever trick; it's a lens through which we can see the deep structure of logic and sets. Our mission in this chapter is to take this tool apart, see how it works, understand why it's so powerful, and discover its surprising connections to other big ideas.
 
 ### The Heart of the Argument: A Recipe for a Ghost
 
 Let's not get lost in abstractions just yet. Like any good physics lecture, let's start with a concrete example. Imagine you have a friend, a very ambitious analyst, who claims she has a complete list of every possible infinite sequence of 0s and 1s. Every single one! An infinite list of infinite sequences.
 
-She presents you with the beginning of her list. It might look something like this, stretching on forever downwards and to the right :
+She presents you with the beginning of her list. It might look something like this, stretching on forever downwards and to the right [@problem_id:1554048]:
 
 $s_1 = (\mathbf{1}, 1, 0, 0, 1, \dots)$
 $s_2 = (0, \mathbf{0}, 1, 0, 0, \dots)$
@@ -47,19 +47,19 @@ So, our new sequence $s^*$ is not $s_1$, not $s_2$, not $s_3$, and so on for eve
 
 At this point, a clever student might ask, "Is there something special about the diagonal? What if I construct my new number differently?" This is a fantastic question. The best way to appreciate a good idea is to see why other ideas don't work.
 
-Suppose, instead of the diagonal rule, you try to construct your new number, $x$, by making every digit a 5. So $x = 0.5555\dots$. You then claim this number cannot be on the list. But what if the 73rd number on the list, $r_{73}$, just happens to be $0.5555\dots$? Your construction doesn't guarantee a difference with $r_{73}$, so your argument falls apart. You haven't proven anything .
+Suppose, instead of the diagonal rule, you try to construct your new number, $x$, by making every digit a 5. So $x = 0.5555\dots$. You then claim this number cannot be on the list. But what if the 73rd number on the list, $r_{73}$, just happens to be $0.5555\dots$? Your construction doesn't guarantee a difference with $r_{73}$, so your argument falls apart. You haven't proven anything [@problem_id:2289608].
 
-Or what if you try a more complex-sounding "shifted diagonal" rule? For instance, to get the $n$-th digit of your new number, you look at the $(n+1)$-th digit of the $n$-th number on the list and pick something different. Sounds plausible, right? But it fails for the same fundamental reason. This rule guarantees that your new number $y$ is different from $x_n$ in some way ($c_n \neq d_{n,n+1}$), but it *doesn't* guarantee they differ at a consistent spot that prevents them from being the same number. We could, with some malice, design a list where the number you construct this way is identical to the very first number on the list! .
+Or what if you try a more complex-sounding "shifted diagonal" rule? For instance, to get the $n$-th digit of your new number, you look at the $(n+1)$-th digit of the $n$-th number on the list and pick something different. Sounds plausible, right? But it fails for the same fundamental reason. This rule guarantees that your new number $y$ is different from $x_n$ in some way ($c_n \neq d_{n,n+1}$), but it *doesn't* guarantee they differ at a consistent spot that prevents them from being the same number. We could, with some malice, design a list where the number you construct this way is identical to the very first number on the list! [@problem_id:2289598].
 
 The diagonal construction is not arbitrary; it is the essential engine of the proof. It forges a direct, systematic link between the identity of the new element and *every* element on the list it is trying to escape. By looking at the $n$-th element to define the $n$-th part of itself, it ensures it is different from the $n$-th element in a place where that element can't hide. It's a perfect recipe for creating an outsider.
 
 ### Know Your Limits: When the Trick Fails
 
-One of the most important lessons in science is knowing the boundaries of your tools. The [diagonal argument](@article_id:202204) is powerful, but it's not a magic wand that makes everything uncountable. Trying to apply it where it doesn't belong is incredibly instructive.
+One of the most important lessons in science is knowing the boundaries of your tools. The [diagonal argument](@keyword=diagonal_argument|lang=en-US|style=Feynman) is powerful, but it's not a magic wand that makes everything uncountable. Trying to apply it where it doesn't belong is incredibly instructive.
 
 #### Rule 1: The Elements Must Be "Long Enough"
 
-Let's consider the set of all *finite*-length [binary strings](@article_id:261619). This includes "0", "110", "101101", and even the empty string. This set is definitely infinite. Can we prove it's uncountable? Let's try to apply the [diagonal argument](@article_id:202204).
+Let's consider the set of all *finite*-length [binary strings](@keyword=binary_strings|lang=en-US|style=Feynman). This includes "0", "110", "101101", and even the empty string. This set is definitely infinite. Can we prove it's uncountable? Let's try to apply the [diagonal argument](@keyword=diagonal_argument|lang=en-US|style=Feynman).
 
 First, we must list them. We can do this systematically: list them by length, and for each length, list them in alphabetical (lexicographical) order.
 
@@ -70,26 +70,26 @@ First, we must list them. We can do this systematically: list them by length, an
 5. "01"
 $\vdots$
 
-This list is complete; every finite string will appear on it eventually. Now, let's try to build our "diagonal" string. To get the first bit, we look at the first bit of the first string... but the first string is empty and has no first bit! The procedure halts immediately. Even if we ignore the empty string, we run into trouble fast. To get the third bit of our new string, we'd need the third bit of the third string in our list, which is "1". It has no third bit! .
+This list is complete; every finite string will appear on it eventually. Now, let's try to build our "diagonal" string. To get the first bit, we look at the first bit of the first string... but the first string is empty and has no first bit! The procedure halts immediately. Even if we ignore the empty string, we run into trouble fast. To get the third bit of our new string, we'd need the third bit of the third string in our list, which is "1". It has no third bit! [@problem_id:1285346].
 
-The diagonal is infinitely long. To support it, the elements on your list must also be infinitely long. The grid of digits must be an infinite square, not a jagged, finite triangle. This is a profound point: the [uncountability](@article_id:153530) shown by Cantor's argument is a property of *infinite-dimensional* objects.
+The diagonal is infinitely long. To support it, the elements on your list must also be infinitely long. The grid of digits must be an infinite square, not a jagged, finite triangle. This is a profound point: the [uncountability](@keyword=uncountability|lang=en-US|style=Feynman) shown by Cantor's argument is a property of *infinite-dimensional* objects.
 
 #### Rule 2: The Construction Must Stay in the Playground
 
 This is the most subtle and beautiful limitation. Let's try to prove that the set of **rational numbers** (fractions) is uncountable. We know this is false—it can be shown that the rationals are countable. So our proof *must* fail. The fun part is finding where.
 
-Let's assume we have a complete list of all rational numbers between 0 and 1, written out as decimals :
+Let's assume we have a complete list of all rational numbers between 0 and 1, written out as decimals [@problem_id:1285309]:
 $r_1 = 0.d_{11}d_{12}d_{13}\dots$
 $r_2 = 0.d_{21}d_{22}d_{23}\dots$
 $\vdots$
 
-Now we apply the [diagonal argument](@article_id:202204). We construct a new number, $x$, where its $n$-th digit is different from the $n$-th digit of $r_n$. By construction, this new number $x$ is not on our list of rationals. Contradiction?
+Now we apply the [diagonal argument](@keyword=diagonal_argument|lang=en-US|style=Feynman). We construct a new number, $x$, where its $n$-th digit is different from the $n$-th digit of $r_n$. By construction, this new number $x$ is not on our list of rationals. Contradiction?
 
-Not so fast. What kind of number have we built? Rational numbers have decimal expansions that are either terminating or eventually repeating. Our diagonal construction, picking digits based on the whimsical pattern of the diagonal of our list, will almost certainly produce a [decimal expansion](@article_id:141798) that *never repeats*. And what do we call a number with a non-repeating, non-[terminating decimal](@article_id:157033) expansion? An **irrational number**.
+Not so fast. What kind of number have we built? Rational numbers have decimal expansions that are either terminating or eventually repeating. Our diagonal construction, picking digits based on the whimsical pattern of the diagonal of our list, will almost certainly produce a [decimal expansion](@keyword=decimal_expansion|lang=en-US|style=Feynman) that *never repeats*. And what do we call a number with a non-repeating, non-[terminating decimal](@keyword=terminating_decimal|lang=en-US|style=Feynman) expansion? An **irrational number**.
 
 So, all we've done is take a list of rational numbers and construct an *irrational* number that is not on the list. This is not a contradiction; it's a confirmation! It's like having a list of all the dogs in the world and constructing a cat—the existence of a cat doesn't prove your list of dogs was incomplete. The argument only creates a contradiction if the newly constructed element belongs to the very set we claimed was completely listed. The set must be **closed** under the diagonal construction.
 
-The same failure happens if we try to prove the set of numbers with [terminating decimal](@article_id:157033) expansions is uncountable. The [diagonal argument](@article_id:202204) applied to this set produces a number with a non-terminating expansion, which is outside the original set. No contradiction . The set of *all* real numbers, however, is closed under this operation; the diagonal construction on a list of real numbers always produces another real number. That's why the argument works for $\mathbb{R}$ but not for $\mathbb{Q}$.
+The same failure happens if we try to prove the set of numbers with [terminating decimal](@keyword=terminating_decimal|lang=en-US|style=Feynman) expansions is uncountable. The [diagonal argument](@keyword=diagonal_argument|lang=en-US|style=Feynman) applied to this set produces a number with a non-terminating expansion, which is outside the original set. No contradiction [@problem_id:1285343]. The set of *all* real numbers, however, is closed under this operation; the diagonal construction on a list of real numbers always produces another real number. That's why the argument works for $\mathbb{R}$ but not for $\mathbb{Q}$.
 
 ### Polishing the Proof: A Lesson in Rigor
 
@@ -97,15 +97,15 @@ There's one little detail that might bother a particularly careful observer. Som
 
 To make the argument perfectly airtight, we must close this loophole. An easy way to do this is to be careful about the digits we use to build our new number. Let's say, for our new number $y=0.b_1b_2b_3\dots$, we use this rule: if the diagonal digit $d_{nn}$ is 3, we make our digit $b_n=4$. Otherwise, we make $b_n=3$.
 
-By constructing our new number using only the digits 3 and 4, we guarantee it cannot possibly end in an infinite string of 0s or 9s. This means our new number $y$ has a unique, unambiguous [decimal expansion](@article_id:141798). Now, when we say that $y$ differs from $x_n$ at the $n$-th decimal place, there is no ambiguity. They are truly different numbers . This is a beautiful example of the care required in mathematics to make an intuitive idea a rigorous proof.
+By constructing our new number using only the digits 3 and 4, we guarantee it cannot possibly end in an infinite string of 0s or 9s. This means our new number $y$ has a unique, unambiguous [decimal expansion](@keyword=decimal_expansion|lang=en-US|style=Feynman). Now, when we say that $y$ differs from $x_n$ at the $n$-th decimal place, there is no ambiguity. They are truly different numbers [@problem_id:1285352]. This is a beautiful example of the care required in mathematics to make an intuitive idea a rigorous proof.
 
 ### A Deeper Unity: From Numbers to Sets to Paradox
 
-So far, we've treated the [diagonal argument](@article_id:202204) as a tool for dealing with numbers. But its true power lies in its breathtaking generality. It's not about numbers at all; it's about sets and collections of ideas.
+So far, we've treated the [diagonal argument](@keyword=diagonal_argument|lang=en-US|style=Feynman) as a tool for dealing with numbers. But its true power lies in its breathtaking generality. It's not about numbers at all; it's about sets and collections of ideas.
 
-Let's state the grand principle, known as **Cantor's Theorem**: For any set $A$, the set of all its subsets (called the **power set** of $A$, denoted $\mathcal{P}(A)$) is always "bigger" (has a greater [cardinality](@article_id:137279)) than $A$ itself. There can be no surjective map from $A$ to $\mathcal{P}(A)$.
+Let's state the grand principle, known as **Cantor's Theorem**: For any set $A$, the set of all its subsets (called the **power set** of $A$, denoted $\mathcal{P}(A)$) is always "bigger" (has a greater [cardinality](@keyword=cardinality|lang=en-US|style=Feynman)) than $A$ itself. There can be no surjective map from $A$ to $\mathcal{P}(A)$.
 
-How can we prove this? With the [diagonal argument](@article_id:202204), of course! Let's see how the same logic applies in this more abstract world .
+How can we prove this? With the [diagonal argument](@keyword=diagonal_argument|lang=en-US|style=Feynman), of course! Let's see how the same logic applies in this more abstract world [@problem_id:2289592].
 
 Think of a subset of $A$ as a way of tagging elements of $A$. For each element $a \in A$, we can ask, "Is this element in the subset?" The answer is either yes or no. A function that maps from $A$ to the set $\{0, 1\}$ does exactly this—it tags each element with a 0 or a 1. So, the set of all such functions, let's call it $\mathcal{F}$, is essentially the same as the power set $\mathcal{P}(A)$.
 
@@ -113,7 +113,7 @@ Now, let's assume for contradiction that we *can* find a surjective map from $A$
 
 Time to build our ghost. We'll construct a new function, let's call it $h$, that is not on the list. How do we define $h$? For any input $z \in A$, we define the output $h(z)$ by looking at the function associated with $z$, which is $f_z$, and what *it* does at the input $z$. And we do the opposite. We define:
 $$ h(z) = 1 - f_z(z) $$
-This is the [diagonal argument](@article_id:202204) in its full glory! The "diagonal" here is evaluating the function $f_z$ at the very point $z$ that names it.
+This is the [diagonal argument](@keyword=diagonal_argument|lang=en-US|style=Feynman) in its full glory! The "diagonal" here is evaluating the function $f_z$ at the very point $z$ that names it.
 
 Is this new function $h$ on our list? Could $h$ be equal to some function $f_a$ for some $a \in A$? If $h = f_a$, then they must give the same output for every input. Let's check the input $a$:
 $$ h(a) = f_a(a) $$
@@ -123,6 +123,6 @@ So we have $f_a(a) = 1 - f_a(a)$. This is impossible! (If $f_a(a)$ is 0, we get 
 
 This abstract form reveals the connection to the famous **Russell's Paradox**. Bertrand Russell famously asked us to consider the set of all sets that do not contain themselves. Let's call it $R$. The question is: does $R$ contain itself? If it does, then by its own definition, it shouldn't. If it doesn't, then it meets the criterion for being a member, so it should! It's the same "yes if and only if no" pattern.
 
-Cantor's proof is the rigorous, tamed version of this dizzying self-referential loop . It takes the dangerous idea of [self-reference](@article_id:152774) and confines it to a controlled setting. It shows that if you try to create a complete map between a set and the world of "statements about that set" (its subsets), there will always be a statement (a subset) that slips through your fingers—the one that implicitly talks about "elements that don't satisfy the statement they are mapped to."
+Cantor's proof is the rigorous, tamed version of this dizzying self-referential loop [@problem_id:2977871]. It takes the dangerous idea of [self-reference](@keyword=self_reference|lang=en-US|style=Feynman) and confines it to a controlled setting. It shows that if you try to create a complete map between a set and the world of "statements about that set" (its subsets), there will always be a statement (a subset) that slips through your fingers—the one that implicitly talks about "elements that don't satisfy the statement they are mapped to."
 
-This is no longer just a trick about infinite decimals. It is a fundamental law of logic. It reveals a necessary, beautiful, and endless hierarchy in the world of ideas. For any set of objects, there are always more collections of those objects than there are objects themselves. The [diagonal argument](@article_id:202204) is our key to seeing this infinite ladder, stretching upwards forever.
+This is no longer just a trick about infinite decimals. It is a fundamental law of logic. It reveals a necessary, beautiful, and endless hierarchy in the world of ideas. For any set of objects, there are always more collections of those objects than there are objects themselves. The [diagonal argument](@keyword=diagonal_argument|lang=en-US|style=Feynman) is our key to seeing this infinite ladder, stretching upwards forever.

@@ -9,20 +9,20 @@ Imagine you are designing a complex piece of machinery, perhaps for a cryptograp
 
 ### The Rhythm of Convergence
 
-The heart of the oscillator problem  is finding the *first* future time that is a whole-number multiple of all three periods. The first oscillator pulses at $396, 2 \times 396, 3 \times 396, \dots$. The second at $440, 2 \times 440, \dots$. The third at $756, 2 \times 756, \dots$. We are looking for the smallest number that appears in all three of these lists. This is the very definition of the Least Common Multiple. It’s the point of first convergence, the moment when disparate cycles realign.
+The heart of the oscillator problem [@problem_id:1407669] is finding the *first* future time that is a whole-number multiple of all three periods. The first oscillator pulses at $396, 2 \times 396, 3 \times 396, \dots$. The second at $440, 2 \times 440, \dots$. The third at $756, 2 \times 756, \dots$. We are looking for the smallest number that appears in all three of these lists. This is the very definition of the Least Common Multiple. It’s the point of first convergence, the moment when disparate cycles realign.
 
-This idea of cyclical alignment is everywhere. Two planets orbiting a star at different speeds will eventually return to the same relative positions. Two gears with different numbers of teeth will return to their starting orientation after a certain number of rotations. The LCM governs the [fundamental period](@article_id:267125) of any system composed of periodic parts. But how do we find this magic number without laboriously listing out multiples? The secret, as is so often the case in number theory, lies in breaking things down to their fundamental components.
+This idea of cyclical alignment is everywhere. Two planets orbiting a star at different speeds will eventually return to the same relative positions. Two gears with different numbers of teeth will return to their starting orientation after a certain number of rotations. The LCM governs the [fundamental period](@keyword=fundamental_period|lang=en-US|style=Feynman) of any system composed of periodic parts. But how do we find this magic number without laboriously listing out multiples? The secret, as is so often the case in number theory, lies in breaking things down to their fundamental components.
 
 ### The Atomic Structure of Numbers
 
 The Fundamental Theorem of Arithmetic tells us that any integer greater than 1 can be expressed as a unique product of prime numbers. Primes are the "atoms" from which all numbers are built. This gives us a tremendously powerful way to understand the LCM.
 
-Let's look at our oscillator periods :
+Let's look at our oscillator periods [@problem_id:1407669]:
 - $396 = 2^2 \cdot 3^2 \cdot 11^1$
 - $440 = 2^3 \cdot 5^1 \cdot 11^1$
 - $756 = 2^2 \cdot 3^3 \cdot 7^1$
 
-For a number to be a multiple of 396, its [prime factorization](@article_id:151564) must include at least $2^2$, $3^2$, and $11^1$. To be a multiple of 440, it must contain at least $2^3$, $5^1$, and $11^1$. And to be a multiple of 756, it needs at least $2^2$, $3^3$, and $7^1$.
+For a number to be a multiple of 396, its [prime factorization](@keyword=prime_factorization|lang=en-US|style=Feynman) must include at least $2^2$, $3^2$, and $11^1$. To be a multiple of 440, it must contain at least $2^3$, $5^1$, and $11^1$. And to be a multiple of 756, it needs at least $2^2$, $3^3$, and $7^1$.
 
 To find the *least* number that satisfies all these conditions simultaneously, we must simply take the *highest* power of each prime factor present across all the numbers. Think of it as building a new number that just barely contains all the others.
 
@@ -34,7 +34,7 @@ To find the *least* number that satisfies all these conditions simultaneously, w
 
 So, the LCM is $2^3 \cdot 3^3 \cdot 5^1 \cdot 7^1 \cdot 11^1 = 83160$. The oscillators will align after exactly 83,160 nanoseconds.
 
-This gives us a master rule for any two integers $A$ and $B$: if the exponent of a prime $p$ in the factorization of $A$ is $\nu_p(A)$ and in $B$ is $\nu_p(B)$, then the exponent of $p$ in $\text{lcm}(A, B)$ is simply $\max(\nu_p(A), \nu_p(B))$ . This "maximum exponent" rule is the central mechanism of the LCM.
+This gives us a master rule for any two integers $A$ and $B$: if the exponent of a prime $p$ in the factorization of $A$ is $\nu_p(A)$ and in $B$ is $\nu_p(B)$, then the exponent of $p$ in $\text{lcm}(A, B)$ is simply $\max(\nu_p(A), \nu_p(B))$ [@problem_id:1407640]. This "maximum exponent" rule is the central mechanism of the LCM.
 
 ### A Tale of Two Operations: The LCM-GCD Duality
 
@@ -48,9 +48,9 @@ This beautiful duality leads to one of the most elegant relationships in element
 
 $$ \text{lcm}(a,b) \times \text{gcd}(a,b) = a \times b $$
 
-This relationship is not just a neat trick; it's a statement about the fundamental structure of numbers  . It provides a practical shortcut: if you can find the GCD (perhaps using the fast Euclidean algorithm), you can find the LCM with simple multiplication and division.
+This relationship is not just a neat trick; it's a statement about the fundamental structure of numbers [@problem_id:1406867] [@problem_id:1831871]. It provides a practical shortcut: if you can find the GCD (perhaps using the fast Euclidean algorithm), you can find the LCM with simple multiplication and division.
 
-This identity also allows us to answer curious questions. For instance, when could the LCM and GCD of two numbers possibly be the same ? If $\text{lcm}(a,b) = \text{gcd}(a,b)$, our identity becomes $\text{gcd}(a,b)^2 = a \times b$. We also know that $\text{gcd}(a,b) \le a \le \text{lcm}(a,b)$ and $\text{gcd}(a,b) \le b \le \text{lcm}(a,b)$. If the bookends of this inequality are the same, everything in the middle must be equal too. Thus, $\text{gcd}(a,b) = a = b = \text{lcm}(a,b)$. The only way the LCM and GCD can be equal is if the numbers themselves are equal.
+This identity also allows us to answer curious questions. For instance, when could the LCM and GCD of two numbers possibly be the same [@problem_id:1351499]? If $\text{lcm}(a,b) = \text{gcd}(a,b)$, our identity becomes $\text{gcd}(a,b)^2 = a \times b$. We also know that $\text{gcd}(a,b) \le a \le \text{lcm}(a,b)$ and $\text{gcd}(a,b) \le b \le \text{lcm}(a,b)$. If the bookends of this inequality are the same, everything in the middle must be equal too. Thus, $\text{gcd}(a,b) = a = b = \text{lcm}(a,b)$. The only way the LCM and GCD can be equal is if the numbers themselves are equal.
 
 ### The Rules of the LCM Universe
 
@@ -60,11 +60,11 @@ Let's treat the LCM operation as a kind of "multiplication" and see what kind of
 
 2.  **Is it Associative?** Is $\text{lcm}(\text{lcm}(a,b), c)$ the same as $\text{lcm}(a, \text{lcm}(b,c))$? This is crucial, as it allows us to find the LCM of a long list of numbers, like our oscillators, without ambiguity. Since $\max(\max(x,y), z) = \max(x, \max(y,z))$, the answer is again a firm yes.
 
-3.  **Is there an Identity Element?** Is there a number, let's call it $e$, such that for any number $a$, $\text{lcm}(a, e) = a$? For the LCM to be $a$, $e$ must be a divisor of $a$. What number divides *every* positive integer? Only the number 1. And indeed, $\text{lcm}(a, 1) = a$ for all $a$. So, in the universe of LCM, the number 1 is the identity—the element that changes nothing  .
+3.  **Is there an Identity Element?** Is there a number, let's call it $e$, such that for any number $a$, $\text{lcm}(a, e) = a$? For the LCM to be $a$, $e$ must be a divisor of $a$. What number divides *every* positive integer? Only the number 1. And indeed, $\text{lcm}(a, 1) = a$ for all $a$. So, in the universe of LCM, the number 1 is the identity—the element that changes nothing [@problem_id:1374684] [@problem_id:1820000].
 
-4.  **Are there Inverses?** Can we "undo" the LCM operation? For any number $a$, can we find an "inverse" $a^{-1}$ such that $\text{lcm}(a, a^{-1}) = 1$ (our identity element)? Since $\text{lcm}(a, a^{-1})$ must be greater than or equal to both $a$ and $a^{-1}$, the only way it can equal 1 is if both $a$ and $a^{-1}$ are 1. So, only the number 1 has an inverse. For any number like 5, we can never find an integer $b$ such that $\text{lcm}(5, b) = 1$. The result will always be 5 or larger .
+4.  **Are there Inverses?** Can we "undo" the LCM operation? For any number $a$, can we find an "inverse" $a^{-1}$ such that $\text{lcm}(a, a^{-1}) = 1$ (our identity element)? Since $\text{lcm}(a, a^{-1})$ must be greater than or equal to both $a$ and $a^{-1}$, the only way it can equal 1 is if both $a$ and $a^{-1}$ are 1. So, only the number 1 has an inverse. For any number like 5, we can never find an integer $b$ such that $\text{lcm}(5, b) = 1$. The result will always be 5 or larger [@problem_id:1600608].
 
-So, the set of positive integers under the LCM operation forms a **commutative [monoid](@article_id:148743)**: an associative, commutative system with an [identity element](@article_id:138827), but no general inverses. It's a universe with its own consistent, elegant rules.
+So, the set of positive integers under the LCM operation forms a **commutative [monoid](@keyword=monoid|lang=en-US|style=Feynman)**: an associative, commutative system with an [identity element](@keyword=identity_element|lang=en-US|style=Feynman), but no general inverses. It's a universe with its own consistent, elegant rules.
 
 ### An Unexpected Harmony
 
@@ -72,7 +72,7 @@ Just when we think we understand the landscape, we stumble upon a hidden, beauti
 
 Let's test if GCD distributes over LCM. Is it true that $\text{gcd}(a, \text{lcm}(b, c)) = \text{lcm}(\text{gcd}(a, b), \text{gcd}(a, c))$?
 
-It seems unlikely to be true, but let's try it with an example from one of our problems . Let $a=36$, $b=40$, and $c=30$.
+It seems unlikely to be true, but let's try it with an example from one of our problems [@problem_id:1357165]. Let $a=36$, $b=40$, and $c=30$.
 - The left side: $\text{lcm}(b,c) = \text{lcm}(40, 30) = 120$. Then $\text{gcd}(a, 120) = \text{gcd}(36, 120) = 12$.
 - The right side: $\text{gcd}(a,b) = \text{gcd}(36, 40) = 4$. And $\text{gcd}(a,c) = \text{gcd}(36, 30) = 6$. Then $\text{lcm}(4, 6) = 12$.
 

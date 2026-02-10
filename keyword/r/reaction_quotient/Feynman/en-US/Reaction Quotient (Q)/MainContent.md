@@ -7,9 +7,9 @@ Imagine a chemical reaction as a journey. Like any journey, it has a starting po
 
 ### A Chemical Compass: Where is the Reaction Going?
 
-Let's think about a landscape with hills and valleys. The lowest point in a valley is the most stable place to be—it's the equilibrium state for a ball rolling on the terrain. Any other point on the landscape is a non-[equilibrium state](@article_id:269870). The reaction quotient, $Q$, is like a GPS coordinate that tells us exactly where we are on this landscape at any given moment. The equilibrium constant, $K$, is the fixed coordinate of the bottom of the valley. By simply comparing our current position ($Q$) to the destination ($K$), we can predict which way the ball—or our reaction—will roll.
+Let's think about a landscape with hills and valleys. The lowest point in a valley is the most stable place to be—it's the equilibrium state for a ball rolling on the terrain. Any other point on the landscape is a non-[equilibrium state](@keyword=equilibrium_state|lang=en-US|style=Feynman). The reaction quotient, $Q$, is like a GPS coordinate that tells us exactly where we are on this landscape at any given moment. The equilibrium constant, $K$, is the fixed coordinate of the bottom of the valley. By simply comparing our current position ($Q$) to the destination ($K$), we can predict which way the ball—or our reaction—will roll.
 
-The reaction quotient is a snapshot of the system's composition. Its mathematical form is a gift, because it’s constructed in the exact same way as the [equilibrium constant](@article_id:140546). For a general reaction:
+The reaction quotient is a snapshot of the system's composition. Its mathematical form is a gift, because it’s constructed in the exact same way as the [equilibrium constant](@keyword=equilibrium_constant|lang=en-US|style=Feynman). For a general reaction:
 
 $aA + bB \rightleftharpoons cC + dD$
 
@@ -17,7 +17,7 @@ The reaction quotient, $Q_c$, based on molar concentrations ($[ ]$), is:
 
 $$Q_c = \frac{[C]^c [D]^d}{[A]^a [B]^b}$$
 
-This ratio can be calculated at *any* point in time, not just at equilibrium. Let's see this in action. Consider the industrial synthesis of phosgene, a valuable chemical, from carbon monoxide and chlorine gas .
+This ratio can be calculated at *any* point in time, not just at equilibrium. Let's see this in action. Consider the industrial synthesis of phosgene, a valuable chemical, from carbon monoxide and chlorine gas [@problem_id:1481193].
 
 $$\mathrm{CO}(g) + \mathrm{Cl}_2(g) \rightleftharpoons \mathrm{COCl}_2(g)$$
 
@@ -35,7 +35,7 @@ This leads us to three simple but profound rules:
 
 -   If **$Q = K$**: We have arrived. The system is at **equilibrium**, and there is no net change in either direction.
 
-This same logic applies perfectly to [gas-phase reactions](@article_id:168775) using [partial pressures](@article_id:168433) ($p_i$) to define a reaction quotient $Q_p$ . The principle is identical: compare $Q_p$ to $K_p$ to find the direction of change. It's a universal compass for chemists.
+This same logic applies perfectly to [gas-phase reactions](@keyword=gas_phase_reactions|lang=en-US|style=Feynman) using [partial pressures](@keyword=partial_pressures|lang=en-US|style=Feynman) ($p_i$) to define a reaction quotient $Q_p$ [@problem_id:1480680]. The principle is identical: compare $Q_p$ to $K_p$ to find the direction of change. It's a universal compass for chemists.
 
 ### The Engine of Change: Gibbs Free Energy
 
@@ -57,24 +57,24 @@ Let's unpack this:
 
 -   When $Q = K$, the fraction is 1, its logarithm is 0, and $\Delta G = 0$. The system is perfectly balanced at equilibrium.
 
-This gives us a dynamic picture of how equilibrium is maintained. Imagine a reaction that has reached equilibrium. Suddenly, we use a clever technique to remove some of the product . What happens? The concentration of the product in the numerator of $Q$ instantly drops, causing $Q$ to become smaller than $K$. In that very instant, $\Delta G$ flips from zero to a negative value. A thermodynamic driving force appears out of nowhere, compelling the reaction to shift forward and produce more product, replenishing what was lost and re-establishing equilibrium. This is Le Châtelier's principle, not as a vague rule, but as a direct, quantifiable consequence of thermodynamics.
+This gives us a dynamic picture of how equilibrium is maintained. Imagine a reaction that has reached equilibrium. Suddenly, we use a clever technique to remove some of the product [@problem_id:1995239]. What happens? The concentration of the product in the numerator of $Q$ instantly drops, causing $Q$ to become smaller than $K$. In that very instant, $\Delta G$ flips from zero to a negative value. A thermodynamic driving force appears out of nowhere, compelling the reaction to shift forward and produce more product, replenishing what was lost and re-establishing equilibrium. This is Le Châtelier's principle, not as a vague rule, but as a direct, quantifiable consequence of thermodynamics.
 
 ### A Universal Language: The Power of Activity
 
 So far, we've talked about concentrations and pressures. This works wonderfully for idealized gases and dilute solutions. But the real world is messy. In a crowded cellular environment or a concentrated industrial brew, molecules are constantly bumping into and interacting with each other. Their chemical "effectiveness" isn't quite the same as their raw concentration.
 
-To handle this, chemists invented the concept of **activity** ($a$), which you can think of as the "effective concentration." The true, universally applicable definition of the reaction quotient uses activities, not concentrations or pressures  .
+To handle this, chemists invented the concept of **activity** ($a$), which you can think of as the "effective concentration." The true, universally applicable definition of the reaction quotient uses activities, not concentrations or pressures [@problem_id:2561417] [@problem_id:2938561].
 
 $$Q = \prod_i a_i^{\nu_i}$$
 
 Here, $\prod$ is the symbol for multiplying a series of terms, and $\nu_i$ are the stoichiometric coefficients (positive for products, negative for reactants). This is the master form of the reaction quotient.
 
-How do we define these activities? It's done with beautiful consistency. For each type of substance, we define a [standard state](@article_id:144506) where the activity is 1, and then measure the substance's current state relative to that standard .
+How do we define these activities? It's done with beautiful consistency. For each type of substance, we define a [standard state](@keyword=standard_state|lang=en-US|style=Feynman) where the activity is 1, and then measure the substance's current state relative to that standard [@problem_id:2635228].
 -   For an **ideal gas**, the activity is its partial pressure divided by the standard pressure (e.g., $a_i = p_i / p^\circ$).
 -   For a **solute** in a solution, its activity is its "effective" concentration, often written as $a_i = \gamma_i ([i]/c^\circ)$, where $\gamma_i$ is an "activity coefficient" that corrects for non-ideal behavior.
 -   For a **pure liquid or solid**, its state is very close to its standard state (the pure substance itself). Therefore, its activity is taken to be **1**. This is why we so often see pure solids and liquids "disappear" from equilibrium expressions! They are not gone; their activity is simply one, a silent participant in the equation.
 
-This concept of activity allows us to write a single, consistent thermodynamic framework that applies to everything from the gases in our atmosphere to the complex biochemical reactions in our cells. For example, in biochemistry, where reactions occur in water at a nearly constant pH of 7, we can even define a "transformed" reaction quotient, $Q'$, that absorbs the constant activity of water and hydrogen ions into the equilibrium constant itself, simplifying calculations while remaining thermodynamically rigorous . The framework is not only powerful but also wonderfully flexible.
+This concept of activity allows us to write a single, consistent thermodynamic framework that applies to everything from the gases in our atmosphere to the complex biochemical reactions in our cells. For example, in biochemistry, where reactions occur in water at a nearly constant pH of 7, we can even define a "transformed" reaction quotient, $Q'$, that absorbs the constant activity of water and hydrogen ions into the equilibrium constant itself, simplifying calculations while remaining thermodynamically rigorous [@problem_id:2561417]. The framework is not only powerful but also wonderfully flexible.
 
 ### The Quotient in Action: From Batteries to Le Châtelier's Principle
 
@@ -84,10 +84,10 @@ Let's take a battery. Why does a battery produce voltage? Because the chemical r
 
 $$E = E^\circ - \frac{RT}{nF} \ln Q$$
 
-As the battery discharges, reactants are consumed and products are formed. This causes $Q$ to increase, steadily marching towards $K$. The voltage, $E$, drops along with it. What happens when a battery "dies"? It's not necessarily because the reactants are all used up. A battery is dead when its reaction reaches equilibrium . At that point, $Q = K$, which means $\ln(Q/K) = 0$, and the cell potential $E$ becomes zero. A "dead" battery is an "equilibrium" battery. What a profound and simple connection!
+As the battery discharges, reactants are consumed and products are formed. This causes $Q$ to increase, steadily marching towards $K$. The voltage, $E$, drops along with it. What happens when a battery "dies"? It's not necessarily because the reactants are all used up. A battery is dead when its reaction reaches equilibrium [@problem_id:1983508]. At that point, $Q = K$, which means $\ln(Q/K) = 0$, and the cell potential $E$ becomes zero. A "dead" battery is an "equilibrium" battery. What a profound and simple connection!
 
 The reaction quotient also gives us a crystal-clear explanation for Le Châtelier's principle. Consider the reaction $2\mathrm{NO}_2(g) \rightleftharpoons \mathrm{N_2O}_4(g)$, where two moles of gas combine to form one. We are taught that increasing the pressure will shift the equilibrium to the right, favoring the side with fewer moles of gas. But why?
 
-Let's look at the reaction quotient in terms of [partial pressures](@article_id:168433), which depend on the total pressure $P$: $Q_p = \frac{p_{\mathrm{N_2O}_4}}{(p_{\mathrm{NO}_2})^2}$. It can be shown that this is proportional to $1/P$ . So, if we take a mixture and suddenly increase the total pressure $P$, the value of $Q_p$ *instantly decreases*. It drops below the equilibrium constant $K_p$. In that moment, a negative $\Delta G$ is created, and the reaction is driven forward to produce more $\mathrm{N_2O}_4$ until $Q_p$ climbs back up to the value of $K_p$. The principle is not a magical rule; it's a direct, mathematical consequence of the thermodynamics embodied in the reaction quotient.
+Let's look at the reaction quotient in terms of [partial pressures](@keyword=partial_pressures|lang=en-US|style=Feynman), which depend on the total pressure $P$: $Q_p = \frac{p_{\mathrm{N_2O}_4}}{(p_{\mathrm{NO}_2})^2}$. It can be shown that this is proportional to $1/P$ [@problem_id:2927829]. So, if we take a mixture and suddenly increase the total pressure $P$, the value of $Q_p$ *instantly decreases*. It drops below the equilibrium constant $K_p$. In that moment, a negative $\Delta G$ is created, and the reaction is driven forward to produce more $\mathrm{N_2O}_4$ until $Q_p$ climbs back up to the value of $K_p$. The principle is not a magical rule; it's a direct, mathematical consequence of the thermodynamics embodied in the reaction quotient.
 
-From a fleeting snapshot of a reaction's progress, the reaction quotient $Q$ gives us a compass to find its direction, a connection to the thermodynamic engine that drives it, and a unified language to describe [chemical change](@article_id:143979) in every imaginable context. It is one of the most elegant and practical tools in the chemist's arsenal, turning the mysterious "will" of a reaction into a number we can calculate and understand.
+From a fleeting snapshot of a reaction's progress, the reaction quotient $Q$ gives us a compass to find its direction, a connection to the thermodynamic engine that drives it, and a unified language to describe [chemical change](@keyword=chemical_change|lang=en-US|style=Feynman) in every imaginable context. It is one of the most elegant and practical tools in the chemist's arsenal, turning the mysterious "will" of a reaction into a number we can calculate and understand.

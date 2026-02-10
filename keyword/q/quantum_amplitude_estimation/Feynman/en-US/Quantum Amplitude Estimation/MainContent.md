@@ -33,9 +33,9 @@ This is the central trick. By applying the operator $Q$ repeatedly, we can ampli
 
 ### Reading the Quantum Dial
 
-To measure this rotation angle, QAE employs another magnificent quantum tool: **Quantum Phase Estimation (QPE)**. You can think of QPE as a "quantum stopwatch" for measuring the phase—or angle—of a rotation. It works by setting up an auxiliary set of qubits called a "counting register," let's say there are $m$ of them. Through a series of controlled operations, we let the [rotation operator](@article_id:136208) $Q$ "imprint" its rotation angle onto this counting register. The more counting qubits we use, the higher the precision of our measurement.
+To measure this rotation angle, QAE employs another magnificent quantum tool: **Quantum Phase Estimation (QPE)**. You can think of QPE as a "quantum stopwatch" for measuring the phase—or angle—of a rotation. It works by setting up an auxiliary set of qubits called a "counting register," let's say there are $m$ of them. Through a series of controlled operations, we let the [rotation operator](@keyword=rotation_operator|lang=en-US|style=Feynman) $Q$ "imprint" its rotation angle onto this counting register. The more counting qubits we use, the higher the precision of our measurement.
 
-After this [imprinting](@article_id:141267) process, we perform a final operation called an Inverse Quantum Fourier Transform, which is like developing a photographic plate. It translates the imprinted phase into a simple integer, $y$, that we can measure. This integer is directly related to the phase of rotation, $\phi = 2\theta$, by the simple formula:
+After this [imprinting](@keyword=imprinting|lang=en-US|style=Feynman) process, we perform a final operation called an Inverse Quantum Fourier Transform, which is like developing a photographic plate. It translates the imprinted phase into a simple integer, $y$, that we can measure. This integer is directly related to the phase of rotation, $\phi = 2\theta$, by the simple formula:
 
 $$
 \phi \approx 2\pi \frac{y}{2^m}
@@ -53,15 +53,15 @@ $$
 p = \sin^2\left(\frac{\pi}{8}\right) = \frac{1 - \cos(\pi/4)}{2} = \frac{1 - \sqrt{2}/2}{2} = \frac{2 - \sqrt{2}}{4} \approx 0.146
 $$
 
-Without ever sampling, just by observing this rotation, we have estimated the probability. This is the core mechanism of QAE. 
+Without ever sampling, just by observing this rotation, we have estimated the probability. This is the core mechanism of QAE. [@problem_id:45106]
 
 ### A Broader Canvas: Measuring Relationships
 
 The power of this geometric perspective extends far beyond just finding the probability of a pre-defined "good" state. What if we want to know the relationship between two different quantum states, $|\psi\rangle$ and $|\phi\rangle$? For instance, how "similar" are they? A good measure of similarity is the squared overlap, $|\langle\psi|\phi\rangle|^2$.
 
-Amazingly, we can use the exact same QAE machinery to find this value. We just need to build a new [rotation operator](@article_id:136208), $Q$, whose rotation angle $\omega$ is linked to the overlap. It turns out that such an operator exists, and its angle is defined by $\cos(\omega/2) = |\langle\psi|\phi\rangle|$. By running QAE to find $\omega$, we can determine the overlap between any two states we can prepare.
+Amazingly, we can use the exact same QAE machinery to find this value. We just need to build a new [rotation operator](@keyword=rotation_operator|lang=en-US|style=Feynman), $Q$, whose rotation angle $\omega$ is linked to the overlap. It turns out that such an operator exists, and its angle is defined by $\cos(\omega/2) = |\langle\psi|\phi\rangle|$. By running QAE to find $\omega$, we can determine the overlap between any two states we can prepare.
 
-What's particularly beautiful is what happens when the underlying phase is a value that the quantum computer can represent perfectly. For example, if we are estimating an overlap that corresponds to a phase of exactly $\frac{1}{4}$, and we use $m=3$ counting qubits, the ideal output is the integer $y = \frac{1}{4} \times 2^3 = 2$. In such an ideal scenario, the QPE algorithm doesn't just give $y=2$ as the most probable outcome—it gives it with **100% certainty**. All other measurement outcomes have zero probability. This illustrates the crisp, digital nature of [quantum measurement](@article_id:137834) under ideal conditions; the needle of the quantum dial doesn't just point near the right number, it clicks precisely into place. 
+What's particularly beautiful is what happens when the underlying phase is a value that the quantum computer can represent perfectly. For example, if we are estimating an overlap that corresponds to a phase of exactly $\frac{1}{4}$, and we use $m=3$ counting qubits, the ideal output is the integer $y = \frac{1}{4} \times 2^3 = 2$. In such an ideal scenario, the QPE algorithm doesn't just give $y=2$ as the most probable outcome—it gives it with **100% certainty**. All other measurement outcomes have zero probability. This illustrates the crisp, digital nature of [quantum measurement](@keyword=quantum_measurement|lang=en-US|style=Feynman) under ideal conditions; the needle of the quantum dial doesn't just point near the right number, it clicks precisely into place. [@problem_id:116000]
 
 ### The Quantum Advantage: A Quadratic Leap in Precision
 
@@ -73,12 +73,12 @@ $$
 \text{Var}(\hat{p}) \approx \frac{p(1-p)}{M^2}
 $$
 
-Look closely at that denominator: it's $M^2$, not $M$. This means the error shrinks as $1/M$. This is a **quadratic [speedup](@article_id:636387)**. To make our estimate ten times more precise, we only need to increase our effort $M$ by a factor of ten, not one hundred! For complex simulations in finance, chemistry, or materials science, where each "call" to the operator $Q$ is expensive, this speedup can be the difference between a calculation that finishes in an afternoon and one that outlives the solar system. 
+Look closely at that denominator: it's $M^2$, not $M$. This means the error shrinks as $1/M$. This is a **quadratic [speedup](@keyword=speedup|lang=en-US|style=Feynman)**. To make our estimate ten times more precise, we only need to increase our effort $M$ by a factor of ten, not one hundred! For complex simulations in finance, chemistry, or materials science, where each "call" to the operator $Q$ is expensive, this speedup can be the difference between a calculation that finishes in an afternoon and one that outlives the solar system. [@problem_id:45040]
 
 ### A Dose of Reality: When Oracles Falter
 
 So far, we have been living in a perfect, noiseless quantum world. What happens when reality's imperfections creep in? Suppose the core component of our Grover operator, the "oracle" that identifies the good state, is faulty. For example, it might work perfectly only with a certain probability, and fail by doing nothing at all the rest of the time.
 
-Our beautiful geometric picture gets warped. The operator we apply is no longer a pure rotation. On average, the evolution is a mix of a rotation and a reflection. This "average" operator is no longer unitary—it doesn't preserve the length of the [state vector](@article_id:154113). The state spirals inward as it rotates, and the angle of rotation itself is altered.
+Our beautiful geometric picture gets warped. The operator we apply is no longer a pure rotation. On average, the evolution is a mix of a rotation and a reflection. This "average" operator is no longer unitary—it doesn't preserve the length of the [state vector](@keyword=state_vector|lang=en-US|style=Feynman). The state spirals inward as it rotates, and the angle of rotation itself is altered.
 
-The QAE algorithm, blind to this underlying fault, will dutifully measure the phase of this new, corrupted evolution. The result it reports will be systematically biased, no longer corresponding to the true success probability $p$. The message is profound: noise doesn't just add random fuzz to our answer; it can systematically skew it.  This underscores the immense challenge and importance of [quantum error correction](@article_id:139102). To harness the full power of QAE's quadratic [speedup](@article_id:636387), we must first learn how to protect our delicate quantum-mechanical rotations from the disruptive noise of the classical world. The journey to a fault-tolerant quantum computer is the journey to restore this beautiful, fragile geometry.
+The QAE algorithm, blind to this underlying fault, will dutifully measure the phase of this new, corrupted evolution. The result it reports will be systematically biased, no longer corresponding to the true success probability $p$. The message is profound: noise doesn't just add random fuzz to our answer; it can systematically skew it. [@problem_id:45162] This underscores the immense challenge and importance of [quantum error correction](@keyword=quantum_error_correction|lang=en-US|style=Feynman). To harness the full power of QAE's quadratic [speedup](@keyword=speedup|lang=en-US|style=Feynman), we must first learn how to protect our delicate quantum-mechanical rotations from the disruptive noise of the classical world. The journey to a fault-tolerant quantum computer is the journey to restore this beautiful, fragile geometry.

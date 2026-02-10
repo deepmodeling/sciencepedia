@@ -1,9 +1,9 @@
 ## Introduction
-Quantum entanglement, the "spooky action at a distance" that connects particles no matter how far apart, holds a deeper, more intimate secret: it is monogamous. A particle's capacity to be entangled is a finite resource that must be divided, but how is this distribution governed? This question exposes a knowledge gap at the heart of multi-particle quantum systems, a puzzle solved by the elegant Coffman-Kundu-Wootters (CKW) inequality. This article serves as a guide to this fundamental principle. We will first explore the **Principles and Mechanisms** of the CKW inequality, unpacking its mathematical formulation and examining its behavior through iconic quantum states. Following this, we will journey into its vast **Applications and Interdisciplinary Connections**, revealing how this single rule underpins the security of quantum communication, enables [quantum error correction](@article_id:139102), and even provides a new language to describe phenomena from molecular chemistry to [black hole physics](@article_id:159978).
+Quantum entanglement, the "spooky action at a distance" that connects particles no matter how far apart, holds a deeper, more intimate secret: it is monogamous. A particle's capacity to be entangled is a finite resource that must be divided, but how is this distribution governed? This question exposes a knowledge gap at the heart of multi-particle quantum systems, a puzzle solved by the elegant Coffman-Kundu-Wootters (CKW) inequality. This article serves as a guide to this fundamental principle. We will first explore the **Principles and Mechanisms** of the CKW inequality, unpacking its mathematical formulation and examining its behavior through iconic quantum states. Following this, we will journey into its vast **Applications and Interdisciplinary Connections**, revealing how this single rule underpins the security of quantum communication, enables [quantum error correction](@keyword=quantum_error_correction|lang=en-US|style=Feynman), and even provides a new language to describe phenomena from molecular chemistry to [black hole physics](@keyword=black_hole_physics|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
-Imagine you have a secret. You can share it perfectly with one friend, creating an unbreakable bond of trust. But what if you try to share that *same level* of [perfect secrecy](@article_id:262422) with two friends simultaneously? You’ll quickly find that your bond with each individual friend is weakened. The total "secrecy" is a finite resource that you must distribute. Quantum entanglement, the mysterious connection that Einstein famously called "spooky action at a distance," behaves in a remarkably similar way. This principle is known as the **[monogamy of entanglement](@article_id:136687)**.
+Imagine you have a secret. You can share it perfectly with one friend, creating an unbreakable bond of trust. But what if you try to share that *same level* of [perfect secrecy](@keyword=perfect_secrecy|lang=en-US|style=Feynman) with two friends simultaneously? You’ll quickly find that your bond with each individual friend is weakened. The total "secrecy" is a finite resource that you must distribute. Quantum entanglement, the mysterious connection that Einstein famously called "spooky action at a distance," behaves in a remarkably similar way. This principle is known as the **[monogamy of entanglement](@keyword=monogamy_of_entanglement|lang=en-US|style=Feynman)**.
 
 ### A Quantum Love Triangle
 
@@ -29,29 +29,29 @@ To see the CKW inequality in action, let's meet two of the most famous tripartit
 
 **The GHZ State: All for One, and One for All**
 
-The generalized **GHZ state** can be written as $| \psi(\theta) \rangle = \cos\theta|000\rangle + \sin\theta|111\rangle$. Imagine Alice, Bob, and Charlie hold these three qubits. If you look at just Alice and Bob, ignoring Charlie, you'd find something astonishing: their tangle, $\tau_{AB}$, is zero! The same is true for Alice and Charlie ($\tau_{AC}=0$). They appear completely unentangled in pairs .
+The generalized **GHZ state** can be written as $| \psi(\theta) \rangle = \cos\theta|000\rangle + \sin\theta|111\rangle$. Imagine Alice, Bob, and Charlie hold these three qubits. If you look at just Alice and Bob, ignoring Charlie, you'd find something astonishing: their tangle, $\tau_{AB}$, is zero! The same is true for Alice and Charlie ($\tau_{AC}=0$). They appear completely unentangled in pairs [@problem_id:142139].
 
-So, is there no entanglement at all? Far from it. If we calculate the total entanglement between Alice and the BC pair, $\tau_{A(BC)}$, we find it equals $\sin^2(2\theta)$. This means the three-tangle is $\tau_3 = \sin^2(2\theta) - 0 - 0 = \sin^2(2\theta)$. For the classic GHZ state where $\theta = \frac{\pi}{4}$, the three-tangle is 1, its maximum possible value! Another state with a similar property, exhibiting a three-tangle of 1, is explored in .
+So, is there no entanglement at all? Far from it. If we calculate the total entanglement between Alice and the BC pair, $\tau_{A(BC)}$, we find it equals $\sin^2(2\theta)$. This means the three-tangle is $\tau_3 = \sin^2(2\theta) - 0 - 0 = \sin^2(2\theta)$. For the classic GHZ state where $\theta = \frac{\pi}{4}$, the three-tangle is 1, its maximum possible value! Another state with a similar property, exhibiting a three-tangle of 1, is explored in [@problem_id:970702].
 
 The GHZ state's entanglement is entirely collective. It's a fragile, all-or-nothing pact. The fates of the three particles are perfectly correlated in a way that is invisible if you only look at pairs. If you measure even one qubit, the entire three-way entanglement is destroyed.
 
 **The W State: A Robust Network of Pairings**
 
-Now consider the **W state**, given by $|W\rangle = \frac{1}{\sqrt{3}}(|100\rangle + |010\rangle + |001\rangle)$. Here, the story is flipped completely. If we calculate the pairwise tangles, we find that $\tau_{AB}$ and $\tau_{AC}$ are both non-zero; specifically, they are both equal to $\frac{4}{9}$ . So, unlike the GHZ state, there is clear pairwise entanglement.
+Now consider the **W state**, given by $|W\rangle = \frac{1}{\sqrt{3}}(|100\rangle + |010\rangle + |001\rangle)$. Here, the story is flipped completely. If we calculate the pairwise tangles, we find that $\tau_{AB}$ and $\tau_{AC}$ are both non-zero; specifically, they are both equal to $\frac{4}{9}$ [@problem_id:75372]. So, unlike the GHZ state, there is clear pairwise entanglement.
 
 What about the total entanglement, $\tau_{A(BC)}$? The calculation shows it's exactly $\frac{8}{9}$. Now let's calculate the three-tangle:
 $$
 \tau_3 = \tau_{A(BC)} - \tau_{AB} - \tau_{AC} = \frac{8}{9} - \frac{4}{9} - \frac{4}{9} = 0
 $$
-The three-tangle is zero! For the W state, the CKW inequality is saturated—it's an equality. All the entanglement in the W state is distributed among the pairs. There is no "extra" collective three-way entanglement. This network-like structure makes the W state's entanglement more robust. If you measure one qubit and destroy its entanglement, the remaining two qubits can stay entangled. This property of having zero three-tangle is not unique to the W-state but is shared by a broader class of states .
+The three-tangle is zero! For the W state, the CKW inequality is saturated—it's an equality. All the entanglement in the W state is distributed among the pairs. There is no "extra" collective three-way entanglement. This network-like structure makes the W state's entanglement more robust. If you measure one qubit and destroy its entanglement, the remaining two qubits can stay entangled. This property of having zero three-tangle is not unique to the W-state but is shared by a broader class of states [@problem_id:78766].
 
 ### Why Monogamy Matters: From Bell's Theorem to Unbreakable Codes
 
-This abstract principle of [monogamy](@article_id:269758) is not just a quantum curiosity; it has profound, practical consequences that lie at the heart of our understanding of reality and technology.
+This abstract principle of [monogamy](@keyword=monogamy|lang=en-US|style=Feynman) is not just a quantum curiosity; it has profound, practical consequences that lie at the heart of our understanding of reality and technology.
 
 **A Limit on "Spookiness"**
 
-The "spookiness" of entanglement is most famously demonstrated by the violation of Bell inequalities, such as the Clauser-Horne-Shimony-Holt (CHSH) inequality. The degree of violation, quantified by a value $S$ (where $S \gt 2$ for quantum violation), is directly tied to the amount of entanglement. Monogamy places a strict budget on this violation. As derived from the CKW inequality , for any three-qubit [pure state](@article_id:138163), the following relation holds:
+The "spookiness" of entanglement is most famously demonstrated by the violation of Bell inequalities, such as the Clauser-Horne-Shimony-Holt (CHSH) inequality. The degree of violation, quantified by a value $S$ (where $S \gt 2$ for quantum violation), is directly tied to the amount of entanglement. Monogamy places a strict budget on this violation. As derived from the CKW inequality [@problem_id:647970], for any three-qubit [pure state](@keyword=pure_state|lang=en-US|style=Feynman), the following relation holds:
 $$
 (S_{AB}^2 - 4) + (S_{AC}^2 - 4) \le 4\tau_{A(BC)}
 $$
@@ -61,7 +61,7 @@ This beautiful formula tells us that the "Bell-violating power" of Alice with Bo
 
 This trade-off is the secret behind the security of many quantum key distribution (QKD) protocols. Imagine Alice and Bob are trying to establish a secret key, while an eavesdropper, Eve, tries to listen in. They can model this as a tripartite system (Alice-Bob-Eve). To check for eavesdropping, Alice and Bob can test the Bell-violating power, $S$, of their shared particles. A high value of $S$ confirms that their particles are strongly entangled.
 
-Here's where [monogamy](@article_id:269758) becomes their security guard. Because Alice's entanglement is a finite resource, if her tangle with Bob ($\tau_{AB}$) is high, her tangle with Eve ($\tau_{AE}$) must be low. This relationship can be made precise . If Alice and Bob measure a CHSH value of $S$, Eve’s potential tangle with Alice is capped:
+Here's where [monogamy](@keyword=monogamy|lang=en-US|style=Feynman) becomes their security guard. Because Alice's entanglement is a finite resource, if her tangle with Bob ($\tau_{AB}$) is high, her tangle with Eve ($\tau_{AE}$) must be low. This relationship can be made precise [@problem_id:152826]. If Alice and Bob measure a CHSH value of $S$, Eve’s potential tangle with Alice is capped:
 $$
 \tau_{AE} \le \frac{2\sqrt{2}S - S^2}{4}
 $$
@@ -69,13 +69,13 @@ As Alice and Bob's measured correlation $S$ approaches the quantum maximum of $2
 
 ### Beyond the Love Triangle: Generalizations and Surprising Limits
 
-The principle of [monogamy](@article_id:269758) is even broader than our three-qubit examples.
+The principle of [monogamy](@keyword=monogamy|lang=en-US|style=Feynman) is even broader than our three-qubit examples.
 
-It can be extended to systems of four or more qubits. For instance, in a four-qubit system (A, B, C, D), the entanglement of Alice with the rest of the group is constrained by the sum of all her pairwise entanglements: $\tau_{A(BCD)} \ge \tau_{AB} + \tau_{AC} + \tau_{AD}$. States exist that have genuine four-way entanglement not captured by any two- or three-party correlations .
+It can be extended to systems of four or more qubits. For instance, in a four-qubit system (A, B, C, D), the entanglement of Alice with the rest of the group is constrained by the sum of all her pairwise entanglements: $\tau_{A(BCD)} \ge \tau_{AB} + \tau_{AC} + \tau_{AD}$. States exist that have genuine four-way entanglement not captured by any two- or three-party correlations [@problem_id:78757].
 
-But here comes a truly Feynman-esque twist, a moment that reminds us how subtle and surprising nature is. Is [monogamy](@article_id:269758), as described by the CKW inequality, a universal law of quantum mechanics? The answer, startlingly, is no. It is a special feature of qubits (dimension $d=2$).
+But here comes a truly Feynman-esque twist, a moment that reminds us how subtle and surprising nature is. Is [monogamy](@keyword=monogamy|lang=en-US|style=Feynman), as described by the CKW inequality, a universal law of quantum mechanics? The answer, startlingly, is no. It is a special feature of qubits (dimension $d=2$).
 
-If we move to **qutrits**—quantum systems with three levels instead of two—entanglement can become "polyamorous." Consider a specific state of three qutrits that is totally antisymmetric. If we calculate the relevant [entanglement measures](@article_id:139400), we find a shocking result: the sum of the pairwise entanglements is *greater* than the total entanglement of one particle with the other two . The inequality is flipped on its head!
+If we move to **qutrits**—quantum systems with three levels instead of two—entanglement can become "polyamorous." Consider a specific state of three qutrits that is totally antisymmetric. If we calculate the relevant [entanglement measures](@keyword=entanglement_measures|lang=en-US|style=Feynman), we find a shocking result: the sum of the pairwise entanglements is *greater* than the total entanglement of one particle with the other two [@problem_id:77909]. The inequality is flipped on its head!
 $$
 \tau_{AB} + \tau_{AC} > \tau_{A(BC)}
 $$

@@ -1,9 +1,9 @@
 ## 引言
-泰勒级数是数学中最强大的工具之一，它允许我们用更简单的多项式来近似复杂的曲线函数。虽然这些近似非常有用，但它们真正的威力在于我们能够精确地知道它们的准确度。函数与其[泰勒多项式](@article_id:322413)之间的差值被称为[余项](@article_id:320243)或误差项。但这个误差究竟是如何定义和量化的呢？本文将深入探讨此误差最具洞察力和最确切的表示形式：[泰勒余项的积分形式](@article_id:301572)。在第一章“原理与机制”中，我们将揭示它如何从[微积分基本定理](@article_id:307695)中优雅地推导出来，探索其深刻的几何意义，并了解它如何与函数的曲率相关联。在第二章“应用与跨学科联系”中，我们将看到这个“[误差项](@article_id:369697)”本身如何成为一个强大的工具，为科学计算提供保证，在数论中证明深刻的结果，甚至描述物理系统的行为。
+泰勒级数是数学中最强大的工具之一，它允许我们用更简单的多项式来近似复杂的曲线函数。虽然这些近似非常有用，但它们真正的威力在于我们能够精确地知道它们的准确度。函数与其[泰勒多项式](@keyword=taylor_polynomial|lang=zh-CN|style=Feynman)之间的差值被称为[余项](@keyword=remainder_term|lang=zh-CN|style=Feynman)或误差项。但这个误差究竟是如何定义和量化的呢？本文将深入探讨此误差最具洞察力和最确切的表示形式：[泰勒余项的积分形式](@keyword=integral_form_of_taylor_remainder|lang=zh-CN|style=Feynman)。在第一章“原理与机制”中，我们将揭示它如何从[微积分基本定理](@keyword=fundamental_theorem_of_calculus|lang=zh-CN|style=Feynman)中优雅地推导出来，探索其深刻的几何意义，并了解它如何与函数的曲率相关联。在第二章“应用与跨学科联系”中，我们将看到这个“[误差项](@keyword=error_terms|lang=zh-CN|style=Feynman)”本身如何成为一个强大的工具，为科学计算提供保证，在数论中证明深刻的结果，甚至描述物理系统的行为。
 
 ## 原理与机制
 
-你是否曾试过向朋友描述一条弯曲的道路？你可能会说：“直走一个街区，然后路开始向右弯曲。”在这个简单的描述中，你就进行了一次泰勒近似。你用一条简单的直线（你的切线）代替了一条复杂的曲线，并承认这种近似最终会失效——即存在一个“误差”，一个[余项](@article_id:320243)。微积分的美妙之处在于它允许我们对这个误差进行完美的精确描述。它不仅仅说“路是弯的”，它还给了我们一种方法来计算*确切的*偏差。[泰勒余项的积分形式](@article_id:301572)或许是捕捉这种偏差最真实、最富洞察力的方式。
+你是否曾试过向朋友描述一条弯曲的道路？你可能会说：“直走一个街区，然后路开始向右弯曲。”在这个简单的描述中，你就进行了一次泰勒近似。你用一条简单的直线（你的切线）代替了一条复杂的曲线，并承认这种近似最终会失效——即存在一个“误差”，一个[余项](@keyword=remainder_term|lang=zh-CN|style=Feynman)。微积分的美妙之处在于它允许我们对这个误差进行完美的精确描述。它不仅仅说“路是弯的”，它还给了我们一种方法来计算*确切的*偏差。[泰勒余项的积分形式](@keyword=integral_form_of_taylor_remainder|lang=zh-CN|style=Feynman)或许是捕捉这种偏差最真实、最富洞察力的方式。
 
 ### 起源故事：用积分剖析误差
 
@@ -11,11 +11,11 @@
 $$
 f(x) - f(a) = \int_a^x f'(t) dt
 $$
-这个方程已经描述了最简单近似的误差：用常数值 $f(a)$ （一个零阶[泰勒多项式](@article_id:322413)）来近似 $f(x)$。误差就是整个积分。
+这个方程已经描述了最简单近似的误差：用常数值 $f(a)$ （一个零阶[泰勒多项式](@keyword=taylor_polynomial|lang=zh-CN|style=Feynman)）来近似 $f(x)$。误差就是整个积分。
 
-但我们可以做得更好。我们可以使用切线，即一阶近似：$P_1(x) = f(a) + f'(a)(x-a)$。现在的误差，或者说余项 $R_1(x) = f(x) - P_1(x)$ 是什么呢？似乎我们需要一个新的技巧。但正如物理学和数学中经常出现的情况一样，我们需要的只是旧技巧，只需巧妙地应用一下。这个技巧就是**[分部积分](@article_id:296804)**。
+但我们可以做得更好。我们可以使用切线，即一阶近似：$P_1(x) = f(a) + f'(a)(x-a)$。现在的误差，或者说余项 $R_1(x) = f(x) - P_1(x)$ 是什么呢？似乎我们需要一个新的技巧。但正如物理学和数学中经常出现的情况一样，我们需要的只是旧技巧，只需巧妙地应用一下。这个技巧就是**[分部积分](@keyword=integration_by_parts|lang=zh-CN|style=Feynman)**。
 
-让我们再看看我们的起点，$f(x) - f(a) = \int_a^x f'(t) dt$。我们将对右侧进行一次看似奇怪的[分部积分](@article_id:296804)。我们不采用通常的选择，而是将各部分设为 $u = f'(t)$，对于我们的 $dv$，我们巧妙地选择 $dv = dt$。神奇之处在于选择 $1\,dt$ 的[反导数](@article_id:300964)。我们不只用 $t$，而是选择 $v = -(x-t)$。注意 $dv = dt$，所以这是完全有效的。现在，应用公式 $\int u \, dv = uv - \int v \, du$：
+让我们再看看我们的起点，$f(x) - f(a) = \int_a^x f'(t) dt$。我们将对右侧进行一次看似奇怪的[分部积分](@keyword=integration_by_parts|lang=zh-CN|style=Feynman)。我们不采用通常的选择，而是将各部分设为 $u = f'(t)$，对于我们的 $dv$，我们巧妙地选择 $dv = dt$。神奇之处在于选择 $1\,dt$ 的[反导数](@keyword=antiderivative|lang=zh-CN|style=Feynman)。我们不只用 $t$，而是选择 $v = -(x-t)$。注意 $dv = dt$，所以这是完全有效的。现在，应用公式 $\int u \, dv = uv - \int v \, du$：
 $$
 \int_a^x f'(t) dt = \left[ f'(t) \cdot (-(x-t)) \right]_a^x - \int_a^x (-(x-t)) f''(t) dt
 $$
@@ -35,11 +35,11 @@ $$
 $$
 f(x) - \left( f(a) + f'(a)(x-a) \right) = \int_a^x (x-t) f''(t) dt
 $$
-左边正是一阶[余项](@article_id:320243) $R_1(x)$ 的定义。所以，我们找到了它！
+左边正是一阶[余项](@keyword=remainder_term|lang=zh-CN|style=Feynman) $R_1(x)$ 的定义。所以，我们找到了它！
 $$
 R_1(x) = \int_a^x (x-t) f''(t) dt
 $$
-通过反复应用这个巧妙的分部积分技巧，可以证明 $n$ 阶近似后的余项是这种形式的一个优美的推广 ：
+通过反复应用这个巧妙的分部积分技巧，可以证明 $n$ 阶近似后的余项是这种形式的一个优美的推广 [@problem_id:2317278]：
 $$
 R_n(x) = \frac{1}{n!} \int_a^x (x-t)^n f^{(n+1)}(t) dt
 $$
@@ -47,7 +47,7 @@ $$
 
 ### 几何图像：斜率的累积误差
 
-我们刚刚推导出的公式是精确的，但它*意味着*什么呢？一个包含两个 $t$ 的函[数乘](@article_id:316379)积的积分，并不是我们能轻易想象出来的东西。但是，通过再次应用[分部积分](@article_id:296804)，我们可以揭示其深刻的几何意义 。
+我们刚刚推导出的公式是精确的，但它*意味着*什么呢？一个包含两个 $t$ 的函[数乘](@keyword=scalar_multiplication|lang=zh-CN|style=Feynman)积的积分，并不是我们能轻易想象出来的东西。但是，通过再次应用[分部积分](@keyword=integration_by_parts|lang=zh-CN|style=Feynman)，我们可以揭示其深刻的几何意义 [@problem_id:2324304]。
 
 让我们再看一次一阶余项：$R_1(x) = \int_a^x (x-t) f''(t) dt$。这次，我们选择 $u = x-t$ 和 $dv = f''(t) dt$。这得到 $du = -dt$ 和 $v = f'(t)$。应用该公式：
 $$
@@ -61,40 +61,40 @@ $$
 
 ### 见证公式的威力
 
-让我们来检验一下这个强大的工具。如果我们的函数是一个简单的二次函数，$f(x) = p_2 x^2 + p_1 x + p_0$，它的二阶[导数](@article_id:318324)是一个常数，$f''(t) = 2p_2$。如果我们在 $x=a$ 处进行[线性近似](@article_id:302749)，[余项](@article_id:320243)应该精确地捕捉到我们忽略的二次项性质。代入我们的公式：
+让我们来检验一下这个强大的工具。如果我们的函数是一个简单的二次函数，$f(x) = p_2 x^2 + p_1 x + p_0$，它的二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)是一个常数，$f''(t) = 2p_2$。如果我们在 $x=a$ 处进行[线性近似](@keyword=tangent_line_approximation|lang=zh-CN|style=Feynman)，[余项](@keyword=remainder_term|lang=zh-CN|style=Feynman)应该精确地捕捉到我们忽略的二次项性质。代入我们的公式：
 $$
 R_1(x) = \int_a^x (x-t) (2p_2) dt = 2p_2 \int_a^x (x-t) dt = 2p_2 \left[-\frac{(x-t)^2}{2}\right]_a^x = p_2(x-a)^2
 $$
-完美！误差恰好是相对于展开点 $a$ 的二次项 。对于像 $f(x)=x^3$ 这样的三次函数，在 $a=1$ 附近展开，类似的计算得出误差为 $R_1(x) = x^3 - 3x + 2$，这与你通过找到切线 $P_1(x)=3x-2$ 并直接计算 $f(x)-P_1(x)$ 得到的结果完全匹配 。
+完美！误差恰好是相对于展开点 $a$ 的二次项 [@problem_id:2324317]。对于像 $f(x)=x^3$ 这样的三次函数，在 $a=1$ 附近展开，类似的计算得出误差为 $R_1(x) = x^3 - 3x + 2$，这与你通过找到切线 $P_1(x)=3x-2$ 并直接计算 $f(x)-P_1(x)$ 得到的结果完全匹配 [@problem_id:2324307]。
 
-当处理非多项式函数时，即那些描述宇宙万物（从放射性衰变到种群增长）的函数时，该公式的真正威力才得以显现。对于[指数函数](@article_id:321821) $f(x) = e^x$（其所有[导数](@article_id:318324)都是 $e^x$），在 $a=0$ 附近的一阶[余项](@article_id:320243)为 ：
+当处理非多项式函数时，即那些描述宇宙万物（从放射性衰变到种群增长）的函数时，该公式的真正威力才得以显现。对于[指数函数](@keyword=exponential_function|lang=zh-CN|style=Feynman) $f(x) = e^x$（其所有[导数](@keyword=derivative|lang=zh-CN|style=Feynman)都是 $e^x$），在 $a=0$ 附近的一阶[余项](@keyword=remainder_term|lang=zh-CN|style=Feynman)为 [@problem_id:2324334]：
 $$
 R_1(x) = \int_0^x (x-t)e^t dt = e^x - 1 - x
 $$
-类似地，对于在信息论和统计学中至关重要的自然对数函数 $f(x)=\ln(1-x)$，其 $n$ 阶[余项](@article_id:320243)可以通过先注意到 $f^{(n+1)}(t) = -n!(1-t)^{-(n+1)}$ 来找到。将此代入通用公式，得到误差项是一个简洁的积分 ：
+类似地，对于在信息论和统计学中至关重要的自然对数函数 $f(x)=\ln(1-x)$，其 $n$ 阶[余项](@keyword=remainder_term|lang=zh-CN|style=Feynman)可以通过先注意到 $f^{(n+1)}(t) = -n!(1-t)^{-(n+1)}$ 来找到。将此代入通用公式，得到误差项是一个简洁的积分 [@problem_id:1324402]：
 $$
 R_n(x) = -\int_0^x \frac{(x-t)^n}{(1-t)^{n+1}} dt
 $$
 
-### 误差的形态：曲率与[凸性](@article_id:299016)
+### 误差的形态：曲率与[凸性](@keyword=convexity|lang=zh-CN|style=Feynman)
 
-[余项](@article_id:320243)公式 $R_1(x) = \int_a^x (x-t)f''(t) dt$ 告诉我们一个至关重要的信息：[线性近似](@article_id:302749)的误差与**二阶[导数](@article_id:318324)** $f''$ 密切相关。如你所知，二阶[导数](@article_id:318324)衡量的是**曲率**。
+[余项](@keyword=remainder_term|lang=zh-CN|style=Feynman)公式 $R_1(x) = \int_a^x (x-t)f''(t) dt$ 告诉我们一个至关重要的信息：[线性近似](@keyword=tangent_line_approximation|lang=zh-CN|style=Feynman)的误差与**二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)** $f''$ 密切相关。如你所知，二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)衡量的是**曲率**。
 
-如果一个函数是**凸**的（向上弯曲，像一个碗），它的二阶[导数](@article_id:318324)就是正的，$f''(t) > 0$。考虑当 $x>a$ 时 $R_1(x)$ 的积分。在积分区间内，$t$ 总是小于 $x$，所以 $(x-t)$ 项是正的。如果 $f''(t)$ 也是正的，那么整个被积函数 $(x-t)f''(t)$ 都是正的。正函数的积分是正的，所以 $R_1(x) > 0$。这意味着 $f(x) - P_1(x) > 0$，或者说 $f(x) > P_1(x)$。这证实了我们的直觉：对于凸函数，切线总是位于曲线*之下*。
+如果一个函数是**凸**的（向上弯曲，像一个碗），它的二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)就是正的，$f''(t) > 0$。考虑当 $x>a$ 时 $R_1(x)$ 的积分。在积分区间内，$t$ 总是小于 $x$，所以 $(x-t)$ 项是正的。如果 $f''(t)$ 也是正的，那么整个被积函数 $(x-t)f''(t)$ 都是正的。正函数的积分是正的，所以 $R_1(x) > 0$。这意味着 $f(x) - P_1(x) > 0$，或者说 $f(x) > P_1(x)$。这证实了我们的直觉：对于凸函数，切线总是位于曲线*之下*。
 
-相反，如果一个函数是**凹**的（向下弯曲，像一个穹顶），它的二阶[导数](@article_id:318324)是负的，$f''(t)  0$。同样的逻辑告诉我们被积函数将是负的，因此 $R_1(x)  0$。切线位于曲线*之上*。
+相反，如果一个函数是**凹**的（向下弯曲，像一个穹顶），它的二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)是负的，$f''(t)  0$。同样的逻辑告诉我们被积函数将是负的，因此 $R_1(x)  0$。切线位于曲线*之上*。
 
-我们可以在一个粒子的运动中完美地看到这一点。想象一个平面内的路径由向量函数 $\vec{r}(t) = (e^t, \ln(1+t))$ 描述（$t>0$）。我们想用从起点 $t=0$ 开始的切线近似来预测它的位置。误差向量将指向哪里？误差向量 $\vec{E}(t)$ 的分量由每个坐标的[余项](@article_id:320243)积分给出 。
+我们可以在一个粒子的运动中完美地看到这一点。想象一个平面内的路径由向量函数 $\vec{r}(t) = (e^t, \ln(1+t))$ 描述（$t>0$）。我们想用从起点 $t=0$ 开始的切线近似来预测它的位置。误差向量将指向哪里？误差向量 $\vec{E}(t)$ 的分量由每个坐标的[余项](@keyword=remainder_term|lang=zh-CN|style=Feynman)积分给出 [@problem_id:2324331]。
 - 对于 x 分量，$x(t) = e^t$，我们有 $x''(t) = e^t > 0$。该函数是凸的。x 方向的误差将是正的。
 - 对于 y 分量，$y(t) = \ln(1+t)$，我们有 $y''(t) = -1/(1+t)^2  0$。该函数是凹的。y 方向的误差将是负的。
 
-误差向量将有一个正的 x 分量和一个负的 y 分量，这意味着它将总是指向第四象限。实际的粒子路径将总是在其[线性预测](@article_id:359973)的右侧和下方。二阶[导数](@article_id:318324)的符号决定了误差的方向。
+误差向量将有一个正的 x 分量和一个负的 y 分量，这意味着它将总是指向第四象限。实际的粒子路径将总是在其[线性预测](@keyword=linear_prediction|lang=zh-CN|style=Feynman)的右侧和下方。二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)的符号决定了误差的方向。
 
 ### 从精确到估计：为未知设界
 
-积[分形](@article_id:301219)式是精确的，这很可爱。但在现实世界中，我们常常不完全了解函数。我们可能有一个物理系统，比如智能手机中的陀螺仪，我们无法为其运动 $S(t)$ 写下一个简洁的公式，但我们从其马达的物理限制中知道，它的“加加速度（即三阶[导数](@article_id:318324)）”不能超过某个值，比如 $|S^{(3)}(t)| \le M$。我们还能估计我们的二阶多项式近似的误差吗？
+积[分形](@keyword=fractal|lang=zh-CN|style=Feynman)式是精确的，这很可爱。但在现实世界中，我们常常不完全了解函数。我们可能有一个物理系统，比如智能手机中的陀螺仪，我们无法为其运动 $S(t)$ 写下一个简洁的公式，但我们从其马达的物理限制中知道，它的“加加速度（即三阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)）”不能超过某个值，比如 $|S^{(3)}(t)| \le M$。我们还能估计我们的二阶多项式近似的误差吗？
 
-当然可以。积[分形](@article_id:301219)式是实现这一点的完美工具。误差是 $R_2(x) = \frac{1}{2!} \int_0^x (x-t)^2 S^{(3)}(t) dt$。为了找到最大可能的误差，我们取[绝对值](@article_id:308102)：
+当然可以。积[分形](@keyword=fractal|lang=zh-CN|style=Feynman)式是实现这一点的完美工具。误差是 $R_2(x) = \frac{1}{2!} \int_0^x (x-t)^2 S^{(3)}(t) dt$。为了找到最大可能的误差，我们取[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)：
 $$
 |R_2(x)| \le \frac{1}{2} \int_0^x |(x-t)^2 S^{(3)}(t)| dt
 $$
@@ -102,24 +102,24 @@ $$
 $$
 |R_2(x)| \le \frac{1}{2} \int_0^x (x-t)^2 M dt = \frac{M}{2} \int_0^x (x-t)^2 dt
 $$
-这个积分现在只是一个简单的多项式，计算结果为 $x^3/3$。所以我们得出了一个强大而实用的结果 ：
+这个积分现在只是一个简单的多项式，计算结果为 $x^3/3$。所以我们得出了一个强大而实用的结果 [@problem_id:2324315]：
 $$
 |R_2(x)| \le \frac{M x^3}{6}
 $$
-即使不知道确切的函数，我们也能得到一个有保证的上界，这对于任何现实世界的工程或[科学计算](@article_id:304417)都至关重要。这种使用[导数](@article_id:318324)界来为积分设界的过程可以被推广，并直接导向著名的[拉格朗日](@article_id:373322)[误差界](@article_id:300334) $|R_n(x)| \leq M \frac{|x-a|^{n+1}}{(n+1)!}$。
+即使不知道确切的函数，我们也能得到一个有保证的上界，这对于任何现实世界的工程或[科学计算](@keyword=scientific_computing|lang=zh-CN|style=Feynman)都至关重要。这种使用[导数](@keyword=derivative|lang=zh-CN|style=Feynman)界来为积分设界的过程可以被推广，并直接导向著名的[拉格朗日](@keyword=lagrange|lang=zh-CN|style=Feynman)[误差界](@keyword=error_bounds|lang=zh-CN|style=Feynman) $|R_n(x)| \leq M \frac{|x-a|^{n+1}}{(n+1)!}$。
 
 ### 统一观点：一点中值定理的魔力
 
-你可能见过另一种形式的余项，即**[拉格朗日形式](@article_id:306119)**：
+你可能见过另一种形式的余项，即**[拉格朗日形式](@keyword=lagrange_form|lang=zh-CN|style=Feynman)**：
 $$
 R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} (x-a)^{n+1} \quad \text{对于某个在 } a \text{ 和 } x \text{ 之间的 } c.
 $$
-这个形式看起来和我们的积分大不相同。它从何而来？事实证明，积[分形](@article_id:301219)式和[拉格朗日形式](@article_id:306119)是同一枚硬币的两面，通过**加权[积分中值定理](@article_id:319524)**联系在一起。
+这个形式看起来和我们的积分大不相同。它从何而来？事实证明，积[分形](@keyword=fractal|lang=zh-CN|style=Feynman)式和[拉格朗日形式](@keyword=lagrange_form|lang=zh-CN|style=Feynman)是同一枚硬币的两面，通过**加权[积分中值定理](@keyword=mean_value_theorem_for_integrals|lang=zh-CN|style=Feynman)**联系在一起。
 
-这个定理是一块隐藏的宝石。它说，对于 $\int g(t)h(t) dt$ [形式的积分](@article_id:319011)，如果“权重”函数 $h(t)$ 总是非负的，那么该积分等于 $g(t)$ 的“平均”值（即在某个特[定点](@article_id:304105) $c$ 处的 $g(c)$）乘以总权重 $\int h(t) dt$。
+这个定理是一块隐藏的宝石。它说，对于 $\int g(t)h(t) dt$ [形式的积分](@keyword=integration_of_forms|lang=zh-CN|style=Feynman)，如果“权重”函数 $h(t)$ 总是非负的，那么该积分等于 $g(t)$ 的“平均”值（即在某个特[定点](@keyword=fixed_points|lang=zh-CN|style=Feynman) $c$ 处的 $g(c)$）乘以总权重 $\int h(t) dt$。
 
 让我们将此应用于我们的余项积分 $R_n(x) = \frac{1}{n!} \int_a^x f^{(n+1)}(t) (x-t)^n dt$。
-这里，我们的函数是 $g(t) = f^{(n+1)}(t)$，我们的权重是 $h(t) = (x-t)^n$。对于 $a$ 和 $x$ 之间的 $t$，这个权重从不为负。所以，该定理适用！在 $a$ 和 $x$ 之间，必然存在某个点 $c$，使得 ：
+这里，我们的函数是 $g(t) = f^{(n+1)}(t)$，我们的权重是 $h(t) = (x-t)^n$。对于 $a$ 和 $x$ 之间的 $t$，这个权重从不为负。所以，该定理适用！在 $a$ 和 $x$ 之间，必然存在某个点 $c$，使得 [@problem_id:1336616]：
 $$
 \int_a^x f^{(n+1)}(t) (x-t)^n dt = f^{(n+1)}(c) \int_a^x (x-t)^n dt
 $$
@@ -127,10 +127,10 @@ $$
 $$
 R_n(x) = \frac{1}{n!} \left( f^{(n+1)}(c) \frac{(x-a)^{n+1}}{n+1} \right) = \frac{f^{(n+1)}(c)}{(n+1)!} (x-a)^{n+1}
 $$
-就是它了。积[分形](@article_id:301219)式优雅地*变换*为[拉格朗日形式](@article_id:306119)。它们不是相互竞争的真理版本；一个是另一个的直接推论。积分将误差显示为一个连续的累积过程，而[拉格朗日形式](@article_id:306119)告诉我们，这个累积的误差等价于在某一个[代表性](@article_id:383209)点上由第 $(n+1)$ 阶[导数](@article_id:318324)引起的误差。
+就是它了。积[分形](@keyword=fractal|lang=zh-CN|style=Feynman)式优雅地*变换*为[拉格朗日形式](@keyword=lagrange_form|lang=zh-CN|style=Feynman)。它们不是相互竞争的真理版本；一个是另一个的直接推论。积分将误差显示为一个连续的累积过程，而[拉格朗日形式](@keyword=lagrange_form|lang=zh-CN|style=Feynman)告诉我们，这个累积的误差等价于在某一个[代表性](@keyword=representativeness|lang=zh-CN|style=Feynman)点上由第 $(n+1)$ 阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)引起的误差。
 
 ### 结语：进入更高维度
 
-这整个故事——用直线近似曲线并用积分捕捉误差——并不仅限于一维。在物理学和工程学中，我们经常处理场或[势能面](@article_id:307856)，它们是多变量的函数，比如 $f(x,y)$。在这里，我们用一个平坦的切*平面*来近似一个弯曲的[曲面](@article_id:331153)。
+这整个故事——用直线近似曲线并用积分捕捉误差——并不仅限于一维。在物理学和工程学中，我们经常处理场或[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)，它们是多变量的函数，比如 $f(x,y)$。在这里，我们用一个平坦的切*平面*来近似一个弯曲的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)。
 
-误差——[曲面](@article_id:331153)与其[切平面](@article_id:297365)之间的垂直偏差——也可以写成积分。对于在点 $\mathbf{a}$ 处的近似，在点 $\mathbf{x}$ 处的偏差涉及沿着连接它们的线段的积分。被积函数包括**[海森矩阵](@article_id:299588)** $H_f$，它是二阶[导数](@article_id:318324)的多变量推广，捕捉了[曲面](@article_id:331153)在所有方向上的曲率 。当海森矩阵是正定（$f''0$ 的多维类似物）时，函数是严格凸的，积分[余项](@article_id:320243)将始终为正，从而证明该[曲面](@article_id:331153)完全位于其切平面之上。[余项的积分形式](@article_id:321515)，在任何维度下，仍然是理解我们在试图用直线和平面捕捉弯曲宇宙的丰富性时所犯误差的精确性质的终极工具。
+误差——[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)与其[切平面](@keyword=tangent_plane|lang=zh-CN|style=Feynman)之间的垂直偏差——也可以写成积分。对于在点 $\mathbf{a}$ 处的近似，在点 $\mathbf{x}$ 处的偏差涉及沿着连接它们的线段的积分。被积函数包括**[海森矩阵](@keyword=hessian_matrix|lang=zh-CN|style=Feynman)** $H_f$，它是二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)的多变量推广，捕捉了[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)在所有方向上的曲率 [@problem_id:2324302]。当海森矩阵是正定（$f''0$ 的多维类似物）时，函数是严格凸的，积分[余项](@keyword=remainder_term|lang=zh-CN|style=Feynman)将始终为正，从而证明该[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)完全位于其切平面之上。[余项的积分形式](@keyword=integral_form_of_the_remainder|lang=zh-CN|style=Feynman)，在任何维度下，仍然是理解我们在试图用直线和平面捕捉弯曲宇宙的丰富性时所犯误差的精确性质的终极工具。

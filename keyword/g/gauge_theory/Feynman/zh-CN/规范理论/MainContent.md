@@ -1,5 +1,5 @@
 ## 引言
-对称性是物理学中最强大、最具美学吸引力的概念之一。但如果我们要求一种对称性不仅在整个宇宙中全局成立，而且在[时空](@article_id:370647)中的每一个点都局域且独立地成立，会发生什么呢？这个看似不可能的要求引出了一个深刻的问题：我们常规的物理定律会因此失效。然而，其解决方案揭示了关于我们宇宙最深层的真理之一。[局域规范对称性](@article_id:308491)原理最终被证明是基本相互作用的主要构建者，为理解粒子如何相互作用提供了一个统一而优雅的框架。本文将探讨这一宏伟的思想。首先，在“原理与机制”一章中，我们将从头构建这一概念，探索为何要求局域对称性会从逻辑上迫使[力场](@article_id:307740)存在，并赋予它们独特的性质。随后，“应用与跨学科联系”一章将揭示这一原理的惊人成功，展示它如何支配[粒子物理学](@article_id:305677)的[标准模型](@article_id:297875)，甚至作为一种涌现语言出现在凝聚态、化学以及我们的引力理论中。
+对称性是物理学中最强大、最具美学吸引力的概念之一。但如果我们要求一种对称性不仅在整个宇宙中全局成立，而且在[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中的每一个点都局域且独立地成立，会发生什么呢？这个看似不可能的要求引出了一个深刻的问题：我们常规的物理定律会因此失效。然而，其解决方案揭示了关于我们宇宙最深层的真理之一。[局域规范对称性](@keyword=local_gauge_symmetry|lang=zh-CN|style=Feynman)原理最终被证明是基本相互作用的主要构建者，为理解粒子如何相互作用提供了一个统一而优雅的框架。本文将探讨这一宏伟的思想。首先，在“原理与机制”一章中，我们将从头构建这一概念，探索为何要求局域对称性会从逻辑上迫使[力场](@keyword=force_field|lang=zh-CN|style=Feynman)存在，并赋予它们独特的性质。随后，“应用与跨学科联系”一章将揭示这一原理的惊人成功，展示它如何支配[粒子物理学](@keyword=particle_physics|lang=zh-CN|style=Feynman)的[标准模型](@keyword=standard_model|lang=zh-CN|style=Feynman)，甚至作为一种涌现语言出现在凝聚态、化学以及我们的引力理论中。
 
 ## 原理与机制
 
@@ -9,42 +9,42 @@
 
 ### 局域性的苛求：为何力必须存在
 
-乍一看，这种对局域对称性的要求似乎会破坏一切。我们的运动方程，如薛定谔方程或狄拉克方程，都包含[导数](@article_id:318324)。[导数](@article_id:318324)的本质是比较一个场在某一点的值与其在邻近点的值。如果我们现在可以在每一点上任意改变场的“内部相位”，这种比较就变得毫无意义。这就像试图测量两座山峰的高度差，但一个人用米作单位，另一个人用英尺，而且他们都在不断地改变自己的单位而不告知对方。计算结果将变成一堆毫无意义的项。
+乍一看，这种对局域对称性的要求似乎会破坏一切。我们的运动方程，如薛定谔方程或狄拉克方程，都包含[导数](@keyword=derivative|lang=zh-CN|style=Feynman)。[导数](@keyword=derivative|lang=zh-CN|style=Feynman)的本质是比较一个场在某一点的值与其在邻近点的值。如果我们现在可以在每一点上任意改变场的“内部相位”，这种比较就变得毫无意义。这就像试图测量两座山峰的高度差，但一个人用米作单位，另一个人用英尺，而且他们都在不断地改变自己的单位而不告知对方。计算结果将变成一堆毫无意义的项。
 
-那么，我们是否陷入了困境？我们是否必须放弃局域对称性这个优美而强大的思想？完全不必。解决方案的优雅令人叹为观止。为了恢复秩序，理论迫使我们发明一种新的实体。我们必须引入一个新的场，即**联络场**或**规范场**，其全部工作就是充当一个“翻译器”。当我们从[时空](@article_id:370647)中的一点移动到另一点时，这个场会精确地告诉我们如何调整我们的“单位”（我们的内部相位朝向），从而使比较再次变得有意义。规范场是一套“连接”不同[时空](@article_id:370647)点内部[参考系](@article_id:345789)的指令。
+那么，我们是否陷入了困境？我们是否必须放弃局域对称性这个优美而强大的思想？完全不必。解决方案的优雅令人叹为观止。为了恢复秩序，理论迫使我们发明一种新的实体。我们必须引入一个新的场，即**联络场**或**规范场**，其全部工作就是充当一个“翻译器”。当我们从[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中的一点移动到另一点时，这个场会精确地告诉我们如何调整我们的“单位”（我们的内部相位朝向），从而使比较再次变得有意义。规范场是一套“连接”不同[时空](@keyword=space_time|lang=zh-CN|style=Feynman)点内部[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)的指令。
 
-为了让这个联络场发挥作用，它必须以一种非常特定的、“补偿性”的方式进[行变换](@article_id:310184)。当你对物质场进行局域相位旋转时，联络场也必须相应地调整自身，以完美抵消那些破坏我们[导数](@article_id:318324)的无意义项。这就是[规范原理](@article_id:304440)的核心。对局域对称性的要求从逻辑上迫使一个伴生的[力场](@article_id:307740)存在 。力不是一个附加物；它是局域对称性的*代价*。对称性本身充当了构建者，它规定了力必须存在，并精确地定义了它必须如何表现。
+为了让这个联络场发挥作用，它必须以一种非常特定的、“补偿性”的方式进[行变换](@keyword=row_operations|lang=zh-CN|style=Feynman)。当你对物质场进行局域相位旋转时，联络场也必须相应地调整自身，以完美抵消那些破坏我们[导数](@keyword=derivative|lang=zh-CN|style=Feynman)的无意义项。这就是[规范原理](@keyword=gauge_principle|lang=zh-CN|style=Feynman)的核心。对局域对称性的要求从逻辑上迫使一个伴生的[力场](@keyword=force_field|lang=zh-CN|style=Feynman)存在 [@problem_id:1872250]。力不是一个附加物；它是局域对称性的*代价*。对称性本身充当了构建者，它规定了力必须存在，并精确地定义了它必须如何表现。
 
-### 一个简单的转折：熟悉的[电磁学](@article_id:363853)案例
+### 一个简单的转折：熟悉的[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)案例
 
-这个原理最简单也最熟悉的例子是[电磁学](@article_id:363853)理论。这里的对称群简单至极：它是在一个圆上的旋转群，记为 $U(1)$。对带电粒子[波函数](@article_id:307855) $\psi$ 进行的“局域相位旋转”，仅仅是乘以一个依赖[时空](@article_id:370647)的相位因子，即 $\psi \to \exp(iq\alpha(x))\psi$。
+这个原理最简单也最熟悉的例子是[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)理论。这里的对称群简单至极：它是在一个圆上的旋转群，记为 $U(1)$。对带电粒子[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman) $\psi$ 进行的“局域相位旋转”，仅仅是乘以一个依赖[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的相位因子，即 $\psi \to \exp(iq\alpha(x))\psi$。
 
-为了使这个对称性成为局域的，我们被迫引入一个[规范场](@article_id:320031)。而这个场是什么呢？它正是我们熟悉的[电磁四维势](@article_id:327764) $A_\mu$，它将电势和磁矢量势打包在一起。它以恰当的方式进行变换，使我们的方程保持优美：$A'_\mu = A_\mu - \partial_\mu \alpha(x)$。[导数](@article_id:318324)被提升为**协变导数** $D_\mu = \partial_\mu + iqA_\mu$，它现在能很好地变换，让我们能够写下有意义的物理定律。
+为了使这个对称性成为局域的，我们被迫引入一个[规范场](@keyword=gauge_fields|lang=zh-CN|style=Feynman)。而这个场是什么呢？它正是我们熟悉的[电磁四维势](@keyword=electromagnetic_four_potential|lang=zh-CN|style=Feynman) $A_\mu$，它将电势和磁矢量势打包在一起。它以恰当的方式进行变换，使我们的方程保持优美：$A'_\mu = A_\mu - \partial_\mu \alpha(x)$。[导数](@keyword=derivative|lang=zh-CN|style=Feynman)被提升为**协变导数** $D_\mu = \partial_\mu + iqA_\mu$，它现在能很好地变换，让我们能够写下有意义的物理定律。
 
-但这引入了一个引人入胜的微妙之处。势 $A_\mu$ 本身并不是物理实在。它是一个工具，是我们用来构建理论的一种脚手架。我们可以通过**[规范变换](@article_id:323438)**来改变它，但所有的物理——每一个实验结果，每一个可观测现象——都必须保持不变。那么，什么*是*实在的呢？力的物理实质是什么？
+但这引入了一个引人入胜的微妙之处。势 $A_\mu$ 本身并不是物理实在。它是一个工具，是我们用来构建理论的一种脚手架。我们可以通过**[规范变换](@keyword=gauge_transformations|lang=zh-CN|style=Feynman)**来改变它，但所有的物理——每一个实验结果，每一个可观测现象——都必须保持不变。那么，什么*是*实在的呢？力的物理实质是什么？
 
-物理实在在于**[场强张量](@article_id:320150)** $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$。这个量包含了我们熟悉的[电场和磁场](@article_id:325058)。正如问题  中的计算所示，当你对 $A_\mu$ 进行[规范变换](@article_id:323438)时，[场强张量](@article_id:320150) $F_{\mu\nu}$ 在数学上保持完全、严格、恒等的不变。它是**规范不变的**。它是[电磁场](@article_id:329585)的“实在”部分。势是冗余的；场强才是关键。
+物理实在在于**[场强张量](@keyword=field_strength_tensor|lang=zh-CN|style=Feynman)** $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$。这个量包含了我们熟悉的[电场和磁场](@keyword=electric_and_magnetic_fields|lang=zh-CN|style=Feynman)。正如问题 [@problem_id:1838936] 中的计算所示，当你对 $A_\mu$ 进行[规范变换](@keyword=gauge_transformations|lang=zh-CN|style=Feynman)时，[场强张量](@keyword=field_strength_tensor|lang=zh-CN|style=Feynman) $F_{\mu\nu}$ 在数学上保持完全、严格、恒等的不变。它是**规范不变的**。它是[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)的“实在”部分。势是冗余的；场强才是关键。
 
-这种结构带来了一个惊人的推论。$F_{\mu\nu}$ 的定义本身就使其反对称（$F_{\mu\nu} = -F_{\nu\mu}$）。当这个数学性质与麦克斯韦方程组（$\partial_\mu F^{\mu\nu} = j^\nu$）结合时，会得出一个不可避免的结论：源电流 $j^\nu$ 必须是守恒的。也就是说，$\partial_\nu j^\nu = 0$。这就是**电荷守恒定律**。它不是我们必须做出的额外假设，而是构建该理论的规范对称性所带来的直接[逻辑推论](@article_id:315479) 。对称性保证了其自身的守恒定律。
+这种结构带来了一个惊人的推论。$F_{\mu\nu}$ 的定义本身就使其反对称（$F_{\mu\nu} = -F_{\nu\mu}$）。当这个数学性质与麦克斯韦方程组（$\partial_\mu F^{\mu\nu} = j^\nu$）结合时，会得出一个不可避免的结论：源电流 $j^\nu$ 必须是守恒的。也就是说，$\partial_\nu j^\nu = 0$。这就是**电荷守恒定律**。它不是我们必须做出的额外假设，而是构建该理论的规范对称性所带来的直接[逻辑推论](@keyword=logical_consequence|lang=zh-CN|style=Feynman) [@problem_id:1508231]。对称性保证了其自身的守恒定律。
 
-### 更深层的舞蹈：[非阿贝尔对称性](@article_id:378814)
+### 更深层的舞蹈：[非阿贝尔对称性](@keyword=non_abelian_symmetry|lang=zh-CN|style=Feynman)
 
-[电磁学](@article_id:363853)的故事是基于最简单的内部空间——一个圆。但如果我们的基本粒子具有更复杂的内部属性呢？如果一个粒子不是由单个相角描述，而是由某个内部抽象空间中的一个矢量描述呢？例如，构成质子和中子的夸克有三种“色”（一种[电荷](@article_id:339187)类型的异想天开的名称）。一个夸克不仅仅是一个单一的场；它是在这个内部“色空间”中具有三个分量的矢量。
+[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)的故事是基于最简单的内部空间——一个圆。但如果我们的基本粒子具有更复杂的内部属性呢？如果一个粒子不是由单个相角描述，而是由某个内部抽象空间中的一个矢量描述呢？例如，构成质子和中子的夸克有三种“色”（一种[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)类型的异想天开的名称）。一个夸克不仅仅是一个单一的场；它是在这个内部“色空间”中具有三个分量的矢量。
 
-要在这里拥有局域对称性，我们需要能够在[时空](@article_id:370647)的每一点上以不同的方式旋转这个矢量。这些不是在圆上的简单旋转。它们是[矩阵乘法](@article_id:316443)，由像 $SU(2)$（用于弱相互作用）或 $SU(3)$（用于强相互作用）这样的群来描述。一个夸克场 $\psi(x)$ 变换为 $\psi'(x) = g(x) \psi(x)$，其中 $g(x)$ 现在是一个来自 $SU(3)$ 群的、依赖[时空](@article_id:370647)的矩阵 。因为这些矩阵“旋转”通常是互不对易的（先绕A轴再绕B轴旋转，与先绕B轴再绕A轴旋转是不同的），所以这些理论被称为**[非阿贝尔规范理论](@article_id:312750)**，或[杨-米尔斯理论](@article_id:297852)。
+要在这里拥有局域对称性，我们需要能够在[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的每一点上以不同的方式旋转这个矢量。这些不是在圆上的简单旋转。它们是[矩阵乘法](@keyword=matrix_multiplication|lang=zh-CN|style=Feynman)，由像 $SU(2)$（用于弱相互作用）或 $SU(3)$（用于强相互作用）这样的群来描述。一个夸克场 $\psi(x)$ 变换为 $\psi'(x) = g(x) \psi(x)$，其中 $g(x)$ 现在是一个来自 $SU(3)$ 群的、依赖[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的矩阵 [@problem_id:1143338]。因为这些矩阵“旋转”通常是互不对易的（先绕A轴再绕B轴旋转，与先绕B轴再绕A轴旋转是不同的），所以这些理论被称为**[非阿贝尔规范理论](@keyword=non_abelian_gauge_theory|lang=zh-CN|style=Feynman)**，或[杨-米尔斯理论](@keyword=yang_mills_theory|lang=zh-CN|style=Feynman)。
 
-和之前一样，这种局域对称性要求[规范场](@article_id:320031)的存在。但现在，规范场本身必须更加复杂。它不能是像 $A_\mu$ 这样的单个势。它需要具有与内部空间中所有可能的“旋转”相对应的分量。规范场的数量——也就是传递力的粒子（[规范玻色子](@article_id:378987)）的数量——由群的代数的维度决定。对于一个 $SU(N)$ 理论，这个数量是 $N^2 - 1$ 。这就是为什么基于 $SU(2)$ 的[弱相互作用](@article_id:317984)有 $2^2-1=3$ 个规范玻色子（$W^+$、$W^-$ 和 $Z^0$），而基于 $SU(3)$ 的[强相互作用](@article_id:319602)由一个包含 $3^2-1=8$ 种胶子的家族来传递。
+和之前一样，这种局域对称性要求[规范场](@keyword=gauge_fields|lang=zh-CN|style=Feynman)的存在。但现在，规范场本身必须更加复杂。它不能是像 $A_\mu$ 这样的单个势。它需要具有与内部空间中所有可能的“旋转”相对应的分量。规范场的数量——也就是传递力的粒子（[规范玻色子](@keyword=gauge_bosons|lang=zh-CN|style=Feynman)）的数量——由群的代数的维度决定。对于一个 $SU(N)$ 理论，这个数量是 $N^2 - 1$ [@problem_id:1563597]。这就是为什么基于 $SU(2)$ 的[弱相互作用](@keyword=weak_nuclear_force|lang=zh-CN|style=Feynman)有 $2^2-1=3$ 个规范玻色子（$W^+$、$W^-$ 和 $Z^0$），而基于 $SU(3)$ 的[强相互作用](@keyword=strong_nuclear_force|lang=zh-CN|style=Feynman)由一个包含 $3^2-1=8$ 种胶子的家族来传递。
 
 ### 当力与自身对话：自相互作用的魔力
 
-在这里，我们来到了[电磁学](@article_id:363853)的简单世界与非阿贝尔理论丰富复杂的世界之间最引人注目、最具决定性的区别。当我们为非阿贝尔理论构建[场强张量](@article_id:320150)时，我们发现了惊人的东西。
+在这里，我们来到了[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)的简单世界与非阿贝尔理论丰富复杂的世界之间最引人注目、最具决定性的区别。当我们为非阿贝尔理论构建[场强张量](@keyword=field_strength_tensor|lang=zh-CN|style=Feynman)时，我们发现了惊人的东西。
 
-在[电磁学](@article_id:363853)中，场强是 $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$。而在非阿贝尔理论中，由于[对称群](@article_id:306504)的非对易性，一个额外的项被迫出现：
+在[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)中，场强是 $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$。而在非阿贝尔理论中，由于[对称群](@keyword=symmetry_groups|lang=zh-CN|style=Feynman)的非对易性，一个额外的项被迫出现：
 $$ F^a_{\mu\nu} = \partial_\mu A^a_\nu - \partial_\nu A^a_\mu + g f^{abc} A^b_\mu A^c_\nu $$
-新增的部分 $g f^{abc} A^b_\mu A^c_\nu$ 是一个[规范场](@article_id:320031)直接与自身相互作用的项 。
+新增的部分 $g f^{abc} A^b_\mu A^c_\nu$ 是一个[规范场](@keyword=gauge_fields|lang=zh-CN|style=Feynman)直接与自身相互作用的项 [@problem_id:2099000]。
 
-这在物理上意味着什么？在[电磁学](@article_id:363853)中，力的载体——[光子](@article_id:305617)——是[电中性](@article_id:299095)的。两束光在真空中会直接穿过彼此而不发生相互作用（至少在经典层面上）。但在非阿贝尔理论中，力的载体本身就携带它们所传递的力的[电荷](@article_id:339187)。[胶子](@article_id:312141)带有[色荷](@article_id:312338)。[W玻色子](@article_id:319642)携带[弱荷](@article_id:322378)。这意味着[规范玻色子](@article_id:378987)可以并且确实直接相互作用。胶子可以与其它[胶子](@article_id:312141)发生散射。[力场](@article_id:307740)本身就是带电的。
+这在物理上意味着什么？在[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)中，力的载体——[光子](@keyword=photon|lang=zh-CN|style=Feynman)——是[电中性](@keyword=charge_neutrality|lang=zh-CN|style=Feynman)的。两束光在真空中会直接穿过彼此而不发生相互作用（至少在经典层面上）。但在非阿贝尔理论中，力的载体本身就携带它们所传递的力的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。[胶子](@keyword=gluons|lang=zh-CN|style=Feynman)带有[色荷](@keyword=color_charge|lang=zh-CN|style=Feynman)。[W玻色子](@keyword=w_boson|lang=zh-CN|style=Feynman)携带[弱荷](@keyword=weak_charge|lang=zh-CN|style=Feynman)。这意味着[规范玻色子](@keyword=gauge_bosons|lang=zh-CN|style=Feynman)可以并且确实直接相互作用。胶子可以与其它[胶子](@keyword=gluons|lang=zh-CN|style=Feynman)发生散射。[力场](@keyword=force_field|lang=zh-CN|style=Feynman)本身就是带电的。
 
-这种[自相互作用](@article_id:380031)是强相互作用和弱相互作用所有奇异而奇妙行为的根源。这就是为什么夸克被永久地“禁闭”在质子和中子内部，也是为什么强相互作用在极高能量下会变弱（这一性质被称为“渐近自由”）。理论的行为是极其非线性的，并且异常丰富。
+这种[自相互作用](@keyword=self_interaction|lang=zh-CN|style=Feynman)是强相互作用和弱相互作用所有奇异而奇妙行为的根源。这就是为什么夸克被永久地“禁闭”在质子和中子内部，也是为什么强相互作用在极高能量下会变弱（这一性质被称为“渐近自由”）。理论的行为是极其非线性的，并且异常丰富。
 
-一个美丽而令人费解的例子是考虑一个充满整个空间的恒定[规范势](@article_id:368088) 。在[电磁学](@article_id:363853)中，一个恒定的势是无足轻重的；它意味着各处的[电场和磁场](@article_id:325058)都为零。什么都没有发生。但在非阿贝尔理论中，由于自相互作用项的存在，一个完全恒定且均匀的[规范势](@article_id:368088)可以产生一个非零的、动态的场强！场简直可以从势的真空中自举生成。这与[电磁学](@article_id:363853)的温和线性世界相去甚远，是更复杂、更纠缠、最终也更深刻的对称性的直接结果。
+一个美丽而令人费解的例子是考虑一个充满整个空间的恒定[规范势](@keyword=gauge_potential|lang=zh-CN|style=Feynman) [@problem_id:1563556]。在[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)中，一个恒定的势是无足轻重的；它意味着各处的[电场和磁场](@keyword=electric_and_magnetic_fields|lang=zh-CN|style=Feynman)都为零。什么都没有发生。但在非阿贝尔理论中，由于自相互作用项的存在，一个完全恒定且均匀的[规范势](@keyword=gauge_potential|lang=zh-CN|style=Feynman)可以产生一个非零的、动态的场强！场简直可以从势的真空中自举生成。这与[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)的温和线性世界相去甚远，是更复杂、更纠缠、最终也更深刻的对称性的直接结果。

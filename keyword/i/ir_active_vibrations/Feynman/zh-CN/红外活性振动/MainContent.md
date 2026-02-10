@@ -1,47 +1,47 @@
 ## 引言
-红外（IR）[光谱学](@article_id:298272)是现代科学的基石，它通过观察分子如何与光相互作用，让化学家得以“看见”分子的内部运作。然而，其核心存在一个中心谜题：为什么某些分子振动会强烈吸收红外光，而其他同样充满能量的[振动](@article_id:331484)却完全不可见？这个问题的答案揭示了[红外光谱学](@article_id:301324)的强大力量，使其从一种简单的测量手段转变为一种用于识别物质和解析其三维结构的深刻工具。本文将揭开支配这种物质与光之间选择性相互作用的规则的神秘面纱。
+红外（IR）[光谱学](@keyword=spectroscopy|lang=zh-CN|style=Feynman)是现代科学的基石，它通过观察分子如何与光相互作用，让化学家得以“看见”分子的内部运作。然而，其核心存在一个中心谜题：为什么某些分子振动会强烈吸收红外光，而其他同样充满能量的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)却完全不可见？这个问题的答案揭示了[红外光谱学](@keyword=infrared_spectroscopy|lang=zh-CN|style=Feynman)的强大力量，使其从一种简单的测量手段转变为一种用于识别物质和解析其三维结构的深刻工具。本文将揭开支配这种物质与光之间选择性相互作用的规则的神秘面纱。
 
-接下来的章节将引导您领略这场迷人的分子之舞。在“原理与机制”部分，我们将探讨[红外吸收](@article_id:368002)的基本要求——舞动的偶极矩，并了解优雅而严苛的分子对称性法则如何扮演最终的裁判角色，使一些[振动](@article_id:331484)沉寂，而让另一些振動发声。然后，在“应用与跨学科联系”部分，我们将看到这些原理的实际应用，学习化学家如何利用[红外活性振动](@article_id:305753)的独特“指纹图谱”作为一把万能钥匙，解决从[材料科学](@article_id:312640)、地质学到[天体化学](@article_id:319653)等各个领域的问题。
+接下来的章节将引导您领略这场迷人的分子之舞。在“原理与机制”部分，我们将探讨[红外吸收](@keyword=infrared_absorption|lang=zh-CN|style=Feynman)的基本要求——舞动的偶极矩，并了解优雅而严苛的分子对称性法则如何扮演最终的裁判角色，使一些[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)沉寂，而让另一些振動发声。然后，在“应用与跨学科联系”部分，我们将看到这些原理的实际应用，学习化学家如何利用[红外活性振动](@keyword=ir_active_vibrations|lang=zh-CN|style=Feynman)的独特“指纹图谱”作为一把万能钥匙，解决从[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)、地质学到[天体化学](@keyword=astrochemistry|lang=zh-CN|style=Feynman)等各个领域的问题。
 
 ## 原理与机制
 
-想象一下，你置身于一个巨大而寂静的舞厅，你的任务是引起房间另一头一个蒙眼朋友的注意，他只能感觉到[振动](@article_id:331484)。你可以原地跳跃，但这只会震动你脚下的地板。要真正发出信号，你需要创造一个[行波](@article_id:323698)——一种能够传播的扰动。分子在试图与红外光的电磁波相互作用时也面临类似的挑战。它们在不停地晃动和[振动](@article_id:331484)，但并非每一次[振动](@article_id:331484)都能发出信号。支配哪些[振动能](@article_id:318313)与光“对话”的原理，是经典物理学、量子力学和[分子对称性](@article_id:380867)深刻优雅之美的精彩交融。
+想象一下，你置身于一个巨大而寂静的舞厅，你的任务是引起房间另一头一个蒙眼朋友的注意，他只能感觉到[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。你可以原地跳跃，但这只会震动你脚下的地板。要真正发出信号，你需要创造一个[行波](@keyword=traveling_waves|lang=zh-CN|style=Feynman)——一种能够传播的扰动。分子在试图与红外光的电磁波相互作用时也面临类似的挑战。它们在不停地晃动和[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，但并非每一次[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)都能发出信号。支配哪些[振动能](@keyword=vibrational_energy|lang=zh-CN|style=Feynman)与光“对话”的原理，是经典物理学、量子力学和[分子对称性](@keyword=symmetry_in_molecules|lang=zh-CN|style=Feynman)深刻优雅之美的精彩交融。
 
 ### 问题的核心：舞动的偶极矩
 
-从本质上讲，红外光是一种[振荡](@article_id:331484)的[电场和磁场](@article_id:325058)。为了让一个分子吸收这种光的[光子](@article_id:305617)，它必须有一种方式能与其电场耦合。这种耦合的“把手”就是分子的**电偶极矩**。你可以把带有偶极矩的分子想象成一个微小的物体，其正负[电荷](@article_id:339187)是分离的，就像一个微型磁铁，只不过作用于电。例如，在像氯化氢（$\text{HCl}$）这样的分子中，氯原子电负性更强，将电子拉向自己，形成一个微弱的负[电荷](@article_id:339187)（$\delta-$），而氢原子则带上微弱的正[电荷](@article_id:339187)（$\delta+$）。这就产生了一个永久偶极矩。
+从本质上讲，红外光是一种[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的[电场和磁场](@keyword=electric_and_magnetic_fields|lang=zh-CN|style=Feynman)。为了让一个分子吸收这种光的[光子](@keyword=photon|lang=zh-CN|style=Feynman)，它必须有一种方式能与其电场耦合。这种耦合的“把手”就是分子的**电偶极矩**。你可以把带有偶极矩的分子想象成一个微小的物体，其正负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)是分离的，就像一个微型磁铁，只不过作用于电。例如，在像氯化氢（$\text{HCl}$）这样的分子中，氯原子电负性更强，将电子拉向自己，形成一个微弱的负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)（$\delta-$），而氢原子则带上微弱的正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)（$\delta+$）。这就产生了一个永久偶极矩。
 
-现在，关键的规则来了，几乎所有其他内容都由此而来：**只有当分子振动引起其净偶极矩发生变化时，该[振动](@article_id:331484)才会吸收红外光**。这是[红外光谱学](@article_id:301324)的**总选择定则**。
+现在，关键的规则来了，几乎所有其他内容都由此而来：**只有当分子振动引起其净偶极矩发生变化时，该[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)才会吸收红外光**。这是[红外光谱学](@keyword=infrared_spectroscopy|lang=zh-CN|style=Feynman)的**总选择定则**。[@problem_id:1997438]
 
-分子*拥有*偶极矩还不够；这个偶极矩必须在[分子振动](@article_id:301270)时*发生变化*。可以这样想：拿着一面彩旗会让你显眼，但挥舞它才能吸引远方的注意。这种[振动](@article_id:331484)必须是一种电的“波”。如果一个[振动](@article_id:331484)涉及[化学键](@article_id:305517)的伸缩或弯曲，并且这种方式使得整体电荷分布发生[振荡](@article_id:331484)，它就会产生一个[振荡](@article_id:331484)的偶极矩。这个[振荡](@article_id:331484)的[分子偶极矩](@article_id:313069)随后可以与入射光波的[振荡](@article_id:331484)电场[同步](@article_id:339180)，吸收其能量，并跃迁到更高的[振动态](@article_id:322500)。
+分子*拥有*偶极矩还不够；这个偶极矩必须在[分子振动](@keyword=molecular_vibrations|lang=zh-CN|style=Feynman)时*发生变化*。可以这样想：拿着一面彩旗会让你显眼，但挥舞它才能吸引远方的注意。这种[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)必须是一种电的“波”。如果一个[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)涉及[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)的伸缩或弯曲，并且这种方式使得整体电荷分布发生[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，它就会产生一个[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的偶极矩。这个[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的[分子偶极矩](@keyword=molecular_dipole_moment|lang=zh-CN|style=Feynman)随后可以与入射光波的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)电场[同步](@keyword=entrainment|lang=zh-CN|style=Feynman)，吸收其能量，并跃迁到更高的[振动态](@keyword=vibrational_states|lang=zh-CN|style=Feynman)。
 
-### 对称性的无声裁决：当[振动](@article_id:331484)变得无形
+### 对称性的无声裁决：当[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)变得无形
 
-这个基本规则有一个迷人的推论，完全由分子的形状决定。某些[振动](@article_id:331484)，尽管涉及原子的剧烈运动，却对红外光完全“沉默”。它们的对称性使其变得不可见。
+这个基本规则有一个迷人的推论，完全由分子的形状决定。某些[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，尽管涉及原子的剧烈运动，却对红外光完全“沉默”。它们的对称性使其变得不可见。
 
-最简单的例子是[同核双原子分子](@article_id:315884)，如你正在呼吸的空气的主要成分——氮气（$\text{N}_2$）或氧气（$\text{O}_2$）。这些分子是完全对称的。两个相同的原子平均共享电子，因此分子的偶极矩为零。现在，想象它在[振动](@article_id:331484)——[化学键](@article_id:305517)在[伸缩和](@article_id:326058)压缩。在这个[振动](@article_id:331484)的每一点，对称性都得以保持，偶极矩始终为零。既然偶极矩没有*变化*，这种[振动](@article_id:331484)就是**红外非活性**的。这就是为什么地球大气层对大部分红外辐射是透明的，这一事实对地球的[能量平衡](@article_id:311249)至关重要。 
+最简单的例子是[同核双原子分子](@keyword=homonuclear_diatomics|lang=zh-CN|style=Feynman)，如你正在呼吸的空气的主要成分——氮气（$\text{N}_2$）或氧气（$\text{O}_2$）。这些分子是完全对称的。两个相同的原子平均共享电子，因此分子的偶极矩为零。现在，想象它在[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)——[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)在[伸缩和](@keyword=telescoping_sum|lang=zh-CN|style=Feynman)压缩。在这个[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的每一点，对称性都得以保持，偶极矩始终为零。既然偶极矩没有*变化*，这种[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)就是**红外非活性**的。这就是为什么地球大气层对大部分红外辐射是透明的，这一事实对地球的[能量平衡](@keyword=energy_balance|lang=zh-CN|style=Feynman)至关重要。[@problem_id:1449975] [@problem_id:1997438]
 
-一个更精妙而优美的例子是二氧化碳（$\text{CO}_2$）。每个碳-氧键都是极性的。然而，在其平衡状态下，该分子是线性和对称的（$\text{O=C=O}$）。两个[键偶极](@article_id:299213)矩方向相反，完美地相互抵消，导致净偶极矩为零。现在，考虑它的**[对称伸缩振动](@article_id:344537)**，即两个氧原子同时远离中心碳原子，然后再同时返回，就像完美同步的游泳运动员。在这种[振动](@article_id:331484)的每一个瞬间，两个[键偶极](@article_id:299213)矩虽然在变化，但始终大小相等、方向相反。它们继续完美地相互抵消。净偶极矩从零开始，并一直保持为零。因此，这种[振动](@article_id:331484)在红外光谱中完全不可见——它是红外非活性的。 
+一个更精妙而优美的例子是二氧化碳（$\text{CO}_2$）。每个碳-氧键都是极性的。然而，在其平衡状态下，该分子是线性和对称的（$\text{O=C=O}$）。两个[键偶极](@keyword=bond_dipole|lang=zh-CN|style=Feynman)矩方向相反，完美地相互抵消，导致净偶极矩为零。现在，考虑它的**[对称伸缩振动](@keyword=symmetric_stretch|lang=zh-CN|style=Feynman)**，即两个氧原子同时远离中心碳原子，然后再同时返回，就像完美同步的游泳运动员。在这种[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的每一个瞬间，两个[键偶极](@keyword=bond_dipole|lang=zh-CN|style=Feynman)矩虽然在变化，但始终大小相等、方向相反。它们继续完美地相互抵消。净偶极矩从零开始，并一直保持为零。因此，这种[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)在红外光谱中完全不可见——它是红外非活性的。[@problem_id:1997454] [@problem_id:1449933]
 
-同样的原理也适用于甲烷（$\text{CH}_4$）的[对称伸缩振动](@article_id:344537)。尽管每个C-H键都有一个小的偶极矩，但该分子完美的四面体对称性确保了当所有四个键同时向外伸展时，它们的矢量和仍然为零。这种高度对称的“呼吸”模式也是红外非活性的。
+同样的原理也适用于甲烷（$\text{CH}_4$）的[对称伸缩振动](@keyword=symmetric_stretch|lang=zh-CN|style=Feynman)。尽管每个C-H键都有一个小的偶极矩，但该分子完美的四面体对称性确保了当所有四个键同时向外伸展时，它们的矢量和仍然为零。这种高度对称的“呼吸”模式也是红外非活性的。[@problem_id:1449933]
 
 ### 不对称之声：当分子清晰发声
 
-如果说高对称性可以强制沉默，那么缺乏对称性通常会赋予分子清晰的声音。思考一下水分子（$\text{H}_2\text{O}$）。它的弯曲形状（$C_{2v}$对称性）意味着两个O-H键的偶极矩不会相互抵消。水分子有一个很大的永久偶极矩。当它的两个O-H键进行对称伸缩时，H-O-H角会发生轻微变化，净偶极矩的大小也随之[振荡](@article_id:331484)。这种变化使得该[振动](@article_id:331484)具有强烈的**红外活性**。
+如果说高对称性可以强制沉默，那么缺乏对称性通常会赋予分子清晰的声音。思考一下水分子（$\text{H}_2\text{O}$）。它的弯曲形状（$C_{2v}$对称性）意味着两个O-H键的偶极矩不会相互抵消。水分子有一个很大的永久偶极矩。当它的两个O-H键进行对称伸缩时，H-O-H角会发生轻微变化，净偶极矩的大小也随之[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。这种变化使得该[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)具有强烈的**红外活性**。[@problem_id:1449933]
 
-类似地，像一氧化碳（$\text{CO}$）这样的[异核双原子分子](@article_id:310567)具有固有的[电荷](@article_id:339187)不平衡，因此也具有[永久偶极矩](@article_id:343365)。当C-O[键伸缩](@article_id:351808)和压缩时，[部分电荷](@article_id:346450)之间的距离发生变化，导致偶极矩的大小发生[振荡](@article_id:331484)。因此，这种[振动](@article_id:331484)是红外活性的。
+类似地，像一氧化碳（$\text{CO}$）这样的[异核双原子分子](@keyword=heteronuclear_diatomics|lang=zh-CN|style=Feynman)具有固有的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)不平衡，因此也具有[永久偶极矩](@keyword=permanent_dipole_moment|lang=zh-CN|style=Feynman)。当C-O[键伸缩](@keyword=bond_stretching|lang=zh-CN|style=Feynman)和压缩时，[部分电荷](@keyword=partial_charges|lang=zh-CN|style=Feynman)之间的距离发生变化，导致偶极矩的大小发生[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。因此，这种[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)是红外活性的。[@problem_id:1997438]
 
-教训是明确的：要使一种[振动](@article_id:331484)可见，它必须以某种方式打破分子的电平衡。高对称性可以阻止这种情况发生，而低对称性通常允许它发生。
+教训是明确的：要使一种[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)可见，它必须以某种方式打破分子的电平衡。高对称性可以阻止这种情况发生，而低对称性通常允许它发生。
 
 ### 更深层的秩序：群论，对称性的语言
 
-化学家们已经发展出一个强大而优雅的数学框架来将这些思想形式化：**群论**。我们可以跳过严谨的细节，将其理解为“分子对称性的规则手册”。每个分子都可以被归类到一个**[点群](@article_id:302896)**（例如，水的$C_{2v}$，$\text{CO}_2$的$D_{\infty h}$），该点群包含了其所有的对称性属性。
+化学家们已经发展出一个强大而优雅的数学框架来将这些思想形式化：**群论**。我们可以跳过严谨的细节，将其理解为“分子对称性的规则手册”。每个分子都可以被归类到一个**[点群](@keyword=point_groups|lang=zh-CN|style=Feynman)**（例如，水的$C_{2v}$，$\text{CO}_2$的$D_{\infty h}$），该点群包含了其所有的对称性属性。
 
-在这个框架内，分子的每一种可能的[振动](@article_id:331484)都被赋予一个对称性标签，称为**[不可约表示](@article_id:298633)**（其名称如$A_1$，$B_2$或$E$）。偶极矩矢量的分量（其变换性质与笛卡尔坐标$x, y, z$相同）也被赋予这些标签。
+在这个框架内，分子的每一种可能的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)都被赋予一个对称性标签，称为**[不可约表示](@keyword=irreducible_representations|lang=zh-CN|style=Feynman)**（其名称如$A_1$，$B_2$或$E$）。偶极矩矢量的分量（其变换性质与笛卡尔坐标$x, y, z$相同）也被赋予这些标签。
 
-金科玉律变得异常简单且具有预测性：**如果一个[振动](@article_id:331484)模式的不可约表示与至少一个笛卡尔坐标（$x$、$y$或$z$）的不可约表示相同，那么该[振动](@article_id:331484)模式就是[红外活性](@article_id:374808)的**。
+金科玉律变得异常简单且具有预测性：**如果一个[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式的不可约表示与至少一个笛卡尔坐标（$x$、$y$或$z$）的不可约表示相同，那么该[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式就是[红外活性](@keyword=infrared_activity|lang=zh-CN|style=Feynman)的**。[@problem_id:2028818]
 
-让我们看一下$C_{2v}$[点群](@article_id:302896)的特征标表，$C_{2v}$是水分子的归属[点群](@article_id:302896)。
+让我们看一下$C_{2v}$[点群](@keyword=point_groups|lang=zh-CN|style=Feynman)的特征标表，$C_{2v}$是水分子的归属[点群](@keyword=point_groups|lang=zh-CN|style=Feynman)。
 
 | $C_{2v}$ | $E$ | $C_2(z)$ | $\sigma_v(xz)$ | $\sigma_v'(yz)$ | 线性，旋转 |
 | :--- | --: | :---: | :---: | :---: | :--- |
@@ -50,24 +50,24 @@
 | $B_1$ | 1 | -1 | 1 | -1 | $x, R_y$ |
 | $B_2$ | 1 | -1 | -1 | 1 | $y, R_x$ |
 
-通过检查“线性，旋转”列，我们可以看到沿$z$轴的偶极矩变化具有$A_1$对称性，沿$x$轴具有$B_1$对称性，沿$y$轴具有$B_2$对称性。因此，$C_{2v}$分子的任何具有$A_1$、$B_1$或$B_2$对称性的[振动](@article_id:331484)都将是红外活性的。而具有$A_2$对称性的[振动](@article_id:331484)则是红外非活性的。这个工具使我们能够在甚至没有看到分子振动的情况下，预测其哪些基本运动会出现在红外光谱中。这种方法的强大之处在于，我们甚至可以精确计算出特定结构的分子应该有多少个[红外活性模式](@article_id:364212)。
+通过检查“线性，旋转”列，我们可以看到沿$z$轴的偶极矩变化具有$A_1$对称性，沿$x$轴具有$B_1$对称性，沿$y$轴具有$B_2$对称性。因此，$C_{2v}$分子的任何具有$A_1$、$B_1$或$B_2$对称性的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)都将是红外活性的。而具有$A_2$对称性的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)则是红外非活性的。这个工具使我们能够在甚至没有看到分子振动的情况下，预测其哪些基本运动会出现在红外光谱中。这种方法的强大之处在于，我们甚至可以精确计算出特定结构的分子应该有多少个[红外活性模式](@keyword=ir_active_modes|lang=zh-CN|style=Feynman)。[@problem_id:2920979]
 
-### [互斥规则](@article_id:306536)：两种[光谱学](@article_id:298272)的故事
+### [互斥规则](@keyword=rule_of_mutual_exclusion|lang=zh-CN|style=Feynman)：两种[光谱学](@keyword=spectroscopy|lang=zh-CN|style=Feynman)的故事
 
-当我们引入一种互补的技术——**[拉曼光谱学](@article_id:297142)**时，故事变得更加有趣。[拉曼光谱学](@article_id:297142)寻找的不是偶极矩的变化，而是**[极化率](@article_id:303946)的变化**。极化率（$\alpha$）是衡量分子电子云在外部电场作用下被扭曲或“挤压”的难易程度的指标。
+当我们引入一种互补的技术——**[拉曼光谱学](@keyword=raman_spectroscopy|lang=zh-CN|style=Feynman)**时，故事变得更加有趣。[拉曼光谱学](@keyword=raman_spectroscopy|lang=zh-CN|style=Feynman)寻找的不是偶极矩的变化，而是**[极化率](@keyword=polarizability|lang=zh-CN|style=Feynman)的变化**。极化率（$\alpha$）是衡量分子电子云在外部电场作用下被扭曲或“挤压”的难易程度的指标。[@problem_id:1329077]
 
-让我们再回到$\text{CO}_2$的[对称伸缩振动](@article_id:344537)。我们知道它是红外非活性的。但它的[极化率](@article_id:303946)如何呢？当分子伸展时，它变得更长，其电子云更容易被扭曲——其极化率增加。当它压缩时，它变得更紧凑，极化率降低。由于极化率在[振动](@article_id:331484)过程中发生了变化，这种模式是**拉曼活性**的。
+让我们再回到$\text{CO}_2$的[对称伸缩振动](@keyword=symmetric_stretch|lang=zh-CN|style=Feynman)。我们知道它是红外非活性的。但它的[极化率](@keyword=polarizability|lang=zh-CN|style=Feynman)如何呢？当分子伸展时，它变得更长，其电子云更容易被扭曲——其极化率增加。当它压缩时，它变得更紧凑，极化率降低。由于极化率在[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)过程中发生了变化，这种模式是**拉曼活性**的。[@problem_id:1329077]
 
-这引出了一个非常优雅的原则，称为**[互斥规则](@article_id:306536)**。对于任何拥有**[反演中心](@article_id:336724)**（分子中心的一个点，通过该点反转所有原子可以得到一个看起来相同的分子，如$\text{CO}_2$）的分子，其[振动](@article_id:331484)模式是相互排斥的：如果一个模式是[红外活性](@article_id:374808)的，它必定是拉曼非活性的；如果它是拉曼活性的，它必定是红外非活性的。没有一个模式可以在两种光谱中都具有活性。
+这引出了一个非常优雅的原则，称为**[互斥规则](@keyword=rule_of_mutual_exclusion|lang=zh-CN|style=Feynman)**。对于任何拥有**[反演中心](@keyword=center_of_inversion|lang=zh-CN|style=Feynman)**（分子中心的一个点，通过该点反转所有原子可以得到一个看起来相同的分子，如$\text{CO}_2$）的分子，其[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式是相互排斥的：如果一个模式是[红外活性](@keyword=infrared_activity|lang=zh-CN|style=Feynman)的，它必定是拉曼非活性的；如果它是拉曼活性的，它必定是红外非活性的。没有一个模式可以在两种光谱中都具有活性。[@problem_id:1432018]
 
-这个规则是一个强大的诊断工具。如果你在实验中发现一个分子的[振动](@article_id:331484)谱带同时出现在[红外和拉曼光谱](@article_id:324817)中，你可以立即断定该分子没有反演中心。对于低对称性的分子，比如属于$C_s$点群的分子，情况就是如此，其所有[振动](@article_id:331484)通常在[红外和拉曼光谱](@article_id:324817)中都具有活性。 在[手性分子](@article_id:368528)（如(S)-溴氯氟甲烷）这种完全没有[对称元素](@article_id:297020)（$C_1$[点群](@article_id:302896)）的极限情况下，[互斥规则](@article_id:306536)完全失效。根据对称性，其所有基本[振动](@article_id:331484)预计在这两种技术中都应是活性的。
+这个规则是一个强大的诊断工具。如果你在实验中发现一个分子的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)谱带同时出现在[红外和拉曼光谱](@keyword=ir_and_raman_spectra|lang=zh-CN|style=Feynman)中，你可以立即断定该分子没有反演中心。对于低对称性的分子，比如属于$C_s$点群的分子，情况就是如此，其所有[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)通常在[红外和拉曼光谱](@keyword=ir_and_raman_spectra|lang=zh-CN|style=Feynman)中都具有活性。[@problem_id:1419753] 在[手性分子](@keyword=chiral_molecules|lang=zh-CN|style=Feynman)（如(S)-溴氯氟甲烷）这种完全没有[对称元素](@keyword=symmetry_elements|lang=zh-CN|style=Feynman)（$C_1$[点群](@keyword=point_groups|lang=zh-CN|style=Feynman)）的极限情况下，[互斥规则](@keyword=rule_of_mutual_exclusion|lang=zh-CN|style=Feynman)完全失效。根据对称性，其所有基本[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)预计在这两种技术中都应是活性的。[@problem_id:1431992]
 
 ### 量子跃迁：谐振子及其他
 
-最后，我们必须记住我们处于量子世界。[分子振动](@article_id:301270)的能量不是连续的，而是量子化的，分为离散的能级，就像梯子的横档，由[振动](@article_id:331484)[量子数](@article_id:305982) $v = 0, 1, 2, \dots$ 标记。在室温下，大多数分子处于最低能量状态，即[振动](@article_id:331484)[基态](@article_id:312876)（$v=0$）。
+最后，我们必须记住我们处于量子世界。[分子振动](@keyword=molecular_vibrations|lang=zh-CN|style=Feynman)的能量不是连续的，而是量子化的，分为离散的能级，就像梯子的横档，由[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)[量子数](@keyword=quantum_numbers|lang=zh-CN|style=Feynman) $v = 0, 1, 2, \dots$ 标记。在室温下，大多数分子处于最低能量状态，即[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)（$v=0$）。
 
-在最简单的模型中，[振动](@article_id:331484)的键被视为一个**[谐振子](@article_id:316032)**——就像一个完美的弹簧。对于这样一个完美的振子，还有另一个更具体的[选择定则](@article_id:301227)：光只能诱导量子数改变一个单位的跃迁。即 $\Delta v = \pm 1$。 这就是为什么红外光谱中最强的吸收几乎总是从 $v=0$ 到 $v=1$ 的**基频跃迁**。像 $v=1 \to v=2$ 这样的跃迁也是允许的，但要弱得多，因为一开始就很少有分子处于 $v=1$ 状态。
+在最简单的模型中，[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的键被视为一个**[谐振子](@keyword=harmonic_oscillator|lang=zh-CN|style=Feynman)**——就像一个完美的弹簧。对于这样一个完美的振子，还有另一个更具体的[选择定则](@keyword=selection_rules|lang=zh-CN|style=Feynman)：光只能诱导量子数改变一个单位的跃迁。即 $\Delta v = \pm 1$。[@problem_id:1997438] 这就是为什么红外光谱中最强的吸收几乎总是从 $v=0$ 到 $v=1$ 的**基频跃迁**。像 $v=1 \to v=2$ 这样的跃迁也是允许的，但要弱得多，因为一开始就很少有分子处于 $v=1$ 状态。
 
-那么，跃迁两级，从 $v=0$ 到 $v=2$ 呢？这种被称为**泛频**的跃迁对于一个完美的谐振子是“禁戒”的。然而，真实的分子键不是完美的弹簧；它们是**[非谐性](@article_id:297642)**的。这种非谐性，这种微小的不完美，微弱地打破了 $\Delta v = \pm 1$ 的规则，使得微弱的泛频带得以出现在光谱中，其频率通常略低于基频的两倍。
+那么，跃迁两级，从 $v=0$ 到 $v=2$ 呢？这种被称为**泛频**的跃迁对于一个完美的谐振子是“禁戒”的。然而，真实的分子键不是完美的弹簧；它们是**[非谐性](@keyword=anharmonicity|lang=zh-CN|style=Feynman)**的。这种非谐性，这种微小的不完美，微弱地打破了 $\Delta v = \pm 1$ 的规则，使得微弱的泛频带得以出现在光谱中，其频率通常略低于基频的两倍。
 
-从一个变化的偶极矩的简单要求，到对称性的优雅约束，再到能量的量子化性质，所有这些因素结合在一起，创造出[红外光谱](@article_id:319919)中丰富而[信息量](@article_id:333051)大的图样——一种用光书写的语言，讲述着分子内部舞蹈的故事。
+从一个变化的偶极矩的简单要求，到对称性的优雅约束，再到能量的量子化性质，所有这些因素结合在一起，创造出[红外光谱](@keyword=ir_spectrum|lang=zh-CN|style=Feynman)中丰富而[信息量](@keyword=surprisal|lang=zh-CN|style=Feynman)大的图样——一种用光书写的语言，讲述着分子内部舞蹈的故事。

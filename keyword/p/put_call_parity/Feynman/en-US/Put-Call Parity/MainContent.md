@@ -1,11 +1,11 @@
 ## Introduction
 In the seemingly chaotic world of financial markets, certain relationships hold with the force of a physical law. Among the most elegant and powerful of these is put-call parity. This principle reveals a profound, unbreakable link between the price of an option to buy an asset (a call) and an option to sell it (a put). But how can we be so certain of this connection, and what makes it more than just a theoretical curiosity? This article addresses this by demystifying one of the cornerstones of modern finance.
 
-The following chapters will guide you through this fundamental concept. First, under "Principles and Mechanisms," we will deconstruct the parity relationship, showing how it emerges not from complex mathematics but from the simple, powerful idea of no-arbitrage—the law of one price. We will explore how this allows us to build synthetic instruments and uncover [hidden symmetries](@article_id:146828) between options. Subsequently, in "Applications and Interdisciplinary Connections," we will shift from theory to practice, demonstrating how traders, financial engineers, and even policymakers use put-call parity as a versatile tool for pricing, [arbitrage detection](@article_id:262145), [model validation](@article_id:140646), and even a framework for analyzing legal contracts and social programs. This journey begins with understanding the beautiful logic at its core.
+The following chapters will guide you through this fundamental concept. First, under "Principles and Mechanisms," we will deconstruct the parity relationship, showing how it emerges not from complex mathematics but from the simple, powerful idea of no-arbitrage—the law of one price. We will explore how this allows us to build synthetic instruments and uncover [hidden symmetries](@keyword=hidden_symmetries|lang=en-US|style=Feynman) between options. Subsequently, in "Applications and Interdisciplinary Connections," we will shift from theory to practice, demonstrating how traders, financial engineers, and even policymakers use put-call parity as a versatile tool for pricing, [arbitrage detection](@keyword=arbitrage_detection|lang=en-US|style=Feynman), [model validation](@keyword=model_validation|lang=en-US|style=Feynman), and even a framework for analyzing legal contracts and social programs. This journey begins with understanding the beautiful logic at its core.
 
 ## Principles and Mechanisms
 
-Imagine you are at a market where there are two sealed boxes for sale. You don't know what's inside, but you are given a contract for each. The first contract guarantees that at the end of the day, Box A will contain exactly the same items as Box B. No matter what happens—rain or shine—the contents will be identical. What would you expect the prices of these two boxes to be? The same, of course! To charge a different price for two things that are guaranteed to have the same future value would be absurd. It would be an open invitation to buy the cheaper one and sell the more expensive one for a risk-free profit. This simple, profound idea—the **law of one price**, policed by the hunt for risk-free profit, or **arbitrage**—is the very heart of [financial engineering](@article_id:136449). And it is the key to unlocking the beautiful relationship known as **put-call parity**.
+Imagine you are at a market where there are two sealed boxes for sale. You don't know what's inside, but you are given a contract for each. The first contract guarantees that at the end of the day, Box A will contain exactly the same items as Box B. No matter what happens—rain or shine—the contents will be identical. What would you expect the prices of these two boxes to be? The same, of course! To charge a different price for two things that are guaranteed to have the same future value would be absurd. It would be an open invitation to buy the cheaper one and sell the more expensive one for a risk-free profit. This simple, profound idea—the **law of one price**, policed by the hunt for risk-free profit, or **arbitrage**—is the very heart of [financial engineering](@keyword=financial_engineering|lang=en-US|style=Feynman). And it is the key to unlocking the beautiful relationship known as **put-call parity**.
 
 ### A Law of One Price: The No-Arbitrage Heart of Parity
 
@@ -30,14 +30,14 @@ Notice something amazing? In *every possible future*, Portfolio A is worth exact
     *   We have to repay our loan. The amount we borrowed, $K \exp(-rT)$, has grown with interest back to exactly $K$. So we owe $K$.
     *   The total value of Portfolio B is therefore $S_T - K$.
 
-This is the punchline. Just like our two sealed boxes, Portfolio A and Portfolio B are guaranteed to have the exact same value at expiration. Therefore, the law of one price demands they must have the same value today .
+This is the punchline. Just like our two sealed boxes, Portfolio A and Portfolio B are guaranteed to have the exact same value at expiration. Therefore, the law of one price demands they must have the same value today [@problem_id:2438216].
 
 Value of Portfolio A = Value of Portfolio B
 $$
 C - P = S_0 - K \exp(-rT)
 $$
 
-This is the celebrated **put-call parity** relationship. It is not an obscure formula derived from complex mathematics. It is a direct, inescapable consequence of the simple idea that there is no "free lunch" in an efficient market. If this equation were ever to be untrue, an [arbitrage opportunity](@article_id:633871) would exist, and traders, like sharks smelling blood in the water, would instantly trade it away, forcing the prices back into this perfect balance.
+This is the celebrated **put-call parity** relationship. It is not an obscure formula derived from complex mathematics. It is a direct, inescapable consequence of the simple idea that there is no "free lunch" in an efficient market. If this equation were ever to be untrue, an [arbitrage opportunity](@keyword=arbitrage_opportunity|lang=en-US|style=Feynman) would exist, and traders, like sharks smelling blood in the water, would instantly trade it away, forcing the prices back into this perfect balance.
 
 ### The Parity as a Rosetta Stone
 
@@ -47,13 +47,13 @@ Its most direct use is to find the price of one type of option if you know the p
 $$
 C = P + S_0 - K \exp(-rT)
 $$
-Plugging in the numbers gives us the fair price for the call option, which must be around $\$11.33$ for the market to be in equilibrium .
+Plugging in the numbers gives us the fair price for the call option, which must be around $\$11.33$ for the market to be in equilibrium [@problem_id:1282193].
 
-More profoundly, the parity relationship is a powerful detector of market "lies" or mispricings. If you observe market prices where $C - P \neq S_0 - K \exp(-rT)$, you have found an arbitrage opportunity .
+More profoundly, the parity relationship is a powerful detector of market "lies" or mispricings. If you observe market prices where $C - P \neq S_0 - K \exp(-rT)$, you have found an arbitrage opportunity [@problem_id:2438216].
 *   If $C - P > S_0 - K \exp(-rT)$, the options portfolio is overpriced relative to the stock-and-bond portfolio. The strategy is simple: sell the expensive thing and buy the cheap thing. You would sell the call, buy the put, buy the stock, and borrow the cash. This gives you an immediate profit, and because the future values of the two portfolios cancel each other out perfectly, you have no future risk.
 *   If $C - P  S_0 - K \exp(-rT)$, you do the reverse.
 
-This principle has a fascinating consequence for a concept called **implied volatility**. In essence, an option's price contains a forecast of the stock's future "shakiness" or volatility. By running a pricing model like Black-Scholes in reverse, we can find the volatility that the market price *implies*. A natural question is whether the implied volatility from a call ($IV_c$) should be the same as from a put ($IV_p$) with the same strike and maturity. Put-call parity gives a definitive answer. Since the parity equation itself doesn't depend on volatility, the only way it can hold is if the inputs for $C$ and $P$ are consistent. A difference in implied volatilities would create a price discrepancy and thus a static arbitrage opportunity. Thus, in a well-functioning market, we must have $IV_c = IV_p$ .
+This principle has a fascinating consequence for a concept called **implied volatility**. In essence, an option's price contains a forecast of the stock's future "shakiness" or volatility. By running a pricing model like Black-Scholes in reverse, we can find the volatility that the market price *implies*. A natural question is whether the implied volatility from a call ($IV_c$) should be the same as from a put ($IV_p$) with the same strike and maturity. Put-call parity gives a definitive answer. Since the parity equation itself doesn't depend on volatility, the only way it can hold is if the inputs for $C$ and $P$ are consistent. A difference in implied volatilities would create a price discrepancy and thus a static arbitrage opportunity. Thus, in a well-functioning market, we must have $IV_c = IV_p$ [@problem_id:2400513].
 
 ### The Financial Lego Set: Building with Options
 
@@ -71,7 +71,7 @@ But is this "Lego" stock a perfect replica? Does it *behave* just like a real st
 *   **Theta** ($\Theta$): How does the portfolio's value change as time passes? For a stock, this is $0$.
 *   **Rho** ($\rho$): How does the portfolio's value change when interest rates change? For a stock, this is $0$.
 
-The breathtaking result, which follows directly from the parity equation itself, is that our synthetic stock has the exact same Greek profile as a real stock: its Delta is 1, and its Gamma, Theta, and Rho are all 0 . The synthetic copy is perfect!
+The breathtaking result, which follows directly from the parity equation itself, is that our synthetic stock has the exact same Greek profile as a real stock: its Delta is 1, and its Gamma, Theta, and Rho are all 0 [@problem_id:2416852]. The synthetic copy is perfect!
 $$
 (\Delta, \Gamma, \Theta, \rho)_{\text{synthetic stock}} = \begin{pmatrix} 1  0  0  0 \end{pmatrix}
 $$
@@ -79,11 +79,11 @@ This concept of **replication**—building one financial instrument out of a com
 
 ### Deeper Look: Universal Truths and Hidden Symmetries
 
-One might wonder if this tidy relationship is merely an artifact of a specific, idealized model like the famous Black-Scholes-Merton model. The answer is a resounding no. The put-call parity relationship holds true in a wide variety of market models, including simpler discrete-time frameworks like the binomial model . Its foundation is not any particular assumption about the random path a stock price follows, but the universal principle of no-arbitrage.
+One might wonder if this tidy relationship is merely an artifact of a specific, idealized model like the famous Black-Scholes-Merton model. The answer is a resounding no. The put-call parity relationship holds true in a wide variety of market models, including simpler discrete-time frameworks like the binomial model [@problem_id:2430927]. Its foundation is not any particular assumption about the random path a stock price follows, but the universal principle of no-arbitrage.
 
 Look at the parity equation one more time: $C - P = S_0 - K \exp(-rT)$. What *isn't* there? The volatility, $\sigma$, is conspicuously absent. This is a profound insight. The relationship between the price of a call and a put is completely independent of how volatile we expect the stock to be.
 
-This invariance gives rise to a beautiful cascade of hidden symmetries. Since the master equation is true, any derivative of it must also be true. By differentiating the parity equation, we can uncover a whole family of simple relationships between the Greeks of calls and puts .
+This invariance gives rise to a beautiful cascade of hidden symmetries. Since the master equation is true, any derivative of it must also be true. By differentiating the parity equation, we can uncover a whole family of simple relationships between the Greeks of calls and puts [@problem_id:2416865].
 
 *   Differentiating with respect to the stock price $S$ yields:
     $$

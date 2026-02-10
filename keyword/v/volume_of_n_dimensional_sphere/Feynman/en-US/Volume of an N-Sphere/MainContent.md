@@ -13,17 +13,17 @@ This might sound like a question from science fiction, but it turns out to be tr
 
 Let's think about how we build up dimensions. You can think of a 2D disk as a stack of infinitesimally thin 1D lines of varying length. Similarly, you can think of a 3D sphere as a stack of 2D disks of varying radii. Following this pattern, we can imagine an $n$-dimensional ball (or **n-ball**) as being composed of a series of nested, infinitesimally thin $(n-1)$-dimensional "shells".
 
-This gives us a powerful way to think about integration in higher dimensions. We can express the volume element, a tiny speck of $n$-dimensional space $dV_n$, in a way that separates its distance from the center and its direction. This is the generalization of [polar coordinates](@article_id:158931), called **hyperspherical coordinates**. In this system, any point is described by a radius $r$ and a set of $n-1$ angles. A tiny piece of volume is given by:
+This gives us a powerful way to think about integration in higher dimensions. We can express the volume element, a tiny speck of $n$-dimensional space $dV_n$, in a way that separates its distance from the center and its direction. This is the generalization of [polar coordinates](@keyword=polar_coordinates|lang=en-US|style=Feynman), called **hyperspherical coordinates**. In this system, any point is described by a radius $r$ and a set of $n-1$ angles. A tiny piece of volume is given by:
 
 $$dV_n = r^{n-1} dr \, d\Omega_{n-1}$$
 
-What is this strange $d\Omega_{n-1}$? It’s a tiny patch of **[solid angle](@article_id:154262)** in $n$ dimensions. In 2D, it's just a normal angle $d\theta$. In 3D, it's the familiar [solid angle](@article_id:154262) you might have seen in physics—a small patch of the surface of a sphere. The total "angle" all the way around a point is $2\pi$ [radians](@article_id:171199) in 2D. In 3D, the total [solid angle](@article_id:154262) of a sphere is $4\pi$ steradians. For a general $n$-dimensional space, we have a total [solid angle](@article_id:154262), which we can call $\Omega_{n-1}$, which is just the "surface area" of a unit $(n-1)$-sphere.
+What is this strange $d\Omega_{n-1}$? It’s a tiny patch of **[solid angle](@keyword=solid_angle|lang=en-US|style=Feynman)** in $n$ dimensions. In 2D, it's just a normal angle $d\theta$. In 3D, it's the familiar [solid angle](@keyword=solid_angle|lang=en-US|style=Feynman) you might have seen in physics—a small patch of the surface of a sphere. The total "angle" all the way around a point is $2\pi$ [radians](@keyword=radians|lang=en-US|style=Feynman) in 2D. In 3D, the total [solid angle](@keyword=solid_angle|lang=en-US|style=Feynman) of a sphere is $4\pi$ steradians. For a general $n$-dimensional space, we have a total [solid angle](@keyword=solid_angle|lang=en-US|style=Feynman), which we can call $\Omega_{n-1}$, which is just the "surface area" of a unit $(n-1)$-sphere.
 
 So, to find the volume of an n-ball of radius $R$, we just need to add up the volumes of all the spherical shells from the center ($r=0$) out to the edge ($r=R$), over all possible directions. The integral looks like this:
 
 $$V_n(R) = \int_0^R \int_{\text{all directions}} r^{n-1} d\Omega_{n-1} dr$$
 
-Since the part inside the integral over the angles is just the total [solid angle](@article_id:154262) $\Omega_{n-1}$, we can pull it out. The rest becomes a simple integral we can solve instantly. This tells us a beautiful and simple relationship between the volume of a full ball and a "sector" of it, just like a slice of pie or an orange segment . For a full n-ball, the volume is:
+Since the part inside the integral over the angles is just the total [solid angle](@keyword=solid_angle|lang=en-US|style=Feynman) $\Omega_{n-1}$, we can pull it out. The rest becomes a simple integral we can solve instantly. This tells us a beautiful and simple relationship between the volume of a full ball and a "sector" of it, just like a slice of pie or an orange segment [@problem_id:490843]. For a full n-ball, the volume is:
 
 $$V_n(R) = \Omega_{n-1} \int_0^R r^{n-1} dr = \Omega_{n-1} \frac{R^n}{n}$$
 
@@ -31,7 +31,7 @@ Wonderful! But we have a problem. We've just replaced one unknown, the volume $V
 
 ### The Gaussian Gambit
 
-To solve a hard problem, sometimes the best trick is to solve a *different* problem in two different ways and see if the answer you're looking for falls out. This is one of the most elegant maneuvers in all of mathematics, and it's the key to unlocking the volume of hyperspheres  .
+To solve a hard problem, sometimes the best trick is to solve a *different* problem in two different ways and see if the answer you're looking for falls out. This is one of the most elegant maneuvers in all of mathematics, and it's the key to unlocking the volume of hyperspheres [@problem_id:461708] [@problem_id:2274569].
 
 Consider a very special integral over all of $n$-dimensional space:
 
@@ -39,7 +39,7 @@ $$I_n = \int_{\mathbb{R}^n} \exp(-||\mathbf{x}||^2) dV_n$$
 
 This is a **Gaussian integral**. The function $\exp(-||\mathbf{x}||^2)$ is like a hill centered at the origin that smoothly fades to zero in every direction. Let's calculate its total volume in two coordinate systems.
 
-**First, in Cartesian coordinates** ($x_1, x_2, \dots, x_n$): The squared distance to the origin is $||\mathbf{x}||^2 = x_1^2 + x_2^2 + \dots + x_n^2$. Because of the magic of the [exponential function](@article_id:160923), our big integral splits into a product of $n$ identical, one-dimensional integrals:
+**First, in Cartesian coordinates** ($x_1, x_2, \dots, x_n$): The squared distance to the origin is $||\mathbf{x}||^2 = x_1^2 + x_2^2 + \dots + x_n^2$. Because of the magic of the [exponential function](@keyword=exponential_function|lang=en-US|style=Feynman), our big integral splits into a product of $n$ identical, one-dimensional integrals:
 
 $$I_n = \left( \int_{-\infty}^\infty \exp(-x^2) dx \right)^n$$
 
@@ -47,7 +47,7 @@ The integral inside the parentheses is a famous one, known as the Gaussian integ
 
 $$I_n = (\sqrt{\pi})^n = \pi^{n/2}$$
 
-**Second, in hyperspherical coordinates**: Using our [volume element](@article_id:267308) $dV_n = r^{n-1} dr \, d\Omega_{n-1}$, the integral becomes:
+**Second, in hyperspherical coordinates**: Using our [volume element](@keyword=volume_element|lang=en-US|style=Feynman) $dV_n = r^{n-1} dr \, d\Omega_{n-1}$, the integral becomes:
 
 $$I_n = \int_0^\infty \int_{\text{all directions}} \exp(-r^2) r^{n-1} d\Omega_{n-1} dr$$
 
@@ -65,7 +65,7 @@ Now for the punchline. We calculated the *same value*, $I_n$, in two different w
 
 $$\pi^{n/2} = \Omega_{n-1} \cdot \frac{1}{2} \Gamma(\frac{n}{2})$$
 
-And just like that, we can solve for our unknown [solid angle](@article_id:154262): $\Omega_{n-1} = \frac{2\pi^{n/2}}{\Gamma(n/2)}$.
+And just like that, we can solve for our unknown [solid angle](@keyword=solid_angle|lang=en-US|style=Feynman): $\Omega_{n-1} = \frac{2\pi^{n/2}}{\Gamma(n/2)}$.
 
 ### The Volume Formula and Its Peculiar Consequences
 
@@ -79,7 +79,7 @@ $$V_n(R) = \frac{\pi^{n/2}}{\Gamma(\frac{n}{2} + 1)} R^n$$
 
 This formula is a triumph. It connects the volume of a ball in any dimension to its radius $R$, the dimension $n$, and the fundamental constants $\pi$ and the Gamma function. For $n=2$, it gives $\pi R^2$ (since $\Gamma(2)=1! = 1$). For $n=3$, it gives $\frac{4}{3}\pi R^3$ (since $\Gamma(5/2) = \frac{3}{2}\frac{1}{2}\sqrt{\pi}$). It works!
 
-From this, the "surface area" $A_{n-1}$ of the n-ball is just a derivative away: $A_{n-1}(R) = \frac{dV_n(R)}{dR}$. This makes perfect sense; the rate at which a balloon’s volume increases as you inflate it is determined by its surface area. Using our formula, we can now compute these areas for any dimension .
+From this, the "surface area" $A_{n-1}$ of the n-ball is just a derivative away: $A_{n-1}(R) = \frac{dV_n(R)}{dR}$. This makes perfect sense; the rate at which a balloon’s volume increases as you inflate it is determined by its surface area. Using our formula, we can now compute these areas for any dimension [@problem_id:793128].
 
 But let's play with this formula. What happens as the dimension $n$ gets very, very large? Our intuition screams that the volume must get bigger and bigger. More dimensions means more "room," right?
 
@@ -88,9 +88,9 @@ Let's look at the volume of a ball with radius $R=1$. Let's compare dimensions.
 *   $V_2(1) = \pi \approx 3.14$ (a disk)
 *   $V_3(1) = \frac{4}{3}\pi \approx 4.19$ (a sphere)
 
-So far, so good. The volume is increasing. But let's keep going. We can use our formula to find the ratio of volumes in adjacent dimensions, for example by comparing a 10-dimensional space to a 9-dimensional one . What we find is astonishing.
+So far, so good. The volume is increasing. But let's keep going. We can use our formula to find the ratio of volumes in adjacent dimensions, for example by comparing a 10-dimensional space to a 9-dimensional one [@problem_id:1939310]. What we find is astonishing.
 
-The volume does not increase forever. It reaches a **maximum at $n=5$ dimensions** and then, bizarrely, begins to *decrease* . As $n$ approaches infinity, the volume of a unit n-ball shrinks away to zero!
+The volume does not increase forever. It reaches a **maximum at $n=5$ dimensions** and then, bizarrely, begins to *decrease* [@problem_id:1398742]. As $n$ approaches infinity, the volume of a unit n-ball shrinks away to zero!
 
 How can this be? Think of the formula: it's a competition between $\pi^{n/2}$ in the numerator and $\Gamma(\frac{n}{2}+1)$ in the denominator. For a while, the power of $\pi$ wins, but eventually the Gamma function, which grows much faster than an exponential (it's like a factorial, after all), completely dominates and crushes the volume down to nothing.
 

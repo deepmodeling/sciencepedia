@@ -15,13 +15,13 @@ Let's use $A$ for the event "Server A fails" and $B$ for "Server B fails". The "
 
 $$ (A \cap B^c) \cup (B \cap A^c) $$
 
-This expression, known as the **[symmetric difference](@article_id:155770)**, perfectly captures our complex real-world condition . Notice what we did: we took a fuzzy-sounding phrase, "exactly one," and translated it into a combination of our three basic operations. This is the first secret of [set theory](@article_id:137289): its power to build intricate logical statements from the simplest possible parts.
+This expression, known as the **[symmetric difference](@keyword=symmetric_difference|lang=en-US|style=Feynman)**, perfectly captures our complex real-world condition [@problem_id:1331251]. Notice what we did: we took a fuzzy-sounding phrase, "exactly one," and translated it into a combination of our three basic operations. This is the first secret of [set theory](@keyword=set_theory|lang=en-US|style=Feynman): its power to build intricate logical statements from the simplest possible parts.
 
 We can take this even further. Imagine trying to characterize survey respondents based on their interest in three topics: Art ($A$), Biology ($B$), and Chemistry ($C$). How would you identify the group of people who are interested in *exactly one* of these subjects? You might pause and think for a moment. But with our set theory tools, we can construct the answer step-by-step. It's the people who are in A, but not B and not C; OR in B, but not A and not C; OR in C, but not A and not B. Writing this out gives:
 
 $$ (A \cap B^c \cap C^c) \cup (A^c \cap B \cap C^c) \cup (A^c \cap B^c \cap C) $$
 
-Suddenly, a potentially confusing requirement becomes an unambiguous mathematical object  . This is what mathematics is all about: creating a language so precise that it eliminates confusion.
+Suddenly, a potentially confusing requirement becomes an unambiguous mathematical object [@problem_id:1414066] [@problem_id:1952706]. This is what mathematics is all about: creating a language so precise that it eliminates confusion.
 
 ### The Beautiful Duality: De Morgan's Laws
 
@@ -34,7 +34,7 @@ This brings us to one of the most elegant and useful principles in all of logic,
 
 These laws provide a kind of duality, a way to flip between ANDs and ORs when a NOT comes into play. This isn't just a party trick; it's a workhorse of modern science and mathematics.
 
-Consider an engineering problem: an autonomous vehicle's control system has two parallel processors (A and B) connected in series with a third processor (C) . For the whole system to *succeed*, the (A or B) subsystem must work, AND C must work. In the language of events where $S_X$ means "X succeeds":
+Consider an engineering problem: an autonomous vehicle's control system has two parallel processors (A and B) connected in series with a third processor (C) [@problem_id:1952664]. For the whole system to *succeed*, the (A or B) subsystem must work, AND C must work. In the language of events where $S_X$ means "X succeeds":
 
 $$ \text{System Success} = (S_A \cup S_B) \cap S_C $$
 
@@ -44,13 +44,13 @@ $$ \text{System Failure} = ((S_A \cup S_B) \cap S_C)^c = (S_A \cup S_B)^c \cup S
 
 We can apply the law again to $(S_A \cup S_B)^c$, which becomes $S_A^c \cap S_B^c$. This means the whole system fails if "A fails AND B fails, OR C fails." De Morgan's laws provide the dictionary to translate between the language of success and the language of failure.
 
-This logical device is so fundamental that it forms the backbone of proofs in highly abstract fields. In **topology**, the study of shapes and spaces, the definitions of "open" and "closed" sets are linked by complements. To prove that the intersection of a finite number of open sets is also open, one can use De Morgan's laws to transform the problem into a statement about the union of [closed sets](@article_id:136674)—a known theorem . This same technique is the key to proving deep results about the nature of **compactness** in [topological spaces](@article_id:154562) . It's a wonderful example of unity: a simple logical rule discovered in the 19th century empowers us to understand the most abstract mathematical structures of the 21st.
+This logical device is so fundamental that it forms the backbone of proofs in highly abstract fields. In **topology**, the study of shapes and spaces, the definitions of "open" and "closed" sets are linked by complements. To prove that the intersection of a finite number of open sets is also open, one can use De Morgan's laws to transform the problem into a statement about the union of [closed sets](@keyword=closed_sets|lang=en-US|style=Feynman)—a known theorem [@problem_id:2295461]. This same technique is the key to proving deep results about the nature of **compactness** in [topological spaces](@keyword=topological_spaces|lang=en-US|style=Feynman) [@problem_id:1548049]. It's a wonderful example of unity: a simple logical rule discovered in the 19th century empowers us to understand the most abstract mathematical structures of the 21st.
 
 ### Generating Worlds from Simple Seeds
 
 So far, we have used our operations to describe or analyze existing situations. But we can also turn the tables and use them to *generate* new structures. Think of it like this: if I give you a few words and the rules of grammar, you can generate a whole language. In set theory, if we start with a collection of "generator" sets, what kind of "world" can we build using only union, intersection, and complement?
 
-Let's imagine a simple system for classifying data points from the set $X = \{1, 2, 3, 4, 5\}$. Suppose we have two sensors. Sensor A can only tell us if a point is in the set $A = \{1, 2\}$. Sensor B can only tell us if it's in $B = \{4, 5\}$. What are the most fundamental, indivisible regions of our space that this system can distinguish? 
+Let's imagine a simple system for classifying data points from the set $X = \{1, 2, 3, 4, 5\}$. Suppose we have two sensors. Sensor A can only tell us if a point is in the set $A = \{1, 2\}$. Sensor B can only tell us if it's in $B = \{4, 5\}$. What are the most fundamental, indivisible regions of our space that this system can distinguish? [@problem_id:1466512]
 
 To find out, we consider all the combinations of information: is a point in A or not in A ($A^c$)? Is it in B or not in B ($B^c$)? The four possibilities are:
 -   In $A$ and in $B$: $A \cap B = \emptyset$
@@ -58,17 +58,17 @@ To find out, we consider all the combinations of information: is a point in A or
 -   Not in $A$ and in $B$: $A^c \cap B = \{4, 5\}$
 -   Not in $A$ and not in $B$: $A^c \cap B^c = \{3\}$
 
-These three non-empty sets, $\{1, 2\}$, $\{3\}$, and $\{4, 5\}$, are the **atoms** of the information. They partition our universe $X$. Any question our system can answer, any set it can "see," must be built by taking unions of these atoms. For example, we can identify the set $\{1, 2, 3\}$ by taking the union of the first and third atom. But critically, our system can *never* distinguish the point $\{1\}$ from the point $\{2\}$. They are forever fused together in the atom $\{1, 2\}$. The [generating sets](@article_id:189612), combined with our operations, define the very resolution of our "sight."
+These three non-empty sets, $\{1, 2\}$, $\{3\}$, and $\{4, 5\}$, are the **atoms** of the information. They partition our universe $X$. Any question our system can answer, any set it can "see," must be built by taking unions of these atoms. For example, we can identify the set $\{1, 2, 3\}$ by taking the union of the first and third atom. But critically, our system can *never* distinguish the point $\{1\}$ from the point $\{2\}$. They are forever fused together in the atom $\{1, 2\}$. The [generating sets](@keyword=generating_sets|lang=en-US|style=Feynman), combined with our operations, define the very resolution of our "sight."
 
-This idea scales beautifully to the infinite. If we start with the entire [real number line](@article_id:146792) $\mathbb{R}$ and take as our generators all intervals of the form $(a, \infty)$, what can we build? .
+This idea scales beautifully to the infinite. If we start with the entire [real number line](@keyword=real_number_line|lang=en-US|style=Feynman) $\mathbb{R}$ and take as our generators all intervals of the form $(a, \infty)$, what can we build? [@problem_id:1402788].
 -   Taking complements gives us all intervals of the form $(-\infty, a]$.
 -   Taking intersections between these two types gives us all intervals of the form $(a, b]$.
 -   Taking finite unions of these pieces gives us any set composed of a finite number of such intervals.
-This structure, called an **[algebra of sets](@article_id:194436)**, is not just an idle curiosity. It is the essential framework needed to start defining the concept of "length" or "measure," which is the foundation of probability theory and [modern analysis](@article_id:145754).
+This structure, called an **[algebra of sets](@keyword=algebra_of_sets|lang=en-US|style=Feynman)**, is not just an idle curiosity. It is the essential framework needed to start defining the concept of "length" or "measure," which is the foundation of probability theory and [modern analysis](@keyword=modern_analysis|lang=en-US|style=Feynman).
 
 ### A Symphony of Operations
 
-We've learned the notes and the scales. Now, let's play a symphony. Consider the following set, which at first looks like a monster :
+We've learned the notes and the scales. Now, let's play a symphony. Consider the following set, which at first looks like a monster [@problem_id:2304842]:
 
 $$ S = ((E_1 \cup E_2) \setminus (E_1 \cap E_2)) \setminus (E_3 \cup E_4) $$
 
@@ -79,4 +79,4 @@ Instead of panicking, we apply our tools one by one.
 2.  Next, we have $E_3 \cup E_4$. The set $E_4 = \mathbb{Q}$ is a famous case in measure theory. Although there are infinitely many rational numbers, and they are packed densely everywhere, they are "point-like" and take up no space. Their total length is $0$. The measure of $E_3$, the fractal dust, can be calculated to be $\frac{1}{3}$. So the measure of their union is simply $\frac{1}{3}$.
 3.  Finally, the operation $A \setminus B$ means we start with set $A$ and remove the part that overlaps with $B$. So we must calculate the length of our set from step 1 (which is 6) and subtract the length of its overlap with the set from step 2. That overlap is essentially just $E_3$, which has a measure of $\frac{1}{3}$.
 
-The final measure of the monstrous set $S$ is just $6 - \frac{1}{3} = \frac{17}{3}$. The apparent complexity crumbled under the systematic application of a few core principles. This is the ultimate payoff: the language of sets doesn't just describe the world, it gives us a powerful calculus for manipulating and understanding it. This universality extends even further, governing how functions interact with sets, as the properties of preimages neatly preserve unions, intersections, and complements . From logic puzzles to the foundations of analysis, the simple, elegant dance of union, intersection, and complement organizes our thoughts and empowers our discoveries.
+The final measure of the monstrous set $S$ is just $6 - \frac{1}{3} = \frac{17}{3}$. The apparent complexity crumbled under the systematic application of a few core principles. This is the ultimate payoff: the language of sets doesn't just describe the world, it gives us a powerful calculus for manipulating and understanding it. This universality extends even further, governing how functions interact with sets, as the properties of preimages neatly preserve unions, intersections, and complements [@problem_id:1786513]. From logic puzzles to the foundations of analysis, the simple, elegant dance of union, intersection, and complement organizes our thoughts and empowers our discoveries.

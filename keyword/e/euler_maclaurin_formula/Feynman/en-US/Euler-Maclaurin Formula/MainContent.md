@@ -11,7 +11,7 @@ Imagine you want to know the total area of a thousand postage stamps laid side-b
 
 The most naive guess is that the sum $\sum_{k=a}^{b} f(k)$ is approximately equal to the integral $\int_a^b f(x) dx$. This is like approximating the jagged staircase formed by a set of stacked blocks with a smooth ramp running from start to finish. For a very gentle slope and very thin blocks, this approximation isn't terrible. But for most interesting cases, it's leaky; it misses crucial details.
 
-One could use other mathematical tools, like Abel's [partial summation](@article_id:184841), to transform a sum. However, such methods are often exact algebraic rearrangements, like counting the same beans in a different order. They are true, but they don't necessarily provide new insight into the connection between the discrete sum and a corresponding continuous function .
+One could use other mathematical tools, like Abel's [partial summation](@keyword=partial_summation|lang=en-US|style=Feynman), to transform a sum. However, such methods are often exact algebraic rearrangements, like counting the same beans in a different order. They are true, but they don't necessarily provide new insight into the connection between the discrete sum and a corresponding continuous function [@problem_id:3007029].
 
 The **Euler-Maclaurin formula** is different. It is not a mere rearrangement. It is a a bridge, a quantitative translator between the discrete world of summation and the continuous world of integration. It provides a precise recipe for how to correct the simple integral approximation to get not just a better answer, but often an astonishingly accurate one. It tells us that the difference between a sum and its corresponding integral is not just random noise; it is a structured, predictable quantity that depends beautifully on the properties of the function at its endpoints.
 
@@ -25,15 +25,15 @@ $$
 \sum_{k=a}^{b} f(k) \approx \int_a^b f(x) dx + \frac{f(a) + f(b)}{2}
 $$
 
-This second term, the average of the function's values at the start and end points, is the **endpoint correction**. Remarkably, this simple correction gives the *leading error term* for the trapezoidal rule. The Euler-Maclaurin formula therefore doesn't just help us with sums; it explains the fundamental behavior of one of the most common methods for calculating integrals numerically. In fields like [computational finance](@article_id:145362), where one might need to calculate the value of a financial option by integrating a complex payoff function, this insight is not just academic. Adding this simple correction term can dramatically improve the accuracy of the result for the same computational effort, transforming a rough estimate into a much more reliable one .
+This second term, the average of the function's values at the start and end points, is the **endpoint correction**. Remarkably, this simple correction gives the *leading error term* for the trapezoidal rule. The Euler-Maclaurin formula therefore doesn't just help us with sums; it explains the fundamental behavior of one of the most common methods for calculating integrals numerically. In fields like [computational finance](@keyword=computational_finance|lang=en-US|style=Feynman), where one might need to calculate the value of a financial option by integrating a complex payoff function, this insight is not just academic. Adding this simple correction term can dramatically improve the accuracy of the result for the same computational effort, transforming a rough estimate into a much more reliable one [@problem_id:2444248].
 
 ### Accounting for Curvature: The Bernoulli Corrections
 
 Our approximation is already much better, but it's still not perfect. The trapezoidal rule works perfectly if our function is a straight line. But what if it's curved? The difference between the sum and our improved **Integral + Endpoint Correction** formula is entirely due to the function's curvature. And how do we measure curvature in calculus? With **derivatives**.
 
-This is where the true genius of the formula shines. It introduces a series of further corrections, each involving [higher-order derivatives](@article_id:140388) of $f(x)$ evaluated *only at the endpoints* $a$ and $b$. These correction terms are multiplied by a sequence of mysterious, yet fundamental, numbers known as the **Bernoulli numbers**, denoted $B_k$. The first few relevant ones are $B_2 = \frac{1}{6}$, $B_4 = -\frac{1}{30}$, and $B_6 = \frac{1}{42}$.
+This is where the true genius of the formula shines. It introduces a series of further corrections, each involving [higher-order derivatives](@keyword=higher_order_derivatives|lang=en-US|style=Feynman) of $f(x)$ evaluated *only at the endpoints* $a$ and $b$. These correction terms are multiplied by a sequence of mysterious, yet fundamental, numbers known as the **Bernoulli numbers**, denoted $B_k$. The first few relevant ones are $B_2 = \frac{1}{6}$, $B_4 = -\frac{1}{30}$, and $B_6 = \frac{1}{42}$.
 
-The full formula (written as an [asymptotic series](@article_id:167898)) looks like this:
+The full formula (written as an [asymptotic series](@keyword=asymptotic_series|lang=en-US|style=Feynman)) looks like this:
 
 $$
 \sum_{k=a}^{b} f(k) \sim \int_a^b f(x) dx + \frac{f(a) + f(b)}{2} + \frac{B_2}{2!} (f'(b) - f'(a)) + \frac{B_4}{4!} (f'''(b) - f'''(a)) + \dots
@@ -49,7 +49,7 @@ Let's test this powerful machine. Suppose we want to approximate the sum $S_n = 
 - The first Bernoulli correction (using $f'(x) = \frac{1}{3}x^{-2/3}$ and $B_2 = \frac{1}{6}$): $\frac{1/6}{2}(f'(n) - f'(1)) = \frac{1}{36}(n^{-2/3} - 1)$
 
 Combining the dominant terms in $n$, we get an amazing approximation:
-$S_n \approx \frac{3}{4}n^{4/3} + \frac{1}{2}n^{1/3} + \frac{1}{36}n^{-2/3}$. This formula, which you can calculate in an instant, gives a fantastically accurate estimate of the original sum .
+$S_n \approx \frac{3}{4}n^{4/3} + \frac{1}{2}n^{1/3} + \frac{1}{36}n^{-2/3}$. This formula, which you can calculate in an instant, gives a fantastically accurate estimate of the original sum [@problem_id:630471].
 
 Now for a truly celebrated result. How can we approximate the factorial, $N! = 1 \times 2 \times \dots \times N$? For large $N$, this number is astronomically large and unwieldy. The trick is to look at its logarithm, which turns the product into a sum: $\ln(N!) = \sum_{n=1}^N \ln(n)$.
 This is a perfect job for Euler-Maclaurin with $f(x) = \ln(x)$.
@@ -61,18 +61,18 @@ Collecting these terms and the further corrections leads to the famous **Stirlin
 $$
 \ln(N!) \approx N \ln N - N + \frac{1}{2}\ln(2\pi N) + \frac{1}{12N} - \dots
 $$
-This is a landmark of science . A discrete, combinatorial quantity, the [factorial](@article_id:266143), is approximated by a smooth, continuous function involving not just logarithms but also the [transcendental number](@article_id:155400) $\pi$. This connection is completely unexpected, and it is the Euler-Maclaurin formula that serves as the bridge to reveal it.
+This is a landmark of science [@problem_id:531205]. A discrete, combinatorial quantity, the [factorial](@keyword=factorial|lang=en-US|style=Feynman), is approximated by a smooth, continuous function involving not just logarithms but also the [transcendental number](@keyword=transcendental_number|lang=en-US|style=Feynman) $\pi$. This connection is completely unexpected, and it is the Euler-Maclaurin formula that serves as the bridge to reveal it.
 
 ### Unveiling the Universe's Constants
 
 The true soul of the Euler-Maclaurin formula, however, lies not just in its power to approximate, but in its power to *reveal*. Let's look at the "constant" parts of the expansions—the pieces that don't depend on the upper limit $n$.
 
-Consider the sum of reciprocals, the [harmonic series](@article_id:147293) $H_n = \sum_{k=1}^n \frac{1}{k}$. Here, $f(x) = 1/x$. The integral $\int_1^n \frac{1}{x} dx$ gives $\ln n$. We know from calculus that both $H_n$ and $\ln n$ go to infinity. But what is their difference? The Euler-Maclaurin formula shows that as $n \to \infty$, this difference does not diverge or vanish. It converges to a specific, finite number.
+Consider the sum of reciprocals, the [harmonic series](@keyword=harmonic_series|lang=en-US|style=Feynman) $H_n = \sum_{k=1}^n \frac{1}{k}$. Here, $f(x) = 1/x$. The integral $\int_1^n \frac{1}{x} dx$ gives $\ln n$. We know from calculus that both $H_n$ and $\ln n$ go to infinity. But what is their difference? The Euler-Maclaurin formula shows that as $n \to \infty$, this difference does not diverge or vanish. It converges to a specific, finite number.
 $$
 \lim_{n\to\infty} (H_n - \ln n) = \gamma \approx 0.577\dots
 $$
-This is the **Euler-Mascheroni constant**, $\gamma$. The formula shows us that this fundamental constant of mathematics is, in essence, the "offset" between the discrete sum of reciprocals and the continuous area under the $1/x$ curve .
+This is the **Euler-Mascheroni constant**, $\gamma$. The formula shows us that this fundamental constant of mathematics is, in essence, the "offset" between the discrete sum of reciprocals and the continuous area under the $1/x$ curve [@problem_id:1398869].
 
-The rabbit hole goes deeper. Let's return to the [sum of powers](@article_id:633612), $\sum_{k=1}^n k^p$. We saw how to get the terms that grow with $n$. But what about the leftover constant term? It turns out this is not just some random schmear of numbers. For any power $p$ (where $p \neq -1$), that constant is precisely the value of the **Riemann zeta function** at $-p$, denoted $\zeta(-p)$ . For example, in our sum of cube roots ($p=1/3$), the constant term is $\zeta(-1/3)$. When $p=1$, the constant is $\zeta(-1) = -1/12$. The celebrated result $\sum_{n=1}^\infty n = 1+2+3+\dots = -1/12$, often presented mystically, is in a rigorous sense a consequence of this feature of the Euler-Maclaurin formula and the [analytic continuation](@article_id:146731) of the zeta function.
+The rabbit hole goes deeper. Let's return to the [sum of powers](@keyword=sum_of_powers|lang=en-US|style=Feynman), $\sum_{k=1}^n k^p$. We saw how to get the terms that grow with $n$. But what about the leftover constant term? It turns out this is not just some random schmear of numbers. For any power $p$ (where $p \neq -1$), that constant is precisely the value of the **Riemann zeta function** at $-p$, denoted $\zeta(-p)$ [@problem_id:393768]. For example, in our sum of cube roots ($p=1/3$), the constant term is $\zeta(-1/3)$. When $p=1$, the constant is $\zeta(-1) = -1/12$. The celebrated result $\sum_{n=1}^\infty n = 1+2+3+\dots = -1/12$, often presented mystically, is in a rigorous sense a consequence of this feature of the Euler-Maclaurin formula and the [analytic continuation](@keyword=analytic_continuation|lang=en-US|style=Feynman) of the zeta function.
 
 This is the ultimate revelation. A formula that began as a clever way to approximate sums ends up being a window into the deepest structures of mathematics, providing a concrete link between elementary calculus and the enigmatic Riemann zeta function, a function that holds the key to the distribution of prime numbers. It shows us that in the world of mathematics, a practical tool and a profound truth are often one and the same.

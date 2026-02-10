@@ -11,13 +11,13 @@ Imagine you're holding a long metal spoon, with one end dipped into a cup of hot
 
 ### The Simplest Case: A Linear World
 
-Let's strip the problem down to its essence. Consider a simple, uniform rod of length $L$. What determines the steady-state temperature distribution, $u(x)$, along its length? The flow of heat is governed by the heat equation, but the key insight for the steady state is that the temperature stops changing. Mathematically, the rate of change of temperature with time, $\frac{\partial u}{\partial t}$, is zero. When we plug this into the [one-dimensional heat equation](@article_id:174993), the complex partial differential equation simplifies dramatically to:
+Let's strip the problem down to its essence. Consider a simple, uniform rod of length $L$. What determines the steady-state temperature distribution, $u(x)$, along its length? The flow of heat is governed by the heat equation, but the key insight for the steady state is that the temperature stops changing. Mathematically, the rate of change of temperature with time, $\frac{\partial u}{\partial t}$, is zero. When we plug this into the [one-dimensional heat equation](@keyword=one_dimensional_heat_equation|lang=en-US|style=Feynman), the complex partial differential equation simplifies dramatically to:
 $$
 \frac{d^2u}{dx^2} = 0
 $$
 What kind of function has a second derivative of zero? Only a straight line. The general solution is simply $u(x) = Ax + B$, where $A$ and $B$ are constants. This tells us something profound: in any one-dimensional object without internal heat sources, the steady-state temperature profile must be a straight line.
 
-But which straight line? The answer is determined by what's happening at the boundaries. If we hold the end at $x=0$ at a temperature $T_0$ and the end at $x=L$ at a temperature $T_1$, we force the line to pass through these two points. A little algebra shows that the temperature distribution must be a simple ramp connecting the two end temperatures :
+But which straight line? The answer is determined by what's happening at the boundaries. If we hold the end at $x=0$ at a temperature $T_0$ and the end at $x=L$ at a temperature $T_1$, we force the line to pass through these two points. A little algebra shows that the temperature distribution must be a simple ramp connecting the two end temperatures [@problem_id:946]:
 $$
 u(x) = T_0 + \frac{(T_1 - T_0)x}{L}
 $$
@@ -27,29 +27,29 @@ The temperature changes linearly from one end to the other, just like a smooth r
 
 Now, what if we change the boundary conditions? Instead of holding both ends at fixed temperatures, let's say we hold the end at $x=0$ at temperature $T_0$, but we perfectly insulate the other end at $x=L$. Insulation means no heat can pass through. How does this affect our straight-line solution?
 
-To understand this, we need the concept of **[heat flux](@article_id:137977)**, which is the rate of heat energy flowing through a unit area. Fourier's law of [heat conduction](@article_id:143015) tells us that the flux, $q$, is proportional to the negative of the temperature gradient: $q = -K \frac{du}{dx}$, where $K$ is the thermal conductivity of the material. The minus sign is crucial: it means heat flows "downhill," from hotter regions to colder regions.
+To understand this, we need the concept of **[heat flux](@keyword=heat_flux|lang=en-US|style=Feynman)**, which is the rate of heat energy flowing through a unit area. Fourier's law of [heat conduction](@keyword=heat_conduction|lang=en-US|style=Feynman) tells us that the flux, $q$, is proportional to the negative of the temperature gradient: $q = -K \frac{du}{dx}$, where $K$ is the thermal conductivity of the material. The minus sign is crucial: it means heat flows "downhill," from hotter regions to colder regions.
 
-In a steady state with no heat sources, the law of [conservation of energy](@article_id:140020) demands that the [heat flux](@article_id:137977) must be constant everywhere along the rod. If it weren't, heat would be piling up somewhere, and the temperature there would change, violating our [steady-state assumption](@article_id:268905). So, $\frac{du}{dx}$ must be constant, which brings us back to our straight-line solution, $u(x) = Ax+B$.
+In a steady state with no heat sources, the law of [conservation of energy](@keyword=conservation_of_energy|lang=en-US|style=Feynman) demands that the [heat flux](@keyword=heat_flux|lang=en-US|style=Feynman) must be constant everywhere along the rod. If it weren't, heat would be piling up somewhere, and the temperature there would change, violating our [steady-state assumption](@keyword=steady_state_assumption|lang=en-US|style=Feynman). So, $\frac{du}{dx}$ must be constant, which brings us back to our straight-line solution, $u(x) = Ax+B$.
 
-An [insulated boundary](@article_id:162230) is a wall to heat flow, meaning the flux there is zero. At $x=L$, we have $q(L) = -K \frac{du}{dx}\big|_{x=L} = 0$. Since the flux must be constant everywhere, if it's zero at one point, it must be zero *everywhere* . Zero flux implies a zero temperature gradient. The slope $A$ of our line must be zero. This means the temperature doesn't change along the rod at all! The solution collapses to $u(x) = B$. Applying the other boundary condition, $u(0)=T_0$, we find that the entire rod must be at a uniform temperature $T_0$ . Any initial heat variations simply smooth out until the whole rod is at the same temperature as the end that is connected to the [thermal reservoir](@article_id:143114).
+An [insulated boundary](@keyword=insulated_boundary|lang=en-US|style=Feynman) is a wall to heat flow, meaning the flux there is zero. At $x=L$, we have $q(L) = -K \frac{du}{dx}\big|_{x=L} = 0$. Since the flux must be constant everywhere, if it's zero at one point, it must be zero *everywhere* [@problem_id:2125840]. Zero flux implies a zero temperature gradient. The slope $A$ of our line must be zero. This means the temperature doesn't change along the rod at all! The solution collapses to $u(x) = B$. Applying the other boundary condition, $u(0)=T_0$, we find that the entire rod must be at a uniform temperature $T_0$ [@problem_id:35343]. Any initial heat variations simply smooth out until the whole rod is at the same temperature as the end that is connected to the [thermal reservoir](@keyword=thermal_reservoir|lang=en-US|style=Feynman).
 
-Of course, perfect insulation is an idealization. More realistically, the end of the rod might be exposed to the surrounding air, losing heat through convection. In this case, the rate of heat conducted to the end of the rod must equal the rate of heat convected away into the environment. This more complex boundary condition still results in a linear temperature profile, but the slope is now determined by a balance between the rod's conductivity $K$ and the efficiency of [convective heat transfer](@article_id:150855) $h$ .
+Of course, perfect insulation is an idealization. More realistically, the end of the rod might be exposed to the surrounding air, losing heat through convection. In this case, the rate of heat conducted to the end of the rod must equal the rate of heat convected away into the environment. This more complex boundary condition still results in a linear temperature profile, but the slope is now determined by a balance between the rod's conductivity $K$ and the efficiency of [convective heat transfer](@keyword=convective_heat_transfer|lang=en-US|style=Feynman) $h$ [@problem_id:35363].
 
 ### When Things Heat Up from Within
 
-So far, we've only considered heat flowing *through* an object. But what if the object itself generates heat? This happens all the time—in a wire carrying an [electric current](@article_id:260651) (Joule heating), in decaying radioactive material, or in certain chemical reactions.
+So far, we've only considered heat flowing *through* an object. But what if the object itself generates heat? This happens all the time—in a wire carrying an [electric current](@keyword=electric_current|lang=en-US|style=Feynman) (Joule heating), in decaying radioactive material, or in certain chemical reactions.
 
 Let's imagine our rod now has a uniform internal heat source, $Q_0$, generating heat at a constant rate everywhere. The governing equation for the steady state is no longer $u''=0$. Instead, it becomes:
 $$
 K \frac{d^2u}{dx^2} + Q_0 = 0 \quad \implies \quad \frac{d^2u}{dx^2} = -\frac{Q_0}{K}
 $$
-The second derivative is no longer zero; it's a negative constant. This means the temperature profile is no longer a straight line, but a downward-opening parabola. If we keep the ends of the rod held at zero temperature, the solution is a symmetric arch :
+The second derivative is no longer zero; it's a negative constant. This means the temperature profile is no longer a straight line, but a downward-opening parabola. If we keep the ends of the rod held at zero temperature, the solution is a symmetric arch [@problem_id:2106650]:
 $$
 u(x) = \frac{Q_0}{2K} x(L-x)
 $$
 This makes perfect physical sense. The temperature is zero at the ends and reaches a maximum right in the middle. Why? Heat generated at the very center of the rod has the longest path to travel to escape through either end, so it's natural that this is the hottest point. The curvature of the temperature graph is a direct indicator of heat generation.
 
-If the heat source is not uniform—for instance, if it's strongest in the center and fades towards the ends, like $Q(x) = A \sin(\frac{\pi x}{L})$—the steady-state temperature profile will mirror the shape of the [source function](@article_id:160864). The solution becomes a sine wave, again peaking where the heat generation is at its maximum . The system naturally finds a balance where the heat conducted away from each point exactly matches the heat being generated at that point.
+If the heat source is not uniform—for instance, if it's strongest in the center and fades towards the ends, like $Q(x) = A \sin(\frac{\pi x}{L})$—the steady-state temperature profile will mirror the shape of the [source function](@keyword=source_function|lang=en-US|style=Feynman). The solution becomes a sine wave, again peaking where the heat generation is at its maximum [@problem_id:2136162]. The system naturally finds a balance where the heat conducted away from each point exactly matches the heat being generated at that point.
 
 ### The Unattainable Steady State
 
@@ -57,7 +57,7 @@ This leads to a fascinating thought experiment. What happens if we combine inter
 
 Physically, the situation is clear: we are continuously pumping energy into a closed system from which it cannot escape. The total energy must increase, and therefore, the temperature must rise indefinitely. There can be no steady state.
 
-The mathematics beautifully confirms this physical intuition. We start with the equation $u'' = -\alpha$ (where $\alpha$ is a positive constant related to the heat source) and apply the [insulated boundary](@article_id:162230) conditions: $u'(0)=0$ and $u'(L)=0$. Integrating the equation once gives $u'(x) = -\alpha x + C_1$. The condition $u'(0)=0$ forces $C_1=0$, so we have $u'(x) = -\alpha x$. But now we apply the second condition at $x=L$: we must have $u'(L) = -\alpha L = 0$. Since both $\alpha$ and $L$ are positive, this is a contradiction! It's impossible. The mathematical framework tells us that no solution exists, precisely because a physical steady state is impossible under these conditions .
+The mathematics beautifully confirms this physical intuition. We start with the equation $u'' = -\alpha$ (where $\alpha$ is a positive constant related to the heat source) and apply the [insulated boundary](@keyword=insulated_boundary|lang=en-US|style=Feynman) conditions: $u'(0)=0$ and $u'(L)=0$. Integrating the equation once gives $u'(x) = -\alpha x + C_1$. The condition $u'(0)=0$ forces $C_1=0$, so we have $u'(x) = -\alpha x$. But now we apply the second condition at $x=L$: we must have $u'(L) = -\alpha L = 0$. Since both $\alpha$ and $L$ are positive, this is a contradiction! It's impossible. The mathematical framework tells us that no solution exists, precisely because a physical steady state is impossible under these conditions [@problem_id:2162695].
 
 ### Conservation and the Final Calm
 
@@ -65,7 +65,7 @@ Let's return to the perfectly insulated rod, but this time without any internal 
 
 Since the rod is perfectly insulated, no heat can get in or out. The total amount of thermal energy inside must remain constant for all time. As time passes, the heat will naturally redistribute itself, flowing from the initial hot spots to the initial cold spots, driven by the universal tendency towards thermal equilibrium (and maximum entropy). The process continues until all temperature gradients vanish. The final state must be a uniform temperature, $u_{ss}$.
 
-What is the value of this final uniform temperature? Because energy is conserved, the total heat content in the final state must be the same as the total heat content in the initial state. The total heat is proportional to the integral of the temperature over the length of the rod. Therefore, the final uniform temperature is simply the spatial average of the initial temperature distribution . For our initial sine wave profile, the rod will settle to a uniform temperature of $u_{ss} = \frac{2u_0}{\pi}$. The initial beautiful wave-like pattern of heat inevitably flattens out into a placid, uniform calm.
+What is the value of this final uniform temperature? Because energy is conserved, the total heat content in the final state must be the same as the total heat content in the initial state. The total heat is proportional to the integral of the temperature over the length of the rod. Therefore, the final uniform temperature is simply the spatial average of the initial temperature distribution [@problem_id:2111213]. For our initial sine wave profile, the rod will settle to a uniform temperature of $u_{ss} = \frac{2u_0}{\pi}$. The initial beautiful wave-like pattern of heat inevitably flattens out into a placid, uniform calm.
 
 ### Leaky Systems and Exponential Decay
 
@@ -75,7 +75,7 @@ The heat equation must be modified to account for this continuous "leakage" of h
 $$
 K \frac{d^2u}{dx^2} - \beta u = 0
 $$
-If we hold one end of this very long rod at a high temperature $T_1$, the solution is no longer a line or a parabola. It's a beautiful [exponential decay](@article_id:136268) :
+If we hold one end of this very long rod at a high temperature $T_1$, the solution is no longer a line or a parabola. It's a beautiful [exponential decay](@keyword=exponential_decay|lang=en-US|style=Feynman) [@problem_id:2143791]:
 $$
 u(x) = T_1 \exp\left(-\sqrt{\frac{\beta}{K}} x\right)
 $$

@@ -1,21 +1,21 @@
 ## 引言
-在物理学入门的理想化世界里，固体中的电子在完美的[晶格](@article_id:300090)中自由穿行，其行为简单且可预测。然而，材料内部的现实要复杂和动态得多。电子并非孤立的粒子，而是一个稠密、相互作用的量子系统中的参与者，它们在其中不断地相互推挤，并感受到原子[晶格](@article_id:300090)的[振动](@article_id:331484)。这种集体行为从根本上改变了它们的性质，这是简单的[自由电子模型](@article_id:368910)无法捕捉到的一个关键方面。
+在物理学入门的理想化世界里，固体中的电子在完美的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中自由穿行，其行为简单且可预测。然而，材料内部的现实要复杂和动态得多。电子并非孤立的粒子，而是一个稠密、相互作用的量子系统中的参与者，它们在其中不断地相互推挤，并感受到原子[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。这种集体行为从根本上改变了它们的性质，这是简单的[自由电子模型](@keyword=free_electron_model_2|lang=zh-CN|style=Feynman)无法捕捉到的一个关键方面。
 
-本文致力于解决[多体物理学](@article_id:304954)的核心挑战：如何解释这张相互作用之网。文章介绍了**自能**（$\Sigma$）这一强大而优美的概念，它概括了电子环境对其自身的所有影响。电子不再被视为“裸”的，而是被这些相互作用的“云”所“缀饰”，形成一个被称为[准粒子](@article_id:299846)的新实体。
+本文致力于解决[多体物理学](@keyword=many_body_physics_2|lang=zh-CN|style=Feynman)的核心挑战：如何解释这张相互作用之网。文章介绍了**自能**（$\Sigma$）这一强大而优美的概念，它概括了电子环境对其自身的所有影响。电子不再被视为“裸”的，而是被这些相互作用的“云”所“缀饰”，形成一个被称为[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)的新实体。
 
-在接下来的章节中，我们将踏上理解这一基本概念的旅程。第一章**原理与机制**将揭开[自能](@article_id:306032)的神秘面纱，通过[戴森方程](@article_id:306666)解释其数学基础，并探讨其虚实两部分——重整化质量和有限寿命——的物理意义。随后，我们将在第二章**应用与跨学科联系**中，了解[自能](@article_id:306032)如何在现实世界中显现，从谱学实验和[材料工程](@article_id:322579)，到其在创造[超导体](@article_id:370061)和莫特绝缘体等奇异物态方面所扮演的深远角色。
+在接下来的章节中，我们将踏上理解这一基本概念的旅程。第一章**原理与机制**将揭开[自能](@keyword=self_energy|lang=zh-CN|style=Feynman)的神秘面纱，通过[戴森方程](@keyword=dyson_s_equation|lang=zh-CN|style=Feynman)解释其数学基础，并探讨其虚实两部分——重整化质量和有限寿命——的物理意义。随后，我们将在第二章**应用与跨学科联系**中，了解[自能](@keyword=self_energy|lang=zh-CN|style=Feynman)如何在现实世界中显现，从谱学实验和[材料工程](@keyword=materials_engineering|lang=zh-CN|style=Feynman)，到其在创造[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)和莫特绝缘体等奇异物态方面所扮演的深远角色。
 
 ## 原理与机制
 
-想象一个电子滑过完美的固体[晶格](@article_id:300090)。在入门教科书中，这个电子是自由的精灵，不受阻碍地移动，其能量和动量遵循一种简单、可预测的关系。这是一个童话。材料内部的现实更像一个熙熙攘攘、混乱不堪的城市广场。我们的电子不断被密集的其他电子推搡、拉扯。它穿行的地貌因原子[晶格](@article_id:300090)的[振动](@article_id:331484)（[声子](@article_id:297589)）而[颤动](@article_id:369216)，并因真实晶体不可避免的缺陷（无序）而留下疤痕。它不再是一个“裸”电子；它变成了一个“缀饰”的实体，一个[准粒子](@article_id:299846)，被其环境永久地改变了。
+想象一个电子滑过完美的固体[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)。在入门教科书中，这个电子是自由的精灵，不受阻碍地移动，其能量和动量遵循一种简单、可预测的关系。这是一个童话。材料内部的现实更像一个熙熙攘攘、混乱不堪的城市广场。我们的电子不断被密集的其他电子推搡、拉扯。它穿行的地貌因原子[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)（[声子](@keyword=phonons|lang=zh-CN|style=Feynman)）而[颤动](@keyword=trembling_motion|lang=zh-CN|style=Feynman)，并因真实晶体不可避免的缺陷（无序）而留下疤痕。它不再是一个“裸”电子；它变成了一个“缀饰”的实体，一个[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)，被其环境永久地改变了。
 
-我们如何描述这个复杂的、具有社会性的生物？我们需要一种方法来解释它所经历的所有错综复杂的相互作用。物理学为我们提供了一个单一而强大的概念来做到这一点：**[自能](@article_id:306032)**，用希腊字母Sigma（$\Sigma$）表示。自能是电子拖曳的相互作用“云”的数学体现。它是一个关于每次推、拉和散射事件的故事，全部被封装在一个函数中。
+我们如何描述这个复杂的、具有社会性的生物？我们需要一种方法来解释它所经历的所有错综复杂的相互作用。物理学为我们提供了一个单一而强大的概念来做到这一点：**[自能](@keyword=self_energy|lang=zh-CN|style=Feynman)**，用希腊字母Sigma（$\Sigma$）表示。自能是电子拖曳的相互作用“云”的数学体现。它是一个关于每次推、拉和散射事件的故事，全部被封装在一个函数中。
 
-### 新的规则手册：[戴森方程](@article_id:306666)
+### 新的规则手册：[戴森方程](@keyword=dyson_s_equation|lang=zh-CN|style=Feynman)
 
-要理解[自能](@article_id:306032)的作用，我们首先需要知道如何追踪粒子。我们使用一个称为**传播子**或**[格林函数](@article_id:308216)**的函数，$G$。你可以把它想象成粒子的完整行程单，告诉我们它从A点行进到B点的概率。对于一个简单的、无相互作用的“裸”粒子，这个行程单由[自由传播子](@article_id:309282)$G_0$给出。这是一条干净、直接的路径。
+要理解[自能](@keyword=self_energy|lang=zh-CN|style=Feynman)的作用，我们首先需要知道如何追踪粒子。我们使用一个称为**传播子**或**[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)**的函数，$G$。你可以把它想象成粒子的完整行程单，告诉我们它从A点行进到B点的概率。对于一个简单的、无相互作用的“裸”粒子，这个行程单由[自由传播子](@keyword=free_green_s_function|lang=zh-CN|style=Feynman)$G_0$给出。这是一条干净、直接的路径。
 
-然而，相互作用会造成混乱。我们这个具有社会性的电子的完整、“缀饰”的传播子$G$不再简单。童话般的旅程$G_0$与现实世界的跋涉$G$之间的联系正是[自能](@article_id:306032)$\Sigma$。这种关系被**[戴森方程](@article_id:306666)**优美地捕捉到：
+然而，相互作用会造成混乱。我们这个具有社会性的电子的完整、“缀饰”的传播子$G$不再简单。童话般的旅程$G_0$与现实世界的跋涉$G$之间的联系正是[自能](@keyword=self_energy|lang=zh-CN|style=Feynman)$\Sigma$。这种关系被**[戴森方程](@keyword=dyson_s_equation|lang=zh-CN|style=Feynman)**[@problem_id:2983433]优美地捕捉到：
 
 $$
 G = G_0 + G_0 \Sigma G
@@ -27,7 +27,7 @@ $$
 G^{-1} = G_0^{-1} - \Sigma
 $$
 
-在这里，意义更加清晰。传播子$G_0$描述了一个具有特定能量-动量关系（其[色散关系](@article_id:300838)，$\varepsilon_{\mathbf{k}}$）的粒子。自能$\Sigma$作为对该能量的一个直接、动态的修正。如果自能为零，真实粒子的行为将与裸粒子完全相同。但在真实材料中，它从不为零，理解$\Sigma$中包含了什么，是理解材料本身的关键。
+在这里，意义更加清晰。传播子$G_0$描述了一个具有特定能量-动量关系（其[色散关系](@keyword=dispersion_relations|lang=zh-CN|style=Feynman)，$\varepsilon_{\mathbf{k}}$）的粒子。自能$\Sigma$作为对该能量的一个直接、动态的修正。如果自能为零，真实粒子的行为将与裸粒子完全相同。但在真实材料中，它从不为零，理解$\Sigma$中包含了什么，是理解材料本身的关键。
 
 ### 窥探相互作用云内部
 
@@ -35,29 +35,29 @@ $$
 
 #### 最简单的云：平均场图像
 
-最基本的图像是**[Hartree-Fock近似](@article_id:306949)**。在这里，我们想象电子看到的不是人群中的单个粒子，而是一个静态的、平均化的[电荷](@article_id:339187)“涂抹”。这在自能中产生了两个项：
+最基本的图像是**[Hartree-Fock近似](@keyword=hartree_fock_approximation|lang=zh-CN|style=Feynman)**[@problem_id:2993706]。在这里，我们想象电子看到的不是人群中的单个粒子，而是一个静态的、平均化的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)“涂抹”。这在自能中产生了两个项：
 
-1.  **哈特里（Hartree）项：** 这是我们的电子从所有其他电子的平均电荷密度中感受到的经典[静电排斥](@article_id:322531)。这就像感受到人群的总体存在，而没有注意到任何一个人。
+1.  **哈特里（Hartree）项：** 这是我们的电子从所有其他电子的平均电荷密度中感受到的经典[静电排斥](@keyword=electrostatic_repulsion|lang=zh-CN|style=Feynman)。这就像感受到人群的总体存在，而没有注意到任何一个人。
 
-2.  **福克（Fock）（或交换）项：** 这是一个纯粹的量子力学奇迹。因为电子是全同的，并遵守[泡利不相容原理](@article_id:302291)，它们会主动避开彼此。这不是经典的排斥力；这是它们基本不可区分性的结果。它表现为一种“排斥性”相互作用，降低了系统的能量，并且奇怪地具有[非局域性](@article_id:300609)，仿佛电子能意识到整个材料中所有与它相同的“双胞胎”。
+2.  **福克（Fock）（或交换）项：** 这是一个纯粹的量子力学奇迹。因为电子是全同的，并遵守[泡利不相容原理](@keyword=pauli_exclusion_principle|lang=zh-CN|style=Feynman)，它们会主动避开彼此。这不是经典的排斥力；这是它们基本不可区分性的结果。它表现为一种“排斥性”相互作用，降低了系统的能量，并且奇怪地具有[非局域性](@keyword=non_locality|lang=zh-CN|style=Feynman)，仿佛电子能意识到整个材料中所有与它相同的“双胞胎”。
 
-[Hartree-Fock](@article_id:302743)图像是很好的第一步，但它是静态的。现实中的“人群”不是静态的涂抹；它能够做出反应。
+[Hartree-Fock](@keyword=hartree_fock|lang=zh-CN|style=Feynman)图像是很好的第一步，但它是静态的。现实中的“人群”不是静态的涂抹；它能够做出反应。
 
 #### 更真实的云：屏蔽之舞
 
-当我们的电子移动时，周围的电子会动态地响应。如果我们的电子带负电，它会推开其他电子，从而在周围形成一个由屏蔽减弱的原子核构成的正[电荷](@article_id:339187)小泡。这个由电子耗尽区和感应正[电荷](@article_id:339187)组成的云被称为**关联空穴**，它有效地“屏蔽”了电子的裸[电荷](@article_id:339187)。凶猛的长程[库仑排斥](@article_id:361236)被驯服成一种弱得多的[短程相互作用](@article_id:306102)。
+当我们的电子移动时，周围的电子会动态地响应。如果我们的电子带负电，它会推开其他电子，从而在周围形成一个由屏蔽减弱的原子核构成的正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)小泡。这个由电子耗尽区和感应正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)组成的云被称为**关联空穴**，它有效地“屏蔽”了电子的裸[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。凶猛的长程[库仑排斥](@keyword=coulomb_repulsion|lang=zh-CN|style=Feynman)被驯服成一种弱得多的[短程相互作用](@keyword=short_range_interactions|lang=zh-CN|style=Feynman)。
 
-我们需要一个能捕捉这种动态屏蔽的更好近似。这就引出了著名的**$GW$近似**，这是现代[材料物理学](@article_id:381379)的主力方法。在这里，[自能](@article_id:306032)被象征性地写为：
+我们需要一个能捕捉这种动态屏蔽的更好近似。这就引出了著名的**$GW$近似**[@problem_id:2985506]，这是现代[材料物理学](@keyword=materials_physics|lang=zh-CN|style=Feynman)的主力方法。在这里，[自能](@keyword=self_energy|lang=zh-CN|style=Feynman)被象征性地写为：
 
 $$
 \Sigma = i G W
 $$
 
-在这个图像中，电子的[自能](@article_id:306032)源于它在传播（$G$）的同时，发射和再吸收相互作用介质的虚涨落。关键是，相互作用不再是裸库仑势$v$，而是动态**[屏蔽相互作用](@article_id:296849)**$W$。我们可以将$W$看作是裸相互作用$v$除以材料的**[介电函数](@article_id:297310)**$\epsilon$，该函数描述了[电荷](@article_id:339187)重新[排列](@article_id:296886)和屏蔽电场的能力。这种体现在$W$中的动态屏蔽，代表了整个电子海洋为响应我们粒子存在而跳起的集体之舞。
+在这个图像中，电子的[自能](@keyword=self_energy|lang=zh-CN|style=Feynman)源于它在传播（$G$）的同时，发射和再吸收相互作用介质的虚涨落。关键是，相互作用不再是裸库仑势$v$，而是动态**[屏蔽相互作用](@keyword=screened_interaction|lang=zh-CN|style=Feynman)**$W$。我们可以将$W$看作是裸相互作用$v$除以材料的**[介电函数](@keyword=dielectric_function|lang=zh-CN|style=Feynman)**$\epsilon$，该函数描述了[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)重新[排列](@keyword=permutation|lang=zh-CN|style=Feynman)和屏蔽电场的能力。这种体现在$W$中的动态屏蔽，代表了整个电子海洋为响应我们粒子存在而跳起的集体之舞。
 
 ### 社会生活的代价：自能的物理后果
 
-所以，我们的电子现在被相互作用的云“缀饰”了，由$\Sigma$描述。这种缀饰对它有什么影响呢？自能是频率（能量）和动量的复函数，$\Sigma(\mathbf{k}, \omega)$。作为一个复数，它有[实部和虚部](@article_id:343615)两部分，每一部分都有深刻的物理意义。
+所以，我们的电子现在被相互作用的云“缀饰”了，由$\Sigma$描述。这种缀饰对它有什么影响呢？自能是频率（能量）和动量的复函数，$\Sigma(\mathbf{k}, \omega)$。作为一个复数，它有[实部和虚部](@keyword=real_and_imaginary_parts|lang=zh-CN|style=Feynman)两部分，每一部分都有深刻的物理意义。
 
 $$
 \Sigma(\mathbf{k}, \omega) = \Sigma'(\mathbf{k}, \omega) + i \Sigma''(\mathbf{k}, \omega)
@@ -65,21 +65,21 @@ $$
 
 #### 更重的粒子与移动的能量：实部$\Sigma'$
 
-自能的实部$\Sigma'$直接修正电子的能量。它使能级偏离裸值。更重要的是，$\Sigma'$随能量*变化*的方式告诉我们粒子如何响应推动。这决定了它的**[有效质量](@article_id:303315)**$m^*$。
+自能的实部$\Sigma'$直接修正电子的能量。它使能级偏离裸值。更重要的是，$\Sigma'$随能量*变化*的方式告诉我们粒子如何响应推动。这决定了它的**[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)**$m^*$。
 
-在[费米能](@article_id:304407)（电子海洋的“表面”）附近，有效质量通过[准粒子权重](@article_id:300545)$Z$与[自能](@article_id:306032)的[导数](@article_id:318324)相关：
+在[费米能](@keyword=fermi_energy|lang=zh-CN|style=Feynman)（电子海洋的“表面”）附近，有效质量通过[准粒子权重](@keyword=quasiparticle_weight|lang=zh-CN|style=Feynman)$Z$与[自能](@keyword=self_energy|lang=zh-CN|style=Feynman)的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)相关[@problem_id:2983237]：
 
 $$
 \frac{m^*}{m} = \frac{1}{Z} \qquad \text{where} \qquad Z = \left[ 1 - \frac{\partial \Sigma'(\omega)}{\partial \omega} \bigg|_{\omega=0} \right]^{-1}
 $$
 
-因子$Z$告诉我们，在我们缀饰的[准粒子](@article_id:299846)中，还剩下多少原始的“裸”电子。对于无相互作用的粒子，$\Sigma' = 0$且$Z=1$，所以$m^*=m$。但对于相互作用的电子，它拖曳的相互作用云赋予了它惯性。这使得它表现得更重，因此$m^* > m$且$Z < 1$。相互作用越强，“云”就越“重”，$Z$就变得越小，有效质量就越大。在一些被称为“重费米子”体系的奇异材料中，[有效质量](@article_id:303315)可以是裸电子质量的数百倍！在**[莫特绝缘体](@article_id:301128)**的极端情况下，相互作用如此之强，以至于[准粒子](@article_id:299846)变得无限重（$Z \to 0$），无法再移动，从而将本应是金属的材料变成了绝缘体。
+因子$Z$告诉我们，在我们缀饰的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)中，还剩下多少原始的“裸”电子。对于无相互作用的粒子，$\Sigma' = 0$且$Z=1$，所以$m^*=m$。但对于相互作用的电子，它拖曳的相互作用云赋予了它惯性。这使得它表现得更重，因此$m^* > m$且$Z < 1$。相互作用越强，“云”就越“重”，$Z$就变得越小，有效质量就越大。在一些被称为“重费米子”体系的奇异材料中，[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)可以是裸电子质量的数百倍！在**[莫特绝缘体](@keyword=mott_insulators|lang=zh-CN|style=Feynman)**的极端情况下，相互作用如此之强，以至于[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)变得无限重（$Z \to 0$），无法再移动，从而将本应是金属的材料变成了绝缘体。
 
 #### 有限寿命与模糊的能量：虚部$\Sigma''$
 
-[虚部](@article_id:370770)$\Sigma''$或许更有趣。如果自能纯粹是实数，我们缀饰的[准粒子](@article_id:299846)将是一个稳定的实体，像裸电子一样永生。但一个非零的虚部表明[准粒子](@article_id:299846)可以衰变。它的状态不再是一个完美的、尖锐的能级。
+[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)$\Sigma''$或许更有趣。如果自能纯粹是实数，我们缀饰的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)将是一个稳定的实体，像裸电子一样永生。但一个非零的虚部表明[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)可以衰变。它的状态不再是一个完美的、尖锐的能级。
 
-量$|\Sigma''|$与粒子的总[散射率](@article_id:304022)直接成正比。粒子可能与晶体中的静态杂质发生散射，或者通过发射或吸收[晶格振动](@article_id:374784)（[声子](@article_id:297589)）而散射。根据[不确定性原理](@article_id:301719)，如果一个态具有有限寿命$\tau$，它的能量就不能被完美地定义。能量会变得“模糊”或“展宽”，展宽量为$\Delta E \approx \hbar/\tau$。这个能量展宽直接由自能的[虚部](@article_id:370770)给出：
+量$|\Sigma''|$与粒子的总[散射率](@keyword=scattering_rates|lang=zh-CN|style=Feynman)直接成正比。粒子可能与晶体中的静态杂质发生散射[@problem_id:3024171]，或者通过发射或吸收[晶格振动](@keyword=crystal_lattice_vibrations|lang=zh-CN|style=Feynman)（[声子](@keyword=phonons|lang=zh-CN|style=Feynman)）而散射[@problem_id:2847831]。根据[不确定性原理](@keyword=uncertainty_principle|lang=zh-CN|style=Feynman)，如果一个态具有有限寿命$\tau$，它的能量就不能被完美地定义。能量会变得“模糊”或“展宽”，展宽量为$\Delta E \approx \hbar/\tau$。这个能量展宽直接由自能的[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)给出：
 
 $$
 \text{Lifetime: } \tau = \frac{\hbar}{-2\Sigma''} \qquad \text{Broadening: } \Delta E = -2\Sigma''
@@ -87,13 +87,13 @@ $$
 
 （负号确保了寿命和展宽为正值，因为物理稳定性要求推迟自能的$\Sigma'' \le 0$）。
 
-这种展宽不仅仅是理论上的奇物；它在像[角分辨光电子能谱](@article_id:300108)（[ARPES](@article_id:300108)）这样的实验中是直接可观测的。[ARPES](@article_id:300108)谱中峰的宽度是对[准粒子寿命](@article_id:305877)的直接测量，因此也是窥探其[自能](@article_id:306032)[虚部](@article_id:370770)的一扇直接窗口。对于标准金属（所谓的[费米液体](@article_id:302832)），这种展宽与$(\omega^2 + (\pi T)^2)$成正比，但对于具有不寻常散射机制的更奇异的体系，展宽可以与温度$T$或能量$\omega$成正比，这是“[奇异金属](@article_id:301893)”或[非费米液体](@article_id:311545)行为的标志。
+这种展宽不仅仅是理论上的奇物；它在像[角分辨光电子能谱](@keyword=arpes|lang=zh-CN|style=Feynman)（[ARPES](@keyword=arpes|lang=zh-CN|style=Feynman)）这样的实验中是直接可观测的。[ARPES](@keyword=arpes|lang=zh-CN|style=Feynman)谱中峰的宽度是对[准粒子寿命](@keyword=quasiparticle_lifetime|lang=zh-CN|style=Feynman)的直接测量，因此也是窥探其[自能](@keyword=self_energy|lang=zh-CN|style=Feynman)[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)的一扇直接窗口[@problem_id:3013059]。对于标准金属（所谓的[费米液体](@keyword=fermi_liquid|lang=zh-CN|style=Feynman)），这种展宽与$(\omega^2 + (\pi T)^2)$成正比，但对于具有不寻常散射机制的更奇异的体系，展宽可以与温度$T$或能量$\omega$成正比，这是“[奇异金属](@keyword=strange_metals|lang=zh-CN|style=Feynman)”或[非费米液体](@keyword=non_fermi_liquids|lang=zh-CN|style=Feynman)行为的标志。
 
 ### 最深层的统一性：因果律与克拉默斯-克勒尼希关系
 
-我们已经看到，$\Sigma$的实部主导能量移动和质量，而虚部主导寿命和散射。很自然会认为这是相互作用的两个独立方面。但事实并非如此。在物理定律最美丽和最深刻的结果之一中，**[自能](@article_id:306032)的实部和虚部是密不可分地联系在一起的**。
+我们已经看到，$\Sigma$的实部主导能量移动和质量，而虚部主导寿命和散射。很自然会认为这是相互作用的两个独立方面。但事实并非如此。在物理定律最美丽和最深刻的结果之一中，**[自能](@keyword=self_energy|lang=zh-CN|style=Feynman)的实部和虚部是密不可分地联系在一起的**。
 
-这种联系源于**因果律**的基本原理：果不能先于因。自能描述了系统对粒子存在的响应，而这种响应必须是因果的。因果律的一个直接数学推论是，$\Sigma(\omega)$的[实部和虚部](@article_id:343615)通过一组称为**[克拉默斯-克勒尼希关系](@article_id:301408)**的[积分变换](@article_id:365410)相互关联：
+这种联系源于**因果律**的基本原理：果不能先于因[@problem_id:3013055]。自能描述了系统对粒子存在的响应，而这种响应必须是因果的。因果律的一个直接数学推论是，$\Sigma(\omega)$的[实部和虚部](@keyword=real_and_imaginary_parts|lang=zh-CN|style=Feynman)通过一组称为**[克拉默斯-克勒尼希关系](@keyword=kramers_kronig_relations|lang=zh-CN|style=Feynman)**的[积分变换](@keyword=integral_transforms|lang=zh-CN|style=Feynman)相互关联：
 
 $$
 \Sigma'(\omega) = \frac{1}{\pi} \mathcal{P} \int_{-\infty}^{\infty} d\omega' \frac{\Sigma''(\omega')}{\omega' - \omega}
@@ -103,8 +103,8 @@ $$
 \Sigma''(\omega) = -\frac{1}{\pi} \mathcal{P} \int_{-\infty}^{\infty} d\omega' \frac{\Sigma'(\omega')}{\omega' - \omega}
 $$
 
-在这里，$\mathcal{P}$表示一种处理积分的特殊方式，称为[主值](@article_id:368662)。这些方程告诉我们，如果你知道*所有*能量下的[虚部](@article_id:370770)$\Sigma''$，你就可以计算*任何*能量下的实部$\Sigma'$，反之亦然。粒子的寿命并非与其能量无关！
+在这里，$\mathcal{P}$表示一种处理积分的特殊方式，称为[主值](@keyword=principal_values|lang=zh-CN|style=Feynman)。这些方程告诉我们，如果你知道*所有*能量下的[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)$\Sigma''$，你就可以计算*任何*能量下的实部$\Sigma'$，反之亦然。粒子的寿命并非与其能量无关！
 
-这具有惊人的物理意义。想象一下我们加热一种材料。这将增加[声子](@article_id:297589)的数量，为[电子-声子散射](@article_id:298547)开辟更多通道，从而在相关[声子](@article_id:297589)能量处增加$\Sigma''$的量值。克拉默斯-克勒尼希关系要求这种散射的变化*必须*伴随着实部$\Sigma'$的变化，导致电子的能级随温度移动。[散射率](@article_id:304022)中的任何特征，例如当一个新的衰变通道打开时$\Sigma''$中出现的峰，都将在$\Sigma'$中产生一个特征性的S形“[色散](@article_id:376945)”特征。寿命和能量是同一枚因果硬币的两面。
+这具有惊人的物理意义。想象一下我们加热一种材料。这将增加[声子](@keyword=phonons|lang=zh-CN|style=Feynman)的数量，为[电子-声子散射](@keyword=electron_phonon_scattering|lang=zh-CN|style=Feynman)开辟更多通道，从而在相关[声子](@keyword=phonons|lang=zh-CN|style=Feynman)能量处增加$\Sigma''$的量值[@problem_id:2847831]。克拉默斯-克勒尼希关系要求这种散射的变化*必须*伴随着实部$\Sigma'$的变化，导致电子的能级随温度移动。[散射率](@keyword=scattering_rates|lang=zh-CN|style=Feynman)中的任何特征，例如当一个新的衰变通道打开时$\Sigma''$中出现的峰，都将在$\Sigma'$中产生一个特征性的S形“[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)”特征[@problem_id:796104]。寿命和能量是同一枚因果硬币的两面。
 
-从方程中的一个简单修正开始，自能展现了它是一个物理学的宇宙。它优美地说明了量子世界中的相互作用不仅仅是增加了复杂性；它们创造了全新的现象——具有有限寿命和[重整化](@article_id:303934)质量的[准粒子](@article_id:299846)——所有这些都受因果律等深刻而统一的原理支配。这个单一的函数$\Sigma$，是我们把自由电子的童话故事变成真实材料那丰富、复杂且最终更美丽的叙事的最强大工具。
+从方程中的一个简单修正开始，自能展现了它是一个物理学的宇宙。它优美地说明了量子世界中的相互作用不仅仅是增加了复杂性；它们创造了全新的现象——具有有限寿命和[重整化](@keyword=renormalization|lang=zh-CN|style=Feynman)质量的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)——所有这些都受因果律等深刻而统一的原理支配。这个单一的函数$\Sigma$，是我们把自由电子的童话故事变成真实材料那丰富、复杂且最终更美丽的叙事的最强大工具。

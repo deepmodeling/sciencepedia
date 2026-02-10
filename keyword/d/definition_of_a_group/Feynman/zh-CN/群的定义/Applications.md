@@ -1,35 +1,35 @@
 ## 应用与跨学科联系
 
-在上一章中，我们阐述了定义一个称为群的数学对象的四个看似简单的规则——[封闭性](@article_id:297350)、[结合律](@article_id:311597)、单位元和[逆元](@article_id:301233)。乍一看，这可能像是一场抽象的学究式练习，一个枯燥的清单。但事实远比这壮观得多。这四条公理是一把万能钥匙。它们揭示了连接科学与数学中一些最不相干、最深奥思想的隐藏结构层。对艺术家来说，世界是色彩和形式；对音乐家来说，是节奏与和谐。对于物理学家或数学家而言，世界也是一首由群构成的交响乐。现在，就让我们来聆听这首交响乐。
+在上一章中，我们阐述了定义一个称为群的数学对象的四个看似简单的规则——[封闭性](@keyword=closure_property|lang=zh-CN|style=Feynman)、[结合律](@keyword=associative_property|lang=zh-CN|style=Feynman)、单位元和[逆元](@keyword=inverse_elements|lang=zh-CN|style=Feynman)。乍一看，这可能像是一场抽象的学究式练习，一个枯燥的清单。但事实远比这壮观得多。这四条公理是一把万能钥匙。它们揭示了连接科学与数学中一些最不相干、最深奥思想的隐藏结构层。对艺术家来说，世界是色彩和形式；对音乐家来说，是节奏与和谐。对于物理学家或数学家而言，世界也是一首由群构成的交响乐。现在，就让我们来聆听这首交响乐。
 
 ### 现实世界中的对称性：分子与晶体
 
-让我们从几乎可以握在手中的东西开始：一个分子。考虑一个简单的[平面三角形](@article_id:307879)分子，如三氟化硼。你可以将它围绕中心旋转 $120^{\circ}$，它看起来完全一样。你可以通过一个平面反射它，它看起来也一样。当然，你也可以对它什么都不做，它*肯定*会看起来一样。
+让我们从几乎可以握在手中的东西开始：一个分子。考虑一个简单的[平面三角形](@keyword=trigonal_planar|lang=zh-CN|style=Feynman)分子，如三氟化硼。你可以将它围绕中心旋转 $120^{\circ}$，它看起来完全一样。你可以通过一个平面反射它，它看起来也一样。当然，你也可以对它什么都不做，它*肯定*会看起来一样。
 
-如果我们把所有这些[对称操作](@article_id:303832)——所有使分子保持不变的旋转、反射等等——收集起来会发生什么？事实证明，这个操作集合不仅仅是一堆杂乱的技巧。它构成一个群。想一想：如果你执行一个对称操作，然后再执行另一个，净结果是又一个[对称操作](@article_id:303832)（封闭性）。如果你有三个操作，无论你如何组合它们，结果都是一样的（结合律）。存在一个“什么都不做”的操作，即单位元，这对于数学结构的运作至关重要 。对于每一个操作，都有一个“撤销”操作让你回到起点（[逆元](@article_id:301233)）。
+如果我们把所有这些[对称操作](@keyword=symmetry_operations|lang=zh-CN|style=Feynman)——所有使分子保持不变的旋转、反射等等——收集起来会发生什么？事实证明，这个操作集合不仅仅是一堆杂乱的技巧。它构成一个群。想一想：如果你执行一个对称操作，然后再执行另一个，净结果是又一个[对称操作](@keyword=symmetry_operations|lang=zh-CN|style=Feynman)（封闭性）。如果你有三个操作，无论你如何组合它们，结果都是一样的（结合律）。存在一个“什么都不做”的操作，即单位元，这对于数学结构的运作至关重要 [@problem_id:2291916]。对于每一个操作，都有一个“撤销”操作让你回到起点（[逆元](@keyword=inverse_elements|lang=zh-CN|style=Feynman)）。
 
-这绝非偶然。[分子对称性](@article_id:380867)构成一个群，如点群 $D_{3h}$ ，这一事实是现代化学的基石。这不仅仅是一种标记事物的方式。通过证明这组操作满足[群公理](@article_id:298669)，化学家们得以使用一套庞大而强大的数学工具，称为表示论。该理论使他们能够预测分子轨道的形状，理解哪些[光谱跃迁](@article_id:375872)是“允许”或“禁止”的，并对物质的相进行分类。群结构是分子行为的秘密语言。
+这绝非偶然。[分子对称性](@keyword=symmetry_in_molecules|lang=zh-CN|style=Feynman)构成一个群，如点群 $D_{3h}$ [@problem_id:2627652]，这一事实是现代化学的基石。这不仅仅是一种标记事物的方式。通过证明这组操作满足[群公理](@keyword=group_axioms|lang=zh-CN|style=Feynman)，化学家们得以使用一套庞大而强大的数学工具，称为表示论。该理论使他们能够预测分子轨道的形状，理解哪些[光谱跃迁](@keyword=spectroscopic_transitions|lang=zh-CN|style=Feynman)是“允许”或“禁止”的，并对物质的相进行分类。群结构是分子行为的秘密语言。
 
-我们可以将这个概念从单个分子扩展到看似无限重复的晶体[晶格](@article_id:300090)。[完美晶体](@article_id:298762)中的原子以一种惊人规整的模式[排列](@article_id:296886)。这种模式的对称性也受群论定律的约束。然而，该模式必须能够无限重复以填充空间的要求，对可能存在的对称性类型施加了一种有趣的物理约束。著名的**[晶体学限制定理](@article_id:298240)**告诉我们，晶体只能具有1、2、3、4或6重[旋转对称](@article_id:297528)性。周期性晶体中不允许存在5重或7重旋转对称性！通过将这种物理限制与群的代数公理相结合——例如，通过询问这些物理上可能的群中有哪些也是交换的（[阿贝尔群](@article_id:305570)）——我们可以系统地推导和分类所有可能的[晶体结构](@article_id:300816)。这种物理定律与抽象代数之间美妙的相互作用，为我们提供了晶体物质基本形式的完整目录 。
+我们可以将这个概念从单个分子扩展到看似无限重复的晶体[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)。[完美晶体](@keyword=perfect_crystal|lang=zh-CN|style=Feynman)中的原子以一种惊人规整的模式[排列](@keyword=permutation|lang=zh-CN|style=Feynman)。这种模式的对称性也受群论定律的约束。然而，该模式必须能够无限重复以填充空间的要求，对可能存在的对称性类型施加了一种有趣的物理约束。著名的**[晶体学限制定理](@keyword=crystallographic_restriction_theorem|lang=zh-CN|style=Feynman)**告诉我们，晶体只能具有1、2、3、4或6重[旋转对称](@keyword=rotational_symmetry|lang=zh-CN|style=Feynman)性。周期性晶体中不允许存在5重或7重旋转对称性！通过将这种物理限制与群的代数公理相结合——例如，通过询问这些物理上可能的群中有哪些也是交换的（[阿贝尔群](@keyword=abelian_groups|lang=zh-CN|style=Feynman)）——我们可以系统地推导和分类所有可能的[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)。这种物理定律与抽象代数之间美妙的相互作用，为我们提供了晶体物质基本形式的完整目录 [@problem_id:334695]。
 
 ### 变换的代数：从像素到粒子
 
 到目前为止，我们一直在讨论静态物体的对称性。但当我们思考*变换*——关于运动和变化时，群的概念才真正活跃起来。
 
-想象你是一名设计计算机图形引擎的程序员。你希望在整数坐标的二维网格上变换对象，但你希望这些变换是“行为良好”的：它们应该保持形状的基本朝向，并且不扭曲其面积。你可能会用整数项的 $2 \times 2$ 矩阵来表示这些变换。如果你将自己限制在[行列式](@article_id:303413)恰好为1的矩阵上，你能得到一套行为良好的工具吗？要确定这一点，方法就是问：这组矩阵在乘法下是否构成一个群？我们可以检查公理。两个这样的矩阵的乘积也具有整数项和为1的[行列式](@article_id:303413)（[封闭性](@article_id:297350)）。矩阵乘法是结合的。单位矩阵可作为单位元。关键是，任何这样的矩阵的逆矩阵也具有整数项和为1的[行列式](@article_id:303413)，所以它也在此集合中（[逆元](@article_id:301233)）。是的！它们构成一个群，即著名的[特殊线性群](@article_id:299985) $SL_2(\mathbb{Z})$ 。群结构保证了这些变换的任何序列都是可逆的，并保持在这个特殊类别之内。
+想象你是一名设计计算机图形引擎的程序员。你希望在整数坐标的二维网格上变换对象，但你希望这些变换是“行为良好”的：它们应该保持形状的基本朝向，并且不扭曲其面积。你可能会用整数项的 $2 \times 2$ 矩阵来表示这些变换。如果你将自己限制在[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)恰好为1的矩阵上，你能得到一套行为良好的工具吗？要确定这一点，方法就是问：这组矩阵在乘法下是否构成一个群？我们可以检查公理。两个这样的矩阵的乘积也具有整数项和为1的[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)（[封闭性](@keyword=closure_property|lang=zh-CN|style=Feynman)）。矩阵乘法是结合的。单位矩阵可作为单位元。关键是，任何这样的矩阵的逆矩阵也具有整数项和为1的[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)，所以它也在此集合中（[逆元](@keyword=inverse_elements|lang=zh-CN|style=Feynman)）。是的！它们构成一个群，即著名的[特殊线性群](@keyword=special_linear_group|lang=zh-CN|style=Feynman) $SL_2(\mathbb{Z})$ [@problem_id:1787050]。群结构保证了这些变换的任何序列都是可逆的，并保持在这个特殊类别之内。
 
-对于游戏、机器人技术或[航空航天工程](@article_id:332205)中的[三维旋转](@article_id:308952)，情况变得更加有趣。使用简单的角度来表示三维方向可能会导致一个叫做“[万向节死锁](@article_id:350879)”的棘手问题。一个远为优雅的解决方案在于使用称为**[四元数](@article_id:307439)**的数字。所有[单位四元数](@article_id:383069)的集合在[四元数乘法](@article_id:315165)下构成一个宏伟的群。这[种群结构](@article_id:309018)正是它们如此稳健地描述旋转的原因。任何旋转序列都对应于一个简单的乘法，而逆向旋转则对应于群的逆元。这是抽象代数结构与实际工程问题之间的完美匹配。[群公理](@article_id:298669)是最终的仲裁者；它们甚至可以确认对于更奇特的运算也存在群结构，从而成为探索新数学领域的强大工具 。
+对于游戏、机器人技术或[航空航天工程](@keyword=aerospace_engineering|lang=zh-CN|style=Feynman)中的[三维旋转](@keyword=3d_rotations|lang=zh-CN|style=Feynman)，情况变得更加有趣。使用简单的角度来表示三维方向可能会导致一个叫做“[万向节死锁](@keyword=gimbal_lock|lang=zh-CN|style=Feynman)”的棘手问题。一个远为优雅的解决方案在于使用称为**[四元数](@keyword=quaternions|lang=zh-CN|style=Feynman)**的数字。所有[单位四元数](@keyword=unit_quaternions|lang=zh-CN|style=Feynman)的集合在[四元数乘法](@keyword=quaternion_multiplication|lang=zh-CN|style=Feynman)下构成一个宏伟的群。这[种群结构](@keyword=population_structure|lang=zh-CN|style=Feynman)正是它们如此稳健地描述旋转的原因。任何旋转序列都对应于一个简单的乘法，而逆向旋转则对应于群的逆元。这是抽象代数结构与实际工程问题之间的完美匹配。[群公理](@keyword=group_axioms|lang=zh-CN|style=Feynman)是最终的仲裁者；它们甚至可以确认对于更奇特的运算也存在群结构，从而成为探索新数学领域的强大工具 [@problem_id:1599806]。
 
-群描述变换的思想将我们一直带到量子力学的奇异世界。一个复数 $z$ 可以表示一个简单量子系统的状态。在抽象意义上旋转这个状态意味着什么？像 $t \cdot z = \exp(it)z$ 这样的操作，将状态乘以一个模为1的复数，对应于一次旋转。由实数 $t$ [参数化](@article_id:336283)的所有此类旋转的集合，受实数的[加法群](@article_id:312215) $(\mathbb{R}, +)$ 的支配。这种关系，即一个群描述了对另一个对象的一组变换，被称为**[群作用](@article_id:332514)** 。量子波函数的相位——其身份的一个决定性特征——正是根据这样的群作用随[时间演化](@article_id:314355)的。群结构保证了[量子演化](@article_id:377046)的自洽性与相干性。
+群描述变换的思想将我们一直带到量子力学的奇异世界。一个复数 $z$ 可以表示一个简单量子系统的状态。在抽象意义上旋转这个状态意味着什么？像 $t \cdot z = \exp(it)z$ 这样的操作，将状态乘以一个模为1的复数，对应于一次旋转。由实数 $t$ [参数化](@keyword=parametrization|lang=zh-CN|style=Feynman)的所有此类旋转的集合，受实数的[加法群](@keyword=additive_group|lang=zh-CN|style=Feynman) $(\mathbb{R}, +)$ 的支配。这种关系，即一个群描述了对另一个对象的一组变换，被称为**[群作用](@keyword=group_actions|lang=zh-CN|style=Feynman)** [@problem_id:1799475]。量子波函数的相位——其身份的一个决定性特征——正是根据这样的群作用随[时间演化](@keyword=time_evolution|lang=zh-CN|style=Feynman)的。群结构保证了[量子演化](@keyword=quantum_evolution|lang=zh-CN|style=Feynman)的自洽性与相干性。
 
 ### 逻辑与数的深层架构
 
-[群公理](@article_id:298669)不仅是用于分类外部世界的工具；它们也是数学本身架构的基本组成部分。它们的逻辑约束力惊人地强大。例如，如果我告诉你一个群有六个元素且[非交换](@article_id:297053)，公理就会限制你的选择。仅使用这四个规则，你就可以推导出整个[乘法表](@article_id:298638)。这样的群只可能有一种结构 。在一个精彩的数学统一性实例中，这个抽象构建的群竟然就是等边三角形的对称群 ($D_3$)，一个我们已在化学中见过的群！
+[群公理](@keyword=group_axioms|lang=zh-CN|style=Feynman)不仅是用于分类外部世界的工具；它们也是数学本身架构的基本组成部分。它们的逻辑约束力惊人地强大。例如，如果我告诉你一个群有六个元素且[非交换](@keyword=non_commutation|lang=zh-CN|style=Feynman)，公理就会限制你的选择。仅使用这四个规则，你就可以推导出整个[乘法表](@keyword=multiplication_table|lang=zh-CN|style=Feynman)。这样的群只可能有一种结构 [@problem_id:2255988]。在一个精彩的数学统一性实例中，这个抽象构建的群竟然就是等边三角形的对称群 ($D_3$)，一个我们已在化学中见过的群！
 
 最深刻的认识是，群的基本概念可以被延伸到何种程度。
-如果你的群的元素不是离散的项，而是形成一个连续、光滑的[曲面](@article_id:331153)，比如球面或圆环面呢？你可以将[群公理](@article_id:298669)与微积分和几何的机制结合起来。这就诞生了**李群** 。在这里，群的乘法和求逆运算被要求是光滑函数。这些连续群是描述我们宇宙[基本对称性](@article_id:321660)的数学语言，构成了爱因斯坦[相对论](@article_id:327421)和[粒子物理标准模型](@article_id:320068)的基石。
+如果你的群的元素不是离散的项，而是形成一个连续、光滑的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，比如球面或圆环面呢？你可以将[群公理](@keyword=group_axioms|lang=zh-CN|style=Feynman)与微积分和几何的机制结合起来。这就诞生了**李群** [@problem_id:2973551]。在这里，群的乘法和求逆运算被要求是光滑函数。这些连续群是描述我们宇宙[基本对称性](@keyword=fundamental_symmetries|lang=zh-CN|style=Feynman)的数学语言，构成了爱因斯坦[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)和[粒子物理标准模型](@keyword=standard_model_particle_physics|lang=zh-CN|style=Feynman)的基石。
 
-或者考虑一个更大胆的命题。取一条由三次方程定义的曲线，如 $y^2 = x^3 + ax + b$。这是一个**[椭圆曲线](@article_id:641521)**。你可以定义一个奇特的几何规则，用于将曲线上的两个点“相加”得到第三个点。奇迹般地，这个奇怪的[加法法则](@article_id:311776)竟然遵循所有四个[群公理](@article_id:298669) 。这种几何、代数和数论的融合不仅仅是一种好奇；它是现代[公钥密码学](@article_id:311155)的基础，这项技术保护着从你的银行交易到私人消息的一切。
+或者考虑一个更大胆的命题。取一条由三次方程定义的曲线，如 $y^2 = x^3 + ax + b$。这是一个**[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)**。你可以定义一个奇特的几何规则，用于将曲线上的两个点“相加”得到第三个点。奇迹般地，这个奇怪的[加法法则](@keyword=summation_rule|lang=zh-CN|style=Feynman)竟然遵循所有四个[群公理](@keyword=group_axioms|lang=zh-CN|style=Feynman) [@problem_id:3026544]。这种几何、代数和数论的融合不仅仅是一种好奇；它是现代[公钥密码学](@keyword=public_key_cryptography|lang=zh-CN|style=Feynman)的基础，这项技术保护着从你的银行交易到私人消息的一切。
 
 ### 一种通用语言
 

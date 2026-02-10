@@ -10,9 +10,9 @@
 
 如果路面完美平坦，A车显然是赢家。但如果路面布满坑洼——如果是“刚性”的——你将花费大量时间缓慢前行，以至于昂贵但稳定的B车会更快地带你到达目的地，且总成本更低。
 
-这正是显式和[隐式数值方法](@article_id:357188)选择的核心所在。像[前向欧拉法](@article_id:301680)这样的显式方法，[计算成本](@article_id:308397)低。每一步都是一个简单的计算。而像后向欧拉法这样的[隐式方法](@article_id:297524)，成本高昂。每一步都需要求解一个可能很复杂的[代数方程](@article_id:336361)。Dahlquist 壁垒告诉我们，要获得[刚性问题](@article_id:302583)所需的理想稳定性（如 [A-稳定性](@article_id:304795)），我们*必须*转向[隐式方法](@article_id:297524)。
+这正是显式和[隐式数值方法](@keyword=implicit_numerical_methods|lang=zh-CN|style=Feynman)选择的核心所在。像[前向欧拉法](@keyword=forward_euler_method|lang=zh-CN|style=Feynman)这样的显式方法，[计算成本](@keyword=computational_cost|lang=zh-CN|style=Feynman)低。每一步都是一个简单的计算。而像后向欧拉法这样的[隐式方法](@keyword=implicit_methods|lang=zh-CN|style=Feynman)，成本高昂。每一步都需要求解一个可能很复杂的[代数方程](@keyword=algebraic_equations|lang=zh-CN|style=Feynman)。Dahlquist 壁垒告诉我们，要获得[刚性问题](@keyword=stiff_problems|lang=zh-CN|style=Feynman)所需的理想稳定性（如 [A-稳定性](@keyword=a_stability|lang=zh-CN|style=Feynman)），我们*必须*转向[隐式方法](@keyword=implicit_methods|lang=zh-CN|style=Feynman)。
 
-关键的洞见在于，对于一个刚性问题，对显式方法的稳定性约束是极其严酷的。时间步长 $\Delta t$ 被迫变得非常小，由问题中最快、最剧烈的时间尺度所决定，即使我们只关心观察缓慢的大尺度行为 。相比之下，一个 A-稳定的隐式方法不受此稳定性约束。它可以采用精度所允许的任何大步长，只专注于我们感兴趣的缓慢动态。对于一个具有非常快的组分（一个大的“坑洼”，对应大的负[特征值](@article_id:315305) $\lambda_{\max}$）和一个我们想要观察的慢组分的问题，显式方法的步数可能比隐式方法多出数百万倍。步数的这种急剧减少，足以弥补每一步更高的成本，从而使[隐式方法](@article_id:297524)在穿越刚性地貌的竞赛中成为明显的赢家。
+关键的洞见在于，对于一个刚性问题，对显式方法的稳定性约束是极其严酷的。时间步长 $\Delta t$ 被迫变得非常小，由问题中最快、最剧烈的时间尺度所决定，即使我们只关心观察缓慢的大尺度行为 [@problem_id:2421529]。相比之下，一个 A-稳定的隐式方法不受此稳定性约束。它可以采用精度所允许的任何大步长，只专注于我们感兴趣的缓慢动态。对于一个具有非常快的组分（一个大的“坑洼”，对应大的负[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) $\lambda_{\max}$）和一个我们想要观察的慢组分的问题，显式方法的步数可能比隐式方法多出数百万倍。步数的这种急剧减少，足以弥补每一步更高的成本，从而使[隐式方法](@keyword=implicit_methods|lang=zh-CN|style=Feynman)在穿越刚性地貌的竞赛中成为明显的赢家。
 
 ### 刚性“野兽”巡礼：爆炸一触即发
 
@@ -20,38 +20,38 @@
 
 #### 电路：时间常数的语言
 
-考虑一个看似简单的电路，可能包含一个[电感](@article_id:339724)、一个电容、一个电阻和一个非线性元件，如隧道[二极管](@article_id:320743) 。由 Kirchhoff 定律描述的物理学原理，给了我们一个[微分方程组](@article_id:308634)。物理元件的参数——[电感](@article_id:339724) $L$、电容 $C$ 和电阻 $R$——直接决定了这些方程的数学性质。例如，如果我们有一个非常小的电容和一个非常大的[电感](@article_id:339724)，电路的自然时间常数可能会[相差](@article_id:318112)几个数量级。
+考虑一个看似简单的电路，可能包含一个[电感](@keyword=inductance|lang=zh-CN|style=Feynman)、一个电容、一个电阻和一个非线性元件，如隧道[二极管](@keyword=diode|lang=zh-CN|style=Feynman) [@problem_id:2437366]。由 Kirchhoff 定律描述的物理学原理，给了我们一个[微分方程组](@keyword=systems_of_differential_equations|lang=zh-CN|style=Feynman)。物理元件的参数——[电感](@keyword=inductance|lang=zh-CN|style=Feynman) $L$、电容 $C$ 和电阻 $R$——直接决定了这些方程的数学性质。例如，如果我们有一个非常小的电容和一个非常大的[电感](@keyword=inductance|lang=zh-CN|style=Feynman)，电路的自然时间常数可能会[相差](@keyword=phase_contrast|lang=zh-CN|style=Feynman)几个数量级。
 
-当我们分析该系统的[雅可比矩阵](@article_id:303923)时，我们发现这种物理上的[时间尺度分离](@article_id:374345)完美地反映在数学中：[特征值分布](@article_id:373646)广泛，可能一个在 $-10^5~\text{s}^{-1}$，另一个在 $-10^8~\text{s}^{-1}$。这便是最纯粹形式的刚性。一个显式求解器将被束缚在快[特征值](@article_id:315305)的纳秒级时间尺度上，而一个 A-稳定的隐式方法，如[后向差分](@article_id:641910)格式 (BDF)，则可以优雅地跨过它，并以较慢、更有趣的动态所对应的微秒级时间尺度前进。难怪作为电子工业主力工具的 SPICE（集成电路仿真程序）系列电路模拟器，几十年来一直建立在隐式方法的基础之上。源于 Dahlquist 工作的原理，已经融入了你手机和电脑中的硅芯片。
+当我们分析该系统的[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)时，我们发现这种物理上的[时间尺度分离](@keyword=time_scale_separation|lang=zh-CN|style=Feynman)完美地反映在数学中：[特征值分布](@keyword=eigenvalue_distribution|lang=zh-CN|style=Feynman)广泛，可能一个在 $-10^5~\text{s}^{-1}$，另一个在 $-10^8~\text{s}^{-1}$。这便是最纯粹形式的刚性。一个显式求解器将被束缚在快[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)的纳秒级时间尺度上，而一个 A-稳定的隐式方法，如[后向差分](@keyword=backward_difference|lang=zh-CN|style=Feynman)格式 (BDF)，则可以优雅地跨过它，并以较慢、更有趣的动态所对应的微秒级时间尺度前进。难怪作为电子工业主力工具的 SPICE（集成电路仿真程序）系列电路模拟器，几十年来一直建立在隐式方法的基础之上。源于 Dahlquist 工作的原理，已经融入了你手机和电脑中的硅芯片。
 
 #### 计算物理：网格的暴政
 
-让我们从有形的电路世界转向模拟的物理世界。想象一下模拟热量通过一根金属棒的传导。我们从一个[偏微分方程](@article_id:301773) (PDE)，即热方程开始。为了在计算机上求解它，我们必须首先对空间进行“[离散化](@article_id:305437)”，将金属棒切成精细的点网格，并写下每个点的温度如何影响其邻近点的方程。这个称为[半离散化](@article_id:345001)的过程，将单个 PDE 转换成一个庞大的耦合[常微分方程组](@article_id:353261) 。
+让我们从有形的电路世界转向模拟的物理世界。想象一下模拟热量通过一根金属棒的传导。我们从一个[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman) (PDE)，即热方程开始。为了在计算机上求解它，我们必须首先对空间进行“[离散化](@keyword=discretization|lang=zh-CN|style=Feynman)”，将金属棒切成精细的点网格，并写下每个点的温度如何影响其邻近点的方程。这个称为[半离散化](@keyword=semi_discrete_formulation|lang=zh-CN|style=Feynman)的过程，将单个 PDE 转换成一个庞大的耦合[常微分方程组](@keyword=ode_system|lang=zh-CN|style=Feynman) [@problem_id:2483550]。
 
-在这里，一个惊人的现象发生了：为了获得更精确的空间图像而使网格越精细，得到的 ODE 系统就越刚性！我们网格上最小、最高频的扰动对应于衰减极快的模式。系统矩阵的最大[特征值](@article_id:315305) $\lambda_{\max}$ 的量级随网格点数的平方而增长。这对显式方法来说是灾难性的。将空间分辨率加倍会迫使你将时间步长减少四倍。这就是著名的 CFL 条件，是显式方法在 PDE 上的稳定性限制的一种具体表现。然而，A-稳定的方法却不受影响。你可以随心所欲地细化网格，而你的时间步长只受限于观察热量传播所需的精度，而不受那些最小、最快消逝的扰动的稳定性限制。
+在这里，一个惊人的现象发生了：为了获得更精确的空间图像而使网格越精细，得到的 ODE 系统就越刚性！我们网格上最小、最高频的扰动对应于衰减极快的模式。系统矩阵的最大[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) $\lambda_{\max}$ 的量级随网格点数的平方而增长。这对显式方法来说是灾难性的。将空间分辨率加倍会迫使你将时间步长减少四倍。这就是著名的 CFL 条件，是显式方法在 PDE 上的稳定性限制的一种具体表现。然而，A-稳定的方法却不受影响。你可以随心所欲地细化网格，而你的时间步长只受限于观察热量传播所需的精度，而不受那些最小、最快消逝的扰动的稳定性限制。
 
-同样的原理也适用于游戏物理引擎 。你如何模拟一个角色与墙壁的碰撞？一个聪明的技巧是把墙想象成一个无限刚度的弹簧。当角色穿透墙壁的瞬间，一个巨大的恢复力将他们推回。在数学上，这对应于一个具有巨大负[特征值](@article_id:315305) $\lambda$ 的 ODE。如果游戏程序员使用[显式欧拉法](@article_id:301748)，角色的速度会严重超调，以至于在下一帧中飞向无穷大。模拟会字面意义上地“爆炸”。而一个[隐式方法](@article_id:297524)，特别是像[后向欧拉法](@article_id:300121)这样能强烈抑制无限快模式的 L-稳定方法，则能优雅地处理这种情况。它看到无限的刚度，并能在一个稳定的步骤内有效地消除穿透速度，从而产生一个逼真的、非爆炸性的碰撞。
+同样的原理也适用于游戏物理引擎 [@problem_id:2372856]。你如何模拟一个角色与墙壁的碰撞？一个聪明的技巧是把墙想象成一个无限刚度的弹簧。当角色穿透墙壁的瞬间，一个巨大的恢复力将他们推回。在数学上，这对应于一个具有巨大负[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) $\lambda$ 的 ODE。如果游戏程序员使用[显式欧拉法](@keyword=explicit_euler_method|lang=zh-CN|style=Feynman)，角色的速度会严重超调，以至于在下一帧中飞向无穷大。模拟会字面意义上地“爆炸”。而一个[隐式方法](@keyword=implicit_methods|lang=zh-CN|style=Feynman)，特别是像[后向欧拉法](@keyword=backward_euler_method|lang=zh-CN|style=Feynman)这样能强烈抑制无限快模式的 L-稳定方法，则能优雅地处理这种情况。它看到无限的刚度，并能在一个稳定的步骤内有效地消除穿透速度，从而产生一个逼真的、非爆炸性的碰撞。
 
-#### [化学动力学](@article_id:356401)：分子的舞蹈
+#### [化学动力学](@keyword=chemical_dynamics|lang=zh-CN|style=Feynman)：分子的舞蹈
 
-在化学中，反应可以在相差许多[数量级](@article_id:332848)的时间尺度上发生。一个[化学键](@article_id:305517)的断裂可能需要一飞秒（$10^{-15}$ s），而生成的产物则在数分钟或数小时内缓慢扩散和反应。这是典型的刚性问题 。
+在化学中，反应可以在相差许多[数量级](@keyword=powers_of_ten|lang=zh-CN|style=Feynman)的时间尺度上发生。一个[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)的断裂可能需要一飞秒（$10^{-15}$ s），而生成的产物则在数分钟或数小时内缓慢扩散和反应。这是典型的刚性问题 [@problem_id:2421529]。
 
-一个经典的例子来自[振荡[化学反](@article_id:378238)应](@article_id:307389)的世界，比如著名的 Belousov-Zhabotinsky (BZ) 反应，其中溶液会节律性地改变颜色。像“Oregonator”这样的模型使用一个 ODE 系统来捕捉这种行为，其中一个小参数 $\varepsilon$ 分隔了[反应速率](@article_id:303093) 。该系统的雅可比矩阵自然拥有大小为 $\mathcal{O}(1/\varepsilon)$ 和 $\mathcal{O}(1)$ 的[特征值](@article_id:315305)。为了模拟缓慢而迷人的颜色变化，不能受限于一个由稳定性决定的、数量级为 $\varepsilon$ 的时间步长。像 BDF 族这样的隐式方法是必不可少的工具，它使化学家能够高效地模拟这些复杂的反应网络。
+一个经典的例子来自[振荡[化学反](@keyword=oscillating_chemical_reactions|lang=zh-CN|style=Feynman)应](@article_id:307389)的世界，比如著名的 Belousov-Zhabotinsky (BZ) 反应，其中溶液会节律性地改变颜色。像“Oregonator”这样的模型使用一个 ODE 系统来捕捉这种行为，其中一个小参数 $\varepsilon$ 分隔了[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman) [@problem_id:2657589]。该系统的雅可比矩阵自然拥有大小为 $\mathcal{O}(1/\varepsilon)$ 和 $\mathcal{O}(1)$ 的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)。为了模拟缓慢而迷人的颜色变化，不能受限于一个由稳定性决定的、数量级为 $\varepsilon$ 的时间步长。像 BDF 族这样的隐式方法是必不可少的工具，它使化学家能够高效地模拟这些复杂的反应网络。
 
 ### 当好方法变坏时：现场演示
 
 壁垒不仅仅是建议，它们是硬性限制。如果我们试图违抗它们会发生什么？让我们本着计算实验室的精神，进行几个思想实验。
 
-首先，让我们尝试构建一个“更好”的显式方法。Dahlquist 的第一壁垒告诉我们，一个 $k$ 步的显式方法，若要零点稳定（收敛的最低前提），其阶数不能超过 $k$。让我们大胆地尝试构建一个 3 阶的显式 2 步法。我们可以写出该方法的系数必须满足的方程。当我们求解这些方程时，会得到一组唯一的系数。但是，当我们检查该方法的特征多项式 $\rho(\xi)$ 时，我们发现其根为 $1$ 和 $-5$。一个模大于 1 的根意味着该方法是零点不稳定的；任何微小的误差在每一步都会被放大 $-5$ 倍，导致灾难性的、[振荡](@article_id:331484)的误差增长。壁垒成立。我们根本无法构建这样的方法 。
+首先，让我们尝试构建一个“更好”的显式方法。Dahlquist 的第一壁垒告诉我们，一个 $k$ 步的显式方法，若要零点稳定（收敛的最低前提），其阶数不能超过 $k$。让我们大胆地尝试构建一个 3 阶的显式 2 步法。我们可以写出该方法的系数必须满足的方程。当我们求解这些方程时，会得到一组唯一的系数。但是，当我们检查该方法的特征多项式 $\rho(\xi)$ 时，我们发现其根为 $1$ 和 $-5$。一个模大于 1 的根意味着该方法是零点不稳定的；任何微小的误差在每一步都会被放大 $-5$ 倍，导致灾难性的、[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的误差增长。壁垒成立。我们根本无法构建这样的方法 [@problem_id:2446838]。
 
-BDF 方法是[刚性求解器](@article_id:354362)世界中的传奇。阶数高达 6 的 BDF 方法族是零点稳定的。但 BDF7 又如何呢？理论上说它是零点不稳定的。让我们看看这在实践中意味着什么。我们可以实现 BDF7 并将其应用于最简单的 ODE：$y'(t) = 0$，其解只是一个常数 $y(t) = 1$。我们用一个初始值中微小到几乎无法察觉的舍入误差来开始模拟。一个稳定的方法会看到这个微小的误差衰减或保持有界。但对于 BDF7，误差会增长，持续增长，不断增长。几百步之后，本应为 1 的解，已经膨胀成一个无意义的巨大数字。该方法是极其、无可否认地不稳定的 。这就是为什么像 `scipy` 或 `MATLAB` 这样的数值软件库止步于 BDF6。
+BDF 方法是[刚性求解器](@keyword=stiff_solver|lang=zh-CN|style=Feynman)世界中的传奇。阶数高达 6 的 BDF 方法族是零点稳定的。但 BDF7 又如何呢？理论上说它是零点不稳定的。让我们看看这在实践中意味着什么。我们可以实现 BDF7 并将其应用于最简单的 ODE：$y'(t) = 0$，其解只是一个常数 $y(t) = 1$。我们用一个初始值中微小到几乎无法察觉的舍入误差来开始模拟。一个稳定的方法会看到这个微小的误差衰减或保持有界。但对于 BDF7，误差会增长，持续增长，不断增长。几百步之后，本应为 1 的解，已经膨胀成一个无意义的巨大数字。该方法是极其、无可否认地不稳定的 [@problem_id:2401930]。这就是为什么像 `scipy` 或 `MATLAB` 这样的数值软件库止步于 BDF6。
 
-最后，第二 Dahlquist 壁垒甚至限制了隐式方法。它指出，没有 A-稳定的[线性多步法](@article_id:299975)的阶数可以超过 2。[梯形法](@article_id:638332)是 2 阶且 A-稳定的。Adams-Moulton 族提供了阶数不断增加的方法。为什么我们不能直接使用 3 阶的 Adams-Moulton 方法呢？它毕竟是隐式的。原因在于该方法在“无穷远处”的行为。要使一个方法是 A-稳定的，它必须对任意大的刚度都稳定。当我们探测这个极限时，方法的稳定性由其*第二*特征多项式 $\sigma(\xi)$ 的根决定。对于阶数 3 及以上的 Adams-Moulton 方法，该多项式有根在[单位圆](@article_id:311954)外，这直接违反了 [A-稳定性](@article_id:304795) 。
+最后，第二 Dahlquist 壁垒甚至限制了隐式方法。它指出，没有 A-稳定的[线性多步法](@keyword=linear_multistep_methods|lang=zh-CN|style=Feynman)的阶数可以超过 2。[梯形法](@keyword=trapezoidal_method|lang=zh-CN|style=Feynman)是 2 阶且 A-稳定的。Adams-Moulton 族提供了阶数不断增加的方法。为什么我们不能直接使用 3 阶的 Adams-Moulton 方法呢？它毕竟是隐式的。原因在于该方法在“无穷远处”的行为。要使一个方法是 A-稳定的，它必须对任意大的刚度都稳定。当我们探测这个极限时，方法的稳定性由其*第二*特征多项式 $\sigma(\xi)$ 的根决定。对于阶数 3 及以上的 Adams-Moulton 方法，该多项式有根在[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)外，这直接违反了 [A-稳定性](@keyword=a_stability|lang=zh-CN|style=Feynman) [@problem_id:2410036]。
 
 ### 计算探索者的地图
 
-穿越[数值稳定性](@article_id:306969)世界的旅程揭示了一幅具有深刻而优美结构的图景。Dahlquist 稳定性壁垒是这张地图上雄伟的山脉。它们不是令人扼腕的障碍，而是定义地形、指引我们探索的地貌特征。
+穿越[数值稳定性](@keyword=numerical_stability|lang=zh-CN|style=Feynman)世界的旅程揭示了一幅具有深刻而优美结构的图景。Dahlquist 稳定性壁垒是这张地图上雄伟的山脉。它们不是令人扼腕的障碍，而是定义地形、指引我们探索的地貌特征。
 
-它们告诉我们，没有单一的“完美”方法。高阶（承诺精度）与强健的稳定性之间存在着根本的[张力](@article_id:357470)。对 [A-稳定性](@article_id:304795)的追求——对遍布科学和工程领域的[刚性问题](@article_id:302583)至关重要——迫使我们转向隐式方法，并将我们的阶数限制在较低水平。这些限制塑造了整个科学计算领域，促使了复杂[算法](@article_id:331821)的发展——从可变阶 BDF 求解器到隐式 Runge-Kutta 格式——这些[算法](@article_id:331821)智能地在这些权衡中导航。
+它们告诉我们，没有单一的“完美”方法。高阶（承诺精度）与强健的稳定性之间存在着根本的[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)。对 [A-稳定性](@keyword=a_stability|lang=zh-CN|style=Feynman)的追求——对遍布科学和工程领域的[刚性问题](@keyword=stiff_problems|lang=zh-CN|style=Feynman)至关重要——迫使我们转向隐式方法，并将我们的阶数限制在较低水平。这些限制塑造了整个科学计算领域，促使了复杂[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的发展——从可变阶 BDF 求解器到隐式 Runge-Kutta 格式——这些[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)智能地在这些权衡中导航。
 
-所以，下一次当你看到[流体动力学](@article_id:319275)模拟，玩现代视频游戏，或读到关于复杂化工厂建模的文章时，你可以确信 Germund Dahlquist 的幽灵就在那里，他那优美的壁垒指引着创造者的双手，确保他们的虚拟世界保持稳定、精确，并忠于他们试图捕捉的现实。
+所以，下一次当你看到[流体动力学](@keyword=hydrodynamics|lang=zh-CN|style=Feynman)模拟，玩现代视频游戏，或读到关于复杂化工厂建模的文章时，你可以确信 Germund Dahlquist 的幽灵就在那里，他那优美的壁垒指引着创造者的双手，确保他们的虚拟世界保持稳定、精确，并忠于他们试图捕捉的现实。

@@ -21,9 +21,9 @@ The integral over a zero-width interval vanishes, instantly giving us the **init
 
 $$y'(t) = 0 + \frac{d}{dt} \int_0^t (y(s)^2 - s) ds = y(t)^2 - t$$
 
-Look at what happened! The complicated [integral equation](@article_id:164811) has transformed into a simple first-order [ordinary differential equation](@article_id:168127) (ODE), $y'(t) = y(t)^2 - t$, along with its initial condition, $y(0)=1$ . We've converted an equation about the system's entire history into one about its instantaneous tendency to change. This is a recurring miracle in physics and mathematics.
+Look at what happened! The complicated [integral equation](@keyword=integral_equation|lang=en-US|style=Feynman) has transformed into a simple first-order [ordinary differential equation](@keyword=ordinary_differential_equation|lang=en-US|style=Feynman) (ODE), $y'(t) = y(t)^2 - t$, along with its initial condition, $y(0)=1$ [@problem_id:1675263]. We've converted an equation about the system's entire history into one about its instantaneous tendency to change. This is a recurring miracle in physics and mathematics.
 
-This trick is more than just a convenience; it unlocks a vast toolkit. For another equation, $y(t) = 1 + \int_0^t s y(s) ds$, the same process yields the IVP $y'(t) = ty(t)$ with $y(0)=1$. We immediately recognize this as a linear first-order ODE. Our knowledge of ODEs tells us that because the coefficients ($t$ and $0$) are continuous everywhere, a unique solution is guaranteed to exist for all time $t$ . This powerful conclusion about existence and uniqueness would have been much harder to draw from the integral form alone.
+This trick is more than just a convenience; it unlocks a vast toolkit. For another equation, $y(t) = 1 + \int_0^t s y(s) ds$, the same process yields the IVP $y'(t) = ty(t)$ with $y(0)=1$. We immediately recognize this as a linear first-order ODE. Our knowledge of ODEs tells us that because the coefficients ($t$ and $0$) are continuous everywhere, a unique solution is guaranteed to exist for all time $t$ [@problem_id:2172757]. This powerful conclusion about existence and uniqueness would have been much harder to draw from the integral form alone.
 
 ### Echoes of the Past: Systems with Memory
 
@@ -41,7 +41,7 @@ The integral is still there! We haven't eliminated the history dependence yet. B
 
 $$y''(x) = 0 - y(x) \implies y''(x) + y(x) = 0$$
 
-Astounding! The memory-laden [integral equation](@article_id:164811) has revealed its true identity: it is the equation for the **simple harmonic oscillator**, the most fundamental vibration in the universe, describing everything from pendulums to [electromagnetic waves](@article_id:268591). By also finding the initial conditions from our equations ($y(0)=0$ and $y'(0)=1$), we can completely solve it to find that the mysterious function is none other than $y(x) = \sin(x)$ . An equation that encapsulates the entire past of a function turns out to describe simple, timeless oscillation. This process of peeling back layers of integration through repeated differentiation works for a whole class of these convolution-type equations, often revealing familiar physical laws hiding within .
+Astounding! The memory-laden [integral equation](@keyword=integral_equation|lang=en-US|style=Feynman) has revealed its true identity: it is the equation for the **simple harmonic oscillator**, the most fundamental vibration in the universe, describing everything from pendulums to [electromagnetic waves](@keyword=electromagnetic_waves|lang=en-US|style=Feynman). By also finding the initial conditions from our equations ($y(0)=0$ and $y'(0)=1$), we can completely solve it to find that the mysterious function is none other than $y(x) = \sin(x)$ [@problem_id:2130047]. An equation that encapsulates the entire past of a function turns out to describe simple, timeless oscillation. This process of peeling back layers of integration through repeated differentiation works for a whole class of these convolution-type equations, often revealing familiar physical laws hiding within [@problem_id:585892].
 
 ### The Fixed-Frame View: From Initial Conditions to Boundary Values
 
@@ -55,13 +55,13 @@ To use our differentiation trick, we need to deal with the tricky `min` function
 
 $$f(x) = x - \left( \int_0^x t f(t) dt + \int_x^1 x f(t) dt \right)$$
 
-Now we can differentiate twice, carefully applying the Leibniz rule at each step. The end result is remarkably simple: $f''(x) = f(x)$ . But what about the starting conditions? An initial value problem needs $f(0)$ and $f'(0)$. A Fredholm equation gives us something different. By plugging $x=0$ into the original equation, we find $f(0)=0$. By examining the first derivative, $f'(x) = 1 - \int_x^1 f(t) dt$, we find that at $x=1$, the integral vanishes, giving $f'(1)=1$.
+Now we can differentiate twice, carefully applying the Leibniz rule at each step. The end result is remarkably simple: $f''(x) = f(x)$ [@problem_id:586132]. But what about the starting conditions? An initial value problem needs $f(0)$ and $f'(0)$. A Fredholm equation gives us something different. By plugging $x=0$ into the original equation, we find $f(0)=0$. By examining the first derivative, $f'(x) = 1 - \int_x^1 f(t) dt$, we find that at $x=1$, the integral vanishes, giving $f'(1)=1$.
 
 So we have an ODE, $f''-f=0$, but with conditions at two different points: $f(0)=0$ and $f'(1)=1$. This is a **Boundary Value Problem (BVP)**. The integral formulation has beautifully and automatically encoded the boundary conditions. It's the difference between launching a rocket (an IVP, where you set the initial position and velocity and see where it goes) and building a bridge (a BVP, where you must anchor both ends at predetermined locations).
 
 ### The Algebraic Heart: The Magic of Separable Kernels
 
-The differentiation method is powerful, but it doesn't always work. A completely different and profoundly beautiful method exists for a special class of equations. What if the kernel, the function $K(x,t)$ that governs the interaction between points, has a simple structure? A kernel is called **separable** or **degenerate** if it can be written as a [sum of products](@article_id:164709) of functions of $x$ and functions of $t$:
+The differentiation method is powerful, but it doesn't always work. A completely different and profoundly beautiful method exists for a special class of equations. What if the kernel, the function $K(x,t)$ that governs the interaction between points, has a simple structure? A kernel is called **separable** or **degenerate** if it can be written as a [sum of products](@keyword=sum_of_products|lang=en-US|style=Feynman) of functions of $x$ and functions of $t$:
 
 $$K(x,t) = \sum_{i=1}^n g_i(x)h_i(t)$$
 
@@ -77,15 +77,15 @@ Notice something amazing. The two integrals, $\int_{-1}^1 y(t) dt$ and $\int_{-1
 
 $$y(x) = |x| + C_1 x + C_2$$
 
-We've constrained the infinite possibilities for the function $y(x)$ to a simple form with just two unknown constants! How do we find them? We use their own definitions. We substitute this form for $y(t)$ back into the definitions of $C_1$ and $C_2$. This yields a simple system of two linear algebraic equations for the two unknown constants. Solving it gives us the constants, and thus the exact solution for $y(x)$ .
+We've constrained the infinite possibilities for the function $y(x)$ to a simple form with just two unknown constants! How do we find them? We use their own definitions. We substitute this form for $y(t)$ back into the definitions of $C_1$ and $C_2$. This yields a simple system of two linear algebraic equations for the two unknown constants. Solving it gives us the constants, and thus the exact solution for $y(x)$ [@problem_id:1091258].
 
-This is a monumental insight. A problem in the infinite-dimensional world of functions has been reduced to a finite-dimensional problem in high-school algebra. This method is the key to solving a wide class of Fredholm equations, both of the second kind (like this one) and the first kind  .
+This is a monumental insight. A problem in the infinite-dimensional world of functions has been reduced to a finite-dimensional problem in high-school algebra. This method is the key to solving a wide class of Fredholm equations, both of the second kind (like this one) and the first kind [@problem_id:1105789] [@problem_id:1091099].
 
 ### The World as a Matrix: Taming the Infinite with Computation
 
 Nature is rarely so kind as to give us equations with simple, solvable kernels. For most real-world problems, we need to find approximate solutions using computers. The core idea is to replace the infinite and continuous with the finite and discrete.
 
-An integral $\int_a^b \phi(t)dt$ is, in essence, a continuous sum. We can approximate it with a finite, [weighted sum](@article_id:159475) over a set of points $t_j$: $\sum_j w_j \phi(t_j)$. This is called **[numerical quadrature](@article_id:136084)**. Let's apply this to a Fredholm equation:
+An integral $\int_a^b \phi(t)dt$ is, in essence, a continuous sum. We can approximate it with a finite, [weighted sum](@keyword=weighted_sum|lang=en-US|style=Feynman) over a set of points $t_j$: $\sum_j w_j \phi(t_j)$. This is called **[numerical quadrature](@keyword=numerical_quadrature|lang=en-US|style=Feynman)**. Let's apply this to a Fredholm equation:
 
 $$f(x) + \int_0^1 (x+t)f(t)dt = x^2$$
 
@@ -93,8 +93,8 @@ If we replace the integral with a 3-point sum and demand that the equation holds
 
 $$f_i + \sum_{j=1}^3 w_j (x_i+t_j)f_j = x_i^2$$
 
-This is a [system of linear equations](@article_id:139922) for the unknown values $f_1, f_2, f_3$. We can write it in the famous matrix form $A\mathbf{f} = \mathbf{b}$, where $\mathbf{f}$ is the vector of our unknown function values. The [integral operator](@article_id:147018) has become a **matrix** . What was once a problem of calculus is now a problem of linear algebra, a domain where computers reign supreme.
+This is a [system of linear equations](@keyword=system_of_linear_equations|lang=en-US|style=Feynman) for the unknown values $f_1, f_2, f_3$. We can write it in the famous matrix form $A\mathbf{f} = \mathbf{b}$, where $\mathbf{f}$ is the vector of our unknown function values. The [integral operator](@keyword=integral_operator|lang=en-US|style=Feynman) has become a **matrix** [@problem_id:1376762]. What was once a problem of calculus is now a problem of linear algebra, a domain where computers reign supreme.
 
-This idea can be generalized to the powerful **Method of Moments**. Instead of just matching the equation at points, we approximate our unknown function $f(y)$ as a sum of simple, known **basis functions** (like sines, cosines, or polynomials). We then insist that the error in our approximation is, in some sense, "orthogonal" to a set of **[weighting functions](@article_id:263669)**. This transforms the integral equation into a [matrix equation](@article_id:204257) for the unknown coefficients of our basis functions. Different choices of [weighting functions](@article_id:263669) lead to different schemes, like the point-matching (collocation) or Galerkin methods, each with its own trade-offs in accuracy and complexity . This philosophy is the bedrock of many modern computational techniques, like the Finite Element Method, that allow us to model everything from the electromagnetic fields around an antenna to the [structural integrity](@article_id:164825) of a bridge.
+This idea can be generalized to the powerful **Method of Moments**. Instead of just matching the equation at points, we approximate our unknown function $f(y)$ as a sum of simple, known **basis functions** (like sines, cosines, or polynomials). We then insist that the error in our approximation is, in some sense, "orthogonal" to a set of **[weighting functions](@keyword=weighting_functions|lang=en-US|style=Feynman)**. This transforms the integral equation into a [matrix equation](@keyword=matrix_equation|lang=en-US|style=Feynman) for the unknown coefficients of our basis functions. Different choices of [weighting functions](@keyword=weighting_functions|lang=en-US|style=Feynman) lead to different schemes, like the point-matching (collocation) or Galerkin methods, each with its own trade-offs in accuracy and complexity [@problem_id:1622880]. This philosophy is the bedrock of many modern computational techniques, like the Finite Element Method, that allow us to model everything from the electromagnetic fields around an antenna to the [structural integrity](@keyword=structural_integrity|lang=en-US|style=Feynman) of a bridge.
 
 From a disguise for derivatives to a blueprint for computation, the principles of integral equations reveal a profound unity across mathematics, physics, and engineering, showing us time and again how to find elegant simplicity within apparent complexity.

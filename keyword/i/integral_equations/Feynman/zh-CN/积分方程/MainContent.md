@@ -1,15 +1,15 @@
 ## 引言
-[微分方程](@article_id:327891)描述的是系统瞬时变化率，而[积分方程](@article_id:299091)则提供了一个不同且往往更深刻的视角：它们通过累积系统的整个历史或其所有部分的影响来定义系统状态。这种方法初看起来更为复杂，但它对于理解由记忆、非定域相互作用和累积效应主导的现象至关重要。其挑战与魅力在于，揭示隐藏在这些历史总和中常常存在的极其简单的结构。
+[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)描述的是系统瞬时变化率，而[积分方程](@keyword=integral_equations|lang=zh-CN|style=Feynman)则提供了一个不同且往往更深刻的视角：它们通过累积系统的整个历史或其所有部分的影响来定义系统状态。这种方法初看起来更为复杂，但它对于理解由记忆、非定域相互作用和累积效应主导的现象至关重要。其挑战与魅力在于，揭示隐藏在这些历史总和中常常存在的极其简单的结构。
 
-本文旨在揭开[积分方程](@article_id:299091)世界的神秘面纱，证明它们不仅是抽象的数学构造，更是强大而实用的工具。我们将探讨一个看似棘手的、涉及函数整个历史的问题，如何常常能够转化为一个熟悉的[微分方程](@article_id:327891)，甚至一个简单的代数系统。通过学习两个核心章节，您将对这些多功能方程的理论和实践有一个扎实的理解。首先，“原理与机制”一章将解析[积分方程](@article_id:299091)的[基本类](@article_id:318739)型和求解它们的巧妙方法。接下来，“应用与跨学科联系”一章将揭示这些相同的原理如何构成了[材料科学](@article_id:312640)、[电磁学](@article_id:363853)和量子物理学等不同领域的基石，展示它们在模拟现实世界中的强大能力。
+本文旨在揭开[积分方程](@keyword=integral_equations|lang=zh-CN|style=Feynman)世界的神秘面纱，证明它们不仅是抽象的数学构造，更是强大而实用的工具。我们将探讨一个看似棘手的、涉及函数整个历史的问题，如何常常能够转化为一个熟悉的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)，甚至一个简单的代数系统。通过学习两个核心章节，您将对这些多功能方程的理论和实践有一个扎实的理解。首先，“原理与机制”一章将解析[积分方程](@keyword=integral_equations|lang=zh-CN|style=Feynman)的[基本类](@keyword=fundamental_class|lang=zh-CN|style=Feynman)型和求解它们的巧妙方法。接下来，“应用与跨学科联系”一章将揭示这些相同的原理如何构成了[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)、[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)和量子物理学等不同领域的基石，展示它们在模拟现实世界中的强大能力。
 
 ## 原理与机制
 
-想象一下，你有一段汽车从起点到某个时间 $t$ 的全程记录。里程表上记录的总行驶距离是其速度在该段时间内的累积——即积分。[积分方程](@article_id:299091)以类似的方式描述一个系统，通过累积其所有过去的影响来定义其在给定时刻的状态。这似乎比只告诉你汽车瞬时速度的[微分方程](@article_id:327891)要复杂得多。但正如我们即将看到的，这两种描述往往只是同一枚美丽硬币的两面。
+想象一下，你有一段汽车从起点到某个时间 $t$ 的全程记录。里程表上记录的总行驶距离是其速度在该段时间内的累积——即积分。[积分方程](@keyword=integral_equations|lang=zh-CN|style=Feynman)以类似的方式描述一个系统，通过累积其所有过去的影响来定义其在给定时刻的状态。这似乎比只告诉你汽车瞬时速度的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)要复杂得多。但正如我们即将看到的，这两种描述往往只是同一枚美丽硬币的两面。
 
-### 隐藏的[导数](@article_id:318324)：当积分是伪装的[导数](@article_id:318324)时
+### 隐藏的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)：当积分是伪装的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)时
 
-让我们从一类称为**Volterra 方程**的[积分方程](@article_id:299091)开始我们的旅程，在这种方程中，系统的状态取决于其直到当前时刻的历史。考虑一个系统，其状态 $y(t)$ 按以下规则演化：
+让我们从一类称为**Volterra 方程**的[积分方程](@keyword=integral_equations|lang=zh-CN|style=Feynman)开始我们的旅程，在这种方程中，系统的状态取决于其直到当前时刻的历史。考虑一个系统，其状态 $y(t)$ 按以下规则演化：
 
 $$y(t) = 1 + \int_0^t (y(s)^2 - s) ds$$
 
@@ -17,23 +17,23 @@ $$y(t) = 1 + \int_0^t (y(s)^2 - s) ds$$
 
 $$y(0) = 1 + \int_0^0 (y(s)^2 - s) ds = 1 + 0 = 1$$
 
-在零宽度区间上的积分消失了，立即给了我们**初始条件**。我们找到了起点。那么运动规则本身呢？积分是[导数](@article_id:318324)的“解药”。那么如果我们反其道而行之——对整个方程关于 $t$ 求导，会发生什么？在这里，**[微积分基本定理](@article_id:307695)**来拯救我们了。它告诉我们，对一个积分关于其上限求导，结果就是积分内的函数在该上限处的值。应用这个定理，我们发现：
+在零宽度区间上的积分消失了，立即给了我们**初始条件**。我们找到了起点。那么运动规则本身呢？积分是[导数](@keyword=derivative|lang=zh-CN|style=Feynman)的“解药”。那么如果我们反其道而行之——对整个方程关于 $t$ 求导，会发生什么？在这里，**[微积分基本定理](@keyword=fundamental_theorem_of_calculus|lang=zh-CN|style=Feynman)**来拯救我们了。它告诉我们，对一个积分关于其上限求导，结果就是积分内的函数在该上限处的值。应用这个定理，我们发现：
 
 $$y'(t) = 0 + \frac{d}{dt} \int_0^t (y(s)^2 - s) ds = y(t)^2 - t$$
 
-看发生了什么！这个复杂的[积分方程](@article_id:299091)已经转变成一个简单的[一阶常微分方程](@article_id:327948) (ODE)，$y'(t) = y(t)^2 - t$，并附带其初始条件 $y(0)=1$ 。我们把一个关于系统整个历史的方程，转换成了一个关于其瞬时变化趋势的方程。这在物理学和数学中是一个反复出现的奇迹。
+看发生了什么！这个复杂的[积分方程](@keyword=integral_equations|lang=zh-CN|style=Feynman)已经转变成一个简单的[一阶常微分方程](@keyword=first_order_ordinary_differential_equations|lang=zh-CN|style=Feynman) (ODE)，$y'(t) = y(t)^2 - t$，并附带其初始条件 $y(0)=1$ [@problem_id:1675263]。我们把一个关于系统整个历史的方程，转换成了一个关于其瞬时变化趋势的方程。这在物理学和数学中是一个反复出现的奇迹。
 
-这个技巧不仅仅是为了方便；它开启了一个巨大的工具箱。对于另一个方程 $y(t) = 1 + \int_0^t s y(s) ds$，同样的过程会得到[初值问题 (IVP)](@article_id:639402) $y'(t) = ty(t)$，其中 $y(0)=1$。我们立即认出这是一个线性[一阶常微分方程](@article_id:327948)。我们关于[常微分方程](@article_id:307440)的知识告诉我们，因为系数（$t$ 和 $0$）处处连续，所以保证在所有时间 $t$ 都存在唯一解 。这个关于存在性和唯一性的强大结论，如果仅从积[分形](@article_id:301219)式出发，是很难得出的。
+这个技巧不仅仅是为了方便；它开启了一个巨大的工具箱。对于另一个方程 $y(t) = 1 + \int_0^t s y(s) ds$，同样的过程会得到[初值问题 (IVP)](@keyword=initial_value_problems_(ivps)|lang=zh-CN|style=Feynman) $y'(t) = ty(t)$，其中 $y(0)=1$。我们立即认出这是一个线性[一阶常微分方程](@keyword=first_order_ordinary_differential_equations|lang=zh-CN|style=Feynman)。我们关于[常微分方程](@keyword=ordinary_differential_equations|lang=zh-CN|style=Feynman)的知识告诉我们，因为系数（$t$ 和 $0$）处处连续，所以保证在所有时间 $t$ 都存在唯一解 [@problem_id:2172757]。这个关于存在性和唯一性的强大结论，如果仅从积[分形](@keyword=fractal|lang=zh-CN|style=Feynman)式出发，是很难得出的。
 
 ### 历史的回响：带记忆的系统
 
-有些系统具有更细致的记忆。过去事件的影响不仅仅是简单相加；它会随着时间推移而衰减或改[变性](@article_id:344916)质。这通常用**卷积核**来建模，其中积分内的“影响”函数取决于经过的时间 $x-t$。想象一下石头投进池塘产生的涟漪；它们在某一点的效果取决于石头是*多久以前*投下的。
+有些系统具有更细致的记忆。过去事件的影响不仅仅是简单相加；它会随着时间推移而衰减或改[变性](@keyword=denaturation|lang=zh-CN|style=Feynman)质。这通常用**卷积核**来建模，其中积分内的“影响”函数取决于经过的时间 $x-t$。想象一下石头投进池塘产生的涟漪；它们在某一点的效果取决于石头是*多久以前*投下的。
 
 考虑这个优雅的方程：
 
 $$y(x) = x + \int_0^x (t-x)y(t)dt$$
 
-项 $(t-x)$ 是负数，表明这是一种来自过去的“[负反馈](@article_id:299067)”。让我们试试求导的技巧。应用 **Leibniz 积分法则**（[微积分基本定理](@article_id:307695)的一个更普遍的形式），我们对 $x$ 求导：
+项 $(t-x)$ 是负数，表明这是一种来自过去的“[负反馈](@keyword=negative_feedback|lang=zh-CN|style=Feynman)”。让我们试试求导的技巧。应用 **Leibniz 积分法则**（[微积分基本定理](@keyword=fundamental_theorem_of_calculus|lang=zh-CN|style=Feynman)的一个更普遍的形式），我们对 $x$ 求导：
 
 $$y'(x) = 1 + \int_0^x \frac{\partial}{\partial x}(t-x)y(t)dt = 1 - \int_0^x y(t)dt$$
 
@@ -41,7 +41,7 @@ $$y'(x) = 1 + \int_0^x \frac{\partial}{\partial x}(t-x)y(t)dt = 1 - \int_0^x y(t
 
 $$y''(x) = 0 - y(x) \implies y''(x) + y(x) = 0$$
 
-惊人！这个充满记忆的积分方程揭示了它的真实身份：它是**简谐振子**的方程，是宇宙中最基本的[振动](@article_id:331484)，描述了从钟摆到电磁波的一切。通过从我们的方程中找到[初始条件](@article_id:313275)（$y(0)=0$ 和 $y'(0)=1$），我们可以完全解出它，发现那个神秘的函数正是 $y(x) = \sin(x)$ 。一个概括了函数整个过去的方程，结果描述的却是简单、永恒的[振动](@article_id:331484)。这种通过重复求导来逐层剥离积分的过程，适用于这类卷积型方程的一整类，常常揭示出隐藏在其中的我们熟悉的物理定律 。
+惊人！这个充满记忆的积分方程揭示了它的真实身份：它是**简谐振子**的方程，是宇宙中最基本的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，描述了从钟摆到电磁波的一切。通过从我们的方程中找到[初始条件](@keyword=initial_conditions|lang=zh-CN|style=Feynman)（$y(0)=0$ 和 $y'(0)=1$），我们可以完全解出它，发现那个神秘的函数正是 $y(x) = \sin(x)$ [@problem_id:2130047]。一个概括了函数整个过去的方程，结果描述的却是简单、永恒的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。这种通过重复求导来逐层剥离积分的过程，适用于这类卷积型方程的一整类，常常揭示出隐藏在其中的我们熟悉的物理定律 [@problem_id:585892]。
 
 ### 固定框架视角：从初值到边值
 
@@ -55,9 +55,9 @@ $$f(x) = x - \int_0^1 \min(x, t) f(t) dt$$
 
 $$f(x) = x - \left( \int_0^x t f(t) dt + \int_x^1 x f(t) dt \right)$$
 
-现在我们可以求导两次，每一步都小心地应用 Leibniz 法则。最终结果非常简单：$f''(x) = f(x)$ 。但[初始条件](@article_id:313275)是什么呢？一个初值问题需要 $f(0)$ 和 $f'(0)$。而一个 Fredholm 方程给我们的东西不同。将 $x=0$ 代入原方程，我们发现 $f(0)=0$。通过检查一阶[导数](@article_id:318324) $f'(x) = 1 - \int_x^1 f(t) dt$，我们发现在 $x=1$ 处，积分消失了，得到 $f'(1)=1$。
+现在我们可以求导两次，每一步都小心地应用 Leibniz 法则。最终结果非常简单：$f''(x) = f(x)$ [@problem_id:586132]。但[初始条件](@keyword=initial_conditions|lang=zh-CN|style=Feynman)是什么呢？一个初值问题需要 $f(0)$ 和 $f'(0)$。而一个 Fredholm 方程给我们的东西不同。将 $x=0$ 代入原方程，我们发现 $f(0)=0$。通过检查一阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman) $f'(x) = 1 - \int_x^1 f(t) dt$，我们发现在 $x=1$ 处，积分消失了，得到 $f'(1)=1$。
 
-所以我们有一个[常微分方程](@article_id:307440) $f''-f=0$，但其条件在两个不同的点上：$f(0)=0$ 和 $f'(1)=1$。这是一个**边值问题 (BVP)**。积[分形](@article_id:301219)式优美而自动地编码了边界条件。这就像发射火箭（一个[初值问题](@article_id:305047)，你设定初始位置和速度，然后看它飞向何方）和建造桥梁（一个边值问题，你必须将两端固定在预定位置）之间的区别。
+所以我们有一个[常微分方程](@keyword=ordinary_differential_equations|lang=zh-CN|style=Feynman) $f''-f=0$，但其条件在两个不同的点上：$f(0)=0$ 和 $f'(1)=1$。这是一个**边值问题 (BVP)**。积[分形](@keyword=fractal|lang=zh-CN|style=Feynman)式优美而自动地编码了边界条件。这就像发射火箭（一个[初值问题](@keyword=initial_value_problems|lang=zh-CN|style=Feynman)，你设定初始位置和速度，然后看它飞向何方）和建造桥梁（一个边值问题，你必须将两端固定在预定位置）之间的区别。
 
 ### 代数核心：可分离核的魔力
 
@@ -77,15 +77,15 @@ $$y(x) = |x| + x \int_{-1}^1 y(t) dt + \int_{-1}^1 t y(t) dt$$
 
 $$y(x) = |x| + C_1 x + C_2$$
 
-我们已经将函数 $y(x)$ 的无限可能性限制在了一个只含两个未知常数的简单形式中！我们如何找到它们呢？我们使用它们自己的定义。我们将这个 $y(t)$ 的形式代回到 $C_1$ 和 $C_2$ 的定义中。这将产生一个关于两个未知常数的简单二元线性代数方程组。解出它就得到了这些常数，从而得到了 $y(x)$ 的精确解 。
+我们已经将函数 $y(x)$ 的无限可能性限制在了一个只含两个未知常数的简单形式中！我们如何找到它们呢？我们使用它们自己的定义。我们将这个 $y(t)$ 的形式代回到 $C_1$ 和 $C_2$ 的定义中。这将产生一个关于两个未知常数的简单二元线性代数方程组。解出它就得到了这些常数，从而得到了 $y(x)$ 的精确解 [@problem_id:1091258]。
 
-这是一个里程碑式的洞见。一个在函数的无限维世界中的问题被简化为中学代数中的一个有限维问题。这个方法是求解一大类 Fredholm 方程的关键，无论是第二类（如此例）还是第一类  。
+这是一个里程碑式的洞见。一个在函数的无限维世界中的问题被简化为中学代数中的一个有限维问题。这个方法是求解一大类 Fredholm 方程的关键，无论是第二类（如此例）还是第一类 [@problem_id:1105789] [@problem_id:1091099]。
 
 ### 世界如矩阵：用计算驾驭无限
 
 大自然很少会仁慈到给我们带有简单、可解的核的方程。对于大多数现实世界的问题，我们需要使用计算机找到近似解。核心思想是用有限和离散取代无限和连续。
 
-一个积分 $\int_a^b \phi(t)dt$ 本质上是一个连续和。我们可以用在一组点 $t_j$ 上的有限加权和来近似它：$\sum_j w_j \phi(t_j)$。这被称为**[数值积分](@article_id:302993)**。让我们将此应用于一个 Fredholm 方程：
+一个积分 $\int_a^b \phi(t)dt$ 本质上是一个连续和。我们可以用在一组点 $t_j$ 上的有限加权和来近似它：$\sum_j w_j \phi(t_j)$。这被称为**[数值积分](@keyword=numerical_integration|lang=zh-CN|style=Feynman)**。让我们将此应用于一个 Fredholm 方程：
 
 $$f(x) + \int_0^1 (x+t)f(t)dt = x^2$$
 
@@ -93,8 +93,8 @@ $$f(x) + \int_0^1 (x+t)f(t)dt = x^2$$
 
 $$f_i + \sum_{j=1}^3 w_j (x_i+t_j)f_j = x_i^2$$
 
-这是一个关于未知值 $f_1, f_2, f_3$ 的线性方程组。我们可以把它写成著名的矩阵形式 $A\mathbf{f} = \mathbf{b}$，其中 $\mathbf{f}$ 是我们未知函数值的向量。积分算子变成了一个**矩阵** 。曾经的微积分问题现在变成了线性代数问题，一个计算机称霸的领域。
+这是一个关于未知值 $f_1, f_2, f_3$ 的线性方程组。我们可以把它写成著名的矩阵形式 $A\mathbf{f} = \mathbf{b}$，其中 $\mathbf{f}$ 是我们未知函数值的向量。积分算子变成了一个**矩阵** [@problem_id:1376762]。曾经的微积分问题现在变成了线性代数问题，一个计算机称霸的领域。
 
-这个思想可以推广到强大的**[矩量法](@article_id:334639)**。我们不只是在点上匹配方程，而是将未知函数 $f(y)$ 近似为一系列简单的、已知的**基函数**（如正弦、余弦或多项式）的和。然后，我们坚持我们近似中的误差在某种意义上与一组**权函数**“正交”。这将积分方程转化为一个关于我们基函数未知系数的[矩阵方程](@article_id:382321)。对[权函数](@article_id:355029)的不同选择会导致不同的方案，如点配法（[配置法](@article_id:299333)）或 Galerkin 法，每种方法在准确性和复杂性上都有其自身的权衡 。这一理念是许多现代计算技术（如[有限元法](@article_id:297335)）的基石，使我们能够模拟从天线周围的[电磁场](@article_id:329585)到桥梁的[结构完整性](@article_id:344664)等一切事物。
+这个思想可以推广到强大的**[矩量法](@keyword=method_of_moments|lang=zh-CN|style=Feynman)**。我们不只是在点上匹配方程，而是将未知函数 $f(y)$ 近似为一系列简单的、已知的**基函数**（如正弦、余弦或多项式）的和。然后，我们坚持我们近似中的误差在某种意义上与一组**权函数**“正交”。这将积分方程转化为一个关于我们基函数未知系数的[矩阵方程](@keyword=matrix_equations|lang=zh-CN|style=Feynman)。对[权函数](@keyword=weight_function|lang=zh-CN|style=Feynman)的不同选择会导致不同的方案，如点配法（[配置法](@keyword=collocation_method|lang=zh-CN|style=Feynman)）或 Galerkin 法，每种方法在准确性和复杂性上都有其自身的权衡 [@problem_id:1622880]。这一理念是许多现代计算技术（如[有限元法](@keyword=finite_element_method|lang=zh-CN|style=Feynman)）的基石，使我们能够模拟从天线周围的[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)到桥梁的[结构完整性](@keyword=structural_integrity|lang=zh-CN|style=Feynman)等一切事物。
 
-从[导数](@article_id:318324)的伪装到计算的蓝图，[积分方程](@article_id:299091)的原理揭示了数学、物理学和工程学之间深刻的统一性，一次又一次地向我们展示了如何在表面的复杂性中找到优雅的简洁性。
+从[导数](@keyword=derivative|lang=zh-CN|style=Feynman)的伪装到计算的蓝图，[积分方程](@keyword=integral_equations|lang=zh-CN|style=Feynman)的原理揭示了数学、物理学和工程学之间深刻的统一性，一次又一次地向我们展示了如何在表面的复杂性中找到优雅的简洁性。

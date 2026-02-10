@@ -27,7 +27,7 @@ And with one final, elegant step, we divide by 2:
 
 $$ \frac{a+b}{2} \ge \sqrt{ab} $$
 
-And there it is! The famous AM-GM inequality for two numbers, born from a truth so basic it is almost self-evident. The [arithmetic mean](@article_id:164861) (the average we all learn in grade school) is always greater than or equal to the geometric mean. And when are they equal? Well, that happens only when our starting statement was exactly zero, which means $\sqrt{a} - \sqrt{b} = 0$, or simply $a=b$. This simple derivation is the bedrock of everything that follows. It's a beautiful example of how profound ideas can hide inside trivial ones.
+And there it is! The famous AM-GM inequality for two numbers, born from a truth so basic it is almost self-evident. The [arithmetic mean](@keyword=arithmetic_mean|lang=en-US|style=Feynman) (the average we all learn in grade school) is always greater than or equal to the geometric mean. And when are they equal? Well, that happens only when our starting statement was exactly zero, which means $\sqrt{a} - \sqrt{b} = 0$, or simply $a=b$. This simple derivation is the bedrock of everything that follows. It's a beautiful example of how profound ideas can hide inside trivial ones.
 
 ### A Symphony of Inequalities: Discovering Unity
 
@@ -39,7 +39,7 @@ One of the most powerful tools in a mathematician's arsenal is the **Cauchy-Schw
 
 $$ (a_1 b_1 + a_2 b_2)^2 \le (a_1^2 + a_2^2)(b_1^2 + b_2^2) $$
 
-This might seem unrelated to our means. But now for the magic trick. Let's make a clever choice of variables, a trick akin to choosing the right lens to view a problem . Let's pick $a_1 = \sqrt{x}$ and $a_2 = \sqrt{y}$, and for the second pair, let's swap them: $b_1 = \sqrt{y}$ and $b_2 = \sqrt{x}$. Let's see what Cauchy-Schwarz tells us now.
+This might seem unrelated to our means. But now for the magic trick. Let's make a clever choice of variables, a trick akin to choosing the right lens to view a problem [@problem_id:946023]. Let's pick $a_1 = \sqrt{x}$ and $a_2 = \sqrt{y}$, and for the second pair, let's swap them: $b_1 = \sqrt{y}$ and $b_2 = \sqrt{x}$. Let's see what Cauchy-Schwarz tells us now.
 
 The left side becomes $(\sqrt{x}\sqrt{y} + \sqrt{y}\sqrt{x})^2 = (2\sqrt{xy})^2 = 4xy$.
 
@@ -59,7 +59,7 @@ $$ f\left(\frac{t_1+t_2}{2}\right) \le \frac{f(t_1)+f(t_2)}{2} $$
 
 The value of the function at the midpoint is less than or equal to the average of its values at the endpoints.
 
-Now, let's consider the function $f(t) = -\ln(t)$. If you remember its graph, it curves upwards, making it a perfect convex "bowl". Let's apply Jensen's inequality to this specific function, choosing our points to be $t_1 = x$ and $t_2 = y$ for any two positive numbers $x$ and $y$ .
+Now, let's consider the function $f(t) = -\ln(t)$. If you remember its graph, it curves upwards, making it a perfect convex "bowl". Let's apply Jensen's inequality to this specific function, choosing our points to be $t_1 = x$ and $t_2 = y$ for any two positive numbers $x$ and $y$ [@problem_id:2294874].
 
 $$ -\ln\left(\frac{x+y}{2}\right) \le \frac{(-\ln x) + (-\ln y)}{2} $$
 
@@ -75,13 +75,13 @@ This is perhaps the most elegant proof. It shows that the AM-GM inequality is ju
 
 ### From Two to Infinity: The Art of Induction
 
-It's wonderful that the inequality works for two numbers. But what about three, five, or a million? Proving it for any number of terms, $n$, requires a stroke of genius. The great mathematician Augustin-Louis Cauchy came up with a spectacular method called **[forward-backward induction](@article_id:149413)**.
+It's wonderful that the inequality works for two numbers. But what about three, five, or a million? Proving it for any number of terms, $n$, requires a stroke of genius. The great mathematician Augustin-Louis Cauchy came up with a spectacular method called **[forward-backward induction](@keyword=forward_backward_induction|lang=en-US|style=Feynman)**.
 
-The "forward" part is straightforward: you show that if the inequality holds for $n$ numbers, it also holds for $2n$ numbers. Starting from our proven case of $n=2$, we can prove it for $n=4$, then $n=8$, $n=16$, and so on for all [powers of two](@article_id:195834).
+The "forward" part is straightforward: you show that if the inequality holds for $n$ numbers, it also holds for $2n$ numbers. Starting from our proven case of $n=2$, we can prove it for $n=4$, then $n=8$, $n=16$, and so on for all [powers of two](@keyword=powers_of_two|lang=en-US|style=Feynman).
 
 But what about the numbers in between, like $n=7$? This is where Cauchy's brilliance shines with the "backward" step. He showed that if the inequality holds for some number of terms, say $n$, you can prove it also holds for $n-1$ terms.
 
-Let's see how this magic works. Suppose we know for a fact that the AM-GM holds for 8 numbers, and we want to prove it for 7 numbers, say $a_1, a_2, \dots, a_7$ . The trick is to invent an eighth number, $x_8$, and choose it so cleverly that the average of all eight numbers is exactly the same as the average of our original seven. Let's call the average of our seven numbers $A_7 = \frac{a_1 + \dots + a_7}{7}$. If we choose our eighth number to be $x_8 = A_7$, the average of the eight numbers becomes $\frac{(a_1 + \dots + a_7) + A_7}{8} = \frac{7A_7 + A_7}{8} = A_7$. The average doesn't change!
+Let's see how this magic works. Suppose we know for a fact that the AM-GM holds for 8 numbers, and we want to prove it for 7 numbers, say $a_1, a_2, \dots, a_7$ [@problem_id:1316753]. The trick is to invent an eighth number, $x_8$, and choose it so cleverly that the average of all eight numbers is exactly the same as the average of our original seven. Let's call the average of our seven numbers $A_7 = \frac{a_1 + \dots + a_7}{7}$. If we choose our eighth number to be $x_8 = A_7$, the average of the eight numbers becomes $\frac{(a_1 + \dots + a_7) + A_7}{8} = \frac{7A_7 + A_7}{8} = A_7$. The average doesn't change!
 
 Now we apply the 8-number AM-GM inequality, which we assume is true:
 
@@ -107,17 +107,17 @@ While these proofs are beautiful, you might be asking: what is this all *for*? O
 
 #### The Sweet Spot of a Microprocessor
 
-Imagine you are designing a microprocessor. Its [power consumption](@article_id:174423), $P$, depends on its clock frequency, $f$. A simplified model might look like this: $P(f) = A f + \frac{B}{f}$, where the $Af$ term represents power that increases with speed, and the $B/f$ term represents [static power](@article_id:165094) leakage that becomes more significant at lower speeds . Your goal is to find the frequency $f$ that *minimizes* the total power dissipation to prevent overheating.
+Imagine you are designing a microprocessor. Its [power consumption](@keyword=power_consumption|lang=en-US|style=Feynman), $P$, depends on its clock frequency, $f$. A simplified model might look like this: $P(f) = A f + \frac{B}{f}$, where the $Af$ term represents power that increases with speed, and the $B/f$ term represents [static power](@keyword=static_power|lang=en-US|style=Feynman) leakage that becomes more significant at lower speeds [@problem_id:1364202]. Your goal is to find the frequency $f$ that *minimizes* the total power dissipation to prevent overheating.
 
 You could use calculus, take derivatives, and set them to zero. Or, you can just look at the expression. It's a sum of two positive terms, $Af$ and $B/f$. The AM-GM inequality immediately tells us:
 
 $$ P(f) = Af + \frac{B}{f} \ge 2\sqrt{Af \cdot \frac{B}{f}} = 2\sqrt{AB} $$
 
-Just like that, we've found the absolute minimum possible power dissipation: $2\sqrt{AB}$. It can never be lower than this value, no matter what frequency you choose. And when is this minimum achieved? When the two terms are equal: $Af = B/f$, which means the optimal frequency is $f = \sqrt{B/A}$. No derivatives, no complex algebra, just a direct and powerful insight. A similar principle allows engineers to find the maximum possible throughput in processor designs by minimizing interference between cores .
+Just like that, we've found the absolute minimum possible power dissipation: $2\sqrt{AB}$. It can never be lower than this value, no matter what frequency you choose. And when is this minimum achieved? When the two terms are equal: $Af = B/f$, which means the optimal frequency is $f = \sqrt{B/A}$. No derivatives, no complex algebra, just a direct and powerful insight. A similar principle allows engineers to find the maximum possible throughput in processor designs by minimizing interference between cores [@problem_id:1364175].
 
 #### The Art of the Deal: Constrained Optimization
 
-The real power move is using AM-GM for more complex problems where you need to maximize something under a constraint. Suppose you have a fixed budget, say $2x + 5y = 20$, and you want to maximize a product, say $P = x^2y$ .
+The real power move is using AM-GM for more complex problems where you need to maximize something under a constraint. Suppose you have a fixed budget, say $2x + 5y = 20$, and you want to maximize a product, say $P = x^2y$ [@problem_id:2327754].
 
 Here, a naive application of AM-GM won't work. The key is to be clever. We want to maximize a product involving two $x$'s and one $y$. The inequality connects a product of terms to their sum. So, let's try to construct a sum of terms from our constraint that matches the product we want to optimize. Our product is $x \cdot x \cdot y$. Let's try to use the terms $x, x, 5y$. Their sum is $2x+5y$, which we know is 20! Now we can apply AM-GM to these three terms:
 
@@ -137,7 +137,7 @@ This maximum is achieved when the terms we chose are equal: $x = 5y$. This is th
 
 We've seen that equality in the AM-GM holds only when all the numbers are identical. This is a state of perfect balance. But what happens when they are just *almost* equal? How big is the gap between the arithmetic and geometric means?
 
-It turns out the difference is not just some random amount. Near the point of equality, the [arithmetic mean](@article_id:164861) is only *quadratically* larger than the geometric mean. Think about the function $f(x)=x^2$. Near $x=0$, the function is very flat. The difference between the means behaves in a similar way. One way to quantify this is to look at the "curvature" of the difference between the two sides of the inequality .
+It turns out the difference is not just some random amount. Near the point of equality, the [arithmetic mean](@keyword=arithmetic_mean|lang=en-US|style=Feynman) is only *quadratically* larger than the geometric mean. Think about the function $f(x)=x^2$. Near $x=0$, the function is very flat. The difference between the means behaves in a similar way. One way to quantify this is to look at the "curvature" of the difference between the two sides of the inequality [@problem_id:2288741].
 
 Analysis shows that for $n$ numbers, the "local curvature" of this difference at the point of equality is precisely $\frac{n-1}{n}$. This is a beautiful result! For two numbers ($n=2$), the value is $\frac{1}{2}$. For 40 numbers, it's $\frac{39}{40} = 0.975$. As $n$ gets very large, this value gets closer and closer to 1. This tells us in a very precise way how "tight" the inequality is, and how sharply it pulls away from equality as the numbers begin to differ.
 

@@ -21,7 +21,7 @@ This clever setup, however, creates a new puzzle. Imagine two particles, let's c
 
 Which distance is correct for calculating the force between them? If they are atoms, they should only interact when they are very close. A distance of $9.8$ units might mean they don't feel each other at all, while a distance of $0.2$ units could mean a powerful repulsive force. To get the physics right, we must choose the latter.
 
-This leads us to the **Minimum Image Convention (MIC)**. It's a simple, yet profound, rule: **The interaction between any two particles is always based on the shortest possible distance between them, considering all periodic copies.**   In our example, particle $i$ doesn't interact with the particle $j$ that is $9.8$ units away inside the main box. Instead, it interacts with the "ghost" of particle $j$ from the neighboring box, which is only $0.2$ units away. We always pick the interaction with the *closest image*. This ensures that a particle never interacts with another particle and its distant periodic copy at the same time.
+This leads us to the **Minimum Image Convention (MIC)**. It's a simple, yet profound, rule: **The interaction between any two particles is always based on the shortest possible distance between them, considering all periodic copies.** [@problem_id:1981010] [@problem_id:2121023] In our example, particle $i$ doesn't interact with the particle $j$ that is $9.8$ units away inside the main box. Instead, it interacts with the "ghost" of particle $j$ from the neighboring box, which is only $0.2$ units away. We always pick the interaction with the *closest image*. This ensures that a particle never interacts with another particle and its distant periodic copy at the same time.
 
 ### A Simple Recipe for Infinite Space
 
@@ -33,9 +33,9 @@ A single, elegant line of code can handle all cases for a given component, say $
 $$
 \Delta x_{\text{MIC}} = \Delta x - L_x \cdot \text{round}\left(\frac{\Delta x}{L_x}\right)
 $$
-where `round()` is the function that gives the nearest integer.  Let's see this in action with a concrete 2D example. Suppose we have a square box of side length $L=12.0$. Particle 1 is at $(5.1, -2.3)$ and Particle 2 is at $(-5.5, 3.8)$. 
+where `round()` is the function that gives the nearest integer. [@problem_id:109639] Let's see this in action with a concrete 2D example. Suppose we have a square box of side length $L=12.0$. Particle 1 is at $(5.1, -2.3)$ and Particle 2 is at $(-5.5, 3.8)$. [@problem_id:1994841]
 
-The raw [displacement vector](@article_id:262288) is:
+The raw [displacement vector](@keyword=displacement_vector|lang=en-US|style=Feynman) is:
 $$
 \Delta x = -5.5 - 5.1 = -10.6
 $$
@@ -49,36 +49,36 @@ $$
 $$
 \Delta y_{\text{MIC}} = 6.1 - 12.0 \cdot \text{round}\left(\frac{6.1}{12.0}\right) = 6.1 - 12.0 \cdot (1) = -5.9
 $$
-The true, minimum-image distance is $\sqrt{(1.4)^2 + (-5.9)^2} \approx 6.1$. The recipe has automatically found the shortest path, which in this case involves wrapping across both the $x$ and $y$ boundaries. This simple logic works perfectly, even for non-cubic boxes or when particles have coordinates outside the primary box.  
+The true, minimum-image distance is $\sqrt{(1.4)^2 + (-5.9)^2} \approx 6.1$. The recipe has automatically found the shortest path, which in this case involves wrapping across both the $x$ and $y$ boundaries. This simple logic works perfectly, even for non-cubic boxes or when particles have coordinates outside the primary box. [@problem_id:2458300] [@problem_id:2804054]
 
 ### The Rules of the Game: Why Size Matters
 
-This beautiful convention comes with one critical "golden rule." In most simulations, we know that forces between particles fade quickly with distance. To save computational time, we introduce a **[cutoff radius](@article_id:136214)**, $r_c$. If two particles are farther apart than $r_c$, we assume the force between them is zero and don't bother calculating it.
+This beautiful convention comes with one critical "golden rule." In most simulations, we know that forces between particles fade quickly with distance. To save computational time, we introduce a **[cutoff radius](@keyword=cutoff_radius|lang=en-US|style=Feynman)**, $r_c$. If two particles are farther apart than $r_c$, we assume the force between them is zero and don't bother calculating it.
 
 For the Minimum Image Convention to work without ambiguity, we must obey the following condition:
 $$
 L > 2r_c \quad \text{or equivalently} \quad r_c < \frac{L}{2}
 $$
-The [cutoff radius](@article_id:136214) must be smaller than half the simulation box length. 
+The [cutoff radius](@keyword=cutoff_radius|lang=en-US|style=Feynman) must be smaller than half the simulation box length. [@problem_id:2909611]
 
-Why? Imagine a sphere of influence with radius $r_c$ centered on a particle. This sphere defines its interaction zone. The condition $r_c < L/2$ guarantees that this interaction sphere is always smaller than the simulation box itself. This ensures that the sphere can only ever contain, at most, one image of any other particle. If the sphere were larger than half the box ($r_c > L/2$), it could become large enough to simultaneously enclose a particle *and* its periodic image, leading to [double-counting](@article_id:152493) and nonsensical physics.
+Why? Imagine a sphere of influence with radius $r_c$ centered on a particle. This sphere defines its interaction zone. The condition $r_c < L/2$ guarantees that this interaction sphere is always smaller than the simulation box itself. This ensures that the sphere can only ever contain, at most, one image of any other particle. If the sphere were larger than half the box ($r_c > L/2$), it could become large enough to simultaneously enclose a particle *and* its periodic image, leading to [double-counting](@keyword=double_counting|lang=en-US|style=Feynman) and nonsensical physics.
 
 ### When Good Simulations Go Bad
 
 What happens if we break the rules? The consequences can range from subtly wrong to catastrophically explosive.
 
-First, let's consider simply forgetting to use the MIC. Imagine again our two particles at opposite ends of the box ($x_1=0.1\sigma, x_2=9.9\sigma$ in a box of $10\sigma$). Their true distance is a tiny $0.2\sigma$, but without MIC, the simulation calculates their distance as $9.8\sigma$. If the interaction cutoff $r_c$ is, say, $2.5\sigma$, the simulation will conclude that these particles are too far apart to interact. It will calculate zero force between them. Instead of feeling a strong repulsion and bouncing off each other, they will serenely drift right past one another.  If we build statistics from such a simulation, like the **radial distribution function** $g(r)$ which measures the probability of finding particles at certain distances, we would systematically miss all these close pairs that straddle a boundary. Our results would falsely show a void of particles at close range, a complete misrepresentation of the liquid's structure.
+First, let's consider simply forgetting to use the MIC. Imagine again our two particles at opposite ends of the box ($x_1=0.1\sigma, x_2=9.9\sigma$ in a box of $10\sigma$). Their true distance is a tiny $0.2\sigma$, but without MIC, the simulation calculates their distance as $9.8\sigma$. If the interaction cutoff $r_c$ is, say, $2.5\sigma$, the simulation will conclude that these particles are too far apart to interact. It will calculate zero force between them. Instead of feeling a strong repulsion and bouncing off each other, they will serenely drift right past one another. [@problem_id:2414428] If we build statistics from such a simulation, like the **radial distribution function** $g(r)$ which measures the probability of finding particles at certain distances, we would systematically miss all these close pairs that straddle a boundary. Our results would falsely show a void of particles at close range, a complete misrepresentation of the liquid's structure.
 
 Now for the more spectacular failure: violating the $L > 2r_c$ rule. Suppose you defiantly set your cutoff to be larger than half the box, for instance $r_c = 0.6L$. This creates a situation where a particle's sphere of influence is large enough to reach its own periodic image in the next box. A naive algorithm might then try to calculate the force between a particle and its own ghost. The MIC recipe, when asked for the shortest distance between a particle and its own image (which is exactly one box length away, e.g., at a displacement of $(L, 0, 0)$), returns a distance of zero!
 $$
 \Delta x_{\text{MIC}} = L - L \cdot \text{round}\left(\frac{L}{L}\right) = L - L \cdot 1 = 0
 $$
-For potentials like the Lennard-Jones potential, which models atomic interactions, the energy and force skyrocket to infinity as the distance approaches zero. The result? The simulation blows up, producing infinite forces and energies—a numerical catastrophe.  This golden rule is not a mere suggestion; it is a fundamental requirement for a stable and meaningful simulation.
+For potentials like the Lennard-Jones potential, which models atomic interactions, the energy and force skyrocket to infinity as the distance approaches zero. The result? The simulation blows up, producing infinite forces and energies—a numerical catastrophe. [@problem_id:2426588] This golden rule is not a mere suggestion; it is a fundamental requirement for a stable and meaningful simulation.
 
 ### The Boundary of Our Perfect Illusion
 
 The Minimum Image Convention is a masterful trick that allows us to probe the infinite from within the finite. But we must remain humble and recognize the limits of our illusion. The periodic box, while removing surface effects, imposes an artificial periodicity on the system. The liquid "knows" it is in a box of size $L$.
 
-This has a direct consequence on what we can reliably measure. When we calculate a property like the [radial distribution function](@article_id:137172) $g(r)$, we are counting pairs in spherical shells. As soon as our shell radius $r$ exceeds half the box length ($r > L/2$), the sphere becomes larger than the box and gets "clipped" by the boundaries of the periodic cell. We are no longer sampling a full sphere. Yet, our normalization procedure usually divides by the volume of a full sphere. This mismatch means we are systematically undercounting pairs, causing the calculated $g(r)$ to be artificially low for any $r > L/2$. 
+This has a direct consequence on what we can reliably measure. When we calculate a property like the [radial distribution function](@keyword=radial_distribution_function|lang=en-US|style=Feynman) $g(r)$, we are counting pairs in spherical shells. As soon as our shell radius $r$ exceeds half the box length ($r > L/2$), the sphere becomes larger than the box and gets "clipped" by the boundaries of the periodic cell. We are no longer sampling a full sphere. Yet, our normalization procedure usually divides by the volume of a full sphere. This mismatch means we are systematically undercounting pairs, causing the calculated $g(r)$ to be artificially low for any $r > L/2$. [@problem_id:2664833]
 
 Therefore, the maximum distance for which we can trust our structural measurements is half the shortest dimension of our simulation box. The world we create is beautifully seamless, but only up to a certain scale. The Minimum Image Convention gives us a perfect, clear window into the molecular world, but that window is always, at most, half a box-length wide. Knowing this limit is just as important as knowing the rule itself—it is the signature of a careful and honest scientist.

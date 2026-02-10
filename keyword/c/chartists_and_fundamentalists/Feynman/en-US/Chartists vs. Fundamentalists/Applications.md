@@ -14,11 +14,11 @@ A market populated only by fundamentalists is, in a sense, a rather dull place. 
 
 But what happens when the chartists arrive? They introduce positive feedback. If they see the price going up, they buy, pushing it further up. This self-reinforcing behavior is the seed of instability. The central drama of the market is the battle between the stabilizing pull of the fundamentalists and the destabilizing push of the chartists.
 
-Our model allows us to analyze this drama with mathematical precision. We find that the stability of the "fundamental equilibrium," where the price calmly reflects its true value, depends critically on the relative strength and number of these two groups. There is a tipping point. If the influence of trend-followers—a combination of their population size and their aggressiveness—becomes too strong, the negative feedback of the fundamentalists is overwhelmed. The equilibrium shatters. The system can spontaneously develop wild oscillations or even explosive bubbles and crashes, all without any external news or change in the fundamental value itself . The transition from a stable market to an unstable one is not gradual; it is a sharp phase transition, like water suddenly freezing into ice. This tells us that market crashes may not always be caused by external shocks, but can be an *endogenous* feature of the market's own structure .
+Our model allows us to analyze this drama with mathematical precision. We find that the stability of the "fundamental equilibrium," where the price calmly reflects its true value, depends critically on the relative strength and number of these two groups. There is a tipping point. If the influence of trend-followers—a combination of their population size and their aggressiveness—becomes too strong, the negative feedback of the fundamentalists is overwhelmed. The equilibrium shatters. The system can spontaneously develop wild oscillations or even explosive bubbles and crashes, all without any external news or change in the fundamental value itself [@problem_id:1120154]. The transition from a stable market to an unstable one is not gradual; it is a sharp phase transition, like water suddenly freezing into ice. This tells us that market crashes may not always be caused by external shocks, but can be an *endogenous* feature of the market's own structure [@problem_id:2399123].
 
 #### Anatomy of a "Black Swan"
 
-The world, of course, is not free of shocks. Companies fail, new technologies emerge, and geopolitical events send tremors through the financial system. How does our heterogeneous market react to a sudden, large shock—a so-called "Black Swan" event? We can use our model as a virtual laboratory to find out .
+The world, of course, is not free of shocks. Companies fail, new technologies emerge, and geopolitical events send tremors through the financial system. How does our heterogeneous market react to a sudden, large shock—a so-called "Black Swan" event? We can use our model as a virtual laboratory to find out [@problem_id:2372744].
 
 Imagine we simulate a market that has been humming along, and then we suddenly slash the fundamental value of the asset. What happens next depends entirely on the composition of our market. In a market dominated by sober fundamentalists, the price will drop, yes, but it will likely find its new, lower equilibrium relatively quickly and efficiently.
 
@@ -30,7 +30,7 @@ If our model can help us understand the anatomy of a crash, can it also help us 
 
 Consider the "circuit breaker" mechanisms used by modern stock exchanges, which automatically halt trading for a period if the market falls by a certain percentage in a single day. The idea is to give investors a "time-out" to cool down and digest information, breaking the momentum of a panic.
 
-Does it work? We can build a circuit breaker directly into our model . We can set up a market on the brink of instability, dominated by chartists, and watch what happens during a crash. Does the trading halt successfully dampen the panic, allowing fundamentalists to step in and stabilize the price? Or does it merely delay the inevitable, with the panic resuming as soon as the market reopens? By running these simulations under various conditions—different halt durations, different chartist-to-fundamentalist ratios—we can gain invaluable insights into the effectiveness of such regulatory tools, all within the safety of a computer.
+Does it work? We can build a circuit breaker directly into our model [@problem_id:2399081]. We can set up a market on the brink of instability, dominated by chartists, and watch what happens during a crash. Does the trading halt successfully dampen the panic, allowing fundamentalists to step in and stabilize the price? Or does it merely delay the inevitable, with the panic resuming as soon as the market reopens? By running these simulations under various conditions—different halt durations, different chartist-to-fundamentalist ratios—we can gain invaluable insights into the effectiveness of such regulatory tools, all within the safety of a computer.
 
 ### Expanding the Frontiers of Finance
 
@@ -38,7 +38,7 @@ The simple dichotomy of chartists and fundamentalists is surprisingly powerful, 
 
 #### The New Frontier: Pricing Cryptocurrencies
 
-How do you determine the "fundamental value" of an asset like Bitcoin, which produces no dividends, has no earnings, and isn't backed by any government? Traditional valuation models struggle here. Our framework, however, offers a path forward .
+How do you determine the "fundamental value" of an asset like Bitcoin, which produces no dividends, has no earnings, and isn't backed by any government? Traditional valuation models struggle here. Our framework, however, offers a path forward [@problem_id:2372765].
 
 We can redefine the "fundamental value" away from traditional corporate metrics. For a cryptocurrency, the value might be derived from the health and activity of its underlying network. We could propose that the "dividend" is a function of the network's total computing power (the hashrate, $H_t$) and the transaction fees ($F_t$) it generates. A growing, active network is fundamentally more valuable than a stagnant one.
 
@@ -48,9 +48,9 @@ Once we have this new definition for fundamental value, $v_t = f(H_t, F_t)$, the
 
 Markets trade more than just assets; they trade ideas and feelings *about* those assets. One of the most important of these is volatility, a measure of the market's uncertainty or "fear." Can our model handle an asset whose very payoff is based on the future gyrations of the market?
 
-Let's imagine a contract called a "volatility swap." Its final payoff isn't tied to the price of a stock, but to the *[realized volatility](@article_id:636409)* of that stock over the next month. Trading this contract is, in essence, making a bet on how choppy the market will be.
+Let's imagine a contract called a "volatility swap." Its final payoff isn't tied to the price of a stock, but to the *[realized volatility](@keyword=realized_volatility|lang=en-US|style=Feynman)* of that stock over the next month. Trading this contract is, in essence, making a bet on how choppy the market will be.
 
-Who trades this? We can imagine two types of agents . The "fundamentalist" believes that volatility, like most things, has a long-run average. After a period of calm or chaos, they expect it to revert to its historical norm. The "chartist," on the other hand, extrapolates the recent past. If the market has been volatile, they expect it to remain volatile. The price of this volatility swap becomes a weighted average of these two beliefs, with the weights determined by each group's capital and tolerance for risk. This elegant application shows how the model can be lifted to a higher level of abstraction, explaining the pricing of complex derivatives that depend on the market's second-order properties.
+Who trades this? We can imagine two types of agents [@problem_id:2372785]. The "fundamentalist" believes that volatility, like most things, has a long-run average. After a period of calm or chaos, they expect it to revert to its historical norm. The "chartist," on the other hand, extrapolates the recent past. If the market has been volatile, they expect it to remain volatile. The price of this volatility swap becomes a weighted average of these two beliefs, with the weights determined by each group's capital and tolerance for risk. This elegant application shows how the model can be lifted to a higher level of abstraction, explaining the pricing of complex derivatives that depend on the market's second-order properties.
 
 ### A Universal Dance: The Model Beyond Finance
 
@@ -58,11 +58,11 @@ Perhaps the most profound insight comes when we take our lens and point it away 
 
 #### The Ecology of Markets
 
-Consider a simple ecosystem containing two species: predators (like wolves) and prey (like rabbits) . Their populations, $Y_t$ and $X_t$, are intertwined in a classic cycle described by the Lotka-Volterra equations: more rabbits lead to more wolves, which leads to fewer rabbits, which leads to fewer wolves, and so on.
+Consider a simple ecosystem containing two species: predators (like wolves) and prey (like rabbits) [@problem_id:2372736]. Their populations, $Y_t$ and $X_t$, are intertwined in a classic cycle described by the Lotka-Volterra equations: more rabbits lead to more wolves, which leads to fewer rabbits, which leads to fewer wolves, and so on.
 
 Now, let's perform a thought experiment. Imagine two "assets" whose "dividends" are simply the populations of these two species. And imagine two types of "traders" trying to value these assets. The "fundamentalists" are ecologists. They use their knowledge of the Lotka-Volterra dynamics to forecast the future populations and thus calculate a fundamental value for each "species asset." The "chartists" are simple trend-followers; they know nothing of ecology and just buy whichever "asset" (population) has been rising recently.
 
-When we build a market with these agents, the "prices" of the assets—the perceived value of being a rabbit or a wolf—begin to exhibit their own complex dynamics, layered on top of the underlying ecological cycle. The interaction between [ecological forecasting](@article_id:191942) and simple trend-following creates bubbles and crashes in perceived species value. This astonishing connection suggests that the chartist-fundamentalist framework isn't just about finance. It is a model of *competing predictive strategies* in any system with an underlying, Causal dynamic and social, imitative behavior.
+When we build a market with these agents, the "prices" of the assets—the perceived value of being a rabbit or a wolf—begin to exhibit their own complex dynamics, layered on top of the underlying ecological cycle. The interaction between [ecological forecasting](@keyword=ecological_forecasting|lang=en-US|style=Feynman) and simple trend-following creates bubbles and crashes in perceived species value. This astonishing connection suggests that the chartist-fundamentalist framework isn't just about finance. It is a model of *competing predictive strategies* in any system with an underlying, Causal dynamic and social, imitative behavior.
 
 ### Conclusion
 

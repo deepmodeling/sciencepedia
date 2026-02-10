@@ -3,7 +3,7 @@ The world around us, from a simple grain of salt to a complex semiconductor chip
 
 ## Principles and Mechanisms
 
-Imagine you are designing wallpaper. Not just any wallpaper, but one with a perfectly repeating pattern that could tile an infinitely large wall without any gaps or overlaps. Your first decision isn't about the picture, but about the *rule* of repetition. You might decide, "The pattern repeats every 30 centimeters to the right, and every 50 centimeters upwards." This set of instructions, this invisible grid of points where the pattern begins anew, is the very soul of what physicists call a **crystal lattice**. It's a purely mathematical concept, a ghost in the machine—an abstract framework of translational symmetry .
+Imagine you are designing wallpaper. Not just any wallpaper, but one with a perfectly repeating pattern that could tile an infinitely large wall without any gaps or overlaps. Your first decision isn't about the picture, but about the *rule* of repetition. You might decide, "The pattern repeats every 30 centimeters to the right, and every 50 centimeters upwards." This set of instructions, this invisible grid of points where the pattern begins anew, is the very soul of what physicists call a **crystal lattice**. It's a purely mathematical concept, a ghost in the machine—an abstract framework of translational symmetry [@problem_id:2126040].
 
 Now, what do you place on each point of this grid? A single red rose? A cluster of two blue birds? A complex curlicue? This physical object, or group of objects, that you copy and paste onto every single lattice point is the **motif**, or more formally, the **basis**. The wallpaper itself—the final, tangible pattern of roses or birds—is the **crystal structure**.
 
@@ -15,13 +15,13 @@ This isn't just a conceptual slogan; it's a precise mathematical construction. A
 
 $$\mathbf{R} = n_1 \mathbf{a}_1 + n_2 \mathbf{a}_2 + n_3 \mathbf{a}_3$$
 
-The coefficients $n_1, n_2, n_3$ must be integers ($\mathbb{Z}$). Why not any real number? That would fill all of space. Why not any rational number? That would create a set that is "dense," meaning you could always find another point between any two, no matter how close. Only integers guarantee a discrete set of points with a minimum separation, the very essence of a crystal's orderly but non-continuous nature . The lattice is the rhythm. The basis, a collection of atoms at specific positions relative to each lattice point, provides the melody.
+The coefficients $n_1, n_2, n_3$ must be integers ($\mathbb{Z}$). Why not any real number? That would fill all of space. Why not any rational number? That would create a set that is "dense," meaning you could always find another point between any two, no matter how close. Only integers guarantee a discrete set of points with a minimum separation, the very essence of a crystal's orderly but non-continuous nature [@problem_id:2477468]. The lattice is the rhythm. The basis, a collection of atoms at specific positions relative to each lattice point, provides the melody.
 
 ### The Art of Decoration: Building Real Crystals
 
 Let's become crystal architects. We'll start with a simple canvas: a 2D **hexagonal lattice**, which looks like a grid of equilateral triangles. It's a highly symmetric, rather simple pattern.
 
-Now, let's decorate it. What if our basis isn't a single atom, but two? If we place the first atom at the lattice point, where should the second one go? It turns out that if we place the second atom at a very specific spot—displaced by [fractional coordinates](@article_id:202721) of $(\frac{1}{3}, \frac{1}{3})$ along the [primitive lattice vectors](@article_id:270152)—something magical happens. The simple triangular grid is transformed into the beautiful and famously strong **honeycomb structure** of graphene . A more complex and functionally rich structure emerges not from changing the lattice, but from a clever choice of basis.
+Now, let's decorate it. What if our basis isn't a single atom, but two? If we place the first atom at the lattice point, where should the second one go? It turns out that if we place the second atom at a very specific spot—displaced by [fractional coordinates](@keyword=fractional_coordinates|lang=en-US|style=Feynman) of $(\frac{1}{3}, \frac{1}{3})$ along the [primitive lattice vectors](@keyword=primitive_lattice_vectors|lang=en-US|style=Feynman)—something magical happens. The simple triangular grid is transformed into the beautiful and famously strong **honeycomb structure** of graphene [@problem_id:1809045]. A more complex and functionally rich structure emerges not from changing the lattice, but from a clever choice of basis.
 
 
 

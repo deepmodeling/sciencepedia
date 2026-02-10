@@ -1,9 +1,9 @@
 ## Introduction
 Harnessing individual particles of light—photons—as the building blocks for a quantum computer has long been a captivating goal for physicists and engineers. Photons are robust against many forms of environmental noise and can travel at the ultimate speed limit. However, they present a monumental challenge: they do not naturally interact with one another, a property essential for performing the logical operations that lie at the heart of computation. This raises a fundamental question: how can we build a computer from components that refuse to "talk"?
 
-This article explores the groundbreaking theoretical solution to this puzzle: the Knill, Laflamme, and Milburn (KLM) scheme. The KLM scheme revealed a revolutionary and counter-intuitive path to achieving [universal quantum computation](@article_id:136706) using only simple linear optical elements like beam splitters and mirrors. It elegantly transforms the very act of [quantum measurement](@article_id:137834) from a passive observation into an active tool for inducing interactions.
+This article explores the groundbreaking theoretical solution to this puzzle: the Knill, Laflamme, and Milburn (KLM) scheme. The KLM scheme revealed a revolutionary and counter-intuitive path to achieving [universal quantum computation](@keyword=universal_quantum_computation|lang=en-US|style=Feynman) using only simple linear optical elements like beam splitters and mirrors. It elegantly transforms the very act of [quantum measurement](@keyword=quantum_measurement|lang=en-US|style=Feynman) from a passive observation into an active tool for inducing interactions.
 
-Throughout this article, we will embark on a journey to understand this remarkable theory. In the "Principles and Mechanisms" chapter, we will deconstruct the ingenious machinery of the KLM gate, explaining where its probabilistic nature comes from and how, through a clever process called heralding, this apparent weakness is tamed. Following that, in "Applications and Interdisciplinary Connections," we will explore the profound implications of this approach, examining the immense resource costs required for [fault-tolerant computing](@article_id:635841) and placing the KLM scheme in context with alternative paradigms for building a quantum computer.
+Throughout this article, we will embark on a journey to understand this remarkable theory. In the "Principles and Mechanisms" chapter, we will deconstruct the ingenious machinery of the KLM gate, explaining where its probabilistic nature comes from and how, through a clever process called heralding, this apparent weakness is tamed. Following that, in "Applications and Interdisciplinary Connections," we will explore the profound implications of this approach, examining the immense resource costs required for [fault-tolerant computing](@keyword=fault_tolerant_computing|lang=en-US|style=Feynman) and placing the KLM scheme in context with alternative paradigms for building a quantum computer.
 
 ## Principles and Mechanisms
 
@@ -17,9 +17,9 @@ Imagine the task is to build a **Controlled-NOT (CNOT) gate**. This is a corners
 
 So how do we build one? The KLM scheme shows that a CNOT gate can be constructed from a slightly different gate, a **Controlled-Sign (CS)** gate, by simply bookending it with some single-photon operations (Hadamard gates), which are easy to do. The CS gate is similar: if both control and target photons are in the $|1\rangle$ state, it multiplies the quantum state by $-1$. Otherwise, it does nothing. This sign flip *is* the interaction we're looking for, a subtle but powerful **measurement-induced nonlinearity**.
 
-But we still have the problem of making the photons "talk". The solution is a masterpiece of quantum choreography involving a concept you may have heard of: [quantum teleportation](@article_id:143991). Don't think of it as "beaming up" a photon from one place to another. Think of it as a perfect transfer of information, a way to move a quantum state from one particle to another without physically moving the original particle.
+But we still have the problem of making the photons "talk". The solution is a masterpiece of quantum choreography involving a concept you may have heard of: [quantum teleportation](@keyword=quantum_teleportation|lang=en-US|style=Feynman). Don't think of it as "beaming up" a photon from one place to another. Think of it as a perfect transfer of information, a way to move a quantum state from one particle to another without physically moving the original particle.
 
-Here's the dance :
+Here's the dance [@problem_id:719411]:
 
 1.  We take our control photon and "teleport" its quantum state onto an auxiliary photon, a sort of quantum stand-in.
 2.  This stand-in photon then performs a *deterministic* CS interaction with our original target photon.
@@ -44,7 +44,7 @@ A gate that fails 75% of the time seems like a deal-breaker. But what does "fail
 
 Think of it like a well-behaved vending machine. A bad vending machine might eat your money and give you nothing. A good one, if it can't dispense your soda, reports an error. The KLM gate is a very good vending machine in this sense. If it fails, the input photons for that attempt are lost, but you are clearly told about the failure so you can try again.
 
-So, what do you do when the gate heralds a failure? You just try again! 
+So, what do you do when the gate heralds a failure? You just try again! [@problem_id:686889]
 
 Let's see how much this simple strategy helps. We have our gate with a success probability of $p = 1/4$. We send our two photons into the first gate.
 
@@ -55,7 +55,7 @@ Now, for this second attempt:
 
 -   The chance of the first gate failing *and* the second gate succeeding is $(3/4) \times (1/4) = 3/16$.
 
-The total success probability is the chance of succeeding on the first try OR succeeding on the second try. Since these are [mutually exclusive events](@article_id:264624), we can just add their probabilities:
+The total success probability is the chance of succeeding on the first try OR succeeding on the second try. Since these are [mutually exclusive events](@keyword=mutually_exclusive_events|lang=en-US|style=Feynman), we can just add their probabilities:
 
 $$ P_{\text{total}} = P(\text{Success on 1st try}) + P(\text{Fail on 1st AND Success on 2nd}) $$
 $$ P_{\text{total}} = \frac{1}{4} + \frac{3}{16} = \frac{4}{16} + \frac{3}{16} = \frac{7}{16} $$

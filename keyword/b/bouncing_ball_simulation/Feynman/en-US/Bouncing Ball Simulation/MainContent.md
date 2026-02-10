@@ -1,7 +1,7 @@
 ## Introduction
 The motion of a bouncing ball is one of the first physics problems we encounter, a seemingly simple and predictable classroom example. Yet, beneath its familiar parabolic arcs lies a deep well of complexity that serves as a perfect introduction to a vast and important class of problems in science and engineering. The real challenge is not just in understanding the physics, but in teaching a computer to replicate it accurately. How do we model a system that blends smooth, continuous flight with the sharp, instantaneous violence of an impact?
 
-This article addresses this fundamental question, using the bouncing ball as a guide to the fascinating world of [hybrid dynamical systems](@article_id:144283). We will first delve into the core principles and numerical techniques needed to build a faithful simulation, exploring the pitfalls of naive approaches and the elegance of more sophisticated methods. From there, we will see how this "master key" unlocks doors to a surprising number of other fields, revealing the same underlying challenges in [robotics](@article_id:150129), video games, [disease modeling](@article_id:262462), and even [digital electronics](@article_id:268585). By mastering the simulation of a bouncing ball, you will gain a new language to describe the myriad systems that evolve smoothly for a while, and then change in a flash.
+This article addresses this fundamental question, using the bouncing ball as a guide to the fascinating world of [hybrid dynamical systems](@keyword=hybrid_dynamical_systems|lang=en-US|style=Feynman). We will first delve into the core principles and numerical techniques needed to build a faithful simulation, exploring the pitfalls of naive approaches and the elegance of more sophisticated methods. From there, we will see how this "master key" unlocks doors to a surprising number of other fields, revealing the same underlying challenges in [robotics](@keyword=robotics|lang=en-US|style=Feynman), video games, [disease modeling](@keyword=disease_modeling|lang=en-US|style=Feynman), and even [digital electronics](@keyword=digital_electronics|lang=en-US|style=Feynman). By mastering the simulation of a bouncing ball, you will gain a new language to describe the myriad systems that evolve smoothly for a while, and then change in a flash.
 
 ## Principles and Mechanisms
 
@@ -21,7 +21,7 @@ Then, suddenly, the ball enters the second world: the world of **impact**. This 
 $$
 v^{+} = -e \cdot v^{-}
 $$
-where $v^{-}$ is the velocity just before impact, and $v^{+}$ is the velocity just after. The number $e$ is the **[coefficient of restitution](@article_id:170216)**, a value between 0 and 1 that tells us how "bouncy" the collision is. If $e=1$, the bounce is perfectly elastic, and no energy is lost. If $e=0$, the bounce is perfectly inelastic—the ball hits the ground and sticks, like a lump of clay. For a real ball, $e$ is somewhere in between.
+where $v^{-}$ is the velocity just before impact, and $v^{+}$ is the velocity just after. The number $e$ is the **[coefficient of restitution](@keyword=coefficient_of_restitution|lang=en-US|style=Feynman)**, a value between 0 and 1 that tells us how "bouncy" the collision is. If $e=1$, the bounce is perfectly elastic, and no energy is lost. If $e=0$, the bounce is perfectly inelastic—the ball hits the ground and sticks, like a lump of clay. For a real ball, $e$ is somewhere in between.
 
 This combination of smooth, continuous evolution and abrupt, discrete events is the hallmark of what we call a **hybrid dynamical system**. Simulating it isn't just about solving an ODE; it's about managing the seamless transition between these two worlds.
 
@@ -51,19 +51,19 @@ Solving this gives us the precise moment of impact. Our algorithm can then do so
 2.  Apply the discrete bounce rule $v^{+} = -e v^{-}$ at that exact moment.
 3.  Integrate forward again for the remaining time left in the step, using the new post-impact velocity.
 
-This is the essence of **[event detection](@article_id:162316)**. Modern ODE solvers have this capability built-in, allowing them to handle [hybrid systems](@article_id:270689) with grace and precision.
+This is the essence of **[event detection](@keyword=event_detection|lang=en-US|style=Feynman)**. Modern ODE solvers have this capability built-in, allowing them to handle [hybrid systems](@keyword=hybrid_systems|lang=en-US|style=Feynman) with grace and precision.
 
-What's beautiful here is the interplay between the continuous and the discrete. We use the continuous ODE to predict the discrete event, and the discrete event serves to reset the initial conditions for the next phase of continuous evolution. And notice something wonderful: for the special case of a bouncing ball under constant gravity, a slightly more advanced integrator like the **[explicit midpoint method](@article_id:136524)** is actually *kinematically exact*. This means that between bounces, the numerical integrator makes *zero* error. All of our simulation's imperfections are concentrated entirely in how we handle the moment of impact.
+What's beautiful here is the interplay between the continuous and the discrete. We use the continuous ODE to predict the discrete event, and the discrete event serves to reset the initial conditions for the next phase of continuous evolution. And notice something wonderful: for the special case of a bouncing ball under constant gravity, a slightly more advanced integrator like the **[explicit midpoint method](@keyword=explicit_midpoint_method|lang=en-US|style=Feynman)** is actually *kinematically exact*. This means that between bounces, the numerical integrator makes *zero* error. All of our simulation's imperfections are concentrated entirely in how we handle the moment of impact.
 
 ### The Infinite Riddle: Zeno's Paradox in a Bouncing Ball
 
 As we run our simulation, we notice a curious pattern. The first bounce is high and long. The second is a bit lower and quicker. The third, shorter still. The time between successive bounces, $\Delta t_k$, shrinks with every impact. Why? Because each bounce dissipates energy, so the ball doesn't fly as high, and its next trip is shorter.
 
-An analytical investigation reveals something profound. The time between the $(k-1)$-th and $k$-th bounce follows a [geometric progression](@article_id:269976):
+An analytical investigation reveals something profound. The time between the $(k-1)$-th and $k$-th bounce follows a [geometric progression](@keyword=geometric_progression|lang=en-US|style=Feynman):
 $$
 \Delta t_k = \Delta t_2 \cdot e^{k-2}
 $$
-Since the [coefficient of restitution](@article_id:170216) $e$ is less than one, this series of time intervals gets smaller and smaller. If you were to ask, "How long does it take for the ball to stop bouncing completely?", you would need to sum an infinite number of these intervals: $\sum_{k=1}^{\infty} \Delta t_k$. For $e  1$, this infinite sum converges to a finite value! This means the ball bounces an infinite number of times in a finite amount of time. This is a real-life manifestation of **Zeno's paradox**.
+Since the [coefficient of restitution](@keyword=coefficient_of_restitution|lang=en-US|style=Feynman) $e$ is less than one, this series of time intervals gets smaller and smaller. If you were to ask, "How long does it take for the ball to stop bouncing completely?", you would need to sum an infinite number of these intervals: $\sum_{k=1}^{\infty} \Delta t_k$. For $e  1$, this infinite sum converges to a finite value! This means the ball bounces an infinite number of times in a finite amount of time. This is a real-life manifestation of **Zeno's paradox**.
 
 For a computer, this is a potential nightmare. It diligently simulates one bounce, then a smaller one, then a smaller one still, with the time step shrinking towards zero. The simulation would grind to a halt, trapped trying to resolve an infinite sequence of events.
 
@@ -73,13 +73,13 @@ How do we escape this infinite trap? We use a bit of physical intuition and prag
 
 We can build this insight into our simulation. We introduce a "sticking" condition. We decide on a small velocity threshold, $v_{\text{stop}}$. If, after a bounce, the new upward velocity $v^{+}$ is less than this threshold, we declare the ball to have come to rest. The simulation then sets its velocity to zero and its height to zero for all future time. This elegantly sidesteps the paradox by acknowledging that below a certain energy scale, our idealized model is no longer relevant.
 
-We can even make our model more realistic by recognizing that the [coefficient of restitution](@article_id:170216) $e$ is not truly constant. For many materials, it depends on the speed of the impact—faster impacts are often less "bouncy." We can model this with a velocity-dependent function $e(|v^{-}|)$. This not only adds physical fidelity but can also help in naturally resolving the Zeno behavior.
+We can even make our model more realistic by recognizing that the [coefficient of restitution](@keyword=coefficient_of_restitution|lang=en-US|style=Feynman) $e$ is not truly constant. For many materials, it depends on the speed of the impact—faster impacts are often less "bouncy." We can model this with a velocity-dependent function $e(|v^{-}|)$. This not only adds physical fidelity but can also help in naturally resolving the Zeno behavior.
 
 ### The Smart Simulator: An Adaptive Approach
 
 So far, we have mostly talked about fixed time steps. But does it make sense to use the same tiny step size when the ball is floating gracefully near the peak of its arc as when it is hurtling towards the ground? Of course not.
 
-This is the central idea behind **[adaptive step-size control](@article_id:142190)**. A smart simulator constantly estimates the [local error](@article_id:635348) it's making.
+This is the central idea behind **[adaptive step-size control](@keyword=adaptive_step_size_control_2|lang=en-US|style=Feynman)**. A smart simulator constantly estimates the [local error](@keyword=local_error|lang=en-US|style=Feynman) it's making.
 - If the error is getting too large (e.g., the ball's velocity is changing rapidly as it approaches the floor), the solver rejects its attempted step, shrinks the step size $h$, and tries again.
 - If the error is far below the acceptable tolerance (e.g., at the apex of a bounce, where velocity is near zero and the trajectory is very smooth), the solver increases $h$ to cover more ground with less computational effort.
 
@@ -91,4 +91,4 @@ This journey from a simple Euler step to an adaptive, event-detecting scheme rev
 
 Imagine you have a highly sophisticated, $p$-th order numerical integrator that is incredibly accurate in smooth regions. But your event detector is crude and only locates the time of the bounce with an accuracy that scales like $\mathcal{O}(h^r)$, where $h$ is the step size. What will the overall accuracy of your simulation be? It won't be $p$. It will be the *minimum* of the two: $\min(p, r)$.
 
-An error in the impact time, $\tau = \mathcal{O}(h^r)$, doesn't just shift the trajectory in time. It causes the bounce to be applied to the wrong pre-impact velocity, and it causes the new trajectory to start from the wrong position. This introduces an error of order $\mathcal{O}(h^r)$ into both the position and velocity, a wound that the integrator must carry with it for the rest of the simulation. If your [event detection](@article_id:162316) is only first-order accurate ($r=1$), it doesn't matter if you use a tenth-order integrator ($p=10$); your global accuracy will be dragged down to first order. The chain is only as strong as its weakest link. This is a profound lesson that applies to nearly every complex simulation we can imagine, from bouncing balls to modeling the cosmos.
+An error in the impact time, $\tau = \mathcal{O}(h^r)$, doesn't just shift the trajectory in time. It causes the bounce to be applied to the wrong pre-impact velocity, and it causes the new trajectory to start from the wrong position. This introduces an error of order $\mathcal{O}(h^r)$ into both the position and velocity, a wound that the integrator must carry with it for the rest of the simulation. If your [event detection](@keyword=event_detection|lang=en-US|style=Feynman) is only first-order accurate ($r=1$), it doesn't matter if you use a tenth-order integrator ($p=10$); your global accuracy will be dragged down to first order. The chain is only as strong as its weakest link. This is a profound lesson that applies to nearly every complex simulation we can imagine, from bouncing balls to modeling the cosmos.

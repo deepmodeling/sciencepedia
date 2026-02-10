@@ -6,60 +6,60 @@
 
 ### TCR：一把双刃剑
 
-TCR的工作是识别威胁而不伤害自身。这是一项极其困难的任务，就像一个保安试图根据一个稍纵即逝的线索，在十亿公民的人群中发现一个顶级间谍。[免疫系统进化](@article_id:379800)出了惊人巧妙的策略来完成这一任务，但TCR识别系统的本质意味着它永远是一把双刃剑。
+TCR的工作是识别威胁而不伤害自身。这是一项极其困难的任务，就像一个保安试图根据一个稍纵即逝的线索，在十亿公民的人群中发现一个顶级间谍。[免疫系统进化](@keyword=immune_system_evolution|lang=zh-CN|style=Feynman)出了惊人巧妙的策略来完成这一任务，但TCR识别系统的本质意味着它永远是一把双刃剑。
 
 #### 狡猾的侦探：抗击感染
 
-想象一种善于伪装的病毒。它感染了细胞，比如你肝脏中的细胞，但立即迫使该细胞“进入黑暗”，关闭通常会发出求救信号的蛋白质生产。被感染的细胞变成了一个沉默、无形的病毒制造工厂。免疫系统如何捕捉这个幽灵？在这里，TCR依赖于一个信息网络。专门的“抗原呈递细胞”，如[树突状细胞](@article_id:351413)，扮演着犯罪现场调查员的角色。它们在体内巡逻，当发现因病毒感染而死亡的细胞残骸时，它们会吞噬这些碎片。在树突状细胞内部，病毒蛋白被切碎，其片段被加载到MHC I类分子上——这个过程被称为**[交叉呈递](@article_id:312925)** 。然后，[树突状细胞](@article_id:351413)前往[淋巴结](@article_id:370516)，将这些二手证据呈递给一个初始的CD8$^+$ [T细胞](@article_id:360929)。该[T细胞](@article_id:360929)上的TCR通过识别树突状细胞MHC上的病毒肽，现在知道了敌人的模样。它变成一个被激活的杀手，准备好追捕并摧毁任何显示相同病毒特征的肝细胞。没有这个巧妙的变通方法，许多病毒几乎无法被检测到。
+想象一种善于伪装的病毒。它感染了细胞，比如你肝脏中的细胞，但立即迫使该细胞“进入黑暗”，关闭通常会发出求救信号的蛋白质生产。被感染的细胞变成了一个沉默、无形的病毒制造工厂。免疫系统如何捕捉这个幽灵？在这里，TCR依赖于一个信息网络。专门的“抗原呈递细胞”，如[树突状细胞](@keyword=dendritic_cells|lang=zh-CN|style=Feynman)，扮演着犯罪现场调查员的角色。它们在体内巡逻，当发现因病毒感染而死亡的细胞残骸时，它们会吞噬这些碎片。在树突状细胞内部，病毒蛋白被切碎，其片段被加载到MHC I类分子上——这个过程被称为**[交叉呈递](@keyword=cross_presentation|lang=zh-CN|style=Feynman)** [@problem_id:2237828]。然后，[树突状细胞](@keyword=dendritic_cells|lang=zh-CN|style=Feynman)前往[淋巴结](@keyword=lymph_nodes|lang=zh-CN|style=Feynman)，将这些二手证据呈递给一个初始的CD8$^+$ [T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)。该[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)上的TCR通过识别树突状细胞MHC上的病毒肽，现在知道了敌人的模样。它变成一个被激活的杀手，准备好追捕并摧毁任何显示相同病毒特征的肝细胞。没有这个巧妙的变通方法，许多病毒几乎无法被检测到。
 
-这个识别系统还必须应对一个不断变化的敌人。像流感这样的病毒会发生突变，改变它们产生的肽。我们的长期保护依赖于[记忆T细胞](@article_id:314280)，它们携带识别原始感染的TCR。但它们能识别新的变种吗？答案在于TCR抓握的本质 。一些TCR就像高度专业化的工具，以极高的专注度结合肽的某个特定特征。如果该特征改变，识别就会丧失。另一些TCR则具有更灵活、“简并”的抓握方式，接触肽-MHC表面的多个点。这些TCR通常能容忍肽的微小变化，使我们的记忆反应能够“[交叉](@article_id:315017)反应”并保护我们免受新毒株的侵害。这种TCR的多样性和灵活性是强大、终身免疫的基石。
+这个识别系统还必须应对一个不断变化的敌人。像流感这样的病毒会发生突变，改变它们产生的肽。我们的长期保护依赖于[记忆T细胞](@keyword=memory_t_cells|lang=zh-CN|style=Feynman)，它们携带识别原始感染的TCR。但它们能识别新的变种吗？答案在于TCR抓握的本质 [@problem_id:2893963]。一些TCR就像高度专业化的工具，以极高的专注度结合肽的某个特定特征。如果该特征改变，识别就会丧失。另一些TCR则具有更灵活、“简并”的抓握方式，接触肽-MHC表面的多个点。这些TCR通常能容忍肽的微小变化，使我们的记忆反应能够“[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)反应”并保护我们免受新毒株的侵害。这种TCR的多样性和灵活性是强大、终身免疫的基石。
 
 #### 身份误判：自身免疫的根源
 
 但正是这种灵活性——这种对于对抗不断进化的病原体至关重要的“足够好”的识别——也有其阴暗面。一个TCR在胸腺的教育过程中被筛选出来，以忽略身体自身的肽。然而，这种教育并非完美。如果来自细菌的外来肽，或来自癌细胞的新肽（“新抗原”），恰好与重要器官中的自身肽非常相似，会发生什么？这种分子模拟可能导致悲剧。
 
-想象一下，我们创造了一种个性化[疫苗](@article_id:306070)来训练患者的[T细胞识别](@article_id:353048)其肿瘤特有的[新抗原](@article_id:316109)。[疫苗](@article_id:306070)奏效了，一支强大的、带有针对癌症的特异性TCR的[T细胞](@article_id:360929)大军被释放出来。但假设心脏中的一个关键蛋白质恰好含有一个肽序列，当它在MHC上呈递时，是癌症新抗原的近乎完美的结构模拟物 。这些[T细胞](@article_id:360929)在它们正义地追捕癌症的过程中，可能会遇到健康的心脏细胞，看到一张熟悉的面孔，便发动毁灭性的攻击。这就是靶向、脱瘤毒性，是自身免疫性[心肌](@article_id:310572)炎的根源，也是[TCR交叉反应性](@article_id:355615)如何将治愈变为毒药的鲜明例证。这个原理是许多自身免疫性疾病的核心，在这些疾病中，对感染的反应无意中引发了对我们自身组织的持续攻击。
+想象一下，我们创造了一种个性化[疫苗](@keyword=vaccine|lang=zh-CN|style=Feynman)来训练患者的[T细胞识别](@keyword=t_cell_recognition|lang=zh-CN|style=Feynman)其肿瘤特有的[新抗原](@keyword=neoantigens|lang=zh-CN|style=Feynman)。[疫苗](@keyword=vaccine|lang=zh-CN|style=Feynman)奏效了，一支强大的、带有针对癌症的特异性TCR的[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)大军被释放出来。但假设心脏中的一个关键蛋白质恰好含有一个肽序列，当它在MHC上呈递时，是癌症新抗原的近乎完美的结构模拟物 [@problem_id:2875740]。这些[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)在它们正义地追捕癌症的过程中，可能会遇到健康的心脏细胞，看到一张熟悉的面孔，便发动毁灭性的攻击。这就是靶向、脱瘤毒性，是自身免疫性[心肌](@keyword=cardiac_muscle|lang=zh-CN|style=Feynman)炎的根源，也是[TCR交叉反应性](@keyword=tcr_cross_reactivity|lang=zh-CN|style=Feynman)如何将治愈变为毒药的鲜明例证。这个原理是许多自身免疫性疾病的核心，在这些疾病中，对感染的反应无意中引发了对我们自身组织的持续攻击。
 
-如果问题在于一个过度热心的TCR，那么一个合乎逻辑的解决方案就是抑制它。[T细胞](@article_id:360929)的激活至少需要两个信号：“信号1”来自TCR识别其目标，“信号2”则来自共刺激分子的“同意”指令 。针对自身免疫的治疗策略正在基于一个简单而强大的想法被设计出来：如果你能直接阻断信号1会怎样？一种假设的药物，能够附着在肽-MHC复合物上，物理上阻止TCR的对接，将有效地蒙蔽[T细胞](@article_id:360929) 。即使共刺激信号高喊“前进！”，[T细胞](@article_id:360929)也收不到主要指令，将保持惰性。这种精确阻断初始识别事件的方法，代表了一种比过去广泛使用的[免疫抑制剂](@article_id:365407)更具靶向性的策略。
+如果问题在于一个过度热心的TCR，那么一个合乎逻辑的解决方案就是抑制它。[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)的激活至少需要两个信号：“信号1”来自TCR识别其目标，“信号2”则来自共刺激分子的“同意”指令 [@problem_id:2274206]。针对自身免疫的治疗策略正在基于一个简单而强大的想法被设计出来：如果你能直接阻断信号1会怎样？一种假设的药物，能够附着在肽-MHC复合物上，物理上阻止TCR的对接，将有效地蒙蔽[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman) [@problem_id:2057894]。即使共刺激信号高喊“前进！”，[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)也收不到主要指令，将保持惰性。这种精确阻断初始识别事件的方法，代表了一种比过去广泛使用的[免疫抑制剂](@keyword=immunosuppressive_drugs|lang=zh-CN|style=Feynman)更具靶向性的策略。
 
 ### 破解TCR：癌症免疫疗法的黎明
 
-几十年来，与癌症的斗争一直使用化疗和[放疗](@article_id:310499)这些“钝器”——杀死快速生长细胞的毒药和能量束，无论是癌细胞还是健康细胞。人们一直梦想找到一种只会杀死癌细胞的“魔弹”。随着我们对T细胞受体理解的加深，这个梦想正迅速成为现实。抗癌战争的新前线不再是用化学物质作战，而是用信息——通过学习TCR的语言，并将其可怕的力量转向对抗疾病。
+几十年来，与癌症的斗争一直使用化疗和[放疗](@keyword=radiotherapy|lang=zh-CN|style=Feynman)这些“钝器”——杀死快速生长细胞的毒药和能量束，无论是癌细胞还是健康细胞。人们一直梦想找到一种只会杀死癌细胞的“魔弹”。随着我们对T细胞受体理解的加深，这个梦想正迅速成为现实。抗癌战争的新前线不再是用化学物质作战，而是用信息——通过学习TCR的语言，并将其可怕的力量转向对抗疾病。
 
-#### 松开刹车：[检查点阻断](@article_id:309826)
+#### 松开刹车：[检查点阻断](@keyword=checkpoint_blockade|lang=zh-CN|style=Feynman)
 
-在长期的战斗中，如[慢性感染](@article_id:374960)或与不断生长的肿瘤的缓慢斗争，持续攻击性的[T细胞反应](@article_id:360630)可能会对健康组织造成灾难性损害。为防止这种情况，身体明智地安装了一系列“[免疫检查点](@article_id:376806)”——可以施加在[T细胞](@article_id:360929)上使其平静下来的分子刹车。最重要的刹车踏板之一是一种名为PD-1的受体。当[T细胞](@article_id:360929)因日复一日地看到其目标抗原而受到慢性刺激时，它开始在其表面高水平表达PD-1。许多肿瘤细胞，出于一种狡猾的自我保护行为，用[PD-L1](@article_id:365966)（与PD-1结合的配体）覆盖自己的表面。
+在长期的战斗中，如[慢性感染](@keyword=chronic_infections|lang=zh-CN|style=Feynman)或与不断生长的肿瘤的缓慢斗争，持续攻击性的[T细胞反应](@keyword=t_cell_response|lang=zh-CN|style=Feynman)可能会对健康组织造成灾难性损害。为防止这种情况，身体明智地安装了一系列“[免疫检查点](@keyword=immune_checkpoints|lang=zh-CN|style=Feynman)”——可以施加在[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)上使其平静下来的分子刹车。最重要的刹车踏板之一是一种名为PD-1的受体。当[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)因日复一日地看到其目标抗原而受到慢性刺激时，它开始在其表面高水平表达PD-1。许多肿瘤细胞，出于一种狡猾的自我保护行为，用[PD-L1](@keyword=pd_l1|lang=zh-CN|style=Feynman)（与PD-1结合的配体）覆盖自己的表面。
 
-当[T细胞](@article_id:360929)的TCR识别到肿瘤，但其PD-1受体同时与肿瘤的[PD-L1](@article_id:365966)结合时，“停止”信号会压倒“前进”信号。[T细胞](@article_id:360929)变得功能失调，进入一种称为**耗竭**的状态，失去增殖、产生[细胞因子](@article_id:382655)和杀死其靶标的能力 。癌症实际上解除了其行刑者的武装。
+当[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)的TCR识别到肿瘤，但其PD-1受体同时与肿瘤的[PD-L1](@keyword=pd_l1|lang=zh-CN|style=Feynman)结合时，“停止”信号会压倒“前进”信号。[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)变得功能失调，进入一种称为**耗竭**的状态，失去增殖、产生[细胞因子](@keyword=cytokine|lang=zh-CN|style=Feynman)和杀死其靶标的能力 [@problem_id:2225330]。癌症实际上解除了其行刑者的武装。
 
-诺贝尔奖级别的[检查点阻断](@article_id:309826)免疫疗法革命，建立在一个惊人简单的概念之上：切断刹车线。称为[检查点抑制剂](@article_id:314938)的药物是[抗体](@article_id:307222)，它们能与PD-1或PD-L1结合，物理上阻断它们的相互作用。这一行为释放了刹车。TCR一直传递的激活信号现在畅通无阻。那些原本在肿瘤中耗竭无力的[T细胞](@article_id:360929)突然被重新唤醒，并发起猛烈攻击。这一策略已经改变了许多癌症的治疗，证明在许多患者中，正确的[T细胞](@article_id:360929)一直都在——它们只是需要被解开束缚。当然，癌症还有其他伎俩。一些肿瘤用[腺苷](@article_id:365677)的化学烟幕填充其局部环境，通过完全不同的信号通路让[T细胞](@article_id:360929)“入睡” 。但每当我们发现一个刹车，我们就可以开始设计一种药物来释放它。
+诺贝尔奖级别的[检查点阻断](@keyword=checkpoint_blockade|lang=zh-CN|style=Feynman)免疫疗法革命，建立在一个惊人简单的概念之上：切断刹车线。称为[检查点抑制剂](@keyword=checkpoint_inhibitors|lang=zh-CN|style=Feynman)的药物是[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)，它们能与PD-1或PD-L1结合，物理上阻断它们的相互作用。这一行为释放了刹车。TCR一直传递的激活信号现在畅通无阻。那些原本在肿瘤中耗竭无力的[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)突然被重新唤醒，并发起猛烈攻击。这一策略已经改变了许多癌症的治疗，证明在许多患者中，正确的[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)一直都在——它们只是需要被解开束缚。当然，癌症还有其他伎俩。一些肿瘤用[腺苷](@keyword=adenosine|lang=zh-CN|style=Feynman)的化学烟幕填充其局部环境，通过完全不同的信号通路让[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)“入睡” [@problem_id:2856298]。但每当我们发现一个刹车，我们就可以开始设计一种药物来释放它。
 
-#### 工程化改造更强的士兵：[过继性细胞疗法](@article_id:368593)
+#### 工程化改造更强的士兵：[过继性细胞疗法](@keyword=adoptive_cell_therapy|lang=zh-CN|style=Feynman)
 
-释放现有[T细胞](@article_id:360929)的刹车是有效的，但如果一开始就没有合适的[T细胞](@article_id:360929)呢？或者，如果癌症如此狡猾，以至于对TCR完全[隐形](@article_id:376268)了呢？这导致了一种更大胆的策略：不仅仅是增强[T细胞](@article_id:360929)，而是将它们工程化改造成定制的癌症杀伤机器。这就是[过继性细胞疗法](@article_id:368593)领域。
+释放现有[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)的刹车是有效的，但如果一开始就没有合适的[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)呢？或者，如果癌症如此狡猾，以至于对TCR完全[隐形](@keyword=cloaking|lang=zh-CN|style=Feynman)了呢？这导致了一种更大胆的策略：不仅仅是增强[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)，而是将它们工程化改造成定制的癌症杀伤机器。这就是[过继性细胞疗法](@keyword=adoptive_cell_therapy|lang=zh-CN|style=Feynman)领域。
 
-**1. [嵌合抗原受体](@article_id:373023)（CAR）：赋予[T细胞](@article_id:360929)新的眼睛**
+**1. [嵌合抗原受体](@keyword=chimeric_antigen_receptor|lang=zh-CN|style=Feynman)（CAR）：赋予[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)新的眼睛**
 
-[T细胞](@article_id:360929)最大的优势——其TCR对[MHC呈递](@article_id:377241)的依赖——也是其最大的弱点。如果癌细胞干脆停止在其表面表达[MHC分子](@article_id:361224)，它实际上就穿上了[隐形斗篷](@article_id:331776)，即使是最强大的[T细胞](@article_id:360929)也无法检测到它。**[嵌合抗原受体](@article_id:373023)（CAR）T[细胞疗法](@article_id:372387)**的天才之处在于它绕过了整个系统 。
+[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)最大的优势——其TCR对[MHC呈递](@keyword=mhc_presentation|lang=zh-CN|style=Feynman)的依赖——也是其最大的弱点。如果癌细胞干脆停止在其表面表达[MHC分子](@keyword=mhc_molecules|lang=zh-CN|style=Feynman)，它实际上就穿上了[隐形斗篷](@keyword=invisibility_cloak|lang=zh-CN|style=Feynman)，即使是最强大的[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)也无法检测到它。**[嵌合抗原受体](@keyword=chimeric_antigen_receptor|lang=zh-CN|style=Feynman)（CAR）T[细胞疗法](@keyword=cell_therapy|lang=zh-CN|style=Feynman)**的天才之处在于它绕过了整个系统 [@problem_id:2262657]。
 
-CAR是一种合成受体，通过基因手段插入患者自身的[T细胞](@article_id:360929)中。它的设计是[生物工程](@article_id:334588)的奇迹。CAR的外部不是TCR，而是一个[抗体](@article_id:307222)片段，具体来说是一个单链可变片段（scFv）。选择这个[抗体](@article_id:307222)片段是为了识别肿瘤细胞表面上处于自然三维形状的蛋白质——无需抗原处理或[MHC呈递](@article_id:377241)。CAR的内部则直接连接到[T细胞](@article_id:360929)的激活机制，包含了来自[CD3复合物](@article_id:359879)和共刺激分子的核心信号域。
+CAR是一种合成受体，通过基因手段插入患者自身的[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)中。它的设计是[生物工程](@keyword=biological_engineering|lang=zh-CN|style=Feynman)的奇迹。CAR的外部不是TCR，而是一个[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)片段，具体来说是一个单链可变片段（scFv）。选择这个[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)片段是为了识别肿瘤细胞表面上处于自然三维形状的蛋白质——无需抗原处理或[MHC呈递](@keyword=mhc_presentation|lang=zh-CN|style=Feynman)。CAR的内部则直接连接到[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)的激活机制，包含了来自[CD3复合物](@keyword=cd3_complex|lang=zh-CN|style=Feynman)和共刺激分子的核心信号域。
 
-结果是一个超级士兵：一个[T细胞](@article_id:360929)，它不再通过TCR狭窄、受MHC限制的视角看世界，而是通过[抗体](@article_id:307222)多功能、不依赖MHC的眼睛 。对于像某些白血病和淋巴瘤这样的癌症，其肿瘤细胞普遍表达像CD19这样的表面标志物，[CAR-T疗法](@article_id:310356)在那些已经用尽所有其他选择的患者中取得了惊人且持久的缓解。
+结果是一个超级士兵：一个[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)，它不再通过TCR狭窄、受MHC限制的视角看世界，而是通过[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)多功能、不依赖MHC的眼睛 [@problem_id:2831272]。对于像某些白血病和淋巴瘤这样的癌症，其肿瘤细胞普遍表达像CD19这样的表面标志物，[CAR-T疗法](@keyword=car_t_therapy|lang=zh-CN|style=Feynman)在那些已经用尽所有其他选择的患者中取得了惊人且持久的缓解。
 
 **2. 工程化TCR：磨利天然武器**
 
-然而，[CAR-T细胞](@article_id:362555)的局限性在于它只能看到细胞表面的靶标。最诱人的癌症靶标——如KRAS或p53等突变的致癌蛋白，它们是癌症的真正引擎——被锁在细胞内部。它们对CAR是不可见的。但它们对TCR并非不可见。细胞的天然抗原处理机制会切碎这些突变的内部蛋白，并将其片段呈递在MHC上。
+然而，[CAR-T细胞](@keyword=car_t_cells|lang=zh-CN|style=Feynman)的局限性在于它只能看到细胞表面的靶标。最诱人的癌症靶标——如KRAS或p53等突变的致癌蛋白，它们是癌症的真正引擎——被锁在细胞内部。它们对CAR是不可见的。但它们对TCR并非不可见。细胞的天然抗原处理机制会切碎这些突变的内部蛋白，并将其片段呈递在MHC上。
 
-这就是**工程化TCR疗法**的用武之地。在这里，科学家不是给[T细胞](@article_id:360929)一个新受体，而是从一个对癌症有非凡自然反应的患者那里找到一个TCR，这个TCR对特定的突变肽-MHC复合物具有极高的亲和力。然后他们克隆这个“超级TCR”，并将其[基因工程](@article_id:301571)化地植入新患者的[T细胞](@article_id:360929)中 。这种方法为[T细胞](@article_id:360929)配备了针对最根本癌症靶标的超精确靶向系统。其代价是，它又把我们带回了[MHC限制性](@article_id:357774)的世界；一个特定的工程化TCR只在那些拥有呈递目标肽所需正确[HLA分型](@article_id:373132)的患者中起作用。
+这就是**工程化TCR疗法**的用武之地。在这里，科学家不是给[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)一个新受体，而是从一个对癌症有非凡自然反应的患者那里找到一个TCR，这个TCR对特定的突变肽-MHC复合物具有极高的亲和力。然后他们克隆这个“超级TCR”，并将其[基因工程](@keyword=genetic_engineering|lang=zh-CN|style=Feynman)化地植入新患者的[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)中 [@problem_id:2831272]。这种方法为[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)配备了针对最根本癌症靶标的超精确靶向系统。其代价是，它又把我们带回了[MHC限制性](@keyword=mhc_restriction|lang=zh-CN|style=Feynman)的世界；一个特定的工程化TCR只在那些拥有呈递目标肽所需正确[HLA分型](@keyword=hla_typing|lang=zh-CN|style=Feynman)的患者中起作用。
 
-**3. [双特异性T细胞衔接器](@article_id:378312)（BiTEs）：分子媒人**
+**3. [双特异性T细胞衔接器](@keyword=bispecific_t_cell_engagers|lang=zh-CN|style=Feynman)（BiTEs）：分子媒人**
 
-最后，还有一种方法根本不涉及工程化改造[T细胞](@article_id:360929)，而是利用任何恰好路过的[T细胞](@article_id:360929)。**[双特异性T细胞衔接器](@article_id:378312)（BiTE）**是一种小型的工程蛋白，充当分子媒人 。BiTE有两个臂。一个臂是设计用来抓住肿瘤抗原的scFv。另一个臂是抓住CD3蛋白的scFv，CD3是每个[T细胞](@article_id:360929)表面[TCR复合物](@article_id:362878)的一部分，是一个通用的“把手”。
+最后，还有一种方法根本不涉及工程化改造[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)，而是利用任何恰好路过的[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)。**[双特异性T细胞衔接器](@keyword=bispecific_t_cell_engagers|lang=zh-CN|style=Feynman)（BiTE）**是一种小型的工程蛋白，充当分子媒人 [@problem_id:2837292]。BiTE有两个臂。一个臂是设计用来抓住肿瘤抗原的scFv。另一个臂是抓住CD3蛋白的scFv，CD3是每个[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)表面[TCR复合物](@keyword=tcr_complex|lang=zh-CN|style=Feynman)的一部分，是一个通用的“把手”。
 
-当注射到血液中时，这个分子就像一座强大的免疫学桥梁。它同时结合癌细胞和[T细胞](@article_id:360929)，将它们物理地拴在一起。这种强制的接近创造了一个“人工突触”，触发[CD3复合物](@article_id:359879)，启动[T细胞](@article_id:360929)的激活程序，并命令它杀死附着的癌细胞。[T细胞](@article_id:360929)自身的TCR特异性是什么并不重要；BiTE劫持了它的机制为己所用。这是一种惊人直接而优雅的方式，将整个多克隆[T细胞](@article_id:360929)库巨大的[细胞毒性](@article_id:372665)潜力重新导向抗击癌症。
+当注射到血液中时，这个分子就像一座强大的免疫学桥梁。它同时结合癌细胞和[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)，将它们物理地拴在一起。这种强制的接近创造了一个“人工突触”，触发[CD3复合物](@keyword=cd3_complex|lang=zh-CN|style=Feynman)，启动[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)的激活程序，并命令它杀死附着的癌细胞。[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)自身的TCR特异性是什么并不重要；BiTE劫持了它的机制为己所用。这是一种惊人直接而优雅的方式，将整个多克隆[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)库巨大的[细胞毒性](@keyword=cytotoxicity|lang=zh-CN|style=Feynman)潜力重新导向抗击癌症。
 
 ### 特异性的未来
 
-[T细胞受体](@article_id:364833)不仅仅是我们免疫系统的一个组成部分；它是一个具有极大精妙性和力量的可编程识别设备。从破译其基本功能到利用它进行医疗，这段旅程展示了基础研究深刻的变革力量。
+[T细胞受体](@keyword=t_cell_receptor|lang=zh-CN|style=Feynman)不仅仅是我们免疫系统的一个组成部分；它是一个具有极大精妙性和力量的可编程识别设备。从破译其基本功能到利用它进行医疗，这段旅程展示了基础研究深刻的变革力量。
 
-我们已经学会了阅读它的特异性语言，理解它与共受体的对话，并欣赏它在保护与病理之间所走的钢丝。有了这些知识，我们不再是免疫系统的被动观察者，我们正在成为积极的参与者。我们可以释放它的刹车，重定向它的焦点，甚至为它装备全新的能力。在抗击感染、驯服[自身免疫](@article_id:308940)和征服癌症的斗争中，前进的道路是由对这个非凡分子的日益深入的理解以及我们日益增长的呼唤其名的能力铺就的。
+我们已经学会了阅读它的特异性语言，理解它与共受体的对话，并欣赏它在保护与病理之间所走的钢丝。有了这些知识，我们不再是免疫系统的被动观察者，我们正在成为积极的参与者。我们可以释放它的刹车，重定向它的焦点，甚至为它装备全新的能力。在抗击感染、驯服[自身免疫](@keyword=autoimmunity|lang=zh-CN|style=Feynman)和征服癌症的斗争中，前进的道路是由对这个非凡分子的日益深入的理解以及我们日益增长的呼唤其名的能力铺就的。

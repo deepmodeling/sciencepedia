@@ -35,7 +35,7 @@ Now we take our second vector, $\mathbf{v}_2$. It is likely "contaminated" with 
 $$
 \mathbf{u}_2 = \mathbf{v}_2 - \operatorname{proj}_{\mathbf{u}_1}(\mathbf{v}_2) = \mathbf{v}_2 - \frac{\langle \mathbf{v}_2, \mathbf{u}_1 \rangle}{\langle \mathbf{u}_1, \mathbf{u}_1 \rangle} \mathbf{u}_1
 $$
-Let's see this in action. Imagine two correlated signals represented by vectors $\mathbf{v}_1 = (2, 1)$ and $\mathbf{v}_2 = (1, 2)$ . We set $\mathbf{u}_1 = \mathbf{v}_1 = (2, 1)$. The inner product (or dot product) is $\langle \mathbf{v}_2, \mathbf{u}_1 \rangle = 1(2)+2(1) = 4$, and $\langle \mathbf{u}_1, \mathbf{u}_1 \rangle = 2(2)+1(1) = 5$. So the shadow of $\mathbf{v}_2$ on $\mathbf{u}_1$ is $\frac{4}{5}\mathbf{u}_1 = (\frac{8}{5}, \frac{4}{5})$. The new, purified vector is:
+Let's see this in action. Imagine two correlated signals represented by vectors $\mathbf{v}_1 = (2, 1)$ and $\mathbf{v}_2 = (1, 2)$ [@problem_id:1395113]. We set $\mathbf{u}_1 = \mathbf{v}_1 = (2, 1)$. The inner product (or dot product) is $\langle \mathbf{v}_2, \mathbf{u}_1 \rangle = 1(2)+2(1) = 4$, and $\langle \mathbf{u}_1, \mathbf{u}_1 \rangle = 2(2)+1(1) = 5$. So the shadow of $\mathbf{v}_2$ on $\mathbf{u}_1$ is $\frac{4}{5}\mathbf{u}_1 = (\frac{8}{5}, \frac{4}{5})$. The new, purified vector is:
 $$
 \mathbf{u}_2 = (1, 2) - \left(\frac{8}{5}, \frac{4}{5}\right) = \left(-\frac{3}{5}, \frac{6}{5}\right)
 $$
@@ -46,13 +46,13 @@ What about the third vector, $\mathbf{v}_3$? By now, we have two pure, orthogona
 $$
 \mathbf{u}_3 = \mathbf{v}_3 - \operatorname{proj}_{\mathbf{u}_1}(\mathbf{v}_3) - \operatorname{proj}_{\mathbf{u}_2}(\mathbf{v}_3)
 $$
-And so the process continues. For any subsequent vector $\mathbf{v}_k$, we make it orthogonal to all the previously generated pure vectors $\mathbf{u}_1, \mathbf{u}_2, \dots, \mathbf{u}_{k-1}$ by systematically subtracting every one of its shadows . It’s an assembly line for orthogonality. It's also worth noting that the process is honest: if you start with bigger vectors, you tend to get bigger [orthogonal vectors](@article_id:141732) out. Scaling an initial vector, say replacing $\mathbf{v}_1$ with $2\mathbf{v}_1$, will scale the resulting $\mathbf{u}_1$ by the same factor, which in turn influences the rest of the calculations down the line .
+And so the process continues. For any subsequent vector $\mathbf{v}_k$, we make it orthogonal to all the previously generated pure vectors $\mathbf{u}_1, \mathbf{u}_2, \dots, \mathbf{u}_{k-1}$ by systematically subtracting every one of its shadows [@problem_id:997299]. It’s an assembly line for orthogonality. It's also worth noting that the process is honest: if you start with bigger vectors, you tend to get bigger [orthogonal vectors](@keyword=orthogonal_vectors|lang=en-US|style=Feynman) out. Scaling an initial vector, say replacing $\mathbf{v}_1$ with $2\mathbf{v}_1$, will scale the resulting $\mathbf{u}_1$ by the same factor, which in turn influences the rest of the calculations down the line [@problem_id:1395135].
 
 ### A Feature, Not a Bug: Detecting Redundancy
 
 A truly beautiful aspect of a great algorithm is what happens when you feed it "bad" input. What if our starting vectors are not nicely independent? What if there's redundancy?
 
-Let's consider the simplest case: two vectors that are collinear, meaning one is just a scaled version of the other, like $\mathbf{v}_2 = c\mathbf{v}_1$ for some non-zero constant $c$ . We begin as before: $\mathbf{u}_1 = \mathbf{v}_1$. Now let's compute $\mathbf{u}_2$:
+Let's consider the simplest case: two vectors that are collinear, meaning one is just a scaled version of the other, like $\mathbf{v}_2 = c\mathbf{v}_1$ for some non-zero constant $c$ [@problem_id:2177044]. We begin as before: $\mathbf{u}_1 = \mathbf{v}_1$. Now let's compute $\mathbf{u}_2$:
 $$
 \mathbf{u}_2 = \mathbf{v}_2 - \frac{\langle \mathbf{v}_2, \mathbf{u}_1 \rangle}{\langle \mathbf{u}_1, \mathbf{u}_1 \rangle} \mathbf{u}_1 = c\mathbf{v}_1 - \frac{\langle c\mathbf{v}_1, \mathbf{v}_1 \rangle}{\langle \mathbf{v}_1, \mathbf{v}_1 \rangle} \mathbf{v}_1
 $$
@@ -60,11 +60,11 @@ Because the inner product is linear, we can pull the constant $c$ out:
 $$
 \mathbf{u}_2 = c\mathbf{v}_1 - \frac{c\langle \mathbf{v}_1, \mathbf{v}_1 \rangle}{\langle \mathbf{v}_1, \mathbf{v}_1 \rangle} \mathbf{v}_1 = c\mathbf{v}_1 - c\mathbf{v}_1 = \mathbf{0}
 $$
-The second vector becomes the **[zero vector](@article_id:155695)**! The process doesn't break; it speaks to us. It says, "This second vector you gave me, $\mathbf{v}_2$, contained no new directional information that wasn't already in $\mathbf{v}_1$." This isn't a failure; it’s a discovery.
+The second vector becomes the **[zero vector](@keyword=zero_vector|lang=en-US|style=Feynman)**! The process doesn't break; it speaks to us. It says, "This second vector you gave me, $\mathbf{v}_2$, contained no new directional information that wasn't already in $\mathbf{v}_1$." This isn't a failure; it’s a discovery.
 
-This discovery extends to more complex situations. If at any stage a vector $\mathbf{v}_k$ is a linear combination of the preceding vectors $\{\mathbf{v}_1, \dots, \mathbf{v}_{k-1}\}$, it means $\mathbf{v}_k$ lies entirely within the subspace already spanned by the pure vectors $\{\mathbf{u}_1, \dots, \mathbf{u}_{k-1}\}$. It lives completely in their "shadow." When we subtract all its projections, we subtract the vector itself, and we are left with $\mathbf{u}_k = \mathbf{0}$ . The Gram-Schmidt process, therefore, acts as a **linear dependence detector**. The number of non-zero vectors it produces is the true **dimension** of the subspace spanned by the original vectors .
+This discovery extends to more complex situations. If at any stage a vector $\mathbf{v}_k$ is a linear combination of the preceding vectors $\{\mathbf{v}_1, \dots, \mathbf{v}_{k-1}\}$, it means $\mathbf{v}_k$ lies entirely within the subspace already spanned by the pure vectors $\{\mathbf{u}_1, \dots, \mathbf{u}_{k-1}\}$. It lives completely in their "shadow." When we subtract all its projections, we subtract the vector itself, and we are left with $\mathbf{u}_k = \mathbf{0}$ [@problem_id:1891879]. The Gram-Schmidt process, therefore, acts as a **linear dependence detector**. The number of non-zero vectors it produces is the true **dimension** of the subspace spanned by the original vectors [@problem_id:997154].
 
-However, the algorithm *can* fail. The [projection formula](@article_id:151670) involves division by $\langle \mathbf{u}_j, \mathbf{u}_j \rangle$, which is the squared length of the vector $\mathbf{u}_j$. If any $\mathbf{u}_j$ is the zero vector, we have division by zero, and the machine grinds to a halt. This happens if you are foolish enough to start with the [zero vector](@article_id:155695) , or if an intermediate vector $\mathbf{u}_k$ becomes zero due to [linear dependency](@article_id:185336), and you then try to use it for the next projection . You simply cannot project onto nothing.
+However, the algorithm *can* fail. The [projection formula](@keyword=projection_formula|lang=en-US|style=Feynman) involves division by $\langle \mathbf{u}_j, \mathbf{u}_j \rangle$, which is the squared length of the vector $\mathbf{u}_j$. If any $\mathbf{u}_j$ is the zero vector, we have division by zero, and the machine grinds to a halt. This happens if you are foolish enough to start with the [zero vector](@keyword=zero_vector|lang=en-US|style=Feynman) [@problem_id:1395126], or if an intermediate vector $\mathbf{u}_k$ becomes zero due to [linear dependency](@keyword=linear_dependency|lang=en-US|style=Feynman), and you then try to use it for the next projection [@problem_id:1891853]. You simply cannot project onto nothing.
 
 ### Beyond Arrows: The Power of Abstraction
 
@@ -76,7 +76,7 @@ $$
 $$
 This integral acts just like a dot product: it takes two functions and gives us a single number that tells us how "aligned" they are. Two functions are "orthogonal" if this integral is zero.
 
-Can we apply our shadow-removal recipe here? Absolutely! We can use the Gram-Schmidt process to orthogonalize the set $\{1, x, x^2\}$ .
+Can we apply our shadow-removal recipe here? Absolutely! We can use the Gram-Schmidt process to orthogonalize the set $\{1, x, x^2\}$ [@problem_id:2177071].
 1.  **Step 1:** $\mathbf{u}_1(x) = v_1(x) = 1$.
 2.  **Step 2:** $\mathbf{u}_2(x) = v_2(x) - \frac{\langle v_2, u_1 \rangle}{\langle u_1, u_1 \rangle} u_1(x)$.
     The inner product $\langle v_2, u_1 \rangle = \int_{-1}^{1} x \cdot 1 \, dx = 0$. So the shadow is zero! The polynomials $1$ and $x$ are already orthogonal on the interval $[-1, 1]$. Thus, $\mathbf{u}_2(x) = x$.
@@ -86,4 +86,4 @@ Can we apply our shadow-removal recipe here? Absolutely! We can use the Gram-Sch
 
 The set $\{1, x, x^2 - \frac{1}{3}\}$ is an orthogonal set of polynomials (the first three unnormalized **Legendre Polynomials**). This is not just a party trick; these functions are crucial in solving differential equations in physics, fitting data, and much more. They represent the most fundamental, independent "shapes" a function can take over an interval.
 
-This is the inherent beauty and unity the Gram-Schmidt process reveals. The same simple, geometric idea of removing shadows allows us to untangle correlated signals in electronics, build convenient [basis states](@article_id:151969) in quantum mechanics, and construct powerful families of functions in mathematics. It is a universal tool for imposing order on complexity.
+This is the inherent beauty and unity the Gram-Schmidt process reveals. The same simple, geometric idea of removing shadows allows us to untangle correlated signals in electronics, build convenient [basis states](@keyword=basis_states|lang=en-US|style=Feynman) in quantum mechanics, and construct powerful families of functions in mathematics. It is a universal tool for imposing order on complexity.

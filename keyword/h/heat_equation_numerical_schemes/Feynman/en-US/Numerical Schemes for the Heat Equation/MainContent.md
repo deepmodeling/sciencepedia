@@ -19,9 +19,9 @@ The rate of change in time, $\frac{\partial u}{\partial t}$, is simply the chang
 $$
 \frac{\partial u}{\partial t} \approx \frac{u_i^{j+1} - u_i^j}{\Delta t}
 $$
-This is called a **[forward difference](@article_id:173335)**, as we use the current time $j$ and the next time $j+1$ to look forward.
+This is called a **[forward difference](@keyword=forward_difference|lang=en-US|style=Feynman)**, as we use the current time $j$ and the next time $j+1$ to look forward.
 
-The spatial part, $\frac{\partial^2 u}{\partial x^2}$, tells us about the *curvature* of the temperature profile. It's high where there's a sharp kink and zero where the temperature is a straight line. We can approximate this by looking at a point $i$ and its immediate neighbors, $i-1$ and $i+1$. A wonderful and surprisingly accurate approximation is the **[centered difference](@article_id:634935)**:
+The spatial part, $\frac{\partial^2 u}{\partial x^2}$, tells us about the *curvature* of the temperature profile. It's high where there's a sharp kink and zero where the temperature is a straight line. We can approximate this by looking at a point $i$ and its immediate neighbors, $i-1$ and $i+1$. A wonderful and surprisingly accurate approximation is the **[centered difference](@keyword=centered_difference|lang=en-US|style=Feynman)**:
 $$
 \frac{\partial^2 u}{\partial x^2} \approx \frac{u_{i+1}^j - 2u_i^j + u_{i-1}^j}{(\Delta x)^2}
 $$
@@ -31,7 +31,7 @@ Now, let's put it all together. We equate our two approximations:
 $$
 \frac{u_i^{j+1} - u_i^j}{\Delta t} = \alpha \frac{u_{i+1}^j - 2u_i^j + u_{i-1}^j}{(\Delta x)^2}
 $$
-This is the famous **Forward-Time Centered-Space (FTCS)** scheme. We can rearrange it to get a simple update rule that tells us the temperature at the *next* time step based on the temperatures we know *now* :
+This is the famous **Forward-Time Centered-Space (FTCS)** scheme. We can rearrange it to get a simple update rule that tells us the temperature at the *next* time step based on the temperatures we know *now* [@problem_id:2170637]:
 $$
 u_i^{j+1} = u_i^j + r (u_{i+1}^j - 2u_i^j + u_{i-1}^j)
 $$
@@ -41,19 +41,19 @@ where all the physics and grid parameters have been bundled into a single, neat 
 
 Our simple update rule seems like a triumph, but it hides a subtle and spectacular danger. Suppose we get a little greedy and try to take a very large time step, $\Delta t$, to get our answer faster. The result can be catastrophic. The calculated temperatures might start to oscillate wildly, growing larger and larger with each step until they reach absurd, unphysical values like millions of degrees. The simulation has, quite literally, exploded. This failure is called **numerical instability**.
 
-What went wrong? To find out, we need to look closer at our magic number, $r = \frac{\alpha \Delta t}{(\Delta x)^2}$. By performing a clever analysis called **von Neumann stability analysis** , we can determine the exact condition that must be met to avoid this explosion. For the 1D FTCS scheme, the condition is disarmingly simple:
+What went wrong? To find out, we need to look closer at our magic number, $r = \frac{\alpha \Delta t}{(\Delta x)^2}$. By performing a clever analysis called **von Neumann stability analysis** [@problem_id:1126756], we can determine the exact condition that must be met to avoid this explosion. For the 1D FTCS scheme, the condition is disarmingly simple:
 $$
 r \le \frac{1}{2} \quad \text{or equivalently} \quad \Delta t \le \frac{(\Delta x)^2}{2\alpha}
 $$
-If you obey this rule, your simulation is stable. If you exceed it, even by the tiniest amount, disaster awaits. This means there is a maximum permissible time step for a given grid spacing .
+If you obey this rule, your simulation is stable. If you exceed it, even by the tiniest amount, disaster awaits. This means there is a maximum permissible time step for a given grid spacing [@problem_id:2205178].
 
-This condition isn't just a mathematical curiosity; it has profound practical consequences. Notice that the maximum time step depends on the *square* of the spatial step, $(\Delta x)^2$. What happens if you want a more detailed, higher-resolution simulation? You might decide to cut your spatial step in half ($\Delta x_2 = \Delta x_1 / 2$) to get more data points along the rod. You might expect this to be twice as much work. But the stability condition tells a much harsher story. To maintain stability, you must now reduce your time step by a factor of four ($\Delta t_2 = \Delta t_1 / 4$). Your simulation now requires twice the grid points and four times the time steps, making it eight times slower! This quadratic scaling is a famous bottleneck in high-resolution simulations .
+This condition isn't just a mathematical curiosity; it has profound practical consequences. Notice that the maximum time step depends on the *square* of the spatial step, $(\Delta x)^2$. What happens if you want a more detailed, higher-resolution simulation? You might decide to cut your spatial step in half ($\Delta x_2 = \Delta x_1 / 2$) to get more data points along the rod. You might expect this to be twice as much work. But the stability condition tells a much harsher story. To maintain stability, you must now reduce your time step by a factor of four ($\Delta t_2 = \Delta t_1 / 4$). Your simulation now requires twice the grid points and four times the time steps, making it eight times slower! This quadratic scaling is a famous bottleneck in high-resolution simulations [@problem_id:2164685].
 
-And it gets worse! What if we move from a 1D rod to a 2D plate? Now, heat at a point $(i,j)$ can diffuse not just to two neighbors, but to *four* neighbors (left, right, up, and down). To prevent the central point from giving up its heat too quickly and overshooting, we must be even more cautious. The stability condition becomes stricter :
+And it gets worse! What if we move from a 1D rod to a 2D plate? Now, heat at a point $(i,j)$ can diffuse not just to two neighbors, but to *four* neighbors (left, right, up, and down). To prevent the central point from giving up its heat too quickly and overshooting, we must be even more cautious. The stability condition becomes stricter [@problem_id:2101736]:
 $$
 \frac{\alpha \Delta t}{(\Delta x)^2} \le \frac{1}{4} \quad \text{(for a 2D square grid)}
 $$
-The maximum stable time step is now twice as small as in 1D! For a 3D cube, the limit becomes $1/6$. The more ways heat has to escape, the smaller our time steps must be. Stability is not an arbitrary mathematical constraint; it is deeply tied to the dimensionality and physics of the [diffusion process](@article_id:267521).
+The maximum stable time step is now twice as small as in 1D! For a 3D cube, the limit becomes $1/6$. The more ways heat has to escape, the smaller our time steps must be. Stability is not an arbitrary mathematical constraint; it is deeply tied to the dimensionality and physics of the [diffusion process](@keyword=diffusion_process|lang=en-US|style=Feynman).
 
 ### The 'Don't Do Anything Crazy' Principle
 
@@ -65,7 +65,7 @@ Let's look at our update rule again, but this time we'll group the terms differe
 $$
 u_i^{j+1} = r u_{i-1}^j + (1 - 2r) u_i^j + r u_{i+1}^j
 $$
-Now, think about what happens when our stability condition, $r \le 1/2$, is met. The term $(1-2r)$ is greater than or equal to zero. So, all three coefficients—$r$, $(1-2r)$, and $r$—are positive numbers. Furthermore, they add up to exactly one: $r + (1-2r) + r = 1$. This means that the new temperature, $u_i^{j+1}$, is simply a **weighted average** of the old temperatures at that point and its immediate neighbors! This is a beautiful result. It means the new temperature is guaranteed to lie somewhere between the minimum and maximum of those three old temperatures. It is mathematically impossible for the scheme to create a new, spurious hot spot or cold spot out of thin air . The scheme is behaving physically.
+Now, think about what happens when our stability condition, $r \le 1/2$, is met. The term $(1-2r)$ is greater than or equal to zero. So, all three coefficients—$r$, $(1-2r)$, and $r$—are positive numbers. Furthermore, they add up to exactly one: $r + (1-2r) + r = 1$. This means that the new temperature, $u_i^{j+1}$, is simply a **weighted average** of the old temperatures at that point and its immediate neighbors! This is a beautiful result. It means the new temperature is guaranteed to lie somewhere between the minimum and maximum of those three old temperatures. It is mathematically impossible for the scheme to create a new, spurious hot spot or cold spot out of thin air [@problem_id:2114210]. The scheme is behaving physically.
 
 But what if we violate the condition, and $r > 1/2$? The coefficient $(1-2r)$ becomes negative! Now, a point can become hotter because its neighbor was *colder*. This is physical nonsense. It's like an ice cube making the water around it boil. This is the root of the instability: the scheme is no longer behaving like diffusion, and all physical constraints are off. The stability condition is, in essence, the condition that our numerical scheme continues to act like a weighted averaging process, just as real diffusion does.
 
@@ -81,30 +81,30 @@ This is called the **Backward-Time Centered-Space (BTCS)** scheme. At first, thi
 $$
 -r u_{i-1}^{j+1} + (1+2r) u_i^{j+1} - r u_{i+1}^{j+1} = u_i^j
 $$
-This equation holds for every [interior point](@article_id:149471) $i$. So, instead of a simple, one-by-one update, we now have a system of linked linear equations for all the unknown temperatures at once. We can write this in matrix form as $A \mathbf{u}^{j+1} = \mathbf{d}^j$. The price of our new approach is that we must solve this matrix system at every single time step.
+This equation holds for every [interior point](@keyword=interior_point|lang=en-US|style=Feynman) $i$. So, instead of a simple, one-by-one update, we now have a system of linked linear equations for all the unknown temperatures at once. We can write this in matrix form as $A \mathbf{u}^{j+1} = \mathbf{d}^j$. The price of our new approach is that we must solve this matrix system at every single time step.
 
-However, this is a price well worth paying. First, the matrix $A$ that arises has a very special and "friendly" structure: it is **symmetric, tridiagonal and strictly diagonally dominant** . For mathematicians and computer scientists, this is great news, as it means the system can be solved incredibly quickly and accurately. But the real prize is this: the BTCS scheme is **unconditionally stable**. You can choose any time step $\Delta t$ you like, no matter how large, and the solution will never explode. We have traded a simple but restricted calculation for a slightly more complex but completely robust one. This is the fundamental trade-off between [explicit and implicit methods](@article_id:168269).
+However, this is a price well worth paying. First, the matrix $A$ that arises has a very special and "friendly" structure: it is **symmetric, tridiagonal and strictly diagonally dominant** [@problem_id:2171697]. For mathematicians and computer scientists, this is great news, as it means the system can be solved incredibly quickly and accurately. But the real prize is this: the BTCS scheme is **unconditionally stable**. You can choose any time step $\Delta t$ you like, no matter how large, and the solution will never explode. We have traded a simple but restricted calculation for a slightly more complex but completely robust one. This is the fundamental trade-off between [explicit and implicit methods](@keyword=explicit_and_implicit_methods|lang=en-US|style=Feynman).
 
 ### The Best of Both Worlds? A Spectrum of Schemes
 
-So we have two approaches: the explicit FTCS scheme ($\theta=0$) and the implicit BTCS scheme ($\theta=1$). Are they two completely different ideas? Not at all! They are two ends of a single, continuous spectrum. We can define a **[theta-method](@article_id:136045)** that blends them together with a weighting parameter $\theta$:
+So we have two approaches: the explicit FTCS scheme ($\theta=0$) and the implicit BTCS scheme ($\theta=1$). Are they two completely different ideas? Not at all! They are two ends of a single, continuous spectrum. We can define a **[theta-method](@keyword=theta_method|lang=en-US|style=Feynman)** that blends them together with a weighting parameter $\theta$:
 $$
 \frac{u_i^{j+1} - u_i^j}{\Delta t} = (1-\theta) \left( \alpha \frac{u_{i+1}^j - 2u_i^j + u_{i-1}^j}{(\Delta x)^2} \right) + \theta \left( \alpha \frac{u_{i+1}^{j+1} - 2u_i^{j+1} + u_{i-1}^{j+1}}{(\Delta x)^2} \right)
 $$
-By tuning $\theta$ from 0 to 1, we can smoothly transition from a fully explicit method to a fully implicit one .
+By tuning $\theta$ from 0 to 1, we can smoothly transition from a fully explicit method to a fully implicit one [@problem_id:2141786].
 
-In the middle of this spectrum lies a particularly famous and useful choice: $\theta = 1/2$. This corresponds to taking a perfect average of the explicit and implicit spatial terms. This method is known as the **Crank-Nicolson scheme**. It is unconditionally stable like the [implicit method](@article_id:138043), but it is also more accurate in its approximation of the time evolution. It seems like the perfect compromise.
+In the middle of this spectrum lies a particularly famous and useful choice: $\theta = 1/2$. This corresponds to taking a perfect average of the explicit and implicit spatial terms. This method is known as the **Crank-Nicolson scheme**. It is unconditionally stable like the [implicit method](@keyword=implicit_method|lang=en-US|style=Feynman), but it is also more accurate in its approximation of the time evolution. It seems like the perfect compromise.
 
-But nature rarely gives a free lunch. The Crank-Nicolson scheme, for all its elegance, has a peculiar flaw. If you simulate a problem with a very sharp initial change—like slapping a red-hot piece of metal against an ice-cold one—the Crank-Nicolson solution can develop strange, non-physical "wiggles" or oscillations near the discontinuity. A [stability analysis](@article_id:143583) reveals why: while the scheme never explodes, it does a very poor job of damping out the highest-frequency spatial wiggles. Instead of smoothing them away as real diffusion would, it allows them to persist and flip their sign at each time step, creating the illusion of ripples in the temperature . This is a masterful lesson: even an "unconditionally stable" and "higher-order" method is not a magic bullet. The best choice of scheme always depends on the specific physical character of the problem you are trying to solve.
+But nature rarely gives a free lunch. The Crank-Nicolson scheme, for all its elegance, has a peculiar flaw. If you simulate a problem with a very sharp initial change—like slapping a red-hot piece of metal against an ice-cold one—the Crank-Nicolson solution can develop strange, non-physical "wiggles" or oscillations near the discontinuity. A [stability analysis](@keyword=stability_analysis|lang=en-US|style=Feynman) reveals why: while the scheme never explodes, it does a very poor job of damping out the highest-frequency spatial wiggles. Instead of smoothing them away as real diffusion would, it allows them to persist and flip their sign at each time step, creating the illusion of ripples in the temperature [@problem_id:2211533]. This is a masterful lesson: even an "unconditionally stable" and "higher-order" method is not a magic bullet. The best choice of scheme always depends on the specific physical character of the problem you are trying to solve.
 
 ### The Physics of (In)stability
 
-We have seen that [numerical instability](@article_id:136564) can arise from a poor choice of $\Delta t$. But sometimes, instability in our simulation is a sign of something much deeper. Consider the bizarre, hypothetical **[backward heat equation](@article_id:163617)**:
+We have seen that [numerical instability](@keyword=numerical_instability|lang=en-US|style=Feynman) can arise from a poor choice of $\Delta t$. But sometimes, instability in our simulation is a sign of something much deeper. Consider the bizarre, hypothetical **[backward heat equation](@keyword=backward_heat_equation|lang=en-US|style=Feynman)**:
 $$
 \frac{\partial u}{\partial t} = - \alpha \frac{\partial^2 u}{\partial x^2}
 $$
 This equation describes a world where heat defies the second law of thermodynamics—where a lukewarm rod spontaneously separates into hot and cold regions, and a scrambled egg unscrambles itself. This process is, of course, physically unstable. Any tiny perturbation in temperature would be massively amplified over time.
 
-What happens if we naively try to simulate this with our trusty FTCS scheme? The minus sign flips a sign in our [stability analysis](@article_id:143583), and the result is stunning. The amplification factor for any wavy disturbance is *always* greater than one, for *any* choice of $\Delta t > 0$ . The scheme is **unconditionally unstable**.
+What happens if we naively try to simulate this with our trusty FTCS scheme? The minus sign flips a sign in our [stability analysis](@keyword=stability_analysis|lang=en-US|style=Feynman), and the result is stunning. The amplification factor for any wavy disturbance is *always* greater than one, for *any* choice of $\Delta t > 0$ [@problem_id:2205203]. The scheme is **unconditionally unstable**.
 
 This is no coincidence. The numerical scheme is screaming at us that the problem we've asked it to solve is itself pathological. The instability of the algorithm is a direct reflection of the instability of the physical laws it is trying to model. Far from being a mere numerical annoyance, the study of stability gives us a powerful lens through which we can understand the very nature of the physical world—its tendency to smooth or to sharpen, to be predictable or to be exquisitely sensitive to the slightest change.

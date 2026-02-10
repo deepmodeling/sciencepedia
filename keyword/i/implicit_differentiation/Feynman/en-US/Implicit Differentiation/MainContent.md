@@ -11,7 +11,7 @@ So, if we can't easily isolate one variable, does that mean we're stuck? What if
 
 ### The Chain Rule is All You Need
 
-The secret to implicit differentiation isn't some new, complicated rule. It's an old friend in a clever disguise: the [chain rule](@article_id:146928). The whole trick is to remember one simple fact: even though we haven't written it down, we are *assuming* that $y$ behaves like a function of $x$, at least in the local neighborhood of the point we care about. Let's call it $y(x)$.
+The secret to implicit differentiation isn't some new, complicated rule. It's an old friend in a clever disguise: the [chain rule](@keyword=chain_rule|lang=en-US|style=Feynman). The whole trick is to remember one simple fact: even though we haven't written it down, we are *assuming* that $y$ behaves like a function of $x$, at least in the local neighborhood of the point we care about. Let's call it $y(x)$.
 
 When we see a term like $x^2$, and we differentiate it with respect to $x$, we just get $2x$. Simple. But when we see a term like $y^2$, we must remember this is really $[y(x)]^2$. Now, the chain rule kicks in. The derivative of an "outside function" (the squaring) times the derivative of the "inside function" (the $y(x)$ itself). So, the derivative of $y^2$ with respect to $x$ isn't just $2y$; it's $2y \cdot \frac{dy}{dx}$.
 
@@ -29,7 +29,7 @@ $$
 $$
 This is a wonderful result. It tells us the slope of the circle at any point $(x, y)$ on it, without ever having to solve for $y$! At the point $(0,R)$, the top of the circle, the slope is $-\frac{0}{R} = 0$, a horizontal tangent, just as we'd expect. At the point $(R,0)$, on the far right, the slope is $-\frac{R}{0}$, which is undefined. This corresponds to a vertical tangent, which also makes perfect sense.
 
-This same principle works for much more complicated entanglements. Imagine a curve defined by the relation $x^2 y + x y^3 = A$, where $A$ is some constant . Trying to solve for $y$ here would be a nightmare. But we don't have to. We just differentiate both sides with respect to $x$, carefully applying the product rule and [chain rule](@article_id:146928) at every step:
+This same principle works for much more complicated entanglements. Imagine a curve defined by the relation $x^2 y + x y^3 = A$, where $A$ is some constant [@problem_id:1326316]. Trying to solve for $y$ here would be a nightmare. But we don't have to. We just differentiate both sides with respect to $x$, carefully applying the product rule and [chain rule](@keyword=chain_rule|lang=en-US|style=Feynman) at every step:
 $$
 \frac{d}{dx}(x^2 y) + \frac{d}{dx}(x y^3) = \frac{d}{dx}(A)
 $$
@@ -41,9 +41,9 @@ Now, we just gather all the terms with $\frac{dy}{dx}$ on one side and everythin
 
 ### Motion and Geometry: The Sliding Ladder
 
-The power of this idea isn't confined to static geometric curves. It truly shines when we analyze systems that change in time. These are the "[related rates](@article_id:157342)" problems that are the bread and butter of physics and engineering.
+The power of this idea isn't confined to static geometric curves. It truly shines when we analyze systems that change in time. These are the "[related rates](@keyword=related_rates|lang=en-US|style=Feynman)" problems that are the bread and butter of physics and engineering.
 
-Imagine a classic scenario: a ladder of length $L$ is leaning against a wall. Its base is being pulled away from the wall at a constant velocity, $v_0$ . As the base slides out, the top of the ladder slides down, and the angle $\theta$ it makes with the floor decreases. How fast is this angle changing at any given moment?
+Imagine a classic scenario: a ladder of length $L$ is leaning against a wall. Its base is being pulled away from the wall at a constant velocity, $v_0$ [@problem_id:2304279]. As the base slides out, the top of the ladder slides down, and the angle $\theta$ it makes with the floor decreases. How fast is this angle changing at any given moment?
 
 Let's set up the relationship. If $x(t)$ is the distance of the base from the wall at time $t$, then from simple trigonometry, we know that $x(t) = L \cos(\theta(t))$. Here, both $x$ and $\theta$ are implicitly functions of time, $t$. We want to find $\frac{d\theta}{dt}$.
 
@@ -63,9 +63,9 @@ This makes perfect sense. The rate is negative, because the angle is decreasing.
 
 ### Surfaces, Slopes, and Higher Dimensions
 
-Why stop at two dimensions? The universe, after all, has more. Imagine a surface in 3D space, not defined by a nice $z = f(x, y)$, but by a more complex equation like $x e^y + y e^z + z e^x = 0$ . This equation defines a [level set](@article_id:636562), a collection of points $(x,y,z)$ that satisfy the condition. Near most points on this surface, we can think of $z$ as being a function of $x$ and $y$, $z(x, y)$, even if we can't write the formula down.
+Why stop at two dimensions? The universe, after all, has more. Imagine a surface in 3D space, not defined by a nice $z = f(x, y)$, but by a more complex equation like $x e^y + y e^z + z e^x = 0$ [@problem_id:18434]. This equation defines a [level set](@keyword=level_set|lang=en-US|style=Feynman), a collection of points $(x,y,z)$ that satisfy the condition. Near most points on this surface, we can think of $z$ as being a function of $x$ and $y$, $z(x, y)$, even if we can't write the formula down.
 
-What if we want to know the slope of this surface as we move in the $x$-direction, holding $y$ constant? This is the partial derivative, $\frac{\partial z}{\partial x}$. The logic is identical. We differentiate the entire equation with respect to $x$, but with a new rule: since $y$ is being held constant, its derivative with respect to $x$ is zero. But $z$ is a function of $x$, so the [chain rule](@article_id:146928) still applies to every $z$ term.
+What if we want to know the slope of this surface as we move in the $x$-direction, holding $y$ constant? This is the partial derivative, $\frac{\partial z}{\partial x}$. The logic is identical. We differentiate the entire equation with respect to $x$, but with a new rule: since $y$ is being held constant, its derivative with respect to $x$ is zero. But $z$ is a function of $x$, so the [chain rule](@keyword=chain_rule|lang=en-US|style=Feynman) still applies to every $z$ term.
 
 Differentiating $x e^y + y e^z + z e^x = 0$ with respect to $x$ (and remembering $y$ is a constant):
 $$
@@ -74,11 +74,11 @@ $$
 $$
 (1 \cdot e^y) + (y \cdot e^z \cdot \frac{\partial z}{\partial x}) + (\frac{\partial z}{\partial x} \cdot e^x + z \cdot e^x) = 0
 $$
-And just like before, we can algebraically solve for $\frac{\partial z}{\partial x}$. The same procedure works for finding $\frac{\partial z}{\partial y}$, where we treat $x$ as a constant. This technique is the cornerstone of thermodynamics, fluid dynamics, and any field that deals with [state variables](@article_id:138296) that are implicitly related. For instance, in thermodynamics the pressure, volume, and temperature of a gas are related by an equation of state, often written as $f(P,V,T)=0$. Implicit differentiation allows us to find quantities like the rate of change of pressure with temperature at constant volume, $(\frac{\partial P}{\partial T})_V$, without needing to solve for $P$ first.
+And just like before, we can algebraically solve for $\frac{\partial z}{\partial x}$. The same procedure works for finding $\frac{\partial z}{\partial y}$, where we treat $x$ as a constant. This technique is the cornerstone of thermodynamics, fluid dynamics, and any field that deals with [state variables](@keyword=state_variables|lang=en-US|style=Feynman) that are implicitly related. For instance, in thermodynamics the pressure, volume, and temperature of a gas are related by an equation of state, often written as $f(P,V,T)=0$. Implicit differentiation allows us to find quantities like the rate of change of pressure with temperature at constant volume, $(\frac{\partial P}{\partial T})_V$, without needing to solve for $P$ first.
 
 ### A "Cyclic" Kind of Magic
 
-When you start playing with these [partial derivatives](@article_id:145786) of implicitly defined functions, you stumble upon a remarkable and beautiful piece of mathematical symmetry. Let's say we have three variables $x, y, z$ tied together by a single equation, $F(x, y, z) = 0$. We can think of $z$ as a function of $x$ and $y$, or $x$ as a function of $y$ and $z$, or $y$ as a function of $z$ and $x$. We can find the [partial derivatives](@article_id:145786) for each case: $(\frac{\partial z}{\partial x})_y$, $(\frac{\partial x}{\partial y})_z$, and $(\frac{\partial y}{\partial z})_x$. The subscript reminds us which variable is held constant.
+When you start playing with these [partial derivatives](@keyword=partial_derivatives|lang=en-US|style=Feynman) of implicitly defined functions, you stumble upon a remarkable and beautiful piece of mathematical symmetry. Let's say we have three variables $x, y, z$ tied together by a single equation, $F(x, y, z) = 0$. We can think of $z$ as a function of $x$ and $y$, or $x$ as a function of $y$ and $z$, or $y$ as a function of $z$ and $x$. We can find the [partial derivatives](@keyword=partial_derivatives|lang=en-US|style=Feynman) for each case: $(\frac{\partial z}{\partial x})_y$, $(\frac{\partial x}{\partial y})_z$, and $(\frac{\partial y}{\partial z})_x$. The subscript reminds us which variable is held constant.
 
 What happens if we multiply these three rates of change together?
 $$
@@ -92,7 +92,7 @@ Now look what happens when we multiply them:
 $$
 \left(-\frac{\partial F/\partial x}{\partial F/\partial z}\right) \left(-\frac{\partial F/\partial y}{\partial F/\partial x}\right) \left(-\frac{\partial F/\partial z}{\partial F/\partial y}\right) = (-1)^3 \frac{(\partial F/\partial x)(\partial F/\partial y)(\partial F/\partial z)}{(\partial F/\partial z)(\partial F/\partial x)(\partial F/\partial y)} = -1
 $$
-This is the **[triple product](@article_id:195388) rule**, or cyclic relation. It always equals $-1$!  This is not a coincidence; it's a deep statement about the consistency of the geometric relationships on a surface. It's a beautiful example of how simple rules, followed logically, can lead to surprisingly elegant and universal truths.
+This is the **[triple product](@keyword=triple_product|lang=en-US|style=Feynman) rule**, or cyclic relation. It always equals $-1$! [@problem_id:29700] This is not a coincidence; it's a deep statement about the consistency of the geometric relationships on a surface. It's a beautiful example of how simple rules, followed logically, can lead to surprisingly elegant and universal truths.
 
 ### When the Machine Breaks: Singularities and Vertical Tangents
 
@@ -100,28 +100,28 @@ Like any powerful tool, implicit differentiation relies on certain assumptions. 
 
 Our formula for the derivative is $\frac{dy}{dx} = -F_x / F_y$, where $F(x,y)=0$ is the implicit relation. This formula breaks down if the denominator $F_y = \frac{\partial F}{\partial y}$ is zero. What does this mean geometrically?
 
-One possibility is that the numerator $F_x$ is *not* zero. In this case, the slope $\frac{dy}{dx}$ becomes infinite. This corresponds to a **vertical tangent line** on the curve . At a point with a vertical tangent, the curve is going straight up and down. You can't describe $y$ as a function of $x$ right there, because for that single $x$-value, the curve is passing through multiple $y$-values in that infinitesimal neighborhood. But you *could* describe $x$ as a function of $y$, since the tangent is horizontal from the $y$-axis's point of view.
+One possibility is that the numerator $F_x$ is *not* zero. In this case, the slope $\frac{dy}{dx}$ becomes infinite. This corresponds to a **vertical tangent line** on the curve [@problem_id:1308844]. At a point with a vertical tangent, the curve is going straight up and down. You can't describe $y$ as a function of $x$ right there, because for that single $x$-value, the curve is passing through multiple $y$-values in that infinitesimal neighborhood. But you *could* describe $x$ as a function of $y$, since the tangent is horizontal from the $y$-axis's point of view.
 
-A more subtle case happens when *both* the numerator and denominator are zero: $F_x = 0$ and $F_y = 0$. Now our formula gives the indeterminate form $\frac{0}{0}$. These are **[singular points](@article_id:266205)**, and they can represent places where the curve crosses itself, or has a sharp corner (a "cusp"), or is otherwise not "smooth".
+A more subtle case happens when *both* the numerator and denominator are zero: $F_x = 0$ and $F_y = 0$. Now our formula gives the indeterminate form $\frac{0}{0}$. These are **[singular points](@keyword=singular_points|lang=en-US|style=Feynman)**, and they can represent places where the curve crosses itself, or has a sharp corner (a "cusp"), or is otherwise not "smooth".
 
-Consider the curious equation $x^y = y^x$ for $x, y > 0$ . One obvious set of solutions is the line $y=x$. But there is also another curve of solutions. These two solution sets meet at a special point. By taking logarithms, $\frac{\ln(x)}{x} = \frac{\ln(y)}{y}$, and applying implicit differentiation, we find that $\frac{dy}{dx}$ becomes $\frac{0}{0}$ precisely at the point where $x=y=e \approx 2.718$. This is the point where the line $y=x$ tangentially touches the other solution curve. At this special point $(e,e)$, the notion of "the" slope breaks down because two different branches of the solution are coalescing. Understanding where a mathematical tool fails is as important as knowing where it works, as it reveals the deep structure of the problem you're trying to solve.
+Consider the curious equation $x^y = y^x$ for $x, y > 0$ [@problem_id:1676699]. One obvious set of solutions is the line $y=x$. But there is also another curve of solutions. These two solution sets meet at a special point. By taking logarithms, $\frac{\ln(x)}{x} = \frac{\ln(y)}{y}$, and applying implicit differentiation, we find that $\frac{dy}{dx}$ becomes $\frac{0}{0}$ precisely at the point where $x=y=e \approx 2.718$. This is the point where the line $y=x$ tangentially touches the other solution curve. At this special point $(e,e)$, the notion of "the" slope breaks down because two different branches of the solution are coalescing. Understanding where a mathematical tool fails is as important as knowing where it works, as it reveals the deep structure of the problem you're trying to solve.
 
 ### The Grand Unification: From Numbers to Matrices
 
 So far, we have seen how a single, simple idea—applying the chain rule to an implicit equation—works for 2D curves, for rates of change in physics, and for surfaces in 3D. Does it go further? Of course it does. The truly profound ideas in mathematics have this habit of scaling up in breathtaking ways.
 
-Let's leap into the world of advanced [matrix theory](@article_id:184484). Matrices, as you may know, can be added and multiplied. We can also define functions of matrices, like the matrix exponential $e^X$. Now, consider an equation like this:
+Let's leap into the world of advanced [matrix theory](@keyword=matrix_theory|lang=en-US|style=Feynman). Matrices, as you may know, can be added and multiplied. We can also define functions of matrices, like the matrix exponential $e^X$. Now, consider an equation like this:
 $$
 e^X + X = A
 $$
-where $X$ and $A$ are not numbers, but $n \times n$ matrices . For a matrix $A$ close to the identity matrix $I$, this equation implicitly defines a solution matrix $X$ as a function of the matrix $A$, so we can write $X(A)$.
+where $X$ and $A$ are not numbers, but $n \times n$ matrices [@problem_id:557430]. For a matrix $A$ close to the identity matrix $I$, this equation implicitly defines a solution matrix $X$ as a function of the matrix $A$, so we can write $X(A)$.
 
-Can we find the "derivative" of this matrix function? Yes! It's called the Fréchet derivative, but the spirit of the calculation is *exactly the same* as what we did for the circle. We "differentiate" the entire equation with respect to $A$. Let's denote a small change in $A$ as $d A$ and the corresponding small change in $X$ as $dX$. The rules of [matrix calculus](@article_id:180606) (which are themselves generalizations of the product and chain rules) tell us that differentiating the equation gives:
+Can we find the "derivative" of this matrix function? Yes! It's called the Fréchet derivative, but the spirit of the calculation is *exactly the same* as what we did for the circle. We "differentiate" the entire equation with respect to $A$. Let's denote a small change in $A$ as $d A$ and the corresponding small change in $X$ as $dX$. The rules of [matrix calculus](@keyword=matrix_calculus|lang=en-US|style=Feynman) (which are themselves generalizations of the product and chain rules) tell us that differentiating the equation gives:
 $$
 d(e^X) + dX = dA
 $$
-The derivative of the [matrix exponential](@article_id:138853) is a bit more complex, but at the specific point where $A=I$ (which implies $X=0$), it simplifies beautifully. The "chain rule" part $d(e^X)$ becomes just $dX$. So, at this point, our differentiated equation becomes:
+The derivative of the [matrix exponential](@keyword=matrix_exponential|lang=en-US|style=Feynman) is a bit more complex, but at the specific point where $A=I$ (which implies $X=0$), it simplifies beautifully. The "chain rule" part $d(e^X)$ becomes just $dX$. So, at this point, our differentiated equation becomes:
 $$
 dX + dX = dA \quad \implies \quad 2 dX = dA \quad \implies \quad dX = \frac{1}{2} dA
 $$
-This astonishingly simple result tells us how the solution matrix $X$ responds to a small change in the input matrix $A$: it changes by exactly half as much. We found this by applying the very same implicit differentiation logic. The fact that the same core idea unifies the geometry of a simple circle, the physics of a sliding ladder, the state of a thermodynamic gas, and the behavior of abstract [matrix functions](@article_id:179898) is a testament to the profound beauty and interconnectedness of mathematical thought. It all comes back to one thing: embracing the relationship as it is, and remembering the chain rule.
+This astonishingly simple result tells us how the solution matrix $X$ responds to a small change in the input matrix $A$: it changes by exactly half as much. We found this by applying the very same implicit differentiation logic. The fact that the same core idea unifies the geometry of a simple circle, the physics of a sliding ladder, the state of a thermodynamic gas, and the behavior of abstract [matrix functions](@keyword=matrix_functions|lang=en-US|style=Feynman) is a testament to the profound beauty and interconnectedness of mathematical thought. It all comes back to one thing: embracing the relationship as it is, and remembering the chain rule.

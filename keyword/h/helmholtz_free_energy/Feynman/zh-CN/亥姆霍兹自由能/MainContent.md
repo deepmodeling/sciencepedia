@@ -1,9 +1,9 @@
 ## 引言
-在[热力学](@article_id:359663)研究中，内能为我们提供了对体系状态的基本描述。然而，内能依赖于熵——一个在实验室环境中极难直接控制的量——这带来了重大的实践挑战。这就引出了一个关键问题：我们能否定义一个更方便的能量势，它可以用实验上可控的变量（如温度和体积）来描述？答案就在[亥姆霍兹自由能](@article_id:296896)这一概念中，它是一个强大的工具，重塑了我们对功、平衡和自发变化的理解。本文首先深入探讨亥姆霍兹自由能背后的“原理与机制”，详细介绍其通过[勒让德变换](@article_id:307145)的数学推导、其作为[有效功](@article_id:305344)的物理解释，以及它作为自然过程指导原则的角色。随后，“应用与[交叉](@article_id:315017)学科联系”一章将展示其在物理、化学和宇宙学等不同领域的巨大解释力。
+在[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)研究中，内能为我们提供了对体系状态的基本描述。然而，内能依赖于熵——一个在实验室环境中极难直接控制的量——这带来了重大的实践挑战。这就引出了一个关键问题：我们能否定义一个更方便的能量势，它可以用实验上可控的变量（如温度和体积）来描述？答案就在[亥姆霍兹自由能](@keyword=helmholtz_free_energy|lang=zh-CN|style=Feynman)这一概念中，它是一个强大的工具，重塑了我们对功、平衡和自发变化的理解。本文首先深入探讨亥姆霍兹自由能背后的“原理与机制”，详细介绍其通过[勒让德变换](@keyword=legendre_transformation|lang=zh-CN|style=Feynman)的数学推导、其作为[有效功](@keyword=available_work|lang=zh-CN|style=Feynman)的物理解释，以及它作为自然过程指导原则的角色。随后，“应用与[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)学科联系”一章将展示其在物理、化学和宇宙学等不同领域的巨大解释力。
 
 ## 原理与机制
 
-在我们理解世界的旅程中，我们常常发现最有用的工具未必是最基本的。[热力学第一定律](@article_id:306905)给了我们内能 $U$ 这个宏伟的概念。其基本方程 $dU = TdS - PdV$ 告诉我们，它的“自然”语言是熵 ($S$) 和体积 ($V$)。但如果你在实验室工作过，你就会知道，控制一个体系的熵就像试图对飓风耳语下达指令。它是无序度的量度，是无数原子的统计属性，而不是一个我们可以随意调节的旋钮。相比之下，我们更善于控制温度 ($T$)——通过将体系置于恒温浴中——和体积 ($V$)——通过将其放入刚性容器中。
+在我们理解世界的旅程中，我们常常发现最有用的工具未必是最基本的。[热力学第一定律](@keyword=first_law_of_thermodynamics|lang=zh-CN|style=Feynman)给了我们内能 $U$ 这个宏伟的概念。其基本方程 $dU = TdS - PdV$ 告诉我们，它的“自然”语言是熵 ($S$) 和体积 ($V$)。但如果你在实验室工作过，你就会知道，控制一个体系的熵就像试图对飓风耳语下达指令。它是无序度的量度，是无数原子的统计属性，而不是一个我们可以随意调节的旋钮。相比之下，我们更善于控制温度 ($T$)——通过将体系置于恒温浴中——和体积 ($V$)——通过将其放入刚性容器中。
 
 于是，物理学家的探索开始了：我们能否定义一种新的能量，一种新的势，其自然语言是实验室的语言，即 $T$ 和 $V$ 的语言？
 
@@ -11,17 +11,17 @@
 
 内能 $U(S,V)$ 的不便之处在于，要预测其变化，我们需要知道熵和体积如何变化。我们想要的是一个新的量，我们称之为 $F$，它自然地存在于 $F(T,V)$ 的世界中。如果我们有这样一个函数，我们就可以在改变体系的温度或体积时，轻松地计算出体系会发生什么，而无需与熵这个棘手的概念作斗争。
 
-这不仅仅是为了方便，它开启了一种全新的思维方式。在[热力学](@article_id:359663)这盘棋中，从 $(S,V)$ 切换到 $(T,V)$ 是关键的一步，而实现这一步的棋子就是亥姆霍兹自由能。它是通过一个巧妙的数学技巧获得的。
+这不仅仅是为了方便，它开启了一种全新的思维方式。在[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)这盘棋中，从 $(S,V)$ 切换到 $(T,V)$ 是关键的一步，而实现这一步的棋子就是亥姆霍兹自由能。它是通过一个巧妙的数学技巧获得的。
 
 ### 数学的神来之笔：勒让德变换
 
-自然界提供了一种方法，可以用一个变量来换取其对应的变化率。这个技巧被称为**勒让德变换**，它是理论物理中反复出现的主题之一。其思想是：我们从内能 $U$ 出发，希望用它的[共轭](@article_id:312168)伙伴——温度 $T = (\partial U/\partial S)_V$ 来取代变量 $S$。完成这一目标的变换出人意料地简单。我们将一个新的函数，即**亥姆霍兹自由能** $F$（在化学中通常记为 $A$），定义为：
+自然界提供了一种方法，可以用一个变量来换取其对应的变化率。这个技巧被称为**勒让德变换**，它是理论物理中反复出现的主题之一。其思想是：我们从内能 $U$ 出发，希望用它的[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)伙伴——温度 $T = (\partial U/\partial S)_V$ 来取代变量 $S$。完成这一目标的变换出人意料地简单。我们将一个新的函数，即**亥姆霍兹自由能** $F$（在化学中通常记为 $A$），定义为：
 
 $$
 F \equiv U - TS
 $$
 
-这看起来可能像是我们凭空变出来的，但请看魔术如何展开。让我们看看 $F$ 是如何变化的。利用[微分](@article_id:319122)的乘积法则，变化量 $dF$ 是：
+这看起来可能像是我们凭空变出来的，但请看魔术如何展开。让我们看看 $F$ 是如何变化的。利用[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)的乘积法则，变化量 $dF$ 是：
 
 $$
 dF = dU - d(TS) = dU - TdS - SdT
@@ -39,11 +39,11 @@ $$
 dF = -SdT - PdV
 $$
 
-看看我们取得了什么成就！我们的新能量的微分 $dF$ 只依赖于 $dT$ 和 $dV$ 的变化。我们成功地创造了一个热力学势，其**[自然变量](@article_id:308771)**是温度和体积，这正是我们在实验室中可以控制的量  。这个看似简单的方程蕴含着巨大的能量，是理解后续一切的关键。
+看看我们取得了什么成就！我们的新能量的微分 $dF$ 只依赖于 $dT$ 和 $dV$ 的变化。我们成功地创造了一个热力学势，其**[自然变量](@keyword=natural_variables|lang=zh-CN|style=Feynman)**是温度和体积，这正是我们在实验室中可以控制的量 [@problem_id:1989044] [@problem_id:1981196]。这个看似简单的方程蕴含着巨大的能量，是理解后续一切的关键。
 
 ### “自由”能：做功的势
 
-那么，这个“自由能”是什么？它*意味着*什么？其名字本身就提供了线索。考虑一个在恒定温度下发生的过程，比如电池放电，或者浸在水浴中的试管里发生的[化学反应](@article_id:307389)。在这种情况下，$dT=0$，我们关于 $F$ 的[主方程](@article_id:303394)简化为：
+那么，这个“自由能”是什么？它*意味着*什么？其名字本身就提供了线索。考虑一个在恒定温度下发生的过程，比如电池放电，或者浸在水浴中的试管里发生的[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)。在这种情况下，$dT=0$，我们关于 $F$ 的[主方程](@keyword=master_equation|lang=zh-CN|style=Feynman)简化为：
 
 $$
 dF = -PdV \quad (\text{在恒定 } T \text{ 时})
@@ -57,37 +57,37 @@ $$
 \Delta F = W_{\text{PV}} + W_{\text{non-PV}} = W_{\text{total}}
 $$
 
-其中 $W$ 是*对*体系做的功。因此，亥姆霍兹自由能的减少量 $-\Delta F$，是体系在[等温过程](@article_id:303531)中能对其环境做的**最大可能总功**。它是可以作为有用功被提取出来的“自由”能量。内能的其余部分，即 $TS$ 部分，是“束缚”能，它被用于维持体系的热无序状态，不能用来做功。
+其中 $W$ 是*对*体系做的功。因此，亥姆霍兹自由能的减少量 $-\Delta F$，是体系在[等温过程](@keyword=isothermal_process|lang=zh-CN|style=Feynman)中能对其环境做的**最大可能总功**[@problem_id:1862667]。它是可以作为有用功被提取出来的“自由”能量。内能的其余部分，即 $TS$ 部分，是“束缚”能，它被用于维持体系的热无序状态，不能用来做功。
 
-一个绝佳的、非直觉的例子是橡皮筋的弹性。当你拉伸一根简单的橡皮筋时，它会变热。如果你缓慢地拉伸它，让它保持恒温，你就在对它做功。这个功主要不是以内部势能（像拉伸金属弹簧那样）的形式储存，而是作为自由能的变化储存起来。对于一个理想化的“[熵弹簧](@article_id:296702)”模型，内能 $U$ 只依赖于温度。当你等温地将其从长度 $L_i$ 拉伸到 $L_f$ 时，你使其自由能增加了 $\Delta F$，这可以通过将[张力](@article_id:357470) $\tau$ 对长度变化进行积分来计算。当橡皮筋收缩时，这个储存的自由能就可以用来做功。橡皮筋的恢复力并非来自原子被拉开，而是来自熵：拉伸状态（高分子链的可及构型较少）比松弛状态更有序，而自然界趋向于无序的倾向将其[拉回](@article_id:321220)。
+一个绝佳的、非直觉的例子是橡皮筋的弹性。当你拉伸一根简单的橡皮筋时，它会变热。如果你缓慢地拉伸它，让它保持恒温，你就在对它做功。这个功主要不是以内部势能（像拉伸金属弹簧那样）的形式储存，而是作为自由能的变化储存起来。对于一个理想化的“[熵弹簧](@keyword=entropic_spring|lang=zh-CN|style=Feynman)”模型，内能 $U$ 只依赖于温度。当你等温地将其从长度 $L_i$ 拉伸到 $L_f$ 时，你使其自由能增加了 $\Delta F$，这可以通过将[张力](@keyword=tension_force|lang=zh-CN|style=Feynman) $\tau$ 对长度变化进行积分来计算。当橡皮筋收缩时，这个储存的自由能就可以用来做功[@problem_id:1976383]。橡皮筋的恢复力并非来自原子被拉开，而是来自熵：拉伸状态（高分子链的可及构型较少）比松弛状态更有序，而自然界趋向于无序的倾向将其[拉回](@keyword=pullback|lang=zh-CN|style=Feynman)。
 
-### 自然的指南针：自由能[最小原理](@article_id:343191)
+### 自然的指南针：自由能[最小原理](@keyword=minimum_principle|lang=zh-CN|style=Feynman)
 
-[亥姆霍兹自由能](@article_id:296896)最深刻的属性，或许是它作为自发变化指示牌的角色。热力学第二定律以其最宏伟的形式指出，对于孤立体系中的任何自发过程，总熵必须增加：$\Delta S_{\text{total}} \ge 0$。
+[亥姆霍兹自由能](@keyword=helmholtz_free_energy|lang=zh-CN|style=Feynman)最深刻的属性，或许是它作为自发变化指示牌的角色。热力学第二定律以其最宏伟的形式指出，对于孤立体系中的任何自发过程，总熵必须增加：$\Delta S_{\text{total}} \ge 0$。
 
 但是我们这个保持在恒温恒容下的体系呢？它不是孤立的；它不断地与一个热库交换热量以维持其温度。让我们考虑“总”体系：我们的体系(S)加上巨大的热库(R)。这个组合体*是*一个孤立体系。
 
-总[熵变](@article_id:298742)为 $\Delta S_{\text{total}} = \Delta S_S + \Delta S_R$。流入热库的热量为 $-Q_S$，其中 $Q_S$ 是我们体系吸收的热量。由于[热库](@article_id:315579)巨大，其熵变为 $\Delta S_R = -Q_S / T$。由于我们体系的体积是恒定的，它不做[PV功](@article_id:299672)，因此根据第一定律，$Q_S = \Delta U_S$。将这些整合在一起，我们发现：
+总[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)为 $\Delta S_{\text{total}} = \Delta S_S + \Delta S_R$。流入热库的热量为 $-Q_S$，其中 $Q_S$ 是我们体系吸收的热量。由于[热库](@keyword=heat_reservoir|lang=zh-CN|style=Feynman)巨大，其熵变为 $\Delta S_R = -Q_S / T$。由于我们体系的体积是恒定的，它不做[PV功](@keyword=pressure_volume_work|lang=zh-CN|style=Feynman)，因此根据第一定律，$Q_S = \Delta U_S$。将这些整合在一起，我们发现：
 
 $$
 \Delta S_{\text{total}} = \Delta S_S - \frac{\Delta U_S}{T} = -\frac{(\Delta U_S - T \Delta S_S)}{T}
 $$
 
-对于一个恒温过程，括号中的项恰好是我们体系的亥姆霍兹自由能的变化，$\Delta F_S$。因此我们得出了一个惊人的结论：
+对于一个恒温过程，括号中的项恰好是我们体系的亥姆霍兹自由能的变化，$\Delta F_S$。因此我们得出了一个惊人的结论[@problem_id:514312]：
 
 $$
 \Delta S_{\text{total}} = -\frac{\Delta F_S}{T}
 $$
 
-[热力学第二定律](@article_id:303170)要求对于任何自发过程 $\Delta S_{\text{total}} \ge 0$。由于温度 $T$ 是正的，这直接意味着 $\Delta F_S \le 0$。
+[热力学第二定律](@keyword=second_law_of_thermodynamics|lang=zh-CN|style=Feynman)要求对于任何自发过程 $\Delta S_{\text{total}} \ge 0$。由于温度 $T$ 是正的，这直接意味着 $\Delta F_S \le 0$。
 
-就是这样。这就是任何保持在恒温恒容下的体系所遵循的指导原则：**体系会自发地以任何能降低其[亥姆霍兹自由能](@article_id:296896)的方式变化。** 平衡不是在能量最低时达到，而是在*自由能*达到最小时达到。体系总是在试图沿着“自由能之山”滑下，直到在谷底安顿下来。这个原理支配着一切，从[化学反应](@article_id:307389)和[相变](@article_id:297531)到蛋白质的折叠。它是在恒定 $(T,V)$ 世界中自然的指南针。
+就是这样。这就是任何保持在恒温恒容下的体系所遵循的指导原则：**体系会自发地以任何能降低其[亥姆霍兹自由能](@keyword=helmholtz_free_energy|lang=zh-CN|style=Feynman)的方式变化。** 平衡不是在能量最低时达到，而是在*自由能*达到最小时达到。体系总是在试图沿着“自由能之山”滑下，直到在谷底安顿下来。这个原理支配着一切，从[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)和[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)到蛋白质的折叠。它是在恒定 $(T,V)$ 世界中自然的指南针。
 
 ### 从谷底的视角：统计基础
 
-到目前为止，我们都将 $F = U - TS$ 视为一个巧妙的[热力学](@article_id:359663)定义。但它的根源要深得多，直达物质的统计核心。在[统计力](@article_id:373880)学中，我们设想一个体系可以处于大量微观状态（或称“微观态”）中的任何一个，每个状态的能量为 $E_i$。当体系处于温度 $T$ 时，发现它处于状态 $i$ 的概率 $p_i$ 由著名的**玻尔兹曼分布**给出：$p_i \propto \exp(-E_i / k_B T)$。
+到目前为止，我们都将 $F = U - TS$ 视为一个巧妙的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)定义。但它的根源要深得多，直达物质的统计核心。在[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学中，我们设想一个体系可以处于大量微观状态（或称“微观态”）中的任何一个，每个状态的能量为 $E_i$。当体系处于温度 $T$ 时，发现它处于状态 $i$ 的概率 $p_i$ 由著名的**玻尔兹曼分布**给出：$p_i \propto \exp(-E_i / k_B T)$。
 
-内能 $U$ 就是[平均能量](@article_id:306313)，$U = \sum_i p_i E_i$。由 Gibbs 定义的熵 $S$ 是衡量我们对体系处于哪个状态的不确定性的度量：$S = -k_B \sum_i p_i \ln p_i$。如果我们将玻尔兹曼概率代入[吉布斯熵](@article_id:314565)公式会发生什么？
+内能 $U$ 就是[平均能量](@keyword=average_energy|lang=zh-CN|style=Feynman)，$U = \sum_i p_i E_i$。由 Gibbs 定义的熵 $S$ 是衡量我们对体系处于哪个状态的不确定性的度量：$S = -k_B \sum_i p_i \ln p_i$。如果我们将玻尔兹曼概率代入[吉布斯熵](@keyword=gibbs_entropy|lang=zh-CN|style=Feynman)公式会发生什么？
 
 这需要一些代数运算，但结果是一个启示。你会发现熵可以写成：
 
@@ -95,19 +95,19 @@ $$
 S = \frac{U}{T} + k_B \ln Z
 $$
 
-其中 $Z = \sum_i \exp(-E_i / k_B T)$ 是传奇的**配分函数**，它对所有可能的状态进行了求和。重新整理这个方程，我们可以写出 $U - TS = -k_B T \ln Z$。左边是我们[亥姆霍兹自由能](@article_id:296896)的[热力学](@article_id:359663)定义。右边则是一个纯粹的[统计力](@article_id:373880)学量。因此，我们得到了一个深刻的联系：
+其中 $Z = \sum_i \exp(-E_i / k_B T)$ 是传奇的**配分函数**，它对所有可能的状态进行了求和。重新整理这个方程，我们可以写出 $U - TS = -k_B T \ln Z$。左边是我们[亥姆霍兹自由能](@keyword=helmholtz_free_energy|lang=zh-CN|style=Feynman)的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)定义。右边则是一个纯粹的[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学量。因此，我们得到了一个深刻的联系[@problem_id:740503]：
 
 $$
 F = U - TS = -k_B T \ln Z
 $$
 
-这个方程是整个物理学中最重要的方程之一。它将宏观的[热力学](@article_id:359663)世界（左侧）与微观的、概率性的[统计力](@article_id:373880)学世界（右侧）连接起来。唯象量 $F$ 与[配分函数](@article_id:371907) $Z$直接相关，而配分函数是包含体系所有统计信息的主函数。
+这个方程是整个物理学中最重要的方程之一。它将宏观的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)世界（左侧）与微观的、概率性的[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学世界（右侧）连接起来。唯象量 $F$ 与[配分函数](@keyword=sum_over_states_2|lang=zh-CN|style=Feynman) $Z$直接相关，而配分函数是包含体系所有统计信息的主函数。
 
-### [热力学](@article_id:359663)神谕：预测体系的秘密
+### [热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)神谕：预测体系的秘密
 
-这种联系赋予了[亥姆霍兹自由能](@article_id:296896)巨大的预测能力。如果一个理论家能为一个体系的[微观态](@article_id:307807)建立模型并计算其配分函数（这是一项困难但并非不可能的任务），他们就能得到 $F(T,V)$。正如我们的[主方程](@article_id:303394) $dF = -SdT - PdV$ 所示，一旦你有了 $F(T,V)$，你就拥有一切。你可以像请教神谕一样向它咨询。
+这种联系赋予了[亥姆霍兹自由能](@keyword=helmholtz_free_energy|lang=zh-CN|style=Feynman)巨大的预测能力。如果一个理论家能为一个体系的[微观态](@keyword=microstates|lang=zh-CN|style=Feynman)建立模型并计算其配分函数（这是一项困难但并非不可能的任务），他们就能得到 $F(T,V)$。正如我们的[主方程](@keyword=master_equation|lang=zh-CN|style=Feynman) $dF = -SdT - PdV$ 所示，一旦你有了 $F(T,V)$，你就拥有一切。你可以像请教神谕一样向它咨询。
 
-想知道体系的熵吗？只需对温度求[偏导数](@article_id:306700)：
+想知道体系的熵吗？只需对温度求[偏导数](@keyword=partial_derivatives|lang=zh-CN|style=Feynman)：
 $$
 S = -\left(\frac{\partial F}{\partial T}\right)_V
 $$
@@ -117,20 +117,20 @@ $$
 P = -\left(\frac{\partial F}{\partial V}\right)_T
 $$
 
-例如，如果一个假设的气体的自由能由 $F(T,V) = -aT \ln(V-b) - cV/T^2$ 给出，我们可以立即发现其压强为 $P = \frac{aT}{V-b} + \frac{c}{T^2}$，其熵为 $S = a\ln(V-b) - \frac{2cV}{T^3}$ 。自由能函数包含了该物质的完整[热力学](@article_id:359663)蓝图。
+例如，如果一个假设的气体的自由能由 $F(T,V) = -aT \ln(V-b) - cV/T^2$ 给出，我们可以立即发现其压强为 $P = \frac{aT}{V-b} + \frac{c}{T^2}$，其熵为 $S = a\ln(V-b) - \frac{2cV}{T^3}$ [@problem_id:1900679]。自由能函数包含了该物质的完整[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)蓝图。
 
-此外，因为 $F$ 是一个恰当的[状态函数](@article_id:298134)，其混合[二阶偏导数](@article_id:639509)必须相等。这就产生了**麦克斯韦关系**。将这个数学规则应用于 $dF = -SdT - PdV$ 会得到一个不那么明显的联系：
+此外，因为 $F$ 是一个恰当的[状态函数](@keyword=state_functions|lang=zh-CN|style=Feynman)，其混合[二阶偏导数](@keyword=second_partial_derivatives|lang=zh-CN|style=Feynman)必须相等。这就产生了**麦克斯韦关系**。将这个数学规则应用于 $dF = -SdT - PdV$ 会得到一个不那么明显的联系：
 
 $$
 \left(\frac{\partial S}{\partial V}\right)_T = \left(\frac{\partial P}{\partial T}\right)_V
 $$
-
+[@problem_id:1991687]
 
 想想这说明了什么。它将熵如何随体积变化（衡量当你给粒子更多空间时无序度如何增加）与压强如何随温度变化（衡量当你在密闭容器中加热时压强如何增加）联系起来。谁能想到这两种现象是同一枚硬币的两面？这种隐藏的对称性，以及其他类似的对称性，都是自由能函数存在的直接结果。
 
 ### 世界为何不坍塌：自由能与稳定性
 
-最后，自由能[最小原理](@article_id:343191)对[物质的稳定性](@article_id:297799)有着至关重要的影响。为了使体系处于[稳定平衡](@article_id:333181)，它必须处于自由能的局部最小值，而不是最大值或[鞍点](@article_id:303016)。对于我们恒温下的函数 $F(V)$，这意味着它必须是向上弯曲的，像一个碗。在数学上，它的二阶[导数](@article_id:318324)必须是非负的：
+最后，自由能[最小原理](@keyword=minimum_principle|lang=zh-CN|style=Feynman)对[物质的稳定性](@keyword=stability_of_matter|lang=zh-CN|style=Feynman)有着至关重要的影响。为了使体系处于[稳定平衡](@keyword=stable_equilibrium|lang=zh-CN|style=Feynman)，它必须处于自由能的局部最小值，而不是最大值或[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)。对于我们恒温下的函数 $F(V)$，这意味着它必须是向上弯曲的，像一个碗。在数学上，它的二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)必须是非负的：
 
 $$
 \left(\frac{\partial^2 F}{\partial V^2}\right)_T \ge 0
@@ -147,10 +147,10 @@ $$
 $$
 \left(\frac{\partial P}{\partial V}\right)_T \le 0
 $$
+[@problem_id:1957628]
 
+这是一个隐藏在微积分中的、具有深远物理意义的陈述。它说，如果你增加一个稳定物质的体积（在恒温下），它的压强必须减小或保持不变。它不能增加！换句话说，如果你挤压某个东西，它的压强必须上升来抵抗你。一种在压缩时压强*下降*的物质会是不稳定的；任何小的[密度涨落](@keyword=density_fluctuations|lang=zh-CN|style=Feynman)都会导致它灾难性地坍塌或爆炸。
 
-这是一个隐藏在微积分中的、具有深远物理意义的陈述。它说，如果你增加一个稳定物质的体积（在恒温下），它的压强必须减小或保持不变。它不能增加！换句话说，如果你挤压某个东西，它的压强必须上升来抵抗你。一种在压缩时压强*下降*的物质会是不稳定的；任何小的[密度涨落](@article_id:303973)都会导致它灾难性地坍塌或爆炸。
+这个条件与**[等温压缩率](@keyword=isothermal_compressibility|lang=zh-CN|style=Feynman)** $\kappa_T = -\frac{1}{V}(\partial V/\partial P)_T$直接相关，它衡量物质在压力下收缩的程度。稳定性条件 $(\partial P/\partial V)_T \le 0$ 等价于要求 $\kappa_T \ge 0$ [@problem_id:1957674]。物质是稳定的，它抵抗压缩而不会自发内爆，这一事实是[热力学第二定律](@keyword=second_law_of_thermodynamics|lang=zh-CN|style=Feynman)的直接结果，通过[亥姆霍兹自由能](@keyword=helmholtz_free_energy|lang=zh-CN|style=Feynman)的曲率表现出来。
 
-这个条件与**[等温压缩率](@article_id:301337)** $\kappa_T = -\frac{1}{V}(\partial V/\partial P)_T$直接相关，它衡量物质在压力下收缩的程度。稳定性条件 $(\partial P/\partial V)_T \le 0$ 等价于要求 $\kappa_T \ge 0$ 。物质是稳定的，它抵抗压缩而不会自发内爆，这一事实是[热力学第二定律](@article_id:303170)的直接结果，通过[亥姆霍兹自由能](@article_id:296896)的曲率表现出来。
-
-从一个仅仅希望获得一个更方便变量的简单愿望出发，我们揭示了一个定义了有效功、指示了[时间之矢](@article_id:304210)方向、连接了微观与宏观世界，并保证了我们周围物质稳定性的概念。这就是亥姆霍兹自由能的力量与美。
+从一个仅仅希望获得一个更方便变量的简单愿望出发，我们揭示了一个定义了有效功、指示了[时间之矢](@keyword=arrow_of_time|lang=zh-CN|style=Feynman)方向、连接了微观与宏观世界，并保证了我们周围物质稳定性的概念。这就是亥姆霍兹自由能的力量与美。

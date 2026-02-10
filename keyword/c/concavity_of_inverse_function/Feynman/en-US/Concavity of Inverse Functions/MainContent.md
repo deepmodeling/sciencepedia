@@ -11,9 +11,9 @@ But what happens to the *shape* of the curve? If you draw a curve that bends, ho
 
 ### A Reflection in the Looking-Glass
 
-Let's start with a simple experiment. Take the function $f(x) = x^2$, but let's restrict ourselves to $x \ge 0$ so that it's always increasing and has a unique inverse. The graph is a familiar upward-opening parabola, a shape we call **convex**. It looks like a bowl that could hold water. When we show this to our magical mirror, it reflects the curve across the line $y=x$ to give us the [inverse function](@article_id:151922), $f^{-1}(y) = \sqrt{y}$. If you trace this new curve, you'll see it's a sideways parabola that opens downwards. This shape is called **concave**—like a dome that would spill any water poured on it.
+Let's start with a simple experiment. Take the function $f(x) = x^2$, but let's restrict ourselves to $x \ge 0$ so that it's always increasing and has a unique inverse. The graph is a familiar upward-opening parabola, a shape we call **convex**. It looks like a bowl that could hold water. When we show this to our magical mirror, it reflects the curve across the line $y=x$ to give us the [inverse function](@keyword=inverse_function|lang=en-US|style=Feynman), $f^{-1}(y) = \sqrt{y}$. If you trace this new curve, you'll see it's a sideways parabola that opens downwards. This shape is called **concave**—like a dome that would spill any water poured on it.
 
-So, a convex curve became a concave curve. Is this just a coincidence? Let's try another one. Consider the function $f(x) = x^3$, again for $x \ge 0$. This curve also starts flat and gets steeper and steeper, bending upwards in a convex fashion. Its inverse, which you can find by solving $y=x^3$ for $x$, is $f^{-1}(y) = y^{1/3}$. If you were to calculate the curvature of this inverse function, you would find that, just like the [square root function](@article_id:184136), it is strictly concave where it's defined .
+So, a convex curve became a concave curve. Is this just a coincidence? Let's try another one. Consider the function $f(x) = x^3$, again for $x \ge 0$. This curve also starts flat and gets steeper and steeper, bending upwards in a convex fashion. Its inverse, which you can find by solving $y=x^3$ for $x$, is $f^{-1}(y) = y^{1/3}$. If you were to calculate the curvature of this inverse function, you would find that, just like the [square root function](@keyword=square_root_function|lang=en-US|style=Feynman), it is strictly concave where it's defined [@problem_id:2294865].
 
 It seems we're onto a pattern: for these increasing functions, a convex shape in the original function seems to correspond to a concave shape in its inverse. This visual intuition is compelling, but to truly understand the "why," we need to move beyond just looking at pictures and translate the idea of "bending" into the language of calculus.
 
@@ -21,7 +21,7 @@ It seems we're onto a pattern: for these increasing functions, a convex shape in
 
 In the world of calculus, the character of a curve's bend is captured by its **second derivative**. Think of the first derivative, $f'(x)$, as the velocity of a point moving along the curve. The second derivative, $f''(x)$, is then the acceleration. If $f''(x) > 0$, the curve is accelerating "upwards," creating a convex, "smiley face" shape. If $f''(x)  0$, it's accelerating "downwards," creating a concave, "frowny face" shape. A second derivative of zero means no acceleration, which corresponds to a straight line.
 
-Our goal, then, is to find the second derivative of the inverse function, let's call it $g(y) = f^{-1}(y)$, and see how it relates to the derivatives of the original function, $f(x)$. The derivation is a beautiful little piece of mathematical reasoning. We start with the one thing we know for sure about an [inverse function](@article_id:151922):
+Our goal, then, is to find the second derivative of the inverse function, let's call it $g(y) = f^{-1}(y)$, and see how it relates to the derivatives of the original function, $f(x)$. The derivation is a beautiful little piece of mathematical reasoning. We start with the one thing we know for sure about an [inverse function](@keyword=inverse_function|lang=en-US|style=Feynman):
 
 $$f(g(y)) = y$$
 
@@ -29,9 +29,9 @@ Now, we differentiate both sides with respect to $y$, using the chain rule on th
 
 $$f'(g(y)) \cdot g'(y) = 1$$
 
-This already tells us something fascinating! The slope of the [inverse function](@article_id:151922), $g'(y)$, is simply the reciprocal of the slope of the original function, $f'(x)$ (where $x=g(y)$). This makes sense graphically: a steep part of the original curve corresponds to a flat part of its reflection, and vice versa.
+This already tells us something fascinating! The slope of the [inverse function](@keyword=inverse_function|lang=en-US|style=Feynman), $g'(y)$, is simply the reciprocal of the slope of the original function, $f'(x)$ (where $x=g(y)$). This makes sense graphically: a steep part of the original curve corresponds to a flat part of its reflection, and vice versa.
 
-But we want to know about [concavity](@article_id:139349), so we must differentiate again with respect to $y$. Using the [product rule](@article_id:143930) and [chain rule](@article_id:146928) on the left side gives us:
+But we want to know about [concavity](@keyword=concavity|lang=en-US|style=Feynman), so we must differentiate again with respect to $y$. Using the [product rule](@keyword=product_rule|lang=en-US|style=Feynman) and [chain rule](@keyword=chain_rule|lang=en-US|style=Feynman) on the left side gives us:
 
 $$f''(g(y)) \cdot [g'(y)]^2 + f'(g(y)) \cdot g''(y) = 0$$
 
@@ -47,11 +47,11 @@ Or, writing it more simply by remembering that $x = g(y)$:
 
 $$g''(y) = - \frac{f''(x)}{(f'(x))^3}$$
 
-This is our master formula! This compact and elegant equation is the secret code that governs the curvature of [inverse functions](@article_id:140762). It connects the concavity of the inverse ($g''$) directly to the properties of the original function ($f''$ and $f'$). With this key, we can now unlock the mystery completely  .
+This is our master formula! This compact and elegant equation is the secret code that governs the curvature of [inverse functions](@keyword=inverse_functions|lang=en-US|style=Feynman). It connects the concavity of the inverse ($g''$) directly to the properties of the original function ($f''$ and $f'$). With this key, we can now unlock the mystery completely [@problem_id:2296937] [@problem_id:2307644].
 
 ### Decoding the Relationship: A Tale of Two Cases
 
-The master formula tells us that the sign of $g''(y)$—which determines the [concavity](@article_id:139349) of the inverse—depends on two things: the sign of $f''(x)$ (the [concavity](@article_id:139349) of the original function) and, crucially, the sign of $(f'(x))^3$. Since a function must be strictly monotonic (either always increasing or always decreasing) to have a well-behaved inverse, $f'(x)$ will not be zero. This gives us two distinct scenarios.
+The master formula tells us that the sign of $g''(y)$—which determines the [concavity](@keyword=concavity|lang=en-US|style=Feynman) of the inverse—depends on two things: the sign of $f''(x)$ (the [concavity](@keyword=concavity|lang=en-US|style=Feynman) of the original function) and, crucially, the sign of $(f'(x))^3$. Since a function must be strictly monotonic (either always increasing or always decreasing) to have a well-behaved inverse, $f'(x)$ will not be zero. This gives us two distinct scenarios.
 
 **Case 1: The Upward Path (Increasing Functions)**
 
@@ -59,9 +59,9 @@ If a function $f$ is strictly increasing, its slope must always be positive. Tha
 
 $$g''(y) = - \frac{f''(x)}{(\text{a positive number})}$$
 
-This means that the sign of $g''(y)$ is the *exact opposite* of the sign of $f''(x)$. This reveals a fundamental rule: **For any strictly increasing function, its inverse will have the opposite [concavity](@article_id:139349).**
+This means that the sign of $g''(y)$ is the *exact opposite* of the sign of $f''(x)$. This reveals a fundamental rule: **For any strictly increasing function, its inverse will have the opposite [concavity](@keyword=concavity|lang=en-US|style=Feynman).**
 
-If $f$ is convex ($f''(x)>0$), then $g$ must be concave ($g''(y)0$) . If $f$ is concave ($f''(x)0$), then $g$ must be convex ($g''(y)>0$) . Our initial observations with $x^2$ and $x^3$ were not a coincidence; they were a direct consequence of this profound principle. This also tells us that it's impossible for a strictly increasing, non-linear function and its inverse to *both* be convex or *both* be concave . The reflection in the looking-glass always flips the bend.
+If $f$ is convex ($f''(x)>0$), then $g$ must be concave ($g''(y)0$) [@problem_id:1305946]. If $f$ is concave ($f''(x)0$), then $g$ must be convex ($g''(y)>0$) [@problem_id:2304299]. Our initial observations with $x^2$ and $x^3$ were not a coincidence; they were a direct consequence of this profound principle. This also tells us that it's impossible for a strictly increasing, non-linear function and its inverse to *both* be convex or *both* be concave [@problem_id:2304296]. The reflection in the looking-glass always flips the bend.
 
 **Case 2: The Downward Path (Decreasing Functions)**
 
@@ -75,20 +75,20 @@ The minus sign in the numerator and the negative sign in the denominator cancel 
 
 $$g''(y) = \frac{f''(x)}{(\text{a positive number})}$$
 
-This means that the sign of $g''(y)$ is now the *same* as the sign of $f''(x)$. This gives us our second great rule: **For any strictly decreasing function, its inverse will have the same concavity** .
+This means that the sign of $g''(y)$ is now the *same* as the sign of $f''(x)$. This gives us our second great rule: **For any strictly decreasing function, its inverse will have the same concavity** [@problem_id:2296937].
 
-If a decreasing function is convex, its inverse is also convex. If it's concave, its inverse is also concave. The reflection in the looking-glass, in this case, preserves the direction of the bend. That little power of 3 in the denominator makes all the difference, creating a wonderfully symmetric and [complete theory](@article_id:154606) of how curvature behaves under inversion.
+If a decreasing function is convex, its inverse is also convex. If it's concave, its inverse is also concave. The reflection in the looking-glass, in this case, preserves the direction of the bend. That little power of 3 in the denominator makes all the difference, creating a wonderfully symmetric and [complete theory](@keyword=complete_theory|lang=en-US|style=Feynman) of how curvature behaves under inversion.
 
 ### The Straight and Narrow Path: A Curious Consequence
 
- Armed with these rules, we can explore some fascinating logical consequences. Let's play a game. Imagine we are searching for a very special kind of function, one that we might call "dually convex." Let's define this as a function $f(x)$ that is strictly increasing, and has the property that both $f(x)$ itself and its inverse $f^{-1}(x)$ are convex .
+ Armed with these rules, we can explore some fascinating logical consequences. Let's play a game. Imagine we are searching for a very special kind of function, one that we might call "dually convex." Let's define this as a function $f(x)$ that is strictly increasing, and has the property that both $f(x)$ itself and its inverse $f^{-1}(x)$ are convex [@problem_id:2304256].
 
 Our rule for increasing functions immediately throws up a red flag. We just proved that for an increasing function, if $f$ is convex, its inverse *must* be concave. So, how could its inverse also be convex?
 
-There is only one possible way out of this logical contradiction. The [inverse function](@article_id:151922), $f^{-1}$, must be a shape that is simultaneously convex *and* concave. Think about what that means for its second derivative. To be convex, its second derivative must be greater than or equal to zero. To be concave, its second derivative must be less than or equal to zero. The only number that satisfies both conditions is zero.
+There is only one possible way out of this logical contradiction. The [inverse function](@keyword=inverse_function|lang=en-US|style=Feynman), $f^{-1}$, must be a shape that is simultaneously convex *and* concave. Think about what that means for its second derivative. To be convex, its second derivative must be greater than or equal to zero. To be concave, its second derivative must be less than or equal to zero. The only number that satisfies both conditions is zero.
 
 A function whose second derivative is zero everywhere is not a curve at all—it's a **straight line**.
 
-If the [inverse function](@article_id:151922) $f^{-1}$ is a straight line, say $g(y) = my+c$, then the original function $f(x)$ must also be a straight line (its reflection). So, the only functions that can possibly satisfy our "dually convex" condition are linear functions of the form $f(x) = ax+b$.
+If the [inverse function](@keyword=inverse_function|lang=en-US|style=Feynman) $f^{-1}$ is a straight line, say $g(y) = my+c$, then the original function $f(x)$ must also be a straight line (its reflection). So, the only functions that can possibly satisfy our "dually convex" condition are linear functions of the form $f(x) = ax+b$.
 
 This is a remarkable conclusion. A seemingly simple geometric requirement—that an increasing function and its inverse both bend upwards—is so restrictive that it forces the function to not bend at all! It's a beautiful example of how the abstract machinery of calculus, born from the simple act of looking at a curve's reflection, can reveal deep and rigid structures hidden within the world of functions. The looking-glass not only reflects shapes, it also reflects the fundamental rules that govern them.

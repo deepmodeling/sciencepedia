@@ -4,38 +4,38 @@
 
 ### 限制的艺术：迫使电子和空穴相遇或分离
 
-从本质上讲，[光电子学](@entry_id:144180)的许多内容都是关于控制电子-空穴对命运的故事。我们是希望它们相遇并湮灭，发出一道闪光，还是希望将它们分离以产生电能？能带对齐正是编排这场“舞蹈”的大师级工具。
+从本质上讲，[光电子学](@keyword=optoelectronics|lang=zh-CN|style=Feynman)的许多内容都是关于控制电子-空穴对命运的故事。我们是希望它们相遇并湮灭，发出一道闪光，还是希望将它们分离以产生电能？能带对齐正是编排这场“舞蹈”的大师级工具。
 
-想象一下，你想制造一个高效的发光二极管（LED）。一个简单的p-n结可以发光，但效率低下。许多电子和空穴在有机会相遇之前，就会发生非辐射复合或从结区溜走。解决方案是构建一个陷阱。通过将一种窄[带隙](@entry_id:138445)材料，如gallium arsenide (GaAs)，夹在[宽带隙](@entry_id:1134071)材料，如aluminum gallium arsenide (AlGaAs)的层之间，我们创造了一个势阱。其能带对齐结构使得当我们[正向偏置](@entry_id:159825)该结时，来自n区的电子和来自[p区](@entry_id:139680)的空穴被汇集到薄薄的GaAs层中。一旦进入这个“[量子阱](@entry_id:144116)”，它们就被捕获了。周围AlGaAs的更[宽带隙](@entry_id:1134071)提供了一个它们难以逾越的巨大能垒，或称悬崖。无处可去的密集电子和空穴群体会高效地复合，以特定颜色的光子形式释放能量。这种[异质结构](@entry_id:136451)设计正是现代LED如此明亮和高效的原因 。
+想象一下，你想制造一个高效的发光二极管（LED）。一个简单的p-n结可以发光，但效率低下。许多电子和空穴在有机会相遇之前，就会发生非辐射复合或从结区溜走。解决方案是构建一个陷阱。通过将一种窄[带隙](@keyword=band_gap|lang=zh-CN|style=Feynman)材料，如gallium arsenide (GaAs)，夹在[宽带隙](@keyword=wide_band_gap|lang=zh-CN|style=Feynman)材料，如aluminum gallium arsenide (AlGaAs)的层之间，我们创造了一个势阱。其能带对齐结构使得当我们[正向偏置](@keyword=forward_bias|lang=zh-CN|style=Feynman)该结时，来自n区的电子和来自[p区](@keyword=p_blocks|lang=zh-CN|style=Feynman)的空穴被汇集到薄薄的GaAs层中。一旦进入这个“[量子阱](@keyword=quantum_wells|lang=zh-CN|style=Feynman)”，它们就被捕获了。周围AlGaAs的更[宽带隙](@keyword=wide_band_gap|lang=zh-CN|style=Feynman)提供了一个它们难以逾越的巨大能垒，或称悬崖。无处可去的密集电子和空穴群体会高效地复合，以特定颜色的光子形式释放能量。这种[异质结构](@keyword=heterostructures|lang=zh-CN|style=Feynman)设计正是现代LED如此明亮和高效的原因 [@problem_id:1778555]。
 
-现在，考虑相反的过程：[太阳能电池](@entry_id:159733)。在这里，一个入射光子产生一个电子-空穴对，我们的目标是防止它们立即复合。我们需要将它们分离开，并迅速送往外部电路。现代高效的Silicon Heterojunction (SHJ)[太阳能电池](@entry_id:159733)以非凡的精巧方式实现了这一点。晶体硅（c-Si）吸收层上涂覆着极薄的[非晶硅](@entry_id:264655)（a-Si:H）层。在c-Si/a-Si:H界面处的能带对齐形成了所谓的**载流子选择性接触**。例如，电池一侧的接触被设计成对空穴呈现高能垒，但对电子则是一个平缓的斜坡。它乐于接收电子，但强力排斥空穴。另一侧的接触则完全相反。这种布置就像一对单向门，高效地分离电子-空穴对并最大限度地减少复合，从而极大地提高了[太阳能电池](@entry_id:159733)的[开路电压](@entry_id:270130)和整体效率 。
+现在，考虑相反的过程：[太阳能电池](@keyword=solar_cell|lang=zh-CN|style=Feynman)。在这里，一个入射光子产生一个电子-空穴对，我们的目标是防止它们立即复合。我们需要将它们分离开，并迅速送往外部电路。现代高效的Silicon Heterojunction (SHJ)[太阳能电池](@keyword=solar_cell|lang=zh-CN|style=Feynman)以非凡的精巧方式实现了这一点。晶体硅（c-Si）吸收层上涂覆着极薄的[非晶硅](@keyword=amorphous_silicon|lang=zh-CN|style=Feynman)（a-Si:H）层。在c-Si/a-Si:H界面处的能带对齐形成了所谓的**载流子选择性接触**。例如，电池一侧的接触被设计成对空穴呈现高能垒，但对电子则是一个平缓的斜坡。它乐于接收电子，但强力排斥空穴。另一侧的接触则完全相反。这种布置就像一对单向门，高效地分离电子-空穴对并最大限度地减少复合，从而极大地提高了[太阳能电池](@keyword=solar_cell|lang=zh-CN|style=Feynman)的[开路电压](@keyword=open_circuit_voltage|lang=zh-CN|style=Feynman)和整体效率 [@problem_id:2850701]。
 
 ### 不受束缚的流动：为电子创造超级高速公路
 
-电子学中速度的一大敌人是散射。当电子在[晶格](@entry_id:148274)中飞速穿行时，它们会与缺陷和振动的原子碰撞，但最重要的是，会与最初为提供它们而引入的掺杂原子碰撞。这就像试图穿过一群与你绑在一起的人群。我们如何才能将电子从它们的母体原子中解放出来？
+电子学中速度的一大敌人是散射。当电子在[晶格](@keyword=crystal_lattices|lang=zh-CN|style=Feynman)中飞速穿行时，它们会与缺陷和振动的原子碰撞，但最重要的是，会与最初为提供它们而引入的掺杂原子碰撞。这就像试图穿过一群与你绑在一起的人群。我们如何才能将电子从它们的母体原子中解放出来？
 
-答案是一种巧妙的技术，称为**[调制掺杂](@entry_id:139391)**，它是[高电子迁移率晶体管](@entry_id:1126109)（HEMT）背后的原理。这些是驱动智能手机通信、雷达系统和卫星接收器的超高速晶体管。我们再次使用异质结，例如AlGaAs和GaAs之间的异质结。我们仅将[施主原子](@entry_id:156278)（电子的来源）放置在[宽带隙](@entry_id:1134071)的AlGaAs层中。电子为了寻求最低能态，会“掉落”穿过结，进入相邻*未掺杂*的GaAs层中形成的势阱。结果形成了一个薄层电子，即**二维电子气（2DEG）**，它与电离的施主在物理上是分离的。现在，电子可以在这条“超级高速公路”中以极高的迁移率移动，不受其母体离子散射的阻碍，从而使器件能够在极高频率下工作 。
+答案是一种巧妙的技术，称为**[调制掺杂](@keyword=modulation_doping|lang=zh-CN|style=Feynman)**，它是[高电子迁移率晶体管](@keyword=high_electron_mobility_transistor_2|lang=zh-CN|style=Feynman)（HEMT）背后的原理。这些是驱动智能手机通信、雷达系统和卫星接收器的超高速晶体管。我们再次使用异质结，例如AlGaAs和GaAs之间的异质结。我们仅将[施主原子](@keyword=donor_atoms|lang=zh-CN|style=Feynman)（电子的来源）放置在[宽带隙](@keyword=wide_band_gap|lang=zh-CN|style=Feynman)的AlGaAs层中。电子为了寻求最低能态，会“掉落”穿过结，进入相邻*未掺杂*的GaAs层中形成的势阱。结果形成了一个薄层电子，即**二维电子气（2DEG）**，它与电离的施主在物理上是分离的。现在，电子可以在这条“超级高速公路”中以极高的迁移率移动，不受其母体离子散射的阻碍，从而使器件能够在极高频率下工作 [@problem_id:3008718]。
 
-有时，自然界提供了一种更强大的方式来实现这一点。在某些具有内禀电偶极子的晶体材料中，如gallium nitride (GaN)，电磁学定律给了我们一份礼物。当我们在GaN上生长一层AlGaN时，材料内建极化的突变会在界面处产生一个巨大的固定正电荷层。这个电荷产生一个强大的电场，猛烈地拉低GaN的导带，刻画出一个又深又窄的势阱，并被非常高密度的[二维电子气](@entry_id:146876)填充。这一切的发生无需引入任何掺杂原子！[能带偏移](@entry_id:142791)$\Delta E_c$仍然扮演着势垒壁的关键角色，防止受限电子泄露回AlGaN层 。
+有时，自然界提供了一种更强大的方式来实现这一点。在某些具有内禀电偶极子的晶体材料中，如gallium nitride (GaN)，电磁学定律给了我们一份礼物。当我们在GaN上生长一层AlGaN时，材料内建极化的突变会在界面处产生一个巨大的固定正电荷层。这个电荷产生一个强大的电场，猛烈地拉低GaN的导带，刻画出一个又深又窄的势阱，并被非常高密度的[二维电子气](@keyword=two_dimensional_electron_gas|lang=zh-CN|style=Feynman)填充。这一切的发生无需引入任何掺杂原子！[能带偏移](@keyword=band_offset|lang=zh-CN|style=Feynman)$\Delta E_c$仍然扮演着势垒壁的关键角色，防止受限电子泄露回AlGaN层 [@problem_id:4295297]。
 
 ### 守门员：构建更好的开关与势垒
 
 虽然为载流子创造通道至关重要，但建立不可逾越的势垒也同样重要。能带对齐使我们能够设计出允许所需载流子通过同时阻挡不需要的载流子的“守门员”。
 
-一个经典的例子是[异质结双极晶体管](@entry_id:265377)（HBT）。标准双极晶体管的性能受限于一个权衡：为了获得大的输出电流，我们需要大量的电子从发射极流向基极。但出于其他原因需要的高基极掺杂，会导致空穴从基极到发射极的寄生反向注入，这会扼杀晶体管的增益。通过用宽带隙材料替换发射极，我们可以鱼与熊掌兼得。通过能带工程设计，使[价带偏移](@entry_id:1133686)$\Delta E_v$形成一个巨大的能垒，有效阻止了不希望出现的空穴反向注入。同时，[导带偏移](@entry_id:1122863)$\Delta E_c$可以选择得很小甚至是有利的，从而对所需的电子流不构成障碍。这种对能带对齐的简单应用打破了旧的设计妥协，带来了具有更高增益和[频率响应](@entry_id:183149)的晶体管 。
+一个经典的例子是[异质结双极晶体管](@keyword=heterojunction_bipolar_transistor|lang=zh-CN|style=Feynman)（HBT）。标准双极晶体管的性能受限于一个权衡：为了获得大的输出电流，我们需要大量的电子从发射极流向基极。但出于其他原因需要的高基极掺杂，会导致空穴从基极到发射极的寄生反向注入，这会扼杀晶体管的增益。通过用宽带隙材料替换发射极，我们可以鱼与熊掌兼得。通过能带工程设计，使[价带偏移](@keyword=valence_band_offset|lang=zh-CN|style=Feynman)$\Delta E_v$形成一个巨大的能垒，有效阻止了不希望出现的空穴反向注入。同时，[导带偏移](@keyword=conduction_band_offset|lang=zh-CN|style=Feynman)$\Delta E_c$可以选择得很小甚至是有利的，从而对所需的电子流不构成障碍。这种对能带对齐的简单应用打破了旧的设计妥协，带来了具有更高增益和[频率响应](@keyword=frequency_response|lang=zh-CN|style=Feynman)的晶体管 [@problem_id:3731250]。
 
-所有电子学中的终极守门员是[金属-氧化物-半导体](@entry_id:187381)（MOS）晶体管中的绝缘体，它是每个计算机芯片的基本构建单元。阻止电流从栅极泄漏到沟道的势垒，正是半导体（硅）和绝缘体（传统上是二氧化硅，$\text{SiO}_2$）之间的[能带偏移](@entry_id:142791)。
-*   **闪存**：您的[固态硬盘](@entry_id:755039)通过将电荷捕获在由$\text{SiO}_2$隔离的“[浮动栅](@entry_id:1125085)”上来存储数据。要写入或擦除数据，需要施加一个大电压，迫使电子量子力学地隧穿*通过*绝缘体的导带势垒——一个由$\text{Si}/\text{SiO}_2$[能带偏移](@entry_id:142791)定义的势垒。这个势垒必须足够高（对电子而言超过$3\,\mathrm{eV}$），以便能将电荷捕获数年之久，但在高电场下又必须是可穿透的。非易失性存储器的存在本身就是对这个特定能带偏移值的证明 。
-*   **[高k电介质](@entry_id:1126077)**：随着晶体管尺寸的缩小，$\text{SiO}_2$层变得只有几个原子厚，电子很容易泄漏过去。解决方案是找到一种新材料，它可以在物理上更厚，但具有相同的电学效应——一种具有高介[电常数](@entry_id:272823)，即“高k”的材料。巨大的挑战在于找到一种材料，例如hafnium dioxide ($\text{HfO}_2$)，它不仅具有高$k$值，而且与硅之间有足够大的导带和[价带偏移](@entry_id:1133686)，以有效阻止电子和空穴的泄漏。这些材料的选择完全是一个能带对齐工程的问题 。
+所有电子学中的终极守门员是[金属-氧化物-半导体](@keyword=metal_oxide_semiconductor|lang=zh-CN|style=Feynman)（MOS）晶体管中的绝缘体，它是每个计算机芯片的基本构建单元。阻止电流从栅极泄漏到沟道的势垒，正是半导体（硅）和绝缘体（传统上是二氧化硅，$\text{SiO}_2$）之间的[能带偏移](@keyword=band_offset|lang=zh-CN|style=Feynman)。
+*   **闪存**：您的[固态硬盘](@keyword=solid_state_drive|lang=zh-CN|style=Feynman)通过将电荷捕获在由$\text{SiO}_2$隔离的“[浮动栅](@keyword=floating_gate_2|lang=zh-CN|style=Feynman)”上来存储数据。要写入或擦除数据，需要施加一个大电压，迫使电子量子力学地隧穿*通过*绝缘体的导带势垒——一个由$\text{Si}/\text{SiO}_2$[能带偏移](@keyword=band_offset|lang=zh-CN|style=Feynman)定义的势垒。这个势垒必须足够高（对电子而言超过$3\,\mathrm{eV}$），以便能将电荷捕获数年之久，但在高电场下又必须是可穿透的。非易失性存储器的存在本身就是对这个特定能带偏移值的证明 [@problem_id:3747356]。
+*   **[高k电介质](@keyword=high_k_dielectric|lang=zh-CN|style=Feynman)**：随着晶体管尺寸的缩小，$\text{SiO}_2$层变得只有几个原子厚，电子很容易泄漏过去。解决方案是找到一种新材料，它可以在物理上更厚，但具有相同的电学效应——一种具有高介[电常数](@keyword=permittivity_of_free_space|lang=zh-CN|style=Feynman)，即“高k”的材料。巨大的挑战在于找到一种材料，例如hafnium dioxide ($\text{HfO}_2$)，它不仅具有高$k$值，而且与硅之间有足够大的导带和[价带偏移](@keyword=valence_band_offset|lang=zh-CN|style=Feynman)，以有效阻止电子和空穴的泄漏。这些材料的选择完全是一个能带对齐工程的问题 [@problem_id:3753349]。
 
-### [能带工程](@entry_id:1121337)的前沿：未来在于[异质结构](@entry_id:136451)
+### [能带工程](@keyword=band_structure_modification|lang=zh-CN|style=Feynman)的前沿：未来在于[异质结构](@keyword=heterostructures|lang=zh-CN|style=Feynman)
 
 能带对齐的原理并非一个已经完结的篇章；它开启了物理学和工程学全新的前沿领域。
 
-研究人员正在积极设计**[隧道场效应晶体管](@entry_id:1133479)（TFETs）**，其工作原理不是载流子跃过势垒，而是量子隧穿*通过*势垒。在TFET中，通过施加栅极电压使源极材料的价带与沟道材料的导带对齐，从而开启一个窗口让[电子隧穿](@entry_id:180411)过[带隙](@entry_id:138445)，来将器件“开启”。这种机制有望创造出比当今晶体管[能效](@entry_id:272127)高得多的开关，这是迈向“后[CMOS](@entry_id:178661)”计算的关键一步 。
+研究人员正在积极设计**[隧道场效应晶体管](@keyword=tunnel_field_effect_transistor|lang=zh-CN|style=Feynman)（TFETs）**，其工作原理不是载流子跃过势垒，而是量子隧穿*通过*势垒。在TFET中，通过施加栅极电压使源极材料的价带与沟道材料的导带对齐，从而开启一个窗口让[电子隧穿](@keyword=electron_tunnelling|lang=zh-CN|style=Feynman)过[带隙](@keyword=band_gap|lang=zh-CN|style=Feynman)，来将器件“开启”。这种机制有望创造出比当今晶体管[能效](@keyword=energy_efficiency|lang=zh-CN|style=Feynman)高得多的开关，这是迈向“后[CMOS](@keyword=complementary_metal_oxide_semiconductor|lang=zh-CN|style=Feynman)”计算的关键一步 [@problem_id:2802190]。
 
-我们还发现异质结可以以极其精妙的方式形成。通过精确控制生长条件，可以制造出一种单一化合物（如indium arsenide, InAs）的[纳米线](@entry_id:195506)，其中交替包含不同[晶体结构](@entry_id:140373)（[闪锌矿](@entry_id:159841)和纤锌矿）的片段。这种原子堆叠的微小变化足以改变[电子能带结构](@entry_id:136694)并产生[能带偏移](@entry_id:142791)。其结果是在单一、整块的材料内部形成了一串[自组装](@entry_id:143388)的量子阱或[量子点](@entry_id:143385)——即“晶相[量子点](@entry_id:143385)” 。
+我们还发现异质结可以以极其精妙的方式形成。通过精确控制生长条件，可以制造出一种单一化合物（如indium arsenide, InAs）的[纳米线](@keyword=nanowires|lang=zh-CN|style=Feynman)，其中交替包含不同[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)（闪锌矿和纤锌矿）的片段。这种原子堆叠的微小变化足以改变[电子能带结构](@keyword=electronic_band_structure|lang=zh-CN|style=Feynman)并产生[能带偏移](@keyword=band_offset|lang=zh-CN|style=Feynman)。其结果是在单一、整块的材料内部形成了一串[自组装](@keyword=self_assembly|lang=zh-CN|style=Feynman)的量子阱或[量子点](@keyword=quantum_dots|lang=zh-CN|style=Feynman)——即“晶相[量子点](@keyword=quantum_dots|lang=zh-CN|style=Feynman)” [@problem_id:4300239]。
 
-也许最激动人心的前沿在于**[范德华异质结](@entry_id:142819)构**。随着石墨烯和molybdenum disulfide（$\text{MoS}_2$）等[二维材料](@entry_id:142244)的发现，我们现在拥有了一套原子尺度的“乐高积木”。我们可以将不同的二维层堆叠在一起，它们仅由微弱的范德华力维系。由于没有[共价键](@entry_id:146178)合，其界面几乎是完美陡峭的，并且没有困扰传统[半导体界面](@entry_id:1131449)的悬挂键和缺陷。这意味着能带对齐非常“干净”，并常常遵循简单的教科书预测。这给了我们前所未有的自由来混合和匹配材料，从原子层面开始设计全新的电子和光学功能 。
+也许最激动人心的前沿在于**[范德华异质结](@keyword=van_der_waals_heterostructures|lang=zh-CN|style=Feynman)构**。随着石墨烯和molybdenum disulfide（$\text{MoS}_2$）等[二维材料](@keyword=2d_materials|lang=zh-CN|style=Feynman)的发现，我们现在拥有了一套原子尺度的“乐高积木”。我们可以将不同的二维层堆叠在一起，它们仅由微弱的范德华力维系。由于没有[共价键](@keyword=covalent_bond|lang=zh-CN|style=Feynman)合，其界面几乎是完美陡峭的，并且没有困扰传统[半导体界面](@keyword=semiconductor_interface|lang=zh-CN|style=Feynman)的悬挂键和缺陷。这意味着能带对齐非常“干净”，并常常遵循简单的教科书预测。这给了我们前所未有的自由来混合和匹配材料，从原子层面开始设计全新的电子和光学功能 [@problem_id:3015517]。
 
 从我们屏幕上的光，到电脑中的逻辑，再到未来技术的希望，两种材料交界处的能带对齐是一个深刻而统一的原理。它完美地展示了抽象的量子力学规则如何提供一个强大而多功能的工具包，用以塑造能量和信息的流动，从而构建我们技术世界的根基。

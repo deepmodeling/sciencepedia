@@ -11,7 +11,7 @@ At the heart of our story is an equation etched on the tombstone of the great ph
 
 $$S = k_B \ln W$$
 
-Let's not be intimidated by the symbols. This formula is telling a very simple story. $S$ is the entropy, the very quantity of "disorder" we want to measure. The symbol $k_B$ is the **Boltzmann constant**, which is just a conversion factor. Think of it like the conversion factor between inches and centimeters; it's there to make sure our final answer has the correct units of energy per degree of temperature (joules per [kelvin](@article_id:136505)).
+Let's not be intimidated by the symbols. This formula is telling a very simple story. $S$ is the entropy, the very quantity of "disorder" we want to measure. The symbol $k_B$ is the **Boltzmann constant**, which is just a conversion factor. Think of it like the conversion factor between inches and centimeters; it's there to make sure our final answer has the correct units of energy per degree of temperature (joules per [kelvin](@keyword=kelvin|lang=en-US|style=Feynman)).
 
 The real hero of the equation is $W$. This symbol, often called the **multiplicity** or **thermodynamic probability**, represents something wonderfully intuitive: it's the number of different microscopic arrangements that correspond to the same overall macroscopic state. It is, quite simply, the **number of ways**.
 
@@ -21,13 +21,13 @@ Let's say your "system" is a single coin. Its macroscopic state could be just "a
 
 Now, let's use this powerful idea to understand one of the fundamental laws of nature, the **Third Law of Thermodynamics**. This law states that the entropy of a perfect crystal at a temperature of absolute zero ($0$ Kelvin) is exactly zero. For a long time, this was just an empirical rule, but Boltzmann's formula gives us a beautiful, intuitive reason why.
 
-Imagine a **perfect crystal**. This means every single atom or molecule is in its precise, designated location in a perfectly repeating lattice. Now, cool this crystal down to absolute zero, the coldest possible temperature, where all thermal jiggling ceases (or, more accurately, reaches its minimum possible quantum [mechanical energy](@article_id:162495)). In this state of ultimate stillness and order, how many ways are there to arrange the atoms? Just one. There is only one single, unique configuration that corresponds to this state of perfect order and minimum energy.
+Imagine a **perfect crystal**. This means every single atom or molecule is in its precise, designated location in a perfectly repeating lattice. Now, cool this crystal down to absolute zero, the coldest possible temperature, where all thermal jiggling ceases (or, more accurately, reaches its minimum possible quantum [mechanical energy](@keyword=mechanical_energy|lang=en-US|style=Feynman)). In this state of ultimate stillness and order, how many ways are there to arrange the atoms? Just one. There is only one single, unique configuration that corresponds to this state of perfect order and minimum energy.
 
 If there's only one way, then $W=1$. Let's plug this into Boltzmann's magnificent formula:
 
 $$S = k_B \ln(1)$$
 
-Since the natural logarithm of 1 is 0, the entropy is zero. $S=0$. And there it is. The third law isn't some arbitrary decree; it's a direct consequence of what entropy fundamentally is: a measure of the number of available microscopic arrangements .
+Since the natural logarithm of 1 is 0, the entropy is zero. $S=0$. And there it is. The third law isn't some arbitrary decree; it's a direct consequence of what entropy fundamentally is: a measure of the number of available microscopic arrangements [@problem_id:2017227].
 
 ### The Beauty of Imperfection: Residual Entropy
 
@@ -41,9 +41,9 @@ This is a staggering number. But we can calculate the entropy, which we call **r
 
 $$S_m = k_B \ln(W) = k_B \ln(2^{N_A}) = N_A k_B \ln(2)$$
 
-You might recognize the product $N_A k_B$; this is simply the molar gas constant, $R$. So, the molar residual entropy is beautifully simple: $S_m = R \ln(2)$  . Plugging in the numbers gives a value of about $5.76$ J/(mol·K). This isn't just a theoretical curiosity; chemists can measure this residual entropy in real substances like carbon monoxide (CO) or [nitrous oxide](@article_id:204047) (N₂O), where the small, nearly symmetric molecules can get frozen in backward (CO vs. OC).
+You might recognize the product $N_A k_B$; this is simply the molar gas constant, $R$. So, the molar residual entropy is beautifully simple: $S_m = R \ln(2)$ [@problem_id:2022060] [@problem_id:1292948]. Plugging in the numbers gives a value of about $5.76$ J/(mol·K). This isn't just a theoretical curiosity; chemists can measure this residual entropy in real substances like carbon monoxide (CO) or [nitrous oxide](@keyword=nitrous_oxide|lang=en-US|style=Feynman) (N₂O), where the small, nearly symmetric molecules can get frozen in backward (CO vs. OC).
 
-The principle is general. If each particle in a frozen-in disordered solid could be in any of $q$ different, equally-energetic states, the total number of arrangements for $N$ particles is $W=q^N$, and the total residual entropy is $S = N k_B \ln(q)$ . This applies to many real-world materials, from rapidly cooled **glasses** to strange "plastic crystals" where molecules are locked in place but rotationally disordered  . We can even reverse the process: by measuring a substance's residual entropy experimentally, we can deduce the microscopic number of orientations, $q$, available to each molecule . This is a powerful tool, allowing us to peek into the microscopic world by making macroscopic measurements.
+The principle is general. If each particle in a frozen-in disordered solid could be in any of $q$ different, equally-energetic states, the total number of arrangements for $N$ particles is $W=q^N$, and the total residual entropy is $S = N k_B \ln(q)$ [@problem_id:1844374]. This applies to many real-world materials, from rapidly cooled **glasses** to strange "plastic crystals" where molecules are locked in place but rotationally disordered [@problem_id:1878579] [@problem_id:2027002]. We can even reverse the process: by measuring a substance's residual entropy experimentally, we can deduce the microscopic number of orientations, $q$, available to each molecule [@problem_id:2003080]. This is a powerful tool, allowing us to peek into the microscopic world by making macroscopic measurements.
 
 ### The Magic of the Logarithm: Why Entropy Adds Up
 
@@ -57,7 +57,7 @@ The logarithm is the mathematical key that turns multiplication into addition. A
 
 $$S_{total} = k_B \ln(W_{total}) = k_B \ln(W_A \times W_B) = k_B (\ln W_A + \ln W_B) = S_A + S_B$$
 
-And just like that, the entropies add! This is why entropy is an extensive property. It scales with the size of the system, just like volume or mass. The logarithm ensures that our measure of disorder properly accumulates .
+And just like that, the entropies add! This is why entropy is an extensive property. It scales with the size of the system, just like volume or mass. The logarithm ensures that our measure of disorder properly accumulates [@problem_id:2013000].
 
 ### A Law of Chance: Spontaneity and Probability
 
@@ -69,14 +69,14 @@ It's not that there's a mysterious "force of expansion." It's simply a matter of
 
 Let's think about the number of ways, $W$. The number of microscopic positional arrangements for a gas is proportional to the volume it can explore. When the gas is confined to half the volume, its number of arrangements, $W_{half}$, is vastly smaller than the number of arrangements when it can access the full volume, $W_{full}$. In fact, the ratio is $W_{half} / W_{full} = (1/2)^N$ for $N$ molecules.
 
-The entropy change for this impossible-in-practice spontaneous compression is $\Delta S = S_{final} - S_{initial} = k_B \ln(W_{half}) - k_B \ln(W_{full}) = k_B \ln(W_{half}/W_{full}) = -N k_B \ln(2)$ . The entropy would have to decrease, and by a lot! The **Second Law of Thermodynamics** tells us that for an [isolated system](@article_id:141573), entropy never decreases. Processes happen spontaneously in the direction that *increases* the total entropy.
+The entropy change for this impossible-in-practice spontaneous compression is $\Delta S = S_{final} - S_{initial} = k_B \ln(W_{half}) - k_B \ln(W_{full}) = k_B \ln(W_{half}/W_{full}) = -N k_B \ln(2)$ [@problem_id:1971764]. The entropy would have to decrease, and by a lot! The **Second Law of Thermodynamics** tells us that for an [isolated system](@keyword=isolated_system|lang=en-US|style=Feynman), entropy never decreases. Processes happen spontaneously in the direction that *increases* the total entropy.
 
 The gas expands simply because there are overwhelmingly more microscopic ways for it to be spread out than for it to be crammed in one corner. The universe, in its relentless exploration of possibilities, tends towards the states that are most probable—the states with the highest $W$, and therefore the highest entropy.
 
 ### Beyond Crystals: A Universe of Arrangements
 
-This powerful concept isn't limited to a gas in a box or the orientation of molecules in a crystal. It applies to anything that can be arranged in multiple ways. Consider a mixture. If you sprinkle a small amount of "guest" particles onto a large grid of "host" sites, there is an immense number of ways to arrange them. This gives rise to a **[configurational entropy](@article_id:147326)**, or entropy of mixing .
+This powerful concept isn't limited to a gas in a box or the orientation of molecules in a crystal. It applies to anything that can be arranged in multiple ways. Consider a mixture. If you sprinkle a small amount of "guest" particles onto a large grid of "host" sites, there is an immense number of ways to arrange them. This gives rise to a **[configurational entropy](@keyword=configurational_entropy|lang=en-US|style=Feynman)**, or entropy of mixing [@problem_id:1896816].
 
-This sets up a fundamental battle in nature. On one side, **energy** often favors order. Interactions between particles may lead to a lower energy state when they form a single, perfect, ordered pattern ($W=1$). On the other side, **entropy** favors disorder, pushing the system to explore the largest possible number of configurations (maximum $W$). The winner of this battle depends on temperature. At high temperatures, entropy's chaotic influence dominates. As the temperature drops to absolute zero, energy wins, and the Third Law dictates that a system in true equilibrium should find its single, unique, lowest-energy ground state. The existence of [residual entropy](@article_id:139036) is a sign that, on the way down to absolute zero, the system got "stuck," unable to find that one perfect arrangement.
+This sets up a fundamental battle in nature. On one side, **energy** often favors order. Interactions between particles may lead to a lower energy state when they form a single, perfect, ordered pattern ($W=1$). On the other side, **entropy** favors disorder, pushing the system to explore the largest possible number of configurations (maximum $W$). The winner of this battle depends on temperature. At high temperatures, entropy's chaotic influence dominates. As the temperature drops to absolute zero, energy wins, and the Third Law dictates that a system in true equilibrium should find its single, unique, lowest-energy ground state. The existence of [residual entropy](@keyword=residual_entropy|lang=en-US|style=Feynman) is a sign that, on the way down to absolute zero, the system got "stuck," unable to find that one perfect arrangement.
 
 From the perfect order of a flawless diamond to the chaotic dance of molecules in a gas, from the mixing of two liquids to the very arrow of time, Boltzmann's simple formula $S = k_B \ln W$ provides a unified framework. It teaches us that some of the most profound laws of nature are, at their core, simply laws of chance and counting.

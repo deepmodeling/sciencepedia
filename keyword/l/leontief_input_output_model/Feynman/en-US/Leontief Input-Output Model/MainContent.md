@@ -17,7 +17,7 @@ Let’s write this down. For any sector in our economy:
 
 This single, intuitive line is the foundation of the entire model.
 
-Let's make this concrete. Imagine a tiny, self-sufficient colony on Mars with just two sectors: Life Support Systems (LSS) and Food Production (FP) . Let's say we want the colony to have a surplus of 50 units of LSS and 75 units of food for the colonists to use. This is our **final demand vector**, which we can call $\mathbf{d}$:
+Let's make this concrete. Imagine a tiny, self-sufficient colony on Mars with just two sectors: Life Support Systems (LSS) and Food Production (FP) [@problem_id:1396268]. Let's say we want the colony to have a surplus of 50 units of LSS and 75 units of food for the colonists to use. This is our **final demand vector**, which we can call $\mathbf{d}$:
 
 $$
 \mathbf{d} = \begin{pmatrix} 50 \\ 75 \end{pmatrix}
@@ -26,8 +26,8 @@ $$
 To produce this surplus, the sectors must churn out a **total production**, which we’ll call $\mathbf{x}$. Let $x_1$ be the total units of LSS and $x_2$ be the total units of FP. Of course, $x_1$ will be more than 50 and $x_2$ will be more than 75, because the sectors consume each other's products.
 
 How much? We need a recipe. Suppose the "technology" of our Martian economy is as follows:
-- To produce one unit of LSS, we need $0.2$ units of LSS (for power, air [filtration](@article_id:161519), etc.) and $0.3$ units of FP.
-- To produce one unit of FP, we need $0.5$ units of LSS (for [hydroponics](@article_id:141105) lighting etc.) and $0.1$ units of FP.
+- To produce one unit of LSS, we need $0.2$ units of LSS (for power, air [filtration](@keyword=filtration|lang=en-US|style=Feynman), etc.) and $0.3$ units of FP.
+- To produce one unit of FP, we need $0.5$ units of LSS (for [hydroponics](@keyword=hydroponics|lang=en-US|style=Feynman) lighting etc.) and $0.1$ units of FP.
 
 We can collect these "recipes" into a **consumption matrix** (or **technology matrix**), which we'll call $C$:
 
@@ -36,9 +36,9 @@ C = \begin{pmatrix} 0.2 & 0.5 \\ 0.3 & 0.1 \end{pmatrix}
 $$
 The first column is the recipe for LSS; the second is the recipe for FP. The entry $C_{ij}$ tells us how much of product $i$ is needed to make one unit of product $j$.
 
-Now, if we produce a total of $x_1$ units of LSS and $x_2$ units of FP, the *total internal demand* for LSS will be $(0.2 \times x_1) + (0.5 \times x_2)$. The total internal demand for FP will be $(0.3 \times x_1) + (0.1 \times x_2)$. See what this is? It's just the [matrix-vector product](@article_id:150508) $C\mathbf{x}$!
+Now, if we produce a total of $x_1$ units of LSS and $x_2$ units of FP, the *total internal demand* for LSS will be $(0.2 \times x_1) + (0.5 \times x_2)$. The total internal demand for FP will be $(0.3 \times x_1) + (0.1 \times x_2)$. See what this is? It's just the [matrix-vector product](@keyword=matrix_vector_product|lang=en-US|style=Feynman) $C\mathbf{x}$!
 
-So, our simple balance equation becomes a powerful matrix equation  :
+So, our simple balance equation becomes a powerful matrix equation [@problem_id:1392349] [@problem_id:2449845]:
 
 $$
 \mathbf{x} = C\mathbf{x} + \mathbf{d}
@@ -57,7 +57,7 @@ $$
 (I - C)\mathbf{x} = \mathbf{d}
 $$
 
-Here, $I$ is the [identity matrix](@article_id:156230), the matrix equivalent of the number 1. The matrix $(I-C)$ is famously called the **Leontief Matrix**.
+Here, $I$ is the [identity matrix](@keyword=identity_matrix|lang=en-US|style=Feynman), the matrix equivalent of the number 1. The matrix $(I-C)$ is famously called the **Leontief Matrix**.
 
 To find $\mathbf{x}$, we just need to "divide" by $(I - C)$, which in the world of matrices means multiplying by its inverse. The solution is:
 
@@ -65,7 +65,7 @@ $$
 \mathbf{x} = (I - C)^{-1}\mathbf{d}
 $$
 
-This matrix, $(I-C)^{-1}$, is the holy grail. It is often called the **Leontief Inverse** or the **total requirements matrix**. It is the economy's complete recipe book. If you want to know the total impact of a change in final demand, you look here. The first column of this matrix tells you the total production required from *every* sector in the economy just to deliver one unit of sector 1's product to the final consumer . It accounts for not just the direct ingredients, but the ingredients for the ingredients, and so on, all the way down.
+This matrix, $(I-C)^{-1}$, is the holy grail. It is often called the **Leontief Inverse** or the **total requirements matrix**. It is the economy's complete recipe book. If you want to know the total impact of a change in final demand, you look here. The first column of this matrix tells you the total production required from *every* sector in the economy just to deliver one unit of sector 1's product to the final consumer [@problem_id:2396420]. It accounts for not just the direct ingredients, but the ingredients for the ingredients, and so on, all the way down.
 
 ### The Ripple Effect: How Demand Propagates
 
@@ -83,7 +83,7 @@ $$
 \mathbf{x} = (I + C + C^2 + C^3 + \dots)\mathbf{d} = \mathbf{d} + C\mathbf{d} + C^2\mathbf{d} + C^3\mathbf{d} + \dots
 $$
 
-Suddenly, the whole process is laid bare, and it tells a beautiful story about cause and effect . To satisfy a final demand $\mathbf{d}$:
+Suddenly, the whole process is laid bare, and it tells a beautiful story about cause and effect [@problem_id:2180066]. To satisfy a final demand $\mathbf{d}$:
 
 1.  You must, at a minimum, produce the final goods themselves. This is the first term, $\mathbf{d}$.
 2.  But to produce $\mathbf{d}$, you need a round of direct inputs. The recipe for these is $C$, so the inputs needed are $C\mathbf{d}$. This is the first ripple of production.
@@ -100,9 +100,9 @@ For the series to converge—for the economy to be **productive** or **viable**�
 
 What happens if this condition is not met? Consider the boundary case where $\rho(C) = 1$. This means that $1$ is an eigenvalue of $C$. A quick bit of algebra shows that if $1$ is an eigenvalue of $C$, then $0$ is an eigenvalue of $(I-C)$, which means $\det(I-C)=0$. The Leontief matrix is **singular**—it has no inverse! The machine breaks.
 
-What does this mean physically? A singular Leontief matrix implies there is some special combination of outputs, a vector $\mathbf{x}_{0} \neq \mathbf{0}$, for which $(I - C)\mathbf{x}_{0} = \mathbf{0}$ . This rearranges to $\mathbf{x}_{0} = C\mathbf{x}_{0}$.
+What does this mean physically? A singular Leontief matrix implies there is some special combination of outputs, a vector $\mathbf{x}_{0} \neq \mathbf{0}$, for which $(I - C)\mathbf{x}_{0} = \mathbf{0}$ [@problem_id:2203079]. This rearranges to $\mathbf{x}_{0} = C\mathbf{x}_{0}$.
 
-This is a profound statement. It describes a subsystem within the economy that is a perfectly closed loop—a treadmill to nowhere. It produces a set of goods $\mathbf{x}_{0}$ whose *entirety* is consumed as inputs just to produce $\mathbf{x}_{0}$ again. It's a snake eating its own tail. For example, imagine an "Energy" sector that needs exactly one "Material" to make one "Energy," and a "Materials" sector that needs exactly one "Energy" to make one "Material" . This two-sector system can spin forever, consuming its own output, but it can never produce a single unit of surplus for the outside world. An economy with such a feature is fundamentally crippled.
+This is a profound statement. It describes a subsystem within the economy that is a perfectly closed loop—a treadmill to nowhere. It produces a set of goods $\mathbf{x}_{0}$ whose *entirety* is consumed as inputs just to produce $\mathbf{x}_{0}$ again. It's a snake eating its own tail. For example, imagine an "Energy" sector that needs exactly one "Material" to make one "Energy," and a "Materials" sector that needs exactly one "Energy" to make one "Material" [@problem_id:2400380]. This two-sector system can spin forever, consuming its own output, but it can never produce a single unit of surplus for the outside world. An economy with such a feature is fundamentally crippled.
 
 ### Living on a Knife's Edge: The Fragility of a Nearly-Broken Economy
 
@@ -110,16 +110,16 @@ So, an economy is viable if $\rho(C) < 1$ and non-viable if $\rho(C) \ge 1$. But
 
 The matrix $(I-C)$ is invertible. The math works. One can, in principle, calculate the total production needed for any final demand. But such an economy is living on a knife's edge.
 
-In mathematics, a matrix that is invertible but "close" to being singular is called **ill-conditioned**. The "closeness" is measured by a **[condition number](@article_id:144656)**, $\kappa(I-C)$ . A well-behaved, robust matrix has a condition number close to 1. An [ill-conditioned matrix](@article_id:146914) has a very large [condition number](@article_id:144656).
+In mathematics, a matrix that is invertible but "close" to being singular is called **ill-conditioned**. The "closeness" is measured by a **[condition number](@keyword=condition_number|lang=en-US|style=Feynman)**, $\kappa(I-C)$ [@problem_id:2428569]. A well-behaved, robust matrix has a condition number close to 1. An [ill-conditioned matrix](@keyword=ill_conditioned_matrix|lang=en-US|style=Feynman) has a very large [condition number](@keyword=condition_number|lang=en-US|style=Feynman).
 
-The economic meaning of [ill-conditioning](@article_id:138180) is stunning: it signifies an economy that is fundamentally unstable and fragile. In a system with a large condition number, the relationship between cause and effect is wildly amplified. The [standard error](@article_id:139631) bound tells us:
+The economic meaning of [ill-conditioning](@keyword=ill_conditioning|lang=en-US|style=Feynman) is stunning: it signifies an economy that is fundamentally unstable and fragile. In a system with a large condition number, the relationship between cause and effect is wildly amplified. The [standard error](@keyword=standard_error|lang=en-US|style=Feynman) bound tells us:
 
 $$
 \frac{\|\delta \mathbf{x}\|}{\|\mathbf{x}\|} \le \kappa(I-C) \frac{\|\delta \mathbf{d}\|}{\|\mathbf{d}\|}
 $$
 
-This means a tiny, 0.1% change in final demand (a small shift in consumer preferences, $\|\delta \mathbf{d}\|/\|\mathbf{d}\| = 0.001$) could be magnified by a huge [condition number](@article_id:144656), causing a massive, 50% storm of changes in the required production levels across the economy ($\|\delta \mathbf{x}\|/\|\mathbf{x}\| = 0.5$).
+This means a tiny, 0.1% change in final demand (a small shift in consumer preferences, $\|\delta \mathbf{d}\|/\|\mathbf{d}\| = 0.001$) could be magnified by a huge [condition number](@keyword=condition_number|lang=en-US|style=Feynman), causing a massive, 50% storm of changes in the required production levels across the economy ($\|\delta \mathbf{x}\|/\|\mathbf{x}\| = 0.5$).
 
-An ill-conditioned economy is like a pencil balanced precariously on its point. In theory, it's stable. But in practice, the slightest breeze—a small forecast error, a minor disruption in a single supply chain, a new trade tariff—will cause it to topple over in a dramatic and unpredictable way. Its sectors are so critically and tightly interwoven that shocks don't dampen; they amplify as they reverberate through the web. In contrast, a **well-conditioned** economy (with a low [condition number](@article_id:144656)) is robust; it absorbs shocks gracefully .
+An ill-conditioned economy is like a pencil balanced precariously on its point. In theory, it's stable. But in practice, the slightest breeze—a small forecast error, a minor disruption in a single supply chain, a new trade tariff—will cause it to topple over in a dramatic and unpredictable way. Its sectors are so critically and tightly interwoven that shocks don't dampen; they amplify as they reverberate through the web. In contrast, a **well-conditioned** economy (with a low [condition number](@keyword=condition_number|lang=en-US|style=Feynman)) is robust; it absorbs shocks gracefully [@problem_id:2447275].
 
 And so, Leontief's simple model of economic balance does more than just help us plan. It gives us a language to understand not just how an economy works, but how it can fail, how it can become a self-consuming loop, and how it can become so fragile that it teeters on the brink of chaos. It is a stunning example of how the abstract beauty of linear algebra can reveal the deepest truths about the complex, interconnected world we have built.

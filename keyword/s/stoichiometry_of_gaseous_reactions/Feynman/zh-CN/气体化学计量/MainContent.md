@@ -1,13 +1,13 @@
 ## 引言
-当气体发生反应时，其体积常呈现出惊人简单的整数比。一升某种气体可能恰好与两升另一种气体完全反应，无任何剩余。这种几个世纪前观察到的精确性引出了一个根本问题：混乱的微观气体分子世界怎会遵循如此优雅的算术规则？答案在于一套构成[气体化学计量](@article_id:301971)学基础的强大原理，它在我们可以测量的宏观体积和我们必须计数的微观分子之间架起了一座直接的桥梁。
+当气体发生反应时，其体积常呈现出惊人简单的整数比。一升某种气体可能恰好与两升另一种气体完全反应，无任何剩余。这种几个世纪前观察到的精确性引出了一个根本问题：混乱的微观气体分子世界怎会遵循如此优雅的算术规则？答案在于一套构成[气体化学计量](@keyword=gas_stoichiometry|lang=zh-CN|style=Feynman)学基础的强大原理，它在我们可以测量的宏观体积和我们必须计数的微观分子之间架起了一座直接的桥梁。
 
-本文将分两大章节探讨这些原理的理论与应用。首先，在“**原理与机制**”一章中，我们将揭示其历史和数学基础，从[盖-吕萨克定律](@article_id:296872)和阿伏伽德罗的杰出假说开始。我们将看到[理想气体定律](@article_id:307175)如何将这种联系形式化，然后利用这一框架来理解[化学平衡](@article_id:302553)的动态性、反应的驱动力，以及[系统响应](@article_id:327859)变化的可预测方式。随后，“**应用与跨学科联系**”一章将展示这些核心理论如何转化为化学家、工程师和[材料科学](@article_id:312640)家手中的强大工具，实现了从高效[化学合成](@article_id:330670)和实时[反应监测](@article_id:380466)到先进材料与工业流程设计的各种应用。我们的旅程始于踏入一个奇特的厨房，这里的食材是看不见的气体，而食谱则用体积的语言书写。
+本文将分两大章节探讨这些原理的理论与应用。首先，在“**原理与机制**”一章中，我们将揭示其历史和数学基础，从[盖-吕萨克定律](@keyword=gay_lussac_s_law|lang=zh-CN|style=Feynman)和阿伏伽德罗的杰出假说开始。我们将看到[理想气体定律](@keyword=ideal_gas_law|lang=zh-CN|style=Feynman)如何将这种联系形式化，然后利用这一框架来理解[化学平衡](@keyword=chemical_equilibrium|lang=zh-CN|style=Feynman)的动态性、反应的驱动力，以及[系统响应](@keyword=system_response|lang=zh-CN|style=Feynman)变化的可预测方式。随后，“**应用与跨学科联系**”一章将展示这些核心理论如何转化为化学家、工程师和[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)家手中的强大工具，实现了从高效[化学合成](@keyword=chemical_synthesis|lang=zh-CN|style=Feynman)和实时[反应监测](@keyword=reaction_monitoring|lang=zh-CN|style=Feynman)到先进材料与工业流程设计的各种应用。我们的旅程始于踏入一个奇特的厨房，这里的食材是看不见的气体，而食谱则用体积的语言书写。
 
 ## 原理与机制
 
 想象一下，你身处一个厨房，但这是一个非常奇特的厨房。你的食材不是几杯面粉和几茶匙糖，而是看不见的气体。你将两份体积的一种气体与一份体积的另一种气体混合，你会很神奇地发现，它们恰好生成两份体积的新气态产物，没有任何剩余——前提是你保持温度和压力不变。这不是烹饪幻想，而是法国化学家 Joseph Louis Gay-Lussac 在 1808 年左右做出的一项真实而惊人的发现。他发现气体反应的体积比似乎总是简单的整数。氢气和氧气以 2:1 的比例结合生成水蒸气。氮气和氢气以 1:3 的比例化合生成氨气。为什么？对于一群看似混乱不堪、狂乱飞舞的气体分子集合体，为何会存在如此优美、简单的算术关系？
 
-这一简单的观察结果是关于物质基本性质的深刻线索。正如我们将看到的，其答案揭示了一套强大的原理，使我们不仅能够计算看不见的分子，还能预测和控制[化学反应](@article_id:307389)的结果。
+这一简单的观察结果是关于物质基本性质的深刻线索。正如我们将看到的，其答案揭示了一套强大的原理，使我们不仅能够计算看不见的分子，还能预测和控制[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的结果。
 
 ### 从体积到分子：阿伏伽德罗的飞跃
 
@@ -23,37 +23,37 @@ $$ V \propto n \quad (\text{at constant } T \text{ and } p) $$
 
 气体的体积与摩尔数成正比！这就是阿伏伽德罗假说的数学灵魂。
 
-现在，[盖-吕萨克定律](@article_id:296872)的美妙简洁性就变得清晰了。一个[配平的化学方程式](@article_id:301695)，比如氨的[合成反应](@article_id:310578)，
+现在，[盖-吕萨克定律](@keyword=gay_lussac_s_law|lang=zh-CN|style=Feynman)的美妙简洁性就变得清晰了。一个[配平的化学方程式](@keyword=balanced_chemical_equation|lang=zh-CN|style=Feynman)，比如氨的[合成反应](@keyword=synthesis_reaction|lang=zh-CN|style=Feynman)，
 
 $$ \mathrm{N_2(g) + 3H_2(g) \rightleftharpoons 2NH_3(g)} $$
 
-本质上是一个分子层面的配方。它表示“一个氮分子与三个[氢分子](@article_id:308658)反应生成两个氨分子”。由于摩尔只是分子数量的放大版，反应的[摩尔比](@article_id:372523)为 $1:3:2$。又因为[阿伏伽德罗原理](@article_id:304320)告诉我们体积比与[摩尔比](@article_id:372523)相同，所以体积比*也必然*是 $1:3:2$。体积的整数比正是化学方程式中分子整数比的直接反映。这就是 Gay-Lussac 观察到的内在统一性 。
+本质上是一个分子层面的配方。它表示“一个氮分子与三个[氢分子](@keyword=hydrogen_molecule|lang=zh-CN|style=Feynman)反应生成两个氨分子”。由于摩尔只是分子数量的放大版，反应的[摩尔比](@keyword=molar_ratio|lang=zh-CN|style=Feynman)为 $1:3:2$。又因为[阿伏伽德罗原理](@keyword=avogadro_s_principle|lang=zh-CN|style=Feynman)告诉我们体积比与[摩尔比](@keyword=molar_ratio|lang=zh-CN|style=Feynman)相同，所以体积比*也必然*是 $1:3:2$。体积的整数比正是化学方程式中分子整数比的直接反映。这就是 Gay-Lussac 观察到的内在统一性 [@problem_id:2943594]。
 
-当然，这种完美关系依赖于气体的“理想”行为。在现实世界中，高压下，气体分子开始相互注意到对方，它们自身的体积也变得不可忽略。对于[真实气体](@article_id:297272)，该定律仅为近似成立，或者更精确地说，仅当所涉及的不同气体以相似的方式偏离理想行为时才成立（即，它们具有相似的**[压缩因子](@article_id:306400)**）。
+当然，这种完美关系依赖于气体的“理想”行为。在现实世界中，高压下，气体分子开始相互注意到对方，它们自身的体积也变得不可忽略。对于[真实气体](@keyword=real_gases|lang=zh-CN|style=Feynman)，该定律仅为近似成立，或者更精确地说，仅当所涉及的不同气体以相似的方式偏离理想行为时才成立（即，它们具有相似的**[压缩因子](@keyword=z_factor|lang=zh-CN|style=Feynman)**）[@problem_id:2943594]。
 
-### 化学家的会计师：[反应进度](@article_id:301034)
+### 化学家的会计师：[反应进度](@keyword=reaction_extent|lang=zh-CN|style=Feynman)
 
-建立了体积与摩尔之间的联系后，我们如何追踪一个正在进行的反应呢？想象一下所有反应物和产物同时变化，这似乎很复杂。但有一个优雅的记账工具可以简化一切：**[反应进度](@article_id:301034)**，通常用希腊字母 $\xi$ 表示。
+建立了体积与摩尔之间的联系后，我们如何追踪一个正在进行的反应呢？想象一下所有反应物和产物同时变化，这似乎很复杂。但有一个优雅的记账工具可以简化一切：**[反应进度](@keyword=reaction_extent|lang=zh-CN|style=Feynman)**，通常用希腊字母 $\xi$ 表示。
 
-可以将 $\xi$ 视为一个单一的主变量，它以“依[化学方程式](@article_id:306177)书写的反应摩尔数”为单位来衡量反应的进程。如果 $\xi = 1$ mol，就意味着反应按照其配平的方程式恰好发生了一次（例如，1 摩尔 $\mathrm{N_2}$ 与 3 摩尔 $\mathrm{H_2}$ 反应生成 2 摩尔 $\mathrm{NH_3}$）。
+可以将 $\xi$ 视为一个单一的主变量，它以“依[化学方程式](@keyword=chemical_equation|lang=zh-CN|style=Feynman)书写的反应摩尔数”为单位来衡量反应的进程。如果 $\xi = 1$ mol，就意味着反应按照其配平的方程式恰好发生了一次（例如，1 摩尔 $\mathrm{N_2}$ 与 3 摩尔 $\mathrm{H_2}$ 反应生成 2 摩尔 $\mathrm{NH_3}$）。
 
-对于反应中的任何物种 $i$，其在任何时刻的量 $n_i$ 都可以由其初始量 $n_{i,0}$ 和[反应进度](@article_id:301034) $\xi$ 计算得出：
+对于反应中的任何物种 $i$，其在任何时刻的量 $n_i$ 都可以由其初始量 $n_{i,0}$ 和[反应进度](@keyword=reaction_extent|lang=zh-CN|style=Feynman) $\xi$ 计算得出：
 
 $$ n_i = n_{i,0} + \nu_i \xi $$
 
-此处，$\nu_i$ 是物种 $i$ 的**[化学计量系数](@article_id:382696)**，产物为正，反应物为负。对于我们的氨[合成反应](@article_id:310578)，$\nu_{\mathrm{N_2}} = -1$, $\nu_{\mathrm{H_2}} = -3$，而 $\nu_{\mathrm{NH_3}} = +2$。这一个简单的方程就为反应体系中的每一种化学物质记好了账！。
+此处，$\nu_i$ 是物种 $i$ 的**[化学计量系数](@keyword=stoichiometric_coefficient|lang=zh-CN|style=Feynman)**，产物为正，反应物为负。对于我们的氨[合成反应](@keyword=synthesis_reaction|lang=zh-CN|style=Feynman)，$\nu_{\mathrm{N_2}} = -1$, $\nu_{\mathrm{H_2}} = -3$，而 $\nu_{\mathrm{NH_3}} = +2$。这一个简单的方程就为反应体系中的每一种化学物质记好了账！[@problem_id:1514312]。
 
-这个概念不仅是理论上的便利；它与可测量的性质直接相关。考虑一个简单的气体[分解反应](@article_id:305851)，$\text{A(g)} \rightarrow \text{B(g)} + \text{C(g)}$，在一个恒温的密闭刚性容器中发生。最初，我们有 $n_0$ 摩尔的 A 和压力 $P_0$。随着反应的进行，一摩尔 A 变成两摩尔产物 ($B+C$)，因此总摩尔数增加。使用我们的记账工具，任意时刻 $t$ 的总摩尔数为 $n_{total}(t) = n_A(t) + n_B(t) + n_C(t) = (n_0 - \xi) + \xi + \xi = n_0 + \xi$。由于在恒定体积中压力与总摩尔数成正比 ($P = n_{total} \frac{RT}{V}$)，总压成为了反应进程的直接探针。如果我们知道反应的速率，我们就可以预测压力随时间的变化。对于一个简单的[一级反应](@article_id:297358)，我们发现总压力为 $P_{total}(t) = P_0(2 - \exp(-kt))$，其中 $k$ 是[速率常数](@article_id:375068)。只需读取[压力计](@article_id:299044)，我们就在测量反应的进度！。
+这个概念不仅是理论上的便利；它与可测量的性质直接相关。考虑一个简单的气体[分解反应](@keyword=decomposition_reaction|lang=zh-CN|style=Feynman)，$\text{A(g)} \rightarrow \text{B(g)} + \text{C(g)}$，在一个恒温的密闭刚性容器中发生。最初，我们有 $n_0$ 摩尔的 A 和压力 $P_0$。随着反应的进行，一摩尔 A 变成两摩尔产物 ($B+C$)，因此总摩尔数增加。使用我们的记账工具，任意时刻 $t$ 的总摩尔数为 $n_{total}(t) = n_A(t) + n_B(t) + n_C(t) = (n_0 - \xi) + \xi + \xi = n_0 + \xi$。由于在恒定体积中压力与总摩尔数成正比 ($P = n_{total} \frac{RT}{V}$)，总压成为了反应进程的直接探针。如果我们知道反应的速率，我们就可以预测压力随时间的变化。对于一个简单的[一级反应](@keyword=first_order_reaction|lang=zh-CN|style=Feynman)，我们发现总压力为 $P_{total}(t) = P_0(2 - \exp(-kt))$，其中 $k$ 是[速率常数](@keyword=rate_constants|lang=zh-CN|style=Feynman)。只需读取[压力计](@keyword=manometer|lang=zh-CN|style=Feynman)，我们就在测量反应的进度！[@problem_id:1528425]。
 
 ### 拉锯战：平衡及其常数
 
-反应很少是单向的。它们更像一场动态的拉锯战。当产物形成时，它们也可以反应重新[生成反应](@article_id:308251)物。
+反应很少是单向的。它们更像一场动态的拉锯战。当产物形成时，它们也可以反应重新[生成反应](@keyword=formation_reaction|lang=zh-CN|style=Feynman)物。
 
 $$ aA + bB \rightleftharpoons cC + dD $$
 
-随着反应物的消耗，正[反应速率](@article_id:303093)减慢，而随着产物的积累，逆[反应速率](@article_id:303093)加快。最终，系统达到一种**[动态平衡](@article_id:306712)**状态，此时正[反应速率](@article_id:303093)与逆[反应速率](@article_id:303093)完全相等。在这一点上，所有物种的浓度都变得恒定，不是因为[反应停](@article_id:333239)止了，而是因为来回的过程达到了完美的平衡。
+随着反应物的消耗，正[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)减慢，而随着产物的积累，逆[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)加快。最终，系统达到一种**[动态平衡](@keyword=allostasis|lang=zh-CN|style=Feynman)**状态，此时正[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)与逆[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)完全相等。在这一点上，所有物种的浓度都变得恒定，不是因为[反应停](@keyword=thalidomide|lang=zh-CN|style=Feynman)止了，而是因为来回的过程达到了完美的平衡。
 
-从这个动力学图像中，一个非凡的关系应运而生。如果我们写出速率定律（对于[基元反应](@article_id:303828)），正[反应速率](@article_id:303093) $= k_f[A]^a[B]^b$ 且逆[反应速率](@article_id:303093) $= k_r[C]^c[D]^d$。在平衡时，这些速率相等：
+从这个动力学图像中，一个非凡的关系应运而生。如果我们写出速率定律（对于[基元反应](@keyword=elementary_steps|lang=zh-CN|style=Feynman)），正[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman) $= k_f[A]^a[B]^b$ 且逆[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman) $= k_r[C]^c[D]^d$。在平衡时，这些速率相等：
 
 $$ k_f[A]^a[B]^b = k_r[C]^c[D]^d $$
 
@@ -61,21 +61,21 @@ $$ k_f[A]^a[B]^b = k_r[C]^c[D]^d $$
 
 $$ \frac{k_f}{k_r} = \frac{[C]^c[D]^d}{[A]^a[B]^b} = K_c $$
 
-产物浓度与反应物浓度的比值（各自以其[化学计量系数](@article_id:382696)为幂）是一个常数，即**[平衡常数](@article_id:301482)** $K_c$。其值仅取决于温度，而不取决于反应物或产物的初始量。它是反应本身的一个基本性质。
+产物浓度与反应物浓度的比值（各自以其[化学计量系数](@keyword=stoichiometric_coefficient|lang=zh-CN|style=Feynman)为幂）是一个常数，即**[平衡常数](@keyword=equilibrium_constant|lang=zh-CN|style=Feynman)** $K_c$。其值仅取决于温度，而不取决于反应物或产物的初始量。它是反应本身的一个基本性质。
 
-对于气体，使用分压通常比使用浓度更方便。我们可以根据分压定义一个类似的平衡常数 $K_p$。这两者之间的关系再次通过使用[理想气体定律](@article_id:307175) $p_i = [i]RT$ 找到。将此代入 $K_c$ 表达式揭示：
+对于气体，使用分压通常比使用浓度更方便。我们可以根据分压定义一个类似的平衡常数 $K_p$。这两者之间的关系再次通过使用[理想气体定律](@keyword=ideal_gas_law|lang=zh-CN|style=Feynman) $p_i = [i]RT$ 找到。将此代入 $K_c$ 表达式揭示：
 
 $$ K_p = K_c(RT)^{\Delta n_{\text{gas}}} $$
 
-其中 $\Delta n_{\text{gas}} = (c+d) - (a+b)$ 是反应中气体摩尔数的净变化 。注意，我们的计数工具——[化学计量数](@article_id:305198)，如何再次出现，支配着这两个[基本常数](@article_id:309193)之间的关系。
+其中 $\Delta n_{\text{gas}} = (c+d) - (a+b)$ 是反应中气体摩尔数的净变化 [@problem_id:1508980]。注意，我们的计数工具——[化学计量数](@keyword=stoichiometric_number|lang=zh-CN|style=Feynman)，如何再次出现，支配着这两个[基本常数](@keyword=fundamental_constants|lang=zh-CN|style=Feynman)之间的关系。
 
-这些常数遵循严格的数学规则。如果你以不同的方式书写反应——例如，将所有系数加倍——平衡常数会以可预测的方式改变。由于系数在 $K$ 的定义中作为指数出现，将它们加倍会使常数平方：$K'_{p} = (K_p)^2$ 。这不是一个随意的规则；它是平衡数学结构的直接结果。
+这些常数遵循严格的数学规则。如果你以不同的方式书写反应——例如，将所有系数加倍——平衡常数会以可预测的方式改变。由于系数在 $K$ 的定义中作为指数出现，将它们加倍会使常数平方：$K'_{p} = (K_p)^2$ [@problem_id:1297916]。这不是一个随意的规则；它是平衡数学结构的直接结果。
 
 ### 反应的指南针：平衡为何发生
 
-我们知道处于平衡状态的系统是平衡的。但如果一个系统*不*处于平衡状态，它会向哪个方向发展？驱动力是什么？答案在于[热力学](@article_id:359663)中最深刻的概念之一：吉布斯自由能，$G$。自然界倾向于最小化吉布斯自由能。一个反应会自发地向着降低其 $G$ 值的方向进行。
+我们知道处于平衡状态的系统是平衡的。但如果一个系统*不*处于平衡状态，它会向哪个方向发展？驱动力是什么？答案在于[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)中最深刻的概念之一：吉布斯自由能，$G$。自然界倾向于最小化吉布斯自由能。一个反应会自发地向着降低其 $G$ 值的方向进行。
 
-为了导航，我们定义了一个称为**反应商，$Q$** 的量。它的数学形式与[平衡常数](@article_id:301482) $K$ 完全相同，但它是使用*当前*的浓度或[分压](@article_id:348162)计算的，而不是平衡时的值。
+为了导航，我们定义了一个称为**反应商，$Q$** 的量。它的数学形式与[平衡常数](@keyword=equilibrium_constant|lang=zh-CN|style=Feynman) $K$ 完全相同，但它是使用*当前*的浓度或[分压](@keyword=partial_pressures|lang=zh-CN|style=Feynman)计算的，而不是平衡时的值。
 
 $$ Q_c = \frac{[C]^c[D]^d}{[A]^a[B]^b} \quad (\text{在任意时刻}) $$
 
@@ -83,29 +83,29 @@ $$ Q_c = \frac{[C]^c[D]^d}{[A]^a[B]^b} \quad (\text{在任意时刻}) $$
 
 $$ \Delta_r G = RT \ln\left(\frac{Q}{K}\right) $$
 
-这个方程就是反应的指南针 ：
+这个方程就是反应的指南针 [@problem_id:2938561]：
 -   如果 $Q \lt K$，系统相对于其平衡状态有“太多的反应物”。比值 $Q/K$ 小于1，因此其对数为负。这使得 $\Delta_r G$ 为负，正反应是自发的。系统向产物方向移动以增加 $Q$。
 -   如果 $Q \gt K$，系统有“太多的产物”。比值 $Q/K$ 大于1，使得 $\ln(Q/K)$ 为正。$\Delta_r G$ 为正，因此正反应是非自发的。*逆*反应是自发的，系统向反应物方向移动以减小 $Q$。
 -   如果 $Q = K$，系统已到达其目的地。$\ln(Q/K) = \ln(1) = 0$，所以 $\Delta_r G = 0$。系统处于平衡状态，没有净变化。
 
-### 推动与拉[动平衡](@article_id:342750)
+### 推动与拉[动平衡](@keyword=dynamic_balancing|lang=zh-CN|style=Feynman)
 
-这就引出了**勒夏特列原理**，该原理指出，如果对处于平衡状态的系统施加条件变化，系统将向着能够减弱这种胁迫的方向移动。有了我们对 $Q$ 和 $K$ 的新理解，我们可以看到这并非某种神秘的倾向，而是为了重新建立 $Q=K$ 条件的直接结果。让我们以[哈伯-博施法](@article_id:299563)（$\mathrm{N_2(g) + 3H_2(g) \rightleftharpoons 2NH_3(g)}$）为例来探讨这一点，该反应 $\Delta n_{\text{gas}} = -2$ 并且是[放热反应](@article_id:378421)（$\Delta H^\circ < 0$）。
+这就引出了**勒夏特列原理**，该原理指出，如果对处于平衡状态的系统施加条件变化，系统将向着能够减弱这种胁迫的方向移动。有了我们对 $Q$ 和 $K$ 的新理解，我们可以看到这并非某种神秘的倾向，而是为了重新建立 $Q=K$ 条件的直接结果。让我们以[哈伯-博施法](@keyword=haber_bosch_process|lang=zh-CN|style=Feynman)（$\mathrm{N_2(g) + 3H_2(g) \rightleftharpoons 2NH_3(g)}$）为例来探讨这一点，该反应 $\Delta n_{\text{gas}} = -2$ 并且是[放热反应](@keyword=exothermic_reactions|lang=zh-CN|style=Feynman)（$\Delta H^\circ < 0$）[@problem_id:2944847]。
 
--   **增加压力**：增加[总压](@article_id:328999)力会如何影响平衡？我们可以通过以[摩尔分数](@article_id:305884) ($y_i$) 和[总压](@article_id:328999)力 ($P$) 表示[反应商](@article_id:305641) $Q_p$ 来进行分析。由于分压 $p_i = y_i P$，我们有 $Q_p = \frac{(y_{\mathrm{NH_3}}P)^2}{(y_{\mathrm{N_2}}P)(y_{\mathrm{H_2}}P)^3} = \frac{y_{\mathrm{NH_3}}^2}{y_{\mathrm{N_2}}y_{\mathrm{H_2}}^3} P^{-2}$。该反应的气体摩尔数变化为 $\Delta n_{\text{gas}} = -2$。因为指数为负，增加[总压](@article_id:328999)力 $P$ 会*减小* $Q_p$ 的值，使其低于 $K_p$。为了重新达到平衡，系统必须向右移动以增加产物，从而使 $Q_p$ 回升至 $K_p$。因此，增加压力会使平衡向气体摩尔数较少的一侧移动。这增加了氨的**实际[产率](@article_id:301843)**。注意，**[理论产率](@article_id:305013)**，即基于初始反应物可能产生的最大产物量，是一个仅由[化学计量](@article_id:297901)决定的固定数值，不会改变 。
+-   **增加压力**：增加[总压](@keyword=stagnation_pressure|lang=zh-CN|style=Feynman)力会如何影响平衡？我们可以通过以[摩尔分数](@keyword=mole_fraction|lang=zh-CN|style=Feynman) ($y_i$) 和[总压](@keyword=stagnation_pressure|lang=zh-CN|style=Feynman)力 ($P$) 表示[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman) $Q_p$ 来进行分析。由于分压 $p_i = y_i P$，我们有 $Q_p = \frac{(y_{\mathrm{NH_3}}P)^2}{(y_{\mathrm{N_2}}P)(y_{\mathrm{H_2}}P)^3} = \frac{y_{\mathrm{NH_3}}^2}{y_{\mathrm{N_2}}y_{\mathrm{H_2}}^3} P^{-2}$。该反应的气体摩尔数变化为 $\Delta n_{\text{gas}} = -2$。因为指数为负，增加[总压](@keyword=stagnation_pressure|lang=zh-CN|style=Feynman)力 $P$ 会*减小* $Q_p$ 的值，使其低于 $K_p$。为了重新达到平衡，系统必须向右移动以增加产物，从而使 $Q_p$ 回升至 $K_p$。因此，增加压力会使平衡向气体摩尔数较少的一侧移动。这增加了氨的**实际[产率](@keyword=percent_yield|lang=zh-CN|style=Feynman)**。注意，**[理论产率](@keyword=theoretical_yield|lang=zh-CN|style=Feynman)**，即基于初始反应物可能产生的最大产物量，是一个仅由[化学计量](@keyword=chemical_stoichiometry|lang=zh-CN|style=Feynman)决定的固定数值，不会改变 [@problem_id:2944847]。
 
--   **改变温度**：温度是独特的，因为它是唯一能改变目的地，即 $K$ 本身的东西。**[范特霍夫方程](@article_id:301612)**告诉我们如何改变：$\frac{\mathrm{d}\ln K}{\mathrm{d}T} = \frac{\Delta_r H^\circ}{RT^2}$ 。由于氨的合成是[放热反应](@article_id:378421)（$\Delta_r H^\circ < 0$），增加温度将*降低*[平衡常数](@article_id:301482) $K_p$。系统发现其新目标 $K_p$ 低于其当前的比率 $Q_p$，将向左移动，消耗氨以达到这个新的、产物较少的平衡。
+-   **改变温度**：温度是独特的，因为它是唯一能改变目的地，即 $K$ 本身的东西。**[范特霍夫方程](@keyword=van__t_hoff_equation|lang=zh-CN|style=Feynman)**告诉我们如何改变：$\frac{\mathrm{d}\ln K}{\mathrm{d}T} = \frac{\Delta_r H^\circ}{RT^2}$ [@problem_id:2627923]。由于氨的合成是[放热反应](@keyword=exothermic_reactions|lang=zh-CN|style=Feynman)（$\Delta_r H^\circ < 0$），增加温度将*降低*[平衡常数](@keyword=equilibrium_constant|lang=zh-CN|style=Feynman) $K_p$。系统发现其新目标 $K_p$ 低于其当前的比率 $Q_p$，将向左移动，消耗氨以达到这个新的、产物较少的平衡。
 
 -   **添加惰性气体**：这是一个优美而微妙的案例。
-    - 如果我们在**恒定体积**下向反应器中添加[惰性气体](@article_id:302024)（如氩气），N₂、H₂ 和 NH₃ 的[分压](@article_id:348162)不变。因此，$Q_p$ 不变，平衡不受影响 。
-    - 但如果我们添加氩气同时保持**[总压](@article_id:328999)恒定**，反应器体积必须膨胀。这种膨胀*降低*了所有反应气体的分压。它稀释了混合物。系统通过向产生更多气体分子的一侧——在这种情况下是左侧——移动来响应，以抵消稀释并帮助恢复分压。因此，氨的实际产率降低  。
+    - 如果我们在**恒定体积**下向反应器中添加[惰性气体](@keyword=noble_gases|lang=zh-CN|style=Feynman)（如氩气），N₂、H₂ 和 NH₃ 的[分压](@keyword=partial_pressures|lang=zh-CN|style=Feynman)不变。因此，$Q_p$ 不变，平衡不受影响 [@problem_id:2944847]。
+    - 但如果我们添加氩气同时保持**[总压](@keyword=stagnation_pressure|lang=zh-CN|style=Feynman)恒定**，反应器体积必须膨胀。这种膨胀*降低*了所有反应气体的分压。它稀释了混合物。系统通过向产生更多气体分子的一侧——在这种情况下是左侧——移动来响应，以抵消稀释并帮助恢复分压。因此，氨的实际产率降低 [@problem_id:2944847] [@problem_id:2927975]。
 
 ### 超越理想：真实世界与普适原理
 
 到目前为止，我们主要假设我们的气体是“理想的”。但当它们不理想时会发生什么？当压力很高时，分子变得拥挤，它们的分子间吸引力和有限的体积不能再被忽略。
 
-我们整个优美的框架会因此崩溃吗？不。它会进行调整，展现其真正的力量。我们只需用**逸度**，$f_i$，来代替分压的概念，逸度可以被认为是“有效”的或“[热力学](@article_id:359663)活性”的压力 。我们所有的基本[热力学](@article_id:359663)关系，如 $\Delta_r G = RT \ln(Q/K)$，只要我们用这些逸度来定义[反应商](@article_id:305641) $Q$，就仍然完全有效。基本原理是普适的；我们只是在不理想的世界中需要更仔细地记账。
+我们整个优美的框架会因此崩溃吗？不。它会进行调整，展现其真正的力量。我们只需用**逸度**，$f_i$，来代替分压的概念，逸度可以被认为是“有效”的或“[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)活性”的压力 [@problem_id:2627923]。我们所有的基本[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)关系，如 $\Delta_r G = RT \ln(Q/K)$，只要我们用这些逸度来定义[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman) $Q$，就仍然完全有效。基本原理是普适的；我们只是在不理想的世界中需要更仔细地记账。
 
-这种[化学计量](@article_id:297901)和能量之间的相互作用也出现在一个基本的[热力学](@article_id:359663)关系中：$\Delta H = \Delta U + p\Delta V$。对于涉及理想气体的恒压反应，这变为 $\Delta H_{\mathrm{rxn}} = \Delta U_{\mathrm{rxn}} + (\Delta n_{\text{gas}})RT$ 。项 $(\Delta n_{\text{gas}})RT$ 代表了由于气体分子数变化，系统膨胀或收缩所做的[压力-体积功](@article_id:299672)。再次，$\Delta n_{\text{gas}}$，我们化学方程式中的简单整数平衡，具有直接和可测量的能量后果。
+这种[化学计量](@keyword=chemical_stoichiometry|lang=zh-CN|style=Feynman)和能量之间的相互作用也出现在一个基本的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)关系中：$\Delta H = \Delta U + p\Delta V$。对于涉及理想气体的恒压反应，这变为 $\Delta H_{\mathrm{rxn}} = \Delta U_{\mathrm{rxn}} + (\Delta n_{\text{gas}})RT$ [@problem_id:2959142]。项 $(\Delta n_{\text{gas}})RT$ 代表了由于气体分子数变化，系统膨胀或收缩所做的[压力-体积功](@keyword=pressure_volume_work|lang=zh-CN|style=Feynman)。再次，$\Delta n_{\text{gas}}$，我们化学方程式中的简单整数平衡，具有直接和可测量的能量后果。
 
-从一个关于气体结合体积的简单观察出发，我们穿越了微观分子世界，开发了追踪其转化的记账工具，并揭示了支配其平衡的深刻[热力学定律](@article_id:321145)。气体反应的化学计量学不仅仅是一套规则；它是一扇窗，让我们得以窥见支撑化学世界的优雅而统一的数学结构。
+从一个关于气体结合体积的简单观察出发，我们穿越了微观分子世界，开发了追踪其转化的记账工具，并揭示了支配其平衡的深刻[热力学定律](@keyword=laws_of_thermodynamics|lang=zh-CN|style=Feynman)。气体反应的化学计量学不仅仅是一套规则；它是一扇窗，让我们得以窥见支撑化学世界的优雅而统一的数学结构。

@@ -1,15 +1,15 @@
 ## 引言
-在[量子多体系统](@entry_id:141221)的研究中，[哈密顿量](@entry_id:172864)等算符是理解系统行为的数学钥匙。然而，即使粒子数量不多，表示这些算符所需的矩阵也可能大到天文数字，这构成了巨大的计算和概念障碍。本文通过介绍矩阵乘积算符 (MPO) 来应对这一挑战。MPO 是源自[张量网络](@entry_id:142149)领域的一种强大形式体系，它为具有内在物理结构的算符提供了一种紧凑而高效的描述。通过阅读本文，您将对 MPO 获得深入的理解。第一章“原理与机制”将通过将算符重构为简单、局域的配方（非常像一个有限自动机）来揭示 MPO 的工作原理，并解释这种结构如何驾驭短程和[长程相互作用](@entry_id:140725)的复杂性。随后的“应用与跨学科联系”一章将展示 MPO 框架在凝聚态物理、[量子化学](@entry_id:140193)、量子信息乃至经典[科学计算](@entry_id:143987)等领域的通用性，揭示其作为一种统一复杂问题的语言的地位。
+在[量子多体系统](@keyword=quantum_many_body_systems|lang=zh-CN|style=Feynman)的研究中，[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)等算符是理解系统行为的数学钥匙。然而，即使粒子数量不多，表示这些算符所需的矩阵也可能大到天文数字，这构成了巨大的计算和概念障碍。本文通过介绍矩阵乘积算符 (MPO) 来应对这一挑战。MPO 是源自[张量网络](@keyword=tensor_networks|lang=zh-CN|style=Feynman)领域的一种强大形式体系，它为具有内在物理结构的算符提供了一种紧凑而高效的描述。通过阅读本文，您将对 MPO 获得深入的理解。第一章“原理与机制”将通过将算符重构为简单、局域的配方（非常像一个有限自动机）来揭示 MPO 的工作原理，并解释这种结构如何驾驭短程和[长程相互作用](@keyword=long_range_interactions|lang=zh-CN|style=Feynman)的复杂性。随后的“应用与跨学科联系”一章将展示 MPO 框架在凝聚态物理、[量子化学](@keyword=quantum_chemistry|lang=zh-CN|style=Feynman)、量子信息乃至经典[科学计算](@keyword=scientific_computing|lang=zh-CN|style=Feynman)等领域的通用性，揭示其作为一种统一复杂问题的语言的地位。
 
 ## 原理与机制
 
 想象一下，您想描述一个复杂、庞大的物体，比如一幅描绘了精细场景的巨大挂毯。您当然可以一根线一根线地描述它，但这将是一项艰巨且毫无启发性的任务。或者，您可以认识到这幅挂毯是由一小组重复出现的图案和基元编织而成的。通过描述这些简单的图案以及它们如何连接的规则，您可以用一种非常紧凑的形式捕捉到整幅挂毯的精髓。
 
-**矩阵乘积算符 (MPO)** 正是后一种方法，并将其应用于量子力学的算符。一个控制量子系统动力学的[哈密顿量](@entry_id:172864)，即使粒子数量不多，也可能是一个天文数字般大小的矩阵。然而，对于许多物理系统，特别是那些具有局域相互作用的系统，这个巨大的矩阵并非一堆随机数字，而是具有深刻的、重复的结构。MPO 提供了描述这种结构的语言，将描述上的噩梦转变为一种优雅且计算上易于处理的配方。
+**矩阵乘积算符 (MPO)** 正是后一种方法，并将其应用于量子力学的算符。一个控制量子系统动力学的[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)，即使粒子数量不多，也可能是一个天文数字般大小的矩阵。然而，对于许多物理系统，特别是那些具有局域相互作用的系统，这个巨大的矩阵并非一堆随机数字，而是具有深刻的、重复的结构。MPO 提供了描述这种结构的语言，将描述上的噩梦转变为一种优雅且计算上易于处理的配方。
 
 ### 作为有限自动机的算符
 
-让我们从一个简单、具体的例子开始：一维[量子自旋链](@entry_id:146460)。这些自旋之间的相互作用由一个[哈密顿量](@entry_id:172864)描述，该[哈密顿量](@entry_id:172864)是各项之和。一些项作用于单个格点，另一些则作用于相邻的格点对。考虑著名的横场[伊辛模型](@entry_id:139066)，其[哈密顿量](@entry_id:172864)是在位能量项和最近邻耦合项之和 ：
+让我们从一个简单、具体的例子开始：一维[量子自旋链](@keyword=quantum_spin_chain|lang=zh-CN|style=Feynman)。这些自旋之间的相互作用由一个[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)描述，该[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)是各项之和。一些项作用于单个格点，另一些则作用于相邻的格点对。考虑著名的横场[伊辛模型](@keyword=ising_model|lang=zh-CN|style=Feynman)，其[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)是在位能量项和最近邻耦合项之和 [@problem_id:2453975]：
 $$
 H = - \sum_{i=1}^{N-1} \sigma_i^z \sigma_{i+1}^z - g \sum_{i=1}^{N} \sigma_i^x
 $$
@@ -19,11 +19,11 @@ $$
 
 对于我们的伊辛模型，这个自动机在从一个格点移动到下一个格点时需要记住什么信息？
 
-1.  它可以处于“**空闲**”状态，当前没有在构建任何[相互作用项](@entry_id:637283)。
+1.  它可以处于“**空闲**”状态，当前没有在构建任何[相互作用项](@keyword=interaction_terms|lang=zh-CN|style=Feynman)。
 2.  它可以处于“**等待**”状态，刚刚在格点 $i$ 放置了一个 $\sigma^z$ 算符，现在等待在下一个格点放置相应的 $\sigma_{i+1}^z$ 来完成该项。
 3.  它可以处于“**完成**”状态，已经完成了它需要的所有项。
 
-这表明我们至少需要三个状态，所以键维 $D$ 应该是 3。我们可以将自动机的“规则”表示为一个 $D \times D$ 的矩阵，其中每个元素本身就是一个算符。对于[伊辛模型](@entry_id:139066)，链中任何一个体格点的一个可能的 MPO 张量 $W$ 如下所示：
+这表明我们至少需要三个状态，所以键维 $D$ 应该是 3。我们可以将自动机的“规则”表示为一个 $D \times D$ 的矩阵，其中每个元素本身就是一个算符。对于[伊辛模型](@keyword=ising_model|lang=zh-CN|style=Feynman)，链中任何一个体格点的一个可能的 MPO 张量 $W$ 如下所示：
 $$
 W = \begin{pmatrix}
 I  & -\sigma^z  & -g\sigma^x \\
@@ -39,11 +39,11 @@ $$
 *   $W_{13} = -g\sigma^x$：从空闲状态，机器可以应用在位项 $-g\sigma^x$ 并立即转换到完成状态，这一切都在单个格点上完成。
 *   $W_{33} = I$：一旦进入完成状态，机器就一直保持在该状态，并应用单位算符。
 
-完整的[哈密顿量](@entry_id:172864)是通过将所有格点的这些矩阵相乘构建的，$W^{[1]} W^{[2]} \cdots W^{[N]}$，然[后选择](@entry_id:154665)从“空闲”状态开始并以“完成”状态结束的路径。这个简单的 $3 \times 3$ 矩阵，应用于每个格点，包含了生成整个[哈密顿量](@entry_id:172864)所需的所有信息，无论链有多长。这就是 MPO 的魔力：将一个全局算符压缩成一个简单的、局域的描述。
+完整的[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)是通过将所有格点的这些矩阵相乘构建的，$W^{[1]} W^{[2]} \cdots W^{[N]}$，然[后选择](@keyword=post_selection|lang=zh-CN|style=Feynman)从“空闲”状态开始并以“完成”状态结束的路径。这个简单的 $3 \times 3$ 矩阵，应用于每个格点，包含了生成整个[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)所需的所有信息，无论链有多长。这就是 MPO 的魔力：将一个全局算符压缩成一个简单的、局域的描述。
 
 ### 复杂性的代价：键维与相互作用范围
 
-现在，你可能会问，如果我们的物理系统更复杂怎么办？如果自旋不仅与它们的最近邻相互作用，还与它们的次近邻 (NNN) 相互作用呢？考虑一个增加了类似 $\sum \sigma_i^z \sigma_{i+2}^z$ 项的[哈密顿量](@entry_id:172864)  。
+现在，你可能会问，如果我们的物理系统更复杂怎么办？如果自旋不仅与它们的最近邻相互作用，还与它们的次近邻 (NNN) 相互作用呢？考虑一个增加了类似 $\sum \sigma_i^z \sigma_{i+2}^z$ 项的[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman) [@problem_id:1169514] [@problem_id:528791]。
 
 我们的自动机的记忆必须更新。为了创建一个 $\sigma_i^z \sigma_{i+2}^z$ 项，机器需要在格点 $i$ 放置一个 $\sigma^z$，越过格点 $i+1$ 的同时*记住*它的任务，最后在格点 $i+2$ 放置第二个 $\sigma^z$。这需要一个新的“等待”状态，一个能记录它需要跳过一个格点的状态。
 
@@ -53,13 +53,13 @@ $$
 3.  **等待 NNN** (状态 3)：在格点 $i$ 看到了 $\sigma^z$，需要在 $i+2$ 处有 $\sigma^z$。
 4.  **完成** (状态 4)
 
-我们现在需要 $D=4$ 的键维。这揭示了一个优美而普遍的原理：对于一个具有最大范围为 $r$ 的局域相互作用的[哈密顿量](@entry_id:172864)（例如，NN 为 $r=1$，NNN 为 $r=2$），一个精确 MPO 所需的最小键维是 $D = r+2$。键维是算符“非局域性”的直接物理度量。同样的逻辑也适用于像 $\sum \sigma_{i-1}^z \sigma_i^x \sigma_{i+1}^z$ 这样的[三体](@entry_id:265960)相互作用，这也需要一个特定的算符序列，因此需要更大的记忆，导致最小键维为 $D=4$  。
+我们现在需要 $D=4$ 的键维。这揭示了一个优美而普遍的原理：对于一个具有最大范围为 $r$ 的局域相互作用的[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)（例如，NN 为 $r=1$，NNN 为 $r=2$），一个精确 MPO 所需的最小键维是 $D = r+2$。键维是算符“非局域性”的直接物理度量。同样的逻辑也适用于像 $\sum \sigma_{i-1}^z \sigma_i^x \sigma_{i+1}^z$ 这样的[三体](@keyword=trisomy|lang=zh-CN|style=Feynman)相互作用，这也需要一个特定的算符序列，因此需要更大的记忆，导致最小键维为 $D=4$ [@problem_id:1169507] [@problem_id:1543539]。
 
-### 驯服无穷：处理[长程相互作用](@entry_id:140725)
+### 驯服无穷：处理[长程相互作用](@keyword=long_range_interactions|lang=zh-CN|style=Feynman)
 
-相互作用范围与键维之间的这种直接关系，似乎在我们考虑现实[世界时](@entry_id:275204)给 MPO 判了死刑。几乎支配了所有化学和凝聚态物理的[静电库仑](@entry_id:193254)力 $V(r) \propto 1/r$，是一种**长程**相互作用。它从未真正衰减到零。这是否意味着我们需要一个具有无限键维的 MPO？
+相互作用范围与键维之间的这种直接关系，似乎在我们考虑现实[世界时](@keyword=universal_time|lang=zh-CN|style=Feynman)给 MPO 判了死刑。几乎支配了所有化学和凝聚态物理的[静电库仑](@keyword=statcoulomb|lang=zh-CN|style=Feynman)力 $V(r) \propto 1/r$，是一种**长程**相互作用。它从未真正衰减到零。这是否意味着我们需要一个具有无限键维的 MPO？
 
-在这里，我们发现了一项真正卓越的创造性成果。虽然 $1/r$ 势本身很难处理，但事实证明，许多这类平滑的、衰减的函数可以被精确地近似为少数几个衰减[指数函数](@entry_id:161417)的和 ：
+在这里，我们发现了一项真正卓越的创造性成果。虽然 $1/r$ 势本身很难处理，但事实证明，许多这类平滑的、衰减的函数可以被精确地近似为少数几个衰减[指数函数](@keyword=exponential_function|lang=zh-CN|style=Feynman)的和 [@problem_id:2981055]：
 $$
 V(r) = \frac{1}{r} \approx \sum_{k=1}^{K} a_k b_k^r
 $$
@@ -69,19 +69,19 @@ $$
 
 所需的状态总数为：一个“空闲”状态，$K$ 个“通道”状态，以及一个“完成”状态。这给出了总键维 $D = K+2$。这是一个深刻的结果。键维不再依赖于相互作用的*范围*，而是依赖于其*函数形式的复杂性*——具体来说，就是我们需要多少个指数函数才能很好地近似它。一个看似棘手的长程问题被驯服了，通过将其映射到 MPO 的自然结构上而变得易于管理。
 
-### [量子化学](@entry_id:140193)家的 MPO：一场索引的交响乐
+### [量子化学](@keyword=quantum_chemistry|lang=zh-CN|style=Feynman)家的 MPO：一场索引的交响乐
 
-对任何量子物理方法的终极考验是分子的[电子结构](@entry_id:145158)。分子中电子的完整[哈密顿量](@entry_id:172864)是一个庞然大物，涉及将每个[轨道](@entry_id:137151)与其他所有轨[道耦合](@entry_id:161648)的项。当这些[轨道](@entry_id:137151)为了进行 DMRG 计算而被[排列](@entry_id:136432)在一维[晶格](@entry_id:196752)上时，相互作用变得极其非局域。[哈密顿量](@entry_id:172864)的双电子部分涉及一个四指标对象 $v_{pqrs}$ 和四个[费米子算符](@entry_id:149120)的乘积 $\hat{a}_p^\dagger \hat{a}_q^\dagger \hat{a}_s \hat{a}_r$ 。
+对任何量子物理方法的终极考验是分子的[电子结构](@keyword=electronic_structure|lang=zh-CN|style=Feynman)。分子中电子的完整[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)是一个庞然大物，涉及将每个[轨道](@keyword=orbit|lang=zh-CN|style=Feynman)与其他所有轨[道耦合](@keyword=channel_coupling|lang=zh-CN|style=Feynman)的项。当这些[轨道](@keyword=orbit|lang=zh-CN|style=Feynman)为了进行 DMRG 计算而被[排列](@keyword=permutation|lang=zh-CN|style=Feynman)在一维[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)上时，相互作用变得极其非局域。[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)的双电子部分涉及一个四指标对象 $v_{pqrs}$ 和四个[费米子算符](@keyword=fermionic_operators|lang=zh-CN|style=Feynman)的乘积 $\hat{a}_p^\dagger \hat{a}_q^\dagger \hat{a}_s \hat{a}_r$ [@problem_id:2812481]。
 
-为这个[哈密顿量](@entry_id:172864)构建一个 MPO 的幼稚尝试将是灾难性的。为了处理一个涉及四个不同格点 $p,q,r,s$ 的项，我们的 MPO 似乎需要在穿越链时“ juggling ”四个开放的索引，导致键维随[轨道](@entry_id:137151)数 $K$ 的增长而增长，其规模为 $O(K^4)$。这对于任何有趣的分子来说在计算上都是不可能的。
+为这个[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)构建一个 MPO 的幼稚尝试将是灾难性的。为了处理一个涉及四个不同格点 $p,q,r,s$ 的项，我们的 MPO 似乎需要在穿越链时“ juggling ”四个开放的索引，导致键维随[轨道](@keyword=orbit|lang=zh-CN|style=Feynman)数 $K$ 的增长而增长，其规模为 $O(K^4)$。这对于任何有趣的分子来说在计算上都是不可能的。
 
-解决方案是重新思考需要跨越一个键传递什么信息。考虑将[轨道](@entry_id:137151)链二分为左半[部分和](@entry_id:162077)右半部分。当一个相互作用项，如 $v_{pqrs} \hat{a}_p^\dagger \hat{a}_q^\dagger \hat{a}_s \hat{a}_r$，的索引 $p,q$ 在左半部分，$r,s$ 在右半部[分时](@entry_id:274419)，右半部分需要从左半部分知道什么？它只需要知道左边刚刚应用了哪一对算符 $(p,q)$。作为回应，右半部分必须执行其求和的部分，应用我们可以称之为**互补算符**的东西：
+解决方案是重新思考需要跨越一个键传递什么信息。考虑将[轨道](@keyword=orbit|lang=zh-CN|style=Feynman)链二分为左半[部分和](@keyword=partial_sums|lang=zh-CN|style=Feynman)右半部分。当一个相互作用项，如 $v_{pqrs} \hat{a}_p^\dagger \hat{a}_q^\dagger \hat{a}_s \hat{a}_r$，的索引 $p,q$ 在左半部分，$r,s$ 在右半部[分时](@keyword=time_sharing|lang=zh-CN|style=Feynman)，右半部分需要从左半部分知道什么？它只需要知道左边刚刚应用了哪一对算符 $(p,q)$。作为回应，右半部分必须执行其求和的部分，应用我们可以称之为**互补算符**的东西：
 $$
 \hat{\mathcal{C}}_{pq}^R = \sum_{r,s \in \text{Right}} v_{pqrs} \hat{a}_s \hat{a}_r
 $$
-MPO 不需要携带原始索引；它只需要携带一个与每个不同的互补算符 $\hat{\mathcal{C}}_{pq}^R$ 相对应的“通道”。那么，这样的算符有多少个呢？在链的中心，左半[部分和](@entry_id:162077)右半部分都大约有 $K/2$ 个[轨道](@entry_id:137151)，左半部分上的对 $(p,q)$ 的数量大约是 $(K/2)^2$，其规模为 $O(K^2)$。
+MPO 不需要携带原始索引；它只需要携带一个与每个不同的互补算符 $\hat{\mathcal{C}}_{pq}^R$ 相对应的“通道”。那么，这样的算符有多少个呢？在链的中心，左半[部分和](@keyword=partial_sums|lang=zh-CN|style=Feynman)右半部分都大约有 $K/2$ 个[轨道](@keyword=orbit|lang=zh-CN|style=Feynman)，左半部分上的对 $(p,q)$ 的数量大约是 $(K/2)^2$，其规模为 $O(K^2)$。
 
-这就是关键。通过巧妙地将[哈密顿量](@entry_id:172864)的各部分捆绑成这些互补算符，精确表示完整的、长程[电子哈密顿量](@entry_id:177588)所需的通道数量仅以 $O(K^2)$ 的规模增长 。虽然这仍然是一个艰巨的挑战，但这种二次方的规模增长与不可能的 $O(K^4)$ 相去甚远，正是这一洞见使得[密度矩阵重整化群](@entry_id:137826) (DMRG) 成为现代[量子化学](@entry_id:140193)的强大工具。
+这就是关键。通过巧妙地将[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)的各部分捆绑成这些互补算符，精确表示完整的、长程[电子哈密顿量](@keyword=electronic_hamiltonian|lang=zh-CN|style=Feynman)所需的通道数量仅以 $O(K^2)$ 的规模增长 [@problem_id:2812481]。虽然这仍然是一个艰巨的挑战，但这种二次方的规模增长与不可能的 $O(K^4)$ 相去甚远，正是这一洞见使得[密度矩阵重整化群](@keyword=density_matrix_renormalization_group|lang=zh-CN|style=Feynman) (DMRG) 成为现代[量子化学](@keyword=quantum_chemistry|lang=zh-CN|style=Feynman)的强大工具。
 
-从一个写下算符的简单机器，到一个驯服[长程力](@entry_id:181779)表面上的无穷大并使[分子量子力学](@entry_id:203843)变得易于处理的复杂工具，矩阵乘积算符证明了找到正确的语言来描述物理定律中隐藏的简单结构的力量。
+从一个写下算符的简单机器，到一个驯服[长程力](@keyword=long_range_forces|lang=zh-CN|style=Feynman)表面上的无穷大并使[分子量子力学](@keyword=molecular_quantum_mechanics|lang=zh-CN|style=Feynman)变得易于处理的复杂工具，矩阵乘积算符证明了找到正确的语言来描述物理定律中隐藏的简单结构的力量。
 

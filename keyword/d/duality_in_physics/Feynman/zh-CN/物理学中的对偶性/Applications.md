@@ -6,42 +6,42 @@
 
 让我们从一个看似简单的问题开始。想象你在一艘巨大的、没有窗户的火箭船里，漂浮在深空的虚空中。你用激光笔直射向舱室的另一面墙。自然地，光束会沿一条完美的直线传播。但是现在，如果火箭开始以恒定的加速度 $a$ “向上”加速，会发生什么？
 
-从一个在[惯性系](@article_id:339197)中观察火箭飞驰而过的人的角度来思考这个问题。光从一堵墙发出，射向另一堵墙。在光脉冲穿过舱室宽度 $L$ 的时间内，火箭本身已经向上移动了。因此，光脉冲必须击中对面墙上一个比起始点更低的位置！对于这个加速舱内的观察者来说，他们感觉有一股力量将他们压在地板上，就好像他们有重量一样，光束的路径看起来根本不是直的。它看起来会向下弯曲，描绘出一条抛物线弧，就像一个水平抛出的球一样  。
+从一个在[惯性系](@keyword=inertial_frame|lang=zh-CN|style=Feynman)中观察火箭飞驰而过的人的角度来思考这个问题。光从一堵墙发出，射向另一堵墙。在光脉冲穿过舱室宽度 $L$ 的时间内，火箭本身已经向上移动了。因此，光脉冲必须击中对面墙上一个比起始点更低的位置！对于这个加速舱内的观察者来说，他们感觉有一股力量将他们压在地板上，就好像他们有重量一样，光束的路径看起来根本不是直的。它看起来会向下弯曲，描绘出一条抛物线弧，就像一个水平抛出的球一样 [@problem_id:1877101] [@problem_id:2067807]。
 
-这就是[等效原理](@article_id:317923)的魔力所在。爱因斯坦宣称，在你密封的舱室内，你*无法进行任何实验*来区分你是在一个以 $a$ 加速的火箭中，还是静止在一个强度为 $g=a$ 的均匀[引力场](@article_id:348648)中。如果激光束在加速的火箭中弯曲，那么它在[引力场](@article_id:348648)中也*必须*弯曲。这个结论既无可避免又具革命性：**引力使光线弯曲**。这不仅仅是一个理论上的好奇心。这是一个大胆的预测，挑战了两个世纪的物理学，并且在1919年的日食期间得到了壮观的证实，当时天文学家观察到来自遥远恒星的光在经过太阳时发生了偏转。
+这就是[等效原理](@keyword=principle_of_equivalence|lang=zh-CN|style=Feynman)的魔力所在。爱因斯坦宣称，在你密封的舱室内，你*无法进行任何实验*来区分你是在一个以 $a$ 加速的火箭中，还是静止在一个强度为 $g=a$ 的均匀[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)中。如果激光束在加速的火箭中弯曲，那么它在[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)中也*必须*弯曲。这个结论既无可避免又具革命性：**引力使光线弯曲**。这不仅仅是一个理论上的好奇心。这是一个大胆的预测，挑战了两个世纪的物理学，并且在1919年的日食期间得到了壮观的证实，当时天文学家观察到来自遥远恒星的光在经过太阳时发生了偏转。
 
-用广义[相对论](@article_id:327421)更复杂的语言来说，我们说光在[时空](@article_id:370647)中遵循最直的可能路径——一条“[测地线](@article_id:327811)”。如果[时空](@article_id:370647)本身因质量和能量的存在而弯曲，那么光所遵循的路径在我们看来就会是弯曲的。我们在简单的火箭实验中计算出的偏转，一个 $\frac{g L^{2}}{2 c^{2}}$ 的向下坠落，是对这个宏伟的引力几何理论的第一次瞥见 。
+用广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)更复杂的语言来说，我们说光在[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中遵循最直的可能路径——一条“[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)”。如果[时空](@keyword=space_time|lang=zh-CN|style=Feynman)本身因质量和能量的存在而弯曲，那么光所遵循的路径在我们看来就会是弯曲的。我们在简单的火箭实验中计算出的偏转，一个 $\frac{g L^{2}}{2 c^{2}}$ 的向下坠落，是对这个宏伟的引力几何理论的第一次瞥见 [@problem_id:1554912]。
 
-### [等效原理](@article_id:317923)的局限与引力的真实本质
+### [等效原理](@keyword=principle_of_equivalence|lang=zh-CN|style=Feynman)的局限与引力的真实本质
 
 加速度和引力之间的这种等效性是完美和绝对的吗？让我们改进我们的思想实验。想象我们的“电梯”现在非常高。如果它在空旷的空间中加速，那么从顶部和底部同时释放的两个球相对于舱室将以完全相同的加速度下落，它们的路径将是完全平行的。
 
-现在，将这个同样高的电梯放在地球表面。引力将一切物体拉向地球中心。一个从顶层掉落，一个从底层掉落的两个球，它们的路径不会完全平行。它们的轨迹会略微汇合，指向地球的中心。内部的观察者原则上可以测量到这种微小的汇合。这种差异——即引力在不同地方可以向略微不同的方向拉动——被称为**[潮汐力](@article_id:319592)**。你无法通过均[匀加速](@article_id:332330)火箭来产生潮汐力。
+现在，将这个同样高的电梯放在地球表面。引力将一切物体拉向地球中心。一个从顶层掉落，一个从底层掉落的两个球，它们的路径不会完全平行。它们的轨迹会略微汇合，指向地球的中心。内部的观察者原则上可以测量到这种微小的汇合。这种差异——即引力在不同地方可以向略微不同的方向拉动——被称为**[潮汐力](@keyword=tidal_forces|lang=zh-CN|style=Feynman)**。你无法通过均[匀加速](@keyword=uniform_acceleration|lang=zh-CN|style=Feynman)火箭来产生潮汐力。
 
-在这里，我们发现了等效原理的局限性。它在根本上是正确的，但只是*局域*性的。[引力场](@article_id:348648)通常不是均匀的。[等效原理](@article_id:317923)在更大范围内的失效并非该思想的缺陷；它恰恰是我们称之为真正引力的标志：[时空](@article_id:370647)的曲率。
+在这里，我们发现了等效原理的局限性。它在根本上是正确的，但只是*局域*性的。[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)通常不是均匀的。[等效原理](@keyword=principle_of_equivalence|lang=zh-CN|style=Feynman)在更大范围内的失效并非该思想的缺陷；它恰恰是我们称之为真正引力的标志：[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的曲率。
 
-当我们更仔细地审视数学时，这种微妙之处被优美地捕捉到了。当我们在一个加速框架中描述物理时，我们发现有效的“引力”加速度并非完全恒定，而是可能轻微地依赖于位置 。这种位置依赖性是[潮汐力](@article_id:319592)的数学幽灵。在广义[相对论](@article_id:327421)的语言中，我们总能找到一个特殊的[坐标系](@article_id:316753)，即[局域惯性系](@article_id:369274)（LIF），在某一点上，引力的效应似乎消失了——量化[引力场](@article_id:348648)的克里斯托费尔符号（Christoffel symbols）为零 。在这个框架中，对于一个无穷小的瞬间，物理学看起来就像狭义相对论。但是你无法让它们在所有地方都消失。它们从一点到另一点的变化方式描述了[时空](@article_id:370647)的曲率——那真实、不可否认的引力的存在。
+当我们更仔细地审视数学时，这种微妙之处被优美地捕捉到了。当我们在一个加速框架中描述物理时，我们发现有效的“引力”加速度并非完全恒定，而是可能轻微地依赖于位置 [@problem_id:1554862]。这种位置依赖性是[潮汐力](@keyword=tidal_forces|lang=zh-CN|style=Feynman)的数学幽灵。在广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)的语言中，我们总能找到一个特殊的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)，即[局域惯性系](@keyword=local_inertial_frames|lang=zh-CN|style=Feynman)（LIF），在某一点上，引力的效应似乎消失了——量化[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)的克里斯托费尔符号（Christoffel symbols）为零 [@problem_id:1554903]。在这个框架中，对于一个无穷小的瞬间，物理学看起来就像狭义相对论。但是你无法让它们在所有地方都消失。它们从一点到另一点的变化方式描述了[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的曲率——那真实、不可否认的引力的存在。
 
 ### 什么是“重量”？能量和压力的引力
 
-等效原理迫使我们重新思考最基本的问题，比如“是什么导致了引力？”我们从[狭义相对论](@article_id:339245)中学到，质量和能量是同一枚硬币的两面，由 $E=mc^2$ 联系在一起。所以，如果质量有重量，能量也必须有重量。
+等效原理迫使我们重新思考最基本的问题，比如“是什么导致了引力？”我们从[狭义相对论](@keyword=special_relativity_theory|lang=zh-CN|style=Feynman)中学到，质量和能量是同一枚硬币的两面，由 $E=mc^2$ 联系在一起。所以，如果质量有重量，能量也必须有重量。
 
-让我们回到我们的电梯，现在它静止在一个[引力场](@article_id:348648)中。想象一下从地板向天花板发射一个[光子](@article_id:305617)。对于内部的观察者来说，[光子](@article_id:305617)在对抗引力。它在向上的旅程中必须损失能量，就像一个被抛出的球会损失动能一样。由于[光子](@article_id:305617)的能量与其频率成正比，这意味着它的频率必须降低。这种现象被称为**引力红移**，意味着在[引力场](@article_id:348648)中越深的地方，时钟走得越慢。
+让我们回到我们的电梯，现在它静止在一个[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)中。想象一下从地板向天花板发射一个[光子](@keyword=photon|lang=zh-CN|style=Feynman)。对于内部的观察者来说，[光子](@keyword=photon|lang=zh-CN|style=Feynman)在对抗引力。它在向上的旅程中必须损失能量，就像一个被抛出的球会损失动能一样。由于[光子](@keyword=photon|lang=zh-CN|style=Feynman)的能量与其频率成正比，这意味着它的频率必须降低。这种现象被称为**引力红移**，意味着在[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)中越深的地方，时钟走得越慢。
 
-这对[热力学](@article_id:359663)有着惊人的影响。如果你在我们的电梯的地板和天花板上的两个热源之间运行一个完全高效的[卡诺热机](@article_id:301041)，你必须考虑热量在向上输送过程中损失的能量。为了使过程可逆（即总熵保持不变），顶部的温度 $T_{top}$ 必须低于底部的温度 $T_{bottom}$ 。这种关系，被称为[托尔曼-埃伦费斯特效应](@article_id:309022)（Tolman-Ehrenfest effect），是引力与[热力学定律](@article_id:321145)之间的直接联系。引力不仅仅是拉动物体；它在任何处于热平衡的系统中都会产生温度梯度！
+这对[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)有着惊人的影响。如果你在我们的电梯的地板和天花板上的两个热源之间运行一个完全高效的[卡诺热机](@keyword=carnot_engine|lang=zh-CN|style=Feynman)，你必须考虑热量在向上输送过程中损失的能量。为了使过程可逆（即总熵保持不变），顶部的温度 $T_{top}$ 必须低于底部的温度 $T_{bottom}$ [@problem_id:1862059]。这种关系，被称为[托尔曼-埃伦费斯特效应](@keyword=tolman_ehrenfest_effect|lang=zh-CN|style=Feynman)（Tolman-Ehrenfest effect），是引力与[热力学定律](@keyword=laws_of_thermodynamics|lang=zh-CN|style=Feynman)之间的直接联系。引力不仅仅是拉动物体；它在任何处于热平衡的系统中都会产生温度梯度！
 
-这个兔子洞更深了。如果我们在一个盒子里装满[光子气体](@article_id:304415)——一个纯光的容器呢？这个光盒子具有一定的能量 $U$，所以它有[惯性质量](@article_id:330936) $M_{\text{inertial}} = U/c^2$。但是[光子气体](@article_id:304415)也会对容器壁施加压力。等效原理的一个显著推论是，这种压力也对盒子的重量有贡献。通过分析[引力场](@article_id:348648)中容器顶部和底部的力，可以发现对于[光子气体](@article_id:304415)，其被动[引力质量](@article_id:324461)并非简单的 $U/c^2$，而实际上是 $M_{\text{grav}} = \frac{4}{3} U / c^2$ 。
+这个兔子洞更深了。如果我们在一个盒子里装满[光子气体](@keyword=photon_gas|lang=zh-CN|style=Feynman)——一个纯光的容器呢？这个光盒子具有一定的能量 $U$，所以它有[惯性质量](@keyword=inertial_mass|lang=zh-CN|style=Feynman) $M_{\text{inertial}} = U/c^2$。但是[光子气体](@keyword=photon_gas|lang=zh-CN|style=Feynman)也会对容器壁施加压力。等效原理的一个显著推论是，这种压力也对盒子的重量有贡献。通过分析[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)中容器顶部和底部的力，可以发现对于[光子气体](@keyword=photon_gas|lang=zh-CN|style=Feynman)，其被动[引力质量](@keyword=gravitational_mass|lang=zh-CN|style=Feynman)并非简单的 $U/c^2$，而实际上是 $M_{\text{grav}} = \frac{4}{3} U / c^2$ [@problem_id:1862029]。
 
-压力有重量！这是广义[相对论](@article_id:327421)的一个基石。引力的来源不仅仅是质量或能量密度，而是一个更全面的对象，称为[应力-能量张量](@article_id:306964)，它包括压力、动量和应力。例如，中子星内部巨大的压力对其强大的[引力场](@article_id:348648)有显著贡献。
+压力有重量！这是广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)的一个基石。引力的来源不仅仅是质量或能量密度，而是一个更全面的对象，称为[应力-能量张量](@keyword=stress_energy_tensor|lang=zh-CN|style=Feynman)，它包括压力、动量和应力。例如，中子星内部巨大的压力对其强大的[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)有显著贡献。
 
-### [引力场](@article_id:348648)中的量子跃迁
+### [引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)中的量子跃迁
 
 到目前为止，我们的旅程一直在经典领域。但是，引力与加速度之间的这种美丽的对偶性，在量子力学这个奇特、概率性的世界中是否仍然有效？答案是肯定的，其影响令人叹为观止。
 
-考虑一个现代的[原子干涉仪](@article_id:319344)。利用激光，物理学家可以利用原子的波粒二象性，将其[波函数](@article_id:307855)分成两部分，让它们沿着不同的空间路径（比如一条“高”路径和一条“低”路径）传播，然后将它们重新组合。这两束波相互干涉的方式取决于它们在各自旅程中积累的相位差。
+考虑一个现代的[原子干涉仪](@keyword=atom_interferometer|lang=zh-CN|style=Feynman)。利用激光，物理学家可以利用原子的波粒二象性，将其[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)分成两部分，让它们沿着不同的空间路径（比如一条“高”路径和一条“低”路径）传播，然后将它们重新组合。这两束波相互干涉的方式取决于它们在各自旅程中积累的相位差。
 
-现在，将整个装置放入一个加速框架中。根据[等效原理](@article_id:317923)，这与将其置于[引力场](@article_id:348648)中是相同的。沿着上层路径行进的原子将比下层路径上的原子具有略微不同的[引力势能](@article_id:332740)。这种势能的差异在原子的[波函数](@article_id:307855)的量子相位上留下了印记。当两条路径重新组合时，干涉图样中会出现一个可测量的[相移](@article_id:314754)，这个[相移](@article_id:314754)与加速度或[引力场](@article_id:348648)的强度成正比 。这不仅仅是一个思想实验；原子干涉测量已成为地球上测量局部引力的最精确方法之一。
+现在，将整个装置放入一个加速框架中。根据[等效原理](@keyword=principle_of_equivalence|lang=zh-CN|style=Feynman)，这与将其置于[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)中是相同的。沿着上层路径行进的原子将比下层路径上的原子具有略微不同的[引力势能](@keyword=gravitational_potential_energy|lang=zh-CN|style=Feynman)。这种势能的差异在原子的[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)的量子相位上留下了印记。当两条路径重新组合时，干涉图样中会出现一个可测量的[相移](@keyword=phase_shift|lang=zh-CN|style=Feynman)，这个[相移](@keyword=phase_shift|lang=zh-CN|style=Feynman)与加速度或[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)的强度成正比 [@problem_id:386671]。这不仅仅是一个思想实验；原子干涉测量已成为地球上测量局部引力的最精确方法之一。
 
-等效原理与量子力学的结合甚至预测，引力可以深入原子核心并影响其内部结构。一种理论处理表明，处于均匀[引力场](@article_id:348648)中的原子应该会经历一种类似于斯塔克效应（Stark effect，即电场使光[谱线分裂](@article_id:310798)）的微妙效应。与[引力场](@article_id:348648)的相互作用可以解除[原子能级](@article_id:308674)的简并，导致单个能级分裂成多个略有不同的能级 。虽然这种“引力[斯塔克效应](@article_id:306726)”小到难以想象，远超我们目前的探测能力，但其理论上的存在证明了等效原理的普适性。
+等效原理与量子力学的结合甚至预测，引力可以深入原子核心并影响其内部结构。一种理论处理表明，处于均匀[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)中的原子应该会经历一种类似于斯塔克效应（Stark effect，即电场使光[谱线分裂](@keyword=spectral_line_splitting|lang=zh-CN|style=Feynman)）的微妙效应。与[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)的相互作用可以解除[原子能级](@keyword=atomic_energy_levels|lang=zh-CN|style=Feynman)的简并，导致单个能级分裂成多个略有不同的能级 [@problem_id:299818]。虽然这种“引力[斯塔克效应](@keyword=stark_effect|lang=zh-CN|style=Feynman)”小到难以想象，远超我们目前的探测能力，但其理论上的存在证明了等效原理的普适性。
 
-从一个简单的起点——在一个小而封闭的房间里，引力和加速度无法区分——我们被引向了光线弯曲、引力红移、[时空](@article_id:370647)本身的曲率、压力的重量，以及物质波的引力相移。这个单一的对偶性原理已被证明是一个极其锋利的工具，在广义[相对论](@article_id:327421)、[热力学](@article_id:359663)和量子力学之间刻画出深刻的联系。它作为一个深刻的例子，展示了物理学固有的美和统一性，表明一个“幸福的思想”如何能照亮整个宇宙。
+从一个简单的起点——在一个小而封闭的房间里，引力和加速度无法区分——我们被引向了光线弯曲、引力红移、[时空](@keyword=space_time|lang=zh-CN|style=Feynman)本身的曲率、压力的重量，以及物质波的引力相移。这个单一的对偶性原理已被证明是一个极其锋利的工具，在广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)、[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)和量子力学之间刻画出深刻的联系。它作为一个深刻的例子，展示了物理学固有的美和统一性，表明一个“幸福的思想”如何能照亮整个宇宙。

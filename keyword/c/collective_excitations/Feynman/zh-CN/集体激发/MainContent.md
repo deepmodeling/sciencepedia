@@ -1,72 +1,72 @@
 ## 引言
-在材料领域，我们面临着惊人的复杂性：无数原子和电子在一个密集、混乱的环境中相互作用。试图单独追踪每一个粒子是徒劳的，这会让我们只见树木，不见森林。固体、磁体和[量子流体](@article_id:300775)最深刻、最有趣的特性，并非源于单个粒子的独立行为，而是源于它们协调一致的集体舞蹈。本文旨在通过引入[集体激发](@article_id:305451)这一强大概念来应对理解这些[多体系统](@article_id:304436)的挑战——这是一种捕捉系统本质动力学的、涌现的、类粒子的实体。
+在材料领域，我们面临着惊人的复杂性：无数原子和电子在一个密集、混乱的环境中相互作用。试图单独追踪每一个粒子是徒劳的，这会让我们只见树木，不见森林。固体、磁体和[量子流体](@keyword=quantum_fluids|lang=zh-CN|style=Feynman)最深刻、最有趣的特性，并非源于单个粒子的独立行为，而是源于它们协调一致的集体舞蹈。本文旨在通过引入[集体激发](@keyword=collective_excitations|lang=zh-CN|style=Feynman)这一强大概念来应对理解这些[多体系统](@keyword=many_body_systems|lang=zh-CN|style=Feynman)的挑战——这是一种捕捉系统本质动力学的、涌现的、类粒子的实体。
 
-在接下来的章节中，我们将踏上探索这个集体世界的旅程。我们首先将深入研究基本的“原理与机制”，通过类比来理解[声子](@article_id:297589)和磁子等集体模式是如何产生的，以及像对称性破缺这样的深刻原理是如何支配它们的存在。然后，我们将探索广阔的“应用与跨学科联系”领域，见证这些思想如何提供一个统一的框架，来理解从[固体的热容](@article_id:305362)和摩擦到超导和[自旋-电荷分离](@article_id:302957)等奇异现象的方方面面。通过将我们的焦点从个体转向集体，我们得以对构成我们世界的物质获得一种全新的、更丰富的理解。
+在接下来的章节中，我们将踏上探索这个集体世界的旅程。我们首先将深入研究基本的“原理与机制”，通过类比来理解[声子](@keyword=phonons|lang=zh-CN|style=Feynman)和磁子等集体模式是如何产生的，以及像对称性破缺这样的深刻原理是如何支配它们的存在。然后，我们将探索广阔的“应用与跨学科联系”领域，见证这些思想如何提供一个统一的框架，来理解从[固体的热容](@keyword=heat_capacity_of_solids|lang=zh-CN|style=Feynman)和摩擦到超导和[自旋-电荷分离](@keyword=spin_charge_separation|lang=zh-CN|style=Feynman)等奇异现象的方方面面。通过将我们的焦点从个体转向集体，我们得以对构成我们世界的物质获得一种全新的、更丰富的理解。
 
 ## 原理与机制
 
 想象一个巨大的体育场，挤满了成千上万的人。如果一个人决定站起来再坐下，你可能根本不会注意到。这是一个孤立的事件。但随后，一个涟漪开始了。一整个区域的人站起来，然后是下一个区域，再下一个，形成一个宏伟的波浪，环绕整个体育场传播。这个波浪不是一个人；它是许多人协调一致的集体运动。它有自己的生命、自己的速度、自己的属性。体育场作为一个整体在行动，而不仅仅是个体的集合。
 
-这就是**[集体激发](@article_id:305451)**思想的核心。在凝聚态物理的世界里，我们经常处理含有天文数字般数量的[粒子系统](@article_id:355770)——电子、原子、自旋——它们都在相互作用。虽然原则上我们可以尝试追踪每一个粒子，但这将是一项毫无希望且见解不深的任务。真正有趣的物理现象往往源于它们的集体舞蹈，就像体育场的人浪一样。这些集体的运动模式，在被量子化后，就是我们所说的**[准粒子](@article_id:299846)**。它们不是像真空中的电子那样的基本粒子，但它们是相互作用系统的自然“激发”，并且它们在许多方面都像粒子一样行事。它们携带能量和动量，并且可以被产生和湮灭。
+这就是**[集体激发](@keyword=collective_excitations|lang=zh-CN|style=Feynman)**思想的核心。在凝聚态物理的世界里，我们经常处理含有天文数字般数量的[粒子系统](@keyword=system_of_particles|lang=zh-CN|style=Feynman)——电子、原子、自旋——它们都在相互作用。虽然原则上我们可以尝试追踪每一个粒子，但这将是一项毫无希望且见解不深的任务。真正有趣的物理现象往往源于它们的集体舞蹈，就像体育场的人浪一样。这些集体的运动模式，在被量子化后，就是我们所说的**[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)**。它们不是像真空中的电子那样的基本粒子，但它们是相互作用系统的自然“激发”，并且它们在许多方面都像粒子一样行事。它们携带能量和动量，并且可以被产生和湮灭。
 
-让我们从集体行为最熟悉的舞台——[晶体固体](@article_id:300667)——开始探索这个想法。
+让我们从集体行为最熟悉的舞台——[晶体固体](@keyword=crystalline_solids|lang=zh-CN|style=Feynman)——开始探索这个想法。
 
-### 晶体的交响乐：[声子](@article_id:297589)
+### 晶体的交响乐：[声子](@keyword=phonons|lang=zh-CN|style=Feynman)
 
-把晶体想象成一个由原子构成的、完美有序的三维弹簧床垫，所有原子都由弹簧连接。这比一个简单的装满弹珠的盒子是好得多的模型。如果你戳一个原子，它不会独自[振动](@article_id:331484)；它会推拉它的邻居，一波位移会传遍整个晶体。这些就是[晶格振动](@article_id:374784)波。
+把晶体想象成一个由原子构成的、完美有序的三维弹簧床垫，所有原子都由弹簧连接。这比一个简单的装满弹珠的盒子是好得多的模型。如果你戳一个原子，它不会独自[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)；它会推拉它的邻居，一波位移会传遍整个晶体。这些就是[晶格振动](@keyword=crystal_lattice_vibrations|lang=zh-CN|style=Feynman)波。
 
-现在，让我们转向量子力学。正如光波在量子化后由[光子](@article_id:305617)构成一样，这些[晶格振动](@article_id:374784)波在量子化后由**[声子](@article_id:297589)**构成。[声子](@article_id:297589)是一个[振动](@article_id:331484)量子。一个频率为 $\omega$ 的[振动](@article_id:331484)模式不能拥有任意能量；它的能量必须是 $E_n = (n + \frac{1}{2})\hbar\omega$，其中 $n$ 是一个整数。我们可以用一种新的方式来看待这个问题：我们可以说这个状态被 $n$ 个[声子](@article_id:297589)占据，每个[声子](@article_id:297589)携带一个能量包 $\hbar\omega$ 。
+现在，让我们转向量子力学。正如光波在量子化后由[光子](@keyword=photon|lang=zh-CN|style=Feynman)构成一样，这些[晶格振动](@keyword=crystal_lattice_vibrations|lang=zh-CN|style=Feynman)波在量子化后由**[声子](@keyword=phonons|lang=zh-CN|style=Feynman)**构成。[声子](@keyword=phonons|lang=zh-CN|style=Feynman)是一个[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)量子。一个频率为 $\omega$ 的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式不能拥有任意能量；它的能量必须是 $E_n = (n + \frac{1}{2})\hbar\omega$，其中 $n$ 是一个整数。我们可以用一种新的方式来看待这个问题：我们可以说这个状态被 $n$ 个[声子](@keyword=phonons|lang=zh-CN|style=Feynman)占据，每个[声子](@keyword=phonons|lang=zh-CN|style=Feynman)携带一个能量包 $\hbar\omega$ [@problem_id:1883764]。
 
-这些[声子](@article_id:297589)是哪种粒子呢？嗯，$n$ 可以是任何整数：0, 1, 2, 3, ... 直到无穷大。这意味着任意数量的相同[声子](@article_id:297589)可以堆积在同一个[振动](@article_id:331484)模式中。这是一种被称为**[玻色子](@article_id:298714)**的粒子的决定性特征，因此[声子](@article_id:297589)遵循[玻色-爱因斯坦统计](@article_id:300411) 。
+这些[声子](@keyword=phonons|lang=zh-CN|style=Feynman)是哪种粒子呢？嗯，$n$ 可以是任何整数：0, 1, 2, 3, ... 直到无穷大。这意味着任意数量的相同[声子](@keyword=phonons|lang=zh-CN|style=Feynman)可以堆积在同一个[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式中。这是一种被称为**[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)**的粒子的决定性特征，因此[声子](@keyword=phonons|lang=zh-CN|style=Feynman)遵循[玻色-爱因斯坦统计](@keyword=bose_einstein_statistics|lang=zh-CN|style=Feynman) [@problem_id:1883764]。
 
-这种“集体”的图景不仅仅是一个方便的故事；大自然告诉我们这才是正确的。一个经典的证据来自固体在极低温度下储存热量的方式。如果每个原子都独立[振动](@article_id:331484)（由Einstein倡导的“孤立原子”图景），[热容](@article_id:340019) $C_V$ 会指数级地趋向于零。但实验显示出一种普适行为：对于绝大多数[晶体固体](@article_id:300667)，[热容](@article_id:340019)遵循一个简单的[幂律](@article_id:320566)，$C_V \propto T^3$。这个 $T^3$ 定律是穿过[晶格](@article_id:300090)的集体、长波长[声波](@article_id:353278)传播的直接数学结果——即Debye模型 。孤立原子模型完全无法解释这个美丽的、简单的、标志着集体行动的事实。
+这种“集体”的图景不仅仅是一个方便的故事；大自然告诉我们这才是正确的。一个经典的证据来自固体在极低温度下储存热量的方式。如果每个原子都独立[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)（由Einstein倡导的“孤立原子”图景），[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman) $C_V$ 会指数级地趋向于零。但实验显示出一种普适行为：对于绝大多数[晶体固体](@keyword=crystalline_solids|lang=zh-CN|style=Feynman)，[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)遵循一个简单的[幂律](@keyword=power_laws|lang=zh-CN|style=Feynman)，$C_V \propto T^3$。这个 $T^3$ 定律是穿过[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)的集体、长波长[声波](@keyword=acoustic_waves|lang=zh-CN|style=Feynman)传播的直接数学结果——即Debye模型 [@problem_id:2644177]。孤立原子模型完全无法解释这个美丽的、简单的、标志着集体行动的事实。
 
-当然，世界总是更加丰富多彩。在基本重复单元中含有不止一种原子的晶体中（比如[离子晶体](@article_id:299046)），另一种[振动](@article_id:331484)模式可能出现：**[光学声子](@article_id:297444)**。在这种模式中，相邻的原子相互反向[振动](@article_id:331484)。这些模式不能很好地传播声音，并且频率几乎恒定。它们的行为更像Einstein的局域振子，在实验中表现为[热容](@article_id:340019)的平滑Debye曲线上一个独特的“凸起”，为单一材料中集体和局域图景的美妙结合提供了证据 。
+当然，世界总是更加丰富多彩。在基本重复单元中含有不止一种原子的晶体中（比如[离子晶体](@keyword=ionic_crystals|lang=zh-CN|style=Feynman)），另一种[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式可能出现：**[光学声子](@keyword=optical_phonons|lang=zh-CN|style=Feynman)**。在这种模式中，相邻的原子相互反向[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。这些模式不能很好地传播声音，并且频率几乎恒定。它们的行为更像Einstein的局域振子，在实验中表现为[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)的平滑Debye曲线上一个独特的“凸起”，为单一材料中集体和局域图景的美妙结合提供了证据 [@problem_id:2644177]。
 
-### 多种多样的[准粒子](@article_id:299846)
+### 多种多样的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)
 
-集体运动的原理不仅限于[晶格](@article_id:300090)中原子的[振动](@article_id:331484)。任何有大量相互作用的“某种东西”聚集的地方，你都可以找到相应的[准粒子](@article_id:299846)。
+集体运动的原理不仅限于[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中原子的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。任何有大量相互作用的“某种东西”聚集的地方，你都可以找到相应的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)。
 
--   在[铁磁材料](@article_id:324811)中，电子的微观磁矩（自旋）都[排列](@article_id:296886)一致。一种偏离这种完美[排列](@article_id:296886)的波，一种磁序中的涟漪，可以在晶体中传播。这种“自旋波”的量子就是**磁子** 。
+-   在[铁磁材料](@keyword=ferromagnetic_materials|lang=zh-CN|style=Feynman)中，电子的微观磁矩（自旋）都[排列](@keyword=permutation|lang=zh-CN|style=Feynman)一致。一种偏离这种完美[排列](@keyword=permutation|lang=zh-CN|style=Feynman)的波，一种磁序中的涟漪，可以在晶体中传播。这种“自旋波”的量子就是**磁子** [@problem_id:1804016]。
 
--   在金属中，你有一个密集的传导电子“液体”，在固定的正离子背景中移动。这个电子液体可以来回晃动。这种集[体电荷密度](@article_id:328454)[振荡](@article_id:331484)的量子被称为**[等离激元](@article_id:306605)**  。
+-   在金属中，你有一个密集的传导电子“液体”，在固定的正离子背景中移动。这个电子液体可以来回晃动。这种集[体电荷密度](@keyword=volume_charge_density|lang=zh-CN|style=Feynman)[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的量子被称为**[等离激元](@keyword=plasmons|lang=zh-CN|style=Feynman)** [@problem_id:1804016] [@problem_id:3010370]。
 
-[声子](@article_id:297589)、磁子、等离激元……这些只是[准粒子](@article_id:299846)动物园中的几颗明星。每一个都代表了材料中不同基本属性的集体舞蹈。
+[声子](@keyword=phonons|lang=zh-CN|style=Feynman)、磁子、等离激元……这些只是[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)动物园中的几颗明星。每一个都代表了材料中不同基本属性的集体舞蹈。
 
 ### 噪声海洋中的明星
 
-一个关键问题出现了：我们如何区分一个“特殊”的[集体激发](@article_id:305451)和一个“无聊”的单个粒子的运动？想象一下，在一个上千人都在随机弹奏不同音符的混乱房间里，试图听清一把小提琴的声音。这就是**单粒子连续谱**。它是所有可能的非相干、个体激发的背景。例如，在电子气中，你可以激发一个电子，留下一个“空穴”。产生这样一个电子-空穴对存在一整个连续的能量和动量范围 。
+一个关键问题出现了：我们如何区分一个“特殊”的[集体激发](@keyword=collective_excitations|lang=zh-CN|style=Feynman)和一个“无聊”的单个粒子的运动？想象一下，在一个上千人都在随机弹奏不同音符的混乱房间里，试图听清一把小提琴的声音。这就是**单粒子连续谱**。它是所有可能的非相干、个体激发的背景。例如，在电子气中，你可以激发一个电子，留下一个“空穴”。产生这样一个电子-空穴对存在一整个连续的能量和动量范围 [@problem_id:2997244]。
 
-一个[集体模式](@article_id:297580)就像指挥家敲响他的指挥棒，突然间，整个管弦乐队演奏出一个单一的、共振的和弦。它在我们的测量中表现为在特定动量下一个尖锐、明确的能量峰——用[响应函数](@article_id:303067)的语言来说，是一个“极点” 。它清晰地从[连续谱](@article_id:313985)的嘈杂背景中脱颖而出。
+一个[集体模式](@keyword=collective_modes|lang=zh-CN|style=Feynman)就像指挥家敲响他的指挥棒，突然间，整个管弦乐队演奏出一个单一的、共振的和弦。它在我们的测量中表现为在特定动量下一个尖锐、明确的能量峰——用[响应函数](@keyword=response_functions|lang=zh-CN|style=Feynman)的语言来说，是一个“极点” [@problem_id:3020299]。它清晰地从[连续谱](@keyword=continuous_spectrum|lang=zh-CN|style=Feynman)的嘈杂背景中脱颖而出。
 
-但是，如果管弦乐队演奏的共振和弦的频率恰好与人群随机弹奏的音符相匹配，会发生什么呢？相干的[集体模式](@article_id:297580)可能会消散，其能量会泄漏到单粒子激发的海洋中。[集体模式](@article_id:297580)不再是一个完美的、无限寿命的波，而是一个会衰减的阻尼波。这种现象被称为**[朗道阻尼](@article_id:298070)**。[集体模式](@article_id:297580)的尖锐峰会变宽，这标志着[准粒子](@article_id:299846)现在只有有限的寿命，之后它会衰变到连续谱中  。例如，一个明确定义、长寿命的磁子，只有当其能量-动量[色散曲线](@article_id:376413)安全地位于单[粒子自旋](@article_id:303345)翻转激发的[连续谱](@article_id:313985)之外时，才能存在 。
+但是，如果管弦乐队演奏的共振和弦的频率恰好与人群随机弹奏的音符相匹配，会发生什么呢？相干的[集体模式](@keyword=collective_modes|lang=zh-CN|style=Feynman)可能会消散，其能量会泄漏到单粒子激发的海洋中。[集体模式](@keyword=collective_modes|lang=zh-CN|style=Feynman)不再是一个完美的、无限寿命的波，而是一个会衰减的阻尼波。这种现象被称为**[朗道阻尼](@keyword=landau_damping|lang=zh-CN|style=Feynman)**。[集体模式](@keyword=collective_modes|lang=zh-CN|style=Feynman)的尖锐峰会变宽，这标志着[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)现在只有有限的寿命，之后它会衰变到连续谱中 [@problem_id:3010370] [@problem_id:2997244]。例如，一个明确定义、长寿命的磁子，只有当其能量-动量[色散曲线](@keyword=dispersion_curves|lang=zh-CN|style=Feynman)安全地位于单[粒子自旋](@keyword=particle_spin|lang=zh-CN|style=Feynman)翻转激发的[连续谱](@keyword=continuous_spectrum|lang=zh-CN|style=Feynman)之外时，才能存在 [@problem_id:2997244]。
 
 ### 破缺对称性的魅影
 
 一些最基本的集体模式从何而来？答案是物理学中最深刻的答案之一：它们源于对称性破缺。想象一下将一支铅笔完美地平衡在它的尖端。这种情况是完全对称的；没有优先方向。但它无法保持这种状态。它将不可避免地倒下，在倒下的过程中，它必须*选择*一个方向，从而自发地打破了旋转对称性。
 
-**Goldstone定理**给了我们一个深刻的见解：每当一个系统的连续对称性被自发破缺时，就必须出现一个新的[集体激发](@article_id:305451)。这种激发是**无能隙的**，意味着在非常长的波长下，创造它所需的能量趋于零。这个**Nambu-Goldstone模式**是系统探索它“本可以免费选择”的其他等效[基态](@article_id:312876)的方式。
+**Goldstone定理**给了我们一个深刻的见解：每当一个系统的连续对称性被自发破缺时，就必须出现一个新的[集体激发](@keyword=collective_excitations|lang=zh-CN|style=Feynman)。这种激发是**无能隙的**，意味着在非常长的波长下，创造它所需的能量趋于零。这个**Nambu-Goldstone模式**是系统探索它“本可以免费选择”的其他等效[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)的方式。
 
--   在铁磁体中，自旋本可以指向任何方向。它们选择了一个。Goldstone模式是**磁子**，在长波长下对应于整个磁序的缓慢、慵懒的旋转。这就是为什么磁子能量 $\omega$ 在其动量 $q$ 趋于零时也趋于零，通常形式为 $\omega \propto q^2$ 。
+-   在铁磁体中，自旋本可以指向任何方向。它们选择了一个。Goldstone模式是**磁子**，在长波长下对应于整个磁序的缓慢、慵懒的旋转。这就是为什么磁子能量 $\omega$ 在其动量 $q$ 趋于零时也趋于零，通常形式为 $\omega \propto q^2$ [@problem_id:2997244]。
 
--   在超流体中，一个与粒子数相关的更抽象的[量子力学对称性](@article_id:301252)被打破。由此产生的Goldstone模式是一种[声波](@article_id:353278)，被称为**Anderson-[Bogoliubov模式](@article_id:321920)** 。
+-   在超流体中，一个与粒子数相关的更抽象的[量子力学对称性](@keyword=quantum_mechanics_symmetry|lang=zh-CN|style=Feynman)被打破。由此产生的Goldstone模式是一种[声波](@keyword=acoustic_waves|lang=zh-CN|style=Feynman)，被称为**Anderson-[Bogoliubov模式](@keyword=bogoliubov_modes|lang=zh-CN|style=Feynman)** [@problem_id:2989943]。
 
 这些模式不是可有可无的附加物；它们是系统基本对称性结构的必然结果。
 
-### [准粒子](@article_id:299846)的吞噬现象
+### [准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)的吞噬现象
 
-现在来看一个引人入胜的情节转折。如果其对称性被破缺的粒子是带电的，并通过长程库仑力相互作用，会怎么样？这就是[超导体](@article_id:370061)中的情况。
+现在来看一个引人入胜的情节转折。如果其对称性被破缺的粒子是带电的，并通过长程库仑力相互作用，会怎么样？这就是[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)中的情况。
 
-在这里，发生了一些非凡的事情，一种被称为**[Anderson-Higgs机制](@article_id:304482)**的现象。[长程力](@article_id:361141)极大地改变了Goldstone模式的命运。准[无能](@article_id:380298)隙的相位模式被[光子](@article_id:305617)（[电磁场](@article_id:329585)的量子）“吞噬”了。这顿奇怪的大餐有两个结果：[集体模式](@article_id:297580)变得**有[能隙](@article_id:331619)**——现在创造它需要一个有限的能量块——并且[光子](@article_id:305617)本身也变得有质量，这就是[超导体](@article_id:370061)中Meissner效应的起源 。
+在这里，发生了一些非凡的事情，一种被称为**[Anderson-Higgs机制](@keyword=anderson_higgs_mechanism|lang=zh-CN|style=Feynman)**的现象。[长程力](@keyword=long_range_forces|lang=zh-CN|style=Feynman)极大地改变了Goldstone模式的命运。准[无能](@keyword=anergy|lang=zh-CN|style=Feynman)隙的相位模式被[光子](@keyword=photon|lang=zh-CN|style=Feynman)（[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)的量子）“吞噬”了。这顿奇怪的大餐有两个结果：[集体模式](@keyword=collective_modes|lang=zh-CN|style=Feynman)变得**有[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)**——现在创造它需要一个有限的能量块——并且[光子](@keyword=photon|lang=zh-CN|style=Feynman)本身也变得有质量，这就是[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)中Meissner效应的起源 [@problem_id:2989943]。
 
-这正是为什么简单金属中的等离激元也是有[能隙](@article_id:331619)的。长程[库仑力](@article_id:353641)为任何[电荷](@article_id:339187)不平衡提供了强大的恢复力。即使对于无限长波长的涨落（$q \to 0$），也需要一个有限的能量，即**[等离子体频率](@article_id:297880)** $\omega_p = \sqrt{n_0 e^2 / (\epsilon_0 m)}$，来使电子海洋晃动。这个有限的能量隙是电的长程力的直接后果，它的存在与电子是由经典物理还是量子物理描述无关  。
+这正是为什么简单金属中的等离激元也是有[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)的。长程[库仑力](@keyword=coulomb_force|lang=zh-CN|style=Feynman)为任何[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)不平衡提供了强大的恢复力。即使对于无限长波长的涨落（$q \to 0$），也需要一个有限的能量，即**[等离子体频率](@keyword=plasma_frequency|lang=zh-CN|style=Feynman)** $\omega_p = \sqrt{n_0 e^2 / (\epsilon_0 m)}$，来使电子海洋晃动。这个有限的能量隙是电的长程力的直接后果，它的存在与电子是由经典物理还是量子物理描述无关 [@problem_id:3010370] [@problem_id:2102881]。
 
 ### 个体的终结
 
-我们已经看到，[集体激发](@article_id:305451)可以与单个粒子共存。但在奇异而美妙的[一维系统](@article_id:299140)世界中，集体可以变得如此强大，以至于完全消灭了个体。
+我们已经看到，[集体激发](@keyword=collective_excitations|lang=zh-CN|style=Feynman)可以与单个粒子共存。但在奇异而美妙的[一维系统](@keyword=one_dimensional_systems|lang=zh-CN|style=Feynman)世界中，集体可以变得如此强大，以至于完全消灭了个体。
 
-在一维导线中，电子受到极大的约束——它们无法互相绕过——以至于电子作为一个简单的、携带[电荷](@article_id:339187)和自旋的类粒子概念完全瓦解。这种奇异的[物质状态](@article_id:299884)被称为**[Luttinger液体](@article_id:301416)** 。
+在一维导线中，电子受到极大的约束——它们无法互相绕过——以至于电子作为一个简单的、携带[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)和自旋的类粒子概念完全瓦解。这种奇异的[物质状态](@keyword=states_of_matter|lang=zh-CN|style=Feynman)被称为**[Luttinger液体](@keyword=luttinger_liquid|lang=zh-CN|style=Feynman)** [@problem_id:3008115]。
 
-如果你向这样一根导线注入一个电子，会发生一件令人惊奇的事情。它会分裂。我们所知的电子不复存在。它的属性被两个独立的集体激发分别带走。它的[电荷](@article_id:339187)被一种[准粒子](@article_id:299846)——**空穴子**——带走。它的自旋被另一种[准粒子](@article_id:299846)——**[自旋子](@article_id:300858)**——带走。更奇怪的是，这两种[准粒子](@article_id:299846)以不同的速度传播，$v_c \neq v_s$ 。
+如果你向这样一根导线注入一个电子，会发生一件令人惊奇的事情。它会分裂。我们所知的电子不复存在。它的属性被两个独立的集体激发分别带走。它的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)被一种[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)——**空穴子**——带走。它的自旋被另一种[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)——**[自旋子](@keyword=spinons|lang=zh-CN|style=Feynman)**——带走。更奇怪的是，这两种[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)以不同的速度传播，$v_c \neq v_s$ [@problem_id:3017358]。
 
-这就是**[自旋-电荷分离](@article_id:302957)**，集体行为的终[极体](@article_id:337878)现。这不仅仅是出现了新的[准粒子](@article_id:299846)；而是我们开始时使用的基本粒子已经溶解到集体之中。实验上的特征是戏剧性的。当你寻找对应于添加一个电子的尖锐能量峰时，它消失了。取而代之的是，你会发现与独立产生一个空穴子和一个[自旋子](@article_id:300858)相关的两个独立的、更宽的特征  。个体消失了，只剩下集体的舞蹈。从简单的体育场人浪到电子本身的分裂，相互作用系统的物理学是一个引人入胜的故事，讲述了整体如何能变得与各部分之和截然不同，而且无限丰富。
+这就是**[自旋-电荷分离](@keyword=spin_charge_separation|lang=zh-CN|style=Feynman)**，集体行为的终[极体](@keyword=polar_bodies|lang=zh-CN|style=Feynman)现。这不仅仅是出现了新的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)；而是我们开始时使用的基本粒子已经溶解到集体之中。实验上的特征是戏剧性的。当你寻找对应于添加一个电子的尖锐能量峰时，它消失了。取而代之的是，你会发现与独立产生一个空穴子和一个[自旋子](@keyword=spinons|lang=zh-CN|style=Feynman)相关的两个独立的、更宽的特征 [@problem_id:3008115] [@problem_id:3017358]。个体消失了，只剩下集体的舞蹈。从简单的体育场人浪到电子本身的分裂，相互作用系统的物理学是一个引人入胜的故事，讲述了整体如何能变得与各部分之和截然不同，而且无限丰富。

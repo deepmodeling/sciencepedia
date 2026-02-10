@@ -11,22 +11,22 @@ At its heart, the integral is a tool for summing up, for accumulating a quantity
 
 Imagine you are painting a long fence. If you know you used one can of paint for the first ten feet and two cans for the remaining twenty feet, you wouldn't hesitate for a second to conclude you used three cans in total. The integral, when thought of as the "area under a curve," behaves with the same elegant common sense.
 
-The area under a function $f(x)$ from a starting point $x=a$ to an endpoint $x=c$ is given by the [definite integral](@article_id:141999) $\int_{a}^{c} f(x) dx$. If we pick any point $b$ between $a$ and $c$, it's visually obvious that the total area can be found by summing the areas of the two adjacent pieces: the area from $a$ to $b$, and the area from $b$ to $c$.
+The area under a function $f(x)$ from a starting point $x=a$ to an endpoint $x=c$ is given by the [definite integral](@keyword=definite_integral|lang=en-US|style=Feynman) $\int_{a}^{c} f(x) dx$. If we pick any point $b$ between $a$ and $c$, it's visually obvious that the total area can be found by summing the areas of the two adjacent pieces: the area from $a$ to $b$, and the area from $b$ to $c$.
 
 This gives us the fundamental rule of **interval additivity**:
 $$ \int_{a}^{c} f(x) dx = \int_{a}^{b} f(x) dx + \int_{b}^{c} f(x) dx \quad (\text{for } a \lt b \lt c) $$
 
-This isn't just an abstract formula; it's a principle you use implicitly all the time. Suppose energy monitors on a computing cluster tell you the total energy consumed from 8:00 AM to 4:00 PM ($t=8$ to $t=16$) was $98.5$ MWh, and the energy consumed in the afternoon from 1:00 PM to 4:00 PM ($t=13$ to $t=16$) was $42.8$ MWh. To find the energy used during the morning hours from 8:00 AM to 1:00 PM, you would simply subtract: $98.5 - 42.8 = 55.7$ MWh. You have just used the additivity principle without even thinking about it . The total integral is the sum of its parts, so any single part can be found if the total and the other parts are known.
+This isn't just an abstract formula; it's a principle you use implicitly all the time. Suppose energy monitors on a computing cluster tell you the total energy consumed from 8:00 AM to 4:00 PM ($t=8$ to $t=16$) was $98.5$ MWh, and the energy consumed in the afternoon from 1:00 PM to 4:00 PM ($t=13$ to $t=16$) was $42.8$ MWh. To find the energy used during the morning hours from 8:00 AM to 1:00 PM, you would simply subtract: $98.5 - 42.8 = 55.7$ MWh. You have just used the additivity principle without even thinking about it [@problem_id:1339390]. The total integral is the sum of its parts, so any single part can be found if the total and the other parts are known.
 
-This idea can be chained together for any number of segments. If we break a large interval into many smaller, non-overlapping pieces, the total integral over the large interval is simply the sum of the integrals over all the smaller pieces .
+This idea can be chained together for any number of segments. If we break a large interval into many smaller, non-overlapping pieces, the total integral over the large interval is simply the sum of the integrals over all the smaller pieces [@problem_id:2318012].
 
 ### A Tool for a Piecewise World
 
 This simple idea of adding pieces becomes a true superpower when we face problems from the real world. Nature, technology, and economic systems rarely behave according to a single, neat equation. A rocket has different stages of thrust. A patient's drug concentration follows different kinetic models during absorption and elimination. A system's behavior changes.
 
-Consider the [power consumption](@article_id:174423) of a modern data center over a 10-hour cycle. In the first phase, from $t=0$ to $t=4$ hours, it might be running a high-intensity computational load, with its power rate $P(t)$ increasing over time. Then, at $t=4$, it switches to a low-power mode, and its power rate begins to decrease exponentially. This system is described by a **piecewise function**—a function defined by different formulas on different intervals .
+Consider the [power consumption](@keyword=power_consumption|lang=en-US|style=Feynman) of a modern data center over a 10-hour cycle. In the first phase, from $t=0$ to $t=4$ hours, it might be running a high-intensity computational load, with its power rate $P(t)$ increasing over time. Then, at $t=4$, it switches to a low-power mode, and its power rate begins to decrease exponentially. This system is described by a **piecewise function**—a function defined by different formulas on different intervals [@problem_id:2318004].
 
-How can we possibly find the total energy consumed over the entire 10-hour cycle? There is no single formula for $P(t)$ that we can integrate from 0 to 10. The additivity principle provides a clear and powerful strategy: *[divide and conquer](@article_id:139060)*.
+How can we possibly find the total energy consumed over the entire 10-hour cycle? There is no single formula for $P(t)$ that we can integrate from 0 to 10. The additivity principle provides a clear and powerful strategy: *[divide and conquer](@keyword=divide_and_conquer|lang=en-US|style=Feynman)*.
 1.  We split the problem at the point of change, $t=4$.
 2.  We calculate the energy consumed during the high-load phase by integrating the first formula from $t=0$ to $t=4$: $E_1 = \int_{0}^{4} P_{high}(t) dt$.
 3.  We calculate the energy consumed during the low-power phase by integrating the second formula from $t=4$ to $t=10$: $E_2 = \int_{4}^{10} P_{low}(t) dt$.
@@ -38,7 +38,7 @@ Additivity is the essential bridge that allows us to apply the tools of calculus
 
 So far, our intuition about adding areas has served us well. But how does this idea relate to the powerful machinery of calculus, specifically the celebrated **Fundamental Theorem of Calculus (FTC)**? It turns out they are two sides of the same coin.
 
-Let's define a new function, often called an **[accumulation function](@article_id:143182)**. Let $F(x)$ be the net accumulation described by the function $f(t)$ from some fixed starting point $c$ up to a variable endpoint $x$:
+Let's define a new function, often called an **[accumulation function](@keyword=accumulation_function|lang=en-US|style=Feynman)**. Let $F(x)$ be the net accumulation described by the function $f(t)$ from some fixed starting point $c$ up to a variable endpoint $x$:
 $$ F(x) = \int_c^x f(t) dt $$
 Now, let's ask: what is the integral, or the net accumulation, between two other points, $a$ and $b$? We want to find the value of $\int_a^b f(t) dt$.
 
@@ -46,7 +46,7 @@ Using our additivity rule, we know that the total accumulation from $c$ to $b$ m
 $$ \int_c^b f(t) dt = \int_c^a f(t) dt + \int_a^b f(t) dt $$
 With a simple algebraic rearrangement, we can solve for the term we want:
 $$ \int_a^b f(t) dt = \int_c^b f(t) dt - \int_c^a f(t) dt $$
-Look closely at the expression on the right. By our very definition of the [accumulation function](@article_id:143182), it is nothing more than $F(b) - F(a)$! .
+Look closely at the expression on the right. By our very definition of the [accumulation function](@keyword=accumulation_function|lang=en-US|style=Feynman), it is nothing more than $F(b) - F(a)$! [@problem_id:2317983].
 
 Here we have a remarkable revelation. The famous formula $\int_a^b f(x) dx = F(b) - F(a)$, which lies at the heart of the FTC and empowers us to calculate integrals with ease, is not some new, independent fact. It is a direct and beautiful consequence of the simple, intuitive principle of additivity. This unity is a hallmark of great scientific ideas.
 
@@ -59,20 +59,20 @@ Mathematics values consistency above all else. Let's demand that our additivity 
 Plugging $c=a$ into our universal additivity formula gives:
 $$ \int_a^a f(x) dx = \int_a^b f(x) dx + \int_b^a f(x) dx $$
 $$ 0 = \int_a^b f(x) dx + \int_b^a f(x) dx $$
-The logic is inescapable. If our additivity rule is to be held sacred, we are *forced* to define the "backwards" integral as the negative of the "forwards" one :
+The logic is inescapable. If our additivity rule is to be held sacred, we are *forced* to define the "backwards" integral as the negative of the "forwards" one [@problem_id:2318008]:
 $$ \int_b^a f(x) dx = - \int_a^b f(x) dx $$
 
-This isn't an arbitrary convention; it's a logical necessity for building a consistent mathematical system. With this single definition, our additivity formula $\int_a^c = \int_a^b + \int_b^c$ becomes universally true, regardless of the relative order of $a$, $b$, and $c$ . This elevates additivity from a simple observation about physical area to a robust and powerful algebraic rule, ready to be deployed in far more abstract contexts.
+This isn't an arbitrary convention; it's a logical necessity for building a consistent mathematical system. With this single definition, our additivity formula $\int_a^c = \int_a^b + \int_b^c$ becomes universally true, regardless of the relative order of $a$, $b$, and $c$ [@problem_id:23218021]. This elevates additivity from a simple observation about physical area to a robust and powerful algebraic rule, ready to be deployed in far more abstract contexts.
 
 ### The Rules of the Game
 
-We've been splitting intervals and adding integrals with great confidence. But is this always allowed? Does our intuitive method for the data center problem  rest on a solid logical foundation?
+We've been splitting intervals and adding integrals with great confidence. But is this always allowed? Does our intuitive method for the data center problem [@problem_id:2318004] rest on a solid logical foundation?
 
 The process of integration, the **Riemann integral**, is at its core an infinite summation. For this sum to converge to a single, well-defined value, the function being integrated can't be "too wild" or "too badly behaved." It must be **Riemann integrable**.
 
-What if a function has a jump, like the [power function](@article_id:166044) $P(t)$ at $t=4$? At that single instant, the value of the function might be ambiguous. But the integral is concerned with area, and the area of a single, infinitely thin vertical line is zero. Such a jump doesn't spoil the total area.
+What if a function has a jump, like the [power function](@keyword=power_function|lang=en-US|style=Feynman) $P(t)$ at $t=4$? At that single instant, the value of the function might be ambiguous. But the integral is concerned with area, and the area of a single, infinitely thin vertical line is zero. Such a jump doesn't spoil the total area.
 
-This leads us to a cornerstone of [mathematical analysis](@article_id:139170): a function is guaranteed to be Riemann integrable as long as it is bounded and its [set of discontinuities](@article_id:159814) is "small" enough (formally, has [measure zero](@article_id:137370)). A finite number of jump discontinuities, as we see in all [piecewise continuous functions](@article_id:181321), is perfectly acceptable .
+This leads us to a cornerstone of [mathematical analysis](@keyword=mathematical_analysis|lang=en-US|style=Feynman): a function is guaranteed to be Riemann integrable as long as it is bounded and its [set of discontinuities](@keyword=set_of_discontinuities|lang=en-US|style=Feynman) is "small" enough (formally, has [measure zero](@keyword=measure_zero|lang=en-US|style=Feynman)). A finite number of jump discontinuities, as we see in all [piecewise continuous functions](@keyword=piecewise_continuous_functions|lang=en-US|style=Feynman), is perfectly acceptable [@problem_id:2328180].
 
 This provides the rigorous justification we were seeking.
 1.  A function constructed from continuous pieces is bounded and has only a finite number of discontinuities, so it *is* Riemann integrable over the whole domain.

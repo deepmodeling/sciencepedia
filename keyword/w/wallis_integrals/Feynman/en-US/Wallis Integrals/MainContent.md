@@ -11,7 +11,7 @@ Having met the Wallis integrals, let's now embark on a journey to truly understa
 
 Let's begin with the definition itself: $W_n = \int_0^{\pi/2} \sin^n(x) \, dx$. One could, in principle, compute this for each integer $n$ by brute force, but a scientist always looks for a shortcut, a hidden pattern. The tool for this kind of detective work in calculus is often **integration by parts**. It allows us to trade one integral for another, hopefully a simpler one.
 
-If we apply this technique to $W_n$, splitting $\sin^n(x)$ into $\sin(x)$ and $\sin^{n-1}(x)$, a little bit of algebraic magic happens. We discover a wonderfully simple relationship connecting an integral to its "grandparent" two steps down the line :
+If we apply this technique to $W_n$, splitting $\sin^n(x)$ into $\sin(x)$ and $\sin^{n-1}(x)$, a little bit of algebraic magic happens. We discover a wonderfully simple relationship connecting an integral to its "grandparent" two steps down the line [@problem_id:2303259]:
 
 $$ W_n = \frac{n-1}{n} W_{n-2} $$
 
@@ -19,7 +19,7 @@ This is a **recurrence relation**, and it's tremendously powerful. It tells us w
 $W_0 = \int_0^{\pi/2} 1 \, dx = \frac{\pi}{2}$
 $W_1 = \int_0^{\pi/2} \sin(x) \, dx = [-\cos(x)]_0^{\pi/2} = 1$
 
-With these two starting values and our recurrence relation, we can find any $W_n$. For example, $W_2 = \frac{1}{2}W_0 = \frac{\pi}{4}$, and $W_3 = \frac{2}{3}W_1 = \frac{2}{3}$. This [recurrence](@article_id:260818) leads to the famous product formulas for the Wallis integrals. But even more elegantly, this simple rule hides another gem. If we look at the product of two adjacent terms, say for an even index $2m$ and an odd one $2m-1$, their complicated product formulas collapse into something astonishingly simple :
+With these two starting values and our recurrence relation, we can find any $W_n$. For example, $W_2 = \frac{1}{2}W_0 = \frac{\pi}{4}$, and $W_3 = \frac{2}{3}W_1 = \frac{2}{3}$. This [recurrence](@keyword=recurrence|lang=en-US|style=Feynman) leads to the famous product formulas for the Wallis integrals. But even more elegantly, this simple rule hides another gem. If we look at the product of two adjacent terms, say for an even index $2m$ and an odd one $2m-1$, their complicated product formulas collapse into something astonishingly simple [@problem_id:2303259]:
 
 $$ W_{2m} W_{2m-1} = \frac{\pi}{4m} $$
 
@@ -29,9 +29,9 @@ Isn't that something? Two rather complicated expressions conspire to produce a r
 
 Recurrence relations are great, but a mathematician always dreams of a "closed form"— a single, direct formula for $W_n$. To find it, we must do something that often leads to breakthroughs in science: embed our specific problem into a much larger, more general framework.
 
-Let us introduce two titans of [mathematical analysis](@article_id:139170): the **Gamma function**, $\Gamma(z)$, which generalizes the [factorial](@article_id:266143) to non-integer numbers, and the **Beta function**, $B(x,y)$, defined by a different kind of integral. They are themselves related by the profound identity $B(x, y) = \frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}$.
+Let us introduce two titans of [mathematical analysis](@keyword=mathematical_analysis|lang=en-US|style=Feynman): the **Gamma function**, $\Gamma(z)$, which generalizes the [factorial](@keyword=factorial|lang=en-US|style=Feynman) to non-integer numbers, and the **Beta function**, $B(x,y)$, defined by a different kind of integral. They are themselves related by the profound identity $B(x, y) = \frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}$.
 
-At first glance, these seem to have nothing to do with our integral of $\sin^n(x)$. But with a clever change of disguise, a substitution of variables, a startling connection is revealed. If we let $t = \sin^2(x)$, our Wallis integral is miraculously transformed into the form of a Beta function :
+At first glance, these seem to have nothing to do with our integral of $\sin^n(x)$. But with a clever change of disguise, a substitution of variables, a startling connection is revealed. If we let $t = \sin^2(x)$, our Wallis integral is miraculously transformed into the form of a Beta function [@problem_id:2318967]:
 
 $$ W_n = \frac{1}{2} B\left(\frac{n+1}{2}, \frac{1}{2}\right) $$
 
@@ -43,11 +43,11 @@ This is the direct formula we were looking for! It expresses any Wallis integral
 
 $$ W_0 = \frac{\pi}{2} = \frac{1}{2} \frac{\Gamma\left(\frac{1}{2}\right)\Gamma\left(\frac{1}{2}\right)}{\Gamma(1)} $$
 
-Since the Gamma function generalizes the factorial, we know $\Gamma(1) = (1-1)! = 0! = 1$. The equation simplifies dramatically, and we are left with a spectacular result :
+Since the Gamma function generalizes the factorial, we know $\Gamma(1) = (1-1)! = 0! = 1$. The equation simplifies dramatically, and we are left with a spectacular result [@problem_id:2262850]:
 
 $$ \left[\Gamma\left(\frac{1}{2}\right)\right]^2 = \pi \quad \implies \quad \Gamma\left(\frac{1}{2}\right) = \sqrt{\pi} $$
 
-This is beautiful. Our innocent investigation of $\int \sin^n(x) \, dx$ has led us straight to a fundamental constant of the mathematical universe. Armed with this knowledge, we can now compute any Wallis integral with ease. For example, to find $W_8$, we just plug in $n=8$ and use the properties of the Gamma function to evaluate the expression .
+This is beautiful. Our innocent investigation of $\int \sin^n(x) \, dx$ has led us straight to a fundamental constant of the mathematical universe. Armed with this knowledge, we can now compute any Wallis integral with ease. For example, to find $W_8$, we just plug in $n=8$ and use the properties of the Gamma function to evaluate the expression [@problem_id:636991].
 
 ### The View from Infinity: Asymptotic Behavior
 
@@ -61,20 +61,20 @@ The integral on the right is a **Gaussian integral**, the famous bell curve, who
 
 $$ W_n \sim \sqrt{\frac{\pi}{2n}} $$
 
-This tells us that the value of the integral slowly vanishes as $n$ goes to infinity. This is not just a curiosity; it's a powerful computational tool. For instance, if you're asked to find a tricky limit like $\lim_{n \to \infty} \sqrt{n} \int_0^1 (1-x^2)^n dx$, a quick substitution reveals the integral is just $W_{2n+1}$. Using our asymptotic formula makes the limit calculation downright trivial . This formula also tells us that the ratio of consecutive terms, $W_{n+1}/W_n$, must approach 1 as $n$ grows infinite, a fact that can be proven rigorously .
+This tells us that the value of the integral slowly vanishes as $n$ goes to infinity. This is not just a curiosity; it's a powerful computational tool. For instance, if you're asked to find a tricky limit like $\lim_{n \to \infty} \sqrt{n} \int_0^1 (1-x^2)^n dx$, a quick substitution reveals the integral is just $W_{2n+1}$. Using our asymptotic formula makes the limit calculation downright trivial [@problem_id:479948]. This formula also tells us that the ratio of consecutive terms, $W_{n+1}/W_n$, must approach 1 as $n$ grows infinite, a fact that can be proven rigorously [@problem_id:2327976].
 
 ### Unifying Giants: Deriving Stirling's Constant
 
 We now arrive at a moment of grand synthesis. We have found two different ways to view the Wallis integrals for large even indices, $W_{2n}$:
 
-1.  **The Exact View (from [recurrence](@article_id:260818)):** $W_{2n} = \frac{(2n)!}{4^n(n!)^2}\frac{\pi}{2}$
+1.  **The Exact View (from [recurrence](@keyword=recurrence|lang=en-US|style=Feynman)):** $W_{2n} = \frac{(2n)!}{4^n(n!)^2}\frac{\pi}{2}$
 2.  **The Approximate View (from integration):** $W_{2n} \sim \sqrt{\frac{\pi}{4n}}$
 
-On the other hand, there is another famous asymptotic formula, one of the most important in all of science: **Stirling's approximation** for the [factorial](@article_id:266143), which states that for large $n$:
+On the other hand, there is another famous asymptotic formula, one of the most important in all of science: **Stirling's approximation** for the [factorial](@keyword=factorial|lang=en-US|style=Feynman), which states that for large $n$:
 
 $$ n! \sim C \sqrt{n} \left(\frac{n}{e}\right)^n $$
 
-For a long time, the value of the constant $C$ was a mystery. But we are now in a unique position to find it. The logic is simple, and breathtaking. Let's take the *unknown* Stirling formula and plug it into our first, *exact* expression for $W_{2n}$. After a flurry of cancellations, the expression for $W_{2n}$ becomes an asymptotic formula that involves the unknown constant $C$ .
+For a long time, the value of the constant $C$ was a mystery. But we are now in a unique position to find it. The logic is simple, and breathtaking. Let's take the *unknown* Stirling formula and plug it into our first, *exact* expression for $W_{2n}$. After a flurry of cancellations, the expression for $W_{2n}$ becomes an asymptotic formula that involves the unknown constant $C$ [@problem_id:610188].
 
 The result of this substitution is: $W_{2n} \sim \frac{\pi \sqrt{2}}{2C\sqrt{n}}$.
 
@@ -82,7 +82,7 @@ Now, we have two different asymptotic expressions for the very same quantity, $W
 
 $$ \sqrt{\frac{\pi}{4n}} = \frac{\pi \sqrt{2}}{2C\sqrt{n}} $$
 
-Look at this equation! The $\sqrt{n}$ on both sides cancels, and we are left with a simple algebraic equation for the mysterious constant $C$. The solution is inescapable :
+Look at this equation! The $\sqrt{n}$ on both sides cancels, and we are left with a simple algebraic equation for the mysterious constant $C$. The solution is inescapable [@problem_id:610188]:
 
 $$ C = \sqrt{2\pi} $$
 

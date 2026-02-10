@@ -1,7 +1,7 @@
 ## Introduction
 When analyzing a changing quantity, such as a stock price or a physical signal, the net change from start to finish tells only part of the story. A far more descriptive measure is the total journey—the cumulative sum of all its ups and downs, regardless of the final destination. But how can we formalize this intuitive idea of "total activity" or "wiggliness" into a rigorous mathematical tool? This article tackles that very question by introducing the concept of **total variation**.
 
-We will begin by exploring its fundamental principles, from the formal definition using partitions to practical methods for calculation in the **Principles and Mechanisms** chapter. Subsequently, in the **Applications and Interdisciplinary Connections** chapter, we will see how this single idea extends beyond pure mathematics, providing a powerful framework in fields ranging from signal processing and [functional analysis](@article_id:145726) to modern image science, revealing its role as a unifying concept.
+We will begin by exploring its fundamental principles, from the formal definition using partitions to practical methods for calculation in the **Principles and Mechanisms** chapter. Subsequently, in the **Applications and Interdisciplinary Connections** chapter, we will see how this single idea extends beyond pure mathematics, providing a powerful framework in fields ranging from signal processing and [functional analysis](@keyword=functional_analysis|lang=en-US|style=Feynman) to modern image science, revealing its role as a unifying concept.
 
 ## Principles and Mechanisms
 
@@ -31,7 +31,7 @@ $$
 V_a^b(f) = \int_{a}^{b} |f'(x)| \, dx
 $$
 
-Consider a signal modeled by the function $f(x) = x^2 - 4x + 3$ on the interval $[0, 5]$ (). Its derivative is $f'(x) = 2x - 4$. This "velocity" is negative for $x \lt 2$ (the function is decreasing) and positive for $x \gt 2$ (the function is increasing). The point $x=2$ is a minimum, the bottom of a valley. To find the total variation, we just add the distance it traveled downwards to the distance it traveled upwards:
+Consider a signal modeled by the function $f(x) = x^2 - 4x + 3$ on the interval $[0, 5]$ ([@problem_id:1420373]). Its derivative is $f'(x) = 2x - 4$. This "velocity" is negative for $x \lt 2$ (the function is decreasing) and positive for $x \gt 2$ (the function is increasing). The point $x=2$ is a minimum, the bottom of a valley. To find the total variation, we just add the distance it traveled downwards to the distance it traveled upwards:
 
 $$
 V_0^5(f) = \int_0^5 |2x-4| \, dx = \int_0^2 (4-2x) \, dx + \int_2^5 (2x-4) \, dx = 4 + 9 = 13
@@ -43,11 +43,11 @@ This is simply the vertical distance from its starting point $f(0)=3$ down to th
 
 What if a function only ever goes up (non-decreasing) or only ever goes down (non-increasing)? We call such a function **monotonic**. In this case, there are no wiggles, no changes in direction. The total distance traveled is simply the net change in elevation from start to finish. For a monotonic function on $[a,b]$, the total variation is just $|f(b) - f(a)|$.
 
-This holds true even for strange-looking functions. Consider a function that models quantized energy levels, $f(x) = \lfloor 3x \rfloor$ on $[0, 2]$ (). This is a "step function," which stays flat and then suddenly jumps up. Since it never decreases, its total variation is simply $f(2) - f(0) = \lfloor 6 \rfloor - \lfloor 0 \rfloor = 6$. The total variation is just the sum of the heights of all the individual jumps.
+This holds true even for strange-looking functions. Consider a function that models quantized energy levels, $f(x) = \lfloor 3x \rfloor$ on $[0, 2]$ ([@problem_id:1300581]). This is a "step function," which stays flat and then suddenly jumps up. Since it never decreases, its total variation is simply $f(2) - f(0) = \lfloor 6 \rfloor - \lfloor 0 \rfloor = 6$. The total variation is just the sum of the heights of all the individual jumps.
 
-A function can be piecewise-defined and have "corners," like $f(x) = 2x - |x-1|$ on $[0, 2]$ (). If we look at its pieces, it's $3x-1$ on $[0,1]$ and $x+1$ on $[1,2]$. Both pieces have positive slopes, so the function as a whole is always increasing. Thus, its total variation is simply $f(2) - f(0) = (3) - (-1) = 4$.
+A function can be piecewise-defined and have "corners," like $f(x) = 2x - |x-1|$ on $[0, 2]$ ([@problem_id:1420337]). If we look at its pieces, it's $3x-1$ on $[0,1]$ and $x+1$ on $[1,2]$. Both pieces have positive slopes, so the function as a whole is always increasing. Thus, its total variation is simply $f(2) - f(0) = (3) - (-1) = 4$.
 
-For most functions you'll meet in physics and engineering, the strategy is to combine these ideas: find the points where the function turns around (where $f'(x)=0$ or is undefined), break the interval at these points, and sum the absolute changes in value over these segments of monotonic behavior (, ).
+For most functions you'll meet in physics and engineering, the strategy is to combine these ideas: find the points where the function turns around (where $f'(x)=0$ or is undefined), break the interval at these points, and sum the absolute changes in value over these segments of monotonic behavior ([@problem_id:1289882], [@problem_id:1420370]).
 
 ### Deeper Consequences of a Finite Journey
 
@@ -61,11 +61,11 @@ $$
 |g(x)| = |g(x) - g(0) + g(0)| \le |g(x) - g(0)| + |g(0)| \le V_0^x(g) + |g(0)| \le V_0^5(g) + |g(0)|
 $$
 
-If we know $g(0) = -7$ and $V_0^5(g) = 23$ (), we can guarantee that $|g(x)|$ will never exceed $23 + |-7| = 30$ anywhere on the interval. A finite journey budget keeps the function contained.
+If we know $g(0) = -7$ and $V_0^5(g) = 23$ ([@problem_id:2299744]), we can guarantee that $|g(x)|$ will never exceed $23 + |-7| = 30$ anywhere on the interval. A finite journey budget keeps the function contained.
 
 #### The Odometer of Variation
 
-This naturally leads us to define a new function, $v(x) = V_a^x(f)$, which measures the accumulated variation from the start point $a$ up to $x$ (). Think of it as the odometer on your car; it tracks the total distance traveled, and its value can only increase or stay the same. Therefore, the **total variation function** $v(x)$ is always a non-decreasing function. This seemingly simple observation is the key to one of the most beautiful results in analysis.
+This naturally leads us to define a new function, $v(x) = V_a^x(f)$, which measures the accumulated variation from the start point $a$ up to $x$ ([@problem_id:1420370]). Think of it as the odometer on your car; it tracks the total distance traveled, and its value can only increase or stay the same. Therefore, the **total variation function** $v(x)$ is always a non-decreasing function. This seemingly simple observation is the key to one of the most beautiful results in analysis.
 
 ### The Jordan Decomposition: Finding Simplicity in Complexity
 
@@ -85,7 +85,7 @@ $$
 V_a^x(f) = (f_1(x) - f_1(a)) + (f_2(x) - f_2(a))
 $$
 
-The total variation is nothing more than the total rise in the "uphill" function plus the total rise in the "downhill" function (). This theorem reveals a hidden simplicity and structure within a vast class of complex functions.
+The total variation is nothing more than the total rise in the "uphill" function plus the total rise in the "downhill" function ([@problem_id:1334468]). This theorem reveals a hidden simplicity and structure within a vast class of complex functions.
 
 ### The Anatomy of Variation: Jumps, Slopes, and Ghosts
 
@@ -93,9 +93,9 @@ So, where does a function's variation actually *come from*? By looking closer, w
 
 1.  **Slopes (The Absolutely Continuous Part):** This is the variation we saw in smooth functions, the $\int |f'(x)|dx$ part. It comes from the function moving along a continuous, differentiable path with a non-zero slope.
 
-2.  **Jumps (The Discontinuous Part):** What if the function itself is not continuous and has jumps? A function like a simple on/off switch () or a more complex piecewise function () has variation contributed by these breaks. If $f$ has a jump at point $c$, the total variation increases to account for it. The contribution to the total variation from this discontinuity at $c$ is the sum of the jump *to* the point and the jump *away* from it: $|f(c) - f(c^-)| + |f(c^+) - f(c)|$, where $f(c^-)$ and $f(c^+)$ are the limits from the left and right. This gives us another beautiful result: a function $f$ is continuous at a point if and only if its total variation function $v(x)$ is also continuous there.
+2.  **Jumps (The Discontinuous Part):** What if the function itself is not continuous and has jumps? A function like a simple on/off switch ([@problem_id:1441181]) or a more complex piecewise function ([@problem_id:1420345]) has variation contributed by these breaks. If $f$ has a jump at point $c$, the total variation increases to account for it. The contribution to the total variation from this discontinuity at $c$ is the sum of the jump *to* the point and the jump *away* from it: $|f(c) - f(c^-)| + |f(c^+) - f(c)|$, where $f(c^-)$ and $f(c^+)$ are the limits from the left and right. This gives us another beautiful result: a function $f$ is continuous at a point if and only if its total variation function $v(x)$ is also continuous there.
 
-3.  **Ghosts (The Singular Continuous Part):** This is the most subtle and fascinating source of variation. Can a function be continuous everywhere (no jumps) and have a derivative that is zero almost everywhere (no slopes), but still have a non-zero total variation? The answer, astonishingly, is yes. The classic example is the **Cantor-Lebesgue function**, sometimes called the "devil's staircase" (). It's a continuous, non-decreasing function that rises from 0 to 1 on the interval $[0,1]$. Since it's non-decreasing, its total variation must be $f(1) - f(0) = 1$. But it is constructed to be perfectly flat on the infinitely many intervals removed to create the Cantor set. All of its rising happens on the Cantor set itself, a "dust" of points with zero total length! The variation is real, but it’s not from jumps or from conventional slopes. It comes from a "singular" source.
+3.  **Ghosts (The Singular Continuous Part):** This is the most subtle and fascinating source of variation. Can a function be continuous everywhere (no jumps) and have a derivative that is zero almost everywhere (no slopes), but still have a non-zero total variation? The answer, astonishingly, is yes. The classic example is the **Cantor-Lebesgue function**, sometimes called the "devil's staircase" ([@problem_id:1300561]). It's a continuous, non-decreasing function that rises from 0 to 1 on the interval $[0,1]$. Since it's non-decreasing, its total variation must be $f(1) - f(0) = 1$. But it is constructed to be perfectly flat on the infinitely many intervals removed to create the Cantor set. All of its rising happens on the Cantor set itself, a "dust" of points with zero total length! The variation is real, but it’s not from jumps or from conventional slopes. It comes from a "singular" source.
 
 The true power and unity of total variation is that it encompasses all three. Consider a composite function $g(x) = Ax + Bf(x)$, where $f(x)$ is the Cantor function. The term $Ax$ has variation $|A|$ coming from its constant slope. The term $Bf(x)$ has variation $|B|$ coming from its "ghostly" singular nature. Because these two types of variation live on completely separate sets of points (the slope is everywhere, but the Cantor function only rises on the Cantor set), the total variation is simply the sum of the absolute parts:
 

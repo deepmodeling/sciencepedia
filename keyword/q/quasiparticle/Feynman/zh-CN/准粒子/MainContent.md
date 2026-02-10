@@ -1,52 +1,52 @@
 ## 引言
-在量子物理学领域，描述固体中无数相互作用粒子的集体行为似乎是一项不可能完成的任务。其巨大的复杂性好比试图追踪一个庞大人群中的每一个个体，而像移动的波浪这样更简单的模式，反而能提供更有洞察力的视角。这个从微观复杂性到宏观简单性的桥接问题，是凝聚态物理学的核心挑战之一。当材料由数万亿相互作用的电子和原子组成时，它们如何展现出如[电导率](@article_id:308242)或磁性这样可预测的性质？
+在量子物理学领域，描述固体中无数相互作用粒子的集体行为似乎是一项不可能完成的任务。其巨大的复杂性好比试图追踪一个庞大人群中的每一个个体，而像移动的波浪这样更简单的模式，反而能提供更有洞察力的视角。这个从微观复杂性到宏观简单性的桥接问题，是凝聚态物理学的核心挑战之一。当材料由数万亿相互作用的电子和原子组成时，它们如何展现出如[电导率](@keyword=electrical_conductivity|lang=zh-CN|style=Feynman)或磁性这样可预测的性质？
 
-本文将介绍[准粒子](@article_id:299846)这一为解决此难题而设计的强大概念工具。[准粒子](@article_id:299846)是一个演生实体，一种[集体激发](@article_id:305451)，其行为如同单个粒子，使物理学家能够以一种极其简化而又精确的方式描述系统的行为。我们将探讨这种优雅的“幻象”如何为理解物质的内部运作提供一种语言。在第一章“原理与机制”中，我们将揭示关键[准粒子](@article_id:299846)背后的物理学，从被称为[声子](@article_id:297589)的[晶格振动](@article_id:374784)，到朗道理论中的“缀饰”电子及其奇异的分裂。随后，“应用与跨学科联系”一章将揭示这一概念的实际力量，展示[准粒子](@article_id:299846)如何解释超流性等真实世界的现象，并为[量子计算](@article_id:303150)等革命性技术奠定基础。
+本文将介绍[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)这一为解决此难题而设计的强大概念工具。[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)是一个演生实体，一种[集体激发](@keyword=collective_excitations|lang=zh-CN|style=Feynman)，其行为如同单个粒子，使物理学家能够以一种极其简化而又精确的方式描述系统的行为。我们将探讨这种优雅的“幻象”如何为理解物质的内部运作提供一种语言。在第一章“原理与机制”中，我们将揭示关键[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)背后的物理学，从被称为[声子](@keyword=phonons|lang=zh-CN|style=Feynman)的[晶格振动](@keyword=crystal_lattice_vibrations|lang=zh-CN|style=Feynman)，到朗道理论中的“缀饰”电子及其奇异的分裂。随后，“应用与跨学科联系”一章将揭示这一概念的实际力量，展示[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)如何解释超流性等真实世界的现象，并为[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)等革命性技术奠定基础。
 
 ## 原理与机制
 
 想象一下，你试图描述一个音乐节上庞大人群的运动。原则上，你可以尝试写下每个人的精确位置和速度。这将是一项极其艰巨的任务，产生的数据量之大将使其毫无用处。一个更明智的方法是描述集体现象：在观众中荡漾的兴奋波浪，舞台附近形成的密集人群，或在不同地点之间流动的人流。顷刻之间，我们用几个简单而有力的概念取代了数十亿个杂乱的细节。
 
-量子力学的世界，尤其是在固体材料内部，也给我们带来了类似的困境。一块看似简单的金属或硅块所包含的相互作用的电子、质子和中子的数量，比我们银河系中的恒星还要多。直接描述不仅困难，而且在物理上是不可能的。然而，这些材料却表现出简单、可预测的性质。它们导电、[振动](@article_id:331484)、反射光。如此深刻的简单性是如何从如此令人难以置信的复杂性中产生的？答案在于现代物理学中最优美、最强大的思想之一：**[准粒子](@article_id:299846)**。[准粒子](@article_id:299846)是物理学家在“人群中寻找波浪”的方式。它是一个演生实体，一个源于无数基本粒子集体舞蹈的幻象，但它在几乎所有重要方面的行为都与粒子本身一样。它有能量，有动量，最重要的是，它为描述一个原本不可知的世界提供了一种简单的语言。
+量子力学的世界，尤其是在固体材料内部，也给我们带来了类似的困境。一块看似简单的金属或硅块所包含的相互作用的电子、质子和中子的数量，比我们银河系中的恒星还要多。直接描述不仅困难，而且在物理上是不可能的。然而，这些材料却表现出简单、可预测的性质。它们导电、[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)、反射光。如此深刻的简单性是如何从如此令人难以置信的复杂性中产生的？答案在于现代物理学中最优美、最强大的思想之一：**[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)**。[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)是物理学家在“人群中寻找波浪”的方式。它是一个演生实体，一个源于无数基本粒子集体舞蹈的幻象，但它在几乎所有重要方面的行为都与粒子本身一样。它有能量，有动量，最重要的是，它为描述一个原本不可知的世界提供了一种简单的语言。
 
-### 寂静之声：[声子](@article_id:297589)
+### 寂静之声：[声子](@keyword=phonons|lang=zh-CN|style=Feynman)
 
-让我们从最直观的[准粒子](@article_id:299846)开始。想象一个晶体，一个原子完美有序的阵列，就像一个由弹簧连接的巨大三维球格。即使在绝对[零度](@article_id:316692)，由于[量子不确定性](@article_id:316538)，这些原子也在不停地晃动。如果你增加一点能量——例如通过加热晶体——这种晃动会变得更加剧烈。为了描述这一点，我们不去追踪那 $10^{23}$ 个原子中的每一个。相反，我们会像音乐家那样：我们寻找整个[晶格](@article_id:300090)所能支持的[简正模](@article_id:300087)式，即基本[振动频率](@article_id:330258)。
+让我们从最直观的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)开始。想象一个晶体，一个原子完美有序的阵列，就像一个由弹簧连接的巨大三维球格。即使在绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)，由于[量子不确定性](@keyword=quantum_uncertainty|lang=zh-CN|style=Feynman)，这些原子也在不停地晃动。如果你增加一点能量——例如通过加热晶体——这种晃动会变得更加剧烈。为了描述这一点，我们不去追踪那 $10^{23}$ 个原子中的每一个。相反，我们会像音乐家那样：我们寻找整个[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)所能支持的[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman)式，即基本[振动频率](@keyword=vibrational_frequency|lang=zh-CN|style=Feynman)。
 
-量子力学告诉我们，这些[振动](@article_id:331484)模式中的每一个能量都是量子化的；它只能以离散的包的形式存在。这种振动能量的一个不可分割的包就是一种被称为**[声子](@article_id:297589)**的[准粒子](@article_id:299846)。 [声子](@article_id:297589)本质上是一个声量子。它在晶体中传播，携带能量和动量，你可以像为电子或[光子](@article_id:305617)那样，写下它如何散射和相互作用的方程。
+量子力学告诉我们，这些[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式中的每一个能量都是量子化的；它只能以离散的包的形式存在。这种振动能量的一个不可分割的包就是一种被称为**[声子](@keyword=phonons|lang=zh-CN|style=Feynman)**的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)。[@3011461] [声子](@keyword=phonons|lang=zh-CN|style=Feynman)本质上是一个声量子。它在晶体中传播，携带能量和动量，你可以像为电子或[光子](@keyword=photon|lang=zh-CN|style=Feynman)那样，写下它如何散射和相互作用的方程。
 
-但它是一个*真实*的粒子吗？绝对不是。这是关键的区别。你不能把一个[声子](@article_id:297589)放进瓶子里。[声子](@article_id:297589)是*晶体*的一种激发。它是所有原子的一种有纪律的、集体的运动。如果你把晶体熔化成液体，完美的[晶格结构](@article_id:364626)会溶解，随之而来的是，明确的[声子模式](@article_id:379912)也会消失。 [声子](@article_id:297589)不能在真空中存在；它的存在本身就建立在晶体这一介质之上。这种对背景介质的依赖是[准粒子](@article_id:299846)的标志。
+但它是一个*真实*的粒子吗？绝对不是。这是关键的区别。你不能把一个[声子](@keyword=phonons|lang=zh-CN|style=Feynman)放进瓶子里。[声子](@keyword=phonons|lang=zh-CN|style=Feynman)是*晶体*的一种激发。它是所有原子的一种有纪律的、集体的运动。如果你把晶体熔化成液体，完美的[晶格结构](@keyword=crystal_lattice_structure|lang=zh-CN|style=Feynman)会溶解，随之而来的是，明确的[声子模式](@keyword=phonon_modes|lang=zh-CN|style=Feynman)也会消失。[@1794547] [声子](@keyword=phonons|lang=zh-CN|style=Feynman)不能在真空中存在；它的存在本身就建立在晶体这一介质之上。这种对背景介质的依赖是[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)的标志。
 
-### “社会化”的电子：朗道[准粒子](@article_id:299846)
+### “社会化”的电子：朗道[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)
 
-[晶格](@article_id:300090)中的原子是故事的一部分；流过其中的电子海洋是另一部分。在金属中，每个电子都在不断地排斥所有其他电子。一个试图穿过这个密集、相互作用的人群的电子，不是一个孤独的行者。它不断地推挤和被推挤，在周围造成一圈扰动。
+[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中的原子是故事的一部分；流过其中的电子海洋是另一部分。在金属中，每个电子都在不断地排斥所有其他电子。一个试图穿过这个密集、相互作用的人群的电子，不是一个孤独的行者。它不断地推挤和被推挤，在周围造成一圈扰动。
 
-这是另一个看似不可能的多体问题。在20世纪50年代，杰出的苏联物理学家 Lev Landau 提出了一个激进而优美的解决方案。他问道：如果我们从一个一切都很简单的无相互作用[电子气](@article_id:301135)体开始，然后“绝热地”开启排斥相互作用，会发生什么？“绝热地”意味着过程非常缓慢和温和，以至于系统不会发生剧烈变化，比如冻结或沸腾。Landau 认为，只要我们专注于低能激发，自由气体的简单状态和相互作用液体的复杂状态之间就存在[一一对应](@article_id:304365)的关系。
+这是另一个看似不可能的多体问题。在20世纪50年代，杰出的苏联物理学家 Lev Landau 提出了一个激进而优美的解决方案。他问道：如果我们从一个一切都很简单的无相互作用[电子气](@keyword=electron_gas|lang=zh-CN|style=Feynman)体开始，然后“绝热地”开启排斥相互作用，会发生什么？“绝热地”意味着过程非常缓慢和温和，以至于系统不会发生剧烈变化，比如冻结或沸腾。Landau 认为，只要我们专注于低能激发，自由气体的简单状态和相互作用液体的复杂状态之间就存在[一一对应](@keyword=one_to_one_correspondence|lang=zh-CN|style=Feynman)的关系。[@2999007]
 
-这意味着，当我们开启相互作用时，一个单一的自由电子会平滑地演变成一个新的实体：**朗道[准粒子](@article_id:299846)**。这个新实体是原始的“裸”电子，但现在它被一团被它推开的其他电子组成的屏蔽云“缀饰”起来。它就是电子加上其个人影响空间。这个[缀饰电子](@article_id:364032)仍然具有与裸电子相同的[电荷](@article_id:339187)（$-e$）和自旋（$\frac{1}{2}$），但它的质量不同了——它现在有一个**有效质量** $m^*$，反映了拖着其“缀饰”云一起运动的惯性。
+这意味着，当我们开启相互作用时，一个单一的自由电子会平滑地演变成一个新的实体：**朗道[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)**。这个新实体是原始的“裸”电子，但现在它被一团被它推开的其他电子组成的屏蔽云“缀饰”起来。它就是电子加上其个人影响空间。这个[缀饰电子](@keyword=dressed_electron|lang=zh-CN|style=Feynman)仍然具有与裸电子相同的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)（$-e$）和自旋（$\frac{1}{2}$），但它的质量不同了——它现在有一个**有效质量** $m^*$，反映了拖着其“缀饰”云一起运动的惯性。
 
-这不仅仅是一个方便的虚构。物理学家有一个数学工具，即[单粒子格林函数](@article_id:300843)，能有效地告诉我们当我们将一个[电子注入](@article_id:334642)系统时会发生什么。对于一个朗道[准粒子](@article_id:299846)，这个工具显示出一个尖锐、相干的信号。这个信号的强度，称为**[准粒子](@article_id:299846)[留数](@article_id:348682) $Z$**，量化了缀饰[准粒子](@article_id:299846)中保留的原始裸电子的“份额”。在相互作用系统中，$Z$ 总是小于1，表明电子的一部分身份已经弥散到电子海洋的集体背景中。
+这不仅仅是一个方便的虚构。物理学家有一个数学工具，即[单粒子格林函数](@keyword=single_particle_green_s_function|lang=zh-CN|style=Feynman)，能有效地告诉我们当我们将一个[电子注入](@keyword=electron_injection|lang=zh-CN|style=Feynman)系统时会发生什么。对于一个朗道[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)，这个工具显示出一个尖锐、相干的信号。这个信号的强度，称为**[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)[留数](@keyword=residue|lang=zh-CN|style=Feynman) $Z$**，量化了缀饰[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)中保留的原始裸电子的“份额”。在相互作用系统中，$Z$ 总是小于1，表明电子的一部分身份已经弥散到电子海洋的集体背景中。[@2999059]
 
-然而，真正的魔力在于这些[准粒子](@article_id:299846)异常稳定。你可能会认为，在这样一个剧烈、拥挤的环境中，我们的[缀饰电子](@article_id:364032)会瞬间被撕裂。但在电子海洋的“表面”——一个被称为[费米面](@article_id:298249)的能级——附近，[泡利不相容原理](@article_id:302291)起了关键作用。它严格限制了电子可以散射进入的可用状态，从而极大地抑制了其衰变。[准粒子](@article_id:299846)离费米面越近，其寿命就越长。它的衰变率 $\Gamma$ 随着其与[费米面](@article_id:298249)能量距离的平方而骤降：$\Gamma \propto (\epsilon - \epsilon_F)^2$。  它们在所有实际意义上都变成了稳定的粒子——金属中真正的[元激发](@article_id:301302)。
+然而，真正的魔力在于这些[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)异常稳定。你可能会认为，在这样一个剧烈、拥挤的环境中，我们的[缀饰电子](@keyword=dressed_electron|lang=zh-CN|style=Feynman)会瞬间被撕裂。但在电子海洋的“表面”——一个被称为[费米面](@keyword=fermi_surface|lang=zh-CN|style=Feynman)的能级——附近，[泡利不相容原理](@keyword=pauli_exclusion_principle|lang=zh-CN|style=Feynman)起了关键作用。它严格限制了电子可以散射进入的可用状态，从而极大地抑制了其衰变。[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)离费米面越近，其寿命就越长。它的衰变率 $\Gamma$ 随着其与[费米面](@keyword=fermi_surface|lang=zh-CN|style=Feynman)能量距离的平方而骤降：$\Gamma \propto (\epsilon - \epsilon_F)^2$。[@2999049] [@2999059] 它们在所有实际意义上都变成了稳定的粒子——金属中真正的[元激发](@keyword=elementary_excitations|lang=zh-CN|style=Feynman)。
 
-### 当电子分崩离析时：[分数化](@article_id:300330)
+### 当电子分崩离析时：[分数化](@keyword=fractionalization|lang=zh-CN|style=Feynman)
 
-朗道的[准粒子](@article_id:299846)图像是20世纪物理学的伟大胜利之一。但它并非最终定论。当它失效时会发生什么？当相互作用如此之强，或几何结构如此受限，以至于电子的温和“缀饰”不再可能时会发生什么？这时，一些完全令人震惊的事情发生了：电子本身似乎碎裂成了几部分。这被称为**分数化**。
+朗道的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)图像是20世纪物理学的伟大胜利之一。但它并非最终定论。当它失效时会发生什么？当相互作用如此之强，或几何结构如此受限，以至于电子的温和“缀饰”不再可能时会发生什么？这时，一些完全令人震惊的事情发生了：电子本身似乎碎裂成了几部分。这被称为**分数化**。
 
-上演这出戏剧的典型舞台是一维导线。在这里，电子无法绕开彼此。它们被困在一条线上，每一次相互作用都是迎头相撞且不可避免的。在这种极端环境下，[朗道理论](@article_id:299415)背后的假设崩溃了。系统不再是[费米液体](@article_id:302832)，而是一种被称为**[卢廷格液体](@article_id:301416)**的新物态。
+上演这出戏剧的典型舞台是一维导线。在这里，电子无法绕开彼此。它们被困在一条线上，每一次相互作用都是迎头相撞且不可避免的。在这种极端环境下，[朗道理论](@keyword=landau_theory|lang=zh-CN|style=Feynman)背后的假设崩溃了。系统不再是[费米液体](@keyword=fermi_liquid|lang=zh-CN|style=Feynman)，而是一种被称为**[卢廷格液体](@keyword=luttinger_liquid|lang=zh-CN|style=Feynman)**的新物态。[@3008115]
 
-在[卢廷格液体](@article_id:301416)中，[元激发](@article_id:301302)不再是类电子的。如果你向这样的导线注入一个电子，它会解构。它的两个基本量子属性——[电荷](@article_id:339187)和自旋——会解体，并由两个*不同*的、独立的[准粒子](@article_id:299846)带走。它的[电荷](@article_id:339187)被一个**荷子**带走，这是一种带有[电荷](@article_id:339187)$-e$但自旋为零的[准粒子](@article_id:299846)。它的自旋被一个**[自旋子](@article_id:300858)**带走，这是一种自旋为$\frac{1}{2}$但[电荷](@article_id:339187)为零的[准粒子](@article_id:299846)。 这就是**[自旋-电荷分离](@article_id:302957)**。这好比一个人可以分解成他的影子和他的声音，然后它们以不同的速度向不同的方向跑去。这不是科幻小说；对一维材料的实验探测并未看到单个电子的尖锐谱峰，而是看到了两个独立的、宽泛的特征，分别对应于独立的自旋子和荷子[连续谱](@article_id:313985)。
+在[卢廷格液体](@keyword=luttinger_liquid|lang=zh-CN|style=Feynman)中，[元激发](@keyword=elementary_excitations|lang=zh-CN|style=Feynman)不再是类电子的。如果你向这样的导线注入一个电子，它会解构。它的两个基本量子属性——[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)和自旋——会解体，并由两个*不同*的、独立的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)带走。它的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)被一个**荷子**带走，这是一种带有[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)$-e$但自旋为零的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)。它的自旋被一个**[自旋子](@keyword=spinons|lang=zh-CN|style=Feynman)**带走，这是一种自旋为$\frac{1}{2}$但[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)为零的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)。[@3017361] 这就是**[自旋-电荷分离](@keyword=spin_charge_separation|lang=zh-CN|style=Feynman)**。这好比一个人可以分解成他的影子和他的声音，然后它们以不同的速度向不同的方向跑去。这不是科幻小说；对一维材料的实验探测并未看到单个电子的尖锐谱峰，而是看到了两个独立的、宽泛的特征，分别对应于独立的自旋子和荷子[连续谱](@keyword=continuous_spectrum|lang=zh-CN|style=Feynman)。[@3008115]
 
-这种[分数化](@article_id:300330)现象不仅限于电子。考虑一个一维[量子自旋链](@article_id:306880)，就像一条反铁磁项链。在二维或三维磁体中，翻转一个自旋会产生一个相干的涟漪，一个定义明确的[准粒子](@article_id:299846)，称为**磁子**，它携带的自旋为$1$。在实验中，它表现为一个尖锐的、[色散](@article_id:376945)的峰。但在该[一维链](@article_id:378257)中，同样的自旋为$1$的扰动会立即分裂成两个**[自旋子](@article_id:300858)**，每个携带自旋为$\frac{1}{2}$。这两个[自旋子](@article_id:300858)是“去禁闭”的——它们可以随意地彼此远离。实验并未看到单个尖峰，而是看到一个宽泛的、充满特征的*连续谱*，代表了两个自旋子可以共享原始自旋翻转的能量和动量的无数种方式。 确定的事物溶解成了一片可能性的景观。
+这种[分数化](@keyword=fractionalization|lang=zh-CN|style=Feynman)现象不仅限于电子。考虑一个一维[量子自旋链](@keyword=quantum_spin_chain|lang=zh-CN|style=Feynman)，就像一条反铁磁项链。在二维或三维磁体中，翻转一个自旋会产生一个相干的涟漪，一个定义明确的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)，称为**磁子**，它携带的自旋为$1$。在实验中，它表现为一个尖锐的、[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)的峰。但在该[一维链](@keyword=one_dimensional_chains|lang=zh-CN|style=Feynman)中，同样的自旋为$1$的扰动会立即分裂成两个**[自旋子](@keyword=spinons|lang=zh-CN|style=Feynman)**，每个携带自旋为$\frac{1}{2}$。这两个[自旋子](@keyword=spinons|lang=zh-CN|style=Feynman)是“去禁闭”的——它们可以随意地彼此远离。实验并未看到单个尖峰，而是看到一个宽泛的、充满特征的*连续谱*，代表了两个自旋子可以共享原始自旋翻转的能量和动量的无数种方式。[@3012208] 确定的事物溶解成了一片可能性的景观。
 
 ### 终极幻象：复合费米子
 
-让我们以[准粒子](@article_id:299846)概念或许最深刻、最大胆的应用来结束。[分数量子霍尔效应](@article_id:297329)（FQHE）出现在二维电子片层被置于极低温度和强[磁场](@article_id:313708)下。电子组织成一种奇异的、不可压缩的[量子流体](@article_id:300775)，这是一种关联性极强的[物态](@article_id:299884)，以至于所有简单的描述都无法适用。
+让我们以[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)概念或许最深刻、最大胆的应用来结束。[分数量子霍尔效应](@keyword=fractional_quantum_hall_effect|lang=zh-CN|style=Feynman)（FQHE）出现在二维电子片层被置于极低温度和强[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)下。电子组织成一种奇异的、不可压缩的[量子流体](@keyword=quantum_fluids|lang=zh-CN|style=Feynman)，这是一种关联性极强的[物态](@keyword=states_of_matter|lang=zh-CN|style=Feynman)，以至于所有简单的描述都无法适用。
 
-突破来自于一个纯粹的理论天才时刻。其思想是进行一个概念上的技巧：一次“奇异规范变换”，将偶数个[磁通量子](@article_id:296883)——微小的、量子化的[磁场](@article_id:313708)涡旋——“粘合”到每一个电子上。这个新的混合对象，即电子加上其个人涡旋群，是一种被称为**[复合费米子](@article_id:306329)**（CF）的[准粒子](@article_id:299846)。
+突破来自于一个纯粹的理论天才时刻。其思想是进行一个概念上的技巧：一次“奇异规范变换”，将偶数个[磁通量子](@keyword=magnetic_flux_quantum|lang=zh-CN|style=Feynman)——微小的、量子化的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)涡旋——“粘合”到每一个电子上。这个新的混合对象，即电子加上其个人涡旋群，是一种被称为**[复合费米子](@keyword=composite_fermion|lang=zh-CN|style=Feynman)**（CF）的[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)。[@2976587]
 
 奇迹就在这里：原始电子之间极其复杂且强烈的电排斥几乎被这种虚构的磁通附着完美抵消或“吸收”了。用复合费米子的语言描述的新系统，其行为就像一个在弱得多的有效磁场中运动的、几乎*自由*的粒子气体。令人困惑的电子的FQHE被揭示为无非是这些新的、演生的复合费米子的简单的*整*数量子霍尔效应。
 
-这一惊人的重新构想解决了长达十年的谜题，并揭示了惊人深刻的统一性。它使我们能够轻松理解FQHE流体的奇异激发。一些是中性集体模式，类似于[声子](@article_id:297589)，对应于一个复合费米子被提升到更高的能级。另一些则是著名的分数电荷[准粒子](@article_id:299846)，对应于在流体中增加或移除一个[复合费米子](@article_id:306329)。
+这一惊人的重新构想解决了长达十年的谜题，并揭示了惊人深刻的统一性。它使我们能够轻松理解FQHE流体的奇异激发。一些是中性集体模式，类似于[声子](@keyword=phonons|lang=zh-CN|style=Feynman)，对应于一个复合费米子被提升到更高的能级。另一些则是著名的分数电荷[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)，对应于在流体中增加或移除一个[复合费米子](@keyword=composite_fermion|lang=zh-CN|style=Feynman)。[@2976587]
 
-从晶体的简单[振动](@article_id:331484)到电子的碎裂，再到FQHE核心的神奇转变，[准粒子](@article_id:299846)概念证明了物理直觉的力量。它告诉我们，要理解整体，我们不总需要追踪各个部分。有时，最有力的一步是观察复杂的舞蹈，并为涌现出的模式赋予一个新的名字。宇宙，似乎很乐意配合我们这些优美而又极其有用的幻象。
+从晶体的简单[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)到电子的碎裂，再到FQHE核心的神奇转变，[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)概念证明了物理直觉的力量。它告诉我们，要理解整体，我们不总需要追踪各个部分。有时，最有力的一步是观察复杂的舞蹈，并为涌现出的模式赋予一个新的名字。宇宙，似乎很乐意配合我们这些优美而又极其有用的幻象。
