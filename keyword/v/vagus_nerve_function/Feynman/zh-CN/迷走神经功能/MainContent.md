@@ -3,39 +3,39 @@
 
 ## 原理与机制
 
-想象一下，人体不是独立器官的集合，而是一个广阔的、相互连接的网络——一首所有生物过程和谐共奏的交响乐。如果真是这样，那么[迷走神经](@entry_id:149858)就是其宏大的指挥家。这个非凡的结构不是一根简单的电话线，而是一条庞大、双向的信息高速公路，不断监测身体的内部环境，并发出指令来维持我们称之为健康的微妙平衡。要真正领会其功能，我们必须首先审视其精巧的设计。
+想象一下，人体不是独立器官的集合，而是一个广阔的、相互连接的网络——一首所有生物过程和谐共奏的交响乐。如果真是这样，那么[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman)就是其宏大的指挥家。这个非凡的结构不是一根简单的电话线，而是一条庞大、双向的信息高速公路，不断监测身体的内部环境，并发出指令来维持我们称之为健康的微妙平衡。要真正领会其功能，我们必须首先审视其精巧的设计。
 
 ### 一条双向高速公路：迷走神经的宏伟设计
 
-当我们解剖[迷走神经](@entry_id:149858)时，会发现一个难以用简单语言描述的结构。它是**多束性 (polyfascicular)** 的，意味着它不是单一的缆线，而是由许多更小的缆线或神经束组成的束，这些神经束在其从脑干向下延伸至胸腹部的路径上会动态地重组。然而，最令人惊讶的是这条高速公路上的信息流向。与人们可能设想的相反，[迷走神经](@entry_id:149858)主要不是一个自上而下的命令系统。组织学研究揭示了一个惊人的事实：其大约 80% 的纤维是**传入 (afferent)** 纤维，将感觉信息*从*器官传递*到*大脑。只有大约 20% 是**传出 (efferent)** 纤维，将运动指令*从*大脑传递*到*器官 。
+当我们解剖[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman)时，会发现一个难以用简单语言描述的结构。它是**多束性 (polyfascicular)** 的，意味着它不是单一的缆线，而是由许多更小的缆线或神经束组成的束，这些神经束在其从脑干向下延伸至胸腹部的路径上会动态地重组。然而，最令人惊讶的是这条高速公路上的信息流向。与人们可能设想的相反，[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman)主要不是一个自上而下的命令系统。组织学研究揭示了一个惊人的事实：其大约 80% 的纤维是**传入 (afferent)** 纤维，将感觉信息*从*器官传递*到*大脑。只有大约 20% 是**传出 (efferent)** 纤维，将运动指令*从*大脑传递*到*器官 [@problem_id:4770880]。
 
-这个 80/20 的比例是一个深刻的洞见。[迷走神经](@entry_id:149858)的主要作用是*倾听*。它是大脑的主要哨兵，一个致力于**内感受 (interoception)**——即对身体内部状态的感知——的巨大[感觉器官](@entry_id:269741)。它持续监测我们心脏、肺部和肠道的细微变化，为大脑提供丰富、实时的数据流。这些纤维本身就说明了问题：它们主要是无[髓鞘](@entry_id:153229)、传导缓慢的 **$C$ 纤维**，非常适合持续、从容地监测内脏功能，而不是用于骨骼肌控制的快速指令 。这一设计原则——倾听多于发令——是理解其所有多样功能的关键。
+这个 80/20 的比例是一个深刻的洞见。[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman)的主要作用是*倾听*。它是大脑的主要哨兵，一个致力于**内感受 (interoception)**——即对身体内部状态的感知——的巨大[感觉器官](@keyword=sensory_organs|lang=zh-CN|style=Feynman)。它持续监测我们心脏、肺部和肠道的细微变化，为大脑提供丰富、实时的数据流。这些纤维本身就说明了问题：它们主要是无[髓鞘](@keyword=myelin|lang=zh-CN|style=Feynman)、传导缓慢的 **$C$ 纤维**，非常适合持续、从容地监测内脏功能，而不是用于骨骼肌控制的快速指令 [@problem_id:4770880]。这一设计原则——倾听多于发令——是理解其所有多样功能的关键。
 
 ### “休息与消化”的指挥家：传出通路的作用
 
-尽管感觉信息在[迷走神经](@entry_id:149858)中占主导地位，但其 20% 的传出（或运动）纤维却拥有巨大的力量。这些是[副交感神经系统](@entry_id:153747)的代理，即“休息与消化”网络，负责镇静身体并管理其日常维持工作。这一点在胃肠道中表现得最为明显。
+尽管感觉信息在[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman)中占主导地位，但其 20% 的传出（或运动）纤维却拥有巨大的力量。这些是[副交感神经系统](@keyword=parasympathetic_nervous_system|lang=zh-CN|style=Feynman)的代理，即“休息与消化”网络，负责镇静身体并管理其日常维持工作。这一点在胃肠道中表现得最为明显。
 
-[迷走神经](@entry_id:149858)传出纤维起源于脑干，沿颈部向下行进，并遍布胸腔和腹腔。与交感神经系统在脊柱附近有一串神经节不同，这些[迷走神经](@entry_id:149858)纤维是长的**节前神经元 (preganglionic neurons)**，一直延伸到目标器官本身。它们在称为**壁内神经节 (intramural ganglia)** 的微小神经细胞簇中形成突触，这些神经节直接嵌入肠壁内 。从那里，极短的节后神经元执行最终指令。
+[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman)传出纤维起源于脑干，沿颈部向下行进，并遍布胸腔和腹腔。与交感神经系统在脊柱附近有一串神经节不同，这些[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman)纤维是长的**节前神经元 (preganglionic neurons)**，一直延伸到目标器官本身。它们在称为**壁内神经节 (intramural ganglia)** 的微小神经细胞簇中形成突触，这些神经节直接嵌入肠壁内 [@problem_id:5112326]。从那里，极短的节后神经元执行最终指令。
 
-这条通路的功能既精巧又至关重要。它刺激[胃酸](@entry_id:148373)和消化酶的分泌，促进**蠕动 (peristalsis)**（推动食物前进的节律性收缩），并松弛括约肌以允许食物通过 。当失去迷走神经的监控时，其必要性便戏剧性地显现出来。想象一下，一个外科手术切断了膈肌上方的迷走神经。肠道自身的内在神经系统——其“[小脑](@entry_id:151221)”——只能自谋生路。结果是显著的减速：胃排空延迟，小肠的推进运动明显减少 。局部网络可以管理基本功能，但缺乏其迷走神经指挥家提供的协调和动力。
+这条通路的功能既精巧又至关重要。它刺激[胃酸](@keyword=stomach_acid|lang=zh-CN|style=Feynman)和消化酶的分泌，促进**蠕动 (peristalsis)**（推动食物前进的节律性收缩），并松弛括约肌以允许食物通过 [@problem_id:5112326]。当失去迷走神经的监控时，其必要性便戏剧性地显现出来。想象一下，一个外科手术切断了膈肌上方的迷走神经。肠道自身的内在神经系统——其“[小脑](@keyword=cerebellum|lang=zh-CN|style=Feynman)”——只能自谋生路。结果是显著的减速：胃排空延迟，小肠的推进运动明显减少 [@problem_id:1691974]。局部网络可以管理基本功能，但缺乏其迷走神经指挥家提供的协调和动力。
 
-这种控制甚至延伸到我们的思想。仅仅看到、闻到甚至想到美味的食物，就会触发**[头期](@entry_id:151767)消化 (cephalic phase of digestion)**。这种预期性反应，即在吃下第一口食物之前胃就开始分泌[胃酸](@entry_id:148373)和酶，几乎完全由[迷走神经](@entry_id:149858)协调 。这是一个绝佳的例子，说明大脑如何通过迷走神经为预期的事件做好身体准备。这一理解已直接应用于临床；过去，外科医生会进行**选择性迷走神经切断术 (selective vagotomy)**，小心地切断特定的迷走神经分支，以减少严重消化性溃疡患者的胃酸分泌 。
+这种控制甚至延伸到我们的思想。仅仅看到、闻到甚至想到美味的食物，就会触发**[头期](@keyword=cephalic_phase|lang=zh-CN|style=Feynman)消化 (cephalic phase of digestion)**。这种预期性反应，即在吃下第一口食物之前胃就开始分泌[胃酸](@keyword=stomach_acid|lang=zh-CN|style=Feynman)和酶，几乎完全由[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman)协调 [@problem_id:1711302]。这是一个绝佳的例子，说明大脑如何通过迷走神经为预期的事件做好身体准备。这一理解已直接应用于临床；过去，外科医生会进行**选择性迷走神经切断术 (selective vagotomy)**，小心地切断特定的迷走神经分支，以减少严重消化性溃疡患者的胃酸分泌 [@problem_id:1716721]。
 
-这种分级控制系统，即迷走神经作为肠道内在“短环路”反射的“长环路”监督者，是效率的奇迹。一个完美的例子是**感受性舒张 (receptive relaxation)**，即胃壁舒张以容纳进入的食物。这不是一个简单的局部牵张反射；它是一个**[迷走-迷走反射](@entry_id:174455) (vagovagal reflex)**。食管中的牵张感受器通过[迷走神经](@entry_id:149858)向脑干发送信号，[脑干](@entry_id:169362)再通过迷走神经向下发送指令，告知胃部放松。这是一个长距离的协调动作，没有[迷走神经](@entry_id:149858)这条高速公路是不可能完成的 。
+这种分级控制系统，即迷走神经作为肠道内在“短环路”反射的“长环路”监督者，是效率的奇迹。一个完美的例子是**感受性舒张 (receptive relaxation)**，即胃壁舒张以容纳进入的食物。这不是一个简单的局部牵张反射；它是一个**[迷走-迷走反射](@keyword=vagovagal_reflex|lang=zh-CN|style=Feynman) (vagovagal reflex)**。食管中的牵张感受器通过[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman)向脑干发送信号，[脑干](@keyword=brainstem|lang=zh-CN|style=Feynman)再通过迷走神经向下发送指令，告知胃部放松。这是一个长距离的协调动作，没有[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman)这条高速公路是不可能完成的 [@problem_id:2570062]。
 
 ### 身体的哨兵：传入通路与感知内部世界
 
 现在让我们转向神经中那 80% 的部分——持续倾听的传入纤维。它们在倾听什么？它们在感知机械牵张、化学成分、温度，以及最关键的，损伤或炎症的信号。
 
-当你感染时，你会感到不适。这种“[疾病行为](@entry_id:197703)”——嗜睡、食欲不振和对周围环境普遍失去兴趣的熟悉组合——感觉像是一种痛苦的副作用。但事实并非如此。这是一种由大脑精心策划的高度复杂、适应性的生存策略，而迷走神经是其中的关键信使。当外周的免疫细胞检测到病原体时，它们会释放称为**[细胞因子](@entry_id:204039) (cytokines)** 的炎症分子。这些[细胞因子](@entry_id:204039)触发的信号通过两条主要途径到达大脑。一条是**体液通路 (humoral pathway)**，[细胞因子](@entry_id:204039)作用于[血脑屏障](@entry_id:146383)，引发**[前列腺素](@entry_id:201770) (prostaglandins)** 的局部产生，后者再向大脑发出信号。第二条是**[神经通路](@entry_id:153123) (neural pathway)**：迷走神经的传入纤维检测到内脏中的[细胞因子](@entry_id:204039)，并向脑干发送直接、快速的警报。大脑整合这些信号并启动[疾病行为](@entry_id:197703)，这是一种旨在保存能量并将资源重新分配以对抗感染的状态 。那种疲惫感是你身体的智慧，通过迷走神经传达，告诉你需要休息和康复。
+当你感染时，你会感到不适。这种“[疾病行为](@keyword=sickness_behavior|lang=zh-CN|style=Feynman)”——嗜睡、食欲不振和对周围环境普遍失去兴趣的熟悉组合——感觉像是一种痛苦的副作用。但事实并非如此。这是一种由大脑精心策划的高度复杂、适应性的生存策略，而迷走神经是其中的关键信使。当外周的免疫细胞检测到病原体时，它们会释放称为**[细胞因子](@keyword=cytokine|lang=zh-CN|style=Feynman) (cytokines)** 的炎症分子。这些[细胞因子](@keyword=cytokine|lang=zh-CN|style=Feynman)触发的信号通过两条主要途径到达大脑。一条是**体液通路 (humoral pathway)**，[细胞因子](@keyword=cytokine|lang=zh-CN|style=Feynman)作用于[血脑屏障](@keyword=blood_brain_barrier|lang=zh-CN|style=Feynman)，引发**[前列腺素](@keyword=prostaglandins|lang=zh-CN|style=Feynman) (prostaglandins)** 的局部产生，后者再向大脑发出信号。第二条是**神经通路 (neural pathway)**：迷走神经的传入纤维检测到内脏中的[细胞因子](@keyword=cytokine|lang=zh-CN|style=Feynman)，并向脑干发送直接、快速的警报。大脑整合这些信号并启动[疾病行为](@keyword=sickness_behavior|lang=zh-CN|style=Feynman)，这是一种旨在保存能量并将资源重新分配以对抗感染的状态 [@problem_id:4455041]。那种疲惫感是你身体的智慧，通过迷走神经传达，告诉你需要休息和康复。
 
 ### 和谐的指挥家：调节心脏与炎症
 
 迷走神经的作用延伸到最重要和最令人惊讶的领域，充当心脏的微调器和免疫系统本身的调节器。在这里，我们看到了身体各系统真正的统一性。
 
-心脏的节律是加速器（交感神经系统）和刹车（副交感[迷走神经](@entry_id:149858)）之间的一场精妙舞蹈。但迷走神经对心脏的控制具有一种迷人的不对称性。**右[迷走神经](@entry_id:149858) (right vagus nerve)** 主要投射到**窦房结 (sinoatrial (SA) node)**，这是心脏的天然起搏器，负责设定你的脉搏速率。相比之下，**左[迷走神经](@entry_id:149858) (left vagus nerve)** 主要投射到**[房室结](@entry_id:150361) (atrioventricular (AV) node)**，后者控制电信号从心房到心室的传导。这并非一个微不足道的解剖学怪癖；它具有生死攸关的影响。用于治疗抑郁症等疾病的**迷走神经刺激术 (VNS)**，需要在颈部的神经上放置一个电极。外科医生几乎总是选择左侧。为什么？因为刺激右迷走神经有压倒[窦房结](@entry_id:154149)的风险，可能导致严重的[心动过缓](@entry_id:152925)（危险的心率过慢）甚至心搏停止。刺激左[迷走神经](@entry_id:149858)更安全，因为其主要副作用是[房室结](@entry_id:150361)的传导阻滞，这种阻滞的生命威胁没有那么直接 。这一临床选择是对神经精确而精巧的解剖学理解的直接应用。
+心脏的节律是加速器（交感神经系统）和刹车（副交感[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman)）之间的一场精妙舞蹈。但迷走神经对心脏的控制具有一种迷人的不对称性。**右[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman) (right vagus nerve)** 主要投射到**窦房结 (sinoatrial (SA) node)**，这是心脏的天然起搏器，负责设定你的脉搏速率。相比之下，**左[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman) (left vagus nerve)** 主要投射到**[房室结](@keyword=av_node|lang=zh-CN|style=Feynman) (atrioventricular (AV) node)**，后者控制电信号从心房到心室的传导。这并非一个微不足道的解剖学怪癖；它具有生死攸关的影响。用于治疗抑郁症等疾病的**迷走神经刺激术 (VNS)**，需要在颈部的神经上放置一个电极。外科医生几乎总是选择左侧。为什么？因为刺激右迷走神经有压倒[窦房结](@keyword=sinoatrial_node|lang=zh-CN|style=Feynman)的风险，可能导致严重的[心动过缓](@keyword=bradycardia|lang=zh-CN|style=Feynman)（危险的心率过慢）甚至心搏停止。刺激左[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman)更安全，因为其主要副作用是[房室结](@keyword=av_node|lang=zh-CN|style=Feynman)的传导阻滞，这种阻滞的生命威胁没有那么直接 [@problem_id:4770931]。这一临床选择是对神经精确而精巧的解剖学理解的直接应用。
 
-近几十年来最令人惊叹的发现或许是**[胆碱能抗炎通路](@entry_id:178375) (cholinergic anti-inflammatory pathway, CAP)**。我们已经了解到，神经系统不仅能感知炎症，还能[主动抑制](@entry_id:191436)它。这不是一个直接的作用。该通路是一个精美、出人意料的级联反应，展示了不同生物系统之间复杂的对话。它始于一个传出的迷走神经信号。然而，这个信号并不直接传到免疫细胞。相反，它调节**[脾脏](@entry_id:188803)交感神经 (sympathetic splenic nerve)** 的活动。然后，这条交感神经在[脾脏](@entry_id:188803)内释放[去甲肾上腺素](@entry_id:155042)，作用于一种特殊的 T 细胞群体。作为回应，这些 T 细胞释放**[乙酰胆碱](@entry_id:155747) (acetylcholine)**——迷走神经自身的神经递质！这种局部产生的[乙酰胆碱](@entry_id:155747)随后与脾脏[巨噬细胞](@entry_id:181184)上的 **$\alpha7$ 烟碱受体 ($\alpha7$ nicotinic receptors)** 结合，向它们发出信号，减少其炎性[细胞因子](@entry_id:204039)（如 TNF-α）的产生 。
+近几十年来最令人惊叹的发现或许是**[胆碱能抗炎通路](@keyword=cholinergic_anti_inflammatory_pathway|lang=zh-CN|style=Feynman) (cholinergic anti-inflammatory pathway, CAP)**。我们已经了解到，神经系统不仅能感知炎症，还能[主动抑制](@keyword=active_repression|lang=zh-CN|style=Feynman)它。这不是一个直接的作用。该通路是一个精美、出人意料的级联反应，展示了不同生物系统之间复杂的对话。它始于一个传出的迷走神经信号。然而，这个信号并不直接传到免疫细胞。相反，它调节**[脾脏](@keyword=spleen|lang=zh-CN|style=Feynman)交感神经 (sympathetic splenic nerve)** 的活动。然后，这条交感神经在[脾脏](@keyword=spleen|lang=zh-CN|style=Feynman)内释放[去甲肾上腺素](@keyword=norepinephrine|lang=zh-CN|style=Feynman)，作用于一种特殊的 T 细胞群体。作为回应，这些 T 细胞释放**[乙酰胆碱](@keyword=acetylcholine|lang=zh-CN|style=Feynman) (acetylcholine)**——迷走神经自身的神经递质！这种局部产生的[乙酰胆碱](@keyword=acetylcholine|lang=zh-CN|style=Feynman)随后与脾脏[巨噬细胞](@keyword=macrophage|lang=zh-CN|style=Feynman)上的 **$\alpha7$ 烟碱受体 ($\alpha7$ nicotinic receptors)** 结合，向它们发出信号，减少其炎性[细胞因子](@keyword=cytokine|lang=zh-CN|style=Feynman)（如 TNF-α）的产生 [@problem_id:4750059]。
 
-从本质上讲，[迷走神经](@entry_id:149858)通过一个复杂的接力——副交感神经到交感神经，再到免疫细胞，再到免疫细胞——来调低全身性炎症的强度。这形成了一个负反馈回路，防止免疫反应失控。该通路非常稳健，以至于 VNS 可以通过[数学建模](@entry_id:262517)来显示炎症标志物的可预测的、成比例的减少，为炎症性疾病的新疗法打开了大门 。从消化一餐饭的简单行为，到对情绪、心跳和炎症的微妙调节，[迷走神经](@entry_id:149858)都扮演着总指挥的角色，确保交响乐团的所有[部分和](@entry_id:162077)谐、一致地演奏，以维持生命。
+从本质上讲，[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman)通过一个复杂的接力——副交感神经到交感神经，再到免疫细胞，再到免疫细胞——来调低全身性炎症的强度。这形成了一个负反馈回路，防止免疫反应失控。该通路非常稳健，以至于 VNS 可以通过[数学建模](@keyword=mathematical_modeling|lang=zh-CN|style=Feynman)来显示炎症标志物的可预测的、成比例的减少，为炎症性疾病的新疗法打开了大门 [@problem_id:1712709]。从消化一餐饭的简单行为，到对情绪、心跳和炎症的微妙调节，[迷走神经](@keyword=vagus_nerve|lang=zh-CN|style=Feynman)都扮演着总指挥的角色，确保交响乐团的所有[部分和](@keyword=partial_sums|lang=zh-CN|style=Feynman)谐、一致地演奏，以维持生命。
 

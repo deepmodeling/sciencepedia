@@ -54,10 +54,10 @@ Now that we can identify these patterns, let's explore the biological dramas the
 
 #### Cytotoxic Edema: The Cell as a Prison
 
-True diffusion restriction is the hallmark of **cytotoxic edema**. This is a state of acute cellular distress, most famously seen in the first hours of an **ischemic stroke**, but also in conditions like prolonged seizures or [prion diseases](@entry_id:177401). The sequence of events is dramatic:
+True diffusion restriction is the hallmark of **cytotoxic edema**. This is a state of acute cellular distress, most famously seen in the first hours of an **ischemic stroke**, but also in conditions like prolonged seizures or [prion diseases](@keyword=prion_diseases|lang=en-US|style=Feynman). The sequence of events is dramatic:
 
 1.  **Energy Crisis**: A lack of oxygen and glucose shuts down the cell's energy production.
-2.  **Pump Failure**: The cell's most vital machinery, the [sodium-potassium pump](@entry_id:137188) ($\text{Na}^{+}/\text{K}^{+}$-ATPase), grinds to a halt. This pump is responsible for maintaining the delicate balance of ions inside and outside the cell.
+2.  **Pump Failure**: The cell's most vital machinery, the [sodium-potassium pump](@keyword=sodium_potassium_pump|lang=en-US|style=Feynman) ($\text{Na}^{+}/\text{K}^{+}$-ATPase), grinds to a halt. This pump is responsible for maintaining the delicate balance of ions inside and outside the cell.
 3.  **Osmotic Influx**: With the pumps off, sodium ions flood into the cell, following their concentration gradient. To maintain osmotic balance, water follows.
 4.  **Cell Swelling**: The cell swells up like a water balloon. This water is now "cytotoxic," or trapped within the cell.
 
@@ -80,7 +80,7 @@ This distinction is not merely an academic exercise; it is at the forefront of c
 
 Consider a patient who suddenly becomes paralyzed from the waist down. An MRI of the spinal cord shows a bright lesion on DWI. Is it a **spinal cord stroke** or **inflammatory myelitis**? A stroke (cytotoxic edema) has a low ADC and requires urgent treatments to restore blood flow. Myelitis (vasogenic edema) has a high ADC, indicates T2 shine-through, and is treated with powerful anti-inflammatory drugs like steroids. The ADC map provides the definitive answer, guiding two completely different therapeutic paths.
 
-Or think of a patient with rapidly progressive dementia. Is it the untreatable and rapidly fatal **[prion disease](@entry_id:166642) (CJD)**, which riddles the brain with cytotoxic edema and thus low ADC? Or is it a treatable **viral encephalitis**, characterized by vasogenic edema and T2 shine-through? The patterns seen on DWI and ADC maps are a crucial piece of the diagnostic puzzle, helping doctors and families prepare for the future.
+Or think of a patient with rapidly progressive dementia. Is it the untreatable and rapidly fatal **[prion disease](@keyword=prion_disease|lang=en-US|style=Feynman) (CJD)**, which riddles the brain with cytotoxic edema and thus low ADC? Or is it a treatable **viral encephalitis**, characterized by vasogenic edema and T2 shine-through? The patterns seen on DWI and ADC maps are a crucial piece of the diagnostic puzzle, helping doctors and families prepare for the future.
 
 We can even watch these processes evolve over time. After a severe seizure, we can see the acute injury as a region of low ADC (cytotoxic edema). Days later, as inflammation sets in, this may be replaced by T2 shine-through and swelling (vasogenic edema). Finally, months later, we may see scarring and volume loss. By understanding this temporal dance of diffusion patterns, physicians can better predict a patient's long-term outcome, such as the risk of developing memory problems after a brain injury.
 

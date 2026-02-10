@@ -9,11 +9,11 @@ To truly understand what happens when a swallow goes wrong, we must first apprec
 
 ### The Physics of a Swallow: A Tale of Pressure and Resistance
 
-At its heart, swallowing is about moving a substance—a liquid, or a chewed-up piece of food we call a **bolus**—through a muscular tube, the esophagus. This isn't like water flowing passively through a garden hose. The esophagus is an active pump. It generates a wave of muscular contraction that sweeps down its length, a process known as **[peristalsis](@entry_id:140959)**. This wave provides the "push" needed to propel the bolus forward.
+At its heart, swallowing is about moving a substance—a liquid, or a chewed-up piece of food we call a **bolus**—through a muscular tube, the esophagus. This isn't like water flowing passively through a garden hose. The esophagus is an active pump. It generates a wave of muscular contraction that sweeps down its length, a process known as **[peristalsis](@keyword=peristalsis|lang=en-US|style=Feynman)**. This wave provides the "push" needed to propel the bolus forward.
 
 At the very end of the esophagus, where it meets the stomach, lies a critical gatekeeper: the **esophagogastric junction (EGJ)**. This muscular ring, which includes the **lower esophageal sphincter (LES)**, is normally clamped shut to prevent stomach acid from splashing up into the esophagus. When you swallow, this valve must relax and open at precisely the right moment to let the bolus pass through.
 
-We can describe this entire event with a surprisingly simple and elegant physical relationship, a cousin of Poiseuille's law, which governs flow through a pipe . In essence, it says:
+We can describe this entire event with a surprisingly simple and elegant physical relationship, a cousin of Poiseuille's law, which governs flow through a pipe [@problem_id:5118649]. In essence, it says:
 
 $$ \text{Flow} = \frac{\text{Driving Pressure}}{\text{Resistance}} $$
 
@@ -25,15 +25,15 @@ This simple formula beautifully frames the entire diagnostic puzzle. To find out
 
 How can we possibly measure the forces inside a living person's esophagus? The answer lies in a remarkable technology called **High-Resolution Manometry (HRM)**. An HRM catheter is a thin, flexible tube lined with dozens of pressure sensors spaced just a centimeter apart. When placed in the esophagus, it creates a detailed, real-time "weather map" of pressure, showing the journey of the peristaltic wave and the behavior of the EGJ valve during a swallow.
 
-On this pressure map, physicians look for one key metric to quantify the EGJ's resistance: the **Integrated Relaxation Pressure (IRP)**. The name sounds complex, but the idea is intuitive. Instead of just looking at the lowest pressure the valve reaches for a split second, the IRP calculation cleverly finds the four *contiguous* seconds of greatest relaxation within a ten-second window after the swallow begins. It then averages the pressure over this 4-second interval . Think of it as a robust measure of how well the valve opens and stays open. An IRP that remains high—for instance, above a threshold like $15$ mmHg—is a major red flag. It tells us that the valve is failing to relax properly; its resistance is too high. To ensure this isn't just a one-off fluke, this measurement is averaged over a series of ten standardized swallows .
+On this pressure map, physicians look for one key metric to quantify the EGJ's resistance: the **Integrated Relaxation Pressure (IRP)**. The name sounds complex, but the idea is intuitive. Instead of just looking at the lowest pressure the valve reaches for a split second, the IRP calculation cleverly finds the four *contiguous* seconds of greatest relaxation within a ten-second window after the swallow begins. It then averages the pressure over this 4-second interval [@problem_id:5118620]. Think of it as a robust measure of how well the valve opens and stays open. An IRP that remains high—for instance, above a threshold like $15$ mmHg—is a major red flag. It tells us that the valve is failing to relax properly; its resistance is too high. To ensure this isn't just a one-off fluke, this measurement is averaged over a series of ten standardized swallows [@problem_id:4593816].
 
 ### The Great Divide: Achalasia vs. EGJOO
 
-So, the HRM test shows a high IRP. The valve is stuck. What happens next? The crucial step is to look back at the pressure map and assess the "push"—the peristaltic wave in the esophageal body. Here, the path of diagnosis splits into two distinct possibilities, much like a detective following a critical clue  .
+So, the HRM test shows a high IRP. The valve is stuck. What happens next? The crucial step is to look back at the pressure map and assess the "push"—the peristaltic wave in the esophageal body. Here, the path of diagnosis splits into two distinct possibilities, much like a detective following a critical clue [@problem_id:4593799] [@problem_id:5025755].
 
 *   **Scenario 1: A Broken Pump and a Stuck Valve.** The HRM map shows a high IRP, but it *also* shows that the peristaltic pump is broken. The muscular waves are either absent entirely or replaced by disorganized, ineffective contractions. This condition, a combined failure of both the pump and the valve, is called **achalasia**.
 
-*   **Scenario 2: A Working Pump and a Stuck Valve.** The HRM map shows a high IRP, but the peristaltic waves, the "push," are still present and coordinated! They sweep down the esophagus in an orderly fashion, doing their job. The problem is isolated to the valve at the bottom, which simply refuses to open sufficiently. This is the definition of **Esophagogastric Junction Outflow Obstruction (EGJOO)** .
+*   **Scenario 2: A Working Pump and a Stuck Valve.** The HRM map shows a high IRP, but the peristaltic waves, the "push," are still present and coordinated! They sweep down the esophagus in an orderly fashion, doing their job. The problem is isolated to the valve at the bottom, which simply refuses to open sufficiently. This is the definition of **Esophagogastric Junction Outflow Obstruction (EGJOO)** [@problem_id:5118635].
 
 This distinction is fundamentally important. It tells us whether the problem is a global failure of the esophagus (achalasia) or a localized issue at the junction (EGJOO), a distinction that dramatically influences treatment.
 
@@ -41,28 +41,28 @@ This distinction is fundamentally important. It tells us whether the problem is 
 
 A manometric diagnosis of EGJOO is not the end of the story; it is the beginning of a deeper investigation. The label "EGJOO" simply tells us that we have high resistance at the EGJ. It doesn't tell us *why*. The "why" is the most important question of all, because a myotomy—the surgical cutting of the EGJ muscle to relieve obstruction—is an irreversible procedure. We must be absolutely certain that the muscle itself is the problem.
 
-The resistance at the EGJ can be high for two very different reasons :
+The resistance at the EGJ can be high for two very different reasons [@problem_id:5118649]:
 
 1.  **Functional Obstruction:** The nerves and muscles of the EGJ itself are not functioning correctly, preventing relaxation. This is the type of problem a myotomy is designed to fix.
-2.  **Mechanical Obstruction:** Something is physically compressing, blocking, or stiffening the junction from the outside or within its walls. This could be a subtle scar or ring, a large **hiatal hernia**, inflammation from a condition like eosinophilic esophagitis, or, most ominously, an infiltrating tumor (a condition known as **pseudoachalasia**) .
+2.  **Mechanical Obstruction:** Something is physically compressing, blocking, or stiffening the junction from the outside or within its walls. This could be a subtle scar or ring, a large **hiatal hernia**, inflammation from a condition like eosinophilic esophagitis, or, most ominously, an infiltrating tumor (a condition known as **pseudoachalasia**) [@problem_id:4593837].
 
-Performing a myotomy on a patient whose obstruction is caused by an undiagnosed tumor would be a catastrophe. This is why the diagnostic process must be a careful, stepwise peeling away of layers. The safest approach often involves using endoscopy to *look* inside the esophagus first, searching for any mechanical causes, before even performing [manometry](@entry_id:137079) to assess function .
+Performing a myotomy on a patient whose obstruction is caused by an undiagnosed tumor would be a catastrophe. This is why the diagnostic process must be a careful, stepwise peeling away of layers. The safest approach often involves using endoscopy to *look* inside the esophagus first, searching for any mechanical causes, before even performing [manometry](@keyword=manometry|lang=en-US|style=Feynman) to assess function [@problem_id:5118649].
 
 ### The Gravity Test: A Simple Trick of Physics
 
 To further refine the diagnosis and gain confidence that the obstruction is real and significant, clinicians employ a beautiful trick of physics. HRM studies are typically performed with the patient lying down (supine). But the Chicago Classification v4.0, the modern rulebook for HRM, now mandates testing in the upright position as well. Why? The answer is gravity.
 
-When you are sitting or standing upright, the column of liquid you swallow has weight. This weight creates a **hydrostatic pressure**, described by the simple formula $P = \rho g h$ (pressure equals density times gravitational acceleration times height). This hydrostatic pressure provides a gentle, extra "push" that helps force the bolus through the EGJ .
+When you are sitting or standing upright, the column of liquid you swallow has weight. This weight creates a **hydrostatic pressure**, described by the simple formula $P = \rho g h$ (pressure equals density times gravitational acceleration times height). This hydrostatic pressure provides a gentle, extra "push" that helps force the bolus through the EGJ [@problem_id:5118642].
 
 This creates a powerful diagnostic test:
 
 *   **Obstruction Disappears Upright:** If a patient has a high IRP when lying down, but it drops to a normal level when they sit up, it suggests the obstruction is mild. The small assist from gravity was enough to overcome it. This might be considered a "false positive" for a severe, clinically important obstruction, and surgery can likely be avoided.
 
-*   **Obstruction Persists Upright:** If the IRP is high in the supine position and *remains high* in the upright position, it's a much more compelling finding. Even with the help of gravity, the valve is still stuck. This tells us that the underlying obstruction is significant and not just a borderline issue or measurement artifact . This persistence across both postures dramatically increases the **specificity** of the diagnosis, giving surgeons the confidence they need to proceed with treatment.
+*   **Obstruction Persists Upright:** If the IRP is high in the supine position and *remains high* in the upright position, it's a much more compelling finding. Even with the help of gravity, the valve is still stuck. This tells us that the underlying obstruction is significant and not just a borderline issue or measurement artifact [@problem_id:4593832]. This persistence across both postures dramatically increases the **specificity** of the diagnosis, giving surgeons the confidence they need to proceed with treatment.
 
 ### Converging Evidence: The Final Verdict
 
-The journey to a definitive diagnosis of EGJOO is a masterpiece of clinical reasoning, demanding evidence from multiple, complementary sources. A high IRP on [manometry](@entry_id:137079) is the first clue, but it's not proof, because the measurement can be confounded by artifacts like the catheter bending at the diaphragm or the presence of a hiatal hernia .
+The journey to a definitive diagnosis of EGJOO is a masterpiece of clinical reasoning, demanding evidence from multiple, complementary sources. A high IRP on [manometry](@keyword=manometry|lang=en-US|style=Feynman) is the first clue, but it's not proof, because the measurement can be confounded by artifacts like the catheter bending at the diaphragm or the presence of a hiatal hernia [@problem_id:5118667].
 
 Therefore, doctors seek corroborating evidence by asking a different kind of question. Instead of "What is the pressure?", they ask, "What are the *consequences* of that pressure?"
 

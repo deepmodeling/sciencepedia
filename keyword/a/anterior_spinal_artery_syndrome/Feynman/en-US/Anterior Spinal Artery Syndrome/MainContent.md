@@ -9,9 +9,9 @@ To truly understand a phenomenon like Anterior Spinal Artery Syndrome, we can’
 
 Imagine the spinal cord not as a simple electrical cable, but as a fantastically complex fiber-optic superhighway. It carries a torrent of information in both directions between the brain and the body. But crucially, this isn't one big jumble of data. The information is neatly sorted into dedicated lanes, or **tracts**, each carrying a specific type of signal. If we were to take a cross-section of this highway, we would see a beautiful, ordered structure.
 
-In the center lies a butterfly-shaped region of **gray matter**, which contains the cell bodies of neurons—the "command and control centers" where local processing occurs. Surrounding this is the **white matter**, which is made up of the long, [myelinated axons](@entry_id:149971) that form the long-distance communication tracts.
+In the center lies a butterfly-shaped region of **gray matter**, which contains the cell bodies of neurons—the "command and control centers" where local processing occurs. Surrounding this is the **white matter**, which is made up of the long, [myelinated axons](@keyword=myelinated_axons|lang=en-US|style=Feynman) that form the long-distance communication tracts.
 
-For our story, three main types of tracts are of paramount importance :
+For our story, three main types of tracts are of paramount importance [@problem_id:5150946]:
 
 1.  **The Descending Motor Highway (Corticospinal Tracts):** These are the express lanes carrying commands *from* the brain *to* the muscles, instructing them to move. They travel down the cord in the lateral (side) portions of the white matter.
 
@@ -19,11 +19,11 @@ For our story, three main types of tracts are of paramount importance :
 
 3.  **The Ascending Sensation Highway (Part II - Pain and Temperature):** This pathway, the **anterolateral system** (or spinothalamic tracts), is fundamentally different. When sensory fibers carrying pain and temperature information enter the spinal cord, their signals are immediately passed to a second neuron. This second neuron's axon promptly *crosses over* to the opposite side of the cord (via a structure called the anterior white commissure) and *then* ascends to the brain. These tracts travel in the anterior and lateral (front and side) parts of the white matter.
 
-This single anatomical detail—that touch/position fibers ascend on the same side while pain/temperature fibers cross over almost immediately—is the secret to understanding the strange and specific pattern of sensory loss in spinal cord syndromes .
+This single anatomical detail—that touch/position fibers ascend on the same side while pain/temperature fibers cross over almost immediately—is the secret to understanding the strange and specific pattern of sensory loss in spinal cord syndromes [@problem_id:4518573].
 
 ### The Lifelines: A Tale of Two Vascular Territories
 
-Like any busy superhighway, the spinal cord needs a constant and reliable supply of fuel—oxygen and glucose delivered by blood. But this delivery system is not a uniform flood. It is a precisely organized network with distinct territories, dominated by two main arterial systems .
+Like any busy superhighway, the spinal cord needs a constant and reliable supply of fuel—oxygen and glucose delivered by blood. But this delivery system is not a uniform flood. It is a precisely organized network with distinct territories, dominated by two main arterial systems [@problem_id:4525877].
 
 Think of it as two separate utility companies supplying the same city.
 
@@ -31,7 +31,7 @@ The first is the **Anterior Spinal Artery (ASA)**. This single, major artery run
 
 The second system consists of a pair of smaller **Posterior Spinal Arteries (PSAs)**. These run down the back of the cord and are responsible for the posterior one-third. Their territory almost exclusively covers the dorsal columns—the highway for touch and position sense.
 
-This division of labor is the linchpin of our story. A problem with the ASA will affect motor control, pain, and temperature, but will leave touch and [proprioception](@entry_id:153430) completely unscathed, because their supply from the PSAs is intact. This creates a remarkable "dissociated sensory loss," a clinical signature that allows neurologists to pinpoint the lesion to the front of the cord with astonishing accuracy, even before looking at an MRI .
+This division of labor is the linchpin of our story. A problem with the ASA will affect motor control, pain, and temperature, but will leave touch and [proprioception](@keyword=proprioception|lang=en-US|style=Feynman) completely unscathed, because their supply from the PSAs is intact. This creates a remarkable "dissociated sensory loss," a clinical signature that allows neurologists to pinpoint the lesion to the front of the cord with astonishing accuracy, even before looking at an MRI [@problem_id:4526363].
 
 ### When the Power Fails: Anatomy of an Infarction
 
@@ -39,19 +39,19 @@ Anterior Spinal Artery Syndrome is what happens when this critical anterior life
 
 When the ASA's flow is cut off, the structures in its territory begin to fail. The result is a highly specific pattern of deficits:
 
--   **Bilateral Motor Paralysis:** Because the ASA supplies the corticospinal tracts on both sides, a single infarct here leads to weakness or paralysis below the level of the injury. This weakness has a peculiar two-part character. At the exact level of the infarct, the [motor neuron](@entry_id:178963) cell bodies in the anterior horns die, leading to **lower motor neuron** signs: flaccid paralysis and loss of reflexes in the muscles innervated by that specific segment. Below the level of the infarct, the descending motor highway is cut off from the brain, leading to **upper [motor neuron](@entry_id:178963)** signs, which evolve over days to include spasticity and hyperactive reflexes .
+-   **Bilateral Motor Paralysis:** Because the ASA supplies the corticospinal tracts on both sides, a single infarct here leads to weakness or paralysis below the level of the injury. This weakness has a peculiar two-part character. At the exact level of the infarct, the [motor neuron](@keyword=motor_neuron|lang=en-US|style=Feynman) cell bodies in the anterior horns die, leading to **lower motor neuron** signs: flaccid paralysis and loss of reflexes in the muscles innervated by that specific segment. Below the level of the infarct, the descending motor highway is cut off from the brain, leading to **upper [motor neuron](@keyword=motor_neuron|lang=en-US|style=Feynman)** signs, which evolve over days to include spasticity and hyperactive reflexes [@problem_id:5064538].
 
 -   **Bilateral Loss of Pain and Temperature Sensation:** The anterolateral systems on both sides are knocked out, erasing the ability to feel pain and temperature below the lesion.
 
--   **Preservation of Vibration and Position Sense:** This is the most striking feature. The patient can't feel a pinprick on their leg but can tell you with perfect accuracy whether you are moving their big toe up or down . This is because the dorsal columns, happily perfused by the posterior spinal arteries, are completely spared.
+-   **Preservation of Vibration and Position Sense:** This is the most striking feature. The patient can't feel a pinprick on their leg but can tell you with perfect accuracy whether you are moving their big toe up or down [@problem_id:4973390]. This is because the dorsal columns, happily perfused by the posterior spinal arteries, are completely spared.
 
--   **Autonomic Dysfunction:** The descending pathways that control the bladder and bowel also run in the ASA's territory. Their disruption often leads to acute urinary retention and loss of bowel control .
+-   **Autonomic Dysfunction:** The descending pathways that control the bladder and bowel also run in the ASA's territory. Their disruption often leads to acute urinary retention and loss of bowel control [@problem_id:4526356].
 
 ### The Deeper "Why": A Story of Energy and Vulnerability
 
-But why are the motor neurons in the anterior horn so exquisitely sensitive to a lack of blood? Why do they fail so quickly? The answer lies in the fundamental principles of [cellular metabolism](@entry_id:144671) .
+But why are the motor neurons in the anterior horn so exquisitely sensitive to a lack of blood? Why do they fail so quickly? The answer lies in the fundamental principles of [cellular metabolism](@keyword=cellular_metabolism|lang=en-US|style=Feynman) [@problem_id:4526364].
 
-Let's return to our city analogy. The gray matter of the anterior horns, with its dense population of neuronal cell bodies and countless synapses firing away, is like the bustling, 24/7 financial district of a metropolis. It has an incredibly high [metabolic rate](@entry_id:140565), constantly burning through oxygen and glucose. To support this, it is packed with mitochondria (the cell's power plants) and is crisscrossed by a very dense network of capillaries.
+Let's return to our city analogy. The gray matter of the anterior horns, with its dense population of neuronal cell bodies and countless synapses firing away, is like the bustling, 24/7 financial district of a metropolis. It has an incredibly high [metabolic rate](@keyword=metabolic_rate|lang=en-US|style=Feynman), constantly burning through oxygen and glucose. To support this, it is packed with mitochondria (the cell's power plants) and is crisscrossed by a very dense network of capillaries.
 
 The white matter of the dorsal columns, in contrast, is more like the long, quiet inter-state highways. It's mostly insulated cabling. While it still requires energy to maintain its electrical potentials, its overall metabolic demand per unit of volume is far lower. It has fewer mitochondria and a sparser capillary network.
 
@@ -61,7 +61,7 @@ Now, imagine a sudden blockade of the main aqueduct supplying the city. The high
 
 Finally, it is a beautiful and sometimes sobering fact of biology that we are not all built from the same blueprint. There are variations in our anatomy, and these variations can have profound clinical significance. The vascular supply to the spinal cord is a prime example.
 
-The long Anterior Spinal Artery is not self-sufficient; it is reinforced along its length by critical feeder vessels, the most famous of which is the **Artery of Adamkiewicz**. The exact location of this artery can vary from person to person. Moreover, some individuals may have anatomical variants like a **hypoplastic** (underdeveloped) ASA, making their cord's perfusion more tenuous from the start. Others might be born with a **duplicated** ASA, providing a redundant, parallel supply line .
+The long Anterior Spinal Artery is not self-sufficient; it is reinforced along its length by critical feeder vessels, the most famous of which is the **Artery of Adamkiewicz**. The exact location of this artery can vary from person to person. Moreover, some individuals may have anatomical variants like a **hypoplastic** (underdeveloped) ASA, making their cord's perfusion more tenuous from the start. Others might be born with a **duplicated** ASA, providing a redundant, parallel supply line [@problem_id:4526429].
 
 Consider two patients undergoing the same aortic surgery. One has a single, narrow ASA whose main feeder artery lies directly in the surgical field. The other has a robust, duplicated ASA with multiple feeders from above and below. A temporary drop in blood pressure that might be trivial for the second patient could be catastrophic for the first. Understanding these individual anatomical differences, through principles of fluid dynamics like Poiseuille's law ($Q \propto r^4$, where flow is proportional to the radius to the fourth power), helps explain why risk is not uniform and moves us toward a more personalized understanding of neurological disease.
 

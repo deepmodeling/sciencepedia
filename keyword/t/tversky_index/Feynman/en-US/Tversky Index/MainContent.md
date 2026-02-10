@@ -1,7 +1,7 @@
 ## Introduction
 The quest to measure similarity is fundamental to science, from classifying species to comparing data sets. Simple and elegant metrics like the Jaccard index have long served as a foundation, quantifying overlap by comparing shared features to total features. However, these traditional methods harbor a critical flaw: they assume all differences are created equal. In high-stakes fields like medicine or public safety, this assumption can be dangerous, as mistaking a healthy patient for sick (a false positive) carries a vastly different cost than missing a true disease (a false negative). This gap highlights the need for a more nuanced, context-aware approach to similarity.
 
-This article delves into the Tversky index, a powerful framework proposed by psychologist Amos Tversky that directly addresses this problem. First, in "Principles and Mechanisms," we will unpack the mechanics of the index, exploring how its tunable parameters, α and β, allow us to assign different penalties to different kinds of errors. We will see how this transforms a simple similarity score into a sophisticated tool for encoding human priorities. Following this, the "Applications and Interdisciplinary Connections" section will showcase how the Tversky index is used as a loss function to train smarter, safer, and more effective artificial intelligence systems in fields ranging from medical diagnostics to [environmental monitoring](@entry_id:196500), bridging the gap between human values and machine optimization.
+This article delves into the Tversky index, a powerful framework proposed by psychologist Amos Tversky that directly addresses this problem. First, in "Principles and Mechanisms," we will unpack the mechanics of the index, exploring how its tunable parameters, α and β, allow us to assign different penalties to different kinds of errors. We will see how this transforms a simple similarity score into a sophisticated tool for encoding human priorities. Following this, the "Applications and Interdisciplinary Connections" section will showcase how the Tversky index is used as a loss function to train smarter, safer, and more effective artificial intelligence systems in fields ranging from medical diagnostics to [environmental monitoring](@keyword=environmental_monitoring|lang=en-US|style=Feynman), bridging the gap between human values and machine optimization.
 
 ## Principles and Mechanisms
 
@@ -15,7 +15,7 @@ $$
 J(A, B) = \frac{|A \cap B|}{|A \cup B|}
 $$
 
-This number, always between 0 and 1, tells you what fraction of the total features are shared. If the sets are identical, it's 1. If they have nothing in common, it's 0. A close cousin, the **Dice Similarity Coefficient (DSC)**, often used in [computer vision](@entry_id:138301), is defined as:
+This number, always between 0 and 1, tells you what fraction of the total features are shared. If the sets are identical, it's 1. If they have nothing in common, it's 0. A close cousin, the **Dice Similarity Coefficient (DSC)**, often used in [computer vision](@keyword=computer_vision|lang=en-US|style=Feynman), is defined as:
 
 $$
 D(A, B) = \frac{2 |A \cap B|}{|A| + |B|}
@@ -27,7 +27,7 @@ But is a mismatch always just a mismatch?
 
 ### When Mismatches Are Not Made Equal: The Birth of Asymmetry
 
-Let’s consider a high-stakes scenario from medicine. A pharmaceutical company has a flagship drug with a well-documented profile of adverse side effects, which we'll call set $A$. They are now testing a new, potentially cheaper "biosimilar" drug, which has its own observed set of side effects, set $B$. Our job is to compare them. How similar are their safety profiles? 
+Let’s consider a high-stakes scenario from medicine. A pharmaceutical company has a flagship drug with a well-documented profile of adverse side effects, which we'll call set $A$. They are now testing a new, potentially cheaper "biosimilar" drug, which has its own observed set of side effects, set $B$. Our job is to compare them. How similar are their safety profiles? [@problem_id:4558134]
 
 Here, the two types of mismatches have dramatically different meanings:
 
@@ -54,11 +54,11 @@ This simple addition is incredibly powerful. The Tversky index is not a single m
 *   If we care more about mismatches of type $A \setminus B$, we can turn up the $\alpha$ knob.
 *   If we care more about mismatches of type $B \setminus A$, we can turn up the $\beta$ knob.
 
-Returning to our drug safety example, let's say a clinical expert panel decides that failing to detect a known serious side effect ($A \setminus B$) is three times worse than flagging a new, unclassified one ($B \setminus A$). We can directly translate this priority into the mathematics by setting $\alpha = 3$ and $\beta = 1$. The Tversky index is now custom-built for our specific problem, perfectly reflecting our asymmetric valuation of errors. 
+Returning to our drug safety example, let's say a clinical expert panel decides that failing to detect a known serious side effect ($A \setminus B$) is three times worse than flagging a new, unclassified one ($B \setminus A$). We can directly translate this priority into the mathematics by setting $\alpha = 3$ and $\beta = 1$. The Tversky index is now custom-built for our specific problem, perfectly reflecting our asymmetric valuation of errors. [@problem_id:4558134]
 
 ### From Measuring Similarity to Teaching Machines
 
-This tunable lens for similarity has found a crucial application in a seemingly unrelated field: training artificial intelligence. Consider the task of **[semantic segmentation](@entry_id:637957)**, where an AI analyzes a medical image, like an MRI scan, and must outline the precise boundary of a tumor. 
+This tunable lens for similarity has found a crucial application in a seemingly unrelated field: training artificial intelligence. Consider the task of **[semantic segmentation](@keyword=semantic_segmentation|lang=en-US|style=Feynman)**, where an AI analyzes a medical image, like an MRI scan, and must outline the precise boundary of a tumor. [@problem_id:3145450]
 
 Here, the ground truth, or "the right answer," is the set of all pixels that are actually part of the tumor, let's call it $G$. The AI's prediction is the set of pixels it *thinks* are part of the tumor, set $P$. We want to train the AI to make $P$ as similar to $G$ as possible.
 
@@ -79,17 +79,17 @@ $$
 L_T = 1 - \frac{TP}{TP + \alpha FP + \beta FN}
 $$
 
-In a cancer screening program, the clinical reality is stark: missing even a small part of a tumor (high FN count) can be catastrophic. Causing a false alarm (high FP count) leads to an extra follow-up test, which is stressful and costly, but far less dire than a missed diagnosis.   To teach the AI this clinical priority, we simply adjust the knobs. We want to penalize False Negatives more heavily, so we choose $\beta > \alpha$. A common choice is to set $\beta=0.7$ and $\alpha=0.3$. By training the AI to minimize this specific loss function, we encourage it to become highly sensitive to any sign of disease, even at the cost of being slightly overcautious.
+In a cancer screening program, the clinical reality is stark: missing even a small part of a tumor (high FN count) can be catastrophic. Causing a false alarm (high FP count) leads to an extra follow-up test, which is stressful and costly, but far less dire than a missed diagnosis. [@problem_id:5225262] [@problem_id:4535917] To teach the AI this clinical priority, we simply adjust the knobs. We want to penalize False Negatives more heavily, so we choose $\beta > \alpha$. A common choice is to set $\beta=0.7$ and $\alpha=0.3$. By training the AI to minimize this specific loss function, we encourage it to become highly sensitive to any sign of disease, even at the cost of being slightly overcautious.
 
 ### The Calculus of Priorities: How the Knobs Work
 
 How does this actually work inside the "brain" of the AI? During training, an algorithm like gradient descent adjusts the AI's internal parameters to minimize the loss. The gradient is a vector that points in the direction of the steepest increase in the loss; the AI takes a small step in the opposite direction.
 
-The beauty of the Tversky loss lies in how $\alpha$ and $\beta$ shape this gradient. Through the magic of calculus, one can show that the relative influence of false positives and false negatives on the gradient is controlled directly by the ratio of their weights. The ratio of the loss's sensitivity to an increase in False Negatives versus its sensitivity to an increase in False Positives is simply $\beta / \alpha$. 
+The beauty of the Tversky loss lies in how $\alpha$ and $\beta$ shape this gradient. Through the magic of calculus, one can show that the relative influence of false positives and false negatives on the gradient is controlled directly by the ratio of their weights. The ratio of the loss's sensitivity to an increase in False Negatives versus its sensitivity to an increase in False Positives is simply $\beta / \alpha$. [@problem_id:3145450]
 
 This is a profound result. By setting $\beta = 0.7$ and $\alpha = 0.3$, we are not just waving our hands and hoping for the best. We are giving the learning algorithm a precise, mathematical instruction: "For every tiny adjustment you make, be $0.7/0.3 \approx 2.33$ times more concerned about getting rid of a False Negative than you are about getting rid of a False Positive." The high-level, qualitative preference of a clinician is translated directly into the quantitative mechanics of machine learning.
 
-So, how do we choose the right values for $\alpha$ and $\beta$? Must we simply guess? Often, we don't have to. In a remarkably elegant piece of analysis, it can be shown that the optimal ratio $\alpha/\beta$ can be directly derived from the economics and statistics of the problem itself. It is related to the real-world costs of each error ($c_{FP}, c_{FN}$) and the prevalence of positive and negative cases in the data ($\pi^+, \pi^-$).  This elevates the Tversky index from a clever heuristic to a principled engineering tool, allowing us to build AI systems that are not only accurate but also aligned with the specific risks and rewards of their environment.
+So, how do we choose the right values for $\alpha$ and $\beta$? Must we simply guess? Often, we don't have to. In a remarkably elegant piece of analysis, it can be shown that the optimal ratio $\alpha/\beta$ can be directly derived from the economics and statistics of the problem itself. It is related to the real-world costs of each error ($c_{FP}, c_{FN}$) and the prevalence of positive and negative cases in the data ($\pi^+, \pi^-$). [@problem_id:4535958] This elevates the Tversky index from a clever heuristic to a principled engineering tool, allowing us to build AI systems that are not only accurate but also aligned with the specific risks and rewards of their environment.
 
 ### A Unifying Perspective
 

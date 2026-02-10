@@ -65,9 +65,9 @@ This creates a time-stamped, unchangeable record of intent. It is the primary de
 
 #### The Siren Song of Subgroups
 
-One of the most seductive mirages in clinical data is the subgroup finding. The overall trial result is modest, but when you slice the data, you find the drug appears to work spectacularly well in a small subgroup—say, women over 65 with low kidney function. Is this a breakthrough for [personalized medicine](@entry_id:152668), or is it just the random noise of statistics?
+One of the most seductive mirages in clinical data is the subgroup finding. The overall trial result is modest, but when you slice the data, you find the drug appears to work spectacularly well in a small subgroup—say, women over 65 with low kidney function. Is this a breakthrough for [personalized medicine](@keyword=personalized_medicine|lang=en-US|style=Feynman), or is it just the random noise of statistics?
 
-If you torture the data long enough, it will confess to anything. Testing dozens of subgroups is a form of [multiple testing](@entry_id:636512), and it dramatically increases the chance of finding a "significant" result by luck alone. To lend credibility to a subgroup claim, CONSORT and statistical common sense demand a high bar:
+If you torture the data long enough, it will confess to anything. Testing dozens of subgroups is a form of [multiple testing](@keyword=multiple_testing|lang=en-US|style=Feynman), and it dramatically increases the chance of finding a "significant" result by luck alone. To lend credibility to a subgroup claim, CONSORT and statistical common sense demand a high bar:
 1.  **Was the hypothesis prespecified?** A claim is far more credible if it was declared *before* looking at the data.
 2.  **Was a formal test of interaction performed?** The correct question is not "Is the effect significant in group A and not in group B?" The correct question is "Is the effect *statistically significantly different* between group A and group B?" This requires a formal statistical test for a treatment-by-subgroup interaction.
 3.  **Was the finding adjusted for multiplicity?** If you test four subgroup hypotheses, you should use a stricter threshold for significance (e.g., $p  \frac{0.05}{4}$) to account for the multiple looks at the data.

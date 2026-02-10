@@ -5,11 +5,11 @@ To unravel this physiological paradox, we will explore the intricate interplay b
 
 ## Principles and Mechanisms
 
-To understand how a life-sustaining organ like the kidney can enter into a destructive spiral with the [circulatory system](@entry_id:151123), we must think like a physicist and a biologist at the same time. The relationship is governed by simple mechanics, elegant control systems, and tragic misinterpretations.
+To understand how a life-sustaining organ like the kidney can enter into a destructive spiral with the [circulatory system](@keyword=circulatory_system|lang=en-US|style=Feynman), we must think like a physicist and a biologist at the same time. The relationship is governed by simple mechanics, elegant control systems, and tragic misinterpretations.
 
 ### A High-Pressure Filtration System
 
-Imagine the kidney as an extraordinarily sophisticated [water purification](@entry_id:271435) plant for your blood. It contains about a million microscopic filtering units called **nephrons**. At the heart of each [nephron](@entry_id:150239) lies a delicate, tangled ball of capillaries known as the **glomerulus**. This is where the magic happens. Your blood pressure forces water and small waste products out of the blood in the glomerulus and into the [nephron](@entry_id:150239)'s tubing system, leaving behind essential proteins and blood cells.
+Imagine the kidney as an extraordinarily sophisticated [water purification](@keyword=water_purification|lang=en-US|style=Feynman) plant for your blood. It contains about a million microscopic filtering units called **nephrons**. At the heart of each [nephron](@keyword=nephron|lang=en-US|style=Feynman) lies a delicate, tangled ball of capillaries known as the **glomerulus**. This is where the magic happens. Your blood pressure forces water and small waste products out of the blood in the glomerulus and into the [nephron](@keyword=nephron|lang=en-US|style=Feynman)'s tubing system, leaving behind essential proteins and blood cells.
 
 This filtration is purely a game of pressure. For it to work, the pressure inside the glomerular capillaries, the **glomerular capillary hydrostatic pressure** ($P_{\mathrm{GC}}$), must be just right—high enough to push fluid out, but not so high that it damages the fragile filter itself. Nature, in its wisdom, devised a brilliant control system.
 
@@ -27,7 +27,7 @@ Let's first consider long-standing, moderately high blood pressure—the "slow b
 
 Over years, this chronic stress injures the smooth inner lining of the arterioles, the endothelium. The wall becomes "leaky," allowing plasma proteins to seep from the blood into the vessel wall. This, along with an overproduction of structural proteins by stressed muscle cells, creates a glassy, homogeneous thickening. Pathologists call this **hyaline arteriolosclerosis**. Think of it as a hard, brittle scale building up inside the pipes.
 
-This buildup narrows the vessel, reducing blood flow to the glomerulus. Starved of oxygen and nutrients—a condition known as ischemia—the delicate glomerular filters begin to wither and scar over, a process called **[glomerulosclerosis](@entry_id:155306)**. As nephrons die off one by one, the kidney loses its functional mass. Over many years, the entire organ shrinks, becoming dense and scarred. On an ultrasound, these kidneys appear small and unusually bright, or echogenic, a ghostly image of the slow burn that has consumed them.
+This buildup narrows the vessel, reducing blood flow to the glomerulus. Starved of oxygen and nutrients—a condition known as ischemia—the delicate glomerular filters begin to wither and scar over, a process called **[glomerulosclerosis](@keyword=glomerulosclerosis|lang=en-US|style=Feynman)**. As nephrons die off one by one, the kidney loses its functional mass. Over many years, the entire organ shrinks, becoming dense and scarred. On an ultrasound, these kidneys appear small and unusually bright, or echogenic, a ghostly image of the slow burn that has consumed them.
 
 ### The Blowout: Acute and Malignant Injury
 
@@ -59,7 +59,7 @@ This is the ultimate physiological irony. The kidney, falsely believing the body
 
 Not everyone's journey through this cycle is the same. Two factors, in particular, can dramatically alter the course: salt and sugar.
 
-A key function of the kidney is **[pressure natriuresis](@entry_id:152640)**: when blood pressure rises, the kidney responds by excreting more sodium (and water), which brings the pressure back down. However, some individuals are "salt-sensitive." Their kidneys have a blunted response; they require a much higher systemic blood pressure to excrete the same dietary salt load. For these individuals, a high-salt diet forces their body to maintain a chronically elevated blood pressure, placing them on an accelerated path toward the "slow burn" of hyaline arteriolosclerosis.
+A key function of the kidney is **[pressure natriuresis](@keyword=pressure_natriuresis|lang=en-US|style=Feynman)**: when blood pressure rises, the kidney responds by excreting more sodium (and water), which brings the pressure back down. However, some individuals are "salt-sensitive." Their kidneys have a blunted response; they require a much higher systemic blood pressure to excrete the same dietary salt load. For these individuals, a high-salt diet forces their body to maintain a chronically elevated blood pressure, placing them on an accelerated path toward the "slow burn" of hyaline arteriolosclerosis.
 
 Diabetes mellitus acts as a powerful and destructive accomplice. Chronic high blood sugar leads to the formation of **Advanced Glycation End-products (AGEs)**. Think of AGEs as a kind of molecular caramel that forms on long-lived proteins in the body, including those in the walls of blood vessels. This "caramelization" stiffens the vessels, makes them more prone to injury, and promotes the inflammation that worsens leakiness and sclerosis.
 

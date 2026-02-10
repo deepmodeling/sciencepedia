@@ -5,7 +5,7 @@ This article illuminates the scientific principles and interdisciplinary artistr
 
 ## Principles and Mechanisms
 
-To truly appreciate the elegance and ingenuity of a canal wall up mastoidectomy, we must first journey into the world it is designed to mend—a microscopic landscape governed by pressure, anatomy, and the relentless biology of our own skin. The surgery is not merely about removing something; it is about restoring a delicate, [dynamic equilibrium](@entry_id:136767) within the temporal bone.
+To truly appreciate the elegance and ingenuity of a canal wall up mastoidectomy, we must first journey into the world it is designed to mend—a microscopic landscape governed by pressure, anatomy, and the relentless biology of our own skin. The surgery is not merely about removing something; it is about restoring a delicate, [dynamic equilibrium](@keyword=dynamic_equilibrium|lang=en-US|style=Feynman) within the temporal bone.
 
 ### The Problem: A Renegade Skin
 
@@ -13,7 +13,7 @@ At the heart of this surgical drama is a condition known as **cholesteatoma**. T
 
 How does it get there? There are two primary pathways, both born from a failure of the ear's normal mechanics.
 
-The most common origin is a **primary acquired cholesteatoma**. It begins with a fault in the ear's pressure-regulation system. When this system fails, a sustained [negative pressure](@entry_id:161198) builds up behind the eardrum, like a slowly deflating balloon. The weakest part of the eardrum, a small, flimsy area at the top called the **pars flaccida**, gets sucked inward, forming a **retraction pocket**. This pocket deepens over time, creating a blind alley where desquamated skin flakes, or keratin, can no longer clear themselves naturally. They become trapped, accumulate, and a cholesteatoma is born.
+The most common origin is a **primary acquired cholesteatoma**. It begins with a fault in the ear's pressure-regulation system. When this system fails, a sustained [negative pressure](@keyword=negative_pressure|lang=en-US|style=Feynman) builds up behind the eardrum, like a slowly deflating balloon. The weakest part of the eardrum, a small, flimsy area at the top called the **pars flaccida**, gets sucked inward, forming a **retraction pocket**. This pocket deepens over time, creating a blind alley where desquamated skin flakes, or keratin, can no longer clear themselves naturally. They become trapped, accumulate, and a cholesteatoma is born.
 
 The second path is the **secondary acquired cholesteatoma**, which arises when there is already a perforation in the stronger part of the eardrum, the **pars tensa**. Skin from the outer ear canal simply migrates inward through this hole, establishing a colony where it does not belong.
 
@@ -23,13 +23,13 @@ Once established, this "renegade skin" is a destructive force. It is not maligna
 
 To understand the challenge of cholesteatoma, and the elegance of the surgical solutions, we must first appreciate the middle ear as a piece of exquisite biological engineering. It is not just the small space directly behind the eardrum; it is an interconnected system of two chambers: the **tympanic cavity** (the middle ear proper) and the **mastoid air cell system**, a honeycomb of air pockets in the bone behind the ear.
 
-The entire system is a closed [pressure vessel](@entry_id:191906), connected to the outside world by a single, remarkable valve: the **Eustachian tube**. This tube, running from the middle ear to the back of the nose, intermittently opens when we swallow or yawn, allowing pressure to equalize.
+The entire system is a closed [pressure vessel](@keyword=pressure_vessel|lang=en-US|style=Feynman), connected to the outside world by a single, remarkable valve: the **Eustachian tube**. This tube, running from the middle ear to the back of the nose, intermittently opens when we swallow or yawn, allowing pressure to equalize.
 
-Why the elaborate honeycomb of air cells in the mastoid? It serves as a vital **pressure buffer**. Imagine the middle ear-mastoid system as a gas-filled container. The tissue lining this container is alive and constantly absorbs gas molecules (mostly nitrogen) from the air, a process governed by the simple physics of diffusion. According to the [ideal gas law](@entry_id:146757), $P V = n R T$, if the number of gas molecules ($n$) decreases in a fixed volume ($V$), the pressure ($P$) must drop.
+Why the elaborate honeycomb of air cells in the mastoid? It serves as a vital **pressure buffer**. Imagine the middle ear-mastoid system as a gas-filled container. The tissue lining this container is alive and constantly absorbs gas molecules (mostly nitrogen) from the air, a process governed by the simple physics of diffusion. According to the [ideal gas law](@keyword=ideal_gas_law|lang=en-US|style=Feynman), $P V = n R T$, if the number of gas molecules ($n$) decreases in a fixed volume ($V$), the pressure ($P$) must drop.
 
-If the total volume of the system is large, as in a **well-pneumatized mastoid** with many air cells, the loss of a few gas molecules results in only a tiny dip in pressure before the Eustachian tube opens again. The large mastoid volume acts as a buffer. However, if the mastoid is underdeveloped, dense, and has few air cells—a condition known as a **sclerotic mastoid**—the total volume $V$ is small. In this scenario, the same rate of [gas absorption](@entry_id:151140) leads to a much faster and more dramatic drop in pressure.
+If the total volume of the system is large, as in a **well-pneumatized mastoid** with many air cells, the loss of a few gas molecules results in only a tiny dip in pressure before the Eustachian tube opens again. The large mastoid volume acts as a buffer. However, if the mastoid is underdeveloped, dense, and has few air cells—a condition known as a **sclerotic mastoid**—the total volume $V$ is small. In this scenario, the same rate of [gas absorption](@keyword=gas_absorption|lang=en-US|style=Feynman) leads to a much faster and more dramatic drop in pressure.
 
-This single physical principle explains why individuals with sclerotic mastoids and poorly functioning Eustachian tubes are predisposed to the chronic [negative pressure](@entry_id:161198) that initiates a cholesteatoma. The anatomy, the physics, and the pathology are inextricably linked.
+This single physical principle explains why individuals with sclerotic mastoids and poorly functioning Eustachian tubes are predisposed to the chronic [negative pressure](@keyword=negative_pressure|lang=en-US|style=Feynman) that initiates a cholesteatoma. The anatomy, the physics, and the pathology are inextricably linked.
 
 ### The Surgical Dilemma: To Preserve or To Exteriorize?
 
@@ -47,7 +47,7 @@ The great disadvantage, however, is that this beautifully restored anatomic syst
 
 The alternative philosophy is to prioritize safety and complete disease eradication above all else. In a CWD mastoidectomy, the surgeon takes down the posterior canal wall, exteriorizing the mastoid and attic. This transforms the two-chamber system into a single, large cavity—a **"mastoid bowl"**—that is open to the external ear canal.
 
-This strategy brilliantly solves the ventilation problem. The mastoid is no longer a closed space susceptible to [negative pressure](@entry_id:161198); it is constantly aerated from the outside. It also makes surveillance a simple matter of looking into the ear canal during an office visit. For this reason, it is often the preferred choice for patients with severely compromised Eustachian tube function or in sclerotic mastoids where the risk of CWU failure is high.
+This strategy brilliantly solves the ventilation problem. The mastoid is no longer a closed space susceptible to [negative pressure](@keyword=negative_pressure|lang=en-US|style=Feynman); it is constantly aerated from the outside. It also makes surveillance a simple matter of looking into the ear canal during an office visit. For this reason, it is often the preferred choice for patients with severely compromised Eustachian tube function or in sclerotic mastoids where the risk of CWU failure is high.
 
 But this safety comes at a price. The *effective closed volume* of the middle ear is now drastically reduced, leading to lower compliance and poorer low-frequency hearing. The patient is also left with a large cavity that can collect debris, become infected, and cause dizziness when exposed to cold air or water. It often requires lifelong professional cleaning.
 
@@ -81,4 +81,4 @@ Mastoidectomy is a procedure performed on a knife's edge, where critical structu
 
 -   **Protecting the Brain and Major Vessels:** The roof of the mastoid is a thin plate of bone called the **tegmen**, all that separates the ear from the brain. The posterior wall covers the **sigmoid sinus**, a major vein. Surgeons use CT scans to map these boundaries and dissect with extreme care. Should a breach occur, the principles are clear: a watertight dural repair using the patient's own tissue to prevent a **cerebrospinal fluid (CSF) leak**, and gentle tamponade to control bleeding from the low-pressure venous sinus.
 
-From the physics of gases and fluids to the biology of [wound healing](@entry_id:181195) and the anatomy of microscopic corridors, canal wall up mastoidectomy is a profound synthesis of scientific principle and surgical artistry. It represents a commitment to not just removing disease, but to restoring the beautiful, intricate, and functional anatomy of the human ear.
+From the physics of gases and fluids to the biology of [wound healing](@keyword=wound_healing|lang=en-US|style=Feynman) and the anatomy of microscopic corridors, canal wall up mastoidectomy is a profound synthesis of scientific principle and surgical artistry. It represents a commitment to not just removing disease, but to restoring the beautiful, intricate, and functional anatomy of the human ear.

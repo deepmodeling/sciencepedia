@@ -37,7 +37,7 @@ The older therapies, such as **corticosteroids** and **thiopurines** (like azath
 
 Thiopurines also introduced us to the fascinating world of **pharmacogenomics**. These drugs are pro-drugs, meaning they must be metabolized in the body to become active. This happens via competing enzymatic pathways. One path, involving the enzyme **HPRT**, leads to the active, therapeutic **6-thioguanine nucleotides (6-TGNs)**. Another path, using the enzyme **TPMT**, leads to an inactive metabolite, **6-methylmercaptopurine (6-MMP)**, which can be toxic to the liver at high levels. We all have genes for these enzymes, but variations in the DNA code can make our enzymes faster or slower. A person with low-activity **TPMT** or **NUDT15** (another key enzyme) can't efficiently shunt the drug down the inactivation pathway. This causes a dangerous buildup of the active 6-TGNs, leading to severe bone marrow suppression. Genetic testing before starting these drugs has become a standard of care, a first step toward personalized medicine. This metabolic balance can even be tilted by other drugs. Certain medications used in IBD, called 5-ASAs, can inhibit the TPMT enzyme, forcing more of the parent drug down the HPRT pathway, raising levels of the active 6-TGNs and potentially increasing the risk of toxicity if not monitored.
 
-The true revolution, however, has been the advent of **biologic therapies**. These are engineered proteins, usually [monoclonal antibodies](@entry_id:136903), that act like molecular scalpels, targeting a single, specific component of the inflammatory cascade.
+The true revolution, however, has been the advent of **biologic therapies**. These are engineered proteins, usually [monoclonal antibodies](@keyword=monoclonal_antibodies|lang=en-US|style=Feynman), that act like molecular scalpels, targeting a single, specific component of the inflammatory cascade.
 
 One class, the **anti-TNF agents** (like infliximab and adalimumab), targets a key inflammatory signaling molecule called Tumor Necrosis Factor-alpha (TNF-α). TNF is like a master alarm bell that rouses the immune system to action. By blocking it, we can silence a major driver of inflammation.
 
@@ -45,7 +45,7 @@ An even more elegant mechanism is seen in the **anti-integrin** therapies. For i
 
 ### The Body Fights Back: Immunogenicity and Therapeutic Failure
 
-These biologic scalpels are powerful, but they come with a unique challenge. Because they are large proteins, the patient's own immune system can sometimes recognize them as foreign and mount an attack, creating **[anti-drug antibodies](@entry_id:182649) (ADAs)**.
+These biologic scalpels are powerful, but they come with a unique challenge. Because they are large proteins, the patient's own immune system can sometimes recognize them as foreign and mount an attack, creating **[anti-drug antibodies](@keyword=anti_drug_antibodies|lang=en-US|style=Feynman) (ADAs)**.
 
 When ADAs form, they bind to the drug, creating immune complexes that are rapidly cleared from the body. Imagine the drug concentration in the blood as the water level in a bathtub. The drug is infused (filling the tub), and the body's natural clearance is a slow leak from the drain. ADAs effectively open the drain much wider. The drug is cleared so quickly that its concentration at the end of a dosing interval—the **trough concentration**—can fall below the minimum level needed for a therapeutic effect. The result is a loss of response; the drug simply isn't around long enough or at a high enough concentration to do its job.
 

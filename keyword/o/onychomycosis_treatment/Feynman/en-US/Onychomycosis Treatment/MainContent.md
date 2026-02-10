@@ -19,7 +19,7 @@ The principle governing this is **Fick's First Law**, which tells us that the ra
 
 $$J = -D \frac{dC}{dx}$$
 
-Think of $D$ as a measure of how easily the drug can move through the [keratin](@entry_id:172055) maze. For the dense, tightly packed nail, this value is punishingly small. In a hypothetical but realistic scenario, for a topical drug like efinaconazole, we can estimate its journey. Given a typical nail thickness and the drug's diffusion coefficient, the resulting flux is minuscule (). The amount of drug arriving at the nail bed per second is incredibly small. This **transport-limited delivery** is the fundamental reason why topical treatments are notoriously slow, often requiring daily application for a year or more, and why they frequently fail. The drug simply can't get to the heart of the infection in sufficient quantities to win the battle.
+Think of $D$ as a measure of how easily the drug can move through the [keratin](@keyword=keratin|lang=en-US|style=Feynman) maze. For the dense, tightly packed nail, this value is punishingly small. In a hypothetical but realistic scenario, for a topical drug like efinaconazole, we can estimate its journey. Given a typical nail thickness and the drug's diffusion coefficient, the resulting flux is minuscule ([@problem_id:4468185]). The amount of drug arriving at the nail bed per second is incredibly small. This **transport-limited delivery** is the fundamental reason why topical treatments are notoriously slow, often requiring daily application for a year or more, and why they frequently fail. The drug simply can't get to the heart of the infection in sufficient quantities to win the battle.
 
 #### The Systemic Solution: An Inside Job
 
@@ -31,7 +31,7 @@ How long does this take? We can answer this with simple kinematics, the physics 
 
 $$T_{\text{replace}} = \frac{L}{g} = \frac{18\,\mathrm{mm}}{1.0\,\mathrm{mm/month}} = 18\,\text{months}$$
 
-This simple calculation reveals a profound truth: systemic therapy is a commitment measured not in weeks, but in months or even years (). It’s a testament to the slow, steady rhythm of our own biology.
+This simple calculation reveals a profound truth: systemic therapy is a commitment measured not in weeks, but in months or even years ([@problem_id:4637852]). It’s a testament to the slow, steady rhythm of our own biology.
 
 ### Know Thy Enemy: Not All Fungi Are Created Equal
 
@@ -39,11 +39,11 @@ Getting a drug to the battlefield is only half the story. It has to be the right
 
 #### The Detective Work of Diagnosis
 
-Because different fungi respond to different drugs, a correct diagnosis is not an academic exercise; it is the cornerstone of effective treatment. Clinicians can't just guess based on appearance. The gold standard involves scraping debris from under the nail, preparing it with potassium hydroxide (**KOH**) to dissolve the human keratin and reveal the fungal structures under a microscope, and then culturing the sample on a special medium to grow and identify the specific organism (). This critical step ensures the chosen therapy is matched to the specific invader.
+Because different fungi respond to different drugs, a correct diagnosis is not an academic exercise; it is the cornerstone of effective treatment. Clinicians can't just guess based on appearance. The gold standard involves scraping debris from under the nail, preparing it with potassium hydroxide (**KOH**) to dissolve the human keratin and reveal the fungal structures under a microscope, and then culturing the sample on a special medium to grow and identify the specific organism ([@problem_id:4637850]). This critical step ensures the chosen therapy is matched to the specific invader.
 
 #### A Tale of Two Pathogens: Dermatophytes vs. Yeasts
 
-Consider the difference between an infection caused by a dermatophyte versus a yeast like *Candida*. A dermatophyte typically invades from the tip of the nail, causing the classic distal and lateral onychomycosis. *Candida*, on the other hand, often starts at the nail base, causing inflammation of the nail fold known as **paronychia**, a common affliction for those whose hands are frequently in water ().
+Consider the difference between an infection caused by a dermatophyte versus a yeast like *Candida*. A dermatophyte typically invades from the tip of the nail, causing the classic distal and lateral onychomycosis. *Candida*, on the other hand, often starts at the nail base, causing inflammation of the nail fold known as **paronychia**, a common affliction for those whose hands are frequently in water ([@problem_id:4425702]).
 
 Their response to medication is also starkly different. The allylamine drugs, like **terbinafine**, are precision weapons highly effective against dermatophytes. The azole drugs, like **itraconazole**, are more broad-spectrum. Prescribing terbinafine for a *Candida* infection would be like using the wrong key for a lock—it simply won’t work. This highlights why identifying the pathogen is essential.
 
@@ -51,15 +51,15 @@ Their response to medication is also starkly different. The allylamine drugs, li
 
 NDMs present an even greater challenge. They are often inherently resistant to standard therapies. A key concept in pharmacology is the **Minimum Inhibitory Concentration (MIC)**, which is the lowest concentration of a drug needed to stop the pathogen from growing in a lab dish. For a treatment to have any chance of success, the concentration of the drug achieved in the nail must exceed this MIC value.
 
-As laboratory data shows, an NDM like *Scopulariopsis* can have a terbinafine MIC that is nearly 70 times higher than that of a typical dermatophyte (). Even if oral terbinafine achieves a good concentration in the nail, it may still be far below the MIC required to inhibit the NDM. This is a primary reason why NDM infections are so difficult to cure and may require different drugs or combination strategies.
+As laboratory data shows, an NDM like *Scopulariopsis* can have a terbinafine MIC that is nearly 70 times higher than that of a typical dermatophyte ([@problem_id:4626053]). Even if oral terbinafine achieves a good concentration in the nail, it may still be far below the MIC required to inhibit the NDM. This is a primary reason why NDM infections are so difficult to cure and may require different drugs or combination strategies.
 
 ### The Art of Pharmacology: Choosing the Right Weapon and Strategy
 
-With an understanding of the fortress and the enemy, we can now turn to the weapons themselves—the [antifungal drugs](@entry_id:174819). Their effectiveness depends not only on their intrinsic power but also on how they are wielded.
+With an understanding of the fortress and the enemy, we can now turn to the weapons themselves—the [antifungal drugs](@keyword=antifungal_drugs|lang=en-US|style=Feynman). Their effectiveness depends not only on their intrinsic power but also on how they are wielded.
 
 #### The Sprinter and the Marathon Runner: Fungicidal vs. Fungistatic
 
-Antifungal drugs can be broadly classified by their mode of action. A **fungicidal** agent actively kills the fungus. A **fungistatic** agent merely prevents it from growing and replicating (). Think of it as the difference between a pesticide and a fence. The pesticide eradicates the pest, while the fence only keeps it contained as long as the fence is maintained.
+Antifungal drugs can be broadly classified by their mode of action. A **fungicidal** agent actively kills the fungus. A **fungistatic** agent merely prevents it from growing and replicating ([@problem_id:4468206]). Think of it as the difference between a pesticide and a fence. The pesticide eradicates the pest, while the fence only keeps it contained as long as the fence is maintained.
 
 Terbinafine is generally fungicidal against dermatophytes, while itraconazole is often fungistatic. This difference has profound implications for treatment strategy.
 
@@ -67,11 +67,11 @@ Terbinafine is generally fungicidal against dermatophytes, while itraconazole is
 
 This leads to two different dosing philosophies. Terbinafine is typically given as a continuous daily dose for several months. This maintains a steady, lethal concentration of the "pesticide" in the nail, ensuring complete eradication.
 
-Itraconazole, on the other hand, is often given in "pulses"—a high dose for one week, followed by three weeks off, repeated for several cycles. This strategy relies on the drug's ability to persist in the nail during the "off" period. It’s an effective strategy, but if the concentration of the fungistatic "fence" dips below the MIC during the off-weeks, the fungus can begin to grow again. This fundamental difference in pharmacology is one reason why continuous terbinafine often demonstrates higher cure rates for dermatophyte toenail infections than pulsed itraconazole ().
+Itraconazole, on the other hand, is often given in "pulses"—a high dose for one week, followed by three weeks off, repeated for several cycles. This strategy relies on the drug's ability to persist in the nail during the "off" period. It’s an effective strategy, but if the concentration of the fungistatic "fence" dips below the MIC during the off-weeks, the fungus can begin to grow again. This fundamental difference in pharmacology is one reason why continuous terbinafine often demonstrates higher cure rates for dermatophyte toenail infections than pulsed itraconazole ([@problem_id:4468206]).
 
 #### The Drug's Journey: The Power of a Depot
 
-Why are drugs like terbinafine so effective and persistent? Part of the answer lies in its chemical nature. Terbinafine is **lipophilic**, or "fat-loving." This property causes it to accumulate in lipid-rich tissues and structures, including the sebum of the skin and the keratin of the nail. It creates a **depot**, a reservoir of drug that slowly leaches out over a very long time, maintaining a therapeutic concentration long after a patient has finished their course of pills (). This depot effect is crucial for protecting the slow-growing nail for months on end.
+Why are drugs like terbinafine so effective and persistent? Part of the answer lies in its chemical nature. Terbinafine is **lipophilic**, or "fat-loving." This property causes it to accumulate in lipid-rich tissues and structures, including the sebum of the skin and the keratin of the nail. It creates a **depot**, a reservoir of drug that slowly leaches out over a very long time, maintaining a therapeutic concentration long after a patient has finished their course of pills ([@problem_gpid:4626001]). This depot effect is crucial for protecting the slow-growing nail for months on end.
 
 ### Advanced Warfare: When the Fungus Fights Back
 
@@ -79,7 +79,7 @@ Sometimes, even with the right diagnosis, the right drug, and the right strategy
 
 #### The Fungal Slime-Fortress: Biofilms
 
-Many fungi, including those that cause onychomycosis, can form a **biofilm**. A biofilm is not just a pile of cells; it's an organized community encased in a self-produced slime matrix of **Extracellular Polymeric Substance (EPS)**. This structure provides a formidable defense against both the host immune system and [antifungal drugs](@entry_id:174819) ().
+Many fungi, including those that cause onychomycosis, can form a **biofilm**. A biofilm is not just a pile of cells; it's an organized community encased in a self-produced slime matrix of **Extracellular Polymeric Substance (EPS)**. This structure provides a formidable defense against both the host immune system and [antifungal drugs](@keyword=antifungal_drugs|lang=en-US|style=Feynman) ([@problem_id:4468235]).
 
 The biofilm defeats drugs in two clever ways:
 1.  **A Physical Barrier**: The EPS slime acts like a sticky, dense maze. It can bind drug molecules, preventing them from penetrating deeper, and it dramatically slows down their diffusion. This creates a steep concentration gradient where the drug level at the surface of the biofilm may be high, but the level reaching the cells at the bottom is too low to be effective.
@@ -89,7 +89,7 @@ Because of these defenses, the concentration of a drug needed to kill a biofilm 
 
 #### The Dermatophytoma: A Fungal Super-Organism
 
-A dramatic and clinically challenging manifestation of this community defense is the **dermatophytoma**. This is a dense, compact, organized mass of fungal hyphae that forms a distinct structure within the nail (). It is, in essence, a macroscopic biofilm.
+A dramatic and clinically challenging manifestation of this community defense is the **dermatophytoma**. This is a dense, compact, organized mass of fungal hyphae that forms a distinct structure within the nail ([@problem_id:4468210]). It is, in essence, a macroscopic biofilm.
 
 Why is it so hard to treat? Once again, physics provides the answer. The characteristic time ($t$) it takes for a drug to diffuse to the core of a mass is proportional to the square of its radius ($L$) and inversely proportional to the diffusion coefficient ($D$):
 
@@ -97,4 +97,4 @@ $$t \sim \frac{L^2}{D}$$
 
 For a dermatophytoma just one millimeter in radius, the calculation shows it could take on the order of *days to weeks* for the drug to reach the center in therapeutic concentrations. The outer layers of the mass consume the drug, creating a "shield" that protects the core, allowing it to survive and serve as a reservoir for reinfection.
 
-This physical insight provides a clear, rational explanation for treatments that might seem archaic: aggressive surgical **debridement** (cutting away the diseased nail and mass) or **nail drilling** (creating small holes through the nail plate). These are not just crude removal methods; they are sophisticated physical interventions. By reducing the diffusion distance $L$, they dramatically shorten the diffusion time—halving the distance cuts the time by a factor of four! This combination of systemic drugs with physical methods represents a multi-pronged attack, using the principles of pharmacology and physics in concert to storm the fungal fortress () .
+This physical insight provides a clear, rational explanation for treatments that might seem archaic: aggressive surgical **debridement** (cutting away the diseased nail and mass) or **nail drilling** (creating small holes through the nail plate). These are not just crude removal methods; they are sophisticated physical interventions. By reducing the diffusion distance $L$, they dramatically shorten the diffusion time—halving the distance cuts the time by a factor of four! This combination of systemic drugs with physical methods represents a multi-pronged attack, using the principles of pharmacology and physics in concert to storm the fungal fortress ([@problem_id:4468210]) [@problem_id:4468202].

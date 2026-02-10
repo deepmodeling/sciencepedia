@@ -11,9 +11,9 @@ First, in **Principles and Mechanisms**, we will delve into the core concept of 
 
 Imagine you are at the helm of a colossal supertanker. To make a turn, you spin the wheel, but the ship's immense inertia means it continues straight for a long time before slowly beginning to respond. If you grow impatient and spin the wheel harder, you will drastically overshoot your turn, sending the ship into a dangerous, uncontrolled spin.
 
-Managing blood glucose with insulin injections is strikingly similar. When a person with [type 1 diabetes](@entry_id:152093) injects insulin to counter high blood sugar or a meal, the effect is not immediate. The insulin must be absorbed from under the skin into the bloodstream and then begin its work. This process can take hours. If a person sees their blood sugar is still high after an hour and injects another full dose, they are making the same mistake as the impatient captain. They are ignoring the effect of the first dose that is still "in the pipeline." This dangerous practice is known as **insulin stacking**, and it is a primary cause of severe hypoglycemia—a condition where blood sugar drops to dangerously low levels.
+Managing blood glucose with insulin injections is strikingly similar. When a person with [type 1 diabetes](@keyword=type_1_diabetes|lang=en-US|style=Feynman) injects insulin to counter high blood sugar or a meal, the effect is not immediate. The insulin must be absorbed from under the skin into the bloodstream and then begin its work. This process can take hours. If a person sees their blood sugar is still high after an hour and injects another full dose, they are making the same mistake as the impatient captain. They are ignoring the effect of the first dose that is still "in the pipeline." This dangerous practice is known as **insulin stacking**, and it is a primary cause of severe hypoglycemia—a condition where blood sugar drops to dangerously low levels.
 
-To safely navigate the currents of [glucose metabolism](@entry_id:177881), we need a way to account for the insulin that has been delivered but has not yet finished its job. We need a ledger, a predictive tool that keeps track of this lingering, active insulin. This tool is known as **Insulin on Board**, or **IOB**.
+To safely navigate the currents of [glucose metabolism](@keyword=glucose_metabolism|lang=en-US|style=Feynman), we need a way to account for the insulin that has been delivered but has not yet finished its job. We need a ledger, a predictive tool that keeps track of this lingering, active insulin. This tool is known as **Insulin on Board**, or **IOB**.
 
 ### Quantifying the Ghost: Insulin's Action Curve
 
@@ -29,7 +29,7 @@ $$
 \text{IOB}(t) = D \times \frac{\int_{t}^{\infty} a(\tau) d\tau}{\int_{0}^{\infty} a(\xi) d\xi}
 $$
 
-This elegant definition  is the bedrock of the IOB concept. But its practical power depends entirely on what we assume for the shape of that action curve, $a(t)$.
+This elegant definition [@problem_id:3943316] is the bedrock of the IOB concept. But its practical power depends entirely on what we assume for the shape of that action curve, $a(t)$.
 
 ### From Simple Lines to Elegant Curves: Modeling Insulin's Lifecycle
 
@@ -37,16 +37,16 @@ The true shape of an insulin action curve is complex and can vary from person to
 
 Let's consider a 5-unit bolus of insulin that has a **duration of insulin action (DIA)** of 4 hours.
 
-A simple first guess is a **linear-decay model**. We can imagine the insulin's effect is used up at a constant rate over the 4-hour DIA . After 2 hours, exactly half the time has passed, so we would expect half the insulin to be left. The IOB would be $2.5$ U. This is intuitive, but reality is not so linear.
+A simple first guess is a **linear-decay model**. We can imagine the insulin's effect is used up at a constant rate over the 4-hour DIA [@problem_id:4791432]. After 2 hours, exactly half the time has passed, so we would expect half the insulin to be left. The IOB would be $2.5$ U. This is intuitive, but reality is not so linear.
 
-A more physically plausible model is an **exponential-decay model**, similar to radioactive decay. Here, the rate of insulin consumption is proportional to the amount remaining . If we define the 4-hour DIA as the time it takes for only $5\%$ of the insulin's effect to remain, we can calculate a decay constant, $k$. The IOB at time $t$ is given by $I(t) = I_0 \exp(-kt)$. For our 5-unit bolus, the IOB at 2 hours under this model is approximately $1.12$ U .
+A more physically plausible model is an **exponential-decay model**, similar to radioactive decay. Here, the rate of insulin consumption is proportional to the amount remaining [@problem_id:4953603]. If we define the 4-hour DIA as the time it takes for only $5\%$ of the insulin's effect to remain, we can calculate a decay constant, $k$. The IOB at time $t$ is given by $I(t) = I_0 \exp(-kt)$. For our 5-unit bolus, the IOB at 2 hours under this model is approximately $1.12$ U [@problem_id:4791386].
 
-Notice the dramatic difference! The linear model calculates an IOB of $2.5$ U, while the more realistic exponential model gives $1.12$ U. This isn't just an academic curiosity. As we will see, if a person's pump uses the linear model but their body follows the exponential one, it will consistently overestimate the IOB. This leads to under-dosing on correction boluses and persistent high blood sugar .
+Notice the dramatic difference! The linear model calculates an IOB of $2.5$ U, while the more realistic exponential model gives $1.12$ U. This isn't just an academic curiosity. As we will see, if a person's pump uses the linear model but their body follows the exponential one, it will consistently overestimate the IOB. This leads to under-dosing on correction boluses and persistent high blood sugar [@problem_id:4791386].
 
 But even the exponential model is incomplete. It assumes the insulin starts working at maximum capacity and then declines. In reality, insulin injected under the skin must first be absorbed into the bloodstream. This creates a ramp-up period. More sophisticated models capture this two-phase process: absorption followed by elimination.
-- A **triangular model** provides a simple visual: the effect ramps up linearly to a peak and then ramps down linearly .
-- A more rigorous **pharmacokinetic model** describes the insulin concentration as a race between two exponential processes: absorption from the subcutaneous "depot" and elimination from the blood. This gives rise to the classic peaked curve shape described by an equation like $C(t) \propto (\exp(-k_e t) - \exp(-k_a t))$  .
-- Even more accurate models, like the **Erlang or Gamma distribution models**, treat the process as insulin passing through a series of sequential "compartments" or waiting stages before it can act, which reproduces the observed physiological action curves with remarkable fidelity .
+- A **triangular model** provides a simple visual: the effect ramps up linearly to a peak and then ramps down linearly [@problem_id:4791376].
+- A more rigorous **pharmacokinetic model** describes the insulin concentration as a race between two exponential processes: absorption from the subcutaneous "depot" and elimination from the blood. This gives rise to the classic peaked curve shape described by an equation like $C(t) \propto (\exp(-k_e t) - \exp(-k_a t))$ [@problem_id:3943316] [@problem_id:4535865].
+- Even more accurate models, like the **Erlang or Gamma distribution models**, treat the process as insulin passing through a series of sequential "compartments" or waiting stages before it can act, which reproduces the observed physiological action curves with remarkable fidelity [@problem_id:5099481].
 
 Regardless of the model's complexity, the unifying principle remains: IOB is the remaining area under the curve.
 
@@ -58,7 +58,7 @@ To manage their diabetes, individuals use personalized settings. Two of the most
 -   **Insulin-to-Carbohydrate Ratio (ICR)**: The number of grams of carbohydrate covered by one unit of insulin. This is used for meal boluses.
 -   **Insulin Sensitivity Factor (ISF)** or **Correction Factor (CF)**: The expected drop in blood glucose (in mg/dL or mmol/L) from one unit of insulin. This is used for correction boluses when blood sugar is high.
 
-These factors can vary throughout the day, often requiring different settings for morning versus evening to account for hormonal changes .
+These factors can vary throughout the day, often requiring different settings for morning versus evening to account for hormonal changes [@problem_id:5099521].
 
 Now, consider a scenario. A person's blood sugar is high. A naive approach would be to calculate the needed insulin as:
 $$
@@ -66,23 +66,23 @@ $$
 $$
 This is precisely where the danger of insulin stacking lies. Let's look at a real-world calculation. A person's glucose is $250$ mg/dL one hour after taking a 4.25 U bolus. Their target is $110$ mg/dL and their ISF is $40$ mg/dL/U. The naive formula suggests a new dose of $(250 - 110) / 40 = 3.5$ U.
 
-However, a proper IOB calculation (using a realistic pharmacokinetic model) would reveal that after one hour, about $3.6$ U of insulin are still on board from the first bolus . This IOB is already set to lower the glucose by approximately $3.6 \times 40 = 144$ mg/dL. Adding another $3.5$ U would be a catastrophic overdose, risking a severe hypoglycemic event.
+However, a proper IOB calculation (using a realistic pharmacokinetic model) would reveal that after one hour, about $3.6$ U of insulin are still on board from the first bolus [@problem_id:4535865]. This IOB is already set to lower the glucose by approximately $3.6 \times 40 = 144$ mg/dL. Adding another $3.5$ U would be a catastrophic overdose, risking a severe hypoglycemic event.
 
 The correct, IOB-aware algorithm is beautifully simple:
 $$
 \text{New Dose} = \max\left\{0, \frac{(\text{Current Glucose} - \text{Target Glucose})}{\text{ISF}} - \text{IOB}\right\}
 $$
-The formula calculates the ideal correction and then subtracts the "credit" of insulin that's already on board. The `max{0, ...}` part is crucial; it ensures you can't give a "negative" dose. If the IOB is already greater than the calculated correction, the correct action is to give no additional insulin and let the previous dose do its work . This single subtraction is the fundamental safety brake that prevents insulin stacking.
+The formula calculates the ideal correction and then subtracts the "credit" of insulin that's already on board. The `max{0, ...}` part is crucial; it ensures you can't give a "negative" dose. If the IOB is already greater than the calculated correction, the correct action is to give no additional insulin and let the previous dose do its work [@problem_id:4535865]. This single subtraction is the fundamental safety brake that prevents insulin stacking.
 
 ### The Modern Symphony: IOB in the Age of Automation
 
 The concept of IOB truly comes into its own in modern **Automated Insulin Delivery (AID)** systems, often called "hybrid closed-loop" or "artificial pancreas" systems. Here, IOB is not just a tool for manual calculation; it is the core logic engine of a sophisticated algorithm that makes decisions every five minutes.
 
-These systems orchestrate a symphony of data. They don't just look at the current glucose from a **Continuous Glucose Monitor (CGM)**; they look at the *trend*. A glucose of $180$ mg/dL that is falling rapidly is treated very differently from a stable $180$. The system uses the rate of change to predict where the glucose will be in the near future, compensating for the lag between blood and [interstitial fluid](@entry_id:155188) where the sensor resides  .
+These systems orchestrate a symphony of data. They don't just look at the current glucose from a **Continuous Glucose Monitor (CGM)**; they look at the *trend*. A glucose of $180$ mg/dL that is falling rapidly is treated very differently from a stable $180$. The system uses the rate of change to predict where the glucose will be in the near future, compensating for the lag between blood and [interstitial fluid](@keyword=interstitial_fluid|lang=en-US|style=Feynman) where the sensor resides [@problem_id:4791432] [@problem_id:4791376].
 
-Furthermore, these systems can account for real-world variables. For instance, after exercise, the body becomes more sensitive to insulin. An advanced algorithm can incorporate this by temporarily adjusting the ISF, knowing that less insulin is needed to achieve the same effect .
+Furthermore, these systems can account for real-world variables. For instance, after exercise, the body becomes more sensitive to insulin. An advanced algorithm can incorporate this by temporarily adjusting the ISF, knowing that less insulin is needed to achieve the same effect [@problem_id:4791432].
 
-The ultimate expression of this principle is the system's master safety constraint. At every moment, the AID system performs a worst-case scenario analysis . It calculates a conservative estimate of the true current blood glucose (accounting for sensor inaccuracies and lag). Then, using the person's ISF, it calculates the maximum amount of insulin that could possibly be on board without risking a drop below a preset safety floor (e.g., $70$ mg/dL). This value is the **safe insulin on board limit** ($\mathrm{IOB}_{\mathrm{safe}}$).
+The ultimate expression of this principle is the system's master safety constraint. At every moment, the AID system performs a worst-case scenario analysis [@problem_id:4791382]. It calculates a conservative estimate of the true current blood glucose (accounting for sensor inaccuracies and lag). Then, using the person's ISF, it calculates the maximum amount of insulin that could possibly be on board without risking a drop below a preset safety floor (e.g., $70$ mg/dL). This value is the **safe insulin on board limit** ($\mathrm{IOB}_{\mathrm{safe}}$).
 $$
 \mathrm{IOB}_{\mathrm{safe}} = \frac{(\text{Worst-Case Glucose} - \text{Safety Floor Glucose})}{\mathrm{ISF}}
 $$

@@ -9,15 +9,15 @@
 
 ### 经典之舞：磁场世界中的旋转陀螺
 
-现在，让我们用一个微观的带电物体——比如一个[绕轴旋转](@entry_id:185161)的均匀带电球体——来代替我们的旋转陀螺。这种旋转的电荷产生了一个环形电流，从而生成一个磁场。从远处看，这个旋转的球体就像一个小条形磁铁，有南极和北极。我们说它具有一个**[磁偶极矩](@entry_id:158175)**，一个我们可以称之为 $\vec{\mu}$ 的矢量。因为它也是一个旋转的质量体，所以它拥有**角动量** $\vec{L}$。
+现在，让我们用一个微观的带电物体——比如一个[绕轴旋转](@keyword=rotation_about_an_axis|lang=zh-CN|style=Feynman)的均匀带电球体——来代替我们的旋转陀螺。这种旋转的电荷产生了一个环形电流，从而生成一个磁场。从远处看，这个旋转的球体就像一个小条形磁铁，有南极和北极。我们说它具有一个**[磁偶极矩](@keyword=magnetic_dipole_moments|lang=zh-CN|style=Feynman)**，一个我们可以称之为 $\vec{\mu}$ 的矢量。因为它也是一个旋转的质量体，所以它拥有**角动量** $\vec{L}$。
 
-这两个量之间有什么关系呢？经典物理学的一个优美结论表明，对于一个电荷和[质量分布](@entry_id:158451)相同的刚性旋转物体，其磁矩与角动量成正比 。对于我们这个总电荷为 $Q$、总质量为 $M$ 的旋转球体，关系式异常简单：
+这两个量之间有什么关系呢？经典物理学的一个优美结论表明，对于一个电荷和[质量分布](@keyword=mass_distribution|lang=zh-CN|style=Feynman)相同的刚性旋转物体，其磁矩与角动量成正比 [@problem_id:2055430]。对于我们这个总电荷为 $Q$、总质量为 $M$ 的旋转球体，关系式异常简单：
 
 $$
 \vec{\mu} = \left( \frac{Q}{2M} \right) \vec{L}
 $$
 
-比例常数 $\gamma = \frac{Q}{2M}$ 被称为**[旋磁比](@entry_id:149290)**。注意这个方程告诉我们：磁矩和角动量矢量指向同一轴线。这个“磁铁”的强度直接与它拥有的角动量大小相关。值得注意的是，这个比率只取决于物体的总电荷和总质量，而与它的旋转速度或大小无关！如果质量和电荷分布不完全相同，计算会变得更复杂，但原理依然成立：一个旋转的电荷既有角动量，也有磁矩 。
+比例常数 $\gamma = \frac{Q}{2M}$ 被称为**[旋磁比](@keyword=gyromagnetic_ratio|lang=zh-CN|style=Feynman)**。注意这个方程告诉我们：磁矩和角动量矢量指向同一轴线。这个“磁铁”的强度直接与它拥有的角动量大小相关。值得注意的是，这个比率只取决于物体的总电荷和总质量，而与它的旋转速度或大小无关！如果质量和电荷分布不完全相同，计算会变得更复杂，但原理依然成立：一个旋转的电荷既有角动量，也有磁矩 [@problem_id:560686]。
 
 现在，如果我们将我们的小旋转磁铁置于一个外部均匀磁场 $\vec{B}$ 中会发生什么？就像重力对旋转陀螺施加力矩一样，磁场对磁矩也施加一个力矩：$\vec{\tau} = \vec{\mu} \times \vec{B}$。并且，与陀螺的情况一样，这个力矩改变了角动量：$\vec{\tau} = \frac{d\vec{L}}{dt}$。将它们结合起来，我们得到运动方程：
 
@@ -25,55 +25,55 @@ $$
 \frac{d\vec{L}}{dt} = \vec{\mu} \times \vec{B} = \gamma \vec{L} \times \vec{B}
 $$
 
-这个方程就是我们那个进动陀螺的数学描述！它表明角动量的变化总是垂直于角动量本身和磁场。结果是角动量矢量 $\vec{L}$（以及随之的磁矩 $\vec{\mu}$）围绕磁场轴进动。这种磁性摇摆就是**[拉莫尔进动](@entry_id:143131)**。这个进动的速率，即其[角频率](@entry_id:261565) $\omega_L$，被发现非常直观：
+这个方程就是我们那个进动陀螺的数学描述！它表明角动量的变化总是垂直于角动量本身和磁场。结果是角动量矢量 $\vec{L}$（以及随之的磁矩 $\vec{\mu}$）围绕磁场轴进动。这种磁性摇摆就是**[拉莫尔进动](@keyword=larmor_precession|lang=zh-CN|style=Feynman)**。这个进动的速率，即其[角频率](@keyword=break_frequency|lang=zh-CN|style=Feynman) $\omega_L$，被发现非常直观：
 
 $$
 \omega_L = |\gamma| B
 $$
 
-这个进动频率，常被称为**[拉莫尔频率](@entry_id:149912)**，仅仅与外部磁场强度 $B$ 和粒子自身的特征[旋磁比](@entry_id:149290) $\gamma$ 成正比 。更强的磁场使其进动得更快；具有更大[旋磁比](@entry_id:149290)的粒子也进动得更快。
+这个进动频率，常被称为**[拉莫尔频率](@keyword=larmor_frequency|lang=zh-CN|style=Feynman)**，仅仅与外部磁场强度 $B$ 和粒子自身的特征[旋磁比](@keyword=gyromagnetic_ratio|lang=zh-CN|style=Feynman) $\gamma$ 成正比 [@problem_id:1458831]。更强的磁场使其进动得更快；具有更大[旋磁比](@keyword=gyromagnetic_ratio|lang=zh-CN|style=Feynman)的粒子也进动得更快。
 
 ### 量子跃迁：从摇摆的陀螺到量子化的能态
 
-一个旋转球体的经典图像很直观，但原子和电子的真实世界是由量子力学支配的。像电子和质子这样的粒子拥有一种内禀的、固有的角动量，称为**自旋**。这是一个纯粹的量子力学属性；电子并非真是一个微小的旋转球体。然而，这种[量子自旋](@entry_id:137759)在许多方面的行为都与经典角动量非常相似。
+一个旋转球体的经典图像很直观，但原子和电子的真实世界是由量子力学支配的。像电子和质子这样的粒子拥有一种内禀的、固有的角动量，称为**自旋**。这是一个纯粹的量子力学属性；电子并非真是一个微小的旋转球体。然而，这种[量子自旋](@keyword=quantum_spin|lang=zh-CN|style=Feynman)在许多方面的行为都与经典角动量非常相似。
 
-至关重要的是，一个有自旋的粒子也具有一个内禀磁矩。经典关系式 $\vec{\mu} = \gamma \vec{S}$ 仍然成立，其中 $\vec{S}$ 现在是自旋角动量算符。[旋磁比](@entry_id:149290) $\gamma$ 成为了粒子的一个基本的、可测量的属性。例如，对于电子，其值与一个称为**[g因子](@entry_id:153442)**的神秘数字有关，该数字非常接近2。
+至关重要的是，一个有自旋的粒子也具有一个内禀磁矩。经典关系式 $\vec{\mu} = \gamma \vec{S}$ 仍然成立，其中 $\vec{S}$ 现在是自旋角动量算符。[旋磁比](@keyword=gyromagnetic_ratio|lang=zh-CN|style=Feynman) $\gamma$ 成为了粒子的一个基本的、可测量的属性。例如，对于电子，其值与一个称为**[g因子](@keyword=g_factor|lang=zh-CN|style=Feynman)**的神秘数字有关，该数字非常接近2。
 
-一个[量子自旋](@entry_id:137759)如何“进动”？量子系统的演化由[海森堡运动方程](@entry_id:140445)描述。对于一个在磁场中的自旋，其方程看起来惊人地熟悉 ：
+一个[量子自旋](@keyword=quantum_spin|lang=zh-CN|style=Feynman)如何“进动”？量子系统的演化由[海森堡运动方程](@keyword=heisenberg_equation_of_motion|lang=zh-CN|style=Feynman)描述。对于一个在磁场中的自旋，其方程看起来惊人地熟悉 [@problem_id:2931640]：
 
 $$
 \frac{d\mathbf{S}}{dt} = \gamma \mathbf{S} \times \mathbf{B}
 $$
 
-虽然这个方程支配着[量子算符](@entry_id:137703)，但我们可以通过取其[期望值](@entry_id:150961)来观察平均情况。由于量子力学的数学特性，这导出了一个关于*平均*自旋矢量 $\langle\mathbf{S}\rangle$ 的方程，它与经典方程完全相同：
+虽然这个方程支配着[量子算符](@keyword=quantum_operators|lang=zh-CN|style=Feynman)，但我们可以通过取其[期望值](@keyword=expectation_value|lang=zh-CN|style=Feynman)来观察平均情况。由于量子力学的数学特性，这导出了一个关于*平均*自旋矢量 $\langle\mathbf{S}\rangle$ 的方程，它与经典方程完全相同：
 
 $$
 \frac{d\langle\mathbf{S}\rangle}{dt} = \gamma \langle\mathbf{S}\rangle \times \mathbf{B}
 $$
 
-这是一个深刻的结果。它意味着自旋的*[期望值](@entry_id:150961)*——如果你可以多次测量，你会发现自旋指向的平均方向——围绕磁场的进动方式与经典旋转陀螺完全一样，并且进动频率也完全相同，即[拉莫尔频率](@entry_id:149912) $\omega_L = |\gamma| B$。我们建立的经典直觉在量子领域完美适用。当然，这种进动首先要求磁矩的存在。对于原子中的电子，其轨道运动也可以产生磁矩，但如果它处于[s态](@entry_id:167791)，其[轨道角动量](@entry_id:191303)为零（$l=0$）。没有[轨道角动量](@entry_id:191303)，就没有[轨道磁矩](@entry_id:159585)，因此也就没有与其轨道相关的[拉莫尔进动](@entry_id:143131) 。然而，它的自旋，则继续着其不懈的舞蹈。
+这是一个深刻的结果。它意味着自旋的*[期望值](@keyword=expectation_value|lang=zh-CN|style=Feynman)*——如果你可以多次测量，你会发现自旋指向的平均方向——围绕磁场的进动方式与经典旋转陀螺完全一样，并且进动频率也完全相同，即[拉莫尔频率](@keyword=larmor_frequency|lang=zh-CN|style=Feynman) $\omega_L = |\gamma| B$。我们建立的经典直觉在量子领域完美适用。当然，这种进动首先要求磁矩的存在。对于原子中的电子，其轨道运动也可以产生磁矩，但如果它处于[s态](@keyword=s_states|lang=zh-CN|style=Feynman)，其[轨道角动量](@keyword=orbital_angular_momentum|lang=zh-CN|style=Feynman)为零（$l=0$）。没有[轨道角动量](@keyword=orbital_angular_momentum|lang=zh-CN|style=Feynman)，就没有[轨道磁矩](@keyword=orbital_magnetic_moment|lang=zh-CN|style=Feynman)，因此也就没有与其轨道相关的[拉莫尔进动](@keyword=larmor_precession|lang=zh-CN|style=Feynman) [@problem_id:2001346]。然而，它的自旋，则继续着其不懈的舞蹈。
 
-### [对应原理](@entry_id:155778)：连接两个世界的桥梁
+### [对应原理](@keyword=the_quantum_classical_correspondence|lang=zh-CN|style=Feynman)：连接两个世界的桥梁
 
-经典图像和量[子图](@entry_id:273342)像之间的联系甚至更为深刻。在量子力学中，能量不是连续的。磁场中的自旋不能指向任何方向；它相对于磁场的取向是量子化的，从而导致一组分立的能级。这种现象被称为**[塞曼效应](@entry_id:154144)**。任意两个相邻能级之间的能量差 $\Delta E$ 与磁场强度 $B$ 成正比。
+经典图像和量[子图](@keyword=subgraph|lang=zh-CN|style=Feynman)像之间的联系甚至更为深刻。在量子力学中，能量不是连续的。磁场中的自旋不能指向任何方向；它相对于磁场的取向是量子化的，从而导致一组分立的能级。这种现象被称为**[塞曼效应](@keyword=zeeman_effect|lang=zh-CN|style=Feynman)**。任意两个相邻能级之间的能量差 $\Delta E$ 与磁场强度 $B$ 成正比。
 
-因此我们有两幅图景：经典观点中频率为 $\omega_L$ 的平滑、连续的进动，以及量子观点中由 $\Delta E$ 分隔开的分立、静态的能级。这两者怎么可能都正确呢？答案在于物理学中最美的思想之一：**[对应原理](@entry_id:155778)**。它表明，在适当的极限下，量子力学必须重现经典物理学。
+因此我们有两幅图景：经典观点中频率为 $\omega_L$ 的平滑、连续的进动，以及量子观点中由 $\Delta E$ 分隔开的分立、静态的能级。这两者怎么可能都正确呢？答案在于物理学中最美的思想之一：**[对应原理](@keyword=the_quantum_classical_correspondence|lang=zh-CN|style=Feynman)**。它表明，在适当的极限下，量子力学必须重现经典物理学。
 
-在这里，这种联系是惊人地直接。如果我们从[量子理论](@entry_id:145435)计算[能隙](@entry_id:138445) $\Delta E$，并从经典力学计算进动频率 $\omega_L$，我们会发现它们通过量子世界最基本的常数——约化普朗克常数 $\hbar$ 联系在一起 ：
+在这里，这种联系是惊人地直接。如果我们从[量子理论](@keyword=quantum_theory|lang=zh-CN|style=Feynman)计算[能隙](@keyword=band_gap|lang=zh-CN|style=Feynman) $\Delta E$，并从经典力学计算进动频率 $\omega_L$，我们会发现它们通过量子世界最基本的常数——约化普朗克常数 $\hbar$ 联系在一起 [@problem_id:1402977]：
 
 $$
 \Delta E = \hbar \omega_L
 $$
 
-这其实是[普朗克-爱因斯坦关系](@entry_id:147416) $E=hf$ 的另一种形式！它告诉我们，使粒子从一个能级跃迁到下一个能级所需光子的频率（$\nu_{rad} = \Delta E / h$）恰好等于以周/秒为单位的经典[拉莫尔频率](@entry_id:149912)（$f_L = \omega_L / 2\pi$） 。量子的“跃迁”频率与经典的“摇摆”频率相匹配。这两种描述，一种是分立的跃迁，另一种是平滑的进动，是同一枚硬币的两面，被优雅地统一了起来。
+这其实是[普朗克-爱因斯坦关系](@keyword=planck_einstein_relation|lang=zh-CN|style=Feynman) $E=hf$ 的另一种形式！它告诉我们，使粒子从一个能级跃迁到下一个能级所需光子的频率（$\nu_{rad} = \Delta E / h$）恰好等于以周/秒为单位的经典[拉莫尔频率](@keyword=larmor_frequency|lang=zh-CN|style=Feynman)（$f_L = \omega_L / 2\pi$） [@problem_id:1379275]。量子的“跃迁”频率与经典的“摇摆”频率相匹配。这两种描述，一种是分立的跃迁，另一种是平滑的进动，是同一枚硬币的两面，被优雅地统一了起来。
 
 ### 现实世界：从理想物理到救生技术
 
-这美妙的物理学并不仅限于黑板和思想实验。[拉莫尔进动](@entry_id:143131)是现代医学最强大的诊断工具之一——**[磁共振成像 (MRI)](@entry_id:139464)**——背后的引擎。
+这美妙的物理学并不仅限于黑板和思想实验。[拉莫尔进动](@keyword=larmor_precession|lang=zh-CN|style=Feynman)是现代医学最强大的诊断工具之一——**[磁共振成像 (MRI)](@keyword=magnetic_resonance_imaging_(mri)|lang=zh-CN|style=Feynman)**——背后的引擎。
 
-MRI设备将患者置于一个非常强的均匀磁场 $B_0$ 中。身体中水分子的质子，每个都具有自旋和磁矩，开始以其[拉莫尔频率](@entry_id:149912)进动。但关键的细节在于：质子感受到的并非*完全*是外部磁场 $B_0$。其自身分子或邻近分子中的电子会产生一个微小的[磁屏蔽](@entry_id:192877)，略微抵消外部磁场。这被称为**[电子屏蔽](@entry_id:172832)**。质子实际感受到的有效场是 $B_{eff} = B_0(1-\sigma)$，其中 $\sigma$ 是一个微小的**[屏蔽常数](@entry_id:152583)** 。
+MRI设备将患者置于一个非常强的均匀磁场 $B_0$ 中。身体中水分子的质子，每个都具有自旋和磁矩，开始以其[拉莫尔频率](@keyword=larmor_frequency|lang=zh-CN|style=Feynman)进动。但关键的细节在于：质子感受到的并非*完全*是外部磁场 $B_0$。其自身分子或邻近分子中的电子会产生一个微小的[磁屏蔽](@keyword=magnetic_shielding|lang=zh-CN|style=Feynman)，略微抵消外部磁场。这被称为**[电子屏蔽](@keyword=electronic_shielding|lang=zh-CN|style=Feynman)**。质子实际感受到的有效场是 $B_{eff} = B_0(1-\sigma)$，其中 $\sigma$ 是一个微小的**[屏蔽常数](@keyword=shielding_constant|lang=zh-CN|style=Feynman)** [@problem_id:2001399]。
 
-由于[拉莫尔频率](@entry_id:149912)直接取决于磁场，磁场中的这一微小变化导致了进动频率的微小但可测量的偏移。由于[屏蔽常数](@entry_id:152583) $\sigma$ 取决于质子的化学环境（例如，脂肪中的质子与水中的质子有不同的[屏蔽常数](@entry_id:152583)），因此不同组织会广播出略有不同的[拉莫尔频率](@entry_id:149912)。通过施加无线电波来激发这些质子，然后“收听”它们在进动时发出的特定频率，MRI扫描仪可以区分不同类型的组织，从而创建出惊人详细的人体图像。一个微妙的量子效应变成了洞察我们自身生物学的一扇窗户。
+由于[拉莫尔频率](@keyword=larmor_frequency|lang=zh-CN|style=Feynman)直接取决于磁场，磁场中的这一微小变化导致了进动频率的微小但可测量的偏移。由于[屏蔽常数](@keyword=shielding_constant|lang=zh-CN|style=Feynman) $\sigma$ 取决于质子的化学环境（例如，脂肪中的质子与水中的质子有不同的[屏蔽常数](@keyword=shielding_constant|lang=zh-CN|style=Feynman)），因此不同组织会广播出略有不同的[拉莫尔频率](@keyword=larmor_frequency|lang=zh-CN|style=Feynman)。通过施加无线电波来激发这些质子，然后“收听”它们在进动时发出的特定频率，MRI扫描仪可以区分不同类型的组织，从而创建出惊人详细的人体图像。一个微妙的量子效应变成了洞察我们自身生物学的一扇窗户。
 
-磁场引起[圆周运动](@entry_id:269135)的主题在物理学的其他地方也会出现，比较这些现象可以揭示更深层次的统一性。一个自由电子在磁场中受到洛伦兹力的作用，被迫进行[圆周运动](@entry_id:269135)。这种轨道运动的频率称为**回旋频率**，$\omega_c = \frac{eB}{m_e}$。与此同时，电子的内禀自旋以[拉莫尔频率](@entry_id:149912)进动，$\omega_L = g_s \frac{eB}{2m_e}$。如果我们比较这两个频率，会发现它们的比值非常简单，即 $\frac{\omega_L}{\omega_c} = \frac{g_s}{2}$ 。由于电子的[g因子](@entry_id:153442) $g_s$ 非常接近2，这两个频率几乎是相同的！[电子自旋](@entry_id:137016)方向进动的速率几乎与电子自身绕轨道运行的速率完全相同。这种近乎巧合的现象并非偶然；它是一条线索，指向了支撑电子行为的深刻的相对论量子理论，在该理论中，电子的自旋和运动是密不可分的。$g_s$ 与2的微小偏差（约为 $2.0023$）是[量子电动力学](@entry_id:150740)的伟大胜利之一，表明即使在真空中，物理学的舞蹈也从来不是真正简单的。
+磁场引起[圆周运动](@keyword=circular_motion|lang=zh-CN|style=Feynman)的主题在物理学的其他地方也会出现，比较这些现象可以揭示更深层次的统一性。一个自由电子在磁场中受到洛伦兹力的作用，被迫进行[圆周运动](@keyword=circular_motion|lang=zh-CN|style=Feynman)。这种轨道运动的频率称为**回旋频率**，$\omega_c = \frac{eB}{m_e}$。与此同时，电子的内禀自旋以[拉莫尔频率](@keyword=larmor_frequency|lang=zh-CN|style=Feynman)进动，$\omega_L = g_s \frac{eB}{2m_e}$。如果我们比较这两个频率，会发现它们的比值非常简单，即 $\frac{\omega_L}{\omega_c} = \frac{g_s}{2}$ [@problem_id:2001342]。由于电子的[g因子](@keyword=g_factor|lang=zh-CN|style=Feynman) $g_s$ 非常接近2，这两个频率几乎是相同的！[电子自旋](@keyword=electron_spin|lang=zh-CN|style=Feynman)方向进动的速率几乎与电子自身绕轨道运行的速率完全相同。这种近乎巧合的现象并非偶然；它是一条线索，指向了支撑电子行为的深刻的相对论量子理论，在该理论中，电子的自旋和运动是密不可分的。$g_s$ 与2的微小偏差（约为 $2.0023$）是[量子电动力学](@keyword=quantum_electrodynamics_(qed)|lang=zh-CN|style=Feynman)的伟大胜利之一，表明即使在真空中，物理学的舞蹈也从来不是真正简单的。
 

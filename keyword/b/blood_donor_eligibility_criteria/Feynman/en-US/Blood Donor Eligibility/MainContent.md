@@ -27,13 +27,13 @@ Solving for $W_{\min}$ gives us:
 
 $$ W_{\min} \ge \frac{450}{0.13 \times 70} \approx 49.5 \, \text{kg} $$
 
-And there it is! The familiar-sounding minimum weight requirement of $50$ kg (or $110$ lbs) is not an arbitrary number pulled from a hat. It is a direct consequence of the physics of volume and a physiologically grounded safety margin . This simple calculation ensures that for even the lightest eligible donor, the donation represents a manageable volume loss.
+And there it is! The familiar-sounding minimum weight requirement of $50$ kg (or $110$ lbs) is not an arbitrary number pulled from a hat. It is a direct consequence of the physics of volume and a physiologically grounded safety margin [@problem_id:5211935]. This simple calculation ensures that for even the lightest eligible donor, the donation represents a manageable volume loss.
 
 #### The Body's Symphony of Stability
 
 Of course, the body does not just sit there passively as volume is removed. It responds. When you lose blood or even just stand up, your cardiovascular system executes a beautiful, reflexive symphony to ensure your most important organ—the brain—never loses its vital supply of oxygenated blood. This is managed by the **baroreflex**: sensors in your major arteries detect any drop in blood pressure and signal the brainstem, which in turn instructs the heart to beat faster and the blood vessels to constrict, thus maintaining pressure.
 
-This is why we measure a donor's blood pressure. An unusually low blood pressure beforehand might mean the donor has little reserve to handle the donation. An excessively high pressure might indicate an underlying condition that could make the donation unsafe for them. The standard limits (e.g., systolic between $90$ and $180$ mmHg, diastolic between $50$ and $100$ mmHg) define a "safe operating range" .
+This is why we measure a donor's blood pressure. An unusually low blood pressure beforehand might mean the donor has little reserve to handle the donation. An excessively high pressure might indicate an underlying condition that could make the donation unsafe for them. The standard limits (e.g., systolic between $90$ and $180$ mmHg, diastolic between $50$ and $100$ mmHg) define a "safe operating range" [@problem_id:5211931].
 
 To ensure the brain's safety, we must maintain its **Cerebral Perfusion Pressure (CPP)**, which is the Mean Arterial Pressure (MAP) minus the pressure inside the skull (Intracranial Pressure, ICP). To avoid dizziness or fainting, the CPP must stay above a minimum threshold of about $50$ mmHg. A simple pre-donation "stress test"—checking a donor's blood pressure while sitting and then standing—can reveal how robust their baroreflex is. If their blood pressure plummets or their heart rate skyrockets upon standing, their system is already working hard, and the added stress of donation might be too much.
 
@@ -41,19 +41,19 @@ To ensure the brain's safety, we must maintain its **Cerebral Perfusion Pressure
 
 The cornerstone of a donation's value is its oxygen-carrying capacity, which resides in the **hemoglobin ($Hb$)** molecules packed within red blood cells. To protect the donor from becoming anemic, we must ensure they have enough hemoglobin to spare. The typical minimum is $12.5$ grams per deciliter ($g/dL$) of blood.
 
-You might also hear about **hematocrit ($Hct$)**, which is simply the fraction of blood volume occupied by red cells. Hemoglobin and hematocrit are related through the **Mean Corpuscular Hemoglobin Concentration (MCHC)**, which is the average hemoglobin concentration *inside* a [red blood cell](@entry_id:140482): $Hct(\%) = \frac{Hb}{MCHC} \times 100$. For most people, the MCHC is fairly constant at around $33 \text{ g/dL}$. This leads to the famous "rule of three": $Hct(\%) \approx 3 \times Hb(\text{g/dL})$. It’s a wonderfully useful approximation, but we must remember it is just that—an approximation. If a person's red cells have a lower-than-normal MCHC, this rule of thumb will underestimate their true hematocrit, a detail that can matter for borderline eligibility decisions .
+You might also hear about **hematocrit ($Hct$)**, which is simply the fraction of blood volume occupied by red cells. Hemoglobin and hematocrit are related through the **Mean Corpuscular Hemoglobin Concentration (MCHC)**, which is the average hemoglobin concentration *inside* a [red blood cell](@keyword=red_blood_cell|lang=en-US|style=Feynman): $Hct(\%) = \frac{Hb}{MCHC} \times 100$. For most people, the MCHC is fairly constant at around $33 \text{ g/dL}$. This leads to the famous "rule of three": $Hct(\%) \approx 3 \times Hb(\text{g/dL})$. It’s a wonderfully useful approximation, but we must remember it is just that—an approximation. If a person's red cells have a lower-than-normal MCHC, this rule of thumb will underestimate their true hematocrit, a detail that can matter for borderline eligibility decisions [@problem_id:5211898].
 
-Even measuring hemoglobin can be tricky. At a mobile drive, a quick capillary sample from a fingertip is used. If the donor's hands are cold, blood flow is poor. A well-meaning but misguided attempt to get a sample by squeezing the finger can force colorless [interstitial fluid](@entry_id:155188) into the blood drop. This dilution can make a perfectly eligible donor’s hemoglobin appear falsely low. A tiny admixture, say $10\%$, could make a true $Hb$ of $13.5 \text{ g/dL}$ read as $12.2 \text{ g/dL}$, causing an unnecessary deferral . This illustrates a profound principle in science: the act of measurement can alter the thing being measured. Good technique—warming the hand, wiping away the first drop, and collecting a free-flowing sample—is essential to get a true reading.
+Even measuring hemoglobin can be tricky. At a mobile drive, a quick capillary sample from a fingertip is used. If the donor's hands are cold, blood flow is poor. A well-meaning but misguided attempt to get a sample by squeezing the finger can force colorless [interstitial fluid](@keyword=interstitial_fluid|lang=en-US|style=Feynman) into the blood drop. This dilution can make a perfectly eligible donor’s hemoglobin appear falsely low. A tiny admixture, say $10\%$, could make a true $Hb$ of $13.5 \text{ g/dL}$ read as $12.2 \text{ g/dL}$, causing an unnecessary deferral [@problem_id:5211860]. This illustrates a profound principle in science: the act of measurement can alter the thing being measured. Good technique—warming the hand, wiping away the first drop, and collecting a free-flowing sample—is essential to get a true reading.
 
 #### The Long View: Rebuilding the Supply
 
-After donation, the body begins the work of regeneration. This process dictates how soon a donor can safely give again. The rate-limiting factor varies with the type of donation :
+After donation, the body begins the work of regeneration. This process dictates how soon a donor can safely give again. The rate-limiting factor varies with the type of donation [@problem_id:5211906]:
 
 -   **Plasma:** The liquid portion of blood is mostly water and proteins. The body replaces the volume within 24 hours and the proteins within a couple of days. Thus, a donor can give plasma very frequently, as often as every few days.
 -   **Platelets:** These tiny cell fragments involved in clotting have a short lifespan and are rapidly replaced by the bone marrow within 3-5 days. Platelet donors can therefore give every week or two.
 -   **Red Blood Cells:** This is the marathon of regeneration. A single whole blood donation removes over 200 milligrams of iron. Since the body absorbs only 1-2 mg of iron per day from diet, replenishing this deficit takes time. The bone marrow needs this iron to build new hemoglobin. Full recovery of red cell mass takes about 8 weeks, or 56 days. This is precisely why the standard interval between whole blood donations is 56 days. A "double red cell" donation removes twice the iron, and so, logically, requires twice the recovery time: 112 days.
 
-This long-term view has led to more sophisticated screening. A simple hemoglobin check tells us about the donor's status *today*. A test for **ferritin**, a protein that stores iron, tells us about their iron reserves for the future. A donor might have an acceptable hemoglobin level but depleted iron stores, putting them at risk of anemia after their next donation. By monitoring ferritin, blood centers can proactively advise donors on iron supplementation, transforming the eligibility process from a simple gatekeeping function into a partnership for long-term donor health .
+This long-term view has led to more sophisticated screening. A simple hemoglobin check tells us about the donor's status *today*. A test for **ferritin**, a protein that stores iron, tells us about their iron reserves for the future. A donor might have an acceptable hemoglobin level but depleted iron stores, putting them at risk of anemia after their next donation. By monitoring ferritin, blood centers can proactively advise donors on iron supplementation, transforming the eligibility process from a simple gatekeeping function into a partnership for long-term donor health [@problem_id:5211880].
 
 ### Protecting the Recipient: A Search for Purity and Compatibility
 
@@ -61,7 +61,7 @@ The second commandment is to ensure the blood is safe for the recipient, who is 
 
 #### The Logic of Screening: A Two-Net Strategy
 
-The most well-known risk is transfusion-transmitted infections. To guard against this, every donation is tested for a panel of viruses like HIV, Hepatitis B and C, and other pathogens. The strategy used is a beautiful example of statistical logic .
+The most well-known risk is transfusion-transmitted infections. To guard against this, every donation is tested for a panel of viruses like HIV, Hepatitis B and C, and other pathogens. The strategy used is a beautiful example of statistical logic [@problem_id:5211856].
 
 1.  **The First Net (Screening):** The initial test is designed to be extremely **sensitive**. Think of it as a wide net designed to catch every single fish, even if it occasionally catches some seaweed too. Its job is to have a very low chance of missing a truly infected unit (few false negatives). A "reactive" or "presumptive positive" result from this test doesn't mean the donor is infected; it just means we need to look closer.
 
@@ -71,7 +71,7 @@ The power of this two-stage approach is probabilistic. If the chance of a false 
 
 #### The Geography of Risk: To Defer or to Test?
 
-Not all infectious risks can be managed the same way. The best strategy depends on the biology of the pathogen and the technology available . Consider the contrast between two insect-borne diseases:
+Not all infectious risks can be managed the same way. The best strategy depends on the biology of the pathogen and the technology available [@problem_id:5211858]. Consider the contrast between two insect-borne diseases:
 
 -   **Malaria:** The *Plasmodium* parasite can hide dormant in the liver for months or years before emerging in the blood. There is no simple, highly reliable screening test that can detect every asymptomatic carrier. Therefore, the safest strategy is **deferral**. If you have recently traveled to a malaria-endemic region, you are asked to wait a period of time (e.g., 3 months) before donating, allowing any potential hidden infection to either clear or become apparent. Here, we manage risk by avoiding it based on geography.
 
@@ -81,11 +81,11 @@ This dynamic choice between deferral and testing shows how blood safety policy i
 
 #### When the Donor's Own Body is the Hazard
 
-The risks to the recipient go beyond just microbes. Sometimes, the donor's own cells or proteins can be the problem .
+The risks to the recipient go beyond just microbes. Sometimes, the donor's own cells or proteins can be the problem [@problem_id:5211883].
 
 -   **Pregnancy:** During pregnancy, a mother can be exposed to the father's antigens through fetal cells. Her immune system may produce antibodies against these foreign proteins, such as **Human Leukocyte Antigens (HLA)**. These antibodies are harmless to her but can be devastating if transfused to a recipient whose cells carry the same antigens, causing a severe reaction called **Transfusion-Related Acute Lung Injury (TRALI)**. This is why women who have been pregnant are often deferred from donating plasma-rich products or have their donations tested for these antibodies.
 
--   **Autoimmune Disease:** In conditions like lupus or [autoimmune hemolytic anemia](@entry_id:188416), the body produces autoantibodies that attack its own tissues. Transfusing plasma containing high levels of these autoantibodies could cause them to attack the recipient's cells.
+-   **Autoimmune Disease:** In conditions like lupus or [autoimmune hemolytic anemia](@keyword=autoimmune_hemolytic_anemia|lang=en-US|style=Feynman), the body produces autoantibodies that attack its own tissues. Transfusing plasma containing high levels of these autoantibodies could cause them to attack the recipient's cells.
 
 -   **Malignancy:** Although exceedingly rare, there is a theoretical risk that circulating cancer cells in a donor's blood could be transferred to a severely immunocompromised recipient.
 
@@ -93,7 +93,7 @@ These examples reveal a deeper level of safety: compatibility extends beyond jus
 
 ### From Principles to Policies: The Architecture of Safety
 
-These scientific principles are not just academic. They are codified into a structured system of rules and standards. In the United States, this architecture has several layers :
+These scientific principles are not just academic. They are codified into a structured system of rules and standards. In the United States, this architecture has several layers [@problem_id:5211874]:
 
 -   The **Food and Drug Administration (FDA)** sets the legally binding, mandatory requirements. These include the list of required infectious disease tests, the 56-day interval for whole blood donation, and the minimum hemoglobin level. These are the non-negotiable floor for safety.
 -   The **AABB** (Association for the Advancement of Blood  Biotherapies) provides detailed standards for accredited facilities. These standards incorporate all FDA rules but often provide more specific operational guidance. For an AABB-accredited institution, these standards are compulsory.

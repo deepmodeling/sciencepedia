@@ -25,7 +25,7 @@ This means there's about a $78\%$ chance of getting through three years without 
 
 $$ P(\text{at least one recurrence}) = 1 - P(\text{no recurrence}) = 1 - (0.92)^3 \approx 0.2213 $$
 
-So, the true three-year risk is about $22\%$, not $24\%$. This simple formula, $P(\text{at least one}) = 1 - (1-p)^n$, is a cornerstone of risk assessment . It reveals a fundamental truth: small, independent risks, when repeated over time, can accumulate into a substantial threat.
+So, the true three-year risk is about $22\%$, not $24\%$. This simple formula, $P(\text{at least one}) = 1 - (1-p)^n$, is a cornerstone of risk assessment [@problem_id:5086985]. It reveals a fundamental truth: small, independent risks, when repeated over time, can accumulate into a substantial threat.
 
 #### The Ever-Present Risk: Hazard Rates
 
@@ -33,13 +33,13 @@ The coin-toss model is useful, but it treats time in discrete chunks (years). A 
 
 Imagine a clock that is ticking, but instead of just marking time, at every single instant there is a tiny, tiny probability that an alarm will go off (the event, like a disease relapse, occurs). The hazard rate is the probability of that alarm going off *right now*, given that it hasn't gone off yet.
 
-A high [hazard rate](@entry_id:266388) is like a loud, insistent ticking; a low hazard rate is a quiet one. What's so powerful about this concept? For one, it allows us to compare risks in a very direct way. In studies of ANCA-associated vasculitis, a serious [autoimmune disease](@entry_id:142031), researchers found that patients with a certain biomarker (persistent PR3-ANCA) had a **hazard ratio (HR)** of $2.0$ for relapse compared to those without it .
+A high [hazard rate](@keyword=hazard_rate|lang=en-US|style=Feynman) is like a loud, insistent ticking; a low hazard rate is a quiet one. What's so powerful about this concept? For one, it allows us to compare risks in a very direct way. In studies of ANCA-associated vasculitis, a serious [autoimmune disease](@keyword=autoimmune_disease|lang=en-US|style=Feynman), researchers found that patients with a certain biomarker (persistent PR3-ANCA) had a **hazard ratio (HR)** of $2.0$ for relapse compared to those without it [@problem_id:4811063].
 
 A hazard ratio of $2.0$ means that at any given moment in time, the instantaneous risk of relapse for a patient in the high-risk group is exactly twice that of a patient in the low-risk group. It's as if their personal "risk clock" is ticking twice as fast. This doesn't mean their overall risk over one year is simply doubled. The relationship is more subtle and beautiful, linked through the mathematics of exponents. The survival probability (the chance of *not* relapsing) in the high-risk group is related to the low-risk group's survival by the formula:
 
 $$ S_{\text{high-risk}}(t) = [S_{\text{low-risk}}(t)]^{\text{HR}} $$
 
-If the low-risk group has a $10\%$ one-year relapse risk, their survival probability is $S_{\text{low-risk}}(1) = 0.90$. For the high-risk group, the [survival probability](@entry_id:137919) becomes $(0.90)^{2.0} = 0.81$. Their one-year relapse risk is therefore $1 - 0.81 = 0.19$, or $19\%$. Not quite double, but a dramatic increase nonetheless. The hazard rate gives us a precise language to describe the continuous pressure of risk.
+If the low-risk group has a $10\%$ one-year relapse risk, their survival probability is $S_{\text{low-risk}}(1) = 0.90$. For the high-risk group, the [survival probability](@keyword=survival_probability|lang=en-US|style=Feynman) becomes $(0.90)^{2.0} = 0.81$. Their one-year relapse risk is therefore $1 - 0.81 = 0.19$, or $19\%$. Not quite double, but a dramatic increase nonetheless. The hazard rate gives us a precise language to describe the continuous pressure of risk.
 
 ### Adjusting the Odds: How Risk Factors Shape the Future
 
@@ -51,7 +51,7 @@ $$ \text{odds} = \frac{p}{1-p} $$
 
 While probability is bounded between $0$ and $1$, odds can range from $0$ to infinity, which gives them wonderfully convenient mathematical properties. The most important of these is that, in many medical risk models, the effects of different risk factors become beautifully simple: they multiply.
 
-Imagine a patient being assessed for the recurrence of pilonidal disease after surgery . The baseline probability of recurrence might be $10\%$, which corresponds to baseline odds of $0.10 / (1 - 0.10) = 1/9$. Now, let's say we identify a risk factor, like smoking, which has an **odds ratio (OR)** of $1.5$. An odds ratio is simply the multiplier for the odds. The patient's new odds of recurrence are:
+Imagine a patient being assessed for the recurrence of pilonidal disease after surgery [@problem_id:5171328]. The baseline probability of recurrence might be $10\%$, which corresponds to baseline odds of $0.10 / (1 - 0.10) = 1/9$. Now, let's say we identify a risk factor, like smoking, which has an **odds ratio (OR)** of $1.5$. An odds ratio is simply the multiplier for the odds. The patient's new odds of recurrence are:
 
 $$ \text{New Odds} = \text{Baseline Odds} \times \text{OR}_{\text{smoking}} = \frac{1}{9} \times 1.5 $$
 
@@ -59,36 +59,36 @@ What if they have another risk factor, say a high BMI, also with an OR of $1.5$?
 
 $$ \text{Final Odds} = \frac{1}{9} \times (1.5)^3 = \frac{1}{9} \times 3.375 = 0.375 $$
 
-We can then convert these final odds back to a probability: $p = \text{odds} / (1 + \text{odds}) = 0.375 / 1.375 \approx 0.273$, or $27.3\%$. This multiplicative effect is profound. A series of seemingly modest risk factors can compound to transform a low-risk situation into a high-risk one . This principle is the engine behind countless clinical risk calculators, allowing doctors to synthesize multiple data points into a single, personalized risk estimate. This mathematical structure often reflects a physical reality. For instance, in Graves' disease, a larger goiter (thyroid gland) literally provides more machinery for hormone production, multiplying the effect of the stimulating autoantibodies and making both treatment failure and relapse more likely .
+We can then convert these final odds back to a probability: $p = \text{odds} / (1 + \text{odds}) = 0.375 / 1.375 \approx 0.273$, or $27.3\%$. This multiplicative effect is profound. A series of seemingly modest risk factors can compound to transform a low-risk situation into a high-risk one [@problem_id:4795689]. This principle is the engine behind countless clinical risk calculators, allowing doctors to synthesize multiple data points into a single, personalized risk estimate. This mathematical structure often reflects a physical reality. For instance, in Graves' disease, a larger goiter (thyroid gland) literally provides more machinery for hormone production, multiplying the effect of the stimulating autoantibodies and making both treatment failure and relapse more likely [@problem_id:4377187].
 
 ### The Engine of Discovery: Updating Our Beliefs with Evidence
 
 We have a personalized risk estimate. But then, a new piece of information arrives—a blood test result, an imaging scan. How do we rationally incorporate this new evidence? The answer is a principle so powerful it underpins much of scientific reasoning and artificial intelligence: **Bayesian updating**.
 
-The core idea is simple: your new belief (**posterior probability**) should be a combination of your old belief (**[prior probability](@entry_id:275634)**) and the strength of the new evidence. Again, this is most elegantly handled using odds. The formula is breathtakingly simple:
+The core idea is simple: your new belief (**posterior probability**) should be a combination of your old belief (**[prior probability](@keyword=prior_probability|lang=en-US|style=Feynman)**) and the strength of the new evidence. Again, this is most elegantly handled using odds. The formula is breathtakingly simple:
 
 $$ \text{Post-test Odds} = \text{Pre-test Odds} \times \text{Likelihood Ratio} $$
 
-The **[likelihood ratio](@entry_id:170863) (LR)** is the "strength of the evidence." It tells you how much more likely this test result is in someone who will have the event (e.g., relapse) compared to someone who won't.
+The **[likelihood ratio](@keyword=likelihood_ratio|lang=en-US|style=Feynman) (LR)** is the "strength of the evidence." It tells you how much more likely this test result is in someone who will have the event (e.g., relapse) compared to someone who won't.
 
 *   An $LR > 1$ means the test result supports the hypothesis (relapse is more likely).
 *   An $LR  1$ means the test result argues against the hypothesis (relapse is less likely).
 *   An $LR = 1$ means the test is useless.
 
-Consider a patient who has had surgery for colorectal cancer . Based on the tumor's characteristics, their doctor estimates a pre-test probability of recurrence of $40\%$. The pre-test odds are thus $0.40 / (1 - 0.40) = 2/3$. The patient then has a highly sensitive blood test for circulating tumor DNA (ctDNA) which comes back negative. This negative result is known to have a likelihood ratio of $0.3$. The evidence is moderately strong that no residual disease is present. We update the odds:
+Consider a patient who has had surgery for colorectal cancer [@problem_id:5155731]. Based on the tumor's characteristics, their doctor estimates a pre-test probability of recurrence of $40\%$. The pre-test odds are thus $0.40 / (1 - 0.40) = 2/3$. The patient then has a highly sensitive blood test for circulating tumor DNA (ctDNA) which comes back negative. This negative result is known to have a likelihood ratio of $0.3$. The evidence is moderately strong that no residual disease is present. We update the odds:
 
 $$ \text{Post-test Odds} = \frac{2}{3} \times 0.3 = 0.2 $$
 
 Converting back to a probability, the new risk of recurrence is $0.2 / (1 + 0.2) \approx 0.167$, or $16.7\%$. The risk has been more than halved by this single piece of evidence.
 
-This principle also reveals a crucial subtlety: where you start matters. The same evidence does not lead to the same conclusion for everyone. Imagine two children with acute lymphoblastic [leukemia](@entry_id:152725) (ALL) . One has a low-risk subtype with an $8\%$ prior chance of relapse, while the other has a high-risk subtype with a $40\%$ prior chance. Both get a positive result on a test for minimal residual disease (MRD). This positive result has the same "strength" for both of them. Yet, the final risk will be very different. The low-risk child’s risk might jump from $8\%$ to $25\%$. The high-risk child’s risk might soar from $40\%$ to over $70\%$. This is why interpreting a test result in isolation, without considering the patient's baseline risk, is a fundamental error. The evidence doesn't speak for itself; it speaks to our prior beliefs, and updates them in a mathematically disciplined way .
+This principle also reveals a crucial subtlety: where you start matters. The same evidence does not lead to the same conclusion for everyone. Imagine two children with acute lymphoblastic [leukemia](@keyword=leukemia|lang=en-US|style=Feynman) (ALL) [@problem_id:5094859]. One has a low-risk subtype with an $8\%$ prior chance of relapse, while the other has a high-risk subtype with a $40\%$ prior chance. Both get a positive result on a test for minimal residual disease (MRD). This positive result has the same "strength" for both of them. Yet, the final risk will be very different. The low-risk child’s risk might jump from $8\%$ to $25\%$. The high-risk child’s risk might soar from $40\%$ to over $70\%$. This is why interpreting a test result in isolation, without considering the patient's baseline risk, is a fundamental error. The evidence doesn't speak for itself; it speaks to our prior beliefs, and updates them in a mathematically disciplined way [@problem_id:5213349].
 
 ### A More Honest Accounting: The Problem of Competing Risks
 
-The real world has one final complication. In our journey to see if an event like cancer recurrence will happen, another, unrelated event might intervene. An older patient being monitored for breast cancer recurrence might die of a heart attack or a stroke before the cancer ever has a chance to return . This is the problem of **[competing risks](@entry_id:173277)**.
+The real world has one final complication. In our journey to see if an event like cancer recurrence will happen, another, unrelated event might intervene. An older patient being monitored for breast cancer recurrence might die of a heart attack or a stroke before the cancer ever has a chance to return [@problem_id:4439043]. This is the problem of **[competing risks](@keyword=competing_risks|lang=en-US|style=Feynman)**.
 
 If we simply ignore these deaths and "censor" them from our data, we create a biased picture. We are estimating the risk of recurrence in a hypothetical, immortal population that isn't subject to other mortal dangers. This can lead us to overestimate the *actual*, real-world probability that a patient will experience a recurrence.
 
 Modern biostatistics has developed sophisticated methods, like the Fine-Gray model, to handle this. These models don't pretend the competing risks don't exist. Instead, they aim to estimate the absolute probability of recurrence in a world where these competing events are an ever-present possibility. It's a more difficult, but more honest, form of accounting—one that recognizes that life is a race with multiple, and sometimes unexpected, finish lines.
 
-From the simple toss of a coin to the complexities of competing fates, the principles of recurrence risk provide a unified framework for thinking about the future. It is a journey from a general guess to a personalized, updated, and honest assessment of what may lie ahead. This mathematical toolkit, far from being cold and abstract, is a deeply human endeavor, providing the foundation for shared decisions between doctors and patients as they navigate the uncertainties of health and disease together .
+From the simple toss of a coin to the complexities of competing fates, the principles of recurrence risk provide a unified framework for thinking about the future. It is a journey from a general guess to a personalized, updated, and honest assessment of what may lie ahead. This mathematical toolkit, far from being cold and abstract, is a deeply human endeavor, providing the foundation for shared decisions between doctors and patients as they navigate the uncertainties of health and disease together [@problem_id:5094716].

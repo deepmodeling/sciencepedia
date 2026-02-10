@@ -1,7 +1,7 @@
 ## Introduction
 In the study of how things spread, one question is paramount: will a single case fade into obscurity or ignite a full-blown epidemic? The key to this question is a powerful concept known as the basic reproduction number, or R0. This single figure is the engine of contagion, quantifying a pathogen's potential to spread through a population. Understanding R0 is not just an academic exercise; it is essential for predicting, managing, and ultimately controlling outbreaks. This article demystifies this critical number, addressing the knowledge gap between its mathematical origins and its practical, life-saving applications.
 
-Across the following sections, we will delve into the core of the R0 model. The first chapter, "Principles and Mechanisms," will unpack the mathematical definition of R0, explore the critical [epidemic threshold](@entry_id:275627) at R0=1, and explain the dynamic shift from the basic to the effective reproduction number (Rt) as an epidemic unfolds. Subsequently, the chapter on "Applications and Interdisciplinary Connections" will reveal how this theoretical knowledge is transformed into action, from designing public health interventions and vaccination strategies to its surprising relevance in ecology, animal health, and even the digital spread of information.
+Across the following sections, we will delve into the core of the R0 model. The first chapter, "Principles and Mechanisms," will unpack the mathematical definition of R0, explore the critical [epidemic threshold](@keyword=epidemic_threshold|lang=en-US|style=Feynman) at R0=1, and explain the dynamic shift from the basic to the effective reproduction number (Rt) as an epidemic unfolds. Subsequently, the chapter on "Applications and Interdisciplinary Connections" will reveal how this theoretical knowledge is transformed into action, from designing public health interventions and vaccination strategies to its surprising relevance in ecology, animal health, and even the digital spread of information.
 
 ## Principles and Mechanisms
 
@@ -31,7 +31,7 @@ $$
 
 At the very beginning of an outbreak in a totally susceptible population, the number of susceptible people $S$ is almost equal to the total population $N$, so the fraction $\frac{S}{N}$ is nearly 1. The equation simplifies to $\frac{dI}{dt} \approx (\beta - \gamma)I$. The number of infections will grow if $\beta - \gamma \gt 0$, which is precisely the same condition as $R_0 = \frac{\beta}{\gamma} \gt 1$.
 
-This critical threshold at $R_0 = 1$ is an example of a profound phenomenon in physics and mathematics called a **bifurcation**. As $R_0$ crosses the value of 1, the entire character of the system's behavior changes. For $R_0 \lt 1$, the only stable state is the **disease-free equilibrium** (DFE), where there are no infections. But the moment $R_0$ ticks above 1, the DFE becomes unstable. Like a ball balanced precariously on a hilltop, any small nudge (the introduction of a case) will cause it to roll away. Simultaneously, a new, stable state is born: an **endemic equilibrium**, where the disease persists in the population indefinitely. The system has undergone a fundamental "[exchange of stability](@entry_id:273437)" from the disease-free to the endemic state, all governed by this single number crossing a single value.
+This critical threshold at $R_0 = 1$ is an example of a profound phenomenon in physics and mathematics called a **bifurcation**. As $R_0$ crosses the value of 1, the entire character of the system's behavior changes. For $R_0 \lt 1$, the only stable state is the **disease-free equilibrium** (DFE), where there are no infections. But the moment $R_0$ ticks above 1, the DFE becomes unstable. Like a ball balanced precariously on a hilltop, any small nudge (the introduction of a case) will cause it to roll away. Simultaneously, a new, stable state is born: an **endemic equilibrium**, where the disease persists in the population indefinitely. The system has undergone a fundamental "[exchange of stability](@keyword=exchange_of_stability|lang=en-US|style=Feynman)" from the disease-free to the endemic state, all governed by this single number crossing a single value.
 
 ### Deconstructing R-naught: The Levers of Control
 
@@ -51,7 +51,7 @@ This elegant modification shows how the definition of $R_0$ adapts to different 
 
 A common and dangerous misconception is that $R_0$ is a fixed, immutable property of a disease. It is not. $R_0$ is the pathogen's raw potential, measured in a perfect, completely susceptible world. As an epidemic progresses, the world changes. People get sick and recover, gaining immunity. The "forest" is no longer made of purely dry wood; it's now interspersed with fireproof, recovered trees.
 
-To capture the transmission potential in real-time, we use the **effective reproduction number**, $R_t$. It asks: right now, given the current state of immunity in the population, how many new people will an average infected person transmit to? The answer is beautifully simple. The chance of an infectious person encountering a susceptible one is proportional to the fraction of the population that is still susceptible, $s(t) = \frac{S(t)}{N}$. Therefore, the [effective reproduction number](@entry_id:164900) is simply:
+To capture the transmission potential in real-time, we use the **effective reproduction number**, $R_t$. It asks: right now, given the current state of immunity in the population, how many new people will an average infected person transmit to? The answer is beautifully simple. The chance of an infectious person encountering a susceptible one is proportional to the fraction of the population that is still susceptible, $s(t) = \frac{S(t)}{N}$. Therefore, the [effective reproduction number](@keyword=effective_reproduction_number|lang=en-US|style=Feynman) is simply:
 
 $$
 R_t = R_0 \times s(t) = R_0 \frac{S(t)}{N}
@@ -61,7 +61,7 @@ This equation is one of the most important in all of epidemiology. It tells us t
 
 ### Taming the Beast: The Promise of Herd Immunity
 
-The relationship between $R_t$ and population immunity gives humanity its most powerful tool against infectious diseases: vaccination. Instead of waiting for an epidemic to burn through the population to build immunity, we can build it beforehand, safely and effectively. This is the concept of **[herd immunity](@entry_id:139442)**.
+The relationship between $R_t$ and population immunity gives humanity its most powerful tool against infectious diseases: vaccination. Instead of waiting for an epidemic to burn through the population to build immunity, we can build it beforehand, safely and effectively. This is the concept of **[herd immunity](@keyword=herd_immunity|lang=en-US|style=Feynman)**.
 
 The goal is to reduce the susceptible population fraction, $s(t)$, to a level where the disease cannot cause a major outbreak from the very beginning. We need to ensure that $R_t$ is less than 1 even when the first case arrives. If we vaccinate a fraction $h$ of the population (assuming a perfect vaccine), the initial susceptible fraction becomes $s(0) = 1 - h$. The condition to prevent an epidemic is:
 
@@ -75,13 +75,13 @@ $$
 h \gt 1 - \frac{1}{R_0}
 $$
 
-This simple formula is a beacon for public health. It tells us precisely what fraction of the population we must vaccinate to protect the entire "herd," including those who cannot be vaccinated. It directly links a pathogen's intrinsic [transmissibility](@entry_id:756124) ($R_0$) to the societal effort ($h$) required to defeat it. Of course, this elegant result rests on simplifying assumptions—perfect vaccines, random mixing of people, and so on—but it provides an indispensable starting point for vaccination strategy.
+This simple formula is a beacon for public health. It tells us precisely what fraction of the population we must vaccinate to protect the entire "herd," including those who cannot be vaccinated. It directly links a pathogen's intrinsic [transmissibility](@keyword=transmissibility|lang=en-US|style=Feynman) ($R_0$) to the societal effort ($h$) required to defeat it. Of course, this elegant result rests on simplifying assumptions—perfect vaccines, random mixing of people, and so on—but it provides an indispensable starting point for vaccination strategy.
 
 ### The Dice Roll: Chance and the Fate of an Epidemic
 
 Our discussion so far has been about averages. $R_0=2$ means an infected person causes *on average* two new cases. But in reality, especially when case numbers are low, chance plays an enormous role. One person might get lucky, stay home, and infect no one. Another might attend a large gathering and infect ten. This is the world of stochastics.
 
-Even if $R_0 \gt 1$, a single imported case is not guaranteed to start an epidemic. It's like flipping a biased coin; you might get a surprising streak of "tails." The initial chain of transmission can die out by sheer bad luck (or good luck, from our perspective!). The theory of [branching processes](@entry_id:276048), a cornerstone of [applied probability](@entry_id:264675), gives us a stunningly simple answer to this question. For a pathogen with a basic reproduction number $R_0$, the probability that a single infection will fail to establish a major epidemic and instead die out stochastically is exactly $1/R_0$.
+Even if $R_0 \gt 1$, a single imported case is not guaranteed to start an epidemic. It's like flipping a biased coin; you might get a surprising streak of "tails." The initial chain of transmission can die out by sheer bad luck (or good luck, from our perspective!). The theory of [branching processes](@keyword=branching_processes|lang=en-US|style=Feynman), a cornerstone of [applied probability](@keyword=applied_probability|lang=en-US|style=Feynman), gives us a stunningly simple answer to this question. For a pathogen with a basic reproduction number $R_0$, the probability that a single infection will fail to establish a major epidemic and instead die out stochastically is exactly $1/R_0$.
 
 This means the probability of a spark successfully igniting a wildfire is:
 
@@ -89,13 +89,13 @@ $$
 P_{\text{outbreak}} = 1 - \frac{1}{R_0}
 $$
 
-This result is profound. Notice the beautiful symmetry: the expression for the [herd immunity threshold](@entry_id:184932) is identical to the expression for the probability of a major outbreak. This deep connection reveals that the very quantity dictating how likely an epidemic is to take off is the same quantity that tells us how much effort is needed to preemptively extinguish it.
+This result is profound. Notice the beautiful symmetry: the expression for the [herd immunity threshold](@keyword=herd_immunity_threshold|lang=en-US|style=Feynman) is identical to the expression for the probability of a major outbreak. This deep connection reveals that the very quantity dictating how likely an epidemic is to take off is the same quantity that tells us how much effort is needed to preemptively extinguish it.
 
 ### When the Rules Bend: A Glimpse Beyond the Threshold
 
 The $R_0 = 1$ threshold is a powerful and generally reliable rule. But nature is clever, and science is a process of uncovering ever-deeper layers of complexity. In some situations, the rules can bend.
 
-Consider a scenario where the healthcare system becomes overwhelmed. As the number of infected people, $I$, grows, the resources available to treat each person—like hospital beds or [antiviral drugs](@entry_id:171468)—become scarce. The quality of care may drop, and the per-person recovery rate may decrease. This is a **nonlinear effect**: the removal rate is no longer a constant, $\gamma$, but a function that decreases as $I$ increases, a phenomenon called **treatment saturation**.
+Consider a scenario where the healthcare system becomes overwhelmed. As the number of infected people, $I$, grows, the resources available to treat each person—like hospital beds or [antiviral drugs](@keyword=antiviral_drugs|lang=en-US|style=Feynman)—become scarce. The quality of care may drop, and the per-person recovery rate may decrease. This is a **nonlinear effect**: the removal rate is no longer a constant, $\gamma$, but a function that decreases as $I$ increases, a phenomenon called **treatment saturation**.
 
 This nonlinearity can dramatically change the dynamics of the system. It can create a situation known as a **backward bifurcation**. In this strange world, it's possible to have a stable endemic equilibrium—a persistent, smoldering fire—even when $R_0 \lt 1$. How can this be? When $R_0 \lt 1$, a small introduction of cases will indeed die out, as the initial healthcare response is strong. However, if a very large number of cases were introduced at once (perhaps from a mass travel event), it could overwhelm the system from the start. The reduced recovery rate could allow the disease to establish a foothold and persist at a high level.
 

@@ -7,7 +7,7 @@ To understand what “full-thickness epidermal atypia” means, we must first ap
 
 As these citizens age, they don't stay put. They embark on a one-way journey upwards, away from the basal layer. With each step up, they mature and change jobs—a process we call **differentiation**. They become specialized, linking tightly to their neighbors to form a resilient, cohesive fabric. At the very end of their journey, at the city's outer edge, they perform a final act of civic duty: they sacrifice themselves, becoming the tough, dead, protective layer known as the **stratum corneum**. This constant cycle of birth, migration, maturation, and sacrifice creates the beautiful, life-sustaining barrier that is our skin.
 
-This entire society is governed by a strict set of laws encoded in the DNA of every cell. Guardians of the genome, like the famous tumor suppressor protein **p53**, patrol the city, ensuring that any citizen with damaged laws (mutated DNA) is either repaired or honorably discharged through [programmed cell death](@entry_id:145516) (apoptosis). The entire city is self-contained, separated from the dermis and its rich network of blood vessels and lymphatics by a formidable wall: the **basement membrane**.
+This entire society is governed by a strict set of laws encoded in the DNA of every cell. Guardians of the genome, like the famous tumor suppressor protein **p53**, patrol the city, ensuring that any citizen with damaged laws (mutated DNA) is either repaired or honorably discharged through [programmed cell death](@keyword=programmed_cell_death|lang=en-US|style=Feynman) (apoptosis). The entire city is self-contained, separated from the dermis and its rich network of blood vessels and lymphatics by a formidable wall: the **basement membrane**.
 
 ### Seeds of Rebellion: The Birth of Atypia
 
@@ -31,7 +31,7 @@ This progression from a partial-thickness dysplasia (actinic keratosis) to a ful
 
 So, the city is in chaos, but it's a localized problem. The wall is intact. This is more than just a geographic detail; it is a point of profound biological significance. The epidermis, our city, is **avascular**—it has no blood vessels of its own. It receives all its nutrients by diffusion from the dermis below. This means the rebels, for all their chaos, are trapped. They have no access to the major highways—the blood and lymphatic vessels—that could transport them to distant sites.
 
-The final, terrifying step in this progression is when the cancer cells learn to become invaders. They acquire new, destructive tools: enzymes, such as **[matrix metalloproteinases](@entry_id:262773)**, that act like molecular sledgehammers, capable of digesting the proteins that form the basement membrane.
+The final, terrifying step in this progression is when the cancer cells learn to become invaders. They acquire new, destructive tools: enzymes, such as **[matrix metalloproteinases](@keyword=matrix_metalloproteinases|lang=en-US|style=Feynman)**, that act like molecular sledgehammers, capable of digesting the proteins that form the basement membrane.
 
 The moment the first cancer cells breach this wall and spill out into the underlying dermis, the game changes completely. The disease is no longer *in situ*. It is now **invasive squamous cell carcinoma**.
 

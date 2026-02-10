@@ -7,7 +7,7 @@ To truly appreciate the elegance of neoadjuvant therapy for Gastrointestinal Str
 
 ### The Enemy Within: A Runaway Switch
 
-Imagine the intricate, rhythmic contractions of your stomach and intestines, a ceaseless ballet that digests your food. This ballet is coordinated by a special network of nerve-like cells called the **interstitial cells of Cajal** (ICCs). They are the gut's pacemakers. A GIST is born when one of these [pacemaker cells](@entry_id:155624) goes haywire.
+Imagine the intricate, rhythmic contractions of your stomach and intestines, a ceaseless ballet that digests your food. This ballet is coordinated by a special network of nerve-like cells called the **interstitial cells of Cajal** (ICCs). They are the gut's pacemakers. A GIST is born when one of these [pacemaker cells](@keyword=pacemaker_cells|lang=en-US|style=Feynman) goes haywire.
 
 The root of the problem lies in a molecular "switch." In a healthy cell, this switch—a protein called a **receptor tyrosine kinase**, most often **KIT** or a related protein called **PDGFRA**—tells the cell when to grow and divide. It receives signals from outside, flips to "ON," delivers the message, and then reliably flips back to "OFF." But in a GIST, a tiny error in the genetic code, a **mutation**, causes this switch to become permanently stuck in the "ON" position.
 

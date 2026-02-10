@@ -1,7 +1,7 @@
 ## Introduction
 While animals learn primarily through direct experience, the human mind possesses a unique and powerful capability: the ability to link any two concepts and derive relationships that were never directly taught. This process is the foundation of language, metaphor, and our complex inner world, but it is also the mechanism that can construct intricate psychological traps, leading to immense suffering. Relational Frame Theory (RFT) is a comprehensive psychological theory that unpacks this uniquely human ability, explaining how language can become both a tool for creation and a source of pain. It addresses the fundamental gap in understanding how abstract thoughts and verbal rules come to exert such powerful control over our emotions and behaviors.
 
-This article will guide you through the core of this revolutionary theory. First, in the "Principles and Mechanisms" chapter, we will dissect the fundamental processes of RFT, including derived relational responding, the transformation of stimulus functions, and the powerful role of rule-governed behavior in shaping our lives. Following that, the "Applications and Interdisciplinary Connections" chapter will demonstrate how these principles are applied in the real world, primarily through Acceptance and Commitment Therapy (ACT), to alleviate psychological suffering and how RFT is building bridges to cutting-edge fields like [computational psychiatry](@entry_id:187590) and psychedelic research.
+This article will guide you through the core of this revolutionary theory. First, in the "Principles and Mechanisms" chapter, we will dissect the fundamental processes of RFT, including derived relational responding, the transformation of stimulus functions, and the powerful role of rule-governed behavior in shaping our lives. Following that, the "Applications and Interdisciplinary Connections" chapter will demonstrate how these principles are applied in the real world, primarily through Acceptance and Commitment Therapy (ACT), to alleviate psychological suffering and how RFT is building bridges to cutting-edge fields like [computational psychiatry](@keyword=computational_psychiatry|lang=en-US|style=Feynman) and psychedelic research.
 
 ## Principles and Mechanisms
 
@@ -11,7 +11,7 @@ Imagine watching a dog learn that the sound of a bell means food is coming. Afte
 
 If you are told that a Swedish coin (the Krona) is worth more than a Japanese coin (the Yen), and that the Yen is worth more than an Italian coin (the Lira), you instantly know, without anyone ever telling you, that the Krona is worth more than the Lira. This ability to derive relations between things that have never been directly paired is called **derived relational responding**. This may seem trivially obvious, but it is a profoundly human capability. No non-human animal has been shown to do this with the arbitrary flexibility that a toddler can.
 
-This isn't just about logic puzzles. This capacity is the bedrock of our entire symbolic world: mathematics, metaphor, analogy, and our very sense of self. It is how words come to have power, how an abstract idea can move us to tears, and how a thought can feel as threatening as a physical object. RFT proposes that this isn't just one trick, but a [learned behavior](@entry_id:144106) governed by a set of rules, or **relational frames**.
+This isn't just about logic puzzles. This capacity is the bedrock of our entire symbolic world: mathematics, metaphor, analogy, and our very sense of self. It is how words come to have power, how an abstract idea can move us to tears, and how a thought can feel as threatening as a physical object. RFT proposes that this isn't just one trick, but a [learned behavior](@keyword=learned_behavior|lang=en-US|style=Feynman) governed by a set of rules, or **relational frames**.
 
 ### The Mind's Grammar: Relational Frames
 
@@ -50,7 +50,7 @@ This practice helps us connect with a different sense of self. RFT and ACT disti
 
 ### A New Compass: The Philosophy of Workability
 
-This entire approach rests on a unique philosophical foundation called **functional contextualism**. Most of us implicitly operate on a **[correspondence theory](@entry_id:634661) of truth**: a thought is good or bad, true or false, based on whether it accurately reflects reality. From this view, the goal with a thought like "I am worthless" is to challenge and correct it.
+This entire approach rests on a unique philosophical foundation called **functional contextualism**. Most of us implicitly operate on a **[correspondence theory](@keyword=correspondence_theory|lang=en-US|style=Feynman) of truth**: a thought is good or bad, true or false, based on whether it accurately reflects reality. From this view, the goal with a thought like "I am worthless" is to challenge and correct it.
 
 Functional contextualism proposes a different standard of truth: a **pragmatic truth criterion**, or **workability**. The question is not, "Is this thought true?" but rather, "Is this thought *workable*? Does paying attention to it and acting on it help me create the kind of life I want to live?"
 

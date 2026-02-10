@@ -1,6 +1,6 @@
 ## Applications and Interdisciplinary Connections
 
-To a physicist, a graph of oscillations is a familiar friend. It might describe a pendulum, a [vibrating string](@entry_id:138456), or an alternating current. But in medicine, one of the most profound of all such graphs is the tracing of a fetal heart rate. It is more than just a wave; it is a conversation. It is the only voice of a patient we cannot see, a patient who cannot tell us where it hurts. Learning to interpret this language is not just a clinical skill; it is a journey into the heart of physiology, revealing beautiful and unexpected connections that span the entire landscape of medicine.
+To a physicist, a graph of oscillations is a familiar friend. It might describe a pendulum, a [vibrating string](@keyword=vibrating_string|lang=en-US|style=Feynman), or an alternating current. But in medicine, one of the most profound of all such graphs is the tracing of a fetal heart rate. It is more than just a wave; it is a conversation. It is the only voice of a patient we cannot see, a patient who cannot tell us where it hurts. Learning to interpret this language is not just a clinical skill; it is a journey into the heart of physiology, revealing beautiful and unexpected connections that span the entire landscape of medicine.
 
 ### The Dialogue of Labor and Perfusion
 

@@ -11,13 +11,13 @@ The science of evaluating medical tests begins with this same simple, beautiful 
 
 At its core, many a diagnostic test is a measurement device. It takes a biological sample and outputs a number—the concentration of cholesterol in your blood, the amount of a virus's genetic material, the brightness of a spot on a medical image. Our first job is to characterize the quality of this measurement, completely independent of what the number might mean for your health. This is the domain of **analytical performance**.
 
-Let’s return to our tailor's measuring tape, but now it's a sophisticated machine measuring HDL cholesterol (the "good" cholesterol). We can test its **accuracy**—or more specifically, its **[trueness](@entry_id:197374)**—by feeding it a reference material certified to contain exactly $50 \text{ mg/dL}$ of HDL-C. If our machine consistently reports an average of $51.0 \text{ mg/dL}$, it has a systematic deviation, or **bias**, of $+1.0 \text{ mg/dL}$. It’s like a tape measure that’s been stretched slightly.
+Let’s return to our tailor's measuring tape, but now it's a sophisticated machine measuring HDL cholesterol (the "good" cholesterol). We can test its **accuracy**—or more specifically, its **[trueness](@keyword=trueness|lang=en-US|style=Feynman)**—by feeding it a reference material certified to contain exactly $50 \text{ mg/dL}$ of HDL-C. If our machine consistently reports an average of $51.0 \text{ mg/dL}$, it has a systematic deviation, or **bias**, of $+1.0 \text{ mg/dL}$. It’s like a tape measure that’s been stretched slightly.
 
 Now, if we run that same $50 \text{ mg/dL}$ sample ten times, we won’t get $51.0$ on the dot every time. We might get a scatter of results: $51.0, 50.8, 51.2, 51.5, 50.7, \ldots$. This random scatter around the machine's own average is its **imprecision**. We can quantify this scatter with the standard deviation. To compare the precision of measurements at different concentrations (e.g., is the machine more "shaky" at low cholesterol levels than at high ones?), we use a normalized, dimensionless metric: the **Coefficient of Variation (CV)**, which is the standard deviation divided by the mean. A low CV means high precision, just like a steady hand.
 
 Together, bias and imprecision give us the **total error**. A good assay for cholesterol, for example, must have both low bias and low imprecision to be trusted for clinical decisions, as defined by benchmarks like the National Cholesterol Education Program (NCEP) goals.
 
-This fundamental pair of ideas—[accuracy and precision](@entry_id:189207)—applies to every measurement, from a simple blood sugar reading to the complex task of a next-generation sequencing (NGS) machine estimating the fraction of a cancerous mutation in a tumor's DNA, known as the **Variant Allele Fraction (VAF)**. When validating such an advanced assay, scientists will meticulously check its quantitative accuracy (how close its average VAF measurement is to the true VAF) and its precision (the run-to-run variability in that measurement).
+This fundamental pair of ideas—[accuracy and precision](@keyword=accuracy_and_precision|lang=en-US|style=Feynman)—applies to every measurement, from a simple blood sugar reading to the complex task of a next-generation sequencing (NGS) machine estimating the fraction of a cancerous mutation in a tumor's DNA, known as the **Variant Allele Fraction (VAF)**. When validating such an advanced assay, scientists will meticulously check its quantitative accuracy (how close its average VAF measurement is to the true VAF) and its precision (the run-to-run variability in that measurement).
 
 ### From Measurement to Decision: Sensitivity and Specificity
 
@@ -78,16 +78,16 @@ We have now assembled a toolkit of metrics. But how do they fit into the grand s
 #### Rung 1: Analytical Validity
 
 This is the foundation. It answers the question: "Does the test measure what it claims to measure, accurately and reliably?" This is where we establish the metrics we've already discussed:
-- **Accuracy** ([trueness](@entry_id:197374)/bias) and **Precision** (repeatability/[reproducibility](@entry_id:151299)).
+- **Accuracy** ([trueness](@keyword=trueness|lang=en-US|style=Feynman)/bias) and **Precision** (repeatability/[reproducibility](@keyword=reproducibility|lang=en-US|style=Feynman)).
 - **Analytical Sensitivity and Specificity**. For a molecular test, this also includes **inclusivity** (detecting all strains of a target virus) and **exclusivity** (not cross-reacting with related but harmless viruses).
 - **Limit of Detection (LOD)**: What is the faintest signal the test can reliably distinguish from noise? This is critical for early disease detection or monitoring residual disease.
-- **Robustness**: How does the test perform under non-ideal conditions? This is especially vital for **Point-of-Care (POC)** tests used in busy clinics instead of pristine labs. Validation must include [stress testing](@entry_id:139775) across different temperatures and humidities and, crucially, must involve the intended non-expert users to measure the impact of real-world operator variability.
+- **Robustness**: How does the test perform under non-ideal conditions? This is especially vital for **Point-of-Care (POC)** tests used in busy clinics instead of pristine labs. Validation must include [stress testing](@keyword=stress_testing|lang=en-US|style=Feynman) across different temperatures and humidities and, crucially, must involve the intended non-expert users to measure the impact of real-world operator variability.
 
 We must also be vigilant about the entire testing process, which is often partitioned into three phases. An error can occur in any of them: a **pre-analytical** error like a mislabeled blood tube, an **analytical** error like a machine malfunction, or a **post-analytical** error like a typo in the final report. A valid test requires quality control across this entire chain.
 
 #### Rung 2: Clinical Validity
 
-Once we have an analytically valid test that we can trust, we climb to the next rung. It answers the question: "Is the test result associated with the clinical condition of interest?" This is about establishing a meaningful correlation. For example, does having a specific *SLCO1B1* gene variant (the test result) reliably predict a higher risk of muscle pain when taking [statins](@entry_id:167025) (the clinical condition)? This is the step that connects the laboratory measurement to human biology.
+Once we have an analytically valid test that we can trust, we climb to the next rung. It answers the question: "Is the test result associated with the clinical condition of interest?" This is about establishing a meaningful correlation. For example, does having a specific *SLCO1B1* gene variant (the test result) reliably predict a higher risk of muscle pain when taking [statins](@keyword=statins|lang=en-US|style=Feynman) (the clinical condition)? This is the step that connects the laboratory measurement to human biology.
 
 #### Rung 3: Clinical Utility
 

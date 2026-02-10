@@ -11,7 +11,7 @@ To truly understand the depth of the crisis, we must listen more closely. We mus
 
 ### The Engine of Life and its Oxygen Fuel
 
-At its core, every one of your cells is a microscopic engine. Like any engine, it needs fuel (like glucose) and oxygen to burn that fuel cleanly and efficiently. This process, **aerobic metabolism**, is what powers everything you do, think, and feel. The [circulatory system](@entry_id:151123) is the magnificent logistics network responsible for this fuel delivery.
+At its core, every one of your cells is a microscopic engine. Like any engine, it needs fuel (like glucose) and oxygen to burn that fuel cleanly and efficiently. This process, **aerobic metabolism**, is what powers everything you do, think, and feel. The [circulatory system](@keyword=circulatory_system|lang=en-US|style=Feynman) is the magnificent logistics network responsible for this fuel delivery.
 
 We can think of the total amount of oxygen delivered to the tissues each minute as the **oxygen delivery**, or $D_{O_2}$. It’s a simple, beautiful equation: it’s the flow rate of blood pumped by the heart (the **Cardiac Output**, or $CO$) multiplied by the amount of oxygen packed into each parcel of blood (the **Arterial Oxygen Content**, or $C_{aO_2}$).
 
@@ -23,15 +23,15 @@ In severe trauma with bleeding, this entire logistics network suffers a catastro
 
 ### The Cell’s Emergency Power: A Smoke Signal of Distress
 
-What does a cell do when the oxygen supply line is cut? It doesn't just give up. It switches to an emergency backup generator: **[anaerobic metabolism](@entry_id:165313)**. This process can generate a little bit of energy without oxygen, buying precious time. But this emergency power comes at a cost. It’s inefficient and produces a toxic byproduct: **lactic acid**.
+What does a cell do when the oxygen supply line is cut? It doesn't just give up. It switches to an emergency backup generator: **[anaerobic metabolism](@keyword=anaerobic_metabolism|lang=en-US|style=Feynman)**. This process can generate a little bit of energy without oxygen, buying precious time. But this emergency power comes at a cost. It’s inefficient and produces a toxic byproduct: **lactic acid**.
 
 Think of it this way: aerobic metabolism is a clean-burning engine. Anaerobic metabolism is like a sputtering, smoky engine running on a rich, air-starved fuel mixture. The lactic acid is the thick, black smoke pouring out of the exhaust. For a doctor, seeing a rising lactate level in the blood is like seeing that smoke on the horizon. It’s an unambiguous distress signal that, deep at the cellular level, tissues are suffocating.
 
 ### The Body's Accounting System: Buffers and the Base Deficit
 
-This flood of lactic acid presents a new crisis. It releases hydrogen ions ($H^+$) into the bloodstream, which are like a corrosive poison. They threaten to disrupt the delicate [acid-base balance](@entry_id:139335), or **pH**, of the body, which must be kept in an incredibly narrow range. A significant deviation in pH can cause enzymes to fail, proteins to deform, and the entire machinery of life to grind to a halt.
+This flood of lactic acid presents a new crisis. It releases hydrogen ions ($H^+$) into the bloodstream, which are like a corrosive poison. They threaten to disrupt the delicate [acid-base balance](@keyword=acid_base_balance|lang=en-US|style=Feynman), or **pH**, of the body, which must be kept in an incredibly narrow range. A significant deviation in pH can cause enzymes to fail, proteins to deform, and the entire machinery of life to grind to a halt.
 
-Fortunately, the body has a defense: a sophisticated **[buffer system](@entry_id:149082)**. The most important of these is the **[bicarbonate buffer system](@entry_id:153359)**. You can think of your body’s bicarbonate ($HCO_3^-$) supply as a bank account filled with a special currency designed to neutralize acid. Each time a hydrogen ion is produced, the body "spends" a molecule of bicarbonate to neutralize it, turning it into harmless water and carbon dioxide.
+Fortunately, the body has a defense: a sophisticated **[buffer system](@keyword=buffer_system|lang=en-US|style=Feynman)**. The most important of these is the **[bicarbonate buffer system](@keyword=bicarbonate_buffer_system|lang=en-US|style=Feynman)**. You can think of your body’s bicarbonate ($HCO_3^-$) supply as a bank account filled with a special currency designed to neutralize acid. Each time a hydrogen ion is produced, the body "spends" a molecule of bicarbonate to neutralize it, turning it into harmless water and carbon dioxide.
 
 $$ H^+ + HCO_3^- \rightleftharpoons H_2CO_3 \rightleftharpoons H_2O + CO_2 $$
 
@@ -53,7 +53,7 @@ This simple number allows clinicians to grade the severity of shock far more acc
 
 Is the base deficit the whole story? Like any good conversation, understanding requires listening for nuance.
 
-One crucial distinction is between base deficit and lactate. While the lactic acid from shock is often the main driver of the base deficit, they are not the same thing. Lactate is the specific signature of [anaerobic metabolism](@entry_id:165313). Base deficit is the sum total of all metabolic acids that have depleted the body's [buffer system](@entry_id:149082).
+One crucial distinction is between base deficit and lactate. While the lactic acid from shock is often the main driver of the base deficit, they are not the same thing. Lactate is the specific signature of [anaerobic metabolism](@keyword=anaerobic_metabolism|lang=en-US|style=Feynman). Base deficit is the sum total of all metabolic acids that have depleted the body's [buffer system](@keyword=buffer_system|lang=en-US|style=Feynman).
 
 Imagine a patient who was resuscitated with large volumes of $0.9\%$ sodium chloride, or "normal saline." This fluid contains a much higher concentration of chloride than is normally found in blood. This massive chloride load can, through complex electrochemical rules (the **Stewart model** of acid-base), force the body to excrete bicarbonate, creating a metabolic acidosis—and thus a base deficit—that has nothing to do with lactate or oxygen debt. A clinician who sees a significant base deficit but a normal lactate level might correctly deduce that the acidosis is iatrogenic, caused by the resuscitation fluids, rather than from persistent shock.
 

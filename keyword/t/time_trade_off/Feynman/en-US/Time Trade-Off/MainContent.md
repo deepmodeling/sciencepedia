@@ -19,7 +19,7 @@ This numerical value is called a **health-state utility**, often denoted by the 
 
 ### The Simplest Trade: A First Look at the TTO Formula
 
-Let's return to our genie. Suppose you decided you were indifferent between living $T=10$ years in your chronic health state and living $x=8$ years in full health . In the language of QALYs, this indifference means the total value you get from each scenario is the same.
+Let's return to our genie. Suppose you decided you were indifferent between living $T=10$ years in your chronic health state and living $x=8$ years in full health [@problem_id:4743690]. In the language of QALYs, this indifference means the total value you get from each scenario is the same.
 
 The QALYs from the first scenario (the chronic state) are the utility of that state, $u$, multiplied by the duration, $T=10$ years.
 $$ \text{QALY}_{\text{chronic}} = u \times T $$
@@ -32,15 +32,15 @@ $$ u \times T = x $$
 We can now solve for the unknown utility, $u$, with a simple rearrangement:
 $$ u = \frac{x}{T} $$
 
-In our example, this gives a utility of $u = \frac{8}{10} = 0.8$ for your chronic condition. This means that, for you, a year in this chronic state is equivalent to $0.8$ of a year in perfect health. You are willing to trade $20\%$ of your remaining lifespan to get rid of the condition. This simple and elegant formula, $u = x/T$, is the heart of the Time Trade-Off method . It beautifully translates a personal judgment into a number that can be used in health analysis.
+In our example, this gives a utility of $u = \frac{8}{10} = 0.8$ for your chronic condition. This means that, for you, a year in this chronic state is equivalent to $0.8$ of a year in perfect health. You are willing to trade $20\%$ of your remaining lifespan to get rid of the condition. This simple and elegant formula, $u = x/T$, is the heart of the Time Trade-Off method [@problem_id:4546344]. It beautifully translates a personal judgment into a number that can be used in health analysis.
 
 ### The Rules of the Game: What Makes the Trade-Off Fair?
 
-You might be thinking, "That seems too simple. Can we really base multi-million dollar healthcare decisions on this?" The answer is yes, but only because this simple formula is built upon a deep and rigorous foundation of theoretical assumptions, or axioms, about how rational people make choices . These "rules of the game" ensure the trade-off is fair and the results are meaningful.
+You might be thinking, "That seems too simple. Can we really base multi-million dollar healthcare decisions on this?" The answer is yes, but only because this simple formula is built upon a deep and rigorous foundation of theoretical assumptions, or axioms, about how rational people make choices [@problem_id:5003652]. These "rules of the game" ensure the trade-off is fair and the results are meaningful.
 
-The most important of these is the **Constant Proportional Trade-Off (CPTO)** assumption  . This axiom states that the proportion of time you are willing to trade should not depend on the total lifespan being considered. If you are willing to trade $2$ years out of $10$ (a $20\%$ trade), you should also be willing to trade $4$ years out of $20$ (also a $20\%$ trade). The ratio $x/T$ should remain constant for a given health state, regardless of the value of $T$. If this holds, it means the utility $u$ is a stable property of the health state itself, not just an artifact of how we ask the question.
+The most important of these is the **Constant Proportional Trade-Off (CPTO)** assumption [@problem_id:4392094] [@problem_id:5039343]. This axiom states that the proportion of time you are willing to trade should not depend on the total lifespan being considered. If you are willing to trade $2$ years out of $10$ (a $20\%$ trade), you should also be willing to trade $4$ years out of $20$ (also a $20\%$ trade). The ratio $x/T$ should remain constant for a given health state, regardless of the value of $T$. If this holds, it means the utility $u$ is a stable property of the health state itself, not just an artifact of how we ask the question.
 
-Another key assumption is **additivity over time**. This means that the total value of a life is simply the sum of the values of each year. Two QALYs are twice as good as one QALY. This requires what is known as **separability**: your well-being in any given year depends only on your health in that year, not on your health in past or future years. For instance, this assumption might be challenged if the memory of a past illness, or anxiety about a future one, affects your current quality of life .
+Another key assumption is **additivity over time**. This means that the total value of a life is simply the sum of the values of each year. Two QALYs are twice as good as one QALY. This requires what is known as **separability**: your well-being in any given year depends only on your health in that year, not on your health in past or future years. For instance, this assumption might be challenged if the memory of a past illness, or anxiety about a future one, affects your current quality of life [@problem_id:4517457].
 
 These axioms—Constant Proportional Trade-Off, additivity, and separability—are the invisible scaffolding that gives the simple $u=x/T$ formula its power and legitimacy.
 
@@ -52,9 +52,9 @@ Imagine the genie returns with a different offer. You can either live for the re
 
 At some probability $p^*$, you would be indifferent between the certainty of your chronic state and the gamble. According to the foundational von Neumann-Morgenstern Expected Utility Theory, this indifference probability is, by definition, the utility of your health state:
 $$ u = p^* $$
-So, if your indifference point is $p^* = 0.7$, then your utility is $0.7$ .
+So, if your indifference point is $p^* = 0.7$, then your utility is $0.7$ [@problem_id:5039343].
 
-Under the ideal, axiomatic conditions, the utility measured by the TTO should be the same as the utility measured by the SG . The fact that two different methods, one based on trading time and the other on accepting risk, converge on the same underlying concept of value is a beautiful testament to the unity of decision theory. It suggests we are measuring something real about human preferences.
+Under the ideal, axiomatic conditions, the utility measured by the TTO should be the same as the utility measured by the SG [@problem_id:4392094]. The fact that two different methods, one based on trading time and the other on accepting risk, converge on the same underlying concept of value is a beautiful testament to the unity of decision theory. It suggests we are measuring something real about human preferences.
 
 ### When Reality Bites: Complications and Refinements
 
@@ -62,11 +62,11 @@ Of course, the real world is messier than our clean axioms suggest. People are n
 
 #### The Impatient Mind: Time Preference
 
-Let's reconsider the Constant Proportional Trade-Off assumption. What if we find that a person is willing to trade $3$ years for a decade of better health (implying $u = 7/10 = 0.7$), but is only willing to trade $4$ years for two decades of better health (implying $u=16/20=0.8$)? Or, as in one study, they trade $3$ years for $4$ ($u=0.75$) but $5$ years for $8$ ($u=0.625$) . The ratio $x/T$ is not constant!
+Let's reconsider the Constant Proportional Trade-Off assumption. What if we find that a person is willing to trade $3$ years for a decade of better health (implying $u = 7/10 = 0.7$), but is only willing to trade $4$ years for two decades of better health (implying $u=16/20=0.8$)? Or, as in one study, they trade $3$ years for $4$ ($u=0.75$) but $5$ years for $8$ ($u=0.625$) [@problem_id:4517457]. The ratio $x/T$ is not constant!
 
-This doesn't mean the person is irrational. It likely reveals the presence of **time preference**: we value present benefits more than future benefits. A year of good health *now* is more valuable than a year of good health 20 years from now. When we account for this using a [discount rate](@entry_id:145874) $r$, the simple formula $u=x/T$ is replaced by a more complex one:
+This doesn't mean the person is irrational. It likely reveals the presence of **time preference**: we value present benefits more than future benefits. A year of good health *now* is more valuable than a year of good health 20 years from now. When we account for this using a [discount rate](@keyword=discount_rate|lang=en-US|style=Feynman) $r$, the simple formula $u=x/T$ is replaced by a more complex one:
 $$ u = \frac{1 - \exp(-rx)}{1 - \exp(-rT)} $$
-This discrepancy between the simple model and real-world behavior allows us to measure not only the utility of a health state, but also the person's degree of impatience  .
+This discrepancy between the simple model and real-world behavior allows us to measure not only the utility of a health state, but also the person's degree of impatience [@problem_id:5053157] [@problem_id:4971012].
 
 #### Beyond Zero: Valuing States Worse Than Death
 
@@ -75,14 +75,14 @@ What about health states that are so terrible that a person might consider them 
 To solve this, the method is cleverly adapted. In one version, the choice is between immediate death (utility $0$) and living for $T$ years in the terrible state, but followed by $Y$ years of full health as "compensation". At the point of indifference, the total QALY must be zero:
 $$ u \times T + 1 \times Y = 0 $$
 $$ u = -\frac{Y}{T} $$
-If it takes $15$ years of perfect health to make you accept $10$ years in the terrible state, the utility is $u = -15/10 = -1.5$ . This shows how the logical framework can be extended to navigate even the most difficult value judgments.
+If it takes $15$ years of perfect health to make you accept $10$ years in the terrible state, the utility is $u = -15/10 = -1.5$ [@problem_id:5019539]. This shows how the logical framework can be extended to navigate even the most difficult value judgments.
 
 #### The Frame of Mind: Loss Aversion and Other Biases
 
 Behavioral economics, particularly the work of Daniel Kahneman and Amos Tversky, has taught us that how a choice is framed profoundly affects our decision. We evaluate outcomes not in absolute terms, but as gains and losses relative to a reference point. And, crucially, **losses loom larger than gains**.
 
-In the TTO context, the reference point is often the status quo: living with the chronic illness. The choice to trade for fewer, healthier years is then framed as a "gain" in quality of life but a "loss" of life years. Because of loss aversion, we might be overly reluctant to give up those years, even if the math of QALYs says it's a fair trade. This can systematically distort the measured utility. For example, a theory known as [prospect theory](@entry_id:147824) can be used to model this bias, leading to a correction formula that adjusts the observed trade-off ratio $\hat{q} = x/T$ to find the "true" underlying utility $q$ .
+In the TTO context, the reference point is often the status quo: living with the chronic illness. The choice to trade for fewer, healthier years is then framed as a "gain" in quality of life but a "loss" of life years. Because of loss aversion, we might be overly reluctant to give up those years, even if the math of QALYs says it's a fair trade. This can systematically distort the measured utility. For example, a theory known as [prospect theory](@keyword=prospect_theory|lang=en-US|style=Feynman) can be used to model this bias, leading to a correction formula that adjusts the observed trade-off ratio $\hat{q} = x/T$ to find the "true" underlying utility $q$ [@problem_id:4361424].
 $$ q = \frac{\hat{q}}{\hat{q} + \lambda^{1/\alpha}(1 - \hat{q})} $$
-Here, $\lambda$ represents the degree of loss aversion. This is a beautiful example of how the fundamental TTO model can be enriched by incorporating insights from psychology to get a more accurate picture of human values. Even our subjective risk perception can be modeled to understand choices, for instance, whether to undergo a risky surgery .
+Here, $\lambda$ represents the degree of loss aversion. This is a beautiful example of how the fundamental TTO model can be enriched by incorporating insights from psychology to get a more accurate picture of human values. Even our subjective risk perception can be modeled to understand choices, for instance, whether to undergo a risky surgery [@problem_id:4743690].
 
 The Time Trade-Off method, in its elegant simplicity and its sophisticated refinements, represents a remarkable journey. It begins with a simple, intuitive question and travels through deep axioms of rationality, only to arrive at the messy, fascinating, and beautiful complexities of the human mind. It is a powerful tool not for reducing life to numbers, but for honoring the value of life by trying to understand it with clarity and compassion.

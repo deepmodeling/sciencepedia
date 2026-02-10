@@ -19,29 +19,29 @@ Supported decision-making is, at its heart, the art and science of building cogn
 
 ### Deconstructing the Decision: A Look Under the Hood
 
-To build the right ramp, we first need to understand the journey of making a decision. Fortunately, the law has moved beyond simply looking at the final choice—which can be misleading—and instead focuses on the cognitive *process*. This functional approach, beautifully articulated in legal frameworks like the UK’s Mental Capacity Act, breaks the journey into four fundamental steps . Think of them not as a rigid test, but as a description of a mental voyage:
+To build the right ramp, we first need to understand the journey of making a decision. Fortunately, the law has moved beyond simply looking at the final choice—which can be misleading—and instead focuses on the cognitive *process*. This functional approach, beautifully articulated in legal frameworks like the UK’s Mental Capacity Act, breaks the journey into four fundamental steps [@problem_id:4473149]. Think of them not as a rigid test, but as a description of a mental voyage:
 
 1.  **Can you understand the story?** This is about grasping the essential information. Not every technical detail or statistical nuance, but the gist of it. What is the issue? What are the main paths forward? What are the likely outcomes of each path? For a patient, this means understanding the nature of their condition and the purpose of a proposed treatment.
 
-2.  **Can you hold the story in your mind?** Decision-making isn't instantaneous. You need to hold the key pieces of the story in your mind long enough to think about them. The law wisely doesn't demand perfect, [long-term memory](@entry_id:169849). It asks for functional retention—can you keep the information in play for the duration of the decision-making process?
+2.  **Can you hold the story in your mind?** Decision-making isn't instantaneous. You need to hold the key pieces of the story in your mind long enough to think about them. The law wisely doesn't demand perfect, [long-term memory](@keyword=long_term_memory|lang=en-US|style=Feynman). It asks for functional retention—can you keep the information in play for the duration of the decision-making process?
 
 3.  **Can you make the story your own?** This is the most personal and crucial part of the journey. It is the ability to **use or weigh** the information. It means taking the abstract facts—the risks, the benefits, the alternatives—and laying them against the tapestry of your own life, your own values, hopes, and fears. Do you prioritize longevity over comfort? Independence over safety? This is where a person decides what a "risk" or a "benefit" truly means *to them*. The right to make a decision that a doctor, a judge, or a loved one might consider "unwise" is fiercely protected here. It is the right to weigh the facts on your own scales.
 
-4.  **Can you tell us your choice?** Finally, the decision must be communicated. But the law is magnificently flexible here. A decision can be communicated through speech, a keyboard, a gesture, the blink of an eye. The method is irrelevant; the expression of a choice is what matters .
+4.  **Can you tell us your choice?** Finally, the decision must be communicated. But the law is magnificently flexible here. A decision can be communicated through speech, a keyboard, a gesture, the blink of an eye. The method is irrelevant; the expression of a choice is what matters [@problem_id:4853575].
 
 When a person stumbles on this journey, our first instinct should not be to take over. It should be to ask: where is the barrier, and how can we help clear it?
 
 ### Building the Ramp: The Art and Science of Support
 
-This is where supported decision-making becomes a practical toolbox. It recognizes a simple truth from cognitive psychology: our brains, magnificent as they are, have finite processing power. We are all susceptible to **cognitive load** .
+This is where supported decision-making becomes a practical toolbox. It recognizes a simple truth from cognitive psychology: our brains, magnificent as they are, have finite processing power. We are all susceptible to **cognitive load** [@problem_id:4473369].
 
 Imagine trying to solve a complex puzzle. The puzzle itself has an inherent difficulty—an **intrinsic load**. Now, imagine trying to solve it in a dark, noisy room with someone shouting random numbers at you. This environment adds a useless, distracting difficulty—an **extraneous load**. You might fail to solve the puzzle, not because you're incapable, but because your mental resources were swamped by the extraneous load.
 
 The duty to provide "all practicable steps" to support a person is, in essence, a duty to reduce the extraneous cognitive load. It's about creating the best possible conditions for a person's own reasoning to function. The toolbox is varied and creative:
 
-*   **Tuning the Environment:** Sometimes the simplest ramp is a quiet room, or having a trusted person present. For someone with fluctuating cognition, like a patient with delirium or fatigue, it means timing the conversation for their best time of day. Assessing someone at their peak alertness isn't "artificially inflating" their performance; it's getting an accurate measurement of their true ability  .
+*   **Tuning the Environment:** Sometimes the simplest ramp is a quiet room, or having a trusted person present. For someone with fluctuating cognition, like a patient with delirium or fatigue, it means timing the conversation for their best time of day. Assessing someone at their peak alertness isn't "artificially inflating" their performance; it's getting an accurate measurement of their true ability [@problem_id:4473119] [@problem_id:4473238].
 
-*   **Shaping the Information:** Complex information can be overwhelming. Support means translating medical jargon into plain language. It means breaking a massive wall of text into smaller, digestible "chunks." It can mean using pictures, diagrams, and decision aids that map out the options visually  . It also means checking for understanding using techniques like "teach-back," not as a test, but as a way for the speaker to see if their own explanation was clear enough and where it needs to be improved .
+*   **Shaping the Information:** Complex information can be overwhelming. Support means translating medical jargon into plain language. It means breaking a massive wall of text into smaller, digestible "chunks." It can mean using pictures, diagrams, and decision aids that map out the options visually [@problem_id:4853575] [@problem_id:4473369]. It also means checking for understanding using techniques like "teach-back," not as a test, but as a way for the speaker to see if their own explanation was clear enough and where it needs to be improved [@problem_id:4473279].
 
 The goal of all these supports is not to steer or "nudge" the person toward a particular outcome. It is to clear away the fog of extraneous load so their own values and reasoning can navigate the intrinsic challenge of the decision itself.
 
@@ -53,11 +53,11 @@ Consider a patient who has had a stroke and has difficulty speaking. When inform
 
 Now imagine that, because her communication is slow, the team decides to ask her spouse to decide *for* her. This is **substituted decision-making**. A different person is now the author of the decision. This is a far more intrusive act, a profound infringement on the patient's agency. It should only ever be a last resort, an option considered only when all genuine attempts to support the person's own decision-making have failed.
 
-This isn't just an ethical nicety; it's increasingly recognized as a fundamental human right. International conventions, like the UN Convention on the Rights of Persons with Disabilities (CRPD), are driving a global paradigm shift. This new paradigm rejects the old model of stripping people of their legal right to decide (their **legal capacity**) because of a mental diagnosis. Instead, it insists that everyone retains their legal capacity, and society has an obligation to provide the support needed to exercise it  . This is the philosophical engine behind the move away from a paternalistic "best interests" standard (what we think is best for you) and toward a "will and preferences" standard (what is the best interpretation of what *you* want).
+This isn't just an ethical nicety; it's increasingly recognized as a fundamental human right. International conventions, like the UN Convention on the Rights of Persons with Disabilities (CRPD), are driving a global paradigm shift. This new paradigm rejects the old model of stripping people of their legal right to decide (their **legal capacity**) because of a mental diagnosis. Instead, it insists that everyone retains their legal capacity, and society has an obligation to provide the support needed to exercise it [@problem_id:4860235] [@problem_id:4870841]. This is the philosophical engine behind the move away from a paternalistic "best interests" standard (what we think is best for you) and toward a "will and preferences" standard (what is the best interpretation of what *you* want).
 
 ### The Challenge of Listening: Overcoming Our Own Biases
 
-Building a ramp for someone else requires us to be good architects and engineers. But it also requires something deeper: the humility to listen. One of the greatest barriers to a person's agency is not in their mind, but in ours. Philosophers have given this a name: **epistemic injustice**, or injustice in the realm of knowledge and credibility .
+Building a ramp for someone else requires us to be good architects and engineers. But it also requires something deeper: the humility to listen. One of the greatest barriers to a person's agency is not in their mind, but in ours. Philosophers have given this a name: **epistemic injustice**, or injustice in the realm of knowledge and credibility [@problem_id:4473083].
 
 It comes in two main forms. The first is **testimonial injustice**: we give someone a "credibility deficit" simply because of who they are. We might subconsciously discount what a person says because of their accent, their non-standard grammar, their psychiatric diagnosis, or their socioeconomic status. We fail to see their testimony as reliable evidence of their own understanding or values.
 
@@ -67,7 +67,7 @@ Overcoming these injustices is a core part of providing support. It requires act
 
 ### At the Edge of the Map: When Refusal is the Answer
 
-The principles of supported decision-making are tested most severely at the edges, in the highest-stakes scenarios. Imagine a patient with a life-threatening infection who clearly and calmly refuses the necessary surgery. To make it harder, she also refuses a formal assessment of her capacity, stating, "Do not test me" . What now?
+The principles of supported decision-making are tested most severely at the edges, in the highest-stakes scenarios. Imagine a patient with a life-threatening infection who clearly and calmly refuses the necessary surgery. To make it harder, she also refuses a formal assessment of her capacity, stating, "Do not test me" [@problem_id:4473390]. What now?
 
 This is where the entire framework shows its strength and humanity.
 *   First, we must not treat her refusal to be assessed as proof of incapacity. That would be a logical and legal error.

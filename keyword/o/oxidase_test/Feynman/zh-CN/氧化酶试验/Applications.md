@@ -6,27 +6,27 @@
 
 ### 巨大的分水岭：一个关乎科属的问题
 
-想象一位侦探到达犯罪现场。第一步是提出宽泛的问题：“谁是常见的嫌疑人？”在临床微生物学中，当从患者体内分离出一种[革兰氏阴性菌](@entry_id:163458)时，第一个“常见嫌疑人”就是庞大而多样的肠[杆菌](@entry_id:171007)科 (*Enterobacteriaceae*)。该科包括一些著名成员，如 *Escherichia coli*（我们肠道中的正常居民，有时会变得有害）及其“表亲” *Klebsiella*、*Salmonella* 和 *Shigella*。这个整个族群的一个决定性、统一的特征是其新陈代谢的一个怪癖：它们在呼吸链中不使用细胞色素 c 氧化酶。它们几乎无一例外都是氧化酶阴性的。
+想象一位侦探到达犯罪现场。第一步是提出宽泛的问题：“谁是常见的嫌疑人？”在临床微生物学中，当从患者体内分离出一种[革兰氏阴性菌](@keyword=gram_negative_bacteria|lang=zh-CN|style=Feynman)时，第一个“常见嫌疑人”就是庞大而多样的肠[杆菌](@keyword=bacilli|lang=zh-CN|style=Feynman)科 (*Enterobacteriaceae*)。该科包括一些著名成员，如 *Escherichia coli*（我们肠道中的正常居民，有时会变得有害）及其“表亲” *Klebsiella*、*Salmonella* 和 *Shigella*。这个整个族群的一个决定性、统一的特征是其新陈代谢的一个怪癖：它们在呼吸链中不使用细胞色素 c 氧化酶。它们几乎无一例外都是氧化酶阴性的。
 
-因此，微生物学家对一株未知的革兰氏阴性[杆菌](@entry_id:171007)提出的第一个问题就是氧化酶问题。一个阴性结果——没有颜色变化——告诉侦探：“在肠[杆菌](@entry_id:171007)科 (*Enterobacteriaceae*) 内部寻找。”但一个阳性结果，一阵快速的紫色迸发，则呐喊出完全不同的信息：“去别处找！我不是它们中的一员！” 。这个阳性结果指向了一群完全不同的角色，它们通常存在于水和土壤等环境中。这些包括臭名昭著的 *Pseudomonas aeruginosa*（医院[机会性感染](@entry_id:185565)的高手），以及 *Vibrio* 和 *Aeromonas* 属，它们因接触污染水源后致病而闻名 。就这样，仅用一滴试剂，可能性的范围就大大缩小了。我们基于生物体如何产生能量这样根本性的问题，创造了一个巨大的分水岭。
+因此，微生物学家对一株未知的革兰氏阴性[杆菌](@keyword=bacilli|lang=zh-CN|style=Feynman)提出的第一个问题就是氧化酶问题。一个阴性结果——没有颜色变化——告诉侦探：“在肠[杆菌](@keyword=bacilli|lang=zh-CN|style=Feynman)科 (*Enterobacteriaceae*) 内部寻找。”但一个阳性结果，一阵快速的紫色迸发，则呐喊出完全不同的信息：“去别处找！我不是它们中的一员！” [@problem_id:5225166]。这个阳性结果指向了一群完全不同的角色，它们通常存在于水和土壤等环境中。这些包括臭名昭著的 *Pseudomonas aeruginosa*（医院[机会性感染](@keyword=opportunistic_infections|lang=zh-CN|style=Feynman)的高手），以及 *Vibrio* 和 *Aeromonas* 属，它们因接触污染水源后致病而闻名 [@problem_id:5225117]。就这样，仅用一滴试剂，可能性的范围就大大缩小了。我们基于生物体如何产生能量这样根本性的问题，创造了一个巨大的分水岭。
 
 ### 侦探的艺术：用线索构建案情
 
 当然，侦探的工作绝不会因一条线索而结束。氧化酶试验是一个逻辑级联的起点，一棵通往鉴定的优美决策树。阳性或阴性结果告诉你下一步该走哪条路，该问什么问题。
 
-让我们跟随线索。假设我们从一名患者身上分离出一种细菌，其氧化酶呈阴性。我们就走上了肠[杆菌](@entry_id:171007)科 (*Enterobacteriaceae*) 的路径。下一个问题可能是：“你能[发酵](@entry_id:144068)乳糖吗？”这是一个在[麦康凯琼脂](@entry_id:168625) (MacConkey agar) 上可以轻松完成的试验。如果答案是肯定的，我们可能会问：“你能从色氨酸产生吲哚吗？”对所有这些问题的肯定回答都强烈指向我们的朋友 *E. coli*。如果发酵乳糖的细菌是吲哚阴性的，我们接下来可能会检查其运动性。如果它不能运动，我们怀疑是 *Klebsiella*；如果能运动，我们就考虑 *Enterobacter*。这种精妙的分支逻辑使得实验室能够用最少的试验快速分诊和鉴定最常见的细菌，而这一切都始于氧化酶问题的答案 。
+让我们跟随线索。假设我们从一名患者身上分离出一种细菌，其氧化酶呈阴性。我们就走上了肠[杆菌](@keyword=bacilli|lang=zh-CN|style=Feynman)科 (*Enterobacteriaceae*) 的路径。下一个问题可能是：“你能[发酵](@keyword=fermentation|lang=zh-CN|style=Feynman)乳糖吗？”这是一个在[麦康凯琼脂](@keyword=macconkey_agar|lang=zh-CN|style=Feynman) (MacConkey agar) 上可以轻松完成的试验。如果答案是肯定的，我们可能会问：“你能从色氨酸产生吲哚吗？”对所有这些问题的肯定回答都强烈指向我们的朋友 *E. coli*。如果发酵乳糖的细菌是吲哚阴性的，我们接下来可能会检查其运动性。如果它不能运动，我们怀疑是 *Klebsiella*；如果能运动，我们就考虑 *Enterobacter*。这种精妙的分支逻辑使得实验室能够用最少的试验快速分诊和鉴定最常见的细菌，而这一切都始于氧化酶问题的答案 [@problem_id:5225138]。
 
-阴性结果和阳性结果同样强大。以 *Acinetobacter baumannii* 为例，这是重症监护室中一种可怕的“超级细菌”。它是一种不[发酵](@entry_id:144068)糖的[革兰氏阴性](@entry_id:177179)[杆菌](@entry_id:171007)，很像 *Pseudomonas*。但一个关键区别是，*Acinetobacter* 顽固地呈氧化酶阴性。将其与其他特征——不能运动且能耐受高温——结合起来，你就得到了一个独特的指纹，将其与氧化酶阳性、能运动的对应物如 *Pseudomonas* 和 *Burkholderia* 区分开来 。
+阴性结果和阳性结果同样强大。以 *Acinetobacter baumannii* 为例，这是重症监护室中一种可怕的“超级细菌”。它是一种不[发酵](@keyword=fermentation|lang=zh-CN|style=Feynman)糖的[革兰氏阴性](@keyword=gram_negative|lang=zh-CN|style=Feynman)[杆菌](@keyword=bacilli|lang=zh-CN|style=Feynman)，很像 *Pseudomonas*。但一个关键区别是，*Acinetobacter* 顽固地呈氧化酶阴性。将其与其他特征——不能运动且能耐受高温——结合起来，你就得到了一个独特的指纹，将其与氧化酶阳性、能运动的对应物如 *Pseudomonas* 和 *Burkholderia* 区分开来 [@problem_id:4654945]。
 
-在分水岭的另一边，一个氧化酶阳性的结果会开启一条不同的调查路线。从烧伤患者身上分离出的菌株，如果氧化酶呈阳性，产生独特的葡萄样气味和美丽的蓝绿色素，几乎可以肯定是 *Pseudomonas aeruginosa* 。在一次水样腹泻暴发中，一种在特殊含蔗糖琼脂上生长为黄色菌落的氧化酶阳性细菌会立即被怀疑是霍乱的病原体 *Vibrio cholerae*。用特异性抗体进行最终确认后，公共卫生官员便可以果断采取行动 。氧化酶试验是守门员，是这个拯救生命算法中的第一个关键步骤。这一原理也延伸到区分不同的水媒、氧化酶阳性病原体，如 *Vibrio*、*Aeromonas* 和 *Plesiomonas*，通过将氧化酶结果与它们对盐的不同耐受性以及对不同糖类的独特“胃口”结合起来 。
+在分水岭的另一边，一个氧化酶阳性的结果会开启一条不同的调查路线。从烧伤患者身上分离出的菌株，如果氧化酶呈阳性，产生独特的葡萄样气味和美丽的蓝绿色素，几乎可以肯定是 *Pseudomonas aeruginosa* [@problem_id:4670905]。在一次水样腹泻暴发中，一种在特殊含蔗糖琼脂上生长为黄色菌落的氧化酶阳性细菌会立即被怀疑是霍乱的病原体 *Vibrio cholerae*。用特异性抗体进行最终确认后，公共卫生官员便可以果断采取行动 [@problem_id:4686861]。氧化酶试验是守门员，是这个拯救生命算法中的第一个关键步骤。这一原理也延伸到区分不同的水媒、氧化酶阳性病原体，如 *Vibrio*、*Aeromonas* 和 *Plesiomonas*，通过将氧化酶结果与它们对盐的不同耐受性以及对不同糖类的独特“胃口”结合起来 [@problem_id:5238191]。
 
 ### 超越常见嫌疑菌：一个多功能工具
 
-这项试验的用途并不仅限于革兰氏阴性[杆菌](@entry_id:171007)的世界。自然界在许多不同的细菌谱系中都对呼吸链进行了“改造”，我们可以利用这些差异。以[革兰氏阳性](@entry_id:172081)球菌为例，其中包括常见的 *Staphylococcus* 和 *Micrococcus* 属。两者都呈过氧化氢酶阳性，在培养皿上看起来可能相似。我们如何区分它们呢？我们问氧化酶问题。*Micrococcus* 拥有[细胞色素](@entry_id:156723) c 氧化酶，呈阳性；而 *Staphylococcus* 则没有，呈阴性。
+这项试验的用途并不仅限于革兰氏阴性[杆菌](@keyword=bacilli|lang=zh-CN|style=Feynman)的世界。自然界在许多不同的细菌谱系中都对呼吸链进行了“改造”，我们可以利用这些差异。以[革兰氏阳性](@keyword=gram_positive|lang=zh-CN|style=Feynman)球菌为例，其中包括常见的 *Staphylococcus* 和 *Micrococcus* 属。两者都呈过氧化氢酶阳性，在培养皿上看起来可能相似。我们如何区分它们呢？我们问氧化酶问题。*Micrococcus* 拥有[细胞色素](@keyword=cytochromes|lang=zh-CN|style=Feynman) c 氧化酶，呈阳性；而 *Staphylococcus* 则没有，呈阴性。
 
-这里有一个巧妙的实践转折。这些[革兰氏阳性菌](@entry_id:172476)厚厚的细胞壁就像一座堡垒，阻止氧化酶试剂到达其目标。为了解决这个问题，科学家们设计了“改良的”氧化酶试验，或称微量氧化酶试验。它包含一种溶剂——二甲基亚砜 (DMSO)，它像一把化学钥匙，暂时打开细胞壁上的孔隙，让试剂进入。结果是一个可靠的试验，它完美地展示了科学的独创性：当面临障碍时，总能找到穿过它的方法 。
+这里有一个巧妙的实践转折。这些[革兰氏阳性菌](@keyword=gram_positive_bacteria|lang=zh-CN|style=Feynman)厚厚的细胞壁就像一座堡垒，阻止氧化酶试剂到达其目标。为了解决这个问题，科学家们设计了“改良的”氧化酶试验，或称微量氧化酶试验。它包含一种溶剂——二甲基亚砜 (DMSO)，它像一把化学钥匙，暂时打开细胞壁上的孔隙，让试剂进入。结果是一个可靠的试验，它完美地展示了科学的独创性：当面临障碍时，总能找到穿过它的方法 [@problem_id:5225511]。
 
-另一个引人入胜的革兰氏阳性菌例子是 *Listeria monocytogenes*，一种危险的[食源性病原体](@entry_id:193986)。它是一种[过氧化氢酶](@entry_id:143233)阳性的[革兰氏阳性](@entry_id:172081)[杆菌](@entry_id:171007)。这种特征可能使其看起来像其他无害的细菌。然而，*Listeria* 是氧化酶阴性的。这一事实，当与其阳性的过氧化氢酶试验结果结合时，立即将其与[过氧化氢酶](@entry_id:143233)阴性的 *Streptococcus* 属区分开来。它还有助于将其与一些氧化酶阳性的 *Bacillus* 属区分开。仅通过两个简单快速的试验——[过氧化氢酶](@entry_id:143233)和氧化酶试验——我们就能在复杂的革兰氏阳性菌世界中导航，并迅速锁定一个危险的敌人 。
+另一个引人入胜的革兰氏阳性菌例子是 *Listeria monocytogenes*，一种危险的[食源性病原体](@keyword=foodborne_pathogens|lang=zh-CN|style=Feynman)。它是一种[过氧化氢酶](@keyword=catalase|lang=zh-CN|style=Feynman)阳性的[革兰氏阳性](@keyword=gram_positive|lang=zh-CN|style=Feynman)[杆菌](@keyword=bacilli|lang=zh-CN|style=Feynman)。这种特征可能使其看起来像其他无害的细菌。然而，*Listeria* 是氧化酶阴性的。这一事实，当与其阳性的过氧化氢酶试验结果结合时，立即将其与[过氧化氢酶](@keyword=catalase|lang=zh-CN|style=Feynman)阴性的 *Streptococcus* 属区分开来。它还有助于将其与一些氧化酶阳性的 *Bacillus* 属区分开。仅通过两个简单快速的试验——[过氧化氢酶](@keyword=catalase|lang=zh-CN|style=Feynman)和氧化酶试验——我们就能在复杂的革兰氏阳性菌世界中导航，并迅速锁定一个危险的敌人 [@problem_id:4661017]。
 
 ### 一扇窥探生命引擎的窗口
 

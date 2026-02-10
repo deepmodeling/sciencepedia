@@ -17,16 +17,16 @@ Let's imagine a coastal town. The local government might report that the **morta
 
 Now, consider a different question: if you are *actually being attacked by a great white shark*, what are your chances of survival? This is a completely different calculation. The denominator is no longer the entire town's population, but only the handful of people who are attacked. This is the "case fatality ratio" of a shark attack, and it is terrifyingly high.
 
-This is the fundamental distinction between a mortality rate and a case fatality rate .
+This is the fundamental distinction between a mortality rate and a case fatality rate [@problem_id:4647745].
 
 *   The **mortality rate** measures risk across the *entire population*. It answers the question: "What is the risk for anyone in this community to die of this disease?"
 *   The **Case Fatality Ratio (CFR)** is a **conditional probability**. It measures risk *given that you are already a case*. It answers the question: "Now that I have the disease, what is my risk of dying from it?"
 
-This distinction is not just academic; it has massive policy implications . A high mortality rate might justify drastic, society-wide interventions like lockdowns to reduce the disease's overall impact. A high CFR, on the other hand, informs clinical strategy, driving the urgent development of treatments and protocols for those who are already sick. They are two different tools for two different jobs.
+This distinction is not just academic; it has massive policy implications [@problem_id:4474905]. A high mortality rate might justify drastic, society-wide interventions like lockdowns to reduce the disease's overall impact. A high CFR, on the other hand, informs clinical strategy, driving the urgent development of treatments and protocols for those who are already sick. They are two different tools for two different jobs.
 
 ### The Iceberg of Infection: Why What You See Isn't What You Get
 
-We've established that the CFR's denominator is "confirmed cases." But who gets confirmed? During an outbreak, especially early on, testing is often limited. It's reserved for people who are sick enough to show up at a hospital. This leads to a huge problem: we are only seeing the tip of the iceberg .
+We've established that the CFR's denominator is "confirmed cases." But who gets confirmed? During an outbreak, especially early on, testing is often limited. It's reserved for people who are sick enough to show up at a hospital. This leads to a huge problem: we are only seeing the tip of the iceberg [@problem_id:2292204].
 
 For every severe, confirmed case, there might be dozens or even hundreds of mild or asymptomatic infections that go completely undetected. They are the massive, invisible base of the iceberg. This gives rise to a second, more fundamental measure of lethality: the **Infection Fatality Ratio (IFR)**.
 
@@ -34,13 +34,13 @@ $$ \text{IFR} = \frac{\text{Number of deaths from disease}}{\text{Total number o
 
 Because the total number of infections ($I$) is, by definition, larger than the number of confirmed cases ($C$), the IFR is almost always lower than the CFR. The CFR is based on a denominator of the sickest patients, while the IFR represents the average risk of death for *anyone* who gets infected.
 
-We can even formalize this relationship . Let's say $p_s$ is the proportion of all infections that are severe enough to be confirmed as cases. Then the number of cases is $C = p_s \times I$. Substituting this into the CFR formula gives us a beautiful connection:
+We can even formalize this relationship [@problem_id:4643336]. Let's say $p_s$ is the proportion of all infections that are severe enough to be confirmed as cases. Then the number of cases is $C = p_s \times I$. Substituting this into the CFR formula gives us a beautiful connection:
 
 $$ \text{CFR} = \frac{\text{Deaths}}{C} = \frac{\text{Deaths}}{p_s \times I} = \frac{1}{p_s} \times \frac{\text{Deaths}}{I} = \frac{\text{IFR}}{p_s} $$
 
 This simple equation reveals something profound. If only 10% of all infections are confirmed ($p_s = 0.1$), the CFR will be ten times higher than the IFR! The difference between CFR and IFR isn't just a detail; it's a massive multiplier.
 
-This discrepancy also plays tricks on our minds. Our brains suffer from what psychologists call "denominator neglect" . The news reports the alarming CFR, based on hospitalized patients, and we fixate on it. The unseen denominator of mild infections is forgotten, leading us to overestimate our personal risk. The vivid, available stories of severe cases in hospitals overshadow the silent majority who recovered at home.
+This discrepancy also plays tricks on our minds. Our brains suffer from what psychologists call "denominator neglect" [@problem_id:4743750]. The news reports the alarming CFR, based on hospitalized patients, and we fixate on it. The unseen denominator of mild infections is forgotten, leading us to overestimate our personal risk. The vivid, available stories of severe cases in hospitals overshadow the silent majority who recovered at home.
 
 ### The Treachery of Numbers: Pitfalls on the Path to Truth
 
@@ -48,7 +48,7 @@ Even if we are careful to distinguish CFR from IFR, the path to an accurate meas
 
 #### The Timing Trap
 
-Imagine an outbreak where, on Day 45, we have 8,450 confirmed cases, 625 deaths, and 1,875 recoveries. The remaining 6,000 cases are "active"—their story isn't over yet . How do we calculate the CFR?
+Imagine an outbreak where, on Day 45, we have 8,450 confirmed cases, 625 deaths, and 1,875 recoveries. The remaining 6,000 cases are "active"—their story isn't over yet [@problem_id:2087580]. How do we calculate the CFR?
 
 One way is the **Crude CFR**: divide all deaths so far by all cases so far.
 $$ \text{Crude CFR} = \frac{625}{8,450} \approx 0.074 \text{ or } 7.4\% $$
@@ -62,7 +62,7 @@ This number, 25%, is much scarier! But it's also biased. Because deaths happen f
 
 #### The Hospital Trap (Spectrum Bias)
 
-Let's say we decide to get better data by looking only at a large hospital system, where every case is meticulously tracked. We find a CFR of 21.75%. This seems precise. But we've fallen into another trap: **[spectrum bias](@entry_id:189078)** .
+Let's say we decide to get better data by looking only at a large hospital system, where every case is meticulously tracked. We find a CFR of 21.75%. This seems precise. But we've fallen into another trap: **[spectrum bias](@keyword=spectrum_bias|lang=en-US|style=Feynman)** [@problem_id:4508404].
 
 The "spectrum" of disease ranges from mild to critical. A hospital is not a random sample of this spectrum; it's a magnet for the most severe end. By calculating a CFR from hospitalized patients, we are basing our estimate on a denominator that is systematically skewed towards the sickest people.
 
@@ -72,11 +72,11 @@ But there is a wonderfully clever way to fix this. We can use data from the hosp
 3.  **Now, we combine them**. We reweight the stratum-specific risks using the true community proportions:
     $$ \text{Community CFR} = (0.025 \times 0.60) + (0.05 \times 0.25) + (0.20 \times 0.12) + (0.60 \times 0.03) = 0.0695 \text{ or } 6.95\% $$
 
-By using this method, called **[post-stratification](@entry_id:753625)**, we have corrected for the hospital's bias. The true community CFR of 6.95% is far lower than the naive hospital-based estimate of 21.75%. We have used statistical reasoning to see beyond the walls of the hospital and glimpse the true nature of the disease in the population.
+By using this method, called **[post-stratification](@keyword=post_stratification|lang=en-US|style=Feynman)**, we have corrected for the hospital's bias. The true community CFR of 6.95% is far lower than the naive hospital-based estimate of 21.75%. We have used statistical reasoning to see beyond the walls of the hospital and glimpse the true nature of the disease in the population.
 
 #### The Age Trap (Simpson's Paradox)
 
-The final trap is the most mind-bending of all: **Simpson's Paradox**. Consider two regions, A and B . Looking at the overall numbers, the crude CFR in Region A is 6.4%, while in Region B it's only 2.8%. It seems clear that the disease is more deadly in Region A.
+The final trap is the most mind-bending of all: **Simpson's Paradox**. Consider two regions, A and B [@problem_id:4508399]. Looking at the overall numbers, the crude CFR in Region A is 6.4%, while in Region B it's only 2.8%. It seems clear that the disease is more deadly in Region A.
 
 But then we do something crucial: we stratify by age. We look at younger adults and older adults separately. And we find this:
 *   For younger adults, the CFR is 1% in A and 2% in B. **Region B is worse.**
@@ -90,8 +90,8 @@ To make a fair comparison, we must use **standardization**. We create a "standar
 
 Our journey ends with a final, subtle point about language. In physics and epidemiology, a **rate** has a precise meaning: it involves time in the denominator. Velocity is a rate (distance *per unit time*). An incidence rate measures new cases *per person-year*.
 
-The "Case Fatality Rate," however, is calculated as deaths divided by cases. This is a dimensionless proportion—a risk, a probability . It has no "per time" unit. For this reason, many epidemiologists argue for more precise terms like **Case Fatality Proportion** or **Case Fatality Risk**. This isn't just being pedantic. It's about clarity of thought and avoiding confusion with true time-based measures like the *[hazard rate](@entry_id:266388)* of death.
+The "Case Fatality Rate," however, is calculated as deaths divided by cases. This is a dimensionless proportion—a risk, a probability [@problem_id:4508424]. It has no "per time" unit. For this reason, many epidemiologists argue for more precise terms like **Case Fatality Proportion** or **Case Fatality Risk**. This isn't just being pedantic. It's about clarity of thought and avoiding confusion with true time-based measures like the *[hazard rate](@keyword=hazard_rate|lang=en-US|style=Feynman)* of death.
 
-So, how do scientists overcome the timing traps and properly measure risk over time? They turn to the elegant tools of **survival analysis**. This requires detailed data for each person: when their symptoms started, when their outcome (death or recovery) occurred, or when they were last seen if their outcome is still unknown . By modeling the time-to-event, these methods can correctly handle the dynamic flow of an epidemic and the "censored" data from unresolved cases, providing the most accurate and unbiased estimates of a disease's lethality.
+So, how do scientists overcome the timing traps and properly measure risk over time? They turn to the elegant tools of **survival analysis**. This requires detailed data for each person: when their symptoms started, when their outcome (death or recovery) occurred, or when they were last seen if their outcome is still unknown [@problem_id:4508448]. By modeling the time-to-event, these methods can correctly handle the dynamic flow of an epidemic and the "censored" data from unresolved cases, providing the most accurate and unbiased estimates of a disease's lethality.
 
 From a simple fraction emerges a world of complexity, bias, and paradox. But by appreciating these subtleties—the conditional nature of risk, the hidden iceberg of infection, the treachery of averages, and the precision of language—we move from a single, often misleading number to a deeper, more unified understanding of what it truly means for a disease to be deadly.

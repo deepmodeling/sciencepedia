@@ -15,9 +15,9 @@ Let’s zoom in on a single dopaminergic synapse, the tiny gap between two neuro
 
 This is where a crucial piece of machinery comes into play: the **Vesicular Monoamine Transporter 2**, or **VMAT2**. You can picture VMAT2 as an automated packaging machine on the vesicle’s surface. It diligently pumps dopamine from the cytosol into the vesicle, concentrating it for future release. Any dopamine that isn’t packaged quickly is at risk of being broken down and disposed of by another machine, an enzyme called **Monoamine Oxidase (MAO)**.
 
-When an electrical signal—an action potential—arrives at the factory’s shipping dock, it triggers the vesicles to fuse with the neuron’s outer membrane, releasing their dopamine "packages" into the [synaptic cleft](@entry_id:177106). This burst of dopamine travels across the gap and binds to receptors on the postsynaptic neuron, delivering the signal. The amount of dopamine in each package, known as the **[quantal size](@entry_id:163904)** ($Q$), determines the "loudness" of the signal for each event.
+When an electrical signal—an action potential—arrives at the factory’s shipping dock, it triggers the vesicles to fuse with the neuron’s outer membrane, releasing their dopamine "packages" into the [synaptic cleft](@keyword=synaptic_cleft|lang=en-US|style=Feynman). This burst of dopamine travels across the gap and binds to receptors on the postsynaptic neuron, delivering the signal. The amount of dopamine in each package, known as the **[quantal size](@keyword=quantal_size|lang=en-US|style=Feynman)** ($Q$), determines the "loudness" of the signal for each event.
 
-In hyperkinetic disorders, this signaling is pathologically amplified. In tardive dyskinesia, for instance, years of treatment with drugs that block [dopamine receptors](@entry_id:173643) can cause the postsynaptic neuron to become "supersensitive." It’s as if the audience, having had its ears plugged for so long, has developed superhuman hearing. Now, even a normal-sized puff of dopamine can produce an overwhelming response, triggering abnormal movements.
+In hyperkinetic disorders, this signaling is pathologically amplified. In tardive dyskinesia, for instance, years of treatment with drugs that block [dopamine receptors](@keyword=dopamine_receptors|lang=en-US|style=Feynman) can cause the postsynaptic neuron to become "supersensitive." It’s as if the audience, having had its ears plugged for so long, has developed superhuman hearing. Now, even a normal-sized puff of dopamine can produce an overwhelming response, triggering abnormal movements.
 
 ### Turning Down the Volume: The VMAT2 Strategy
 
@@ -29,7 +29,7 @@ These drugs are like a governor placed on the VMAT2 packaging machine. They don�
 
 2.  **Increased Disposal:** This excess cytosolic dopamine is more likely to be found and degraded by the MAO disposal system. The neuron effectively shunts more of its raw material to waste.
 
-3.  **Smaller Packages:** Because the VMAT2 loading process is less efficient, each vesicle ends up with less dopamine inside. The [quantal size](@entry_id:163904), $Q$, decreases.
+3.  **Smaller Packages:** Because the VMAT2 loading process is less efficient, each vesicle ends up with less dopamine inside. The [quantal size](@keyword=quantal_size|lang=en-US|style=Feynman), $Q$, decreases.
 
 4.  **Quieter Signals:** When the neuron fires, it releases these smaller-than-usual packages of dopamine. This results in a lower peak concentration of dopamine in the synaptic cleft, $[DA]_{\text{ext}}$.
 
@@ -43,11 +43,11 @@ This is where the genius of **deutetrabenazine** comes in. Its creation is a tes
 
 Why does this matter? The body metabolizes drugs using enzymes, often by breaking carbon-hydrogen (C-H) bonds. This bond-breaking is a physical process that takes time and energy. Due to its greater mass, a carbon-deuterium (C-D) bond is stronger and vibrates more slowly than a C-H bond. It’s like trying to move a heavier weight on a spring—it requires more effort. This phenomenon is known as the **kinetic isotope effect**.
 
-By strategically placing deuterium at the sites where metabolic enzymes attack the molecule, scientists created a version of the drug that is more resistant to breakdown. The result is that deutetrabenazine's active metabolites have a longer half-life ($t_{1/2}$). This means the drug is cleared from the body more slowly, leading to much more stable and smoother plasma concentrations. The sharp peaks are blunted, and the deep troughs are filled in. This brilliant piece of [chemical engineering](@entry_id:143883) translates directly into patient benefits: a lower side-effect burden (less sedation, depression, and akathisia), more consistent control of movements, and the convenience of twice-daily dosing.
+By strategically placing deuterium at the sites where metabolic enzymes attack the molecule, scientists created a version of the drug that is more resistant to breakdown. The result is that deutetrabenazine's active metabolites have a longer half-life ($t_{1/2}$). This means the drug is cleared from the body more slowly, leading to much more stable and smoother plasma concentrations. The sharp peaks are blunted, and the deep troughs are filled in. This brilliant piece of [chemical engineering](@keyword=chemical_engineering|lang=en-US|style=Feynman) translates directly into patient benefits: a lower side-effect burden (less sedation, depression, and akathisia), more consistent control of movements, and the convenience of twice-daily dosing.
 
 ### The Subtleties of Selectivity and Side Effects
 
-The plot thickens when we consider that many drug molecules, including tetrabenazine, exist as **[stereoisomers](@entry_id:139490)**—molecules that are mirror images of each other, like your left and right hands. They are chemically identical but spatially distinct, and this spatial difference can dramatically alter how they interact with the body's machinery.
+The plot thickens when we consider that many drug molecules, including tetrabenazine, exist as **[stereoisomers](@keyword=stereoisomers|lang=en-US|style=Feynman)**—molecules that are mirror images of each other, like your left and right hands. They are chemically identical but spatially distinct, and this spatial difference can dramatically alter how they interact with the body's machinery.
 
 Tetrabenazine and its deuterated successor are administered as a mixture of isomers. Upon metabolism, they generate a cocktail of active metabolites, including "right-handed" ((+)-isomers) and "left-handed" ((-)-isomers). It turns out that the (+)-isomers are the real heroes; they are potent inhibitors of VMAT2 and have a "clean" profile with few other interactions. The (-)-isomers, however, are less effective at inhibiting VMAT2 but are more promiscuous, binding to other targets like the dopamine D2 receptor. This "off-target" binding is thought to contribute to side effects like drug-induced parkinsonism.
 
@@ -57,7 +57,7 @@ Understanding this helps explain the landscape of modern VMAT2 inhibitors. While
 
 ### The Body as a Chemical System: Metabolism and Interactions
 
-Finally, we must remember that a drug does not act in isolation. It is introduced into the complex chemical factory of the human body. The liver, armed with a family of enzymes called **cytochrome P450 (CYP)**, is the primary site of [drug metabolism](@entry_id:151432). For deutetrabenazine, the most important metabolic pathway is **CYP2D6**.
+Finally, we must remember that a drug does not act in isolation. It is introduced into the complex chemical factory of the human body. The liver, armed with a family of enzymes called **cytochrome P450 (CYP)**, is the primary site of [drug metabolism](@keyword=drug_metabolism|lang=en-US|style=Feynman). For deutetrabenazine, the most important metabolic pathway is **CYP2D6**.
 
 This has critical real-world implications. What happens if a patient is taking another medication, such as the common antidepressant fluoxetine, that happens to be a strong inhibitor of the CYP2D6 enzyme? The inhibitor effectively shuts down the primary processing line for deutetrabenazine. Its clearance from the body plummets. If the dose isn't adjusted, drug levels will build up to potentially toxic concentrations. This is why the standard medical recommendation is to halve the dose of deutetrabenazine when it is co-administered with a strong CYP2D6 inhibitor—a simple adjustment rooted in a deep understanding of pharmacokinetics.
 

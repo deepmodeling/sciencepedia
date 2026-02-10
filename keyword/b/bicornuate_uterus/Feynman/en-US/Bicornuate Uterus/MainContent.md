@@ -5,17 +5,17 @@ To unravel this complexity, we will journey through two key areas. In the upcomi
 
 ## Principles and Mechanisms
 
-To truly understand a condition like a bicornuate uterus, we can't just look at a static anatomical diagram. We must travel back in time, to the earliest moments of [embryonic development](@entry_id:140647), and watch the structure being built. Like a physicist deducing the laws of the universe from simple symmetries, we can deduce the entire range of uterine shapes from a few elegant principles of biological construction. The beauty of it is that the "errors" in construction are not random; they are logical consequences of a disruption at a specific step in a beautiful, choreographed process.
+To truly understand a condition like a bicornuate uterus, we can't just look at a static anatomical diagram. We must travel back in time, to the earliest moments of [embryonic development](@keyword=embryonic_development|lang=en-US|style=Feynman), and watch the structure being built. Like a physicist deducing the laws of the universe from simple symmetries, we can deduce the entire range of uterine shapes from a few elegant principles of biological construction. The beauty of it is that the "errors" in construction are not random; they are logical consequences of a disruption at a specific step in a beautiful, choreographed process.
 
 ### A Tale of Two Tubes: The Embryonic Ballet
 
-In the early, indefinite landscape of an embryo, around the sixth week of gestation, every individual possesses the raw materials for both male and female internal plumbing. Two pairs of ducts run in parallel: the mesonephric (or Wolffian) ducts and the paramesonephric (or Müllerian) ducts. The future of the internal reproductive tract hinges on a simple, hormone-driven decision .
+In the early, indefinite landscape of an embryo, around the sixth week of gestation, every individual possesses the raw materials for both male and female internal plumbing. Two pairs of ducts run in parallel: the mesonephric (or Wolffian) ducts and the paramesonephric (or Müllerian) ducts. The future of the internal reproductive tract hinges on a simple, hormone-driven decision [@problem_id:4475004].
 
-In a male embryo, the newly formed testes release two key signals. Testosterone commands the Wolffian ducts to persist and develop into the epididymis, vas deferens, and seminal vesicles. Simultaneously, a substance with the evocative name Anti-Müllerian Hormone (AMH) is released, instructing the Müllerian ducts to simply wither away .
+In a male embryo, the newly formed testes release two key signals. Testosterone commands the Wolffian ducts to persist and develop into the epididymis, vas deferens, and seminal vesicles. Simultaneously, a substance with the evocative name Anti-Müllerian Hormone (AMH) is released, instructing the Müllerian ducts to simply wither away [@problem_id:4430144].
 
-In a female embryo, the story is one of elegant simplicity. In the *absence* of these male signals, a default program runs. The Wolffian ducts, receiving no instructions to stay, quietly regress. The Müllerian ducts, free from the suppressive command of AMH, are given the green light to build the female reproductive tract. This construction follows a magnificent three-act play :
+In a female embryo, the story is one of elegant simplicity. In the *absence* of these male signals, a default program runs. The Wolffian ducts, receiving no instructions to stay, quietly regress. The Müllerian ducts, free from the suppressive command of AMH, are given the green light to build the female reproductive tract. This construction follows a magnificent three-act play [@problem_id:4430149]:
 
-1.  **Elongation and Migration:** First, the two separate Müllerian ducts grow downwards, traveling from the upper abdomen towards the pelvis. They use the neighboring Wolffian ducts as a scaffold, a guide rail for their journey .
+1.  **Elongation and Migration:** First, the two separate Müllerian ducts grow downwards, traveling from the upper abdomen towards the pelvis. They use the neighboring Wolffian ducts as a scaffold, a guide rail for their journey [@problem__id:4475004].
 
 2.  **Fusion:** Around the tenth week, the lower portions of these two tubes meet at the body's midline. They begin to fuse, like two streams of warm wax flowing together. This fusion process "zips up" from the bottom, creating a single, unified tube that will become the uterus, cervix, and upper vagina. The unfused upper parts remain separate, destined to become the fallopian tubes.
 
@@ -27,17 +27,17 @@ Nearly all major uterine anomalies, including the bicornuate uterus, can be unde
 
 **Fusion Defects:** Imagine the "zipping up" process stalls. If the two ducts fail to merge correctly, the result is a duplication of the uterine structure. The severity of the anomaly depends on how completely the fusion fails:
 
-*   **Complete Fusion Failure:** If the ducts never fuse at all, they each develop into a separate horn, cervix, and sometimes even a separate upper vagina. This results in **uterus didelphys**, or a "double uterus." From the outside, one sees two distinct uterine bodies  .
+*   **Complete Fusion Failure:** If the ducts never fuse at all, they each develop into a separate horn, cervix, and sometimes even a separate upper vagina. This results in **uterus didelphys**, or a "double uterus." From the outside, one sees two distinct uterine bodies [@problem_id:4475066] [@problem_id:4430144].
 
-*   **Partial Fusion Failure:** If the fusion begins at the bottom but stops partway up, the result is a **bicornuate uterus**. This creates the characteristic "heart-shaped" uterus, with a single cervix and lower uterine body that splits into two distinct "horns" at the top. The defining feature of any fusion defect is a visible division on the *exterior* of the uterus, a deep cleft at the top (the fundus) where the two halves failed to join .
+*   **Partial Fusion Failure:** If the fusion begins at the bottom but stops partway up, the result is a **bicornuate uterus**. This creates the characteristic "heart-shaped" uterus, with a single cervix and lower uterine body that splits into two distinct "horns" at the top. The defining feature of any fusion defect is a visible division on the *exterior* of the uterus, a deep cleft at the top (the fundus) where the two halves failed to join [@problem_id:4475052].
 
-**Resorption Defects:** Now, imagine a different scenario. The fusion process goes perfectly. The two ducts merge to form a single, smooth-surfaced organ. But then, the final act—the dissolving of the internal wall—falters. The septum remains. This creates a **septate uterus**. From the outside, it appears to be a single, normally shaped uterus. But an internal wall divides the cavity, either partially or completely .
+**Resorption Defects:** Now, imagine a different scenario. The fusion process goes perfectly. The two ducts merge to form a single, smooth-surfaced organ. But then, the final act—the dissolving of the internal wall—falters. The septum remains. This creates a **septate uterus**. From the outside, it appears to be a single, normally shaped uterus. But an internal wall divides the cavity, either partially or completely [@problem_id:4430072].
 
-This distinction is the single most important principle in understanding and diagnosing these conditions: **Fusion defects alter the external shape of the uterus, while resorption defects alter the internal cavity within a normally shaped exterior** .
+This distinction is the single most important principle in understanding and diagnosing these conditions: **Fusion defects alter the external shape of the uterus, while resorption defects alter the internal cavity within a normally shaped exterior** [@problem_id:4475034].
 
 ### A Continuous Spectrum of Form
 
-Nature rarely operates with simple on/off switches. It is more helpful to think of these anomalies not as discrete accidents, but as points along a continuous spectrum of developmental success. We can even imagine a simple model to grasp this concept .
+Nature rarely operates with simple on/off switches. It is more helpful to think of these anomalies not as discrete accidents, but as points along a continuous spectrum of developmental success. We can even imagine a simple model to grasp this concept [@problem_id:4880063].
 
 Let's define a "degree of fusion," $L_f$, from $0$ (no fusion) to $1$ (complete fusion), and a "degree of resorption," $S_r$, from $0$ (no resorption) to $1$ (complete resorption).
 
@@ -51,15 +51,15 @@ This framework reveals a profound unity. These different-sounding conditions are
 
 The embryological story is not just an academic curiosity; it is the key to modern diagnosis and treatment. Because a fusion defect (like a bicornuate uterus) and a resorption defect (like a septate uterus) leave completely different anatomical signatures, we can "read" the embryonic history of the uterus with advanced imaging.
 
-The crucial question is: **What does the outside top of the uterus look like?** . A simple 2D ultrasound might show two cavities and cause confusion. But modern three-dimensional (3D) ultrasound and Magnetic Resonance Imaging (MRI) can visualize the entire organ in three dimensions, revealing both the internal cavity and the external contour in exquisite detail .
+The crucial question is: **What does the outside top of the uterus look like?** [@problem_id:4475004]. A simple 2D ultrasound might show two cavities and cause confusion. But modern three-dimensional (3D) ultrasound and Magnetic Resonance Imaging (MRI) can visualize the entire organ in three dimensions, revealing both the internal cavity and the external contour in exquisite detail [@problem_id:4475066].
 
-The rule is simple and flows directly from the [embryology](@entry_id:275499):
+The rule is simple and flows directly from the [embryology](@keyword=embryology|lang=en-US|style=Feynman):
 
-*   If there is a deep cleft on the external fundus (clinically defined as $\ge 10$ mm deep), it is an echo of failed fusion. The diagnosis is a **bicornuate uterus** .
-*   If the external fundus is convex, flat, or has only a minor indentation (< 10 mm deep), but there is a wall inside, it is an echo of failed resorption. The diagnosis is a **septate uterus** .
+*   If there is a deep cleft on the external fundus (clinically defined as $\ge 10$ mm deep), it is an echo of failed fusion. The diagnosis is a **bicornuate uterus** [@problem_id:4430072].
+*   If the external fundus is convex, flat, or has only a minor indentation (< 10 mm deep), but there is a wall inside, it is an echo of failed resorption. The diagnosis is a **septate uterus** [@problem_id:4475000].
 
-Distinguishing between these two is critical because their impact and management are vastly different. The wall in a septate uterus is often a sheet of dense, fibrous connective tissue (collagen) with a poor blood supply, which can interfere with pregnancy implantation and lead to miscarriage. Thankfully, this septum can often be safely and easily removed with a minimally invasive hysteroscopic procedure .
+Distinguishing between these two is critical because their impact and management are vastly different. The wall in a septate uterus is often a sheet of dense, fibrous connective tissue (collagen) with a poor blood supply, which can interfere with pregnancy implantation and lead to miscarriage. Thankfully, this septum can often be safely and easily removed with a minimally invasive hysteroscopic procedure [@problem_id:4475034].
 
-In contrast, the "wall" separating the horns of a bicornuate uterus is not a septum at all; it is two thick, fully-formed walls of myometrium—the powerful smooth muscle that constitutes the uterus itself. Cutting this would be catastrophic. If surgery is ever considered for a bicornuate uterus (which is rare), it involves a major abdominal operation to reconstruct the organ . The difference can even be proven under a microscope. A biopsy of a true septum will be rich in collagen, while the wall of a bicornuate horn is rich in smooth muscle cells .
+In contrast, the "wall" separating the horns of a bicornuate uterus is not a septum at all; it is two thick, fully-formed walls of myometrium—the powerful smooth muscle that constitutes the uterus itself. Cutting this would be catastrophic. If surgery is ever considered for a bicornuate uterus (which is rare), it involves a major abdominal operation to reconstruct the organ [@problem_id:4475066]. The difference can even be proven under a microscope. A biopsy of a true septum will be rich in collagen, while the wall of a bicornuate horn is rich in smooth muscle cells [@problem_id:4430111].
 
-Thus, by understanding the simple ballet of the two Müllerian ducts, we can understand the entire landscape of uterine forms, interpret the echoes of [embryology](@entry_id:275499) on an MRI scan, and make profound decisions that shape a person's life and reproductive future. The principles are simple, the logic is clear, and the results are written in the very architecture of the human body.
+Thus, by understanding the simple ballet of the two Müllerian ducts, we can understand the entire landscape of uterine forms, interpret the echoes of [embryology](@keyword=embryology|lang=en-US|style=Feynman) on an MRI scan, and make profound decisions that shape a person's life and reproductive future. The principles are simple, the logic is clear, and the results are written in the very architecture of the human body.

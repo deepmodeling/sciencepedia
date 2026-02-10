@@ -13,14 +13,14 @@ When we are forced to choose, our moral intuitions often pull us in two competin
 
 One powerful and intuitive approach is **utilitarianism**. It argues that the best action is the one that produces the greatest good for the greatest number of people. In a public health crisis, this translates to a simple, compelling goal: save the most lives. But we can refine this. Is saving an 80-year-old with a life expectancy of 5 years the same as saving a 20-year-old with a life expectancy of 60 years?
 
-A strict utilitarian might argue that we should aim to maximize not just lives, but **life-years**. This leads to a stark, but clear, calculation. For each patient, we can estimate the benefit they would receive from a resource like a ventilator. A simplified way to do this is to calculate the expected life-years gained . We might ask: what is the probability of survival *with* the ventilator, versus *without* it? We multiply this difference—the incremental [survival probability](@entry_id:137919)—by the patient's expected remaining lifespan if they recover.
+A strict utilitarian might argue that we should aim to maximize not just lives, but **life-years**. This leads to a stark, but clear, calculation. For each patient, we can estimate the benefit they would receive from a resource like a ventilator. A simplified way to do this is to calculate the expected life-years gained [@problem_id:4968648]. We might ask: what is the probability of survival *with* the ventilator, versus *without* it? We multiply this difference—the incremental [survival probability](@keyword=survival_probability|lang=en-US|style=Feynman)—by the patient's expected remaining lifespan if they recover.
 
-Let's imagine a 28-year-old nurse with a $0.70$ increase in [survival probability](@entry_id:137919) and a 50-year life expectancy, versus a 75-year-old with a $0.50$ increase in survival probability and an 8-year life expectancy. The calculation would be:
+Let's imagine a 28-year-old nurse with a $0.70$ increase in [survival probability](@keyword=survival_probability|lang=en-US|style=Feynman) and a 50-year life expectancy, versus a 75-year-old with a $0.50$ increase in survival probability and an 8-year life expectancy. The calculation would be:
 
 *   Nurse: $0.70 \times 50 = 35$ expected life-years gained.
 *   Older Patient: $0.50 \times 8 = 4$ expected life-years gained.
 
-From this cold, numerical perspective, the choice is clear. The ventilator goes to the nurse. This logic extends beyond individual decisions. Health systems use a more sophisticated version called **cost-effectiveness analysis** to decide which new drugs or programs to fund . They measure health gains in a unit called a **Quality-Adjusted Life Year (QALY)**, which accounts for both the length and quality of life. They then calculate the **Incremental Cost-Effectiveness Ratio (ICER)**, which tells us the cost of gaining one extra QALY.
+From this cold, numerical perspective, the choice is clear. The ventilator goes to the nurse. This logic extends beyond individual decisions. Health systems use a more sophisticated version called **cost-effectiveness analysis** to decide which new drugs or programs to fund [@problem_id:4962075]. They measure health gains in a unit called a **Quality-Adjusted Life Year (QALY)**, which accounts for both the length and quality of life. They then calculate the **Incremental Cost-Effectiveness Ratio (ICER)**, which tells us the cost of gaining one extra QALY.
 
 $$ \mathrm{ICER} = \frac{\Delta C}{\Delta E} = \frac{\text{Incremental Cost}}{\text{Incremental Effect (in QALYs)}} $$
 
@@ -30,17 +30,17 @@ A health system has a limited budget and a **willingness-to-pay threshold** ($\l
 
 But does the utilitarian calculation tell the whole story? Something in us recoils at the idea of reducing people to numbers on a spreadsheet. What if the patient with fewer expected life-years is a beloved community elder? What if the person who is "less efficient" to save has faced a lifetime of disadvantage? This is where other principles enter the arena, demanding fairness for the individual.
 
-The simplest form of fairness is **equality**: treat everyone the same. In our ventilator scenario, this might mean a lottery or a "first-come, first-served" policy . Everyone gets an equal chance. But this can feel unsatisfying. A lottery ignores that one patient might have a much better chance of survival. First-come, first-served can be arbitrary, rewarding those who happen to live closer to the hospital rather than those in greatest need.
+The simplest form of fairness is **equality**: treat everyone the same. In our ventilator scenario, this might mean a lottery or a "first-come, first-served" policy [@problem_id:4968648]. Everyone gets an equal chance. But this can feel unsatisfying. A lottery ignores that one patient might have a much better chance of survival. First-come, first-served can be arbitrary, rewarding those who happen to live closer to the hospital rather than those in greatest need.
 
-This leads us to a more nuanced idea: **equity**. Equality is giving everyone the same-sized box to stand on to see over a fence. Equity is giving everyone the box they *need* to see over the fence . It means giving unequal resources to address unequal needs and create a fair opportunity for all. In healthcare, this means looking beyond the immediate clinical condition to the patient's whole context—their housing situation, their language barriers, their support systems. These **social determinants of health** can create massive hurdles to achieving good outcomes, and an equitable system tries to compensate for them.
+This leads us to a more nuanced idea: **equity**. Equality is giving everyone the same-sized box to stand on to see over a fence. Equity is giving everyone the box they *need* to see over the fence [@problem_id:4362654]. It means giving unequal resources to address unequal needs and create a fair opportunity for all. In healthcare, this means looking beyond the immediate clinical condition to the patient's whole context—their housing situation, their language barriers, their support systems. These **social determinants of health** can create massive hurdles to achieving good outcomes, and an equitable system tries to compensate for them.
 
 From this focus on fairness emerge two powerful principles:
 
-*   **Prioritarianism**: This principle instructs us to give extra priority to the "worse-off." But the definition of "worse-off" is critical. Does it mean the sickest person right now, the one at imminent risk of death? Or does it mean the person who has been worse-off over their entire life—someone with a lifelong disability or who has faced systemic discrimination?  . Each definition leads to a different allocation.
+*   **Prioritarianism**: This principle instructs us to give extra priority to the "worse-off." But the definition of "worse-off" is critical. Does it mean the sickest person right now, the one at imminent risk of death? Or does it mean the person who has been worse-off over their entire life—someone with a lifelong disability or who has faced systemic discrimination? [@problem_id:4968648] [@problem_id:4513475]. Each definition leads to a different allocation.
 
-*   **The "Fair Innings" Principle**: This is a specific and beautiful form of prioritarianism . It views life as a journey that everyone should have a fair chance to complete. A 72-year-old, it argues, has had their "fair innings." A 12-year-old has not. Therefore, if we must choose between them, we should give priority to the child, not because they will produce more future "utility," but to correct for the brute bad luck of having their life threatened so early.
+*   **The "Fair Innings" Principle**: This is a specific and beautiful form of prioritarianism [@problem_id:4513475]. It views life as a journey that everyone should have a fair chance to complete. A 72-year-old, it argues, has had their "fair innings." A 12-year-old has not. Therefore, if we must choose between them, we should give priority to the child, not because they will produce more future "utility," but to correct for the brute bad luck of having their life threatened so early.
 
-Finally, there's the controversial notion of **desert-based** allocation: giving resources to people based on their perceived social contribution or moral worth . Should a frontline nurse be prioritized over an incarcerated person? Most medical ethicists reject this principle, arguing that care should be based on need, not a moral judgment of a person's past.
+Finally, there's the controversial notion of **desert-based** allocation: giving resources to people based on their perceived social contribution or moral worth [@problem_id:4968648]. Should a frontline nurse be prioritized over an incarcerated person? Most medical ethicists reject this principle, arguing that care should be based on need, not a moral judgment of a person's past.
 
 ### The Machinery of Justice: From Theory to Practice
 
@@ -48,7 +48,7 @@ With this swirling sea of competing principles, how does a society, a hospital, 
 
 #### Two Arenas: The Bedside and the Statehouse
 
-First, we must distinguish between two fundamentally different ethical domains  .
+First, we must distinguish between two fundamentally different ethical domains [@problem_id:4877036] [@problem_id:4386832].
 
 **Clinical ethics** is the ethics of the bedside. It governs the relationship between a clinician and an individual patient. Its guiding stars are beneficence (do good for *this* patient), non-maleficence (do no harm to *this* patient), and respect for autonomy (honor *this* patient's values and choices).
 
@@ -58,7 +58,7 @@ During a crisis, these two domains collide. A doctor's duty is to advocate fierc
 
 #### The Power of a Fair Process
 
-A purely utilitarian formula might give us an answer, but that doesn't mean it's the *right* answer, or one that a diverse society will accept. Legitimacy doesn't just come from the outcome; it comes from the process. Political philosophers have argued that for a decision to be legitimate, it must be justifiable to everyone it affects, especially those who lose out .
+A purely utilitarian formula might give us an answer, but that doesn't mean it's the *right* answer, or one that a diverse society will accept. Legitimacy doesn't just come from the outcome; it comes from the process. Political philosophers have argued that for a decision to be legitimate, it must be justifiable to everyone it affects, especially those who lose out [@problem_id:4864528].
 
 This has led to a framework often called **"accountability for reasonableness."** It argues that a fair process must have four key elements:
 1.  **Publicity**: The reasons for the decision are transparent and publicly accessible.
@@ -70,7 +70,7 @@ A decision made through such a process can be legitimate even if it's not perfec
 
 #### Writing the Rules: Code as an Ethical Statement
 
-The depth of this connection between principle and practice becomes stunningly clear when we try to formalize our rules, for instance, in a mathematical model or a computer algorithm . Suppose we have a legal requirement to allocate at least $25\%$ of a therapy to a historically disadvantaged group. How do we write that rule?
+The depth of this connection between principle and practice becomes stunningly clear when we try to formalize our rules, for instance, in a mathematical model or a computer algorithm [@problem_id:4856413]. Suppose we have a legal requirement to allocate at least $25\%$ of a therapy to a historically disadvantaged group. How do we write that rule?
 
 We could use a **soft-penalty formulation**. Our goal would be to maximize overall health benefit, but we would subtract a penalty if the allocation to the minority group falls below the target. This is a utilitarian approach: it allows for trade-offs. If the efficiency gain is huge, we might be willing to pay the penalty and miss the target.
 
@@ -82,6 +82,6 @@ $$ \text{Maximize } \text{Total Benefit} \quad \text{subject to} \quad x_{M} \ge
 
 The choice between these two lines of code is not merely technical; it is a profound philosophical statement. It is the difference between a system that views justice as one goal to be balanced among many, and a system that views justice as a fundamental, non-negotiable right that acts as a boundary on all other actions.
 
-This brings us to the modern frontier of AI. When a "black box" algorithm is used to allocate mobile health clinics , we face the same questions. If the model is highly accurate (high utility) but its decisions seem to harm minority communities (violates justice), what do we do? Is full technical **explainability** an ethical requirement? Or is it enough to have a robust system of human oversight, independent fairness audits, and a public process for appealing the algorithm's decisions? The answer is that the ultimate ethical goals are justice and accountability. Explainability is one powerful tool to achieve them, but a system of robust, transparent governance might be another. The mechanism must serve the principle.
+This brings us to the modern frontier of AI. When a "black box" algorithm is used to allocate mobile health clinics [@problem_id:4630282], we face the same questions. If the model is highly accurate (high utility) but its decisions seem to harm minority communities (violates justice), what do we do? Is full technical **explainability** an ethical requirement? Or is it enough to have a robust system of human oversight, independent fairness audits, and a public process for appealing the algorithm's decisions? The answer is that the ultimate ethical goals are justice and accountability. Explainability is one powerful tool to achieve them, but a system of robust, transparent governance might be another. The mechanism must serve the principle.
 
-Finally, we can zoom out and ask if these principles themselves are universal truths or local preferences . **Moral objectivism** holds that some standards—like proportionality and necessity—are valid for everyone. **Moral relativism** argues that what is "just" depends on a community's own values. In practice, global health ethics walks a fine line, often using objective-sounding criteria that are implemented through fair, local processes that give voice to the people they affect, weaving together the universal and the particular in the unending quest to answer that simple, impossible question: who gets the last slice of cake?
+Finally, we can zoom out and ask if these principles themselves are universal truths or local preferences [@problem_id:4872131]. **Moral objectivism** holds that some standards—like proportionality and necessity—are valid for everyone. **Moral relativism** argues that what is "just" depends on a community's own values. In practice, global health ethics walks a fine line, often using objective-sounding criteria that are implemented through fair, local processes that give voice to the people they affect, weaving together the universal and the particular in the unending quest to answer that simple, impossible question: who gets the last slice of cake?

@@ -48,7 +48,7 @@ The scene is a public vivisection, a common practice for Galen to demonstrate hi
 
 What happens? Does a little puff of air hiss out, as Erasistratus’s theory would predict? No. Bright red, arterial blood wells up and fills the incision.
 
-The logic was inescapable. The blood was already *in* the artery before it was cut. It wasn't sucked in. Therefore, Erasistratus's primary hypothesis was false. In the language of logic, this is a beautiful example of *[modus tollens](@entry_id:266119)*: If the theory is true, then the isolated artery should be empty of blood. But the isolated artery is not empty of blood. Therefore, the theory is not true. With a single, elegant experiment, Galen had demolished a central pillar of Alexandrian physiology.
+The logic was inescapable. The blood was already *in* the artery before it was cut. It wasn't sucked in. Therefore, Erasistratus's primary hypothesis was false. In the language of logic, this is a beautiful example of *[modus tollens](@keyword=modus_tollens|lang=en-US|style=Feynman)*: If the theory is true, then the isolated artery should be empty of blood. But the isolated artery is not empty of blood. Therefore, the theory is not true. With a single, elegant experiment, Galen had demolished a central pillar of Alexandrian physiology.
 
 ### A Universe in Two Bloods: The Grand Galenic System
 

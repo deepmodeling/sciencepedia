@@ -9,7 +9,7 @@ To understand how we diagnose an infection like leptospirosis, it helps to think
 
 ### The Elusive Quarry: A Tale of Two Phases
 
-When *Leptospira* invades the body, it doesn't just set up camp; it embarks on a journey. This journey unfolds in two distinct phases, and understanding this biphasic nature is the master key to diagnosis .
+When *Leptospira* invades the body, it doesn't just set up camp; it embarks on a journey. This journey unfolds in two distinct phases, and understanding this biphasic nature is the master key to diagnosis [@problem_id:4626409].
 
 **Act I: The Septicemic Heist (The First Week)**
 
@@ -25,17 +25,17 @@ This two-act structure—first in the blood, then cleared from the blood but pre
 
 ### The Detective's Toolkit: Three Ways to See the Unseen
 
-To track our elusive quarry through its two phases, we have a toolkit with three main techniques. Each has its own strengths and is best used at a specific time .
+To track our elusive quarry through its two phases, we have a toolkit with three main techniques. Each has its own strengths and is best used at a specific time [@problem_id:4660365].
 
 #### Method 1: Catching the Suspect Red-Handed with a Molecular Photocopier (PCR)
 
 The most direct way to prove a suspect was at a scene is to find their DNA. For this, we use a remarkable tool called **Polymerase Chain Reaction (PCR)**. Think of PCR as a molecular photocopier. It can find a single, tiny fragment of the bacteria's genetic material and make millions or billions of copies, enough for us to easily detect.
 
 The timing, dictated by the two-act play, is everything:
-- In **Act I (the first week)**, the bacteria are in the blood. Therefore, the test with the highest chance of success is a **blood PCR**. A sample of blood is drawn, and we look for the bacterial DNA amidst our own. 
-- In **Act II (the second week onwards)**, the bacteria are gone from the blood but are being shed from their kidney hideout. The crime scene has moved. Now, the most logical sample to test is **urine**. A **urine PCR** can detect the DNA of the bacteria being shed.  
+- In **Act I (the first week)**, the bacteria are in the blood. Therefore, the test with the highest chance of success is a **blood PCR**. A sample of blood is drawn, and we look for the bacterial DNA amidst our own. [@problem_id:4645971]
+- In **Act II (the second week onwards)**, the bacteria are gone from the blood but are being shed from their kidney hideout. The crime scene has moved. Now, the most logical sample to test is **urine**. A **urine PCR** can detect the DNA of the bacteria being shed. [@problem_id:4626409] [@problem_id:4645842]
 
-But just finding any bacterial DNA isn't enough. Many harmless relatives of our pathogenic *Leptospira* live in the environment. We need to be sure we've found the actual culprit. This is where the elegance of molecular biology shines. We don't just look for any generic bacterial gene, like the 16S rRNA gene, which is like looking for someone with the same last name—you'd get too many false alarms. Instead, a well-designed PCR test targets a gene that is unique to the pathogenic species, like the gene for an outer membrane protein called **`lipL32`**. This gene is a unique "facial feature" of the criminal species and is absent in their harmless environmental cousins. By targeting `lipL32`, we ensure our test has high **specificity**—it catches the culprit and doesn't arrest innocent bystanders .
+But just finding any bacterial DNA isn't enough. Many harmless relatives of our pathogenic *Leptospira* live in the environment. We need to be sure we've found the actual culprit. This is where the elegance of molecular biology shines. We don't just look for any generic bacterial gene, like the 16S rRNA gene, which is like looking for someone with the same last name—you'd get too many false alarms. Instead, a well-designed PCR test targets a gene that is unique to the pathogenic species, like the gene for an outer membrane protein called **`lipL32`**. This gene is a unique "facial feature" of the criminal species and is absent in their harmless environmental cousins. By targeting `lipL32`, we ensure our test has high **specificity**—it catches the culprit and doesn't arrest innocent bystanders [@problem_id:4645808].
 
 #### Method 2: Interrogating the Witnesses (Serology)
 
@@ -43,9 +43,9 @@ What if we arrive too late to find the suspect's DNA? We can turn to another cla
 
 The immune response also has its own timeline, providing two types of testimony:
 
-- **The First Responder's Report (IgM ELISA):** The first antibody type to appear in an infection is **Immunoglobulin M (IgM)**. It's the immune system's first responder. We can detect it using a test called an **Enzyme-Linked Immunosorbent Assay (ELISA)**. This test is generally more sensitive than other serologic methods in the late first week of illness (around days 5-7). It's like getting a quick, early report from a frantic witness. It tells us something is happening *right now*, but the details might not be perfect. 
+- **The First Responder's Report (IgM ELISA):** The first antibody type to appear in an infection is **Immunoglobulin M (IgM)**. It's the immune system's first responder. We can detect it using a test called an **Enzyme-Linked Immunosorbent Assay (ELISA)**. This test is generally more sensitive than other serologic methods in the late first week of illness (around days 5-7). It's like getting a quick, early report from a frantic witness. It tells us something is happening *right now*, but the details might not be perfect. [@problem_id:4645868]
 
-- **The Gold Standard Lineup (MAT):** The definitive witness testimony comes from the **Microscopic Agglutination Test (MAT)**. This is the international "gold standard" for leptospirosis diagnosis. Its principle is beautifully simple and visual. We take the patient's serum (which contains their antibodies) and mix it with a panel of *live, swimming Leptospira* bacteria under a microscope. If the patient's serum has the right antibodies, those antibodies will physically grab onto the bacteria and cause them to clump together, or **agglutinate**.  
+- **The Gold Standard Lineup (MAT):** The definitive witness testimony comes from the **Microscopic Agglutination Test (MAT)**. This is the international "gold standard" for leptospirosis diagnosis. Its principle is beautifully simple and visual. We take the patient's serum (which contains their antibodies) and mix it with a panel of *live, swimming Leptospira* bacteria under a microscope. If the patient's serum has the right antibodies, those antibodies will physically grab onto the bacteria and cause them to clump together, or **agglutinate**. [@problem_id:4645868] [@problem_id:4660365]
 
 The MAT is considered the most specific serological test. However, it takes time for the body to produce enough of these powerful agglutinating antibodies, so the MAT often only becomes reliably positive in the second week of illness—in Act II.
 
@@ -55,19 +55,19 @@ Having the tools is one thing; using them to build an airtight case is another. 
 
 #### The Problem of the "Serological Scar"
 
-A major challenge arises in places where leptospirosis is common, or in animals that have been vaccinated. A person might have been exposed years ago without getting seriously ill, or an animal might have been vaccinated. In both cases, their immune system will have a long-lasting memory, which takes the form of persistent **Immunoglobulin G (IgG)** antibodies. This creates a "serological scar"—a baseline level of antibodies that can make a single test result positive, even in the absence of a new, active infection . A single positive MAT could be a new crime, or it could be the memory of an old one. How do we tell the difference?
+A major challenge arises in places where leptospirosis is common, or in animals that have been vaccinated. A person might have been exposed years ago without getting seriously ill, or an animal might have been vaccinated. In both cases, their immune system will have a long-lasting memory, which takes the form of persistent **Immunoglobulin G (IgG)** antibodies. This creates a "serological scar"—a baseline level of antibodies that can make a single test result positive, even in the absence of a new, active infection [@problem_id:4660333]. A single positive MAT could be a new crime, or it could be the memory of an old one. How do we tell the difference?
 
 #### The Solution: Proving a *New* Crime with the Four-Fold Rise
 
 The key is to prove that the immune system is reacting to a *current* event. We do this by demonstrating a **dynamic change**. We take one blood sample early in the illness (the "acute" sample) and another one a week or two later (the "convalescent" sample). If there is an active infection, the antibody factory will be working overtime, and the concentration, or **titer**, of antibodies will increase dramatically.
 
-The gold standard for confirming an acute infection is to demonstrate a **four-fold or greater rise** in the MAT titer between the acute and convalescent samples. Seeing the titer jump from, say, $1:100$ to $1:400$ or higher is the "smoking gun" that proves a new crime is in progress .
+The gold standard for confirming an acute infection is to demonstrate a **four-fold or greater rise** in the MAT titer between the acute and convalescent samples. Seeing the titer jump from, say, $1:100$ to $1:400$ or higher is the "smoking gun" that proves a new crime is in progress [@problem_id:4626416].
 
-But why a four-fold rise? Why not two-fold? This is not an arbitrary number. It's a beautiful piece of [scientific reasoning](@entry_id:754574) that balances signal against noise . Any laboratory measurement, including the MAT, has a degree of inherent variability or "wobble." A small change, like a two-fold rise (e.g., from $1:100$ to $1:200$), could just be random noise in the assay. But a four-fold change is a signal so strong that it rises far above this background noise. It gives us statistical confidence that we are observing a true, robust biological response to an active infection, not just a flicker in our measurement device. This simple rule of thumb is a masterful piece of practical engineering, designed to maximize our ability to detect true infections while minimizing the chance of being fooled by random error.
+But why a four-fold rise? Why not two-fold? This is not an arbitrary number. It's a beautiful piece of [scientific reasoning](@keyword=scientific_reasoning|lang=en-US|style=Feynman) that balances signal against noise [@problem_id:4660395]. Any laboratory measurement, including the MAT, has a degree of inherent variability or "wobble." A small change, like a two-fold rise (e.g., from $1:100$ to $1:200$), could just be random noise in the assay. But a four-fold change is a signal so strong that it rises far above this background noise. It gives us statistical confidence that we are observing a true, robust biological response to an active infection, not just a flicker in our measurement device. This simple rule of thumb is a masterful piece of practical engineering, designed to maximize our ability to detect true infections while minimizing the chance of being fooled by random error.
 
 ### When Things Go Wrong: The Fallible Detective
 
-Even the best detective knows that things can go wrong. Diagnostic tests are powerful, but not infallible. Understanding their potential pitfalls is crucial for accurate interpretation . Errors can be broadly classified into two categories:
+Even the best detective knows that things can go wrong. Diagnostic tests are powerful, but not infallible. Understanding their potential pitfalls is crucial for accurate interpretation [@problem_id:4645812]. Errors can be broadly classified into two categories:
 
 - **Preanalytical Errors:** These are mistakes that happen *before* the test is even run. Imagine a blood sample collected for PCR is left in a hot car for hours. The bacterial DNA, the key evidence, could degrade, leading to a **false negative**. Or, if a sample for serology is stored improperly, proteins can aggregate and cause a **false positive**. These are errors in "evidence handling."
 
@@ -75,7 +75,7 @@ Even the best detective knows that things can go wrong. Diagnostic tests are pow
 
 ### Putting It All Together: A Case Study in Action
 
-Let's return to the field. A river engineer presents with a fever that has lasted for three weeks. He has severe muscle pain, jaundiced eyes, and his kidneys aren't working well. He works in freshwater every day. The suspicion for leptospirosis is sky-high .
+Let's return to the field. A river engineer presents with a fever that has lasted for three weeks. He has severe muscle pain, jaundiced eyes, and his kidneys aren't working well. He works in freshwater every day. The suspicion for leptospirosis is sky-high [@problem_id:4626416].
 
 What's our plan?
 1.  **Assess the Timeline:** The patient is three weeks into his illness. He is firmly in **Act II**.

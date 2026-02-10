@@ -13,7 +13,7 @@ Imagine a doctor facing a room full of patients. She wants to identify those at 
 
 First, she wants the model to be a good **discriminator**. This is a fancy word for a simple idea: ranking. A good discriminator should consistently assign higher risk scores to the patients who will eventually have a heart attack than to those who will not. It's about getting the order right. If you have a good ranking, you can focus your attention on the people at the top of the list.
 
-Second, the doctor needs to *act*. A list of ranks is not enough. She needs a clear rule, like "if a patient's risk score is above 0.10, I will prescribe a statin." This is a **decision**, and it has consequences. Treating a high-risk patient can save a life (**[true positive](@entry_id:637126)**), but treating a low-risk patient needlessly exposes them to side effects and costs (**false positive**). The model must support making decisions that lead to the best possible outcomes for the patient population as a whole. This is the job of **decision support**, or what we call **clinical utility**.
+Second, the doctor needs to *act*. A list of ranks is not enough. She needs a clear rule, like "if a patient's risk score is above 0.10, I will prescribe a statin." This is a **decision**, and it has consequences. Treating a high-risk patient can save a life (**[true positive](@keyword=true_positive|lang=en-US|style=Feynman)**), but treating a low-risk patient needlessly exposes them to side effects and costs (**false positive**). The model must support making decisions that lead to the best possible outcomes for the patient population as a whole. This is the job of **decision support**, or what we call **clinical utility**.
 
 The crucial insight is that good ranking does not automatically guarantee good decisions. A model can be a brilliant ranker but a clumsy decision-maker. Understanding this difference is the key to moving beyond abstract statistical performance to real-world patient benefit.
 
@@ -21,11 +21,11 @@ The crucial insight is that good ranking does not automatically guarantee good d
 
 The most popular tool for measuring a model's ranking ability is the **Area Under the Receiver Operating Characteristic Curve ($AUC$)**. While the name is a mouthful, the idea is beautiful in its simplicity.
 
-Imagine you have two big hats. In one hat, you have the names of all the patients who will eventually get the disease (cases). In the other, you have the names of all those who won't (controls). The $AUC$ is simply this: If you draw one name from each hat at random, what is the probability that the predictive model gave a higher risk score to the person from the "sick" hat?  
+Imagine you have two big hats. In one hat, you have the names of all the patients who will eventually get the disease (cases). In the other, you have the names of all those who won't (controls). The $AUC$ is simply this: If you draw one name from each hat at random, what is the probability that the predictive model gave a higher risk score to the person from the "sick" hat? [@problem_id:4377075] [@problem_id:4749629]
 
 An $AUC$ of $1.0$ means the model is a perfect oracle; it always ranks every single case higher than every single control. An $AUC$ of $0.5$ means the model is no better than flipping a coin. A good model might have an $AUC$ of, say, $0.85$, meaning that $85\%$ of the time, it correctly ranks a random case above a random control.
 
-The $AUC$ has some very attractive properties. It's a single, intuitive number. Better still, it's independent of both the decision **threshold** (it summarizes performance over all possible thresholds) and the disease **prevalence** (its value doesn't change if the disease is rare or common) . This makes it seem like a universal, objective measure of a model's "goodness." But this universality is also its greatest weakness.
+The $AUC$ has some very attractive properties. It's a single, intuitive number. Better still, it's independent of both the decision **threshold** (it summarizes performance over all possible thresholds) and the disease **prevalence** (its value doesn't change if the disease is rare or common) [@problem_id:4558861]. This makes it seem like a universal, objective measure of a model's "goodness." But this universality is also its greatest weakness.
 
 ### The Doctor's Dilemma: Where Do You Draw the Line?
 
@@ -47,13 +47,13 @@ The decision threshold, $p_t$, is the risk at which the doctor is exactly indiff
 $$
 p_t \cdot B = (1-p_t) \cdot H
 $$
-This simple equation is incredibly profound. By rearranging it, we see that the threshold directly expresses a value judgment about the trade-off between harms and benefits  :
+This simple equation is incredibly profound. By rearranging it, we see that the threshold directly expresses a value judgment about the trade-off between harms and benefits [@problem_id:4958461] [@problem_id:4519172]:
 $$
 \frac{H}{B} = \frac{p_t}{1-p_t}
 $$
 This ratio, the "odds" of the threshold, is the harm-to-benefit exchange rate. If a doctor sets a threshold of $p_t = 0.10$, the odds are $\frac{0.10}{0.90} \approx 0.11$. This means she is willing to treat up to nine healthy people unnecessarily to ensure she treats one sick person who needs it.
 
-DCA uses this insight to define **Net Benefit (NB)**. The net benefit of using a model at a threshold $p_t$ is the rate of true positives it finds, minus a penalty for the false positives it creates, with that penalty determined by the threshold's harm-to-benefit ratio :
+DCA uses this insight to define **Net Benefit (NB)**. The net benefit of using a model at a threshold $p_t$ is the rate of true positives it finds, minus a penalty for the false positives it creates, with that penalty determined by the threshold's harm-to-benefit ratio [@problem_id:4519172]:
 $$
 \text{NB}(p_t) = \frac{\text{TP}}{N} - \frac{\text{FP}}{N} \left( \frac{p_t}{1-p_t} \right)
 $$
@@ -67,16 +67,16 @@ Imagine we are comparing two models for predicting sepsis. Model A is a supersta
 
 But suppose our hospital's policy is to initiate a heavy-duty antibiotic protocol only if the predicted risk of sepsis is above $20\%$ ($p_t = 0.20$). We are very concerned about antibiotic resistance, so we set a relatively high bar for treatment. It turns out that Model A, while excellent at sorting patients overall, is a bit less accurate right around that $20\%$ mark. Model B, despite its lower overall $AUC$, happens to have its "sweet spot" of performance very close to our $20\%$ threshold. It does a better job of separating patients right at our decision point.
 
-When we perform a Decision Curve Analysis  , we might find that at $p_t=0.20$, Model B has a higher Net Benefit than Model A. It yields a better balance of true positives gained to false positives incurred, *for our specific decision policy*. In this case, the clinically superior model is the one with the lower $AUC$. The global, averaged ranking provided by $AUC$ was misleading because our clinical decision is local and specific.
+When we perform a Decision Curve Analysis [@problem_id:4952018] [@problem_id:4553191], we might find that at $p_t=0.20$, Model B has a higher Net Benefit than Model A. It yields a better balance of true positives gained to false positives incurred, *for our specific decision policy*. In this case, the clinically superior model is the one with the lower $AUC$. The global, averaged ranking provided by $AUC$ was misleading because our clinical decision is local and specific.
 
 ### The Real World is Messy: Calibration and Context
 
-The divergence between $AUC$ and Net Benefit goes even deeper. Another crucial property of a predictive model is **calibration**. A model is well-calibrated if its predictions are "honest." That is, if it assigns a risk of $30\%$ to a group of patients, then about $30\%$ of those patients should actually go on to have the outcome .
+The divergence between $AUC$ and Net Benefit goes even deeper. Another crucial property of a predictive model is **calibration**. A model is well-calibrated if its predictions are "honest." That is, if it assigns a risk of $30\%$ to a group of patients, then about $30\%$ of those patients should actually go on to have the outcome [@problem_id:4749629].
 
-$AUC$ is completely insensitive to calibration. You can take a model's scores and put them through any transformation that preserves their order (like squaring them or taking their logarithm), and the $AUC$ will not change one bit . But such a transformation would wreak havoc on a decision rule like "treat if risk > 20%," because the meaning of the numbers has been distorted.
+$AUC$ is completely insensitive to calibration. You can take a model's scores and put them through any transformation that preserves their order (like squaring them or taking their logarithm), and the $AUC$ will not change one bit [@problem_id:4594624]. But such a transformation would wreak havoc on a decision rule like "treat if risk > 20%," because the meaning of the numbers has been distorted.
 
-Net Benefit, because it depends on applying a threshold to the model's actual predicted probabilities, is highly sensitive to calibration. A model that is poorly calibrated—say, it systematically overestimates risk—may have a great $AUC$ but a terrible Net Benefit, because its dishonest probabilities lead to systematically poor decisions .
+Net Benefit, because it depends on applying a threshold to the model's actual predicted probabilities, is highly sensitive to calibration. A model that is poorly calibrated—say, it systematically overestimates risk—may have a great $AUC$ but a terrible Net Benefit, because its dishonest probabilities lead to systematically poor decisions [@problem_id:4952018].
 
-Finally, clinical utility is tied to context. A model developed at Hospital X in Boston might be taken to Hospital Y in rural Montana . The patient populations might be different (a **case-mix** shift), and the prevalence of the disease might be lower. Because Net Benefit is explicitly dependent on prevalence, and because the model's performance (and calibration) may degrade in a new population, the Net Benefit can change dramatically, even if the $AUC$ remains relatively stable.
+Finally, clinical utility is tied to context. A model developed at Hospital X in Boston might be taken to Hospital Y in rural Montana [@problem_id:4553173]. The patient populations might be different (a **case-mix** shift), and the prevalence of the disease might be lower. Because Net Benefit is explicitly dependent on prevalence, and because the model's performance (and calibration) may degrade in a new population, the Net Benefit can change dramatically, even if the $AUC$ remains relatively stable.
 
 In the end, $AUC$ and DCA are tools for two different jobs. $AUC$ is a statistician's tool for measuring a model's intrinsic ranking power. DCA is a clinician's and patient's tool for measuring a model's real-world usefulness. To bridge the gap between a promising algorithm and better human health, we must focus not just on the elegance of the ranking, but on the consequences of the decision. That is the simple, yet powerful, principle that Decision Curve Analysis brings to light.

@@ -13,15 +13,15 @@ The consequences are predictable. Many patients never make that call. If they do
 
 ### From Fragmentation to Integration: A Tale of Two Systems
 
-The old model of separated care is what financial experts call a **"carve-out"**. A health plan pays one group for medical services and "carves out" a separate budget for a different company to manage behavioral health . This financial separation creates clinical silos. The alternative is a **"carve-in,"** an **integrated payment model** where a single organization is responsible for the person's total health, with a unified budget to match. This simple change in accounting creates a powerful incentive to coordinate, communicate, and collaborate.
+The old model of separated care is what financial experts call a **"carve-out"**. A health plan pays one group for medical services and "carves out" a separate budget for a different company to manage behavioral health [@problem_id:4384131]. This financial separation creates clinical silos. The alternative is a **"carve-in,"** an **integrated payment model** where a single organization is responsible for the person's total health, with a unified budget to match. This simple change in accounting creates a powerful incentive to coordinate, communicate, and collaborate.
 
-But integration is more than just sharing a building, a practice known as **co-location**. While having a therapist down the hall is better than across town, true integration requires weaving behavioral health into the very fabric of primary care. To be legitimately integrated, a system must possess three key features :
+But integration is more than just sharing a building, a practice known as **co-location**. While having a therapist down the hall is better than across town, true integration requires weaving behavioral health into the very fabric of primary care. To be legitimately integrated, a system must possess three key features [@problem_id:4721920]:
 
 1.  A **single, shared care plan**, accessible to every team member in one electronic health record.
 2.  **Explicit team-based workflows**, allowing for real-time handoffs and routine collaboration.
 3.  **Measurement-based care**, where decisions are guided by systematic data, not just intuition.
 
-This integrated approach is designed to overcome what we can think of as **friction**—the collection of barriers like wait times, travel distance, cost, and stigma that prevent people from getting care . By bringing care to the patient in a familiar setting, we dramatically lower this friction, making it as easy to address a panic attack as it is to get a flu shot.
+This integrated approach is designed to overcome what we can think of as **friction**—the collection of barriers like wait times, travel distance, cost, and stigma that prevent people from getting care [@problem_id:4718651]. By bringing care to the patient in a familiar setting, we dramatically lower this friction, making it as easy to address a panic attack as it is to get a flu shot.
 
 ### The Blueprint of Integration: Core Principles
 
@@ -29,26 +29,26 @@ To build this integrated system, we rely on a set of core principles that functi
 
 #### Team-Based Care: A Symphony of Roles
 
-An integrated team is not just a group of people; it's a carefully orchestrated ensemble where each member has a distinct and vital role. The brilliance of this design is how it uses expertise efficiently, a concept beautifully explained by task interdependence theory from organizational science . The key players include:
+An integrated team is not just a group of people; it's a carefully orchestrated ensemble where each member has a distinct and vital role. The brilliance of this design is how it uses expertise efficiently, a concept beautifully explained by task interdependence theory from organizational science [@problem_id:4721924]. The key players include:
 
 *   **Primary Care Provider (PCP):** The conductor of the orchestra. The PCP manages the patient's overall health, from chronic diseases to acute illnesses, and collaborates intimately with the behavioral health team.
 *   **Behavioral Health Consultant (BHC):** The first responder. Embedded in the primary care clinic, the BHC is a generalist ready to see any patient, at any time, for any behavioral concern. They are masters of the "warm handoff," where a PCP can walk a patient directly down the hall to meet the BHC in the middle of their visit. They provide brief, functional interventions designed to get patients "unstuck."
 *   **Behavioral Health Care Manager (BCM):** The proactive case manager. The BCM is responsible for a specific population of patients (e.g., those with depression) and uses a registry to track them over time. They provide regular check-ins, evidence-based therapies, and ensure no one falls through the cracks.
 *   **Consulting Psychiatrist (CP):** The expert advisor. The psychiatrist in this model typically does not see patients directly. Instead, they function like a grandmaster of chess, reviewing the BCM's entire caseload weekly and providing expert recommendations for patients who are not improving. This leverages scarce psychiatric expertise across a large population.
 
-The clarity of these roles is paramount. A "warm handoff" from a PCP to a BHC is a **sequential handoff**, like passing a baton in a relay race. If either runner is unsure of their role, the baton is dropped. Clear roles and standardized workflows ensure the baton is passed smoothly, dramatically increasing the probability of success .
+The clarity of these roles is paramount. A "warm handoff" from a PCP to a BHC is a **sequential handoff**, like passing a baton in a relay race. If either runner is unsure of their role, the baton is dropped. Clear roles and standardized workflows ensure the baton is passed smoothly, dramatically increasing the probability of success [@problem_id:4721924].
 
 #### Population-Based Approach
 
-In the old model, care was reactive; it only happened when a patient showed up. In an integrated model, particularly one using the **Collaborative Care Model (CoCM)**, the team is responsible for a whole **population**, not just the patients in the waiting room . This is made possible by a **patient registry**—a living list that tracks every patient in the program, their symptoms, their treatment plan, and their progress. The registry allows the care manager to be proactive, reaching out to patients who miss appointments or whose symptoms are not improving. It transforms care from a series of disconnected visits into a continuous, managed process.
+In the old model, care was reactive; it only happened when a patient showed up. In an integrated model, particularly one using the **Collaborative Care Model (CoCM)**, the team is responsible for a whole **population**, not just the patients in the waiting room [@problem_id:4721958]. This is made possible by a **patient registry**—a living list that tracks every patient in the program, their symptoms, their treatment plan, and their progress. The registry allows the care manager to be proactive, reaching out to patients who miss appointments or whose symptoms are not improving. It transforms care from a series of disconnected visits into a continuous, managed process.
 
 #### Measurement-Based Care (MBC): The Guiding Compass
 
 Perhaps the most radical shift in PCBH is the move to **measurement-based care (MBC)**. For too long, mental health has relied on subjective impressions. MBC insists that we should treat depression or anxiety with the same data-driven rigor we use to treat hypertension or diabetes.
 
-But what makes a measurement a good one? Just like a good thermometer, a clinical scale must have two qualities: **reliability** and **validity** . A reliable scale gives you consistent results; a valid scale measures what it's actually supposed to measure. Using a scale to measure anxiety to track depression is like using a [barometer](@entry_id:147792) to take your temperature—it's a reliable tool, but for the wrong purpose.
+But what makes a measurement a good one? Just like a good thermometer, a clinical scale must have two qualities: **reliability** and **validity** [@problem_id:4721902]. A reliable scale gives you consistent results; a valid scale measures what it's actually supposed to measure. Using a scale to measure anxiety to track depression is like using a [barometer](@keyword=barometer|lang=en-US|style=Feynman) to take your temperature—it's a reliable tool, but for the wrong purpose.
 
-True MBC, however, is more than just using a good questionnaire. It is a complete system defined by three actions  :
+True MBC, however, is more than just using a good questionnaire. It is a complete system defined by three actions [@problem_id:4721902] [@problem_id:4752801]:
 
 1.  **Systematic, Repeated Use:** A patient's score on a tool like the Patient Health Questionnaire-9 (PHQ-9) for depression is tracked at every visit, creating a graph of their progress over time.
 2.  **Actionable Thresholds:** The team agrees on what the numbers mean. For instance, a PHQ-9 score above 10 might trigger a change in treatment.
@@ -62,7 +62,7 @@ With this blueprint in place, how does the system actually run day-to-day? Two c
 
 #### The SBIRT Workflow: Find, Help, or Escalate
 
-The fundamental workflow of PCBH is known as **Screening, Brief Intervention, and Referral to Treatment (SBIRT)** . It's an elegant, three-step public health engine:
+The fundamental workflow of PCBH is known as **Screening, Brief Intervention, and Referral to Treatment (SBIRT)** [@problem_id:4721953]. It's an elegant, three-step public health engine:
 
 1.  **Screening:** Proactively and routinely screen all patients for common behavioral health risks (like substance use or depression), not just those who appear symptomatic. This is the "find" step.
 2.  **Brief Intervention:** For patients who screen positive for moderate risk, the BHC delivers a short, motivational conversation on the spot. This is the "help" step.
@@ -72,16 +72,16 @@ This simple process ensures that every patient gets the right level of care at t
 
 #### The Toolbox of Brief Interventions
 
-What happens in that "Brief Intervention"? The BHC is a master of brief, targeted therapies designed to be effective in short, primary-care-friendly visits. The toolbox contains several gems :
+What happens in that "Brief Intervention"? The BHC is a master of brief, targeted therapies designed to be effective in short, primary-care-friendly visits. The toolbox contains several gems [@problem_id:4721957]:
 
 *   **Motivational Interviewing (MI):** This is the art of collaborative conversation. Instead of telling a patient they need to change, the clinician helps the patient discover their *own* motivation. It is grounded in the idea that people are more likely to change when they feel autonomous and competent.
-*   **Behavioral Activation (BA):** This technique is the antidote to the trap of "I'll do it when I feel better." Based on principles of [operant conditioning](@entry_id:145352), BA posits that action comes before motivation. The therapist helps the patient schedule small, rewarding activities, breaking the cycle of avoidance and depression.
+*   **Behavioral Activation (BA):** This technique is the antidote to the trap of "I'll do it when I feel better." Based on principles of [operant conditioning](@keyword=operant_conditioning|lang=en-US|style=Feynman), BA posits that action comes before motivation. The therapist helps the patient schedule small, rewarding activities, breaking the cycle of avoidance and depression.
 *   **Problem-Solving Therapy (PST):** When life feels overwhelming, PST provides a structured, step-by-step method for breaking down large problems into manageable pieces. It is a practical skill that builds a patient's sense of control.
 *   **Brief Cognitive Behavioral Therapy (CBT):** This approach is based on the powerful idea that our thoughts, feelings, and behaviors are interconnected. By helping patients identify and challenge unhelpful thought patterns, the BHC can help them change how they feel and act.
 
 ### The Ripple Effect: Why Integration Changes Everything
 
-The beauty of this integrated system is how its effects ripple outward, changing not just mental health but physical health, too. Consider medication adherence for a chronic illness like diabetes. A patient's ability to stick to a complex medical plan is a behavior. The **Capability, Opportunity, Motivation-Behavior (COM-B)** model gives us a powerful lens to see why they might struggle and how PCBH helps .
+The beauty of this integrated system is how its effects ripple outward, changing not just mental health but physical health, too. Consider medication adherence for a chronic illness like diabetes. A patient's ability to stick to a complex medical plan is a behavior. The **Capability, Opportunity, Motivation-Behavior (COM-B)** model gives us a powerful lens to see why they might struggle and how PCBH helps [@problem_id:4718651].
 
 To perform a behavior, you need:
 *   **Capability:** The psychological and physical ability to do it.

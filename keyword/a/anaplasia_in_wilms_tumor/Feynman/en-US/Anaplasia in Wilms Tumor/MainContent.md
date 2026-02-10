@@ -9,7 +9,7 @@ To understand what makes a Wilms tumor particularly dangerous, we must journey f
 
 Imagine looking down a microscope at a slice of a typical Wilms tumor with favorable histology. You'd see a fascinating, if disorganized, landscape. It's often **triphasic**, a jumble of three different types of primitive cells that mimic the stages of kidney development: tiny, blue **blastemal** cells (the earliest precursors), rudimentary tubules formed by **epithelial** cells, and a supportive matrix of **stromal** cells. It’s like a construction site where the blueprints have been lost, but the workers (the cells) are still trying to build something that vaguely resembles a kidney. While there's rapid cell division, the cells themselves look relatively uniform. They are playing by *some* rules.
 
-Now, switch the slide to a tumor with anaplasia. The scene changes dramatically. It's no longer just a disorganized construction site; it's a full-blown riot. Pockets of cells have abandoned all pretense of [normal form](@entry_id:161181). They are monstrous, distorted, and menacing. It is the presence, not the absence, of this cellular chaos that defines the most critical divide in Wilms tumor pathology: the line between "favorable" and "unfavorable" histology .
+Now, switch the slide to a tumor with anaplasia. The scene changes dramatically. It's no longer just a disorganized construction site; it's a full-blown riot. Pockets of cells have abandoned all pretense of [normal form](@keyword=normal_form|lang=en-US|style=Feynman). They are monstrous, distorted, and menacing. It is the presence, not the absence, of this cellular chaos that defines the most critical divide in Wilms tumor pathology: the line between "favorable" and "unfavorable" histology [@problem_id:5218737].
 
 ### Defining the Enemy: The Three Faces of Anaplasia
 
@@ -21,7 +21,7 @@ This "anarchic" appearance isn't a subjective impression. Pathologists rely on a
 
 3.  **Atypical Mitoses**: Cell division, or mitosis, is normally a beautifully choreographed dance where chromosomes are duplicated and pulled apart into two identical daughter cells by a spindle apparatus with two poles. In anaplastic cells, this process breaks down completely. You find **atypical, multipolar mitotic figures**—bizarre, star-like shapes where the cell is trying to pull its chromosomes in three, four, or even more directions at once. It's a fatal tug-of-war that guarantees a catastrophic misallocation of genetic material to the daughter cells.
 
-The presence of just one or two of these features isn't enough. Brisk, but normal, mitotic activity is common in the blastemal part of a favorable tumor. True anaplasia is the trifecta of nuclear gigantism, hyperchromasia, and bizarre, multipolar division  .
+The presence of just one or two of these features isn't enough. Brisk, but normal, mitotic activity is common in the blastemal part of a favorable tumor. True anaplasia is the trifecta of nuclear gigantism, hyperchromasia, and bizarre, multipolar division [@problem_id:4428767] [@problem_id:5218812].
 
 ### Location, Location, Location: Focal vs. Diffuse Anarchy
 
@@ -29,7 +29,7 @@ Once anaplasia is identified, the next critical question is: where is it, and ho
 
 **Focal anaplasia** is like a contained riot. The anaplastic changes are found in one or more distinct, sharply defined spots within the main kidney tumor. Crucially, the "riot" hasn't spread. The tumor's outer edges are clean, and there is no sign of anaplasia in blood vessels or in tissue samples taken from outside the kidney, like lymph nodes.
 
-**Diffuse anaplasia**, on the other hand, is chaos uncontained. This diagnosis is made if the anaplastic cells are scattered haphazardly throughout the tumor, or, most importantly, if *any* anaplastic cells are found outside the primary, encapsulated tumor. The discovery of a single anaplastic cell in a regional lymph node, for example, instantly escalates the classification to diffuse anaplasia, regardless of the pattern within the kidney itself . As we will see, this distinction is a matter of life and death, as it reflects a fundamental difference in the tumor's biological aggression and its ability to spread.
+**Diffuse anaplasia**, on the other hand, is chaos uncontained. This diagnosis is made if the anaplastic cells are scattered haphazardly throughout the tumor, or, most importantly, if *any* anaplastic cells are found outside the primary, encapsulated tumor. The discovery of a single anaplastic cell in a regional lymph node, for example, instantly escalates the classification to diffuse anaplasia, regardless of the pattern within the kidney itself [@problem_id:5218812]. As we will see, this distinction is a matter of life and death, as it reflects a fundamental difference in the tumor's biological aggression and its ability to spread.
 
 ### The Guardian of the Genome: A Tale of TP53
 
@@ -41,7 +41,7 @@ This guardianship is the bedrock of cellular stability. So, what happens when th
 
 ### How to Build a Monster Cell: The Mechanism of Anaplasia
 
-The vast majority of anaplastic Wilms tumors harbor mutations that destroy both copies of their *TP53* gene, leaving them without a functional Guardian . This loss initiates a predictable and disastrous chain reaction that directly builds the monster cell we see under the microscope .
+The vast majority of anaplastic Wilms tumors harbor mutations that destroy both copies of their *TP53* gene, leaving them without a functional Guardian [@problem_id:4428767]. This loss initiates a predictable and disastrous chain reaction that directly builds the monster cell we see under the microscope [@problem_id:5218813].
 
 1.  **Checkpoint Failure**: With p53 gone, the cell loses its most important checkpoint. It can no longer sense critical errors. One of the most important errors p53 polices is the abnormal duplication of centrosomes—the tiny organelles that organize the spindle poles for cell division.
 
@@ -49,7 +49,7 @@ The vast majority of anaplastic Wilms tumors harbor mutations that destroy both 
 
 3.  **Mitotic Catastrophe**: When this cell attempts to divide, it builds a spindle with multiple poles. This is the origin of the **atypical multipolar mitoses** the pathologist sees. The chromosomes are pulled in multiple directions at once, leading to a disastrously uneven segregation of the genetic material.
 
-4.  **Genomic Mayhem**: The daughter cells that survive this chaotic division are genetic wrecks. They can end up with huge gains or losses of chromosomes ([aneuploidy](@entry_id:137510)) or even with whole extra sets of chromosomes ([polyploidy](@entry_id:146304)).
+4.  **Genomic Mayhem**: The daughter cells that survive this chaotic division are genetic wrecks. They can end up with huge gains or losses of chromosomes ([aneuploidy](@keyword=aneuploidy|lang=en-US|style=Feynman)) or even with whole extra sets of chromosomes ([polyploidy](@keyword=polyploidy|lang=en-US|style=Feynman)).
 
 This cascade of errors perfectly explains the other two features of anaplasia. The nucleus, struggling to contain this massive, abnormal surplus of DNA, must swell to an enormous size—giving us **marked nuclear enlargement**. And all of this extra DNA greedily soaks up stain, resulting in **hyperchromasia**.
 
@@ -59,6 +59,6 @@ In one beautiful, logical sequence, the loss of a single gene, *TP53*, mechanica
 
 The loss of p53 does more than just create a monstrous-looking cell; it creates a nearly invincible one. The mainstays of chemotherapy for Wilms tumor, drugs like actinomycin D and doxorubicin, work by causing overwhelming DNA damage. In a tumor cell with a functional p53 Guardian, this massive damage is an unignorable signal to initiate apoptosis. The cell dutifully kills itself.
 
-But in an anaplastic cell where p53 is absent, the self-destruct signal is never received. The chemotherapy damages the cell's DNA, but the cell, deaf to the alarm, stubbornly refuses to die. It may be wounded, but it survives. This is the molecular basis of **[chemoresistance](@entry_id:200603)** .
+But in an anaplastic cell where p53 is absent, the self-destruct signal is never received. The chemotherapy damages the cell's DNA, but the cell, deaf to the alarm, stubbornly refuses to die. It may be wounded, but it survives. This is the molecular basis of **[chemoresistance](@keyword=chemoresistance|lang=en-US|style=Feynman)** [@problem_id:4428839].
 
-This is why anaplasia, especially diffuse anaplasia, is such a powerful, stage-independent marker of a poor prognosis. A Stage II tumor with diffuse anaplasia can be far more lethal than a Stage IV tumor with favorable histology. Its cells are intrinsically resistant to the weapons we use to fight them . The presence of anaplasia is a red flag that tells doctors that standard therapies are likely to fail, demanding an immediate escalation to more aggressive and intensive treatment protocols in a desperate attempt to overcome the tumor's built-in defenses  . The chaotic face of anaplasia under the microscope is a direct window into its molecular defiance.
+This is why anaplasia, especially diffuse anaplasia, is such a powerful, stage-independent marker of a poor prognosis. A Stage II tumor with diffuse anaplasia can be far more lethal than a Stage IV tumor with favorable histology. Its cells are intrinsically resistant to the weapons we use to fight them [@problem_id:5218737]. The presence of anaplasia is a red flag that tells doctors that standard therapies are likely to fail, demanding an immediate escalation to more aggressive and intensive treatment protocols in a desperate attempt to overcome the tumor's built-in defenses [@problem_id:5218737] [@problem_id:4428839]. The chaotic face of anaplasia under the microscope is a direct window into its molecular defiance.

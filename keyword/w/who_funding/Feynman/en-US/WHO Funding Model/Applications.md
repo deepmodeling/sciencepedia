@@ -10,11 +10,11 @@ Let's begin with a fundamental puzzle. The WHO is an organization of sovereign s
 
 The answer, rooted in the very fabric of international law, is both no and yes. The WHO cannot send in troops or impose punitive sanctions for a delayed report. The bedrock of the international system is state sovereignty, a principle the WHO must respect. Yet, this does not render the organization powerless. Its authority is derived from a treaty, the International Health Regulations (IHR), which nearly every country in the world has agreed to follow. This is a promise, a pact among nations.
 
-The enforcement of this promise, however, is not through coercion. Instead, the WHO employs a powerful toolkit of "soft power." It offers technical assistance, deploying experts to help a country in need. It uses transparency and public reporting, shining a light on where health systems are strong and where they are weak. And it relies on peer pressure and reputational encouragement among nations. In this system, compliance is not forced by a penalty, but nurtured by collaboration, mutual interest, and the shared goal of global health security. A country with limited resources may not be able to meet all its obligations at once, but with the WHO’s assistance and the world’s support, it can be helped along the path . This delicate balance between legal obligation and sovereign respect is the foundational context for every dollar the WHO receives and spends.
+The enforcement of this promise, however, is not through coercion. Instead, the WHO employs a powerful toolkit of "soft power." It offers technical assistance, deploying experts to help a country in need. It uses transparency and public reporting, shining a light on where health systems are strong and where they are weak. And it relies on peer pressure and reputational encouragement among nations. In this system, compliance is not forced by a penalty, but nurtured by collaboration, mutual interest, and the shared goal of global health security. A country with limited resources may not be able to meet all its obligations at once, but with the WHO’s assistance and the world’s support, it can be helped along the path [@problem_id:4365226]. This delicate balance between legal obligation and sovereign respect is the foundational context for every dollar the WHO receives and spends.
 
 ### A Tour of the Global Health Neighborhood
 
-The WHO does not walk this path alone. The landscape of global health is a vibrant, crowded neighborhood populated by a diverse array of powerful actors, each with its own structure, purpose, and way of handling money. To understand the WHO’s role, we must meet its neighbors .
+The WHO does not walk this path alone. The landscape of global health is a vibrant, crowded neighborhood populated by a diverse array of powerful actors, each with its own structure, purpose, and way of handling money. To understand the WHO’s role, we must meet its neighbors [@problem_id:4982479].
 
 First, there are other **intergovernmental organizations**, like the WHO itself, whose governing bodies are composed of member states, often with a "one country, one vote" principle.
 
@@ -30,17 +30,17 @@ In this diverse ecosystem, the WHO's unique character becomes clear. It is the w
 
 With so many players on the field, one might expect chaos. But more often than not, what emerges is a remarkable, if sometimes imperfect, division of labor—a kind of symphony of specialization. Each organization, by virtue of its unique mandate and structure, has a comparative advantage in performing a certain function.
 
-Consider the challenge of getting a new vaccine to every child in a low-income country . An efficient system would look something like this:
-- The **WHO** acts as the composer and conductor, providing the normative guidance: it sets the policies for [immunization](@entry_id:193800) schedules, prequalifies the vaccines to ensure they are safe and effective, and provides the overall technical strategy.
+Consider the challenge of getting a new vaccine to every child in a low-income country [@problem_id:5006005]. An efficient system would look something like this:
+- The **WHO** acts as the composer and conductor, providing the normative guidance: it sets the policies for [immunization](@keyword=immunization|lang=en-US|style=Feynman) schedules, prequalifies the vaccines to ensure they are safe and effective, and provides the overall technical strategy.
 - **Gavi, the Vaccine Alliance**, with its expertise in market-shaping and financing, steps in to pay for the performance. It pools donor funds and negotiates with manufacturers to secure affordable prices.
 - **UNICEF**, with its legendary logistical prowess and vast procurement network, acts as the distributor. It buys the vaccines in bulk—achieving economies of scale—and manages the complex in-country supply chain to get them to national warehouses.
 - **Local and international non-governmental organizations (NGOs)**, with their deep community ties, perform the "last-mile" delivery. They run the local clinics, lead community engagement to build trust and demand, and ensure the vaccine reaches every child, even in the most remote villages.
 
-This same principle of complementary roles applies to the digital age. In building a national child health information system, the WHO's role is to provide the "grammar" of the system—the data and interoperability standards that allow different digital tools to speak to each other. The World Bank might provide the financing for the "digital highways," and an agency like UNICEF ensures the system is used effectively to track child health programs and protect children's data . In this way, the seemingly jumbled global health architecture reveals a deep, underlying logic, with the WHO providing the normative core around which financing and implementation partners can align .
+This same principle of complementary roles applies to the digital age. In building a national child health information system, the WHO's role is to provide the "grammar" of the system—the data and interoperability standards that allow different digital tools to speak to each other. The World Bank might provide the financing for the "digital highways," and an agency like UNICEF ensures the system is used effectively to track child health programs and protect children's data [@problem_id:5005640]. In this way, the seemingly jumbled global health architecture reveals a deep, underlying logic, with the WHO providing the normative core around which financing and implementation partners can align [@problem_id:4995998].
 
 ### The Power of the Purse: How Funding Channels Shape Reality
 
-The way money flows is not just a technical detail; it fundamentally shapes priorities and actions on the ground. Imagine a country's Ministry of Health trying to build an integrated primary care system, where a single clinic can treat a pregnant woman, screen her for diabetes, and test her for tuberculosis all at once .
+The way money flows is not just a technical detail; it fundamentally shapes priorities and actions on the ground. Imagine a country's Ministry of Health trying to build an integrated primary care system, where a single clinic can treat a pregnant woman, screen her for diabetes, and test her for tuberculosis all at once [@problem_id:4986045].
 
 Now, consider two different streams of money arriving to support this goal.
 - The first stream is from the World Bank, provided as a **pooled fund** through a "sector-wide approach." This is like giving the Ministry a flexible budget to strengthen the whole system. They can use it to train health workers in multiple skills, build an integrated supply chain for all necessary medicines, and establish a unified supervision system. This type of funding is horizontal, empowering the country to build the integrated system it designed.
@@ -50,7 +50,7 @@ What happens? Given limited staff and resources, the vertical grant creates powe
 
 ### Evolving the System: Creating Order from Chaos
 
-This complex global health system is not static. It learns and adapts, often in response to crises. The story of the global response to HIV/AIDS is a perfect case study in institutional evolution .
+This complex global health system is not static. It learns and adapts, often in response to crises. The story of the global response to HIV/AIDS is a perfect case study in institutional evolution [@problem_id:4764729].
 
 In the early 1990s, the response to the burgeoning AIDS epidemic was fragmented. WHO, UNICEF, the World Bank, and other UN agencies were all running their own separate, often overlapping, programs. The result was significant duplication and inefficiency. The problem was that HIV/AIDS was not just a health issue. It was a multisectoral crisis, deeply intertwined with education, poverty, human rights, and development. Giving the entire mandate to WHO, a specialized health agency, would have been inadequate.
 
@@ -58,7 +58,7 @@ The solution was a radical innovation: the creation of a joint, co-sponsored pro
 
 ### Forging the Future: Designing a More Secure World
 
-Today, as we face the ever-present threat of new pandemics, these lessons are more vital than ever. Proposals are now debated for creating new instruments, like a permanent, standing Global Health Emergency Corps, ready to deploy at a moment's notice to stamp out an outbreak before it can spread .
+Today, as we face the ever-present threat of new pandemics, these lessons are more vital than ever. Proposals are now debated for creating new instruments, like a permanent, standing Global Health Emergency Corps, ready to deploy at a moment's notice to stamp out an outbreak before it can spread [@problem_id:4528876].
 
 How would one design such a corps? The discussions echo all the themes we have explored. To be effective, its financing must be predictable and rapid, likely requiring a core budget funded by assessed contributions, rather than relying on slow, ad-hoc donation drives after a crisis has already begun. Its governance must be aligned with international law, respecting state sovereignty by operating on a basis of consent, perhaps through pre-negotiated agreements that allow for rapid deployment when a country requests help. And its operations must be equitable, with resources allocated based on transparent, needs-based criteria, not political favoritism.
 

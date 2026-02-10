@@ -9,7 +9,7 @@ To truly understand a piece of machinery, you must look beyond its surface. You 
 
 ### An Architecture of Layers
 
-Imagine looking at a cross-section of the penile shaft. You would not see a [uniform structure](@entry_id:150536), but rather a set of concentric cylinders, each with a distinct role and material property, much like a sophisticated [coaxial cable](@entry_id:274432).
+Imagine looking at a cross-section of the penile shaft. You would not see a [uniform structure](@keyword=uniform_structure|lang=en-US|style=Feynman), but rather a set of concentric cylinders, each with a distinct role and material property, much like a sophisticated [coaxial cable](@keyword=coaxial_cable|lang=en-US|style=Feynman).
 
 At the very core are the erectile bodies: the two **corpora cavernosa** side-by-side, and the **corpus spongiosum** below them, which houses the urethra. These are the spongy, expandable tissues that fill with blood. Each of these bodies is wrapped in an incredibly tough, dense, and relatively inelastic fibrous envelope called the **tunica albuginea**. Think of it as the high-pressure casing of a tire, designed to contain immense forces without bursting. Its high stiffness, or high Young's modulus ($E_t$), is fundamental to its function.
 
@@ -21,7 +21,7 @@ This layered design—Skin -> Dartos Fascia -> Buck's Fascia -> Tunica Albuginea
 
 ### The Watertight Compartment
 
-The most crucial role of Buck's fascia is that of a boundary. It acts like the hull of a submarine, creating a sealed, low-compliance compartment around the most critical structures. Compliance is simply a measure of how much a compartment's volume changes for a given change in pressure ($C = \Delta V / \Delta P$). A low-compliance compartment, like the one formed by Buck's fascia, is stiff; even a small increase in fluid volume ($\Delta V$) leads to a large and rapid increase in [internal pressure](@entry_id:153696) ($\Delta P$).
+The most crucial role of Buck's fascia is that of a boundary. It acts like the hull of a submarine, creating a sealed, low-compliance compartment around the most critical structures. Compliance is simply a measure of how much a compartment's volume changes for a given change in pressure ($C = \Delta V / \Delta P$). A low-compliance compartment, like the one formed by Buck's fascia, is stiff; even a small increase in fluid volume ($\Delta V$) leads to a large and rapid increase in [internal pressure](@keyword=internal_pressure|lang=en-US|style=Feynman) ($\Delta P$).
 
 What does this "hull" protect? Inside the compartment defined by Buck's fascia are the VIPs: the three erectile bodies and, running along the top, the deep dorsal neurovascular bundle. This bundle contains the deep dorsal vein, the paired dorsal arteries, and the dorsal nerves—the essential plumbing and wiring for sensation and erection. By containing these structures within a strong, confined space, Buck's fascia provides both structural support and a crucial barrier. If there is bleeding from a deep structure, like the deep dorsal vein, the low compliance of the compartment causes pressure to build up quickly. This high pressure has a tamponade effect, helping to compress the bleeding vessel and limit the size of the hematoma, confining it to the shaft of the penis.
 

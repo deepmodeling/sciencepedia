@@ -25,7 +25,7 @@ The defining characteristic of exponential growth is that the rate of increase a
 
 $$ \frac{dC}{dt} = kC $$
 
-Here, $C$ is the concentration of our biomarker, $\frac{dC}{dt}$ is its rate of change, and $k$ is a constant that represents the tumor's intrinsic growth rate. The solution to this equation is the famous [exponential function](@entry_id:161417):
+Here, $C$ is the concentration of our biomarker, $\frac{dC}{dt}$ is its rate of change, and $k$ is a constant that represents the tumor's intrinsic growth rate. The solution to this equation is the famous [exponential function](@keyword=exponential_function|lang=en-US|style=Feynman):
 
 $$ C(t) = C_0 e^{kt} $$
 
@@ -57,11 +57,11 @@ What if we have more than two measurements? Picking just two would be throwing a
 
 $$ \ln(C(t)) = \ln(C_0) + kt $$
 
-This is the equation of a straight line! If we plot the logarithm of the calcitonin concentration against time, the data points should fall on a line whose slope is the growth rate, $k$. Using statistical methods like [linear regression](@entry_id:142318), we can find the "best-fit" line through all of our data points, giving us a much more reliable estimate of $k$, and therefore a more accurate doubling time.
+This is the equation of a straight line! If we plot the logarithm of the calcitonin concentration against time, the data points should fall on a line whose slope is the growth rate, $k$. Using statistical methods like [linear regression](@keyword=linear_regression|lang=en-US|style=Feynman), we can find the "best-fit" line through all of our data points, giving us a much more reliable estimate of $k$, and therefore a more accurate doubling time.
 
 ### A Tale of Two Markers: When Calcitonin and CEA Disagree
 
-The story gets even more interesting. Some MTC tumors are not uniform. As they evolve, they can become more primitive, a process called **[dedifferentiation](@entry_id:162707)**. A well-behaved, "differentiated" MTC cell is a specialist at producing calcitonin. But a more aggressive, dedifferentiated cell might lose this specialty. It may produce less calcitonin, but start producing more of a less-specific protein called **carcinoembryonic antigen (CEA)**.
+The story gets even more interesting. Some MTC tumors are not uniform. As they evolve, they can become more primitive, a process called **[dedifferentiation](@keyword=dedifferentiation|lang=en-US|style=Feynman)**. A well-behaved, "differentiated" MTC cell is a specialist at producing calcitonin. But a more aggressive, dedifferentiated cell might lose this specialty. It may produce less calcitonin, but start producing more of a less-specific protein called **carcinoembryonic antigen (CEA)**.
 
 Imagine a patient whose calcitonin is rising very slowly, with a calculated doubling time of, say, $87$ months. This seems reassuring. But at the same time, their CEA level is rocketing up, with a doubling time of only $6$ months. What is happening?
 

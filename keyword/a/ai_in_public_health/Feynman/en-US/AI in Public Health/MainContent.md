@@ -13,7 +13,7 @@ At its heart, "learning" for a machine is about discovering patterns in data. We
 
 Imagine you are a public health detective during an outbreak. In one task, you are given the files of a thousand people, some of whom you know have tested positive for a new virus. Your job is to study their features—demographics, travel history, social contacts—and learn to predict which *other* specific individuals, not yet tested, are likely to get sick. This is the essence of **supervised learning**. The machine acts as an apprentice, learning from examples where the "right answer" (the infection status) is provided. It learns a mapping from a person's features to a specific outcome. The goal is prediction.
 
-Now, imagine a second task. You are given a map of a city and the daily number of new cases reported in every neighborhood over the past month. You are not trying to predict any single person's outcome. Instead, you are asked: "Are there neighborhoods that are behaving similarly? Are there clusters of areas where the outbreak is rising and falling in sync?" Here, there are no predefined labels. You are looking for the inherent structure *within* the data itself. This is the realm of **unsupervised learning**. The machine acts as an explorer, sifting through the data to find natural groupings or hidden patterns, like identifying coordinated outbreak hotspots that might share a common source or transmission route .
+Now, imagine a second task. You are given a map of a city and the daily number of new cases reported in every neighborhood over the past month. You are not trying to predict any single person's outcome. Instead, you are asked: "Are there neighborhoods that are behaving similarly? Are there clusters of areas where the outbreak is rising and falling in sync?" Here, there are no predefined labels. You are looking for the inherent structure *within* the data itself. This is the realm of **unsupervised learning**. The machine acts as an explorer, sifting through the data to find natural groupings or hidden patterns, like identifying coordinated outbreak hotspots that might share a common source or transmission route [@problem_id:2432872].
 
 Both paradigms are vital in public health, but it is supervised learning, with its power of prediction, that we will focus on as we explore how AI models are built and deployed.
 
@@ -23,17 +23,17 @@ Let’s stick with the task of predicting disease. We might have access to Elect
 
 Many features are redundant. A patient's heart rate, respiratory rate, and oxygen saturation might all be highly correlated, telling a similar story of distress. This is called **multicollinearity**. If a model tries to assign importance to each one independently, it can become unstable, like trying to decide how much credit to give to three different people who all pushed a door open together.
 
-More fundamentally, we face the **[bias-variance trade-off](@entry_id:141977)**. Think of it like this: A simple model, perhaps one that only looks at fever, is highly biased. It has a rigid, preconceived notion of what causes disease and will miss many complex cases. Its simplicity, however, means it won't be easily swayed by random noise in the training data—it has low variance. On the other hand, an overly complex model that tries to memorize every detail of every patient in the [training set](@entry_id:636396) might be perfectly accurate on that data (low bias), but it will be terrible at generalizing to new patients. It's like a student who crams for a test by memorizing the answers but doesn't understand the concepts. Such a model has high variance.
+More fundamentally, we face the **[bias-variance trade-off](@keyword=bias_variance_trade_off|lang=en-US|style=Feynman)**. Think of it like this: A simple model, perhaps one that only looks at fever, is highly biased. It has a rigid, preconceived notion of what causes disease and will miss many complex cases. Its simplicity, however, means it won't be easily swayed by random noise in the training data—it has low variance. On the other hand, an overly complex model that tries to memorize every detail of every patient in the [training set](@keyword=training_set|lang=en-US|style=Feynman) might be perfectly accurate on that data (low bias), but it will be terrible at generalizing to new patients. It's like a student who crams for a test by memorizing the answers but doesn't understand the concepts. Such a model has high variance.
 
 The art of building a good predictive model is finding the sweet spot. This is where **regularization** comes in. It’s a technique for taming complexity. Imagine each feature's importance in the model is a knob or a coefficient. Regularization applies a penalty to the model for making these coefficients too large.
 
-- The **L1 penalty** (Lasso) adds a cost proportional to the absolute size of the coefficients. A fascinating property of this penalty is that it forces the coefficients of the least important features to become exactly zero. It performs automatic [feature selection](@entry_id:141699), creating a **sparse model** that is simpler and more interpretable.
+- The **L1 penalty** (Lasso) adds a cost proportional to the absolute size of the coefficients. A fascinating property of this penalty is that it forces the coefficients of the least important features to become exactly zero. It performs automatic [feature selection](@keyword=feature_selection|lang=en-US|style=Feynman), creating a **sparse model** that is simpler and more interpretable.
 
 - The **L2 penalty** (Ridge) adds a cost proportional to the squared size of the coefficients. This penalty doesn't usually force coefficients to zero, but it shrinks them. It is particularly good at handling multicollinearity; instead of picking one feature from a correlated group and discarding the rest (as L1 might), it tends to shrink their coefficients together.
 
-- The **Elastic Net penalty** combines both L1 and L2, getting the best of both worlds: it can perform feature selection while also handling [correlated features](@entry_id:636156) as a group.
+- The **Elastic Net penalty** combines both L1 and L2, getting the best of both worlds: it can perform feature selection while also handling [correlated features](@keyword=correlated_features|lang=en-US|style=Feynman) as a group.
 
-By introducing a small amount of bias through these penalties, we dramatically reduce the model's variance, making it more robust and better at generalizing to new, unseen data. This is a cornerstone of building reliable AI for high-stakes environments like medicine .
+By introducing a small amount of bias through these penalties, we dramatically reduce the model's variance, making it more robust and better at generalizing to new, unseen data. This is a cornerstone of building reliable AI for high-stakes environments like medicine [@problem_id:4506166].
 
 ### The Peril of Proxies: When Goodhart's Law Strikes
 
@@ -49,11 +49,11 @@ $$
 \Delta e = (p_1 - p_0)(Se + Sp - 1)
 $$
 
-This equation  tells us that the error of our proxy metric changes in direct proportion to how much we change the prevalence of the group we're testing. The AI, by targeting a sicker population (increasing prevalence from $p_0$ to $p_1$), directly inflates the measurement error, creating an illusion of improved performance that is not real. The term $(Se + Sp - 1)$, known as Youden's J-statistic, is a measure of the diagnostic test's overall quality. This beautiful result shows precisely how optimizing for a simplistic proxy can lead us astray, and how the magnitude of our self-deception depends on the quality of our tools and the degree to which we game the system.
+This equation [@problem_id:4444044] tells us that the error of our proxy metric changes in direct proportion to how much we change the prevalence of the group we're testing. The AI, by targeting a sicker population (increasing prevalence from $p_0$ to $p_1$), directly inflates the measurement error, creating an illusion of improved performance that is not real. The term $(Se + Sp - 1)$, known as Youden's J-statistic, is a measure of the diagnostic test's overall quality. This beautiful result shows precisely how optimizing for a simplistic proxy can lead us astray, and how the magnitude of our self-deception depends on the quality of our tools and the degree to which we game the system.
 
 ### Are We Measuring What We Value? Reliability versus Validity
 
-The trap of Goodhart's Law forces us to ask a deeper question: what makes a metric a *good* one? In [measurement theory](@entry_id:153616), we distinguish between two fundamental qualities: reliability and validity .
+The trap of Goodhart's Law forces us to ask a deeper question: what makes a metric a *good* one? In [measurement theory](@keyword=measurement_theory|lang=en-US|style=Feynman), we distinguish between two fundamental qualities: reliability and validity [@problem_id:4443996].
 
 **Reliability** is about consistency. If you step on a scale and it reads "150 pounds," then step on it again a minute later and it reads "150 pounds," it is reliable. A reliable AI model gives consistent predictions. But what if your true weight is 170 pounds? The scale is reliably wrong.
 
@@ -69,19 +69,19 @@ When we make a metric a target, as in Goodhart's Law, we can create a situation 
 
 ### From Code to Community: The Ethical Framework
 
-Building an effective AI is not enough. We must deploy it responsibly. This requires a robust ethical framework that goes beyond simple performance metrics. We can't just ask, "Is the model accurate?" We must also ask, "Is the model fair, accountable, and transparent?" . This leads us to a set of core principles that must guide AI in public health.
+Building an effective AI is not enough. We must deploy it responsibly. This requires a robust ethical framework that goes beyond simple performance metrics. We can't just ask, "Is the model accurate?" We must also ask, "Is the model fair, accountable, and transparent?" [@problem_id:4569668]. This leads us to a set of core principles that must guide AI in public health.
 
 #### Transparency vs. Opacity: The Price of a Black Box
 
-AI models exist on a spectrum of transparency. On one end, we have [interpretable models](@entry_id:637962) like the [logistic regression](@entry_id:136386) we saw earlier, often called **"transparent" or "glass-box" models**. We can look inside and see exactly how it weighs different features to make a decision. On the other end are **"black-box" models** like complex [deep neural networks](@entry_id:636170). These models can be incredibly powerful and accurate, but their internal logic is so convoluted that it's often impossible for a human to understand why it made a particular decision.
+AI models exist on a spectrum of transparency. On one end, we have [interpretable models](@keyword=interpretable_models|lang=en-US|style=Feynman) like the [logistic regression](@keyword=logistic_regression|lang=en-US|style=Feynman) we saw earlier, often called **"transparent" or "glass-box" models**. We can look inside and see exactly how it weighs different features to make a decision. On the other end are **"black-box" models** like complex [deep neural networks](@keyword=deep_neural_networks|lang=en-US|style=Feynman). These models can be incredibly powerful and accurate, but their internal logic is so convoluted that it's often impossible for a human to understand why it made a particular decision.
 
-Imagine a genomic screening program choosing between two models . Model T is a transparent logistic regression with 88% sensitivity. Model B is a black-box deep learning model with 92% sensitivity. At first glance, Model B seems better. But suppose we assign a "harm cost" of 20 units for every missed case (a false negative) and 1 unit for every false alarm (a false positive). A simple calculation might reveal a surprise: because the [black-box model](@entry_id:637279) has slightly lower specificity, it generates many more false alarms. In a large population, the total harm from these numerous, low-cost errors can add up to be *greater* than the total harm from the transparent model's fewer, high-cost errors.
+Imagine a genomic screening program choosing between two models [@problem_id:4564859]. Model T is a transparent logistic regression with 88% sensitivity. Model B is a black-box deep learning model with 92% sensitivity. At first glance, Model B seems better. But suppose we assign a "harm cost" of 20 units for every missed case (a false negative) and 1 unit for every false alarm (a false positive). A simple calculation might reveal a surprise: because the [black-box model](@keyword=black_box_model|lang=en-US|style=Feynman) has slightly lower specificity, it generates many more false alarms. In a large population, the total harm from these numerous, low-cost errors can add up to be *greater* than the total harm from the transparent model's fewer, high-cost errors.
 
 This is a profound lesson: the "most accurate" model is not always the "best" or safest one. The transparent model, even if slightly less sensitive, might be preferable because it results in less overall harm and, crucially, satisfies the need for auditability and trust. Its decisions can be explained and reviewed, which is a cornerstone of accountability.
 
 #### The Fivefold Path: An Ethical Compass
 
-To navigate these complex trade-offs, we can rely on a compass with five cardinal directions, derived from decades of thinking in medical ethics :
+To navigate these complex trade-offs, we can rely on a compass with five cardinal directions, derived from decades of thinking in medical ethics [@problem_id:4552875]:
 
 1.  **Beneficence (Do Good):** The primary reason to use AI is to improve health outcomes—to allocate resources more effectively, to find the sick sooner, and to prevent disease. This is our duty to help.
 
@@ -91,11 +91,11 @@ To navigate these complex trade-offs, we can rely on a compass with five cardina
 
 4.  **Autonomy (Respect Choice):** At its core, this principle demands that we respect people's right to self-determination. This is most powerfully expressed through the process of informed consent for the use of their data and their participation in AI-driven programs.
 
-5.  **Explicability (Explain Why):** When an AI makes a decision that affects a person's life—such as flagging them for a health intervention—that person has a right to an explanation. This is essential for trust, for accountability, and for providing a meaningful way to appeal a decision. Deploying a [black-box model](@entry_id:637279) without a plan for explanation fails this crucial test.
+5.  **Explicability (Explain Why):** When an AI makes a decision that affects a person's life—such as flagging them for a health intervention—that person has a right to an explanation. This is essential for trust, for accountability, and for providing a meaningful way to appeal a decision. Deploying a [black-box model](@keyword=black_box_model|lang=en-US|style=Feynman) without a plan for explanation fails this crucial test.
 
 #### The Dignity of Data: Consent in the Digital Age
 
-The principle of autonomy brings us to the fuel of all AI: data. Secondary use of data—using information collected for one purpose (like clinical care) for another (like training an AI)—is a powerful but ethically fraught practice. Respecting autonomy means giving people genuine control over this process. The old model of a one-time, blanket consent form is no longer adequate. Technology now enables more nuanced approaches :
+The principle of autonomy brings us to the fuel of all AI: data. Secondary use of data—using information collected for one purpose (like clinical care) for another (like training an AI)—is a powerful but ethically fraught practice. Respecting autonomy means giving people genuine control over this process. The old model of a one-time, blanket consent form is no longer adequate. Technology now enables more nuanced approaches [@problem_id:5203361]:
 
 -   **Specific Consent:** Permission is given for one, narrowly defined research project.
 -   **Broad Consent:** Permission is given for future, unspecified studies within certain categories (e.g., "non-commercial cancer research").
@@ -104,13 +104,13 @@ The principle of autonomy brings us to the fuel of all AI: data. Secondary use o
 
 ### The Unseen Injury: Dignitary Harms and the Group
 
-Perhaps the most subtle danger of AI in public health lies beyond individual privacy. An AI system can harm an entire community without ever identifying a single person. Imagine an AI analyzing de-identified public data generates a report that states a specific ethnocultural community "tends to be nonadherent" with medication .
+Perhaps the most subtle danger of AI in public health lies beyond individual privacy. An AI system can harm an entire community without ever identifying a single person. Imagine an AI analyzing de-identified public data generates a report that states a specific ethnocultural community "tends to be nonadherent" with medication [@problem_id:4439480].
 
 No individual's privacy has been breached. Yet, a profound harm has occurred. The AI has generated a **group harm**, a form of **dignitary harm** that stereotypes and demeans an entire community. This can have real-world consequences: local clinics might start treating members of that community with suspicion, or employers might make biased assumptions. The AI output shapes the "choice architecture" of society, creating structural disadvantages that diminish the practical autonomy and equal standing of the group's members. This violates the principle of Justice, which forbids the systematic burdening of a class, and Respect for Persons, which is grounded in the equal moral worth of all people. Protecting against this requires us to look beyond de-identification and consider how AI-generated narratives can reinforce or create social stigma.
 
 ### The World Doesn't Stand Still: The Challenge of Drift
 
-Finally, we must recognize that deploying an AI model is not the end of the story; it is the beginning. The world is a dynamic, changing place, and a model trained on yesterday's data may fail tomorrow. This degradation in performance is known as **drift** .
+Finally, we must recognize that deploying an AI model is not the end of the story; it is the beginning. The world is a dynamic, changing place, and a model trained on yesterday's data may fail tomorrow. This degradation in performance is known as **drift** [@problem_id:4854500].
 
 -   **Data Drift:** This happens when the patient population changes. For example, if a clinic opens in a new neighborhood, the distribution of input features ($P(X)$) seen by the model will change. The model may now encounter types of patients it was not trained on, and its performance can suffer.
 
@@ -118,4 +118,4 @@ Finally, we must recognize that deploying an AI model is not the end of the stor
 
 -   **Model Drift:** This is an engineering failure. A software update to a component in the data pipeline or a change in how the model is loaded can alter its behavior, causing performance to change even if the underlying data distribution is stable.
 
-Managing drift requires continuous monitoring, [version control](@entry_id:264682), and a commitment to retraining and re-validating models as the world changes. An AI system in public health is not a stone monument, built once and left to stand forever. It is a living garden that requires constant tending to remain healthy and useful.
+Managing drift requires continuous monitoring, [version control](@keyword=version_control|lang=en-US|style=Feynman), and a commitment to retraining and re-validating models as the world changes. An AI system in public health is not a stone monument, built once and left to stand forever. It is a living garden that requires constant tending to remain healthy and useful.

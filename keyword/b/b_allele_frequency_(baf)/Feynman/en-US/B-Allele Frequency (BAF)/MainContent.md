@@ -1,5 +1,5 @@
 ## Introduction
-Our genetic code, the DNA blueprint of life, is largely identical from person to person, but small variations called SNPs make each of us unique. While simply sequencing genes tells us about the 'bricks' of life, understanding large-scale genomic architecture—the number and origin of our chromosome copies—requires a different approach. How can we detect when large sections of chromosomes are duplicated, deleted, or inherited from a single parent? This article introduces the B-Allele Frequency (BAF), a simple yet powerful metric that provides a window into this genomic architecture. In the following chapters, we will first explore the fundamental principles of BAF, learning how it is calculated from both microarray and sequencing data and how its patterns reveal the underlying copy number of a genomic region. We will then journey through its diverse applications, from diagnosing constitutional genetic disorders to dissecting the complex, chaotic genomes of cancer cells, demonstrating how BAF unifies fields from [clinical genetics](@entry_id:260917) to oncology.
+Our genetic code, the DNA blueprint of life, is largely identical from person to person, but small variations called SNPs make each of us unique. While simply sequencing genes tells us about the 'bricks' of life, understanding large-scale genomic architecture—the number and origin of our chromosome copies—requires a different approach. How can we detect when large sections of chromosomes are duplicated, deleted, or inherited from a single parent? This article introduces the B-Allele Frequency (BAF), a simple yet powerful metric that provides a window into this genomic architecture. In the following chapters, we will first explore the fundamental principles of BAF, learning how it is calculated from both microarray and sequencing data and how its patterns reveal the underlying copy number of a genomic region. We will then journey through its diverse applications, from diagnosing constitutional genetic disorders to dissecting the complex, chaotic genomes of cancer cells, demonstrating how BAF unifies fields from [clinical genetics](@keyword=clinical_genetics|lang=en-US|style=Feynman) to oncology.
 
 ## Principles and Mechanisms
 
@@ -19,7 +19,7 @@ $$
 \mathrm{BAF} = \frac{I_B}{I_A + I_B}
 $$
 
-Now, let’s think like a physicist and predict what we should see .
+Now, let’s think like a physicist and predict what we should see [@problem_id:5082807].
 *   If a person's genotype at a SNP is **AA**, there are no B alleles. We expect no green light ($I_B \approx 0$), so the BAF should be very close to **0**.
 *   If the genotype is **BB**, there are no A alleles. We expect all the light to be green ($I_A \approx 0$), so the BAF should be very close to **1**.
 *   If the genotype is **AB**, there is an equal number of A and B alleles. We expect the red and green light intensities to be roughly equal ($I_A \approx I_B$), so the BAF should be right around **0.5**.
@@ -32,7 +32,7 @@ The world of genetics has moved on to an even more direct method: **Next-Generat
 
 To find the BAF at a SNP, the process is even more intuitive: we simply count. We look at all the reads that cover the SNP's location and count how many have the B allele versus the A allele. The BAF is just the count of B-reads divided by the total number of reads.
 
-But nature, and technology, are messy. A sequencer can make an error, misreading an A as a B. A read might be so similar to other parts of the genome that our computer programs align it to the wrong location. To get a reliable BAF estimate, a scientist must act like a careful detective, discarding unreliable evidence . We use quality scores—like **[mapping quality](@entry_id:170584)** for the alignment's confidence and **base quality** for the accuracy of the letter-call—to filter out the noise. Only by focusing on high-quality reads can we be confident that the BAF we calculate reflects the true biology of the cells, not just technical artifacts.
+But nature, and technology, are messy. A sequencer can make an error, misreading an A as a B. A read might be so similar to other parts of the genome that our computer programs align it to the wrong location. To get a reliable BAF estimate, a scientist must act like a careful detective, discarding unreliable evidence [@problem_id:5104099]. We use quality scores—like **[mapping quality](@keyword=mapping_quality|lang=en-US|style=Feynman)** for the alignment's confidence and **base quality** for the accuracy of the letter-call—to filter out the noise. Only by focusing on high-quality reads can we be confident that the BAF we calculate reflects the true biology of the cells, not just technical artifacts.
 
 ### The Genome's Detective: When BAF Deviates
 
@@ -40,17 +40,17 @@ Here is where our story truly gets interesting. What happens when the BAF values
 
 #### The Case of the Extra Copy
 
-Let's consider **[trisomy](@entry_id:265960)**, a condition where cells have three copies of a chromosome instead of two (e.g., Trisomy 21 causes Down syndrome). What BAF pattern would this create?  At any given SNP, the possible genotypes are no longer just AA, AB, and BB. With three allele slots to fill, we can have AAA, AAB, ABB, or BBB.
+Let's consider **[trisomy](@keyword=trisomy|lang=en-US|style=Feynman)**, a condition where cells have three copies of a chromosome instead of two (e.g., Trisomy 21 causes Down syndrome). What BAF pattern would this create? [@problem_id:5073171] At any given SNP, the possible genotypes are no longer just AA, AB, and BB. With three allele slots to fill, we can have AAA, AAB, ABB, or BBB.
 
-Let's predict the BAF for each case :
+Let's predict the BAF for each case [@problem_id:4611487]:
 *   **AAA**: 0 out of 3 alleles are B. The expected BAF is $\frac{0}{3} = 0$.
 *   **AAB**: 1 out of 3 alleles is B. The expected BAF is $\frac{1}{3}$.
 *   **ABB**: 2 out of 3 alleles are B. The expected BAF is $\frac{2}{3}$.
 *   **BBB**: 3 out of 3 alleles are B. The expected BAF is $\frac{3}{3} = 1$.
 
-Suddenly, our simple three-band plot transforms! In a region of [trisomy](@entry_id:265960), we expect to see **four** distinct bands of BAF values, clustering around **0, $1/3$, $2/3$, and 1**. The appearance of these two "in-between" bands is a clear and unmistakable signature of a three-copy state. It's a beautiful example of how a simple quantitative measurement can reveal a profound biological change.
+Suddenly, our simple three-band plot transforms! In a region of [trisomy](@keyword=trisomy|lang=en-US|style=Feynman), we expect to see **four** distinct bands of BAF values, clustering around **0, $1/3$, $2/3$, and 1**. The appearance of these two "in-between" bands is a clear and unmistakable signature of a three-copy state. It's a beautiful example of how a simple quantitative measurement can reveal a profound biological change.
 
-Of course, the real world is never quite so perfect. The electronic and chemical properties of the measurement system might favor one allele over the other slightly. This means the observed clusters might not be exactly at $1/3$ and $2/3$, but slightly shifted. However, by modeling these technical biases, we can account for them and still clearly identify the four-band signature of trisomy .
+Of course, the real world is never quite so perfect. The electronic and chemical properties of the measurement system might favor one allele over the other slightly. This means the observed clusters might not be exactly at $1/3$ and $2/3$, but slightly shifted. However, by modeling these technical biases, we can account for them and still clearly identify the four-band signature of trisomy [@problem_id:5022093].
 
 #### The Case of the Missing Copy
 
@@ -70,7 +70,7 @@ To solve this, BAF needs a partner: the **Log R Ratio (LRR)**. Think of LRR as a
 *   For a region with 1 copy (deletion), $LRR \approx \log_2(\frac{1}{2}) = -1$.
 *   For a region with 3 copies (duplication), $LRR \approx \log_2(\frac{3}{2}) \approx 0.58$.
 
-Now we can see the power of the duet . In our LOH puzzle:
+Now we can see the power of the duet [@problem_id:4331610]. In our LOH puzzle:
 *   Copy-Neutral LOH has an LRR near 0 (normal total amount) but a BAF of 0 or 1 (loss of balance).
 *   Hemizygous Deletion has an LRR near -1 (missing DNA) and a BAF of 0 or 1.
 
@@ -82,14 +82,14 @@ So far, we have mostly assumed our sample comes from a uniform population of cel
 
 Let’s define **tumor purity ($p$)** as the fraction of cancer cells in our sample. The remaining fraction, $1-p$, consists of normal cells, which we know have a BAF of 0.5 at heterozygous sites.
 
-Imagine a simple case: a [hemizygous](@entry_id:138359) deletion (one copy lost) in the tumor cells. This is a classic "second hit" in Knudson's [two-hit hypothesis](@entry_id:137780) for cancer formation . The tumor cells have only one allele (A or B), but they are mixed with normal cells that have both (AB). The BAF we measure from the bulk sample will be a weighted average of the two populations.
+Imagine a simple case: a [hemizygous](@keyword=hemizygous|lang=en-US|style=Feynman) deletion (one copy lost) in the tumor cells. This is a classic "second hit" in Knudson's [two-hit hypothesis](@keyword=two_hit_hypothesis|lang=en-US|style=Feynman) for cancer formation [@problem_id:4354668]. The tumor cells have only one allele (A or B), but they are mixed with normal cells that have both (AB). The BAF we measure from the bulk sample will be a weighted average of the two populations.
 
 If the tumor cells lost the B allele, their contribution to the BAF is 0. The normal cells contribute a BAF of 0.5. The final observed BAF will be somewhere in between. A bit of algebra shows that the BAF will be $\frac{1-p}{2-p}$. If the tumor cells lost the A allele, the observed BAF will be $\frac{1}{2-p}$.
 
-This is a beautiful result! As tumor purity ($p$) increases from 0 to 1, these BAF values move from the central 0.5 position out towards the extremes of 0 and 1 . The position of these "split" BAF bands tells us not only that there is a deletion but can also give us an estimate of the tumor's purity!
+This is a beautiful result! As tumor purity ($p$) increases from 0 to 1, these BAF values move from the central 0.5 position out towards the extremes of 0 and 1 [@problem_id:5134634]. The position of these "split" BAF bands tells us not only that there is a deletion but can also give us an estimate of the tumor's purity!
 
-This is just the beginning of the complexity. Cancer genomes can be wildly rearranged, with cells having an average copy number (**[ploidy](@entry_id:140594)**) of 3, 4, or even more. The observed BAF and LRR signals are complex functions of the true tumor copy number, the tumor purity, and the overall tumor ploidy . Unraveling this puzzle requires sophisticated mathematical models that can estimate all these parameters simultaneously.
+This is just the beginning of the complexity. Cancer genomes can be wildly rearranged, with cells having an average copy number (**[ploidy](@keyword=ploidy|lang=en-US|style=Feynman)**) of 3, 4, or even more. The observed BAF and LRR signals are complex functions of the true tumor copy number, the tumor purity, and the overall tumor ploidy [@problem_id:4332035]. Unraveling this puzzle requires sophisticated mathematical models that can estimate all these parameters simultaneously.
 
-Furthermore, we must always be vigilant for technical artifacts that can mimic a biological signal. For instance, a bias during the PCR amplification step of a sequencing experiment could make it seem like there are more B alleles than A alleles. In a fascinating twist, an amplification bias factor of $\lambda$ in a normal diploid sample produces the exact same BAF signal as a somatic duplication in a tumor with purity $p = \lambda - 1$ . This serves as a powerful reminder of Feynman's famous admonition: "The first principle is that you must not fool yourself—and you are the easiest person to fool." A deep understanding of the entire measurement process is essential to correctly interpret these genomic clues.
+Furthermore, we must always be vigilant for technical artifacts that can mimic a biological signal. For instance, a bias during the PCR amplification step of a sequencing experiment could make it seem like there are more B alleles than A alleles. In a fascinating twist, an amplification bias factor of $\lambda$ in a normal diploid sample produces the exact same BAF signal as a somatic duplication in a tumor with purity $p = \lambda - 1$ [@problem_id:2382675]. This serves as a powerful reminder of Feynman's famous admonition: "The first principle is that you must not fool yourself—and you are the easiest person to fool." A deep understanding of the entire measurement process is essential to correctly interpret these genomic clues.
 
-From a simple ratio of fluorescent lights to a cornerstone of modern [cancer genomics](@entry_id:143632), the B-Allele Frequency is a testament to the power of quantitative thinking in biology. It shows how, by carefully measuring and modeling, we can transform simple data into profound insights about the architecture of life and the changes that drive disease.
+From a simple ratio of fluorescent lights to a cornerstone of modern [cancer genomics](@keyword=cancer_genomics|lang=en-US|style=Feynman), the B-Allele Frequency is a testament to the power of quantitative thinking in biology. It shows how, by carefully measuring and modeling, we can transform simple data into profound insights about the architecture of life and the changes that drive disease.

@@ -7,7 +7,7 @@ To truly understand an artery, you can’t just memorize its branches like a lis
 
 ### The Great Division of Territory
 
-Before we follow the maxillary artery itself, let's zoom out and look at the map. The head and neck are supplied by a major vessel called the **external carotid artery (ECA)**. Think of it as a great trunk road. As it ascends the neck, it sends off major arterial highways to supply different districts: the **facial artery** sweeps across the superficial face, the **lingual artery** dives deep to feed the tongue, and the **superficial temporal artery** emerges to supply the scalp . But one branch, the **maxillary artery**, takes a different path. It turns inward, plunging into the deep face, into a region anatomists call the infratemporal fossa—a complex space of muscles and bones that you can feel just in front of your ear, behind your cheekbone. This is our territory to explore.
+Before we follow the maxillary artery itself, let's zoom out and look at the map. The head and neck are supplied by a major vessel called the **external carotid artery (ECA)**. Think of it as a great trunk road. As it ascends the neck, it sends off major arterial highways to supply different districts: the **facial artery** sweeps across the superficial face, the **lingual artery** dives deep to feed the tongue, and the **superficial temporal artery** emerges to supply the scalp [@problem_id:4776531]. But one branch, the **maxillary artery**, takes a different path. It turns inward, plunging into the deep face, into a region anatomists call the infratemporal fossa—a complex space of muscles and bones that you can feel just in front of your ear, behind your cheekbone. This is our territory to explore.
 
 ### The Three-Act Journey
 
@@ -17,13 +17,13 @@ The maxillary artery's course is a journey in three parts, defined by its relati
 
 The journey begins just behind the neck of the mandible. Here, in the first part of its course, the artery gives off branches that supply some of the most fundamental and protected structures. One of the most remarkable is the **middle meningeal artery**. This vessel doesn't supply the face at all; it turns upward, on a mission to supply the dura mater, the tough, protective cloak that surrounds our brain. To do this, it passes through a dedicated circular opening in the base of the skull called the **foramen spinosum**. Here is a wonderful piece of natural engineering: the foramen isn't just a pre-existing hole that the artery happens to find; the bone of the skull base literally forms *around* the developing artery. Form follows function.
 
-Another major branch in this first act is the **inferior alveolar artery**. It performs a remarkable feat: it dives directly into a canal within the mandible itself, traveling inside the bone to nourish the lower teeth and jaw before emerging at the chin . This first part of the maxillary artery's journey is all about establishing the deep, essential framework.
+Another major branch in this first act is the **inferior alveolar artery**. It performs a remarkable feat: it dives directly into a canal within the mandible itself, traveling inside the bone to nourish the lower teeth and jaw before emerging at the chin [@problem_id:5083301]. This first part of the maxillary artery's journey is all about establishing the deep, essential framework.
 
 #### Act II: The Pterygoid Part - Fueling the Masticatory Engine
 
-As the maxillary artery travels forward, it enters its second act, running alongside the muscles of [mastication](@entry_id:150162). If you clench your jaw, you can feel the powerful temporalis muscle on your temple and the masseter on your cheek. These muscles, along with the hidden medial and lateral pterygoids, are the engines that power our chewing. The second part of the maxillary artery is their dedicated fuel line.
+As the maxillary artery travels forward, it enters its second act, running alongside the muscles of [mastication](@keyword=mastication|lang=en-US|style=Feynman). If you clench your jaw, you can feel the powerful temporalis muscle on your temple and the masseter on your cheek. These muscles, along with the hidden medial and lateral pterygoids, are the engines that power our chewing. The second part of the maxillary artery is their dedicated fuel line.
 
-Fittingly, its branches are named for the muscles they serve: the **deep temporal arteries** ascend to the temporalis muscle, the **masseteric artery** slips out through a notch in the jawbone to reach the masseter, and small **pterygoid branches** dive directly into the pterygoid muscles . It's a simple, elegant system of local delivery. But it is here, in this muscular corridor, that nature introduces a fascinating twist.
+Fittingly, its branches are named for the muscles they serve: the **deep temporal arteries** ascend to the temporalis muscle, the **masseteric artery** slips out through a notch in the jawbone to reach the masseter, and small **pterygoid branches** dive directly into the pterygoid muscles [@problem_id:5128614]. It's a simple, elegant system of local delivery. But it is here, in this muscular corridor, that nature introduces a fascinating twist.
 
 ### A Tale of Two Paths
 
@@ -33,17 +33,17 @@ This isn't just a trivial detour. The choice of path has a beautiful geometric c
 
 If the main trunk runs on the **superficial (lateral) path**, a branch heading to the lateral-lying masseter muscle has a short, direct shot. But a branch heading to the deep-lying temporalis muscle must take a longer, curved path, hooking up and over the top of the lateral pterygoid to reach its target.
 
-Conversely, if the main trunk runs on the **deep (medial) path**, the situation is reversed. Now, the deep temporal branches have a straight, direct shot upward. But the masseteric branch must take a long, sweeping arc across the entire space to reach the mandibular notch on the far side .
+Conversely, if the main trunk runs on the **deep (medial) path**, the situation is reversed. Now, the deep temporal branches have a straight, direct shot upward. But the masseteric branch must take a long, sweeping arc across the entire space to reach the mandibular notch on the far side [@problem_id:5115505].
 
-This is not a rare quirk. Studies of large populations show that the superficial path is the more common arrangement, occurring in about $60\,\%$ to $70\,\%$ of people, while the deep path is found in the remaining $30\,\%$ to $35\,\%$ . This isn't just academic trivia; for a surgeon navigating this space, or a radiologist interpreting an MRI or CT scan, knowing these predictable patterns is absolutely critical for understanding the three-dimensional layout of the deep face .
+This is not a rare quirk. Studies of large populations show that the superficial path is the more common arrangement, occurring in about $60\,\%$ to $70\,\%$ of people, while the deep path is found in the remaining $30\,\%$ to $35\,\%$ [@problem_id:5115534]. This isn't just academic trivia; for a surgeon navigating this space, or a radiologist interpreting an MRI or CT scan, knowing these predictable patterns is absolutely critical for understanding the three-dimensional layout of the deep face [@problem_id:5103197].
 
 ### Act III: The Pterygopalatine Fossa - Grand Central Station
 
-The final act of the maxillary artery is its most spectacular. After navigating past the pterygoid muscles, the artery dives through a narrow vertical slit between bones, the **pterygomaxillary fissure** . This fissure is the gateway to a tiny, hidden chamber deep in the skull called the **pterygopalatine fossa**.
+The final act of the maxillary artery is its most spectacular. After navigating past the pterygoid muscles, the artery dives through a narrow vertical slit between bones, the **pterygomaxillary fissure** [@problem_id:5147121]. This fissure is the gateway to a tiny, hidden chamber deep in the skull called the **pterygopalatine fossa**.
 
-This fossa is one of the marvels of anatomy—a veritable Grand Central Station for nerves and vessels. It's a tiny space, no bigger than a fingertip, yet it has openings connecting it to the orbit, the nasal cavity, the palate (roof of the mouth), and the face. Here, in this confined space, the maxillary artery ends its journey by exploding into a spray of terminal branches, each one darting through a specific foramen or canal to its final destination .
+This fossa is one of the marvels of anatomy—a veritable Grand Central Station for nerves and vessels. It's a tiny space, no bigger than a fingertip, yet it has openings connecting it to the orbit, the nasal cavity, the palate (roof of the mouth), and the face. Here, in this confined space, the maxillary artery ends its journey by exploding into a spray of terminal branches, each one darting through a specific foramen or canal to its final destination [@problem_id:5147145].
 
-The **infraorbital artery** shoots forward into the orbit and runs in a groove on its floor to emerge on the cheek, supplying the lower eyelid, upper lip, and the front teeth. The **descending palatine artery** drops down through a canal to supply the hard and soft palate. And, most famously, the **sphenopalatine artery** passes through a small opening into the nasal cavity, becoming the primary blood supply for the nasal mucosa . It is this branch that is often the culprit in severe posterior nosebleeds (epistaxis), a clinical problem that sends surgeons on a journey to find this very artery in its hidden station.
+The **infraorbital artery** shoots forward into the orbit and runs in a groove on its floor to emerge on the cheek, supplying the lower eyelid, upper lip, and the front teeth. The **descending palatine artery** drops down through a canal to supply the hard and soft palate. And, most famously, the **sphenopalatine artery** passes through a small opening into the nasal cavity, becoming the primary blood supply for the nasal mucosa [@problem_id:5083333]. It is this branch that is often the culprit in severe posterior nosebleeds (epistaxis), a clinical problem that sends surgeons on a journey to find this very artery in its hidden station.
 
 ### Echoes of the Embryo: The Ghost in the Middle Ear
 
@@ -53,7 +53,7 @@ In the embryo, a temporary vessel called the **stapedial artery** branches from 
 
 But what if it doesn't?
 
-Consider a patient with a strange case of pulsatile tinnitus—a pulsing sound in their ear, in sync with their heartbeat. Imaging reveals an artery running right through the stapes bone. It also shows that the foramen spinosum, the hole for the middle meningeal artery, is completely absent. And stranger still, the middle meningeal artery seems to be coming from the ophthalmic artery, a branch of the *internal* carotid artery inside the orbit .
+Consider a patient with a strange case of pulsatile tinnitus—a pulsing sound in their ear, in sync with their heartbeat. Imaging reveals an artery running right through the stapes bone. It also shows that the foramen spinosum, the hole for the middle meningeal artery, is completely absent. And stranger still, the middle meningeal artery seems to be coming from the ophthalmic artery, a branch of the *internal* carotid artery inside the orbit [@problem_id:5083348].
 
 This seemingly baffling collection of findings is explained by one simple event: the embryonic stapedial artery never went away. This single "ghost" from the past rewrites the entire anatomical map.
 

@@ -34,7 +34,7 @@ And in a crucial protection for patients, a provider is explicitly forbidden fro
 
 While the Right of Access is broad, it is not infinite. The law draws careful boundaries, and understanding them gives us an even deeper appreciation for the logic at play.
 
-The first boundary, as we've seen, is the definition of the DRS itself. Information whose purpose falls outside of making decisions about you—like internal quality improvement reports, [peer review](@entry_id:139494) files, or risk management analyses prepared in case of a lawsuit—is generally not part of the DRS and therefore not subject to the patient's right of access.
+The first boundary, as we've seen, is the definition of the DRS itself. Information whose purpose falls outside of making decisions about you—like internal quality improvement reports, [peer review](@keyword=peer_review|lang=en-US|style=Feynman) files, or risk management analyses prepared in case of a lawsuit—is generally not part of the DRS and therefore not subject to the patient's right of access.
 
 The second boundary is even more subtle: it concerns information that may be *about* you but is given a special, protected status. The most significant example is **psychotherapy notes**. This is a very specific, and often misunderstood, category. It does *not* refer to your entire mental health record. Your diagnosis, medication prescriptions, treatment plan, and progress in therapy are all part of the standard medical record and are included in your DRS.
 

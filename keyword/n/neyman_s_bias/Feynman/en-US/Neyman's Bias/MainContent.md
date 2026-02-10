@@ -21,35 +21,35 @@ Now, here is the crucial insight: the volume of water in the river (prevalence) 
 
 $$ \text{Prevalence} \approx \text{Incidence} \times \text{Duration} $$
 
-This little equation is the key to everything . It tells us that a large pool of sick people can mean one of two things: either many people are getting sick (high incidence), or people are staying sick for a very long time (long duration). The quick snapshot of the river—the prevalence measure—can't tell the difference.
+This little equation is the key to everything [@problem_id:4504908]. It tells us that a large pool of sick people can mean one of two things: either many people are getting sick (high incidence), or people are staying sick for a very long time (long duration). The quick snapshot of the river—the prevalence measure—can't tell the difference.
 
 ### The Illusion in the Snapshot
 
-Let's return to our research dilemma. The patient, long-term watch gives us a measure of incidence. The quick, one-day survey with a net gives us a measure of prevalence. Because it is often much cheaper and faster, many studies are forced to rely on the snapshot. And this is where the trouble begins. Let's explore two [thought experiments](@entry_id:264574).
+Let's return to our research dilemma. The patient, long-term watch gives us a measure of incidence. The quick, one-day survey with a net gives us a measure of prevalence. Because it is often much cheaper and faster, many studies are forced to rely on the snapshot. And this is where the trouble begins. Let's explore two [thought experiments](@keyword=thought_experiments|lang=en-US|style=Feynman).
 
 #### Scenario 1: The "Harmful" Lifesaver
 
-Imagine a new program is introduced in a region to help people with chronic kidney disease. This program is wonderful; it doesn't stop people from getting the disease in the first place, but it masterfully manages their symptoms, improving their quality of life and helping them live much longer . The incidence is the same everywhere, but the duration of the disease for people in the program is much longer.
+Imagine a new program is introduced in a region to help people with chronic kidney disease. This program is wonderful; it doesn't stop people from getting the disease in the first place, but it masterfully manages their symptoms, improving their quality of life and helping them live much longer [@problem_id:4641712]. The incidence is the same everywhere, but the duration of the disease for people in the program is much longer.
 
 An investigator, unaware of this, conducts a cross-sectional survey—our one-day snapshot. They compare the region with the program (let's call it the "exposed" group) to a region without it. What do they find? In the program region, they find a much larger proportion of people living with kidney disease. Why? Because the program is so good at keeping them alive and well! The river of disease in this region is wide and slow-moving. By the logic of $\text{Prevalence} = \text{Incidence} \times \text{Duration}$, if incidence is the same but duration goes up, prevalence must go up too.
 
-The investigator's study, looking only at the snapshot, would report a high prevalence in the program region and might wrongly conclude the program is associated with *having* the disease. This is Neyman's bias in action: a factor that affects survival (duration) creates a spurious association with prevalence, distorting our view of the true effect on incidence . If an exposure makes people with a disease live longer, the pool of prevalent cases will gradually become enriched with exposed individuals, making the exposure look like a risk factor.
+The investigator's study, looking only at the snapshot, would report a high prevalence in the program region and might wrongly conclude the program is associated with *having* the disease. This is Neyman's bias in action: a factor that affects survival (duration) creates a spurious association with prevalence, distorting our view of the true effect on incidence [@problem_id:4633849][@problem_id:4504908]. If an exposure makes people with a disease live longer, the pool of prevalent cases will gradually become enriched with exposed individuals, making the exposure look like a risk factor.
 
 #### Scenario 2: The "Protective" Toxin
 
-Now for an even more startling example. Consider a nasty industrial solvent that people are exposed to at work. Let's suppose this solvent truly is bad for you: it doubles your risk of getting a rare [neurodegenerative disease](@entry_id:169702). So, the incidence rate among the exposed is twice that of the unexposed. But the solvent is also incredibly toxic to people who are already sick; it dramatically shortens their survival time.
+Now for an even more startling example. Consider a nasty industrial solvent that people are exposed to at work. Let's suppose this solvent truly is bad for you: it doubles your risk of getting a rare [neurodegenerative disease](@keyword=neurodegenerative_disease|lang=en-US|style=Feynman). So, the incidence rate among the exposed is twice that of the unexposed. But the solvent is also incredibly toxic to people who are already sick; it dramatically shortens their survival time.
 
-An investigator performs a cross-sectional study, taking a snapshot of the entire population on a single day . They are measuring prevalence. Let's see what the $\text{Prevalence} = \text{Incidence} \times \text{Duration}$ equation predicts.
+An investigator performs a cross-sectional study, taking a snapshot of the entire population on a single day [@problem_id:4504929]. They are measuring prevalence. Let's see what the $\text{Prevalence} = \text{Incidence} \times \text{Duration}$ equation predicts.
 *   **Unexposed Group:** Normal incidence, long duration.
 *   **Exposed Group:** High incidence, but a very, very short duration.
 
 It is entirely possible for the product of `(High Incidence × Short Duration)` to be *less than* the product of `(Normal Incidence × Long Duration)`. When the investigator looks at their snapshot, they find fewer sick people in the exposed group than in the unexposed group! The exposed cases were created at a faster rate, but they were removed from the pool by death so quickly that there were fewer of them around to be counted at any given moment.
 
-The study would calculate an odds ratio of less than 1, suggesting the toxic solvent is *protective* against the disease. This is a terrifyingly wrong conclusion. The toxin causes the disease, but its lethal effect on existing cases completely masks this fact in a prevalence study .
+The study would calculate an odds ratio of less than 1, suggesting the toxic solvent is *protective* against the disease. This is a terrifyingly wrong conclusion. The toxin causes the disease, but its lethal effect on existing cases completely masks this fact in a prevalence study [@problem_id:4574806][@problem_id:4801100].
 
 ### The Fisherman's Net and Length-Biased Sampling
 
-There is another elegant way to think about this, which epidemiologists call **[length-biased sampling](@entry_id:264779)** . Imagine again our river of diseased fish. Some fish are sick for a very short time (a week), while others are sick for a very long time (a year). If you dip your net in the river at a random moment, which fish are you more likely to catch? You are far more likely to catch a fish that has been sick for a year than one that is sick for only a week.
+There is another elegant way to think about this, which epidemiologists call **[length-biased sampling](@keyword=length_biased_sampling|lang=en-US|style=Feynman)** [@problem_id:4801074]. Imagine again our river of diseased fish. Some fish are sick for a very short time (a week), while others are sick for a very long time (a year). If you dip your net in the river at a random moment, which fish are you more likely to catch? You are far more likely to catch a fish that has been sick for a year than one that is sick for only a week.
 
 A case with a long disease duration is simply a bigger "target" in the dimension of time. A prevalence study, which is a snapshot in time, is a sampling process. It preferentially "catches" cases with longer durations. If the exposure you are studying (like our life-saving kidney program) is associated with a longer duration, then your sample of cases will be "biased" by being over-full of exposed individuals. Your case group is no longer a fair representation of everyone who gets the disease; it is a biased sample of the long-term survivors.
 
@@ -69,10 +69,10 @@ Now, let's draw the arrows based on the logic we've developed:
 
 The resulting structure looks like this: $E \rightarrow D \rightarrow S \leftarrow E$. The crucial feature here is the node $S$. It has two arrows pointing *into* it. In the language of DAGs, $S$ is a **collider**.
 
-Here is the iron law of colliders: if you control for, stratify on, or select based on a collider, you create a spurious, non-causal [statistical association](@entry_id:172897) between its causes .
+Here is the iron law of colliders: if you control for, stratify on, or select based on a collider, you create a spurious, non-causal [statistical association](@keyword=statistical_association|lang=en-US|style=Feynman) between its causes [@problem_id:4801100][@problem_id:4959980].
 
 By conducting a prevalence study, we are, by definition, selecting only the prevalent cases—we are conditioning on $S=1$. In doing so, we activate the collider. This opens up a "back-door" path between Exposure and Disease that is purely statistical, not causal. This back-door path is the source of the bias. It mixes the true causal effect of $E$ on $D$ with the non-causal association created by our biased sampling.
 
-This framework is incredibly powerful. It shows that Neyman's bias isn't some arbitrary fluke. It is a predictable consequence of a fundamental logical structure. The same [collider](@entry_id:192770) principle explains other famous biases, like the paradox of why, in a hospital, you might find a strange association between two diseases that are unrelated in the general population (Berkson's bias). They are both causes of "being hospitalized," a collider we are conditioning on simply by being in a hospital.
+This framework is incredibly powerful. It shows that Neyman's bias isn't some arbitrary fluke. It is a predictable consequence of a fundamental logical structure. The same [collider](@keyword=collider|lang=en-US|style=Feynman) principle explains other famous biases, like the paradox of why, in a hospital, you might find a strange association between two diseases that are unrelated in the general population (Berkson's bias). They are both causes of "being hospitalized," a collider we are conditioning on simply by being in a hospital.
 
 The quest for truth in medicine requires more than just collecting data; it requires a deep appreciation for the structure of causality. By understanding the simple relationship between incidence, prevalence, and duration, and the elegant logic of colliders, we can learn to look past the illusions in our snapshots and see the river of disease for what it truly is.

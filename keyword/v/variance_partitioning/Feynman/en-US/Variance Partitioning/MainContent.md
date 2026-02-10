@@ -23,11 +23,11 @@ This additive principle is the cornerstone. It tells us that we can take a compl
 
 Let's make this concrete. Imagine a biologist studying an enzyme whose activity might differ across four distinct genotypes of an organism. They take 15 measurements from each genotype. When they plot all 60 measurements, they see a cloud of points. There's variation. Where does it come from?
 
-Using the logic of variance partitioning, we can slice this [total variation](@entry_id:140383) into two fundamental pieces.
+Using the logic of variance partitioning, we can slice this [total variation](@keyword=total_variation|lang=en-US|style=Feynman) into two fundamental pieces.
 
-First, there is the **[within-group variance](@entry_id:177112)**. This is the scatter of the measurements *within* a single genotype. Why aren't all 15 measurements for Genotype 1 identical? Perhaps because of tiny differences in the assay preparation, slight temperature fluctuations, or just the inherent stochasticity of biochemical reactions. This is often thought of as the "noise" or the "residual" variance—the baseline jitteriness of the system that we can't explain with the factors we're studying.
+First, there is the **[within-group variance](@keyword=within_group_variance|lang=en-US|style=Feynman)**. This is the scatter of the measurements *within* a single genotype. Why aren't all 15 measurements for Genotype 1 identical? Perhaps because of tiny differences in the assay preparation, slight temperature fluctuations, or just the inherent stochasticity of biochemical reactions. This is often thought of as the "noise" or the "residual" variance—the baseline jitteriness of the system that we can't explain with the factors we're studying.
 
-Second, there is the **[between-group variance](@entry_id:175044)**. This measures how much the *average* enzyme activity of each genotype differs from the overall average of all 60 measurements. This variation is not due to random noise within a group; it is due to something that makes the groups systematically different from one another. This is the "signal" we might be looking for—the effect of the genotype itself.
+Second, there is the **[between-group variance](@keyword=between_group_variance|lang=en-US|style=Feynman)**. This measures how much the *average* enzyme activity of each genotype differs from the overall average of all 60 measurements. This variation is not due to random noise within a group; it is due to something that makes the groups systematically different from one another. This is the "signal" we might be looking for—the effect of the genotype itself.
 
 The magic of a technique called Analysis of Variance (ANOVA) is that it formally proves that the total sum of squared deviations from the grand mean ($SS_{\text{Total}}$) is exactly equal to the sum of the within-group squared deviations ($SS_{\text{Within}}$) plus the between-group squared deviations ($SS_{\text{Between}}$):
 
@@ -47,7 +47,7 @@ $$
 V_P = V_G + V_E
 $$
 
-This is the famous "Nature vs. Nurture" debate, framed in the language of statistics. The ratio $H^2 = \frac{V_G}{V_P}$ is called the **[broad-sense heritability](@entry_id:267885)**. It tells us what proportion of the total variation in a trait within a population is due to genetic differences of any kind.
+This is the famous "Nature vs. Nurture" debate, framed in the language of statistics. The ratio $H^2 = \frac{V_G}{V_P}$ is called the **[broad-sense heritability](@keyword=broad_sense_heritability|lang=en-US|style=Feynman)**. It tells us what proportion of the total variation in a trait within a population is due to genetic differences of any kind.
 
 But we can go deeper. The genetic variance, $V_G$, is itself a composite. It can be partitioned further:
 
@@ -55,11 +55,11 @@ $$
 V_G = V_A + V_D + V_I
 $$
 
-Here, $V_A$ is the **[additive genetic variance](@entry_id:154158)**. It represents the cumulative, linear effects of genes. This is the component that makes tall parents tend to have tall children and is the primary basis for predicting an animal's [breeding value](@entry_id:196154). The ratio $h^2 = \frac{V_A}{V_P}$ is the **[narrow-sense heritability](@entry_id:262760)**, which measures the proportion of phenotypic variance that is reliably transmitted from parent to offspring.
+Here, $V_A$ is the **[additive genetic variance](@keyword=additive_genetic_variance|lang=en-US|style=Feynman)**. It represents the cumulative, linear effects of genes. This is the component that makes tall parents tend to have tall children and is the primary basis for predicting an animal's [breeding value](@keyword=breeding_value|lang=en-US|style=Feynman). The ratio $h^2 = \frac{V_A}{V_P}$ is the **[narrow-sense heritability](@keyword=narrow_sense_heritability|lang=en-US|style=Feynman)**, which measures the proportion of phenotypic variance that is reliably transmitted from parent to offspring.
 
-$V_D$ is the **[dominance variance](@entry_id:184256)**, which captures [non-additive interactions](@entry_id:198614) between alleles *at the same gene locus* (e.g., a [recessive allele](@entry_id:274167)'s effect being masked by a dominant one). $V_I$ is the **[epistatic variance](@entry_id:263723)**, which accounts for [non-additive interactions](@entry_id:198614) *between different gene loci*. This is the truly complex stuff, where the effect of one gene depends on the context set by another.
+$V_D$ is the **[dominance variance](@keyword=dominance_variance|lang=en-US|style=Feynman)**, which captures [non-additive interactions](@keyword=non_additive_interactions|lang=en-US|style=Feynman) between alleles *at the same gene locus* (e.g., a [recessive allele](@keyword=recessive_allele|lang=en-US|style=Feynman)'s effect being masked by a dominant one). $V_I$ is the **[epistatic variance](@keyword=epistatic_variance|lang=en-US|style=Feynman)**, which accounts for [non-additive interactions](@keyword=non_additive_interactions|lang=en-US|style=Feynman) *between different gene loci*. This is the truly complex stuff, where the effect of one gene depends on the context set by another.
 
-By [partitioning variance](@entry_id:175625) in this way, we move from a simple, monolithic idea of "genetic influence" to a nuanced hierarchy of effects, each with different implications for heredity and evolution.
+By [partitioning variance](@keyword=partitioning_variance|lang=en-US|style=Feynman) in this way, we move from a simple, monolithic idea of "genetic influence" to a nuanced hierarchy of effects, each with different implications for heredity and evolution.
 
 ### A Pythagorean View of Uncertainty
 
@@ -67,9 +67,9 @@ So far, variance partitioning might seem like a kind of statistical accounting. 
 
 Imagine a vast, infinite-dimensional space—a Hilbert space—where every possible zero-mean random variable is a single vector. In this space, the "squared length" of a vector is defined as its variance. The total variance of a signal we want to understand, $\operatorname{Var}(x)$, is just the squared length of the vector $x$.
 
-Now, suppose we have some data (our observations) that are related to the signal. These data vectors span a subspace—a flat sheet within the larger space. The best possible estimate, $\hat{x}$, that we can make of our signal based on this data turns out to be the *[orthogonal projection](@entry_id:144168)* of the signal vector $x$ onto the data subspace. This is the "shadow" that $x$ casts on the sheet.
+Now, suppose we have some data (our observations) that are related to the signal. These data vectors span a subspace—a flat sheet within the larger space. The best possible estimate, $\hat{x}$, that we can make of our signal based on this data turns out to be the *[orthogonal projection](@keyword=orthogonal_projection|lang=en-US|style=Feynman)* of the signal vector $x$ onto the data subspace. This is the "shadow" that $x$ casts on the sheet.
 
-The **[orthogonality principle](@entry_id:195179)** is the key insight: the error in our estimate, $e = x - \hat{x}$, is a vector that is geometrically perpendicular (orthogonal) to the estimate $\hat{x}$ and to the entire data subspace. What happens when we have a right-angled triangle? Pythagoras's theorem!
+The **[orthogonality principle](@keyword=orthogonality_principle|lang=en-US|style=Feynman)** is the key insight: the error in our estimate, $e = x - \hat{x}$, is a vector that is geometrically perpendicular (orthogonal) to the estimate $\hat{x}$ and to the entire data subspace. What happens when we have a right-angled triangle? Pythagoras's theorem!
 
 Since $x = \hat{x} + e$ and $\hat{x}$ is orthogonal to $e$, the squared lengths simply add up:
 

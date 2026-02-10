@@ -1,7 +1,7 @@
 ## Introduction
 In the landscape of survival analysis, the Cox Proportional Hazards model stands as a paramount tool for understanding the relationship between covariates and the time to an event. Its power lies in a critical, yet sometimes restrictive, assumption: that the effect of a covariate proportionally scales a single baseline hazard rate over time. But what happens when our data comes from inherently different groups—like patients from different hospitals or subjects from distinct demographic populations—where this assumption breaks down? This creates a significant analytical challenge, potentially leading to biased results and flawed conclusions.
 
-This article delves into an elegant solution: the stratified partial likelihood. It provides a robust framework for handling such heterogeneity without making strong assumptions about the nature of the differences between groups. We will first unpack the core statistical engine in the **Principles and Mechanisms** chapter, exploring how stratification and [partial likelihood](@entry_id:165240) work in concert to isolate the effects of interest from confounding baseline risks. Subsequently, the **Applications and Interdisciplinary Connections** chapter will showcase the method's remarkable versatility, from its foundational role in epidemiological study design to its cutting-edge use in [privacy-preserving machine learning](@entry_id:636064), demonstrating how this statistical concept solves tangible problems across diverse scientific fields.
+This article delves into an elegant solution: the stratified partial likelihood. It provides a robust framework for handling such heterogeneity without making strong assumptions about the nature of the differences between groups. We will first unpack the core statistical engine in the **Principles and Mechanisms** chapter, exploring how stratification and [partial likelihood](@keyword=partial_likelihood|lang=en-US|style=Feynman) work in concert to isolate the effects of interest from confounding baseline risks. Subsequently, the **Applications and Interdisciplinary Connections** chapter will showcase the method's remarkable versatility, from its foundational role in epidemiological study design to its cutting-edge use in [privacy-preserving machine learning](@keyword=privacy_preserving_machine_learning|lang=en-US|style=Feynman), demonstrating how this statistical concept solves tangible problems across diverse scientific fields.
 
 ## Principles and Mechanisms
 
@@ -13,19 +13,19 @@ In a simple world, we could imagine a single, universal "exhaustion rate" for al
 
 Now, what if our marathon isn't run on a single course, but simultaneously in several cities—say, Denver and New Orleans? The baseline conditions are dramatically different. Denver's high altitude imposes a different kind of strain than New Orleans' humidity. The "baseline hazard" of exhaustion for an average runner in Denver, $h_{0,\text{Denver}}(t)$, might have a completely different shape over time compared to that in New Orleans, $h_{0,\text{NOLA}}(t)$.
 
-This breaks the [proportional hazards assumption](@entry_id:163597) for the "city" variable. The relative risk of being in Denver versus New Orleans is not constant; it changes throughout the race. Trying to analyze this with a standard Cox model that includes "city" as just another covariate would be like trying to describe both races using a single, averaged-out course map. It would misrepresent the reality in both cities and, more importantly, could distort our estimate of the training regimen's true effect, $\beta$. If, for example, more runners with our special training happened to be in the easier city, we might wrongly attribute their success to the training when it was really about the location. This is a classic case of **confounding**.
+This breaks the [proportional hazards assumption](@keyword=proportional_hazards_assumption|lang=en-US|style=Feynman) for the "city" variable. The relative risk of being in Denver versus New Orleans is not constant; it changes throughout the race. Trying to analyze this with a standard Cox model that includes "city" as just another covariate would be like trying to describe both races using a single, averaged-out course map. It would misrepresent the reality in both cities and, more importantly, could distort our estimate of the training regimen's true effect, $\beta$. If, for example, more runners with our special training happened to be in the easier city, we might wrongly attribute their success to the training when it was really about the location. This is a classic case of **confounding**.
 
 ### The Elegance of Divide and Conquer: Stratification
 
 So, how do we solve this? The clever insight is this: don't try to force different realities into one model. Instead, *divide and conquer*. We will analyze the race *within* each city separately. This is the essence of **stratification**.
 
-We propose a model where each city, or **stratum**, gets its own unique, unspecified baseline [hazard function](@entry_id:177479). For a runner with training $X$ in stratum $s$ (e.g., $s$ = Denver), the hazard is:
+We propose a model where each city, or **stratum**, gets its own unique, unspecified baseline [hazard function](@keyword=hazard_function|lang=en-US|style=Feynman). For a runner with training $X$ in stratum $s$ (e.g., $s$ = Denver), the hazard is:
 
 $$
 h_s(t | X) = h_{0s}(t) \exp(\beta^\top X)
 $$
 
-Notice the beauty here. We allow the baseline hazards $h_{0s}(t)$ to be completely different and arbitrary for each city. We've essentially moved the problem of non-[proportional hazards](@entry_id:166780) for the 'city' variable into these flexible, stratum-specific baseline functions. The crucial assumption we maintain is that the effect of our training regimen, $\beta$, is the same across all cities. We believe the physiological benefit of the training is universal, even if the race courses are not.
+Notice the beauty here. We allow the baseline hazards $h_{0s}(t)$ to be completely different and arbitrary for each city. We've essentially moved the problem of non-[proportional hazards](@keyword=proportional_hazards|lang=en-US|style=Feynman) for the 'city' variable into these flexible, stratum-specific baseline functions. The crucial assumption we maintain is that the effect of our training regimen, $\beta$, is the same across all cities. We believe the physiological benefit of the training is universal, even if the race courses are not.
 
 ### The Magic of Partial Likelihood
 
@@ -61,7 +61,7 @@ To see this in action, consider a tiny dataset from a cancer study stratified by
 
 ### What the Model is "Learning"
 
-We can gain an even deeper, more intuitive understanding of the estimation process by looking at what's called the **[score function](@entry_id:164520)**. This is the derivative of the log-[partial likelihood](@entry_id:165240), and we find the best estimate for $\beta$ by setting it to zero. For the stratified Cox model, the score function has a wonderfully simple structure:
+We can gain an even deeper, more intuitive understanding of the estimation process by looking at what's called the **[score function](@keyword=score_function|lang=en-US|style=Feynman)**. This is the derivative of the log-[partial likelihood](@keyword=partial_likelihood|lang=en-US|style=Feynman), and we find the best estimate for $\beta$ by setting it to zero. For the stratified Cox model, the score function has a wonderfully simple structure:
 
 $$
 U(\beta) = \sum_{\text{all events } i} \left[ X_i - \bar{X}_{w,s}(t_i, \beta) \right]
@@ -82,6 +82,6 @@ The decision to stratify is not merely a technical one; it involves a fundamenta
 ### The Boundaries of Knowledge
 
 Stratification also helps us understand the limits of what we can learn from our data.
-- **Identifiability:** Imagine every runner in Denver has a special type of shoe, and every runner in New Orleans has a different type. Because shoe type is constant *within* each city, its effect is perfectly mixed up with the city's baseline hazard. The [partial likelihood](@entry_id:165240), by design, will cancel this effect out along with the baseline hazard. Consequently, we can never estimate the effect of that shoe type from this stratified model. Its effect is non-identifiable.
+- **Identifiability:** Imagine every runner in Denver has a special type of shoe, and every runner in New Orleans has a different type. Because shoe type is constant *within* each city, its effect is perfectly mixed up with the city's baseline hazard. The [partial likelihood](@keyword=partial_likelihood|lang=en-US|style=Feynman), by design, will cancel this effect out along with the baseline hazard. Consequently, we can never estimate the effect of that shoe type from this stratified model. Its effect is non-identifiable.
 
 - **Inference and Prediction:** Despite these subtleties, the framework is remarkably complete. Once we have our estimate for $\beta$, we can perform standard statistical tests (like the Wald, Score, or Likelihood Ratio test) to determine if the effect is statistically significant. And what about those baseline hazards we so cleverly ignored? We can actually go back and estimate them! Using our new estimate $\hat{\beta}$, we can use a method called the **Breslow estimator** to construct an estimate for the cumulative baseline hazard, $\hat{H}_{0s}(t)$, for each stratum separately. This allows us to complete the model and generate survival predictions for new individuals, bringing our journey of discovery full circle.

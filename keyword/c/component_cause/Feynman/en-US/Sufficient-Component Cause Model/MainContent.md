@@ -9,42 +9,42 @@ This simple idea, that effects arise from a constellation of interacting partner
 
 ### The Causal Pie: A Blueprint for Disease
 
-Imagine that a disease is an event that occurs only when a "causal pie" is completed. Each pie represents a **sufficient cause**—a minimal collection of factors that, when all are present in an individual, will *inevitably* produce the disease. Each slice of the pie is a **component cause**, a single factor—be it a genetic variant, an environmental exposure, a behavior, or an infectious agent—that plays a part in that mechanism .
+Imagine that a disease is an event that occurs only when a "causal pie" is completed. Each pie represents a **sufficient cause**—a minimal collection of factors that, when all are present in an individual, will *inevitably* produce the disease. Each slice of the pie is a **component cause**, a single factor—be it a genetic variant, an environmental exposure, a behavior, or an infectious agent—that plays a part in that mechanism [@problem_id:4584936].
 
-The word "minimal" is crucial here. A sufficient cause contains no superfluous slices. If you take away any single component, the pie is incomplete, and the cause is no longer sufficient. This means every component cause is a non-redundant part of the mechanism it belongs to .
+The word "minimal" is crucial here. A sufficient cause contains no superfluous slices. If you take away any single component, the pie is incomplete, and the cause is no longer sufficient. This means every component cause is a non-redundant part of the mechanism it belongs to [@problem_id:4613536].
 
-Let's look at this with more precision. The notion of sufficiency here is absolute. It's not about high risk; it's about certainty. Suppose we are studying three factors, $X_1$, $X_2$, and $X_3$. If we observe that people with just $X_1$ and $X_2$ get the disease $90\%$ of the time, that combination is *not* a sufficient cause. Why? Because in $10\%$ of cases, something was missing. Perhaps the third factor, $X_3$, was the final slice needed to complete the pie. Indeed, if we find that every single person with all three factors—$X_1$, $X_2$, and $X_3$—gets the disease, then the set $\{X_1, X_2, X_3\}$ constitutes a sufficient cause. The probability of disease, given the full set, is exactly 1 .
+Let's look at this with more precision. The notion of sufficiency here is absolute. It's not about high risk; it's about certainty. Suppose we are studying three factors, $X_1$, $X_2$, and $X_3$. If we observe that people with just $X_1$ and $X_2$ get the disease $90\%$ of the time, that combination is *not* a sufficient cause. Why? Because in $10\%$ of cases, something was missing. Perhaps the third factor, $X_3$, was the final slice needed to complete the pie. Indeed, if we find that every single person with all three factors—$X_1$, $X_2$, and $X_3$—gets the disease, then the set $\{X_1, X_2, X_3\}$ constitutes a sufficient cause. The probability of disease, given the full set, is exactly 1 [@problem_id:4613563].
 
 ### The Indispensable Slice: Necessary Causes
 
-Now, let's explore a fascinating special case. Imagine a disease can be caused by three different mechanisms, or three different causal pies :
+Now, let's explore a fascinating special case. Imagine a disease can be caused by three different mechanisms, or three different causal pies [@problem_id:4509127]:
 - Pie 1: A gene variant ($G$), exposure $E_1$, and exposure $E_2$.
 - Pie 2: The same gene variant ($G$), exposure $E_1$, and exposure $E_3$.
 - Pie 3: The same gene variant ($G$), exposure $E_2$, and exposure $E_3$.
 
-Notice something interesting? The gene variant $G$ is a slice in *every single pie*. This makes it a **necessary cause**. Without this component cause, no pie can ever be completed. The disease simply cannot occur. If you were to survey a hospital ward full of patients with this disease, you would find that $100\%$ of them have the gene variant $G$. The observational data would show $P(\text{Disease} \mid G=0) = 0$ .
+Notice something interesting? The gene variant $G$ is a slice in *every single pie*. This makes it a **necessary cause**. Without this component cause, no pie can ever be completed. The disease simply cannot occur. If you were to survey a hospital ward full of patients with this disease, you would find that $100\%$ of them have the gene variant $G$. The observational data would show $P(\text{Disease} \mid G=0) = 0$ [@problem_id:4584936].
 
-This has a profound implication for public health. If you can find and eliminate a necessary cause, you can eradicate the disease entirely. Consider a simpler case with just two pathways to disease $D$: $\{A, B\}$ and $\{A, C\}$. Here, factor $A$ is a member of both sufficient causes. It is a necessary cause. If you could design an intervention to remove $A$ from the population, the incidence of $D$ would drop to zero .
+This has a profound implication for public health. If you can find and eliminate a necessary cause, you can eradicate the disease entirely. Consider a simpler case with just two pathways to disease $D$: $\{A, B\}$ and $\{A, C\}$. Here, factor $A$ is a member of both sufficient causes. It is a necessary cause. If you could design an intervention to remove $A$ from the population, the incidence of $D$ would drop to zero [@problem_id:4580113].
 
-But notice that $A$ is not sufficient on its own. An individual can have factor $A$ but, lacking either $B$ or $C$, will remain disease-free. This is why we see necessary factors present in healthy people. In our first example , researchers found the gene variant $G$ in $25\%$ of healthy controls. They had a necessary slice, but they were fortunate enough not to have accumulated the other slices needed to complete a causal pie.
+But notice that $A$ is not sufficient on its own. An individual can have factor $A$ but, lacking either $B$ or $C$, will remain disease-free. This is why we see necessary factors present in healthy people. In our first example [@problem_id:4509127], researchers found the gene variant $G$ in $25\%$ of healthy controls. They had a necessary slice, but they were fortunate enough not to have accumulated the other slices needed to complete a causal pie.
 
 ### Many Paths to the Same End: Multi-causality and Interaction
 
-Most chronic diseases are not so simple as to have a single necessary cause. More often, there are completely distinct causal pies. Consider a disease that can be caused by either the set $\{A, B, C\}$ or the set $\{A, E\}$, or the set $\{F, C\}$ .
+Most chronic diseases are not so simple as to have a single necessary cause. More often, there are completely distinct causal pies. Consider a disease that can be caused by either the set $\{A, B, C\}$ or the set $\{A, E\}$, or the set $\{F, C\}$ [@problem_id:4580116].
 
 Here, no single factor is necessary. You can get the disease without $A$ (via the $\{F, C\}$ pathway), without $C$ (via the $\{A, E\}$ pathway), and so on. Eliminating factor $A$ would be a helpful intervention—it would block the first two pies—but cases would still arise from the third pie, $\{F, C\}$. This is the essence of **multi-causality**: there are multiple, independent mechanisms that can lead to the same outcome.
 
 This framework beautifully explains the phenomenon of causal **interaction**. In statistics, an interaction often means that the whole is greater than the sum of its parts. Let's see how the causal pie model makes this intuitive.
 
-Imagine the risk of an asthma attack for people with no exposure to pollution ($X$) or a virus ($Y$) is $5\%$. If you are exposed only to pollution, the risk goes up to $8\%$ (an excess risk of $3\%$). If you are exposed only to the virus, the risk goes to $12\%$ (an excess risk of $7\%$). If the two factors acted independently, you'd expect their combined risk to be the baseline plus the sum of their individual excess risks: $5\% + 3\% + 7\% = 15\%$. But what if we observe the risk in people exposed to *both* is actually $25\%$? .
+Imagine the risk of an asthma attack for people with no exposure to pollution ($X$) or a virus ($Y$) is $5\%$. If you are exposed only to pollution, the risk goes up to $8\%$ (an excess risk of $3\%$). If you are exposed only to the virus, the risk goes to $12\%$ (an excess risk of $7\%$). If the two factors acted independently, you'd expect their combined risk to be the baseline plus the sum of their individual excess risks: $5\% + 3\% + 7\% = 15\%$. But what if we observe the risk in people exposed to *both* is actually $25\%$? [@problem_id:4509179].
 
 This "super-additive" effect ($25\%$ is much greater than the expected $15\%$) is the statistical signature of two component causes acting together in the same causal pie. The virus ($Y$) might prime the airways, and the pollution ($X$) might deliver the knockout blow. Neither could do it alone, but together they complete a causal pie that would have otherwise remained incomplete. The extra $10\%$ of cases represent the group of people for whom *both* exposures were necessary. This aligns perfectly with what we know about biology; mechanistic evidence often reveals synergistic pathways (like NF-κB and ROS in the asthma example) that correspond to these statistical interactions. This beautiful alignment of evidence across scales—from the molecular to the population—is what scientists call **coherence**.
 
 ### The Power of Partnership: Causal Complements and Heterogeneity
 
-The effect of any single component cause, therefore, is not a fixed, intrinsic property. It depends entirely on the prevalence of its partners—its **causal complement**. The causal complement of a slice is simply all the *other* slices needed to complete that specific pie .
+The effect of any single component cause, therefore, is not a fixed, intrinsic property. It depends entirely on the prevalence of its partners—its **causal complement**. The causal complement of a slice is simply all the *other* slices needed to complete that specific pie [@problem_id:4580116].
 
-This principle has a stunning consequence: an intervention targeting a specific cause can have dramatically different effects in different populations. Let's imagine a disease can be caused by pie $\{E, G, U\}$ or pie $\{F, H\}$. We want to know the impact of an intervention that eliminates component $E$ .
+This principle has a stunning consequence: an intervention targeting a specific cause can have dramatically different effects in different populations. Let's imagine a disease can be caused by pie $\{E, G, U\}$ or pie $\{F, H\}$. We want to know the impact of an intervention that eliminates component $E$ [@problem_id:4580093].
 
 -   In Population 1, the causal complements of $E$ (factors $G$ and $U$) are relatively rare.
 -   In Population 2, the causal complements of $E$ are very common.
@@ -55,11 +55,11 @@ Even if the prevalence of $E$ itself is identical in both populations, eliminati
 
 The causal pie model also helps us modernize outdated notions of causation. A classic guideline for judging causality was **specificity**: one cause should lead to one disease. This simple rule often fails. Asbestos causes lung cancer, but also asbestosis and mesothelioma. Smoking is even more promiscuous.
 
-The model shows us why. A single component cause can be a slice in pies for many different diseases. An industrial solvent ($E$) might participate in a causal pie for parkinsonism, perhaps with some genetic [cofactors](@entry_id:137503). But that same solvent ($E$) might also participate in an entirely different pie, with different cofactors, that leads to liver cancer . The lack of specificity does not argue against causation; it simply reveals that the component cause is a versatile actor, capable of playing a role in multiple pathogenic dramas.
+The model shows us why. A single component cause can be a slice in pies for many different diseases. An industrial solvent ($E$) might participate in a causal pie for parkinsonism, perhaps with some genetic [cofactors](@keyword=cofactors|lang=en-US|style=Feynman). But that same solvent ($E$) might also participate in an entirely different pie, with different cofactors, that leads to liver cancer [@problem_id:4574402]. The lack of specificity does not argue against causation; it simply reveals that the component cause is a versatile actor, capable of playing a role in multiple pathogenic dramas.
 
 ### The Eloquence of Silence: What a Null Result Really Means
 
-Perhaps the most subtle and profound insight from the sufficient-component cause model is how it teaches us to interpret a [null result](@entry_id:264915). Suppose a perfect, massive randomized trial finds that an exposure $E$ has a relative risk of exactly $1.00$. The risk of disease is identical in the exposed and unexposed groups. What does this mean? 
+Perhaps the most subtle and profound insight from the sufficient-component cause model is how it teaches us to interpret a [null result](@keyword=null_result|lang=en-US|style=Feynman). Suppose a perfect, massive randomized trial finds that an exposure $E$ has a relative risk of exactly $1.00$. The risk of disease is identical in the exposed and unexposed groups. What does this mean? [@problem_id:4580163]
 
 The naive conclusion is that "$E$ does not cause the disease." The causal pie model reveals a richer set of possibilities:
 

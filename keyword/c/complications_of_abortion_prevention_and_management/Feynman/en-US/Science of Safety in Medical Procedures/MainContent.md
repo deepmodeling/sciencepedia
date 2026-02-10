@@ -7,11 +7,11 @@ In the world of physics, we delight in finding simple, universal laws that gover
 
 ### The Architecture of Safety: From Catastrophe to the Clinic
 
-Imagine a sudden disaster, a cyclone that has displaced thousands of people into a makeshift camp. Resources are scarce, infrastructure is shattered, and the need for medical care is overwhelming. Where would you even begin to provide safe reproductive healthcare? This is not a hypothetical puzzle; it is a real-world problem tackled by humanitarian agencies. Their solution is a masterclass in prioritization called the **Minimum Initial Service Package (MISP)** .
+Imagine a sudden disaster, a cyclone that has displaced thousands of people into a makeshift camp. Resources are scarce, infrastructure is shattered, and the need for medical care is overwhelming. Where would you even begin to provide safe reproductive healthcare? This is not a hypothetical puzzle; it is a real-world problem tackled by humanitarian agencies. Their solution is a masterclass in prioritization called the **Minimum Initial Service Package (MISP)** [@problem_id:4981242].
 
 The MISP is not "minimal" in the sense of being subpar; it is "minimal" in the sense of being the irreducible core of life-saving actions. It answers the question: what interventions will prevent the most death and suffering right now? The package includes critical actions like preventing sexual violence and reducing HIV transmission. But for our purposes, its most important components are those that prevent women from dying during pregnancy and childbirth, which includes complications from abortion. The MISP demands the immediate establishment of a system to handle obstetric emergencies.
 
-This brings us to a more granular, elegant concept: the idea of **signal functions** . Think of a health facility as a black box. How can we know if it's capable of saving lives from the most common obstetric killers—hemorrhage, infection, and hypertensive disorders? We look for "signal functions," a short list of key activities that *signal* the facility's capacity to manage these emergencies. They are the functional proof of a safe system.
+This brings us to a more granular, elegant concept: the idea of **signal functions** [@problem_id:4989826]. Think of a health facility as a black box. How can we know if it's capable of saving lives from the most common obstetric killers—hemorrhage, infection, and hypertensive disorders? We look for "signal functions," a short list of key activities that *signal* the facility's capacity to manage these emergencies. They are the functional proof of a safe system.
 
 These functions are divided into two levels:
 
@@ -23,7 +23,7 @@ This framework is beautiful because it transforms the vague goal of "safety" int
 
 ### The Physics and Biology of Complications
 
-Any procedure that involves entering the uterus, whether for abortion, managing a miscarriage, or another reason, carries inherent risks. These are not mysterious events, but predictable consequences of interactions between instruments, tissues, and fluids. They are governed by the laws of physics and biology. Let's use the model of a hysteroscopic surgery—where a camera is inserted into the uterus—to understand these universal complications, as the principles are identical .
+Any procedure that involves entering the uterus, whether for abortion, managing a miscarriage, or another reason, carries inherent risks. These are not mysterious events, but predictable consequences of interactions between instruments, tissues, and fluids. They are governed by the laws of physics and biology. Let's use the model of a hysteroscopic surgery—where a camera is inserted into the uterus—to understand these universal complications, as the principles are identical [@problem_id:4475022].
 
 **Uterine Perforation: A Problem of Geometry and Force**
 
@@ -37,7 +37,7 @@ The myometrium, the muscular layer of the uterus, is not just inert tissue; it i
 
 To perform surgery inside the uterus, the cavity must be distended, usually with a continuous flow of fluid. This creates a pressurized system. If the pressure inside the uterus, $P_{\text{intrauterine}}$, becomes greater than the pressure inside the open venous sinuses of the uterine wall, $P_{\text{venous}}$, fluid will be forced directly into the patient's bloodstream. This is a simple pressure gradient at work.
 
-The danger depends on the type of fluid used. Historically, surgeons used hypotonic fluids (like glycine or sorbitol solutions) that don't conduct electricity. If large volumes of this water-like, electrolyte-poor fluid enter the bloodstream, it dilutes the blood's sodium concentration, a condition called **dilutional hyponatremia**. This triggers another fundamental physical process: [osmosis](@entry_id:142206). Water moves from areas of low solute concentration to areas of high [solute concentration](@entry_id:158633). The now-diluted blood flows to the brain, which has a higher concentration of solutes. Water rushes from the blood vessels into the brain cells, causing them to swell. This cerebral edema is a life-threatening emergency. The entire devastating cascade begins with a simple pressure differential: $P_{\text{intrauterine}} > P_{\text{venous}}$.
+The danger depends on the type of fluid used. Historically, surgeons used hypotonic fluids (like glycine or sorbitol solutions) that don't conduct electricity. If large volumes of this water-like, electrolyte-poor fluid enter the bloodstream, it dilutes the blood's sodium concentration, a condition called **dilutional hyponatremia**. This triggers another fundamental physical process: [osmosis](@keyword=osmosis|lang=en-US|style=Feynman). Water moves from areas of low solute concentration to areas of high [solute concentration](@keyword=solute_concentration|lang=en-US|style=Feynman). The now-diluted blood flows to the brain, which has a higher concentration of solutes. Water rushes from the blood vessels into the brain cells, causing them to swell. This cerebral edema is a life-threatening emergency. The entire devastating cascade begins with a simple pressure differential: $P_{\text{intrauterine}} > P_{\text{venous}}$.
 
 **Intrauterine Adhesions: When Healing Goes Wrong**
 
@@ -45,11 +45,11 @@ After a procedure denudes the inner lining of the uterus (the endometrium), the 
 
 ### Building a Fortress of Safety: From Principles to Protocols
 
-Understanding these mechanisms is the first step. The second is designing a system that actively prevents them. A crucial insight comes from comparing a planned, induced abortion with a spontaneous, incomplete miscarriage . A patient with an incomplete miscarriage often presents with retained, devitalized tissue—a perfect culture medium for bacteria—and an open cervix, which is a gateway for infection. Her risk of infection is already high. In contrast, a patient undergoing a planned surgical abortion starts out healthy. The procedure *introduces* a risk of infection by instrumenting the uterus.
+Understanding these mechanisms is the first step. The second is designing a system that actively prevents them. A crucial insight comes from comparing a planned, induced abortion with a spontaneous, incomplete miscarriage [@problem_id:4428163]. A patient with an incomplete miscarriage often presents with retained, devitalized tissue—a perfect culture medium for bacteria—and an open cervix, which is a gateway for infection. Her risk of infection is already high. In contrast, a patient undergoing a planned surgical abortion starts out healthy. The procedure *introduces* a risk of infection by instrumenting the uterus.
 
 This distinction is profound. For the first patient, we use therapeutic antibiotics to fight an existing fire. For the second, we use prophylactic (preventive) antibiotics as a fire-prevention strategy. This highlights a core concept: safe care is about proactive risk management.
 
-So, how do we build a truly safe system in a real-world clinic? We can follow the blueprint laid out for a primary-level health center . It is a checklist born from first principles:
+So, how do we build a truly safe system in a real-world clinic? We can follow the blueprint laid out for a primary-level health center [@problem_id:4455115]. It is a checklist born from first principles:
 
 1.  **The Right Drugs and Tools:** Have the most effective methods available, like mifepristone and misoprostol for medical abortion and a manual vacuum aspiration (MVA) kit for surgical abortion.
 
@@ -59,11 +59,11 @@ So, how do we build a truly safe system in a real-world clinic? We can follow th
 
 4.  **The Escape Plan:** No clinic can manage every complication. A safe system must have a pre-arranged, tested emergency transfer protocol. This includes a simple but critical calculation: determining the total time to get a patient to a higher-level hospital, $t_{\text{total}} = t_{\text{travel}} + t_{\text{dispatch}}$. If the nearest hospital is $25 \text{ km}$ away and the ambulance travels at $50 \text{ km/h}$ with a $10$-minute dispatch time, the team knows they must be able to stabilize the patient for at least $40$ minutes. This single number dictates the minimum amount of IV fluid they must have on hand and the level of skill they must possess.
 
-This system is robust. But what if resources are even more limited? What if you don't have mifepristone, or if ultrasound is only sometimes available? This is where the principle of **resilience through adaptation** comes in . A truly safe system preserves the *function* of safety, even if the *form* must change. If routine ultrasound isn't possible for confirming gestational age, the function must be fulfilled by another method: a careful clinical history and physical exam, with ultrasound reserved only for cases of uncertainty. If the gold-standard drug isn't available, an alternative, evidence-based regimen is used with more intensive follow-up to compensate for its different risk profile. The goal is not rigid adherence to a single protocol, but intelligent adaptation to preserve the safety-critical functions.
+This system is robust. But what if resources are even more limited? What if you don't have mifepristone, or if ultrasound is only sometimes available? This is where the principle of **resilience through adaptation** comes in [@problem_id:4455157]. A truly safe system preserves the *function* of safety, even if the *form* must change. If routine ultrasound isn't possible for confirming gestational age, the function must be fulfilled by another method: a careful clinical history and physical exam, with ultrasound reserved only for cases of uncertainty. If the gold-standard drug isn't available, an alternative, evidence-based regimen is used with more intensive follow-up to compensate for its different risk profile. The goal is not rigid adherence to a single protocol, but intelligent adaptation to preserve the safety-critical functions.
 
 ### The Final Equation: Unifying Clinical and Moral Risk
 
-We have seen how safety is a system built on principles from physics and biology. But there is one final, unifying step. We can express risk in a simple, powerful equation used in [risk management](@entry_id:141282) frameworks . The expected harm ($E$) from any single risk is its probability ($p$) multiplied by its severity ($s$):
+We have seen how safety is a system built on principles from physics and biology. But there is one final, unifying step. We can express risk in a simple, powerful equation used in [risk management](@keyword=risk_management|lang=en-US|style=Feynman) frameworks [@problem_id:4857301]. The expected harm ($E$) from any single risk is its probability ($p$) multiplied by its severity ($s$):
 
 $$E = p \times s$$
 

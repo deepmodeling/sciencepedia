@@ -7,7 +7,7 @@ To understand why a simple thing like running can cause so much pain in a growin
 
 ### The Growing Heel: A Work in Progress
 
-Imagine building a magnificent bridge. You don’t just have a finished bridge appear out of thin air; you build it piece by piece from a scaffold. The human skeleton is built in much the same way. Before we have hard, strong bones, we have soft, flexible cartilage templates. This process, known as **[endochondral ossification](@entry_id:270406)**, is how most of our long bones are formed. A primary ossification center appears in the middle of the bone (the diaphysis) long before birth, and the bone begins to harden from the inside out.
+Imagine building a magnificent bridge. You don’t just have a finished bridge appear out of thin air; you build it piece by piece from a scaffold. The human skeleton is built in much the same way. Before we have hard, strong bones, we have soft, flexible cartilage templates. This process, known as **[endochondral ossification](@keyword=endochondral_ossification|lang=en-US|style=Feynman)**, is how most of our long bones are formed. A primary ossification center appears in the middle of the bone (the diaphysis) long before birth, and the bone begins to harden from the inside out.
 
 But what about the ends, where the bone has to form a joint or anchor a powerful muscle? These areas develop their own, separate **secondary ossification centers** after birth. When one of these centers serves as an attachment point for a major tendon, we call it an **apophysis**.
 
@@ -35,7 +35,7 @@ When you combine these two factors—the constant tension from a rapid growth sp
 
 ### The Mechanism of Pain
 
-So what exactly is happening when it starts to hurt? The term "inflammation" is often used, but it's important to be precise. This is not the kind of systemic inflammation you see in an [autoimmune disease](@entry_id:142031). Calcaneal apophysitis is a **mechanically-driven enthesopathy**—an injury at the tendon-bone junction (**enthesis**) caused by physical forces.
+So what exactly is happening when it starts to hurt? The term "inflammation" is often used, but it's important to be precise. This is not the kind of systemic inflammation you see in an [autoimmune disease](@keyword=autoimmune_disease|lang=en-US|style=Feynman). Calcaneal apophysitis is a **mechanically-driven enthesopathy**—an injury at the tendon-bone junction (**enthesis**) caused by physical forces.
 
 The repetitive pulling causes **microtrauma**. You can imagine it as tiny tears and fissures opening up at the fragile bone-cartilage interface. The body, in its wisdom, detects this damage and initiates a local, protective inflammatory response. It's the body’s repair crew rushing to the scene. This response involves increased blood flow to bring in healing factors, which can be seen as focal hyperemia on imaging studies. It also involves some swelling, or edema.
 

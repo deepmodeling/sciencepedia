@@ -19,7 +19,7 @@ $$
 C_{no-grid} = \frac{\Delta I_P}{I_P + I_S}
 $$
 
-We can make this relationship even clearer by defining a crucial quantity: the **Scatter-to-Primary Ratio**, or $SPR$, which is simply $SPR = I_S / I_P$. It's a measure of how "foggy" our image is. By factoring $I_P$ out of the denominator, we arrive at a beautiful and revealing expression :
+We can make this relationship even clearer by defining a crucial quantity: the **Scatter-to-Primary Ratio**, or $SPR$, which is simply $SPR = I_S / I_P$. It's a measure of how "foggy" our image is. By factoring $I_P$ out of the denominator, we arrive at a beautiful and revealing expression [@problem_id:4878517]:
 
 $$
 C_{no-grid} = \frac{\Delta I_P}{I_P(1 + SPR)} = C_{primary} \cdot \frac{1}{1+SPR}
@@ -33,13 +33,13 @@ How do we fight this fog? We need a device that can distinguish between the "goo
 
 Conceived over a century ago by Gustav Bucky, the grid is a masterpiece of simple, effective design. Imagine a set of tiny, parallel Venetian blinds placed directly in front of the detector. The blinds in this case are thin strips of a dense material like lead, separated by a material that is transparent to X-rays, like aluminum or carbon fiber.
 
-Primary photons, traveling in a straight line from the X-ray source, pass cleanly through the spaces between the lead strips. Scattered photons, however, arrive at the grid from all sorts of oblique angles. Most of them will crash into the side of a lead strip and be absorbed, never reaching the detector . The grid, therefore, *preferentially attenuates* scattered radiation.
+Primary photons, traveling in a straight line from the X-ray source, pass cleanly through the spaces between the lead strips. Scattered photons, however, arrive at the grid from all sorts of oblique angles. Most of them will crash into the side of a lead strip and be absorbed, never reaching the detector [@problem_id:4878517]. The grid, therefore, *preferentially attenuates* scattered radiation.
 
 Of course, the grid isn't perfect. The lead strips themselves have a finite thickness and will inevitably block some of the primary photons. And some scattered photons, by chance, might be traveling at just the right angle to sneak through. We can characterize a grid's performance by two key numbers:
 - **Primary Transmission ($T_p$)**: The fraction of primary photons that successfully pass through the grid. We want this to be as close to 1 as possible.
 - **Scatter Transmission ($T_s$)**: The fraction of scattered photons that get through. We want this to be as close to 0 as possible.
 
-A good grid is one with a high $T_p$ and a low $T_s$. The ratio of these two, $\sigma = T_p / T_s$, is called the grid's **selectivity**, a measure of its ability to distinguish between the good and the bad photons .
+A good grid is one with a high $T_p$ and a low $T_s$. The ratio of these two, $\sigma = T_p / T_s$, is called the grid's **selectivity**, a measure of its ability to distinguish between the good and the bad photons [@problem_id:4878741].
 
 ### Quantifying the Victory: The Contrast Improvement Factor
 
@@ -51,7 +51,7 @@ $$
 C_{grid} = \frac{T_p \Delta I_P}{T_p I_P + T_s I_S}
 $$
 
-By combining this with our earlier expression for $C_{no-grid}$, we can derive the CIF. After a little algebra, the result can be expressed in a wonderfully insightful form that uses the grid's selectivity, $\sigma$ :
+By combining this with our earlier expression for $C_{no-grid}$, we can derive the CIF. After a little algebra, the result can be expressed in a wonderfully insightful form that uses the grid's selectivity, $\sigma$ [@problem_id:4921712]:
 
 $$
 CIF = \frac{1 + SPR}{1 + SPR/\sigma}
@@ -65,23 +65,23 @@ Let's take a moment to appreciate this equation. Like all great physics formulas
 
 -   **Case 3: A Perfect Grid.** What if we had a hypothetical, perfect grid that blocks all scatter ($T_s=0$) but lets all primary through ($T_p=1$)? This grid would have infinite selectivity ($\sigma \to \infty$). In this case, the formula tells us $CIF = 1+SPR$. This is the theoretical maximum improvement possible. The grid has completely removed the denominator term in our original contrast degradation formula, $1/(1+SPR)$, perfectly "de-fogging" the image.
 
-In practice, grids are defined by their **grid ratio**, which is the height of the lead strips to the width of the space between them. A higher grid ratio (e.g., 12:1 vs. 8:1) means the "blinds" are deeper, making them more effective at catching obliquely-angled scatter. This results in a lower $T_s$ and thus a higher selectivity and CIF. For example, for an abdomen where $SPR$ is about 1.0, moving from an 8:1 grid to a 12:1 grid might increase the CIF from 1.56 to 1.69, a tangible improvement in image clarity .
+In practice, grids are defined by their **grid ratio**, which is the height of the lead strips to the width of the space between them. A higher grid ratio (e.g., 12:1 vs. 8:1) means the "blinds" are deeper, making them more effective at catching obliquely-angled scatter. This results in a lower $T_s$ and thus a higher selectivity and CIF. For example, for an abdomen where $SPR$ is about 1.0, moving from an 8:1 grid to a 12:1 grid might increase the CIF from 1.56 to 1.69, a tangible improvement in image clarity [@problem_id:4878758].
 
 ### The Unseen Cost: The Bucky Factor and Patient Dose
 
 So, using a grid seems like a clear win. We get better contrast, leading to more confident diagnoses. But in physics, as in life, there is no such thing as a free lunch. The grid, in its zealous pursuit of scatter, inevitably absorbs a significant portion of the useful primary radiation as well ($T_p$ is always less than 1).
 
-If we use a grid with the same X-ray exposure settings as before, the resulting image at the detector will be much dimmer. To restore the image to its proper brightness, the radiographer must increase the initial radiation dose delivered to the patient. This necessary dose increase is quantified by the **Bucky Factor (BF)** .
+If we use a grid with the same X-ray exposure settings as before, the resulting image at the detector will be much dimmer. To restore the image to its proper brightness, the radiographer must increase the initial radiation dose delivered to the patient. This necessary dose increase is quantified by the **Bucky Factor (BF)** [@problem_id:4862231].
 
-The Bucky factor is defined as the factor by which the patient exposure must be increased to maintain the same overall signal level at the detector when a grid is used. It can be derived from first principles, and the result is  :
+The Bucky factor is defined as the factor by which the patient exposure must be increased to maintain the same overall signal level at the detector when a grid is used. It can be derived from first principles, and the result is [@problem_id:5147764] [@problem_id:4916543]:
 
 $$
 BF = \frac{1 + SPR}{T_p + T_s SPR}
 $$
 
-This formula represents the "dose penalty" of using a grid. A typical grid might have a Bucky factor between 2 and 5. This is not a trivial increase. For example, if a chest X-ray without a grid requires an exposure of 7.2 milliampere-seconds (mAs), using a grid with a Bucky factor of 2.5 would require increasing the exposure to 18.0 mAs to get the same [image brightness](@entry_id:175275) . This is a critical trade-off: improved image quality versus increased patient radiation dose.
+This formula represents the "dose penalty" of using a grid. A typical grid might have a Bucky factor between 2 and 5. This is not a trivial increase. For example, if a chest X-ray without a grid requires an exposure of 7.2 milliampere-seconds (mAs), using a grid with a Bucky factor of 2.5 would require increasing the exposure to 18.0 mAs to get the same [image brightness](@keyword=image_brightness|lang=en-US|style=Feynman) [@problem_id:5147764]. This is a critical trade-off: improved image quality versus increased patient radiation dose.
 
-One might think that the best grid is simply the one with the highest selectivity, $\sigma$. But this is a dangerous oversimplification. To achieve very high selectivity, grid manufacturers often have to make the lead strips taller or denser, which unfortunately also reduces the primary transmission, $T_p$. Looking at the Bucky factor formula, we see that it is inversely proportional to $T_p$. A low $T_p$ can lead to a punishingly high Bucky factor. It is entirely possible for a grid with very high selectivity to have such poor primary transmission that its dose penalty is far greater than that of a more moderately selective grid with better primary transmission . The choice of a grid is a sophisticated engineering compromise between contrast gain and dose cost.
+One might think that the best grid is simply the one with the highest selectivity, $\sigma$. But this is a dangerous oversimplification. To achieve very high selectivity, grid manufacturers often have to make the lead strips taller or denser, which unfortunately also reduces the primary transmission, $T_p$. Looking at the Bucky factor formula, we see that it is inversely proportional to $T_p$. A low $T_p$ can lead to a punishingly high Bucky factor. It is entirely possible for a grid with very high selectivity to have such poor primary transmission that its dose penalty is far greater than that of a more moderately selective grid with better primary transmission [@problem_id:4862280]. The choice of a grid is a sophisticated engineering compromise between contrast gain and dose cost.
 
 ### A Unified View: The Ultimate Figure of Merit
 
@@ -93,7 +93,7 @@ Now, let's consider what happens when we introduce a grid but keep the patient d
 - The contrast increases by a factor of CIF.
 - The total number of photons reaching the detector decreases, because the grid absorbs radiation. By how much? By exactly the Bucky factor, $BF$. So, the new number of photons is $N_{new} = N_{old} / BF$.
 
-Combining these effects, we can define a **[figure of merit](@entry_id:158816)**, $F$, as the ratio of the SNR with the grid to the SNR without the grid, all at the same patient dose .
+Combining these effects, we can define a **[figure of merit](@keyword=figure_of_merit|lang=en-US|style=Feynman)**, $F$, as the ratio of the SNR with the grid to the SNR without the grid, all at the same patient dose [@problem_id:4862273].
 
 $$
 F = \frac{SNR_{grid}}{SNR_{no-grid}} = \frac{C_{grid} \sqrt{N_{grid}}}{C_{no-grid} \sqrt{N_{no-grid}}} = \left(\frac{C_{grid}}{C_{no-grid}}\right) \sqrt{\frac{N_{grid}}{N_{no-grid}}}
@@ -105,8 +105,8 @@ $$
 F = \frac{CIF}{\sqrt{BF}}
 $$
 
-This is the final verdict. This [figure of merit](@entry_id:158816) tells us whether the grid is truly helping, all things considered. If $F > 1$, the contrast improvement wins out over the photon loss, and we get a better quality image for the same dose. If $F  1$, the dose penalty is too severe, and we would have been better off without the grid. For a typical chest radiography grid with a $CIF = 1.7$ and a $BF = 2.8$, the [figure of merit](@entry_id:158816) is $F \approx 1.016$. The gain is modest, but it is a net positive .
+This is the final verdict. This [figure of merit](@keyword=figure_of_merit|lang=en-US|style=Feynman) tells us whether the grid is truly helping, all things considered. If $F > 1$, the contrast improvement wins out over the photon loss, and we get a better quality image for the same dose. If $F  1$, the dose penalty is too severe, and we would have been better off without the grid. For a typical chest radiography grid with a $CIF = 1.7$ and a $BF = 2.8$, the [figure of merit](@keyword=figure_of_merit|lang=en-US|style=Feynman) is $F \approx 1.016$. The gain is modest, but it is a net positive [@problem_id:4862273].
 
-Alternatively, we can take another perspective. What if our priority is to achieve the best possible image, and we are willing to pay the dose penalty? In this case, we would use the grid and increase the exposure by the Bucky factor. This keeps the total number of photons—and thus the noise level—at the detector the same as it was in the no-grid case. The entire gain in SNR then comes purely from the contrast improvement. The detectability of a feature increases directly with the CIF . A CIF of 1.6 means the feature is 60% more detectable, a substantial gain that can often justify the necessary increase in dose.
+Alternatively, we can take another perspective. What if our priority is to achieve the best possible image, and we are willing to pay the dose penalty? In this case, we would use the grid and increase the exposure by the Bucky factor. This keeps the total number of photons—and thus the noise level—at the detector the same as it was in the no-grid case. The entire gain in SNR then comes purely from the contrast improvement. The detectability of a feature increases directly with the CIF [@problem_id:4862313]. A CIF of 1.6 means the feature is 60% more detectable, a substantial gain that can often justify the necessary increase in dose.
 
-The story of the anti-scatter grid is a perfect microcosm of [medical physics](@entry_id:158232): a journey from identifying a fundamental problem, to inventing a clever solution, to rigorously analyzing the benefits and the costs, and finally, to synthesizing it all into a unified framework that allows us to make informed, life-saving decisions.
+The story of the anti-scatter grid is a perfect microcosm of [medical physics](@keyword=medical_physics|lang=en-US|style=Feynman): a journey from identifying a fundamental problem, to inventing a clever solution, to rigorously analyzing the benefits and the costs, and finally, to synthesizing it all into a unified framework that allows us to make informed, life-saving decisions.

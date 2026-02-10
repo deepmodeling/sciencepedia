@@ -11,9 +11,9 @@ In our journey to understand the world, we often find that the most powerful ide
 
 We are bombarded with percentages daily. "A 30% chance of rain," "a 15% drop in the stock market," "a new drug that is 90% effective." The last one sounds particularly impressive. If a new vaccine is announced to be "90% effective," what does that truly mean? Our intuition might leap to a conclusion: if 100 people get the vaccine, 90 of them are protected. But is it that simple?
 
-Let’s play with this idea, as a physicist would, by considering two different scenarios. Imagine two cities, Metropolis and Smallville, both facing the same virus. A new vaccine is rolled out, and in rigorous clinical trials, it is found to have a 90% efficacy in both places . In Metropolis, the virus is rampant; an unvaccinated person has a 1 in 10 chance ($0.10$) of getting sick over the season. In Smallville, the virus is a rare visitor; an unvaccinated person's risk is only 1 in 1000 ($0.001$).
+Let’s play with this idea, as a physicist would, by considering two different scenarios. Imagine two cities, Metropolis and Smallville, both facing the same virus. A new vaccine is rolled out, and in rigorous clinical trials, it is found to have a 90% efficacy in both places [@problem_id:4653867]. In Metropolis, the virus is rampant; an unvaccinated person has a 1 in 10 chance ($0.10$) of getting sick over the season. In Smallville, the virus is a rare visitor; an unvaccinated person's risk is only 1 in 1000 ($0.001$).
 
-Does "90% efficacy" mean the same thing to a citizen of Metropolis as it does to a resident of Smallville? The campaign posters in both cities might proudly display the same "90% effective" slogan. Yet, this single number obscures a dramatic difference in real-world impact—a phenomenon related to a cognitive quirk called **base rate neglect**, where we tend to ignore the underlying frequency of an event . To see this clearly, we need to look under the hood of "efficacy."
+Does "90% efficacy" mean the same thing to a citizen of Metropolis as it does to a resident of Smallville? The campaign posters in both cities might proudly display the same "90% effective" slogan. Yet, this single number obscures a dramatic difference in real-world impact—a phenomenon related to a cognitive quirk called **base rate neglect**, where we tend to ignore the underlying frequency of an event [@problem_id:4590508]. To see this clearly, we need to look under the hood of "efficacy."
 
 ### Relative Worlds and Absolute Realities
 
@@ -23,7 +23,7 @@ $$
 \mathrm{RRR} = \frac{R_{unvac} - R_{vac}}{R_{unvac}}
 $$
 
-A 90% efficacy ($RRR = 0.9$) means that the risk in the vaccinated group is only 10% of the risk in the unvaccinated group. This ratio is a measure of the vaccine's intrinsic biological power, and it can be remarkably stable across different populations .
+A 90% efficacy ($RRR = 0.9$) means that the risk in the vaccinated group is only 10% of the risk in the unvaccinated group. This ratio is a measure of the vaccine's intrinsic biological power, and it can be remarkably stable across different populations [@problem_id:4653867].
 
 But for your personal health, or for a mayor deciding on city policy, this relative number isn't the whole story. You want to know: what is the *actual change* in my chance of getting sick? This brings us to a much more direct and, in many ways, more honest measure: the **Absolute Risk Reduction (ARR)**.
 
@@ -43,7 +43,7 @@ The vaccine still reduces the risk by 90%, so $R_{vac} = 0.001 \times (1 - 0.9) 
 The $\mathrm{ARR}_{\text{Smallville}} = 0.001 - 0.0001 = 0.0009$.
 Your personal chance of getting sick drops by less than one-tenth of a percentage point.
 
-The RRR was 90% in both cities, but the ARR in Metropolis is 100 times larger than in Smallville! Communicating only the RRR gives the misleading impression that the vaccine’s benefit is identical in both contexts, when in absolute terms, it is vastly different  . This is not a trick; it's the fundamental nature of risk. A percentage reduction of a large number is a large amount, while the same percentage reduction of a small number is a small amount.
+The RRR was 90% in both cities, but the ARR in Metropolis is 100 times larger than in Smallville! Communicating only the RRR gives the misleading impression that the vaccine’s benefit is identical in both contexts, when in absolute terms, it is vastly different [@problem_id:4590508] [@problem_id:4729211]. This is not a trick; it's the fundamental nature of risk. A percentage reduction of a large number is a large amount, while the same percentage reduction of a small number is a small amount.
 
 ### A Simple, Powerful Idea: The Number Needed to Vaccinate
 
@@ -61,7 +61,7 @@ Let’s calculate the NNV for our two cities:
 -   In Metropolis, $\mathrm{NNV} = \frac{1}{0.09} \approx 11$. We only need to vaccinate about 11 people to prevent one case.
 -   In Smallville, $\mathrm{NNV} = \frac{1}{0.0009} \approx 1111$. We would need to vaccinate over a thousand people to prevent a single case.
 
-This is the magic of the NNV. It makes the stakes clear. For a public health official with a limited supply of 50,000 vaccine doses, the choice is obvious. Allocating them to Metropolis would prevent roughly $50000 / 11 \approx 4545$ cases. Allocating them to Smallville would prevent only $50000 / 1111 \approx 45$ cases. The NNV, by incorporating the crucial baseline risk, becomes an indispensable tool for prioritization and resource allocation . It is also derived directly from first principles, often by combining baseline risk with [vaccine efficacy](@entry_id:194367): since $\mathrm{ARR} = R_{unvac} \times \mathrm{VE}$, it follows that $\mathrm{NNV} = \frac{1}{R_{unvac} \times \mathrm{VE}}$ .
+This is the magic of the NNV. It makes the stakes clear. For a public health official with a limited supply of 50,000 vaccine doses, the choice is obvious. Allocating them to Metropolis would prevent roughly $50000 / 11 \approx 4545$ cases. Allocating them to Smallville would prevent only $50000 / 1111 \approx 45$ cases. The NNV, by incorporating the crucial baseline risk, becomes an indispensable tool for prioritization and resource allocation [@problem_id:4589849]. It is also derived directly from first principles, often by combining baseline risk with [vaccine efficacy](@keyword=vaccine_efficacy|lang=en-US|style=Feynman): since $\mathrm{ARR} = R_{unvac} \times \mathrm{VE}$, it follows that $\mathrm{NNV} = \frac{1}{R_{unvac} \times \mathrm{VE}}$ [@problem_id:4589904].
 
 ### The Other Side of the Coin: Weighing Benefit and Harm
 
@@ -75,7 +75,7 @@ And from this, we can define the **Number Needed to Harm (NNH)**:
 $$
 \mathrm{NNH} = \frac{1}{\mathrm{ARI}}
 $$
-The NNH tells us, on average, how many people need to be vaccinated for one additional case of that specific harm to occur .
+The NNH tells us, on average, how many people need to be vaccinated for one additional case of that specific harm to occur [@problem_id:4986272].
 
 This framework is incredibly powerful when counseling a hesitant parent. Consider the rotavirus vaccine for infants. In a high-risk setting, the risk of an unvaccinated infant being hospitalized for severe rotavirus might be 3% ($R_{unvac} = 0.03$). A highly effective vaccine (e.g., 85% efficacy) would reduce this risk dramatically.
 The $\mathrm{ARR} = R_{unvac} \times \mathrm{VE} = 0.03 \times 0.85 = 0.0255$.
@@ -85,12 +85,12 @@ So, we need to vaccinate about 39 infants to prevent one devastating hospitaliza
 Now, consider a known rare side effect: intussusception. Let's say the vaccine-attributable excess risk is about 5 cases per 100,000 infants ($\mathrm{ARI} = 0.00005$).
 The $\mathrm{NNH} = \frac{1}{0.00005} = 20,000$.
 
-By placing these two numbers side-by-side—NNV of 39 and NNH of 20,000—the decision becomes transparent . To get the benefit (preventing one hospitalization), we vaccinate 39 babies. To see one instance of the harm, we would need to vaccinate 20,000 babies. In that group of 20,000 vaccinated infants, we would have caused one case of intussusception but prevented roughly $20,000 / 39 \approx 513$ hospitalizations. The balance of benefit to harm is overwhelmingly clear.
+By placing these two numbers side-by-side—NNV of 39 and NNH of 20,000—the decision becomes transparent [@problem_id:5216420]. To get the benefit (preventing one hospitalization), we vaccinate 39 babies. To see one instance of the harm, we would need to vaccinate 20,000 babies. In that group of 20,000 vaccinated infants, we would have caused one case of intussusception but prevented roughly $20,000 / 39 \approx 513$ hospitalizations. The balance of benefit to harm is overwhelmingly clear.
 
 ### A Tool for Thinking, Not Just Calculating
 
 The NNV is more than a formula; it is a way of thinking. It forces us to confront the absolute realities of risk and benefit. It is a tool for transparent communication, for ethical reasoning, and for wise policy.
 
-When the background risk of a disease is extremely low, the NNV can become very large. In a hypothetical university setting with a very low incidence rate, the NNV to prevent one mild infection over several years might be over 800 . A number this large does not mean the vaccine is "bad." It simply quantifies the scale of the benefit. It also raises important ethical questions about policies like vaccine mandates. Is it proportional to mandate an intervention for 834 people to prevent one typically non-severe case? The NNV provides the quantitative footing to have that crucial societal conversation.
+When the background risk of a disease is extremely low, the NNV can become very large. In a hypothetical university setting with a very low incidence rate, the NNV to prevent one mild infection over several years might be over 800 [@problem_id:4881399]. A number this large does not mean the vaccine is "bad." It simply quantifies the scale of the benefit. It also raises important ethical questions about policies like vaccine mandates. Is it proportional to mandate an intervention for 834 people to prevent one typically non-severe case? The NNV provides the quantitative footing to have that crucial societal conversation.
 
 From a simple question about what a percentage means, we have traveled to the heart of clinical decision-making, public policy, and ethical debate. By insisting on simple, absolute measures and translating them into a human-scale number, we arm ourselves with the clarity needed to navigate a complex world. That is the inherent beauty and unity of a great scientific idea.
