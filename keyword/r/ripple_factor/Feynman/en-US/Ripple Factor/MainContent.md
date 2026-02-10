@@ -15,7 +15,7 @@ Second, there's everything else: the leftover bumps, wiggles, and pulsations tha
 
 $$v_o(t) = V_{\mathrm{dc}} + v_r(t)$$
 
-This decomposition is the first step toward taming the ripple. It gives us a way to conceptually separate the prize ($V_{\mathrm{dc}}$) from the noise ($v_r(t)$) . The goal of any filter we add after the rectifier is to make the ripple component, $v_r(t)$, as small as possible. To do that, we need to quantify its size.
+This decomposition is the first step toward taming the ripple. It gives us a way to conceptually separate the prize ($V_{\mathrm{dc}}$) from the noise ($v_r(t)$) [@problem_id:3873006]. The goal of any filter we add after the rectifier is to make the ripple component, $v_r(t)$, as small as possible. To do that, we need to quantify its size.
 
 But how do we measure the "size" of a wiggle? A simple average won't work, because it's zero by definition. We need a measure of its effective strength or intensity. For this, electrical engineers turn to a powerful tool: the **Root Mean Square (RMS)** value. The RMS value of the ripple, which we denote as $V_{\mathrm{ac,rms}}$, gives us a meaningful way to measure its magnitude.
 
@@ -27,7 +27,7 @@ A small ripple factor means the output is smooth and close to ideal DC. A large 
 
 ### A Pythagorean Theorem for Signals
 
-At this point, you might wonder about the relationship between the RMS value of the total signal, $V_{\mathrm{rms}}$, and the two parts we've just defined, $V_{\mathrm{dc}}$ and $V_{\mathrm{ac,rms}}$. The connection is one of the most elegant pieces of mathematics in [signal analysis](@entry_id:266450).
+At this point, you might wonder about the relationship between the RMS value of the total signal, $V_{\mathrm{rms}}$, and the two parts we've just defined, $V_{\mathrm{dc}}$ and $V_{\mathrm{ac,rms}}$. The connection is one of the most elegant pieces of mathematics in [signal analysis](@keyword=signal_analysis|lang=en-US|style=Feynman).
 
 Let's calculate the square of the total RMS value, $V_{\mathrm{rms}}^2$. By definition, it's the average of the square of the total signal, $v_o(t)^2$. Substituting our decomposition:
 
@@ -35,7 +35,7 @@ $$ V_{\mathrm{rms}}^2 = \text{average of } (V_{\mathrm{dc}} + v_r(t))^2 = \text{
 
 Because averaging is a linear operation, we can average each term separately. The average of $V_{\mathrm{dc}}^2$ is just $V_{\mathrm{dc}}^2$. The average of $v_r(t)^2$ is, by definition, $V_{\mathrm{ac,rms}}^2$. What about the middle term, $2V_{\mathrm{dc}}v_r(t)$? Since $2V_{\mathrm{dc}}$ is a constant, its average is $2V_{\mathrm{dc}}$ times the average of $v_r(t)$. And as we established, the average of the ripple component is zero! So the middle term vanishes completely.
 
-What we're left with is a stunningly simple result :
+What we're left with is a stunningly simple result [@problem_id:3873006]:
 
 $$ V_{\mathrm{rms}}^2 = V_{\mathrm{dc}}^2 + V_{\mathrm{ac,rms}}^2 $$
 
@@ -51,11 +51,11 @@ This formula is the workhorse for calculating ripple factor. All we need are the
 
 Let's see this principle in action. Consider the simplest rectifiers with a sinusoidal input, $v_i(t) = V_m \sin(\omega t)$.
 
-A **[half-wave rectifier](@entry_id:269098)** simply chops off the negative half of the AC wave. The result is a series of positive bumps separated by flat-lines. If you go through the calculus of finding its DC and RMS values, you find its ripple factor is $r_{HW} = \sqrt{(\pi/2)^2 - 1} \approx 1.21$ . This is a large number! It means the effective strength of the ripple is actually 121% of the DC value. The output is more ripple than it is DC—a very choppy sea indeed.
+A **[half-wave rectifier](@keyword=half_wave_rectifier|lang=en-US|style=Feynman)** simply chops off the negative half of the AC wave. The result is a series of positive bumps separated by flat-lines. If you go through the calculus of finding its DC and RMS values, you find its ripple factor is $r_{HW} = \sqrt{(\pi/2)^2 - 1} \approx 1.21$ [@problem_id:1306439]. This is a large number! It means the effective strength of the ripple is actually 121% of the DC value. The output is more ripple than it is DC—a very choppy sea indeed.
 
-Now, consider a **full-wave rectifier**, which flips the negative half of the AC wave, filling in the gaps. We now have a continuous series of positive bumps. Again, doing the calculus gives a ripple factor of $r_{FW} = \sqrt{(\pi^2/8) - 1} \approx 0.483$ . This is a massive improvement! By simply filling in the gaps, we've reduced the ripple factor by more than half . The sea is still choppy, but far less so. This is why, in practice, full-wave rectifiers are almost always preferred over half-wave ones for building power supplies.
+Now, consider a **full-wave rectifier**, which flips the negative half of the AC wave, filling in the gaps. We now have a continuous series of positive bumps. Again, doing the calculus gives a ripple factor of $r_{FW} = \sqrt{(\pi^2/8) - 1} \approx 0.483$ [@problem_id:1287812]. This is a massive improvement! By simply filling in the gaps, we've reduced the ripple factor by more than half [@problem_id:1306439]. The sea is still choppy, but far less so. This is why, in practice, full-wave rectifiers are almost always preferred over half-wave ones for building power supplies.
 
-The exact value of the ripple factor depends on the shape of the rectified waveform. If we were to rectify a triangular wave instead of a sine wave, for instance, the calculations would yield a different number, but the method of applying the fundamental definitions of $V_{\mathrm{dc}}$ and $V_{\mathrm{rms}}$ remains exactly the same .
+The exact value of the ripple factor depends on the shape of the rectified waveform. If we were to rectify a triangular wave instead of a sine wave, for instance, the calculations would yield a different number, but the method of applying the fundamental definitions of $V_{\mathrm{dc}}$ and $V_{\mathrm{rms}}$ remains exactly the same [@problem_id:1309008].
 
 ### The Ripple's Secret Identity: A Symphony of Harmonics
 
@@ -65,23 +65,23 @@ This gives us another beautiful way to think about ripple. The total power of th
 
 $$ V_{\mathrm{ac,rms}}^2 = V_1^2 + V_2^2 + V_3^2 + \dots = \sum_{n=1}^{\infty} V_n^2 $$
 
-This means our ripple factor definition can also be expressed in the frequency domain :
+This means our ripple factor definition can also be expressed in the frequency domain [@problem_id:3873029]:
 
 $$ r = \frac{\sqrt{\sum_{n=1}^{\infty} V_n^2}}{V_{\mathrm{dc}}} $$
 
-This perspective gives us a deeper insight into why [full-wave rectification](@entry_id:276472) is superior. For a half-wave rectifier fed by a 60 Hz line, the output's fundamental frequency is also 60 Hz. Its ripple contains components at 60 Hz, 120 Hz, 180 Hz, etc. But for a full-wave rectifier, the output waveform repeats at *twice* the line frequency. Its fundamental frequency is 120 Hz. Its ripple spectrum contains *only* even harmonics of the line frequency: 120 Hz, 240 Hz, 360 Hz, etc. There is no 60 Hz component at all . By eliminating the powerful, low-frequency 60 Hz ripple component, the [full-wave rectifier](@entry_id:266624) achieves a much smoother output.
+This perspective gives us a deeper insight into why [full-wave rectification](@keyword=full_wave_rectification|lang=en-US|style=Feynman) is superior. For a half-wave rectifier fed by a 60 Hz line, the output's fundamental frequency is also 60 Hz. Its ripple contains components at 60 Hz, 120 Hz, 180 Hz, etc. But for a full-wave rectifier, the output waveform repeats at *twice* the line frequency. Its fundamental frequency is 120 Hz. Its ripple spectrum contains *only* even harmonics of the line frequency: 120 Hz, 240 Hz, 360 Hz, etc. There is no 60 Hz component at all [@problem_id:3873029]. By eliminating the powerful, low-frequency 60 Hz ripple component, the [full-wave rectifier](@keyword=full_wave_rectifier|lang=en-US|style=Feynman) achieves a much smoother output.
 
 ### A Family of Measures: Form, Crest, and Ripple
 
-The ripple factor is a star player, but it's not the only metric used to describe a waveform. Two other important members of the family are the **[form factor](@entry_id:146590) (FF)** and the **[crest factor](@entry_id:264576) (CF)**.
+The ripple factor is a star player, but it's not the only metric used to describe a waveform. Two other important members of the family are the **[form factor](@keyword=form_factor|lang=en-US|style=Feynman) (FF)** and the **[crest factor](@keyword=crest_factor|lang=en-US|style=Feynman) (CF)**.
 
-The **[form factor](@entry_id:146590)** is the ratio we saw earlier in our ripple factor formula: $FF = V_{\mathrm{rms}} / V_{\mathrm{dc}}$. It essentially measures the "heating power" (related to $V_{\mathrm{rms}}$) of the waveform relative to its average DC level. Using this definition, our Pythagorean relationship gives an elegant link between [form factor](@entry_id:146590) and ripple factor :
+The **[form factor](@keyword=form_factor|lang=en-US|style=Feynman)** is the ratio we saw earlier in our ripple factor formula: $FF = V_{\mathrm{rms}} / V_{\mathrm{dc}}$. It essentially measures the "heating power" (related to $V_{\mathrm{rms}}$) of the waveform relative to its average DC level. Using this definition, our Pythagorean relationship gives an elegant link between [form factor](@keyword=form_factor|lang=en-US|style=Feynman) and ripple factor [@problem_id:3873069]:
 
 $$ FF = \sqrt{1 + r^2} $$
 
-The **[crest factor](@entry_id:264576)**, $CF = V_{\mathrm{peak}} / V_{\mathrm{rms}}$, measures how extreme the peaks of the waveform are compared to its overall RMS value. This is crucial for designing components that must withstand the peak voltage without breaking down.
+The **[crest factor](@keyword=crest_factor|lang=en-US|style=Feynman)**, $CF = V_{\mathrm{peak}} / V_{\mathrm{rms}}$, measures how extreme the peaks of the waveform are compared to its overall RMS value. This is crucial for designing components that must withstand the peak voltage without breaking down.
 
-These factors describe different aspects of the waveform's shape. It's important to realize that a single number never tells the whole story. For example, one might think that two waveforms with the same ripple factor would be equally "good." But this isn't necessarily true. It is possible to construct a waveform from rectangular pulses that has the exact same ripple factor as a full-wave rectified sine wave. However, their crest factors will be different . The choice of which metric is most important depends entirely on the application.
+These factors describe different aspects of the waveform's shape. It's important to realize that a single number never tells the whole story. For example, one might think that two waveforms with the same ripple factor would be equally "good." But this isn't necessarily true. It is possible to construct a waveform from rectangular pulses that has the exact same ripple factor as a full-wave rectified sine wave. However, their crest factors will be different [@problem_id:3873069]. The choice of which metric is most important depends entirely on the application.
 
 ### Does the Load Care About Voltage or Current?
 
@@ -89,10 +89,10 @@ So far, we've focused on voltage ripple. This is the critical parameter for most
 
 However, some loads are current-sensitive. Think of a DC motor, where smooth current ensures smooth torque, or a battery charger that requires a constant charging current. For these applications, we care about the **current ripple factor**, which is defined in exactly the same way, just with current values: $r_i = I_{\mathrm{ac,rms}} / I_{\mathrm{dc}}$. To achieve a smooth current, we typically use a **choke-input filter**, which places a large inductor (a "choke") in series with the load. The inductor opposes changes in current, smoothing out the pulses from the rectifier.
 
-Therefore, whether [voltage ripple](@entry_id:1133886) or current ripple is the key performance metric depends entirely on the load's needs . A fascinating example highlights this distinction: consider a rectifier powering a special load that acts as an ideal constant-current sink (meaning it draws a current $I_L$ no matter what). By definition, the load current is perfectly flat, so its current ripple factor is zero. But does this mean the voltage is also flat? Absolutely not. The rectifier's diode only turns on for a brief moment at the peak of each cycle to supply charge to a filtering capacitor. For the rest of the cycle, the capacitor must supply the constant current $I_L$ to the load, and in doing so, its voltage steadily drops. This creates a non-zero [voltage ripple](@entry_id:1133886). This beautifully illustrates that minimizing voltage ripple and minimizing current ripple are two different engineering problems .
+Therefore, whether [voltage ripple](@keyword=voltage_ripple|lang=en-US|style=Feynman) or current ripple is the key performance metric depends entirely on the load's needs [@problem_id:3873002]. A fascinating example highlights this distinction: consider a rectifier powering a special load that acts as an ideal constant-current sink (meaning it draws a current $I_L$ no matter what). By definition, the load current is perfectly flat, so its current ripple factor is zero. But does this mean the voltage is also flat? Absolutely not. The rectifier's diode only turns on for a brief moment at the peak of each cycle to supply charge to a filtering capacitor. For the rest of the cycle, the capacitor must supply the constant current $I_L$ to the load, and in doing so, its voltage steadily drops. This creates a non-zero [voltage ripple](@keyword=voltage_ripple|lang=en-US|style=Feynman). This beautifully illustrates that minimizing voltage ripple and minimizing current ripple are two different engineering problems [@problem_id:3873027].
 
 ### A Touch of Reality: Imperfections and Modern Measurement
 
-Our models so far have assumed ideal diodes. A real diode requires a small forward voltage, $V_D$, to turn on. This has a small but noticeable effect. The diode turns on slightly later and turns off slightly earlier, "clipping" a bit off the top of each rectified pulse. This reduces the average voltage $V_{\mathrm{dc}}$ and also slightly changes the RMS value. A careful analysis shows that, to a first approximation, the presence of this diode drop increases the ripple factor slightly. For a full-wave rectifier, the corrected ripple factor is approximately $r \approx r_{\text{ideal}} (1 + \frac{\pi V_D}{2V_m})$ . This shows that our ideal models are an excellent starting point, and we can systematically account for real-world imperfections.
+Our models so far have assumed ideal diodes. A real diode requires a small forward voltage, $V_D$, to turn on. This has a small but noticeable effect. The diode turns on slightly later and turns off slightly earlier, "clipping" a bit off the top of each rectified pulse. This reduces the average voltage $V_{\mathrm{dc}}$ and also slightly changes the RMS value. A careful analysis shows that, to a first approximation, the presence of this diode drop increases the ripple factor slightly. For a full-wave rectifier, the corrected ripple factor is approximately $r \approx r_{\text{ideal}} (1 + \frac{\pi V_D}{2V_m})$ [@problem_id:3873021]. This shows that our ideal models are an excellent starting point, and we can systematically account for real-world imperfections.
 
-In the digital age, how do we measure these quantities? If we sample the output voltage with a data acquisition system, we get a series of numbers, $x[n]$. The process mirrors our theoretical decomposition perfectly. First, we compute the average of all the samples to find the DC component, $V_{\mathrm{dc}}$. Then, we subtract this DC value from every single sample to get the AC ripple component. Finally, we compute the RMS value of this resulting ripple sequence. This gives us a direct measurement of the ripple factor, a tangible result of the beautiful principles we've explored . From a simple desire for "smoothness," we have journeyed through a rich landscape of mathematical elegance, harmonic symphonies, and practical engineering trade-offs that lie at the very heart of how we power the modern world.
+In the digital age, how do we measure these quantities? If we sample the output voltage with a data acquisition system, we get a series of numbers, $x[n]$. The process mirrors our theoretical decomposition perfectly. First, we compute the average of all the samples to find the DC component, $V_{\mathrm{dc}}$. Then, we subtract this DC value from every single sample to get the AC ripple component. Finally, we compute the RMS value of this resulting ripple sequence. This gives us a direct measurement of the ripple factor, a tangible result of the beautiful principles we've explored [@problem_id:3873000]. From a simple desire for "smoothness," we have journeyed through a rich landscape of mathematical elegance, harmonic symphonies, and practical engineering trade-offs that lie at the very heart of how we power the modern world.

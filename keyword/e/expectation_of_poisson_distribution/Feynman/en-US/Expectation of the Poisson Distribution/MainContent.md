@@ -57,11 +57,11 @@ The Poisson distribution has an even deeper elegance. Imagine you are manufactur
 
 This is the **additivity property**: the sum of independent Poisson random variables is itself a Poisson random variable. You can merge independent Poisson processes, and the result is just a faster Poisson process.
 
-Now for the truly mind-bending part: the reverse is also true. Suppose a satellite detects [cosmic rays](@article_id:158047), and the total count $N$ over a long time interval is Poisson with mean $\lambda$. What if we divide that interval into $n$ smaller, equal pieces? The number of counts in each small piece, $N_i$, is also a Poisson random variable, but now with a mean of $\frac{\lambda}{n}$. The process is **infinitely divisible**. No matter how finely you slice time or space, the counts in those slices still follow a Poisson distribution. This property is what makes it such a fundamental model for events occurring randomly in a continuum. It looks the same no matter how closely you zoom in.
+Now for the truly mind-bending part: the reverse is also true. Suppose a satellite detects [cosmic rays](@keyword=cosmic_rays|lang=en-US|style=Feynman), and the total count $N$ over a long time interval is Poisson with mean $\lambda$. What if we divide that interval into $n$ smaller, equal pieces? The number of counts in each small piece, $N_i$, is also a Poisson random variable, but now with a mean of $\frac{\lambda}{n}$. The process is **infinitely divisible**. No matter how finely you slice time or space, the counts in those slices still follow a Poisson distribution. This property is what makes it such a fundamental model for events occurring randomly in a continuum. It looks the same no matter how closely you zoom in.
 
 ### The Expectation of a Function
 
-So far, we've looked at simple sums and differences. But we can calculate the expected value of almost *any* function of our random count. Let's say in a quality control process for [optical fiber](@article_id:273008), the cost of flaws is not linear, but depends on the interaction between pairs of flaws, proportional to $N(N-1)$, where $N$ is the number of flaws. What is the expected cost?
+So far, we've looked at simple sums and differences. But we can calculate the expected value of almost *any* function of our random count. Let's say in a quality control process for [optical fiber](@keyword=optical_fiber|lang=en-US|style=Feynman), the cost of flaws is not linear, but depends on the interaction between pairs of flaws, proportional to $N(N-1)$, where $N$ is the number of flaws. What is the expected cost?
 
 We need to find $\mathbb{E}[N(N-1)]$. We could do this with a bit of algebraic muscle, working from the definition of expectation and the Poisson probability formula. The calculation involves a beautiful trick where the summation transforms into the Taylor series for $\exp(\lambda)$. Or, we can use a more cunning approach. We know that $\mathbb{E}[N(N-1)] = \mathbb{E}[N^2 - N]$. Using the linearity of expectation, this becomes $\mathbb{E}[N^2] - \mathbb{E}[N]$. We already know $\mathbb{E}[N]=\lambda$, and we can find $\mathbb{E}[N^2]$ from the variance formula: $\operatorname{Var}(N) = \mathbb{E}[N^2] - (\mathbb{E}[N])^2$.
 
@@ -72,9 +72,9 @@ $$
 \mathbb{E}[N(N-1)] = (\lambda^2 + \lambda) - \lambda = \lambda^2
 $$
 
-How elegant! This quantity, the **second [factorial](@article_id:266143) moment**, is simply $\lambda^2$. This isn't a mere coincidence; it is a deep property of the Poisson distribution's structure. This pattern continues for higher-order [factorial moments](@article_id:201038), $\mathbb{E}[N(N-1)...(N-k+1)] = \lambda^k$, a result that is both powerful and beautiful.
+How elegant! This quantity, the **second [factorial](@keyword=factorial|lang=en-US|style=Feynman) moment**, is simply $\lambda^2$. This isn't a mere coincidence; it is a deep property of the Poisson distribution's structure. This pattern continues for higher-order [factorial moments](@keyword=factorial_moments|lang=en-US|style=Feynman), $\mathbb{E}[N(N-1)...(N-k+1)] = \lambda^k$, a result that is both powerful and beautiful.
 
-This power isn't limited to polynomials. Suppose a "[quality factor](@article_id:200511)" for a piece of fabric is defined as $Q = \frac{1}{X+1}$, where $X$ is the number of Poisson-distributed defects. We can still find the expected quality factor, $E[Q]$, by summing over all possible outcomes, weighted by their probabilities. Again, the unique structure of the Poisson probabilities allows the infinite sum to collapse into a neat, closed form:
+This power isn't limited to polynomials. Suppose a "[quality factor](@keyword=quality_factor|lang=en-US|style=Feynman)" for a piece of fabric is defined as $Q = \frac{1}{X+1}$, where $X$ is the number of Poisson-distributed defects. We can still find the expected quality factor, $E[Q]$, by summing over all possible outcomes, weighted by their probabilities. Again, the unique structure of the Poisson probabilities allows the infinite sum to collapse into a neat, closed form:
 
 $$
 \mathbb{E}\left[\frac{1}{X+1}\right] = \frac{1 - \exp(-\lambda)}{\lambda}
@@ -86,7 +86,7 @@ The lesson is that the definition of expectation is not just an abstract concept
 
 Real-world measurements are rarely as clean as our ideal models. What happens to our expected value then?
 
-Consider a [biosensor](@article_id:275438) designed to count bacteria in a water sample. The actual number of bacteria, $N$, follows a Poisson distribution with mean $\lambda$. However, the sensor has a limitation: it can't detect a sample with zero bacteria. It only gives a reading if $N \ge 1$. If you collect data only from the samples the sensor detects, what average will you calculate?
+Consider a [biosensor](@keyword=biosensor|lang=en-US|style=Feynman) designed to count bacteria in a water sample. The actual number of bacteria, $N$, follows a Poisson distribution with mean $\lambda$. However, the sensor has a limitation: it can't detect a sample with zero bacteria. It only gives a reading if $N \ge 1$. If you collect data only from the samples the sensor detects, what average will you calculate?
 
 You are calculating a *conditional* expectation: the expected value of $N$ *given* that $N$ is at least 1. Since you are systematically ignoring all the zero-count samples, the average you see must be higher than the true average $\lambda$. The mathematics confirms this intuition perfectly. The expected count, for detected samples only, is:
 

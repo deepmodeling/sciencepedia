@@ -1,7 +1,7 @@
 ## Introduction
 In a world built on digital information, the integrity of data is paramount. A single flipped bit, changing a '1' to a '0', can corrupt a command to a deep-space probe or compromise critical data on a server. The fundamental challenge is how to protect information from the inevitable noise of the physical world. While simple solutions like repeating the data exist, they are often incredibly inefficient, creating a demand for a more intelligent and elegant approach to ensuring data reliability.
 
-This article explores the powerful concepts behind single-bit [error correction](@article_id:273268). We will journey from intuitive brute-force methods to the sophisticated designs that form the bedrock of modern technology. The first chapter, **"Principles and Mechanisms,"** will unpack the core ideas of Hamming distance, parity bits, and the ingenious [syndrome decoding](@article_id:136204) method pioneered by Richard Hamming. Following this, the chapter on **"Applications and Interdisciplinary Connections"** will reveal the surprising universality of these principles, demonstrating their critical role in everything from computer hardware and neuroscience to the fundamental laws of thermodynamics and the quest to build a quantum computer.
+This article explores the powerful concepts behind single-bit [error correction](@keyword=error_correction|lang=en-US|style=Feynman). We will journey from intuitive brute-force methods to the sophisticated designs that form the bedrock of modern technology. The first chapter, **"Principles and Mechanisms,"** will unpack the core ideas of Hamming distance, parity bits, and the ingenious [syndrome decoding](@keyword=syndrome_decoding|lang=en-US|style=Feynman) method pioneered by Richard Hamming. Following this, the chapter on **"Applications and Interdisciplinary Connections"** will reveal the surprising universality of these principles, demonstrating their critical role in everything from computer hardware and neuroscience to the fundamental laws of thermodynamics and the quest to build a quantum computer.
 
 ## Principles and Mechanisms
 
@@ -11,7 +11,7 @@ Imagine you are trying to send a vital, one-word message—a simple "yes" or "no
 
 The most intuitive solution is simply to repeat yourself. Instead of sending "1", you send "111". If the receiver gets "101", they can take a majority vote and reasonably conclude you meant "1". This is the essence of a **repetition code**. It's a simple, robust method that can correct a single bit flip.
 
-But look at the cost. To send one bit of information, we had to transmit three. This ratio of useful information to the total transmitted bits is called the **[code rate](@article_id:175967)**. For our (3,1) repetition code (3 total bits for 1 information bit), the rate is a paltry $R = \frac{1}{3}$. If you wanted to send a high-resolution image from Mars, this kind of inefficiency would be a deal-breaker. As we'll see, we pay a price for this brute-force reliability. The chance of a successful transmission is high, but the information throughput is low . There must be a more clever way.
+But look at the cost. To send one bit of information, we had to transmit three. This ratio of useful information to the total transmitted bits is called the **[code rate](@keyword=code_rate|lang=en-US|style=Feynman)**. For our (3,1) repetition code (3 total bits for 1 information bit), the rate is a paltry $R = \frac{1}{3}$. If you wanted to send a high-resolution image from Mars, this kind of inefficiency would be a deal-breaker. As we'll see, we pay a price for this brute-force reliability. The chance of a successful transmission is high, but the information throughput is low [@problem_id:1622501]. There must be a more clever way.
 
 ### A New Geometry for Information
 
@@ -23,7 +23,7 @@ Now, our set of valid messages—the **codebook**—is a special constellation o
 
 For this "nearest neighbor" decoding to work, our original constellation points must be sufficiently far apart from each other. If two valid codewords are too close, a small amount of noise could make one look like the other, leading to a decoding error. The crucial property of our codebook is the smallest Hamming distance between any two distinct codewords. We call this the **minimum distance**, or $d_{\text{min}}$.
 
-Consider a hypothetical satellite that uses the codebook $C = \{000000, 111000, 000111, 101101\}$ . By calculating all the pairwise distances, we find the closest any two of these codewords get is 3. So, for this code, $d_{\text{min}} = 3$.
+Consider a hypothetical satellite that uses the codebook $C = \{000000, 111000, 000111, 101101\}$ [@problem_id:1633517]. By calculating all the pairwise distances, we find the closest any two of these codewords get is 3. So, for this code, $d_{\text{min}} = 3$.
 
 ### The Power of Separation
 
@@ -33,7 +33,7 @@ This single number, $d_{\text{min}}$, tells us almost everything about the power
 
 2.  **Error Correction**: To be guaranteed to *correct* any pattern of up to $t$ errors, a code must have $d_{\text{min}} \ge 2t + 1$. This is the "overlapping spheres" rule. Imagine placing a sphere of radius $t$ around each of your valid codewords. An error of up to $t$ bits will move your transmitted point somewhere inside its home sphere. For the decoder to unambiguously know which sphere it's in, the spheres cannot overlap. The distance from codeword A to codeword B must be greater than the radius of A's sphere plus the radius of B's sphere, so $d(A,B) > t + t$, or $d_{\text{min}} \ge 2t+1$.
 
-For our satellite code with $d_{\text{min}} = 3$, we find we can correct $t = \lfloor \frac{3-1}{2} \rfloor = 1$ error. It is a **[single-error-correcting code](@article_id:271454)**. What if a code had $d_{\text{min}} = 4$? It would still only be guaranteed to correct $t = \lfloor \frac{4-1}{2} \rfloor = 1$ error, but its detection capability would be stronger—it could detect any pattern of up to 3 errors .
+For our satellite code with $d_{\text{min}} = 3$, we find we can correct $t = \lfloor \frac{3-1}{2} \rfloor = 1$ error. It is a **[single-error-correcting code](@keyword=single_error_correcting_code|lang=en-US|style=Feynman)**. What if a code had $d_{\text{min}} = 4$? It would still only be guaranteed to correct $t = \lfloor \frac{4-1}{2} \rfloor = 1$ error, but its detection capability would be stronger—it could detect any pattern of up to 3 errors [@problem_id:1638269].
 
 ### Richard Hamming's Elegant Solution
 
@@ -41,13 +41,13 @@ Knowing that we need a high minimum distance is one thing; designing an efficien
 
 These parity bits don't carry new information. Instead, they act as watchmen, overseeing specific groups of data bits. Let's build the famous **(7,4) Hamming code** to see how this works. We want to send a 4-bit message, say $(d_1, d_2, d_3, d_4)$, by embedding it in a 7-bit codeword.
 
-The scheme is beautiful. The positions that are [powers of two](@article_id:195834) (1, 2, 4) are reserved for the parity bits, $(p_1, p_2, p_3)$. The other positions (3, 5, 6, 7) are filled with our data bits.
+The scheme is beautiful. The positions that are [powers of two](@keyword=powers_of_two|lang=en-US|style=Feynman) (1, 2, 4) are reserved for the parity bits, $(p_1, p_2, p_3)$. The other positions (3, 5, 6, 7) are filled with our data bits.
 
 -   $p_1$ watches over positions 1, 3, 5, 7.
 -   $p_2$ watches over positions 2, 3, 6, 7.
 -   $p_3$ watches over positions 4, 5, 6, 7.
 
-Each parity bit is chosen to make the sum of the bits in its group even (or, in [binary arithmetic](@article_id:173972), to make their sum 0). Let's encode the message `1011` .
+Each parity bit is chosen to make the sum of the bits in its group even (or, in [binary arithmetic](@keyword=binary_arithmetic|lang=en-US|style=Feynman), to make their sum 0). Let's encode the message `1011` [@problem_id:1373675].
 The data bits are $c_3=1, c_5=0, c_6=1, c_7=1$.
 -   For $p_1$ (position 1): $c_1 \oplus c_3 \oplus c_5 \oplus c_7 = c_1 \oplus 1 \oplus 0 \oplus 1 = c_1 \oplus 0 = 0$. So, $c_1=0$.
 -   For $p_2$ (position 2): $c_2 \oplus c_3 \oplus c_6 \oplus c_7 = c_2 \oplus 1 \oplus 1 \oplus 1 = c_2 \oplus 1 = 0$. So, $c_2=1$.
@@ -61,13 +61,13 @@ The true magic happens upon reception. Suppose the codeword is transmitted and c
 
 The pattern of failed checks forms a binary number that points *directly to the location of the error*. This pattern is called the **syndrome**.
 
-Let's see it in action. A deep-space probe receives the vector $y = (1, 0, 0, 1, 0, 1, 0)$. Is it valid? Let's check the parity groups :
+Let's see it in action. A deep-space probe receives the vector $y = (1, 0, 0, 1, 0, 1, 0)$. Is it valid? Let's check the parity groups [@problem_id:1627884]:
 -   Check 1 (positions 1, 3, 5, 7): $y_1 \oplus y_3 \oplus y_5 \oplus y_7 = 1 \oplus 0 \oplus 0 \oplus 0 = 1$. It fails! (Result should be 0).
 -   Check 2 (positions 2, 3, 6, 7): $y_2 \oplus y_3 \oplus y_6 \oplus y_7 = 0 \oplus 0 \oplus 1 \oplus 0 = 1$. It fails!
 -   Check 3 (positions 4, 5, 6, 7): $y_4 \oplus y_5 \oplus y_6 \oplus y_7 = 1 \oplus 0 \oplus 1 \oplus 0 = 0$. It passes.
 
 The failure pattern (syndrome) is (Check 3, Check 2, Check 1) = $(0, 1, 1)$. What is `011` in binary? It's the number 3. The error is in the 3rd bit! The receiver simply flips the 3rd bit of $y$ to get the corrected codeword and can then extract the original message. This is astonishingly elegant.
 
-This mechanism can be expressed more formally using a **[parity-check matrix](@article_id:276316)**, $H$. This matrix is the rulebook for our code. A vector $c$ is a valid codeword if and only if $Hc^T = 0$. For a received vector $r$, the syndrome is simply $s = Hr^T$. If a single error occurs at position $i$, the syndrome will be exactly equal to the $i$-th column of $H$.
+This mechanism can be expressed more formally using a **[parity-check matrix](@keyword=parity_check_matrix|lang=en-US|style=Feynman)**, $H$. This matrix is the rulebook for our code. A vector $c$ is a valid codeword if and only if $Hc^T = 0$. For a received vector $r$, the syndrome is simply $s = Hr^T$. If a single error occurs at position $i$, the syndrome will be exactly equal to the $i$-th column of $H$.
 
-This immediately reveals the blueprint for a perfect [single-error-correcting code](@article_id:271454): for the syndrome to uniquely identify any single-bit error, every column of the [parity-check matrix](@article_id:276316) $H$ must be **non-zero** (so every error has a non-zero syndrome and is detectable) and **unique** (so every error position has a unique syndrome) . If two columns, say column $i$ and column $j$, are identical, an error in position $i$ produces the exact same syndrome as an error in position $j$. The decoder can tell an error happened, but it can't distinguish between the two possibilities, leading to a potential decoding failure  .
+This immediately reveals the blueprint for a perfect [single-error-correcting code](@keyword=single_error_correcting_code|lang=en-US|style=Feynman): for the syndrome to uniquely identify any single-bit error, every column of the [parity-check matrix](@keyword=parity_check_matrix|lang=en-US|style=Feynman) $H$ must be **non-zero** (so every error has a non-zero syndrome and is detectable) and **unique** (so every error position has a unique syndrome) [@problem_id:1649664]. If two columns, say column $i$ and column $j$, are identical, an error in position $i$ produces the exact same syndrome as an error in position $j$. The decoder can tell an error happened, but it can't distinguish between the two possibilities, leading to a potential decoding failure [@problem_id:1662383] [@problem_id:1627837].

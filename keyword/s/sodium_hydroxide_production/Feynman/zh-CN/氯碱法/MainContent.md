@@ -1,7 +1,7 @@
 ## 引言
-氢氧化钠是现代化学工业的基石，是一种不可或缺的试剂，从造纸到药物合成等各个领域都有它的身影。但这种基础化学品是如何从地球上最丰富的资源之一——盐水中生产出来的呢？主要的方法是[氯碱法](@article_id:299438)，这是一项[电化学工程](@article_id:335069)的奇迹，它将简单的氯化钠和水转化为极具价值的氢氧化钠、氯气和氢气。核心挑战在于以精确和高效的方式大规模地驱动这一本身不会发生的转变。本文将探讨这一关键工业过程背后的科学。
+氢氧化钠是现代化学工业的基石，是一种不可或缺的试剂，从造纸到药物合成等各个领域都有它的身影。但这种基础化学品是如何从地球上最丰富的资源之一——盐水中生产出来的呢？主要的方法是[氯碱法](@keyword=chlor_alkali_process|lang=zh-CN|style=Feynman)，这是一项[电化学工程](@keyword=electrochemical_engineering|lang=zh-CN|style=Feynman)的奇迹，它将简单的氯化钠和水转化为极具价值的氢氧化钠、氯气和氢气。核心挑战在于以精确和高效的方式大规模地驱动这一本身不会发生的转变。本文将探讨这一关键工业过程背后的科学。
 
-为了理解从盐水到基础化学品的这一过程，我们将首先探讨生产的核心“原理与机理”。这一章将深入探讨[电解池](@article_id:297127)，考察[热力学](@article_id:359663)障碍、阳极和阴极的动力学竞争，以及决定[产率](@article_id:301843)的法拉第定律的严格计算。之后，文章将在“应用与跨学科联系”一章中拓宽视野。在这里，我们将发现氢氧化钠如何超越其工业起源，成为化学中的重要工具、生物技术中的生命支持组件，甚至是[公共卫生](@article_id:337559)的捍卫者，揭示其作为连接看似不相关的科学领域之间桥梁的深远作用。
+为了理解从盐水到基础化学品的这一过程，我们将首先探讨生产的核心“原理与机理”。这一章将深入探讨[电解池](@keyword=electrolytic_cells|lang=zh-CN|style=Feynman)，考察[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)障碍、阳极和阴极的动力学竞争，以及决定[产率](@keyword=percent_yield|lang=zh-CN|style=Feynman)的法拉第定律的严格计算。之后，文章将在“应用与跨学科联系”一章中拓宽视野。在这里，我们将发现氢氧化钠如何超越其工业起源，成为化学中的重要工具、生物技术中的生命支持组件，甚至是[公共卫生](@keyword=public_health|lang=zh-CN|style=Feynman)的捍卫者，揭示其作为连接看似不相关的科学领域之间桥梁的深远作用。
 
 ## 原理与机理
 
@@ -9,13 +9,13 @@
 
 $$2\,\text{NaCl}(aq) + 2\,\text{H}_2\text{O}(l) \to 2\,\text{NaOH}(aq) + \text{Cl}_2(g) + \text{H}_2(g)$$
 
-现在，如果你只让一桶盐水静置，它将永远是盐水。我们[期望](@article_id:311378)的反应不会自行发生；用[热力学](@article_id:359663)的语言来说，它是非自发的。要使其发生，我们必须提供能量。最优雅且可控的方式是使用电。我们将构建一个**电解池**。
+现在，如果你只让一桶盐水静置，它将永远是盐水。我们[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)的反应不会自行发生；用[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)的语言来说，它是非自发的。要使其发生，我们必须提供能量。最优雅且可控的方式是使用电。我们将构建一个**电解池**。
 
-基本思想很简单：我们将两个电极，一个**阳极**和一个**阴极**，插入盐水中，并将其连接到电源。电源就像一个电子泵，将电子从阳极中抽出并推入[阴极](@article_id:306592)。这种[电荷](@article_id:339187)的强制移动驱动了[化学反应](@article_id:307389)。
+基本思想很简单：我们将两个电极，一个**阳极**和一个**阴极**，插入盐水中，并将其连接到电源。电源就像一个电子泵，将电子从阳极中抽出并推入[阴极](@keyword=cathode|lang=zh-CN|style=Feynman)。这种[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的强制移动驱动了[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)。
 
-### [热力学](@article_id:359663)障碍：入场券的价格
+### [热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)障碍：入场券的价格
 
-在我们开始之前，自然要求一定的最低能量支付。存在一个理论上的最低电压，称为**[平衡电位](@article_id:346221)**或**[分解电压](@article_id:339135)**，低于此电压，任何事情都不会发生。把它想象成你必须将一块石头举到最小高度，它才能滚下山坡。这个电压不是一个固定数值；它精细地依赖于温度和所涉及化学物质的浓度，这种关系被[能斯特方程](@article_id:307334)优美地描述。在典型的工业条件下，这个电压大约是 $2.2$ 伏特 。任何低于此值的电压，盐水都只会静静地待着，对你的努力无动于衷。这个电压是迫使原子重新[排列](@article_id:296886)成新结构的基本“入场券价格”。
+在我们开始之前，自然要求一定的最低能量支付。存在一个理论上的最低电压，称为**[平衡电位](@keyword=equilibrium_potential|lang=zh-CN|style=Feynman)**或**[分解电压](@keyword=decomposition_potential|lang=zh-CN|style=Feynman)**，低于此电压，任何事情都不会发生。把它想象成你必须将一块石头举到最小高度，它才能滚下山坡。这个电压不是一个固定数值；它精细地依赖于温度和所涉及化学物质的浓度，这种关系被[能斯特方程](@keyword=nernst_equation|lang=zh-CN|style=Feynman)优美地描述。在典型的工业条件下，这个电压大约是 $2.2$ 伏特 [@problem_id:2936072]。任何低于此值的电压，盐水都只会静静地待着，对你的努力无动于衷。这个电压是迫使原子重新[排列](@keyword=permutation|lang=zh-CN|style=Feynman)成新结构的基本“入场券价格”。
 
 但故事从这里开始变得真正有趣。一旦我们同意支付代价并施加足够的电压，我们便面临一个选择。在每个电极上，都可能发生不止一种反应。我们的成功取决于巧妙地在这些相互竞争的路径中导航。
 
@@ -29,15 +29,15 @@ $$2\text{Cl}^- (aq) \to \text{Cl}_2 (g) + 2e^-$$
 
 $$2\text{H}_2\text{O}(l) \to \text{O}_2(g) + 4\text{H}^+(aq) + 4e^-$$
 
-如果你查阅[标准电极电位](@article_id:323225)——这些反应“难易程度”的教科书数值——你会发现生成氧气（$E^\circ = +1.23 \text{ V}$）似乎比生成氯气（$E^\circ = +1.36 \text{ V}$）更容易。仅凭这一点，我们应该会产生大量无用的氧气，而几乎得不到我们想要的宝贵氯气。
+如果你查阅[标准电极电位](@keyword=standard_electrode_potential|lang=zh-CN|style=Feynman)——这些反应“难易程度”的教科书数值——你会发现生成氧气（$E^\circ = +1.23 \text{ V}$）似乎比生成氯气（$E^\circ = +1.36 \text{ V}$）更容易。仅凭这一点，我们应该会产生大量无用的氧气，而几乎得不到我们想要的宝贵氯气。
 
-那么，为什么[氯碱法](@article_id:299438)能行得通呢？秘密在于一种被称为**[过电位](@article_id:299877)**的迷人动力学现象。把[过电位](@article_id:299877)想象成一种“能量附加费”或在特定表面上特定反应的活化能垒。虽然从[热力学](@article_id:359663)上讲，制取氧气可能更“便宜”，但在工业中使用的特制阳极材料上，该反应进行得极其缓慢。这就像有两条上山的路：一条较短，但起点是陡峭的悬崖；另一条较长，但起点是平缓的斜坡。悬崖面就是析氧反应的高过电位。平缓的斜坡就是析氯反应的低过电位。通过明智地选择我们的阳极材料（现代[电解池](@article_id:297127)使用所谓的尺寸稳定阳极），我们可以创造一种情况，即氯气反应尽管理论成本更高，却能更容易地进行。氧气的高过电位（$0.80 \text{ V}$ 或更高）起到了屏障作用，有效地关闭了该路径，使得氯气反应（过电位仅约 $0.12 \text{ V}$）占据主导地位 。这种选择性催化是化学工程的杰作，将[热力学](@article_id:359663)上的劣势转变为动力学上的胜利。
+那么，为什么[氯碱法](@keyword=chlor_alkali_process|lang=zh-CN|style=Feynman)能行得通呢？秘密在于一种被称为**[过电位](@keyword=overpotential|lang=zh-CN|style=Feynman)**的迷人动力学现象。把[过电位](@keyword=overpotential|lang=zh-CN|style=Feynman)想象成一种“能量附加费”或在特定表面上特定反应的活化能垒。虽然从[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)上讲，制取氧气可能更“便宜”，但在工业中使用的特制阳极材料上，该反应进行得极其缓慢。这就像有两条上山的路：一条较短，但起点是陡峭的悬崖；另一条较长，但起点是平缓的斜坡。悬崖面就是析氧反应的高过电位。平缓的斜坡就是析氯反应的低过电位。通过明智地选择我们的阳极材料（现代[电解池](@keyword=electrolytic_cells|lang=zh-CN|style=Feynman)使用所谓的尺寸稳定阳极），我们可以创造一种情况，即氯气反应尽管理论成本更高，却能更容易地进行。氧气的高过电位（$0.80 \text{ V}$ 或更高）起到了屏障作用，有效地关闭了该路径，使得氯气反应（过电位仅约 $0.12 \text{ V}$）占据主导地位 [@problem_id:1475722]。这种选择性催化是化学工程的杰作，将[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)上的劣势转变为动力学上的胜利。
 
-当然，这个技巧并非万无一失。如果你太贪心，将电压调得过高，你也会开始为氧气的产生支付“附加费”。在过高的[过电位](@article_id:299877)下，析氧反应开始启动，与氯气生产竞争，从而降低了过程的整体效率 。
+当然，这个技巧并非万无一失。如果你太贪心，将电压调得过高，你也会开始为氧气的产生支付“附加费”。在过高的[过电位](@keyword=overpotential|lang=zh-CN|style=Feynman)下，析氧反应开始启动，与氯气生产竞争，从而降低了过程的整体效率 [@problem_id:1576705]。
 
-### [阴极](@article_id:306592)的选择：氢气还是钠？
+### [阴极](@keyword=cathode|lang=zh-CN|style=Feynman)的选择：氢气还是钠？
 
-类似的剧情在[阴极](@article_id:306592)上演，[阴极](@article_id:306592)是电子被加入的电极（这一过程称为**还原**）。在这里，水可以被还原生成氢气和氢氧根离子（$\text{OH}^-$）——我们氢氧化钠的来源：
+类似的剧情在[阴极](@keyword=cathode|lang=zh-CN|style=Feynman)上演，[阴极](@keyword=cathode|lang=zh-CN|style=Feynman)是电子被加入的电极（这一过程称为**还原**）。在这里，水可以被还原生成氢气和氢氧根离子（$\text{OH}^-$）——我们氢氧化钠的来源：
 
 $$2\text{H}_2\text{O}(l) + 2e^- \to \text{H}_2(g) + 2\text{OH}^-(aq)$$
 
@@ -45,34 +45,34 @@ $$2\text{H}_2\text{O}(l) + 2e^- \to \text{H}_2(g) + 2\text{OH}^-(aq)$$
 
 $$\text{Na}^+(aq) + e^- \to \text{Na}(s)$$
 
-在这场竞争中，毫无悬念。水的还原远比钠离子的还原容易得多。如果你使用像钢或镍这样的标准电极材料，你将产生氢气，这正是现代离子膜电解槽所做的。钠离子则未受影响，只是与水还原产生的氢氧根[离子配对](@article_id:307312)，形成我们想要的 $\text{NaOH}$ 溶液。
+在这场竞争中，毫无悬念。水的还原远比钠离子的还原容易得多。如果你使用像钢或镍这样的标准电极材料，你将产生氢气，这正是现代离子膜电解槽所做的。钠离子则未受影响，只是与水还原产生的氢氧根[离子配对](@keyword=ion_pairing|lang=zh-CN|style=Feynman)，形成我们想要的 $\text{NaOH}$ 溶液。
 
-然而，在很长一段时间里，人们使用了一种不同的、极其巧妙的方法：汞[电解池](@article_id:297127)法，或称 Castner-Kellner 法。液态汞有一个奇特的性质：它对水的还原具有极大的[过电位](@article_id:299877)。这使得产生氢气这个“简单”的反应在动力学上变得非常困难。这个高壁垒扭转了局面，使得“困难”的反应——即钠离子的还原——得以发生 。但等等，纯金属钠不是应该会立即与水发生剧烈反应吗？如果是纯的，确实会。汞[电解池](@article_id:297127)的巧妙之处在于，新形成的钠原子不会形成一个独立的金属相。相反，它们会立即溶解到液态汞[阴极](@article_id:306592)中，形成一种称为**钠汞齐**的稳定溶液 。这种汞齐随后被泵入一个独立的腔室，在那里它与纯水的反应可以被安全地控制，以生产高纯度的氢氧化钠和氢气，并使汞再生以供重复使用。尽管出于环保考虑，汞电解池已被逐步淘汰，但它们仍然是动力学原理如何被用来实现看似不可能的化学转变的绝佳例证。
+然而，在很长一段时间里，人们使用了一种不同的、极其巧妙的方法：汞[电解池](@keyword=electrolytic_cells|lang=zh-CN|style=Feynman)法，或称 Castner-Kellner 法。液态汞有一个奇特的性质：它对水的还原具有极大的[过电位](@keyword=overpotential|lang=zh-CN|style=Feynman)。这使得产生氢气这个“简单”的反应在动力学上变得非常困难。这个高壁垒扭转了局面，使得“困难”的反应——即钠离子的还原——得以发生 [@problem_id:1581568]。但等等，纯金属钠不是应该会立即与水发生剧烈反应吗？如果是纯的，确实会。汞[电解池](@keyword=electrolytic_cells|lang=zh-CN|style=Feynman)的巧妙之处在于，新形成的钠原子不会形成一个独立的金属相。相反，它们会立即溶解到液态汞[阴极](@keyword=cathode|lang=zh-CN|style=Feynman)中，形成一种称为**钠汞齐**的稳定溶液 [@problem_id:2244910]。这种汞齐随后被泵入一个独立的腔室，在那里它与纯水的反应可以被安全地控制，以生产高纯度的氢氧化钠和氢气，并使汞再生以供重复使用。尽管出于环保考虑，汞电解池已被逐步淘汰，但它们仍然是动力学原理如何被用来实现看似不可能的化学转变的绝佳例证。
 
-### 永不失误的会计师：[法拉第定律](@article_id:310255)
+### 永不失误的会计师：[法拉第定律](@keyword=faraday_s_laws|lang=zh-CN|style=Feynman)
 
-我们已经选定了反应。但我们能得到多少产物呢？在这里，自然界遵循着一条由 Michael Faraday 发现的、极其简洁的定律。**[法拉第电解定律](@article_id:303010)**指出，[化学变化](@article_id:304901)的量与通过[电解池](@article_id:297127)的总[电荷](@article_id:339187)量成正比。
+我们已经选定了反应。但我们能得到多少产物呢？在这里，自然界遵循着一条由 Michael Faraday 发现的、极其简洁的定律。**[法拉第电解定律](@keyword=faraday_s_laws_of_electrolysis|lang=zh-CN|style=Feynman)**指出，[化学变化](@keyword=chemical_change|lang=zh-CN|style=Feynman)的量与通过[电解池](@keyword=electrolytic_cells|lang=zh-CN|style=Feynman)的总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量成正比。
 
-电子是一个基本粒子，一个离散的实体。当我们驱动电流时，我们实际上是让一支庞大的电子军队穿过我们的电解池。对于我们推过电路的每两个电子，[平衡方程](@article_id:351296)式告诉我们，阳极上会精确地形成一个 $\text{Cl}_2$ 分子，而[阴极](@article_id:306592)上会精确地形成一个 $\text{H}_2$ 分子和两个 $\text{OH}^-$ 离子。这里没有任何模糊之处。这是一种完美的、一对一（或二对一）的对应关系。
+电子是一个基本粒子，一个离散的实体。当我们驱动电流时，我们实际上是让一支庞大的电子军队穿过我们的电解池。对于我们推过电路的每两个电子，[平衡方程](@keyword=equilibrium_equations|lang=zh-CN|style=Feynman)式告诉我们，阳极上会精确地形成一个 $\text{Cl}_2$ 分子，而[阴极](@keyword=cathode|lang=zh-CN|style=Feynman)上会精确地形成一个 $\text{H}_2$ 分子和两个 $\text{OH}^-$ 离子。这里没有任何模糊之处。这是一种完美的、一对一（或二对一）的对应关系。
 
-这意味着我们可以进行定量计算。总[电荷](@article_id:339187) $Q$ 是电流 $I$ 乘以时间 $t$。一个[基本常数](@article_id:309193)，**法拉第常数**（$F \approx 96,485$ 库仑/摩尔），告诉我们一摩尔电子的[电荷](@article_id:339187)量。因此，通过测量电流和时间，我们可以“计算”出完成工作的电子的摩尔数。
+这意味着我们可以进行定量计算。总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman) $Q$ 是电流 $I$ 乘以时间 $t$。一个[基本常数](@keyword=fundamental_constants|lang=zh-CN|style=Feynman)，**法拉第常数**（$F \approx 96,485$ 库仑/摩尔），告诉我们一摩尔电子的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量。因此，通过测量电流和时间，我们可以“计算”出完成工作的电子的摩尔数。
 
 $$ \text{moles of electrons} = \frac{Q}{F} = \frac{I \times t}{F} $$
 
-一旦我们知道了电子的摩尔数，我们所选反应的[化学计量关系](@article_id:304922)就能告诉我们产物的确切摩尔数。例如，由于一摩尔电子产生一摩尔的 NaOH，我们能够高精度地计算出，以 $1.50 \times 10^5$ 安培的电流运行8小时，将产生近1.8公吨的氢氧化钠 。我们也可以反向计算：如果我们收集了 $125 \text{ m}^3$ 的氯气，我们就知道我们必须同时生产了大约 $409 \text{ kg}$ 的氢氧化钠 。这种严格的记账方式使得电化学生产如此可控和可预测。我们甚至可以定义一个**电化学当量**——每库仑[电荷](@article_id:339187)产生的产物质量——对于 NaOH 来说，这是一个微小但恒定的值，约为 $4.145 \times 10^{-7} \text{ kg/C}$ 。
+一旦我们知道了电子的摩尔数，我们所选反应的[化学计量关系](@keyword=stoichiometric_relationships|lang=zh-CN|style=Feynman)就能告诉我们产物的确切摩尔数。例如，由于一摩尔电子产生一摩尔的 NaOH，我们能够高精度地计算出，以 $1.50 \times 10^5$ 安培的电流运行8小时，将产生近1.8公吨的氢氧化钠 [@problem_id:1994234]。我们也可以反向计算：如果我们收集了 $125 \text{ m}^3$ 的氯气，我们就知道我们必须同时生产了大约 $409 \text{ kg}$ 的氢氧化钠 [@problem_id:1592548]。这种严格的记账方式使得电化学生产如此可控和可预测。我们甚至可以定义一个**电化学当量**——每库仑[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)产生的产物质量——对于 NaOH 来说，这是一个微小但恒定的值，约为 $4.145 \times 10^{-7} \text{ kg/C}$ [@problem_id:1592571]。
 
 ### 支付全价：现实世界的能源成本
 
-我们现在有了一幅完整的图景：我们使用电压来克服[热力学](@article_id:359663)壁垒，并利用过电位来选择我们的产物，而法拉第定律告诉我们能得到多少产物。但总的能源账单是多少呢？
+我们现在有了一幅完整的图景：我们使用电压来克服[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)壁垒，并利用过电位来选择我们的产物，而法拉第定律告诉我们能得到多少产物。但总的能源账单是多少呢？
 
-电解池的实际工作电压总是高于理论上的最低[分解电压](@article_id:339135)。这部分额外的电压代表了不可逆的损失——能量以热量的形式浪费掉，而没有用于化学转化。这些损失主要来自两个方面：
+电解池的实际工作电压总是高于理论上的最低[分解电压](@keyword=decomposition_potential|lang=zh-CN|style=Feynman)。这部分额外的电压代表了不可逆的损失——能量以热量的形式浪费掉，而没有用于化学转化。这些损失主要来自两个方面：
 
-1.  **动力学损失（[过电位](@article_id:299877)）：** 我们巧妙用来选择产物的[过电位](@article_id:299877)，从能量角度看，是一种税。我们必须在电压上“多付”，以使反应以商业上可行的速度进行。总工作电压必须包括这些阳极和[阴极](@article_id:306592)的[过电位](@article_id:299877)。
+1.  **动力学损失（[过电位](@keyword=overpotential|lang=zh-CN|style=Feynman)）：** 我们巧妙用来选择产物的[过电位](@keyword=overpotential|lang=zh-CN|style=Feynman)，从能量角度看，是一种税。我们必须在电压上“多付”，以使反应以商业上可行的速度进行。总工作电压必须包括这些阳极和[阴极](@keyword=cathode|lang=zh-CN|style=Feynman)的[过电位](@keyword=overpotential|lang=zh-CN|style=Feynman)。
 
-2.  **欧姆损失（电阻）：** 盐水、NaOH溶液、分隔它们的膜以及电极本身都具有电阻。就像电线一样，它们阻碍电流的流动。将工业所需的大量电流推过这个电阻会产生显著的电压降，这由欧姆定律（$V=IR$）描述。这个[电压降](@article_id:327355)除了产生[废热](@article_id:300406)外一无是处。现代[电解池](@article_id:297127)设计就是一场持续不断的战斗，旨在最小化这种电阻。例如，将膜与阴极之间的间隙从区区3毫米减小到几乎为零，每平方米电极面积就可以节省数百瓦的功率 。
+2.  **欧姆损失（电阻）：** 盐水、NaOH溶液、分隔它们的膜以及电极本身都具有电阻。就像电线一样，它们阻碍电流的流动。将工业所需的大量电流推过这个电阻会产生显著的电压降，这由欧姆定律（$V=IR$）描述。这个[电压降](@keyword=voltage_droop|lang=zh-CN|style=Feynman)除了产生[废热](@keyword=waste_heat|lang=zh-CN|style=Feynman)外一无是处。现代[电解池](@keyword=electrolytic_cells|lang=zh-CN|style=Feynman)设计就是一场持续不断的战斗，旨在最小化这种电阻。例如，将膜与阴极之间的间隙从区区3毫米减小到几乎为零，每平方米电极面积就可以节省数百瓦的功率 [@problem_id:1592574]。
 
-现实世界中[电解池](@article_id:297127)的最终工作电压是所有这些部分的总和：
+现实世界中[电解池](@keyword=electrolytic_cells|lang=zh-CN|style=Feynman)的最终工作电压是所有这些部分的总和：
 
 $$V_{\text{operating}} = V_{\text{equilibrium}} + \eta_{\text{anode}} + |\eta_{\text{cathode}}| + V_{\text{ohmic}}$$
 
-详细分析表明，对于一个典型的[电解池](@article_id:297127)，理论上的 $2.2 \text{ V}$ 可能会因为过电位和欧姆损失而膨胀到超过 $3.1 \text{ V}$ 的最终工作电压 。这个总电压乘以总[电荷](@article_id:339187)，就得到了总能耗。对于一个现代化工厂来说，每生产一公吨氢氧化钠，这就相当于惊人的 $2230$ [千瓦时](@article_id:305857)电能 。理解并最小化这个等式中的每一个组成部分——基本的[热力学](@article_id:359663)、[电极动力学](@article_id:321217)和简单的电阻——是氯碱工业核心中宏大而持续的挑战。
+详细分析表明，对于一个典型的[电解池](@keyword=electrolytic_cells|lang=zh-CN|style=Feynman)，理论上的 $2.2 \text{ V}$ 可能会因为过电位和欧姆损失而膨胀到超过 $3.1 \text{ V}$ 的最终工作电压 [@problem_id:2936072]。这个总电压乘以总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，就得到了总能耗。对于一个现代化工厂来说，每生产一公吨氢氧化钠，这就相当于惊人的 $2230$ [千瓦时](@keyword=kilowatt_hour|lang=zh-CN|style=Feynman)电能 [@problem_id:1592531]。理解并最小化这个等式中的每一个组成部分——基本的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)、[电极动力学](@keyword=electrode_kinetics|lang=zh-CN|style=Feynman)和简单的电阻——是氯碱工业核心中宏大而持续的挑战。

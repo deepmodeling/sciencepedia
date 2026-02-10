@@ -1,5 +1,5 @@
 ## Introduction
-In the study of natural phenomena, we often rely on linear equations for their simplicity and predictability. However, the real world is inherently nonlinear, full of complex interactions and [feedback loops](@article_id:264790) that [linear models](@article_id:177808) cannot capture. This gap between tractable [linear models](@article_id:177808) and complex reality is one of the central challenges in science and engineering. The Bernoulli differential equation stands as a fascinating bridge across this divide—an equation that appears almost linear, yet contains a critical nonlinear term that unlocks a wealth of complex behavior.
+In the study of natural phenomena, we often rely on linear equations for their simplicity and predictability. However, the real world is inherently nonlinear, full of complex interactions and [feedback loops](@keyword=feedback_loops|lang=en-US|style=Feynman) that [linear models](@keyword=linear_models|lang=en-US|style=Feynman) cannot capture. This gap between tractable [linear models](@keyword=linear_models|lang=en-US|style=Feynman) and complex reality is one of the central challenges in science and engineering. The Bernoulli differential equation stands as a fascinating bridge across this divide—an equation that appears almost linear, yet contains a critical nonlinear term that unlocks a wealth of complex behavior.
 
 This article tackles the challenge posed by this nonlinearity head-on, providing a clear guide to its structure and solution. We will explore how a seemingly difficult nonlinear problem can be elegantly solved. The journey begins in the "Principles and Mechanisms" section, where we will uncover the clever substitution that tames the Bernoulli equation, transforming it into a familiar linear problem and exploring the unique behaviors, like finite-time blow-ups, that it can describe. Following this, the "Applications and Interdisciplinary Connections" section will reveal the equation's remarkable versatility, showing how this single mathematical structure models an incredible variety of phenomena, establishing it as a fundamental pattern in nature's language.
 
@@ -19,7 +19,7 @@ $$
 $$
 It looks so familiar! The only difference is that the term on the right is multiplied by $y^n$, where $n$ is some number. It seems like a small change, but it makes all the difference.
 
-You might ask, is this equation ever linear? Yes, but only in two very special, almost trivial, cases . If $n=0$, the $y^n$ term becomes $y^0 = 1$, and we get $y' + p(x)y = q(x)$—our old linear friend. If $n=1$, we can just rearrange the terms to get $y' + (p(x) - q(x))y = 0$, which is also linear.
+You might ask, is this equation ever linear? Yes, but only in two very special, almost trivial, cases [@problem_id:2184216]. If $n=0$, the $y^n$ term becomes $y^0 = 1$, and we get $y' + p(x)y = q(x)$—our old linear friend. If $n=1$, we can just rearrange the terms to get $y' + (p(x) - q(x))y = 0$, which is also linear.
 
 But for any other value of $n$—be it $2$, $3$, $-1$, or even $\frac{1}{2}$—that little exponent couples the function $y$ to itself in a nonlinear way. The simple, proportional relationship is broken. Doubling the input no longer doubles the output. This term, $q(x)y^n$, is the source of all the trouble, and all the fun. It's what allows for the rich, complex, and sometimes shocking behavior that we will soon explore. So, how do we handle this "impostor"?
 
@@ -36,7 +36,7 @@ This might seem like a mysterious choice, a rabbit pulled from a hat. But let’
 2.  **Define the new variable** $v$ using the rule above.
 3.  **Substitute** both $v$ and its derivative, $v'$, into the equation.
 
-Let's see this in action. Consider an equation describing some physical process: $2x^3 y' - 2x^2 y = -3y^3$ . First, we put it into the standard Bernoulli form by dividing by $2x^3$:
+Let's see this in action. Consider an equation describing some physical process: $2x^3 y' - 2x^2 y = -3y^3$ [@problem_id:2203395]. First, we put it into the standard Bernoulli form by dividing by $2x^3$:
 $$
 \frac{dy}{dx} - \frac{1}{x}y = -\frac{3}{2x^3}y^3
 $$
@@ -50,13 +50,13 @@ Let's clean this up. The first term is exactly $\frac{dv}{dx}$. The second term 
 $$
 \frac{dv}{dx} + \frac{2}{x}v = \frac{3}{x^3}
 $$
-Look at that! We are back in the comfortable, predictable world of [linear equations](@article_id:150993). The alchemist's trick worked. The substitution acted as a [perfect lens](@article_id:196883), transforming the tangled, nonlinear problem in $y$ into a straightforward linear problem in $v$  .
+Look at that! We are back in the comfortable, predictable world of [linear equations](@keyword=linear_equations|lang=en-US|style=Feynman). The alchemist's trick worked. The substitution acted as a [perfect lens](@keyword=perfect_lens|lang=en-US|style=Feynman), transforming the tangled, nonlinear problem in $y$ into a straightforward linear problem in $v$ [@problem_id:2161394] [@problem_id:2203442].
 
 ### From Blueprint to Solution
 
 Of course, transforming the equation is only half the battle. We still need to solve it. But the key is that we now have a standard blueprint. Solving first-order linear equations is a well-understood procedure, often done using a tool called an **integrating factor**. We don't need to get lost in the details of that method here; the important point is that it's a reliable, mechanical process.
 
-Let's walk through one full example to see the complete journey . Consider the equation:
+Let's walk through one full example to see the complete journey [@problem_id:7960]. Consider the equation:
 $$
 \frac{dy}{dx} + \frac{1}{x}y = x y^2
 $$
@@ -72,7 +72,7 @@ But we want the solution for $y$, not $v$. So, we just look back through our mag
 $$
 y(x) = \frac{1}{Cx - x^2}
 $$
-And there you have it. A complete solution to the nonlinear problem, found by taking a temporary detour into the linear world. This procedure is remarkably robust. It works just as well for an equation with a square root, like $y' + 2y = 4x\sqrt{y}$ where $n=\frac{1}{2}$ , as it does for integer powers.
+And there you have it. A complete solution to the nonlinear problem, found by taking a temporary detour into the linear world. This procedure is remarkably robust. It works just as well for an equation with a square root, like $y' + 2y = 4x\sqrt{y}$ where $n=\frac{1}{2}$ [@problem_id:7948], as it does for integer powers.
 
 ### The Wild Side of Nonlinearity
 
@@ -82,21 +82,21 @@ Now that we have a tool to tame the Bernoulli equation, we can step back and adm
 
 In a simple linear system, things don't generally "blow up." A population might grow exponentially, but it takes an infinite amount of time to reach an infinite size. Nonlinear systems are not so patient.
 
-Consider a system where a [linear decay](@article_id:198441) term competes with a nonlinear growth term, modelled by an equation like this :
+Consider a system where a [linear decay](@keyword=linear_decay|lang=en-US|style=Feynman) term competes with a nonlinear growth term, modelled by an equation like this [@problem_id:1149281]:
 $$
 \frac{dy}{dt} + \frac{1}{t}y = y^2
 $$
-The term $\frac{1}{t}y$ tries to make the system decay, while the $y^2$ term (which can arise in [population models](@article_id:154598) or chemical reactions where two particles of type $y$ must meet) tries to make it grow explosively. Who wins?
+The term $\frac{1}{t}y$ tries to make the system decay, while the $y^2$ term (which can arise in [population models](@keyword=population_models|lang=en-US|style=Feynman) or chemical reactions where two particles of type $y$ must meet) tries to make it grow explosively. Who wins?
 
 It depends on the initial conditions. Solving this equation with the initial state $y(1)=y_1$ gives the solution:
 $$
 y(t) = \frac{1}{t\left(\frac{1}{y_1} - \ln t\right)}
 $$
-Notice the denominator. If the term in the parentheses becomes zero, the solution $y(t)$ will shoot off to infinity. This happens when $\ln t = \frac{1}{y_1}$, or at a specific, finite time $t_{blowup} = \exp(1/y_1)$. This is a **finite-time singularity**. The system doesn't just grow forever; it reaches an infinite value at a concrete moment in time. This "blow-up" behavior is a hallmark of the nonlinear world, a direct and dramatic consequence of the $y^2$ term overwhelming the [linear decay](@article_id:198441).
+Notice the denominator. If the term in the parentheses becomes zero, the solution $y(t)$ will shoot off to infinity. This happens when $\ln t = \frac{1}{y_1}$, or at a specific, finite time $t_{blowup} = \exp(1/y_1)$. This is a **finite-time singularity**. The system doesn't just grow forever; it reaches an infinite value at a concrete moment in time. This "blow-up" behavior is a hallmark of the nonlinear world, a direct and dramatic consequence of the $y^2$ term overwhelming the [linear decay](@keyword=linear_decay|lang=en-US|style=Feynman).
 
 #### The Bridge Between Worlds: Perturbation
 
-What if the nonlinearity is very weak? Imagine our equation is $y' + y = \epsilon y^2$, where $\epsilon$ is a tiny positive number . If $\epsilon$ were zero, we'd have the simple linear equation $y'+y=0$, with the solution $y(x) = e^{-x}$ (for an initial condition $y(0)=1$).
+What if the nonlinearity is very weak? Imagine our equation is $y' + y = \epsilon y^2$, where $\epsilon$ is a tiny positive number [@problem_id:1134471]. If $\epsilon$ were zero, we'd have the simple linear equation $y'+y=0$, with the solution $y(x) = e^{-x}$ (for an initial condition $y(0)=1$).
 
 When $\epsilon$ is small, it feels like the solution shouldn't be *that* different. The nonlinearity is just a gentle "nudge" on the linear behavior. This is the central idea behind **perturbation theory**, a powerful tool in physics. We guess that the solution is the original linear one, plus a small correction proportional to $\epsilon$:
 $$

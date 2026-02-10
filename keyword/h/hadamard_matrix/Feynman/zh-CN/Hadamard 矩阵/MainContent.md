@@ -9,23 +9,23 @@
 
 ### 问题的核心：极端世界中的正交性
 
-让我们说得更精确一些。一个 $n \times n$ 矩阵 $H$ 如果其元素仅为 $+1$ 或 $-1$，并且其行向量相互正交，那么它就是一个 **Hadamard 矩阵**。用几何学的语言来说，如果你将每一行都看作是 $n$ 维空间中的一个向量，那么这些向量彼此之间都是相互垂直的。从代数上讲，这意味着如果你取任意两个不同的行，将它们对应的元素相乘，然后将所有乘积相加——即计算[点积](@article_id:309438)——你将得到精确的零。
+让我们说得更精确一些。一个 $n \times n$ 矩阵 $H$ 如果其元素仅为 $+1$ 或 $-1$，并且其行向量相互正交，那么它就是一个 **Hadamard 矩阵**。用几何学的语言来说，如果你将每一行都看作是 $n$ 维空间中的一个向量，那么这些向量彼此之间都是相互垂直的。从代数上讲，这意味着如果你取任意两个不同的行，将它们对应的元素相乘，然后将所有乘积相加——即计算[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)——你将得到精确的零。
 
-这个正交性条件可以被一个简洁而强大的[矩阵方程](@article_id:382321)所概括：
+这个正交性条件可以被一个简洁而强大的[矩阵方程](@keyword=matrix_equations|lang=zh-CN|style=Feynman)所概括：
 
 $$
 HH^T = nI_n
 $$
 
-这里，$H^T$ 是 $H$ 的转置（通过将矩阵沿主对角线翻转得到），而 $I_n$ 是 $n \times n$ 的[单位矩阵](@article_id:317130)（对角线上为 1，其他位置均为 0 的矩阵）。这个方程为什么成立？乘积 $HH^T$ 中第 $i$ 行第 $j$ 列的元素是 $H$ 的第 $i$ 行与 $H$ 的第 $j$ 行的[点积](@article_id:309438)。如果 $i = j$，你计算的是一行与自身的[点积](@article_id:309438)。由于每个元素都是 $(\pm 1)$，它们的平方都是 $+1$。将它们相加得到 $n$。如果 $i \neq j$，根据我们的正交规则，[点积](@article_id:309438)为零。因此，乘积矩阵的对角线上是 $n$，其他位置都是 0，这正是 $nI_n$。
+这里，$H^T$ 是 $H$ 的转置（通过将矩阵沿主对角线翻转得到），而 $I_n$ 是 $n \times n$ 的[单位矩阵](@keyword=identity_matrix|lang=zh-CN|style=Feynman)（对角线上为 1，其他位置均为 0 的矩阵）。这个方程为什么成立？乘积 $HH^T$ 中第 $i$ 行第 $j$ 列的元素是 $H$ 的第 $i$ 行与 $H$ 的第 $j$ 行的[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)。如果 $i = j$，你计算的是一行与自身的[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)。由于每个元素都是 $(\pm 1)$，它们的平方都是 $+1$。将它们相加得到 $n$。如果 $i \neq j$，根据我们的正交规则，[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)为零。因此，乘积矩阵的对角线上是 $n$，其他位置都是 0，这正是 $nI_n$。
 
-这一个方程是 Hadamard 矩阵的“宪法”，并赋予了它们一种近乎神奇的性质。如果你需要求一个[矩阵的逆](@article_id:300823)，通常需要经过一整套繁琐的计算。但对于 Hadamard 矩阵，它的[逆矩阵](@article_id:300823)简直是信手拈来。从上面的方程，我们可以立即看出：
+这一个方程是 Hadamard 矩阵的“宪法”，并赋予了它们一种近乎神奇的性质。如果你需要求一个[矩阵的逆](@keyword=matrix_inverse|lang=zh-CN|style=Feynman)，通常需要经过一整套繁琐的计算。但对于 Hadamard 矩阵，它的[逆矩阵](@keyword=matrix_inverse|lang=zh-CN|style=Feynman)简直是信手拈来。从上面的方程，我们可以立即看出：
 
 $$
 H^{-1} = \frac{1}{n}H^T
 $$
 
-对于一个大矩阵来说，这简直是一个计算上的奇迹！求逆这个通常要求很高的任务，被简化为仅仅转置矩阵并除以其大小 。
+对于一个大矩阵来说，这简直是一个计算上的奇迹！求逆这个通常要求很高的任务，被简化为仅仅转置矩阵并除以其大小 [@problem_id:1050650]。
 
 ### 游戏规则：这样的矩阵何时存在？
 
@@ -35,7 +35,7 @@ $$
 H_2 = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}
 $$
 
-这两行的[点积](@article_id:309438)是 $1 \times 1 + 1 \times (-1) = 0$。成功了！那么 $n=3$ 呢？让我们尝试构建一个。我们总可以使第一行全为 $+1$（如果不是，我们可以翻转那些为 $-1$ 的列的符号，这不影响正交性）。
+这两行的[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)是 $1 \times 1 + 1 \times (-1) = 0$。成功了！那么 $n=3$ 呢？让我们尝试构建一个。我们总可以使第一行全为 $+1$（如果不是，我们可以翻转那些为 $-1$ 的列的符号，这不影响正交性）。
 
 $$
 H_3 = \begin{pmatrix} 1 & 1 & 1 \\ 1 & -1 & ? \\ \dots & \dots & \dots \end{pmatrix}
@@ -49,15 +49,15 @@ $$
 3. 第 $i$ 行为 $-1$ 且第 $j$ 行为 $+1$ 的列。假设有 $c$ 列。
 4. 两行中都为 $-1$ 的列。假设有 $d$ 列。
 
-总列数为 $n = a+b+c+d$。由于第 $i$ 行有 $n/2$ 个 +1，所以 $a+b = n/2$。由于第 $j$ 行有 $n/2$ 个 +1，所以 $a+c=n/2$。这立即告诉我们 $b=c$。为了使这两行正交，它们对应元素乘积之和必须为零。在第一组和第四组中，乘积为 $+1$，在第二组和第三组中，乘积为 $-1$。所以，[点积](@article_id:309438)为 $(a+d) - (b+c) = 0$。
+总列数为 $n = a+b+c+d$。由于第 $i$ 行有 $n/2$ 个 +1，所以 $a+b = n/2$。由于第 $j$ 行有 $n/2$ 个 +1，所以 $a+c=n/2$。这立即告诉我们 $b=c$。为了使这两行正交，它们对应元素乘积之和必须为零。在第一组和第四组中，乘积为 $+1$，在第二组和第三组中，乘积为 $-1$。所以，[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)为 $(a+d) - (b+c) = 0$。
 
 综合来看，我们有 $b=c$ 和 $a+d=b+c$，这意味着 $a+d = 2b$。对这些简单的方程进行一点代数运算，就会揭示一个惊人的结果：$a=b=c=d=n/4$。为了使这些计数为整数，$n$ 必须是 4 的倍数。
 
-所以结论就是：一个阶数为 $n$ 的 Hadamard 矩阵只可能在 $n=1$，$n=2$，或者 $n$ 是 4 的倍数时存在 。这就是为什么我们尝试构建 $n=3$ 的矩阵从一开始就注定要失败，也解释了为什么无法构造一个阶为 6 的 Hadamard 矩阵 。一个悬而未决的、引人入胜的大问题是其逆命题：对于*每一个*正整数 $k$，是否存在一个阶为 $4k$ 的 Hadamard 矩阵？没有人确切知道。这就是著名的 **Hadamard 猜想**，一个至今仍非常活跃的现代数学前沿。
+所以结论就是：一个阶数为 $n$ 的 Hadamard 矩阵只可能在 $n=1$，$n=2$，或者 $n$ 是 4 的倍数时存在 [@problem_id:1381414]。这就是为什么我们尝试构建 $n=3$ 的矩阵从一开始就注定要失败，也解释了为什么无法构造一个阶为 6 的 Hadamard 矩阵 [@problem_id:1050574]。一个悬而未决的、引人入胜的大问题是其逆命题：对于*每一个*正整数 $k$，是否存在一个阶为 $4k$ 的 Hadamard 矩阵？没有人确切知道。这就是著名的 **Hadamard 猜想**，一个至今仍非常活跃的现代数学前沿。
 
 ### 创造的艺术：构建数字交响曲
 
-知道规则是一回事；构建这些复杂的结构是另一回事。幸运的是，有一些非常优雅的构造方法。最著名的是 **Sylvester 构造法**，它以一种递归的、类似[分形](@article_id:301219)的方式从较小的 Hadamard 矩阵构建出较大的 Hadamard 矩阵。我们从 $H_2$ 开始，并定义：
+知道规则是一回事；构建这些复杂的结构是另一回事。幸运的是，有一些非常优雅的构造方法。最著名的是 **Sylvester 构造法**，它以一种递归的、类似[分形](@keyword=fractal|lang=zh-CN|style=Feynman)的方式从较小的 Hadamard 矩阵构建出较大的 Hadamard 矩阵。我们从 $H_2$ 开始，并定义：
 
 $$
 H_{2k} = \begin{pmatrix} H_k & H_k \\ H_k & -H_k \end{pmatrix}
@@ -69,32 +69,32 @@ $$
 H_4 = \begin{pmatrix} H_2 & H_2 \\ H_2 & -H_2 \end{pmatrix} = \begin{pmatrix} 1 & 1 & 1 & 1 \\ 1 & -1 & 1 & -1 \\ 1 & 1 & -1 & -1 \\ 1 & -1 & -1 & 1 \end{pmatrix}
 $$
 
-然后从 $H_4$，我们可以构建 $H_8$，依此类推，从而得到一个阶数为 $2^k$ 的无限矩阵族 。这种构造方法隐藏着一个更深层次的数字秘密。如果你从 0 开始标记行和列，并将这些索引写成二进制，那么一个阶数为 $n=2^k$ 的 Sylvester 矩阵中的元素 $H_{ij}$ 由以下公式给出：
+然后从 $H_4$，我们可以构建 $H_8$，依此类推，从而得到一个阶数为 $2^k$ 的无限矩阵族 [@problem_id:1050545]。这种构造方法隐藏着一个更深层次的数字秘密。如果你从 0 开始标记行和列，并将这些索引写成二进制，那么一个阶数为 $n=2^k$ 的 Sylvester 矩阵中的元素 $H_{ij}$ 由以下公式给出：
 
 $$
 H_{ij} = (-1)^{i \cdot j}
 $$
 
-其中 $i \cdot j$ 是索引 $i$ 和 $j$ 的二[进制表示](@article_id:641038)的按位[点积](@article_id:309438)（或二进制按位与操作结果的[汉明权重](@article_id:329590)“popcount”）。例如，要找到 $H_8$ 中第 2 行（二进制 `010`）和第 3 列（二进制 `011`）的元素，我们计算它们的按位[点积](@article_id:309438)：$(0 \times 0) + (1 \times 1) + (0 \times 1) = 1$。所以该元素是 $(-1)^1 = -1$ 。这将矩阵结构直接与二进制世界联系起来，这就是为什么这些矩阵在[数字信号处理](@article_id:327367)和[计算理论](@article_id:337219)中至关重要。
+其中 $i \cdot j$ 是索引 $i$ 和 $j$ 的二[进制表示](@keyword=base_representation|lang=zh-CN|style=Feynman)的按位[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)（或二进制按位与操作结果的[汉明权重](@keyword=hamming_weight|lang=zh-CN|style=Feynman)“popcount”）。例如，要找到 $H_8$ 中第 2 行（二进制 `010`）和第 3 列（二进制 `011`）的元素，我们计算它们的按位[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)：$(0 \times 0) + (1 \times 1) + (0 \times 1) = 1$。所以该元素是 $(-1)^1 = -1$ [@problem_id:1050541]。这将矩阵结构直接与二进制世界联系起来，这就是为什么这些矩阵在[数字信号处理](@keyword=digital_signal_processing|lang=zh-CN|style=Feynman)和[计算理论](@keyword=theory_of_computation|lang=zh-CN|style=Feynman)中至关重要。
 
-当然，Sylvester 方法只给出了阶数为 2 的幂的矩阵。其他方法，如 **Paley 构造法**，可以生成其他阶数的 Hadamard 矩阵，例如 $n=20$ ，填补了部分空白，使我们更接近于证实宏大的 Hadamard 猜想。
+当然，Sylvester 方法只给出了阶数为 2 的幂的矩阵。其他方法，如 **Paley 构造法**，可以生成其他阶数的 Hadamard 矩阵，例如 $n=20$ [@problem_id:1050565]，填补了部分空白，使我们更接近于证实宏大的 Hadamard 猜想。
 
 ### 特性的交响
 
 这些矩阵不仅仅是外表漂亮；它们严格的结构带来了一系列引人入胜的特性。
 
-- **[特征值](@article_id:315305)：** 像通过 Sylvester 构造法得到的对称 Hadamard 矩阵，它的[特征值](@article_id:315305)是什么？由于 $H^T = H$，定义关系变为 $H^2 = nI_n$。如果 $\vec{v}$ 是一个[特征值](@article_id:315305)为 $\lambda$ 的[特征向量](@article_id:312227)，那么 $H\vec{v} = \lambda\vec{v}$。再次应用 $H$，得到 $H^2\vec{v} = H(\lambda\vec{v}) = \lambda(H\vec{v}) = \lambda^2\vec{v}$。但我们知道 $H^2\vec{v} = nI_n\vec{v} = n\vec{v}$。因此，我们必须有 $\lambda^2 = n$，这意味着[特征值](@article_id:315305)只能是 $\sqrt{n}$ 或 $-\sqrt{n}$ 。一个拥有数百万个元素的矩阵，其整个[特征值](@article_id:315305)谱竟然被简化为仅仅两个可能的数值！
+- **[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)：** 像通过 Sylvester 构造法得到的对称 Hadamard 矩阵，它的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)是什么？由于 $H^T = H$，定义关系变为 $H^2 = nI_n$。如果 $\vec{v}$ 是一个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)为 $\lambda$ 的[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)，那么 $H\vec{v} = \lambda\vec{v}$。再次应用 $H$，得到 $H^2\vec{v} = H(\lambda\vec{v}) = \lambda(H\vec{v}) = \lambda^2\vec{v}$。但我们知道 $H^2\vec{v} = nI_n\vec{v} = n\vec{v}$。因此，我们必须有 $\lambda^2 = n$，这意味着[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)只能是 $\sqrt{n}$ 或 $-\sqrt{n}$ [@problem_id:1082574]。一个拥有数百万个元素的矩阵，其整个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)谱竟然被简化为仅仅两个可能的数值！
 
-- **迹：** 矩阵的迹是对角线元素之和，它也等于其[特征值](@article_id:315305)之和。对于任何 $n > 1$ 的 Sylvester-Hadamard 矩阵 $H_n$，其迹总是 0  。你可以从递归构造中看出这一点：$\text{tr}(H_{2k}) = \text{tr}(H_k) + \text{tr}(-H_k) = \text{tr}(H_k) - \text{tr}(H_k) = 0$。由于迹为零，且仅有的[特征值](@article_id:315305)是 $\pm \sqrt{n}$，那么它们必须成对出现，完美平衡：恰好有 $n/2$ 个[特征值](@article_id:315305)等于 $+\sqrt{n}$，另有 $n/2$ 个等于 $-\sqrt{n}$。
+- **迹：** 矩阵的迹是对角线元素之和，它也等于其[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)之和。对于任何 $n > 1$ 的 Sylvester-Hadamard 矩阵 $H_n$，其迹总是 0 [@problem_id:1050545] [@problem_id:1050650]。你可以从递归构造中看出这一点：$\text{tr}(H_{2k}) = \text{tr}(H_k) + \text{tr}(-H_k) = \text{tr}(H_k) - \text{tr}(H_k) = 0$。由于迹为零，且仅有的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)是 $\pm \sqrt{n}$，那么它们必须成对出现，完美平衡：恰好有 $n/2$ 个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)等于 $+\sqrt{n}$，另有 $n/2$ 个等于 $-\sqrt{n}$。
 
-- **[行列式](@article_id:303413)：** [行列式](@article_id:303413)，即[特征值](@article_id:315305)之积，可以很容易地找到。对于一个阶为 $n$ 的对称 Hadamard 矩阵，其[行列式](@article_id:303413)为 $(\sqrt{n})^{n/2} (-\sqrt{n})^{n/2} = (\sqrt{n})^{n} (-1)^{n/2} = n^{n/2} (-1)^{n/2}$。对于 $H_4$，[行列式](@article_id:303413)是 $4^{4/2}(-1)^{4/2} = 4^2(1) = 16$ 。
+- **[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)：** [行列式](@keyword=determinant|lang=zh-CN|style=Feynman)，即[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)之积，可以很容易地找到。对于一个阶为 $n$ 的对称 Hadamard 矩阵，其[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)为 $(\sqrt{n})^{n/2} (-\sqrt{n})^{n/2} = (\sqrt{n})^{n} (-1)^{n/2} = n^{n/2} (-1)^{n/2}$。对于 $H_4$，[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)是 $4^{4/2}(-1)^{4/2} = 4^2(1) = 16$ [@problem_id:1050527]。
 
-有时，特殊的构造会产生具有更强约束的代数恒等式的矩阵。例如，通过 Paley 方法构造的**斜 Hadamard** 矩阵，不仅满足 $H H^T = nI$，而且还具有近乎斜对称的结构。这个额外的约束迫使整个矩阵服从一个简单的二次方程。对于阶为 20 的情况，这个方程是 $H^2 - 2H + 20I = 0$，意味着它的最小多项式仅仅是 $x^2 - 2x + 20$ 。仅仅几个关于符号的简单规则就能导出如此深刻的[代数结构](@article_id:297503)，这确实非同凡响。
+有时，特殊的构造会产生具有更强约束的代数恒等式的矩阵。例如，通过 Paley 方法构造的**斜 Hadamard** 矩阵，不仅满足 $H H^T = nI$，而且还具有近乎斜对称的结构。这个额外的约束迫使整个矩阵服从一个简单的二次方程。对于阶为 20 的情况，这个方程是 $H^2 - 2H + 20I = 0$，意味着它的最小多项式仅仅是 $x^2 - 2x + 20$ [@problem_id:1050565]。仅仅几个关于符号的简单规则就能导出如此深刻的[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)，这确实非同凡响。
 
 ### 远见卓识：Hadamard 矩阵在现实世界中的应用
 
 这种丰富的数学结构并不仅仅是为了展示。Hadamard 矩阵行向量的鲜明正交性使其成为理想的**纠错码**。如果你将一行作为信号发送，它与其他所有行都具有最大程度的差异，即使在有噪声的情况下也易于区分。
 
-以 Walsh-Hadamard 矩阵之名，Sylvester 矩阵是 **Hadamard 变换**的基石，这是一种傅里叶变换的数字对应物，在从[图像压缩](@article_id:317015)到[频谱分析](@article_id:339207)等各个领域都有广泛应用。
+以 Walsh-Hadamard 矩阵之名，Sylvester 矩阵是 **Hadamard 变换**的基石，这是一种傅里叶变换的数字对应物，在从[图像压缩](@keyword=image_compression|lang=zh-CN|style=Feynman)到[频谱分析](@keyword=spectrum_analysis|lang=zh-CN|style=Feynman)等各个领域都有广泛应用。
 
-这个概念甚至延伸到了量子力学这个奇特而美丽的世界。**复 Hadamard 矩阵**是一种元素为模长为 1 的复数，但其行向量仍然完全正交的矩阵。这些矩阵在量子信息论中自然出现，用于描述量子系统的演化。例如，两个[量子比特](@article_id:298377)（qubit）之间的相互作用，在特定条件下，可以用一个直接由 $2 \times 2$ 复 Hadamard 矩阵块构建的矩阵来描述 。通过这种方式，一个诞生于简单的正负号游戏的结构，最终融入了我们最先进物理理论的肌理之中。从一个简单的规则，一个充满复杂性和实用性的宇宙就此展开。
+这个概念甚至延伸到了量子力学这个奇特而美丽的世界。**复 Hadamard 矩阵**是一种元素为模长为 1 的复数，但其行向量仍然完全正交的矩阵。这些矩阵在量子信息论中自然出现，用于描述量子系统的演化。例如，两个[量子比特](@keyword=qubit|lang=zh-CN|style=Feynman)（qubit）之间的相互作用，在特定条件下，可以用一个直接由 $2 \times 2$ 复 Hadamard 矩阵块构建的矩阵来描述 [@problem_id:1055176]。通过这种方式，一个诞生于简单的正负号游戏的结构，最终融入了我们最先进物理理论的肌理之中。从一个简单的规则，一个充满复杂性和实用性的宇宙就此展开。

@@ -9,24 +9,24 @@ To understand this, we have to throw out our everyday intuition about fluids and
 
 ### A Tale of Two Fluids
 
-Just below its boiling point, [liquid helium](@article_id:138946) behaves like any normal, boring liquid. But as you cool it further, past a critical temperature called the **[lambda point](@article_id:141369)** ($T_{\lambda} \approx 2.17$ K), it undergoes a phase transition into a **superfluid**. In this state, the helium, now called He-II, behaves as if it's a mixture of two separate, interpenetrating liquids. This isn't a [chemical separation](@article_id:140165); it's a quantum mechanical description known as the **two-fluid model**.
+Just below its boiling point, [liquid helium](@keyword=liquid_helium|lang=en-US|style=Feynman) behaves like any normal, boring liquid. But as you cool it further, past a critical temperature called the **[lambda point](@keyword=lambda_point|lang=en-US|style=Feynman)** ($T_{\lambda} \approx 2.17$ K), it undergoes a phase transition into a **superfluid**. In this state, the helium, now called He-II, behaves as if it's a mixture of two separate, interpenetrating liquids. This isn't a [chemical separation](@keyword=chemical_separation|lang=en-US|style=Feynman); it's a quantum mechanical description known as the **two-fluid model**.
 
-1.  The **Superfluid Component**: Imagine a perfect, ghostly fluid. It has [zero viscosity](@article_id:195655), meaning it can flow without any internal friction. It can flow through impossibly narrow channels, a feat known as passing through a "superleak." Most curiously, this component carries absolutely no entropy. It is, in a thermodynamic sense, perfectly ordered and "cold."
+1.  The **Superfluid Component**: Imagine a perfect, ghostly fluid. It has [zero viscosity](@keyword=zero_viscosity|lang=en-US|style=Feynman), meaning it can flow without any internal friction. It can flow through impossibly narrow channels, a feat known as passing through a "superleak." Most curiously, this component carries absolutely no entropy. It is, in a thermodynamic sense, perfectly ordered and "cold."
 
 2.  The **Normal Fluid Component**: This is the part that holds all the system's "messiness"—its entropy and its thermal energy. It behaves like a classical, viscous liquid. It has viscosity, gets stuck in narrow channels, and is responsible for all the familiar properties of heat and friction.
 
-The proportion of these two "fluids" depends on temperature. At absolute zero, the liquid would be 100% superfluid. As you warm it up towards the [lambda point](@article_id:141369), the proportion of the normal fluid component increases. At the [lambda point](@article_id:141369) and above, it's 100% normal fluid. The fountain effect is a direct consequence of the interplay between these two components.
+The proportion of these two "fluids" depends on temperature. At absolute zero, the liquid would be 100% superfluid. As you warm it up towards the [lambda point](@keyword=lambda_point|lang=en-US|style=Feynman), the proportion of the normal fluid component increases. At the [lambda point](@keyword=lambda_point|lang=en-US|style=Feynman) and above, it's 100% normal fluid. The fountain effect is a direct consequence of the interplay between these two components.
 
 ### The Thermodynamic Heart of the Fountain
 
 So, how does heating one part of the superfluid cause it to move? The secret lies in a concept called **chemical potential**, which we can denote by the Greek letter $\mu$. In everyday life, we're used to things flowing from high pressure to low pressure. Chemical potential is a more general and powerful idea. It’s like a measure of thermodynamic "unhappiness" or "urgency." A particle will always try to move from a region of higher chemical potential to one of lower chemical potential, seeking equilibrium.
 
-The equation of motion for the pure, frictionless superfluid component is beautifully simple: it accelerates in response to a gradient in chemical potential. At a steady state, when all flows have stopped and equilibrium is reached, there can be no "urgency" to move. This means the chemical potential must be uniform everywhere .
+The equation of motion for the pure, frictionless superfluid component is beautifully simple: it accelerates in response to a gradient in chemical potential. At a steady state, when all flows have stopped and equilibrium is reached, there can be no "urgency" to move. This means the chemical potential must be uniform everywhere [@problem_id:583728].
 $$
 \nabla \mu = 0
 $$
 
-But here's the catch. The chemical potential isn't just a function of pressure; it's also a function of temperature. The [fundamental thermodynamic relation](@article_id:143826) that connects them is a gem of physics:
+But here's the catch. The chemical potential isn't just a function of pressure; it's also a function of temperature. The [fundamental thermodynamic relation](@keyword=fundamental_thermodynamic_relation|lang=en-US|style=Feynman) that connects them is a gem of physics:
 $$
 d\mu = -s \,dT + \frac{1}{\rho} \,dP
 $$
@@ -37,7 +37,7 @@ $$
 
 Now we have two statements about $\nabla \mu$. In equilibrium, it must be zero. But if we create a temperature gradient $\nabla T$ (by heating one side), the thermodynamic relation says $\nabla \mu$ *wants* to be non-zero. How can both be true? The only way is if the fluid itself conspires to create a pressure gradient $\nabla P$ that exactly cancels the effect of the temperature gradient.
 
-Setting the two expressions equal gives us the master equation of the fountain effect  :
+Setting the two expressions equal gives us the master equation of the fountain effect [@problem_id:583728] [@problem_id:1953618]:
 $$
 0 = -s \nabla T + \frac{1}{\rho} \nabla P
 $$
@@ -71,7 +71,7 @@ The height depends only on the entropy, the temperature difference, and gravity.
 $$
 h = \frac{(650 \text{ J/(kg}\cdot\text{K)}) \times (0.02 \text{ K})}{9.81 \text{ m/s}^2} \approx 1.33 \text{ meters}
 $$
-A temperature change of just two-hundredths of a degree produces a fountain over four feet high!  This is no subtle laboratory effect; it's a powerful macroscopic demonstration of a purely quantum phenomenon. The same principle explains why heating one arm of a U-tube filled with He-II causes the liquid level in that arm to rise dramatically .
+A temperature change of just two-hundredths of a degree produces a fountain over four feet high! [@problem_id:1886027] This is no subtle laboratory effect; it's a powerful macroscopic demonstration of a purely quantum phenomenon. The same principle explains why heating one arm of a U-tube filled with He-II causes the liquid level in that arm to rise dramatically [@problem_id:1994382].
 
 ### The Counterflow Engine: A Superfluid Heat Pipe
 
@@ -81,17 +81,17 @@ The fountain effect creates what might be the world's most efficient engine for 
 
 2.  This pressure difference tries to drive the fluid. But remember the two components! The frictionless **superfluid component** responds immediately, flowing from the cold end (low pressure) to the hot end (high pressure) to relieve the pressure imbalance.
 
-3.  But the pipe is closed. We can't have a net buildup of mass at the hot end. To conserve mass, the **[normal fluid](@article_id:182805) component** must flow in the opposite direction, from the hot end to the cold end.
+3.  But the pipe is closed. We can't have a net buildup of mass at the hot end. To conserve mass, the **[normal fluid](@keyword=normal_fluid|lang=en-US|style=Feynman) component** must flow in the opposite direction, from the hot end to the cold end.
 
-What we get is a perfect internal convection loop: a **[counterflow](@article_id:156261)** of the two components. The superfluid flows toward heat, and the [normal fluid](@article_id:182805) flows away from it. Since the normal fluid is the sole carrier of entropy, this [counterflow](@article_id:156261) becomes an incredibly effective mechanism for heat transfer. Heat is picked up at the hot end, transported by the [normal fluid](@article_id:182805), and deposited at the cold end.
+What we get is a perfect internal convection loop: a **[counterflow](@keyword=counterflow|lang=en-US|style=Feynman)** of the two components. The superfluid flows toward heat, and the [normal fluid](@keyword=normal_fluid|lang=en-US|style=Feynman) flows away from it. Since the normal fluid is the sole carrier of entropy, this [counterflow](@keyword=counterflow|lang=en-US|style=Feynman) becomes an incredibly effective mechanism for heat transfer. Heat is picked up at the hot end, transported by the [normal fluid](@keyword=normal_fluid|lang=en-US|style=Feynman), and deposited at the cold end.
 
-This makes He-II a "super" thermal conductor—not by conduction in the normal sense, but by this internal convection. The [effective thermal conductivity](@article_id:151771) can be millions of times greater than that of copper. To sustain a given heat flux, the required temperature gradient in He-II is astonishingly small compared to that in normal liquid helium or other materials . This extraordinary property is not just a curiosity; it is essential for cooling the [superconducting magnets](@article_id:137702) in particle accelerators like the Large Hadron Collider (LHC), where even tiny temperature fluctuations must be efficiently smoothed out.
+This makes He-II a "super" thermal conductor—not by conduction in the normal sense, but by this internal convection. The [effective thermal conductivity](@keyword=effective_thermal_conductivity|lang=en-US|style=Feynman) can be millions of times greater than that of copper. To sustain a given heat flux, the required temperature gradient in He-II is astonishingly small compared to that in normal liquid helium or other materials [@problem_id:1893280]. This extraordinary property is not just a curiosity; it is essential for cooling the [superconducting magnets](@keyword=superconducting_magnets|lang=en-US|style=Feynman) in particle accelerators like the Large Hadron Collider (LHC), where even tiny temperature fluctuations must be efficiently smoothed out.
 
 ### The Fountain at the Edge of Absolute Zero
 
 Finally, what happens to our fountain as we approach the coldest possible temperature, absolute zero ($T=0$ K)? Here, the fountain effect provides a beautiful illustration of the **Third Law of Thermodynamics**. The Third Law states that the entropy of a system must approach zero as its temperature approaches absolute zero.
 
-For He-II at very low temperatures, its entropy is dominated by quantum sound waves (phonons), and it follows a clear law: $s \propto T^3$ . As $T$ gets smaller, $s$ gets smaller much, much faster.
+For He-II at very low temperatures, its entropy is dominated by quantum sound waves (phonons), and it follows a clear law: $s \propto T^3$ [@problem_id:1851121]. As $T$ gets smaller, $s$ gets smaller much, much faster.
 
 Let's look at our fountain equations again: $\nabla P = \rho s \nabla T$. If $s$ approaches zero, then for any finite temperature gradient, the resulting pressure gradient must also vanish. The fountain effect turns off.
 $$

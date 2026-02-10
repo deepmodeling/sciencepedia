@@ -1,5 +1,5 @@
 ## Introduction
-Young's inequality for products is a cornerstone of [mathematical analysis](@article_id:139170), a seemingly simple algebraic statement with surprisingly deep implications. However, it is often presented as a formula to be memorized, obscuring the elegant geometry and powerful principles that underpin it. This article aims to bridge that gap, revealing the "why" behind the inequality, not just the "what". We will first delve into its core principles and mechanisms, uncovering its geometric interpretation and its fundamental connection to the concept of [convexity](@article_id:138074). Following this, we will explore its widespread applications and interdisciplinary connections, seeing how this single inequality becomes an indispensable tool in fields ranging from partial differential equations to engineering control theory. Our journey begins by looking beyond the symbols to understand the beautiful mechanics at the heart of the inequality.
+Young's inequality for products is a cornerstone of [mathematical analysis](@keyword=mathematical_analysis|lang=en-US|style=Feynman), a seemingly simple algebraic statement with surprisingly deep implications. However, it is often presented as a formula to be memorized, obscuring the elegant geometry and powerful principles that underpin it. This article aims to bridge that gap, revealing the "why" behind the inequality, not just the "what". We will first delve into its core principles and mechanisms, uncovering its geometric interpretation and its fundamental connection to the concept of [convexity](@keyword=convexity|lang=en-US|style=Feynman). Following this, we will explore its widespread applications and interdisciplinary connections, seeing how this single inequality becomes an indispensable tool in fields ranging from partial differential equations to engineering control theory. Our journey begins by looking beyond the symbols to understand the beautiful mechanics at the heart of the inequality.
 
 ## Principles and Mechanisms
 
@@ -33,11 +33,11 @@ It's a fun exercise to see that this is equivalent to the condition $a^p = b^q$.
 
 So far, we have a geometric picture and an analytical condition for equality. But why is this inequality true in the first place? Is it a standalone trick, or part of a larger family of truths? The answer lies in one of the most powerful concepts in all of mathematics: **convexity**.
 
-A function is convex if the line segment connecting any two points on its graph lies on or above the graph itself. Think of a bowl. The exponential function, $f(x) = \exp(x)$, is a perfect example of a [convex function](@article_id:142697).
+A function is convex if the line segment connecting any two points on its graph lies on or above the graph itself. Think of a bowl. The exponential function, $f(x) = \exp(x)$, is a perfect example of a [convex function](@keyword=convex_function|lang=en-US|style=Feynman).
 
 Convex functions obey a remarkable rule called **Jensen's inequality**. In its simplest form, it says that for a convex function $f$, the function of an average is less than or equal to the average of the function: $f(\lambda_1 x_1 + \lambda_2 x_2) \le \lambda_1 f(x_1) + \lambda_2 f(x_2)$ for any weights $\lambda_1, \lambda_2$ that add to 1.
 
-With a brilliant [change of variables](@article_id:140892), we can derive Young's inequality directly from this principle. Notice that $a$ and $b$ are positive, so we can write $a^p = \exp(\ln(a^p))$ and $b^q = \exp(\ln(b^q))$. We can also write the product $ab$ in an exponential form:
+With a brilliant [change of variables](@keyword=change_of_variables|lang=en-US|style=Feynman), we can derive Young's inequality directly from this principle. Notice that $a$ and $b$ are positive, so we can write $a^p = \exp(\ln(a^p))$ and $b^q = \exp(\ln(b^q))$. We can also write the product $ab$ in an exponential form:
 $$
 ab = \exp(\ln a + \ln b) = \exp\left(\frac{1}{p}\ln(a^p) + \frac{1}{q}\ln(b^q)\right)
 $$
@@ -49,7 +49,7 @@ Simplifying both sides gives us our desired result:
 $$
 ab \le \frac{a^p}{p} + \frac{b^q}{q}
 $$
-This is beautiful. Young's inequality is not an accident; it is a direct consequence of the convexity of the [exponential function](@article_id:160923). It reveals a deep unity between algebra and geometry, showing how a simple "bowl" shape gives birth to a powerful inequality.
+This is beautiful. Young's inequality is not an accident; it is a direct consequence of the convexity of the [exponential function](@keyword=exponential_function|lang=en-US|style=Feynman). It reveals a deep unity between algebra and geometry, showing how a simple "bowl" shape gives birth to a powerful inequality.
 
 ### A Web of Connections: Generalizations and Applications
 
@@ -59,7 +59,7 @@ $$
 $$
 This generalized form is a tool of immense power. For instance, you may have heard of the **weighted Arithmetic Mean-Geometric Mean (AM-GM) inequality**, which states that for non-negative numbers $a_i$ and weights $w_i$ that sum to 1, $\prod a_i^{w_i} \le \sum w_i a_i$. It turns out this isn't a separate law of nature; it's a direct consequence of the generalized Young's inequality! By making a clever choice of variables ($p_i = 1/w_i$ and $x_i = a_i^{w_i}$), one inequality transforms directly into the other. This showcases how a single, powerful idea can manifest in different forms, unifying seemingly disparate concepts.
 
-This isn't just an academic curiosity. Such inequalities are the bedrock of [optimization theory](@article_id:144145). Imagine designing a complex system, like a data processing pipeline with three stages, whose total performance is the product of the effectiveness of each stage, $P=xyz$. Each stage consumes resources and generates a thermal load, and the total load is constrained by a "thermal budget," perhaps of the form $\frac{x^2}{A} + \frac{y^3}{B} + \frac{z^6}{C} = S_0$. How do you allocate resources to maximize performance? This looks like a hard problem. But notice that the exponents in the constraint satisfy $\frac{1}{2}+\frac{1}{3}+\frac{1}{6}=1$. This is a huge hint! The generalized Young's inequality can be applied directly to find the maximum possible performance without a single line of tedious calculus, giving a clear and elegant solution.
+This isn't just an academic curiosity. Such inequalities are the bedrock of [optimization theory](@keyword=optimization_theory|lang=en-US|style=Feynman). Imagine designing a complex system, like a data processing pipeline with three stages, whose total performance is the product of the effectiveness of each stage, $P=xyz$. Each stage consumes resources and generates a thermal load, and the total load is constrained by a "thermal budget," perhaps of the form $\frac{x^2}{A} + \frac{y^3}{B} + \frac{z^6}{C} = S_0$. How do you allocate resources to maximize performance? This looks like a hard problem. But notice that the exponents in the constraint satisfy $\frac{1}{2}+\frac{1}{3}+\frac{1}{6}=1$. This is a huge hint! The generalized Young's inequality can be applied directly to find the maximum possible performance without a single line of tedious calculus, giving a clear and elegant solution.
 
 ### Exploring the Frontiers: Duality, Stability, and the World of Matrices
 

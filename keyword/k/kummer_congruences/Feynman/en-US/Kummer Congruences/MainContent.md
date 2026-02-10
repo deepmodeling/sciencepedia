@@ -1,5 +1,5 @@
 ## Introduction
-In the vast landscape of mathematics, some numerical sequences appear utterly chaotic, defying any simple pattern. The Bernoulli numbers stand as a prime example of such a sequence, a jumble of fractions that emerge in surprisingly diverse fields. For centuries, they remained a mathematical curiosity until 19th-century mathematician Ernst Kummer discovered a breathtaking, hidden rhythm within them—a periodicity not in their values, but in their properties when viewed through the lens of [modular arithmetic](@article_id:143206). This article delves into this profound discovery, known as Kummer's congruences. The first chapter, "Principles and Mechanisms," will demystify the congruences, exploring the modular lens, the role of [p-adic numbers](@article_id:145373), and the elegant structure that tames the unruly Bernoulli numbers. The second chapter, "Applications and Interdisciplinary Connections," will then reveal the immense power of this idea, tracing its journey from a crucial tool in the attack on Fermat's Last Theorem to its central role in modern number theory, modular forms, and even [high-dimensional geometry](@article_id:143698).
+In the vast landscape of mathematics, some numerical sequences appear utterly chaotic, defying any simple pattern. The Bernoulli numbers stand as a prime example of such a sequence, a jumble of fractions that emerge in surprisingly diverse fields. For centuries, they remained a mathematical curiosity until 19th-century mathematician Ernst Kummer discovered a breathtaking, hidden rhythm within them—a periodicity not in their values, but in their properties when viewed through the lens of [modular arithmetic](@keyword=modular_arithmetic|lang=en-US|style=Feynman). This article delves into this profound discovery, known as Kummer's congruences. The first chapter, "Principles and Mechanisms," will demystify the congruences, exploring the modular lens, the role of [p-adic numbers](@keyword=p_adic_numbers|lang=en-US|style=Feynman), and the elegant structure that tames the unruly Bernoulli numbers. The second chapter, "Applications and Interdisciplinary Connections," will then reveal the immense power of this idea, tracing its journey from a crucial tool in the attack on Fermat's Last Theorem to its central role in modern number theory, modular forms, and even [high-dimensional geometry](@keyword=high_dimensional_geometry|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
@@ -13,7 +13,7 @@ The numerators and denominators appear to follow no simple rule. They jump aroun
 
 ### The Modular Lens: A New Way of Seeing
 
-Number theorists have a powerful trick for finding hidden structures: they look at numbers **modulo** a prime $p$. Thinking "modulo $p$" means we only care about the remainder after dividing by $p$. It's like telling time on a 12-hour clock. 14 o'clock is the same as 2 o'clock, because $14 \equiv 2 \pmod{12}$. In this world, we have only a [finite set](@article_id:151753) of numbers to work with—$\{0, 1, 2, ..., p-1\}$—and the infinite, messy world of integers becomes tidy and structured. Looking through this "modular lens" can make faint patterns suddenly snap into sharp focus. This is precisely the tool Kummer used.
+Number theorists have a powerful trick for finding hidden structures: they look at numbers **modulo** a prime $p$. Thinking "modulo $p$" means we only care about the remainder after dividing by $p$. It's like telling time on a 12-hour clock. 14 o'clock is the same as 2 o'clock, because $14 \equiv 2 \pmod{12}$. In this world, we have only a [finite set](@keyword=finite_set|lang=en-US|style=Feynman) of numbers to work with—$\{0, 1, 2, ..., p-1\}$—and the infinite, messy world of integers becomes tidy and structured. Looking through this "modular lens" can make faint patterns suddenly snap into sharp focus. This is precisely the tool Kummer used.
 
 ### The Congruence Unveiled
 
@@ -24,7 +24,7 @@ $$
 \frac{B_m}{m} \equiv \frac{B_n}{n} \pmod{p} \quad \text{whenever } m \equiv n \pmod{p-1}.
 $$
 
-Let's see this magic in action . Let's pick the prime $p=5$. The modulus for the indices is $p-1=4$. Let's pick two even indices that are congruent modulo 4, say $m=2$ and $n=6$ (since $2 \equiv 6 \pmod{4}$). The congruence predicts that $\frac{B_2}{2}$ should be the same as $\frac{B_6}{6}$ when we look at them modulo 5.
+Let's see this magic in action [@problem_id:3020456]. Let's pick the prime $p=5$. The modulus for the indices is $p-1=4$. Let's pick two even indices that are congruent modulo 4, say $m=2$ and $n=6$ (since $2 \equiv 6 \pmod{4}$). The congruence predicts that $\frac{B_2}{2}$ should be the same as $\frac{B_6}{6}$ when we look at them modulo 5.
 
 Let's check:
 - $B_2 = \frac{1}{6}$. So, $\frac{B_2}{2} = \frac{1}{12}$. To see this modulo 5, we note that $12 \equiv 2 \pmod{5}$. Finding the value of $\frac{1}{12}$ is the same as finding the number that, when multiplied by 2, gives 1. That number is 3, since $2 \times 3 = 6 \equiv 1 \pmod{5}$. So, $\frac{B_2}{2} \equiv 3 \pmod{5}$.
@@ -35,17 +35,17 @@ It works! The two completely different-looking fractions, $\frac{1}{12}$ and $\f
 
 ### Points of Singularity: The Clausen-von Staudt Barrier
 
-Like many profound truths in mathematics, Kummer's congruence comes with some fine print. There's a crucial exception: the congruence holds only as long as the indices $m$ and $n$ are not multiples of $p-1$ . Why this strange condition?
+Like many profound truths in mathematics, Kummer's congruence comes with some fine print. There's a crucial exception: the congruence holds only as long as the indices $m$ and $n$ are not multiples of $p-1$ [@problem_id:3008988]. Why this strange condition?
 
-The reason lies in another deep theorem about Bernoulli numbers, the **von Staudt-Clausen theorem**. This theorem gives us a complete description of the denominators of Bernoulli numbers. It tells us that a prime $p$ appears in the denominator of $B_k$ if and only if $p-1$ is a [divisor](@article_id:187958) of $k$.
+The reason lies in another deep theorem about Bernoulli numbers, the **von Staudt-Clausen theorem**. This theorem gives us a complete description of the denominators of Bernoulli numbers. It tells us that a prime $p$ appears in the denominator of $B_k$ if and only if $p-1$ is a [divisor](@keyword=divisor|lang=en-US|style=Feynman) of $k$.
 
 So, if we were to try to apply Kummer's congruence to an index $m$ that is a multiple of $p-1$, the von Staudt-Clausen theorem tells us that the denominator of $B_m$ is divisible by $p$. This means that $B_m$ "blows up" at the prime $p$; it has a $p$ in its denominator. Trying to speak of such a number "modulo $p$" is meaningless, just as it is meaningless to ask for the integer value of $\frac{1}{5}$. These indices are like singularities or poles where the beautiful pattern is momentarily disrupted. To preserve the elegance of the congruence, we must simply step around these specific points.
 
 ### From Congruence to True Continuity: The p-adic Universe
 
-For decades, Kummer's congruences were seen as a beautiful but somewhat mysterious numerological curiosity. The true understanding of their meaning required a radical shift in perspective, a leap into the strange and wonderful world of **[p-adic numbers](@article_id:145373)**.
+For decades, Kummer's congruences were seen as a beautiful but somewhat mysterious numerological curiosity. The true understanding of their meaning required a radical shift in perspective, a leap into the strange and wonderful world of **[p-adic numbers](@keyword=p_adic_numbers|lang=en-US|style=Feynman)**.
 
-In our familiar world, two numbers are "close" if their difference is small in the usual sense. In the $p$-adic world, two numbers are considered "close" if their difference is divisible by a *high power* of the prime $p$. For example, in the 5-adic world, 4 and 29 are close because their difference is 25, or $5^2$. 4 and 54 are even closer, their difference being $50=2 \times 5^2$. And 4 and 129 are closer still, their difference being $125=5^3$. It's a completely different way of measuring distance, one that values [divisibility](@article_id:190408) by $p$ above all else.
+In our familiar world, two numbers are "close" if their difference is small in the usual sense. In the $p$-adic world, two numbers are considered "close" if their difference is divisible by a *high power* of the prime $p$. For example, in the 5-adic world, 4 and 29 are close because their difference is 25, or $5^2$. 4 and 54 are even closer, their difference being $50=2 \times 5^2$. And 4 and 129 are closer still, their difference being $125=5^3$. It's a completely different way of measuring distance, one that values [divisibility](@keyword=divisibility|lang=en-US|style=Feynman) by $p$ above all else.
 
 In this light, Kummer's congruence is revealed to be the first hint of something much deeper. The congruence $\frac{B_m}{m} \equiv \frac{B_n}{n} \pmod{p}$ is a statement about values of a function when the inputs are "p-adically close" (in a sense related to being congruent modulo $p-1$). It suggests that the map $k \mapsto \frac{B_k}{k}$ is actually a **p-adically continuous function**. Just as a regular continuous function doesn't jump around wildly, this function's values for p-adically close inputs are also p-adically close.
 
@@ -61,9 +61,9 @@ This isn't just an aesthetic improvement; it has profound computational conseque
 
 ### The Irregular Suspects: A Link to Fermat's Last Theorem
 
-Why did Kummer care so deeply about these congruences? His motivation came from one of the most famous problems in all of mathematics: Fermat's Last Theorem. Kummer's brilliant strategy for proving the theorem worked perfectly for most primes, but it had a fatal flaw. The proof failed for a special class of primes he called **[irregular primes](@article_id:189033)**.
+Why did Kummer care so deeply about these congruences? His motivation came from one of the most famous problems in all of mathematics: Fermat's Last Theorem. Kummer's brilliant strategy for proving the theorem worked perfectly for most primes, but it had a fatal flaw. The proof failed for a special class of primes he called **[irregular primes](@keyword=irregular_primes|lang=en-US|style=Feynman)**.
 
-A prime $p$ is defined as **irregular** if it divides the numerator of any of the Bernoulli numbers $B_2, B_4, \dots, B_{p-3}$ . The first such prime is 37, which divides the numerator of $B_{32}$. The second is 59. The third is 67. Another famous one is 691, which, as we've seen, is the numerator of $B_{12}$. Since $12 \le 691-3$, the pair $(691,12)$ is called an **irregular pair**.
+A prime $p$ is defined as **irregular** if it divides the numerator of any of the Bernoulli numbers $B_2, B_4, \dots, B_{p-3}$ [@problem_id:3008994]. The first such prime is 37, which divides the numerator of $B_{32}$. The second is 59. The third is 67. Another famous one is 691, which, as we've seen, is the numerator of $B_{12}$. Since $12 \le 691-3$, the pair $(691,12)$ is called an **irregular pair**.
 
 Here, Kummer's congruences become a powerful detective tool. Having found that $p=691$ "taints" the Bernoulli number $B_{12}$ (by dividing its numerator), we can ask if it taints any others. The congruence tells us to look at indices congruent to 12 modulo $690$. For instance, consider the index $k = 12 + 690 = 702$. Kummer's congruence predicts:
 $$

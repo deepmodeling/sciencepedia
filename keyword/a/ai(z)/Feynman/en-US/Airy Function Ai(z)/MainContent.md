@@ -18,7 +18,7 @@ Here, $w(z)$ is our function, and $w''(z)$ is its second derivative, which you c
 Why is this equation so special? Think about a more familiar equation from physics, the time-independent Schrödinger equation, which describes the wavefunction of a particle. In many cases, it looks something like $\psi''(x) + (E-V(x))\psi(x) = 0$. The Airy equation is like a stripped-down version of this, where the "potential energy" $V(z)$ is just a straight line, $V(z) = z$.
 
 Let's play with this a little. The equation tells us that the curvature of our function, $w''/w$, is equal to $z$.
--   When $z$ is a large positive number, the curvature is large and positive. What kind of function behaves like this? An [exponential function](@article_id:160923), like $e^x$, has positive curvature everywhere. This suggests that for positive $z$, our function might grow or decay exponentially. This is like a quantum particle "tunneling" into a [classically forbidden region](@article_id:148569), where its kinetic energy would be negative.
+-   When $z$ is a large positive number, the curvature is large and positive. What kind of function behaves like this? An [exponential function](@keyword=exponential_function|lang=en-US|style=Feynman), like $e^x$, has positive curvature everywhere. This suggests that for positive $z$, our function might grow or decay exponentially. This is like a quantum particle "tunneling" into a [classically forbidden region](@keyword=classically_forbidden_region|lang=en-US|style=Feynman), where its kinetic energy would be negative.
 -   When $z$ is a large negative number, say $z = -100$, the curvature is large and negative. Now what kind of function does that? A sine or cosine wave! Think of $\sin(x)$; its curvature is $-\sin(x)$, so where the function is positive, its curvature is negative, pulling it back down. This suggests that for negative $z$, our function should wiggle and oscillate. This is the "classically allowed" region where our quantum particle can happily roam.
 
 The point $z=0$ is the great divide. It's the **turning point**, where the function's character must magically transform from oscillatory to exponential. The Airy function, $\text{Ai}(z)$, is *the* special solution to this equation that embodies this transition with perfect mathematical grace.
@@ -39,9 +39,9 @@ $$
 $$
 Look closely at this beautiful formula. It tells us two things. First, the amplitude of the oscillations, $\frac{1}{\sqrt{\pi} |z|^{1/4}}$, slowly dies down as we go further out. Second, the waves get more and more compressed, as the "frequency" of the sine function depends on $|z|^{1/2}$.
 
-Where do these strange-looking formulas come from? One way to define the Airy function is through an integral that involves a rapidly spinning complex number. The behavior of the integral is dominated by a few "special" points in the complex plane where the spinning momentarily stops—these are called **[saddle points](@article_id:261833)** or **stationary points**. For positive $z$, there's one saddle point that dictates the exponential decay. But for negative $z$, two separate [saddle points](@article_id:261833) work in concert, interfering with each other to produce the perfect sine wave . The mysterious phase shift of $\frac{\pi}{4}$ is a subtle souvenir from this journey through the complex plane, a geometric phase picked up as we navigate the "terrain" around these [saddle points](@article_id:261833) .
+Where do these strange-looking formulas come from? One way to define the Airy function is through an integral that involves a rapidly spinning complex number. The behavior of the integral is dominated by a few "special" points in the complex plane where the spinning momentarily stops—these are called **[saddle points](@keyword=saddle_points|lang=en-US|style=Feynman)** or **stationary points**. For positive $z$, there's one saddle point that dictates the exponential decay. But for negative $z$, two separate [saddle points](@keyword=saddle_points|lang=en-US|style=Feynman) work in concert, interfering with each other to produce the perfect sine wave [@problem_id:487140]. The mysterious phase shift of $\frac{\pi}{4}$ is a subtle souvenir from this journey through the complex plane, a geometric phase picked up as we navigate the "terrain" around these [saddle points](@keyword=saddle_points|lang=en-US|style=Feynman) [@problem_id:1884860].
 
-The fact that one [analytic function](@article_id:142965) can be described by two vastly different formulas in different regions is a deep and powerful idea in mathematics. The rule that connects one form to the other is called a **connection formula** , and for physicists, it's the mathematical key to understanding how a quantum particle transitions from an allowed to a forbidden region.
+The fact that one [analytic function](@keyword=analytic_function|lang=en-US|style=Feynman) can be described by two vastly different formulas in different regions is a deep and powerful idea in mathematics. The rule that connects one form to the other is called a **connection formula** [@problem_id:605181], and for physicists, it's the mathematical key to understanding how a quantum particle transitions from an allowed to a forbidden region.
 
 ### A String of Pearls: The Zeros of Airy
 
@@ -51,15 +51,15 @@ Our asymptotic formulas give us a powerful clue. In the region where $\text{Ai}(
 $$
 \sin\left(\frac{2}{3}|z|^{3/2} + \frac{\pi}{4}\right) = 0
 $$
-This happens when the argument of the sine is an integer multiple of $\pi$. A little algebra reveals that the zeros are all located on the negative real axis . Like a string of pearls, the zeros of the Airy function are arranged neatly, marching out towards negative infinity.
+This happens when the argument of the sine is an integer multiple of $\pi$. A little algebra reveals that the zeros are all located on the negative real axis [@problem_id:2229387]. Like a string of pearls, the zeros of the Airy function are arranged neatly, marching out towards negative infinity.
 
 We can even say exactly how they are arranged. The magnitude of the $k$-th zero, which we can call $a_k$, follows a simple power law for large $k$:
 $$
 a_k \sim \left[ \frac{3\pi}{2} \left(k - \frac{1}{4}\right) \right]^{2/3}
 $$
-This tells us that the spacing between the pearls gradually shrinks as we move farther out. This precise ordering has a name. The sum $\sum_{k=1}^\infty a_k^{-\alpha}$ converges only if $\alpha > \frac{3}{2}$. The critical value $\rho = \frac{3}{2}$ is called the **[exponent of convergence](@article_id:171136)** of the zeros , and it is identical to the **order** of the Airy function, a measure of how fast it grows in the complex plane . This is a magnificent instance of a deep theorem in complex analysis: the density of a function's zeros is fundamentally tied to its overall growth rate.
+This tells us that the spacing between the pearls gradually shrinks as we move farther out. This precise ordering has a name. The sum $\sum_{k=1}^\infty a_k^{-\alpha}$ converges only if $\alpha > \frac{3}{2}$. The critical value $\rho = \frac{3}{2}$ is called the **[exponent of convergence](@keyword=exponent_of_convergence|lang=en-US|style=Feynman)** of the zeros [@problem_id:873684], and it is identical to the **order** of the Airy function, a measure of how fast it grows in the complex plane [@problem_id:922774]. This is a magnificent instance of a deep theorem in complex analysis: the density of a function's zeros is fundamentally tied to its overall growth rate.
 
-We can even count them! The number of zeros, $N(R)$, with magnitude less than some large number $R$ is approximately $N(R) \sim \frac{2}{3\pi} R^{3/2}$ . The structure is not random; it has a deep and predictable order.
+We can even count them! The number of zeros, $N(R)$, with magnitude less than some large number $R$ is approximately $N(R) \sim \frac{2}{3\pi} R^{3/2}$ [@problem_id:911179]. The structure is not random; it has a deep and predictable order.
 
 ### The Riccati Secret: Connecting the Local to the Global
 
@@ -73,14 +73,14 @@ If you plug this into the original Airy equation, a little bit of calculus revea
 $$
 g'(z) = z - [g(z)]^2
 $$
-This equation is like a secret diary for the Airy function . On one hand, we can analyze it near $z=0$. Its value $g(0) = \text{Ai}'(0) / \text{Ai}(0)$ and its derivatives $g'(0)$, $g''(0)$, etc., are all determined by the values of $\text{Ai}(z)$ and its derivatives at the origin.
+This equation is like a secret diary for the Airy function [@problem_id:2237062]. On one hand, we can analyze it near $z=0$. Its value $g(0) = \text{Ai}'(0) / \text{Ai}(0)$ and its derivatives $g'(0)$, $g''(0)$, etc., are all determined by the values of $\text{Ai}(z)$ and its derivatives at the origin.
 
-On the other hand, the theory of entire functions tells us that the [logarithmic derivative](@article_id:168744) can also be written as a sum over the function's zeros. For the Airy function, this has the form:
+On the other hand, the theory of entire functions tells us that the [logarithmic derivative](@keyword=logarithmic_derivative|lang=en-US|style=Feynman) can also be written as a sum over the function's zeros. For the Airy function, this has the form:
 $$
 g(z) = B - z \sum_{k=1}^{\infty} \frac{1}{a_k^2(1 + z/a_k)}
 $$
-where the $a_k$ are the magnitudes of the zeros we met earlier, and $B$ is a constant related to the function's global structure .
+where the $a_k$ are the magnitudes of the zeros we met earlier, and $B$ is a constant related to the function's global structure [@problem_id:457504].
 
-Now for the magic. We have two different expressions for the same function, $g(z)$. One is determined by its behavior at the single point $z=0$. The other is determined by the global distribution of all its zeros. By comparing the Taylor series of these two forms around $z=0$, we can derive miraculous relationships. We can, for example, calculate the exact value of the sum of the inverse cubes of all the zeros, $\sum_{k=1}^{\infty} \frac{1}{a_k^3}$, and find that it is directly related to the values $\text{Ai}(0)$ and $\text{Ai}'(0)$ .
+Now for the magic. We have two different expressions for the same function, $g(z)$. One is determined by its behavior at the single point $z=0$. The other is determined by the global distribution of all its zeros. By comparing the Taylor series of these two forms around $z=0$, we can derive miraculous relationships. We can, for example, calculate the exact value of the sum of the inverse cubes of all the zeros, $\sum_{k=1}^{\infty} \frac{1}{a_k^3}$, and find that it is directly related to the values $\text{Ai}(0)$ and $\text{Ai}'(0)$ [@problem_id:880250].
 
 This is the ultimate expression of the unity and beauty we have been chasing. The behavior of a function at a single point holds the secrets of its entire infinite structure. The simple starting equation, $w''-zw=0$, contains within it a universe of interconnected properties: the graceful transition from oscillation to decay, the ordered march of its zeros to infinity, and the intricate dance between its local values and its global form. The Airy function is not just a solution to an equation; it is a masterpiece of mathematical physics, revealing the hidden unity that governs the world of waves and particles.

@@ -1,18 +1,18 @@
 ## 应用与跨学科联系
 
-在揭示了[转录衰减](@article_id:353123)精美的运作机制后，您可能会心生赞叹，但同时也会产生一个问题：大自然为什么要设计如此复杂的机制？一个简单的“开/关”开关，就像我们遇到的[阻遏蛋白](@article_id:365232)一样，似乎已经足够了。但事实证明，当一个精细调谐的调光器能做得更好时，大自然并不喜欢粗糙的二元开关。衰减不是一个冗余的备用系统；它是一个更高层次的控制，是分子信息处理的典范，连接了遗传学、生物化学，甚至进化和工程学的世界。要真正欣赏它的天才之处，我们必须超越机制本身，看看它在细胞的宏伟交响乐中扮演的角色。
+在揭示了[转录衰减](@keyword=transcriptional_attenuation|lang=zh-CN|style=Feynman)精美的运作机制后，您可能会心生赞叹，但同时也会产生一个问题：大自然为什么要设计如此复杂的机制？一个简单的“开/关”开关，就像我们遇到的[阻遏蛋白](@keyword=repressor|lang=zh-CN|style=Feynman)一样，似乎已经足够了。但事实证明，当一个精细调谐的调光器能做得更好时，大自然并不喜欢粗糙的二元开关。衰减不是一个冗余的备用系统；它是一个更高层次的控制，是分子信息处理的典范，连接了遗传学、生物化学，甚至进化和工程学的世界。要真正欣赏它的天才之处，我们必须超越机制本身，看看它在细胞的宏伟交响乐中扮演的角色。
 
 ### 调控的交响乐：一个多层次、时间分辨的策略
 
-首先要理解的是，衰减并非在真空中运作。它是一个集成电路的一部分。想象一下，你正在控制一栋大楼的温度。你有一个主恒温器（[阻遏蛋白](@article_id:365232)），提供粗略的控制，根据整体温度开启或关闭主供暖系统。但在那栋大楼里一个敏感的实验室中，你可能需要第二个、更灵敏的系统（衰减子），来进行微小而快速的调节，以极其精确地维持温度。
+首先要理解的是，衰减并非在真空中运作。它是一个集成电路的一部分。想象一下，你正在控制一栋大楼的温度。你有一个主恒温器（[阻遏蛋白](@keyword=repressor|lang=zh-CN|style=Feynman)），提供粗略的控制，根据整体温度开启或关闭主供暖系统。但在那栋大楼里一个敏感的实验室中，你可能需要第二个、更灵敏的系统（衰减子），来进行微小而快速的调节，以极其精确地维持温度。
 
-这正是 `trp` 操纵子和类似系统的工作方式。Trp 阻遏蛋白提供粗略的控制，响应细胞中游离色氨酸的总体库存。而衰减则提供精细的调节。接下来是真正巧妙的部分：这两个系统甚至不在监听同一个信号！通过使用能够激活[阻遏蛋白](@article_id:365232)但不能附着到 tRNA 分子上的人工合成色氨酸类似物进行的巧妙实验揭示，这两个系统有着精美的分工。
+这正是 `trp` 操纵子和类似系统的工作方式。Trp 阻遏蛋白提供粗略的控制，响应细胞中游离色氨酸的总体库存。而衰减则提供精细的调节。接下来是真正巧妙的部分：这两个系统甚至不在监听同一个信号！通过使用能够激活[阻遏蛋白](@keyword=repressor|lang=zh-CN|style=Feynman)但不能附着到 tRNA 分子上的人工合成色氨酸类似物进行的巧妙实验揭示，这两个系统有着精美的分工。
 
--   **[阻遏蛋白](@article_id:365232)感知*库存***：它响应游离色氨酸的浓度。如果仓库满了，它就关闭主要工厂的入口。
+-   **[阻遏蛋白](@keyword=repressor|lang=zh-CN|style=Feynman)感知*库存***：它响应游离色氨酸的浓度。如果仓库满了，它就关闭主要工厂的入口。
 
--   **衰减子感知*供给线***：它响应*荷电 tRNA* 分子的水平——即准备好立即用于[蛋白质合成](@article_id:307829)的色氨酸。如果生产线上缺少这个关键部件，衰减子就会提高产量，即使主仓库里还有一些存货。
+-   **衰减子感知*供给线***：它响应*荷电 tRNA* 分子的水平——即准备好立即用于[蛋白质合成](@keyword=protein_synthesis|lang=zh-CN|style=Feynman)的色氨酸。如果生产线上缺少这个关键部件，衰减子就会提高产量，即使主仓库里还有一些存货。
 
-这种双重感应系统使细胞不仅能响应它*拥有*什么，还能响应它在不久的将来*需要*什么。但如果信号冲突怎么办？例如，如果细胞中充满了色氨酸（告诉[阻遏蛋白](@article_id:365232)*关闭*操纵子），但却缺乏另一种氨基酸，而其[密码子](@article_id:337745)恰好存在于[前导肽](@article_id:382736)中，会发生什么？在这种情况下，一个清晰的层级关系就出现了。阻遏蛋白在最开始，即[转录起始](@article_id:301178)的大门处起作用。如果阻遏蛋白阻止了 RNA 聚合酶的启动，那么衰减子之后想做什么都无关紧要。守门员的决定是最终的，只有一小部分[转录](@article_id:361745)能够通过。[操纵子](@article_id:336359)的净输出可以被认为是一个乘法过程：
+这种双重感应系统使细胞不仅能响应它*拥有*什么，还能响应它在不久的将来*需要*什么。但如果信号冲突怎么办？例如，如果细胞中充满了色氨酸（告诉[阻遏蛋白](@keyword=repressor|lang=zh-CN|style=Feynman)*关闭*操纵子），但却缺乏另一种氨基酸，而其[密码子](@keyword=codon|lang=zh-CN|style=Feynman)恰好存在于[前导肽](@keyword=leader_peptide|lang=zh-CN|style=Feynman)中，会发生什么？在这种情况下，一个清晰的层级关系就出现了。阻遏蛋白在最开始，即[转录起始](@keyword=transcription_initiation|lang=zh-CN|style=Feynman)的大门处起作用。如果阻遏蛋白阻止了 RNA 聚合酶的启动，那么衰减子之后想做什么都无关紧要。守门员的决定是最终的，只有一小部分[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)能够通过。[操纵子](@keyword=operon|lang=zh-CN|style=Feynman)的净输出可以被认为是一个乘法过程：
 
 $$ \text{Expression} \propto P(\text{initiation}) \times P(\text{read-through}) $$
 
@@ -22,9 +22,9 @@ $$ \text{Expression} \propto P(\text{initiation}) \times P(\text{read-through}) 
 
 1.  **瞬时（亚秒到秒级）：** 最快的响应是反馈抑制。色氨酸分子本身直接与生物合成途径中的第一个酶结合，变构地关闭其催化活性。这就像按下了运转中机器的紧急停止按钮。
 
-2.  **快速（秒到分钟级）：** 第二快的响应是衰减。已经开始[转录](@article_id:361745)的 RNA 聚合酶分子在衰减子处被迅速停止。这就像停止生产线生产任何新部件。
+2.  **快速（秒到分钟级）：** 第二快的响应是衰减。已经开始[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)的 RNA 聚合酶分子在衰减子处被迅速停止。这就像停止生产线生产任何新部件。
 
-3.  **较慢（分钟级）：** 最慢的响应是阻遏。[阻遏蛋白](@article_id:365232)-色氨酸复合物与操纵序列结合，降低新[转录](@article_id:361745)事件的起始速率。这就像降低工厂在可预见的未来的总体生产配额。
+3.  **较慢（分钟级）：** 最慢的响应是阻遏。[阻遏蛋白](@keyword=repressor|lang=zh-CN|style=Feynman)-色氨酸复合物与操纵序列结合，降低新[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)事件的起始速率。这就像降低工厂在可预见的未来的总体生产配额。
 
 这个美妙的时间层级结构表明，细胞是一位经济学大师，通过首先在最快的干预点采取行动，然后在较慢、更持久的基因表达层面上巩固该决定，从而有效地管理其资源。
 
@@ -32,31 +32,31 @@ $$ \text{Expression} \propto P(\text{initiation}) \times P(\text{read-through}) 
 
 衰减的深层美在于其复杂的逻辑行为是以最简单的方式编码的：一条 RNA 链的一级序列。我们已经学会了很好地解读这段代码，以至于我们不仅能预测它的功能，还能重写它。
 
-考虑一个简单的突变。如果我们将 `trp` [前导肽](@article_id:382736)中的两个关键色氨酸[密码子](@article_id:337745)改成，比如说，丙氨酸[密码子](@article_id:337745)，会发生什么？假设细胞总是有充足的荷电丙氨酸 tRNA，那么无论色氨酸有多少，[核糖体](@article_id:307775)都不会在那个位置停滞。系统的传感器将被破坏。因此，终止子[发夹环](@article_id:377571)几乎总会形成，操纵子将永久地处于高度衰减的状态。
+考虑一个简单的突变。如果我们将 `trp` [前导肽](@keyword=leader_peptide|lang=zh-CN|style=Feynman)中的两个关键色氨酸[密码子](@keyword=codon|lang=zh-CN|style=Feynman)改成，比如说，丙氨酸[密码子](@keyword=codon|lang=zh-CN|style=Feynman)，会发生什么？假设细胞总是有充足的荷电丙氨酸 tRNA，那么无论色氨酸有多少，[核糖体](@keyword=ribosome|lang=zh-CN|style=Feynman)都不会在那个位置停滞。系统的传感器将被破坏。因此，终止子[发夹环](@keyword=hairpin_loop|lang=zh-CN|style=Feynman)几乎总会形成，操纵子将永久地处于高度衰减的状态。
 
-这种知识使我们从观察者变成了创造者。如果我们能通过改变[密码子](@article_id:337745)来破坏系统，我们是否也能重新利用它？当然可以。这就是合成生物学的乐园。通过简单地将两个色氨酸[密码子](@article_id:337745)换成两个组氨酸[密码子](@article_id:337745)，我们就可以重新布线整个电路。`TrpR` 阻遏系统仍然会对色氨酸产生响应，但[衰减机制](@article_id:346016)现在将对荷电组氨酸 tRNA 的可得性极其敏感。实质上，我们可以构建一个定制的[生物传感器](@article_id:318064)，将任何一组基因的表达与我们选择的几乎任何一种氨基酸的可得性耦合起来。这是一个强有力的证明，一旦你真正理解了一个自然原理，你就可以驾驭它用于新的目的。
+这种知识使我们从观察者变成了创造者。如果我们能通过改变[密码子](@keyword=codon|lang=zh-CN|style=Feynman)来破坏系统，我们是否也能重新利用它？当然可以。这就是合成生物学的乐园。通过简单地将两个色氨酸[密码子](@keyword=codon|lang=zh-CN|style=Feynman)换成两个组氨酸[密码子](@keyword=codon|lang=zh-CN|style=Feynman)，我们就可以重新布线整个电路。`TrpR` 阻遏系统仍然会对色氨酸产生响应，但[衰减机制](@keyword=attenuation_mechanism|lang=zh-CN|style=Feynman)现在将对荷电组氨酸 tRNA 的可得性极其敏感。实质上，我们可以构建一个定制的[生物传感器](@keyword=biological_sensors|lang=zh-CN|style=Feynman)，将任何一组基因的表达与我们选择的几乎任何一种氨基酸的可得性耦合起来。这是一个强有力的证明，一旦你真正理解了一个自然原理，你就可以驾驭它用于新的目的。
 
-### 一个普遍主题的变奏：[生命之树](@article_id:300140)中的衰减
+### 一个普遍主题的变奏：[生命之树](@keyword=tree_of_life|lang=zh-CN|style=Feynman)中的衰减
 
-当我们审视广阔的细菌王国时，我们发现大自然不止一次地发现了衰减这个主题。我们在*[大肠杆菌](@article_id:329380)*中研究的具体解决方案，即使用一个翻译中的[核糖体](@article_id:307775)作为荷电 tRNA 的传感器，是一种间接感知的奇迹。但它不是唯一的方式。
+当我们审视广阔的细菌王国时，我们发现大自然不止一次地发现了衰减这个主题。我们在*[大肠杆菌](@keyword=e._coli|lang=zh-CN|style=Feynman)*中研究的具体解决方案，即使用一个翻译中的[核糖体](@keyword=ribosome|lang=zh-CN|style=Feynman)作为荷电 tRNA 的传感器，是一种间接感知的奇迹。但它不是唯一的方式。
 
-在另一种细菌，*枯草[芽孢](@article_id:299117)杆菌* (*Bacillus subtilis*) 中，`trp` [操纵子](@article_id:336359)也受衰减调控，但分子机制完全不同。*枯草[芽孢](@article_id:299117)杆菌*不使用[核糖体](@article_id:307775)，而是使用一种名为 TRAP (*trp* RNA-binding Attenuation Protein，即色氨酸 RNA 结合衰减蛋白) 的专用蛋白。该蛋白有十一个亚基，形成一个可以结合多达十一个游离色氨酸分子的环状结构。当被色氨酸饱和时，TRAP 发生[构象变化](@article_id:364887)，使其能够与前导 RNA 结合，稳定一个终止子结构并停止[转录](@article_id:361745)。如果色氨酸稀缺，TRAP 则无活性，RNA 折叠成一个[抗终止子](@article_id:327300)，[转录](@article_id:361745)得以继续。
+在另一种细菌，*枯草[芽孢](@keyword=endospores|lang=zh-CN|style=Feynman)杆菌* (*Bacillus subtilis*) 中，`trp` [操纵子](@keyword=operon|lang=zh-CN|style=Feynman)也受衰减调控，但分子机制完全不同。*枯草[芽孢](@keyword=endospores|lang=zh-CN|style=Feynman)杆菌*不使用[核糖体](@keyword=ribosome|lang=zh-CN|style=Feynman)，而是使用一种名为 TRAP (*trp* RNA-binding Attenuation Protein，即色氨酸 RNA 结合衰减蛋白) 的专用蛋白。该蛋白有十一个亚基，形成一个可以结合多达十一个游离色氨酸分子的环状结构。当被色氨酸饱和时，TRAP 发生[构象变化](@keyword=conformational_change|lang=zh-CN|style=Feynman)，使其能够与前导 RNA 结合，稳定一个终止子结构并停止[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)。如果色氨酸稀缺，TRAP 则无活性，RNA 折叠成一个[抗终止子](@keyword=antiterminator|lang=zh-CN|style=Feynman)，[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)得以继续。
 
-这是一个趋同进化的惊人例子。两个亲缘关系较远的生物体面临同样的问题——如何调节[色氨酸合成](@article_id:348750)——并进化出两种完全不同的分子装置来解决它。
+这是一个趋同进化的惊人例子。两个亲缘关系较远的生物体面临同样的问题——如何调节[色氨酸合成](@keyword=tryptophan_synthesis|lang=zh-CN|style=Feynman)——并进化出两种完全不同的分子装置来解决它。
 
--   ***[大肠杆菌](@article_id:329380)***使用一种**通用组件**（[核糖体](@article_id:307775)）来感知**供给线**（荷电 tRNA）。
--   ***枯草[芽孢](@article_id:299117)杆菌***使用一种**特化蛋白**（TRAP）来感知**库存**（游离色氨酸）。
+-   ***[大肠杆菌](@keyword=e._coli|lang=zh-CN|style=Feynman)***使用一种**通用组件**（[核糖体](@keyword=ribosome|lang=zh-CN|style=Feynman)）来感知**供给线**（荷电 tRNA）。
+-   ***枯草[芽孢](@keyword=endospores|lang=zh-CN|style=Feynman)杆菌***使用一种**特化蛋白**（TRAP）来感知**库存**（游离色氨酸）。
 
-这种对比突显了一个基本原则：构建一个[生物电路](@article_id:336127)通常不止一种方法。这种多样性也教导我们这些系统的相互关联性。如果你用药物扰乱翻译，*[大肠杆菌](@article_id:329380)*中的整个[衰减机制](@article_id:346016)都会被破坏，因为它的传感器就是[核糖体](@article_id:307775)本身。但在*枯草芽孢杆菌*中，TRAP 系统会继续完美运作，因为它根本不依赖于翻译。
+这种对比突显了一个基本原则：构建一个[生物电路](@keyword=biological_circuits|lang=zh-CN|style=Feynman)通常不止一种方法。这种多样性也教导我们这些系统的相互关联性。如果你用药物扰乱翻译，*[大肠杆菌](@keyword=e._coli|lang=zh-CN|style=Feynman)*中的整个[衰减机制](@keyword=attenuation_mechanism|lang=zh-CN|style=Feynman)都会被破坏，因为它的传感器就是[核糖体](@keyword=ribosome|lang=zh-CN|style=Feynman)本身。但在*枯草芽孢杆菌*中，TRAP 系统会继续完美运作，因为它根本不依赖于翻译。
 
-TRAP 系统和[核糖体](@article_id:307775)介导的系统只是 RNA [基因调控](@article_id:303940)这一更广泛主题的两种变体。在许多情况下，RNA 分子可以完全省去蛋白质或[核糖体](@article_id:307775)中介，充当自己的传感器。这些 RNA 元件被称为**[核糖开关](@article_id:359935)**。一个典型的核糖开关有一个结构域（适配体），可以直接与一个小分子结合，引起 RNA 形状的改变，从而影响基因表达。这种改变可以触发[转录终止](@article_id:299596)——一种看起来与衰减非常相似但完全不需要[前导肽](@article_id:382736)或[核糖体](@article_id:307775)的机制。核糖开关的发现表明，衰减是基于 RNA 的控制系统大家族的一部分，也许是一个古老的“RNA 世界”的遗产，在那个世界里，RNA 分子主宰着整个生命活动。
+TRAP 系统和[核糖体](@keyword=ribosome|lang=zh-CN|style=Feynman)介导的系统只是 RNA [基因调控](@keyword=gene_regulation|lang=zh-CN|style=Feynman)这一更广泛主题的两种变体。在许多情况下，RNA 分子可以完全省去蛋白质或[核糖体](@keyword=ribosome|lang=zh-CN|style=Feynman)中介，充当自己的传感器。这些 RNA 元件被称为**[核糖开关](@keyword=riboswitches|lang=zh-CN|style=Feynman)**。一个典型的核糖开关有一个结构域（适配体），可以直接与一个小分子结合，引起 RNA 形状的改变，从而影响基因表达。这种改变可以触发[转录终止](@keyword=transcription_termination|lang=zh-CN|style=Feynman)——一种看起来与衰减非常相似但完全不需要[前导肽](@keyword=leader_peptide|lang=zh-CN|style=Feynman)或[核糖体](@keyword=ribosome|lang=zh-CN|style=Feynman)的机制。核糖开关的发现表明，衰减是基于 RNA 的控制系统大家族的一部分，也许是一个古老的“RNA 世界”的遗产，在那个世界里，RNA 分子主宰着整个生命活动。
 
-### [连锁反应](@article_id:298017)：上游决策的下游后果
+### [连锁反应](@keyword=chain_reaction|lang=zh-CN|style=Feynman)：上游决策的下游后果
 
-最后，在衰减子处做出的决定会在整个细胞中产生[连锁反应](@article_id:298017)。当 RNA 聚合酶从 DNA 上脱落时，故事并没有结束。产生的短小的、被中止的前导[转录](@article_id:361745)本会怎么样？那些即使在终止占优的情况下仍设法溜过衰减子的少数聚合酶分子又会怎么样？
+最后，在衰减子处做出的决定会在整个细胞中产生[连锁反应](@keyword=chain_reaction|lang=zh-CN|style=Feynman)。当 RNA 聚合酶从 DNA 上脱落时，故事并没有结束。产生的短小的、被中止的前导[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)本会怎么样？那些即使在终止占优的情况下仍设法溜过衰减子的少数聚合酶分子又会怎么样？
 
-细胞是整洁的。提前终止的前导[转录](@article_id:361745)本，一段短小且现在无用的 RNA，是快速降解的目标。它通常具有一些特征，如易于接近的 $5'$ 单磷酸末端和暴露的单链区域，使其成为像[核糖核酸](@article_id:339991)酶 E (Ribonuclease E) 这样的酶无法抗拒的目标。细胞有效地清理其失败的[转录](@article_id:361745)尝试。
+细胞是整洁的。提前终止的前导[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)本，一段短小且现在无用的 RNA，是快速降解的目标。它通常具有一些特征，如易于接近的 $5'$ 单磷酸末端和暴露的单链区域，使其成为像[核糖核酸](@keyword=ribonucleic_acid|lang=zh-CN|style=Feynman)酶 E (Ribonuclease E) 这样的酶无法抗拒的目标。细胞有效地清理其失败的[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)尝试。
 
-更微妙的是，衰减过程本身创造了[第二道防线](@article_id:352393)，以防止不必要的表达。在极少数情况下，一个聚合酶在色氨酸水平高的条件下通读了衰减子，这时会出现一种奇特的情况。翻译[前导肽](@article_id:382736)的[核糖体](@article_id:307775)完成了它的短小工作并解离，在[前导序列](@article_id:327363)末端和第一个结构基因起始之间形成了一段长的、裸露的、未翻译的 RNA。这段暴露的 RNA 是另一个终止因子——一种名为 Rho 的蛋白——的完美着陆平台。Rho 可以结合到这段裸露的 RNA 上，追赶聚合酶，导致它*再次*终止[转录](@article_id:361745)，但这次是在[操纵子](@article_id:336359)内部。这种被称为极性效应的现象，确保了最初的衰减决定得到强有力的执行，为这个精妙调控的系统又增加了一层保护。
+更微妙的是，衰减过程本身创造了[第二道防线](@keyword=second_line_of_defense|lang=zh-CN|style=Feynman)，以防止不必要的表达。在极少数情况下，一个聚合酶在色氨酸水平高的条件下通读了衰减子，这时会出现一种奇特的情况。翻译[前导肽](@keyword=leader_peptide|lang=zh-CN|style=Feynman)的[核糖体](@keyword=ribosome|lang=zh-CN|style=Feynman)完成了它的短小工作并解离，在[前导序列](@keyword=leader_sequence|lang=zh-CN|style=Feynman)末端和第一个结构基因起始之间形成了一段长的、裸露的、未翻译的 RNA。这段暴露的 RNA 是另一个终止因子——一种名为 Rho 的蛋白——的完美着陆平台。Rho 可以结合到这段裸露的 RNA 上，追赶聚合酶，导致它*再次*终止[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)，但这次是在[操纵子](@keyword=operon|lang=zh-CN|style=Feynman)内部。这种被称为极性效应的现象，确保了最初的衰减决定得到强有力的执行，为这个精妙调控的系统又增加了一层保护。
 
-从一个[核糖体](@article_id:307775)的简单[停顿](@article_id:639398)开始，我们穿越了一个充满分层控制、时间协调、进化创造力和合成生物学基础的世界。我们看到，[转录衰减](@article_id:353123)远不止一个简单的开关。它是一个动态的、由 RNA 构建的[模拟计算机](@article_id:328564)，无缝地融入到细胞庞大的调控网络中。它深刻地提醒我们，在生物学中，最深的秘密和最强大的应用往往不在于组件本身，而在于它们连接和互动的那些美妙而复杂的方式。
+从一个[核糖体](@keyword=ribosome|lang=zh-CN|style=Feynman)的简单[停顿](@keyword=stalling|lang=zh-CN|style=Feynman)开始，我们穿越了一个充满分层控制、时间协调、进化创造力和合成生物学基础的世界。我们看到，[转录衰减](@keyword=transcriptional_attenuation|lang=zh-CN|style=Feynman)远不止一个简单的开关。它是一个动态的、由 RNA 构建的[模拟计算机](@keyword=analog_computer|lang=zh-CN|style=Feynman)，无缝地融入到细胞庞大的调控网络中。它深刻地提醒我们，在生物学中，最深的秘密和最强大的应用往往不在于组件本身，而在于它们连接和互动的那些美妙而复杂的方式。

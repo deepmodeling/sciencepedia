@@ -1,13 +1,13 @@
 ## 引言
-虽然我们通常在三维世界中与事物互动，但科学、金融和工程领域的许多系统要求我们用数百甚至数千个变量进行思考。这引出了一个根本性问题：我们如何管理这种复杂性，并将我们的几何直觉应用于我们无法可视化的空间？答案就在于 $\mathbb{R}^n$ [向量空间](@article_id:297288)这个优雅而强大的框架，它是一个数学结构，能将我们熟悉的长度、距离和角度等概念推广到任意维度。本文将对这一核心主题进行全面介绍。
+虽然我们通常在三维世界中与事物互动，但科学、金融和工程领域的许多系统要求我们用数百甚至数千个变量进行思考。这引出了一个根本性问题：我们如何管理这种复杂性，并将我们的几何直觉应用于我们无法可视化的空间？答案就在于 $\mathbb{R}^n$ [向量空间](@keyword=vector_spaces|lang=zh-CN|style=Feynman)这个优雅而强大的框架，它是一个数学结构，能将我们熟悉的长度、距离和角度等概念推广到任意维度。本文将对这一核心主题进行全面介绍。
 
-第一章“原理与机制”将从零开始构建 $\mathbb{R}^n$ 的世界，探索其核心组成部分，如向量、范数、至关重要的[点积](@article_id:309438)，以及子空间和基的内部结构。随后，“应用与跨学科联系”一章将揭示 $\mathbb{R}^n$ 惊人的普遍性，展示它如何为数学、物理学及其他领域的众多概念（从线性变换到弯曲空间的定义）充当通用蓝图。
+第一章“原理与机制”将从零开始构建 $\mathbb{R}^n$ 的世界，探索其核心组成部分，如向量、范数、至关重要的[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)，以及子空间和基的内部结构。随后，“应用与跨学科联系”一章将揭示 $\mathbb{R}^n$ 惊人的普遍性，展示它如何为数学、物理学及其他领域的众多概念（从线性变换到弯曲空间的定义）充当通用蓝图。
 
 ## 原理与机制
 
 那么，我们有了“$\mathbb{R}^n$”这个多维空间的概念。但它究竟是什么？仅仅是括号里的一串数字吗？对于计算机来说，也许是。但对于物理学家或数学家而言，它是一个充满结构的宇宙，是自然法则和逻辑规则上演的舞台。我们在本章的任务就是探索这个宇宙。我们不仅要学习规则，更要尝试理解它们从何而来，以及为何如此优美和强大。
 
-### 从平面国到[超空间](@article_id:315815)：什么是 $\mathbb{R}^n$？
+### 从平面国到[超空间](@keyword=superspace|lang=zh-CN|style=Feynman)：什么是 $\mathbb{R}^n$？
 
 让我们从熟悉的事物开始。你知道一张纸上的点是什么。你可以用两个数字，一个 $x$ 坐标和一个 $y$ 坐标来描述它的位置。我们称这个二维空间为 $\mathbb{R}^2$。如果你想描述一只在房间里飞舞的苍蝇，你需要三个数字：长、宽、高。这就是我们熟悉的三维世界 $\mathbb{R}^3$。
 
@@ -25,31 +25,31 @@
 $$
 \|\mathbf{v}\| = \sqrt{v_1^2 + v_2^2 + \dots + v_n^2} = \sqrt{\sum_{i=1}^{n} v_i^2}
 $$
-有些向量因为长度恰好为 1 而显得特殊。我们称之为**单位向量**。它们非常有用，因为它们捕捉了纯粹方向的概念，没有任何大小来使问题复杂化。要从任意非零向量 $\mathbf{v}$ 得到一个单位向量 $\mathbf{u}$，只需将该向量除以其自身长度：$\mathbf{u} = \frac{\mathbf{v}}{\|\mathbf{v}\|}$。例如，在 $\mathbb{R}^3$ 中，向量 $\mathbf{v} = (1, -2, 2)$ 的长度为 $\|\mathbf{v}\| = \sqrt{1^2 + (-2)^2 + 2^2} = \sqrt{9} = 3$。因此，指向相同方向的单位向量是 $\mathbf{u} = (\frac{1}{3}, -\frac{2}{3}, \frac{2}{3})$ 。
+有些向量因为长度恰好为 1 而显得特殊。我们称之为**单位向量**。它们非常有用，因为它们捕捉了纯粹方向的概念，没有任何大小来使问题复杂化。要从任意非零向量 $\mathbf{v}$ 得到一个单位向量 $\mathbf{u}$，只需将该向量除以其自身长度：$\mathbf{u} = \frac{\mathbf{v}}{\|\mathbf{v}\|}$。例如，在 $\mathbb{R}^3$ 中，向量 $\mathbf{v} = (1, -2, 2)$ 的长度为 $\|\mathbf{v}\| = \sqrt{1^2 + (-2)^2 + 2^2} = \sqrt{9} = 3$。因此，指向相同方向的单位向量是 $\mathbf{u} = (\frac{1}{3}, -\frac{2}{3}, \frac{2}{3})$ [@problem_id:1401142]。
 
 一旦你知道如何求向量的长度，求两点 $P$ 和 $Q$ 之间的**距离**就很容易了。只需考虑从 $P$ 指向 $Q$ 的向量。这个向量就是 $\mathbf{v} = Q - P$，通过逐分量相减计算得出。距离 $d(P, Q)$ 就是这个向量的长度！
 $$
 d(P, Q) = \|Q-P\| = \sqrt{\sum_{i=1}^{n} (q_i - p_i)^2}
 $$
-即使在我们完全无法想象的维度中，这也同样适用。在一个假设的 5 维世界中，点 $P=(1, 0, 2, -1, 3)$ 和 $Q=(3, 1, 0, 1, 2)$ 之间的距离计算起来同样简单。坐标差为 $(2, 1, -2, 2, -1)$。它们的[平方和](@article_id:321453)是 $4+1+4+4+1 = 14$。所以，距离就是 $\sqrt{14}$ 。数学并不在乎我们的大脑被困在三维空间！
+即使在我们完全无法想象的维度中，这也同样适用。在一个假设的 5 维世界中，点 $P=(1, 0, 2, -1, 3)$ 和 $Q=(3, 1, 0, 1, 2)$ 之间的距离计算起来同样简单。坐标差为 $(2, 1, -2, 2, -1)$。它们的[平方和](@keyword=sum_of_squares|lang=zh-CN|style=Feynman)是 $4+1+4+4+1 = 14$。所以，距离就是 $\sqrt{14}$ [@problem_id:7175]。数学并不在乎我们的大脑被困在三维空间！
 
-### [点积](@article_id:309438)的秘密：几何的引擎
+### [点积](@keyword=dot_product|lang=zh-CN|style=Feynman)的秘密：几何的引擎
 
-现在我们来看数学中最优雅的思想之一：**[点积](@article_id:309438)**。表面上看，它只是一个简单的计算。对于两个向量 $\mathbf{u} = (u_1, \dots, u_n)$ 和 $\mathbf{v} = (v_1, \dots, v_n)$，[点积](@article_id:309438)是：
+现在我们来看数学中最优雅的思想之一：**[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)**。表面上看，它只是一个简单的计算。对于两个向量 $\mathbf{u} = (u_1, \dots, u_n)$ 和 $\mathbf{v} = (v_1, \dots, v_n)$，[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)是：
 $$
 \mathbf{u} \cdot \mathbf{v} = u_1 v_1 + u_2 v_2 + \dots + u_n v_n = \sum_{i=1}^{n} u_i v_i
 $$
 结果不是另一个向量，而是一个单独的数字——一个标量。那又怎样？这个数字*意味着*什么？一切。这个简单的运算是通往 $\mathbb{R}^n$ 所有几何奥秘的关键。
 
-首先，注意到它与长度的直接联系：$\mathbf{v} \cdot \mathbf{v} = v_1^2 + v_2^2 + \dots + v_n^2 = \|\mathbf{v}\|^2$。一个向量的长度是它与自身[点积](@article_id:309438)的平方根。
+首先，注意到它与长度的直接联系：$\mathbf{v} \cdot \mathbf{v} = v_1^2 + v_2^2 + \dots + v_n^2 = \|\mathbf{v}\|^2$。一个向量的长度是它与自身[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)的平方根。
 
-其次，[点积](@article_id:309438)遵循非常简单的代数规则，比如[分配律](@article_id:304514)：$\mathbf{u} \cdot (\mathbf{v} + \mathbf{w}) = \mathbf{u} \cdot \mathbf{v} + \mathbf{u} \cdot \mathbf{w}$。这些规则如此强大，以至于我们甚至可以在不知道向量具体是什么的情况下解决问题！想象一下，有人告诉你对于两个向量 $\mathbf{u}$ 和 $\mathbf{v}$，有 $\|\mathbf{u}\|^2 = \mathbf{u} \cdot \mathbf{u} = 4$，$\|\mathbf{v}\|^2 = \mathbf{v} \cdot \mathbf{v} = 9$，以及 $\mathbf{u} \cdot \mathbf{v} = -1$。你能计算出 $(2\mathbf{u}+\mathbf{v})\cdot(\mathbf{u}-\mathbf{v})$ 的值吗？你只需像在高中代数中那样把它展开：
+其次，[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)遵循非常简单的代数规则，比如[分配律](@keyword=distributive_property|lang=zh-CN|style=Feynman)：$\mathbf{u} \cdot (\mathbf{v} + \mathbf{w}) = \mathbf{u} \cdot \mathbf{v} + \mathbf{u} \cdot \mathbf{w}$。这些规则如此强大，以至于我们甚至可以在不知道向量具体是什么的情况下解决问题！想象一下，有人告诉你对于两个向量 $\mathbf{u}$ 和 $\mathbf{v}$，有 $\|\mathbf{u}\|^2 = \mathbf{u} \cdot \mathbf{u} = 4$，$\|\mathbf{v}\|^2 = \mathbf{v} \cdot \mathbf{v} = 9$，以及 $\mathbf{u} \cdot \mathbf{v} = -1$。你能计算出 $(2\mathbf{u}+\mathbf{v})\cdot(\mathbf{u}-\mathbf{v})$ 的值吗？你只需像在高中代数中那样把它展开：
 $$
 (2\mathbf{u}+\mathbf{v})\cdot(\mathbf{u}-\mathbf{v}) = 2(\mathbf{u}\cdot\mathbf{u}) - 2(\mathbf{u}\cdot\mathbf{v}) + (\mathbf{v}\cdot\mathbf{u}) - (\mathbf{v}\cdot\mathbf{v})
 $$
-因为 $\mathbf{u} \cdot \mathbf{v} = \mathbf{v} \cdot \mathbf{u}$，这可以简化为 $2(\mathbf{u}\cdot\mathbf{u}) - (\mathbf{u}\cdot\mathbf{v}) - (\mathbf{v}\cdot\mathbf{v})$。代入数字得到 $2(4) - (-1) - 9 = 8 + 1 - 9 = 0$。我们在完全不需要知道 $\mathbf{u}$ 和 $\mathbf{v}$ 的分量的情况下就找到了答案 。这就是抽象的力量。
+因为 $\mathbf{u} \cdot \mathbf{v} = \mathbf{v} \cdot \mathbf{u}$，这可以简化为 $2(\mathbf{u}\cdot\mathbf{u}) - (\mathbf{u}\cdot\mathbf{v}) - (\mathbf{v}\cdot\mathbf{v})$。代入数字得到 $2(4) - (-1) - 9 = 8 + 1 - 9 = 0$。我们在完全不需要知道 $\mathbf{u}$ 和 $\mathbf{v}$ 的分量的情况下就找到了答案 [@problem_id:7138]。这就是抽象的力量。
 
-然而，真正的魔力发生在[点积](@article_id:309438)为零时。两个非零向量 $\mathbf{u}$ 和 $\mathbf{v}$ 是**正交**的（垂直的），当且仅当 $\mathbf{u} \cdot \mathbf{v} = 0$。这个简单的代数条件完美地捕捉了成直角的几何概念。它立即给了我们一个广义的[勾股定理](@article_id:351446)。让我们看看两个[正交向量](@article_id:302666) $\mathbf{x}$ 和 $\mathbf{y}$ 的和的长度：
+然而，真正的魔力发生在[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)为零时。两个非零向量 $\mathbf{u}$ 和 $\mathbf{v}$ 是**正交**的（垂直的），当且仅当 $\mathbf{u} \cdot \mathbf{v} = 0$。这个简单的代数条件完美地捕捉了成直角的几何概念。它立即给了我们一个广义的[勾股定理](@keyword=a^2=b^2+c^2|lang=zh-CN|style=Feynman)。让我们看看两个[正交向量](@keyword=orthogonal_vectors|lang=zh-CN|style=Feynman) $\mathbf{x}$ 和 $\mathbf{y}$ 的和的长度：
 $$
 \|\mathbf{x}+\mathbf{y}\|^2 = (\mathbf{x}+\mathbf{y}) \cdot (\mathbf{x}+\mathbf{y}) = \mathbf{x}\cdot\mathbf{x} + 2(\mathbf{x}\cdot\mathbf{y}) + \mathbf{y}\cdot\mathbf{y}
 $$
@@ -57,34 +57,34 @@ $$
 $$
 \|\mathbf{x}+\mathbf{y}\|^2 = \|\mathbf{x}\|^2 + \|\mathbf{y}\|^2
 $$
-这就是纯粹而简单的勾股定理，在任何维度都成立。如果有人告诉你两个[正交向量](@article_id:302666)的长度分别是 5 和 12，你会立刻知道它们的和的长度是 $\sqrt{5^2 + 12^2} = \sqrt{169} = 13$ 。
+这就是纯粹而简单的勾股定理，在任何维度都成立。如果有人告诉你两个[正交向量](@keyword=orthogonal_vectors|lang=zh-CN|style=Feynman)的长度分别是 5 和 12，你会立刻知道它们的和的长度是 $\sqrt{5^2 + 12^2} = \sqrt{169} = 13$ [@problem_id:7148]。
 
-这种关系是如此深刻，以至于它是双向的。不仅[点积](@article_id:309438)定义了范数，范数本身也完全定义了[点积](@article_id:309438)！这是一个被称为**[极化恒等式](@article_id:335516)**的非凡结果。通过展开 $\|\mathbf{u} - \mathbf{v}\|^2 = (\mathbf{u}-\mathbf{v})\cdot(\mathbf{u}-\mathbf{v}) = \|\mathbf{u}\|^2 - 2(\mathbf{u}\cdot\mathbf{v}) + \|\mathbf{v}\|^2$，我们可以简单地重新[排列](@article_id:296886)方程来求解[点积](@article_id:309438)：
+这种关系是如此深刻，以至于它是双向的。不仅[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)定义了范数，范数本身也完全定义了[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)！这是一个被称为**[极化恒等式](@keyword=polarization_identity|lang=zh-CN|style=Feynman)**的非凡结果。通过展开 $\|\mathbf{u} - \mathbf{v}\|^2 = (\mathbf{u}-\mathbf{v})\cdot(\mathbf{u}-\mathbf{v}) = \|\mathbf{u}\|^2 - 2(\mathbf{u}\cdot\mathbf{v}) + \|\mathbf{v}\|^2$，我们可以简单地重新[排列](@keyword=permutation|lang=zh-CN|style=Feynman)方程来求解[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)：
 $$
 \mathbf{u} \cdot \mathbf{v} = \frac{\|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 - \|\mathbf{u}-\mathbf{v}\|^2}{2}
 $$
-这太惊人了！这意味着，如果你有一个可以测量距离（或长度）的空间，你就已经自动地、含蓄地定义了角度的概念。几何是一个单一、统一的整体。如果你知道两个向量的长度以及它们差的长度，你就可以计算出它们的[点积](@article_id:309438) 。事实上，这只是你在三角学中学到的余弦定理的伪装形式。[点积](@article_id:309438)是驱动所有这一切几何的引擎。
+这太惊人了！这意味着，如果你有一个可以测量距离（或长度）的空间，你就已经自动地、含蓄地定义了角度的概念。几何是一个单一、统一的整体。如果你知道两个向量的长度以及它们差的长度，你就可以计算出它们的[点积](@keyword=dot_product|lang=zh-CN|style=Feynman) [@problem_id:7171]。事实上，这只是你在三角学中学到的余弦定理的伪装形式。[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)是驱动所有这一切几何的引擎。
 
 ### 空间的骨架：子空间与基
 
-现在让我们把视野拉远，看看 $\mathbb{R}^n$ 的宏观结构。它不仅仅是向量的杂乱集合。它有一个由**子空间**构成的优美内部骨架。子空间是 $\mathbb{R}^n$ 的一部分，其本身就是一个小型的[向量空间](@article_id:297288)。规则很简单：如果你从子空间中取出任意两个向量相加，结果仍然在子空间内。如果你将任意向量拉伸某个标量倍，它也仍然在子空间内。从几何上看，子空间是那些穿过原点的“平坦”事物：直线、平面以及它们的高维对应物。
+现在让我们把视野拉远，看看 $\mathbb{R}^n$ 的宏观结构。它不仅仅是向量的杂乱集合。它有一个由**子空间**构成的优美内部骨架。子空间是 $\mathbb{R}^n$ 的一部分，其本身就是一个小型的[向量空间](@keyword=vector_spaces|lang=zh-CN|style=Feynman)。规则很简单：如果你从子空间中取出任意两个向量相加，结果仍然在子空间内。如果你将任意向量拉伸某个标量倍，它也仍然在子空间内。从几何上看，子空间是那些穿过原点的“平坦”事物：直线、平面以及它们的高维对应物。
 
-最简单的子空间是什么？是只包含一个点——原点 $\mathbf{0} = (0, \dots, 0)$ 的集合。我们称之为**零子空间**，$\{\mathbf{0}\}$。它看似微不足道，却是万物的基石。它是一个 0 维子空间，并且是 $\mathbb{R}^n$ 中*唯一*存在的 0 维子空间。为什么？因为“维度”是**基**中向量的数量，而基是一个最小的[线性无关](@article_id:314171)向量集合，可以通过它们的组合来生成子空间中的所有事物。要只生成零向量，你根本不需要任何向量！零子空间的基是[空集](@article_id:325657)，其中有 0 个向量 。这是一个奇怪但逻辑上必然的想法。
+最简单的子空间是什么？是只包含一个点——原点 $\mathbf{0} = (0, \dots, 0)$ 的集合。我们称之为**零子空间**，$\{\mathbf{0}\}$。它看似微不足道，却是万物的基石。它是一个 0 维子空间，并且是 $\mathbb{R}^n$ 中*唯一*存在的 0 维子空间。为什么？因为“维度”是**基**中向量的数量，而基是一个最小的[线性无关](@keyword=linear_independence|lang=zh-CN|style=Feynman)向量集合，可以通过它们的组合来生成子空间中的所有事物。要只生成零向量，你根本不需要任何向量！零子空间的基是[空集](@keyword=empty_set|lang=zh-CN|style=Feynman)，其中有 0 个向量 [@problem_id:1399844]。这是一个奇怪但逻辑上必然的想法。
 
-对于每个子空间，都有一个“影子”子空间，即它的**[正交补](@article_id:310341)**。子空间 $W$ 的[正交补](@article_id:310341)，记作 $W^\perp$，是所有与 $W$ 中*每个*向量都正交的向量的集合。让我们把它应用到我们那个微不足道的英雄——零子空间 $W = \{\mathbf{0}\}$ 上。哪些向量与零向量正交？让我们来检验一下：$\mathbf{v} \cdot \mathbf{0} = v_1(0) + \dots + v_n(0) = 0$。这对*任何*向量 $\mathbf{v}$ 都成立！所以，整个空间 $\mathbb{R}^n$ 中的每一个向量都与[零向量](@article_id:316597)正交。这意味着零子空间的正交补就是整个空间本身：$\{\mathbf{0}\}^\perp = \mathbb{R}^n$ 。这是贯穿线性代数的深刻对偶性的一个优美例子。
+对于每个子空间，都有一个“影子”子空间，即它的**[正交补](@keyword=orthogonal_complements|lang=zh-CN|style=Feynman)**。子空间 $W$ 的[正交补](@keyword=orthogonal_complements|lang=zh-CN|style=Feynman)，记作 $W^\perp$，是所有与 $W$ 中*每个*向量都正交的向量的集合。让我们把它应用到我们那个微不足道的英雄——零子空间 $W = \{\mathbf{0}\}$ 上。哪些向量与零向量正交？让我们来检验一下：$\mathbf{v} \cdot \mathbf{0} = v_1(0) + \dots + v_n(0) = 0$。这对*任何*向量 $\mathbf{v}$ 都成立！所以，整个空间 $\mathbb{R}^n$ 中的每一个向量都与[零向量](@keyword=zero_vector|lang=zh-CN|style=Feynman)正交。这意味着零子空间的正交补就是整个空间本身：$\{\mathbf{0}\}^\perp = \mathbb{R}^n$ [@problem_id:14954]。这是贯穿线性代数的深刻对偶性的一个优美例子。
 
-为了在这些子空间中导航和描述它们，我们需要[坐标系](@article_id:316753)，在线性代数中称为**基**。$\mathbb{R}^n$ 的一个基是 $n$ 个向量的集合，这些向量[线性无关](@article_id:314171)（没有一个能表示为其他向量的组合）并且张成整个空间（任何向量都可以写成它们的组合）。最简单的是**标准基**，$\{\mathbf{e}_1, \dots, \mathbf{e}_n\}$，其中 $\mathbf{e}_i$ 是第 $i$ 个位置为 1，其他位置都为 0 的向量。
+为了在这些子空间中导航和描述它们，我们需要[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)，在线性代数中称为**基**。$\mathbb{R}^n$ 的一个基是 $n$ 个向量的集合，这些向量[线性无关](@keyword=linear_independence|lang=zh-CN|style=Feynman)（没有一个能表示为其他向量的组合）并且张成整个空间（任何向量都可以写成它们的组合）。最简单的是**标准基**，$\{\mathbf{e}_1, \dots, \mathbf{e}_n\}$，其中 $\mathbf{e}_i$ 是第 $i$ 个位置为 1，其他位置都为 0 的向量。
 
-虽然任何基都可以，但有些基比其他的更好。 “最好”的是**标准正交基**。这些基中的每个向量长度都为 1（标准），并且与基中所有其他向量都正交（正交）。标准基就是这样的一个例子。它们为什么如此特别？因为它们使计算变得如梦一般简单。还记得我们最初的[点积公式](@article_id:351529) $\mathbf{u} \cdot \mathbf{v} = \sum u_i v_i$ 吗？我们把它当作一个定义。但深刻的真理是，这个简单的公式*只有在坐标 $u_i$ 和 $v_i$ 是相对于一个[标准正交基](@article_id:308193)给出时才成立*。如果你使用一个歪斜的、非正交的基，这个公式会变得一团糟。$\mathbf{u} \cdot \mathbf{v} = \sum u_i v_i$ 的简洁性正是[标准正交性](@article_id:331590)带来的直接赠礼 。这表明，我们直观计算[点积](@article_id:309438)的方式，其实一直都在暗中依赖于一个标准正交基所提供的优美、简洁的[坐标系](@article_id:316753)。
+虽然任何基都可以，但有些基比其他的更好。 “最好”的是**标准正交基**。这些基中的每个向量长度都为 1（标准），并且与基中所有其他向量都正交（正交）。标准基就是这样的一个例子。它们为什么如此特别？因为它们使计算变得如梦一般简单。还记得我们最初的[点积公式](@keyword=dot_product_formula|lang=zh-CN|style=Feynman) $\mathbf{u} \cdot \mathbf{v} = \sum u_i v_i$ 吗？我们把它当作一个定义。但深刻的真理是，这个简单的公式*只有在坐标 $u_i$ 和 $v_i$ 是相对于一个[标准正交基](@keyword=orthonormal_basis|lang=zh-CN|style=Feynman)给出时才成立*。如果你使用一个歪斜的、非正交的基，这个公式会变得一团糟。$\mathbf{u} \cdot \mathbf{v} = \sum u_i v_i$ 的简洁性正是[标准正交性](@keyword=orthonormality|lang=zh-CN|style=Feynman)带来的直接赠礼 [@problem_id:5158]。这表明，我们直观计算[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)的方式，其实一直都在暗中依赖于一个标准正交基所提供的优美、简洁的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)。
 
-### 超越原点：[仿射几何](@article_id:357691)的世界
+### 超越原点：[仿射几何](@keyword=affine_geometry|lang=zh-CN|style=Feynman)的世界
 
-[向量空间](@article_id:297288)很强大，但也有点局限：所有东西都必须经过原点。特别是子空间，总是被锚定在那里。但是我们生活的世界充满了随处漂浮的直线、平面和其他平坦物体。代表[行星轨道](@article_id:357873)的直线不一定穿过星系的中心。
+[向量空间](@keyword=vector_spaces|lang=zh-CN|style=Feynman)很强大，但也有点局限：所有东西都必须经过原点。特别是子空间，总是被锚定在那里。但是我们生活的世界充满了随处漂浮的直线、平面和其他平坦物体。代表[行星轨道](@keyword=planetary_orbits|lang=zh-CN|style=Feynman)的直线不一定穿过星系的中心。
 
-这就是**[仿射几何](@article_id:357691)**的用武之地。一个**仿射子空间**就是一个被平移了的[向量子空间](@article_id:312229)。如果 $W$ 是一个[向量子空间](@article_id:312229)（比如一个通过原点的平面），而 $\mathbf{p}$ 是某个向量，那么所有点 $\mathbf{p} + \mathbf{w}$（其中 $\mathbf{w}$ 是 $W$ 中的任意向量）的集合就构成一个仿射子空间。它还是那个平面，只是被移动了，现在通过点 $\mathbf{p}$。
+这就是**[仿射几何](@keyword=affine_geometry|lang=zh-CN|style=Feynman)**的用武之地。一个**仿射子空间**就是一个被平移了的[向量子空间](@keyword=vector_subspace|lang=zh-CN|style=Feynman)。如果 $W$ 是一个[向量子空间](@keyword=vector_subspace|lang=zh-CN|style=Feynman)（比如一个通过原点的平面），而 $\mathbf{p}$ 是某个向量，那么所有点 $\mathbf{p} + \mathbf{w}$（其中 $\mathbf{w}$ 是 $W$ 中的任意向量）的集合就构成一个仿射子空间。它还是那个平面，只是被移动了，现在通过点 $\mathbf{p}$。
 
-这引出了一个更普遍的相依性概念。我们说点集 $\{p_0, p_1, \dots, p_k\}$ 是**仿射相关的**，如果其中一个点可以写成其他点的“[仿射组合](@article_id:340416)”（一种系数之和为 1 的线性组合）。这在几何上意味着什么？它告诉我们这些点是否位于同一个更小维度的平坦物体上。例如，三个点是仿射相关的，如果它们共线（位于同一条直线上）。
+这引出了一个更普遍的相依性概念。我们说点集 $\{p_0, p_1, \dots, p_k\}$ 是**仿射相关的**，如果其中一个点可以写成其他点的“[仿射组合](@keyword=affine_combination|lang=zh-CN|style=Feynman)”（一种系数之和为 1 的线性组合）。这在几何上意味着什么？它告诉我们这些点是否位于同一个更小维度的平坦物体上。例如，三个点是仿射相关的，如果它们共线（位于同一条直线上）。
 
-让我们看一个优美的例子。取空间中*不在*同一条直线上的三个点 $\mathbf{v}_0, \mathbf{v}_1, \mathbf{v}_2$（它们是[仿射无关](@article_id:326434)的）。它们定义了什么？一个唯一的平面。现在，如果我们选择第四个点 $\mathbf{p}$，$\mathbf{p}$ 在什么时候会使得集合 $\{\mathbf{v}_0, \mathbf{v}_1, \mathbf{v}_2, \mathbf{p}\}$ 变成仿射相关的呢？仿射相关的代数导出了一个优雅的结论：这当且仅当点 $\mathbf{p}$ 位于由前三个点定义的那个平面上时才会发生 。抽象的代数定义完美地捕捉了我们对于“共面”的几何直觉。
+让我们看一个优美的例子。取空间中*不在*同一条直线上的三个点 $\mathbf{v}_0, \mathbf{v}_1, \mathbf{v}_2$（它们是[仿射无关](@keyword=affine_independence|lang=zh-CN|style=Feynman)的）。它们定义了什么？一个唯一的平面。现在，如果我们选择第四个点 $\mathbf{p}$，$\mathbf{p}$ 在什么时候会使得集合 $\{\mathbf{v}_0, \mathbf{v}_1, \mathbf{v}_2, \mathbf{p}\}$ 变成仿射相关的呢？仿射相关的代数导出了一个优雅的结论：这当且仅当点 $\mathbf{p}$ 位于由前三个点定义的那个平面上时才会发生 [@problem_id:1631429]。抽象的代数定义完美地捕捉了我们对于“共面”的几何直觉。
 
-至此，我们构建了 $\mathbb{R}^n$ 的世界。它不仅仅是一堆枯燥的数字列表，而是一个充满活力的几何空间，具备了长度、距离和角度的概念，所有这些都由[点积](@article_id:309438)统一起来。它拥有由子空间和[坐标系](@article_id:316753)构成的丰富内部结构。它不仅为描述根植于原点的向量提供了基础，也为描述构成我们周围世界的点、线和平面提供了基础。舞台已经搭好。现在，我们准备好看看什么样的物理学和数学可以在上面上演了。
+至此，我们构建了 $\mathbb{R}^n$ 的世界。它不仅仅是一堆枯燥的数字列表，而是一个充满活力的几何空间，具备了长度、距离和角度的概念，所有这些都由[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)统一起来。它拥有由子空间和[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)构成的丰富内部结构。它不仅为描述根植于原点的向量提供了基础，也为描述构成我们周围世界的点、线和平面提供了基础。舞台已经搭好。现在，我们准备好看看什么样的物理学和数学可以在上面上演了。

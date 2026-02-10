@@ -1,7 +1,7 @@
 ## Introduction
-From simple questions about arranging objects to the complex architecture of abstract mathematics, certain principles recur with surprising frequency. The multinomial theorem is one such unifying idea, bridging the gap between basic counting and profound scientific models. While many are familiar with its simpler cousin, the [binomial theorem](@article_id:276171), the true power of this concept is revealed when we move beyond two variables. This article addresses how a fundamental rule of [combinatorics](@article_id:143849) extends to become a powerful tool with applications across seemingly unrelated domains.
+From simple questions about arranging objects to the complex architecture of abstract mathematics, certain principles recur with surprising frequency. The multinomial theorem is one such unifying idea, bridging the gap between basic counting and profound scientific models. While many are familiar with its simpler cousin, the [binomial theorem](@keyword=binomial_theorem|lang=en-US|style=Feynman), the true power of this concept is revealed when we move beyond two variables. This article addresses how a fundamental rule of [combinatorics](@keyword=combinatorics|lang=en-US|style=Feynman) extends to become a powerful tool with applications across seemingly unrelated domains.
 
-We will begin by exploring the core principles and mechanisms of the theorem, starting with its origin in partitioning problems and its direct connection to the algebra of polynomial expansions. Following this, we will journey through its diverse applications and interdisciplinary connections, discovering how the same mathematical structure governs the inheritance of genes in population genetics and describes the properties of abstract spaces in [algebraic geometry](@article_id:155806). This exploration will reveal the multinomial theorem not just as a formula, but as a fundamental pattern woven into the fabric of science.
+We will begin by exploring the core principles and mechanisms of the theorem, starting with its origin in partitioning problems and its direct connection to the algebra of polynomial expansions. Following this, we will journey through its diverse applications and interdisciplinary connections, discovering how the same mathematical structure governs the inheritance of genes in population genetics and describes the properties of abstract spaces in [algebraic geometry](@keyword=algebraic_geometry|lang=en-US|style=Feynman). This exploration will reveal the multinomial theorem not just as a formula, but as a fundamental pattern woven into the fabric of science.
 
 ## Principles and Mechanisms
 
@@ -24,7 +24,7 @@ $$ \binom{9}{3} \times \binom{6}{2} \times \binom{4}{4} = \frac{9!}{3!(9-3)!} \t
 $$ = \frac{9!}{3!6!} \times \frac{6!}{2!4!} \times \frac{4!}{4!0!} $$
 Notice something wonderful? The $6!$ and $4!$ terms cancel out! We are left with something beautifully simple:
 $$ \frac{9!}{3!2!4!0!} $$
-(Remembering that $0!=1$). This number, which we call the **[multinomial coefficient](@article_id:261793)**, is the answer to our question. In this case, it's $1260$.
+(Remembering that $0!=1$). This number, which we call the **[multinomial coefficient](@keyword=multinomial_coefficient|lang=en-US|style=Feynman)**, is the answer to our question. In this case, it's $1260$.
 
 In general, if you have $n$ items to arrange, with $n_1$ of the first type, $n_2$ of the second, and so on, up to $n_k$ of the $k$-th type (where $n_1+n_2+\dots+n_k=n$), the number of distinct arrangements is:
 $$ \binom{n}{n_1, n_2, \ldots, n_k} = \frac{n!}{n_1! n_2! \cdots n_k!} $$
@@ -38,7 +38,7 @@ Consider the expression $(x+y+z)^9$. If we were to multiply this out, we would b
 
 For example, to get the term $x^9$, you have to choose $x$ from all 9 factors. There's only one way to do that. But what about a term like $x^3y^2z^4$? To get this, you must choose $x$ from 3 of the factors, $y$ from 2 of the factors, and $z$ from the remaining 4 factors.
 
-Wait a moment. This sounds familiar! The question "How many times will the term $x^3y^2z^4$ appear in the expansion?" is *exactly the same question* we just answered: "How many ways can you arrange three $x$'s, two $y$'s, and four $z$'s in a sequence of length 9?". The answer, we found, is the [multinomial coefficient](@article_id:261793) $\binom{9}{3,2,4}$. This coefficient is precisely the numerical factor that sits in front of the $x^3y^2z^4$ term after we collect all the like terms. This is the **multinomial theorem**:
+Wait a moment. This sounds familiar! The question "How many times will the term $x^3y^2z^4$ appear in the expansion?" is *exactly the same question* we just answered: "How many ways can you arrange three $x$'s, two $y$'s, and four $z$'s in a sequence of length 9?". The answer, we found, is the [multinomial coefficient](@keyword=multinomial_coefficient|lang=en-US|style=Feynman) $\binom{9}{3,2,4}$. This coefficient is precisely the numerical factor that sits in front of the $x^3y^2z^4$ term after we collect all the like terms. This is the **multinomial theorem**:
 $$ (x_1 + x_2 + \cdots + x_k)^n = \sum_{n_1+\cdots+n_k=n} \binom{n}{n_1, \ldots, n_k} x_1^{n_1} x_2^{n_2} \cdots x_k^{n_k} $$
 The algebra of polynomial expansion is governed by the combinatorics of partitioning.
 
@@ -69,11 +69,11 @@ So, the sum of all the coefficients is simply $5^6 = 15625$. With a flash of ins
 
 The power of a great idea is measured by how many different fields it can illuminate. The multinomial theorem is a prime example.
 
-First, let's turn to **probability**. The [binomial distribution](@article_id:140687), which describes the outcomes of repeated trials with two possibilities (like a coin flip), is a staple of introductory statistics. The probability of getting $x_1$ heads and $x_2$ tails in $n$ flips, with probabilities $p_1$ and $p_2$, is $\binom{n}{x_1} p_1^{x_1} p_2^{x_2}$.
+First, let's turn to **probability**. The [binomial distribution](@keyword=binomial_distribution|lang=en-US|style=Feynman), which describes the outcomes of repeated trials with two possibilities (like a coin flip), is a staple of introductory statistics. The probability of getting $x_1$ heads and $x_2$ tails in $n$ flips, with probabilities $p_1$ and $p_2$, is $\binom{n}{x_1} p_1^{x_1} p_2^{x_2}$.
 
-What if a trial has more than two outcomes, like rolling a die or drawing colored balls from an urn? This is described by the **[multinomial distribution](@article_id:188578)**. The probability of observing $x_1$ of the first outcome, $x_2$ of the second, and so on, in $n$ trials is:
+What if a trial has more than two outcomes, like rolling a die or drawing colored balls from an urn? This is described by the **[multinomial distribution](@keyword=multinomial_distribution|lang=en-US|style=Feynman)**. The probability of observing $x_1$ of the first outcome, $x_2$ of the second, and so on, in $n$ trials is:
 $$ P(X_1=x_1, \ldots, X_k=x_k) = \frac{n!}{x_1! \cdots x_k!} p_1^{x_1} \cdots p_k^{x_k} $$
-Look closely. The coefficient is our familiar [multinomial coefficient](@article_id:261793). It counts the number of ways a specific outcome can occur. The rest of the expression is the probability of any one of those specific ways. If we set $k=2$, this formula simplifies perfectly to the [binomial distribution](@article_id:140687). The [binomial distribution](@article_id:140687) isn't a separate law of nature; it's simply a two-dimensional slice of the broader, more general multinomial world.
+Look closely. The coefficient is our familiar [multinomial coefficient](@keyword=multinomial_coefficient|lang=en-US|style=Feynman). It counts the number of ways a specific outcome can occur. The rest of the expression is the probability of any one of those specific ways. If we set $k=2$, this formula simplifies perfectly to the [binomial distribution](@keyword=binomial_distribution|lang=en-US|style=Feynman). The [binomial distribution](@keyword=binomial_distribution|lang=en-US|style=Feynman) isn't a separate law of nature; it's simply a two-dimensional slice of the broader, more general multinomial world.
 
 The connections don't stop there. They extend into **calculus**. One of the most important tools in physics and engineering is the Taylor series, which approximates a complex function near a point using a simpler polynomial. For a function of many variables, this expansion uses a special notation called multi-indices.
 Let's not get bogged down in the notation, but instead look at the result for a fundamental function, $f(x_1, \dots, x_n) = \exp(c_1 x_1 + \dots + c_n x_n)$, where the $c_i$ are constants. Its Taylor expansion around the origin is a sum of terms like $A_\alpha x_1^{\alpha_1} \cdots x_n^{\alpha_n}$.
@@ -85,7 +85,7 @@ But wait! We know from the multinomial theorem how to expand $(\sum c_i)^K$. Doi
 
 In many real-world systems, from the atoms in a gas to the individuals in a population, the numbers are astronomical. We often deal with a number of trials, $n$, so large that calculating $n!$ is computationally impossible. In this regime, we need a new way of looking at things.
 
-Let's ask: If we have $n$ trials and $k$ equally likely outcomes, what is the probability of the "most balanced" result, where each outcome appears exactly $n/k$ times? The exact probability is given by the [multinomial formula](@article_id:204179):
+Let's ask: If we have $n$ trials and $k$ equally likely outcomes, what is the probability of the "most balanced" result, where each outcome appears exactly $n/k$ times? The exact probability is given by the [multinomial formula](@keyword=multinomial_formula|lang=en-US|style=Feynman):
 $$ P_{bal}(n,k) = \frac{n!}{(n/k)!^k} \left(\frac{1}{k}\right)^n $$
 For large $n$, we can't compute this directly. But we can approximate it using a magical tool from analysis called **Stirling's approximation** for the factorial: $M! \approx \sqrt{2 \pi M} (M/e)^M$. This formula provides a bridge from the discrete world of factorials to the continuous world of functions.
 

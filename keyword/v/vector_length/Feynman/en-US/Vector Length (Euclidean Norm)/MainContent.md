@@ -19,7 +19,7 @@ This is the central idea. The length of a vector is the square root of the sum o
 
 $$\|\vec{v}\| = \sqrt{v_1^2 + v_2^2 + \dots + v_n^2}$$
 
-This simple formula is surprisingly robust. We can have vectors whose components are complicated-looking expressions, but the fundamental calculation remains the same. Square them, add them up, and take the root. Sometimes, wonderfully, the complexity just melts away  . And, of course, we can manipulate these vectors first—stretching them or adding them together—and then compute the length of the resulting vector .
+This simple formula is surprisingly robust. We can have vectors whose components are complicated-looking expressions, but the fundamental calculation remains the same. Square them, add them up, and take the root. Sometimes, wonderfully, the complexity just melts away [@problem_id:14751] [@problem_id:7073]. And, of course, we can manipulate these vectors first—stretching them or adding them together—and then compute the length of the resulting vector [@problem_id:7145].
 
 ### The Inner Product: A Deeper Connection
 
@@ -29,19 +29,19 @@ $$\|\vec{v}\|^2 = v_1 v_1 + v_2 v_2 + \dots + v_n v_n = \vec{v} \cdot \vec{v}$$
 
 So, the length of a vector is the square root of its dot product with itself. This might seem like just a change in notation, but it's a profound shift in perspective. It tells us that the concept of length is intrinsically tied to the concept of the dot product.
 
-This connection immediately gives us some deep truths. For instance, can the length of a vector ever be negative? Your intuition says no—you can't have a ruler that reads "-5 inches." The mathematics confirms this, but for a more rigorous reason. Since a vector's components in $\mathbb{R}^n$ are real numbers, the square of any component, $v_i^2$, must be zero or positive. The sum of non-negative numbers is, of course, non-negative. And the definition of the [principal square root](@article_id:180398) function, $\sqrt{x}$, is that it *only* outputs a non-negative number. Therefore, the length of a vector can never, ever be negative . It's a property baked into the very numbers we use to describe our world.
+This connection immediately gives us some deep truths. For instance, can the length of a vector ever be negative? Your intuition says no—you can't have a ruler that reads "-5 inches." The mathematics confirms this, but for a more rigorous reason. Since a vector's components in $\mathbb{R}^n$ are real numbers, the square of any component, $v_i^2$, must be zero or positive. The sum of non-negative numbers is, of course, non-negative. And the definition of the [principal square root](@keyword=principal_square_root|lang=en-US|style=Feynman) function, $\sqrt{x}$, is that it *only* outputs a non-negative number. Therefore, the length of a vector can never, ever be negative [@problem_id:1372502]. It's a property baked into the very numbers we use to describe our world.
 
 Furthermore, thinking in terms of dot products allows us to compute lengths in a more abstract way. If someone tells you the dot products between various vectors, you can find the length of their sum without ever knowing their individual components! For example, the length squared of a vector sum $\vec{z} = \vec{v} + \vec{w}$ can be found by expanding the dot product:
 
 $$\|\vec{z}\|^2 = (\vec{v} + \vec{w}) \cdot (\vec{v} + \vec{w}) = \vec{v} \cdot \vec{v} + 2(\vec{v} \cdot \vec{w}) + \vec{w} \cdot \vec{w} = \|\vec{v}\|^2 + 2(\vec{v} \cdot \vec{w}) + \|\vec{w}\|^2$$
 
-If we are given the lengths of $\vec{v}$ and $\vec{w}$ and the dot product between them, we can find the length of $\vec{z}$ with simple arithmetic . This is the power of abstraction at work.
+If we are given the lengths of $\vec{v}$ and $\vec{w}$ and the dot product between them, we can find the length of $\vec{z}$ with simple arithmetic [@problem_id:1401141]. This is the power of abstraction at work.
 
 ### The Geometry of Vectors: Distance, Angles, and Projections
 
 This dot product viewpoint unlocks a rich geometric world that goes far beyond simple length.
 
-**Distance:** What is the distance *between* two points? Let's say we have two films, 'Chronos Voyager' and 'Galactic Jest', represented by vectors in a 5-dimensional "genre space" based on their scores for Sci-Fi, Adventure, Comedy, Drama, and Thriller. How "different" are these two films? We can represent this difference with a new vector, $\vec{d} = \vec{u} - \vec{v}$. The most natural way to define the "dissimilarity" or distance between them is simply the length of this difference vector, $\|\vec{u} - \vec{v}\|$. This single number gives us a measure of how far apart the two films are in the abstract [feature space](@article_id:637520). This is not just for movies; it's how machine learning algorithms compare data points, from customer preferences to medical images .
+**Distance:** What is the distance *between* two points? Let's say we have two films, 'Chronos Voyager' and 'Galactic Jest', represented by vectors in a 5-dimensional "genre space" based on their scores for Sci-Fi, Adventure, Comedy, Drama, and Thriller. How "different" are these two films? We can represent this difference with a new vector, $\vec{d} = \vec{u} - \vec{v}$. The most natural way to define the "dissimilarity" or distance between them is simply the length of this difference vector, $\|\vec{u} - \vec{v}\|$. This single number gives us a measure of how far apart the two films are in the abstract [feature space](@keyword=feature_space|lang=en-US|style=Feynman). This is not just for movies; it's how machine learning algorithms compare data points, from customer preferences to medical images [@problem_id:1358799].
 
 **Angles and the Pythagorean Theorem Revisited:** The dot product's real magic is that it also tells us about the *angle* between two vectors. The most important case is when two vectors are **orthogonal** (the fancy word for perpendicular). Two vectors $\vec{v}$ and $\vec{w}$ are orthogonal if, and only if, their dot product is zero: $\vec{v} \cdot \vec{w} = 0$.
 
@@ -49,7 +49,7 @@ Now, let's go back to our formula for the length of a sum: $\|\vec{v} + \vec{w}\
 
 $$\|\vec{v} + \vec{w}\|^2 = \|\vec{v}\|^2 + \|\vec{w}\|^2$$
 
-This is the Pythagorean theorem, but dressed in the elegant language of vectors! It's no longer just about triangles on a blackboard. It's a universal truth: for any two perpendicular directions in any number of dimensions, the squared length of the sum is the sum of the squared lengths. This is a beautiful and profoundly useful result .
+This is the Pythagorean theorem, but dressed in the elegant language of vectors! It's no longer just about triangles on a blackboard. It's a universal truth: for any two perpendicular directions in any number of dimensions, the squared length of the sum is the sum of the squared lengths. This is a beautiful and profoundly useful result [@problem_id:1672308].
 
 **Projections:** This leads to a final, powerful idea. Imagine a received radio signal $\vec{r}$, which is a messy, noisy version of an original, clean signal pattern $\vec{p}$. Our best guess is that the received signal is just the original pattern scaled by some amount, say $k\vec{p}$, plus some random noise. How can we find the best possible value of $k$? We want to find the $k$ that makes our "approximating" vector $k\vec{p}$ as "close" as possible to the received signal $\vec{r}$. In our new language, this means we want to minimize the length of the error vector: $\|\vec{r} - k\vec{p}\|$.
 
@@ -57,16 +57,16 @@ You can solve this using calculus, and the answer is stunningly simple. The opti
 
 $$k = \frac{\vec{r} \cdot \vec{p}}{\vec{p} \cdot \vec{p}} = \frac{\vec{r} \cdot \vec{p}}{\|\vec{p}\|^2}$$
 
-This calculation finds the **orthogonal projection** of $\vec{r}$ onto the direction of $\vec{p}$. It's like finding the length of the "shadow" that $\vec{r}$ casts on the line defined by $\vec{p}$. This single formula is the foundation of error-correction, [data fitting](@article_id:148513), signal processing, and countless other fields where we need to find the best approximation of one thing in terms of another .
+This calculation finds the **orthogonal projection** of $\vec{r}$ onto the direction of $\vec{p}$. It's like finding the length of the "shadow" that $\vec{r}$ casts on the line defined by $\vec{p}$. This single formula is the foundation of error-correction, [data fitting](@keyword=data_fitting|lang=en-US|style=Feynman), signal processing, and countless other fields where we need to find the best approximation of one thing in terms of another [@problem_id:1372508].
 
 ### The Rules of the Road: Fundamental Properties
 
 To be a "length," a function must play by a few strict but simple rules. Any function that satisfies these rules is called a **norm**, and the Euclidean norm is just the most famous one.
 
-1.  **Non-negativity:** $\|\vec{v}\| \ge 0$, and $\|\vec{v}\| = 0$ if and only if $\vec{v}$ is the [zero vector](@article_id:155695). A length can't be negative, and only the "zero journey" has zero length.
+1.  **Non-negativity:** $\|\vec{v}\| \ge 0$, and $\|\vec{v}\| = 0$ if and only if $\vec{v}$ is the [zero vector](@keyword=zero_vector|lang=en-US|style=Feynman). A length can't be negative, and only the "zero journey" has zero length.
 
 2.  **Positive Homogeneity:** $\|c\vec{v}\| = |c| \|\vec{v}\|$. If you scale a vector by a factor $c$, its length scales by the absolute value of $c$. Journeying twice as far in the same direction covers twice the distance.
 
-3.  **The Triangle Inequality:** $\|\vec{u} + \vec{v}\| \le \|\vec{u}\| + \|\vec{v}\|$. This is the mathematical statement that the shortest path between two points is a straight line. The length of the journey $\vec{u}+\vec{v}$ cannot be longer than the length of journey $\vec{u}$ followed by journey $\vec{v}$. Equality holds only if you're going in the same direction. This rule is incredibly powerful and holds even for complex sums of vectors .
+3.  **The Triangle Inequality:** $\|\vec{u} + \vec{v}\| \le \|\vec{u}\| + \|\vec{v}\|$. This is the mathematical statement that the shortest path between two points is a straight line. The length of the journey $\vec{u}+\vec{v}$ cannot be longer than the length of journey $\vec{u}$ followed by journey $\vec{v}$. Equality holds only if you're going in the same direction. This rule is incredibly powerful and holds even for complex sums of vectors [@problem_id:1399562].
 
-These three rules ensure that our mathematical idea of "length" behaves the way our physical intuition demands. From these simple beginnings, we can build intricate structures and solve complex problems, like finding the exact parameter value that pushes a chemical system to a critical "activation level," defined by its [vector norm](@article_id:142734) . The journey from a simple triangle to high-dimensional vector spaces is a testament to the power of a single, beautiful idea: the measure of length.
+These three rules ensure that our mathematical idea of "length" behaves the way our physical intuition demands. From these simple beginnings, we can build intricate structures and solve complex problems, like finding the exact parameter value that pushes a chemical system to a critical "activation level," defined by its [vector norm](@keyword=vector_norm|lang=en-US|style=Feynman) [@problem_id:1401144]. The journey from a simple triangle to high-dimensional vector spaces is a testament to the power of a single, beautiful idea: the measure of length.

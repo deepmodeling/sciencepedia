@@ -23,7 +23,7 @@ $P(A \cap B) = 0$
 
 The probability of their intersection (both of them happening) is zero. If you flip a coin, the probability of it being both heads and tails is zero. Simple enough.
 
-Now for **independence**. Two events $A$ and $B$ are independent if the occurrence of one does not alter the probability of the other. The mathematical embodiment of this idea is the famous [product rule](@article_id:143930):
+Now for **independence**. Two events $A$ and $B$ are independent if the occurrence of one does not alter the probability of the other. The mathematical embodiment of this idea is the famous [product rule](@keyword=product_rule|lang=en-US|style=Feynman):
 
 $P(A \cap B) = P(A)P(B)$
 
@@ -47,9 +47,9 @@ Now, think about what this equation means. The product of two numbers is zero on
 
 Let's translate this back from math into plain English. It means that two events can be both mutually exclusive and independent only if one of them is an *impossible event*!
 
-If we are talking about events that can actually happen—events with a non-zero probability of occurring—then they simply cannot be both. This is not an opinion; it's a logical certainty that falls directly out of the definitions. For any two events that have a real chance of happening, mutual exclusivity and independence are, well, mutually exclusive concepts! 
+If we are talking about events that can actually happen—events with a non-zero probability of occurring—then they simply cannot be both. This is not an opinion; it's a logical certainty that falls directly out of the definitions. For any two events that have a real chance of happening, mutual exclusivity and independence are, well, mutually exclusive concepts! [@problem_id:1954691]
 
-Consider a microchip factory where a chip can have a "Type A" defect or a "Type B" defect, but the manufacturing process is such that it can't have both. These are [mutually exclusive events](@article_id:264624). If we know that the probability of a Type A defect, $P(A)$, is greater than zero, and the probability of a Type B defect, $P(B)$, is also greater than zero, can they be independent? Absolutely not. Knowing a chip has a Type A defect tells you with 100% certainty that it does *not* have a Type B defect. This is a powerful piece of information, the very antithesis of independence. 
+Consider a microchip factory where a chip can have a "Type A" defect or a "Type B" defect, but the manufacturing process is such that it can't have both. These are [mutually exclusive events](@keyword=mutually_exclusive_events|lang=en-US|style=Feynman). If we know that the probability of a Type A defect, $P(A)$, is greater than zero, and the probability of a Type B defect, $P(B)$, is also greater than zero, can they be independent? Absolutely not. Knowing a chip has a Type A defect tells you with 100% certainty that it does *not* have a Type B defect. This is a powerful piece of information, the very antithesis of independence. [@problem_id:1922681]
 
 ### The Loophole of the Impossible
 
@@ -59,9 +59,9 @@ Let's explore that loophole. Suppose a junior engineer at a quantum computing co
 
 Let's use our master equation again: $P(D)P(R) = 0$.
 
-Since we are given that $P(D) \gt 0$, the only way for this equation to hold true is if $P(R) = 0$. That is, the only way the engineer's claim can be mathematically consistent is if the "Readout Error" failure mode is actually impossible! 
+Since we are given that $P(D) \gt 0$, the only way for this equation to hold true is if $P(R) = 0$. That is, the only way the engineer's claim can be mathematically consistent is if the "Readout Error" failure mode is actually impossible! [@problem_id:1365507]
 
-This might seem like a philosophical parlor game, but it sharpens our understanding. An impossible event is independent of everything. Why? Because knowing that some other event $B$ has occurred gives you no new information about the probability of the impossible event $A$. The probability of $A$ was zero before, and it's still zero now. The [product rule](@article_id:143930), $P(A \cap B) = P(A)P(B)$, holds trivially: $0 = 0 \times P(B)$. So, an impossible event is a strange beast that is "independent" of any other event, including those it is mutually exclusive with.
+This might seem like a philosophical parlor game, but it sharpens our understanding. An impossible event is independent of everything. Why? Because knowing that some other event $B$ has occurred gives you no new information about the probability of the impossible event $A$. The probability of $A$ was zero before, and it's still zero now. The [product rule](@keyword=product_rule|lang=en-US|style=Feynman), $P(A \cap B) = P(A)P(B)$, holds trivially: $0 = 0 \times P(B)$. So, an impossible event is a strange beast that is "independent" of any other event, including those it is mutually exclusive with.
 
 ### Unmasking the Connection
 
@@ -81,6 +81,6 @@ Let's translate the words into the cold, hard logic of inequalities.
 
 Now look at what we have. $E_1 = \{T \gt c\}$ and $E_2 = \{T \le y\}$. Can a single component's lifetime $T$ be *both* greater than $c$ and, at the same time, less than or equal to $y$? Since we know $y \lt c$, this is a physical impossibility. A number cannot be simultaneously larger than 5 and smaller than 3.
 
-Aha! The events $E_1$ and $E_2$ are mutually exclusive! The complex description of the experiment was a mask for a very simple, direct conflict. And since it's certainly possible for components to fail early ($P(E_2) \gt 0$) and also possible for them to last a long time ($P(E_1) \gt 0$), our fundamental principle applies: these two events cannot be independent.  Knowing that a component failed early gives you absolute certainty that its data was not censored, because it didn't survive long enough for that to happen.
+Aha! The events $E_1$ and $E_2$ are mutually exclusive! The complex description of the experiment was a mask for a very simple, direct conflict. And since it's certainly possible for components to fail early ($P(E_2) \gt 0$) and also possible for them to last a long time ($P(E_1) \gt 0$), our fundamental principle applies: these two events cannot be independent. [@problem_id:1922658] Knowing that a component failed early gives you absolute certainty that its data was not censored, because it didn't survive long enough for that to happen.
 
 This is the real power of these ideas. They are not just abstract definitions to be memorized. They are lenses. They allow us to look at a complex situation—from manufacturing defects to quantum bits to lifetime testing—and see the simple, logical structure hidden within. And the core of that structure, as we have seen, is the elegant and inescapable dance between conflict and indifference.

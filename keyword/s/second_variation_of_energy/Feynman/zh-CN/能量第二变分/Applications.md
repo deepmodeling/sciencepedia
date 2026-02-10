@@ -6,62 +6,62 @@
 
 ### 稳定性的几何学：曲率即命运
 
-第二变分力量的最纯粹表达见于几何学中。想象一下，你在某个空间中找到了一条[测地线](@article_id:327811)——两点间最直的可能路径。问题是，它也是*最短*的吗？第二变分给出了答案，它告诉我们结果完全取决于空间的曲率。我们拥有的关键公式是[指标形式](@article_id:362775)，对于[常曲率](@article_id:322525) $K$ 空间中的一个变分场 $V$，它大致如下：
+第二变分力量的最纯粹表达见于几何学中。想象一下，你在某个空间中找到了一条[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)——两点间最直的可能路径。问题是，它也是*最短*的吗？第二变分给出了答案，它告诉我们结果完全取决于空间的曲率。我们拥有的关键公式是[指标形式](@keyword=index_form|lang=zh-CN|style=Feynman)，对于[常曲率](@keyword=constant_curvature|lang=zh-CN|style=Feynman) $K$ 空间中的一个变分场 $V$，它大致如下：
 
 $$
 I(V,V) = \int \left( \|\nabla_{\dot{\gamma}} V\|^2 - K \|V\|^2 \right) dt
 $$
 
-我们不必担心符号的细节。第一项 $\|\nabla_{\dot{\gamma}} V\|^2$ 代表路径的“刚度”；它是扰动[测地线](@article_id:327811)所需的能量成本。这一项总是正的，并致力于保持路径稳定。第二项 $-K\|V\|^2$ 是神奇的成分。它是曲率的贡献。其效果完全取决于 $K$ 的符号。
+我们不必担心符号的细节。第一项 $\|\nabla_{\dot{\gamma}} V\|^2$ 代表路径的“刚度”；它是扰动[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)所需的能量成本。这一项总是正的，并致力于保持路径稳定。第二项 $-K\|V\|^2$ 是神奇的成分。它是曲率的贡献。其效果完全取决于 $K$ 的符号。
 
 #### 欧几里得的平坦、可预测世界
 
-在普通的平坦空间中，比如桌面或中学几何的理想化空间，曲率 $K$ 为零。[测地线](@article_id:327811)是简单的直线。我们公式中的曲率项消失了，第二变分只是“刚度”项的积分 。由于该项永远不为负，对于任何非平凡的扰动，第二变分总是正的。这意味着平坦空间中的直线不仅是[测地线](@article_id:327811)，它*永远*是最短路径。没有意外，没有不稳定性。两条最初平行的[测地线](@article_id:327811)将永远保持平行。这是完美稳定性的基准。
+在普通的平坦空间中，比如桌面或中学几何的理想化空间，曲率 $K$ 为零。[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)是简单的直线。我们公式中的曲率项消失了，第二变分只是“刚度”项的积分 [@problem_id:3064575]。由于该项永远不为负，对于任何非平凡的扰动，第二变分总是正的。这意味着平坦空间中的直线不仅是[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)，它*永远*是最短路径。没有意外，没有不稳定性。两条最初平行的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)将永远保持平行。这是完美稳定性的基准。
 
-#### [正曲率](@article_id:332922)的汇聚世界
+#### [正曲率](@keyword=positive_curvature|lang=zh-CN|style=Feynman)的汇聚世界
 
-现在，让我们转向球面，这是[正曲率](@article_id:332922)空间 ($K>0$) 的经典例子。这里的[测地线](@article_id:327811)是[大圆](@article_id:332672)，就像地球上的经线。如果你和朋友在赤道上从两条平行的经线出发向北走，你们的路径虽然从你们的角度看是“直的”，但最终必然会汇聚并在北极点相遇。
+现在，让我们转向球面，这是[正曲率](@keyword=positive_curvature|lang=zh-CN|style=Feynman)空间 ($K>0$) 的经典例子。这里的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)是[大圆](@keyword=great_circle|lang=zh-CN|style=Feynman)，就像地球上的经线。如果你和朋友在赤道上从两条平行的经线出发向北走，你们的路径虽然从你们的角度看是“直的”，但最终必然会汇聚并在北极点相遇。
 
-这种汇聚效应是正曲率的标志。邻近[测地线](@article_id:327811)相交的点称为**[共轭点](@article_id:320739)**。在[单位球](@article_id:302998)面上，与你起点对跖的点——沿着大圆距离为 $\pi$ 的点——是一个[共轭点](@article_id:320739)。第二变分告诉我们关于这些点的一些非凡事实。如果我们考虑一个恰好在共轭点结束的[测地线](@article_id:327811)段，对于一个特定的变分，[能量的第二变分](@article_id:380607)恰好为零 。这条路径处于稳定性的刀刃上；存在一族连接端点的、具有*相同长度*的其他[测地线](@article_id:327811)。
+这种汇聚效应是正曲率的标志。邻近[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)相交的点称为**[共轭点](@keyword=conjugate_points|lang=zh-CN|style=Feynman)**。在[单位球](@keyword=unit_ball|lang=zh-CN|style=Feynman)面上，与你起点对跖的点——沿着大圆距离为 $\pi$ 的点——是一个[共轭点](@keyword=conjugate_points|lang=zh-CN|style=Feynman)。第二变分告诉我们关于这些点的一些非凡事实。如果我们考虑一个恰好在共轭点结束的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)段，对于一个特定的变分，[能量的第二变分](@keyword=second_variation_of_energy|lang=zh-CN|style=Feynman)恰好为零 [@problem_id:3058241]。这条路径处于稳定性的刀刃上；存在一族连接端点的、具有*相同长度*的其他[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)。
 
-如果你继续走*过*一个共轭点会怎样？想象一条在球面上长度大于 $\pi$ 的[测地线](@article_id:327811)。现在，我们公式中的曲率项 $-K\|V\|^2$（由于 $K>0$ 而是负的）有足够长的路径来压倒刚度项。找到一个扰动使得总的第二变分为负成为可能 。负的第二变分意味着附近有一条更短的路径！该[测地线](@article_id:327811)不再是长度最小化路径；它已经变得不稳定。这是一个深刻的洞见：通过局部计算，我们可以确定路径的全局稳定性。著名的**[莫尔斯指标定理](@article_id:360947)**精确地阐述了这一点：[测地线](@article_id:327811)不稳定的独立方式数量（其“指标”）恰好等于它在其内部经过的[共轭点](@article_id:320739)数量 。
+如果你继续走*过*一个共轭点会怎样？想象一条在球面上长度大于 $\pi$ 的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)。现在，我们公式中的曲率项 $-K\|V\|^2$（由于 $K>0$ 而是负的）有足够长的路径来压倒刚度项。找到一个扰动使得总的第二变分为负成为可能 [@problem_id:3063682]。负的第二变分意味着附近有一条更短的路径！该[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)不再是长度最小化路径；它已经变得不稳定。这是一个深刻的洞见：通过局部计算，我们可以确定路径的全局稳定性。著名的**[莫尔斯指标定理](@keyword=morse_index_theorem|lang=zh-CN|style=Feynman)**精确地阐述了这一点：[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)不稳定的独立方式数量（其“指标”）恰好等于它在其内部经过的[共轭点](@keyword=conjugate_points|lang=zh-CN|style=Feynman)数量 [@problem_id:1648410]。
 
 #### 负曲率的发散世界
 
-最后，考虑双曲空间 ($K<0$)，一个奇异的、马鞍形的世界。在这里，最初平行的[测地线](@article_id:327811)不仅仅是保持平行；它们以指数速率飞散开来。这就是发散的几何学。
+最后，考虑双曲空间 ($K<0$)，一个奇异的、马鞍形的世界。在这里，最初平行的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)不仅仅是保持平行；它们以指数速率飞散开来。这就是发散的几何学。
 
-我们的[第二变分公式](@article_id:359990)说明了什么？由于 $K$ 是负的，曲率项 $-K\|V\|^2$ 变为*正*的。第二变分是两个正项之和：刚度项和曲率项 。它是“额外”正定的。它不可能变为零或负。这意味着双曲空间中的[测地线](@article_id:327811)是极其稳定的。没有[共轭点](@article_id:320739)，无论[测地线](@article_id:327811)多长，它总是[最短路径](@article_id:317973)。
+我们的[第二变分公式](@keyword=second_variation_formula|lang=zh-CN|style=Feynman)说明了什么？由于 $K$ 是负的，曲率项 $-K\|V\|^2$ 变为*正*的。第二变分是两个正项之和：刚度项和曲率项 [@problem_id:3047814]。它是“额外”正定的。它不可能变为零或负。这意味着双曲空间中的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)是极其稳定的。没有[共轭点](@keyword=conjugate_points|lang=zh-CN|style=Feynman)，无论[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)多长，它总是[最短路径](@keyword=shortest_path|lang=zh-CN|style=Feynman)。
 
-因此我们有了一幅三联画：在平坦空间中，[测地线](@article_id:327811)是稳定的。在[正曲率](@article_id:332922)空间中，它们汇聚并可能变得不稳定。在[负曲率](@article_id:319739)空间中，它们发散并总是稳定的。曲率、[测地线偏离](@article_id:320476)和稳定性之间的这种密切联系是现代几何学的基石 。
+因此我们有了一幅三联画：在平坦空间中，[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)是稳定的。在[正曲率](@keyword=positive_curvature|lang=zh-CN|style=Feynman)空间中，它们汇聚并可能变得不稳定。在[负曲率](@keyword=negative_curvature|lang=zh-CN|style=Feynman)空间中，它们发散并总是稳定的。曲率、[测地线偏离](@keyword=geodesic_deviation|lang=zh-CN|style=Feynman)和稳定性之间的这种密切联系是现代几何学的基石 [@problem_id:3047814]。
 
 ### 从抽象几何到物理世界
 
 这个几何故事不仅仅是一个抽象概念。它是物理世界的故事。稳定性由刚度与曲率之间的竞争所支配这一原理，体现在无数的物理现象中。
 
-#### 广义[相对论](@article_id:327421)：引力的重要性
+#### 广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)：引力的重要性
 
-Einstein的伟大洞见是，引力不是一种力，而是时空曲率的表现。大质量物体扭曲了周围的[时空几何](@article_id:299944)，有效地产生了[正曲率](@article_id:332922)。在这个弯曲时空中，“最直的路径”——[测地线](@article_id:327811)——就是自由落体和光线所遵循的路径。
+Einstein的伟大洞见是，引力不是一种力，而是时空曲率的表现。大质量物体扭曲了周围的[时空几何](@keyword=spacetime_geometry|lang=zh-CN|style=Feynman)，有效地产生了[正曲率](@keyword=positive_curvature|lang=zh-CN|style=Feynman)。在这个弯曲时空中，“最直的路径”——[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)——就是自由落体和光线所遵循的路径。
 
-支配[测地线稳定性](@article_id:380541)的**[雅可比方程](@article_id:319117)**，可以通过将最小作用量原理应用于[能量泛函](@article_id:349508)的第二变分直接导出 。它变成了**[测地线偏离](@article_id:320476)**方程，描述了两个邻近的下落苹果或两条宇宙学轨迹上的邻近星系是汇聚还是发散。恒星的正曲率对光线（[时空](@article_id:370647)[测地线](@article_id:327811)）的聚焦效应，就是我们观察到的引力透镜——对这些几何原理的直接证实。[行星轨道](@article_id:357873)的稳定性以及宇宙中结构的形成，都由作用量在弯曲时空舞台上的第二变分所决定。
+支配[测地线稳定性](@keyword=geodesic_stability|lang=zh-CN|style=Feynman)的**[雅可比方程](@keyword=jacobi_equation|lang=zh-CN|style=Feynman)**，可以通过将最小作用量原理应用于[能量泛函](@keyword=energy_functional|lang=zh-CN|style=Feynman)的第二变分直接导出 [@problem_id:1262033]。它变成了**[测地线偏离](@keyword=geodesic_deviation|lang=zh-CN|style=Feynman)**方程，描述了两个邻近的下落苹果或两条宇宙学轨迹上的邻近星系是汇聚还是发散。恒星的正曲率对光线（[时空](@keyword=space_time|lang=zh-CN|style=Feynman)[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)）的聚焦效应，就是我们观察到的引力透镜——对这些几何原理的直接证实。[行星轨道](@keyword=planetary_orbits|lang=zh-CN|style=Feynman)的稳定性以及宇宙中结构的形成，都由作用量在弯曲时空舞台上的第二变分所决定。
 
 #### 弹性力学与工程学：当物体屈曲时
 
-让我们用一个更具体的例子回到地球上：一根被从顶部挤压的细长垂直标尺。在较小的压缩力下，它保持笔直和稳定。但当你增加力时，你会达到一个[临界点](@article_id:305080)，此时它会突然弯曲并“屈曲”。这实际上是一个稳定性问题，并且可以用第二变分完美地描述。
+让我们用一个更具体的例子回到地球上：一根被从顶部挤压的细长垂直标尺。在较小的压缩力下，它保持笔直和稳定。但当你增加力时，你会达到一个[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)，此时它会突然弯曲并“屈曲”。这实际上是一个稳定性问题，并且可以用第二变分完美地描述。
 
-柱子的笔直构型是“[测地线](@article_id:327811)”。系统的势能包括一个弹性刚度项（抵抗弯曲，类似于 $\|\nabla_{\dot{\gamma}} V\|^2$）和一个来自压缩载荷的项（鼓励弯曲）。事实证明，压缩载荷 $P$ 的作用恰好与[正曲率](@article_id:332922) $K$ 的作用相同。势能的第二变分是一个看起来就像我们指标[形式的积分](@article_id:319011) 。屈曲发生在[临界载荷](@article_id:372292) $P_{cr}$ 处，此时来自载荷的“曲率”刚好足以使第二变分首次为零。直柱找到了它的第一个“[共轭点](@article_id:320739)”，并从稳定平衡过渡到[不稳定平衡](@article_id:353356)。
+柱子的笔直构型是“[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)”。系统的势能包括一个弹性刚度项（抵抗弯曲，类似于 $\|\nabla_{\dot{\gamma}} V\|^2$）和一个来自压缩载荷的项（鼓励弯曲）。事实证明，压缩载荷 $P$ 的作用恰好与[正曲率](@keyword=positive_curvature|lang=zh-CN|style=Feynman) $K$ 的作用相同。势能的第二变分是一个看起来就像我们指标[形式的积分](@keyword=integration_of_forms|lang=zh-CN|style=Feynman) [@problem_id:404100]。屈曲发生在[临界载荷](@keyword=critical_load|lang=zh-CN|style=Feynman) $P_{cr}$ 处，此时来自载荷的“曲率”刚好足以使第二变分首次为零。直柱找到了它的第一个“[共轭点](@keyword=conjugate_points|lang=zh-CN|style=Feynman)”，并从稳定平衡过渡到[不稳定平衡](@keyword=unstable_equilibrium|lang=zh-CN|style=Feynman)。
 
-#### 场论：现实的[振动](@article_id:331484)
+#### 场论：现实的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)
 
-同样的原理延伸到理论物理的前沿。在弦理论中，基本对象不是点粒子，而是微小的[振动弦](@article_id:348024)。静态弦的能量取决于其形状和可能随位置变化的[张力](@article_id:357470)。考虑一根位于[张力](@article_id:357470)局部最大值区域的直弦。这种构型是一条“[测地线](@article_id:327811)”，但它稳定吗？
+同样的原理延伸到理论物理的前沿。在弦理论中，基本对象不是点粒子，而是微小的[振动弦](@keyword=vibrating_strings|lang=zh-CN|style=Feynman)。静态弦的能量取决于其形状和可能随位置变化的[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)。考虑一根位于[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)局部最大值区域的直弦。这种构型是一条“[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)”，但它稳定吗？
 
-我们再次求助于[能量的第二变分](@article_id:380607)。[张力](@article_id:357470)函数的负二阶[导数](@article_id:318324)的作用就像正曲率，试图使直弦不稳定。计算表明，在这“曲率”获胜、弦为了寻找更低能量状态而屈曲成波浪形之前，弦有一个最大长度 。这是物理学中一个反复出现的主题：场的[基态](@article_id:312876)通常是“[测地线](@article_id:327811)”，它们对[量子涨落](@article_id:304814)或其他扰动的稳定性由其能量或作用量的第二变分所决定。
+我们再次求助于[能量的第二变分](@keyword=second_variation_of_energy|lang=zh-CN|style=Feynman)。[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)函数的负二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)的作用就像正曲率，试图使直弦不稳定。计算表明，在这“曲率”获胜、弦为了寻找更低能量状态而屈曲成波浪形之前，弦有一个最大长度 [@problem_id:1151626]。这是物理学中一个反复出现的主题：场的[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)通常是“[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)”，它们对[量子涨落](@keyword=quantum_fluctuations|lang=zh-CN|style=Feynman)或其他扰动的稳定性由其能量或作用量的第二变分所决定。
 
 ### 更深层次的联系：从局部曲率到全局拓扑
 
 第二变分的力量甚至可以进一步延伸，在空间的局部性质和其全局拓扑结构之间建立起惊人的联系。
 
-几何学中最优美的结果之一是**Synge 定理**。它指出，一个紧致、可定向、偶数维且具有严格[正曲率](@article_id:332922)的空间必须是单连通的——意味着任何闭合回路都可以收缩到一个点。证明是变分推理的杰作。它采用[反证法](@article_id:340295)：假设存在一个不可收缩的闭合回路。那么在该类中必然存在一条最短的[测地线](@article_id:327811)。但在这样的[流形](@article_id:313450)上，[正曲率](@article_id:332922)和拓扑结构共同作用，保证了存在一个特殊的变分场——“周期性平行法场”。将此场代入[第二变分公式](@article_id:359990)，会使曲率项占主导地位，从而得到一个严格为负的结果 。这与[测地线](@article_id:327811)是最短的假设相矛盾！避免这一矛盾的唯一方法是断定，这样的回路从一开始就不可能存在。局部曲率决定全局拓扑，而第二变分就是信使。
+几何学中最优美的结果之一是**Synge 定理**。它指出，一个紧致、可定向、偶数维且具有严格[正曲率](@keyword=positive_curvature|lang=zh-CN|style=Feynman)的空间必须是单连通的——意味着任何闭合回路都可以收缩到一个点。证明是变分推理的杰作。它采用[反证法](@keyword=reductio_ad_absurdum|lang=zh-CN|style=Feynman)：假设存在一个不可收缩的闭合回路。那么在该类中必然存在一条最短的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)。但在这样的[流形](@keyword=manifold|lang=zh-CN|style=Feynman)上，[正曲率](@keyword=positive_curvature|lang=zh-CN|style=Feynman)和拓扑结构共同作用，保证了存在一个特殊的变分场——“周期性平行法场”。将此场代入[第二变分公式](@keyword=second_variation_formula|lang=zh-CN|style=Feynman)，会使曲率项占主导地位，从而得到一个严格为负的结果 [@problem_id:3033928]。这与[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)是最短的假设相矛盾！避免这一矛盾的唯一方法是断定，这样的回路从一开始就不可能存在。局部曲率决定全局拓扑，而第二变分就是信使。
 
-这种通过第二变分研究稳定性的原理不仅限于一维路径。它可以推广到更高维的对象。**调和映照**是[测地线](@article_id:327811)到[流形](@article_id:313450)间映射的推广，它们最小化类似的[能量泛函](@article_id:349508)。它们可以代表极小曲面（如肥[皂膜](@article_id:331331)）或描述物理学中的场构型。这些映照的稳定性再次由“[雅可比算子](@article_id:374395)”决定，该算子源于其[能量的第二变分](@article_id:380607)，并涉及目标空间的曲率 。
+这种通过第二变分研究稳定性的原理不仅限于一维路径。它可以推广到更高维的对象。**调和映照**是[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)到[流形](@keyword=manifold|lang=zh-CN|style=Feynman)间映射的推广，它们最小化类似的[能量泛函](@keyword=energy_functional|lang=zh-CN|style=Feynman)。它们可以代表极小曲面（如肥[皂膜](@keyword=soap_film|lang=zh-CN|style=Feynman)）或描述物理学中的场构型。这些映照的稳定性再次由“[雅可比算子](@keyword=jacobi_operator|lang=zh-CN|style=Feynman)”决定，该算子源于其[能量的第二变分](@keyword=second_variation_of_energy|lang=zh-CN|style=Feynman)，并涉及目标空间的曲率 [@problem_id:3066184]。
 
-从不起眼的[测地线](@article_id:327811)到宇宙的形状，[能量的第二变分](@article_id:380607)始终是我们探测稳定性的最有力工具。它揭示了一个几何是动态的、路径有其命运的宇宙，在这个宇宙里，简单的“它稳定吗？”这一问题，解锁了物理定律与空间结构本身之间最深刻的联系。
+从不起眼的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)到宇宙的形状，[能量的第二变分](@keyword=second_variation_of_energy|lang=zh-CN|style=Feynman)始终是我们探测稳定性的最有力工具。它揭示了一个几何是动态的、路径有其命运的宇宙，在这个宇宙里，简单的“它稳定吗？”这一问题，解锁了物理定律与空间结构本身之间最深刻的联系。

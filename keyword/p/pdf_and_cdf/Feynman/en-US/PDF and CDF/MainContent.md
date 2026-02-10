@@ -9,7 +9,7 @@ Imagine you are standing on a beach, watching a long, thin sand dune form as the
 
 But you could also ask a different question. Standing at that same point $x$, you could ask: "How *fast* is the sand piling up right here, right now?" Is it a furious gust adding a lot of sand, or just a gentle breeze adding a few grains? This question is about the *rate* or *intensity* of accumulation at a specific spot. This is the spirit of the **Probability Density Function**, or **PDF**.
 
-These two ideas are not independent; they are two sides of the same coin. The rate at which the pile is growing at a certain point determines how the total amount of sand changes. And conversely, by observing how the total amount changes from one point to the next, we can figure out the rate of growth. This beautiful duality is the heart of how we describe the teeming, uncertain world of [continuous random variables](@article_id:166047).
+These two ideas are not independent; they are two sides of the same coin. The rate at which the pile is growing at a certain point determines how the total amount of sand changes. And conversely, by observing how the total amount changes from one point to the next, we can figure out the rate of growth. This beautiful duality is the heart of how we describe the teeming, uncertain world of [continuous random variables](@keyword=continuous_random_variables|lang=en-US|style=Feynman).
 
 ### The Bridge of Calculus
 
@@ -17,9 +17,9 @@ The language of change is calculus, and it provides the perfect bridge between t
 
 $$f(x) = \frac{d}{dx} F(x)$$
 
-This is a wonderfully simple and powerful relationship. It tells us that the [probability density](@article_id:143372) at a point is precisely the rate at which the cumulative probability is changing at that point.
+This is a wonderfully simple and powerful relationship. It tells us that the [probability density](@keyword=probability_density|lang=en-US|style=Feynman) at a point is precisely the rate at which the cumulative probability is changing at that point.
 
-Let’s see this in action. Imagine engineers are testing the lifespan of a new memory component. Through testing, they find that the total probability of a component failing by time $t$ (in years) is given by the CDF :
+Let’s see this in action. Imagine engineers are testing the lifespan of a new memory component. Through testing, they find that the total probability of a component failing by time $t$ (in years) is given by the CDF [@problem_id:1294966]:
 
 $$F_T(t) = 1 - \frac{1}{(1 + \alpha t)^{3}}$$
 
@@ -27,19 +27,19 @@ This function tells us the accumulated risk up to any time $t$. But what if we w
 
 $$f_T(t) = \frac{d}{dt} \left( 1 - (1 + \alpha t)^{-3} \right) = 3\alpha(1 + \alpha t)^{-4} = \frac{3\alpha}{(1 + \alpha t)^{4}}$$
 
-By simply turning the crank of calculus, we've transformed a function describing total accumulated probability into one that describes probability density. We've moved from "how much" to "how fast." The same principle applies to any shape of CDF, whether it's a simple polynomial like $F(x) = (x/L)^n$  or a more complex form. The derivative is our universal translator.
+By simply turning the crank of calculus, we've transformed a function describing total accumulated probability into one that describes probability density. We've moved from "how much" to "how fast." The same principle applies to any shape of CDF, whether it's a simple polynomial like $F(x) = (x/L)^n$ [@problem_id:3980] or a more complex form. The derivative is our universal translator.
 
 ### The Meaning of Density: Finding the Hotspots
 
 So, we can calculate this "density" function. But why is it so useful? The PDF, $f(x)$, tells us where probability is most concentrated. Where the PDF is high, the random variable is more likely to take on values in that neighborhood. The peak of the PDF, the point where it reaches its maximum value, is called the **mode**. This is, in a sense, the single "most likely" region for the outcome.
 
-Consider a different type of memory chip whose failure CDF is given by :
+Consider a different type of memory chip whose failure CDF is given by [@problem_id:1379814]:
 
 $$F(t) = 1 - \exp\left(-\left(\frac{t}{\alpha}\right)^3\right)$$
 
 To find the time when failure is most probable (per unit time), we are looking for the mode of the distribution. Our strategy is simple: first, find the PDF by differentiating the CDF. Then, find the value of $t$ that maximizes this PDF. The result reveals the most likely time of failure, a piece of information of immense practical value for engineers.
 
-There's another way to think about this that beautifully ties the two functions back together. Because the PDF is the derivative (the slope) of the CDF, asking "Where is the PDF at its maximum?" is *exactly the same* as asking "Where is the CDF at its steepest?" . The mode, the "hotspot" of probability, is precisely the point where the cumulative probability function is increasing most rapidly. The two concepts are locked together.
+There's another way to think about this that beautifully ties the two functions back together. Because the PDF is the derivative (the slope) of the CDF, asking "Where is the PDF at its maximum?" is *exactly the same* as asking "Where is the CDF at its steepest?" [@problem_id:4338]. The mode, the "hotspot" of probability, is precisely the point where the cumulative probability function is increasing most rapidly. The two concepts are locked together.
 
 ### The Ground Rules for Accumulation
 
@@ -51,22 +51,22 @@ You can't just scribble any old mathematical function on a piece of paper and ca
 
 3.  **It must be right-continuous.** This is a slightly more technical point, but it essentially means there are no sudden downward "jumps" or gaps. You can have sudden upward jumps (which correspond to discrete probabilities, like a single large bucket of sand being dumped at one spot), but probability can't just vanish into thin air as you move an infinitesimal step to the right.
 
-If a proposed function violates any of these rules, it is not a valid CDF. For instance, a function that decreases over some interval would imply that you could have a *negative* probability density, which is meaningless . These rules aren't just arbitrary mathematical constraints; they are the logical bedrock that ensures our model of probability makes physical and logical sense.
+If a proposed function violates any of these rules, it is not a valid CDF. For instance, a function that decreases over some interval would imply that you could have a *negative* probability density, which is meaningless [@problem_id:1382853]. These rules aren't just arbitrary mathematical constraints; they are the logical bedrock that ensures our model of probability makes physical and logical sense.
 
 ### A More Realistic World: Functions in Pieces
 
-Nature is rarely so neat as to be described by a single, elegant formula everywhere. Sometimes, the rules change. Consider modeling the arrival time of a car at a traffic light . The probability distribution for arrivals during the green phase might follow one rule, while the distribution during the red phase follows another.
+Nature is rarely so neat as to be described by a single, elegant formula everywhere. Sometimes, the rules change. Consider modeling the arrival time of a car at a traffic light [@problem_id:1325134]. The probability distribution for arrivals during the green phase might follow one rule, while the distribution during the red phase follows another.
 
 This leads to a **piecewise CDF**, built from different formulas stitched together over different intervals. For example:
 $$ F_T(t) = \begin{cases} \dots \text{ (rule A for green light)} & 0 \le t \le t_G \\ \dots \text{ (rule B for red light)} & t_G < t \le L \end{cases} $$
 
-To find the PDF, we simply apply our master rule: differentiate the CDF. We just have to do it piece by piece. What we often find is fascinating: even if the CDF is perfectly continuous (the total accumulated probability has no sudden jumps), the resulting PDF can have abrupt discontinuities! The *rate* of accumulation can change in an instant, for example, at the exact moment the light turns from green to red. This ability to handle [piecewise functions](@article_id:159781) makes the PDF/CDF framework incredibly flexible for modeling the jagged edges of reality.
+To find the PDF, we simply apply our master rule: differentiate the CDF. We just have to do it piece by piece. What we often find is fascinating: even if the CDF is perfectly continuous (the total accumulated probability has no sudden jumps), the resulting PDF can have abrupt discontinuities! The *rate* of accumulation can change in an instant, for example, at the exact moment the light turns from green to red. This ability to handle [piecewise functions](@keyword=piecewise_functions|lang=en-US|style=Feynman) makes the PDF/CDF framework incredibly flexible for modeling the jagged edges of reality.
 
 ### A Deeper Dance: When PDF and CDF Define Each other
 
 So far, we have mostly imagined that we are *given* a CDF and we then *derive* the PDF. But sometimes, the relationship between them is more profound—it can be the very definition of the probability distribution itself.
 
-Imagine a strange scenario where the probability density at any point $x$ is directly proportional to the square root of the *total accumulated probability* up to that point . This can be written as a differential equation:
+Imagine a strange scenario where the probability density at any point $x$ is directly proportional to the square root of the *total accumulated probability* up to that point [@problem_id:728652]. This can be written as a differential equation:
 
 $$f(x) = c \sqrt{F(x)} \quad \text{or} \quad \frac{dF}{dx} = c \sqrt{F(x)}$$
 
@@ -74,7 +74,7 @@ This is a beautiful "chicken-and-egg" problem. The density depends on the accumu
 
 ### Stepping into Higher Dimensions
 
-The world is not a single line. We often need to track multiple random quantities at once. What is the [joint probability](@article_id:265862) of a person's height *and* weight? Or the lifespans of two different transistors in a semiconductor chip? .
+The world is not a single line. We often need to track multiple random quantities at once. What is the [joint probability](@keyword=joint_probability|lang=en-US|style=Feynman) of a person's height *and* weight? Or the lifespans of two different transistors in a semiconductor chip? [@problem_id:1368435].
 
 The concepts of CDF and PDF generalize beautifully to higher dimensions. For two variables $X$ and $Y$, the **joint CDF**, $F_{X,Y}(x,y)$, gives the accumulated probability in the entire bottom-left quadrant, $P(X \le x, Y \le y)$. To find the **joint PDF**, $f_{X,Y}(x,y)$, which represents the density of probability at the specific point $(x,y)$, we again turn to calculus. This time, we need to take a mixed partial derivative:
 

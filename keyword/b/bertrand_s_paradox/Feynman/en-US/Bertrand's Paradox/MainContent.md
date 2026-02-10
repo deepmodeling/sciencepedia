@@ -17,13 +17,13 @@ Let's try our first method, which feels very intuitive.
 
 #### Method 1: The Random Endpoints
 
-Perhaps the most natural way to define a chord is by its two endpoints. Let's imagine we pick two points completely at random on the circumference of the circle and draw a line between them. By "at random," we mean every point on the [circumference](@article_id:263108) has an equal chance of being picked.
+Perhaps the most natural way to define a chord is by its two endpoints. Let's imagine we pick two points completely at random on the circumference of the circle and draw a line between them. By "at random," we mean every point on the [circumference](@keyword=circumference|lang=en-US|style=Feynman) has an equal chance of being picked.
 
-Because the circle is perfectly symmetric, we can fix the first point, let's say at the "3 o'clock" position, without any loss of generality. The game now is to pick the second point. For our chord to be long enough (longer than $\sqrt{3}R$), where must this second point land? If we place the second point very close to the first, we get a short chord. If we place it on the opposite side of the circle, we get a diameter, the longest chord possible. A bit of trigonometry reveals that the second point must land on the arc that is more than $120^\circ$ away from the first point, but less than $240^\circ$ away. This "favorable" region occupies a third of the total [circumference](@article_id:263108).
+Because the circle is perfectly symmetric, we can fix the first point, let's say at the "3 o'clock" position, without any loss of generality. The game now is to pick the second point. For our chord to be long enough (longer than $\sqrt{3}R$), where must this second point land? If we place the second point very close to the first, we get a short chord. If we place it on the opposite side of the circle, we get a diameter, the longest chord possible. A bit of trigonometry reveals that the second point must land on the arc that is more than $120^\circ$ away from the first point, but less than $240^\circ$ away. This "favorable" region occupies a third of the total [circumference](@keyword=circumference|lang=en-US|style=Feynman).
 
 So, if every point on the circumference is equally likely, the probability of our second point landing in this favorable arc is simply the ratio of the arc lengths: the favorable arc is $120^\circ$ or $1/3$ of the full $360^\circ$ circle.
 
-Thus, our first answer is $P_A = \frac{1}{3}$.  
+Thus, our first answer is $P_A = \frac{1}{3}$. [@problem_id:1346028] [@problem_id:1380564]
 
 #### Method 2: The Random Radius
 
@@ -35,7 +35,7 @@ We already know that for the chord to be long enough, its midpoint must be close
 
 The length of the favorable interval is $R/2$. The length of the total interval is $R$. The probability is therefore $\frac{R/2}{R} = \frac{1}{2}$.
 
-So, our second answer is $P_B = \frac{1}{2}$.  
+So, our second answer is $P_B = \frac{1}{2}$. [@problem_id:1346028] [@problem_id:1380564]
 
 #### Method 3: The Random Midpoint
 
@@ -47,7 +47,7 @@ The probability is the ratio of the favorable area to the total area:
 
 $$P_C = \frac{\pi R^2 / 4}{\pi R^2} = \frac{1}{4}$$
 
-And there it is, our third answer.  
+And there it is, our third answer. [@problem_id:1346028] [@problem_id:1380564]
 
 ### The Heart of the "Paradox"
 
@@ -56,18 +56,18 @@ So we have it: three perfectly reasonable methods, three completely different an
 The beautiful truth is that we didn't go wrong at all. The paradox isn't a contradiction; it's an illumination. It reveals that a phrase like "choose a chord at random" is dangerously ambiguous. It has no meaning until we specify the exact **procedure** of choosing. Each of our three methods imposes a different kind of "uniformity" on the infinite set of possible chords.
 
 -   **Method 1** assumes a uniform distribution over the *angles* of the endpoints.
--   **Method 2** assumes a [uniform distribution](@article_id:261240) over the *linear distance* of the midpoint from the center along a single radius.
--   **Method 3** assumes a [uniform distribution](@article_id:261240) over the *area* where the midpoint can lie.
+-   **Method 2** assumes a [uniform distribution](@keyword=uniform_distribution|lang=en-US|style=Feynman) over the *linear distance* of the midpoint from the center along a single radius.
+-   **Method 3** assumes a [uniform distribution](@keyword=uniform_distribution|lang=en-US|style=Feynman) over the *area* where the midpoint can lie.
 
-These are fundamentally different ways of sampling. When we ask for the ratio of a "favorable" set to a "total" set, the answer depends entirely on whether we are measuring sets by angle, by length, or by area . There is no "correct" method without more context. If you were throwing actual sticks onto a floor, the physics of the throw would determine which [probability model](@article_id:270945) (if any) is the right one to describe the outcome. The paradox forces us to be precise about the **[probability measure](@article_id:190928)** we are using.
+These are fundamentally different ways of sampling. When we ask for the ratio of a "favorable" set to a "total" set, the answer depends entirely on whether we are measuring sets by angle, by length, or by area [@problem_id:1346052]. There is no "correct" method without more context. If you were throwing actual sticks onto a floor, the physics of the throw would determine which [probability model](@keyword=probability_model|lang=en-US|style=Feynman) (if any) is the right one to describe the outcome. The paradox forces us to be precise about the **[probability measure](@keyword=probability_measure|lang=en-US|style=Feynman)** we are using.
 
-This isn't just a quirk of the $\sqrt{3}R$ length. If we ask a different question, like "What's the probability a random chord is *shorter* than the radius $R$?", the three methods again give three different answers: $1/3$, $1 - \sqrt{3}/2 \approx 0.134$, and $1/4$ . The disagreement persists because the underlying probability distributions are fundamentally different.
+This isn't just a quirk of the $\sqrt{3}R$ length. If we ask a different question, like "What's the probability a random chord is *shorter* than the radius $R$?", the three methods again give three different answers: $1/3$, $1 - \sqrt{3}/2 \approx 0.134$, and $1/4$ [@problem_id:1346058]. The disagreement persists because the underlying probability distributions are fundamentally different.
 
 ### Beyond a Single Question: Looking at Averages
 
 To see just how different these methods are, let's ask a more sophisticated question. Instead of focusing on a single yes/no criterion (is the chord long enough?), let's look at a property of the *entire collection* of chords each method tends to produce. What is the *average* squared length of a chord generated by each method? We look at the squared length $L^2$ because it simplifies the math, avoiding square roots.
 
-Calculating the expected value, or average, of $L^2$ for each method gives us a stunning result :
+Calculating the expected value, or average, of $L^2$ for each method gives us a stunning result [@problem_id:1346025]:
 
 -   **Method 1 (Random Endpoints):** $E[L^2] = 2R^2$
 -   **Method 2 (Random Radius):** $E[L^2] = \frac{8}{3}R^2 \approx 2.67R^2$

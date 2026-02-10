@@ -28,11 +28,11 @@ Why is this decomposition so powerful? Because with these two simple, non-negati
 1.  $f(x) = f^+(x) - f^-(x)$
 2.  $|f(x)| = f^+(x) + f^-(x)$
 
-This is a beautiful and fundamental result. It tells us that any function, no matter how wild and complicated, can be expressed as the difference of two non-negative functions. It’s like saying any journey can be described by the steps taken forward and the steps taken backward. This decomposition is the first key to unlocking the function's deeper structure .
+This is a beautiful and fundamental result. It tells us that any function, no matter how wild and complicated, can be expressed as the difference of two non-negative functions. It’s like saying any journey can be described by the steps taken forward and the steps taken backward. This decomposition is the first key to unlocking the function's deeper structure [@problem_id:1433284].
 
 ### A Concrete Sketch: Seeing the Split
 
-Let's make this less abstract. Consider a function that oscillates, like $f(x) = (2x - 1)\cos(\pi x)$ on the interval $[0, 2]$ . This function weaves above and below the x-axis.
+Let's make this less abstract. Consider a function that oscillates, like $f(x) = (2x - 1)\cos(\pi x)$ on the interval $[0, 2]$ [@problem_id:1435894]. This function weaves above and below the x-axis.
 
 To find its positive and negative parts, we first ask: where is the function non-negative? A quick analysis shows that $f(x)$ is positive or zero only on the interval $[\frac{3}{2}, 2]$ and at the point $x=0.5$. Everywhere else, from $[0, \frac{3}{2})$ (excluding $x=0.5$), it is negative.
 
@@ -47,21 +47,21 @@ Graphically, $f^+$ is just the part of the original graph that sits above the x-
 
 You might be thinking this is a neat mathematical trick, but does it show up in the real world? The answer is a resounding yes, and in one of the most exciting fields of our time: artificial intelligence.
 
-The most popular activation function in modern [neural networks](@article_id:144417) is called the **Rectified Linear Unit**, or **ReLU**. Its definition is simply:
+The most popular activation function in modern [neural networks](@keyword=neural_networks|lang=en-US|style=Feynman) is called the **Rectified Linear Unit**, or **ReLU**. Its definition is simply:
 
 $$
 \text{ReLU}(x) = \max(0, x)
 $$
 
-This is nothing more than the positive part of the [identity function](@article_id:151642) $g(x)=x$!  This function models the behavior of a biological neuron in a simplified way: if the total input signal to the neuron is below a certain threshold (normalized to zero), the neuron remains silent (outputs 0). If the signal is above the threshold, the neuron "fires" with an intensity proportional to the input signal.
+This is nothing more than the positive part of the [identity function](@keyword=identity_function|lang=en-US|style=Feynman) $g(x)=x$! [@problem_id:1425974] This function models the behavior of a biological neuron in a simplified way: if the total input signal to the neuron is below a certain threshold (normalized to zero), the neuron remains silent (outputs 0). If the signal is above the threshold, the neuron "fires" with an intensity proportional to the input signal.
 
-The staggering success of [deep learning](@article_id:141528) is owed, in no small part, to this humble function. Its simplicity and its "one-way gate" nature prevent many of the problems that plagued earlier neural network models. The positive part of a function isn't just an abstract concept; it's a computational primitive that helps machines learn to see, hear, and understand our world. This same principle, known as **[half-wave rectification](@article_id:262929)**, has been a cornerstone of signal processing and electronics for a century, used to convert alternating current (AC) to direct current (DC).
+The staggering success of [deep learning](@keyword=deep_learning|lang=en-US|style=Feynman) is owed, in no small part, to this humble function. Its simplicity and its "one-way gate" nature prevent many of the problems that plagued earlier neural network models. The positive part of a function isn't just an abstract concept; it's a computational primitive that helps machines learn to see, hear, and understand our world. This same principle, known as **[half-wave rectification](@keyword=half_wave_rectification|lang=en-US|style=Feynman)**, has been a cornerstone of signal processing and electronics for a century, used to convert alternating current (AC) to direct current (DC).
 
 ### The Rules of the Game: An Algebraic Interlude
 
 Now that we appreciate its importance, let's play with this operation a bit more, like a true physicist or mathematician would. What are its algebraic properties? A natural first question is: is the operation "linear"? That is, if we take the positive part of a sum of two functions, is it the same as summing their positive parts? In other words, is it always true that $(f+g)^+ = f^+ + g^+$?
 
-Let's test this with a simple example. Let $f(x) = \sin(x)$ and $g(x) = \cos(x)$ . Consider the point $x_0 = \frac{3\pi}{4}$.
+Let's test this with a simple example. Let $f(x) = \sin(x)$ and $g(x) = \cos(x)$ [@problem_id:1435892]. Consider the point $x_0 = \frac{3\pi}{4}$.
 Here, $f(x_0) = \sin(\frac{3\pi}{4}) = \frac{\sqrt{2}}{2}$ and $g(x_0) = \cos(\frac{3\pi}{4}) = -\frac{\sqrt{2}}{2}$.
 
 -   The sum of their positive parts is $f^+(x_0) + g^+(x_0) = \max(\frac{\sqrt{2}}{2}, 0) + \max(-\frac{\sqrt{2}}{2}, 0) = \frac{\sqrt{2}}{2} + 0 = \frac{\sqrt{2}}{2}$.
@@ -75,11 +75,11 @@ $$
 f - g = (f^+ - f^-) - (g^+ - g^-) = (f^+ + g^-) - (f^- + g^+)
 $$
 
-This remarkable rearrangement groups all the non-negative functions together. Now, taking the positive part of this expression, $(A-B)^+$, where $A = f^+ + g^-$ and $B = f^- + g^+$, gives us a precise, if more complex, formula for $(f-g)^+$ . The algebraic world of positive parts has its own rich set of rules.
+This remarkable rearrangement groups all the non-negative functions together. Now, taking the positive part of this expression, $(A-B)^+$, where $A = f^+ + g^-$ and $B = f^- + g^+$, gives us a precise, if more complex, formula for $(f-g)^+$ [@problem_id:1435906]. The algebraic world of positive parts has its own rich set of rules.
 
 ### The Grand Sum: Integration and Its Subtleties
 
-The real power of the $f^+$ and $f^-$ decomposition shines when we move to integration. In modern [measure theory](@article_id:139250), the Lebesgue integral of a function $f$ is *defined* via its positive and negative parts:
+The real power of the $f^+$ and $f^-$ decomposition shines when we move to integration. In modern [measure theory](@keyword=measure_theory|lang=en-US|style=Feynman), the Lebesgue integral of a function $f$ is *defined* via its positive and negative parts:
 
 $$
 \int_X f \,d\mu = \int_X f^+ \,d\mu - \int_X f^- \,d\mu
@@ -89,12 +89,12 @@ This definition only makes sense if the two integrals on the right are finite. T
 $$
 \int_X (f^+ - f) \,d\mu = \int_X f^- \,d\mu
 $$
-This follows directly from the definition of the integral . It tells us that the total "shortfall" of a function from its positive self is precisely the total "overshoot" below zero.
+This follows directly from the definition of the integral [@problem_id:1433284]. It tells us that the total "shortfall" of a function from its positive self is precisely the total "overshoot" below zero.
 
-This framework also clarifies some tricky points about integration. For example, consider the famous function $f(x) = \frac{\sin(x)}{x}$. The [improper integral](@article_id:139697) $\int_0^\infty \frac{\sin(x)}{x} \,dx$ converges to a finite value, $\frac{\pi}{2}$. You might think this means its positive part, $f^+(x)$, must also have a finite integral. But it does not! . The integral of the original function converges only because of delicate cancellations between its positive and negative areas. The positive part, $f^+$, by definition, has no negative areas to provide cancellation. Its integral, $\int_0^\infty f^+(x) \,dx$, diverges to infinity.
+This framework also clarifies some tricky points about integration. For example, consider the famous function $f(x) = \frac{\sin(x)}{x}$. The [improper integral](@keyword=improper_integral|lang=en-US|style=Feynman) $\int_0^\infty \frac{\sin(x)}{x} \,dx$ converges to a finite value, $\frac{\pi}{2}$. You might think this means its positive part, $f^+(x)$, must also have a finite integral. But it does not! [@problem_id:1426444]. The integral of the original function converges only because of delicate cancellations between its positive and negative areas. The positive part, $f^+$, by definition, has no negative areas to provide cancellation. Its integral, $\int_0^\infty f^+(x) \,dx$, diverges to infinity.
 
 This teaches us a profound lesson: for a function to be truly "integrable" in the robust Lebesgue sense (what we call **absolutely integrable**), it's not enough for its integral to exist. We require that the integral of its absolute value, $\int |f| \,d\mu$, be finite. And since $|f| = f^+ + f^-$, this is equivalent to requiring both $\int f^+ \,d\mu$ and $\int f^- \,d\mu$ to be finite.
 
-Finally, in this strange and wonderful world of [measure theory](@article_id:139250), we often deal with functions that are "the same" except on a negligible set of points (a set of "measure zero"). We say they are equal **[almost everywhere](@article_id:146137)**. Does our positive part operator respect this? Yes. If two functions $f$ and $g$ are equal [almost everywhere](@article_id:146137), then their positive parts $f^+$ and $g^+$ are also equal [almost everywhere](@article_id:146137) . This robustness is essential for building a consistent theory of integration. This operator also preserves the crucial property of **[measurability](@article_id:198697)**—if you start with a well-behaved (measurable) function, its positive and negative parts are guaranteed to be well-behaved too . Interestingly, the reverse isn't true; one can construct bizarre, non-[measurable functions](@article_id:158546) whose positive parts are perfectly well-behaved, like the zero function .
+Finally, in this strange and wonderful world of [measure theory](@keyword=measure_theory|lang=en-US|style=Feynman), we often deal with functions that are "the same" except on a negligible set of points (a set of "measure zero"). We say they are equal **[almost everywhere](@keyword=almost_everywhere|lang=en-US|style=Feynman)**. Does our positive part operator respect this? Yes. If two functions $f$ and $g$ are equal [almost everywhere](@keyword=almost_everywhere|lang=en-US|style=Feynman), then their positive parts $f^+$ and $g^+$ are also equal [almost everywhere](@keyword=almost_everywhere|lang=en-US|style=Feynman) [@problem_id:26003]. This robustness is essential for building a consistent theory of integration. This operator also preserves the crucial property of **[measurability](@keyword=measurability|lang=en-US|style=Feynman)**—if you start with a well-behaved (measurable) function, its positive and negative parts are guaranteed to be well-behaved too [@problem_id:1403069]. Interestingly, the reverse isn't true; one can construct bizarre, non-[measurable functions](@keyword=measurable_functions|lang=en-US|style=Feynman) whose positive parts are perfectly well-behaved, like the zero function [@problem_id:1435916].
 
 From a simple one-way gate to the foundations of calculus and the architecture of AI, the act of "taking the positive part" is a thread that weaves through disparate fields of science and mathematics, revealing the beautiful and unified structure that underlies them all.

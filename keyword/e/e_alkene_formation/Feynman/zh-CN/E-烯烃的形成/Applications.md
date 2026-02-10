@@ -6,23 +6,23 @@
 
 ### 化学家锻造双键的工具箱
 
-如何在一个想要的位置上，以所[期望](@article_id:311378)的*E*构型，精确地创建一个碳-碳双键？在上个世纪，化学家们设计了几种绝妙的策略，从经典的“消除”法发展到现代的、近乎神奇的、使用金属[催化剂](@article_id:298981)“缝合”和“交换”分子片段的技术。
+如何在一个想要的位置上，以所[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)的*E*构型，精确地创建一个碳-碳双键？在上个世纪，化学家们设计了几种绝妙的策略，从经典的“消除”法发展到现代的、近乎神奇的、使用金属[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)“缝合”和“交换”分子片段的技术。
 
-#### 经典法则：从消除到[烯烃](@article_id:362809)化
+#### 经典法则：从消除到[烯烃](@keyword=alkenes|lang=zh-CN|style=Feynman)化
 
-最古老的策略之一是取一个饱和分子，然后简单地“剪掉”两个相邻的基团，在原处留下一个双键。**霍夫曼消除（Hofmann elimination）**是这一原理的一个优美范例。它涉及一个称为*反式*-消除的过程，即[离去基团](@article_id:379459)和邻近碳上的一个质子必须在碳-碳键的两侧对齐——这是一场严格编排的分子之舞。由于这种严格的几何要求，底物的[立体化学](@article_id:345415)直接决定了产物[烯烃](@article_id:362809)的立体化学（E或Z），使得该反应成为一种[立体专一性](@article_id:352214)的消除方法。
+最古老的策略之一是取一个饱和分子，然后简单地“剪掉”两个相邻的基团，在原处留下一个双键。**霍夫曼消除（Hofmann elimination）**是这一原理的一个优美范例[@problem_id:2174946]。它涉及一个称为*反式*-消除的过程，即[离去基团](@keyword=leaving_group|lang=zh-CN|style=Feynman)和邻近碳上的一个质子必须在碳-碳键的两侧对齐——这是一场严格编排的分子之舞。由于这种严格的几何要求，底物的[立体化学](@keyword=stereochemistry|lang=zh-CN|style=Feynman)直接决定了产物[烯烃](@keyword=alkenes|lang=zh-CN|style=Feynman)的立体化学（E或Z），使得该反应成为一种[立体专一性](@keyword=stereospecificity|lang=zh-CN|style=Feynman)的消除方法。
 
-然而，一种更通用的方法是从不同的官能团来*构建*双键。羰基（$C=O$），存在于[醛和酮](@article_id:375772)中，是有机分子中最常见的“把手”之一。两个诺贝尔奖级别的反应，**[Wittig反应](@article_id:365057)**及其强大的变体——**Horner-Wadsworth-Emmons (HWE) 反应**，提供了一种实现非凡转变的方法：它们将羰基的氧原子换成一个碳基片段，直接创建一个 $C=C$ 双键。
+然而，一种更通用的方法是从不同的官能团来*构建*双键。羰基（$C=O$），存在于[醛和酮](@keyword=aldehydes_and_ketones|lang=zh-CN|style=Feynman)中，是有机分子中最常见的“把手”之一。两个诺贝尔奖级别的反应，**[Wittig反应](@keyword=wittig_reaction|lang=zh-CN|style=Feynman)**及其强大的变体——**Horner-Wadsworth-Emmons (HWE) 反应**，提供了一种实现非凡转变的方法：它们将羰基的氧原子换成一个碳基片段，直接创建一个 $C=C$ 双键[@problem_id:2214007]。
 
-[HWE反应](@article_id:382550)尤其堪称立体控制的典范。通过使用一种“稳定化的”磷基试剂，[反应路径](@article_id:343144)被极大地偏向于最稳定的产物，以至于它几乎只提供*E*-烯烃。这种方法是如此可靠，以至于化学家们满怀信心地用它来构建复杂的分子，例如在一个刚性的笼状结构如金刚烷上安装一个双键。这是分子工程的顶峰——预测并实现精确的几何结果。
+[HWE反应](@keyword=hwe_reaction|lang=zh-CN|style=Feynman)尤其堪称立体控制的典范。通过使用一种“稳定化的”磷基试剂，[反应路径](@keyword=reaction_path|lang=zh-CN|style=Feynman)被极大地偏向于最稳定的产物，以至于它几乎只提供*E*-烯烃。这种方法是如此可靠，以至于化学家们满怀信心地用它来构建复杂的分子，例如在一个刚性的笼状结构如金刚烷上安装一个双键[@problem_id:2211206]。这是分子工程的顶峰——预测并实现精确的几何结果。
 
 #### 现代革命：用金属进行切片和缝合
 
-虽然经典方法很强大，但20世纪后半叶[有机金属化学](@article_id:310400)的兴起提供了一套革命性的工具，其效果近乎魔术。想象一下，能够拿出两种不同的[烯烃](@article_id:362809)，将它们的双键剪成两半，然后以新的组合重新组装这些片段。这就是**[烯烃](@article_id:362809)复分解（olefin metathesis）**的精髓，这个反应是如此深远，以至于在2005年被授予诺贝尔化学奖。
+虽然经典方法很强大，但20世纪后半叶[有机金属化学](@keyword=organometallic_chemistry|lang=zh-CN|style=Feynman)的兴起提供了一套革命性的工具，其效果近乎魔术。想象一下，能够拿出两种不同的[烯烃](@keyword=alkenes|lang=zh-CN|style=Feynman)，将它们的双键剪成两半，然后以新的组合重新组装这些片段。这就是**[烯烃](@keyword=alkenes|lang=zh-CN|style=Feynman)复分解（olefin metathesis）**的精髓，这个反应是如此深远，以至于在2005年被授予诺贝尔化学奖。
 
-使用基于钌等金属的[催化剂](@article_id:298981)，化学家可以执行这种“重组”过程，称为[交叉](@article_id:315017)复分解。例如，两个简单的末端[烯烃](@article_id:362809)可以被缝合在一起，形成一个更长的内部烯烃，通常强烈偏好生成[热力学](@article_id:359663)上有利的*E*构型。唯一的副产物是[乙烯](@article_id:315597)，一种简单的气体，会以气泡形式逸出。这是一种极其高效的锻造新碳-碳键的方法。
+使用基于钌等金属的[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)，化学家可以执行这种“重组”过程，称为[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)复分解。例如，两个简单的末端[烯烃](@keyword=alkenes|lang=zh-CN|style=Feynman)可以被缝合在一起，形成一个更长的内部烯烃，通常强烈偏好生成[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)上有利的*E*构型[@problem_id:2186238]。唯一的副产物是[乙烯](@keyword=ethylene|lang=zh-CN|style=Feynman)，一种简单的气体，会以气泡形式逸出。这是一种极其高效的锻造新碳-碳键的方法。
 
-另一个获得诺贝尔奖的奇迹是**Mizoroki-[Heck反应](@article_id:364862)**，它允许化学家“装饰”一个现有的[烯烃](@article_id:362809)。想象一下你有一个简单的[烯烃](@article_id:362809)，并且想在上面连接一个复杂的基团，比如一个苯环。[Heck反应](@article_id:364862)，使用[钯催化剂](@article_id:309938)，正是做到了这一点。它将新基团缝合到烯烃上，同样强烈地偏好生成优雅、线性的*E*-异构体。这个反应不仅仅是一个学术上的好奇心；它被用来合成像肉桂酸乙[酯](@article_id:367058)这样的分子，这是某些保护我们皮肤免受紫外线辐射的防晒剂的关键前体。在这里，我们看到了一条从基础[催化循环](@article_id:311961)到影响我们日常生活的产品的直接联系。
+另一个获得诺贝尔奖的奇迹是**Mizoroki-[Heck反应](@keyword=heck_reaction|lang=zh-CN|style=Feynman)**，它允许化学家“装饰”一个现有的[烯烃](@keyword=alkenes|lang=zh-CN|style=Feynman)[@problem_id:2257950]。想象一下你有一个简单的[烯烃](@keyword=alkenes|lang=zh-CN|style=Feynman)，并且想在上面连接一个复杂的基团，比如一个苯环。[Heck反应](@keyword=heck_reaction|lang=zh-CN|style=Feynman)，使用[钯催化剂](@keyword=palladium_catalyst|lang=zh-CN|style=Feynman)，正是做到了这一点。它将新基团缝合到烯烃上，同样强烈地偏好生成优雅、线性的*E*-异构体。这个反应不仅仅是一个学术上的好奇心；它被用来合成像肉桂酸乙[酯](@keyword=ester|lang=zh-CN|style=Feynman)这样的分子，这是某些保护我们皮肤免受紫外线辐射的防晒剂的关键前体。在这里，我们看到了一条从基础[催化循环](@keyword=catalytic_cycles|lang=zh-CN|style=Feynman)到影响我们日常生活的产品的直接联系。
 
 ### 控制的逻辑：异构体大师
 
@@ -30,32 +30,32 @@
 
 #### E还是Z？一个选择问题
 
-我们已经看到了一系列能得到*E*-烯烃的反应。但如果一个天然产物或目标药物需要*Z*-异构体呢？这正是化学家技艺真正闪耀的地方。考虑炔[烃](@article_id:306294)（一种含有[碳-碳三键](@article_id:367820)的分子）的还原。使用一套试剂——液氨中的金属钠——炔[烃](@article_id:306294)被还原为*E*-烯烃。该机理涉及将两个氢原子加到三键的相反面上。
+我们已经看到了一系列能得到*E*-烯烃的反应。但如果一个天然产物或目标药物需要*Z*-异构体呢？这正是化学家技艺真正闪耀的地方。考虑炔[烃](@keyword=hydrocarbons|lang=zh-CN|style=Feynman)（一种含有[碳-碳三键](@keyword=carbon_carbon_triple_bond|lang=zh-CN|style=Feynman)的分子）的还原。使用一套试剂——液氨中的金属钠——炔[烃](@keyword=hydrocarbons|lang=zh-CN|style=Feynman)被还原为*E*-烯烃。该机理涉及将两个氢原子加到三键的相反面上。
 
-但是，如果我们换一种工具，改用一种“毒化”的[钯催化剂](@article_id:309938)，即**[Lindlar催化剂](@article_id:371965)**，结果将完全相反。这种[催化剂](@article_id:298981)被设计成将两个氢原子递送到炔烃的*同一面*，从而以极高的选择性生成*Z*-烯烃。仅通过选择正确的试剂就能在*E*和*Z*产物之间进行选择，这证明了我们对[反应机理](@article_id:364777)的深刻理解。[立体化学](@article_id:345415)不是宿命；它是我们可以控制的一个设计参数。
+但是，如果我们换一种工具，改用一种“毒化”的[钯催化剂](@keyword=palladium_catalyst|lang=zh-CN|style=Feynman)，即**[Lindlar催化剂](@keyword=lindlar_s_catalyst|lang=zh-CN|style=Feynman)**，结果将完全相反[@problem_id:2188613]。这种[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)被设计成将两个氢原子递送到炔烃的*同一面*，从而以极高的选择性生成*Z*-烯烃。仅通过选择正确的试剂就能在*E*和*Z*产物之间进行选择，这证明了我们对[反应机理](@keyword=chemical_mechanism|lang=zh-CN|style=Feynman)的深刻理解。[立体化学](@keyword=stereochemistry|lang=zh-CN|style=Feynman)不是宿命；它是我们可以控制的一个设计参数。
 
-#### 驱动反应：推[动平衡](@article_id:342750)以获得更高[产率](@article_id:301843)
+#### 驱动反应：推[动平衡](@keyword=dynamic_balancing|lang=zh-CN|style=Feynman)以获得更高[产率](@keyword=percent_yield|lang=zh-CN|style=Feynman)
 
 有时，挑战不仅仅是制造出正确的分子，而是制造出足够多的分子。许多反应，如烯烃复分解，是可逆的——它们存在于平衡之中。这意味着反应可以正向和逆向进行，并可能停滞在反应物和产物的混乱混合物中。我们如何迫使它进行到底？
 
-在这里，合成化学家也必须是一位物理化学家，运用化学最基本的原理之一：**[勒夏特列原理](@article_id:297793)（Le Châtelier's Principle）**。该原理指出，如果你扰动一个处于平衡状态的体系，它会朝着抵消这种扰动的方向移动。在一个旨在偶联两个分子的[复分解反应](@article_id:302706)中，如果其中一种反应物简单且易挥发，我们可以过量加入该反应物。这会“推动”平衡向前，最大化我们[期望](@article_id:311378)的产物的形成。或者，如果副产物是挥发性的（如[乙烯](@article_id:315597)），持续地将其从反应容器中移除会“拉动”平衡朝向产物。这是一个宏观物理原理如何在实验室中被用来实现实际、微观分子目标的优美范例。
+在这里，合成化学家也必须是一位物理化学家，运用化学最基本的原理之一：**[勒夏特列原理](@keyword=le_chatelier_s_principle|lang=zh-CN|style=Feynman)（Le Châtelier's Principle）**。该原理指出，如果你扰动一个处于平衡状态的体系，它会朝着抵消这种扰动的方向移动。在一个旨在偶联两个分子的[复分解反应](@keyword=double_displacement_reaction|lang=zh-CN|style=Feynman)中，如果其中一种反应物简单且易挥发，我们可以过量加入该反应物。这会“推动”平衡向前，最大化我们[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)的产物的形成[@problem_id:2186235]。或者，如果副产物是挥发性的（如[乙烯](@keyword=ethylene|lang=zh-CN|style=Feynman)），持续地将其从反应容器中移除会“拉动”平衡朝向产物。这是一个宏观物理原理如何在实验室中被用来实现实际、微观分子目标的优美范例。
 
 ### 真相大白的时刻：眼见为实
 
-你已经选好了工具，进行了反应，并纯化了产物。你相信你已经创造了你的目标*E*-[烯烃](@article_id:362809)。但你如何确定呢？你无法看到单个分子。为了回答这个问题，化学家转向物理学的技术，使用[光谱学](@article_id:298272)来探究物质的结构。
+你已经选好了工具，进行了反应，并纯化了产物。你相信你已经创造了你的目标*E*-[烯烃](@keyword=alkenes|lang=zh-CN|style=Feynman)。但你如何确定呢？你无法看到单个分子。为了回答这个问题，化学家转向物理学的技术，使用[光谱学](@keyword=spectroscopy|lang=zh-CN|style=Feynman)来探究物质的结构。
 
-#### [振动](@article_id:331484)特征：红外“指纹”
+#### [振动](@keyword=oscillation|lang=zh-CN|style=Feynman)特征：红外“指纹”
 
-分子不是静态的物体；它们的键在不断地[振动](@article_id:331484)、[伸缩和](@article_id:326058)弯曲。**[红外光谱](@article_id:319919)（IR spectroscopy）**是一种测量这些振动频率的技术。每种类型的键和官能团都有其特征性的“[振动](@article_id:331484)特征”。
+分子不是静态的物体；它们的键在不断地[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)、[伸缩和](@keyword=telescoping_sum|lang=zh-CN|style=Feynman)弯曲。**[红外光谱](@keyword=ir_spectrum|lang=zh-CN|style=Feynman)（IR spectroscopy）**是一种测量这些振动频率的技术。每种类型的键和官能团都有其特征性的“[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)特征”。
 
-这使得化学家能够在反应进行时对其进行监控。在一个将醛转化为*反式*-烯烃的[HWE反应](@article_id:382550)中，人们可以通过观察醛的$C-H$键独特的[红外吸收](@article_id:368002)峰的消失来“观察”反应，同时看到在光谱的不同区域出现一个新的、强烈而尖锐的峰。这个新峰是*反式*-二取代双键上氢原子面外“摇摆”[振动](@article_id:331484)的明确特征。看到一个信号消失而另一个信号出现，为转化已经发生提供了决定性的证据。
+这使得化学家能够在反应进行时对其进行监控。在一个将醛转化为*反式*-烯烃的[HWE反应](@keyword=hwe_reaction|lang=zh-CN|style=Feynman)中，人们可以通过观察醛的$C-H$键独特的[红外吸收](@keyword=infrared_absorption|lang=zh-CN|style=Feynman)峰的消失来“观察”反应，同时看到在光谱的不同区域出现一个新的、强烈而尖锐的峰[@problem_id:2211219]。这个新峰是*反式*-二取代双键上氢原子面外“摇摆”[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的明确特征。看到一个信号消失而另一个信号出现，为转化已经发生提供了决定性的证据。
 
-#### 磁性对话：[核磁共振](@article_id:303404)光谱
+#### 磁性对话：[核磁共振](@keyword=nuclear_magnetic_resonance|lang=zh-CN|style=Feynman)光谱
 
-[分子结构](@article_id:300554)的最终裁决者是**[核磁共振](@article_id:303404)（NMR）光谱**。这项极其强大的技术探测原子核的磁性，使化学家能够绘制出分子碳-氢骨架的详细图谱。
+[分子结构](@keyword=molecular_structure|lang=zh-CN|style=Feynman)的最终裁决者是**[核磁共振](@keyword=nuclear_magnetic_resonance|lang=zh-CN|style=Feynman)（NMR）光谱**。这项极其强大的技术探测原子核的磁性，使化学家能够绘制出分子碳-氢骨架的详细图谱。
 
-NMR最优雅的特性之一是相邻的质子通过连接它们的[化学键](@article_id:305517)相互“对话”。这种被称为[自旋-自旋耦合](@article_id:311187)的相互作用，以可预测的方式分裂它们的NMR信号，而这种分裂的大小——耦合常数，$J$——对几何构型极其敏感。
+NMR最优雅的特性之一是相邻的质子通过连接它们的[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)相互“对话”。这种被称为[自旋-自旋耦合](@keyword=spin_spin_coupling|lang=zh-CN|style=Feynman)的相互作用，以可预测的方式分裂它们的NMR信号，而这种分裂的大小——耦合常数，$J$——对几何构型极其敏感。
 
-对于双键上的质子，耦合常数直接揭示了它们的[立体化学](@article_id:345415)。在*E*-烯烃中*反式*[排列](@article_id:296886)的质子具有大的[耦合常数](@article_id:321083)，通常在$14-18$赫兹的范围内。相比之下，在*Z*-烯烃中*顺式*[排列](@article_id:296886)的质子具有小得多的[耦合常数](@article_id:321083)，约为$6-12$赫兹。这种差异是明确无误的。当化学家进行霍夫曼消除并预测会形成*E*-烯烃时，在产物的NMR谱中测得约$15$赫兹的[耦合常数](@article_id:321083)即是最终的、决定性的证据。这便是分子本身通过物理学的语言与我们对话，确认其自身的身份。
+对于双键上的质子，耦合常数直接揭示了它们的[立体化学](@keyword=stereochemistry|lang=zh-CN|style=Feynman)。在*E*-烯烃中*反式*[排列](@keyword=permutation|lang=zh-CN|style=Feynman)的质子具有大的[耦合常数](@keyword=coupling_constant|lang=zh-CN|style=Feynman)，通常在$14-18$赫兹的范围内。相比之下，在*Z*-烯烃中*顺式*[排列](@keyword=permutation|lang=zh-CN|style=Feynman)的质子具有小得多的[耦合常数](@keyword=coupling_constant|lang=zh-CN|style=Feynman)，约为$6-12$赫兹。这种差异是明确无误的。当化学家进行霍夫曼消除并预测会形成*E*-烯烃时，在产物的NMR谱中测得约$15$赫兹的[耦合常数](@keyword=coupling_constant|lang=zh-CN|style=Feynman)即是最终的、决定性的证据[@problem_id:2174946]。这便是分子本身通过物理学的语言与我们对话，确认其自身的身份。
 
-从合成的蓝图到由[光谱学](@article_id:298272)确认的物理现实，*E*-烯烃的形成是科学统一性的一个美丽例证。它涉及对稳定性的深刻理解、[反应路径](@article_id:343144)的巧妙设计、物理原理的实际应用以及物理方法的分析力量——所有这些协同作用，共同构建了分子世界。
+从合成的蓝图到由[光谱学](@keyword=spectroscopy|lang=zh-CN|style=Feynman)确认的物理现实，*E*-烯烃的形成是科学统一性的一个美丽例证。它涉及对稳定性的深刻理解、[反应路径](@keyword=reaction_path|lang=zh-CN|style=Feynman)的巧妙设计、物理原理的实际应用以及物理方法的分析力量——所有这些协同作用，共同构建了分子世界。

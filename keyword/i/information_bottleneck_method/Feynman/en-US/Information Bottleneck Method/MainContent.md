@@ -11,7 +11,7 @@ This is the core challenge that the Information Bottleneck (IB) method addresses
 
 ### A Currency for Knowledge
 
-To formalize this trade-off, we need a way to measure information. The language of choice is information theory, and its fundamental currency is **mutual information**. The [mutual information](@article_id:138224) between two variables, let's call them $A$ and $B$, is written as $I(A;B)$. Intuitively, it answers the question: "How much does knowing the value of $A$ reduce my uncertainty about the value of $B$?" If $A$ and $B$ are independent, knowing $A$ tells you nothing about $B$, so their mutual information is zero. If knowing $A$ lets you predict $B$ perfectly, their mutual information is maximized.
+To formalize this trade-off, we need a way to measure information. The language of choice is information theory, and its fundamental currency is **mutual information**. The [mutual information](@keyword=mutual_information|lang=en-US|style=Feynman) between two variables, let's call them $A$ and $B$, is written as $I(A;B)$. Intuitively, it answers the question: "How much does knowing the value of $A$ reduce my uncertainty about the value of $B$?" If $A$ and $B$ are independent, knowing $A$ tells you nothing about $B$, so their mutual information is zero. If knowing $A$ lets you predict $B$ perfectly, their mutual information is maximized.
 
 With this currency in hand, we can state the Information Bottleneck principle as a bargain. We want to find a compressed representation, $T$, of our original data, $X$. This representation should be as simple as possible but also as useful as possible for predicting some other variable, $Y$, that we care about. This bargain is captured in a single, elegant equation, the **Information Bottleneck Lagrangian**:
 
@@ -31,7 +31,7 @@ By turning this single knob $\beta$, we can explore the entire universe of possi
 
 ### A Simple Game Reveals a Deep Truth
 
-Let's see this principle in action with a simple game . Suppose you are shown a number $X$, drawn randomly from the set $\{1, 2, 3, 4\}$, with each number being equally likely. Your task is to predict another number, $Y$, which is calculated from $X$ by the rule $Y = X^2 \pmod 5$. You cannot remember the exact number $X$ you saw, but you are allowed to write down a simplified note, $T$. What is the best note-taking strategy?
+Let's see this principle in action with a simple game [@problem_id:132061]. Suppose you are shown a number $X$, drawn randomly from the set $\{1, 2, 3, 4\}$, with each number being equally likely. Your task is to predict another number, $Y$, which is calculated from $X$ by the rule $Y = X^2 \pmod 5$. You cannot remember the exact number $X$ you saw, but you are allowed to write down a simplified note, $T$. What is the best note-taking strategy?
 
 First, let's see what we are trying to predict.
 - If $X=1$, then $Y = 1^2 \pmod 5 = 1$.
@@ -55,19 +55,19 @@ The switch happens precisely at the **critical value** $\beta_c = 1$. This isn't
 
 ### From Microstates to Macrostates: A Physics Analogy
 
-This abstract dance of variables finds a surprisingly concrete home in physics. Imagine a small physical system, like a box containing just three atoms, where each atom has a "spin" that can be either "up" or "down" .
+This abstract dance of variables finds a surprisingly concrete home in physics. Imagine a small physical system, like a box containing just three atoms, where each atom has a "spin" that can be either "up" or "down" [@problem_id:1956776].
 
--   The full, detailed description of the system is the **[microstate](@article_id:155509)**, $X$. This is the specific configuration of all three spins, e.g., (up, down, up). There are $2^3 = 8$ such microstates in total.
+-   The full, detailed description of the system is the **[microstate](@keyword=microstate|lang=en-US|style=Feynman)**, $X$. This is the specific configuration of all three spins, e.g., (up, down, up). There are $2^3 = 8$ such microstates in total.
 -   We are interested in a bulk property, the **macrostate**, $Y$. For instance, does the system have a net positive magnetization? ($Y=1$ if there are more up spins than down spins, $Y=0$ otherwise).
 -   Our measurement apparatus is limited. We can't see all the spins at once. Instead, we can only measure the state of the *first* spin. This measurement outcome is our compressed representation, $Z$ (our $T$).
 
 This is a perfect Information Bottleneck scenario. We are using a simple measurement ($Z$) to infer a macroscopic property ($Y$) of a complex underlying system ($X$). The IB principle quantifies the quality of our measurement. For this system, one can calculate that the information our measurement extracts is $I(X;Z) = 1$ bit. This makes perfect sense: we are measuring a single binary spin, so we are learning exactly one bit of information from the full microstate. We can also calculate the information this provides about our variable of interest, $I(Z;Y) = \frac{3}{4}\log_{2}3 - 1 \approx 0.189$ bits.
 
-This tells us that our simple measurement is indeed helpful for predicting the total magnetization (since $I(Z;Y) > 0$), but it's far from perfect. We have compressed the complexity of the [microstate](@article_id:155509) and, in doing so, retained some, but not all, of the relevant information. This is the essence of physical measurement and, more broadly, of any model of a complex reality.
+This tells us that our simple measurement is indeed helpful for predicting the total magnetization (since $I(Z;Y) > 0$), but it's far from perfect. We have compressed the complexity of the [microstate](@keyword=microstate|lang=en-US|style=Feynman) and, in doing so, retained some, but not all, of the relevant information. This is the essence of physical measurement and, more broadly, of any model of a complex reality.
 
 ### The Price of Clarity in a Noisy World
 
-In our number game, the relationship between $X$ and $Y$ was clean and deterministic. In the real world, relationships are often noisy. What if $Y$ is a garbled version of $X$, transmitted through a noisy channel?   
+In our number game, the relationship between $X$ and $Y$ was clean and deterministic. In the real world, relationships are often noisy. What if $Y$ is a garbled version of $X$, transmitted through a noisy channel? [@problem_id:69213] [@problem_id:132202] [@problem_id:144002]
 
 Consider a binary signal $X \in \{0,1\}$ that gets flipped with some probability $p$ to produce the output $Y$. If $p=0$, the channel is perfect. If $p=0.5$, the output is pure noise, completely unrelated to the input.
 
@@ -85,6 +85,6 @@ Let's appreciate the beauty of this result.
 
 The Information Bottleneck is more than a method for finding a single, static representation. By continuously "turning the knob" on $\beta$ from zero to infinity, we trace out a path of optimal representations, from the simplest possible to the most complex.
 
-This journey is often marked by a series of phase transitions like the ones we've seen. At low $\beta$, the representation is coarse, lumping many different inputs into a single category. As we increase $\beta$ and cross a critical threshold, these categories suddenly split, revealing finer distinctions in the data . Another cluster might split at a higher $\beta$, and another after that.
+This journey is often marked by a series of phase transitions like the ones we've seen. At low $\beta$, the representation is coarse, lumping many different inputs into a single category. As we increase $\beta$ and cross a critical threshold, these categories suddenly split, revealing finer distinctions in the data [@problem_id:1653507]. Another cluster might split at a higher $\beta$, and another after that.
 
 This process is a beautiful mathematical metaphor for learning itself. When we first encounter a new domain, we form crude categories. A child might call all four-legged animals "doggie". As we gain experience and our desire for predictive accuracy (our internal $\beta$) increases, our internal representations bifurcate. We learn to distinguish "dogs" from "cats," and later "terriers" from "retrievers." The Information Bottleneck principle suggests that this hierarchical unfolding of knowledge is not arbitrary but follows a principled path of optimally balancing simplicity and relevance. It is a journey of discovery, where meaningful structure emerges from the vast sea of data, one bit at a time.

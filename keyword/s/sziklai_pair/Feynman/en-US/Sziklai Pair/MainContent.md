@@ -13,11 +13,11 @@ This is the idea behind a **compound transistor**—connecting two or more trans
 
 Enter the **Sziklai pair**, named after its inventor, Hungarian-American engineer George Sziklai. It's also known by a more descriptive name: the **complementary feedback pair**. The name hints at its genius. Instead of using two identical transistors, it pairs two complementary types: an NPN transistor and a PNP transistor.
 
-Let's build one that acts like a single, powerful NPN transistor . We take a small NPN transistor, let's call it $Q_1$, to act as the "driver" or input stage. We then take a larger, more powerful PNP transistor, $Q_2$, to be our "powerhouse" or output stage. The connections are simple and elegant:
+Let's build one that acts like a single, powerful NPN transistor [@problem_id:1295952]. We take a small NPN transistor, let's call it $Q_1$, to act as the "driver" or input stage. We then take a larger, more powerful PNP transistor, $Q_2$, to be our "powerhouse" or output stage. The connections are simple and elegant:
 
 1.  The base of the input transistor ($Q_1$) becomes the **composite Base** of our super-transistor. This is where we'll apply our small input signal.
 2.  The emitter of $Q_1$ is connected directly to the base of the output transistor ($Q_2$). This is the crucial link where the first stage of amplification drives the second.
-3.  The collectors of *both* transistors ($Q_1$ and $Q_2$) are tied together. This common [connection forms](@article_id:262753) the **composite Collector**.
+3.  The collectors of *both* transistors ($Q_1$ and $Q_2$) are tied together. This common [connection forms](@keyword=connection_forms|lang=en-US|style=Feynman) the **composite Collector**.
 4.  Finally, the emitter of the powerhouse transistor ($Q_2$) becomes the **composite Emitter**.
 
 From the outside, we have three terminals—Base, Collector, and Emitter—just like a regular NPN transistor. But inside, a beautiful synergy is at play. This is fundamentally different from a Darlington pair, which would use two NPN transistors, with the emitter of the first driving the base of the second, and their collectors tied together. This structural difference, this use of complementary parts, is the source of the Sziklai pair's unique character.
@@ -32,7 +32,7 @@ Now, this is where the magic happens. This amplified current from $Q_1$ doesn't 
 
 Transistor $Q_2$ now sees this already-large current at its base and says, "I can do better!" It performs a *second* round of amplification. The final collector current from $Q_2$, which contributes to the main output, is $I_{C2} = \beta_2 I_{B2}$, where $\beta_2$ is the gain of $Q_2$.
 
-The total current flowing into the composite collector is the sum of the collector currents from both transistors, $I_{C,eq} = I_{C1} + I_{C2}$. By tracing all the relationships, we arrive at a magnificent result for the total gain of the pair :
+The total current flowing into the composite collector is the sum of the collector currents from both transistors, $I_{C,eq} = I_{C1} + I_{C2}$. By tracing all the relationships, we arrive at a magnificent result for the total gain of the pair [@problem_id:1327314]:
 
 $$ \beta_{eq} = \frac{I_{C,eq}}{I_{B1}} = \beta_1 + \beta_2(1+\beta_1) = \beta_1 + \beta_2 + \beta_1\beta_2 $$
 
@@ -44,13 +44,13 @@ Here we discover one of the most celebrated advantages of the Sziklai pair. To g
 
 Consider the Darlington pair. To turn it on, the input signal must traverse *two* base-emitter junctions in series: the junction of the first transistor and then the junction of the second. It's like having a door with two separate locks that must be turned. The total turn-on voltage is therefore the sum of the two individual voltage drops: $V_{on, Darl} = V_{BE1} + V_{BE2} \approx 1.4$ V.
 
-Now look at the Sziklai pair . The input voltage is applied between the composite base (base of $Q_1$) and the composite emitter (emitter of $Q_2$). However, the path the turn-on signal must establish is just from the base of $Q_1$ to its emitter. Once that single junction is forward-biased, the amplification cascade begins. The voltage needed is simply the turn-on voltage of the first transistor: $V_{on, Sziklai} \approx V_{BE1} \approx 0.7$ V. It's like a door where turning the first lock automatically disengages the second.
+Now look at the Sziklai pair [@problem_id:1295968]. The input voltage is applied between the composite base (base of $Q_1$) and the composite emitter (emitter of $Q_2$). However, the path the turn-on signal must establish is just from the base of $Q_1$ to its emitter. Once that single junction is forward-biased, the amplification cascade begins. The voltage needed is simply the turn-on voltage of the first transistor: $V_{on, Sziklai} \approx V_{BE1} \approx 0.7$ V. It's like a door where turning the first lock automatically disengages the second.
 
-This difference of $0.7$ V might seem small, but in the world of [low-power electronics](@article_id:171801), it's a huge deal. For devices running on batteries, where every fraction of a volt is precious, the Sziklai pair's lower turn-on voltage makes it a far more efficient and desirable choice.
+This difference of $0.7$ V might seem small, but in the world of [low-power electronics](@keyword=low_power_electronics|lang=en-US|style=Feynman), it's a huge deal. For devices running on batteries, where every fraction of a volt is precious, the Sziklai pair's lower turn-on voltage makes it a far more efficient and desirable choice.
 
 ### The Physics of Efficient Feedback
 
-The Sziklai pair's elegance goes deeper than just its connections; it lies in a beautiful feedback mechanism that enhances efficiency . To appreciate this, let's consider the transistor's current transfer ratio, **alpha** ($\alpha$), the fraction of emitter current that successfully becomes collector current. The remaining fraction, $(1-\alpha)$, flows out as base current.
+The Sziklai pair's elegance goes deeper than just its connections; it lies in a beautiful feedback mechanism that enhances efficiency [@problem_id:1290970]. To appreciate this, let's consider the transistor's current transfer ratio, **alpha** ($\alpha$), the fraction of emitter current that successfully becomes collector current. The remaining fraction, $(1-\alpha)$, flows out as base current.
 
 In the Sziklai configuration, the base current required by the power transistor $Q_2$ is supplied by the emitter of the driver transistor $Q_1$. This base current, $I_{B2}$, isn't simply drawn from the input signal and "lost." Instead, the driver transistor $Q_1$ amplifies its own much smaller base current ($I_{B1}$) to produce $I_{B2}$. Furthermore, the collector current of $Q_1$ ($I_{C1}$) is tied directly to the main composite collector, adding to the total output current.
 
@@ -64,11 +64,11 @@ The term $(1-\alpha_i)$ represents the current loss (the fraction that becomes b
 
 These underlying principles give the Sziklai pair a distinct performance profile in real circuits.
 
-When used as a **[voltage follower](@article_id:272128)**, a circuit designed to have a very high [input impedance](@article_id:271067), the Sziklai pair shines. Much like the Darlington, its cascaded amplification boosts the impedance seen by the input signal to incredibly high values, ensuring it doesn't "load down" or draw excessive current from the source it's connected to. For similar individual transistor gains, its input impedance is nearly identical to that of a Darlington pair, making both excellent choices for buffering signals .
+When used as a **[voltage follower](@keyword=voltage_follower|lang=en-US|style=Feynman)**, a circuit designed to have a very high [input impedance](@keyword=input_impedance|lang=en-US|style=Feynman), the Sziklai pair shines. Much like the Darlington, its cascaded amplification boosts the impedance seen by the input signal to incredibly high values, ensuring it doesn't "load down" or draw excessive current from the source it's connected to. For similar individual transistor gains, its input impedance is nearly identical to that of a Darlington pair, making both excellent choices for buffering signals [@problem_id:1317232].
 
-When used as an **amplifier**, its **[output resistance](@article_id:276306)**—a measure of how "stiff" or stable its output voltage is under load—is also remarkable. The internal feedback structure, where the driver transistor $Q_1$ is connected across the output transistor $Q_2$, creates an arrangement that actively works to keep the output stable . This results in a low [output resistance](@article_id:276306), allowing the pair to drive heavy loads without its voltage sagging.
+When used as an **amplifier**, its **[output resistance](@keyword=output_resistance|lang=en-US|style=Feynman)**—a measure of how "stiff" or stable its output voltage is under load—is also remarkable. The internal feedback structure, where the driver transistor $Q_1$ is connected across the output transistor $Q_2$, creates an arrangement that actively works to keep the output stable [@problem_id:1333835]. This results in a low [output resistance](@keyword=output_resistance|lang=en-US|style=Feynman), allowing the pair to drive heavy loads without its voltage sagging.
 
-Perhaps most surprisingly, if you bias a Sziklai pair and a Darlington pair to deliver the same amount of quiescent output current, their **transconductance**—the fundamental measure of how well they convert an input voltage change into an output current change—is almost identical . This reveals a deep truth: despite their different structures and turn-on characteristics, at their core, their primary function as current amplifiers operates with the same fundamental efficiency.
+Perhaps most surprisingly, if you bias a Sziklai pair and a Darlington pair to deliver the same amount of quiescent output current, their **transconductance**—the fundamental measure of how well they convert an input voltage change into an output current change—is almost identical [@problem_id:1343189]. This reveals a deep truth: despite their different structures and turn-on characteristics, at their core, their primary function as current amplifiers operates with the same fundamental efficiency.
 
 The Sziklai configuration also tends to be faster and more thermally stable than a Darlington. This is because the output transistor is less prone to deep saturation (a slow state to recover from), and the heat-generating power transistor ($Q_2$) is thermally decoupled from the bias-setting driver transistor ($Q_1$).
 

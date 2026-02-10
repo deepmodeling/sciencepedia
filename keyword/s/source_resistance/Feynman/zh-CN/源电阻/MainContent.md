@@ -1,13 +1,13 @@
 ## 引言
-在电[路图](@article_id:338292)的理想世界中，电压源是完美的，它们会毫不动摇地提供其标称电压。然而，在物理世界中，没有哪个电源是完美无瑕的。每个电池、发电机和放大器内部都含有一种固有且不可避免的对电流流动的阻碍，这被称为**[源电阻](@article_id:326775)**。这一特性是理解理论性能与实际结果之间关键差异的钥匙。它解决了为什么传递给设备的功率永远不会像人们天真预期的那样，以及为什么效率是一场持续的战斗这一根本问题。本文深入探讨了[源电阻](@article_id:326775)的本质，探索其深远的影响。在第一章**原理与机制**中，我们将揭示其基本物理原理，从简单的[分压](@article_id:348162)效应到[最大功](@article_id:304354)率与效率之间的关键权衡，再到交流和噪声电路中阻抗的复杂舞蹈。随后，在**应用与跨学科联系**中，我们将看到这些原理如何应用于不同领域——从设计强大的音频系统和高保真科学仪器，到在[热力学](@article_id:359663)噪声面前挑战测量的极限。
+在电[路图](@keyword=path_graph|lang=zh-CN|style=Feynman)的理想世界中，电压源是完美的，它们会毫不动摇地提供其标称电压。然而，在物理世界中，没有哪个电源是完美无瑕的。每个电池、发电机和放大器内部都含有一种固有且不可避免的对电流流动的阻碍，这被称为**[源电阻](@keyword=source_resistance|lang=zh-CN|style=Feynman)**。这一特性是理解理论性能与实际结果之间关键差异的钥匙。它解决了为什么传递给设备的功率永远不会像人们天真预期的那样，以及为什么效率是一场持续的战斗这一根本问题。本文深入探讨了[源电阻](@keyword=source_resistance|lang=zh-CN|style=Feynman)的本质，探索其深远的影响。在第一章**原理与机制**中，我们将揭示其基本物理原理，从简单的[分压](@keyword=partial_pressures|lang=zh-CN|style=Feynman)效应到[最大功](@keyword=maximum_work|lang=zh-CN|style=Feynman)率与效率之间的关键权衡，再到交流和噪声电路中阻抗的复杂舞蹈。随后，在**应用与跨学科联系**中，我们将看到这些原理如何应用于不同领域——从设计强大的音频系统和高保真科学仪器，到在[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)噪声面前挑战测量的极限。
 
 ## 原理与机制
 
-想象你有一块强大的电池。它的标签上写着 9 伏。你将它连接到一个小灯泡上，然后测量灯泡两端的电压。令你惊讶的是，万用表显示的不是 9 伏，而可能是 8.5 伏。另外半伏特去哪儿了？它在电池内部损耗掉了。这是关于电子学现实世界的第一个也是最基本的教训：没有哪个电源是完美的。每个真实世界的电源——无论是电池、信号发生器还是无线电天线——都有一个看不见的伴侣，即**内阻**，或者更广义地说是**内阻抗**。这就是我们所说的**[源电阻](@article_id:326775)**。它不是有人故意添加的元件；它是一种固有的物理属性。在电池中，它来自其化学[电解质](@article_id:297653)和电极的电阻。在发电机中，它是其铜线圈的电阻。这种不可避免的内阻是理解电源在现实世界中如何表现的关键。
+想象你有一块强大的电池。它的标签上写着 9 伏。你将它连接到一个小灯泡上，然后测量灯泡两端的电压。令你惊讶的是，万用表显示的不是 9 伏，而可能是 8.5 伏。另外半伏特去哪儿了？它在电池内部损耗掉了。这是关于电子学现实世界的第一个也是最基本的教训：没有哪个电源是完美的。每个真实世界的电源——无论是电池、信号发生器还是无线电天线——都有一个看不见的伴侣，即**内阻**，或者更广义地说是**内阻抗**。这就是我们所说的**[源电阻](@keyword=source_resistance|lang=zh-CN|style=Feynman)**。它不是有人故意添加的元件；它是一种固有的物理属性。在电池中，它来自其化学[电解质](@keyword=electrolytes|lang=zh-CN|style=Feynman)和电极的电阻。在发电机中，它是其铜线圈的电阻。这种不可避免的内阻是理解电源在现实世界中如何表现的关键。
 
-### 不可避免的伙伴：[分压器](@article_id:339224)
+### 不可避免的伙伴：[分压器](@keyword=voltage_divider|lang=zh-CN|style=Feynman)
 
-想象一个真实电压源最简单的方式是，将其看作一个理想的、完美的电压源（我们称其电压为 $V_s$）与一个电阻 $R_s$ 串联。这对组合被锁在一个“黑匣子”里，代表了我们的真实世界电源。现在，当我们把我们的设备，即**负载**（$R_L$），连接到这个盒子的端子上时，一件简单而深刻的事情发生了。[源电阻](@article_id:326775) $R_s$ 和[负载电阻](@article_id:331693) $R_L$ 形成一个**[串联电路](@article_id:338868)**。总电压 $V_s$ 在它们之间分配。这就是经典的**[分压器](@article_id:339224)**。
+想象一个真实电压源最简单的方式是，将其看作一个理想的、完美的电压源（我们称其电压为 $V_s$）与一个电阻 $R_s$ 串联。这对组合被锁在一个“黑匣子”里，代表了我们的真实世界电源。现在，当我们把我们的设备，即**负载**（$R_L$），连接到这个盒子的端子上时，一件简单而深刻的事情发生了。[源电阻](@keyword=source_resistance|lang=zh-CN|style=Feynman) $R_s$ 和[负载电阻](@keyword=load_resistance|lang=zh-CN|style=Feynman) $R_L$ 形成一个**[串联电路](@keyword=series_circuits|lang=zh-CN|style=Feynman)**。总电压 $V_s$ 在它们之间分配。这就是经典的**[分压器](@keyword=voltage_divider|lang=zh-CN|style=Feynman)**。
 
 实际出现在我们负载上的电压不是 $V_s$，而是：
 
@@ -17,43 +17,43 @@ $$
 
 你可以立刻看出，$V_L$ 总是小于 $V_s$。获得完整源电压的唯一方法是拥有一个无穷大的负载电阻（即开路），但那样就不会有电流流过，也无法做功！
 
-这个原理普遍适用，即使对于复杂的元件也是如此。考虑一个用作温度传感器的灵敏二极管，它受到来自一个带[内阻](@article_id:331819)的电源的微小交流噪声电压的干扰。实际出现在[二极管](@article_id:320743)上的噪声电压量并不是源的全部噪声电压；它是由[源电阻](@article_id:326775)和二极管自身的[动态电阻](@article_id:331267)形成的[分压器](@article_id:339224)决定的。随着[二极管](@article_id:320743)的电阻随温度变化，它所看到的噪声电压的比例也会变化，这是一个工程师必须考虑到的微妙效应 。这种简单的[分压](@article_id:348162)是源[内阻](@article_id:331819)的第一个后果，是对其可提供电压的一种持续“税收”。
+这个原理普遍适用，即使对于复杂的元件也是如此。考虑一个用作温度传感器的灵敏二极管，它受到来自一个带[内阻](@keyword=internal_resistance|lang=zh-CN|style=Feynman)的电源的微小交流噪声电压的干扰。实际出现在[二极管](@keyword=diode|lang=zh-CN|style=Feynman)上的噪声电压量并不是源的全部噪声电压；它是由[源电阻](@keyword=source_resistance|lang=zh-CN|style=Feynman)和二极管自身的[动态电阻](@keyword=small_signal_resistance|lang=zh-CN|style=Feynman)形成的[分压器](@keyword=voltage_divider|lang=zh-CN|style=Feynman)决定的。随着[二极管](@keyword=diode|lang=zh-CN|style=Feynman)的电阻随温度变化，它所看到的噪声电压的比例也会变化，这是一个工程师必须考虑到的微妙效应 [@problem_id:1333579]。这种简单的[分压](@keyword=partial_pressures|lang=zh-CN|style=Feynman)是源[内阻](@keyword=internal_resistance|lang=zh-CN|style=Feynman)的第一个后果，是对其可提供电压的一种持续“税收”。
 
 ### 给予者的困境：最大功率 vs. 最高效率
 
-既然我们无法获得全部电压，也许我们可以尝试从电源中获取最大的*功率*。功率是电压和电流的乘积（$P=VI$）。让我们思考如何将其最大化。如果我们让[负载电阻](@article_id:331693) $R_L$ 非常小，接近短路，根据欧姆定律，电流 $I = V_s / (R_s + R_L)$ 会非常大。但负载上的电压 $V_L = I R_L$ 将接近于零。大电流乘以零电压等于零功率。
+既然我们无法获得全部电压，也许我们可以尝试从电源中获取最大的*功率*。功率是电压和电流的乘积（$P=VI$）。让我们思考如何将其最大化。如果我们让[负载电阻](@keyword=load_resistance|lang=zh-CN|style=Feynman) $R_L$ 非常小，接近短路，根据欧姆定律，电流 $I = V_s / (R_s + R_L)$ 会非常大。但负载上的电压 $V_L = I R_L$ 将接近于零。大电流乘以零电压等于零功率。
 
-现在，让我们尝试另一个极端。如果我们让 $R_L$ 非常大，[分压器](@article_id:339224)会给我们几乎全部的源电压，$V_L \approx V_s$。但此时电流将小到可以忽略不计。接近满电压乘以零电流同样是零功率。
+现在，让我们尝试另一个极端。如果我们让 $R_L$ 非常大，[分压器](@keyword=voltage_divider|lang=zh-CN|style=Feynman)会给我们几乎全部的源电压，$V_L \approx V_s$。但此时电流将小到可以忽略不计。接近满电压乘以零电流同样是零功率。
 
-[最大功](@article_id:304354)率一定位于两者之间。如果你进行微积分运算，正如一个使用可变电位器作为负载的经典实验所演示的那样 ，你会发现一个极其简单而优雅的结果。当[负载电阻](@article_id:331693)恰好等于[源电阻](@article_id:326775)时，传递到负载的功率最大。
+[最大功](@keyword=maximum_work|lang=zh-CN|style=Feynman)率一定位于两者之间。如果你进行微积分运算，正如一个使用可变电位器作为负载的经典实验所演示的那样 [@problem_id:1316388]，你会发现一个极其简单而优雅的结果。当[负载电阻](@keyword=load_resistance|lang=zh-CN|style=Feynman)恰好等于[源电阻](@keyword=source_resistance|lang=zh-CN|style=Feynman)时，传递到负载的功率最大。
 
 $$
 R_L = R_s \quad \text{(for Maximum Power Transfer)}
 $$
 
-这就是著名的**[最大功率传输定理](@article_id:336637)**。它是[射频工程](@article_id:338553)的基石，在[射频工程](@article_id:338553)中，目标通常是将信号的每一微瓦功率都从放大器传输到天线。这就是为什么高频电缆和元件被[标准化](@article_id:310343)为特定阻抗，如 $50 \, \Omega$ 或 $75 \, \Omega$，以确保通过“匹配”它们的阻抗，在设备之间高效地传输功率。
+这就是著名的**[最大功率传输定理](@keyword=maximum_power_transfer_theorem|lang=zh-CN|style=Feynman)**。它是[射频工程](@keyword=rf_engineering|lang=zh-CN|style=Feynman)的基石，在[射频工程](@keyword=rf_engineering|lang=zh-CN|style=Feynman)中，目标通常是将信号的每一微瓦功率都从放大器传输到天线。这就是为什么高频电缆和元件被[标准化](@keyword=normalization|lang=zh-CN|style=Feynman)为特定阻抗，如 $50 \, \Omega$ 或 $75 \, \Omega$，以确保通过“匹配”它们的阻抗，在设备之间高效地传输功率。
 
-但这种[最大功](@article_id:304354)率是以高昂的代价换来的：**效率**。效率（$\eta$）是传递到负载的功率与理想电源提供的总功率之比。当 $R_L = R_s$ 时，流过两者的电流相同，并且由于它们的电阻相等，它们消耗的功率也完全相同。一半的功率被你的设备使用，另一半则在电源内部作为热量浪费掉了！[最大功率传输](@article_id:302015)时的效率仅为 50% 。
+但这种[最大功](@keyword=maximum_work|lang=zh-CN|style=Feynman)率是以高昂的代价换来的：**效率**。效率（$\eta$）是传递到负载的功率与理想电源提供的总功率之比。当 $R_L = R_s$ 时，流过两者的电流相同，并且由于它们的电阻相等，它们消耗的功率也完全相同。一半的功率被你的设备使用，另一半则在电源内部作为热量浪费掉了！[最大功率传输](@keyword=maximum_power_transfer|lang=zh-CN|style=Feynman)时的效率仅为 50% [@problem_id:1316396]。
 
 $$
 \eta = \frac{P_L}{P_{total}} = \frac{I^2 R_L}{I^2 (R_s + R_L)} = \frac{R_L}{R_s + R_L}
 $$
 
-当 $R_L = R_s$ 时, $\eta = R_s / (R_s + R_s) = 0.5$。这就是为什么你的电力公司*不*会试图将电网的阻抗与你家的阻抗相匹配。他们的目标是最高效率，而不是[最大功率传输](@article_id:302015)。他们使用非常低的源阻抗（粗电缆、大型[变压器](@article_id:334261)）与负载相比，以确保只有一小部分能量在传输中损失。在为功率而匹配和为效率而不匹配之间的选择，是一个基本的工程权衡。
+当 $R_L = R_s$ 时, $\eta = R_s / (R_s + R_s) = 0.5$。这就是为什么你的电力公司*不*会试图将电网的阻抗与你家的阻抗相匹配。他们的目标是最高效率，而不是[最大功率传输](@keyword=maximum_power_transfer|lang=zh-CN|style=Feynman)。他们使用非常低的源阻抗（粗电缆、大型[变压器](@keyword=transformers|lang=zh-CN|style=Feynman)）与负载相比，以确保只有一小部分能量在传输中损失。在为功率而匹配和为效率而不匹配之间的选择，是一个基本的工程权衡。
 
-### 复杂的舞蹈：[交流电路](@article_id:381756)中的阻抗匹配
+### 复杂的舞蹈：[交流电路](@keyword=ac_circuits|lang=zh-CN|style=Feynman)中的阻抗匹配
 
-当我们从直流电转向交流电（AC）的世界时，电阻器加入了[电容器](@article_id:331067)和[电感器](@article_id:324670)。这些元件为阻碍作用引入了一个新的维度：**电抗**（$X$），它是频率相关的。电阻和电抗的组合构成了**阻抗**（$Z = R + jX$），这是一个复数，它同时捕捉了电压和电流之间的[幅度和相位](@article_id:333571)差。
+当我们从直流电转向交流电（AC）的世界时，电阻器加入了[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)和[电感器](@keyword=inductor|lang=zh-CN|style=Feynman)。这些元件为阻碍作用引入了一个新的维度：**电抗**（$X$），它是频率相关的。电阻和电抗的组合构成了**阻抗**（$Z = R + jX$），这是一个复数，它同时捕捉了电压和电流之间的[幅度和相位](@keyword=magnitude_and_phase|lang=zh-CN|style=Feynman)差。
 
-为了在[交流电路](@article_id:381756)中实现[最大功率传输](@article_id:302015)，我们不仅要匹配电阻，还必须处理电抗。规则变成了**[共轭匹配](@article_id:338016)**。负载阻抗 $Z_L$ 必须是源阻抗 $Z_s$ 的复共轭。
+为了在[交流电路](@keyword=ac_circuits|lang=zh-CN|style=Feynman)中实现[最大功率传输](@keyword=maximum_power_transfer|lang=zh-CN|style=Feynman)，我们不仅要匹配电阻，还必须处理电抗。规则变成了**[共轭匹配](@keyword=conjugate_matching|lang=zh-CN|style=Feynman)**。负载阻抗 $Z_L$ 必须是源阻抗 $Z_s$ 的复共轭。
 
 $$
 Z_L = Z_s^* \quad \Rightarrow \quad R_L = R_s \text{ and } X_L = -X_s
 $$
 
-$X_L = -X_s$ 这个条件有一个优美的物理意义。如果源是感性的（正电抗），我们必须使负载具有相等的容性（负电抗），反之亦然。这实际上在电路中产生了一个[串联谐振](@article_id:332541)，抵消了所有的电抗  。电抗消失后，电路的行为就像一个纯电阻电路，电流被最大化。一旦完成这一步，我们又回到了旧规则：匹配电阻，$R_L = R_s$。
+$X_L = -X_s$ 这个条件有一个优美的物理意义。如果源是感性的（正电抗），我们必须使负载具有相等的容性（负电抗），反之亦然。这实际上在电路中产生了一个[串联谐振](@keyword=series_resonance|lang=zh-CN|style=Feynman)，抵消了所有的电抗 [@problem_id:1316373] [@problem_id:1316361]。电抗消失后，电路的行为就像一个纯电阻电路，电流被最大化。一旦完成这一步，我们又回到了旧规则：匹配电阻，$R_L = R_s$。
 
-但如果我们没有完全的自由度呢？例如，如果我们的负载（比如一个天线）有一个固定的相位角，而我们只能改变它的阻抗模值，那该怎么办？物理学提供了另一个优雅的答案。在这种受限的情况下，你能做的最好的事情就是使负载阻抗的*模值*等于源阻抗的*模值* 。
+但如果我们没有完全的自由度呢？例如，如果我们的负载（比如一个天线）有一个固定的相位角，而我们只能改变它的阻抗模值，那该怎么办？物理学提供了另一个优雅的答案。在这种受限的情况下，你能做的最好的事情就是使负载阻抗的*模值*等于源阻抗的*模值* [@problem_id:1316340]。
 
 $$
 |Z_L| = |Z_s| = \sqrt{R_s^2 + X_s^2}
@@ -61,37 +61,37 @@ $$
 
 这显示了“匹配”的核心原则如何适应不同的物理约束，始终努力寻找功率传输的最佳点。
 
-### 黑暗中的低语：[源电阻](@article_id:326775)在噪声中的作用
+### 黑暗中的低语：[源电阻](@keyword=source_resistance|lang=zh-CN|style=Feynman)在噪声中的作用
 
-到目前为止，我们一直专注于功率。但在灵敏测量的世界里——例如在射电天文学、[医学成像](@article_id:333351)或[生物传感器](@article_id:318064)中——敌人不是功率损失，而是**噪声**。目标不是喊得最响，而是听到最微弱的低语。在这里，[源电阻](@article_id:326775)扮演着一个完全不同且远为微妙的角色。
+到目前为止，我们一直专注于功率。但在灵敏测量的世界里——例如在射电天文学、[医学成像](@keyword=medical_imaging|lang=zh-CN|style=Feynman)或[生物传感器](@keyword=biological_sensors|lang=zh-CN|style=Feynman)中——敌人不是功率损失，而是**噪声**。目标不是喊得最响，而是听到最微弱的低语。在这里，[源电阻](@keyword=source_resistance|lang=zh-CN|style=Feynman)扮演着一个完全不同且远为微妙的角色。
 
-任何温度高于绝对[零度](@article_id:316692)的电阻器都是随机电噪声的来源，称为 **Johnson-Nyquist [热噪声](@article_id:302042)**。这是由载流子的随机热运动引起的。这种噪声设定了一个基本的底线，低于这个底线的信号将无法被检测到。现在，有一个非常了不起的事实：如果你有一个在温度 $T$ 下的[源电阻](@article_id:326775) $R_s$，并将其连接到一个匹配的负载（$R_L = R_s$），它能在一定带宽 $B$ 内传递给该负载的最大噪声功率由下式给出：
+任何温度高于绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)的电阻器都是随机电噪声的来源，称为 **Johnson-Nyquist [热噪声](@keyword=johnson_nyquist_noise|lang=zh-CN|style=Feynman)**。这是由载流子的随机热运动引起的。这种噪声设定了一个基本的底线，低于这个底线的信号将无法被检测到。现在，有一个非常了不起的事实：如果你有一个在温度 $T$ 下的[源电阻](@keyword=source_resistance|lang=zh-CN|style=Feynman) $R_s$，并将其连接到一个匹配的负载（$R_L = R_s$），它能在一定带宽 $B$ 内传递给该负载的最大噪声功率由下式给出：
 
 $$
 P_N = k_B T B
 $$
 
-其中 $k_B$ 是 Boltzmann 常数。请注意其中缺少了什么：电阻 $R_s$！可用的噪声功率与电阻值无关 。一个 $1 \, \Omega$ 的电阻和一个 $1 \, M\Omega$ 的电阻，在相同温度下，向匹配负载提供的噪声功率是相同的。这是关于[信息热力学](@article_id:375674)的一个深刻论断。
+其中 $k_B$ 是 Boltzmann 常数。请注意其中缺少了什么：电阻 $R_s$！可用的噪声功率与电阻值无关 [@problem_id:1333048]。一个 $1 \, \Omega$ 的电阻和一个 $1 \, M\Omega$ 的电阻，在相同温度下，向匹配负载提供的噪声功率是相同的。这是关于[信息热力学](@keyword=thermodynamics_of_information|lang=zh-CN|style=Feynman)的一个深刻论断。
 
 当我们将这个有噪声的源连接到一个放大器时，放大器会增加它*自己*的噪声。这个放大器噪声可以方便地建模为其输入端的两个独立的小妖精：一个微小的随机电压源（$e_n$，**等效输入噪声电压**）和一个微小的随机电流源（$i_n$，**等效输入噪声电流**）。
 
-[源电阻](@article_id:326775) $R_s$ 现在扮演着一个复杂的三重角色：
-1.  它产生自身的[热噪声](@article_id:302042)电压。
-2.  它为放大器的噪声电压 $e_n$ 形成一个[分压器](@article_id:339224)。
+[源电阻](@keyword=source_resistance|lang=zh-CN|style=Feynman) $R_s$ 现在扮演着一个复杂的三重角色：
+1.  它产生自身的[热噪声](@keyword=johnson_nyquist_noise|lang=zh-CN|style=Feynman)电压。
+2.  它为放大器的噪声电压 $e_n$ 形成一个[分压器](@keyword=voltage_divider|lang=zh-CN|style=Feynman)。
 3.  放大器的噪声电流 $i_n$ 流过它，产生一个等于 $i_n R_s$ 的额外噪声电压。
 
-为了获得最佳的**信噪比**，我们必须最小化相对于信号的总噪声。这意味着我们必须非常仔细地选择我们的[源电阻](@article_id:326775) $R_s$。如果 $R_s$ 太小，$i_n R_s$ 项就很小，但放大器自身的电压噪声 $e_n$ 可能会超过源的热噪声。如果 $R_s$ 太大，来自 $i_n R_s$ 项的噪声电压会变得巨大。
+为了获得最佳的**信噪比**，我们必须最小化相对于信号的总噪声。这意味着我们必须非常仔细地选择我们的[源电阻](@keyword=source_resistance|lang=zh-CN|style=Feynman) $R_s$。如果 $R_s$ 太小，$i_n R_s$ 项就很小，但放大器自身的电压噪声 $e_n$ 可能会超过源的热噪声。如果 $R_s$ 太大，来自 $i_n R_s$ 项的噪声电压会变得巨大。
 
-再一次，存在一个最佳值。但这一次，目标不是最大功率，而是最小噪声。能够最小化放大器**[噪声系数](@article_id:330810)**（衡量其增加了多少噪声的指标）的**最佳[源电阻](@article_id:326775)**（$R_{s,opt}$）是通过平衡电压噪声和电流噪声的贡献来找到的。结果出奇地简单：
+再一次，存在一个最佳值。但这一次，目标不是最大功率，而是最小噪声。能够最小化放大器**[噪声系数](@keyword=noise_figure|lang=zh-CN|style=Feynman)**（衡量其增加了多少噪声的指标）的**最佳[源电阻](@keyword=source_resistance|lang=zh-CN|style=Feynman)**（$R_{s,opt}$）是通过平衡电压噪声和电流噪声的贡献来找到的。结果出奇地简单：
 
 $$
 R_{s,opt} = \frac{e_n}{i_n}
 $$
 
-也就是说，你希望选择一个[源电阻](@article_id:326775)，使其等于放大器[均方根](@article_id:327312)噪声电压与其[均方根](@article_id:327312)噪声电流之比  。对于一个[低噪声放大器](@article_id:327681)，这个最佳电阻通常与能提供[最大功率传输](@article_id:302015)的电阻非常不同。对最微弱信号的追求需要一种不同的匹配——一种噪声特性的匹配。
+也就是说，你希望选择一个[源电阻](@keyword=source_resistance|lang=zh-CN|style=Feynman)，使其等于放大器[均方根](@keyword=root_mean_square|lang=zh-CN|style=Feynman)噪声电压与其[均方根](@keyword=root_mean_square|lang=zh-CN|style=Feynman)噪声电流之比 [@problem_id:1333074] [@problem_id:1317273]。对于一个[低噪声放大器](@keyword=low_noise_amplifier|lang=zh-CN|style=Feynman)，这个最佳电阻通常与能提供[最大功率传输](@keyword=maximum_power_transfer|lang=zh-CN|style=Feynman)的电阻非常不同。对最微弱信号的追求需要一种不同的匹配——一种噪声特性的匹配。
 
 ### 最后的思考：关于模型与现实
 
-在整个旅程中，我们使用了像 Thévenin 等效源这样的简单模型来理解复杂的行为。我们必须记住，这些仅仅是模型。例如，一个真实的电压源可以建模为一个[理想电压源](@article_id:340300)与一个电阻串联（Thévenin），或者一个[理想电流源](@article_id:335946)与一个电阻[并联](@article_id:336736)（Norton）。从外部看，对于负载来说，这两个模型是完全等效的。你无法区分它们。
+在整个旅程中，我们使用了像 Thévenin 等效源这样的简单模型来理解复杂的行为。我们必须记住，这些仅仅是模型。例如，一个真实的电压源可以建模为一个[理想电压源](@keyword=ideal_voltage_source|lang=zh-CN|style=Feynman)与一个电阻串联（Thévenin），或者一个[理想电流源](@keyword=ideal_current_source|lang=zh-CN|style=Feynman)与一个电阻[并联](@keyword=parallel_connection|lang=zh-CN|style=Feynman)（Norton）。从外部看，对于负载来说，这两个模型是完全等效的。你无法区分它们。
 
-然而，如果你问“电源*内部*消耗了多少功率？”，这两个模型会给出截然不同的答案 。这不是矛盾；这是一个教训。模型是一种工具，旨在回答关于外部世界的特定问题。它可能不会——而且通常确实不会——准确地表示物理系统内部的工作原理。[源电阻](@article_id:326775)的概念是一个强大的抽象，但它的力量在于确切地知道何时以及如何使用它。它是塑造我们周围每个电路中能量和[信息流](@article_id:331691)动的无形之手。
+然而，如果你问“电源*内部*消耗了多少功率？”，这两个模型会给出截然不同的答案 [@problem_id:1334073]。这不是矛盾；这是一个教训。模型是一种工具，旨在回答关于外部世界的特定问题。它可能不会——而且通常确实不会——准确地表示物理系统内部的工作原理。[源电阻](@keyword=source_resistance|lang=zh-CN|style=Feynman)的概念是一个强大的抽象，但它的力量在于确切地知道何时以及如何使用它。它是塑造我们周围每个电路中能量和[信息流](@keyword=information_flow|lang=zh-CN|style=Feynman)动的无形之手。

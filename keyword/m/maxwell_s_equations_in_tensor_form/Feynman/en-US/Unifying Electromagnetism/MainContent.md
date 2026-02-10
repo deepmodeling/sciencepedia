@@ -11,7 +11,7 @@ The answer, it turns out, is a spectacular "yes," and the result is one of the m
 
 To tell our story in spacetime, we first need to re-imagine our main characters: the fields and their sources.
 
-First, consider the sources of the fields: electric charge and [electric current](@article_id:260651). In the old view, we had a [charge density](@article_id:144178), $\rho$, telling us how much charge is packed into a volume of space, and a current density vector, $\vec{J}$, telling us how that charge is flowing. But from a spacetime perspective, these are two sides of the same coin. A charge that is stationary to you is a current to an observer flying past you. Relativity demands we unify them. We do this by creating a **[four-current density](@article_id:262074)**, $J^\mu = (c\rho, \vec{J})$. This single four-component vector elegantly captures the entirety of the charge and [current distribution](@article_id:271734) in a way that all observers can agree on.
+First, consider the sources of the fields: electric charge and [electric current](@keyword=electric_current|lang=en-US|style=Feynman). In the old view, we had a [charge density](@keyword=charge_density|lang=en-US|style=Feynman), $\rho$, telling us how much charge is packed into a volume of space, and a current density vector, $\vec{J}$, telling us how that charge is flowing. But from a spacetime perspective, these are two sides of the same coin. A charge that is stationary to you is a current to an observer flying past you. Relativity demands we unify them. We do this by creating a **[four-current density](@keyword=four_current_density|lang=en-US|style=Feynman)**, $J^\mu = (c\rho, \vec{J})$. This single four-component vector elegantly captures the entirety of the charge and [current distribution](@keyword=current_distribution|lang=en-US|style=Feynman) in a way that all observers can agree on.
 
 Now for the fields themselves. We're used to thinking about an electric field, $\vec{E}$, and a magnetic field, $\vec{B}$, as distinct entities. But relativity showed that one observer’s electric field can be another observer’s magnetic field. They are not independent; they transform into one another. The new formalism makes this relationship breathtakingly clear by packing both fields into a single object: the **electromagnetic field tensor**, $F^{\mu\nu}$. It’s a 4x4 antisymmetric matrix, which simply means its entries are related by $F^{\mu\nu} = -F^{\nu\mu}$.
 
@@ -33,9 +33,9 @@ With our unified characters, the four sprawling Maxwell's equations collapse int
 
 #### The Homogeneous Equation: A Tale of Potential
 
-In [classical electrodynamics](@article_id:270002), fields don't just spring into existence; they are derived from more fundamental quantities called potentials. We have the scalar potential $\phi$ and the [vector potential](@article_id:153148) $\mathbf{A}$. Just as we did for charge and current, we can unify these into a single **four-potential**, $A_\mu$.
+In [classical electrodynamics](@keyword=classical_electrodynamics|lang=en-US|style=Feynman), fields don't just spring into existence; they are derived from more fundamental quantities called potentials. We have the scalar potential $\phi$ and the [vector potential](@keyword=vector_potential|lang=en-US|style=Feynman) $\mathbf{A}$. Just as we did for charge and current, we can unify these into a single **four-potential**, $A_\mu$.
 
-It turns out that the entire [field tensor](@article_id:185992) $F_{\mu\nu}$ is simply the four-dimensional "curl" of this four-potential :
+It turns out that the entire [field tensor](@keyword=field_tensor|lang=en-US|style=Feynman) $F_{\mu\nu}$ is simply the four-dimensional "curl" of this four-potential [@problem_id:408547]:
 
 $$
 F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
@@ -47,9 +47,9 @@ $$
 \partial_\lambda F_{\mu\nu} + \partial_\mu F_{\nu\lambda} + \partial_\nu F_{\lambda\mu} = 0
 $$
 
-This isn't a new physical law we have to impose; it's a mathematical consequence of the field coming from a potential, much like how walking north then east gets you to the same corner as walking east then north. The order of smooth partial derivatives doesn't matter ($\partial_\mu \partial_\nu = \partial_\nu \partial_\mu$), and this symmetry causes all the terms to cancel perfectly .
+This isn't a new physical law we have to impose; it's a mathematical consequence of the field coming from a potential, much like how walking north then east gets you to the same corner as walking east then north. The order of smooth partial derivatives doesn't matter ($\partial_\mu \partial_\nu = \partial_\nu \partial_\mu$), and this symmetry causes all the terms to cancel perfectly [@problem_id:408547].
 
-This single identity contains two of Maxwell's original equations: **Gauss's Law for Magnetism** ($\nabla \cdot \vec{B} = 0$) and **Faraday's Law of Induction**. For instance, by defining a related object called the **dual tensor** $G^{\mu\nu}$ (or $*F^{\mu\nu}$), the Bianchi identity can be rewritten in the even simpler form $\partial_\mu G^{\mu\nu} = 0$. Expanding the time component ($\nu=0$) of this equation yields, with a bit of algebra, the familiar law that there are no [magnetic monopoles](@article_id:142323), $\nabla \cdot \vec{B}= 0$ . So, the absence of magnetic monopoles and the law of induction are not independent facts about the universe; they are the unified geometric consequence of the electromagnetic field being described by a four-potential.
+This single identity contains two of Maxwell's original equations: **Gauss's Law for Magnetism** ($\nabla \cdot \vec{B} = 0$) and **Faraday's Law of Induction**. For instance, by defining a related object called the **dual tensor** $G^{\mu\nu}$ (or $*F^{\mu\nu}$), the Bianchi identity can be rewritten in the even simpler form $\partial_\mu G^{\mu\nu} = 0$. Expanding the time component ($\nu=0$) of this equation yields, with a bit of algebra, the familiar law that there are no [magnetic monopoles](@keyword=magnetic_monopoles|lang=en-US|style=Feynman), $\nabla \cdot \vec{B}= 0$ [@problem_id:1612617]. So, the absence of magnetic monopoles and the law of induction are not independent facts about the universe; they are the unified geometric consequence of the electromagnetic field being described by a four-potential.
 
 #### The Inhomogeneous Equation: How Sources Create Fields
 
@@ -59,9 +59,9 @@ $$
 \partial_\mu F^{\mu\nu} = \mu_0 J^\nu
 $$
 
-This is the **inhomogeneous Maxwell equation**. In plain English, it says that the four-dimensional divergence of the [field tensor](@article_id:185992) at a point in spacetime is directly proportional to the four-current at that same point. Charges and currents warp the electromagnetic field, and this equation tells us exactly how.
+This is the **inhomogeneous Maxwell equation**. In plain English, it says that the four-dimensional divergence of the [field tensor](@keyword=field_tensor|lang=en-US|style=Feynman) at a point in spacetime is directly proportional to the four-current at that same point. Charges and currents warp the electromagnetic field, and this equation tells us exactly how.
 
-This single, elegant statement bundles together **Gauss's Law for Electricity** and the **Ampere-Maxwell Law**. If we pick the time component ($\nu=0$), the equation unpacks to give us Gauss's law, $\nabla \cdot \vec{E} = \rho / \epsilon_0$  . If we pick the three spatial components ($\nu=1,2,3$), we get the Ampere-Maxwell law, which describes how both currents and changing electric fields create magnetic fields. This formalism is not just for show; it's a powerful computational tool. Given any configuration of [electric and magnetic fields](@article_id:260853), we can use this equation to instantly determine the charge and [current distribution](@article_id:271734) required to create them .
+This single, elegant statement bundles together **Gauss's Law for Electricity** and the **Ampere-Maxwell Law**. If we pick the time component ($\nu=0$), the equation unpacks to give us Gauss's law, $\nabla \cdot \vec{E} = \rho / \epsilon_0$ [@problem_id:1614837] [@problem_id:1611580]. If we pick the three spatial components ($\nu=1,2,3$), we get the Ampere-Maxwell law, which describes how both currents and changing electric fields create magnetic fields. This formalism is not just for show; it's a powerful computational tool. Given any configuration of [electric and magnetic fields](@keyword=electric_and_magnetic_fields|lang=en-US|style=Feynman), we can use this equation to instantly determine the charge and [current distribution](@keyword=current_distribution|lang=en-US|style=Feynman) required to create them [@problem_id:1573983].
 
 ### The Deep Consequences: Built-in Conservations
 
@@ -71,13 +71,13 @@ Consider the law of **charge conservation**. In the old formulation, it's a sepa
 $$
 \partial_\nu (\partial_\mu F^{\mu\nu}) = \mu_0 (\partial_\nu J^\nu)
 $$
-Now, look at the left side. It involves a double derivative $\partial_\nu \partial_\mu$ of the field tensor $F^{\mu\nu}$. Because partial derivatives commute ($\partial_\nu \partial_\mu = \partial_\mu \partial_\nu$) and the [field tensor](@article_id:185992) is antisymmetric ($F^{\mu\nu} = -F^{\nu\mu}$), the left side is *identically zero*. It's a purely mathematical trick. But if the left side is zero, the right side must be too. This forces us to conclude that:
+Now, look at the left side. It involves a double derivative $\partial_\nu \partial_\mu$ of the field tensor $F^{\mu\nu}$. Because partial derivatives commute ($\partial_\nu \partial_\mu = \partial_\mu \partial_\nu$) and the [field tensor](@keyword=field_tensor|lang=en-US|style=Feynman) is antisymmetric ($F^{\mu\nu} = -F^{\nu\mu}$), the left side is *identically zero*. It's a purely mathematical trick. But if the left side is zero, the right side must be too. This forces us to conclude that:
 $$
 \partial_\nu J^\nu = 0
 $$
-This is precisely the relativistic statement of [charge conservation](@article_id:151345)! The theory literally will not allow charge to be created or destroyed. If a theorist were to propose that charge conservation could be violated by a tiny constant, the very structure of our equations would prove them wrong . Conservation of charge is not an add-on; it's part of the bargain of writing a relativistic theory of electromagnetism.
+This is precisely the relativistic statement of [charge conservation](@keyword=charge_conservation|lang=en-US|style=Feynman)! The theory literally will not allow charge to be created or destroyed. If a theorist were to propose that charge conservation could be violated by a tiny constant, the very structure of our equations would prove them wrong [@problem_id:1857613]. Conservation of charge is not an add-on; it's part of the bargain of writing a relativistic theory of electromagnetism.
 
-This theme of unity extends to a grander stage. The **[electromagnetic stress-energy tensor](@article_id:266962)**, $T^{\mu\nu}$, is a 4D bookkeeping device for all the energy, momentum, and pressure contained within the electromagnetic field. The four-divergence of this tensor, $\partial_\nu T^{\mu\nu}$, describes how energy and momentum are exchanged between the field and the charges—in other words, it describes the **Lorentz force** density . In this way, dynamics, forces, and conservation laws are all woven together into a single, cohesive tapestry.
+This theme of unity extends to a grander stage. The **[electromagnetic stress-energy tensor](@keyword=electromagnetic_stress_energy_tensor|lang=en-US|style=Feynman)**, $T^{\mu\nu}$, is a 4D bookkeeping device for all the energy, momentum, and pressure contained within the electromagnetic field. The four-divergence of this tensor, $\partial_\nu T^{\mu\nu}$, describes how energy and momentum are exchanged between the field and the charges—in other words, it describes the **Lorentz force** density [@problem_id:1817545]. In this way, dynamics, forces, and conservation laws are all woven together into a single, cohesive tapestry.
 
 ### The Ultimate Elegance: Action and Complex Fields
 
@@ -85,10 +85,10 @@ Can we go even deeper? Can we derive all of this from an even more fundamental s
 $$
 \mathcal{L} = -\frac{1}{4\mu_0} F_{\alpha\beta}F^{\alpha\beta} - J^\alpha A_\alpha
 $$
-This rather simple expression contains everything. By demanding that nature behave in a way that minimizes the "action" (the integral of this Lagrangian over spacetime), the inhomogeneous Maxwell equation $\partial_\alpha F^{\alpha\beta} = \mu_0 J^\beta$ emerges naturally through a procedure called the Euler-Lagrange equations . The laws of physics are not just a set of rules; they are the consequences of a single, powerful [variational principle](@article_id:144724).
+This rather simple expression contains everything. By demanding that nature behave in a way that minimizes the "action" (the integral of this Lagrangian over spacetime), the inhomogeneous Maxwell equation $\partial_\alpha F^{\alpha\beta} = \mu_0 J^\beta$ emerges naturally through a procedure called the Euler-Lagrange equations [@problem_id:1861550]. The laws of physics are not just a set of rules; they are the consequences of a single, powerful [variational principle](@keyword=variational_principle|lang=en-US|style=Feynman).
 
-As a final flourish of mathematical beauty, consider a region of space free of any charges or currents ($J^\nu = 0$). Here, we can combine the field tensor $F^{\mu\nu}$ and its dual $*F^{\mu\nu}$ into a single **complex [field tensor](@article_id:185992)**, $\mathcal{G}^{\mu\nu} = F^{\mu\nu} + i *F^{\mu\nu}$. With this new object, *all four* of Maxwell's equations collapse into one, breathtakingly simple statement :
+As a final flourish of mathematical beauty, consider a region of space free of any charges or currents ($J^\nu = 0$). Here, we can combine the field tensor $F^{\mu\nu}$ and its dual $*F^{\mu\nu}$ into a single **complex [field tensor](@keyword=field_tensor|lang=en-US|style=Feynman)**, $\mathcal{G}^{\mu\nu} = F^{\mu\nu} + i *F^{\mu\nu}$. With this new object, *all four* of Maxwell's equations collapse into one, breathtakingly simple statement [@problem_id:1838920]:
 $$
 \partial_\mu \mathcal{G}^{\mu\nu} = 0
 $$
-The real part of this equation gives the two inhomogeneous laws (in vacuum), and the imaginary part gives the two homogeneous laws. This is the pinnacle of the quest for unity that began with Einstein's questions about space and time. It is a testament to the power of mathematics to reveal the [hidden symmetries](@article_id:146828) and profound beauty of the physical world.
+The real part of this equation gives the two inhomogeneous laws (in vacuum), and the imaginary part gives the two homogeneous laws. This is the pinnacle of the quest for unity that began with Einstein's questions about space and time. It is a testament to the power of mathematics to reveal the [hidden symmetries](@keyword=hidden_symmetries|lang=en-US|style=Feynman) and profound beauty of the physical world.

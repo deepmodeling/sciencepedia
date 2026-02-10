@@ -1,26 +1,26 @@
 ## Introduction
-In the study of optics, the formation of images by [curved mirrors](@article_id:196005) is typically described by the Gaussian [mirror equation](@article_id:163492), a reliable but sometimes cumbersome formula. While effective for basic calculations, this standard approach, which measures distances from the mirror's surface, can obscure the deeper, more elegant symmetries inherent in reflection. This article addresses this gap by introducing a powerful alternative perspective: the Newtonian form of the [mirror equation](@article_id:163492). By shifting the frame of reference to the mirror's focal point—its true optical heart—we uncover a relationship of profound simplicity and utility. In the following sections, you will learn the core concepts behind this elegant equation in the "Principles and Mechanisms" chapter, which covers its derivation through both [algebra and geometry](@article_id:162834). Subsequently, the "Applications and Interdisciplinary Connections" chapter will reveal how this shift in thinking provides powerful tools for analyzing dynamic systems and solving complex engineering challenges, from autofocus mechanisms to the design of advanced telescopes.
+In the study of optics, the formation of images by [curved mirrors](@keyword=curved_mirrors|lang=en-US|style=Feynman) is typically described by the Gaussian [mirror equation](@keyword=mirror_equation|lang=en-US|style=Feynman), a reliable but sometimes cumbersome formula. While effective for basic calculations, this standard approach, which measures distances from the mirror's surface, can obscure the deeper, more elegant symmetries inherent in reflection. This article addresses this gap by introducing a powerful alternative perspective: the Newtonian form of the [mirror equation](@keyword=mirror_equation|lang=en-US|style=Feynman). By shifting the frame of reference to the mirror's focal point—its true optical heart—we uncover a relationship of profound simplicity and utility. In the following sections, you will learn the core concepts behind this elegant equation in the "Principles and Mechanisms" chapter, which covers its derivation through both [algebra and geometry](@keyword=algebra_and_geometry|lang=en-US|style=Feynman). Subsequently, the "Applications and Interdisciplinary Connections" chapter will reveal how this shift in thinking provides powerful tools for analyzing dynamic systems and solving complex engineering challenges, from autofocus mechanisms to the design of advanced telescopes.
 
 ## Principles and Mechanisms
 
-In our journey to understand the universe, we often find that a simple shift in perspective can transform a complex problem into one of astonishing simplicity. The way we describe the formation of images by a curved mirror is a perfect case in point. You've likely met the standard [mirror equation](@article_id:163492), a trusty formula that has served physicists well. But today, we're going to look at the same phenomenon through a different lens—or rather, from a different reference point—and uncover a relationship of such elegance and power that it feels like a secret whispered by nature itself. This is the story of the Newtonian form of the [mirror equation](@article_id:163492).
+In our journey to understand the universe, we often find that a simple shift in perspective can transform a complex problem into one of astonishing simplicity. The way we describe the formation of images by a curved mirror is a perfect case in point. You've likely met the standard [mirror equation](@keyword=mirror_equation|lang=en-US|style=Feynman), a trusty formula that has served physicists well. But today, we're going to look at the same phenomenon through a different lens—or rather, from a different reference point—and uncover a relationship of such elegance and power that it feels like a secret whispered by nature itself. This is the story of the Newtonian form of the [mirror equation](@keyword=mirror_equation|lang=en-US|style=Feynman).
 
 ### A Shift in Perspective: From Vertex to Focus
 
-The familiar tool for calculating image positions is the Gaussian [mirror equation](@article_id:163492):
+The familiar tool for calculating image positions is the Gaussian [mirror equation](@keyword=mirror_equation|lang=en-US|style=Feynman):
 $$
 \frac{1}{s_o} + \frac{1}{s_i} = \frac{1}{f}
 $$
-Here, $s_o$ is the object's distance from the mirror's surface (the vertex), $s_i$ is the image's distance from the vertex, and $f$ is the [focal length](@article_id:163995). This equation works beautifully. But look at the reference point: the vertex. It’s just the geometric center of the mirror's surface. While convenient for manufacturing, is it the most *physically significant* point?
+Here, $s_o$ is the object's distance from the mirror's surface (the vertex), $s_i$ is the image's distance from the vertex, and $f$ is the [focal length](@keyword=focal_length|lang=en-US|style=Feynman). This equation works beautifully. But look at the reference point: the vertex. It’s just the geometric center of the mirror's surface. While convenient for manufacturing, is it the most *physically significant* point?
 
-Let's think about what a mirror *does*. Its essential purpose is to focus light. The most special point, the very heart of the mirror's optical character, is its **[focal point](@article_id:173894)**, $F$. This is the point where parallel rays of light converge after reflection (or from which they appear to diverge). What if we tried to build our description of the world around this more fundamental point?
+Let's think about what a mirror *does*. Its essential purpose is to focus light. The most special point, the very heart of the mirror's optical character, is its **[focal point](@keyword=focal_point|lang=en-US|style=Feynman)**, $F$. This is the point where parallel rays of light converge after reflection (or from which they appear to diverge). What if we tried to build our description of the world around this more fundamental point?
 
-Let's play a game. We'll throw away our old rulers that measure from the vertex and grab new ones that measure from the [focal point](@article_id:173894). We will define two new quantities :
+Let's play a game. We'll throw away our old rulers that measure from the vertex and grab new ones that measure from the [focal point](@keyword=focal_point|lang=en-US|style=Feynman). We will define two new quantities [@problem_id:2229822]:
 
 -   **$x_o$**: The distance from the focal point to the object.
--   **$x_i$**: The distance from the [focal point](@article_id:173894) to the image.
+-   **$x_i$**: The distance from the [focal point](@keyword=focal_point|lang=en-US|style=Feynman) to the image.
 
-For a simple [concave mirror](@article_id:168804) forming a real image beyond its [focal point](@article_id:173894), these distances are related to the old ones by $s_o = f + x_o$ and $s_i = f + x_i$. We are simply re-expressing the same physical locations in a new coordinate system. What happens when we rewrite our physics in this new language?
+For a simple [concave mirror](@keyword=concave_mirror|lang=en-US|style=Feynman) forming a real image beyond its [focal point](@keyword=focal_point|lang=en-US|style=Feynman), these distances are related to the old ones by $s_o = f + x_o$ and $s_i = f + x_i$. We are simply re-expressing the same physical locations in a new coordinate system. What happens when we rewrite our physics in this new language?
 
 ### The Elegance of the Newtonian Form
 
@@ -48,7 +48,7 @@ Look at the terms! The terms $f x_{o}$ and $f x_{i}$ appear on both sides, and w
 $$
 2f^2 = x_{o}x_{i} + f^2
 $$
-Rearranging this gives the celebrated **Newtonian form of the [mirror equation](@article_id:163492)**:
+Rearranging this gives the celebrated **Newtonian form of the [mirror equation](@keyword=mirror_equation|lang=en-US|style=Feynman)**:
 $$
 x_o x_i = f^2
 $$
@@ -56,7 +56,7 @@ Just look at that. The clumsy sum of reciprocals has vanished, replaced by a sim
 
 ### The Proof is in the Picture: A Geometric Journey
 
-Now, algebra is a powerful tool for verification, but it doesn't always give you a *feel* for why something is true. To truly appreciate the beauty of this equation, we must watch the light itself. Let's use geometry—the language of space and form—to derive this result from first principles .
+Now, algebra is a powerful tool for verification, but it doesn't always give you a *feel* for why something is true. To truly appreciate the beauty of this equation, we must watch the light itself. Let's use geometry—the language of space and form—to derive this result from first principles [@problem_id:1044627].
 
 Imagine an object of height $h_o$ standing on the principal axis. To find its image, we can trace two special rays of light coming from its tip.
 
@@ -66,4 +66,4 @@ Imagine an object of height $h_o$ standing on the principal axis. To find its im
 The point where these two reflected rays cross is where the tip of the image is formed, with height $h_i$. Now, let's put on our geometry glasses and look at the diagram this tracing creates. A wonderful thing has happened: we have created two pairs of similar triangles!
 
 
-*Similar triangles in the ray diagram for a [concave mirror](@article_id:168804). The green triangles are one pair, and the orange triangles are another.*
+*Similar triangles in the ray diagram for a [concave mirror](@keyword=concave_mirror|lang=en-US|style=Feynman). The green triangles are one pair, and the orange triangles are another.*

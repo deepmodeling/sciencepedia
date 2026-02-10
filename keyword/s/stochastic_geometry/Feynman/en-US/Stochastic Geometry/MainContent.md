@@ -11,7 +11,7 @@ This is not a question about physics, but about geometry and chance. It is a que
 
 ### From Lines of Sight to Ratios of Size
 
-Let's think about that exoplanet. The star has a radius, let's call it $R_s$, and the planet orbits at a much larger distance, $a$. For us to see a transit, the planet's path, from our perspective, must cross the disk of the star. If we imagine the orientation of the planet's orbit is completely random, then the probability of seeing a transit boils down to a simple ratio. The "favorable" orientations occupy a narrow band, and all other orientations are "unfavorable." In this simplified model, it turns out the probability is just the ratio of the star's radius to the orbital radius, $P_{\text{transit}} = R_s/a$. 
+Let's think about that exoplanet. The star has a radius, let's call it $R_s$, and the planet orbits at a much larger distance, $a$. For us to see a transit, the planet's path, from our perspective, must cross the disk of the star. If we imagine the orientation of the planet's orbit is completely random, then the probability of seeing a transit boils down to a simple ratio. The "favorable" orientations occupy a narrow band, and all other orientations are "unfavorable." In this simplified model, it turns out the probability is just the ratio of the star's radius to the orbital radius, $P_{\text{transit}} = R_s/a$. [@problem_id:1885849]
 
 For a Sun-like star and an Earth-like orbit, this probability is tiny, less than half a percent! But the beauty here isn't the number itself, but the method. We solved a problem of chance by comparing the "size" of the favorable geometric outcomes to the "size" of all possible outcomes. This core idea—that probability can be measured as a ratio of lengths, areas, or volumes of abstract spaces of possibilities—is the launchpad for our entire journey. We are about to use this simple concept to explore entire worlds built from randomness.
 
@@ -19,9 +19,9 @@ For a Sun-like star and an Earth-like orbit, this probability is tiny, less than
 
 Calculating a single probability is one thing, but science often cares more about average behavior. What can we say about a shape that is itself created by chance?
 
-Let's play a game. Imagine a large, circular dartboard. You throw three darts, which land at three random, independent points. Assuming they don't land in a perfect line, these three points define a unique triangle, and every triangle has a unique **[circumcircle](@article_id:164806)**—the circle that passes through all three vertices. This [circumcircle](@article_id:164806) is now a random object. Sometimes it's small, nestled in the center of the board; sometimes it's enormous, with a shallow arc cutting across the board. What is the *average* area of the piece of the [circumcircle](@article_id:164806) that lies on the dartboard?
+Let's play a game. Imagine a large, circular dartboard. You throw three darts, which land at three random, independent points. Assuming they don't land in a perfect line, these three points define a unique triangle, and every triangle has a unique **[circumcircle](@keyword=circumcircle|lang=en-US|style=Feynman)**—the circle that passes through all three vertices. This [circumcircle](@keyword=circumcircle|lang=en-US|style=Feynman) is now a random object. Sometimes it's small, nestled in the center of the board; sometimes it's enormous, with a shallow arc cutting across the board. What is the *average* area of the piece of the [circumcircle](@keyword=circumcircle|lang=en-US|style=Feynman) that lies on the dartboard?
 
-Attempting to solve this with brute-force integration would be a nightmare, a tangled mess of coordinates and possibilities. But stochastic geometry offers a kind of magical shortcut. It relies on a beautiful theorem: If you throw a *fourth* dart randomly onto the board, the probability that it lands inside the random [circumcircle](@article_id:164806) defined by the first three is exactly $1/2$. 
+Attempting to solve this with brute-force integration would be a nightmare, a tangled mess of coordinates and possibilities. But stochastic geometry offers a kind of magical shortcut. It relies on a beautiful theorem: If you throw a *fourth* dart randomly onto the board, the probability that it lands inside the random [circumcircle](@keyword=circumcircle|lang=en-US|style=Feynman) defined by the first three is exactly $1/2$. [@problem_id:745792]
 
 Think about that. It's an astonishingly simple connection between four random points. But this fact is also a key. We now have two ways to think about the probability of the fourth dart landing in the circle. By the theorem, it's $1/2$. By the principles of geometric probability, it's the ratio of the target area to the total area. Since the target's area is itself random, we must use its average size. So, the probability is also $\frac{\mathbb{E}[\text{Area of Intersection}]}{\text{Total Area of Board}}$.
 
@@ -31,7 +31,7 @@ We found a precise, concrete average for an incredibly complex random system wit
 
 ### Tiling the World I: Territories of Random Points
 
-Now, let's scale up. Instead of a few points, let's imagine sprinkling points across an infinite plane, like raindrops in a sudden, even shower. The mathematical model for this "[complete spatial randomness](@article_id:271701)" is the **Poisson point process**. It has two simple, beautiful properties: first, the number of points falling in any given region depends only on the region's area, not its shape or location; second, the number of points in two disjoint regions are completely [independent events](@article_id:275328).
+Now, let's scale up. Instead of a few points, let's imagine sprinkling points across an infinite plane, like raindrops in a sudden, even shower. The mathematical model for this "[complete spatial randomness](@keyword=complete_spatial_randomness|lang=en-US|style=Feynman)" is the **Poisson point process**. It has two simple, beautiful properties: first, the number of points falling in any given region depends only on the region's area, not its shape or location; second, the number of points in two disjoint regions are completely [independent events](@keyword=independent_events|lang=en-US|style=Feynman).
 
 What structure do these random points create? Well, every spot on the plane has a "closest" point from our random set. If we color the plane so that each spot gets the color of its nearest point, what pattern emerges? We get a stunning mosaic of convex polygons, a pattern known as a **Voronoi tessellation**. Each polygon is the "territory" of a single point—the set of all locations closer to it than to any other. This pattern appears everywhere in nature, from the arrangement of cells in biological tissue to the territorial domains of nesting birds.
 
@@ -39,7 +39,7 @@ These polygonal cells are all different. Some are small, some large; some are tr
 
 Your first guess might be that it depends on the density of the points. A denser rain of points should create smaller cells, perhaps with fewer sides? It's a reasonable intuition, but it is wonderfully, deeply wrong. The answer is a universal constant, independent of the density of the points.
 
-The average number of vertices of a Voronoi cell in the plane is **6**. 
+The average number of vertices of a Voronoi cell in the plane is **6**. [@problem_id:746607]
 
 This stunning result comes not from messy probability calculations, but from the fundamental rules of topology on a flat surface. For any such network drawn on a plane, Euler's famous formula connects the number of vertices ($V$), edges ($E$), and faces ($F$): $V - E + F \approx 1$ for a large patch. Furthermore, in a generic Voronoi tessellation, exactly three edges meet at every vertex. This gives us a second, local rule: $3V = 2E$. Combining these two simple equations with a little algebra reveals that the average number of edges per face, which is $2E/F$, must be exactly 6. This number isn't a statistical fluke; it's a structural necessity of tiling a plane with territories generated by random points.
 
@@ -51,7 +51,7 @@ This process, too, carves up the plane into a tessellation of convex polygons. A
 
 Let's refine the question. Imagine you parachute into this randomly partitioned landscape. What is the expected number of sides of the polygon you land in? The answer, again a universal constant that is independent of the density or orientation of the lines, is not six.
 
-It is **4**. 
+It is **4**. [@problem_id:863830]
 
 Why the difference? It reveals something deep about how these random worlds are built. The cells of a Voronoi tessellation are formed by a struggle between neighbors pushing outwards. The cells of a line tessellation are formed by being "cut" by passing lines. A random line is more likely to chop off a corner of a pre-existing large cell than it is to slice it perfectly in two. This process of
 corner-cutting tends to reduce the number of sides, leading to a simpler average shape. The fundamental nature of the random objects we use—points versus lines—radically changes the geometry of the world they create.
@@ -60,7 +60,7 @@ corner-cutting tends to reduce the number of sides, leading to a simpler average
 
 The story of the line tessellation has one more surprise for us. We know the cell you land in has, on average, four sides. But what about its size? Intuition might suggest that larger cells are the ones that have been "missed" by more lines, and so they might be simpler, with fewer sides. Or maybe you'd think they are more complex, with more jagged edges.
 
-Remarkably, neither is true. In a stationary, isotropic (all directions equally likely) Poisson line process, the area of the cell containing the origin and its number of sides are **statistically independent**. 
+Remarkably, neither is true. In a stationary, isotropic (all directions equally likely) Poisson line process, the area of the cell containing the origin and its number of sides are **statistically independent**. [@problem_id:828099]
 
 This means that knowing a cell is enormous tells you absolutely nothing new about whether it's more likely to be a triangle or a pentagon. The covariance between its area ($A_0$) and its number of sides ($N_0$) is exactly zero.
 $$ \text{Cov}(A_0, N_0) = 0 $$

@@ -11,7 +11,7 @@ Let's first understand what a Kempe chain is. Suppose you have a graph—a colle
 
 The connected parts of this blue-and-yellow-only world are the Kempe chains. A chain might be a simple pair of connected blue and yellow vertices. Or it could be a long, winding path of alternating blue and yellow vertices. Or it could be a more complex, branching structure. The key is that each chain is a self-contained island of just two colors.
 
-For example, consider a simple path of eight vertices, colored in a sequence like 1-2-1-3-1-2-3-1. If we are interested in colors 1 and 2, we can see that vertices $v_1, v_2, v_3$ form one connected component of alternating colors. Vertex $v_4$ has color 3, so it acts as a barrier. Further down, $v_5$ and $v_6$ form another small component of colors 1 and 2. The vertex $v_8$ is also color 1, but it's isolated from the others. In this case, the subgraph formed by $\{v_1, v_2, v_3\}$ is one Kempe chain for colors 1 and 2, and the [subgraph](@article_id:272848) of $\{v_5, v_6\}$ is another  .
+For example, consider a simple path of eight vertices, colored in a sequence like 1-2-1-3-1-2-3-1. If we are interested in colors 1 and 2, we can see that vertices $v_1, v_2, v_3$ form one connected component of alternating colors. Vertex $v_4$ has color 3, so it acts as a barrier. Further down, $v_5$ and $v_6$ form another small component of colors 1 and 2. The vertex $v_8$ is also color 1, but it's isolated from the others. In this case, the subgraph formed by $\{v_1, v_2, v_3\}$ is one Kempe chain for colors 1 and 2, and the [subgraph](@keyword=subgraph|lang=en-US|style=Feynman) of $\{v_5, v_6\}$ is another [@problem_id:1541287] [@problem_id:1541317].
 
 ### The Magic Trick: The Kempe Swap
 
@@ -21,7 +21,7 @@ The astonishing result is that the new coloring for the entire graph is still a 
 -   An edge *inside* the chain connected a blue and a yellow vertex. After the swap, it connects a yellow and a blue vertex. Still perfectly valid.
 -   An edge connecting a vertex *inside* the chain to a vertex *outside* the chain is the only other case to worry about. Suppose our chain is blue and yellow. A vertex inside it, say a blue one, can only be connected to vertices outside the chain that are *not* blue. Since the swap only affects blue and yellow, and the outside neighbor wasn't blue, it also couldn't have been yellow (or it would have been part of the chain!). So its color is something else entirely, like green. After the swap, our vertex becomes yellow, but its neighbor is still green. The connection remains valid.
 
-This is a powerful tool. It allows us to locally shuffle colors around without messing up the global coloring. We can, for instance, take a wheel-shaped graph, find a chain of colors 1 and 2, and flip their colors. The vertex that was color 1 is now 2, and those that were 2 are now 1, all without creating any new color conflicts  .
+This is a powerful tool. It allows us to locally shuffle colors around without messing up the global coloring. We can, for instance, take a wheel-shaped graph, find a chain of colors 1 and 2, and flip their colors. The vertex that was color 1 is now 2, and those that were 2 are now 1, all without creating any new color conflicts [@problem_id:1479783] [@problem_id:1541716].
 
 ### The Great Problem: A Vertex with Too Many Colors
 
@@ -29,15 +29,15 @@ Now, let's return to our map-coloring puzzle. This trick becomes the key to solv
 
 The proof works by assuming the theorem is false and finding the smallest possible map (planar graph) that requires six colors. In any such map, there must be at least one country (vertex) with five or fewer neighbors. The proof focuses on a vertex, let's call it $v$, with exactly five neighbors. We remove $v$ for a moment. The remaining, smaller map can be colored with five colors (by our assumption that we chose the *smallest* counterexample).
 
-Now, we put $v$ back. If its five neighbors use only four of the available five colors, we're fine! We just give $v$ the leftover color. The crisis, the "hard case," happens when all five neighbors have five *different* colors . Let's say the neighbors $v_1, v_2, v_3, v_4, v_5$ are arranged in a circle around $v$ and colored Red, Blue, Green, Yellow, and Purple, respectively. We have no color left for $v$.
+Now, we put $v$ back. If its five neighbors use only four of the available five colors, we're fine! We just give $v$ the leftover color. The crisis, the "hard case," happens when all five neighbors have five *different* colors [@problem_id:1541319]. Let's say the neighbors $v_1, v_2, v_3, v_4, v_5$ are arranged in a circle around $v$ and colored Red, Blue, Green, Yellow, and Purple, respectively. We have no color left for $v$.
 
 This is where we use Kempe's trick as a form of logical judo.
 
 ### The Solution: Walls and Detours
 
-We can't color $v$, so we'll try to change the color of one of its neighbors to free one up. Let's focus on $v_1$ (Red) and its non-adjacent neighbor $v_3$ (Green). Consider all the chains made of Red and Green vertices in the graph .
+We can't color $v$, so we'll try to change the color of one of its neighbors to free one up. Let's focus on $v_1$ (Red) and its non-adjacent neighbor $v_3$ (Green). Consider all the chains made of Red and Green vertices in the graph [@problem_id:1541328].
 
-**Case 1: The path is clear.** What if the Red-Green chain starting at $v_1$ does *not* connect to $v_3$? This means $v_1$ and $v_3$ are in different Red-Green Kempe chains. Fantastic! We can take the chain that $v_1$ is in and perform a Kempe swap. All Red vertices in that chain become Green, and all Green ones become Red. Since $v_3$ wasn't in this chain, its color doesn't change. But the color of $v_1$ has now flipped from Red to Green! The neighbors of $v$ are now colored Green, Blue, Green, Yellow, Purple. The color Red is no longer used by any neighbor. We can now color $v$ Red, and we're done! .
+**Case 1: The path is clear.** What if the Red-Green chain starting at $v_1$ does *not* connect to $v_3$? This means $v_1$ and $v_3$ are in different Red-Green Kempe chains. Fantastic! We can take the chain that $v_1$ is in and perform a Kempe swap. All Red vertices in that chain become Green, and all Green ones become Red. Since $v_3$ wasn't in this chain, its color doesn't change. But the color of $v_1$ has now flipped from Red to Green! The neighbors of $v$ are now colored Green, Blue, Green, Yellow, Purple. The color Red is no longer used by any neighbor. We can now color $v$ Red, and we're done! [@problem_id:1541324].
 
 **Case 2: The path is blocked.** But what if there *is* a Red-Green Kempe chain that connects $v_1$ and $v_3$? Now, swapping the colors in this chain won't help; $v_1$ would become Green, but $v_3$ would become Red. We'd still have all five colors represented among the neighbors.
 
@@ -45,9 +45,9 @@ This is where the beauty of the argument shines, using the fact that our map is 
 
 Now, let's try our trick again, but this time with Blue and Yellow. Can there be a Blue-Yellow Kempe chain connecting $v_2$ and $v_4$? For that to happen, a path of alternating Blue and Yellow vertices would have to cross our Red-Green wall. But it can't! The wall is made only of Red and Green vertices, and a Blue-Yellow chain is made only of Blue and Yellow vertices. The two have no colors in common, so they are completely separate sets of vertices. The wall is impenetrable to the Blue-Yellow chain.
 
-This means that $v_2$ and $v_4$ *cannot* be in the same Blue-Yellow Kempe chain. We are guaranteed to be in Case 1 for colors Blue and Yellow! So, we perform a Kempe swap on the Blue-Yellow chain containing $v_2$. Its color becomes Yellow. The neighbors of $v$ are now Red, Yellow, Green, Yellow, Purple. The color Blue is free, and we can use it to color $v$. Victory! .
+This means that $v_2$ and $v_4$ *cannot* be in the same Blue-Yellow Kempe chain. We are guaranteed to be in Case 1 for colors Blue and Yellow! So, we perform a Kempe swap on the Blue-Yellow chain containing $v_2$. Its color becomes Yellow. The neighbors of $v$ are now Red, Yellow, Green, Yellow, Purple. The color Blue is free, and we can use it to color $v$. Victory! [@problem_id:1407438].
 
-No matter what, this strategy guarantees we can always find a color for $v$, proving that any [planar graph](@article_id:269143) can be colored with just five colors.
+No matter what, this strategy guarantees we can always find a color for $v$, proving that any [planar graph](@keyword=planar_graph|lang=en-US|style=Feynman) can be colored with just five colors.
 
 ### The Beautiful Flaw: Why Four is Not Five
 
@@ -57,6 +57,6 @@ Kempe's proposed strategy was the same: if a Red-Green chain connects $v_1$ and 
 
 In the five-color proof, our two pairs of colors—{Red, Green} and {Blue, Yellow}—were **disjoint**. This was the key to the "impenetrable wall" argument. But with only four colors in total, this is no longer possible! If we pick {Red, Green} for our wall, any other pair of colors we choose for our second swap must share a color with the first pair. For example, we might try to swap on a {Blue, Green} chain.
 
-Because the color sets now overlap (both contain Green), the chains can become entangled. The "wall" and the "path" are no longer made of different materials. The Blue-Green chain can meet the Red-Green wall at a shared Green vertex and simply pass right through. The separation argument collapses . A Kempe swap on one chain can unexpectedly break or join another chain, a subtle interaction that Kempe overlooked. A simple swap on a (1,4)-chain, for example, can change the color of a vertex from 4 to 1, thereby breaking a (2,4)-chain that previously ran through it .
+Because the color sets now overlap (both contain Green), the chains can become entangled. The "wall" and the "path" are no longer made of different materials. The Blue-Green chain can meet the Red-Green wall at a shared Green vertex and simply pass right through. The separation argument collapses [@problem_id:1541295]. A Kempe swap on one chain can unexpectedly break or join another chain, a subtle interaction that Kempe overlooked. A simple swap on a (1,4)-chain, for example, can change the color of a vertex from 4 to 1, thereby breaking a (2,4)-chain that previously ran through it [@problem_id:1541776].
 
-The failure of this simple, elegant argument for four colors reveals something much deeper about the structure of [planar graphs](@article_id:268416). It shows why the Four Color Theorem was a profoundly harder problem, one that resisted proof for another century and ultimately required a new, far more complex kind of argument aided by computers. Yet, Kempe's original idea, even in its failure, gave us a magnificent tool and a deep insight into the intricate dance of colors on a plane.
+The failure of this simple, elegant argument for four colors reveals something much deeper about the structure of [planar graphs](@keyword=planar_graphs|lang=en-US|style=Feynman). It shows why the Four Color Theorem was a profoundly harder problem, one that resisted proof for another century and ultimately required a new, far more complex kind of argument aided by computers. Yet, Kempe's original idea, even in its failure, gave us a magnificent tool and a deep insight into the intricate dance of colors on a plane.

@@ -1,5 +1,5 @@
 ## Introduction
-The world of mathematics is filled with beautiful patterns, and few are as delightfully named or elegantly simple as the Hockey-Stick Identity. This principle describes a remarkable property of [binomial coefficients](@article_id:261212), the building blocks of counting that form the iconic Pascal's Triangle. While many might learn the formula by rote, true appreciation comes from understanding not just *what* it is, but *why* it must be true and *where* it appears in the larger scientific landscape. This article addresses that gap, moving beyond memorization to foster a deep, intuitive understanding. First, in "Principles and Mechanisms," we will uncover the identity's foundational logic through visual, combinatorial, and algebraic proofs. Then, in "Applications and Interdisciplinary Connections," we will venture out from pure mathematics to witness how this simple pattern provides critical insights in fields ranging from probability and physics to computer science and number theory.
+The world of mathematics is filled with beautiful patterns, and few are as delightfully named or elegantly simple as the Hockey-Stick Identity. This principle describes a remarkable property of [binomial coefficients](@keyword=binomial_coefficients|lang=en-US|style=Feynman), the building blocks of counting that form the iconic Pascal's Triangle. While many might learn the formula by rote, true appreciation comes from understanding not just *what* it is, but *why* it must be true and *where* it appears in the larger scientific landscape. This article addresses that gap, moving beyond memorization to foster a deep, intuitive understanding. First, in "Principles and Mechanisms," we will uncover the identity's foundational logic through visual, combinatorial, and algebraic proofs. Then, in "Applications and Interdisciplinary Connections," we will venture out from pure mathematics to witness how this simple pattern provides critical insights in fields ranging from probability and physics to computer science and number theory.
 
 ## Principles and Mechanisms
 
@@ -9,7 +9,7 @@ Now that we've been introduced to the curious pattern known as the Hockey-Stick 
 
 Perhaps the most charming way to first meet the identity is visually, within the famous and beautiful structure of **Pascal's Triangle**. Each number in this triangle, $\binom{n}{k}$, is the sum of the two numbers directly above it. This simple "local" rule generates a breathtakingly complex and pattern-rich "global" object.
 
-Let's look at the identity in its natural habitat. Suppose we want to calculate the sum $\binom{4}{4} + \binom{5}{4} + \binom{6}{4} + \binom{7}{4}$, a task similar to one faced by project managers trying to sum up team-building possibilities over several months . If we locate these numbers in Pascal's Triangle, we find they form a diagonal line.
+Let's look at the identity in its natural habitat. Suppose we want to calculate the sum $\binom{4}{4} + \binom{5}{4} + \binom{6}{4} + \binom{7}{4}$, a task similar to one faced by project managers trying to sum up team-building possibilities over several months [@problem_id:1404396]. If we locate these numbers in Pascal's Triangle, we find they form a diagonal line.
 
 ```
 Row 0:        1
@@ -28,11 +28,11 @@ The sum we want is $1 + 5 + 15 + 35$. If you do the arithmetic, you get $56$. No
 The general form of the identity is:
 $$ \sum_{i=r}^{n} \binom{i}{r} = \binom{n+1}{r+1} $$
 
-This relationship is not just a coincidence; it's a direct consequence of how the triangle is built. Imagine taking a specific walk down the triangle, as in problem . Every number in the triangle represents the number of paths from the apex $\binom{0}{0}$ to that position. The hockey-stick pattern emerges from summing up the paths that lead to a specific point, revealing a deep connection between addition and the triangle's geometry.
+This relationship is not just a coincidence; it's a direct consequence of how the triangle is built. Imagine taking a specific walk down the triangle, as in problem [@problem_id:1390004]. Every number in the triangle represents the number of paths from the apex $\binom{0}{0}$ to that position. The hockey-stick pattern emerges from summing up the paths that lead to a specific point, revealing a deep connection between addition and the triangle's geometry.
 
 ### The Art of Counting in Two Ways: A Committee Story
 
-A picture is intuitive, but it doesn't quite explain the "why" in a logical sense. For that, we turn to one of the most powerful and elegant techniques in all of [combinatorics](@article_id:143849): the **[combinatorial proof](@article_id:263543)**, or the art of **[double counting](@article_id:260296)**. The principle is simple: if you count the same collection of objects in two different (but correct) ways, the answers you get must be equal.
+A picture is intuitive, but it doesn't quite explain the "why" in a logical sense. For that, we turn to one of the most powerful and elegant techniques in all of [combinatorics](@keyword=combinatorics|lang=en-US|style=Feynman): the **[combinatorial proof](@keyword=combinatorial_proof|lang=en-US|style=Feynman)**, or the art of **[double counting](@keyword=double_counting_2|lang=en-US|style=Feynman)**. The principle is simple: if you count the same collection of objects in two different (but correct) ways, the answers you get must be equal.
 
 Let's tell a story. Imagine we have a group of $n+1$ people, and we want to form a committee of $k+1$ members.
 The most straightforward way to count the number of possible committees is by definition: we choose $k+1$ people from $n+1$, and the number of ways is $\binom{n+1}{k+1}$. This is our first answer. Hold onto it.
@@ -53,7 +53,7 @@ This is our second answer.
 Since both methods counted the very same thing—the total number of possible committees of size $k+1$—the results must be identical. And so, without any algebra, we have proven:
 $$ \sum_{i=k}^{n} \binom{i}{k} = \binom{n+1}{k+1} $$
 
-This exact logic can be applied to many scenarios, whether it's choosing a team of financial analysts with a designated senior member , or selecting a "major feature" for a software update that must have a higher index than all the "minor features" . It even works for counting binary strings by classifying them based on the position of the final '1' . The story changes, but the beautiful underlying logic of [double counting](@article_id:260296) remains the same.
+This exact logic can be applied to many scenarios, whether it's choosing a team of financial analysts with a designated senior member [@problem_id:1389934], or selecting a "major feature" for a software update that must have a higher index than all the "minor features" [@problem_id:1356626]. It even works for counting binary strings by classifying them based on the position of the final '1' [@problem_id:1356655]. The story changes, but the beautiful underlying logic of [double counting](@keyword=double_counting_2|lang=en-US|style=Feynman) remains the same.
 
 ### The Clockwork Mechanism: An Algebraic Perspective
 
@@ -65,7 +65,7 @@ Our goal is to evaluate the sum $S = \sum_{i=r}^{n} \binom{i}{r}$. We start with
 
 Now our sum looks like this: $S = \binom{r+1}{r+1} + \sum_{i=r+1}^{n} \binom{i}{r}$.
 Let's apply Pascal's Identity to the terms in the sum. For any term $\binom{i}{r}$, we know $\binom{i}{r} + \binom{i}{r+1} = \binom{i+1}{r+1}$. So, $\binom{i}{r} = \binom{i+1}{r+1} - \binom{i}{r+1}$.
-This allows us to rewrite the sum in a very special way, as a **[telescoping sum](@article_id:261855)** .
+This allows us to rewrite the sum in a very special way, as a **[telescoping sum](@keyword=telescoping_sum|lang=en-US|style=Feynman)** [@problem_id:1316716].
 
 Let's write out the first few terms of our original sum, $\sum_{i=r}^{n} \binom{i}{r}$:
 - $\binom{r}{r}$
@@ -85,14 +85,14 @@ This algebraic derivation shows how the simple, local additive rule of Pascal's 
 
 ### A Broader Horizon: The View from Stars and Bars
 
-Is the Hockey-Stick Identity an isolated curiosity? Or is it part of a grander family of ideas? The answer lies in another classic combinatorial tool: **[stars and bars](@article_id:153157)**.
+Is the Hockey-Stick Identity an isolated curiosity? Or is it part of a grander family of ideas? The answer lies in another classic combinatorial tool: **[stars and bars](@keyword=stars_and_bars|lang=en-US|style=Feynman)**.
 
-Consider the problem of distributing $k$ identical items (stars) into $R$ distinct bins. The number of ways to do this is $\binom{k+R-1}{R-1}$. Now, let's ask a more complex question, like the one posed in the stress test of a distributed system . What if we sum this quantity over all possible numbers of items, from $k=0$ up to $N$? We are looking for the value of:
+Consider the problem of distributing $k$ identical items (stars) into $R$ distinct bins. The number of ways to do this is $\binom{k+R-1}{R-1}$. Now, let's ask a more complex question, like the one posed in the stress test of a distributed system [@problem_id:1389938]. What if we sum this quantity over all possible numbers of items, from $k=0$ up to $N$? We are looking for the value of:
 $$ S = \sum_{k=0}^{N} \binom{k+R-1}{R-1} $$
 
-This looks a bit like our hockey-stick sum, but the upper index of the [binomial coefficient](@article_id:155572) is also changing. This is actually another form of the identity, often called the **upper summation identity**. We can prove it with another elegant [double counting](@article_id:260296) argument.
+This looks a bit like our hockey-stick sum, but the upper index of the [binomial coefficient](@keyword=binomial_coefficient|lang=en-US|style=Feynman) is also changing. This is actually another form of the identity, often called the **upper summation identity**. We can prove it with another elegant [double counting](@keyword=double_counting_2|lang=en-US|style=Feynman) argument.
 
-**The Clever Way First:** Imagine we have $N$ identical items (replicas) to distribute into $R+1$ distinct bins (storage nodes). From [stars and bars](@article_id:153157), the total number of ways to do this is $\binom{N+(R+1)-1}{(R+1)-1} = \binom{N+R}{R}$.
+**The Clever Way First:** Imagine we have $N$ identical items (replicas) to distribute into $R+1$ distinct bins (storage nodes). From [stars and bars](@keyword=stars_and_bars|lang=en-US|style=Feynman), the total number of ways to do this is $\binom{N+(R+1)-1}{(R+1)-1} = \binom{N+R}{R}$.
 
 **The Straightforward Way:** Now let's count this by breaking it down. Let's focus on the first $R$ bins. How many items, let's say $k$, end up in these first $R$ bins? The value of $k$ could be anything from $0$ (they all go into the last bin) to $N$ (they all go into the first $R$ bins).
 

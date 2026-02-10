@@ -11,7 +11,7 @@ Suddenly, this simple grid transforms. It becomes a **Hadamard matrix**, an obje
 
 Let’s be precise. An $n \times n$ matrix $H$ is a **Hadamard matrix** if its entries are only $+1$ or $-1$, and its rows are mutually orthogonal. In the language of geometry, if you think of each row as a vector in an $n$-dimensional space, these vectors are all perpendicular to each other. Algebraically, this means that if you take any two different rows, multiply their corresponding entries, and sum them all up—the dot product—you get exactly zero.
 
-This [orthogonality condition](@article_id:168411) can be captured in a single, powerful [matrix equation](@article_id:204257):
+This [orthogonality condition](@keyword=orthogonality_condition|lang=en-US|style=Feynman) can be captured in a single, powerful [matrix equation](@keyword=matrix_equation|lang=en-US|style=Feynman):
 
 $$
 HH^T = nI_n
@@ -19,13 +19,13 @@ $$
 
 Here, $H^T$ is the transpose of $H$ (you get it by flipping the matrix across its main diagonal), and $I_n$ is the $n \times n$ identity matrix (the one with $1$s on the diagonal and $0$s everywhere else). Why does this equation work? The entry in the $i$-th row and $j$-th column of the product $HH^T$ is the dot product of the $i$-th row of $H$ with the $j$-th row of $H$. If $i = j$, you are taking the dot product of a row with itself. Since every entry is $(\pm 1)$, squaring them gives all $+1$s. Summing them up gives $n$. If $i \neq j$, the dot product is zero, by our orthogonality rule. So, the product matrix has $n$s on its diagonal and $0$s everywhere else, which is exactly $nI_n$.
 
-This one equation is the constitution for Hadamard matrices, and it grants them an almost magical property. If you need to find the [inverse of a matrix](@article_id:154378), you usually have to go through a whole rigmarole of calculations. But for a Hadamard matrix, the inverse is handed to you on a silver platter. From the equation above, we can see immediately that:
+This one equation is the constitution for Hadamard matrices, and it grants them an almost magical property. If you need to find the [inverse of a matrix](@keyword=inverse_of_a_matrix|lang=en-US|style=Feynman), you usually have to go through a whole rigmarole of calculations. But for a Hadamard matrix, the inverse is handed to you on a silver platter. From the equation above, we can see immediately that:
 
 $$
 H^{-1} = \frac{1}{n}H^T
 $$
 
-For a large matrix, this is a computational miracle! Finding an inverse, a typically demanding task, is reduced to simply transposing the matrix and dividing by its size .
+For a large matrix, this is a computational miracle! Finding an inverse, a typically demanding task, is reduced to simply transposing the matrix and dividing by its size [@problem_id:1050650].
 
 ### The Rules of the Game: When Can Such a Matrix Exist?
 
@@ -53,7 +53,7 @@ The total number of columns is $n = a+b+c+d$. Since row $i$ has $n/2$ plus ones,
 
 Putting it all together, we have $b=c$ and $a+d=b+c$, which means $a+d = 2b$. A little bit of algebra on these simple equations reveals a stunning result: $a=b=c=d=n/4$. For these counts to be whole numbers, $n$ must be a multiple of 4.
 
-So there it is: a Hadamard matrix of order $n$ can only exist if $n=1$, $n=2$, or $n$ is a multiple of 4 . This is why our attempt at $n=3$ was doomed from the start, and why one cannot construct a Hadamard matrix of order 6 . The big, tantalizing question that remains is the reverse: does a Hadamard matrix of order $4k$ exist for *every* positive integer $k$? Nobody knows for sure. This is the famous **Hadamard Conjecture**, a frontier of modern mathematics that is still very much alive.
+So there it is: a Hadamard matrix of order $n$ can only exist if $n=1$, $n=2$, or $n$ is a multiple of 4 [@problem_id:1381414]. This is why our attempt at $n=3$ was doomed from the start, and why one cannot construct a Hadamard matrix of order 6 [@problem_id:1050574]. The big, tantalizing question that remains is the reverse: does a Hadamard matrix of order $4k$ exist for *every* positive integer $k$? Nobody knows for sure. This is the famous **Hadamard Conjecture**, a frontier of modern mathematics that is still very much alive.
 
 ### The Art of Creation: Constructing a Digital Symphony
 
@@ -69,32 +69,32 @@ $$
 H_4 = \begin{pmatrix} H_2  H_2 \\ H_2  -H_2 \end{pmatrix} = \begin{pmatrix} 1  1  1  1 \\ 1  -1  1  -1 \\ 1  1  -1  -1 \\ 1  -1  -1  1 \end{pmatrix}
 $$
 
-And from $H_4$, we can build $H_8$, and so on, giving us an infinite family of matrices of order $2^k$ . This construction method conceals a deeper, digital secret. If you label the rows and columns starting from 0, and write these indices in binary, the entry $H_{ij}$ in a Sylvester matrix of order $n=2^k$ is given by:
+And from $H_4$, we can build $H_8$, and so on, giving us an infinite family of matrices of order $2^k$ [@problem_id:1050545]. This construction method conceals a deeper, digital secret. If you label the rows and columns starting from 0, and write these indices in binary, the entry $H_{ij}$ in a Sylvester matrix of order $n=2^k$ is given by:
 
 $$
 H_{ij} = (-1)^{i \cdot j}
 $$
 
-where $i \cdot j$ is the bitwise dot product (or "popcount" of the bitwise AND) of the binary representations of the indices $i$ and $j$. For example, to find the entry in row 2 (binary `010`) and column 3 (binary `011`) of $H_8$, we calculate their bitwise dot product: $(0 \times 0) + (1 \times 1) + (0 \times 1) = 1$. So the entry is $(-1)^1 = -1$ . This connects the matrix structure directly to the binary world, which is why these matrices are fundamental to [digital signal processing](@article_id:263166) and computing theory.
+where $i \cdot j$ is the bitwise dot product (or "popcount" of the bitwise AND) of the binary representations of the indices $i$ and $j$. For example, to find the entry in row 2 (binary `010`) and column 3 (binary `011`) of $H_8$, we calculate their bitwise dot product: $(0 \times 0) + (1 \times 1) + (0 \times 1) = 1$. So the entry is $(-1)^1 = -1$ [@problem_id:1050541]. This connects the matrix structure directly to the binary world, which is why these matrices are fundamental to [digital signal processing](@keyword=digital_signal_processing|lang=en-US|style=Feynman) and computing theory.
 
-Of course, the Sylvester method only gives orders that are [powers of two](@article_id:195834). Other methods, like the **Paley construction**, can produce Hadamard matrices of other orders, such as $n=20$ , filling in some of the gaps and bringing us closer to affirming the grand Hadamard Conjecture.
+Of course, the Sylvester method only gives orders that are [powers of two](@keyword=powers_of_two|lang=en-US|style=Feynman). Other methods, like the **Paley construction**, can produce Hadamard matrices of other orders, such as $n=20$ [@problem_id:1050565], filling in some of the gaps and bringing us closer to affirming the grand Hadamard Conjecture.
 
 ### A Symphony of Properties
 
 These matrices are not just a pretty face; their rigid structure leads to a cascade of fascinating properties.
 
-- **Eigenvalues:** What are the eigenvalues of a symmetric Hadamard matrix, like those from the Sylvester construction? Since $H^T = H$, the defining relation becomes $H^2 = nI_n$. If $\vec{v}$ is an eigenvector with eigenvalue $\lambda$, then $H\vec{v} = \lambda\vec{v}$. Applying $H$ again, $H^2\vec{v} = H(\lambda\vec{v}) = \lambda(H\vec{v}) = \lambda^2\vec{v}$. But we know $H^2\vec{v} = nI_n\vec{v} = n\vec{v}$. So, we must have $\lambda^2 = n$, which means the eigenvalues can only be $\sqrt{n}$ or $-\sqrt{n}$ . A matrix with millions of entries, and its entire spectrum of eigenvalues is boiled down to just two possible numbers!
+- **Eigenvalues:** What are the eigenvalues of a symmetric Hadamard matrix, like those from the Sylvester construction? Since $H^T = H$, the defining relation becomes $H^2 = nI_n$. If $\vec{v}$ is an eigenvector with eigenvalue $\lambda$, then $H\vec{v} = \lambda\vec{v}$. Applying $H$ again, $H^2\vec{v} = H(\lambda\vec{v}) = \lambda(H\vec{v}) = \lambda^2\vec{v}$. But we know $H^2\vec{v} = nI_n\vec{v} = n\vec{v}$. So, we must have $\lambda^2 = n$, which means the eigenvalues can only be $\sqrt{n}$ or $-\sqrt{n}$ [@problem_id:1082574]. A matrix with millions of entries, and its entire spectrum of eigenvalues is boiled down to just two possible numbers!
 
-- **Trace:** The [trace of a matrix](@article_id:139200) is the sum of its diagonal elements, which also equals the sum of its eigenvalues. For any Sylvester-Hadamard matrix $H_n$ with $n > 1$, the trace is always 0  . You can see this from the recursive construction: $\text{tr}(H_{2k}) = \text{tr}(H_k) + \text{tr}(-H_k) = \text{tr}(H_k) - \text{tr}(H_k) = 0$. Since the trace is zero and the only eigenvalues are $\pm \sqrt{n}$, it must be that they come in perfectly balanced pairs: there are exactly $n/2$ eigenvalues equal to $+\sqrt{n}$ and $n/2$ equal to $-\sqrt{n}$.
+- **Trace:** The [trace of a matrix](@keyword=trace_of_a_matrix|lang=en-US|style=Feynman) is the sum of its diagonal elements, which also equals the sum of its eigenvalues. For any Sylvester-Hadamard matrix $H_n$ with $n > 1$, the trace is always 0 [@problem_id:1050545] [@problem_id:1050650]. You can see this from the recursive construction: $\text{tr}(H_{2k}) = \text{tr}(H_k) + \text{tr}(-H_k) = \text{tr}(H_k) - \text{tr}(H_k) = 0$. Since the trace is zero and the only eigenvalues are $\pm \sqrt{n}$, it must be that they come in perfectly balanced pairs: there are exactly $n/2$ eigenvalues equal to $+\sqrt{n}$ and $n/2$ equal to $-\sqrt{n}$.
 
-- **Determinant:** The determinant, the product of the eigenvalues, is then easily found. For a symmetric Hadamard matrix of order $n$, the determinant is $(\sqrt{n})^{n/2} (-\sqrt{n})^{n/2} = (n^{1/2} n^{1/2})^{n/2} (-1)^{n/2} = n^{n/2} (-1)^{n/2}$. For $H_4$, the determinant is $4^{4/2}(-1)^{4/2} = 4^2(1) = 16$ .
+- **Determinant:** The determinant, the product of the eigenvalues, is then easily found. For a symmetric Hadamard matrix of order $n$, the determinant is $(\sqrt{n})^{n/2} (-\sqrt{n})^{n/2} = (n^{1/2} n^{1/2})^{n/2} (-1)^{n/2} = n^{n/2} (-1)^{n/2}$. For $H_4$, the determinant is $4^{4/2}(-1)^{4/2} = 4^2(1) = 16$ [@problem_id:1050527].
 
-Sometimes, special constructions yield matrices with even more constrained algebraic identities. A **skew-Hadamard** matrix constructed via the Paley method, for example, not only satisfies $H H^T = nI$ but also has a nearly skew-symmetric structure. This extra constraint forces the entire matrix to obey a simple quadratic equation. For the order-20 case, this is $H^2 - 2H + 20I = 0$, meaning its [minimal polynomial](@article_id:153104) is just $x^2 - 2x + 20$ . It is truly remarkable how a few simple rules on signs can lead to such profound algebraic structure.
+Sometimes, special constructions yield matrices with even more constrained algebraic identities. A **skew-Hadamard** matrix constructed via the Paley method, for example, not only satisfies $H H^T = nI$ but also has a nearly skew-symmetric structure. This extra constraint forces the entire matrix to obey a simple quadratic equation. For the order-20 case, this is $H^2 - 2H + 20I = 0$, meaning its [minimal polynomial](@keyword=minimal_polynomial|lang=en-US|style=Feynman) is just $x^2 - 2x + 20$ [@problem_id:1050565]. It is truly remarkable how a few simple rules on signs can lead to such profound algebraic structure.
 
 ### Beyond the Horizon: Hadamard Matrices in the Wild
 
-This rich mathematical structure is not just for show. The stark orthogonality of the rows of a Hadamard matrix makes them ideal as **[error-correcting codes](@article_id:153300)**. If you send a row as a signal, it is maximally different from all other rows, making it easy to distinguish from them even in the presence of noise.
+This rich mathematical structure is not just for show. The stark orthogonality of the rows of a Hadamard matrix makes them ideal as **[error-correcting codes](@keyword=error_correcting_codes|lang=en-US|style=Feynman)**. If you send a row as a signal, it is maximally different from all other rows, making it easy to distinguish from them even in the presence of noise.
 
-The Sylvester matrices, under the name Walsh-Hadamard matrices, are the cornerstone of the **Hadamard transform**, a digital counterpart to the Fourier transform, used everywhere from image compression to [spectrum analysis](@article_id:275020).
+The Sylvester matrices, under the name Walsh-Hadamard matrices, are the cornerstone of the **Hadamard transform**, a digital counterpart to the Fourier transform, used everywhere from image compression to [spectrum analysis](@keyword=spectrum_analysis|lang=en-US|style=Feynman).
 
-The concept even extends into the strange and beautiful world of quantum mechanics. A **complex Hadamard matrix** is one where the entries are complex numbers of modulus 1, but the rows are still perfectly orthogonal. These matrices appear naturally in quantum information theory, describing the evolution of quantum systems. For instance, the interaction between two quantum bits (qubits) can, under specific conditions, be described by a matrix that is directly built from $2 \times 2$ complex Hadamard blocks . In this way, a structure born from a simple game of pluses and minuses finds its way into the very fabric of our most advanced physical theories. From a simple rule, a universe of complexity and utility unfolds.
+The concept even extends into the strange and beautiful world of quantum mechanics. A **complex Hadamard matrix** is one where the entries are complex numbers of modulus 1, but the rows are still perfectly orthogonal. These matrices appear naturally in quantum information theory, describing the evolution of quantum systems. For instance, the interaction between two quantum bits (qubits) can, under specific conditions, be described by a matrix that is directly built from $2 \times 2$ complex Hadamard blocks [@problem_id:1055176]. In this way, a structure born from a simple game of pluses and minuses finds its way into the very fabric of our most advanced physical theories. From a simple rule, a universe of complexity and utility unfolds.

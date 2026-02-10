@@ -15,9 +15,9 @@ In probability, when we say two events are **independent**, we mean that the out
 
 $$E[XY] = E[X] E[Y]$$
 
-This is an incredibly useful result. Let's see it in action. Imagine rolling two fair four-sided dice, one after the other. Let $X_1$ be the result of the first roll and $X_2$ be the result of the second. The average, or expected, value of a single roll is $E[X_1] = E[X_2] = (1+2+3+4)/4 = 2.5$. Since the rolls are independent, the expected value of their product is simply $E[X_1 X_2] = E[X_1]E[X_2] = (2.5) \times (2.5) = 6.25$ (). We don't need to list all 16 possible pairs of outcomes and average their products; independence gives us a powerful shortcut.
+This is an incredibly useful result. Let's see it in action. Imagine rolling two fair four-sided dice, one after the other. Let $X_1$ be the result of the first roll and $X_2$ be the result of the second. The average, or expected, value of a single roll is $E[X_1] = E[X_2] = (1+2+3+4)/4 = 2.5$. Since the rolls are independent, the expected value of their product is simply $E[X_1 X_2] = E[X_1]E[X_2] = (2.5) \times (2.5) = 6.25$ ([@problem_id:12236]). We don't need to list all 16 possible pairs of outcomes and average their products; independence gives us a powerful shortcut.
 
-This principle works for any type of independent random variable, not just discrete ones. Consider a simplified data processing system where a data unit first passes through a filter (let's call its outcome $X$) and then a computation stage (with processing time $Y$). If the filter's decision to pass a unit is independent of the computational workload, we can analyze the system's performance metric, $E[XY]$, by simply calculating $E[X]$ and $E[Y]$ separately and multiplying them (). The same logic applies if we have two independent voltage signals, one uniformly distributed on $[0, 1]$ and the other on $[0, 2]$; the expected product of their voltages can be found by multiplying their individual average voltages ().
+This principle works for any type of independent random variable, not just discrete ones. Consider a simplified data processing system where a data unit first passes through a filter (let's call its outcome $X$) and then a computation stage (with processing time $Y$). If the filter's decision to pass a unit is independent of the computational workload, we can analyze the system's performance metric, $E[XY]$, by simply calculating $E[X]$ and $E[Y]$ separately and multiplying them ([@problem_id:1630941]). The same logic applies if we have two independent voltage signals, one uniformly distributed on $[0, 1]$ and the other on $[0, 2]$; the expected product of their voltages can be found by multiplying their individual average voltages ([@problem_id:1380963]).
 
 This rule is the bedrock. It's clean, simple, and powerful. But the world is often a web of dependencies, and that is where the real adventure begins.
 
@@ -51,7 +51,7 @@ This is a profound statement. It tells us that the expected product of two rando
 -   If $\text{Cov}(X, Y)$ is positive, it means that when $X$ is above its average, $Y$ also tends to be above its average. Think of daily temperature and ice cream sales.
 -   If $\text{Cov}(X, Y)$ is negative, it means that when $X$ is above its average, $Y$ tends to be below its average. Think of the number of hours you study and the number of hours you spend watching TV.
 
-This single equation elegantly unifies the independent and dependent cases. In finance, for example, the returns of two stocks, $X_1$ and $X_2$, are rarely independent. Their relationship is captured by a correlation coefficient $\rho$, which is just a scaled version of covariance. The expected product of their returns is precisely given by this formula: $E[X_1 X_2] = \mu_1 \mu_2 + \rho \sigma_1 \sigma_2$, where $\text{Cov}(X_1, X_2) = \rho \sigma_1 \sigma_2$ ().
+This single equation elegantly unifies the independent and dependent cases. In finance, for example, the returns of two stocks, $X_1$ and $X_2$, are rarely independent. Their relationship is captured by a correlation coefficient $\rho$, which is just a scaled version of covariance. The expected product of their returns is precisely given by this formula: $E[X_1 X_2] = \mu_1 \mu_2 + \rho \sigma_1 \sigma_2$, where $\text{Cov}(X_1, X_2) = \rho \sigma_1 \sigma_2$ ([@problem_id:1939238]).
 
 ### The Scientist's Toolkit: Calculating the Expectation
 
@@ -61,37 +61,37 @@ Knowing the general formula is one thing; calculating its components is another.
 
 The most direct way to calculate $E[XY]$ is to go back to the very definition of expectation. We must consider every possible pair of outcomes $(x, y)$, multiply them together, weight the result by the probability of that specific pair occurring, $p(x,y)$, and then sum it all up.
 
-For [discrete variables](@article_id:263134), this looks like:
+For [discrete variables](@keyword=discrete_variables|lang=en-US|style=Feynman), this looks like:
 $$ E[XY] = \sum_{x} \sum_{y} xy \cdot p(x,y) $$
-For instance, if we draw two numbers without replacement from the set $\{1, 2, 3\}$, the first draw affects what's available for the second. To find $E[XY]$, we must list all possible pairs like (1,2), (1,3), (2,1), etc., find their probabilities (which is $\frac{1}{6}$ for each), calculate the product for each, and average them ().
+For instance, if we draw two numbers without replacement from the set $\{1, 2, 3\}$, the first draw affects what's available for the second. To find $E[XY]$, we must list all possible pairs like (1,2), (1,3), (2,1), etc., find their probabilities (which is $\frac{1}{6}$ for each), calculate the product for each, and average them ([@problem_id:7215]).
 
-For continuous variables, the sum becomes a double integral over the **[joint probability density function](@article_id:177346)**, $f(x,y)$:
+For continuous variables, the sum becomes a double integral over the **[joint probability density function](@keyword=joint_probability_density_function|lang=en-US|style=Feynman)**, $f(x,y)$:
 $$ E[XY] = \int \int xy \cdot f(x,y) \,dx dy $$
-Imagine scanning a semiconductor wafer for defects where the defect's location $(X, Y)$ is more likely to occur in certain regions. If the valid region is, say, a triangle defined by $0 \lt y \lt x \lt 1$, the dependency is baked into the limits of integration. We can't separate the integrals for $x$ and $y$, so we must solve the integral step-by-step to find the expected product of the coordinates ().
+Imagine scanning a semiconductor wafer for defects where the defect's location $(X, Y)$ is more likely to occur in certain regions. If the valid region is, say, a triangle defined by $0 \lt y \lt x \lt 1$, the dependency is baked into the limits of integration. We can't separate the integrals for $x$ and $y$, so we must solve the integral step-by-step to find the expected product of the coordinates ([@problem_id:1926380]).
 
 This direct method is fundamental and always works, but it can be computationally brutal if the number of outcomes is large or the integrals are complicated.
 
 #### The Elegant Shortcut: The Power of Indicator Variables
 
-Here's where a little bit of cleverness can feel like magic. Often, a complex random variable can be expressed as a sum of much simpler ones. Meet the **[indicator variable](@article_id:203893)**. An [indicator variable](@article_id:203893), say $I_A$, for an event $A$ is a tiny machine that just outputs 1 if event $A$ happens and 0 if it doesn't. Its expectation is wonderfully simple: $E[I_A] = 1 \cdot P(A) + 0 \cdot P(\text{not } A) = P(A)$.
+Here's where a little bit of cleverness can feel like magic. Often, a complex random variable can be expressed as a sum of much simpler ones. Meet the **[indicator variable](@keyword=indicator_variable|lang=en-US|style=Feynman)**. An [indicator variable](@keyword=indicator_variable|lang=en-US|style=Feynman), say $I_A$, for an event $A$ is a tiny machine that just outputs 1 if event $A$ happens and 0 if it doesn't. Its expectation is wonderfully simple: $E[I_A] = 1 \cdot P(A) + 0 \cdot P(\text{not } A) = P(A)$.
 
-Let's see this trick in a real scenario. Suppose we draw 3 microchips from a batch of 9, which contains 5 from supplier A and 4 from supplier B. We want to find $E[XY]$, where $X$ is the count of A-chips and $Y$ is the count of B-chips. These are dependent because drawing an A-chip leaves fewer spots for B-chips. Instead of finding the horrendously complex [joint probability](@article_id:265862) $p(x,y)$, let's define indicators.
+Let's see this trick in a real scenario. Suppose we draw 3 microchips from a batch of 9, which contains 5 from supplier A and 4 from supplier B. We want to find $E[XY]$, where $X$ is the count of A-chips and $Y$ is the count of B-chips. These are dependent because drawing an A-chip leaves fewer spots for B-chips. Instead of finding the horrendously complex [joint probability](@keyword=joint_probability|lang=en-US|style=Feynman) $p(x,y)$, let's define indicators.
 
 Let $A_i$ be an indicator that is 1 if the $i$-th A-chip (for $i=1, \dots, 5$) is selected.
 Let $B_j$ be an indicator that is 1 if the $j$-th B-chip (for $j=1, \dots, 4$) is selected.
 Then the total counts are just sums of these indicators: $X = \sum_{i=1}^{5} A_i$ and $Y = \sum_{j=1}^{4} B_j$.
 The product becomes $XY = (\sum A_i)(\sum B_j) = \sum_{i} \sum_{j} A_i B_j$.
 
-Using [linearity of expectation](@article_id:273019), we get $E[XY] = \sum_{i} \sum_{j} E[A_i B_j]$. The term $A_i B_j$ is 1 only if *both* the specific A-chip $i$ *and* the specific B-chip $j$ are selected. $E[A_i B_j]$ is simply the probability of this happening. For any pair of specific chips, this probability is easy to calculate. By adding this up for all $5 \times 4 = 20$ pairs, we can find the answer with remarkable ease, completely bypassing the [joint distribution](@article_id:203896) (, ). This is a "divide and conquer" strategy at its finest.
+Using [linearity of expectation](@keyword=linearity_of_expectation|lang=en-US|style=Feynman), we get $E[XY] = \sum_{i} \sum_{j} E[A_i B_j]$. The term $A_i B_j$ is 1 only if *both* the specific A-chip $i$ *and* the specific B-chip $j$ are selected. $E[A_i B_j]$ is simply the probability of this happening. For any pair of specific chips, this probability is easy to calculate. By adding this up for all $5 \times 4 = 20$ pairs, we can find the answer with remarkable ease, completely bypassing the [joint distribution](@keyword=joint_distribution|lang=en-US|style=Feynman) ([@problem_id:1369687], [@problem_id:12535]). This is a "divide and conquer" strategy at its finest.
 
 #### The Art of Transformation: Linearity to the Rescue
 
-Sometimes our dependent variables are themselves functions of other, simpler, [independent variables](@article_id:266624). In a signal processing model, we might generate a sum signal $X=U+V$ and a difference signal $Y=U-V$ from two independent input signals $U$ and $V$. Clearly, $X$ and $Y$ are dependent!
+Sometimes our dependent variables are themselves functions of other, simpler, [independent variables](@keyword=independent_variables|lang=en-US|style=Feynman). In a signal processing model, we might generate a sum signal $X=U+V$ and a difference signal $Y=U-V$ from two independent input signals $U$ and $V$. Clearly, $X$ and $Y$ are dependent!
 
-If we try to find $E[XY]$ using their [joint distribution](@article_id:203896), we would have to perform a complicated change of variables. But let's try something else. Let's just substitute and expand:
+If we try to find $E[XY]$ using their [joint distribution](@keyword=joint_distribution|lang=en-US|style=Feynman), we would have to perform a complicated change of variables. But let's try something else. Let's just substitute and expand:
 $$ E[XY] = E[(U+V)(U-V)] = E[U^2 - V^2] $$
 Now, the magic of linearity of expectation strikes again!
 $$ E[U^2 - V^2] = E[U^2] - E[V^2] $$
-We have transformed a difficult problem about the product of *dependent* variables ($X, Y$) into a simple problem about the properties of the original *independent* variables ($U, V$). Calculating $E[U^2]$ and $E[V^2]$ is straightforward. We've completely sidestepped the dependency by working at a more fundamental level ().
+We have transformed a difficult problem about the product of *dependent* variables ($X, Y$) into a simple problem about the properties of the original *independent* variables ($U, V$). Calculating $E[U^2]$ and $E[V^2]$ is straightforward. We've completely sidestepped the dependency by working at a more fundamental level ([@problem_id:1361322]).
 
 So, we see a beautiful landscape. An intuitive rule for independent events, a deeper, more general law involving covariance that governs all interactions, and a powerful set of tools—direct integration, clever indicators, and masterful transformation—that allow us to navigate this landscape and predict the average outcome of combined, uncertain phenomena. That is the essence of discovery.

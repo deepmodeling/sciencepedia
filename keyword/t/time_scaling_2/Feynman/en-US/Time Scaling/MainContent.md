@@ -19,7 +19,7 @@ Imagine a train is scheduled to depart at time $T_0$. You are in charge of the m
 
 The results are different! In the second scenario, the delay itself was magnified by the time scaling. The initial shift of $T_0$ was effectively doubled to $2T_0$. This demonstrates a fundamental property of these transformations: they do not, in general, **commute**. The order in which you apply them changes the outcome.
 
-Mathematically, if we first shift a signal $x(t)$ by $t_0$ and then scale it by $a$, we get $y_1(t) = x(at - t_0)$. If we scale first and then shift, we get $y_2(t) = x(a(t-t_0))$. As we saw, $y_1(t)$ is not the same as $y_2(t)$ unless $a=1$ or $t_0=0$. This crucial distinction is not just a mathematical subtlety; it's essential for correctly programming simulations, processing radar signals, or interpreting astronomical data that has been affected by relativistic effects  .
+Mathematically, if we first shift a signal $x(t)$ by $t_0$ and then scale it by $a$, we get $y_1(t) = x(at - t_0)$. If we scale first and then shift, we get $y_2(t) = x(a(t-t_0))$. As we saw, $y_1(t)$ is not the same as $y_2(t)$ unless $a=1$ or $t_0=0$. This crucial distinction is not just a mathematical subtlety; it's essential for correctly programming simulations, processing radar signals, or interpreting astronomical data that has been affected by relativistic effects [@problem_id:1703525] [@problem_id:1711988].
 
 ### Mapping Time's Territory
 
@@ -29,7 +29,7 @@ Now, suppose an experimental apparatus records this signal, but its clock is mis
 
 We can solve this like a detective. The duration of the recorded event is $5 - 1 = 4$ seconds, while the original duration was $1 - (-1) = 2$ seconds. Since time scaling changes duration by a factor of $1/|a|$, we have $4 = 2 / |a|$, which immediately tells us that $|a| = 1/2$. The clock in the apparatus is running at half the true speed.
 
-But is it running forward or backward? Both $a=1/2$ and $a=-1/2$ are possible! This is the fascinating ambiguity that [time reversal](@article_id:159424) introduces. If $a=1/2$, the flash is recorded in slow motion. If $a=-1/2$, it's recorded in slow motion *and* backward—we'd see the flash fade in rather than fade out. By analyzing the midpoint of the event, we can pin down the shift $b$ for each case. This puzzle shows how the abstract parameters $a$ and $b$ are directly tied to the tangible properties of a signal's duration and position in time, allowing us to reconstruct the true nature of an event from a distorted measurement .
+But is it running forward or backward? Both $a=1/2$ and $a=-1/2$ are possible! This is the fascinating ambiguity that [time reversal](@keyword=time_reversal|lang=en-US|style=Feynman) introduces. If $a=1/2$, the flash is recorded in slow motion. If $a=-1/2$, it's recorded in slow motion *and* backward—we'd see the flash fade in rather than fade out. By analyzing the midpoint of the event, we can pin down the shift $b$ for each case. This puzzle shows how the abstract parameters $a$ and $b$ are directly tied to the tangible properties of a signal's duration and position in time, allowing us to reconstruct the true nature of an event from a distorted measurement [@problem_id:1703496].
 
 ### Time and Energy: An Unbreakable Pact
 
@@ -37,7 +37,7 @@ Perhaps the most profound consequence of time scaling relates to one of the univ
 
 Now, what happens to the energy if we scale the time axis? Let's create a new signal by stretching the original one by a factor of $\alpha$, so $y(t) = x(t/\alpha)$. For $\alpha > 1$, this is slow motion. To calculate the new energy $E_y$, we perform the same integral:
 $$E_y = \int_{-\infty}^{\infty} |y(t)|^2 dt = \int_{-\infty}^{\infty} |x(t/\alpha)|^2 dt$$
-By a simple change of variables in the integral (letting $u = t/\alpha$), we find a beautifully simple result: $E_y = \alpha E_x$ .
+By a simple change of variables in the integral (letting $u = t/\alpha$), we find a beautifully simple result: $E_y = \alpha E_x$ [@problem_id:1767675].
 
 This means if you play a signal in slow motion at half speed ($\alpha=2$), you double its total energy. If you play it in fast-forward at twice the speed ($\alpha=1/2$), you halve its energy. This should feel intuitive. If you draw a certain amount of power for twice as long, you've paid for twice the total energy. Compression in time squeezes the energy content into a smaller space, reducing the total.
 
@@ -47,4 +47,4 @@ Let's compress our signal $x(t)$ by a factor of $a > 1$, giving us $x(at)$. We k
 $$E_y = \int_{-\infty}^{\infty} |A x(at)|^2 dt = A^2 \int_{-\infty}^{\infty} |x(at)|^2 dt = \frac{A^2}{a} E_x$$
 For the energy to be preserved ($E_y = E_x$), we must have $A^2/a = 1$. This gives us the profound condition:
 $$A = \sqrt{a}$$
-This is a universal [scaling law](@article_id:265692). To compress a signal in time by a factor of $a$ while conserving its energy, you must increase its amplitude by a factor of $\sqrt{a}$ . Imagine you have a fixed amount of paint (energy) to cover a wall (time). If you decide to paint only half the wall's length ($a=2$), to use up all the paint you must apply it $\sqrt{2} \approx 1.414$ times as thick. The reason it's a square root is that energy is proportional to the amplitude *squared*. This elegant relationship between time, amplitude, and a conserved quantity is a cornerstone of physics and signal theory, revealing a deep and beautiful unity in the structure of our world.
+This is a universal [scaling law](@keyword=scaling_law|lang=en-US|style=Feynman). To compress a signal in time by a factor of $a$ while conserving its energy, you must increase its amplitude by a factor of $\sqrt{a}$ [@problem_id:1767702]. Imagine you have a fixed amount of paint (energy) to cover a wall (time). If you decide to paint only half the wall's length ($a=2$), to use up all the paint you must apply it $\sqrt{2} \approx 1.414$ times as thick. The reason it's a square root is that energy is proportional to the amplitude *squared*. This elegant relationship between time, amplitude, and a conserved quantity is a cornerstone of physics and signal theory, revealing a deep and beautiful unity in the structure of our world.

@@ -1,7 +1,7 @@
 ## 引言
-在数学的宏伟版图中，很少有发现能像揭示看似迥异的概念之间隐藏的统一性那样优雅。[双曲三角学](@article_id:325639)便提供了这样一种启示，它引入了[双曲函数](@article_id:344525) $\sinh$ 和 $\cosh$，作为我们熟悉的圆函数 $\sin$ 和 $\cos$ 失散多年的同胞。既然正弦和余弦描述了圆上的运动，一个自然的问题便产生了：什么函数能描述[双曲线](@article_id:353265)上的运动？它们与我们已知的三角学又有什么关系？本文将填补这一空白，揭示这两个[函数族](@article_id:297900)仅仅是同一基础数学结构的两个侧面，通过复数的魔力而联系在一起。
+在数学的宏伟版图中，很少有发现能像揭示看似迥异的概念之间隐藏的统一性那样优雅。[双曲三角学](@keyword=hyperbolic_trigonometry|lang=zh-CN|style=Feynman)便提供了这样一种启示，它引入了[双曲函数](@keyword=hyperbolic_functions|lang=zh-CN|style=Feynman) $\sinh$ 和 $\cosh$，作为我们熟悉的圆函数 $\sin$ 和 $\cos$ 失散多年的同胞。既然正弦和余弦描述了圆上的运动，一个自然的问题便产生了：什么函数能描述[双曲线](@keyword=hyperbola|lang=zh-CN|style=Feynman)上的运动？它们与我们已知的三角学又有什么关系？本文将填补这一空白，揭示这两个[函数族](@keyword=family_of_functions|lang=zh-CN|style=Feynman)仅仅是同一基础数学结构的两个侧面，通过复数的魔力而联系在一起。
 
-这段旅程始于“原理与机制”一章，我们将在其中通过双曲函数与[双曲线](@article_id:353265)及[指数函数](@article_id:321821)的联系来定义它们。我们将揭示它们的秘密身份，展示它们如何通过[欧拉公式](@article_id:323431)和虚数单位 $i$ 与正弦、余弦不可分割地联系在一起。随后，“应用与跨学科联系”一章将展示这些函数的卓越效用。我们将看到它们如何构成[非欧几里得几何](@article_id:329117)的基石，如何出现在支配物理世界的[微分方程](@article_id:327891)中，并为解决工程和[数学分析](@article_id:300111)领域的复杂问题提供强大工具。
+这段旅程始于“原理与机制”一章，我们将在其中通过双曲函数与[双曲线](@keyword=hyperbola|lang=zh-CN|style=Feynman)及[指数函数](@keyword=exponential_function|lang=zh-CN|style=Feynman)的联系来定义它们。我们将揭示它们的秘密身份，展示它们如何通过[欧拉公式](@keyword=euler_s_formula|lang=zh-CN|style=Feynman)和虚数单位 $i$ 与正弦、余弦不可分割地联系在一起。随后，“应用与跨学科联系”一章将展示这些函数的卓越效用。我们将看到它们如何构成[非欧几里得几何](@keyword=non_euclidean_geometry|lang=zh-CN|style=Feynman)的基石，如何出现在支配物理世界的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)中，并为解决工程和[数学分析](@keyword=mathematical_analysis|lang=zh-CN|style=Feynman)领域的复杂问题提供强大工具。
 
 ## 原理与机制
 
@@ -9,13 +9,13 @@
 
 ### 两种曲线的故事：圆与双曲线
 
-你早已熟悉[三角函数](@article_id:357794)，正弦和余弦。你知道它们是描述任何[振荡](@article_id:331484)或旋转现象的核心。我们可以将它们视为**圆函数**，因为对于任意角度 $t$，点 $(\cos(t), \sin(t))$ 都会描绘出一个完美的圆。这是每个学生都学过的著名恒等式的直接结果：
+你早已熟悉[三角函数](@keyword=trigonometric_functions|lang=zh-CN|style=Feynman)，正弦和余弦。你知道它们是描述任何[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)或旋转现象的核心。我们可以将它们视为**圆函数**，因为对于任意角度 $t$，点 $(\cos(t), \sin(t))$ 都会描绘出一个完美的圆。这是每个学生都学过的著名恒等式的直接结果：
 
 $$
 \cos^{2}(t) + \sin^{2}(t) = 1
 $$
 
-这是一个半径为 1 的[圆的方程](@article_id:346663)。现在，让我们看另一条曲线，它是圆的近亲：[双曲线](@article_id:353265)。其最简单的形式由一个非常相似的方程给出，只有一个微小而关键的变化——一个减号。
+这是一个半径为 1 的[圆的方程](@keyword=equation_of_a_circle|lang=zh-CN|style=Feynman)。现在，让我们看另一条曲线，它是圆的近亲：[双曲线](@keyword=hyperbola|lang=zh-CN|style=Feynman)。其最简单的形式由一个非常相似的方程给出，只有一个微小而关键的变化——一个减号。
 
 $$
 x^{2} - y^{2} = 1
@@ -27,7 +27,7 @@ $$
 \cosh^{2}(t) - \sinh^{2}(t) = 1
 $$
 
-事实证明，这样的函数确实存在，而且它们不仅仅是数学上的奇珍。它们描述了真实世界的现象。想象一个[亚原子粒子](@article_id:302932)，其轨迹遵循一条双曲线。它的路径可以用这些新函数完美描述。对于一个离原点最近的点为 $(a, 0)$ 且[渐近线](@article_id:302261)斜率为 $\pm \frac{b}{a}$ 的双曲线，粒子的运动可以参数化为 $x(t) = a \cosh(t)$ 和 $y(t) = b \sinh(t)$ 。正如 $\cos(t)$ 和 $\sin(t)$ 生成一个圆，$\cosh(t)$ 和 $\sinh(t)$ 生成一个双曲线。这就是它们名称的由来。
+事实证明，这样的函数确实存在，而且它们不仅仅是数学上的奇珍。它们描述了真实世界的现象。想象一个[亚原子粒子](@keyword=subatomic_particles|lang=zh-CN|style=Feynman)，其轨迹遵循一条双曲线。它的路径可以用这些新函数完美描述。对于一个离原点最近的点为 $(a, 0)$ 且[渐近线](@keyword=asymptotes|lang=zh-CN|style=Feynman)斜率为 $\pm \frac{b}{a}$ 的双曲线，粒子的运动可以参数化为 $x(t) = a \cosh(t)$ 和 $y(t) = b \sinh(t)$ [@problem_id:2146161]。正如 $\cos(t)$ 和 $\sin(t)$ 生成一个圆，$\cosh(t)$ 和 $\sinh(t)$ 生成一个双曲线。这就是它们名称的由来。
 
 ### 揭示其本质：指数联系
 
@@ -53,9 +53,9 @@ $$
 \sin(z) = \frac{\exp(iz) - \exp(-iz)}{2i}
 $$
 
-并排看看这些定义！[双曲函数](@article_id:344525)根本就不是一个全新的家族。它们就是你将正弦和余弦的定义中的虚数单位 $i$ 简单地移除后得到的东西。或者，换句话说，[三角函数](@article_id:357794)就是双曲函数在虚数自变量下的取值。
+并排看看这些定义！[双曲函数](@keyword=hyperbolic_functions|lang=zh-CN|style=Feynman)根本就不是一个全新的家族。它们就是你将正弦和余弦的定义中的虚数单位 $i$ 简单地移除后得到的东西。或者，换句话说，[三角函数](@keyword=trigonometric_functions|lang=zh-CN|style=Feynman)就是双曲函数在虚数自变量下的取值。
 
-### 进入[复平面](@article_id:318633)：两个世界的交汇
+### 进入[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)：两个世界的交汇
 
 这种联系不仅仅是一个奇特的巧合；它是一块罗塞塔石碑，让我们能够在三角学的世界和双曲学的世界之间进行翻译。可以直接从指数定义推导出的关键关系是：
 
@@ -69,7 +69,7 @@ $$
 
 这两个看似简单的方程威力无穷。它们揭示了数学中深层次的统一性。它们告诉我们，任何涉及三角函数的恒等式都有一个相应的双曲函数恒等式。这个原理，有时被称为**奥斯本法则**（Osborne's Rule），感觉就像一个魔术。
 
-例如，考虑我们熟悉的二倍角公式 $\sin(2w) = 2\sin(w)\cos(w)$。如果我们进行替换 $w = iz$ 会发生什么？ 左边变成了 $\sin(2iz)$。利用我们的翻译规则，它就是 $i\sinh(2z)$。右边变成了 $2\sin(iz)\cos(iz)$，这可以翻译为 $2(i\sinh(z))(\cosh(z))$。所以我们得到：
+例如，考虑我们熟悉的二倍角公式 $\sin(2w) = 2\sin(w)\cos(w)$。如果我们进行替换 $w = iz$ 会发生什么？[@problem_id:2262594] 左边变成了 $\sin(2iz)$。利用我们的翻译规则，它就是 $i\sinh(2z)$。右边变成了 $2\sin(iz)\cos(iz)$，这可以翻译为 $2(i\sinh(z))(\cosh(z))$。所以我们得到：
 
 $$
 i\sinh(2z) = 2i\sinh(z)\cosh(z)
@@ -77,34 +77,34 @@ $$
 
 消去两边的 $i$，我们就得到了双曲二倍角公式：$\sinh(2z) = 2\sinh(z)\cosh(z)$。我们不费吹灰之力就推导出了它，仅仅是通过翻译其三角学的“表亲”！这对于各种恒等式都适用。著名的 $\cos^{2}(w) + \sin^{2}(w) = 1$ 使用相同的替换就变成了 $\cosh^{2}(z) - \sinh^{2}(z) = 1$。这两个世界是同一个世界。
 
-这种深刻的联系使得那些初看起来极其复杂的问题得以惊人地简化。一位工程师可能面临一个包含[三角函数](@article_id:357794)和双曲函数混合的极其复杂的表达式，结果却发现应用这些翻译规则后，整个结构坍缩成了一个简单的常数  。
+这种深刻的联系使得那些初看起来极其复杂的问题得以惊人地简化。一位工程师可能面临一个包含[三角函数](@keyword=trigonometric_functions|lang=zh-CN|style=Feynman)和双曲函数混合的极其复杂的表达式，结果却发现应用这些翻译规则后，整个结构坍缩成了一个简单的常数 [@problem_id:2262630] [@problem_id:2262610]。
 
-### 一个奇异的新世界：[复函数](@article_id:355738)的奇特行为
+### 一个奇异的新世界：[复函数](@keyword=complex_functions|lang=zh-CN|style=Feynman)的奇特行为
 
-一旦我们接受[三角函数](@article_id:357794)和双曲函数只是同一底层指数现实的不同侧面，我们就可以在[复平面](@article_id:318633) $z=x+iy$ 的广阔天地中探索它们的行为。其结果往往出人意料且美不胜收。
+一旦我们接受[三角函数](@keyword=trigonometric_functions|lang=zh-CN|style=Feynman)和双曲函数只是同一底层指数现实的不同侧面，我们就可以在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman) $z=x+iy$ 的广阔天地中探索它们的行为。其结果往往出人意料且美不胜收。
 
-利用和角公式，我们可以将一个[复正弦函数](@article_id:372603)分解为其[实部和虚部](@article_id:343615)。结果是这两个世界的惊人融合 ：
+利用和角公式，我们可以将一个[复正弦函数](@keyword=complex_sine_function|lang=zh-CN|style=Feynman)分解为其[实部和虚部](@keyword=real_and_imaginary_parts|lang=zh-CN|style=Feynman)。结果是这两个世界的惊人融合 [@problem_id:2261571]：
 
 $$
 \sin(x+iy) = \sin(x)\cosh(y) + i \cos(x)\sinh(y)
 $$
 
-想一想这意味着什么。沿着[实轴](@article_id:308695)（$y=0$），其中 $\cosh(0)=1$ 和 $\sinh(0)=0$，公式简化为 $\sin(x)$。这不足为奇。但当我们离开[实轴](@article_id:308695)进入虚数方向时，函数的行为发生了巨大变化。实部 $\sin(x)\cosh(y)$ 是一个从 $\sin(x)$ 开始的[振荡](@article_id:331484)，其振幅 $\cosh(y)$ 呈指数级增长！类似地，对于复余弦，我们可以发现其模的平方由下式给出 ：
+想一想这意味着什么。沿着[实轴](@keyword=real_line|lang=zh-CN|style=Feynman)（$y=0$），其中 $\cosh(0)=1$ 和 $\sinh(0)=0$，公式简化为 $\sin(x)$。这不足为奇。但当我们离开[实轴](@keyword=real_line|lang=zh-CN|style=Feynman)进入虚数方向时，函数的行为发生了巨大变化。实部 $\sin(x)\cosh(y)$ 是一个从 $\sin(x)$ 开始的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，其振幅 $\cosh(y)$ 呈指数级增长！类似地，对于复余弦，我们可以发现其模的平方由下式给出 [@problem_id:2262612]：
 
 $$
 |\cos(x+iy)|^{2} = \cos^{2}(x) + \sinh^{2}(y)
 $$
 
-这个公式打破了我们最基本的直觉之一。在实数世界里，余弦函数总是温顺地被限制在 $-1$ 和 $1$ 之间。但在[复平面](@article_id:318633)中，因为 $\sinh^{2}(y)$ 可以无限增长，复余弦函数是**无界**的！它可以变得任意大。踏入虚数维度已经将它从牢笼中解放出来。
+这个公式打破了我们最基本的直觉之一。在实数世界里，余弦函数总是温顺地被限制在 $-1$ 和 $1$ 之间。但在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)中，因为 $\sinh^{2}(y)$ 可以无限增长，复余弦函数是**无界**的！它可以变得任意大。踏入虚数维度已经将它从牢笼中解放出来。
 
-这种混合三角部分和双曲部分的模式是普遍的。如果我们分解 $\cosh(2z)$ 或 $\tan(z)$，我们会发现类似的优雅结构，其中实部和虚部被表示为 $x$ 和 $y$ 的实[三角函数](@article_id:357794)和实双曲函数的组合  。
+这种混合三角部分和双曲部分的模式是普遍的。如果我们分解 $\cosh(2z)$ 或 $\tan(z)$，我们会发现类似的优雅结构，其中实部和虚部被表示为 $x$ 和 $y$ 的实[三角函数](@keyword=trigonometric_functions|lang=zh-CN|style=Feynman)和实双曲函数的组合 [@problem_id:2245599] [@problem_id:2262602]。
 
 ### 消失的周期：最后的奇趣
 
 在我们旅程的终点，思考最后一个谜题。我们知道 $\cos(z)$ 是周期为 $2\pi$ 的周期函数。也就是说，对于任何整数 $k$，都有 $\cos(z+2\pi k) = \cos(z)$。事实证明，$\cosh(z)$ 也是周期函数。利用它与余弦的联系，$\cosh(z) = \cos(iz)$，我们可以发现它的周期是 $2\pi i k$——纯虚数。
 
-那么，如果将两个[周期函数](@article_id:299785)相加，结果是周期的吗？让我们考虑函数 $f(z) = \cos(z) + \cosh(z)$。我们的直觉大喊“是！”但我们的直觉是错的 。
+那么，如果将两个[周期函数](@keyword=periodic_functions|lang=zh-CN|style=Feynman)相加，结果是周期的吗？让我们考虑函数 $f(z) = \cos(z) + \cosh(z)$。我们的直觉大喊“是！”但我们的直觉是错的 [@problem_id:2262608]。
 
 要使 $f(z)$ 成为周期为 $p$ 的周期函数，$p$ 必须同时是 $\cos(z)$ 和 $\cosh(z)$ 的周期。这意味着 $p$ 必须在集合 $\{ \dots, -4\pi, -2\pi, 0, 2\pi, 4\pi, \dots \}$ 中，并且也要在集合 $\{ \dots, -4\pi i, -2\pi i, 0, 2\pi i, 4\pi i, \dots \}$ 中。稍加思索就会发现，这两个集合唯一的共同数字是 $0$。由于周期必须非零，所以不存在公共周期。函数 $f(z)$ 根本不是周期函数！
 
-这个漂亮的结果教给我们最后一条关键的教训。[复平面](@article_id:318633)是一个真正的平面。实数方向和虚数方向有着本质的不同。$\cos(z)$ 的周期性存在于[实轴](@article_id:308695)上，而 $\cosh(z)$ 的周期性存在于[虚轴](@article_id:326326)上。通过将它们相加，我们创造了一个在任何一个方向上都不重复自身的函数。这证明了当我们透过复数的镜头看待熟悉的概念时，会涌现出丰富且常常反直觉的结构，揭示出一个比我们想象中更深刻、更统一的数学图景。
+这个漂亮的结果教给我们最后一条关键的教训。[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)是一个真正的平面。实数方向和虚数方向有着本质的不同。$\cos(z)$ 的周期性存在于[实轴](@keyword=real_line|lang=zh-CN|style=Feynman)上，而 $\cosh(z)$ 的周期性存在于[虚轴](@keyword=imaginary_axis|lang=zh-CN|style=Feynman)上。通过将它们相加，我们创造了一个在任何一个方向上都不重复自身的函数。这证明了当我们透过复数的镜头看待熟悉的概念时，会涌现出丰富且常常反直觉的结构，揭示出一个比我们想象中更深刻、更统一的数学图景。

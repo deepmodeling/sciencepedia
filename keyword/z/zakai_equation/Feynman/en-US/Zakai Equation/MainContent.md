@@ -1,9 +1,9 @@
 ## Introduction
-In countless fields, from [robotics](@article_id:150129) to finance, the ability to track a system's true state from noisy, incomplete observations is a fundamental challenge. This problem, known as [nonlinear filtering](@article_id:200514), is notoriously difficult. Traditional approaches often lead to computationally intractable equations, creating a significant barrier to solving complex, real-world estimation problems. This article provides a comprehensive overview of the Zakai equation, a profound and elegant solution that transforms this difficult nonlinear problem into a manageable linear one. In the upcoming chapters, you will discover the core theory behind this powerful tool. The first chapter, **Principles and Mechanisms**, will uncover why traditional filtering is so hard and demonstrate how a clever change of perspective leads to the beautifully linear Zakai equation. Subsequently, the chapter on **Applications and Interdisciplinary Connections** will showcase its real-world impact, from stabilizing [particle filters](@article_id:180974) to enabling [optimal control](@article_id:137985) and navigating the complex geometry of modern [robotics](@article_id:150129).
+In countless fields, from [robotics](@keyword=robotics|lang=en-US|style=Feynman) to finance, the ability to track a system's true state from noisy, incomplete observations is a fundamental challenge. This problem, known as [nonlinear filtering](@keyword=nonlinear_filtering|lang=en-US|style=Feynman), is notoriously difficult. Traditional approaches often lead to computationally intractable equations, creating a significant barrier to solving complex, real-world estimation problems. This article provides a comprehensive overview of the Zakai equation, a profound and elegant solution that transforms this difficult nonlinear problem into a manageable linear one. In the upcoming chapters, you will discover the core theory behind this powerful tool. The first chapter, **Principles and Mechanisms**, will uncover why traditional filtering is so hard and demonstrate how a clever change of perspective leads to the beautifully linear Zakai equation. Subsequently, the chapter on **Applications and Interdisciplinary Connections** will showcase its real-world impact, from stabilizing [particle filters](@keyword=particle_filters|lang=en-US|style=Feynman) to enabling [optimal control](@keyword=optimal_control|lang=en-US|style=Feynman) and navigating the complex geometry of modern [robotics](@keyword=robotics|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
-Imagine you are in a dark, foggy room, trying to track a firefly. You can’t see it directly, but every so often, a faint, erratic glimmer reaches your eyes. The firefly is moving randomly, a little dance of its own, and the light you see is just a noisy, fleeting signal. Your task is to pinpoint the firefly's most likely location, using nothing but the history of those faint glimmers. This, in essence, is the grand challenge of **[nonlinear filtering](@article_id:200514)**.
+Imagine you are in a dark, foggy room, trying to track a firefly. You can’t see it directly, but every so often, a faint, erratic glimmer reaches your eyes. The firefly is moving randomly, a little dance of its own, and the light you see is just a noisy, fleeting signal. Your task is to pinpoint the firefly's most likely location, using nothing but the history of those faint glimmers. This, in essence, is the grand challenge of **[nonlinear filtering](@keyword=nonlinear_filtering|lang=en-US|style=Feynman)**.
 
 In the mathematical world, the firefly's random dance is a **signal process**, often described by a stochastic differential equation (SDE). The faint glimmers are the **observation process**, a corrupted version of some property of the signal. Our goal isn't just to find a single point; it's to construct a "map of possibility"—a full probability distribution that tells us, at any moment, how likely it is for the firefly to be at any given location. This map is the **filter**.
 
@@ -13,13 +13,13 @@ Let's try to build an equation for how this map of possibility, let's call it $\
 
 The Kushner-Stratonovich equation enforces this rule with an iron fist. At every infinitesimal step in time, it calculates an update and then immediately *renormalizes* the entire distribution to make sure it still integrates to $1$. This act of normalization creates a vicious feedback loop. The change in the probability at one location depends in a complicated way on the *entire* distribution at that moment—on averages and covariances across the whole landscape. Mathematically, this manifests as ugly nonlinear terms in the equation.
 
-This nonlinearity is not just an aesthetic blemish; it's a computational catastrophe. For all but the simplest systems (like the famous linear-Gaussian case solved by the Kalman-Bucy filter), this equation cannot be solved by a finite set of parameters. The solution lives and breathes in an infinite-dimensional space of functions. This is why filtering for general nonlinear problems is so profoundly difficult and why simple, exact filters are heartbreakingly rare. We are forced to grapple with the evolution of an [entire function](@article_id:178275), not just a few numbers.
+This nonlinearity is not just an aesthetic blemish; it's a computational catastrophe. For all but the simplest systems (like the famous linear-Gaussian case solved by the Kalman-Bucy filter), this equation cannot be solved by a finite set of parameters. The solution lives and breathes in an infinite-dimensional space of functions. This is why filtering for general nonlinear problems is so profoundly difficult and why simple, exact filters are heartbreakingly rare. We are forced to grapple with the evolution of an [entire function](@keyword=entire_function|lang=en-US|style=Feynman), not just a few numbers.
 
 ### A Journey to a Simpler World
 
 Faced with this nonlinear beast, mathematicians of the 20th century, including Moshe Zakai, discovered a wonderfully clever side-step. The logic is as profound as it is simple: if the real world is too complicated, why not solve the problem in a simpler, hypothetical world first?
 
-This is achieved through a beautiful mathematical tool called a **[change of measure](@article_id:157393)**, made possible by Girsanov's theorem. Think of it as putting on a pair of magic glasses. When we look at our observation process, $dY_t = h(X_t)dt + dV_t$, we see two parts: a "signal" part $h(X_t)dt$ and a "noise" part $dV_t$. The magic glasses are designed to make the signal part vanish. In this new "reference world," the observation process $Y_t$ looks like pure, structureless noise—a standard Brownian motion.
+This is achieved through a beautiful mathematical tool called a **[change of measure](@keyword=change_of_measure|lang=en-US|style=Feynman)**, made possible by Girsanov's theorem. Think of it as putting on a pair of magic glasses. When we look at our observation process, $dY_t = h(X_t)dt + dV_t$, we see two parts: a "signal" part $h(X_t)dt$ and a "noise" part $dV_t$. The magic glasses are designed to make the signal part vanish. In this new "reference world," the observation process $Y_t$ looks like pure, structureless noise—a standard Brownian motion.
 
 Of course, you can't get something for nothing. The information about the signal hasn't disappeared. Instead, it's been repackaged into a new object, a "likelihood factor" $\Lambda_t$. This factor essentially keeps a running tally of how likely the sequence of observations we've seen would be, given a particular path of the hidden signal $X_t$.
 
@@ -27,13 +27,13 @@ In this new world, we no longer track the true probability distribution $\pi_t$.
 
 ### The Elegant Linearity of Zakai
 
-Here is the spectacular reward for our journey into the reference world. The evolution of this unnormalized distribution $\rho_t$ is governed by the **Zakai equation**, and this equation is beautifully, wonderfully **linear**. In its [weak form](@article_id:136801), which describes how the average of any "[test function](@article_id:178378)" $\varphi$ evolves, the equation is:
+Here is the spectacular reward for our journey into the reference world. The evolution of this unnormalized distribution $\rho_t$ is governed by the **Zakai equation**, and this equation is beautifully, wonderfully **linear**. In its [weak form](@keyword=weak_form|lang=en-US|style=Feynman), which describes how the average of any "[test function](@keyword=test_function|lang=en-US|style=Feynman)" $\varphi$ evolves, the equation is:
 $$
 d\rho_t(\varphi) = \rho_t(\mathcal{L}\varphi)\,dt + \rho_t(\varphi h^\top)\,dY_t
 $$
 Look closely. The change in $\rho_t$ depends on $\rho_t$ itself, but only in a linear fashion. There are no products like $\rho_t(\varphi)\rho_t(h)$ that plagued the Kushner-Stratonovich equation. We have broken the feedback loop.
 
-If we assume the unnormalized distribution has a density function, let's call it $\tilde{\rho}_t(x)$, then the Zakai equation can be written as a [stochastic partial differential equation](@article_id:187951) (SPDE):
+If we assume the unnormalized distribution has a density function, let's call it $\tilde{\rho}_t(x)$, then the Zakai equation can be written as a [stochastic partial differential equation](@keyword=stochastic_partial_differential_equation|lang=en-US|style=Feynman) (SPDE):
 $$
 d\tilde{\rho}_t(x) = \mathcal{L}^\ast \tilde{\rho}_t(x)\,dt + h(x)^\top \tilde{\rho}_t(x)\,dY_t
 $$
@@ -43,7 +43,7 @@ The crucial insight is that both terms are linear in the unknown density $\tilde
 
 ### The Practical Power of Simplicity
 
-Why does this abstract property of linearity matter so much? Because [linear equations](@article_id:150993) are infinitely more tractable than nonlinear ones, both for theoretical analysis and for practical computation.
+Why does this abstract property of linearity matter so much? Because [linear equations](@keyword=linear_equations|lang=en-US|style=Feynman) are infinitely more tractable than nonlinear ones, both for theoretical analysis and for practical computation.
 
 This linearity unlocks the door to powerful numerical approximation schemes. A common approach is the **Galerkin method**. The idea is to approximate the infinite-dimensional solution $\tilde{\rho}_t(x)$ with a finite sum of pre-chosen basis functions, like a physicist using a Fourier series to describe a waveform:
 $$

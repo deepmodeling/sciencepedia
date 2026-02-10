@@ -1,17 +1,17 @@
 ## 引言
-在物理学和工程学的世界中，许多系统都表现出一种记忆形式；它们在任何时刻的输出不仅取决于当前的输入，还取决于所有先前输入的累积历史。这个对加权的、[时移](@article_id:325252)的响应进行求和的过程，在数学上由一种称为卷积的运算来描述。虽然[卷积积分](@article_id:316273)能够精确地描述这类系统——从电路到声学空间——的行为，但直接求解它往往极其复杂，为分析和直观理解带来了巨大障碍。
+在物理学和工程学的世界中，许多系统都表现出一种记忆形式；它们在任何时刻的输出不仅取决于当前的输入，还取决于所有先前输入的累积历史。这个对加权的、[时移](@keyword=time_shifting|lang=zh-CN|style=Feynman)的响应进行求和的过程，在数学上由一种称为卷积的运算来描述。虽然[卷积积分](@keyword=convolution_integral|lang=zh-CN|style=Feynman)能够精确地描述这类系统——从电路到声学空间——的行为，但直接求解它往往极其复杂，为分析和直观理解带来了巨大障碍。
 
-本文旨在通过引入一个强大的数学工具——拉普拉斯变换来应对这一挑战。我们将探讨著名的[卷积定理](@article_id:303928)如何提供一条优雅的捷径，将困难的卷积微积分转化为简单的代数运算。第一章“原理与机制”将奠定基础，解释什么是卷积，拉普拉斯变换如何施展其魔力，以及这种魔力生效的关键条件。随后，“应用与跨学科联系”一章将展示该定理巨大的实际效用，演示它如何解决工程学中棘手的问题，驾驭难解的积分方程，并揭示看似不相关的学科之间令人惊讶的联系。
+本文旨在通过引入一个强大的数学工具——拉普拉斯变换来应对这一挑战。我们将探讨著名的[卷积定理](@keyword=convolution_theorem|lang=zh-CN|style=Feynman)如何提供一条优雅的捷径，将困难的卷积微积分转化为简单的代数运算。第一章“原理与机制”将奠定基础，解释什么是卷积，拉普拉斯变换如何施展其魔力，以及这种魔力生效的关键条件。随后，“应用与跨学科联系”一章将展示该定理巨大的实际效用，演示它如何解决工程学中棘手的问题，驾驭难解的积分方程，并揭示看似不相关的学科之间令人惊讶的联系。
 
 ## 原理与机制
 
 想象一下，你身处一个巨大而安静的大厅。你拍一次手，一串复杂的回声返回到你耳中——这就是那个大厅独特的“声音”。这个声音，即大厅对你那一声短促的掌声的响应，就是它的**冲激响应**。现在，如果你不只拍一次手，而是播放一段连续的音乐，会怎么样呢？你听到的声音不仅仅是你的音乐，而是经过大厅处理后的音乐。你演奏的每一个音符都会产生自己的一连串回声，而到达你耳朵的，是所有先前音符产生的所有回声的宏大、重叠的总和。
 
-这个对加权的、时移的响应进行求和的过程，是一种名为**卷积**的数学运算的物理灵魂。对于我们在物理学和工程学中遇到的一大类系统——从电路、机械[振荡器](@article_id:329170)到声学空间——这个原理都成立。这些系统被称为**[线性时不变](@article_id:339980)（LTI）系统**。“线性”意味着如果你将输入加倍，输出也会加倍；响应是成比例的。“时不变”意味着系统的特性不随时间改变；今天的掌声和明天的掌声会产生同样的回声。对于任何这样的系统，其输出*总是*输入与系统冲激响应的卷积 。
+这个对加权的、时移的响应进行求和的过程，是一种名为**卷积**的数学运算的物理灵魂。对于我们在物理学和工程学中遇到的一大类系统——从电路、机械[振荡器](@keyword=oscillators|lang=zh-CN|style=Feynman)到声学空间——这个原理都成立。这些系统被称为**[线性时不变](@keyword=linear_time_invariant|lang=zh-CN|style=Feynman)（LTI）系统**。“线性”意味着如果你将输入加倍，输出也会加倍；响应是成比例的。“时不变”意味着系统的特性不随时间改变；今天的掌声和明天的掌声会产生同样的回声。对于任何这样的系统，其输出*总是*输入与系统冲激响应的卷积 [@problem_id:2755908]。
 
 ### 系统交响曲：揭示卷积
 
-让我们把这个想法写下来。如果我们将输入信号称为 $u(t)$，系统的冲激响应称为 $h(t)$，那么输出信号 $y(t)$ 就由**[卷积积分](@article_id:316273)**给出：
+让我们把这个想法写下来。如果我们将输入信号称为 $u(t)$，系统的冲激响应称为 $h(t)$，那么输出信号 $y(t)$ 就由**[卷积积分](@keyword=convolution_integral|lang=zh-CN|style=Feynman)**给出：
 
 $$y(t) = (h * u)(t) = \int_{0}^{t} h(\tau) u(t - \tau) d\tau$$
 
@@ -19,17 +19,17 @@ $$y(t) = (h * u)(t) = \int_{0}^{t} h(\tau) u(t - \tau) d\tau$$
 
 虽然这个积分完美地捕捉了物理过程，但直接计算它可能是一项艰巨的任务。它通常是一个凌乱、复杂的积分，很难让人对输出的形态产生直观的感受。我们需要一个更好的方法。
 
-### s 域奇迹：[卷积定理](@article_id:303928)
+### s 域奇迹：[卷积定理](@keyword=convolution_theorem|lang=zh-CN|style=Feynman)
 
-在这里，我们引入一个真正非凡的想法，一种数学上的魔术透镜：**[拉普拉斯变换](@article_id:319743)**。[拉普拉斯变换](@article_id:319743)将一个时间函数 $f(t)$ 转换为一个关于新[复变量](@article_id:374816) $s$（我们称之为[复频率](@article_id:330104)）的函数。这个变换，记作 $\mathcal{L}\{f(t)\} = F(s)$，将我们的视角从时域转移到了[频域](@article_id:320474)。我们为什么要这样做呢？因为它能将难题变为易题。
+在这里，我们引入一个真正非凡的想法，一种数学上的魔术透镜：**[拉普拉斯变换](@keyword=laplace_transform|lang=zh-CN|style=Feynman)**。[拉普拉斯变换](@keyword=laplace_transform|lang=zh-CN|style=Feynman)将一个时间函数 $f(t)$ 转换为一个关于新[复变量](@keyword=complex_variable|lang=zh-CN|style=Feynman) $s$（我们称之为[复频率](@keyword=complex_frequency|lang=zh-CN|style=Feynman)）的函数。这个变换，记作 $\mathcal{L}\{f(t)\} = F(s)$，将我们的视角从时域转移到了[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)。我们为什么要这样做呢？因为它能将难题变为易题。
 
-而[卷积积分](@article_id:316273)是它最引人注目的戏法。当我们对卷积应用[拉普拉斯变换](@article_id:319743)时，奇迹发生了：
+而[卷积积分](@keyword=convolution_integral|lang=zh-CN|style=Feynman)是它最引人注目的戏法。当我们对卷积应用[拉普拉斯变换](@keyword=laplace_transform|lang=zh-CN|style=Feynman)时，奇迹发生了：
 
 $$\mathcal{L}\{(h * u)(t)\} = H(s) U(s)$$
 
-这就是**[卷积定理](@article_id:303928)**。那个在时域中令人生畏的积分，在[频域](@article_id:320474)中变成了一个简单、谦逊的乘法 。回声与输入的复杂叠加，变成了它们各自[频谱](@article_id:340514)“特征”的直接乘积。这简直是革命性的。它意味着我们可以分析复杂 LTI 系统的行为，而无需直接求解[卷积积分](@article_id:316273)。我们只需变换输入 $U(s)$ 和冲激响应 $H(s)$，将它们相乘以得到输出的变换 $Y(s) = H(s)U(s)$，然后，如果我们需要时域的答案，再执行一次[拉普拉斯逆变换](@article_id:377328)。
+这就是**[卷积定理](@keyword=convolution_theorem|lang=zh-CN|style=Feynman)**。那个在时域中令人生畏的积分，在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中变成了一个简单、谦逊的乘法 [@problem_id:1568508]。回声与输入的复杂叠加，变成了它们各自[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)“特征”的直接乘积。这简直是革命性的。它意味着我们可以分析复杂 LTI 系统的行为，而无需直接求解[卷积积分](@keyword=convolution_integral|lang=zh-CN|style=Feynman)。我们只需变换输入 $U(s)$ 和冲激响应 $H(s)$，将它们相乘以得到输出的变换 $Y(s) = H(s)U(s)$，然后，如果我们需要时域的答案，再执行一次[拉普拉斯逆变换](@keyword=laplace_inversion|lang=zh-CN|style=Feynman)。
 
-函数 $H(s)$，即冲激响应的拉普拉斯变换，是如此重要，以至于它有自己的名字：**传递函数**。它是 LTI 系统的核心描述符，用一个单一的代数表达式捕捉其全部动态特性 。
+函数 $H(s)$，即冲激响应的拉普拉斯变换，是如此重要，以至于它有自己的名字：**传递函数**。它是 LTI 系统的核心描述符，用一个单一的代数表达式捕捉其全部动态特性 [@problem_id:2755908]。
 
 ### 回声的剖析：卷积的真谛
 
@@ -37,7 +37,7 @@ $$\mathcal{L}\{(h * u)(t)\} = H(s) U(s)$$
 
 $$y_{stud}(t) = \int_0^1 h(\tau) u(t-\tau) d\tau$$
 
-这个积分*看起来*有点像卷积。它具有相同的内部结构。但请注意积分的上限：它是一个固定的常数 `1`，而不是变量时间 `t`。这个看似微小的改变是灾难性的。它完全改变了运算的意义。真正的卷积问的是：“直到当前时刻 $t$ 为止，*所有*历史的累积效应是什么？”而学生的积分问的是：“仅仅在时间 $0$ 和时间 $1$ 之间发生的输入的累积效应是什么？”其结果是一个根本不同的时间函数，并且它的[拉普拉斯变换](@article_id:319743)当然不是 $H(s)U(s)$ 。变量上限 $t$ 是卷积跳动的心脏，它编码了因果关系无情地向前推进的过程。
+这个积分*看起来*有点像卷积。它具有相同的内部结构。但请注意积分的上限：它是一个固定的常数 `1`，而不是变量时间 `t`。这个看似微小的改变是灾难性的。它完全改变了运算的意义。真正的卷积问的是：“直到当前时刻 $t$ 为止，*所有*历史的累积效应是什么？”而学生的积分问的是：“仅仅在时间 $0$ 和时间 $1$ 之间发生的输入的累积效应是什么？”其结果是一个根本不同的时间函数，并且它的[拉普拉斯变换](@keyword=laplace_transform|lang=zh-CN|style=Feynman)当然不是 $H(s)U(s)$ [@problem_id:2205114]。变量上限 $t$ 是卷积跳动的心脏，它编码了因果关系无情地向前推进的过程。
 
 ### 卷积的统一力量
 
@@ -47,20 +47,20 @@ $$y_{stud}(t) = \int_0^1 h(\tau) u(t-\tau) d\tau$$
 
 $$x(t-t_0) = x(t) * \delta(t-t_0)$$
 
-这里，$\delta(t)$ 是狄拉克 δ 函数，就是我们之前想象的那个无限尖锐的“掌声”。通过将一个信号与一个移位到时间 $t_0$ 的 δ 函数进行卷积，我们实际上是在告诉系统在时间 $t_0$ “激活”该信号。应用[卷积定理](@article_id:303928)简直是小菜一碟：$\delta(t-t_0)$ 的[拉普拉斯变换](@article_id:319743)是 $\exp(-st_0)$。因此，延迟信号的变换是 $X(s)\exp(-st_0)$。我们刚刚将[拉普拉斯变换](@article_id:319743)著名的[时移性质](@article_id:339360)推导为卷积定理的一个简单推论 ！
+这里，$\delta(t)$ 是狄拉克 δ 函数，就是我们之前想象的那个无限尖锐的“掌声”。通过将一个信号与一个移位到时间 $t_0$ 的 δ 函数进行卷积，我们实际上是在告诉系统在时间 $t_0$ “激活”该信号。应用[卷积定理](@keyword=convolution_theorem|lang=zh-CN|style=Feynman)简直是小菜一碟：$\delta(t-t_0)$ 的[拉普拉斯变换](@keyword=laplace_transform|lang=zh-CN|style=Feynman)是 $\exp(-st_0)$。因此，延迟信号的变换是 $X(s)\exp(-st_0)$。我们刚刚将[拉普拉斯变换](@keyword=laplace_transform|lang=zh-CN|style=Feynman)著名的[时移性质](@keyword=time_shifting_property_2|lang=zh-CN|style=Feynman)推导为卷积定理的一个简单推论 [@problem_id:1744838]！
 
-那么**微分与积分**呢？它们也可以被看作是卷积。一个函数的积分是它与简单阶跃函数 $u_{step}(t)$（当 $t \ge 0$ 时为 1，否则为 0）的卷积。由于 $\mathcal{L}\{u_{step}(t)\} = 1/s$，卷积定理立即告诉我们，积分 $\int_0^t x(\tau)d\tau$ 的拉普拉斯变换是 $X(s)/s$ 。
+那么**微分与积分**呢？它们也可以被看作是卷积。一个函数的积分是它与简单阶跃函数 $u_{step}(t)$（当 $t \ge 0$ 时为 1，否则为 0）的卷积。由于 $\mathcal{L}\{u_{step}(t)\} = 1/s$，卷积定理立即告诉我们，积分 $\int_0^t x(\tau)d\tau$ 的拉普拉斯变换是 $X(s)/s$ [@problem_id:1566833]。
 
-更引人注目的是，对一个函数求导等价于将其与 δ 函数的*[导数](@article_id:318324)* $\delta'(t)$ 进行卷积。而求二阶[导数](@article_id:318324)则等价于与 $\delta''(t)$ 进行卷积 。这些“[广义函数](@article_id:338885)”就像微型机器，当与信号进行卷积时，能对信号执行微积分运算。这揭示了一种深刻而优美的统一性：在时域中看起来截然不同的操作——延迟、积分、微分——都只是卷积的不同侧面，在[频域](@article_id:320474)中通过乘法统一起来。
+更引人注目的是，对一个函数求导等价于将其与 δ 函数的*[导数](@keyword=derivative|lang=zh-CN|style=Feynman)* $\delta'(t)$ 进行卷积。而求二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)则等价于与 $\delta''(t)$ 进行卷积 [@problem_id:1744859]。这些“[广义函数](@keyword=generalized_functions|lang=zh-CN|style=Feynman)”就像微型机器，当与信号进行卷积时，能对信号执行微积分运算。这揭示了一种深刻而优美的统一性：在时域中看起来截然不同的操作——延迟、积分、微分——都只是卷积的不同侧面，在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中通过乘法统一起来。
 
-一旦我们理解了这些规则，我们就可以将它们组合起来解决更复杂的问题。例如，系统输出*变化率* $\frac{d}{dt}y(t)$ 的变换是什么？由于 $Y(s) = H(s)U(s)$ 并且时域中的[微分](@article_id:319122)对应于[频域](@article_id:320474)中的乘以 $s$，答案就是简单的 $sH(s)U(s)$（假设输出在 $t=0$ 时为零） 。或者， $t \cdot y(t)$ 的变换是什么？时域乘法性质告诉我们这是 $-\frac{d}{ds}Y(s)$。应用乘积法则得到 $-\frac{d}{ds}[H(s)U(s)] = -H'(s)U(s) - H(s)U'(s)$ 。这套代数机制既强大又优雅。
+一旦我们理解了这些规则，我们就可以将它们组合起来解决更复杂的问题。例如，系统输出*变化率* $\frac{d}{dt}y(t)$ 的变换是什么？由于 $Y(s) = H(s)U(s)$ 并且时域中的[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)对应于[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中的乘以 $s$，答案就是简单的 $sH(s)U(s)$（假设输出在 $t=0$ 时为零） [@problem_id:1571609]。或者， $t \cdot y(t)$ 的变换是什么？时域乘法性质告诉我们这是 $-\frac{d}{ds}Y(s)$。应用乘积法则得到 $-\frac{d}{ds}[H(s)U(s)] = -H'(s)U(s) - H(s)U'(s)$ [@problem_id:1571328]。这套代数机制既强大又优雅。
 
 ### 一个必要的警告：当魔力失效时
 
-尽管[拉普拉斯变换](@article_id:319743)功能强大，但它并非万无一失的神谕。它的存在本身就取决于一个[积分的收敛性](@article_id:366460)。使这个[积分收敛](@article_id:300189)的复数 $s$ 的集合被称为**[收敛域 (ROC)](@article_id:331732)**。对于像 $\exp(-at)u(t)$ 这样的信号，收敛域是一个右半平面 $\text{Re}\{s\} > -a$。对于像 $\exp(-bt)u(-t)$ 这样的信号（一个只存在于过去的“反因果”信号），[收敛域](@article_id:333424)是一个[左半平面](@article_id:334428) $\text{Re}\{s\}  -b$。
+尽管[拉普拉斯变换](@keyword=laplace_transform|lang=zh-CN|style=Feynman)功能强大，但它并非万无一失的神谕。它的存在本身就取决于一个[积分的收敛性](@keyword=convergence_of_integrals|lang=zh-CN|style=Feynman)。使这个[积分收敛](@keyword=integral_convergence|lang=zh-CN|style=Feynman)的复数 $s$ 的集合被称为**[收敛域 (ROC)](@keyword=region_of_convergence_(roc)|lang=zh-CN|style=Feynman)**。对于像 $\exp(-at)u(t)$ 这样的信号，收敛域是一个右半平面 $\text{Re}\{s\} > -a$。对于像 $\exp(-bt)u(-t)$ 这样的信号（一个只存在于过去的“反因果”信号），[收敛域](@keyword=region_of_convergence|lang=zh-CN|style=Feynman)是一个[左半平面](@keyword=left_half_plane|lang=zh-CN|style=Feynman) $\text{Re}\{s\}  -b$。
 
-[卷积定理](@article_id:303928) $Y(s) = H(s)U(s)$ 附带一个关键条件：$Y(s)$ 的[收敛域](@article_id:333424)至多是 $H(s)$ 和 $U(s)$ 的收敛域的**交集**。如果这个交集是[空集](@article_id:325657)呢？
+[卷积定理](@keyword=convolution_theorem|lang=zh-CN|style=Feynman) $Y(s) = H(s)U(s)$ 附带一个关键条件：$Y(s)$ 的[收敛域](@keyword=region_of_convergence|lang=zh-CN|style=Feynman)至多是 $H(s)$ 和 $U(s)$ 的收敛域的**交集**。如果这个交集是[空集](@keyword=empty_set|lang=zh-CN|style=Feynman)呢？
 
-想象一个信号，其变换只存在于 $\text{Re}\{s\} = 1$ 右侧的平面中；另一个信号，其变换只存在于 $\text{Re}\{s\} = -1$ 左侧的平面中 。[复平面](@article_id:318633)上没有任何一点能同时满足这两个条件。它们的收敛域是不相交的。在这种情况下，乘积 $H(s)U(s)$ 是没有意义的，因为不存在两个函数都被定义的公共域。卷积的拉普拉斯变换 $Y(s)$ 就**根本不存在**。时域[卷积积分](@article_id:316273)本身在所有时间点上都会发散。
+想象一个信号，其变换只存在于 $\text{Re}\{s\} = 1$ 右侧的平面中；另一个信号，其变换只存在于 $\text{Re}\{s\} = -1$ 左侧的平面中 [@problem_id:1764501]。[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上没有任何一点能同时满足这两个条件。它们的收敛域是不相交的。在这种情况下，乘积 $H(s)U(s)$ 是没有意义的，因为不存在两个函数都被定义的公共域。卷积的拉普拉斯变换 $Y(s)$ 就**根本不存在**。时域[卷积积分](@keyword=convolution_integral|lang=zh-CN|style=Feynman)本身在所有时间点上都会发散。
 
-这不是一个数学上的技术细节，而是现实施加的边界条件。它告诉我们，并非所有系统都能被所有信号驱动以产生一个良态的输出。s 域优美的代数运算只有在底层的[时域积分](@article_id:325234)收敛时才有效。[卷积定理](@article_id:303928)是一张通往一个隐藏的、更简单世界的地图，但我们必须时刻检查这个世界是否真的可以进入 。
+这不是一个数学上的技术细节，而是现实施加的边界条件。它告诉我们，并非所有系统都能被所有信号驱动以产生一个良态的输出。s 域优美的代数运算只有在底层的[时域积分](@keyword=integration_in_the_time_domain|lang=zh-CN|style=Feynman)收敛时才有效。[卷积定理](@keyword=convolution_theorem|lang=zh-CN|style=Feynman)是一张通往一个隐藏的、更简单世界的地图，但我们必须时刻检查这个世界是否真的可以进入 [@problem_id:1757025]。

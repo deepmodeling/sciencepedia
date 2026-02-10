@@ -1,7 +1,7 @@
 ## Introduction
 Summing an infinite list of numbers can seem an impossible task, yet certain series possess an elegant, hidden structure that makes the problem collapse. This is the world of the telescoping sum, a powerful concept where an intimidating chain of additions simplifies through a cascade of cancellations. But this simplifying structure is rarely obvious; it often lies disguised within complex expressions, waiting to be uncovered. This article serves as a guide to both finding and using this remarkable mathematical tool.
 
-First, under "Principles and Mechanisms," we will delve into the core of how telescoping sums work, exploring the magic of cancellation, the art of unmasking hidden differences, and the crucial question of convergence. We will also examine more complex variations, including gapped series and [series of functions](@article_id:139042). Then, in "Applications and Interdisciplinary Connections," we will journey beyond the theory to discover how this principle provides elegant solutions to problems in computer science, physics, and serves as a cornerstone for proofs in advanced mathematical analysis.
+First, under "Principles and Mechanisms," we will delve into the core of how telescoping sums work, exploring the magic of cancellation, the art of unmasking hidden differences, and the crucial question of convergence. We will also examine more complex variations, including gapped series and [series of functions](@keyword=series_of_functions|lang=en-US|style=Feynman). Then, in "Applications and Interdisciplinary Connections," we will journey beyond the theory to discover how this principle provides elegant solutions to problems in computer science, physics, and serves as a cornerstone for proofs in advanced mathematical analysis.
 
 ## Principles and Mechanisms
 
@@ -41,7 +41,7 @@ An intimidating sum of $N$ terms has been reduced to a simple subtraction of two
 
 Of course, nature rarely hands us problems in this perfect $b_n - b_{n+1}$ form. The true art lies in recognizing when a complicated-looking expression is actually a telescoping sum in disguise. It's like being a detective, searching for a hidden structure.
 
-A common tool for this detective work, especially with rational functions, is **[partial fraction decomposition](@article_id:158714)**. Consider the series from problem :
+A common tool for this detective work, especially with rational functions, is **[partial fraction decomposition](@keyword=partial_fraction_decomposition|lang=en-US|style=Feynman)**. Consider the series from problem [@problem_id:5434]:
 
 $$
 S = \sum_{n=1}^{\infty} \frac{1}{(n+1)(n+2)}
@@ -53,15 +53,15 @@ $$
 \frac{1}{(n+1)(n+2)} = \frac{1}{n+1} - \frac{1}{n+2}
 $$
 
-And there it is! Our hidden structure is revealed. In this case, $b_n = \frac{1}{n+1}$, so $a_n$ is indeed $b_n - b_{n+1}$. The same technique unmasks the series $\sum \frac{1}{4n^2-1}$ by rewriting the term as $\frac{1}{2}\left(\frac{1}{2n-1} - \frac{1}{2n+1}\right)$ .
+And there it is! Our hidden structure is revealed. In this case, $b_n = \frac{1}{n+1}$, so $a_n$ is indeed $b_n - b_{n+1}$. The same technique unmasks the series $\sum \frac{1}{4n^2-1}$ by rewriting the term as $\frac{1}{2}\left(\frac{1}{2n-1} - \frac{1}{2n+1}\right)$ [@problem_id:5453].
 
-Sometimes, the disguise is more clever and requires more creative thinking. Take this beautiful example from problem :
+Sometimes, the disguise is more clever and requires more creative thinking. Take this beautiful example from problem [@problem_id:21482]:
 
 $$
 S = \sum_{n=1}^{\infty} \frac{n}{(n+1)!}
 $$
 
-How can we turn this into a difference? The key is to look at the numerator, $n$, and relate it to the terms in the denominator's [factorial](@article_id:266143), $(n+1)!$. A wonderful trick is to write $n$ as $(n+1) - 1$. Why is this so wonderful? Watch what happens:
+How can we turn this into a difference? The key is to look at the numerator, $n$, and relate it to the terms in the denominator's [factorial](@keyword=factorial|lang=en-US|style=Feynman), $(n+1)!$. A wonderful trick is to write $n$ as $(n+1) - 1$. Why is this so wonderful? Watch what happens:
 
 $$
 a_n = \frac{(n+1) - 1}{(n+1)!} = \frac{n+1}{(n+1)!} - \frac{1}{(n+1)!}
@@ -73,7 +73,7 @@ $$
 a_n = \frac{1}{n!} - \frac{1}{(n+1)!}
 $$
 
-Again, we have our $b_n - b_{n+1}$ form, this time with $b_n = \frac{1}{n!}$. The trick isn't magic; it's about creatively manipulating the expression to fit the pattern you're looking for. Similar ingenuity with logarithm properties (e.g., $\ln(a/b) = \ln(a) - \ln(b)$)  or algebraic identities for radicals  can reveal the telescoping nature of many other series.
+Again, we have our $b_n - b_{n+1}$ form, this time with $b_n = \frac{1}{n!}$. The trick isn't magic; it's about creatively manipulating the expression to fit the pattern you're looking for. Similar ingenuity with logarithm properties (e.g., $\ln(a/b) = \ln(a) - \ln(b)$) [@problem_id:2294271] or algebraic identities for radicals [@problem_id:1293277] can reveal the telescoping nature of many other series.
 
 ### The Finish Line: Convergence
 
@@ -86,7 +86,7 @@ $$
 Since $b_1$ is just a fixed number, the entire question of whether the infinite series converges boils down to one thing: does the sequence $\{b_n\}$ have a finite limit as $n \to \infty$?
 
 Let's call this limit $L = \lim_{n\to\infty} b_n$.
-As established in the fundamental result from problem , the [telescoping series](@article_id:161163) $\sum (b_n - b_{n+1})$ converges **if and only if** the sequence $\{b_n\}$ converges to a finite value $L$. If it does, the sum of the [infinite series](@article_id:142872) is simply:
+As established in the fundamental result from problem [@problem_id:2320279], the [telescoping series](@keyword=telescoping_series|lang=en-US|style=Feynman) $\sum (b_n - b_{n+1})$ converges **if and only if** the sequence $\{b_n\}$ converges to a finite value $L$. If it does, the sum of the [infinite series](@keyword=infinite_series|lang=en-US|style=Feynman) is simply:
 
 $$
 S = b_1 - L
@@ -99,7 +99,7 @@ For the factorial series, we had $b_n = \frac{1}{n!}$. As $n$ grows, $n!$ grows 
 
 ### Leaping Over Terms: Gaps and Higher-Order Differences
 
-What if the cancellation isn't so immediate? What if a term cancels not with its immediate neighbor, but with one a few steps down the line? This leads to a "gapped" [telescoping series](@article_id:161163). Consider a term of the form $a_n = b_n - b_{n+2}$  . Let's write out the partial sum:
+What if the cancellation isn't so immediate? What if a term cancels not with its immediate neighbor, but with one a few steps down the line? This leads to a "gapped" [telescoping series](@keyword=telescoping_series|lang=en-US|style=Feynman). Consider a term of the form $a_n = b_n - b_{n+2}$ [@problem_id:1293277] [@problem_id:21466]. Let's write out the partial sum:
 
 $S_N = (b_1 - b_3) + (b_2 - b_4) + (b_3 - b_5) + (b_4 - b_6) + \dots$
 
@@ -113,29 +113,29 @@ $$
 
 The principle is the same: the sum collapses, but with a few more survivors at the start due to the gap. The convergence still depends on the limit of the $b_n$ sequence.
 
-We can even have telescoping sums of differences, like a Matryoshka doll of cancellation. Problem  presents terms like $a_n = \sqrt{n+2} - 2\sqrt{n+1} + \sqrt{n}$. This can be ingeniously rewritten as a difference of differences:
+We can even have telescoping sums of differences, like a Matryoshka doll of cancellation. Problem [@problem_id:21480] presents terms like $a_n = \sqrt{n+2} - 2\sqrt{n+1} + \sqrt{n}$. This can be ingeniously rewritten as a difference of differences:
 
 $$
 a_n = (\sqrt{n+2} - \sqrt{n+1}) - (\sqrt{n+1} - \sqrt{n})
 $$
 
-If we let $c_n = \sqrt{n+1} - \sqrt{n}$, then our term is simply $a_n = c_{n+1} - c_n$. This is another telescoping sum! Its partial sum is $\sum_{n=1}^{N} (c_{n+1} - c_n) = c_{N+1} - c_1$. This nesting of differences shows how the telescoping principle can be layered to tackle even more complex structures, like the one seen in .
+If we let $c_n = \sqrt{n+1} - \sqrt{n}$, then our term is simply $a_n = c_{n+1} - c_n$. This is another telescoping sum! Its partial sum is $\sum_{n=1}^{N} (c_{n+1} - c_n) = c_{N+1} - c_1$. This nesting of differences shows how the telescoping principle can be layered to tackle even more complex structures, like the one seen in [@problem_id:405475].
 
 ### A Glimpse into a Larger World: Functions and Uniformity
 
-So far, we have been adding numbers. But what if we add *functions*? The telescoping principle works just the same, but it can lead to some very curious and profound results. Consider the [series of functions](@article_id:139042) on the interval $[0, 1]$ from problem :
+So far, we have been adding numbers. But what if we add *functions*? The telescoping principle works just the same, but it can lead to some very curious and profound results. Consider the [series of functions](@keyword=series_of_functions|lang=en-US|style=Feynman) on the interval $[0, 1]$ from problem [@problem_id:2311502]:
 
 $$
 \sum_{n=1}^{\infty} f_n(x) \quad \text{where} \quad f_n(x) = x^{\frac{1}{n}} - x^{\frac{1}{n+1}}
 $$
 
-This is a [telescoping series](@article_id:161163) where $b_n(x) = x^{\frac{1}{n}}$. The $N$-th partial sum is a function too:
+This is a [telescoping series](@keyword=telescoping_series|lang=en-US|style=Feynman) where $b_n(x) = x^{\frac{1}{n}}$. The $N$-th partial sum is a function too:
 
 $$
 S_N(x) = b_1(x) - b_{N+1}(x) = x^1 - x^{\frac{1}{N+1}}
 $$
 
-To find the sum of the [infinite series](@article_id:142872), we find the limit of $S_N(x)$ for each $x$.
+To find the sum of the [infinite series](@keyword=infinite_series|lang=en-US|style=Feynman), we find the limit of $S_N(x)$ for each $x$.
 - If $x=0$, then $S_N(0) = 0 - 0 = 0$ for all $N$, so the sum is $0$.
 - If $x$ is any number in $(0, 1]$, as $N \to \infty$, the exponent $\frac{1}{N+1}$ goes to 0, and $x^0=1$. So the sum is $x-1$.
 
@@ -148,4 +148,4 @@ Now here is the fascinating part. Every single function in our original sum, $f_
 
 This happens because the convergence is not **uniform**. Think of it like a race where for each point $x$, the partial sum $S_N(x)$ is a runner trying to reach the finish line $S(x)$. Near $x=1$, the runners are very fast and quickly get close to the finish line. But for values of $x$ very close to 0, the runner $S_N(x)$ is incredibly slow; it takes a huge $N$ to get close to the limit. The speed of convergence depends dramatically on where you are on the interval.
 
-This simple telescoping example opens a door to some of the deepest questions in [mathematical analysis](@article_id:139170) about infinity, limits, and continuity. It shows that the telescoping sum is more than a clever trick for acing exams; it is a fundamental building block that, in its simplicity, reveals the intricate and often surprising behavior of the infinite.
+This simple telescoping example opens a door to some of the deepest questions in [mathematical analysis](@keyword=mathematical_analysis|lang=en-US|style=Feynman) about infinity, limits, and continuity. It shows that the telescoping sum is more than a clever trick for acing exams; it is a fundamental building block that, in its simplicity, reveals the intricate and often surprising behavior of the infinite.

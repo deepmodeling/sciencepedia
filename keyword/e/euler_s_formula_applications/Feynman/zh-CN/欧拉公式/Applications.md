@@ -4,15 +4,15 @@
 
 ### 工程造就我们眼中的世界
 
-环顾四周。你可能会看到横跨江河的桥梁、高耸入云的摩天大楼，或是翱翔于天际的飞机。这些宏伟结构的存在与安全，都依赖于一套由欧拉和他的同代人 Daniel Bernoulli 首次提出的一组惊人简单的思想。**[欧拉-伯努利梁理论](@article_id:356306)**提供了一个模型，用于描述一个细长物体——梁——在荷载作用下如何弯曲 。它做出了一个绝妙而大胆的假设：梁的平直横截面在弯曲时保持平直，并垂直于梁的曲线。这严格成立吗？当然不是！在梁的支撑点或集中力施加点附近，材料会以一种复杂的三维方式发生翘曲和剪切。
+环顾四周。你可能会看到横跨江河的桥梁、高耸入云的摩天大楼，或是翱翔于天际的飞机。这些宏伟结构的存在与安全，都依赖于一套由欧拉和他的同代人 Daniel Bernoulli 首次提出的一组惊人简单的思想。**[欧拉-伯努利梁理论](@keyword=euler_bernoulli_beam_theory|lang=zh-CN|style=Feynman)**提供了一个模型，用于描述一个细长物体——梁——在荷载作用下如何弯曲 [@problem_id:2637285]。它做出了一个绝妙而大胆的假设：梁的平直横截面在弯曲时保持平直，并垂直于梁的曲线。这严格成立吗？当然不是！在梁的支撑点或集中力施加点附近，材料会以一种复杂的三维方式发生翘曲和剪切。
 
 而天才之处就在于此，一个被称为 Saint-Venant 原理的概念。复杂的翘曲和剪切是局部效应。在离支撑点或荷载几个直径远的地方，这些混乱的局部效应会消退，梁的行为会稳定下来，以惊人的精度遵循优雅的欧拉-伯努利描述。这个简单的模型抓住了本质的真理，同时也承认现实在边缘处可能会复杂一些。这是一个物理学家方法的完美例子：找到一个足够简单以至于有用，又足够复杂以至于在最关键的地方是正确的模型。正是这个原理，使得工程师能够设计出既安全又高效的桥梁，而不必为结构中的每一个原子求解完整、极其复杂的弹性力学方程。
 
-欧拉对工程学的贡献远不止于梁。想象一下你在设计一个卫星天线或射电望远镜的反射面，这是一个以非常特定的方式弯曲以汇聚入射波的[曲面](@article_id:331153) 。在这个[曲面](@article_id:331153)上的任何一点，它在一个方向（最大[主曲率](@article_id:334298)方向，$\kappa_1$）上弯曲得最厉害，而在一个正交方向（$\kappa_2$）上弯曲得最轻。但介于两者之间的所有方向呢？我们必须全部测量吗？欧拉关于[法曲率](@article_id:334664)的定理给了我们一个惊人简单的答案：不需要。它指出，与第一主方向成 $\theta$ 角的任意方向上的[法曲率](@article_id:334664) $\kappa_n$ 由一个简单的公式给出：
+欧拉对工程学的贡献远不止于梁。想象一下你在设计一个卫星天线或射电望远镜的反射面，这是一个以非常特定的方式弯曲以汇聚入射波的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman) [@problem_id:1658480]。在这个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上的任何一点，它在一个方向（最大[主曲率](@keyword=principal_curvatures|lang=zh-CN|style=Feynman)方向，$\kappa_1$）上弯曲得最厉害，而在一个正交方向（$\kappa_2$）上弯曲得最轻。但介于两者之间的所有方向呢？我们必须全部测量吗？欧拉关于[法曲率](@keyword=normal_curvature|lang=zh-CN|style=Feynman)的定理给了我们一个惊人简单的答案：不需要。它指出，与第一主方向成 $\theta$ 角的任意方向上的[法曲率](@keyword=normal_curvature|lang=zh-CN|style=Feynman) $\kappa_n$ 由一个简单的公式给出：
 $$
 \kappa_n(\theta) = \kappa_1 \cos^2(\theta) + \kappa_2 \sin^2(\theta)
 $$
-仅通过两次测量，我们就知道了该点曲率的全部信息。这不仅仅是一个数学上的奇趣；它是一种设计工具，让工程师能够精确地塑造[曲面](@article_id:331153)来操纵波、光和声音。
+仅通过两次测量，我们就知道了该点曲率的全部信息。这不仅仅是一个数学上的奇趣；它是一种设计工具，让工程师能够精确地塑造[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)来操纵波、光和声音。
 
 ### 塑造我们生活的无形之波
 
@@ -20,30 +20,30 @@ $$
 $$
 \exp(i\theta) = \cos(\theta) + i\sin(\theta)
 $$
-这个公式是旋转和[振荡](@article_id:331484)的灵魂。它告诉我们，看似分离的正弦和余弦的[往复运动](@article_id:373714)，实际上只是一个更简单的单一运动的两个投影：一个点在[复平面](@article_id:318633)上绕圆运动。[复指数](@article_id:342070) $\exp(i\omega t)$ 不仅仅是一个数学技巧；它*本身*就是一个纯频率，一个频率为 $\omega$ 的完美、无休止的[振荡](@article_id:331484)。
+这个公式是旋转和[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的灵魂。它告诉我们，看似分离的正弦和余弦的[往复运动](@keyword=oscillatory_motion|lang=zh-CN|style=Feynman)，实际上只是一个更简单的单一运动的两个投影：一个点在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上绕圆运动。[复指数](@keyword=complex_exponents|lang=zh-CN|style=Feynman) $\exp(i\omega t)$ 不仅仅是一个数学技巧；它*本身*就是一个纯频率，一个频率为 $\omega$ 的完美、无休止的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。
 
-这一洞见是解锁**傅里叶变换**的关键，这是一个处理信号的数学棱镜。就像玻璃[棱镜](@article_id:329462)将白光分解成其组成的彩虹色谱（频率）一样，完全由欧拉复指数构建的傅里叶变换可以处理*任何*信号——交响乐的复杂[声波](@article_id:353278)、来自遥远恒星的波动信号、数字照片中的数据——并将其分解为构成它的简单、纯粹的频率 。一个简单的[正弦波](@article_id:338691)，当通过傅里叶棱镜观察时，会显示它由两个尖峰组成，一个在其正频率处，一个在其[负频率](@article_id:327728)处，这是对其纯粹性质的美丽印证。这种分解过程不仅仅是一项分析练习；它是数据压缩（如MP3和JPEG文件，它们会丢弃不易察觉的频率）、[信号滤波](@article_id:302907)和现代通信背后的基本原理。每当你听数字音乐或连接Wi-Fi网络时，你都在享受欧拉宏伟公式带来的好处。
+这一洞见是解锁**傅里叶变换**的关键，这是一个处理信号的数学棱镜。就像玻璃[棱镜](@keyword=prisms|lang=zh-CN|style=Feynman)将白光分解成其组成的彩虹色谱（频率）一样，完全由欧拉复指数构建的傅里叶变换可以处理*任何*信号——交响乐的复杂[声波](@keyword=acoustic_waves|lang=zh-CN|style=Feynman)、来自遥远恒星的波动信号、数字照片中的数据——并将其分解为构成它的简单、纯粹的频率 [@problem_id:1744256]。一个简单的[正弦波](@keyword=sinusoid|lang=zh-CN|style=Feynman)，当通过傅里叶棱镜观察时，会显示它由两个尖峰组成，一个在其正频率处，一个在其[负频率](@keyword=negative_frequency|lang=zh-CN|style=Feynman)处，这是对其纯粹性质的美丽印证。这种分解过程不仅仅是一项分析练习；它是数据压缩（如MP3和JPEG文件，它们会丢弃不易察觉的频率）、[信号滤波](@keyword=signal_filtering|lang=zh-CN|style=Feynman)和现代通信背后的基本原理。每当你听数字音乐或连接Wi-Fi网络时，你都在享受欧拉宏伟公式带来的好处。
 
-但是，如果我们想预测一个其演化由[微分方程](@article_id:327891)控制的系统的未来呢？考虑一个正在冷却的物体、一颗环绕恒星的行星，或者一个随时间进行的[化学反应](@article_id:307389)。通常，这些方程太复杂，无法精确求解。再一次，欧拉提供了第一步，也许也是最直观的一步。**欧拉方法**是模拟未来的一个绝妙而简单的想法 。如果你知道一个系统当前的状态，以及它变化的规则（[微分方程](@article_id:327891)），你可以通过假设变化率在那个微小的时间间隔内保持不变，来向未来迈出一小步。然后，从你的新位置，你重新计算变化率，再迈出另一小步。重复这个过程，你就能描绘出系统未来轨迹的近似值。虽然现代模拟技术要复杂得多，但它们都是这一基本思想的后代。欧拉方法是计算科学的黎明，是第一台“如果……会怎样？”的机器。
+但是，如果我们想预测一个其演化由[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)控制的系统的未来呢？考虑一个正在冷却的物体、一颗环绕恒星的行星，或者一个随时间进行的[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)。通常，这些方程太复杂，无法精确求解。再一次，欧拉提供了第一步，也许也是最直观的一步。**欧拉方法**是模拟未来的一个绝妙而简单的想法 [@problem_id:2172240]。如果你知道一个系统当前的状态，以及它变化的规则（[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)），你可以通过假设变化率在那个微小的时间间隔内保持不变，来向未来迈出一小步。然后，从你的新位置，你重新计算变化率，再迈出另一小步。重复这个过程，你就能描绘出系统未来轨迹的近似值。虽然现代模拟技术要复杂得多，但它们都是这一基本思想的后代。欧拉方法是计算科学的黎明，是第一台“如果……会怎样？”的机器。
 
 ### 空间之形与现实之结
 
-欧拉的好奇心不仅限于物理或计算领域；它延伸到了形状与形态的本质。他著名的[多面体](@article_id:642202)公式 $V - E + F = 2$（其中 $V$ 是顶点数，$E$ 是棱数，$F$ 是面数），起初似乎只是对立方体和棱锥等物体的简单观察。但其真正的意义要深远得多。数字 $2$ 并非巧合；它是任何可以平滑地变形为球体的形状的一个基本属性，一个“[拓扑不变量](@article_id:298974)”。无论你有一个立方体、一个四面体，还是一个凹凸不平的土豆，只要它没有洞，这个关系就成立。它告诉我们一些关于物体本质上的“球性”的东西，这是一种不受拉伸和弯曲影响的属性。
+欧拉的好奇心不仅限于物理或计算领域；它延伸到了形状与形态的本质。他著名的[多面体](@keyword=polyhedra|lang=zh-CN|style=Feynman)公式 $V - E + F = 2$（其中 $V$ 是顶点数，$E$ 是棱数，$F$ 是面数），起初似乎只是对立方体和棱锥等物体的简单观察。但其真正的意义要深远得多。数字 $2$ 并非巧合；它是任何可以平滑地变形为球体的形状的一个基本属性，一个“[拓扑不变量](@keyword=topological_invariants|lang=zh-CN|style=Feynman)”。无论你有一个立方体、一个四面体，还是一个凹凸不平的土豆，只要它没有洞，这个关系就成立。它告诉我们一些关于物体本质上的“球性”的东西，这是一种不受拉伸和弯曲影响的属性。
 
-这个思想远远超出了简单[多面体](@article_id:642202)的范畴。它适用于任何在平面上绘制且没有边[交叉](@article_id:315017)的图 ，为[网络理论](@article_id:310447)提供了一个强大的工具。但当我们将其推广到**欧拉示性数** $\chi$ 的概念时，其真正的力量才得以显现。这个数，对于[曲面](@article_id:331153)而言计算为 $\chi = 2 - 2g$（其中 $g$ 是“环柄”或孔洞的数量，就像甜甜圈那样），成为描述一个形状拓扑结构的基本描述符。
+这个思想远远超出了简单[多面体](@keyword=polyhedra|lang=zh-CN|style=Feynman)的范畴。它适用于任何在平面上绘制且没有边[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)的图 [@problem_id:1527522]，为[网络理论](@keyword=network_theory|lang=zh-CN|style=Feynman)提供了一个强大的工具。但当我们将其推广到**欧拉示性数** $\chi$ 的概念时，其真正的力量才得以显现。这个数，对于[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)而言计算为 $\chi = 2 - 2g$（其中 $g$ 是“环柄”或孔洞的数量，就像甜甜圈那样），成为描述一个形状拓扑结构的基本描述符。
 
-考虑一下[纽结理论](@article_id:301603)这个深奥的世界，它研究缠结环圈的数学。为了理解一个复杂的纽结，数学家们常常构建一个“Seifert surface”——一个以该纽结为其唯一边界的[可定向曲面](@article_id:335110) 。人们可能会认为分析这个[曲面](@article_id:331153)会和分析纽结本身一样困难。然而，这个[曲面](@article_id:331153)的[欧拉示性数](@article_id:312926)——一个告诉我们其基本拓扑结构的数字——可以通过一个基于如何从纽结[图构建](@article_id:339529)[曲面](@article_id:331153)的惊人简单的规则来计算。这一个数字就提供了关于它所限定的纽结的深刻信息。一个始于数立方体顶点的想法，最终站在了理解复杂拓扑结构的前沿，其应用遍及从DNA螺旋到量子场论的各个领域。
+考虑一下[纽结理论](@keyword=knot_theory|lang=zh-CN|style=Feynman)这个深奥的世界，它研究缠结环圈的数学。为了理解一个复杂的纽结，数学家们常常构建一个“Seifert surface”——一个以该纽结为其唯一边界的[可定向曲面](@keyword=orientable_surfaces|lang=zh-CN|style=Feynman) [@problem_id:1077493]。人们可能会认为分析这个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)会和分析纽结本身一样困难。然而，这个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的[欧拉示性数](@keyword=euler_characteristic|lang=zh-CN|style=Feynman)——一个告诉我们其基本拓扑结构的数字——可以通过一个基于如何从纽结[图构建](@keyword=graph_construction|lang=zh-CN|style=Feynman)[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的惊人简单的规则来计算。这一个数字就提供了关于它所限定的纽结的深刻信息。一个始于数立方体顶点的想法，最终站在了理解复杂拓扑结构的前沿，其应用遍及从DNA螺旋到量子场论的各个领域。
 
-形状的局部细节与其全局拓扑之间的这种联系，在整个数学中最美丽的定理之一——**Gauss-Bonnet 定理**——中达到了顶峰 。它提出了一个会让你脊背发凉的论断：如果你取任意一个紧致[曲面](@article_id:331153)，并将每一点的局部曲率全部相加，总和*不是*一个随机数。它恰好是该[曲面](@article_id:331153)[欧拉示性数](@article_id:312926)的 $2\pi$ 倍。几何学（局部的弯曲）与拓扑学（全局的环柄和孔洞结构）紧密地联系在一起。一个始于欧拉简单多面体公式的思想，在这种局部与全局的深刻统一中找到了其终极表达，支配着从肥[皂膜](@article_id:331331)到宇宙本身万物的形状。
+形状的局部细节与其全局拓扑之间的这种联系，在整个数学中最美丽的定理之一——**Gauss-Bonnet 定理**——中达到了顶峰 [@problem_id:3027076]。它提出了一个会让你脊背发凉的论断：如果你取任意一个紧致[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，并将每一点的局部曲率全部相加，总和*不是*一个随机数。它恰好是该[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)[欧拉示性数](@keyword=euler_characteristic|lang=zh-CN|style=Feynman)的 $2\pi$ 倍。几何学（局部的弯曲）与拓扑学（全局的环柄和孔洞结构）紧密地联系在一起。一个始于欧拉简单多面体公式的思想，在这种局部与全局的深刻统一中找到了其终极表达，支配着从肥[皂膜](@keyword=soap_film|lang=zh-CN|style=Feynman)到宇宙本身万物的形状。
 
-### 宇宙回响：从函数到[黑洞](@article_id:318975)
+### 宇宙回响：从函数到[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)
 
-我们的旅程终结于人类知识的最远端，在[黑洞](@article_id:318975)的事件视界。在这里，在一个由广义[相对论](@article_id:327421)和量子力学的奇异法则所支配的领域，我们发现了欧拉工作最出人意料、最令人敬畏的回响。
+我们的旅程终结于人类知识的最远端，在[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)的事件视界。在这里，在一个由广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)和量子力学的奇异法则所支配的领域，我们发现了欧拉工作最出人意料、最令人敬畏的回响。
 
-在18世纪，欧拉研究了一类被称为“齐次函数”的函数。简而言之，这些函数在所有输入都乘以一个因子 $c$ 时，其输出会按一个可预测的 $c$ 的幂次进行缩放。对于这些函数，欧拉发现了一个优美的定理，将函数的总值与其偏导数的加权和联系起来。它是[热力学](@article_id:359663)数学机制的一个基本组成部分，它将广延量（如能量和体积）与强度量（如温度和压力）联系起来，并导出了 [Gibbs-Duhem 方程](@article_id:299722)。
+在18世纪，欧拉研究了一类被称为“齐次函数”的函数。简而言之，这些函数在所有输入都乘以一个因子 $c$ 时，其输出会按一个可预测的 $c$ 的幂次进行缩放。对于这些函数，欧拉发现了一个优美的定理，将函数的总值与其偏导数的加权和联系起来。它是[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)数学机制的一个基本组成部分，它将广延量（如能量和体积）与强度量（如温度和压力）联系起来，并导出了 [Gibbs-Duhem 方程](@keyword=gibbs_duhem_equation|lang=zh-CN|style=Feynman)。
 
-现在，快进到20世纪70年代。像 Bekenstein 和 Hawking 这样的物理学家发现，[黑洞](@article_id:318975)不仅仅是宇宙的吸尘器；它们是[热力学](@article_id:359663)物体。它们有质量（$M$）、熵（$S$）、角动量（$J$）和[电荷](@article_id:339187)（$Q$）。这些属性通过一条看起来与热力学第一定律完全一样的“[黑洞力学](@article_id:328466)第一定律”联系在一起：$dM = T dS + \Omega dJ + \Phi dQ$。此外，由于[爱因斯坦方程](@article_id:301214)中[黑洞解](@article_id:366390)的特定[标度性质](@article_id:337516)，它们还遵循一个积分质量公式，即 Smarr 公式：$M = 2TS + 2\Omega J + \Phi Q$。
+现在，快进到20世纪70年代。像 Bekenstein 和 Hawking 这样的物理学家发现，[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)不仅仅是宇宙的吸尘器；它们是[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)物体。它们有质量（$M$）、熵（$S$）、角动量（$J$）和[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)（$Q$）。这些属性通过一条看起来与热力学第一定律完全一样的“[黑洞力学](@keyword=black_hole_mechanics|lang=zh-CN|style=Feynman)第一定律”联系在一起：$dM = T dS + \Omega dJ + \Phi dQ$。此外，由于[爱因斯坦方程](@keyword=einstein_s_equations|lang=zh-CN|style=Feynman)中[黑洞解](@keyword=black_hole_solutions|lang=zh-CN|style=Feynman)的特定[标度性质](@keyword=scaling_property|lang=zh-CN|style=Feynman)，它们还遵循一个积分质量公式，即 Smarr 公式：$M = 2TS + 2\Omega J + \Phi Q$。
 
-当你把这两条定律——微分定律和积分定律——放在一起，看看它们如何相互关联时，你会发现它们遵循一个数学约束，其形式与欧拉为齐次函数发现的约束完全相同 。一个两个世纪前为理解函数[标度性质](@article_id:337516)而发展的纯数学片段，完美地描述了支配宇宙中最极端的[热力学](@article_id:359663)关系。
+当你把这两条定律——微分定律和积分定律——放在一起，看看它们如何相互关联时，你会发现它们遵循一个数学约束，其形式与欧拉为齐次函数发现的约束完全相同 [@problem_id:347185]。一个两个世纪前为理解函数[标度性质](@keyword=scaling_property|lang=zh-CN|style=Feynman)而发展的纯数学片段，完美地描述了支配宇宙中最极端的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)关系。
 
-对于科学的统一性和一位伟大头脑不朽的遗产，再没有比这更有力的证明了。从我们每天穿过的桥梁到连接我们世界的信号，从肥皂泡的形状到[黑洞](@article_id:318975)的[热力学](@article_id:359663)，欧拉的思想被编织在我们理解的织物中。他的工作是一个永恒的提醒：对数学之美的追求和对理解宇宙的探索，归根结底是同一段旅程。
+对于科学的统一性和一位伟大头脑不朽的遗产，再没有比这更有力的证明了。从我们每天穿过的桥梁到连接我们世界的信号，从肥皂泡的形状到[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)，欧拉的思想被编织在我们理解的织物中。他的工作是一个永恒的提醒：对数学之美的追求和对理解宇宙的探索，归根结底是同一段旅程。

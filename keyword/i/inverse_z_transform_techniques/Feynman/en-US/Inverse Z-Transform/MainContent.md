@@ -1,7 +1,7 @@
 ## Introduction
-The Z-transform is a mathematical tool that acts like a secret code, converting a [discrete-time signal](@article_id:274896)—a sequence of numbers unfolding over time—into a single, compact function. This function, existing in the abstract 'z-domain,' elegantly captures the signal's entire essence. However, to make practical sense of this information, we must be able to translate it back into the language of time. This reverse process, the inverse Z-transform, is the key to decoding a system's soul and predicting its behavior, from its stability to its response to any input. This article addresses the fundamental challenge of performing this translation accurately and efficiently.
+The Z-transform is a mathematical tool that acts like a secret code, converting a [discrete-time signal](@keyword=discrete_time_signal|lang=en-US|style=Feynman)—a sequence of numbers unfolding over time—into a single, compact function. This function, existing in the abstract 'z-domain,' elegantly captures the signal's entire essence. However, to make practical sense of this information, we must be able to translate it back into the language of time. This reverse process, the inverse Z-transform, is the key to decoding a system's soul and predicting its behavior, from its stability to its response to any input. This article addresses the fundamental challenge of performing this translation accurately and efficiently.
 
-This article serves as a guide to mastering these decoding techniques. First, in "Principles and Mechanisms," we will explore the foundational methods for finding the inverse Z-transform, from simple inspection to the powerful [partial fraction expansion](@article_id:264627) technique. We will also uncover the critical role of the Region of Convergence (ROC) in ensuring a unique and physically meaningful result. Then, in "Applications and Interdisciplinary Connections," we will see these principles in action, demonstrating how the inverse Z-transform is used to analyze system stability, simplify convolution, and design sophisticated control and signal processing systems.
+This article serves as a guide to mastering these decoding techniques. First, in "Principles and Mechanisms," we will explore the foundational methods for finding the inverse Z-transform, from simple inspection to the powerful [partial fraction expansion](@keyword=partial_fraction_expansion|lang=en-US|style=Feynman) technique. We will also uncover the critical role of the Region of Convergence (ROC) in ensuring a unique and physically meaningful result. Then, in "Applications and Interdisciplinary Connections," we will see these principles in action, demonstrating how the inverse Z-transform is used to analyze system stability, simplify convolution, and design sophisticated control and signal processing systems.
 
 ## Principles and Mechanisms
 
@@ -11,7 +11,7 @@ Our mission in this chapter is to become master decoders. We are given the symbo
 
 ### Decoding Simple Words: Inspection and Time Delays
 
-Let's start with the simplest possible message. Suppose we have a digital system, and after giving it a single, sharp "kick" at time zero (an impulse), we find that the transformed output is something beautifully simple :
+Let's start with the simplest possible message. Suppose we have a digital system, and after giving it a single, sharp "kick" at time zero (an impulse), we find that the transformed output is something beautifully simple [@problem_id:1763237]:
 $$
 X(z) = \alpha - \beta z^{-N} + \gamma z^{-2N}
 $$
@@ -19,7 +19,7 @@ How do we decode this? We must recall the fundamental definition of the Z-transf
 $$
 X(z) = \sum_{n=-\infty}^{\infty} x[n] z^{-n}
 $$
-This formula tells us that the value of the sequence at time $n$, which we call $x[n]$, is simply the coefficient of $z^{-n}$ in the [power series expansion](@article_id:272831) of $X(z)$. Our function $X(z)$ is already a [power series](@article_id:146342)! It's a very short one.
+This formula tells us that the value of the sequence at time $n$, which we call $x[n]$, is simply the coefficient of $z^{-n}$ in the [power series expansion](@keyword=power_series_expansion|lang=en-US|style=Feynman) of $X(z)$. Our function $X(z)$ is already a [power series](@keyword=power_series|lang=en-US|style=Feynman)! It's a very short one.
 
 A constant term like $\alpha$ is just $\alpha \cdot z^0$. So, the coefficient of $z^0$ is $\alpha$. This means the signal has a value of $\alpha$ at time $n=0$.
 
@@ -39,11 +39,11 @@ Of course, most systems are not so simple. They don't just produce a few isolate
 $$
 H(z) = \frac{\text{Numerator}(z)}{\text{Denominator}(z)}
 $$
-For instance, a simple system might have a transfer function like this :
+For instance, a simple system might have a transfer function like this [@problem_id:1731449]:
 $$
 H(z) = \frac{z}{(z-a)(z-b)}
 $$
-How do we decode something like this? The key is a wonderfully powerful technique from algebra called **[partial fraction expansion](@article_id:264627)**. The idea is to break down this complicated fraction into a sum of simpler fractions whose inverse transforms we already know. We know how to decode $\frac{z}{z-a}$ (it’s just $a^n u[n]$, a decaying exponential), so we try to write our complex function as a sum of these elementary forms:
+How do we decode something like this? The key is a wonderfully powerful technique from algebra called **[partial fraction expansion](@keyword=partial_fraction_expansion|lang=en-US|style=Feynman)**. The idea is to break down this complicated fraction into a sum of simpler fractions whose inverse transforms we already know. We know how to decode $\frac{z}{z-a}$ (it’s just $a^n u[n]$, a decaying exponential), so we try to write our complex function as a sum of these elementary forms:
 $$
 \frac{z}{(z-a)(z-b)} = A \frac{z}{z-a} + B \frac{z}{z-b}
 $$
@@ -51,11 +51,11 @@ By doing a little algebra, we can find the constants $A$ and $B$. In this case, 
 $$
 h[n] = \frac{1}{a-b} a^n u[n] + \frac{1}{b-a} b^n u[n] = \frac{a^n - b^n}{a-b} u[n]
 $$
-This is our Rosetta Stone. It allows us to translate a vast library of complex [rational functions](@article_id:153785) by breaking them down into a known alphabet of simple exponential sequences. Sometimes, a "pole" (a root of the denominator) and a "zero" (a root of the numerator) can cancel out, simplifying the problem before we even begin . This tells us that some complexities in the mathematical description might be hiding a simpler underlying physical reality.
+This is our Rosetta Stone. It allows us to translate a vast library of complex [rational functions](@keyword=rational_functions|lang=en-US|style=Feynman) by breaking them down into a known alphabet of simple exponential sequences. Sometimes, a "pole" (a root of the denominator) and a "zero" (a root of the numerator) can cancel out, simplifying the problem before we even begin [@problem_id:1586747]. This tells us that some complexities in the mathematical description might be hiding a simpler underlying physical reality.
 
 ### The Ambiguity and the Key: The Region of Convergence (ROC)
 
-Now we come to a fascinating and profound wrinkle in our story. Consider the simple function $X(z) = \frac{1}{1 - p z^{-1}}$. We might recognize this as the [sum of a geometric series](@article_id:157109):
+Now we come to a fascinating and profound wrinkle in our story. Consider the simple function $X(z) = \frac{1}{1 - p z^{-1}}$. We might recognize this as the [sum of a geometric series](@keyword=sum_of_a_geometric_series|lang=en-US|style=Feynman):
 $$
 \sum_{n=0}^{\infty} (p z^{-1})^n = 1 + p z^{-1} + p^2 z^{-2} + \dots
 $$
@@ -65,11 +65,11 @@ But what if we rewrote the same function differently?
 $$
 X(z) = \frac{1}{1 - p z^{-1}} = \frac{-z p^{-1}}{1 - z p^{-1}}
 $$
-This is also the [sum of a geometric series](@article_id:157109), but in powers of $z$:
+This is also the [sum of a geometric series](@keyword=sum_of_a_geometric_series|lang=en-US|style=Feynman), but in powers of $z$:
 $$
 -z p^{-1} \sum_{k=0}^{\infty} (z p^{-1})^k = -z p^{-1} - (z p^{-1})^2 - (z p^{-1})^3 - \dots
 $$
-This series converges if $|z p^{-1}| < 1$, or $|z| < |p|$. If we match the coefficients of $z^{-n}$ in this series, we find a completely different time signal: $x[n] = -p^n u[-n-1]$, an "anti-causal" or "left-sided" sequence that exists only for negative time and ends at $n=-1$ .
+This series converges if $|z p^{-1}| < 1$, or $|z| < |p|$. If we match the coefficients of $z^{-n}$ in this series, we find a completely different time signal: $x[n] = -p^n u[-n-1]$, an "anti-causal" or "left-sided" sequence that exists only for negative time and ends at $n=-1$ [@problem_id:1731685].
 
 This is extraordinary! The same function $X(z)$ can correspond to two completely different time sequences. Our dictionary is ambiguous. The key to resolving this ambiguity is that extra piece of information: the convergence condition. This condition defines a **Region of Convergence (ROC)** in the complex plane. The Z-transform is not just the function $X(z)$; it's the pair $\{X(z), \text{ROC}\}$. The ROC tells you *how* to decode the function.
 *   If the ROC is **outside** the circle of radius $|p|$, you get a **right-sided** sequence, $p^n u[n]$.
@@ -82,11 +82,11 @@ Why on Earth would we care about these different ROCs and sequence types? The an
 Here is the connection, and it is one of the most beautiful and useful results in all of signal processing:
 **An LTI system is stable if and only if the ROC of its transfer function includes the unit circle, $|z|=1$.**
 
-This single rule is the ultimate [arbiter](@article_id:172555). It resolves all ambiguity. Suppose we build a filter with the following transfer function, and we know from measurements that it is stable  :
+This single rule is the ultimate [arbiter](@keyword=arbiter|lang=en-US|style=Feynman). It resolves all ambiguity. Suppose we build a filter with the following transfer function, and we know from measurements that it is stable [@problem_id:1757255] [@problem_id:2757938]:
 $$
 H(z) = \frac{z}{(z-a)(z-b)}, \quad \text{where } |a| < 1 \text{ and } |b| > 1
 $$
-This system has two poles: one at $z=a$ (inside the unit circle) and one at $z=b$ (outside the unit circle). The poles divide the [z-plane](@article_id:264131) into three possible ROCs: $|z| < |a|$, $|a| < |z| < |b|$, and $|z| > |b|$. Which one is correct?
+This system has two poles: one at $z=a$ (inside the unit circle) and one at $z=b$ (outside the unit circle). The poles divide the [z-plane](@keyword=z_plane|lang=en-US|style=Feynman) into three possible ROCs: $|z| < |a|$, $|a| < |z| < |b|$, and $|z| > |b|$. Which one is correct?
 
 Since the system is stable, the ROC *must* contain the unit circle. The only region that satisfies this is the annulus $|a| < |z| < |b|$. Now we have our unique decoding instruction!
 *   For the term associated with the pole $a$, the ROC $|z| > |a|$ is satisfied. So, we must use the right-sided inverse.
@@ -96,7 +96,7 @@ The resulting impulse response is a unique **two-sided** sequence, part causal a
 
 ### Life on the Edge: Resonance and Marginal Stability
 
-What happens if a pole lies *exactly on* the unit circle? For example, consider a simple system with a pole at $z=-1$ . Its transfer function is $H(z) = \frac{z}{z+1}$. A [causal system](@article_id:267063) would have an ROC of $|z|>1$. This region approaches the unit circle but never quite includes it. Is this system stable?
+What happens if a pole lies *exactly on* the unit circle? For example, consider a simple system with a pole at $z=-1$ [@problem_id:2910037]. Its transfer function is $H(z) = \frac{z}{z+1}$. A [causal system](@keyword=causal_system|lang=en-US|style=Feynman) would have an ROC of $|z|>1$. This region approaches the unit circle but never quite includes it. Is this system stable?
 
 Let's look at its impulse response, which is $h[n] = (-1)^n u[n]$. This is a sequence that alternates between $+1$ and $-1$ forever. It never decays. Is it absolutely summable? The sum of its absolute values is $\sum |h[n]| = 1+1+1+\dots$, which clearly goes to infinity. So, by the formal definition, the system is **not BIBO stable**.
 
@@ -106,24 +106,24 @@ What happens if we feed it a bounded input that happens to match the pole's natu
 
 We have seen that poles are the roots of the denominator of $H(z)$ and that they define the boundaries of the ROC. But their location tells us much more. A pole is like a piece of DNA for the system's impulse response.
 
-Consider a stable system with a pair of complex-[conjugate poles](@article_id:165847), $p = re^{j\Omega_0}$ and $p^* = re^{-j\Omega_0}$, with $r < 1$ . When we perform the inverse Z-transform, these two poles conspire to create a real-valued signal. The result is a **damped sinusoid**:
+Consider a stable system with a pair of complex-[conjugate poles](@keyword=conjugate_poles|lang=en-US|style=Feynman), $p = re^{j\Omega_0}$ and $p^* = re^{-j\Omega_0}$, with $r < 1$ [@problem_id:2859311]. When we perform the inverse Z-transform, these two poles conspire to create a real-valued signal. The result is a **damped sinusoid**:
 $$
 h[n] = (\text{constant}) \times r^n \cos(n\Omega_0 + \phi) u[n]
 $$
 Look at this! The pole's location translates directly into the signal's behavior:
 *   The **radius** of the pole, $r$, determines the **damping or decay rate**. The term $r^n$ causes the signal to shrink over time. The closer $r$ is to 1, the slower the decay (like a bell with a long ring). The closer $r$ is to 0, the faster the decay (like a dull thud).
-*   The **angle** of the pole, $\Omega_0$, determines the **frequency of oscillation**. The signal will oscillate with an angular frequency of $\Omega_0$ [radians per sample](@article_id:269041).
+*   The **angle** of the pole, $\Omega_0$, determines the **frequency of oscillation**. The signal will oscillate with an angular frequency of $\Omega_0$ [radians per sample](@keyword=radians_per_sample|lang=en-US|style=Feynman).
 
-This is the essence of [filter design](@article_id:265869). Want to create a filter that resonates at a particular frequency? You place a pair of poles near the unit circle at the angle corresponding to that frequency. The entire art of designing IIR (Infinite Impulse Response) filters is the art of placing [poles and zeros](@article_id:261963) in the z-plane to sculpt the desired system behavior.
+This is the essence of [filter design](@keyword=filter_design|lang=en-US|style=Feynman). Want to create a filter that resonates at a particular frequency? You place a pair of poles near the unit circle at the angle corresponding to that frequency. The entire art of designing IIR (Infinite Impulse Response) filters is the art of placing [poles and zeros](@keyword=poles_and_zeros|lang=en-US|style=Feynman) in the z-plane to sculpt the desired system behavior.
 
 ### A Touch of Calculus: The Beauty of Repeated Poles
 
 Finally, let's explore one last, elegant idea. We saw that two distinct poles at $a$ and $b$ give a response like $\frac{a^n-b^n}{a-b}$. What happens if the poles are not distinct? What if we have a repeated, or multiple-order, pole?
 
-We could look up a formula for this. But a far more beautiful way to understand it is to see it as a limiting process. Let's start with our result for three distinct poles and see what happens as we let them all slide together toward the same point, $a$ .
+We could look up a formula for this. But a far more beautiful way to understand it is to see it as a limiting process. Let's start with our result for three distinct poles and see what happens as we let them all slide together toward the same point, $a$ [@problem_id:1731450].
 $$
 x[n] \quad \xrightarrow{b \to a, c \to a} \quad y[n]
 $$
-The expression for $x[n]$ involves terms like $\frac{1}{(a-b)(a-c)}$. As $b$ and $c$ approach $a$, this looks like a disaster—division by zero! But the numerator also goes to zero, and the whole expression takes on a specific, non-trivial limit. This limit is intimately related to the derivative. The expression for a second-order pole involves the first derivative of the [exponential function](@article_id:160923) $a^n$ with respect to the base $a$. For a third-order pole, it involves the second derivative.
+The expression for $x[n]$ involves terms like $\frac{1}{(a-b)(a-c)}$. As $b$ and $c$ approach $a$, this looks like a disaster—division by zero! But the numerator also goes to zero, and the whole expression takes on a specific, non-trivial limit. This limit is intimately related to the derivative. The expression for a second-order pole involves the first derivative of the [exponential function](@keyword=exponential_function|lang=en-US|style=Feynman) $a^n$ with respect to the base $a$. For a third-order pole, it involves the second derivative.
 
-The result is that where a single pole at $a$ gave us $a^n$, a double pole gives us a term like $n \cdot a^n$, and a triple pole gives a response involving a quadratic factor in $n$. The repetition of a pole in the algebraic domain introduces a polynomial-in-$n$ factor in the time domain. This emergence of [polynomial growth](@article_id:176592) from coalescing exponentials is a deep and beautiful connection between the discrete world of signals, the algebra of polynomials, and the continuous world of calculus. It's yet another example of the profound unity that underlies the mathematical description of our world.
+The result is that where a single pole at $a$ gave us $a^n$, a double pole gives us a term like $n \cdot a^n$, and a triple pole gives a response involving a quadratic factor in $n$. The repetition of a pole in the algebraic domain introduces a polynomial-in-$n$ factor in the time domain. This emergence of [polynomial growth](@keyword=polynomial_growth|lang=en-US|style=Feynman) from coalescing exponentials is a deep and beautiful connection between the discrete world of signals, the algebra of polynomials, and the continuous world of calculus. It's yet another example of the profound unity that underlies the mathematical description of our world.

@@ -7,7 +7,7 @@ This article guides you through the essential theory and powerful applications o
 
 Imagine you're trying to describe the world. Some things you describe by counting, and others by measuring. You can count the number of planets in our solar system (it's eight!), the number of people in a room, or the number of eggs in a bird's nest. These are whole numbers, indivisible chunks. You can't have 2.7 people or 3.14 eggs. But what about the time it takes for you to read this paragraph? Or the exact weight of one of those eggs? These quantities don't come in neat packages. They can take on any value within a continuous range. You could spend 30.5 seconds, or 30.51 seconds, or 30.5128... seconds reading. The precision is limited only by your measuring device.
 
-This fundamental difference—between counting and measuring—is at the very heart of how we [model uncertainty](@article_id:265045) in science. It gives rise to two families of random variables: **discrete** and **continuous**. After our introduction, it's time to roll up our sleeves and understand what truly makes these concepts tick.
+This fundamental difference—between counting and measuring—is at the very heart of how we [model uncertainty](@keyword=model_uncertainty|lang=en-US|style=Feynman) in science. It gives rise to two families of random variables: **discrete** and **continuous**. After our introduction, it's time to roll up our sleeves and understand what truly makes these concepts tick.
 
 ### The Art of Counting: Discrete vs. Continuous
 
@@ -15,14 +15,14 @@ A random variable is **discrete** if you can list all its possible outcomes. The
 
 A random variable is **continuous** if its possible values form an unbroken interval. The exact time it takes for a bird to return to its nest or the precise mass of an egg are classic examples. Between any two possible times, say 10:00 AM and 10:01 AM, there are infinitely many other possible times. You can't list them all.
 
-Let's consider an ecologist studying a bird's nest .
+Let's consider an ecologist studying a bird's nest [@problem_id:1395483].
 - The number of eggs, $X_1$, is **discrete**. It can be $0, 1, 2, \dots$.
-- An [indicator variable](@article_id:203893), $X_4$, for whether the tree is deciduous (1) or coniferous (0), is also **discrete**. Its only possible values are 0 and 1.
-- But the [exact mass](@article_id:199234) of an egg, $X_2$, or the time elapsed until a parent returns, $X_3$, are both **continuous**. They are measurements from a continuum.
+- An [indicator variable](@keyword=indicator_variable|lang=en-US|style=Feynman), $X_4$, for whether the tree is deciduous (1) or coniferous (0), is also **discrete**. Its only possible values are 0 and 1.
+- But the [exact mass](@keyword=exact_mass|lang=en-US|style=Feynman) of an egg, $X_2$, or the time elapsed until a parent returns, $X_3$, are both **continuous**. They are measurements from a continuum.
 
-A subtle but important point arises when we think about things like proportions. In a mock election with $N$ students, what about the *proportion* of students who voted for Candidate A? . This is a fraction, $X_3 = \frac{\text{number of votes}}{N}$. You might think fractions imply continuity, but not here! Since the number of votes can only be $0, 1, 2, \dots, N$, the proportion can only take on the specific values $\frac{0}{N}, \frac{1}{N}, \frac{2}{N}, \dots, \frac{N}{N}$. This is a finite, countable list. So, the proportion is a **discrete** variable.
+A subtle but important point arises when we think about things like proportions. In a mock election with $N$ students, what about the *proportion* of students who voted for Candidate A? [@problem_id:1356022]. This is a fraction, $X_3 = \frac{\text{number of votes}}{N}$. You might think fractions imply continuity, but not here! Since the number of votes can only be $0, 1, 2, \dots, N$, the proportion can only take on the specific values $\frac{0}{N}, \frac{1}{N}, \frac{2}{N}, \dots, \frac{N}{N}$. This is a finite, countable list. So, the proportion is a **discrete** variable.
 
-This brings us to a crucial philosophical point about science itself. Is the length of a blade of grass truly continuous? In our mathematical models, yes. We might say its length $L_1$ can be any real number between, say, 5 cm and 10 cm. But in the real world, when we go to measure it, we use a ruler or a digital caliper that has a fixed precision . Our measurement, $L_2$, might be rounded to the nearest millimeter. The possible values we can record are then $5.0, 5.1, 5.2, \dots, 10.0$ cm. This set of measurements is discrete! So, the choice of whether to model a variable as discrete or continuous often depends on our purpose. Are we building an idealized theoretical model ($L_1$, continuous) or a practical measurement model ($L_2$, discrete)? Understanding this distinction is the first step toward becoming a master modeler.
+This brings us to a crucial philosophical point about science itself. Is the length of a blade of grass truly continuous? In our mathematical models, yes. We might say its length $L_1$ can be any real number between, say, 5 cm and 10 cm. But in the real world, when we go to measure it, we use a ruler or a digital caliper that has a fixed precision [@problem_id:1355995]. Our measurement, $L_2$, might be rounded to the nearest millimeter. The possible values we can record are then $5.0, 5.1, 5.2, \dots, 10.0$ cm. This set of measurements is discrete! So, the choice of whether to model a variable as discrete or continuous often depends on our purpose. Are we building an idealized theoretical model ($L_1$, continuous) or a practical measurement model ($L_2$, discrete)? Understanding this distinction is the first step toward becoming a master modeler.
 
 ### The Map of Possibility: Probability Mass Functions
 
@@ -35,7 +35,7 @@ Imagine a variable $X$ that can only be $-2$, $1$, or $4$. Its PMF might be:
 
 This PMF tells us everything about the random nature of $X$. There's a 25% chance of landing on -2, a 40% chance of landing on 1, and a 35% chance of landing on 4. A PMF has one unbreakable rule: the sum of all the probabilities for all possible outcomes must be exactly 1. Our example holds up: $0.25 + 0.40 + 0.35 = 1$. This makes sense; the variable *has* to take one of its possible values, so the total probability must be 100%.
 
-Sometimes, the PMF is defined in terms of a parameter, and we must use this rule to make sense of it . Suppose the probability of a variable taking an integer value $k$ from 1 to 5 is $p_X(k) = c k^2$ for some constant $c$. To find $c$, we enforce the rule:
+Sometimes, the PMF is defined in terms of a parameter, and we must use this rule to make sense of it [@problem_id:1948900]. Suppose the probability of a variable taking an integer value $k$ from 1 to 5 is $p_X(k) = c k^2$ for some constant $c$. To find $c$, we enforce the rule:
 $$ \sum_{k=1}^{5} p_X(k) = \sum_{k=1}^{5} c k^2 = c(1^2 + 2^2 + 3^2 + 4^2 + 5^2) = c(55) = 1 $$
 This immediately tells us that $c$ must be $\frac{1}{55}$. Without this rule, the PMF would be incomplete. Now we have a complete "map" for this variable. For instance, the probability of $X$ being 3 is $p_X(3) = \frac{1}{55} \cdot 3^2 = \frac{9}{55}$.
 
@@ -43,13 +43,13 @@ This immediately tells us that $c$ must be $\frac{1}{55}$. Without this rule, th
 
 The PMF is one way to see the landscape, but there's another, equally powerful perspective: the **Cumulative Distribution Function (CDF)**, written as $F_X(x) = P(X \le x)$. Instead of asking "what's the probability of being *exactly* at $x$?", the CDF asks, "what's the probability of being at $x$ *or anywhere to its left* on the number line?" It accumulates probability as we move from left to right.
 
-For a discrete variable, the CDF has a beautiful and distinctive shape: a staircase. Let's build one. Using our variable with values $\{-2, 1, 4\}$ :
+For a discrete variable, the CDF has a beautiful and distinctive shape: a staircase. Let's build one. Using our variable with values $\{-2, 1, 4\}$ [@problem_id:1948941]:
 - For any $x < -2$, there are no possible values less than or equal to $x$. So, $F_X(x) = 0$.
 - When we reach -2, we suddenly gain a probability mass of $0.25$. So, for $-2 \le x < 1$, the CDF is constant at $F_X(x) = 0.25$.
 - When we reach 1, we jump up again by the probability of 1, which is $0.40$. So for $1 \le x < 4$, the CDF is $F_X(x) = 0.25 + 0.40 = 0.65$. Notice that $F_X(1) = 0.65$ but $F_X(0.999) = 0.25$. The jump happens precisely at the value.
 - Finally, at 4, we jump by the last bit of probability, $0.35$. For any $x \ge 4$, the CDF is $F_X(x) = 0.65 + 0.35 = 1$. It will stay at 1 forever, because we've accumulated all the probability there is.
 
-This staircase structure is a defining feature of discrete variables. And here's the magic: the PMF and CDF are two sides of the same coin. If you have the PMF, you can build the CDF by summing. If you have the CDF, you can find the PMF by looking at the *jumps* in the staircase . The probability of any specific value $k$, $p_X(k)$, is simply the height of the jump at that point. Mathematically, $p_X(k) = F_X(k) - F_X(k^-)$, where $F_X(k^-)$ is the value of the CDF just to the left of $k$.
+This staircase structure is a defining feature of discrete variables. And here's the magic: the PMF and CDF are two sides of the same coin. If you have the PMF, you can build the CDF by summing. If you have the CDF, you can find the PMF by looking at the *jumps* in the staircase [@problem_id:1294981]. The probability of any specific value $k$, $p_X(k)$, is simply the height of the jump at that point. Mathematically, $p_X(k) = F_X(k) - F_X(k^-)$, where $F_X(k^-)$ is the value of the CDF just to the left of $k$.
 
 ### Finding the Balance Point: Expected Value
 
@@ -61,7 +61,7 @@ The formula captures this perfectly: it's a weighted average.
 $$ E[X] = \sum_{k} k \cdot p_X(k) $$
 You take each value $k$, weight it by its probability, and sum them all up.
 
-For a simple case, consider a prize giveaway that randomly picks an integer from $1$ to $n$, with each having equal probability $\frac{1}{n}$ . What's the expected prize tier?
+For a simple case, consider a prize giveaway that randomly picks an integer from $1$ to $n$, with each having equal probability $\frac{1}{n}$ [@problem_id:1376522]. What's the expected prize tier?
 $$ E[X] = \sum_{k=1}^{n} k \cdot \frac{1}{n} = \frac{1}{n} (1 + 2 + \dots + n) $$
 Using the famous formula for the sum of the first $n$ integers, this becomes:
 $$ E[X] = \frac{1}{n} \cdot \frac{n(n+1)}{2} = \frac{n+1}{2} $$
@@ -75,7 +75,7 @@ The variance is defined as the expected (or average) *squared* distance from the
 $$ \text{Var}(X) = E[(X - E[X])^2] $$
 Why squared? Squaring does two things: it makes all deviations positive (we don't want negative and positive deviations to cancel out), and it heavily penalizes values that are far from the mean. A more practical formula for calculation, derived from the definition, is often used:
 $$ \text{Var}(X) = E[X^2] - (E[X])^2 $$
-This says the variance is the "mean of the squares" minus the "square of the mean." Let's see this in action . For a variable with probabilities depending on a parameter $a$, we first calculated the mean to be $E[X] = 3 - 4a$. Next, we'd calculate the mean of the squares, $E[X^2] = \sum k^2 p_X(k)$, which came out to $9 - 18a$. Putting it all together:
+This says the variance is the "mean of the squares" minus the "square of the mean." Let's see this in action [@problem_id:12233]. For a variable with probabilities depending on a parameter $a$, we first calculated the mean to be $E[X] = 3 - 4a$. Next, we'd calculate the mean of the squares, $E[X^2] = \sum k^2 p_X(k)$, which came out to $9 - 18a$. Putting it all together:
 $$ \text{Var}(X) = (9 - 18a) - (3 - 4a)^2 = (9-18a) - (9 - 24a + 16a^2) = 6a - 16a^2 $$
 The variance gives us a single number that quantifies the spread. A small variance means the outcomes are predictable and close to the average; a large variance means they are unpredictable and scattered all over the place.
 
@@ -87,7 +87,7 @@ The MGF is defined as $M_X(t) = E[e^{tX}]$. For a discrete variable, this is:
 $$ M_X(t) = \sum_k p_X(k) e^{tk} $$
 This might look strange, but it's an incredibly powerful idea. Think of it as a "transform" that turns a set of probabilities into a function. The magic of the MGF lies in its **uniqueness property**: every distribution has a unique MGF, and every MGF corresponds to just one distribution. It's like a universal fingerprint.
 
-If someone hands you the MGF, you can immediately identify the variable's PMF . Suppose you're given:
+If someone hands you the MGF, you can immediately identify the variable's PMF [@problem_id:1409009]. Suppose you're given:
 
 $$ M_X(t) = 0.1 e^{-t} + 0.5 e^{2t} + 0.4 e^{3t} $$
 
@@ -101,13 +101,13 @@ All the information was hiding in plain sight within this one function! (And why
 
 We began by drawing a sharp line between the discrete (counting) and the continuous (measuring). But in physics and advanced mathematics, it's often fruitful to find a deeper theory that unifies seemingly different concepts. Is there a way to view discrete and continuous variables under a single, unified framework? The answer is a resounding yes, and it's beautiful.
 
-Let's perform a thought experiment . Consider the simplest non-trivial discrete variable: $X$ is $-1$ or $1$, each with probability $\frac{1}{2}$. Its **characteristic function** (a close cousin of the MGF that uses complex numbers, $\phi_X(t) = E[e^{itX}]$) is simply $\phi_X(t) = \frac{1}{2}e^{-it} + \frac{1}{2}e^{it} = \cos(t)$.
+Let's perform a thought experiment [@problem_id:1399524]. Consider the simplest non-trivial discrete variable: $X$ is $-1$ or $1$, each with probability $\frac{1}{2}$. Its **characteristic function** (a close cousin of the MGF that uses complex numbers, $\phi_X(t) = E[e^{itX}]$) is simply $\phi_X(t) = \frac{1}{2}e^{-it} + \frac{1}{2}e^{it} = \cos(t)$.
 
-Now, for continuous variables, there is a powerful tool called the inversion formula, which recovers the probability density function (PDF) from the [characteristic function](@article_id:141220) via an integral. What happens if we are bold and apply this continuous formula to our discrete variable's characteristic function?
+Now, for continuous variables, there is a powerful tool called the inversion formula, which recovers the probability density function (PDF) from the [characteristic function](@keyword=characteristic_function|lang=en-US|style=Feynman) via an integral. What happens if we are bold and apply this continuous formula to our discrete variable's characteristic function?
 $$ f_X(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{-itx} \cos(t) dt $$
 When you work through this integral (using the magic of Euler's formula and Fourier transforms), you get a truly remarkable result:
 $$ f_X(x) = \frac{1}{2}\delta(x-1) + \frac{1}{2}\delta(x+1) $$
-What is this $\delta(x)$ thing? It's the **Dirac delta function**, a "[generalized function](@article_id:182354)" beloved by physicists. It's zero everywhere except at $x=0$, where it is infinitely tall, yet it is constructed to have a total area of exactly 1.
+What is this $\delta(x)$ thing? It's the **Dirac delta function**, a "[generalized function](@keyword=generalized_function|lang=en-US|style=Feynman)" beloved by physicists. It's zero everywhere except at $x=0$, where it is infinitely tall, yet it is constructed to have a total area of exactly 1.
 
 Our result is a sum of two delta functions. One is an infinitely tall spike at $x=1$, scaled by a factor of $\frac{1}{2}$. The other is an identical spike at $x=-1$, also scaled by $\frac{1}{2}$. This is a picture of our PMF! The generalized "density" is zero everywhere, except at the discrete points $-1$ and $1$, where it is infinitely concentrated. The "area" of each spike corresponds to the probability mass at that point.
 

@@ -1,71 +1,71 @@
 ## 引言
-在标准的量子力学图景中，角动量是一个我们熟悉且严格的概念，它被量子化为离散的整数步长，定义了原子的结构。然而，这个框架对稳定的束缚系统与高能碰撞中产生的瞬时、短寿命的“共振”现象做了明显的区分。这就引出了一个根本性的问题：这些现象是真的彼此独立，还是同一枚硬币的两面？本文将探讨[复角动量](@article_id:383163)这一革命性理论，它打破了整数的限制，揭示了一种深刻的统一性。首先，在“原理与机制”一章中，我们将深入探讨[Regge理论](@article_id:376901)的核心思想，理解束缚态和共振态如何被统一到[复平面](@article_id:318633)上的连续“Regge轨道”中。随后，在“应用与跨学科联系”一章中，我们将见证这一概念的非凡力量，追溯其从粒子物理学的亚原子世界到[黑洞](@article_id:318975)动力学的宇宙尺度的影响。
+在标准的量子力学图景中，角动量是一个我们熟悉且严格的概念，它被量子化为离散的整数步长，定义了原子的结构。然而，这个框架对稳定的束缚系统与高能碰撞中产生的瞬时、短寿命的“共振”现象做了明显的区分。这就引出了一个根本性的问题：这些现象是真的彼此独立，还是同一枚硬币的两面？本文将探讨[复角动量](@keyword=complex_angular_momentum|lang=zh-CN|style=Feynman)这一革命性理论，它打破了整数的限制，揭示了一种深刻的统一性。首先，在“原理与机制”一章中，我们将深入探讨[Regge理论](@keyword=regge_theory|lang=zh-CN|style=Feynman)的核心思想，理解束缚态和共振态如何被统一到[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上的连续“Regge轨道”中。随后，在“应用与跨学科联系”一章中，我们将见证这一概念的非凡力量，追溯其从粒子物理学的亚原子世界到[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)动力学的宇宙尺度的影响。
 
 ## 原理与机制
 
-在我们此前的探索中，已经暗示了一个革命性的想法——它打破了量子力学中一条我们所熟知的“规则”，并由此揭示了粒子与波世界中一种隐藏而优美的统一性。现在，让我们卷起袖子，深入探究这一想法背后的原理：[复角动量](@article_id:383163)理论。
+在我们此前的探索中，已经暗示了一个革命性的想法——它打破了量子力学中一条我们所熟知的“规则”，并由此揭示了粒子与波世界中一种隐藏而优美的统一性。现在，让我们卷起袖子，深入探究这一想法背后的原理：[复角动量](@keyword=complex_angular_momentum|lang=zh-CN|style=Feynman)理论。
 
 ### 一个大胆的想法：复数域中的角动量
 
-如果你学习过[原子量](@article_id:305460)子力学，你一定知道一个基本事实：角动量是**量子化**的。就像梯子的阶梯一样，它只能取离散的值，我们用整数[量子数](@article_id:305982) $l=0, 1, 2, \dots$ 来标记。这种量子化现象造就了原子轨道的刚性结构——即我们熟悉的s、p、d、f壳层，它们构成了所有[化学反应](@article_id:307389)的基础。这似乎是物理学中如任何定律一样坚实且不容置疑的。
+如果你学习过[原子量](@keyword=atomic_weight|lang=zh-CN|style=Feynman)子力学，你一定知道一个基本事实：角动量是**量子化**的。就像梯子的阶梯一样，它只能取离散的值，我们用整数[量子数](@keyword=quantum_numbers|lang=zh-CN|style=Feynman) $l=0, 1, 2, \dots$ 来标记。这种量子化现象造就了原子轨道的刚性结构——即我们熟悉的s、p、d、f壳层，它们构成了所有[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的基础。这似乎是物理学中如任何定律一样坚实且不容置疑的。
 
-但当一位物理学家提出一个孩童般的问题时会发生什么呢？“为什么？”或者，一个更好的问题：“如果不是这样呢？”这正是Tullio Regge的精神。在20世纪50年代末，他提议将[角动量量子数](@article_id:323275) $l$ 不再视为一个固定的整数，而是一个连续、甚至**复数**的变量。
+但当一位物理学家提出一个孩童般的问题时会发生什么呢？“为什么？”或者，一个更好的问题：“如果不是这样呢？”这正是Tullio Regge的精神。在20世纪50年代末，他提议将[角动量量子数](@keyword=angular_momentum_quantum_number|lang=zh-CN|style=Feynman) $l$ 不再视为一个固定的整数，而是一个连续、甚至**复数**的变量。
 
-这听起来可能像一个奇怪的数学游戏，有点像问当 $n$ 不是整数时 $n!$ 是什么。然而，提出那个问题的数学家们发现了优美的伽马函数，一个在科学和工程领域不可或缺的工具。同样，Regge的想象力飞跃并不仅仅是一次形式上的练习。通过允许 $l$ 偏离整数这条“康庄大道”，去探索整个[复平面](@article_id:318633)，他揭示了那些一直以来看起来完全分离的物理现象之间惊人的联系。
+这听起来可能像一个奇怪的数学游戏，有点像问当 $n$ 不是整数时 $n!$ 是什么。然而，提出那个问题的数学家们发现了优美的伽马函数，一个在科学和工程领域不可或缺的工具。同样，Regge的想象力飞跃并不仅仅是一次形式上的练习。通过允许 $l$ 偏离整数这条“康庄大道”，去探索整个[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)，他揭示了那些一直以来看起来完全分离的物理现象之间惊人的联系。
 
-### 伟大的统一：[束缚态与共振](@article_id:298611)态
+### 伟大的统一：[束缚态与共振](@keyword=bound_states_and_resonances|lang=zh-CN|style=Feynman)态
 
-要理解这种联系，我们首先需要谈谈物理学家如何描述相互作用。当一个粒子从一个势场散射时，其行为被编码在一个称为**S矩阵**的数学对象中。你可以将S矩阵看作一本宏大的规则手册，它能告诉你任何给定相互作用的结果。有时候，在某些特定的能量或角动量值下，[S矩阵](@article_id:297143)会“发散”——它有一个**极点**。极点是一个无限响应的点，一个系统在此“歌唱”的特殊共振频率。
+要理解这种联系，我们首先需要谈谈物理学家如何描述相互作用。当一个粒子从一个势场散射时，其行为被编码在一个称为**S矩阵**的数学对象中。你可以将S矩阵看作一本宏大的规则手册，它能告诉你任何给定相互作用的结果。有时候，在某些特定的能量或角动量值下，[S矩阵](@keyword=s_matrix|lang=zh-CN|style=Feynman)会“发散”——它有一个**极点**。极点是一个无限响应的点，一个系统在此“歌唱”的特殊共振频率。
 
 物理学家早就知道两种特殊的状态：
 
-1.  **束缚态：** 这些是由力束缚在一起的稳定粒子，比如氢原子中的电子和质子。它们表现为[S矩阵](@article_id:297143)在*负*能量（$E<0$）和*物理的*、整数角动量值（$l=0, 1, 2, \dots$）处的极点。
+1.  **束缚态：** 这些是由力束缚在一起的稳定粒子，比如氢原子中的电子和质子。它们表现为[S矩阵](@keyword=s_matrix|lang=zh-CN|style=Feynman)在*负*能量（$E<0$）和*物理的*、整数角动量值（$l=0, 1, 2, \dots$）处的极点。
 
-2.  **共振态：** 这些是在高能碰撞中产生的、寿命极短的粒子，它们几乎瞬间衰变。可以把它们想象成一个“几乎”形成[束缚态](@article_id:296956)但无法维持的系统。它们对应于略微*偏离*实能量轴的极点，或者从另一个角度看，出现在*正*能量（$E>0$）和整数$l$处。
+2.  **共振态：** 这些是在高能碰撞中产生的、寿命极短的粒子，它们几乎瞬间衰变。可以把它们想象成一个“几乎”形成[束缚态](@keyword=bound_states|lang=zh-CN|style=Feynman)但无法维持的系统。它们对应于略微*偏离*实能量轴的极点，或者从另一个角度看，出现在*正*能量（$E>0$）和整数$l$处。
 
-几十年来，这两种现象被视为截然不同。一个粒子要么处于稳定的[束缚态](@article_id:296956)，要么是一个稍纵即逝的共振态。Regge的想法改变了一切。他说：我们不要在固定的整数$l$处寻找[S矩阵的极点](@article_id:372247)，而是在整个复$l$平面中寻找。当我们这样做时，我们发现极点的位置（我们称之为$\alpha$）依赖于能量$E$。当我们连续改变能量时，极点会移动，在[复平面](@article_id:318633)上描绘出一条连续的路径。这条路径 $l = \alpha(E)$ 就是一条**Regge轨道**。
+几十年来，这两种现象被视为截然不同。一个粒子要么处于稳定的[束缚态](@keyword=bound_states|lang=zh-CN|style=Feynman)，要么是一个稍纵即逝的共振态。Regge的想法改变了一切。他说：我们不要在固定的整数$l$处寻找[S矩阵的极点](@keyword=poles_of_s_matrix|lang=zh-CN|style=Feynman)，而是在整个复$l$平面中寻找。当我们这样做时，我们发现极点的位置（我们称之为$\alpha$）依赖于能量$E$。当我们连续改变能量时，极点会移动，在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上描绘出一条连续的路径。这条路径 $l = \alpha(E)$ 就是一条**Regge轨道**。
 
-突然之间，[束缚态](@article_id:296956)和共振态不再是独立的类别。它们只是*同一条*轨道上的不同点！
+突然之间，[束缚态](@keyword=bound_states|lang=zh-CN|style=Feynman)和共振态不再是独立的类别。它们只是*同一条*轨道上的不同点！
 
-想象一条连续的曲线$\alpha(E)$，它优雅地描绘出一个粒子家族的完整生命史。
+想象一条连续的曲线$\alpha(E)$，它优雅地描绘出一个粒子家族的完整生命史[@problem_id:2117433]。
 *   在某个负能量$E_B < 0$处，轨道可能穿过一个整数，比如$\alpha(E_B) = 0$。这就是我们的s波**束缚态**！
 *   当我们把能量增加到正值区域$E>0$时，轨道继续它的旅程。在某个能量$E_R > 0$处，轨道的*实部*可能穿过下一个整数，比如$\text{Re}[\alpha(E_R)]=1$。这是一个p波**共振态**！
-*   但虚部又如何呢？对于正能量，轨道会离开[实轴](@article_id:308695)，并获得一个[虚部](@article_id:370770)$\text{Im}[\alpha(E)] > 0$。这不仅仅是一个数学上的巧合，它具有深刻的物理意义。角动量的[虚部](@article_id:370770)决定了不稳定性，即共振态的**[衰变宽度](@article_id:314258)**$\Gamma$。虚部越大，意味着共振衰变得越快。一个真正稳定的粒子会处在[实轴](@article_id:308695)上，其寿命为无穷大（$\Gamma=0$）。角动量的“虚”性直接衡量了粒子的“瞬逝”性。
+*   但虚部又如何呢？对于正能量，轨道会离开[实轴](@keyword=real_line|lang=zh-CN|style=Feynman)，并获得一个[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)$\text{Im}[\alpha(E)] > 0$。这不仅仅是一个数学上的巧合，它具有深刻的物理意义。角动量的[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)决定了不稳定性，即共振态的**[衰变宽度](@keyword=decay_width|lang=zh-CN|style=Feynman)**$\Gamma$。虚部越大，意味着共振衰变得越快。一个真正稳定的粒子会处在[实轴](@keyword=real_line|lang=zh-CN|style=Feynman)上，其寿命为无穷大（$\Gamma=0$）。角动量的“虚”性直接衡量了粒子的“瞬逝”性。
 
-这就是该理论的核心之美：一个单一、平滑的函数$\alpha(E)$将[束缚态](@article_id:296956)的静态世界与共振态的动态世界统一起来，将它们解释为同一枚硬币的两面。
+这就是该理论的核心之美：一个单一、平滑的函数$\alpha(E)$将[束缚态](@keyword=bound_states|lang=zh-CN|style=Feynman)的静态世界与共振态的动态世界统一起来，将它们解释为同一枚硬币的两面。
 
 ### 追踪路径：势如何塑造轨道
 
 这些轨道并非黑板上随意的涂鸦。它们是由起作用的力——即支配相互作用的**势**——严格决定的。通过求解薛定谔方程，我们原则上可以为任何给定的势计算出Regge轨道。
 
 让我们看几个例子来理解它是如何工作的。
-*   考虑一个简单的吸引性[方势阱](@article_id:319225)。我们可以解出领头[Regge极点](@article_id:378114)在零能量时的位置$\alpha(0)$。根据势的强度，我们可能会发现$\alpha(0)$根本不是一个整数！例如，对于某个特定的势强度，我们可能得到$\alpha(0) = 4/3$ 。这具体地表明，在这种广义的观点下，角动量不再局限于整数值。
+*   考虑一个简单的吸引性[方势阱](@keyword=square_well_potential|lang=zh-CN|style=Feynman)。我们可以解出领头[Regge极点](@keyword=regge_poles|lang=zh-CN|style=Feynman)在零能量时的位置$\alpha(0)$。根据势的强度，我们可能会发现$\alpha(0)$根本不是一个整数！例如，对于某个特定的势强度，我们可能得到$\alpha(0) = 4/3$ [@problem_id:392415]。这具体地表明，在这种广义的观点下，角动量不再局限于整数值。
 
-*   对于更真实的相互作用，比如描述核力的**[汤川势](@article_id:300092)**$V(r) \propto e^{-\mu r}/r$，计算会更加复杂。但我们仍然可以提取出关键特征。例如，我们可以计算轨道在零能量附近的**斜率**$\alpha'(E) = d\alpha/dE$  。这个斜率告诉我们，当我们注入更多能量时，系统的角[动量变化](@article_id:352966)得有多快。结果总是直接依赖于相互作用的[基本常数](@article_id:309193)：质量$m$、耦合强度$|g|$以及作用范围$1/\mu$。轨道是底层物理的直接指纹。
+*   对于更真实的相互作用，比如描述核力的**[汤川势](@keyword=yukawa_potential|lang=zh-CN|style=Feynman)**$V(r) \propto e^{-\mu r}/r$，计算会更加复杂。但我们仍然可以提取出关键特征。例如，我们可以计算轨道在零能量附近的**斜率**$\alpha'(E) = d\alpha/dE$ [@problem_id:2117759] [@problem_id:1275228]。这个斜率告诉我们，当我们注入更多能量时，系统的角[动量变化](@keyword=change_in_momentum|lang=zh-CN|style=Feynman)得有多快。结果总是直接依赖于相互作用的[基本常数](@keyword=fundamental_constants|lang=zh-CN|style=Feynman)：质量$m$、耦合强度$|g|$以及作用范围$1/\mu$。轨道是底层物理的直接指纹。
 
-*   甚至与一些旧思想之间也存在着优美而直观的联系。[Bohr-Sommerfeld量子化规则](@article_id:365820)是一种将电子想象在固定轨道上的[半经典方法](@article_id:375723)，它可以被推广到[复角动量](@article_id:383163)。使用这种方法，我们可以为一个系统推导出一个惊人准确的Regge[轨道近似](@article_id:314126)。这在直观的量子化[轨道图](@article_id:304468)像与更抽象、更强大的[复平面](@article_id:318633)轨道概念之间架起了一座桥梁。
+*   甚至与一些旧思想之间也存在着优美而直观的联系。[Bohr-Sommerfeld量子化规则](@keyword=bohr_sommerfeld_quantization_rule|lang=zh-CN|style=Feynman)是一种将电子想象在固定轨道上的[半经典方法](@keyword=semi_classical_method|lang=zh-CN|style=Feynman)，它可以被推广到[复角动量](@keyword=complex_angular_momentum|lang=zh-CN|style=Feynman)。使用这种方法，我们可以为一个系统推导出一个惊人准确的Regge[轨道近似](@keyword=orbital_approximation|lang=zh-CN|style=Feynman)[@problem_id:540687]。这在直观的量子化[轨道图](@keyword=orbital_diagrams|lang=zh-CN|style=Feynman)像与更抽象、更强大的[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)轨道概念之间架起了一座桥梁。
 
 ### 物理学家的魔法：Sommerfeld-Watson变换
 
-那么，我们有了这个统一不同粒子态的优雅框架。但它到底有什么*用处*呢？其最伟大的成就在于驯服了[高能散射](@article_id:312355)的复杂性。
+那么，我们有了这个统一不同粒子态的优雅框架。但它到底有什么*用处*呢？其最伟大的成就在于驯服了[高能散射](@keyword=high_energy_scattering|lang=zh-CN|style=Feynman)的复杂性。
 
-计算散射过程的标准方法是通过**[分波展开](@article_id:319337)**。这涉及到将所有可能的整数角动量（$l=0, 1, 2, 3, \dots, \infty$）的贡献相加。在低能量下，只有前几项是重要的，求和是可控的。但在非常高的能量下，无数个角动量态都有贡献，这个无穷求和变成了一场计算噩梦。
+计算散射过程的标准方法是通过**[分波展开](@keyword=partial_wave_expansion_2|lang=zh-CN|style=Feynman)**。这涉及到将所有可能的整数角动量（$l=0, 1, 2, 3, \dots, \infty$）的贡献相加。在低能量下，只有前几项是重要的，求和是可控的。但在非常高的能量下，无数个角动量态都有贡献，这个无穷求和变成了一场计算噩梦。
 
-奇迹就发生在这里。利用[复分析](@article_id:304792)中一个名为**Sommerfeld-Watson变换**的强大工具，我们可以将这个棘手的无穷*求和*（对整数求和）转换为一个在复$l$平面上的围道*积分*。那么，为什么积分比求和更好呢？因为我们可以改变积分路径。当我们这样做时，著名数学家Augustin-Louis Cauchy的一条规则告诉我们，积分的值由它扫过的“特殊点”——即[S矩阵的极点](@article_id:372247)——所决定！
+奇迹就发生在这里。利用[复分析](@keyword=complex_analysis|lang=zh-CN|style=Feynman)中一个名为**Sommerfeld-Watson变换**的强大工具，我们可以将这个棘手的无穷*求和*（对整数求和）转换为一个在复$l$平面上的围道*积分*。那么，为什么积分比求和更好呢？因为我们可以改变积分路径。当我们这样做时，著名数学家Augustin-Louis Cauchy的一条规则告诉我们，积分的值由它扫过的“特殊点”——即[S矩阵的极点](@keyword=poles_of_s_matrix|lang=zh-CN|style=Feynman)——所决定！
 
-结果是惊人的。整个无穷求和被一个简单的、对少数几个[Regge极点](@article_id:378114)贡献的求和所取代。在极高能量下，其行为几乎完全由实部最大的单个极点主导，即所谓的**领头Regge轨道**。我们不再需要听整个交响乐团的演奏，只需倾听声音最响亮的那个乐器。
+结果是惊人的。整个无穷求和被一个简单的、对少数几个[Regge极点](@keyword=regge_poles|lang=zh-CN|style=Feynman)贡献的求和所取代。在极高能量下，其行为几乎完全由实部最大的单个极点主导，即所谓的**领头Regge轨道**。我们不再需要听整个交响乐团的演奏，只需倾听声音最响亮的那个乐器。
 
-这不仅仅是数学上的便利。它赋予我们难以置信的预测能力。例如，我们可以计算单个[Regge极点](@article_id:378114)（比如位于复数位置$\ell_0 = 1/2 + i\rho$）对[前向散射振幅](@article_id:314521)的贡献。然后，利用一个称为光学定理的基本原理，我们可以将其直接与[总散射截面](@article_id:348197)联系起来——这是一个我们可以在[粒子加速器](@article_id:309257)中测量的量。一个数学平面中极点的抽象位置，决定了一个物理实验具体、可测量的结果。
+这不仅仅是数学上的便利。它赋予我们难以置信的预测能力。例如，我们可以计算单个[Regge极点](@keyword=regge_poles|lang=zh-CN|style=Feynman)（比如位于复数位置$\ell_0 = 1/2 + i\rho$）对[前向散射振幅](@keyword=forward_scattering_amplitude|lang=zh-CN|style=Feynman)的贡献。然后，利用一个称为光学定理的基本原理，我们可以将其直接与[总散射截面](@keyword=total_scattering_cross_section|lang=zh-CN|style=Feynman)联系起来——这是一个我们可以在[粒子加速器](@keyword=particle_accelerators|lang=zh-CN|style=Feynman)中测量的量[@problem_id:617378]。一个数学平面中极点的抽象位置，决定了一个物理实验具体、可测量的结果。
 
-### 更深层的图像：碰撞、[割线](@article_id:357650)与爬[行波](@article_id:323698)
+### 更深层的图像：碰撞、[割线](@keyword=secant_line|lang=zh-CN|style=Feynman)与爬[行波](@keyword=traveling_waves|lang=zh-CN|style=Feynman)
 
-[复角动量](@article_id:383163)平面的景观比我们已描述的还要丰富。
-*   一个单一的势可以产生多条Regge轨道。这些轨道可以相互作用，有时两条实轨道甚至可以碰撞，然后作为[共轭](@article_id:312168)对进入[复平面](@article_id:318633)，这个过程标志着系统动力学的改变。
+[复角动量](@keyword=complex_angular_momentum|lang=zh-CN|style=Feynman)平面的景观比我们已描述的还要丰富。
+*   一个单一的势可以产生多条Regge轨道。这些轨道可以相互作用，有时两条实轨道甚至可以碰撞，然后作为[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)对进入[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)，这个过程标志着系统动力学的改变[@problem_id:894384]。
 
-*   当我们考虑更复杂的过程，比如同时交换*两个*Reggeon时，理论告诉我们，我们得到的不只是更多的极点，而是一种新的[奇点](@article_id:298215)，称为**分支切割**（或称[割线](@article_id:357650)），它就像一条连续的极点线。领头的双Reggeon交换产生了著名的**Amati-Fubini-Stanchellini (AFS) [割线](@article_id:357650)**，其位置可以从被交换的单个Reggeon的性质计算出来。这显示了该理论如何被系统地扩展，以构建一个完整的高能相互作用图景。
+*   当我们考虑更复杂的过程，比如同时交换*两个*Reggeon时，理论告诉我们，我们得到的不只是更多的极点，而是一种新的[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)，称为**分支切割**（或称[割线](@keyword=secant_line|lang=zh-CN|style=Feynman)），它就像一条连续的极点线。领头的双Reggeon交换产生了著名的**Amati-Fubini-Stanchellini (AFS) [割线](@keyword=secant_line|lang=zh-CN|style=Feynman)**，其位置可以从被交换的单个Reggeon的性质计算出来[@problem_id:476153]。这显示了该理论如何被系统地扩展，以构建一个完整的高能相互作用图景。
 
-也许最能说明这个想法的力量和普适性的例子完全来自[粒子物理学](@article_id:305677)之外。想象一个无线电波撞击一座大山，或者声音绕过一个角落。几何光学预测障碍物后面会有一个完美的、寂静的阴影。但我们知道事实并非如此；一些波会“爬行”到阴影区域。这是如何发生的？
+也许最能说明这个想法的力量和普适性的例子完全来自[粒子物理学](@keyword=particle_physics|lang=zh-CN|style=Feynman)之外。想象一个无线电波撞击一座大山，或者声音绕过一个角落。几何光学预测障碍物后面会有一个完美的、寂静的阴影。但我们知道事实并非如此；一些波会“爬行”到阴影区域。这是如何发生的？
 
-答案再次是[复角动量](@article_id:383163)。当在复$l$平面中分析波从球体散射的解时，会揭示一系列[Regge极点](@article_id:378114)。在这种情况下，它们被称为**爬[行波](@article_id:323698)模式**。每个极点$\nu_n$对应一个沿着球体表面传播到阴影区的波。$\nu_n$的实部与其速度有关，而其[虚部](@article_id:370770)决定了**衰减系数**——即波在传播过程中衰减的速度。角动量的[虚部](@article_id:370770)，毫不夸张地说，正是阴影并非完全黑暗的原因。
+答案再次是[复角动量](@keyword=complex_angular_momentum|lang=zh-CN|style=Feynman)。当在复$l$平面中分析波从球体散射的解时，会揭示一系列[Regge极点](@keyword=regge_poles|lang=zh-CN|style=Feynman)。在这种情况下，它们被称为**爬[行波](@keyword=traveling_waves|lang=zh-CN|style=Feynman)模式**。每个极点$\nu_n$对应一个沿着球体表面传播到阴影区的波。$\nu_n$的实部与其速度有关，而其[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)决定了**衰减系数**——即波在传播过程中衰减的速度[@problem_id:662022]。角动量的[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)，毫不夸张地说，正是阴影并非完全黑暗的原因。
 
-从[亚原子粒子](@article_id:302932)的短暂存在到声音绕过建筑物的方式，背后都是同一个深刻的数学原理在起作用。通过一次信念的飞跃，允许角动量探索[复平面](@article_id:318633)，我们发现了一个隐藏的现实层面，一个以惊人优雅和强大的方式将物理世界中不同部分联系在一起的统一原理。
+从[亚原子粒子](@keyword=subatomic_particles|lang=zh-CN|style=Feynman)的短暂存在到声音绕过建筑物的方式，背后都是同一个深刻的数学原理在起作用。通过一次信念的飞跃，允许角动量探索[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)，我们发现了一个隐藏的现实层面，一个以惊人优雅和强大的方式将物理世界中不同部分联系在一起的统一原理。

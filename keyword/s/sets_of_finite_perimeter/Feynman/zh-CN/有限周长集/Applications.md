@@ -6,46 +6,46 @@
 
 ### 形状的狂野前沿
 
-让我们从一个优美的、近乎悖论的例子开始。想象一个叫做康托-勒贝格函数的函数。它是一个从 $0$ 上升到 $1$ 的[连续函数](@article_id:297812)，但它的上升方式非常奇特。它[几乎处处](@article_id:307050)是平的；它的[导数](@article_id:318324)在一个满测度的集合上为零。它在一系列“跳跃”中攀升，这些跳跃发生在一个[分形](@article_id:301219)点集上。如果你要画出它的图像，你将画出类似于“[魔鬼阶梯](@article_id:303451)”的东西。现在，考虑这个图像下方的区域。它的周长是多少？
+让我们从一个优美的、近乎悖论的例子开始。想象一个叫做康托-勒贝格函数的函数。它是一个从 $0$ 上升到 $1$ 的[连续函数](@keyword=continuous_function|lang=zh-CN|style=Feynman)，但它的上升方式非常奇特。它[几乎处处](@keyword=almost_everywhere|lang=zh-CN|style=Feynman)是平的；它的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)在一个满测度的集合上为零。它在一系列“跳跃”中攀升，这些跳跃发生在一个[分形](@keyword=fractal|lang=zh-CN|style=Feynman)点集上。如果你要画出它的图像，你将画出类似于“[魔鬼阶梯](@keyword=devil_s_staircase|lang=zh-CN|style=Feynman)”的东西。现在，考虑这个图像下方的区域。它的周长是多少？
 
-用经典微积分，我们束手无策。边界不是一条光滑曲线；它无限复杂。然而，借助[有限周长集](@article_id:380737)理论，我们可以给出一个精确的、有限的答案。由坐标轴和[康托函数](@article_id:318152)图像所围成区域的总周长恰好是 $4$ 。这不是一个戏法。它展示了我们新定义的力量。它正确地识别了水平长度（$1$）、垂直长度（$1$），并加上了图像本身的真实“长度”，结果是 $2$。我们的理论甚至可以驯服最野性的形状，为我们提供一种稳健的方式来讨论它们的边界。这是我们触及某种根本性东西的第一个线索。支撑该理论的“几乎处处”哲学 () 不是弱点而是优点，它使我们能够忽略无关紧要的、测度为零的细节，而专注于真正对几何有贡献的部分。
+用经典微积分，我们束手无策。边界不是一条光滑曲线；它无限复杂。然而，借助[有限周长集](@keyword=sets_of_finite_perimeter|lang=zh-CN|style=Feynman)理论，我们可以给出一个精确的、有限的答案。由坐标轴和[康托函数](@keyword=cantor_function|lang=zh-CN|style=Feynman)图像所围成区域的总周长恰好是 $4$ [@problem_id:538325]。这不是一个戏法。它展示了我们新定义的力量。它正确地识别了水平长度（$1$）、垂直长度（$1$），并加上了图像本身的真实“长度”，结果是 $2$。我们的理论甚至可以驯服最野性的形状，为我们提供一种稳健的方式来讨论它们的边界。这是我们触及某种根本性东西的第一个线索。支撑该理论的“几乎处处”哲学 ([@problem_id:538382]) 不是弱点而是优点，它使我们能够忽略无关紧要的、测度为零的细节，而专注于真正对几何有贡献的部分。
 
 ### 最古老的问题，以新的精度作答
 
-激发我们理论的最古老、最著名的问题是[等周问题](@article_id:369183)：在所有具有给定体积的形状中，哪一个的表面积最小？直觉和对肥皂泡的观察都尖锐地指出答案：球体！[有限周长集](@article_id:380737)理论使我们能够以完全的严谨性证明这一点，即使是对于可以想象的最一般、非光滑的形状。
+激发我们理论的最古老、最著名的问题是[等周问题](@keyword=isoperimetric_problems|lang=zh-CN|style=Feynman)：在所有具有给定体积的形状中，哪一个的表面积最小？直觉和对肥皂泡的观察都尖锐地指出答案：球体！[有限周长集](@keyword=sets_of_finite_perimeter|lang=zh-CN|style=Feynman)理论使我们能够以完全的严谨性证明这一点，即使是对于可以想象的最一般、非光滑的形状。
 
-但我们可以更进一步。我们可以陈述一个*尖锐*的[等周不等式](@article_id:324068)。这个不等式不仅说球是最好的；它还给出了一个给定体积下最小可能周长的精确公式：
+但我们可以更进一步。我们可以陈述一个*尖锐*的[等周不等式](@keyword=isoperimetric_inequality|lang=zh-CN|style=Feynman)。这个不等式不仅说球是最好的；它还给出了一个给定体积下最小可能周长的精确公式：
 $$
 P(E) \ge n\,\omega_n^{1/n}\,|E|^{(n-1)/n}
 $$
-其中 $|E|$ 是我们集合 $E$ 的体积，$P(E)$ 是其周长，$n\,\omega_n^{1/n}$ 是一个仅依赖于维度 $n$ 的常数 。等号仅在 $E$ 是一个完美的球体时成立。
+其中 $|E|$ 是我们集合 $E$ 的体积，$P(E)$ 是其周长，$n\,\omega_n^{1/n}$ 是一个仅依赖于维度 $n$ 的常数 [@problem_id:3025628]。等号仅在 $E$ 是一个完美的球体时成立。
 
-这使我们能够定义一个叫做“等周亏格”的东西，这个数字衡量一个形状有多“不圆”。它被定义为形状的周长超过其体积下绝对最小值的分数部分 。一个接近球体的形状具有非常小的亏格。这种“近似刚性”的思想——即如果你接近最优情况，你的形状必须接近最优形状——是现代几何学中一个反复出现且强大的主题。
+这使我们能够定义一个叫做“等周亏格”的东西，这个数字衡量一个形状有多“不圆”。它被定义为形状的周长超过其体积下绝对最小值的分数部分 [@problem_id:3025628]。一个接近球体的形状具有非常小的亏格。这种“近似刚性”的思想——即如果你接近最优情况，你的形状必须接近最优形状——是现代几何学中一个反复出现且强大的主题。
 
-而且这个原理不仅限于我们熟悉的欧几里得世界。我们可以在不同背景下提出同样的问题。例如，如果我们不是用标准的[勒贝格测度](@article_id:300228)，而是用高斯（钟形曲线）测度来测量体积和周长，这种测度给靠近原点的点更多权重，会怎么样？结果是等周原理仍然成立，但最优形状不再是球体——它们是[半空间](@article_id:639066)！。这显示了等周思想的深刻统一性：为固定内容最小化边界是几何学的一个[基本组织](@article_id:297010)原则，能适应许多不同的背景。
+而且这个原理不仅限于我们熟悉的欧几里得世界。我们可以在不同背景下提出同样的问题。例如，如果我们不是用标准的[勒贝格测度](@keyword=lebesgue_measure|lang=zh-CN|style=Feynman)，而是用高斯（钟形曲线）测度来测量体积和周长，这种测度给靠近原点的点更多权重，会怎么样？结果是等周原理仍然成立，但最优形状不再是球体——它们是[半空间](@keyword=halfspaces|lang=zh-CN|style=Feynman)！[@problem_id:477539]。这显示了等周思想的深刻统一性：为固定内容最小化边界是几何学的一个[基本组织](@keyword=ground_tissue|lang=zh-CN|style=Feynman)原则，能适应许多不同的背景。
 
 ### 连续介质物理学的新语言
 
-现在让我们从纯数学的世界转向物理学和工程学的世界。考虑一个固体——一块钢、一个桥梁支架、一块生物组织。我们如何描述作用在它上面的力？牛顿定律告诉我们力的平衡。一些力，如重力，作用于物体体积内的每一个粒子。我们称之为“[体力](@article_id:353281)”。另一些力，如压力或来自另一接触物体的力，仅作用于表面。我们称之为“面力”。
+现在让我们从纯数学的世界转向物理学和工程学的世界。考虑一个固体——一块钢、一个桥梁支架、一块生物组织。我们如何描述作用在它上面的力？牛顿定律告诉我们力的平衡。一些力，如重力，作用于物体体积内的每一个粒子。我们称之为“[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)”。另一些力，如压力或来自另一接触物体的力，仅作用于表面。我们称之为“面力”。
 
-在经典理论中，需要两种分开的处理方法来对待这些力。但借助[有限周长集](@article_id:380737)的语言，它们成为同一枚硬币的两面。使用推广的高斯-[格林定理](@article_id:300921)，我们可以写出一个单一、优雅的动量[平衡方程](@article_id:351296)。物体 $E$ 内部[应力张量](@article_id:309392) $\boldsymbol{\sigma}$ 的分布散度被证明是两种测度的组合：一个对应于[体力](@article_id:353281) $\boldsymbol{b}$ 的正则部分，和一个集中在边界上的奇异部分，恰好对应于面力 $\boldsymbol{t} = \boldsymbol{\sigma}\boldsymbol{\nu}_E$ 。这个框架在现代连续介质力学中至关重要，用于描述具有断裂、[相界](@article_id:352059)或任何物理性质突变尖锐界面的材料。我们抽象的数学工具为真实世界的物理学提供了精确而正确的语言。
+在经典理论中，需要两种分开的处理方法来对待这些力。但借助[有限周长集](@keyword=sets_of_finite_perimeter|lang=zh-CN|style=Feynman)的语言，它们成为同一枚硬币的两面。使用推广的高斯-[格林定理](@keyword=green_s_theorem|lang=zh-CN|style=Feynman)，我们可以写出一个单一、优雅的动量[平衡方程](@keyword=equilibrium_equations|lang=zh-CN|style=Feynman)。物体 $E$ 内部[应力张量](@keyword=stress_tensor|lang=zh-CN|style=Feynman) $\boldsymbol{\sigma}$ 的分布散度被证明是两种测度的组合：一个对应于[体力](@keyword=body_forces|lang=zh-CN|style=Feynman) $\boldsymbol{b}$ 的正则部分，和一个集中在边界上的奇异部分，恰好对应于面力 $\boldsymbol{t} = \boldsymbol{\sigma}\boldsymbol{\nu}_E$ [@problem_id:2619622]。这个框架在现代连续介质力学中至关重要，用于描述具有断裂、[相界](@keyword=phase_boundary|lang=zh-CN|style=Feynman)或任何物理性质突变尖锐界面的材料。我们抽象的数学工具为真实世界的物理学提供了精确而正确的语言。
 
 ### 描绘弯曲和无限的世界
 
-我们的宇宙不是平的，它可能是无限的。我们的周长理论能扩展到这些更宏大的舞台吗？当然可以。整个框架可以建立在弯曲的[黎曼流形](@article_id:324872)上，使我们能够在一般的几何背景下研究[等周问题](@article_id:369183) 。
+我们的宇宙不是平的，它可能是无限的。我们的周长理论能扩展到这些更宏大的舞台吗？当然可以。整个框架可以建立在弯曲的[黎曼流形](@keyword=riemannian_manifolds|lang=zh-CN|style=Feynman)上，使我们能够在一般的几何背景下研究[等周问题](@keyword=isoperimetric_problems|lang=zh-CN|style=Feynman) [@problem_id:2981447]。
 
-在这里，我们发现了一些真正令人惊讶的结果。让我们看看[切格常数](@article_id:325920)（Cheeger constant），它是一个区域周长与体积之比的[下确界](@article_id:302618)。在平坦的[欧几里得空间](@article_id:298501) $\mathbb{R}^n$ 中，我们可以通过取一个非常大的球来使这个比率任意小；当半径 $r$ 趋于无穷时，比率 $\frac{n}{r}$ 趋于零。但在双曲空间 $\mathbb{H}^n$ 中，一个具有恒定[负曲率](@article_id:319739)的空间，一件奇特而美妙的事情发生了。无论你把球做得多大，周长与体积之比永远不会低于某个正数！对于大半径，它趋近于值 $n-1$ 。
+在这里，我们发现了一些真正令人惊讶的结果。让我们看看[切格常数](@keyword=cheeger_constant|lang=zh-CN|style=Feynman)（Cheeger constant），它是一个区域周长与体积之比的[下确界](@keyword=greatest_lower_bound|lang=zh-CN|style=Feynman)。在平坦的[欧几里得空间](@keyword=euclidean_space|lang=zh-CN|style=Feynman) $\mathbb{R}^n$ 中，我们可以通过取一个非常大的球来使这个比率任意小；当半径 $r$ 趋于无穷时，比率 $\frac{n}{r}$ 趋于零。但在双曲空间 $\mathbb{H}^n$ 中，一个具有恒定[负曲率](@keyword=negative_curvature|lang=zh-CN|style=Feynman)的空间，一件奇特而美妙的事情发生了。无论你把球做得多大，周长与体积之比永远不会低于某个正数！对于大半径，它趋近于值 $n-1$ [@problem_id:3026563]。
 
-这个单一的数字，[切格常数](@article_id:325920)，告诉我们一些关于空间几何的深刻信息。一个正的[切格常数](@article_id:325920)意味着空间“难以在其中扩张”；它具有很强的瓶颈性质。这个几何性质通过[切格不等式](@article_id:339488)与分析学深刻相连，该不等式以[切格常数](@article_id:325920)为空间的基频提供了一个下界。我们甚至可以将其推广到“各向异性”空间，其中创建边界的成本取决于其方向，这种情况出现在晶体物理学和[材料科学](@article_id:312640)中 。[有限周长集](@article_id:380737)理论为所有这些思想提供了统一的框架。
+这个单一的数字，[切格常数](@keyword=cheeger_constant|lang=zh-CN|style=Feynman)，告诉我们一些关于空间几何的深刻信息。一个正的[切格常数](@keyword=cheeger_constant|lang=zh-CN|style=Feynman)意味着空间“难以在其中扩张”；它具有很强的瓶颈性质。这个几何性质通过[切格不等式](@keyword=cheeger_s_inequality|lang=zh-CN|style=Feynman)与分析学深刻相连，该不等式以[切格常数](@keyword=cheeger_constant|lang=zh-CN|style=Feynman)为空间的基频提供了一个下界。我们甚至可以将其推广到“各向异性”空间，其中创建边界的成本取决于其方向，这种情况出现在晶体物理学和[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)中 [@problem_id:2970838]。[有限周长集](@keyword=sets_of_finite_perimeter|lang=zh-CN|style=Feynman)理论为所有这些思想提供了统一的框架。
 
-### 在前沿：皂膜、[黑洞](@article_id:318975)与几何流
+### 在前沿：皂膜、[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)与几何流
 
-也许最激动人心的应用是那些处于研究前沿的应用，在这些领域，[有限周长集](@article_id:380737)是不可或缺的工具。
+也许最激动人心的应用是那些处于研究前沿的应用，在这些领域，[有限周长集](@keyword=sets_of_finite_perimeter|lang=zh-CN|style=Feynman)是不可或缺的工具。
 
-考虑[极小曲面](@article_id:318137)——[皂膜](@article_id:331331)的数学模型。这些是局部最小化其面积的[曲面](@article_id:331153)，这意味着它们的[平均曲率](@article_id:322550)为零。一个具有零[平均曲率](@article_id:322550)（在弱意义上）的[有限周长集](@article_id:380737)的边界被称为一个稳定集。这些对象拥有一个被称为[单调性公式](@article_id:382058)的非凡性质。这个公式指出，如果你观察半径为 $r$ 的球内所含集合的周长，这个量在用 $r^{-(n-1)}$ 缩放后，总是 $r$ 的一个非减函数 。这种非直观的“单调性”是几何学家用来证明这些看似粗糙的边界实际上在远离一个非常小的[奇点](@article_id:298215)集之外是极其正则和光滑的极其强大的工具。
+考虑[极小曲面](@keyword=minimal_surfaces|lang=zh-CN|style=Feynman)——[皂膜](@keyword=soap_film|lang=zh-CN|style=Feynman)的数学模型。这些是局部最小化其面积的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，这意味着它们的[平均曲率](@keyword=mean_curvature|lang=zh-CN|style=Feynman)为零。一个具有零[平均曲率](@keyword=mean_curvature|lang=zh-CN|style=Feynman)（在弱意义上）的[有限周长集](@keyword=sets_of_finite_perimeter|lang=zh-CN|style=Feynman)的边界被称为一个稳定集。这些对象拥有一个被称为[单调性公式](@keyword=monotonicity_formula|lang=zh-CN|style=Feynman)的非凡性质。这个公式指出，如果你观察半径为 $r$ 的球内所含集合的周长，这个量在用 $r^{-(n-1)}$ 缩放后，总是 $r$ 的一个非减函数 [@problem_id:3036181]。这种非直观的“单调性”是几何学家用来证明这些看似粗糙的边界实际上在远离一个非常小的[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)集之外是极其正则和光滑的极其强大的工具。
 
-更引人注目的是，这些思想已经进入了广义[相对论](@article_id:327421)和宇宙学的领域。数学领域最近的一项重大成就是黎曼[彭罗斯不等式](@article_id:317999)的证明，这是一个关于[黑洞质量](@article_id:321278)与其[事件视界面积](@article_id:303487)关系的猜想。Gero Huisken 和 Tom Ilmanen 的证明依赖于一种名为弱[逆平均曲率流](@article_id:380557)（weak Inverse Mean Curvature Flow, IMCF）的新工具。
+更引人注目的是，这些思想已经进入了广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)和宇宙学的领域。数学领域最近的一项重大成就是黎曼[彭罗斯不等式](@keyword=penrose_inequality|lang=zh-CN|style=Feynman)的证明，这是一个关于[黑洞质量](@keyword=black_hole_mass|lang=zh-CN|style=Feynman)与其[事件视界面积](@keyword=event_horizon_area|lang=zh-CN|style=Feynman)关系的猜想。Gero Huisken 和 Tom Ilmanen 的证明依赖于一种名为弱[逆平均曲率流](@keyword=inverse_mean_curvature_flow|lang=zh-CN|style=Feynman)（weak Inverse Mean Curvature Flow, IMCF）的新工具。
 
-想象一个[曲面](@article_id:331153)以其平均曲率的倒数的速度向外扩张。这个过程可以用一族扩张的集合来建模。然而，为确保流保持物理意义和良好性质，这些集合必须保持“向外最小化”。每当光滑流将违反此性质时，理论规定了一个“跳跃”：该集合被其**最小化包**——即包含它的最小周长集——瞬间取代。这种构造完全依赖于[有限周长集](@article_id:380737)理论来处理非光滑集和跳跃，产生了一个对非常一般的初始形状都适用的弱流。正是通过分析[霍金质量](@article_id:375060)（Hawking mass）沿此巧妙的、跳跃的流的行为，[彭罗斯不等式](@article_id:317999)最终被攻克 。
+想象一个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)以其平均曲率的倒数的速度向外扩张。这个过程可以用一族扩张的集合来建模。然而，为确保流保持物理意义和良好性质，这些集合必须保持“向外最小化”。每当光滑流将违反此性质时，理论规定了一个“跳跃”：该集合被其**最小化包**——即包含它的最小周长集——瞬间取代。这种构造完全依赖于[有限周长集](@keyword=sets_of_finite_perimeter|lang=zh-CN|style=Feynman)理论来处理非光滑集和跳跃，产生了一个对非常一般的初始形状都适用的弱流。正是通过分析[霍金质量](@keyword=hawking_mass|lang=zh-CN|style=Feynman)（Hawking mass）沿此巧妙的、跳跃的流的行为，[彭罗斯不等式](@keyword=penrose_inequality|lang=zh-CN|style=Feynman)最终被攻克 [@problem_id:3031200]。
 
-从[康托集](@article_id:302344)的复杂图案到[时空](@article_id:370647)的最终命运，[有限周长集](@article_id:380737)理论提供了一个统一而强大的视角。它证明了一个事实：通过提出一个简单、直观的问题——“边界的长度是多少？”——并以不懈的严谨性追求其答案，我们可以揭示在整个科学领域产生共鸣的深刻联系。而这只是一个更大、更美丽故事的一部分，在这个故事中，这些集合被视为“[整流](@article_id:326678)”的特例，这是一个关于形状、边界和积分的更一般的理论 。发现之旅远未结束。
+从[康托集](@keyword=cantor_set|lang=zh-CN|style=Feynman)的复杂图案到[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的最终命运，[有限周长集](@keyword=sets_of_finite_perimeter|lang=zh-CN|style=Feynman)理论提供了一个统一而强大的视角。它证明了一个事实：通过提出一个简单、直观的问题——“边界的长度是多少？”——并以不懈的严谨性追求其答案，我们可以揭示在整个科学领域产生共鸣的深刻联系。而这只是一个更大、更美丽故事的一部分，在这个故事中，这些集合被视为“[整流](@keyword=ac_to_dc_conversion|lang=zh-CN|style=Feynman)”的特例，这是一个关于形状、边界和积分的更一般的理论 [@problem_id:3027348]。发现之旅远未结束。

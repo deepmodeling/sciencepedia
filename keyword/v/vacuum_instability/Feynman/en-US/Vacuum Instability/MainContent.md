@@ -11,7 +11,7 @@ The answers lie in the strange and beautiful rules of quantum mechanics, which a
 
 ### The Quantum Leap: Tunneling and Bubble Nucleation
 
-If our ball were a classical object, it would need enough energy to be kicked over the hill to reach the lower valley. Without that energy, it would sit in the false vacuum forever. But in the quantum world, things are different. A quantum particle, or more to the point, a quantum *field*, can cheat. It can pass directly *through* the barrier in a process called **[quantum tunneling](@article_id:142373)**.
+If our ball were a classical object, it would need enough energy to be kicked over the hill to reach the lower valley. Without that energy, it would sit in the false vacuum forever. But in the quantum world, things are different. A quantum particle, or more to the point, a quantum *field*, can cheat. It can pass directly *through* the barrier in a process called **[quantum tunneling](@keyword=quantum_tunneling|lang=en-US|style=Feynman)**.
 
 For a field that fills all of space, this doesn't happen everywhere at once. Instead, a small region of space tunnels, forming a pocket, or **bubble**, of the true vacuum. Now, this bubble faces a crucial battle for survival. Its existence is a trade-off. Inside the bubble, the field is in a lower energy state, which releases a tremendous amount of energy proportional to the bubble's volume. This is the "win". However, the boundary between the true and false vacuum—the bubble's wall—is a region of high tension, like the surface of a water droplet. Creating this wall has an energy *cost* proportional to its surface area.
 
@@ -23,7 +23,7 @@ $$
 
 Here, $\sigma$ is the **surface tension** of the wall, and $\epsilon$ is the energy density difference gained by being in the true vacuum. Notice the tension term goes as $R^3$ while the volume gain goes as $R^4$. For very small $R$, the costly surface term dominates, and the bubble tends to collapse under its own tension. For very large $R$, the energy-releasing volume term wins, and the bubble will expand explosively, converting the false vacuum to the true vacuum as it goes.
 
-This means there must be a sweet spot, a **[critical radius](@article_id:141937)** $R_c$, where the bubble is just balanced. By finding the radius that extremizes this action, we find the shape of the tunneling solution—the so-called **bounce**. The action of this critical bubble, the **bounce action** $B$, determines the probability of a bubble appearing. The [decay rate](@article_id:156036) $\Gamma$ is exquisitely sensitive to it:
+This means there must be a sweet spot, a **[critical radius](@keyword=critical_radius|lang=en-US|style=Feynman)** $R_c$, where the bubble is just balanced. By finding the radius that extremizes this action, we find the shape of the tunneling solution—the so-called **bounce**. The action of this critical bubble, the **bounce action** $B$, determines the probability of a bubble appearing. The [decay rate](@keyword=decay_rate|lang=en-US|style=Feynman) $\Gamma$ is exquisitely sensitive to it:
 
 $$
 \frac{\Gamma}{V} \propto \exp(-B/\hbar)
@@ -33,33 +33,33 @@ The bounce action for our 4D bubble turns out to be $B = \frac{27\pi^2\sigma^4}{
 
 ### Turning Up the Heat: Thermal Jumps and Cosmic Phase Transitions
 
-The cold, empty vacuum tunnels. But what about a hot, dense one, like our universe in its infancy? Temperature adds a new ingredient to the mix: thermal energy. The constant jiggling of particles in a hot plasma can provide the "kick" needed for the field to jump *over* the [potential barrier](@article_id:147101), a process called **[thermal activation](@article_id:200807)**.
+The cold, empty vacuum tunnels. But what about a hot, dense one, like our universe in its infancy? Temperature adds a new ingredient to the mix: thermal energy. The constant jiggling of particles in a hot plasma can provide the "kick" needed for the field to jump *over* the [potential barrier](@keyword=potential_barrier|lang=en-US|style=Feynman), a process called **[thermal activation](@keyword=thermal_activation|lang=en-US|style=Feynman)**.
 
-So now we have two competing mechanisms: [quantum tunneling](@article_id:142373) through the barrier and thermal jumps over it. Which one dominates? At low temperatures, there's not enough thermal energy for jumps, so the eerie quantum tunneling reigns supreme. At very high temperatures, thermal jumps become so frequent that they are the much more likely path.
+So now we have two competing mechanisms: [quantum tunneling](@keyword=quantum_tunneling|lang=en-US|style=Feynman) through the barrier and thermal jumps over it. Which one dominates? At low temperatures, there's not enough thermal energy for jumps, so the eerie quantum tunneling reigns supreme. At very high temperatures, thermal jumps become so frequent that they are the much more likely path.
 
-There must be a **crossover temperature**, $T_c$, where the dominant decay mechanism switches from quantum to thermal. At this temperature, the "cost" of both paths is roughly equal. A beautiful and intuitive approximation for this crossover temperature relates it to the shape of the [potential barrier](@article_id:147101) itself:
+There must be a **crossover temperature**, $T_c$, where the dominant decay mechanism switches from quantum to thermal. At this temperature, the "cost" of both paths is roughly equal. A beautiful and intuitive approximation for this crossover temperature relates it to the shape of the [potential barrier](@keyword=potential_barrier|lang=en-US|style=Feynman) itself:
 
 $$
 T_c \approx \frac{\omega_b}{2\pi}
 $$
 
-Here, $\omega_b^2$ is the absolute value of the curvature of the potential at the very top of the barrier. A tall, spiky barrier ($\omega_b$ is large) is hard to tunnel through but easy to jump over with enough heat, leading to a higher $T_c$. A low, broad barrier ($\omega_b$ is small) is relatively easy to tunnel through, so quantum effects can dominate up to lower temperatures. This simple relationship elegantly captures the essence of the competition. This interplay is not just an academic curiosity; it is central to our understanding of **cosmological phase transitions**, such as the moment the [electroweak force](@article_id:160421) separated into the electromagnetic and weak forces in the cooling early universe. In these hot environments, instabilities can also manifest as an imaginary part in a temperature-corrected effective potential, signaling the decay of the symmetric phase.
+Here, $\omega_b^2$ is the absolute value of the curvature of the potential at the very top of the barrier. A tall, spiky barrier ($\omega_b$ is large) is hard to tunnel through but easy to jump over with enough heat, leading to a higher $T_c$. A low, broad barrier ($\omega_b$ is small) is relatively easy to tunnel through, so quantum effects can dominate up to lower temperatures. This simple relationship elegantly captures the essence of the competition. This interplay is not just an academic curiosity; it is central to our understanding of **cosmological phase transitions**, such as the moment the [electroweak force](@keyword=electroweak_force|lang=en-US|style=Feynman) separated into the electromagnetic and weak forces in the cooling early universe. In these hot environments, instabilities can also manifest as an imaginary part in a temperature-corrected effective potential, signaling the decay of the symmetric phase.
 
 ### Tearing the Void: The Schwinger Effect
 
 So far, we have imagined a landscape with hills and valleys encoded in a potential. But can the vacuum be unstable even on a perfectly flat plane? Yes, if we apply a strong enough external field.
 
-The modern vacuum is not truly empty. It is a bubbling brew of **[virtual particles](@article_id:147465)**. According to the uncertainty principle, particle-antiparticle pairs (like an electron and a [positron](@article_id:148873)) can pop into existence, borrowing energy from the vacuum, as long as they annihilate each other and repay the debt within a fleeting moment. They are "virtual" because they don't live long enough to be observed directly.
+The modern vacuum is not truly empty. It is a bubbling brew of **[virtual particles](@keyword=virtual_particles|lang=en-US|style=Feynman)**. According to the uncertainty principle, particle-antiparticle pairs (like an electron and a [positron](@keyword=positron|lang=en-US|style=Feynman)) can pop into existence, borrowing energy from the vacuum, as long as they annihilate each other and repay the debt within a fleeting moment. They are "virtual" because they don't live long enough to be observed directly.
 
-Now, let's turn on a powerful **electric field**. An electric field pushes on positive and negative charges in opposite directions. If a virtual electron-positron pair happens to pop into existence, the electric field will pull them apart. If the field is colossally strong, it can pull them so far apart, and do so much work on them in the short time they exist, that their energy gain from the field exceeds their [rest mass](@article_id:263607) energy, $2m_e c^2$. At this point, they no longer need to annihilate. The debt is paid by the field. They become real, observable particles.
+Now, let's turn on a powerful **electric field**. An electric field pushes on positive and negative charges in opposite directions. If a virtual electron-positron pair happens to pop into existence, the electric field will pull them apart. If the field is colossally strong, it can pull them so far apart, and do so much work on them in the short time they exist, that their energy gain from the field exceeds their [rest mass](@keyword=rest_mass|lang=en-US|style=Feynman) energy, $2m_e c^2$. At this point, they no longer need to annihilate. The debt is paid by the field. They become real, observable particles.
 
-This astonishing process, where a strong electric field literally tears particle pairs from the fabric of the vacuum, is called the **Schwinger effect**. The vacuum "sparks," creating matter out of what appears to be nothing. The rate of this [pair production](@article_id:153631), $w$, is exponentially suppressed for weak fields, as shown by the theory of [quantum electrodynamics](@article_id:153707) (QED):
+This astonishing process, where a strong electric field literally tears particle pairs from the fabric of the vacuum, is called the **Schwinger effect**. The vacuum "sparks," creating matter out of what appears to be nothing. The rate of this [pair production](@keyword=pair_production|lang=en-US|style=Feynman), $w$, is exponentially suppressed for weak fields, as shown by the theory of [quantum electrodynamics](@keyword=quantum_electrodynamics|lang=en-US|style=Feynman) (QED):
 
 $$
 w \propto \exp\left(-\frac{\pi m^2}{|eE|}\right)
 $$
 
-This exponential form tells us it's a [quantum tunneling](@article_id:142373) phenomenon, but of a different kind. It is not tunneling in space, but rather in energy and momentum. Notice that if the particles were massless ($m=0$), the exponent would be zero, suggesting much easier [pair production](@article_id:153631).
+This exponential form tells us it's a [quantum tunneling](@keyword=quantum_tunneling|lang=en-US|style=Feynman) phenomenon, but of a different kind. It is not tunneling in space, but rather in energy and momentum. Notice that if the particles were massless ($m=0$), the exponent would be zero, suggesting much easier [pair production](@keyword=pair_production|lang=en-US|style=Feynman).
 
 What about a magnetic field? A magnetic field also acts on charges, but it forces them into curved paths. Crucially, a magnetic field *does no work* on a charged particle. It can't supply the energy needed to turn a virtual pair into a real one. Therefore, even an arbitrarily strong pure magnetic field cannot cause the vacuum to decay. This beautiful contrast highlights the unique role of the electric field as an agent of vacuum instability.
 
@@ -67,9 +67,9 @@ What about a magnetic field? A magnetic field also acts on charges, but it force
 
 We've seen two very different pictures of vacuum decay: a field tunneling through a potential barrier and an electric field tearing particles from the void. Yet, quantum mechanics unites them with a deep and subtle mathematical signature. That signature is an **imaginary number**.
 
-In quantum mechanics, the probability amplitude for a system to evolve from one state to another is governed by a quantity called the action, $S$. The amplitude is proportional to $e^{iS/\hbar}$. The *probability* is the squared-magnitude of this complex number. If the action $S$ is purely a real number, as it is for [stable systems](@article_id:179910), the probability is $|e^{iS/\hbar}|^2 = 1$. A vacuum that starts as a vacuum stays a vacuum.
+In quantum mechanics, the probability amplitude for a system to evolve from one state to another is governed by a quantity called the action, $S$. The amplitude is proportional to $e^{iS/\hbar}$. The *probability* is the squared-magnitude of this complex number. If the action $S$ is purely a real number, as it is for [stable systems](@keyword=stable_systems|lang=en-US|style=Feynman), the probability is $|e^{iS/\hbar}|^2 = 1$. A vacuum that starts as a vacuum stays a vacuum.
 
-But in all the cases of instability we've discussed, if you do the calculation carefully, you find that the [effective action](@article_id:145286) (or the effective Lagrangian) develops a non-zero **imaginary part**. Let's say the action becomes $S = S_R + iS_I$. The probability for the vacuum to persist is now:
+But in all the cases of instability we've discussed, if you do the calculation carefully, you find that the [effective action](@keyword=effective_action|lang=en-US|style=Feynman) (or the effective Lagrangian) develops a non-zero **imaginary part**. Let's say the action becomes $S = S_R + iS_I$. The probability for the vacuum to persist is now:
 
 $$
 |\exp(i(S_R + iS_I)/\hbar)|^2 = |\exp(iS_R/\hbar) \exp(-S_I/\hbar)|^2 = \exp(-2S_I/\hbar)

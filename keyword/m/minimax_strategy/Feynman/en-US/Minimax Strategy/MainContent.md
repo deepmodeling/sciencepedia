@@ -3,11 +3,11 @@ How do you make the best possible decision when facing a clever opponent or prof
 
 ## Principles and Mechanisms
 
-Imagine you are in a contest. It could be a simple game of chess, a high-stakes business negotiation, or even the grand scientific pursuit of truth. In every case, you must make a choice, and the outcome depends not only on your action but also on factors beyond your control—the move of an opponent, the turn of the market, or the true, hidden state of the universe. How do you make the best possible decision when faced with uncertainty and a clever adversary? The [minimax principle](@article_id:170153) offers a powerful, and perhaps surprising, answer. It’s a strategy of profound caution, a way of thinking that arms you against the worst the world can throw at you.
+Imagine you are in a contest. It could be a simple game of chess, a high-stakes business negotiation, or even the grand scientific pursuit of truth. In every case, you must make a choice, and the outcome depends not only on your action but also on factors beyond your control—the move of an opponent, the turn of the market, or the true, hidden state of the universe. How do you make the best possible decision when faced with uncertainty and a clever adversary? The [minimax principle](@keyword=minimax_principle|lang=en-US|style=Feynman) offers a powerful, and perhaps surprising, answer. It’s a strategy of profound caution, a way of thinking that arms you against the worst the world can throw at you.
 
 ### The Duel of Wits: Playing Against a Perfect Opponent
 
-Let's begin with the most direct kind of conflict: a two-player, **[zero-sum game](@article_id:264817)**. This is a situation where one player's gain is precisely the other player's loss. Think of two companies battling for a fixed pool of customers; every percentage of market share one gains, the other loses.
+Let's begin with the most direct kind of conflict: a two-player, **[zero-sum game](@keyword=zero_sum_game|lang=en-US|style=Feynman)**. This is a situation where one player's gain is precisely the other player's loss. Think of two companies battling for a fixed pool of customers; every percentage of market share one gains, the other loses.
 
 Consider a simplified model of network security where a Sender wants to transmit a data packet and a Jammer wants to block it. They have three routes to choose from. The "payoff" for the Sender depends on both of their choices, as shown in this matrix:
 
@@ -25,19 +25,19 @@ How should the Sender think? A good strategist is a prudent one. The Sender migh
 
 This line of thinking is called the **maximin** strategy: you **maxi**mize your **min**imum guaranteed payoff.
 
-Now, let's step into the Jammer's shoes. The Jammer wants to minimize the Sender's payoff. They might reason: "If I jam Route 1, the Sender's [best response](@article_id:272245) is to send via Route 1, giving them a payoff of 8. If I jam Route 2, their best move gives them 5. If I jam Route 3, their best move gives them 9. Among these worst-case scenarios for me (8, 5, and 9), the best one is 5. So, I can guarantee the Sender gets a payoff of *at most* 5 by jamming Route 2."
+Now, let's step into the Jammer's shoes. The Jammer wants to minimize the Sender's payoff. They might reason: "If I jam Route 1, the Sender's [best response](@keyword=best_response|lang=en-US|style=Feynman) is to send via Route 1, giving them a payoff of 8. If I jam Route 2, their best move gives them 5. If I jam Route 3, their best move gives them 9. Among these worst-case scenarios for me (8, 5, and 9), the best one is 5. So, I can guarantee the Sender gets a payoff of *at most* 5 by jamming Route 2."
 
 This is the **minimax** strategy: you **mini**mize the **max**imum payoff your opponent can achieve.
 
-In this particular game , a wonderful thing happens. The Sender's maximin value (5) is equal to the Jammer's minimax value (5). This point of agreement is called a **saddle point**. It represents a stable equilibrium. The Sender should send on Route 2, and the Jammer should jam Route 2. Neither player has an incentive to unilaterally change their strategy. The optimal move is clear and deterministic.
+In this particular game [@problem_id:1383789], a wonderful thing happens. The Sender's maximin value (5) is equal to the Jammer's minimax value (5). This point of agreement is called a **saddle point**. It represents a stable equilibrium. The Sender should send on Route 2, and the Jammer should jam Route 2. Neither player has an incentive to unilaterally change their strategy. The optimal move is clear and deterministic.
 
 ### When There's No Obvious Move: The Power of Randomness
 
 But what if there is no saddle point? What if the game is more like Rock-Paper-Scissors? If you always choose Rock, your opponent will just choose Paper and beat you every time. If you follow any predictable pattern, a smart opponent will exploit it.
 
-The solution, as any child who plays the game knows, is to be unpredictable. You must play randomly. In game theory, this is called a **[mixed strategy](@article_id:144767)**. You don't choose an action; you choose the *probabilities* with which you will select each action.
+The solution, as any child who plays the game knows, is to be unpredictable. You must play randomly. In game theory, this is called a **[mixed strategy](@keyword=mixed_strategy|lang=en-US|style=Feynman)**. You don't choose an action; you choose the *probabilities* with which you will select each action.
 
-Let's look at two rival tech companies, Innovate Inc. and Tradition Co., deciding on an advertising strategy . The [payoff matrix](@article_id:138277) below shows the market share points Innovate (row player) gains:
+Let's look at two rival tech companies, Innovate Inc. and Tradition Co., deciding on an advertising strategy [@problem_id:1415038]. The [payoff matrix](@keyword=payoff_matrix|lang=en-US|style=Feynman) below shows the market share points Innovate (row player) gains:
 
 $$
 \begin{array}{r|cc}
@@ -50,7 +50,7 @@ $$
 
 Here, there's no saddle point. (Innovate's maximin is 2, Tradition's minimax is 5). If Innovate always goes Digital, Tradition will counter with Quality for a low gain of 2. If Innovate always goes Print, Tradition will counter with Price-Match for a gain of 1. What should Innovate do?
 
-Here lies the beautiful and subtle core of the [minimax principle](@article_id:170153) for [mixed strategies](@article_id:276358). Innovate should not choose its probabilities to try and guess what Tradition will do. Instead, Innovate should choose a probability, let's call it $p$ for playing "Digital", that makes Tradition *indifferent* between its two choices. If Tradition Co. is indifferent, then there is no single best way for them to exploit Innovate's strategy!
+Here lies the beautiful and subtle core of the [minimax principle](@keyword=minimax_principle|lang=en-US|style=Feynman) for [mixed strategies](@keyword=mixed_strategies|lang=en-US|style=Feynman). Innovate should not choose its probabilities to try and guess what Tradition will do. Instead, Innovate should choose a probability, let's call it $p$ for playing "Digital", that makes Tradition *indifferent* between its two choices. If Tradition Co. is indifferent, then there is no single best way for them to exploit Innovate's strategy!
 
 Let's see how this works. If Innovate plays "Digital" with probability $p$ and "Print" with probability $1-p$, Tradition Co.'s expected loss (which is Innovate's gain) is:
 - If Tradition chooses "Price-Match": $5p + 1(1-p) = 4p + 1$.
@@ -58,17 +58,17 @@ Let's see how this works. If Innovate plays "Digital" with probability $p$ and "
 
 Innovate's optimal strategy is to choose $p$ such that these two outcomes are equal:
 $$ 4p + 1 = 8 - 6p \implies 10p = 7 \implies p = \frac{7}{10} $$
-By choosing its "Digital" campaign with a probability of $\frac{7}{10}$, Innovate guarantees itself an expected gain of $4(\frac{7}{10}) + 1 = \frac{28}{10} + 1 = 3.8$, no matter what Tradition Co. does. It has minimized its maximum expected loss by making its opponent's choice irrelevant. This is the **[indifference principle](@article_id:137628)** in action, a cornerstone for finding [mixed strategy](@article_id:144767) equilibria in more complex games .
+By choosing its "Digital" campaign with a probability of $\frac{7}{10}$, Innovate guarantees itself an expected gain of $4(\frac{7}{10}) + 1 = \frac{28}{10} + 1 = 3.8$, no matter what Tradition Co. does. It has minimized its maximum expected loss by making its opponent's choice irrelevant. This is the **[indifference principle](@keyword=indifference_principle|lang=en-US|style=Feynman)** in action, a cornerstone for finding [mixed strategy](@keyword=mixed_strategy|lang=en-US|style=Feynman) equilibria in more complex games [@problem_id:2396423].
 
-This same logic applies far beyond business rivalries. Imagine you are designing a computer system that must handle two types of jobs, and you have two algorithms with different performance on each job . To make your system robust against any sequence of jobs (the "worst case"), you can create a [randomized algorithm](@article_id:262152) that runs the first algorithm with probability $p$ and the second with $1-p$. The best $p$ is the one that makes the expected cost equal for both job types, thus minimizing your maximum possible cost. The principle is the same: use randomness to protect yourself from a worst-case world.
+This same logic applies far beyond business rivalries. Imagine you are designing a computer system that must handle two types of jobs, and you have two algorithms with different performance on each job [@problem_id:1441233]. To make your system robust against any sequence of jobs (the "worst case"), you can create a [randomized algorithm](@keyword=randomized_algorithm|lang=en-US|style=Feynman) that runs the first algorithm with probability $p$ and the second with $1-p$. The best $p$ is the one that makes the expected cost equal for both job types, thus minimizing your maximum possible cost. The principle is the same: use randomness to protect yourself from a worst-case world.
 
 ### The Biggest Game of All: Playing Against Nature
 
 Now, let's change the game. What if your opponent isn't a thinking adversary, but is instead "Nature"—an indifferent, unpredictable set of circumstances? You're an investor deciding where to put your money, and the outcome depends on whether the economy enters an "Expansionary" or "Contractionary" phase. You don't know the probabilities; you're operating under pure uncertainty.
 
-This is the domain of **[statistical decision theory](@article_id:173658)**. The [minimax principle](@article_id:170153) provides a guide for the deeply cautious decision-maker.
+This is the domain of **[statistical decision theory](@keyword=statistical_decision_theory|lang=en-US|style=Feynman)**. The [minimax principle](@keyword=minimax_principle|lang=en-US|style=Feynman) provides a guide for the deeply cautious decision-maker.
 
-Let's analyze an investment choice . You can choose a safe Bond Fund or a risky Tech Portfolio. The payoffs are:
+Let's analyze an investment choice [@problem_id:1924859]. You can choose a safe Bond Fund or a risky Tech Portfolio. The payoffs are:
 
 | Strategy | Gain in Expansionary Phase | Gain in Contractionary Phase |
 |---|---|---|
@@ -95,7 +95,7 @@ $$
 \end{array}
 $$
 
-Now we apply the [minimax principle](@article_id:170153): choose the action that minimizes your maximum possible regret.
+Now we apply the [minimax principle](@keyword=minimax_principle|lang=en-US|style=Feynman): choose the action that minimizes your maximum possible regret.
 - Maximum regret for Bonds: $\max(80,000, 0) = 80,000$.
 - Maximum regret for Tech: $\max(0, 70,000) = 70,000$.
 
@@ -105,10 +105,10 @@ The minimum of these maximums is 70,000, which corresponds to the Tech Portfolio
 
 This way of thinking reaches its zenith in the foundations of scientific inference. A statistician trying to estimate an unknown parameter $\theta$ (e.g., the true effectiveness of a drug) is playing a game against Nature. The "action" is the choice of an estimator—a formula for making a guess based on data. The "state of nature" is the true, unknown value of $\theta$.
 
-The performance of an estimator is measured by its **[risk function](@article_id:166099)**, $R(\theta, \delta)$, which is its average error for a given true value of $\theta$. A [minimax estimator](@article_id:167129) is one that has the smallest possible worst-case risk. We seek the estimator $\delta$ that minimizes $\sup_{\theta} R(\theta, \delta)$.
+The performance of an estimator is measured by its **[risk function](@keyword=risk_function|lang=en-US|style=Feynman)**, $R(\theta, \delta)$, which is its average error for a given true value of $\theta$. A [minimax estimator](@keyword=minimax_estimator|lang=en-US|style=Feynman) is one that has the smallest possible worst-case risk. We seek the estimator $\delta$ that minimizes $\sup_{\theta} R(\theta, \delta)$.
 
-Suppose we are comparing several estimators . Some might have risk that shoots off to infinity for certain values of $\theta$; these are immediately discarded by a minimaxer. Among the remaining candidates, we find the one whose peak risk is the lowest. Sometimes, we find an estimator whose risk is constant for all possible values of $\theta$ . If this constant-risk estimator turns out to be minimax, it's called an "[equalizer rule](@article_id:165474)"—it equalizes the risk across all of nature's possibilities, a beautiful echo of the [indifference principle](@article_id:137628) from [game theory](@article_id:140236).
+Suppose we are comparing several estimators [@problem_id:1935815]. Some might have risk that shoots off to infinity for certain values of $\theta$; these are immediately discarded by a minimaxer. Among the remaining candidates, we find the one whose peak risk is the lowest. Sometimes, we find an estimator whose risk is constant for all possible values of $\theta$ [@problem_id:1924864]. If this constant-risk estimator turns out to be minimax, it's called an "[equalizer rule](@keyword=equalizer_rule|lang=en-US|style=Feynman)"—it equalizes the risk across all of nature's possibilities, a beautiful echo of the [indifference principle](@keyword=indifference_principle|lang=en-US|style=Feynman) from [game theory](@keyword=game_theory|lang=en-US|style=Feynman).
 
-This principle guides us in complex trade-offs. It helps us design estimators that balance the competing evils of bias and variance to control the worst-case error . It can even help us design a test for detecting a faint signal in noise, by balancing the probability of a false alarm against the worst-case probability of missing the signal entirely .
+This principle guides us in complex trade-offs. It helps us design estimators that balance the competing evils of bias and variance to control the worst-case error [@problem_id:1935802]. It can even help us design a test for detecting a faint signal in noise, by balancing the probability of a false alarm against the worst-case probability of missing the signal entirely [@problem_id:1965642].
 
-From the chessboard to the trading floor to the research lab, the [minimax principle](@article_id:170153) provides a unifying thread. It is a philosophy of robustness, a strategy for making sound decisions when you can't predict the future but want to be prepared for anything. It teaches us that sometimes, the cleverest move isn't to aim for the best possible outcome, but to courageously guard against the worst.
+From the chessboard to the trading floor to the research lab, the [minimax principle](@keyword=minimax_principle|lang=en-US|style=Feynman) provides a unifying thread. It is a philosophy of robustness, a strategy for making sound decisions when you can't predict the future but want to be prepared for anything. It teaches us that sometimes, the cleverest move isn't to aim for the best possible outcome, but to courageously guard against the worst.

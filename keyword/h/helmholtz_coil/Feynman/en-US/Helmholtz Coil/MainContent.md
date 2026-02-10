@@ -19,7 +19,7 @@ If we place the coils very close together, the two hills merge into one big, ste
 
 This suggests there must be a "Goldilocks" distance—not too close, not too far—where something special happens. A distance where the downward slope from the first hill is perfectly compensated by the upward slope from the second, creating a flat plateau in the middle. This magical separation, it turns out, is precisely when the distance between the coils, $d$, is equal to their radius, $R$. This is the Helmholtz configuration.
 
-At the center of one coil, the magnetic field is a combination of the field from the coil itself (which is at its maximum) and the field from the other coil, located a distance $R$ away . The combined effect across the entire central region is what creates the desired uniformity.
+At the center of one coil, the magnetic field is a combination of the field from the coil itself (which is at its maximum) and the field from the other coil, located a distance $R$ away [@problem_id:1822728]. The combined effect across the entire central region is what creates the desired uniformity.
 
 ### The Calculus of Flatness: Why a Radius is the Magic Distance
 
@@ -29,28 +29,28 @@ Let's look at the magnetic field $B_z$ along the central axis, which we'll call 
 
 First, due to the perfect symmetry of the setup, the field strength at the midpoint must be a local extremum (a maximum or a minimum). This means the first derivative of the field, $\frac{dB_z}{dz}$, is automatically zero at $z=0$. This is true for *any* symmetric separation $d$. It just means the field "levels off" at the center.
 
-But the genius of Hermann von Helmholtz's discovery is that at the specific separation $d=R$, the *second* derivative, $\frac{d^2B_z}{dz^2}$, also becomes zero at the midpoint .
+But the genius of Hermann von Helmholtz's discovery is that at the specific separation $d=R$, the *second* derivative, $\frac{d^2B_z}{dz^2}$, also becomes zero at the midpoint [@problem_id:1833433].
 
 What does this mean? The first derivative being zero makes the field flat at a single point. The second derivative being zero makes the field *stay* flat over a region around that point. It cancels out the "curvature" of the magnetic field. Think of it like this: the field from one coil is curving downwards at the midpoint. The field from the other coil is also curving downwards (since it's past its peak). But the genius of the $d=R$ spacing is that the *change in the slope* from one coil is exactly cancelled by the *change in the slope* from the other. The result is an exceptionally flat region, a magnetic plateau. This can be rigorously proven by taking the second derivative of the total magnetic field expression and showing it vanishes when $d=R$.
 
-This principle is so crucial that any deviation from it degrades the quality of the field. If the coils are misplaced by even a small amount, say $d = R(1+\epsilon)$, the second derivative is no longer zero. Instead, it becomes proportional to the error $\epsilon$  . This highlights how the Helmholtz condition is not just a mathematical curiosity but a precise engineering requirement for high-quality experiments.
+This principle is so crucial that any deviation from it degrades the quality of the field. If the coils are misplaced by even a small amount, say $d = R(1+\epsilon)$, the second derivative is no longer zero. Instead, it becomes proportional to the error $\epsilon$ [@problem_id:1886610] [@problem_id:1194112]. This highlights how the Helmholtz condition is not just a mathematical curiosity but a precise engineering requirement for high-quality experiments.
 
 ### How Flat is Flat?
 
 So, the second derivative is zero. How uniform does that make the field? The next level of analysis involves looking at the Taylor expansion of the magnetic field around the center point, $z=0$. The deviation from the central field value, $\Delta B(z) = B_{total}(z) - B_{total}(0)$, tells us how much the field changes as we move a distance $z$ from the center.
 
-Because of the symmetry, all the odd-powered terms in $z$ ($z, z^3, ...$) are zero. We've just seen that the coefficient of the $z^2$ term (which is related to the second derivative) is also zero. This means the very first term that describes any deviation from perfect uniformity is the $z^4$ term .
+Because of the symmetry, all the odd-powered terms in $z$ ($z, z^3, ...$) are zero. We've just seen that the coefficient of the $z^2$ term (which is related to the second derivative) is also zero. This means the very first term that describes any deviation from perfect uniformity is the $z^4$ term [@problem_id:1924166].
 
-This is a powerful result! It means that if you move a small distance away from the center, say 1% of the radius, the magnetic field changes by an amount proportional to $(0.01)^4$, which is a minuscule one part in one hundred million! This extreme flatness is why Helmholtz coils are the gold standard for experiments that are exquisitely sensitive to magnetic fields, from calibrating sensors to studying how animals navigate using Earth's magnetic field .
+This is a powerful result! It means that if you move a small distance away from the center, say 1% of the radius, the magnetic field changes by an amount proportional to $(0.01)^4$, which is a minuscule one part in one hundred million! This extreme flatness is why Helmholtz coils are the gold standard for experiments that are exquisitely sensitive to magnetic fields, from calibrating sensors to studying how animals navigate using Earth's magnetic field [@problem_id:2620062].
 
 ### The Opposite of Uniform: The Power of the Anti-Helmholtz Coil
 
 To truly appreciate the design for uniformity, it's incredibly instructive to see what happens when we change one simple thing: we reverse the direction of the current in one of the coils. The setup is now called an **anti-Helmholtz coil**.
 
-By the [principle of superposition](@article_id:147588), instead of adding, the fields from the two coils now subtract. At the exact center ($z=0$), the two opposing fields are equal in magnitude and cancel each other out perfectly. The magnetic field is zero!
+By the [principle of superposition](@keyword=principle_of_superposition|lang=en-US|style=Feynman), instead of adding, the fields from the two coils now subtract. At the exact center ($z=0$), the two opposing fields are equal in magnitude and cancel each other out perfectly. The magnetic field is zero!
 
-But what happens just off-center? The fields no longer cancel. In fact, as you move away from the center, the field of the closer coil dominates, and the total field strength increases rapidly and, most importantly, *linearly* with distance. So, while a Helmholtz coil is designed to make the field's derivatives *vanish*, an anti-Helmholtz coil is designed to create a large, constant *first* derivative, or **gradient** .
+But what happens just off-center? The fields no longer cancel. In fact, as you move away from the center, the field of the closer coil dominates, and the total field strength increases rapidly and, most importantly, *linearly* with distance. So, while a Helmholtz coil is designed to make the field's derivatives *vanish*, an anti-Helmholtz coil is designed to create a large, constant *first* derivative, or **gradient** [@problem_id:1192433].
 
-This configuration, which creates a magnetic "valley" that gets linearly steeper as you move away from the zero-field point at the bottom, is the basis for the quadrupole [magnetic trap](@article_id:160749). Such traps are workhorses of modern atomic physics, used to confine and cool clouds of neutral atoms to near absolute zero temperatures.
+This configuration, which creates a magnetic "valley" that gets linearly steeper as you move away from the zero-field point at the bottom, is the basis for the quadrupole [magnetic trap](@keyword=magnetic_trap|lang=en-US|style=Feynman). Such traps are workhorses of modern atomic physics, used to confine and cool clouds of neutral atoms to near absolute zero temperatures.
 
 By comparing these two configurations, we see the profound elegance of the underlying physics. With the exact same hardware, a simple flip of a switch—reversing a current—transforms a device for creating ultimate magnetic calm into a device for creating a tight magnetic grip. Both are born from the same fundamental laws, beautifully manipulated through thoughtful design.
