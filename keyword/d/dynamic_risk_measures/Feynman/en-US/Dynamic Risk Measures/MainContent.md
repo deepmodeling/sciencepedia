@@ -13,7 +13,7 @@ Financial risk management faces the exact same challenge. A snapshot of risk tod
 
 ### The Tyranny of the Present: Why Static Risk Measures Fail
 
-Let's start with a very popular, yet deeply flawed, way of thinking about risk: **Value-at-Risk (VaR)**. In simple terms, VaR at a 95% [confidence level](@article_id:167507) asks, "What is a loss amount that we are 95% sure we won't exceed?" It gives you a single number, a line in the sand. This feels comforting, but it can be profoundly misleading when we consider multiple time periods.
+Let's start with a very popular, yet deeply flawed, way of thinking about risk: **Value-at-Risk (VaR)**. In simple terms, VaR at a 95% [confidence level](@keyword=confidence_level|lang=en-US|style=Feynman) asks, "What is a loss amount that we are 95% sure we won't exceed?" It gives you a single number, a line in the sand. This feels comforting, but it can be profoundly misleading when we consider multiple time periods.
 
 Consider a simple, hypothetical scenario. You hold an investment that will have a final value in two days. Tomorrow, one of two things will happen. There's a 95% chance you land in a "good state" where your future loss will be either $0$ or $100$, with the $100$ loss being a rare, 10% event in that state. There's also a 5% chance you land in a "bad state," where your loss is guaranteed to be $50$.
 
@@ -21,11 +21,11 @@ Let's try to assess our risk using a naive, step-by-step $VaR_{0.90}$ calculatio
 - **Looking from tomorrow:** If we are in the good state, the 90th percentile loss is $0$. If we are in the bad state, the 90th percentile loss is $50$.
 - **Looking from today:** We now have a new "lottery." There's a 95% chance our risk tomorrow will be $0$, and a 5% chance it will be $50$. What is the 90th percentile of *this* lottery? It's $0$.
 
-So, our "dynamic" VaR assessment today is $0$. But wait. We know for a fact that there is a possible, albeit small, chance that tomorrow we will find ourselves in a situation where our risk is $50$. How can today's risk assessment ($0$) be strictly less than a possible future risk assessment ($50$)? It's a paradox . It's like a hiker concluding "My overall trip risk is zero," while knowing they might face a guaranteed blizzard tomorrow. Such a measure is called **time-inconsistent**. It can lead a decision-maker to accept a plan today that they will deeply regret tomorrow, even when nothing unexpected happens.
+So, our "dynamic" VaR assessment today is $0$. But wait. We know for a fact that there is a possible, albeit small, chance that tomorrow we will find ourselves in a situation where our risk is $50$. How can today's risk assessment ($0$) be strictly less than a possible future risk assessment ($50$)? It's a paradox [@problem_id:3100110]. It's like a hiker concluding "My overall trip risk is zero," while knowing they might face a guaranteed blizzard tomorrow. Such a measure is called **time-inconsistent**. It can lead a decision-maker to accept a plan today that they will deeply regret tomorrow, even when nothing unexpected happens.
 
 ### Thinking Backwards: The Dynamic Point of View
 
-The solution to this paradox is to change our perspective. Instead of applying a static rule at each step, we must define risk in a recursive, or nested, way. This is the heart of the **Bellman [principle of optimality](@article_id:147039)** in dynamic programming, applied to risk. The principle is stunningly simple yet powerful:
+The solution to this paradox is to change our perspective. Instead of applying a static rule at each step, we must define risk in a recursive, or nested, way. This is the heart of the **Bellman [principle of optimality](@keyword=principle_of_optimality|lang=en-US|style=Feynman)** in dynamic programming, applied to risk. The principle is stunningly simple yet powerful:
 
 *The risk you face today is the risk of the (risk-adjusted) value you will have tomorrow.*
 
@@ -43,7 +43,7 @@ So why does this nesting work for some measures but not for VaR? The answer lies
 
 **Subadditivity**, a key property of coherent measures, states that the risk of a portfolio of assets should be no more than the sum of the risks of the individual assets. That is, $\rho(A+B) \le \rho(A) + \rho(B)$. Holding assets A and B together should not be riskier than holding them apart. VaR famously violates this property.
 
-Measures like **Conditional Value-at-Risk (CVaR)** and the **Entropic Risk Measure** do satisfy [subadditivity](@article_id:136730) (or the more general property of convexity). $CVaR_\alpha(X)$ measures the expected loss in the worst $(1-\alpha) \times 100\%$ of cases, providing a more complete picture of the [tail risk](@article_id:141070) than VaR. Because of their internal structure, these measures behave beautifully when nested. If you calculate the entropic risk of a final outcome directly from today's perspective, you get the *exact same answer* as if you calculate the entropic risk of tomorrow's entropic risk values . This recursive consistency is what makes them suitable for dynamic [decision-making](@article_id:137659) . They are the right tools for thinking backwards from the future.
+Measures like **Conditional Value-at-Risk (CVaR)** and the **Entropic Risk Measure** do satisfy [subadditivity](@keyword=subadditivity|lang=en-US|style=Feynman) (or the more general property of convexity). $CVaR_\alpha(X)$ measures the expected loss in the worst $(1-\alpha) \times 100\%$ of cases, providing a more complete picture of the [tail risk](@keyword=tail_risk|lang=en-US|style=Feynman) than VaR. Because of their internal structure, these measures behave beautifully when nested. If you calculate the entropic risk of a final outcome directly from today's perspective, you get the *exact same answer* as if you calculate the entropic risk of tomorrow's entropic risk values [@problem_id:3100110]. This recursive consistency is what makes them suitable for dynamic [decision-making](@keyword=decision_making|lang=en-US|style=Feynman) [@problem_id:2703364]. They are the right tools for thinking backwards from the future.
 
 ### The Universal Engine of Risk: Backward Equations and Generators
 
@@ -51,28 +51,28 @@ This idea of working backward from a future goal is so fundamental that it has i
 
 Imagine a BSDE is a kind of "risk GPS." You input your final destination—the random financial outcome $\xi$ you'll face at a future time $T$. The BSDE then calculates the "path" of risk, $(Y_t)$, backwards through time to your present position, $t=0$. The value $Y_t$ *is* the risk at time $t$.
 
-The magic is in the "engine" of the BSDE, a function called the **generator**, $g(t, y, z)$. This generator dictates how risk accumulates or dissipates over time. And here is the truly beautiful discovery: the properties of a dynamic risk measure are perfectly mirrored in the properties of its generator .
+The magic is in the "engine" of the BSDE, a function called the **generator**, $g(t, y, z)$. This generator dictates how risk accumulates or dissipates over time. And here is the truly beautiful discovery: the properties of a dynamic risk measure are perfectly mirrored in the properties of its generator [@problem_id:3054656].
 
 -   For the risk measure to be **translation invariant** (adding cash to a position reduces its risk by that same amount), the generator $g$ must be independent of its $y$ argument.
--   For the risk measure to respect diversification (**[convexity](@article_id:138074)**), the generator $g$ must be a [convex function](@article_id:142697) of its $z$ argument.
--   For the risk measure to be **coherent** (convex and positively homogeneous), the generator $g$ must be **sublinear** in $z$ (e.g., $g(t,z) = \beta(t) \lVert z \rVert$) .
+-   For the risk measure to respect diversification (**[convexity](@keyword=convexity|lang=en-US|style=Feynman)**), the generator $g$ must be a [convex function](@keyword=convex_function|lang=en-US|style=Feynman) of its $z$ argument.
+-   For the risk measure to be **coherent** (convex and positively homogeneous), the generator $g$ must be **sublinear** in $z$ (e.g., $g(t,z) = \beta(t) \lVert z \rVert$) [@problem_id:3040131].
 
-This provides a breathtaking unification. A whole universe of complex, dynamic risk measures can be understood and classified simply by looking at the shape of their [generator function](@article_id:183943). The BSDE framework is the universal language of dynamic risk.
+This provides a breathtaking unification. A whole universe of complex, dynamic risk measures can be understood and classified simply by looking at the shape of their [generator function](@keyword=generator_function|lang=en-US|style=Feynman). The BSDE framework is the universal language of dynamic risk.
 
 ### The Real World is Messy: Incomplete Markets and the Need for Choice
 
 Why is this rich theory so vital? Because in the real world, unlike in simple textbook models, we can't hedge away every risk.
 
-In a hypothetical **complete market**, every possible financial outcome could be perfectly replicated by trading the available assets. Here, the price of any derivative is uniquely determined by the cost of its replication strategy. There is no ambiguity. This corresponds to having a unique **Equivalent Martingale Measure (EMM)**, a unique mathematical "world" for pricing .
+In a hypothetical **complete market**, every possible financial outcome could be perfectly replicated by trading the available assets. Here, the price of any derivative is uniquely determined by the cost of its replication strategy. There is no ambiguity. This corresponds to having a unique **Equivalent Martingale Measure (EMM)**, a unique mathematical "world" for pricing [@problem_id:3055773].
 
-But real markets are **incomplete**. There are more sources of uncertainty than there are traded assets to hedge them. A classic example is a model where stock price volatility is itself random and unpredictable . You can trade the stock, but you cannot directly trade "volatility." This creates an **unhedgeable risk**.
+But real markets are **incomplete**. There are more sources of uncertainty than there are traded assets to hedge them. A classic example is a model where stock price volatility is itself random and unpredictable [@problem_id:3051075]. You can trade the stock, but you cannot directly trade "volatility." This creates an **unhedgeable risk**.
 
 In such markets, the no-arbitrage price is not a single number but a *range* of possible prices. This is because there are infinitely many EMMs—infinitely many consistent ways to price the unhedgeable risk. Choosing a price for a derivative is no longer a simple matter of replication; it becomes an active choice, a statement about one's attitude towards the risks the market cannot absorb.
 
 ### The Art of the Possible: Minimizing Risk When You Can't Eliminate It
 
-This is where dynamic risk measures return to the stage, not just as measurement tools, but as guides for action. In an incomplete market, since a perfect hedge is impossible, what is the next best thing? The most logical approach is to construct a trading strategy that makes the residual, unhedgeable risk as small as possible. This is the **variance-minimizing hedge** .
+This is where dynamic risk measures return to the stage, not just as measurement tools, but as guides for action. In an incomplete market, since a perfect hedge is impossible, what is the next best thing? The most logical approach is to construct a trading strategy that makes the residual, unhedgeable risk as small as possible. This is the **variance-minimizing hedge** [@problem_id:3051075].
 
-This practical strategy isn't just an ad-hoc fix. In a final stroke of mathematical elegance, it turns out that the price associated with this optimal [hedging strategy](@article_id:191774) corresponds to a very special choice of EMM from the infinite set of possibilities: the **Minimal Martingale Measure (MMM)**.
+This practical strategy isn't just an ad-hoc fix. In a final stroke of mathematical elegance, it turns out that the price associated with this optimal [hedging strategy](@keyword=hedging_strategy|lang=en-US|style=Feynman) corresponds to a very special choice of EMM from the infinite set of possibilities: the **Minimal Martingale Measure (MMM)**.
 
-This beautiful duality bridges the gap between abstract theory and practical application. By choosing a coherent, time-consistent dynamic risk measure, we are implicitly selecting a pricing rule and a corresponding "best-effort" [hedging strategy](@article_id:191774) for a messy, incomplete world. The journey that started with a simple paradox about time ends with a powerful and practical framework for navigating the inescapable uncertainties of the future.
+This beautiful duality bridges the gap between abstract theory and practical application. By choosing a coherent, time-consistent dynamic risk measure, we are implicitly selecting a pricing rule and a corresponding "best-effort" [hedging strategy](@keyword=hedging_strategy|lang=en-US|style=Feynman) for a messy, incomplete world. The journey that started with a simple paradox about time ends with a powerful and practical framework for navigating the inescapable uncertainties of the future.

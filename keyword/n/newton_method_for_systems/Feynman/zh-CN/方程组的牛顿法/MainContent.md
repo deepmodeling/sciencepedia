@@ -1,7 +1,7 @@
 ## 引言
-求解方程组是科学与工程中的一项基本任务，但现实世界很少是线性的。从计算飞机的飞行稳定性到模拟捕食者-猎物种群，我们不断面临着相互耦合、非线性的问题，这些问题无法通过简单的代数方法解决。虽然许多人熟悉用[牛顿法](@article_id:300368)求解单个方程的根，但在问题规模扩大时，一个关键的知识鸿沟便显现出来：如何将这种优雅的[线性近似](@article_id:302749)思想推广到求解包含多个相互依赖方程的方程组？本文将直面这一问题。
+求解方程组是科学与工程中的一项基本任务，但现实世界很少是线性的。从计算飞机的飞行稳定性到模拟捕食者-猎物种群，我们不断面临着相互耦合、非线性的问题，这些问题无法通过简单的代数方法解决。虽然许多人熟悉用[牛顿法](@keyword=newton_method|lang=zh-CN|style=Feynman)求解单个方程的根，但在问题规模扩大时，一个关键的知识鸿沟便显现出来：如何将这种优雅的[线性近似](@keyword=tangent_line_approximation|lang=zh-CN|style=Feynman)思想推广到求解包含多个相互依赖方程的方程组？本文将直面这一问题。
 
-在接下来的章节中，我们将完整地描绘这个强大的数值工具。在“原理与机制”部分，我们将探讨从切线到[切平面](@article_id:297365)的几何飞跃，阐明[雅可比矩阵](@article_id:303923)的作用，并审视该方法著名的[二次收敛](@article_id:302992)性及其危险的陷阱。随后，在“应用与跨学科联系”部分，我们将开启一段对其多样化用途的巡览，探索这一单一[算法](@article_id:331821)如何成为驱动从[有限元分析](@article_id:357307)、化学模拟到混沌与抽象数论研究等一切事物的计算引擎。
+在接下来的章节中，我们将完整地描绘这个强大的数值工具。在“原理与机制”部分，我们将探讨从切线到[切平面](@keyword=tangent_plane|lang=zh-CN|style=Feynman)的几何飞跃，阐明[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)的作用，并审视该方法著名的[二次收敛](@keyword=quadratic_convergence|lang=zh-CN|style=Feynman)性及其危险的陷阱。随后，在“应用与跨学科联系”部分，我们将开启一段对其多样化用途的巡览，探索这一单一[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)如何成为驱动从[有限元分析](@keyword=fem_analysis|lang=zh-CN|style=Feynman)、化学模拟到混沌与抽象数论研究等一切事物的计算引擎。
 
 ## 原理与机制
 
@@ -16,63 +16,63 @@ f_{2}(x,y) = 0
 \end{cases}
 $$
 
-这不再是寻找一条曲[线与](@article_id:356071)坐标轴的交点。这是要寻找平面上两条不同[曲线相交](@article_id:352744)的点 $(x, y)$。例如，我们可能需要找到一个沿圆形路径移动的机械臂必须满足一条由指数曲线描述的约束的坐标 ，或者一个[椭圆轨道](@article_id:320770)与一条对数轨迹相交的位置 。我们如何才能将简单的切线技巧推广到这个更丰富的世界？
+这不再是寻找一条曲[线与](@keyword=wired_and|lang=zh-CN|style=Feynman)坐标轴的交点。这是要寻找平面上两条不同[曲线相交](@keyword=intersection_of_curves|lang=zh-CN|style=Feynman)的点 $(x, y)$。例如，我们可能需要找到一个沿圆形路径移动的机械臂必须满足一条由指数曲线描述的约束的坐标 [@problem_id:2190260]，或者一个[椭圆轨道](@keyword=elliptical_orbits|lang=zh-CN|style=Feynman)与一条对数轨迹相交的位置 [@problem_id:2207865]。我们如何才能将简单的切线技巧推广到这个更丰富的世界？
 
-### 几何学的巨大飞跃：[切平面](@article_id:297365)相交
+### 几何学的巨大飞跃：[切平面](@keyword=tangent_plane|lang=zh-CN|style=Feynman)相交
 
-在这里，我们进行了一次奇妙的想象力飞跃。对于单变量函数 $y = f(x)$，其图像是二维空间中的一条曲线，其[局部线性近似](@article_id:326996)是一条切线。对于双变量函数，比如 $z = f_1(x, y)$，其图像是三维空间中漂浮的一个**[曲面](@article_id:331153)**。对于一个[曲面](@article_id:331153)，与切线等价的是什么？是**切平面**。在我们当前的猜测点 $(x_k, y_k)$，我们可以想象自己站在[曲面](@article_id:331153) $z = f_1(x, y)$ 上的点 $(x_k, y_k, f_1(x_k, y_k))$ 处。[曲面](@article_id:331153)本身可能是起伏复杂的，但在我们所在的位置，我们可以用一个平坦的薄片——即切平面——来近似它。
+在这里，我们进行了一次奇妙的想象力飞跃。对于单变量函数 $y = f(x)$，其图像是二维空间中的一条曲线，其[局部线性近似](@keyword=local_linear_approximation|lang=zh-CN|style=Feynman)是一条切线。对于双变量函数，比如 $z = f_1(x, y)$，其图像是三维空间中漂浮的一个**[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)**。对于一个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，与切线等价的是什么？是**切平面**。在我们当前的猜测点 $(x_k, y_k)$，我们可以想象自己站在[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman) $z = f_1(x, y)$ 上的点 $(x_k, y_k, f_1(x_k, y_k))$ 处。[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)本身可能是起伏复杂的，但在我们所在的位置，我们可以用一个平坦的薄片——即切平面——来近似它。
 
-现在，我们的方程组有两个函数，$f_1$ 和 $f_2$。这意味着我们在三维空间中有*两个*[曲面](@article_id:331153)。多维[牛顿法](@article_id:300368)的绝妙之处在于：我们不去解决那个困难的非线性问题——即找到两个*弯曲[曲面](@article_id:331153)*同时穿过平面 $z=0$ 的地方，而是解决一个简单得多的问题。我们找到 $xy$ 平面上的点 $(x_{k+1}, y_{k+1})$，该点位于两个*切平面*在 $z=0$ 处的交线上。这个交点就成为我们下一个，且大大改进了的猜测值 。
+现在，我们的方程组有两个函数，$f_1$ 和 $f_2$。这意味着我们在三维空间中有*两个*[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)。多维[牛顿法](@keyword=newton_method|lang=zh-CN|style=Feynman)的绝妙之处在于：我们不去解决那个困难的非线性问题——即找到两个*弯曲[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)*同时穿过平面 $z=0$ 的地方，而是解决一个简单得多的问题。我们找到 $xy$ 平面上的点 $(x_{k+1}, y_{k+1})$，该点位于两个*切平面*在 $z=0$ 处的交线上。这个交点就成为我们下一个，且大大改进了的猜测值 [@problem_id:3234352]。
 
 我们再一次用一个简单的线性问题取代了一个困难的非线性问题。这是基本策略，也是线性化力量的明证。
 
-### 进展的引擎：[雅可比矩阵](@article_id:303923)
+### 进展的引擎：[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)
 
-那么，我们如何用数学方式描述这些切平面呢？一条线的斜率是它的[导数](@article_id:318324)。一个平面的“倾斜度”由其相对于每个[自变量](@article_id:330821)的[偏导数](@article_id:306700)决定。对于我们的函数 $f_1(x,y)$，它在 $x$ 方向的倾斜度是 $\frac{\partial f_1}{\partial x}$，在 $y$ 方向的倾斜度是 $\frac{\partial f_1}{\partial y}$。
+那么，我们如何用数学方式描述这些切平面呢？一条线的斜率是它的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)。一个平面的“倾斜度”由其相对于每个[自变量](@keyword=independent_variables|lang=zh-CN|style=Feynman)的[偏导数](@keyword=partial_derivatives|lang=zh-CN|style=Feynman)决定。对于我们的函数 $f_1(x,y)$，它在 $x$ 方向的倾斜度是 $\frac{\partial f_1}{\partial x}$，在 $y$ 方向的倾斜度是 $\frac{\partial f_1}{\partial y}$。
 
-为了管理我们方程组的所有方向信息，我们将所有偏导数汇集到一个宏伟的对象中：一个矩阵。这个矩阵有一个特殊的名字：**[雅可比矩阵](@article_id:303923)**，记作 $J$。对于我们的二维系统，它看起来是这样的：
+为了管理我们方程组的所有方向信息，我们将所有偏导数汇集到一个宏伟的对象中：一个矩阵。这个矩阵有一个特殊的名字：**[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)**，记作 $J$。对于我们的二维系统，它看起来是这样的：
 
 $$
 J(x,y) = \begin{pmatrix} \frac{\partial f_1}{\partial x} & \frac{\partial f_1}{\partial y} \\ \frac{\partial f_2}{\partial x} & \frac{\partial f_2}{\partial y} \end{pmatrix}
 $$
 
-[雅可比矩阵](@article_id:303923)是[导数](@article_id:318324)在多变量情况下的真正推广。它像一台小机器，告诉我们当我们微调输入向量 $\mathbf{x} = (x, y)^T$ 时，整个输出向量 $F = (f_1, f_2)^T$ 如何变化。它指引着我们的迭代方向，告诉我们下一步该朝哪个方向走。
+[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)是[导数](@keyword=derivative|lang=zh-CN|style=Feynman)在多变量情况下的真正推广。它像一台小机器，告诉我们当我们微调输入向量 $\mathbf{x} = (x, y)^T$ 时，整个输出向量 $F = (f_1, f_2)^T$ 如何变化。它指引着我们的迭代方向，告诉我们下一步该朝哪个方向走。
 
-当我们要求在下一个点 $\mathbf{x}_{k+1}$ 处产生零值时，在点 $\mathbf{x}_k=(x_k, y_k)$ 处的两个[切平面方程](@article_id:327732)，可以简化为一个单一、优雅的[矩阵方程](@article_id:382321)：
+当我们要求在下一个点 $\mathbf{x}_{k+1}$ 处产生零值时，在点 $\mathbf{x}_k=(x_k, y_k)$ 处的两个[切平面方程](@keyword=tangent_plane_equation|lang=zh-CN|style=Feynman)，可以简化为一个单一、优雅的[矩阵方程](@keyword=matrix_equations|lang=zh-CN|style=Feynman)：
 
 $$
 J(\mathbf{x}_k) (\mathbf{x}_{k+1} - \mathbf{x}_k) = -F(\mathbf{x}_k)
 $$
 
-就是这个。这就是方程组[牛顿法](@article_id:300368)的核心。为了找到我们的修正步长 $\Delta \mathbf{x}_k = \mathbf{x}_{k+1} - \mathbf{x}_k$，我们不需要做任何神奇的事情。我们只需解这个*线性*方程组。每一次迭代，无论原始问题多么凶猛地非线性，都归结为解一个简单的矩阵方程。
+就是这个。这就是方程组[牛顿法](@keyword=newton_method|lang=zh-CN|style=Feynman)的核心。为了找到我们的修正步长 $\Delta \mathbf{x}_k = \mathbf{x}_{k+1} - \mathbf{x}_k$，我们不需要做任何神奇的事情。我们只需解这个*线性*方程组。每一次迭代，无论原始问题多么凶猛地非线性，都归结为解一个简单的矩阵方程。
 
-### 回报：[二次收敛](@article_id:302992)的力量
+### 回报：[二次收敛](@keyword=quadratic_convergence|lang=zh-CN|style=Feynman)的力量
 
-为什么要费这么大劲？为什么要在每一步都计算一个完整的[导数](@article_id:318324)矩阵并求解一个[线性系统](@article_id:308264)？回报是速度。令人难以置信的速度。当牛顿法有效时，它表现出所谓的**二次收敛**。
+为什么要费这么大劲？为什么要在每一步都计算一个完整的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)矩阵并求解一个[线性系统](@keyword=linear_systems|lang=zh-CN|style=Feynman)？回报是速度。令人难以置信的速度。当牛顿法有效时，它表现出所谓的**二次收敛**。
 
-用通俗的话说，这意味着什么？假设你的第一次猜测精确到小数点后一位。你的下一次猜测很可能精确到*两位*。再下一次，*四位*。然后是八位，十六位……你知道的正确数字位数在每一步都大致**翻倍**！一旦你相当接近一个解，该方法不仅是爬向它，而是以惊人的速度加速冲向它。这就是为什么在许多科学和工程问题中，[牛顿法](@article_id:300368)是黄金标准。这种快速收敛不仅仅是理论上的幻想；它可以被清晰地观测和数值测量，证实其[收敛阶](@article_id:349979)数为2 。
+用通俗的话说，这意味着什么？假设你的第一次猜测精确到小数点后一位。你的下一次猜测很可能精确到*两位*。再下一次，*四位*。然后是八位，十六位……你知道的正确数字位数在每一步都大致**翻倍**！一旦你相当接近一个解，该方法不仅是爬向它，而是以惊人的速度加速冲向它。这就是为什么在许多科学和工程问题中，[牛顿法](@keyword=newton_method|lang=zh-CN|style=Feynman)是黄金标准。这种快速收敛不仅仅是理论上的幻想；它可以被清晰地观测和数值测量，证实其[收敛阶](@keyword=convergence_order|lang=zh-CN|style=Feynman)数为2 [@problem_id:3281056]。
 
-从某种意义上说，这种不可思议的力量是由深奥的数学定理保证的。**[反函数定理](@article_id:299018)**告诉我们，如果[雅可比矩阵](@article_id:303923)在真解处是可逆的，那么函数在该解的一个小邻域内的行为就像一个良好、可逆的[线性映射](@article_id:364367)。这为确保牛顿迭代是良定义的，并且如果我们的初始猜测“足够接近”，迭代将会收敛提供了理论基础 。该方法还具有一个优美的性质，称为**仿射[协变性](@article_id:312296)**，这意味着其行为不依赖于你使用的特定[坐标系](@article_id:316753)。它自始至终都是一个几何方法，无论你是用米还是英尺来测量，或者使用一个旋转的网格，迭代点在物理空间中都会追踪相同的路径 。
+从某种意义上说，这种不可思议的力量是由深奥的数学定理保证的。**[反函数定理](@keyword=inverse_function_theorem|lang=zh-CN|style=Feynman)**告诉我们，如果[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)在真解处是可逆的，那么函数在该解的一个小邻域内的行为就像一个良好、可逆的[线性映射](@keyword=linear_maps|lang=zh-CN|style=Feynman)。这为确保牛顿迭代是良定义的，并且如果我们的初始猜测“足够接近”，迭代将会收敛提供了理论基础 [@problem_id:1677186]。该方法还具有一个优美的性质，称为**仿射[协变性](@keyword=covariance|lang=zh-CN|style=Feynman)**，这意味着其行为不依赖于你使用的特定[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)。它自始至终都是一个几何方法，无论你是用米还是英尺来测量，或者使用一个旋转的网格，迭代点在物理空间中都会追踪相同的路径 [@problem_id:2190224]。
 
-### 风险与陷阱：当[牛顿法](@article_id:300368)误入歧途
+### 风险与陷阱：当[牛顿法](@keyword=newton_method|lang=zh-CN|style=Feynman)误入歧途
 
-当然，无论在数学还是物理学中，都没有免费的午餐。[牛顿法](@article_id:300368)强大的威力伴随着一些重要的警告。该方法可能，而且经常会以壮观而迷人的方式失败。
+当然，无论在数学还是物理学中，都没有免费的午餐。[牛顿法](@keyword=newton_method|lang=zh-CN|style=Feynman)强大的威力伴随着一些重要的警告。该方法可能，而且经常会以壮观而迷人的方式失败。
 
-#### 撞墙：奇异的[雅可比矩阵](@article_id:303923)
+#### 撞墙：奇异的[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)
 
-迭代的核心是求解系统 $J \Delta \mathbf{x} = -F$。这需要对雅可比矩阵 $J$ 求逆。如果求不了逆怎么办？如果雅可比矩阵的[行列式](@article_id:303413)为零怎么办？那么矩阵就是**奇异的**，方法就撞墙了。
+迭代的核心是求解系统 $J \Delta \mathbf{x} = -F$。这需要对雅可比矩阵 $J$ 求逆。如果求不了逆怎么办？如果雅可比矩阵的[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)为零怎么办？那么矩阵就是**奇异的**，方法就撞墙了。
 
-从几何上看，这对应于切平面相互平行，意味着它们永远不会相交以定义一个唯一的下一步。一个经典的例子是试图找到一个圆和一条与它完美相切的直线的交点。在[切点](@article_id:351997)处——也就是解本身——[雅可比矩阵](@article_id:303923)变得奇异，方法失效 。更微妙的是，即使[雅可比矩阵](@article_id:303923)不完全奇异，它也可能是**病态的**（接近奇异）。当我们的系统中的两条曲线几乎相切时，就会发生这种情况。由此产生的[线性系统](@article_id:308264)对微小的数值误差变得极其敏感，[数值稳定性](@article_id:306969)丧失，导致收敛缓慢或解的严重不准确 。这在使用[有限精度](@article_id:338685)算术的计算机上实现该方法时，是一个常见而实际的头疼问题 。
+从几何上看，这对应于切平面相互平行，意味着它们永远不会相交以定义一个唯一的下一步。一个经典的例子是试图找到一个圆和一条与它完美相切的直线的交点。在[切点](@keyword=point_of_tangency|lang=zh-CN|style=Feynman)处——也就是解本身——[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)变得奇异，方法失效 [@problem_id:3262196]。更微妙的是，即使[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)不完全奇异，它也可能是**病态的**（接近奇异）。当我们的系统中的两条曲线几乎相切时，就会发生这种情况。由此产生的[线性系统](@keyword=linear_systems|lang=zh-CN|style=Feynman)对微小的数值误差变得极其敏感，[数值稳定性](@keyword=numerical_stability|lang=zh-CN|style=Feynman)丧失，导致收敛缓慢或解的严重不准确 [@problem_id:2216457]。这在使用[有限精度](@keyword=finite_precision|lang=zh-CN|style=Feynman)算术的计算机上实现该方法时，是一个常见而实际的头疼问题 [@problem_id:3269416]。
 
 #### 循环：周期性循环
 
-即使雅可比矩阵在每一步都表现得完美无瑕，也不能保证收敛。迭代序列可能无法稳定下来。它们可能不会走向一个根，而是陷入一个**周期循环**。例如，方法可能从点 A 跳到点 B，然后又从点 B 直接跳回点 A，永远重复这个两步舞，永远找不到可能潜伏在附近的根 。更高周期的循环也是可能的，导致错综复杂的循环动态，完全避开了任何实际解。
+即使雅可比矩阵在每一步都表现得完美无瑕，也不能保证收敛。迭代序列可能无法稳定下来。它们可能不会走向一个根，而是陷入一个**周期循环**。例如，方法可能从点 A 跳到点 B，然后又从点 B 直接跳回点 A，永远重复这个两步舞，永远找不到可能潜伏在附近的根 [@problem_id:2441953]。更高周期的循环也是可能的，导致错综复杂的循环动态，完全避开了任何实际解。
 
-#### 迷宫：[分形](@article_id:301219)[吸引盆](@article_id:353980)
+#### 迷宫：[分形](@keyword=fractal|lang=zh-CN|style=Feynman)[吸引盆](@keyword=domain_of_attraction|lang=zh-CN|style=Feynman)
 
-这也许是最美丽也最令人惊讶的陷阱。当一个系统有多个解时（比如，单位1的三个立方根），我们可以问一个简单的问题：哪些初始猜测会收敛到哪个根？答案绝不简单。所有收敛到给定根的起始点的集合被称为它的**[吸引盆](@article_id:353980)**。对于[牛顿法](@article_id:300368)，这些[吸引盆](@article_id:353980)之间的边界不是光滑、规矩的线条。它们是**[分形](@article_id:301219)**——无限复杂、[自相似](@article_id:337935)的图案。
+这也许是最美丽也最令人惊讶的陷阱。当一个系统有多个解时（比如，单位1的三个立方根），我们可以问一个简单的问题：哪些初始猜测会收敛到哪个根？答案绝不简单。所有收敛到给定根的起始点的集合被称为它的**[吸引盆](@keyword=domain_of_attraction|lang=zh-CN|style=Feynman)**。对于[牛顿法](@keyword=newton_method|lang=zh-CN|style=Feynman)，这些[吸引盆](@keyword=domain_of_attraction|lang=zh-CN|style=Feynman)之间的边界不是光滑、规矩的线条。它们是**[分形](@keyword=fractal|lang=zh-CN|style=Feynman)**——无限复杂、[自相似](@keyword=self_similar|lang=zh-CN|style=Feynman)的图案。
 
-这意味着在平面上存在一些区域，在这些区域中，你初始猜测的微小变化就可能极大地改变结果，使迭代走向一个完全不同的根 。你可能站在一个收敛到根 A 的点上，但向旁边迈出一小步，你就进入了一个收敛到根 B 的区域。再迈一小步，你可能又回到了根 A 的吸引盆，或者你可能偶然进入了根 C 的吸引盆。这揭示了隐藏在一个完全确定性[算法](@article_id:331821)中的惊人混沌层次。它深刻地提醒我们，即使是简单、优雅的规则也能产生最高级别的复杂性。
+这意味着在平面上存在一些区域，在这些区域中，你初始猜测的微小变化就可能极大地改变结果，使迭代走向一个完全不同的根 [@problem_id:3280962]。你可能站在一个收敛到根 A 的点上，但向旁边迈出一小步，你就进入了一个收敛到根 B 的区域。再迈一小步，你可能又回到了根 A 的吸引盆，或者你可能偶然进入了根 C 的吸引盆。这揭示了隐藏在一个完全确定性[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)中的惊人混沌层次。它深刻地提醒我们，即使是简单、优雅的规则也能产生最高级别的复杂性。
 
-总而言之，方程组的牛顿法是一个源自简单而优雅的几何思想的、功能强大的工具。它将一个困难的非线性问题转化为一系列简单的线性问题，提供了惊人的速度。但它的力量是有代价的：它是一种“局部”方法，其全局行为可能是一片充满[奇异点](@article_id:378277)、循环和[分形边界](@article_id:326183)的狂野景观。理解其力量与陷阱，是有效运用它的关键。
+总而言之，方程组的牛顿法是一个源自简单而优雅的几何思想的、功能强大的工具。它将一个困难的非线性问题转化为一系列简单的线性问题，提供了惊人的速度。但它的力量是有代价的：它是一种“局部”方法，其全局行为可能是一片充满[奇异点](@keyword=exceptional_points|lang=zh-CN|style=Feynman)、循环和[分形边界](@keyword=fractal_boundaries|lang=zh-CN|style=Feynman)的狂野景观。理解其力量与陷阱，是有效运用它的关键。
 

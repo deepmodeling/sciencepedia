@@ -3,7 +3,7 @@
 
 本文旨在纠正一个常见的误解，即认为检测不可行性是一个穷举失败的过程。恰恰相反，本文揭示了这是一个逻辑严密的演绎过程，能产生一个严格的不可行性证明。我们将揭示计算机如何能够以数学的确定性，知晓没有任何解能满足给定的约束集。
 
-您将学习支撑这一过程的核心概念，从“不可行性证书”的优雅逻辑开始。在“原理与机制”一节，我们将探讨如[法卡斯引理](@article_id:307137) (Farkas's Lemma) 等基本定理，以及如同侦探般寻找这些证明的[算法](@article_id:331821)，例如单纯形法 (Simplex method) 和[内点法](@article_id:307553) (Interior-Point methods)。随后，在“应用与跨学科联系”一节，我们将看到这些证书如何成为不可或缺的工具，用于调试方案、理解物理系统的极限，甚至加速更复杂问题的求解过程。
+您将学习支撑这一过程的核心概念，从“不可行性证书”的优雅逻辑开始。在“原理与机制”一节，我们将探讨如[法卡斯引理](@keyword=farkas_s_lemma|lang=zh-CN|style=Feynman) (Farkas's Lemma) 等基本定理，以及如同侦探般寻找这些证明的[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)，例如单纯形法 (Simplex method) 和[内点法](@keyword=interior_point_methods|lang=zh-CN|style=Feynman) (Interior-Point methods)。随后，在“应用与跨学科联系”一节，我们将看到这些证书如何成为不可或缺的工具，用于调试方案、理解物理系统的极限，甚至加速更复杂问题的求解过程。
 
 ## 原理与机制
 
@@ -11,7 +11,7 @@
 
 在优化问题中检测不可行性正是如此。它不是计算机尝试了所有可能性后放弃，而是计算机找到了一个巧妙、简洁且逻辑上无可辩驳的证明，证实没有任何解可能存在。这个证明被称为**不可行性证书**。
 
-### [反证法](@article_id:340295)：不可能的证明
+### [反证法](@keyword=reductio_ad_absurdum|lang=zh-CN|style=Feynman)：不可能的证明
 
 让我们从一个简单到近乎琐碎的谜题开始。假设一位工厂经理就生产变量 $x_1$ 和 $x_2$ 给你两条指令：
 1.  出于安全原因，你不能生产任何东西：$x_1 \le 0$ 且 $x_2 \le 0$。
@@ -21,7 +21,7 @@
 
 你刚才所做的，就是构建了一个不可行性证书。你采用了一个特定的“配方”——将第一个不等式和第二个不等式相加——来产生一个新的、有效的不等式，而这个新的不等式与第三个不等式直接矛盾。
 
-一般的方法是为每个约束找到一组非负乘子，当你用每个约束乘以其对应的乘子并将它们全部相加时，变量（$x_1, x_2$ 等）会奇迹般地消失，只留下一个类似 $0 \le -1$ 的陈述 。例如，让我们将上述谜题中的约束写成标准形式 $Ax \le b$：
+一般的方法是为每个约束找到一组非负乘子，当你用每个约束乘以其对应的乘子并将它们全部相加时，变量（$x_1, x_2$ 等）会奇迹般地消失，只留下一个类似 $0 \le -1$ 的陈述 [@problem_id:2222350]。例如，让我们将上述谜题中的约束写成标准形式 $Ax \le b$：
 1. $x_1 \le 0$
 2. $x_2 \le 0$
 3. $-x_1 - x_2 \le -1$ (等同于 $x_1 + x_2 \ge 1$)
@@ -30,64 +30,64 @@
 $$
 (1)(x_1) + (1)(x_2) + (1)(-x_1 - x_2) \le (1)(0) + (1)(0) + (1)(-1)
 $$
-化简左边，$(x_1 + x_2 - x_1 - x_2)$ 变为 $0$。右边变为 $-1$。我们就得到了一个不可能的陈述 $0 \le -1$。乘子向量 $y = \begin{pmatrix} 1  1  1 \end{pmatrix}^\top$ 就是我们的证书 。它是形式化的、数学上的不可行性证明。
+化简左边，$(x_1 + x_2 - x_1 - x_2)$ 变为 $0$。右边变为 $-1$。我们就得到了一个不可能的陈述 $0 \le -1$。乘子向量 $y = \begin{pmatrix} 1  1  1 \end{pmatrix}^\top$ 就是我们的证书 [@problem_id:3127941]。它是形式化的、数学上的不可行性证明。
 
-### [法卡斯引理](@article_id:307137) (Farkas's Lemma)：伟大的择一性
+### [法卡斯引理](@keyword=farkas_s_lemma|lang=zh-CN|style=Feynman) (Farkas's Lemma)：伟大的择一性
 
-这个简单的思想被 enshrined 在优化领域最美丽、最基本的定理之一——**[法卡斯引理](@article_id:307137) (Farkas's Lemma)** 中。在其多种形式中，它陈述了一个深刻的“[择一定理](@article_id:639540)”。对于一个[线性约束](@article_id:641259)系统，它表明以下两种情况*有且仅有*一种为真：
+这个简单的思想被 enshrined 在优化领域最美丽、最基本的定理之一——**[法卡斯引理](@keyword=farkas_s_lemma|lang=zh-CN|style=Feynman) (Farkas's Lemma)** 中。在其多种形式中，它陈述了一个深刻的“[择一定理](@keyword=theorem_of_the_alternative|lang=zh-CN|style=Feynman)”。对于一个[线性约束](@keyword=linear_constraints|lang=zh-CN|style=Feynman)系统，它表明以下两种情况*有且仅有*一种为真：
 
 1.  **存在**一个满足所有约束的解 $x$。
 2.  **存在**一个不可行性证书 $y$。
 
 没有第三种选择。系统不可能是“或许可行”。解要么存在，要么存在一个证明其不存在的证据。这是优化领域确定性的基石。如果一个求解器告诉你你的问题不可行，它不是在猜测。它已经*找到*了那个证书 $y$。
 
-这个原则甚至适用于复杂的大规模问题。考虑一家货运公司，被要求将货物从仓库运送到商店 。所有仓库的总供应量为 700 万单位，但所有商店的总需求量为 1000 万单位。直觉上这显然是不可能的。[法卡斯引理](@article_id:307137) (Farkas's Lemma) 提供了支持这一点的形式化机制。一个[算法](@article_id:331821)会找到一组乘子，其本质上是说：“将所有供应约束相加得到 700 万，将所有需求约束相加得到 1000 万。由于总流量必须守恒，这意味着 $7,000,000 = 10,000,000$”，这显然是荒谬的。证书只是将这种常识性论证形式化。
+这个原则甚至适用于复杂的大规模问题。考虑一家货运公司，被要求将货物从仓库运送到商店 [@problem_id:3193024]。所有仓库的总供应量为 700 万单位，但所有商店的总需求量为 1000 万单位。直觉上这显然是不可能的。[法卡斯引理](@keyword=farkas_s_lemma|lang=zh-CN|style=Feynman) (Farkas's Lemma) 提供了支持这一点的形式化机制。一个[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)会找到一组乘子，其本质上是说：“将所有供应约束相加得到 700 万，将所有需求约束相加得到 1000 万。由于总流量必须守恒，这意味着 $7,000,000 = 10,000,000$”，这显然是荒谬的。证书只是将这种常识性论证形式化。
 
-### [算法](@article_id:331821)如侦探：如何找到证明
+### [算法](@keyword=algorithm|lang=zh-CN|style=Feynman)如侦探：如何找到证明
 
-当然，对于一个有数千个变量和约束的问题，我们不能仅凭肉眼观察系统来找到正确的乘子。我们需要一个系统的侦探——一个[算法](@article_id:331821)——来搜寻它们。
+当然，对于一个有数千个变量和约束的问题，我们不能仅凭肉眼观察系统来找到正确的乘子。我们需要一个系统的侦探——一个[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)——来搜寻它们。
 
-#### [单纯形法](@article_id:300777) (Simplex Method)
+#### [单纯形法](@keyword=simplex_method|lang=zh-CN|style=Feynman) (Simplex Method)
 
-经典的**单纯形法 (simplex method)** 可以被看作是这样一个侦探。当面对一个可能不可行的问题时，我们可以使用**第一阶段 (Phase I)** 程序。这个过程引入“人工”变量来创建一个简单的、但却是虚假的起始解。[算法](@article_id:331821)在第一阶段的目标是将所有这些[人工变量](@article_id:343685)驱动到零，这对应于找到一个真正的[可行解](@article_id:639079)。
+经典的**单纯形法 (simplex method)** 可以被看作是这样一个侦探。当面对一个可能不可行的问题时，我们可以使用**第一阶段 (Phase I)** 程序。这个过程引入“人工”变量来创建一个简单的、但却是虚假的起始解。[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)在第一阶段的目标是将所有这些[人工变量](@keyword=artificial_variables|lang=zh-CN|style=Feynman)驱动到零，这对应于找到一个真正的[可行解](@keyword=feasible_solution|lang=zh-CN|style=Feynman)。
 
-如果[算法](@article_id:331821)成功了，那很好！我们有了一个解决实际问题的起点。但如果它失败了——如果它发现它能做到的最好情况是某个解中一些[人工变量](@article_id:343685)顽固地保持正值——那么问题就是不可行的。妙处在于，在这次失败尝试结束时，[算法](@article_id:331821)账本的最终状态（[单纯形表](@article_id:297239)的[物镜](@article_id:346620)行）恰好包含了法卡斯证书 (Farkas certificate) 所需的乘子 。寻找解的失败同时产生了失败的证明。
+如果[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)成功了，那很好！我们有了一个解决实际问题的起点。但如果它失败了——如果它发现它能做到的最好情况是某个解中一些[人工变量](@keyword=artificial_variables|lang=zh-CN|style=Feynman)顽固地保持正值——那么问题就是不可行的。妙处在于，在这次失败尝试结束时，[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)账本的最终状态（[单纯形表](@keyword=simplex_tableau|lang=zh-CN|style=Feynman)的[物镜](@keyword=objective_lens|lang=zh-CN|style=Feynman)行）恰好包含了法卡斯证书 (Farkas certificate) 所需的乘子 [@problem_id:2222350]。寻找解的失败同时产生了失败的证明。
 
-#### [对偶单纯形法](@article_id:343728) (Dual Simplex Method)
+#### [对偶单纯形法](@keyword=dual_simplex_method|lang=zh-CN|style=Feynman) (Dual Simplex Method)
 
-另一个强大的工具是**[对偶单纯形法](@article_id:343728) (dual simplex method)**。想象你有一个完美的、最优的生产计划。突然，一项新规定出台，增加了一个你的当前计划违反的新约束 。你的解现在是“[原问题不可行](@article_id:355235)”的。[对偶单纯形法](@article_id:343728)是一个试图修复解以满足新规则，同时尽可能保持最优性的过程。它作用于问题的“[对偶问题](@article_id:356396)”，一个相关的优化问题，其变量对应于我们一直在讨论的乘子。如果[对偶单纯形法](@article_id:343728)能找到一系列修复（主元变换），它将得到一个新的最优解。但如果它卡住了，并报告没有修复是可能的，它实际上已经证明了约束系统是根本上矛盾的。在[对偶单纯形法](@article_id:343728)中“卡住”的状态是发现不可行性证书的另一种方式。
+另一个强大的工具是**[对偶单纯形法](@keyword=dual_simplex_method|lang=zh-CN|style=Feynman) (dual simplex method)**。想象你有一个完美的、最优的生产计划。突然，一项新规定出台，增加了一个你的当前计划违反的新约束 [@problem_id:2192545]。你的解现在是“[原问题不可行](@keyword=primal_infeasibility|lang=zh-CN|style=Feynman)”的。[对偶单纯形法](@keyword=dual_simplex_method|lang=zh-CN|style=Feynman)是一个试图修复解以满足新规则，同时尽可能保持最优性的过程。它作用于问题的“[对偶问题](@keyword=dual_problem|lang=zh-CN|style=Feynman)”，一个相关的优化问题，其变量对应于我们一直在讨论的乘子。如果[对偶单纯形法](@keyword=dual_simplex_method|lang=zh-CN|style=Feynman)能找到一系列修复（主元变换），它将得到一个新的最优解。但如果它卡住了，并报告没有修复是可能的，它实际上已经证明了约束系统是根本上矛盾的。在[对偶单纯形法](@keyword=dual_simplex_method|lang=zh-CN|style=Feynman)中“卡住”的状态是发现不可行性证书的另一种方式。
 
 ### 问题的宇宙：不可行性的统一性
 
 这种“证书”思想的力量远远超出了简单的线性规划。它是贯穿整个优化领域的统一原则。
 
-*   **[整数规划](@article_id:357285) (Integer Programming)**：许多现实世界的问题要求变量为整数（你不能造半辆车）。如果我们怀疑一个**[整数规划](@article_id:357285) (IP)** 问题不可行，一个强大的技术是首先检查它的**[线性规划松弛](@article_id:330819) (LP relaxation)**，即我们允许变量取分数值 。这个松弛问题更容易解决。如果连这个更容易、更灵活的问题都被证明是不可行的（通过为它找到一个法卡斯证书），那么原始的、更具限制性的整数问题必然也是不可行的。
+*   **[整数规划](@keyword=integer_programming|lang=zh-CN|style=Feynman) (Integer Programming)**：许多现实世界的问题要求变量为整数（你不能造半辆车）。如果我们怀疑一个**[整数规划](@keyword=integer_programming|lang=zh-CN|style=Feynman) (IP)** 问题不可行，一个强大的技术是首先检查它的**[线性规划松弛](@keyword=lp_relaxation|lang=zh-CN|style=Feynman) (LP relaxation)**，即我们允许变量取分数值 [@problem_id:3172493]。这个松弛问题更容易解决。如果连这个更容易、更灵活的问题都被证明是不可行的（通过为它找到一个法卡斯证书），那么原始的、更具限制性的整数问题必然也是不可行的。
 
-*   **[半定规划](@article_id:323114) (Semidefinite Programming, SDP)**：在更高级的应用中，如控制理论或量子力学，约束可能不是简单的不等式，而是**[线性矩阵不等式](@article_id:353531) (LMIs)**，形式为 $F(x) \succeq 0$，意味着一个依赖于变量 $x$ 的矩阵必须是半正定的。令人惊讶的是，同样的原则也成立！不可行性由一个证书来证明，但在这种情况下，证书不是一个向量 $y$，而是一个矩阵 $Z$。[算法](@article_id:331821)会找到一个证书矩阵 $Z$，当它与约束矩阵结合时，会产生一个逻辑矛盾 。证书的形式变了，但思想的灵魂——[反证法](@article_id:340295)——保持不变。
+*   **[半定规划](@keyword=semidefinite_programming|lang=zh-CN|style=Feynman) (Semidefinite Programming, SDP)**：在更高级的应用中，如控制理论或量子力学，约束可能不是简单的不等式，而是**[线性矩阵不等式](@keyword=linear_matrix_inequality|lang=zh-CN|style=Feynman) (LMIs)**，形式为 $F(x) \succeq 0$，意味着一个依赖于变量 $x$ 的矩阵必须是半正定的。令人惊讶的是，同样的原则也成立！不可行性由一个证书来证明，但在这种情况下，证书不是一个向量 $y$，而是一个矩阵 $Z$。[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)会找到一个证书矩阵 $Z$，当它与约束矩阵结合时，会产生一个逻辑矛盾 [@problem_id:2201465]。证书的形式变了，但思想的灵魂——[反证法](@keyword=reductio_ad_absurdum|lang=zh-CN|style=Feynman)——保持不变。
 
-*   **硬币的另一面**：一个无解问题的反面是什么？一个解可以无限好的问题！我们称之为**无界 (unbounded)**。例如，“最大化你的利润 $P$，其中 $P = x_1$，约束条件为 $x_1 \ge 0$。”你可以让利润要多大有多大。**[对偶理论](@article_id:303568)**揭示了一个惊人的对称性：一个原问题是无界的，当且仅当其[对偶问题](@article_id:356396)是不可行的。证明原问题是无界的，等同于为其对偶问题找到一个法卡斯证书 ，。
+*   **硬币的另一面**：一个无解问题的反面是什么？一个解可以无限好的问题！我们称之为**无界 (unbounded)**。例如，“最大化你的利润 $P$，其中 $P = x_1$，约束条件为 $x_1 \ge 0$。”你可以让利润要多大有多大。**[对偶理论](@keyword=duality_theory|lang=zh-CN|style=Feynman)**揭示了一个惊人的对称性：一个原问题是无界的，当且仅当其[对偶问题](@keyword=dual_problem|lang=zh-CN|style=Feynman)是不可行的。证明原问题是无界的，等同于为其对偶问题找到一个法卡斯证书 [@problem_id:3154270]，[@problem_id:3164580]。
 
 ### 现代综合：一部单一而优雅的机器
 
-几十年来，[算法](@article_id:331821)将可行性与最优性视为两个独立的步骤：首先，运行第一阶段 (Phase I) 来判断是否存在解；然后，如果存在，则运行第二阶段 (Phase II) 来找到最优解。这有点像用两台不同的机器来做两件相关的工作。现代求解器，特别是那些使用**[内点法](@article_id:307553) (interior-point methods)** 的求解器，采用了一种远为优雅的方法：**齐次自对偶[嵌入](@article_id:311541) (Homogeneous Self-Dual Embedding, HSDE)**。
+几十年来，[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)将可行性与最优性视为两个独立的步骤：首先，运行第一阶段 (Phase I) 来判断是否存在解；然后，如果存在，则运行第二阶段 (Phase II) 来找到最优解。这有点像用两台不同的机器来做两件相关的工作。现代求解器，特别是那些使用**[内点法](@keyword=interior_point_methods|lang=zh-CN|style=Feynman) (interior-point methods)** 的求解器，采用了一种远为优雅的方法：**齐次自对偶[嵌入](@keyword=embedding|lang=zh-CN|style=Feynman) (Homogeneous Self-Dual Embedding, HSDE)**。
 
-想象一下构建一个巧妙的“超级问题”，它包含了原始问题（原问题）及其[对偶问题](@article_id:356396)，外加两个特殊的新变量 $\tau$ (tau) 和 $\kappa$ (kappa)，所有这些都[嵌入](@article_id:311541)一个统一的结构中 。这个新的、更大的问题被巧妙地构造成*永远*有解！
+想象一下构建一个巧妙的“超级问题”，它包含了原始问题（原问题）及其[对偶问题](@keyword=dual_problem|lang=zh-CN|style=Feynman)，外加两个特殊的新变量 $\tau$ (tau) 和 $\kappa$ (kappa)，所有这些都[嵌入](@keyword=embedding|lang=zh-CN|style=Feynman)一个统一的结构中 [@problem_id:3137087]。这个新的、更大的问题被巧妙地构造成*永远*有解！
 
-其魔力在于如何解释这个超级问题的解。当[算法](@article_id:331821)结束时，你只需查看 $\tau$ 和 $\kappa$ 的值：
+其魔力在于如何解释这个超级问题的解。当[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)结束时，你只需查看 $\tau$ 和 $\kappa$ 的值：
 
 1.  如果 **$\tau > 0$ 且 $\kappa = 0$**：原始问题有一个最优解。你可以直接从超级问题的其他变量中恢复它。
-2.  如果 **$\tau = 0$ 且 $\kappa > 0$**：原始问题要么是[原问题不可行](@article_id:355235)，要么是对偶问题不可行（即原问题无界）。解中的其他变量*就是*证明这一点的证书！
+2.  如果 **$\tau = 0$ 且 $\kappa > 0$**：原始问题要么是[原问题不可行](@keyword=primal_infeasibility|lang=zh-CN|style=Feynman)，要么是对偶问题不可行（即原问题无界）。解中的其他变量*就是*证明这一点的证书！[@problem_id:3164580]
 
-HSDE 是一项优美的数学工程杰作。它将寻找解和寻找不存在证明的过程统一为一个无缝的整体。没有独立的“第一阶段”；[算法](@article_id:331821)优雅地确定问题的状态，并将其最优解或不可行性证书作为其主要输出。
+HSDE 是一项优美的数学工程杰作。它将寻找解和寻找不存在证明的过程统一为一个无缝的整体。没有独立的“第一阶段”；[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)优雅地确定问题的状态，并将其最优解或不可行性证书作为其主要输出。
 
 ### 现实检验：数值确定性的艺术
 
-在纯粹的数学世界里，$\tau$ 和 $\kappa$ 要么是零，要么不是。但在真实的计算机上，使用[有限精度](@article_id:338685)算术，我们很少得到精确的零。[算法](@article_id:331821)可能会在 $\tau = 10^{-9}$ 和 $\kappa = 10^{-12}$ 时终止。我们现在该怎么办？$\kappa$ 是否“足够接近”零，可以宣布问题是最优的？还是 $\tau$ “足够接近”零，可以宣布它不可行？
+在纯粹的数学世界里，$\tau$ 和 $\kappa$ 要么是零，要么不是。但在真实的计算机上，使用[有限精度](@keyword=finite_precision|lang=zh-CN|style=Feynman)算术，我们很少得到精确的零。[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)可能会在 $\tau = 10^{-9}$ 和 $\kappa = 10^{-12}$ 时终止。我们现在该怎么办？$\kappa$ 是否“足够接近”零，可以宣布问题是最优的？还是 $\tau$ “足够接近”零，可以宣布它不可行？
 
-这就是科学与稳健数值计算艺术相遇的地方 。对 $\tau$ 和 $\kappa$ 进行简单的比较是脆弱的。最先进的求解器使用复杂的决策规则。它们不只是问“是否 $\tau > \kappa$？”它们会问：
+这就是科学与稳健数值计算艺术相遇的地方 [@problem_id:3137109]。对 $\tau$ 和 $\kappa$ 进行简单的比较是脆弱的。最先进的求解器使用复杂的决策规则。它们不只是问“是否 $\tau > \kappa$？”它们会问：
 *   比率 $\kappa / \tau$ 是否足够小，可以自信地认为 $\kappa$ 就是零？
-*   如果我们*假设*问题是最优的（通过将解乘以 $\tau$ 来缩放），得到的解离实际满足所有约束和[最优性条件](@article_id:638387)的程度有多近？
+*   如果我们*假设*问题是最优的（通过将解乘以 $\tau$ 来缩放），得到的解离实际满足所有约束和[最优性条件](@keyword=optimality_conditions|lang=zh-CN|style=Feynman)的程度有多近？
 *   如果我们*假设*问题是不可行的（通过将解乘以 $\kappa$ 来缩放），得到的证书有多“好”？它是否清晰地导出一个像 $0 \le -1$ 的矛盾，还是导出一个像 $10^{-8} \le -0.99$ 这样的模糊结果？
 
-构建一个能够正确诊断不可行性的求解器，不仅仅是实现一个[算法](@article_id:331821)。它是要构建一个稳健的决策引擎，能够可靠地解释由浮点数这个混乱、有限的世界中产生的模棱两可的线索，并且仍然能以[法卡斯引理](@article_id:307137) (Farkas's Lemma) 所承诺的数学确定性给出裁决。
+构建一个能够正确诊断不可行性的求解器，不仅仅是实现一个[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)。它是要构建一个稳健的决策引擎，能够可靠地解释由浮点数这个混乱、有限的世界中产生的模棱两可的线索，并且仍然能以[法卡斯引理](@keyword=farkas_s_lemma|lang=zh-CN|style=Feynman) (Farkas's Lemma) 所承诺的数学确定性给出裁决。
 

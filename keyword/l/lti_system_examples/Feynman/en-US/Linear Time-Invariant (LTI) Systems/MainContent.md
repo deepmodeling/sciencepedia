@@ -1,5 +1,5 @@
 ## Introduction
-Many processes in science and engineering can be viewed as systems that transform an input signal into an output signal. But how can we reliably describe and predict what these systems will do? The challenge lies in finding a framework that is both simple enough to be manageable and powerful enough to be useful. This article introduces Linear Time-Invariant (LTI) systems, a class of systems that provides exactly such a framework. By adhering to two simple rules—linearity and time-invariance—these systems become remarkably predictable. In the following chapters, we will first delve into the "Principles and Mechanisms" that govern LTI systems, exploring how a single test can reveal a system's complete behavior through its impulse response and the master recipe of convolution. Subsequently, in "Applications and Interdisciplinary Connections," we will see how these theoretical concepts form the backbone of modern technology, from [audio engineering](@article_id:260396) and digital filters to advanced robotics and control theory, demonstrating why LTI systems are a cornerstone of the dynamic world.
+Many processes in science and engineering can be viewed as systems that transform an input signal into an output signal. But how can we reliably describe and predict what these systems will do? The challenge lies in finding a framework that is both simple enough to be manageable and powerful enough to be useful. This article introduces Linear Time-Invariant (LTI) systems, a class of systems that provides exactly such a framework. By adhering to two simple rules—linearity and time-invariance—these systems become remarkably predictable. In the following chapters, we will first delve into the "Principles and Mechanisms" that govern LTI systems, exploring how a single test can reveal a system's complete behavior through its impulse response and the master recipe of convolution. Subsequently, in "Applications and Interdisciplinary Connections," we will see how these theoretical concepts form the backbone of modern technology, from [audio engineering](@keyword=audio_engineering|lang=en-US|style=Feynman) and digital filters to advanced robotics and control theory, demonstrating why LTI systems are a cornerstone of the dynamic world.
 
 ## Principles and Mechanisms
 
@@ -17,7 +17,7 @@ The second rule is **time-invariance**. This is the "it works the same on Tuesda
 
 $$T \circ S_{\tau} = S_{\tau} \circ T$$
 
-A system that obeys both these golden rules is an LTI system. But it's just as instructive to see what happens when a rule is broken. Consider a hypothetical amplifier whose gain increases over time, described by the equation $y(t) = t u(t)$, where $u(t)$ is the input and $y(t)$ is the output. This system is linear (check for yourself!), but it is *not* time-invariant. A signal input at $t=1$ second is amplified by a factor of 1, while the same signal input at $t=10$ seconds is amplified by a factor of 10. The system's behavior changes with time. Such a system is called **Linear Time-Varying (LTV)** . Other common operations, like the "[downsampling](@article_id:265263)" used in creating MP3 files from CDs, are also linear but not time-invariant, because the process of discarding samples inherently depends on the absolute timing of the signal .
+A system that obeys both these golden rules is an LTI system. But it's just as instructive to see what happens when a rule is broken. Consider a hypothetical amplifier whose gain increases over time, described by the equation $y(t) = t u(t)$, where $u(t)$ is the input and $y(t)$ is the output. This system is linear (check for yourself!), but it is *not* time-invariant. A signal input at $t=1$ second is amplified by a factor of 1, while the same signal input at $t=10$ seconds is amplified by a factor of 10. The system's behavior changes with time. Such a system is called **Linear Time-Varying (LTV)** [@problem_id:2723746]. Other common operations, like the "[downsampling](@keyword=downsampling|lang=en-US|style=Feynman)" used in creating MP3 files from CDs, are also linear but not time-invariant, because the process of discarding samples inherently depends on the absolute timing of the signal [@problem_id:2874153].
 
 ### The System's Fingerprint: The Impulse Response
 
@@ -36,7 +36,7 @@ To get the total output at time $t$, we simply add up the effects of all the tin
 
 $$y(t) = \int_{-\infty}^{\infty} x(\tau) h(t-\tau) d\tau$$
 
-This operation, denoted $(x * h)(t)$, is the mathematical heart of LTI systems. It tells us that the output signal is a "sliding, weighted average" of the input signal, where the weighting function is the system's own impulse response, flipped in time. When two LTI systems are connected in series, the impulse response of the combined system is simply the convolution of the two individual impulse responses .
+This operation, denoted $(x * h)(t)$, is the mathematical heart of LTI systems. It tells us that the output signal is a "sliding, weighted average" of the input signal, where the weighting function is the system's own impulse response, flipped in time. When two LTI systems are connected in series, the impulse response of the combined system is simply the convolution of the two individual impulse responses [@problem_id:1743539].
 
 ### The Arrow of Time: Causality and its Exceptions
 
@@ -44,17 +44,17 @@ Common sense dictates that an effect cannot happen before its cause. A physical 
 
 $$h(t) = 0 \quad \text{for all } t < 0$$
 
-After all, if the system is kicked with an impulse at $t=0$, how could there be a response at $t=-1$ second? 
+After all, if the system is kicked with an impulse at $t=0$, how could there be a response at $t=-1$ second? [@problem_id:1701753]
 
-But here's a twist. What if you're not processing a signal in real-time? Imagine you've recorded an entire audio track onto your computer. To process the sound at the 30-second mark, your software can easily look at the sound at 31 seconds, 32 seconds, and so on. The "future" is already in memory! In this **offline processing** context, [non-causal systems](@article_id:264281) are perfectly realizable. A simple and very common example is a smoothing filter that computes a moving average. Its output at time $n$ might be the average of the input at times $n-1$, $n$, and $n+1$:
+But here's a twist. What if you're not processing a signal in real-time? Imagine you've recorded an entire audio track onto your computer. To process the sound at the 30-second mark, your software can easily look at the sound at 31 seconds, 32 seconds, and so on. The "future" is already in memory! In this **offline processing** context, [non-causal systems](@keyword=non_causal_systems|lang=en-US|style=Feynman) are perfectly realizable. A simple and very common example is a smoothing filter that computes a moving average. Its output at time $n$ might be the average of the input at times $n-1$, $n$, and $n+1$:
 
 $$y[n] = \frac{1}{3} \big( x[n-1] + x[n] + x[n+1] \big)$$
 
-This system is non-causal because the output $y[n]$ depends on the "future" input $x[n+1]$. Yet, it is trivial to implement on a recorded signal and is a staple of data analysis . This highlights a crucial distinction: physical [realizability](@article_id:193207) in real-time demands causality, but physical [realizability](@article_id:193207) in an offline setting does not .
+This system is non-causal because the output $y[n]$ depends on the "future" input $x[n+1]$. Yet, it is trivial to implement on a recorded signal and is a staple of data analysis [@problem_id:2909771]. This highlights a crucial distinction: physical [realizability](@keyword=realizability|lang=en-US|style=Feynman) in real-time demands causality, but physical [realizability](@keyword=realizability|lang=en-US|style=Feynman) in an offline setting does not [@problem_id:2909771].
 
 ### A System's Memory: Finite vs. Infinite Responses
 
-The impulse response also tells us about a system's "memory." How long after being kicked does it take for the system to completely forget about it? This question splits LTI systems into two important families .
+The impulse response also tells us about a system's "memory." How long after being kicked does it take for the system to completely forget about it? This question splits LTI systems into two important families [@problem_id:2877069].
 
 -   **Finite Impulse Response (FIR) systems:** For these systems, the impulse response goes to *exactly zero* and stays there after a finite amount of time. They have a finite memory. Think of hitting a drum with a pillow on it; the sound stops very quickly. A key consequence is that when you feed a constant input (a "step") into an FIR system, its output will settle to its final, constant value in a finite amount of time.
 
@@ -66,13 +66,13 @@ A desirable property for most systems is **stability**. Informally, it means tha
 
 Now for a fascinating and cautionary tale. Imagine you have a perfectly stable system. From the outside, it behaves beautifully. You put in a sine wave, you get a sine wave out. You put in a constant signal, the output settles to a constant. But what if this system is built from smaller components connected together? Could there be chaos lurking inside?
 
-Consider building a [stable system](@article_id:266392), $G$, by connecting two subsystems, $H_1$ and $H_2$, in parallel, so their outputs add together. Let's choose the overall system to be a simple, stable one: $G(s) = \frac{1}{s+2}$. Now, here is a diabolical way to build it :
+Consider building a [stable system](@keyword=stable_system|lang=en-US|style=Feynman), $G$, by connecting two subsystems, $H_1$ and $H_2$, in parallel, so their outputs add together. Let's choose the overall system to be a simple, stable one: $G(s) = \frac{1}{s+2}$. Now, here is a diabolical way to build it [@problem_id:2856946]:
 
 -   Let the first subsystem be wildly unstable: $H_1(s) = \frac{1}{s-1}$. A pole at $s=1$ corresponds to a response that grows like $e^{t}$.
 -   Let the second subsystem be equally unstable to perfectly cancel the first: $H_2(s) = \frac{1}{s+2} - \frac{1}{s-1}$.
 
 When you add them, $G(s) = H_1(s) + H_2(s) = \frac{1}{s+2}$, the unstable parts perfectly cancel. From the outside, the system is impeccably stable. But what happens internally if you feed in a simple constant input? The output of $H_1$ will contain a term that grows exponentially, $e^{t}$, heading for infinity. The output of $H_2$ will *also* contain an exponentially growing term, $-e^{t}$, that perfectly cancels the first one at the final sum. The total output remains bounded and calm, but inside, the system's components are tearing themselves apart with signals of ever-increasing magnitude!
 
-This reveals a profound truth: the input-output behavior of a system does not tell the whole story. A system can be **externally stable** but **internally unstable**. The specific way a system is realized—its internal [block diagram](@article_id:262466) or [state-space representation](@article_id:146655)—is critically important. A stable black box might be a ticking time bomb if its internal modes are not also stable  . This is why engineers can't just look at the overall transfer function; they must also worry about the internal structure that produces it.
+This reveals a profound truth: the input-output behavior of a system does not tell the whole story. A system can be **externally stable** but **internally unstable**. The specific way a system is realized—its internal [block diagram](@keyword=block_diagram|lang=en-US|style=Feynman) or [state-space representation](@keyword=state_space_representation|lang=en-US|style=Feynman)—is critically important. A stable black box might be a ticking time bomb if its internal modes are not also stable [@problem_id:2691090] [@problem_id:2886065]. This is why engineers can't just look at the overall transfer function; they must also worry about the internal structure that produces it.
 
 The world of LTI systems, governed by just two simple rules, is rich with such subtleties. By understanding these principles, we gain not just the ability to analyze and design systems, but a deeper appreciation for the elegant and sometimes surprising relationship between cause and effect.

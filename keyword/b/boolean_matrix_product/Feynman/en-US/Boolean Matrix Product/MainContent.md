@@ -1,7 +1,7 @@
 ## Introduction
 In a world defined by connections—from social networks and flight routes to software dependencies—our ability to understand these intricate webs is paramount. While we often think of mathematics in terms of counting and measuring, a different, more fundamental question frequently arises: does a connection simply exist? Answering this requires a shift from standard arithmetic to the binary world of logic. This is where the **Boolean matrix product** emerges, a powerful yet elegant tool designed not for counting, but for mapping the very structure of connectivity.
 
-This article demystifies the Boolean matrix product, addressing the need for a formal method to analyze logical relationships within [complex networks](@article_id:261201). It moves beyond the familiar rules of [matrix multiplication](@article_id:155541) to explore an algebra built on "True" and "False." Across the following chapters, you will gain a comprehensive understanding of this concept. We will first delve into its core principles and mechanisms, exploring how it represents and combines relations. Subsequently, we will journey through its diverse applications, from practical [pathfinding in graphs](@article_id:260914) to its profound implications at the frontiers of computational complexity theory.
+This article demystifies the Boolean matrix product, addressing the need for a formal method to analyze logical relationships within [complex networks](@keyword=complex_networks|lang=en-US|style=Feynman). It moves beyond the familiar rules of [matrix multiplication](@keyword=matrix_multiplication|lang=en-US|style=Feynman) to explore an algebra built on "True" and "False." Across the following chapters, you will gain a comprehensive understanding of this concept. We will first delve into its core principles and mechanisms, exploring how it represents and combines relations. Subsequently, we will journey through its diverse applications, from practical [pathfinding in graphs](@keyword=pathfinding_in_graphs|lang=en-US|style=Feynman) to its profound implications at the frontiers of computational complexity theory.
 
 ## Principles and Mechanisms
 
@@ -29,11 +29,11 @@ This formula is the mathematical embodiment of our flight search: "Is there a pa
 
 This new arithmetic isn't just a mathematical curiosity; it's the natural language for describing how relationships combine. In mathematics, a "relation" is simply a set of pairs that links elements from one set to another. "Is a member of", "is a prerequisite for", "can send a message to" — these are all relations. A matrix of 0s and 1s is a perfect way to represent such a relation.
 
-Let's see this in action. Imagine a university where we know which students are in which clubs, and which clubs use which specialized software (). We have two relations:
+Let's see this in action. Imagine a university where we know which students are in which clubs, and which clubs use which specialized software ([@problem_id:1397094]). We have two relations:
 1.  $R_1$: a relation from Students to Clubs ("is a member of").
 2.  $R_2$: a relation from Clubs to Software ("uses").
 
-We want to find a new, composite relation: which students have access to which software through their club memberships? This is called the **[composition of relations](@article_id:269423)**, written as $R_2 \circ R_1$. A student $s$ is related to a software package $w$ if there exists some club $c$ such that $(s, c) \in R_1$ and $(c, w) \in R_2$.
+We want to find a new, composite relation: which students have access to which software through their club memberships? This is called the **[composition of relations](@keyword=composition_of_relations|lang=en-US|style=Feynman)**, written as $R_2 \circ R_1$. A student $s$ is related to a software package $w$ if there exists some club $c$ such that $(s, c) \in R_1$ and $(c, w) \in R_2$.
 
 This is precisely the logic of our Boolean matrix product! If we represent $R_1$ with a matrix $M_{R_1}$ and $R_2$ with $M_{R_2}$, the matrix for the composite relation is simply $M_{R_2 \circ R_1} = M_{R_1} \odot M_{R_2}$. The matrix multiplication mechanically checks every possible intermediate club for every student-software pair and tells us if a link exists. It's a beautiful and efficient way to forge new connections from existing ones.
 
@@ -41,19 +41,19 @@ This is precisely the logic of our Boolean matrix product! If we represent $R_1$
 
 Things get even more interesting when we compose a relation with itself. What does it mean to compute $M \odot M$, or $M^2$?
 
-Let's say a matrix $A$ represents a network of one-way streets, where $A_{ij}=1$ means you can drive directly from intersection $i$ to intersection $j$. What does the entry $(A^2)_{ij}$ tell us? Following our logic, $(A^2)_{ij} = \bigvee_k (A_{ik} \land A_{kj})$. This will be 1 if and only if there's some intermediate intersection $k$ such that you can drive from $i$ to $k$ *and* from $k$ to $j$. In other words, $A^2$ represents all the places you can reach in *exactly two steps* ().
+Let's say a matrix $A$ represents a network of one-way streets, where $A_{ij}=1$ means you can drive directly from intersection $i$ to intersection $j$. What does the entry $(A^2)_{ij}$ tell us? Following our logic, $(A^2)_{ij} = \bigvee_k (A_{ik} \land A_{kj})$. This will be 1 if and only if there's some intermediate intersection $k$ such that you can drive from $i$ to $k$ *and* from $k$ to $j$. In other words, $A^2$ represents all the places you can reach in *exactly two steps* ([@problem_id:1397087]).
 
-This is a profound and powerful idea. The Boolean powers of an [adjacency matrix](@article_id:150516) reveal the connectivity of a network step by step.
+This is a profound and powerful idea. The Boolean powers of an [adjacency matrix](@keyword=adjacency_matrix|lang=en-US|style=Feynman) reveal the connectivity of a network step by step.
 -   $A$ tells us about paths of length 1.
 -   $A^2 = A \odot A$ tells us about paths of length 2.
 -   $A^3 = A^2 \odot A$ tells us about paths of length 3.
--   And in general, the matrix $A^k$ tells us precisely which pairs of nodes are connected by a path of *exactly* $k$ hops ().
+-   And in general, the matrix $A^k$ tells us precisely which pairs of nodes are connected by a path of *exactly* $k$ hops ([@problem_id:1479388]).
 
-If an analyst wants to know if a data packet can get from node 1 to node 2 in exactly four hops in a communication network, they don't need to trace every possible route manually. They can simply compute the fourth Boolean power of the network's adjacency matrix, $A^4$, and look at the entry in the first row and second column. If it's 1, a four-hop path exists. If it's 0, it does not. The abstract machinery of [matrix multiplication](@article_id:155541) provides a concrete answer.
+If an analyst wants to know if a data packet can get from node 1 to node 2 in exactly four hops in a communication network, they don't need to trace every possible route manually. They can simply compute the fourth Boolean power of the network's adjacency matrix, $A^4$, and look at the entry in the first row and second column. If it's 1, a four-hop path exists. If it's 0, it does not. The abstract machinery of [matrix multiplication](@keyword=matrix_multiplication|lang=en-US|style=Feynman) provides a concrete answer.
 
 ### The Structure of Shortcuts: Transitivity's Signature
 
-Now, let's consider a special kind of network. Suppose we have a [dependency graph](@article_id:274723) for software components. The relation is "depends on". A system is called **transitive** if, whenever component $c_i$ depends on $c_k$ and $c_k$ depends on $c_j$, it's guaranteed that a direct dependency from $c_i$ to $c_j$ already exists. This is like a network with built-in shortcuts: any two-step journey implies the existence of a direct one-step flight.
+Now, let's consider a special kind of network. Suppose we have a [dependency graph](@keyword=dependency_graph|lang=en-US|style=Feynman) for software components. The relation is "depends on". A system is called **transitive** if, whenever component $c_i$ depends on $c_k$ and $c_k$ depends on $c_j$, it's guaranteed that a direct dependency from $c_i$ to $c_j$ already exists. This is like a network with built-in shortcuts: any two-step journey implies the existence of a direct one-step flight.
 
 What does transitivity mean for our Boolean matrices? Let $M_R$ be the matrix for a transitive relation $R$. The matrix $M_R^2$ tells us all the pairs $(i,j)$ connected by a two-step path. But because the relation is transitive, any such two-step path from $i$ to $j$ guarantees that a direct one-step path from $i$ to $j$ already exists. This means if $(M_R^2)[i,j]$ is 1, then $M_R[i,j]$ must also be 1. It's impossible for $(M_R^2)[i,j]$ to be 1 while $M_R[i,j]$ is 0.
 
@@ -61,17 +61,17 @@ This gives us a wonderfully elegant "signature" for transitivity in the language
 $$
 M_R^2 \le M_R
 $$
-This expression means that every entry in $M_R^2$ is less than or equal to the corresponding entry in $M_R$ (). For Boolean matrices, this is the matrix equivalent of saying that the set of two-step paths is a *subset* of the set of one-step paths. Squaring the matrix reveals no new connections that weren't already there. In some cases, such as a relation that is also reflexive (everything is related to itself), you might even find that $M_R^2 = M_R$ (). The system is perfectly stable; taking more steps doesn't expand your reach at all.
+This expression means that every entry in $M_R^2$ is less than or equal to the corresponding entry in $M_R$ ([@problem_id:1397100]). For Boolean matrices, this is the matrix equivalent of saying that the set of two-step paths is a *subset* of the set of one-step paths. Squaring the matrix reveals no new connections that weren't already there. In some cases, such as a relation that is also reflexive (everything is related to itself), you might even find that $M_R^2 = M_R$ ([@problem_id:1374425]). The system is perfectly stable; taking more steps doesn't expand your reach at all.
 
 ### The Heart of an Algorithm: Mapping the Entire Network
 
-We've seen how to find paths of a specific length $k$. But what if we want to answer the ultimate connectivity question: is there a path of *any* length from node $i$ to node $j$? This is the problem of finding the **[transitive closure](@article_id:262385)** of a graph.
+We've seen how to find paths of a specific length $k$. But what if we want to answer the ultimate connectivity question: is there a path of *any* length from node $i$ to node $j$? This is the problem of finding the **[transitive closure](@keyword=transitive_closure|lang=en-US|style=Feynman)** of a graph.
 
-One could compute $A, A^2, A^3, \dots$ and OR them all together, but there's a more graceful way, epitomized by **Warshall's algorithm**. While not a direct [matrix multiplication](@article_id:155541), its core logic is pure Boolean thinking. The algorithm builds up the connectivity map, $W$, iteratively. At step $k$, it decides whether to add new paths by considering if node $k$ can serve as a new intermediate point. The update rule for the path from $i$ to $j$ is:
+One could compute $A, A^2, A^3, \dots$ and OR them all together, but there's a more graceful way, epitomized by **Warshall's algorithm**. While not a direct [matrix multiplication](@keyword=matrix_multiplication|lang=en-US|style=Feynman), its core logic is pure Boolean thinking. The algorithm builds up the connectivity map, $W$, iteratively. At step $k$, it decides whether to add new paths by considering if node $k$ can serve as a new intermediate point. The update rule for the path from $i$ to $j$ is:
 $$
 W^{(k)}_{ij} = W^{(k-1)}_{ij} \lor (W^{(k-1)}_{ik} \land W^{(k-1)}_{kj})
 $$
-The beauty of this simple line of code is how it speaks to us in plain logic (). It says: "A path from $i$ to $j$ using intermediate nodes from the set $\{1, \dots, k\}$ exists if...
+The beauty of this simple line of code is how it speaks to us in plain logic ([@problem_id:1504958]). It says: "A path from $i$ to $j$ using intermediate nodes from the set $\{1, \dots, k\}$ exists if...
 ... a path *already* existed using only nodes from $\{1, \dots, k-1\}$,
 ... **OR**...
 ... you can get from $i$ to our newly available node $k$ **AND** you can get from that new node $k$ to $j$."

@@ -1,19 +1,19 @@
 ## 引言
-大型[线性方程组](@article_id:309362)是科学与工程领域无数问题的数学支柱，从模拟热流到分析复杂网络无不如此。虽然直接求解法对于小型系统是可行的，但当问题规模扩展到数百万甚至数十亿变量时，其计算成本会变得令人望而却步。这一挑战催生了一种不同的方法：迭代法，它通过不断改进初始猜测值，直至其收敛到真实解。在这些方法中，[理查森迭代](@article_id:639405)因其根本上的简洁性和深邃的优雅而脱颖而出，为进入[数值线性代数](@article_id:304846)的世界提供了一个直观的入口。本文旨在探索这一基础方法背后的力量。在第一章“原理与机制”中，我们将剖析其核心的简单修正过程，揭示保证其收敛的数学条件，并阐明其通过梯度下降与优化理论的深层联系。随后，在“应用与跨学科联系”一章中，我们将[超越理论](@article_id:382401)，见证该方法在物理、计算机科学和[数据科学](@article_id:300658)等不同领域的影响，展示其作为模拟主力工具和现代计算中统一性概念的角色。
+大型[线性方程组](@keyword=systems_of_linear_equations|lang=zh-CN|style=Feynman)是科学与工程领域无数问题的数学支柱，从模拟热流到分析复杂网络无不如此。虽然直接求解法对于小型系统是可行的，但当问题规模扩展到数百万甚至数十亿变量时，其计算成本会变得令人望而却步。这一挑战催生了一种不同的方法：迭代法，它通过不断改进初始猜测值，直至其收敛到真实解。在这些方法中，[理查森迭代](@keyword=richardson_iteration|lang=zh-CN|style=Feynman)因其根本上的简洁性和深邃的优雅而脱颖而出，为进入[数值线性代数](@keyword=numerical_linear_algebra|lang=zh-CN|style=Feynman)的世界提供了一个直观的入口。本文旨在探索这一基础方法背后的力量。在第一章“原理与机制”中，我们将剖析其核心的简单修正过程，揭示保证其收敛的数学条件，并阐明其通过梯度下降与优化理论的深层联系。随后，在“应用与跨学科联系”一章中，我们将[超越理论](@keyword=transcendence_theory|lang=zh-CN|style=Feynman)，见证该方法在物理、计算机科学和[数据科学](@keyword=data_science|lang=zh-CN|style=Feynman)等不同领域的影响，展示其作为模拟主力工具和现代计算中统一性概念的角色。
 
 ## 原理与机制
 
 ### 简单修正的艺术
 
-从本质上讲，求解线性方程组 $A\mathbf{x} = \mathbf{b}$ 就是要找到一个向量 $\mathbf{x}$，使等式两边完美平衡。如果我们做一个猜测，称之为 $\mathbf{x}^{(k)}$，而它不完全正确，那么就会存在一个偏差。这个偏差或误差，由**[残差向量](@article_id:344448)**捕获：$\mathbf{r}^{(k)} = \mathbf{b} - A\mathbf{x}^{(k)}$。如果我们的猜测是完美的，[残差](@article_id:348682)将是一个全[零向量](@article_id:316597)。如果它不完美，[残差](@article_id:348682)会告诉我们“我们错在哪里”，更妙的是，它还指明了我们需要调整猜测的方向。
+从本质上讲，求解线性方程组 $A\mathbf{x} = \mathbf{b}$ 就是要找到一个向量 $\mathbf{x}$，使等式两边完美平衡。如果我们做一个猜测，称之为 $\mathbf{x}^{(k)}$，而它不完全正确，那么就会存在一个偏差。这个偏差或误差，由**[残差向量](@keyword=residual_vector|lang=zh-CN|style=Feynman)**捕获：$\mathbf{r}^{(k)} = \mathbf{b} - A\mathbf{x}^{(k)}$。如果我们的猜测是完美的，[残差](@keyword=residue|lang=zh-CN|style=Feynman)将是一个全[零向量](@keyword=zero_vector|lang=zh-CN|style=Feynman)。如果它不完美，[残差](@keyword=residue|lang=zh-CN|style=Feynman)会告诉我们“我们错在哪里”，更妙的是，它还指明了我们需要调整猜测的方向。
 
-这就是[理查森迭代](@article_id:639405)背后优美而简单的思想。它主张：取你当前的猜测值 $\mathbf{x}^{(k)}$，观察[残差](@article_id:348682) $\mathbf{r}^{(k)}$，然后朝着[残差](@article_id:348682)的方向迈出一小步，以获得你下一个、 hopefully 更好的猜测值 $\mathbf{x}^{(k+1)}$。这个直观过程的数学表达式简洁而优雅 ：
+这就是[理查森迭代](@keyword=richardson_iteration|lang=zh-CN|style=Feynman)背后优美而简单的思想。它主张：取你当前的猜测值 $\mathbf{x}^{(k)}$，观察[残差](@keyword=residue|lang=zh-CN|style=Feynman) $\mathbf{r}^{(k)}$，然后朝着[残差](@keyword=residue|lang=zh-CN|style=Feynman)的方向迈出一小步，以获得你下一个、 hopefully 更好的猜测值 $\mathbf{x}^{(k+1)}$。这个直观过程的数学表达式简洁而优雅 [@problem_id:1029993]：
 
 $$
 \mathbf{x}^{(k+1)} = \mathbf{x}^{(k)} + \omega(\mathbf{b} - A\mathbf{x}^{(k)})
 $$
 
-在这里，项 $(\mathbf{b} - A\mathbf{x}^{(k)})$ 是我们的[残差](@article_id:348682)，即误差的度量。参数 $\omega$，称为**松弛参数**，就像一个音量旋钮。它控制我们迈出的步子有多大。一个很小的 $\omega$ 意味着我们谨慎地寸步前行；一个大的 $\omega$ 意味着我们大胆地飞跃。你可能已经猜到，$\omega$ 的选择不仅仅是个人喜好问题——它决定了我们的迭代之旅是最终到达解，还是会发散至无穷大。
+在这里，项 $(\mathbf{b} - A\mathbf{x}^{(k)})$ 是我们的[残差](@keyword=residue|lang=zh-CN|style=Feynman)，即误差的度量。参数 $\omega$，称为**松弛参数**，就像一个音量旋钮。它控制我们迈出的步子有多大。一个很小的 $\omega$ 意味着我们谨慎地寸步前行；一个大的 $\omega$ 意味着我们大胆地飞跃。你可能已经猜到，$\omega$ 的选择不仅仅是个人喜好问题——它决定了我们的迭代之旅是最终到达解，还是会发散至无穷大。
 
 ### 收敛之舞
 
@@ -25,67 +25,67 @@ $$
 \mathbf{x}^{(k+1)} - \mathbf{x}^{\star} = \mathbf{x}^{(k)} - \mathbf{x}^{\star} + \omega(\mathbf{b} - A\mathbf{x}^{(k)})
 $$
 
-识别出[误差项](@article_id:369697)并代入 $\mathbf{b} = A\mathbf{x}^{\star}$，我们得到：
+识别出[误差项](@keyword=error_terms|lang=zh-CN|style=Feynman)并代入 $\mathbf{b} = A\mathbf{x}^{\star}$，我们得到：
 
 $$
 \mathbf{e}^{(k+1)} = \mathbf{e}^{(k)} + \omega(A\mathbf{x}^{\star} - A\mathbf{x}^{(k)}) = \mathbf{e}^{(k)} - \omega A(\mathbf{x}^{(k)} - \mathbf{x}^{\star})
 $$
 
-这可以简化为基本的[误差传播](@article_id:306993)方程 ：
+这可以简化为基本的[误差传播](@keyword=uncertainty_propagation|lang=zh-CN|style=Feynman)方程 [@problem_id:3266461]：
 
 $$
 \mathbf{e}^{(k+1)} = (I - \omega A) \mathbf{e}^{(k)}
 $$
 
-这个方程说明了一切。在每一步，新的误差都是旧误差经过**[迭代矩阵](@article_id:641638)** $G = I - \omega A$ 变换后的结果。为了让我们的猜测值收敛到真解，误差必须缩小到零。这意味着[迭代矩阵](@article_id:641638) $G$ 必须是一个“[压缩映射](@article_id:300435)”——它必须使向量变小。
+这个方程说明了一切。在每一步，新的误差都是旧误差经过**[迭代矩阵](@keyword=iteration_matrix|lang=zh-CN|style=Feynman)** $G = I - \omega A$ 变换后的结果。为了让我们的猜测值收敛到真解，误差必须缩小到零。这意味着[迭代矩阵](@keyword=iteration_matrix|lang=zh-CN|style=Feynman) $G$ 必须是一个“[压缩映射](@keyword=contraction_mapping|lang=zh-CN|style=Feynman)”——它必须使向量变小。
 
-在这种情况下，衡量一个矩阵“大小”的真正标准是其**谱半径** $\rho(G)$，即其[特征值](@article_id:315305)的最大[绝对值](@article_id:308102)。收敛的铁律是谱半径必须小于1：$\rho(G)  1$。
+在这种情况下，衡量一个矩阵“大小”的真正标准是其**谱半径** $\rho(G)$，即其[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)的最大[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)。收敛的铁律是谱半径必须小于1：$\rho(G)  1$。
 
-那么，这个条件与我们选择的“音量旋钮”$\omega$ 有何关系？让我们假设矩阵 $A$ 是对称正定（SPD）的，这是科学和工程中一种非常常见且重要的情况（例如，在物理定律的[离散化](@article_id:305437)中 ）。它的[特征值](@article_id:315305)，我们称之为 $\lambda_i$，都是实数且为正。[迭代矩阵](@article_id:641638) $G = I - \omega A$ 的[特征值](@article_id:315305)则就是 $1 - \omega \lambda_i$。[收敛条件](@article_id:345442) $\rho(G)  1$ 变为对所有[特征值](@article_id:315305) $\lambda_i$ 都有 $|1 - \omega \lambda_i|  1$。这个不等式可以展开为一个优美的结果：
+那么，这个条件与我们选择的“音量旋钮”$\omega$ 有何关系？让我们假设矩阵 $A$ 是对称正定（SPD）的，这是科学和工程中一种非常常见且重要的情况（例如，在物理定律的[离散化](@keyword=discretization|lang=zh-CN|style=Feynman)中 [@problem_id:1846223]）。它的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)，我们称之为 $\lambda_i$，都是实数且为正。[迭代矩阵](@keyword=iteration_matrix|lang=zh-CN|style=Feynman) $G = I - \omega A$ 的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)则就是 $1 - \omega \lambda_i$。[收敛条件](@keyword=convergence_condition|lang=zh-CN|style=Feynman) $\rho(G)  1$ 变为对所有[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) $\lambda_i$ 都有 $|1 - \omega \lambda_i|  1$。这个不等式可以展开为一个优美的结果：
 
 $$
 -1  1 - \omega \lambda_i  1 \quad \implies \quad 0  \omega \lambda_i  2
 $$
 
-为了让这个条件对每一个[特征值](@article_id:315305)都成立，它必须对最大的[特征值](@article_id:315305) $\lambda_{\max}$ 成立。这为我们的松弛参数提供了一个精确、实用的限制：
+为了让这个条件对每一个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)都成立，它必须对最大的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) $\lambda_{\max}$ 成立。这为我们的松弛参数提供了一个精确、实用的限制：
 
 $$
 0  \omega  \frac{2}{\lambda_{\max}}
 $$
 
-这是一个非凡的结论。它告诉我们，只要我们不把“音量旋钮”$\omega$ 调得太高（超过由 $A$ 的最大[特征值](@article_id:315305)设定的阈值），我们的迭代之旅就保证能到达正确的解。
+这是一个非凡的结论。它告诉我们，只要我们不把“音量旋钮”$\omega$ 调得太高（超过由 $A$ 的最大[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)设定的阈值），我们的迭代之旅就保证能到达正确的解。
 
 ### 寻找最佳点
 
-知道如何收敛是好事，但在计算世界里，我们希望*快速*收敛。我们想找到能使误差收缩最快的 $\omega$ 值。这意味着我们想找到使[谱半径](@article_id:299432) $\rho(G) = \max_i |1 - \omega \lambda_i|$ 尽可能小的 $\omega$。
+知道如何收敛是好事，但在计算世界里，我们希望*快速*收敛。我们想找到能使误差收缩最快的 $\omega$ 值。这意味着我们想找到使[谱半径](@keyword=spectral_radius|lang=zh-CN|style=Feynman) $\rho(G) = \max_i |1 - \omega \lambda_i|$ 尽可能小的 $\omega$。
 
-想象一下 $A$ 的所有[特征值](@article_id:315305)都位于数轴上，界于 $\lambda_{\min}$ 和 $\lambda_{\max}$ 之间。函数 $f(\lambda) = 1 - \omega \lambda$ 将这个[区间映射](@article_id:373726)到一个新的区间。我们希望选择 $\omega$ 以使这个新区间尽可能紧密地聚集在零附近。最大[绝对值](@article_id:308102)将由区间的端点决定，因此我们希望最小化 $\max(|1-\omega\lambda_{\min}|, |1-\omega\lambda_{\max}|)$。
+想象一下 $A$ 的所有[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)都位于数轴上，界于 $\lambda_{\min}$ 和 $\lambda_{\max}$ 之间。函数 $f(\lambda) = 1 - \omega \lambda$ 将这个[区间映射](@keyword=interval_mapping|lang=zh-CN|style=Feynman)到一个新的区间。我们希望选择 $\omega$ 以使这个新区间尽可能紧密地聚集在零附近。最大[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)将由区间的端点决定，因此我们希望最小化 $\max(|1-\omega\lambda_{\min}|, |1-\omega\lambda_{\max}|)$。
 
-这个最大值的最小值出现在两个值大小相等时，为了最快收敛，这种情况发生在它们大小相等符号相反时 ：
+这个最大值的最小值出现在两个值大小相等时，为了最快收敛，这种情况发生在它们大小相等符号相反时 [@problem_id:2381551]：
 
 $$
 1 - \omega \lambda_{\min} = -(1 - \omega \lambda_{\max})
 $$
 
-解这个简单的方程，我们得到[最优松弛参数](@article_id:348373) $\omega_{\text{opt}}$：
+解这个简单的方程，我们得到[最优松弛参数](@keyword=optimal_relaxation_parameter|lang=zh-CN|style=Feynman) $\omega_{\text{opt}}$：
 
 $$
 \omega_{\text{opt}} = \frac{2}{\lambda_{\min} + \lambda_{\max}}
 $$
 
-有了这个完美的 $\omega$ 选择，我们能达到的最佳收敛因子是多少？将 $\omega_{\text{opt}}$ 代入[谱半径](@article_id:299432)的表达式，我们发现：
+有了这个完美的 $\omega$ 选择，我们能达到的最佳收敛因子是多少？将 $\omega_{\text{opt}}$ 代入[谱半径](@keyword=spectral_radius|lang=zh-CN|style=Feynman)的表达式，我们发现：
 
 $$
 \rho_{\text{opt}} = \frac{\lambda_{\max} - \lambda_{\min}}{\lambda_{\max} + \lambda_{\min}}
 $$
 
-这个优雅的公式告诉我们一些深刻的道理。[收敛速度](@article_id:641166)不取决于单个[特征值](@article_id:315305)，而取决于它们分布的范围有多宽。这引出了[数值分析](@article_id:303075)中最重要的概念之一：**条件数**。对于一个SPD矩阵，[条件数](@article_id:305575)是 $\kappa(A) = \lambda_{\max} / \lambda_{\min}$。它是衡量问题“拉伸”程度或病态程度的指标。通过将分子和分母同除以 $\lambda_{\min}$，我们可以完全用这个关键数字来表示最优[收敛率](@article_id:641166) ：
+这个优雅的公式告诉我们一些深刻的道理。[收敛速度](@keyword=rates_of_convergence|lang=zh-CN|style=Feynman)不取决于单个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)，而取决于它们分布的范围有多宽。这引出了[数值分析](@keyword=numerical_analysis|lang=zh-CN|style=Feynman)中最重要的概念之一：**条件数**。对于一个SPD矩阵，[条件数](@keyword=condition_number|lang=zh-CN|style=Feynman)是 $\kappa(A) = \lambda_{\max} / \lambda_{\min}$。它是衡量问题“拉伸”程度或病态程度的指标。通过将分子和分母同除以 $\lambda_{\min}$，我们可以完全用这个关键数字来表示最优[收敛率](@keyword=rates_of_convergence|lang=zh-CN|style=Feynman) [@problem_id:2381619]：
 
 $$
 \rho_{\text{opt}} = \frac{\kappa(A) - 1}{\kappa(A) + 1}
 $$
 
-如果一个矩阵是良态的（$\kappa(A)$ 接近1），$\rho_{\text{opt}}$ 就接近0，收敛会非常快。如果矩阵是病态的（$\kappa(A)$ 很大），$\rho_{\text{opt}}$ 会趋近于1，收敛可能慢得令人痛苦。参数的选择至关重要。一个次优的选择，例如 $\tilde{\alpha} = 1/\lambda_{\max}$，可能导致收敛因子显著差于最优值，从而减慢计算速度 。
+如果一个矩阵是良态的（$\kappa(A)$ 接近1），$\rho_{\text{opt}}$ 就接近0，收敛会非常快。如果矩阵是病态的（$\kappa(A)$ 很大），$\rho_{\text{opt}}$ 会趋近于1，收敛可能慢得令人痛苦。参数的选择至关重要。一个次优的选择，例如 $\tilde{\alpha} = 1/\lambda_{\max}$，可能导致收敛因子显著差于最优值，从而减慢计算速度 [@problem_id:3113940]。
 
 ### 新视角：作为下降过程的迭代
 
@@ -95,7 +95,7 @@ $$
 f(\mathbf{x}) = \frac{1}{2}\mathbf{x}^{\top}A\mathbf{x} - \mathbf{b}^{\top}\mathbf{x}
 $$
 
-这个函数的图像是一个多维抛物面——一个“山谷”。这个山谷的底部对应于解 $\mathbf{x}^{\star}$。找到山谷底部的一个自然方法是始终沿着最陡下降方向行走。这就是**梯度下降**[算法](@article_id:331821)。最陡[下降方向](@article_id:641351)由函数的负梯度给出，即 $-\nabla f(\mathbf{x})$。对于我们的二次函数，梯度是 $\nabla f(\mathbf{x}) = A\mathbf{x} - \mathbf{b}$。
+这个函数的图像是一个多维抛物面——一个“山谷”。这个山谷的底部对应于解 $\mathbf{x}^{\star}$。找到山谷底部的一个自然方法是始终沿着最陡下降方向行走。这就是**梯度下降**[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)。最陡[下降方向](@keyword=descent_directions|lang=zh-CN|style=Feynman)由函数的负梯度给出，即 $-\nabla f(\mathbf{x})$。对于我们的二次函数，梯度是 $\nabla f(\mathbf{x}) = A\mathbf{x} - \mathbf{b}$。
 
 因此，使用固定步长 $\alpha$ 的梯度下降更新规则是：
 
@@ -103,23 +103,23 @@ $$
 \mathbf{x}^{(k+1)} = \mathbf{x}^{(k)} - \alpha \nabla f(\mathbf{x}^{(k)}) = \mathbf{x}^{(k)} - \alpha(A\mathbf{x}^{(k)} - \mathbf{b}) = \mathbf{x}^{(k)} + \alpha(\mathbf{b} - A\mathbf{x}^{(k)})
 $$
 
-看起来熟悉吗？这*正是*[理查森迭代](@article_id:639405)！。松弛参数 $\omega$ 就是步长 $\alpha$。我们的代数迭代实际上是一种在能量景观中下山行走的[算法](@article_id:331821)。寻找最优 $\omega$ 的过程就是寻找能让我们最快到达谷底的最优固定步长。
+看起来熟悉吗？这*正是*[理查森迭代](@keyword=richardson_iteration|lang=zh-CN|style=Feynman)！[@problem_id:3266461]。松弛参数 $\omega$ 就是步长 $\alpha$。我们的代数迭代实际上是一种在能量景观中下山行走的[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)。寻找最优 $\omega$ 的过程就是寻找能让我们最快到达谷底的最优固定步长。
 
-这个强大的类比可以推广到其他问题，例如通过最小化 $\|A\mathbf{x}-\mathbf{b}\|_2^2$ 来寻找系统 $A\mathbf{x} = \mathbf{b}$ 的[最小二乘解](@article_id:312468)。将理查森方法应用于相应的正规方程（$A^{\top}A\mathbf{x} = A^{\top}\mathbf{b}$），在数学上等同于对最小二乘目标函数执行梯度下降 。
+这个强大的类比可以推广到其他问题，例如通过最小化 $\|A\mathbf{x}-\mathbf{b}\|_2^2$ 来寻找系统 $A\mathbf{x} = \mathbf{b}$ 的[最小二乘解](@keyword=least_squares_solution_2|lang=zh-CN|style=Feynman)。将理查森方法应用于相应的正规方程（$A^{\top}A\mathbf{x} = A^{\top}\mathbf{b}$），在数学上等同于对最小二乘目标函数执行梯度下降 [@problem_id:1369795]。
 
-### 终极蓝图：[预处理](@article_id:301646)与统一性
+### 终极蓝图：[预处理](@keyword=preconditioning|lang=zh-CN|style=Feynman)与统一性
 
-最后一个优美的见解是，[理查森迭代](@article_id:639405)不仅是一种单一的方法，更是一个统一了整个迭代技术家族的基础蓝图。关键在于**[预处理](@article_id:301646)**的思想。
+最后一个优美的见解是，[理查森迭代](@keyword=richardson_iteration|lang=zh-CN|style=Feynman)不仅是一种单一的方法，更是一个统一了整个迭代技术家族的基础蓝图。关键在于**[预处理](@keyword=preconditioning|lang=zh-CN|style=Feynman)**的思想。
 
-与其使用原始[残差](@article_id:348682) $\mathbf{r}^{(k)}$ 来修正我们的猜测，如果我们使用一个“更聪明”的修正方向 $P^{-1}\mathbf{r}^{(k)}$ 会怎么样？这里 $P$ 是一个称为**预处理器**的[可逆矩阵](@article_id:350970)。目标是选择一个在某种意义上“接近”$A$ 但其逆容易计算的 $P$。这种“预处理”[理查森迭代](@article_id:639405)看起来是这样的：
+与其使用原始[残差](@keyword=residue|lang=zh-CN|style=Feynman) $\mathbf{r}^{(k)}$ 来修正我们的猜测，如果我们使用一个“更聪明”的修正方向 $P^{-1}\mathbf{r}^{(k)}$ 会怎么样？这里 $P$ 是一个称为**预处理器**的[可逆矩阵](@keyword=non_singular_matrix|lang=zh-CN|style=Feynman)。目标是选择一个在某种意义上“接近”$A$ 但其逆容易计算的 $P$。这种“预处理”[理查森迭代](@keyword=richardson_iteration|lang=zh-CN|style=Feynman)看起来是这样的：
 
 $$
 \mathbf{x}^{(k+1)} = \mathbf{x}^{(k)} + P^{-1}(\mathbf{b} - A\mathbf{x}^{(k)})
 $$
 
-这个单一的框架具有惊人的通用性。许多经典的迭代方法实际上只是伪装起来的[预处理](@article_id:301646)[理查森迭代](@article_id:639405)。考虑任何源于矩阵分裂 $A = M - N$ 的定常方法，其迭代方式为 $M\mathbf{x}^{(k+1)} = N\mathbf{x}^{(k)} + \mathbf{b}$。如果我们简单地选择[预处理](@article_id:301646)器为 $P=M$，那么预处理[理查森迭代](@article_id:639405)就变得与分裂方法完全相同 。[迭代矩阵](@article_id:641638) $I - P^{-1}A$ 变为 $I - M^{-1}A = M^{-1}(M-A) = M^{-1}N$，这正是分裂方法的[迭代矩阵](@article_id:641638)。
+这个单一的框架具有惊人的通用性。许多经典的迭代方法实际上只是伪装起来的[预处理](@keyword=preconditioning|lang=zh-CN|style=Feynman)[理查森迭代](@keyword=richardson_iteration|lang=zh-CN|style=Feynman)。考虑任何源于矩阵分裂 $A = M - N$ 的定常方法，其迭代方式为 $M\mathbf{x}^{(k+1)} = N\mathbf{x}^{(k)} + \mathbf{b}$。如果我们简单地选择[预处理](@keyword=preconditioning|lang=zh-CN|style=Feynman)器为 $P=M$，那么预处理[理查森迭代](@keyword=richardson_iteration|lang=zh-CN|style=Feynman)就变得与分裂方法完全相同 [@problem_id:2194473]。[迭代矩阵](@keyword=iteration_matrix|lang=zh-CN|style=Feynman) $I - P^{-1}A$ 变为 $I - M^{-1}A = M^{-1}(M-A) = M^{-1}N$，这正是分裂方法的[迭代矩阵](@keyword=iteration_matrix|lang=zh-CN|style=Feynman)。
 
-一个经典的例子是**[雅可比法](@article_id:307923)**。它使用分裂 $A = D - L - U$，其中 $D$ 是 $A$ 的对角部分。其迭代式为 $D\mathbf{x}^{(k+1)} = (L+U)\mathbf{x}^{(k)} + \mathbf{b}$。这无非是一种[预处理](@article_id:301646)[理查森迭代](@article_id:639405)，其中预处理器是A的对角部分 $P=D$，并且松弛参数取为 $\omega=1$ 。
+一个经典的例子是**[雅可比法](@keyword=jacobi_method|lang=zh-CN|style=Feynman)**。它使用分裂 $A = D - L - U$，其中 $D$ 是 $A$ 的对角部分。其迭代式为 $D\mathbf{x}^{(k+1)} = (L+U)\mathbf{x}^{(k)} + \mathbf{b}$。这无非是一种[预处理](@keyword=preconditioning|lang=zh-CN|style=Feynman)[理查森迭代](@keyword=richardson_iteration|lang=zh-CN|style=Feynman)，其中预处理器是A的对角部分 $P=D$，并且松弛参数取为 $\omega=1$ [@problem_id:2216312]。
 
-这个强大的统一观点揭示了[理查森迭代](@article_id:639405)不仅仅是一个简单的工具，而是一个基础概念——一种“原型方法”——许多更复杂、更强大的数值技术都建立在其之上。它证明了一个简单、直观思想的力量：要找到正确答案，只需不断地采取步骤来纠正你犯的错误。
+这个强大的统一观点揭示了[理查森迭代](@keyword=richardson_iteration|lang=zh-CN|style=Feynman)不仅仅是一个简单的工具，而是一个基础概念——一种“原型方法”——许多更复杂、更强大的数值技术都建立在其之上。它证明了一个简单、直观思想的力量：要找到正确答案，只需不断地采取步骤来纠正你犯的错误。
 

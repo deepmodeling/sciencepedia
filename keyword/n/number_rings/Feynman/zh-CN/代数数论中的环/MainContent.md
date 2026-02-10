@@ -1,7 +1,7 @@
 ## 引言
-在广阔的数学领域中，很少有结构能像环一样基础而深远。虽然我们都熟悉整数的基本算术——加、减、乘——但这只是更广泛的一[类数](@article_id:316572)学系统中的一个例子。[环论](@article_id:304256)提供了探索这些不同数值世界的语言和工具，并探问当熟悉的算术规则被改变或打破时会发生什么。本文旨在实现从具体计算到抽象结构的飞跃，揭示[支配数](@article_id:339825)系的隐藏架构。
+在广阔的数学领域中，很少有结构能像环一样基础而深远。虽然我们都熟悉整数的基本算术——加、减、乘——但这只是更广泛的一[类数](@keyword=class_number|lang=zh-CN|style=Feynman)学系统中的一个例子。[环论](@keyword=ring_theory|lang=zh-CN|style=Feynman)提供了探索这些不同数值世界的语言和工具，并探问当熟悉的算术规则被改变或打破时会发生什么。本文旨在实现从具体计算到抽象结构的飞跃，揭示[支配数](@keyword=domination_number|lang=zh-CN|style=Feynman)系的隐藏架构。
 
-我们的旅程始于第一章“原理与机制”，其中我们将介绍任何环的核心组成部分：单位、制造麻烦的[零因子](@article_id:311468)以及强大的理想概念。我们将看到这些基本构件如何让我们通过[商环](@article_id:309028)构建新的数学宇宙。在第二章“应用与跨学科联系”中，我们将走出抽象领域，见证这些相同的原理如何构成现代密码学的计算引擎，解释素数的深层秘密，甚至作为化学、生物学和[材料科学](@article_id:312640)中结构的通用蓝图。准备好去发现，环的抽象规则实际上是宇宙隐藏的语法。
+我们的旅程始于第一章“原理与机制”，其中我们将介绍任何环的核心组成部分：单位、制造麻烦的[零因子](@keyword=zero_divisors_2|lang=zh-CN|style=Feynman)以及强大的理想概念。我们将看到这些基本构件如何让我们通过[商环](@keyword=factor_rings|lang=zh-CN|style=Feynman)构建新的数学宇宙。在第二章“应用与跨学科联系”中，我们将走出抽象领域，见证这些相同的原理如何构成现代密码学的计算引擎，解释素数的深层秘密，甚至作为化学、生物学和[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)中结构的通用蓝图。准备好去发现，环的抽象规则实际上是宇宙隐藏的语法。
 
 ## 原理与机制
 
@@ -11,49 +11,49 @@
 
 ### 参与者：单位、零因子和环的特性
 
-在普通整数的世界 $\mathbb{Z}$ 中，如果你将两个非零数相乘，你永远不会得到零。这似乎是一条自然法则。但事实果真如此吗？让我们来探索一下“[时钟算术](@article_id:300804)”这个奇妙的世界，即整数模 $n$ 环，记作 $\mathbb{Z}_n$。在 $\mathbb{Z}_6$ 中（可以想象一个有6小时的钟），我们看到 $2 \times 3 = 6$，在这个时钟上就是0！2和3都不是零，但它们的乘积却消失了。我们称这样的元素为 **[零因子](@article_id:311468)**。它们在某种程度上是麻烦制造者，打破了我们在学校学到的那些令人安心的规则。
+在普通整数的世界 $\mathbb{Z}$ 中，如果你将两个非零数相乘，你永远不会得到零。这似乎是一条自然法则。但事实果真如此吗？让我们来探索一下“[时钟算术](@keyword=clock_arithmetic|lang=zh-CN|style=Feynman)”这个奇妙的世界，即整数模 $n$ 环，记作 $\mathbb{Z}_n$。在 $\mathbb{Z}_6$ 中（可以想象一个有6小时的钟），我们看到 $2 \times 3 = 6$，在这个时钟上就是0！2和3都不是零，但它们的乘积却消失了。我们称这样的元素为 **[零因子](@keyword=zero_divisors_2|lang=zh-CN|style=Feynman)**。它们在某种程度上是麻烦制造者，打破了我们在学校学到的那些令人安心的规则。
 
-在任何环中，一个非零元素要么是零因子，要么是 **单位**。单位是拥有乘法逆元的元素。例如，在 $\mathbb{Z}_{10}$ 中，数字7是一个单位，因为 $7 \times 3 = 21 \equiv 1 \pmod{10}$。数字3是它的[逆元](@article_id:301233)。一个环中所有单位的集合在乘法下构成一个精巧的小群。那么 $\mathbb{Z}_{10}$ 中其他非零数呢？我们来检查一下：2, 4, 5, 6, 8。注意 $2 \times 5 = 10 \equiv 0$，$4 \times 5 = 20 \equiv 0$，$6 \times 5 = 30 \equiv 0$，以及 $8 \times 5 = 40 \equiv 0$。它们都是零因子！
+在任何环中，一个非零元素要么是零因子，要么是 **单位**。单位是拥有乘法逆元的元素。例如，在 $\mathbb{Z}_{10}$ 中，数字7是一个单位，因为 $7 \times 3 = 21 \equiv 1 \pmod{10}$。数字3是它的[逆元](@keyword=inverse_elements|lang=zh-CN|style=Feynman)。一个环中所有单位的集合在乘法下构成一个精巧的小群。那么 $\mathbb{Z}_{10}$ 中其他非零数呢？我们来检查一下：2, 4, 5, 6, 8。注意 $2 \times 5 = 10 \equiv 0$，$4 \times 5 = 20 \equiv 0$，$6 \times 5 = 30 \equiv 0$，以及 $8 \times 5 = 40 \equiv 0$。它们都是零因子！
 
-事实证明，在 $\mathbb{Z}_n$ 中，任何非零元素 *要么* 是单位，*要么* 是零因子。如果一个元素 $a$ 与 $n$ “互质”（即它们的最大公约数 $\gcd(a, n)$ 为1），那么它是一个单位。如果 $\gcd(a, n) > 1$，它就是一个零因子。这给了我们一个关于其中元素的完整“普查”。完全没有[零因子](@article_id:311468)的环，比如我们熟悉的整数或有理数，被赋予一个特殊的名字：**[整环](@article_id:315731)**。它们是我们数系中的“行为良好”的世界。
+事实证明，在 $\mathbb{Z}_n$ 中，任何非零元素 *要么* 是单位，*要么* 是零因子。如果一个元素 $a$ 与 $n$ “互质”（即它们的最大公约数 $\gcd(a, n)$ 为1），那么它是一个单位。如果 $\gcd(a, n) > 1$，它就是一个零因子。这给了我们一个关于其中元素的完整“普查”[@problem_id:1804262]。完全没有[零因子](@keyword=zero_divisors_2|lang=zh-CN|style=Feynman)的环，比如我们熟悉的整数或有理数，被赋予一个特殊的名字：**[整环](@keyword=integral_domains|lang=zh-CN|style=Feynman)**。它们是我们数系中的“行为良好”的世界。
 
 这一区别引出了一个深刻的见解。让我们再问一个简单的问题：如果你取数字1并不断地与自身相加（$1, 1+1=2, 1+1+1=3, \dots$），你会不会最终回到0？在整数 $\mathbb{Z}$ 中，你永远不会。我们说它的 **特征** 是0。但在 $\mathbb{Z}_6$ 中，我们有 $1+1+1+1+1+1 = 6 \equiv 0$。我们说它的特征是6。特征就像环的一个基频。
 
-接下来是重磅消息：可以证明，任何整[环的特征](@article_id:310481)必须是0或一个素数 。为什么？假设一个[整环](@article_id:315731)具有合数特征，比如6。这意味着 $6 \cdot 1 = 0$。但我们可以将其写为 $(2 \cdot 1) \cdot (3 \cdot 1) = 0$。由于它是一个[整环](@article_id:315731)（没有零因子！），所以要么 $2 \cdot 1 = 0$，要么 $3 \cdot 1 = 0$。这意味着特征应该是2或3，而不是6！这是一个矛盾。这个优美的定理以一种完全出人意料的方式，将乘法结构（无[零因子](@article_id:311468)）与加法结构（特征）联系起来。它告诉我们，“行为良好”的数值世界与素数有着根本的联系。
+接下来是重磅消息：可以证明，任何整[环的特征](@keyword=characteristic_of_a_ring|lang=zh-CN|style=Feynman)必须是0或一个素数 [@problem_id:1778863]。为什么？假设一个[整环](@keyword=integral_domains|lang=zh-CN|style=Feynman)具有合数特征，比如6。这意味着 $6 \cdot 1 = 0$。但我们可以将其写为 $(2 \cdot 1) \cdot (3 \cdot 1) = 0$。由于它是一个[整环](@keyword=integral_domains|lang=zh-CN|style=Feynman)（没有零因子！），所以要么 $2 \cdot 1 = 0$，要么 $3 \cdot 1 = 0$。这意味着特征应该是2或3，而不是6！这是一个矛盾。这个优美的定理以一种完全出人意料的方式，将乘法结构（无[零因子](@keyword=zero_divisors_2|lang=zh-CN|style=Feynman)）与加法结构（特征）联系起来。它告诉我们，“行为良好”的数值世界与素数有着根本的联系。
 
-我们甚至可以通过组合更简单的环来构建更复杂的环。考虑一个环，其中每个元素都是一个配对，就像一个包含街道号码和邮政编码的地址。在 $R = \mathbb{Z}_{30} \times M_2(\mathbb{F}_3)$ 中的一个元素是一个配对 $(a, A)$，其中 $a$ 是来自我们30小时时钟的一个数，而 $A$ 是一个元素来自3小时时钟的 $2 \times 2$ 矩阵。这样的配对何时是单位？其实很简单：它是一个单位，当且仅当它的每个部分在各自的世界里都是单位 。数字 $a$ 必须是 $\mathbb{Z}_{30}$ 中的单位，矩阵 $A$ 必须是可逆的。整体只是其各部分的逻辑组合。
+我们甚至可以通过组合更简单的环来构建更复杂的环。考虑一个环，其中每个元素都是一个配对，就像一个包含街道号码和邮政编码的地址。在 $R = \mathbb{Z}_{30} \times M_2(\mathbb{F}_3)$ 中的一个元素是一个配对 $(a, A)$，其中 $a$ 是来自我们30小时时钟的一个数，而 $A$ 是一个元素来自3小时时钟的 $2 \times 2$ 矩阵。这样的配对何时是单位？其实很简单：它是一个单位，当且仅当它的每个部分在各自的世界里都是单位 [@problem_id:1844049]。数字 $a$ 必须是 $\mathbb{Z}_{30}$ 中的单位，矩阵 $A$ 必须是可逆的。整体只是其各部分的逻辑组合。
 
-### 秘密结构：作为乘法[黑洞](@article_id:318975)的理想
+### 秘密结构：作为乘法[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)的理想
 
-现在我们来到了整个数学中最强大、最优雅的概念之一：**理想**。什么是理想？你可以把它看作一种特殊的子环。但它还有一个额外的、神奇的性质。如果你从理想中取任何一个元素，然后用大环中的 *任何* 元素与它相乘，你保证会回到理想内部。理想就像一个乘法[黑洞](@article_id:318975)；一旦你进去了，乘法就无法让你出来。
+现在我们来到了整个数学中最强大、最优雅的概念之一：**理想**。什么是理想？你可以把它看作一种特殊的子环。但它还有一个额外的、神奇的性质。如果你从理想中取任何一个元素，然后用大环中的 *任何* 元素与它相乘，你保证会回到理想内部。理想就像一个乘法[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)；一旦你进去了，乘法就无法让你出来。
 
-最简单的例子在[整数环](@article_id:316121) $\mathbb{Z}$ 中。考虑所有6的倍数的集合：$\{\dots, -12, -6, 0, 6, 12, \dots\}$。这是一个理想。随便选一个6的倍数，比如18。现在再选 *任何* 一个整数，比如-5。它们的乘积是 $18 \times (-5) = -90$，它……仍然是6的倍数。你无法逃脱。这个理想由单个元素6生成，我们记作 $\langle 6 \rangle$。这样的理想被称为 **主理想**。
+最简单的例子在[整数环](@keyword=ring_of_integers|lang=zh-CN|style=Feynman) $\mathbb{Z}$ 中。考虑所有6的倍数的集合：$\{\dots, -12, -6, 0, 6, 12, \dots\}$。这是一个理想。随便选一个6的倍数，比如18。现在再选 *任何* 一个整数，比如-5。它们的乘积是 $18 \times (-5) = -90$，它……仍然是6的倍数。你无法逃脱。这个理想由单个元素6生成，我们记作 $\langle 6 \rangle$。这样的理想被称为 **主理想**。
 
-如果一个理想由两个元素生成，比如[整数环](@article_id:316121)中的 $I = \langle 12, 18 \rangle$，情况会怎样？这意味着 $I$ 包含所有形如 $12x + 18y$ 的数，其中 $x$ 和 $y$ 是任意整数。但如果你还记得数论中的裴蜀定理（Bézout's identity），这个集合恰好是12和18的最大公约数的所有倍数的集合！由于 $\gcd(12, 18) = 6$，所以事实证明 $\langle 12, 18 \rangle$ 只是伪装的理想 $\langle 6 \rangle$ 。在环 $\mathbb{Z}$ 和 $\mathbb{Z}_n$ 中，每个理想都是主理想。
+如果一个理想由两个元素生成，比如[整数环](@keyword=ring_of_integers|lang=zh-CN|style=Feynman)中的 $I = \langle 12, 18 \rangle$，情况会怎样？这意味着 $I$ 包含所有形如 $12x + 18y$ 的数，其中 $x$ 和 $y$ 是任意整数。但如果你还记得数论中的裴蜀定理（Bézout's identity），这个集合恰好是12和18的最大公约数的所有倍数的集合！由于 $\gcd(12, 18) = 6$，所以事实证明 $\langle 12, 18 \rangle$ 只是伪装的理想 $\langle 6 \rangle$ [@problem_id:1801779]。在环 $\mathbb{Z}$ 和 $\mathbb{Z}_n$ 中，每个理想都是主理想。
 
-我们也可以对理想本身进行算术运算。两个理想的和 $I+J$ 是包含它们两者的最小理想，而它们的交 $I \cap J$ 是被它们两者包含的最大理想。对于整数中的主理想，比如 $I=\langle a \rangle$ 和 $J=\langle b \rangle$，这些运算与我们熟悉的概念有着优美的对应关系：它们的和是由它们的最大公约数生成的理想，$I+J = \langle \gcd(a, b) \rangle$；它们的交是由它们的最小公倍数生成的理想，$I \cap J = \langle \operatorname{lcm}(a,b) \rangle$ 。
+我们也可以对理想本身进行算术运算。两个理想的和 $I+J$ 是包含它们两者的最小理想，而它们的交 $I \cap J$ 是被它们两者包含的最大理想。对于整数中的主理想，比如 $I=\langle a \rangle$ 和 $J=\langle b \rangle$，这些运算与我们熟悉的概念有着优美的对应关系：它们的和是由它们的最大公约数生成的理想，$I+J = \langle \gcd(a, b) \rangle$；它们的交是由它们的最小公倍数生成的理想，$I \cap J = \langle \operatorname{lcm}(a,b) \rangle$ [@problem_id:1818355]。
 
-### 创造新宇宙：[商环](@article_id:309028)的魔力
+### 创造新宇宙：[商环](@keyword=factor_rings|lang=zh-CN|style=Feynman)的魔力
 
-为什么理想如此重要？因为它们正是从旧环构建新环的绝佳工具。当我们在环 $R$ 中有一个理想 $I$ 时，我们可以创建一个新环，称为 **[商环](@article_id:309028)** 或 **因[子环](@article_id:314606)**，记作 $R/I$。这个构造既简单又深刻：我们声明理想 $I$ 中的每一个元素现在都等价于零。我们“商掉”或“坍缩”了这个理想。
+为什么理想如此重要？因为它们正是从旧环构建新环的绝佳工具。当我们在环 $R$ 中有一个理想 $I$ 时，我们可以创建一个新环，称为 **[商环](@keyword=factor_rings|lang=zh-CN|style=Feynman)** 或 **因[子环](@keyword=subring|lang=zh-CN|style=Feynman)**，记作 $R/I$。这个构造既简单又深刻：我们声明理想 $I$ 中的每一个元素现在都等价于零。我们“商掉”或“坍缩”了这个理想。
 
-最著名的例子是你已经知道的。环 $\mathbb{Z}_6$ 不过是[商环](@article_id:309028) $\mathbb{Z}/\langle 6 \rangle$。我们取整数环 $\mathbb{Z}$，并将所有6的倍数构成的理想坍缩成一个点，即我们的新零点。在这个新世界里，7与1相同（因为 $7-1=6$ 在理想中），12与0相同，-2与4相同。只剩下6个不同的“东西”：0, 1, 2, 3, 4, 5的[等价类](@article_id:316440)。商环的大小由一个简单的原则决定：它是原环的大小除以理想的大小 。例如，在环 $\mathbb{Z}_{36}$ 中，理想 $\langle 9 \rangle$ 包含4个元素（$\{0, 9, 18, 27\}$）。因此，[商环](@article_id:309028) $\mathbb{Z}_{36}/\langle 9 \rangle$ 的大小是 $\frac{36}{4} = 9$。
+最著名的例子是你已经知道的。环 $\mathbb{Z}_6$ 不过是[商环](@keyword=factor_rings|lang=zh-CN|style=Feynman) $\mathbb{Z}/\langle 6 \rangle$。我们取整数环 $\mathbb{Z}$，并将所有6的倍数构成的理想坍缩成一个点，即我们的新零点。在这个新世界里，7与1相同（因为 $7-1=6$ 在理想中），12与0相同，-2与4相同。只剩下6个不同的“东西”：0, 1, 2, 3, 4, 5的[等价类](@keyword=equivalence_classes|lang=zh-CN|style=Feynman)。商环的大小由一个简单的原则决定：它是原环的大小除以理想的大小 [@problem_id:1793918]。例如，在环 $\mathbb{Z}_{36}$ 中，理想 $\langle 9 \rangle$ 包含4个元素（$\{0, 9, 18, 27\}$）。因此，[商环](@keyword=factor_rings|lang=zh-CN|style=Feynman) $\mathbb{Z}_{36}/\langle 9 \rangle$ 的大小是 $\frac{36}{4} = 9$。
 
-这个构造非常强大，它不仅限于整数。让我们以系数来自 $\mathbb{Z}_5$ 的所有多项式构成的环为例，记作 $\mathbb{Z}_5[x]$。现在，让我们通过理想 $I = \langle x^2+1 \rangle$ 构造商环。在这个新世界中，$x^2+1=0$，这意味着 $x^2 = -1 \equiv 4 \pmod 5$。我们发明了一个新的数系，其中存在一个数 $x$，它的平方是4！这个宇宙中的元素是什么样的呢？利用[多项式除法算法](@article_id:310790)，任何多项式都可以写成 $x^2+1$ 的某个倍数加上一个形如 $ax+b$ 的余式。既然我们已经声明 $x^2+1$ 为零，那么每个元素都可以由其唯一的余式 $ax+b$ 表示。由于系数 $a$ 和 $b$ 都可以是 $\mathbb{Z}_5$ 中的5个元素中的任意一个，我们在这个新环中就有 $5 \times 5 = 25$ 个不同的元素 。我们构建了一个包含25个元素的有限域，这在[现代密码学](@article_id:338222)和编码理论中具有极其重要的意义。
+这个构造非常强大，它不仅限于整数。让我们以系数来自 $\mathbb{Z}_5$ 的所有多项式构成的环为例，记作 $\mathbb{Z}_5[x]$。现在，让我们通过理想 $I = \langle x^2+1 \rangle$ 构造商环。在这个新世界中，$x^2+1=0$，这意味着 $x^2 = -1 \equiv 4 \pmod 5$。我们发明了一个新的数系，其中存在一个数 $x$，它的平方是4！这个宇宙中的元素是什么样的呢？利用[多项式除法算法](@keyword=division_algorithm_for_polynomials|lang=zh-CN|style=Feynman)，任何多项式都可以写成 $x^2+1$ 的某个倍数加上一个形如 $ax+b$ 的余式。既然我们已经声明 $x^2+1$ 为零，那么每个元素都可以由其唯一的余式 $ax+b$ 表示。由于系数 $a$ 和 $b$ 都可以是 $\mathbb{Z}_5$ 中的5个元素中的任意一个，我们在这个新环中就有 $5 \times 5 = 25$ 个不同的元素 [@problem_id:1818379]。我们构建了一个包含25个元素的有限域，这在[现代密码学](@keyword=modern_cryptography|lang=zh-CN|style=Feynman)和编码理论中具有极其重要的意义。
 
-这些商[环的结构](@article_id:311324)与原[环的结构](@article_id:311324)密切相关。著名的 **[格同构定理](@article_id:303680)** 告诉我们，商环 $R/I$ 的理想与原环 $R$ 中包含 $I$ 的理想之间存在[一一对应](@article_id:304365)关系 。它提供了一张地图，一种在复杂的理想景观中导航的方法。
+这些商[环的结构](@keyword=structure_of_rings|lang=zh-CN|style=Feynman)与原[环的结构](@keyword=structure_of_rings|lang=zh-CN|style=Feynman)密切相关。著名的 **[格同构定理](@keyword=lattice_isomorphism_theorem|lang=zh-CN|style=Feynman)** 告诉我们，商环 $R/I$ 的理想与原环 $R$ 中包含 $I$ 的理想之间存在[一一对应](@keyword=one_to_one_correspondence|lang=zh-CN|style=Feynman)关系 [@problem_id:1779455]。它提供了一张地图，一种在复杂的理想景观中导航的方法。
 
-### 超越主理想：[理想类群](@article_id:314386)一瞥
+### 超越主理想：[理想类群](@keyword=ideal_class_group|lang=zh-CN|style=Feynman)一瞥
 
 很长一段时间里，数学家们认为唯一因子分解，如 $12 = 2^2 \cdot 3$，是数的一个普遍性质。当他们发现在其他数环中这个性质可能失效时，这带来了巨大的冲击。例如，在环 $\mathbb{Z}[\sqrt{-5}] = \{a+b\sqrt{-5} \mid a,b \in \mathbb{Z}\}$ 中，数字6有两种不同的不可约元素分解方式：$6 = 2 \cdot 3$ 和 $6 = (1+\sqrt{-5})(1-\sqrt{-5})$。我们优美的唯一因子分解似乎已经崩溃了。
 
-但是，理想的概念拯救了这一切。Ernst Kummer 和 Richard Dedekind 的卓越见解是，虽然 *元素* 可能无法[唯一分解](@article_id:312726)，但 *理想* 可以！元素唯一因子分解的失败与[非主理想](@article_id:380510)的存在直接相关。
+但是，理想的概念拯救了这一切。Ernst Kummer 和 Richard Dedekind 的卓越见解是，虽然 *元素* 可能无法[唯一分解](@keyword=unique_factorization|lang=zh-CN|style=Feynman)，但 *理想* 可以！元素唯一因子分解的失败与[非主理想](@keyword=non_principal_ideals|lang=zh-CN|style=Feynman)的存在直接相关。
 
-我们如何判断一个理想是否为[非主理想](@article_id:380510)？一种方法是使用 **范数**。在像 $\mathbb{Z}[\sqrt{-14}]$ 这样的环中，理想 $I$ 的范数是其商环中元素的数量，即 $|R/I|$。如果这个理想是[主理想](@article_id:313172)，比如说 $I=\langle \alpha \rangle$，那么它的范数必须等于其生成元 $\alpha$ 的范数，即 $|N(\alpha)|$。在环 $R=\mathbb{Z}[\sqrt{-14}]$ 中，考虑理想 $I = \langle 3, 1+\sqrt{-14} \rangle$。可以计算出这个[理想的范数](@article_id:315886)是3。然而，如果我们寻找一个范数为3的元素 $\alpha = a+b\sqrt{-14}$，我们需要在整数范围内求解方程 $a^2 + 14b^2 = 3$。这是不可能的！因此，不存在这样的生成元 $\alpha$，理想 $I$ 不是[主理想](@article_id:313172) 。它是一个根本上更复杂的对象，无法用单个生成元来描述。
+我们如何判断一个理想是否为[非主理想](@keyword=non_principal_ideals|lang=zh-CN|style=Feynman)？一种方法是使用 **范数**。在像 $\mathbb{Z}[\sqrt{-14}]$ 这样的环中，理想 $I$ 的范数是其商环中元素的数量，即 $|R/I|$。如果这个理想是[主理想](@keyword=principal_ideal|lang=zh-CN|style=Feynman)，比如说 $I=\langle \alpha \rangle$，那么它的范数必须等于其生成元 $\alpha$ 的范数，即 $|N(\alpha)|$。在环 $R=\mathbb{Z}[\sqrt{-14}]$ 中，考虑理想 $I = \langle 3, 1+\sqrt{-14} \rangle$。可以计算出这个[理想的范数](@keyword=norm_of_an_ideal|lang=zh-CN|style=Feynman)是3。然而，如果我们寻找一个范数为3的元素 $\alpha = a+b\sqrt{-14}$，我们需要在整数范围内求解方程 $a^2 + 14b^2 = 3$。这是不可能的！因此，不存在这样的生成元 $\alpha$，理想 $I$ 不是[主理想](@keyword=principal_ideal|lang=zh-CN|style=Feynman) [@problem_id:1786836]。它是一个根本上更复杂的对象，无法用单个生成元来描述。
 
-这种失败不仅仅是一种好奇心；它是我们可以衡量的东西。考虑环 $\mathbb{Z}[\sqrt{-5}]$ 中的理想 $I = \langle 2, 1+\sqrt{-5} \rangle$。这个理想不是[主理想](@article_id:313172)。但是，如果我们将它与自身相乘会怎样呢？我们计算理想 $I^2 = \langle 2, 1+\sqrt{-5} \rangle \cdot \langle 2, 1+\sqrt{-5} \rangle$。经过一些代数运算，我们发现 $I^2$ 就是理想 $\langle 2 \rangle$。突然之间，它变成[主理想](@article_id:313172)了！。
+这种失败不仅仅是一种好奇心；它是我们可以衡量的东西。考虑环 $\mathbb{Z}[\sqrt{-5}]$ 中的理想 $I = \langle 2, 1+\sqrt{-5} \rangle$。这个理想不是[主理想](@keyword=principal_ideal|lang=zh-CN|style=Feynman)。但是，如果我们将它与自身相乘会怎样呢？我们计算理想 $I^2 = \langle 2, 1+\sqrt{-5} \rangle \cdot \langle 2, 1+\sqrt{-5} \rangle$。经过一些代数运算，我们发现 $I^2$ 就是理想 $\langle 2 \rangle$。突然之间，它变成[主理想](@keyword=principal_ideal|lang=zh-CN|style=Feynman)了！[@problem_id:1834275]。
 
-这就是 **理想类群** 背后的关键思想。我们可以将一个环的所有理想分组，如果一个理想可以通过乘以一个[主理想](@article_id:313172)变成另一个理想，那么就认为这两个理想在同一个“类”中。[主理想](@article_id:313172)本身形成一个类，作为单位元。令人惊奇的是，这些类构成一个[有限群](@article_id:300157)。类的数量，称为 **类数**，衡量了该环在多大程度上不是一个[主理想整环](@article_id:312772)。如果类数是1，那么所有理想都是主理想，我们就拥有了元素的唯一因子分解。如果[类数](@article_id:316572)大于1，比如 $\mathbb{Z}[\sqrt{-5}]$（其[类数](@article_id:316572)为2），那么唯一因子分解就会失败，但这种失败的方式被这个优美的[代数结构](@article_id:297503)完美地控制和衡量。
+这就是 **理想类群** 背后的关键思想。我们可以将一个环的所有理想分组，如果一个理想可以通过乘以一个[主理想](@keyword=principal_ideal|lang=zh-CN|style=Feynman)变成另一个理想，那么就认为这两个理想在同一个“类”中。[主理想](@keyword=principal_ideal|lang=zh-CN|style=Feynman)本身形成一个类，作为单位元。令人惊奇的是，这些类构成一个[有限群](@keyword=finite_groups|lang=zh-CN|style=Feynman)。类的数量，称为 **类数**，衡量了该环在多大程度上不是一个[主理想整环](@keyword=principal_ideal_domain|lang=zh-CN|style=Feynman)。如果类数是1，那么所有理想都是主理想，我们就拥有了元素的唯一因子分解。如果[类数](@keyword=class_number|lang=zh-CN|style=Feynman)大于1，比如 $\mathbb{Z}[\sqrt{-5}]$（其[类数](@keyword=class_number|lang=zh-CN|style=Feynman)为2），那么唯一因子分解就会失败，但这种失败的方式被这个优美的[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)完美地控制和衡量。
 
-从简单的[时钟算术](@article_id:300804)出发，我们穿越了抽象结构的景观，最终获得了一个工具，它为一个我们对数的最基本直觉似乎已然崩溃的世界恢复了秩序和美感。[环论](@article_id:304256)的原理不仅仅是抽象的游戏；它们是描述[支配数](@article_id:339825)之本质的深层、隐藏规则的语言。
+从简单的[时钟算术](@keyword=clock_arithmetic|lang=zh-CN|style=Feynman)出发，我们穿越了抽象结构的景观，最终获得了一个工具，它为一个我们对数的最基本直觉似乎已然崩溃的世界恢复了秩序和美感。[环论](@keyword=ring_theory|lang=zh-CN|style=Feynman)的原理不仅仅是抽象的游戏；它们是描述[支配数](@keyword=domination_number|lang=zh-CN|style=Feynman)之本质的深层、隐藏规则的语言。
 

@@ -1,7 +1,7 @@
 ## Introduction
 How do we mathematically represent our uncertainty about a set of proportions? Whether we're questioning the fairness of a multi-sided die, predicting election outcomes, or estimating the market share of several competitors, we face the fundamental challenge of describing our beliefs about interconnected probabilities that must sum to one. Without a formal framework, updating these beliefs in light of new evidence can be complex and ad-hoc. The Dirichlet distribution provides an elegant and powerful solution to this very problem, serving as a "distribution over distributions" that is foundational to modern Bayesian statistics.
 
-This article will guide you through the core concepts of this powerful tool. In the first chapter, "Principles and Mechanisms," we will explore the intuitive foundations of the Dirichlet distribution, from its geometric home on the [simplex](@article_id:270129) to its beautiful partnership with the Multinomial distribution in Bayesian learning. Following this, the "Applications and Interdisciplinary Connections" chapter will demonstrate how this theoretical model becomes a practical workhorse in fields ranging from ecology and materials science to information theory, bridging disciplines with a common language for uncertainty.
+This article will guide you through the core concepts of this powerful tool. In the first chapter, "Principles and Mechanisms," we will explore the intuitive foundations of the Dirichlet distribution, from its geometric home on the [simplex](@keyword=simplex|lang=en-US|style=Feynman) to its beautiful partnership with the Multinomial distribution in Bayesian learning. Following this, the "Applications and Interdisciplinary Connections" chapter will demonstrate how this theoretical model becomes a practical workhorse in fields ranging from ecology and materials science to information theory, bridging disciplines with a common language for uncertainty.
 
 ## Principles and Mechanisms
 
@@ -17,7 +17,7 @@ A Dirichlet distribution is defined by a vector of positive numbers called **con
 
 For instance, if we model our belief about a three-sided die with $\boldsymbol{\alpha} = (10, 10, 10)$, it's like saying our prior belief is as strong as if we had already rolled the die 30 times and seen each outcome 10 times. We'd expect the true probabilities to be near $(\frac{1}{3}, \frac{1}{3}, \frac{1}{3})$, and we're fairly confident in this. If our prior was $\boldsymbol{\alpha} = (1, 1, 1)$, it's a much weaker belief, equivalent to having seen each outcome just once. This prior is very "flat" and suggests any set of probabilities is roughly equally likely. If our prior was $\boldsymbol{\alpha} = (10, 1, 1)$, we are expressing a strong prior belief that the first outcome is much more likely than the others.
 
-The sum of these parameters, $\alpha_0 = \sum_{k=1}^K \alpha_k$, is often called the **total [effective sample size](@article_id:271167)** of the prior. It quantifies the strength of our [prior belief](@article_id:264071). As we'll see, we can even work backwards: if we have a target mean [probability vector](@article_id:199940) $\boldsymbol{\mu}$ and a desired variance for one component, we can solve for the necessary $\alpha_0$ to construct a prior that precisely matches our beliefs . The expected value for any single probability $p_k$ is simply:
+The sum of these parameters, $\alpha_0 = \sum_{k=1}^K \alpha_k$, is often called the **total [effective sample size](@keyword=effective_sample_size|lang=en-US|style=Feynman)** of the prior. It quantifies the strength of our [prior belief](@keyword=prior_belief|lang=en-US|style=Feynman). As we'll see, we can even work backwards: if we have a target mean [probability vector](@keyword=probability_vector|lang=en-US|style=Feynman) $\boldsymbol{\mu}$ and a desired variance for one component, we can solve for the necessary $\alpha_0$ to construct a prior that precisely matches our beliefs [@problem_id:719829]. The expected value for any single probability $p_k$ is simply:
 
 $$
 E[p_k] = \frac{\alpha_k}{\alpha_0} = \frac{\alpha_k}{\sum_{i=1}^K \alpha_i}
@@ -27,13 +27,13 @@ This elegant formula cements the intuition: our best guess for a probability is 
 
 ### The Perfect Partnership: Dirichlet and Multinomial
 
-The true power of the Dirichlet distribution is revealed when it meets its lifelong partner: the **Multinomial distribution**. The Multinomial distribution describes the probability of observing a certain set of counts $(n_1, n_2, \dots, n_K)$ in $N$ trials, given a fixed [probability vector](@article_id:199940) $\mathbf{p}$. For example, if we roll our K-sided die $N$ times, the counts of each outcome will follow a Multinomial distribution.
+The true power of the Dirichlet distribution is revealed when it meets its lifelong partner: the **Multinomial distribution**. The Multinomial distribution describes the probability of observing a certain set of counts $(n_1, n_2, \dots, n_K)$ in $N$ trials, given a fixed [probability vector](@keyword=probability_vector|lang=en-US|style=Feynman) $\mathbf{p}$. For example, if we roll our K-sided die $N$ times, the counts of each outcome will follow a Multinomial distribution.
 
-Now, what happens when we combine our Dirichlet [prior belief](@article_id:264071) about $\mathbf{p}$ with the evidence from new Multinomial data? This is the core of Bayesian inference, and the result is astonishingly simple. The Dirichlet distribution is the **[conjugate prior](@article_id:175818)** for the Multinomial likelihood . This is a fancy way of saying that if your [prior belief](@article_id:264071) is a Dirichlet distribution, your posterior belief (after seeing the data) will also be a Dirichlet distribution!
+Now, what happens when we combine our Dirichlet [prior belief](@keyword=prior_belief|lang=en-US|style=Feynman) about $\mathbf{p}$ with the evidence from new Multinomial data? This is the core of Bayesian inference, and the result is astonishingly simple. The Dirichlet distribution is the **[conjugate prior](@keyword=conjugate_prior|lang=en-US|style=Feynman)** for the Multinomial likelihood [@problem_id:1909060]. This is a fancy way of saying that if your [prior belief](@keyword=prior_belief|lang=en-US|style=Feynman) is a Dirichlet distribution, your posterior belief (after seeing the data) will also be a Dirichlet distribution!
 
 The updating rule is the essence of mathematical beauty:
 
-If your prior is $\text{Dir}(\boldsymbol{\alpha}_{prior}) = \text{Dir}(\alpha_1, \dots, \alpha_K)$ and you observe data with counts $\mathbf{n} = (n_1, \dots, n_K)$, your [posterior distribution](@article_id:145111) is simply:
+If your prior is $\text{Dir}(\boldsymbol{\alpha}_{prior}) = \text{Dir}(\alpha_1, \dots, \alpha_K)$ and you observe data with counts $\mathbf{n} = (n_1, \dots, n_K)$, your [posterior distribution](@keyword=posterior_distribution|lang=en-US|style=Feynman) is simply:
 
 $$
 \text{Posterior} \sim \text{Dir}(\boldsymbol{\alpha}_{prior} + \mathbf{n}) = \text{Dir}(\alpha_1 + n_1, \dots, \alpha_K + n_K)
@@ -41,7 +41,7 @@ $$
 
 That's it! Learning from data is as simple as adding the new counts to your prior pseudo-counts.
 
-Imagine an astronomer whose [prior belief](@article_id:264071) about the classification of celestial objects (Stars, Galaxies, Nebulae) is described by $\boldsymbol{\alpha} = (3, 5, 2)$. This reflects a prior expectation that Galaxies are most common. After observing 40 Stars, 50 Galaxies, and 10 Nebulae, their new [belief state](@article_id:194617) is simply a Dirichlet distribution with parameters $(3+40, 5+50, 2+10) = (43, 55, 12)$ . The process of learning is reduced to simple arithmetic.
+Imagine an astronomer whose [prior belief](@keyword=prior_belief|lang=en-US|style=Feynman) about the classification of celestial objects (Stars, Galaxies, Nebulae) is described by $\boldsymbol{\alpha} = (3, 5, 2)$. This reflects a prior expectation that Galaxies are most common. After observing 40 Stars, 50 Galaxies, and 10 Nebulae, their new [belief state](@keyword=belief_state|lang=en-US|style=Feynman) is simply a Dirichlet distribution with parameters $(3+40, 5+50, 2+10) = (43, 55, 12)$ [@problem_id:1909019]. The process of learning is reduced to simple arithmetic.
 
 ### The Payoff: Making Predictions
 
@@ -53,7 +53,7 @@ $$
 P(\text{next is } k | \text{data}) = E[p_k | \text{data}] = \frac{\alpha'_k}{\alpha'_0} = \frac{\alpha_k + n_k}{\sum_{i=1}^K (\alpha_i + n_i)}
 $$
 
-This result, explored in the context of sequencing a viral genome , is profound. It's a generalization of Laplace's rule of succession. It says our best prediction for the future is to simply count up everything we've "seen"—our prior pseudo-counts plus our observed data counts—and take the proportion. It's as if we threw all our prior "pseudo-marbles" and our newly observed real marbles into one giant bag and then calculated the probability of drawing a marble of a certain color.
+This result, explored in the context of sequencing a viral genome [@problem_id:1402345], is profound. It's a generalization of Laplace's rule of succession. It says our best prediction for the future is to simply count up everything we've "seen"—our prior pseudo-counts plus our observed data counts—and take the proportion. It's as if we threw all our prior "pseudo-marbles" and our newly observed real marbles into one giant bag and then calculated the probability of drawing a marble of a certain color.
 
 ### Peeking Inside the Machine: The Elegant Properties of the Dirichlet
 
@@ -61,9 +61,9 @@ The beautiful simplicity of the Dirichlet-Multinomial model is no accident. It s
 
 #### From Many to One: The Beta Connection
 
-What if we only care about one category versus all the others? For example, a document is either "Relevant" or "Irrelevant". This is a two-category problem. The Dirichlet distribution for $K=2$, $\text{Dir}(\alpha_1, \alpha_2)$, is identical to a well-known distribution: the **Beta distribution**, $\text{Beta}(\alpha_1, \alpha_2)$ .
+What if we only care about one category versus all the others? For example, a document is either "Relevant" or "Irrelevant". This is a two-category problem. The Dirichlet distribution for $K=2$, $\text{Dir}(\alpha_1, \alpha_2)$, is identical to a well-known distribution: the **Beta distribution**, $\text{Beta}(\alpha_1, \alpha_2)$ [@problem_id:1909037].
 
-This relationship is even deeper. If you have a vector $\mathbf{p} \sim \text{Dir}(\alpha_1, \dots, \alpha_K)$, and you look at just one component, $p_i$, its [marginal distribution](@article_id:264368) is a Beta distribution :
+This relationship is even deeper. If you have a vector $\mathbf{p} \sim \text{Dir}(\alpha_1, \dots, \alpha_K)$, and you look at just one component, $p_i$, its [marginal distribution](@keyword=marginal_distribution|lang=en-US|style=Feynman) is a Beta distribution [@problem_id:1900171]:
 
 $$
 p_i \sim \text{Beta}(\alpha_i, \alpha_0 - \alpha_i)
@@ -75,7 +75,7 @@ This means that our belief about the probability of any single category, when co
 
 The consistency goes further. What if we want to group categories? Suppose a model generates music in "Classical", "Jazz", "Electronic", and "Ambient" styles, with probabilities $(p_C, p_J, p_E, p_A)$ following a Dirichlet distribution. We might become interested in the probability of "traditional" styles ($p_C + p_J$) versus "modern" styles ($p_E + p_A$).
 
-The aggregation property of the Dirichlet distribution tells us that this new, two-dimensional vector of summed probabilities also follows a Dirichlet distribution, and its parameters are simply the sums of the original parameters !
+The aggregation property of the Dirichlet distribution tells us that this new, two-dimensional vector of summed probabilities also follows a Dirichlet distribution, and its parameters are simply the sums of the original parameters [@problem_id:1393242]!
 
 If $(p_C, p_J, p_E, p_A) \sim \text{Dir}(\alpha_C, \alpha_J, \alpha_E, \alpha_A)$, then:
 
@@ -87,9 +87,9 @@ This property is incredibly powerful. It means you can collapse and combine cate
 
 #### The Push and Pull of Proportions: Negative Correlation
 
-Because the components of the [probability vector](@article_id:199940) $\mathbf{p}$ must sum to one, they are not independent. If you gain more confidence in one probability, say $p_i$, you must necessarily decrease your confidence in the other probabilities combined. It is a [zero-sum game](@article_id:264817) played on the simplex.
+Because the components of the [probability vector](@keyword=probability_vector|lang=en-US|style=Feynman) $\mathbf{p}$ must sum to one, they are not independent. If you gain more confidence in one probability, say $p_i$, you must necessarily decrease your confidence in the other probabilities combined. It is a [zero-sum game](@keyword=zero_sum_game|lang=en-US|style=Feynman) played on the simplex.
 
-This intuitive "push and pull" is reflected in the covariance between any two distinct components, $p_i$ and $p_j$. The covariance is always negative :
+This intuitive "push and pull" is reflected in the covariance between any two distinct components, $p_i$ and $p_j$. The covariance is always negative [@problem_id:1293928]:
 
 $$
 \text{Cov}(p_i, p_j) = -\frac{\alpha_i \alpha_j}{\alpha_0^2 (\alpha_0 + 1)} \quad \text{for } i \neq j
@@ -97,4 +97,4 @@ $$
 
 The magnitude of this negative correlation depends on the strength of the prior beliefs associated with each component. This mathematical property perfectly captures the logical constraint of working with proportions that form a whole.
 
-This beautiful symphony of properties—conjugacy, simple updates, predictive power, and consistent aggregation and [marginalization](@article_id:264143)—is not a series of happy coincidences. It is the hallmark of a deep and unified mathematical structure, one that belongs to a grander class of distributions known as the **[exponential family](@article_id:172652)** . The Dirichlet distribution is not just a useful tool; it is a glimpse into the elegant way mathematics can be structured to model learning, belief, and the very nature of proportions.
+This beautiful symphony of properties—conjugacy, simple updates, predictive power, and consistent aggregation and [marginalization](@keyword=marginalization|lang=en-US|style=Feynman)—is not a series of happy coincidences. It is the hallmark of a deep and unified mathematical structure, one that belongs to a grander class of distributions known as the **[exponential family](@keyword=exponential_family|lang=en-US|style=Feynman)** [@problem_id:1960368]. The Dirichlet distribution is not just a useful tool; it is a glimpse into the elegant way mathematics can be structured to model learning, belief, and the very nature of proportions.

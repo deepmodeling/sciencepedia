@@ -1,7 +1,7 @@
 ## 引言
-在科学计算领域，常微分方程（ODEs）是描述变化的语言，从行星的[轨道](@entry_id:137151)到化学物质的反应，无不如此。虽然简单的数值方法可以求解其中许多方程，但在面对“刚性”系统——即包含在截然不同的时间尺度上发生的过程的问题时，它们往往会灾难性地失败。这造成了一个巨大的知识鸿沟，使得许多复杂的现实世界系统超出了传统工具的处理范围。[后向欧拉法](@entry_id:139674)正是应对这一挑战的强大而稳健的解决方案。
+在科学计算领域，常微分方程（ODEs）是描述变化的语言，从行星的[轨道](@keyword=orbit|lang=zh-CN|style=Feynman)到化学物质的反应，无不如此。虽然简单的数值方法可以求解其中许多方程，但在面对“刚性”系统——即包含在截然不同的时间尺度上发生的过程的问题时，它们往往会灾难性地失败。这造成了一个巨大的知识鸿沟，使得许多复杂的现实世界系统超出了传统工具的处理范围。[后向欧拉法](@keyword=backward_euler_method|lang=zh-CN|style=Feynman)正是应对这一挑战的强大而稳健的解决方案。
 
-本文将深入探讨这一不可或缺的数值技术。我们将探究其核心原理，揭示其带来的权衡，并见证其在众多学科中的影响。以下章节将引导您完成这次探索。“原理与机制”部分将揭开“隐式”方法的神秘面纱，解释其非凡稳定性的来源，并分析精度、成本与其内在耗散特性之间的关键平衡。随后，“应用与跨学科联系”部分将展示该方法的实际应用，看它如何驾驭刚性[化学反应](@entry_id:146973)，模拟工程结构，为[金融衍生品定价](@entry_id:181545)，并揭示其与抽象数学概念的深层联系。
+本文将深入探讨这一不可或缺的数值技术。我们将探究其核心原理，揭示其带来的权衡，并见证其在众多学科中的影响。以下章节将引导您完成这次探索。“原理与机制”部分将揭开“隐式”方法的神秘面纱，解释其非凡稳定性的来源，并分析精度、成本与其内在耗散特性之间的关键平衡。随后，“应用与跨学科联系”部分将展示该方法的实际应用，看它如何驾驭刚性[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)，模拟工程结构，为[金融衍生品定价](@keyword=financial_derivatives_pricing|lang=zh-CN|style=Feynman)，并揭示其与抽象数学概念的深层联系。
 
 ## 原理与机制
 
@@ -9,7 +9,7 @@
 
 ### 迈向未来的一步：“隐式”的含义
 
-想象一下，你正在尝试预测一个球的轨迹。一种简单的方法，也是我们直觉常采用的方法，是观察球现在的位置以及它*在此时此刻*的速度。然后，你将它的位置沿着一条直线向[前推](@entry_id:158718)算一小段时间增量 $h$。这就是**前向欧拉法**的本质：
+想象一下，你正在尝试预测一个球的轨迹。一种简单的方法，也是我们直觉常采用的方法，是观察球现在的位置以及它*在此时此刻*的速度。然后，你将它的位置沿着一条直线向[前推](@keyword=pushforward|lang=zh-CN|style=Feynman)算一小段时间增量 $h$。这就是**前向欧拉法**的本质：
 
 $$
 y_{n+1} = y_n + h f(t_n, y_n)
@@ -23,13 +23,13 @@ $$
 y_{n+1} = y_n + h f(t_{n+1}, y_{n+1})
 $$
 
-请注意这个细微但至关重要的变化：函数 $f$（它给出了斜率）是在未来的时间 $t_{n+1}$ 和尚未知的未来位置 $y_{n+1}$ 处进行评估的。未知量 $y_{n+1}$ 现在出现在了方程的两边！我们不能简单地通过计算右边来求得左边。相反，我们得到了一个隐式定义 $y_{n+1}$ 的方程。这正是它被称为**隐式**方法的原因。它不再是一个简单的计算，而是在每一步都必须解决的一个谜题 。
+请注意这个细微但至关重要的变化：函数 $f$（它给出了斜率）是在未来的时间 $t_{n+1}$ 和尚未知的未来位置 $y_{n+1}$ 处进行评估的。未知量 $y_{n+1}$ 现在出现在了方程的两边！我们不能简单地通过计算右边来求得左边。相反，我们得到了一个隐式定义 $y_{n+1}$ 的方程。这正是它被称为**隐式**方法的原因。它不再是一个简单的计算，而是在每一步都必须解决的一个谜题 [@problem_id:2160551]。
 
-### 求解[隐式方程](@entry_id:177636)
+### 求解[隐式方程](@keyword=implicit_equations|lang=zh-CN|style=Feynman)
 
 你的第一反应可能是怀疑。一个方程的两边都缠绕着未知数，甚至可能在一个复杂的函数 $f$ 内部，我们怎么能解这样的方程呢？这是否会使方法变得无比复杂？
 
-在一些友好的情况下，这个谜题相当简单。考虑一个[线性常微分方程](@entry_id:276013)（ODE），如 $y' = -ty$。这里，我们的函数是 $f(t, y) = -ty$。让我们把它代入后向欧拉公式：
+在一些友好的情况下，这个谜题相当简单。考虑一个[线性常微分方程](@keyword=linear_ordinary_differential_equations|lang=zh-CN|style=Feynman)（ODE），如 $y' = -ty$。这里，我们的函数是 $f(t, y) = -ty$。让我们把它代入后向欧拉公式：
 
 $$
 y_{n+1} = y_n + h f(t_{n+1}, y_{n+1}) = y_n + h (-t_{n+1} y_{n+1})
@@ -53,63 +53,63 @@ $$
 y_{n+1} = \frac{y_n}{1 + h t_{n+1}}
 $$
 
-由于 $t_{n+1} = t_n + h$，我们得到了一个用已知量表示 $y_{n+1}$ 的显式公式 。对于[线性常微分方程](@entry_id:276013)，隐式特性只是一个小的代数障碍。
+由于 $t_{n+1} = t_n + h$，我们得到了一个用已知量表示 $y_{n+1}$ 的显式公式 [@problem_id:2160555]。对于[线性常微分方程](@keyword=linear_ordinary_differential_equations|lang=zh-CN|style=Feynman)，隐式特性只是一个小的代数障碍。
 
-然而，世界很少是如此线性的。对于一般的[非线性](@entry_id:637147)函数 $f(t, y)$，比如那些描述复杂[化学反应](@entry_id:146973)或[流体动力学](@entry_id:136788)的函数，你无法通过代数方法分离出 $y_{n+1}$。为了求解方程 $y_{n+1} = y_n + h f(t_{n+1}, y_{n+1})$，我们通常将其重新整理为一个[求根问题](@entry_id:174994)：
+然而，世界很少是如此线性的。对于一般的[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)函数 $f(t, y)$，比如那些描述复杂[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)或[流体动力学](@keyword=fluid_dynamics|lang=zh-CN|style=Feynman)的函数，你无法通过代数方法分离出 $y_{n+1}$。为了求解方程 $y_{n+1} = y_n + h f(t_{n+1}, y_{n+1})$，我们通常将其重新整理为一个[求根问题](@keyword=root_finding_problem|lang=zh-CN|style=Feynman)：
 
 $$
 G(y_{n+1}) = y_{n+1} - y_n - h f(t_{n+1}, y_{n+1}) = 0
 $$
 
-在每个时间步，我们都必须找到函数 $G(y)$ 的根。这需要一个迭代数值算法，比如**牛顿-拉夫逊法**或更简单的**[不动点迭代](@entry_id:749443)**。这就是我们为隐式性付出的计算代价：每一步不再是单一的计算，而是一个[迭代子](@entry_id:200280)问题，其计算成本可能要高得多 。因此，问题就变成了：我们用这些额外的工作换来了什么？
+在每个时间步，我们都必须找到函数 $G(y)$ 的根。这需要一个迭代数值算法，比如**牛顿-拉夫逊法**或更简单的**[不动点迭代](@keyword=fixpoint_iteration|lang=zh-CN|style=Feynman)**。这就是我们为隐式性付出的计算代价：每一步不再是单一的计算，而是一个[迭代子](@keyword=iteron|lang=zh-CN|style=Feynman)问题，其计算成本可能要高得多 [@problem_id:2160544]。因此，问题就变成了：我们用这些额外的工作换来了什么？
 
-### 回报：[无条件稳定性](@entry_id:145631)
+### 回报：[无条件稳定性](@keyword=unconditional_stability|lang=zh-CN|style=Feynman)
 
-答案，简单来说，就是**稳定性**。而且不是任何普通的稳定性，而是一种强大的、近乎无条件的稳定性，使我们能够处理那些能让显式方法束手无策的问题。这些就是所谓的**[刚性问题](@entry_id:142143)**。
+答案，简单来说，就是**稳定性**。而且不是任何普通的稳定性，而是一种强大的、近乎无条件的稳定性，使我们能够处理那些能让显式方法束手无策的问题。这些就是所谓的**[刚性问题](@keyword=stiff_problems|lang=zh-CN|style=Feynman)**。
 
 刚性系统是指包含在截然不同的时间尺度上发生的过程的系统。想象一下模拟一枚火箭，其化学燃烧在微秒内发生，而其整体轨迹则在数分钟内展开。一个显式方法为了保持稳定，必须采取足够小的步长来解析最快的时间尺度（微秒），即使在燃烧结束后很长时间也是如此。这导致了天文数字般的步数，使得模拟的成本高得令人望而却步。
 
-[后向欧拉法](@entry_id:139674)，由于其“前瞻性”的特点，避开了这个陷阱。让我们从几何上建立直觉。考虑一个简单的衰减系统，$y' = -\lambda y$（其中 $\lambda > 0$），其所有解都趋向于 $y=0$ 的[平衡点](@entry_id:272705)。[斜率场](@entry_id:171896)总是指向水平轴。
+[后向欧拉法](@keyword=backward_euler_method|lang=zh-CN|style=Feynman)，由于其“前瞻性”的特点，避开了这个陷阱。让我们从几何上建立直觉。考虑一个简单的衰减系统，$y' = -\lambda y$（其中 $\lambda > 0$），其所有解都趋向于 $y=0$ 的[平衡点](@keyword=equilibrium_point|lang=zh-CN|style=Feynman)。[斜率场](@keyword=slope_fields|lang=zh-CN|style=Feynman)总是指向水平轴。
 
--   **[前向欧拉法](@entry_id:141238)**：它计算当前点 $(t_n, y_n)$ 的斜率，并沿着该[切线](@entry_id:268870)大胆地向前迈出一步。如果步长 $h$ 太大，这条[切线](@entry_id:268870)可能会严重越过[平衡点](@entry_id:272705)，落在另一侧一个[绝对值](@entry_id:147688)更大的点上。下一步则会向相反方向再次越过，导致[振荡](@entry_id:267781)不断增长，最终导致方法的灾难性失败。
+-   **[前向欧拉法](@keyword=forward_euler_method|lang=zh-CN|style=Feynman)**：它计算当前点 $(t_n, y_n)$ 的斜率，并沿着该[切线](@keyword=tangent_line|lang=zh-CN|style=Feynman)大胆地向前迈出一步。如果步长 $h$ 太大，这条[切线](@keyword=tangent_line|lang=zh-CN|style=Feynman)可能会严重越过[平衡点](@keyword=equilibrium_point|lang=zh-CN|style=Feynman)，落在另一侧一个[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)更大的点上。下一步则会向相反方向再次越过，导致[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)不断增长，最终导致方法的灾难性失败。
 
--   **[后向欧拉法](@entry_id:139674)**：它做的事情要聪明得多。它找到点 $(t_{n+1}, y_{n+1})$，使得*在该未来点*的斜率能够完美地追溯回当前点 $(t_n, y_n)$。对于一个趋向 $y=0$ 的衰减系统，这意味着 $y_{n+1}$ 处的斜率必须“背离”[平衡点](@entry_id:272705)才能回到 $y_n$。这就产生了一种固有的朝向[平衡点](@entry_id:272705)的“拉力”。无论步长 $h$ 有多大，该方法都无法越过[平衡点](@entry_id:272705)。它总是会产生一个单调衰减到稳定点的解 。
+-   **[后向欧拉法](@keyword=backward_euler_method|lang=zh-CN|style=Feynman)**：它做的事情要聪明得多。它找到点 $(t_{n+1}, y_{n+1})$，使得*在该未来点*的斜率能够完美地追溯回当前点 $(t_n, y_n)$。对于一个趋向 $y=0$ 的衰减系统，这意味着 $y_{n+1}$ 处的斜率必须“背离”[平衡点](@keyword=equilibrium_point|lang=zh-CN|style=Feynman)才能回到 $y_n$。这就产生了一种固有的朝向[平衡点](@keyword=equilibrium_point|lang=zh-CN|style=Feynman)的“拉力”。无论步长 $h$ 有多大，该方法都无法越过[平衡点](@keyword=equilibrium_point|lang=zh-CN|style=Feynman)。它总是会产生一个单调衰减到稳定点的解 [@problem_id:2155133]。
 
-这个非凡的性质通过**[A-稳定性](@entry_id:144367)**的概念被形式化。为了分析它，我们使用 Dahlquist 测试方程 $y' = \lambda y$，这是一个[线性系统](@entry_id:147850)的简单原型。应用后向欧拉法得到：
+这个非凡的性质通过**[A-稳定性](@keyword=a_stability|lang=zh-CN|style=Feynman)**的概念被形式化。为了分析它，我们使用 Dahlquist 测试方程 $y' = \lambda y$，这是一个[线性系统](@keyword=linear_systems|lang=zh-CN|style=Feynman)的简单原型。应用后向欧拉法得到：
 
 $$
 y_{n+1} = y_n + h \lambda y_{n+1} \implies y_{n+1} = \frac{1}{1 - h\lambda} y_n
 $$
 
-项 $R(z) = \frac{1}{1-z}$，其中 $z = h\lambda$，被称为**[稳定性函数](@entry_id:178107)**。为了使数值解保持有界（即稳定），这个[放大因子](@entry_id:144315)的模必须小于或等于1：$|R(z)| \le 1$。这个条件等价于 $|1-z| \ge 1$。
+项 $R(z) = \frac{1}{1-z}$，其中 $z = h\lambda$，被称为**[稳定性函数](@keyword=stability_function|lang=zh-CN|style=Feynman)**。为了使数值解保持有界（即稳定），这个[放大因子](@keyword=amplification_factor|lang=zh-CN|style=Feynman)的模必须小于或等于1：$|R(z)| \le 1$。这个条件等价于 $|1-z| \ge 1$。
 
-在复平面上，满足 $|1-z| \ge 1$ 的数 $z$ 的区域是整个平面，*除了*以 $(1, 0)$ 为中心、半径为1的开圆盘。最重要的是，这个[稳定区域](@entry_id:166035)包括了整个[左半平面](@entry_id:270729)，即 $\text{Re}(z) \le 0$ 的区域。具有耗散性或衰减性的物理系统（如热流、阻尼[振动](@entry_id:267781)或大多数化学动力学）的系统[特征值](@entry_id:154894) $\lambda$ 具有负实部。由于 $h>0$， $z=h\lambda$ 的实部也将为负。整个[左半平面](@entry_id:270729)都包含在[稳定区域](@entry_id:166035)内这一事实意味着，对于任何此类衰减系统，[后向欧拉法](@entry_id:139674)对于*任何正步长* $h$ 都是稳定的  。这就是**[A-稳定性](@entry_id:144367)**的定义，也是[后向欧拉法](@entry_id:139674)的超强能力所在。
+在复平面上，满足 $|1-z| \ge 1$ 的数 $z$ 的区域是整个平面，*除了*以 $(1, 0)$ 为中心、半径为1的开圆盘。最重要的是，这个[稳定区域](@keyword=stability_regions|lang=zh-CN|style=Feynman)包括了整个[左半平面](@keyword=left_half_plane|lang=zh-CN|style=Feynman)，即 $\text{Re}(z) \le 0$ 的区域。具有耗散性或衰减性的物理系统（如热流、阻尼[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)或大多数化学动力学）的系统[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) $\lambda$ 具有负实部。由于 $h>0$， $z=h\lambda$ 的实部也将为负。整个[左半平面](@keyword=left_half_plane|lang=zh-CN|style=Feynman)都包含在[稳定区域](@keyword=stability_regions|lang=zh-CN|style=Feynman)内这一事实意味着，对于任何此类衰减系统，[后向欧拉法](@keyword=backward_euler_method|lang=zh-CN|style=Feynman)对于*任何正步长* $h$ 都是稳定的 [@problem_id:2219425] [@problem_id:2202599]。这就是**[A-稳定性](@keyword=a_stability|lang=zh-CN|style=Feynman)**的定义，也是[后向欧拉法](@keyword=backward_euler_method|lang=zh-CN|style=Feynman)的超强能力所在。
 
 ### 精度、成本与重大权衡
 
-我们已经确定该方法非常稳定，但它精确吗？**[局部截断误差](@entry_id:147703)**衡量的是单步中产生的误差。通过[泰勒级数分析](@entry_id:171242)可以证明，后向欧拉法的这个误差与 $h^2 y''(t)$ 成正比。由于单步误差是 $h^2$ 阶的，经过多步后累积的总（全局）误差是 $h$ 阶的。这意味着它是一个**[一阶精度](@entry_id:749410)**的方法，与前向欧拉法相同 。它也是**相容的**，意味着当步长 $h$ 趋于零时，数值格式会完美地收敛到底层的[微分方程](@entry_id:264184) 。
+我们已经确定该方法非常稳定，但它精确吗？**[局部截断误差](@keyword=local_truncation_error|lang=zh-CN|style=Feynman)**衡量的是单步中产生的误差。通过[泰勒级数分析](@keyword=taylor_series_analysis|lang=zh-CN|style=Feynman)可以证明，后向欧拉法的这个误差与 $h^2 y''(t)$ 成正比。由于单步误差是 $h^2$ 阶的，经过多步后累积的总（全局）误差是 $h$ 阶的。这意味着它是一个**[一阶精度](@keyword=first_order_accuracy|lang=zh-CN|style=Feynman)**的方法，与前向欧拉法相同 [@problem_id:2185064]。它也是**相容的**，意味着当步长 $h$ 趋于零时，数值格式会完美地收敛到底层的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman) [@problem_id:3530286]。
 
-所以，我们有一个每步计算成本高昂的一阶方法，还有一个每步计算成本低廉的一阶方法（[前向欧拉法](@entry_id:141238)）。你会在什么时候选择那个昂贵的呢？答案在于[刚性问题](@entry_id:142143)所面临的重大权衡。
+所以，我们有一个每步计算成本高昂的一阶方法，还有一个每步计算成本低廉的一阶方法（[前向欧拉法](@keyword=forward_euler_method|lang=zh-CN|style=Feynman)）。你会在什么时候选择那个昂贵的呢？答案在于[刚性问题](@keyword=stiff_problems|lang=zh-CN|style=Feynman)所面临的重大权衡。
 
-让我们考虑一个具体、实际的场景：一个包含 $n=400$ 个方程的刚性系统，其中最快的动力学由[特征值](@entry_id:154894) $\lambda = -10^5$ 表征。我们想要一个精度约为 $10^{-2}$ 的解 。
+让我们考虑一个具体、实际的场景：一个包含 $n=400$ 个方程的刚性系统，其中最快的动力学由[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) $\lambda = -10^5$ 表征。我们想要一个精度约为 $10^{-2}$ 的解 [@problem_id:2439080]。
 
--   **[前向欧拉法](@entry_id:141238)**：为保持稳定，它被迫使用步长 $h \le 2/|\lambda| = 2 \times 10^{-5}$。要模拟1秒钟，它需要 $1 / (2 \times 10^{-5}) = 50,000$ 步。每一步都很便宜（一次矩阵-向量乘法，约需 $2n^2$ 次运算），但巨大的步数导致了庞大的总成本（量级约为 $10^{10}$ 次浮点运算）。
+-   **[前向欧拉法](@keyword=forward_euler_method|lang=zh-CN|style=Feynman)**：为保持稳定，它被迫使用步长 $h \le 2/|\lambda| = 2 \times 10^{-5}$。要模拟1秒钟，它需要 $1 / (2 \times 10^{-5}) = 50,000$ 步。每一步都很便宜（一次矩阵-向量乘法，约需 $2n^2$ 次运算），但巨大的步数导致了庞大的总成本（量级约为 $10^{10}$ 次浮点运算）。
 
--   **后向欧拉法**：它是 A-稳定的，所以稳定性不成问题。步长仅受我们对精度的要求限制。为了用一个一阶方法获得 $10^{-2}$ 的误差，我们可以选择步长 $h = 10^{-2}$。这只需要 $1 / 10^{-2} = 100$ 步！每一步都很昂贵；我们必须求解一个[大型线性系统](@entry_id:167283)。这涉及对一个 $400 \times 400$ 矩阵进行一次性的 LU 分解（成本约为 $\frac{2}{3}n^3$），然后进行100次[回代](@entry_id:146909)求解（每次成本为 $2n^2$）。即便如此，总计算成本也比[前向欧拉法](@entry_id:141238)低了几个[数量级](@entry_id:264888)（约 $10^7$ 次运算 vs. $10^{10}$ 次运算）。
+-   **后向欧拉法**：它是 A-稳定的，所以稳定性不成问题。步长仅受我们对精度的要求限制。为了用一个一阶方法获得 $10^{-2}$ 的误差，我们可以选择步长 $h = 10^{-2}$。这只需要 $1 / 10^{-2} = 100$ 步！每一步都很昂贵；我们必须求解一个[大型线性系统](@keyword=large_linear_systems|lang=zh-CN|style=Feynman)。这涉及对一个 $400 \times 400$ 矩阵进行一次性的 LU 分解（成本约为 $\frac{2}{3}n^3$），然后进行100次[回代](@keyword=backsubstitution|lang=zh-CN|style=Feynman)求解（每次成本为 $2n^2$）。即便如此，总计算成本也比[前向欧拉法](@keyword=forward_euler_method|lang=zh-CN|style=Feynman)低了几个[数量级](@keyword=order_of_magnitude|lang=zh-CN|style=Feynman)（约 $10^7$ 次运算 vs. $10^{10}$ 次运算）。
 
 这就是关键所在。对于刚性问题，使用隐式方法执行少数几步昂贵的大步长，其性能远超使用显式方法执行数百万步廉价的小步长。我们用每步的复杂性换取了整体的效率。
 
 ### 最后的提醒：方法的特性
 
-像人一样，一个数值方法也有其特性，其个性。[后向欧拉法](@entry_id:139674)的个性是内在**耗散的**，或者说是阻尼的。
+像人一样，一个数值方法也有其特性，其个性。[后向欧拉法](@keyword=backward_euler_method|lang=zh-CN|style=Feynman)的个性是内在**耗散的**，或者说是阻尼的。
 
-考虑一个纯粹[振荡](@entry_id:267781)、没有自然能量损失的系统，比如一个理想化的摆或由 $y' = i\omega y$ 描述的[振动](@entry_id:267781)模式。真实解应该以恒定的振幅永远[振荡](@entry_id:267781)下去。然而，如果你应用后向欧拉法，你会发现数值解的振幅在每一步都会被人为地衰减 。该方法引入了一种数值摩擦，而现实中并不存在这种摩擦。
+考虑一个纯粹[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)、没有自然能量损失的系统，比如一个理想化的摆或由 $y' = i\omega y$ 描述的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式。真实解应该以恒定的振幅永远[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)下去。然而，如果你应用后向欧拉法，你会发现数值解的振幅在每一步都会被人为地衰减 [@problem_id:3142302]。该方法引入了一种数值摩擦，而现实中并不存在这种摩擦。
 
 这是一把双刃剑。
 
--   **何时有利**：对于刚性问题，这些问题通常由强烈的物理耗散主导，该方法的阻尼特性与物理现象相符。它能有效地平滑掉无关的快速瞬态过程，并迅速稳定到长期行为，这正是它在计算[稳态解](@entry_id:200351)时如此高效的原因。
+-   **何时有利**：对于刚性问题，这些问题通常由强烈的物理耗散主导，该方法的阻尼特性与物理现象相符。它能有效地平滑掉无关的快速瞬态过程，并迅速稳定到长期行为，这正是它在计算[稳态解](@keyword=steady_state_solutions|lang=zh-CN|style=Feynman)时如此高效的原因。
 
--   **何时会误导**：如果你的目标是研究守恒性至关重要的动力学（如[行星轨道](@entry_id:179004)），或捕捉**混沌系统**（如著名的洛伦兹[吸引子](@entry_id:275077)）中拉伸和折叠的微妙平衡，这种[数值阻尼](@entry_id:166654)可能是灾难性的。它会扼杀混沌，导致轨迹螺旋式地进入一个乏味的[固定点](@entry_id:156394)，而它们本应探索一个美丽而复杂的吸引子。它可能导致关于系统长期行为的根本性科学错误结论 。
+-   **何时会误导**：如果你的目标是研究守恒性至关重要的动力学（如[行星轨道](@keyword=planetary_orbits|lang=zh-CN|style=Feynman)），或捕捉**混沌系统**（如著名的洛伦兹[吸引子](@keyword=attractors|lang=zh-CN|style=Feynman)）中拉伸和折叠的微妙平衡，这种[数值阻尼](@keyword=numerical_damping|lang=zh-CN|style=Feynman)可能是灾难性的。它会扼杀混沌，导致轨迹螺旋式地进入一个乏味的[固定点](@keyword=fixed_point|lang=zh-CN|style=Feynman)，而它们本应探索一个美丽而复杂的吸引子。它可能导致关于系统长期行为的根本性科学错误结论 [@problem_id:3142302]。
 
-因此，选择一个数值方法不仅仅是基于[稳定性图](@entry_id:146251)表的技术决策，更是一种科学判断。我们必须理解我们工具的内在特性，并确保它们适合我们希望探索的物理现象。[后向欧拉法](@entry_id:139674)，凭借其隐式的前瞻性和强大的稳定性，是一个卓越的工具，但像所有强大的工具一样，明智地使用它需要对其原理和局限性有深刻的理解。
+因此，选择一个数值方法不仅仅是基于[稳定性图](@keyword=stability_diagrams|lang=zh-CN|style=Feynman)表的技术决策，更是一种科学判断。我们必须理解我们工具的内在特性，并确保它们适合我们希望探索的物理现象。[后向欧拉法](@keyword=backward_euler_method|lang=zh-CN|style=Feynman)，凭借其隐式的前瞻性和强大的稳定性，是一个卓越的工具，但像所有强大的工具一样，明智地使用它需要对其原理和局限性有深刻的理解。
 

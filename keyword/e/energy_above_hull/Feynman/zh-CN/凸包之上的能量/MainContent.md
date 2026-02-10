@@ -1,7 +1,7 @@
 ## 引言
-在浩瀚无垠的可能化学组合宇宙中，科学家如何区分那些本质上稳定的材料和那些仅仅是昙花一现的物质？预测[材料稳定性](@entry_id:183933)的探索是[材料科学](@entry_id:152226)的基石，它驱动着从先进合金到下一代电池组件等一切事物的发现。本文通过聚焦一个强大而单一的度量标准——**高于[凸包](@entry_id:262864)的能量**，来应对在这一巨大化学空间中导航的挑战。这个概念为材料的[热力学](@entry_id:141121)不稳定性提供了定量衡量，为理论预测和实验合成提供了至关重要的指导。
+在浩瀚无垠的可能化学组合宇宙中，科学家如何区分那些本质上稳定的材料和那些仅仅是昙花一现的物质？预测[材料稳定性](@keyword=material_stability|lang=zh-CN|style=Feynman)的探索是[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)的基石，它驱动着从先进合金到下一代电池组件等一切事物的发现。本文通过聚焦一个强大而单一的度量标准——**高于[凸包](@keyword=convex_hull|lang=zh-CN|style=Feynman)的能量**，来应对在这一巨大化学空间中导航的挑战。这个概念为材料的[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)不稳定性提供了定量衡量，为理论预测和实验合成提供了至关重要的指导。
 
-本文将首先在**原理与机制**一章中深入探讨引出“高于凸包的能量”这一概念的基础[热力学](@entry_id:141121)概念，解释凸包的优美几何形态及其与化学势的深刻联系。接着，我们将在**应用与跨学科联系**一章中探索这个单一数值如何连接多个科学领域，揭示其在设计电池、实现数据驱动的[材料发现](@entry_id:159066)，乃至工程化功能[亚稳态](@entry_id:167515)材料方面的关键作用。我们的探索将从建立支配物质能量景观的基本规则开始。
+本文将首先在**原理与机制**一章中深入探讨引出“高于凸包的能量”这一概念的基础[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)概念，解释凸包的优美几何形态及其与化学势的深刻联系。接着，我们将在**应用与跨学科联系**一章中探索这个单一数值如何连接多个科学领域，揭示其在设计电池、实现数据驱动的[材料发现](@keyword=materials_discovery|lang=zh-CN|style=Feynman)，乃至工程化功能[亚稳态](@keyword=metastable_states|lang=zh-CN|style=Feynman)材料方面的关键作用。我们的探索将从建立支配物质能量景观的基本规则开始。
 
 ## 原理与机制
 
@@ -11,16 +11,16 @@
 
 自然界对此有一条惊人简单的规则：它总是寻求尽可能低的能量。这就像把水倒在一片崎岖的地貌上。水不会停留在山顶，而是会流入最深的山谷。在原子的世界里，**生成能**就相当于海拔高度。生成能较低的材料更稳定，就像山谷对水来说比山峰更稳定一样。生成能 $E_f$ 告诉我们，当从纯元素组分形成一种化合物时，会释放（如果 $E_f$ 为负）或消耗（如果 $E_f$ 为正）多少能量。根据定义，纯元素本身的生成能为零。它们是我们能量景观的“海平面”。
 
-我们能想象的每一种可能的化合物，比如 $A_{n_A}B_{n_B}$，在这个景观中都有一个点，由其成分（B原子的分数，$x_B = \frac{n_B}{n_A+n_B}$）和其生成能所定义。我们作为[材料科学](@entry_id:152226)家的工作，就是绘制这幅景观图并找到最深的“山谷”。
+我们能想象的每一种可能的化合物，比如 $A_{n_A}B_{n_B}$，在这个景观中都有一个点，由其成分（B原子的分数，$x_B = \frac{n_B}{n_A+n_B}$）和其生成能所定义。我们作为[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)家的工作，就是绘制这幅景观图并找到最深的“山谷”。
 
 ### 直线的铁律
 
-如果我们没有一个特定成分的化合物，比如说50-50的成分，但我们有33% B ($A_2B$) 和 67% B ($AB_2$) 的化合物，该怎么办？我们可以简单地将它们混合！如果我们取一点 $A_2B$ 和一点 $AB_2$ 并将它们放在一起，我们就创造了一个两[相混合](@entry_id:199798)物。因为能量是一种*广延*性质（意味着它只是简单相加），这个混合物的能量将位于我们成分-能量图上连接 $A_2B$ 和 $AB_2$ 两点的直线上。 这是一条极其重要且简单的规则。
+如果我们没有一个特定成分的化合物，比如说50-50的成分，但我们有33% B ($A_2B$) 和 67% B ($AB_2$) 的化合物，该怎么办？我们可以简单地将它们混合！如果我们取一点 $A_2B$ 和一点 $AB_2$ 并将它们放在一起，我们就创造了一个两[相混合](@keyword=phase_mixing|lang=zh-CN|style=Feynman)物。因为能量是一种*广延*性质（意味着它只是简单相加），这个混合物的能量将位于我们成分-能量图上连接 $A_2B$ 和 $AB_2$ 两点的直线上。[@problem_id:2837961] 这是一条极其重要且简单的规则。
 
 现在，想象我们已经为一大堆潜在化合物计算了生成能。我们的图上有一堆散点。由于我们可以混合这些相中的任意两种，任何给定成分下的最低可能能量就不仅仅是我们计算出的最低点，而是我们通过在任何两个现有数据点之间画一条直线所能达到的最低点。
 
-为了找到所有成分范围内的最终[基态](@entry_id:150928)，我们可以想象拿一根绳子，从纯A ($x_B=0$) 到纯B ($x_B=1$) ，在所有数据点下方拉紧。这根拉紧的绳子所遵循的路径勾勒出的就是我们所说的**下凸[包络线](@entry_id:174062)**，或者更简单地称为**凸包**。
+为了找到所有成分范围内的最终[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)，我们可以想象拿一根绳子，从纯A ($x_B=0$) 到纯B ($x_B=1$) ，在所有数据点下方拉紧。这根拉紧的绳子所遵循的路径勾勒出的就是我们所说的**下凸[包络线](@keyword=envelope_curve|lang=zh-CN|style=Feynman)**，或者更简单地称为**凸包**。
 
 ![A diagram showing the construction of a convex hull for a binary system. Points representing different compounds are plotted on a graph of formation energy vs. composition. A line, the convex hull, connects the lowest-energy points, forming a lower boundary. Stable phases lie on the hull, while a metastable phase (AB) lies above it. The energy above hull is indicated by a vertical arrow from the metastable point down to the hull.](https://i.imgur.com/gKzT52a.png)
-*图1：凸包的构建。不同化合物（蓝点）在生成能与成分关系图上绘制。下凸包（黑色实线）连接了稳定相（$A$、$A_2B$、$AB_2$、$B$），形成了一个下边界。稳定相位于凸包上，而[亚稳相](@entry_id:184907)（$AB$）位于凸包之上。其高于凸包的能量，即分解能，是从[亚稳相](@entry_id:184907)点到连接其稳定相邻相的[连接线](@entry_id:196944)的垂直距离。*
+*图1：凸包的构建。不同化合物（蓝点）在生成能与成分关系图上绘制。下凸包（黑色实线）连接了稳定相（$A$、$A_2B$、$AB_2$、$B$），形成了一个下边界。稳定相位于凸包上，而[亚稳相](@keyword=metastable_phases|lang=zh-CN|style=Feynman)（$AB$）位于凸包之上。其高于凸包的能量，即分解能，是从[亚稳相](@keyword=metastable_phases|lang=zh-CN|style=Feynman)点到连接其稳定相邻相的[连接线](@keyword=tie_line_2|lang=zh-CN|style=Feynman)的垂直距离。*
 

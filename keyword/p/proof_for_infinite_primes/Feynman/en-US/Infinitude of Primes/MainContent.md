@@ -13,7 +13,7 @@ Well, yes, it is a convention, but it is a convention with a profound purpose. I
 
 Think of it like this: prime numbers are the atoms of arithmetic. Just as any molecule can be built from a unique combination of elemental atoms, any number can be built from a unique product of primes. For example, the number 12 is uniquely built from two 2s and one 3: $12 = 2^2 \times 3$. There is no other combination of primes that will multiply to 12.
 
-Now, let's see what happens if we invite the number 1 to the party and call it a prime . Suddenly, the elegant uniqueness of our atomic structure collapses into chaos. We could write:
+Now, let's see what happens if we invite the number 1 to the party and call it a prime [@problem_id:3091222]. Suddenly, the elegant uniqueness of our atomic structure collapses into chaos. We could write:
 
 $12 = 2^2 \times 3$
 $12 = 1 \times 2^2 \times 3$
@@ -35,9 +35,9 @@ Euclid's procedure is simple:
 
 Now, we ask a simple question about this newly constructed number $N$: What are its prime factors? Every integer greater than 1 must have at least one prime factor. So $N$ must be divisible by some prime.
 
-But which one? Could it be one of the primes from our "complete" list? Let's try to divide $N$ by $p_1$. The product $P$ is certainly divisible by $p_1$. So when we divide $N = P + 1$ by $p_1$, we get a clean division for the $P$ part, but we are always left with a stubborn remainder of 1 . The same is true for $p_2$, $p_3$, and every other prime on our list. None of them can divide $N$.
+But which one? Could it be one of the primes from our "complete" list? Let's try to divide $N$ by $p_1$. The product $P$ is certainly divisible by $p_1$. So when we divide $N = P + 1$ by $p_1$, we get a clean division for the $P$ part, but we are always left with a stubborn remainder of 1 [@problem_id:3086155]. The same is true for $p_2$, $p_3$, and every other prime on our list. None of them can divide $N$.
 
-Let's see this in action with a tiny, imaginary universe where the only primes are $\{2, 3, 5\}$ .
+Let's see this in action with a tiny, imaginary universe where the only primes are $\{2, 3, 5\}$ [@problem_id:3086161].
 We feed this list into Euclid's machine:
 $N = (2 \times 3 \times 5) + 1 = 30 + 1 = 31$
 
@@ -50,7 +50,7 @@ This is the core of the argument: the machine takes any finite list of primes an
 
 There is a very common and subtle misunderstanding of Euclid's proof. In our last example, the number $N$ we created was 31, which is a prime. This often leads people to believe that Euclid's machine always spits out a prime number. This is not true, and the proof is even more beautiful because it doesn't need this to be true!
 
-Let's take a more ambitious list of primes, the first six: $\{2, 3, 5, 7, 11, 13\}$  . Let's crank the handle on Euclid's machine:
+Let's take a more ambitious list of primes, the first six: $\{2, 3, 5, 7, 11, 13\}$ [@problem_id:3086145] [@problem_id:3086150]. Let's crank the handle on Euclid's machine:
 
 $N = (2 \times 3 \times 5 \times 7 \times 11 \times 13) + 1 = 30030 + 1 = 30031$
 
@@ -60,15 +60,15 @@ $30031 = 59 \times 509$
 
 Look at what happened! The machine produced a composite number. Did the proof fail? Absolutely not! The logic is more subtle. The prime factors of 30031 are 59 and 509. Are either of these on our original list of $\{2, 3, 5, 7, 11, 13\}$? No.
 
-This is the punchline. The proof does not guarantee that $N$ is prime. It only guarantees that **any prime factor of $N$ will be a new prime not on the starting list** . Whether $N$ is prime itself (like 31) or composite (like 30031), its prime constituents expose a hole in our supposedly complete list. The contradiction holds either way. The machine works perfectly.
+This is the punchline. The proof does not guarantee that $N$ is prime. It only guarantees that **any prime factor of $N$ will be a new prime not on the starting list** [@problem_id:3086155]. Whether $N$ is prime itself (like 31) or composite (like 30031), its prime constituents expose a hole in our supposedly complete list. The contradiction holds either way. The machine works perfectly.
 
 ### The Logic Under the Hood: Less is More
 
-We've seen that the engine of Euclid's proof is remarkably powerful. But what is its absolute minimum fuel requirement? Does it need the full strength of the Fundamental Theorem of Arithmetic, which guarantees that every number has a *unique* [prime factorization](@article_id:151564)?
+We've seen that the engine of Euclid's proof is remarkably powerful. But what is its absolute minimum fuel requirement? Does it need the full strength of the Fundamental Theorem of Arithmetic, which guarantees that every number has a *unique* [prime factorization](@keyword=prime_factorization|lang=en-US|style=Feynman)?
 
-It's a delightful surprise to learn that it does not. Euclid's argument is even more elegant and fundamental than that. All it needs to run is a single, weaker axiom: **every integer greater than 1 has at least one prime divisor**  .
+It's a delightful surprise to learn that it does not. Euclid's argument is even more elegant and fundamental than that. All it needs to run is a single, weaker axiom: **every integer greater than 1 has at least one prime divisor** [@problem_id:3086146] [@problem_id:3086172].
 
-That's it. We don't need to know how many prime divisors a number has, or whether its factorization is unique. We just need to know that for our number $N = p_1 p_2 \cdots p_n + 1$, there exists *some* prime, let's call it $q$, that divides it. Once we have that single prime $q$, the rest of the logic follows like clockwork: we show that $q$ cannot be any of the primes on our original list, and the contradiction is achieved. This shows a beautiful hierarchy in mathematical truths: the [infinitude of primes](@article_id:636548) is a more elementary fact than the uniqueness of prime factorization.
+That's it. We don't need to know how many prime divisors a number has, or whether its factorization is unique. We just need to know that for our number $N = p_1 p_2 \cdots p_n + 1$, there exists *some* prime, let's call it $q$, that divides it. Once we have that single prime $q$, the rest of the logic follows like clockwork: we show that $q$ cannot be any of the primes on our original list, and the contradiction is achieved. This shows a beautiful hierarchy in mathematical truths: the [infinitude of primes](@keyword=infinitude_of_primes|lang=en-US|style=Feynman) is a more elementary fact than the uniqueness of prime factorization.
 
 ### Fool's Gold: The Seduction of Prime-Generating Formulas
 
@@ -76,7 +76,7 @@ Euclid's method is a proof, not a formula. It's a common dream to find a single 
 
 $P(n) = n^2 + n + 41$
 
-Let's test it out :
+Let's test it out [@problem_id:3086136]:
 - For $n=0$, $P(0) = 41$ (prime)
 - For $n=1$, $P(1) = 1+1+41 = 43$ (prime)
 - For $n=2$, $P(2) = 4+2+41 = 47$ (prime)
@@ -97,15 +97,15 @@ It's a composite number! The magic spell is broken. This beautiful example shows
 
 The proof of infinite primes is a pillar of our number system. But does its elegant logic hold true in other, stranger mathematical universes? What happens when we change the fundamental rules of arithmetic?
 
-Let's venture into the bizarre world of numbers of the form $a + b\sqrt{-5}$, where $a$ and $b$ are integers. In this world, the familiar laws begin to fray. Consider the number 6. In our familiar world, its [unique prime factorization](@article_id:154986) is $2 \times 3$. But in this new world, we find something startling :
+Let's venture into the bizarre world of numbers of the form $a + b\sqrt{-5}$, where $a$ and $b$ are integers. In this world, the familiar laws begin to fray. Consider the number 6. In our familiar world, its [unique prime factorization](@keyword=unique_prime_factorization|lang=en-US|style=Feynman) is $2 \times 3$. But in this new world, we find something startling [@problem_id:3086159]:
 
 $6 = 2 \times 3$
 $6 = (1 + \sqrt{-5}) \times (1 - \sqrt{-5})$
 
-Suddenly, [unique factorization](@article_id:151819) is gone! The elements 2, 3, $1+\sqrt{-5}$, and $1-\sqrt{-5}$ are all **irreducible**—they cannot be factored any further into simpler non-unit elements in this system. But they are not all **prime** in the sense that Euclid's logic requires.
+Suddenly, [unique factorization](@keyword=unique_factorization|lang=en-US|style=Feynman) is gone! The elements 2, 3, $1+\sqrt{-5}$, and $1-\sqrt{-5}$ are all **irreducible**—they cannot be factored any further into simpler non-unit elements in this system. But they are not all **prime** in the sense that Euclid's logic requires.
 
 A true prime element has a special property (often called Euclid's Lemma): if it divides a product, it must divide one of the factors. Let's look at the element 2 in this strange world. We see that 2 divides 6, so it divides the product $(1+\sqrt{-5})(1-\sqrt{-5})$. But does 2 divide $(1+\sqrt{-5})$? This would require $1+\sqrt{-5} = 2(a+b\sqrt{-5})$, which gives $1=2a$, an impossibility for an integer $a$. So, 2 does not divide either factor.
 
 Here, 2 is irreducible but not prime. This single failure throws a wrench into the gears of Euclid's machine. The simple step—"the new prime factor $q$ cannot be on the list"—breaks down, because an irreducible factor of a product is no longer guaranteed to be a factor of one of the original components.
 
-This discovery doesn't mean there are finitely many primes in this new world (there are still infinitely many), but it means Euclid's elementary proof cannot be naively applied. The [failure of unique factorization](@article_id:154702) in such systems forced mathematicians to invent more powerful and abstract concepts, such as **prime ideals**, to restore order and generalize these fundamental ideas. This journey shows us that the beautiful simplicity of Euclid's proof is not an accident; it's a direct consequence of the wonderfully unique and orderly structure of the integers we use every day.
+This discovery doesn't mean there are finitely many primes in this new world (there are still infinitely many), but it means Euclid's elementary proof cannot be naively applied. The [failure of unique factorization](@keyword=failure_of_unique_factorization|lang=en-US|style=Feynman) in such systems forced mathematicians to invent more powerful and abstract concepts, such as **prime ideals**, to restore order and generalize these fundamental ideas. This journey shows us that the beautiful simplicity of Euclid's proof is not an accident; it's a direct consequence of the wonderfully unique and orderly structure of the integers we use every day.

@@ -39,11 +39,11 @@ The overall Frobenius number, the largest impossible number of all, must be the 
 
 ### The Ground Rules: When is the Game Even Possible?
 
-We've been throwing around the term "coprime" quite a bit. It turns out to be the fundamental rule of the game. What if we chose coins of value 6 and 9? The [greatest common divisor](@article_id:142453), $\gcd(6,9)$, is 3. Any amount we form, $6x+9y = 3(2x+3y)$, must be a multiple of 3. This means it is fundamentally impossible to form any amount that isn't a multiple of 3, like 1, 2, 4, 5, 7, 8, 10, ... The list of impossible numbers is infinite! There is no "largest" one.
+We've been throwing around the term "coprime" quite a bit. It turns out to be the fundamental rule of the game. What if we chose coins of value 6 and 9? The [greatest common divisor](@keyword=greatest_common_divisor|lang=en-US|style=Feynman), $\gcd(6,9)$, is 3. Any amount we form, $6x+9y = 3(2x+3y)$, must be a multiple of 3. This means it is fundamentally impossible to form any amount that isn't a multiple of 3, like 1, 2, 4, 5, 7, 8, 10, ... The list of impossible numbers is infinite! There is no "largest" one.
 
 This is a general principle: the Frobenius number $g(a_1, \dots, a_k)$ exists (i.e., is a finite number) if and only if the generators are collectively coprime: $\gcd(a_1, a_2, \dots, a_k) = 1$. If their gcd is $d>1$, the set of impossible numbers is infinite, and the problem is uninteresting.
 
-Note the subtlety here: the generators don't need to be [pairwise coprime](@article_id:153653). Consider the set $\{6, 10, 15\}$. No pair is coprime: $\gcd(6,10)=2$, $\gcd(10,15)=5$, and $\gcd(6,15)=3$. However, the greatest common divisor of all three, $\gcd(6,10,15)$, is 1. Therefore, a Frobenius number exists for this set! (It's 29.) Checking this single condition, $\gcd(a_1, \dots, a_k) = 1$, is the essential first step before embarking on any calculation.
+Note the subtlety here: the generators don't need to be [pairwise coprime](@keyword=pairwise_coprime|lang=en-US|style=Feynman). Consider the set $\{6, 10, 15\}$. No pair is coprime: $\gcd(6,10)=2$, $\gcd(10,15)=5$, and $\gcd(6,15)=3$. However, the greatest common divisor of all three, $\gcd(6,10,15)$, is 1. Therefore, a Frobenius number exists for this set! (It's 29.) Checking this single condition, $\gcd(a_1, \dots, a_k) = 1$, is the essential first step before embarking on any calculation.
 
 ### Into the Wild: The Challenge of Three or More Coins
 

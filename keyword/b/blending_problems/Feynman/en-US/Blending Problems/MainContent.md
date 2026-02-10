@@ -11,7 +11,7 @@ Imagine you are a painter, but instead of pigments on a palette, your ingredient
 
 At its heart, blending seems simple. If you mix a liter of water at $20^\circ\text{C}$ with a liter of water at $80^\circ\text{C}$, you intuitively know you’ll get two liters at $50^\circ\text{C}$. The final property is a weighted average of the components. This idea of a **linear combination** is the bedrock of blending. If ingredient $i$ makes up a fraction $x_i$ of the blend and has a property value $p_i$ (like cost, density, or sweetness), the blend's property $P$ is simply $P = \sum_i x_i p_i$.
 
-But what about properties that aren't so simple, like variability or noise? Imagine a system that can operate in two modes, A or B, with equal probability. In each mode, background noise has a different average power and variability . What is the overall variability of the noise we observe? It's not just the average of the two variabilities. The **Law of Total Variance** gives us a more profound answer:
+But what about properties that aren't so simple, like variability or noise? Imagine a system that can operate in two modes, A or B, with equal probability. In each mode, background noise has a different average power and variability [@problem_id:1375787]. What is the overall variability of the noise we observe? It's not just the average of the two variabilities. The **Law of Total Variance** gives us a more profound answer:
 
 $$
 \text{Var}(X) = E[\text{Var}(X|M)] + \text{Var}(E[X|M])
@@ -21,16 +21,16 @@ Let's unpack this elegant formula. It says the total variance, $\text{Var}(X)$, 
 
 ### The Geometry of Blending: Lines, Planes, and Perfect Recipes
 
-Let's translate this idea into the language of geometry. Imagine blending two colors, $c_1$ and $c_2$, in a digital image . If we represent colors as points in a 3D space (Red, Green, Blue), then any blend, $x(\alpha) = \alpha c_1 + (1-\alpha) c_2$ where $\alpha$ is between 0 and 1, lies on the straight line segment connecting $c_1$ and $c_2$. This type of weighted average is called a **[convex combination](@article_id:273708)**.
+Let's translate this idea into the language of geometry. Imagine blending two colors, $c_1$ and $c_2$, in a digital image [@problem_id:3114518]. If we represent colors as points in a 3D space (Red, Green, Blue), then any blend, $x(\alpha) = \alpha c_1 + (1-\alpha) c_2$ where $\alpha$ is between 0 and 1, lies on the straight line segment connecting $c_1$ and $c_2$. This type of weighted average is called a **[convex combination](@keyword=convex_combination|lang=en-US|style=Feynman)**.
 
 When you blend three ingredients, you are not confined to a line, but can create any recipe inside the triangle defined by the three pure ingredients. With four ingredients, you can explore the entire volume of a tetrahedron. The set of all possible blends from a given set of ingredients forms a shape known as their **convex hull**.
 
-This geometric insight is incredibly powerful. If our goal (like minimizing cost) is a linear function of the ingredient proportions, and all our quality specifications are also linear (e.g., "the sweetness score must be between 0.3 and 0.4"), then we are dealing with a **Linear Programming (LP)** problem. The problem becomes finding the lowest point within a multi-dimensional faceted shape (a [polytope](@article_id:635309)) defined by our constraints.
+This geometric insight is incredibly powerful. If our goal (like minimizing cost) is a linear function of the ingredient proportions, and all our quality specifications are also linear (e.g., "the sweetness score must be between 0.3 and 0.4"), then we are dealing with a **Linear Programming (LP)** problem. The problem becomes finding the lowest point within a multi-dimensional faceted shape (a [polytope](@keyword=polytope|lang=en-US|style=Feynman)) defined by our constraints.
 
 This single, unified framework is the workhorse behind countless real-world blending applications.
-*   Want to create a signature coffee blend that perfectly matches a target flavor profile? You can formulate an LP to find the mix of beans that minimizes the deviation from your target notes . A beautiful mathematical trick allows us to even handle the non-linear [absolute value function](@article_id:160112), $| \text{achieved} - \text{target} |$, by converting it into a set of simple [linear constraints](@article_id:636472).
-*   Need to manufacture a bar of chocolate with a specific [melting point](@article_id:176493) and creaminess at the lowest possible cost? Frame it as an LP where you find the cheapest recipe that stays within the required property bounds .
-*   Designing a new plant-based meat and want to achieve the right chewiness and moisture while using as little of the expensive additives as possible? This too is an LP, a search for the optimal point in the feasible recipe space that minimizes additive usage .
+*   Want to create a signature coffee blend that perfectly matches a target flavor profile? You can formulate an LP to find the mix of beans that minimizes the deviation from your target notes [@problem_id:3106594]. A beautiful mathematical trick allows us to even handle the non-linear [absolute value function](@keyword=absolute_value_function|lang=en-US|style=Feynman), $| \text{achieved} - \text{target} |$, by converting it into a set of simple [linear constraints](@keyword=linear_constraints|lang=en-US|style=Feynman).
+*   Need to manufacture a bar of chocolate with a specific [melting point](@keyword=melting_point|lang=en-US|style=Feynman) and creaminess at the lowest possible cost? Frame it as an LP where you find the cheapest recipe that stays within the required property bounds [@problem_id:3106640].
+*   Designing a new plant-based meat and want to achieve the right chewiness and moisture while using as little of the expensive additives as possible? This too is an LP, a search for the optimal point in the feasible recipe space that minimizes additive usage [@problem_id:3106588].
 
 In all these cases, the underlying principle is the same: we define the properties of our building blocks and the rules of the game. The elegant machinery of linear programming then explores the entire geometric space of possibilities to hand us the single best recipe.
 
@@ -38,7 +38,7 @@ In all these cases, the underlying principle is the same: we define the properti
 
 The world, however, is not always so beautifully linear. In many physical and chemical systems, properties don't combine in a simple weighted average. What then?
 
-Consider designing a chemical recipe where a key performance metric is governed by the **logarithmic mean** of two intermediate properties, $a(x)$ and $b(x)$, which are themselves linear blends of the feedstocks . The logarithmic mean, $L(a,b) = (b-a) / (\ln(b) - \ln(a))$, is a nonlinear function. A constraint like $L(a,b) \geq R$ carves out a non-convex, awkwardly shaped feasible region. Standard optimization methods can easily get lost in such a landscape.
+Consider designing a chemical recipe where a key performance metric is governed by the **logarithmic mean** of two intermediate properties, $a(x)$ and $b(x)$, which are themselves linear blends of the feedstocks [@problem_id:3130457]. The logarithmic mean, $L(a,b) = (b-a) / (\ln(b) - \ln(a))$, is a nonlinear function. A constraint like $L(a,b) \geq R$ carves out a non-convex, awkwardly shaped feasible region. Standard optimization methods can easily get lost in such a landscape.
 
 Here, we employ a different kind of cleverness. We turn to the rich world of mathematical inequalities. It is a known, beautiful fact that the logarithmic mean is always greater than or equal to the geometric mean: $L(a,b) \ge G(a,b) = \sqrt{ab}$.
 
@@ -46,7 +46,7 @@ This gives us an idea. Instead of trying to enforce the difficult nonlinear cons
 
 ### The Pooling Problem: A Deliciously Devious Puzzle
 
-We now arrive at the Mount Everest of blending problems: the **pooling problem**. This arises in industries like petroleum refining and [wastewater treatment](@article_id:172468), where raw materials are first blended into intermediate holding tanks or "pools," and the final products are then blended from these pools .
+We now arrive at the Mount Everest of blending problems: the **pooling problem**. This arises in industries like petroleum refining and [wastewater treatment](@keyword=wastewater_treatment|lang=en-US|style=Feynman), where raw materials are first blended into intermediate holding tanks or "pools," and the final products are then blended from these pools [@problem_id:3118786].
 
 What makes this so devious? The composition of the pools is not fixed; it is a *result* of our blending decisions. This creates a vicious cycle. The quality of the flow out of a pool depends on its contents. But its contents depend on the flows we put into it. This feedback loop manifests in the mathematics as a **bilinear term**. For a pool $p$, an equation like:
 
@@ -54,9 +54,9 @@ $$
 \text{impurity mass out} = (\text{impurity of pool}) \times (\text{flow out of pool})
 $$
 
-becomes $w_p = z_p y_p$, where both the pool's impurity $z_p$ and its outflow $y_p$ are [decision variables](@article_id:166360). This product of two variables is the source of **nonconvexity**. A function like $w = zy$ doesn't form a simple bowl shape (convex) where there's one lowest point. It forms a saddle. If you're looking for the lowest point on a saddle, you can get stuck in a local dip, completely missing the true global minimum just over the next rise.
+becomes $w_p = z_p y_p$, where both the pool's impurity $z_p$ and its outflow $y_p$ are [decision variables](@keyword=decision_variables|lang=en-US|style=Feynman). This product of two variables is the source of **nonconvexity**. A function like $w = zy$ doesn't form a simple bowl shape (convex) where there's one lowest point. It forms a saddle. If you're looking for the lowest point on a saddle, you can get stuck in a local dip, completely missing the true global minimum just over the next rise.
 
-To conquer this, we need a truly powerful tool: **[convex relaxation](@article_id:167622)**. The most famous technique, the **McCormick relaxation**, traps the difficult saddle-shaped surface of the bilinear term within a simple box of four linear inequalities. We can't optimize over the saddle itself, but we can optimize over the larger, simpler polyhedron that we know contains it.
+To conquer this, we need a truly powerful tool: **[convex relaxation](@keyword=convex_relaxation|lang=en-US|style=Feynman)**. The most famous technique, the **McCormick relaxation**, traps the difficult saddle-shaped surface of the bilinear term within a simple box of four linear inequalities. We can't optimize over the saddle itself, but we can optimize over the larger, simpler polyhedron that we know contains it.
 
 When we solve this relaxed, linear problem, we get a fascinating piece of information: a **lower bound** on the optimal cost. The solution tells us, "Whatever the true minimum cost of your complex, nonlinear problem is, it cannot possibly be less than this number."
 

@@ -1,7 +1,7 @@
 ## 引言
-几个世纪以来，电、磁和光一直被视为自然界中各不相同且神秘的力。James Clerk Maxwell 的不朽成就，便是将这些现象统一到一个由四个优美方程所描述的单一、自洽的理论中。本文深入探讨了这些方程的[微分形式](@article_id:307165)，超越了宏观的概述，转而探索支配着电磁宇宙的微观、逐点的规则。它回答了场在任何给定时间和空间位置如何行为与相互作用这一基本问题。
+几个世纪以来，电、磁和光一直被视为自然界中各不相同且神秘的力。James Clerk Maxwell 的不朽成就，便是将这些现象统一到一个由四个优美方程所描述的单一、自洽的理论中。本文深入探讨了这些方程的[微分形式](@keyword=differential_forms|lang=zh-CN|style=Feynman)，超越了宏观的概述，转而探索支配着电磁宇宙的微观、逐点的规则。它回答了场在任何给定时间和空间位置如何行为与相互作用这一基本问题。
 
-通过阅读本文，您将对[电磁学](@article_id:363853)背后的原理获得深刻而直观的理解。第一章“原理与机制”分解了四个方程中的每一个，揭示了它们如何描述场的源、汇和旋度，以及 Maxwell 关于[位移电流](@article_id:323856)的关键洞见如何完善了整个理论。第二章“应用与跨学科联系”则探讨了这些定律的深远影响，从对光的预言及其与物质的相互作用，到它们在天体物理学中的作用，以及它们在狭义相对论语言中的最终表达。
+通过阅读本文，您将对[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)背后的原理获得深刻而直观的理解。第一章“原理与机制”分解了四个方程中的每一个，揭示了它们如何描述场的源、汇和旋度，以及 Maxwell 关于[位移电流](@keyword=displacement_current|lang=zh-CN|style=Feynman)的关键洞见如何完善了整个理论。第二章“应用与跨学科联系”则探讨了这些定律的深远影响，从对光的预言及其与物质的相互作用，到它们在天体物理学中的作用，以及它们在狭义相对论语言中的最终表达。
 
 ## 原理与机制
 
@@ -13,69 +13,69 @@
 
 #### 场的起点与终点：高斯电场定律
 
-把电场 $\vec{E}$ 想象成一种流遍空间的无形流体。是什么创造了这种流动？它从何而来？高斯电场定律给出了答案：电场源于[电荷](@article_id:339187)。其[微分形式](@article_id:307165)的方程为：
+把电场 $\vec{E}$ 想象成一种流遍空间的无形流体。是什么创造了这种流动？它从何而来？高斯电场定律给出了答案：电场源于[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。其[微分形式](@keyword=differential_forms|lang=zh-CN|style=Feynman)的方程为：
 $$ \nabla \cdot \vec{E} = \frac{\rho}{\epsilon_0} $$
-符号 $\nabla \cdot$ 称为**散度**，是一个绝妙的数学工具。它衡量一个场在某一点的“源性”——有多少场从该点周围一个无穷小的体积中“流出”。该定律告诉我们，这种“源性”与该点的电荷密度 $\rho$ 成正比。有正[电荷](@article_id:339187)的地方，场线向外发散，那里便是源。有负[电荷](@article_id:339187)的地方，[场线](@article_id:351356)向内汇聚，那里便是汇。
+符号 $\nabla \cdot$ 称为**散度**，是一个绝妙的数学工具。它衡量一个场在某一点的“源性”——有多少场从该点周围一个无穷小的体积中“流出”。该定律告诉我们，这种“源性”与该点的电荷密度 $\rho$ 成正比。有正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的地方，场线向外发散，那里便是源。有负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的地方，[场线](@keyword=field_lines|lang=zh-CN|style=Feynman)向内汇聚，那里便是汇。
 
-这种局域关系非常强大。例如，如果科学家在探索一种新材料时，发现一个区域的电势完全恒定，这就像在崇山峻岭中发现了一片完全平坦的高原。由于电场就是电势的“斜率”（$\vec{E} = -\nabla V$），平坦的电势意味着电场为零。如果没有电场，[高斯定律](@article_id:301934)告诉我们什么呢？散度 $\nabla \cdot \vec{E}$ 为零，这意味着[电荷密度](@article_id:305099) $\rho$ 也必须为零。该区域没有任何净[电荷](@article_id:339187)。
+这种局域关系非常强大。例如，如果科学家在探索一种新材料时，发现一个区域的电势完全恒定，这就像在崇山峻岭中发现了一片完全平坦的高原。由于电场就是电势的“斜率”（$\vec{E} = -\nabla V$），平坦的电势意味着电场为零。如果没有电场，[高斯定律](@keyword=gauss_s_law|lang=zh-CN|style=Feynman)告诉我们什么呢？散度 $\nabla \cdot \vec{E}$ 为零，这意味着[电荷密度](@keyword=charge_density|lang=zh-CN|style=Feynman) $\rho$ 也必须为零。该区域没有任何净[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)[@problem_id:1579930]。
 
-该定律也反向成立。如果我们观察到一种特定的电[场模](@article_id:368368)式，我们可以用它来精确推断出产生该场的[电荷分布](@article_id:304828)。想象一个理论模型，一个物体带有弥散的[电荷](@article_id:339187)云，产生的场随距离减弱，但带有一个奇特的指数项：$\vec{E} = \frac{A}{r^2}(1 - e^{-\alpha r})\hat{r}$。通过计算该场的散度，我们可以精确地描绘出[电荷密度](@article_id:305099) $\rho(r)$ 必须如何随半径变化，才能塑造出这个特定的场。这就是局域定律的力量：它是场与其源之间直接的、逐点的联系。
+该定律也反向成立。如果我们观察到一种特定的电[场模](@keyword=field_modes|lang=zh-CN|style=Feynman)式，我们可以用它来精确推断出产生该场的[电荷分布](@keyword=charge_distribution|lang=zh-CN|style=Feynman)。想象一个理论模型，一个物体带有弥散的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)云，产生的场随距离减弱，但带有一个奇特的指数项：$\vec{E} = \frac{A}{r^2}(1 - e^{-\alpha r})\hat{r}$。通过计算该场的散度，我们可以精确地描绘出[电荷密度](@keyword=charge_density|lang=zh-CN|style=Feynman) $\rho(r)$ 必须如何随半径变化，才能塑造出这个特定的场[@problem_id:2762]。这就是局域定律的力量：它是场与其源之间直接的、逐点的联系。
 
-#### 闭合场的奥秘：高斯[磁场](@article_id:313708)定律
+#### 闭合场的奥秘：高斯[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)定律
 
-那么，[磁场](@article_id:313708) $\vec{B}$ 呢？如果我们试图寻找它的源，我们会遇到物理学中最深的谜团之一。高斯[磁场](@article_id:313708)定律表明：
+那么，[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman) $\vec{B}$ 呢？如果我们试图寻找它的源，我们会遇到物理学中最深的谜团之一。高斯[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)定律表明：
 $$ \nabla \cdot \vec{B} = 0 $$
-[磁场](@article_id:313708)的散度*永远*为零。处处为零，无一例外。这意味着不存在磁“源”或磁“汇”。不存在与[电荷](@article_id:339187)等价的磁荷。电[场线](@article_id:351356)可以起于或止于[电荷](@article_id:339187)，而磁感线则没有起点也没有终点。它们必须总是形成闭合的回路。
+[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的散度*永远*为零。处处为零，无一例外。这意味着不存在磁“源”或磁“汇”。不存在与[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)等价的磁荷。电[场线](@keyword=field_lines|lang=zh-CN|style=Feynman)可以起于或止于[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，而磁感线则没有起点也没有终点。它们必须总是形成闭合的回路。
 
 这不仅是一个数学上的巧合，更是关于我们宇宙本性的一项深刻陈述。这就是为什么你无法拥有一个没有南极的北极。如果你将一块条形磁铁切成两半，你不会得到一个独立的北极和一个独立的南极，而是会得到两块更小的磁铁，每块都有自己的北极和南极。磁感线只是在新的磁铁内部继续闭合。
 
-定律 $\nabla \cdot \vec{B} = 0$ 是任何物理上可能的[磁场](@article_id:313708)都必须遵守的严格规则。假设一位理论家为一种新的[等离子体约束](@article_id:382177)装置提出了一个静态[磁场](@article_id:313708)，其公式为 $\vec{B} = C(xy \hat{x} - y^2 \hat{y})$。这个场可能存在吗？我们可以检验一下。我们计算它的散度 $\nabla \cdot \vec{B}$，发现它等于 $-Cy$，这不为零（除非 $y=0$）。这个场将需要在y轴上分布“磁荷”。由于从未发现过这种“[磁单极子](@article_id:303253)”，自然法则禁止这种场的存在。
+定律 $\nabla \cdot \vec{B} = 0$ 是任何物理上可能的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)都必须遵守的严格规则。假设一位理论家为一种新的[等离子体约束](@keyword=plasma_confinement|lang=zh-CN|style=Feynman)装置提出了一个静态[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)，其公式为 $\vec{B} = C(xy \hat{x} - y^2 \hat{y})$。这个场可能存在吗？我们可以检验一下。我们计算它的散度 $\nabla \cdot \vec{B}$，发现它等于 $-Cy$，这不为零（除非 $y=0$）。这个场将需要在y轴上分布“磁荷”。由于从未发现过这种“[磁单极子](@keyword=magnetic_monopoles|lang=zh-CN|style=Feynman)”，自然法则禁止这种场的存在[@problem_id:1592477]。
 
-更重要的是，[电磁学](@article_id:363853)的其他定律共同维护着这条规则。我们稍后会遇到的法拉第[电磁感应](@article_id:323562)定律，隐藏着一个后果。如果你从一个 $\nabla \cdot \vec{B} = 0$ 的宇宙开始，法拉第定律保证了场的演化永远不会产生一个非零的散度。这条规则在任何时候都得以保持。这些定律是如此优美、优雅地自洽。
+更重要的是，[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)的其他定律共同维护着这条规则。我们稍后会遇到的法拉第[电磁感应](@keyword=electromagnetic_induction|lang=zh-CN|style=Feynman)定律，隐藏着一个后果。如果你从一个 $\nabla \cdot \vec{B} = 0$ 的宇宙开始，法拉第定律保证了场的演化永远不会产生一个非零的散度。这条规则在任何时候都得以保持[@problem_id:569938]。这些定律是如此优美、优雅地自洽。
 
 ### 变化场的舞蹈
 
-静态场只是故事的开始。真正的魔法发生在事物开始变化之时。[麦克斯韦方程组](@article_id:311357)描述了一支错综复杂的舞蹈，其中电场和磁场相互产生、相互维持。
+静态场只是故事的开始。真正的魔法发生在事物开始变化之时。[麦克斯韦方程组](@keyword=maxwell_s_equations|lang=zh-CN|style=Feynman)描述了一支错综复杂的舞蹈，其中电场和磁场相互产生、相互维持。
 
-#### 作为“漩涡”发生器的电流：[安培定律](@article_id:322981)
+#### 作为“漩涡”发生器的电流：[安培定律](@keyword=ampere_s_law|lang=zh-CN|style=Feynman)
 
-如果[磁场](@article_id:313708)不是来自源，那是什么产生了它们？由 Ampère 发现的答案是：电流。但这种关系有所不同。电流不[像源](@article_id:362160)那样让场向[外流](@article_id:337974)动，而是会产生一个围绕自身的[磁场](@article_id:313708)*旋涡*。这种“涡旋性”由另一个称为**旋度**的数学算符捕获，记为 $\nabla \times$。对于稳恒电流，安培定律是：
+如果[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)不是来自源，那是什么产生了它们？由 Ampère 发现的答案是：电流。但这种关系有所不同。电流不[像源](@keyword=image_source|lang=zh-CN|style=Feynman)那样让场向[外流](@keyword=external_flow|lang=zh-CN|style=Feynman)动，而是会产生一个围绕自身的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)*旋涡*。这种“涡旋性”由另一个称为**旋度**的数学算符捕获，记为 $\nabla \times$。对于稳恒电流，安培定律是：
 $$ \nabla \times \vec{B} = \mu_0 \vec{J} $$
-这里，$\vec{J}$ 是电流密度（单位面积上流过的电流量）。这个方程表明，如果在某点有电流流过，那么在该点，[磁场](@article_id:313708)必定围绕着它打旋。想象一条河流：散度衡量有多少水从泉眼涌出，而旋度则衡量如果你将一个小桨轮放入水中，它会旋转得多快。安培定律告诉我们，电流会产生磁漩涡。
+这里，$\vec{J}$ 是电流密度（单位面积上流过的电流量）。这个方程表明，如果在某点有电流流过，那么在该点，[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)必定围绕着它打旋。想象一条河流：散度衡量有多少水从泉眼涌出，而旋度则衡量如果你将一个小桨轮放入水中，它会旋转得多快。安培定律告诉我们，电流会产生磁漩涡[@problem_id:1610327]。
 
-#### 反向作用：法拉第[电磁感应](@article_id:323562)定律
+#### 反向作用：法拉第[电磁感应](@keyword=electromagnetic_induction|lang=zh-CN|style=Feynman)定律
 
-故事在这里变得真正有趣起来。Faraday 发现了一种惊人的对称性。不仅电流会产生旋涡状的[磁场](@article_id:313708)，*变化的*[磁场](@article_id:313708)也会产生旋涡状的*电场*。这就是[电磁感应](@article_id:323562)定律：
+故事在这里变得真正有趣起来。Faraday 发现了一种惊人的对称性。不仅电流会产生旋涡状的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)，*变化的*[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)也会产生旋涡状的*电场*。这就是[电磁感应](@keyword=electromagnetic_induction|lang=zh-CN|style=Feynman)定律：
 $$ \nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t} $$
-这是一个革命性的思想。$\frac{\partial \vec{B}}{\partial t}$ 项是[磁场](@article_id:313708)随时间的变化率。该方程表明，如果你有一个正在增强、减弱或改变方向的[磁场](@article_id:313708)，它将感应出一个以闭合回路形式旋绕的电场。请注意，这个电场不是由[电荷](@article_id:339187)产生的（它的散度可以为零）。这是一种全新的电场，由变化本身所催生。这一条原理几乎是地球上所有电力生成的引擎。
+这是一个革命性的思想。$\frac{\partial \vec{B}}{\partial t}$ 项是[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)随时间的变化率。该方程表明，如果你有一个正在增强、减弱或改变方向的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)，它将感应出一个以闭合回路形式旋绕的电场。请注意，这个电场不是由[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)产生的（它的散度可以为零）。这是一种全新的电场，由变化本身所催生。这一条原理几乎是地球上所有电力生成的引擎。
 
-例如，如果我们在实验室中创造一个空间上均匀但随时间[振荡](@article_id:331484)的[磁场](@article_id:313708)，如 $\vec{B}(t) = B_0 \cos(\omega t) \hat{z}$，[法拉第定律](@article_id:310255)预言必定会出现一个在x-y平面内旋绕的电场。这个旋涡的强度 $\nabla \times \vec{E}$，恰好在[磁场](@article_id:313708)变化最快的时候达到最大。一个场的变化催生了另一个场的旋绕。
+例如，如果我们在实验室中创造一个空间上均匀但随时间[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)，如 $\vec{B}(t) = B_0 \cos(\omega t) \hat{z}$，[法拉第定律](@keyword=faraday_s_laws|lang=zh-CN|style=Feynman)预言必定会出现一个在x-y平面内旋绕的电场。这个旋涡的强度 $\nabla \times \vec{E}$，恰好在[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)变化最快的时候达到最大[@problem_id:1610328]。一个场的变化催生了另一个场的旋绕。
 
 ### 统一：神来之笔及其依据
 
-我们目前看到的定律——两个[高斯定律](@article_id:301934)、[安培定律](@article_id:322981)和[法拉第定律](@article_id:310255)——都运行得很好，但其中存在一个微妙的缺陷，一道基础上的裂痕。Maxwell 看到了它，而在修复它的过程中，他统一了整个[电磁学](@article_id:363853)，并揭示了光的本质。
+我们目前看到的定律——两个[高斯定律](@keyword=gauss_s_law|lang=zh-CN|style=Feynman)、[安培定律](@keyword=ampere_s_law|lang=zh-CN|style=Feynman)和[法拉第定律](@keyword=faraday_s_laws|lang=zh-CN|style=Feynman)——都运行得很好，但其中存在一个微妙的缺陷，一道基础上的裂痕。Maxwell 看到了它，而在修复它的过程中，他统一了整个[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)，并揭示了光的本质。
 
-问题出在安培定律 $\nabla \times \vec{B} = \mu_0 \vec{J}$。考虑给一个[电容器](@article_id:331067)充电：电流 $\vec{J}$ 流过导线，穿过两板之间的间隙，再从另一端流出。[安培定律](@article_id:322981)说导线周围应该有一个旋涡状的[磁场](@article_id:313708)。但间隙里怎么办？间隙中没有移动[电荷](@article_id:339187)形成的电流（$\vec{J}=0$），所以该定律将意味着[磁场](@article_id:313708)突然消失，这毫无道理。
+问题出在安培定律 $\nabla \times \vec{B} = \mu_0 \vec{J}$。考虑给一个[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)充电：电流 $\vec{J}$ 流过导线，穿过两板之间的间隙，再从另一端流出。[安培定律](@keyword=ampere_s_law|lang=zh-CN|style=Feynman)说导线周围应该有一个旋涡状的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)。但间隙里怎么办？间隙中没有移动[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)形成的电流（$\vec{J}=0$），所以该定律将意味着[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)突然消失，这毫无道理。
 
-Maxwell 意识到少了点什么。当[电荷](@article_id:339187)在[电容器](@article_id:331067)极板上累积时，板间间隙中的电场 $\vec{E}$ 正在增强。他提出，这个**变化的电场**在产生旋涡[磁场](@article_id:313708)方面，与真实电流同样有效。他在安培定律中增加了一个新项，他称之为**[位移电流](@article_id:323856)**：
+Maxwell 意识到少了点什么。当[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)在[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)极板上累积时，板间间隙中的电场 $\vec{E}$ 正在增强。他提出，这个**变化的电场**在产生旋涡[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)方面，与真实电流同样有效。他在安培定律中增加了一个新项，他称之为**[位移电流](@keyword=displacement_current|lang=zh-CN|style=Feynman)**：
 $$ \nabla \times \vec{H} = \vec{J}_f + \frac{\partial \vec{D}}{\partial t} $$
 （这里我们使用了在材料中更方便的场 $\vec{H}$ 和 $\vec{D}$，但原理是相同的：$\frac{\partial \vec{D}}{\partial t}$ 与变化的电场成正比）。
 
-这不仅仅是一个巧妙的修补。这是对宇宙一个基本原理——**[电荷守恒](@article_id:312253)**——的深刻洞见。[电荷](@article_id:339187)不能被创造或毁灭，只能被移动。这个事实的数学表述是[连续性方程](@article_id:373909)：$\nabla \cdot \vec{J}_f + \frac{\partial \rho_f}{\partial t} = 0$。用语言来说，任何从一个体积中流出的净电流（$\nabla \cdot \vec{J}_f$）必须由该体积内[电荷](@article_id:339187)量的减少（$\frac{\partial \rho_f}{\partial t}$）来平衡。
+这不仅仅是一个巧妙的修补。这是对宇宙一个基本原理——**[电荷守恒](@keyword=charge_conservation|lang=zh-CN|style=Feynman)**——的深刻洞见。[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)不能被创造或毁灭，只能被移动。这个事实的数学表述是[连续性方程](@keyword=equation_of_continuity|lang=zh-CN|style=Feynman)：$\nabla \cdot \vec{J}_f + \frac{\partial \rho_f}{\partial t} = 0$。用语言来说，任何从一个体积中流出的净电流（$\nabla \cdot \vec{J}_f$）必须由该体积内[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量的减少（$\frac{\partial \rho_f}{\partial t}$）来平衡。
 
-当你对原始的安培定律应用散度算符时，你会得到一个违反电荷守恒的结果。但当你将它应用于 Maxwell 修正后的版本时，该方程会优雅地简化为[连续性方程](@article_id:373909)本身。Maxwell 的新项正是使[电磁学](@article_id:363853)定律与电荷守恒这一不可动摇的事实相容所必需的。他的修正将一套有缺陷的规则变成了一个完美的、自洽的理论。[位移电流](@article_id:323856)是真实存在的；它的散度直接追踪了一个区域内[电荷密度](@article_id:305099)变化的速度，从而补全了电流回路，挽救了整个理论。
+当你对原始的安培定律应用散度算符时，你会得到一个违反电荷守恒的结果。但当你将它应用于 Maxwell 修正后的版本时，该方程会优雅地简化为[连续性方程](@keyword=equation_of_continuity|lang=zh-CN|style=Feynman)本身[@problem_id:569839]。Maxwell 的新项正是使[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)定律与电荷守恒这一不可动摇的事实相容所必需的。他的修正将一套有缺陷的规则变成了一个完美的、自洽的理论。[位移电流](@keyword=displacement_current|lang=zh-CN|style=Feynman)是真实存在的；它的散度直接追踪了一个区域内[电荷密度](@keyword=charge_density|lang=zh-CN|style=Feynman)变化的速度，从而补全了电流回路，挽救了整个理论[@problem_id:1825870]。
 
 ### 最终的胜利：运动中的能量
 
-至此，我们有了这四个方程，它们完整地描述了[电场和磁场](@article_id:325058)的局域行为。它们告诉我们场从何而来，以及它们如何旋绕和变化。但这场错综复杂的舞蹈的宏大结果是什么？答案是能量。
+至此，我们有了这四个方程，它们完整地描述了[电场和磁场](@keyword=electric_and_magnetic_fields|lang=zh-CN|style=Feynman)的局域行为。它们告诉我们场从何而来，以及它们如何旋绕和变化。但这场错综复杂的舞蹈的宏大结果是什么？答案是能量。
 
-场不仅仅是数学上的记账工具；它们是储存和输运能量的真实物理实体。麦克斯韦方程组最终的、壮观的推论是一条[能量守恒](@article_id:300957)定律，称为**[坡印廷定理](@article_id:325291)** (Poynting's Theorem)：
+场不仅仅是数学上的记账工具；它们是储存和输运能量的真实物理实体。麦克斯韦方程组最终的、壮观的推论是一条[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)定律，称为**[坡印廷定理](@keyword=poynting_s_theorem|lang=zh-CN|style=Feynman)** (Poynting's Theorem)：
 $$ \frac{\partial u}{\partial t} + \nabla \cdot \vec{S} = -\vec{E} \cdot \vec{J} $$
-这个方程是空间中任意一点完美的能量收支表。
-*   $\frac{\partial u}{\partial t}$ 项是该点能量密度 $u$（储存在[电场和磁场](@article_id:325058)中的单位体积能量）的变化率。
-*   $\nabla \cdot \vec{S}$ 项代表从该点*流出*的净能量流。矢量 $\vec{S} = \vec{E} \times \vec{H}$，称为**[坡印廷矢量](@article_id:333088)**，指向能量流动的方向。
-*   右边的项 $-\vec{E} \cdot \vec{J}$ 是场对[电荷](@article_id:339187)做功的速率，将其能量转移给[电荷](@article_id:339187)（想象一下电阻中产生的热量）。
+这个方程是空间中任意一点完美的能量收支表[@problem_id:981479]。
+*   $\frac{\partial u}{\partial t}$ 项是该点能量密度 $u$（储存在[电场和磁场](@keyword=electric_and_magnetic_fields|lang=zh-CN|style=Feynman)中的单位体积能量）的变化率。
+*   $\nabla \cdot \vec{S}$ 项代表从该点*流出*的净能量流。矢量 $\vec{S} = \vec{E} \times \vec{H}$，称为**[坡印廷矢量](@keyword=poynting_vector|lang=zh-CN|style=Feynman)**，指向能量流动的方向。
+*   右边的项 $-\vec{E} \cdot \vec{J}$ 是场对[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)做功的速率，将其能量转移给[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)（想象一下电阻中产生的热量）。
 
-这个方程用通俗的语言说，如果某点场中储存的能量减少了，要么是因为[能量流](@article_id:303208)到了别处（$\nabla \cdot \vec{S}$），要么是因为能量被给予了[电荷](@article_id:339187)（$\vec{E} \cdot \vec{J}$）。能量被完美地解释清楚了。
+这个方程用通俗的语言说，如果某点场中储存的能量减少了，要么是因为[能量流](@keyword=energy_flow|lang=zh-CN|style=Feynman)到了别处（$\nabla \cdot \vec{S}$），要么是因为能量被给予了[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)（$\vec{E} \cdot \vec{J}$）。能量被完美地解释清楚了。
 
-最终的启示就在这里。在没有[电荷](@article_id:339187)或电流的真空中（$\vec{J}=0$ 且 $\rho=0$），这些方程允许一个自持解的存在：一个变化的 B 场产生一个旋绕的 E 场，而这个 E 场由于自身在变化，又会产生一个新的旋绕的 B 场，如此循环往复。这种相互锁定的、传播的扰动就是[电磁波](@article_id:332787)。[坡印廷定理](@article_id:325291)表明这种波携带能量。Maxwell 从他的方程中的常数 $\epsilon_0$ 和 $\mu_0$ 计算出这种波的速度，发现它正是光速。在那一刻，光的古老谜团被解开了。它是一种电磁[振动](@article_id:331484)，是流经场的能量涟漪，被他整合的那四个局域的、优美的、统一的方程完美地描述了。
+最终的启示就在这里。在没有[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)或电流的真空中（$\vec{J}=0$ 且 $\rho=0$），这些方程允许一个自持解的存在：一个变化的 B 场产生一个旋绕的 E 场，而这个 E 场由于自身在变化，又会产生一个新的旋绕的 B 场，如此循环往复。这种相互锁定的、传播的扰动就是[电磁波](@keyword=electromagnetic_waves|lang=zh-CN|style=Feynman)。[坡印廷定理](@keyword=poynting_s_theorem|lang=zh-CN|style=Feynman)表明这种波携带能量。Maxwell 从他的方程中的常数 $\epsilon_0$ 和 $\mu_0$ 计算出这种波的速度，发现它正是光速。在那一刻，光的古老谜团被解开了。它是一种电磁[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，是流经场的能量涟漪，被他整合的那四个局域的、优美的、统一的方程完美地描述了。

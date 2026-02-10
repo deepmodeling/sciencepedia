@@ -9,7 +9,7 @@ Let's begin our exploration with an idea so simple it feels like common sense.
 
 ### The Logic of Accumulation
 
-Imagine you are collecting rainwater in a barrel. The total amount of water you collect—the integral—depends on how hard it rains over time. The most basic principle is this: if it rains harder, you collect more water. In mathematical terms, if one function $f(x)$ is always greater than or equal to another function $g(x)$ over some interval, then the total "accumulation" of $f(x)$ must be greater than or equal to the accumulation of $g(x)$. This is the **[monotonicity of the integral](@article_id:180518)**.
+Imagine you are collecting rainwater in a barrel. The total amount of water you collect—the integral—depends on how hard it rains over time. The most basic principle is this: if it rains harder, you collect more water. In mathematical terms, if one function $f(x)$ is always greater than or equal to another function $g(x)$ over some interval, then the total "accumulation" of $f(x)$ must be greater than or equal to the accumulation of $g(x)$. This is the **[monotonicity of the integral](@keyword=monotonicity_of_the_integral|lang=en-US|style=Feynman)**.
 
 From this simple idea, we can start to piece together puzzles. Suppose you have two separate measurements of a function's integral. You know that over the interval from $p$ to $q$, the total accumulation is at least $12.5$. And over another interval, from $r$ to $q$, the accumulation is at most $4.8$. What can you say about the total accumulation from $p$ all the way to $r$?
 
@@ -19,7 +19,7 @@ $$
 $$
 We know the first part is at least $12.5$. For the second part, we're given information about the integral from $r$ to $q$. But that's just the reverse journey! Reversing the direction of integration simply flips the sign of the answer. So, if $\int_{r}^{q} f(x)dx \le 4.8$, it's the same as saying $-\int_{q}^{r} f(x)dx \le 4.8$, which means $\int_{q}^{r} f(x)dx \ge -4.8$.
 
-Now we have lower bounds for both pieces of the journey. The total must be at least the sum of the minimums: $12.5 + (-4.8) = 7.7$. We have established a hard lower limit for the integral over the entire range, just by knowing how to add and subtract its parts . This is the fundamental arithmetic of integral inequalities.
+Now we have lower bounds for both pieces of the journey. The total must be at least the sum of the minimums: $12.5 + (-4.8) = 7.7$. We have established a hard lower limit for the integral over the entire range, just by knowing how to add and subtract its parts [@problem_id:2317989]. This is the fundamental arithmetic of integral inequalities.
 
 ### The Art of Squeezing
 
@@ -47,7 +47,7 @@ So we have trapped our mysterious sum:
 $$
 \ln\left(\frac{2n+1}{n+1}\right) \lt S_n \lt \ln(2)
 $$
-Now, let's see what happens as $n \to \infty$. The fraction $\frac{2n+1}{n+1}$ gets closer and closer to $2$. So, our lower bound approaches $\ln(2)$. Since our sum is squeezed between a value that is approaching $\ln(2)$ and another value that is always $\ln(2)$, the sum itself must converge to $\ln(2)$ . Through the power of inequalities, we have found the exact limit of a complex sum by relating it to the area under a simple curve. This very technique, comparing sums to integrals, is powerful enough to probe deep questions in number theory, such as pinning down the behavior of the famous Riemann zeta function .
+Now, let's see what happens as $n \to \infty$. The fraction $\frac{2n+1}{n+1}$ gets closer and closer to $2$. So, our lower bound approaches $\ln(2)$. Since our sum is squeezed between a value that is approaching $\ln(2)$ and another value that is always $\ln(2)$, the sum itself must converge to $\ln(2)$ [@problem_id:2329462]. Through the power of inequalities, we have found the exact limit of a complex sum by relating it to the area under a simple curve. This very technique, comparing sums to integrals, is powerful enough to probe deep questions in number theory, such as pinning down the behavior of the famous Riemann zeta function [@problem_id:1339660].
 
 ### Inequalities as Guardrails
 
@@ -61,21 +61,21 @@ Here, $L$ is simply the length of the path. $M$ is the maximum value that the ma
 
 This simple rule is a workhorse. For instance, physicists often need to calculate integrals over very large semicircular paths of radius $R$. A key question is whether the integral vanishes as the radius $R$ becomes infinitely large. The ML-inequality is the tool to answer this. The length of the path is $L = \pi R$. The game is then to find how the maximum value $M$ of the function on the path depends on $R$.
 
-For a function like $f_1(z) \sim \frac{z^2}{z^5} = \frac{1}{z^3}$ for large $z$, its magnitude on the circle of radius $R$ will be about $1/R^3$. The ML-inequality then tells us the integral is bounded by something that looks like $(\frac{1}{R^3}) \times (\pi R) = \frac{\pi}{R^2}$. As $R \to \infty$, this bound goes to zero, proving that the integral vanishes. For another function like $f_2(z) \sim \frac{z}{z^4} = \frac{1}{z^3}$, the same logic applies . The inequality provides a robust way to analyze the *asymptotic behavior* of integrals, telling us not just if they are big or small, but precisely *how fast* they grow or shrink.
+For a function like $f_1(z) \sim \frac{z^2}{z^5} = \frac{1}{z^3}$ for large $z$, its magnitude on the circle of radius $R$ will be about $1/R^3$. The ML-inequality then tells us the integral is bounded by something that looks like $(\frac{1}{R^3}) \times (\pi R) = \frac{\pi}{R^2}$. As $R \to \infty$, this bound goes to zero, proving that the integral vanishes. For another function like $f_2(z) \sim \frac{z}{z^4} = \frac{1}{z^3}$, the same logic applies [@problem_id:898028]. The inequality provides a robust way to analyze the *asymptotic behavior* of integrals, telling us not just if they are big or small, but precisely *how fast* they grow or shrink.
 
 ### When Intuition Fails
 
 Our intuition for geometry is built on the world around us. We are all familiar with the triangle inequality: the length of any side of a triangle is less than or equal to the sum of the lengths of the other two sides. Mathematically, $|a+b| \le |a|+|b|$. Since integrals are like sums, it is tempting to assume that analogous rules apply in a straightforward way. But the world of functions is a higher-dimensional space, and our flat-world intuition can sometimes lead us astray.
 
-Consider the famous **Minkowski inequality**, which is the triangle inequality for [function spaces](@article_id:142984) called $L^p$ spaces. It states that for $p \ge 1$:
+Consider the famous **Minkowski inequality**, which is the triangle inequality for [function spaces](@keyword=function_spaces|lang=en-US|style=Feynman) called $L^p$ spaces. It states that for $p \ge 1$:
 $$
 \left( \int |f(x)+g(x)|^p dx \right)^{1/p} \le \left( \int |f(x)|^p dx \right)^{1/p} + \left( \int |g(x)|^p dx \right)^{1/p}
 $$
 A novice might try to prove this by starting with the pointwise inequality $|f(x)+g(x)| \le |f(x)|+|g(x)|$, raising both sides to the $p$-th power, and integrating. This would only work if it were generally true that $(a+b)^p \le a^p+b^p$ for non-negative numbers $a$ and $b$. But is this true?
 
-Let's test it. Take $a=1, b=2$ and $p=3$. Is $(1+2)^3 \le 1^3 + 2^3$? This is $3^3 \le 1+8$, or $27 \le 9$, which is spectacularly false. The same failure occurs with functions. If we take two simple constant functions, $f(x)=1$ and $g(x)=2$ on the interval $[0,2]$, a direct calculation shows that $\int (|f|+|g|)^3 dx$ is significantly larger than $\int |f|^3 dx + \int |g|^3 dx$ .
+Let's test it. Take $a=1, b=2$ and $p=3$. Is $(1+2)^3 \le 1^3 + 2^3$? This is $3^3 \le 1+8$, or $27 \le 9$, which is spectacularly false. The same failure occurs with functions. If we take two simple constant functions, $f(x)=1$ and $g(x)=2$ on the interval $[0,2]$, a direct calculation shows that $\int (|f|+|g|)^3 dx$ is significantly larger than $\int |f|^3 dx + \int |g|^3 dx$ [@problem_id:1432580].
 
-This [counterexample](@article_id:148166) does not mean the Minkowski inequality is wrong; it means our naive proof strategy is wrong. The function $x^p$ for $p>1$ is a **convex** function—it curves upwards. This upward curvature is the source of the subtlety. The correct proof of Minkowski's inequality is a beautiful piece of analysis that relies on this very convexity (via another crucial tool, Hölder's inequality). It serves as a powerful reminder that in mathematics, rigor is not an obstacle to intuition; it is the guardrail that keeps intuition on the path of truth.
+This [counterexample](@keyword=counterexample|lang=en-US|style=Feynman) does not mean the Minkowski inequality is wrong; it means our naive proof strategy is wrong. The function $x^p$ for $p>1$ is a **convex** function—it curves upwards. This upward curvature is the source of the subtlety. The correct proof of Minkowski's inequality is a beautiful piece of analysis that relies on this very convexity (via another crucial tool, Hölder's inequality). It serves as a powerful reminder that in mathematics, rigor is not an obstacle to intuition; it is the guardrail that keeps intuition on the path of truth.
 
 ### The Ultimate Constraint: Causality
 
@@ -85,11 +85,11 @@ How do we translate this into mathematics? Imagine a physical system, and let's 
 $$
 \chi(t) = 0 \quad \text{for all } t \lt 0
 $$
-This is an inequality of the most forceful kind—a statement that a function must be identically zero over an entire semi-infinite interval. One might not immediately think of this as an [integral inequality](@article_id:138688), but its consequences are felt through integrals.
+This is an inequality of the most forceful kind—a statement that a function must be identically zero over an entire semi-infinite interval. One might not immediately think of this as an [integral inequality](@keyword=integral_inequality|lang=en-US|style=Feynman), but its consequences are felt through integrals.
 
-This single, simple constraint in the time domain has a staggering implication in the frequency domain—that is, how the system responds to different frequencies (or colors) of light. It turns out that this constraint forces the [real and imaginary parts](@article_id:163731) of the system's frequency response, $\chi(\omega) = \chi'(\omega) + i\chi''(\omega)$, to be intimately linked. The real part, $\chi'(\omega)$, is related to how a material refracts light (the refractive index), while the imaginary part, $\chi''(\omega)$, is related to how it absorbs light (the absorption coefficient).
+This single, simple constraint in the time domain has a staggering implication in the frequency domain—that is, how the system responds to different frequencies (or colors) of light. It turns out that this constraint forces the [real and imaginary parts](@keyword=real_and_imaginary_parts|lang=en-US|style=Feynman) of the system's frequency response, $\chi(\omega) = \chi'(\omega) + i\chi''(\omega)$, to be intimately linked. The real part, $\chi'(\omega)$, is related to how a material refracts light (the refractive index), while the imaginary part, $\chi''(\omega)$, is related to how it absorbs light (the absorption coefficient).
 
-The causal constraint implies that these two properties are not independent. They are locked together by a pair of [integral transforms](@article_id:185715) known as the **Kramers-Kronig relations** . One of these relations looks like this:
+The causal constraint implies that these two properties are not independent. They are locked together by a pair of [integral transforms](@keyword=integral_transforms|lang=en-US|style=Feynman) known as the **Kramers-Kronig relations** [@problem_id:1786179]. One of these relations looks like this:
 $$
 \chi'(\omega) = \frac{1}{\pi} \mathcal{P} \int_{-\infty}^{\infty} \frac{\chi''(\omega')}{\omega' - \omega} d\omega'
 $$

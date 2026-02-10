@@ -4,37 +4,37 @@
 
 ### 工程师的水晶球：预测和控制稳定性
 
-想象一下，你是一名工程师，正在为汽车设计巡航控制系统、为商用喷气式飞机设计飞行控制系统，或为化工厂设计[过程控制](@entry_id:271184)器。你最关心的是**稳定性**。你希望汽车能够平稳地保持速度，而不是在加速和制动之间剧烈[振荡](@entry_id:267781)。你需要飞机能够优雅地纠正[湍流](@entry_id:151300)，而不是将其放大为灾难性的摇摆。这些系统的行为，当转化为数学语言时，由[微分方程](@entry_id:264184)支配，其稳定性编码在[特征多项式的根](@entry_id:270910)中。
+想象一下，你是一名工程师，正在为汽车设计巡航控制系统、为商用喷气式飞机设计飞行控制系统，或为化工厂设计[过程控制](@keyword=process_control|lang=zh-CN|style=Feynman)器。你最关心的是**稳定性**。你希望汽车能够平稳地保持速度，而不是在加速和制动之间剧烈[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。你需要飞机能够优雅地纠正[湍流](@keyword=turbulent_flow|lang=zh-CN|style=Feynman)，而不是将其放大为灾难性的摇摆。这些系统的行为，当转化为数学语言时，由[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)支配，其稳定性编码在[特征多项式的根](@keyword=characteristic_polynomial_roots|lang=zh-CN|style=Feynman)中。
 
 为了使系统稳定，这个多项式的所有根都必须位于复平面的左半部分。正如我们所见，Routh-Hurwitz 判据提供了一种直接（尽管有时繁琐）的方法来检查这一点，而无需实际求解根。但是当测试遇到障碍时会发生什么？当我们在构建 Routh 表的过程中，一整行变成零时，这意味着什么？
 
-这不是方法的失败，而是一条信息。系统在告诉我们，它正处于刀刃之上，摇摇欲坠于不稳定的边缘。这就是**[临界稳定](@entry_id:147657)性**的领域，此时系统包含无阻尼振荡——极点正好位于[虚轴](@entry_id:262618) $j\omega$ 轴上。正是在这里，由全零行上方那一行构成的[辅助多项式](@entry_id:264690)，成为了我们不可或缺的工具 。这个[辅助多项式](@entry_id:264690)的根，正是主多项式中位于[虚轴](@entry_id:262618)上的那些根。它使我们能够精确定位系统将要[振荡](@entry_id:267781)的频率  。
+这不是方法的失败，而是一条信息。系统在告诉我们，它正处于刀刃之上，摇摇欲坠于不稳定的边缘。这就是**[临界稳定](@keyword=marginal_stability|lang=zh-CN|style=Feynman)性**的领域，此时系统包含无阻尼振荡——极点正好位于[虚轴](@keyword=imaginary_axis|lang=zh-CN|style=Feynman) $j\omega$ 轴上。正是在这里，由全零行上方那一行构成的[辅助多项式](@keyword=auxiliary_polynomial|lang=zh-CN|style=Feynman)，成为了我们不可或缺的工具 [@problem_id:1093733]。这个[辅助多项式](@keyword=auxiliary_polynomial|lang=zh-CN|style=Feynman)的根，正是主多项式中位于[虚轴](@keyword=imaginary_axis|lang=zh-CN|style=Feynman)上的那些根。它使我们能够精确定位系统将要[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的频率 [@problem_id:1093719] [@problem_id:1612534]。
 
-再考虑一下那位正在调试反馈控制器的工程师。一个关键参数是增益 $K$，它决定了系统对误差的反应强度。增益设置得太低，系统反应迟钝。设置得太高，系统变得不稳定。存在一个临界值 $K_{crit}$，在该值下系统变得临界稳定。通过使用 Routh-Hurwitz 测试并找到产生全零行的 $K$ 值，工程师可以找到这个[临界增益](@entry_id:269026)。相应的辅助方程 $A(s) = 0$ 随后揭示了在这个阈值上将出现的振荡频率 $s = \pm j\omega$。这不仅仅是分析；这是预测性设计。它告诉工程师系统的[绝对性](@entry_id:147916)能极限 。
+再考虑一下那位正在调试反馈控制器的工程师。一个关键参数是增益 $K$，它决定了系统对误差的反应强度。增益设置得太低，系统反应迟钝。设置得太高，系统变得不稳定。存在一个临界值 $K_{crit}$，在该值下系统变得临界稳定。通过使用 Routh-Hurwitz 测试并找到产生全零行的 $K$ 值，工程师可以找到这个[临界增益](@keyword=critical_gain|lang=zh-CN|style=Feynman)。相应的辅助方程 $A(s) = 0$ 随后揭示了在这个阈值上将出现的振荡频率 $s = \pm j\omega$。这不仅仅是分析；这是预测性设计。它告诉工程师系统的[绝对性](@keyword=absoluteness|lang=zh-CN|style=Feynman)能极限 [@problem_id:1612265]。
 
-这种方法的诊断能力非凡。一位经验丰富的工程师，在 Routh 表第一列中发现两个符号变化并发现一个二阶[辅助多项式](@entry_id:264690)后，可以立即推断出系统的完整特性：“这个五阶系统有两个不稳定的极点导致其失效，一个表现良好的稳定极点，以及一对位于[虚轴](@entry_id:262618)上导致持续[振荡](@entry_id:267781)的极点。”这就像医生阅读[心电图](@entry_id:153078)，将抽象的模式转化为对系统健康的具体诊断 。这个工具是如此强大，甚至可以反向使用，以确定产生期望[振荡](@entry_id:267781)行为所需的系统参数，比如 $a$ 和 $b$ 。
+这种方法的诊断能力非凡。一位经验丰富的工程师，在 Routh 表第一列中发现两个符号变化并发现一个二阶[辅助多项式](@keyword=auxiliary_polynomial|lang=zh-CN|style=Feynman)后，可以立即推断出系统的完整特性：“这个五阶系统有两个不稳定的极点导致其失效，一个表现良好的稳定极点，以及一对位于[虚轴](@keyword=imaginary_axis|lang=zh-CN|style=Feynman)上导致持续[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的极点。”这就像医生阅读[心电图](@keyword=electrocardiogram|lang=zh-CN|style=Feynman)，将抽象的模式转化为对系统健康的具体诊断 [@problem_id:1749948]。这个工具是如此强大，甚至可以反向使用，以确定产生期望[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)行为所需的系统参数，比如 $a$ 和 $b$ [@problem_id:1093872]。
 
 ### 从模拟到数字：现代世界的稳定性
 
 我们刚才讨论的控制原理诞生于一个模拟的、连续信号的世界。但如今，大多数控制都是数字化的。现代无人机、3D 打印机或工厂机器人的大脑是一个在离散时间步长上执行代码的微处理器。我们对稳定性的理解能转化到这个数字领域吗？
 
-确实可以，而且带有一个有趣的转折。对于[离散时间系统](@entry_id:263935)，稳定性要求其[特征多项式](@entry_id:150909)（现在变量是 $z$）的根不在左半平面，而是在复平面的*[单位圆](@entry_id:267290)内*。一种不同但哲学上相似的测试，即 Jury [稳定性判据](@entry_id:755304)，被用于此分析。而且，就像它的模拟表亲一样，当 Jury 表中的一行变为零时，会出现一种特殊情况。这再次表明极点位于稳定性的边界上——在这种情况下，是在[单位圆](@entry_id:267290)本身上。
+确实可以，而且带有一个有趣的转折。对于[离散时间系统](@keyword=discrete_time_systems|lang=zh-CN|style=Feynman)，稳定性要求其[特征多项式](@keyword=characteristic_polynomial|lang=zh-CN|style=Feynman)（现在变量是 $z$）的根不在左半平面，而是在复平面的*[单位圆](@keyword=unit_circle|lang=zh-CN|style=Feynman)内*。一种不同但哲学上相似的测试，即 Jury [稳定性判据](@keyword=stability_criterion|lang=zh-CN|style=Feynman)，被用于此分析。而且，就像它的模拟表亲一样，当 Jury 表中的一行变为零时，会出现一种特殊情况。这再次表明极点位于稳定性的边界上——在这种情况下，是在[单位圆](@keyword=unit_circle|lang=zh-CN|style=Feynman)本身上。
 
-你可能已经猜到，[辅助多项式](@entry_id:264690)再次前来救场。它由 Jury 表中前一行构成，其根精确定位了系统在[单位圆](@entry_id:267290)上的[极点位置](@entry_id:271565) 。这个美丽的平行现象表明，其底层概念不仅仅是针对一种多项式的技巧。它是分析动态[系统稳定性](@entry_id:273248)的一个基本原则，无论其演化是时间连续的还是按离散步骤进行的。
+你可能已经猜到，[辅助多项式](@keyword=auxiliary_polynomial|lang=zh-CN|style=Feynman)再次前来救场。它由 Jury 表中前一行构成，其根精确定位了系统在[单位圆](@keyword=unit_circle|lang=zh-CN|style=Feynman)上的[极点位置](@keyword=pole_location|lang=zh-CN|style=Feynman) [@problem_id:1564324]。这个美丽的平行现象表明，其底层概念不仅仅是针对一种多项式的技巧。它是分析动态[系统稳定性](@keyword=systems_stability|lang=zh-CN|style=Feynman)的一个基本原则，无论其演化是时间连续的还是按离散步骤进行的。
 
-### 锻造现实：[计算物理学](@entry_id:146048)中的辅助方程
+### 锻造现实：[计算物理学](@keyword=computational_physics|lang=zh-CN|style=Feynman)中的辅助方程
 
-现在，让我们进行一次巨大的飞跃，从有形的机器世界到抽象的计算科学领域。想象你是一名物理学家，试图模拟光波的传播；一名天体物理学家，正在模拟来自[黑洞](@entry_id:158571)的[引力](@entry_id:175476)波；或是一名地震学家，正在预测[地震波](@entry_id:164985)如何穿过地球。你写下控制性的[波动方程](@entry_id:139839)——光的麦克斯韦方程组，或地震波的[弹性动力学](@entry_id:175818)方程——然后你想在计算机上求解它们。
+现在，让我们进行一次巨大的飞跃，从有形的机器世界到抽象的计算科学领域。想象你是一名物理学家，试图模拟光波的传播；一名天体物理学家，正在模拟来自[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)的[引力](@keyword=gravitational_force|lang=zh-CN|style=Feynman)波；或是一名地震学家，正在预测[地震波](@keyword=seismic_waves|lang=zh-CN|style=Feynman)如何穿过地球。你写下控制性的[波动方程](@keyword=wave_equation|lang=zh-CN|style=Feynman)——光的麦克斯韦方程组，或地震波的[弹性动力学](@keyword=elastodynamics|lang=zh-CN|style=Feynman)方程——然后你想在计算机上求解它们。
 
-你立刻面临一个深刻的问题。你的[计算机内存](@entry_id:170089)是有限的，但宇宙实际上是无限的。你的模拟必须在一个有限的“盒子”内进行。当你模拟的波到达这个盒子的边缘时会发生什么？如果你什么都不做，它会反射回来，就像浴缸里的涟漪撞到壁上一样。这些人为的反射会污染你的整个模拟，使其变得毫无用处。你需要创建一个不反射的边界。你需要一个完美的计算波吸收器。
+你立刻面临一个深刻的问题。你的[计算机内存](@keyword=computer_memory|lang=zh-CN|style=Feynman)是有限的，但宇宙实际上是无限的。你的模拟必须在一个有限的“盒子”内进行。当你模拟的波到达这个盒子的边缘时会发生什么？如果你什么都不做，它会反射回来，就像浴缸里的涟漪撞到壁上一样。这些人为的反射会污染你的整个模拟，使其变得毫无用处。你需要创建一个不反射的边界。你需要一个完美的计算波吸收器。
 
-几十年来，这是一个重大的挑战。然后，一个真正绝妙的想法出现了：**[完美匹配层 (PML)](@entry_id:184004)**。PML 不是一种物理材料，而是一种*虚拟*材料，是模拟盒子边缘的一层空间，纯粹由方程定义。它被设计具有两个神奇的特性：首先，它与模拟域完美阻抗匹配，因此波进入时没有任何反射。其次，一旦进入内部，波会被迅速吸收并衰减至无。
+几十年来，这是一个重大的挑战。然后，一个真正绝妙的想法出现了：**[完美匹配层 (PML)](@keyword=perfectly_matched_layer_(pml)|lang=zh-CN|style=Feynman)**。PML 不是一种物理材料，而是一种*虚拟*材料，是模拟盒子边缘的一层空间，纯粹由方程定义。它被设计具有两个神奇的特性：首先，它与模拟域完美阻抗匹配，因此波进入时没有任何反射。其次，一旦进入内部，波会被迅速吸收并衰减至无。
 
-这种神奇的、不反射的、吸波的材料是如何构建的？答案惊人地将我们带回了我们的主题。现代 PML 的时域实现建立在一个**辅助[微分方程](@entry_id:264184) ([ADE](@entry_id:198734))** 系统之上。
+这种神奇的、不反射的、吸波的材料是如何构建的？答案惊人地将我们带回了我们的主题。现代 PML 的时域实现建立在一个**辅助[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman) ([ADE](@keyword=antibody_dependent_enhancement|lang=zh-CN|style=Feynman))** 系统之上。
 
-这里的概念飞跃是：为了创造吸收特性，PML 在[频域](@entry_id:160070)中通过将空间坐标在数学上“拉伸”到复平面来定义。这种坐标拉伸导致材料属性依赖于频率。正如我们从系统理论中得知的，频率相关的响应对应于时域中的卷积，或一种“记忆效应” 。直接模拟将需要在每个点存储波的整个历史，这在计算上是不可能的。
+这里的概念飞跃是：为了创造吸收特性，PML 在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中通过将空间坐标在数学上“拉伸”到复平面来定义。这种坐标拉伸导致材料属性依赖于频率。正如我们从系统理论中得知的，频率相关的响应对应于时域中的卷积，或一种“记忆效应” [@problem_id:2540211]。直接模拟将需要在每个点存储波的整个历史，这在计算上是不可能的。
 
-摆脱这一困境的优雅方法是 [ADE](@entry_id:198734) 方法。我们不使用卷积，而是引入新的、在物理现实中不存在但只活在我们代码中的辅助场。这些[辅助场](@entry_id:155519)遵循简单的[一阶常微分方程](@entry_id:264241)——即我们的 [ADE](@entry_id:198734)。每个 [ADE](@entry_id:198734) 描述了这些记忆场之一的演化。然后，主要的物理场（如电场和磁场）与这些[辅助场](@entry_id:155519)耦合。整个[方程组](@entry_id:193238)——原始的物理方程加上 [ADE](@entry_id:198734)——在时间上是局域的，可以逐步求解，无需任何昂贵的内存积分。这个耦合系统的集体行为完美地模仿了所需的吸收性、非局域性行为 。为确保模拟是因果的和稳定的（意味着吸收层只耗散能量而从不自发产生能量），这些 [ADE](@entry_id:198734) 的数学结构必须满足严格的[无源性](@entry_id:171773)条件，这直接呼应了我们在控制理论中看到的稳定性约束 。
+摆脱这一困境的优雅方法是 [ADE](@keyword=antibody_dependent_enhancement|lang=zh-CN|style=Feynman) 方法。我们不使用卷积，而是引入新的、在物理现实中不存在但只活在我们代码中的辅助场。这些[辅助场](@keyword=auxiliary_fields|lang=zh-CN|style=Feynman)遵循简单的[一阶常微分方程](@keyword=first_order_ordinary_differential_equations|lang=zh-CN|style=Feynman)——即我们的 [ADE](@keyword=antibody_dependent_enhancement|lang=zh-CN|style=Feynman)。每个 [ADE](@keyword=antibody_dependent_enhancement|lang=zh-CN|style=Feynman) 描述了这些记忆场之一的演化。然后，主要的物理场（如电场和磁场）与这些[辅助场](@keyword=auxiliary_fields|lang=zh-CN|style=Feynman)耦合。整个[方程组](@keyword=simultaneous_equations|lang=zh-CN|style=Feynman)——原始的物理方程加上 [ADE](@keyword=antibody_dependent_enhancement|lang=zh-CN|style=Feynman)——在时间上是局域的，可以逐步求解，无需任何昂贵的内存积分。这个耦合系统的集体行为完美地模仿了所需的吸收性、非局域性行为 [@problem_id:3510387]。为确保模拟是因果的和稳定的（意味着吸收层只耗散能量而从不自发产生能量），这些 [ADE](@keyword=antibody_dependent_enhancement|lang=zh-CN|style=Feynman) 的数学结构必须满足严格的[无源性](@keyword=passivity|lang=zh-CN|style=Feynman)条件，这直接呼应了我们在控制理论中看到的稳定性约束 [@problem_id:2540211]。
 
 想想这其中的美妙之处。一套辅助方程，与用于稳定简单电机的那些方程源于同一片知识沃土，在这里被用来构建虚拟宇宙的一个切片。它们是引擎，让我们的超级计算机能够在有限的网格上求解自然界的基本定律，为从设计下一代天线到宇宙巨物的碰撞等一切事物打开了一扇窗。
 

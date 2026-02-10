@@ -17,11 +17,11 @@ Suppose you have two designs, Van A and Van B. If Van A has a longer range *and*
 
 But what if Van A has a longer range but is also more expensive? And Van B is cheaper but has a shorter range? Now neither dominates the other. They represent different trade-offs. One is not clearly superior to the other; they are simply different.
 
-This simple idea is the foundation of Pareto optimality. A solution is considered **Pareto optimal** if it is not dominated by any other possible solution. Think of it as being "undefeated." A design on the Pareto front is one for which you cannot improve one objective (say, increase battery range) without making another objective worse (increasing the cost) .
+This simple idea is the foundation of Pareto optimality. A solution is considered **Pareto optimal** if it is not dominated by any other possible solution. Think of it as being "undefeated." A design on the Pareto front is one for which you cannot improve one objective (say, increase battery range) without making another objective worse (increasing the cost) [@problem_id:2176811].
 
 This collection of undefeatable, optimal trade-off solutions is called the **Pareto front**.
 
-Let’s make this concrete. A chemical firm is looking at nine different technologies to reduce pollution. They want to minimize two things: annual pollutant output ($J_1$) and implementation cost ($J_2$). Here are their options, plotted as points in a 2D "objective space" where each axis represents one of the goals :
+Let’s make this concrete. A chemical firm is looking at nine different technologies to reduce pollution. They want to minimize two things: annual pollutant output ($J_1$) and implementation cost ($J_2$). Here are their options, plotted as points in a 2D "objective space" where each axis represents one of the goals [@problem_id:2166454]:
 
 - A: (15, 12)
 - B: (17, 12)
@@ -43,15 +43,15 @@ After this process of elimination, we are left with technologies {A, D, E, G, H}
 
 ### Finding the Front: The Weighted-Sum Method
 
-Identifying the front from a small, discrete list is easy. But what if you have a continuous space of possibilities, like in the resource allocation problem where you can choose any proportion of GPU clusters ($x_1, x_2$) as long as you meet certain constraints ? The number of possible designs is infinite. How do we find the front then?
+Identifying the front from a small, discrete list is easy. But what if you have a continuous space of possibilities, like in the resource allocation problem where you can choose any proportion of GPU clusters ($x_1, x_2$) as long as you meet certain constraints [@problem_id:2176033]? The number of possible designs is infinite. How do we find the front then?
 
-One of the most intuitive ways is called the **[weighted-sum method](@article_id:633568)**. The idea is to combine your multiple, conflicting objectives into a single score, or "fitness," and then use standard optimization tools to find the solution that maximizes (or minimizes) this single score.
+One of the most intuitive ways is called the **[weighted-sum method](@keyword=weighted_sum_method_2|lang=en-US|style=Feynman)**. The idea is to combine your multiple, conflicting objectives into a single score, or "fitness," and then use standard optimization tools to find the solution that maximizes (or minimizes) this single score.
 
-For instance, a spacecraft's trajectory might be judged by mission time $T$ (in seconds) and fuel used $m_f$ (in kilograms). An engineer might propose a [fitness function](@article_id:170569) to minimize:
+For instance, a spacecraft's trajectory might be judged by mission time $T$ (in seconds) and fuel used $m_f$ (in kilograms). An engineer might propose a [fitness function](@keyword=fitness_function|lang=en-US|style=Feynman) to minimize:
 
 $F = \alpha T + \beta m_f$
 
-But wait! A physicist would immediately stop you. You can't add seconds to kilograms! It's like adding apples and oranges; the result is meaningless. This highlights a critical, practical point about [scalarization](@article_id:634267): you must ensure your terms are dimensionally consistent .
+But wait! A physicist would immediately stop you. You can't add seconds to kilograms! It's like adding apples and oranges; the result is meaningless. This highlights a critical, practical point about [scalarization](@keyword=scalarization|lang=en-US|style=Feynman): you must ensure your terms are dimensionally consistent [@problem_id:2384819].
 
 There are two main ways to fix this.
 1.  **Non-dimensionalization:** You can make each term dimensionless by dividing it by a reference value. For example: $F = w_T \frac{T}{T_{\text{ref}}} + w_m \frac{m_f}{m_{\text{ref}}}$. Here, $\frac{T}{T_{\text{ref}}}$ is a dimensionless ratio (e.g., "percentage of maximum expected time"), and the weights $w_T, w_m$ are just pure numbers that reflect your priorities.
@@ -59,20 +59,20 @@ There are two main ways to fix this.
 
 Once we have a valid, single objective function, we can find the best solution for a given set of weights. By changing the weights—for example, putting more emphasis on time versus fuel—we can trace out different points on the Pareto front. It's like saying, "For me, one extra day in space is as bad as burning 10 extra kilograms of fuel," and finding the best trajectory under that personal trade-off rule. Then you change your mind: "What if a day is worth only 5 kg?" And you find a new optimal point.
 
-This method has a beautiful geometric interpretation. Imagine the cloud of all possible outcomes in our 2D objective space. Minimizing a [weighted sum](@article_id:159475) like $\lambda_1 f_1 + \lambda_2 f_2$ is like taking a straight ruler, setting its slope to $-\lambda_1 / \lambda_2$, and sliding it in from the top-right corner until it just touches the cloud of points. The point (or points) it touches first is the optimal solution for that set of weights . By rotating the ruler (i.e., changing the weights), we can trace out the edge of the cloud.
+This method has a beautiful geometric interpretation. Imagine the cloud of all possible outcomes in our 2D objective space. Minimizing a [weighted sum](@keyword=weighted_sum|lang=en-US|style=Feynman) like $\lambda_1 f_1 + \lambda_2 f_2$ is like taking a straight ruler, setting its slope to $-\lambda_1 / \lambda_2$, and sliding it in from the top-right corner until it just touches the cloud of points. The point (or points) it touches first is the optimal solution for that set of weights [@problem_id:3198513]. By rotating the ruler (i.e., changing the weights), we can trace out the edge of the cloud.
 
 ### The Hidden Dent: When the Weighted-Sum Method Fails
 
-For a long time, people thought that by trying all possible positive weights, you could find every single point on the Pareto front. This turns out to be true only if the cloud of possible outcomes is "convex"—meaning it has no dents or inward curves. If the problem is convex, the [weighted-sum method](@article_id:633568) works perfectly .
+For a long time, people thought that by trying all possible positive weights, you could find every single point on the Pareto front. This turns out to be true only if the cloud of possible outcomes is "convex"—meaning it has no dents or inward curves. If the problem is convex, the [weighted-sum method](@keyword=weighted_sum_method_2|lang=en-US|style=Feynman) works perfectly [@problem_id:3108421].
 
 But what if the front has a dent? What if there's a "hollow" in the boundary of what's achievable?
 
-Let's look at a simple, yet profound, example. Suppose we have three candidate materials for a new catalyst, with objectives of minimizing cost ($f_1$) and degradation ($f_2$) :
+Let's look at a simple, yet profound, example. Suppose we have three candidate materials for a new catalyst, with objectives of minimizing cost ($f_1$) and degradation ($f_2$) [@problem_id:2479737]:
 - Material A: (0.5, 1.8)
 - Material B: (1.0, 1.3)
 - Material C: (1.7, 0.5)
 
-As before, you can check that none of these dominates another. All three are on the Pareto front. Now, let's try to find them with the [weighted-sum method](@article_id:633568). We want to find weights $w_1, w_2 > 0$ that make a particular material the winner.
+As before, you can check that none of these dominates another. All three are on the Pareto front. Now, let's try to find them with the [weighted-sum method](@keyword=weighted_sum_method_2|lang=en-US|style=Feynman). We want to find weights $w_1, w_2 > 0$ that make a particular material the winner.
 
 The solution for Material B must be better than (or equal to) A and C.
 - $w_1(1.0) + w_2(1.3) \le w_1(0.5) + w_2(1.8) \implies w_1 \le w_2$
@@ -80,15 +80,15 @@ The solution for Material B must be better than (or equal to) A and C.
 
 So, we need $w_1$ to be both smaller than $w_2$ and at the same time larger than $\frac{8}{7}w_2$. This is impossible! No matter what positive weights you choose, you will *never* find Material B. Geometrically, point B lies in a "dent" formed by points A and C. Our sliding ruler will touch A, then pivot and touch C, completely skipping over B.
 
-This reveals a major limitation. Material B is a perfectly valid, non-dominated trade-off, but the [weighted-sum method](@article_id:633568) is blind to it. Such points are called **unsupported** Pareto optimal points.
+This reveals a major limitation. Material B is a perfectly valid, non-dominated trade-off, but the [weighted-sum method](@keyword=weighted_sum_method_2|lang=en-US|style=Feynman) is blind to it. Such points are called **unsupported** Pareto optimal points.
 
 ### Better Tools for a Bumpy Frontier
 
 So, if our trusty weighted-sum ruler can't find solutions in the dents, what can? We need more sophisticated tools.
 
-1.  **The $\epsilon$-Constraint Method:** This approach is clever. Instead of mixing the objectives, you pick one to be your "main" objective and turn the others into constraints. For our materials problem, we could say: "Let's minimize cost ($f_1$), but I will not accept any material with degradation ($f_2$) greater than some value $\epsilon$." If we set $\epsilon = 1.5$, our feasible options become B (degradation 1.3) and C (degradation 0.5). Between these two, B has the lower cost (1.0 vs 1.7), so it wins! By carefully choosing different values for our $\epsilon$ budget, we can trace out the entire front, including the unsupported points in the dents .
+1.  **The $\epsilon$-Constraint Method:** This approach is clever. Instead of mixing the objectives, you pick one to be your "main" objective and turn the others into constraints. For our materials problem, we could say: "Let's minimize cost ($f_1$), but I will not accept any material with degradation ($f_2$) greater than some value $\epsilon$." If we set $\epsilon = 1.5$, our feasible options become B (degradation 1.3) and C (degradation 0.5). Between these two, B has the lower cost (1.0 vs 1.7), so it wins! By carefully choosing different values for our $\epsilon$ budget, we can trace out the entire front, including the unsupported points in the dents [@problem_id:3130528].
 
-2.  **The Weighted Chebyshev Method:** This method is a bit more abstract but very powerful. First, you define an "ideal point" $z^\star$, which is the best-case scenario for each objective (e.g., the lowest cost and lowest degradation found among all options). For our materials, the ideal point would be ($z_1^\star=0.5, z_2^\star=0.5$). Then, you try to find the solution that minimizes the largest *weighted distance* from this ideal point. In our example, it found Material B precisely because it represents a balanced compromise that is closest to the "utopia" point in a specific sense  . Unlike the weighted-sum, this method essentially sends out feelers from the ideal point in all directions and can find points in those non-convex dents.
+2.  **The Weighted Chebyshev Method:** This method is a bit more abstract but very powerful. First, you define an "ideal point" $z^\star$, which is the best-case scenario for each objective (e.g., the lowest cost and lowest degradation found among all options). For our materials, the ideal point would be ($z_1^\star=0.5, z_2^\star=0.5$). Then, you try to find the solution that minimizes the largest *weighted distance* from this ideal point. In our example, it found Material B precisely because it represents a balanced compromise that is closest to the "utopia" point in a specific sense [@problem_id:3198574] [@problem_id:2479737]. Unlike the weighted-sum, this method essentially sends out feelers from the ideal point in all directions and can find points in those non-convex dents.
 
 The existence of these different methods highlights a deep truth in optimization: the tool you use shapes the answers you get. For simple, convex problems, the weighted-sum is elegant and efficient. But for the complex, bumpy frontiers that often appear in the real world, we need more powerful techniques to ensure we don't miss out on valuable, non-obvious solutions.
 
@@ -98,8 +98,8 @@ To round out our understanding, let's touch on one last bit of mathematical prec
 
 A point is weakly Pareto optimal if there's no other point that is *strictly* better in *all* objectives simultaneously.
 
-What's the difference? A point is weakly optimal but *not* strongly optimal if there exists another solution that is just as good on some objectives and strictly better on at least one other . Imagine a solution $x^\star$ which gives you an outcome of (100 performance, 50 cost). If another solution $y$ exists that gives (110 performance, 50 cost), then $x^\star$ is not Pareto optimal (it's dominated by $y$). However, since $y$ is not strictly better on *all* objectives (the cost is the same), $x^\star$ could still be considered weakly Pareto optimal.
+What's the difference? A point is weakly optimal but *not* strongly optimal if there exists another solution that is just as good on some objectives and strictly better on at least one other [@problem_id:3154148]. Imagine a solution $x^\star$ which gives you an outcome of (100 performance, 50 cost). If another solution $y$ exists that gives (110 performance, 50 cost), then $x^\star$ is not Pareto optimal (it's dominated by $y$). However, since $y$ is not strictly better on *all* objectives (the cost is the same), $x^\star$ could still be considered weakly Pareto optimal.
 
 In many practical problems, this distinction is subtle. But it showcases the rigor required to formally reason about these problems. In some cases, we might find entire regions of solutions that are only weakly optimal, representing plateaus where we can improve one thing for free, without any trade-off, up to a certain point. Identifying these regions is crucial to avoid settling for a solution that is good, but not as good as it could be.
 
-From the simple act of comparing two options to the [complex geometry](@article_id:158586) of non-convex frontiers, the principles of Pareto optimization provide a powerful and elegant framework. They don't eliminate the need for human judgment in making a final choice, but they elevate the process, ensuring that our choices are made from a menu of truly optimal candidates, with a clear-eyed understanding of the trade-offs involved.
+From the simple act of comparing two options to the [complex geometry](@keyword=complex_geometry|lang=en-US|style=Feynman) of non-convex frontiers, the principles of Pareto optimization provide a powerful and elegant framework. They don't eliminate the need for human judgment in making a final choice, but they elevate the process, ensuring that our choices are made from a menu of truly optimal candidates, with a clear-eyed understanding of the trade-offs involved.

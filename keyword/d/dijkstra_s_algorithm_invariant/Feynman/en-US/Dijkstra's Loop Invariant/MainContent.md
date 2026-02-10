@@ -13,7 +13,7 @@ You could send explorers down every possible road, but that would be chaotic and
 
 Before setting out, our cartographer makes a simple, profound observation. The distance from the capital city to itself is zero. For every other city in the kingdom, the distance is, for now, unknown. How do we represent "unknown" in a way that our calculations will respect? We could use a very large number, but what if a true path is even longer?
 
-The elegant solution is to use the concept of **infinity** ($\infty$). We initialize the distance to our source, $s$, as $d[s] = 0$, and the distance to every other city, $v$, as $d[v] = \infty$. This isn't just a programming trick; it's a deep mathematical statement. In the world of finding minimums, infinity is the ultimate "neutral" element. When we later find a real path to a city with a cost of, say, 10 days, our update rule will be to choose the minimum of the old and new values: $\min(\infty, 10) = 10$. Infinity gracefully steps aside as soon as the first piece of concrete information arrives .
+The elegant solution is to use the concept of **infinity** ($\infty$). We initialize the distance to our source, $s$, as $d[s] = 0$, and the distance to every other city, $v$, as $d[v] = \infty$. This isn't just a programming trick; it's a deep mathematical statement. In the world of finding minimums, infinity is the ultimate "neutral" element. When we later find a real path to a city with a cost of, say, 10 days, our update rule will be to choose the minimum of the old and new values: $\min(\infty, 10) = 10$. Infinity gracefully steps aside as soon as the first piece of concrete information arrives [@problem_id:1482469].
 
 This initialization establishes a crucial property that the algorithm will maintain throughout its execution: the value $d[v]$ will always be an **upper bound** on the true shortest path distance. It's either the length of some real path we've found or infinity if we've found none. It can never be *less* than the true shortest distance, because we don't invent paths out of thin air.
 
@@ -21,15 +21,15 @@ This initialization establishes a crucial property that the algorithm will maint
 
 With our map initialized, the exploration begins. Dijkstra's algorithm embodies a "greedy" strategy. At every step, it looks at the entire frontier of explored territory and asks: "Of all the places I can reach but haven't yet finalized, which one is closest to the source?" It then travels to that point, declares its distance final, and adds it to the set of known, "settled" territories.
 
-To build our intuition, let's consider a simplified world where all roads are of equal quality, so traveling any single road segment costs exactly 1 unit of time . In this scenario, what does our greedy explorer do? It starts at the source (distance 0). The nearest frontier points are all its immediate neighbors, at a distance of 1. It explores them. The next-nearest points are the neighbors of those, at a distance of 2, and so on. The explorer is expanding its knowledge in concentric circles, one layer at a time. This is nothing more than a **Breadth-First Search (BFS)**, an algorithm we intuitively understand for finding the path with the fewest steps. Dijkstra's algorithm, then, can be seen as a beautiful generalization of BFS, capable of handling a world where "steps" have different costs—a landscape of hills and valleys instead of a flat grid.
+To build our intuition, let's consider a simplified world where all roads are of equal quality, so traveling any single road segment costs exactly 1 unit of time [@problem_id:1532782]. In this scenario, what does our greedy explorer do? It starts at the source (distance 0). The nearest frontier points are all its immediate neighbors, at a distance of 1. It explores them. The next-nearest points are the neighbors of those, at a distance of 2, and so on. The explorer is expanding its knowledge in concentric circles, one layer at a time. This is nothing more than a **Breadth-First Search (BFS)**, an algorithm we intuitively understand for finding the path with the fewest steps. Dijkstra's algorithm, then, can be seen as a beautiful generalization of BFS, capable of handling a world where "steps" have different costs—a landscape of hills and valleys instead of a flat grid.
 
 This naturally leads to the central question: why is this greedy strategy—always picking the closest frontier point—guaranteed to find the absolute shortest path? What if a path that starts by going to a "farther" point on the frontier eventually leads to a massive shortcut, a secret tunnel that would have made the total journey shorter?
 
 ### The Invariant: A Contract with Correctness
 
-The genius of Dijkstra's algorithm lies not just in its greedy action, but in the mathematical guarantee—a kind of contract—that it maintains at every single step. This is its **[loop invariant](@article_id:633495)**. If this contract holds true from start to finish, the final result is provably correct.
+The genius of Dijkstra's algorithm lies not just in its greedy action, but in the mathematical guarantee—a kind of contract—that it maintains at every single step. This is its **[loop invariant](@keyword=loop_invariant|lang=en-US|style=Feynman)**. If this contract holds true from start to finish, the final result is provably correct.
 
-The contract has two clauses, and both are essential . Let's imagine our map has two kinds of cities: "settled" cities (colored black), whose shortest paths we have finalized, and "frontier" cities (colored gray), which we have reached but are still evaluating. All other cities are white (unvisited).
+The contract has two clauses, and both are essential [@problem_id:3248357]. Let's imagine our map has two kinds of cities: "settled" cities (colored black), whose shortest paths we have finalized, and "frontier" cities (colored gray), which we have reached but are still evaluating. All other cities are white (unvisited).
 
 1.  **The Settled Clause**: For every black, settled city $u$, the computed distance $d[u]$ is the true, final, unassailable shortest path distance from the source.
 
@@ -49,17 +49,17 @@ This means no secret path can be shorter than the distance $d[u^*]$ we've alread
 
 ### When Greed Fails: Valleys and Wormholes
 
-Understanding why something works is often best achieved by seeing how it breaks. The non-negative edge weight rule is the linchpin of our proof. What if we allow a "wormhole"—a single edge with a negative weight ?
+Understanding why something works is often best achieved by seeing how it breaks. The non-negative edge weight rule is the linchpin of our proof. What if we allow a "wormhole"—a single edge with a negative weight [@problem_id:3237619]?
 
 The entire logical edifice collapses. Our proof relied on the fact that $d[u^*] \le d[y]$ and that any path going through $y$ could only get longer. But with a negative edge, a path going through a seemingly "farther" frontier point $y$ could dip through a negative-weight valley and arrive at $u^*$ with a total cost far less than $d[u^*]$. The greedy choice becomes a foolish blunder. The algorithm might finalize a path with cost 10, only for a path with cost 5 to be discovered later, when it's too late to revise the "settled" distance.
 
-This [failure analysis](@article_id:266229) isn't just a corner case; it reveals the soul of the algorithm. Dijkstra's explorer is fundamentally optimistic; it believes that distances only ever increase. This optimism is only justified in a non-negative world.
+This [failure analysis](@keyword=failure_analysis|lang=en-US|style=Feynman) isn't just a corner case; it reveals the soul of the algorithm. Dijkstra's explorer is fundamentally optimistic; it believes that distances only ever increase. This optimism is only justified in a non-negative world.
 
-We can also see the importance of the greedy choice by considering its opposite. What if our explorer was pathologically "anti-greedy" and always chose to visit the *farthest* known frontier point ? It would madly chase distant mirages, finalizing wildly long paths while completely ignoring cheap, short paths right next to the source. This demonstrates that the `min` operation is not an arbitrary choice; it is the engine of the algorithm's correctness.
+We can also see the importance of the greedy choice by considering its opposite. What if our explorer was pathologically "anti-greedy" and always chose to visit the *farthest* known frontier point [@problem_id:3228005]? It would madly chase distant mirages, finalizing wildly long paths while completely ignoring cheap, short paths right next to the source. This demonstrates that the `min` operation is not an arbitrary choice; it is the engine of the algorithm's correctness.
 
 ### Not All Greed is the Same: Path-Finding vs. Tree-Building
 
-Dijkstra's algorithm is often mentioned in the same breath as another famous greedy procedure: Prim's algorithm for finding a Minimum Spanning Tree (MST). Both start at a source and grow a tree to cover a graph. But their "greedy" motivations are profoundly different, a distinction that clarifies what Dijkstra truly accomplishes .
+Dijkstra's algorithm is often mentioned in the same breath as another famous greedy procedure: Prim's algorithm for finding a Minimum Spanning Tree (MST). Both start at a source and grow a tree to cover a graph. But their "greedy" motivations are profoundly different, a distinction that clarifies what Dijkstra truly accomplishes [@problem_id:3259848].
 
 Prim's algorithm is like a thrifty network engineer trying to connect all cities with fiber optic cable for the lowest possible total cost. At each step, it looks at all possible connections from the connected part of the network to the unconnected part and greedily picks the absolute cheapest *single cable*, regardless of where it is. Its focus is purely local: "What's the cheapest edge crossing the frontier?"
 
@@ -67,10 +67,10 @@ Dijkstra's algorithm, on the other hand, is the master route-planner. Its focus 
 
 ### A Dose of Reality: The Quicksand of Floating Points
 
-In the pure realm of mathematics, our algorithm is flawless. But on a real computer, numbers are not perfect. They are represented with finite precision, a system known as [floating-point arithmetic](@article_id:145742). This introduces tiny, unavoidable rounding errors, like trying to measure a coastline with a meter stick .
+In the pure realm of mathematics, our algorithm is flawless. But on a real computer, numbers are not perfect. They are represented with finite precision, a system known as [floating-point arithmetic](@keyword=floating_point_arithmetic|lang=en-US|style=Feynman). This introduces tiny, unavoidable rounding errors, like trying to measure a coastline with a meter stick [@problem_id:3231527].
 
 Imagine two different paths to a city. In reality, Path A has a true cost of 100.000000001 and Path B has a true cost of 100.000000002. Path A is superior. However, suppose Path B is very short, with only two edges, while Path A is a long, winding road with thousands of tiny segments. Each time the computer adds an edge weight to calculate Path A's total length, it might have to round slightly. These thousands of tiny rounding errors can accumulate.
 
 It's entirely possible that the computer calculates the cost of Path A as 100.000000003 (due to accumulated error) and the cost of Path B as 100.000000002. The algorithm, having no access to the "true" costs and working only with the numbers it has, will dutifully follow its greedy rule and choose Path B. It will finalize a suboptimal path, utterly convinced it has made the right choice.
 
-This is a humbling and beautiful lesson. The logical purity of an algorithm is one thing; its behavior in the physical, finite world is another. The elegant certainty of Dijkstra's invariant can, in rare cases, be swallowed by the quicksand of [floating-point arithmetic](@article_id:145742), a stark reminder of the bridge between abstract ideas and their concrete implementation.
+This is a humbling and beautiful lesson. The logical purity of an algorithm is one thing; its behavior in the physical, finite world is another. The elegant certainty of Dijkstra's invariant can, in rare cases, be swallowed by the quicksand of [floating-point arithmetic](@keyword=floating_point_arithmetic|lang=en-US|style=Feynman), a stark reminder of the bridge between abstract ideas and their concrete implementation.

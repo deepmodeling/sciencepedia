@@ -13,11 +13,11 @@ But how does the artist actually learn? The critic's feedback is the only guide.
 
 The original design for this learning process, proposed by Ian Goodfellow and his colleagues, was elegantly simple. The Generator's objective was to minimize the quantity $\log(1 - D(G(z)))$. Let's unpack this. If the Generator is doing poorly, $D(G(z))$ is close to 0. Then $1 - D(G(z))$ is close to 1, and $\log(1)$ is 0. If the Generator is doing perfectly, $D(G(z))$ is close to 1. Then $1 - D(G(z))$ is close to 0, and $\log(1 - D(G(z)))$ plummets towards negative infinity. So, by trying to make this number as small as possible, the Generator is indeed trying to maximize its score, $D(G(z))$. It all seems perfectly logical.
 
-But there is a subtle and devastating flaw hiding in this logic. Think about how learning happens in these networks: through tiny adjustments to the Generator's parameters, guided by the *gradient* of the [loss function](@article_id:136290). The gradient is like a signpost telling the Generator which direction to adjust its process to get a better score. What does the gradient of $\log(1 - d)$ look like, where $d$ is the critic's score?
+But there is a subtle and devastating flaw hiding in this logic. Think about how learning happens in these networks: through tiny adjustments to the Generator's parameters, guided by the *gradient* of the [loss function](@keyword=loss_function|lang=en-US|style=Feynman). The gradient is like a signpost telling the Generator which direction to adjust its process to get a better score. What does the gradient of $\log(1 - d)$ look like, where $d$ is the critic's score?
 
-Here’s the catch. When the Generator is just starting out, it's terrible. Its forgeries are laughably bad. The Discriminator has no trouble spotting them, so the score $d=D(G(z))$ is extremely close to 0. In this exact situation, when the Generator needs the most guidance, the gradient of the original [loss function](@article_id:136290) becomes vanishingly small! The graph of $\log(1-d)$ is almost perfectly flat near $d=0$. A flat landscape has no slope, no gradient. The learning signal dries up.
+Here’s the catch. When the Generator is just starting out, it's terrible. Its forgeries are laughably bad. The Discriminator has no trouble spotting them, so the score $d=D(G(z))$ is extremely close to 0. In this exact situation, when the Generator needs the most guidance, the gradient of the original [loss function](@keyword=loss_function|lang=en-US|style=Feynman) becomes vanishingly small! The graph of $\log(1-d)$ is almost perfectly flat near $d=0$. A flat landscape has no slope, no gradient. The learning signal dries up.
 
-This is the infamous **[vanishing gradient problem](@article_id:143604)**. The artist gets a report card that just says "F, score: 0.001%", but no information on *how* to improve. The loss has "saturated". It’s like trying to climb a hill by feeling the slope, but you start in a perfectly flat meadow miles away from the peak. You have no idea which way to go. As a result, the Generator learns agonizingly slowly, or not at all .
+This is the infamous **[vanishing gradient problem](@keyword=vanishing_gradient_problem|lang=en-US|style=Feynman)**. The artist gets a report card that just says "F, score: 0.001%", but no information on *how* to improve. The loss has "saturated". It’s like trying to climb a hill by feeling the slope, but you start in a perfectly flat meadow miles away from the peak. You have no idea which way to go. As a result, the Generator learns agonizingly slowly, or not at all [@problem_id:3127285].
 
 ### A Simple and Profound Fix: The Non-Saturating Loss
 
@@ -27,7 +27,7 @@ Mathematically, this means that instead of minimizing $\log(1 - D(G(z)))$, the G
 
 Let's look at the gradient of this new loss function, $-\log(d)$. Think about the graph of $-\log(d)$ near $d=0$. Far from being flat, it's an incredibly steep cliff that shoots up to infinity. This steepness translates to a massive gradient!
 
-This one simple switch completely changes the feedback loop :
+This one simple switch completely changes the feedback loop [@problem_id:3124508]:
 
 -   With the original **saturating loss**, when the Generator is poor ($d \approx 0$), the learning signal is proportional to $d$, which is almost zero. **Bad performance leads to no feedback.**
 
@@ -37,12 +37,12 @@ The worse the Generator is, the stronger the "kick" it gets from the gradient, p
 
 ### A Concrete Picture: The Tale of Two Clusters
 
-To make this less abstract, let's imagine a simplified world. Suppose the "masterpieces" are just numbers clustered around a specific value, say 50. This is our "real data" distribution. Our Generator, just starting out, produces numbers clustered around a different value, say 10. The Discriminator quickly learns that any number near 50 is real and any number near 10 is fake .
+To make this less abstract, let's imagine a simplified world. Suppose the "masterpieces" are just numbers clustered around a specific value, say 50. This is our "real data" distribution. Our Generator, just starting out, produces numbers clustered around a different value, say 10. The Discriminator quickly learns that any number near 50 is real and any number near 10 is fake [@problem_id:3112798].
 
 -   Using the original saturating loss, the Generator, at its starting point of 10, receives an almost non-existent gradient. It's told "you're wrong," but the nudge to move from 10 towards 50 is infinitesimally small because the two clusters are so far apart and easily distinguished. The Discriminator's output $D(10)$ is so close to 0 that the learning signal vanishes.
 
 -   Using the non-saturating loss, the situation is reversed. Because the Generator is so far off the mark, it receives a powerful gradient. The learning signal is strong, giving a decisive push to shift its cluster from 10 towards 50. In fact, the strength of this push is proportional to the distance between the two clusters. The further away the Generator is, the harder it's told to correct its course.
 
-Crucially, in both cases, the direction of the gradient is the same: it correctly points from 10 towards 50 . The non-saturating loss doesn't change *where* the Generator needs to go, it just changes the "volume" of the instruction from a whisper to a clear, loud command.
+Crucially, in both cases, the direction of the gradient is the same: it correctly points from 10 towards 50 [@problem_id:3112798]. The non-saturating loss doesn't change *where* the Generator needs to go, it just changes the "volume" of the instruction from a whisper to a clear, loud command.
 
-This fundamental mechanism isn't just a quirk of this simple example. The core of the problem and its solution lies in the mathematics of how gradients flow backward through the network's components, specifically the final sigmoid activation function of the Discriminator  . The non-saturating loss is a general and robust fix. It represents a beautiful insight into the dynamics of adversarial learning: by reframing the Generator's goal in a subtly different but mathematically more potent way, we can transform a frustrating, stalled training process into a dynamic and successful one.
+This fundamental mechanism isn't just a quirk of this simple example. The core of the problem and its solution lies in the mathematics of how gradients flow backward through the network's components, specifically the final sigmoid activation function of the Discriminator [@problem_id:66082] [@problem_id:3112798]. The non-saturating loss is a general and robust fix. It represents a beautiful insight into the dynamics of adversarial learning: by reframing the Generator's goal in a subtly different but mathematically more potent way, we can transform a frustrating, stalled training process into a dynamic and successful one.

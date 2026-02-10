@@ -7,7 +7,7 @@ Imagine you have two separate trains of thought, each a sequence of ideas leadin
 
 ### The Anatomy of a Merge
 
-In the world of [data structures](@article_id:261640), a [singly linked list](@article_id:635490) is like a chain of treasure chests. Each chest (a **node**) contains some data and, crucially, a key that unlocks exactly one other chest—the `next` one. You start at the head of the chain and follow these keys until you find a chest with no key, the end of the list.
+In the world of [data structures](@keyword=data_structures|lang=en-US|style=Feynman), a [singly linked list](@keyword=singly_linked_list|lang=en-US|style=Feynman) is like a chain of treasure chests. Each chest (a **node**) contains some data and, crucially, a key that unlocks exactly one other chest—the `next` one. You start at the head of the chain and follow these keys until you find a chest with no key, the end of the list.
 
 When we say two linked lists, let's call them $L_A$ and $L_B$, intersect, we mean that at some point, they stop being two separate chains and become one. There is a specific node, let's call it $X$, that is part of both lists. The `next` pointer of some node in $L_A$ points to $X$, and the `next` pointer of some node in $L_B$ also points to the very same node $X$. This isn't a copy; it's the same object in the computer's memory. From node $X$ to the end of the chain, both lists are identical. This creates a **Y-shaped structure**, with two distinct "arms" (the prefixes) merging into a single "stem" (the shared suffix).
 
@@ -21,7 +21,7 @@ If path $A$ is longer than path $B$, it means Alice's unshared "arm" of the 'Y' 
 
 But what if we could give the person on the longer path a head start? First, we walk both paths to find their total lengths, $L_A$ and $L_B$. Let's say $L_A$ is longer. The difference in length, $\Delta L = L_A - L_B$, is entirely due to the difference in the lengths of their unique prefixes. So, we can simply tell Alice to walk $\Delta L$ steps forward on her path. Now, Alice and Bob are standing at points that are *equidistant* from the end of the lists. Because the stem is shared, they are also equidistant from the merge point.
 
-From here, the solution is simple: they both start walking forward one step at a time. The very first place their positions coincide is, by necessity, the intersection node. This is the **length-difference alignment** approach  .
+From here, the solution is simple: they both start walking forward one step at a time. The very first place their positions coincide is, by necessity, the intersection node. This is the **length-difference alignment** approach [@problem_id:3246371] [@problem_id:3246334].
 
 The algorithm is beautifully straightforward:
 1.  Traverse both lists to find their lengths, $L_A$ and $L_B$.
@@ -29,7 +29,7 @@ The algorithm is beautifully straightforward:
 3.  Advance the pointer on the longer list by $\Delta L$ steps.
 4.  Now, advance both pointers simultaneously. The node where they meet is the intersection.
 
-This principle is robust. It doesn't matter if the lists are singly linked or doubly linked; as long as we are traversing forward using `next` pointers, the logic holds perfectly . The presence of a `prev` pointer in a [doubly linked list](@article_id:633450) is extra information we don't even need for this particular problem. If the lists don't intersect at all, our initial length traversal will reveal that their tail nodes are different, and we can stop right there.
+This principle is robust. It doesn't matter if the lists are singly linked or doubly linked; as long as we are traversing forward using `next` pointers, the logic holds perfectly [@problem_id:3229757]. The presence of a `prev` pointer in a [doubly linked list](@keyword=doubly_linked_list|lang=en-US|style=Feynman) is extra information we don't even need for this particular problem. If the lists don't intersect at all, our initial length traversal will reveal that their tail nodes are different, and we can stop right there.
 
 ### Method 2: The Elegant Swap
 
@@ -41,13 +41,13 @@ This seems strange, but let's see what happens. Let the length of Alice's unique
 - Alice's journey: She first travels distance $a$, then distance $c$ to reach the end of her original path. She then teleports to the start of Bob's path and travels a distance $b$ to reach the merge point. Her total travel to the merge point is $a + c + b$.
 - Bob's journey: He first travels distance $b$, then distance $c$ to reach the end of his original path. He then teleports to the start of Alice's path and travels a distance $a$ to reach the merge point. His total travel to the merge point is $b + c + a$.
 
-Look at that! The total distance they each travel to arrive at the merge point is exactly the same: $a + b + c$. Since they walk at the same speed, they are guaranteed to meet at the merge point. This **two-pointer switching** approach is breathtakingly clever because it equalizes the path lengths without ever calculating them  .
+Look at that! The total distance they each travel to arrive at the merge point is exactly the same: $a + b + c$. Since they walk at the same speed, they are guaranteed to meet at the merge point. This **two-pointer switching** approach is breathtakingly clever because it equalizes the path lengths without ever calculating them [@problem_id:3255668] [@problem_id:3246334].
 
 What if the lists don't intersect? In that case, $c=0$. Alice travels her list (length $a$) and then Bob's list (length $b$). Bob travels his list (length $b$) and then Alice's list (length $a$). Both travel a total distance of $a+b$ and end up at the end of their second list. They will both become `null` at the exact same step, and since `null` is equal to `null`, the loop terminates. The meeting point is `null`, correctly telling us there is no intersection.
 
 ### Deconstructing the Junction
 
-Thinking about how to find the intersection solidifies our understanding of the structure. Now, let's take it a step further: what if we wanted to *delete* the intersection node? This thought experiment forces us to confront the physical reality of the pointers .
+Thinking about how to find the intersection solidifies our understanding of the structure. Now, let's take it a step further: what if we wanted to *delete* the intersection node? This thought experiment forces us to confront the physical reality of the pointers [@problem_id:3245582].
 
 An intersection node $X$ is unique because it has two "logical" predecessors. A node in $L_A$'s prefix points to it, and a different node in $L_B$'s prefix points to it. It's like a ring with two separate ropes tied to it. To remove the ring, you can't just untie one rope; the other is still attached. You must find *both* ropes that lead to the ring.
 

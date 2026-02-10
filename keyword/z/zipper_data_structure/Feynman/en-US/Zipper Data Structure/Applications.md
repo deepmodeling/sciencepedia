@@ -16,17 +16,17 @@ This is perhaps the most classic and intuitive application of the zipper. Imagin
 
 - When you hit **Redo**, it's the reverse: pop from the 'future' stack to find the new present, and push the old present onto the 'past' stack.
 
-Because stack operations (push and pop) are incredibly fast—they take constant time, $\mathcal{O}(1)$—undo and redo feel instantaneous, no matter how long your document's history is. The zipper structure () provides a beautifully simple and efficient model for navigating a linear timeline. It’s a perfect marriage of an abstract idea and a concrete, everyday feature.
+Because stack operations (push and pop) are incredibly fast—they take constant time, $\mathcal{O}(1)$—undo and redo feel instantaneous, no matter how long your document's history is. The zipper structure ([@problem_id:3226032]) provides a beautifully simple and efficient model for navigating a linear timeline. It’s a perfect marriage of an abstract idea and a concrete, everyday feature.
 
 ### Branching Realities: What-Ifs and Version Control
 
-The simple undo/redo model is great, but it has a limitation: when you make a new edit, you erase the redo history. What if you didn't want to? What if you wanted to explore a different path without losing the old one? This is the world of 'what-if' analysis, of simulations, and of [version control](@article_id:264188) systems like Git.
+The simple undo/redo model is great, but it has a limitation: when you make a new edit, you erase the redo history. What if you didn't want to? What if you wanted to explore a different path without losing the old one? This is the world of 'what-if' analysis, of simulations, and of [version control](@keyword=version_control|lang=en-US|style=Feynman) systems like Git.
 
-Here, the zipper's power in a *persistent* or *functional* setting comes to the forefront. In this world, [data structures](@article_id:261640) are immutable; an 'update' doesn't change the old structure but instead creates a new one that shares most of its components with the old.
+Here, the zipper's power in a *persistent* or *functional* setting comes to the forefront. In this world, [data structures](@keyword=data_structures|lang=en-US|style=Feynman) are immutable; an 'update' doesn't change the old structure but instead creates a new one that shares most of its components with the old.
 
-Imagine you're modeling a series of financial decisions, like in the [ski rental problem](@article_id:634134) where you must choose between renting and buying day after day. You have a timeline of decisions and their resulting costs. At some point, you might wonder, 'What if I had bought the skis on day 5 instead of day 10?'
+Imagine you're modeling a series of financial decisions, like in the [ski rental problem](@keyword=ski_rental_problem|lang=en-US|style=Feynman) where you must choose between renting and buying day after day. You have a timeline of decisions and their resulting costs. At some point, you might wonder, 'What if I had bought the skis on day 5 instead of day 10?'
 
-With a persistent zipper, you can simply `branch` at day 5. Because the data is immutable, creating this branch is an almost free, $\mathcal{O}(1)$ operation. You just create a new 'handle' to the timeline that points to the exact same past and future stacks. From that point on, any edits on the new branch create new states without affecting the original timeline. You can now explore two parallel universes of decisions, compare the outcomes, and all of this is managed elegantly by the zipper structure that keeps track of the different pasts and futures for each branch (). This is the core idea behind how systems like Git can manage complex branching histories so efficiently, and it's a powerful tool for any kind of simulation or exploratory analysis.
+With a persistent zipper, you can simply `branch` at day 5. Because the data is immutable, creating this branch is an almost free, $\mathcal{O}(1)$ operation. You just create a new 'handle' to the timeline that points to the exact same past and future stacks. From that point on, any edits on the new branch create new states without affecting the original timeline. You can now explore two parallel universes of decisions, compare the outcomes, and all of this is managed elegantly by the zipper structure that keeps track of the different pasts and futures for each branch ([@problem_id:3272220]). This is the core idea behind how systems like Git can manage complex branching histories so efficiently, and it's a powerful tool for any kind of simulation or exploratory analysis.
 
 ### Navigating the Labyrinth: Modifying Trees and Code
 
@@ -34,7 +34,7 @@ So far, we've been walking along a line. But much of the data in computer scienc
 
 The traditional approach is to give every node a pointer back to its parent. This works, but it can be cumbersome, error-prone, and adds memory overhead. The zipper offers a more elegant, functional solution. A tree zipper re-imagines the tree as, again, a **focus** (the subtree you're currently looking at) and a **context**. But this time, the context isn't just a simple list of past items. It's a path of 'breadcrumbs' back to the root.
 
-Each breadcrumb tells you how to get back to your parent. It says something like, 'You are the left child of a node whose value was $v$ and whose right child was *this* subtree.' By storing a list of these crumbs, you have a complete recipe for rebuilding the tree all the way to the top ().
+Each breadcrumb tells you how to get back to your parent. It says something like, 'You are the left child of a node whose value was $v$ and whose right child was *this* subtree.' By storing a list of these crumbs, you have a complete recipe for rebuilding the tree all the way to the top ([@problem_id:3264736]).
 
 To navigate, you move the focus down into a child, and in doing so, you create a new breadcrumb from the parent you just left and add it to your context. To make a change, you simply modify the focused subtree. Then, to get the final, updated tree, you 'zip up', using the breadcrumbs one by one to reconstruct each parent until you arrive back at the root.
 
@@ -44,24 +44,24 @@ This technique is fundamental in the implementation of compilers and interpreter
 
 You might be thinking that the zipper is a high-level concept, something for functional programmers or designers of fancy user interfaces. But one of its most profound roles is as a tool for *understanding*. It can reveal a hidden unity in seemingly disparate pieces of computer science.
 
-Let's take a look at a first-year computer science problem: reversing a [singly linked list](@article_id:635490). The standard, efficient solution is an iterative one that juggles three pointers, usually called `prev`, `curr`, and `next`. It's a classic algorithm, but for many students, why it works can feel a bit like magic—a carefully choreographed dance of pointer re-assignments.
+Let's take a look at a first-year computer science problem: reversing a [singly linked list](@keyword=singly_linked_list|lang=en-US|style=Feynman). The standard, efficient solution is an iterative one that juggles three pointers, usually called `prev`, `curr`, and `next`. It's a classic algorithm, but for many students, why it works can feel a bit like magic—a carefully choreographed dance of pointer re-assignments.
 
 Now, let's look at it through the lens of a list zipper. What is this algorithm really doing?
 - The `curr` pointer is the **focus**, pointing to the head of the list of nodes we still have to process. This is our 'right' context, $R$.
 - The `prev` pointer is the head of a new list being built from the nodes we've already processed. These nodes are linked in reverse order. This is our 'left' context, $L$.
 - The algorithm's main loop does one thing, over and over: it takes the focus element (`curr`), makes it the new head of the `prev` list, and then moves the focus one step to the right (`next`).
 
-This is *exactly* the motion of a zipper! The algorithm is simply moving the focus from the beginning to the end of the list, and at each step, it moves the focused element from the right context ($R$) to the left context ($L$). When the focus reaches the end and $R$ is empty, $L$ contains the fully reversed list. The three-pointer imperative algorithm is a direct, concrete implementation of the abstract zipper concept (). The zipper doesn't just provide a solution; it provides a profound explanation for *why* the [standard solution](@article_id:182598) works.
+This is *exactly* the motion of a zipper! The algorithm is simply moving the focus from the beginning to the end of the list, and at each step, it moves the focused element from the right context ($R$) to the left context ($L$). When the focus reaches the end and $R$ is empty, $L$ contains the fully reversed list. The three-pointer imperative algorithm is a direct, concrete implementation of the abstract zipper concept ([@problem_id:3267096]). The zipper doesn't just provide a solution; it provides a profound explanation for *why* the [standard solution](@keyword=standard_solution|lang=en-US|style=Feynman) works.
 
 ### Efficiency and Elegance Combined
 
-A beautiful abstraction is one thing, but is it practical? Can we really build [large-scale systems](@article_id:166354) on this idea? The answer is a resounding yes, because the zipper is not just elegant, it is designed for efficiency.
+A beautiful abstraction is one thing, but is it practical? Can we really build [large-scale systems](@keyword=large_scale_systems|lang=en-US|style=Feynman) on this idea? The answer is a resounding yes, because the zipper is not just elegant, it is designed for efficiency.
 
-Consider navigating a deeply nested structure, like a complex JSON object or a deeply recursive list. A naive [recursive function](@article_id:634498) might build up a huge [call stack](@article_id:634262), leading to a dreaded [stack overflow](@article_id:636676) error for very deep data.
+Consider navigating a deeply nested structure, like a complex JSON object or a deeply recursive list. A naive [recursive function](@keyword=recursive_function|lang=en-US|style=Feynman) might build up a huge [call stack](@keyword=call_stack|lang=en-US|style=Feynman), leading to a dreaded [stack overflow](@keyword=stack_overflow|lang=en-US|style=Feynman) error for very deep data.
 
-The zipper's structure naturally lends itself to iterative, non-recursive traversal. The 'context' explicitly stores the information that would normally be held implicitly on the [call stack](@article_id:634262). This means we can write navigation functions that don't grow the stack at all. In [functional programming](@article_id:635837), this is often accomplished with a technique called [tail recursion](@article_id:636331), where the recursive call is the very last thing a function does. In languages without guaranteed tail-call optimization, a simple 'trampoline' can be used to turn this deep recursion into a simple, efficient loop ().
+The zipper's structure naturally lends itself to iterative, non-recursive traversal. The 'context' explicitly stores the information that would normally be held implicitly on the [call stack](@keyword=call_stack|lang=en-US|style=Feynman). This means we can write navigation functions that don't grow the stack at all. In [functional programming](@keyword=functional_programming|lang=en-US|style=Feynman), this is often accomplished with a technique called [tail recursion](@keyword=tail_recursion|lang=en-US|style=Feynman), where the recursive call is the very last thing a function does. In languages without guaranteed tail-call optimization, a simple 'trampoline' can be used to turn this deep recursion into a simple, efficient loop ([@problem_id:3278344]).
 
-This demonstrates that the zipper is not just a conceptual tool but also a blueprint for writing robust, performant code. It guides us toward a design that is both easy to reason about and safe from the practical pitfalls of deep [recursion](@article_id:264202).
+This demonstrates that the zipper is not just a conceptual tool but also a blueprint for writing robust, performant code. It guides us toward a design that is both easy to reason about and safe from the practical pitfalls of deep [recursion](@keyword=recursion|lang=en-US|style=Feynman).
 
 ### A Unifying Perspective
 

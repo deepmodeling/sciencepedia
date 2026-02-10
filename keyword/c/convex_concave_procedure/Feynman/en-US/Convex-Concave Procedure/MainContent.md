@@ -1,7 +1,7 @@
 ## Introduction
 In the world of optimization, problems are often divided into two categories: the simple and the complex. Convex problems, akin to finding the bottom of a single, smooth bowl, are easily solved. However, most real-world challenges in fields like machine learning and finance present non-convex landscapes, filled with numerous peaks and valleys that can trap conventional algorithms in suboptimal solutions. This raises a critical question: how can we reliably navigate these complex terrains to find meaningful answers? This article addresses this challenge by introducing a powerful and elegant framework: the Convex-Concave Procedure (CCP). It reveals that a vast number of seemingly intractable non-convex problems possess a hidden, simpler structure known as a "Difference of Convex" (DC) form.
 
-The following chapters will guide you through this powerful technique. In "Principles and Mechanisms," we will explore the core idea of DC functions, learn how to identify this structure in various problems, and understand the step-by-step mechanics of the CCP algorithm that leverages this form. Subsequently, in "Applications and Interdisciplinary Connections," we will see how this method moves from theory to practice, unlocking solutions for robust data analysis, complex financial modeling, and efficient energy management. By understanding CCP, you will gain a versatile tool for tackling a wide range of [non-convex optimization](@article_id:634493) challenges.
+The following chapters will guide you through this powerful technique. In "Principles and Mechanisms," we will explore the core idea of DC functions, learn how to identify this structure in various problems, and understand the step-by-step mechanics of the CCP algorithm that leverages this form. Subsequently, in "Applications and Interdisciplinary Connections," we will see how this method moves from theory to practice, unlocking solutions for robust data analysis, complex financial modeling, and efficient energy management. By understanding CCP, you will gain a versatile tool for tackling a wide range of [non-convex optimization](@keyword=non_convex_optimization|lang=en-US|style=Feynman) challenges.
 
 ## Principles and Mechanisms
 
@@ -19,7 +19,7 @@ $$
 f(x) = g(x) - h(x)
 $$
 
-where both $g(x)$ and $h(x)$ are [convex functions](@article_id:142581).
+where both $g(x)$ and $h(x)$ are [convex functions](@keyword=convex_functions|lang=en-US|style=Feynman).
 
 Think about what this means. We are trying to find the minimum of a landscape formed by taking a large convex bowl, $g(x)$, and scooping out another smaller convex bowl, $h(x)$. The "scooped-out" part, $-h(x)$, is what makes the landscape non-convex and difficult. It creates a potential depression, a region that might trap an unwary explorer. This simple picture—a bowl minus a bowl—is the key that unlocks a powerful solution strategy.
 
@@ -31,9 +31,9 @@ Finding the $g(x)$ and $h(x)$ is a bit of an art, a game of rewriting a function
 
 **1. The Universal "Add-and-Subtract" Trick**
 
-Suppose you have a function that is non-convex but "smooth enough"—meaning its curvature doesn't go to negative infinity. A powerful, almost universal method is to add and subtract a simple [convex function](@article_id:142697). The most common choice is a quadratic bowl, $\alpha \|x\|^2$.
+Suppose you have a function that is non-convex but "smooth enough"—meaning its curvature doesn't go to negative infinity. A powerful, almost universal method is to add and subtract a simple [convex function](@keyword=convex_function|lang=en-US|style=Feynman). The most common choice is a quadratic bowl, $\alpha \|x\|^2$.
 
-Consider a general non-convex quadratic function, like $f(x) = x^{\mathsf{T}} Q x + c^{\mathsf{T}} x$, where the matrix $Q$ has both positive and negative eigenvalues, making the landscape curve up in some directions and down in others (a [saddle shape](@article_id:174589)) . This is a classic non-convex problem. How do we find its DC structure? We can just write:
+Consider a general non-convex quadratic function, like $f(x) = x^{\mathsf{T}} Q x + c^{\mathsf{T}} x$, where the matrix $Q$ has both positive and negative eigenvalues, making the landscape curve up in some directions and down in others (a [saddle shape](@keyword=saddle_shape|lang=en-US|style=Feynman)) [@problem_id:3163348]. This is a classic non-convex problem. How do we find its DC structure? We can just write:
 
 $$
 f(x) = \underbrace{\left( \alpha x^{\mathsf{T}} I x + c^{\mathsf{T}} x \right)}_{g(x)} - \underbrace{\left( \alpha x^{\mathsf{T}} I x - x^{\mathsf{T}} Q x \right)}_{h(x)}
@@ -43,23 +43,23 @@ Here, $g(x)$ is clearly a convex quadratic bowl (since $\alpha > 0$). For $h(x)$
 
 **2. The "Rewriting and Rearranging" Trick**
 
-More often than not, a clever algebraic rearrangement reveals a natural DC decomposition. Many of the non-[convex functions](@article_id:142581) we invent for practical applications have this property.
+More often than not, a clever algebraic rearrangement reveals a natural DC decomposition. Many of the non-[convex functions](@keyword=convex_functions|lang=en-US|style=Feynman) we invent for practical applications have this property.
 
-A classic example comes from machine learning and [robust statistics](@article_id:269561). Suppose we want to penalize errors, but we don't want to be overly influenced by huge [outliers](@article_id:172372). We might use a "capped" or "saturating" penalty, like $\min\{|d|, \beta\}$, which grows with the error $|d|$ but stops growing once the error surpasses a threshold $\beta$. This function is non-convex. However, using the simple identity $\min\{a, b\} = a - \max\{0, a-b\}$, we can rewrite it as:
+A classic example comes from machine learning and [robust statistics](@keyword=robust_statistics|lang=en-US|style=Feynman). Suppose we want to penalize errors, but we don't want to be overly influenced by huge [outliers](@keyword=outliers|lang=en-US|style=Feynman). We might use a "capped" or "saturating" penalty, like $\min\{|d|, \beta\}$, which grows with the error $|d|$ but stops growing once the error surpasses a threshold $\beta$. This function is non-convex. However, using the simple identity $\min\{a, b\} = a - \max\{0, a-b\}$, we can rewrite it as:
 
 $$
 \min\{|d|, \beta\} = \underbrace{|d|}_{g(d)} - \underbrace{\max\{0, |d|-\beta\}}_{h(d)}
 $$
 
-Look at what we've found! The first term, $|d|$, is convex. The second term, $\max\{0, |d|-\beta\}$, which represents the "overshoot" part of the error, is also convex. We've discovered the hidden DC structure. This exact trick is the key to tackling problems in [robust regression](@article_id:138712)  and even complex [graph partitioning](@article_id:152038) tasks .
+Look at what we've found! The first term, $|d|$, is convex. The second term, $\max\{0, |d|-\beta\}$, which represents the "overshoot" part of the error, is also convex. We've discovered the hidden DC structure. This exact trick is the key to tackling problems in [robust regression](@keyword=robust_regression|lang=en-US|style=Feynman) [@problem_id:3119897] and even complex [graph partitioning](@keyword=graph_partitioning|lang=en-US|style=Feynman) tasks [@problem_id:3119809].
 
-Another beautiful example arises when we want to encourage a variable $Z_{ij}$ to be either $0$ or $1$, a common task in areas like binary [matrix factorization](@article_id:139266) . A wonderfully simple way to do this is to add a penalty term like $\gamma Z_{ij}(1-Z_{ij})$. This function is zero at $Z_{ij}=0$ and $Z_{ij}=1$, and positive in between, pushing solutions to the endpoints. This penalty is concave (an upside-down parabola). We can write it as:
+Another beautiful example arises when we want to encourage a variable $Z_{ij}$ to be either $0$ or $1$, a common task in areas like binary [matrix factorization](@keyword=matrix_factorization|lang=en-US|style=Feynman) [@problem_id:3119844]. A wonderfully simple way to do this is to add a penalty term like $\gamma Z_{ij}(1-Z_{ij})$. This function is zero at $Z_{ij}=0$ and $Z_{ij}=1$, and positive in between, pushing solutions to the endpoints. This penalty is concave (an upside-down parabola). We can write it as:
 
 $$
 \gamma Z_{ij}(1-Z_{ij}) = \gamma Z_{ij} - \gamma Z_{ij}^2
 $$
 
-The entire [objective function](@article_id:266769), including this penalty, can then be rearranged into $g(Z) - h(Z)$, where $h(Z) = \gamma \sum_{ij} Z_{ij}^2$ contains the troublesome concave part.
+The entire [objective function](@keyword=objective_function|lang=en-US|style=Feynman), including this penalty, can then be rearranged into $g(Z) - h(Z)$, where $h(Z) = \gamma \sum_{ij} Z_{ij}^2$ contains the troublesome concave part.
 
 ### The Mechanism: The Convex-Concave Procedure (CCP)
 
@@ -67,9 +67,9 @@ Once we have our problem in the form $f(x) = g(x) - h(x)$, we can deploy the **C
 
 Here is the procedure. Imagine you are at a point $x^{(t)}$ in the landscape.
 1.  Look at the "scooped-out" bowl, $h(x)$.
-2.  At your current location $x^{(t)}$, find the [tangent plane](@article_id:136420) to this bowl. This plane is a linear function that perfectly approximates the bowl at that one point.
-3.  Because $h(x)$ is convex, its [tangent plane](@article_id:136420) at any point always lies entirely below it. This means that the negative of the [tangent plane](@article_id:136420) (a simple linear function) will always lie *above* the troublesome concave part $-h(x)$.
-4.  Create a new, temporary landscape by replacing $-h(x)$ with its [linear approximation](@article_id:145607). Your new objective is $g(x)$ plus this linear function. This new objective is **guaranteed to be convex**! It's just our original friendly bowl $g(x)$ tilted by a linear ramp.
+2.  At your current location $x^{(t)}$, find the [tangent plane](@keyword=tangent_plane|lang=en-US|style=Feynman) to this bowl. This plane is a linear function that perfectly approximates the bowl at that one point.
+3.  Because $h(x)$ is convex, its [tangent plane](@keyword=tangent_plane|lang=en-US|style=Feynman) at any point always lies entirely below it. This means that the negative of the [tangent plane](@keyword=tangent_plane|lang=en-US|style=Feynman) (a simple linear function) will always lie *above* the troublesome concave part $-h(x)$.
+4.  Create a new, temporary landscape by replacing $-h(x)$ with its [linear approximation](@keyword=linear_approximation|lang=en-US|style=Feynman). Your new objective is $g(x)$ plus this linear function. This new objective is **guaranteed to be convex**! It's just our original friendly bowl $g(x)$ tilted by a linear ramp.
 5.  Find the minimum of this new, easy, convex landscape. This new minimum is your next position, $x^{(t+1)}$.
 6.  Repeat the process from your new position.
 
@@ -79,16 +79,16 @@ $$
 x^{(t+1)} = \arg\min_x \left\{ g(x) - \langle \nabla h(x^{(t)}), x \rangle \right\}
 $$
 
-Here, $\nabla h(x^{(t)})$ is the gradient (the slope) of the [convex function](@article_id:142697) $h$ at our current point $x^{(t)}$. It defines the "tilt" of the ramp we are adding to $g(x)$. If $h(x)$ has sharp corners and is not differentiable everywhere (like the [absolute value function](@article_id:160112)), we use a **[subgradient](@article_id:142216)**, which is just a generalization of the gradient that picks one of the possible slopes at the corner  .
+Here, $\nabla h(x^{(t)})$ is the gradient (the slope) of the [convex function](@keyword=convex_function|lang=en-US|style=Feynman) $h$ at our current point $x^{(t)}$. It defines the "tilt" of the ramp we are adding to $g(x)$. If $h(x)$ has sharp corners and is not differentiable everywhere (like the [absolute value function](@keyword=absolute_value_function|lang=en-US|style=Feynman)), we use a **[subgradient](@keyword=subgradient|lang=en-US|style=Feynman)**, which is just a generalization of the gradient that picks one of the possible slopes at the corner [@problem_id:3119897] [@problem_id:3119809].
 
-We are, in essence, iteratively approximating the difficult non-convex problem with a sequence of tractable convex ones. Each step takes us to a lower point in the true landscape, marching steadily towards a solution. For instance, in designing a robust classifier  or performing binary [matrix factorization](@article_id:139266) , this procedure yields a concrete, explicit update rule that can be implemented in code, turning a seemingly impossible task into a series of manageable computations.
+We are, in essence, iteratively approximating the difficult non-convex problem with a sequence of tractable convex ones. Each step takes us to a lower point in the true landscape, marching steadily towards a solution. For instance, in designing a robust classifier [@problem_id:3119833] or performing binary [matrix factorization](@keyword=matrix_factorization|lang=en-US|style=Feynman) [@problem_id:3119844], this procedure yields a concrete, explicit update rule that can be implemented in code, turning a seemingly impossible task into a series of manageable computations.
 
 ### A Word of Caution: The Nature of the Destination
 
-The CCP is an incredibly powerful tool. It is a **descent algorithm**, meaning the value of our [objective function](@article_id:266769) $f(x)$ is guaranteed to decrease (or stay the same) at every single iteration. It will eventually converge. But where does it end up?
+The CCP is an incredibly powerful tool. It is a **descent algorithm**, meaning the value of our [objective function](@keyword=objective_function|lang=en-US|style=Feynman) $f(x)$ is guaranteed to decrease (or stay the same) at every single iteration. It will eventually converge. But where does it end up?
 
-Because the original problem is non-convex, the final destination of our algorithm usually depends on our starting point $x^{(0)}$. The CCP will guide us to a **stationary point**—a flat spot in the landscape where the slope is zero. This might be a desirable [local minimum](@article_id:143043), but it could also be a saddle point, or a [local minimum](@article_id:143043) that isn't the global one. The procedure is not guaranteed to find the absolute lowest point in the entire landscape.
+Because the original problem is non-convex, the final destination of our algorithm usually depends on our starting point $x^{(0)}$. The CCP will guide us to a **stationary point**—a flat spot in the landscape where the slope is zero. This might be a desirable [local minimum](@keyword=local_minimum|lang=en-US|style=Feynman), but it could also be a saddle point, or a [local minimum](@keyword=local_minimum|lang=en-US|style=Feynman) that isn't the global one. The procedure is not guaranteed to find the absolute lowest point in the entire landscape.
 
-In some cases, as seen in the analysis of indefinite quadratics , the naive CCP iteration might even be unstable. In practice, algorithms often include modifications, such as adding a "proximal" term that acts like a tether, keeping the next step close to the current one, which greatly improves stability and convergence properties.
+In some cases, as seen in the analysis of indefinite quadratics [@problem_id:3163348], the naive CCP iteration might even be unstable. In practice, algorithms often include modifications, such as adding a "proximal" term that acts like a tether, keeping the next step close to the current one, which greatly improves stability and convergence properties.
 
 Despite this, the Convex-Concave Procedure represents a monumental step forward. It provides a principled, effective, and broadly applicable framework for attacking a huge class of non-convex problems that were once considered out of reach. It teaches us that by looking for hidden, simpler structures within complex problems, we can devise elegant strategies to navigate their treacherous landscapes, one convex step at a time.

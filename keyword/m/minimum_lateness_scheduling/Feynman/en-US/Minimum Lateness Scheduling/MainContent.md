@@ -15,13 +15,13 @@ What's a good strategy? You could do the shortest chores first to get some quick
 
 It sounds almost *too* simple. Can it really be that easy? This is where the magic of algorithms comes in. We can prove, with an argument of delightful elegance, that this simple rule is not just good, it's *perfect*. No other order can beat it.
 
-The proof uses a powerful idea called an **[exchange argument](@article_id:634310)**. Let's say some other schedule, let's call it `Schedule-X`, is claimed to be optimal. If `Schedule-X` is not the same as our EDF schedule, it must contain at least one pair of jobs that are out of order according to their deadlines. That is, there must be two jobs, let's say Job A and Job B, scheduled back-to-back, where Job A comes first but has a *later* deadline than Job B. We call this an **inversion** .
+The proof uses a powerful idea called an **[exchange argument](@keyword=exchange_argument|lang=en-US|style=Feynman)**. Let's say some other schedule, let's call it `Schedule-X`, is claimed to be optimal. If `Schedule-X` is not the same as our EDF schedule, it must contain at least one pair of jobs that are out of order according to their deadlines. That is, there must be two jobs, let's say Job A and Job B, scheduled back-to-back, where Job A comes first but has a *later* deadline than Job B. We call this an **inversion** [@problem_id:3248272].
 
 What happens if we just... swap them? We decide to do Job B and then Job A. All other jobs in the schedule are unaffected; their start and completion times don't change. For our swapped pair, Job B now finishes earlier than it did before, so its lateness can only decrease. Job A now finishes later, precisely by the amount of time Job B takes. But here’s the crucial insight: because Job A had a later deadline than Job B to begin with, this swap is unlikely to make things worse. A careful analysis shows that the new maximum lateness of the pair is never greater than the old maximum lateness. In many cases, it's strictly better!
 
 We can repeat this process. We find an inversion in our schedule and we swap it. The maximum lateness never gets worse. We do it again, and again. Each swap is like tidying up a small mess. Eventually, all the inversions are gone, and what are we left with? The perfectly sorted Earliest Deadline First schedule! Since we arrived at the EDF schedule from an allegedly optimal one through a series of steps that never made things worse, the EDF schedule must be at least as good as that "optimal" schedule. It is, in fact, flawless for this goal.
 
-This is a recurring theme in science: a complex problem, which could be modeled with heavy machinery like a full-blown Mixed-Integer Linear Program , yields to a simple, beautiful rule. The discovery of such a rule is a triumph of insight over brute force.
+This is a recurring theme in science: a complex problem, which could be modeled with heavy machinery like a full-blown Mixed-Integer Linear Program [@problem_id:3152158], yields to a simple, beautiful rule. The discovery of such a rule is a triumph of insight over brute force.
 
 ### A Twist in the Tale: When the Simple Rule Breaks
 
@@ -29,7 +29,7 @@ So, we've found our silver bullet. EDF is optimal! Let's apply it everywhere! Bu
 
 Instead of worrying about the single worst-off chore, what if we want to minimize the *total unhappiness*? Let's define the **tardiness** of a chore as its lateness if it's late, and zero otherwise ($T_i = \max(0, C_i - d_i)$). Our new goal is to minimize the *sum* of all tardiness. This is a very reasonable objective; it aims to reduce the overall amount of lateness in the system.
 
-Let's see how our hero, the EDF rule, performs on this new playing field. We set up an example... and it fails. In some cases, a simple First-In, First-Out (FIFO) strategy, where you just do things in the order they were assigned, can result in a lower total tardiness than EDF. In other cases, EDF is better than FIFO .
+Let's see how our hero, the EDF rule, performs on this new playing field. We set up an example... and it fails. In some cases, a simple First-In, First-Out (FIFO) strategy, where you just do things in the order they were assigned, can result in a lower total tardiness than EDF. In other cases, EDF is better than FIFO [@problem_id:3261971].
 
 Suddenly, our elegant solution is no longer optimal. The problem of minimizing total tardiness turns out to be profoundly harder than minimizing maximum lateness. In fact, it's in a class of problems computer scientists call NP-hard, which is a fancy way of saying there is no known simple, efficient rule to find the perfect solution for all cases.
 
@@ -41,7 +41,7 @@ If one rule doesn't fit all, then we need a bigger toolkit. Let's consider anoth
 
 Furthermore, the jobs arrive **online**; you don't have the full list at the start of the day. A new order can appear at any moment. How do you decide what to work on now, and what to promise for later?
 
-Here, a new and wonderfully clever greedy strategy emerges . The rule is this: when a new job arrives, tentatively accept it. Check if it's still possible to schedule all the jobs you've currently accepted (including the new one) to meet their deadlines. If it is, great! You've just increased your throughput.
+Here, a new and wonderfully clever greedy strategy emerges [@problem_id:3205848]. The rule is this: when a new job arrives, tentatively accept it. Check if it's still possible to schedule all the jobs you've currently accepted (including the new one) to meet their deadlines. If it is, great! You've just increased your throughput.
 
 But what if it's not possible? The set of jobs is now infeasible. You must reject one. Which one? Your first thought might be to reject the one with the latest deadline, or the one that just arrived. The optimal strategy is more subtle: from the set of currently accepted jobs, reject the one with the **longest processing time**.
 
@@ -55,7 +55,7 @@ Let's visualize this as a network. Each job is a dot, and an arrow from dot A to
 
 Now, if you have an army of helpers (effectively, unlimited parallel machines), and you want to finish the whole project as early as possible, when can each task begin? A task can only begin when *all* of its prerequisites are complete. Its earliest possible start time is determined by the finish time of its latest-finishing prerequisite.
 
-This means that to find the earliest completion time for any given job, you have to trace all the paths of dependencies leading to it and find the one that takes the longest. This is precisely the **longest path problem** in a DAG . The minimum time to finish a project, known in management as the "critical path," is nothing more than the longest path through the project's [dependency graph](@article_id:274723). The jobs on this path are the ones with no slack; any delay in one of them directly delays the entire project.
+This means that to find the earliest completion time for any given job, you have to trace all the paths of dependencies leading to it and find the one that takes the longest. This is precisely the **longest path problem** in a DAG [@problem_id:3205296]. The minimum time to finish a project, known in management as the "critical path," is nothing more than the longest path through the project's [dependency graph](@keyword=dependency_graph|lang=en-US|style=Feynman). The jobs on this path are the ones with no slack; any delay in one of them directly delays the entire project.
 
 This reveals a deep and beautiful unity. The practical problem of scheduling a complex project is transformed into a classic problem in graph theory. We moved from thinking about *sequences* to thinking about *networks*. To solve our original problem—minimizing the maximum lateness—we no longer need to find the best order. We simply calculate the longest path to each job to find its earliest possible completion time, and then compare that to its deadline.
 

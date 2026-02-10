@@ -9,11 +9,11 @@ Imagine you want to understand the main themes in a vast library of books. You c
 
 Let's start with a simplifying assumption, one that seems almost foolishly naive at first, but turns out to be incredibly powerful. We'll decide to ignore grammar, sentence structure, and word order entirely. We treat a document like a "bag of words"—or, to use a tastier analogy, a smoothie. When you make a smoothie, you don't care if the banana went in before the strawberry; you only care about the final mixture: how *much* banana, how *much* strawberry.
 
-The **[bag-of-words](@entry_id:635726) (BoW)** model does the same for text. It represents a document simply by the counts of each word from a predefined vocabulary. The document "The rocket flew to the moon" and "To the moon the rocket flew" are identical in this view. All that matters is the final "keyword frequency profile": {the: 2, rocket: 1, flew: 1, to: 1, moon: 1}.
+The **[bag-of-words](@keyword=bag_of_words|lang=en-US|style=Feynman) (BoW)** model does the same for text. It represents a document simply by the counts of each word from a predefined vocabulary. The document "The rocket flew to the moon" and "To the moon the rocket flew" are identical in this view. All that matters is the final "keyword frequency profile": {the: 2, rocket: 1, flew: 1, to: 1, moon: 1}.
 
-This simple representation already presents a challenge. Even with a small vocabulary of, say, 10 keywords, a short document of 100 words can have an astronomical number of possible frequency profiles. The number of ways to distribute 100 words ($N$) into 10 vocabulary bins ($V$) is given by the "[stars and bars](@entry_id:153651)" formula from combinatorics, $\binom{N+V-1}{V-1}$ . For our small example, this is $\binom{100+10-1}{10-1} = \binom{109}{9}$, which is over 2 billion! We need a more structured way to think about these combinations than just counting them.
+This simple representation already presents a challenge. Even with a small vocabulary of, say, 10 keywords, a short document of 100 words can have an astronomical number of possible frequency profiles. The number of ways to distribute 100 words ($N$) into 10 vocabulary bins ($V$) is given by the "[stars and bars](@keyword=stars_and_bars|lang=en-US|style=Feynman)" formula from combinatorics, $\binom{N+V-1}{V-1}$ [@problem_id:1356413]. For our small example, this is $\binom{100+10-1}{10-1} = \binom{109}{9}$, which is over 2 billion! We need a more structured way to think about these combinations than just counting them.
 
-Of course, this simplification comes at a cost, a trade-off we must acknowledge. By throwing words into a bag, we lose all sequential information. The model cannot distinguish "no evidence of disease" from "evidence of disease" because the local context of "no" is lost . It cannot understand narrative progression—the difference between "symptom before treatment" and "treatment before symptom" . For now, we accept this limitation to gain a powerful tool for discovering the thematic "what" of a text corpus, even if we lose the sequential "how" and "when".
+Of course, this simplification comes at a cost, a trade-off we must acknowledge. By throwing words into a bag, we lose all sequential information. The model cannot distinguish "no evidence of disease" from "evidence of disease" because the local context of "no" is lost [@problem_id:4829991]. It cannot understand narrative progression—the difference between "symptom before treatment" and "treatment before symptom" [@problem_id:4749526]. For now, we accept this limitation to gain a powerful tool for discovering the thematic "what" of a text corpus, even if we lose the sequential "how" and "when".
 
 ### The Generative Story: Cooking Up a Document
 
@@ -23,7 +23,7 @@ In the world of LDA, we assume there are a certain number of hidden—or **laten
 *   A "Genetics" topic might be: {'gene': 0.05, 'DNA': 0.04, 'heredity': 0.02, ..., 'rocket': 0.00001, ...}
 *   A "Space Exploration" topic might be: {'rocket': 0.06, 'planet': 0.04, 'orbit': 0.03, ..., 'gene': 0.00001, ...}
 
-LDA tells a two-step story for how a document is "written" . Let's say you want to write an article about using genetic engineering to help humans survive on Mars.
+LDA tells a two-step story for how a document is "written" [@problem_id:4829991]. Let's say you want to write an article about using genetic engineering to help humans survive on Mars.
 
 1.  **Choose the Document's Topic Mixture ($\boldsymbol{\theta}_d$):** First, you decide on the thematic makeup of your article. You might decide it will be 60% "Space Exploration" and 40% "Genetics". This vector of proportions, $\boldsymbol{\theta}_d = (0.6, 0.4)$, is unique to your document.
 
@@ -37,7 +37,7 @@ This generative process gives us a beautifully simple mathematical foundation. T
 $$
 P(w=w^*) = \sum_{k=1}^{K} P(w=w^* | z=k) P(z=k)
 $$
-Here, $P(z=k)$ is the probability of choosing topic $k$ (from the document's mixture $\boldsymbol{\theta}_d$), and $P(w=w^* | z=k)$ is the probability of word $w^*$ within that topic's distribution ($\boldsymbol{\phi}_k$) . This equation is the heart of the model, connecting the words we see to the latent topics we don't.
+Here, $P(z=k)$ is the probability of choosing topic $k$ (from the document's mixture $\boldsymbol{\theta}_d$), and $P(w=w^* | z=k)$ is the probability of word $w^*$ within that topic's distribution ($\boldsymbol{\phi}_k$) [@problem_id:1613120]. This equation is the heart of the model, connecting the words we see to the latent topics we don't.
 
 ### Unbaking the Cake: The Art of Inference
 
@@ -47,7 +47,7 @@ This is a classic chicken-and-egg problem. If we knew the topic for each word, w
 
 Instead, we use a clever iterative algorithm, the most common being **collapsed Gibbs sampling**. It works like a detective slowly piecing together a complex case. Imagine we start by going through every word in every document and assigning it to a topic completely at random. The result is a chaotic, meaningless mess.
 
-But then, we begin to refine. We visit one word at a time, temporarily erase its random topic assignment, and decide on a new one by asking two simple questions :
+But then, we begin to refine. We visit one word at a time, temporarily erase its random topic assignment, and decide on a new one by asking two simple questions [@problem_id:3301957]:
 
 1.  **How well does this topic fit the document?** Look at all the *other* words in this document. If the document is already full of words we've assigned to "Genetics," it's highly probable that our current word also belongs to the "Genetics" topic.
 
@@ -59,18 +59,18 @@ The probability of assigning a word to a topic $k$ is proportional to the produc
 
 The probabilistic story of LDA is just one way to think about discovering latent structure. A parallel and equally beautiful perspective comes from geometry, through a technique called **Latent Semantic Analysis (LSA)**.
 
-In LSA, we start by creating a massive term-document matrix, with vocabulary terms as rows and documents as columns. Each cell in the matrix holds a number representing the importance of a term in a document, often a sophisticated weight like **TF-IDF**, which gives higher scores to words that are frequent in a specific document but rare in the corpus overall .
+In LSA, we start by creating a massive term-document matrix, with vocabulary terms as rows and documents as columns. Each cell in the matrix holds a number representing the importance of a term in a document, often a sophisticated weight like **TF-IDF**, which gives higher scores to words that are frequent in a specific document but rare in the corpus overall [@problem_id:3179867].
 
 This matrix defines a high-dimensional "word space". The core idea of LSA is that this space is noisy and redundant. The true semantic content can be captured in a much lower-dimensional subspace. LSA uses a powerful tool from linear algebra, the **Singular Value Decomposition (SVD)**, to find the best low-rank approximation of this matrix.
 
 What does this mean? Imagine a cloud of points in 3D space that is mostly flat, like the Milky Way galaxy. You could describe every star with three coordinates ($x, y, z$), but it's more efficient to define a 2D plane that runs through the middle of the galaxy and describe each star's position on that plane. SVD finds that optimal plane.
 
-In LSA, the "points" are the documents and the "dimensions" are the words. SVD finds the most important "directions" in this word space that capture the dominant patterns of how words appear together. These [orthonormal basis](@entry_id:147779) vectors are the topics! Each topic is a direction, defined as a weighted combination of all terms. A document is then represented by its coordinates along these principal topic-directions . This geometric approach of finding a new basis for the data is conceptually different from LDA's probabilistic story, yet both strive for the same goal: to reduce the complexity of text into a small number of meaningful, latent themes.
+In LSA, the "points" are the documents and the "dimensions" are the words. SVD finds the most important "directions" in this word space that capture the dominant patterns of how words appear together. These [orthonormal basis](@keyword=orthonormal_basis|lang=en-US|style=Feynman) vectors are the topics! Each topic is a direction, defined as a weighted combination of all terms. A document is then represented by its coordinates along these principal topic-directions [@problem_id:2431381]. This geometric approach of finding a new basis for the data is conceptually different from LDA's probabilistic story, yet both strive for the same goal: to reduce the complexity of text into a small number of meaningful, latent themes.
 
 ### The Architect's Dilemma and the Flow of Time
 
-Two major questions remain. First, how many topics should we tell the model to find? Five? Fifty? This is the architect's dilemma. Using too few topics might lump distinct ideas together; using too many might create meaningless, fragmented themes. This is a problem of **model selection**. We can't just pick the model that fits the observed data best, because a more complex model (more topics) will almost always fit better, at the risk of "overfitting" to noise. Instead, we embrace a form of Occam's Razor, formalized in criteria like the **Bayesian Information Criterion (BIC)**. This approach penalizes models for their complexity. The best number of topics, $K$, is the one that provides the best balance between fitting the data and remaining simple .
+Two major questions remain. First, how many topics should we tell the model to find? Five? Fifty? This is the architect's dilemma. Using too few topics might lump distinct ideas together; using too many might create meaningless, fragmented themes. This is a problem of **model selection**. We can't just pick the model that fits the observed data best, because a more complex model (more topics) will almost always fit better, at the risk of "overfitting" to noise. Instead, we embrace a form of Occam's Razor, formalized in criteria like the **Bayesian Information Criterion (BIC)**. This approach penalizes models for their complexity. The best number of topics, $K$, is the one that provides the best balance between fitting the data and remaining simple [@problem_id:3102768].
 
 Second, our models so far have been static. They take a snapshot of a corpus and find timeless themes. But what about topics that change over time? A "Technology" topic from the 1950s would be very different from one today. The static nature of LDA, which assumes a fixed set of topic-word distributions, cannot capture this evolution.
 
-This is where **Dynamic Topic Models** come in . They extend the LDA framework by allowing the topics themselves to evolve. The model for a topic at a particular time slice (e.g., the year 1990) is assumed to have evolved smoothly from the model at the previous time slice (1989). By linking topics across time, we can track the birth, evolution, and death of themes, turning our static snapshot of a library into a moving picture of our collective discourse. From a simple bag of words, we have journeyed to a framework capable of revealing the very dynamics of ideas.
+This is where **Dynamic Topic Models** come in [@problem_id:3179867]. They extend the LDA framework by allowing the topics themselves to evolve. The model for a topic at a particular time slice (e.g., the year 1990) is assumed to have evolved smoothly from the model at the previous time slice (1989). By linking topics across time, we can track the birth, evolution, and death of themes, turning our static snapshot of a library into a moving picture of our collective discourse. From a simple bag of words, we have journeyed to a framework capable of revealing the very dynamics of ideas.

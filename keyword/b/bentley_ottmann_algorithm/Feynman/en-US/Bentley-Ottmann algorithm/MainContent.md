@@ -5,7 +5,7 @@ The following chapters will guide you through this powerful technique. First, un
 
 ## Principles and Mechanisms
 
-How do you find if any two lines cross in a drawing? If you have just a handful, you can check them by eye. But what if you have a million? This is not an abstract puzzle; it's a fundamental problem that appears everywhere, from the design of microchips, where you must ensure wires don't accidentally cross, to [computer graphics](@article_id:147583), where you need to figure out which objects are visible and which are hidden.
+How do you find if any two lines cross in a drawing? If you have just a handful, you can check them by eye. But what if you have a million? This is not an abstract puzzle; it's a fundamental problem that appears everywhere, from the design of microchips, where you must ensure wires don't accidentally cross, to [computer graphics](@keyword=computer_graphics|lang=en-US|style=Feynman), where you need to figure out which objects are visible and which are hidden.
 
 ### From Brute Force to a Dimension of Time
 
@@ -22,9 +22,9 @@ What are these events?
 2.  **A segment ends**: The sweep-line reaches the right endpoint of a segment.
 3.  **Two segments intersect**: The sweep-line arrives at a point where two segments cross.
 
-By focusing only on these discrete events, we transform a continuous 2D problem into a more manageable 1D sequence of "interesting moments." The first step of the algorithm, then, is to create an **event queue**, a list of all the segment endpoints, sorted by their $x$-coordinate, from left to right (). This sorted list dictates the exact moments our sweep-line will pause to take action.
+By focusing only on these discrete events, we transform a continuous 2D problem into a more manageable 1D sequence of "interesting moments." The first step of the algorithm, then, is to create an **event queue**, a list of all the segment endpoints, sorted by their $x$-coordinate, from left to right ([@problem_id:3268760]). This sorted list dictates the exact moments our sweep-line will pause to take action.
 
-As the sweep-line moves, we need to keep track of which segments are currently "active"—that is, which segments are being intersected by the line. This collection of active segments is called the **sweep-line status**. Crucially, between any two consecutive events, the vertical ordering of these active segments cannot change. We can therefore maintain the status as a sorted list, ordered from bottom to top by the $y$-coordinate where each segment crosses the sweep-line. This list is a dynamic snapshot of the situation at the sweep-line's current position, $x$. The entire algorithm's performance hinges on efficiently updating this status at each event ().
+As the sweep-line moves, we need to keep track of which segments are currently "active"—that is, which segments are being intersected by the line. This collection of active segments is called the **sweep-line status**. Crucially, between any two consecutive events, the vertical ordering of these active segments cannot change. We can therefore maintain the status as a sorted list, ordered from bottom to top by the $y$-coordinate where each segment crosses the sweep-line. This list is a dynamic snapshot of the situation at the sweep-line's current position, $x$. The entire algorithm's performance hinges on efficiently updating this status at each event ([@problem_id:3252381]).
 
 ### The Magic Ingredient: Why Only Neighbors Matter
 
@@ -34,7 +34,7 @@ The answer is a resounding no. And the reason is a beautiful piece of geometric 
 
 **A new intersection can only ever occur between segments that are adjacent in the sweep-line status.**
 
-Why? Let's prove it with a simple thought experiment (). Suppose two non-adjacent segments, say segment $A$ and segment $C$, are on a collision course. If they are not adjacent in our status list, it means there must be at least one other segment, let's call it $B$, that is currently between them.
+Why? Let's prove it with a simple thought experiment ([@problem_id:3244301]). Suppose two non-adjacent segments, say segment $A$ and segment $C$, are on a collision course. If they are not adjacent in our status list, it means there must be at least one other segment, let's call it $B$, that is currently between them.
 
 Now, follow the paths of these three segments to the right. For $A$ and $C$ to eventually cross, one of them must first cross the segment $B$ that lies between them. This means that the intersection of $A$ and $C$ cannot possibly be the *very next* intersection to occur. A different intersection, involving segment $B$, must happen first.
 
@@ -44,28 +44,28 @@ This leads to a powerful conclusion: if we process events in their correct left-
 
 With this principle in hand, the algorithm becomes a beautifully choreographed dance. We have our event queue (the music score) and our status structure (the line of dancers).
 
-1.  **Left Endpoint Event**: A new dancer ($s$) enters the stage at position $x$. We find their spot in the ordered line of dancers (the status) based on their height ($y$-coordinate). We then ask: will this new dancer collide with their immediate neighbors, the dancer just above ($s_{above}$) and the one just below ($s_{below}$)? We perform two intersection tests: one for ($s, s_{above}$) and one for ($s, s_{below}$). If we predict a future collision, we create a new **intersection event** and add it to our event queue at the correct future $x$-coordinate ().
+1.  **Left Endpoint Event**: A new dancer ($s$) enters the stage at position $x$. We find their spot in the ordered line of dancers (the status) based on their height ($y$-coordinate). We then ask: will this new dancer collide with their immediate neighbors, the dancer just above ($s_{above}$) and the one just below ($s_{below}$)? We perform two intersection tests: one for ($s, s_{above}$) and one for ($s, s_{below}$). If we predict a future collision, we create a new **intersection event** and add it to our event queue at the correct future $x$-coordinate ([@problem_id:3268760]).
 
 2.  **Right Endpoint Event**: A dancer ($s$) leaves the stage. Before they go, their departure makes their former neighbors, $s_{above}$ and $s_{below}$, into a new adjacent pair. We must check if these two will now collide, and if so, schedule that intersection event. Then, we remove $s$ from the status.
 
-3.  **Intersection Event**: This is the most dramatic moment (). The sweep-line arrives at a predicted intersection of two adjacent dancers, $s_1$ and $s_2$.
+3.  **Intersection Event**: This is the most dramatic moment ([@problem_id:3244281]). The sweep-line arrives at a predicted intersection of two adjacent dancers, $s_1$ and $s_2$.
     *   First, we report the intersection.
-    *   Next, we update the status. Since $s_1$ and $s_2$ have just crossed, their vertical ordering is now swapped. We perform this **swap** in our status list ().
+    *   Next, we update the status. Since $s_1$ and $s_2$ have just crossed, their vertical ordering is now swapped. We perform this **swap** in our status list ([@problem_id:3244305]).
     *   Finally, this swap creates new adjacencies. Segment $s_1$ now has a new neighbor below it, and $s_2$ has a new neighbor above it. We must check these two new pairs for any future intersections and add them to the event queue if found.
 
-The algorithm proceeds by pulling the next event from the queue and performing this dance until the queue is empty. The total running time is beautifully captured by the expression $\Theta((n+k)\log n)$, where $n$ is the number of segments and $k$ is the number of intersections (). The $n \log n$ part comes from the initial sorting of endpoints and the logarithmic cost of managing the status structure. The $k \log n$ part is the cost of handling the intersections themselves. This means the algorithm is incredibly efficient for sparse drawings ($k$ is small) and gracefully scales with the complexity of the output, a hallmark of a great geometric algorithm ().
+The algorithm proceeds by pulling the next event from the queue and performing this dance until the queue is empty. The total running time is beautifully captured by the expression $\Theta((n+k)\log n)$, where $n$ is the number of segments and $k$ is the number of intersections ([@problem_id:3214281]). The $n \log n$ part comes from the initial sorting of endpoints and the logarithmic cost of managing the status structure. The $k \log n$ part is the cost of handling the intersections themselves. This means the algorithm is incredibly efficient for sparse drawings ($k$ is small) and gracefully scales with the complexity of the output, a hallmark of a great geometric algorithm ([@problem_id:3244132]).
 
 ### The Devil in the Details: Degeneracy and Order
 
 Of course, the real world is messy. What happens if multiple events occur at the *exact same* $x$-coordinate? For instance, a segment might end at the same $x$-value where another begins, and where a third pair of segments intersect. Does the order in which we process this batch of simultaneous events matter?
 
-Absolutely. To keep our logic sound, we must process the events at a given $x$ in a specific order that correctly simulates the transition from just before $x$ to just after $x$ (). The correct sequence is:
+Absolutely. To keep our logic sound, we must process the events at a given $x$ in a specific order that correctly simulates the transition from just before $x$ to just after $x$ ([@problem_id:3244210]). The correct sequence is:
 1.  Process all **right endpoints** (deletions) first. These segments are gone and shouldn't influence what comes next.
 2.  Process all **intersections** (swaps) second. The continuing segments sort out their new ordering.
 3.  Process all **left endpoints** (insertions) last. The new segments are placed into the now-stable ordering of continuing segments.
 
-There is one last, subtle piece of beauty. What does it mean for segment $a$ to be "above" segment $b$ if they intersect precisely *on* the sweep-line? A simple comparison of their $y$-coordinates gives a tie. A [data structure](@article_id:633770) like a [balanced binary search tree](@article_id:636056), which we use for the status, demands a strict, unambiguous ordering. It cannot tolerate such indecision.
+There is one last, subtle piece of beauty. What does it mean for segment $a$ to be "above" segment $b$ if they intersect precisely *on* the sweep-line? A simple comparison of their $y$-coordinates gives a tie. A [data structure](@keyword=data_structure|lang=en-US|style=Feynman) like a [balanced binary search tree](@keyword=balanced_binary_search_tree|lang=en-US|style=Feynman), which we use for the status, demands a strict, unambiguous ordering. It cannot tolerate such indecision.
 
-The solution is to peek an infinitesimal step into the future. If two segments $a$ and $b$ meet at the sweep-line, their order *just to the right* of the line is determined by their slopes. The segment with the steeper slope will be above the one with the gentler slope. A robust implementation of the comparator function for the status structure does exactly this: if the $y$-values are equal, it breaks the tie by comparing slopes. If the slopes are also equal (collinear segments), a final tie-breaker on a unique segment ID can be used to ensure a strict, [total order](@article_id:146287) ().
+The solution is to peek an infinitesimal step into the future. If two segments $a$ and $b$ meet at the sweep-line, their order *just to the right* of the line is determined by their slopes. The segment with the steeper slope will be above the one with the gentler slope. A robust implementation of the comparator function for the status structure does exactly this: if the $y$-values are equal, it breaks the tie by comparing slopes. If the slopes are also equal (collinear segments), a final tie-breaker on a unique segment ID can be used to ensure a strict, [total order](@keyword=total_order|lang=en-US|style=Feynman) ([@problem_id:3244218]).
 
 This careful handling of details reveals the deep connection between the abstract geometric idea and the rigorous demands of a working data structure. The Bentley-Ottmann algorithm is not just a clever trick; it is a masterclass in how changing one's perspective—from a static picture to a dynamic process unfolding in time—can transform an impossibly complex problem into an elegant and efficient dance of logic.

@@ -13,29 +13,29 @@ But what do the 16 numbers in this matrix actually *mean*? Are they just abstrac
 
 Let's begin our journey with the simplest possible "interaction": passing light through a perfect, crystal-clear pane of glass, straight on. The glass is perfectly transparent and has anti-reflection coatings, so no light is lost. It's made of a uniform material, so it doesn't favor one polarization over another. What happens to the light's Stokes vector? Absolutely nothing! The output is identical to the input.
 
-To make $\vec{S}_{out} = \vec{S}_{in}$ for *any* possible light state, the Mueller matrix must be the optical equivalent of the number 1: the **[identity matrix](@article_id:156230)**.
+To make $\vec{S}_{out} = \vec{S}_{in}$ for *any* possible light state, the Mueller matrix must be the optical equivalent of the number 1: the **[identity matrix](@keyword=identity_matrix|lang=en-US|style=Feynman)**.
 
 $$
 M_{identity} = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}
 $$
 
-This is our baseline . It represents a completely passive element, the "empty space" of [polarization optics](@article_id:269967). Any deviation from this matrix signals that something interesting is happening to the light.
+This is our baseline [@problem_id:2241484]. It represents a completely passive element, the "empty space" of [polarization optics](@keyword=polarization_optics|lang=en-US|style=Feynman). Any deviation from this matrix signals that something interesting is happening to the light.
 
 ### The Four Fundamental Dialogues with Light
 
-Fundamentally, an optical element can interact with the polarization of light in four distinct ways. It can selectively filter it (**[diattenuation](@article_id:171454)**), delay parts of it (**retardance**), rotate it (**[optical activity](@article_id:138832)**), or scramble it (**[depolarization](@article_id:155989)**). The Mueller matrix elegantly captures all four of these phenomena, either in isolation or all at once.
+Fundamentally, an optical element can interact with the polarization of light in four distinct ways. It can selectively filter it (**[diattenuation](@keyword=diattenuation|lang=en-US|style=Feynman)**), delay parts of it (**retardance**), rotate it (**[optical activity](@keyword=optical_activity|lang=en-US|style=Feynman)**), or scramble it (**[depolarization](@keyword=depolarization|lang=en-US|style=Feynman)**). The Mueller matrix elegantly captures all four of these phenomena, either in isolation or all at once.
 
 #### 1. Diattenuation: The Art of Selective Filtering
 
-Let's start with the simplest change that isn't "nothing." What if we just want to dim the light without altering its polarization character? Think of putting on a pair of sunglasses. An ideal **neutral density filter** does exactly this. If it transmits, say, 35% of the light, it reduces the total intensity $S_0$ to $0.35 S_0$. To keep the polarization state the same, all other Stokes parameters must also be reduced by the same factor. The resulting Mueller matrix is simply the [identity matrix](@article_id:156230) scaled by the transmittance, $\mathcal{T}$ .
+Let's start with the simplest change that isn't "nothing." What if we just want to dim the light without altering its polarization character? Think of putting on a pair of sunglasses. An ideal **neutral density filter** does exactly this. If it transmits, say, 35% of the light, it reduces the total intensity $S_0$ to $0.35 S_0$. To keep the polarization state the same, all other Stokes parameters must also be reduced by the same factor. The resulting Mueller matrix is simply the [identity matrix](@keyword=identity_matrix|lang=en-US|style=Feynman) scaled by the transmittance, $\mathcal{T}$ [@problem_id:2241439].
 
 $$
 M_{ND} = \begin{pmatrix} \mathcal{T} & 0 & 0 & 0 \\ 0 & \mathcal{T} & 0 & 0 \\ 0 & 0 & \mathcal{T} & 0 \\ 0 & 0 & 0 & \mathcal{T} \end{pmatrix} = \mathcal{T} \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}
 $$
 
-But what if the filter is *not* neutral? What if it has a preference? This is the essence of a **polarizer**. A [polarizer](@article_id:173873) is a selective filter; it's a gatekeeper that lets one type of polarization pass more easily than another. This property is called **[diattenuation](@article_id:171454)**.
+But what if the filter is *not* neutral? What if it has a preference? This is the essence of a **polarizer**. A [polarizer](@keyword=polarizer|lang=en-US|style=Feynman) is a selective filter; it's a gatekeeper that lets one type of polarization pass more easily than another. This property is called **[diattenuation](@keyword=diattenuation|lang=en-US|style=Feynman)**.
 
-Consider a real-world, "leaky" horizontal [polarizer](@article_id:173873). It's designed to let horizontally [polarized light](@article_id:272666) through but might accidentally let a tiny fraction of vertically [polarized light](@article_id:272666) sneak by. Let's say it has a transmittance of $T_H = 1.0$ for horizontal light and $T_V = 0.01$ for vertical light . The Mueller matrix for such an element reveals this preference directly:
+Consider a real-world, "leaky" horizontal [polarizer](@keyword=polarizer|lang=en-US|style=Feynman). It's designed to let horizontally [polarized light](@keyword=polarized_light|lang=en-US|style=Feynman) through but might accidentally let a tiny fraction of vertically [polarized light](@keyword=polarized_light|lang=en-US|style=Feynman) sneak by. Let's say it has a transmittance of $T_H = 1.0$ for horizontal light and $T_V = 0.01$ for vertical light [@problem_id:2241474]. The Mueller matrix for such an element reveals this preference directly:
 
 $$
 M_{leaky} = \begin{pmatrix}
@@ -53,7 +53,7 @@ $$
 
 Look at that first row! The output intensity $S'_0$ is now a mix: $S'_0 = M_{00}S_0 + M_{01}S_1 + \dots$. The transmittance depends on the input polarization. Unpolarized light ($S_1=S_2=S_3=0$) has a transmittance of $M_{00} = 0.505$. But purely horizontal light ($S_1=S_0$) has a higher transmittance, while purely vertical light ($S_1=-S_0$) has a lower one.
 
-This leads to a beautiful insight: the first row of any Mueller matrix is the key to its filtering behavior. The quantity **[diattenuation](@article_id:171454)**, $D$, which measures the range of possible transmittances, can be calculated directly from these elements :
+This leads to a beautiful insight: the first row of any Mueller matrix is the key to its filtering behavior. The quantity **[diattenuation](@keyword=diattenuation|lang=en-US|style=Feynman)**, $D$, which measures the range of possible transmittances, can be calculated directly from these elements [@problem_id:2241475]:
 
 $$
 D = \frac{\sqrt{M_{01}^2 + M_{02}^2 + M_{03}^2}}{M_{00}}
@@ -63,36 +63,36 @@ This tells us, just by looking at the matrix, how strongly the element favors ce
 
 #### 2. Retardance: A Race Between Polarizations
 
-Instead of filtering light, we can play a more subtle game. We can let all the light through, but make one polarization component lag slightly behind another. This is **retardance**. Imagine two runners representing horizontal and vertical polarizations. A [retarder](@article_id:171749) doesn't stop either runner, it just makes the track slightly longer for one of them. This phase shift, $\epsilon$, doesn't change the total intensity, but it can dramatically alter the polarization state.
+Instead of filtering light, we can play a more subtle game. We can let all the light through, but make one polarization component lag slightly behind another. This is **retardance**. Imagine two runners representing horizontal and vertical polarizations. A [retarder](@keyword=retarder|lang=en-US|style=Feynman) doesn't stop either runner, it just makes the track slightly longer for one of them. This phase shift, $\epsilon$, doesn't change the total intensity, but it can dramatically alter the polarization state.
 
-A classic example is a **[half-wave plate](@article_id:163540)**, which introduces a phase shift of $\epsilon = \pi$ (or 180 degrees) . If its fast axis is vertical ($\theta = \pi/2$), its Mueller matrix is:
+A classic example is a **[half-wave plate](@keyword=half_wave_plate|lang=en-US|style=Feynman)**, which introduces a phase shift of $\epsilon = \pi$ (or 180 degrees) [@problem_id:2241451]. If its fast axis is vertical ($\theta = \pi/2$), its Mueller matrix is:
 
 $$
 M_{HWP, vert} = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & -1 & 0 \\ 0 & 0 & 0 & -1 \end{pmatrix}
 $$
 
-What does this matrix do? It leaves the total intensity ($S_0$) and the horizontal/vertical balance ($S_1$) unchanged. But it flips the sign of $S_2$ and $S_3$. This means it turns a $+45^\circ$ polarized state into a $-45^\circ$ state, and right-[circularly polarized light](@article_id:197880) into left-[circularly polarized light](@article_id:197880). It's like a mirror for certain aspects of polarization. Other retarders, like quarter-[wave plates](@article_id:274560), perform other fascinating transformations, such as turning [linear polarization](@article_id:272622) into circular.
+What does this matrix do? It leaves the total intensity ($S_0$) and the horizontal/vertical balance ($S_1$) unchanged. But it flips the sign of $S_2$ and $S_3$. This means it turns a $+45^\circ$ polarized state into a $-45^\circ$ state, and right-[circularly polarized light](@keyword=circularly_polarized_light|lang=en-US|style=Feynman) into left-[circularly polarized light](@keyword=circularly_polarized_light|lang=en-US|style=Feynman). It's like a mirror for certain aspects of polarization. Other retarders, like quarter-[wave plates](@keyword=wave_plates|lang=en-US|style=Feynman), perform other fascinating transformations, such as turning [linear polarization](@keyword=linear_polarization|lang=en-US|style=Feynman) into circular.
 
 #### 3. Depolarization: Scrambling the Message
 
 This is where the Mueller calculus truly shines. So far, we've considered "pure" interactions where one perfectly defined polarization state is transformed into another. But what happens when light scatters off a rough surface, or passes through a milky fluid? The clean, orderly polarization state can become jumbled and randomized. A fully polarized beam can emerge as a partially polarized, or even completely unpolarized, beam. This is **depolarization**, and it's a phenomenon the simpler Jones matrix formalism cannot handle.
 
-How does the Mueller matrix describe this? Let's consider a hypothetical "isotropic depolarizer" that reduces the [degree of polarization](@article_id:276196) without having a preferred axis . It leaves the total intensity $S_0$ untouched, but it uniformly shrinks the other three Stokes parameters by a factor $p$ (where $p=1$ is no [depolarization](@article_id:155989) and $p=0$ is complete [depolarization](@article_id:155989)). The matrix is wonderfully intuitive:
+How does the Mueller matrix describe this? Let's consider a hypothetical "isotropic depolarizer" that reduces the [degree of polarization](@keyword=degree_of_polarization|lang=en-US|style=Feynman) without having a preferred axis [@problem_id:2241443]. It leaves the total intensity $S_0$ untouched, but it uniformly shrinks the other three Stokes parameters by a factor $p$ (where $p=1$ is no [depolarization](@keyword=depolarization|lang=en-US|style=Feynman) and $p=0$ is complete [depolarization](@keyword=depolarization|lang=en-US|style=Feynman)). The matrix is wonderfully intuitive:
 
 $$
 M_{depolarizer} = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & p & 0 & 0 \\ 0 & 0 & p & 0 \\ 0 & 0 & 0 & p \end{pmatrix}
 $$
 
-This matrix literally "washes out" the polarization information. If you send in perfectly horizontal light ($\vec{S}_{in} = [I_0, I_0, 0, 0]^T$), the output is $\vec{S}_{out} = [I_0, p I_0, 0, 0]^T$. The light is still predominantly horizontally polarized, but its "[degree of polarization](@article_id:276196)," originally 1, is now just $p$.
+This matrix literally "washes out" the polarization information. If you send in perfectly horizontal light ($\vec{S}_{in} = [I_0, I_0, 0, 0]^T$), the output is $\vec{S}_{out} = [I_0, p I_0, 0, 0]^T$. The light is still predominantly horizontally polarized, but its "[degree of polarization](@keyword=degree_of_polarization|lang=en-US|style=Feynman)," originally 1, is now just $p$.
 
-The physical origin of [depolarization](@article_id:155989) is often a statistical mixing process. Imagine splitting a beam, sending half through a horizontal [polarizer](@article_id:173873) and the other half through a vertical one, and then recombining them *incoherently* (so they can't interfere). The resulting Mueller matrix is simply the weighted average of the two individual matrices . This mixture results in a partially polarized state. This reveals a deep truth: depolarization isn't some mysterious [fifth force](@article_id:157032) of optics. It's often just the macroscopic result of averaging many different, pure polarization events.
+The physical origin of [depolarization](@keyword=depolarization|lang=en-US|style=Feynman) is often a statistical mixing process. Imagine splitting a beam, sending half through a horizontal [polarizer](@keyword=polarizer|lang=en-US|style=Feynman) and the other half through a vertical one, and then recombining them *incoherently* (so they can't interfere). The resulting Mueller matrix is simply the weighted average of the two individual matrices [@problem_id:1020471]. This mixture results in a partially polarized state. This reveals a deep truth: depolarization isn't some mysterious [fifth force](@keyword=fifth_force|lang=en-US|style=Feynman) of optics. It's often just the macroscopic result of averaging many different, pure polarization events.
 
 ### The Symphony of Optics: Combining Elements
 
-The true power of the Mueller formalism is its ability to describe complex systems. What happens when light passes through a [polarizer](@article_id:173873), then a [wave plate](@article_id:163359), then a rotator? It's as simple as multiplying their matrices—in the correct order! If light passes through element A, then B, then C, the total system is described by $M_{total} = M_C M_B M_A$. The order is crucial, as [matrix multiplication](@article_id:155541) is not commutative.
+The true power of the Mueller formalism is its ability to describe complex systems. What happens when light passes through a [polarizer](@keyword=polarizer|lang=en-US|style=Feynman), then a [wave plate](@keyword=wave_plate|lang=en-US|style=Feynman), then a rotator? It's as simple as multiplying their matrices—in the correct order! If light passes through element A, then B, then C, the total system is described by $M_{total} = M_C M_B M_A$. The order is crucial, as [matrix multiplication](@keyword=matrix_multiplication|lang=en-US|style=Feynman) is not commutative.
 
-This allows us to analyze and predict the behavior of incredibly complex optical trains , . By composing the matrices for simple diattenuators, retarders, and depolarizers, we can build a mathematical model for nearly any optical component or system.
+This allows us to analyze and predict the behavior of incredibly complex optical trains [@problem_id:2241444], [@problem_id:1020351]. By composing the matrices for simple diattenuators, retarders, and depolarizers, we can build a mathematical model for nearly any optical component or system.
 
-Even in these complex systems, an underlying order can emerge. For any given Mueller matrix, there are often special input [polarization states](@article_id:174636), called **[eigenstates](@article_id:149410)**, that are changed in a particularly simple way by the system—they are only scaled in intensity, not changed in form . Finding these eigenstates is like finding the natural resonant frequencies of a musical instrument; it reveals the fundamental modes of interaction between the light and the system.
+Even in these complex systems, an underlying order can emerge. For any given Mueller matrix, there are often special input [polarization states](@keyword=polarization_states|lang=en-US|style=Feynman), called **[eigenstates](@keyword=eigenstates|lang=en-US|style=Feynman)**, that are changed in a particularly simple way by the system—they are only scaled in intensity, not changed in form [@problem_id:1020481]. Finding these eigenstates is like finding the natural resonant frequencies of a musical instrument; it reveals the fundamental modes of interaction between the light and the system.
 
-The Mueller matrix, therefore, is far more than a computational tool. It's a complete language for describing the [interaction of light and matter](@article_id:268409). Its 16 numbers form a comprehensive fingerprint, revealing an object's secrets: its preferences for transmitting certain polarizations, its ability to twist and delay light, and even its tendency to randomize and scramble the beautiful order of a polarized beam. It is a testament to the power of mathematics to capture the intricate dance of light in a single, elegant structure.
+The Mueller matrix, therefore, is far more than a computational tool. It's a complete language for describing the [interaction of light and matter](@keyword=interaction_of_light_and_matter|lang=en-US|style=Feynman). Its 16 numbers form a comprehensive fingerprint, revealing an object's secrets: its preferences for transmitting certain polarizations, its ability to twist and delay light, and even its tendency to randomize and scramble the beautiful order of a polarized beam. It is a testament to the power of mathematics to capture the intricate dance of light in a single, elegant structure.

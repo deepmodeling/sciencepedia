@@ -5,13 +5,13 @@ At its core, MOM is a philosophy of analogy: it posits that a sufficiently large
 
 ## Principles and Mechanisms
 
-At the heart of science lies a profound act of faith: that the chaotic, messy world we observe is governed by elegant, underlying principles. A physicist sees a falling apple and intuits a universal law of [gravitation](@entry_id:189550). A statistician, faced with a list of numbers—data from an experiment, prices from the stock market, failure times of a machine—also seeks to find the simple, hidden process that generated them. The Method of Moments is one of the oldest and most intuitive strategies for making this leap from data to principle. It is built on a single, beautifully simple idea: **what we see in a large enough sample should look like its theoretical counterpart.**
+At the heart of science lies a profound act of faith: that the chaotic, messy world we observe is governed by elegant, underlying principles. A physicist sees a falling apple and intuits a universal law of [gravitation](@keyword=gravitation|lang=en-US|style=Feynman). A statistician, faced with a list of numbers—data from an experiment, prices from the stock market, failure times of a machine—also seeks to find the simple, hidden process that generated them. The Method of Moments is one of the oldest and most intuitive strategies for making this leap from data to principle. It is built on a single, beautifully simple idea: **what we see in a large enough sample should look like its theoretical counterpart.**
 
 This is a principle of analogy. We have a theoretical model of the world, described by parameters—the knobs and dials of our mathematical machine. We also have the real world, represented by our data. The Method of Moments proposes that we tune the knobs of our theoretical model until its fundamental characteristics, its "moments," match the characteristics we measure from our data.
 
 ### The Simplest Analogy: Matching the Average
 
-Let's begin with a game. Suppose a friend has a [random number generator](@entry_id:636394) that spits out numbers uniformly between $0$ and some secret maximum value, $\theta$. You don't know $\theta$, but you get to see a list of numbers it produced: $X_1, X_2, \dots, X_n$. How would you guess your friend's secret number?
+Let's begin with a game. Suppose a friend has a [random number generator](@keyword=random_number_generator|lang=en-US|style=Feynman) that spits out numbers uniformly between $0$ and some secret maximum value, $\theta$. You don't know $\theta$, but you get to see a list of numbers it produced: $X_1, X_2, \dots, X_n$. How would you guess your friend's secret number?
 
 You might think for a moment. If the numbers are spread evenly between $0$ and $\theta$, their average should be somewhere in the middle. The **theoretical average**, or the **first theoretical moment**, for a uniform distribution $U(0, \theta)$ is exactly halfway: $E[X] = \frac{\theta}{2}$. Now, you look at your data. You can easily calculate the average of the numbers you actually saw, which we call the **first sample moment**: $\bar{X} = \frac{1}{n}\sum_{i=1}^{n} X_i$.
 
@@ -21,9 +21,9 @@ $$
 E[X] = \bar{X} \quad \implies \quad \frac{\theta}{2} = \bar{X}
 $$
 
-Solving for our unknown parameter $\theta$ gives us our estimate, which we denote with a "hat": $\hat{\theta}_{MOM} = 2\bar{X}$ . It's that simple. You take the average of your data and double it. This is our best guess for the secret maximum number.
+Solving for our unknown parameter $\theta$ gives us our estimate, which we denote with a "hat": $\hat{\theta}_{MOM} = 2\bar{X}$ [@problem_id:3224]. It's that simple. You take the average of your data and double it. This is our best guess for the secret maximum number.
 
-This fundamental idea is remarkably versatile. Are you a materials scientist studying the probability $p$ that an optical fiber will fracture under stress? Your model might be a Negative Binomial distribution, where the average number of surviving fibers is $E[X] = \frac{r(1-p)}{p}$. The Method of Moments instructs you to measure the average number of survivors in your experiments, $\bar{X}$, and solve the equation $\bar{X} = \frac{r(1-p)}{p}$ for $p$ . Are you a quantum engineer modeling [qubit decoherence](@entry_id:142121)? The average time until a qubit fails might be $E[X] = 1/p$. Your estimate for the decoherence probability is simply $\hat{p} = 1/\bar{X}$ . In each case, we link theory to reality through the simplest of all statistics: the average.
+This fundamental idea is remarkably versatile. Are you a materials scientist studying the probability $p$ that an optical fiber will fracture under stress? Your model might be a Negative Binomial distribution, where the average number of surviving fibers is $E[X] = \frac{r(1-p)}{p}$. The Method of Moments instructs you to measure the average number of survivors in your experiments, $\bar{X}$, and solve the equation $\bar{X} = \frac{r(1-p)}{p}$ for $p$ [@problem_id:1909347]. Are you a quantum engineer modeling [qubit decoherence](@keyword=qubit_decoherence|lang=en-US|style=Feynman)? The average time until a qubit fails might be $E[X] = 1/p$. Your estimate for the decoherence probability is simply $\hat{p} = 1/\bar{X}$ [@problem_id:1920117]. In each case, we link theory to reality through the simplest of all statistics: the average.
 
 ### A Full Dashboard: Matching Multiple Moments
 
@@ -36,7 +36,7 @@ A "moment" is just the theoretical average of a power of our random variable. Th
 1.  First moment: $E[X] = \mu$
 2.  Second moment: $E[X^2] = \mathrm{Var}(X) + (E[X])^2 = \sigma^2 + \mu^2$
 
-Now we turn to our data. We compute the corresponding [sample moments](@entry_id:167695):
+Now we turn to our data. We compute the corresponding [sample moments](@keyword=sample_moments|lang=en-US|style=Feynman):
 
 1.  First sample moment: $\hat{m}_1 = \frac{1}{n} \sum X_i = \bar{X}$
 2.  Second sample moment: $\hat{m}_2 = \frac{1}{n} \sum X_i^2$
@@ -61,7 +61,7 @@ $$
 \hat{\sigma}^2_{MOM} = \frac{1}{n} \sum X_i^2 - (\bar{X})^2
 $$
 
-A little algebraic manipulation reveals this is exactly equal to $\frac{1}{n} \sum (X_i - \bar{X})^2$, the average of the squared deviations from the sample mean . Once again, the method gives an answer that is not only simple but also deeply intuitive: our estimate for the [population variance](@entry_id:901078) is simply the variance we see in the sample.
+A little algebraic manipulation reveals this is exactly equal to $\frac{1}{n} \sum (X_i - \bar{X})^2$, the average of the squared deviations from the sample mean [@problem_id:4927889]. Once again, the method gives an answer that is not only simple but also deeply intuitive: our estimate for the [population variance](@keyword=population_variance|lang=en-US|style=Feynman) is simply the variance we see in the sample.
 
 ### A Fork in the Road: The Question of Choice
 
@@ -79,7 +79,7 @@ But what if we decided to be clever and use the second moment instead? For a Poi
 $$
 \lambda + \lambda^2 = \frac{1}{n} \sum X_i^2
 $$
-This is a quadratic equation for $\lambda$. Solving it yields a more complicated estimator . We have used the same underlying principle but arrived at a different answer!
+This is a quadratic equation for $\lambda$. Solving it yields a more complicated estimator [@problem_id:1935318]. We have used the same underlying principle but arrived at a different answer!
 
 This reveals a subtle truth: the "Method of Moments" is not a single method, but a family of methods. The choice of which moments to match is part of the recipe. This immediately begs the question: if different choices lead to different estimators, are some choices better than others? How do we judge the quality of our creation?
 
@@ -93,31 +93,31 @@ So, is our simple Method of Moments just a poor cousin to the powerful MLE? Not 
 
 The Method of Moments, using the first moment $E[X] = 2\theta$, gives the estimator $\hat{\theta}_{MOM} = \bar{X}/2$.
 
-If you go through the calculus of maximizing the likelihood function, you find a delightful surprise: the Maximum Likelihood Estimator is $\hat{\theta}_{MLE} = \bar{X}/2$ . They are exactly the same! In this case, the intuitive simplicity of MOM leads us to the same answer as the powerful machinery of MLE. Consequently, our MOM estimator is just as efficient as it can possibly be .
+If you go through the calculus of maximizing the likelihood function, you find a delightful surprise: the Maximum Likelihood Estimator is $\hat{\theta}_{MLE} = \bar{X}/2$ [@problem_id:1896734]. They are exactly the same! In this case, the intuitive simplicity of MOM leads us to the same answer as the powerful machinery of MLE. Consequently, our MOM estimator is just as efficient as it can possibly be [@problem_id:4814720].
 
-However, the two methods do have fundamental differences. MLE possesses a beautiful property called **invariance**. If you have the MLE for a parameter $\theta$, the MLE for any function of it, say $h(\theta)$, is just $h(\hat{\theta}_{MLE})$. The Method of Moments does not generally share this convenient property. Estimating $\theta$ and then transforming the estimate is not always the same as setting up a new moment equation to estimate $h(\theta)$ directly . This lack of invariance reveals that the choice of parameterization matters for MOM in a way that it doesn't for MLE.
+However, the two methods do have fundamental differences. MLE possesses a beautiful property called **invariance**. If you have the MLE for a parameter $\theta$, the MLE for any function of it, say $h(\theta)$, is just $h(\hat{\theta}_{MLE})$. The Method of Moments does not generally share this convenient property. Estimating $\theta$ and then transforming the estimate is not always the same as setting up a new moment equation to estimate $h(\theta)$ directly [@problem_id:4814720]. This lack of invariance reveals that the choice of parameterization matters for MOM in a way that it doesn't for MLE.
 
 ### Danger: Fragile Parts and When the Analogy Breaks
 
-For all its simple beauty, the Method of Moments has an Achilles' heel. Its very foundation—equating [sample moments](@entry_id:167695) to theoretical ones—relies on two critical assumptions: first, that the theoretical moments actually exist, and second, that the [sample moments](@entry_id:167695) are reliable reflections of them. Both can fail spectacularly.
+For all its simple beauty, the Method of Moments has an Achilles' heel. Its very foundation—equating [sample moments](@keyword=sample_moments|lang=en-US|style=Feynman) to theoretical ones—relies on two critical assumptions: first, that the theoretical moments actually exist, and second, that the [sample moments](@keyword=sample_moments|lang=en-US|style=Feynman) are reliable reflections of them. Both can fail spectacularly.
 
-Some processes in nature, particularly in economics and biology, produce "heavy-tailed" distributions, where extreme events are more common than you might expect. A classic example is the **Pareto distribution**. For certain versions of this distribution, the theoretical mean might exist, but the variance, or third moment, or all higher moments, could be infinite. It makes no sense to equate a finite [sample variance](@entry_id:164454) calculated from your data to a theoretical variance that is infinite! The very premise of the method collapses. The Law of Large Numbers, the mathematical guarantee that sample averages converge to theoretical averages, requires the theoretical average to be finite. If it isn't, the analogy breaks .
+Some processes in nature, particularly in economics and biology, produce "heavy-tailed" distributions, where extreme events are more common than you might expect. A classic example is the **Pareto distribution**. For certain versions of this distribution, the theoretical mean might exist, but the variance, or third moment, or all higher moments, could be infinite. It makes no sense to equate a finite [sample variance](@keyword=sample_variance|lang=en-US|style=Feynman) calculated from your data to a theoretical variance that is infinite! The very premise of the method collapses. The Law of Large Numbers, the mathematical guarantee that sample averages converge to theoretical averages, requires the theoretical average to be finite. If it isn't, the analogy breaks [@problem_id:4927908].
 
-Even when moments do exist, there is a practical danger, especially with higher-order moments. Let's return to the world of medicine, where a team is measuring the concentration of a [cytokine](@entry_id:204039) in a small group of patients . The data looks fairly consistent: 8, 9, 10, 12, 11, 7, 13, 9, 10. Then, a tenth measurement comes in: 50. This could be a true extreme event or a measurement error—in the real world, it's often hard to tell.
+Even when moments do exist, there is a practical danger, especially with higher-order moments. Let's return to the world of medicine, where a team is measuring the concentration of a [cytokine](@keyword=cytokine|lang=en-US|style=Feynman) in a small group of patients [@problem_id:4814724]. The data looks fairly consistent: 8, 9, 10, 12, 11, 7, 13, 9, 10. Then, a tenth measurement comes in: 50. This could be a true extreme event or a measurement error—in the real world, it's often hard to tell.
 
 How does this single outlier affect our estimates?
-- The **[sample mean](@entry_id:169249)** (first moment) is pulled upward, but not dramatically.
-- The **[sample variance](@entry_id:164454)** (related to the second moment) explodes, as it depends on the *square* of the deviations from the mean. The deviation of '50' is large, so its square is huge.
+- The **[sample mean](@keyword=sample_mean|lang=en-US|style=Feynman)** (first moment) is pulled upward, but not dramatically.
+- The **[sample variance](@keyword=sample_variance|lang=en-US|style=Feynman)** (related to the second moment) explodes, as it depends on the *square* of the deviations from the mean. The deviation of '50' is large, so its square is huge.
 - The **sample skewness** (related to the third moment) goes completely haywire. It depends on the *cube* of the deviations. The contribution of the single outlier to the third moment can dwarf the contributions of all other data points combined.
 
-An estimator for a parameter of the Gamma distribution based on the first two moments might be perturbed by the outlier, but one based on the third moment could be thrown into a completely different universe, giving a nonsensical answer . This teaches us a crucial lesson: higher-order moments are exquisitely sensitive to rare, extreme events. Relying on them for estimation, especially with small datasets, is a treacherous game.
+An estimator for a parameter of the Gamma distribution based on the first two moments might be perturbed by the outlier, but one based on the third moment could be thrown into a completely different universe, giving a nonsensical answer [@problem_id:4814724]. This teaches us a crucial lesson: higher-order moments are exquisitely sensitive to rare, extreme events. Relying on them for estimation, especially with small datasets, is a treacherous game.
 
 ### A Broader Perspective: The Grand Design
 
 Does this mean the Method of Moments is just a historical curiosity, a cute but flawed idea? Far from it. Its core principle of matching data to theory was the seed for one of the most powerful and widely used frameworks in modern econometrics and statistics: the **Generalized Method of Moments (GMM)**.
 
-GMM takes the original idea and makes it more robust and flexible. What if you have more [moment conditions](@entry_id:136365) than you have parameters to estimate? This "overidentified" situation is common in complex models. You can't solve all the equations at once, but GMM provides a way to find the parameter values that make the [moment equations](@entry_id:149666) "as close to zero as possible" in a statistically optimal way.
+GMM takes the original idea and makes it more robust and flexible. What if you have more [moment conditions](@keyword=moment_conditions|lang=en-US|style=Feynman) than you have parameters to estimate? This "overidentified" situation is common in complex models. You can't solve all the equations at once, but GMM provides a way to find the parameter values that make the [moment equations](@keyword=moment_equations|lang=en-US|style=Feynman) "as close to zero as possible" in a statistically optimal way.
 
-The classical Method of Moments that we have explored is simply the most basic case of GMM: the case where the number of [moment conditions](@entry_id:136365) is exactly equal to the number of parameters. In this situation, GMM (with a simple weighting) simplifies to finding the exact solution to the [moment equations](@entry_id:149666), and the two methods coincide .
+The classical Method of Moments that we have explored is simply the most basic case of GMM: the case where the number of [moment conditions](@keyword=moment_conditions|lang=en-US|style=Feynman) is exactly equal to the number of parameters. In this situation, GMM (with a simple weighting) simplifies to finding the exact solution to the [moment equations](@keyword=moment_equations|lang=en-US|style=Feynman), and the two methods coincide [@problem_id:4927861].
 
 So, the Method of Moments is more than just a calculation tool. It is a way of thinking. It represents a fundamental philosophy of statistical inference: that the laws governing our world are reflected in the patterns of the data it produces. While it has its limitations, its central idea of building a bridge of analogy from the observed sample to the theoretical universe remains as powerful and as beautiful as ever. It is the first step on a journey to uncovering the hidden machinery of the world, one moment at a time.

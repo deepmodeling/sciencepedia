@@ -5,7 +5,7 @@ This article introduces the solution to this problem: Itô calculus, a revolutio
 
 ## Principles and Mechanisms
 
-In the world of Isaac Newton and Gottfried Wilhelm Leibniz, we learned a beautiful and powerful set of rules for describing change. If you know the position of a planet, calculus tells you its velocity. If you have a function $x(t)$, the change in some other function $f(x(t))$ is given by the elegant [chain rule](@article_id:146928). This calculus is built on a simple, intuitive idea: if you look at a smooth curve under a powerful enough microscope, it looks like a straight line. A small change $dx$ is proportional to a small change in time $dt$. This means the squared change, $(dx)^2$, is proportional to $(dt)^2$, a quantity so vanishingly small that we can cheerfully ignore it. For centuries, this approximation has worked wonders, from launching rockets to designing bridges.
+In the world of Isaac Newton and Gottfried Wilhelm Leibniz, we learned a beautiful and powerful set of rules for describing change. If you know the position of a planet, calculus tells you its velocity. If you have a function $x(t)$, the change in some other function $f(x(t))$ is given by the elegant [chain rule](@keyword=chain_rule|lang=en-US|style=Feynman). This calculus is built on a simple, intuitive idea: if you look at a smooth curve under a powerful enough microscope, it looks like a straight line. A small change $dx$ is proportional to a small change in time $dt$. This means the squared change, $(dx)^2$, is proportional to $(dt)^2$, a quantity so vanishingly small that we can cheerfully ignore it. For centuries, this approximation has worked wonders, from launching rockets to designing bridges.
 
 But what happens when the curve you're looking at isn't a planet's smooth orbit, but the jagged, unpredictable path of a dust mote dancing in a sunbeam, or the erratic flicker of a stock price? If you zoom in on such a path, it doesn't become straight. It just reveals more and more jaggedness, at every scale. Here, the comfortable rules of classical calculus break down, and we must enter a new world with a new, strange arithmetic: the world of Itô calculus.
 
@@ -13,9 +13,9 @@ But what happens when the curve you're looking at isn't a planet's smooth orbit,
 
 The heart of this new calculus lies in understanding the "size" of a random step. Let's consider a tiny interval of time, which we'll call $dt$. In classical physics, the distance an object moves in this time is proportional to $dt$. But for a purely random walk, what we call a **Brownian motion** or **Wiener process** and denote by $W_t$, the story is different.
 
-The fundamental discovery, which we can explore through thought experiments like those in  and , is that the typical displacement of a random walker is not proportional to the time elapsed, $dt$, but to its square root, $\sqrt{dt}$. Think about it this way: if you flip a coin $N$ times, your expected number of heads is $\frac{N}{2}$, but the typical deviation from this average—how far you're likely to be from a perfect 50/50 split—grows like $\sqrt{N}$. Time in a random walk is like the number of coin flips. So the "spread" or standard deviation of our random step, which we'll call $dW_t = W_{t+dt} - W_t$, is proportional to $\sqrt{dt}$.
+The fundamental discovery, which we can explore through thought experiments like those in [@problem_id:3060936] and [@problem_id:3057972], is that the typical displacement of a random walker is not proportional to the time elapsed, $dt$, but to its square root, $\sqrt{dt}$. Think about it this way: if you flip a coin $N$ times, your expected number of heads is $\frac{N}{2}$, but the typical deviation from this average—how far you're likely to be from a perfect 50/50 split—grows like $\sqrt{N}$. Time in a random walk is like the number of coin flips. So the "spread" or standard deviation of our random step, which we'll call $dW_t = W_{t+dt} - W_t$, is proportional to $\sqrt{dt}$.
 
-This single fact, that $dW_t$ is of order $\sqrt{dt}$, changes everything. Let's build a new multiplication table for our [infinitesimals](@article_id:143361), $dt$ and $dW_t$. We only keep terms that are of order $dt$ or larger, and discard anything "smaller" that vanishes more quickly as $dt \to 0$.
+This single fact, that $dW_t$ is of order $\sqrt{dt}$, changes everything. Let's build a new multiplication table for our [infinitesimals](@keyword=infinitesimals|lang=en-US|style=Feynman), $dt$ and $dW_t$. We only keep terms that are of order $dt$ or larger, and discard anything "smaller" that vanishes more quickly as $dt \to 0$.
 
 *   **$dt \times dt$**: This is $(dt)^2$. If $dt$ is small, $(dt)^2$ is "very small." It is negligible compared to $dt$. So, for our purposes, $(dt)^2 = 0$.
 
@@ -23,7 +23,7 @@ This single fact, that $dW_t$ is of order $\sqrt{dt}$, changes everything. Let's
 
 *   **$dW_t \times dW_t$**: This is the crucial one. The size of this term is on the order of $(\sqrt{dt})^2 = dt$. This is *not* negligible! It is of the same order of magnitude as $dt$ itself.
 
-Through a more rigorous analysis, as outlined in , we find that the sum of these tiny squared random steps, $\sum (dW_t)^2$, over an interval of time, doesn't vanish. Instead, it adds up precisely to the total time elapsed. This gives us the cornerstone of Itô calculus:
+Through a more rigorous analysis, as outlined in [@problem_id:3060936], we find that the sum of these tiny squared random steps, $\sum (dW_t)^2$, over an interval of time, doesn't vanish. Instead, it adds up precisely to the total time elapsed. This gives us the cornerstone of Itô calculus:
 
 $$ (dW_t)^2 = dt $$
 
@@ -41,11 +41,11 @@ Now we can return to our original problem. We have a random process $X_t$, which
 
 $$ dX_t = \mu_t dt + \sigma_t dW_t $$
 
-Here, $\mu_t$ is the instantaneous drift (the smooth part) and $\sigma_t$ is the volatility or diffusion (the random part's magnitude). Now, what is the change in a function of this process, $Y_t = f(X_t)$? As explored in , we start with a Taylor expansion, just as we would in ordinary calculus:
+Here, $\mu_t$ is the instantaneous drift (the smooth part) and $\sigma_t$ is the volatility or diffusion (the random part's magnitude). Now, what is the change in a function of this process, $Y_t = f(X_t)$? As explored in [@problem_id:3060942], we start with a Taylor expansion, just as we would in ordinary calculus:
 
 $$ dY_t = f(X_t + dX_t) - f(X_t) \approx f'(X_t) dX_t + \frac{1}{2} f''(X_t) (dX_t)^2 $$
 
-In the old world, we would have thrown away the $(dX_t)^2$ term. In the new world, we must calculate it with our Itô [multiplication table](@article_id:137695).
+In the old world, we would have thrown away the $(dX_t)^2$ term. In the new world, we must calculate it with our Itô [multiplication table](@keyword=multiplication_table|lang=en-US|style=Feynman).
 
 $$ (dX_t)^2 = (\mu_t dt + \sigma_t dW_t)^2 = \mu_t^2 (dt)^2 + 2\mu_t\sigma_t dt dW_t + \sigma_t^2 (dW_t)^2 $$
 
@@ -57,32 +57,32 @@ The squared change in our random process isn't random at all! It's a determinist
 
 $$ dY_t = f'(X_t) dX_t + \frac{1}{2} f''(X_t) \sigma_t^2 dt $$
 
-This famous result is **Itô's Lemma**. It looks like the classical chain rule, but with an extra piece: $\frac{1}{2} f''(X_t) \sigma_t^2 dt$. This is the "Itô correction term." It is the ghost in the machine—the macroscopic consequence of all the microscopic random jitters. It tells us that the change in $f(X_t)$ depends not only on the change in $X_t$ (the $f'$ term) but also on its volatility ($\sigma_t$) and its curvature ($f''$). A convex function ($f''>0$) of a volatile asset will, on average, increase in value faster than the asset itself, simply due to the nature of volatility. This is a profound insight, with massive consequences in fields like [financial mathematics](@article_id:142792).
+This famous result is **Itô's Lemma**. It looks like the classical chain rule, but with an extra piece: $\frac{1}{2} f''(X_t) \sigma_t^2 dt$. This is the "Itô correction term." It is the ghost in the machine—the macroscopic consequence of all the microscopic random jitters. It tells us that the change in $f(X_t)$ depends not only on the change in $X_t$ (the $f'$ term) but also on its volatility ($\sigma_t$) and its curvature ($f''$). A convex function ($f''>0$) of a volatile asset will, on average, increase in value faster than the asset itself, simply due to the nature of volatility. This is a profound insight, with massive consequences in fields like [financial mathematics](@keyword=financial_mathematics|lang=en-US|style=Feynman).
 
 ### An Expanded Universe: Products, Quotients, and Correlations
 
-The logic of the Itô [multiplication table](@article_id:137695) extends naturally to other operations, revealing a rich and consistent structure. Consider the product of two different Itô processes, $X_t$ and $Y_t$, as in  and . What is the change in their product, $d(X_t Y_t)$? We can find it by simple algebra:
+The logic of the Itô [multiplication table](@keyword=multiplication_table|lang=en-US|style=Feynman) extends naturally to other operations, revealing a rich and consistent structure. Consider the product of two different Itô processes, $X_t$ and $Y_t$, as in [@problem_id:3047489] and [@problem_id:3061938]. What is the change in their product, $d(X_t Y_t)$? We can find it by simple algebra:
 
 $$ d(X_t Y_t) = (X_t + dX_t)(Y_t + dY_t) - X_t Y_t = X_t dY_t + Y_t dX_t + dX_t dY_t $$
 
-The classical Leibniz rule is there, but again there is an extra term, $dX_t dY_t$. This term is called the differential of the **[quadratic covariation](@article_id:179661)**, written as $d[X,Y]_t$. It measures how the random parts of $X_t$ and $Y_t$ move together. If the processes are driven by the same source of randomness $W_t$, such that:
+The classical Leibniz rule is there, but again there is an extra term, $dX_t dY_t$. This term is called the differential of the **[quadratic covariation](@keyword=quadratic_covariation|lang=en-US|style=Feynman)**, written as $d[X,Y]_t$. It measures how the random parts of $X_t$ and $Y_t$ move together. If the processes are driven by the same source of randomness $W_t$, such that:
 
 $$ dX_t = a_t dt + b_t dW_t \quad \text{and} \quad dY_t = c_t dt + d_t dW_t $$
 
 Then their cross-product is:
 $$ dX_t dY_t = (a_t dt + b_t dW_t)(c_t dt + d_t dW_t) = b_t d_t (dW_t)^2 = b_t d_t dt $$
 
-Notice that the drift terms ($a_t$ and $c_t$) completely vanish from this calculation . The [covariation](@article_id:633603) only cares about the diffusion terms—the parts that "wiggle". This gives us the **Itô [product rule](@article_id:143930)**:
+Notice that the drift terms ($a_t$ and $c_t$) completely vanish from this calculation [@problem_id:3047489]. The [covariation](@keyword=covariation|lang=en-US|style=Feynman) only cares about the diffusion terms—the parts that "wiggle". This gives us the **Itô [product rule](@keyword=product_rule|lang=en-US|style=Feynman)**:
 
 $$ d(X_t Y_t) = X_t dY_t + Y_t dX_t + b_t d_t dt $$
 
-This same logic applies to quotients, leading to a correspondingly modified [quotient rule](@article_id:142557) , and generalizes beautifully to systems with many dimensions and multiple, correlated sources of noise . The core principle remains: the quadratic (co)variation of the random parts does not vanish, and it must be accounted for. For instance, the [quadratic covariation](@article_id:179661) of two process components, $X^i$ and $X^j$, is given by $[X^i, X^j]_T = \int_0^T (\sigma R \sigma^T)_{ij} ds$, where $\sigma$ is the [diffusion matrix](@article_id:182471) and $R$ is the [correlation matrix](@article_id:262137) of the driving noises.
+This same logic applies to quotients, leading to a correspondingly modified [quotient rule](@keyword=quotient_rule|lang=en-US|style=Feynman) [@problem_id:3061938], and generalizes beautifully to systems with many dimensions and multiple, correlated sources of noise [@problem_id:2988677]. The core principle remains: the quadratic (co)variation of the random parts does not vanish, and it must be accounted for. For instance, the [quadratic covariation](@keyword=quadratic_covariation|lang=en-US|style=Feynman) of two process components, $X^i$ and $X^j$, is given by $[X^i, X^j]_T = \int_0^T (\sigma R \sigma^T)_{ij} ds$, where $\sigma$ is the [diffusion matrix](@keyword=diffusion_matrix|lang=en-US|style=Feynman) and $R$ is the [correlation matrix](@keyword=correlation_matrix|lang=en-US|style=Feynman) of the driving noises.
 
 ### A Different Perspective: The Stratonovich World
 
 Is Itô's way the only way? It turns out it is not. A different formulation, the **Stratonovich calculus**, provides an equally valid, self-consistent framework. The difference lies in how the integral—the sum of all the small changes—is defined. Itô's integral is defined by evaluating the integrand at the *start* of each small time interval $dt$. This is natural for finance, as your trading decision at time $t$ can't depend on what the price will do between $t$ and $t+dt$.
 
-The Stratonovich integral, in contrast, is defined by evaluating the integrand at the *midpoint* of the time interval. This seemingly tiny change has a dramatic effect. As shown in problems like  and , in the Stratonovich world, the classical rules of calculus are restored!
+The Stratonovich integral, in contrast, is defined by evaluating the integrand at the *midpoint* of the time interval. This seemingly tiny change has a dramatic effect. As shown in problems like [@problem_id:3082057] and [@problem_id:3061938], in the Stratonovich world, the classical rules of calculus are restored!
 
 *   **Stratonovich Chain Rule:** $df(X_t) = f'(X_t) \circ dX_t$
 *   **Stratonovich Product Rule:** $d(X_t Y_t) = X_t \circ dY_t + Y_t \circ dX_t$

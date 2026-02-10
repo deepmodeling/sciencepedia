@@ -1,5 +1,5 @@
 ## Introduction
-The interface between an electrode and an electrolyte is a scene of immense complexity, a dynamic environment of ions, solvent molecules, and electric fields that poses a significant challenge for theoretical description. Accurately calculating the energy of a single electrochemical reaction using brute-force quantum mechanics is often computationally intractable, creating a dilemma for theorists aiming to design new materials. The Computational Hydrogen Electrode (CHE) model, pioneered by Jens Nørskov, provides an elegant solution to this problem by creating a thermodynamic link between the complex proton-electron pair and a simple, calculable reference: the hydrogen molecule. This article demystifies this powerful theoretical tool. First, in "Principles and Mechanisms," we will build the model from its foundations in the Standard Hydrogen Electrode, showing how it translates raw quantum mechanical energies into a landscape dependent on potential and pH. Following that, "Applications and Interdisciplinary Connections" will explore how the CHE model is a cornerstone of modern [materials design](@entry_id:160450), used to predict catalyst performance, map surface stability against corrosion, and tackle global challenges in green energy.
+The interface between an electrode and an electrolyte is a scene of immense complexity, a dynamic environment of ions, solvent molecules, and electric fields that poses a significant challenge for theoretical description. Accurately calculating the energy of a single electrochemical reaction using brute-force quantum mechanics is often computationally intractable, creating a dilemma for theorists aiming to design new materials. The Computational Hydrogen Electrode (CHE) model, pioneered by Jens Nørskov, provides an elegant solution to this problem by creating a thermodynamic link between the complex proton-electron pair and a simple, calculable reference: the hydrogen molecule. This article demystifies this powerful theoretical tool. First, in "Principles and Mechanisms," we will build the model from its foundations in the Standard Hydrogen Electrode, showing how it translates raw quantum mechanical energies into a landscape dependent on potential and pH. Following that, "Applications and Interdisciplinary Connections" will explore how the CHE model is a cornerstone of modern [materials design](@keyword=materials_design|lang=en-US|style=Feynman), used to predict catalyst performance, map surface stability against corrosion, and tackle global challenges in green energy.
 
 ## Principles and Mechanisms
 
@@ -9,7 +9,7 @@ Calculating the energy of a single reaction in this milieu seems a monumental ta
 
 ### An Elegant Sidestep: The Hydrogen Reference
 
-The beautifully simple idea at the heart of modern [computational electrochemistry](@entry_id:747611) is the **Computational Hydrogen Electrode (CHE)** model, pioneered by Jens Nørskov and his colleagues. The strategy is a masterpiece of physical intuition: if you cannot easily calculate the energies of a solvated proton ($H^+$) and an electron ($e^-$) separately, why not find a way to reference their *combined* energy to something you *can* calculate with ease?
+The beautifully simple idea at the heart of modern [computational electrochemistry](@keyword=computational_electrochemistry|lang=en-US|style=Feynman) is the **Computational Hydrogen Electrode (CHE)** model, pioneered by Jens Nørskov and his colleagues. The strategy is a masterpiece of physical intuition: if you cannot easily calculate the energies of a solvated proton ($H^+$) and an electron ($e^-$) separately, why not find a way to reference their *combined* energy to something you *can* calculate with ease?
 
 What is the simplest, most well-behaved chemical species containing hydrogen? A neutral molecule of hydrogen gas, $H_2$. The CHE model's masterstroke is to create a thermodynamic bridge that links the unruly proton-electron pair to the serene, easily calculable hydrogen molecule. It is an accounting trick of the highest order, swapping a difficult problem for a much simpler one. But for this trick to be more than just a convenience, it must be grounded in the physical reality of how we measure and define electrochemical energy.
 
@@ -25,25 +25,25 @@ Being in equilibrium means there is no net tendency for the reaction to go forwa
 
 $$ \mu_{\mathrm{H}^+}^\circ + \mu_{e^-}^\circ = \frac{1}{2}\mu_{\mathrm{H}_2} $$
 
-The circle superscript ($\circ$) denotes these standard conditions ($\mathrm{pH}=0$, $U=0$ V vs. SHE). This equation is our anchor. It provides the fundamental, physically justified link between the difficult-to-calculate energies of a proton and an electron and the easily calculated energy of a hydrogen molecule. We now have a solid foundation to build upon.  
+The circle superscript ($\circ$) denotes these standard conditions ($\mathrm{pH}=0$, $U=0$ V vs. SHE). This equation is our anchor. It provides the fundamental, physically justified link between the difficult-to-calculate energies of a proton and an electron and the easily calculated energy of a hydrogen molecule. We now have a solid foundation to build upon. [@problem_id:4236810] [@problem_id:4252100]
 
 ### Turning the Knobs: Potential and pH
 
 The real world, of course, does not always operate at $\mathrm{pH}=0$ and $U=0$ V. An electrochemist is constantly "tuning" these two knobs to drive reactions. How does our hydrogen reference hold up when we move away from the zero point? We must account for how the energies of our players change.
 
-**The Potential Knob ($U$)**: The [electrode potential](@entry_id:158928), $U$, is like an "energy slide" for electrons. By making the potential more positive, we are essentially making the slide steeper, allowing electrons to release more energy as they are consumed in a reaction. The energy of an electron in the electrode changes linearly with potential. If an electron has a chemical potential of $\mu_{e^-}^\circ$ at the SHE potential ($U=0$), then at any other potential $U$, its energy is shifted by an amount $-eU$, where $e$ is the [elementary charge](@entry_id:272261).
+**The Potential Knob ($U$)**: The [electrode potential](@keyword=electrode_potential|lang=en-US|style=Feynman), $U$, is like an "energy slide" for electrons. By making the potential more positive, we are essentially making the slide steeper, allowing electrons to release more energy as they are consumed in a reaction. The energy of an electron in the electrode changes linearly with potential. If an electron has a chemical potential of $\mu_{e^-}^\circ$ at the SHE potential ($U=0$), then at any other potential $U$, its energy is shifted by an amount $-eU$, where $e$ is the [elementary charge](@keyword=elementary_charge|lang=en-US|style=Feynman).
 
 $$ \mu_{e^-}(U) = \mu_{e^-}^\circ - eU $$
 
-This simple, linear relationship is immensely powerful. The complex quantum mechanics of the electrode are distilled into a single, controllable energy lever. 
+This simple, linear relationship is immensely powerful. The complex quantum mechanics of the electrode are distilled into a single, controllable energy lever. [@problem_id:3887611]
 
 **The Acidity Knob (pH)**: Acidity, measured by pH, reflects the concentration of protons in the solution. A low pH means protons are abundant and "cheap" in terms of energy. A high pH means they are scarce and "expensive." The chemical potential of a proton is related to its activity, $a_{\mathrm{H}^+}$, which is directly related to pH ($a_{\mathrm{H}^+} = 10^{-\mathrm{pH}}$). The relationship, a cornerstone of thermodynamics, is logarithmic:
 
 $$ \mu_{\mathrm{H^+}}(\mathrm{pH}) = \mu_{\mathrm{H^+}}^\circ + k_B T \ln(a_{\mathrm{H}^+}) = \mu_{\mathrm{H^+}}^\circ - k_B T \ln(10) \cdot \mathrm{pH} $$
 
-Here, $k_B$ is the Boltzmann constant and $T$ is the temperature. This equation tells us exactly how much the energy cost of a proton changes as we alter the solution's [acidity](@entry_id:137608). 
+Here, $k_B$ is the Boltzmann constant and $T$ is the temperature. This equation tells us exactly how much the energy cost of a proton changes as we alter the solution's [acidity](@keyword=acidity|lang=en-US|style=Feynman). [@problem_id:3480078]
 
-Now, we can assemble the pieces. We want to find the combined energy of a proton-electron pair, $\mu_{\mathrm{H}^+} + \mu_{e^-}$, under *any* condition of potential $U$ and [acidity](@entry_id:137608) pH. We just sum our two expressions:
+Now, we can assemble the pieces. We want to find the combined energy of a proton-electron pair, $\mu_{\mathrm{H}^+} + \mu_{e^-}$, under *any* condition of potential $U$ and [acidity](@keyword=acidity|lang=en-US|style=Feynman) pH. We just sum our two expressions:
 
 $$ \mu_{\mathrm{H}^+} + \mu_{e^-} = (\mu_{\mathrm{H^+}}^\circ - k_B T \ln(10) \cdot \mathrm{pH}) + (\mu_{e^-}^\circ - eU) $$
 
@@ -51,7 +51,7 @@ Rearranging and using our anchor equation, $\mu_{\mathrm{H}^+}^\circ + \mu_{e^-}
 
 $$ \mu_{\mathrm{H}^+} + \mu_{e^-} = \frac{1}{2}\mu_{\mathrm{H}_2} - eU - k_B T \ln(10) \cdot \mathrm{pH} $$
 
-This is a remarkable result. The hopelessly complex combined energy of a solvated proton and a delocalized electron (left side) has been replaced by the energy of a simple gas molecule and two simple, linear terms corresponding to the knobs on an experimentalist's machine (right side).  
+This is a remarkable result. The hopelessly complex combined energy of a solvated proton and a delocalized electron (left side) has been replaced by the energy of a simple gas molecule and two simple, linear terms corresponding to the knobs on an experimentalist's machine (right side). [@problem_id:4260060] [@problem_id:4251872]
 
 ### The Power of Separation
 
@@ -71,19 +71,19 @@ And with a little rearrangement, we get:
 
 $$ \Delta G(U, \mathrm{pH}) = \left(G_{\mathrm{AH^*}} - G_{\mathrm{A^*}} - \frac{1}{2}\mu_{\mathrm{H}_2}\right) + eU + k_B T \ln(10) \cdot \mathrm{pH} $$
 
-Look closely at this final form. The physics has been beautifully separated. The term in the parentheses is the reaction free energy for the hypothetical reaction $\mathrm{A^*} + \frac{1}{2}\mathrm{H}_2 \rightarrow \mathrm{AH^*}$. This involves only neutral species and can be calculated once using standard quantum mechanical methods like Density Functional Theory (DFT). All the complexity of the electrochemical environment has been bundled into two simple, additive terms: $eU$ and $k_B T \ln(10) \cdot \mathrm{pH}$. 
+Look closely at this final form. The physics has been beautifully separated. The term in the parentheses is the reaction free energy for the hypothetical reaction $\mathrm{A^*} + \frac{1}{2}\mathrm{H}_2 \rightarrow \mathrm{AH^*}$. This involves only neutral species and can be calculated once using standard quantum mechanical methods like Density Functional Theory (DFT). All the complexity of the electrochemical environment has been bundled into two simple, additive terms: $eU$ and $k_B T \ln(10) \cdot \mathrm{pH}$. [@problem_id:4247679]
 
-This separation allows for incredible computational efficiency. To predict how a catalyst will behave, we no longer need to run a new, expensive simulation for every single voltage and pH. We run one set of DFT calculations and can then explore the entire electrochemical landscape just by adding these simple terms. This is what enables the [high-throughput computational screening](@entry_id:190203) of thousands of potential catalyst materials, a cornerstone of modern [materials discovery](@entry_id:159066). It turns the creation of complex stability maps (Pourbaix diagrams) from a Herculean task into a straightforward plotting exercise. 
+This separation allows for incredible computational efficiency. To predict how a catalyst will behave, we no longer need to run a new, expensive simulation for every single voltage and pH. We run one set of DFT calculations and can then explore the entire electrochemical landscape just by adding these simple terms. This is what enables the [high-throughput computational screening](@keyword=high_throughput_computational_screening|lang=en-US|style=Feynman) of thousands of potential catalyst materials, a cornerstone of modern [materials discovery](@keyword=materials_discovery|lang=en-US|style=Feynman). It turns the creation of complex stability maps (Pourbaix diagrams) from a Herculean task into a straightforward plotting exercise. [@problem_id:3480078]
 
-For even greater elegance, electrochemists often use a different potential scale called the **Reversible Hydrogen Electrode (RHE)**. The RHE is a "floating" reference that changes with pH in just the right way to cancel out the pH term in our equation. When using the RHE scale, the free energy change simplifies to the beautifully compact form $\Delta G = \Delta G_{\mathrm{DFT}} + eU_{\mathrm{RHE}}$, hiding the pH dependence within the definition of the potential itself. 
+For even greater elegance, electrochemists often use a different potential scale called the **Reversible Hydrogen Electrode (RHE)**. The RHE is a "floating" reference that changes with pH in just the right way to cancel out the pH term in our equation. When using the RHE scale, the free energy change simplifies to the beautifully compact form $\Delta G = \Delta G_{\mathrm{DFT}} + eU_{\mathrm{RHE}}$, hiding the pH dependence within the definition of the potential itself. [@problem_id:3887611]
 
 ### The Fine Print: When the Elegance Fades
 
-Like any powerful model, the CHE's simplicity comes from its assumptions. It is crucial to understand what is being neglected, as this defines the model's limitations. 
+Like any powerful model, the CHE's simplicity comes from its assumptions. It is crucial to understand what is being neglected, as this defines the model's limitations. [@problem_id:3878524]
 
--   **The Concerted Step**: The model inherently assumes that the proton and electron are transferred together in one concerted step. It cannot describe reactions where the electron transfers first, creating a charged intermediate, which is then neutralized by a later [proton transfer](@entry_id:143444). In such non-concerted pathways, the proton and electron are not sourced from the same "balanced reservoir," and the CHE's core assumption breaks down. 
+-   **The Concerted Step**: The model inherently assumes that the proton and electron are transferred together in one concerted step. It cannot describe reactions where the electron transfers first, creating a charged intermediate, which is then neutralized by a later [proton transfer](@keyword=proton_transfer|lang=en-US|style=Feynman). In such non-concerted pathways, the proton and electron are not sourced from the same "balanced reservoir," and the CHE's core assumption breaks down. [@problem_id:4252100]
 
--   **The Missing Double Layer**: The CHE model calculates the energies of surface species as if they were in a vacuum. It largely ignores the enormous electric field (up to billions of volts per meter) and the structured layers of water and ions—the so-called **[electric double layer](@entry_id:182776)**—that exist at the interface. If the reacting species are highly polar or change their charge state, their interaction with this field can contribute significantly to the reaction energy, a contribution the CHE model misses. 
+-   **The Missing Double Layer**: The CHE model calculates the energies of surface species as if they were in a vacuum. It largely ignores the enormous electric field (up to billions of volts per meter) and the structured layers of water and ions—the so-called **[electric double layer](@keyword=electric_double_layer|lang=en-US|style=Feynman)**—that exist at the interface. If the reacting species are highly polar or change their charge state, their interaction with this field can contribute significantly to the reaction energy, a contribution the CHE model misses. [@problem_id:4259992]
 
 -   **Local vs. Bulk pH**: The model uses the bulk pH of the solution to calculate the proton's energy. However, the strong electric field at the surface can concentrate or deplete protons right where the reaction happens, making the "local pH" very different from the bulk pH.
 

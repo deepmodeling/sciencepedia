@@ -13,27 +13,27 @@ But for a physicist or a curious mathematician, observing a "miracle" is not eno
 
 ### The Physicist's Ledger: Generating Functions
 
-To understand the machinery, we need a tool that can handle an infinite number of possibilities at once. This tool is the **[generating function](@article_id:152210)**. Think of it as a magical ledger book, or an infinitely long polynomial, where the coefficient of a term like $q^n$ counts how many ways an event can happen with the number $n$.
+To understand the machinery, we need a tool that can handle an infinite number of possibilities at once. This tool is the **[generating function](@keyword=generating_function|lang=en-US|style=Feynman)**. Think of it as a magical ledger book, or an infinitely long polynomial, where the coefficient of a term like $q^n$ counts how many ways an event can happen with the number $n$.
 
-For our first rule—partitions using parts from the set $S = \{1, 4, 6, 9, \ldots\}$—constructing the [generating function](@article_id:152210) is quite natural. For each part $k \in S$, we can use it zero times, once, twice, and so on. This choice is represented by the [geometric series](@article_id:157996) $1 + q^k + q^{2k} + \dots = \frac{1}{1-q^k}$. To get the [generating function](@article_id:152210) for all partitions using parts from $S$, we simply multiply these factors together for every allowed part:
+For our first rule—partitions using parts from the set $S = \{1, 4, 6, 9, \ldots\}$—constructing the [generating function](@keyword=generating_function|lang=en-US|style=Feynman) is quite natural. For each part $k \in S$, we can use it zero times, once, twice, and so on. This choice is represented by the [geometric series](@keyword=geometric_series|lang=en-US|style=Feynman) $1 + q^k + q^{2k} + \dots = \frac{1}{1-q^k}$. To get the [generating function](@keyword=generating_function|lang=en-US|style=Feynman) for all partitions using parts from $S$, we simply multiply these factors together for every allowed part:
 
 $$ G_1(q) = \sum_{n=0}^{\infty} P_{1,4 \pmod 5}(n) q^n = \prod_{k=0}^{\infty} \frac{1}{(1-q^{5k+1})(1-q^{5k+4})} $$
 
-This [infinite product](@article_id:172862) is the "ledger" for the first type of partition. The coefficient of $q^n$ in its expanded series form, let's call it $P_{1,4 \pmod 5}(n)$, is precisely the number of ways to partition $n$ using parts congruent to $1$ or $4$ modulo $5$ .
+This [infinite product](@keyword=infinite_product|lang=en-US|style=Feynman) is the "ledger" for the first type of partition. The coefficient of $q^n$ in its expanded series form, let's call it $P_{1,4 \pmod 5}(n)$, is precisely the number of ways to partition $n$ using parts congruent to $1$ or $4$ modulo $5$ [@problem_id:745239].
 
 What about the second rule, where parts must differ by at least 2? How do we write a ledger for that? It’s not at all obvious how to enforce this "gap" condition with a simple product. This is where the genius of Rogers and Ramanujan comes in. They found that the generating function for these "gapped" partitions takes a completely different form—an infinite sum:
 
 $$ R_1(q) = \sum_{n=0}^{\infty} G(n) q^n = \sum_{k=0}^{\infty} \frac{q^{k^2}}{(1-q)(1-q^2)\cdots(1-q^k)} = \sum_{k=0}^{\infty} \frac{q^{k^2}}{(q;q)_k} $$
 
-Here, $G(n)$ is the number of partitions of $n$ with parts differing by at least 2 . The term $(q;q)_k$ is just a shorthand, the **q-Pochhammer symbol**, for the product $(1-q)(1-q^2)\cdots(1-q^k)$. The Rogers-Ramanujan identity is the declaration that these two wildly different-looking functions are, in fact, one and the same: $G_1(q) = R_1(q)$. It’s like discovering that a complex radio signal from a distant galaxy, when decoded, is playing a familiar Beethoven symphony.
+Here, $G(n)$ is the number of partitions of $n$ with parts differing by at least 2 [@problem_id:1389758]. The term $(q;q)_k$ is just a shorthand, the **q-Pochhammer symbol**, for the product $(1-q)(1-q^2)\cdots(1-q^k)$. The Rogers-Ramanujan identity is the declaration that these two wildly different-looking functions are, in fact, one and the same: $G_1(q) = R_1(q)$. It’s like discovering that a complex radio signal from a distant galaxy, when decoded, is playing a familiar Beethoven symphony.
 
 ### Building Partitions with Staircases
 
 The equality of these functions seems magical, but the sum side, $R_1(q)$, has a beautiful combinatorial story hidden within it. Let's decode the term $\frac{q^{k^2}}{(q;q)_k}$.
 
-The denominator, $\frac{1}{(q;q)_k} = \frac{1}{(1-q)(1-q^2)\cdots(1-q^k)}$, is itself a well-known [generating function](@article_id:152210). It counts partitions whose parts are no larger than $k$. By a clever trick of flipping the partition diagram (a Ferrers diagram), this is also the generating function for partitions that have *at most* $k$ parts.
+The denominator, $\frac{1}{(q;q)_k} = \frac{1}{(1-q)(1-q^2)\cdots(1-q^k)}$, is itself a well-known [generating function](@keyword=generating_function|lang=en-US|style=Feynman). It counts partitions whose parts are no larger than $k$. By a clever trick of flipping the partition diagram (a Ferrers diagram), this is also the generating function for partitions that have *at most* $k$ parts.
 
-So, each term in the sum is related to partitions with a fixed number of parts. What does the numerator, $q^{k^2}$, do? It acts as a transformation. Imagine you have any partition with at most $k$ parts, say $\lambda = (\lambda_1, \lambda_2, \ldots, \lambda_k)$ where $\lambda_1 \ge \lambda_2 \ge \dots \ge \lambda_k \ge 0$. We can turn this into a partition with gaps of at least 2 using a systematic construction that feels like building a staircase .
+So, each term in the sum is related to partitions with a fixed number of parts. What does the numerator, $q^{k^2}$, do? It acts as a transformation. Imagine you have any partition with at most $k$ parts, say $\lambda = (\lambda_1, \lambda_2, \ldots, \lambda_k)$ where $\lambda_1 \ge \lambda_2 \ge \dots \ge \lambda_k \ge 0$. We can turn this into a partition with gaps of at least 2 using a systematic construction that feels like building a staircase [@problem_id:3015949].
 
 First, we add a "staircase" of numbers to the parts of $\lambda$: we add $2(k-1)$ to $\lambda_1$, $2(k-2)$ to $\lambda_2$, ..., and $0$ to $\lambda_k$. The new partition $\mu$ has parts $\mu_i = \lambda_i + 2(k-i)$. Because $\lambda_i \ge \lambda_{i+1}$, the new parts satisfy $\mu_i - \mu_{i+1} = \lambda_i - \lambda_{i+1} + 2 \ge 2$. We have successfully created the gap! The total number we added is $\sum_{i=1}^k 2(k-i) = k(k-1)$.
 
@@ -47,27 +47,27 @@ This story doesn't end here. Ramanujan and Rogers found a companion identity, a 
 
 **The Second Rogers-Ramanujan Identity:** The number of partitions of $n$ into parts congruent to $2$ or $3 \pmod 5$ is equal to the number of partitions of $n$ where parts differ by at least 2 and the smallest part is at least 2.
 
-Once again, we have two seemingly unrelated conditions giving the same count. For example, let's look at $n=12$. The partitions into parts from $\{2, 3, 7, 8, 12, \dots\}$ are: $12$, $8+2+2$, $7+3+2$, $3+3+3+3$, $3+3+2+2+2$, and $2+2+2+2+2+2$. There are six of them. The partitions of 12 with gaps of at least 2 and smallest part at least 2 are: $12$, $10+2$, $9+3$, $8+4$, $7+5$, and $6+4+2$. There are also six of them ! The identity holds. We can test it for larger numbers too, like $n=24$, and find the 35 partitions predicted by the identity .
+Once again, we have two seemingly unrelated conditions giving the same count. For example, let's look at $n=12$. The partitions into parts from $\{2, 3, 7, 8, 12, \dots\}$ are: $12$, $8+2+2$, $7+3+2$, $3+3+3+3$, $3+3+2+2+2$, and $2+2+2+2+2+2$. There are six of them. The partitions of 12 with gaps of at least 2 and smallest part at least 2 are: $12$, $10+2$, $9+3$, $8+4$, $7+5$, and $6+4+2$. There are also six of them [@problem_id:3015949]! The identity holds. We can test it for larger numbers too, like $n=24$, and find the 35 partitions predicted by the identity [@problem_id:447873].
 
 The generating functions for this second identity are:
 $$ \prod_{k=0}^{\infty} \frac{1}{(1-q^{5k+2})(1-q^{5k+3})} = \sum_{k=0}^{\infty} \frac{q^{k^2+k}}{(q;q)_k} $$
-The logic is nearly identical, with the shift $q^{k^2+k}$ corresponding to a staircase construction that ensures the smallest part is at least 2 . The existence of this second identity tells us we are not dealing with a lone curiosity, but with a piece of a larger, more intricate pattern.
+The logic is nearly identical, with the shift $q^{k^2+k}$ corresponding to a staircase construction that ensures the smallest part is at least 2 [@problem_id:3015949]. The existence of this second identity tells us we are not dealing with a lone curiosity, but with a piece of a larger, more intricate pattern.
 
 ### The Analytic Engine: Recurrence and Structure
 
-So far, we have viewed these identities primarily as combinatorial truths about counting. But the [generating functions](@article_id:146208) are also analytic objects in their own right. They obey elegant algebraic laws. Consider the generating function for partitions with parts differing by at least 2, where the largest part is at most $k$. Let's call it $F_k(q)$. We can find a relationship between these functions .
+So far, we have viewed these identities primarily as combinatorial truths about counting. But the [generating functions](@keyword=generating_functions|lang=en-US|style=Feynman) are also analytic objects in their own right. They obey elegant algebraic laws. Consider the generating function for partitions with parts differing by at least 2, where the largest part is at most $k$. Let's call it $F_k(q)$. We can find a relationship between these functions [@problem_id:3015968].
 
 A partition with parts at most $k$ either contains the part $k$ or it doesn't.
 1.  If it *doesn't* contain $k$, then its largest part is at most $k-1$. The generating function for these is simply $F_{k-1}(q)$.
-2.  If it *does* contain $k$, then $k$ must be the largest part. Because of the gap-2 rule, the next largest part can be at most $k-2$. So, we can form such a partition by taking any partition with parts at most $k-2$ (whose generating function is $F_{k-2}(q)$) and adding the part $k$ to it. Adding the part $k$ corresponds to multiplying the [generating function](@article_id:152210) by $q^k$.
+2.  If it *does* contain $k$, then $k$ must be the largest part. Because of the gap-2 rule, the next largest part can be at most $k-2$. So, we can form such a partition by taking any partition with parts at most $k-2$ (whose generating function is $F_{k-2}(q)$) and adding the part $k$ to it. Adding the part $k$ corresponds to multiplying the [generating function](@keyword=generating_function|lang=en-US|style=Feynman) by $q^k$.
 
 Putting these two cases together, we get a beautiful recurrence relation:
 $$ F_k(q) = F_{k-1}(q) + q^k F_{k-2}(q) $$
-This equation is a powerful engine. Starting with $F_0(q)=1$ and $F_1(q)=1+q$, we can use it to build up the entire series step-by-step. In the limit as $k \to \infty$, the ratio $F_k(q) / F_{k-1}(q)$ converges to the famous Rogers-Ramanujan continued fraction, a representation that was dear to Ramanujan's heart. This recurrence relation is not just a computational trick; it is the algebraic DNA of the Rogers-Ramanujan identities, and it provides a path to proving them analytically. Similar recurrence relations can be found for related functions, revealing a web of interconnected structures .
+This equation is a powerful engine. Starting with $F_0(q)=1$ and $F_1(q)=1+q$, we can use it to build up the entire series step-by-step. In the limit as $k \to \infty$, the ratio $F_k(q) / F_{k-1}(q)$ converges to the famous Rogers-Ramanujan continued fraction, a representation that was dear to Ramanujan's heart. This recurrence relation is not just a computational trick; it is the algebraic DNA of the Rogers-Ramanujan identities, and it provides a path to proving them analytically. Similar recurrence relations can be found for related functions, revealing a web of interconnected structures [@problem_id:1133490].
 
 ### The Identity Factory
 
-The journey doesn't stop with these two identities. It turns out that the Rogers-Ramanujan identities are just two shining examples emerging from a vast, underlying structure. Mathematicians like W. N. Bailey discovered a general mechanism, now called the **Bailey lemma** and the **Bailey lattice**, which can be thought of as a kind of "identity factory" .
+The journey doesn't stop with these two identities. It turns out that the Rogers-Ramanujan identities are just two shining examples emerging from a vast, underlying structure. Mathematicians like W. N. Bailey discovered a general mechanism, now called the **Bailey lemma** and the **Bailey lattice**, which can be thought of as a kind of "identity factory" [@problem_id:745394].
 
 Imagine you have a specific pair of sequences that satisfy a certain relationship—this is called a **Bailey pair**. The Bailey lattice provides a set of instructions, a series of transformations you can apply to this pair. You can "raise" it, "lower" it, or change its parameters. Each time you turn the crank on this machine, you produce a new Bailey pair. By inserting a very simple starting pair into this lattice and letting the machinery run, you can generate incredibly complex and beautiful identities. The Rogers-Ramanujan identities fall out as one of the simplest and most elegant results of this process.
 

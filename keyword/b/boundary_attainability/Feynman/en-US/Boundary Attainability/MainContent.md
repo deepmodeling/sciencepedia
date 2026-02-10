@@ -1,7 +1,7 @@
 ## Introduction
-In a world governed by random fluctuations, from the jittery movement of stock prices to the unpredictable growth of a biological population, a fundamental question arises: what are the limits? Can a system evolving randomly ever reach a critical threshold, like bankruptcy or extinction? This question lies at the heart of boundary attainability, a cornerstone theory in the study of [stochastic processes](@article_id:141072) that provides a rigorous framework for understanding the ultimate fate of systems subject to noise. The theory addresses the crucial gap between describing a system's local, instantaneous behavior and predicting its global, long-term possibilities.
+In a world governed by random fluctuations, from the jittery movement of stock prices to the unpredictable growth of a biological population, a fundamental question arises: what are the limits? Can a system evolving randomly ever reach a critical threshold, like bankruptcy or extinction? This question lies at the heart of boundary attainability, a cornerstone theory in the study of [stochastic processes](@keyword=stochastic_processes|lang=en-US|style=Feynman) that provides a rigorous framework for understanding the ultimate fate of systems subject to noise. The theory addresses the crucial gap between describing a system's local, instantaneous behavior and predicting its global, long-term possibilities.
 
-This article provides a comprehensive exploration of boundary attainability. It first delves into the core principles and mathematical machinery used to classify the edges of a random process's world. You will learn about Feller's elegant four-part classification of boundaries and the powerful role of the [scale function](@article_id:200204) in determining whether these frontiers are reachable. Subsequently, the article bridges theory and practice, demonstrating how the abstract concept of attainability has profound and tangible consequences across diverse fields, dictating the rules for [financial modeling](@article_id:144827), the persistence of species, and the behavior of physical systems.
+This article provides a comprehensive exploration of boundary attainability. It first delves into the core principles and mathematical machinery used to classify the edges of a random process's world. You will learn about Feller's elegant four-part classification of boundaries and the powerful role of the [scale function](@keyword=scale_function|lang=en-US|style=Feynman) in determining whether these frontiers are reachable. Subsequently, the article bridges theory and practice, demonstrating how the abstract concept of attainability has profound and tangible consequences across diverse fields, dictating the rules for [financial modeling](@keyword=financial_modeling|lang=en-US|style=Feynman), the persistence of species, and the behavior of physical systems.
 
 ## Principles and Mechanisms
 
@@ -13,13 +13,13 @@ Let’s simplify our dancing dust particle to a point moving along a one-dimensi
 
 $dX_t = b(X_t) dt + \sigma(X_t) dW_t$
 
-This equation is like a local weather forecast for the particle. The **drift** term, $b(X_t) dt$, tells us the general direction the particle is being pushed, like a steady wind. The **diffusion** term, $\sigma(X_t) dW_t$, represents the random, unpredictable kicks it receives from its environment, like chaotic gusts of wind. At an [interior point](@article_id:149471), these two terms are all you need to know to predict the particle's behavior in the next instant.
+This equation is like a local weather forecast for the particle. The **drift** term, $b(X_t) dt$, tells us the general direction the particle is being pushed, like a steady wind. The **diffusion** term, $\sigma(X_t) dW_t$, represents the random, unpredictable kicks it receives from its environment, like chaotic gusts of wind. At an [interior point](@keyword=interior_point|lang=en-US|style=Feynman), these two terms are all you need to know to predict the particle's behavior in the next instant.
 
-But the points $\ell$ and $r$ are different. They are **[boundary points](@article_id:175999)**. They are the edges of the world, the cliffs at the end of the field. Here, the local rules may no longer be sufficient. Reaching a boundary could mean the journey stops, the particle is bounced back, or something else entirely happens. The behavior at these special points is not just a detail; it often defines the entire character of the system .
+But the points $\ell$ and $r$ are different. They are **[boundary points](@keyword=boundary_points|lang=en-US|style=Feynman)**. They are the edges of the world, the cliffs at the end of the field. Here, the local rules may no longer be sufficient. Reaching a boundary could mean the journey stops, the particle is bounced back, or something else entirely happens. The behavior at these special points is not just a detail; it often defines the entire character of the system [@problem_id:3041467].
 
 ### The Four Fates at the Frontier
 
-It turns out that not all boundaries are created equal. In a stroke of beautiful classification, the mathematician William Feller showed that any [boundary point](@article_id:152027) must fall into one of four distinct categories. We can understand this classification by asking two simple, intuitive questions :
+It turns out that not all boundaries are created equal. In a stroke of beautiful classification, the mathematician William Feller showed that any [boundary point](@keyword=boundary_point|lang=en-US|style=Feynman) must fall into one of four distinct categories. We can understand this classification by asking two simple, intuitive questions [@problem_id:3041569]:
 
 1.  **Is the boundary reachable?** Can a particle starting from the interior ever get to the boundary in a finite amount of time?
 2.  **Is the boundary an admissible starting point?** Can a particle begin its journey *at* the boundary and immediately move into the interior?
@@ -28,28 +28,28 @@ Based on the "yes" or "no" answers to these questions, we get a complete map of 
 
 *   **Regular Boundary (Yes/Yes):** This is a simple, two-way door. The particle can reach it from the inside, and it can start there and move inward. Think of the ends of a short, well-defined path. You can walk to the end, and you can start at the end and walk back.
 
-*   **Exit Boundary (Yes/No):** This is a trap, a "roach motel" for [stochastic processes](@article_id:141072). The particle can get in, but it can't get out. Once it reaches an [exit boundary](@article_id:186000), it's stuck there forever. It is reachable, but not an admissible starting point for a journey into the interior.
+*   **Exit Boundary (Yes/No):** This is a trap, a "roach motel" for [stochastic processes](@keyword=stochastic_processes|lang=en-US|style=Feynman). The particle can get in, but it can't get out. Once it reaches an [exit boundary](@keyword=exit_boundary|lang=en-US|style=Feynman), it's stuck there forever. It is reachable, but not an admissible starting point for a journey into the interior.
 
-*   **Entrance Boundary (No/Yes):** This is a mysterious source, a one-way fountain. A particle can emerge from an [entrance boundary](@article_id:187004) and enter the interior, but no particle starting in the interior can ever find its way back. It's a point of origin you can never return to.
+*   **Entrance Boundary (No/Yes):** This is a mysterious source, a one-way fountain. A particle can emerge from an [entrance boundary](@keyword=entrance_boundary|lang=en-US|style=Feynman) and enter the interior, but no particle starting in the interior can ever find its way back. It's a point of origin you can never return to.
 
 *   **Natural Boundary (No/No):** This is the ultimate frontier, an infinitely distant horizon. It is unreachable from the interior, and no process can begin there and enter the interior. It is, for all practical purposes, infinitely far away in every sense.
 
-This elegant 2x2 classification gives us a powerful qualitative language to describe the edges of our random worlds .
+This elegant 2x2 classification gives us a powerful qualitative language to describe the edges of our random worlds [@problem_id:3041569].
 
 ### The Physicist's Divining Rod: The Scale Function
 
-This is all wonderfully descriptive, but how do we know which of the four fates awaits our particle at a given boundary? We can't simply watch forever. We need a tool, a mathematical divining rod, that can tell us about the deep properties of the landscape. This tool is the **[scale function](@article_id:200204)**.
+This is all wonderfully descriptive, but how do we know which of the four fates awaits our particle at a given boundary? We can't simply watch forever. We need a tool, a mathematical divining rod, that can tell us about the deep properties of the landscape. This tool is the **[scale function](@keyword=scale_function|lang=en-US|style=Feynman)**.
 
-Imagine the particle is a gambler, and its position is its fortune. The [drift and diffusion](@article_id:148322) terms make for a [biased game](@article_id:200999). The [scale function](@article_id:200204), let's call it $S(x)$, is a magical transformation of the particle's position. In this new "scale" coordinate system, the game becomes fair! The transformed process, $S(X_t)$, behaves like a pure martingale—a gambler in a fair casino with no house edge.
+Imagine the particle is a gambler, and its position is its fortune. The [drift and diffusion](@keyword=drift_and_diffusion|lang=en-US|style=Feynman) terms make for a [biased game](@keyword=biased_game|lang=en-US|style=Feynman). The [scale function](@keyword=scale_function|lang=en-US|style=Feynman), let's call it $S(x)$, is a magical transformation of the particle's position. In this new "scale" coordinate system, the game becomes fair! The transformed process, $S(X_t)$, behaves like a pure martingale—a gambler in a fair casino with no house edge.
 
-The derivative of the [scale function](@article_id:200204), $S'(x)$, known as the **scale density**, tells us how to perform this transformation. It's calculated directly from the drift $b(x)$ and diffusion $\sigma(x)$ coefficients:
+The derivative of the [scale function](@keyword=scale_function|lang=en-US|style=Feynman), $S'(x)$, known as the **scale density**, tells us how to perform this transformation. It's calculated directly from the drift $b(x)$ and diffusion $\sigma(x)$ coefficients:
 $S'(x) = \exp\left( -\int^x \frac{2b(y)}{\sigma^2(y)} dy \right)$
 
-Now, the question "Is the boundary reachable?" has a beautifully simple answer. A boundary (say, at $r$) is reachable if and only if the "distance" to it in the scale-transformed world is finite. This distance is simply the integral of the scale density up to that point. For a boundary at $r$, we check if $\int^r S'(x) dx$ is finite. If it converges, the boundary is reachable (Regular or Exit). If it diverges to infinity, the boundary is unreachable (Entrance or Natural)  . A second tool, the **[speed measure](@article_id:195936)**, which tells us how long the particle lingers in different regions, is needed to distinguish between Regular/Exit and Entrance/Natural, but attainability itself is decided by the [scale function](@article_id:200204) alone .
+Now, the question "Is the boundary reachable?" has a beautifully simple answer. A boundary (say, at $r$) is reachable if and only if the "distance" to it in the scale-transformed world is finite. This distance is simply the integral of the scale density up to that point. For a boundary at $r$, we check if $\int^r S'(x) dx$ is finite. If it converges, the boundary is reachable (Regular or Exit). If it diverges to infinity, the boundary is unreachable (Entrance or Natural) [@problem_id:2985394] [@problem_id:3058419]. A second tool, the **[speed measure](@keyword=speed_measure|lang=en-US|style=Feynman)**, which tells us how long the particle lingers in different regions, is needed to distinguish between Regular/Exit and Entrance/Natural, but attainability itself is decided by the [scale function](@keyword=scale_function|lang=en-US|style=Feynman) alone [@problem_id:2970099].
 
 ### A Concrete Example: Bankruptcy vs. Infinite Wealth
 
-Let's make this tangible with a famous example: **Geometric Brownian Motion**, the model underlying the Black-Scholes theory for stock [option pricing](@article_id:139486) . A stock price $X_t$ is modeled as:
+Let's make this tangible with a famous example: **Geometric Brownian Motion**, the model underlying the Black-Scholes theory for stock [option pricing](@keyword=option_pricing|lang=en-US|style=Feynman) [@problem_id:2985394]. A stock price $X_t$ is modeled as:
 $dX_t = \mu X_t dt + \sigma X_t dW_t$
 Here, $\mu$ is the average growth rate (drift), and $\sigma$ is the volatility (noise). The state space is $(0, \infty)$. The boundaries are $0$ (bankruptcy) and $\infty$ (infinite wealth). Can a stock price, according to this model, actually hit zero? Or can it grow infinitely large?
 
@@ -74,32 +74,32 @@ The ultimate fate of the system hangs on this simple inequality!
 
 The interplay between drift and noise can lead to even stranger phenomena.
 
-Consider a process with no drift at all, just noise, but where the noise level depends on the position :
+Consider a process with no drift at all, just noise, but where the noise level depends on the position [@problem_id:2974737]:
 $dX_t = \sigma_0 X_t^\alpha dW_t$
-When $\alpha > 0$, the noise, $\sigma_0 X_t^\alpha$, vanishes as the particle approaches $0$. You might think that less noise would make the boundary easier to reach. But for $\alpha \ge 1$, a curious thing happens. The [scale function](@article_id:200204) test confirms the boundary at 0 is indeed **accessible**. However, the vanishing noise acts like a one-way gate. The particle can reach the boundary, but the lack of random fluctuation at the origin prevents it from ever leaving. It's like a skater gliding onto a patch of infinitely sticky ice: they can get on, but can't get off. The boundary at 0 becomes an **[exit boundary](@article_id:186000)**—a perfect trap.
+When $\alpha > 0$, the noise, $\sigma_0 X_t^\alpha$, vanishes as the particle approaches $0$. You might think that less noise would make the boundary easier to reach. But for $\alpha \ge 1$, a curious thing happens. The [scale function](@keyword=scale_function|lang=en-US|style=Feynman) test confirms the boundary at 0 is indeed **accessible**. However, the vanishing noise acts like a one-way gate. The particle can reach the boundary, but the lack of random fluctuation at the origin prevents it from ever leaving. It's like a skater gliding onto a patch of infinitely sticky ice: they can get on, but can't get off. The boundary at 0 becomes an **[exit boundary](@keyword=exit_boundary|lang=en-US|style=Feynman)**—a perfect trap.
 
-Alternatively, a strong enough repulsive drift can also make a boundary inaccessible. Consider a process like :
+Alternatively, a strong enough repulsive drift can also make a boundary inaccessible. Consider a process like [@problem_id:3058419]:
 $dX_t = \frac{\alpha}{X_t} dt + dW_t$
-For large $\alpha$, the drift term $\alpha/X_t$ acts like a powerful spring pushing the particle away from $0$. If this repulsive force is strong enough (specifically, when $\alpha \ge 1/2$), the particle can never overcome it to reach the origin. The boundary at $0$ becomes an **entrance** boundary. It's unreachable from the inside. Consequently, the probability of ever hitting $0$ before hitting some other point is exactly zero .
+For large $\alpha$, the drift term $\alpha/X_t$ acts like a powerful spring pushing the particle away from $0$. If this repulsive force is strong enough (specifically, when $\alpha \ge 1/2$), the particle can never overcome it to reach the origin. The boundary at $0$ becomes an **entrance** boundary. It's unreachable from the inside. Consequently, the probability of ever hitting $0$ before hitting some other point is exactly zero [@problem_id:3059708].
 
 ### A Profound Twist: Does Reality Depend on Our Calculus?
 
-So far, we've seen that the physical parameters of a system determine its boundary behavior. But what if the boundary behavior depended on the *mathematical language* we choose to describe the system? This brings us to a deep and fascinating subtlety in [stochastic calculus](@article_id:143370): the choice between the **Itô** and **Stratonovich** interpretations.
+So far, we've seen that the physical parameters of a system determine its boundary behavior. But what if the boundary behavior depended on the *mathematical language* we choose to describe the system? This brings us to a deep and fascinating subtlety in [stochastic calculus](@keyword=stochastic_calculus|lang=en-US|style=Feynman): the choice between the **Itô** and **Stratonovich** interpretations.
 
 When the noise term $\sigma(X_t)$ depends on the state $X_t$, there's an ambiguity in how to average its effect over a small time step. Two consistent conventions emerged, named after their creators. For a long time, this was seen as a technical choice for mathematicians. But it has profound physical consequences.
 
-Consider a process with a constant positive drift $\alpha$ and square-root noise :
+Consider a process with a constant positive drift $\alpha$ and square-root noise [@problem_id:3066493]:
 $dX_t = \alpha dt + c \sqrt{X_t} dW_t$
 Let's analyze the accessibility of the boundary at $0$.
 
-*   Under the **Itô interpretation**, our [scale function](@article_id:200204) analysis shows the boundary is accessible if $\alpha  c^2/2$.
+*   Under the **Itô interpretation**, our [scale function](@keyword=scale_function|lang=en-US|style=Feynman) analysis shows the boundary is accessible if $\alpha  c^2/2$.
 *   Under the **Stratonovich interpretation**, the rules for calculation add an extra "spurious" drift term. The equivalent Itô drift becomes $\alpha + c^2/4$. Repeating the analysis, we find the boundary is accessible only if $\alpha + c^2/4  c^2/2$, which simplifies to $\alpha  c^2/4$.
 
 Now, look at the window where $c^2/4 \le \alpha  c^2/2$. For a system with these parameters, if you are a scientist who believes the world is described by Itô calculus, you will conclude that the boundary at $0$ is reachable. If your colleague down the hall believes in Stratonovich calculus, she will analyze the *exact same system* and conclude the boundary is unreachable. The physical property of attainability—whether a state of bankruptcy is even possible—depends on the mathematical formalism you choose! This is a powerful lesson: our mathematical tools are not just passive descriptors of reality; they can actively shape our model of it.
 
 ### Why It All Matters: Well-Posed Problems and Unique Realities
 
-This journey into the nature of boundaries is not just a mathematical curiosity. It is fundamental to the art of building models of the real world . When we write down an SDE, we are writing down a set of physical laws. Boundary classification tells us whether those laws are complete.
+This journey into the nature of boundaries is not just a mathematical curiosity. It is fundamental to the art of building models of the real world [@problem_id:2970098]. When we write down an SDE, we are writing down a set of physical laws. Boundary classification tells us whether those laws are complete.
 
 *   If a boundary is **inaccessible** (Entrance or Natural), our job is done. The laws of nature themselves prevent the system from ever reaching that state, so we don't need to specify what would happen. The model is self-contained and predicts a unique future.
 

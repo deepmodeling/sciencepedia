@@ -1,10 +1,10 @@
 ## 应用与跨学科联系
 
-在经历了[罗杰斯-拉马努金恒等式](@article_id:339132)错综复杂的证明和优雅的结构之旅后，一个好奇的头脑可能会问：那又怎样？这些恒等式仅仅是数论博物馆中供人远观的数学艺术品吗？还是说它们能走出画廊，进入工坊，在其他科学领域证明自己的用处？答案是后者的响亮肯定。[罗杰斯-拉马努金恒等式](@article_id:339132)的故事并未在其证明处结束；实际上，那才是它真正开始的地方。它们不是孤立的山峰，而是连接着广阔、看似迥异的思想大陆的中央山脉。它们在计数的离散世界、复分析的连续世界，乃至理论物理的量子世界之间，担当了一座非凡的桥梁。
+在经历了[罗杰斯-拉马努金恒等式](@keyword=rogers_ramanujan_identities|lang=zh-CN|style=Feynman)错综复杂的证明和优雅的结构之旅后，一个好奇的头脑可能会问：那又怎样？这些恒等式仅仅是数论博物馆中供人远观的数学艺术品吗？还是说它们能走出画廊，进入工坊，在其他科学领域证明自己的用处？答案是后者的响亮肯定。[罗杰斯-拉马努金恒等式](@keyword=rogers_ramanujan_identities|lang=zh-CN|style=Feynman)的故事并未在其证明处结束；实际上，那才是它真正开始的地方。它们不是孤立的山峰，而是连接着广阔、看似迥异的思想大陆的中央山脉。它们在计数的离散世界、复分析的连续世界，乃至理论物理的量子世界之间，担当了一座非凡的桥梁。
 
 ### 组合学的核心：分拆的乐章
 
-在其核心，这些恒等式是关于分拆——一个整数可以被写成正整数之和的不同方式——的深刻陈述。正如我们所见，第一个[罗杰斯-拉马努金恒等式](@article_id:339132)将一个[无穷级数](@article_id:303801)与一个无穷乘积等同起来。这不仅仅是代数戏法；它是一本在两种不同计数语言之间进行翻译的词典，完美地说明了[整数分拆](@article_id:299750)的双重性。
+在其核心，这些恒等式是关于分拆——一个整数可以被写成正整数之和的不同方式——的深刻陈述。正如我们所见，第一个[罗杰斯-拉马努金恒等式](@keyword=rogers_ramanujan_identities|lang=zh-CN|style=Feynman)将一个[无穷级数](@keyword=infinite_series|lang=zh-CN|style=Feynman)与一个无穷乘积等同起来。这不仅仅是代数戏法；它是一本在两种不同计数语言之间进行翻译的词典，完美地说明了[整数分拆](@keyword=integer_partitions|lang=zh-CN|style=Feynman)的双重性。
 
 让我们以整数 $N=7$ 为例。
 
@@ -20,32 +20,32 @@
 - $1+1+1+1+1+1+1$
 这同样有**三种**方式。恒等式完美成立，展示了一个解析表达式和一个简单计数问题之间直接而优美的联系。
 
-### [复平面](@article_id:318633)的旅程：[模形式](@article_id:320418)与惊人的数字
+### [复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)的旅程：[模形式](@keyword=modular_forms|lang=zh-CN|style=Feynman)与惊人的数字
 
-当我们把变量 $q$ 不仅仅看作一个形式参数，而是一个复数，特别是 $q = \exp(2\pi i\tau)$，其中 $\tau$ 是[复平面](@article_id:318633)[上半平面](@article_id:377885)的一个数时，故事就深化了。这个简单的替换将[罗杰斯-拉马努金恒等式](@article_id:339132)带入了模形式丰富而美丽的世界。
+当我们把变量 $q$ 不仅仅看作一个形式参数，而是一个复数，特别是 $q = \exp(2\pi i\tau)$，其中 $\tau$ 是[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)[上半平面](@keyword=upper_half_plane|lang=zh-CN|style=Feynman)的一个数时，故事就深化了。这个简单的替换将[罗杰斯-拉马努金恒等式](@keyword=rogers_ramanujan_identities|lang=zh-CN|style=Feynman)带入了模形式丰富而美丽的世界。
 
 这种联系最优雅的体现之一是罗杰斯-拉马努金连分数：
 $$ R(q) = \frac{q^{1/5}}{1 + \frac{q}{1 + \frac{q^2}{1 + \frac{q^3}{\ddots}}}} $$
-这个无限的阶梯式分数竟然就是两个罗杰斯-拉马努金函数的比值，$R(q) = q^{1/5} H(q)/G(q)$。当被看作是 $\tau$ 的函数时，这个对象展现出非凡的对称性。当 $\tau$ 以特定方式变换时，它的值不变，这使它成为一个“[模函数](@article_id:316137)”。
+这个无限的阶梯式分数竟然就是两个罗杰斯-拉马努金函数的比值，$R(q) = q^{1/5} H(q)/G(q)$。当被看作是 $\tau$ 的函数时，这个对象展现出非凡的对称性。当 $\tau$ 以特定方式变换时，它的值不变，这使它成为一个“[模函数](@keyword=modular_functions|lang=zh-CN|style=Feynman)”。
 
 这些对称性不仅是为了审美欣赏；它们是极其强大的计算工具。例如，Ramanujan 发现当 $q = e^{-2\pi}$ 时（对应于设置 $\tau = i$），连分数的值与黄金比例 $\phi = (1+\sqrt{5})/2$ 有着惊人的联系。具体来说：
 $$ \frac{1}{1 + \frac{e^{-2\pi}}{1 + \frac{e^{-4\pi}}{1 + \ddots}}} = \frac{1}{\phi} = \frac{\sqrt{5}-1}{2} $$
 这个连接几何、艺术和生物学的著名数字，出现在一个来自数论的晦涩连分数的背景下，是数学出人意料的统一性的经典例子。
 
-联系甚至更深。如果我们不仅在 $\tau=i$ 处计算连分数，还在其他特殊的“虚二次”点上计算，我们就进入了[复数乘法](@article_id:347354)领域。这些特殊值总是[代数数](@article_id:311305)（整系数多项式的根）。例如，通过在 $\tau_0 = (1+\sqrt{-15})/2$ 处求值，可以证明值 $y = R(\tau_0)^5$ 是 $y^2 - y - 1 = 0$ 的一个根。这意味着 $R(\tau_0)$ 的伽罗瓦[共轭](@article_id:312168)的十次方之和为整数5。罗杰斯-拉马努金函数“知道”这些特殊点深奥的算术性质，这一事实表明它是现代数论中的一个核心角色。
+联系甚至更深。如果我们不仅在 $\tau=i$ 处计算连分数，还在其他特殊的“虚二次”点上计算，我们就进入了[复数乘法](@keyword=complex_multiplication|lang=zh-CN|style=Feynman)领域。这些特殊值总是[代数数](@keyword=algebraic_numbers|lang=zh-CN|style=Feynman)（整系数多项式的根）。例如，通过在 $\tau_0 = (1+\sqrt{-15})/2$ 处求值，可以证明值 $y = R(\tau_0)^5$ 是 $y^2 - y - 1 = 0$ 的一个根。这意味着 $R(\tau_0)$ 的伽罗瓦[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)的十次方之和为整数5。罗杰斯-拉马努金函数“知道”这些特殊点深奥的算术性质，这一事实表明它是现代数论中的一个核心角色。
 
 ### 分拆的物理学：硬六边形模型与量子场
 
-[罗杰斯-拉马努金恒等式](@article_id:339132)故事中最令人惊讶的篇章，或许是它们在[理论物理学](@article_id:314482)中的出现。1980年，物理学家 Rodney Baxter 正在研究“硬六边形模型”，这是一个[统计力](@article_id:373880)学模型，描述了在一个三角形格点上的粒子，其中任意两个粒子都不能占据相邻的位置。问题是[计算模型](@article_id:313052)的“[配分函数](@article_id:371907)”，它本质上是计算粒子允许构型的数量。令所有人惊讶的是，其解恰好是用罗杰斯-拉马努金函数表示的。[组合学](@article_id:304771)条件——分拆为各部分之差至少为2——正是物理条件——粒子不能靠得太近——的直接数学翻译！
+[罗杰斯-拉马努金恒等式](@keyword=rogers_ramanujan_identities|lang=zh-CN|style=Feynman)故事中最令人惊讶的篇章，或许是它们在[理论物理学](@keyword=theoretical_physics|lang=zh-CN|style=Feynman)中的出现。1980年，物理学家 Rodney Baxter 正在研究“硬六边形模型”，这是一个[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学模型，描述了在一个三角形格点上的粒子，其中任意两个粒子都不能占据相邻的位置。问题是[计算模型](@keyword=models_of_computation|lang=zh-CN|style=Feynman)的“[配分函数](@keyword=sum_over_states_2|lang=zh-CN|style=Feynman)”，它本质上是计算粒子允许构型的数量。令所有人惊讶的是，其解恰好是用罗杰斯-拉马努金函数表示的。[组合学](@keyword=combinatorics|lang=zh-CN|style=Feynman)条件——分拆为各部分之差至少为2——正是物理条件——粒子不能靠得太近——的直接数学翻译！
 
-这仅仅是个开始。这些恒等式在[二维共形场论](@article_id:309236)（CFT）中找到了一个更基础的角色。CFT是描述系统处于[临界点](@article_id:305080)（如水在[沸点](@article_id:300339)或磁铁在居里温度）的理论框架。这样一个系统的状态由一个被称为[维拉宿代数](@article_id:304372)的强大[对称代数](@article_id:373193)组织起来。一个给定CFT模型的指纹式关键量是其“特征标”，这是一个计算每个能级上可能状态数量的函数。
+这仅仅是个开始。这些恒等式在[二维共形场论](@keyword=2d_conformal_field_theory|lang=zh-CN|style=Feynman)（CFT）中找到了一个更基础的角色。CFT是描述系统处于[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)（如水在[沸点](@keyword=boiling_point|lang=zh-CN|style=Feynman)或磁铁在居里温度）的理论框架。这样一个系统的状态由一个被称为[维拉宿代数](@keyword=virasoro_algebra|lang=zh-CN|style=Feynman)的强大[对称代数](@keyword=symmetric_algebra|lang=zh-CN|style=Feynman)组织起来。一个给定CFT模型的指纹式关键量是其“特征标”，这是一个计算每个能级上可能状态数量的函数。
 
-对于一个被称为杨-李边缘[奇点](@article_id:298215)的特定CFT[最小模型](@article_id:332232)，它描述了磁性系统中的一种[相变](@article_id:297531)，其真空特征标 $\chi_0(q)$ 由下式给出：
+对于一个被称为杨-李边缘[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)的特定CFT[最小模型](@keyword=minimal_model|lang=zh-CN|style=Feynman)，它描述了磁性系统中的一种[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)，其真空特征标 $\chi_0(q)$ 由下式给出：
 $$ \chi_0(q) = \sum_{n=0}^{\infty} \frac{q^{n^2}}{(q;q)_n} $$
-这恰好是第一个[罗杰斯-拉马努金恒等式](@article_id:339132)中的级数！一个有百年历史的用于计算[整数分拆](@article_id:299750)的公式，为量子[场论](@article_id:315652)提供了精确的描述。这意味着计算这个级数的系数，也就是计数分拆，等同于确定一个物理系统在给定能级上的独立状态数。这种深刻而出人意料的联系是“数学难以置信的有效性”在描述自然世界方面最著名的例子之一。
+这恰好是第一个[罗杰斯-拉马努金恒等式](@keyword=rogers_ramanujan_identities|lang=zh-CN|style=Feynman)中的级数！一个有百年历史的用于计算[整数分拆](@keyword=integer_partitions|lang=zh-CN|style=Feynman)的公式，为量子[场论](@keyword=field_theory|lang=zh-CN|style=Feynman)提供了精确的描述。这意味着计算这个级数的系数，也就是计数分拆，等同于确定一个物理系统在给定能级上的独立状态数。这种深刻而出人意料的联系是“数学难以置信的有效性”在描述自然世界方面最著名的例子之一。
 
 ### 计算与逼近
 
-除了这些深刻的理论联系，恒等式中的[级数表示](@article_id:354858)也为计算和逼近提供了实用工具。[无穷级数](@article_id:303801)和无穷乘积看起来令人望而生畏，但可以使用一种称为帕德逼近的技术，用简单的[有理函数](@article_id:314691)（多项式之比）来高精度地逼近它们。例如，在一个令人愉快的转折中，罗杰斯-拉马努金函数 $S(q) = \sum q^{n^2}/(q;q)_n$ 的 $[2/2]$ 帕德逼近退化并简化为不过是几何级数公式 $1/(1-q)$。这揭示了一种隐藏的简单性，并为小的 $q$ 值提供了一个极好的近似。类似地，$G(q)$ 和 $H(q)$ 的级数形式允许系统地计算它们的比值，即连分数本身的系数。
+除了这些深刻的理论联系，恒等式中的[级数表示](@keyword=series_representation|lang=zh-CN|style=Feynman)也为计算和逼近提供了实用工具。[无穷级数](@keyword=infinite_series|lang=zh-CN|style=Feynman)和无穷乘积看起来令人望而生畏，但可以使用一种称为帕德逼近的技术，用简单的[有理函数](@keyword=rational_functions|lang=zh-CN|style=Feynman)（多项式之比）来高精度地逼近它们。例如，在一个令人愉快的转折中，罗杰斯-拉马努金函数 $S(q) = \sum q^{n^2}/(q;q)_n$ 的 $[2/2]$ 帕德逼近退化并简化为不过是几何级数公式 $1/(1-q)$。这揭示了一种隐藏的简单性，并为小的 $q$ 值提供了一个极好的近似。类似地，$G(q)$ 和 $H(q)$ 的级数形式允许系统地计算它们的比值，即连分数本身的系数。
 
-从数数到[黄金比例](@article_id:299545)，从[复平面](@article_id:318633)的对称性到量子临界物理学，[罗杰斯-拉马努金恒等式](@article_id:339132)在一个世纪的科学中编织了一根线。它们是一块罗塞塔石碑，在几乎不知道彼此存在的领域之间翻译着深刻的思想。它们证明了一个事实：在数学中，最美丽的对象往往是最强大的，而最纯粹的数论研究也能掌握理解宇宙的钥匙。
+从数数到[黄金比例](@keyword=golden_ratio|lang=zh-CN|style=Feynman)，从[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)的对称性到量子临界物理学，[罗杰斯-拉马努金恒等式](@keyword=rogers_ramanujan_identities|lang=zh-CN|style=Feynman)在一个世纪的科学中编织了一根线。它们是一块罗塞塔石碑，在几乎不知道彼此存在的领域之间翻译着深刻的思想。它们证明了一个事实：在数学中，最美丽的对象往往是最强大的，而最纯粹的数论研究也能掌握理解宇宙的钥匙。

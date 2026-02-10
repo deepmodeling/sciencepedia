@@ -1,55 +1,55 @@
 ## 应用与跨学科联系
 
-既然我们已经掌握了幂法的内部运作机制，我们可能会想把它束之高阁，放入一个布满灰尘的数值[算法](@article_id:331821)工具箱里。但那将是一个天大的错误。这样做就像学会了国际象棋的规则，却从未欣赏过特级大师棋局之美。[幂法](@article_id:308440)的[收敛速度](@article_id:641166)，即那个简单的[特征值](@article_id:315305)之比 $|\lambda_2|/|\lambda_1|$，不仅仅是衡量[算法](@article_id:331821)速度的枯燥指标。它是来自系统核心的深刻低语，告诉我们关于它的稳定性、结构及其本质。
+既然我们已经掌握了幂法的内部运作机制，我们可能会想把它束之高阁，放入一个布满灰尘的数值[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)工具箱里。但那将是一个天大的错误。这样做就像学会了国际象棋的规则，却从未欣赏过特级大师棋局之美。[幂法](@keyword=power_method|lang=zh-CN|style=Feynman)的[收敛速度](@keyword=rates_of_convergence|lang=zh-CN|style=Feynman)，即那个简单的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)之比 $|\lambda_2|/|\lambda_1|$，不仅仅是衡量[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)速度的枯燥指标。它是来自系统核心的深刻低语，告诉我们关于它的稳定性、结构及其本质。
 
-在本章中，我们将踏上一段旅程，在一些最令人惊讶的地方聆听那声低语。我们将看到，支配我们这个谦逊[算法](@article_id:331821)收敛的同一个数学原理，也同样在调控着互联网上信息的流动，决定着量子粒子的基本能态，甚至帮助驯服我们现代世界中巨大的人工智能。[幂法](@article_id:308440)是我们的听诊器，而[收敛速度](@article_id:641166)是系统心跳的节奏。
+在本章中，我们将踏上一段旅程，在一些最令人惊讶的地方聆听那声低语。我们将看到，支配我们这个谦逊[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)收敛的同一个数学原理，也同样在调控着互联网上信息的流动，决定着量子粒子的基本能态，甚至帮助驯服我们现代世界中巨大的人工智能。[幂法](@keyword=power_method|lang=zh-CN|style=Feynman)是我们的听诊器，而[收敛速度](@keyword=rates_of_convergence|lang=zh-CN|style=Feynman)是系统心跳的节奏。
 
 ### 编织世界的网络
 
-让我们从一个最简单的系统概念开始：一个相互连接的事物的集合。想象两个完全独立的社交圈，彼此之间没有共同的朋友。如果我们想在这个组合宇宙中找到“最重要的人”，那将只是两个群体中其中一个的最重要的人。这两个动态是完全独立的。[幂法](@article_id:308440)识别这个人的速度将取决于前两名人物影响力的比较，即使他们生活在不同的世界，永不相遇 。
+让我们从一个最简单的系统概念开始：一个相互连接的事物的集合。想象两个完全独立的社交圈，彼此之间没有共同的朋友。如果我们想在这个组合宇宙中找到“最重要的人”，那将只是两个群体中其中一个的最重要的人。这两个动态是完全独立的。[幂法](@keyword=power_method|lang=zh-CN|style=Feynman)识别这个人的速度将取决于前两名人物影响力的比较，即使他们生活在不同的世界，永不相遇 [@problem_id:1396818]。
 
-但世界很少如此脱节。当我们增加连接时会发生什么？我们得到了一个网络。这可以是一个人的网络，一个网页的网络，甚至是相互比赛的运动队网络。这些网络的数学常常由**[马尔可夫链](@article_id:311246)**来描述，而幂法正是其演化的引擎 。
+但世界很少如此脱节。当我们增加连接时会发生什么？我们得到了一个网络。这可以是一个人的网络，一个网页的网络，甚至是相互比赛的运动队网络。这些网络的数学常常由**[马尔可夫链](@keyword=markov_chains|lang=zh-CN|style=Feynman)**来描述，而幂法正是其演化的引擎 [@problem_id:2427083]。
 
-想象一下，你在互联网上释放了一百万个[随机游走](@article_id:303058)者，告诉他们只需点击链接。他们最终会去哪里？起初，他们会分散开来，但经过很多很多次点击后，他们的分布将稳定下来，形成一个稳定的模式。这个最终的[稳态分布](@article_id:313289)，正是网络[转移矩阵](@article_id:306845)的[主特征向量](@article_id:328065)！这个向量的分量，我们称之为**[PageRank](@article_id:300050)**，告诉我们每个网页的“重要性”。原始形式的[幂法](@article_id:308440)正是用来计算这个的。类似的逻辑可以用来根据运动队的胜负记录对他们进行排名。[主特征向量](@article_id:328065)代表了队伍的“真实”排名，平衡了他们对手的实力 。
+想象一下，你在互联网上释放了一百万个[随机游走](@keyword=random_walk|lang=zh-CN|style=Feynman)者，告诉他们只需点击链接。他们最终会去哪里？起初，他们会分散开来，但经过很多很多次点击后，他们的分布将稳定下来，形成一个稳定的模式。这个最终的[稳态分布](@keyword=steady_state_distribution|lang=zh-CN|style=Feynman)，正是网络[转移矩阵](@keyword=transition_matrix|lang=zh-CN|style=Feynman)的[主特征向量](@keyword=principal_eigenvector|lang=zh-CN|style=Feynman)！这个向量的分量，我们称之为**[PageRank](@keyword=pagerank|lang=zh-CN|style=Feynman)**，告诉我们每个网页的“重要性”。原始形式的[幂法](@keyword=power_method|lang=zh-CN|style=Feynman)正是用来计算这个的。类似的逻辑可以用来根据运动队的胜负记录对他们进行排名。[主特征向量](@keyword=principal_eigenvector|lang=zh-CN|style=Feynman)代表了队伍的“真实”排名，平衡了他们对手的实力 [@problem_id:3219012]。
 
-在这里，收敛速度 $|\lambda_2|/|\lambda_1|$（对于这些系统，$\lambda_1=1$）具有一个非常具体的含义。这个值，通常用**[谱隙](@article_id:305303)** $1 - |\lambda_2|$ 来讨论，它告诉我们网络结构的“清晰”程度。如果 $|\lambda_2|$ 非常接近 1，那么谱隙就很小。这意味着存在另一个状态，即另一种[随机游走](@article_id:303058)者的分布，其稳定性几乎与最终状态相当。系统处于“矛盾”状态。游走者需要很长时间才能稳定下来，并且最终的排名是模糊的，对微小的变化很敏感。相反，一个大的谱隙（即一个小的 $|\lambda_2|$）意味着网络有一个清晰、明确的层次结构。[幂法](@article_id:308440)收敛迅速，排名是决定性的和稳定的。你需要运行以获得良好答案的迭代次数与这个间隙成比例；一个大小为 $\varepsilon$ 的小间隙意味着你可能需要大约 $1/\varepsilon$ 次迭代才能得到答案 。
+在这里，收敛速度 $|\lambda_2|/|\lambda_1|$（对于这些系统，$\lambda_1=1$）具有一个非常具体的含义。这个值，通常用**[谱隙](@keyword=spectral_gap|lang=zh-CN|style=Feynman)** $1 - |\lambda_2|$ 来讨论，它告诉我们网络结构的“清晰”程度。如果 $|\lambda_2|$ 非常接近 1，那么谱隙就很小。这意味着存在另一个状态，即另一种[随机游走](@keyword=random_walk|lang=zh-CN|style=Feynman)者的分布，其稳定性几乎与最终状态相当。系统处于“矛盾”状态。游走者需要很长时间才能稳定下来，并且最终的排名是模糊的，对微小的变化很敏感。相反，一个大的谱隙（即一个小的 $|\lambda_2|$）意味着网络有一个清晰、明确的层次结构。[幂法](@keyword=power_method|lang=zh-CN|style=Feynman)收敛迅速，排名是决定性的和稳定的。你需要运行以获得良好答案的迭代次数与这个间隙成比例；一个大小为 $\varepsilon$ 的小间隙意味着你可能需要大约 $1/\varepsilon$ 次迭代才能得到答案 [@problem_id:2428588]。
 
-有时，系统的结构和我们的出发点会合谋揭示另一个美妙的微妙之处。想象一个有一个特殊的、与世隔绝的社群的网络。如果我们完全在这个社群内部开始我们的[随机游走](@article_id:303058)，并且没有向外的链接，我们将永远无法发现网络的其余部分。我们观察到的收敛将完全由那个更小的、*[不变子空间](@article_id:313241)*的结构所决定 。系统的全局复杂性对我们是隐藏的。这是一个至关重要的教训：我们能观察到关于一个系统的什么，取决于我们如何与它互动。
+有时，系统的结构和我们的出发点会合谋揭示另一个美妙的微妙之处。想象一个有一个特殊的、与世隔绝的社群的网络。如果我们完全在这个社群内部开始我们的[随机游走](@keyword=random_walk|lang=zh-CN|style=Feynman)，并且没有向外的链接，我们将永远无法发现网络的其余部分。我们观察到的收敛将完全由那个更小的、*[不变子空间](@keyword=invariant_subspaces|lang=zh-CN|style=Feynman)*的结构所决定 [@problem_id:3283218]。系统的全局复杂性对我们是隐藏的。这是一个至关重要的教训：我们能观察到关于一个系统的什么，取决于我们如何与它互动。
 
-### 现实的形态：从吉他弦到[量子态](@article_id:306563)
+### 现实的形态：从吉他弦到[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)
 
-让我们从网络的抽象连接转向物理世界。吉他弦是如何[振动](@article_id:331484)的？它不只是随机摆动；它以一组纯粹的、特征性的模式[振动](@article_id:331484)，称为**[驻波](@article_id:309067)**或**[简正模](@article_id:300087)**。每种模式都有一个特定的频率。这些模式是物理系统的[特征向量](@article_id:312227)，它们的频率与[特征值](@article_id:315305)相关。
+让我们从网络的抽象连接转向物理世界。吉他弦是如何[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的？它不只是随机摆动；它以一组纯粹的、特征性的模式[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，称为**[驻波](@keyword=standing_waves|lang=zh-CN|style=Feynman)**或**[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman)**。每种模式都有一个特定的频率。这些模式是物理系统的[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)，它们的频率与[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)相关。
 
-为了在数值上找到这些模式，物理学家和工程师将弦建模为一系列相连的点。其支配物理学原理被一个矩阵所捕捉，其中一个著名的例子就是由[有限差分法](@article_id:307573)[离散化](@article_id:305437)产生的三对角[托普利茨矩阵](@article_id:335031) 。它的[特征向量](@article_id:312227)是你在示波器上看到的熟悉的离散版[正弦波](@article_id:338691)，而[特征值](@article_id:315305)对应于它们的[振荡频率](@article_id:333170)。
+为了在数值上找到这些模式，物理学家和工程师将弦建模为一系列相连的点。其支配物理学原理被一个矩阵所捕捉，其中一个著名的例子就是由[有限差分法](@keyword=finite_difference_methods|lang=zh-CN|style=Feynman)[离散化](@keyword=discretization|lang=zh-CN|style=Feynman)产生的三对角[托普利茨矩阵](@keyword=toeplitz_matrix|lang=zh-CN|style=Feynman) [@problem_id:3283216]。它的[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)是你在示波器上看到的熟悉的离散版[正弦波](@keyword=sinusoid|lang=zh-CN|style=Feynman)，而[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)对应于它们的[振荡频率](@keyword=oscillation_frequency|lang=zh-CN|style=Feynman)。
 
-现在，假设我们使用幂法。它将收敛到具有最大[特征值](@article_id:315305)的[特征向量](@article_id:312227)，在这种情况下，这代表了最高频率、[振荡](@article_id:331484)最快的[振动](@article_id:331484)模式。但在这里我们遇到了一个深刻而实际的挑战。为了更准确地描绘弦，我们必须在模型中使用越来越多的点（即更大的矩阵维度 $n$）。当我们这样做时，[振动](@article_id:331484)模式的频率会变得越来越接近。第二高频率与最高频率的比值 $|\lambda_{n-1}/\lambda_n|$ 越来越接近1。幂法的[收敛速度](@article_id:641166)慢得像爬行一样。对于高保真度的模拟，简单的[幂法](@article_id:308440)变得几乎无用！这是科学计算中的一个基本教训：当我们面对过于精细的现实时，我们最简单的工具可能会失效。
+现在，假设我们使用幂法。它将收敛到具有最大[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)的[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)，在这种情况下，这代表了最高频率、[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)最快的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式。但在这里我们遇到了一个深刻而实际的挑战。为了更准确地描绘弦，我们必须在模型中使用越来越多的点（即更大的矩阵维度 $n$）。当我们这样做时，[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式的频率会变得越来越接近。第二高频率与最高频率的比值 $|\lambda_{n-1}/\lambda_n|$ 越来越接近1。幂法的[收敛速度](@keyword=rates_of_convergence|lang=zh-CN|style=Feynman)慢得像爬行一样。对于高保真度的模拟，简单的[幂法](@keyword=power_method|lang=zh-CN|style=Feynman)变得几乎无用！这是科学计算中的一个基本教训：当我们面对过于精细的现实时，我们最简单的工具可能会失效。
 
-同样的原理也处于量子力学的核心。[量子化学](@article_id:300637)和物理学中的一个核心任务是找到分子或材料的**[基态](@article_id:312876)**——其最低可能能量的状态。这个状态决定了它的性质、稳定性以及它将如何反应。系统的可能能级是**哈密顿**矩阵 $H$ 的[特征值](@article_id:315305)。
+同样的原理也处于量子力学的核心。[量子化学](@keyword=quantum_chemistry|lang=zh-CN|style=Feynman)和物理学中的一个核心任务是找到分子或材料的**[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)**——其最低可能能量的状态。这个状态决定了它的性质、稳定性以及它将如何反应。系统的可能能级是**哈密顿**矩阵 $H$ 的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)。
 
-我们如何找到[基态能量](@article_id:327411) $E_1$，即 $H$ 的*最小*[特征值](@article_id:315305)？我们不能直接对 $H$ 使用[幂法](@article_id:308440)，因为那会找到最高能态。相反，物理学家使用一个非常巧妙的技巧，称为**虚[时间演化](@article_id:314355)**。他们不是对 $H$ 应用幂法，而是对算子 $A = \exp(-\tau H)$ 应用幂法，其中 $\tau$ 是某个小的正数 。这个新算子的[特征值](@article_id:315305)是 $\exp(-\tau E_i)$。由于能量 $E_i$ 都是正的，并且指数中有一个负号，因此 $A$ 的最大[特征值](@article_id:315305)现在对应于 $H$ 的*最小*[特征值](@article_id:315305)！应用于 $A$ 的幂法，就能找到[基态](@article_id:312876)。
+我们如何找到[基态能量](@keyword=ground_state_energy_2|lang=zh-CN|style=Feynman) $E_1$，即 $H$ 的*最小*[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)？我们不能直接对 $H$ 使用[幂法](@keyword=power_method|lang=zh-CN|style=Feynman)，因为那会找到最高能态。相反，物理学家使用一个非常巧妙的技巧，称为**虚[时间演化](@keyword=time_evolution|lang=zh-CN|style=Feynman)**。他们不是对 $H$ 应用幂法，而是对算子 $A = \exp(-\tau H)$ 应用幂法，其中 $\tau$ 是某个小的正数 [@problem_id:1043567]。这个新算子的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)是 $\exp(-\tau E_i)$。由于能量 $E_i$ 都是正的，并且指数中有一个负号，因此 $A$ 的最大[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)现在对应于 $H$ 的*最小*[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)！应用于 $A$ 的幂法，就能找到[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)。
 
-那么是什么决定了它的收敛性呢？是 $A$ 的第二大[特征值](@article_id:315305)与最大[特征值](@article_id:315305)之比：
+那么是什么决定了它的收敛性呢？是 $A$ 的第二大[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)与最大[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)之比：
 $$ \rho = \frac{|\exp(-\tau E_2)|}{|\exp(-\tau E_1)|} = \exp(-\tau(E_2 - E_1)) $$
-[收敛速度](@article_id:641166)由[基态](@article_id:312876)（$E_1$）与第一[激发态](@article_id:325164)（$E_2$）之间的**[能隙](@article_id:331619)**决定。[能隙](@article_id:331619)小的系统是出了名的难解。需要非常非常多的迭代才能在计算上区分[基态](@article_id:312876)与其能量上最接近的邻居 。
+[收敛速度](@keyword=rates_of_convergence|lang=zh-CN|style=Feynman)由[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)（$E_1$）与第一[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)（$E_2$）之间的**[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)**决定。[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)小的系统是出了名的难解。需要非常非常多的迭代才能在计算上区分[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)与其能量上最接近的邻居 [@problem_id:2900304]。
 
-### 更深层次的统一：收敛性与[病态性](@article_id:299122)
+### 更深层次的统一：收敛性与[病态性](@keyword=ill_conditioning|lang=zh-CN|style=Feynman)
 
-我们已经看到了一个反复出现的主题：当[特征值](@article_id:315305)彼此接近时，[幂法](@article_id:308440)就会遇到困难。人们可能认为这仅仅是[算法](@article_id:331821)上的一个麻烦。但真相更为深刻。缓慢的收敛通常是系统本身一个更基本属性的症状：**[病态性](@article_id:299122)** 。
+我们已经看到了一个反复出现的主题：当[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)彼此接近时，[幂法](@keyword=power_method|lang=zh-CN|style=Feynman)就会遇到困难。人们可能认为这仅仅是[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)上的一个麻烦。但真相更为深刻。缓慢的收敛通常是系统本身一个更基本属性的症状：**[病态性](@keyword=ill_conditioning|lang=zh-CN|style=Feynman)** [@problem_id:2428588]。
 
-当两个[特征值](@article_id:315305) $\lambda_1$ 和 $\lambda_2$ 几乎相同时，系统正悬于刀刃之上，几乎对两个对应的状态（[特征向量](@article_id:312227)）$v_1$ 和 $v_2$ 漠不关心。在这种情况下，[特征向量](@article_id:312227) $v_1$ 对最微小的扰动变得极其敏感。对矩阵的微观改变——网络连接或系统物理参数的微小变化——可能导致主导状态特征的剧烈摆动。
+当两个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) $\lambda_1$ 和 $\lambda_2$ 几乎相同时，系统正悬于刀刃之上，几乎对两个对应的状态（[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)）$v_1$ 和 $v_2$ 漠不关心。在这种情况下，[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman) $v_1$ 对最微小的扰动变得极其敏感。对矩阵的微观改变——网络连接或系统物理参数的微小变化——可能导致主导状态特征的剧烈摆动。
 
 所以，收敛缓慢是一个危险信号。它表明我们正在缓慢逼近的答案可能并不稳健。这是物理或系统不稳定性的数学回响。
 
-我们能骗过它吗？我们能仅仅“改变我们对矩阵的看法”来让[特征值分布](@article_id:373646)得更开吗？一个简单的[基变换](@article_id:305567)，即**相似变换**，是行不通的。这样的变换会保持[特征值](@article_id:315305)不变，因此基本的收敛速度也不变 。困难是问题固有的，而不是我们描述它的方式。然而，这并不意味着我们[无能](@article_id:380298)为力。它启发了更复杂[算法](@article_id:331821)的创造。像**位移反演**幂迭代这样的方法，它们*不是*相似变换，从根本上重映射了[特征值](@article_id:315305)，可以将一个[谱隙](@article_id:305303)接近于零的问题变成一个具有巨大谱隙的问题，从而带来惊人的加速 。理解一个工具的局限性迫使我们发明更好的工具。
+我们能骗过它吗？我们能仅仅“改变我们对矩阵的看法”来让[特征值分布](@keyword=eigenvalue_distribution|lang=zh-CN|style=Feynman)得更开吗？一个简单的[基变换](@keyword=change_of_basis|lang=zh-CN|style=Feynman)，即**相似变换**，是行不通的。这样的变换会保持[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)不变，因此基本的收敛速度也不变 [@problem_id:3273849]。困难是问题固有的，而不是我们描述它的方式。然而，这并不意味着我们[无能](@keyword=anergy|lang=zh-CN|style=Feynman)为力。它启发了更复杂[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的创造。像**位移反演**幂迭代这样的方法，它们*不是*相似变换，从根本上重映射了[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)，可以将一个[谱隙](@keyword=spectral_gap|lang=zh-CN|style=Feynman)接近于零的问题变成一个具有巨大谱隙的问题，从而带来惊人的加速 [@problem_id:2900304]。理解一个工具的局限性迫使我们发明更好的工具。
 
 ### 现代前沿：驯服人工智能巨头
 
-我们的旅程在现代技术的最前沿达到高潮：人工智能。驱动从图像识别到语言翻译等一切的[神经网络](@article_id:305336)，是由多层变换构成的，这些变换由巨大的权重[矩阵表示](@article_id:306446)。训练这些网络的一个关键挑战是确保它们保持稳定。如果一个矩阵的“[放大因子](@article_id:304744)”太大，信号在通过网络时可能会爆炸，从而使学习过程脱轨。
+我们的旅程在现代技术的最前沿达到高潮：人工智能。驱动从图像识别到语言翻译等一切的[神经网络](@keyword=neural_networks|lang=zh-CN|style=Feynman)，是由多层变换构成的，这些变换由巨大的权重[矩阵表示](@keyword=matrix_representations|lang=zh-CN|style=Feynman)。训练这些网络的一个关键挑战是确保它们保持稳定。如果一个矩阵的“[放大因子](@keyword=amplification_factor|lang=zh-CN|style=Feynman)”太大，信号在通过网络时可能会爆炸，从而使学习过程脱轨。
 
-这个放大因子最好用矩阵的**[谱范数](@article_id:303526)**来衡量，也就是其最大的[奇异值](@article_id:313319) $\sigma_1$。这恰好是矩阵 $A = W^T W$ 的最大[特征值](@article_id:315305)的平方根。为了控制网络，一种称为**[谱归一化](@article_id:641639)**的技术会估计这个范数并重新缩放权重。
+这个放大因子最好用矩阵的**[谱范数](@keyword=spectral_norm|lang=zh-CN|style=Feynman)**来衡量，也就是其最大的[奇异值](@keyword=singular_values|lang=zh-CN|style=Feynman) $\sigma_1$。这恰好是矩阵 $A = W^T W$ 的最大[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)的平方根。为了控制网络，一种称为**[谱归一化](@keyword=spectral_normalization|lang=zh-CN|style=Feynman)**的技术会估计这个范数并重新缩放权重。
 
-在训练期间，我们怎么可能每秒数千次地计算一个拥有数百万参数的矩阵的最大[特征值](@article_id:315305)呢？我们做不到。但我们不需要确切的答案。我们只需要一个好的估计。为此，我们求助于我们的老朋友——[幂法](@article_id:308440)。通过对 $A = W^T W$ 运行几轮[幂法](@article_id:308440)迭代，我们可以快速、可靠地估计其[主特征值](@article_id:303115)，从而控制网络的行为 。
+在训练期间，我们怎么可能每秒数千次地计算一个拥有数百万参数的矩阵的最大[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)呢？我们做不到。但我们不需要确切的答案。我们只需要一个好的估计。为此，我们求助于我们的老朋友——[幂法](@keyword=power_method|lang=zh-CN|style=Feynman)。通过对 $A = W^T W$ 运行几轮[幂法](@keyword=power_method|lang=zh-CN|style=Feynman)迭代，我们可以快速、可靠地估计其[主特征值](@keyword=dominant_eigenvalue|lang=zh-CN|style=Feynman)，从而控制网络的行为 [@problem_id:3143467]。
 
-在一个美妙的学科交汇点，当这种技术应用于卷积层——计算机视觉的主力——时，分析其收敛速度需要我们将卷积看作一个[循环矩阵](@article_id:304052)，其[特征值](@article_id:315305)通过**[离散傅里叶变换](@article_id:304462)（DFT）**找到。在这里，在一个21世纪神经网络的核心，我们发现线性代数、信号处理和[数值分析](@article_id:303075)的完美和谐，所有这些都围绕着同一个简单的[特征值](@article_id:315305)主导性原理。
+在一个美妙的学科交汇点，当这种技术应用于卷积层——计算机视觉的主力——时，分析其收敛速度需要我们将卷积看作一个[循环矩阵](@keyword=circulant_matrix|lang=zh-CN|style=Feynman)，其[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)通过**[离散傅里叶变换](@keyword=discrete_fourier_transform|lang=zh-CN|style=Feynman)（DFT）**找到。在这里，在一个21世纪神经网络的核心，我们发现线性代数、信号处理和[数值分析](@keyword=numerical_analysis|lang=zh-CN|style=Feynman)的完美和谐，所有这些都围绕着同一个简单的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)主导性原理。
 
-[幂法](@article_id:308440)收敛性的故事，讲述了一个单一、优雅的数学思想如何提供一个观察世界的镜头。它揭示了一种隐藏的统一性，一种共同的节奏，它跳动在连接我们的社交网络中，塑造我们宇宙的物理定律中，以及我们正在构建以帮助我们理解这一切的人工智能中。
+[幂法](@keyword=power_method|lang=zh-CN|style=Feynman)收敛性的故事，讲述了一个单一、优雅的数学思想如何提供一个观察世界的镜头。它揭示了一种隐藏的统一性，一种共同的节奏，它跳动在连接我们的社交网络中，塑造我们宇宙的物理定律中，以及我们正在构建以帮助我们理解这一切的人工智能中。

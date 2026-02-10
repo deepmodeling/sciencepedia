@@ -1,7 +1,7 @@
 ## Introduction
 Decision trees are a powerful and intuitive tool in machine learning, but their effectiveness hinges on building them correctly. A tree that is too complex will perfectly memorize the training data, including its noise, but fail spectacularly when faced with new, unseen information—a problem known as overfitting. This article addresses this fundamental challenge by exploring cost-complexity pruning, a principled method for simplifying decision trees to improve their real-world performance. It provides a formal, mathematical approach to the philosophical idea of Ockham's Razor: among competing models, the simplest one is often the best.
 
-This article will guide you through the complete framework of cost-complexity pruning. We will begin by dissecting its core "Principles and Mechanisms," exploring the statistical theory of the bias-variance tradeoff and the elegant "weakest link" algorithm that makes pruning computationally feasible. Following that, we will journey into "Applications and Interdisciplinary Connections," where the true power of this method is revealed through its use in diverse fields, from remote sensing and business to the cutting-edge frontiers of explainable AI and [algorithmic fairness](@entry_id:143652).
+This article will guide you through the complete framework of cost-complexity pruning. We will begin by dissecting its core "Principles and Mechanisms," exploring the statistical theory of the bias-variance tradeoff and the elegant "weakest link" algorithm that makes pruning computationally feasible. Following that, we will journey into "Applications and Interdisciplinary Connections," where the true power of this method is revealed through its use in diverse fields, from remote sensing and business to the cutting-edge frontiers of explainable AI and [algorithmic fairness](@keyword=algorithmic_fairness|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
@@ -41,7 +41,7 @@ For any $\alpha$ in between, the formula forces a compromise. A branch is only k
 
 ### The Deeper Truth: The Bias-Variance Tradeoff
 
-Why does this "principled simplification" work so well? The answer lies in one of the most fundamental concepts in all of statistics: the **[bias-variance tradeoff](@entry_id:138822)**. The total expected error of any model can be decomposed into three parts:
+Why does this "principled simplification" work so well? The answer lies in one of the most fundamental concepts in all of statistics: the **[bias-variance tradeoff](@keyword=bias_variance_tradeoff|lang=en-US|style=Feynman)**. The total expected error of any model can be decomposed into three parts:
 
 $$
 \text{Expected Error} = \text{Bias}^2 + \text{Variance} + \text{Irreducible Error}
@@ -63,7 +63,7 @@ The magic of cost-complexity pruning is that it seeks a sweet spot in this trade
 
 So we have our cost function $C_\alpha(T)$. But for a given $\alpha$, how do we find the subtree $T$ that minimizes it? A large tree has an astronomical number of possible subtrees. Trying them all is impossible.
 
-Here, nature is kind to us. There is an elegant and efficient algorithm called **[weakest link pruning](@entry_id:635457)** that finds the entire sequence of optimal subtrees without a brute-force search. Think of a sculptor starting with a large block of stone (our fully grown tree). They don't just randomly chip away. They look for the least important piece to remove next.
+Here, nature is kind to us. There is an elegant and efficient algorithm called **[weakest link pruning](@keyword=weakest_link_pruning|lang=en-US|style=Feynman)** that finds the entire sequence of optimal subtrees without a brute-force search. Think of a sculptor starting with a large block of stone (our fully grown tree). They don't just randomly chip away. They look for the least important piece to remove next.
 
 The algorithm does the same. For every internal node (every split) in the tree, it calculates a value, let's call it $g(t)$:
 
@@ -71,7 +71,7 @@ $$
 g(t) = \frac{R(t) - R(T_t)}{|T_t| - 1}
 $$
 
-This simple ratio is profound. The numerator, $R(t) - R(T_t)$, is the *increase in [training error](@entry_id:635648)* we would suffer if we pruned the whole branch $T_t$ and replaced it with a single leaf $t$. The denominator, $|T_t| - 1$, is the *number of leaves we save* by doing so. So, $g(t)$ is the cost-per-leaf-saved for pruning branch $t$. It tells us how "efficient" that pruning operation is.
+This simple ratio is profound. The numerator, $R(t) - R(T_t)$, is the *increase in [training error](@keyword=training_error|lang=en-US|style=Feynman)* we would suffer if we pruned the whole branch $T_t$ and replaced it with a single leaf $t$. The denominator, $|T_t| - 1$, is the *number of leaves we save* by doing so. So, $g(t)$ is the cost-per-leaf-saved for pruning branch $t$. It tells us how "efficient" that pruning operation is.
 
 The algorithm is then breathtakingly simple:
 1.  Calculate $g(t)$ for every internal node in the tree.
@@ -88,14 +88,14 @@ We now have a beautiful sequence of candidate trees, each corresponding to a dif
 To answer this, we can't use our training data. The training data is a biased judge; it will always favor the most complex tree ($\alpha=0$). We need an independent jury. This is where **cross-validation** comes in.
 
 The idea is to partition our data into, say, $K$ folds (e.g., $K=10$). We then perform the following loop $K$ times:
--   Hold out one fold as a "[validation set](@entry_id:636445)."
+-   Hold out one fold as a "[validation set](@keyword=validation_set|lang=en-US|style=Feynman)."
 -   Train our entire weakest-link pruning procedure on the other $K-1$ folds. This generates a full path of pruned trees.
--   We then test each tree on this path against the held-out [validation set](@entry_id:636445) and record its error.
+-   We then test each tree on this path against the held-out [validation set](@keyword=validation_set|lang=en-US|style=Feynman) and record its error.
 
 After doing this for all $K$ folds, we can average the validation errors for each level of complexity. We can then plot a curve showing how the estimated real-world error changes with $\alpha$. Typically, this curve will be U-shaped: the error is high for very simple trees (high bias), drops to a minimum at some optimal level of complexity, and then rises again as the trees become too complex and overfit (high variance).
 
-The simplest approach is to pick the $\alpha$ that corresponds to the lowest point on this curve. But we can be even smarter. The **one-standard-error rule** embodies a final, subtle application of Ockham's Razor. We calculate the uncertainty (the [standard error](@entry_id:140125)) of our error estimates. We find the minimum error on our curve, but then we draw a line one [standard error](@entry_id:140125) above it. We then select the *simplest* model (the one with the largest $\alpha$) whose performance is still below this line. In other words, if several models are statistically tied for "best," we choose the simplest one. It’s a final, wise safeguard against chasing noisy fluctuations in our validation curve.
+The simplest approach is to pick the $\alpha$ that corresponds to the lowest point on this curve. But we can be even smarter. The **one-standard-error rule** embodies a final, subtle application of Ockham's Razor. We calculate the uncertainty (the [standard error](@keyword=standard_error|lang=en-US|style=Feynman)) of our error estimates. We find the minimum error on our curve, but then we draw a line one [standard error](@keyword=standard_error|lang=en-US|style=Feynman) above it. We then select the *simplest* model (the one with the largest $\alpha$) whose performance is still below this line. In other words, if several models are statistically tied for "best," we choose the simplest one. It’s a final, wise safeguard against chasing noisy fluctuations in our validation curve.
 
-Of course, this whole validation process relies on the [validation set](@entry_id:636445) being a fair test. If our data has special structure, like satellite images where nearby pixels are correlated, a simple random split into folds is like letting a student peek at the answers. We must use more clever strategies, like spatially blocked folds, to ensure the [validation set](@entry_id:636445) is truly independent.
+Of course, this whole validation process relies on the [validation set](@keyword=validation_set|lang=en-US|style=Feynman) being a fair test. If our data has special structure, like satellite images where nearby pixels are correlated, a simple random split into folds is like letting a student peek at the answers. We must use more clever strategies, like spatially blocked folds, to ensure the [validation set](@keyword=validation_set|lang=en-US|style=Feynman) is truly independent.
 
 From a philosophical principle to a simple formula, from a deep statistical theory to an elegant algorithm, cost-complexity pruning provides a complete and powerful framework. It is a perfect example of how a practical engineering problem—how to build a good classifier—can lead us on a journey through deep and beautiful scientific ideas.

@@ -5,28 +5,28 @@ This article introduces Natural Mergesort, an elegant and powerful algorithm tha
 
 ## Principles and Mechanisms
 
-Imagine you're tasked with sorting a large library of books that have just been delivered. You look at the first box and, by a stroke of luck, find it's already perfectly alphabetized, from "Asimov" to "Zola." You look at the second box; it's also sorted. The third, however, is a complete mess. What would you do? A rigid, by-the-book approach might demand you mix all the books from all boxes onto the floor and start sorting from scratch, ignoring the perfect order you were handed. It sounds absurd, doesn't it? Yet, many classic [sorting algorithms](@article_id:260525) do precisely this.
+Imagine you're tasked with sorting a large library of books that have just been delivered. You look at the first box and, by a stroke of luck, find it's already perfectly alphabetized, from "Asimov" to "Zola." You look at the second box; it's also sorted. The third, however, is a complete mess. What would you do? A rigid, by-the-book approach might demand you mix all the books from all boxes onto the floor and start sorting from scratch, ignoring the perfect order you were handed. It sounds absurd, doesn't it? Yet, many classic [sorting algorithms](@keyword=sorting_algorithms|lang=en-US|style=Feynman) do precisely this.
 
 ### The Blind Spot of Predictable Algorithms
 
-Consider the standard, textbook **Mergesort**. It's a beautiful and reliable algorithm that works by recursively splitting an array in half until it has a pile of single-element "arrays," which are trivially sorted. Then, it meticulously merges them back together. Its great virtue is its predictability: it will always sort $n$ items in a time proportional to $n \log n$. But this virtue is also its flaw. It follows its script—split, split, split, merge, merge, merge—with no regard for the input's initial state. An already-sorted array and a completely reversed array are all the same to it; the workload remains $\Theta(n \log n)$ . It's like the librarian who insists on re-sorting the pre-sorted boxes.
+Consider the standard, textbook **Mergesort**. It's a beautiful and reliable algorithm that works by recursively splitting an array in half until it has a pile of single-element "arrays," which are trivially sorted. Then, it meticulously merges them back together. Its great virtue is its predictability: it will always sort $n$ items in a time proportional to $n \log n$. But this virtue is also its flaw. It follows its script—split, split, split, merge, merge, merge—with no regard for the input's initial state. An already-sorted array and a completely reversed array are all the same to it; the workload remains $\Theta(n \log n)$ [@problem_id:3265423]. It's like the librarian who insists on re-sorting the pre-sorted boxes.
 
-This raises a tantalizing question: can we design an algorithm with more... common sense? An algorithm that can *notice* and *exploit* any existing order, finishing its job faster when the task is easier? This is the philosophy behind [adaptive sorting](@article_id:635415), and its most elegant expression is **Natural Mergesort**.
+This raises a tantalizing question: can we design an algorithm with more... common sense? An algorithm that can *notice* and *exploit* any existing order, finishing its job faster when the task is easier? This is the philosophy behind [adaptive sorting](@keyword=adaptive_sorting|lang=en-US|style=Feynman), and its most elegant expression is **Natural Mergesort**.
 
 ### Discovering the Atoms of Order: Runs
 
 To build a "smarter" algorithm, we first need to define what we're looking for. What does "existing order" even mean? Natural Mergesort proposes a simple, powerful answer: a **run**.
 
-A **run** is a maximal, contiguous, [non-decreasing sequence](@article_id:139007) of elements in an array. Think of it as a pocket of perfect sortedness. For example, in the array `[3, 7, 8, 2, 4, 9, 1, 5]`, we can identify the following runs:
+A **run** is a maximal, contiguous, [non-decreasing sequence](@keyword=non_decreasing_sequence|lang=en-US|style=Feynman) of elements in an array. Think of it as a pocket of perfect sortedness. For example, in the array `[3, 7, 8, 2, 4, 9, 1, 5]`, we can identify the following runs:
 - `[3, 7, 8]`
 - `[2, 4, 9]`
 - `[1, 5]`
 
-The entire array is just a [concatenation](@article_id:136860) of these three sorted chunks. The beauty of this concept is that it captures all the local sortedness in an array. In fact, if you were to count every single sorted subarray of any length, you would discover that they are all contained entirely *within* these runs. A sorted subarray can never cross the boundary between two runs, because that boundary is precisely where the sorted order breaks . Runs are the fundamental atoms of order. The sorting problem, then, transforms from sorting $n$ individual elements to simply merging a handful of $r$ pre-sorted runs.
+The entire array is just a [concatenation](@keyword=concatenation|lang=en-US|style=Feynman) of these three sorted chunks. The beauty of this concept is that it captures all the local sortedness in an array. In fact, if you were to count every single sorted subarray of any length, you would discover that they are all contained entirely *within* these runs. A sorted subarray can never cross the boundary between two runs, because that boundary is precisely where the sorted order breaks [@problem_id:3252310]. Runs are the fundamental atoms of order. The sorting problem, then, transforms from sorting $n$ individual elements to simply merging a handful of $r$ pre-sorted runs.
 
 ### The Natural Mergesort Strategy: A Two-Act Play
 
-The algorithm operates in a beautifully logical two-step process, much like a savvy field commander surveying the terrain before committing to a plan .
+The algorithm operates in a beautifully logical two-step process, much like a savvy field commander surveying the terrain before committing to a plan [@problem_id:3203202].
 
 **Act I: The Reconnaissance Scan**
 
@@ -44,21 +44,21 @@ To do this efficiently, it uses a helper data structure, typically a **min-heap*
 
 ### The Payoff: Adaptive Performance from $O(n)$ to $O(n \log n)$
 
-The elegance of this strategy is reflected in its performance. The total [time complexity](@article_id:144568) is the sum of the two acts: the $O(n)$ scan and the merge, which involves doing an $O(\log r)$ heap operation for each of the $n$ elements. This gives a total runtime of $O(n + n \log r)$, which simplifies to **$O(n \log r)$**.
+The elegance of this strategy is reflected in its performance. The total [time complexity](@keyword=time_complexity|lang=en-US|style=Feynman) is the sum of the two acts: the $O(n)$ scan and the merge, which involves doing an $O(\log r)$ heap operation for each of the $n$ elements. This gives a total runtime of $O(n + n \log r)$, which simplifies to **$O(n \log r)$**.
 
 Let's see what this means in practice:
 
--   **Best Case: Nearly Sorted Data**. If the array is already sorted, there is only one run ($r=1$). The algorithm scans it, finds one run, and is done. The runtime is $O(n \log 1) = O(n)$. The same is true for a reverse-sorted array, which becomes one run after reversal. Consider a bitonic array like `[1, 3, 5, 7, 6, 4, 2]`. This consists of just two runs ($r=2$). Merging them is a single pass, and the entire sorting process runs in linear time . This ability to run in linear time on highly ordered data doesn't violate the famous $\Omega(n \log n)$ lower bound for sorting, as that bound applies to the *worst-case* performance of a general-purpose algorithm, not its best case on a friendly input .
+-   **Best Case: Nearly Sorted Data**. If the array is already sorted, there is only one run ($r=1$). The algorithm scans it, finds one run, and is done. The runtime is $O(n \log 1) = O(n)$. The same is true for a reverse-sorted array, which becomes one run after reversal. Consider a bitonic array like `[1, 3, 5, 7, 6, 4, 2]`. This consists of just two runs ($r=2$). Merging them is a single pass, and the entire sorting process runs in linear time [@problem_id:3203381]. This ability to run in linear time on highly ordered data doesn't violate the famous $\Omega(n \log n)$ lower bound for sorting, as that bound applies to the *worst-case* performance of a general-purpose algorithm, not its best case on a friendly input [@problem_id:3226516].
 
 -   **Worst Case: Maximum Chaos**. What's the most chaotic arrangement? An array like `[2, 1, 4, 3, 6, 5, ...]` where every adjacent pair is a descent. Here, the number of runs $r$ is approximately $n/2$. The runtime becomes $O(n \log(n/2))$, which is equivalent to $O(n \log n)$. So, in the worst case, Natural Mergesort's performance gracefully degrades to that of a standard mergesort. It never does worse.
 
--   **Average Case: A Surprising Result**. What about a typical, randomly shuffled array? One might guess that runs would be very short and numerous. The surprising truth is that for any [random permutation](@article_id:270478) of distinct numbers, the *expected* number of runs is $(n+1)/2$ . This beautiful result tells us that even in "average" disorder, the number of runs is about $n/2$. So, on average, Natural Mergesort performs like a standard $O(n \log n)$ algorithm. It loses nothing on random data, but gains everything on structured data.
+-   **Average Case: A Surprising Result**. What about a typical, randomly shuffled array? One might guess that runs would be very short and numerous. The surprising truth is that for any [random permutation](@keyword=random_permutation|lang=en-US|style=Feynman) of distinct numbers, the *expected* number of runs is $(n+1)/2$ [@problem_id:3203368]. This beautiful result tells us that even in "average" disorder, the number of runs is about $n/2$. So, on average, Natural Mergesort performs like a standard $O(n \log n)$ algorithm. It loses nothing on random data, but gains everything on structured data.
 
 ### What Does "Nearly Sorted" Really Mean?
 
 Natural Mergesort's performance is tied to the number of runs, $r$. But is that the only way to measure "presortedness"? Consider another measure: the number of **inversions**, which is the count of pairs of elements that are out of order. **Insertion Sort** is an adaptive algorithm whose performance is excellent on arrays with few inversions, running in $O(n + I)$ time where $I$ is the inversion count.
 
-This raises a fascinating question: are these measures equivalent? Let's conduct a thought experiment . We can construct two different permutations of $n=12$ elements, each with exactly $K=5$ inversions:
+This raises a fascinating question: are these measures equivalent? Let's conduct a thought experiment [@problem_id:3203270]. We can construct two different permutations of $n=12$ elements, each with exactly $K=5$ inversions:
 1.  $\pi^{\mathrm{low}} = (1, 2, 3, 4, 5, 6, 12, 7, 8, 9, 10, 11)$. This has $I=5$ inversions and just $r=2$ runs.
 2.  $\pi^{\mathrm{high}} = (2, 1, 4, 3, 6, 5, 8, 7, 10, 9, 11, 12)$. This also has $I=5$ inversions, but it has $r=6$ runs.
 
@@ -66,7 +66,7 @@ On these two arrays, Insertion Sort would perform identically, since its workloa
 
 ### A Quiet Virtue: The Importance of Stability
 
-Finally, Natural Mergesort possesses a critical property for real-world applications: **stability**. A [stable sorting algorithm](@article_id:634217) preserves the relative order of elements with equal keys . Imagine sorting a class roster by students' last names. If you have two students named "Smith," you'd want the one who appeared first in the original list (say, "Smith, Alice") to also appear first in the sorted list, before "Smith, Bob."
+Finally, Natural Mergesort possesses a critical property for real-world applications: **stability**. A [stable sorting algorithm](@keyword=stable_sorting_algorithm|lang=en-US|style=Feynman) preserves the relative order of elements with equal keys [@problem_id:3203249]. Imagine sorting a class roster by students' last names. If you have two students named "Smith," you'd want the one who appeared first in the original list (say, "Smith, Alice") to also appear first in the sorted list, before "Smith, Bob."
 
 Unstable algorithms like standard Quicksort can scramble the relative order of equal elements. Natural Mergesort, by its very design, is stable. During the merge step, if the algorithm encounters a tie between an element from run A and an element from run B, it has a strict rule: always take the element from the run that appeared earlier in the original array (run A). This simple policy guarantees that the original relative ordering of equal-keyed items is perfectly maintained.
 

@@ -1,7 +1,7 @@
 ## Introduction
 The concept of symmetry is fundamental to our understanding of the world, from the elegant balance of a butterfly's wings to the foundational laws of physics. While we intuitively recognize perfect symmetry, most real-world signals and functions exhibit no such simple structure. This raises a crucial question: how can we apply the powerful tools of symmetry to analyze complex, arbitrary signals? The answer lies in a surprisingly elegant mathematical principle known as even and odd decomposition, which asserts that any function, no matter how irregular, can be perfectly broken down into a purely symmetric (even) part and a purely anti-symmetric (odd) part.
 
-This article provides a comprehensive exploration of this powerful concept. It begins by laying the groundwork in "Principles and Mechanisms," where you will learn the simple formulas to extract these hidden components, explore their profound implications for [signal energy](@article_id:264249), and discover their deep connection to the Fourier transform. Following this, the "Applications and Interdisciplinary Connections" section will demonstrate how this decomposition is not just a mathematical curiosity but a practical tool used across various disciplines, from simplifying Fourier analysis and solving wave equations in physics to providing a foundational perspective in abstract probability theory.
+This article provides a comprehensive exploration of this powerful concept. It begins by laying the groundwork in "Principles and Mechanisms," where you will learn the simple formulas to extract these hidden components, explore their profound implications for [signal energy](@keyword=signal_energy|lang=en-US|style=Feynman), and discover their deep connection to the Fourier transform. Following this, the "Applications and Interdisciplinary Connections" section will demonstrate how this decomposition is not just a mathematical curiosity but a practical tool used across various disciplines, from simplifying Fourier analysis and solving wave equations in physics to providing a foundational perspective in abstract probability theory.
 
 ## Principles and Mechanisms
 
@@ -13,7 +13,7 @@ Let’s imagine we have a function, or a signal, which we can plot on a graph. W
 
 If the reflection of the signal for positive time perfectly matches the signal for negative time, we say the signal is **even**. The classic example is a simple parabola, like $f(t) = t^2$. What you see at $t=2$ is the same as what you see at $t=-2$. The mathematical way to say this is $x_e(t) = x_e(-t)$.
 
-Now, what if, instead of matching, the reflection is perfectly inverted? Imagine the function $f(t) = t^3$. The value at $t=2$ is $8$, while the value at $t=-2$ is $-8$. It's the same magnitude, but flipped in sign. This is what we call an **odd** function. It has a kind of point symmetry about the origin. The rule for an [odd function](@article_id:175446) is $x_o(t) = -x_o(-t)$.
+Now, what if, instead of matching, the reflection is perfectly inverted? Imagine the function $f(t) = t^3$. The value at $t=2$ is $8$, while the value at $t=-2$ is $-8$. It's the same magnitude, but flipped in sign. This is what we call an **odd** function. It has a kind of point symmetry about the origin. The rule for an [odd function](@keyword=odd_function|lang=en-US|style=Feynman) is $x_o(t) = -x_o(-t)$.
 
 This might seem like a simple classification, but here comes the astonishing part.
 
@@ -30,7 +30,7 @@ We know two things:
 1. $x(t) = x_e(t) + x_o(t)$
 2. $x(-t) = x_e(-t) + x_o(-t)$
 
-Using the definitions of even and odd, we can rewrite the second equation as $x(-t) = x_e(t) - x_o(t)$.
+Using the definitions of even and odd, we can rewrite the second equation as $x(-t) = x_e(t) - x_o(t)$[@problem_id:1711691].
 
 Now we have a simple system of two equations. If we add them together, the odd parts cancel out:
 $$x(t) + x(-t) = (x_e(t) + x_o(t)) + (x_e(t) - x_o(t)) = 2x_e(t)$$
@@ -38,25 +38,25 @@ $$x(t) + x(-t) = (x_e(t) + x_o(t)) + (x_e(t) - x_o(t)) = 2x_e(t)$$
 And if we subtract the second from the first, the even parts cancel out:
 $$x(t) - x(-t) = (x_e(t) + x_o(t)) - (x_e(t) - x_o(t)) = 2x_o(t)$$
 
-Just like that, we have formulas to sift the even and [odd components](@article_id:276088) out of any signal:
+Just like that, we have formulas to sift the even and [odd components](@keyword=odd_components|lang=en-US|style=Feynman) out of any signal[@problem_id:1771621]:
 
 **Even Component:** $x_e(t) = \frac{1}{2} [x(t) + x(-t)]$
 
 **Odd Component:** $x_o(t) = \frac{1}{2} [x(t) - x(-t)]$
 
-By simply averaging a signal with its reflection, we isolate its inherent symmetry. By taking half their difference, we isolate its [anti-symmetry](@article_id:184343). It’s a beautiful and universally applicable "symmetry sieve."
+By simply averaging a signal with its reflection, we isolate its inherent symmetry. By taking half their difference, we isolate its [anti-symmetry](@keyword=anti_symmetry|lang=en-US|style=Feynman). It’s a beautiful and universally applicable "symmetry sieve."
 
 ### The Arithmetic of Symmetry
 
-This decomposition isn't just a party trick; it simplifies how we analyze systems because these components behave in predictable ways. For example, what happens if you multiply an even signal, let's call it $g(t)$, by an odd signal, $h(t)$? The result is always odd. Think about it: $g(t)h(t)$ at a negative time becomes $g(-t)h(-t) = g(t)[-h(t)] = -g(t)h(t)$. The product is odd! Similarly, multiplying two [even functions](@article_id:163111) gives an [even function](@article_id:164308), and multiplying two [odd functions](@article_id:172765) also gives an [even function](@article_id:164308). This forms a consistent "arithmetic of symmetry".
+This decomposition isn't just a party trick; it simplifies how we analyze systems because these components behave in predictable ways. For example, what happens if you multiply an even signal, let's call it $g(t)$, by an odd signal, $h(t)$? The result is always odd. Think about it: $g(t)h(t)$ at a negative time becomes $g(-t)h(-t) = g(t)[-h(t)] = -g(t)h(t)$. The product is odd! Similarly, multiplying two [even functions](@keyword=even_functions|lang=en-US|style=Feynman) gives an [even function](@keyword=even_function|lang=en-US|style=Feynman), and multiplying two [odd functions](@keyword=odd_functions|lang=en-US|style=Feynman) also gives an [even function](@keyword=even_function|lang=en-US|style=Feynman). This forms a consistent "arithmetic of symmetry"[@problem_id:1717450].
 
-This extends to other operations as well. Consider differentiation. If you take the derivative of an [even function](@article_id:164308) (like the slope of a parabola), you get an odd function (a straight line through the origin). And if you differentiate an [odd function](@article_id:175446), you get an even one. The act of differentiation flips the symmetry. This predictability is what makes the decomposition so useful.
+This extends to other operations as well. Consider differentiation. If you take the derivative of an [even function](@keyword=even_function|lang=en-US|style=Feynman) (like the slope of a parabola), you get an odd function (a straight line through the origin). And if you differentiate an [odd function](@keyword=odd_function|lang=en-US|style=Feynman), you get an even one. The act of differentiation flips the symmetry[@problem_id:1711670]. This predictability is what makes the decomposition so useful.
 
 ### A Point of Principle: The Center of It All
 
-There's a subtle but delightful consequence of the definition of an [odd function](@article_id:175446). What is its value at the very center, at $t=0$? According to the rule, $x_o(0) = -x_o(-0) = -x_o(0)$. The only number that is equal to its own negative is zero. Therefore, the odd component of *any* signal must be zero at the origin.
+There's a subtle but delightful consequence of the definition of an [odd function](@keyword=odd_function|lang=en-US|style=Feynman). What is its value at the very center, at $t=0$? According to the rule, $x_o(0) = -x_o(-0) = -x_o(0)$. The only number that is equal to its own negative is zero. Therefore, the odd component of *any* signal must be zero at the origin.
 
-This has a fascinating implication. When we look at our main decomposition, $x(t) = x_e(t) + x_o(t)$, and evaluate it at $t=0$, we get $x(0) = x_e(0) + x_o(0) = x_e(0) + 0$. So, the value of any signal at its origin is determined *entirely* by its even part. The odd part makes no contribution at that single, central point.
+This has a fascinating implication. When we look at our main decomposition, $x(t) = x_e(t) + x_o(t)$, and evaluate it at $t=0$, we get $x(0) = x_e(0) + x_o(0) = x_e(0) + 0$. So, the value of any signal at its origin is determined *entirely* by its even part[@problem_id:1717457]. The odd part makes no contribution at that single, central point.
 
 ### The Pythagorean Theorem for Signals: Energy and Orthogonality
 
@@ -68,18 +68,18 @@ $$E_x = \int_{-\infty}^{\infty} x_e(t)^2 dt + \int_{-\infty}^{\infty} x_o(t)^2 d
 
 The first two terms are just the energies of the even and odd parts, $E_{x_e}$ and $E_{x_o}$. But what about that third "cross-term," $2\int_{-\infty}^{\infty} x_e(t)x_o(t) dt$?
 
-Here is where another piece of mathematical beauty reveals itself. The product of an [even function](@article_id:164308) ($x_e(t)$) and an odd function ($x_o(t)$) is, as we saw earlier, an [odd function](@article_id:175446). When you integrate any odd function over all symmetric time (from $-\infty$ to $+\infty$), the positive area on one side perfectly cancels the negative area on the other. The result is always zero.
+Here is where another piece of mathematical beauty reveals itself. The product of an [even function](@keyword=even_function|lang=en-US|style=Feynman) ($x_e(t)$) and an odd function ($x_o(t)$) is, as we saw earlier, an [odd function](@keyword=odd_function|lang=en-US|style=Feynman). When you integrate any odd function over all symmetric time (from $-\infty$ to $+\infty$), the positive area on one side perfectly cancels the negative area on the other. The result is always zero.
 
 So, the cross-term vanishes! This leaves us with a wonderfully simple and profound result:
 $$E_x = E_{x_e} + E_{x_o}$$
 
-The total energy of a signal is simply the sum of the energies of its even and odd parts. This should remind you of the Pythagorean theorem, $c^2 = a^2 + b^2$. In geometry, this works because the sides $a$ and $b$ are at right angles, or **orthogonal**. In the world of signals, [even and odd functions](@article_id:157080) are also considered orthogonal. The energy relationship is, in a very deep sense, the Pythagorean theorem for signals.
+The total energy of a signal is simply the sum of the energies of its even and odd parts[@problem_id:1768514]. This should remind you of the Pythagorean theorem, $c^2 = a^2 + b^2$. In geometry, this works because the sides $a$ and $b$ are at right angles, or **orthogonal**. In the world of signals, [even and odd functions](@keyword=even_and_odd_functions|lang=en-US|style=Feynman) are also considered orthogonal. The energy relationship is, in a very deep sense, the Pythagorean theorem for signals.
 
 ### From Time to Frequency: A Deeper Duality
 
-The story gets even more interesting when we move from the time domain to the frequency domain using the **Fourier Transform**. The Fourier Transform takes a signal and breaks it down into its constituent frequencies, much like a prism breaks light into a spectrum of colors. The result is a [complex-valued function](@article_id:195560), meaning it has a real part and an imaginary part for each frequency.
+The story gets even more interesting when we move from the time domain to the frequency domain using the **Fourier Transform**. The Fourier Transform takes a signal and breaks it down into its constituent frequencies, much like a prism breaks light into a spectrum of colors. The result is a [complex-valued function](@keyword=complex_valued_function|lang=en-US|style=Feynman), meaning it has a real part and an imaginary part for each frequency.
 
-Here's the magic: for a real-valued signal, its even part in time, $x_e(t)$, transforms to become the *real part* of its Fourier Transform. And its odd part in time, $x_o(t)$, transforms to become the *imaginary part* (multiplied by $\mathrm{j}$, the imaginary unit).
+Here's the magic: for a real-valued signal, its even part in time, $x_e(t)$, transforms to become the *real part* of its Fourier Transform. And its odd part in time, $x_o(t)$, transforms to become the *imaginary part* (multiplied by $\mathrm{j}$, the imaginary unit)[@problem_id:1740583].
 
 **Even Time Signal** $\iff$ **Real Frequency Spectrum**
 **Odd Time Signal** $\iff$ **Imaginary Frequency Spectrum**
@@ -90,7 +90,7 @@ This is an incredible duality. The abstract concept of symmetry in time is direc
 
 Let's end with one of the most powerful applications of this thinking. Many signals in the real world are **causal**, meaning they are zero for all time before some starting point, which we usually set to $t=0$. The sound from a clap doesn't exist before you clap your hands.
 
-Now, suppose you have a [causal signal](@article_id:260772), but you only know its even component, $x_e(t)$, for all time. Can you figure out the original signal, $x(t)$? It seems impossible—you only have half the information!
+Now, suppose you have a [causal signal](@keyword=causal_signal|lang=en-US|style=Feynman), but you only know its even component, $x_e(t)$, for all time. Can you figure out the original signal, $x(t)$? It seems impossible—you only have half the information!
 
 But you also have one more piece of information: causality. Let's see what happens.
 We know $x_e(t) = \frac{1}{2}[x(t) + x(-t)]$.
@@ -104,6 +104,6 @@ Since we were given $x_e(t)$ for all time, we can now construct the full signal 
 - For $t  0$, we know $x(t) = 0$ because of causality.
 - At $t=0$, we can often determine the value as well.
 
-We have fully reconstructed the signal from just its even part and the knowledge that it was causal! The same logic works if you are given only the odd part . Causality acts as a powerful constraint that locks the even and odd parts together, allowing one to determine the other. This isn't just a mathematical curiosity; it's a fundamental principle used in signal processing and physics, showing that with the right physical constraints, we need far less information than we might think to understand the whole picture.
+We have fully reconstructed the signal from just its even part and the knowledge that it was causal! The same logic works if you are given only the odd part[@problem_id:1711679] [@problem_id:1711646]. Causality acts as a powerful constraint that locks the even and odd parts together, allowing one to determine the other. This isn't just a mathematical curiosity; it's a fundamental principle used in signal processing and physics, showing that with the right physical constraints, we need far less information than we might think to understand the whole picture.
 
 From a simple mirror test, we have journeyed through energy, frequency, and causality, revealing a hidden layer of order and profound connections. This is the power of symmetry—a simple idea that provides a lens to see the world with newfound clarity and elegance.

@@ -27,7 +27,7 @@ So, the pair $(a,b) = (6,1)$ is a solution to the equation $a^2 - 26b^2 = 10$. W
 
 Here we arrive at the heart of the method, a beautiful piece of algebraic magic formalized by the 7th-century Indian mathematician Brahmagupta. He discovered that solutions to these Pell-type equations can be "composed." If you have one solution that gives you an error $k_1$, and another that gives you an error $k_2$, you can combine them to get a new solution that gives an error of $k_1 k_2$.
 
-In the language of [modern algebra](@article_id:170771), we consider numbers of the form $u = a + b\sqrt{D}$. We can define a special function called the **norm**, $N(u) = a^2 - Db^2$. Brahmagupta's discovery, his "composition law," is that the norm is multiplicative:
+In the language of [modern algebra](@keyword=modern_algebra|lang=en-US|style=Feynman), we consider numbers of the form $u = a + b\sqrt{D}$. We can define a special function called the **norm**, $N(u) = a^2 - Db^2$. Brahmagupta's discovery, his "composition law," is that the norm is multiplicative:
 
 $$
 N(u) \cdot N(v) = N(u \cdot v)
@@ -35,7 +35,7 @@ $$
 
 This is our key! If we have our solution $(6, 1, 10)$, which corresponds to the number $6+\sqrt{26}$ with norm 10, and we could find another number, say $m+\sqrt{D}$, with its own norm, we could multiply them to get a new number and a new norm. This gives us a way to move from one "wrong" equation to another.
 
-The Chakravala method's stroke of genius is to compose our current solution with a very simple one: $(m, 1)$, where $m$ is some integer we get to choose. The norm of this [trivial solution](@article_id:154668) is $m^2 - D$.
+The Chakravala method's stroke of genius is to compose our current solution with a very simple one: $(m, 1)$, where $m$ is some integer we get to choose. The norm of this [trivial solution](@keyword=trivial_solution|lang=en-US|style=Feynman) is $m^2 - D$.
 
 Composing our current state $(a, b, k)$ with this new one $(m, 1, m^2-D)$, the product of their norms is $k(m^2-D)$. The new solution pair, after multiplying $(a+b\sqrt{D})(m+\sqrt{D})$, would be $(am+Db, a+bm)$. But wait! This just seems to be getting more complicated.
 
@@ -47,9 +47,9 @@ $$
 a' = \frac{am+Db}{|k|}, \quad b' = \frac{a+bm}{|k|}, \quad k' = \frac{m^2-D}{k}
 $$
 
-This transformation is a beautiful, self-contained "dance step." You can check for yourself that if $a^2 - Db^2 = k$, then the new values will always satisfy $(a')^2 - D(b')^2 = k'$ . The division by $|k|$ is the crucial part; it's an attempt to make the new error, $k'$, smaller than the old one.
+This transformation is a beautiful, self-contained "dance step." You can check for yourself that if $a^2 - Db^2 = k$, then the new values will always satisfy $(a')^2 - D(b')^2 = k'$ [@problem_id:3092529]. The division by $|k|$ is the crucial part; it's an attempt to make the new error, $k'$, smaller than the old one.
 
-Of course, this only works if $a'$ and $b'$ are integers! This whole scheme hinges on a clever choice of the integer $m$. The choice of $m$ is governed by two simple, powerful principles :
+Of course, this only works if $a'$ and $b'$ are integers! This whole scheme hinges on a clever choice of the integer $m$. The choice of $m$ is governed by two simple, powerful principles [@problem_id:3085371]:
 
 1.  **The Integrality Condition:** To ensure that $b'$ (and as a consequence, $a'$ and $k'$) is an integer, we must choose $m$ such that the numerator $a+bm$ is divisible by $|k|$. This gives us a simple congruence equation:
     $$a+bm \equiv 0 \pmod{|k|}$$
@@ -72,7 +72,7 @@ $$
 k' = \frac{4^2-26}{10} = \frac{16-26}{10} = \frac{-10}{10} = -1
 $$
 
-In a single, elegant step, we have leaped from the triple $(6, 1, 10)$ to a new one: $(5, 1, -1)$ . We started with an error of 10, and now our error is -1. We are incredibly close to our goal!
+In a single, elegant step, we have leaped from the triple $(6, 1, 10)$ to a new one: $(5, 1, -1)$ [@problem_id:3085416]. We started with an error of 10, and now our error is -1. We are incredibly close to our goal!
 
 ### Hitting the Bullseye
 
@@ -92,14 +92,14 @@ $$
 $$
 It works perfectly! We have found the fundamental solution. And what's more, it turns out that *all* other positive integer solutions are just powers of this first one: $(51+10\sqrt{26})^2$, $(51+10\sqrt{26})^3$, and so on. The entire infinite family of solutions is generated from this single seed we found.
 
-What if the negative equation $x^2-Dy^2=-1$ has no solution, which is true for many values of $D$ (like $D=34$)? The Chakravala method handles this with grace. It will simply never land on $k=-1$. The dance continues, with the values of $k$ bouncing around but always bounded, until inevitably it lands squarely on $k=1$, giving us the [fundamental solution](@article_id:175422) to the positive equation directly . The algorithm is a robust decision procedure, not just a blind search.
+What if the negative equation $x^2-Dy^2=-1$ has no solution, which is true for many values of $D$ (like $D=34$)? The Chakravala method handles this with grace. It will simply never land on $k=-1$. The dance continues, with the values of $k$ bouncing around but always bounded, until inevitably it lands squarely on $k=1$, giving us the [fundamental solution](@keyword=fundamental_solution|lang=en-US|style=Feynman) to the positive equation directly [@problem_id:3092529]. The algorithm is a robust decision procedure, not just a blind search.
 
 ### The Real Secret: The Power of Exponential Leaps
 
-This all seems very neat, but what makes it so special? Compared to other methods like the well-known **[continued fraction algorithm](@article_id:635300)**, Chakravala is often more efficient in practice, requiring fewer steps and keeping the intermediate numbers smaller .
+This all seems very neat, but what makes it so special? Compared to other methods like the well-known **[continued fraction algorithm](@keyword=continued_fraction_algorithm|lang=en-US|style=Feynman)**, Chakravala is often more efficient in practice, requiring fewer steps and keeping the intermediate numbers smaller [@problem_id:3085396].
 
-But the true, deep reason for the power of both these methods is a bit surprising. It's not just that they take few steps. It's that with each step, the size of the solution $(a,b)$ they are working with grows **exponentially** .
+But the true, deep reason for the power of both these methods is a bit surprising. It's not just that they take few steps. It's that with each step, the size of the solution $(a,b)$ they are working with grows **exponentially** [@problem_id:3030737].
 
 Think of it this way: to find a solution where $x$ and $y$ have, say, a hundred digits, you don't need to take billions of tiny steps. Instead, you take a handful of giant, exponential leaps. Each step in the Chakravala method effectively multiplies the magnitude of your solution by a significant factor. This allows us to bridge the gap from small, simple starting numbers to astronomically large solutions in a shockingly small number of iterations. This is the essence of computational efficiency in this domain: reaching enormous results with a manageable amount of work.
 
-While the Chakravala method was a monumental achievement of ancient mathematics, the story of science never ends. In the modern era of [computational number theory](@article_id:199357), mathematicians have developed even more advanced techniques, often called **infrastructure algorithms**, which are asymptotically faster for very large $D$ . Yet, these modern methods are built on the same foundational ideas of composition and structure that were first glimpsed by Brahmagupta and Bhaskara centuries ago. The "cyclic method" is more than a clever trick; it's a window into the deep and beautiful structure of numbers, a dance that continues to inspire mathematicians to this day.
+While the Chakravala method was a monumental achievement of ancient mathematics, the story of science never ends. In the modern era of [computational number theory](@keyword=computational_number_theory|lang=en-US|style=Feynman), mathematicians have developed even more advanced techniques, often called **infrastructure algorithms**, which are asymptotically faster for very large $D$ [@problem_id:3087939]. Yet, these modern methods are built on the same foundational ideas of composition and structure that were first glimpsed by Brahmagupta and Bhaskara centuries ago. The "cyclic method" is more than a clever trick; it's a window into the deep and beautiful structure of numbers, a dance that continues to inspire mathematicians to this day.

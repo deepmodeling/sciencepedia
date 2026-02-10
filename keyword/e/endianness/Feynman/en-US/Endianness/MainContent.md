@@ -11,7 +11,7 @@ Computers face this exact same choice when they store numbers that are too large
 
 ### The Tale of Two Orders: What is Endianness?
 
-Let's take a closer look with a specific 4-byte integer. Consider the number `0x01020304` (in [hexadecimal](@article_id:176119)). This number is composed of four bytes: `0x01`, `0x02`, `0x03`, and `0x04`.
+Let's take a closer look with a specific 4-byte integer. Consider the number `0x01020304` (in [hexadecimal](@keyword=hexadecimal|lang=en-US|style=Feynman)). This number is composed of four bytes: `0x01`, `0x02`, `0x03`, and `0x04`.
 
 - The **most significant byte (MSB)**, which represents the "big end" of the number, is `0x01`.
 - The **least significant byte (LSB)**, representing the "little end," is `0x04`.
@@ -32,7 +32,7 @@ There are two dominant conventions for storing this number in a sequence of memo
 
 Most modern desktop computers (using x86-64 processors) are little-endian, while many network protocols and older processor architectures (like the Motorola 68000 series or Sun SPARC) are big-endian. The name "endian" itself is a wonderful piece of computer science lore, borrowed from Jonathan Swift's 1726 novel *Gulliver's Travels*, where the Lilliputians were divided into two factions: the "Big-Endians," who broke their eggs at the larger end, and the "Little-Endians," who broke them at the smaller end. The debate was fierce, arbitrary, and ultimately a matter of convention—just like byte order in computing.
 
-So, how can a program figure out which world it's living in? The trick is to perform a simple experiment. You write a known multi-byte number to memory and then, without any interpretation, read back just the very first byte at the lowest address. If you wrote our test number `0x01020304`, and the first byte you read back is `0x04` (the LSB), you know you're on a little-endian machine. If it's `0x01` (the MSB), you're on a big-endian machine. This is a fundamental technique for detecting the host system's byte order from first principles . This same principle applies not just to integers, but to any multi-byte data type, including floating-point numbers like `-2.0`, which also has a well-defined byte pattern according to the IEEE 754 standard .
+So, how can a program figure out which world it's living in? The trick is to perform a simple experiment. You write a known multi-byte number to memory and then, without any interpretation, read back just the very first byte at the lowest address. If you wrote our test number `0x01020304`, and the first byte you read back is `0x04` (the LSB), you know you're on a little-endian machine. If it's `0x01` (the MSB), you're on a big-endian machine. This is a fundamental technique for detecting the host system's byte order from first principles [@problem_id:3260583]. This same principle applies not just to integers, but to any multi-byte data type, including floating-point numbers like `-2.0`, which also has a well-defined byte pattern according to the IEEE 754 standard [@problem_id:2393684].
 
 ### Seeing Through the Machine's Eyes
 
@@ -40,7 +40,7 @@ The consequences of endianness become starkly apparent when you try to interpret
 
 Imagine we define a color with three 8-bit components: `R`, `G`, and `B`. In memory, we lay them out in that order, followed by a padding byte to align the data to a 4-byte boundary. For the color `(R=0x11, G=0x22, B=0x33)`, the memory would look like this, starting from some base address: `[0x11, 0x22, 0x33, 0x00]`.
 
-Now, what happens if a program reinterprets these four bytes as a single 32-bit integer? The result depends entirely on the machine's endianness .
+Now, what happens if a program reinterprets these four bytes as a single 32-bit integer? The result depends entirely on the machine's endianness [@problem_id:3223007].
 
 - A **little-endian** machine reads the byte at the lowest address as the least significant part of the integer. It would construct the number by reading `0x11` as the LSB, `0x22` as the next byte, and so on. The resulting integer would be `0x00332211`.
 
@@ -54,7 +54,7 @@ At this point, you might be worried. Does this mean that a simple calculation li
 
 When you write code like `int x = 0x01020304;`, the compiler and CPU work together to ensure that the variable `x` holds the correct numerical value. When the program loads this integer from memory into a CPU register to perform calculations, the hardware automatically assembles the bytes in the correct order to form the intended value. Whether the bytes were stored as `[0x01, 0x02, 0x03, 0x04]` or `[0x04, 0x03, 0x02, 0x01]` is irrelevant at this stage. The CPU's Arithmetic Logic Unit (ALU) performs operations like addition, subtraction, and bitwise logic on the fully-formed *value* in the register.
 
-A beautiful example of this principle is the clever bit-trick `x  -x`, which isolates the least significant bit of an integer `x`. For example, if `x` is $12$ (binary `1100`), its least significant bit has a value of $4$ (binary `0100`). The expression `12  -12` indeed evaluates to $4$. This calculation relies on the properties of two's-complement arithmetic. Because this operation is performed at the level of abstract numerical values inside the CPU, the result is identical on both little-endian and big-endian systems. The underlying [memory layout](@article_id:635315) of the number $12$ does not affect the outcome of the logical operation .
+A beautiful example of this principle is the clever bit-trick `x  -x`, which isolates the least significant bit of an integer `x`. For example, if `x` is $12$ (binary `1100`), its least significant bit has a value of $4$ (binary `0100`). The expression `12  -12` indeed evaluates to $4$. This calculation relies on the properties of two's-complement arithmetic. Because this operation is performed at the level of abstract numerical values inside the CPU, the result is identical on both little-endian and big-endian systems. The underlying [memory layout](@keyword=memory_layout|lang=en-US|style=Feynman) of the number $12$ does not affect the outcome of the logical operation [@problem_id:3234238].
 
 So, endianness is a property of the *storage of bytes in memory*. It is not a property of the *values themselves* or the arithmetic performed on them once they are loaded into the CPU.
 
@@ -70,8 +70,8 @@ Consider a program that reads data records from a file. Each record starts with 
 
 - Now, run the *exact same program* on a **big-endian** machine. It reads the same two bytes, `[0xCD, 0xAB]`. But its native hardware interprets the first byte as the most significant. It constructs the value `0xCDAB`. The program then checks if `0xCDAB == 0xABCD`. The check fails!
 
-The consequences can be severe. In one scenario, this failed check could mean that the program doesn't recognize the record as its own and fails to release the memory associated with it. The result is a memory leak that *only* manifests on big-endian systems, creating a programmer's nightmare .
+The consequences can be severe. In one scenario, this failed check could mean that the program doesn't recognize the record as its own and fails to release the memory associated with it. The result is a memory leak that *only* manifests on big-endian systems, creating a programmer's nightmare [@problem_id:3252061].
 
-This is precisely why standards are so critical. Network protocols, like the internet's TCP/IP, define a standard **network byte order**, which is big-endian. Any program sending multi-byte integers over the network must first convert them to big-endian, and the receiving program must convert them back to its native format. This ensures that a machine in Japan can talk to a machine in Brazil without misinterpreting the numbers. Likewise, standardized file formats (like JPEG images, PNGs, or PDFs) must rigidly define the endianness of their internal [data structures](@article_id:261640).
+This is precisely why standards are so critical. Network protocols, like the internet's TCP/IP, define a standard **network byte order**, which is big-endian. Any program sending multi-byte integers over the network must first convert them to big-endian, and the receiving program must convert them back to its native format. This ensures that a machine in Japan can talk to a machine in Brazil without misinterpreting the numbers. Likewise, standardized file formats (like JPEG images, PNGs, or PDFs) must rigidly define the endianness of their internal [data structures](@keyword=data_structures|lang=en-US|style=Feynman).
 
 Endianness, then, is the "Babel Fish" of computing. Understanding it and using the proper conversion functions allows different architectures, with their different internal conventions, to communicate flawlessly, turning a potential source of chaos into a testament to the power of standardized protocols. It is a hidden, but essential, layer of the engineering that makes our interconnected digital world possible.

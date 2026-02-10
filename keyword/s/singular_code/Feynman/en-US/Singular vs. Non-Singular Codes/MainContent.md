@@ -1,7 +1,7 @@
 ## Introduction
 In our modern world, we are constantly communicating with machines, yet we rarely consider the language they speak. This language is not one of words, but of bits—a stream of zeroes and ones that must be flawlessly translated from our world of symbols, letters, and commands. The "dictionary" for this translation is called a code, and its design is a delicate balance between simplicity and clarity. The central challenge lies in avoiding ambiguity; a single misinterpretation can be the difference between a functioning device and a catastrophic failure. How do we build a language for machines that is perfectly clear?
 
-This article delves into the fundamental principles that govern the creation of effective codes. In the first part, **Principles and Mechanisms**, we will explore the hierarchy of codes, starting with the flawed concept of a singular code and building up to the robust and efficient [prefix codes](@article_id:266568). We will uncover the subtle rules that determine whether a sequence of information can be decoded without ambiguity. Then, in **Applications and Interdisciplinary Connections**, we will see how these abstract principles are not confined to theory but are the invisible architecture behind digital computers, elegant mathematical proofs, and even the code of life itself. By the end, you will understand how the simple act of assigning unique names to things shapes our technology and our understanding of the natural world.
+This article delves into the fundamental principles that govern the creation of effective codes. In the first part, **Principles and Mechanisms**, we will explore the hierarchy of codes, starting with the flawed concept of a singular code and building up to the robust and efficient [prefix codes](@keyword=prefix_codes|lang=en-US|style=Feynman). We will uncover the subtle rules that determine whether a sequence of information can be decoded without ambiguity. Then, in **Applications and Interdisciplinary Connections**, we will see how these abstract principles are not confined to theory but are the invisible architecture behind digital computers, elegant mathematical proofs, and even the code of life itself. By the end, you will understand how the simple act of assigning unique names to things shapes our technology and our understanding of the natural world.
 
 ## Principles and Mechanisms
 
@@ -11,7 +11,7 @@ Imagine we are tasked with creating a secret language. Not a language for spies,
 
 The most fundamental rule of any language, human or machine, is that we must be able to distinguish one thing from another. If you have two friends, Alice and Bob, you wouldn't give them both the nickname "Alex." If you did, shouting "Hey, Alex!" would cause confusion. This simple, intuitive idea is the heart of what we call a **nonsingular code**.
 
-A code is a mapping from a set of source symbols (our alphabet, $\mathcal{X}$) to a set of codewords (the strings of bits). A code is nonsingular if every distinct symbol is assigned a distinct codeword . In mathematical terms, the mapping must be one-to-one.
+A code is a mapping from a set of source symbols (our alphabet, $\mathcal{X}$) to a set of codewords (the strings of bits). A code is nonsingular if every distinct symbol is assigned a distinct codeword [@problem_id:1643869]. In mathematical terms, the mapping must be one-to-one.
 
 Let's look at an example. Suppose our alphabet is $\mathcal{X} = \{s_1, s_2, s_3, s_4\}$. Consider this code:
 - $C(s_1) \to 0$
@@ -21,7 +21,7 @@ Let's look at an example. Suppose our alphabet is $\mathcal{X} = \{s_1, s_2, s_3
 
 This code is **singular**. Why? Because both $s_1$ and $s_4$ are mapped to the same codeword, `0`. If our machine receives a `0`, it has no way of knowing if the original symbol was $s_1$ or $s_4$. The information is lost. This is the equivalent of calling both Alice and Bob "Alex." Such a code is fundamentally broken.
 
-Now consider a different code for the same alphabet :
+Now consider a different code for the same alphabet [@problem_id:1643895]:
 - $C(s_1) \to 11$
 - $C(s_2) \to 110$
 - $C(s_3) \to 1100$
@@ -33,7 +33,7 @@ Is this code nonsingular? We just need to check if any two codewords are the sam
 
 So, we have our nonsingular code where every symbol has a unique codeword. Are we done? Can we now start sending messages by stringing these codewords together? Let's try.
 
-Consider the following code for the alphabet $\{A, B, C\}$, which is perfectly nonsingular as all codewords are distinct :
+Consider the following code for the alphabet $\{A, B, C\}$, which is perfectly nonsingular as all codewords are distinct [@problem_id:1610386]:
 - $C(A) \to 0$
 - $C(B) \to 01$
 - $C(C) \to 10$
@@ -43,13 +43,13 @@ Now, suppose a friend sends you the message `010`. What did they mean to say? Yo
 1. The sender meant to send `A`, followed by `C`. This would be the codeword for `A` (`0`) concatenated with the codeword for `C` (`10`), giving `0`+`10` = `010`. The message is `AC`.
 2. The sender meant to send `B`, followed by `A`. This would be the codeword for `B` (`01`) concatenated with the codeword for `A` (`0`), giving `01`+`0` = `010`. The message is `BA`.
 
-We have a serious problem. The received message `010` is ambiguous. Even though our code was nonsingular, it fails when we try to have a "conversation" by sequencing symbols. A code that avoids this kind of ambiguity, where any sequence of codewords can be parsed back into the original source symbols in only one way, is called **uniquely decodable**. Our code $\{0, 01, 10\}$ is nonsingular, but it is *not* uniquely decodable   .
+We have a serious problem. The received message `010` is ambiguous. Even though our code was nonsingular, it fails when we try to have a "conversation" by sequencing symbols. A code that avoids this kind of ambiguity, where any sequence of codewords can be parsed back into the original source symbols in only one way, is called **uniquely decodable**. Our code $\{0, 01, 10\}$ is nonsingular, but it is *not* uniquely decodable [@problem_id:1643868] [@problem_id:1643872] [@problem_id:1643889].
 
-This reveals a crucial hierarchy. All [uniquely decodable codes](@article_id:261480) must, by necessity, be nonsingular. If they weren't, the ambiguity would exist at the level of a single symbol! But as we've just seen, the reverse is not true. Being nonsingular is a necessary but not [sufficient condition](@article_id:275748) for a code to be truly useful for transmitting sequences of information.
+This reveals a crucial hierarchy. All [uniquely decodable codes](@keyword=uniquely_decodable_codes|lang=en-US|style=Feynman) must, by necessity, be nonsingular. If they weren't, the ambiguity would exist at the level of a single symbol! But as we've just seen, the reverse is not true. Being nonsingular is a necessary but not [sufficient condition](@keyword=sufficient_condition|lang=en-US|style=Feynman) for a code to be truly useful for transmitting sequences of information.
 
 ### A Hierarchy of Clarity
 
-We can now see that not all codes are created equal. We can arrange them in a hierarchy, a ladder of increasing power and clarity .
+We can now see that not all codes are created equal. We can arrange them in a hierarchy, a ladder of increasing power and clarity [@problem_id:1610411].
 
 1.  **Singular Codes:** The bottom rung. Multiple symbols map to the same codeword. Fundamentally ambiguous and useless. (e.g., $A \to 01, B \to 10, C \to 01$).
 
@@ -57,7 +57,7 @@ We can now see that not all codes are created equal. We can arrange them in a hi
 
 3.  **Uniquely Decodable (UD) Codes:** These are the workhorses. Any message, no matter how long, has only one valid interpretation. You might have to look at the entire message to decode it, but you're guaranteed to get it right in the end.
 
-4.  **Prefix Codes (or Instantaneous Codes):** This is the gold standard for many applications. A [prefix code](@article_id:266034) is a special, stronger type of UD code with a wonderful property: **no codeword is a prefix of any other codeword**. For example, consider the code $\{A \to 0, B \to 10, C \to 110, D \to 111\}$ . `0` is not the start of any other codeword. `10` is not the start of `110` or `111`. `110` is not the start of `111`. This property means you can decode a message on the fly, without waiting for the whole thing to arrive. As soon as you see a `0`, you know it's an `A`. Period. As soon as you see a `110`, you know it's a `C`. You can decode *instantaneously*. All [prefix codes](@article_id:266568) are uniquely decodable, but not all [uniquely decodable codes](@article_id:261480) are [prefix codes](@article_id:266568).
+4.  **Prefix Codes (or Instantaneous Codes):** This is the gold standard for many applications. A [prefix code](@keyword=prefix_code|lang=en-US|style=Feynman) is a special, stronger type of UD code with a wonderful property: **no codeword is a prefix of any other codeword**. For example, consider the code $\{A \to 0, B \to 10, C \to 110, D \to 111\}$ [@problem_id:1643872]. `0` is not the start of any other codeword. `10` is not the start of `110` or `111`. `110` is not the start of `111`. This property means you can decode a message on the fly, without waiting for the whole thing to arrive. As soon as you see a `0`, you know it's an `A`. Period. As soon as you see a `110`, you know it's a `C`. You can decode *instantaneously*. All [prefix codes](@keyword=prefix_codes|lang=en-US|style=Feynman) are uniquely decodable, but not all [uniquely decodable codes](@keyword=uniquely_decodable_codes|lang=en-US|style=Feynman) are [prefix codes](@keyword=prefix_codes|lang=en-US|style=Feynman).
 
 ### The Treachery of Concatenation
 
@@ -65,7 +65,7 @@ We have built a nice, clean hierarchy. It feels like we understand the rules of 
 
 Imagine we have two separate sources of symbols. Source 1 has alphabet $\mathcal{X} = \{x_1, x_2\}$ and its own nonsingular code, $C_1$. Source 2 has alphabet $\mathcal{Y} = \{y_1, y_2\}$ and its own nonsingular code, $C_2$. Now, we want to create a **product code**, $C$, for pairs of symbols from these two sources. A natural way to do this is to simply concatenate the individual codewords: $C(x_i, y_j) = C_1(x_i)C_2(y_j)$.
 
-Here's the puzzle: If both $C_1$ and $C_2$ are nonsingular, is the resulting product code $C$ also guaranteed to be nonsingular? It seems like it should be. If we have a unique code for the first symbol and a unique code for the second, surely their combination must be unique. Let's test this intuition. It turns out to be surprisingly wrong .
+Here's the puzzle: If both $C_1$ and $C_2$ are nonsingular, is the resulting product code $C$ also guaranteed to be nonsingular? It seems like it should be. If we have a unique code for the first symbol and a unique code for the second, surely their combination must be unique. Let's test this intuition. It turns out to be surprisingly wrong [@problem_id:1643860].
 
 Consider these two codes, both of which are clearly nonsingular:
 - $C_1$ for $\{x_1, x_2\}$: $C_1(x_1) \to 0$, $C_1(x_2) \to 01$.

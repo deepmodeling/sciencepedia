@@ -1,7 +1,7 @@
 ## Introduction
 In a world of finite time and competing priorities, how do we make the most profitable choices? The Weighted Interval Scheduling problem captures this dilemma perfectly: given a set of tasks, each with a start time, end time, and value, how do we select a non-overlapping subset to maximize total worth? This challenge appears everywhere, from managing project deadlines to scheduling satellite observations. However, our intuitive approaches often fall short. Simple "greedy" strategies, while appealing, can lead to catastrophically poor outcomes, revealing a gap between our instincts and the optimal solution.
 
-This article bridges that gap. In the first section, **Principles and Mechanisms**, we will dissect the failure of [greedy algorithms](@article_id:260431) and introduce the elegant and powerful framework of Dynamic Programming, uncovering the Principle of Optimality that guarantees the best result. Following this, the **Applications and Interdisciplinary Connections** section will showcase the remarkable adaptability of this method, demonstrating how it can be modified and combined with other concepts to solve a vast array of complex, real-world problems. We begin by exploring the core principles that separate a flawed guess from a perfect plan.
+This article bridges that gap. In the first section, **Principles and Mechanisms**, we will dissect the failure of [greedy algorithms](@keyword=greedy_algorithms|lang=en-US|style=Feynman) and introduce the elegant and powerful framework of Dynamic Programming, uncovering the Principle of Optimality that guarantees the best result. Following this, the **Applications and Interdisciplinary Connections** section will showcase the remarkable adaptability of this method, demonstrating how it can be modified and combined with other concepts to solve a vast array of complex, real-world problems. We begin by exploring the core principles that separate a flawed guess from a perfect plan.
 
 ## Principles and Mechanisms
 
@@ -20,9 +20,9 @@ A purely profit-driven greedy strategy would immediately grab Job A for its $100
 
 Alright, let's try a more refined greedy approach. What if we pick the job that finishes earliest? The intuition here is compelling: by finishing a job as quickly as possible, we free ourselves up for the maximum number of future opportunities. This is a brilliant strategy for the *unweighted* problem, where all jobs have equal value and we just want to complete as many as possible. But what happens when profits are involved?
 
-Let's look at a carefully constructed case . Imagine one very long, very lucrative job, let's call it the "whale," that runs from midnight to noon and pays $1,000,000. Now, imagine a series of twelve one-hour jobs, each paying just $1, filling the exact same time slot: a job from midnight to 1am, one from 1am to 2am, and so on, up to the one from 11am to noon.
+Let's look at a carefully constructed case [@problem_id:3202965]. Imagine one very long, very lucrative job, let's call it the "whale," that runs from midnight to noon and pays $1,000,000. Now, imagine a series of twelve one-hour jobs, each paying just $1, filling the exact same time slot: a job from midnight to 1am, one from 1am to 2am, and so on, up to the one from 11am to noon.
 
-The "[earliest finish time](@article_id:635544)" greedy algorithm, seeing the pile of jobs, would first spot the midnight-to-1am job. It finishes at 1am, so it gets picked. Profit so far: $1. Next, it sees the 1am-to-2am job. It's compatible, so it gets picked. Profit: $2. This continues, and the algorithm dutifully selects all twelve of the one-hour, $1 jobs. The grand total? A paltry $12. It never even considers the million-dollar "whale" because its finish time (noon) is later than all the others. The optimal choice, of course, was to take only the whale, for a profit of $1,000,000. Our "clever" greedy algorithm wasn't just suboptimal; its performance was catastrophically poor. The ratio of what it got to what it could have gotten can be made as bad as we like, simply by adjusting the profits and the number of small jobs.
+The "[earliest finish time](@keyword=earliest_finish_time|lang=en-US|style=Feynman)" greedy algorithm, seeing the pile of jobs, would first spot the midnight-to-1am job. It finishes at 1am, so it gets picked. Profit so far: $1. Next, it sees the 1am-to-2am job. It's compatible, so it gets picked. Profit: $2. This continues, and the algorithm dutifully selects all twelve of the one-hour, $1 jobs. The grand total? A paltry $12. It never even considers the million-dollar "whale" because its finish time (noon) is later than all the others. The optimal choice, of course, was to take only the whale, for a profit of $1,000,000. Our "clever" greedy algorithm wasn't just suboptimal; its performance was catastrophically poor. The ratio of what it got to what it could have gotten can be made as bad as we like, simply by adjusting the profits and the number of small jobs.
 
 ### The Price of Myopia
 
@@ -42,7 +42,7 @@ Let's say we have $n$ jobs, now labeled $1, 2, \dots, n$ in order of increasing 
 
 2.  **Case 2: The optimal solution DOES include job $n$.** If we take job $n$, we pocket its profit, $w_n$. But this choice has consequences. We are now forbidden from taking any other jobs that overlap with job $n$. To complete our schedule, we must find an optimal set of jobs that are all compatible with job $n$. This means we need the best possible schedule chosen from jobs that *finish before job n begins*. Let's find the latest job, say job $p(n)$, that is compatible with job $n$ in this way. By the Principle of Optimality, the rest of our schedule must be the optimal solution for the subproblem consisting of jobs $1, \dots, p(n)$.
 
-This logic gives us a powerful recursive formula. Let's define $DP[i]$ as the maximum profit we can get by considering only the first $i$ jobs (in our sorted list). Then, to calculate $DP[i]$, we simply compare the two cases :
+This logic gives us a powerful recursive formula. Let's define $DP[i]$ as the maximum profit we can get by considering only the first $i$ jobs (in our sorted list). Then, to calculate $DP[i]$, we simply compare the two cases [@problem_id:3203645]:
 
 $$DP[i] = \max( DP[i-1], \quad w_i + DP[p(i)] )$$
 
@@ -52,7 +52,7 @@ The first term, $DP[i-1]$, is the profit if we **exclude** job $i$. The second t
 
 This dynamic programming approach is far more than just a fixed algorithm for one specific problem. It is a flexible and powerful way of thinking, a "machine" that can be adapted to answer much more intricate questions.
 
-What if, for instance, you don't just want the single best possible profit, but a ranked list of the top five best outcomes? Maybe the second-best schedule is easier to implement or has other desirable properties. A greedy algorithm is hopeless here; it only knows how to find one path. But we can tweak our DP machine. Instead of having $DP[i]$ store a single number (the maximum profit), let's have it store a *set* of all possible total profits achievable using the first $i$ jobs .
+What if, for instance, you don't just want the single best possible profit, but a ranked list of the top five best outcomes? Maybe the second-best schedule is easier to implement or has other desirable properties. A greedy algorithm is hopeless here; it only knows how to find one path. But we can tweak our DP machine. Instead of having $DP[i]$ store a single number (the maximum profit), let's have it store a *set* of all possible total profits achievable using the first $i$ jobs [@problem_id:3203003].
 
 When we consider job $i$, the new set of possibilities is formed by taking the union of two sets:
 1.  The set of profits from the first $i-1$ jobs (where we exclude job $i$).
@@ -60,7 +60,7 @@ When we consider job $i$, the new set of possibilities is formed by taking the u
 
 By building up these sets, we end up with a complete catalogue of every possible profit. We have not just found the peak of the mountain; we have mapped the entire landscape.
 
-Let's push it further. What if our jobs are not in one place, but are delivery tasks in different cities? Now, a schedule's feasibility depends not just on time, but also on the travel time between locations. A simple greedy choice of "earliest finish time" might pick a job in a faraway city, leaving us stranded and unable to reach other lucrative jobs in time . The state of our problem is more complex; it's not just "what time is it?", but "what time is it, and *where are we*?".
+Let's push it further. What if our jobs are not in one place, but are delivery tasks in different cities? Now, a schedule's feasibility depends not just on time, but also on the travel time between locations. A simple greedy choice of "earliest finish time" might pick a job in a faraway city, leaving us stranded and unable to reach other lucrative jobs in time [@problem_id:3230538]. The state of our problem is more complex; it's not just "what time is it?", but "what time is it, and *where are we*?".
 
 We can adapt our DP machine again. The state can't just be indexed by the number of jobs considered. Instead, we can define our subproblem differently: let $F[i]$ be the maximum profit of any feasible schedule that *ends with job i*. To compute this, we look at all previous jobs $j$ and check if we could have traveled from job $j$'s location to job $i$'s location in time. If we could, we can form a schedule ending in $i$ by appending it to the best schedule that ended in $j$. The recurrence becomes:
 
@@ -68,7 +68,7 @@ $$F[i] = w_i + \max_{\text{all compatible predecessors } j} F[j]$$
 
 The principle remains the same; only the definition of "subproblem" and "compatibility" has been enriched to match the new reality.
 
-Finally, what if the objective itself is more complex? Suppose, in addition to the profits from each job, you get a bonus based on the *number* of jobs you complete, but this bonus has diminishing returns (e.g., a big bonus for the first few jobs, but smaller and smaller bonuses for subsequent ones) . The total reward is no longer a simple sum.
+Finally, what if the objective itself is more complex? Suppose, in addition to the profits from each job, you get a bonus based on the *number* of jobs you complete, but this bonus has diminishing returns (e.g., a big bonus for the first few jobs, but smaller and smaller bonuses for subsequent ones) [@problem_id:3203017]. The total reward is no longer a simple sum.
 
 Once more, we adapt the machine. The information we need to make future decisions now includes not only the profit, but also the *count* of jobs. So, we expand our DP state to $DP(i, k)$: the maximum profit from the first $i$ jobs, using a schedule of exactly $k$ jobs. The recurrence relation is similar, but now it tracks both profit and count:
 

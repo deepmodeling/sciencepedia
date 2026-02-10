@@ -1,7 +1,7 @@
 ## Introduction
-In nature and engineering, we often find that simple, symmetric shapes like circles and spheres provide optimal solutions. But how can we mathematically prove that a circular drum has the deepest voice or a round shaft is the strongest? Symmetric decreasing rearrangement offers a powerful and elegant answer. This technique addresses the fundamental challenge of comparing complex, arbitrary shapes against their idealized, symmetric counterparts. It provides a rigorous method to transform any function—representing a physical quantity like stress or vibration—into a simpler, radially [symmetric form](@article_id:153105) without losing its essential "mass."
+In nature and engineering, we often find that simple, symmetric shapes like circles and spheres provide optimal solutions. But how can we mathematically prove that a circular drum has the deepest voice or a round shaft is the strongest? Symmetric decreasing rearrangement offers a powerful and elegant answer. This technique addresses the fundamental challenge of comparing complex, arbitrary shapes against their idealized, symmetric counterparts. It provides a rigorous method to transform any function—representing a physical quantity like stress or vibration—into a simpler, radially [symmetric form](@keyword=symmetric_form|lang=en-US|style=Feynman) without losing its essential "mass."
 
-This article explores this profound mathematical tool. In the first chapter, "Principles and Mechanisms," we will uncover how the rearrangement process works, its fundamental properties like [energy minimization](@article_id:147204), and its connection to the isoperimetric principle. Subsequently, the "Applications and Interdisciplinary Connections" chapter will demonstrate its power in solving real-world problems, from determining the [torsional rigidity](@article_id:193032) of a beam to proving celebrated results in the analysis of partial differential equations.
+This article explores this profound mathematical tool. In the first chapter, "Principles and Mechanisms," we will uncover how the rearrangement process works, its fundamental properties like [energy minimization](@keyword=energy_minimization|lang=en-US|style=Feynman), and its connection to the isoperimetric principle. Subsequently, the "Applications and Interdisciplinary Connections" chapter will demonstrate its power in solving real-world problems, from determining the [torsional rigidity](@keyword=torsional_rigidity|lang=en-US|style=Feynman) of a beam to proving celebrated results in the analysis of partial differential equations.
 
 ## Principles and Mechanisms
 
@@ -13,14 +13,14 @@ This is the very essence of **symmetric decreasing rearrangement**. It's a power
 
 So, how do we actually perform this magical reshaping on a function $f(x)$? The process is beautifully logical, like carefully sorting a library of books by height. We do it in two main steps.
 
-First, we need to take inventory. For any given height $t > 0$, we ask: "What is the total size of the region where our function is taller than this height?" In mathematical terms, we measure the set of points $x$ where $|f(x)| > t$. This gives us a new function, called the **[distribution function](@article_id:145132)**, often denoted $\lambda_f(t)$. It tells us how much "stuff" (or measure) our function has above each possible height level. Think of it as a catalog of our mountain's horizontal cross-sections.
+First, we need to take inventory. For any given height $t > 0$, we ask: "What is the total size of the region where our function is taller than this height?" In mathematical terms, we measure the set of points $x$ where $|f(x)| > t$. This gives us a new function, called the **[distribution function](@keyword=distribution_function|lang=en-US|style=Feynman)**, often denoted $\lambda_f(t)$. It tells us how much "stuff" (or measure) our function has above each possible height level. Think of it as a catalog of our mountain's horizontal cross-sections.
 
 Second, we build our new, idealized function, which we'll call $f^\star(x)$. We want it to be radially symmetric and decreasing as we move away from the origin. We achieve this by decree: for each height $t$, the level set of our new function, $\{x : f^\star(x) > t\}$, will be a perfect ball (or disk in 2D, or interval in 1D) centered at the origin. And what is the size of this ball? We make it exactly equal to the size we cataloged earlier, $\lambda_f(t)$. In essence, we are taking every lumpy, disconnected horizontal slice of our original function and recasting it into a perfect circle of the same area, then stacking these circles concentrically.
 
 The result, $f^\star(x)$, is the **symmetric decreasing rearrangement** of $f(x)$. It's a new function that is, by its very construction:
 1.  **Radially Symmetric:** Its value depends only on the distance from the origin, $|x|$.
 2.  **Radially Decreasing:** Its value is largest at the center and gets smaller as you move outwards.
-3.  **Equimeasurable:** It has the exact same [distribution function](@article_id:145132) as the original function, $|f(x)|$. This is the mathematical guarantee that we haven't added or removed any "stuff".
+3.  **Equimeasurable:** It has the exact same [distribution function](@keyword=distribution_function|lang=en-US|style=Feynman) as the original function, $|f(x)|$. This is the mathematical guarantee that we haven't added or removed any "stuff".
 
 ### The Payoff: Three Miraculous Properties
 
@@ -34,7 +34,7 @@ $$
 \int |f(x)|^p \,dx = \int (f^\star(x))^p \,dx \quad \text{for any } p \ge 1
 $$
 
-This is the mathematical equivalent of our initial promise: no rock or pebble is lost in reshaping the mountain. We can see this principle in action with concrete examples, like reshaping a simple cosine wave or an [exponential decay](@article_id:136268) function. Even though the final shape $f^\star(x)$ looks completely different from the original $f(x)$, their total integrals—their $L^1$ norms—are identical. This holds true for all $L^p$ norms, a fact that can be directly verified.
+This is the mathematical equivalent of our initial promise: no rock or pebble is lost in reshaping the mountain. We can see this principle in action with concrete examples, like reshaping a simple cosine wave or an [exponential decay](@keyword=exponential_decay|lang=en-US|style=Feynman) function. Even though the final shape $f^\star(x)$ looks completely different from the original $f(x)$, their total integrals—their $L^1$ norms—are identical. This holds true for all $L^p$ norms, a fact that can be directly verified.
 
 #### 2. The Big One: Concentration of Energy
 
@@ -56,7 +56,7 @@ Rearrangement also plays nicely with other operations. For instance, if you take
 
 Let's see these principles unite in a beautiful symphony to solve a classic problem from physics: "Of all drums of a given area, which one has the deepest voice?"
 
-The "voice" of a drum—its fundamental frequency of vibration—is determined by what's called the **first eigenvalue** of the Laplacian, denoted $\lambda_1$. This eigenvalue can be found using the **Rayleigh quotient**, which is the ratio of the [vibrating drumhead](@article_id:175992)'s energy to its mass:
+The "voice" of a drum—its fundamental frequency of vibration—is determined by what's called the **first eigenvalue** of the Laplacian, denoted $\lambda_1$. This eigenvalue can be found using the **Rayleigh quotient**, which is the ratio of the [vibrating drumhead](@keyword=vibrating_drumhead|lang=en-US|style=Feynman)'s energy to its mass:
 
 $$
 \lambda_1(\Omega) = \inf_{u} \frac{\int_{\Omega} |\nabla u|^2 \,dx}{\int_{\Omega} u^2 \,dx}
@@ -80,10 +80,10 @@ And there it is: $\lambda_1(B) \le \lambda_1(\Omega)$. This is the **Faber-Krahn
 
 ### A Tool of Finesse: The Limits of Rearrangement
 
-The power of this method seems almost too good to be true, and indeed, it must be wielded with care. The beautiful proof for the [fundamental frequency](@article_id:267688) does not work for the higher frequencies, or "overtones," of the drum. Why not?
+The power of this method seems almost too good to be true, and indeed, it must be wielded with care. The beautiful proof for the [fundamental frequency](@keyword=fundamental_frequency|lang=en-US|style=Feynman) does not work for the higher frequencies, or "overtones," of the drum. Why not?
 
 The first vibration mode $u_1$ is a single, positive hump across the drum. Its rearrangement is natural. But the second vibration mode, $u_2$, must be **orthogonal** to the first one, which means $\int u_1 u_2 \,dx = 0$. Since $u_1$ is positive everywhere, this forces $u_2$ to have both positive and negative parts—it must wiggle.
 
-The rearrangement process, however, is defined using the absolute value, $|u_2|$. It takes the two (or more) wiggles of $u_2$ and collapses them into a single positive hump, $u_2^\star$. This new function is no longer orthogonal to the fundamental mode of the circular drum. It has lost the essential oscillatory character that made it a second-mode vibration in the first place. The [orthogonality condition](@article_id:168411), which is the defining feature of higher energy states, is destroyed by the rearrangement.
+The rearrangement process, however, is defined using the absolute value, $|u_2|$. It takes the two (or more) wiggles of $u_2$ and collapses them into a single positive hump, $u_2^\star$. This new function is no longer orthogonal to the fundamental mode of the circular drum. It has lost the essential oscillatory character that made it a second-mode vibration in the first place. The [orthogonality condition](@keyword=orthogonality_condition|lang=en-US|style=Feynman), which is the defining feature of higher energy states, is destroyed by the rearrangement.
 
 This limitation does not diminish the tool's power; it highlights its precision. Symmetric decreasing rearrangement is perfectly tuned to answer questions about ground states, minimal energies, and optimal shapes—questions that depend on concentration and compactness. It is a testament to the fact that in mathematics, as in all of science, knowing what a tool *cannot* do is just as important as knowing what it can.

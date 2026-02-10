@@ -1,17 +1,17 @@
 ## Introduction
-What is the straightest path between two points? In the flat world of Euclidean geometry, the answer is a simple line. But in the curved landscapes described by Riemannian geometry, finding these "straightest paths," or geodesics, can be a profoundly complex challenge. However, a special class of spaces exists where perfect regularity and order make this problem elegantly solvable: the Riemannian [symmetric spaces](@article_id:181296). These manifolds, from spheres to more exotic geometries, possess a degree of symmetry so profound that it governs their entire structure.
+What is the straightest path between two points? In the flat world of Euclidean geometry, the answer is a simple line. But in the curved landscapes described by Riemannian geometry, finding these "straightest paths," or geodesics, can be a profoundly complex challenge. However, a special class of spaces exists where perfect regularity and order make this problem elegantly solvable: the Riemannian [symmetric spaces](@keyword=symmetric_spaces|lang=en-US|style=Feynman). These manifolds, from spheres to more exotic geometries, possess a degree of symmetry so profound that it governs their entire structure.
 
 This article bridges the gap between the abstract mathematical beauty of symmetric spaces and their remarkable utility in describing the physical world. It addresses the question of how their unique properties simplify the study of geodesics and what that means for science. By exploring this connection, you will gain a unified vision of how a single powerful idea—symmetry—echoes through disparate fields.
 
-The journey is structured in two parts. First, in "Principles and Mechanisms," we will unpack the fundamental definition of a [symmetric space](@article_id:182689) based on a simple point reflection. We will see how this single axiom gives rise to a rich interplay between geometry and algebra, yielding a powerful formula for geodesics and a deep understanding of curvature and stability. Following this, "Applications and Interdisciplinary Connections" will demonstrate the power of this framework, showing how it serves as the natural language for phenomena in modern physics, the geometry of quantum information, and even advanced medical imaging techniques.
+The journey is structured in two parts. First, in "Principles and Mechanisms," we will unpack the fundamental definition of a [symmetric space](@keyword=symmetric_space|lang=en-US|style=Feynman) based on a simple point reflection. We will see how this single axiom gives rise to a rich interplay between geometry and algebra, yielding a powerful formula for geodesics and a deep understanding of curvature and stability. Following this, "Applications and Interdisciplinary Connections" will demonstrate the power of this framework, showing how it serves as the natural language for phenomena in modern physics, the geometry of quantum information, and even advanced medical imaging techniques.
 
 ## Principles and Mechanisms
 
-Imagine you are standing on an infinite, perfectly polished surface. What makes it special? You might say it's because it looks the same no matter where you stand, and no matter which direction you face. This intuitive notion of perfect symmetry is the gateway to a class of mathematical objects of profound beauty and importance: the **Riemannian [symmetric spaces](@article_id:181296)**. But instead of starting with a long list of axioms, let's begin with a single, wonderfully simple, and powerful idea.
+Imagine you are standing on an infinite, perfectly polished surface. What makes it special? You might say it's because it looks the same no matter where you stand, and no matter which direction you face. This intuitive notion of perfect symmetry is the gateway to a class of mathematical objects of profound beauty and importance: the **Riemannian [symmetric spaces](@keyword=symmetric_spaces|lang=en-US|style=Feynman)**. But instead of starting with a long list of axioms, let's begin with a single, wonderfully simple, and powerful idea.
 
 ### The Magic of Point Reflection
 
-Let's define a space to be "symmetric" if at *every single point* $p$ in the space, we can perform a special kind of reflection. This isn't your everyday mirror reflection. This reflection, let's call it $s_p$, is an [isometry](@article_id:150387)—it preserves all distances and angles. It has two key properties:
+Let's define a space to be "symmetric" if at *every single point* $p$ in the space, we can perform a special kind of reflection. This isn't your everyday mirror reflection. This reflection, let's call it $s_p$, is an [isometry](@keyword=isometry|lang=en-US|style=Feynman)—it preserves all distances and angles. It has two key properties:
 
 1.  It fixes the point $p$, so $s_p(p) = p$.
 2.  It reverses every direction at $p$. If you imagine all the possible velocity vectors you could have at point $p$, this reflection flips every single one of them. Mathematically, its differential at $p$ is the negative identity map: $\mathrm{d}(s_p)_p = -\mathrm{Id}$.
@@ -35,11 +35,11 @@ The symmetry at $p$ *reverses* any geodesic passing through it. This property is
 
 ### From Local Rule to Global Order
 
-This simple act of geodesic reversal has astonishing global consequences. For instance, in a [symmetric space](@article_id:182689), you can get from any point to any other point via an isometry. The space is perfectly uniform, or **homogeneous**.
+This simple act of geodesic reversal has astonishing global consequences. For instance, in a [symmetric space](@keyword=symmetric_space|lang=en-US|style=Feynman), you can get from any point to any other point via an isometry. The space is perfectly uniform, or **homogeneous**.
 
 How can we be so sure? Imagine two points, $p$ and $q$. Let's draw the unique geodesic between them. Now, find the midpoint of this geodesic, and call it $m$. What happens if we apply the symmetry operation $s_m$ at this midpoint? According to our rule, $s_m$ reverses the geodesic. This means it must map the starting point $p$ to the ending point $q$. Since $s_m$ is an isometry of the entire space, we have just found a motion of the space that carries $p$ to $q$. We can do this for any pair of points!
 
-This [homogeneity](@article_id:152118), in turn, guarantees another remarkable property: **[geodesic completeness](@article_id:159786)**. On a [symmetric space](@article_id:182689), any geodesic can be extended forever. You can never fall off an "edge" because, well, there are no edges. The space looks the same everywhere. If you can extend a geodesic for a short time at one point, you can do it at any point. We can use our geodesic inversion trick repeatedly: take a geodesic segment, reflect it about its endpoint to double its length, then reflect that new segment about its new endpoint, and so on. This process can continue indefinitely, extending the path to cover all of $\mathbb{R}$. Straight lines go on forever.
+This [homogeneity](@keyword=homogeneity|lang=en-US|style=Feynman), in turn, guarantees another remarkable property: **[geodesic completeness](@keyword=geodesic_completeness|lang=en-US|style=Feynman)**. On a [symmetric space](@keyword=symmetric_space|lang=en-US|style=Feynman), any geodesic can be extended forever. You can never fall off an "edge" because, well, there are no edges. The space looks the same everywhere. If you can extend a geodesic for a short time at one point, you can do it at any point. We can use our geodesic inversion trick repeatedly: take a geodesic segment, reflect it about its endpoint to double its length, then reflect that new segment about its new endpoint, and so on. This process can continue indefinitely, extending the path to cover all of $\mathbb{R}$. Straight lines go on forever.
 
 ### The Algebraic Engine Room
 
@@ -48,20 +48,20 @@ This geometric picture is so clean that you might suspect there's a powerful alg
 -   $G$ is the Lie group of all isometries of the space. Think of it as the collection of all possible "motions" that preserve the geometry.
 -   $K$ is the subgroup of isometries that fix a specific point, our "origin" $o$. Think of these as all the possible "rotations" around that origin.
 
-The space $M$ is the set of "[cosets](@article_id:146651)" $gK$, which you can think of as the set of all points you can reach by applying all possible motions $g \in G$ to the origin.
+The space $M$ is the set of "[cosets](@keyword=cosets|lang=en-US|style=Feynman)" $gK$, which you can think of as the set of all points you can reach by applying all possible motions $g \in G$ to the origin.
 
 This algebraic structure has a direct counterpart at the level of infinitesimal motions—the Lie algebras. The Lie algebra $\mathfrak{g}$ of $G$ splits beautifully into two parts, a decomposition known as the **Cartan decomposition**:
 
 $$ \mathfrak{g} = \mathfrak{k} \oplus \mathfrak{p} $$
 
--   $\mathfrak{k}$ is the Lie algebra of $K$. Its elements represent [infinitesimal rotations](@article_id:166141) around the origin.
+-   $\mathfrak{k}$ is the Lie algebra of $K$. Its elements represent [infinitesimal rotations](@keyword=infinitesimal_rotations|lang=en-US|style=Feynman) around the origin.
 -   $\mathfrak{p}$ is the truly special part. Its elements represent infinitesimal "displacements" or "transvections." We can think of the vector space $\mathfrak{p}$ as being the tangent space at our origin, $T_o M \cong \mathfrak{p}$.
 
-The way these pieces interact is governed by the Lie bracket, which tells you what happens when you compose infinitesimal motions. For a [symmetric space](@article_id:182689), they obey specific rules:
+The way these pieces interact is governed by the Lie bracket, which tells you what happens when you compose infinitesimal motions. For a [symmetric space](@keyword=symmetric_space|lang=en-US|style=Feynman), they obey specific rules:
 $$ [\mathfrak{k}, \mathfrak{p}] \subset \mathfrak{p} \quad \text{and} \quad [\mathfrak{p}, \mathfrak{p}] \subset \mathfrak{k} $$
 The second relation, $[\mathfrak{p}, \mathfrak{p}] \subset \mathfrak{k}$, is particularly insightful. It tells us that combining two infinitesimal displacements (elements of $\mathfrak{p}$) results in an infinitesimal rotation (an element of $\mathfrak{k}$). Have you ever parallel parked a car? You make a sequence of forward/backward motions (displacements), and the net result is a change in the car's orientation (a rotation). This is a physical manifestation of that abstract algebraic rule!
 
-So, what are geodesics in this algebraic language? They are the simplest possible paths. A geodesic starting at the origin is nothing more than the path traced out by applying a constant "[infinitesimal displacement](@article_id:201715)" over time. That is, for any vector $X \in \mathfrak{p}$, the curve
+So, what are geodesics in this algebraic language? They are the simplest possible paths. A geodesic starting at the origin is nothing more than the path traced out by applying a constant "[infinitesimal displacement](@keyword=infinitesimal_displacement|lang=en-US|style=Feynman)" over time. That is, for any vector $X \in \mathfrak{p}$, the curve
 
 $$ \gamma(t) = \exp(tX) \cdot o $$
 
@@ -71,27 +71,27 @@ Why is this true? The full explanation is a bit technical, but the core idea is 
 
 ### Curvature, Tides, and Reconvergence
 
-Symmetry tames curvature. The existence of the point reflection $s_p$ forces the Riemann [curvature tensor](@article_id:180889) $R$ to be **parallel** ($\nabla R=0$). This means that although the curvature might not be the same constant value everywhere, it changes in a perfectly regular and consistent way as you move around. This has profound implications for physics, where curvature governs the relative acceleration of nearby objects—what we call **[tidal forces](@article_id:158694)**.
+Symmetry tames curvature. The existence of the point reflection $s_p$ forces the Riemann [curvature tensor](@keyword=curvature_tensor|lang=en-US|style=Feynman) $R$ to be **parallel** ($\nabla R=0$). This means that although the curvature might not be the same constant value everywhere, it changes in a perfectly regular and consistent way as you move around. This has profound implications for physics, where curvature governs the relative acceleration of nearby objects—what we call **[tidal forces](@keyword=tidal_forces|lang=en-US|style=Feynman)**.
 
-The effect is seen most clearly in **[maximally symmetric spaces](@article_id:159983)**, like spheres, Euclidean space, and [hyperbolic space](@article_id:267598). Here, the symmetry is so powerful that the curvature *is* constant everywhere. The [geodesic deviation equation](@article_id:159552), which describes tidal forces, simplifies to a thing of beauty:
+The effect is seen most clearly in **[maximally symmetric spaces](@keyword=maximally_symmetric_spaces|lang=en-US|style=Feynman)**, like spheres, Euclidean space, and [hyperbolic space](@keyword=hyperbolic_space|lang=en-US|style=Feynman). Here, the symmetry is so powerful that the curvature *is* constant everywhere. The [geodesic deviation equation](@keyword=geodesic_deviation_equation|lang=en-US|style=Feynman), which describes tidal forces, simplifies to a thing of beauty:
 
 $$ \frac{D^2 S^\mu}{d\tau^2} = -K S^\mu $$
 
-Here, $S^\mu$ is the separation vector between two nearby freely-falling particles and $K$ is the [constant curvature](@article_id:161628). This is the equation for a simple harmonic oscillator!
+Here, $S^\mu$ is the separation vector between two nearby freely-falling particles and $K$ is the [constant curvature](@keyword=constant_curvature|lang=en-US|style=Feynman). This is the equation for a simple harmonic oscillator!
 -   If $K>0$ (like on a sphere), the negative sign means there's a restoring force. Nearby geodesics are pulled back together, oscillating around each other.
--   If $K0$ (like in [hyperbolic space](@article_id:267598)), the equation describes exponential divergence. Nearby geodesics fly apart.
+-   If $K0$ (like in [hyperbolic space](@keyword=hyperbolic_space|lang=en-US|style=Feynman)), the equation describes exponential divergence. Nearby geodesics fly apart.
 -   If $K=0$ (Euclidean space), the right side is zero. Geodesics remain parallel forever.
 
-What about symmetric spaces that aren't maximally symmetric, like the [complex projective space](@article_id:267908) $\mathbb{C}P^n$? Here, the parallel curvature tensor still simplifies the physics, but in a more subtle way. The tidal "force" depends on the direction of separation. Along some directions, the focusing effect is stronger than others. The Jacobi operator $Y \mapsto R(Y, \dot{\gamma})\dot{\gamma}$, which governs these tidal forces, will have different eigenvalues for different directions $Y$. These eigenvalues correspond to different "tidal frequencies," leading to a richer pattern of oscillation for nearby geodesics.
+What about symmetric spaces that aren't maximally symmetric, like the [complex projective space](@keyword=complex_projective_space|lang=en-US|style=Feynman) $\mathbb{C}P^n$? Here, the parallel curvature tensor still simplifies the physics, but in a more subtle way. The tidal "force" depends on the direction of separation. Along some directions, the focusing effect is stronger than others. The Jacobi operator $Y \mapsto R(Y, \dot{\gamma})\dot{\gamma}$, which governs these tidal forces, will have different eigenvalues for different directions $Y$. These eigenvalues correspond to different "tidal frequencies," leading to a richer pattern of oscillation for nearby geodesics.
 
 This idea of geodesics reconverging leads us to our final topic: **conjugate points**. A conjugate point is a point where a family of geodesics starting from a single point meets again. On a sphere, all the lines of longitude starting from the North Pole meet again at the South Pole.
 
-In a general manifold, finding conjugate points is notoriously difficult. But in a symmetric space, it becomes astonishingly simple. Because the [curvature tensor](@article_id:180889) is parallel, the Jacobi operator is constant along the geodesic. This turns the complicated Jacobi equation into a simple system with constant coefficients—another harmonic oscillator equation!
+In a general manifold, finding conjugate points is notoriously difficult. But in a symmetric space, it becomes astonishingly simple. Because the [curvature tensor](@keyword=curvature_tensor|lang=en-US|style=Feynman) is parallel, the Jacobi operator is constant along the geodesic. This turns the complicated Jacobi equation into a simple system with constant coefficients—another harmonic oscillator equation!
 
-A conjugate point will exist if the solution to this oscillator equation, $\sin(\sqrt{\lambda} t)$, can become zero for some $t > 0$. This requires a positive eigenvalue $\lambda > 0$. And here is the final, spectacular link between algebra and geometry: for [compact symmetric spaces](@article_id:200990), the eigenvalues of the Jacobi operator are given by the squares of the values of the **restricted roots** of the Lie algebra, $\lambda = \alpha(H)^2$. The first conjugate point appears at time:
+A conjugate point will exist if the solution to this oscillator equation, $\sin(\sqrt{\lambda} t)$, can become zero for some $t > 0$. This requires a positive eigenvalue $\lambda > 0$. And here is the final, spectacular link between algebra and geometry: for [compact symmetric spaces](@keyword=compact_symmetric_spaces|lang=en-US|style=Feynman), the eigenvalues of the Jacobi operator are given by the squares of the values of the **restricted roots** of the Lie algebra, $\lambda = \alpha(H)^2$. The first conjugate point appears at time:
 
 $$ t_c = \frac{\pi}{\max_{\alpha} |\alpha(H)|} $$
 
-An esoteric piece of algebra—the root system—tells you exactly how far you have to travel along a geodesic before it meets its neighbors again. This is the unity of mathematics at its finest. And for non-[compact symmetric spaces](@article_id:200990), where [sectional curvature](@article_id:159244) is non-positive, the eigenvalues $\lambda$ are non-positive. The sine function becomes a hyperbolic sine, which never returns to zero. Geodesics never reconverge; there are **no conjugate points**.
+An esoteric piece of algebra—the root system—tells you exactly how far you have to travel along a geodesic before it meets its neighbors again. This is the unity of mathematics at its finest. And for non-[compact symmetric spaces](@keyword=compact_symmetric_spaces|lang=en-US|style=Feynman), where [sectional curvature](@keyword=sectional_curvature|lang=en-US|style=Feynman) is non-positive, the eigenvalues $\lambda$ are non-positive. The sine function becomes a hyperbolic sine, which never returns to zero. Geodesics never reconverge; there are **no conjugate points**.
 
 From a single, simple definition of point symmetry, we have journeyed through the entire geometric landscape, discovering homogeneity, completeness, the algebraic engine of Lie theory, the nature of geodesics, and the deep connection between curvature, tidal forces, and the ultimate fate of parallel paths. This is the power and beauty of symmetry.

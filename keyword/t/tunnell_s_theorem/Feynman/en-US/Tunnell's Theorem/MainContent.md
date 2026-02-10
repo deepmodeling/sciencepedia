@@ -1,5 +1,5 @@
 ## Introduction
-The congruent number problem is a question with ancient roots: which whole numbers can be the area of a right-angled triangle with rational sides? This seemingly simple geometric puzzle resisted a general solution for over a millennium, with mathematicians solving it only for specific numbers on a case-by-case basis. The absence of a universal algorithm represented a significant gap in our understanding of the deep arithmetic properties of integers. This article illuminates the modern approach to this problem, centered on Jerrold Tunnell's profound theorem. The journey will begin by reframing the problem, moving from the world of triangles to the more abstract and powerful domain of [elliptic curves](@article_id:151915). The following chapters will delve into the principles and mechanisms of Tunnell's Theorem, revealing its surprising connection to modular forms and the celebrated Birch and Swinnerton-Dyer conjecture. Subsequently, we will explore its powerful applications, not only as a concrete computational test but also as a unifying thread that connects geometry, algebra, and analysis, showcasing the intricate architecture of modern number theory.
+The congruent number problem is a question with ancient roots: which whole numbers can be the area of a right-angled triangle with rational sides? This seemingly simple geometric puzzle resisted a general solution for over a millennium, with mathematicians solving it only for specific numbers on a case-by-case basis. The absence of a universal algorithm represented a significant gap in our understanding of the deep arithmetic properties of integers. This article illuminates the modern approach to this problem, centered on Jerrold Tunnell's profound theorem. The journey will begin by reframing the problem, moving from the world of triangles to the more abstract and powerful domain of [elliptic curves](@keyword=elliptic_curves|lang=en-US|style=Feynman). The following chapters will delve into the principles and mechanisms of Tunnell's Theorem, revealing its surprising connection to modular forms and the celebrated Birch and Swinnerton-Dyer conjecture. Subsequently, we will explore its powerful applications, not only as a concrete computational test but also as a unifying thread that connects geometry, algebra, and analysis, showcasing the intricate architecture of modern number theory.
 
 ## Principles and Mechanisms
 
@@ -7,7 +7,7 @@ The congruent number problem, as we have seen, begins with a question of strikin
 
 ### From Triangles to Curves: A Hidden Geometry
 
-The first great leap of insight is to realize that we are not really talking about triangles at all. The problem of finding a right triangle with rational sides $a, b, c$ and area $n$ is *exactly the same problem* as finding a rational point $(x,y)$ on a special kind of equation known as an **[elliptic curve](@article_id:162766)**. For each number $n$, the corresponding curve is labeled $E_n$ and has the form:
+The first great leap of insight is to realize that we are not really talking about triangles at all. The problem of finding a right triangle with rational sides $a, b, c$ and area $n$ is *exactly the same problem* as finding a rational point $(x,y)$ on a special kind of equation known as an **[elliptic curve](@keyword=elliptic_curve|lang=en-US|style=Feynman)**. For each number $n$, the corresponding curve is labeled $E_n$ and has the form:
 
 $$
 E_n: y^2 = x^3 - n^2x
@@ -25,25 +25,25 @@ This transformation is fantastically powerful. We have recast a geometric constr
 
 ### The Society of Points: A Group Structure
 
-Now, our attention shifts to the collection of all rational points on the curve $E_n$, a set we call $E_n(\mathbb{Q})$. Here lies the second revelation: this set of points is not just a random scattering. It forms a **group**. This is the famous **Mordell-Weil theorem**. What does this mean? It means the points have a social structure. There is a special point, the "[point at infinity](@article_id:154043)" ($\mathcal{O}$), which acts like the number zero. And just as you can add integers, you can "add" two points on the curve to get a third, following a clever geometric rule.
+Now, our attention shifts to the collection of all rational points on the curve $E_n$, a set we call $E_n(\mathbb{Q})$. Here lies the second revelation: this set of points is not just a random scattering. It forms a **group**. This is the famous **Mordell-Weil theorem**. What does this mean? It means the points have a social structure. There is a special point, the "[point at infinity](@keyword=point_at_infinity|lang=en-US|style=Feynman)" ($\mathcal{O}$), which acts like the number zero. And just as you can add integers, you can "add" two points on the curve to get a third, following a clever geometric rule.
 
-This group of points, like any group of its kind, has a specific structure. It is composed of two parts: a finite part, called the **[torsion subgroup](@article_id:138960)**, and a potentially infinite part that behaves like copies of the integers, $\mathbb{Z}^r$. The number $r$ is called the **rank** of the curve.
+This group of points, like any group of its kind, has a specific structure. It is composed of two parts: a finite part, called the **[torsion subgroup](@keyword=torsion_subgroup|lang=en-US|style=Feynman)**, and a potentially infinite part that behaves like copies of the integers, $\mathbb{Z}^r$. The number $r$ is called the **rank** of the curve.
 
 $$
 E_n(\mathbb{Q}) \cong (\text{Torsion Subgroup}) \oplus \mathbb{Z}^r
 $$
 
-So, what are these "torsion" points? They are the points of finite order—if you add one to itself enough times, you eventually get back to the identity element $\mathcal{O}$. For our curve $E_n$, these points are easy to find. They are precisely the [point at infinity](@article_id:154043) and the points where $y=0$: $(0,0)$, $(n,0)$, and $(-n,0)$. But remember our crucial condition: to get a real triangle, we need a point with $y \neq 0$. The [torsion points](@article_id:192250) are no help to us; they correspond to "triangles" with zero area.
+So, what are these "torsion" points? They are the points of finite order—if you add one to itself enough times, you eventually get back to the identity element $\mathcal{O}$. For our curve $E_n$, these points are easy to find. They are precisely the [point at infinity](@keyword=point_at_infinity|lang=en-US|style=Feynman) and the points where $y=0$: $(0,0)$, $(n,0)$, and $(-n,0)$. But remember our crucial condition: to get a real triangle, we need a point with $y \neq 0$. The [torsion points](@keyword=torsion_points|lang=en-US|style=Feynman) are no help to us; they correspond to "triangles" with zero area.
 
 The entire congruent number problem has now been distilled into a single, sharp question: **Is the rank $r$ of the group $E_n(\mathbb{Q})$ greater than zero?**
 
-If the rank $r=0$, then *all* rational points are [torsion points](@article_id:192250), meaning they all have $y=0$ (or are $\mathcal{O}$). No suitable point exists, and $n$ is not a congruent number. But if the rank $r > 0$, the group is infinite. This guarantees the existence of points of infinite order, which *must* have $y \neq 0$. And here is a beautiful bonus: if we find one such point, the group law allows us to generate an infinite number of other points, each corresponding to a different rational right triangle with area $n$!
+If the rank $r=0$, then *all* rational points are [torsion points](@keyword=torsion_points|lang=en-US|style=Feynman), meaning they all have $y=0$ (or are $\mathcal{O}$). No suitable point exists, and $n$ is not a congruent number. But if the rank $r > 0$, the group is infinite. This guarantees the existence of points of infinite order, which *must* have $y \neq 0$. And here is a beautiful bonus: if we find one such point, the group law allows us to generate an infinite number of other points, each corresponding to a different rational right triangle with area $n$!
 
 ### Tunnell's Simple Test: A Surprising Shortcut
 
-Determining the [rank of an elliptic curve](@article_id:199764) is, in general, an incredibly difficult task. This is where Jerrold Tunnell enters the story in 1983 with a shockingly simple test that seems to come out of left field. He asks us to just... count.
+Determining the [rank of an elliptic curve](@keyword=rank_of_an_elliptic_curve|lang=en-US|style=Feynman) is, in general, an incredibly difficult task. This is where Jerrold Tunnell enters the story in 1983 with a shockingly simple test that seems to come out of left field. He asks us to just... count.
 
-Tunnell defines sets of seemingly arbitrary counting functions. For instance, if $n$ is an even, [square-free integer](@article_id:151731), he tells us to consider two numbers based on $m=n/2$:
+Tunnell defines sets of seemingly arbitrary counting functions. For instance, if $n$ is an even, [square-free integer](@keyword=square_free_integer|lang=en-US|style=Feynman), he tells us to consider two numbers based on $m=n/2$:
 
 $C(n) = \text{The number of integer triples } (x,y,z) \text{ such that } m = 4x^2 + y^2 + 8z^2$.
 
@@ -53,7 +53,7 @@ $D(n) = \text{The number of integer triples } (x,y,z) \text{ such that } m = 4x^
 
 Then, Tunnell's Theorem makes a stunning claim: **If $n$ is a congruent number, then $C(n)$ must be equal to twice $D(n)$**. (For odd $n$, the corresponding counts must satisfy $A(n)=2B(n)$.) This part of the theorem is an **unconditional fact**, proven and solid.
 
-This gives us an astonishingly simple, practical tool. To prove that a number is *not* congruent, we don't need any of the high-powered theory of [elliptic curves](@article_id:151915). We just need to count integer solutions. Let's try it for $n=18$. Here, $m=n/2=9$.
+This gives us an astonishingly simple, practical tool. To prove that a number is *not* congruent, we don't need any of the high-powered theory of [elliptic curves](@keyword=elliptic_curves|lang=en-US|style=Feynman). We just need to count integer solutions. Let's try it for $n=18$. Here, $m=n/2=9$.
 We must find the number of integer solutions to $9 = 4x^2+y^2+8z^2$. A bit of careful counting shows there are 6 such solutions. This is $C(18)$.
 Then we count solutions to $9 = 4x^2+y^2+32z^2$. This time, we find only 2 solutions. This is $D(18)$.
 Since $C(18)=6$ and $2 \times D(18)=4$, the condition $C(18)=2D(18)$ is not met. We can declare with absolute certainty that $18$ is not a congruent number. Case closed.
@@ -74,7 +74,7 @@ This conjecture is so fundamental that the Clay Mathematics Institute has offere
 
 ### Unifying the Worlds: The Deep Mechanism
 
-So how did Tunnell connect his simple counting of integer points to this grand, million-dollar conjecture about L-functions? This is where the true beauty of the structure is revealed. The connection is a concept called **[modularity](@article_id:191037)**.
+So how did Tunnell connect his simple counting of integer points to this grand, million-dollar conjecture about L-functions? This is where the true beauty of the structure is revealed. The connection is a concept called **[modularity](@keyword=modularity|lang=en-US|style=Feynman)**.
 
 Tunnell's counting functions, $C(n)$ and $D(n)$, are not just arbitrary numbers. They are the **Fourier coefficients** of very special functions known as **modular forms**. Think of a musical sound, which can be broken down into a sum of pure sine waves of different frequencies and amplitudes. A modular form is like a 'pure note' of number theory, and its Fourier coefficients are the amplitudes that define it. Tunnell's counts are these defining numbers.
 

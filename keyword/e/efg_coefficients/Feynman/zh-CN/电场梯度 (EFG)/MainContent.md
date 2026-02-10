@@ -1,7 +1,7 @@
 ## 引言
-在每个原子的核心是原子核，这是一个由我们宏观视角下常常隐藏的力量和性质所支配的领域。然而，在适当的条件下，这个微小而致密的物体可以成为其局部环境的极其灵敏的“报告者”。解锁这些信息的关键在于理解亚原子景观的一个基本属性：[电场梯度](@article_id:331887)（EFG）。EFG提供了原子核“感受”周围电子和相邻原子[排列](@article_id:296886)的机制。本文旨在弥合EFG的抽象概念与其强大应用之间的鸿沟。它探讨了我们如何能将原子[核能级](@article_id:321379)的微妙语言转化为关于[分子结构](@article_id:300554)、键合和运动的具体知识。
+在每个原子的核心是原子核，这是一个由我们宏观视角下常常隐藏的力量和性质所支配的领域。然而，在适当的条件下，这个微小而致密的物体可以成为其局部环境的极其灵敏的“报告者”。解锁这些信息的关键在于理解亚原子景观的一个基本属性：[电场梯度](@keyword=electric_field_gradient|lang=zh-CN|style=Feynman)（EFG）。EFG提供了原子核“感受”周围电子和相邻原子[排列](@keyword=permutation|lang=zh-CN|style=Feynman)的机制。本文旨在弥合EFG的抽象概念与其强大应用之间的鸿沟。它探讨了我们如何能将原子[核能级](@keyword=nuclear_energy_levels|lang=zh-CN|style=Feynman)的微妙语言转化为关于[分子结构](@keyword=molecular_structure|lang=zh-CN|style=Feynman)、键合和运动的具体知识。
 
-以下章节将引导您了解这个迷人的概念。在“原理与机制”一章中，我们将探索EFG的起源，深入研究原子核的形状如何决定其与电场景观的相互作用。我们将揭开EFG[张量](@article_id:321604)、其主分量以及对称性在其性质决定中的关键作用的神秘面纱，同时也会考察[分子运动](@article_id:300941)如何平均化这种效应。随后，在“应用与跨学科联系”一章中，我们将见证EFG的实际应用。我们将看到它如何像一个微观间谍一样，报告分子中的[化学键合](@article_id:298665)、液晶等材料中的有序性，以及固体和液体中分子的复杂运动，从而将化学、物理学和[材料科学](@article_id:312640)联系起来。
+以下章节将引导您了解这个迷人的概念。在“原理与机制”一章中，我们将探索EFG的起源，深入研究原子核的形状如何决定其与电场景观的相互作用。我们将揭开EFG[张量](@keyword=tensor|lang=zh-CN|style=Feynman)、其主分量以及对称性在其性质决定中的关键作用的神秘面纱，同时也会考察[分子运动](@keyword=molecular_motion|lang=zh-CN|style=Feynman)如何平均化这种效应。随后，在“应用与跨学科联系”一章中，我们将见证EFG的实际应用。我们将看到它如何像一个微观间谍一样，报告分子中的[化学键合](@keyword=chemical_bonding|lang=zh-CN|style=Feynman)、液晶等材料中的有序性，以及固体和液体中分子的复杂运动，从而将化学、物理学和[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)联系起来。
 
 ## 原理与机制
 
@@ -9,23 +9,23 @@
 
 ### 有形状的原子核
 
-首先，我们必须摒弃一个简单的图像。我们常常把原子核想象成一个完美的、微小的球体。对许多原子核来说，这是一个不错的近似。但对于任何自旋量子数 $I$ 大于 $1/2$ 的原子核，这个图像是错误的。这些原子核具有非球形的[电荷分布](@article_id:304828)。你可以把它们想象成被轻微压扁或拉长，像一个微小的美式橄榄球（长[椭球](@article_id:345137)形）或一个压扁的门把手（扁椭球形）。这种偏离球形的特性赋予了原子核一个我们称之为**电四极矩**的属性，用符号 $Q$ 表示。
+首先，我们必须摒弃一个简单的图像。我们常常把原子核想象成一个完美的、微小的球体。对许多原子核来说，这是一个不错的近似。但对于任何自旋量子数 $I$ 大于 $1/2$ 的原子核，这个图像是错误的。这些原子核具有非球形的[电荷分布](@keyword=charge_distribution|lang=zh-CN|style=Feynman)。你可以把它们想象成被轻微压扁或拉长，像一个微小的美式橄榄球（长[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)形）或一个压扁的门把手（扁椭球形）。这种偏离球形的特性赋予了原子核一个我们称之为**电四极矩**的属性，用符号 $Q$ 表示。
 
-现在，一个有形状的物体在非均匀场中会感受到一个力矩。一个简单的[电偶极子](@article_id:366045)，有其正负两端，会倾向于与一个均匀电场对齐。而四极子则更为微妙。它不关心场本身，而是关心场如何从一点到另一点*变化*——它对场的*梯度*很敏感。我们正在探索的正是这种相互作用，即核电四极矩 $Q$ 与局部**[电场梯度](@article_id:331887) (EFG)** 之间的相互作用。正是由于这个原因，原子核的能级会发生分裂，产生了我们可以在[穆斯堡尔谱学](@article_id:296709)或核四极共振 (NQR) 等技术中测量的“[四极分裂](@article_id:300394)”。自旋为 $I=0$ 或 $I=1/2$ 的原子核，$Q=0$；它们是完美的球形，对[电场梯度](@article_id:331887)是“盲目”的。但对于其余的原子核，这种相互作用为我们打开了一扇了解它们世界的窗户。
+现在，一个有形状的物体在非均匀场中会感受到一个力矩。一个简单的[电偶极子](@keyword=electric_dipoles|lang=zh-CN|style=Feynman)，有其正负两端，会倾向于与一个均匀电场对齐。而四极子则更为微妙。它不关心场本身，而是关心场如何从一点到另一点*变化*——它对场的*梯度*很敏感。我们正在探索的正是这种相互作用，即核电四极矩 $Q$ 与局部**[电场梯度](@keyword=electric_field_gradient|lang=zh-CN|style=Feynman) (EFG)** 之间的相互作用。正是由于这个原因，原子核的能级会发生分裂，产生了我们可以在[穆斯堡尔谱学](@keyword=mössbauer_spectroscopy|lang=zh-CN|style=Feynman)或核四极共振 (NQR) 等技术中测量的“[四极分裂](@keyword=quadrupole_splitting|lang=zh-CN|style=Feynman)”[@problem_id:2272765]。自旋为 $I=0$ 或 $I=1/2$ 的原子核，$Q=0$；它们是完美的球形，对[电场梯度](@keyword=electric_field_gradient|lang=zh-CN|style=Feynman)是“盲目”的。但对于其余的原子核，这种相互作用为我们打开了一扇了解它们世界的窗户。
 
-### 描述电场景观：EFG[张量](@article_id:321604)
+### 描述电场景观：EFG[张量](@keyword=tensor|lang=zh-CN|style=Feynman)
 
-这个“[电场梯度](@article_id:331887)”究竟是什么？想象你是一个坐在原子核上的微小观察者。你周围的电势 $\Phi$ 是由所有周围的[电荷](@article_id:339187)——原子自身的电子和相邻原子的带电原子核——所产生的。EFG描述了就在你所在位置的这个电[势景观](@article_id:334694)的曲率或“起伏程度”。
+这个“[电场梯度](@keyword=electric_field_gradient|lang=zh-CN|style=Feynman)”究竟是什么？想象你是一个坐在原子核上的微小观察者。你周围的电势 $\Phi$ 是由所有周围的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)——原子自身的电子和相邻原子的带电原子核——所产生的。EFG描述了就在你所在位置的这个电[势景观](@keyword=potential_landscape|lang=zh-CN|style=Feynman)的曲率或“起伏程度”。
 
-在数学上，它是电势二阶[导数](@article_id:318324)的集合，我们将其[排列](@article_id:296886)成一个 $3 \times 3$ 的矩阵，称为**[张量](@article_id:321604)**，$\mathbf{V}$：
+在数学上，它是电势二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)的集合，我们将其[排列](@keyword=permutation|lang=zh-CN|style=Feynman)成一个 $3 \times 3$ 的矩阵，称为**[张量](@keyword=tensor|lang=zh-CN|style=Feynman)**，$\mathbf{V}$：
 
 $$
 V_{ij} = \frac{\partial^2 \Phi}{\partial x_i \partial x_j}
 $$
 
-其中，[导数](@article_id:318324)是在原子核中心计算的。不要被“[张量](@article_id:321604)”这个词吓到。它只是一个巧妙地将所有关于场梯度的信息打包在一起的工具。例如，$V_{zz} = \partial^2 \Phi / \partial z^2$ 告诉你电场分量 $E_z$ 随着你沿 $z$ 轴移动而如何变化。非对角项 $V_{xy}$ 告诉你 $E_x$ 随着你沿 $y$ 轴移动而如何变化。
+其中，[导数](@keyword=derivative|lang=zh-CN|style=Feynman)是在原子核中心计算的。不要被“[张量](@keyword=tensor|lang=zh-CN|style=Feynman)”这个词吓到。它只是一个巧妙地将所有关于场梯度的信息打包在一起的工具。例如，$V_{zz} = \partial^2 \Phi / \partial z^2$ 告诉你电场分量 $E_z$ 随着你沿 $z$ 轴移动而如何变化。非对角项 $V_{xy}$ 告诉你 $E_x$ 随着你沿 $y$ 轴移动而如何变化。
 
-因为在原子核处的电势 $\Phi$（我们假设这是一个无[电荷](@article_id:339187)点）受优美的[拉普拉斯方程](@article_id:304121) $\nabla^2 \Phi = 0$ 的支配，这个[张量](@article_id:321604)有一个至关重要的性质：它是**无迹的**。这意味着其对角分量之和总是为零：
+因为在原子核处的电势 $\Phi$（我们假设这是一个无[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)点）受优美的[拉普拉斯方程](@keyword=laplace_s_equation|lang=zh-CN|style=Feynman) $\nabla^2 \Phi = 0$ 的支配，这个[张量](@keyword=tensor|lang=zh-CN|style=Feynman)有一个至关重要的性质：它是**无迹的**。这意味着其对角分量之和总是为零：
 
 $$
 V_{xx} + V_{yy} + V_{zz} = 0
@@ -33,19 +33,19 @@ $$
 
 这不是一个随意的规则；它是静电学本质的深刻结果。它告诉我们，你不可能有一个在所有方向上都纯粹向上“弯曲”的电势；如果它在两个方向上向上弯曲，它必须在第三个方向上向下弯曲以作补偿。
 
-### 视角问题：[主轴](@article_id:351809)系统
+### 视角问题：[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)系统
 
-这个 $V_{ij}$ [张量](@article_id:321604)在一个任意的[坐标系](@article_id:316753)中，最多可以有六个独立分量（它总是对称的，$V_{ij} = V_{ji}$）。这似乎有点复杂。但我们总能找到一个特殊的朝向，一套特殊的坐标轴，在那里图像变得异常简单。这被称为**主轴系统 (PAS)**。在[主轴](@article_id:351809)系统中，EFG[张量](@article_id:321604)是纯对角的；所有非对角分量都为零。
+这个 $V_{ij}$ [张量](@keyword=tensor|lang=zh-CN|style=Feynman)在一个任意的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中，最多可以有六个独立分量（它总是对称的，$V_{ij} = V_{ji}$）。这似乎有点复杂。但我们总能找到一个特殊的朝向，一套特殊的坐标轴，在那里图像变得异常简单。这被称为**主轴系统 (PAS)**。在[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)系统中，EFG[张量](@keyword=tensor|lang=zh-CN|style=Feynman)是纯对角的；所有非对角分量都为零。
 
-现在，我们只需要关心三个数字：主分量 $V_{xx}$、$V_{yy}$ 和 $V_{zz}$。为了规范化，我们约定一个惯例：我们标记我们的特殊坐标轴，使得这些分量的大小按序[排列](@article_id:296886) ：
+现在，我们只需要关心三个数字：主分量 $V_{xx}$、$V_{yy}$ 和 $V_{zz}$。为了规范化，我们约定一个惯例：我们标记我们的特殊坐标轴，使得这些分量的大小按序[排列](@keyword=permutation|lang=zh-CN|style=Feynman) [@problem_id:2948009]：
 
 $$
 |V_{zz}| \ge |V_{yy}| \ge |V_{xx}|
 $$
 
-最大的分量 $V_{zz}$ 代表最强梯度的方向，被称为**主分量**。它的大小设定了四极相互作用的整体[能标](@article_id:375070)。[光谱学](@article_id:298272)家通常通过**[四极耦合常数](@article_id:364030)** $C_Q = eQV_{zz}/h$ 以频率单位报告这个值。
+最大的分量 $V_{zz}$ 代表最强梯度的方向，被称为**主分量**。它的大小设定了四极相互作用的整体[能标](@keyword=energy_scales|lang=zh-CN|style=Feynman)。[光谱学](@keyword=spectroscopy|lang=zh-CN|style=Feynman)家通常通过**[四极耦合常数](@keyword=quadrupole_coupling_constant|lang=zh-CN|style=Feynman)** $C_Q = eQV_{zz}/h$ 以频率单位报告这个值。
 
-既然 $V_{zz}$ 定义了主轴，那另外两个分量呢？它们告诉我们垂直于 $z$ 轴的平面内的对称性。我们用一个单一的[无量纲数](@article_id:297266)来捕捉这一点：**不对称参数**，$\eta$ (eta)。
+既然 $V_{zz}$ 定义了主轴，那另外两个分量呢？它们告诉我们垂直于 $z$ 轴的平面内的对称性。我们用一个单一的[无量纲数](@keyword=dimensionless_numbers|lang=zh-CN|style=Feynman)来捕捉这一点：**不对称参数**，$\eta$ (eta)。
 
 $$
 \eta = \frac{V_{xx} - V_{yy}}{V_{zz}}
@@ -56,32 +56,32 @@ $$
 -   如果 $\eta=0$，那么 $V_{xx} = V_{yy}$。电场景观在 $x$ 和 $y$ 方向具有相同的曲率。EFG是**轴对称**的；它具有像削尖的铅笔或甜甜圈一样的对称性。
 -   如果 $\eta > 0$，那么 $V_{xx} \ne V_{yy}$。景观的对称性较低，就像一支两边被压扁的铅笔。它在 $xy$ 平面内有一个优选方向。
 
-所以，整个复杂的EFG[张量](@article_id:321604)在其[自然坐标系](@article_id:348181)中可以归结为两个数字：一个大小（$V_{zz}$）和一个[形状参数](@article_id:334300)（$\eta$）。
+所以，整个复杂的EFG[张量](@keyword=tensor|lang=zh-CN|style=Feynman)在其[自然坐标系](@keyword=natural_coordinate_system|lang=zh-CN|style=Feynman)中可以归结为两个数字：一个大小（$V_{zz}$）和一个[形状参数](@keyword=shape_parameters|lang=zh-CN|style=Feynman)（$\eta$）[@problem_id:2948009]。
 
-### 梯度的构建者：[电荷](@article_id:339187)与对称性
+### 梯度的构建者：[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)与对称性
 
-这个EFG从何而来？它由我们探测核周围[电荷](@article_id:339187)（电子和其他原子核）的精确[排列](@article_id:296886)所决定。我们可以通过建立一个玩具模型来直接看到这一点。想象一下，在原点周围放置几个[点电荷](@article_id:327323)，并使用库仑定律计算EFG。对于一个特定的[排列](@article_id:296886)，比如说在y轴上放置两个正[电荷](@article_id:339187)，在x轴上放置一个负[电荷](@article_id:339187)，我们可以计算出 $V_{xx}$、$V_{yy}$ 和 $V_{zz}$ 的精确值，并从中找到不对称参数 $\eta$ 。这个练习展示了EFG与分子几何结构是如何紧密相关的。我们甚至可以更进一步，计算由更真实的电荷分布（如代表附近极性[化学键](@article_id:305517)的[电偶极子](@article_id:366045)）产生的EFG 。
+这个EFG从何而来？它由我们探测核周围[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)（电子和其他原子核）的精确[排列](@keyword=permutation|lang=zh-CN|style=Feynman)所决定。我们可以通过建立一个玩具模型来直接看到这一点。想象一下，在原点周围放置几个[点电荷](@keyword=point_charges|lang=zh-CN|style=Feynman)，并使用库仑定律计算EFG。对于一个特定的[排列](@keyword=permutation|lang=zh-CN|style=Feynman)，比如说在y轴上放置两个正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，在x轴上放置一个负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，我们可以计算出 $V_{xx}$、$V_{yy}$ 和 $V_{zz}$ 的精确值，并从中找到不对称参数 $\eta$ [@problem_id:166293]。这个练习展示了EFG与分子几何结构是如何紧密相关的。我们甚至可以更进一步，计算由更真实的电荷分布（如代表附近极性[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)的[电偶极子](@keyword=electric_dipoles|lang=zh-CN|style=Feynman)）产生的EFG [@problem_id:166236]。
 
-但自然界有一个更强大的工具来确定EFG：**对称性**。EFG[张量](@article_id:321604)作为核位点的一个物理属性，必须遵守该位点的对称性。如果你能对分子进行一个[对称操作](@article_id:303832)（如旋转或反射），而该操作保持原子核的位置不变，那么EFG[张量](@article_id:321604)也必须在该操作下保持不变。
+但自然界有一个更强大的工具来确定EFG：**对称性**。EFG[张量](@keyword=tensor|lang=zh-CN|style=Feynman)作为核位点的一个物理属性，必须遵守该位点的对称性。如果你能对分子进行一个[对称操作](@keyword=symmetry_operations|lang=zh-CN|style=Feynman)（如旋转或反射），而该操作保持原子核的位置不变，那么EFG[张量](@keyword=tensor|lang=zh-CN|style=Feynman)也必须在该操作下保持不变。
 
-这个原理带来了巨大的影响。假设一个原子核位于一个三重旋转对称轴（$C_3$ 轴）上，就像三[苯甲基自由基](@article_id:382592)中的中心碳原子。旋转120度必须使EFG保持不变。稍作代数运算就会发现，这只有在 $V_{xx} = V_{yy}$ 时才可能，这意味着不对称参数 $\eta$ *必须*为零 。对于任何3阶或更高阶的轴都是如此。所以，如果一个实验者测量到一个非零的 $\eta$，他们可以立即得出结论，该原子核不位于这样一个高对称性的轴上！
+这个原理带来了巨大的影响。假设一个原子核位于一个三重旋转对称轴（$C_3$ 轴）上，就像三[苯甲基自由基](@keyword=benzylic_radical|lang=zh-CN|style=Feynman)中的中心碳原子。旋转120度必须使EFG保持不变。稍作代数运算就会发现，这只有在 $V_{xx} = V_{yy}$ 时才可能，这意味着不对称参数 $\eta$ *必须*为零 [@problem_id:665986]。对于任何3阶或更高阶的轴都是如此。所以，如果一个实验者测量到一个非零的 $\eta$，他们可以立即得出结论，该原子核不位于这样一个高对称性的轴上！
 
-将此推至其逻辑结论。如果原子核位于一个完美的立方对称位点，比如完美食盐晶体中的钠离子，会怎么样？立方环境有多个三重轴（沿体对角线）和四重轴（沿立方体边缘）。应用对称性规则不仅迫使 $\eta=0$，而且还有一个更强的结果：$V_{xx} = V_{yy} = V_{zz}$。但请记住无迹条件：它们相加必须为零！三个相同的数相加为零的唯一方法是它们都为零。因此，在立方对称的位点上，EFG完全消失 。没有[四极分裂](@article_id:300394)。对称性使得电场景观变得完全平坦。
+将此推至其逻辑结论。如果原子核位于一个完美的立方对称位点，比如完美食盐晶体中的钠离子，会怎么样？立方环境有多个三重轴（沿体对角线）和四重轴（沿立方体边缘）。应用对称性规则不仅迫使 $\eta=0$，而且还有一个更强的结果：$V_{xx} = V_{yy} = V_{zz}$。但请记住无迹条件：它们相加必须为零！三个相同的数相加为零的唯一方法是它们都为零。因此，在立方对称的位点上，EFG完全消失 [@problem_id:2536899]。没有[四极分裂](@keyword=quadrupole_splitting|lang=zh-CN|style=Feynman)。对称性使得电场景观变得完全平坦。
 
 ### 运动中的世界：平均EFG
 
-到目前为止，我们一直生活在一个冻结的、静态的世界里。但分子在不停地运动——[振动](@article_id:331484)、旋转和翻滚。这对原子核“看到”的景象有何影响？答案完美地阐释了**时间尺度**的概念。原子核在测量的特征时间内响应EFG（与其[激发态](@article_id:325164)的寿命相关，对于 $^{57}$Fe [穆斯堡尔谱学](@article_id:296709)，大约是 $10^{-7}$ 秒）。
+到目前为止，我们一直生活在一个冻结的、静态的世界里。但分子在不停地运动——[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)、旋转和翻滚。这对原子核“看到”的景象有何影响？答案完美地阐释了**时间尺度**的概念。原子核在测量的特征时间内响应EFG（与其[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的寿命相关，对于 $^{57}$Fe [穆斯堡尔谱学](@keyword=mössbauer_spectroscopy|lang=zh-CN|style=Feynman)，大约是 $10^{-7}$ 秒）。
 
--   **静态的混乱：** 如果你有一个无序的、“玻璃态”的材料，每个原子核都处于一个略有不同的局部环境中。每个都有自己独特的、静态的EFG。你测量的谱是无数个略有不同的单个谱的总和。这导致**非均匀展宽**，[谱线](@article_id:372357)被抹开。由于这是一种[静态无序](@article_id:304614)，谱的形状在很大程度上与温度无关 。
+-   **静态的混乱：** 如果你有一个无序的、“玻璃态”的材料，每个原子核都处于一个略有不同的局部环境中。每个都有自己独特的、静态的EFG。你测量的谱是无数个略有不同的单个谱的总和。这导致**非均匀展宽**，[谱线](@keyword=spectral_line|lang=zh-CN|style=Feynman)被抹开。由于这是一种[静态无序](@keyword=static_disorder|lang=zh-CN|style=Feynman)，谱的形状在很大程度上与温度无关 [@problem_id:2501592]。
 
--   **快速运动的模糊效应：** 当运动与测量时间尺度相比*快*得多时，事情就变得非常有趣了。原子核再也跟不上瞬时的EFG；它只对**[时间平均](@article_id:331618)**的EFG有响应。想象一个分子基团，比如一个 $-\text{CH}_3$ 转子，在快速旋转。EFG[张量](@article_id:321604)也随之旋转。
+-   **快速运动的模糊效应：** 当运动与测量时间尺度相比*快*得多时，事情就变得非常有趣了。原子核再也跟不上瞬时的EFG；它只对**[时间平均](@keyword=time_averaging|lang=zh-CN|style=Feynman)**的EFG有响应。想象一个分子基团，比如一个 $-\text{CH}_3$ 转子，在快速旋转。EFG[张量](@keyword=tensor|lang=zh-CN|style=Feynman)也随之旋转。
 
-    一件奇妙的事情发生了：这个平均过程通常会增加观测到的对称性。考虑一个在分子基团内部本质上是不对称的EFG（$\eta \ne 0$）。如果这个基团围绕一个单一轴快速旋转，[时间平均](@article_id:331618)的EFG会变得围绕旋转轴完全[轴对称](@article_id:352431)（$\eta_{eff} = 0$）！剧烈的运动模糊了垂直平面内的不对称性 。
+    一件奇妙的事情发生了：这个平均过程通常会增加观测到的对称性。考虑一个在分子基团内部本质上是不对称的EFG（$\eta \ne 0$）。如果这个基团围绕一个单一轴快速旋转，[时间平均](@keyword=time_averaging|lang=zh-CN|style=Feynman)的EFG会变得围绕旋转轴完全[轴对称](@keyword=axial_symmetry|lang=zh-CN|style=Feynman)（$\eta_{eff} = 0$）！剧烈的运动模糊了垂直平面内的不对称性 [@problem_id:1221614]。
 
-    这个新的、平均EFG的大小取决于原始主轴（$z'$）与[旋转轴](@article_id:366261)之间的角度 $\beta$。结果是物理学中的一个经典公式：沿[旋转轴](@article_id:366261)的平均分量与原始分量乘以一个因子 $\frac{1}{2}(3\cos^2\beta - 1)$ 成正比 。这种角度依赖性，即二阶[勒让德多项式](@article_id:301951)，在物理学中涉及四极场或相互作用的任何地方都会出现。
+    这个新的、平均EFG的大小取决于原始主轴（$z'$）与[旋转轴](@keyword=axis_of_rotation|lang=zh-CN|style=Feynman)之间的角度 $\beta$。结果是物理学中的一个经典公式：沿[旋转轴](@keyword=axis_of_rotation|lang=zh-CN|style=Feynman)的平均分量与原始分量乘以一个因子 $\frac{1}{2}(3\cos^2\beta - 1)$ 成正比 [@problem_id:1221614]。这种角度依赖性，即二阶[勒让德多项式](@keyword=legendre_polynomials|lang=zh-CN|style=Feynman)，在物理学中涉及四极场或相互作用的任何地方都会出现。
 
--   **[运动窄化](@article_id:324032)与坍缩：** 这种平均不仅改变了分裂；它还影响了线形。在快速运动极限下，快速的涨落平均掉了[展宽机制](@article_id:319066)，导致更尖锐、更窄的[谱线](@article_id:372357)——这种现象称为**[运动窄化](@article_id:324032)**。当我们加热一个样品时，我们常常能观察到这一过程：低温下（运动慢）宽而复杂的谱图，在高温下（运动快）转变为简单而尖锐的谱图 。
+-   **[运动窄化](@keyword=motional_narrowing|lang=zh-CN|style=Feynman)与坍缩：** 这种平均不仅改变了分裂；它还影响了线形。在快速运动极限下，快速的涨落平均掉了[展宽机制](@keyword=broadening_mechanisms|lang=zh-CN|style=Feynman)，导致更尖锐、更窄的[谱线](@keyword=spectral_line|lang=zh-CN|style=Feynman)——这种现象称为**[运动窄化](@keyword=motional_narrowing|lang=zh-CN|style=Feynman)**。当我们加热一个样品时，我们常常能观察到这一过程：低温下（运动慢）宽而复杂的谱图，在高温下（运动快）转变为简单而尖锐的谱图 [@problem_id:2501592]。
 
-    在最极端的快速、各向同性运动情况下——比如一个离子在液体中自由翻滚——EFG[张量](@article_id:321604)在所有可能的方向上被平均。一个对称、无迹的[张量](@article_id:321604)在空间所有方向上的平均值是什么？是一个全零的[张量](@article_id:321604)！平均EFG完全消失。[四极分裂](@article_id:300394)坍缩为零，一个双峰谱变成了一条单线 。
+    在最极端的快速、各向同性运动情况下——比如一个离子在液体中自由翻滚——EFG[张量](@keyword=tensor|lang=zh-CN|style=Feynman)在所有可能的方向上被平均。一个对称、无迹的[张量](@keyword=tensor|lang=zh-CN|style=Feynman)在空间所有方向上的平均值是什么？是一个全零的[张量](@keyword=tensor|lang=zh-CN|style=Feynman)！平均EFG完全消失。[四极分裂](@keyword=quadrupole_splitting|lang=zh-CN|style=Feynman)坍缩为零，一个双峰谱变成了一条单线 [@problem_id:2501592]。
 
-因此，[电场梯度](@article_id:331887)远不止是一个技术参数。它是一个将静电学的基本定律与分子几何、对称性和动力学的实际情况统一起来的概念。它是原子核用来告诉我们它所生活的世界的结构、对称性和运动之舞的语言。
+因此，[电场梯度](@keyword=electric_field_gradient|lang=zh-CN|style=Feynman)远不止是一个技术参数。它是一个将静电学的基本定律与分子几何、对称性和动力学的实际情况统一起来的概念。它是原子核用来告诉我们它所生活的世界的结构、对称性和运动之舞的语言。
