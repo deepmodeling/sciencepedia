@@ -13,7 +13,7 @@ In science, when we face a problem like this, the first step is to find a common
 
 To compare health gains with monetary costs, we need a bridge between them. Imagine you’re a public health official with a limited budget. You can spend it on a new cancer drug that extends patients' lives or on a vaccination program that prevents disease. Both options improve health, but they have different costs. How do you choose?
 
-You need a consistent way to value the health gain. This is where the concept of a **willingness-to-pay (WTP) threshold** comes in. Represented by the Greek letter lambda, $\lambda$, this threshold is a statement of the maximum amount of money a person, or society as a whole, is willing to exchange for one unit of health gain. It's crucial to understand what $\lambda$ is *not*: it is not the "price of a life." Instead, it is a policy tool, a consistent benchmark for decision-making.  It's like saying, "To achieve our health goals within our budget, we are prepared to invest up to $\lambda$ dollars to gain one **Quality-Adjusted Life Year (QALY)**." A QALY is a standard measure that captures both the quantity and quality of life; one QALY is equivalent to one year in perfect health.
+You need a consistent way to value the health gain. This is where the concept of a **willingness-to-pay (WTP) threshold** comes in. Represented by the Greek letter lambda, $\lambda$, this threshold is a statement of the maximum amount of money a person, or society as a whole, is willing to exchange for one unit of health gain. It's crucial to understand what $\lambda$ is *not*: it is not the "price of a life." Instead, it is a policy tool, a consistent benchmark for decision-making. [@problem_id:4721354] It's like saying, "To achieve our health goals within our budget, we are prepared to invest up to $\lambda$ dollars to gain one **Quality-Adjusted Life Year (QALY)**." A QALY is a standard measure that captures both the quantity and quality of life; one QALY is equivalent to one year in perfect health.
 
 This threshold, $\lambda$, is the bridge. It allows us to translate the abstract "good" of health into the concrete language of money, putting apples and oranges onto a single, comparable scale.
 
@@ -29,9 +29,9 @@ $$
 \text{NMB} = (\lambda \times \Delta E) - \Delta C
 $$
 
-This equation  is the heart of the framework. The decision rule is beautifully clear: if the **NMB is positive**, the intervention is considered cost-effective, meaning the value of its health gain, as defined by our threshold, outweighs its cost. If the **NMB is negative**, it's not.
+This equation [@problem_id:4584764] is the heart of the framework. The decision rule is beautifully clear: if the **NMB is positive**, the intervention is considered cost-effective, meaning the value of its health gain, as defined by our threshold, outweighs its cost. If the **NMB is negative**, it's not.
 
-Let's see it in action. Imagine a new screening program costs an extra $1{,}800$ ($\Delta C = 1800$) but provides an additional $0.08$ QALYs of health ($\Delta E = 0.08$). A policymaker uses a threshold of $\lambda = 50{,}000$ dollars per QALY. Is it worth it? 
+Let's see it in action. Imagine a new screening program costs an extra $1{,}800$ ($\Delta C = 1800$) but provides an additional $0.08$ QALYs of health ($\Delta E = 0.08$). A policymaker uses a threshold of $\lambda = 50{,}000$ dollars per QALY. Is it worth it? [@problem_id:4364880]
 
 The monetized health gain is $\lambda \times \Delta E = 50{,}000 \times 0.08 = 4{,}000$ dollars.
 
@@ -53,8 +53,8 @@ The problem is that ratios, while seemingly simple, have hidden mathematical pat
 
 1.  **More Expensive, More Effective:** $\Delta C > 0$, $\Delta E > 0$. The ICER is positive. This is the standard case.
 2.  **Cheaper, More Effective ("Dominant"):** $\Delta C  0$, $\Delta E > 0$. The ICER is negative. What does a negative price mean? It's good, but how good?
-3.  **More Expensive, Less Effective ("Dominated"):** $\Delta C > 0$, $\Delta E  0$. The ICER is negative again! A negative ICER can mean the best possible outcome or the worst possible outcome. 
-4.  **Cheaper, Less Effective:** $\Delta C  0$, $\Delta E  0$. The ICER is positive again, just like in case 1. This requires a different decision rule (you'd only accept if the ICER is *greater* than $\lambda$, representing a cost-saving large enough to justify the health loss). 
+3.  **More Expensive, Less Effective ("Dominated"):** $\Delta C > 0$, $\Delta E  0$. The ICER is negative again! A negative ICER can mean the best possible outcome or the worst possible outcome. [@problem_id:4364880]
+4.  **Cheaper, Less Effective:** $\Delta C  0$, $\Delta E  0$. The ICER is positive again, just like in case 1. This requires a different decision rule (you'd only accept if the ICER is *greater* than $\lambda$, representing a cost-saving large enough to justify the health loss). [@problem_id:4328810]
 5.  **Same Effectiveness:** $\Delta E = 0$. The ICER is undefined because you can't divide by zero.
 
 The ICER forces us into a confusing maze of different rules for different situations. It is not a single, unified tool.
@@ -69,17 +69,17 @@ Let's revisit our confusing cases with the simple, universal NMB rule: "is it po
 2.  **Cheaper, More Effective:** $\Delta E$ is positive and $\Delta C$ is negative. NMB will be unambiguously and strongly positive. A clear "yes".
 3.  **More Expensive, Less Effective:** $\Delta E$ is negative and $\Delta C$ is positive. NMB will be unambiguously and strongly negative. A clear "no".
 4.  **Cheaper, Less Effective:** $\Delta E$ is negative and $\Delta C$ is negative. NMB could be positive or negative depending on whether the cost savings $(-\Delta C)$ are larger than the monetized health loss $(-\lambda \Delta E)$. This allows for sensible trade-offs.
-5.  **Same Effectiveness:** $\Delta E = 0$. The NMB formula becomes $\text{NMB} = -\Delta C$. If the treatment is cheaper $(\Delta C  0)$, the NMB is positive. We simply choose the cheaper option. 
+5.  **Same Effectiveness:** $\Delta E = 0$. The NMB formula becomes $\text{NMB} = -\Delta C$. If the treatment is cheaper $(\Delta C  0)$, the NMB is positive. We simply choose the cheaper option. [@problem_id:4328810]
 
 NMB provides a single, intuitive rule for all possible outcomes. But its greatest advantage appears when we confront the messy reality of uncertainty. In the real world, $\Delta E$ and $\Delta C$ are not fixed numbers but statistical estimates—random variables with distributions. Working with the statistics of ratios (like the ICER) is a mathematical nightmare; the average of a ratio is not the ratio of the averages, and the distribution can be wild and undefined.
 
-Because NMB is a linear combination, its statistical properties are wonderfully well-behaved. The expected (or average) NMB is simply the NMB calculated from the expected $\Delta E$ and expected $\Delta C$. This stability makes NMB the gold standard for modern **probabilistic [sensitivity analysis](@entry_id:147555)**, where we simulate thousands of possible outcomes to understand the uncertainty in our decision.  
+Because NMB is a linear combination, its statistical properties are wonderfully well-behaved. The expected (or average) NMB is simply the NMB calculated from the expected $\Delta E$ and expected $\Delta C$. This stability makes NMB the gold standard for modern **probabilistic [sensitivity analysis](@keyword=sensitivity_analysis|lang=en-US|style=Feynman)**, where we simulate thousands of possible outcomes to understand the uncertainty in our decision. [@problem_id:4371427] [@problem_id:4374946]
 
 ### The Bedrock of Rational Choice
 
-At this point, you might wonder if NMB is just a clever calculational trick. It is not. It is deeply rooted in the fundamental theory of rational decision-making, what is known as **von Neumann-Morgenstern (VNM) [expected utility theory](@entry_id:140626)**.
+At this point, you might wonder if NMB is just a clever calculational trick. It is not. It is deeply rooted in the fundamental theory of rational decision-making, what is known as **von Neumann-Morgenstern (VNM) [expected utility theory](@keyword=expected_utility_theory|lang=en-US|style=Feynman)**.
 
-This theory posits that a rational actor will choose the option that maximizes their "expected utility." If we make a very simple and explicit assumption about our preferences—that our utility increases linearly with health gains and decreases linearly with costs (an assumption called **risk neutrality**)—then the mathematics shows something remarkable. Maximizing our [expected utility](@entry_id:147484) becomes *exactly equivalent* to maximizing the expected Net Monetary Benefit. 
+This theory posits that a rational actor will choose the option that maximizes their "expected utility." If we make a very simple and explicit assumption about our preferences—that our utility increases linearly with health gains and decreases linearly with costs (an assumption called **risk neutrality**)—then the mathematics shows something remarkable. Maximizing our [expected utility](@keyword=expected_utility|lang=en-US|style=Feynman) becomes *exactly equivalent* to maximizing the expected Net Monetary Benefit. [@problem_id:4857409]
 
 Therefore, NMB is not an arbitrary formula. It is the direct application of a foundational theory of rational choice, made possible by a clear and simple model of our preferences. Its elegance lies in this unity of practical utility and theoretical depth.
 
@@ -93,10 +93,10 @@ $$
 \text{NHB} = \frac{\text{NMB}}{\lambda} = \Delta E - \frac{\Delta C}{\lambda}
 $$
 
-The NHB tells us the net gain in units of QALYs. A positive NHB leads to the exact same decision as a positive NMB. It's the same fundamental logic, just viewed from a different perspective. 
+The NHB tells us the net gain in units of QALYs. A positive NHB leads to the exact same decision as a positive NMB. It's the same fundamental logic, just viewed from a different perspective. [@problem_id:4584715]
 
-Second, the framework excels in the era of personalized medicine. A treatment might have a positive NMB for one subgroup of patients (e.g., those with a specific biomarker) but a negative NMB for another. The overall population NMB is simply the weighted average of the subgroup NMBs, weighted by each subgroup's prevalence. This allows researchers to identify which specific populations would benefit from a therapy, potentially avoiding wasteful or harmful "one-size-fits-all" policies. 
+Second, the framework excels in the era of personalized medicine. A treatment might have a positive NMB for one subgroup of patients (e.g., those with a specific biomarker) but a negative NMB for another. The overall population NMB is simply the weighted average of the subgroup NMBs, weighted by each subgroup's prevalence. This allows researchers to identify which specific populations would benefit from a therapy, potentially avoiding wasteful or harmful "one-size-fits-all" policies. [@problem_id:5051555]
 
-Finally, and perhaps most profoundly, the NMB framework can be extended to incorporate complex social values like equity. What if we, as a society, believe that a health gain for a disadvantaged group is more valuable than the same health gain for a more affluent group? We can build this value directly into the analysis by applying **distributive weights**. We might multiply the NMB for the disadvantaged group by a weight greater than 1, and for the affluent group by a weight less than 1. The final **equity-weighted NMB** would then reflect a balance between overall efficiency (the size of the pie) and equity (how the slices are distributed). 
+Finally, and perhaps most profoundly, the NMB framework can be extended to incorporate complex social values like equity. What if we, as a society, believe that a health gain for a disadvantaged group is more valuable than the same health gain for a more affluent group? We can build this value directly into the analysis by applying **distributive weights**. We might multiply the NMB for the disadvantaged group by a weight greater than 1, and for the affluent group by a weight less than 1. The final **equity-weighted NMB** would then reflect a balance between overall efficiency (the size of the pie) and equity (how the slices are distributed). [@problem_id:4586555]
 
 From a simple question of comparing apples and oranges, we have built a conceptual tool that is mathematically robust, theoretically grounded, and flexible enough to tackle some of the most complex policy questions of our time. This journey, from a basic dilemma to a sophisticated and unified framework, reveals the true beauty of a powerful scientific principle.

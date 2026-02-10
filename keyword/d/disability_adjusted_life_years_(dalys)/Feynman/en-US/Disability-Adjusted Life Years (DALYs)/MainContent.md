@@ -17,7 +17,7 @@ To build this metric, we must first define our currency: the year of healthy lif
 
 ### The Two Thieves of Time: Mortality and Disability
 
-The first thief is easy to understand: premature mortality. When a person dies before reaching the standard life expectancy, the years they would have lived are lost. This quantity is called **Years of Life Lost (YLL)**. If the standard life expectancy is, say, 80 years, and a person dies in a car crash at age 30, we have lost $80 - 30 = 50$ years of healthy life. The calculation is straightforward :
+The first thief is easy to understand: premature mortality. When a person dies before reaching the standard life expectancy, the years they would have lived are lost. This quantity is called **Years of Life Lost (YLL)**. If the standard life expectancy is, say, 80 years, and a person dies in a car crash at age 30, we have lost $80 - 30 = 50$ years of healthy life. The calculation is straightforward [@problem_id:4973894]:
 
 $YLL = (\text{Standard life expectancy at age of death}) - (\text{Age of death})$
 
@@ -25,11 +25,11 @@ For a population, we simply sum the YLL for all individuals who died prematurely
 
 The second thief is more subtle, but just as devastating: disability. Living with a chronic illness, an injury, or a mental health condition erodes one's quality of life. A year lived with back pain is not the same as a year lived in perfect health. To capture this, the DALY framework introduces its most clever and controversial component: the **disability weight ($w$)**.
 
-A disability weight is a number between $0$ and $1$ that represents the severity of a health condition. A weight of $w=0$ signifies perfect health. A weight of $w=1$ signifies a health state considered equivalent to being dead. A condition with a disability weight of, say, $w=0.25$ means that living with that condition for one year is equivalent to losing $0.25$ of a year of healthy life. The remaining $0.75$ of the year is lived, but with a diminished quality. The total health loss from non-fatal outcomes is called **Years Lived with Disability (YLD)**. It is calculated by multiplying the number of people with a condition by its duration and its disability weight :
+A disability weight is a number between $0$ and $1$ that represents the severity of a health condition. A weight of $w=0$ signifies perfect health. A weight of $w=1$ signifies a health state considered equivalent to being dead. A condition with a disability weight of, say, $w=0.25$ means that living with that condition for one year is equivalent to losing $0.25$ of a year of healthy life. The remaining $0.75$ of the year is lived, but with a diminished quality. The total health loss from non-fatal outcomes is called **Years Lived with Disability (YLD)**. It is calculated by multiplying the number of people with a condition by its duration and its disability weight [@problem_id:5001617]:
 
 $YLD = (\text{Number of cases}) \times (\text{Duration of disability in years}) \times (\text{Disability weight})$
 
-This simple multiplication allows us to quantify the burden of everything from a temporary injury (short duration, maybe a moderate weight) to a lifelong chronic disease (long duration, possibly a high weight) .
+This simple multiplication allows us to quantify the burden of everything from a temporary injury (short duration, maybe a moderate weight) to a lifelong chronic disease (long duration, possibly a high weight) [@problem_id:4973894].
 
 ### The Grand Equation of Burden
 
@@ -39,7 +39,7 @@ $$DALY = YLL + YLD$$
 
 This simple addition is what makes the DALY so powerful. For the first time, it allows us to compare the burden of a fatal disease with that of a non-fatal one on the same scale.
 
-Consider a hypothetical scenario comparing two diseases . Disease A causes $50$ deaths at age $55$ (standard remaining life expectancy: $25$ years) and leads to $10,000$ new cases of a chronic condition with a disability weight of $0.25$ that lasts for $8$ years. Disease B causes $200$ deaths at age $65$ (standard remaining life expectancy: $18$ years) but has a very small disability burden.
+Consider a hypothetical scenario comparing two diseases [@problem_id:5001617]. Disease A causes $50$ deaths at age $55$ (standard remaining life expectancy: $25$ years) and leads to $10,000$ new cases of a chronic condition with a disability weight of $0.25$ that lasts for $8$ years. Disease B causes $200$ deaths at age $65$ (standard remaining life expectancy: $18$ years) but has a very small disability burden.
 
 If we only counted deaths, Disease B looks four times worse ($200$ deaths vs. $50$). But let's look through the lens of DALYs:
 
@@ -50,25 +50,25 @@ Suddenly, the picture is completely reversed. Disease A, the one that causes les
 
 ### The Looking-Glass World of QALYs
 
-To truly appreciate the DALY, it helps to look at its conceptual mirror image: the **Quality-Adjusted Life Year (QALY)**. While the DALY is a **health-gap** measure that counts years of *lost* health, the QALY is a **health-gain** measure that counts years of *lived* health, adjusted for their quality .
+To truly appreciate the DALY, it helps to look at its conceptual mirror image: the **Quality-Adjusted Life Year (QALY)**. While the DALY is a **health-gap** measure that counts years of *lost* health, the QALY is a **health-gain** measure that counts years of *lived* health, adjusted for their quality [@problem_id:4973894].
 
 The QALY framework uses utility weights ($u$) instead of disability weights. Here, $u=1$ represents perfect health and $u=0$ represents death. So, a year lived in perfect health is worth $1$ QALY, and a year lived in a health state with a utility of $u=0.8$ is worth $0.8$ QALYs. The goal of healthcare in this framework is to maximize QALYs.
 
 You might notice a beautiful symmetry here. The scales are inverted, but they describe the same spectrum. In a coherent system, the utility of a health state is simply one minus its disability weight: $u = 1 - w$. The disability weight measures the *loss* from perfect health, while the utility weight measures the *remaining* health.
 
-This leads to a wonderfully elegant conclusion: for an intervention that only improves health without extending life (a "morbidity-only" scenario), the number of **DALYs averted is exactly equal to the number of QALYs gained** . They are two sides of the same coin, one framed as minimizing a loss and the other as maximizing a gain.
+This leads to a wonderfully elegant conclusion: for an intervention that only improves health without extending life (a "morbidity-only" scenario), the number of **DALYs averted is exactly equal to the number of QALYs gained** [@problem_id:4587985]. They are two sides of the same coin, one framed as minimizing a loss and the other as maximizing a gain.
 
 ### The Value of a Year: Debates on Time and Age
 
-Constructing a metric to value human life is fraught with ethical choices. Two of the most fiercely debated have been **[discounting](@entry_id:139170)** and **age-weighting**.
+Constructing a metric to value human life is fraught with ethical choices. Two of the most fiercely debated have been **[discounting](@keyword=discounting|lang=en-US|style=Feynman)** and **age-weighting**.
 
-**Discounting** is the idea that a benefit received today is worth more than the same benefit received in the future. Economists use this to model financial investments, and for a time, it was applied to DALYs. A $3\%$ [discount rate](@entry_id:145874), for example, means a year of healthy life lost in a decade is counted as less burdensome than a year of healthy life lost today . The ethical implication, however, is profound: it systematically devalues the health of children and young people, as their entire lives lie in the discounted future. A policy that saves a 60-year-old today might appear more "efficient" than one that saves a 10-year-old from a disease that would kill them at 40. For this reason, the modern standard in Global Burden of Disease studies has moved to a [discount rate](@entry_id:145874) of $r=0$, asserting the radical principle that a year of healthy life is a year of healthy life, no matter when it occurs .
+**Discounting** is the idea that a benefit received today is worth more than the same benefit received in the future. Economists use this to model financial investments, and for a time, it was applied to DALYs. A $3\%$ [discount rate](@keyword=discount_rate|lang=en-US|style=Feynman), for example, means a year of healthy life lost in a decade is counted as less burdensome than a year of healthy life lost today [@problem_id:4742549]. The ethical implication, however, is profound: it systematically devalues the health of children and young people, as their entire lives lie in the discounted future. A policy that saves a 60-year-old today might appear more "efficient" than one that saves a 10-year-old from a disease that would kill them at 40. For this reason, the modern standard in Global Burden of Disease studies has moved to a [discount rate](@keyword=discount_rate|lang=en-US|style=Feynman) of $r=0$, asserting the radical principle that a year of healthy life is a year of healthy life, no matter when it occurs [@problem_id:4989874].
 
-Similarly, early versions of DALYs included **age-weighting**, a function that gave more weight to years lived in young adulthood (peak years of productivity and child-rearing) and less to years in infancy and old age. This, too, was abandoned for ethical reasons. The current framework embodies the principle that every year of human life has equal [intrinsic value](@entry_id:203433), regardless of age or economic productivity.
+Similarly, early versions of DALYs included **age-weighting**, a function that gave more weight to years lived in young adulthood (peak years of productivity and child-rearing) and less to years in infancy and old age. This, too, was abandoned for ethical reasons. The current framework embodies the principle that every year of human life has equal [intrinsic value](@keyword=intrinsic_value|lang=en-US|style=Feynman), regardless of age or economic productivity.
 
 ### Two Lenses on Burden: Snapshots vs. Movies
 
-How you count DALYs depends on the question you are asking. The framework offers two powerful perspectives .
+How you count DALYs depends on the question you are asking. The framework offers two powerful perspectives [@problem_id:4546371].
 
 The **prevalent-based** approach takes a snapshot. It asks: "What is the total health burden our population is experiencing *this year*?" It counts all the YLL from deaths that occurred this year and all the YLD from everyone living with a disability this year, regardless of when their condition started. This is the perfect tool for a hospital administrator who needs to allocate the annual budget. It tells you the immediate demand on the system.
 
@@ -78,7 +78,7 @@ The **incident-based** approach makes a movie. It asks: "Of all the people who g
 
 For all its brilliance, the DALY is a model, a simplification of the world. And like any powerful tool, it can be misused, sometimes in ways that challenge our deepest ethical intuitions.
 
-Consider a harrowing thought experiment . A single ventilator is available, and two patients will die without it. With it, each will live for another $10$ years. They are identical in every way, except for one thing: Patient A has a pre-existing [spinal cord injury](@entry_id:173661) with a disability weight of $w=0.35$. Patient B has no pre-existing disability ($w=0$).
+Consider a harrowing thought experiment [@problem_id:4856409]. A single ventilator is available, and two patients will die without it. With it, each will live for another $10$ years. They are identical in every way, except for one thing: Patient A has a pre-existing [spinal cord injury](@keyword=spinal_cord_injury|lang=en-US|style=Feynman) with a disability weight of $w=0.35$. Patient B has no pre-existing disability ($w=0$).
 
 Who do you save? A strict DALY-maximization approach gives a chillingly clear answer.
 -   Saving Patient B (the non-disabled person) averts $10$ DALYs (10 years of life, each with a health value of $1.0$).

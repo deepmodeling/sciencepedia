@@ -17,7 +17,7 @@ $$
 I = I_0 \exp\left(-\int_{L} \mu(\mathbf{r}) \, dl\right)
 $$
 
-This equation might look a bit intimidating, but its meaning is quite beautiful. The term $\int_{L} \mu(\mathbf{r}) \, dl$ is a **[line integral](@entry_id:138107)**. It's simply the sum of all the little bits of attenuation, $\mu$, along the entire path $L$ of the X-ray. It represents the total "shadow" cast by the tissue along that one specific line.
+This equation might look a bit intimidating, but its meaning is quite beautiful. The term $\int_{L} \mu(\mathbf{r}) \, dl$ is a **[line integral](@keyword=line_integral|lang=en-US|style=Feynman)**. It's simply the sum of all the little bits of attenuation, $\mu$, along the entire path $L$ of the X-ray. It represents the total "shadow" cast by the tissue along that one specific line.
 
 By rearranging the equation and taking the natural logarithm, we can isolate this total shadow:
 
@@ -25,19 +25,19 @@ $$
 p = \ln\left(\frac{I_0}{I}\right) = \int_{L} \mu(\mathbf{r}) \, dl
 $$
 
-This value, $p$, is what a CT scanner's detector effectively measures: a single number representing the total attenuation along a single straight line through the body. The fundamental challenge of CT is this: if you are given the total shadow cast along every possible line through an object, can you reconstruct the object itself? The mathematical framework for this collection of all possible [line integrals](@entry_id:141417) is called the **Radon transform** . The job of a CT reconstruction algorithm is to invert it.
+This value, $p$, is what a CT scanner's detector effectively measures: a single number representing the total attenuation along a single straight line through the body. The fundamental challenge of CT is this: if you are given the total shadow cast along every possible line through an object, can you reconstruct the object itself? The mathematical framework for this collection of all possible [line integrals](@keyword=line_integrals|lang=en-US|style=Feynman) is called the **Radon transform** [@problem_id:4863122]. The job of a CT reconstruction algorithm is to invert it.
 
 ### A Bridge to the Unseen: The Central Slice Theorem
 
 How on Earth do we unscramble this massive collection of shadow-grams? A brute-force approach seems impossibly complex. Here, nature provides a breathtakingly elegant shortcut, a "magic trick" that connects the world of projections to another, powerful domain: the world of frequencies.
 
-Any image can be thought of not just as a collection of pixels, but as a combination of waves, or spatial frequencies—broad, gentle waves for the large features and quick, sharp wiggles for the fine details. The **Fourier transform** is the mathematical lens that allows us to see an image in this [frequency space](@entry_id:197275).
+Any image can be thought of not just as a collection of pixels, but as a combination of waves, or spatial frequencies—broad, gentle waves for the large features and quick, sharp wiggles for the fine details. The **Fourier transform** is the mathematical lens that allows us to see an image in this [frequency space](@keyword=frequency_space|lang=en-US|style=Feynman).
 
 The **Central Slice Theorem** (also known as the Fourier Slice Theorem) is the bridge between these two worlds. It states something remarkable:
 
 > The one-dimensional (1D) Fourier transform of a projection (our shadow-gram $p$) is exactly equal to a single slice through the center of the two-dimensional (2D) Fourier transform of the original object ($\mu$).
 
-Imagine the 2D Fourier transform of the object as a perfectly cooked pie. If you take a projection at a certain angle $\theta$, its 1D Fourier transform gives you the values along a single knife cut through the center of that pie at the same angle $\theta$ . By taking projections at many different angles, we can assemble a picture of the entire Fourier pie, slice by slice. Once we have the full 2D Fourier transform, we can perform an inverse Fourier transform to get back our original image of $\mu$.
+Imagine the 2D Fourier transform of the object as a perfectly cooked pie. If you take a projection at a certain angle $\theta$, its 1D Fourier transform gives you the values along a single knife cut through the center of that pie at the same angle $\theta$ [@problem_id:4901721]. By taking projections at many different angles, we can assemble a picture of the entire Fourier pie, slice by slice. Once we have the full 2D Fourier transform, we can perform an inverse Fourier transform to get back our original image of $\mu$.
 
 This theorem is not just a mathematical curiosity; it's the cornerstone of modern imaging. It reveals a hidden unity in the physics of measurement and provides a computationally brilliant path to reconstruction.
 
@@ -45,7 +45,7 @@ This theorem is not just a mathematical curiosity; it's the cornerstone of moder
 
 Of course, a real CT scanner doesn't measure an infinite number of continuous projections. It takes a finite number of measurements and reconstructs a digital image made of a grid of discrete pixels (or voxels in 3D). This brings our grand theoretical problem down to Earth and transforms it into a problem of algebra.
 
-Let's imagine a vastly simplified world: a $2 \times 2$ grid of pixels, like a tiny tic-tac-toe board. Each pixel has an unknown attenuation value: $x_{11}, x_{12}, x_{21}, x_{22}$. Now, imagine sending a few X-ray beams through this grid. For each ray, the detector measures a single number, which is the sum of each pixel's attenuation multiplied by the length of the path the ray took through that pixel .
+Let's imagine a vastly simplified world: a $2 \times 2$ grid of pixels, like a tiny tic-tac-toe board. Each pixel has an unknown attenuation value: $x_{11}, x_{12}, x_{21}, x_{22}$. Now, imagine sending a few X-ray beams through this grid. For each ray, the detector measures a single number, which is the sum of each pixel's attenuation multiplied by the length of the path the ray took through that pixel [@problem_id:3222437].
 
 A horizontal ray through the top row might give us an equation like:
 
@@ -59,9 +59,9 @@ $$
 (1 \cdot x_{21}) + (1 \cdot x_{22}) = 5
 $$
 
-By sending a few more rays at different angles, we can generate a system of [linear equations](@entry_id:151487). With enough equations, we can solve for our four unknown pixel values.
+By sending a few more rays at different angles, we can generate a system of [linear equations](@keyword=linear_equations|lang=en-US|style=Feynman). With enough equations, we can solve for our four unknown pixel values.
 
-Now, scale this up. A modern medical image isn't $2 \times 2$; it might be $512 \times 512$, containing over 262,000 pixels. A scanner might take hundreds of projections, each with a thousand detector elements. This results in a colossal system of [linear equations](@entry_id:151487), often written in matrix form:
+Now, scale this up. A modern medical image isn't $2 \times 2$; it might be $512 \times 512$, containing over 262,000 pixels. A scanner might take hundreds of projections, each with a thousand detector elements. This results in a colossal system of [linear equations](@keyword=linear_equations|lang=en-US|style=Feynman), often written in matrix form:
 
 $$
 A \mathbf{x} = \mathbf{b}
@@ -70,7 +70,7 @@ $$
 Here:
 *   $\mathbf{x}$ is a giant vector containing all the unknown pixel attenuation values we want to find. This is our final image.
 *   $\mathbf{b}$ is the vector of all our measurements, the log-transformed intensities from the detectors.
-*   $A$ is the **system matrix**. This immense but mostly empty (sparse) matrix is the dictionary that translates between the image space and the measurement space. Each row corresponds to a single ray, and its entries are the path lengths of that ray through each pixel in the image grid. It represents the complete geometry of the scan .
+*   $A$ is the **system matrix**. This immense but mostly empty (sparse) matrix is the dictionary that translates between the image space and the measurement space. Each row corresponds to a single ray, and its entries are the path lengths of that ray through each pixel in the image grid. It represents the complete geometry of the scan [@problem_id:2449831].
 
 The entire multi-billion dollar industry of CT imaging, in a very real sense, boils down to finding a way to solve this enormous equation for $\mathbf{x}$.
 
@@ -82,9 +82,9 @@ With the problem framed as $A \mathbf{x} = \mathbf{b}$, two major schools of tho
 
 The first approach, which dominated CT for decades, is called **Filtered Back-Projection (FBP)**. The intuition is simple. To reconstruct the image, why not just "smear" each measurement back along the path it came from? This process is called back-projection. If you do this for all the projections, an image begins to appear. However, it's hopelessly blurry.
 
-The Central Slice Theorem saves the day. It tells us that this blurring is a predictable consequence of the physics and can be perfectly corrected. To get a sharp image, we must first apply a "filter" to our projection data before back-projecting. This filter, called a [ramp filter](@entry_id:754034), selectively boosts the higher spatial frequencies.
+The Central Slice Theorem saves the day. It tells us that this blurring is a predictable consequence of the physics and can be perfectly corrected. To get a sharp image, we must first apply a "filter" to our projection data before back-projecting. This filter, called a [ramp filter](@keyword=ramp_filter|lang=en-US|style=Feynman), selectively boosts the higher spatial frequencies.
 
-The beauty of this method is its speed and elegance. Thanks to an algorithm called the **Fast Fourier Transform (FFT)**, this entire process can be executed with astonishing efficiency. What would be a naive $O(N^3)$ computational nightmare for an $N \times N$ image becomes a much more manageable $O(N^2 \log N)$ process, making real-time reconstruction possible . FBP is a triumph of analytical mathematics, but it has weaknesses. It assumes perfect, noise-free data and can produce images with a characteristic sharp, grainy noise texture when conditions aren't ideal .
+The beauty of this method is its speed and elegance. Thanks to an algorithm called the **Fast Fourier Transform (FFT)**, this entire process can be executed with astonishing efficiency. What would be a naive $O(N^3)$ computational nightmare for an $N \times N$ image becomes a much more manageable $O(N^2 \log N)$ process, making real-time reconstruction possible [@problem_id:3216005]. FBP is a triumph of analytical mathematics, but it has weaknesses. It assumes perfect, noise-free data and can produce images with a characteristic sharp, grainy noise texture when conditions aren't ideal [@problem_id:4544998].
 
 #### The Modern Way: Iterative Reconstruction (IR)
 
@@ -96,7 +96,7 @@ The second philosophy is more like a guided negotiation with the data. Known as 
 4.  Adjust the image guess $\mathbf{x}$ in a way that reduces this error.
 5.  Repeat steps 2-4 until the error is minimized.
 
-This process is framed as a [mathematical optimization](@entry_id:165540) problem: find the image $\mathbf{x}$ that minimizes the difference $\|A\mathbf{x} - \mathbf{b}\|^2$. This approach is powerful because it can incorporate more sophisticated physical models. For instance, we know that low-intensity X-ray beams produce noisier measurements. We can encode this knowledge in a weighting matrix $W$, giving more trust to high-quality measurements and less to noisy ones. This leads to a **penalized [weighted least squares](@entry_id:177517)** objective .
+This process is framed as a [mathematical optimization](@keyword=mathematical_optimization|lang=en-US|style=Feynman) problem: find the image $\mathbf{x}$ that minimizes the difference $\|A\mathbf{x} - \mathbf{b}\|^2$. This approach is powerful because it can incorporate more sophisticated physical models. For instance, we know that low-intensity X-ray beams produce noisier measurements. We can encode this knowledge in a weighting matrix $W$, giving more trust to high-quality measurements and less to noisy ones. This leads to a **penalized [weighted least squares](@keyword=weighted_least_squares|lang=en-US|style=Feynman)** objective [@problem_id:4890429].
 
 ### The Art of a 'Good' Guess: Regularization in Modern CT
 
@@ -108,7 +108,7 @@ $$
 \hat{\mathbf{x}} = \arg\min_{\mathbf{x}} \|A \mathbf{x} - \mathbf{b}\|_{W}^{2} + \lambda R(\mathbf{x})
 $$
 
-The parameter $\lambda$ (lambda) is a knob that lets us balance our belief in the data versus our belief in the prior knowledge. A common and effective regularizer penalizes large differences between adjacent pixels. For a 1D image, this might look like $R(\mathbf{x}) = \sum (x_{i+1} - x_i)^2$. This simple term, which arises naturally from a Bayesian probabilistic framework assuming a Gaussian prior on image smoothness, encourages the reconstructed image to be smooth while still allowing it to fit the data . This is why IR images often appear smoother and less grainy than FBP images, with a noise texture that is shifted toward lower frequencies .
+The parameter $\lambda$ (lambda) is a knob that lets us balance our belief in the data versus our belief in the prior knowledge. A common and effective regularizer penalizes large differences between adjacent pixels. For a 1D image, this might look like $R(\mathbf{x}) = \sum (x_{i+1} - x_i)^2$. This simple term, which arises naturally from a Bayesian probabilistic framework assuming a Gaussian prior on image smoothness, encourages the reconstructed image to be smooth while still allowing it to fit the data [@problem_id:4900960]. This is why IR images often appear smoother and less grainy than FBP images, with a noise texture that is shifted toward lower frequencies [@problem_id:4544998].
 
 ### Standardization and Reality
 
@@ -120,8 +120,8 @@ $$
 \text{HU} = 1000 \times \frac{\mu - \mu_{\text{water}}}{\mu_{\text{water}}}
 $$
 
-This brilliant stroke ensures that a radiologist in New York and one in Tokyo can look at a scan and agree that a certain tissue is, for example, 40 HU, giving them a common language for diagnosis .
+This brilliant stroke ensures that a radiologist in New York and one in Tokyo can look at a scan and agree that a certain tissue is, for example, 40 HU, giving them a common language for diagnosis [@problem_id:4891642].
 
-Finally, the beautiful theory we've explored has direct consequences for engineering. The Central Slice Theorem itself dictates how a real scanner must be built. To reconstruct an image with a certain resolution (pixel size $\Delta x$) over a certain [field of view](@entry_id:175690) (diameter $D$), the theorem implies a minimum number of projection angles, $N_{\text{min}} \approx \frac{\pi D}{2 \Delta x}$. If you don't take enough views, you can't fill in the Fourier "pie" properly, and you get angular aliasing artifacts .
+Finally, the beautiful theory we've explored has direct consequences for engineering. The Central Slice Theorem itself dictates how a real scanner must be built. To reconstruct an image with a certain resolution (pixel size $\Delta x$) over a certain [field of view](@keyword=field_of_view|lang=en-US|style=Feynman) (diameter $D$), the theorem implies a minimum number of projection angles, $N_{\text{min}} \approx \frac{\pi D}{2 \Delta x}$. If you don't take enough views, you can't fill in the Fourier "pie" properly, and you get angular aliasing artifacts [@problem_id:4893131].
 
-The principles of CT reconstruction are a beautiful interplay of physics, mathematics, and engineering. They show how a simple observation about shadows, when viewed through the powerful lens of Fourier analysis and linear algebra, can be transformed into a technology that has saved countless lives. But it's also a reminder that our models are built on assumptions. When those assumptions—like a static patient or a monoenergetic X-ray beam—are violated, the result is artifacts, reminding us that even in our most advanced technology, reality always has the final say  .
+The principles of CT reconstruction are a beautiful interplay of physics, mathematics, and engineering. They show how a simple observation about shadows, when viewed through the powerful lens of Fourier analysis and linear algebra, can be transformed into a technology that has saved countless lives. But it's also a reminder that our models are built on assumptions. When those assumptions—like a static patient or a monoenergetic X-ray beam—are violated, the result is artifacts, reminding us that even in our most advanced technology, reality always has the final say [@problem_id:4901721] [@problem_id:4863122].

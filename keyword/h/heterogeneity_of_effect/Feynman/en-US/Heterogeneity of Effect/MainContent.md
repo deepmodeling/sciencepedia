@@ -17,7 +17,7 @@ Ignoring this variation is like designing a suit for the "average" person—it's
 
 ### A Precise Language for Cause and Effect
 
-To speak sensibly about how effects vary, we first need a precise language for what an "effect" even is. The modern science of causality provides a beautifully simple and powerful tool for this: the **[potential outcomes framework](@entry_id:636884)**  .
+To speak sensibly about how effects vary, we first need a precise language for what an "effect" even is. The modern science of causality provides a beautifully simple and powerful tool for this: the **[potential outcomes framework](@keyword=potential_outcomes_framework|lang=en-US|style=Feynman)** [@problem_id:4364872] [@problem_id:4574123].
 
 Imagine a single individual, let’s call her Alice. We are considering giving her a new medication to control her blood pressure. For Alice, there exist two potential futures:
 *   $Y(1)$: Her blood pressure outcome if she *takes* the medication.
@@ -27,8 +27,8 @@ The **individual causal effect** for Alice is simply the difference: $Y(1) - Y(0
 
 While we can never see an individual's causal effect, we can use this framework to define our concepts. Heterogeneity of treatment effect is simply the statement that the individual causal effect, $Y(1) - Y(0)$, is not the same for everyone in the population. Your effect is different from Alice's effect, which is different from Bob's.
 
-Since we cannot see individual effects, we do the next best thing: we look at averages within groups. We define the **Conditional Average Treatment Effect** (CATE) as the average effect for a group of people who share a specific set of characteristics, which we can call $X$. Formally, this is $\tau(x) = E[Y(1) - Y(0) | X=x]$ . For instance, $X$ could represent age, sex, and [genetic markers](@entry_id:202466). The CATE for 65-year-old women with a specific gene might be very different from the CATE for 40-year-old men without it. The study of HTE is the study of how $\tau(x)$ changes as $x$ changes.
+Since we cannot see individual effects, we do the next best thing: we look at averages within groups. We define the **Conditional Average Treatment Effect** (CATE) as the average effect for a group of people who share a specific set of characteristics, which we can call $X$. Formally, this is $\tau(x) = E[Y(1) - Y(0) | X=x]$ [@problem_id:4364872]. For instance, $X$ could represent age, sex, and [genetic markers](@keyword=genetic_markers|lang=en-US|style=Feynman). The CATE for 65-year-old women with a specific gene might be very different from the CATE for 40-year-old men without it. The study of HTE is the study of how $\tau(x)$ changes as $x$ changes.
 
 ### The Rogues' Gallery: Distinguishing Heterogeneity from Its Look-alikes
 
-The most common confusion is between HTE and **confounding**. Imagine a simple causal diagram, or **Directed Acyclic Graph (DAG)**, where arrows represent causation .
+The most common confusion is between HTE and **confounding**. Imagine a simple causal diagram, or **Directed Acyclic Graph (DAG)**, where arrows represent causation [@problem_id:3115849].

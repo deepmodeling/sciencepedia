@@ -3,7 +3,7 @@ The medical management of glaucoma is a cornerstone of modern ophthalmology, a c
 
 ## Principles and Mechanisms
 
-To truly grasp the strategy behind managing glaucoma, we mustn't start with a list of drugs or surgeries. We must start, as we always should in science, with the first principles. Imagine the [human eye](@entry_id:164523) not as a complex biological organ for a moment, but as a simple piece of plumbing: a sink.
+To truly grasp the strategy behind managing glaucoma, we mustn't start with a list of drugs or surgeries. We must start, as we always should in science, with the first principles. Imagine the [human eye](@keyword=human_eye|lang=en-US|style=Feynman) not as a complex biological organ for a moment, but as a simple piece of plumbing: a sink.
 
 ### A Sink with a Clogged Drain: The Physics of Eye Pressure
 
@@ -25,7 +25,7 @@ This brings us to the concept of a **target pressure**. There is no single "magi
 
 So, how do we lower the pressure? Looking back at our sink analogy and the Goldmann equation, there are two main strategies:
 
-1.  **Turn Down the Faucet (Reduce $F$):** We can use medications that tell the ciliary body to produce less aqueous humor. The most common classes of drugs that do this are **beta-blockers** (like timolol) and **[carbonic anhydrase](@entry_id:155448) inhibitors** (like dorzolamide). By reducing the inflow, we lower the steady-state pressure.
+1.  **Turn Down the Faucet (Reduce $F$):** We can use medications that tell the ciliary body to produce less aqueous humor. The most common classes of drugs that do this are **beta-blockers** (like timolol) and **[carbonic anhydrase](@keyword=carbonic_anhydrase|lang=en-US|style=Feynman) inhibitors** (like dorzolamide). By reducing the inflow, we lower the steady-state pressure.
 
 2.  **Improve the Drain (Increase Outflow):** Alternatively, we can use drugs that help the fluid exit the eye more easily. This can be done in two ways:
     *   **Improving the Main Drain:** Some drugs, like **Rho kinase (ROCK) inhibitors**, act directly on the cells of the trabecular meshwork, relaxing it and increasing outflow through the primary pathway (increasing $C$).

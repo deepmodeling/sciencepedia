@@ -11,7 +11,7 @@ The first duty of a scientist, like that of a detective arriving at a crime scen
 
 Imagine a city health department responding to reports of food poisoning after a street festival. The first order of business is to create a **line list**, a master table that is the bedrock of any outbreak investigation. Each row is a sick person, and each column is a piece of their story. The "person" columns might include age and sex. The "place" columns might note their home address and, crucially, which vendors they visited at the festival. And the "time" column—the most important of all for the initial picture—is the exact date and time their symptoms began.
 
-Why is the **symptom onset date** so critical? Because when we plot the number of new cases by their onset date, we create an **[epidemic curve](@entry_id:172741)**. This simple graph is the "fever chart" of the outbreak, and its shape tells a story. A sudden, sharp peak followed by a rapid decline suggests all the cases originated from a single, shared event, like eating contaminated food from one vendor at one specific time—a **point-source exposure**. A curve that rises and falls more gradually might suggest the illness is spreading from person to person. The descriptive picture is already beginning to whisper a hypothesis.
+Why is the **symptom onset date** so critical? Because when we plot the number of new cases by their onset date, we create an **[epidemic curve](@keyword=epidemic_curve|lang=en-US|style=Feynman)**. This simple graph is the "fever chart" of the outbreak, and its shape tells a story. A sudden, sharp peak followed by a rapid decline suggests all the cases originated from a single, shared event, like eating contaminated food from one vendor at one specific time—a **point-source exposure**. A curve that rises and falls more gradually might suggest the illness is spreading from person to person. The descriptive picture is already beginning to whisper a hypothesis.
 
 This act of description, however, extends far beyond single outbreaks. Consider a regional health consortium tasked with monitoring asthma across several cities. Their goal is to produce a report that allows the mayor of City A to meaningfully compare her city's asthma rates to those of City B. If their methods are not perfectly aligned, the comparison is worthless. This is why descriptive epidemiology is obsessed with **external comparability** and **reproducibility**. It demands standardized case definitions (what counts as an "asthma exacerbation"?), stable and well-defined populations (who are we counting?), and aligned time windows.
 
@@ -39,7 +39,7 @@ Analytic epidemiology provides a powerful toolbox for defeating confounding and 
 
 This logical progression—from observation to causal question—forms the backbone of public health science:
 
-1.  **Descriptive Epidemiology** first maps the terrain, characterizing the distribution of disease by person, place, and time. This generates a [testable hypothesis](@entry_id:193723).
+1.  **Descriptive Epidemiology** first maps the terrain, characterizing the distribution of disease by person, place, and time. This generates a [testable hypothesis](@keyword=testable_hypothesis|lang=en-US|style=Feynman).
 
 2.  **Analytic Epidemiology** then tests that hypothesis. It designs a study to make a fair comparison, seeking to control for confounding and other biases to achieve high **internal validity**—the degree to which the study’s conclusion is correct for the people being studied.
 

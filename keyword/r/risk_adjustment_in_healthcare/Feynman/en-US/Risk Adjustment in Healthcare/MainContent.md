@@ -21,7 +21,7 @@ For Hospital A, with its mix of 60% high-risk and 40% low-risk patients, the exp
 
 For Hospital B, with its 20% high-risk and 80% low-risk population, the expected mortality is: $(0.20 \times 12\%) + (0.80 \times 5\%) = 2.4\% + 4.0\% = 6.4\%$.
 
-Now, let's compare these expectations to reality .
+Now, let's compare these expectations to reality [@problem_id:4399684].
 -   Hospital A’s observed mortality was 9%, which is *better* than its expected rate of 9.2%. Despite treating a sicker population, it saved more lives than an average hospital would have.
 -   Hospital B’s observed mortality was 7%, which is *worse* than its expected rate of 6.4%. Despite treating a healthier population, it performed below the national average.
 
@@ -29,7 +29,7 @@ The story has completely flipped. Hospital A, which at first glance seemed to be
 
 ### The Invisible Hand of Risk: Adverse Selection
 
-The need for risk adjustment goes even deeper than fair performance measurement; it is a fundamental pillar supporting a functional health insurance market. To understand why, we must grapple with a concept from economics known as **adverse selection** .
+The need for risk adjustment goes even deeper than fair performance measurement; it is a fundamental pillar supporting a functional health insurance market. To understand why, we must grapple with a concept from economics known as **adverse selection** [@problem_id:4718619].
 
 Imagine an insurer wants to offer a health plan to everyone in a community for a single price, say $500 a month. This price is based on the average cost of care for the entire community. But people are not average; they have private information about their own health. A young, healthy person might look at the $500 premium and think, "That's far more than I'm likely to spend on healthcare. No, thanks." A person with multiple chronic conditions, however, might see the same premium and think, "What a bargain! I'll almost certainly need more than $500 worth of care a month."
 
@@ -41,7 +41,7 @@ Risk adjustment is the primary antidote to this poison. Instead of allowing insu
 
 The mechanism itself is beautifully simple. In many modern health systems, insurers are paid a fixed amount per person per year to cover all their care. This is called a **capitation** payment. Risk adjustment transforms this one-size-fits-all payment into a tailored one.
 
-Every individual is assigned a **risk score**, a number that represents their expected healthcare needs relative to the average person. An average person has a risk score of $r=1.0$. Someone healthier might have a score of $r=0.7$, while someone with complex chronic diseases might have a score of $r=1.5$. The payment, $P(r)$, that the health plan receives for that person is then a simple product :
+Every individual is assigned a **risk score**, a number that represents their expected healthcare needs relative to the average person. An average person has a risk score of $r=1.0$. Someone healthier might have a score of $r=0.7$, while someone with complex chronic diseases might have a score of $r=1.5$. The payment, $P(r)$, that the health plan receives for that person is then a simple product [@problem_id:4369350]:
 
 $$P(r) = r \cdot B$$
 
@@ -55,13 +55,13 @@ So, where does this magical risk score come from? It is not magic, but a product
 
 #### The Ingredients
 
-To predict future healthcare needs, a model needs ingredients, or **predictors**. The most basic models might use only demographic information like age and sex . While a group of 80-year-olds will, on average, need more care than a group of 20-year-olds, these models are quite crude. They cannot distinguish between a healthy 80-year-old and one with multiple chronic illnesses.
+To predict future healthcare needs, a model needs ingredients, or **predictors**. The most basic models might use only demographic information like age and sex [@problem_id:4380969]. While a group of 80-year-olds will, on average, need more care than a group of 20-year-olds, these models are quite crude. They cannot distinguish between a healthy 80-year-old and one with multiple chronic illnesses.
 
 More powerful models add **clinical predictors**. These are derived from the vast trove of data generated during healthcare:
 -   **Diagnosis-based models** look at the diagnosis codes (like the International Classification of Diseases, or ICD) from past medical visits. Systems like **Hierarchical Condition Categories (HCCs)** group thousands of diagnoses into a manageable number of clinically meaningful categories. The presence of codes for diabetes, congestive heart failure, and kidney disease paints a much richer picture of a person's health status than age alone.
 -   **Pharmacy-based models** use data on prescription drug claims. The fact that someone is consistently filling prescriptions for insulin, inhalers, and blood pressure medication is a powerful signal of their underlying conditions.
 
-The choice of ingredients matters immensely. A health plan that specializes in caring for children with chronic asthma would be systematically underpaid by a demographic-only model, penalizing it for serving a vulnerable population. Only a model that "sees" the diagnoses or pharmacy records can generate a risk score that reflects the true expected cost .
+The choice of ingredients matters immensely. A health plan that specializes in caring for children with chronic asthma would be systematically underpaid by a demographic-only model, penalizing it for serving a vulnerable population. Only a model that "sees" the diagnoses or pharmacy records can generate a risk score that reflects the true expected cost [@problem_id:4380969].
 
 #### The Recipe
 
@@ -69,7 +69,7 @@ The most common recipe for combining these ingredients into a risk score is a st
 
 $$z = \alpha + \beta_1(\text{age}) + \beta_2(\text{diabetes}) + \dots$$
 
-This score, $z$, can range from negative to positive infinity. But we often want to predict a probability—for example, the probability of being a high-cost patient, which must be between 0 and 1. To do this, we pass $z$ through a special function called the **[logistic function](@entry_id:634233)** (or inverse-logit) :
+This score, $z$, can range from negative to positive infinity. But we often want to predict a probability—for example, the probability of being a high-cost patient, which must be between 0 and 1. To do this, we pass $z$ through a special function called the **[logistic function](@keyword=logistic_function|lang=en-US|style=Feynman)** (or inverse-logit) [@problem_id:4961216]:
 
 $$p = \frac{1}{1 + \exp(-z)}$$
 
@@ -79,13 +79,13 @@ This elegant S-shaped curve takes any value of $z$ and beautifully maps it into 
 
 Our statistical crystal ball is powerful, but it is not perfect. It can only see the data it is given, and the real world is messy. The map, as they say, is not the territory.
 
-One significant "ghost in the machine" is the concept of **coding intensity** . A diagnosis of diabetes only enters the risk adjustment model if a doctor records the corresponding ICD code on a claim. A clinic with rigorous documentation and coding practices may appear to have much sicker patients than a less administratively focused clinic, even if the true disease burden in their populations is identical. This can create a new kind of unfairness, where payments are influenced not just by patient health, but by administrative prowess.
+One significant "ghost in the machine" is the concept of **coding intensity** [@problem_id:4363782]. A diagnosis of diabetes only enters the risk adjustment model if a doctor records the corresponding ICD code on a claim. A clinic with rigorous documentation and coding practices may appear to have much sicker patients than a less administratively focused clinic, even if the true disease burden in their populations is identical. This can create a new kind of unfairness, where payments are influenced not just by patient health, but by administrative prowess.
 
 This brings us to the frontiers of risk adjustment, where the pursuit of fairness becomes even more subtle and more critical.
 
 #### Ranking vs. Reality: Discrimination and Calibration
 
-A risk model has two distinct jobs, and it can be good at one without being good at the other .
+A risk model has two distinct jobs, and it can be good at one without being good at the other [@problem_id:4402482].
 -   **Discrimination** is the model's ability to rank people correctly. Does it consistently assign higher scores to people who end up having the outcome (e.g., a hospital readmission) than to people who don't? A model with good discrimination is useful for triage—for identifying a high-risk group that needs intervention.
 -   **Calibration** is the model's ability to be right in an absolute sense. If the model predicts a 20% risk of readmission for a group of 100 patients, do about 20 of them actually get readmitted? A well-calibrated model produces probabilities that you can trust.
 
@@ -93,15 +93,15 @@ A model could have excellent discrimination (it perfectly ranks everyone from lo
 
 #### Algorithmic Bias: When the Crystal Ball is Cracked
 
-The problem of calibration becomes an urgent ethical issue when a model is well-calibrated for one population but not for another . A famous study found that a widely used risk algorithm systematically underestimated the health needs of Black patients compared to white patients with the same score. The algorithm was trained to predict cost, but because of structural inequities, Black patients at a given level of illness generated lower costs—perhaps due to barriers in accessing care. The model learned this bias from the data. The result? At the same risk score, the Black patient was sicker, but the algorithm recommended allocating fewer resources to them.
+The problem of calibration becomes an urgent ethical issue when a model is well-calibrated for one population but not for another [@problem_id:4390722]. A famous study found that a widely used risk algorithm systematically underestimated the health needs of Black patients compared to white patients with the same score. The algorithm was trained to predict cost, but because of structural inequities, Black patients at a given level of illness generated lower costs—perhaps due to barriers in accessing care. The model learned this bias from the data. The result? At the same risk score, the Black patient was sicker, but the algorithm recommended allocating fewer resources to them.
 
-This is algorithmic bias in action. The solution is not to simply stop using the algorithm ("fairness by blindness"), which often makes things worse. Instead, researchers are developing fairness-aware strategies. These include **post-hoc recalibration**, where scores for the disadvantaged group are adjusted to match their true severity, and more advanced methods that build fairness constraints directly into the model training process, forcing it to be well-calibrated for *all* groups .
+This is algorithmic bias in action. The solution is not to simply stop using the algorithm ("fairness by blindness"), which often makes things worse. Instead, researchers are developing fairness-aware strategies. These include **post-hoc recalibration**, where scores for the disadvantaged group are adjusted to match their true severity, and more advanced methods that build fairness constraints directly into the model training process, forcing it to be well-calibrated for *all* groups [@problem_id:4390722].
 
 #### A Causal Compass: What Should We Adjust For?
 
 This leads to the ultimate question: what factors *should* be included in a risk adjustment model? In particular, should we adjust for social risk factors like poverty, housing instability, or lack of transportation?
 
-This is a fierce debate, but the principles of causal inference provide a clear compass .
+This is a fierce debate, but the principles of causal inference provide a clear compass [@problem_id:4402487].
 -   We **should** adjust for factors that are **confounders**. A confounder is a pre-existing factor that influences both the outcome (e.g., readmission) and the provider being measured (e.g., which hospital a patient goes to). Since poverty affects both health and where people get care, it is a classic confounder. Not adjusting for it unfairly penalizes hospitals that serve poor communities.
 -   We **should not** adjust for factors that are **mediators**. A mediator is a step in the causal chain that lies *between* the provider's actions and the patient's outcome. For example, providing good discharge instructions or arranging transportation for follow-up visits are actions taken by the hospital to prevent readmission. These actions are part of the very quality of care we want to measure. Adjusting them away would be like grading a math test by ignoring whether the final answer was correct.
 

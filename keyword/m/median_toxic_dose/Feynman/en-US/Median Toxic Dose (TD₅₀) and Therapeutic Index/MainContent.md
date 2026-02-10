@@ -17,19 +17,19 @@ Let's picture it like this: for any given effect of a drug—be it a desired the
 
 For any one person, their response to a specific dose is deterministic: either it's above their threshold or it isn't. But if we can't see these individual thresholds, how can we possibly design a drug for a whole population? The trick is to stop looking at individuals and start looking at the crowd.
 
-Imagine a large population of people. Their individual thresholds for, say, pain relief from an analgesic, are not all the same. They are distributed across a range of values, much like the heights or weights of people in a crowd. Some are very sensitive, with low thresholds; a small dose is enough for them. Others are resistant, with high thresholds, and require a much larger dose. 
+Imagine a large population of people. Their individual thresholds for, say, pain relief from an analgesic, are not all the same. They are distributed across a range of values, much like the heights or weights of people in a crowd. Some are very sensitive, with low thresholds; a small dose is enough for them. Others are resistant, with high thresholds, and require a much larger dose. [@problem_id:4586987]
 
 ### From Individuals to Populations: The Dose-Response Curve
 
 Now, let's do an experiment. We take large groups of people and give each group a different, fixed dose of our analgesic. In the group that gets a very low dose, maybe only a few people—the most sensitive ones—will experience pain relief. As we increase the dose for subsequent groups, a larger and larger fraction of the population will find that the dose has surpassed their personal threshold.
 
-If we plot the percentage of the population that responds at each dose level, a beautiful S-shaped curve emerges. This is the **quantal [dose-response curve](@entry_id:265216)**. And here is the profound insight: this observable curve is, in fact, the **cumulative distribution function (CDF)** of the hidden, unobservable individual thresholds across the population.  
+If we plot the percentage of the population that responds at each dose level, a beautiful S-shaped curve emerges. This is the **quantal [dose-response curve](@keyword=dose_response_curve|lang=en-US|style=Feynman)**. And here is the profound insight: this observable curve is, in fact, the **cumulative distribution function (CDF)** of the hidden, unobservable individual thresholds across the population. [@problem_id:5041084] [@problem_id:4586895]
 
-The dose-response curve tells a story. It starts low, rises, and then flattens out near 100% as the dose becomes high enough to be effective for almost everyone. The most important landmark on this curve is the point right in the middle: the dose that produces the desired effect in exactly 50% of the population. This point is the **median** of the threshold distribution. This is the origin of the number "50" in the terms we are about to define. These are fundamentally **population metrics**; an individual has their own specific threshold, but the population has a median. 
+The dose-response curve tells a story. It starts low, rises, and then flattens out near 100% as the dose becomes high enough to be effective for almost everyone. The most important landmark on this curve is the point right in the middle: the dose that produces the desired effect in exactly 50% of the population. This point is the **median** of the threshold distribution. This is the origin of the number "50" in the terms we are about to define. These are fundamentally **population metrics**; an individual has their own specific threshold, but the population has a median. [@problem_id:4586987]
 
 ### The Good, the Bad, and the Ugly: ED₅₀, TD₅₀, and LD₅₀
 
-A single drug can have multiple effects, each with its own [dose-response curve](@entry_id:265216) and its own median. Pharmacologists are typically interested in three:
+A single drug can have multiple effects, each with its own [dose-response curve](@keyword=dose_response_curve|lang=en-US|style=Feynman) and its own median. Pharmacologists are typically interested in three:
 
 *   **Median Effective Dose ($ED_{50}$)**: The dose that produces the intended *therapeutic effect* in 50% of the population. This is "The Good".
 
@@ -37,23 +37,23 @@ A single drug can have multiple effects, each with its own [dose-response curve]
 
 *   **Median Lethal Dose ($LD_{50}$)**: The dose that is *lethal* to 50% of the population. This is "The Ugly".
 
-It is critically important to understand what these terms mean. The "T" in **$TD_{50}$** does not stand for just any side effect; it refers to a *predefined, clinically significant* adverse event, such as a dangerous drop in blood pressure or evidence of liver damage. 
+It is critically important to understand what these terms mean. The "T" in **$TD_{50}$** does not stand for just any side effect; it refers to a *predefined, clinically significant* adverse event, such as a dangerous drop in blood pressure or evidence of liver damage. [@problem_id:4994667]
 
-Furthermore, for obvious ethical reasons, the **$LD_{50}$** is never, ever measured in humans. It is a value determined from preclinical studies in animals. When we evaluate the safety of a drug for human use, we are primarily concerned with the relationship between the **$ED_{50}$** and the **$TD_{50}$**, where the toxicity is a non-lethal but serious adverse event. A clinical trial designed to find the lethal dose in humans would be a grotesque violation of the foundational principle of medicine: "first, do no harm" (nonmaleficence). 
+Furthermore, for obvious ethical reasons, the **$LD_{50}$** is never, ever measured in humans. It is a value determined from preclinical studies in animals. When we evaluate the safety of a drug for human use, we are primarily concerned with the relationship between the **$ED_{50}$** and the **$TD_{50}$**, where the toxicity is a non-lethal but serious adverse event. A clinical trial designed to find the lethal dose in humans would be a grotesque violation of the foundational principle of medicine: "first, do no harm" (nonmaleficence). [@problem_id:4599141]
 
 ### A First Look at Safety: The Therapeutic Index
 
 So, we have a dose for the good effect ($ED_{50}$) and a dose for the bad effect ($TD_{50}$). How can we combine them into a single number that gives us a quick measure of the drug's safety? The simplest way is to take their ratio. This ratio is called the **Therapeutic Index (TI)**.
 
-For clinical purposes in humans, the [therapeutic index](@entry_id:166141) is defined as:
+For clinical purposes in humans, the [therapeutic index](@keyword=therapeutic_index|lang=en-US|style=Feynman) is defined as:
 
 $$
 \mathrm{TI} = \frac{\mathrm{TD}_{50}}{\mathrm{ED}_{50}}
 $$
 
-In preclinical animal toxicology, the classic definition uses the lethal dose: $\mathrm{TI} = \mathrm{LD}_{50} / \mathrm{ED}_{50}$. It's crucial not to mix these up. A valid TI must compare apples to apples: the numerator and denominator must be measured in the same population (e.g., humans or a specific animal species) and under the same experimental conditions. 
+In preclinical animal toxicology, the classic definition uses the lethal dose: $\mathrm{TI} = \mathrm{LD}_{50} / \mathrm{ED}_{50}$. It's crucial not to mix these up. A valid TI must compare apples to apples: the numerator and denominator must be measured in the same population (e.g., humans or a specific animal species) and under the same experimental conditions. [@problem_id:4599145]
 
-The TI gives us a first guess at the safety margin. If a drug's $ED_{50}$ is $5 \mathrm{mg}$ and its $TD_{50}$ is $300 \mathrm{mg}$, its TI is $60$. If another drug has an $ED_{50}$ of $2.5 \mathrm{mg}$ and a $TD_{50}$ of $100 \mathrm{mg}$, its TI is $40$. The first drug, with the higher TI of $60$, is generally considered safer; there is a wider separation between the dose that helps half the people and the dose that harms half the people. 
+The TI gives us a first guess at the safety margin. If a drug's $ED_{50}$ is $5 \mathrm{mg}$ and its $TD_{50}$ is $300 \mathrm{mg}$, its TI is $60$. If another drug has an $ED_{50}$ of $2.5 \mathrm{mg}$ and a $TD_{50}$ of $100 \mathrm{mg}$, its TI is $40$. The first drug, with the higher TI of $60$, is generally considered safer; there is a wider separation between the dose that helps half the people and the dose that harms half the people. [@problem_id:2051731]
 
 ### Beyond the Average: Why the TI Can Be Misleading
 
@@ -71,7 +71,7 @@ $$
 
 This ratio asks a much smarter question: "How does the dose that is toxic to the most sensitive 1% of the population ($TD_{1}$) compare to the dose required to be effective for the most resistant 99% of the population ($ED_{99}$)?"
 
-If the MOS is greater than 1, we can breathe a sigh of relief. It means there is a gap between the top of the efficacy curve and the bottom of the toxicity curve. We can find a dose that helps nearly everyone without harming the most vulnerable. But if the MOS is less than 1, it's a major red flag. It means the curves overlap. At any dose high enough to be effective for the vast majority, you are *guaranteed* to be causing toxic effects in a fraction of your patients.  Remarkably, a drug can have a "good" TI of, say, 5, but a "bad" MOS of less than 1 if the variability ($\sigma$) in the population is large enough. This demonstrates beautifully that in pharmacology, the spread of the data is just as important as its center. 
+If the MOS is greater than 1, we can breathe a sigh of relief. It means there is a gap between the top of the efficacy curve and the bottom of the toxicity curve. We can find a dose that helps nearly everyone without harming the most vulnerable. But if the MOS is less than 1, it's a major red flag. It means the curves overlap. At any dose high enough to be effective for the vast majority, you are *guaranteed* to be causing toxic effects in a fraction of your patients. [@problem_id:4995609] Remarkably, a drug can have a "good" TI of, say, 5, but a "bad" MOS of less than 1 if the variability ($\sigma$) in the population is large enough. This demonstrates beautifully that in pharmacology, the spread of the data is just as important as its center. [@problem_id:4814506]
 
 ### From Doses to Dials: The Therapeutic Window
 
@@ -82,6 +82,6 @@ This leads to a critical distinction:
 *   The **Therapeutic Index** is a dimensionless ratio of *doses* derived from population studies.
 *   The **Therapeutic Window** (or Therapeutic Range) is a range of *concentrations*—from the **Minimum Effective Concentration (MEC)** to the **Minimum Toxic Concentration (MTC)**.
 
-The Therapeutic Index is an intrinsic property of the drug's interaction with a population. It doesn't change from person to person. However, the relationship between the dose you take and the concentration in your blood is highly individual. It depends on your personal **pharmacokinetics**: how quickly you absorb, distribute, metabolize, and excrete the drug. A change in your kidney or liver function can dramatically alter your drug concentration, even if the dose remains the same. This does not change the drug's TI, but it can certainly push you out of the safe therapeutic window. 
+The Therapeutic Index is an intrinsic property of the drug's interaction with a population. It doesn't change from person to person. However, the relationship between the dose you take and the concentration in your blood is highly individual. It depends on your personal **pharmacokinetics**: how quickly you absorb, distribute, metabolize, and excrete the drug. A change in your kidney or liver function can dramatically alter your drug concentration, even if the dose remains the same. This does not change the drug's TI, but it can certainly push you out of the safe therapeutic window. [@problem_id:4994605]
 
-This is why, for many drugs with high variability and narrow safety margins (like certain anticoagulants, anti-epileptics, or antibiotics), doctors don't just rely on standard doses. They practice **Therapeutic Drug Monitoring (TDM)**. They physically measure the drug's concentration in a patient's blood and adjust the dose—turning the dial, so to speak—to keep that concentration safely inside the therapeutic window. This is the pinnacle of the journey: moving from population averages to a truly individualized approach, using the principles of pharmacodynamics to guide the care of a single, unique patient. 
+This is why, for many drugs with high variability and narrow safety margins (like certain anticoagulants, anti-epileptics, or antibiotics), doctors don't just rely on standard doses. They practice **Therapeutic Drug Monitoring (TDM)**. They physically measure the drug's concentration in a patient's blood and adjust the dose—turning the dial, so to speak—to keep that concentration safely inside the therapeutic window. This is the pinnacle of the journey: moving from population averages to a truly individualized approach, using the principles of pharmacodynamics to guide the care of a single, unique patient. [@problem_id:4814506]

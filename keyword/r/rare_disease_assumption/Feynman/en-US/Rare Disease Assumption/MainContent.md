@@ -47,7 +47,7 @@ $$ OR - RR \approx R_0 \times RR \times (RR-1) $$
 
 This elegant formula reveals the two main factors that degrade the approximation. The error gets larger when:
 1.  The baseline risk, $R_0$, is not so small. If the disease is common, the assumption fails.
-2.  The [effect size](@entry_id:177181), $RR$, is very large.
+2.  The [effect size](@keyword=effect_size|lang=en-US|style=Feynman), $RR$, is very large.
 
 For a common condition like high blood pressure, which might affect 30% of the unexposed population ($R_0 = 0.3$), an exposure that doubles the risk ($RR=2$, so $R_1 = 0.6$) would produce an Odds Ratio of $3.5$. An OR of 3.5 is nowhere near an RR of 2. In this situation, the OR dramatically exaggerates the magnitude of the association compared to the more intuitive RR. The rare disease assumption is not a law; it is a tool with a specific and limited range of application.
 
@@ -69,4 +69,4 @@ Another challenge arises with **clustered data**, for example, when studying pat
 
 Finally, our measurements are never perfect. People may misreport their past exposures, leading to **exposure misclassification**. This kind of information bias tends to dilute the true association, biasing the observed odds ratio towards the null value of 1. This bias interacts with the rare disease approximation in complex ways, further muddying the waters.
 
-The journey of the rare disease assumption, from a simple puzzle to a powerful tool and finally to a nuanced concept with clear boundaries, reveals the very nature of [scientific inference](@entry_id:155119). It is a beautiful example of how a simple mathematical insight can unlock knowledge that would otherwise be hidden from us, but it also serves as a critical reminder that all our models and assumptions must be held up to the bright, unforgiving light of scrutiny.
+The journey of the rare disease assumption, from a simple puzzle to a powerful tool and finally to a nuanced concept with clear boundaries, reveals the very nature of [scientific inference](@keyword=scientific_inference|lang=en-US|style=Feynman). It is a beautiful example of how a simple mathematical insight can unlock knowledge that would otherwise be hidden from us, but it also serves as a critical reminder that all our models and assumptions must be held up to the bright, unforgiving light of scrutiny.

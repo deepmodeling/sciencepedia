@@ -29,13 +29,13 @@ $$
 \text{Rate} = \text{Rate}_{\text{baseline}} \times \text{Factor}_1 \times \text{Factor}_2 \times \dots
 $$
 
-While intuitive, this multiplicative world is mathematically cumbersome to work with. How can we build a model where things combine so nicely? Here, an old friend comes to our rescue: the **logarithm**. The magic of the logarithm is its ability to transform multiplication into addition. If we take the natural logarithm of both sides of our [rate equation](@entry_id:203049), we get:
+While intuitive, this multiplicative world is mathematically cumbersome to work with. How can we build a model where things combine so nicely? Here, an old friend comes to our rescue: the **logarithm**. The magic of the logarithm is its ability to transform multiplication into addition. If we take the natural logarithm of both sides of our [rate equation](@keyword=rate_equation|lang=en-US|style=Feynman), we get:
 
 $$
 \ln(\text{Rate}) = \ln(\text{Rate}_{\text{baseline}}) + \ln(\text{Factor}_1) + \ln(\text{Factor}_2) + \dots
 $$
 
-Suddenly, our complicated multiplicative relationship has become a beautifully simple **additive** one. This is the profound insight at the heart of our topic. By working on the **log-rate scale**, we can use the powerful and familiar tools of [linear models](@entry_id:178302), where effects simply add up. This is not just a mathematical convenience; it often reflects a more natural description of how risks compound.
+Suddenly, our complicated multiplicative relationship has become a beautifully simple **additive** one. This is the profound insight at the heart of our topic. By working on the **log-rate scale**, we can use the powerful and familiar tools of [linear models](@keyword=linear_models|lang=en-US|style=Feynman), where effects simply add up. This is not just a mathematical convenience; it often reflects a more natural description of how risks compound.
 
 ### The Statistician's Engine: Modeling Counts with the Offset
 
@@ -71,7 +71,7 @@ $$
 \log(\mathbb{E}[Y_i]) = \beta_0 + \beta_1 X_{i1} + \dots + \log(T_i)
 $$
 
-Look carefully at this equation. We are modeling the log of the *expected count*. The covariates $X_i$ are there, with their coefficients $\beta$ that we want to discover. But there is also the term $\log(T_i)$. This is not just another variable. Its coefficient is not estimated from the data; it is fixed at exactly 1. In statistical modeling, such a term is called an **offset**. The offset is the critical gear in our machine that accounts for varying exposure times. It ensures that we are, in fact, modeling the rate, by building the proportionality between [expected counts](@entry_id:162854) and exposure time directly into the structure of the model.
+Look carefully at this equation. We are modeling the log of the *expected count*. The covariates $X_i$ are there, with their coefficients $\beta$ that we want to discover. But there is also the term $\log(T_i)$. This is not just another variable. Its coefficient is not estimated from the data; it is fixed at exactly 1. In statistical modeling, such a term is called an **offset**. The offset is the critical gear in our machine that accounts for varying exposure times. It ensures that we are, in fact, modeling the rate, by building the proportionality between [expected counts](@keyword=expected_counts|lang=en-US|style=Feynman) and exposure time directly into the structure of the model.
 
 ### Reading the Dials: How to Interpret Your Model's Output
 
@@ -95,7 +95,7 @@ So, $\beta_1$ is a **log-rate-ratio**. To get back to the intuitive multiplicati
 
 A truly great scientific idea is not just clever; it is also robust. It works even when the world is a little messier than our idealized assumptions. The log-rate modeling framework exhibits a surprising and beautiful resilience.
 
-What if our counts are more scattered than a simple Poisson process would suggest? This common situation is called **[overdispersion](@entry_id:263748)**. We might observe more variability in the data than the model's `variance = mean` assumption allows. We can switch to a more flexible engine, like a **Negative Binomial** or **quasi-Poisson** model, which allows the variance to be larger than the mean. The amazing thing is that these alternative models can be specified to change only the *variance* assumption while keeping the *mean structure*—the log link and the offset—exactly the same. Because the interpretation of the coefficients $\beta$ depends only on the mean structure, their meaning as log-rate ratios **remains perfectly intact**. We get more honest uncertainty estimates (wider [confidence intervals](@entry_id:142297)), but our understanding of what the risk factors *do* to the rate is preserved.
+What if our counts are more scattered than a simple Poisson process would suggest? This common situation is called **[overdispersion](@keyword=overdispersion|lang=en-US|style=Feynman)**. We might observe more variability in the data than the model's `variance = mean` assumption allows. We can switch to a more flexible engine, like a **Negative Binomial** or **quasi-Poisson** model, which allows the variance to be larger than the mean. The amazing thing is that these alternative models can be specified to change only the *variance* assumption while keeping the *mean structure*—the log link and the offset—exactly the same. Because the interpretation of the coefficients $\beta$ depends only on the mean structure, their meaning as log-rate ratios **remains perfectly intact**. We get more honest uncertainty estimates (wider [confidence intervals](@keyword=confidence_intervals|lang=en-US|style=Feynman)), but our understanding of what the risk factors *do* to the rate is preserved.
 
 This principle of separating the mean from the variance extends to even more complex scenarios. What if our data is clustered, like patients within different hospitals? We can build a **mixed-effects model (GLMM)** that includes a random effect for each hospital, allowing some hospitals to be inherently better or worse than others. Even here, the logic holds: we still include $\log(T_{ij})$ as an offset in the model to correctly handle exposure time, and our $\beta$ coefficients still represent log-rate ratios, now interpreted as the effect within a typical hospital.
 

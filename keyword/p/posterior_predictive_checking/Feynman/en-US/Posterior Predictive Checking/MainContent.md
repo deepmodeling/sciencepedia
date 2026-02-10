@@ -11,7 +11,7 @@ This is the very soul of **posterior predictive checking** (PPC). It's a powerfu
 
 Every statistical model is a hypothesis about a data-generating process. A simple model for a clinical trial might tell a story where every patient has the exact same probability of being cured. A more complex model for viral dynamics might tell a story of exponential growth followed by immune-system-driven decay.
 
-After we show the model our real-world data, $y$, it learns. Its initial beliefs about its parameters (the "rules of the story"), encoded in a **prior distribution** $p(\theta)$, are updated through the magic of Bayes' theorem. The result is the **posterior distribution**, $p(\theta \mid y)$. This new distribution doesn't give us one single "true" set of rules; instead, it gives us a plausible range of rules and tells us how much belief we should place in each one, given the evidence. 
+After we show the model our real-world data, $y$, it learns. Its initial beliefs about its parameters (the "rules of the story"), encoded in a **prior distribution** $p(\theta)$, are updated through the magic of Bayes' theorem. The result is the **posterior distribution**, $p(\theta \mid y)$. This new distribution doesn't give us one single "true" set of rules; instead, it gives us a plausible range of rules and tells us how much belief we should place in each one, given the evidence. [@problem_id:4979322]
 
 Now comes the cross-examination. We say to our model: "Alright, you've seen the evidence. Now, using what you've learned, tell me some new stories. Generate some new, hypothetical datasets." We call this **replicated data**, denoted $\tilde{y}$. If the model is a good storyteller, these new, replicated stories should look, in their essential features, like the real story it was shown.
 
@@ -23,13 +23,13 @@ How does the model generate these new stories? It doesn't just pick its favorite
 
 2.  Second, using this specific set of rules $\theta^{(s)}$, generate a new, replicated dataset $\tilde{y}^{(s)}$ from the likelihood, $p(y \mid \theta^{(s)})$. This is the model telling a complete story based on that one imagined reality.
 
-By repeating this dance thousands of times, we collect an entire ensemble of replicated datasets, $\{\tilde{y}^{(1)}, \tilde{y}^{(2)}, \dots, \tilde{y}^{(M)}\}$. This collection is a tangible representation of the **[posterior predictive distribution](@entry_id:167931)**, which is formally defined by averaging over all the uncertainty in the parameters:
+By repeating this dance thousands of times, we collect an entire ensemble of replicated datasets, $\{\tilde{y}^{(1)}, \tilde{y}^{(2)}, \dots, \tilde{y}^{(M)}\}$. This collection is a tangible representation of the **[posterior predictive distribution](@keyword=posterior_predictive_distribution|lang=en-US|style=Feynman)**, which is formally defined by averaging over all the uncertainty in the parameters:
 
 $$
 p(\tilde{y} \mid y) = \int p(\tilde{y} \mid \theta) p(\theta \mid y) d\theta
 $$
 
-This integral is the mathematical embodiment of our cross-examination strategy. It represents the universe of stories the model believes are possible, now that it has been informed by reality. 
+This integral is the mathematical embodiment of our cross-examination strategy. It represents the universe of stories the model believes are possible, now that it has been informed by reality. [@problem_id:3865168]
 
 ### The Confrontation: Designing a Magnifying Glass
 
@@ -37,19 +37,19 @@ We now have our one real dataset, $y$, and thousands of replicated datasets, $\t
 
 The power of PPC lies in its boundless flexibility; *you*, the scientist, get to design the magnifying glass. What you choose to look at depends entirely on the scientific question at hand.
 
-*   **Concerned about floods?** You don't just care about average rainfall. You care about the most extreme downpours. So, you might define your discrepancy as the maximum value in the dataset, $T(y) = \max(y_i)$. Your question to the model becomes: "Can you generate extreme events as dramatic as the ones I've actually seen?" 
+*   **Concerned about floods?** You don't just care about average rainfall. You care about the most extreme downpours. So, you might define your discrepancy as the maximum value in the dataset, $T(y) = \max(y_i)$. Your question to the model becomes: "Can you generate extreme events as dramatic as the ones I've actually seen?" [@problem_id:3865168]
 
-*   **Developing a new drug?** The average effect is important, but so is the timing. You might care about the peak concentration of the drug in the blood, $C_{\max}$, and the time it takes to reach it, $T_{\max}$. You can design a discrepancy statistic that specifically measures how well the model predicts this peak timing and magnitude.  
+*   **Developing a new drug?** The average effect is important, but so is the timing. You might care about the peak concentration of the drug in the blood, $C_{\max}$, and the time it takes to reach it, $T_{\max}$. You can design a discrepancy statistic that specifically measures how well the model predicts this peak timing and magnitude. [@problem_id:5260992] [@problem_id:4567689]
 
-*   **Running a multi-center clinical trial?** A simple model might assume the cure rate is the same everywhere. But what if it's not? You can check for this by defining your discrepancy as the variance of cure rates across the different centers, $T(y) = \text{Var}(\hat{p}_j)$. If the observed variance is much larger than what the model typically simulates, you've found a critical flaw: your model is ignoring real-world heterogeneity. 
+*   **Running a multi-center clinical trial?** A simple model might assume the cure rate is the same everywhere. But what if it's not? You can check for this by defining your discrepancy as the variance of cure rates across the different centers, $T(y) = \text{Var}(\hat{p}_j)$. If the observed variance is much larger than what the model typically simulates, you've found a critical flaw: your model is ignoring real-world heterogeneity. [@problem_id:4780672]
 
-*   **Tracking a satellite?** Your model for its position should leave behind only random "white" noise. If there are patterns left in the errors (the residuals), your model is missing something about the physics. You can define a discrepancy statistic to be the autocorrelation of the residuals to check for this hidden structure. 
+*   **Tracking a satellite?** Your model for its position should leave behind only random "white" noise. If there are patterns left in the errors (the residuals), your model is missing something about the physics. You can define a discrepancy statistic to be the autocorrelation of the residuals to check for this hidden structure. [@problem_id:2885056]
 
 ### The Verdict: A Measure of Surprise
 
 Once we've chosen our magnifying glass, $T(y)$, the final step is simple. We calculate its value for our real data, $T(y_{obs})$. Then, we calculate it for every one of our thousands of replicated datasets, creating a distribution of $T(\tilde{y}^{(s)})$.
 
-We can visualize this as a [histogram](@entry_id:178776). Now, we ask: where does our observed value, $T(y_{obs})$, fall on this histogram?
+We can visualize this as a [histogram](@keyword=histogram|lang=en-US|style=Feynman). Now, we ask: where does our observed value, $T(y_{obs})$, fall on this histogram?
 
 If it lands right in the middle of the pile, we breathe a sigh of relief. It means that, with respect to this specific feature, the observed data looks like a typical dataset generated by our model.
 
@@ -61,13 +61,13 @@ $$
 
 A $p_{ppc}$ value near $0.5$ means the observed data is perfectly typical. A value near $0$ or $1$ means the observed data is very strange from the model's point of view, signaling a systematic misfit.
 
-It's crucial to understand that this is *not* the same as a p-value from classical, [frequentist statistics](@entry_id:175639). A posterior predictive p-value is not about "rejecting a null hypothesis" with some error rate. It is a measure of *self-consistency*. This is because the data $y$ is used twice: once to fit the model (to create the posterior $p(\theta \mid y)$) and a second time to be checked ($T(y)$). This "double use of data" means the model is being tested against evidence it has already seen. As a result, the check is inherently conservative—it's harder for the model to be surprised. This is a feature, not a bug, and it means the $p_{ppc}$ should be interpreted as a purely Bayesian measure of surprise, not a frequentist error rate.  
+It's crucial to understand that this is *not* the same as a p-value from classical, [frequentist statistics](@keyword=frequentist_statistics|lang=en-US|style=Feynman). A posterior predictive p-value is not about "rejecting a null hypothesis" with some error rate. It is a measure of *self-consistency*. This is because the data $y$ is used twice: once to fit the model (to create the posterior $p(\theta \mid y)$) and a second time to be checked ($T(y)$). This "double use of data" means the model is being tested against evidence it has already seen. As a result, the check is inherently conservative—it's harder for the model to be surprised. This is a feature, not a bug, and it means the $p_{ppc}$ should be interpreted as a purely Bayesian measure of surprise, not a frequentist error rate. [@problem_id:3517270] [@problem_id:4567689]
 
 ### Checks and Balances in the Scientific Process
 
-Posterior predictive checking is part of a larger philosophy of iterative model building. It is a dialogue between the scientist and their model. A "failed" check (a $p_{ppc}$ near 0 or 1) is not a tragedy; it's a discovery! It points you directly to *how* your model is failing, guiding you on how to improve it. Perhaps you need a hierarchical structure to account for variation , or a more flexible term to capture dynamics .
+Posterior predictive checking is part of a larger philosophy of iterative model building. It is a dialogue between the scientist and their model. A "failed" check (a $p_{ppc}$ near 0 or 1) is not a tragedy; it's a discovery! It points you directly to *how* your model is failing, guiding you on how to improve it. Perhaps you need a hierarchical structure to account for variation [@problem_id:4780672], or a more flexible term to capture dynamics [@problem_id:2885056].
 
-This dialogue can even begin before we see any data. Using **prior predictive checks**, we can simulate data from our prior distributions to see if our initial assumptions are even remotely sensible. If our model, before seeing any data, generates absurdities like negative rainfall or people with negative height, we know we have a problem with our priors from the very beginning. 
+This dialogue can even begin before we see any data. Using **prior predictive checks**, we can simulate data from our prior distributions to see if our initial assumptions are even remotely sensible. If our model, before seeing any data, generates absurdities like negative rainfall or people with negative height, we know we have a problem with our priors from the very beginning. [@problem_id:3921447]
 
 This creates a beautiful, cyclical workflow:
 1.  Formulate a model with priors reflecting your domain knowledge.

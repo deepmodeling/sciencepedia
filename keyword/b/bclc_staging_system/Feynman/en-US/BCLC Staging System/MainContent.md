@@ -1,7 +1,7 @@
 ## Introduction
 Managing hepatocellular carcinoma (HCC), the most common form of liver cancer, presents a unique and profound challenge. Unlike many other malignancies where the fight is solely against the tumor, HCC involves a dual conflict: one against the cancer itself, and another against the chronically diseased liver—often cirrhotic—in which it grows. This duality renders traditional, anatomy-focused staging systems like TNM inadequate, as they fail to account for the patient's ability to tolerate treatment. A successful strategy requires a framework that assesses both the tumor's aggression and the liver's fragility.
 
-This article explores the Barcelona Clinic Liver Cancer (BCLC) staging system, a comprehensive model designed not just to classify HCC, but to guide clinical decision-making. By integrating tumor characteristics, [liver function](@entry_id:163106), and patient wellness, the BCLC system provides a powerful, evidence-based roadmap for treatment. The following chapters will delve into the core "Principles and Mechanisms" of this system, explaining how it stratifies patients into distinct stages with corresponding therapeutic pathways. We will then explore its real-world "Applications and Interdisciplinary Connections," illustrating how this framework is used by multidisciplinary teams to navigate complex clinical scenarios and personalize care.
+This article explores the Barcelona Clinic Liver Cancer (BCLC) staging system, a comprehensive model designed not just to classify HCC, but to guide clinical decision-making. By integrating tumor characteristics, [liver function](@keyword=liver_function|lang=en-US|style=Feynman), and patient wellness, the BCLC system provides a powerful, evidence-based roadmap for treatment. The following chapters will delve into the core "Principles and Mechanisms" of this system, explaining how it stratifies patients into distinct stages with corresponding therapeutic pathways. We will then explore its real-world "Applications and Interdisciplinary Connections," illustrating how this framework is used by multidisciplinary teams to navigate complex clinical scenarios and personalize care.
 
 ## Principles and Mechanisms
 
@@ -11,7 +11,7 @@ But hepatocellular carcinoma (HCC)—the most common type of liver cancer—pres
 
 ### The Tyranny of a Failing Liver
 
-Let’s imagine a thought experiment to see why this matters so deeply. Consider two patients, both with an identical, 4-centimeter HCC found on their CT scans. According to the purely anatomical TNM system, they have the same stage disease . The logical next step might seem to be the same treatment for both: surgical removal of the tumor.
+Let’s imagine a thought experiment to see why this matters so deeply. Consider two patients, both with an identical, 4-centimeter HCC found on their CT scans. According to the purely anatomical TNM system, they have the same stage disease [@problem_id:4628841]. The logical next step might seem to be the same treatment for both: surgical removal of the tumor.
 
 Now for the twist. Patient A has a healthy, robust liver. Patient B, however, has advanced cirrhosis. Their liver—the body’s master chemical plant, blood filter, and protein factory—is already struggling to keep up. It can’t clear toxins properly, can’t produce enough albumin to manage fluids, and can’t make the factors needed for blood to clot normally.
 
@@ -21,11 +21,11 @@ This dilemma reveals the central limitation of a one-dimensional, anatomy-only a
 
 ### The Three Pillars of Wisdom: The BCLC System
 
-This is the beauty and the genius of the **Barcelona Clinic Liver Cancer (BCLC) staging system**. It was designed not just to classify, but to guide. It creates a holistic portrait of the patient's situation by standing on three pillars  :
+This is the beauty and the genius of the **Barcelona Clinic Liver Cancer (BCLC) staging system**. It was designed not just to classify, but to guide. It creates a holistic portrait of the patient's situation by standing on three pillars [@problem_id:5131038] [@problem_id:5195549]:
 
 1.  **Tumor Status:** This looks at the tumor's characteristics—how many are there, how large are they, and have they invaded the liver's blood vessels?
 
-2.  **Liver Functional Reserve:** This is the crucial addition. The BCLC system formally assesses the liver's health using the **Child-Pugh score**. Think of this as a doctor's report card for the liver, grading it from A (well-compensated) to C (decompensated, or failing). It scores five simple but vital signs: levels of the waste product **bilirubin** (jaundice), the protein **albumin**, the blood’s **clotting time (INR)**, and the presence of fluid retention in the belly (**ascites**) or mental confusion from toxin buildup (**encephalopathy**) .
+2.  **Liver Functional Reserve:** This is the crucial addition. The BCLC system formally assesses the liver's health using the **Child-Pugh score**. Think of this as a doctor's report card for the liver, grading it from A (well-compensated) to C (decompensated, or failing). It scores five simple but vital signs: levels of the waste product **bilirubin** (jaundice), the protein **albumin**, the blood’s **clotting time (INR)**, and the presence of fluid retention in the belly (**ascites**) or mental confusion from toxin buildup (**encephalopathy**) [@problem_id:4810269].
 
 3.  **Performance Status:** Lastly, how is the patient's overall health? The **Eastern Cooperative Oncology Group (ECOG) performance status** is a simple scale, from $0$ (fully active) to $4$ (bedridden), that captures the cancer’s impact on the patient’s daily life.
 
@@ -39,10 +39,10 @@ Following the BCLC pathway is like embarking on a decision-making journey, where
 
 This is where we find patients with the best prognosis: a very early (Stage $0$) or early (Stage $A$) tumor, a well-functioning liver (**Child-Pugh A**), and excellent performance status (**ECOG 0**). The goal here is ambitious: a cure.
 
-But even here, the "Territory" dictates the tactics. The key question is whether the patient has **clinically significant portal hypertension (CSPH)**. This is a state of high back-pressure in the liver's plumbing, a direct consequence of the scarring in cirrhosis. We don't always need to measure this pressure directly; we can see its effects. The presence of swollen, fragile veins in the esophagus, known as **esophageal varices**, is a tell-tale sign of CSPH .
+But even here, the "Territory" dictates the tactics. The key question is whether the patient has **clinically significant portal hypertension (CSPH)**. This is a state of high back-pressure in the liver's plumbing, a direct consequence of the scarring in cirrhosis. We don't always need to measure this pressure directly; we can see its effects. The presence of swollen, fragile veins in the esophagus, known as **esophageal varices**, is a tell-tale sign of CSPH [@problem_id:5131312].
 
--   **If there is no CSPH**, the liver is resilient enough to withstand surgery. The best option is **resection**—to cut the tumor out .
--   **If CSPH is present**, a major resection is too risky. The increased blood flow to the smaller liver remnant would dangerously spike the already-high portal pressure, leading to liver failure. So, we must choose a different curative path. **Percutaneous [ablation](@entry_id:153309)**, where a needle is used to burn or freeze the tumor, is an excellent choice. The ultimate solution, however, is a **liver transplant**. This single, elegant procedure removes the tumor *and* the diseased liver, curing both the cancer and the underlying cirrhosis .
+-   **If there is no CSPH**, the liver is resilient enough to withstand surgery. The best option is **resection**—to cut the tumor out [@problem_id:4380799].
+-   **If CSPH is present**, a major resection is too risky. The increased blood flow to the smaller liver remnant would dangerously spike the already-high portal pressure, leading to liver failure. So, we must choose a different curative path. **Percutaneous [ablation](@keyword=ablation|lang=en-US|style=Feynman)**, where a needle is used to burn or freeze the tumor, is an excellent choice. The ultimate solution, however, is a **liver transplant**. This single, elegant procedure removes the tumor *and* the diseased liver, curing both the cancer and the underlying cirrhosis [@problem_id:4810269].
 
 #### Stage B: Holding the Line
 
@@ -54,9 +54,9 @@ Here, the strategy shifts from eradication to containment. The standard treatmen
 
 A patient enters the advanced stage, **BCLC Stage C**, when one of two things happens: the cancer becomes symptomatic and affects their well-being (**ECOG 1-2**), or—more dramatically—it achieves **macrovascular invasion**. This means the tumor is no longer just a lump in the liver; it has broken into the liver's major blood vessels, most often the portal vein.
 
-This **portal vein tumor thrombus (PVTT)** is not just a passive blood clot. It is living, growing tumor tissue, teeming with its own chaotic blood supply, and directly visible on advanced imaging . Its presence is a game-changer. The cancer now has a highway to spread throughout the liver. Local treatments like TACE are no longer sufficient.
+This **portal vein tumor thrombus (PVTT)** is not just a passive blood clot. It is living, growing tumor tissue, teeming with its own chaotic blood supply, and directly visible on advanced imaging [@problem_id:5131243]. Its presence is a game-changer. The cancer now has a highway to spread throughout the liver. Local treatments like TACE are no longer sufficient.
 
-The disease has become a systemic problem, so the treatment must be **systemic therapy** . These are powerful drugs—either targeted therapies or immunotherapies—that circulate through the entire body, fighting the cancer wherever it may be. While this stage is not typically curable, these therapies can significantly extend and improve a patient's life. Yet, even here, nuances exist. In very select cases with limited, segmental vascular invasion and excellent [liver function](@entry_id:163106), a highly specialized surgeon might still consider resection, reminding us that these are guidelines, not dogma .
+The disease has become a systemic problem, so the treatment must be **systemic therapy** [@problem_id:4628885]. These are powerful drugs—either targeted therapies or immunotherapies—that circulate through the entire body, fighting the cancer wherever it may be. While this stage is not typically curable, these therapies can significantly extend and improve a patient's life. Yet, even here, nuances exist. In very select cases with limited, segmental vascular invasion and excellent [liver function](@keyword=liver_function|lang=en-US|style=Feynman), a highly specialized surgeon might still consider resection, reminding us that these are guidelines, not dogma [@problem_id:5131052].
 
 #### Stage D: A Focus on Comfort
 

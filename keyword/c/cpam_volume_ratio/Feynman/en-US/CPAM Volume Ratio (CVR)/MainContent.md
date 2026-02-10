@@ -13,7 +13,7 @@ The volume of a perfect ellipsoid is given by a beautiful geometric formula: $V 
 
 $$V = \frac{4}{3}\pi \left(\frac{L}{2}\right) \left(\frac{W}{2}\right) \left(\frac{H}{2}\right) = \frac{4\pi}{24} LWH = \left(\frac{\pi}{6}\right) LWH$$
 
-Suddenly, a "magic number" appears! The constant $\frac{\pi}{6}$ is approximately $0.5236$. For practical clinical use, this is rounded to $0.52$. This isn't a fudge factor or an empirical guess; it is a direct consequence of assuming the lesion is an ellipsoid. It is pure geometry, connecting a simple model to our measurements  . So, our estimated volume for the CPAM is:
+Suddenly, a "magic number" appears! The constant $\frac{\pi}{6}$ is approximately $0.5236$. For practical clinical use, this is rounded to $0.52$. This isn't a fudge factor or an empirical guess; it is a direct consequence of assuming the lesion is an ellipsoid. It is pure geometry, connecting a simple model to our measurements [@problem_id:5126482] [@problem_id:5126532]. So, our estimated volume for the CPAM is:
 
 $$V_{\text{CPAM}} \approx 0.52 \times L \times W \times H$$
 
@@ -33,13 +33,13 @@ The most critical structures it pushes on are the large, flexible veins—the su
 
 What happens when you dam a river? The water backs up. Similarly, the obstruction of venous return causes a massive backup of pressure throughout the fetal venous system. This rise in **central venous pressure** has a devastating consequence. Following the fundamental laws of fluid dynamics (specifically, Starling's principle), the high hydrostatic pressure inside the blood vessels forces fluid to leak out into the surrounding tissues all over the body.
 
-This systemic fluid accumulation is a catastrophic condition known as **hydrops fetalis**. The fetus develops skin edema, fluid in the abdomen (ascites), and fluid around the lungs and heart. It is the physical manifestation of total cardiovascular collapse, all stemming from that initial mechanical squeeze in the chest .
+This systemic fluid accumulation is a catastrophic condition known as **hydrops fetalis**. The fetus develops skin edema, fluid in the abdomen (ascites), and fluid around the lungs and heart. It is the physical manifestation of total cardiovascular collapse, all stemming from that initial mechanical squeeze in the chest [@problem_id:5123319].
 
-Through careful observation of thousands of cases, clinicians discovered a critical threshold. When the CVR climbs above **1.6**, the risk of this dangerous cascade leading to hydrops increases dramatically . This number is not arbitrary; it represents a tipping point where the mechanical compression becomes physiologically intolerable. The CVR, born of simple geometry, has become a powerful predictor of life-threatening physics.
+Through careful observation of thousands of cases, clinicians discovered a critical threshold. When the CVR climbs above **1.6**, the risk of this dangerous cascade leading to hydrops increases dramatically [@problem_id:5126482]. This number is not arbitrary; it represents a tipping point where the mechanical compression becomes physiologically intolerable. The CVR, born of simple geometry, has become a powerful predictor of life-threatening physics.
 
 ### A Legacy of Flawed Architecture: The Postnatal Picture
 
-The story of the CPAM doesn't end at birth, and its danger isn't solely about its size. The malformation itself is a piece of flawed biological architecture. The problem lies in how it's built. A CPAM is composed of abnormal cystic airways that are a poor imitation of healthy lung tissue. This flawed design has profound consequences once the baby takes its first breath .
+The story of the CPAM doesn't end at birth, and its danger isn't solely about its size. The malformation itself is a piece of flawed biological architecture. The problem lies in how it's built. A CPAM is composed of abnormal cystic airways that are a poor imitation of healthy lung tissue. This flawed design has profound consequences once the baby takes its first breath [@problem_id:5126539].
 
 Let's look at the physics of breathing in these malformed units. Two key properties govern how easily a lung unit fills and empties: **resistance** and **compliance**.
 
@@ -49,8 +49,8 @@ Second, the cystic tissue itself is often more "floppy" and less elastic than no
 
 Now, let’s put these together. The speed at which a lung unit can empty is determined by its **time constant**, a value you get by multiplying its resistance by its compliance ($\tau = R \times C$). A normal lung unit has a short time constant, allowing it to empty quickly and efficiently. The CPAM, with its dramatically high resistance and high compliance, has an extremely long time constant. During the normal rhythm of breathing, the baby exhales, but there simply isn't enough time for the high-resistance, floppy CPAM to empty. With each breath, more air gets trapped inside. This phenomenon is called **air trapping**.
 
-This trapped, stagnant air creates a perfect storm for two other problems. First, it leads to a **ventilation-perfusion (V/Q) mismatch**. Blood vessels continue to flow around these cysts (preserved perfusion, $\dot{Q}$), ready to pick up oxygen. But the cysts are full of stale, trapped air and are not receiving fresh oxygen (poor ventilation, $\dot{V}$). Blood passes by without being properly oxygenated, impairing the baby's overall [gas exchange](@entry_id:147643).
+This trapped, stagnant air creates a perfect storm for two other problems. First, it leads to a **ventilation-perfusion (V/Q) mismatch**. Blood vessels continue to flow around these cysts (preserved perfusion, $\dot{Q}$), ready to pick up oxygen. But the cysts are full of stale, trapped air and are not receiving fresh oxygen (poor ventilation, $\dot{V}$). Blood passes by without being properly oxygenated, impairing the baby's overall [gas exchange](@keyword=gas_exchange|lang=en-US|style=Feynman).
 
-Second, the abnormal cells lining these cysts often produce mucus. In a healthy lung, tiny hairs called cilia constantly sweep mucus out. In a CPAM with no effective airflow, the mucus just sits there. This stagnant, nutrient-rich mucus becomes a perfect breeding ground for bacteria, predisposing the child to recurrent and severe **infections** .
+Second, the abnormal cells lining these cysts often produce mucus. In a healthy lung, tiny hairs called cilia constantly sweep mucus out. In a CPAM with no effective airflow, the mucus just sits there. This stagnant, nutrient-rich mucus becomes a perfect breeding ground for bacteria, predisposing the child to recurrent and severe **infections** [@problem_id:5126539].
 
 From a simple ratio on an ultrasound, we have uncovered a deep, interconnected story. The CVR is more than a measurement; it is a window into a world of physics and physiology, linking geometry, fluid dynamics, and respiratory mechanics. It stands as a beautiful testament to how a quantitative, first-principles approach can illuminate the darkest corners of human biology, allowing us to predict danger and, ultimately, to intervene.

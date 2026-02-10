@@ -21,7 +21,7 @@ These five features describe masses that look orderly and non-threatening. They 
 
 *   **B1: A unilocular cyst.** This is the essence of simplicity: a single, fluid-filled chamber with no complex parts. Think of a perfect, tiny water balloon.
 
-*   **B2: Presence of solid components with the largest solid component less than $7\,\mathrm{mm}$ in diameter.** Even a simple structure can have a small imperfection. This rule says that if there is a solid part, but it's very small (less than $7\,\mathrm{mm}$), it's unlikely to represent aggressive growth. This threshold wasn't just picked from a hat; it was determined from studying thousands of cases to find the sweet spot that best separates benign from malignant. 
+*   **B2: Presence of solid components with the largest solid component less than $7\,\mathrm{mm}$ in diameter.** Even a simple structure can have a small imperfection. This rule says that if there is a solid part, but it's very small (less than $7\,\mathrm{mm}$), it's unlikely to represent aggressive growth. This threshold wasn't just picked from a hat; it was determined from studying thousands of cases to find the sweet spot that best separates benign from malignant. [@problem_id:4406484]
 
 *   **B3: The presence of acoustic shadows.** This is a fascinating and somewhat counterintuitive feature. An acoustic shadow appears on an ultrasound when the sound waves hit something so dense they can't pass through it. While this might sound ominous, in the ovary it's often a sign of very dense but benign tissue, like that found in a dermoid cyst or a fibroma. It is, in a sense, a shadow of innocence.
 
@@ -33,31 +33,31 @@ These five features describe masses that look orderly and non-threatening. They 
 
 These five features are the red flags. They suggest that a process of uncontrolled proliferation and invasion may be underway. They are the visual signs of a tumor behaving like a tumor.
 
-*   **M1: An irregular solid tumor.** This is the opposite of the simple, clean unilocular cyst. It's a lumpy, disorganized mass, suggesting chaotic, uncontrolled growth. This is the very picture of neoplasia. 
+*   **M1: An irregular solid tumor.** This is the opposite of the simple, clean unilocular cyst. It's a lumpy, disorganized mass, suggesting chaotic, uncontrolled growth. This is the very picture of neoplasia. [@problem_id:4443150]
 
-*   **M2: The presence of ascites.** This refers to a significant amount of free fluid in the pelvis or abdomen. A tumor can cause this by irritating the surfaces of the abdomen or by producing chemicals that make blood vessels leaky. It's a sign that the mass is not just an isolated lump, but is having a wider effect on the body. 
+*   **M2: The presence of ascites.** This refers to a significant amount of free fluid in the pelvis or abdomen. A tumor can cause this by irritating the surfaces of the abdomen or by producing chemicals that make blood vessels leaky. It's a sign that the mass is not just an isolated lump, but is having a wider effect on the body. [@problem_id:4443166]
 
-*   **M3: At least four papillary structures.** Papillary structures are cauliflower-like growths that project into the inside of a cyst. A few tiny bumps might be insignificant, but the presence of four or more is a direct architectural sign of neoplastic proliferation. The tumor isn't just expanding; it's actively building complex new structures. 
+*   **M3: At least four papillary structures.** Papillary structures are cauliflower-like growths that project into the inside of a cyst. A few tiny bumps might be insignificant, but the presence of four or more is a direct architectural sign of neoplastic proliferation. The tumor isn't just expanding; it's actively building complex new structures. [@problem_id:4477921]
 
 *   **M4: An irregular multilocular-solid tumor with a largest diameter of $100\,\mathrm{mm}$ or more.** This is the chaotic cousin of the B4 feature. The mass is large, multi-chambered, and has solid components, but its walls and structure are irregular and disorganized. It’s the combination of size, complexity, and irregularity that makes it so concerning.
 
-*   **M5: Very strong blood flow.** Malignant tumors fuel their rapid growth through a process called **neoangiogenesis**—the creation of new, often chaotic, blood vessels. On a Doppler ultrasound, this can appear as a blazing signal of intense blood flow. This isn't the gentle, organized flow of normal tissue; it's the sign of a tumor building a ravenous supply line. 
+*   **M5: Very strong blood flow.** Malignant tumors fuel their rapid growth through a process called **neoangiogenesis**—the creation of new, often chaotic, blood vessels. On a Doppler ultrasound, this can appear as a blazing signal of intense blood flow. This isn't the gentle, organized flow of normal tissue; it's the sign of a tumor building a ravenous supply line. [@problem_id:4443150]
 
 ### The Decision Pathway: A Simple Logic Engine
 
 Once an examiner has checked for all ten features, the logic for making a decision is brilliantly simple and robust.
 
 1.  If the mass shows **one or more B-features** but **not a single M-feature**, it is classified as **Benign**.
-2.  If the mass shows **one or more M-features** but **not a single B-feature**, it is classified as **Malignant**. 
-3.  But what if the picture is mixed? What if a mass has, for example, the benign feature of acoustic shadows (B3) but also the malignant feature of very strong blood flow (M5)? Or what if it has none of the ten features?  
+2.  If the mass shows **one or more M-features** but **not a single B-feature**, it is classified as **Malignant**. [@problem_id:4443166]
+3.  But what if the picture is mixed? What if a mass has, for example, the benign feature of acoustic shadows (B3) but also the malignant feature of very strong blood flow (M5)? Or what if it has none of the ten features? [@problem_id:4406484] [@problem_id:4477921]
 
 Here, the system shows its wisdom. It doesn't force a guess. In either of these situations, the result is declared **inconclusive**. This is not a failure of the rules. It is a critical, built-in safety feature. An "inconclusive" result is an explicit instruction: "The picture is not clear. Standard rules do not apply. Escalate this case for a more detailed look." It’s the system knowing its own limitations.
 
 ### Beyond the Rules: From Patterns to Probabilities
 
-So, what happens when we get an "inconclusive" result? We need a more powerful lens. We move from simple [pattern recognition](@entry_id:140015) to sophisticated probabilistic assessment. This is the role of the **ADNEX model**, the second-stage tool recommended by the IOTA group.
+So, what happens when we get an "inconclusive" result? We need a more powerful lens. We move from simple [pattern recognition](@keyword=pattern_recognition|lang=en-US|style=Feynman) to sophisticated probabilistic assessment. This is the role of the **ADNEX model**, the second-stage tool recommended by the IOTA group.
 
-The ADNEX model takes things to the next level. It uses some of the same ultrasound features as the Simple Rules, but combines them with clinical information like the patient’s age and the level of a blood marker called CA-125. It feeds these variables into a powerful statistical engine (**[multinomial logistic regression](@entry_id:275878)**) to produce a much more nuanced output. 
+The ADNEX model takes things to the next level. It uses some of the same ultrasound features as the Simple Rules, but combines them with clinical information like the patient’s age and the level of a blood marker called CA-125. It feeds these variables into a powerful statistical engine (**[multinomial logistic regression](@keyword=multinomial_logistic_regression|lang=en-US|style=Feynman)**) to produce a much more nuanced output. [@problem_id:4406560]
 
 Instead of just a "benign" or "malignant" label, the ADNEX model provides a detailed risk profile. It estimates the specific percentage chance for five different outcomes:
 1.  That the mass is benign.
@@ -66,7 +66,7 @@ Instead of just a "benign" or "malignant" label, the ADNEX model provides a deta
 4.  That it's an advanced Stage II-IV cancer.
 5.  That it's a metastasis from a cancer elsewhere in the body.
 
-This is a profound leap in information. It allows clinicians to tailor management not just to whether the mass is cancerous, but to *what kind* of cancer it is likely to be and how advanced it might be.  This entire process is grounded in the mathematical laws of probability. A feature isn't just "good" or "bad"; it has a quantifiable weight. The presence of a strong M-feature acts like a powerful piece of evidence in a Bayesian framework. It can take a low initial suspicion of, say, $15\%$, and, after being observed, raise the calculated probability of cancer to over $60\%$, decisively crossing the threshold for urgent action.  
+This is a profound leap in information. It allows clinicians to tailor management not just to whether the mass is cancerous, but to *what kind* of cancer it is likely to be and how advanced it might be. [@problem_id:4406521] This entire process is grounded in the mathematical laws of probability. A feature isn't just "good" or "bad"; it has a quantifiable weight. The presence of a strong M-feature acts like a powerful piece of evidence in a Bayesian framework. It can take a low initial suspicion of, say, $15\%$, and, after being observed, raise the calculated probability of cancer to over $60\%$, decisively crossing the threshold for urgent action. [@problem_id:4399589] [@problem_id:4434365]
 
 ### The Art of Application: When Rules Meet Reality
 
@@ -76,6 +76,6 @@ Pregnancy is a time of profound physiological change, and it can be a great masq
 *   The **corpus luteum**, a temporary structure on the ovary that produces hormones vital for sustaining the first trimester, is incredibly rich in blood vessels. On Doppler, it can create a "ring of fire" that looks just like the M5 feature of very strong blood flow.
 *   Under the influence of progesterone, benign lesions like endometriomas can undergo **decidualization**, a process that causes them to grow new, vascularized projections that can look identical to the M3 feature of papillary structures.
 
-Does this mean the Simple Rules fail in pregnancy? Absolutely not. It means the clinician must be more than a rule-follower; they must be a biologist. An expert knows that a "ring of fire" in a first-trimester patient is most likely a healthy [corpus luteum](@entry_id:150308). They will prioritize the mass's overall structure over the Doppler signal. They might choose to perform a follow-up scan after 12-16 weeks, by which time the corpus luteum has typically regressed, to see if the worrisome features have vanished. 
+Does this mean the Simple Rules fail in pregnancy? Absolutely not. It means the clinician must be more than a rule-follower; they must be a biologist. An expert knows that a "ring of fire" in a first-trimester patient is most likely a healthy [corpus luteum](@keyword=corpus_luteum|lang=en-US|style=Feynman). They will prioritize the mass's overall structure over the Doppler signal. They might choose to perform a follow-up scan after 12-16 weeks, by which time the corpus luteum has typically regressed, to see if the worrisome features have vanished. [@problem_id:4399589]
 
 This is the unity of medicine in action. The elegant logic of the IOTA Simple Rules, the probabilistic power of the ADNEX model, and the deep biological knowledge of the clinician all come together. It is a system that is simple where it can be, complex where it must be, and always guided by a fundamental goal: to see the truth in the shapes and shadows.

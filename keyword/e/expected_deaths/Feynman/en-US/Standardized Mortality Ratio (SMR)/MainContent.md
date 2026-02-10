@@ -17,9 +17,9 @@ The core of our method lies in calculating a quantity called **expected deaths**
 
 Building this "what if" machine involves a classic "divide and conquer" strategy.
 
-First, we can't treat everyone as a monolith. A 90-year-old and a 20-year-old face vastly different risks of dying in any given year. So, we must first break down our study population (be it patients in a hospital or residents of a town) into smaller, more uniform groups, or **strata**. The most common way to do this is by age, but we could also stratify by the severity of a patient's illness, their sex, or any other factor that strongly influences their risk .
+First, we can't treat everyone as a monolith. A 90-year-old and a 20-year-old face vastly different risks of dying in any given year. So, we must first break down our study population (be it patients in a hospital or residents of a town) into smaller, more uniform groups, or **strata**. The most common way to do this is by age, but we could also stratify by the severity of a patient's illness, their sex, or any other factor that strongly influences their risk [@problem_id:4597254].
 
-Next, for each stratum, we look up the mortality rate from our chosen standard population. This **reference rate**, usually calculated from a vast national database, serves as our universal yardstick. For example, we might find that the national mortality rate for men aged 65-79 after a stroke is 4.5% per admission .
+Next, for each stratum, we look up the mortality rate from our chosen standard population. This **reference rate**, usually calculated from a vast national database, serves as our universal yardstick. For example, we might find that the national mortality rate for men aged 65-79 after a stroke is 4.5% per admission [@problem_id:4961235].
 
 Then comes the heart of the calculation. For each stratum in our study group, we multiply the number of people in that group by the corresponding reference rate. If our hospital admitted 500 patients in the 65-79 age group, and the national rate is 0.045, our expected number of deaths for this group would be $500 \times 0.045 = 22.5$. Yes, the number can be a fraction, and that's perfectly fine—we're talking about an abstract expectation, not counting actual people.
 
@@ -27,7 +27,7 @@ The quantity we are multiplying by the rate is, more formally, the total **perso
 $$
 \text{Expected Deaths in Stratum } i = (\text{Person-Time in Stratum } i) \times (\text{Reference Rate for Stratum } i)
 $$
-This simple multiplication, $E_i = N_i \times R_i$, is wonderfully elegant. From a more advanced viewpoint, it's a practical approximation of a deeper mathematical truth from survival analysis, where the expected number of events is found by integrating a continuous **[hazard function](@entry_id:177479)** (the instantaneous risk of an event) over the at-risk population process over time . The fact that this sophisticated calculus simplifies to a straightforward multiplication for practical purposes is a testament to the beautiful unity of mathematical ideas.
+This simple multiplication, $E_i = N_i \times R_i$, is wonderfully elegant. From a more advanced viewpoint, it's a practical approximation of a deeper mathematical truth from survival analysis, where the expected number of events is found by integrating a continuous **[hazard function](@keyword=hazard_function|lang=en-US|style=Feynman)** (the instantaneous risk of an event) over the at-risk population process over time [@problem_id:4601193]. The fact that this sophisticated calculus simplifies to a straightforward multiplication for practical purposes is a testament to the beautiful unity of mathematical ideas.
 
 Finally, to get the total expected deaths for our entire population, we simply sum up the expected deaths from all the individual strata:
 $$
@@ -46,7 +46,7 @@ $$
 $$
 The meaning of this ratio is incredibly intuitive:
 -   If $\text{SMR} = 1$, it means we observed exactly as many deaths as expected. Our group's mortality experience is on par with the standard, after accounting for its specific structure (e.g., its age distribution).
--   If $\text{SMR} > 1$, we observed more deaths than expected. This suggests a higher mortality than the standard—a potential cause for concern. For example, an SMR of 1.69 means the group experienced 69% *more* deaths than expected .
+-   If $\text{SMR} > 1$, we observed more deaths than expected. This suggests a higher mortality than the standard—a potential cause for concern. For example, an SMR of 1.69 means the group experienced 69% *more* deaths than expected [@problem_id:4961235].
 -   If $\text{SMR}  1$, we observed fewer deaths than expected. This suggests better-than-average performance. An SMR of 0.85 means the group experienced 15% *fewer* deaths than what would have been expected.
 
 This single number, the SMR, has leveled the playing field. It has allowed us to make an apples-to-apples comparison by creating a customized benchmark ($E$) that is perfectly tailored to the unique composition of the group we are studying.
@@ -55,7 +55,7 @@ This single number, the SMR, has leveled the playing field. It has allowed us to
 
 The power of the SMR comes with a profound responsibility: we must choose our "standard" population wisely. The SMR is a *relative* measure; its entire meaning is derived from the yardstick we use to judge it. An inappropriate yardstick will give a misleading answer.
 
-Consider the classic case of the **Healthy Worker Effect** . Imagine we are studying the mortality of workers in a factory and want to see if they are exposed to any occupational hazards. We calculate their SMR using the general population as our standard. To our delight, we find the SMR is 0.89! It seems the factory is a wonderfully healthy place to work.
+Consider the classic case of the **Healthy Worker Effect** [@problem_id:4597943]. Imagine we are studying the mortality of workers in a factory and want to see if they are exposed to any occupational hazards. We calculate their SMR using the general population as our standard. To our delight, we find the SMR is 0.89! It seems the factory is a wonderfully healthy place to work.
 
 But wait. Who is in the "general population"? It includes everyone: people who are actively working, but also those who are retired, unemployed, disabled, or too sick to hold a job. By its very nature, a cohort of active workers is, on average, healthier than the general population. The fact that they are healthy enough to show up to work every day is a powerful form of selection bias.
 
@@ -65,7 +65,7 @@ Comparing our factory workers to the general population is another apples-to-ora
 
 Our "what if" machine so far has been based on broad categories like age groups. But what if we could do better? What if, for every single patient who enters a hospital, we have a detailed electronic health record with their specific age, their comorbidities (like diabetes or heart disease), their initial lab values, and more?
 
-We can build a far more sophisticated "what if" machine. Using modern statistical techniques like **logistic regression**, we can build a risk model that produces a personalized probability of death, $p_i$, for *each individual patient* based on their unique set of risk factors .
+We can build a far more sophisticated "what if" machine. Using modern statistical techniques like **logistic regression**, we can build a risk model that produces a personalized probability of death, $p_i$, for *each individual patient* based on their unique set of risk factors [@problem_id:4961216].
 
 Instead of one reference rate for all 65-year-olds, we now have a specific risk for a 65-year-old diabetic with a history of heart failure, and a different risk for a 65-year-old with no other health problems. The beauty here is that our fundamental principle remains unchanged. The total number of expected deaths, $E$, is now simply the sum of all these individual, personalized probabilities:
 $$
@@ -79,6 +79,6 @@ As with any measurement of the real world, the SMR is not a perfectly chiseled, 
 
 If you flip a coin 1,000 times, you'll likely get a result very close to 500 heads. But if you flip it only 10 times, getting 7 heads (an "observed" of 7 vs. an "expected" of 5) wouldn't be shocking. It could just be random chance.
 
-Similarly, if a small rural hospital has very few patients in its oldest age brackets, the number of observed deaths can "wobble" significantly from year to year due to pure chance . An SMR of 1.5 one year might be followed by an SMR of 0.7 the next, without any real change in the quality of care. The statistical instability comes from the small number of expected deaths in the denominator. To combat this, scientists report **confidence intervals** around the SMR, giving a range of plausible values rather than just one number. Pooling more data over longer periods is the best way to reduce this "wobble" and get a more stable, trustworthy estimate.
+Similarly, if a small rural hospital has very few patients in its oldest age brackets, the number of observed deaths can "wobble" significantly from year to year due to pure chance [@problem_id:4601161]. An SMR of 1.5 one year might be followed by an SMR of 0.7 the next, without any real change in the quality of care. The statistical instability comes from the small number of expected deaths in the denominator. To combat this, scientists report **confidence intervals** around the SMR, giving a range of plausible values rather than just one number. Pooling more data over longer periods is the best way to reduce this "wobble" and get a more stable, trustworthy estimate.
 
 The concept of expected deaths, and the SMR it enables, is a powerful and versatile tool. It allows us to cut through the noise of raw numbers and make fair, meaningful comparisons. But like any powerful tool, it must be used with wisdom, a deep understanding of its assumptions, and a healthy respect for the role of uncertainty and random chance in our complex world.

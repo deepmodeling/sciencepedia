@@ -30,7 +30,7 @@ The legal framework for these choices does not exist in a vacuum. The viability 
 
 ### Editing the Code of Life: A New Twist on an Old Puzzle
 
-Our journey concludes at the cutting edge of biomedical science: [germline gene editing](@entry_id:271207). Technologies like CRISPR raise the possibility of not just detecting genetic conditions, but actively altering the genetic code of an embryo before implantation. What happens when such an edit goes wrong?
+Our journey concludes at the cutting edge of biomedical science: [germline gene editing](@keyword=germline_gene_editing|lang=en-US|style=Feynman). Technologies like CRISPR raise the possibility of not just detecting genetic conditions, but actively altering the genetic code of an embryo before implantation. What happens when such an edit goes wrong?
 
 Imagine an embryo is edited to prevent a heart condition, but an "off-target" effect of the procedure creates a completely different hematologic disorder. The child is born with an iatrogenic—a doctor-caused—condition. Does the wrongful life framework apply?
 

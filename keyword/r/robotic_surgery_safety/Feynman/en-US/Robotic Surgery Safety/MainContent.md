@@ -9,7 +9,7 @@ To appreciate the intricate dance of robotic surgery is to look beyond the gleam
 
 At the heart of any surgery, robotic or not, is the surgeon. But what makes a great surgeon? It’s more than just steady hands. It’s a profound state of awareness, a dynamic mental model of the entire surgical landscape. In the world of human factors engineering, we have a beautiful term for this: **situational awareness (SA)**. It’s not a passive observation but an active, goal-directed state of knowing what is happening, what it means, and what is likely to happen next.
 
-We can think of SA as existing on three ascending levels, a ladder of understanding that a surgeon must constantly climb and re-climb during a procedure .
+We can think of SA as existing on three ascending levels, a ladder of understanding that a surgeon must constantly climb and re-climb during a procedure [@problem_id:4419032].
 
 - **Level 1: Perception.** This is the first rung: the simple act of gathering data. The surgeon perceives the raw elements of the environment. *The tip of my instrument is $2 \ \mathrm{mm}$ from a blood vessel. The patient's blood pressure, relayed by the anesthetist, has dropped to $80/50 \ \mathrm{mmHg}$. The suction device is clearing $30 \ \mathrm{mL/min}$ of fluid.* An AI overlay might help here, highlighting a vessel or displaying the instrument's distance to it, augmenting the surgeon's perception.
 
@@ -21,7 +21,7 @@ In robotic surgery, the machine is a powerful tool for augmenting Level 1 percep
 
 ### The Guiding Stars: From Ethics to Engineering
 
-If situational awareness is the cognitive engine of surgical safety, what is its moral compass? The answer lies in four foundational principles of biomedical ethics, which, in the world of robotic surgery, are transformed from abstract ideals into concrete engineering constraints .
+If situational awareness is the cognitive engine of surgical safety, what is its moral compass? The answer lies in four foundational principles of biomedical ethics, which, in the world of robotic surgery, are transformed from abstract ideals into concrete engineering constraints [@problem_id:4419033].
 
 1.  **Beneficence (Do Good):** We have an obligation to act in the patient's best interest. This isn't a vague hope; it can be an equation. A robot should only be used if the patient-specific expected clinical benefit, $E[B]$, outweighs the expected harm, $E[H]$. The decision rule becomes: proceed only if the net expected benefit, $E[B] - E[H]$, is greater than some positive, clinically meaningful threshold.
 
@@ -35,7 +35,7 @@ These four principles are the "guiding stars" for any robotic surgery program. T
 
 ### The Symphony of the Operating Room: A Team in Tune
 
-Surgery is not a solo performance; it is a symphony played by a highly skilled orchestra. The safety of a robotic procedure is an emergent property of the entire team's coordinated action. Let's meet the key players and understand the music of their communication  .
+Surgery is not a solo performance; it is a symphony played by a highly skilled orchestra. The safety of a robotic procedure is an emergent property of the entire team's coordinated action. Let's meet the key players and understand the music of their communication [@problem_id:5180619] [@problem_id:5079634].
 
 -   The **Surgeon at the Console**: The conductor, physically separated from the patient but mentally immersed, directing the robot's every move.
 -   The **Bedside Assistant**: The first violinist, standing at the patient's side, performing crucial tasks like inserting and exchanging instruments, managing suction, and being the surgeon's hands for anything the robot cannot do.
@@ -44,15 +44,15 @@ Surgery is not a solo performance; it is a symphony played by a highly skilled o
 
 In this complex environment, simple communication is not enough. A casual call-out can be misheard or misunderstood. The risk of error with such "open-loop" communication can be significant. High-reliability teams use **closed-loop communication**. The sender gives a directive ("Please increase the insufflation pressure to 15"), the receiver repeats it back ("Increasing pressure to 15"), and the sender confirms ("Correct"). This simple loop drastically cuts down the probability of miscommunication, in some cases from an error rate of $0.08$ down to $0.02$ or less.
 
-This tight communication is never more critical than in procedures involving a **shared airway**, like a transoral robotic surgery (TORS). Here, the surgeon is working in the very space the anesthetist is using to ventilate the patient. The use of an energy device like monopolar cautery introduces an ignition source. The air the patient is breathing contains an oxidizer (oxygen). The endotracheal tube is a fuel. This is the classic **fire triad**. Safety here depends on the anesthetist and surgeon working in absolute lockstep. The anesthetist must reduce the fraction of inspired oxygen ($F_{\mathrm{i}O_2}$) to the lowest safe level (e.g., $F_{\mathrm{i}O_2} \le 0.30$), avoid flammable gases like [nitrous oxide](@entry_id:204541), and protect the airway tube with moist gauze. The surgeon must communicate explicitly before activating the energy device. This is a life-or-death duet, a perfect illustration of safety as a collaborative, multi-disciplinary achievement.
+This tight communication is never more critical than in procedures involving a **shared airway**, like a transoral robotic surgery (TORS). Here, the surgeon is working in the very space the anesthetist is using to ventilate the patient. The use of an energy device like monopolar cautery introduces an ignition source. The air the patient is breathing contains an oxidizer (oxygen). The endotracheal tube is a fuel. This is the classic **fire triad**. Safety here depends on the anesthetist and surgeon working in absolute lockstep. The anesthetist must reduce the fraction of inspired oxygen ($F_{\mathrm{i}O_2}$) to the lowest safe level (e.g., $F_{\mathrm{i}O_2} \le 0.30$), avoid flammable gases like [nitrous oxide](@keyword=nitrous_oxide|lang=en-US|style=Feynman), and protect the airway tube with moist gauze. The surgeon must communicate explicitly before activating the energy device. This is a life-or-death duet, a perfect illustration of safety as a collaborative, multi-disciplinary achievement.
 
 ### Peeking Under the Hood: The Robot's Anatomy and Senses
 
-To truly trust the machine, we must understand its nature. A surgical robot is not an intelligent being; it is a marvel of [mechatronics](@entry_id:272368), a physical system subject to physical laws. Its safety depends on acknowledging its design and limitations.
+To truly trust the machine, we must understand its nature. A surgical robot is not an intelligent being; it is a marvel of [mechatronics](@keyword=mechatronics|lang=en-US|style=Feynman), a physical system subject to physical laws. Its safety depends on acknowledging its design and limitations.
 
 #### Active Dancers and Passive Anchors
 
-A robotic arm is a chain of joints. But not all joints are created equal. We must distinguish between **active joints** and **passive joints** .
+A robotic arm is a chain of joints. But not all joints are created equal. We must distinguish between **active joints** and **passive joints** [@problem_id:5180699].
 -   **Active joints** are the dancers. They are servo-controlled by motors, moving precisely and rapidly during surgery to manipulate the instrument. They are programmed to respect a critical constraint called the **Remote Center of Motion (RCM)**, which ensures the instrument shaft pivots perfectly at the incision site, preventing tearing of the body wall.
 -   **Passive joints** are the anchors. These are large, unpowered joints used by the staff *before* the surgery to position the entire arm's base in the right place in the operating room. They are locked in place before the procedure begins.
 
@@ -60,20 +60,20 @@ This distinction is fundamental to safety. Once the robot is "docked" and the in
 
 #### How a Robot "Sees"
 
-The surgeon's 3D view is not magic; it's the product of a complex **vision pipeline** fed by a stereo endoscope . This pipeline is another place where hidden errors can lead to danger. For the robot to provide an accurate 3D view and, more importantly, to calculate distances correctly, it must be taught how to see. This process is called **calibration**.
+The surgeon's 3D view is not magic; it's the product of a complex **vision pipeline** fed by a stereo endoscope [@problem_id:5180609]. This pipeline is another place where hidden errors can lead to danger. For the robot to provide an accurate 3D view and, more importantly, to calculate distances correctly, it must be taught how to see. This process is called **calibration**.
 
 -   **Intrinsic calibration** determines the internal properties of each camera "eye": its focal length, the center of its sensor, and the specific ways its lens distorts the image.
 -   **Extrinsic calibration** determines the exact spatial relationship between the two camera "eyes"—the distance and orientation between them. This distance is the **baseline**, and it's critical for depth perception.
 
-Once calibrated, the system can perform **3D reconstruction**. For a simplified, rectified stereo rig, the relationship between an object's true depth ($Z$), the [focal length](@entry_id:164489) ($f$), the baseline ($B$), and the "disparity" ($d$, the difference in position of the object in the two images) is beautifully simple:
+Once calibrated, the system can perform **3D reconstruction**. For a simplified, rectified stereo rig, the relationship between an object's true depth ($Z$), the [focal length](@keyword=focal_length|lang=en-US|style=Feynman) ($f$), the baseline ($B$), and the "disparity" ($d$, the difference in position of the object in the two images) is beautifully simple:
 $$Z = \frac{f B}{d}$$
-This formula reveals a profound truth: a small error in calibration leads to a systematic error in every single depth measurement. If your estimate of the baseline, $B_e$, is $10\%$ too low, and your estimate of the [focal length](@entry_id:164489), $f_e$, is $5\%$ too high, your estimated depth, $Z_e$, will be consistently off. The relationship is:
+This formula reveals a profound truth: a small error in calibration leads to a systematic error in every single depth measurement. If your estimate of the baseline, $B_e$, is $10\%$ too low, and your estimate of the [focal length](@keyword=focal_length|lang=en-US|style=Feynman), $f_e$, is $5\%$ too high, your estimated depth, $Z_e$, will be consistently off. The relationship is:
 $$Z_e = Z_t \left( \frac{f_e}{f_t} \right) \left( \frac{B_e}{B_t} \right) = Z_t (1.05)(0.90) = 0.945 Z_t$$
 Your robot will systematically believe everything is $5.5\%$ closer than it actually is! This is a dangerous illusion that no amount of fiddling with the color or brightness (**white balance**, a radiometric, not geometric, property) can fix. Safety depends on rigorously verified geometric calibration.
 
 ### The Tools of Creation and Destruction: Taming Surgical Energy
 
-The robot's instruments are not mere scalpels; they are sophisticated tools that use energy to cut tissue and seal blood vessels. Understanding how this energy works is key to understanding its potential for unintended harm .
+The robot's instruments are not mere scalpels; they are sophisticated tools that use energy to cut tissue and seal blood vessels. Understanding how this energy works is key to understanding its potential for unintended harm [@problem_id:5181263].
 
 -   **Monopolar Electrosurgery:** Think of this as a controlled lightning strike. A high-frequency electrical current flows from a small, active instrument tip, through the patient's entire body, to a large "grounding pad" placed elsewhere. Heat is generated where the current is most concentrated—at the tiny tip. The danger lies in the long, unconfined path of the current. It can "leak" through tiny breaks in the instrument's insulation or arc across to nearby conductors via a phenomenon called **capacitive coupling**, causing devastating burns far from the surgical site.
 
@@ -89,7 +89,7 @@ Ultimately, safety in a complex system like a surgical robot cannot be left to c
 
 #### Building a Wall of Safety
 
-How close is too close? When working near a critical structure like a nerve, this question is paramount. The answer is found by building a **safety threshold** layer by layer, a tangible "wall" of distance that must not be breached .
+How close is too close? When working near a critical structure like a nerve, this question is paramount. The answer is found by building a **safety threshold** layer by layer, a tangible "wall" of distance that must not be breached [@problem_id:5048128].
 
 1.  **The Core Threat:** We start with empirical data. For a specific instrument and activation time, what is the measured radius of thermal injury? Let's say it's $2.0 \ \mathrm{mm}$.
 2.  **The Margin of Uncertainty:** We are not gods; we cannot know everything. There is inter-patient variability and measurement uncertainty. So, we add an **engineering safety margin**, say $0.5 \ \mathrm{mm}$. Our **static safety threshold** is now $2.5 \ \mathrm{mm}$. This is the minimum distance we must maintain if everything were perfectly still.
@@ -103,7 +103,7 @@ This calculation transforms the vague idea of "being careful" into a precise, ac
 
 How do we design a system that doesn't fail, even when its components do? The first idea is **redundancy**: having a backup. But what if the cause of the failure affects the primary and the backup at the same time? This is a **common-cause failure**—a single power surge takes out both motors, or a single software bug crashes both controllers.
 
-A more powerful concept is **diversity** . Instead of two identical backups, we use two *different* systems that achieve the same goal. Imagine we need to detect if the robot arm is misaligned.
+A more powerful concept is **diversity** [@problem_id:5180648]. Instead of two identical backups, we use two *different* systems that achieve the same goal. Imagine we need to detect if the robot arm is misaligned.
 -   **Strategy J (Redundancy):** Use two identical motors for the same joint.
 -   **Strategy S (Diversity):** Use two different sensor types—one optical camera and one force sensor.
 

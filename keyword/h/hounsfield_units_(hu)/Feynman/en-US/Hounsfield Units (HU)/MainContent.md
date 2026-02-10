@@ -47,7 +47,7 @@ With this standardized scale, we can take a quantitative tour of the human body.
 
 *   **Soft Tissues:** Most of the body's organs—muscle, brain, kidney, liver—are slightly denser and more attenuating than water. They fall in a narrow positive range, typically from **+30 to +60 HU**. Blood is also in this range.
 
-*   **Contrast Agents:** To make blood vessels or certain tumors stand out, radiologists inject a contrast agent, usually containing iodine. Iodine has a high [atomic number](@entry_id:139400) ($Z=53$), which makes it a very effective X-ray absorber. Blood mixed with contrast can jump to **+100 to +300 HU** or even higher, appearing bright white on the scan.
+*   **Contrast Agents:** To make blood vessels or certain tumors stand out, radiologists inject a contrast agent, usually containing iodine. Iodine has a high [atomic number](@keyword=atomic_number|lang=en-US|style=Feynman) ($Z=53$), which makes it a very effective X-ray absorber. Blood mixed with contrast can jump to **+100 to +300 HU** or even higher, appearing bright white on the scan.
 
 *   **Bone:** Bone is dense and rich in calcium ($Z=20$), making it a powerful attenuator of X-rays. Its HU values are very high, ranging from a few hundred for spongy bone to well over **+1000 HU** for dense cortical bone.
 
@@ -57,7 +57,7 @@ This scale provides a consistent, quantitative framework for identifying tissues
 
 This tour reveals a new challenge. The range of values in a single CT slice is enormous, spanning from -1000 HU in the lungs to over +1000 HU in the spine. A metal hip replacement could have a value of +3000 HU or more. This is a vast **dynamic range**.
 
-The problem is that the [human eye](@entry_id:164523), and the standard computer monitor it looks at, cannot appreciate thousands of different gray levels simultaneously. An 8-bit display can only show $2^8 = 256$ shades of gray. If we try to map the entire CT dynamic range—say, a 4000 HU span from -1000 to +3000—onto these 256 gray levels, each gray step would represent about $4000 / 256 \approx 15.6$ HU.
+The problem is that the [human eye](@keyword=human_eye|lang=en-US|style=Feynman), and the standard computer monitor it looks at, cannot appreciate thousands of different gray levels simultaneously. An 8-bit display can only show $2^8 = 256$ shades of gray. If we try to map the entire CT dynamic range—say, a 4000 HU span from -1000 to +3000—onto these 256 gray levels, each gray step would represent about $4000 / 256 \approx 15.6$ HU.
 
 Now, consider the liver (e.g., +60 HU) and the spleen (e.g., +40 HU). The difference between them is a subtle but diagnostically vital 20 HU. On our compressed grayscale, this 20 HU difference corresponds to only $20 / 15.6 \approx 1.3$ gray levels. It would be practically invisible!
 
@@ -75,4 +75,4 @@ This has profound consequences. Imagine a tiny 2 mm calcified nodule, which has 
 
 Furthermore, the very problem the HU scale was designed to solve—the energy dependence of $\mu$—is not eliminated entirely. While normalizing to water works remarkably well, it's not a perfect fix. The way a material's attenuation changes with energy is unique to that material. The ratio of bone's attenuation to water's attenuation is not quite the same at 60 keV as it is at 80 keV. This means that even on a perfectly calibrated scanner, a liver's HU value might shift slightly when the scanner's tube voltage (kVp) is changed, because this alters the X-ray spectrum.
 
-This is why, while Hounsfield Units provide excellent and indispensable *qualitative* and *comparative* information for diagnosis, their use in high-precision *quantitative* science like radiomics—where researchers try to extract subtle texture features from the numbers to predict [cancer genetics](@entry_id:139559) or treatment response—requires extreme care. The Hounsfield scale provides a common language, but it's one with its own subtle dialects and nuances that we must learn to understand and account for.
+This is why, while Hounsfield Units provide excellent and indispensable *qualitative* and *comparative* information for diagnosis, their use in high-precision *quantitative* science like radiomics—where researchers try to extract subtle texture features from the numbers to predict [cancer genetics](@keyword=cancer_genetics|lang=en-US|style=Feynman) or treatment response—requires extreme care. The Hounsfield scale provides a common language, but it's one with its own subtle dialects and nuances that we must learn to understand and account for.

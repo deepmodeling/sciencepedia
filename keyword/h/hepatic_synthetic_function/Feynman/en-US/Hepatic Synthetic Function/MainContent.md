@@ -9,11 +9,11 @@ To truly appreciate the liver, we must cast aside the simple image of a passive 
 
 ### Measuring Production: The Tale of Two Timers
 
-To check the factory's output, we don't count every single product. Instead, we use a few key performance indicators. The two most important are proteins found in the blood: albumin and the factors involved in [blood clotting](@entry_id:149972). They tell very different stories, on very different timescales.
+To check the factory's output, we don't count every single product. Instead, we use a few key performance indicators. The two most important are proteins found in the blood: albumin and the factors involved in [blood clotting](@keyword=blood_clotting|lang=en-US|style=Feynman). They tell very different stories, on very different timescales.
 
 #### Albumin: The Slow-Moving Freighter
 
-**Albumin** is the most abundant protein in our plasma, a true workhorse. It acts like a molecular sponge, maintaining the right amount of fluid in our blood vessels (the [colloid osmotic pressure](@entry_id:148066)), and it moonlights as a taxi service, transporting hormones, fatty acids, and drugs throughout the body. The liver produces a steady stream of albumin. However, the existing pool of albumin in our blood is vast, and each molecule has a long half-life of about 20 days.
+**Albumin** is the most abundant protein in our plasma, a true workhorse. It acts like a molecular sponge, maintaining the right amount of fluid in our blood vessels (the [colloid osmotic pressure](@keyword=colloid_osmotic_pressure|lang=en-US|style=Feynman)), and it moonlights as a taxi service, transporting hormones, fatty acids, and drugs throughout the body. The liver produces a steady stream of albumin. However, the existing pool of albumin in our blood is vast, and each molecule has a long half-life of about 20 days.
 
 Because of this, serum albumin level is like a factory's quarterly production report. A sudden, one-day shutdown won't make a noticeable dent in the numbers. But if the factory has been struggling for weeks or months, as in chronic liver disease, the albumin level will gradually fall. Therefore, a low albumin level is a reliable sign of a long-term, sustained problem with hepatic synthesis.
 
@@ -48,7 +48,7 @@ This beautiful piece of physiological logic allows clinicians to dissect a compl
 
 ### Beyond Clotting: The Liver's Diverse Portfolio
 
-While albumin and clotting factors are our primary windows into synthetic function, they are just two products from the liver's immense catalogue. A decline in [liver function](@entry_id:163106) has far-reaching consequences because the factory is responsible for so much more:
+While albumin and clotting factors are our primary windows into synthetic function, they are just two products from the liver's immense catalogue. A decline in [liver function](@keyword=liver_function|lang=en-US|style=Feynman) has far-reaching consequences because the factory is responsible for so much more:
 
 *   **Growth and Metabolism:** The liver produces **Insulin-like Growth Factor 1 (IGF-1)**, the body's response to growth hormone. In liver failure, IGF-1 levels fall even if growth hormone is normal.
 *   **Blood Pressure Regulation:** It synthesizes **angiotensinogen**, the precursor to a powerful hormone that regulates blood pressure.
@@ -59,8 +59,8 @@ The failure of this diverse portfolio explains the complex, multi-systemic illne
 
 ### A Question of Priority: The Acute-Phase Response
 
-Finally, we come to a subtle but profound aspect of hepatic synthesis. The liver is not just a factory; it's an intelligent, adaptive one. During times of national crisis—like a severe infection (sepsis) or major trauma—the body's priorities change dramatically. The liver responds to inflammatory signals (like the cytokine [interleukin-6](@entry_id:180898)) by completely retooling its production lines.
+Finally, we come to a subtle but profound aspect of hepatic synthesis. The liver is not just a factory; it's an intelligent, adaptive one. During times of national crisis—like a severe infection (sepsis) or major trauma—the body's priorities change dramatically. The liver responds to inflammatory signals (like the cytokine [interleukin-6](@keyword=interleukin_6|lang=en-US|style=Feynman)) by completely retooling its production lines.
 
-Imagine a factory that stops making family sedans and retools to produce armored tanks. This is the **[acute-phase response](@entry_id:150078)**. The liver dramatically down-regulates the synthesis of "peacetime" proteins, including **albumin** (making it a *negative* acute-phase reactant). Simultaneously, it ramps up the production of "wartime" proteins, such as **C-reactive protein (CRP)** and certain clotting factors (*positive* acute-phase reactants).
+Imagine a factory that stops making family sedans and retools to produce armored tanks. This is the **[acute-phase response](@keyword=acute_phase_response|lang=en-US|style=Feynman)**. The liver dramatically down-regulates the synthesis of "peacetime" proteins, including **albumin** (making it a *negative* acute-phase reactant). Simultaneously, it ramps up the production of "wartime" proteins, such as **C-reactive protein (CRP)** and certain clotting factors (*positive* acute-phase reactants).
 
 This has a critical implication: in a sick patient in the intensive care unit, a low albumin level is often not a sign of malnutrition. It's a sign of severe inflammation. The liver is purposefully choosing not to make albumin, saving its resources for more urgent tasks. In this setting, the albumin level reflects the severity of the illness, not the patient's nutritional state. The combination of a very high CRP and a low albumin tells a clear story of inflammation, a story we would misread if we only looked at albumin in isolation. This adaptive reprioritization is another beautiful example of the body's intricate logic, a logic we must understand to properly care for the critically ill.

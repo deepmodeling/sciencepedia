@@ -21,33 +21,33 @@ If this probability—the p-value—is very small (say, $0.01$, or $1\%$), you m
 
 But notice what you *haven’t* learned. You don’t know how loudly your friend whispered. You don’t know if they were desperately shouting or muttering under their breath. You only know that you’re pretty sure the sound wasn’t just noise.
 
-Now, let’s bring in a crucial trick. What if you could build a giant electronic ear, a microphone so sensitive it could pick up the flapping of a butterfly’s wings in the next state? With such a powerful instrument, you would start detecting all sorts of things. You’d find that the whisper you thought you heard was real, but it was incredibly faint—so faint as to be completely unimportant. In statistics, the size of your microphone is your **sample size**. With a large enough study, even a medically trivial effect can produce a tiny, “highly significant” p-value .
+Now, let’s bring in a crucial trick. What if you could build a giant electronic ear, a microphone so sensitive it could pick up the flapping of a butterfly’s wings in the next state? With such a powerful instrument, you would start detecting all sorts of things. You’d find that the whisper you thought you heard was real, but it was incredibly faint—so faint as to be completely unimportant. In statistics, the size of your microphone is your **sample size**. With a large enough study, even a medically trivial effect can produce a tiny, “highly significant” p-value [@problem_id:4771764].
 
-Consider a real-world scenario from a massive clinical trial with $20,000$ participants. A new blood pressure drug was found to be better than a placebo, with a p-value of $p=0.004$. This is far below the usual $0.05$ threshold; the result is highly statistically significant. The effect is almost certainly real. But how big was it? The drug lowered systolic blood pressure by an average of just $1.2$ mmHg . Is a $1.2$ mmHg reduction in blood pressure going to meaningfully change a patient's life? Probably not. We’ve detected a whisper, but the whisper is telling us something of no consequence.
+Consider a real-world scenario from a massive clinical trial with $20,000$ participants. A new blood pressure drug was found to be better than a placebo, with a p-value of $p=0.004$. This is far below the usual $0.05$ threshold; the result is highly statistically significant. The effect is almost certainly real. But how big was it? The drug lowered systolic blood pressure by an average of just $1.2$ mmHg [@problem_id:4961816]. Is a $1.2$ mmHg reduction in blood pressure going to meaningfully change a patient's life? Probably not. We’ve detected a whisper, but the whisper is telling us something of no consequence.
 
 Statistical significance, then, is merely the first step. It helps us separate a potential signal from the background noise of random chance. It answers the question, “Is there likely an effect?” But it leaves the most important questions unanswered: “How big is the effect?” and “Is it big enough to matter?”
 
 ### The Yardstick of Meaning: Effect Size and the MCID
 
-To answer “How big is the effect?”, we need a different tool: the **[effect size](@entry_id:177181)**. This is simply the measured magnitude of the change. In the previous example, the [effect size](@entry_id:177181) was $1.2$ mmHg. This number, not the p-value, is the heart of the matter.
+To answer “How big is the effect?”, we need a different tool: the **[effect size](@keyword=effect_size|lang=en-US|style=Feynman)**. This is simply the measured magnitude of the change. In the previous example, the [effect size](@keyword=effect_size|lang=en-US|style=Feynman) was $1.2$ mmHg. This number, not the p-value, is the heart of the matter.
 
 But that just leads to another question: how big is “big enough”? A $1.2$ mmHg drop isn't impressive, but what about $3$ mmHg? Or $5$? Or $10$? Where do we draw the line?
 
-This line is not drawn by statisticians, but by clinicians and, most importantly, by patients. It’s called the **Minimal Clinically Important Difference (MCID)**. The MCID is the smallest change in an outcome that a patient would perceive as beneficial and that would justify a change in care, considering all the costs, side effects, and inconveniences involved . For systolic blood pressure, clinical experts have generally agreed that a reduction needs to be at least $5$ mmHg to be considered clinically important.
+This line is not drawn by statisticians, but by clinicians and, most importantly, by patients. It’s called the **Minimal Clinically Important Difference (MCID)**. The MCID is the smallest change in an outcome that a patient would perceive as beneficial and that would justify a change in care, considering all the costs, side effects, and inconveniences involved [@problem_id:4833423]. For systolic blood pressure, clinical experts have generally agreed that a reduction needs to be at least $5$ mmHg to be considered clinically important.
 
 This gives us a yardstick. We can now take our effect size and measure it against the MCID. Our wonder drug, with its effect of $1.2$ mmHg, falls far short of the $5$ mmHg MCID. It’s like using a new fertilizer that makes your prize-winning pumpkin grow an extra half-ounce. The effect is real, you can measure it, but it’s a long way from being important.
 
-Of course, we never know the *true* effect size; we only have an estimate from our sample. This estimate comes with uncertainty, which we represent with a **confidence interval**. A $95\%$ confidence interval gives us a range of plausible values for the true effect. This tool is wonderfully powerful. In one study of a new drug, the estimated effect was a tiny $1.2$ mmHg reduction, and its $95\%$ confidence interval ranged from $0.42$ to $1.98$ mmHg . This tells us two things. First, because the entire interval is above zero, we are quite confident the effect is real (it’s statistically significant). Second, and more importantly, because the *entire* interval is well below the $5$ mmHg MCID, we are also quite confident that the true effect, whatever it is, is not clinically important.
+Of course, we never know the *true* effect size; we only have an estimate from our sample. This estimate comes with uncertainty, which we represent with a **confidence interval**. A $95\%$ confidence interval gives us a range of plausible values for the true effect. This tool is wonderfully powerful. In one study of a new drug, the estimated effect was a tiny $1.2$ mmHg reduction, and its $95\%$ confidence interval ranged from $0.42$ to $1.98$ mmHg [@problem_id:4961816]. This tells us two things. First, because the entire interval is above zero, we are quite confident the effect is real (it’s statistically significant). Second, and more importantly, because the *entire* interval is well below the $5$ mmHg MCID, we are also quite confident that the true effect, whatever it is, is not clinically important.
 
 ### The Price of Progress: Balancing Benefits and Harms
 
 So, let’s say a new treatment passes the MCID test. Its effect is not just real, it’s big enough to matter. Is it automatically a winner? Not so fast. We have only looked at one side of the equation. Every intervention in medicine, whether it’s a drug or a surgery, has a price. This price includes not only money, but also risks, side effects, and burdens.
 
-True clinical relevance is a judgment of *net benefit*. It’s a balance. On one side of the scale, we put the benefit—the clinically important effect. On the other side, we put the harms—the side effects and risks .
+True clinical relevance is a judgment of *net benefit*. It’s a balance. On one side of the scale, we put the benefit—the clinically important effect. On the other side, we put the harms—the side effects and risks [@problem_id:4771764].
 
 This is where a simple-sounding number can be dangerously misleading: the **relative risk reduction (RRR)**. A drug that reduces your risk of a heart attack by $25\%$ sounds fantastic. But this number is deceptive without one other crucial piece of information: your **baseline risk**.
 
-Let’s explore this with a stunning example from a massive trial of $200,000$ people . A prophylactic drug was tested in a low-risk population whose chance of having a major cardiovascular event over five years was only $0.5\%$. The drug produced a statistically significant benefit, and the RRR was $25\%$.
+Let’s explore this with a stunning example from a massive trial of $200,000$ people [@problem_id:4785005]. A prophylactic drug was tested in a low-risk population whose chance of having a major cardiovascular event over five years was only $0.5\%$. The drug produced a statistically significant benefit, and the RRR was $25\%$.
 
 A $25\%$ reduction sounds great, but it’s $25\%$ of a very small number. The **absolute risk reduction (ARR)** is what matters to an individual. It’s calculated as: $ARR = \text{Baseline Risk} \times RRR = 0.005 \times 0.25 = 0.00125$, or a mere $0.125\%$.
 
@@ -57,13 +57,13 @@ Now, let’s look at the other side of the scale. The drug caused a moderate gas
 
 Let's do the final calculation. If we treat $800$ people, we prevent one cardiovascular event, but we cause $800/50 = 16$ cases of gastrointestinal distress. The scale tips dramatically. For this population, the harm clearly outweighs the benefit. The drug is not clinically relevant.
 
-This illuminates a profound principle: clinical relevance is not a fixed property of a drug, but a dynamic interplay between the drug’s effect and the patient’s risk . The very same drug, with the same $25\%$ RRR, might be hugely beneficial for a high-risk patient (e.g., someone with a $20\%$ baseline risk), where the NNT would be only $20$. Context is everything.
+This illuminates a profound principle: clinical relevance is not a fixed property of a drug, but a dynamic interplay between the drug’s effect and the patient’s risk [@problem_id:4785005]. The very same drug, with the same $25\%$ RRR, might be hugely beneficial for a high-risk patient (e.g., someone with a $20\%$ baseline risk), where the NNT would be only $20$. Context is everything.
 
 ### Not All Benefits Are Created Equal: The Problem with Composites
 
 We’ve seen that the *size* of the benefit matters, but so does its *nature*. Imagine a clinical trial where investigators want to show their new heart drug is effective. They could measure just one thing, like preventing death. But deaths are rare, so they would need a huge, long, and expensive study.
 
-To get around this, they often use a clever shortcut: the **composite outcome**. They lump several outcomes together and count the first one that happens to a patient. For instance, a composite might include cardiovascular death, non-fatal myocardial infarction (MI), hospitalization for unstable angina, and an urgent clinic visit for chest pain . Because this bundle of events is more common than death alone, the trial can be smaller and faster.
+To get around this, they often use a clever shortcut: the **composite outcome**. They lump several outcomes together and count the first one that happens to a patient. For instance, a composite might include cardiovascular death, non-fatal myocardial infarction (MI), hospitalization for unstable angina, and an urgent clinic visit for chest pain [@problem_id:4785131]. Because this bundle of events is more common than death alone, the trial can be smaller and faster.
 
 But here lies the trap. It’s like grading a school’s performance on a "composite score" of its graduation rate and the number of new water fountains it installs. A school could get a stellar score by just installing a ton of water fountains, even if its graduation rate is stagnant. You get a statistically significant improvement, but not in the thing that really matters.
 
@@ -73,17 +73,17 @@ The drug wasn’t preventing heart attacks; it was preventing trips to the docto
 
 ### One Size Does Not Fit All: Heterogeneous Treatment Effects
 
-So far, we have been talking about the *average* effect in a population. But people are not averages. A treatment might work brilliantly for one person, modestly for another, and not at all for a third. This variation is called **Heterogeneous Treatment Effects (HTE)** .
+So far, we have been talking about the *average* effect in a population. But people are not averages. A treatment might work brilliantly for one person, modestly for another, and not at all for a third. This variation is called **Heterogeneous Treatment Effects (HTE)** [@problem_id:4784991].
 
 Imagine a drug trial for high blood pressure that, on average, produces a clinically meaningful reduction. The overall result is positive. But suppose the investigators prespecified that they would look at two subgroups: patients with normal kidney function and patients with impaired kidney function.
 
-When they analyze the data, they find a striking pattern. In the group with normal kidneys, the drug works like a charm, causing a large, clinically important drop in blood pressure. But in the group with impaired kidneys, the drug has almost no effect at all—a tiny, clinically irrelevant change .
+When they analyze the data, they find a striking pattern. In the group with normal kidneys, the drug works like a charm, causing a large, clinically important drop in blood pressure. But in the group with impaired kidneys, the drug has almost no effect at all—a tiny, clinically irrelevant change [@problem_id:4784991].
 
 The overall "average" effect was positive only because it was masking this underlying heterogeneity. The large benefit in the first group was strong enough to pull the average up, concealing the lack of benefit in the second. Reporting only the average effect would be deeply misleading. It could lead doctors to prescribe a useless treatment to patients with kidney problems, while not fully appreciating how effective it is for others. Identifying HTE is a crucial step towards personalized medicine, where the goal is not just to find treatments that work "on average," but to find the right treatment for the right patient.
 
 ### Beyond Treatment: The Three Pillars of a Good Test
 
-The principles of clinical relevance don't just apply to treatments. They are equally critical for evaluating diagnostic tests, from a simple blood test to complex genomic sequencing. How do we decide if a new test for a disease is actually useful? A wonderfully elegant framework, sometimes called the AV/CV/CU model, gives us a three-tiered standard .
+The principles of clinical relevance don't just apply to treatments. They are equally critical for evaluating diagnostic tests, from a simple blood test to complex genomic sequencing. How do we decide if a new test for a disease is actually useful? A wonderfully elegant framework, sometimes called the AV/CV/CU model, gives us a three-tiered standard [@problem_id:4345709].
 
 1.  **Analytic Validity (AV):** This is the first and most basic question. Does the test work on a technical level? Can it accurately and reliably measure what it claims to measure? If you’re building a machine to detect a specific molecule in the blood, analytic validity is about whether the machine correctly identifies that molecule, time and time again, without errors. It’s about the quality of the engineering.
 

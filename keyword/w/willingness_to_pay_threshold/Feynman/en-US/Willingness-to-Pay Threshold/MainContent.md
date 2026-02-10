@@ -9,7 +9,7 @@ This isn't just a philosophical puzzle; it's the daily reality of modern healthc
 
 ### A Common Currency for Health
 
-Our first challenge is that "health" isn't a single thing. A year of extra life is different from a year with less pain. How can we compare a new antihypertensive drug that lets someone live for 11 years with a decent quality of life (say, a 0.75 out of 1) to the standard care that offers 10 years with a slightly lower quality of life (a 0.70)? 
+Our first challenge is that "health" isn't a single thing. A year of extra life is different from a year with less pain. How can we compare a new antihypertensive drug that lets someone live for 11 years with a decent quality of life (say, a 0.75 out of 1) to the standard care that offers 10 years with a slightly lower quality of life (a 0.70)? [@problem_id:4777202]
 
 To solve this, we need a common currency. Economists and health experts devised a brilliant and elegant solution: the **Quality-Adjusted Life Year**, or **QALY**. Think of it as a universal unit of "healthy life". The idea is simple: a year lived in perfect health is worth 1 QALY. A year lived in a state less than perfect health—for example, with chronic pain or mobility issues—is worth a fraction of a QALY, say 0.7 or 0.5. A state equivalent to being dead is 0 QALYs.
 
@@ -17,9 +17,9 @@ The QALY is calculated by multiplying the length of time by the quality of life 
 - Standard care: $10 \text{ years} \times 0.70 \text{ utility} = 7.00$ QALYs
 - New drug: $11 \text{ years} \times 0.75 \text{ utility} = 8.25$ QALYs
 
-Suddenly, we can directly compare the two outcomes. The new drug provides an extra $1.25$ QALYs. This metric beautifully combines both the quantity and the quality of life into a single number .
+Suddenly, we can directly compare the two outcomes. The new drug provides an extra $1.25$ QALYs. This metric beautifully combines both the quantity and the quality of life into a single number [@problem_id:4554162].
 
-Of course, the real world is a bit more complex. A year of health today is often valued more than a year of health 20 years from now. To account for this "time preference," analysts often apply a **[discount rate](@entry_id:145874)**, similar to how economists calculate the present value of future money. This ensures that benefits received sooner are given slightly more weight, a principle that reflects both human nature and economic reality  .
+Of course, the real world is a bit more complex. A year of health today is often valued more than a year of health 20 years from now. To account for this "time preference," analysts often apply a **[discount rate](@keyword=discount_rate|lang=en-US|style=Feynman)**, similar to how economists calculate the present value of future money. This ensures that benefits received sooner are given slightly more weight, a principle that reflects both human nature and economic reality [@problem_id:4648928] [@problem_id:4833393].
 
 ### The Price of a Healthy Year
 
@@ -30,30 +30,30 @@ This brings us to our next key concept: the **Incremental Cost-Effectiveness Rat
 The formula is as simple as its meaning:
 $$ICER = \frac{\Delta C}{\Delta E} = \frac{\text{Extra Cost}}{\text{Extra Health Gain}}$$
 
-Let's look at a new community program for hypertension. Suppose it costs $\$5,050$ and yields $3.87$ QALYs, while the old standard of care costs $\$4,200$ and yields $3.80$ QALYs .
+Let's look at a new community program for hypertension. Suppose it costs $\$5,050$ and yields $3.87$ QALYs, while the old standard of care costs $\$4,200$ and yields $3.80$ QALYs [@problem_id:4389150].
 The extra cost ($\Delta C$) is $\$5,050 - \$4,200 = \$850$.
 The extra health gain ($\Delta E$) is $3.87 - 3.80 = 0.07$ QALYs.
 
 The ICER is therefore:
 $$ICER = \frac{\$850}{0.07 \text{ QALYs}} \approx \$12,143 \text{ per QALY}$$
 
-This number is the "price" of the health improvement offered by the new program. For every $\$12,143$ we spend, we buy one extra year of perfect health (or its equivalent) for the population. Crucially, this is an *incremental* analysis. We are not interested in the average cost of a program, but in the *additional* cost for the *additional* benefit. Confusing the two is a common and dangerous mistake that can lead to poor decisions .
+This number is the "price" of the health improvement offered by the new program. For every $\$12,143$ we spend, we buy one extra year of perfect health (or its equivalent) for the population. Crucially, this is an *incremental* analysis. We are not interested in the average cost of a program, but in the *additional* cost for the *additional* benefit. Confusing the two is a common and dangerous mistake that can lead to poor decisions [@problem_id:4554162].
 
 ### The Decisive Line: The Willingness-to-Pay Threshold
 
 So, we have a price tag: $\$12,143$ per QALY. Is that a good price? A bad one? To answer that, we need a reference point, a line in the sand. This is the **Willingness-to-Pay (WTP) Threshold**, often denoted by the Greek letter lambda ($\lambda$).
 
-The **WTP threshold** represents the maximum price a health system or society is willing to pay for one QALY. It's a statement of value. Different countries and systems have different thresholds, often ranging from $\$50,000$ to $\$150,000$ per QALY, though it can be much lower in low-income settings .
+The **WTP threshold** represents the maximum price a health system or society is willing to pay for one QALY. It's a statement of value. Different countries and systems have different thresholds, often ranging from $\$50,000$ to $\$150,000$ per QALY, though it can be much lower in low-income settings [@problem_id:4975365].
 
 The decision rule is breathtakingly simple:
 - If $ICER \le \lambda$, the intervention is considered **cost-effective**. The price is right. We should adopt it.
 - If $ICER > \lambda$, the intervention is **not cost-effective**. It's too expensive for the health it provides. We should reject it.
 
-In our hypertension example, if the WTP threshold is $\$50,000$ per QALY, our ICER of $\$12,143$ is well below it. It's a good deal! We adopt the program . But consider a malaria prevention program in a low-income country with an ICER of $\$1,000$ per DALY averted (a metric similar to the QALY). If the local WTP threshold is only $\$900$, the program, despite its benefits, is deemed not cost-effective and would be rejected . The principle is the same, only the context and values change.
+In our hypertension example, if the WTP threshold is $\$50,000$ per QALY, our ICER of $\$12,143$ is well below it. It's a good deal! We adopt the program [@problem_id:4389150]. But consider a malaria prevention program in a low-income country with an ICER of $\$1,000$ per DALY averted (a metric similar to the QALY). If the local WTP threshold is only $\$900$, the program, despite its benefits, is deemed not cost-effective and would be rejected [@problem_id:4975365]. The principle is the same, only the context and values change.
 
 This framework provides a rational, consistent, and transparent way to make excruciatingly difficult decisions. An equivalent way to think about this is through **Net Monetary Benefit (NMB)**. The NMB translates the health gain into monetary terms using the WTP threshold, and then subtracts the cost:
 $$NMB = (\lambda \times \Delta E) - \Delta C$$
-If the $NMB \ge 0$, the intervention is cost-effective. This is mathematically identical to the $ICER \le \lambda$ rule and leads to the exact same conclusion  .
+If the $NMB \ge 0$, the intervention is cost-effective. This is mathematically identical to the $ICER \le \lambda$ rule and leads to the exact same conclusion [@problem_id:4389150] [@problem_id:4446975].
 
 ### Beyond a Simple Yes or No
 
@@ -61,7 +61,7 @@ So far, we've only compared one new treatment to one standard of care. The real 
 
 #### Navigating a Menu of Options
 
-Imagine evaluating four different strategies for managing kidney disease: $S_0$ (usual care), $S_1$, $S_2$, and $S_3$, each progressively more intensive and expensive . How do we choose the best one?
+Imagine evaluating four different strategies for managing kidney disease: $S_0$ (usual care), $S_1$, $S_2$, and $S_3$, each progressively more intensive and expensive [@problem_id:4833393]. How do we choose the best one?
 
 First, we throw out any obviously bad deals. If any strategy is both more expensive *and* less effective than another, it is **strictly dominated** and gets eliminated immediately.
 
@@ -71,7 +71,7 @@ In our kidney disease example, we calculate the ICER for each step up: $S_0 \to 
 
 #### Managing a Budget Portfolio
 
-What if we have several independent programs—say, vaccination, screening, and education—that are all cost-effective, but we don't have enough money for all of them? .
+What if we have several independent programs—say, vaccination, screening, and education—that are all cost-effective, but we don't have enough money for all of them? [@problem_id:4606751].
 
 This is a budget allocation problem. The goal is no longer just to pick cost-effective programs, but to pick the *combination* of programs that gives us the most total health benefit for our money. Here, the Net Monetary Benefit (NMB) framework is particularly powerful. We calculate the NMB for each program. Then, we find the combination of programs that provides the highest total NMB without exceeding our budget.
 
@@ -81,7 +81,7 @@ Interestingly, this may mean we don't fund the program with the best ICER. We mi
 
 A common source of confusion is the difference between value and affordability. A program can be a fantastic "value for money" but still be unaffordable. Think of a brand-new sports car. It might be a masterpiece of engineering and well worth its price, but that doesn't mean you have the money in your bank account to buy it.
 
-This is why health systems use two separate tools :
+This is why health systems use two separate tools [@problem_id:4581384]:
 1.  **Cost-Effectiveness Analysis (CEA)**: This answers the value question: "Is this program worth it?" It compares the ICER to the WTP threshold.
 2.  **Budget Impact Analysis (BIA)**: This answers the affordability question: "What is the total cost to the system if we adopt this?" It multiplies the incremental cost per patient by the number of patients who will use the new program.
 
@@ -89,7 +89,7 @@ A program might be highly cost-effective, but if its budget impact is billions o
 
 ### A Philosophical Question: Where Does the Threshold Come From?
 
-We have treated the WTP threshold, $\lambda$, as a given. But where does this magic number come from? Who decides the value of a QALY? This question takes us to the cutting edge of health economics and policy .
+We have treated the WTP threshold, $\lambda$, as a given. But where does this magic number come from? Who decides the value of a QALY? This question takes us to the cutting edge of health economics and policy [@problem_id:4558578].
 
 There are two main schools of thought. The first is the **demand-side** view. This threshold reflects what a society is, in principle, *willing* to pay for health. It's a societal value judgment, sometimes derived from how much people pay to reduce risks in other parts of their lives.
 

@@ -26,7 +26,7 @@ The impact is transformative. Without guides, this procedure involves a lengthy 
 
 ### The Digital Soul of the Machine: The Science of Accuracy
 
-How is such incredible precision possible? To answer this, we must look "under the hood" of the digital workflow and appreciate the [chain of trust](@entry_id:747264) that extends from the first scan to the final drill. Each link in this chain contributes to the final accuracy, and a weakness in any one link can compromise the entire process.
+How is such incredible precision possible? To answer this, we must look "under the hood" of the digital workflow and appreciate the [chain of trust](@keyword=chain_of_trust|lang=en-US|style=Feynman) that extends from the first scan to the final drill. Each link in this chain contributes to the final accuracy, and a weakness in any one link can compromise the entire process.
 
 **Link 1: Data Fusion.** The process begins by merging data from different sources, typically a CBCT scan (which shows bone) and an intraoral surface scan (which shows teeth and soft tissue). This merging is done via a computational process called **registration**. The computer finds the best possible alignment by matching corresponding features in both datasets. However, this registration is never perfect. A small residual error at the registration points can be amplified at locations far from the center of registration—a phenomenon known as Target Registration Error (TRE) amplification. Imagine trying to aim a long pointer; a tiny wobble at your hand (the registration error) causes a large swing at the pointer's tip (the error at the surgical site). Understanding and modeling this error propagation is crucial for establishing a realistic error budget for the entire procedure.
 

@@ -11,13 +11,13 @@ To truly grasp the challenge of a post-term pregnancy, we must venture beyond th
 
 What, really, is a "due date"? It sounds so definitive, so final. But in reality, it's a statistical whisper, not a biological command. It is the estimated date for the 40th week of gestation, which is simply the peak of a bell curve of spontaneous birth timing. For decades, this date was calculated from a woman's Last Menstrual Period (LMP), a notoriously unreliable landmark.
 
-The advent of first-trimester ultrasonography in the late 1970s and early 1980s felt like a revolution in precision. By measuring the fetal **crown–rump length (CRL)**—the distance from the top of the head to the bottom of the torso—we could tap into a surprisingly consistent [biological clock](@entry_id:155525). An early fetus grows at a remarkably predictable rate. Obstetricians developed formulas to translate this length into a gestational age. A classic example from that era modeled the gestational age in days, $g(C)$, as a function of the CRL in millimeters, $C$, like this:
+The advent of first-trimester ultrasonography in the late 1970s and early 1980s felt like a revolution in precision. By measuring the fetal **crown–rump length (CRL)**—the distance from the top of the head to the bottom of the torso—we could tap into a surprisingly consistent [biological clock](@keyword=biological_clock|lang=en-US|style=Feynman). An early fetus grows at a remarkably predictable rate. Obstetricians developed formulas to translate this length into a gestational age. A classic example from that era modeled the gestational age in days, $g(C)$, as a function of the CRL in millimeters, $C$, like this:
 
 $$
 g(C) = 23.73 + 8.052\sqrt{C}
 $$
 
-This mathematical precision, however, carries its own subtle tyranny. Imagine a clinic in 1985 adopting this very formula. A patient comes in for her scan, and the fetus, whose true age is 84 days (12 weeks), is measured. But suppose the machine or the technique has a tiny, systematic positive bias of just 3 millimeters . Three millimeters! It seems trivial. But let's see what happens.
+This mathematical precision, however, carries its own subtle tyranny. Imagine a clinic in 1985 adopting this very formula. A patient comes in for her scan, and the fetus, whose true age is 84 days (12 weeks), is measured. But suppose the machine or the technique has a tiny, systematic positive bias of just 3 millimeters [@problem_id:4771152]. Three millimeters! It seems trivial. But let's see what happens.
 
 The sensitivity of the age estimate to a change in CRL is given by the derivative, $\frac{dg}{dC}$, which tells us how many "days" of error we introduce for each millimeter of measurement error. From our formula, this is $\frac{4.026}{\sqrt{C}}$. At 12 weeks, the true CRL corresponds to a $\sqrt{C}$ of about $7.49$. This means the sensitivity is about $0.54$ days per millimeter.
 
@@ -27,7 +27,7 @@ A $+3$ mm error, therefore, causes the fetus to be misdated as approximately $3 
 
 If the due date is so arbitrary, why do we worry about it at all? Why not let nature run its course, however long it takes? The answer lies not in the fetus, but in its remarkable and temporary life-support system: the placenta.
 
-Think of the placenta as a high-performance, specialized organ built for a nine-month mission. It is the lung, the kidney, the gut, and the endocrine gland of the fetus. But its mission has a timeframe. As a pregnancy extends into its 41st and 42nd weeks and beyond, the placenta begins to show signs of age—a process called **placental [senescence](@entry_id:148174)**.
+Think of the placenta as a high-performance, specialized organ built for a nine-month mission. It is the lung, the kidney, the gut, and the endocrine gland of the fetus. But its mission has a timeframe. As a pregnancy extends into its 41st and 42nd weeks and beyond, the placenta begins to show signs of age—a process called **placental [senescence](@keyword=senescence|lang=en-US|style=Feynman)**.
 
 This is not a sudden, catastrophic failure. Rather, it is a gradual decline in its "reserve capacity." The intricate, tree-like structures of chorionic villi, which maximize the surface area for nutrient and gas exchange, may show signs of wear. There can be increased fibrin deposition, calcifications, and changes in blood flow. The placenta's ability to transport oxygen and nutrients, and to clear waste products, may become less efficient.
 
@@ -35,7 +35,7 @@ Meanwhile, the fetus is larger than ever, its metabolic demands for growth and m
 
 ### The Paradox of Growth: The Risk of an Overly Large Fetus
 
-One might assume that as long as a fetus is growing, all is well. But as a pregnancy continues post-term, it's not just that the fetus grows, but *how* it grows, that matters. To understand this, we can use a simple but powerful conceptual model. Let's think of the total fetal weight, $W(t)$, as the sum of two parts: lean mass, $L(t)$, and adipose (fat) tissue, $A(t)$ .
+One might assume that as long as a fetus is growing, all is well. But as a pregnancy continues post-term, it's not just that the fetus grows, but *how* it grows, that matters. To understand this, we can use a simple but powerful conceptual model. Let's think of the total fetal weight, $W(t)$, as the sum of two parts: lean mass, $L(t)$, and adipose (fat) tissue, $A(t)$ [@problem_id:4440054].
 
 $$
 W(t) = L(t) + A(t)
@@ -53,7 +53,7 @@ This accelerating growth is not benign. A larger fetus, and particularly one wit
 
 The other side of the placental insufficiency coin is not a problem of "too much" but of "too little." Instead of the fetus growing excessively, its environment may begin to deteriorate. The key indicator of this is the volume of amniotic fluid.
 
-The amniotic sac is not a static bag of water. It is a dynamic, living "sea" in which the fetus floats, moves, and develops. Its volume is maintained by a delicate steady-state balance between inputs and outputs .
+The amniotic sac is not a static bag of water. It is a dynamic, living "sea" in which the fetus floats, moves, and develops. Its volume is maintained by a delicate steady-state balance between inputs and outputs [@problem_id:4400774].
 
 -   **Inputs**: The primary source of amniotic fluid in the second half of pregnancy is fetal urine. The fetus continuously swallows fluid, processes it, and urinates it back out. Fetal lung fluid secretion also makes a smaller contribution.
 -   **Outputs**: The main route of clearance is fetal swallowing. A less intuitive but crucial second pathway is **intramembranous absorption**, where fluid moves directly across the amniotic membrane and into the fetal blood vessels that line the surface of the placenta.
@@ -66,13 +66,13 @@ A low fluid level is a powerful, albeit indirect, sign that the placenta is stru
 
 ### Listening to the Unborn: The Eloquent Language of the Fetal Heart
 
-How, then, do we detect these impending dangers in real-time? How do we know if the umbilical cord is being squeezed or if the aging placenta is failing to keep up with oxygen demand during a contraction? We listen. We listen to the eloquent, nonverbal language of the fetal heart. By monitoring the fetal heart rate, typically with a Cardiotocograph (CTG), we gain a direct window into the fetal [autonomic nervous system](@entry_id:150808) as it responds to stress .
+How, then, do we detect these impending dangers in real-time? How do we know if the umbilical cord is being squeezed or if the aging placenta is failing to keep up with oxygen demand during a contraction? We listen. We listen to the eloquent, nonverbal language of the fetal heart. By monitoring the fetal heart rate, typically with a Cardiotocograph (CTG), we gain a direct window into the fetal [autonomic nervous system](@keyword=autonomic_nervous_system|lang=en-US|style=Feynman) as it responds to stress [@problem_id:4439272].
 
 The patterns of the fetal heart rate are not random; they are physiological signals, like words in a sentence.
 
 -   **Variable Decelerations**: These are abrupt, sharp drops in the heart rate, often with a jagged "V" shape. They are the classic signature of umbilical cord compression, the very danger we fear in oligohydramnios. The mechanism is a beautiful display of physics and physiology. When the cord is squeezed, the umbilical arteries are occluded. This instantly increases the resistance the fetal heart must pump against, causing a sharp spike in fetal blood pressure. This pressure surge is sensed by **baroreceptors** (pressure sensors) in the fetal aortic arch and carotid arteries. In response, they trigger a powerful vagal nerve reflex that slams on the heart's brakes, causing the rate to plummet. This is a protective reflex to reduce the heart's workload against the high pressure.
 
--   **Late Decelerations**: These are more subtle, gradual decelerations where the lowest point of the heart rate occurs *after* the peak of a uterine contraction. This timing is everything. It is the hallmark of uteroplacental insufficiency. During a contraction, blood flow through the placenta is temporarily reduced. If the placenta has poor reserve ([senescence](@entry_id:148174)), this temporary reduction is enough to cause fetal oxygen levels to fall. This hypoxemia is detected by **[chemoreceptors](@entry_id:148675)** (oxygen sensors). These sensors then activate the vagal nerve, causing the heart rate to slow. The *delay* or *latency* between the contraction's peak and the heart rate's nadir is the time it takes for oxygen levels to fall low enough to trigger the reflex. This pattern is a direct message from the fetus: "I am not getting enough oxygen during contractions."
+-   **Late Decelerations**: These are more subtle, gradual decelerations where the lowest point of the heart rate occurs *after* the peak of a uterine contraction. This timing is everything. It is the hallmark of uteroplacental insufficiency. During a contraction, blood flow through the placenta is temporarily reduced. If the placenta has poor reserve ([senescence](@keyword=senescence|lang=en-US|style=Feynman)), this temporary reduction is enough to cause fetal oxygen levels to fall. This hypoxemia is detected by **[chemoreceptors](@keyword=chemoreceptors|lang=en-US|style=Feynman)** (oxygen sensors). These sensors then activate the vagal nerve, causing the heart rate to slow. The *delay* or *latency* between the contraction's peak and the heart rate's nadir is the time it takes for oxygen levels to fall low enough to trigger the reflex. This pattern is a direct message from the fetus: "I am not getting enough oxygen during contractions."
 
 -   **Early Decelerations**: For contrast, it's useful to know about these benign patterns. They are also gradual decelerations, but they perfectly mirror the uterine contraction. They start, peak, and end with the contraction. This is not a sign of oxygen deprivation but a simple vagal reflex caused by pressure on the fetal head as it is squeezed by the cervix. It's a sign of progress, not distress.
 

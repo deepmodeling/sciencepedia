@@ -1,7 +1,7 @@
 ## Introduction
 Making judgments based on incomplete evidence is a fundamental challenge in science and medicine. Diagnostic test evaluation provides a formal framework for reasoning under this uncertainty, transforming subjective impressions into objective metrics. Many practitioners struggle to distinguish between a test's intrinsic accuracy and its real-world predictive power, leading to potential misinterpretations of results. This article addresses this knowledge gap by providing a comprehensive guide to understanding and applying the core principles of diagnostic assessment.
 
-First, the "Principles and Mechanisms" chapter will deconstruct the essential metrics—sensitivity, specificity, predictive values, likelihood ratios, and ROC curves—using a simple [2x2 table](@entry_id:168451) as a foundation. Then, the "Applications and Interdisciplinary Connections" chapter will demonstrate how these concepts operate in complex, real-world scenarios across medicine, showing how context, prevalence, and patient biology dynamically influence a test's true meaning. This exploration will equip you with the tools to critically evaluate diagnostic evidence and make more informed decisions.
+First, the "Principles and Mechanisms" chapter will deconstruct the essential metrics—sensitivity, specificity, predictive values, likelihood ratios, and ROC curves—using a simple [2x2 table](@keyword=2x2_table|lang=en-US|style=Feynman) as a foundation. Then, the "Applications and Interdisciplinary Connections" chapter will demonstrate how these concepts operate in complex, real-world scenarios across medicine, showing how context, prevalence, and patient biology dynamically influence a test's true meaning. This exploration will equip you with the tools to critically evaluate diagnostic evidence and make more informed decisions.
 
 
 
@@ -13,7 +13,7 @@ In our quest to understand the world, from the vastness of the cosmos to the int
 
 Let's begin at the simplest starting point. A patient either has a particular disease or they do not. That is the **ground truth**. We perform a test, which returns a result: positive or negative. That is our **evidence**. How do these two line up? We can lay out all possibilities in a simple, powerful grid known as a contingency table.
 
-Imagine we are validating a new assessment tool designed to determine if a patient has the mental capacity to make their own medical decisions . We test $200$ patients. A "gold standard" evaluation by an expert psychiatrist determines the true capacity status, while our new tool gives its own verdict. We can organize the results like this:
+Imagine we are validating a new assessment tool designed to determine if a patient has the mental capacity to make their own medical decisions [@problem_id:4966025]. We test $200$ patients. A "gold standard" evaluation by an expert psychiatrist determines the true capacity status, while our new tool gives its own verdict. We can organize the results like this:
 
 |                 | **Truth: Has Capacity** | **Truth: Lacks Capacity** | **Total by Test Result** |
 |:----------------|:-------------------------:|:--------------------------:|:--------------------:|
@@ -73,17 +73,17 @@ If our tool says a patient lacks capacity, there's a 78% chance that's true.
 
 Now for a surprise. Unlike sensitivity and specificity, predictive values are *not* properties of the test alone. They are profoundly dependent on how common the disease is in the population being tested—the **prevalence**, or **pre-test probability**.
 
-Consider a highly accurate PCR test for a Herpes Simplex Virus (HSV) infection of the brain in newborns . The test has excellent characteristics: sensitivity $0.94$ and specificity $0.99$. In a high-risk cohort of sick neonates where doctors estimate a 10% chance of the disease (pre-test probability = $0.10$), the PPV is a very reassuring $0.91$. A positive test almost certainly means disease.
+Consider a highly accurate PCR test for a Herpes Simplex Virus (HSV) infection of the brain in newborns [@problem_id:4651469]. The test has excellent characteristics: sensitivity $0.94$ and specificity $0.99$. In a high-risk cohort of sick neonates where doctors estimate a 10% chance of the disease (pre-test probability = $0.10$), the PPV is a very reassuring $0.91$. A positive test almost certainly means disease.
 
 But what if we used the exact same test on a different group of newborns, where the suspicion is much lower, say, a pre-test probability of just 2%? The test's sensitivity and specificity haven't changed. It's the same chemical reaction in the same machine. Yet, the calculation shows the PPV plummets to about $0.66$! Now, a positive test means there is still a $1$ in $3$ chance it's a false alarm.
 
-This effect is even more dramatic for rare diseases. For women attempting labor after a prior C-section, the risk of uterine rupture is very low, around 0.7%. Even if we had a hypothetical ultrasound test with a good specificity of $0.90$ to predict this catastrophe, the math of Bayes' theorem shows the PPV would be less than 5% . For every $20$ women the test flagged as high-risk, $19$ would be false alarms. This isn't a flaw in the test; it's a fundamental law of evidence. When you go looking for something rare, you will find a lot of things that look like it.
+This effect is even more dramatic for rare diseases. For women attempting labor after a prior C-section, the risk of uterine rupture is very low, around 0.7%. Even if we had a hypothetical ultrasound test with a good specificity of $0.90$ to predict this catastrophe, the math of Bayes' theorem shows the PPV would be less than 5% [@problem_id:4523330]. For every $20$ women the test flagged as high-risk, $19$ would be false alarms. This isn't a flaw in the test; it's a fundamental law of evidence. When you go looking for something rare, you will find a lot of things that look like it.
 
 ### A More Elegant Weapon: Likelihood Ratios
 
 The dependence of predictive values on prevalence is messy. We want a measure of a test's power that is independent of prevalence but still tells us how to think about a specific result. Enter the **Likelihood Ratio (LR)**, a more elegant tool for a more civilized age of evidence-based medicine.
 
-A [likelihood ratio](@entry_id:170863) answers the question: "How much more likely is this test result in a person with the disease than in a person without it?"
+A [likelihood ratio](@keyword=likelihood_ratio|lang=en-US|style=Feynman) answers the question: "How much more likely is this test result in a person with the disease than in a person without it?"
 
 The **Positive Likelihood Ratio ($LR^+$)** is for a positive test:
 $$
@@ -97,7 +97,7 @@ LR^- = \frac{\text{Probability of a negative test in the diseased}}{\text{Probab
 $$
 A very small $LR^-$ (say, $0.1$) provides strong evidence to "rule out" a disease.
 
-For instance, finding "muddy brown casts" in the urine of a patient with kidney failure is a classic sign of a specific diagnosis called Acute Tubular Necrosis (ATN). In one study, this sign had a sensitivity of $0.8364$ and a specificity of $0.8684$ . The likelihood ratios are:
+For instance, finding "muddy brown casts" in the urine of a patient with kidney failure is a classic sign of a specific diagnosis called Acute Tubular Necrosis (ATN). In one study, this sign had a sensitivity of $0.8364$ and a specificity of $0.8684$ [@problem_id:4316690]. The likelihood ratios are:
 - $LR^+ \approx 6.36$: Finding these casts makes ATN over six times more likely than it was before.
 - $LR^- \approx 0.188$: Not finding them reduces the odds of ATN to about 19% of what they were.
 
@@ -115,4 +115,4 @@ And here we find another fundamental trade-off. If we set the threshold very low
 
 There is no single "best" threshold; there is only a trade-off. The perfect way to visualize this trade-off is the **Receiver Operating Characteristic (ROC) curve**.
 
-Imagine a scoring system for detecting cervical cancer risk on a colposcopy exam . For every possible score threshold we could choose, we can calculate a sensitivity and a specificity. We then plot the True Positive Rate (Sensitivity) on the y-axis against the False Positive Rate ($1 - \text{Specificity}$) on the x-axis. The resulting curve is the ROC curve.
+Imagine a scoring system for detecting cervical cancer risk on a colposcopy exam [@problem_id:4416521]. For every possible score threshold we could choose, we can calculate a sensitivity and a specificity. We then plot the True Positive Rate (Sensitivity) on the y-axis against the False Positive Rate ($1 - \text{Specificity}$) on the x-axis. The resulting curve is the ROC curve.

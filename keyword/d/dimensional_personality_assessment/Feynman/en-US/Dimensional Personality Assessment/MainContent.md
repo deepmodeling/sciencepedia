@@ -65,7 +65,7 @@ The beauty of this hierarchical system is its precision. Two people might both b
 
 ### A Symphony of Measurement
 
-Why is this dimensional approach so much more powerful? The answer lies in the elegant principles of [measurement theory](@entry_id:153616).
+Why is this dimensional approach so much more powerful? The answer lies in the elegant principles of [measurement theory](@keyword=measurement_theory|lang=en-US|style=Feynman).
 
 First, consider **reliability**. Trying to get clinicians to agree on a yes/no categorical diagnosis is notoriously difficult, yielding low agreement statistics (like a Cohen's kappa, $\kappa$, of $0.52$ in one study). It's like asking two people to agree on whether a room is "hot" or "not hot"—their personal thresholds will vary. A dimensional rating is like giving them a thermometer. Asking them to rate the temperature on a continuous scale produces far greater agreement, reflected in higher reliability coefficients (like an Intraclass Correlation Coefficient, $\mathrm{ICC}$, of $0.88$).
 

@@ -41,7 +41,7 @@ Long before the first incision, surgeons become engineers, studying high-resolut
 
 **Act 2: Training the Collaterals (Preconditioning)**
 
-Sometimes, the blueprints show that the "country roads" are a bit too narrow for comfort. In a remarkable strategy known as **[preconditioning](@entry_id:141204)**, surgeons can actually send these vessels to the gym. Weeks before the main operation, an interventional radiologist inserts a catheter and deliberately blocks the common hepatic artery with tiny coils. This starves the liver of its normal blood supply, creating a powerful physiological stimulus for the body to enlarge the pancreaticoduodenal arcades. This process of **arteriogenesis** widens the collateral vessels, effectively lowering their future resistance and "training" them for their new, critical role.
+Sometimes, the blueprints show that the "country roads" are a bit too narrow for comfort. In a remarkable strategy known as **[preconditioning](@keyword=preconditioning|lang=en-US|style=Feynman)**, surgeons can actually send these vessels to the gym. Weeks before the main operation, an interventional radiologist inserts a catheter and deliberately blocks the common hepatic artery with tiny coils. This starves the liver of its normal blood supply, creating a powerful physiological stimulus for the body to enlarge the pancreaticoduodenal arcades. This process of **arteriogenesis** widens the collateral vessels, effectively lowering their future resistance and "training" them for their new, critical role.
 
 **Act 3: The Moment of Truth (Intraoperative Assessment)**
 
@@ -65,6 +65,6 @@ Even after a successful operation, the patient's new plumbing is in a fragile st
 
 - **Gastric Ischemia**: The stomach is also vulnerable. With its main arteries from the celiac axis gone (the left gastric) and the splenic artery gone (taking the short gastrics with it), it too depends on this same tenuous collateral supply.
 
-- **Pancreatic Fistula**: The [cut edge](@entry_id:266750) of the pancreas is prone to leaking caustic digestive enzymes. This risk is heightened in DP-CAR because the healing of the pancreatic stump itself depends on an adequate blood supply, which is now compromised.
+- **Pancreatic Fistula**: The [cut edge](@keyword=cut_edge|lang=en-US|style=Feynman) of the pancreas is prone to leaking caustic digestive enzymes. This risk is heightened in DP-CAR because the healing of the pancreatic stump itself depends on an adequate blood supply, which is now compromised.
 
 The Appleby procedure is a testament to human ingenuity—a beautiful interplay of anatomical knowledge, physiological principles, and surgical daring. It is a high-stakes rewiring of the body's most fundamental circuits, offering a chance at a cure where none was thought possible, all while balancing on the knife's edge of the laws of physics.

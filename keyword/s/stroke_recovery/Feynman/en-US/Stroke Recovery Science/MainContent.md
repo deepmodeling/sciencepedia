@@ -19,7 +19,7 @@ Both paths are valid and vital in stroke recovery, and they are often pursued at
 
 ### The Engine of Change: How the Brain Rewires Itself
 
-Neuroplasticity is simply the brain's ability to reorganize its own structure, function, and connections in response to experience. It’s not a magical force, but a set of concrete biological rules that govern how our [neural circuits](@entry_id:163225) are shaped and reshaped.
+Neuroplasticity is simply the brain's ability to reorganize its own structure, function, and connections in response to experience. It’s not a magical force, but a set of concrete biological rules that govern how our [neural circuits](@keyword=neural_circuits|lang=en-US|style=Feynman) are shaped and reshaped.
 
 The most famous of these rules was elegantly summarized by the psychologist Donald Hebb: **"Neurons that fire together, wire together."** This is the essence of **Hebbian plasticity**. Imagine two neurons, A and B. If neuron A consistently helps to make neuron B fire, the connection, or **synapse**, between them gets stronger. This strengthening is called **Long-Term Potentiation (LTP)**.
 
@@ -37,7 +37,7 @@ This leads to the cornerstone of modern rehabilitation: **Use It and Improve It*
 
 This highlights two more crucial rules: **intensity** and **specificity**.
 -   **Intensity and Repetition**: Driving neuroplasticity is hard work. It requires a massive "dose" of practice. A therapy session involving a few dozen movements is simply not enough to trigger the widespread LTP needed for reorganization. Effective programs involve hundreds, even thousands, of repetitions per day. It’s this high volume of practice that provides the powerful, consistent signal needed to rewire the brain.
--   **Specificity**: You get what you train for. General strengthening exercises do not transfer well to real-world tasks. To regain the ability to drink from a cup, you must practice the specific, coordinated movements of bringing a cup to your mouth. To improve walking, you must practice walking. The training must be meaningful and targeted to the desired function, because this is what activates the precise [neural circuits](@entry_id:163225) that need to be remodeled.
+-   **Specificity**: You get what you train for. General strengthening exercises do not transfer well to real-world tasks. To regain the ability to drink from a cup, you must practice the specific, coordinated movements of bringing a cup to your mouth. To improve walking, you must practice walking. The training must be meaningful and targeted to the desired function, because this is what activates the precise [neural circuits](@keyword=neural_circuits|lang=en-US|style=Feynman) that need to be remodeled.
 
 ### The Brain's Brakes and How to Release Them
 
@@ -65,4 +65,4 @@ First, there is the immediate aftermath. The brain has suffered a catastrophic e
 
 Second, recovery depends on what is left. Plasticity cannot create new neurons or pathways out of thin air; it can only remodel what remains. This is the concept of **structural reserve**. Two strokes may create lesions of the exact same size, but if one severs the corticospinal tract completely while the other leaves it partially intact, the potential for recovery is vastly different. The integrity of that remaining "structural substrate" is a powerful predictor of a patient's ultimate outcome. It is the foundation upon which all the work of rehabilitation is built.
 
-Ultimately, the process of stroke recovery is a testament to the brain's resilience. It is an active collaboration between a determined patient, a skilled therapy team, and the fundamental laws of [neuroplasticity](@entry_id:166423). By understanding these principles—the dance of synapses, the rules of practice, the brakes on change, and the realities of the underlying anatomy—we move from wishful thinking to a science of hope, grounded in the beautiful, intricate, and ever-changing reality of the human brain.
+Ultimately, the process of stroke recovery is a testament to the brain's resilience. It is an active collaboration between a determined patient, a skilled therapy team, and the fundamental laws of [neuroplasticity](@keyword=neuroplasticity|lang=en-US|style=Feynman). By understanding these principles—the dance of synapses, the rules of practice, the brakes on change, and the realities of the underlying anatomy—we move from wishful thinking to a science of hope, grounded in the beautiful, intricate, and ever-changing reality of the human brain.

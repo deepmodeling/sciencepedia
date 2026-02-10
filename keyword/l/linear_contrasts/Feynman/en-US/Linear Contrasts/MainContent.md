@@ -56,19 +56,19 @@ $\text{Var}(\hat{L}) = \sum_{i=1}^k c_i^2 \text{Var}(\bar{Y}_i) = \sum_{i=1}^k c
 
 This elegant formula is the engine of statistical inference for contrasts. The square root of this variance is the **standard error**, which tells us the typical "wobble" of our estimate $\hat{L}$. With the estimate and its standard error, we can construct a confidence interval (a range of plausible values for the true contrast $L$) or a $t$-statistic to formally test if the contrast is different from zero.
 
-It is useful to standardize this effect. Just as Cohen's $d$ provides a scale-free measure of the difference between two means, we can define a standardized effect size for any contrast: $d_L = \hat{L}/s_p$, where $s_p$ is the [pooled standard deviation](@entry_id:198759) from all groups (our estimate of $\sigma$). This powerful tool expresses the magnitude of any comparison—no matter how complex—in the universal currency of standard deviations, making it interpretable across different studies and scales.
+It is useful to standardize this effect. Just as Cohen's $d$ provides a scale-free measure of the difference between two means, we can define a standardized effect size for any contrast: $d_L = \hat{L}/s_p$, where $s_p$ is the [pooled standard deviation](@keyword=pooled_standard_deviation|lang=en-US|style=Feynman) from all groups (our estimate of $\sigma$). This powerful tool expresses the magnitude of any comparison—no matter how complex—in the universal currency of standard deviations, making it interpretable across different studies and scales.
 
 ### Decomposing Reality: The Power of Orthogonal Contrasts
 
 The true beauty of contrasts shines when we use them not just to ask one question, but to systematically dissect the phenomenon we are studying. This is particularly powerful in dose-response studies, where a treatment is given at several increasing levels.
 
-Imagine we have four equally spaced dose levels. The [total variation](@entry_id:140383) we observe between the groups (called the treatment sum of squares, $\mathrm{SS}_{\mathrm{Trt}}$) contains all the information about the dose effect. We can design a special set of contrasts to break this total effect down into its constituent parts:
+Imagine we have four equally spaced dose levels. The [total variation](@keyword=total_variation|lang=en-US|style=Feynman) we observe between the groups (called the treatment sum of squares, $\mathrm{SS}_{\mathrm{Trt}}$) contains all the information about the dose effect. We can design a special set of contrasts to break this total effect down into its constituent parts:
 
 1.  **Linear Contrast:** Does the response increase or decrease in a straight line as the dose increases?
 2.  **Quadratic Contrast:** Does the response curve bend? For example, does the effect start to level off at higher doses (a saturation effect)?
 3.  **Cubic Contrast:** Is there a more complex, S-shaped curve?
 
-If we choose our contrast coefficients cleverly, we can make these questions **orthogonal**, which is a mathematical way of saying they are independent or non-overlapping. When contrasts are orthogonal, the [sum of squares](@entry_id:161049) explained by each contrast adds up perfectly to the total treatment [sum of squares](@entry_id:161049):
+If we choose our contrast coefficients cleverly, we can make these questions **orthogonal**, which is a mathematical way of saying they are independent or non-overlapping. When contrasts are orthogonal, the [sum of squares](@keyword=sum_of_squares|lang=en-US|style=Feynman) explained by each contrast adds up perfectly to the total treatment [sum of squares](@keyword=sum_of_squares|lang=en-US|style=Feynman):
 
 $\mathrm{SS}_{\mathrm{Trt}} = \mathrm{SS}_{\text{Linear}} + \mathrm{SS}_{\text{Quadratic}} + \mathrm{SS}_{\text{Cubic}}$
 
@@ -97,7 +97,7 @@ It is one thing to have a specific question before you start—a **planned compa
 
 Real data rarely follows textbook assumptions perfectly. Fortunately, the linear contrast framework is remarkably resilient.
 
--   **Unequal Variances (Heteroscedasticity):** What if the "noise" level $\sigma^2$ isn't the same in all groups? The [standard error](@entry_id:140125) formula will be wrong. However, we can use **heteroscedasticity-consistent estimators** (so-called "sandwich estimators") to compute [robust standard errors](@entry_id:146925) that are valid even when variances are unequal. This is done *after* fitting the model and doesn't require changing our contrast estimates.
+-   **Unequal Variances (Heteroscedasticity):** What if the "noise" level $\sigma^2$ isn't the same in all groups? The [standard error](@keyword=standard_error|lang=en-US|style=Feynman) formula will be wrong. However, we can use **heteroscedasticity-consistent estimators** (so-called "sandwich estimators") to compute [robust standard errors](@keyword=robust_standard_errors|lang=en-US|style=Feynman) that are valid even when variances are unequal. This is done *after* fitting the model and doesn't require changing our contrast estimates.
 
 -   **Correlated Predictors (Multicollinearity):** In more complex models, our predictor variables might be highly correlated. For example, BMI and waist circumference both measure adiposity. This can make it nearly impossible to estimate the individual coefficient for each one—their estimates become unstable with large standard errors. However, a contrast that asks about their *average* effect can often be estimated with high precision. While we might not be able to tell if BMI *or* waist circumference is the driver, we can be very confident about the effect of general adiposity. Contrasts allow us to ask questions that are well-posed and answerable by the data we actually have.
 

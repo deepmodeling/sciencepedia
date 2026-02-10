@@ -7,7 +7,7 @@ To truly understand hemorrhagic shock, we must resist the temptation to think of
 
 ### The Cellular Definition of Shock: An Oxygen Debt
 
-Every one of your trillions of cells is a tiny engine, and like most engines we know, it runs on fuel and oxygen. This process, aerobic respiration, is fantastically efficient, generating the vast amounts of energy needed for life. The [circulatory system](@entry_id:151123) is the logistics network tasked with delivering this crucial oxygen. We can capture this entire delivery operation in a simple, beautiful equation:
+Every one of your trillions of cells is a tiny engine, and like most engines we know, it runs on fuel and oxygen. This process, aerobic respiration, is fantastically efficient, generating the vast amounts of energy needed for life. The [circulatory system](@keyword=circulatory_system|lang=en-US|style=Feynman) is the logistics network tasked with delivering this crucial oxygen. We can capture this entire delivery operation in a simple, beautiful equation:
 
 $$
 DO_2 = CO \times CaO_2
@@ -21,15 +21,15 @@ Faced with a dwindling supply, the body's tissues are not passive victims. Their
 
 ### The Body's Alarm Bells: A Symphony of Compensation
 
-Imagine the [circulatory system](@entry_id:151123) as a complex hydraulic circuit, pressurized to ensure flow to every corner. A major hemorrhage is a catastrophic leak. Instantly, the body’s automated damage control systems spring into action in a beautifully coordinated symphony of compensation.
+Imagine the [circulatory system](@keyword=circulatory_system|lang=en-US|style=Feynman) as a complex hydraulic circuit, pressurized to ensure flow to every corner. A major hemorrhage is a catastrophic leak. Instantly, the body’s automated damage control systems spring into action in a beautifully coordinated symphony of compensation.
 
-The first to react are the **baroreceptors**, exquisitely sensitive pressure sensors located in the walls of the aorta and the carotid arteries. As the pressure from blood loss begins to fall, these sensors reduce their [firing rate](@entry_id:275859), sending an urgent alarm to the brainstem. The brain's response is to unleash the full force of the **sympathetic nervous system**—the "fight-or-flight" response repurposed for survival.
+The first to react are the **baroreceptors**, exquisitely sensitive pressure sensors located in the walls of the aorta and the carotid arteries. As the pressure from blood loss begins to fall, these sensors reduce their [firing rate](@keyword=firing_rate|lang=en-US|style=Feynman), sending an urgent alarm to the brainstem. The brain's response is to unleash the full force of the **sympathetic nervous system**—the "fight-or-flight" response repurposed for survival.
 
 This sympathetic surge has two immediate, powerful effects. First, it commands the heart to beat faster (tachycardia) in a desperate attempt to maintain cardiac output even as the volume of each beat (stroke volume) is falling. Second, it triggers powerful vasoconstriction, clamping down on arteries feeding "non-essential" tissues like the skin, muscles, and gut. This is a ruthless but necessary act of triage, shunting the dwindling blood supply to the two organs that cannot survive even minutes without it: the heart and the brain. This is why a patient in early shock will have a rapid pulse and cool, pale, clammy skin.
 
 This intense vasoconstriction produces another, more subtle sign. Blood pressure has two numbers: the systolic (the peak pressure when the heart beats) and the diastolic (the trough pressure when the heart rests). The clamping of the arteries primarily increases the resistance to flow, which disproportionately raises the diastolic pressure. So, in early shock, even while the systolic pressure is maintained, the diastolic pressure creeps up, narrowing the gap between them. This **narrowed pulse pressure** is an elegant and early clue that the body is fighting desperately to compensate.
 
-But the nervous system is not alone. It calls in hormonal reinforcements. The [posterior pituitary](@entry_id:154535) gland releases **Arginine Vasopressin (AVP)**, a hormone with a brilliant dual-action strategy. Through its V1 receptors on blood vessels, it acts as a potent vasoconstrictor, adding another layer of support to the blood pressure. Simultaneously, through its V2 receptors in the kidneys, it acts as the "antidiuretic hormone," commanding the kidneys to halt urine production and conserve every last molecule of water to preserve volume. One hormone, two perfectly coordinated survival responses.
+But the nervous system is not alone. It calls in hormonal reinforcements. The [posterior pituitary](@keyword=posterior_pituitary|lang=en-US|style=Feynman) gland releases **Arginine Vasopressin (AVP)**, a hormone with a brilliant dual-action strategy. Through its V1 receptors on blood vessels, it acts as a potent vasoconstrictor, adding another layer of support to the blood pressure. Simultaneously, through its V2 receptors in the kidneys, it acts as the "antidiuretic hormone," commanding the kidneys to halt urine production and conserve every last molecule of water to preserve volume. One hormone, two perfectly coordinated survival responses.
 
 ### Reading the Signs: From Compensation to Collapse
 

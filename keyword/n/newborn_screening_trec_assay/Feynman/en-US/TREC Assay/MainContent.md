@@ -5,15 +5,15 @@ This article explores the science and impact of the TREC assay. In the first sec
 
 ## Principles and Mechanisms
 
-To understand the [newborn screening](@entry_id:275895) test for Severe Combined Immunodeficiency (SCID), we must first journey into the heart of our immune system and appreciate the magnificent problem it solves every day. How does our body, with a finite number of genes, prepare to fight a seemingly infinite universe of viruses, bacteria, and other microscopic invaders? The answer lies in a brilliant genetic gamble.
+To understand the [newborn screening](@keyword=newborn_screening|lang=en-US|style=Feynman) test for Severe Combined Immunodeficiency (SCID), we must first journey into the heart of our immune system and appreciate the magnificent problem it solves every day. How does our body, with a finite number of genes, prepare to fight a seemingly infinite universe of viruses, bacteria, and other microscopic invaders? The answer lies in a brilliant genetic gamble.
 
 ### The Great Genetic Gamble: Building an Immune System
 
 At the core of our adaptive immune system is an army of specialized white blood cells called **T lymphocytes**, or **T-cells**. Each T-cell is a highly-trained soldier, equipped with a unique surface protein called a **T-cell receptor (TCR)**. This receptor is like a molecular key, specifically shaped to recognize one particular fragment of an enemy, known as an antigen. To be effective, the body must generate a vast and diverse army of T-cells, with trillions of different TCRs, ensuring that at least a few soldiers can recognize any invader we might encounter.
 
-But how is this staggering diversity achieved? If every possible TCR were encoded directly in our DNA, our genome would need to be impossibly large. Instead, nature devised a breathtakingly elegant solution: a process of [somatic recombination](@entry_id:170372) called **V(D)J recombination**.
+But how is this staggering diversity achieved? If every possible TCR were encoded directly in our DNA, our genome would need to be impossibly large. Instead, nature devised a breathtakingly elegant solution: a process of [somatic recombination](@keyword=somatic_recombination|lang=en-US|style=Feynman) called **V(D)J recombination**.
 
-Imagine the genes for the TCR are not a complete blueprint, but rather a large box of genetic Lego bricks. These bricks are categorized into groups: Variable ($V$), Diversity ($D$), and Joining ($J$) segments. In a special organ called the **thymus**—the "school" for T-cells—developing T-cells randomly select one brick from each group and stitch them together. This process, mediated by a set of [molecular scissors](@entry_id:184312) called the **Recombination Activating Gene (RAG)** enzymes, creates a unique, functional TCR gene. It's a genetic slot machine, pulling levers to generate a novel combination every time a new T-cell is made. This gamble ensures that our body is armed with a repertoire of T-cells diverse enough to face the unknown.
+Imagine the genes for the TCR are not a complete blueprint, but rather a large box of genetic Lego bricks. These bricks are categorized into groups: Variable ($V$), Diversity ($D$), and Joining ($J$) segments. In a special organ called the **thymus**—the "school" for T-cells—developing T-cells randomly select one brick from each group and stitch them together. This process, mediated by a set of [molecular scissors](@keyword=molecular_scissors|lang=en-US|style=Feynman) called the **Recombination Activating Gene (RAG)** enzymes, creates a unique, functional TCR gene. It's a genetic slot machine, pulling levers to generate a novel combination every time a new T-cell is made. This gamble ensures that our body is armed with a repertoire of T-cells diverse enough to face the unknown.
 
 ### A Ghost in the Machine: The Birth of a TREC
 
@@ -23,7 +23,7 @@ Think of it as a "birth certificate." Every time a new T-cell successfully rearr
 
 ### The Ticking Clock: Why TRECs Measure New T-Cells
 
-The fate of this molecular birth certificate is what makes it such a powerful diagnostic tool. A TREC is an **episome**—it floats freely in the cell's nucleus but is not part of any chromosome. Crucially, it lacks an **[origin of replication](@entry_id:149437)**, the "start copy" signal that cellular machinery looks for during cell division.
+The fate of this molecular birth certificate is what makes it such a powerful diagnostic tool. A TREC is an **episome**—it floats freely in the cell's nucleus but is not part of any chromosome. Crucially, it lacks an **[origin of replication](@keyword=origin_of_replication|lang=en-US|style=Feynman)**, the "start copy" signal that cellular machinery looks for during cell division.
 
 Imagine a graduating student receives a unique, non-photocopiable diploma upon leaving school. If that student goes on to train apprentices, they can only pass the original physical diploma to one of them. The others get knowledge, but not the original certificate. So it is with TRECs. When a mature T-cell encounters its target antigen and begins to proliferate, creating an army of clones to fight an infection, its chromosomes are faithfully copied for every daughter cell. The TREC, however, is not. It is passed down to only one of the two daughter cells.
 
@@ -31,7 +31,7 @@ With each round of cell division, the TREC is diluted. After $n$ divisions, the 
 
 ### The Telltale Silence: Screening for SCID
 
-Now we can understand the logic of the newborn screening test. **Severe Combined Immunodeficiency (SCID)** is not a single disease, but a group of rare, life-threatening [genetic disorders](@entry_id:261959) defined by a common tragic outcome: a profound failure to produce functional T-cells. In many forms of SCID, the genetic defect breaks the T-cell production line. The RAG enzymes might be faulty, preventing V(D)J recombination, or the developing T-cells might not receive the essential survival signals needed to mature.
+Now we can understand the logic of the newborn screening test. **Severe Combined Immunodeficiency (SCID)** is not a single disease, but a group of rare, life-threatening [genetic disorders](@keyword=genetic_disorders|lang=en-US|style=Feynman) defined by a common tragic outcome: a profound failure to produce functional T-cells. In many forms of SCID, the genetic defect breaks the T-cell production line. The RAG enzymes might be faulty, preventing V(D)J recombination, or the developing T-cells might not receive the essential survival signals needed to mature.
 
 The consequence is a catastrophic failure of thymic output. The T-cell factory is essentially shut down. No new T-cells are being made. And if no T-cells are being made, no TRECs are being generated. A blood sample from a newborn with SCID is marked by a telltale silence—a near-total absence of these molecular birth certificates.
 
