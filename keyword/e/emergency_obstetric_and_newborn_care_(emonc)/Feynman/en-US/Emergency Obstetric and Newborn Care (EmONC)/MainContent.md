@@ -9,7 +9,7 @@ Imagine a firefighter's toolkit. It doesn't contain a tool for every conceivable
 
 ### The Architecture of Lifesaving: The Signal Functions
 
-At the heart of EmONC is the concept of **signal functions**. These are the essential, non-negotiable, life-saving actions that a health facility must be able to perform 24 hours a day, 7 days a week, to be considered a functional emergency care provider. They are the "signals" that a health system is truly ready. The framework is ingeniously tiered to match different levels of the health system .
+At the heart of EmONC is the concept of **signal functions**. These are the essential, non-negotiable, life-saving actions that a health facility must be able to perform 24 hours a day, 7 days a week, to be considered a functional emergency care provider. They are the "signals" that a health system is truly ready. The framework is ingeniously tiered to match different levels of the health system [@problem_id:4988226].
 
 First is **Basic Emergency Obstetric and Newborn Care (BEmONC)**, the frontline toolkit designed for health centers and small hospitals. It consists of seven critical functions that can be performed without major surgery:
 
@@ -21,7 +21,7 @@ First is **Basic Emergency Obstetric and Newborn Care (BEmONC)**, the frontline 
 6.  **Assisted vaginal delivery:** Using tools like a vacuum extractor to help deliver a baby when labor is obstructed in its final stages.
 7.  **Basic neonatal resuscitation:** The essential actions, primarily using a bag and mask, to help a newborn who isn't breathing at birth.
 
-These seven functions form a coherent package of care. For example, administering parenteral antibiotics is not simply about giving any antibiotic; it is about delivering a high-dose, broad-spectrum drug intravenously or intramuscularly to rapidly achieve bactericidal levels in the blood, a stark contrast to prescribing oral antibiotics for a less severe condition . Each function is an emergency action, distinct from routine care.
+These seven functions form a coherent package of care. For example, administering parenteral antibiotics is not simply about giving any antibiotic; it is about delivering a high-dose, broad-spectrum drug intravenously or intramuscularly to rapidly achieve bactericidal levels in the blood, a stark contrast to prescribing oral antibiotics for a less severe condition [@problem_id:4988231]. Each function is an emergency action, distinct from routine care.
 
 When a complication is too severe for the BEmONC toolkit, a higher level of care is needed. This is **Comprehensive Emergency Obstetric and Newborn Care (CEmONC)**. A CEmONC facility, typically a larger hospital, must be able to perform all seven BEmONC functions *plus* two additional, game-changing ones:
 
@@ -32,7 +32,7 @@ Together, these nine functions form the complete architecture of emergency obste
 
 ### Why These Functions? Mapping Interventions to Mortality
 
-Why this specific list of nine functions? The answer reveals the profound elegance of the EmONC concept. These functions were not chosen at random; they are a direct, targeted counter-assault on the leading causes of maternal and newborn death worldwide . Let's trace the causal chains.
+Why this specific list of nine functions? The answer reveals the profound elegance of the EmONC concept. These functions were not chosen at random; they are a direct, targeted counter-assault on the leading causes of maternal and newborn death worldwide [@problem_id:4988286]. Let's trace the causal chains.
 
 -   **Postpartum Hemorrhage (PPH):** The single greatest killer of mothers. It's often caused by a uterus that fails to contract after delivery (atony) or by a retained placenta. The EmONC response is a multi-pronged attack: **parenteral uterotonics** to force the uterus to contract, **manual removal of the placenta** or **removal of retained products** to eliminate the source of bleeding, and, in severe cases, **blood transfusion** to replace what has been lost and keep the mother alive.
 
@@ -56,7 +56,7 @@ The beauty of science lies in understanding *why* things work. Let's peel back t
 
 #### The Race Against Sepsis
 
-Why must antibiotics for sepsis be *parenteral* (injected)? Imagine a mother in septic shock. Her blood pressure is dangerously low, and her body is shunting blood away from her gut to preserve her vital organs. If you give her an oral antibiotic, it sits in a stomach with no blood flow to absorb it. The drug's **bioavailability ($F$)**, the fraction that reaches the bloodstream, plummets. In a septic patient, it might be as low as $0.1$ . Pharmacokinetic modeling shows that with such poor absorption, the drug concentration in the blood may never reach the **Minimal Inhibitory Concentration (MIC)** needed to kill the bacteria. In contrast, an intravenous (IV) dose provides $100\%$ bioavailability instantly, surging the drug concentration far above the MIC. Because these antibiotics work through **time-dependent killing** (their effectiveness depends on how long the concentration stays above the MIC), the IV dose immediately starts the clock on eradicating the infection, while the oral dose never even gets to the starting line. This isn't a matter of convenience; it's the difference between life and death.
+Why must antibiotics for sepsis be *parenteral* (injected)? Imagine a mother in septic shock. Her blood pressure is dangerously low, and her body is shunting blood away from her gut to preserve her vital organs. If you give her an oral antibiotic, it sits in a stomach with no blood flow to absorb it. The drug's **bioavailability ($F$)**, the fraction that reaches the bloodstream, plummets. In a septic patient, it might be as low as $0.1$ [@problem_id:4988197]. Pharmacokinetic modeling shows that with such poor absorption, the drug concentration in the blood may never reach the **Minimal Inhibitory Concentration (MIC)** needed to kill the bacteria. In contrast, an intravenous (IV) dose provides $100\%$ bioavailability instantly, surging the drug concentration far above the MIC. Because these antibiotics work through **time-dependent killing** (their effectiveness depends on how long the concentration stays above the MIC), the IV dose immediately starts the clock on eradicating the infection, while the oral dose never even gets to the starting line. This isn't a matter of convenience; it's the difference between life and death.
 
 #### When the Engine Is Strong but the Path Is Blocked
 
@@ -64,11 +64,11 @@ Consider a woman whose labor has stalled. Is the problem a weak engine or a bloc
 
 In one scenario, the partograph shows contractions are weak and infrequent. The baby is descending slowly, and there are no signs of distress. This is **protracted labor** due to a tired uterus. The solution is to carefully augment labor with the hormone oxytocin—giving the engine more fuel.
 
-But in another case, the contractions are strong and frequent, yet the baby's head stops descending. The attendant observes **caput** (swelling of the baby's scalp) and **molding** (overlapping of the skull bones). These are not just medical terms; they are the physical evidence of a terrifying reality: the powerful uterus is ramming the baby's head against an immovable pelvic bone . This is **obstructed labor**. Giving oxytocin here would be like flooring the gas pedal in a car smashed against a wall—disastrous, potentially leading to uterine rupture. The only safe way out is to bypass the obstruction, either through an **assisted vaginal delivery** if conditions are perfect, or more likely, a **Cesarean section**.
+But in another case, the contractions are strong and frequent, yet the baby's head stops descending. The attendant observes **caput** (swelling of the baby's scalp) and **molding** (overlapping of the skull bones). These are not just medical terms; they are the physical evidence of a terrifying reality: the powerful uterus is ramming the baby's head against an immovable pelvic bone [@problem_id:4988238]. This is **obstructed labor**. Giving oxytocin here would be like flooring the gas pedal in a car smashed against a wall—disastrous, potentially leading to uterine rupture. The only safe way out is to bypass the obstruction, either through an **assisted vaginal delivery** if conditions are perfect, or more likely, a **Cesarean section**.
 
 #### The Ultimate Backstops: Surgery and Blood
 
-CEmONC provides the two functions that can rescue a mother from the most dire circumstances. Their necessity is rooted in pure physiology .
+CEmONC provides the two functions that can rescue a mother from the most dire circumstances. Their necessity is rooted in pure physiology [@problem_id:4988199].
 
 A **Cesarean section** is the definitive answer to an absolute mechanical obstruction that cannot be resolved from below. It is the emergency exit when the main path is impassable.
 
@@ -76,9 +76,9 @@ A **Cesarean section** is the definitive answer to an absolute mechanical obstru
 
 ### The Human Element and the System of Care
 
-These powerful tools are useless without a trained mind and a skilled pair of hands to wield them. This is the role of the **Skilled Birth Attendant (SBA)**—a licensed midwife, nurse, or doctor who has undergone formal clinical training. An SBA is defined not just by their knowledge of normal birth, but by their competency and authorization to perform the life-saving BEmONC signal functions . This distinguishes them from **Traditional Birth Attendants (TBAs)**, who, while often respected community members, lack the formal training and licensure to manage emergencies.
+These powerful tools are useless without a trained mind and a skilled pair of hands to wield them. This is the role of the **Skilled Birth Attendant (SBA)**—a licensed midwife, nurse, or doctor who has undergone formal clinical training. An SBA is defined not just by their knowledge of normal birth, but by their competency and authorization to perform the life-saving BEmONC signal functions [@problem_id:4988247]. This distinguishes them from **Traditional Birth Attendants (TBAs)**, who, while often respected community members, lack the formal training and licensure to manage emergencies.
 
-Yet even a skilled provider in a well-equipped facility is only one piece of the puzzle. A woman must be able to get there. The **Three Delays Model** provides a powerful framework for understanding the complete system . Preventable deaths often occur because of:
+Yet even a skilled provider in a well-equipped facility is only one piece of the puzzle. A woman must be able to get there. The **Three Delays Model** provides a powerful framework for understanding the complete system [@problem_id:4988262]. Preventable deaths often occur because of:
 
 -   **Delay 1: The decision to seek care.** This can be due to cost, lack of knowledge about danger signs, or cultural barriers.
 -   **Delay 2: Reaching the facility.** This is the challenge of transport, distance, and infrastructure.
@@ -88,8 +88,8 @@ EmONC and the presence of SBAs are the definitive solution to Delay 3. A functio
 
 ### How Do We Know It's Working? The Science of Measurement
 
-To improve a system, we must first measure it. Global health uses precise **indicators** to track progress. We measure **SBA coverage** as the proportion of all live births attended by a skilled professional. We measure **BEmONC availability** not by the number of buildings, but by the number of *fully functional* facilities (those that have actually performed all seven functions recently) per 500,000 people .
+To improve a system, we must first measure it. Global health uses precise **indicators** to track progress. We measure **SBA coverage** as the proportion of all live births attended by a skilled professional. We measure **BEmONC availability** not by the number of buildings, but by the number of *fully functional* facilities (those that have actually performed all seven functions recently) per 500,000 people [@problem_id:4988206].
 
-We can even get smarter. Are all signal functions of equal importance? Clearly not. We can construct a **facility readiness index** where the availability of each tracer item (like oxytocin or a vacuum extractor) is weighted by its potential mortality impact—a function of how often it's needed ($\lambda_i$) and how many lives it saves when used ($\delta_i$) . This allows us to prioritize resources with mathematical rigor.
+We can even get smarter. Are all signal functions of equal importance? Clearly not. We can construct a **facility readiness index** where the availability of each tracer item (like oxytocin or a vacuum extractor) is weighted by its potential mortality impact—a function of how often it's needed ($\lambda_i$) and how many lives it saves when used ($\delta_i$) [@problem_id:4988220]. This allows us to prioritize resources with mathematical rigor.
 
-Finally, the ultimate measure of a system's intelligence is its ability to learn from failure. This is the purpose of **Maternal and Perinatal Death Surveillance and Response (MPDSR)**. It is not about counting bodies or blaming individuals. It is a "no-blame" continuous cycle: every death is carefully and confidentially reviewed by a team to understand *why* it happened—what system-level gaps in supplies, skills, or processes were responsible. These findings are then translated into concrete actions to fix the system and prevent the next tragedy . It is the embodiment of the [scientific method](@entry_id:143231) applied to saving lives, ensuring that the entire system of care is constantly evolving, learning, and improving.
+Finally, the ultimate measure of a system's intelligence is its ability to learn from failure. This is the purpose of **Maternal and Perinatal Death Surveillance and Response (MPDSR)**. It is not about counting bodies or blaming individuals. It is a "no-blame" continuous cycle: every death is carefully and confidentially reviewed by a team to understand *why* it happened—what system-level gaps in supplies, skills, or processes were responsible. These findings are then translated into concrete actions to fix the system and prevent the next tragedy [@problem_id:4988224]. It is the embodiment of the [scientific method](@keyword=scientific_method|lang=en-US|style=Feynman) applied to saving lives, ensuring that the entire system of care is constantly evolving, learning, and improving.

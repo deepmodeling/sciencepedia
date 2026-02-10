@@ -1,0 +1,70 @@
+## Introduction
+In any system that measures signals, the greatest challenge is often distinguishing the signal from the noise. Imagine trying to hear a whisper immediately after a loud clap; for a moment, the overwhelming ring makes it impossible. The intuitive solution is to wait a fraction of a second for the initial disturbance to fade. In the high-speed world of modern electronics, this intuitive act is formalized into a crucial technique known as **leading-edge blanking (LEB)**. It is the art of intelligently ignoring information at precisely the right moments to capture a clean measurement.
+
+Modern devices from laptop chargers to electric vehicles rely on [switching power converters](@entry_id:1132733), which turn current on and off millions of times per second. This rapid switching, while efficient, creates a violent, momentary electrical spike that can fool the system's controller, leading to malfunction. This article tackles the problem of this "leading-edge spike" and explains the elegant solution of LEB.
+
+First, in the "Principles and Mechanisms" chapter, we will delve into the physics behind the leading-edge spike in power electronics and explore how LEB works by creating a temporary "blind spot" for the controller. We will examine the critical engineering trade-offs involved in choosing the blanking duration and the profound impact it has on [system stability](@entry_id:148296) and safety. Following this, the "Applications and Interdisciplinary Connections" chapter will broaden our perspective, showcasing how this powerful idea is not only the heart of robust power supply design but also finds an unexpected and vital home in the delicate world of neuroscience, helping researchers listen to the whispers of the brain.
+
+## Principles and Mechanisms
+
+To appreciate the ingenuity of leading-edge blanking, we must first leave the pristine world of textbook schematics and venture into the messy, noisy reality of a [switching power converter](@entry_id:1132732). Imagine you are a chef, and your task is to cook a delicate sauce. The recipe says to heat it until it reaches precisely $85^{\circ}\mathrm{C}$ and then immediately turn off the heat. In an ideal kitchen, you would watch a perfectly accurate thermometer, and the moment it reads $85.0^{\circ}\mathrm{C}$, you would flip a switch, and the heat would vanish instantly.
+
+In modern electronics, especially in a scheme called **[peak current-mode control](@entry_id:1129480)**, we do something very similar. The "sauce" is the magnetic field being built up in an inductor, and its "temperature" is the current flowing through it. A controller, our electronic chef, watches this current. When it reaches a specific target value—the peak current—the controller flips a switch (typically a high-speed transistor like a MOSFET) to 'off', ending the energy storage phase of the cycle. This process repeats hundreds of thousands, or even millions, of times per second.
+
+But the real world is not an ideal kitchen.
+
+### The Villain: The Leading-Edge Spike
+
+When you turn on a powerful gas stove, there's an initial *whoosh* and a flicker of flame before it settles into a steady burn. Turning on a high-speed electronic switch is far more violent. For a few tens of nanoseconds—billionths of a second—after the switch is commanded 'on', the circuit experiences a period of extreme electrical chaos. Our current-measuring "thermometer" is overwhelmed by a massive, momentary spike in its reading that does not represent the true, useful current in the inductor. This phenomenon is known as the **leading-edge spike**.
+
+This spike is not a flaw or a defect; it is a consequence of the fundamental physics of the components. Two main culprits are responsible for this transient violence .
+
+First, imagine a one-way street with a traffic officer. In a power converter, a component called a **freewheeling diode** acts like this officer, directing current flow during the brief time the main switch is off. When the main switch turns back on, it's as if we instantly command the traffic officer to block the street and run the other way. The diode, being a physical object, can't react instantaneously. For a fleeting moment, known as the **reverse-recovery time**, a large burst of current flows backward through the diode before it can regain control and block the voltage. This reverse-recovery current adds to the main inductor current, and our sensor sees the sum of both—a large, artificial spike.
+
+Second, every piece of wire and every trace on a printed circuit board (PCB) possesses a tiny, seemingly negligible amount of inductance, which we call **parasitic inductance**. One of the fundamental laws of electromagnetism, Faraday's Law, tells us that a voltage is induced across an inductor proportional to the *rate of change* of current flowing through it ($v = L \frac{di}{dt}$). When our switch turns on, the current changes incredibly quickly. Even a minuscule parasitic inductance $L_p$ of a few nanohenries, when multiplied by a rate of change of hundreds of millions of amps per second, can generate a voltage spike of several volts right at our sensor .
+
+The combined effect is a current sense signal that lies. At the very beginning of the cycle, the controller might see a current spike equivalent to $6$ or $7$ Amperes, when the true inductor current is only just beginning to rise from, say, $2$ Amperes. If our target [peak current](@entry_id:264029) is $5$ Amperes, the controller is fooled. It sees the huge spike, thinks the target has already been massively exceeded, and immediately terminates the 'on' pulse. This is known as **false tripping**. The switch is on for only a tiny fraction of the intended time, almost no energy is transferred, and the converter fails to regulate the output voltage. Our chef, panicked by the initial sizzle, has turned off the stove before the sauce has even warmed up.
+
+### The Elegant Solution: Putting on Blinders
+
+How do we solve this? The spike is an inherent part of the switching event. Trying to eliminate it completely at the source is often impractical. We could try to filter the signal with a simple resistor-capacitor (RC) network, but this is like replacing our chef's eyes with blurry glasses. The filter would indeed smear out the sharp spike, but it would also slow down and delay the entire signal, making the control loop sluggish and potentially unstable .
+
+The solution used in virtually all modern controllers is far more elegant and is called **Leading-Edge Blanking (LEB)**. The principle is stunningly simple: if you know the measurement is going to be garbage for a short, predictable amount of time, just don't look.
+
+LEB is a time-gating function. For a fixed duration, the **blanking time** $t_b$, immediately after the switch is turned on, the controller's current comparator is electronically disabled. It is made temporarily blind. It doesn't matter how high the spike is; the comparator cannot act on it. After the blanking time—perhaps $100$ to $200$ nanoseconds—has passed, the transient chaos has subsided. The blinders come off, and the controller can now see the true, clean, and undelayed inductor current ramp. It's as if our chef, knowing the stove will sizzle and spit for the first three seconds, simply turns their back, counts to three, and *then* starts watching the thermometer. This allows the system to achieve noise immunity without sacrificing the high-speed response of the control loop .
+
+### The Art of Choosing the Blanking Time
+
+Of course, this solution introduces a new parameter: the blanking time $t_b$. And the choice of this duration is a delicate art, a classic engineering trade-off.
+
+If $t_b$ is too short—shorter than the duration of the switching spike—the blinders come off too early. The comparator is enabled while the spike is still large, and false tripping can still occur .
+
+The consequences of making $t_b$ too long are more subtle and interesting. A long blanking time creates two main problems. First, it imposes a **minimum on-time** on the converter. The switch is forced to stay on for at least the duration $t_b$. At very high input voltages or very light output loads, the converter might ideally need an on-time shorter than $t_b$ to maintain regulation. With a long blanking time, this becomes impossible, and the output voltage may rise out of control .
+
+Second, it can lead to **current overshoot**. Imagine a scenario where the desired peak current is reached while the controller is still blind. The controller misses the event entirely. The switch remains on for the full duration of the blanking time, and by the time the comparator is re-enabled, the inductor current has significantly overshot its target . This degrades regulation, particularly at light loads.
+
+The ideal blanking time, therefore, follows a "Goldilocks" principle: it must be just long enough to ride out the noise spike, and no longer. For a typical spike duration of $80\,\mathrm{ns}$, a blanking time of $100\,\mathrm{ns}$ might be chosen. This ensures the spike has decayed to a negligible level by the time the controller starts watching. Interestingly, even this small residual spike introduces a tiny, predictable measurement error. Because this small positive spike value adds to the true current, the comparator trips slightly early, meaning the true peak inductor current will be just a fraction of an amp *below* the target. This is a small undershoot, a price we pay for [noise immunity](@entry_id:262876) .
+
+### Unseen Consequences and The Bigger Picture
+
+Leading-edge blanking is a brilliant fix, but in physics and engineering, there is no free lunch. Introducing a "blind spot" into a high-speed control system has profound consequences that go beyond simple timing.
+
+From a control systems perspective, the blanking time, along with other unavoidable delays like the comparator's own reaction time, acts as a pure time delay in the feedback loop. A time delay is the enemy of stability. It introduces a **phase lag** into the system, which erodes the **phase margin**—the system's buffer against oscillation. The longer the total effective delay $(\tau_d + t_b)$, the greater the phase lag at a given frequency, and the more jittery and unstable the system becomes. A system with a healthy [phase margin](@entry_id:264609) of $58^\circ$ might see it reduced to $52^\circ$ just by the blanking and propagation delays, pushing it closer to ringing and instability  .
+
+Even more dramatic is what happens during a catastrophic fault, like a short circuit at the output. In this scenario, the full input voltage is applied across the inductor, and the current ramps up at an enormous rate. The controller's primary defense is its cycle-by-cycle current limit. However, the leading-edge blanking creates a terrifyingly dangerous blind spot.
+
+Consider a system with a nominal current limit of $10\,\mathrm{A}$ and a blanking time of $200\,\mathrm{ns}$. During a short circuit, the current might rise so fast that it blows past the $10\,\mathrm{A}$ limit in just $167\,\mathrm{ns}$. But the controller is blind. It cannot act. It must wait for the full $200\,\mathrm{ns}$ to pass. By the time it is allowed to look, the current has already reached $12\,\mathrm{A}$. It then takes another $100\,\mathrm{ns}$ for the comparator and driver to shut the switch off. During this total delay of $300\,\mathrm{ns}$, the current continues to rise, reaching a peak of $18\,\mathrm{A}$ before the switch is finally off. The $10\,\mathrm{A}$ safety limit has been violated by nearly 80%—a potentially destructive overshoot caused directly by the blanking time .
+
+This illustrates a vital principle: you can't rely on a single protection mechanism. Because LEB compromises fast overcurrent protection, a robust design must include a secondary, independent safety system. One common technique is **desaturation (DESAT) protection**, which monitors the voltage across the switch itself. A massive overcurrent causes this voltage to rise, providing a fast and reliable trigger to shut down the system, acting like an airbag that deploys independently of the compromised primary control loop .
+
+### A Word on Terminology: Blanking, Dead Time, and Interlocks
+
+Finally, it is crucial not to confuse leading-edge blanking with other timing parameters in power electronics, particularly **[dead time](@entry_id:273487)** and **interlock delay**. They solve different problems .
+
+*   **Leading-Edge Blanking:** Blinding a *sensor* for a short time to ignore noise *after* a switch turns on. It's about ensuring measurement integrity.
+
+*   **Dead Time:** In a half-bridge circuit with two switches in series, [dead time](@entry_id:273487) is an intentional delay inserted between turning one switch OFF and turning the other ON. During this time, both switches are commanded OFF to prevent them from ever being on simultaneously, which would cause a catastrophic short circuit known as **[shoot-through](@entry_id:1131585)**. It's about coordinating the *switches* to prevent a collision.
+
+*   **Interlock Delay:** This is a hardware-level safety mechanism that physically prevents the [gate drive](@entry_id:1125518) signals for both series switches from being active at the same time, even if the main controller malfunctions and erroneously commands them to be. It is a non-programmable failsafe, a final line of defense against software or control logic errors.
+
+If we imagine a railroad crossing, [dead time](@entry_id:273487) is the programmed delay between the warning lights starting and the gate arm descending. The interlock is a physical mechanism that prevents the gate from being raised while the lights are flashing. And leading-edge blanking is like a sensor on the tracks that is designed to ignore the initial, violent vibration when the train first hits it, waiting a split second to confirm the train's stable presence before sending the "train is here" signal. Each is a distinct and essential concept for the safe and reliable operation of the system.

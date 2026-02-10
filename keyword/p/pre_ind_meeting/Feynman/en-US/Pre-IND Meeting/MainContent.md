@@ -30,7 +30,7 @@ The TPP forces a sponsor's team to translate a vision into a set of concrete, te
 *   **Safety:** What is an acceptable safety profile? What side effects must be avoided?
 *   **Manufacturing (CMC):** What is the dose? The route of administration? What level of purity must the manufacturing process achieve?
 
-By defining these targets, a team can perform a **[gap analysis](@entry_id:192011)**—what evidence do we have, and what evidence do we still need to generate to support these claims? This TPP-driven plan becomes the substance of the briefing package sent to the FDA before the meeting. It provides the necessary context for a productive and deeply scientific conversation.
+By defining these targets, a team can perform a **[gap analysis](@keyword=gap_analysis|lang=en-US|style=Feynman)**—what evidence do we have, and what evidence do we still need to generate to support these claims? This TPP-driven plan becomes the substance of the briefing package sent to the FDA before the meeting. It provides the necessary context for a productive and deeply scientific conversation.
 
 ### The Substance of the Dialogue: Ensuring Safety for the First Human
 

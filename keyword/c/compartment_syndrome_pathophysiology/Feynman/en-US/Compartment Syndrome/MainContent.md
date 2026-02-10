@@ -11,7 +11,7 @@ Imagine trying to inflate a balloon inside a sturdy, unyielding cardboard box. A
 
 Our limbs are built on a similar principle. They are not simply amorphous bags of tissue. They are meticulously organized into **fascial compartments**. These are sections of muscle, nerves, and blood vessels bundled together and wrapped in a tough, whitish sheet of connective tissue called **deep fascia**. This fascia, along with bone, forms the rigid, unyielding "box." The volume of this box is essentially fixed.
 
-Under normal circumstances, this is a brilliant design, providing structure and support. But when something goes wrong—when bleeding or swelling occurs after an injury—this rigid container becomes a trap. Any increase in the volume of the contents, be it from blood or from the fluid of inflammation, has nowhere to go. Consequently, the pressure inside the compartment, the **Intracompartmental Pressure (ICP)**, begins to rise. This anatomical continuity is so complete that a pressure increase in one part of a compartment, say, the upper calf, can be transmitted all the way down to the ankle, like pressure traveling through a hydraulic line, causing symptoms far from the initial injury .
+Under normal circumstances, this is a brilliant design, providing structure and support. But when something goes wrong—when bleeding or swelling occurs after an injury—this rigid container becomes a trap. Any increase in the volume of the contents, be it from blood or from the fluid of inflammation, has nowhere to go. Consequently, the pressure inside the compartment, the **Intracompartmental Pressure (ICP)**, begins to rise. This anatomical continuity is so complete that a pressure increase in one part of a compartment, say, the upper calf, can be transmitted all the way down to the ankle, like pressure traveling through a hydraulic line, causing symptoms far from the initial injury [@problem_id:5109842].
 
 ### Life on the Gradient
 
@@ -25,11 +25,11 @@ Clinicians have a beautifully simple way to assess this, called the **delta pres
 
 $$ \Delta P = \text{Diastolic Blood Pressure} - \text{Intracompartmental Pressure} $$
 
-Decades of experience have taught us that when this $\Delta P$ falls below a critical threshold of about $20-30 \text{ mmHg}$, the faucet is effectively turned off  . The cells in the compartment begin to starve and suffocate. This is why a "normal" compartment pressure can be deadly in a patient with low blood pressure; what matters is the *relative* difference, the margin on which life operates  .
+Decades of experience have taught us that when this $\Delta P$ falls below a critical threshold of about $20-30 \text{ mmHg}$, the faucet is effectively turned off [@problem_id:4635891] [@problem_id:5092420]. The cells in the compartment begin to starve and suffocate. This is why a "normal" compartment pressure can be deadly in a patient with low blood pressure; what matters is the *relative* difference, the margin on which life operates [@problem_id:5122053] [@problem_id:4635916].
 
 ### The Vicious Cycle: When Swelling Begets Strangulation
 
-This brings us to the terrifying heart of the problem: a vicious positive feedback loop. Let's trace the downward spiral, a sequence of events so fundamental it applies whether in a crushed leg or a strangulated loop of bowel .
+This brings us to the terrifying heart of the problem: a vicious positive feedback loop. Let's trace the downward spiral, a sequence of events so fundamental it applies whether in a crushed leg or a strangulated loop of bowel [@problem_id:5186840].
 
 1.  **The Initial Swelling:** An injury—a fracture, a severe bruise, a burn—triggers inflammation. The body rushes fluid and inflammatory cells to the site. This is the initial **tumor**, or swelling.
 
@@ -41,13 +41,13 @@ This brings us to the terrifying heart of the problem: a vicious positive feedba
 
 5.  **Arterial Compromise:** Eventually, the ICP becomes so high that it starts to overcome the pressure in the arteries. The delta pressure vanishes. Arterial blood flow slows to a trickle and then stops. At this point, ischemia—a profound lack of blood flow—sets in.
 
-This entire cascade can happen with breathtaking speed. A patient with a broken leg might at first have a limb that is red and warm—the classic signs of inflammation known as **rubor** and **calor**, caused by increased blood flow . But as the vicious cycle takes hold and arterial inflow is choked off, a paradoxical change occurs: the limb becomes pale and cool. The very signs of the body's healing response are erased by the catastrophic pressures it has generated. This extrinsic strangulation can be so powerful that it stops flow even through a surgically repaired artery that is perfectly open on the inside .
+This entire cascade can happen with breathtaking speed. A patient with a broken leg might at first have a limb that is red and warm—the classic signs of inflammation known as **rubor** and **calor**, caused by increased blood flow [@problem_id:4421441]. But as the vicious cycle takes hold and arterial inflow is choked off, a paradoxical change occurs: the limb becomes pale and cool. The very signs of the body's healing response are erased by the catastrophic pressures it has generated. This extrinsic strangulation can be so powerful that it stops flow even through a surgically repaired artery that is perfectly open on the inside [@problem_id:5122083].
 
 ### The Reperfusion Paradox: Salvation's Double-Edged Sword
 
 One of the most fascinating and cruel twists in this story occurs when we try to fix a related problem: a blocked artery. Imagine a blood clot cuts off circulation to a limb for several hours. A surgeon performs a brilliant operation, removes the clot, and restores flow. The limb is saved! Or is it?
 
-This is where we encounter the **ischemia-reperfusion paradox**. The very act of restoring blood flow can trigger a second, more devastating wave of injury that leads directly to compartment syndrome . It happens in two phases.
+This is where we encounter the **ischemia-reperfusion paradox**. The very act of restoring blood flow can trigger a second, more devastating wave of injury that leads directly to compartment syndrome [@problem_id:5079735]. It happens in two phases.
 
 -   **Phase 1: The Ischemic Injury.** During the hours without blood flow, the muscle cells are starved of oxygen. Their internal power plants, the mitochondria, fail. The cells run out of their primary energy currency, a molecule called **adenosine triphosphate (ATP)**. Without ATP, vital pumps in the cell membrane, like the $\text{Na}^+/\text{K}^+$-ATPase, stop working. Sodium, which is normally kept outside, floods into the cell. Water follows the sodium, and the cells swell up. This is called **cytotoxic edema**.
 
@@ -59,9 +59,9 @@ The result is a double-whammy of swelling: the cells themselves are swollen, and
 
 What happens when the pressure wins? When the cells in the compartment are starved of oxygen for too long—typically four to eight hours—they die. This process of mass muscle cell death is called **rhabdomyolysis**.
 
-A living cell is a meticulously maintained bag of carefully controlled chemicals. A dead cell is a broken bag. It spills its contents. When millions of muscle cells rupture at once, their innards are dumped into the circulation, and what was a local, mechanical problem becomes a systemic, chemical catastrophe known as **crush syndrome** . Two of the most dangerous substances to escape are:
+A living cell is a meticulously maintained bag of carefully controlled chemicals. A dead cell is a broken bag. It spills its contents. When millions of muscle cells rupture at once, their innards are dumped into the circulation, and what was a local, mechanical problem becomes a systemic, chemical catastrophe known as **crush syndrome** [@problem_id:4831664]. Two of the most dangerous substances to escape are:
 
 -   **Potassium:** Muscle cells are rich in potassium. A massive, sudden release into the bloodstream can disrupt the heart's electrical rhythm, causing immediate cardiac arrest.
 -   **Myoglobin:** This is the protein that makes muscle red. It is not meant to be filtered by the kidneys in large quantities. It can crystallize and clog the kidney's delicate tubules, leading to acute kidney failure.
 
-This presents a terrifying dilemma for rescuers, such as those helping an earthquake victim whose leg has been trapped for hours. The patient is suffering from both a local compartment syndrome and a systemic crush syndrome. If the crushing debris is removed, restoring circulation, it will not only trigger a [reperfusion injury](@entry_id:163109) in the leg but will also flush a lethal cocktail of potassium and myoglobin into the heart and kidneys. This is why modern trauma care dictates that before a crushed limb is freed, the patient must first be stabilized with intravenous fluids and medications to protect the heart and kidneys from the coming toxic flood. It is a profound example of how a problem of simple physics—pressure in a box—can escalate into a life-or-death battle of systemic physiology.
+This presents a terrifying dilemma for rescuers, such as those helping an earthquake victim whose leg has been trapped for hours. The patient is suffering from both a local compartment syndrome and a systemic crush syndrome. If the crushing debris is removed, restoring circulation, it will not only trigger a [reperfusion injury](@keyword=reperfusion_injury|lang=en-US|style=Feynman) in the leg but will also flush a lethal cocktail of potassium and myoglobin into the heart and kidneys. This is why modern trauma care dictates that before a crushed limb is freed, the patient must first be stabilized with intravenous fluids and medications to protect the heart and kidneys from the coming toxic flood. It is a profound example of how a problem of simple physics—pressure in a box—can escalate into a life-or-death battle of systemic physiology.

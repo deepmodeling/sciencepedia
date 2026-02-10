@@ -29,7 +29,7 @@ If experiments are so powerful, why don't we use them for everything? There are 
 
 The second reason is practicality. We can't randomly assign people to live in Los Angeles or rural Montana to study the effects of air pollution. We can't randomly assign people's genetic makeup. Many exposures are simply not things an investigator can control.
 
-In these many situations where experiments are impossible, we must turn to the art of careful observation. But the problem of confounding doesn't go away. The genius of [observational study](@entry_id:174507) designs lies in the clever ways they attempt to handle this challenge.
+In these many situations where experiments are impossible, we must turn to the art of careful observation. But the problem of confounding doesn't go away. The genius of [observational study](@keyword=observational_study|lang=en-US|style=Feynman) designs lies in the clever ways they attempt to handle this challenge.
 
 *   A **cohort study** is the most intuitive approach. We identify a group of people (a cohort), measure their exposures (e.g., who works at the chemical plant and who works in the office), and then follow them forward in time to see who develops the outcome (kidney disease). This design is powerful because it clearly establishes that the exposure came before the outcome.
 

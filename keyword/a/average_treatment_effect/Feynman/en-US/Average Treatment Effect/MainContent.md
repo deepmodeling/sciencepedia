@@ -15,7 +15,7 @@ These two parallel realities give us two **potential outcomes** for Alice. We ca
 
 $$ITE_{\text{Alice}} = Y_{\text{Alice}}(1) - Y_{\text{Alice}}(0) = 130 - 145 = -15 \text{ mmHg}$$
 
-The drug lowered her blood pressure by 15 mmHg. A triumph! But here we face the "fundamental problem of causal inference": this number is a ghost. In reality, Alice either takes the drug or she doesn't. We can only ever observe one of her potential outcomes. The other remains forever in the realm of the counterfactual, a path not taken. We can never, for any single individual, measure their true causal effect .
+The drug lowered her blood pressure by 15 mmHg. A triumph! But here we face the "fundamental problem of causal inference": this number is a ghost. In reality, Alice either takes the drug or she doesn't. We can only ever observe one of her potential outcomes. The other remains forever in the realm of the counterfactual, a path not taken. We can never, for any single individual, measure their true causal effect [@problem_id:4586503].
 
 ### From One to Many: In Search of the Average Effect
 
@@ -25,7 +25,7 @@ The ATE is the average of all the individual treatment effects across the entire
 
 $$ATE = \mathbb{E}[Y(1) - Y(0)] = \mathbb{E}[Y(1)] - \mathbb{E}[Y(0)]$$
 
-The ATE answers a powerful, god-like question: What is the average impact of this intervention on the entire system? It's the number a health minister dreams of when deciding whether to make a new vaccine available to all citizens or whether to implement a nationwide public health program .
+The ATE answers a powerful, god-like question: What is the average impact of this intervention on the entire system? It's the number a health minister dreams of when deciding whether to make a new vaccine available to all citizens or whether to implement a nationwide public health program [@problem_id:4541281].
 
 But how do we measure this? It’s tempting to simply find some people who took the drug and some who didn't, and compare their average outcomes. But this is a trap! Suppose our drug is for a severe heart condition. Who is most likely to be taking it? The sickest patients. Who is most likely to be in the "untreated" group? Healthier people who didn't need it. Comparing these two groups is like comparing apples and oranges; the groups were different from the start. This pre-existing difference, which gets mixed up with any real effect of the drug, is called **selection bias** or **confounding**. The simple difference you observe, the *association*, is not the causation you seek.
 
@@ -41,9 +41,9 @@ Alternatively, we might be considering whether to expand the program. The releva
 
 $$ATC = \mathbb{E}[Y(1) - Y(0) \mid \text{Did Not Receive Treatment}]$$
 
-In a perfect randomized trial, where the treatment choice is completely random, these three measures—ATE, ATT, and ATC—will all be the same . But in the real world, they can be very different. Imagine an optional job training program. The people who sign up (the "treated") might be more motivated and ambitious than those who don't. They might have gotten a better job anyway, even without the training. Or, conversely, they may have been the most desperate. The effect of the training on this motivated or desperate group (the ATT) could be very different from the effect it would have if it were forced upon the unmotivated or less-needy group (the ATC).
+In a perfect randomized trial, where the treatment choice is completely random, these three measures—ATE, ATT, and ATC—will all be the same [@problem_id:4845620]. But in the real world, they can be very different. Imagine an optional job training program. The people who sign up (the "treated") might be more motivated and ambitious than those who don't. They might have gotten a better job anyway, even without the training. Or, conversely, they may have been the most desperate. The effect of the training on this motivated or desperate group (the ATT) could be very different from the effect it would have if it were forced upon the unmotivated or less-needy group (the ATC).
 
-Understanding the distinction between these estimands is vital for good policymaking. If the ATT for an existing program is large, it tells us the program is working well for its current participants. If the ATC is large, it provides a strong argument for expanding the program to new people. If the ATE is the main interest, it informs a decision about universal adoption for everyone . Each number tells a different part of the causal story.
+Understanding the distinction between these estimands is vital for good policymaking. If the ATT for an existing program is large, it tells us the program is working well for its current participants. If the ATC is large, it provides a strong argument for expanding the program to new people. If the ATE is the main interest, it informs a decision about universal adoption for everyone [@problem_id:4961043]. Each number tells a different part of the causal story.
 
 ### Not All Are Created Equal: Heterogeneity and Targeted Effects
 
@@ -53,36 +53,36 @@ To capture this, we can define the **Conditional Average Treatment Effect (CATE)
 
 $$CATE(x) = \mathbb{E}[Y(1) - Y(0) \mid X=x]$$
 
-where $x$ represents the specific characteristics ("65-year-old woman with diabetes"). The overall ATE is simply the weighted average of all these CATEs, where the weights are the prevalence of each subgroup in the population  .
+where $x$ represents the specific characteristics ("65-year-old woman with diabetes"). The overall ATE is simply the weighted average of all these CATEs, where the weights are the prevalence of each subgroup in the population [@problem_id:4388872] [@problem_id:4845573].
 
-This idea is the foundation of [personalized medicine](@entry_id:152668) and targeted policy. If we find that an intervention is highly effective for one group ($\tau_1 = -0.05$) but much less so for another ($\tau_2 = -0.01$), and resources are limited, it makes sense to prioritize the group where the intervention will do the most good. By understanding heterogeneity, we move from the blunt question "Does it work?" to the much more refined and useful question, "For whom does it work best?"
+This idea is the foundation of [personalized medicine](@keyword=personalized_medicine|lang=en-US|style=Feynman) and targeted policy. If we find that an intervention is highly effective for one group ($\tau_1 = -0.05$) but much less so for another ($\tau_2 = -0.01$), and resources are limited, it makes sense to prioritize the group where the intervention will do the most good. By understanding heterogeneity, we move from the blunt question "Does it work?" to the much more refined and useful question, "For whom does it work best?"
 
 ### A Clever Workaround: Finding a Local Effect with a Nudge
 
-Randomized trials are the gold standard, but they are often expensive, unethical, or impossible. How can we find causality in messy, observational data where confounding is everywhere? Sometimes, we can find a clever [natural experiment](@entry_id:143099), a "nudge" that pushes some people toward the treatment but not others. This nudge is called an **Instrumental Variable (IV)**.
+Randomized trials are the gold standard, but they are often expensive, unethical, or impossible. How can we find causality in messy, observational data where confounding is everywhere? Sometimes, we can find a clever [natural experiment](@keyword=natural_experiment|lang=en-US|style=Feynman), a "nudge" that pushes some people toward the treatment but not others. This nudge is called an **Instrumental Variable (IV)**.
 
 To be a valid instrument, this nudge must satisfy three core conditions:
 1.  **Relevance**: It must actually have an effect on whether people take the treatment.
 2.  **Exclusion Restriction**: It must *only* affect the outcome by changing treatment status. It can't have its own direct path to the outcome.
 3.  **Independence**: The nudge itself must be random, like a coin flip, not associated with the same confounding factors that plague our original problem.
 
-Imagine a health insurance plan randomly decides to waive the co-pay for a certain drug at some clinics but not others . The fee waiver is the instrument. It "nudges" people toward taking the drug. It's likely random and probably doesn't make people healthier on its own (except by encouraging drug use).
+Imagine a health insurance plan randomly decides to waive the co-pay for a certain drug at some clinics but not others [@problem_id:4802004]. The fee waiver is the instrument. It "nudges" people toward taking the drug. It's likely random and probably doesn't make people healthier on its own (except by encouraging drug use).
 
-This setup creates three kinds of people in the population :
+This setup creates three kinds of people in the population [@problem_id:4916921]:
 *   **Always-Takers**: They will take the drug whether there's a fee waiver or not.
 *   **Never-Takers**: They will not take the drug, even if it's free.
 *   **Compliers**: These are the only ones whose behavior is changed by the nudge. They take the drug if the fee is waived, and don't otherwise.
 
-The magic of [instrumental variables](@entry_id:142324) is that it can isolate the causal effect of the drug *only for the compliers*. The information from the always-takers and never-takers, whose behavior is unchanged by the nudge, is effectively cancelled out. The result is not the ATE, but the **Local Average Treatment Effect (LATE)**—the average effect for the specific (and often unidentifiable) subgroup of people who were induced to take the treatment by the instrument .
+The magic of [instrumental variables](@keyword=instrumental_variables|lang=en-US|style=Feynman) is that it can isolate the causal effect of the drug *only for the compliers*. The information from the always-takers and never-takers, whose behavior is unchanged by the nudge, is effectively cancelled out. The result is not the ATE, but the **Local Average Treatment Effect (LATE)**—the average effect for the specific (and often unidentifiable) subgroup of people who were induced to take the treatment by the instrument [@problem_id:4574205].
 
-This is a beautiful and subtle result. We give up on finding the effect for everyone, and in exchange, we get a true causal effect for *someone*—the compliers. The LATE will only equal the ATE in special cases, for instance, if the treatment effect is exactly the same for everyone, or if everyone in the population is a complier .
+This is a beautiful and subtle result. We give up on finding the effect for everyone, and in exchange, we get a true causal effect for *someone*—the compliers. The LATE will only equal the ATE in special cases, for instance, if the treatment effect is exactly the same for everyone, or if everyone in the population is a complier [@problem_id:4802004].
 
 ### From the Trial to the Real World: The Challenge of Generalization
 
 Our journey ends with one final, practical challenge. Suppose we have successfully completed a pristine randomized trial. We've enrolled patients aged 40-60 without diabetes and found a wonderful ATE. Now, a hospital wants to use this drug in its real-world patient population, which includes many people who are over 70 and have diabetes. Is the ATE we found in our trial the right answer for them?
 
-Probably not. This is a question of **external validity**, or **transportability**. The ATE we measured is specific to the population in our trial sample. The effect we want to know for the hospital's population is the **Target Average Treatment Effect (TATE)** . If the treatment effect varies by age or diabetic status (i.e., there is effect heterogeneity), and the distribution of these characteristics in the trial population is different from the target population, then the sample ATE will not equal the TATE.
+Probably not. This is a question of **external validity**, or **transportability**. The ATE we measured is specific to the population in our trial sample. The effect we want to know for the hospital's population is the **Target Average Treatment Effect (TATE)** [@problem_id:4622831]. If the treatment effect varies by age or diabetic status (i.e., there is effect heterogeneity), and the distribution of these characteristics in the trial population is different from the target population, then the sample ATE will not equal the TATE.
 
-All is not lost. If we have measured these key effect-modifying characteristics in our trial, we can use statistical methods to "transport" our findings. The logic is to calculate the CATE for each subgroup in our trial and then re-weight those effects based on the prevalence of those subgroups in our new target population. It's a way of rebuilding the ATE for a new context, piece by piece .
+All is not lost. If we have measured these key effect-modifying characteristics in our trial, we can use statistical methods to "transport" our findings. The logic is to calculate the CATE for each subgroup in our trial and then re-weight those effects based on the prevalence of those subgroups in our new target population. It's a way of rebuilding the ATE for a new context, piece by piece [@problem_id:4622831].
 
 From the ghost of an individual effect to the grand ATE, and from the targeted queries of ATT and ATC to the subtle insights of LATE and the practicalities of TATE, the concept of a "treatment effect" reveals itself not as a single number, but as a rich family of questions. Each member of this family provides a different lens through which to view causality, together forming a powerful framework for understanding what it truly means for an intervention to work.

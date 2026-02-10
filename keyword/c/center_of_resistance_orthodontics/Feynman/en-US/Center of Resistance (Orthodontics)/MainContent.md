@@ -9,15 +9,15 @@ To understand how an orthodontist can precisely guide a tooth through bone, we m
 
 For any object constrained by its surroundings, like our fence post in the ground or a tooth in its bony socket, there exists a special "sweet spot." If you could somehow apply your push directly to this spot, the object would slide perfectly sideways without any tipping at all. This magical point, the veritable center of balance for movement, is called the **Center of Resistance** ($C_{Res}$).
 
-The $C_{Res}$ is the conceptual heart of orthodontics. It's the unique point where a force produces pure **translation** (bodily movement) with no rotation  . It's crucial to understand that the $C_{Res}$ is *not* the center of mass. The center of mass governs how a free object moves in space (like a planet or a thrown ball), but a tooth is not free. Its movement is dictated by the resistance from its support system: the periodontal ligament (PDL) and the surrounding alveolar bone. The Center of Resistance is therefore the "[center of gravity](@entry_id:273519)" of this support system, not of the tooth itself .
+The $C_{Res}$ is the conceptual heart of orthodontics. It's the unique point where a force produces pure **translation** (bodily movement) with no rotation [@problem_id:4696972] [@problem_id:4718818]. It's crucial to understand that the $C_{Res}$ is *not* the center of mass. The center of mass governs how a free object moves in space (like a planet or a thrown ball), but a tooth is not free. Its movement is dictated by the resistance from its support system: the periodontal ligament (PDL) and the surrounding alveolar bone. The Center of Resistance is therefore the "[center of gravity](@keyword=center_of_gravity|lang=en-US|style=Feynman)" of this support system, not of the tooth itself [@problem_id:4696861].
 
-So, where is this invisible point? For a typical, single-rooted front tooth with healthy bone, the $C_{Res}$ lies somewhere along the long axis of the root, about one-third to one-half of the way down from the crest of the bone to the tip of the root  . Its precise location is the [centroid](@entry_id:265015) of all the tiny, spring-like PDL fibers anchoring the root.
+So, where is this invisible point? For a typical, single-rooted front tooth with healthy bone, the $C_{Res}$ lies somewhere along the long axis of the root, about one-third to one-half of the way down from the crest of the bone to the tip of the root [@problem_id:4718818] [@problem_id:4696888]. Its precise location is the [centroid](@keyword=centroid|lang=en-US|style=Feynman) of all the tiny, spring-like PDL fibers anchoring the root.
 
 This principle has beautiful and profound consequences:
 
-*   **Tooth Shape Matters:** A big, three-rooted molar has a much more complex and widespread [root system](@entry_id:202162) than a single-rooted incisor. Its "center of support" is therefore located deeper within the jawbone, typically in the area between the roots known as the furcation . This means the $C_{Res}$ of a molar is naturally more apical (closer to the root tip) than that of an incisor .
+*   **Tooth Shape Matters:** A big, three-rooted molar has a much more complex and widespread [root system](@keyword=root_system|lang=en-US|style=Feynman) than a single-rooted incisor. Its "center of support" is therefore located deeper within the jawbone, typically in the area between the roots known as the furcation [@problem_id:4696884]. This means the $C_{Res}$ of a molar is naturally more apical (closer to the root tip) than that of an incisor [@problem_id:4711136].
 
-*   **Bone Health is Critical:** Imagine periodontal disease causes some of the supporting bone to be lost. The effective support system shrinks and its center shifts down the root. As a result, the Center of Resistance moves apically as well . A tooth with bone loss has a deeper, more elusive $C_{Res}$—a fact of immense clinical importance.
+*   **Bone Health is Critical:** Imagine periodontal disease causes some of the supporting bone to be lost. The effective support system shrinks and its center shifts down the root. As a result, the Center of Resistance moves apically as well [@problem_id:4696832]. A tooth with bone loss has a deeper, more elusive $C_{Res}$—a fact of immense clinical importance.
 
 ### The Dance of Forces and Moments
 
@@ -25,29 +25,29 @@ In the real world, an orthodontist cannot apply a force directly to the $C_{Res}
 
 Physics tells us that a force applied at a distance from a pivot point creates a turning effect, a **moment** (often called torque). The magnitude of this moment is simple:
 $M = F \cdot d$
-where $F$ is the force and $d$ is the [perpendicular distance](@entry_id:176279) from the pivot to the line of the force.
+where $F$ is the force and $d$ is the [perpendicular distance](@keyword=perpendicular_distance|lang=en-US|style=Feynman) from the pivot to the line of the force.
 
-When a force is applied to the bracket, it creates a moment about the Center of Resistance. This moment is what causes the tooth to tip . This natural tendency is called **uncontrolled tipping**.
+When a force is applied to the bracket, it creates a moment about the Center of Resistance. This moment is what causes the tooth to tip [@problem_id:4718818]. This natural tendency is called **uncontrolled tipping**.
 
-If orthodontics were only about pushing, every tooth would simply tip over. To gain control, the orthodontist needs a way to apply a *pure twist* to counteract this tipping. This pure twist is a special entity in physics called a **couple**. A couple consists of two equal, opposite, and parallel forces. It produces a "free moment," meaning it's a pure rotational effect that is the same no matter where you are on the tooth. It has zero net pushing force; it only twists . A modern rectangular archwire engaged in a bracket slot is a sophisticated machine designed to deliver precisely such a couple.
+If orthodontics were only about pushing, every tooth would simply tip over. To gain control, the orthodontist needs a way to apply a *pure twist* to counteract this tipping. This pure twist is a special entity in physics called a **couple**. A couple consists of two equal, opposite, and parallel forces. It produces a "free moment," meaning it's a pure rotational effect that is the same no matter where you are on the tooth. It has zero net pushing force; it only twists [@problem_id:4696989]. A modern rectangular archwire engaged in a bracket slot is a sophisticated machine designed to deliver precisely such a couple.
 
 ### The Conductor's Baton: The Moment-to-Force Ratio
 
-The art and science of orthodontics lies in the masterful combination of a translational push (a **force**, $F$) and a rotational twist (a **moment** or couple, $M$). The key parameter that dictates the style of tooth movement is the ratio of the applied moment to the applied force, or the **Moment-to-Force ($M/F$) ratio** . This ratio, which has units of distance (e.g., mm), is the orthodontist's control dial.
+The art and science of orthodontics lies in the masterful combination of a translational push (a **force**, $F$) and a rotational twist (a **moment** or couple, $M$). The key parameter that dictates the style of tooth movement is the ratio of the applied moment to the applied force, or the **Moment-to-Force ($M/F$) ratio** [@problem_id:4697007]. This ratio, which has units of distance (e.g., mm), is the orthodontist's control dial.
 
-Let $d$ be the vertical distance from the bracket to the Center of Resistance. By precisely controlling the $M/F$ ratio delivered by the appliance, we can select from a full menu of possible movements :
+Let $d$ be the vertical distance from the bracket to the Center of Resistance. By precisely controlling the $M/F$ ratio delivered by the appliance, we can select from a full menu of possible movements [@problem_id:4696972]:
 
 *   **Uncontrolled Tipping ($M/F = 0$):** This is the default movement when only a force is applied ($M=0$). The crown tips in the direction of the force, and the root tips the other way. The tooth pivots around a **Center of Rotation** located somewhere between the $C_{Res}$ and the root apex.
 
-*   **Controlled Tipping ($0  M/F  d$):** A small counter-moment is applied, but it's not enough to fully prevent tipping. However, it moves the Center of Rotation apically. A common goal is to place the Center of Rotation right at the root apex, allowing the crown to move while the root tip stays put. This is achieved with an $M/F$ ratio that is positive but still less than the distance $d$. For instance, if $d=10$ mm, an $M/F$ of around $5$ mm might achieve this .
+*   **Controlled Tipping ($0  M/F  d$):** A small counter-moment is applied, but it's not enough to fully prevent tipping. However, it moves the Center of Rotation apically. A common goal is to place the Center of Rotation right at the root apex, allowing the crown to move while the root tip stays put. This is achieved with an $M/F$ ratio that is positive but still less than the distance $d$. For instance, if $d=10$ mm, an $M/F$ of around $5$ mm might achieve this [@problem_id:4696972].
 
-*   **Translation ($M/F = d$):** This is the magic ratio for bodily movement. When the applied counter-moment exactly cancels the tipping moment generated by the force (i.e., $M = F \cdot d$), the net moment at the $C_{Res}$ is zero. The tooth glides through the bone without any rotation. The Center of Rotation is effectively at infinity. To move an incisor where $d=9$ mm, one needs an $M/F$ ratio of $9$ mm; to move a molar where $d=12$ mm, one needs an $M/F$ of $12$ mm .
+*   **Translation ($M/F = d$):** This is the magic ratio for bodily movement. When the applied counter-moment exactly cancels the tipping moment generated by the force (i.e., $M = F \cdot d$), the net moment at the $C_{Res}$ is zero. The tooth glides through the bone without any rotation. The Center of Rotation is effectively at infinity. To move an incisor where $d=9$ mm, one needs an $M/F$ ratio of $9$ mm; to move a molar where $d=12$ mm, one needs an $M/F$ of $12$ mm [@problem_id:4711136].
 
-*   **Torque or Root Movement ($M/F > d$):** Here, the applied counter-moment is so large that it overpowers the natural tipping tendency. The tooth rotates in the opposite direction, causing the root to move significantly, sometimes more than the crown. The Center of Rotation shifts up towards the crown. If $d=10$ mm, applying an $M/F$ of $12$ mm would produce this root-first movement .
+*   **Torque or Root Movement ($M/F > d$):** Here, the applied counter-moment is so large that it overpowers the natural tipping tendency. The tooth rotates in the opposite direction, causing the root to move significantly, sometimes more than the crown. The Center of Rotation shifts up towards the crown. If $d=10$ mm, applying an $M/F$ of $12$ mm would produce this root-first movement [@problem_id:4696972].
 
 ### A Clinical Symphony in Action
 
-Let's see how these principles come together in a common clinical scenario: moving a tooth that has lost some of its bone support due to periodontal disease .
+Let's see how these principles come together in a common clinical scenario: moving a tooth that has lost some of its bone support due to periodontal disease [@problem_id:4696832].
 
 Suppose in a healthy state, the distance $d$ from the bracket to the $C_{Res}$ was $10$ mm. To achieve translation, the orthodontist needed an $M/F$ ratio of $10$ mm and used a force of, say, $100$ cN.
 

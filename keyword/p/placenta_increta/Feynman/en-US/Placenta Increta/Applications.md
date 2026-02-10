@@ -4,7 +4,7 @@ Having journeyed through the intricate microscopic landscape of the placenta and
 
 ### Seeing the Invisible: The Physics of Diagnosis
 
-Our first great challenge is that placenta increta is hidden from view, developing deep within a mother’s body. How can we possibly see this abnormal architecture without performing surgery? Here, we turn to the physicist. We learn to see not with light, but with sound waves and magnetic fields, translating the principles of [wave mechanics](@entry_id:166256) and [nuclear magnetic resonance](@entry_id:142969) into vivid anatomical maps.
+Our first great challenge is that placenta increta is hidden from view, developing deep within a mother’s body. How can we possibly see this abnormal architecture without performing surgery? Here, we turn to the physicist. We learn to see not with light, but with sound waves and magnetic fields, translating the principles of [wave mechanics](@keyword=wave_mechanics|lang=en-US|style=Feynman) and [nuclear magnetic resonance](@keyword=nuclear_magnetic_resonance|lang=en-US|style=Feynman) into vivid anatomical maps.
 
 Obstetric ultrasonography is our first and most essential tool. By sending high-frequency sound waves into the body and listening to their echoes, we can build a picture. Normal tissue boundaries, like the delicate space between the placenta and the uterine wall, reflect sound in a predictable way, creating a clear, dark line—the "clear zone." But when placenta increta occurs, this boundary is obliterated. The absence of that clear zone on an ultrasound image is not just a missing line; it is the ghost of a vanished anatomical border, a powerful clue that the placenta has invaded forbidden territory.
 
@@ -16,7 +16,7 @@ In placenta increta, the disorganized invasion is often marked by layers of fibr
 
 ### From Pictures to Probabilities: The Science of Planning
 
-Seeing the problem is only the first step. The true art lies in using these images to predict the future—to quantify the risk and plan accordingly. This is where clinical medicine transforms into a science of [risk management](@entry_id:141282), touching upon fields as diverse as statistics and health [systems engineering](@entry_id:180583).
+Seeing the problem is only the first step. The true art lies in using these images to predict the future—to quantify the risk and plan accordingly. This is where clinical medicine transforms into a science of [risk management](@keyword=risk_management|lang=en-US|style=Feynman), touching upon fields as diverse as statistics and health [systems engineering](@keyword=systems_engineering|lang=en-US|style=Feynman).
 
 Imagine a thought experiment used to train high-risk obstetric teams. A patient presents with a history and ultrasound findings that are highly suspicious for placenta increta. Based on large studies, we can assign probabilities to the different possible outcomes: perhaps a $40\%$ chance of a milder form (accreta), a $20\%$ chance of a deeper invasion (increta), and a $10\%$ chance of the most severe form (percreta). Each of these carries a different average expected blood loss. By calculating the weighted average of these possibilities, we can estimate the *expected* hemorrhage. But more importantly, we can calculate the probability of a catastrophic event—for instance, the chance that the patient's blood loss will exceed the entire immediate supply of a small community hospital's blood bank.
 

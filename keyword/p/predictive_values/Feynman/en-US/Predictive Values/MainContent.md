@@ -15,7 +15,7 @@ The first way to judge the oracle is to assess its intrinsic honesty. We could, 
 
 2.  *When people are truly healthy, how often does the oracle correctly say "no"?* This is a measure of its ability to correctly give the all-clear. We call this **specificity**. It's the probability that the test is negative, given that the person is disease-free.
 
-These two metrics, **sensitivity** and **specificity**, describe the test itself. They are intrinsic properties, like the horsepower of an engine or the resolution of a camera. They are determined by the test's design, its biology or chemistry, and are independent of where or on whom you use it. We can formalize this with some simple notation. Let $D^+$ be the event that disease is present and $D^-$ be that it's absent. Let $T^+$ be a positive test result and $T^-$ be a negative one. The definitions are then pure conditional probabilities :
+These two metrics, **sensitivity** and **specificity**, describe the test itself. They are intrinsic properties, like the horsepower of an engine or the resolution of a camera. They are determined by the test's design, its biology or chemistry, and are independent of where or on whom you use it. We can formalize this with some simple notation. Let $D^+$ be the event that disease is present and $D^-$ be that it's absent. Let $T^+$ be a positive test result and $T^-$ be a negative one. The definitions are then pure conditional probabilities [@problem_id:4585402]:
 
 - **Sensitivity** = $P(T^+ | D^+)$
 - **Specificity** = $P(T^- | D^-)$
@@ -27,13 +27,13 @@ To make this less abstract, let's imagine we test a large group of people and co
 | **Test Positive ($T^+$)** |    **True Positives (TP)**     | **False Positives (FP)** |
 | **Test Negative ($T^-$)** |  **False Negatives (FN)**    |  **True Negatives (TN)** |
 
-Here, a **true positive** is a correct "yes" from the oracle, and a **true negative** is a correct "no". A **false positive** is a false alarm, and a **false negative** is a dangerous miss. Using these counts, sensitivity is simply the proportion of sick people who test positive, $\frac{TP}{TP+FN}$, and specificity is the proportion of healthy people who test negative, $\frac{TN}{TN+FP}$ .
+Here, a **true positive** is a correct "yes" from the oracle, and a **true negative** is a correct "no". A **false positive** is a false alarm, and a **false negative** is a dangerous miss. Using these counts, sensitivity is simply the proportion of sick people who test positive, $\frac{TP}{TP+FN}$, and specificity is the proportion of healthy people who test negative, $\frac{TN}{TN+FP}$ [@problem_id:4708107].
 
 But this is the test-maker's perspective. It’s not what *you*, the patient, or your doctor, really want to know. When the oracle tells you "yes," you're not asking about its abstract properties. You have a much more urgent, personal question: *Given that the test is positive, what is the probability that I am actually sick?*
 
 This question, and its counterpart for a negative result, brings us to the second face of the test: its practical meaning. These are the **predictive values**.
 
-- The **[positive predictive value](@entry_id:190064) (PPV)** is the probability you have the disease, given a positive test result. In our notation, this is $P(D^+ | T^+)$.
+- The **[positive predictive value](@keyword=positive_predictive_value|lang=en-US|style=Feynman) (PPV)** is the probability you have the disease, given a positive test result. In our notation, this is $P(D^+ | T^+)$.
 - The **negative predictive value (NPV)** is the probability you are disease-free, given a negative test result. This is $P(D^- | T^-)$.
 
 Notice the beautiful, subtle reversal! Sensitivity is $P(T^+|D^+)$, but PPV is $P(D^+|T^+)$. The condition and the event have swapped places. It seems like a small change in notation, but it represents a monumental shift in perspective—from the test's properties to the test's meaning. And as it turns out, you cannot get from one to the other without asking one more crucial question.
@@ -57,9 +57,9 @@ Now let's see how our test performs:
 So, in total, we have $9 + 500 = 509$ people with a positive test. If you are one of them, what is the probability that you are truly sick? It’s the number of true positives divided by the total number of positives:
 $$ \text{PPV} = \frac{9}{509} \approx 0.018 \text{ or } 1.8\% $$
 
-This is astonishing! You've received a positive result from a test with 90% sensitivity and 95% specificity, yet you have less than a 2% chance of actually having the disease. The vast majority of positive results are false alarms. This happens because in a low-prevalence setting, the sheer number of healthy people, even when multiplied by a small [false positive rate](@entry_id:636147), generates a mountain of false positives that dwarfs the small hill of true positives. This is the heart of the "prevalence paradox." A positive result from a screening test for a rare disease is often more likely to be an error than a sign of disease. We see this exact effect when screening for ovarian cancer in average-risk women, where the prevalence is very low , or in large-scale public health screenings for chronic infections .
+This is astonishing! You've received a positive result from a test with 90% sensitivity and 95% specificity, yet you have less than a 2% chance of actually having the disease. The vast majority of positive results are false alarms. This happens because in a low-prevalence setting, the sheer number of healthy people, even when multiplied by a small [false positive rate](@keyword=false_positive_rate|lang=en-US|style=Feynman), generates a mountain of false positives that dwarfs the small hill of true positives. This is the heart of the "prevalence paradox." A positive result from a screening test for a rare disease is often more likely to be an error than a sign of disease. We see this exact effect when screening for ovarian cancer in average-risk women, where the prevalence is very low [@problem_id:4480517], or in large-scale public health screenings for chronic infections [@problem_id:4988606].
 
-Now, what if we test a different group where the disease is much more common? Let's take a high-risk group of 10,000 people where the prevalence is, say, 30% .
+Now, what if we test a different group where the disease is much more common? Let's take a high-risk group of 10,000 people where the prevalence is, say, 30% [@problem_id:4590892].
 - Number of truly sick people: $10,000 \times 0.30 = 3,000$.
 - Number of healthy people: $10,000 - 3,000 = 7,000$.
 
@@ -70,7 +70,7 @@ Let's run the *exact same test*:
 Now, the total number of positives is $2,700 + 350 = 3,050$. If you get a positive test in this group, your chance of being sick is:
 $$ \text{PPV} = \frac{2,700}{3,050} \approx 0.885 \text{ or } 88.5\% $$
 
-Look at that! The same test, but in a different context, gives a positive result that carries a completely different weight. As prevalence goes up, PPV goes up. Conversely, as prevalence goes up, NPV tends to go down (though it often remains high) . This is why a doctor's first question is not "What was the test result?" but "Who is the patient?". A screening test for colon cancer means something very different for a 30-year-old than for an 80-year-old, precisely because the prevalence of the disease changes so dramatically with age.
+Look at that! The same test, but in a different context, gives a positive result that carries a completely different weight. As prevalence goes up, PPV goes up. Conversely, as prevalence goes up, NPV tends to go down (though it often remains high) [@problem_id:4609909]. This is why a doctor's first question is not "What was the test result?" but "Who is the patient?". A screening test for colon cancer means something very different for a 30-year-old than for an 80-year-old, precisely because the prevalence of the disease changes so dramatically with age.
 
 ### The Unifying Beauty of Bayes' Theorem
 
@@ -81,17 +81,17 @@ $$ P(D^+ | T^+) = \frac{P(T^+ | D^+) P(D^+)}{P(T^+)} $$
 
 Let's translate this. The PPV (our updated belief) is the sensitivity (the quality of the evidence) multiplied by the prevalence (our prior belief), all divided by the overall probability of getting a positive test, $P(T^+)$.
 
-How do we find $P(T^+)$? A person can test positive in two ways: they are sick and test positive (a [true positive](@entry_id:637126)), or they are healthy and test positive (a false positive). The law of total probability lets us add these two scenarios together:
+How do we find $P(T^+)$? A person can test positive in two ways: they are sick and test positive (a [true positive](@keyword=true_positive|lang=en-US|style=Feynman)), or they are healthy and test positive (a false positive). The law of total probability lets us add these two scenarios together:
 $$ P(T^+) = P(T^+ | D^+)P(D^+) + P(T^+ | D^-)P(D^-) $$
 
-Substituting this into Bayes' theorem and using our terminology gives us the complete formula that tells the whole story :
+Substituting this into Bayes' theorem and using our terminology gives us the complete formula that tells the whole story [@problem_id:4558173]:
 $$ \text{PPV} = \frac{\text{Sensitivity} \times \text{Prevalence}}{(\text{Sensitivity} \times \text{Prevalence}) + ((1 - \text{Specificity}) \times (1 - \text{Prevalence}))} $$
 
 This equation is not just for calculation; it is a profound statement. It shows exactly how the intrinsic properties of the test (Sensitivity, Specificity) and the context of the population (Prevalence) weave together to produce the predictive value. A similar formula exists for NPV.
 
 ### From a Single Test to a Smart Strategy
 
-So, if screening the general public for a rare disease yields an unacceptably low PPV, are we doomed? Not at all. We can use our understanding of prevalence to be clever. This is precisely the strategy behind multi-step testing, like the historical algorithm for HIV diagnosis .
+So, if screening the general public for a rare disease yields an unacceptably low PPV, are we doomed? Not at all. We can use our understanding of prevalence to be clever. This is precisely the strategy behind multi-step testing, like the historical algorithm for HIV diagnosis [@problem_id:4748357].
 
 In the early days of HIV testing, a single screening test (ELISA), even with decent sensitivity and specificity, would produce a very low PPV when used on the general population where prevalence was low. A positive result caused immense anxiety but was more likely to be wrong than right.
 
