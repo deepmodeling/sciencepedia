@@ -1,7 +1,7 @@
 ## 引言
-当材料的形状发生改变时，它就发生了变形。虽然这听起来很简单，但理解其内部发生的变化对于几乎所有的工程学和[材料科学](@article_id:312640)都至关重要。简单的视觉变化是不够的；为了预测材料将如何响应，是会承受载荷还是会灾难性地失效，我们必须使用它的语言——应变的语言。本文旨在弥合观察变形与量化其内部原因（即材料微观部分之间的相对运动）之间的根本差距。
+当材料的形状发生改变时，它就发生了变形。虽然这听起来很简单，但理解其内部发生的变化对于几乎所有的工程学和[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)都至关重要。简单的视觉变化是不够的；为了预测材料将如何响应，是会承受载荷还是会灾难性地失效，我们必须使用它的语言——应变的语言。本文旨在弥合观察变形与量化其内部原因（即材料微观部分之间的相对运动）之间的根本差距。
 
-本文将分两部分引导您了解这一重要主题。首先，在“原理与机制”部分，我们将解构变形的构造，定义[正应变](@article_id:383229)（拉伸）和剪应变（歪斜），并介绍用于将真实变形与简单转动分离的数学工具，如应变张量。我们将探讨不同的视角如何揭示相同的物理现实，例如[纯剪切](@article_id:359902)如何被看作是拉伸和压缩。接下来，在“应用与跨学科联系”部分，我们将看到这些原理的实际应用，探索工程师如何利用它们来设计和分析结构、预测[材料疲劳](@article_id:324380)，以及相同的概念如何延伸到看似不相关的领域，如[流体动力学](@article_id:319275)和[智能材料](@article_id:315332)。读完本文，您将对应变作为物理世界中的一个统一概念有一个扎实的理解。
+本文将分两部分引导您了解这一重要主题。首先，在“原理与机制”部分，我们将解构变形的构造，定义[正应变](@keyword=normal_strain|lang=zh-CN|style=Feynman)（拉伸）和剪应变（歪斜），并介绍用于将真实变形与简单转动分离的数学工具，如应变张量。我们将探讨不同的视角如何揭示相同的物理现实，例如[纯剪切](@keyword=simple_shear|lang=zh-CN|style=Feynman)如何被看作是拉伸和压缩。接下来，在“应用与跨学科联系”部分，我们将看到这些原理的实际应用，探索工程师如何利用它们来设计和分析结构、预测[材料疲劳](@keyword=material_fatigue|lang=zh-CN|style=Feynman)，以及相同的概念如何延伸到看似不相关的领域，如[流体动力学](@keyword=hydrodynamics|lang=zh-CN|style=Feynman)和[智能材料](@keyword=smart_materials|lang=zh-CN|style=Feynman)。读完本文，您将对应变作为物理世界中的一个统一概念有一个扎实的理解。
 
 ## 原理与机制
 
@@ -15,13 +15,13 @@
 
 让我们考虑一个非常简单的位移。假设我们明胶中的每个点都水平移动，并且移动的量与其垂直位置成正比。例如，一个位移场如 $u_1 = k x_2$，其中 $u_1$ 是水平位移，$x_2$ 是初始垂直坐标。这对我们的网格有什么影响？
 
-假设水平位移 $u_1$ 取决于水平位置 $x_1$——这只是一个拉伸。更有趣的是，一个方向上的位移取决于*另一个*方向上的坐标。考虑一个位移 $u_1 = k x_2$。在底部（$x_2=0$）的点根本不水平移动。位置越高的点移动得越多。一条笔直的垂直线现在倾斜成一条斜线。你可以看到你制造了一个剪切。更微妙的是，想象一个[位移场](@article_id:301917) $u_1 = k x_2^2$（来自中思想实验的简化案例）。现在，不仅不同高度的点移动的量不同，而且*倾斜的程度*本身也随着高度的增加而改变。这产生了一种逐点变化的应变状态，即**非均匀应变**。如果应变处处相同，我们称之为**均匀应变**。这个区别至关重要：在一根弯曲的钢筋中，应变是非均匀的——在外侧曲线上拉伸最大，在内侧曲线上压缩最大。
+假设水平位移 $u_1$ 取决于水平位置 $x_1$——这只是一个拉伸。更有趣的是，一个方向上的位移取决于*另一个*方向上的坐标。考虑一个位移 $u_1 = k x_2$。在底部（$x_2=0$）的点根本不水平移动。位置越高的点移动得越多。一条笔直的垂直线现在倾斜成一条斜线。你可以看到你制造了一个剪切。更微妙的是，想象一个[位移场](@keyword=displacement_field|lang=zh-CN|style=Feynman) $u_1 = k x_2^2$（来自[@problem_id:1557364]中思想实验的简化案例）。现在，不仅不同高度的点移动的量不同，而且*倾斜的程度*本身也随着高度的增加而改变。这产生了一种逐点变化的应变状态，即**非均匀应变**。如果应变处处相同，我们称之为**均匀应变**。这个区别至关重要：在一根弯曲的钢筋中，应变是非均匀的——在外侧曲线上拉伸最大，在内侧曲线上压缩最大。
 
 ### 拉伸与歪斜：应变的两个侧面
 
 那么，让我们放大我们网格中变形前后的一个小方块。它的形状和大小可以通过哪些基本方式改变？事实证明只有两种。
 
-首先，它的边长可以改变。一条原本水平的边可能会变长或变短。我们称这种单位长度的长度变化为**[正应变](@article_id:383229)**。如果一个长度为 $L$ 的线段拉伸到新的长度 $L'$，则[正应变](@article_id:383229)为 $\epsilon = (L' - L) / L$。[正应变](@article_id:383229)为正表示拉伸，为负表示压缩。
+首先，它的边长可以改变。一条原本水平的边可能会变长或变短。我们称这种单位长度的长度变化为**[正应变](@keyword=normal_strain|lang=zh-CN|style=Feynman)**。如果一个长度为 $L$ 的线段拉伸到新的长度 $L'$，则[正应变](@keyword=normal_strain|lang=zh-CN|style=Feynman)为 $\epsilon = (L' - L) / L$。[正应变](@keyword=normal_strain|lang=zh-CN|style=Feynman)为正表示拉伸，为负表示压缩。
 
 其次，边与边之间的夹角可以改变。我们完美的正方形可能会扭曲成一个菱形。原本直角的变化就是我们所说的**剪应变**。这是一种形状的改变，但体积不变，就像你滑动一副扑克牌一样。
 
@@ -29,15 +29,15 @@
 $$
 \boldsymbol{\epsilon} = \begin{pmatrix} \epsilon_{xx}  \epsilon_{xy} \\ \epsilon_{yx}  \epsilon_{yy} \end{pmatrix}
 $$
-对角线上的分量 $\epsilon_{xx}$ 和 $\epsilon_{yy}$ 分别是 $x$ 和 $y$ 方向的[正应变](@article_id:383229)。它们告诉你沿坐标轴的无穷小线段正在拉伸或收缩多少。非对角线分量 $\epsilon_{xy}$ 和 $\epsilon_{yx}$（它们总是相等的，使得[张量](@article_id:321604)是**对称的**）描述了剪切。它们与 $x$ 和 $y$ 轴之间角度的变化量 $\gamma_{xy}$ 有关，关系为 $\gamma_{xy} = 2 \epsilon_{xy}$ 。这个2的因子是一个历史惯例，但物理意义是明确的：非零的非对角项意味着你的正方形正在歪斜。
+对角线上的分量 $\epsilon_{xx}$ 和 $\epsilon_{yy}$ 分别是 $x$ 和 $y$ 方向的[正应变](@keyword=normal_strain|lang=zh-CN|style=Feynman)。它们告诉你沿坐标轴的无穷小线段正在拉伸或收缩多少。非对角线分量 $\epsilon_{xy}$ 和 $\epsilon_{yx}$（它们总是相等的，使得[张量](@keyword=tensor|lang=zh-CN|style=Feynman)是**对称的**）描述了剪切。它们与 $x$ 和 $y$ 轴之间角度的变化量 $\gamma_{xy}$ 有关，关系为 $\gamma_{xy} = 2 \epsilon_{xy}$ [@problem_id:2912295]。这个2的因子是一个历史惯例，但物理意义是明确的：非零的非对角项意味着你的正方形正在歪斜。
 
 ### 解开症结：变形与转动
 
-这里我们来到了一个美妙而微妙的点。当我们的明胶小方块移动和变形时，它也可能作为一个整体在转动。想象一个转动的水车。水车上的一小块木头在转动，但它没有被拉伸或压缩。它没有经历应变，因此也没有应力。材料不抵抗[刚体转动](@article_id:332325)。我们的数学必须足够聪明，能够将真正引起应力的变形与简单的转动区分开来。
+这里我们来到了一个美妙而微妙的点。当我们的明胶小方块移动和变形时，它也可能作为一个整体在转动。想象一个转动的水车。水车上的一小块木头在转动，但它没有被拉伸或压缩。它没有经历应变，因此也没有应力。材料不抵抗[刚体转动](@keyword=rigid_body_rotation_2|lang=zh-CN|style=Feynman)。我们的数学必须足够聪明，能够将真正引起应力的变形与简单的转动区分开来。
 
-让我们看看两个邻近点之间位移的变化。所有这些信息都包含在一个主[张量](@article_id:321604)中，称为**[位移梯度](@article_id:344697)**，$\nabla \boldsymbol{u}$，其分量为 $\frac{\partial u_i}{\partial x_j}$。这个[张量](@article_id:321604)包含了一切——拉伸、歪斜*和*转动。我们如何将它们分开呢？
+让我们看看两个邻近点之间位移的变化。所有这些信息都包含在一个主[张量](@keyword=tensor|lang=zh-CN|style=Feynman)中，称为**[位移梯度](@keyword=displacement_gradient|lang=zh-CN|style=Feynman)**，$\nabla \boldsymbol{u}$，其分量为 $\frac{\partial u_i}{\partial x_j}$。这个[张量](@keyword=tensor|lang=zh-CN|style=Feynman)包含了一切——拉伸、歪斜*和*转动。我们如何将它们分开呢？
 
-答案在于一个具有深刻物理意义的绝妙数学技巧 。任何方阵都可以唯一地分解为一个对称[部分和](@article_id:322480)一个反对称部分。
+答案在于一个具有深刻物理意义的绝妙数学技巧 [@problem_id:2525695]。任何方阵都可以唯一地分解为一个对称[部分和](@keyword=partial_sums|lang=zh-CN|style=Feynman)一个反对称部分。
 $$
 \nabla \boldsymbol{u} = \frac{1}{2}(\nabla \boldsymbol{u} + (\nabla \boldsymbol{u})^T) + \frac{1}{2}(\nabla \boldsymbol{u} - (\nabla \boldsymbol{u})^T)
 $$
@@ -45,42 +45,42 @@ $$
 $$
 \boldsymbol{\epsilon} = \frac{1}{2}(\nabla \boldsymbol{u} + (\nabla \boldsymbol{u})^T)
 $$
-第二项，即反对称部分，被称为**无穷小转动[张量](@article_id:321604)**，$\boldsymbol{\omega}$。
+第二项，即反对称部分，被称为**无穷小转动[张量](@keyword=tensor|lang=zh-CN|style=Feynman)**，$\boldsymbol{\omega}$。
 $$
 \boldsymbol{\omega} = \frac{1}{2}(\nabla \boldsymbol{u} - (\nabla \boldsymbol{u})^T)
 $$
-这个[张量](@article_id:321604)描述了材料单元的平均局部转动，是一种不改变单元形状的纯粹转动运动。关键在于：对于一个简单的弹性材料，**应力** *只*取决于应变 $\boldsymbol{\epsilon}$。材料完全不受转动 $\boldsymbol{\omega}$ 的影响 [@problem_id:2525695, option H]。这一[材料客观性原理](@article_id:356838)是基础性的。它确保了描述材料响应的物理定律不依赖于观察者的转动运动。这是我们成功分离出“真实”变形的保证。
+这个[张量](@keyword=tensor|lang=zh-CN|style=Feynman)描述了材料单元的平均局部转动，是一种不改变单元形状的纯粹转动运动。关键在于：对于一个简单的弹性材料，**应力** *只*取决于应变 $\boldsymbol{\epsilon}$。材料完全不受转动 $\boldsymbol{\omega}$ 的影响 [@problem_id:2525695, option H]。这一[材料客观性原理](@keyword=material_objectivity|lang=zh-CN|style=Feynman)是基础性的。它确保了描述材料响应的物理定律不依赖于观察者的转动运动。这是我们成功分离出“真实”变形的保证。
 
-### 自然视角：[主应变](@article_id:376608)
+### 自然视角：[主应变](@keyword=principal_strains|lang=zh-CN|style=Feynman)
 
-我们使用任意的 $x, y$ [坐标系](@article_id:316753)定义了我们的[应变张量](@article_id:372284)。但是如果我们选择了不同的坐标轴呢？我们的[应变张量](@article_id:372284)的分量就会改变！这似乎很复杂。变形的物理状态是一回事，但我们对它的描述却取决于我们的视角。
+我们使用任意的 $x, y$ [坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)定义了我们的[应变张量](@keyword=strain_tensor|lang=zh-CN|style=Feynman)。但是如果我们选择了不同的坐标轴呢？我们的[应变张量](@keyword=strain_tensor|lang=zh-CN|style=Feynman)的分量就会改变！这似乎很复杂。变形的物理状态是一回事，但我们对它的描述却取决于我们的视角。
 
-是否存在一个“自然”的视角？对于任何给定的应变状态，是否存在一组特殊的坐标轴？答案是肯定的。对于任何应变状态，总存在一组相互正交的轴——**[主方向](@article_id:339880)**——沿着这些轴的变形是*纯粹的拉伸*。沿着这些特殊的轴，剪应变为零！与这些轴对齐的无穷小正方形只被拉伸或压缩成一个矩形，没有任何歪斜。沿着这些主方向的[正应变](@article_id:383229)被称为**[主应变](@article_id:376608)**，它们代表了该点材料中的最大和最小拉伸。
+是否存在一个“自然”的视角？对于任何给定的应变状态，是否存在一组特殊的坐标轴？答案是肯定的。对于任何应变状态，总存在一组相互正交的轴——**[主方向](@keyword=principal_directions|lang=zh-CN|style=Feynman)**——沿着这些轴的变形是*纯粹的拉伸*。沿着这些特殊的轴，剪应变为零！与这些轴对齐的无穷小正方形只被拉伸或压缩成一个矩形，没有任何歪斜[@problem_id:2668616]。沿着这些主方向的[正应变](@keyword=normal_strain|lang=zh-CN|style=Feynman)被称为**[主应变](@keyword=principal_strains|lang=zh-CN|style=Feynman)**，它们代表了该点材料中的最大和最小拉伸。
 
-在数学上，找到这些方向等同于找到[应变张量](@article_id:372284)的[特征向量](@article_id:312227)。[主应变](@article_id:376608)是相应的[特征值](@article_id:315305)。但其物理图像才是真正美妙的。它告诉我们，在一个[坐标系](@article_id:316753)中任何复杂的拉伸和剪切组合，在另一个旋转的[坐标系](@article_id:316753)中可以被看作是简单的、纯粹的拉伸。
+在数学上，找到这些方向等同于找到[应变张量](@keyword=strain_tensor|lang=zh-CN|style=Feynman)的[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)。[主应变](@keyword=principal_strains|lang=zh-CN|style=Feynman)是相应的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)。但其物理图像才是真正美妙的。它告诉我们，在一个[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中任何复杂的拉伸和剪切组合，在另一个旋转的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中可以被看作是简单的、纯粹的拉伸。
 
-这种统一性的一个绝佳例子是**纯剪切**状态。想象一个方形单元被扭曲成一个菱形，其沿 $x$ 和 $y$ 轴的边长没有变化。[应变张量](@article_id:372284)会是这样：
+这种统一性的一个绝佳例子是**纯剪切**状态[@problem_id:2912295]。想象一个方形单元被扭曲成一个菱形，其沿 $x$ 和 $y$ 轴的边长没有变化。[应变张量](@keyword=strain_tensor|lang=zh-CN|style=Feynman)会是这样：
 $$ \boldsymbol{\epsilon} = \begin{pmatrix} 0  \epsilon_{xy} \\ \epsilon_{xy}  0 \end{pmatrix} $$
-现在，如果你从一个旋转了45度的视角来看同一个变形，你会看到什么？你会看到正方形沿一个方向的对角线变长了，而另一个对角线变短了。沿着这些45度轴，变形是纯粹的拉伸和压缩，没有剪切！一个[坐标系](@article_id:316753)中的[纯剪切](@article_id:359902)在另一个[坐标系](@article_id:316753)中是纯粹的拉伸/压缩。它们是对同一个物理现实的两种不同描述。工程师们有一个奇妙的图形工具叫做**[莫尔圆](@article_id:347394)**，可以让他们毫不费力地将这种不同视角之间的转换可视化。
+现在，如果你从一个旋转了45度的视角来看同一个变形，你会看到什么？你会看到正方形沿一个方向的对角线变长了，而另一个对角线变短了。沿着这些45度轴，变形是纯粹的拉伸和压缩，没有剪切！一个[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中的[纯剪切](@keyword=simple_shear|lang=zh-CN|style=Feynman)在另一个[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中是纯粹的拉伸/压缩。它们是对同一个物理现实的两种不同描述。工程师们有一个奇妙的图形工具叫做**[莫尔圆](@keyword=mohr_s_circle|lang=zh-CN|style=Feynman)**，可以让他们毫不费力地将这种不同视角之间的转换可视化。
 
 ### 当“小”不再足够小
 
 到目前为止，我们所有的讨论都建立在“无穷小”或“小”应变近似之上。这个优美的线性理论对于大多数金属、陶瓷和正常工作条件下的刚性结构都非常适用。但我们必须正视它的局限性。“小”到底意味着什么？
 
-这不仅仅是说应变本身（拉伸和歪斜）必须很小，比如小于百分之一。一个更微妙的限制是，*转动*也必须很小。
+这不仅仅是说应变本身（拉伸和歪斜）必须很小，比如小于百分之一。一个更微妙的限制是，*转动*也必须很小[@problem_id:2697869]。
 
-考虑一根长而细的鱼竿。你可以轻易地将它弯成一个大弧形。鱼竿本身的材料几乎没有被拉伸——应变非常小。但是鱼竿中点处的一段可能已经旋转了30、40甚至90度。这是一个小应变但大转动的情况。我们的[线性化](@article_id:331373)理论在这里会失效。它会看到大的转动，并错误地将其解释为巨大的、物理上不真实的应变！ [@problem_id:2697869, option D]。要正确处理这种情况，需要精确的、非线性的[有限应变理论](@article_id:355900)。然而，对于绝大多数工程问题，小应变理论的简洁和优雅使其成为完成任务的完美工具。
+考虑一根长而细的鱼竿。你可以轻易地将它弯成一个大弧形。鱼竿本身的材料几乎没有被拉伸——应变非常小。但是鱼竿中点处的一段可能已经旋转了30、40甚至90度。这是一个小应变但大转动的情况。我们的[线性化](@keyword=linearization|lang=zh-CN|style=Feynman)理论在这里会失效。它会看到大的转动，并错误地将其解释为巨大的、物理上不真实的应变！ [@problem_id:2697869, option D]。要正确处理这种情况，需要精确的、非线性的[有限应变理论](@keyword=finite_strain_theory|lang=zh-CN|style=Feynman)。然而，对于绝大多数工程问题，小应变理论的简洁和优雅使其成为完成任务的完美工具。
 
 ### 材料的响应：各向异性及其意外之处
 
 我们为什么如此关心应变？因为材料通过产生**应力**来抵抗它。应变和应力之间的关系定义了材料的力学特性。
 
-对于最简单的材料，称为**各向同性**材料，其性质在所有方向上都相同。玻璃、钢和铝都是很好的近似。在这些材料中，关系是直接的：一个[正应变](@article_id:383229) $\epsilon_{xx}$ 产生一个[正应力](@article_id:324335) $\sigma_{xx}$，一个剪应变 $\epsilon_{xy}$ 产生一个[剪应力](@article_id:297590) $\tau_{xy}$。应力和应变的[主方向](@article_id:339880)完全重合。如果你有一个没有[剪应力](@article_id:297590)的[坐标系](@article_id:316753)，那么可以保证也不会有[剪应变](@article_id:354263) 。
+对于最简单的材料，称为**各向同性**材料，其性质在所有方向上都相同。玻璃、钢和铝都是很好的近似。在这些材料中，关系是直接的：一个[正应变](@keyword=normal_strain|lang=zh-CN|style=Feynman) $\epsilon_{xx}$ 产生一个[正应力](@keyword=normal_stresses|lang=zh-CN|style=Feynman) $\sigma_{xx}$，一个剪应变 $\epsilon_{xy}$ 产生一个[剪应力](@keyword=shear_stress|lang=zh-CN|style=Feynman) $\tau_{xy}$。应力和应变的[主方向](@keyword=principal_directions|lang=zh-CN|style=Feynman)完全重合。如果你有一个没有[剪应力](@keyword=shear_stress|lang=zh-CN|style=Feynman)的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)，那么可以保证也不会有[剪应变](@keyword=shear_strain|lang=zh-CN|style=Feynman) [@problem_id:1544497]。
 
-但世界上充满了非各向同性的材料。木材沿纹理[方向比](@article_id:346129)横跨纹理方向要坚固和刚硬得多。而现代先进材料，如碳纤维复合材料，则将这种**各向异性**发挥到了极致。在这里，故事变得更加有趣。
+但世界上充满了非各向同性的材料。木材沿纹理[方向比](@keyword=direction_ratios|lang=zh-CN|style=Feynman)横跨纹理方向要坚固和刚硬得多。而现代先进材料，如碳纤维复合材料，则将这种**各向异性**发挥到了极致。在这里，故事变得更加有趣。
 
-想象一下，一张复合材料薄板，其中所有坚固的碳纤维都与水平轴成30度角[排列](@article_id:296886)。如果你抓住[薄板](@article_id:360424)的水平边缘并拉它，会发生什么？你施加的是一个纯[正应力](@article_id:324335) $\sigma_{xx}$。在[各向同性材料](@article_id:349861)中，你会[期望](@article_id:311378)它只在那个方向上拉伸（并在侧向收缩一点）。但在这块**离轴铺层**中，会发生一些惊人的事情：当你拉动时，[薄板](@article_id:360424)也试图剪切！画在薄板上的一个矩形会歪斜成一个菱形 。
+想象一下，一张复合材料薄板，其中所有坚固的碳纤维都与水平轴成30度角[排列](@keyword=permutation|lang=zh-CN|style=Feynman)。如果你抓住[薄板](@keyword=thin_plates|lang=zh-CN|style=Feynman)的水平边缘并拉它，会发生什么？你施加的是一个纯[正应力](@keyword=normal_stresses|lang=zh-CN|style=Feynman) $\sigma_{xx}$。在[各向同性材料](@keyword=isotropic_materials|lang=zh-CN|style=Feynman)中，你会[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)它只在那个方向上拉伸（并在侧向收缩一点）。但在这块**离轴铺层**中，会发生一些惊人的事情：当你拉动时，[薄板](@keyword=thin_plates|lang=zh-CN|style=Feynman)也试图剪切！画在薄板上的一个矩形会歪斜成一个菱形 [@problem_id:2899303]。
 
-这被称为**[拉伸-剪切耦合](@article_id:371452)**。一个[正应力](@article_id:324335)产生了[剪应变](@article_id:354263)。这是因为材料希望沿着其最刚硬的方向——纤维方向——变形。由于你的拉力与纤维方向不一致，材料在你的[坐标系](@article_id:316753)中的响应是拉伸和剪切的混合。这种耦合在[各向同性材料](@article_id:349861)的对称性下是被禁止的，但它是各向异性材料在非其自然对称轴方向加载时的基本属性。事实上，我们可以从第一性原理证明，这种正应力与剪切分量之间的耦合对于具有特定对称性的材料（如[正交各向异性材料](@article_id:369185)，具有三个相互垂直的对称面）必须消失，但前提是必须沿着这些特殊的[对称轴](@article_id:356247)观察  。一旦你从一个“离轴”角度观察，耦合就会出现。
+这被称为**[拉伸-剪切耦合](@keyword=extension_shear_coupling|lang=zh-CN|style=Feynman)**。一个[正应力](@keyword=normal_stresses|lang=zh-CN|style=Feynman)产生了[剪应变](@keyword=shear_strain|lang=zh-CN|style=Feynman)。这是因为材料希望沿着其最刚硬的方向——纤维方向——变形。由于你的拉力与纤维方向不一致，材料在你的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中的响应是拉伸和剪切的混合。这种耦合在[各向同性材料](@keyword=isotropic_materials|lang=zh-CN|style=Feynman)的对称性下是被禁止的，但它是各向异性材料在非其自然对称轴方向加载时的基本属性。事实上，我们可以从第一性原理证明，这种正应力与剪切分量之间的耦合对于具有特定对称性的材料（如[正交各向异性材料](@keyword=orthotropic_materials|lang=zh-CN|style=Feynman)，具有三个相互垂直的对称面）必须消失，但前提是必须沿着这些特殊的[对称轴](@keyword=axis_of_symmetry|lang=zh-CN|style=Feynman)观察 [@problem_id:2872754] [@problem_id:2658658]。一旦你从一个“离轴”角度观察，耦合就会出现。
 
-这不仅仅是一个奇特的现象；它是现代复合材料设计的核心。通过以不同角度小心地堆叠这些各向异性[薄板](@article_id:360424)层，工程师可以创造出具有定制属性的结构——使它们在弯曲时扭转，或在单一方向拉伸时向所有方向膨胀——从而实现用简单的[各向同性材料](@article_id:349861)无法完成的工程壮举。而这一切都始于理解变形的两种[基本模式](@article_id:344550)：简单的拉伸和不起眼的歪斜。
+这不仅仅是一个奇特的现象；它是现代复合材料设计的核心。通过以不同角度小心地堆叠这些各向异性[薄板](@keyword=thin_plates|lang=zh-CN|style=Feynman)层，工程师可以创造出具有定制属性的结构——使它们在弯曲时扭转，或在单一方向拉伸时向所有方向膨胀——从而实现用简单的[各向同性材料](@keyword=isotropic_materials|lang=zh-CN|style=Feynman)无法完成的工程壮举。而这一切都始于理解变形的两种[基本模式](@keyword=fundamental_mode|lang=zh-CN|style=Feynman)：简单的拉伸和不起眼的歪斜。

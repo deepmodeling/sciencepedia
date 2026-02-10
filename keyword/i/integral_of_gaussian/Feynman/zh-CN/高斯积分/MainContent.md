@@ -1,9 +1,9 @@
 ## 引言
-[高斯函数](@article_id:325105) $e^{-x^2}$ 是科学的基石之一，其优美的[钟形曲线](@article_id:311235)描述了从统计分布到量子概率的万事万物。然而，尽管其形式简单，但它却构成了一个重大挑战：使用标准微积分技巧求其曲线下的面积是不可能的，因为它的[反导数](@article_id:300964)无法用[初等函数](@article_id:360898)表示。本文将揭开这个著名问题的神秘面纱，展示用于破解其解答的巧妙方法。在“原理与机制”部分，我们将探索升维的巧妙技巧，发现该积分与伽马函数的深刻联系，并探讨其他几何解释。随后，“应用与跨学科联系”部分将展示该积分的广泛影响，说明这一结果如何在量子力学、[高维几何学](@article_id:304622)和基本力研究等不同领域中充当万能钥匙，揭示科学思想惊人的统一性。
+[高斯函数](@keyword=gaussian_function|lang=zh-CN|style=Feynman) $e^{-x^2}$ 是科学的基石之一，其优美的[钟形曲线](@keyword=bell_curve|lang=zh-CN|style=Feynman)描述了从统计分布到量子概率的万事万物。然而，尽管其形式简单，但它却构成了一个重大挑战：使用标准微积分技巧求其曲线下的面积是不可能的，因为它的[反导数](@keyword=antiderivative|lang=zh-CN|style=Feynman)无法用[初等函数](@keyword=elementary_functions|lang=zh-CN|style=Feynman)表示。本文将揭开这个著名问题的神秘面纱，展示用于破解其解答的巧妙方法。在“原理与机制”部分，我们将探索升维的巧妙技巧，发现该积分与伽马函数的深刻联系，并探讨其他几何解释。随后，“应用与跨学科联系”部分将展示该积分的广泛影响，说明这一结果如何在量子力学、[高维几何学](@keyword=high_dimensional_geometry|lang=zh-CN|style=Feynman)和基本力研究等不同领域中充当万能钥匙，揭示科学思想惊人的统一性。
 
 ## 原理与机制
 
-在科学中，我们不常遇到形式如此简单，却又如此顽固地抗拒我们常规工具的事物。函数 $f(x) = e^{-x^2}$，即著名的**钟形曲线**，就是这样一个角色。它描述了从人口身高分布到在[量子态](@article_id:306563)中找到一个电子的概率等各种现象。它的形状优美对称，在零点达到峰值，然后向无穷远处优雅地消失。你可能会认为计算该曲线下的面积，即定积分 $\int_{-\infty}^{\infty} e^{-x^2} \, dx$，应该是一项简单的练习。但事实并非如此。事实上，没有任何[初等函数](@article_id:360898)——多项式、[根式](@article_id:314578)、正弦、余弦或对数——的组合能够表示 $e^{-x^2}$ 的[反导数](@article_id:300964)。这扇门被锁上了。
+在科学中，我们不常遇到形式如此简单，却又如此顽固地抗拒我们常规工具的事物。函数 $f(x) = e^{-x^2}$，即著名的**钟形曲线**，就是这样一个角色。它描述了从人口身高分布到在[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)中找到一个电子的概率等各种现象。它的形状优美对称，在零点达到峰值，然后向无穷远处优雅地消失。你可能会认为计算该曲线下的面积，即定积分 $\int_{-\infty}^{\infty} e^{-x^2} \, dx$，应该是一项简单的练习。但事实并非如此。事实上，没有任何[初等函数](@keyword=elementary_functions|lang=zh-CN|style=Feynman)——多项式、[根式](@keyword=radicals|lang=zh-CN|style=Feynman)、正弦、余弦或对数——的组合能够表示 $e^{-x^2}$ 的[反导数](@keyword=antiderivative|lang=zh-CN|style=Feynman)。这扇门被锁上了。
 
 那么，我们如何求这个面积呢？我们要做一个聪明的物理学家或数学家在面对一扇锁着的门时会做的事：我们不试图撬锁，而是寻找一扇窗户。
 
@@ -19,15 +19,15 @@ $$
 I^2 = \left( \int_{-\infty}^{\infty} e^{-x^2} \, dx \right) \left( \int_{-\infty}^{\infty} e^{-y^2} \, dy \right)
 $$
 
-注意，我们巧妙地为第二个积分使用了另一个变量 $y$。这不会改变它的值，但它使我们能够将这个乘积不看作两个独立的一维问题，而是一个单一的二维问题。这就是那个飞跃 。
+注意，我们巧妙地为第二个积分使用了另一个变量 $y$。这不会改变它的值，但它使我们能够将这个乘积不看作两个独立的一维问题，而是一个单一的二维问题。这就是那个飞跃 [@problem_id:1425409]。
 
 $$
 I^2 = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{-x^2} e^{-y^2} \, dx \, dy = \iint_{\mathbb{R}^2} e^{-(x^2 + y^2)} \, dA
 $$
 
-现在我们不再是计算曲线下的面积，而是计算一个二维[曲面](@article_id:331153)下的*体积*。这个[曲面](@article_id:331153)是一座美丽的小山，围绕原点完美对称。当你处理一个具有完美圆形对称性的物体时，用方形网格（笛卡尔坐标 $x$ 和 $y$）来思考就显得很笨拙。这就像试图只用正方形来描述一个圆。描述圆的自然语言是**[极坐标](@article_id:319829)**语言：一个半径 $r$ 和一个角度 $\theta$。
+现在我们不再是计算曲线下的面积，而是计算一个二维[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)下的*体积*。这个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)是一座美丽的小山，围绕原点完美对称。当你处理一个具有完美圆形对称性的物体时，用方形网格（笛卡尔坐标 $x$ 和 $y$）来思考就显得很笨拙。这就像试图只用正方形来描述一个圆。描述圆的自然语言是**[极坐标](@keyword=polar_coordinates|lang=zh-CN|style=Feynman)**语言：一个半径 $r$ 和一个角度 $\theta$。
 
-变换很简单：$x^2 + y^2 = r^2$。然而，真正的魔力在于面积元 $dA = dx \, dy$ 如何变换。在[极坐标](@article_id:319829)中，一小块面积不是一个固定大小的正方形；它的大小取决于它离中心的距离。正确的变换是 $dA = r \, dr \, d\theta$。这个小小的因子 $r$ 正是解开整个问题的关键。
+变换很简单：$x^2 + y^2 = r^2$。然而，真正的魔力在于面积元 $dA = dx \, dy$ 如何变换。在[极坐标](@keyword=polar_coordinates|lang=zh-CN|style=Feynman)中，一小块面积不是一个固定大小的正方形；它的大小取决于它离中心的距离。正确的变换是 $dA = r \, dr \, d\theta$。这个小小的因子 $r$ 正是解开整个问题的关键。
 
 将此代入我们关于 $I^2$ 的积分：
 
@@ -49,17 +49,17 @@ $$
 I = \int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}
 $$
 
-数字 $\pi$，即圆的周长与其直径之比，原来一直隐藏在[钟形曲线](@article_id:311235)下的面积里！正是这种深刻而出人意料的联系，让科学如此激动人心。
+数字 $\pi$，即圆的周长与其直径之比，原来一直隐藏在[钟形曲线](@keyword=bell_curve|lang=zh-CN|style=Feynman)下的面积里！正是这种深刻而出人意料的联系，让科学如此激动人心。
 
-### 一个意外的家族联系：[伽马函数](@article_id:301862)
+### 一个意外的家族联系：[伽马函数](@keyword=gamma_function|lang=zh-CN|style=Feynman)
 
-事实证明，这个结果并非孤立的好奇。它联系着一个庞大的函数家族，其中最著名的是**[伽马函数](@article_id:301862)** $\Gamma(z)$。由伟大的 Leonhard Euler 构想，伽马函数是将[阶乘函数](@article_id:300577)（如 $n! = n \times (n-1) \times \dots \times 1$）推广到所有复数的恰当方式。对于正数，它由一个积分定义：
+事实证明，这个结果并非孤立的好奇。它联系着一个庞大的函数家族，其中最著名的是**[伽马函数](@keyword=gamma_function|lang=zh-CN|style=Feynman)** $\Gamma(z)$。由伟大的 Leonhard Euler 构想，伽马函数是将[阶乘函数](@keyword=factorial_function|lang=zh-CN|style=Feynman)（如 $n! = n \times (n-1) \times \dots \times 1$）推广到所有复数的恰当方式。对于正数，它由一个积分定义：
 
 $$
 \Gamma(z) = \int_0^\infty t^{z-1} e^{-t} dt
 $$
 
-乍一看，这似乎与我们的高斯函数无关。但让我们看一个简单的问题会发生什么：$\Gamma(\frac{1}{2})$ 是多少？  。
+乍一看，这似乎与我们的高斯函数无关。但让我们看一个简单的问题会发生什么：$\Gamma(\frac{1}{2})$ 是多少？ [@problem_id:2246716] [@problem_id:29091]。
 
 $$
 \Gamma\left(\frac{1}{2}\right) = \int_0^\infty t^{\frac{1}{2}-1} e^{-t} dt = \int_0^\infty \frac{e^{-t}}{\sqrt{t}} dt
@@ -71,19 +71,19 @@ $$
 \Gamma\left(\frac{1}{2}\right) = \int_0^\infty \frac{e^{-x^2}}{x} (2x \, dx) = 2 \int_0^\infty e^{-x^2} dx
 $$
 
-我们认出它了！积分 $\int_0^\infty e^{-x^2} dx$ 正好是我们原始积分 $I$ 的一半，因为[钟形曲线](@article_id:311235)是对称的。所以，$2 \int_0^\infty e^{-x^2} dx = I$。我们刚刚证明了：
+我们认出它了！积分 $\int_0^\infty e^{-x^2} dx$ 正好是我们原始积分 $I$ 的一半，因为[钟形曲线](@keyword=bell_curve|lang=zh-CN|style=Feynman)是对称的。所以，$2 \int_0^\infty e^{-x^2} dx = I$。我们刚刚证明了：
 
 $$
 \Gamma\left(\frac{1}{2}\right) = \sqrt{\pi}
 $$
 
-这并非巧合。这是一个迹象，表明我们正在触及数学中一个深刻的结构统一性。值 $\sqrt{\pi}$ 不仅仅是一个数字；它是一个锚点，通过伽马函数将[高斯函数](@article_id:325105)与整个[特殊函数](@article_id:303669)理论连接起来。
+这并非巧合。这是一个迹象，表明我们正在触及数学中一个深刻的结构统一性。值 $\sqrt{\pi}$ 不仅仅是一个数字；它是一个锚点，通过伽马函数将[高斯函数](@keyword=gaussian_function|lang=zh-CN|style=Feynman)与整个[特殊函数](@keyword=special_functions|lang=zh-CN|style=Feynman)理论连接起来。
 
 ### 几何学的绕道：另一种切分方法
 
-[极坐标](@article_id:319829)技巧是唯一的方法吗？完全不是！还有其他的窗户。让我们尝试用几何方法来思考这个面积，使用一种称为**分层蛋糕表示法**或[Cavalieri原理](@article_id:360835)的方法。我们可以不采用求和无数个高而薄的垂直条带（标准的[黎曼积分](@article_id:306242)）的方法，而是通过求和薄而平的水平切片来找到总面积。
+[极坐标](@keyword=polar_coordinates|lang=zh-CN|style=Feynman)技巧是唯一的方法吗？完全不是！还有其他的窗户。让我们尝试用几何方法来思考这个面积，使用一种称为**分层蛋糕表示法**或[Cavalieri原理](@keyword=cavalieri_s_principle|lang=zh-CN|style=Feynman)的方法[@problem_id:567489]。我们可以不采用求和无数个高而薄的垂直条带（标准的[黎曼积分](@keyword=riemann_integral|lang=zh-CN|style=Feynman)）的方法，而是通过求和薄而平的水平切片来找到总面积。
 
-面积是 $\int_0^\infty f(x) dx$。分[层蛋糕原理](@article_id:300196)指出，这等于 $\int_0^\infty \text{measure}(\{x \mid f(x) > t\}) \, dt$。这是什么意思呢？对于每个高度 $t$（从0到函数的最大值1），我们找到函数在该高度之上的*宽度*。对于我们的函数 $f(x) = e^{-x^2}$ 且 $x>0$ 的情况，条件 $e^{-x^2} > t$ 等同于 $x^2  -\ln(t)$，或 $x  \sqrt{-\ln(t)}$。因此，我们的函数在高度 $t$ 之上的“宽度”就是 $\sqrt{-\ln(t)}$。我们的积分变成了：
+面积是 $\int_0^\infty f(x) dx$。分[层蛋糕原理](@keyword=layer_cake_principle|lang=zh-CN|style=Feynman)指出，这等于 $\int_0^\infty \text{measure}(\{x \mid f(x) > t\}) \, dt$。这是什么意思呢？对于每个高度 $t$（从0到函数的最大值1），我们找到函数在该高度之上的*宽度*。对于我们的函数 $f(x) = e^{-x^2}$ 且 $x>0$ 的情况，条件 $e^{-x^2} > t$ 等同于 $x^2  -\ln(t)$，或 $x  \sqrt{-\ln(t)}$。因此，我们的函数在高度 $t$ 之上的“宽度”就是 $\sqrt{-\ln(t)}$。我们的积分变成了：
 
 $$
 \int_0^\infty e^{-x^2} dx = \int_0^1 \sqrt{-\ln(t)} \, dt
@@ -95,7 +95,7 @@ $$
 \int_\infty^0 \sqrt{u} (-e^{-u} du) = \int_0^\infty u^{1/2} e^{-u} du
 $$
 
-我们到了哪里？正好回到了[伽马函数](@article_id:301862)！这个积分正是 $\Gamma(1+\frac{1}{2}) = \Gamma(\frac{3}{2})$ 的定义。利用性质 $\Gamma(z+1)=z\Gamma(z)$，我们有 $\Gamma(\frac{3}{2}) = \frac{1}{2}\Gamma(\frac{1}{2}) = \frac{1}{2}\sqrt{\pi}$。答案是相同的，但路径完全不同，它穿过了一个优美的几何论证，并再次证实了[伽马函数](@article_id:301862)的核心作用。
+我们到了哪里？正好回到了[伽马函数](@keyword=gamma_function|lang=zh-CN|style=Feynman)！这个积分正是 $\Gamma(1+\frac{1}{2}) = \Gamma(\frac{3}{2})$ 的定义。利用性质 $\Gamma(z+1)=z\Gamma(z)$，我们有 $\Gamma(\frac{3}{2}) = \frac{1}{2}\Gamma(\frac{1}{2}) = \frac{1}{2}\sqrt{\pi}$。答案是相同的，但路径完全不同，它穿过了一个优美的几何论证，并再次证实了[伽马函数](@keyword=gamma_function|lang=zh-CN|style=Feynman)的核心作用。
 
 ### 通往积分宇宙的万能钥匙
 
@@ -103,13 +103,13 @@ $$
 
 #### 生成新结果
 
-一旦我们知道了基本的高斯积分，我们就能生成一整族相关的积分。例如，$\int_0^\infty x^2 e^{-x^2} dx$ 的值是多少？这个积分在物理学中计算气体分子的[平均动能](@article_id:306773)时出现。我们可以通过巧妙应用**分部积分法**来解决它 。通过将被积函数拆分为 $u=x$ 和 $dv = x e^{-x^2} dx$，计算过程优雅地展开，利用我们已知的 $\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$ 的值，得到答案 $\frac{\sqrt{\pi}}{4}$。每次应用这种方法，我们都可以求解更高次幂的 $x$ 乘以[高斯函数](@article_id:325105)的积分，每一个都依赖于最初的结果。
+一旦我们知道了基本的高斯积分，我们就能生成一整族相关的积分。例如，$\int_0^\infty x^2 e^{-x^2} dx$ 的值是多少？这个积分在物理学中计算气体分子的[平均动能](@keyword=average_kinetic_energy|lang=zh-CN|style=Feynman)时出现。我们可以通过巧妙应用**分部积分法**来解决它 [@problem_id:585805]。通过将被积函数拆分为 $u=x$ 和 $dv = x e^{-x^2} dx$，计算过程优雅地展开，利用我们已知的 $\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$ 的值，得到答案 $\frac{\sqrt{\pi}}{4}$。每次应用这种方法，我们都可以求解更高次幂的 $x$ 乘以[高斯函数](@keyword=gaussian_function|lang=zh-CN|style=Feynman)的积分，每一个都依赖于最初的结果。
 
-#### [高维几何学](@article_id:304622)
+#### [高维几何学](@keyword=high_dimensional_geometry|lang=zh-CN|style=Feynman)
 
-也许[高斯积分](@article_id:379252)最惊人的应用是它向更高维度的推广。它为我们提供了一种计算**n维球体**（n-ball）体积的方法，这是一个纯粹的几何问题 。
+也许[高斯积分](@keyword=gaussian_integrals|lang=zh-CN|style=Feynman)最惊人的应用是它向更高维度的推广。它为我们提供了一种计算**n维球体**（n-ball）体积的方法，这是一个纯粹的几何问题 [@problem_id:2274569]。
 
-让我们重温我们最初用来解决这个积分的技巧，但现在，让我们在 $n$ 维空间中进行。考虑 $n$ 维[高斯积分](@article_id:379252)：
+让我们重温我们最初用来解决这个积分的技巧，但现在，让我们在 $n$ 维空间中进行。考虑 $n$ 维[高斯积分](@keyword=gaussian_integrals|lang=zh-CN|style=Feynman)：
 
 $$
 I_n = \int_{\mathbb{R}^n} e^{-(x_1^2 + x_2^2 + \dots + x_n^2)} \, dV
@@ -117,12 +117,12 @@ $$
 
 我们可以用两种方式来计算它。
 
-1.  **在笛卡尔坐标系中**：该积分可以分解为 $n$ 个相同的一维[高斯积分](@article_id:379252)的乘积。
+1.  **在笛卡尔坐标系中**：该积分可以分解为 $n$ 个相同的一维[高斯积分](@keyword=gaussian_integrals|lang=zh-CN|style=Feynman)的乘积。
     $$
     I_n = \left( \int_{-\infty}^\infty e^{-x^2} dx \right)^n = (\sqrt{\pi})^n = \pi^{n/2}
     $$
 
-2.  **在超[球坐标系](@article_id:323139)中**：就像我们在二维中使用极坐标一样，我们可以在 $n$ 维中使用超[球坐标](@article_id:306475)。该积分仅取决于半径 $r^2 = x_1^2 + \dots + x_n^2$。体积元可以写成 $dV = A_{n-1}(r) dr$，其中 $A_{n-1}(r)$ 是半径为 $r$ 的一个 $(n-1)$ 维球面的表面积。这个面积与单位 $n$ 维球体的体积 $C_n$ 相关，关系式为 $A_{n-1}(r) = n C_n r^{n-1}$。积分变为：
+2.  **在超[球坐标系](@keyword=spherical_coordinate_system|lang=zh-CN|style=Feynman)中**：就像我们在二维中使用极坐标一样，我们可以在 $n$ 维中使用超[球坐标](@keyword=spherical_coordinates|lang=zh-CN|style=Feynman)。该积分仅取决于半径 $r^2 = x_1^2 + \dots + x_n^2$。体积元可以写成 $dV = A_{n-1}(r) dr$，其中 $A_{n-1}(r)$ 是半径为 $r$ 的一个 $(n-1)$ 维球面的表面积。这个面积与单位 $n$ 维球体的体积 $C_n$ 相关，关系式为 $A_{n-1}(r) = n C_n r^{n-1}$。积分变为：
     $$
     I_n = \int_0^\infty (n C_n r^{n-1}) e^{-r^2} dr
     $$
@@ -144,14 +144,14 @@ $$
 C_n = \frac{\pi^{n/2}}{\Gamma\left(\frac{n}{2}+1\right)}
 $$
 
-这是一个深刻的结果。我们从一个概率论中的积分出发，最终得到了一个适用于你能想象的任何维度的球体体积公式，将 $\pi$、伽马函数和[高维几何学](@article_id:304622)联系在一个优美的方程中。一个4维球体的体积是 $\frac{\pi^2}{2}$。一个5维球体的体积是 $\frac{8\pi^2}{15}$。你可以计算出任何维度的球体体积。
+这是一个深刻的结果。我们从一个概率论中的积分出发，最终得到了一个适用于你能想象的任何维度的球体体积公式，将 $\pi$、伽马函数和[高维几何学](@keyword=high_dimensional_geometry|lang=zh-CN|style=Feynman)联系在一个优美的方程中。一个4维球体的体积是 $\frac{\pi^2}{2}$。一个5维球体的体积是 $\frac{8\pi^2}{15}$。你可以计算出任何维度的球体体积。
 
-#### 频率与[复平面](@article_id:318633)上的冒险
+#### 频率与[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上的冒险
 
-高斯函数的独特性质不止于此。在波和信号的世界里，**傅里叶变换**是一种数学显微镜，它将一个[函数分解](@article_id:376689)为其组成频率。[高斯函数](@article_id:325105)在这里拥有特殊地位：在常数因子内，它是自身的傅里叶变换。例如，这意味着一个高斯形状的光脉冲，其频率谱也是高斯形状的。这一性质与量子力学中的**[Heisenberg不确定性原理](@article_id:323244)**密切相关：[高斯波包](@article_id:311575)代表了在确定粒子位置和动量之间的绝对最佳折衷。
+高斯函数的独特性质不止于此。在波和信号的世界里，**傅里叶变换**是一种数学显微镜，它将一个[函数分解](@keyword=function_decomposition|lang=zh-CN|style=Feynman)为其组成频率。[高斯函数](@keyword=gaussian_function|lang=zh-CN|style=Feynman)在这里拥有特殊地位：在常数因子内，它是自身的傅里叶变换。例如，这意味着一个高斯形状的光脉冲，其频率谱也是高斯形状的。这一性质与量子力学中的**[Heisenberg不确定性原理](@keyword=heisenberg_s_uncertainty_principle|lang=zh-CN|style=Feynman)**密切相关：[高斯波包](@keyword=gaussian_wavepacket|lang=zh-CN|style=Feynman)代表了在确定粒子位置和动量之间的绝对最佳折衷。
 
-这个特殊的性质使得一些优雅的操作成为可能。例如，如果我们知道 $\exp(-ak^2)$ 的傅里叶变换，我们就可以通过对参数 $a$ 求导，来找到更复杂函数如 $k^2 \exp(-ak^2)$ 的变换——这是一种强大的技巧，被称为Feynman的积分号下求导法 。
+这个特殊的性质使得一些优雅的操作成为可能。例如，如果我们知道 $\exp(-ak^2)$ 的傅里叶变换，我们就可以通过对参数 $a$ 求导，来找到更复杂函数如 $k^2 \exp(-ak^2)$ 的变换——这是一种强大的技巧，被称为Feynman的积分号下求导法 [@problem_id:27497]。
 
-此外，通过大胆地进入**[复平面](@article_id:318633)**，高斯积分使我们能够解决看起来更吓人的积分 。那些涉及[高斯函数](@article_id:325105)与正弦、余弦函[数乘](@article_id:316379)积的积分，如 $\int e^{-x^2} \cos(ax) \cosh(ax) dx$，可以通过使用[复指数](@article_id:342070)表示[三角函数](@article_id:357794)（例如，$\cos(z) = \frac{e^{iz} + e^{-iz}}{2}$），然后在指数部分配方来解决。问题再次被简化为一个简单的、经过平移的高斯积分。
+此外，通过大胆地进入**[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)**，高斯积分使我们能够解决看起来更吓人的积分 [@problem_id:833950]。那些涉及[高斯函数](@keyword=gaussian_function|lang=zh-CN|style=Feynman)与正弦、余弦函[数乘](@keyword=scalar_multiplication|lang=zh-CN|style=Feynman)积的积分，如 $\int e^{-x^2} \cos(ax) \cosh(ax) dx$，可以通过使用[复指数](@keyword=complex_exponents|lang=zh-CN|style=Feynman)表示[三角函数](@keyword=trigonometric_functions|lang=zh-CN|style=Feynman)（例如，$\cos(z) = \frac{e^{iz} + e^{-iz}}{2}$），然后在指数部分配方来解决。问题再次被简化为一个简单的、经过平移的高斯积分。
 
-从一扇简单的锁着的门，到通往[高维几何](@article_id:304622)和量子世界的万能钥匙，高斯积分的故事是科学征途的完美例证。它表明，正确的视角转变和想象力的飞跃，不仅能解决一个问题，还能揭示宇宙中隐藏的统一性和惊人的美丽。
+从一扇简单的锁着的门，到通往[高维几何](@keyword=high_dimensional_geometry|lang=zh-CN|style=Feynman)和量子世界的万能钥匙，高斯积分的故事是科学征途的完美例证。它表明，正确的视角转变和想象力的飞跃，不仅能解决一个问题，还能揭示宇宙中隐藏的统一性和惊人的美丽。

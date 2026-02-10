@@ -1,19 +1,19 @@
 ## 引言
-在一个充满不确定性的世界里，从抛硬币到股票市场的波动，我们如何做出理性的决策？虽然我们无法预测单个随机事件的结果，但我们通常可以预测多次试验的平均结果。这就引出了**[期望值](@article_id:313620)**的概念，它是概率论的一块基石，为量化一个[随机过程](@article_id:333307)的“中心”提供了强大的工具。本文旨在揭开[离散随机变量](@article_id:323006)[期望值](@article_id:313620)的神秘面纱，并厘清长期平均值与单次预测结果之间的常见混淆。
+在一个充满不确定性的世界里，从抛硬币到股票市场的波动，我们如何做出理性的决策？虽然我们无法预测单个随机事件的结果，但我们通常可以预测多次试验的平均结果。这就引出了**[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)**的概念，它是概率论的一块基石，为量化一个[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)的“中心”提供了强大的工具。本文旨在揭开[离散随机变量](@keyword=discrete_random_variables|lang=zh-CN|style=Feynman)[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)的神秘面纱，并厘清长期平均值与单次预测结果之间的常见混淆。
 
-第一章“原理与机制”将通过[质心](@article_id:298800)等直观类比来定义[期望值](@article_id:313620)，为后续内容奠定基础。我们将探讨其基本计算方法、[期望的线性性质](@article_id:337208)的强大作用，以及它在[伯努利分布](@article_id:330636)、[二项分布](@article_id:301623)和[泊松分布](@article_id:308183)等关键[概率分布](@article_id:306824)中的应用。第二章“应用与跨学科联系”将展示这一概念如何为金融、物理、工程和生物学等不同学科提供一种通用语言，指导从设计公平游戏到理解[细胞生长](@article_id:354647)的各种决策。读完本文，您不仅将学会如何计算[期望值](@article_id:313620)，还将体会到它在随机性中寻找可预测性方面的深远作用。
+第一章“原理与机制”将通过[质心](@keyword=center_of_mass|lang=zh-CN|style=Feynman)等直观类比来定义[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)，为后续内容奠定基础。我们将探讨其基本计算方法、[期望的线性性质](@keyword=linearity_of_expectation|lang=zh-CN|style=Feynman)的强大作用，以及它在[伯努利分布](@keyword=bernoulli_distribution|lang=zh-CN|style=Feynman)、[二项分布](@keyword=binomial_distribution|lang=zh-CN|style=Feynman)和[泊松分布](@keyword=poisson_distribution|lang=zh-CN|style=Feynman)等关键[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)中的应用。第二章“应用与跨学科联系”将展示这一概念如何为金融、物理、工程和生物学等不同学科提供一种通用语言，指导从设计公平游戏到理解[细胞生长](@keyword=cellular_growth|lang=zh-CN|style=Feynman)的各种决策。读完本文，您不仅将学会如何计算[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)，还将体会到它在随机性中寻找可预测性方面的深远作用。
 
 ## 原理与机制
 
-想象你在一个嘉年华上，面对一个游戏。你付一美元参与，然后掷一个奇特的六面骰子。骰子的六个面并非数字1到6，而是一面显示盈利+$4，另外五面显示亏损-$1。你应该玩吗？你可能会赢，也可能会输。你如何判断这个游戏是否“公平”或者从长远来看是否是好的赌注？这类问题将我们引向概率论中最基本的概念之一：**[期望值](@article_id:313620)**。
+想象你在一个嘉年华上，面对一个游戏。你付一美元参与，然后掷一个奇特的六面骰子。骰子的六个面并非数字1到6，而是一面显示盈利+$4，另外五面显示亏损-$1。你应该玩吗？你可能会赢，也可能会输。你如何判断这个游戏是否“公平”或者从长远来看是否是好的赌注？这类问题将我们引向概率论中最基本的概念之一：**[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)**。
 
-### 概率的[质心](@article_id:298800)
+### 概率的[质心](@keyword=center_of_mass|lang=zh-CN|style=Feynman)
 
-“[期望值](@article_id:313620)”这个术语有点用词不当。它不是你在任何单次试验中“[期望](@article_id:311378)”得到的值。在我们的嘉年华游戏中，你只能赢$4或亏$1；你在单次投掷中永远不会得到“[期望值](@article_id:313620)”。那么，它到底是什么？
+“[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)”这个术语有点用词不当。它不是你在任何单次试验中“[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)”得到的值。在我们的嘉年华游戏中，你只能赢$4或亏$1；你在单次投掷中永远不会得到“[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)”。那么，它到底是什么？
 
-一个更好的直觉来自物理学。想象一根标有数字的无重长杆。在每个数字（比如 $x$）处，你放置一个与该数字出现的概率 $P(X=x)$ 成正比的重物。**[期望值](@article_id:313620)**，记作 $E[X]$，就是这根杆的[平衡点](@article_id:323137)——即其[质心](@article_id:298800)。如果你要无限次地重复玩这个游戏，它就是“平均”结果。
+一个更好的直觉来自物理学。想象一根标有数字的无重长杆。在每个数字（比如 $x$）处，你放置一个与该数字出现的概率 $P(X=x)$ 成正比的重物。**[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)**，记作 $E[X]$，就是这根杆的[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)——即其[质心](@keyword=center_of_mass|lang=zh-CN|style=Feynman)。如果你要无限次地重复玩这个游戏，它就是“平均”结果。
 
-让我们为我们的嘉年华游戏计算一下。[随机变量](@article_id:324024) $X$（你的利润）可以取两个值：$x_1 = 4$，概率为 $p_1 = 1/6$；$x_2 = -1$，概率为 $p_2 = 5/6$。[期望值](@article_id:313620)的公式是每个结果按其概率加权后的总和：
+让我们为我们的嘉年华游戏计算一下。[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman) $X$（你的利润）可以取两个值：$x_1 = 4$，概率为 $p_1 = 1/6$；$x_2 = -1$，概率为 $p_2 = 5/6$。[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)的公式是每个结果按其概率加权后的总和：
 $$
 E[X] = \sum_{i} x_i P(X=x_i)
 $$
@@ -21,7 +21,7 @@ $$
 $$
 E[X] = (4) \cdot \left(\frac{1}{6}\right) + (-1) \cdot \left(\frac{5}{6}\right) = \frac{4}{6} - \frac{5}{6} = -\frac{1}{6}
 $$
-[期望值](@article_id:313620)约为-$0.17。这意味着，平均而言，你每玩一次就会输掉大约17美分。单次游戏是一场赌博，但经过多次游戏，庄家稳赢。期望值穿透了不确定性，给了我们一个明确的策略：不要玩！
+[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)约为-$0.17。这意味着，平均而言，你每玩一次就会输掉大约17美分。单次游戏是一场赌博，但经过多次游戏，庄家稳赢。期望值穿透了不确定性，给了我们一个明确的策略：不要玩！
 
 同样的原理也是从保险到金融等行业的基础。例如，一个算法交易策略可能有几种可能的结果：大利润、小利润、盈亏平衡或亏损，每种结果都有特定的概率。通过计算每笔交易的期望利润（作为这些结果的加权平均值），公司可以判断该策略长期是否有利可图。正的期望值意味着一个制胜策略，而负的期望值则是快速走向破产的捷径。其计算本质上与我们的嘉年华游戏相同，只是数字不同。
 
@@ -102,4 +102,4 @@ E[X] = \quad & p_1 + p_2 + p_3 + \dots \\
 $$
 如果我们按列而不是按行对这些项求和，第一列是 $p_1 + p_2 + p_3 + \dots = P(X > 0) = S(0)$。第二列是 $p_2 + p_3 + \dots = P(X > 1) = S(1)$。第三列是 $P(X > 2)=S(2)$，依此类推。通过交换求和次序——一个物理学家和数学家都钟爱的技巧——我们发现了对同一数量的新视角。
 
-从一个简单的公平游戏开始，我们穿越了金融、量子力学和生物学的世界。我们看到了[期望值](@article_id:313620)如何作为不确定性的[重心](@article_id:337214)，其[线性性质](@article_id:340217)如何让我们剖析复杂问题，以及它如何与自然界中一些最著名和最有用的模式联系起来。它是一个简单的概念，却是我们观察一个由机遇主导的世界的强大透镜。
+从一个简单的公平游戏开始，我们穿越了金融、量子力学和生物学的世界。我们看到了[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)如何作为不确定性的[重心](@keyword=center_of_gravity|lang=zh-CN|style=Feynman)，其[线性性质](@keyword=linearity_property|lang=zh-CN|style=Feynman)如何让我们剖析复杂问题，以及它如何与自然界中一些最著名和最有用的模式联系起来。它是一个简单的概念，却是我们观察一个由机遇主导的世界的强大透镜。

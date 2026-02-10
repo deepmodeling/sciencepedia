@@ -7,42 +7,42 @@
 
 ### 最终指挥所
 
-你曾经做出的每一个自主动作，从眨眼到跑马拉松，都是由运动神经元执行的。它们是“共同终末通路”，这个术语由伟大的[神经生理学](@article_id:300998)家Sir Charles Sherrington创造。这意味着什么？这意味着神经系统中所有的[期望](@article_id:311378)、计划和反射——来自大脑皮层的指令、来自[脑干](@article_id:348587)的姿势调整，以及来自脊髓的反射信号——最终都必须汇聚到这单一类型的[神经元](@article_id:324093)上 。正是[运动神经元](@article_id:357835)做出最终决定，将各种兴奋性和抑制性的声音整合为一条单一、明确的命令：“收缩”。
+你曾经做出的每一个自主动作，从眨眼到跑马拉松，都是由运动神经元执行的。它们是“共同终末通路”，这个术语由伟大的[神经生理学](@keyword=neurophysiology|lang=zh-CN|style=Feynman)家Sir Charles Sherrington创造。这意味着什么？这意味着神经系统中所有的[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)、计划和反射——来自大脑皮层的指令、来自[脑干](@keyword=brainstem|lang=zh-CN|style=Feynman)的姿势调整，以及来自脊髓的反射信号——最终都必须汇聚到这单一类型的[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)上 [@problem_id:1753438]。正是[运动神经元](@keyword=motor_neuron|lang=zh-CN|style=Feynman)做出最终决定，将各种兴奋性和抑制性的声音整合为一条单一、明确的命令：“收缩”。
 
-从解剖学上讲，**躯体运动神经元**是一种**传出[神经元](@article_id:324093)**；它的工作是将信号从中枢神经系统（CNS）*传出*到外周 。它的细胞体，即[神经元](@article_id:324093)的“总部”，安全地位于[中枢神经系统](@article_id:309134)的灰质内，特别是在脊髓一个称为**腹角**的区域 。从那里，它伸出一条长长的单一轴突——一根传输电缆——一直延伸到一个特定的骨骼肌。这是一条单[神经元](@article_id:324093)链，一条从中枢神经系统到目标的直线，这与控制我们内脏器官的[自主神经系统](@article_id:311226)的双[神经元](@article_id:324093)链不同 。
+从解剖学上讲，**躯体运动神经元**是一种**传出[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)**；它的工作是将信号从中枢神经系统（CNS）*传出*到外周 [@problem_id:2331265]。它的细胞体，即[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)的“总部”，安全地位于[中枢神经系统](@keyword=central_nervous_system|lang=zh-CN|style=Feynman)的灰质内，特别是在脊髓一个称为**腹角**的区域 [@problem_id:1720520]。从那里，它伸出一条长长的单一轴突——一根传输电缆——一直延伸到一个特定的骨骼肌。这是一条单[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)链，一条从中枢神经系统到目标的直线，这与控制我们内脏器官的[自主神经系统](@keyword=autonomic_nervous_system|lang=zh-CN|style=Feynman)的双[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)链不同 [@problem_id:2347227]。
 
-但是，运动神经元并不仅仅连接一个肌肉细胞。相反，一个运动神经元及其支配的所有单个肌纤维共同形成一个功能实体：**[运动单位](@article_id:310004)** 。这是不可分割的运动量子。当一个[运动神经元](@article_id:357835)放电时，其所有相关的肌纤维会齐声收缩。你无法只激活一个[运动单位](@article_id:310004)的一半。这是一个全或无的事件。因此，大脑不是以单个肌纤维为单位来思考；它是以激活[运动单位](@article_id:310004)为单位来思考。
+但是，运动神经元并不仅仅连接一个肌肉细胞。相反，一个运动神经元及其支配的所有单个肌纤维共同形成一个功能实体：**[运动单位](@keyword=motor_unit|lang=zh-CN|style=Feynman)** [@problem_id:2586033]。这是不可分割的运动量子。当一个[运动神经元](@keyword=motor_neuron|lang=zh-CN|style=Feynman)放电时，其所有相关的肌纤维会齐声收缩。你无法只激活一个[运动单位](@keyword=motor_unit|lang=zh-CN|style=Feynman)的一半。这是一个全或无的事件。因此，大脑不是以单个肌纤维为单位来思考；它是以激活[运动单位](@keyword=motor_unit|lang=zh-CN|style=Feynman)为单位来思考。
 
 ### 力量的交响曲：一个关于体型和电阻的故事
 
-那么，如果一个[运动单位](@article_id:310004)是一个全或无的开关，我们如何实现签名或拉小提琴时所需的精细控制呢？我们如何产生分级的力量？答案是生理学中最优雅的原则之一：**Henneman体型原则** 。
+那么，如果一个[运动单位](@keyword=motor_unit|lang=zh-CN|style=Feynman)是一个全或无的开关，我们如何实现签名或拉小提琴时所需的精细控制呢？我们如何产生分级的力量？答案是生理学中最优雅的原则之一：**Henneman体型原则** [@problem_id:1717272]。
 
-神经系统通过两种方式控制力量：它可以改变[运动神经元](@article_id:357835)放电的*频率*，也可以改变它募集的[运动单位](@article_id:310004)的*数量*。体型原则支配着第二部分。它指出，随着大脑向肌肉发送逐渐增强的“开始”信号，[运动单位](@article_id:310004)的募集不是随机的。相反，它们是按精确的顺序被募集的，从小到大。那些产生微小力量的小而弱的[运动单位](@article_id:310004)会首先被激活。当需要更大的力量时，那些支配更多肌纤维并产生更大力量的、逐渐增大的[运动单位](@article_id:310004)就会被调动起来。
+神经系统通过两种方式控制力量：它可以改变[运动神经元](@keyword=motor_neuron|lang=zh-CN|style=Feynman)放电的*频率*，也可以改变它募集的[运动单位](@keyword=motor_unit|lang=zh-CN|style=Feynman)的*数量*。体型原则支配着第二部分。它指出，随着大脑向肌肉发送逐渐增强的“开始”信号，[运动单位](@keyword=motor_unit|lang=zh-CN|style=Feynman)的募集不是随机的。相反，它们是按精确的顺序被募集的，从小到大。那些产生微小力量的小而弱的[运动单位](@keyword=motor_unit|lang=zh-CN|style=Feynman)会首先被激活。当需要更大的力量时，那些支配更多肌纤维并产生更大力量的、逐渐增大的[运动单位](@keyword=motor_unit|lang=zh-CN|style=Feynman)就会被调动起来。
 
-为什么会这样？难道脊髓里有一个小小的指挥家，指着每个[神经元](@article_id:324093)说：“轮到你了”？其美妙之处在于，这个系统是自动的，受制于简单而不可避免的物理逻辑。关键在于[欧姆定律](@article_id:300974)，一个你可能在高中物理课上学过的原理，应用于[神经元膜](@article_id:361425)上：$\Delta V = I \cdot R_{in}$ 。
+为什么会这样？难道脊髓里有一个小小的指挥家，指着每个[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)说：“轮到你了”？其美妙之处在于，这个系统是自动的，受制于简单而不可避免的物理逻辑。关键在于[欧姆定律](@keyword=ohm_s_law|lang=zh-CN|style=Feynman)，一个你可能在高中物理课上学过的原理，应用于[神经元膜](@keyword=neuronal_membrane|lang=zh-CN|style=Feynman)上：$\Delta V = I \cdot R_{in}$ [@problem_id:2586033]。
 
-在这里，$\Delta V$是[神经元膜](@article_id:361425)电压的变化， $I$是输入的[突触电流](@article_id:376872)（“开始”信号），而$R_{in}$是[神经元](@article_id:324093)的**输入电阻**。当[神经元](@article_id:324093)的电压变化$\Delta V$达到某个阈值时，它就会放电。现在，思考一下这些运动神经元。“小”运动神经元的细胞体较小，[树突](@article_id:319907)也较少——它的表面积较小。“大”[运动神经元](@article_id:357835)的表面积则非常大。就像细管比粗管对水流的阻力更大一样，小[神经元](@article_id:324093)可供电流泄漏的[离子通道](@article_id:349942)较少，使其**输入电阻**（$R_{in}$）远高于大[神经元](@article_id:324093) 。
+在这里，$\Delta V$是[神经元膜](@keyword=neuronal_membrane|lang=zh-CN|style=Feynman)电压的变化， $I$是输入的[突触电流](@keyword=synaptic_current|lang=zh-CN|style=Feynman)（“开始”信号），而$R_{in}$是[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)的**输入电阻**。当[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)的电压变化$\Delta V$达到某个阈值时，它就会放电。现在，思考一下这些运动神经元。“小”运动神经元的细胞体较小，[树突](@keyword=dendrites|lang=zh-CN|style=Feynman)也较少——它的表面积较小。“大”[运动神经元](@keyword=motor_neuron|lang=zh-CN|style=Feynman)的表面积则非常大。就像细管比粗管对水流的阻力更大一样，小[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)可供电流泄漏的[离子通道](@keyword=ion_channel|lang=zh-CN|style=Feynman)较少，使其**输入电阻**（$R_{in}$）远高于大[神经元](@keyword=neurons|lang=zh-CN|style=Feynman) [@problem_id:1717272]。
 
-现在，奇迹发生了。当大脑向整个运动神经元池发送一个微弱的、共同的[突触电流](@article_id:376872)（$I$）时，会发生什么？对于拥有高$R_{in}$的小[神经元](@article_id:324093)，电压变化$\Delta V$很大。对于拥有低$R_{in}$的大[神经元](@article_id:324093)，相同的电流$I$只产生微小的$\Delta V$。因此，小[神经元](@article_id:324093)首先达到其放电阈值并被募集！为了募集大[神经元](@article_id:324093)，大脑必须发送一个强得多的指令电流。这是一个毫不费力、高效且有序的分级力量系统，它直接内建于细胞自身的物理属性之中。
+现在，奇迹发生了。当大脑向整个运动神经元池发送一个微弱的、共同的[突触电流](@keyword=synaptic_current|lang=zh-CN|style=Feynman)（$I$）时，会发生什么？对于拥有高$R_{in}$的小[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)，电压变化$\Delta V$很大。对于拥有低$R_{in}$的大[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)，相同的电流$I$只产生微小的$\Delta V$。因此，小[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)首先达到其放电阈值并被募集！为了募集大[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)，大脑必须发送一个强得多的指令电流。这是一个毫不费力、高效且有序的分级力量系统，它直接内建于细胞自身的物理属性之中。
 
 ### 运行中的回路：从简单反射到协同舞蹈
 
-运动神经元不仅仅是被动地接收指令；它们是产生行为的复杂回路中的积极参与者。其中最简单的是**单突触牵张反射**，即著名的[膝跳反射](@article_id:313795) 。当医生敲击你的髌韧带时，会短暂地拉伸股四头肌。肌肉内的一个传感器，即**肌梭**，检测到这种拉伸，并直接向控制股四头肌的[α运动神经元](@article_id:317081)发送信号。这是一个直接的、单突触的连接。运动神经元被兴奋，并立即命令股四头肌收缩，导致你的腿踢起。这是一个优美的、最基本的回路，用于对抗意外扰动以维持姿势。
+运动神经元不仅仅是被动地接收指令；它们是产生行为的复杂回路中的积极参与者。其中最简单的是**单突触牵张反射**，即著名的[膝跳反射](@keyword=patellar_reflex|lang=zh-CN|style=Feynman) [@problem_id:2347295]。当医生敲击你的髌韧带时，会短暂地拉伸股四头肌。肌肉内的一个传感器，即**肌梭**，检测到这种拉伸，并直接向控制股四头肌的[α运动神经元](@keyword=alpha_motor_neuron|lang=zh-CN|style=Feynman)发送信号。这是一个直接的、单突触的连接。运动神经元被兴奋，并立即命令股四头肌收缩，导致你的腿踢起。这是一个优美的、最基本的回路，用于对抗意外扰动以维持姿势。
 
-但大多数运动比简单的抽动要复杂得多。要屈曲你的肱二头肌，你必须同时放松你的肱三头肌。如果两者同时收缩，你的手臂会僵持不下。神经系统通过一个**[交互抑制](@article_id:311308)**回路解决了这个问题 。当收缩肱二头肌的指令发出时，下行信号不仅仅兴奋肱二头肌的[运动神经元](@article_id:357835)。它还兴奋脊髓中一个被称为**抑制性中间[神经元](@article_id:324093)**的微小“中间人”。这个中间[神经元](@article_id:324093)接着在[拮抗肌](@article_id:328456)肱三头肌的[运动神经元](@article_id:357835)上形成抑制性突触，告诉它们保持安静。所以，那个对肱二头肌说“开始！”的指令，同时也对肱三头肌说“嘘！”。结果是平滑、协调的运动——主动肌和[拮抗肌](@article_id:328456)之间的一场优雅舞蹈，全部由脊髓的简单布线所编排。
+但大多数运动比简单的抽动要复杂得多。要屈曲你的肱二头肌，你必须同时放松你的肱三头肌。如果两者同时收缩，你的手臂会僵持不下。神经系统通过一个**[交互抑制](@keyword=reciprocal_inhibition|lang=zh-CN|style=Feynman)**回路解决了这个问题 [@problem_id:1720484]。当收缩肱二头肌的指令发出时，下行信号不仅仅兴奋肱二头肌的[运动神经元](@keyword=motor_neuron|lang=zh-CN|style=Feynman)。它还兴奋脊髓中一个被称为**抑制性中间[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)**的微小“中间人”。这个中间[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)接着在[拮抗肌](@keyword=antagonistic_muscles|lang=zh-CN|style=Feynman)肱三头肌的[运动神经元](@keyword=motor_neuron|lang=zh-CN|style=Feynman)上形成抑制性突触，告诉它们保持安静。所以，那个对肱二头肌说“开始！”的指令，同时也对肱三头肌说“嘘！”。结果是平滑、协调的运动——主动肌和[拮抗肌](@keyword=antagonistic_muscles|lang=zh-CN|style=Feynman)之间的一场优雅舞蹈，全部由脊髓的简单布线所编排。
 
 ### 智能控制的艺术：保持信息灵通与受控
 
 一个真正智能的控制系统需要反馈。想象一下试图驾驶一辆挡风玻璃被涂黑的汽车；你需要关于实际情况的信息。运动系统也是如此。但有一个问题：当肌肉收缩时，其中的肌梭会松弛，就像松垮的橡皮筋。一个松弛的传感器什么也感觉不到！如果大脑的传感器在它想要监测的动作中离线了，它如何监测肌肉的状态？
 
-解决方案是另一个天才之举：**α-γ协同激活** 。神经系统有两种通向肌肉的运动神经元：我们一直在讨论的、导致主要肌纤维收缩的大型**[α运动神经元](@article_id:317081)**，以及较小的**γ运动神经元**。这些γ[运动神经元](@article_id:357835)支配着肌梭自身的末端。当大脑命令肌肉收缩时，它会同时激活α和γ运动神经元。当[α运动神经元](@article_id:317081)导致整个肌肉缩短时，γ[运动神经元](@article_id:357835)也导致肌梭内的微小肌纤维收缩，从而拉紧传感器。这个绝妙的机制确保了肌梭保持敏感，并能在强力收缩中报告任何意外的长度变化。这就像拥有一个能够实时自动重新校准其传感器的系统。
+解决方案是另一个天才之举：**α-γ协同激活** [@problem_id:1752576]。神经系统有两种通向肌肉的运动神经元：我们一直在讨论的、导致主要肌纤维收缩的大型**[α运动神经元](@keyword=alpha_motor_neuron|lang=zh-CN|style=Feynman)**，以及较小的**γ运动神经元**。这些γ[运动神经元](@keyword=motor_neuron|lang=zh-CN|style=Feynman)支配着肌梭自身的末端。当大脑命令肌肉收缩时，它会同时激活α和γ运动神经元。当[α运动神经元](@keyword=alpha_motor_neuron|lang=zh-CN|style=Feynman)导致整个肌肉缩短时，γ[运动神经元](@keyword=motor_neuron|lang=zh-CN|style=Feynman)也导致肌梭内的微小肌纤维收缩，从而拉紧传感器。这个绝妙的机制确保了肌梭保持敏感，并能在强力收缩中报告任何意外的长度变化。这就像拥有一个能够实时自动重新校准其传感器的系统。
 
-此外，运动神经元的活动不断受到其他形式抑制的塑造和精炼。例如，通过一种称为Renshaw细胞的特殊中间[神经元](@article_id:324093)实现的**回返抑制**，起到了负反馈回路的作用。一个[运动神经元](@article_id:357835)发出其轴突的一个侧支来兴奋一个Renshaw细胞，而Renshaw细胞反过来又抑制该[运动神经元](@article_id:357835)本身及其邻居。这有助于集中运动输出，防止失控放电，并稳定系统 。[运动神经元](@article_id:357835)不是一个简单的放大器；它是一个复杂的处理器，其输出被一个由制衡机制构成的网络持续塑造着。
+此外，运动神经元的活动不断受到其他形式抑制的塑造和精炼。例如，通过一种称为Renshaw细胞的特殊中间[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)实现的**回返抑制**，起到了负反馈回路的作用。一个[运动神经元](@keyword=motor_neuron|lang=zh-CN|style=Feynman)发出其轴突的一个侧支来兴奋一个Renshaw细胞，而Renshaw细胞反过来又抑制该[运动神经元](@keyword=motor_neuron|lang=zh-CN|style=Feynman)本身及其邻居。这有助于集中运动输出，防止失控放电，并稳定系统 [@problem_id:2585422]。[运动神经元](@keyword=motor_neuron|lang=zh-CN|style=Feynman)不是一个简单的放大器；它是一个复杂的处理器，其输出被一个由制衡机制构成的网络持续塑造着。
 
-### 精心设计的开端：[运动神经元](@article_id:357835)的诞生
+### 精心设计的开端：[运动神经元](@keyword=motor_neuron|lang=zh-CN|style=Feynman)的诞生
 
-最后，这些非凡的细胞从何而来？它们并非偶然出现。它们的存在和精确位置是[发育生物学](@article_id:302303)深刻之美的明证。在早期胚胎中，神经系统始于一个简单的细胞管。它的命运由在组织中扩散的化学信号，即**形态发生素**决定。位于神经管正下方的一个结构，称为**脊索**，充当一个关键的信号中心。它分泌一种蛋白质——著名的Sonic hedgehog——形成一个浓度梯度，在神经管的底部（腹侧）最高，顶部（背侧）最低。
+最后，这些非凡的细胞从何而来？它们并非偶然出现。它们的存在和精确位置是[发育生物学](@keyword=developmental_biology|lang=zh-CN|style=Feynman)深刻之美的明证。在早期胚胎中，神经系统始于一个简单的细胞管。它的命运由在组织中扩散的化学信号，即**形态发生素**决定。位于神经管正下方的一个结构，称为**脊索**，充当一个关键的信号中心。它分泌一种蛋白质——著名的Sonic hedgehog——形成一个浓度梯度，在神经管的底部（腹侧）最高，顶部（背侧）最低。
 
-神经管内的祖细胞像读地图一样解读这个梯度。经历极高浓度信号的细胞被指令成为底板细胞。那些看到稍低但仍然很高的浓度的细胞则接收到不同的指令：“你将成为一个运动神经元。” 这不是一个比喻；这是一个字面上的分子指令。实验表明，如果你在神经管的一侧嫁接第二个[脊索](@article_id:324348)，它会创造出第二个[形态发生素](@article_id:309532)源，而第二组异位的[运动神经元](@article_id:357835)将尽职地在其旁边形成 。你身体中每一个[运动神经元](@article_id:357835)的位置和身份都是通过这种惊人的[化学精度](@article_id:350249)指定的。从一个单一分子的简单梯度中，涌现出让你与世界互动的复杂结构。
+神经管内的祖细胞像读地图一样解读这个梯度。经历极高浓度信号的细胞被指令成为底板细胞。那些看到稍低但仍然很高的浓度的细胞则接收到不同的指令：“你将成为一个运动神经元。” 这不是一个比喻；这是一个字面上的分子指令。实验表明，如果你在神经管的一侧嫁接第二个[脊索](@keyword=notochord|lang=zh-CN|style=Feynman)，它会创造出第二个[形态发生素](@keyword=morphogens|lang=zh-CN|style=Feynman)源，而第二组异位的[运动神经元](@keyword=motor_neuron|lang=zh-CN|style=Feynman)将尽职地在其旁边形成 [@problem_id:1681739]。你身体中每一个[运动神经元](@keyword=motor_neuron|lang=zh-CN|style=Feynman)的位置和身份都是通过这种惊人的[化学精度](@keyword=chemical_accuracy|lang=zh-CN|style=Feynman)指定的。从一个单一分子的简单梯度中，涌现出让你与世界互动的复杂结构。
 
-从[欧姆定律](@article_id:300974)的简单物理学，到抑制回路的复杂舞蹈，再到发育模式的深层优雅，[运动神经元](@article_id:357835)不仅仅是一根电线。它是生物工程的杰作，是简单原理产生复杂而美丽功能的证明。
+从[欧姆定律](@keyword=ohm_s_law|lang=zh-CN|style=Feynman)的简单物理学，到抑制回路的复杂舞蹈，再到发育模式的深层优雅，[运动神经元](@keyword=motor_neuron|lang=zh-CN|style=Feynman)不仅仅是一根电线。它是生物工程的杰作，是简单原理产生复杂而美丽功能的证明。

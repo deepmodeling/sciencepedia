@@ -4,38 +4,38 @@
 
 ### 形式与运动的几何学
 
-从本质上讲，形如 $\frac{dy}{dx} = F(\frac{y}{x})$ 的[齐次微分方程](@article_id:345340)告诉了我们一些关于几何的深刻道理。它表明，曲线上任意点 $(x, y)$ 的斜率仅取决于比值 $\frac{y}{x}$——也就是从原点到该点的直线的斜率。无论你离原点一英寸还是一光年，只要你在同一条穿过原点的直线上，解曲线的斜率都是相同的。这个属性被称为“[尺度不变性](@article_id:320629)”，它是这些方程的几何灵魂。
+从本质上讲，形如 $\frac{dy}{dx} = F(\frac{y}{x})$ 的[齐次微分方程](@keyword=homogeneous_differential_equations|lang=zh-CN|style=Feynman)告诉了我们一些关于几何的深刻道理。它表明，曲线上任意点 $(x, y)$ 的斜率仅取决于比值 $\frac{y}{x}$——也就是从原点到该点的直线的斜率。无论你离原点一英寸还是一光年，只要你在同一条穿过原点的直线上，解曲线的斜率都是相同的。这个属性被称为“[尺度不变性](@keyword=scale_invariance_2|lang=zh-CN|style=Feynman)”，它是这些方程的几何灵魂。
 
-这产生了一些具有优美[自相似](@article_id:337935)结构的[曲线族](@article_id:348383)。例如，我们可以定义一个[曲线族](@article_id:348383)，其中任意点的斜率是其[方向比](@article_id:346129)与该比值倒数之和，从而得到方程 $\frac{dy}{dx} = \frac{y}{x} + \frac{x}{y}$ 。求解该方程揭示了一个由关系式 $y^2 = 2x^2 \ln(Cx)$ 定义的优雅的喇叭形[曲线族](@article_id:348383)。
+这产生了一些具有优美[自相似](@keyword=self_similar|lang=zh-CN|style=Feynman)结构的[曲线族](@keyword=family_of_curves|lang=zh-CN|style=Feynman)。例如，我们可以定义一个[曲线族](@keyword=family_of_curves|lang=zh-CN|style=Feynman)，其中任意点的斜率是其[方向比](@keyword=direction_ratios|lang=zh-CN|style=Feynman)与该比值倒数之和，从而得到方程 $\frac{dy}{dx} = \frac{y}{x} + \frac{x}{y}$ [@problem_id:2178147]。求解该方程揭示了一个由关系式 $y^2 = 2x^2 \ln(Cx)$ 定义的优雅的喇叭形[曲线族](@keyword=family_of_curves|lang=zh-CN|style=Feynman)。
 
-当我们把视角从笛卡尔坐标 $(x,y)$ 转换到极坐标 $(r, \theta)$ 时，与几何的联系变得更加神奇。考虑看似无害的方程 $\frac{dy}{dx} = \frac{x+y}{x-y}$。如果我们追踪一个受此规则支配的粒子的轨迹，会发现它并非描绘一条简单的直[线或](@article_id:349408)圆。相反，在应用 $y=vx$ 换元后，其解可以在极坐标中优雅地表示为 $r = C e^{\theta}$。这是**[对数螺线](@article_id:351593)** (logarithmic spiral) 的方程，它是自然界中最普遍、最美丽的形状之一，从鹦鹉螺壳到旋涡星系的旋臂，无处不在 。在一个[坐标系](@article_id:316753)中看似复杂的问题，在另一个[坐标系](@article_id:316753)中变得异常简洁。换元法就像一座桥梁，引导我们找到了解决这个问题的自然语言。
+当我们把视角从笛卡尔坐标 $(x,y)$ 转换到极坐标 $(r, \theta)$ 时，与几何的联系变得更加神奇。考虑看似无害的方程 $\frac{dy}{dx} = \frac{x+y}{x-y}$。如果我们追踪一个受此规则支配的粒子的轨迹，会发现它并非描绘一条简单的直[线或](@keyword=wired_or|lang=zh-CN|style=Feynman)圆。相反，在应用 $y=vx$ 换元后，其解可以在极坐标中优雅地表示为 $r = C e^{\theta}$。这是**[对数螺线](@keyword=logarithmic_spiral|lang=zh-CN|style=Feynman)** (logarithmic spiral) 的方程，它是自然界中最普遍、最美丽的形状之一，从鹦鹉螺壳到旋涡星系的旋臂，无处不在 [@problem_id:2173018]。在一个[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中看似复杂的问题，在另一个[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中变得异常简洁。换元法就像一座桥梁，引导我们找到了解决这个问题的自然语言。
 
-这种几何观点也让我们能够理解解的“长程”行为。求解一个[齐次方程](@article_id:350590)通常会得到一个描述二次曲线的[隐式解](@article_id:351772)。从这个方程中，我们可以推断出曲线的最终命运——它的[渐近线](@article_id:302261)。例如，方程 $(x+y) y' = x-y$ 的解是[双曲线](@article_id:353265)，而我们的方法不仅能让我们找到曲线本身，还能计算出当它延伸至无穷远时所趋近的直线的斜率（即[渐近线](@article_id:302261)）。
+这种几何观点也让我们能够理解解的“长程”行为。求解一个[齐次方程](@keyword=homogeneous_equation|lang=zh-CN|style=Feynman)通常会得到一个描述二次曲线的[隐式解](@keyword=implicit_solution|lang=zh-CN|style=Feynman)。从这个方程中，我们可以推断出曲线的最终命运——它的[渐近线](@keyword=asymptotes|lang=zh-CN|style=Feynman)。例如，方程 $(x+y) y' = x-y$ 的解是[双曲线](@keyword=hyperbola|lang=zh-CN|style=Feynman)，而我们的方法不仅能让我们找到曲线本身，还能计算出当它延伸至无穷远时所趋近的直线的斜率（即[渐近线](@keyword=asymptotes|lang=zh-CN|style=Feynman)）[@problem_id:2180135]。
 
-### 正交世界：从[流线](@article_id:330519)到等势线
+### 正交世界：从[流线](@keyword=streamlines|lang=zh-CN|style=Feynman)到等势线
 
-该方法最强大的应用之一在于寻找**[正交轨线](@article_id:323082)**。想象你有一张带有等高线的地图，这些线代表了高度恒定的路径。现在，如果你把水倒在这张地图上，它会朝哪个方向流？它会沿着最陡峭的路径流动，这条路径总是与[等高线](@article_id:332206)垂直（或正交）。等高线族和水流路径族互为[正交轨线](@article_id:323082)。
+该方法最强大的应用之一在于寻找**[正交轨线](@keyword=orthogonal_trajectories|lang=zh-CN|style=Feynman)**。想象你有一张带有等高线的地图，这些线代表了高度恒定的路径。现在，如果你把水倒在这张地图上，它会朝哪个方向流？它会沿着最陡峭的路径流动，这条路径总是与[等高线](@keyword=level_curves|lang=zh-CN|style=Feynman)垂直（或正交）。等高线族和水流路径族互为[正交轨线](@keyword=orthogonal_trajectories|lang=zh-CN|style=Feynman)。
 
-这个概念在物理学中是基础性的。在[流体动力学](@article_id:319275)中，流体[质点](@article_id:365946)的路径被称为**流线**。压力或势能恒定的线被称为**等势线**。在许多[理想流体流动](@article_id:344929)中，这两个[曲线族](@article_id:348383)是相互正交的。在[电磁学](@article_id:363853)中，电场线和[等势线](@article_id:340573)之间也存在类似的关系。
+这个概念在物理学中是基础性的。在[流体动力学](@keyword=hydrodynamics|lang=zh-CN|style=Feynman)中，流体[质点](@keyword=point_mass|lang=zh-CN|style=Feynman)的路径被称为**流线**。压力或势能恒定的线被称为**等势线**。在许多[理想流体流动](@keyword=ideal_fluid_flow|lang=zh-CN|style=Feynman)中，这两个[曲线族](@keyword=family_of_curves|lang=zh-CN|style=Feynman)是相互正交的。在[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)中，电场线和[等势线](@keyword=equipotential_lines|lang=zh-CN|style=Feynman)之间也存在类似的关系。
 
-我们如何找到这些正交族？如果一个[曲线族](@article_id:348383)由[微分方程](@article_id:327891) $\frac{dy}{dx} = m(x,y)$ 描述，那么正交族必须具有负倒数的斜率，即 $\frac{dy}{dx} = -\frac{1}{m(x,y)}$。如果原始方程是齐次的，那么这个描述[正交轨线](@article_id:323082)的新方程通常也是齐次的！
+我们如何找到这些正交族？如果一个[曲线族](@keyword=family_of_curves|lang=zh-CN|style=Feynman)由[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman) $\frac{dy}{dx} = m(x,y)$ 描述，那么正交族必须具有负倒数的斜率，即 $\frac{dy}{dx} = -\frac{1}{m(x,y)}$。如果原始方程是齐次的，那么这个描述[正交轨线](@keyword=orthogonal_trajectories|lang=zh-CN|style=Feynman)的新方程通常也是齐次的！
 
-让我们看一个绝佳的例子。想象一个在原点与 y 轴相切的[圆族](@article_id:348871)。通过一些几何推导，我们发现其斜率由[齐次方程](@article_id:350590) $\frac{dy}{dx} = \frac{y^2-x^2}{2xy}$ 描述。因此，其[正交轨线](@article_id:323082)的[微分方程](@article_id:327891)是 $\frac{dy}{dx} = -\frac{2xy}{y^2-x^2} = \frac{2xy}{x^2-y^2}$。使用 $y=vx$ 换元，我们可以解这个新方程，找到其正交族：一个在原点与 *x 轴* 相切的[圆族](@article_id:348871) 。两个[圆族](@article_id:348871)以直角整齐地交织在一起，通过我们的换元法得以揭示。
+让我们看一个绝佳的例子。想象一个在原点与 y 轴相切的[圆族](@keyword=family_of_circles|lang=zh-CN|style=Feynman)。通过一些几何推导，我们发现其斜率由[齐次方程](@keyword=homogeneous_equation|lang=zh-CN|style=Feynman) $\frac{dy}{dx} = \frac{y^2-x^2}{2xy}$ 描述。因此，其[正交轨线](@keyword=orthogonal_trajectories|lang=zh-CN|style=Feynman)的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)是 $\frac{dy}{dx} = -\frac{2xy}{y^2-x^2} = \frac{2xy}{x^2-y^2}$。使用 $y=vx$ 换元，我们可以解这个新方程，找到其正交族：一个在原点与 *x 轴* 相切的[圆族](@keyword=family_of_circles|lang=zh-CN|style=Feynman) [@problem_id:2190400]。两个[圆族](@keyword=family_of_circles|lang=zh-CN|style=Feynman)以直角整齐地交织在一起，通过我们的换元法得以揭示。
 
-正是这个方程 $\frac{dy}{dx} = \frac{2xy}{x^2-y^2}$，出现在一个完全不同的背景中：描述一种特定的[二维理想流体流动](@article_id:368964)的流线 。这些流线的[正交轨线](@article_id:323082)，也就是我们可能计算出的等势线，则由第一个方程 $\frac{dy}{dx} = \frac{y^2-x^2}{2xy}$ 描述 。数学并不知道它描述的是流动的水还是相交的圆；它只是揭示了连接它们的潜在几何真理。
+正是这个方程 $\frac{dy}{dx} = \frac{2xy}{x^2-y^2}$，出现在一个完全不同的背景中：描述一种特定的[二维理想流体流动](@keyword=2d_ideal_fluid_flow|lang=zh-CN|style=Feynman)的流线 [@problem_id:2172993]。这些流线的[正交轨线](@keyword=orthogonal_trajectories|lang=zh-CN|style=Feynman)，也就是我们可能计算出的等势线，则由第一个方程 $\frac{dy}{dx} = \frac{y^2-x^2}{2xy}$ 描述 [@problem_id:2190374]。数学并不知道它描述的是流动的水还是相交的圆；它只是揭示了连接它们的潜在几何真理。
 
 ### 从物理原理到工程设计
 
-我们方法的[影响范围](@article_id:345815)超越了描述“是什么”，延伸到工程设计“能成为什么”。假设我们想制造一个探照灯。我们有一个点光源，并且希望将所有光线反射成一束平行光。[镜面](@article_id:308536)应该是什么形状？
+我们方法的[影响范围](@keyword=range_of_influence|lang=zh-CN|style=Feynman)超越了描述“是什么”，延伸到工程设计“能成为什么”。假设我们想制造一个探照灯。我们有一个点光源，并且希望将所有光线反射成一束平行光。[镜面](@keyword=mirror_plane|lang=zh-CN|style=Feynman)应该是什么形状？
 
-这不是一个简单的问题。我们可以将[反射定律](@article_id:354222)——入射角等于反射角——转化为镜面切线的一个几何条件。经过一些三角运算，这个条件产生了一个齐次[一阶微分方程](@article_id:323301)。我们用什么工具来解它呢？当然是 $y=vx$ 换元法。最终得到的解不是什么奇异的、闻所未闻的曲线，而是一条简单的抛物线 。我们的方法运用了一条基本的物理学原理，并用它推导出了完美[抛物面反射器](@article_id:355864)的蓝图，这种形状被用于从望远镜到卫星天线的各种设备中。
+这不是一个简单的问题。我们可以将[反射定律](@keyword=law_of_reflection|lang=zh-CN|style=Feynman)——入射角等于反射角——转化为镜面切线的一个几何条件。经过一些三角运算，这个条件产生了一个齐次[一阶微分方程](@keyword=first_order_differential_equations|lang=zh-CN|style=Feynman)。我们用什么工具来解它呢？当然是 $y=vx$ 换元法。最终得到的解不是什么奇异的、闻所未闻的曲线，而是一条简单的抛物线 [@problem_id:1706252]。我们的方法运用了一条基本的物理学原理，并用它推导出了完美[抛物面反射器](@keyword=parabolic_reflector|lang=zh-CN|style=Feynman)的蓝图，这种形状被用于从望远镜到卫星天线的各种设备中。
 
 ### 伟大的统一
 
-也许最深刻的洞见出现在我们将复杂性提升一个层次，从常微分方程 (ODE) 到[偏微分方程](@article_id:301773) (PDE) 的时候。PDE 描述场，如温度分布、波的传播和量子力学。理解一阶 PDE 的一个核心概念是**[特征曲线](@article_id:354201)**，即信息传播的路径。
+也许最深刻的洞见出现在我们将复杂性提升一个层次，从常微分方程 (ODE) 到[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman) (PDE) 的时候。PDE 描述场，如温度分布、波的传播和量子力学。理解一阶 PDE 的一个核心概念是**[特征曲线](@keyword=characteristic_curves|lang=zh-CN|style=Feynman)**，即信息传播的路径。
 
-让我们考虑[偏微分方程](@article_id:301773) $(x^2 - y^2) \frac{\partial u}{\partial x} + 2xy \frac{\partial u}{\partial y} = 0$。这个方程可能描述某个在原点有源或汇的物理系统的[稳态](@article_id:326048)。为了求解它，我们必须首先找到它的[特征曲线](@article_id:354201)。定义这些曲线的[常微分方程](@article_id:307440)由 $\frac{dy}{dx} = \frac{2xy}{x^2-y^2}$ 给出。
+让我们考虑[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman) $(x^2 - y^2) \frac{\partial u}{\partial x} + 2xy \frac{\partial u}{\partial y} = 0$。这个方程可能描述某个在原点有源或汇的物理系统的[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)。为了求解它，我们必须首先找到它的[特征曲线](@keyword=characteristic_curves|lang=zh-CN|style=Feynman)。定义这些曲线的[常微分方程](@keyword=ordinary_differential_equations|lang=zh-CN|style=Feynman)由 $\frac{dy}{dx} = \frac{2xy}{x^2-y^2}$ 给出。
 
-停下来看看这个方程。它与描述[理想流体](@article_id:336460)流线的方程  以及我们[正交轨线](@article_id:323082)问题中与 x 轴相切的[圆族](@article_id:348871)的方程 [@problem_id:2190400, @problem_id:2107422] *完全相同*。这并非巧合。这是对数学与物理学深层统一结构的一瞥。描述水流和相交圆几何的相同数学形式，也描述了信息在某个物理场中的传播方式。其根本模式是相同的。
+停下来看看这个方程。它与描述[理想流体](@keyword=ideal_fluid|lang=zh-CN|style=Feynman)流线的方程 [@problem_id:2172993] 以及我们[正交轨线](@keyword=orthogonal_trajectories|lang=zh-CN|style=Feynman)问题中与 x 轴相切的[圆族](@keyword=family_of_circles|lang=zh-CN|style=Feynman)的方程 [@problem_id:2190400, @problem_id:2107422] *完全相同*。这并非巧合。这是对数学与物理学深层统一结构的一瞥。描述水流和相交圆几何的相同数学形式，也描述了信息在某个物理场中的传播方式。其根本模式是相同的。
 
 所以，下次当你使用 $y=vx$ 换元时，请记住你不仅仅是在操纵符号。你正在使用一把钥匙，它能解锁一个隐藏的几何美学世界，揭示物理场的正交骨架，指导工程设计，而且最重要的是，阐明了我们宇宙中各种现象背后深刻而优雅的统一性。

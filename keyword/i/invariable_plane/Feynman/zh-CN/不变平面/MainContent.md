@@ -1,7 +1,7 @@
 ## 引言
-一个自由旋转物体看似混乱的翻滚运动，无论是宇航员的扳手还是遥远的小行星，都提出了一个物理学中的基本问题：我们如何在这种复杂的运动中找到秩序和可预测性？这个问题并非关乎外力，而是要理解由物体自身转动所支配的内禀动力学。解开这个谜题的关键不在于追踪每一次摆动，而在于识别那些保持不变的量。本文通过引入[不变平面](@article_id:343167)的概念，揭示了隐藏在转动运动中的深刻秩序。
+一个自由旋转物体看似混乱的翻滚运动，无论是宇航员的扳手还是遥远的小行星，都提出了一个物理学中的基本问题：我们如何在这种复杂的运动中找到秩序和可预测性？这个问题并非关乎外力，而是要理解由物体自身转动所支配的内禀动力学。解开这个谜题的关键不在于追踪每一次摆动，而在于识别那些保持不变的量。本文通过引入[不变平面](@keyword=the_invariable_plane|lang=zh-CN|style=Feynman)的概念，揭示了隐藏在转动运动中的深刻秩序。
 
-首先，在“原理与机制”一章中，我们将从神圣的[能量守恒](@article_id:300957)和[角动量守恒](@article_id:313488)定律推导出[不变平面](@article_id:343167)的存在。我们将探索潘索优雅的几何解释，将整个运动过程形象地看作一个“惯量[椭球](@article_id:345137)”在这个固定平面上[无滑滚动](@article_id:344864)。随后，“应用与跨学科联系”一章将展示这一概念的深远影响。我们将看到[不变平面](@article_id:343167)如何支配我们太阳系的精密运行，如何为月球的舞蹈编排，甚至在[材料科学](@article_id:312640)的微观世界中有一个强大的类似概念，用以解释[形状记忆合金](@article_id:301552)的独特性质。读完本文，[不变平面](@article_id:343167)将被揭示为一个为各种物理系统带来秩序的无形建筑师。
+首先，在“原理与机制”一章中，我们将从神圣的[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)和[角动量守恒](@keyword=conservation_of_angular_momentum|lang=zh-CN|style=Feynman)定律推导出[不变平面](@keyword=the_invariable_plane|lang=zh-CN|style=Feynman)的存在。我们将探索潘索优雅的几何解释，将整个运动过程形象地看作一个“惯量[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)”在这个固定平面上[无滑滚动](@keyword=rolling_without_slipping|lang=zh-CN|style=Feynman)。随后，“应用与跨学科联系”一章将展示这一概念的深远影响。我们将看到[不变平面](@keyword=the_invariable_plane|lang=zh-CN|style=Feynman)如何支配我们太阳系的精密运行，如何为月球的舞蹈编排，甚至在[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)的微观世界中有一个强大的类似概念，用以解释[形状记忆合金](@keyword=shape_memory_alloys|lang=zh-CN|style=Feynman)的独特性质。读完本文，[不变平面](@keyword=the_invariable_plane|lang=zh-CN|style=Feynman)将被揭示为一个为各种物理系统带来秩序的无形建筑师。
 
 ## 原理与机制
 
@@ -9,15 +9,15 @@
 
 ### 翻滚运动中不变的法则
 
-在任何[孤立系统](@article_id:319605)中，某些量是守恒的，它们是构建动力学基础的坚固基石。对于我们翻滚的扳手（或小行星、或卫星），有两个量是神圣的：它的**[转动动能](@article_id:356598)** $T$ 和它的**角动量矢量** $\vec{L}$。
+在任何[孤立系统](@keyword=isolated_systems|lang=zh-CN|style=Feynman)中，某些量是守恒的，它们是构建动力学基础的坚固基石。对于我们翻滚的扳手（或小行星、或卫星），有两个量是神圣的：它的**[转动动能](@keyword=rotational_kinetic_energy|lang=zh-CN|style=Feynman)** $T$ 和它的**角动量矢量** $\vec{L}$。
 
 动能 $T$ 是运动能量的度量。由于没有外力对物体做功，其能量必须保持恒定。它只是一个单一的数字，一个标量，告诉我们旋转中包含了多少“能量”。
 
 角动量 $\vec{L}$ 则更为精妙。它是一个矢量，意味着它既有大小（运动中包含多少转动“惯性”），也有方向。牛顿定律告诉我们，在没有外部扭转力（即**力矩**）的情况下，系统的角动量矢量不会改变。这意味着对于我们自由翻滚的物体，矢量 $\vec{L}$ 在空间中坚定地指向一个方向，永远不变。它成为我们理解整个运动的“北极星”。
 
-### [不变平面](@article_id:343167)：一个固定于空间的平坦舞台
+### [不变平面](@keyword=the_invariable_plane|lang=zh-CN|style=Feynman)：一个固定于空间的平坦舞台
 
-让我们暂时停留在空间[坐标系](@article_id:316753)中，观察我们的物体翻滚。我们有两个[不变量](@article_id:309269)，能量 $T$ 和角动量矢量 $\vec{L}$。我们还有一个我们感兴趣的变量，即**[角速度矢量](@article_id:351624)** $\vec{\omega}$。这个矢量代表瞬时转轴和转速。在简单的旋转中，比如一个投掷得完美的橄榄球，$\vec{\omega}$ 是恒定的。但在翻滚中，$\vec{\omega}$ 的方向在不断变化。
+让我们暂时停留在空间[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中，观察我们的物体翻滚。我们有两个[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)，能量 $T$ 和角动量矢量 $\vec{L}$。我们还有一个我们感兴趣的变量，即**[角速度矢量](@keyword=angular_velocity_vector|lang=zh-CN|style=Feynman)** $\vec{\omega}$。这个矢量代表瞬时转轴和转速。在简单的旋转中，比如一个投掷得完美的橄榄球，$\vec{\omega}$ 是恒定的。但在翻滚中，$\vec{\omega}$ 的方向在不断变化。
 
 这三个量是如何关联的？一个优美而简单的方程将它们联系起来：
 
@@ -25,69 +25,69 @@ $$
 T = \frac{1}{2} \vec{\omega} \cdot \vec{L}
 $$
 
-现在，让我们用物理学家的眼光来看这个方程。我们有 $\vec{\omega} \cdot \vec{L} = 2T$。由于 $T$ 是一个常数，而 $\vec{L}$ 是一个常矢量（大小 $L = |\vec{L}|$ 和方向都恒定），这个方程告诉我们一些关于变化的矢量 $\vec{\omega}$ 的深刻信息。$\vec{\omega}$ 与固定矢量 $\vec{L}$ 的[点积](@article_id:309438)本身就是一个常数。
+现在，让我们用物理学家的眼光来看这个方程。我们有 $\vec{\omega} \cdot \vec{L} = 2T$。由于 $T$ 是一个常数，而 $\vec{L}$ 是一个常矢量（大小 $L = |\vec{L}|$ 和方向都恒定），这个方程告诉我们一些关于变化的矢量 $\vec{\omega}$ 的深刻信息。$\vec{\omega}$ 与固定矢量 $\vec{L}$ 的[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)本身就是一个常数。
 
 像 $\vec{a} \cdot \vec{x} = c$ 这样的方程，其中 $\vec{a}$ 是一个固定矢量， $c$ 是一个常数，其几何意义是什么？这是一个平面的方程！矢量 $\vec{a}$ 是平面的法向量，常数 $c$ 决定了它到原点的距离。
 
-这意味着，不断变化的[角速度矢量](@article_id:351624) $\vec{\omega}$ 的顶端并不能在空间中任意游走。它被约束在任何时刻都必须位于一个固定在空间中、且垂直于恒定角动量矢量 $\vec{L}$ 的平面上。这个宏伟的、固定在空间中的平面被称为**[不变平面](@article_id:343167)**。它不是一个抽象的定义，而是[能量守恒](@article_id:300957)和角动量守恒的直接且必然的结果。
+这意味着，不断变化的[角速度矢量](@keyword=angular_velocity_vector|lang=zh-CN|style=Feynman) $\vec{\omega}$ 的顶端并不能在空间中任意游走。它被约束在任何时刻都必须位于一个固定在空间中、且垂直于恒定角动量矢量 $\vec{L}$ 的平面上。这个宏伟的、固定在空间中的平面被称为**[不变平面](@keyword=the_invariable_plane|lang=zh-CN|style=Feynman)**。它不是一个抽象的定义，而是[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)和角动量守恒的直接且必然的结果。
 
-我们甚至可以计算出从物体[质心](@article_id:298800)（我们的原点）到这个平面的垂直距离，我们称之为 $p$。该平面的方程是 $\vec{L} \cdot \vec{\omega} = 2T$。从原点到一个[法向量](@article_id:327892)为 $\vec{n}$ 且方程为 $\vec{n} \cdot \vec{x} = c$ 的平面的距离由 $p = |c| / |\vec{n}|$ 给出。在我们的例子中，$\vec{n} = \vec{L}$ 且 $c=2T$。因此，距离为：
+我们甚至可以计算出从物体[质心](@keyword=center_of_mass|lang=zh-CN|style=Feynman)（我们的原点）到这个平面的垂直距离，我们称之为 $p$。该平面的方程是 $\vec{L} \cdot \vec{\omega} = 2T$。从原点到一个[法向量](@keyword=normal_vector|lang=zh-CN|style=Feynman)为 $\vec{n}$ 且方程为 $\vec{n} \cdot \vec{x} = c$ 的平面的距离由 $p = |c| / |\vec{n}|$ 给出。在我们的例子中，$\vec{n} = \vec{L}$ 且 $c=2T$。因此，距离为：
 
 $$
 p = \frac{2T}{L}
 $$
 
-由于 $T$ 和 $L$ 都是运动的常数，这个距离也是恒定的。[角速度矢量](@article_id:351624) $\vec{\omega}$ 的顶端在其上表演舞蹈的舞台是固定不变的   。对于一个具有已知属性的特定卫星，我们可以代入其能量和角动量的数值来精确地找到这个距离，从而将一个抽象的平面变成一个可触及的现实 。
+由于 $T$ 和 $L$ 都是运动的常数，这个距离也是恒定的。[角速度矢量](@keyword=angular_velocity_vector|lang=zh-CN|style=Feynman) $\vec{\omega}$ 的顶端在其上表演舞蹈的舞台是固定不变的 [@problem_id:615854] [@problem_id:577186] [@problem_id:2088228]。对于一个具有已知属性的特定卫星，我们可以代入其能量和角动量的数值来精确地找到这个距离，从而将一个抽象的平面变成一个可触及的现实 [@problem_id:2088198]。
 
-### 惯量[椭球](@article_id:345137)：一个随物体旋转的幽灵形状
+### 惯量[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)：一个随物体旋转的幽灵形状
 
-现在让我们改变视角。想象我们是微小的观察者，骑在翻滚的物体上，随之一起旋转和摆动。在这个**随体[坐标系](@article_id:316753)**中，物体的属性，特别是其[质量分布](@article_id:318855)，是固定的。我们通过**[主转动惯量](@article_id:311306)**（$I_1, I_2, I_3$）来描述这种质量分布，它们衡量了物体绕三个固定的特殊垂直轴旋转的阻力。
+现在让我们改变视角。想象我们是微小的观察者，骑在翻滚的物体上，随之一起旋转和摆动。在这个**随体[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)**中，物体的属性，特别是其[质量分布](@keyword=mass_distribution|lang=zh-CN|style=Feynman)，是固定的。我们通过**[主转动惯量](@keyword=principal_moments_of_inertia|lang=zh-CN|style=Feynman)**（$I_1, I_2, I_3$）来描述这种质量分布，它们衡量了物体绕三个固定的特殊垂直轴旋转的阻力。
 
-从这个共同旋转的视角看，[能量守恒](@article_id:300957)定律 $T = \text{constant}$ 如何约束角速度 $\vec{\omega} = (\omega_1, \omega_2, \omega_3)$？以[主轴](@article_id:351809)表示，动能为：
+从这个共同旋转的视角看，[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)定律 $T = \text{constant}$ 如何约束角速度 $\vec{\omega} = (\omega_1, \omega_2, \omega_3)$？以[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)表示，动能为：
 
 $$
 T = \frac{1}{2}(I_1 \omega_1^2 + I_2 \omega_2^2 + I_3 \omega_3^2)
 $$
 
-再次，让我们看看几何意义。这是[角速度](@article_id:323935)三维空间中一个[椭球](@article_id:345137)的方程！对于我们物体上的观察者来说，[角速度矢量](@article_id:351624) $\vec{\omega}$ 的顶端必须始终位于这个椭球的表面上。这个形状，被称为**惯量椭球**或**[潘索椭球](@article_id:346061)**，由物体的[质量分布](@article_id:318855)定义，并固定在随体[坐标系](@article_id:316753)中，像一个幽灵般的惯性蓝图一样随之旋转。
+再次，让我们看看几何意义。这是[角速度](@keyword=angular_velocity|lang=zh-CN|style=Feynman)三维空间中一个[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)的方程！对于我们物体上的观察者来说，[角速度矢量](@keyword=angular_velocity_vector|lang=zh-CN|style=Feynman) $\vec{\omega}$ 的顶端必须始终位于这个椭球的表面上。这个形状，被称为**惯量椭球**或**[潘索椭球](@keyword=poinsot_s_ellipsoid|lang=zh-CN|style=Feynman)**，由物体的[质量分布](@keyword=mass_distribution|lang=zh-CN|style=Feynman)定义，并固定在随体[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中，像一个幽灵般的惯性蓝图一样随之旋转。
 
-### 潘索的杰作：滚动的[椭球](@article_id:345137)
+### 潘索的杰作：滚动的[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)
 
 奇迹就在这里发生。我们从两个不同的视角，对同一个矢量 $\vec{\omega}$ 发现了两个不同的约束。
 
-*   从固定的空间[坐标系](@article_id:316753)看，$\vec{\omega}$ 的顶端必须位于平坦、不动的“[不变平面](@article_id:343167)”上。
-*   从旋转的随体[坐标系](@article_id:316753)看，$\vec{\omega}$ 的顶端必须位于旋转的“惯量椭球”表面上。
+*   从固定的空间[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)看，$\vec{\omega}$ 的顶端必须位于平坦、不动的“[不变平面](@keyword=the_invariable_plane|lang=zh-CN|style=Feynman)”上。
+*   从旋转的随体[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)看，$\vec{\omega}$ 的顶端必须位于旋转的“惯量椭球”表面上。
 
-要使两者同时成立，惯量椭球必须始终接触[不变平面](@article_id:343167)。而在任何给定瞬间，它们之间的唯一接触点，*就是*[角速度矢量](@article_id:351624) $\vec{\omega}$ 的顶端 。
+要使两者同时成立，惯量椭球必须始终接触[不变平面](@keyword=the_invariable_plane|lang=zh-CN|style=Feynman)。而在任何给定瞬间，它们之间的唯一接触点，*就是*[角速度矢量](@keyword=angular_velocity_vector|lang=zh-CN|style=Feynman) $\vec{\omega}$ 的顶端 [@problem_id:2088164]。
 
-这引出了一个新问题：这种接触的性质是什么？是[椭球](@article_id:345137)在平面上滑动，还是存在更优雅的关系？让我们研究一下几何形状。根据定义，[不变平面](@article_id:343167)的法向量是矢量 $\vec{L}$。那么，惯量椭球在接触点 $\vec{\omega}$ 处的法向量是什么？通过计算能量[椭球方程](@article_id:350706)的梯度，我们发现其法向量与 $(I_1\omega_1, I_2\omega_2, I_3\omega_3)$ 成正比，这正是在随体[坐标系](@article_id:316753)中角动量矢量 $\vec{L}$ 的定义！ 
+这引出了一个新问题：这种接触的性质是什么？是[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)在平面上滑动，还是存在更优雅的关系？让我们研究一下几何形状。根据定义，[不变平面](@keyword=the_invariable_plane|lang=zh-CN|style=Feynman)的法向量是矢量 $\vec{L}$。那么，惯量椭球在接触点 $\vec{\omega}$ 处的法向量是什么？通过计算能量[椭球方程](@keyword=ellipsoid_equation|lang=zh-CN|style=Feynman)的梯度，我们发现其法向量与 $(I_1\omega_1, I_2\omega_2, I_3\omega_3)$ 成正比，这正是在随体[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中角动量矢量 $\vec{L}$ 的定义！[@problem_id:2092241] [@problem_id:2088206]
 
-这是一个惊人的结果。这两个表面，平面和[椭球](@article_id:345137)，不仅在点 $\vec{\omega}$ 处接触，而且在该点完全**相切**。它们共享一个公共的法向量 $\vec{L}$。
+这是一个惊人的结果。这两个表面，平面和[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)，不仅在点 $\vec{\omega}$ 处接触，而且在该点完全**相切**。它们共享一个公共的法向量 $\vec{L}$。
 
-但这个构图中最美妙的部分，由法国物理学家 Louis Poinsot 揭示，描述了运动本身。与接触点对应的物理物体上的[质点](@article_id:365946)的速度是多少？刚体中距离旋转中心 $\vec{r}$ 处的一点，自身以角速度 $\vec{\omega}$ 旋转，其速度为 $\vec{v} = \vec{\omega} \times \vec{r}$。在我们的例子中，物体上的接触点的[位置矢量](@article_id:353860)，在那一瞬间，与[角速度矢量](@article_id:351624)本身相同，所以 $\vec{r} = \vec{\omega}$。因此它的速度是：
+但这个构图中最美妙的部分，由法国物理学家 Louis Poinsot 揭示，描述了运动本身。与接触点对应的物理物体上的[质点](@keyword=point_mass|lang=zh-CN|style=Feynman)的速度是多少？刚体中距离旋转中心 $\vec{r}$ 处的一点，自身以角速度 $\vec{\omega}$ 旋转，其速度为 $\vec{v} = \vec{\omega} \times \vec{r}$。在我们的例子中，物体上的接触点的[位置矢量](@keyword=position_vectors|lang=zh-CN|style=Feynman)，在那一瞬间，与[角速度矢量](@keyword=angular_velocity_vector|lang=zh-CN|style=Feynman)本身相同，所以 $\vec{r} = \vec{\omega}$。因此它的速度是：
 
 $$
 \vec{v}_{\text{contact}} = \vec{\omega} \times \vec{\omega} = 0
 $$
 
-速度为零！物体上接触[不变平面](@article_id:343167)的那一点，在空间[坐标系](@article_id:316753)中是瞬时静止的。这正是**[无滑滚动](@article_id:344864)**的精确定义。
+速度为零！物体上接触[不变平面](@keyword=the_invariable_plane|lang=zh-CN|style=Feynman)的那一点，在空间[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中是瞬时静止的。这正是**[无滑滚动](@keyword=rolling_without_slipping|lang=zh-CN|style=Feynman)**的精确定义。[@problem_id:2092282]
 
-因此，自由刚体整个复杂的、摆动的、翻滚的运动，可以简化为一个非常简单直观的画面：物体的惯量椭球在空间中固定的[不变平面](@article_id:343167)上[无滑滚动](@article_id:344864)。
+因此，自由刚体整个复杂的、摆动的、翻滚的运动，可以简化为一个非常简单直观的画面：物体的惯量椭球在空间中固定的[不变平面](@keyword=the_invariable_plane|lang=zh-CN|style=Feynman)上[无滑滚动](@keyword=rolling_without_slipping|lang=zh-CN|style=Feynman)。
 
 ### 旋转的轨迹：本体极迹与空间极迹
 
-这种滚动运动使我们能够可视化[角速度矢量](@article_id:351624)所描绘的轨迹。
+这种滚动运动使我们能够可视化[角速度矢量](@keyword=angular_velocity_vector|lang=zh-CN|style=Feynman)所描绘的轨迹。
 
-随着椭球滚动，接触点在其表面上描绘出一条路径。这条路径，从物体上的观察者来看，被称为**[本体](@article_id:327756)极迹**。它实际上是能量椭球与另一个由角动量大小守恒（$L^2 = I_1^2 \omega_1^2 + I_2^2 \omega_2^2 + I_3^2 \omega_3^2$）定义的椭球的交线。两个[椭球](@article_id:345137)的交线是一条[闭合曲线](@article_id:328226)。因此，从物体的角度看，旋转轴似乎在描绘一个重复的、闭合的环路 。
+随着椭球滚动，接触点在其表面上描绘出一条路径。这条路径，从物体上的观察者来看，被称为**[本体](@keyword=ontologies|lang=zh-CN|style=Feynman)极迹**。它实际上是能量椭球与另一个由角动量大小守恒（$L^2 = I_1^2 \omega_1^2 + I_2^2 \omega_2^2 + I_3^2 \omega_3^2$）定义的椭球的交线。两个[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)的交线是一条[闭合曲线](@keyword=closed_curves|lang=zh-CN|style=Feynman)。因此，从物体的角度看，旋转轴似乎在描绘一个重复的、闭合的环路 [@problem_id:2092291]。
 
-同时，接触点在固定的[不变平面](@article_id:343167)上描绘出一条路径。这条路径，从空间中的观察者来看，被称为**空间极迹**。随着[椭球](@article_id:345137)滚动，这条路径展开。它通常*不是*一条[闭合曲线](@article_id:328226)。只有在物体的自旋周期与其摆动周期的比值为有理数的特殊情况下，它才会闭合。对于任意的翻滚，[旋转轴](@article_id:366261)在空间中永远不会完全回到之前的位置，即使它相对于物体本身描绘了一条重复的路径 。
+同时，接触点在固定的[不变平面](@keyword=the_invariable_plane|lang=zh-CN|style=Feynman)上描绘出一条路径。这条路径，从空间中的观察者来看，被称为**空间极迹**。随着[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)滚动，这条路径展开。它通常*不是*一条[闭合曲线](@keyword=closed_curves|lang=zh-CN|style=Feynman)。只有在物体的自旋周期与其摆动周期的比值为有理数的特殊情况下，它才会闭合。对于任意的翻滚，[旋转轴](@keyword=axis_of_rotation|lang=zh-CN|style=Feynman)在空间中永远不会完全回到之前的位置，即使它相对于物体本身描绘了一条重复的路径 [@problem_id:2092291]。
 
 ### 摇晃的书本与静止的瞬间
 
-这整个几何框架不仅仅是数学上的奇趣；它解释了一种你现在就可以体验的现象。拿一本书（长方形的最好），把它抛向空中，分别绕其三个[主轴](@article_id:351809)旋转。你会注意到，它绕其最长轴（最小 $I$）和最短轴（最大 $I$）的旋转是稳定的。但是当你试图绕其中间轴旋转时，它会剧烈且不可预测地翻滚。
+这整个几何框架不仅仅是数学上的奇趣；它解释了一种你现在就可以体验的现象。拿一本书（长方形的最好），把它抛向空中，分别绕其三个[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)旋转。你会注意到，它绕其最长轴（最小 $I$）和最短轴（最大 $I$）的旋转是稳定的。但是当你试图绕其中间轴旋转时，它会剧烈且不可预测地翻滚。
 
-潘索构图揭示了原因。[本体](@article_id:327756)极迹——$\vec{\omega}$ 在惯量椭球上的路径——在最大和最小惯量轴周围是小的、稳定的圆圈。但是与中间轴相关的路径不是一个简单的圆圈；它是一条称为**分界线**的特殊[分界线](@article_id:323380)。任何微小的偏离都会使运动进入一个远离预定轴的大环路。
+潘索构图揭示了原因。[本体](@keyword=ontologies|lang=zh-CN|style=Feynman)极迹——$\vec{\omega}$ 在惯量椭球上的路径——在最大和最小惯量轴周围是小的、稳定的圆圈。但是与中间轴相关的路径不是一个简单的圆圈；它是一条称为**分界线**的特殊[分界线](@keyword=separatrix|lang=zh-CN|style=Feynman)。任何微小的偏离都会使运动进入一个远离预定轴的大环路。
 
-现在考虑一个更微妙的点。如果你能让物体以恰好位于这条不稳定[分界线](@article_id:323380)上的方式开始旋转，会发生什么？物体上的[本体](@article_id:327756)极迹将是一条在无限时间内渐近接近不稳定中间轴的路径。在空间[坐标系](@article_id:316753)中，这对应于空间极迹描绘出一个尖锐的**[尖点](@article_id:641085)**。就在这个[尖点](@article_id:641085)的瞬间，$\vec{\omega}$ 的顶端在空间[坐标系](@article_id:316753)中的速度瞬间变为零。[欧拉运动方程](@article_id:356467)证实，这恰好发生在旋转纯粹绕其中一个[主轴](@article_id:351809)进行时 。
+现在考虑一个更微妙的点。如果你能让物体以恰好位于这条不稳定[分界线](@keyword=separatrix|lang=zh-CN|style=Feynman)上的方式开始旋转，会发生什么？物体上的[本体](@keyword=ontologies|lang=zh-CN|style=Feynman)极迹将是一条在无限时间内渐近接近不稳定中间轴的路径。在空间[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中，这对应于空间极迹描绘出一个尖锐的**[尖点](@keyword=cusps|lang=zh-CN|style=Feynman)**。就在这个[尖点](@keyword=cusps|lang=zh-CN|style=Feynman)的瞬间，$\vec{\omega}$ 的顶端在空间[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中的速度瞬间变为零。[欧拉运动方程](@keyword=euler_s_equations_of_motion|lang=zh-CN|style=Feynman)证实，这恰好发生在旋转纯粹绕其中一个[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)进行时 [@problem_id:2088173]。
 
-这是[旋转轴](@article_id:366261)进动中一个完美而短暂的静止点。这是空间极迹“停止并折返”的时刻。在那一瞬间，[角速度](@article_id:323935)的大小由优美简洁的关系式 $|\vec{\omega}| = L/I_2$ 给出，其中 $I_2$ 是中间转动惯量。从混沌翻滚的漩涡中，守恒定律和几何学催生了完美简洁的瞬间和深刻静止的点。这就是物理学固有的美与统一。
+这是[旋转轴](@keyword=axis_of_rotation|lang=zh-CN|style=Feynman)进动中一个完美而短暂的静止点。这是空间极迹“停止并折返”的时刻。在那一瞬间，[角速度](@keyword=angular_velocity|lang=zh-CN|style=Feynman)的大小由优美简洁的关系式 $|\vec{\omega}| = L/I_2$ 给出，其中 $I_2$ 是中间转动惯量。从混沌翻滚的漩涡中，守恒定律和几何学催生了完美简洁的瞬间和深刻静止的点。这就是物理学固有的美与统一。

@@ -20,7 +20,7 @@ One of the most natural questions to ask is: when is something at its maximum (o
 This is the key insight. To find a maximum of a function $f(x)$, Fermat would set the function at $x$ "adequal" to the function at the nearby point $x+E$:
 $$f(x) \approx f(x+E)$$
 
-Let's make this concrete with a simple engineering problem. Suppose you have a flat sheet of metal, 15 cm wide, and you want to bend it into an open-topped rain gutter with a rectangular cross-section. You bend up a height $x$ on each side. The base of the gutter will then be $15 - 2x$. The cross-sectional area, which determines how much water it can carry, is therefore $A(x) = x(15 - 2x) = 15x - 2x^2$. How do we choose $x$ to make this area as large as possible? 
+Let's make this concrete with a simple engineering problem. Suppose you have a flat sheet of metal, 15 cm wide, and you want to bend it into an open-topped rain gutter with a rectangular cross-section. You bend up a height $x$ on each side. The base of the gutter will then be $15 - 2x$. The cross-sectional area, which determines how much water it can carry, is therefore $A(x) = x(15 - 2x) = 15x - 2x^2$. How do we choose $x$ to make this area as large as possible? [@problem_id:2116341]
 
 Using Fermat's method, we "adequale" the area at $x$ with the area at $x+E$:
 $$A(x) \approx A(x+E)$$
@@ -45,9 +45,9 @@ Solving for $x$ gives us $x = \frac{15}{4} = 3.75$ cm. This is the height that m
 
 Finding maxima and minima is about where a curve is flat. But what about where it's steep? How steep is it, exactly, at any given point? This is the question of the tangent line—the line that just "kisses" the curve at a point, sharing its exact direction at that one instant.
 
-A [secant line](@article_id:178274), which cuts through two points on a curve, is easy to calculate. A tangent is harder. Fermat's insight was to see the tangent as the ultimate limit of a [secant line](@article_id:178274), as the two points it connects slide together into one.
+A [secant line](@keyword=secant_line|lang=en-US|style=Feynman), which cuts through two points on a curve, is easy to calculate. A tangent is harder. Fermat's insight was to see the tangent as the ultimate limit of a [secant line](@keyword=secant_line|lang=en-US|style=Feynman), as the two points it connects slide together into one.
 
-Let's find the slope of the tangent to the curve $y = x^3$ at some arbitrary point $x=a$ . We have our first point $(a, a^3)$. We use our phantom helper $E$ to define a second, nearby point on the curve: $(a+E, (a+E)^3)$.
+Let's find the slope of the tangent to the curve $y = x^3$ at some arbitrary point $x=a$ [@problem_id:2136423]. We have our first point $(a, a^3)$. We use our phantom helper $E$ to define a second, nearby point on the curve: $(a+E, (a+E)^3)$.
 
 The slope of the secant line connecting these two points is the change in $y$ divided by the change in $x$:
 $$m_{\text{sec}} = \frac{(a+E)^3 - a^3}{(a+E) - a} = \frac{(a+E)^3 - a^3}{E}$$
@@ -61,13 +61,13 @@ $$m_{\text{sec}} = 3a^2 + 3aE + E^2$$
 This is the slope of the line between two very close points. To find the slope of the tangent at the single point $a$, we now let $E$ vanish.
 $$m_{\text{tan}} = 3a^2 + 3a(0) + (0)^2 = 3a^2$$
 
-And there it is. The slope of $y=x^3$ at any point $a$ is $3a^2$. The same logic works for other curves, like the hyperbola $y=1/x$ . The slope of the secant is $\frac{1/(a+E) - 1/a}{E}$. A little algebra shows this simplifies to $-\frac{1}{a(a+E)}$. When we set $E=0$, we get the tangent slope: $-1/a^2$. The method is a reliable machine for finding the [instantaneous rate of change](@article_id:140888).
+And there it is. The slope of $y=x^3$ at any point $a$ is $3a^2$. The same logic works for other curves, like the hyperbola $y=1/x$ [@problem_id:2136444]. The slope of the secant is $\frac{1/(a+E) - 1/a}{E}$. A little algebra shows this simplifies to $-\frac{1}{a(a+E)}$. When we set $E=0$, we get the tangent slope: $-1/a^2$. The method is a reliable machine for finding the [instantaneous rate of change](@keyword=instantaneous_rate_of_change|lang=en-US|style=Feynman).
 
 ### Unifying Algebra and Geometry: The Secret of the Circle
 
-Fermat was a master of [analytic geometry](@article_id:163772)—the bridge between algebra and the world of shapes. His method of adequality shines brightest when it reveals a deep geometric truth from a simple algebraic manipulation. Let's apply it to one of the most perfect shapes: a circle.
+Fermat was a master of [analytic geometry](@keyword=analytic_geometry|lang=en-US|style=Feynman)—the bridge between algebra and the world of shapes. His method of adequality shines brightest when it reveals a deep geometric truth from a simple algebraic manipulation. Let's apply it to one of the most perfect shapes: a circle.
 
-Consider a circle centered at the origin with radius $r$. Its equation is $x^2 + y^2 = r^2$. Pick a point $(x_0, y_0)$ on it. What is the slope of the tangent line at this point? 
+Consider a circle centered at the origin with radius $r$. Its equation is $x^2 + y^2 = r^2$. Pick a point $(x_0, y_0)$ on it. What is the slope of the tangent line at this point? [@problem_id:2116320]
 
 This time, we'll use a slightly different, but equivalent, formulation of the method. The tangent line at $(x_0, y_0)$ has some slope $m$. A point just a little bit along this tangent line can be written as $(x_0+E, y_0+mE)$. Fermat’s step of "adequality" is to insist that this point on the tangent must also, essentially, lie on the circle itself. So we substitute its coordinates into the circle's equation:
 $$(x_0+E)^2 + (y_0+mE)^2 \approx r^2$$
@@ -94,7 +94,7 @@ Out of pure algebra, a profound geometric truth known since ancient Greece has e
 
 Fermat's method is more than just a way to solve specific problems; it's a general-purpose engine for mathematical discovery. Consider the family of curves given by the equation $y^n = a^{n-1}x$, where $n$ can be any positive integer. This includes the parabola ($n=2$, $y^2 = ax$) and many other shapes.
 
-A classic geometric concept is the **subtangent**—the distance along the x-axis from the point directly below the point of tangency to where the tangent line itself intersects the x-axis. Could we find a general formula for the length of the subtangent for any curve in this family? 
+A classic geometric concept is the **subtangent**—the distance along the x-axis from the point directly below the point of tangency to where the tangent line itself intersects the x-axis. Could we find a general formula for the length of the subtangent for any curve in this family? [@problem_id:2116350]
 
 This seems complex, but the logic of adequality makes it manageable. Let the subtangent have length $s$. Using a geometric argument based on similar triangles, the slope $m$ of the tangent at a point $(x_0, y_0)$ can be related to the subtangent by $m = y_0/s$. A nearby point on the tangent line is thus $(x_0+E, y_0 + mE) = (x_0+E, y_0(1+E/s))$.
 

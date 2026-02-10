@@ -27,19 +27,19 @@ The determinant of this matrix, which we'll call $J$, is the crucial quantity. T
 $$
 dx\,dy = \left| \det\left(\frac{\partial(x,y)}{\partial(u,v)}\right) \right| \,du\,dv
 $$
-For instance, if you have a [change of variables](@article_id:140892) defined by $u = x/y$ and $v = x+y$, a bit of algebra shows that $x = \frac{uv}{u+1}$ and $y = \frac{v}{u+1}$. By calculating the partial derivatives and the determinant, you find that this particular stretch factor is $g(u,v) = \frac{v}{(u+1)^2}$ . So, a tiny square of area $du\,dv$ near the point $(u,v)$ corresponds to a patch of area $\frac{v}{(u+1)^2} du\,dv$ in the original $(x,y)$ plane. This isn't just a formula; it's the precise mathematical tool that lets us account for the way space itself is distorted by our change of perspective.
+For instance, if you have a [change of variables](@keyword=change_of_variables|lang=en-US|style=Feynman) defined by $u = x/y$ and $v = x+y$, a bit of algebra shows that $x = \frac{uv}{u+1}$ and $y = \frac{v}{u+1}$. By calculating the partial derivatives and the determinant, you find that this particular stretch factor is $g(u,v) = \frac{v}{(u+1)^2}$ [@problem_id:1677854]. So, a tiny square of area $du\,dv$ near the point $(u,v)$ corresponds to a patch of area $\frac{v}{(u+1)^2} du\,dv$ in the original $(x,y)$ plane. This isn't just a formula; it's the precise mathematical tool that lets us account for the way space itself is distorted by our change of perspective.
 
 ### The Golden Rule: Thou Shalt Not Flatten
 
 Now, not all transformations are created equal. A "good" transformation should be like a clear two-way conversation. If you map a point from the $(x,y)$ world to the $(u,v)$ world, you must be able to map it back, unambiguously. The transformation must be invertible. Geometrically, this means you can stretch and bend the space, but you can’t tear it, and you can’t fold it back on itself. A transformation that behaves this nicely everywhere is called a **diffeomorphism**.
 
-How can we tell if our transformation is well-behaved? The Jacobian determinant once again holds the key. If the determinant is non-zero in a region, the transformation is locally invertible there . But what if it *is* zero?
+How can we tell if our transformation is well-behaved? The Jacobian determinant once again holds the key. If the determinant is non-zero in a region, the transformation is locally invertible there [@problem_id:1575292]. But what if it *is* zero?
 
-Consider the seemingly innocuous transformation $u = x+y$ and $v = 2x+2y$. Notice something fishy? The second equation is just twice the first one, so $v$ is always equal to $2u$. If you try to calculate the Jacobian determinant of this transformation, you get $1 \cdot 2 - 1 \cdot 2 = 0$. Always! .
+Consider the seemingly innocuous transformation $u = x+y$ and $v = 2x+2y$. Notice something fishy? The second equation is just twice the first one, so $v$ is always equal to $2u$. If you try to calculate the Jacobian determinant of this transformation, you get $1 \cdot 2 - 1 \cdot 2 = 0$. Always! [@problem_id:2290400].
 
 What does this mean geometrically? It means this transformation takes the entire two-dimensional $(x,y)$ plane and squashes it flat onto a single one-dimensional line, the line $v=2u$. It’s a complete collapse of a dimension. An entire area becomes a line segment with zero area. Of course you can't invert this! If I give you a point on the line, say $(u,v)=(1,2)$, which point in the $(x,y)$ plane did it come from? It could have been $(1,0)$, or $(0,1)$, or $(\frac{1}{2}, \frac{1}{2})$... a whole line of points gets mapped to one. The information is irretrievably lost.
 
-So, the golden rule of [coordinate transformation](@article_id:138083) is: **the Jacobian determinant must not be zero**. It is the guardian of dimensionality, ensuring we don't accidentally flatten our universe.
+So, the golden rule of [coordinate transformation](@keyword=coordinate_transformation|lang=en-US|style=Feynman) is: **the Jacobian determinant must not be zero**. It is the guardian of dimensionality, ensuring we don't accidentally flatten our universe.
 
 ### The Reward: Taming Complexity
 
@@ -51,11 +51,11 @@ $$
 $$
 This is a partial differential equation (PDE), and solving them can be notoriously difficult. We have derivatives with respect to both time $t$ and space $x$ all mixed together. But look at the combination of derivatives: $u_t + 2u_x$. This suggests we should look at the problem from the perspective of an observer moving along the x-axis with a speed of 2.
 
-Let’s define a new coordinate system that does just that. Let one coordinate, $\xi = x - 2t$, represent the position relative to this moving frame. Let the other coordinate, $\eta = t$, just be time itself. If you work through the chain rule to see how the derivatives transform, something miraculous happens. The complicated PDE collapses into this :
+Let’s define a new coordinate system that does just that. Let one coordinate, $\xi = x - 2t$, represent the position relative to this moving frame. Let the other coordinate, $\eta = t$, just be time itself. If you work through the chain rule to see how the derivatives transform, something miraculous happens. The complicated PDE collapses into this [@problem_id:2091746]:
 $$
 \frac{\partial u}{\partial \eta} = \sin(\eta)
 $$
-Look at that! All the complexity has vanished. It's now just a simple [ordinary differential equation](@article_id:168127). You can integrate it with your eyes closed: $u = -\cos(\eta) + F(\xi)$, where $F$ is some function you'd determine from initial conditions. Transforming back to our original variables, we get the full solution $u(x,t) = -\cos(t) + F(x-2t)$. We found the "natural" coordinates for the problem—the coordinates in which the physics is simplest—and the solution just fell into our laps. This is the true power of transforming variables.
+Look at that! All the complexity has vanished. It's now just a simple [ordinary differential equation](@keyword=ordinary_differential_equation|lang=en-US|style=Feynman). You can integrate it with your eyes closed: $u = -\cos(\eta) + F(\xi)$, where $F$ is some function you'd determine from initial conditions. Transforming back to our original variables, we get the full solution $u(x,t) = -\cos(t) + F(x-2t)$. We found the "natural" coordinates for the problem—the coordinates in which the physics is simplest—and the solution just fell into our laps. This is the true power of transforming variables.
 
 ### The Deepest Truth: Invariance Amidst Change
 
@@ -65,9 +65,9 @@ A change of variables is a change in description, not a change in reality. The u
 
 #### Geometric Skeletons: The Invariance of Form
 
-Consider a quadratic form, which is an expression like $Q(\mathbf{x}) = \mathbf{x}^T A \mathbf{x}$. In two dimensions, this might describe an ellipse or a hyperbola. If we perform a linear [change of variables](@article_id:140892), $\mathbf{x} = P\mathbf{y}$, we are essentially rotating and stretching our axes . The matrix of the quadratic form will change from $A$ to a new matrix $B = P^T A P$. The equation looks different.
+Consider a quadratic form, which is an expression like $Q(\mathbf{x}) = \mathbf{x}^T A \mathbf{x}$. In two dimensions, this might describe an ellipse or a hyperbola. If we perform a linear [change of variables](@keyword=change_of_variables|lang=en-US|style=Feynman), $\mathbf{x} = P\mathbf{y}$, we are essentially rotating and stretching our axes [@problem_id:1352116]. The matrix of the quadratic form will change from $A$ to a new matrix $B = P^T A P$. The equation looks different.
 
-But the shape itself—the essence of the ellipse or hyperbola—hasn't changed. There's a "skeleton" underneath that is invariant. This skeleton is called the **inertia**, a triplet of numbers $(n_+, n_-, n_0)$ that count how many [principal directions](@article_id:275693) of the shape are positive (stretching), negative (squeezing), or zero (flat). **Sylvester's Law of Inertia** guarantees that as long as our transformation matrix $P$ is invertible, the inertia of the quadratic form will not change one bit . You can describe an ellipse in a thousand different [coordinate systems](@article_id:148772), making its equation look ugly or simple, but it will always have inertia $(2, 0, 0)$ in 2D. You can't change its fundamental nature. You can't turn an ellipse into a hyperbola just by looking at it funny.
+But the shape itself—the essence of the ellipse or hyperbola—hasn't changed. There's a "skeleton" underneath that is invariant. This skeleton is called the **inertia**, a triplet of numbers $(n_+, n_-, n_0)$ that count how many [principal directions](@keyword=principal_directions|lang=en-US|style=Feynman) of the shape are positive (stretching), negative (squeezing), or zero (flat). **Sylvester's Law of Inertia** guarantees that as long as our transformation matrix $P$ is invertible, the inertia of the quadratic form will not change one bit [@problem_id:24908]. You can describe an ellipse in a thousand different [coordinate systems](@keyword=coordinate_systems|lang=en-US|style=Feynman), making its equation look ugly or simple, but it will always have inertia $(2, 0, 0)$ in 2D. You can't change its fundamental nature. You can't turn an ellipse into a hyperbola just by looking at it funny.
 
 #### Physical Laws: The Invariance of "Stuff"
 
@@ -83,6 +83,6 @@ For these two expressions for $M$ to be equal for *any* region of integration, t
 $$
 \rho'(x') = |J|^{-1} \rho(x)
 $$
-This isn't a choice; it's a logical necessity. For the total "stuff" to be invariant, the density of the stuff must transform in this precise way to counteract the distortion of space. Quantities that transform like this are called **scalar densities of weight -1**  . Probability density, mass density, and charge density are all examples.
+This isn't a choice; it's a logical necessity. For the total "stuff" to be invariant, the density of the stuff must transform in this precise way to counteract the distortion of space. Quantities that transform like this are called **scalar densities of weight -1** [@problem_id:1537492] [@problem_id:1542728]. Probability density, mass density, and charge density are all examples.
 
 So we see the full picture. The transformation of variables is not merely a calculational trick. It is a deep principle about the nature of description and reality. It provides the machinery to distort our viewpoint (the Jacobian), gives us the rules for doing so without breaking things (invertibility), offers us great rewards for finding the "right" view (simplification), and ultimately reveals the bedrock of reality by showing us what remains constant, no matter how the description changes.

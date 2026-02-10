@@ -1,29 +1,29 @@
 ## 引言
 化学和生物学中许多最基本的过程——酶与其底物的结合、蛋白质的折叠、两条DNA链的杂交——都发生在人眼甚至传统实验室仪器无法捕捉的时间尺度上。这些反应通常在微秒或更短的时间内完成，正是这种转瞬即逝的活动定义了生命的速度。这就带来了一个重大挑战：我们如何研究那些看似瞬间完成的反应的动力学？我们如何为一个在大多数秒表还没来得及启动就已结束的化学冲刺计时？
 
-本文介绍的[温度跃迁](@article_id:311276)（T-jump）[弛豫动力学](@article_id:370625)，正是一种为精确回答这些问题而设计的强大而精妙的方法。通过对处于[平衡态](@article_id:347397)的系统施加一个突然的[热冲击](@article_id:318733)，然后观察它“弛豫”到一个新状态，我们能够捕捉到这一分子之舞的慢动作画面。这使我们得以测量控制这些关键转变的基本[速率常数](@article_id:375068)。
+本文介绍的[温度跃迁](@keyword=temperature_jump|lang=zh-CN|style=Feynman)（T-jump）[弛豫动力学](@keyword=relaxation_kinetics|lang=zh-CN|style=Feynman)，正是一种为精确回答这些问题而设计的强大而精妙的方法。通过对处于[平衡态](@keyword=equilibrium_states|lang=zh-CN|style=Feynman)的系统施加一个突然的[热冲击](@keyword=thermal_shock|lang=zh-CN|style=Feynman)，然后观察它“弛豫”到一个新状态，我们能够捕捉到这一分子之舞的慢动作画面。这使我们得以测量控制这些关键转变的基本[速率常数](@keyword=rate_constants|lang=zh-CN|style=Feynman)。
 
-我们将通过两个主要章节来探讨这项技术。首先，在**原理与机制**部分，我们将剖析该方法本身，揭示使其发挥作用的[热力学](@article_id:359663)关系（[范特霍夫方程](@article_id:301612)），以及让我们能将一条简单的衰减曲线转化为关于[速率常数](@article_id:375068)、[反应级数](@article_id:303416)和机理复杂性的丰富信息的[动力学理论](@article_id:297352)。然后，在**应用与跨学科联系**部分，我们将见证T-jump方法的实际应用，看它如何为从简单的化学缔合和[质子转移](@article_id:303878)到蛋白质折叠、[酶催化](@article_id:306582)和基因调控等复杂编排的广阔现象提供关键见解。
+我们将通过两个主要章节来探讨这项技术。首先，在**原理与机制**部分，我们将剖析该方法本身，揭示使其发挥作用的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)关系（[范特霍夫方程](@keyword=van__t_hoff_equation|lang=zh-CN|style=Feynman)），以及让我们能将一条简单的衰减曲线转化为关于[速率常数](@keyword=rate_constants|lang=zh-CN|style=Feynman)、[反应级数](@keyword=reaction_order|lang=zh-CN|style=Feynman)和机理复杂性的丰富信息的[动力学理论](@keyword=kinetic_theory|lang=zh-CN|style=Feynman)。然后，在**应用与跨学科联系**部分，我们将见证T-jump方法的实际应用，看它如何为从简单的化学缔合和[质子转移](@keyword=proton_transfer|lang=zh-CN|style=Feynman)到蛋白质折叠、[酶催化](@keyword=enzyme_catalysis|lang=zh-CN|style=Feynman)和基因调控等复杂编排的广阔现象提供关键见解。
 
 ## 原理与机制
 
-想象一个静置在光滑碗底的弹珠。它处于完美的平衡状态，即其最低能量态。现在，猛地推一下碗。弹珠会滚上碗壁，然后又滚落下来，来回[振荡](@article_id:331484)，直到摩擦力耗尽其能量，再次停在碗底。它恢复静止的方式——其[振荡](@article_id:331484)消失得多快——告诉了你一些关于碗的形状和所涉摩擦力的信息。
+想象一个静置在光滑碗底的弹珠。它处于完美的平衡状态，即其最低能量态。现在，猛地推一下碗。弹珠会滚上碗壁，然后又滚落下来，来回[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，直到摩擦力耗尽其能量，再次停在碗底。它恢复静止的方式——其[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)消失得多快——告诉了你一些关于碗的形状和所涉摩擦力的信息。
 
-处于平衡状态的[化学反应](@article_id:307389)就像那个弹珠。它们找到了一个平衡态，此时正向[反应速率](@article_id:303093)与逆向[反应速率](@article_id:303093)完全相等。[温度跃迁](@article_id:311276)技术就是我们给系统一个突然、精确的“推动”的方式。通过用强大的激光或电流冲击溶液，我们可以在不到百万分之一秒的时间内将其温度提高几度。温度的这种突然变化改变了原有的平衡状态，就像倾斜了那个碗一样。反应现在失去了平衡。接下来发生的是一个优美且信息丰富的过程：系统“弛豫”到新的[平衡态](@article_id:347397)，通过观察这一过程，我们能为它的每一个动作计时。
+处于平衡状态的[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)就像那个弹珠。它们找到了一个平衡态，此时正向[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)与逆向[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)完全相等。[温度跃迁](@keyword=temperature_jump|lang=zh-CN|style=Feynman)技术就是我们给系统一个突然、精确的“推动”的方式。通过用强大的激光或电流冲击溶液，我们可以在不到百万分之一秒的时间内将其温度提高几度。温度的这种突然变化改变了原有的平衡状态，就像倾斜了那个碗一样。反应现在失去了平衡。接下来发生的是一个优美且信息丰富的过程：系统“弛豫”到新的[平衡态](@keyword=equilibrium_states|lang=zh-CN|style=Feynman)，通过观察这一过程，我们能为它的每一个动作计时。
 
 ### 驱动力：为何是温度？
 
-为什么[温度跃迁](@article_id:311276)是首选的“推动”方式？答案在于[化学热力学](@article_id:297672)最基本的原理之一——[范特霍夫方程](@article_id:301612)。本质上，它告诉我们反应的[平衡常数](@article_id:301482) $K$ 对温度敏感。这种敏感程度由反应的**[焓变](@article_id:308053)** $\Delta H^{\circ}$ 决定。该方程如下所示：
+为什么[温度跃迁](@keyword=temperature_jump|lang=zh-CN|style=Feynman)是首选的“推动”方式？答案在于[化学热力学](@keyword=chemical_thermodynamics|lang=zh-CN|style=Feynman)最基本的原理之一——[范特霍夫方程](@keyword=van__t_hoff_equation|lang=zh-CN|style=Feynman)。本质上，它告诉我们反应的[平衡常数](@keyword=equilibrium_constant|lang=zh-CN|style=Feynman) $K$ 对温度敏感。这种敏感程度由反应的**[焓变](@keyword=enthalpy_change|lang=zh-CN|style=Feynman)** $\Delta H^{\circ}$ 决定。该方程如下所示：
 
 $$
 \frac{d \ln K}{dT} = \frac{\Delta H^{\circ}}{R T^{2}}
 $$
 
-不必过分纠结于微积分。它的信息很简单：如果一个反应放热或吸热（意味着 $\Delta H^{\circ}$ 不为零），那么改变温度就会改变平衡常数 $K$。如果反应是吸热的（$\Delta H^{\circ} > 0$），升高温度会使平衡向有利于产物的方向移动。如果反应是放热的（$\Delta H^{\circ}  0$），同样的[温度跃迁](@article_id:311276)会使平衡向反应物的方向移动。
+不必过分纠结于微积分。它的信息很简单：如果一个反应放热或吸热（意味着 $\Delta H^{\circ}$ 不为零），那么改变温度就会改变平衡常数 $K$。如果反应是吸热的（$\Delta H^{\circ} > 0$），升高温度会使平衡向有利于产物的方向移动。如果反应是放热的（$\Delta H^{\circ}  0$），同样的[温度跃迁](@keyword=temperature_jump|lang=zh-CN|style=Feynman)会使平衡向反应物的方向移动。
 
-这给了我们第一个关键的见解。要使[温度跃迁](@article_id:311276)方法起作用，反应必须具有非零的[焓变](@article_id:308053)。如果一个反应在进行过程中几乎不吸收或释放热量（$\Delta H^{\circ} \approx 0$），那么[温度跃迁](@article_id:311276)将不会扰动其平衡。在这种情况下，弹珠就如同在一个碗底完全平坦的碗里；改变碗的“温度”对其位置毫无影响。这是该技术的一个根本限制。
+这给了我们第一个关键的见解。要使[温度跃迁](@keyword=temperature_jump|lang=zh-CN|style=Feynman)方法起作用，反应必须具有非零的[焓变](@keyword=enthalpy_change|lang=zh-CN|style=Feynman)。如果一个反应在进行过程中几乎不吸收或释放热量（$\Delta H^{\circ} \approx 0$），那么[温度跃迁](@keyword=temperature_jump|lang=zh-CN|style=Feynman)将不会扰动其平衡。在这种情况下，弹珠就如同在一个碗底完全平坦的碗里；改变碗的“温度”对其位置毫无影响。这是该技术的一个根本限制。
 
-### 恢复的语言：[弛豫时间](@article_id:370588)
+### 恢复的语言：[弛豫时间](@keyword=relaxation_times|lang=zh-CN|style=Feynman)
 
 那么，我们已经给了系统一个推动，反应物和产物的浓度不再处于其平衡值。系统如何恢复呢？对于一个小的扰动，与新平衡的偏差，我们称之为 $\Delta x$，会以一种极其简单的方式衰减：它遵循一条指数曲线。
 
@@ -31,13 +31,13 @@ $$
 \Delta x(t) = \Delta x(0)\,\exp\left(-\frac{t}{\tau}\right)
 $$
 
-在这里，$\Delta x(0)$ 是[温度跃迁](@article_id:311276)刚发生后的初始偏差，而 $\tau$ 则是我们关注的焦点：**[弛豫时间](@article_id:370588)**。它是系统恢复到平衡状态大约三分之二路程所需的特征时间。对这个方程取自然对数，我们得到一条直线：
+在这里，$\Delta x(0)$ 是[温度跃迁](@keyword=temperature_jump|lang=zh-CN|style=Feynman)刚发生后的初始偏差，而 $\tau$ 则是我们关注的焦点：**[弛豫时间](@keyword=relaxation_times|lang=zh-CN|style=Feynman)**。它是系统恢复到平衡状态大约三分之二路程所需的特征时间。对这个方程取自然对数，我们得到一条直线：
 
 $$
 \ln(\Delta x(t)) = \ln(\Delta x(0)) - \frac{t}{\tau}
 $$
 
-从实验角度看，这简直是天赐之物。我们可以监测一个追踪浓度的属性，比如荧光或吸光度，将其变化的对数对时间作图，然后从所得直线的斜率中求出[弛豫时间](@article_id:370588) $\tau$。这一个数字 $\tau$，是洞察[化学反应](@article_id:307389)速度的直接窗口。
+从实验角度看，这简直是天赐之物。我们可以监测一个追踪浓度的属性，比如荧光或吸光度，将其变化的对数对时间作图，然后从所得直线的斜率中求出[弛豫时间](@keyword=relaxation_times|lang=zh-CN|style=Feynman) $\tau$。这一个数字 $\tau$，是洞察[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)速度的直接窗口。
 
 ### 最简单的舞蹈：一个双态系统
 
@@ -47,21 +47,21 @@ $$
 \text{I} \underset{k_r}{\stackrel{k_f}{\rightleftharpoons}} \text{A}
 $$
 
-这里，$k_f$ 是正向速率常数，$k_r$ 是逆向速率常数。[温度跃迁](@article_id:311276)后，假设'I'分子相较于新平衡有轻微过量，而'A'分子有轻微不足。系统如何修正这个问题？两件事同时发生：过量的'I'分子以 $k_f$ 控制的速率转化为'A'，同时一些'A'分子以 $k_r$ 控制的速率转化回'I'。系统恢复到平衡的总速率是由*两个*过程协同驱动的。
+这里，$k_f$ 是正向速率常数，$k_r$ 是逆向速率常数。[温度跃迁](@keyword=temperature_jump|lang=zh-CN|style=Feynman)后，假设'I'分子相较于新平衡有轻微过量，而'A'分子有轻微不足。系统如何修正这个问题？两件事同时发生：过量的'I'分子以 $k_f$ 控制的速率转化为'A'，同时一些'A'分子以 $k_r$ 控制的速率转化回'I'。系统恢复到平衡的总速率是由*两个*过程协同驱动的。
 
-一个奇妙且或许令人惊讶的结果是，对于这个简单的情况，弛豫时间与[速率常数](@article_id:375068)的关系异常优美：
+一个奇妙且或许令人惊讶的结果是，对于这个简单的情况，弛豫时间与[速率常数](@keyword=rate_constants|lang=zh-CN|style=Feynman)的关系异常优美：
 
 $$
 \frac{1}{\tau} = k_f + k_r
 $$
 
-[弛豫时间](@article_id:370588)的倒数，常被称为弛豫速率，就是正向和逆向速率常数的*和*。它不是人们可能凭直觉猜测的差值；向平衡的回归是一个合作的努力。
+[弛豫时间](@keyword=relaxation_times|lang=zh-CN|style=Feynman)的倒数，常被称为弛豫速率，就是正向和逆向速率常数的*和*。它不是人们可能凭直觉猜测的差值；向平衡的回归是一个合作的努力。
 
-### 解构速率：[动力学与热力学](@article_id:298488)的交汇
+### 解构速率：[动力学与热力学](@keyword=kinetics_vs_thermodynamics|lang=zh-CN|style=Feynman)的交汇
 
 这正是奇妙之处。一次T-jump实验给了我们一个数字：$\tau$。但我们的方程涉及两个未知数，$k_f$和$k_r$。我们怎么可能同时求出两者呢？我们需要第二条信息。这条信息不是来自反应的动态过程，而是来自平衡本身的静态图像。
 
-根据定义，在平衡状态下，正向速率等于逆向速率：$k_f [\text{I}]_{\text{eq}} = k_r [\text{A}]_{\text{eq}}$。重新整理这个等式，我们得到了[速率常数](@article_id:375068)和[平衡常数](@article_id:301482) $K_{eq}$ 之间的直接联系：
+根据定义，在平衡状态下，正向速率等于逆向速率：$k_f [\text{I}]_{\text{eq}} = k_r [\text{A}]_{\text{eq}}$。重新整理这个等式，我们得到了[速率常数](@keyword=rate_constants|lang=zh-CN|style=Feynman)和[平衡常数](@keyword=equilibrium_constant|lang=zh-CN|style=Feynman) $K_{eq}$ 之间的直接联系：
 
 $$
 K_{eq} = \frac{[\text{A}]_{\text{eq}}}{[\text{I}]_{\text{eq}}} = \frac{k_f}{k_r}
@@ -71,11 +71,11 @@ $$
 1.  $\frac{1}{\tau} = k_f + k_r$ (来自我们的T-jump测量)
 2.  $K_{eq} = \frac{k_f}{k_r}$ (来自对平衡浓度的单独测量)
 
-通过一点高中代数知识，我们就可以分别解出 $k_f$ 和 $k_r$。这深刻地展示了动力学（研究速率的学科）和[热力学](@article_id:359663)（研究平衡的学科）如何协同工作，为我们提供一个反应的完整图景。我们终于不仅能了解一个反应的[平衡点](@article_id:323137)，还能知道两个方向上分子之舞的真实速度。
+通过一点高中代数知识，我们就可以分别解出 $k_f$ 和 $k_r$。这深刻地展示了动力学（研究速率的学科）和[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)（研究平衡的学科）如何协同工作，为我们提供一个反应的完整图景。我们终于不仅能了解一个反应的[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)，还能知道两个方向上分子之舞的真实速度。
 
 ### “金发姑娘”问题：优化信号
 
-一个反应*可以*被研究，并不意味着它*容易*被研究。对于一个好的实验，我们需要一个我们实际能测量到的信号。浓度变化的总幅度——即弛豫振幅——不仅取决于[反应焓](@article_id:310183) $\Delta H^{\circ}$，还取决于平衡本身的位置。
+一个反应*可以*被研究，并不意味着它*容易*被研究。对于一个好的实验，我们需要一个我们实际能测量到的信号。浓度变化的总幅度——即弛豫振幅——不仅取决于[反应焓](@keyword=reaction_enthalpy|lang=zh-CN|style=Feynman) $\Delta H^{\circ}$，还取决于平衡本身的位置。
 
 想一想：如果你的平衡几乎完全偏向产物一侧（$K_{eq}$ 巨大），那么起初几乎没有反应物。即使T-jump使平衡进一步移动，反应物浓度的绝对变化也将微乎其微，很可能淹没在实验噪音中。如果平衡严重偏向反应物一侧（$K_{eq}$ 极小），情况同样如此。
 
@@ -95,7 +95,7 @@ $$
 \frac{1}{\tau} = k_{on}([\text{E}]_{\text{eq}} + [\text{S}]_{\text{eq}}) + k_{off}
 $$
 
-仔细看！[弛豫时间](@article_id:370588)现在*依赖于所涉物质的平衡浓度*。这是一个强大的诊断工具。实验者可以在不同起始浓度下进行一系列T-jump实验。
+仔细看！[弛豫时间](@keyword=relaxation_times|lang=zh-CN|style=Feynman)现在*依赖于所涉物质的平衡浓度*。这是一个强大的诊断工具。实验者可以在不同起始浓度下进行一系列T-jump实验。
 
 *   如果测得的弛豫时间 $\tau$ 不随浓度变化而保持恒定，那么决速步骤很可能是一个单分子过程，比如构象变化（$A \rightleftharpoons B$）。
 *   如果 $\tau$ 随浓度变化，那么反应必定是双分子的（或更高阶的），涉及两个或更多分子的碰撞（$A+B \rightleftharpoons C$）。
@@ -106,20 +106,20 @@ $$
 
 到目前为止，我们都假设 $\ln(\Delta x)$ 对时间的图是一条完美的直线。但如果它不是呢？如果它是一条曲线呢？
 
-一条弯曲的图是一个明确的信号，表明[反应机理](@article_id:364777)比单一步骤更复杂。它向我们暗示，存在着隐藏的中间体和多个同时发生的过程，比如：
+一条弯曲的图是一个明确的信号，表明[反应机理](@keyword=chemical_mechanism|lang=zh-CN|style=Feynman)比单一步骤更复杂。它向我们暗示，存在着隐藏的中间体和多个同时发生的过程，比如：
 
 $$
 \text{P} + \text{L} \rightleftharpoons \text{PL}_{\text{intermediate}} \rightleftharpoons \text{PL}_{\text{final}}
 $$
 
-例如，一个蛋白质（P）可能首先与一个配体（L）快速结合，然后经历一个较慢的构象变化，形成最终的复合物。这些步骤中的每一步都有其自身的特征弛豫时间。我们观察到的总弛豫是这些多个指数过程的叠加，一个类似 $\Delta S(t) = A_1 \exp(-t/\tau_1) + A_2 \exp(-t/\tau_2)$ 的和。一个和的对数不是一条直线。因此，一个弯曲的[半对数图](@article_id:337152)是多步机理的直接证据，使我们能够揭示否则将保持隐形的动力学复杂性。
+例如，一个蛋白质（P）可能首先与一个配体（L）快速结合，然后经历一个较慢的构象变化，形成最终的复合物。这些步骤中的每一步都有其自身的特征弛豫时间。我们观察到的总弛豫是这些多个指数过程的叠加，一个类似 $\Delta S(t) = A_1 \exp(-t/\tau_1) + A_2 \exp(-t/\tau_2)$ 的和。一个和的对数不是一条直线。因此，一个弯曲的[半对数图](@keyword=semi_log_plot|lang=zh-CN|style=Feynman)是多步机理的直接证据，使我们能够揭示否则将保持隐形的动力学复杂性。
 
 ### 科学实践：分离真实信号
 
-实验室的真实世界很少像我们理想化的模型那样干净。我们用来观察反应的荧光探针本身可能对温度敏感。当我们进行T-jump时，我们看到的信号变化可能是我们关心的[化学反应](@article_id:307389)和探针本身升温产生的仪器伪迹的混合体。
+实验室的真实世界很少像我们理想化的模型那样干净。我们用来观察反应的荧光探针本身可能对温度敏感。当我们进行T-jump时，我们看到的信号变化可能是我们关心的[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)和探针本身升温产生的仪器伪迹的混合体。
 
-这时，巧妙的[实验设计](@article_id:302887)就派上用场了。想象一下，你观察到的弛豫是两个指数项的和。这是一个两步[化学反应](@article_id:307389)，还是其中一部分是伪迹？一个绝妙的找出答案的方法是进行[对照实验](@article_id:305164)。例如，可以使用一种化学修饰过的蛋白质，它被“锁定”而无法进行其[构象变化](@article_id:364887)。对这种锁定的蛋白质进行T-jump将分离出仅由探针温度响应产生的信号。
+这时，巧妙的[实验设计](@keyword=experimental_design|lang=zh-CN|style=Feynman)就派上用场了。想象一下，你观察到的弛豫是两个指数项的和。这是一个两步[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)，还是其中一部分是伪迹？一个绝妙的找出答案的方法是进行[对照实验](@keyword=controlled_experiment|lang=zh-CN|style=Feynman)。例如，可以使用一种化学修饰过的蛋白质，它被“锁定”而无法进行其[构象变化](@keyword=conformational_change|lang=zh-CN|style=Feynman)。对这种锁定的蛋白质进行T-jump将分离出仅由探针温度响应产生的信号。
 
-通过拟合这个对照信号，比如说拟合成 $A_c \exp(-k_c t)$，我们然后可以查看来自原始活性蛋白质的数据。如果其双指数衰减中的一个组分与[对照实验](@article_id:305164)的振幅和速率[完美匹配](@article_id:337611)，我们就可以自信地将其减去。剩下的就是来自化学弛豫本身的纯粹、无杂质的信号。这种识别和去除伪迹的技术是科学方法在实践中的一个美丽范例，让我们能够剥去一层层的复杂性，揭示分子之舞简单而根本的真相。
+通过拟合这个对照信号，比如说拟合成 $A_c \exp(-k_c t)$，我们然后可以查看来自原始活性蛋白质的数据。如果其双指数衰减中的一个组分与[对照实验](@keyword=controlled_experiment|lang=zh-CN|style=Feynman)的振幅和速率[完美匹配](@keyword=perfect_matching|lang=zh-CN|style=Feynman)，我们就可以自信地将其减去。剩下的就是来自化学弛豫本身的纯粹、无杂质的信号。这种识别和去除伪迹的技术是科学方法在实践中的一个美丽范例，让我们能够剥去一层层的复杂性，揭示分子之舞简单而根本的真相。
 
-通过这些原理，[温度跃迁](@article_id:311276)方法将一个简单的衰减信号测量转变为丰富的信息来源，揭示了构成我们周围世界的最快[化学反应](@article_id:307389)的基本速率常数、分子数以及隐藏的复杂性。
+通过这些原理，[温度跃迁](@keyword=temperature_jump|lang=zh-CN|style=Feynman)方法将一个简单的衰减信号测量转变为丰富的信息来源，揭示了构成我们周围世界的最快[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的基本速率常数、分子数以及隐藏的复杂性。

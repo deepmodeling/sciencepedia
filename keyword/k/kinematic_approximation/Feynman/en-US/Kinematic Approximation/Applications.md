@@ -4,4 +4,4 @@ Now that we have grappled with the principles of the kinematical approximation, 
 
 ### The Blueprint of a Crystal
 
-The most direct and fundamental use of our new lens is in crystallography—the science of determining how atoms are arranged in solids. Imagine you have discovered a new mineral. At first glance, it is just a rock. But the [diffraction pattern](@article_id:141490) it produces is a revelation. The positions of the sharp, bright spots—the Bragg peaks—form a precise, repeating grid in reciprocal space. This grid is a direct fingerprint of the crystal's Bravais lattice.
+The most direct and fundamental use of our new lens is in crystallography—the science of determining how atoms are arranged in solids. Imagine you have discovered a new mineral. At first glance, it is just a rock. But the [diffraction pattern](@keyword=diffraction_pattern|lang=en-US|style=Feynman) it produces is a revelation. The positions of the sharp, bright spots—the Bragg peaks—form a precise, repeating grid in reciprocal space. This grid is a direct fingerprint of the crystal's Bravais lattice.

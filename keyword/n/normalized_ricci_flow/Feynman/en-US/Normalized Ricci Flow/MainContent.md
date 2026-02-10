@@ -5,7 +5,7 @@ The first chapter, **Principles and Mechanisms**, will unpack the equation itsel
 
 ## Principles and Mechanisms
 
-Imagine you have a crumpled metal sphere. You can’t just pull it straight, but what if you could heat it? The heat would flow from the hotter, more stressed parts (the sharpest crests of the wrinkles) to the cooler, flatter parts. The metal would soften and, under the right conditions, the temperature differences would even out, causing the sphere to relax into its natural, perfectly round shape. In the 1980s, the mathematician Richard Hamilton had a revolutionary idea: what if we could do the same for the very fabric of space? What if we could invent a mathematical "[heat treatment](@article_id:158667)" to smooth out the wrinkles in geometry itself? This idea gave birth to the **Ricci flow**.
+Imagine you have a crumpled metal sphere. You can’t just pull it straight, but what if you could heat it? The heat would flow from the hotter, more stressed parts (the sharpest crests of the wrinkles) to the cooler, flatter parts. The metal would soften and, under the right conditions, the temperature differences would even out, causing the sphere to relax into its natural, perfectly round shape. In the 1980s, the mathematician Richard Hamilton had a revolutionary idea: what if we could do the same for the very fabric of space? What if we could invent a mathematical "[heat treatment](@keyword=heat_treatment|lang=en-US|style=Feynman)" to smooth out the wrinkles in geometry itself? This idea gave birth to the **Ricci flow**.
 
 ### The Flow as a Geometric Heat Equation
 
@@ -23,13 +23,13 @@ So, have we found our universal wrinkle-smoother? Not quite. Let's see what happ
 
 ### Fixing the Scale: The Art of Normalization
 
-The problem with the raw Ricci flow is that it changes the total volume of the space. We can see this with a beautiful little calculation. The rate of change of the total volume, $\mathrm{Vol}(M, g(t))$, turns out to be precisely the negative of the total [scalar curvature](@article_id:157053) integrated over the whole space:
+The problem with the raw Ricci flow is that it changes the total volume of the space. We can see this with a beautiful little calculation. The rate of change of the total volume, $\mathrm{Vol}(M, g(t))$, turns out to be precisely the negative of the total [scalar curvature](@keyword=scalar_curvature|lang=en-US|style=Feynman) integrated over the whole space:
 
 $$
 \frac{d}{dt}\mathrm{Vol}(M,g(t)) = -\int_M R \,d\mu_g
 $$
 
-Here, $R$ is the **[scalar curvature](@article_id:157053)**, which you get by tracing the Ricci tensor. For a sphere, $R$ is positive, so the volume steadily decreases. For a space with overall negative curvature, the volume would explode. To study the geometry without this distracting overall scaling, we need to stop the volume from changing. We need to anchor it.
+Here, $R$ is the **[scalar curvature](@keyword=scalar_curvature|lang=en-US|style=Feynman)**, which you get by tracing the Ricci tensor. For a sphere, $R$ is positive, so the volume steadily decreases. For a space with overall negative curvature, the volume would explode. To study the geometry without this distracting overall scaling, we need to stop the volume from changing. We need to anchor it.
 
 This is where the magic of normalization comes in. We add a "correction term" to Hamilton's original equation. The new equation is the **normalized Ricci flow**:
 
@@ -37,7 +37,7 @@ $$
 \partial_t g = -2 \operatorname{Ric} + \frac{2r}{n} g
 $$
 
-What is this new term? The quantity $n$ is the dimension of our space. The term $r(t)$ is the **average [scalar curvature](@article_id:157053)** over the entire space at time $t$. So, at each moment, we calculate the average "curviness" of the whole space, and then we add a term that uniformly expands or contracts the metric everywhere to counteract the change from the $-2\operatorname{Ric}$ part. It’s like letting air into or out of a balloon to keep its total volume fixed while its shape might be changing.
+What is this new term? The quantity $n$ is the dimension of our space. The term $r(t)$ is the **average [scalar curvature](@keyword=scalar_curvature|lang=en-US|style=Feynman)** over the entire space at time $t$. So, at each moment, we calculate the average "curviness" of the whole space, and then we add a term that uniformly expands or contracts the metric everywhere to counteract the change from the $-2\operatorname{Ric}$ part. It’s like letting air into or out of a balloon to keep its total volume fixed while its shape might be changing.
 
 And it works perfectly. If you redo the volume calculation with this new equation, the correction term exactly cancels the original volume change, and you find that:
 
@@ -49,7 +49,7 @@ The total volume is now preserved! We have successfully untangled the evolution 
 
 ### The Quest for the Perfect Shape: Einstein Manifolds
 
-Now that our flow is running at a constant volume, what does its "[equilibrium state](@article_id:269870)" look like? In physics, an equilibrium state is one that doesn't change with time. In mathematics, we call this a **fixed point** of the flow. A fixed point is a metric $g$ for which $\partial_t g = 0$.
+Now that our flow is running at a constant volume, what does its "[equilibrium state](@keyword=equilibrium_state|lang=en-US|style=Feynman)" look like? In physics, an equilibrium state is one that doesn't change with time. In mathematics, we call this a **fixed point** of the flow. A fixed point is a metric $g$ for which $\partial_t g = 0$.
 
 Let's plug this into our normalized flow equation:
 
@@ -63,21 +63,21 @@ $$
 \operatorname{Ric} = \frac{r}{n} g
 $$
 
-This equation is profound. It tells us that at a fixed point of the normalized Ricci flow, the Ricci [curvature tensor](@article_id:180889) must be directly proportional to the metric tensor itself. A geometry that satisfies this condition is called an **Einstein metric**, in honor of Albert Einstein, as these are precisely the solutions to his field equations for a vacuum with a [cosmological constant](@article_id:158803).
+This equation is profound. It tells us that at a fixed point of the normalized Ricci flow, the Ricci [curvature tensor](@keyword=curvature_tensor|lang=en-US|style=Feynman) must be directly proportional to the metric tensor itself. A geometry that satisfies this condition is called an **Einstein metric**, in honor of Albert Einstein, as these are precisely the solutions to his field equations for a vacuum with a [cosmological constant](@keyword=cosmological_constant|lang=en-US|style=Feynman).
 
-These Einstein metrics are the "perfect shapes" of geometry. They are exceptionally uniform and symmetric. Familiar examples include the perfectly round sphere, flat Euclidean space, and the strange, beautiful world of hyperbolic space. The normalized Ricci flow, therefore, is a machine for finding these special geometries. It takes a generic, wrinkled-up space and tries to smooth it out until it settles into one of these pristine Einstein states. This is the ultimate goal of the flow. If the initial metric is already an Einstein metric, the normalized flow does nothing; the metric is stationary, a true [equilibrium state](@article_id:269870).
+These Einstein metrics are the "perfect shapes" of geometry. They are exceptionally uniform and symmetric. Familiar examples include the perfectly round sphere, flat Euclidean space, and the strange, beautiful world of hyperbolic space. The normalized Ricci flow, therefore, is a machine for finding these special geometries. It takes a generic, wrinkled-up space and tries to smooth it out until it settles into one of these pristine Einstein states. This is the ultimate goal of the flow. If the initial metric is already an Einstein metric, the normalized flow does nothing; the metric is stationary, a true [equilibrium state](@keyword=equilibrium_state|lang=en-US|style=Feynman).
 
 ### The Driving Force: A Downhill Tumble
 
 Why does the flow seek out these special states? Is there a deeper principle at work? Indeed, there is. The normalized Ricci flow is not just an arbitrary equation; it is a **gradient flow**. Think of a ball rolling down a bumpy hill. Gravity pulls it along the path of steepest descent, always seeking the lowest point. The Ricci flow does the same, but on a much grander stage: the infinite-dimensional "landscape" of all possible geometric shapes.
 
-The "height" on this landscape is given by a quantity called the **Einstein-Hilbert functional**, which is simply the total [scalar curvature](@article_id:157053) we saw before:
+The "height" on this landscape is given by a quantity called the **Einstein-Hilbert functional**, which is simply the total [scalar curvature](@keyword=scalar_curvature|lang=en-US|style=Feynman) we saw before:
 
 $$
 E(g) = \int_M R \,d\mu_g
 $$
 
-This is the very same functional that, in physics, gives rise to Einstein's theory of general relativity. In our context, the normalized Ricci flow acts like gravity, pushing the geometry "downhill" to try to minimize this total curvature energy, while staying on the "terrace" of metrics with a fixed volume. The Einstein metrics are the special points in this landscape—the local minima or saddle points where the "gravitational force" on the geometry is zero. The flow is a natural, purposeful process of [geometric optimization](@article_id:171890).
+This is the very same functional that, in physics, gives rise to Einstein's theory of general relativity. In our context, the normalized Ricci flow acts like gravity, pushing the geometry "downhill" to try to minimize this total curvature energy, while staying on the "terrace" of metrics with a fixed volume. The Einstein metrics are the special points in this landscape—the local minima or saddle points where the "gravitational force" on the geometry is zero. The flow is a natural, purposeful process of [geometric optimization](@keyword=geometric_optimization|lang=en-US|style=Feynman).
 
 ### The Dynamics of Smoothing
 
@@ -89,7 +89,7 @@ $$
 
 This equation reveals a dramatic battle between competing forces:
 
-1.  **$\Delta R$ (The Smoother):** This is the **Laplacian** term, the hero of our story. It's a [diffusion operator](@article_id:136205), identical to the one in the heat equation. It causes curvature to spread out from regions where it is high to regions where it is low. It is the primary engine of smoothing, trying to flatten the geometry.
+1.  **$\Delta R$ (The Smoother):** This is the **Laplacian** term, the hero of our story. It's a [diffusion operator](@keyword=diffusion_operator|lang=en-US|style=Feynman), identical to the one in the heat equation. It causes curvature to spread out from regions where it is high to regions where it is low. It is the primary engine of smoothing, trying to flatten the geometry.
 
 2.  **$2|\operatorname{Ric}|^2$ (The Agitator):** This is a "reaction" term. Since it's a square, it's always positive. It acts as a source, creating more curvature, especially in regions where the Ricci tensor is already large. This term can fight against the smoothing process and, in some cases, can cause curvature to "blow up," forming a singularity.
 

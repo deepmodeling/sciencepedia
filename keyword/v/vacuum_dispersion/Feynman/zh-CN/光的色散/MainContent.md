@@ -1,7 +1,7 @@
 ## 引言
-光在真空中的速度是一个绝对、不变的常数，这一思想是现代物理学的支柱之一。它是一条优雅而简洁的规则，支配着整个宇宙。然而，这种完美仅是虚空的特性。当光与任何形式的物质——无论是玻璃、水还是星际等离子体——相互作用的那一刻，这条简单的规则就被打破了，一个远为丰富和复杂的故事由此展开。本文旨在探讨光在传播过程中的双重性：在真空中的完美恒定性与在物质内部的迷人复杂性。我们不仅试图回答为什么真空是非[色散](@article_id:376945)的，更要探索当[色散](@article_id:376945)发生时涌现出的各种现象。
+光在真空中的速度是一个绝对、不变的常数，这一思想是现代物理学的支柱之一。它是一条优雅而简洁的规则，支配着整个宇宙。然而，这种完美仅是虚空的特性。当光与任何形式的物质——无论是玻璃、水还是星际等离子体——相互作用的那一刻，这条简单的规则就被打破了，一个远为丰富和复杂的故事由此展开。本文旨在探讨光在传播过程中的双重性：在真空中的完美恒定性与在物质内部的迷人复杂性。我们不仅试图回答为什么真空是非[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)的，更要探索当[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)发生时涌现出的各种现象。
 
-我们的探索之旅将分为两个部分。首先，我们将深入探讨真空非[色散](@article_id:376945)的**原理与机制**，揭示其在[狭义相对论](@article_id:339245)和量子力学中的深层根源。我们将建立色散关系的语言，并将真空的完美性与确实表现出[色散](@article_id:376945)的系统进行对比。随后，在**应用与跨学科联系**一节中，我们将探索物质中这种[对称性破缺](@article_id:303497)所带来的后果，揭示[色散](@article_id:376945)如何为我们带来从彩虹、长距离[无线电通信](@article_id:334775)，到先进的生物传感器，乃至将光速降至极低的能力等一切。读完全文，读者将会认识到，[色散](@article_id:376945)的“不完美”并非缺陷，而是理解和操控我们世界的一把强有力的钥匙。
+我们的探索之旅将分为两个部分。首先，我们将深入探讨真空非[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)的**原理与机制**，揭示其在[狭义相对论](@keyword=special_relativity_theory|lang=zh-CN|style=Feynman)和量子力学中的深层根源。我们将建立色散关系的语言，并将真空的完美性与确实表现出[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)的系统进行对比。随后，在**应用与跨学科联系**一节中，我们将探索物质中这种[对称性破缺](@keyword=symmetry_breaking|lang=zh-CN|style=Feynman)所带来的后果，揭示[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)如何为我们带来从彩虹、长距离[无线电通信](@keyword=radio_communication|lang=zh-CN|style=Feynman)，到先进的生物传感器，乃至将光速降至极低的能力等一切。读完全文，读者将会认识到，[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)的“不完美”并非缺陷，而是理解和操控我们世界的一把强有力的钥匙。
 
 ## 原理与机制
 
@@ -9,66 +9,66 @@
 
 ### 不变速度的交响乐
 
-想象一束来自遥远恒星的白光。在地球上，我们可以让它穿过[棱镜](@article_id:329462)，看到它分解成一道彩虹。[棱镜](@article_id:329462)之所以能做到这一点，是因为玻璃是一种**[色散](@article_id:376945)**介质：它使蓝光减速的程度超过红光，从而使其[折射](@article_id:323002)角度更大。但在那颗恒星与我们的[棱镜](@article_id:329462)之间广阔、空无一物的空间里，发生了一件非凡的事情：什么也没发生。所有的颜色，从能量最低的[无线电波](@article_id:374403)到能量最高的伽马射线，都以完全相同的巨大速度——**光速** $c$——完美[同步](@article_id:339180)地行进。这种光在真空中的速度不依赖于其频率的特性，正是**真空非[色散](@article_id:376945)**的本质。
+想象一束来自遥远恒星的白光。在地球上，我们可以让它穿过[棱镜](@keyword=prisms|lang=zh-CN|style=Feynman)，看到它分解成一道彩虹。[棱镜](@keyword=prisms|lang=zh-CN|style=Feynman)之所以能做到这一点，是因为玻璃是一种**[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)**介质：它使蓝光减速的程度超过红光，从而使其[折射](@keyword=refraction|lang=zh-CN|style=Feynman)角度更大。但在那颗恒星与我们的[棱镜](@keyword=prisms|lang=zh-CN|style=Feynman)之间广阔、空无一物的空间里，发生了一件非凡的事情：什么也没发生。所有的颜色，从能量最低的[无线电波](@keyword=radio_frequency_waves|lang=zh-CN|style=Feynman)到能量最高的伽马射线，都以完全相同的巨大速度——**光速** $c$——完美[同步](@keyword=entrainment|lang=zh-CN|style=Feynman)地行进。这种光在真空中的速度不依赖于其频率的特性，正是**真空非[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)**的本质。
 
-物理学家将这一思想用一个优雅而强大的方程式来表述，即**[色散关系](@article_id:300838)**。对于真空中的光，这个关系异常简洁：
+物理学家将这一思想用一个优雅而强大的方程式来表述，即**[色散关系](@keyword=dispersion_relations|lang=zh-CN|style=Feynman)**。对于真空中的光，这个关系异常简洁：
 
 $$
 \omega = ck
 $$
 
-在这里，$\omega$ 是波的**[角频率](@article_id:325276)**，一种精确描述其“颜色”的方式。它告诉我们波在某个固定点每秒[振荡](@article_id:331484)的次数。符号 $k$ 代表**波数**，它描述了波在空间上的“波纹度”——即在给定距离内容纳了多少个波长。这个方程揭示了一种完美的线性关系：如果你将波的[空间频率](@article_id:334200)加倍（使其“波纹度”增加一倍），你必须也将其时间频率加倍（使其[振荡](@article_id:331484)速度加快一倍）。它们的比值 $\omega/k$ 代表单个波峰的速度（**相速度**），始终等于 $c$。
+在这里，$\omega$ 是波的**[角频率](@keyword=break_frequency|lang=zh-CN|style=Feynman)**，一种精确描述其“颜色”的方式。它告诉我们波在某个固定点每秒[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的次数。符号 $k$ 代表**波数**，它描述了波在空间上的“波纹度”——即在给定距离内容纳了多少个波长。这个方程揭示了一种完美的线性关系：如果你将波的[空间频率](@keyword=spatial_frequency|lang=zh-CN|style=Feynman)加倍（使其“波纹度”增加一倍），你必须也将其时间频率加倍（使其[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)速度加快一倍）。它们的比值 $\omega/k$ 代表单个波峰的速度（**相速度**），始终等于 $c$。
 
-这不仅仅是一个教科书上的公式；它是宇宙中一个实际而严格的法则。如果一位天体物理学家探测到来自遥远星系的无线电波，并且设备测得其[波数](@article_id:351575)为 $k = 20.5 \text{ rad/m}$，他们不需要另一台仪器来测量其频率。他们绝对肯定地知道，频率必然是 $\omega = ck \approx (3 \times 10^8 \text{ m/s}) \times (20.5 \text{ rad/m}) \approx 6.15 \times 10^9 \text{ rad/s}$ 。这种坚定不移的关系是基石原理。但*为什么*会是这样呢？
+这不仅仅是一个教科书上的公式；它是宇宙中一个实际而严格的法则。如果一位天体物理学家探测到来自遥远星系的无线电波，并且设备测得其[波数](@keyword=wavenumber|lang=zh-CN|style=Feynman)为 $k = 20.5 \text{ rad/m}$，他们不需要另一台仪器来测量其频率。他们绝对肯定地知道，频率必然是 $\omega = ck \approx (3 \times 10^8 \text{ m/s}) \times (20.5 \text{ rad/m}) \approx 6.15 \times 10^9 \text{ rad/s}$ [@problem_id:1593526]。这种坚定不移的关系是基石原理。但*为什么*会是这样呢？
 
 ### 为何是如此完美的定律？一窥更深层的法则
 
 追问“为什么”就是踏上通往现代物理学基础的旅程。简单的规则 $\omega = ck$ 并非凭空而来；它是我们二十世纪两大理论——量子力学和狭义相对论——相互作用的必然结果。
 
-让我们首先从量子的视角来看。量子革命告诉我们，光不仅仅是连续的波，而是以称为**[光子](@article_id:305617)**的离散能量包形式存在。单个[光子](@article_id:305617)的能量 $E$ 与其频率成正比：$E = \hbar\omega$，其中 $\hbar$ 是约化普朗克常数。
+让我们首先从量子的视角来看。量子革命告诉我们，光不仅仅是连续的波，而是以称为**[光子](@keyword=photon|lang=zh-CN|style=Feynman)**的离散能量包形式存在。单个[光子](@keyword=photon|lang=zh-CN|style=Feynman)的能量 $E$ 与其频率成正比：$E = \hbar\omega$，其中 $\hbar$ 是约化普朗克常数。
 
-现在，让我们转向 Einstein 的[狭义相对论](@article_id:339245)。它为我们提供了任何粒子的能量 $E$、动量 $p$ 和静止质量 $m$ 之间的普适关系：$E^2 = (pc)^2 + (mc^2)^2$。关键的洞见在于：[光子](@article_id:305617)是**无质量**粒子。将[光子质量](@article_id:360694) $m=0$ 代入，这个宏大的方程就漂亮地简化为 $E = pc$。
+现在，让我们转向 Einstein 的[狭义相对论](@keyword=special_relativity_theory|lang=zh-CN|style=Feynman)。它为我们提供了任何粒子的能量 $E$、动量 $p$ 和静止质量 $m$ 之间的普适关系：$E^2 = (pc)^2 + (mc^2)^2$。关键的洞见在于：[光子](@keyword=photon|lang=zh-CN|style=Feynman)是**无质量**粒子。将[光子质量](@keyword=photon_mass|lang=zh-CN|style=Feynman) $m=0$ 代入，这个宏大的方程就漂亮地简化为 $E = pc$。
 
-现在我们有了两个看起来不同的光子能量表达式。我们不要忘记最后一块拼图：[德布罗意关系](@article_id:309845)，它将粒子的动量与其波数联系起来，$p = \hbar k$。将这些部分组合起来，提供了一幅惊人清晰的图景 ：
+现在我们有了两个看起来不同的光子能量表达式。我们不要忘记最后一块拼图：[德布罗意关系](@keyword=de_broglie_relations|lang=zh-CN|style=Feynman)，它将粒子的动量与其波数联系起来，$p = \hbar k$。将这些部分组合起来，提供了一幅惊人清晰的图景 [@problem_id:2951504]：
 
-1.  根据[相对论](@article_id:327421)，一个[无质量粒子](@article_id:327131)的能量为 $E = pc$。
+1.  根据[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)，一个[无质量粒子](@keyword=massless_particles|lang=zh-CN|style=Feynman)的能量为 $E = pc$。
 2.  根据量子力学，我们代入 $E = \hbar\omega$ 和 $p = \hbar k$。
 3.  得到 $\hbar\omega = (\hbar k)c$。
 
-[基本常数](@article_id:309193) $\hbar$ 从两边消去，留给我们一个鲜明而优雅的结论：$\omega = ck$。真空非[色散](@article_id:376945)并非偶然；它是在一个由量子和[相对论](@article_id:327421)法则支配的宇宙中，[光子](@article_id:305617)作为无质量粒子的直接数学推论。
+[基本常数](@keyword=fundamental_constants|lang=zh-CN|style=Feynman) $\hbar$ 从两边消去，留给我们一个鲜明而优雅的结论：$\omega = ck$。真空非[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)并非偶然；它是在一个由量子和[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)法则支配的宇宙中，[光子](@keyword=photon|lang=zh-CN|style=Feynman)作为无质量粒子的直接数学推论。
 
-[相对论](@article_id:327421)甚至提供了一个更深刻的几何视角。在 Einstein 的世界里，空间和时间被融合成一个称为**[时空](@article_id:370647)**的四维结构。一个波不是由独立的频率和[波矢](@article_id:357509)来描述，而是由一个统一的称为**[四维波矢](@article_id:373296)**的量来描述，$k^\mu = (\omega/c, k_x, k_y, k_z)$。[相对论](@article_id:327421)的一个基本原则是，任何光粒子在[时空](@article_id:370647)中穿行的路径，“长度”都为零。与之相关的[四维波矢](@article_id:373296)也必须具有零“长度”。这样的矢量被称为**[零矢量](@article_id:315683)**。计算这个[时空](@article_id:370647)长度的规则 $k_\mu k^\mu$ 得到 $(\omega/c)^2 - (k_x^2 + k_y^2 + k_z^2)$。为了使该矢量为[零矢量](@article_id:315683)，这个量必须等于零  ：
+[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)甚至提供了一个更深刻的几何视角。在 Einstein 的世界里，空间和时间被融合成一个称为**[时空](@keyword=space_time|lang=zh-CN|style=Feynman)**的四维结构。一个波不是由独立的频率和[波矢](@keyword=wavevector|lang=zh-CN|style=Feynman)来描述，而是由一个统一的称为**[四维波矢](@keyword=wave_four_vector|lang=zh-CN|style=Feynman)**的量来描述，$k^\mu = (\omega/c, k_x, k_y, k_z)$。[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)的一个基本原则是，任何光粒子在[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中穿行的路径，“长度”都为零。与之相关的[四维波矢](@keyword=wave_four_vector|lang=zh-CN|style=Feynman)也必须具有零“长度”。这样的矢量被称为**[零矢量](@keyword=null_vectors|lang=zh-CN|style=Feynman)**。计算这个[时空](@keyword=space_time|lang=zh-CN|style=Feynman)长度的规则 $k_\mu k^\mu$ 得到 $(\omega/c)^2 - (k_x^2 + k_y^2 + k_z^2)$。为了使该矢量为[零矢量](@keyword=null_vectors|lang=zh-CN|style=Feynman)，这个量必须等于零 [@problem_id:1850461] [@problem_id:1806982]：
 
 $$
 \left(\frac{\omega}{c}\right)^2 - k^2 = 0 \quad \implies \quad \omega = ck
 $$
 
-所以，光的非[色散](@article_id:376945)性质是对我们宇宙基本几何结构的一种陈述。它是一条尽可能深刻的规则。
+所以，光的非[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)性质是对我们宇宙基本几何结构的一种陈述。它是一条尽可能深刻的规则。
 
-### 缺憾之美：[色散](@article_id:376945)的形态
+### 缺憾之美：[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)的形态
 
-欣赏一个特性的最佳方式之一，是看看在它缺失时会发生什么。要真正领会真空的特殊性，我们必须涉足*确实*存在[色散](@article_id:376945)的领域。
+欣赏一个特性的最佳方式之一，是看看在它缺失时会发生什么。要真正领会真空的特殊性，我们必须涉足*确实*存在[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)的领域。
 
-首先，让我们考虑一个*有*质量的粒子，比如电子。根据德布罗意的理论，它也具有波动性。但由于其质量 $m$ 不为零，它的能量-动量关系是完整的[相对论](@article_id:327421)表达式 $E=\sqrt{(pc)^2+(mc^2)^2}$，或者在低速极限下，$E \approx p^2/(2m)$。这两种关系都不是像 $E=pc$ 那样的简单线性关系。当我们使用 $E=\hbar\omega$ 和 $p=\hbar k$ 将其转换为色散关系时，我们得到一个非线性的函数 $\omega(k)$ 。
+首先，让我们考虑一个*有*质量的粒子，比如电子。根据德布罗意的理论，它也具有波动性。但由于其质量 $m$ 不为零，它的能量-动量关系是完整的[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)表达式 $E=\sqrt{(pc)^2+(mc^2)^2}$，或者在低速极限下，$E \approx p^2/(2m)$。这两种关系都不是像 $E=pc$ 那样的简单线性关系。当我们使用 $E=\hbar\omega$ 和 $p=\hbar k$ 将其转换为色散关系时，我们得到一个非线性的函数 $\omega(k)$ [@problem_id:2687210]。
 
-这会带来什么后果呢？想象你创造了一个局域的电子“脉冲”。这个脉冲，或称**[波包](@article_id:315110)**，必然由一系列不同波数 $k$ 的波组成。由于 $\omega(k)$ 是非线性的，[波包](@article_id:315110)的速度（其**群速度**，$v_g = d\omega/dk$）对于其每个分量波都是不同的。结果是，当[波包传播](@article_id:346912)时，它将不可避免地在空间中散开，其形状随时间变得模糊。这种固有的弥散是带质量粒子的标志。
+这会带来什么后果呢？想象你创造了一个局域的电子“脉冲”。这个脉冲，或称**[波包](@keyword=wave_packets|lang=zh-CN|style=Feynman)**，必然由一系列不同波数 $k$ 的波组成。由于 $\omega(k)$ 是非线性的，[波包](@keyword=wave_packets|lang=zh-CN|style=Feynman)的速度（其**群速度**，$v_g = d\omega/dk$）对于其每个分量波都是不同的。结果是，当[波包传播](@keyword=wave_packet_propagation|lang=zh-CN|style=Feynman)时，它将不可避免地在空间中散开，其形状随时间变得模糊。这种固有的弥散是带质量粒子的标志。
 
-我们无需到量子世界去寻找[色散](@article_id:376945)。它无处不在。考虑一下在[晶格](@article_id:300090)中传播的[振动](@article_id:331484)。这些原子的集体摆动被量子化为称为**[声子](@article_id:297589)**的粒子。[声子](@article_id:297589)的传播能力由原子间的类弹簧力决定。它的[色散关系](@article_id:300838)，类似于 $\omega(k) = \omega_m |\sin(ka/2)|$，远非一条直线 。这意味着固体中[声波](@article_id:353278)的[群速度](@article_id:308100)取决于其频率。低频、长波长的[声波](@article_id:353278)以恒定速度传播，但高频[声波](@article_id:353278)可以以不同速度传播，这一现象在[材料科学](@article_id:312640)和超声学中广为人知。这就是[色散](@article_id:376945)在起作用。
+我们无需到量子世界去寻找[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)。它无处不在。考虑一下在[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中传播的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。这些原子的集体摆动被量子化为称为**[声子](@keyword=phonons|lang=zh-CN|style=Feynman)**的粒子。[声子](@keyword=phonons|lang=zh-CN|style=Feynman)的传播能力由原子间的类弹簧力决定。它的[色散关系](@keyword=dispersion_relations|lang=zh-CN|style=Feynman)，类似于 $\omega(k) = \omega_m |\sin(ka/2)|$，远非一条直线 [@problem_id:1884059]。这意味着固体中[声波](@keyword=acoustic_waves|lang=zh-CN|style=Feynman)的[群速度](@keyword=group_velocity|lang=zh-CN|style=Feynman)取决于其频率。低频、长波长的[声波](@keyword=acoustic_waves|lang=zh-CN|style=Feynman)以恒定速度传播，但高频[声波](@keyword=acoustic_waves|lang=zh-CN|style=Feynman)可以以不同速度传播，这一现象在[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)和超声学中广为人知。这就是[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)在起作用。
 
-### 如果真空不那么空？[光子质量](@article_id:360694)的幽灵
+### 如果真空不那么空？[光子质量](@keyword=photon_mass|lang=zh-CN|style=Feynman)的幽灵
 
-我们已经看到，真空之所以是非[色散](@article_id:376945)的，是因为[光子](@article_id:305617)是无质量的。这引出了一个诱人的问题：如果不是呢？如果[光子](@article_id:305617)有一丁点微不足道的质量 $m_\gamma$ 呢？
+我们已经看到，真空之所以是非[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)的，是因为[光子](@keyword=photon|lang=zh-CN|style=Feynman)是无质量的。这引出了一个诱人的问题：如果不是呢？如果[光子](@keyword=photon|lang=zh-CN|style=Feynman)有一丁点微不足道的质量 $m_\gamma$ 呢？
 
-这并非无聊的空想；这是一个具有真实世界检验的深刻思想实验 。一个描述[有质量光子](@article_id:313875)的理论，称为 **Proca 理论**，预测[真空色散](@article_id:366516)关系会变为：
+这并非无聊的空想；这是一个具有真实世界检验的深刻思想实验 [@problem_id:43746]。一个描述[有质量光子](@keyword=massive_photon|lang=zh-CN|style=Feynman)的理论，称为 **Proca 理论**，预测[真空色散](@keyword=vacuum_dispersion|lang=zh-CN|style=Feynman)关系会变为：
 
 $$
 \omega^2 = c^2k^2 + \omega_\gamma^2
 $$
 
-其中 $\omega_\gamma = m_\gamma c^2 / \hbar$ 是一个与[光子质量](@article_id:360694)相关的常数。突然之间，我们简单的线性规则消失了！这个方程是非线性的。如果[光子](@article_id:305617)有质量，真空本身将成为一个[色散介质](@article_id:360169)。
+其中 $\omega_\gamma = m_\gamma c^2 / \hbar$ 是一个与[光子质量](@keyword=photon_mass|lang=zh-CN|style=Feynman)相关的常数。突然之间，我们简单的线性规则消失了！这个方程是非线性的。如果[光子](@keyword=photon|lang=zh-CN|style=Feynman)有质量，真空本身将成为一个[色散介质](@keyword=dispersive_medium|lang=zh-CN|style=Feynman)。
 
-其后果将是惊人的。[波包](@article_id:315110)的速度，即群速度 $v_g = d\omega/dk = c^2k/\omega$，现在将依赖于频率。具体来说，更高频率的[光子](@article_id:305617)将比更低频率的[光子](@article_id:305617)传播得更快。
+其后果将是惊人的。[波包](@keyword=wave_packets|lang=zh-CN|style=Feynman)的速度，即群速度 $v_g = d\omega/dk = c^2k/\omega$，现在将依赖于频率。具体来说，更高频率的[光子](@keyword=photon|lang=zh-CN|style=Feynman)将比更低频率的[光子](@keyword=photon|lang=zh-CN|style=Feynman)传播得更快。
 
-想象一下一颗数十亿光年外爆炸的[超新星](@article_id:322177)。如果真空是[色散](@article_id:376945)的，我们将不会看到一个单一、锐利的闪光。我们会先看到能量最高的伽马射线到达，随后是[X射线](@article_id:366799)、紫外线、蓝光、绿光、红光，最终，在漫长的时间之后，无线电波才会姗姗来迟。这一个事件将在时间上被涂抹成一道“宇宙彩虹”。
+想象一下一颗数十亿光年外爆炸的[超新星](@keyword=supernovae|lang=zh-CN|style=Feynman)。如果真空是[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)的，我们将不会看到一个单一、锐利的闪光。我们会先看到能量最高的伽马射线到达，随后是[X射线](@keyword=x_ray|lang=zh-CN|style=Feynman)、紫外线、蓝光、绿光、红光，最终，在漫长的时间之后，无线电波才会姗姗来迟。这一个事件将在时间上被涂抹成一道“宇宙彩虹”。
 
-天文学家们持续地从遥远的[伽马射线暴](@article_id:320479)和超新星中观测到多个频段上尖锐、同步的信号，这一事实就是我们的证据。它为任何可能的[光子质量](@article_id:360694)设置了一个极其严格的上限。真空优雅的非[色散](@article_id:376945)性不仅仅是理论上的精妙之处；它是一个在整个宇宙尺度上得到检验的事实，一个深刻的确认，即简单的规则 $\omega=ck$ 支配着光在宇宙中的传播，而这一切都因为，据我们所能测量的，[光子](@article_id:305617)是完全无质量的。
+天文学家们持续地从遥远的[伽马射线暴](@keyword=gamma_ray_bursts|lang=zh-CN|style=Feynman)和超新星中观测到多个频段上尖锐、同步的信号，这一事实就是我们的证据。它为任何可能的[光子质量](@keyword=photon_mass|lang=zh-CN|style=Feynman)设置了一个极其严格的上限。真空优雅的非[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)性不仅仅是理论上的精妙之处；它是一个在整个宇宙尺度上得到检验的事实，一个深刻的确认，即简单的规则 $\omega=ck$ 支配着光在宇宙中的传播，而这一切都因为，据我们所能测量的，[光子](@keyword=photon|lang=zh-CN|style=Feynman)是完全无质量的。

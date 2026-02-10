@@ -1,5 +1,5 @@
 ## Introduction
-How can a simple drawing unlock the secrets of a complex polynomial? The idea seems almost magical, yet it lies at the heart of one of mathematics' most elegant tools: the Newton polygon. For centuries, solving equations has been a central quest, but understanding the nature of the solutions—their size, structure, and properties—can be even more challenging, especially in abstract number systems. This is the gap the Newton polygon fills, translating intricate algebraic problems into intuitive geometric pictures. This article will guide you through this fascinating concept. First, in "Principles and Mechanisms," we will demystify the polygon, learning how to construct it and decode the profound information held within its slopes and sides. Following that, in "Applications and Interdisciplinary Connections," we will explore its surprising and powerful role as a universal key, solving problems in fields as diverse as number theory, [knot theory](@article_id:140667), and modern physics.
+How can a simple drawing unlock the secrets of a complex polynomial? The idea seems almost magical, yet it lies at the heart of one of mathematics' most elegant tools: the Newton polygon. For centuries, solving equations has been a central quest, but understanding the nature of the solutions—their size, structure, and properties—can be even more challenging, especially in abstract number systems. This is the gap the Newton polygon fills, translating intricate algebraic problems into intuitive geometric pictures. This article will guide you through this fascinating concept. First, in "Principles and Mechanisms," we will demystify the polygon, learning how to construct it and decode the profound information held within its slopes and sides. Following that, in "Applications and Interdisciplinary Connections," we will explore its surprising and powerful role as a universal key, solving problems in fields as diverse as number theory, [knot theory](@keyword=knot_theory|lang=en-US|style=Feynman), and modern physics.
 
 ## Principles and Mechanisms
 
@@ -17,11 +17,11 @@ Now, take any polynomial, say $f(x) = \sum_{i=0}^{n} a_i x^i$. The Newton polygo
 2.  We plot these points in a standard two-dimensional plane.
 3.  Now, imagine these points are nails hammered into a board. Take a string, fix one end at the first point $(0, v_p(a_0))$ and the other at the last point $(n, v_p(a_n))$, and pull it taut from below so it wraps around the lowest nails. The shape this string makes is the **Newton polygon**.
 
-More formally, the Newton polygon is the **lower [convex hull](@article_id:262370)** of the set of points $\{(i, v_p(a_i))\}$. 
+More formally, the Newton polygon is the **lower [convex hull](@keyword=convex_hull|lang=en-US|style=Feynman)** of the set of points $\{(i, v_p(a_i))\}$. [@problem_id:3010248]
 
-Let's try this. Consider the polynomial $P(x) = x^6 - 12x^2 + 18$ and let's use the prime $p=3$.  The coefficients are $a_6=1$, $a_2=-12$, and $a_0=18$. Their $3$-adic valuations are:
+Let's try this. Consider the polynomial $P(x) = x^6 - 12x^2 + 18$ and let's use the prime $p=3$. [@problem_id:1789451] The coefficients are $a_6=1$, $a_2=-12$, and $a_0=18$. Their $3$-adic valuations are:
 - $v_3(a_6) = v_3(1) = 0$
 - $v_3(a_2) = v_3(-12) = v_3(-1 \cdot 4 \cdot 3^1) = 1$
 - $v_3(a_0) = v_3(18) = v_3(2 \cdot 3^2) = 2$
 
-We plot the corresponding points: $(6, 0)$, $(2, 1)$, and $(0, 2)$. The lower [convex hull](@article_id:262370) is a chain of two segments: one from $(0, 2)$ to $(2, 1)$ and a second from $(2, 1)$ to $(6, 0)$. It's that simple!
+We plot the corresponding points: $(6, 0)$, $(2, 1)$, and $(0, 2)$. The lower [convex hull](@keyword=convex_hull|lang=en-US|style=Feynman) is a chain of two segments: one from $(0, 2)$ to $(2, 1)$ and a second from $(2, 1)$ to $(6, 0)$. It's that simple!

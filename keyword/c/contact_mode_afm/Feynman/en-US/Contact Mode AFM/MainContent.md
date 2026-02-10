@@ -1,7 +1,7 @@
 ## Introduction
 At scales a million times smaller than our fingertips can resolve, a hidden world of atomic landscapes dictates the properties of every material we use. Atomic Force Microscopy (AFM) provides us with a sense of touch in this realm, and its most fundamental form, contact mode, acts like a nanoscale phonograph, feeling the terrain atom by atom. However, the true power of this technique lies not just in creating a map, but in understanding the physical story that map tells. This article addresses the challenge of moving beyond simple imaging to quantitatively probing the rich mechanical, tribological, and thermal properties of surfaces.
 
-This article will guide you through the elegant physics and versatile capabilities of contact mode AFM. We will first delve into the core **Principles and Mechanisms** that allow the instrument to "feel" a surface with constant force. Subsequently, we will explore its vast **Applications and Interdisciplinary Connections**, uncovering how this single technique becomes a laboratory for studying everything from friction and wear to [material stiffness](@article_id:157896) and heat generation at the nanoscale.
+This article will guide you through the elegant physics and versatile capabilities of contact mode AFM. We will first delve into the core **Principles and Mechanisms** that allow the instrument to "feel" a surface with constant force. Subsequently, we will explore its vast **Applications and Interdisciplinary Connections**, uncovering how this single technique becomes a laboratory for studying everything from friction and wear to [material stiffness](@keyword=material_stiffness|lang=en-US|style=Feynman) and heat generation at the nanoscale.
 
 ## Principles and Mechanisms
 
@@ -9,6 +9,6 @@ Imagine, if you will, tracing your finger across a tabletop in the dark. You can
 
 ### The Constant Force Rule
 
-At the heart of contact mode AFM lies a simple, elegant rule: keep the force between the tip and the sample constant. The "finger" of our microscope is a tiny, flexible bar called a **cantilever**, with a sharp tip at its end. As this tip is dragged across the sample's surface, it moves up and down, following the hills and valleys. This motion causes the [cantilever](@article_id:273166) to bend.
+At the heart of contact mode AFM lies a simple, elegant rule: keep the force between the tip and the sample constant. The "finger" of our microscope is a tiny, flexible bar called a **cantilever**, with a sharp tip at its end. As this tip is dragged across the sample's surface, it moves up and down, following the hills and valleys. This motion causes the [cantilever](@keyword=cantilever|lang=en-US|style=Feynman) to bend.
 
-This is where the physics begins. A [cantilever](@article_id:273166) is, for all intents and purposes, a simple spring. According to Hooke's Law, the force it exerts, $F$, is proportional to how much it is bent, or its **deflection**, $\delta$. We can write this as $F = k\delta$, where $k$ is the **[spring constant](@article_id:166703)**—a measure of the cantilever's stiffness.
+This is where the physics begins. A [cantilever](@keyword=cantilever|lang=en-US|style=Feynman) is, for all intents and purposes, a simple spring. According to Hooke's Law, the force it exerts, $F$, is proportional to how much it is bent, or its **deflection**, $\delta$. We can write this as $F = k\delta$, where $k$ is the **[spring constant](@keyword=spring_constant|lang=en-US|style=Feynman)**—a measure of the cantilever's stiffness.

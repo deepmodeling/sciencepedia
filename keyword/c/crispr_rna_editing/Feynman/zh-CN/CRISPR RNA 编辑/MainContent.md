@@ -1,7 +1,7 @@
 ## 引言
-[CRISPR](@article_id:304245) 技术的出现彻底改变了我们与[遗传密码](@article_id:307201)互动的能力，为重写生命蓝图提供了前所未有的力量。最初，[CRISPR-Cas9](@article_id:297113) 系统因其能对 DNA 进行永久性、可[遗传](@article_id:326229)的改变而闻名，但这种“[分子剪刀](@article_id:363584)”方法带来的问题与它解答的一样多。如果永久性编辑过于激烈怎么办？我们如何研究需要临时改变的动态过程，或以更安全、可逆的方式纠正错误？这一差距凸显了对一种能进行瞬时精确操作的、更精细的工具套件的需求。
+[CRISPR](@keyword=crispr|lang=zh-CN|style=Feynman) 技术的出现彻底改变了我们与[遗传密码](@keyword=genetic_code|lang=zh-CN|style=Feynman)互动的能力，为重写生命蓝图提供了前所未有的力量。最初，[CRISPR-Cas9](@keyword=crispr_cas9|lang=zh-CN|style=Feynman) 系统因其能对 DNA 进行永久性、可[遗传](@keyword=genetic_inheritance|lang=zh-CN|style=Feynman)的改变而闻名，但这种“[分子剪刀](@keyword=molecular_scissors|lang=zh-CN|style=Feynman)”方法带来的问题与它解答的一样多。如果永久性编辑过于激烈怎么办？我们如何研究需要临时改变的动态过程，或以更安全、可逆的方式纠正错误？这一差距凸显了对一种能进行瞬时精确操作的、更精细的工具套件的需求。
 
-本文深入探讨了解决方案：基于 [CRISPR](@article_id:304245) 的 RNA 编辑。我们将探索科学家如何改造 [CRISPR](@article_id:304245) 系统，使其超越永久性的 DNA 基因组，进入动态的 RNA [转录组](@article_id:337720)世界。在 **原理与机制** 部分，我们将剖析 [Cas13](@article_id:367196) 等 RNA 靶向工具的分子机制，将其与专注于 DNA 的同类工具进行对比，并解释为何编辑一个临时的“副本”是一种战略上强大的选择。随后，在 **应用与跨学科联系** 部分，将展示这些瞬时且可编程的工具如何被应用于从[发育生物学](@article_id:302303)到[神经科学](@article_id:309447)等不同领域，作为[基因表达](@article_id:305067)的调[光开关](@article_id:376500)、纠正单字母错误、以及执行大规模基因组筛选，从而从根本上改变我们探索生命[复杂性](@article_id:329807)的方式。
+本文深入探讨了解决方案：基于 [CRISPR](@keyword=crispr|lang=zh-CN|style=Feynman) 的 RNA 编辑。我们将探索科学家如何改造 [CRISPR](@keyword=crispr|lang=zh-CN|style=Feynman) 系统，使其超越永久性的 DNA 基因组，进入动态的 RNA [转录组](@keyword=transcriptome|lang=zh-CN|style=Feynman)世界。在 **原理与机制** 部分，我们将剖析 [Cas13](@keyword=cas13|lang=zh-CN|style=Feynman) 等 RNA 靶向工具的分子机制，将其与专注于 DNA 的同类工具进行对比，并解释为何编辑一个临时的“副本”是一种战略上强大的选择。随后，在 **应用与跨学科联系** 部分，将展示这些瞬时且可编程的工具如何被应用于从[发育生物学](@keyword=developmental_biology|lang=zh-CN|style=Feynman)到[神经科学](@keyword=neuroscience|lang=zh-CN|style=Feynman)等不同领域，作为[基因表达](@keyword=gene_expression|lang=zh-CN|style=Feynman)的调[光开关](@keyword=optical_switch|lang=zh-CN|style=Feynman)、纠正单字母错误、以及执行大规模基因组筛选，从而从根本上改变我们探索生命[复杂性](@keyword=complexity|lang=zh-CN|style=Feynman)的方式。
 
 ## 原理与机制
 
@@ -11,61 +11,61 @@
 
 这正是选择编辑 DNA 还是编辑 RNA 的核心所在。
 
-### 两种磁带的故事：基因组与[转录组](@article_id:337720)
+### 两种磁带的故事：基因组与[转录组](@keyword=transcriptome|lang=zh-CN|style=Feynman)
 
-在细胞这个宏伟的工厂里，以 **DNA** 形式编码的**基因组**就是那份总蓝图。它是一种宏伟的长期存储介质，紧密地盘绕在受保护的[细胞核](@article_id:317016)内。它包含了细胞的一切构成和功能所需的所有指令。改变 DNA 是一种永久性的、**可[遗传](@article_id:326229)的**行为。它改变了[基因型](@article_id:308179)本身，而且这种改变会通过[细胞分裂](@article_id:299113)代代相传。
+在细胞这个宏伟的工厂里，以 **DNA** 形式编码的**基因组**就是那份总蓝图。它是一种宏伟的长期存储介质，紧密地盘绕在受保护的[细胞核](@keyword=nucleus|lang=zh-CN|style=Feynman)内。它包含了细胞的一切构成和功能所需的所有指令。改变 DNA 是一种永久性的、**可[遗传](@keyword=genetic_inheritance|lang=zh-CN|style=Feynman)的**行为。它改变了[基因型](@keyword=genotype|lang=zh-CN|style=Feynman)本身，而且这种改变会通过[细胞分裂](@keyword=cell_division|lang=zh-CN|style=Feynman)代代相传。
 
-但工厂车间并不直接根据总蓝图工作。相反，细胞会根据需要制作特定指令的临时、一次性副本。这些副本被称为**信使 RNA (mRNA)**。在任何特定时刻，这些工作副本的全部集合就是**[转录组](@article_id:337720)**。mRNA [转录](@article_id:299279)本被运出[细胞核](@article_id:317016)，进入[细胞质](@article_id:344198)，在那里，细胞的机器会读取它们来构建[蛋白质](@article_id:328709)——即引擎部件、工人、细胞的结构。这些 mRNA 副本的寿命很短；它们被使用后就会被降解。如你所知，这个过程就是[分子生物学](@article_id:300774)的**[中心法则](@article_id:322979)**：DNA [转录](@article_id:299279)为 RNA，RNA 翻译为[蛋白质](@article_id:328709)。
+但工厂车间并不直接根据总蓝图工作。相反，细胞会根据需要制作特定指令的临时、一次性副本。这些副本被称为**信使 RNA (mRNA)**。在任何特定时刻，这些工作副本的全部集合就是**[转录组](@keyword=transcriptome|lang=zh-CN|style=Feynman)**。mRNA [转录](@keyword=transcription|lang=zh-CN|style=Feynman)本被运出[细胞核](@keyword=nucleus|lang=zh-CN|style=Feynman)，进入[细胞质](@keyword=cytoplasm|lang=zh-CN|style=Feynman)，在那里，细胞的机器会读取它们来构建[蛋白质](@keyword=proteins|lang=zh-CN|style=Feynman)——即引擎部件、工人、细胞的结构。这些 mRNA 副本的寿命很短；它们被使用后就会被降解。如你所知，这个过程就是[分子生物学](@keyword=molecular_biology|lang=zh-CN|style=Feynman)的**[中心法则](@keyword=central_dogma|lang=zh-CN|style=Feynman)**：DNA [转录](@keyword=transcription|lang=zh-CN|style=Feynman)为 RNA，RNA 翻译为[蛋白质](@keyword=proteins|lang=zh-CN|style=Feynman)。
 
-[CRISPR](@article_id:304245) 技术赋予了我们在这两个层面上进行编辑的能力：永久的总蓝图 (DNA) 或临时的生产副本 (RNA)。选择编辑哪一个不仅仅是技术细节；它是一个深刻的战略决策，完全取决于你的目标 。
+[CRISPR](@keyword=crispr|lang=zh-CN|style=Feynman) 技术赋予了我们在这两个层面上进行编辑的能力：永久的总蓝图 (DNA) 或临时的生产副本 (RNA)。选择编辑哪一个不仅仅是技术细节；它是一个深刻的战略决策，完全取决于你的目标 [@problem_id:2484605]。
 
-### 最初的[分子剪刀](@article_id:363584)：改造细菌[免疫系统](@article_id:312893)
+### 最初的[分子剪刀](@keyword=molecular_scissors|lang=zh-CN|style=Feynman)：改造细菌[免疫系统](@keyword=immune_system|lang=zh-CN|style=Feynman)
 
-第一个也是最著名的工具——**[CRISPR-Cas9](@article_id:297113)**——的故事是一个美丽的例证，说明了自然往往是最杰出的发明家。科学家们并非在计算机上从零开始设计 Cas9，而是发现了它。他们发现细菌拥有一种复杂的[适应性免疫系统](@article_id:370728)来对抗[病毒](@article_id:357891)。当[病毒](@article_id:357891)注入其 DNA 时，细菌可以捕获一小段外来 DNA，并将其编织入自身的基因组中，一个称为 [CRISPR](@article_id:304245) 阵列的特殊区域。这个阵列就成了一个记录过往入侵者的“头号通缉犯”名录。
+第一个也是最著名的工具——**[CRISPR-Cas9](@keyword=crispr_cas9|lang=zh-CN|style=Feynman)**——的故事是一个美丽的例证，说明了自然往往是最杰出的发明家。科学家们并非在计算机上从零开始设计 Cas9，而是发现了它。他们发现细菌拥有一种复杂的[适应性免疫系统](@keyword=adaptive_immune_system|lang=zh-CN|style=Feynman)来对抗[病毒](@keyword=viruses|lang=zh-CN|style=Feynman)。当[病毒](@keyword=viruses|lang=zh-CN|style=Feynman)注入其 DNA 时，细菌可以捕获一小段外来 DNA，并将其编织入自身的基因组中，一个称为 [CRISPR](@keyword=crispr|lang=zh-CN|style=Feynman) 阵列的特殊区域。这个阵列就成了一个记录过往入侵者的“头号通缉犯”名录。
 
-然后，这个名录被[转录](@article_id:299279)成小的 RNA 分子，作为向导。这些向导与一种名为 **Cas9**（[CRISPR](@article_id:304245) 相关蛋白 9 的缩写）的[蛋白质结合](@article_id:370568)，这是一种[分子剪刀](@article_id:363584)。向导 RNA 随后[引导](@article_id:299286) Cas9 蛋白在细胞内巡逻。如果它再次遇到与向[导序列](@article_id:301050)匹配的 DNA——这是[病毒](@article_id:357891)卷土重来的迹象——Cas9 蛋白就会剪断[病毒](@article_id:357891) DNA，从而消除威胁 。
+然后，这个名录被[转录](@keyword=transcription|lang=zh-CN|style=Feynman)成小的 RNA 分子，作为向导。这些向导与一种名为 **Cas9**（[CRISPR](@keyword=crispr|lang=zh-CN|style=Feynman) 相关蛋白 9 的缩写）的[蛋白质结合](@keyword=protein_binding|lang=zh-CN|style=Feynman)，这是一种[分子剪刀](@keyword=molecular_scissors|lang=zh-CN|style=Feynman)。向导 RNA 随后[引导](@keyword=bootstrapping|lang=zh-CN|style=Feynman) Cas9 蛋白在细胞内巡逻。如果它再次遇到与向[导序列](@keyword=derived_series|lang=zh-CN|style=Feynman)匹配的 DNA——这是[病毒](@keyword=viruses|lang=zh-CN|style=Feynman)卷土重来的迹象——Cas9 蛋白就会剪断[病毒](@keyword=viruses|lang=zh-CN|style=Feynman) DNA，从而消除威胁 [@problem_id:2042007]。
 
-意识到这个系统可以被改造利用，是一个惊人的洞见。只需为 Cas9 提供我们自己设计的合成**向导 RNA (gRNA)**，我们就可以将其[引导](@article_id:299286)至我们想要的*任何* DNA 序列。活性的 Cas9 利用两个[核酸](@article_id:344363)[酶结构](@article_id:315225)域（称为 HNH 和 RuvC）在 DNA 总蓝图上制造一个精确的**[双链断裂](@article_id:315649) (DSB)** 。这是经典[基因编辑](@article_id:308096)的基础。细胞会试图修复这个断裂，在此过程中，我们可以诱使其[删除](@article_id:309529)一个基因（敲除）或[插入](@article_id:321937)一个新的 DNA 片段（敲入）。结果是对基因组产生永久性的、可[遗传](@article_id:326229)的改变。
+意识到这个系统可以被改造利用，是一个惊人的洞见。只需为 Cas9 提供我们自己设计的合成**向导 RNA (gRNA)**，我们就可以将其[引导](@keyword=bootstrapping|lang=zh-CN|style=Feynman)至我们想要的*任何* DNA 序列。活性的 Cas9 利用两个[核酸](@keyword=nucleic_acid|lang=zh-CN|style=Feynman)[酶结构](@keyword=enzyme_structure|lang=zh-CN|style=Feynman)域（称为 HNH 和 RuvC）在 DNA 总蓝图上制造一个精确的**[双链断裂](@keyword=double_strand_breaks|lang=zh-CN|style=Feynman) (DSB)** [@problem_id:2506557]。这是经典[基因编辑](@keyword=gene_editing|lang=zh-CN|style=Feynman)的基础。细胞会试图修复这个断裂，在此过程中，我们可以诱使其[删除](@keyword=deletion|lang=zh-CN|style=Feynman)一个基因（敲除）或[插入](@keyword=intercalation|lang=zh-CN|style=Feynman)一个新的 DNA 片段（敲入）。结果是对基因组产生永久性的、可[遗传](@keyword=genetic_inheritance|lang=zh-CN|style=Feynman)的改变。
 
-### 从切割到控制：[钝化](@article_id:308842)剪刀的艺术
+### 从切割到控制：[钝化](@keyword=passivation|lang=zh-CN|style=Feynman)剪刀的艺术
 
 进行永久性编辑功能强大，但如果我们的目标更微妙呢？如果我们想暂时调低或调高一个基因的表达，而不留下一丝 DNA 上的疤痕呢？
 
-这催生了一个非常巧妙的想法。如果我们只是“把剪刀弄钝”会怎么样？科学家们通过[突变](@article_id:328579) Cas9 蛋白来使其切割结构域失活，创造出一种“死亡的”Cas9，即 **[dCas9](@article_id:356613)**。这种 [dCas9](@article_id:356613) 仍然可以由 gRNA [引导](@article_id:299286)至任何 DNA 地址，但它不再能切割。它只是结合，停留在那里。
+这催生了一个非常巧妙的想法。如果我们只是“把剪刀弄钝”会怎么样？科学家们通过[突变](@keyword=mutation|lang=zh-CN|style=Feynman) Cas9 蛋白来使其切割结构域失活，创造出一种“死亡的”Cas9，即 **[dCas9](@keyword=dcas9|lang=zh-CN|style=Feynman)**。这种 [dCas9](@keyword=dcas9|lang=zh-CN|style=Feynman) 仍然可以由 gRNA [引导](@keyword=bootstrapping|lang=zh-CN|style=Feynman)至任何 DNA 地址，但它不再能切割。它只是结合，停留在那里。
 
-仅仅通过停留在那里，它就成了一种新工具。如果你[引导](@article_id:299286) [dCas9](@article_id:356613) 停在一个基因的[启动子](@article_id:310315)——即[转录](@article_id:299279)的“开启”开关——上，它就充当了一个物理路障，阻止细胞的机器读取该基因。这被称为 **[CRISPR](@article_id:304245) [干扰](@article_id:323376) ([CRISPRi](@article_id:297689))**。它在不改变 DNA 序列一个字母的情况下，可逆地抑制一个基因。相反，你也可以将一个激活结构域融合到 [dCas9](@article_id:356613) 上。现在，当它结合到[启动子](@article_id:310315)附近时，它就像一个信号灯，招募[转录](@article_id:299279)机器并增强[基因表达](@article_id:305067)。这就是 **[CRISPR](@article_id:304245) 激活 ([CRISPRa](@article_id:360261))**。
+仅仅通过停留在那里，它就成了一种新工具。如果你[引导](@keyword=bootstrapping|lang=zh-CN|style=Feynman) [dCas9](@keyword=dcas9|lang=zh-CN|style=Feynman) 停在一个基因的[启动子](@keyword=promoters|lang=zh-CN|style=Feynman)——即[转录](@keyword=transcription|lang=zh-CN|style=Feynman)的“开启”开关——上，它就充当了一个物理路障，阻止细胞的机器读取该基因。这被称为 **[CRISPR](@keyword=crispr|lang=zh-CN|style=Feynman) [干扰](@keyword=interference|lang=zh-CN|style=Feynman) ([CRISPRi](@keyword=crispri|lang=zh-CN|style=Feynman))**。它在不改变 DNA 序列一个字母的情况下，可逆地抑制一个基因。相反，你也可以将一个激活结构域融合到 [dCas9](@keyword=dcas9|lang=zh-CN|style=Feynman) 上。现在，当它结合到[启动子](@keyword=promoters|lang=zh-CN|style=Feynman)附近时，它就像一个信号灯，招募[转录](@keyword=transcription|lang=zh-CN|style=Feynman)机器并增强[基因表达](@keyword=gene_expression|lang=zh-CN|style=Feynman)。这就是 **[CRISPR](@keyword=crispr|lang=zh-CN|style=Feynman) 激活 ([CRISPRa](@keyword=crispra|lang=zh-CN|style=Feynman))**。
 
-有了 [CRISPRi](@article_id:297689) 和 [CRISPRa](@article_id:360261)，我们已经从不可逆的编辑转向了可逆的**[转录控制](@article_id:344316)** 。我们现在是决定蓝图被复制的频率，而不是改变蓝图本身。这是迈向瞬时效应的一大步，但我们仍然在物理上与珍贵的总蓝图——DNA——进行交互。
+有了 [CRISPRi](@keyword=crispri|lang=zh-CN|style=Feynman) 和 [CRISPRa](@keyword=crispra|lang=zh-CN|style=Feynman)，我们已经从不可逆的编辑转向了可逆的**[转录控制](@keyword=transcriptional_control|lang=zh-CN|style=Feynman)** [@problem_id:2506557]。我们现在是决定蓝图被复制的频率，而不是改变蓝图本身。这是迈向瞬时效应的一大步，但我们仍然在物理上与珍贵的总蓝图——DNA——进行交互。
 
 ### 改变靶标：编辑 RNA 副本
 
-这让我们来到了最后、也是最关键的一步。如果我们想让总蓝图完全不受[干扰](@article_id:323376)，完好地保存在[细胞核](@article_id:317016)的保险库里，而只在工厂车间的临时 mRNA 副本上工作呢？
+这让我们来到了最后、也是最关键的一步。如果我们想让总蓝图完全不受[干扰](@keyword=interference|lang=zh-CN|style=Feynman)，完好地保存在[细胞核](@keyword=nucleus|lang=zh-CN|style=Feynman)的保险库里，而只在工厂车间的临时 mRNA 副本上工作呢？
 
-为此，我们需要一种不同的工具。Cas9 是 DNA 专家；它对 RNA 视而不见。因此，我们再次求助于自然界庞大的工具库。当然，我们找到了我们想要的东西：另一类 [CRISPR](@article_id:304245) 相关蛋白，即 **[Cas13](@article_id:367196)** 家族。与 Cas9 不同，[Cas13](@article_id:367196) 是一种由 RNA [引导](@article_id:299286)的*靶向 RNA*的[核酸](@article_id:344363)[酶](@article_id:303941) 。
+为此，我们需要一种不同的工具。Cas9 是 DNA 专家；它对 RNA 视而不见。因此，我们再次求助于自然界庞大的工具库。当然，我们找到了我们想要的东西：另一类 [CRISPR](@keyword=crispr|lang=zh-CN|style=Feynman) 相关蛋白，即 **[Cas13](@keyword=cas13|lang=zh-CN|style=Feynman)** 家族。与 Cas9 不同，[Cas13](@keyword=cas13|lang=zh-CN|style=Feynman) 是一种由 RNA [引导](@keyword=bootstrapping|lang=zh-CN|style=Feynman)的*靶向 RNA*的[核酸](@keyword=nucleic_acid|lang=zh-CN|style=Feynman)[酶](@keyword=enzymes|lang=zh-CN|style=Feynman) [@problem_id:1480046]。
 
-其机制与 Cas9 完美类似，但[转移](@article_id:311237)到了 RNA 的世界。我们设计一个与目标 mRNA 序列互补的向导 RNA。这个向导被加载到 [Cas13](@article_id:367196) 蛋白中。然后，这个[复合](@article_id:315605)物在[细胞质](@article_id:344198)中搜索的不是 DNA，而是匹配的 mRNA。当它找到目标时，[Cas13](@article_id:367196) 蛋白就变成一个活性的[核糖核酸](@article_id:339991)[酶](@article_id:303941) (RNase)，并切割 mRNA，标记其进行销毁。
+其机制与 Cas9 完美类似，但[转移](@keyword=metastasis|lang=zh-CN|style=Feynman)到了 RNA 的世界。我们设计一个与目标 mRNA 序列互补的向导 RNA。这个向导被加载到 [Cas13](@keyword=cas13|lang=zh-CN|style=Feynman) 蛋白中。然后，这个[复合](@keyword=recombination|lang=zh-CN|style=Feynman)物在[细胞质](@keyword=cytoplasm|lang=zh-CN|style=Feynman)中搜索的不是 DNA，而是匹配的 mRNA。当它找到目标时，[Cas13](@keyword=cas13|lang=zh-CN|style=Feynman) 蛋白就变成一个活性的[核糖核酸](@keyword=ribonucleic_acid|lang=zh-CN|style=Feynman)[酶](@keyword=enzymes|lang=zh-CN|style=Feynman) (RNase)，并切割 mRNA，标记其进行销毁。
 
-这就是**[转录](@article_id:299279)后抑制**。其效果是深远的：
-1.  **它本质上是瞬时的。** 细胞不断地从没有改变的 DNA 模板上产生新的 mRNA。[Cas13](@article_id:367196) 的效果只在 [Cas13](@article_id:367196)-gRNA 机器存在于细胞中时持续。如果你以预先形成的核糖核蛋白 (RNP) [复合](@article_id:315605)物的形式递送这些组分，其效果只持续到[蛋白质](@article_id:328709)被自然降解，可能只有几小时或几天 。
-2.  **它不留任何基因组痕迹。** [Cas13](@article_id:367196) 消失后，细胞恢复到其原始状态。对基因组 DNA 进行深度测序会显示没有任何改变。这是终极的“不留痕迹”生物学。
+这就是**[转录](@keyword=transcription|lang=zh-CN|style=Feynman)后抑制**。其效果是深远的：
+1.  **它本质上是瞬时的。** 细胞不断地从没有改变的 DNA 模板上产生新的 mRNA。[Cas13](@keyword=cas13|lang=zh-CN|style=Feynman) 的效果只在 [Cas13](@keyword=cas13|lang=zh-CN|style=Feynman)-gRNA 机器存在于细胞中时持续。如果你以预先形成的核糖核蛋白 (RNP) [复合](@keyword=recombination|lang=zh-CN|style=Feynman)物的形式递送这些组分，其效果只持续到[蛋白质](@keyword=proteins|lang=zh-CN|style=Feynman)被自然降解，可能只有几小时或几天 [@problem_id:2844535]。
+2.  **它不留任何基因组痕迹。** [Cas13](@keyword=cas13|lang=zh-CN|style=Feynman) 消失后，细胞恢复到其原始状态。对基因组 DNA 进行深度测序会显示没有任何改变。这是终极的“不留痕迹”生物学。
 
 ### 为何要编辑副本？瞬时性与可调性的力量
 
 这种在不触及基因组的情况下瞬时并可逆地调控基因产出的能力，不仅仅是一个巧妙的技巧；它是一种具有深远影响的革命性能力。
 
-**安全性与可逆性：** 对于许多潜在的疗法来说，改变病人的基因组是一个具有巨大、可能不可逆后果的步骤。如果出现意想不到的[脱靶效应](@article_id:382292)怎么办？靶向 RNA 的疗法提供了一种更安全的模式。如果出现副作用，可以停止治疗，随着 RNA 编辑机器被清除，病人的细胞将恢复到基线状态。它将永久的硬件修改转变为可逆的软件更新 。
+**安全性与可逆性：** 对于许多潜在的疗法来说，改变病人的基因组是一个具有巨大、可能不可逆后果的步骤。如果出现意想不到的[脱靶效应](@keyword=off_target_effects|lang=zh-CN|style=Feynman)怎么办？靶向 RNA 的疗法提供了一种更安全的模式。如果出现副作用，可以停止治疗，随着 RNA 编辑机器被清除，病人的细胞将恢复到基线状态。它将永久的硬件修改转变为可逆的软件更新 [@problem_id:2844535]。
 
-**探索动态系统：** 生物学不是静态的；它是组分在时间中动态、复杂的舞蹈。永久性的[基因敲除](@article_id:306232)通常是一种过于粗糙的工具，无法剖析这些过程。考虑研究[突触可塑性](@article_id:351774)，即学习和记忆背后的过程。研究人员可能想知道，如果在脑活动的[关键窗口](@article_id:375682)期，某个特定[受体](@article_id:308178)亚基的特性仅在几个小时内发生改变，会发生什么。RNA 编辑是完成此任务的完美工具。人们可以用一个[诱导系统](@article_id:306559)开启 RNA 编辑器，改变 mRNA [转录](@article_id:299279)本的池，并观察[突触](@article_id:316442)处的[蛋白质组](@article_id:310724)成随着自然的[蛋白质周转](@article_id:361354)率缓慢变化。然后，可以关闭编辑器，系统将恢复原状，从而证明[因果关系](@article_id:308916)。这种时间控制，即效应可以定时且完全可逆，对于剖析动态系统至关重要 。
+**探索动态系统：** 生物学不是静态的；它是组分在时间中动态、复杂的舞蹈。永久性的[基因敲除](@keyword=gene_knockout|lang=zh-CN|style=Feynman)通常是一种过于粗糙的工具，无法剖析这些过程。考虑研究[突触可塑性](@keyword=synapse_plasticity|lang=zh-CN|style=Feynman)，即学习和记忆背后的过程。研究人员可能想知道，如果在脑活动的[关键窗口](@keyword=critical_window|lang=zh-CN|style=Feynman)期，某个特定[受体](@keyword=acceptor|lang=zh-CN|style=Feynman)亚基的特性仅在几个小时内发生改变，会发生什么。RNA 编辑是完成此任务的完美工具。人们可以用一个[诱导系统](@keyword=inducible_system|lang=zh-CN|style=Feynman)开启 RNA 编辑器，改变 mRNA [转录](@keyword=transcription|lang=zh-CN|style=Feynman)本的池，并观察[突触](@keyword=synapse|lang=zh-CN|style=Feynman)处的[蛋白质组](@keyword=proteome|lang=zh-CN|style=Feynman)成随着自然的[蛋白质周转](@keyword=protein_turnover|lang=zh-CN|style=Feynman)率缓慢变化。然后，可以关闭编辑器，系统将恢复原状，从而证明[因果关系](@keyword=causality|lang=zh-CN|style=Feynman)。这种时间控制，即效应可以定时且完全可逆，对于剖析动态系统至关重要 [@problem_id:2713145]。
 
-**动[力学](@article_id:312082)优势：** 想象一个细胞正被特定 mRNA 产生的[蛋白质](@article_id:328709)毒害。使用 [CRISPRi](@article_id:297689)，你可以停止*新* mRNA 的产生，但大量现有的 mRNA 仍必须以其自然速率[衰减](@article_id:304282)。而使用 [Cas13](@article_id:367196)，你可以主动追捕并摧毁现有的 mRNA 分子。这大大缩短了 mRNA 的有效[半衰期](@article_id:305269)，从而更迅速、更有效地关闭[蛋白质](@article_id:328709)生产 。
+**动[力学](@keyword=mechanics|lang=zh-CN|style=Feynman)优势：** 想象一个细胞正被特定 mRNA 产生的[蛋白质](@keyword=proteins|lang=zh-CN|style=Feynman)毒害。使用 [CRISPRi](@keyword=crispri|lang=zh-CN|style=Feynman)，你可以停止*新* mRNA 的产生，但大量现有的 mRNA 仍必须以其自然速率[衰减](@keyword=attenuation|lang=zh-CN|style=Feynman)。而使用 [Cas13](@keyword=cas13|lang=zh-CN|style=Feynman)，你可以主动追捕并摧毁现有的 mRNA 分子。这大大缩短了 mRNA 的有效[半衰期](@keyword=half_life|lang=zh-CN|style=Feynman)，从而更迅速、更有效地关闭[蛋白质](@keyword=proteins|lang=zh-CN|style=Feynman)生产 [@problem_id:2484605]。
 
-**扩展的靶向范围：** 大多数靶向 DNA 的 Cas 蛋白，如 Cas9，都非常挑剔。它们要求在 DNA 上的目标位点旁边存在一个称为**[原型间隔子相邻基序](@article_id:332944) (PAM)** 的特定短序列。如果你想要的目标位点没有 PAM，你就束手无策了。靶向 RNA 的 [Cas13](@article_id:367196) 蛋白不受 DNA PAM 的限制；它们有自己的、宽松得多的靶向规则。这种灵活性显著扩展了我们可以在[转录组](@article_id:337720)中处理的位点范围 。
+**扩展的靶向范围：** 大多数靶向 DNA 的 Cas 蛋白，如 Cas9，都非常挑剔。它们要求在 DNA 上的目标位点旁边存在一个称为**[原型间隔子相邻基序](@keyword=pam_sequence|lang=zh-CN|style=Feynman) (PAM)** 的特定短序列。如果你想要的目标位点没有 PAM，你就束手无策了。靶向 RNA 的 [Cas13](@keyword=cas13|lang=zh-CN|style=Feynman) 蛋白不受 DNA PAM 的限制；它们有自己的、宽松得多的靶向规则。这种灵活性显著扩展了我们可以在[转录组](@keyword=transcriptome|lang=zh-CN|style=Feynman)中处理的位点范围 [@problem_id:2484605]。
 
 ### 超越切割：重写信息
 
-故事并不仅仅止于摧毁 mRNA 副本。这个[模块化](@article_id:323902)系统的真正精妙之处在于下一步：如果我们不销毁副本，而是只*重写*其中的一小部分呢？
+故事并不仅仅止于摧毁 mRNA 副本。这个[模块化](@keyword=modularity|lang=zh-CN|style=Feynman)系统的真正精妙之处在于下一步：如果我们不销毁副本，而是只*重写*其中的一小部分呢？
 
-这是通过最后一种精美的修改实现的。我们采用我们的 RNA 靶向蛋白 d[Cas13](@article_id:367196)（一种能结合但不能切割 RNA 的“死亡”版本），并将其与另一种[酶](@article_id:303941)融合。这一次，这种[酶](@article_id:303941)是[脱氨酶](@article_id:380303)，比如 **ADAR**，它可以在化学上将一个 RNA [核苷酸](@article_id:335692)碱基转换为另一个（具体来说，是将[腺苷](@article_id:365677)转换为[肌苷](@article_id:330500)，细胞会将其读取为鸟苷） 。
+这是通过最后一种精美的修改实现的。我们采用我们的 RNA 靶向蛋白 d[Cas13](@keyword=cas13|lang=zh-CN|style=Feynman)（一种能结合但不能切割 RNA 的“死亡”版本），并将其与另一种[酶](@keyword=enzymes|lang=zh-CN|style=Feynman)融合。这一次，这种[酶](@keyword=enzymes|lang=zh-CN|style=Feynman)是[脱氨酶](@keyword=deaminase|lang=zh-CN|style=Feynman)，比如 **ADAR**，它可以在化学上将一个 RNA [核苷酸](@keyword=nucleotides|lang=zh-CN|style=Feynman)碱基转换为另一个（具体来说，是将[腺苷](@keyword=adenosine|lang=zh-CN|style=Feynman)转换为[肌苷](@keyword=inosine|lang=zh-CN|style=Feynman)，细胞会将其读取为鸟苷）[@problem_id:1480046] [@problem_id:2713145]。
 
-现在我们有了一个可编程的 RNA [碱基编辑器](@article_id:368544)。d[Cas13](@article_id:367196) 组分充当制导导弹，将 ADAR“弹头”带到数千种信使 RNA 中的某一个特定的信使 RNA 上。然后，ADAR 在那个临时的蓝图上执行其极其精确的化学手术，纠正一个单字母的错误。这可以在[蛋白质](@article_id:328709)水平上逆转致病[突变](@article_id:328579)，恢复功能，而无需接近细胞的主 DNA 蓝图。这完美体现了其核心思想：一种对细胞信息进行的瞬时、可逆且极其精确的操控，它借鉴于自然界的剧本，并通过人类的智慧加以改造利用。
+现在我们有了一个可编程的 RNA [碱基编辑器](@keyword=base_editor|lang=zh-CN|style=Feynman)。d[Cas13](@keyword=cas13|lang=zh-CN|style=Feynman) 组分充当制导导弹，将 ADAR“弹头”带到数千种信使 RNA 中的某一个特定的信使 RNA 上。然后，ADAR 在那个临时的蓝图上执行其极其精确的化学手术，纠正一个单字母的错误。这可以在[蛋白质](@keyword=proteins|lang=zh-CN|style=Feynman)水平上逆转致病[突变](@keyword=mutation|lang=zh-CN|style=Feynman)，恢复功能，而无需接近细胞的主 DNA 蓝图。这完美体现了其核心思想：一种对细胞信息进行的瞬时、可逆且极其精确的操控，它借鉴于自然界的剧本，并通过人类的智慧加以改造利用。
 

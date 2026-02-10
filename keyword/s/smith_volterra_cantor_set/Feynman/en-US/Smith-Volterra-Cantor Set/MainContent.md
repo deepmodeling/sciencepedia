@@ -13,15 +13,15 @@ You may be familiar with the classic Cantor set, often described as a "dust" of 
 
 But what if we were a bit more... gentle? What if we removed *less* at each step? This simple question leads us to the **Smith-Volterra-Cantor (SVC) set**, often nicknamed a "fat Cantor set" because, as we will see, it has a non-zero, "fat" measure.
 
-Let's follow a specific recipe to build one  . We begin, as always, with the interval $C_0 = [0,1]$.
+Let's follow a specific recipe to build one [@problem_id:489875] [@problem_id:1412392]. We begin, as always, with the interval $C_0 = [0,1]$.
 
--   In step 1, we remove a central [open interval](@article_id:143535) of length $\frac{1}{4}$. This is smaller than the $\frac{1}{3}$ we remove for the standard set. We are left with two closed intervals: $[0, \frac{3}{8}]$ and $[\frac{5}{8}, 1]$.
+-   In step 1, we remove a central [open interval](@keyword=open_interval|lang=en-US|style=Feynman) of length $\frac{1}{4}$. This is smaller than the $\frac{1}{3}$ we remove for the standard set. We are left with two closed intervals: $[0, \frac{3}{8}]$ and $[\frac{5}{8}, 1]$.
 -   In step 2, we look at these two new intervals. From the center of *each*, we remove an even smaller open interval, this time of length $\frac{1}{16}$. We now have four intervals.
 -   We continue this process. At the $k$-th step, we have $2^{k-1}$ small intervals, and from the center of each, we remove a tiny open segment of length $\frac{1}{4^k}$.
 
 The set that remains after this infinite process of snipping is our SVC set, let's call it $C$. It is the collection of all points that *survive* our procedure, defined mathematically as $C = \bigcap_{k=0}^{\infty} C_k$.
 
-Like the standard Cantor set, this object is **nowhere dense**. This means that no matter which point you pick in the set, and no matter how small a neighborhood you draw around it, that neighborhood will always contain a "gap"—an [open interval](@article_id:143535) that was removed during our construction. The set contains no solid chunks, no matter how much you zoom in. It's as porous as a sponge.
+Like the standard Cantor set, this object is **nowhere dense**. This means that no matter which point you pick in the set, and no matter how small a neighborhood you draw around it, that neighborhood will always contain a "gap"—an [open interval](@keyword=open_interval|lang=en-US|style=Feynman) that was removed during our construction. The set contains no solid chunks, no matter how much you zoom in. It's as porous as a sponge.
 
 But what is its measure? We can find out by adding up the lengths of everything we threw away. At step $k$, we removed $2^{k-1}$ intervals, each of length $\frac{1}{4^k}$. The total length removed at this step is $2^{k-1} \times \frac{1}{4^k} = \frac{2^{k-1}}{2^{2k}} = \frac{1}{2^{k+1}}$. The total length of all the gaps is the sum over all steps:
 
@@ -29,13 +29,13 @@ $$
 \text{Total length removed} = \sum_{k=1}^{\infty} \frac{1}{2^{k+1}} = \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots
 $$
 
-This is a simple [geometric series](@article_id:157996) which sums to $\frac{1}{2}$. Since we started with an interval of length 1, the measure of the set $C$ that remains is:
+This is a simple [geometric series](@keyword=geometric_series|lang=en-US|style=Feynman) which sums to $\frac{1}{2}$. Since we started with an interval of length 1, the measure of the set $C$ that remains is:
 
 $$
 m(C) = 1 - \frac{1}{2} = \frac{1}{2}
 $$
 
-Pause for a moment to appreciate this. We have created an object that is half substance and half emptiness. Yet the substance is scattered into a "dust" so fine that it contains no solid segments whatsoever. It's a "ghost" with tangible weight. We could even have been more clever in our removals, for example by taking out a proportion $\epsilon_k = \frac{1}{(k+1)^2}$ of the remaining length at each step . A different calculation, this time involving an infinite product that elegantly telescopes to $\frac{1}{2}$, confirms that we can arrive at the same final measure through a different path. This flexibility shows just how robust the idea is.
+Pause for a moment to appreciate this. We have created an object that is half substance and half emptiness. Yet the substance is scattered into a "dust" so fine that it contains no solid segments whatsoever. It's a "ghost" with tangible weight. We could even have been more clever in our removals, for example by taking out a proportion $\epsilon_k = \frac{1}{(k+1)^2}$ of the remaining length at each step [@problem_id:1411574]. A different calculation, this time involving an infinite product that elegantly telescopes to $\frac{1}{2}$, confirms that we can arrive at the same final measure through a different path. This flexibility shows just how robust the idea is.
 
 ### The View from Within: A Universe of Density One
 
@@ -49,7 +49,7 @@ $$
 
 The theorem’s punchline is that for any measurable set $A$, the density is 1 for "almost every" point *inside* $A$, and 0 for "almost every" point *outside* $A$. "Almost every" is a technical term meaning "except for a set of measure zero."
 
-For our fat Cantor set $C$, which has a positive measure of $\frac{1}{2}$, this theorem has a profound consequence . For a typical point $x$ that belongs to $C$, the density $D(C,x)$ is not $\frac{1}{2}$, or some other fraction, but is exactly **1**.
+For our fat Cantor set $C$, which has a positive measure of $\frac{1}{2}$, this theorem has a profound consequence [@problem_id:1455187]. For a typical point $x$ that belongs to $C$, the density $D(C,x)$ is not $\frac{1}{2}$, or some other fraction, but is exactly **1**.
 
 Think about what this means. If you were an infinitely small creature living at a typical point within our fat Cantor set, your local universe would appear completely solid. As you'd look at smaller and smaller neighborhoods around you, the proportion of those neighborhoods filled by your set would approach 100%. The vast, empty gaps that riddle the set on a global scale would become completely negligible from your local perspective. You are part of what seems to be a sparse, dusty cloud from afar, but from your own vantage point, you inhabit a solid continuum. It is this strange duality—global sparseness and local density—that makes such sets so fundamental to understanding the nature of space and measure.
 
@@ -57,15 +57,15 @@ Think about what this means. If you were an infinitely small creature living at 
 
 Let's get even more playful. We have this strange, porous set $C$. What happens if we take every number in $C$ and add it to every other number (including itself) in $C$? This operation creates a new set, called the **sumset**, denoted $C+C = \{x+y \mid x, y \in C\}$.
 
-Our intuition might suggest that adding one holey set to another would produce an even more holey, fragmented result. But the reality is quite the opposite, and far more wonderful. For the fat Cantor set we constructed, the sumset is the entire closed interval $[0,2]$ .
+Our intuition might suggest that adding one holey set to another would produce an even more holey, fragmented result. But the reality is quite the opposite, and far more wonderful. For the fat Cantor set we constructed, the sumset is the entire closed interval $[0,2]$ [@problem_id:699829].
 
 $$
 C+C = [0,2]
 $$
 
-Somehow, the process of addition "fills in" all the gaps. The aetherial dust, when combined with itself, coalesces into a solid line segment. The same astonishing thing happens if we consider the **difference set**, $C-C = \{x-y \mid x, y \in C\}$. This set turns out to be the entire interval $[-1,1]$ .
+Somehow, the process of addition "fills in" all the gaps. The aetherial dust, when combined with itself, coalesces into a solid line segment. The same astonishing thing happens if we consider the **difference set**, $C-C = \{x-y \mid x, y \in C\}$. This set turns out to be the entire interval $[-1,1]$ [@problem_id:396461].
 
-This is a feature of a deep theorem by Steinhaus, which guarantees that the sumset or difference set of any set with positive measure must contain an [open interval](@article_id:143535). Our fat Cantor set is so exquisitely constructed that it doesn't just contain an interval—it generates the largest possible interval. The intricate, self-similar placement of the points and the gaps ensures that for any target value $z$ between 0 and 2, we can always find two points $x$ and $y$ in our set $C$ that sum to $z$. The spaces in the set are arranged with such mathematical precision that they perfectly interlock and annihilate when the set is combined with itself.
+This is a feature of a deep theorem by Steinhaus, which guarantees that the sumset or difference set of any set with positive measure must contain an [open interval](@keyword=open_interval|lang=en-US|style=Feynman). Our fat Cantor set is so exquisitely constructed that it doesn't just contain an interval—it generates the largest possible interval. The intricate, self-similar placement of the points and the gaps ensures that for any target value $z$ between 0 and 2, we can always find two points $x$ and $y$ in our set $C$ that sum to $z$. The spaces in the set are arranged with such mathematical precision that they perfectly interlock and annihilate when the set is combined with itself.
 
 ### The Perfect Balance of a Fractured World
 
@@ -73,7 +73,7 @@ So far, we have treated our set as a purely geometric object. But what if we thi
 
 The construction we used was perfectly symmetric around the point $x=\frac{1}{2}$. We removed the central interval from $[0,1]$, then central intervals from the two resulting symmetric pieces, and so on. This symmetry strongly suggests the center of mass should be at $\frac{1}{2}$. Physics intuition is a powerful guide, and mathematics can confirm it with breathtaking elegance.
 
-The center of mass is given by the first moment of the set, $M_1 = \int_C x \,dx$, divided by the total mass (or measure), $m(C)$. Let's calculate this integral . A brute-force calculation over such a complex set seems nightmarish. But we have a secret weapon: symmetry.
+The center of mass is given by the first moment of the set, $M_1 = \int_C x \,dx$, divided by the total mass (or measure), $m(C)$. Let's calculate this integral [@problem_id:485225]. A brute-force calculation over such a complex set seems nightmarish. But we have a secret weapon: symmetry.
 
 Because the set $C$ is symmetric about $\frac{1}{2}$, we know that if a point $x$ is in $C$, then the point $1-x$ must also be in $C$. This allows for a beautiful trick. Let's make a change of variables in our integral, setting $u = 1-x$. Then $dx = -du$. The integral becomes:
 

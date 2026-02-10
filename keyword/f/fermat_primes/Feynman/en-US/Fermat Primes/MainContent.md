@@ -1,7 +1,7 @@
 ## Introduction
 In the vast landscape of number theory, certain numerical sequences stand out for their simple elegance and profound, often unexpected, connections to other fields. The Fermat numbers, defined by the simple formula $F_n = 2^{2^n} + 1$, are one such sequence. Born from a 17th-century conjecture by Pierre de Fermat that all such numbers are prime, they became the center of a story involving historical triumph and failure. This article addresses a fascinating knowledge gap: how these abstract numbers provide the definitive answer to a 2,000-year-old puzzle from geometry and find new life in modern technology.
 
-In the subsequent chapters, we will journey through this remarkable story. The first chapter, **Principles and Mechanisms**, delves into the definition of Fermat primes, the downfall of Fermat's original conjecture at the hands of Leonhard Euler, and the astonishing link to [constructible polygons](@article_id:149028) first uncovered by Carl Friedrich Gauss. The second chapter, **Applications and Interdisciplinary Connections**, will then expand on this geometric marvel, showing how the Gauss-Wantzel theorem provides a complete blueprint for constructibility and exploring the surprising reappearance of Fermat primes in the modern worlds of [cryptography](@article_id:138672) and [high-performance computing](@article_id:169486). Our exploration begins with the numbers themselves and the brilliant minds who first uncovered their secrets.
+In the subsequent chapters, we will journey through this remarkable story. The first chapter, **Principles and Mechanisms**, delves into the definition of Fermat primes, the downfall of Fermat's original conjecture at the hands of Leonhard Euler, and the astonishing link to [constructible polygons](@keyword=constructible_polygons|lang=en-US|style=Feynman) first uncovered by Carl Friedrich Gauss. The second chapter, **Applications and Interdisciplinary Connections**, will then expand on this geometric marvel, showing how the Gauss-Wantzel theorem provides a complete blueprint for constructibility and exploring the surprising reappearance of Fermat primes in the modern worlds of [cryptography](@keyword=cryptography|lang=en-US|style=Feynman) and [high-performance computing](@keyword=high_performance_computing|lang=en-US|style=Feynman). Our exploration begins with the numbers themselves and the brilliant minds who first uncovered their secrets.
 
 ## Principles and Mechanisms
 
@@ -23,7 +23,7 @@ where $n$ is any non-negative integer. Let's write out the first few:
 
 Five for five! Based on this compelling evidence, Fermat conjectured that *all* numbers of this form are prime. These numbers, $F_n$, are now called **Fermat numbers**, and those that are prime are called **Fermat primes**.
 
-The very first of these, the number 3, already exhibits a rather unique personality. It turns out that among all the infinite primes, 3 is the only one, $p$, that can divide the number $2^p + 1$. A quick check with Fermat's Little Theorem reveals this curiosity, a small hint that these numbers hold special properties .
+The very first of these, the number 3, already exhibits a rather unique personality. It turns out that among all the infinite primes, 3 is the only one, $p$, that can divide the number $2^p + 1$. A quick check with Fermat's Little Theorem reveals this curiosity, a small hint that these numbers hold special properties [@problem_id:1392412].
 
 ### The Giant Who Stumbled: Euler and the Fall of a Conjecture
 
@@ -41,7 +41,7 @@ for some positive integer $k$.
 
 Think about what this means for $F_5$. Here, $n=5$, so any prime factor must be of the form $p = k \cdot 2^6 + 1 = 64k + 1$. Suddenly, the search is no longer for a needle in a haystack. We don't have to check every prime; we only need to check numbers like $64(1)+1=65$ (not prime), $64(2)+1=129$ (not prime), $64(3)+1=193$ (prime, but doesn't divide $F_5$), and so on. This intelligent filtering is the essence of number theory!
 
-Euler followed this trail, and with some incredibly clever [modular arithmetic](@article_id:143206), he found a hit. For $k=10$, he got the number $64(10)+1 = 641$. He then demonstrated, with the elegance of a master, that 641 is indeed a factor of $F_5$ . Fermat was wrong.
+Euler followed this trail, and with some incredibly clever [modular arithmetic](@keyword=modular_arithmetic|lang=en-US|style=Feynman), he found a hit. For $k=10$, he got the number $64(10)+1 = 641$. He then demonstrated, with the elegance of a master, that 641 is indeed a factor of $F_5$ [@problem_id:1392453]. Fermat was wrong.
 
 The conjecture had fallen. To this day, no other Fermat primes beyond $F_4$ have ever been found. We have factored many more Fermat numbers, but they all turned out to be composite. Are there only five Fermat primes in the entire universe of numbers? We still don't know. It remains one of the great unsolved mysteries.
 
@@ -65,13 +65,13 @@ To understand it, we need one more tool from Euler's magnificent toolkit: the **
 
 The Gauss-Wantzel theorem states something breathtakingly simple:
 
-*A regular polygon with $n$ sides is constructible with a [straightedge and compass](@article_id:151017) if and only if $\phi(n)$ is a power of 2.*
+*A regular polygon with $n$ sides is constructible with a [straightedge and compass](@keyword=straightedge_and_compass|lang=en-US|style=Feynman) if and only if $\phi(n)$ is a power of 2.*
 
-Let's test it. For Gauss's 17-gon, we have $n=17$. Since 17 is prime, $\phi(17) = 17 - 1 = 16$. And $16 = 2^4$, a power of two! The theorem holds . What about the impossible 7-gon? $\phi(7) = 6$, which is not a [power of 2](@article_id:150478). What about the 9-gon? $\phi(9) = 6$, also not a power of 2. The ancient mystery was solved.
+Let's test it. For Gauss's 17-gon, we have $n=17$. Since 17 is prime, $\phi(17) = 17 - 1 = 16$. And $16 = 2^4$, a power of two! The theorem holds [@problem_id:1785970]. What about the impossible 7-gon? $\phi(7) = 6$, which is not a [power of 2](@keyword=power_of_2|lang=en-US|style=Feynman). What about the 9-gon? $\phi(9) = 6$, also not a power of 2. The ancient mystery was solved.
 
 This brings us to the final, beautiful synthesis. We have a geometric rule (constructibility depends on $\phi(n)$ being a power of 2) and a set of special numbers (Fermat primes). Let's connect them. When is $\phi(n)$ a power of 2?
 
-By looking at the formula for $\phi(n)$, we find a stunning constraint. For $\phi(n)$ to be a power of 2, any odd prime number $p$ that divides $n$ must have a very special property: $p-1$ must also be a [power of 2](@article_id:150478)  .
+By looking at the formula for $\phi(n)$, we find a stunning constraint. For $\phi(n)$ to be a power of 2, any odd prime number $p$ that divides $n$ must have a very special property: $p-1$ must also be a [power of 2](@keyword=power_of_2|lang=en-US|style=Feynman) [@problem_id:1791574] [@problem_id:1791270].
 
 So, let's think. We are looking for a prime number $p$ such that $p-1 = 2^k$ for some integer $k$. This means $p = 2^k + 1$. But we also know that if $k$ has any odd factor, say $k=ab$ with $b$ odd, then $2^k+1 = (2^a)^b+1$ can be factored and isn't prime (unless $a=0$). So for $p$ to be prime, $k$ must have no odd factors. The only way this can happen is if $k$ itself is a power of 2!
 

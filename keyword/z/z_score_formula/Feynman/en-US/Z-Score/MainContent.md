@@ -17,16 +17,16 @@ Let's take it apart. The numerator, $x - \mu$, is the simplest possible comparis
 
 This transforms our measurement from its original, arbitrary scale to a universal, standardized one. On this new scale:
 
--   A data point that is exactly the mean ($x=\mu$) will always have a Z-score of 0. It's the new center of our universe .
--   A data point that is exactly $k$ standard deviations above the mean (i.e., $x = \mu + k\sigma$) will have a Z-score of exactly $k$. The formula gives us back precisely what our verbal description said . For example, a value that is two standard deviations below the mean would have a Z-score of -2.
+-   A data point that is exactly the mean ($x=\mu$) will always have a Z-score of 0. It's the new center of our universe [@problem_id:16571].
+-   A data point that is exactly $k$ standard deviations above the mean (i.e., $x = \mu + k\sigma$) will have a Z-score of exactly $k$. The formula gives us back precisely what our verbal description said [@problem_id:13233]. For example, a value that is two standard deviations below the mean would have a Z-score of -2.
 
-This process, called **standardization**, is completely reversible. If a scientist tells you a measurement had a Z-score of $Z$, you can translate it back to its original value by starting at the mean and taking $Z$ steps of size $\sigma$: $x = \mu + Z\sigma$ . The Z-score is a powerful language for describing location within a distribution.
+This process, called **standardization**, is completely reversible. If a scientist tells you a measurement had a Z-score of $Z$, you can translate it back to its original value by starting at the mean and taking $Z$ steps of size $\sigma$: $x = \mu + Z\sigma$ [@problem_id:16585]. The Z-score is a powerful language for describing location within a distribution.
 
 ### Comparing Apples and Oranges
 
 So why go to all this trouble? The real magic of standardization is that it gives us a common ground to compare things that, on the surface, seem incomparable. It allows us to compare apples and oranges.
 
-Let's consider two students, Alice and Bob, applying to graduate school. They took different entrance exams .
+Let's consider two students, Alice and Bob, applying to graduate school. They took different entrance exams [@problem_id:1403698].
 
 -   Alice took a test where the mean score ($\mu_A$) was 500 and the standard deviation ($\sigma_A$) was 100. She scored a fantastic 680.
 -   Bob took a different, fiendishly difficult test where the mean ($\mu_B$) was 100 and the standard deviation ($\sigma_B$) was 15. He scored 130.
@@ -39,7 +39,7 @@ For Bob: $Z_B = \frac{130 - 100}{15} = 2.0$. His score was a full 2 standard dev
 
 When placed on a common scale, Bob's performance was relatively stronger. His score was more "unusual" in a good way than Alice's. The Z-score cuts through the confusion of different scales and reveals the underlying relative standing.
 
-This same principle allows climatologists to compare the severity of a drought in a lush rainforest with one in a dry desert . A raw rainfall deficit of 300 mm might be a minor inconvenience in a forest that gets 1500 mm of rain on average, but a 90 mm deficit could be catastrophic in a plain that only expects 400 mm. By calculating the Z-score for each region's rainfall against its own historical climate, scientists can create a standardized drought index, allowing them to say definitively which region is experiencing a more statistically extreme event.
+This same principle allows climatologists to compare the severity of a drought in a lush rainforest with one in a dry desert [@problem_id:1388873]. A raw rainfall deficit of 300 mm might be a minor inconvenience in a forest that gets 1500 mm of rain on average, but a 90 mm deficit could be catastrophic in a plain that only expects 400 mm. By calculating the Z-score for each region's rainfall against its own historical climate, scientists can create a standardized drought index, allowing them to say definitively which region is experiencing a more statistically extreme event.
 
 ### A World of Shifting Baselines
 
@@ -51,15 +51,15 @@ Let's walk through it. Originally, $x = \mu_{initial} + 2\sigma$. The new mean i
 
 $$Z_{new} = \frac{x - \mu_{new}}{\sigma} = \frac{(\mu_{initial} + 2\sigma) - (\mu_{initial} + \sigma)}{\sigma} = \frac{\sigma}{\sigma} = 1$$
 
-The point's Z-score has dropped from 2 to 1! . It didn't change, but the world around it did. It is now less "exceptional" than it was before. This is a profound concept. The significance of an observation is not intrinsic to the observation itself, but is a relationship between the observation and its context. This is crucial in fields like finance, where a stock's performance is judged against a shifting market, and in climate science, where today's "record high" temperature is measured against the moving baseline of a warming planet.
+The point's Z-score has dropped from 2 to 1! [@problem_id:16611]. It didn't change, but the world around it did. It is now less "exceptional" than it was before. This is a profound concept. The significance of an observation is not intrinsic to the observation itself, but is a relationship between the observation and its context. This is crucial in fields like finance, where a stock's performance is judged against a shifting market, and in climate science, where today's "record high" temperature is measured against the moving baseline of a warming planet.
 
 ### Beyond the Perfect World: Robustness and Reality
 
-The Z-score formula we've been using is beautiful and elegant. However, its foundation rests on the mean and the standard deviation, two characters who have a critical weakness: they are extremely sensitive to [outliers](@article_id:172372). One wildly incorrect measurement can drag the mean and explode the standard deviation, thereby distorting the Z-scores of all other points.
+The Z-score formula we've been using is beautiful and elegant. However, its foundation rests on the mean and the standard deviation, two characters who have a critical weakness: they are extremely sensitive to [outliers](@keyword=outliers|lang=en-US|style=Feynman). One wildly incorrect measurement can drag the mean and explode the standard deviation, thereby distorting the Z-scores of all other points.
 
-Consider a team of astrophysicists measuring the efficiency of a new photon detector. They get a set of very consistent readings, all around 0.45, but one reading is a bizarre 0.61, likely due to a power surge . If they were to calculate a standard Z-score, that single outlier would inflate the standard deviation, making their "normal" readings seem much closer to the mean than they really are. The yardstick has been stretched and is no longer reliable.
+Consider a team of astrophysicists measuring the efficiency of a new photon detector. They get a set of very consistent readings, all around 0.45, but one reading is a bizarre 0.61, likely due to a power surge [@problem_id:1388870]. If they were to calculate a standard Z-score, that single outlier would inflate the standard deviation, making their "normal" readings seem much closer to the mean than they really are. The yardstick has been stretched and is no longer reliable.
 
-What do we do when faced with such a messy reality? We do what scientists and engineers have always done: we adapt. We build a more robust tool. Instead of the mean, we can use the **[median](@article_id:264383)**—the middle value of the sorted data, which is completely unfazed by extreme [outliers](@article_id:172372). And instead of the standard deviation, we can use a robust [measure of spread](@article_id:177826) called the **Median Absolute Deviation (MAD)**. The name sounds complex, but the idea is simple: it's the [median](@article_id:264383) of how far each data point is from the [median](@article_id:264383). It's a measure of typical spread that simply ignores the wild tantrums of outliers.
+What do we do when faced with such a messy reality? We do what scientists and engineers have always done: we adapt. We build a more robust tool. Instead of the mean, we can use the **[median](@keyword=median|lang=en-US|style=Feynman)**—the middle value of the sorted data, which is completely unfazed by extreme [outliers](@keyword=outliers|lang=en-US|style=Feynman). And instead of the standard deviation, we can use a robust [measure of spread](@keyword=measure_of_spread|lang=en-US|style=Feynman) called the **Median Absolute Deviation (MAD)**. The name sounds complex, but the idea is simple: it's the [median](@keyword=median|lang=en-US|style=Feynman) of how far each data point is from the [median](@keyword=median|lang=en-US|style=Feynman). It's a measure of typical spread that simply ignores the wild tantrums of outliers.
 
 By substituting these robust parts into our original framework, we get a modified Z-score:
 

@@ -1,5 +1,5 @@
 ## Introduction
-The twisting of structural members, or torsion, is a fundamental concept in mechanics. While [simple theories](@article_id:156123) suffice for solid [circular shafts](@article_id:192696), they fall short when analyzing the complex behavior of [thin-walled beams](@article_id:197724) like I-beams or channels. These common structural shapes exhibit a peculiar phenomenon under twist that simplistic models ignore: their [cross-sections](@article_id:167801) do not remain plane. This article addresses this critical knowledge gap by exploring the Vlasov theory of torsion, a more complete framework that accounts for this out-of-plane 'warping.' The reader will first journey through the core ideas in the **Principles and Mechanisms** chapter, uncovering the concepts of warping, the [bimoment](@article_id:184323), and the governing equations that describe them. Subsequently, the **Applications and Interdisciplinary Connections** chapter will demonstrate why this theory is indispensable, showcasing its role in preventing [buckling](@article_id:162321), its implementation in modern computational tools, and its remarkable intellectual parallel in the field of [plasma physics](@article_id:138657).
+The twisting of structural members, or torsion, is a fundamental concept in mechanics. While [simple theories](@keyword=simple_theories|lang=en-US|style=Feynman) suffice for solid [circular shafts](@keyword=circular_shafts|lang=en-US|style=Feynman), they fall short when analyzing the complex behavior of [thin-walled beams](@keyword=thin_walled_beams|lang=en-US|style=Feynman) like I-beams or channels. These common structural shapes exhibit a peculiar phenomenon under twist that simplistic models ignore: their [cross-sections](@keyword=cross_sections|lang=en-US|style=Feynman) do not remain plane. This article addresses this critical knowledge gap by exploring the Vlasov theory of torsion, a more complete framework that accounts for this out-of-plane 'warping.' The reader will first journey through the core ideas in the **Principles and Mechanisms** chapter, uncovering the concepts of warping, the [bimoment](@keyword=bimoment|lang=en-US|style=Feynman), and the governing equations that describe them. Subsequently, the **Applications and Interdisciplinary Connections** chapter will demonstrate why this theory is indispensable, showcasing its role in preventing [buckling](@keyword=buckling|lang=en-US|style=Feynman), its implementation in modern computational tools, and its remarkable intellectual parallel in the field of [plasma physics](@keyword=plasma_physics|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
@@ -9,9 +9,9 @@ To truly understand how a thin-walled beam, like an I-beam or a C-channel, respo
 
 Imagine twisting a long, slender I-beam. If you could somehow paint a perfectly flat grid onto one of its cross-sections and then twist the beam, you would find that the grid doesn't stay flat. It puckers, bulging out of the plane in some places and dipping in at others. This out-of-plane deformation is **warping**. It’s as if the beam, in its effort to accommodate the twist, has to contort itself along its length.
 
-The genius of Vlasov theory is that it gives us a simple, beautiful way to describe this complex puckering. It introduces a geometric property of the cross-section called the **sectorial coordinate** or **[warping function](@article_id:186981)**, which we can denote by $\omega(s)$, where $s$ is a coordinate running along the thin wall of the section's profile . You can think of $\omega(s)$ as a fixed "map" or a "blueprint" of the warping shape. It tells you, for a given cross-section, which parts will tend to bulge forward and which will recede backward.
+The genius of Vlasov theory is that it gives us a simple, beautiful way to describe this complex puckering. It introduces a geometric property of the cross-section called the **sectorial coordinate** or **[warping function](@keyword=warping_function|lang=en-US|style=Feynman)**, which we can denote by $\omega(s)$, where $s$ is a coordinate running along the thin wall of the section's profile [@problem_id:2699914]. You can think of $\omega(s)$ as a fixed "map" or a "blueprint" of the warping shape. It tells you, for a given cross-section, which parts will tend to bulge forward and which will recede backward.
 
-The actual amount of warping displacement, $u_x$, at any point along the beam's length, $x$, depends on how quickly the twist itself is changing. The kinematic heart of the theory is the assumption that the axial displacement is simply this warping map scaled by the local rate of twist, $\theta'(x) = d\theta/dx$ . We can write this as:
+The actual amount of warping displacement, $u_x$, at any point along the beam's length, $x$, depends on how quickly the twist itself is changing. The kinematic heart of the theory is the assumption that the axial displacement is simply this warping map scaled by the local rate of twist, $\theta'(x) = d\theta/dx$ [@problem_id:2927786]. We can write this as:
 
 $$
 u_x(s, x) = -\omega(s) \theta'(x)
@@ -21,7 +21,7 @@ $$
 
 ### Resisting the Ghost: Axial Stresses and the Bimoment
 
-So far, this is just geometry. The real drama begins when this natural tendency to warp is resisted. What happens if you weld one end of our I-beam to a thick, rigid steel plate? That plate will not warp. It absolutely forces the cross-section of the beam at that end to remain flat, meaning $u_x = 0$ at the wall .
+So far, this is just geometry. The real drama begins when this natural tendency to warp is resisted. What happens if you weld one end of our I-beam to a thick, rigid steel plate? That plate will not warp. It absolutely forces the cross-section of the beam at that end to remain flat, meaning $u_x = 0$ at the wall [@problem_id:2927786].
 
 But the beam, under torsion, *wants* to warp. To prevent it, the rigid plate must pull on the parts of the beam that want to bulge forward and push on the parts that want to recede. These pushes and pulls are nothing other than longitudinal **normal stresses**, $\sigma_x$.
 
@@ -31,17 +31,17 @@ $$
 \varepsilon_x = \frac{\partial u_x}{\partial x} = \frac{\partial}{\partial x} \left( -\omega(s) \theta'(x) \right) = -\omega(s) \theta''(x)
 $$
 
-This equation is the crux of the whole theory. It shows that [axial strain](@article_id:160317) only appears when $\theta''(x)$ is non-zero. The term $\theta''(x)$, the second derivative of the twist angle, is sometimes called the "warping curvature" because it describes how the rate of twist (and thus the amount of warping) changes along the beam's axis . This change is forced upon the beam by things like boundary restraints or variations in the applied torque.
+This equation is the crux of the whole theory. It shows that [axial strain](@keyword=axial_strain|lang=en-US|style=Feynman) only appears when $\theta''(x)$ is non-zero. The term $\theta''(x)$, the second derivative of the twist angle, is sometimes called the "warping curvature" because it describes how the rate of twist (and thus the amount of warping) changes along the beam's axis [@problem_id:2710748]. This change is forced upon the beam by things like boundary restraints or variations in the applied torque.
 
-According to Hooke's Law, this strain gives rise to a stress: $\sigma_x = E \varepsilon_x = -E \omega(s) \theta''(x)$. These are the **warping [normal stresses](@article_id:260128)**. They are a direct consequence of "frustrated" or **[restrained warping](@article_id:183926)**.
+According to Hooke's Law, this strain gives rise to a stress: $\sigma_x = E \varepsilon_x = -E \omega(s) \theta''(x)$. These are the **warping [normal stresses](@keyword=normal_stresses|lang=en-US|style=Feynman)**. They are a direct consequence of "frustrated" or **[restrained warping](@keyword=restrained_warping|lang=en-US|style=Feynman)**.
 
-Now, this pattern of stresses is quite complex. It's not a simple uniform pull or a simple bending pattern. To handle this, Vlasov theory introduces a new kind of stress resultant: the **[bimoment](@article_id:184323)**, denoted by $B$. The [bimoment](@article_id:184323) is a higher-order quantity that captures the intensity of this self-equilibrating stress pattern. It is defined by integrating the warping stress $\sigma_x$ over the cross-section, weighted by the [warping function](@article_id:186981) $\omega(s)$ itself .
+Now, this pattern of stresses is quite complex. It's not a simple uniform pull or a simple bending pattern. To handle this, Vlasov theory introduces a new kind of stress resultant: the **[bimoment](@keyword=bimoment|lang=en-US|style=Feynman)**, denoted by $B$. The [bimoment](@keyword=bimoment|lang=en-US|style=Feynman) is a higher-order quantity that captures the intensity of this self-equilibrating stress pattern. It is defined by integrating the warping stress $\sigma_x$ over the cross-section, weighted by the [warping function](@keyword=warping_function|lang=en-US|style=Feynman) $\omega(s)$ itself [@problem_id:2705621].
 
 $$
 B(x) = \int_A \sigma_x(s, x) \omega(s) dA
 $$
 
-For an I-beam, you can visualize the [bimoment](@article_id:184323) as the result of the top flange being bent one way and the bottom flange being bent the opposite way. It's a pair of moments, which is where the name "[bimoment](@article_id:184323)" comes from. The net force is zero, and the net moment is zero, but it represents a very real state of [internal stress](@article_id:190393) .
+For an I-beam, you can visualize the [bimoment](@keyword=bimoment|lang=en-US|style=Feynman) as the result of the top flange being bent one way and the bottom flange being bent the opposite way. It's a pair of moments, which is where the name "[bimoment](@keyword=bimoment|lang=en-US|style=Feynman)" comes from. The net force is zero, and the net moment is zero, but it represents a very real state of [internal stress](@keyword=internal_stress|lang=en-US|style=Feynman) [@problem_id:2705353].
 
 If we substitute our expression for $\sigma_x$ into the definition of $B$, we discover another elegant relationship:
 
@@ -49,38 +49,38 @@ $$
 B(x) = \int_A \left( -E \omega(s) \theta''(x) \right) \omega(s) dA = -E \theta''(x) \int_A \omega(s)^2 dA
 $$
 
-The integral $\int_A \omega(s)^2 dA$ is another fundamental geometric property of the cross-section, called the **[warping constant](@article_id:195359)**, denoted $I_\omega$. This gives us the central constitutive law of [warping torsion](@article_id:199267)  :
+The integral $\int_A \omega(s)^2 dA$ is another fundamental geometric property of the cross-section, called the **[warping constant](@keyword=warping_constant|lang=en-US|style=Feynman)**, denoted $I_\omega$. This gives us the central constitutive law of [warping torsion](@keyword=warping_torsion|lang=en-US|style=Feynman) [@problem_id:2927721] [@problem_id:2699914]:
 
 $$
 B(x) = -EI_\omega \theta''(x)
 $$
 
-This is a generalized Hooke's Law for warping. It states that the [bimoment](@article_id:184323) (the measure of warping stress) is proportional to the warping curvature (the measure of non-uniform warping), with the proportionality constant $EI_\omega$ representing the beam's resistance to non-uniform warping.
+This is a generalized Hooke's Law for warping. It states that the [bimoment](@keyword=bimoment|lang=en-US|style=Feynman) (the measure of warping stress) is proportional to the warping curvature (the measure of non-uniform warping), with the proportionality constant $EI_\omega$ representing the beam's resistance to non-uniform warping.
 
 ### The Yin and Yang of Torsion: Open vs. Closed Sections
 
 Why is this theory so important for shapes like I-beams and channels? These are known as **thin-walled open sections**. They are notoriously "floppy" in torsion. Their resistance to simple, uniform (Saint-Venant) torsion is very low because they can't develop an efficient shear flow. They primarily resist twisting by warping.
 
-Now consider a **thin-walled closed section**, like a hollow tube or a box beam. We know from experience that these are vastly stiffer in torsion than their open-section counterparts. A soda can is tough to twist; cut a slit down its side, and it becomes flimsy. Vlasov theory provides a beautiful explanation for this .
+Now consider a **thin-walled closed section**, like a hollow tube or a box beam. We know from experience that these are vastly stiffer in torsion than their open-section counterparts. A soda can is tough to twist; cut a slit down its side, and it becomes flimsy. Vlasov theory provides a beautiful explanation for this [@problem_id:2710735].
 
-For a closed section, the warping displacement $u_x$ must be continuous as you go all the way around the loop. You can't have a physical gap or "jump" in the material. This simple requirement of continuity places a powerful constraint on the mathematics. For a symmetric section like a circular tube, it forces the [warping function](@article_id:186981) $\omega(s)$ to be identically zero everywhere!
+For a closed section, the warping displacement $u_x$ must be continuous as you go all the way around the loop. You can't have a physical gap or "jump" in the material. This simple requirement of continuity places a powerful constraint on the mathematics. For a symmetric section like a circular tube, it forces the [warping function](@keyword=warping_function|lang=en-US|style=Feynman) $\omega(s)$ to be identically zero everywhere!
 
 And if $\omega(s) = 0$, the consequences are immediate and profound:
-- The [warping constant](@article_id:195359) $I_\omega = \int \omega^2 dA = 0$.
-- The warping [normal stress](@article_id:183832) $\sigma_x = -E \omega \theta'' = 0$.
-- The [bimoment](@article_id:184323) $B = -EI_\omega \theta'' = 0$.
+- The [warping constant](@keyword=warping_constant|lang=en-US|style=Feynman) $I_\omega = \int \omega^2 dA = 0$.
+- The warping [normal stress](@keyword=normal_stress|lang=en-US|style=Feynman) $\sigma_x = -E \omega \theta'' = 0$.
+- The [bimoment](@keyword=bimoment|lang=en-US|style=Feynman) $B = -EI_\omega \theta'' = 0$.
 
-For a closed tube, the entire mechanism of [warping torsion](@article_id:199267) vanishes. It resists twisting through a different, highly efficient shear-based mechanism (described by Bredt's theory). This is why closed sections are the shape of choice for driveshafts and other components subjected to heavy torsion—they don't suffer from the complex and potentially damaging effects of warping.
+For a closed tube, the entire mechanism of [warping torsion](@keyword=warping_torsion|lang=en-US|style=Feynman) vanishes. It resists twisting through a different, highly efficient shear-based mechanism (described by Bredt's theory). This is why closed sections are the shape of choice for driveshafts and other components subjected to heavy torsion—they don't suffer from the complex and potentially damaging effects of warping.
 
 ### Conversations with Boundaries
 
-The entire story of warping is a dialogue between a beam's inherent desire to warp and the constraints placed upon it by its surroundings. The theory truly comes to life when we consider the **boundary conditions** .
+The entire story of warping is a dialogue between a beam's inherent desire to warp and the constraints placed upon it by its surroundings. The theory truly comes to life when we consider the **boundary conditions** [@problem_id:2927750].
 
 At the end of a beam, we can have two principal scenarios:
-1.  **Free-Warping End**: This is an end that is completely free to warp. Since there is no restraint, no warping stresses can develop. This means the generalized stress associated with warping, the [bimoment](@article_id:184323), must be zero: $B=0$. From our constitutive law, this is equivalent to setting $\theta''=0$ at that end.
+1.  **Free-Warping End**: This is an end that is completely free to warp. Since there is no restraint, no warping stresses can develop. This means the generalized stress associated with warping, the [bimoment](@keyword=bimoment|lang=en-US|style=Feynman), must be zero: $B=0$. From our constitutive law, this is equivalent to setting $\theta''=0$ at that end.
 2.  **Fixed-Warping End**: This is an end that is fully restrained, like being welded to a rigid wall. It is kinematically forbidden from warping, so the axial displacement must be zero: $u_x=0$. From our kinematic relation, this is equivalent to setting the rate of twist to zero: $\theta'=0$ at that end.
 
-The total torque, $T$, carried by the beam is the sum of the simple Saint-Venant part ($T_{sv} = GJ\theta'$) and the warping part, which turns out to be related to the change in the [bimoment](@article_id:184323) ($T_\omega = -dB/dx$). This leads us to the master equation of Vlasov torsion theory :
+The total torque, $T$, carried by the beam is the sum of the simple Saint-Venant part ($T_{sv} = GJ\theta'$) and the warping part, which turns out to be related to the change in the [bimoment](@keyword=bimoment|lang=en-US|style=Feynman) ($T_\omega = -dB/dx$). This leads us to the master equation of Vlasov torsion theory [@problem_id:2927726]:
 
 $$
 T(x) = GJ\frac{d\theta}{dx} - EI_\omega \frac{d^3\theta}{dx^3}
@@ -98,7 +98,7 @@ $$
 EI_\omega \frac{d^3\theta}{dx^3} - GJ\frac{d\theta}{dx} = 0
 $$
 
-The solution to this equation has an [exponential decay](@article_id:136268) form. It tells us that the warping effects—the [bimoment](@article_id:184323) and the warping stresses—decay exponentially as we move away from the source of the restraint. We can even define a **characteristic length scale** over which this decay happens :
+The solution to this equation has an [exponential decay](@keyword=exponential_decay|lang=en-US|style=Feynman) form. It tells us that the warping effects—the [bimoment](@keyword=bimoment|lang=en-US|style=Feynman) and the warping stresses—decay exponentially as we move away from the source of the restraint. We can even define a **characteristic length scale** over which this decay happens [@problem_id:2927726]:
 
 $$
 \ell = \sqrt{\frac{EI_\omega}{GJ}}

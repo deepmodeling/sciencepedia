@@ -7,7 +7,7 @@ Have you ever walked up a steep hill and felt your legs burn? Or coasted effortl
 
 ### The Simple Beauty of "Rise Over Run"
 
-Imagine you are a civil engineer planning an underground drainage pipe. The pipe must connect an inlet at one location to an outlet at a lower elevation somewhere else . You have two points in space, and you want to describe the straight path between them. The most important question is: how steep is that path?
+Imagine you are a civil engineer planning an underground drainage pipe. The pipe must connect an inlet at one location to an outlet at a lower elevation somewhere else [@problem_id:2163668]. You have two points in space, and you want to describe the straight path between them. The most important question is: how steep is that path?
 
 To answer this, we just need to measure two things. First, the vertical change in height, which we call the **rise**. In the case of the drainage pipe, which goes from an elevation of $88.4$ meters down to $71.9$ meters, the rise is $71.9 - 88.4 = -16.5$ meters. The negative sign is important—it tells us we’re going *down*. Second, we measure the horizontal distance covered, which we call the **run**. For the pipe, this is the distance from $75.2$ meters to $565.7$ meters, giving a run of $565.7 - 75.2 = 490.5$ meters.
 
@@ -19,7 +19,7 @@ $$
 
 For our pipe, the slope is $\frac{-16.5}{490.5} \approx -0.0336$. This small negative number tells us precisely that for every meter the pipe travels horizontally, it drops by about $3.36$ centimeters. It’s a gentle, downward slope.
 
-This principle is universal. An architect designing a wheelchair ramp must follow accessibility codes. Suppose a code mandates that the horizontal run must be at least three times the vertical rise . If the rise is some height $h$, the run must be $r = 3h$. What's the slope?
+This principle is universal. An architect designing a wheelchair ramp must follow accessibility codes. Suppose a code mandates that the horizontal run must be at least three times the vertical rise [@problem_id:2133403]. If the rise is some height $h$, the run must be $r = 3h$. What's the slope?
 
 $$
 m = \frac{\text{rise}}{\text{run}} = \frac{h}{3h} = \frac{1}{3}
@@ -35,7 +35,7 @@ A positive slope, like our ramp's $m = \frac{1}{3}$, means the line goes uphill 
 
 A negative slope, like our drainage pipe's $m = -0.0336$, means the line goes downhill as you move from left to right. The more negative the number, the more dramatic the descent.
 
-What about a perfectly flat road? Imagine a surveyor mapping a piece of land and placing two stakes at the exact same elevation, say at coordinates $(15, 50)$ and $(85, 50)$ . The run is $85 - 15 = 70$ meters. But what is the rise? It's $50 - 50 = 0$. So the slope is:
+What about a perfectly flat road? Imagine a surveyor mapping a piece of land and placing two stakes at the exact same elevation, say at coordinates $(15, 50)$ and $(85, 50)$ [@problem_id:2111409]. The run is $85 - 15 = 70$ meters. But what is the rise? It's $50 - 50 = 0$. So the slope is:
 
 $$
 m = \frac{0}{70} = 0
@@ -49,13 +49,13 @@ $$
 m = \frac{90}{0} = ?
 $$
 
-Division by zero! In mathematics, this operation is not defined. It doesn't equal infinity or some other mystical number; it's simply an invalid operation. This means a **vertical line has an undefined slope**. It doesn't *have* a slope that we can represent as a real number. This is a profound point. If you were to create a function that takes any line in the plane and gives you its slope, that function would fail for all vertical lines . There's a "hole" in the definition. A vertical line is all rise and no run, a case so extreme it breaks our simple ratio.
+Division by zero! In mathematics, this operation is not defined. It doesn't equal infinity or some other mystical number; it's simply an invalid operation. This means a **vertical line has an undefined slope**. It doesn't *have* a slope that we can represent as a real number. This is a profound point. If you were to create a function that takes any line in the plane and gives you its slope, that function would fail for all vertical lines [@problem_id:1403369]. There's a "hole" in the definition. A vertical line is all rise and no run, a case so extreme it breaks our simple ratio.
 
 ### A New Viewpoint: Slope as an Angle
 
 So far, we've thought about slope using two points. But there’s another, equally beautiful way to look at it. Instead of coordinates, what if we just describe a line by the angle it makes with the ground?
 
-Imagine a solar panel on a roof, tilted to catch the sun . Let's say it makes an angle $\theta$ with the horizontal. We can form a right-angled triangle where the "run" is the side adjacent to the angle $\theta$, and the "rise" is the side opposite to it.
+Imagine a solar panel on a roof, tilted to catch the sun [@problem_id:2111451]. Let's say it makes an angle $\theta$ with the horizontal. We can form a right-angled triangle where the "run" is the side adjacent to the angle $\theta$, and the "rise" is the side opposite to it.
 
 From basic trigonometry, we know the definition of the tangent function is:
 
@@ -77,12 +77,12 @@ Our world isn't made only of straight lines. We live among winding roads, rollin
 
 This is precisely the question that drove Isaac Newton and Gottfried Wilhelm Leibniz to invent calculus. The brilliant insight was to stop asking for *the* slope and start asking for the slope *at a specific point*.
 
-Imagine you're looking at a [graph of a function](@article_id:158776), say the parabola $f(x) = kx^2 + C$ . To find the slope at a single point $P$, we can't use our rise-over-run formula directly because we only have one point! So, we cheat. We pick a second point, $Q$, very close to $P$ on the curve. The line that passes through both $P$ and $Q$ is called a **[secant line](@article_id:178274)**. The slope of this secant line is something we can easily calculate: it's just the rise over run between $P$ and $Q$ . This slope is a good *approximation* of the curve's steepness in that little neighborhood. In the language of numerical analysis, this is called a **first divided difference**.
+Imagine you're looking at a [graph of a function](@keyword=graph_of_a_function|lang=en-US|style=Feynman), say the parabola $f(x) = kx^2 + C$ [@problem_id:5937]. To find the slope at a single point $P$, we can't use our rise-over-run formula directly because we only have one point! So, we cheat. We pick a second point, $Q$, very close to $P$ on the curve. The line that passes through both $P$ and $Q$ is called a **[secant line](@keyword=secant_line|lang=en-US|style=Feynman)**. The slope of this secant line is something we can easily calculate: it's just the rise over run between $P$ and $Q$ [@problem_id:2189913]. This slope is a good *approximation* of the curve's steepness in that little neighborhood. In the language of numerical analysis, this is called a **first divided difference**.
 
-Now for the magic of calculus. What happens as we slide the point $Q$ along the curve, getting it closer and closer and closer to $P$? The secant line pivots, and as the distance between $P$ and $Q$ shrinks to zero, the [secant line](@article_id:178274) settles into a unique final position. This limiting line, which just kisses the curve at the single point $P$, is called the **tangent line**. The slope of this tangent line is what we define as the slope of the curve *at that point*.
+Now for the magic of calculus. What happens as we slide the point $Q$ along the curve, getting it closer and closer and closer to $P$? The secant line pivots, and as the distance between $P$ and $Q$ shrinks to zero, the [secant line](@keyword=secant_line|lang=en-US|style=Feynman) settles into a unique final position. This limiting line, which just kisses the curve at the single point $P$, is called the **tangent line**. The slope of this tangent line is what we define as the slope of the curve *at that point*.
 
 This process of finding the slope by taking a limit is the core idea of the **derivative**. For the parabola $f(x) = kx^2 + C$, this limiting process reveals that the slope at any point $x$ is given by a new function, the derivative $f'(x) = 2kx$. The simple, constant slope of a line has evolved into a function that tells us the instantaneous rate of change at every point along a curve.
 
-This idea extends even further. Just as the first divided difference approximates the slope (the first derivative), a **second divided difference**, calculated from three points, tells us about the *change in the slope*. It measures how the curve is bending, and it's intimately related to the curvature of the function .
+This idea extends even further. Just as the first divided difference approximates the slope (the first derivative), a **second divided difference**, calculated from three points, tells us about the *change in the slope*. It measures how the curve is bending, and it's intimately related to the curvature of the function [@problem_id:2189913].
 
 And so, from the simple, static ratio of "rise over run" used to build a ramp, we have journeyed to the dynamic, powerful heart of calculus. We've seen how this one idea unifies algebra, geometry, and trigonometry, and ultimately provides the language to describe change itself—the very essence of the physical world. The slope is not just a number; it is the beginning of a grand story.

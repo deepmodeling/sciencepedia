@@ -1,7 +1,7 @@
 ## Introduction
-When we think of "distance" or "size," we instinctively picture a straight line—the shortest path between two points. This familiar concept, known in mathematics as the L2 or Euclidean norm, is the bedrock of our geometric intuition. However, in the complex landscapes of data science, engineering, and physics, problems often demand a more nuanced understanding of magnitude. A single, one-size-fits-all ruler is insufficient when "size" can mean total cost, worst-case error, or the simplest explanation. This article addresses this gap by introducing a versatile family of mathematical tools: [vector norms](@article_id:140155).
+When we think of "distance" or "size," we instinctively picture a straight line—the shortest path between two points. This familiar concept, known in mathematics as the L2 or Euclidean norm, is the bedrock of our geometric intuition. However, in the complex landscapes of data science, engineering, and physics, problems often demand a more nuanced understanding of magnitude. A single, one-size-fits-all ruler is insufficient when "size" can mean total cost, worst-case error, or the simplest explanation. This article addresses this gap by introducing a versatile family of mathematical tools: [vector norms](@keyword=vector_norms|lang=en-US|style=Feynman).
 
-We will explore the three most fundamental members of this family: the L1 (Manhattan), L2 (Euclidean), and L-infinity (Chebyshev) norms. In the "Principles and Mechanisms" chapter, we will uncover their core definitions, visualize their distinct geometric personalities, and reveal how their unique properties give rise to powerful concepts like sparsity. Subsequently, the "Applications and Interdisciplinary Connections" chapter will demonstrate how the deliberate choice of a norm becomes a crucial modeling decision, enabling breakthroughs in fields ranging from machine learning and [geophysics](@article_id:146848) to [computational economics](@article_id:140429).
+We will explore the three most fundamental members of this family: the L1 (Manhattan), L2 (Euclidean), and L-infinity (Chebyshev) norms. In the "Principles and Mechanisms" chapter, we will uncover their core definitions, visualize their distinct geometric personalities, and reveal how their unique properties give rise to powerful concepts like sparsity. Subsequently, the "Applications and Interdisciplinary Connections" chapter will demonstrate how the deliberate choice of a norm becomes a crucial modeling decision, enabling breakthroughs in fields ranging from machine learning and [geophysics](@keyword=geophysics|lang=en-US|style=Feynman) to [computational economics](@keyword=computational_economics|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
@@ -25,7 +25,7 @@ Let's measure it with our three different rulers.
     $$ \lVert \Delta p \rVert_1 = |0.4| + |-0.5| = 0.4 + 0.5 = 0.900 \text{ meters} $$
     Notice this is larger than the L2 norm. It represents the total correction required in each coordinate direction, summed together.
 
-3.  **The L-infinity Norm (Chebyshev Norm)**: Let's switch analogies. Imagine a king on a chessboard. A king can move one square in any direction: horizontally, vertically, or diagonally. The minimum number of moves to get from one square to another isn't the L1 or L2 distance. It's determined by the *larger* of the horizontal or vertical distances you need to cover. This is the essence of the L-[infinity norm](@article_id:268367): it is simply the maximum absolute value of any component in the vector.
+3.  **The L-infinity Norm (Chebyshev Norm)**: Let's switch analogies. Imagine a king on a chessboard. A king can move one square in any direction: horizontally, vertically, or diagonally. The minimum number of moves to get from one square to another isn't the L1 or L2 distance. It's determined by the *larger* of the horizontal or vertical distances you need to cover. This is the essence of the L-[infinity norm](@keyword=infinity_norm|lang=en-US|style=Feynman): it is simply the maximum absolute value of any component in the vector.
     $$ \lVert \Delta p \rVert_\infty = \max(|0.4|, |-0.5|) = 0.500 \text{ meters} $$
     This norm doesn't care about the total displacement, only about the single largest deviation along any one axis.
 
@@ -33,16 +33,16 @@ Three different norms, three different numbers: $0.640$, $0.900$, and $0.500$. N
 
 ### The Shape of Distance
 
-To truly grasp the personality of each norm, let's ask a simple geometric question: What does the set of all points that are "one unit" away from the origin look like? This shape, called the **[unit ball](@article_id:142064)**, reveals everything.
+To truly grasp the personality of each norm, let's ask a simple geometric question: What does the set of all points that are "one unit" away from the origin look like? This shape, called the **[unit ball](@keyword=unit_ball|lang=en-US|style=Feynman)**, reveals everything.
 
 -   For the **L2 norm**, the equation is $\sqrt{x^2 + y^2} = 1$, which is just $x^2 + y^2 = 1$. This is the equation for a perfect **circle**. It's smooth, round, and democratic—it treats all directions equally.
 
 -   For the **L1 norm**, the equation is $|x| + |y| = 1$. If you plot this, you get a **diamond**, or a square rotated by 45 degrees. It's not smooth; it has sharp points, or *corners*, that lie exactly on the axes.
 
--   For the **L-[infinity norm](@article_id:268367)**, the equation is $\max(|x|, |y|) = 1$. This defines a **square** aligned with the axes. It also has sharp corners.
+-   For the **L-[infinity norm](@keyword=infinity_norm|lang=en-US|style=Feynman)**, the equation is $\max(|x|, |y|) = 1$. This defines a **square** aligned with the axes. It also has sharp corners.
 
 These shapes are not just mathematical curiosities. The smooth curve of the L2 circle and the sharp corners of the L1 and L-infinity shapes are the geometric source of their profoundly different behaviors in real-world applications.
 
-![Unit circles for the L2 norm (circle), L1 norm (diamond), and L-[infinity norm](@article_id:268367) (square).](https://i.imgur.com/5J3oU7u.png)
+![Unit circles for the L2 norm (circle), L1 norm (diamond), and L-[infinity norm](@keyword=infinity_norm|lang=en-US|style=Feynman) (square).](https://i.imgur.com/5J3oU7u.png)
 
-*Unit circles for the L2 norm (circle), L1 norm (diamond), and L-[infinity norm](@article_id:268367) (square).*
+*Unit circles for the L2 norm (circle), L1 norm (diamond), and L-[infinity norm](@keyword=infinity_norm|lang=en-US|style=Feynman) (square).*

@@ -1,45 +1,45 @@
 ## 应用与跨学科联系
 
-在上一章中，我们将[卡西米尔不变量](@article_id:360715)视为相当形式化的数学对象——它们是为[李代数](@article_id:298403)的不可约表示提供唯一识别标签的数字。你可能会想把这当作一种巧妙但抽象的记账方法，是数学家们的一些深奥琐事，然后将其束之高阁。但如果说物理学教会了我们什么，那就是最优雅的数学从来不*仅仅是*数学。它本身就是自然的语言。
+在上一章中，我们将[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)视为相当形式化的数学对象——它们是为[李代数](@keyword=lie_algebras|lang=zh-CN|style=Feynman)的不可约表示提供唯一识别标签的数字。你可能会想把这当作一种巧妙但抽象的记账方法，是数学家们的一些深奥琐事，然后将其束之高阁。但如果说物理学教会了我们什么，那就是最优雅的数学从来不*仅仅是*数学。它本身就是自然的语言。
 
-现在，我们准备好看到这些抽象的标签变得鲜活起来。我们将踏上一段旅程，去发现[卡西米尔不变量](@article_id:360715)如何不仅仅是标签，更是物理定律的支配者。我们将看到它们决定着基本力的强度，定义[行星轨道](@article_id:357873)的能量，划定运动得以发生的舞台，甚至指导我们设计[量子计算](@article_id:303150)机。这就是物理学的魔力：将一个抽象的数字变成一个具体、物理的真理。
+现在，我们准备好看到这些抽象的标签变得鲜活起来。我们将踏上一段旅程，去发现[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)如何不仅仅是标签，更是物理定律的支配者。我们将看到它们决定着基本力的强度，定义[行星轨道](@keyword=planetary_orbits|lang=zh-CN|style=Feynman)的能量，划定运动得以发生的舞台，甚至指导我们设计[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)机。这就是物理学的魔力：将一个抽象的数字变成一个具体、物理的真理。
 
-### 宇宙规则手册：[粒子物理学](@article_id:305677)与统一理论
+### 宇宙规则手册：[粒子物理学](@keyword=particle_physics|lang=zh-CN|style=Feynman)与统一理论
 
-我们的第一站是亚原子领域，一个由[量子色动力学](@article_id:304300)（QCD）理论支配的夸克和胶子的世界。这里的对称性是 $SU(3)$ 群的对称性，其表示描述了不同种类的“带色荷”粒子。正是在这里，[卡西米尔不变量](@article_id:360715)以最直接和最有力的形式出现。
+我们的第一站是亚原子领域，一个由[量子色动力学](@keyword=quantum_chromodynamics|lang=zh-CN|style=Feynman)（QCD）理论支配的夸克和胶子的世界。这里的对称性是 $SU(3)$ 群的对称性，其表示描述了不同种类的“带色荷”粒子。正是在这里，[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)以最直接和最有力的形式出现。
 
-想象两个带[色荷](@article_id:312338)的粒子相互作用。它们之间的力强度——一个对另一个的“抓力”——并非普适的。它深刻地取决于它们是什么样的粒子，也就是说，取决于它们所属的表示。耦合强度是用一个“[色因子](@article_id:309893)”计算的，这个数字最终被证明与相互作用粒子及其组合态的[卡西米尔不变量](@article_id:360715)直接相关 。在非常真实的意义上，$C_2(R)$ 的值告诉你处于表示 $R$ 中的粒子“感受”到色力的强度有多大。更大的卡西米尔值意味着更强的相互作用。
+想象两个带[色荷](@keyword=color_charge|lang=zh-CN|style=Feynman)的粒子相互作用。它们之间的力强度——一个对另一个的“抓力”——并非普适的。它深刻地取决于它们是什么样的粒子，也就是说，取决于它们所属的表示。耦合强度是用一个“[色因子](@keyword=color_factor|lang=zh-CN|style=Feynman)”计算的，这个数字最终被证明与相互作用粒子及其组合态的[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)直接相关 [@problem_id:336648]。在非常真实的意义上，$C_2(R)$ 的值告诉你处于表示 $R$ 中的粒子“感受”到色力的强度有多大。更大的卡西米尔值意味着更强的相互作用。
 
-这带来了一个惊人的结果，与量子色动力学最深的奥秘之一有关：[夸克禁闭](@article_id:304188)。夸克从未被单独观察到；它们被永恒地禁闭在质子和中子内部。主流的图像是，分离一个夸克和一个反夸克所需的能量随距离线性增长，就好像它们被一根不可断裂的弹性弦连接着。这个弦单位长度的能量被称为[弦张力](@article_id:301765)，$\sigma$。一个被称为**卡西米尔标度**的精彩假说提出，这个[弦张力](@article_id:301765)与夸克所在表示的二次[卡西米尔不变量](@article_id:360715)成正比：$\sigma_R \propto C_2(R)$。
+这带来了一个惊人的结果，与量子色动力学最深的奥秘之一有关：[夸克禁闭](@keyword=quark_confinement|lang=zh-CN|style=Feynman)。夸克从未被单独观察到；它们被永恒地禁闭在质子和中子内部。主流的图像是，分离一个夸克和一个反夸克所需的能量随距离线性增长，就好像它们被一根不可断裂的弹性弦连接着。这个弦单位长度的能量被称为[弦张力](@keyword=string_tension|lang=zh-CN|style=Feynman)，$\sigma$。一个被称为**卡西米尔标度**的精彩假说提出，这个[弦张力](@keyword=string_tension|lang=zh-CN|style=Feynman)与夸克所在表示的二次[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)成正比：$\sigma_R \propto C_2(R)$。
 
-这意味着处于[基本表示](@article_id:318083)($\mathbf{3}$)中的夸克感受到一定的禁闭力。但如果存在于其他表示中的粒子，比如 $SU(3)$ 的六重态($\mathbf{6}$)表示，它们的[卡西米尔不变量](@article_id:360715)要大 $2.5$ 倍  。束缚这些假想粒子的“弦”将强 $2.5$ 倍！[卡西米尔不变量](@article_id:360715)，一个来自群论的抽象数字，具有直接的物理意义：它是粒子禁闭程度的度量。
+这意味着处于[基本表示](@keyword=fundamental_representation|lang=zh-CN|style=Feynman)($\mathbf{3}$)中的夸克感受到一定的禁闭力。但如果存在于其他表示中的粒子，比如 $SU(3)$ 的六重态($\mathbf{6}$)表示，它们的[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)要大 $2.5$ 倍 [@problem_id:170680] [@problem_id:1094961]。束缚这些假想粒子的“弦”将强 $2.5$ 倍！[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)，一个来自群论的抽象数字，具有直接的物理意义：它是粒子禁闭程度的度量。
 
-[卡西米尔不变量](@article_id:360715)也充当粒子的身份证。当粒子相互作用并组合时，生成的系统可以存在于一组新的可能状态中，每个状态都对应一个新的[不可约表示](@article_id:298633)。例如，当一个夸克(在表示 $\mathbf{3}$ 中)和一个[胶子](@article_id:312141)(在表示 $\mathbf{8}$ 中)相互作用时，生成的系统是新状态的组合，每个状态都有自己独特的[卡西米尔不变量](@article_id:360715)，自己不可伪造的指纹 。
+[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)也充当粒子的身份证。当粒子相互作用并组合时，生成的系统可以存在于一组新的可能状态中，每个状态都对应一个新的[不可约表示](@keyword=irreducible_representations|lang=zh-CN|style=Feynman)。例如，当一个夸克(在表示 $\mathbf{3}$ 中)和一个[胶子](@keyword=gluons|lang=zh-CN|style=Feynman)(在表示 $\mathbf{8}$ 中)相互作用时，生成的系统是新状态的组合，每个状态都有自己独特的[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)，自己不可伪造的指纹 [@problem_id:180042]。
 
-作为宇宙记账员的这一角色，在理论物理学的宏伟抱负——大统一理论（GUTs）中，变得更加至关重要。这些理论梦想将强力、[弱力](@article_id:313354)和[电磁力](@article_id:374898)统一为一种单一的、潜在的力，由一个更大的对称群如 $SO(10)$ 来描述。在这些理论中，我们低能世界中看起来迥然不同的粒子——例如夸克和轻子——被揭示为同一个统一对象的不同侧面，即大统一理论群的同一个大表示。
+作为宇宙记账员的这一角色，在理论物理学的宏伟抱负——大统一理论（GUTs）中，变得更加至关重要。这些理论梦想将强力、[弱力](@keyword=weak_interaction|lang=zh-CN|style=Feynman)和[电磁力](@keyword=electromagnetic_forces|lang=zh-CN|style=Feynman)统一为一种单一的、潜在的力，由一个更大的对称群如 $SO(10)$ 来描述。在这些理论中，我们低能世界中看起来迥然不同的粒子——例如夸克和轻子——被揭示为同一个统一对象的不同侧面，即大统一理论群的同一个大表示。
 
-当宇宙冷却，这个宏大的对称性“破缺”成我们今天所见的各种力时，这些大表示分裂成我们所熟悉的小表示。例如，在一些模型中，$SO(10)$ 群破缺为 [Pati-Salam 群](@article_id:376995)，而基本[费米子](@article_id:306655)则被发现在 $SU(4)$ 的一个表示中 。这些粒子的性质被它们现在所处的表示的[卡西米尔不变量](@article_id:360715)深深地烙印着。此外，对称性破缺的机制本身是由[希格斯场](@article_id:320485)驱动的，这些场本身在特定的、通常是巨大的表示（如 $SO(10)$ 的 $\mathbf{210}$ 维或 $\overline{\mathbf{126}}$ 维表示）下变换。这些希格斯场的[卡西米尔不变量](@article_id:360715)是预测力的强度如何随能量变化，或者新粒子的质量可能是什么的关键输入  。[卡西米尔不变量](@article_id:360715)的抽象代数成为探索宇宙结构起源的预测工具。
+当宇宙冷却，这个宏大的对称性“破缺”成我们今天所见的各种力时，这些大表示分裂成我们所熟悉的小表示。例如，在一些模型中，$SO(10)$ 群破缺为 [Pati-Salam 群](@keyword=pati_salam_group|lang=zh-CN|style=Feynman)，而基本[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)则被发现在 $SU(4)$ 的一个表示中 [@problem_id:687479]。这些粒子的性质被它们现在所处的表示的[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)深深地烙印着。此外，对称性破缺的机制本身是由[希格斯场](@keyword=higgs_field|lang=zh-CN|style=Feynman)驱动的，这些场本身在特定的、通常是巨大的表示（如 $SO(10)$ 的 $\mathbf{210}$ 维或 $\overline{\mathbf{126}}$ 维表示）下变换。这些希格斯场的[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)是预测力的强度如何随能量变化，或者新粒子的质量可能是什么的关键输入 [@problem_id:676364] [@problem_id:778179]。[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)的抽象代数成为探索宇宙结构起源的预测工具。
 
 ### 运动中的隐藏对称性
 
-现在，让我们从宇宙学的边缘收回目光，看看离我们更近的东西：行星围绕其恒星的优美、寂静的舞蹈。这是经典力学的领域，由 Isaac Newton 的引力定律描述。这似乎与夸克和胶子的[量子混沌](@article_id:374184)世界相去甚远。然而，同样优美的数学在这里发挥着作用。
+现在，让我们从宇宙学的边缘收回目光，看看离我们更近的东西：行星围绕其恒星的优美、寂静的舞蹈。这是经典力学的领域，由 Isaac Newton 的引力定律描述。这似乎与夸克和胶子的[量子混沌](@keyword=chaos_in_quantum_systems|lang=zh-CN|style=Feynman)世界相去甚远。然而，同样优美的数学在这里发挥着作用。
 
-[开普勒问题](@article_id:327672)——描述在[平方反比力](@article_id:349741)下的轨道——以其[守恒量](@article_id:321879)而闻名。我们都学习过[能量守恒](@article_id:300957)和[角动量守恒](@article_id:313488)。但还有第三个“隐藏”的守恒量，一个称为拉普拉斯-龙格-楞次（LRL）向量的奇怪向量。真正令人惊讶的是，角动量向量和这个 LRL 向量的分量，在适当缩放后，闭合形成[李代数](@article_id:298403) $\mathfrak{so}(4)$。能够描述基本粒子的相同[代数结构](@article_id:297503)，也能描述行星轨道！
+[开普勒问题](@keyword=kepler_problem|lang=zh-CN|style=Feynman)——描述在[平方反比力](@keyword=inverse_square_force|lang=zh-CN|style=Feynman)下的轨道——以其[守恒量](@keyword=conserved_quantity|lang=zh-CN|style=Feynman)而闻名。我们都学习过[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)和[角动量守恒](@keyword=conservation_of_angular_momentum|lang=zh-CN|style=Feynman)。但还有第三个“隐藏”的守恒量，一个称为拉普拉斯-龙格-楞次（LRL）向量的奇怪向量。真正令人惊讶的是，角动量向量和这个 LRL 向量的分量，在适当缩放后，闭合形成[李代数](@keyword=lie_algebras|lang=zh-CN|style=Feynman) $\mathfrak{so}(4)$。能够描述基本粒子的相同[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)，也能描述行星轨道！
 
-现在是关键所在。这个 $\mathfrak{so}(4)$ 代数有其自身的[卡西米尔不变量](@article_id:360715)。你可以从生成元——角动量和 LRL 向量——来构造它们。[开普勒问题](@article_id:327672)的主要[卡西米尔不变量](@article_id:360715)对应什么呢？它只是某个随机数吗？不。它几乎是神奇的。[卡西米尔不变量](@article_id:360715)的值完全由轨道的总能量决定 。准确地说，对于能量为 $E$，质量为 $m$，引力强度常数为 $k$ 的轨道，[卡西米尔不变量](@article_id:360715)固定为 $C = -\frac{mk^2}{2E}$。系统的一个深刻对称性，由其[卡西米尔不变量](@article_id:360715)编码，直接与一个基本物理属性——能量——相关联。这揭示了看似静态的对称性几何与系统的动态演化之间的深刻统一。
+现在是关键所在。这个 $\mathfrak{so}(4)$ 代数有其自身的[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)。你可以从生成元——角动量和 LRL 向量——来构造它们。[开普勒问题](@keyword=kepler_problem|lang=zh-CN|style=Feynman)的主要[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)对应什么呢？它只是某个随机数吗？不。它几乎是神奇的。[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)的值完全由轨道的总能量决定 [@problem_id:1256464]。准确地说，对于能量为 $E$，质量为 $m$，引力强度常数为 $k$ 的轨道，[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)固定为 $C = -\frac{mk^2}{2E}$。系统的一个深刻对称性，由其[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)编码，直接与一个基本物理属性——能量——相关联。这揭示了看似静态的对称性几何与系统的动态演化之间的深刻统一。
 
-事实上，这种联系是完全普适的。根据其定义，[卡西米尔不变量](@article_id:360715)与*任何*[可观测量](@article_id:330836)都具有零泊松括号。这意味着对于由*任何*哈密顿量描述的*任何*可能的动力学，[卡西米尔不变量](@article_id:360715)都必须保持恒定。它们是最终的[运动常数](@article_id:310685)。
+事实上，这种联系是完全普适的。根据其定义，[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)与*任何*[可观测量](@keyword=observables|lang=zh-CN|style=Feynman)都具有零泊松括号。这意味着对于由*任何*哈密顿量描述的*任何*可能的动力学，[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)都必须保持恒定。它们是最终的[运动常数](@keyword=constants_of_motion|lang=zh-CN|style=Feynman)。
 
-这意味着[卡西米尔不变量](@article_id:360715)定义了所有可能的物理运动必须在其上发生的“[曲面](@article_id:331153)”。想一想一个旋转的陀螺或一个在[磁场](@article_id:313708)中进动的简单自旋。其动力学由 $\mathfrak{su}(2)$ 代数描述。唯一的[卡西米尔不变量](@article_id:360715)是自旋向量的总大小平方，$S^2 = s_x^2 + s_y^2 + s_z^2$。固定这个[卡西米尔不变量](@article_id:360715)的值意味着自旋向量被约束在半径为 $\sqrt{S^2}$ 的球面上。然后，哈密顿量决定了向量*如何*在这个球面上移动——例如，在一个圆上进动——但它永远不能离开这个球面。这个球面是动力学的“舞台”，其大小由[卡西米尔不变量](@article_id:360715)设定。在[几何力学](@article_id:349165)的语言中，这些舞台就是*[余伴随轨道](@article_id:322260)* 。[卡西米尔不变量](@article_id:360715)将所有可能性的空间叶化为这些不同的、不重叠的舞台，任何物理过程都永远被限制在其起始的那个舞台上。
+这意味着[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)定义了所有可能的物理运动必须在其上发生的“[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)”。想一想一个旋转的陀螺或一个在[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)中进动的简单自旋。其动力学由 $\mathfrak{su}(2)$ 代数描述。唯一的[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)是自旋向量的总大小平方，$S^2 = s_x^2 + s_y^2 + s_z^2$。固定这个[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)的值意味着自旋向量被约束在半径为 $\sqrt{S^2}$ 的球面上。然后，哈密顿量决定了向量*如何*在这个球面上移动——例如，在一个圆上进动——但它永远不能离开这个球面。这个球面是动力学的“舞台”，其大小由[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)设定。在[几何力学](@keyword=geometric_mechanics|lang=zh-CN|style=Feynman)的语言中，这些舞台就是*[余伴随轨道](@keyword=coadjoint_orbit|lang=zh-CN|style=Feynman)* [@problem_id:2776172]。[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)将所有可能性的空间叶化为这些不同的、不重叠的舞台，任何物理过程都永远被限制在其起始的那个舞台上。
 
 ### 工程量子世界
 
-这个观点——对称性为行动定义了一个不可侵犯的舞台——并不仅仅是经典或[高能物理学](@article_id:305677)的好奇心。它是我们用来设计未来技术——[量子计算](@article_id:303150)机——的一个基本原则。
+这个观点——对称性为行动定义了一个不可侵犯的舞台——并不仅仅是经典或[高能物理学](@keyword=particle_physics|lang=zh-CN|style=Feynman)的好奇心。它是我们用来设计未来技术——[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)机——的一个基本原则。
 
-在[量子计算](@article_id:303150)机中，我们使用来自激光或微波场的精确控制脉冲来操纵[量子比特](@article_id:298377)。每个控制脉冲对应于在短时间内施加某个哈密顿量。假设我们有两个不同的控制哈密顿量，$H_a$ 和 $H_b$。通过按顺序施加它们，我们可以生成新的操作。令人着迷的是，我们能从这些基本控制构建的所有可能的[量子门](@article_id:309182)集合构成一个李代数，即“动力学[李代数](@article_id:298403)”。
+在[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)机中，我们使用来自激光或微波场的精确控制脉冲来操纵[量子比特](@keyword=qubit|lang=zh-CN|style=Feynman)。每个控制脉冲对应于在短时间内施加某个哈密顿量。假设我们有两个不同的控制哈密顿量，$H_a$ 和 $H_b$。通过按顺序施加它们，我们可以生成新的操作。令人着迷的是，我们能从这些基本控制构建的所有可能的[量子门](@keyword=quantum_computing_gates|lang=zh-CN|style=Feynman)集合构成一个李代数，即“动力学[李代数](@keyword=lie_algebras|lang=zh-CN|style=Feynman)”。
 
-通过计算我们初始哈密顿量的对易子，我们可以探索所有可达操作的整个代数 。我们如何表征这个集合呢？你猜对了：用[卡西米尔不变量](@article_id:360715)。对于一个由一对简单哈密顿量控制的[双量子比特系统](@article_id:382074)，人们发现其动力学代数通常是 $\mathfrak{su}(2)$。计算这个代数的[卡西米尔不变量](@article_id:360715)会得到一个特定的值，例如 $\frac{3}{4}$，这告诉量子工程师他们的控制系统生成了一个自旋-1/2 粒子的代数。这一知识至关重要。它精确地告诉他们哪些类型的变换是可能的，哪些是不可能的。[卡西米尔不变量](@article_id:360715)成为一种实用的诊断工具，帮助认证一组控制是否是“通用的”——即足够强大以执行任何[期望](@article_id:311378)的[量子计算](@article_id:303150)。
+通过计算我们初始哈密顿量的对易子，我们可以探索所有可达操作的整个代数 [@problem_id:837463]。我们如何表征这个集合呢？你猜对了：用[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)。对于一个由一对简单哈密顿量控制的[双量子比特系统](@keyword=two_qubit_system|lang=zh-CN|style=Feynman)，人们发现其动力学代数通常是 $\mathfrak{su}(2)$。计算这个代数的[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)会得到一个特定的值，例如 $\frac{3}{4}$，这告诉量子工程师他们的控制系统生成了一个自旋-1/2 粒子的代数。这一知识至关重要。它精确地告诉他们哪些类型的变换是可能的，哪些是不可能的。[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)成为一种实用的诊断工具，帮助认证一组控制是否是“通用的”——即足够强大以执行任何[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)的[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)。
 
 ### 一条统一的线索
 
-我们的旅程完成了。我们从一个看似抽象的数字开始，一个赋予数学表示的标签。我们最终看到它是一个物理量，它决定了宇宙最强大力量的强度，设定了行星飞行的能量，定义了运动得以发生的空间，并作为未来技术的设计参数。从量子色动力学到大统一理论，从经典力学到[量子计算](@article_id:303150)，[卡西米尔不变量](@article_id:360715)作为一条深刻而统一的线索出现。它是“数学在物理学中不合理的有效性”的一个绝佳例子，是对我们物理世界美丽、对称且最终可理解的结构的无声证明。
+我们的旅程完成了。我们从一个看似抽象的数字开始，一个赋予数学表示的标签。我们最终看到它是一个物理量，它决定了宇宙最强大力量的强度，设定了行星飞行的能量，定义了运动得以发生的空间，并作为未来技术的设计参数。从量子色动力学到大统一理论，从经典力学到[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)，[卡西米尔不变量](@keyword=casimir_invariants|lang=zh-CN|style=Feynman)作为一条深刻而统一的线索出现。它是“数学在物理学中不合理的有效性”的一个绝佳例子，是对我们物理世界美丽、对称且最终可理解的结构的无声证明。

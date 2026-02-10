@@ -1,5 +1,5 @@
 ## Introduction
-In the study of random phenomena, from the jittering of a pollen grain to the fluctuations of a stock price, a fundamental challenge arises: how do we write the "correct" [equation of motion](@article_id:263792)? The world of stochastic calculus presents us with two distinct languages for this task—the Itô and Stratonovich calculi. While both aim to describe the same physical reality, they follow different rules and yield different equations, creating a puzzling gap between idealized mathematics and physical modeling.
+In the study of random phenomena, from the jittering of a pollen grain to the fluctuations of a stock price, a fundamental challenge arises: how do we write the "correct" [equation of motion](@keyword=equation_of_motion|lang=en-US|style=Feynman)? The world of stochastic calculus presents us with two distinct languages for this task—the Itô and Stratonovich calculi. While both aim to describe the same physical reality, they follow different rules and yield different equations, creating a puzzling gap between idealized mathematics and physical modeling.
 
 This article delves into the solution to this puzzle: the Wong-Zakai correction term. This is not a mere mathematical technicality but a profound concept that reconciles the two calculi and reveals deep truths about the nature of noise. We will explore how this correction term is the key to understanding why physical systems, when approximated realistically, naturally "choose" one calculus over the other.
 
@@ -31,7 +31,7 @@ its Itô twin is
 
 $$ dX_t = \left( a(X_t) + \frac{1}{2} b(X_t) b'(X_t) \right) dt + b(X_t) dW_t $$
 
-That extra piece, $\frac{1}{2} b(X_t) b'(X_t)$, is our protagonist: the correction term . It's the price you pay for switching from the world of Stratonovich to the world of Itô. Notice something interesting: if the noise is simple and doesn't depend on the state—that is, if $b(x)$ is just a constant—then its derivative $b'(x)$ is zero, and the correction term vanishes. In this simple case, the two worlds look identical . But as soon as the noise becomes "aware" of where it is (i.e., state-dependent), a gap opens up between the two descriptions, and this correction term is the bridge that spans it.
+That extra piece, $\frac{1}{2} b(X_t) b'(X_t)$, is our protagonist: the correction term [@problem_id:1344619]. It's the price you pay for switching from the world of Stratonovich to the world of Itô. Notice something interesting: if the noise is simple and doesn't depend on the state—that is, if $b(x)$ is just a constant—then its derivative $b'(x)$ is zero, and the correction term vanishes. In this simple case, the two worlds look identical [@problem_id:1290269]. But as soon as the noise becomes "aware" of where it is (i.e., state-dependent), a gap opens up between the two descriptions, and this correction term is the bridge that spans it.
 
 ### The Ghost in the Machine: Where Does the Correction Come From?
 
@@ -41,11 +41,11 @@ This is the brilliant insight of Eugene Wong and Moshe Zakai. What happens if we
 
 $$ \frac{dX_t^\delta}{dt} = \sigma(X_t^\delta) \dot{W}_t^\delta $$
 
-We can solve this for any given smooth noise path. The Wong-Zakai theorem asks a profound question: What happens to the solution $X_t^\delta$ as our smooth noise $\dot{W}_t^\delta$ gets closer and closer to true, ideal "white" noise? .
+We can solve this for any given smooth noise path. The Wong-Zakai theorem asks a profound question: What happens to the solution $X_t^\delta$ as our smooth noise $\dot{W}_t^\delta$ gets closer and closer to true, ideal "white" noise? [@problem_id:3004540].
 
 The answer is astonishing. The solution does not converge to the Itô equation. It converges to the **Stratonovich equation**. The correction term appears, seemingly out of nowhere, in this limiting process.
 
-To see how, let's get our hands dirty and think like a computer simulating the process . A natural way to approximate the solution is the trapezoidal rule, which is a symmetric, "midpoint" kind of rule:
+To see how, let's get our hands dirty and think like a computer simulating the process [@problem_id:3004514]. A natural way to approximate the solution is the trapezoidal rule, which is a symmetric, "midpoint" kind of rule:
 
 $$ X_{k+1} = X_k + \frac{1}{2} \left[ \sigma(X_k) + \sigma(X_{k+1}) \right] \Delta W_k $$
 
@@ -56,26 +56,26 @@ $$ \approx \sigma(X_k) \Delta W_k + \frac{1}{2} \sigma(X_k) \sigma'(X_k) (\Delta
 
 Now for the magic. In ordinary calculus, a term like $(\Delta W_k)^2$ would be infinitesimally small and vanish in the limit. But this is Brownian motion! Its defining property, its **quadratic variation**, is that it's so jagged that the sum of the squares of its little wiggles does *not* go to zero. Instead, $(\Delta W_k)^2$ behaves, on average, like the time step $\Delta t$.
 
-So, in the limit, that second term doesn't disappear. It survives as $\frac{1}{2}\sigma(x)\sigma'(x) dt$. It materializes as a drift! This is the Wong-Zakai correction term, emerging directly from the interaction between the state-dependence of the noise and the fundamental roughness of Brownian motion . The very act of using a symmetric, physically realistic [approximation scheme](@article_id:266957) forces this term into existence. Using a non-symmetric, "causal" approximation that only uses past information would lead to the Itô form instead .
+So, in the limit, that second term doesn't disappear. It survives as $\frac{1}{2}\sigma(x)\sigma'(x) dt$. It materializes as a drift! This is the Wong-Zakai correction term, emerging directly from the interaction between the state-dependence of the noise and the fundamental roughness of Brownian motion [@problem_id:2994514]. The very act of using a symmetric, physically realistic [approximation scheme](@keyword=approximation_scheme|lang=en-US|style=Feynman) forces this term into existence. Using a non-symmetric, "causal" approximation that only uses past information would lead to the Itô form instead [@problem_id:3004517].
 
 ### The Deeper Beauty: The Principle of Invariance
 
-So, physical reality, when modeled as a limit of smooth processes, seems to prefer the Stratonovich calculus. But why? Is it just a quirk of the mathematics? No, the reason is far more profound and beautiful, and it touches upon the very soul of physics: the [principle of invariance](@article_id:198911).
+So, physical reality, when modeled as a limit of smooth processes, seems to prefer the Stratonovich calculus. But why? Is it just a quirk of the mathematics? No, the reason is far more profound and beautiful, and it touches upon the very soul of physics: the [principle of invariance](@keyword=principle_of_invariance|lang=en-US|style=Feynman).
 
-The laws of physics shouldn't depend on the coordinates we use to describe a system. Whether we use Cartesian coordinates or [polar coordinates](@article_id:158931), the underlying reality is the same. An equation that describes a physical law must transform in a consistent, "natural" way when we change our coordinate system.
+The laws of physics shouldn't depend on the coordinates we use to describe a system. Whether we use Cartesian coordinates or [polar coordinates](@keyword=polar_coordinates|lang=en-US|style=Feynman), the underlying reality is the same. An equation that describes a physical law must transform in a consistent, "natural" way when we change our coordinate system.
 
 Here's the kicker: the Stratonovich calculus does, and the Itô calculus doesn't.
 
-If you have a function of your random process, $f(X_t)$, and you want to know how it changes, the Stratonovich calculus gives you the answer you'd expect from freshman calculus: the ordinary [chain rule](@article_id:146928) applies! 
+If you have a function of your random process, $f(X_t)$, and you want to know how it changes, the Stratonovich calculus gives you the answer you'd expect from freshman calculus: the ordinary [chain rule](@keyword=chain_rule|lang=en-US|style=Feynman) applies! [@problem_id:3004478]
 
 $$ df(X_t) = (\text{gradient of } f) \circ dX_t $$
 
-Itô's formula, however, has an extra second-order term. It doesn't obey the classical [chain rule](@article_id:146928). This means the Stratonovich calculus is "coordinate-invariant" in a way that the Itô calculus is not .
+Itô's formula, however, has an extra second-order term. It doesn't obey the classical [chain rule](@keyword=chain_rule|lang=en-US|style=Feynman). This means the Stratonovich calculus is "coordinate-invariant" in a way that the Itô calculus is not [@problem_id:3004501].
 
-Now, consider again our [ordinary differential equations](@article_id:146530) driven by smooth noise. These are classical equations. They are, of course, coordinate-invariant. They obey the classical chain rule. The Wong-Zakai theorem tells us that the limit of these well-behaved, physically-motivated systems must inherit their good behavior . The only [stochastic calculus](@article_id:143370) that preserves the classical [chain rule](@article_id:146928) and its associated coordinate invariance is the Stratonovich calculus.
+Now, consider again our [ordinary differential equations](@keyword=ordinary_differential_equations|lang=en-US|style=Feynman) driven by smooth noise. These are classical equations. They are, of course, coordinate-invariant. They obey the classical chain rule. The Wong-Zakai theorem tells us that the limit of these well-behaved, physically-motivated systems must inherit their good behavior [@problem_id:3004483]. The only [stochastic calculus](@keyword=stochastic_calculus|lang=en-US|style=Feynman) that preserves the classical [chain rule](@keyword=chain_rule|lang=en-US|style=Feynman) and its associated coordinate invariance is the Stratonovich calculus.
 
-So, nature's "choice" is not a choice at all; it's a logical necessity. If a [stochastic process](@article_id:159008) is the limit of real-world physical systems with smooth, rapidly fluctuating noise, it must be described by the rules that respect the [fundamental symmetries](@article_id:160762) of those systems.
+So, nature's "choice" is not a choice at all; it's a logical necessity. If a [stochastic process](@keyword=stochastic_process|lang=en-US|style=Feynman) is the limit of real-world physical systems with smooth, rapidly fluctuating noise, it must be described by the rules that respect the [fundamental symmetries](@keyword=fundamental_symmetries|lang=en-US|style=Feynman) of those systems.
 
-The Itô form is often computationally simpler, a sort of convenient "assembly language" for [stochastic processes](@article_id:141072). But the Stratonovich form is the "source code" that reveals the underlying geometric structure. The Wong-Zakai correction is the compiler that translates between them. In its most general, multidimensional form, this correction term isn't just a random formula; it's a beautiful geometric object known as a **[directional derivative](@article_id:142936)**—the rate of change of the noise vector field as you move along the direction of the noise itself .
+The Itô form is often computationally simpler, a sort of convenient "assembly language" for [stochastic processes](@keyword=stochastic_processes|lang=en-US|style=Feynman). But the Stratonovich form is the "source code" that reveals the underlying geometric structure. The Wong-Zakai correction is the compiler that translates between them. In its most general, multidimensional form, this correction term isn't just a random formula; it's a beautiful geometric object known as a **[directional derivative](@keyword=directional_derivative|lang=en-US|style=Feynman)**—the rate of change of the noise vector field as you move along the direction of the noise itself [@problem_id:3004524].
 
 What began as a puzzle about two different notations resolves into a deep principle: the mathematics that models our physical world must reflect its fundamental symmetries. The Wong-Zakai term is not a mere technicality; it is the ghost of the smooth, real-world noise that haunts our idealized equations, ensuring they remember the elegant, invariant world from which they were born.

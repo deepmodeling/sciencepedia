@@ -23,7 +23,7 @@ For a framework of $N$ joints and $M$ rods in $d$ dimensions to be rigid, we gen
 - In 2D: $M \ge 2N - 3$
 - In 3D: $M \ge 3N - 6$
 
-When the equality holds, the structure is said to be **isostatic**. It is rigid, but just barely. Not a single rod is wasted. It's the paragon of [structural efficiency](@article_id:269676), a state we will return to.
+When the equality holds, the structure is said to be **isostatic**. It is rigid, but just barely. Not a single rod is wasted. It's the paragon of [structural efficiency](@keyword=structural_efficiency|lang=en-US|style=Feynman), a state we will return to.
 
 ### The Isostatic Ideal and the $z=2d$ Rule
 
@@ -35,9 +35,9 @@ If we substitute $M = zN/2$ into our approximate rigidity condition $M \approx d
 
 $z N / 2 \approx d N \implies z \approx 2d$
 
-This means that for a large, generic network, the transition from floppy to rigid happens right around a critical average coordination of $z_c = 2d$!  In two dimensions, you need an average of 4 neighbors to become rigid. In three dimensions, you need 6. This simple rule of thumb is incredibly powerful. It explains why liquids, where atoms have few long-lasting connections, flow, while solids don’t. It’s also at the heart of the modern physics of **jamming**, which describes how a collection of non-cohesive particles, like sand or grain in a silo, can suddenly become rigid and support weight when compressed, reaching this critical coordination number. 
+This means that for a large, generic network, the transition from floppy to rigid happens right around a critical average coordination of $z_c = 2d$! [@problem_id:2916987] In two dimensions, you need an average of 4 neighbors to become rigid. In three dimensions, you need 6. This simple rule of thumb is incredibly powerful. It explains why liquids, where atoms have few long-lasting connections, flow, while solids don’t. It’s also at the heart of the modern physics of **jamming**, which describes how a collection of non-cohesive particles, like sand or grain in a silo, can suddenly become rigid and support weight when compressed, reaching this critical coordination number. [@problem_id:2916987]
 
-When a system is exactly at this threshold, $z=2d$, it is isostatic. It is perfectly balanced, with no internal [floppy modes](@article_id:136513) and also no **states of self-stress**. A stressed state occurs when you have too many constraints—imagine trying to jam an extra, slightly-too-long rod into an already rigid structure. The structure will be filled with internal tension. The isostatic state is free of this. It's the sweet spot. 
+When a system is exactly at this threshold, $z=2d$, it is isostatic. It is perfectly balanced, with no internal [floppy modes](@keyword=floppy_modes|lang=en-US|style=Feynman) and also no **states of self-stress**. A stressed state occurs when you have too many constraints—imagine trying to jam an extra, slightly-too-long rod into an already rigid structure. The structure will be filled with internal tension. The isostatic state is free of this. It's the sweet spot. [@problem_id:2916987]
 
 ### When Counting Fails: The Geometry of Floppiness
 
@@ -51,23 +51,23 @@ This tells us that rigidity is not just about the number of parts (combinatorics
 
 ### The Rigidity Matrix: A Deeper Truth
 
-Instead of asking if a structure *can* deform by a large amount, let's ask a more subtle question: Can it deform *at all*? Let's imagine giving each joint $i$ a tiny velocity, $u_i$. This potential motion is called an **infinitesimal motion**. 
+Instead of asking if a structure *can* deform by a large amount, let's ask a more subtle question: Can it deform *at all*? Let's imagine giving each joint $i$ a tiny velocity, $u_i$. This potential motion is called an **infinitesimal motion**. [@problem_id:2726163]
 
-If there's a rod between joints $i$ and $j$, its length must not change. The condition that the distance between them is instantaneously preserved is that the [relative velocity](@article_id:177566) of the two joints, $(u_i - u_j)$, has no component along the direction of the rod, $(p_i - p_j)$. Mathematically, this is a beautiful dot product condition:
+If there's a rod between joints $i$ and $j$, its length must not change. The condition that the distance between them is instantaneously preserved is that the [relative velocity](@keyword=relative_velocity|lang=en-US|style=Feynman) of the two joints, $(u_i - u_j)$, has no component along the direction of the rod, $(p_i - p_j)$. Mathematically, this is a beautiful dot product condition:
 
 $(p_i - p_j) \cdot (u_i - u_j) = 0$
 
-We can write one such equation for every rod in the structure. This gives us a [system of linear equations](@article_id:139922). And any time we have a [system of linear equations](@article_id:139922), we can summon the power of linear algebra and write it in matrix form:
+We can write one such equation for every rod in the structure. This gives us a [system of linear equations](@keyword=system_of_linear_equations|lang=en-US|style=Feynman). And any time we have a [system of linear equations](@keyword=system_of_linear_equations|lang=en-US|style=Feynman), we can summon the power of linear algebra and write it in matrix form:
 
 $R(p) u = 0$
 
-Here, $u$ is a giant vector listing all the velocity components of all the joints. $R(p)$ is a magnificent object called the **rigidity matrix**. It's a machine built from the geometry (the positions $p$) of the framework. Each row of $R$ corresponds to one rod, and that row is designed to check if the velocity vector $u$ satisfies the length constraint for that rod. 
+Here, $u$ is a giant vector listing all the velocity components of all the joints. $R(p)$ is a magnificent object called the **rigidity matrix**. It's a machine built from the geometry (the positions $p$) of the framework. Each row of $R$ corresponds to one rod, and that row is designed to check if the velocity vector $u$ satisfies the length constraint for that rod. [@problem_id:2726163]
 
-The set of all possible infinitesimal motions is the [nullspace](@article_id:170842) (or kernel) of this matrix. Now we can give our ultimate definition of rigidity: A framework is **infinitesimally rigid** if its *only* possible infinitesimal motions are the trivial rigid-body motions.
+The set of all possible infinitesimal motions is the [nullspace](@keyword=nullspace|lang=en-US|style=Feynman) (or kernel) of this matrix. Now we can give our ultimate definition of rigidity: A framework is **infinitesimally rigid** if its *only* possible infinitesimal motions are the trivial rigid-body motions.
 
-What does this mean for our matrix? It means the [nullspace](@article_id:170842) of $R$ must consist *only* of those vectors $u$ that describe a global translation or rotation. The dimension of this [nullspace](@article_id:170842) must therefore be exactly the number of trivial motions—3 in 2D, 6 in 3D.
+What does this mean for our matrix? It means the [nullspace](@keyword=nullspace|lang=en-US|style=Feynman) of $R$ must consist *only* of those vectors $u$ that describe a global translation or rotation. The dimension of this [nullspace](@keyword=nullspace|lang=en-US|style=Feynman) must therefore be exactly the number of trivial motions—3 in 2D, 6 in 3D.
 
-By the [rank-nullity theorem](@article_id:153947) from linear algebra, we arrive at the definitive test for rigidity:
+By the [rank-nullity theorem](@keyword=rank_nullity_theorem|lang=en-US|style=Feynman) from linear algebra, we arrive at the definitive test for rigidity:
 - In 2D: $\operatorname{rank}(R(p)) = 2N - 3$
 - In 3D: $\operatorname{rank}(R(p)) = 3N - 6$
 
@@ -77,13 +77,13 @@ This is it! This is the precise, unambiguous condition. It beautifully marries t
 
 This is all well and good for engineered trusses, but what about the messy, disordered materials of the real world? What about a piece of glass? There is no neat blueprint; it's a frozen, chaotic liquid. Can we still apply these ideas?
 
-Amazingly, yes. We can't build a single rigidity matrix for a mole of atoms, but we can think in averages, just as we did to get the $z=2d$ rule. In a covalent solid like silica glass (silicon dioxide), the "rods" are the strong [covalent bonds](@article_id:136560) between atoms. But there's a new type of constraint we must consider: **bond-bending**. 
+Amazingly, yes. We can't build a single rigidity matrix for a mole of atoms, but we can think in averages, just as we did to get the $z=2d$ rule. In a covalent solid like silica glass (silicon dioxide), the "rods" are the strong [covalent bonds](@keyword=covalent_bonds|lang=en-US|style=Feynman) between atoms. But there's a new type of constraint we must consider: **bond-bending**. [@problem_id:2478196]
 
-In addition to fixing the distances between atoms (a **bond-stretching** constraint), the chemistry of [covalent bonds](@article_id:136560) also tries to fix the *angles* between adjacent bonds. Think of an atom with four bonds pointing to the corners of a tetrahedron. Not only are the bond lengths fixed, but the angles between them are also constrained to be near $109.5^\circ$.
+In addition to fixing the distances between atoms (a **bond-stretching** constraint), the chemistry of [covalent bonds](@keyword=covalent_bonds|lang=en-US|style=Feynman) also tries to fix the *angles* between adjacent bonds. Think of an atom with four bonds pointing to the corners of a tetrahedron. Not only are the bond lengths fixed, but the angles between them are also constrained to be near $109.5^\circ$.
 
-Let's do the accounting for an atom with [coordination number](@article_id:142727) $r$.
+Let's do the accounting for an atom with [coordination number](@keyword=coordination_number|lang=en-US|style=Feynman) $r$.
 1.  **Bond-stretching:** The atom is connected to $r$ bonds. Each bond is shared between two atoms, so we can say this atom "owns" half of each bond. This gives $r/2$ stretching constraints per atom.
-2.  **Bond-bending:** How many angles can we constrain? An atom with $r$ neighbors has $r$ bonds. These neighbors have $3r$ degrees of freedom relative to the central atom. The $r$ bond-stretching constraints have already fixed their distances, removing $r$ freedoms. This leaves $2r$ freedoms. The entire local cluster can rotate in 3D space, which accounts for 3 trivial rotational freedoms. So, the number of internal, shape-changing freedoms that need to be constrained by angle forces is $2r-3$. This elegant piece of reasoning holds for $r \ge 2$. 
+2.  **Bond-bending:** How many angles can we constrain? An atom with $r$ neighbors has $r$ bonds. These neighbors have $3r$ degrees of freedom relative to the central atom. The $r$ bond-stretching constraints have already fixed their distances, removing $r$ freedoms. This leaves $2r$ freedoms. The entire local cluster can rotate in 3D space, which accounts for 3 trivial rotational freedoms. So, the number of internal, shape-changing freedoms that need to be constrained by angle forces is $2r-3$. This elegant piece of reasoning holds for $r \ge 2$. [@problem_id:2478196]
 
 So, the total number of constraints per atom is $n_c(r) = \frac{r}{2} + (2r-3) = \frac{5}{2}r - 3$.
 
@@ -99,12 +99,12 @@ Since each atom has 3 degrees of freedom in 3D, and the average number of constr
 
 The ultimate test of rigidity is mechanical. If you push on a material, does it resist deformation? A floppy material, like a liquid, has a shear modulus of zero ($G=0$). You can easily slide one layer of water past another. A rigid solid has a non-zero shear modulus ($G>0$).
 
-The transition from a floppy state ($z < z_c$) to a rigid state ($z > z_c$) is therefore not just a geometric curiosity; it's a true **phase transition**. It’s like water freezing to ice, or a liquid polymer mixture setting into a solid gel. As you add more constraints (by cross-linking polymers, or by cooling a liquid into a glass), the system suddenly acquires a finite [shear modulus](@article_id:166734).
+The transition from a floppy state ($z < z_c$) to a rigid state ($z > z_c$) is therefore not just a geometric curiosity; it's a true **phase transition**. It’s like water freezing to ice, or a liquid polymer mixture setting into a solid gel. As you add more constraints (by cross-linking polymers, or by cooling a liquid into a glass), the system suddenly acquires a finite [shear modulus](@keyword=shear_modulus|lang=en-US|style=Feynman).
 
 How does this stiffness appear? Theory and experiment show that just above the critical point, the shear modulus grows in a surprisingly simple way. It is proportional to the excess coordination, $\Delta z = z - z_c$.
 
 $G \propto (z - z_c)$
 
-This means that as soon as you cross the threshold of rigidity, the material develops stiffness, and the amount of stiffness grows linearly with how many "extra" constraints you add beyond the bare minimum needed for rigidity.  This predictive power—linking the microscopic counting of bonds to a macroscopic, measurable property like stiffness—is the culmination of our story.
+This means that as soon as you cross the threshold of rigidity, the material develops stiffness, and the amount of stiffness grows linearly with how many "extra" constraints you add beyond the bare minimum needed for rigidity. [@problem_id:67408] This predictive power—linking the microscopic counting of bonds to a macroscopic, measurable property like stiffness—is the culmination of our story.
 
 From a childish question to a sophisticated theory, the concept of rigidity reveals a profound unity in nature. It shows how the same fundamental principles of freedom and constraint, expressed through combinatorics and linear algebra, can govern the design of a bridge, the state of a glass, and the very definition of a solid. It is a perfect example of how physics, by asking simple questions deeply, uncovers the elegant and unified rules that run our world.

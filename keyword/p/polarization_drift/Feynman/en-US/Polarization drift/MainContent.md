@@ -1,5 +1,5 @@
 ## Introduction
-The behavior of a plasma is defined by the complex motion of its constituent charged particles under the influence of electric and magnetic fields. In the simplest picture, particles execute a collective E x B drift where both ions and electrons move in unison, producing no net current. However, this idealization breaks down in the dynamic reality of fusion devices and astrophysical environments. The critical question then becomes: what happens when the driving electric fields are not static but change over time? This article addresses this knowledge gap by delving into the physics of polarization drift. We will explore how a particle's own inertia causes it to "slip" from the ideal path, a subtle effect with profound consequences. In the following sections, you will first learn the fundamental "Principles and Mechanisms" behind this [inertial drift](@entry_id:1126478) and how it generates currents and polarizes the plasma. Subsequently, we will explore its far-reaching "Applications and Interdisciplinary Connections," revealing how this microscopic slip shapes everything from plasma turbulence to the stability of fusion reactors.
+The behavior of a plasma is defined by the complex motion of its constituent charged particles under the influence of electric and magnetic fields. In the simplest picture, particles execute a collective E x B drift where both ions and electrons move in unison, producing no net current. However, this idealization breaks down in the dynamic reality of fusion devices and astrophysical environments. The critical question then becomes: what happens when the driving electric fields are not static but change over time? This article addresses this knowledge gap by delving into the physics of polarization drift. We will explore how a particle's own inertia causes it to "slip" from the ideal path, a subtle effect with profound consequences. In the following sections, you will first learn the fundamental "Principles and Mechanisms" behind this [inertial drift](@keyword=inertial_drift|lang=en-US|style=Feynman) and how it generates currents and polarizes the plasma. Subsequently, we will explore its far-reaching "Applications and Interdisciplinary Connections," revealing how this microscopic slip shapes everything from plasma turbulence to the stability of fusion reactors.
 
 ## Principles and Mechanisms
 
@@ -17,7 +17,7 @@ $$
 \mathbf{v}_E = \frac{\mathbf{E} \times \mathbf{B}}{B^2}
 $$
 
-Look closely at this equation. Something is missing. The particle's mass, $m$, and its charge, $q$, are nowhere to be found! This is remarkable. It means that in this idealized picture, a heavy proton and a light electron drift in exactly the same direction and at exactly the same speed. They move in perfect unison, like flawless dance partners. For a plasma that is, on average, electrically neutral, this means the $\mathbf{E}\times\mathbf{B}$ drift produces no net electric current . It is a collective, charge-agnostic flow.
+Look closely at this equation. Something is missing. The particle's mass, $m$, and its charge, $q$, are nowhere to be found! This is remarkable. It means that in this idealized picture, a heavy proton and a light electron drift in exactly the same direction and at exactly the same speed. They move in perfect unison, like flawless dance partners. For a plasma that is, on average, electrically neutral, this means the $\mathbf{E}\times\mathbf{B}$ drift produces no net electric current [@problem_id:4214455]. It is a collective, charge-agnostic flow.
 
 But this is an idealization. The real world, and the plasmas in it, are never so simple. Our derivation hinges on a perfect balance. What happens if the tempo of the dance changes? What if the electric field, $\mathbf{E}$, is not static, but varies in time?
 
@@ -37,7 +37,7 @@ $$
 \mathbf{v} = \mathbf{v}_E + \mathbf{v}_p
 $$
 
-The acceleration of the guiding center is driven by the change in the main drift, $d\mathbf{v}/dt \approx d\mathbf{v}_E/dt$. The guiding center [equation of motion](@entry_id:264286), which describes the balance of forces, tells us that this acceleration is balanced by the Lorentz force acting on the "slip" velocity, $\mathbf{v}_p$. A careful derivation, shown in problems , , and , reveals the beautiful result for this polarization drift:
+The acceleration of the guiding center is driven by the change in the main drift, $d\mathbf{v}/dt \approx d\mathbf{v}_E/dt$. The guiding center [equation of motion](@keyword=equation_of_motion|lang=en-US|style=Feynman), which describes the balance of forces, tells us that this acceleration is balanced by the Lorentz force acting on the "slip" velocity, $\mathbf{v}_p$. A careful derivation, shown in problems [@problem_id:4200971], [@problem_id:634360], and [@problem_id:3998930], reveals the beautiful result for this polarization drift:
 
 $$
 \mathbf{v}_p = \frac{m}{q B^2} \frac{d\mathbf{E}_{\perp}}{dt}
@@ -47,7 +47,7 @@ Let's admire this formula. It tells a complete story.
 
 *   The drift is proportional to the particle's mass, $m$. This confirms its **inertial origin**. Heavier particles slip more.
 *   The drift exists only when the electric field is changing in time, as shown by the $d\mathbf{E}_{\perp}/dt$ term. In a static field, there is no acceleration, no slip, and no polarization drift.
-*   The drift is in the direction of the *change* in the electric field, not the field itself. This is the direction of the [inertial force](@entry_id:167885) required to accelerate the guiding center.
+*   The drift is in the direction of the *change* in the electric field, not the field itself. This is the direction of the [inertial force](@keyword=inertial_force|lang=en-US|style=Feynman) required to accelerate the guiding center.
 *   The drift is inversely proportional to the charge, $q$. This means that for a given change in $\mathbf{E}$, ions ($q>0$) and electrons ($q0$) will drift in opposite directions. The dance partners are no longer in perfect sync.
 
 ### The Consequences of the Slip: Currents and Screening
@@ -64,13 +64,13 @@ $$
 \mathbf{J}_p = nq \left(\frac{m}{q B^2} \frac{d\mathbf{E}_{\perp}}{dt}\right) = \frac{nm}{B^2} \frac{d\mathbf{E}_{\perp}}{dt}
 $$
 
-Look what happened! The charge $q$ has cancelled out . This is another profound result. The polarization current does not depend on the sign of the charge. It is a current of *mass*. Both ions and electrons contribute a current in the same direction, driven purely by their inertia resisting the change in motion. This has tangible consequences in fusion research. In a plasma with different hydrogen isotopes, like deuterium ($m_D \approx 2m_p$) and tritium ($m_T \approx 3m_p$), the heavier tritium ions will have a larger polarization drift. This "[isotope effect](@entry_id:144747)" alters the internal currents and can affect the plasma's stability and confinement .
+Look what happened! The charge $q$ has cancelled out [@problem_id:4200971]. This is another profound result. The polarization current does not depend on the sign of the charge. It is a current of *mass*. Both ions and electrons contribute a current in the same direction, driven purely by their inertia resisting the change in motion. This has tangible consequences in fusion research. In a plasma with different hydrogen isotopes, like deuterium ($m_D \approx 2m_p$) and tritium ($m_T \approx 3m_p$), the heavier tritium ions will have a larger polarization drift. This "[isotope effect](@keyword=isotope_effect|lang=en-US|style=Feynman)" alters the internal currents and can affect the plasma's stability and confinement [@problem_id:3998930].
 
 #### Plasma as a Dielectric: Screening
 
-What does this current *do*? A current is a flow of charge. If this current has a divergence ($\nabla \cdot \mathbf{J}_p \neq 0$), then charge must be accumulating or depleting in certain regions, according to the continuity equation, $\partial\rho/\partial t + \nabla \cdot \mathbf{J} = 0$. This charge accumulation is the **polarization charge density**, $\rho_p$ .
+What does this current *do*? A current is a flow of charge. If this current has a divergence ($\nabla \cdot \mathbf{J}_p \neq 0$), then charge must be accumulating or depleting in certain regions, according to the continuity equation, $\partial\rho/\partial t + \nabla \cdot \mathbf{J} = 0$. This charge accumulation is the **polarization charge density**, $\rho_p$ [@problem_id:4206477].
 
-This is not a "free" charge created from nothing. It is a "bound" charge that appears because the centers of positive and negative charge in the plasma have been slightly displaced. The plasma has become polarized, just like a dielectric material in a capacitor. This collection of microscopic dipoles is described by a macroscopic **[polarization vector](@entry_id:269389)** $\mathbf{P}$, and the [bound charge](@entry_id:142144) is given by $\rho_p = -\nabla \cdot \mathbf{P}$ .
+This is not a "free" charge created from nothing. It is a "bound" charge that appears because the centers of positive and negative charge in the plasma have been slightly displaced. The plasma has become polarized, just like a dielectric material in a capacitor. This collection of microscopic dipoles is described by a macroscopic **[polarization vector](@keyword=polarization_vector|lang=en-US|style=Feynman)** $\mathbf{P}$, and the [bound charge](@keyword=bound_charge|lang=en-US|style=Feynman) is given by $\rho_p = -\nabla \cdot \mathbf{P}$ [@problem_id:4206438].
 
 This polarization charge sets up its own electric field, which, by a rule as fundamental as Lenz's law, *opposes* the original change in the electric field. The plasma actively shields its interior from rapid field variations. This "screening" effect is why plasma can be described as having a very large dielectric constant. The polarization drift is the microscopic mechanism that endows the plasma with this powerful collective property.
 
@@ -78,15 +78,15 @@ This polarization charge sets up its own electric field, which, by a rule as fun
 
 We've established that polarization drift is a correction to the main $\mathbf{E}\times\mathbf{B}$ drift. But how big is it? When can we safely ignore it?
 
-Consider an electric field oscillating at a frequency $\omega$. A straightforward calculation   reveals a simple and powerful scaling law for the ratio of the drift speeds:
+Consider an electric field oscillating at a frequency $\omega$. A straightforward calculation [@problem_id:4230631] [@problem_id:4200964] reveals a simple and powerful scaling law for the ratio of the drift speeds:
 
 $$
 \frac{|\mathbf{v}_p|}{|\mathbf{v}_E|} = \frac{\omega}{\Omega_c}
 $$
 
-where $\Omega_c = |q|B/m$ is the particle's [cyclotron frequency](@entry_id:156231), its natural frequency of gyration. This tells us everything. The polarization drift is important only when the driving frequency $\omega$ is a noticeable fraction of the [cyclotron frequency](@entry_id:156231) $\Omega_c$. In many situations, especially in astrophysics, field variations are extremely slow, so $\omega \ll \Omega_c$ and the polarization drift is a tiny effect. For instance, we could adopt a practical rule that the drift is negligible if it's less than 2% of the $\mathbf{E}\times\mathbf{B}$ drift, which would mean we can ignore it whenever $\omega/\Omega_c  0.02$ .
+where $\Omega_c = |q|B/m$ is the particle's [cyclotron frequency](@keyword=cyclotron_frequency|lang=en-US|style=Feynman), its natural frequency of gyration. This tells us everything. The polarization drift is important only when the driving frequency $\omega$ is a noticeable fraction of the [cyclotron frequency](@keyword=cyclotron_frequency|lang=en-US|style=Feynman) $\Omega_c$. In many situations, especially in astrophysics, field variations are extremely slow, so $\omega \ll \Omega_c$ and the polarization drift is a tiny effect. For instance, we could adopt a practical rule that the drift is negligible if it's less than 2% of the $\mathbf{E}\times\mathbf{B}$ drift, which would mean we can ignore it whenever $\omega/\Omega_c  0.02$ [@problem_id:4200964].
 
-However, in the context of plasma turbulence, this "small" correction is the engine of the dynamics. The main $\mathbf{E}\times\mathbf{B}$ drift is largely incompressible ($\nabla \cdot \mathbf{v}_E \approx 0$), meaning it just shuffles the plasma around. It is the *divergence* of the [polarization current](@entry_id:196744) that allows the plasma's vorticity to evolve in time and drives the growth and saturation of turbulent structures . Without this inertial slip, the plasma would be dynamically "stuck".
+However, in the context of plasma turbulence, this "small" correction is the engine of the dynamics. The main $\mathbf{E}\times\mathbf{B}$ drift is largely incompressible ($\nabla \cdot \mathbf{v}_E \approx 0$), meaning it just shuffles the plasma around. It is the *divergence* of the [polarization current](@keyword=polarization_current|lang=en-US|style=Feynman) that allows the plasma's vorticity to evolve in time and drives the growth and saturation of turbulent structures [@problem_id:4187917]. Without this inertial slip, the plasma would be dynamically "stuck".
 
 ### The Edge of the Dance: When the Picture Breaks Down
 
@@ -94,8 +94,8 @@ Our entire discussion has been built on the premise of a clear separation of sca
 
 What happens if we keep increasing the frequency $\omega$? As $\omega$ approaches $\Omega_c$, the polarization drift is no longer a small correction. The "slip" becomes as large as the primary "step". The neat hierarchy of drifts breaks down.
 
-When $\omega = \Omega_c$, we hit a **cyclotron resonance**. The external electric field is now oscillating in perfect time with the particle's own gyration. It's like pushing a child on a swing at exactly the right moment in each cycle. The field can transfer energy to the particle continuously and efficiently. The particle's gyroradius and energy spiral upwards, and the magnetic moment is no longer conserved at all . The orderly dance of drifts gives way to powerful, resonant heating.
+When $\omega = \Omega_c$, we hit a **cyclotron resonance**. The external electric field is now oscillating in perfect time with the particle's own gyration. It's like pushing a child on a swing at exactly the right moment in each cycle. The field can transfer energy to the particle continuously and efficiently. The particle's gyroradius and energy spiral upwards, and the magnetic moment is no longer conserved at all [@problem_id:3690516]. The orderly dance of drifts gives way to powerful, resonant heating.
 
-This phenomenon, far from being a mere theoretical curiosity, is a cornerstone of modern fusion experiments. We use powerful microwave sources tuned to the [cyclotron frequency](@entry_id:156231) of ions to heat them to the hundreds of millions of degrees needed for nuclear fusion.
+This phenomenon, far from being a mere theoretical curiosity, is a cornerstone of modern fusion experiments. We use powerful microwave sources tuned to the [cyclotron frequency](@keyword=cyclotron_frequency|lang=en-US|style=Feynman) of ions to heat them to the hundreds of millions of degrees needed for nuclear fusion.
 
-Thus, the story of the polarization drift is a journey from a subtle inertial correction to a fundamental principle of plasma behavior. It is born from the simple [reluctance](@entry_id:260621) of mass to accelerate, but it gives rise to macroscopic currents, allows the plasma to shield itself, drives the evolution of turbulence, and points the way to the very limits of the drift picture, where a new world of resonant physics begins.
+Thus, the story of the polarization drift is a journey from a subtle inertial correction to a fundamental principle of plasma behavior. It is born from the simple [reluctance](@keyword=reluctance|lang=en-US|style=Feynman) of mass to accelerate, but it gives rise to macroscopic currents, allows the plasma to shield itself, drives the evolution of turbulence, and points the way to the very limits of the drift picture, where a new world of resonant physics begins.
