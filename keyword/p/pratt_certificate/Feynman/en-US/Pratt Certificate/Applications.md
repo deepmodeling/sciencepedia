@@ -4,7 +4,7 @@ After our journey through the elegant mechanics of the Pratt certificate, one mi
 
 ### Building with Blocks: Certifying Composite Structures
 
-Let's start with a direct and vital application in the world of computer science and [cryptography](@article_id:138672). Many modern cryptographic systems, like the famous RSA algorithm, rely on numbers called **semiprimes**: numbers that are the product of two distinct primes, $n = p \cdot q$. The security of these systems hinges on the fact that while multiplying two large primes is easy, factoring their product is extraordinarily difficult.
+Let's start with a direct and vital application in the world of computer science and [cryptography](@keyword=cryptography|lang=en-US|style=Feynman). Many modern cryptographic systems, like the famous RSA algorithm, rely on numbers called **semiprimes**: numbers that are the product of two distinct primes, $n = p \cdot q$. The security of these systems hinges on the fact that while multiplying two large primes is easy, factoring their product is extraordinarily difficult.
 
 Now, imagine you are a verifier. Someone hands you a very large number $n$ and claims it's a semiprime. How can they *prove* it to you efficiently? Simply giving you the number $n$ isn't enough. They must provide a "certificate." A natural certificate would be the two prime factors, $p$ and $q$. You could then perform two checks: first, multiply them to see if $p \cdot q = n$; second, verify that $p$ and $q$ are indeed prime.
 
@@ -14,11 +14,11 @@ But how do you verify that? You could try to test their primality yourself, but 
 2.  Use the provided Pratt certificate for $p$ to quickly verify that $p$ is prime.
 3.  Use the provided Pratt certificate for $q$ to quickly verify that $q$ is prime.
 
-Each of these steps is computationally fast. The original primality proofs are bundled into the certificate for the semiprime. This compositional nature is what allows us to place the language of semiprimes within the complexity class NP (Nondeterministic Polynomial time) . The Pratt certificate acts as a credential that can be passed along, enabling us to build and verify proofs for more complex structures one layer at a time.
+Each of these steps is computationally fast. The original primality proofs are bundled into the certificate for the semiprime. This compositional nature is what allows us to place the language of semiprimes within the complexity class NP (Nondeterministic Polynomial time) [@problem_id:1436733]. The Pratt certificate acts as a credential that can be passed along, enabling us to build and verify proofs for more complex structures one layer at a time.
 
 ### Certifying the Absence of a Property: Unmasking the Impostors
 
-The certificate's utility extends beyond proving the existence of a property; it can also be a crucial tool for proving its absence. Consider the curious case of **Carmichael numbers**. These are [composite numbers](@article_id:263059) that are particularly devious "impostors" of primes. They satisfy the condition from Fermat's Little Theorem, $b^{n-1} \equiv 1 \pmod{n}$, for all integers $b$ that are coprime to $n$. This means they pass a common [primality test](@article_id:266362) that actual primes also pass.
+The certificate's utility extends beyond proving the existence of a property; it can also be a crucial tool for proving its absence. Consider the curious case of **Carmichael numbers**. These are [composite numbers](@keyword=composite_numbers|lang=en-US|style=Feynman) that are particularly devious "impostors" of primes. They satisfy the condition from Fermat's Little Theorem, $b^{n-1} \equiv 1 \pmod{n}$, for all integers $b$ that are coprime to $n$. This means they pass a common [primality test](@keyword=primality_test|lang=en-US|style=Feynman) that actual primes also pass.
 
 How could you certify that a number $n$ is *not* a Carmichael number? A composite number $n$ is a Carmichael number if and only if it is square-free and for every prime factor $p$ of $n$, the relation $(p-1) \mid (n-1)$ holds. Therefore, to prove $n$ is *not* a Carmichael number, we need to certify one of three possibilities:
 1.  $n$ is actually a prime number.
@@ -27,7 +27,7 @@ How could you certify that a number $n$ is *not* a Carmichael number? A composit
 
 Notice how the concept of a primality proof is woven into this logic. For the first case, the certificate is simply a Pratt certificate for $n$ itself. If you can prove $n$ is prime, it cannot, by definition, be a composite Carmichael number. For the third case, the certificate would be the prime factor $p$, along with... you guessed it, a Pratt certificate for $p$! You can't just claim $p$ is a prime factor; you must provide a verifiable guarantee. The verifier then checks that $p$ is indeed prime (using its certificate), that $p$ divides $n$, and that $(p-1)$ does not divide $(n-1)$.
 
-Here, the Pratt certificate isn't the whole story, but a critical sub-routine in a larger proof . It’s a tool we pull out of our toolbox whenever a definitive, fast-to-check statement of primality is required to make a broader argument.
+Here, the Pratt certificate isn't the whole story, but a critical sub-routine in a larger proof [@problem_id:1436742]. It’s a tool we pull out of our toolbox whenever a definitive, fast-to-check statement of primality is required to make a broader argument.
 
 ### The Great Generalization: Primality in Other Worlds
 
@@ -35,15 +35,15 @@ Perhaps the most profound insight comes when we realize that the core idea behin
 
 #### A Trip to the World of Polynomials
 
-Let's venture into the realm of polynomials over [finite fields](@article_id:141612), like the field of integers modulo 3, $\mathbb{F}_3 = \{0, 1, 2\}$. Just as integers can be prime or composite, polynomials can be **irreducible** (they can't be factored into lower-degree polynomials) or **reducible**. Irreducible polynomials are the "primes" of the polynomial world.
+Let's venture into the realm of polynomials over [finite fields](@keyword=finite_fields|lang=en-US|style=Feynman), like the field of integers modulo 3, $\mathbb{F}_3 = \{0, 1, 2\}$. Just as integers can be prime or composite, polynomials can be **irreducible** (they can't be factored into lower-degree polynomials) or **reducible**. Irreducible polynomials are the "primes" of the polynomial world.
 
-How can we certify that a polynomial $f(x)$ of degree $d$ over a field $\mathbb{F}_q$ is irreducible? We can construct an analogue of the Pratt certificate! The key insight is that $f(x)$ is irreducible if and only if the [quotient ring](@article_id:154966) $\mathbb{F}_q[x]/\langle f(x) \rangle$ is a field. If it is a field, its multiplicative group of non-zero elements has size $q^d - 1$.
+How can we certify that a polynomial $f(x)$ of degree $d$ over a field $\mathbb{F}_q$ is irreducible? We can construct an analogue of the Pratt certificate! The key insight is that $f(x)$ is irreducible if and only if the [quotient ring](@keyword=quotient_ring|lang=en-US|style=Feynman) $\mathbb{F}_q[x]/\langle f(x) \rangle$ is a field. If it is a field, its multiplicative group of non-zero elements has size $q^d - 1$.
 
 So, to certify that $f(x)$ is irreducible, the certificate provides:
 1.  A "generator" polynomial $a(x)$.
 2.  The list of distinct prime factors of the integer $N = q^d - 1$.
 
-The verifier then performs a check directly parallel to the integer case: it confirms that $a(x)^N \equiv 1 \pmod{f(x)}$ and that for each prime factor $p_i$ of $N$, $a(x)^{N/p_i} \not\equiv 1 \pmod{f(x)}$. This proves that the order of $a(x)$ is exactly $N$, meaning the [multiplicative group](@article_id:155481) has the maximum possible size. This can only happen if the ring is a field, which means $f(x)$ must be irreducible . The beautiful analogy is complete: integer primality corresponds to polynomial irreducibility, and the structure of the proof is identical.
+The verifier then performs a check directly parallel to the integer case: it confirms that $a(x)^N \equiv 1 \pmod{f(x)}$ and that for each prime factor $p_i$ of $N$, $a(x)^{N/p_i} \not\equiv 1 \pmod{f(x)}$. This proves that the order of $a(x)$ is exactly $N$, meaning the [multiplicative group](@keyword=multiplicative_group|lang=en-US|style=Feynman) has the maximum possible size. This can only happen if the ring is a field, which means $f(x)$ must be irreducible [@problem_id:1436738]. The beautiful analogy is complete: integer primality corresponds to polynomial irreducibility, and the structure of the proof is identical.
 
 #### Exploring the Eisenstein Integers
 
@@ -51,6 +51,6 @@ We can push this generalization even further, into the complex plane. Consider t
 
 And how might we certify that an Eisenstein integer $\pi$ is an Eisenstein prime? The same grand principle applies. An Eisenstein integer $\pi$ is prime if and only if the quotient ring $\mathbb{Z}[\omega]/\langle \pi \rangle$ is a field. This field has $N(\pi)$ elements, where $N(\pi)$ is the norm of $\pi$. Its multiplicative group has size $N(\pi) - 1$.
 
-The certificate for the primality of $\pi$ once again involves finding a generator $\alpha$ for this group and using the prime factorization of the group's size, $N(\pi) - 1$, to verify that $\alpha$ has the maximal possible order . From the counting numbers to polynomials to lattices in the complex plane, the same deep algebraic idea provides a unified method for certifying "primeness."
+The certificate for the primality of $\pi$ once again involves finding a generator $\alpha$ for this group and using the prime factorization of the group's size, $N(\pi) - 1$, to verify that $\alpha$ has the maximal possible order [@problem_id:1436730]. From the counting numbers to polynomials to lattices in the complex plane, the same deep algebraic idea provides a unified method for certifying "primeness."
 
 What began as a clever way to certify prime numbers has revealed itself to be a window into the very structure of computation and algebra. It is a testament to the fact that in science, the most powerful ideas are rarely just answers; they are keys that unlock countless other doors.

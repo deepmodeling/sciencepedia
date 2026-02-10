@@ -11,13 +11,13 @@ Now that we have a feel for what bits are, let’s take a look under the hood. H
 
 At its heart, a **bit** is the simplest possible choice: a 0 or a 1, a yes or a no, a dot or a dash. A sequence of these choices forms a **binary string**, the fundamental DNA of all digital information. You might think a string of 0s and 1s is just a random jumble, but the moment we apply rules, fascinating structures begin to emerge.
 
-Imagine, for a moment, a short string of just four bits. Let's impose two simple conditions: first, it must contain an equal number of 0s and 1s (two of each), and second, no two adjacent bits can be the same. Is such a string even possible? Let’s reason it out. If no two neighbors are alike, the string must alternate. If the first bit is 0, the second must be 1, the third must be 0, and the fourth must be 1. The string is `0101`. If we start with 1, we get `1010`. Notice something remarkable? Both of these alternating strings automatically have two 0s and two 1s! In this tiny example, one simple rule (alternation) automatically satisfied the other (equal numbers). This demonstrates a key principle: information isn't just data; it's data governed by rules, and these rules create an inherent structure .
+Imagine, for a moment, a short string of just four bits. Let's impose two simple conditions: first, it must contain an equal number of 0s and 1s (two of each), and second, no two adjacent bits can be the same. Is such a string even possible? Let’s reason it out. If no two neighbors are alike, the string must alternate. If the first bit is 0, the second must be 1, the third must be 0, and the fourth must be 1. The string is `0101`. If we start with 1, we get `1010`. Notice something remarkable? Both of these alternating strings automatically have two 0s and two 1s! In this tiny example, one simple rule (alternation) automatically satisfied the other (equal numbers). This demonstrates a key principle: information isn't just data; it's data governed by rules, and these rules create an inherent structure [@problem_id:1369032].
 
-As we increase the length of the string, the number of possibilities explodes. A string of length 12 can be arranged in $2^{12} = 4096$ different ways. Within this "universe" of 4096 strings, we can start asking more complex questions. How many of them read the same forwards and backwards (palindromes)? How many have exactly six 0s and six 1s? How many start with the sequence "000"? By applying mathematical tools like the Principle of Inclusion-Exclusion, we can navigate this landscape and find precise answers . The world of bits is not a chaotic mess; it is a rich, combinatorial space with deep and elegant mathematical properties.
+As we increase the length of the string, the number of possibilities explodes. A string of length 12 can be arranged in $2^{12} = 4096$ different ways. Within this "universe" of 4096 strings, we can start asking more complex questions. How many of them read the same forwards and backwards (palindromes)? How many have exactly six 0s and six 1s? How many start with the sequence "000"? By applying mathematical tools like the Principle of Inclusion-Exclusion, we can navigate this landscape and find precise answers [@problem_id:1409758]. The world of bits is not a chaotic mess; it is a rich, combinatorial space with deep and elegant mathematical properties.
 
 ### The Inevitability of Noise and the Measure of Difference
 
-In our abstract world of pure mathematics, bits are perfect. In the real world, however, they are fragile. A stray cosmic ray, a tiny power surge, or a microscopic flaw on a hard drive can flip a bit, turning a 0 into a 1 or vice versa. This is **noise**, the eternal enemy of information. To fight an enemy, you must first be able to see it. How can we measure the "difference" or "corruption" between two [binary strings](@article_id:261619)?
+In our abstract world of pure mathematics, bits are perfect. In the real world, however, they are fragile. A stray cosmic ray, a tiny power surge, or a microscopic flaw on a hard drive can flip a bit, turning a 0 into a 1 or vice versa. This is **noise**, the eternal enemy of information. To fight an enemy, you must first be able to see it. How can we measure the "difference" or "corruption" between two [binary strings](@keyword=binary_strings|lang=en-US|style=Feynman)?
 
 The answer is beautifully simple. It's called the **Hamming distance**, named after the pioneer Richard Hamming. It is simply the number of positions at which two strings of the same length differ. For instance, to find the Hamming distance between the numbers 50 and 100, we first represent them as 8-bit binary strings.
 *   $50 = 32 + 16 + 2$ $\rightarrow$ 00110010
@@ -29,7 +29,7 @@ String 1: 0 0 1 1 0 0 1 0
 String 2: 0 1 1 0 0 1 0 0
            ^   ^   ^ ^
 ```
-They differ in four positions. The Hamming distance is 4 . This simple count gives us a powerful metric. A Hamming distance of 0 means the strings are identical. A distance of 1 means a single bit has been flipped. This "ruler" for information is the first and most crucial step toward building systems that can withstand the onslaught of noise.
+They differ in four positions. The Hamming distance is 4 [@problem_id:1373983]. This simple count gives us a powerful metric. A Hamming distance of 0 means the strings are identical. A distance of 1 means a single bit has been flipped. This "ruler" for information is the first and most crucial step toward building systems that can withstand the onslaught of noise.
 
 ### The Parity Grid: A Simple and Elegant Defense
 
@@ -46,11 +46,11 @@ $$
 Now, for each row and each column, we'll add one extra bit, called a **parity bit**. We'll use **even parity**, which means we choose the parity bit so that the total number of 1s in that row or column (including the parity bit itself) is an even number.
 
 Let's do it for our grid.
-*   Row 1: `1 1 0`. Sum of 1s is 2 (already even). So, the row [parity bit](@article_id:170404) is 0.
+*   Row 1: `1 1 0`. Sum of 1s is 2 (already even). So, the row [parity bit](@keyword=parity_bit|lang=en-US|style=Feynman) is 0.
 *   Row 2: `0 1 0`. Sum of 1s is 1 (odd). To make it even, the row parity bit must be 1.
-*   Row 3: `1 1 1`. Sum of 1s is 3 (odd). The row [parity bit](@article_id:170404) must be 1.
+*   Row 3: `1 1 1`. Sum of 1s is 3 (odd). The row [parity bit](@keyword=parity_bit|lang=en-US|style=Feynman) must be 1.
 
-We do the same for the columns, resulting in a complete grid with all the check bits :
+We do the same for the columns, resulting in a complete grid with all the check bits [@problem_id:1933173]:
 $$
 \begin{pmatrix}
 1 & 1 & 0 & | & \mathbf{0} \\
@@ -73,11 +73,11 @@ $$ 2^r \ge k + r + 1 $$
 This inequality says that the number of patterns our $r$ check bits can form ($2^r$) must be large enough to distinguish between "no error" and an error occurring at any of the $k+r$ positions in the entire codeword. For our 12 data bits ($k=12$), we must find the smallest $r$ that satisfies $2^r \ge 12 + r + 1$, or $2^r \ge 13 + r$. Let's test it:
 *   $r=4: 2^4 = 16$. Is $16 \ge 13+4 = 17$? No.
 *   $r=5: 2^5 = 32$. Is $32 \ge 13+5 = 18$? Yes!
-So, we need a minimum of 5 check bits to protect 12 data bits against any single-bit error . This is the price of admission for this level of security.
+So, we need a minimum of 5 check bits to protect 12 data bits against any single-bit error [@problem_id:1933125]. This is the price of admission for this level of security.
 
 But how does it work? This is where the true beauty lies. Hamming didn't just throw check bits in randomly; he designed a system of breathtaking elegance based on the properties of binary numbers themselves. In a Hamming code, the bits are numbered starting from 1.
-*   **The Secret Architecture**: The check bits are placed at positions that are [powers of two](@article_id:195834): 1, 2, 4, 8, 16, and so on. All other positions are for the data bits. The rule is simple and profound: a position holds a parity bit if its binary representation contains exactly one '1' .
-*   **The Error GPS**: Each [parity bit](@article_id:170404) is responsible for checking a specific group of bits (including itself). The rule is this: the [parity bit](@article_id:170404) at position $2^j$ (e.g., position 8, which is $2^3$) checks every bit position whose binary index has a '1' in the $(j+1)$-th spot from the right. For example, the [parity bit](@article_id:170404) at position 8 (binary `1000`) checks all positions that have a `1` in their 4th binary place. This includes positions 8, 9, 10, 11, 12, 13, 14, and 15 .
+*   **The Secret Architecture**: The check bits are placed at positions that are [powers of two](@keyword=powers_of_two|lang=en-US|style=Feynman): 1, 2, 4, 8, 16, and so on. All other positions are for the data bits. The rule is simple and profound: a position holds a parity bit if its binary representation contains exactly one '1' [@problem_id:1933131].
+*   **The Error GPS**: Each [parity bit](@keyword=parity_bit|lang=en-US|style=Feynman) is responsible for checking a specific group of bits (including itself). The rule is this: the [parity bit](@keyword=parity_bit|lang=en-US|style=Feynman) at position $2^j$ (e.g., position 8, which is $2^3$) checks every bit position whose binary index has a '1' in the $(j+1)$-th spot from the right. For example, the [parity bit](@keyword=parity_bit|lang=en-US|style=Feynman) at position 8 (binary `1000`) checks all positions that have a `1` in their 4th binary place. This includes positions 8, 9, 10, 11, 12, 13, 14, and 15 [@problem_id:1933139].
 
 Now, for the grand finale. Suppose a single bit, say at position 11 (binary `1011`), gets flipped. Which parity checks will fail?
 *   Parity bit 1 (position `0001`) checks 11, because `1011` has a 1 in the first spot. Check fails.
@@ -97,7 +97,7 @@ Imagine an "Archivist" who claims to have a complete, infinitely long, numbered 
 *   $S_3 = (a_{31}, a_{32}, a_{33}, \dots)$
 *   ... and so on, forever.
 
-The claim is that *every* conceivable infinite sequence of 0s and 1s appears somewhere on this list. Can we test this claim? Yes, with a brilliantly simple and devastatingly powerful method known as **Cantor's [diagonal argument](@article_id:202204)**.
+The claim is that *every* conceivable infinite sequence of 0s and 1s appears somewhere on this list. Can we test this claim? Yes, with a brilliantly simple and devastatingly powerful method known as **Cantor's [diagonal argument](@keyword=diagonal_argument|lang=en-US|style=Feynman)**.
 
 Let's construct a new sequence, which we'll call $S^* = (b_1, b_2, b_3, \dots)$, using the Archivist's own list. We will define our new sequence by looking at the "diagonal" of the list: the first bit of the first sequence, the second bit of the second, the third of the third, and so on.
 Our rule for constructing $S^*$ is this: for every position $n$, the bit $b_n$ will be the *opposite* of the bit on the diagonal at that position. That is, $b_n = 1 - a_{nn}$.
@@ -109,8 +109,8 @@ Now, let's ask: is our newly created sequence $S^*$ on the Archivist's list?
 *   Could $S^*$ be the same as $S_2$? No, they differ in the second position ($b_2 \neq a_{22}$).
 *   Could $S^*$ be the same as $S_k$ for any number $k$? No, because they are guaranteed to differ in the $k$-th position.
 
-Our sequence $S^*$ is, by its very construction, different from every single sequence on the supposedly complete list. This means the Archivist's list is incomplete. But this logic works no matter what list someone presents. Any attempt to create a numbered list of all infinite binary sequences will inevitably leave at least one out .
+Our sequence $S^*$ is, by its very construction, different from every single sequence on the supposedly complete list. This means the Archivist's list is incomplete. But this logic works no matter what list someone presents. Any attempt to create a numbered list of all infinite binary sequences will inevitably leave at least one out [@problem_id:2299023].
 
-The conclusion is staggering. The set of all infinite binary sequences is not just infinite; it is a "bigger" kind of infinity than the counting numbers ($1, 2, 3, \dots$). It is **uncountable**. You cannot put its members into a one-to-one correspondence with the [natural numbers](@article_id:635522). The same logic proves that the set of all real numbers is uncountable, as any real number can be represented by an infinite sequence of bits (its binary expansion) .
+The conclusion is staggering. The set of all infinite binary sequences is not just infinite; it is a "bigger" kind of infinity than the counting numbers ($1, 2, 3, \dots$). It is **uncountable**. You cannot put its members into a one-to-one correspondence with the [natural numbers](@keyword=natural_numbers|lang=en-US|style=Feynman). The same logic proves that the set of all real numbers is uncountable, as any real number can be represented by an infinite sequence of bits (its binary expansion) [@problem_id:2289565].
 
 And so, our journey ends here, for now. We started with a simple choice, a 0 or a 1. We saw how to arrange them, count them, and protect them with elegant, self-referential codes. And finally, by following the idea to its logical conclusion, we discovered that these simple bits open a doorway to infinities so vast they defy our ability to count them. The humble bit is not just a piece of data; it is a key to understanding the very structure of information, logic, and reality itself.

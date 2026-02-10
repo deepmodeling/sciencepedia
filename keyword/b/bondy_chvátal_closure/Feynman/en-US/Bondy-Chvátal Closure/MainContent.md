@@ -17,15 +17,15 @@ The number $n$ is the magic threshold. Why $n$? Think of it this way: if two ver
 
 ### The Unfolding of a Closure
 
-To truly appreciate this process, we must see it in action. Sometimes, it's a very quiet affair. Consider a graph on $n=5$ vertices whose degrees are $(1, 2, 2, 2, 3)$. Let's say the vertex with degree 3, $v_3$, and a vertex with degree 2, $a$, are not connected. Their degree sum is $3+2=5$, which is equal to $n$. So, we add the edge $(v_3, a)$. This raises their degrees to 4 and 3, respectively. Now we check all other non-adjacent pairs. Perhaps we find that after this single addition, no other pair meets the threshold. The process stops. One edge was added, and the graph is now "closed"  .
+To truly appreciate this process, we must see it in action. Sometimes, it's a very quiet affair. Consider a graph on $n=5$ vertices whose degrees are $(1, 2, 2, 2, 3)$. Let's say the vertex with degree 3, $v_3$, and a vertex with degree 2, $a$, are not connected. Their degree sum is $3+2=5$, which is equal to $n$. So, we add the edge $(v_3, a)$. This raises their degrees to 4 and 3, respectively. Now we check all other non-adjacent pairs. Perhaps we find that after this single addition, no other pair meets the threshold. The process stops. One edge was added, and the graph is now "closed" [@problem_id:1484542] [@problem_id:1484531].
 
-But sometimes, this simple rule can trigger a spectacular cascade. Imagine a graph where, initially, only one or two pairs of vertices meet the condition. We add an edge, say $(u,v)$. But wait! By adding this edge, we've increased the degrees of both $u$ and $v$. This increase might now cause a *different* pair, say $(u,w)$, to satisfy the degree-sum condition. So we add that edge, which in turn increases the degree of $w$. This could continue, setting off a chain reaction where adding one edge enables the next, like a series of dominoes falling. A sparse-looking graph can, through this iterative process, "fill itself in," sometimes all the way to becoming a complete graph, where every vertex is connected to every other vertex . It’s a beautiful example of a simple, local rule producing a complex and powerful global transformation.
+But sometimes, this simple rule can trigger a spectacular cascade. Imagine a graph where, initially, only one or two pairs of vertices meet the condition. We add an edge, say $(u,v)$. But wait! By adding this edge, we've increased the degrees of both $u$ and $v$. This increase might now cause a *different* pair, say $(u,w)$, to satisfy the degree-sum condition. So we add that edge, which in turn increases the degree of $w$. This could continue, setting off a chain reaction where adding one edge enables the next, like a series of dominoes falling. A sparse-looking graph can, through this iterative process, "fill itself in," sometimes all the way to becoming a complete graph, where every vertex is connected to every other vertex [@problem_id:1484556]. It’s a beautiful example of a simple, local rule producing a complex and powerful global transformation.
 
 ### Does the Order Matter? The Certainty of the Final Form
 
 A sharp observer will ask a crucial question: What if, at some step, there are multiple pairs of vertices that satisfy the $\deg(u) + \deg(v) \geq n$ condition? Does the choice of which edge to add first affect the final graph we get? If it did, the "closure" wouldn't be a unique object, and the whole idea would be ambiguous.
 
-Remarkably, the answer is no—the final graph is **always the same**, regardless of the order in which you add the edges. The [closure of a graph](@article_id:268642) is well-defined . Why? The reason is a property called **monotonicity**. Adding an edge to a graph can *only increase* the degrees of its endpoints; it never decreases any degree.
+Remarkably, the answer is no—the final graph is **always the same**, regardless of the order in which you add the edges. The [closure of a graph](@keyword=closure_of_a_graph|lang=en-US|style=Feynman) is well-defined [@problem_id:1484559]. Why? The reason is a property called **monotonicity**. Adding an edge to a graph can *only increase* the degrees of its endpoints; it never decreases any degree.
 
 Think of it like filling a valley with water. The condition $\deg(u) + \deg(v) \geq n$ is like saying "this point is below the target water level." If a point is below the water level, pouring water in elsewhere (adding other edges) will only raise the overall water level, ensuring that the original point is *still* below the target level. In graph terms, if a pair $(u,v)$ is eligible to have an edge added, and we decide to add a different edge $(x,y)$ first, the degrees of $u$ and $v$ can only stay the same or increase. Therefore, the condition $\deg(u) + \deg(v) \geq n$ will still hold. Any edge that is "destined" to be in the closure will eventually have its condition met and be added, no matter the sequence of operations. This guarantees that we all arrive at the exact same destination, the unique $cl(G)$.
 
@@ -37,9 +37,9 @@ First, the closure operation cannot bridge disconnected components. If your grap
 $$
 \deg(u) + \deg(v) \leq (s_i - 1) + (s_j - 1) = s_i + s_j - 2 \leq n - 2
 $$
-Since their degree sum can never reach $n$, no edge will ever be added between them. The closure operation respects these fundamental partitions of the graph .
+Since their degree sum can never reach $n$, no edge will ever be added between them. The closure operation respects these fundamental partitions of the graph [@problem_id:1484554].
 
-Second, some graphs are already "closed." For such a graph, the process doesn't even begin. A graph $G$ is **closed** if $cl(G)=G$. This simply means that for *every* pair of non-adjacent vertices $u$ and $v$, their degree sum is already strictly less than $n$. The cycle graph on 8 vertices, $C_8$, is a perfect example. Every vertex has degree 2. Any two non-adjacent vertices have a degree sum of $2+2=4$, which is far less than $n=8$. No edges will ever be added. The graph is its own closure. This makes a crucial point: a [closed graph](@article_id:153668) is not necessarily a complete graph .
+Second, some graphs are already "closed." For such a graph, the process doesn't even begin. A graph $G$ is **closed** if $cl(G)=G$. This simply means that for *every* pair of non-adjacent vertices $u$ and $v$, their degree sum is already strictly less than $n$. The cycle graph on 8 vertices, $C_8$, is a perfect example. Every vertex has degree 2. Any two non-adjacent vertices have a degree sum of $2+2=4$, which is far less than $n=8$. No edges will ever be added. The graph is its own closure. This makes a crucial point: a [closed graph](@keyword=closed_graph|lang=en-US|style=Feynman) is not necessarily a complete graph [@problem_id:1484533].
 
 ### The Ultimate Goal: A Bridge to Hamiltonicity
 
@@ -47,25 +47,25 @@ So, why all this fuss about adding edges? What is the grand prize for this intel
 
 The connection is the elegant and powerful **Bondy-Chvátal Theorem**:
 
-> A [simple graph](@article_id:274782) $G$ has a Hamiltonian cycle if and only if its closure, $cl(G)$, has a Hamiltonian cycle.
+> A [simple graph](@keyword=simple_graph|lang=en-US|style=Feynman) $G$ has a Hamiltonian cycle if and only if its closure, $cl(G)$, has a Hamiltonian cycle.
 
 This is profound. The seemingly complex and holistic property of "being Hamiltonian" is perfectly preserved throughout the entire closure process. The original graph and its final closure share the same fate regarding Hamiltonicity.
 
-This gives us a fantastic strategy. While telling if an arbitrary graph is Hamiltonian is notoriously hard, telling if a *[complete graph](@article_id:260482)* $K_n$ is Hamiltonian is trivial—of course it is! You can tour the vertices in any order you wish. So, our strategy becomes:
+This gives us a fantastic strategy. While telling if an arbitrary graph is Hamiltonian is notoriously hard, telling if a *[complete graph](@keyword=complete_graph|lang=en-US|style=Feynman)* $K_n$ is Hamiltonian is trivial—of course it is! You can tour the vertices in any order you wish. So, our strategy becomes:
 
 1.  Take your complicated graph $G$.
 2.  Compute its closure, $cl(G)$, by repeatedly applying the simple degree-sum rule.
-3.  Check if the final graph, $cl(G)$, is the [complete graph](@article_id:260482) $K_n$.
-4.  If it is, then since $K_n$ is Hamiltonian, the Bondy-Chvátal theorem guarantees that our original graph $G$ must also be Hamiltonian! .
+3.  Check if the final graph, $cl(G)$, is the [complete graph](@keyword=complete_graph|lang=en-US|style=Feynman) $K_n$.
+4.  If it is, then since $K_n$ is Hamiltonian, the Bondy-Chvátal theorem guarantees that our original graph $G$ must also be Hamiltonian! [@problem_id:1457307].
 
-This is an incredible leap. We've replaced a global search problem with a straightforward, iterative procedure. This method is strictly more powerful than older criteria like Dirac's Theorem, which requires every vertex to have a degree of at least $n/2$. It's easy to find a graph that fails Dirac's test, but whose closure becomes complete, triumphantly revealing its hidden Hamiltonian nature .
+This is an incredible leap. We've replaced a global search problem with a straightforward, iterative procedure. This method is strictly more powerful than older criteria like Dirac's Theorem, which requires every vertex to have a degree of at least $n/2$. It's easy to find a graph that fails Dirac's test, but whose closure becomes complete, triumphantly revealing its hidden Hamiltonian nature [@problem_id:1363892].
 
 ### A Word of Caution: The Limits of Sufficiency
 
 As with any powerful tool, it's essential to understand its limitations. If we compute the closure and find that $cl(G) = K_n$, we're done; we've proven $G$ is Hamiltonian.
 
-But what if the process stops and $cl(G)$ is *not* a [complete graph](@article_id:260482)? Can we conclude that $G$ is *not* Hamiltonian? No, absolutely not. The theorem is an "if and only if" statement about $G$ and $cl(G)$, not about $G$ and $K_n$. The fact that $cl(G)$ isn't complete doesn't mean it isn't Hamiltonian.
+But what if the process stops and $cl(G)$ is *not* a [complete graph](@keyword=complete_graph|lang=en-US|style=Feynman)? Can we conclude that $G$ is *not* Hamiltonian? No, absolutely not. The theorem is an "if and only if" statement about $G$ and $cl(G)$, not about $G$ and $K_n$. The fact that $cl(G)$ isn't complete doesn't mean it isn't Hamiltonian.
 
-Remember our friend the cycle graph, $C_n$ (for $n \ge 5$)? It is its own closure, so $cl(C_n) = C_n \neq K_n$. Yet, $C_n$ is, by its very definition, Hamiltonian. The Bondy-Chvátal theorem simply tells us the [tautology](@article_id:143435) that "$C_n$ is Hamiltonian if and only if $C_n$ is Hamiltonian," which is true but not helpful for proving it in the first place .
+Remember our friend the cycle graph, $C_n$ (for $n \ge 5$)? It is its own closure, so $cl(C_n) = C_n \neq K_n$. Yet, $C_n$ is, by its very definition, Hamiltonian. The Bondy-Chvátal theorem simply tells us the [tautology](@keyword=tautology|lang=en-US|style=Feynman) that "$C_n$ is Hamiltonian if and only if $C_n$ is Hamiltonian," which is true but not helpful for proving it in the first place [@problem_id:1484536].
 
-So, if you find that $cl(G) \neq K_n$, the test is **inconclusive** . It doesn't mean failure; it just means this particular pathway to a proof didn't work. The fate of your graph $G$ is still tied to the fate of its closure $cl(G)$, but determining the Hamiltonicity of a non-complete [closed graph](@article_id:153668) might require another idea. This intellectual honesty is central to science. We have found a beautiful and powerful tool, but it is not a magic wand that solves all problems. It is a giant step forward on a journey of discovery that continues.
+So, if you find that $cl(G) \neq K_n$, the test is **inconclusive** [@problem_id:1484519]. It doesn't mean failure; it just means this particular pathway to a proof didn't work. The fate of your graph $G$ is still tied to the fate of its closure $cl(G)$, but determining the Hamiltonicity of a non-complete [closed graph](@keyword=closed_graph|lang=en-US|style=Feynman) might require another idea. This intellectual honesty is central to science. We have found a beautiful and powerful tool, but it is not a magic wand that solves all problems. It is a giant step forward on a journey of discovery that continues.

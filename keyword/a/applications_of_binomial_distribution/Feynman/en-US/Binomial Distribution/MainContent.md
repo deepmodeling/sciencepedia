@@ -15,14 +15,14 @@ It seems almost trivial, doesn't it? But this is where the fun begins. The unive
 
 ### Building Worlds: The Binomial Distribution
 
-Let's move from a single coin to a whole handful. Suppose we have $n$ coins and we toss them all at once. Or, to make it more interesting, let's consider a factory producing iPhones . Every day, it produces $n$ phones. Each phone, as it comes off the assembly line, has a small probability $p$ of being defective. What is the probability that we get exactly $k$ defective phones today?
+Let's move from a single coin to a whole handful. Suppose we have $n$ coins and we toss them all at once. Or, to make it more interesting, let's consider a factory producing iPhones [@problem_id:2424247]. Every day, it produces $n$ phones. Each phone, as it comes off the assembly line, has a small probability $p$ of being defective. What is the probability that we get exactly $k$ defective phones today?
 
 To answer this, we must make two crucial assumptions. They are the pillars upon which our next idea rests:
 
 1.  **Independence:** Whether one phone is defective tells us nothing about whether the next one is. The events are completely separate.
 2.  **Identical Distribution:** The probability of a defect, $p$, is the *exact same* for every single phone produced.
 
-If these two conditions hold, we are in the world of the **Binomial Distribution**. We have $n$ [independent and identically distributed](@article_id:168573) (i.i.d.) Bernoulli trials, and we are counting the total number of successes. The probability of getting exactly $k$ successes is given by a beautiful formula:
+If these two conditions hold, we are in the world of the **Binomial Distribution**. We have $n$ [independent and identically distributed](@keyword=independent_and_identically_distributed|lang=en-US|style=Feynman) (i.i.d.) Bernoulli trials, and we are counting the total number of successes. The probability of getting exactly $k$ successes is given by a beautiful formula:
 
 $$
 P(K=k) = \binom{n}{k} p^k (1-p)^{n-k}
@@ -30,15 +30,15 @@ $$
 
 Let's quickly break this down. The $p^k$ part is the probability of $k$ successes, and $(1-p)^{n-k}$ is the probability of the remaining $n-k$ failures. The term $\binom{n}{k}$, read "n choose k," is the number of different ways you can arrange those $k$ successes among the $n$ trials. It’s the combinatorial heart of the formula, accounting for all the possible patterns of defective phones on the conveyor belt.
 
-This same logic applies not just to factories, but to the machinery of life itself. A ribosome translating a gene is like a factory assembling a protein from an mRNA blueprint containing $n$ codons. At each codon, there's a tiny probability $p$ of inserting the wrong amino acid. If we assume each error is independent and the probability is constant, then the total number of errors in the final protein is perfectly described by the Binomial distribution .
+This same logic applies not just to factories, but to the machinery of life itself. A ribosome translating a gene is like a factory assembling a protein from an mRNA blueprint containing $n$ codons. At each codon, there's a tiny probability $p$ of inserting the wrong amino acid. If we assume each error is independent and the probability is constant, then the total number of errors in the final protein is perfectly described by the Binomial distribution [@problem_id:2424247].
 
-What if our assumptions are broken? For instance, what if we run two different marketing campaigns, one with success probability $p_A$ and another with $p_B$? The total number of successes is no longer Binomial because the trials are not identically distributed . This little detail reminds us that the elegant simplicity of the Binomial distribution is a direct consequence of its strict assumptions.
+What if our assumptions are broken? For instance, what if we run two different marketing campaigns, one with success probability $p_A$ and another with $p_B$? The total number of successes is no longer Binomial because the trials are not identically distributed [@problem_id:1919086]. This little detail reminds us that the elegant simplicity of the Binomial distribution is a direct consequence of its strict assumptions.
 
 ### When Things Get Crowded and Rare: The Poisson Emergence
 
 Now, let's push our model to an interesting limit. What happens when the number of trials $n$ gets enormously large, but the probability of success $p$ becomes vanishingly small?
 
-Imagine a synapse in your brain, where a presynaptic neuron communicates with a postsynaptic one. The presynaptic terminal has a large number, say $n$, of potential "release sites" where it can launch a vesicle full of neurotransmitters. However, for any single action potential, the probability $p$ that a specific site will actually release a vesicle is very low. This is a classic "large $n$, small $p$" scenario .
+Imagine a synapse in your brain, where a presynaptic neuron communicates with a postsynaptic one. The presynaptic terminal has a large number, say $n$, of potential "release sites" where it can launch a vesicle full of neurotransmitters. However, for any single action potential, the probability $p$ that a specific site will actually release a vesicle is very low. This is a classic "large $n$, small $p$" scenario [@problem_id:2738694].
 
 Calculating the Binomial formula here would be a nightmare. We'd have huge numbers in the $\binom{n}{k}$ term and tiny numbers in the $p^k$ term. But here, nature performs a bit of mathematical magic. As long as the *expected* number of successes, the product $\lambda = np$, remains a sensible, finite number, the complex Binomial distribution transforms into something much simpler: the **Poisson distribution**.
 
@@ -46,7 +46,7 @@ $$
 P(K=k) = \frac{e^{-\lambda} \lambda^k}{k!}
 $$
 
-Isn't that remarkable? All the complexity of $n$ and $p$ individually has vanished, collapsing into a single parameter, $\lambda$, the average rate of success. This is often called the "[law of rare events](@article_id:152001)." It governs the number of typos per page in a book, the number of radioactive decays in a second, the number of ribosome errors in a protein , and the number of vesicles released at a synapse . It shows a deep unity across disparate fields of science: when you are counting rare events in a large number of opportunities, the same simple law emerges.
+Isn't that remarkable? All the complexity of $n$ and $p$ individually has vanished, collapsing into a single parameter, $\lambda$, the average rate of success. This is often called the "[law of rare events](@keyword=law_of_rare_events|lang=en-US|style=Feynman)." It governs the number of typos per page in a book, the number of radioactive decays in a second, the number of ribosome errors in a protein [@problem_id:2424247], and the number of vesicles released at a synapse [@problem_id:2738694]. It shows a deep unity across disparate fields of science: when you are counting rare events in a large number of opportunities, the same simple law emerges.
 
 ### From Description to Prediction: Modeling Probabilities with GLMs
 
@@ -54,33 +54,33 @@ So far, we've been acting as if we know the probability $p$. But in the real wor
 
 To tackle this, we need to connect our probability distributions to data. This is the job of **Generalized Linear Models (GLMs)**. Let's return to the simplest case: a single Bernoulli trial, where the outcome $Y$ is either 0 or 1. We want to predict the probability of success, $\mu = P(Y=1)$, based on some predictor variables, like hours studied ($x_1$), sleep ($x_2$), etc.
 
-A simple linear model like $\mu = \beta_0 + \beta_1 x_1 + \dots$ won't work, because the left side is a probability (stuck between 0 and 1) while the right side can be any number. The solution is to use a **[link function](@article_id:169507)** that maps the probability's range to the entire number line. For Bernoulli trials, the standard choice is the **logit function**, which models the [log-odds](@article_id:140933) of success:
+A simple linear model like $\mu = \beta_0 + \beta_1 x_1 + \dots$ won't work, because the left side is a probability (stuck between 0 and 1) while the right side can be any number. The solution is to use a **[link function](@keyword=link_function|lang=en-US|style=Feynman)** that maps the probability's range to the entire number line. For Bernoulli trials, the standard choice is the **logit function**, which models the [log-odds](@keyword=log_odds|lang=en-US|style=Feynman) of success:
 
 $$
 g(\mu) = \ln\left(\frac{\mu}{1-\mu}\right) = \beta_0 + \beta_1 x_1 + \dots + \beta_p x_p
 $$
 
-This model is famously known as **logistic regression** . It is a GLM defined by three parts: a random component (the Bernoulli distribution), a systematic component (the linear formula with predictors), and a [link function](@article_id:169507) (the logit). This framework allows us to move from simply describing chance to actively modeling and predicting it based on real-world factors.
+This model is famously known as **logistic regression** [@problem_id:1931463]. It is a GLM defined by three parts: a random component (the Bernoulli distribution), a systematic component (the linear formula with predictors), and a [link function](@keyword=link_function|lang=en-US|style=Feynman) (the logit). This framework allows us to move from simply describing chance to actively modeling and predicting it based on real-world factors.
 
 ### The Noisy Reality of Counts: Mean, Variance, and Overdispersion
 
-When we apply these models to real-world data, especially [count data](@article_id:270395) from fields like genomics, we run into a fascinating and fundamental property. For data that follows a bell curve (a Normal distribution), like human height, the mean (average height) and the variance (how spread out the heights are) are independent parameters. Knowing the average height doesn't tell you the variance.
+When we apply these models to real-world data, especially [count data](@keyword=count_data|lang=en-US|style=Feynman) from fields like genomics, we run into a fascinating and fundamental property. For data that follows a bell curve (a Normal distribution), like human height, the mean (average height) and the variance (how spread out the heights are) are independent parameters. Knowing the average height doesn't tell you the variance.
 
-But for [count data](@article_id:270395) described by the Binomial or Poisson distributions, this is not true. The variance is intrinsically linked to the mean.
+But for [count data](@keyword=count_data|lang=en-US|style=Feynman) described by the Binomial or Poisson distributions, this is not true. The variance is intrinsically linked to the mean.
 *   For a Binomial distribution, the mean is $np$ and the variance is $np(1-p)$.
 *   For a Poisson distribution, the relationship is even simpler: the variance is *equal* to the mean.
 
-This is a critical distinction. Imagine analyzing data from two types of biology experiments: older DNA microarrays, which produce continuous intensity signals often modeled by a Normal distribution, and modern RNA-sequencing (RNA-seq), which produces discrete counts of molecules . You cannot use the same statistical tools for both. For the RNA-seq counts, you *must* use a model that respects this built-in relationship between mean and variance.
+This is a critical distinction. Imagine analyzing data from two types of biology experiments: older DNA microarrays, which produce continuous intensity signals often modeled by a Normal distribution, and modern RNA-sequencing (RNA-seq), which produces discrete counts of molecules [@problem_id:1418493]. You cannot use the same statistical tools for both. For the RNA-seq counts, you *must* use a model that respects this built-in relationship between mean and variance.
 
-When scientists first applied the Poisson model to real RNA-seq data, they found something puzzling. For many genes, the observed variance in counts across different biological samples was much, much larger than the mean. The data was "noisier" or more spread out than the simple Poisson model predicted. This phenomenon is called **overdispersion** . It was a clear sign that a piece of the puzzle was missing.
+When scientists first applied the Poisson model to real RNA-seq data, they found something puzzling. For many genes, the observed variance in counts across different biological samples was much, much larger than the mean. The data was "noisier" or more spread out than the simple Poisson model predicted. This phenomenon is called **overdispersion** [@problem_id:2841014]. It was a clear sign that a piece of the puzzle was missing.
 
 ### A More Flexible Truth: The Negative Binomial Distribution
 
-Where does this extra noise come from? The Poisson model's assumption of a single, constant rate $\lambda$ is too simplistic for the messy reality of biology. In truth, the "true" expression level of a gene isn't a fixed number; it varies from one biological replicate to the next due to genetic differences, subtle environmental changes, and unavoidable technical variations during the experiment .
+Where does this extra noise come from? The Poisson model's assumption of a single, constant rate $\lambda$ is too simplistic for the messy reality of biology. In truth, the "true" expression level of a gene isn't a fixed number; it varies from one biological replicate to the next due to genetic differences, subtle environmental changes, and unavoidable technical variations during the experiment [@problem_id:2841014].
 
 So, what if we model the rate $\lambda$ not as a fixed number, but as a random variable itself? This is a profound idea. We say that the count for a gene, $Y$, follows a Poisson distribution with a certain rate $\Lambda$, but that rate $\Lambda$ is itself drawn from another distribution that describes its variability. A natural and mathematically convenient choice for the distribution of the rate is the **Gamma distribution**.
 
-This two-level, hierarchical model is called a **Poisson-Gamma mixture**. When you do the math and integrate out the random rate, you are left with a new, single distribution for the counts. This distribution is the hero of modern [count data analysis](@article_id:186424): the **Negative Binomial distribution** .
+This two-level, hierarchical model is called a **Poisson-Gamma mixture**. When you do the math and integrate out the random rate, you are left with a new, single distribution for the counts. This distribution is the hero of modern [count data analysis](@keyword=count_data_analysis|lang=en-US|style=Feynman): the **Negative Binomial distribution** [@problem_id:2793606].
 
 Its properties are exactly what we need. It has a mean $\mu$, but its variance is given by:
 

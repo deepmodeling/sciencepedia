@@ -1,11 +1,11 @@
 ## Introduction
-In the study of probability, random variables often seem complex and unpredictable. How can we distill their essential characteristics, like the average outcome or its variability, from an entire landscape of possibilities? The Probability Generating Function (PGF) offers a remarkably elegant answer. This single, compact function acts as a complete blueprint for a [discrete random variable](@article_id:262966), yet its power is often not immediately apparent. While traditional methods for calculating properties like the expected value can involve cumbersome summations, the PGF provides a shortcut that feels almost magical.
+In the study of probability, random variables often seem complex and unpredictable. How can we distill their essential characteristics, like the average outcome or its variability, from an entire landscape of possibilities? The Probability Generating Function (PGF) offers a remarkably elegant answer. This single, compact function acts as a complete blueprint for a [discrete random variable](@keyword=discrete_random_variable|lang=en-US|style=Feynman), yet its power is often not immediately apparent. While traditional methods for calculating properties like the expected value can involve cumbersome summations, the PGF provides a shortcut that feels almost magical.
 
 This article demystifies this powerful tool. We will explore how it transforms difficult probability problems into straightforward calculus exercises. You will learn the core principles and witness their application across a wide range of disciplines, revealing the hidden unity in the logic of chance. The journey begins with understanding the fundamental connection between derivatives and moments, then expands to showcase the PGF's utility in modeling the real world.
 
 ## Principles and Mechanisms
 
-In our journey so far, we have been introduced to a curious and powerful mathematical object: the **Probability Generating Function (PGF)**. We've hinted that this single function, $G_X(s)$, acts like a compressed file, holding all the information about a random variable $X$ that takes on integer values. It seems almost too good to be true. How can a simple-looking expression like $(0.3s + 0.7)^8$ possibly contain the blueprint for a [random process](@article_id:269111)?
+In our journey so far, we have been introduced to a curious and powerful mathematical object: the **Probability Generating Function (PGF)**. We've hinted that this single function, $G_X(s)$, acts like a compressed file, holding all the information about a random variable $X$ that takes on integer values. It seems almost too good to be true. How can a simple-looking expression like $(0.3s + 0.7)^8$ possibly contain the blueprint for a [random process](@keyword=random_process|lang=en-US|style=Feynman)?
 
 In this chapter, we will pry open this mathematical treasure chest. We will discover that the tools needed to unlock its secrets are surprisingly familiar—the basic operations of calculus. By learning how to "ask" the PGF the right questions, we can extract some of the most important characteristics of a random system, like its average behavior and its variability, with an elegance and efficiency that can feel like magic.
 
@@ -27,9 +27,9 @@ $$G'_X(1) = \sum_{k=0}^{\infty} P(X=k) \cdot k \cdot 1^{k-1} = \sum_{k=0}^{\inft
 
 Look closely at that final expression. It is nothing less than the definition of the **expected value**, or mean, of the random variable $X$! This is a remarkable result. By simply differentiating the PGF and evaluating it at $s=1$, we can instantly calculate the average value of $X$.
 
-Let's see this principle in action. Imagine a biologist studying mutations in a sample of eight plants . The number of mutated plants, $X$, has a PGF given by $G_X(s) = (0.3s + 0.7)^8$. To find the average number of mutated plants, we no longer need to calculate the probability of finding 0, 1, 2, ... up to 8 mutated plants and then compute the weighted average. We can just use our new trick.
+Let's see this principle in action. Imagine a biologist studying mutations in a sample of eight plants [@problem_id:1380067]. The number of mutated plants, $X$, has a PGF given by $G_X(s) = (0.3s + 0.7)^8$. To find the average number of mutated plants, we no longer need to calculate the probability of finding 0, 1, 2, ... up to 8 mutated plants and then compute the weighted average. We can just use our new trick.
 
-First, differentiate using the [chain rule](@article_id:146928):
+First, differentiate using the [chain rule](@keyword=chain_rule|lang=en-US|style=Feynman):
 
 $$G'_X(s) = 8(0.3s + 0.7)^7 \cdot (0.3)$$
 
@@ -39,7 +39,7 @@ $$E[X] = G'_X(1) = 8(0.3 \cdot 1 + 0.7)^7 \cdot (0.3) = 8(1)^7 \cdot (0.3) = 2.4
 
 Just like that, the average number of mutated plants is found to be $2.4$. The compact PGF yielded the answer with one swift stroke of calculus.
 
-This technique works beautifully for all sorts of distributions. Consider a [particle detector](@article_id:264727) where particles pass through undetected with probability $q$ until one is finally detected with probability $p = 1-q$ . The number of undetected particles, $X$, follows a [geometric distribution](@article_id:153877), and its PGF is $G_X(s) = \frac{p}{1-qs}$. Let's find its mean:
+This technique works beautifully for all sorts of distributions. Consider a [particle detector](@keyword=particle_detector|lang=en-US|style=Feynman) where particles pass through undetected with probability $q$ until one is finally detected with probability $p = 1-q$ [@problem_id:1325361]. The number of undetected particles, $X$, follows a [geometric distribution](@keyword=geometric_distribution|lang=en-US|style=Feynman), and its PGF is $G_X(s) = \frac{p}{1-qs}$. Let's find its mean:
 
 $$G'_X(s) = \frac{d}{ds} \left( p(1-qs)^{-1} \right) = p(-1)(1-qs)^{-2}(-q) = \frac{pq}{(1-qs)^2}$$
 
@@ -47,7 +47,7 @@ Setting $s=1$ and remembering that $1-q=p$:
 
 $$E[X] = G'_X(1) = \frac{pq}{(1-q)^2} = \frac{pq}{p^2} = \frac{q}{p}$$
 
-This is the famous formula for the mean of a [geometric distribution](@article_id:153877), derived not through tedious summations of [infinite series](@article_id:142872), but with a few lines of calculus. The same magic works for the Poisson distribution, a cornerstone of modeling random events like [radioactive decay](@article_id:141661) or customer arrivals. Its PGF is a beautiful exponential, $G_X(s) = \exp(\lambda(s-1))$ . Its derivative is $G'_X(s) = \lambda \exp(\lambda(s-1))$, and at $s=1$, this immediately gives $E[X] = \lambda$. The elegance is undeniable.
+This is the famous formula for the mean of a [geometric distribution](@keyword=geometric_distribution|lang=en-US|style=Feynman), derived not through tedious summations of [infinite series](@keyword=infinite_series|lang=en-US|style=Feynman), but with a few lines of calculus. The same magic works for the Poisson distribution, a cornerstone of modeling random events like [radioactive decay](@keyword=radioactive_decay|lang=en-US|style=Feynman) or customer arrivals. Its PGF is a beautiful exponential, $G_X(s) = \exp(\lambda(s-1))$ [@problem_id:13715]. Its derivative is $G'_X(s) = \lambda \exp(\lambda(s-1))$, and at $s=1$, this immediately gives $E[X] = \lambda$. The elegance is undeniable.
 
 ### Peeking Deeper: Calculating the Variance
 
@@ -73,7 +73,7 @@ And with that, we have a complete recipe for the variance using only PGF derivat
 
 $$\text{Var}(X) = \underbrace{G''_X(1) + G'_X(1)}_{E[X^2]} - \underbrace{(G'_X(1))^2}_{(E[X])^2}$$
 
-Let's apply this to a [quantum optics](@article_id:140088) experiment where the number of detected photons, $X$, has a PGF given by $G_X(s) = \frac{\exp(s) - 1}{e - 1}$ . We want to find the second moment, $E[X^2]$.
+Let's apply this to a [quantum optics](@keyword=quantum_optics|lang=en-US|style=Feynman) experiment where the number of detected photons, $X$, has a PGF given by $G_X(s) = \frac{\exp(s) - 1}{e - 1}$ [@problem_id:1409536]. We want to find the second moment, $E[X^2]$.
 
 **Step 1:** Find the first derivative and evaluate at $s=1$.
 $$G'_X(s) = \frac{\exp(s)}{e-1} \implies E[X] = G'_X(1) = \frac{e}{e-1}$$
@@ -84,7 +84,7 @@ $$G''_X(s) = \frac{\exp(s)}{e-1} \implies E[X(X-1)] = G''_X(1) = \frac{e}{e-1}$$
 **Step 3:** Calculate the second moment.
 $$E[X^2] = G''_X(1) + G'_X(1) = \frac{e}{e-1} + \frac{e}{e-1} = \frac{2e}{e-1}$$
 
-Once again, the PGF machinery delivers a precise, analytical result for a non-trivial distribution, allowing us to quantify both its center and its spread. This same method could be used to find the variance of the self-replicating nanobots from our thought experiment , reinforcing the universal applicability of this technique.
+Once again, the PGF machinery delivers a precise, analytical result for a non-trivial distribution, allowing us to quantify both its center and its spread. This same method could be used to find the variance of the self-replicating nanobots from our thought experiment [@problem_id:1285778], reinforcing the universal applicability of this technique.
 
 ### A Deeper Unity: The Algebra of Randomness
 
@@ -100,9 +100,9 @@ But $E[s^X]$ is just $G_X(s)$, and $E[s^Y]$ is $G_Y(s)$. This leads to a profoun
 
 $$G_{X+Y}(s) = G_X(s) G_Y(s)$$
 
-**Adding [independent random variables](@article_id:273402) corresponds to multiplying their Probability Generating Functions.**
+**Adding [independent random variables](@keyword=independent_random_variables|lang=en-US|style=Feynman) corresponds to multiplying their Probability Generating Functions.**
 
-This isn't just a mathematical curiosity; it's the reason why some distributions appear so frequently in nature. Take the Binomial distribution, which counts the number of successes in $n$ trials . We can think of this as the sum of $n$ independent Bernoulli trials, where each trial is a random variable $Y$ that is 1 on success (with probability $p$) and 0 on failure.
+This isn't just a mathematical curiosity; it's the reason why some distributions appear so frequently in nature. Take the Binomial distribution, which counts the number of successes in $n$ trials [@problem_id:1409533]. We can think of this as the sum of $n$ independent Bernoulli trials, where each trial is a random variable $Y$ that is 1 on success (with probability $p$) and 0 on failure.
 
 The PGF for a single Bernoulli trial is simple: $G_Y(s) = P(Y=0)s^0 + P(Y=1)s^1 = (1-p) + ps$.
 
@@ -114,7 +114,7 @@ This is precisely the known PGF for a Binomial distribution! It arises naturally
 
 ### A Glimpse of the Frontier: PGFs in the Wild
 
-These principles are the engine behind solving complex problems in fields from ecology to cell biology. For instance, imagine a biologist studying cell division . They don't sample parent cells; they sample from the entire population of daughter cells and then trace them back to their parent. This introduces a "size bias"—a cell from a large family is more likely to be picked than one from a small family.
+These principles are the engine behind solving complex problems in fields from ecology to cell biology. For instance, imagine a biologist studying cell division [@problem_id:1409506]. They don't sample parent cells; they sample from the entire population of daughter cells and then trace them back to their parent. This introduces a "size bias"—a cell from a large family is more likely to be picked than one from a small family.
 
 How does this affect the average "brood size" we observe? The PGF provides the answer. It turns out that the expected value of this size-biased measurement, $E[Y]$, is related to the moments of the true underlying distribution, $X$, by the elegant formula:
 

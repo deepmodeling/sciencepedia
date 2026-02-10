@@ -9,13 +9,13 @@ What does a flower’s petal have in common with a line of computer code? And wh
 
 ### The Character of a Thing
 
-Let's begin in a field, with a biologist studying a newly discovered genus of flowering plants . She observes that some species have white petals, others have yellow, and some have red. To organize these observations and understand the evolutionary relationships between the plants, she must use a precise language. The general, heritable feature she is examining—"petal color"—is what scientists call a **character**. It is the question being posed to nature: "What is the attribute of this part of the organism?" The specific variations she observes—"white," "yellow," and "red"—are the **[character states](@article_id:150587)**. They are the answers to her question.
+Let's begin in a field, with a biologist studying a newly discovered genus of flowering plants [@problem_id:2316525]. She observes that some species have white petals, others have yellow, and some have red. To organize these observations and understand the evolutionary relationships between the plants, she must use a precise language. The general, heritable feature she is examining—"petal color"—is what scientists call a **character**. It is the question being posed to nature: "What is the attribute of this part of the organism?" The specific variations she observes—"white," "yellow," and "red"—are the **[character states](@keyword=character_states|lang=en-US|style=Feynman)**. They are the answers to her question.
 
-This distinction is not mere pedantry; it is the foundation of [comparative biology](@article_id:165715). A character is a variable feature, an axis of variation. A character state is a specific value that an organism exhibits for that variable. Is the organism winged? The character is "presence of wings," and the states are "present" or "absent." This simple act of defining characters and identifying their states is the first step in building the great family trees of life. It allows us to group organisms by shared features and to trace the story of evolution. The character is our lens for reading the book of nature.
+This distinction is not mere pedantry; it is the foundation of [comparative biology](@keyword=comparative_biology|lang=en-US|style=Feynman). A character is a variable feature, an axis of variation. A character state is a specific value that an organism exhibits for that variable. Is the organism winged? The character is "presence of wings," and the states are "present" or "absent." This simple act of defining characters and identifying their states is the first step in building the great family trees of life. It allows us to group organisms by shared features and to trace the story of evolution. The character is our lens for reading the book of nature.
 
 ### From Traits to Symbols
 
-Now, let's trade the garden for the glow of a computer screen. A programmer is writing a parser, a piece of software designed to read and understand a line of code like `"result = solve(x, 9);"` . To the machine, this is just a sequence of bytes. To make sense of it, the parser must do exactly what our biologist did: it must classify things.
+Now, let's trade the garden for the glow of a computer screen. A programmer is writing a parser, a piece of software designed to read and understand a line of code like `"result = solve(x, 9);"` [@problem_id:1413078]. To the machine, this is just a sequence of bytes. To make sense of it, the parser must do exactly what our biologist did: it must classify things.
 
 In this digital world, the fundamental units are not petals but symbols on the screen. Each letter, number, or punctuation mark is, in the language of computing, a **character**. The parser’s job is to identify the "character state" of each one. It asks: "Is this a letter, like 'r' or 'x'?", "Is this a digit, like '9'?", or "Is this a special symbol, like '=' or ';'?".
 
@@ -25,7 +25,7 @@ Just as "petal color" was the axis of variation for the flowers, "symbol type" i
 
 This process of sorting, of assigning a category to an object, has a beautifully precise name in mathematics: it is a **function**. A function is a rule that takes an input and produces a specific output. Thinking of a "character" as a function elevates the concept from a simple property to a dynamic process of mapping.
 
-Consider a function designed to classify entire strings of text . The inputs to our function—its **domain**—might be a set of strings like `{"Test", "314159", "_final"}`. The possible categories, or outputs—the **[codomain](@article_id:138842)**—could be `{"Alphabetic", "Numeric", "Contains Symbol"}`. The function's rule is based on the characters within each string.
+Consider a function designed to classify entire strings of text [@problem_id:1366330]. The inputs to our function—its **domain**—might be a set of strings like `{"Test", "314159", "_final"}`. The possible categories, or outputs—the **[codomain](@keyword=codomain|lang=en-US|style=Feynman)**—could be `{"Alphabetic", "Numeric", "Contains Symbol"}`. The function's rule is based on the characters within each string.
 
 -   If the input is "Test", the function sees that all its characters are letters and outputs "Alphabetic".
 -   If the input is "314159", it sees only digits and outputs "Numeric".
@@ -35,7 +35,7 @@ The function $f$ is a formal mechanism of characterization. It maps each element
 
 ### The Inner Structure of States
 
-So far, we've treated [character states](@article_id:150587) as distinct, separate labels. "Red" is not "white"; "letter" is not "digit". But what if the states themselves have a relationship with one another? Let's return to our evolutionary biologist, now equipped with this more formal, mathematical perspective .
+So far, we've treated [character states](@keyword=character_states|lang=en-US|style=Feynman) as distinct, separate labels. "Red" is not "white"; "letter" is not "digit". But what if the states themselves have a relationship with one another? Let's return to our evolutionary biologist, now equipped with this more formal, mathematical perspective [@problem_id:2724525].
 
 Suppose she is now examining hominin teeth. She identifies a character called "lower molar occlusal groove pattern" with the states `{Y, +, X}`. These are just different configurations; there's no reason to believe a 'Y' pattern must evolve into a '+' before it can become an 'X'. The path from one state to another is equally likely in any direction. This is an **unordered character**. The transformation from any state to any other has the same "cost" in an evolutionary analysis.
 
@@ -47,25 +47,25 @@ This is a profound step. We are no longer just using characters to classify; we 
 
 We are now ready for a significant leap in abstraction. We have seen characters as properties, symbols, functions, and structured sets of states. In the world of physics and chemistry, the concept transforms again to describe something invisible but fundamental: symmetry.
 
-Every molecule has a certain set of symmetries—rotations, reflections, and inversions that leave the molecule looking unchanged. These [symmetry operations](@article_id:142904) form a mathematical structure known as a **group**. To understand how a molecule behaves—how it vibrates, how its electrons arrange themselves into orbitals—we need to understand how these properties are affected by the symmetry operations. This is where the mathematical **character** enters the stage.
+Every molecule has a certain set of symmetries—rotations, reflections, and inversions that leave the molecule looking unchanged. These [symmetry operations](@keyword=symmetry_operations|lang=en-US|style=Feynman) form a mathematical structure known as a **group**. To understand how a molecule behaves—how it vibrates, how its electrons arrange themselves into orbitals—we need to understand how these properties are affected by the symmetry operations. This is where the mathematical **character** enters the stage.
 
 In group theory, a character, denoted by the Greek letter $\chi$ (chi), is a special type of function. It doesn't classify a molecule, but rather the *symmetry operations* of the molecule's group. For each operation $R$ (like "rotate by 120°"), the character function $\chi(R)$ assigns a number. This number tells us how a particular physical state (like an electron orbital) transforms under that symmetry.
 
-The rules for labeling these characters are captured by a shorthand called **Mulliken symbols**, which pack a surprising amount of information  . The main letter of the symbol—A, B, E, or T—tells you about the **dimensionality** of the system being described. This dimensionality is given by the character of the identity operation (doing nothing), $\chi(E)$.
+The rules for labeling these characters are captured by a shorthand called **Mulliken symbols**, which pack a surprising amount of information [@problem_id:1630606] [@problem_id:1630603]. The main letter of the symbol—A, B, E, or T—tells you about the **dimensionality** of the system being described. This dimensionality is given by the character of the identity operation (doing nothing), $\chi(E)$.
 -   If $\chi(E) = 1$, the system is one-dimensional (non-degenerate). The symbol is **A** or **B**.
 -   If $\chi(E) = 2$, the system is two-dimensional (doubly degenerate). The symbol is **E**.
 -   If $\chi(E) = 3$, the system is three-dimensional (triply degenerate). The symbol is **T**.
 
-The distinction between A and B, and the numerical subscripts like in $A_1$ or $B_2$, are determined by the character values for other [symmetry operations](@article_id:142904), such as rotations and reflections . A character of $+1$ for an operation means the state is symmetric (unchanged), while a character of $-1$ means it is antisymmetric (flips its sign). The Mulliken symbol, then, is like the "character state" for the entire character function $\chi$. It’s a compact label that summarizes how a fundamental aspect of the molecule's reality behaves under all of its possible symmetries.
+The distinction between A and B, and the numerical subscripts like in $A_1$ or $B_2$, are determined by the character values for other [symmetry operations](@keyword=symmetry_operations|lang=en-US|style=Feynman), such as rotations and reflections [@problem_id:1630572]. A character of $+1$ for an operation means the state is symmetric (unchanged), while a character of $-1$ means it is antisymmetric (flips its sign). The Mulliken symbol, then, is like the "character state" for the entire character function $\chi$. It’s a compact label that summarizes how a fundamental aspect of the molecule's reality behaves under all of its possible symmetries.
 
 ### The Character of Numbers
 
 Could we possibly push this idea any further? We have characterized flowers, symbols, and symmetries. Can we characterize something as abstract as numbers themselves? The astonishing answer from the field of number theory is a resounding yes.
 
-Let's play a game of classification with the integers. We'll pick a prime number, say $p=5$. Our character will be a function called the **Legendre symbol**, written as $\left(\frac{n}{p}\right)$. This function takes any integer $n$ and assigns it a state: $+1$, $-1$, or $0$ . The rule is based on whether $n$ is a "perfect square" when we only care about remainders after division by $p$.
+Let's play a game of classification with the integers. We'll pick a prime number, say $p=5$. Our character will be a function called the **Legendre symbol**, written as $\left(\frac{n}{p}\right)$. This function takes any integer $n$ and assigns it a state: $+1$, $-1$, or $0$ [@problem_id:3027709]. The rule is based on whether $n$ is a "perfect square" when we only care about remainders after division by $p$.
 
 -   If $n$ is a perfect square modulo 5 (like $1 \equiv 1^2$, $4 \equiv 2^2$, or $9 \equiv 3^2 \equiv 4$), the character is $+1$.
--   If $n$ is *not* a [perfect square](@article_id:635128) modulo 5 (like 2 or 3), the character is $-1$.
+-   If $n$ is *not* a [perfect square](@keyword=perfect_square|lang=en-US|style=Feynman) modulo 5 (like 2 or 3), the character is $-1$.
 -   If $n$ is a multiple of 5, the character is $0$.
 
 This function, called a **Dirichlet character**, sorts the infinite landscape of integers into three simple bins based on a deep, hidden arithmetic property relative to the prime 5. It is the unique function that does this in a way that respects multiplication. This is no mere mathematical curiosity. These characters are the fundamental notes in the symphony of number theory, essential tools for understanding the distribution of primes and for solving equations that have puzzled mathematicians for centuries. The character is a probe that reveals the hidden structure and harmony within the world of pure number.

@@ -17,7 +17,7 @@ The simplest way to probe a field is to place a small charge, which we'll call $
 
 The electric field we want to measure is the one created by some *source* charges. But when we bring our test charge $q$ into the picture, it has its *own* electric field. This new field will push and pull on the original source charges, causing them to shift their positions. The very act of measuring the field has altered the field we wanted to measure!
 
-So, what makes a good probe? An ideal test charge should be like a ghost—it should be able to sense the world without disturbing it. To achieve this, we need two things. First, the charge $q$ must be vanishingly small, so its own field is too feeble to significantly bother the source charges. Second, to measure the field at a precise *point*, the charge must be concentrated in a vanishingly small, point-like volume. If our probe were spread out, it would measure a blurry average of the field over its volume, not the exact value at a single location .
+So, what makes a good probe? An ideal test charge should be like a ghost—it should be able to sense the world without disturbing it. To achieve this, we need two things. First, the charge $q$ must be vanishingly small, so its own field is too feeble to significantly bother the source charges. Second, to measure the field at a precise *point*, the charge must be concentrated in a vanishingly small, point-like volume. If our probe were spread out, it would measure a blurry average of the field over its volume, not the exact value at a single location [@problem_id:1792922].
 
 This leads us to the formal, and rather elegant, definition of the electric field:
 
@@ -29,13 +29,13 @@ This little "limit" sign, $q \to 0$, is doing a lot of work. We aren't saying we
 
 ### The Observer Effect, Classically
 
-What happens if we are sloppy and use a "hefty" test charge? The consequences are not just academic; they reveal a classical version of the "[observer effect](@article_id:186090)," where the act of observation changes the outcome.
+What happens if we are sloppy and use a "hefty" test charge? The consequences are not just academic; they reveal a classical version of the "[observer effect](@keyword=observer_effect|lang=en-US|style=Feynman)," where the act of observation changes the outcome.
 
-Let's imagine a perfect, uncharged [conducting sphere](@article_id:266224) floating in otherwise empty space. Since there are no charges anywhere, the electric field around it is, of course, zero. We want to confirm this. So, we bring a positive test charge $q_0$ to a point $P$ near the sphere and prepare to measure the force on it.
+Let's imagine a perfect, uncharged [conducting sphere](@keyword=conducting_sphere|lang=en-US|style=Feynman) floating in otherwise empty space. Since there are no charges anywhere, the electric field around it is, of course, zero. We want to confirm this. So, we bring a positive test charge $q_0$ to a point $P$ near the sphere and prepare to measure the force on it.
 
 But the moment we place $q_0$ at $P$, the sphere is no longer unperturbed. The free electrons within the conducting metal are attracted to our positive test charge and they swarm to the side of the sphere nearest to $P$. This leaves a deficit of electrons—a net positive charge—on the far side. Our initially neutral sphere now has a separation of charge, induced entirely by our probe.
 
-This induced negative charge on the near side of the sphere now pulls on our test charge $q_0$! We dutifully measure this force, divide by $q_0$, and proudly report a non-zero electric field. We've "detected" a field that wasn't there until we tried to measure it. Our measurement created a false positive . This thought experiment provides a powerful lesson: the ideal of an infinitesimally small test charge isn't just a mathematical nicety; it's a fundamental requirement for an honest measurement of a pre-existing field.
+This induced negative charge on the near side of the sphere now pulls on our test charge $q_0$! We dutifully measure this force, divide by $q_0$, and proudly report a non-zero electric field. We've "detected" a field that wasn't there until we tried to measure it. Our measurement created a false positive [@problem_id:1827396]. This thought experiment provides a powerful lesson: the ideal of an infinitesimally small test charge isn't just a mathematical nicety; it's a fundamental requirement for an honest measurement of a pre-existing field.
 
 ### Charting the Landscape: Conservative Fields and Potential
 
@@ -43,9 +43,9 @@ Now that we have our ideal, ghostly probe, we can do more than just measure the 
 
 Imagine a source charge $Q$ fixed at the origin, creating a field around it. We want to move a test charge $q$ from point $\mathbf{a}$ to point $\mathbf{b}$. A student might look at the problem and see a complicated, curved path, perhaps a parabola, and brace for a difficult integral to calculate the work, $W = \int_{\mathbf{a}}^{\mathbf{b}} \mathbf{F} \cdot d\mathbf{l}$.
 
-But here, nature gives us a wonderful gift. The electrostatic force is **conservative**. This is a profound statement. It means that the work done by the field in moving a charge between two points does not depend on the twists and turns of the path taken. It only depends on the start and end points. The messy parabolic path is a red herring! .
+But here, nature gives us a wonderful gift. The electrostatic force is **conservative**. This is a profound statement. It means that the work done by the field in moving a charge between two points does not depend on the twists and turns of the path taken. It only depends on the start and end points. The messy parabolic path is a red herring! [@problem_id:1617762].
 
-Because the work is path-independent, we can define a quantity that depends only on position: the **[electric potential](@article_id:267060)**, $V$. Think of it like altitude on a topographical map. The work done by the field to move a charge $q$ from point $\mathbf{a}$ to point $\mathbf{b}$ is simply the charge multiplied by the drop in potential:
+Because the work is path-independent, we can define a quantity that depends only on position: the **[electric potential](@keyword=electric_potential|lang=en-US|style=Feynman)**, $V$. Think of it like altitude on a topographical map. The work done by the field to move a charge $q$ from point $\mathbf{a}$ to point $\mathbf{b}$ is simply the charge multiplied by the drop in potential:
 
 $$
 W_{\mathbf{a} \to \mathbf{b}} = q (V(\mathbf{a}) - V(\mathbf{b}))
@@ -59,8 +59,8 @@ Our journey so far has taken place in a vacuum, where our test charge interacts 
 
 Consider a **plasma**, a hot gas of freely moving positive ions and negative electrons, electrically neutral on average. Let's introduce a positive test charge $+Q$ into this soup. What happens? It's like a celebrity entering a crowd. The mobile electrons in the plasma are attracted to $+Q$ and cluster around it. The mobile positive ions are repelled and pushed away. The result is a screening cloud of net negative charge that forms around our original test charge.
 
-This cloud has a remarkable effect. Its own electric field opposes the field of the test charge. From far away, the field of our charge is weakened, or "screened." Instead of the familiar long-range $1/r^2$ force law, an observer far from the charge would see a force that dies off much more rapidly, governed by an [exponential decay](@article_id:136268). This phenomenon is called **Debye screening**. The characteristic distance over which the field is screened is called the **Debye length**, $\lambda_D$ .
+This cloud has a remarkable effect. Its own electric field opposes the field of the test charge. From far away, the field of our charge is weakened, or "screened." Instead of the familiar long-range $1/r^2$ force law, an observer far from the charge would see a force that dies off much more rapidly, governed by an [exponential decay](@keyword=exponential_decay|lang=en-US|style=Feynman). This phenomenon is called **Debye screening**. The characteristic distance over which the field is screened is called the **Debye length**, $\lambda_D$ [@problem_id:1812489].
 
-Here is the most elegant result of all: if you were to calculate the total amount of induced charge in this screening cloud, you would find that it is exactly equal to $-Q$ . The plasma, as a collective, has rearranged itself to perfectly neutralize the foreign charge we introduced. From a distance much greater than the Debye length, it is as if the test charge isn't even there.
+Here is the most elegant result of all: if you were to calculate the total amount of induced charge in this screening cloud, you would find that it is exactly equal to $-Q$ [@problem_id:13453]. The plasma, as a collective, has rearranged itself to perfectly neutralize the foreign charge we introduced. From a distance much greater than the Debye length, it is as if the test charge isn't even there.
 
 This final example shows the test charge in its most sophisticated role. It is no longer just a passive probe but an active participant that perturbs the medium it inhabits. The field that is ultimately measured is not that of the "bare" test charge, but the complex result of the charge *and* the medium's response to it. The simple concept of a test charge, born from the need to define a field, becomes a powerful tool to explore the intricate, cooperative phenomena that govern matter in bulk.

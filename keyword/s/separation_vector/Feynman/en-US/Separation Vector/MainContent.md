@@ -17,11 +17,11 @@ $$
 \vec{\mathscr{r}} = \vec{r} - \vec{r}'
 $$
 
-This one equation is the foundation. If you know where the source is ($\vec{r}'$) and you know the separation vector that leads from it to you ($\vec{\mathscr{r}}$), you can always find your own position in the room by simple addition: $\vec{r} = \vec{r}' + \vec{\mathscr{r}}$ .
+This one equation is the foundation. If you know where the source is ($\vec{r}'$) and you know the separation vector that leads from it to you ($\vec{\mathscr{r}}$), you can always find your own position in the room by simple addition: $\vec{r} = \vec{r}' + \vec{\mathscr{r}}$ [@problem_id:1813719].
 
-Let's make this concrete. Picture a cube of side length $L$. If a source charge sits at one corner (our origin for a moment), and we want to know the separation to the diametrically opposite corner, we simply move a distance $L$ along the x-axis, $L$ along the y-axis, and $L$ along the z-axis. The separation vector is just $\vec{\mathscr{r}} = L\hat{i} + L\hat{j} + L\hat{k}$ . It's a direct map from the source to the point of interest.
+Let's make this concrete. Picture a cube of side length $L$. If a source charge sits at one corner (our origin for a moment), and we want to know the separation to the diametrically opposite corner, we simply move a distance $L$ along the x-axis, $L$ along the y-axis, and $L$ along the z-axis. The separation vector is just $\vec{\mathscr{r}} = L\hat{i} + L\hat{j} + L\hat{k}$ [@problem_id:1813753]. It's a direct map from the source to the point of interest.
 
-It's crucial not to confuse the separation vector with a **[displacement vector](@article_id:262288)**. A [displacement vector](@article_id:262288), $\Delta\vec{r}$, describes the motion of a *single* object from an initial position to a final one. The separation vector, $\vec{\mathscr{r}}$, describes the relative position of *two distinct objects* at a single instant in time . One is about a journey; the other is about a relationship.
+It's crucial not to confuse the separation vector with a **[displacement vector](@keyword=displacement_vector|lang=en-US|style=Feynman)**. A [displacement vector](@keyword=displacement_vector|lang=en-US|style=Feynman), $\Delta\vec{r}$, describes the motion of a *single* object from an initial position to a final one. The separation vector, $\vec{\mathscr{r}}$, describes the relative position of *two distinct objects* at a single instant in time [@problem_id:1813733]. One is about a journey; the other is about a relationship.
 
 ### The Invariant Heart of Physics
 
@@ -29,7 +29,7 @@ At first glance, defining a new vector just for subtraction seems like unnecessa
 
 Let's say you and a fellow scientist are in the same laboratory, studying the force between two charged particles. You set up your coordinate system with the origin at the lab's door. Your colleague, however, sets up their system with the origin on the lab bench. Your position vectors for the two particles, $\vec{r}_1$ and $\vec{r}_2$, will be completely different from your colleague's, $\vec{r}'_1$ and $\vec{r}'_2$. You will disagree on the "absolute" coordinates of everything.
 
-But what happens when you each calculate the separation vector between the particles? You calculate $\vec{\mathscr{r}} = \vec{r}_2 - \vec{r}_1$. Your colleague calculates $\vec{\mathscr{r}}' = \vec{r}'_2 - \vec{r}'_1$. It turns out, you will get the *exact same vector*. Because your coordinate systems are just shifted versions of each other (a translation), the shift cancels out in the subtraction .
+But what happens when you each calculate the separation vector between the particles? You calculate $\vec{\mathscr{r}} = \vec{r}_2 - \vec{r}_1$. Your colleague calculates $\vec{\mathscr{r}}' = \vec{r}'_2 - \vec{r}'_1$. It turns out, you will get the *exact same vector*. Because your coordinate systems are just shifted versions of each other (a translation), the shift cancels out in the subtraction [@problem_id:1813724].
 
 $$
 \vec{\mathscr{r}}' = \vec{r}'_2 - \vec{r}'_1 = (\vec{r}_2 - \vec{r}_{origin\_shift}) - (\vec{r}_1 - \vec{r}_{origin\_shift}) = \vec{r}_2 - \vec{r}_1 = \vec{\mathscr{r}}
@@ -44,9 +44,9 @@ With its physical significance established, the separation vector becomes the in
 -   Its magnitude, $|\vec{\mathscr{r}}|$, is the straight-line distance between the source and the field point. This is the '$r$' that famously appears in inverse-square laws like $1/r^2$.
 -   Its direction, given by the unit vector $\hat{\mathscr{r}} = \vec{\mathscr{r}} / |\vec{\mathscr{r}}|$, tells us the line along which the force acts.
 
-For a collection of multiple source charges, the principle of superposition tells us that the net force on a test charge is the vector sum of the individual forces. To calculate this, we must first find the individual separation vector from each source charge to the test charge. For instance, to find the force on charge 3 from charges 1 and 2, we need both $\vec{\mathscr{r}}_{31} = \vec{r}_3 - \vec{r}_1$ and $\vec{\mathscr{r}}_{32} = \vec{r}_3 - \vec{r}_2$ .
+For a collection of multiple source charges, the principle of superposition tells us that the net force on a test charge is the vector sum of the individual forces. To calculate this, we must first find the individual separation vector from each source charge to the test charge. For instance, to find the force on charge 3 from charges 1 and 2, we need both $\vec{\mathscr{r}}_{31} = \vec{r}_3 - \vec{r}_1$ and $\vec{\mathscr{r}}_{32} = \vec{r}_3 - \vec{r}_2$ [@problem_id:1813737].
 
-The real power of this concept shines when we move from discrete points to [continuous distributions](@article_id:264241) of charge or mass. Imagine trying to find the electric field from a charged filament , a ring , or a spherical shell . We can't just plug in one distance. Instead, we use the calculus of an artist. We mentally chop the object into infinitely many infinitesimal source points, each at a position $\vec{r}'$. For each tiny piece, we write down the separation vector $\vec{\mathscr{r}} = \vec{r} - \vec{r}'$ to our field point $\vec{r}$. We calculate the infinitesimal field $d\vec{E}$ from that tiny piece, and then we sum them all up—that is, we integrate. The separation vector is the geometric linchpin that makes this entire procedure possible, connecting every piece of the source to the point where we feel its influence.
+The real power of this concept shines when we move from discrete points to [continuous distributions](@keyword=continuous_distributions|lang=en-US|style=Feynman) of charge or mass. Imagine trying to find the electric field from a charged filament [@problem_id:1813729], a ring [@problem_id:1791799], or a spherical shell [@problem_id:1813720]. We can't just plug in one distance. Instead, we use the calculus of an artist. We mentally chop the object into infinitely many infinitesimal source points, each at a position $\vec{r}'$. For each tiny piece, we write down the separation vector $\vec{\mathscr{r}} = \vec{r} - \vec{r}'$ to our field point $\vec{r}$. We calculate the infinitesimal field $d\vec{E}$ from that tiny piece, and then we sum them all up—that is, we integrate. The separation vector is the geometric linchpin that makes this entire procedure possible, connecting every piece of the source to the point where we feel its influence.
 
 ### A Vector on the Move: Introducing Time
 
@@ -58,24 +58,24 @@ $$
 \vec{\mathscr{r}}(t) = \vec{r}_{p} - \vec{r}'(t)
 $$
 
-The distance between the charge and the detector is constantly changing, and its [time evolution](@article_id:153449) is captured perfectly by the magnitude of this dynamic separation vector, $|\vec{\mathscr{r}}(t)|$ . This might seem like a [simple extension](@article_id:152454), but it's the gateway to the much deeper physics of relativity. The information from the moving charge—its electric and magnetic field—travels at the finite speed of light. The field you measure *now* at your detector depends on where the charge *was* at some earlier, "retarded" time. Calculating this time delay requires knowing the distance the signal had to travel, a distance encoded in the separation vector.
+The distance between the charge and the detector is constantly changing, and its [time evolution](@keyword=time_evolution|lang=en-US|style=Feynman) is captured perfectly by the magnitude of this dynamic separation vector, $|\vec{\mathscr{r}}(t)|$ [@problem_id:1813762]. This might seem like a [simple extension](@keyword=simple_extension|lang=en-US|style=Feynman), but it's the gateway to the much deeper physics of relativity. The information from the moving charge—its electric and magnetic field—travels at the finite speed of light. The field you measure *now* at your detector depends on where the charge *was* at some earlier, "retarded" time. Calculating this time delay requires knowing the distance the signal had to travel, a distance encoded in the separation vector.
 
 ### The Ultimate Separation: Measuring the Fabric of Spacetime
 
 We began with a simple vector connecting two points in a lab. We end in the cosmos, using the same fundamental idea to measure the very shape of spacetime. This is the ultimate expression of the unity of physics.
 
-In Einstein's General Relativity, gravity is not a force but a manifestation of the curvature of spacetime. Objects in "free-fall," from a satellite orbiting Earth to a distant galaxy, are simply following the straightest possible paths (geodesics) through this [curved spacetime](@article_id:184444).
+In Einstein's General Relativity, gravity is not a force but a manifestation of the curvature of spacetime. Objects in "free-fall," from a satellite orbiting Earth to a distant galaxy, are simply following the straightest possible paths (geodesics) through this [curved spacetime](@keyword=curved_spacetime|lang=en-US|style=Feynman).
 
-Now, imagine two nearby probes in deep space, both in free-fall, initially moving along almost parallel paths. In the flat, empty space of Newton and special relativity, they would either maintain a constant separation or drift apart at a constant relative velocity. We can describe their infinitesimal separation with a vector $\xi^{\alpha}(\tau)$, which evolves according to a simple law: its "acceleration" is zero .
+Now, imagine two nearby probes in deep space, both in free-fall, initially moving along almost parallel paths. In the flat, empty space of Newton and special relativity, they would either maintain a constant separation or drift apart at a constant relative velocity. We can describe their infinitesimal separation with a vector $\xi^{\alpha}(\tau)$, which evolves according to a simple law: its "acceleration" is zero [@problem_id:1511536].
 
-But near a massive object like a star, spacetime is curved. The "straightest paths" are no longer simple straight lines. The two probes, each following its own geodesic, will find that the separation vector between them *accelerates*. They might be pulled towards each other or pushed apart, even though no "force" is acting on either one individually. This is the physical reality of a **[tidal force](@article_id:195896)**.
+But near a massive object like a star, spacetime is curved. The "straightest paths" are no longer simple straight lines. The two probes, each following its own geodesic, will find that the separation vector between them *accelerates*. They might be pulled towards each other or pushed apart, even though no "force" is acting on either one individually. This is the physical reality of a **[tidal force](@keyword=tidal_force|lang=en-US|style=Feynman)**.
 
-The equation that governs this behavior, the [geodesic deviation equation](@article_id:159552), is one of the most beautiful in physics:
+The equation that governs this behavior, the [geodesic deviation equation](@keyword=geodesic_deviation_equation|lang=en-US|style=Feynman), is one of the most beautiful in physics:
 
 $$
 \frac{D^2\xi^\alpha}{d\tau^2} = -R^\alpha_{\beta\gamma\delta} U^\beta \xi^\gamma U^\delta
 $$
 
-Look at this equation. The acceleration of the separation vector ($\frac{D^2\xi^\alpha}{d\tau^2}$) is directly proportional to a quantity called the **Riemann [curvature tensor](@article_id:180889)**, $R^\alpha_{\beta\gamma\delta}$. This tensor *is* the mathematical description of [spacetime curvature](@article_id:160597).
+Look at this equation. The acceleration of the separation vector ($\frac{D^2\xi^\alpha}{d\tau^2}$) is directly proportional to a quantity called the **Riemann [curvature tensor](@keyword=curvature_tensor|lang=en-US|style=Feynman)**, $R^\alpha_{\beta\gamma\delta}$. This tensor *is* the mathematical description of [spacetime curvature](@keyword=spacetime_curvature|lang=en-US|style=Feynman).
 
 This is the profound culmination of our simple concept. The humble separation vector, born from the need to relate two points in space, becomes a physical probe. Its relative acceleration doesn't just measure a force; it measures the intrinsic geometry of spacetime itself. The tendency for nearby falling objects to change their separation is not just an effect of gravity—in the language of relativity, it *is* gravity. From a simple subtraction to a tool that deciphers the cosmic architecture, the separation vector reveals itself as one of the most fundamental and unifying concepts in all of physics.

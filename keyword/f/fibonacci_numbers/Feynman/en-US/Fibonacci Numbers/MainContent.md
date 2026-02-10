@@ -3,11 +3,11 @@ The Fibonacci sequence, beginning with a simple pattern of adding the two preced
 
 ## Principles and Mechanisms
 
-You've met the Fibonacci numbers. They begin simply enough: you start with 1 and 1, and each new number is just the sum of the two that came before it. This gives us the famous sequence: $1, 1, 2, 3, 5, 8, 13, 21, \dots$. A child could generate it. And yet, this simple rule, this tiny engine of creation, gives rise to a world of mathematical structure so profound and beautiful that it continues to fascinate us. It appears in the branching of trees, the arrangement of leaves on a stem, the fruitlets of a pineapple, the flowering of an artichoke, a bee's family tree, and the [spiral galaxies](@article_id:161543) in the cosmos. How can such a simple recipe lead to such richness? Let's peel back the layers and see what makes it tick.
+You've met the Fibonacci numbers. They begin simply enough: you start with 1 and 1, and each new number is just the sum of the two that came before it. This gives us the famous sequence: $1, 1, 2, 3, 5, 8, 13, 21, \dots$. A child could generate it. And yet, this simple rule, this tiny engine of creation, gives rise to a world of mathematical structure so profound and beautiful that it continues to fascinate us. It appears in the branching of trees, the arrangement of leaves on a stem, the fruitlets of a pineapple, the flowering of an artichoke, a bee's family tree, and the [spiral galaxies](@keyword=spiral_galaxies|lang=en-US|style=Feynman) in the cosmos. How can such a simple recipe lead to such richness? Let's peel back the layers and see what makes it tick.
 
 ### The Engine of Creation
 
-The heart of the Fibonacci sequence is the [recurrence relation](@article_id:140545): $F_n = F_{n-1} + F_{n-2}$. This isn't just a formula; it's a process. It tells us that each number is not an independent entity but is born from its immediate family. This hereditary link is the source of all the magic.
+The heart of the Fibonacci sequence is the [recurrence relation](@keyword=recurrence_relation|lang=en-US|style=Feynman): $F_n = F_{n-1} + F_{n-2}$. This isn't just a formula; it's a process. It tells us that each number is not an independent entity but is born from its immediate family. This hereditary link is the source of all the magic.
 
 Let’s try a simple experiment. What if we add up the first few numbers?
 $1 = 1$
@@ -18,7 +18,7 @@ $1+1+2+3+5 = 12$
 
 Now let's look at the Fibonacci sequence again: $1, 1, 2, 3, 5, 8, 13, 21, \dots$. Do you see a pattern? The sums we calculated—$1, 2, 4, 7, 12$—are always one less than a Fibonacci number two steps ahead in the sequence ($F_3-1, F_4-1, F_5-1, F_6-1, F_7-1$). It seems we have stumbled upon a general rule: the sum of the first $n$ Fibonacci numbers is $F_{n+2} - 1$.
 
-Why should this be true? We could prove it formally with [mathematical induction](@article_id:147322), as shown in a typical exercise . But there's a more intuitive way to see it. Remember that every Fibonacci number is a sum. Let’s use that!
+Why should this be true? We could prove it formally with [mathematical induction](@keyword=mathematical_induction|lang=en-US|style=Feynman), as shown in a typical exercise [@problem_id:1404113]. But there's a more intuitive way to see it. Remember that every Fibonacci number is a sum. Let’s use that!
 $F_1 = F_3 - F_2$
 $F_2 = F_4 - F_3$
 $F_3 = F_5 - F_4$
@@ -39,17 +39,17 @@ $a_5 = \frac{8}{5} = 1.6$
 $a_6 = \frac{13}{8} = 1.625$
 $a_7 = \frac{21}{13} \approx 1.615\dots$
 
-Something remarkable is happening. The ratio seems to be dancing around a specific value, getting closer with each step. In fact, we can see that this ratio is always trapped between 1 and 2 (). Why? Let's use our trusty recurrence relation:
+Something remarkable is happening. The ratio seems to be dancing around a specific value, getting closer with each step. In fact, we can see that this ratio is always trapped between 1 and 2 ([@problem_id:1284806]). Why? Let's use our trusty recurrence relation:
 $$ a_n = \frac{F_{n+1}}{F_n} = \frac{F_n + F_{n-1}}{F_n} = 1 + \frac{F_{n-1}}{F_n} = 1 + \frac{1}{a_{n-1}} $$
 This new recurrence, $a_n = 1 + \frac{1}{a_{n-1}}$, governs the growth of the whole sequence. If this sequence of ratios is to settle down to some limiting value $L$ (and it appears to be doing so), then as $n$ gets very large, both $a_n$ and $a_{n-1}$ will approach $L$. So, we must have:
 $$ L = 1 + \frac{1}{L} $$
 Multiplying by $L$ gives us the quadratic equation $L^2 - L - 1 = 0$. Using the quadratic formula, the positive solution to this equation is:
 $$ L = \frac{1 + \sqrt{5}}{2} \approx 1.618\dots $$
-This is the famous **golden ratio**, often denoted by the Greek letter phi, $\phi$. The simple additive rule of the Fibonacci sequence inevitably leads to this celebrated irrational number. It's not a coincidence; it's a consequence. The ratio doesn't just approach $\phi$; it does so in a very specific way. The error in each step, the difference between the ratio $a_k$ and $\phi$, shrinks by a constant factor at each iteration, a behavior known as [linear convergence](@article_id:163120) .
+This is the famous **golden ratio**, often denoted by the Greek letter phi, $\phi$. The simple additive rule of the Fibonacci sequence inevitably leads to this celebrated irrational number. It's not a coincidence; it's a consequence. The ratio doesn't just approach $\phi$; it does so in a very specific way. The error in each step, the difference between the ratio $a_k$ and $\phi$, shrinks by a constant factor at each iteration, a behavior known as [linear convergence](@keyword=linear_convergence|lang=en-US|style=Feynman) [@problem_id:2165603].
 
 This connection becomes even clearer with **Binet's Formula**, a stunning explicit formula for the $n$-th Fibonacci number:
 $$ F_n = \frac{\phi^n - \psi^n}{\sqrt{5}} $$
-where $\psi = \frac{1-\sqrt{5}}{2} \approx -0.618\dots$ is the other root of the equation $x^2 - x - 1 = 0$. Isn't that bizarre? A formula involving [irrational numbers](@article_id:157826) like $\sqrt{5}$ that somehow, miraculously, always produces a whole number. The secret is the second term, $\psi^n$. Since $|\psi| < 1$, this term gets incredibly small as $n$ increases. It's just the right amount of "correction" to nudge the $\frac{\phi^n}{\sqrt{5}}$ term to the nearest integer, every single time.
+where $\psi = \frac{1-\sqrt{5}}{2} \approx -0.618\dots$ is the other root of the equation $x^2 - x - 1 = 0$. Isn't that bizarre? A formula involving [irrational numbers](@keyword=irrational_numbers|lang=en-US|style=Feynman) like $\sqrt{5}$ that somehow, miraculously, always produces a whole number. The secret is the second term, $\psi^n$. Since $|\psi| < 1$, this term gets incredibly small as $n$ increases. It's just the right amount of "correction" to nudge the $\frac{\phi^n}{\sqrt{5}}$ term to the nearest integer, every single time.
 
 ### A Number System from Nature
 
@@ -62,7 +62,7 @@ $100 = 89 + 8 + 3$.
 And 3 is a Fibonacci number ($F_4$).
 So, $100 = 89 + 8 + 3 = F_{11} + F_6 + F_4$. Notice that the indices 11, 6, and 4 are not consecutive. Zeckendorf's theorem guarantees that this representation is unique.
 
-This is extraordinary. It's as if the Fibonacci numbers form a fundamental set of building blocks for all other integers, but with a peculiar rule: you can't use two blocks that are next to each other in the sequence . This "non-consecutive" condition is what ensures the representation is unique, much like how in base-10, our digits must be from 0 to 9 to ensure a unique representation.
+This is extraordinary. It's as if the Fibonacci numbers form a fundamental set of building blocks for all other integers, but with a peculiar rule: you can't use two blocks that are next to each other in the sequence [@problem_id:1402601]. This "non-consecutive" condition is what ensures the representation is unique, much like how in base-10, our digits must be from 0 to 9 to ensure a unique representation.
 
 ### The Hidden Symphony
 
@@ -70,16 +70,16 @@ If we look deeper, the Fibonacci sequence reveals an even more intricate and int
 
 One of the most elegant motifs is **Cassini's Identity**:
 $$ F_{n-1}F_{n+1} - F_n^2 = (-1)^n $$
-Take any three consecutive Fibonacci numbers, say 5, 8, 13. Then $5 \times 13 - 8^2 = 65 - 64 = 1$. For the next three, 8, 13, 21, we have $8 \times 21 - 13^2 = 168 - 169 = -1$. This value just calmly oscillates between +1 and -1, even as the Fibonacci numbers themselves explode towards infinity. This identity is not just a curiosity; it has practical consequences. For example, it gives a direct way to find the multiplicative inverse of a Fibonacci number modulo its successor .
+Take any three consecutive Fibonacci numbers, say 5, 8, 13. Then $5 \times 13 - 8^2 = 65 - 64 = 1$. For the next three, 8, 13, 21, we have $8 \times 21 - 13^2 = 168 - 169 = -1$. This value just calmly oscillates between +1 and -1, even as the Fibonacci numbers themselves explode towards infinity. This identity is not just a curiosity; it has practical consequences. For example, it gives a direct way to find the multiplicative inverse of a Fibonacci number modulo its successor [@problem_id:1385637].
 
-The connections to number theory don't stop there. Consider the [greatest common divisor](@article_id:142453) (GCD). What is $\text{gcd}(F_{96}, F_{60})$? You'd expect to calculate these enormous numbers and then find their GCD. But there's a breathtaking shortcut. It turns out that the divisibility structure of the Fibonacci sequence perfectly mirrors the divisibility structure of their indices:
+The connections to number theory don't stop there. Consider the [greatest common divisor](@keyword=greatest_common_divisor|lang=en-US|style=Feynman) (GCD). What is $\text{gcd}(F_{96}, F_{60})$? You'd expect to calculate these enormous numbers and then find their GCD. But there's a breathtaking shortcut. It turns out that the divisibility structure of the Fibonacci sequence perfectly mirrors the divisibility structure of their indices:
 $$ \gcd(F_m, F_n) = F_{\gcd(m, n)} $$
-So, to find $\gcd(F_{96}, F_{60})$, we just need to find $\gcd(96, 60)$, which is 12. Therefore, $\gcd(F_{96}, F_{60}) = F_{12} = 144$ . This property, which connects the world of Fibonacci numbers to the Euclidean algorithm, is a testament to the deep order inherent in the sequence.
+So, to find $\gcd(F_{96}, F_{60})$, we just need to find $\gcd(96, 60)$, which is 12. Therefore, $\gcd(F_{96}, F_{60}) = F_{12} = 144$ [@problem_id:1799241]. This property, which connects the world of Fibonacci numbers to the Euclidean algorithm, is a testament to the deep order inherent in the sequence.
 
-What if we look at the sequence through a different lens, say, modulo a number $m$? The sequence of remainders will eventually repeat. For example, modulo 3, the sequence is $1, 1, 2, 0, 2, 2, 1, 0, (1, 1, \dots)$. It repeats every 8 terms. This period is called the **Pisano period**, and its study reveals yet another layer of hidden cyclical patterns, with applications in areas like [cryptography](@article_id:138672) and [random number generation](@article_id:138318) .
+What if we look at the sequence through a different lens, say, modulo a number $m$? The sequence of remainders will eventually repeat. For example, modulo 3, the sequence is $1, 1, 2, 0, 2, 2, 1, 0, (1, 1, \dots)$. It repeats every 8 terms. This period is called the **Pisano period**, and its study reveals yet another layer of hidden cyclical patterns, with applications in areas like [cryptography](@keyword=cryptography|lang=en-US|style=Feynman) and [random number generation](@keyword=random_number_generation|lang=en-US|style=Feynman) [@problem_id:1392449].
 
-Finally, perhaps the most powerful tool for encapsulating the entire sequence is the **[generating function](@article_id:152210)**. Imagine packing the entire infinite sequence into a single, compact function. We define it as a [power series](@article_id:146342) $G(x) = \sum_{n=1}^{\infty} F_n x^n$. Through a beautiful piece of algebraic manipulation that uses the [recurrence relation](@article_id:140545) itself, this infinite sum can be shown to be equal to a simple fraction :
+Finally, perhaps the most powerful tool for encapsulating the entire sequence is the **[generating function](@keyword=generating_function|lang=en-US|style=Feynman)**. Imagine packing the entire infinite sequence into a single, compact function. We define it as a [power series](@keyword=power_series|lang=en-US|style=Feynman) $G(x) = \sum_{n=1}^{\infty} F_n x^n$. Through a beautiful piece of algebraic manipulation that uses the [recurrence relation](@keyword=recurrence_relation|lang=en-US|style=Feynman) itself, this infinite sum can be shown to be equal to a simple fraction [@problem_id:1301228]:
 $$ G(x) = \frac{x}{1 - x - x^2} $$
-Look at that denominator: $1 - x - x^2$. The very DNA of the Fibonacci sequence, the [recurrence](@article_id:260818) $F_n - F_{n-1} - F_{n-2} = 0$, is etched directly into its [generating function](@article_id:152210). This is no accident. And the story comes full circle when we ask for which values of $x$ this [infinite series](@article_id:142872) even makes sense (its radius of convergence). The answer depends on the roots of the denominator, which are related to $\phi$ and $\psi$. The radius of convergence turns out to be exactly $\frac{1}{\phi} = \frac{\sqrt{5}-1}{2}$ .
+Look at that denominator: $1 - x - x^2$. The very DNA of the Fibonacci sequence, the [recurrence](@keyword=recurrence|lang=en-US|style=Feynman) $F_n - F_{n-1} - F_{n-2} = 0$, is etched directly into its [generating function](@keyword=generating_function|lang=en-US|style=Feynman). This is no accident. And the story comes full circle when we ask for which values of $x$ this [infinite series](@keyword=infinite_series|lang=en-US|style=Feynman) even makes sense (its radius of convergence). The answer depends on the roots of the denominator, which are related to $\phi$ and $\psi$. The radius of convergence turns out to be exactly $\frac{1}{\phi} = \frac{\sqrt{5}-1}{2}$ [@problem_id:2270948].
 
 From a simple additive rule springs a universe of connections: to the golden ratio, to number theory, to unique representations, to abstract algebra. The Fibonacci sequence is a testament to the fact that in mathematics, the simplest rules can generate the most profound and beautiful structures, weaving a tapestry that connects disparate fields of thought into a unified, harmonious whole.

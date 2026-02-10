@@ -1,7 +1,7 @@
 ## Introduction
 How do you search for a specific phrase within a text containing billions of letters, like the human genome? A simple linear scan is impossibly slow, creating a fundamental challenge for modern data analysis. The suffix array, a beautifully simple yet powerful data structure, provides an elegant solution by creating a perfectly sorted index of a text's every possible suffix. This innovation, however, presented its own obstacle: a memory footprint that could be larger than the data it indexed. This article explores the ingenious evolution of this concept, from its basic principles to its revolutionary, compressed successor. 
 
-In the first chapter, "Principles and Mechanisms," we will dissect the suffix array, uncover the magic of the Burrows-Wheeler Transform (BWT), and see how the resulting FM-index achieves a remarkable harmony of speed and space. Following this, the "Applications and Interdisciplinary Connections" chapter will reveal how these algorithmic breakthroughs became the workhorse of modern biology, enabling the comparison of entire genomes, taming the data deluge from DNA sequencers, and powering discoveries in fields from [proteomics](@article_id:155166) to synthetic biology. This journey from abstract theory to practical application showcases a profound connection between computer science and the logic of life itself.
+In the first chapter, "Principles and Mechanisms," we will dissect the suffix array, uncover the magic of the Burrows-Wheeler Transform (BWT), and see how the resulting FM-index achieves a remarkable harmony of speed and space. Following this, the "Applications and Interdisciplinary Connections" chapter will reveal how these algorithmic breakthroughs became the workhorse of modern biology, enabling the comparison of entire genomes, taming the data deluge from DNA sequencers, and powering discoveries in fields from [proteomics](@keyword=proteomics|lang=en-US|style=Feynman) to synthetic biology. This journey from abstract theory to practical application showcases a profound connection between computer science and the logic of life itself.
 
 ## Principles and Mechanisms
 
@@ -39,7 +39,7 @@ Why is this so powerful? If we want to find all occurrences of "ANA", we don't n
 
 ### The Hidden Blueprint: Reconstructing a String from its Suffixes
 
-You might think a suffix array is just a useful but rather "dumb" list of pointers. But it holds a surprisingly deep and beautiful secret about the text it indexes. The specific ordering of the suffixes is a unique fingerprint of the original string's structure. In fact, if you are given only the suffix array and the alphabet of the string, you can reconstruct the *entire original string*. 
+You might think a suffix array is just a useful but rather "dumb" list of pointers. But it holds a surprisingly deep and beautiful secret about the text it indexes. The specific ordering of the suffixes is a unique fingerprint of the original string's structure. In fact, if you are given only the suffix array and the alphabet of the string, you can reconstruct the *entire original string*. [@problem_id:1606412]
 
 How is this possible? The order of the suffixes tells you about the relative order of the characters. For example, in our sorted list `[6, 5, 3, 1, 0, 4, 2]`, the suffix starting at position 5 (`A$`) comes before the suffix starting at position 3 (`ANA$`). This implies that the character at position 5 must be less than or equal to the character at position 3. By carefully comparing adjacent suffixes in the sorted list and applying this logic recursively, you can deduce one character after another, like a detective solving a puzzle, until the entire string `BANANA$` is revealed. This reveals a profound truth: the suffix array isn't just an index; it's a structural transformation of the original data, preserving almost all of its information in a new, highly organized form.
 
@@ -49,7 +49,7 @@ The suffix array is fast, but it comes at a cost: memory. To index our 3-billion
 
 - $3 \times 10^9 \text{ integers} \times 8 \text{ bytes/integer} = 24 \times 10^9 \text{ bytes} = 24 \text{ Gigabytes!}$
 
-This is just for the suffix array itself. Related, even more powerful structures like suffix trees can be far larger. Under realistic assumptions, indexing a 1 Gbp genome with a suffix tree can require over 100 GB of RAM.  For the human genome, this could be 300-400 GB. This is the memory wall. For many applications, an index that requires more memory than a high-end server possesses is simply impractical. We need a way to have our cake and eat it too: a searchable index that is also incredibly small.
+This is just for the suffix array itself. Related, even more powerful structures like suffix trees can be far larger. Under realistic assumptions, indexing a 1 Gbp genome with a suffix tree can require over 100 GB of RAM. [@problem_id:2417422] For the human genome, this could be 300-400 GB. This is the memory wall. For many applications, an index that requires more memory than a high-end server possesses is simply impractical. We need a way to have our cake and eat it too: a searchable index that is also incredibly small.
 
 ### A Magical Scrambling: The Burrows-Wheeler Transform
 
@@ -67,9 +67,9 @@ The construction is simple to state. First, list all the cyclic rotations of our
 | NA`$`BANA |
 | NANA`$`BA |
 
-The BWT is simply the string formed by the *last character* of each sorted rotation. In this case, `BWT("BANANA$")` is `ANNB$AA`. (Note: the problem `2417476` uses a slightly different example and obtains `ANNB$AA`, the principle is identical). 
+The BWT is simply the string formed by the *last character* of each sorted rotation. In this case, `BWT("BANANA$")` is `ANNB$AA`. (Note: the problem `2417476` uses a slightly different example and obtains `ANNB$AA`, the principle is identical). [@problem_id:1606414]
 
-What has this achieved? Look at the BWT string: `ANNB$AA`. The two 'N's are now next to each other, and two of the 'A's are grouped together. This is the secret of the BWT. It tends to group identical characters into contiguous runs. Why? Think about English text. The letter 'h' is very often preceded by 't'. In the sorting process, all the rotations starting with 'he...' will be grouped together. The last column for these rows will therefore contain a run of 't's. For a highly repetitive sequence like a genome, this effect is dramatic. The BWT of a genome consists of long, monotonous runs of A's, C's, G's, and T's, making it fantastically compressible. 
+What has this achieved? Look at the BWT string: `ANNB$AA`. The two 'N's are now next to each other, and two of the 'A's are grouped together. This is the secret of the BWT. It tends to group identical characters into contiguous runs. Why? Think about English text. The letter 'h' is very often preceded by 't'. In the sorting process, all the rotations starting with 'he...' will be grouped together. The last column for these rows will therefore contain a run of 't's. For a highly repetitive sequence like a genome, this effect is dramatic. The BWT of a genome consists of long, monotonous runs of A's, C's, G's, and T's, making it fantastically compressible. [@problem_id:2425289]
 
 We have achieved compression. But how can we possibly search this scrambled mess?
 
@@ -97,7 +97,7 @@ For example, look at the second 'A' in the `L` column (at index 5). This 'A' is 
 
 This LF-mapping is the engine that powers the lightning-fast **backward search**. To find a pattern `P`, we search for it character by character, *backwards*.
 
-Let's say we want to find "ANA" in our `BANANA$` example. 
+Let's say we want to find "ANA" in our `BANANA$` example. [@problem_id:2417476]
 
 1.  **Search for 'A'**: We first find the range in the `F` column that contains all the 'A's. In our example, this corresponds to rows [1, 2, 3]. This is our initial suffix array interval. It represents all suffixes in the text that start with 'A'.
 
@@ -107,14 +107,14 @@ Let's say we want to find "ANA" in our `BANANA$` example.
 
 The search is complete! The final interval [2, 3] tells us there are two occurrences of "ANA", and their entries are at indices 2 and 3 of the original suffix array. Looking up `SA[2]` and `SA[3]` gives us the starting positions: 3 and 1. The search succeeded.
 
-The incredible part is that each step of this backward search takes a constant amount of time (with some clever auxiliary data structures like `Occ` and `C` tables).   Therefore, searching for a pattern of length $m$ takes time proportional to $m$, completely independent of the 3-billion-letter text length $n$.
+The incredible part is that each step of this backward search takes a constant amount of time (with some clever auxiliary data structures like `Occ` and `C` tables). [@problem_id:2793627] [@problem_id:2509701] Therefore, searching for a pattern of length $m$ takes time proportional to $m$, completely independent of the 3-billion-letter text length $n$.
 
 ### The Full Picture: A Symphony of Speed and Space
 
-The FM-index is a triumph of algorithm design. It combines the BWT's compressibility with the LF-mapping's searchability to create an index that is often *smaller* than the original text itself, yet can find patterns in time that depends only on the pattern's length. 
+The FM-index is a triumph of algorithm design. It combines the BWT's compressibility with the LF-mapping's searchability to create an index that is often *smaller* than the original text itself, yet can find patterns in time that depends only on the pattern's length. [@problem_id:2793670]
 
-For a human-scale genome, this is a game-changer. An index that would have required over 300 GB of RAM as a [suffix tree](@article_id:636710) can be compressed into just a few gigabytes as an FM-index.  This makes it possible to perform genomic analysis on a high-end laptop instead of a supercomputing cluster.
+For a human-scale genome, this is a game-changer. An index that would have required over 300 GB of RAM as a [suffix tree](@keyword=suffix_tree|lang=en-US|style=Feynman) can be compressed into just a few gigabytes as an FM-index. [@problem_id:2417422] This makes it possible to perform genomic analysis on a high-end laptop instead of a supercomputing cluster.
 
-Of course, the FM-index is not without its own challenges. While it excels at exact matching, handling mismatches and errors in reads requires more complex and computationally expensive backtracking, especially in the highly repetitive regions of a genome.  Furthermore, while finding the *number* of occurrences is fast, actually *locating* each one requires following the LF-mapping chain backwards until a sampled suffix array entry is hit, introducing a trade-off between index size and locate time. Other methods, like those based on hashing minimizers, offer a different set of trade-offs, particularly in robustness to errors. 
+Of course, the FM-index is not without its own challenges. While it excels at exact matching, handling mismatches and errors in reads requires more complex and computationally expensive backtracking, especially in the highly repetitive regions of a genome. [@problem_id:2425289] Furthermore, while finding the *number* of occurrences is fast, actually *locating* each one requires following the LF-mapping chain backwards until a sampled suffix array entry is hit, introducing a trade-off between index size and locate time. Other methods, like those based on hashing minimizers, offer a different set of trade-offs, particularly in robustness to errors. [@problem_id:2818210]
 
 The journey from the simple suffix array to the sophisticated FM-index is a perfect illustration of the scientific process. It's a story of identifying a fundamental problem, creating an elegant solution, hitting a practical wall, and then, through a stroke of genius, discovering a deeper, more beautiful principle that not only shatters the wall but opens up a whole new world of possibilities.

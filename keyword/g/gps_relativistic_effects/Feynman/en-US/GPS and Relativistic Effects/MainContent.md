@@ -1,7 +1,7 @@
 ## Introduction
 The Global Positioning System (GPS) is a daily-life technology that functions as a constant, planet-wide validation of Albert Einstein's theories of relativity. Without accounting for the strange and counter-intuitive ways that speed and gravity affect the flow of time, GPS would fail within minutes, accumulating kilometers of error each day. This article addresses the fundamental question: why are these abstract physical theories essential for a simple navigation device? It demystifies the cosmic tug-of-war that governs the clocks at the heart of the GPS network.
 
-This article will guide you through the core principles and their real-world consequences. The first chapter, "Principles and Mechanisms," will untangle the two competing relativistic effects: time dilation due to the satellite's immense speed, as described by special relativity, and [gravitational time dilation](@article_id:161649) due to its high altitude, a consequence of general relativity. The following chapter, "Applications and Interdisciplinary Connections," will explore how these principles are applied not just to enable navigation but also to turn the entire GPS constellation into a sensitive instrument for studying our own planet, revealing the profound link between fundamental physics and Earth science.
+This article will guide you through the core principles and their real-world consequences. The first chapter, "Principles and Mechanisms," will untangle the two competing relativistic effects: time dilation due to the satellite's immense speed, as described by special relativity, and [gravitational time dilation](@keyword=gravitational_time_dilation|lang=en-US|style=Feynman) due to its high altitude, a consequence of general relativity. The following chapter, "Applications and Interdisciplinary Connections," will explore how these principles are applied not just to enable navigation but also to turn the entire GPS constellation into a sensitive instrument for studying our own planet, revealing the profound link between fundamental physics and Earth science.
 
 ## Principles and Mechanisms
 
@@ -13,17 +13,17 @@ First, let's consider a principle from Einstein's **special relativity**, a theo
 
 A GPS satellite isn't just floating up there; it's hurtling through space at a tremendous speed. To stay in its orbit about 20,200 km up, it must travel at nearly 14,000 kilometers per hour (about 3.87 km/s). From our perspective on the relatively stationary ground, the satellite's clock is a "moving clock." Therefore, it must tick just a little bit slower than our clock on Earth.
 
-This isn't just a theoretical curiosity. It's a real, measurable effect. If we were to ignore gravity for a moment and only consider this time dilation due to speed, we could calculate the discrepancy. As exercises in relativity show, this effect causes the satellite's clock to lose time relative to a ground clock by about 7.2 microseconds (that's seven-point-two millionths of a second) every single day  . It might not sound like much, but light travels about 300 meters in a microsecond. A 7.2-microsecond daily error would accumulate into a positioning error of over 2 kilometers after just one day! Your GPS would quickly become useless for anything other than telling you which continent you're on.
+This isn't just a theoretical curiosity. It's a real, measurable effect. If we were to ignore gravity for a moment and only consider this time dilation due to speed, we could calculate the discrepancy. As exercises in relativity show, this effect causes the satellite's clock to lose time relative to a ground clock by about 7.2 microseconds (that's seven-point-two millionths of a second) every single day [@problem_id:1846934] [@problem_id:1856884]. It might not sound like much, but light travels about 300 meters in a microsecond. A 7.2-microsecond daily error would accumulate into a positioning error of over 2 kilometers after just one day! Your GPS would quickly become useless for anything other than telling you which continent you're on.
 
 ### The Mountain-Dweller's Clock: Time Dilation from Gravity
 
 If speed were the whole story, the solution would be simple. But Einstein wasn't finished. A decade later, he unveiled his theory of **general relativity**, which described gravity not as a force, but as a curvature in the fabric of spacetime itself. Imagine a bowling ball on a trampoline; it creates a dip, and marbles rolling nearby will curve towards it. This is a rough analogy for how massive objects like the Earth warp spacetime.
 
-One of the most mind-bending consequences of this theory is **[gravitational time dilation](@article_id:161649)**. Clocks in a stronger gravitational field—deeper inside a "gravity well"—tick more slowly than clocks in a weaker field. Think of it like this: time has to "work harder" to flow in the presence of strong gravity.
+One of the most mind-bending consequences of this theory is **[gravitational time dilation](@keyword=gravitational_time_dilation|lang=en-US|style=Feynman)**. Clocks in a stronger gravitational field—deeper inside a "gravity well"—tick more slowly than clocks in a weaker field. Think of it like this: time has to "work harder" to flow in the presence of strong gravity.
 
 Now, where is the GPS satellite? It's orbiting far above the Earth's surface, where gravity is significantly weaker than it is down here. The satellite is like a mountain-dweller looking down on a person in a deep valley. For the mountain-dweller, time flows more freely. According to general relativity, the satellite's clock, being in a weaker gravitational field, should tick *faster* than a clock on the ground.
 
-Again, we can calculate this effect. The difference in gravitational potential between the satellite's orbit and the Earth's surface causes the satellite clock to *gain* about 45.7 microseconds every day relative to a ground-based clock . This effect is not only real, but it's so significant that engineers must account for it before the satellites are even launched. The atomic clocks are deliberately manufactured to tick at a slightly slower frequency on the ground, so that once they are in orbit and "sped up" by the weaker gravity, their signals arrive at Earth with the correct frequency .
+Again, we can calculate this effect. The difference in gravitational potential between the satellite's orbit and the Earth's surface causes the satellite clock to *gain* about 45.7 microseconds every day relative to a ground-based clock [@problem_id:1846917]. This effect is not only real, but it's so significant that engineers must account for it before the satellites are even launched. The atomic clocks are deliberately manufactured to tick at a slightly slower frequency on the ground, so that once they are in orbit and "sped up" by the weaker gravity, their signals arrive at Earth with the correct frequency [@problem_id:1827333].
 
 ### The Cosmic Tug-of-War
 
@@ -31,7 +31,7 @@ So we have a fascinating battle of principles. Special relativity, due to the sa
 
 Which one wins?
 
-It's a simple matter of addition: a gain of 45.7 microseconds minus a loss of 7.2 microseconds leaves a net gain of 38.5 microseconds per day. The clear winner is general relativity . The satellite clocks, as viewed from Earth, run fast. Without correction, this 38.5-microsecond daily drift would cause your calculated GPS position to wander off by more than 10 kilometers every day. Your car's navigation system might soon place you in the middle of a lake while you're driving on the highway. The fact that GPS works at all is a stunning, daily-life confirmation of Einstein's theories of relativity.
+It's a simple matter of addition: a gain of 45.7 microseconds minus a loss of 7.2 microseconds leaves a net gain of 38.5 microseconds per day. The clear winner is general relativity [@problem_id:1877096]. The satellite clocks, as viewed from Earth, run fast. Without correction, this 38.5-microsecond daily drift would cause your calculated GPS position to wander off by more than 10 kilometers every day. Your car's navigation system might soon place you in the middle of a lake while you're driving on the highway. The fact that GPS works at all is a stunning, daily-life confirmation of Einstein's theories of relativity.
 
 ### A Surprising Simplicity
 
@@ -41,7 +41,7 @@ Amazingly, the complex physics boils down to an extraordinarily simple relations
 
 $R = \frac{|\text{Special Relativistic Effect}|}{|\text{General Relativistic Effect}|}$
 
-After some algebra, which cancels out [fundamental constants](@article_id:148280) like the speed of light $c$ and the gravitational constant $G$, we are left with this gem :
+After some algebra, which cancels out [fundamental constants](@keyword=fundamental_constants|lang=en-US|style=Feynman) like the speed of light $c$ and the gravitational constant $G$, we are left with this gem [@problem_id:1980322]:
 
 $R = \frac{R_E}{2h}$
 

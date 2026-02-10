@@ -1,5 +1,5 @@
 ## Introduction
-In the study of [signals and systems](@article_id:273959), the time and frequency domains offer two complementary perspectives on the same underlying reality. While we often focus on how to move between these domains using tools like the Fourier transform, a deeper understanding comes from exploring the operational properties that connect them. One of the most elegant and powerful of these is the frequency differentiation property, which establishes a profound link between a simple algebraic operation in time and an analytical one in frequency.
+In the study of [signals and systems](@keyword=signals_and_systems|lang=en-US|style=Feynman), the time and frequency domains offer two complementary perspectives on the same underlying reality. While we often focus on how to move between these domains using tools like the Fourier transform, a deeper understanding comes from exploring the operational properties that connect them. One of the most elegant and powerful of these is the frequency differentiation property, which establishes a profound link between a simple algebraic operation in time and an analytical one in frequency.
 
 This principle is often presented as a mere mathematical shortcut for solving complex transforms, but this view misses its true significance. It's not just a formula; it is a fundamental concept that explains a wide array of physical phenomena, from the behavior of resonant systems to the inherent trade-offs in signal measurement.
 
@@ -47,7 +47,7 @@ $$
 \mathcal{F}\{\exp(-at^2)\} = \sqrt{\frac{\pi}{a}} \exp\left(-\frac{\omega^2}{4a}\right)
 $$
 
-Now, what if we create a new signal by multiplying our Gaussian by time: $g(t) = t \exp(-at^2)$? This is no longer a simple symmetric bump. It's an odd-symmetric pulse that starts at zero, rises to a peak, and then falls back, crossing zero to a negative trough before returning to zero again. This very shape describes, for instance, the wave function of the first excited state of a quantum harmonic oscillator .
+Now, what if we create a new signal by multiplying our Gaussian by time: $g(t) = t \exp(-at^2)$? This is no longer a simple symmetric bump. It's an odd-symmetric pulse that starts at zero, rises to a peak, and then falls back, crossing zero to a negative trough before returning to zero again. This very shape describes, for instance, the wave function of the first excited state of a quantum harmonic oscillator [@problem_id:1713540].
 
 Instead of grappling with a new, more complicated integral for $g(t)$, we can simply use our new rule. The transform of $g(t)$ is just $j$ times the derivative of the transform of our original Gaussian:
 
@@ -57,11 +57,11 @@ $$
 
 The result is remarkable. The original Gaussian spectrum was maximal at zero frequency ($\omega=0$). Our new spectrum is *zero* at $\omega=0$ and has two lobes, one positive and one negative, on either side. By multiplying by $t$, we effectively suppressed the DC (zero-frequency) component and pushed the signal's energy out towards higher frequencies. This makes perfect intuitive sense: weighting the signal towards later times introduces sharper changes, which correspond to higher frequency content.
 
-This same principle works just as well for other signal shapes, like the two-sided decaying exponential $e^{-a|t|}$, allowing us to effortlessly find the transform of $t e^{-a|t|}$ . The rule is universal; only the specific functions change.
+This same principle works just as well for other signal shapes, like the two-sided decaying exponential $e^{-a|t|}$, allowing us to effortlessly find the transform of $t e^{-a|t|}$ [@problem_id:1713529]. The rule is universal; only the specific functions change.
 
 ### The Universal Language of Transforms
 
-You might be wondering if this is a special quirk of the Fourier transform. Far from it! Nature loves to recycle a good idea. Let's look at the **Laplace transform**, the powerhouse of [control systems engineering](@article_id:263362). It's defined for [causal signals](@article_id:273378) (signals that are zero for $t<0$) as:
+You might be wondering if this is a special quirk of the Fourier transform. Far from it! Nature loves to recycle a good idea. Let's look at the **Laplace transform**, the powerhouse of [control systems engineering](@keyword=control_systems_engineering|lang=en-US|style=Feynman). It's defined for [causal signals](@keyword=causal_signals|lang=en-US|style=Feynman) (signals that are zero for $t<0$) as:
 
 $$
 X(s) = \mathcal{L}\{x(t)\} = \int_{0}^{\infty} x(t) e^{-st} dt
@@ -79,21 +79,21 @@ $$
 \mathcal{L}\{t \cdot x(t)\} = -\frac{d}{ds} X(s)
 $$
 
-The structure is identical, differing only by a constant factor ($-1$ instead of $j$). This unity is profound; the Fourier transform is simply a slice of the Laplace transform along the [imaginary axis](@article_id:262124).
+The structure is identical, differing only by a constant factor ($-1$ instead of $j$). This unity is profound; the Fourier transform is simply a slice of the Laplace transform along the [imaginary axis](@keyword=imaginary_axis|lang=en-US|style=Feynman).
 
-This property is incredibly powerful for building up a library of transforms from scratch. Let's start with the simplest [causal signal](@article_id:260772), the [unit step function](@article_id:268313) $u(t)$, whose Laplace transform is $X(s) = \frac{1}{s}$. What is the transform of a unit ramp, $t u(t)$? We simply apply the rule :
+This property is incredibly powerful for building up a library of transforms from scratch. Let's start with the simplest [causal signal](@keyword=causal_signal|lang=en-US|style=Feynman), the [unit step function](@keyword=unit_step_function|lang=en-US|style=Feynman) $u(t)$, whose Laplace transform is $X(s) = \frac{1}{s}$. What is the transform of a unit ramp, $t u(t)$? We simply apply the rule [@problem_id:1571344]:
 
 $$
 \mathcal{L}\{t u(t)\} = -\frac{d}{ds} \left(\frac{1}{s}\right) = \frac{1}{s^2}
 $$
 
-What about a parabolic signal, $t^2 u(t)$? That's just $t \cdot (t u(t))$, so we can apply the rule a second time to the result we just found :
+What about a parabolic signal, $t^2 u(t)$? That's just $t \cdot (t u(t))$, so we can apply the rule a second time to the result we just found [@problem_id:1571323]:
 
 $$
 \mathcal{L}\{t^2 u(t)\} = -\frac{d}{ds} \left( \mathcal{L}\{t u(t)\} \right) = -\frac{d}{ds} \left(\frac{1}{s^2}\right) = \frac{2}{s^3}
 $$
 
-You can see the pattern. By repeatedly applying this one simple rule, we can generate the transform for any signal of the form $t^k u(t)$. This method elegantly yields one of the most important transform pairs in system analysis, the transform of a damped, polynomially-enveloped signal :
+You can see the pattern. By repeatedly applying this one simple rule, we can generate the transform for any signal of the form $t^k u(t)$. This method elegantly yields one of the most important transform pairs in system analysis, the transform of a damped, polynomially-enveloped signal [@problem_id:1744845]:
 
 $$
 \mathcal{L}\{A t^k e^{-\alpha t} u(t)\} = \frac{A \cdot k!}{(s+\alpha)^{k+1}}
@@ -103,7 +103,7 @@ This entire family of complex transforms can be built up from one foundational p
 
 ### The Digital World and Beyond
 
-This beautiful correspondence is not confined to the continuous world of [analog signals](@article_id:200228). It lives on in the discrete domain of [digital signal processing](@article_id:263166). For a [discrete-time signal](@article_id:274896) $x[n]$, its Fourier transform (the **DTFT**) is a sum, not an integral:
+This beautiful correspondence is not confined to the continuous world of [analog signals](@keyword=analog_signals|lang=en-US|style=Feynman). It lives on in the discrete domain of [digital signal processing](@keyword=digital_signal_processing|lang=en-US|style=Feynman). For a [discrete-time signal](@keyword=discrete_time_signal|lang=en-US|style=Feynman) $x[n]$, its Fourier transform (the **DTFT**) is a sum, not an integral:
 
 $$
 X(e^{j\omega}) = \sum_{n=-\infty}^{\infty} x[n] e^{-j\omega n}
@@ -115,21 +115,21 @@ $$
 \frac{d}{d\omega} X(e^{j\omega}) = \sum_{n=-\infty}^{\infty} x[n] (-jn e^{-j\omega n}) = -j \sum_{n=-\infty}^{\infty} [n \cdot x[n]] e^{-j\omega n}
 $$
 
-Rearranging gives us the discrete-time version of our property, which is formally identical to the continuous one :
+Rearranging gives us the discrete-time version of our property, which is formally identical to the continuous one [@problem_id:1714320]:
 
 $$
 \mathcal{F}\{n \cdot x[n]\} = j \frac{d}{d\omega} X(e^{j\omega})
 $$
 
-This property offers delightful insights. For instance, the "DC component," or average value, of a signal is its transform evaluated at $\omega=0$. So, the DC component of the signal $y[n] = n x[n]$ is simply $\sum_{n=-\infty}^{\infty} n x[n]$. This is precisely the formula for the "center of mass" of the signal $x[n]$. Our property tells us that this center of mass is directly related to the *slope* of the original signal's spectrum right at the origin, $j \frac{d}{d\omega} X(e^{j\omega})|_{\omega=0}$. What a fascinating link between a signal's temporal balance and its spectral shape !
+This property offers delightful insights. For instance, the "DC component," or average value, of a signal is its transform evaluated at $\omega=0$. So, the DC component of the signal $y[n] = n x[n]$ is simply $\sum_{n=-\infty}^{\infty} n x[n]$. This is precisely the formula for the "center of mass" of the signal $x[n]$. Our property tells us that this center of mass is directly related to the *slope* of the original signal's spectrum right at the origin, $j \frac{d}{d\omega} X(e^{j\omega})|_{\omega=0}$. What a fascinating link between a signal's temporal balance and its spectral shape [@problem_id:1760133]!
 
 ### Playing with Fire: Taming the Infinite
 
-The true test of a physical principle comes when we push it to its limits. Consider the [simple function](@article_id:160838) $x(t) = |t|$. This signal grows forever, and the integral $\int_{-\infty}^{\infty} |t| dt$ is infinite. The signal is not "absolutely integrable," and by the standard rules, its Fourier transform integral does not converge. A conventional approach stops here.
+The true test of a physical principle comes when we push it to its limits. Consider the [simple function](@keyword=simple_function|lang=en-US|style=Feynman) $x(t) = |t|$. This signal grows forever, and the integral $\int_{-\infty}^{\infty} |t| dt$ is infinite. The signal is not "absolutely integrable," and by the standard rules, its Fourier transform integral does not converge. A conventional approach stops here.
 
-But let's be more daring. Physics and engineering often demand that we make sense of such "improper" functions. We can cleverly write $|t|$ as a product: $|t| = t \cdot \text{sgn}(t)$, where $\text{sgn}(t)$ is the [signum function](@article_id:167013) ($-1$ for $t<0$, $+1$ for $t>0$). The [signum function](@article_id:167013) itself doesn't have a classical Fourier transform, but in the extended world of "[generalized functions](@article_id:274698)," it is assigned the transform $\mathcal{F}\{\text{sgn}(t)\} = \frac{2}{j\omega}$.
+But let's be more daring. Physics and engineering often demand that we make sense of such "improper" functions. We can cleverly write $|t|$ as a product: $|t| = t \cdot \text{sgn}(t)$, where $\text{sgn}(t)$ is the [signum function](@keyword=signum_function|lang=en-US|style=Feynman) ($-1$ for $t<0$, $+1$ for $t>0$). The [signum function](@keyword=signum_function|lang=en-US|style=Feynman) itself doesn't have a classical Fourier transform, but in the extended world of "[generalized functions](@keyword=generalized_functions|lang=en-US|style=Feynman)," it is assigned the transform $\mathcal{F}\{\text{sgn}(t)\} = \frac{2}{j\omega}$.
 
-If we bravely assume our frequency differentiation rule still holds in this strange new territory, what happens? Let's formally apply it :
+If we bravely assume our frequency differentiation rule still holds in this strange new territory, what happens? Let's formally apply it [@problem_id:1707266]:
 
 $$
 \mathcal{F}\{|t|\} = \mathcal{F}\{t \cdot \text{sgn}(t)\} = j \frac{d}{d\omega} \left( \mathcal{F}\{\text{sgn}(t)\} \right) = j \frac{d}{d\omega} \left( \frac{2}{j\omega} \right)
@@ -137,6 +137,6 @@ $$
 
 The derivative is elementary: $j \cdot \left(\frac{2}{j}\right) \cdot \left(-\frac{1}{\omega^2}\right) = -\frac{2}{\omega^2}$.
 
-This is an extraordinary moment. By trusting the [structural integrity](@article_id:164825) of our rule, we have conjured a sensible answer, $-\frac{2}{\omega^2}$, where the fundamental definition failed us. This isn't just a mathematical game; this result is the correct, consistent, and widely used generalized Fourier transform of $|t|$. It shows that the operational properties of transforms are often more fundamental and robust than the integral definitions from which they were born. They act as our reliable guides when we venture beyond the comfortable shores of well-behaved functions into the wild ocean of distributions.
+This is an extraordinary moment. By trusting the [structural integrity](@keyword=structural_integrity|lang=en-US|style=Feynman) of our rule, we have conjured a sensible answer, $-\frac{2}{\omega^2}$, where the fundamental definition failed us. This isn't just a mathematical game; this result is the correct, consistent, and widely used generalized Fourier transform of $|t|$. It shows that the operational properties of transforms are often more fundamental and robust than the integral definitions from which they were born. They act as our reliable guides when we venture beyond the comfortable shores of well-behaved functions into the wild ocean of distributions.
 
 From the simple to the complex, from the continuous to the discrete, and even into the realm of the infinite, the principle of frequency differentiation stands as a testament to the deep unity and elegance of the mathematical language describing our world. It reminds us that sometimes, the most insightful view comes not from looking at a thing itself, but from seeing how it changes.

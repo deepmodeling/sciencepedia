@@ -11,7 +11,7 @@ Imagine you have a monumental task, like building a cathedral. You could try to 
 
 The Fast Fourier Transform (FFT) algorithm is the digital signal processing equivalent of this clever construction strategy. A direct, brute-force calculation of the Discrete Fourier Transform (DFT) for a signal with $N$ points requires a number of operations on the order of $N^2$. If your signal has a million points, that’s a trillion operations—a computational nightmare. The FFT, a family of algorithms developed by James Cooley and John Tukey, reduces this burden to the order of $N \log_2 N$. For a million points, this is closer to 20 million operations—a task a modern computer can perform in a flash.
 
-How does it achieve this incredible speed-up? Through the timeless art of **[divide and conquer](@article_id:139060)**. The core idea is to break a large, difficult DFT problem into smaller, much easier ones, and then cleverly stitch the results back together. There are two famous "twin" strategies for doing this: Decimation-in-Time (DIT) and Decimation-in-Frequency (DIF). Both achieve the same remarkable efficiency, but they go about it in opposite ways . We will embark on a journey through the Decimation-in-Frequency approach, which elegantly builds the spectrum by first taking the input data in its natural order.
+How does it achieve this incredible speed-up? Through the timeless art of **[divide and conquer](@keyword=divide_and_conquer|lang=en-US|style=Feynman)**. The core idea is to break a large, difficult DFT problem into smaller, much easier ones, and then cleverly stitch the results back together. There are two famous "twin" strategies for doing this: Decimation-in-Time (DIT) and Decimation-in-Frequency (DIF). Both achieve the same remarkable efficiency, but they go about it in opposite ways [@problem_id:2859596]. We will embark on a journey through the Decimation-in-Frequency approach, which elegantly builds the spectrum by first taking the input data in its natural order.
 
 ### Slicing the Spectrum
 
@@ -25,7 +25,7 @@ The trick begins by splitting the summation over the input index $n$. We break t
 $$
 X[k] = \sum_{n=0}^{N/2-1} x[n] W_N^{nk} + \sum_{n=N/2}^{N-1} x[n] W_N^{nk}
 $$
-With a little algebraic magic (substituting $n \to n+N/2$ in the second sum), this expression transforms into something truly revealing :
+With a little algebraic magic (substituting $n \to n+N/2$ in the second sum), this expression transforms into something truly revealing [@problem_id:1711084]:
 $$
 X[k] = \sum_{n=0}^{N/2-1} \left[ x[n] + (-1)^k x[n+N/2] \right] W_N^{nk}
 $$
@@ -43,7 +43,7 @@ X[2r+1] = \sum_{n=0}^{N/2-1} \left[ \left( x[n] - x[n+N/2] \right) W_N^n \right]
 $$
 This is the $(N/2)$-point DFT of a different sequence, $g_2[n] = (x[n] - x[n+N/2])W_N^n$.
 
-This is the Eureka moment! We've successfully broken one $N$-point DFT problem into two independent $(N/2)$-point DFT problems. The DFT of $g_1[n]$ gives us all the even-indexed frequencies, and the DFT of $g_2[n]$ gives us all the odd-indexed ones  . We've perfectly sliced the spectrum in two.
+This is the Eureka moment! We've successfully broken one $N$-point DFT problem into two independent $(N/2)$-point DFT problems. The DFT of $g_1[n]$ gives us all the even-indexed frequencies, and the DFT of $g_2[n]$ gives us all the odd-indexed ones [@problem_id:1711073] [@problem_id:1711090]. We've perfectly sliced the spectrum in two.
 
 ### The Butterfly Effect
 
@@ -52,28 +52,28 @@ From the pair $(x[n], x[n+N/2])$, we compute two new values:
 1.  The sum: $x[n] + x[n+N/2]$
 2.  The "twiddled" difference: $(x[n] - x[n+N/2]) W_N^n$
 
-This two-input, two-output calculation is the heart of the FFT. When drawn as a signal flow diagram, it resembles a butterfly, and so it is universally known as the **DIF butterfly** . The term $W_N^n$ is called a **twiddle factor**, which is just a fancy name for a complex number that rotates another number's phase without changing its magnitude.
+This two-input, two-output calculation is the heart of the FFT. When drawn as a signal flow diagram, it resembles a butterfly, and so it is universally known as the **DIF butterfly** [@problem_id:1711087]. The term $W_N^n$ is called a **twiddle factor**, which is just a fancy name for a complex number that rotates another number's phase without changing its magnitude.
 
-The entire DIF-FFT algorithm is nothing more than a cascade of these simple butterfly operations. For an 8-point FFT, we first perform four butterflies on the input sequence to create two 4-point sequences. Then we perform two butterflies on each of those to create four 2-point sequences, and so on. We recursively apply this "[divide and conquer](@article_id:139060)" strategy until we are left with trivial 1-point DFTs (which is just the identity). The process naturally consumes the input signal $x[n]$ in its original order . A complex structure emerges from the stunningly simple repetition of a single motif.
+The entire DIF-FFT algorithm is nothing more than a cascade of these simple butterfly operations. For an 8-point FFT, we first perform four butterflies on the input sequence to create two 4-point sequences. Then we perform two butterflies on each of those to create four 2-point sequences, and so on. We recursively apply this "[divide and conquer](@keyword=divide_and_conquer|lang=en-US|style=Feynman)" strategy until we are left with trivial 1-point DFTs (which is just the identity). The process naturally consumes the input signal $x[n]$ in its original order [@problem_id:1711056]. A complex structure emerges from the stunningly simple repetition of a single motif.
 
 ### The Unscrambling Act
 
 This recursive slicing has a curious, but perfectly logical, side effect. At the first stage, we sorted the frequency components $X[k]$ based on whether $k$ is even or odd—that is, we sorted them by the **least significant bit** (LSB) of the index $k$. When we repeat the process on the sub-problems, we are effectively sorting by the next bit, and so on.
 
-After all the stages are complete, the output frequencies are not in their natural order $\{X[0], X[1], X[2], \dots\}$. Instead, they are arranged in an order dictated by this bit-by-bit sorting, from LSB to most significant bit. This is the exact reverse of how we normally write numbers. Consequently, the output is in **bit-reversed order** .
+After all the stages are complete, the output frequencies are not in their natural order $\{X[0], X[1], X[2], \dots\}$. Instead, they are arranged in an order dictated by this bit-by-bit sorting, from LSB to most significant bit. This is the exact reverse of how we normally write numbers. Consequently, the output is in **bit-reversed order** [@problem_id:1711084].
 
-For example, for an $N=8$ FFT, the frequency index $k=1$ is `001` in binary. Its [bit-reversal](@article_id:143106) is `100`, which is the number 4. So, the value for $X[1]$ will appear in the 4th position of the output array (counting from 0). Similarly, $k=6$ (`110`) is reversed to `011` (3), so $X[6]$ appears in the 3rd position. The final computed array, before any reordering, will look like this :
+For example, for an $N=8$ FFT, the frequency index $k=1$ is `001` in binary. Its [bit-reversal](@keyword=bit_reversal|lang=en-US|style=Feynman) is `100`, which is the number 4. So, the value for $X[1]$ will appear in the 4th position of the output array (counting from 0). Similarly, $k=6$ (`110`) is reversed to `011` (3), so $X[6]$ appears in the 3rd position. The final computed array, before any reordering, will look like this [@problem_id:1717766]:
 $$
 (X[0], X[4], X[2], X[6], X[1], X[5], X[3], X[7])
 $$
-This isn't an error or a flaw; it is an inherent and beautiful consequence of the algorithm's [divide-and-conquer](@article_id:272721) logic. A final, computationally cheap "unscrambling" step can sort the array back into natural order if needed.
+This isn't an error or a flaw; it is an inherent and beautiful consequence of the algorithm's [divide-and-conquer](@keyword=divide_and_conquer_2|lang=en-US|style=Feynman) logic. A final, computationally cheap "unscrambling" step can sort the array back into natural order if needed.
 
 ### Two Sides of the Coin: Duality and Symmetry
 
 Let's step back and admire the finished architecture. The DIF-FFT takes a naturally ordered input and, through its cascade of butterflies, produces a bit-reversed output. What about its twin, the Decimation-in-Time (DIT) algorithm? It does precisely the opposite: it requires the *input* to be in bit-reversed order to produce a *naturally* ordered output.
 
-This is no coincidence. The DIT and DIF algorithms are mathematical duals. If you were to draw the entire signal flow diagram for a DIF-FFT and reverse the direction of every arrow, you would get the signal flow diagram for a DIT-FFT! This profound symmetry can even be seen in a single butterfly. If you take the equations for a DIF butterfly and mathematically solve for the inputs in terms of the outputs, you derive the equations for a DIT butterfly (with a scaling factor) . They are two sides of the same coin, both expressing a deep property of the Fourier transform itself.
+This is no coincidence. The DIT and DIF algorithms are mathematical duals. If you were to draw the entire signal flow diagram for a DIF-FFT and reverse the direction of every arrow, you would get the signal flow diagram for a DIT-FFT! This profound symmetry can even be seen in a single butterfly. If you take the equations for a DIF butterfly and mathematically solve for the inputs in terms of the outputs, you derive the equations for a DIT butterfly (with a scaling factor) [@problem_id:1711080]. They are two sides of the same coin, both expressing a deep property of the Fourier transform itself.
 
-And there's more symmetry to appreciate. If your input signal $x[n]$ consists entirely of real numbers—as is the case for most signals from the physical world, like sound waves or temperature readings—the output spectrum possesses a special property called **[conjugate symmetry](@article_id:143637)**. This means that the frequency component at index $k$ is the [complex conjugate](@article_id:174394) of the component at index $N-k$, or $X[k] = (X[N-k])^*$. For example, given $X[1] = 10 + 4j$, we immediately know that $X[N-1] = 10 - 4j$ . This implies that nearly half of the frequency components are redundant! For real-valued signals, we only need to compute the first half of the spectrum to know the whole story, effectively doubling the efficiency of the algorithm once again.
+And there's more symmetry to appreciate. If your input signal $x[n]$ consists entirely of real numbers—as is the case for most signals from the physical world, like sound waves or temperature readings—the output spectrum possesses a special property called **[conjugate symmetry](@keyword=conjugate_symmetry|lang=en-US|style=Feynman)**. This means that the frequency component at index $k$ is the [complex conjugate](@keyword=complex_conjugate|lang=en-US|style=Feynman) of the component at index $N-k$, or $X[k] = (X[N-k])^*$. For example, given $X[1] = 10 + 4j$, we immediately know that $X[N-1] = 10 - 4j$ [@problem_id:1711051]. This implies that nearly half of the frequency components are redundant! For real-valued signals, we only need to compute the first half of the spectrum to know the whole story, effectively doubling the efficiency of the algorithm once again.
 
 From a simple desire for speed, we have uncovered a world of recursive elegance, butterfly motifs, and profound dualities. The FFT is not just a fast algorithm; it is a journey into the beautiful, unified structure of signals and their spectra.

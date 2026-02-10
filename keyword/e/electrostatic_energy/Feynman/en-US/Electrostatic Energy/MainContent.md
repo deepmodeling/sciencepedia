@@ -7,7 +7,7 @@ In our introduction, we touched upon the idea that bringing charges together can
 
 ### The Price of Assembly: The Energy of Configuration
 
-Imagine you have a box of tiny, positively charged marbles. You take one and place it on a table. It costs you nothing. Now, you try to bring a second marble close to the first. You immediately feel a resistance; they repel each other. You have to push, to do **work**, to place the second marble next to the first. This work you've done isn't lost. It's stored in the configuration of the two marbles, ready to be released if you let them fly apart. This stored work is what we call **[electrostatic potential energy](@article_id:203515)**.
+Imagine you have a box of tiny, positively charged marbles. You take one and place it on a table. It costs you nothing. Now, you try to bring a second marble close to the first. You immediately feel a resistance; they repel each other. You have to push, to do **work**, to place the second marble next to the first. This work you've done isn't lost. It's stored in the configuration of the two marbles, ready to be released if you let them fly apart. This stored work is what we call **[electrostatic potential energy](@keyword=electrostatic_potential_energy|lang=en-US|style=Feynman)**.
 
 The amount of work, and thus the stored energy, depends on two things: how strong the charges are and how close you bring them. The formula is a familiar one from Coulomb's law. For two point charges, $q_1$ and $q_2$, separated by a distance $r_{12}$, the energy is:
 
@@ -15,7 +15,7 @@ $$
 U = \frac{1}{4 \pi \epsilon_0} \frac{q_1 q_2}{r_{12}}
 $$
 
-What if we want to assemble a more complex structure, like a molecule? Let's consider building a simple molecular model, a regular tetrahedron, with four identical positive charges $q$ at its vertices, each a distance $a$ from the others ().
+What if we want to assemble a more complex structure, like a molecule? Let's consider building a simple molecular model, a regular tetrahedron, with four identical positive charges $q$ at its vertices, each a distance $a$ from the others ([@problem_id:1615311]).
 
 1.  The first charge is free; we place it down. Work done = $0$.
 2.  We bring in the second charge. We do work against the first, adding an energy of $\frac{1}{4 \pi \epsilon_0} \frac{q^2}{a}$.
@@ -30,7 +30,7 @@ $$
 
 This is the "price of assembly." It’s the energy cost to create this structure against the mutual repulsion of the charges. This same logic extends from simple geometric shapes to the vast, intricate architectures of real molecules and crystals.
 
-From discrete points, we can make the leap to continuous objects—like a charged metal sphere—by imagining them as being composed of an infinite number of infinitesimal charges. Whether it's a hollow spherical shell () or a solid, uniformly charged sphere like a simplified atomic nucleus (), the principle is the same: the total energy is the total work done to bring all the bits of charge together from infinity. However, a crucial subtlety emerges when we look at the process more closely.
+From discrete points, we can make the leap to continuous objects—like a charged metal sphere—by imagining them as being composed of an infinite number of infinitesimal charges. Whether it's a hollow spherical shell ([@problem_id:1797271]) or a solid, uniformly charged sphere like a simplified atomic nucleus ([@problem_id:1827889]), the principle is the same: the total energy is the total work done to bring all the bits of charge together from infinity. However, a crucial subtlety emerges when we look at the process more closely.
 
 ### The Banker's Paradox: Why is the Energy not $Q \times V$?
 
@@ -38,7 +38,7 @@ Let's think about a conductor, say a metal sphere, that we've charged up to a to
 
 And it is perfectly wrong.
 
-Nature is more subtle. Let's see why by considering a classic device: a capacitor. Imagine a student is analyzing a [spherical capacitor](@article_id:202761) with charge $+Q$ on the inner shell and $-Q$ on the outer shell (). The inner shell is at some potential $V_1$ and the outer shell is at $V_2 = 0$. The student proposes the "logical" formula for the energy: $U_{\text{prop}} = (+Q)V_1 + (-Q)V_2 = QV_1$. However, a careful calculation of the true stored energy reveals that the actual answer is exactly half of that: $U_{\text{actual}} = \frac{1}{2} QV_1$. Where did that factor of $1/2$ come from?
+Nature is more subtle. Let's see why by considering a classic device: a capacitor. Imagine a student is analyzing a [spherical capacitor](@keyword=spherical_capacitor|lang=en-US|style=Feynman) with charge $+Q$ on the inner shell and $-Q$ on the outer shell ([@problem_id:1614214]). The inner shell is at some potential $V_1$ and the outer shell is at $V_2 = 0$. The student proposes the "logical" formula for the energy: $U_{\text{prop}} = (+Q)V_1 + (-Q)V_2 = QV_1$. However, a careful calculation of the true stored energy reveals that the actual answer is exactly half of that: $U_{\text{actual}} = \frac{1}{2} QV_1$. Where did that factor of $1/2$ come from?
 
 The mistake in our "logical" argument is a bit like a banker who loans you \$1000 but charges you interest as if you had the full \$1000 from the very beginning, even while he's still counting it out to you. The potential $V$ of the conductor is not a pre-existing stage onto which we place the charge $Q$. The potential is *created by* the charge itself.
 
@@ -68,15 +68,15 @@ We've established that we must do work to assemble charges and that this work is
 
 Michael Faraday, a man who thought in pictures rather than equations, proposed a revolutionary idea. He imagined that the "empty" space around charges was not empty at all, but was filled with invisible lines of force—what we now call the **electric field**. Maxwell built on this, and their collective insight was that the energy is not located *in the charges*, but is stored *in the field itself*. The space is an energy reservoir.
 
-This isn't just a philosophical preference; it's a physical reality that can be expressed with mathematics. Through a bit of mathematical alchemy (specifically, integration by parts and the [divergence theorem](@article_id:144777)), one can take the expression for energy we just found, $U = \frac{1}{2} \int \rho V d\tau$, and transform it into something completely different in appearance but identical in value ():
+This isn't just a philosophical preference; it's a physical reality that can be expressed with mathematics. Through a bit of mathematical alchemy (specifically, integration by parts and the [divergence theorem](@keyword=divergence_theorem|lang=en-US|style=Feynman)), one can take the expression for energy we just found, $U = \frac{1}{2} \int \rho V d\tau$, and transform it into something completely different in appearance but identical in value ([@problem_id:3002473]):
 
 $$
 U = \int_{\text{all space}} \left( \frac{1}{2} \epsilon_0 E^2 \right) d\tau
 $$
 
-Look at this equation! The [charge density](@article_id:144178) $\rho$ and potential $V$ have vanished. The energy is now expressed purely in terms of the electric field $\mathbf{E}$ that pervades all of space. The term inside the integral, $u_e = \frac{1}{2}\epsilon_0 E^2$, is the **energy density**—the amount of energy stored in the field per unit volume. Where the field is strong, the energy is densely packed. Where the field is weak, the energy is sparse. If there are [dielectric materials](@article_id:146669) present, this generalizes to $u_e = \frac{1}{2}\mathbf{E} \cdot \mathbf{D}$, where $\mathbf{D}$ is the [electric displacement field](@article_id:202792) that accounts for the material's response.
+Look at this equation! The [charge density](@keyword=charge_density|lang=en-US|style=Feynman) $\rho$ and potential $V$ have vanished. The energy is now expressed purely in terms of the electric field $\mathbf{E}$ that pervades all of space. The term inside the integral, $u_e = \frac{1}{2}\epsilon_0 E^2$, is the **energy density**—the amount of energy stored in the field per unit volume. Where the field is strong, the energy is densely packed. Where the field is weak, the energy is sparse. If there are [dielectric materials](@keyword=dielectric_materials|lang=en-US|style=Feynman) present, this generalizes to $u_e = \frac{1}{2}\mathbf{E} \cdot \mathbf{D}$, where $\mathbf{D}$ is the [electric displacement field](@keyword=electric_displacement_field|lang=en-US|style=Feynman) that accounts for the material's response.
 
-This viewpoint changes everything. A charged capacitor is not storing charge; it is storing energy in the electric field between its plates. When you turn on a light, you are not using up electrons; you are draining energy from the [electromagnetic fields](@article_id:272372) that fill the wires. The difference in energy between a hollow charged shell and a solid charged sphere (, ) is now obvious: cramming the charge into a volume instead of spreading it on a surface creates a different field distribution, and thus a different total energy when you integrate the energy density. When two charged spheres are connected by a wire and redistribute their charge to reach equilibrium, they are simply rearranging their collective electric field into a new, lower-energy configuration ().
+This viewpoint changes everything. A charged capacitor is not storing charge; it is storing energy in the electric field between its plates. When you turn on a light, you are not using up electrons; you are draining energy from the [electromagnetic fields](@keyword=electromagnetic_fields|lang=en-US|style=Feynman) that fill the wires. The difference in energy between a hollow charged shell and a solid charged sphere ([@problem_id:1797271], [@problem_id:1827889]) is now obvious: cramming the charge into a volume instead of spreading it on a surface creates a different field distribution, and thus a different total energy when you integrate the energy density. When two charged spheres are connected by a wire and redistribute their charge to reach equilibrium, they are simply rearranging their collective electric field into a new, lower-energy configuration ([@problem_id:1607302]).
 
 ### The Path of Least Resistance: Nature's Minimum Energy Principle
 
@@ -86,8 +86,8 @@ The answer lies in one of nature's most pervasive themes: systems tend to settle
 
 **Of all the possible field configurations that could exist and still satisfy the given boundary conditions, nature chooses the one that minimizes the total stored electrostatic energy.**
 
-This is a beautiful and powerful [variational principle](@article_id:144724). It means that the solution to Laplace's equation, $\nabla^2 V = 0$, which describes the potential in charge-free regions, isn't just a mathematical statement about forces balancing. It's a description of the field configuration that has the absolute minimum energy possible.
+This is a beautiful and powerful [variational principle](@keyword=variational_principle|lang=en-US|style=Feynman). It means that the solution to Laplace's equation, $\nabla^2 V = 0$, which describes the potential in charge-free regions, isn't just a mathematical statement about forces balancing. It's a description of the field configuration that has the absolute minimum energy possible.
 
-Imagine we have a sphere where the potential on the surface is specified. We know the true solution $V_T$ that satisfies Laplace's equation. Now, let's invent a fake potential, $V_H$, that is different everywhere inside but cleverly designed to match the true potential on the boundary (). If we calculate the total field energy $U = \int (\frac{1}{2}\epsilon_0 E^2) d\tau$ for both the true field ($\mathbf{E}_T = -\nabla V_T$) and the fake one ($\mathbf{E}_H = -\nabla V_H$), we will always find that $U_H > U_T$. Any deviation from the true solution, no matter how small, leads to an increase in the total energy.
+Imagine we have a sphere where the potential on the surface is specified. We know the true solution $V_T$ that satisfies Laplace's equation. Now, let's invent a fake potential, $V_H$, that is different everywhere inside but cleverly designed to match the true potential on the boundary ([@problem_id:1616666]). If we calculate the total field energy $U = \int (\frac{1}{2}\epsilon_0 E^2) d\tau$ for both the true field ($\mathbf{E}_T = -\nabla V_T$) and the fake one ($\mathbf{E}_H = -\nabla V_H$), we will always find that $U_H > U_T$. Any deviation from the true solution, no matter how small, leads to an increase in the total energy.
 
-Nature is, in a sense, lazy. It will always find the most "economical" arrangement for its fields. This [principle of minimum energy](@article_id:177717) is not just an electrostatic curiosity; it is a cornerstone of physics, echoing through quantum mechanics and field theory, revealing a deep unity in the workings of the universe.
+Nature is, in a sense, lazy. It will always find the most "economical" arrangement for its fields. This [principle of minimum energy](@keyword=principle_of_minimum_energy|lang=en-US|style=Feynman) is not just an electrostatic curiosity; it is a cornerstone of physics, echoing through quantum mechanics and field theory, revealing a deep unity in the workings of the universe.

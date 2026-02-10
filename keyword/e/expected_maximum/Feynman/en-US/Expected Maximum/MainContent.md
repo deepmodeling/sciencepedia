@@ -15,7 +15,7 @@ Let's begin with a game. Imagine you and a friend each roll a fair, four-sided d
 
 Our first guess might be to take the average of a single roll, which is $(1+2+3+4)/4 = 2.5$, and... then what? The maximum of the averages? That doesn't make sense. The average of the maximums? That's what we want to find! The core of the problem is that the `max` function is what mathematicians call "non-linear". We can't just take the expectation (the average) of the individual parts and then combine them. That is, $E[\max(X_1, X_2)]$ is almost never equal to $\max(E[X_1], E[X_2])$. We must be more clever.
 
-To solve this, we have to go back to basics. There are $4 \times 4 = 16$ equally likely outcomes for the pair of dice rolls. We can list them all and find the maximum for each pair. For instance, the pair (1,1) gives a max of 1. The pairs (1,2) and (2,1) both give a max of 2. By patiently counting all 16 outcomes, we can find how many times each possible maximum (1, 2, 3, or 4) occurs. Then we can calculate the weighted average. This direct, brute-force method works, and it gives us the answer: $25/8$, or 3.125 . This is quite a bit higher than the average roll of 2.5, as our intuition suggested. But listing all outcomes is tedious and impossible if we have millions of possibilities. We need a more powerful, more elegant approach.
+To solve this, we have to go back to basics. There are $4 \times 4 = 16$ equally likely outcomes for the pair of dice rolls. We can list them all and find the maximum for each pair. For instance, the pair (1,1) gives a max of 1. The pairs (1,2) and (2,1) both give a max of 2. By patiently counting all 16 outcomes, we can find how many times each possible maximum (1, 2, 3, or 4) occurs. Then we can calculate the weighted average. This direct, brute-force method works, and it gives us the answer: $25/8$, or 3.125 [@problem_id:7021]. This is quite a bit higher than the average roll of 2.5, as our intuition suggested. But listing all outcomes is tedious and impossible if we have millions of possibilities. We need a more powerful, more elegant approach.
 
 ### The Master Key: Thinking Backwards with the CDF
 
@@ -37,7 +37,7 @@ $$
 
 This little equation is the foundation for almost everything that follows. Once we have the CDF of the maximum, we can find everything else about it.
 
-Let's see its power in action. Imagine a computer generating $n$ random numbers, each uniformly distributed between 0 and 1 . For a single such number $X$, the probability that it's less than or equal to some value $m$ (where $0 \le m \le 1$) is simply $m$. So, $F(m) = m$.
+Let's see its power in action. Imagine a computer generating $n$ random numbers, each uniformly distributed between 0 and 1 [@problem_id:1937439]. For a single such number $X$, the probability that it's less than or equal to some value $m$ (where $0 \le m \le 1$) is simply $m$. So, $F(m) = m$.
 Using our master key, the CDF of the maximum of $n$ such numbers is $F_M(m) = m^n$.
 
 From here, we can find the **Probability Density Function (PDF)**, which tells us the relative likelihood of the maximum being at a particular value, by taking the derivative: $f_M(m) = \frac{d}{dm}m^n = nm^{n-1}$. To find the expected value, we integrate $m \cdot f_M(m)$:
@@ -50,7 +50,7 @@ What a wonderfully simple and beautiful result! If you pick 10 random numbers be
 
 ### An Even More Elegant Path: Summing the Tails
 
-The CDF approach is powerful, but it involves two steps: first find the PDF, then integrate. Is there a more direct route? Yes, there is. For any non-negative random variable (one that can't be negative), its expectation can be found by integrating the "[tail probability](@article_id:266301)" over all possible positive values. This is sometimes called the **layer cake representation**, because you can imagine slicing the probability distribution into thin horizontal layers and summing them up.
+The CDF approach is powerful, but it involves two steps: first find the PDF, then integrate. Is there a more direct route? Yes, there is. For any non-negative random variable (one that can't be negative), its expectation can be found by integrating the "[tail probability](@keyword=tail_probability|lang=en-US|style=Feynman)" over all possible positive values. This is sometimes called the **layer cake representation**, because you can imagine slicing the probability distribution into thin horizontal layers and summing them up.
 
 The formula is:
 $$
@@ -60,30 +60,30 @@ And since $P(M > t) = 1 - P(M \le t) = 1 - F_M(t)$, we have:
 $$
 E[M] = \int_0^\infty (1 - F_M(t)) \,dt
 $$
-Let's try this on our [uniform distribution](@article_id:261240) example . We found that $F_M(t) = t^n$ for $t$ between 0 and 1 (and for $t>1$, $F_M(t)=1$, so the integrand is 0). So, the expectation is:
+Let's try this on our [uniform distribution](@keyword=uniform_distribution|lang=en-US|style=Feynman) example [@problem_id:467214]. We found that $F_M(t) = t^n$ for $t$ between 0 and 1 (and for $t>1$, $F_M(t)=1$, so the integrand is 0). So, the expectation is:
 
 $$
 E[M] = \int_0^1 (1 - t^n) \,dt = \left[ t - \frac{t^{n+1}}{n+1} \right]_0^1 = 1 - \frac{1}{n+1} = \frac{n}{n+1}
 $$
-It works! And it was arguably even simpler. This method is especially handy when the [tail probability](@article_id:266301), $1 - F_M(t)$, has a cleaner form than the PDF. A classic example is the exponential distribution, which often models the lifetime of components or the time between events. If we take the maximum of three independent sensor readings that follow an exponential distribution, integrating the [tail probability](@article_id:266301) is by far the most straightforward way to find the expected maximum signal strength .
+It works! And it was arguably even simpler. This method is especially handy when the [tail probability](@keyword=tail_probability|lang=en-US|style=Feynman), $1 - F_M(t)$, has a cleaner form than the PDF. A classic example is the exponential distribution, which often models the lifetime of components or the time between events. If we take the maximum of three independent sensor readings that follow an exponential distribution, integrating the [tail probability](@keyword=tail_probability|lang=en-US|style=Feynman) is by far the most straightforward way to find the expected maximum signal strength [@problem_id:1377901].
 
-For [discrete variables](@article_id:263134), like the number of failed servers in a cluster which might follow a binomial distribution, there is a parallel formula—the **tail-sum formula**:
+For [discrete variables](@keyword=discrete_variables|lang=en-US|style=Feynman), like the number of failed servers in a cluster which might follow a binomial distribution, there is a parallel formula—the **tail-sum formula**:
 $$
 E[M] = \sum_{k=0}^{\infty} P(M > k)
 $$
-This allows us to elegantly express the expected maximum number of failures across multiple clusters in a compact form, without having to calculate the messy probability of the maximum being *exactly* equal to some number $k$ .
+This allows us to elegantly express the expected maximum number of failures across multiple clusters in a compact form, without having to calculate the messy probability of the maximum being *exactly* equal to some number $k$ [@problem_id:1353298].
 
 ### Symmetry and Surprise: The Normal Distribution
 
 So far we've dealt with variables that are non-negative. What about distributions that stretch from negative to positive infinity, like the bell curve of the **Normal Distribution**? This distribution is everywhere in nature, modeling everything from measurement errors to thermal noise in electronic components.
 
-Let's take two independent measurements, $Z_1$ and $Z_2$, from a [standard normal distribution](@article_id:184015) (mean 0, variance 1) . What is the expected value of their maximum? The tail-integral formula is less convenient here. But there is another, completely different, and stunningly beautiful trick. It turns out that for any two numbers, $a$ and $b$, the following identity holds:
+Let's take two independent measurements, $Z_1$ and $Z_2$, from a [standard normal distribution](@keyword=standard_normal_distribution|lang=en-US|style=Feynman) (mean 0, variance 1) [@problem_id:1403732]. What is the expected value of their maximum? The tail-integral formula is less convenient here. But there is another, completely different, and stunningly beautiful trick. It turns out that for any two numbers, $a$ and $b$, the following identity holds:
 
 $$
 \max(a, b) = \frac{a+b}{2} + \frac{|a-b|}{2}
 $$
 
-Let this sink in. It says the maximum of two numbers is their midpoint plus half the distance between them. It's obviously true if you try it with numbers, but applying it to random variables is a stroke of genius. By the [linearity of expectation](@article_id:273019), we have:
+Let this sink in. It says the maximum of two numbers is their midpoint plus half the distance between them. It's obviously true if you try it with numbers, but applying it to random variables is a stroke of genius. By the [linearity of expectation](@keyword=linearity_of_expectation|lang=en-US|style=Feynman), we have:
 
 $$
 E[\max(Z_1, Z_2)] = E\left[\frac{Z_1+Z_2}{2}\right] + E\left[\frac{|Z_1-Z_2|}{2}\right]
@@ -95,7 +95,7 @@ $$
 E[\max(Z_1, Z_2)] = \frac{1}{2} E[|D|] = \frac{1}{\sqrt{\pi}}
 $$
 
-This is a remarkable, exact result. But the real magic happens when we introduce **correlation**. Imagine two financial assets whose returns are modeled by normal distributions . If they are correlated, they tend to move together. Let their correlation be $\rho$. Our magic identity still holds, but the variance of the difference changes: $\text{Var}(X-Y) = \text{Var}(X) + \text{Var}(Y) - 2\text{Cov}(X,Y) = 1 + 1 - 2\rho = 2(1-\rho)$. The final result for the expected maximum becomes:
+This is a remarkable, exact result. But the real magic happens when we introduce **correlation**. Imagine two financial assets whose returns are modeled by normal distributions [@problem_id:1322535]. If they are correlated, they tend to move together. Let their correlation be $\rho$. Our magic identity still holds, but the variance of the difference changes: $\text{Var}(X-Y) = \text{Var}(X) + \text{Var}(Y) - 2\text{Cov}(X,Y) = 1 + 1 - 2\rho = 2(1-\rho)$. The final result for the expected maximum becomes:
 
 $$
 E[\max(X, Y)] = \sqrt{\frac{1-\rho}{\pi}}
@@ -107,19 +107,19 @@ Look at what this tells us! If the assets are strongly positively correlated ($\
 
 We saw that for a uniform distribution on $[0,1]$, the expected maximum gets closer and closer to 1 as we take more samples, $n$. But what about an unbounded distribution like the normal? If we keep taking samples, the maximum can theoretically grow forever. But how fast?
 
-If we sample $N$ times from a [standard normal distribution](@article_id:184015), where $N$ is enormous (think Avogadro's number), what is the expected value of the single largest value we find? This is a question at the heart of **[extreme value theory](@article_id:139589)**. The answer is profoundly beautiful. The expected maximum grows not like $N$, or $\sqrt{N}$, but with the logarithm of $N$ . The leading term is:
+If we sample $N$ times from a [standard normal distribution](@keyword=standard_normal_distribution|lang=en-US|style=Feynman), where $N$ is enormous (think Avogadro's number), what is the expected value of the single largest value we find? This is a question at the heart of **[extreme value theory](@keyword=extreme_value_theory|lang=en-US|style=Feynman)**. The answer is profoundly beautiful. The expected maximum grows not like $N$, or $\sqrt{N}$, but with the logarithm of $N$ [@problem_id:1939615]. The leading term is:
 
 $$
 E[V_{\text{max}}] \approx \sqrt{2 \ln N}
 $$
 
-The growth is fantastically slow. The [normal distribution](@article_id:136983)'s tails are so "light"—they fall off so rapidly—that finding a truly extreme value is incredibly difficult. To increase the expected maximum from, say, 5 to 6 (just one standard deviation), you don't just need a few more samples. You'd need to increase your number of samples $N$ by a factor of about $\exp( (6^2-5^2)/2 ) \approx \exp(5.5) \approx 245$! This logarithmic relationship reveals something deep about the nature of "normal" fluctuations: truly record-shattering events are far rarer than our linear intuition might lead us to believe.
+The growth is fantastically slow. The [normal distribution](@keyword=normal_distribution|lang=en-US|style=Feynman)'s tails are so "light"—they fall off so rapidly—that finding a truly extreme value is incredibly difficult. To increase the expected maximum from, say, 5 to 6 (just one standard deviation), you don't just need a few more samples. You'd need to increase your number of samples $N$ by a factor of about $\exp( (6^2-5^2)/2 ) \approx \exp(5.5) \approx 245$! This logarithmic relationship reveals something deep about the nature of "normal" fluctuations: truly record-shattering events are far rarer than our linear intuition might lead us to believe.
 
 ### A Grand Synthesis: When Everything is Random
 
 Our journey has taken us through many landscapes. We have a toolbox of powerful techniques: the CDF method, the tail-sum formula, and clever algebraic identities. We can now tackle a scenario of formidable complexity, one that mirrors the beautiful chaos of the real world.
 
-Imagine monitoring for high-intensity signal bursts, like from a distant cosmic ray event . The *timing* of the bursts is random, following a Poisson process. The *number* of bursts you see in a time window $T$ is therefore random. On top of that, the *intensity* of each burst is itself a random variable, following a heavy-tailed Pareto distribution. What is the expected value of the single highest intensity you record?
+Imagine monitoring for high-intensity signal bursts, like from a distant cosmic ray event [@problem_id:1357516]. The *timing* of the bursts is random, following a Poisson process. The *number* of bursts you see in a time window $T$ is therefore random. On top of that, the *intensity* of each burst is itself a random variable, following a heavy-tailed Pareto distribution. What is the expected value of the single highest intensity you record?
 
 Here, everything is random. The number of players in the game is not fixed. It seems impossibly complex. Yet, the principles we've developed can be layered, one on top of the other, to tame this complexity. We use the **Law of Total Expectation**: we first calculate the expected maximum *given* that there were exactly $k$ bursts. Then, we average this result over all possible values of $k$, weighted by the Poisson probability of seeing $k$ bursts.
 

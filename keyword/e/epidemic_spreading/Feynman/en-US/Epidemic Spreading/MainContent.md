@@ -1,7 +1,7 @@
 ## Introduction
-The spread of a disease can seem chaotic and unpredictable, a complex interplay of individual actions and biological chance. How can we possibly make sense of, let alone predict, the trajectory of an epidemic? This challenge is not met by tracking every single interaction, but by uncovering the universal patterns that govern propagation through a population. This article addresses this fundamental problem by introducing the powerful framework of [mathematical epidemiology](@article_id:163153).
+The spread of a disease can seem chaotic and unpredictable, a complex interplay of individual actions and biological chance. How can we possibly make sense of, let alone predict, the trajectory of an epidemic? This challenge is not met by tracking every single interaction, but by uncovering the universal patterns that govern propagation through a population. This article addresses this fundamental problem by introducing the powerful framework of [mathematical epidemiology](@keyword=mathematical_epidemiology|lang=en-US|style=Feynman).
 
-In the first chapter, "Principles and Mechanisms," we will deconstruct the elegant SIR model, exploring the core concepts that drive an outbreak, such as the mass-action principle and the critical threshold defined by the basic reproduction number, $R_0$. Building on this foundation, the "Applications and Interdisciplinary Connections" chapter will demonstrate how these models are not just theoretical constructs but practical tools for designing public health interventions and understanding phenomena as diverse as viral memes and [financial contagion](@article_id:139730).
+In the first chapter, "Principles and Mechanisms," we will deconstruct the elegant SIR model, exploring the core concepts that drive an outbreak, such as the mass-action principle and the critical threshold defined by the basic reproduction number, $R_0$. Building on this foundation, the "Applications and Interdisciplinary Connections" chapter will demonstrate how these models are not just theoretical constructs but practical tools for designing public health interventions and understanding phenomena as diverse as viral memes and [financial contagion](@keyword=financial_contagion|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
@@ -15,7 +15,7 @@ This is the famous **SIR model**. People don't stay in one box forever. The stor
 
 ### The Dance of Infection: How the Virus Spreads
 
-How does someone move from the Susceptible to the Infectious box? They have to get infected, of course. This happens when a susceptible person comes into contact with an infectious person. Let's think about the rate of new infections. If there are no infectious people ($I=0$), no one can get sick. The flow stops. This seems obvious, but it's a crucial starting point: the model has no mechanism for a disease to appear from thin air .
+How does someone move from the Susceptible to the Infectious box? They have to get infected, of course. This happens when a susceptible person comes into contact with an infectious person. Let's think about the rate of new infections. If there are no infectious people ($I=0$), no one can get sick. The flow stops. This seems obvious, but it's a crucial starting point: the model has no mechanism for a disease to appear from thin air [@problem_id:2199699].
 
 Now, suppose we have a few infectious people. The rate of new infections should depend on how many susceptibles are around to *be* infected. If you double the number of susceptible people, you'd expect to double the rate of new infections, all else being equal. Likewise, if you double the number of infectious people, you double the number of "spreaders," and the infection rate should also double.
 
@@ -46,19 +46,19 @@ Let's look at the equation for the infectious population again, but right at the
 
 $$ \frac{dI}{dt} \approx \frac{\beta}{N} N I - \gamma I = (\beta - \gamma) I $$
 
-This is the equation for exponential growth!  The number of infected people will grow exponentially, like $I(t) \approx I_0 \exp((\beta - \gamma)t)$, if the term in the parenthesis is positive. For an epidemic to "take off," we must have:
+This is the equation for exponential growth! [@problem_id:1707356] The number of infected people will grow exponentially, like $I(t) \approx I_0 \exp((\beta - \gamma)t)$, if the term in the parenthesis is positive. For an epidemic to "take off," we must have:
 
 $$ \beta - \gamma > 0 \quad \text{or} \quad \frac{\beta}{\gamma} > 1 $$
 
-This simple ratio, $\beta/\gamma$, is the famous $R_0$ .
+This simple ratio, $\beta/\gamma$, is the famous $R_0$ [@problem_id:1661554].
 
 $$ R_0 = \frac{\beta}{\gamma} $$
 
 What does this number actually *mean*? We can think of it as a competition. $\beta$ is the rate at which an infected person spreads the disease, while $\gamma$ is the rate at which they are removed from the infectious pool (by recovering). If the rate of spreading is faster than the rate of removal ($R_0 > 1$), the disease wins, and an epidemic is born. If the rate of removal is faster ($R_0 < 1$), the disease loses, and it will quickly die out.
 
-There's an even more intuitive way to understand it. Remember that $1/\gamma$ is the average time a person is infectious. If you multiply the rate of transmission ($\beta$) by the duration of infection ($1/\gamma$), you get the total number of people one sick person is expected to infect over the course of their illness (in a totally susceptible population). This is the very definition of $R_0$ .
+There's an even more intuitive way to understand it. Remember that $1/\gamma$ is the average time a person is infectious. If you multiply the rate of transmission ($\beta$) by the duration of infection ($1/\gamma$), you get the total number of people one sick person is expected to infect over the course of their illness (in a totally susceptible population). This is the very definition of $R_0$ [@problem_id:1843928].
 
-So, if $R_0=3$, it means that, on average, the first infected person will transmit the virus to three other people before they recover. Each of those three will go on to infect three more, and you can see how things can get out of hand very quickly. Conversely, if $R_0=0.8$, each infected person, on average, infects less than one other person. The chain of transmission is broken, and the disease cannot sustain itself . This single number is the gatekeeper of epidemics. It's so important that we can even estimate it from early data, for example, by observing how long it takes for the number of cases to double .
+So, if $R_0=3$, it means that, on average, the first infected person will transmit the virus to three other people before they recover. Each of those three will go on to infect three more, and you can see how things can get out of hand very quickly. Conversely, if $R_0=0.8$, each infected person, on average, infects less than one other person. The chain of transmission is broken, and the disease cannot sustain itself [@problem_id:1838832]. This single number is the gatekeeper of epidemics. It's so important that we can even estimate it from early data, for example, by observing how long it takes for the number of cases to double [@problem_id:1707368].
 
 ### The Anatomy of an Outbreak: From Spark to Peak to Burnout
 
@@ -74,27 +74,27 @@ Since $I$ is not zero at the peak, the other part of the expression must be zero
 
 $$ \frac{\beta}{N} S - \gamma = 0 \quad \implies \quad S_{peak} = \frac{\gamma N}{\beta} = \frac{N}{R_0} $$
 
-This is a profound result . The epidemic reaches its peak and begins its natural decline at the exact moment the susceptible population drops to a fraction $1/R_0$ of the total population. Once the number of susceptibles is below this threshold, the virus can no longer find enough new hosts to sustain its growth. Each infected person, on average, now infects fewer than one new person, and the epidemic is on its way to burning out. This critical fraction is known as the **[herd immunity threshold](@article_id:184438)**.
+This is a profound result [@problem_id:2199692]. The epidemic reaches its peak and begins its natural decline at the exact moment the susceptible population drops to a fraction $1/R_0$ of the total population. Once the number of susceptibles is below this threshold, the virus can no longer find enough new hosts to sustain its growth. Each infected person, on average, now infects fewer than one new person, and the epidemic is on its way to burning out. This critical fraction is known as the **[herd immunity threshold](@keyword=herd_immunity_threshold|lang=en-US|style=Feynman)**.
 
 ### Taming the Fire: How We Fight Back
 
-The SIR model isn't just a tool for predicting the course of an epidemic; it's a strategic map for how to fight it. The goal of public health interventions is to reduce the [effective reproduction number](@article_id:164406) below 1. How can we do that? By attacking the parameters of the model.
+The SIR model isn't just a tool for predicting the course of an epidemic; it's a strategic map for how to fight it. The goal of public health interventions is to reduce the [effective reproduction number](@keyword=effective_reproduction_number|lang=en-US|style=Feynman) below 1. How can we do that? By attacking the parameters of the model.
 
 1.  **Reduce Transmission ($\beta$):** We can make it harder for the virus to jump from person to person. Social distancing, wearing masks, and washing hands all reduce the effective contact rate, directly lowering $\beta$ and thus lowering $R_0$.
 
 2.  **Shorten the Infectious Period ($1/\gamma$):** We can find infected people faster and have them isolate, effectively removing them from the infectious pool. Antiviral treatments that help people recover faster also work by increasing the recovery rate $\gamma$, which in turn lowers $R_0$.
 
-Let's imagine a scenario on a university campus . If the administration successfully isolates half of the infectious students and implements a social distancing policy that reduces effective contacts by 30%, the rate of new infections is not just cut in half. The two effects multiply. The new infection rate would be $(1 - 0.30) \times (1 - 0.50) = 0.35$ times the original rate—a dramatic reduction.
+Let's imagine a scenario on a university campus [@problem_id:1707369]. If the administration successfully isolates half of the infectious students and implements a social distancing policy that reduces effective contacts by 30%, the rate of new infections is not just cut in half. The two effects multiply. The new infection rate would be $(1 - 0.30) \times (1 - 0.50) = 0.35$ times the original rate—a dramatic reduction.
 
-3.  **Reduce the Susceptible Pool ($S$):** This is perhaps the most powerful strategy of all: **vaccination**. A vaccine moves people directly from the Susceptible box to the Recovered box without them ever having to get sick. The goal of a [vaccination](@article_id:152885) campaign is to artificially push the number of susceptibles below the [herd immunity threshold](@article_id:184438), $N/R_0$, so the virus has nowhere to go.
+3.  **Reduce the Susceptible Pool ($S$):** This is perhaps the most powerful strategy of all: **vaccination**. A vaccine moves people directly from the Susceptible box to the Recovered box without them ever having to get sick. The goal of a [vaccination](@keyword=vaccination|lang=en-US|style=Feynman) campaign is to artificially push the number of susceptibles below the [herd immunity threshold](@keyword=herd_immunity_threshold|lang=en-US|style=Feynman), $N/R_0$, so the virus has nowhere to go.
 
-The SIR model allows us to calculate exactly what fraction of the population needs to be vaccinated to stop a disease in its tracks. For a disease with $R_0=6$, we need to reduce the susceptible population to less than $1/6$ of its original size. Even with a vaccine that is, say, 85% effective, we can calculate the precise minimum coverage needed to achieve this goal and protect the entire community, including those who cannot be vaccinated .
+The SIR model allows us to calculate exactly what fraction of the population needs to be vaccinated to stop a disease in its tracks. For a disease with $R_0=6$, we need to reduce the susceptible population to less than $1/6$ of its original size. Even with a vaccine that is, say, 85% effective, we can calculate the precise minimum coverage needed to achieve this goal and protect the entire community, including those who cannot be vaccinated [@problem_id:2262919].
 
 ### The Never-Ending Story: From Epidemic to Endemic
 
 Our simple SIR model predicts that an outbreak will eventually burn out completely once enough people are immune. But we all know that some diseases, like measles or the flu, never quite go away. They become **endemic**, smoldering at a low level in the population.
 
-Why does this happen? Because the supply of susceptible people is constantly being refilled, primarily by newborns. We can extend our model to include these "vital dynamics"—births and deaths. Let's say new members are born at a rate $\mu$, and everyone dies from natural causes at the same rate $\mu$, keeping the total population $N$ constant. Our equations change slightly . For an infected person, there are now two ways out of the infectious box: they can recover (at rate $\gamma$) or they can die of natural causes (at rate $\mu$). So, the total rate of removal from the infectious class is now $\gamma + \mu$.
+Why does this happen? Because the supply of susceptible people is constantly being refilled, primarily by newborns. We can extend our model to include these "vital dynamics"—births and deaths. Let's say new members are born at a rate $\mu$, and everyone dies from natural causes at the same rate $\mu$, keeping the total population $N$ constant. Our equations change slightly [@problem_id:1838859]. For an infected person, there are now two ways out of the infectious box: they can recover (at rate $\gamma$) or they can die of natural causes (at rate $\mu$). So, the total rate of removal from the infectious class is now $\gamma + \mu$.
 
 The basic reproduction number, which always has the same intuitive structure of "rate of production / rate of removal", now becomes:
 

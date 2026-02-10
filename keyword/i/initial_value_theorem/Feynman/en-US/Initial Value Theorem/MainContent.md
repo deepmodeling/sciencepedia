@@ -11,7 +11,7 @@ But what if you don't want to watch the whole story unfold? What if you just wan
 
 ### A Glimpse of the Beginning: The Core Idea
 
-The theorem itself looks deceptively simple. For a [continuous-time signal](@article_id:275706) $x(t)$ with Laplace transform $X(s)$, its initial value is given by:
+The theorem itself looks deceptively simple. For a [continuous-time signal](@keyword=continuous_time_signal|lang=en-US|style=Feynman) $x(t)$ with Laplace transform $X(s)$, its initial value is given by:
 
 $$
 x(0^+) = \lim_{t \to 0^+} x(t) = \lim_{s \to \infty} sX(s)
@@ -19,7 +19,7 @@ $$
 
 The notation $0^+$ is a physicist's shorthand for "the moment right after zero." Notice the curious structure: we find the value at the *beginning* of time ($t \to 0^+$) by looking at the behavior of its transform at the "end" of the frequency domain ($s \to \infty$).
 
-Let's say a system's output has the transform $X(s) = \frac{5s^2 + 2s + 1}{s^3 - s^2 - 6s}$ . What's its initial value? We just follow the recipe:
+Let's say a system's output has the transform $X(s) = \frac{5s^2 + 2s + 1}{s^3 - s^2 - 6s}$ [@problem_id:1763002]. What's its initial value? We just follow the recipe:
 
 $$
 x(0^+) = \lim_{s \to \infty} s \left( \frac{5s^2 + 2s + 1}{s^3 - s^2 - 6s} \right) = \lim_{s \to \infty} \frac{5s^3 + 2s^2 + s}{s^3 - s^2 - 6s}
@@ -33,7 +33,7 @@ $$
 x[0] = \lim_{z \to \infty} X(z)
 $$
 
-If a signal's transform is $X(z) = \frac{5z^2 - 3z + 8}{2z^2 + z - 10}$ , its initial sample is simply the limit as $z \to \infty$, which again is the ratio of the leading coefficients: $x[0] = \frac{5}{2}$.
+If a signal's transform is $X(z) = \frac{5z^2 - 3z + 8}{2z^2 + z - 10}$ [@problem_id:1763266], its initial sample is simply the limit as $z \to \infty$, which again is the ratio of the leading coefficients: $x[0] = \frac{5}{2}$.
 
 It feels like a kind of magic. But in science, magic is just a principle you haven't understood yet. So, let's look behind the curtain.
 
@@ -45,7 +45,7 @@ $$
 X(z) = \sum_{n=0}^{\infty} x[n]z^{-n} = x[0]z^0 + x[1]z^{-1} + x[2]z^{-2} + \dots
 $$
 
-Look at this expression! It's a [power series](@article_id:146342) in $z^{-1}$. What happens when we let $z$ approach infinity? The term $z^{-1} = \frac{1}{z}$ goes to zero. So does $z^{-2}$, $z^{-3}$, and all the rest. Every term in the series vanishes, except for one: the very first one, $x[0]$, which has no $z$ attached to it. The "magic" of taking the limit as $z \to \infty$ is nothing more than a clever way to annihilate every term in the series except the one we want . It’s an algebraic trick, not a mystical one. In fact, it’s conceptually the same as performing [polynomial long division](@article_id:271886) to find the first term of the sequence.
+Look at this expression! It's a [power series](@keyword=power_series|lang=en-US|style=Feynman) in $z^{-1}$. What happens when we let $z$ approach infinity? The term $z^{-1} = \frac{1}{z}$ goes to zero. So does $z^{-2}$, $z^{-3}$, and all the rest. Every term in the series vanishes, except for one: the very first one, $x[0]$, which has no $z$ attached to it. The "magic" of taking the limit as $z \to \infty$ is nothing more than a clever way to annihilate every term in the series except the one we want [@problem_id:1761972]. It’s an algebraic trick, not a mystical one. In fact, it’s conceptually the same as performing [polynomial long division](@keyword=polynomial_long_division|lang=en-US|style=Feynman) to find the first term of the sequence.
 
 The continuous case for the Laplace transform is a bit more subtle, but just as elegant. The secret lies in the relationship between a function and its derivative. The Laplace transform of a derivative is given by a beautiful rule:
 
@@ -59,25 +59,25 @@ $$
 \lim_{s \to \infty} sX(s) = 0 + x(0^+)
 $$
 
-The mysterious factor of $s$ in the Laplace IVT is no accident; it's a direct consequence of the differentiation property of the transform, which is precisely the property that unearths the boundary condition $x(0^+)$ .
+The mysterious factor of $s$ in the Laplace IVT is no accident; it's a direct consequence of the differentiation property of the transform, which is precisely the property that unearths the boundary condition $x(0^+)$ [@problem_id:2717455].
 
 ### The Rules of the Game: When the Crystal Ball Gets Foggy
 
 Like any powerful tool, the Initial Value Theorem has rules. If you ignore them, the crystal ball can mislead you.
 
 **Rule 1: The Story Must Start at Zero.**
-Our entire derivation relied on integrals and sums that start from $t=0$ or $n=0$. This means the theorem is only valid for **causal** signals—those that are zero for all negative time. If a signal has a history before $t=0$ (a "non-causal" or "two-sided" signal), the very foundation of the theorem crumbles. How do we know if a signal is causal just from its transform? The **Region of Convergence (ROC)** tells us. For a [causal signal](@article_id:260772), the ROC is always an open region extending outwards to infinity. If the ROC is an interior disk, an [annulus](@article_id:163184), or any region that does *not* include the point at infinity, the signal is not causal, and the IVT is fundamentally inapplicable  .
+Our entire derivation relied on integrals and sums that start from $t=0$ or $n=0$. This means the theorem is only valid for **causal** signals—those that are zero for all negative time. If a signal has a history before $t=0$ (a "non-causal" or "two-sided" signal), the very foundation of the theorem crumbles. How do we know if a signal is causal just from its transform? The **Region of Convergence (ROC)** tells us. For a [causal signal](@keyword=causal_signal|lang=en-US|style=Feynman), the ROC is always an open region extending outwards to infinity. If the ROC is an interior disk, an [annulus](@keyword=annulus|lang=en-US|style=Feynman), or any region that does *not* include the point at infinity, the signal is not causal, and the IVT is fundamentally inapplicable [@problem_id:1761932] [@problem_id:1745132].
 
 **Rule 2: No "Big Bangs" at the Start.**
-What happens if a signal starts with an infinite jolt, like an instantaneous hammer blow? In physics, we model this with a **Dirac [delta function](@article_id:272935)**, $\delta(t)$. A transform like $X(s) = \frac{3s^2-s+1}{s^2+4s+3}$ is "improper"—its numerator polynomial's degree is not less than the denominator's. If you try to apply the IVT, you get $\lim_{s \to \infty} sX(s) = \infty$. This isn't a failure; it's a message! The theorem is telling you that the signal begins with an impulse, and the [regular value](@article_id:187724) $x(0^+)$ is undefined in the way we normally think of it .
+What happens if a signal starts with an infinite jolt, like an instantaneous hammer blow? In physics, we model this with a **Dirac [delta function](@keyword=delta_function|lang=en-US|style=Feynman)**, $\delta(t)$. A transform like $X(s) = \frac{3s^2-s+1}{s^2+4s+3}$ is "improper"—its numerator polynomial's degree is not less than the denominator's. If you try to apply the IVT, you get $\lim_{s \to \infty} sX(s) = \infty$. This isn't a failure; it's a message! The theorem is telling you that the signal begins with an impulse, and the [regular value](@keyword=regular_value|lang=en-US|style=Feynman) $x(0^+)$ is undefined in the way we normally think of it [@problem_id:1744829].
 
-But what if we want to know what happens in the instant *after* the [big bang](@article_id:159325)? Physics is full of such problems. Amazingly, we can modify our technique. For a system with an impulse response $h(t) = K \delta(t) + h_{reg}(t)$, where $K \delta(t)$ is the impulsive part, we can find the strength of the impulse first: $K = \lim_{s \to \infty} H(s)$. Then, we subtract this impulsive behavior from the transform and apply a modified IVT to what's left:
+But what if we want to know what happens in the instant *after* the [big bang](@keyword=big_bang|lang=en-US|style=Feynman)? Physics is full of such problems. Amazingly, we can modify our technique. For a system with an impulse response $h(t) = K \delta(t) + h_{reg}(t)$, where $K \delta(t)$ is the impulsive part, we can find the strength of the impulse first: $K = \lim_{s \to \infty} H(s)$. Then, we subtract this impulsive behavior from the transform and apply a modified IVT to what's left:
 
 $$
 h_{reg}(0^+) = \lim_{s \to \infty} s \left( H(s) - K \right)
 $$
 
-This allows us to peer past the initial explosion and see the value of the "regular" part of the signal as it begins its journey .
+This allows us to peer past the initial explosion and see the value of the "regular" part of the signal as it begins its journey [@problem_id:1761924].
 
 ### A More Powerful Gaze: From Value to Velocity
 
@@ -89,6 +89,6 @@ $$
 \dot{x}(0^+) = \lim_{s \to \infty} s \left( sX(s) \right) = \lim_{s \to \infty} s^2 X(s)
 $$
 
-With this, we can find the initial velocity of a mechanical system directly from its position's Laplace transform, without ever solving for the motion itself . By extension, the initial acceleration $\ddot{x}(0^+)$ can be found from $\lim_{s \to \infty} s^3 X(s)$, and so on. We can get a complete snapshot of the initial [kinematics](@article_id:172824) of a system in an instant.
+With this, we can find the initial velocity of a mechanical system directly from its position's Laplace transform, without ever solving for the motion itself [@problem_id:1761927]. By extension, the initial acceleration $\ddot{x}(0^+)$ can be found from $\lim_{s \to \infty} s^3 X(s)$, and so on. We can get a complete snapshot of the initial [kinematics](@keyword=kinematics|lang=en-US|style=Feynman) of a system in an instant.
 
-This is not just an academic curiosity; it is a profound tool for engineering design. Imagine you are a control engineer designing a [feedback system](@article_id:261587). You decide to add a component called a "zero" to the system's transfer function, $H(s)$, to improve its response time. How does this change the system's initial reaction to a sudden input? Instead of performing a long, complex inverse transform for every possible design choice, the IVT gives you immediate insight. For a standard [second-order system](@article_id:261688) modified with a zero at $s=-z$, the initial value of its impulse response becomes $h(0^+) = \frac{\omega_n^2}{z}$ . This simple expression tells you everything: if you move the zero further out to the left (increase $z$), the initial "kick" of the system's response gets smaller. This is design intuition, handed to us on a silver platter by the Initial Value Theorem. It transforms a difficult analytical problem into a simple observation, allowing us to build better, more intuitive systems.
+This is not just an academic curiosity; it is a profound tool for engineering design. Imagine you are a control engineer designing a [feedback system](@keyword=feedback_system|lang=en-US|style=Feynman). You decide to add a component called a "zero" to the system's transfer function, $H(s)$, to improve its response time. How does this change the system's initial reaction to a sudden input? Instead of performing a long, complex inverse transform for every possible design choice, the IVT gives you immediate insight. For a standard [second-order system](@keyword=second_order_system|lang=en-US|style=Feynman) modified with a zero at $s=-z$, the initial value of its impulse response becomes $h(0^+) = \frac{\omega_n^2}{z}$ [@problem_id:1573349]. This simple expression tells you everything: if you move the zero further out to the left (increase $z$), the initial "kick" of the system's response gets smaller. This is design intuition, handed to us on a silver platter by the Initial Value Theorem. It transforms a difficult analytical problem into a simple observation, allowing us to build better, more intuitive systems.

@@ -1,64 +1,64 @@
 ## 引言
-在电子世界中，元器件很少表现出完美的线性行为。二极管这一基本构建模块就是一个典型例子，其[电流-电压关系](@article_id:343090)由一条陡峭的指数曲线定义。这种固有的非线性虽然对整流和开关等功能至关重要，但却给工程师带来了重大的分析挑战。当元器件的行为如此复杂时，我们如何预测、分析和设计电路？答案在于一个优雅的概念——线性化，这是一套强大的技术，用更简单的直线模型来近似这条复杂的曲线。本文深入探讨了[二极管线性化](@article_id:332689)的核心原理和广泛应用。第一章“原理与机制”将解析两种主要的线性化策略：用于微[小信号分析](@article_id:327169)的[小信号模型](@article_id:334403)和用于大信号行为的分段模型。随后的“应用与跨学科联系”一章将展示这些理论模型如何在实际模拟设计、稳[定性分析](@article_id:297701)中成为不可或缺的工具，甚至如何连接到物理学和计算科学等其他科学领域。
+在电子世界中，元器件很少表现出完美的线性行为。二极管这一基本构建模块就是一个典型例子，其[电流-电压关系](@keyword=current_voltage_relationship|lang=zh-CN|style=Feynman)由一条陡峭的指数曲线定义。这种固有的非线性虽然对整流和开关等功能至关重要，但却给工程师带来了重大的分析挑战。当元器件的行为如此复杂时，我们如何预测、分析和设计电路？答案在于一个优雅的概念——线性化，这是一套强大的技术，用更简单的直线模型来近似这条复杂的曲线。本文深入探讨了[二极管线性化](@keyword=diode_linearization|lang=zh-CN|style=Feynman)的核心原理和广泛应用。第一章“原理与机制”将解析两种主要的线性化策略：用于微[小信号分析](@keyword=small_signal_analysis|lang=zh-CN|style=Feynman)的[小信号模型](@keyword=small_signal_model|lang=zh-CN|style=Feynman)和用于大信号行为的分段模型。随后的“应用与跨学科联系”一章将展示这些理论模型如何在实际模拟设计、稳[定性分析](@keyword=qualitative_analysis|lang=zh-CN|style=Feynman)中成为不可或缺的工具，甚至如何连接到物理学和计算科学等其他科学领域。
 
 ## 原理与机制
 
-自然界很少呈现给我们直线。从抛出小球的优美弧线到树木错综复杂的分枝，世界在根本上是非线性的。作为现代电子学基石的普通[二极管](@article_id:320743)也不例外。它的电压与电流关系不像电阻器那样是简单的直线关系；相反，它遵循由**肖克莱[二极管方程](@article_id:330755)**所描述的剧烈指数曲线。这种非线性正是二极管强大功能的源泉——使其能够[整流](@article_id:326678)、开关和整形信号——但它也带来了巨大的挑战。当电路元器件的行为如此复杂、弯曲时，我们如何分析和设计电路？
+自然界很少呈现给我们直线。从抛出小球的优美弧线到树木错综复杂的分枝，世界在根本上是非线性的。作为现代电子学基石的普通[二极管](@keyword=diode|lang=zh-CN|style=Feynman)也不例外。它的电压与电流关系不像电阻器那样是简单的直线关系；相反，它遵循由**肖克莱[二极管方程](@keyword=diode_equation|lang=zh-CN|style=Feynman)**所描述的剧烈指数曲线。这种非线性正是二极管强大功能的源泉——使其能够[整流](@keyword=ac_to_dc_conversion|lang=zh-CN|style=Feynman)、开关和整形信号——但它也带来了巨大的挑战。当电路元器件的行为如此复杂、弯曲时，我们如何分析和设计电路？
 
-答案，一个支撑着大部分电子学的天才之举，就是“假装”。我们策略性地决定忽略完整、复杂的曲线，而用一个更简单的线性近似来代替它。但我们选择“假装”的方式完全取决于我们的视角。我们是关心[二极管](@article_id:320743)从完全关断到完全导通的宏大、全面的行为？还是我们专注于它对微小、精细信号的微妙响应？这两种观点催生了两种强大的线性化策略：[分段线性模型](@article_id:324786)和[小信号模型](@article_id:334403)。
+答案，一个支撑着大部分电子学的天才之举，就是“假装”。我们策略性地决定忽略完整、复杂的曲线，而用一个更简单的线性近似来代替它。但我们选择“假装”的方式完全取决于我们的视角。我们是关心[二极管](@keyword=diode|lang=zh-CN|style=Feynman)从完全关断到完全导通的宏大、全面的行为？还是我们专注于它对微小、精细信号的微妙响应？这两种观点催生了两种强大的线性化策略：[分段线性模型](@keyword=pwl_model|lang=zh-CN|style=Feynman)和[小信号模型](@keyword=small_signal_model|lang=zh-CN|style=Feynman)。
 
-### [小信号模型](@article_id:334403)：局部视角
+### [小信号模型](@keyword=small_signal_model|lang=zh-CN|style=Feynman)：局部视角
 
-想象一下，你正站在一个由[二极管](@article_id:320743)的 $I-V$ 特性所描述的巨大、弯曲的[山坡](@article_id:379674)上。如果你观察整个景观，曲率是不可否认的。但如果你将注意力限制在脚下那一小块地面上，它看起来几乎是完全平坦的。这块“平坦的补丁”就是**[小信号模型](@article_id:334403)**的精髓。
+想象一下，你正站在一个由[二极管](@keyword=diode|lang=zh-CN|style=Feynman)的 $I-V$ 特性所描述的巨大、弯曲的[山坡](@keyword=hill_slope|lang=zh-CN|style=Feynman)上。如果你观察整个景观，曲率是不可否认的。但如果你将注意力限制在脚下那一小块地面上，它看起来几乎是完全平坦的。这块“平坦的补丁”就是**[小信号模型](@keyword=small_signal_model|lang=zh-CN|style=Feynman)**的精髓。
 
-我们首先在曲线上建立一个“基准点”，一个被称为**工作点**或**[静态工作点](@article_id:352470)（[Q点](@article_id:330361)）**的[稳态](@article_id:326048)条件。这是通过向[二极管](@article_id:320743)施加直流电压和电流，将其偏置在其$I-V$曲线上的一个特[定点](@article_id:304105)来实现的。现在，我们考虑当在这个直流偏置之上引入一个微小的“摆动”——一个小的交流信号时会发生什么。对于这个小信号，[二极管](@article_id:320743)的响应不再由那令人望而生畏的指数曲线决定，而是由曲线*在该特定工作点*的斜率决定。
+我们首先在曲线上建立一个“基准点”，一个被称为**工作点**或**[静态工作点](@keyword=operating_point|lang=zh-CN|style=Feynman)（[Q点](@keyword=q_point|lang=zh-CN|style=Feynman)）**的[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)条件。这是通过向[二极管](@keyword=diode|lang=zh-CN|style=Feynman)施加直流电压和电流，将其偏置在其$I-V$曲线上的一个特[定点](@keyword=fixed_points|lang=zh-CN|style=Feynman)来实现的。现在，我们考虑当在这个直流偏置之上引入一个微小的“摆动”——一个小的交流信号时会发生什么。对于这个小信号，[二极管](@keyword=diode|lang=zh-CN|style=Feynman)的响应不再由那令人望而生畏的指数曲线决定，而是由曲线*在该特定工作点*的斜率决定。
 
-这个斜率 $\frac{dI_D}{dV_D}$ 代表一个[电导](@article_id:325643)。它的倒数 $\frac{dV_D}{dI_D}$ 具有电阻的单位，是[模拟电子学](@article_id:337543)中最重要的参数之一：**[动态电阻](@article_id:331267)**，通常表示为 $r_d$。对于一个[正向偏置](@article_id:320229)的[二极管](@article_id:320743)，其工作电流 $I_0$ 远大于[反向饱和电流](@article_id:327114)时，这个[动态电阻](@article_id:331267)与工作电流有一个非常简洁的关系 ：
+这个斜率 $\frac{dI_D}{dV_D}$ 代表一个[电导](@keyword=electrical_conductance|lang=zh-CN|style=Feynman)。它的倒数 $\frac{dV_D}{dI_D}$ 具有电阻的单位，是[模拟电子学](@keyword=analog_electronics|lang=zh-CN|style=Feynman)中最重要的参数之一：**[动态电阻](@keyword=small_signal_resistance|lang=zh-CN|style=Feynman)**，通常表示为 $r_d$。对于一个[正向偏置](@keyword=forward_bias|lang=zh-CN|style=Feynman)的[二极管](@keyword=diode|lang=zh-CN|style=Feynman)，其工作电流 $I_0$ 远大于[反向饱和电流](@keyword=reverse_saturation_current|lang=zh-CN|style=Feynman)时，这个[动态电阻](@keyword=small_signal_resistance|lang=zh-CN|style=Feynman)与工作电流有一个非常简洁的关系 [@problem_id:1590138]：
 
 $$r_d \approx \frac{n V_T}{I_0}$$
 
-这里，$n$ 是[理想因子](@article_id:298393)，$V_T$ 是[热电压](@article_id:330789)，一个与温度成正比的项。这个简单的方程蕴含着一个深刻的秘密。我们创造了一个电阻，其阻值不是固定的，而是由我们提供给它的直流电流 $I_0$ 控制的！增加[偏置电流](@article_id:324664)，[动态电阻](@article_id:331267)就下降。减少电流，电阻就上升。
+这里，$n$ 是[理想因子](@keyword=ideality_factor|lang=zh-CN|style=Feynman)，$V_T$ 是[热电压](@keyword=thermal_voltage|lang=zh-CN|style=Feynman)，一个与温度成正比的项。这个简单的方程蕴含着一个深刻的秘密。我们创造了一个电阻，其阻值不是固定的，而是由我们提供给它的直流电流 $I_0$ 控制的！增加[偏置电流](@keyword=bias_current|lang=zh-CN|style=Feynman)，[动态电阻](@keyword=small_signal_resistance|lang=zh-CN|style=Feynman)就下降。减少电流，电阻就上升。
 
-因此，如果我们将一个小的交流电流 $i_{ac}(t)$ 叠加在直流偏置电流 $I_{DC}$ 上，二极管两端的合成交流电压将仅仅是 $v_{ac}(t) = i_{ac}(t) \cdot r_d$ 。对于分析这个小交流信号而言，整个复杂、非线性的二极管被简化成了一个简单的电阻器。如果这个[二极管](@article_id:320743)是更大电路的一部分，比如说与一个固定电阻 $R$ 串联，那么小[交流信号](@article_id:328083)看到的总[有效电阻](@article_id:336025)就变成了两者的和：$R_{eff} = R + r_d$ 。
+因此，如果我们将一个小的交流电流 $i_{ac}(t)$ 叠加在直流偏置电流 $I_{DC}$ 上，二极管两端的合成交流电压将仅仅是 $v_{ac}(t) = i_{ac}(t) \cdot r_d$ [@problem_id:1299765]。对于分析这个小交流信号而言，整个复杂、非线性的二极管被简化成了一个简单的电阻器。如果这个[二极管](@keyword=diode|lang=zh-CN|style=Feynman)是更大电路的一部分，比如说与一个固定电阻 $R$ 串联，那么小[交流信号](@keyword=ac_signal|lang=zh-CN|style=Feynman)看到的总[有效电阻](@keyword=effective_resistance|lang=zh-CN|style=Feynman)就变成了两者的和：$R_{eff} = R + r_d$ [@problem_id:1590138]。
 
-这个概念不仅仅是数学上的便利；它也是大量模拟电路的基础。考虑一个简单的[分压器](@article_id:339224)，其中一个电阻是二极管。通过改变流过[二极管](@article_id:320743)的[直流偏置](@article_id:337376)电流，我们改变了它的[动态电阻](@article_id:331267) $r_d$，从而改变了电路的分压比。这使我们能够构建一个**[压控衰减器](@article_id:331527)**，一个其[交流增益](@article_id:324744)可以由外部直流电压调节的电路 。这种使用[直流偏置](@article_id:337376)来控制交流参数的原理是模[拟设](@article_id:363651)计艺术中一个反复出现的主题。
+这个概念不仅仅是数学上的便利；它也是大量模拟电路的基础。考虑一个简单的[分压器](@keyword=voltage_divider|lang=zh-CN|style=Feynman)，其中一个电阻是二极管。通过改变流过[二极管](@keyword=diode|lang=zh-CN|style=Feynman)的[直流偏置](@keyword=dc_biasing|lang=zh-CN|style=Feynman)电流，我们改变了它的[动态电阻](@keyword=small_signal_resistance|lang=zh-CN|style=Feynman) $r_d$，从而改变了电路的分压比。这使我们能够构建一个**[压控衰减器](@keyword=voltage_controlled_attenuator|lang=zh-CN|style=Feynman)**，一个其[交流增益](@keyword=ac_gain|lang=zh-CN|style=Feynman)可以由外部直流电压调节的电路 [@problem_id:1333629]。这种使用[直流偏置](@keyword=dc_biasing|lang=zh-CN|style=Feynman)来控制交流参数的原理是模[拟设](@keyword=ansatz|lang=zh-CN|style=Feynman)计艺术中一个反复出现的主题。
 
 ### 分段模型：两条线的故事
 
-[小信号模型](@article_id:334403)非常适合分析微小的摆动，但对于将[二极管](@article_id:320743)从完全关闭推到完全开启的大电压摆幅呢？为此，我们需要一种不同的简化方法：**[分段线性模型](@article_id:324786)**。我们不是用一个点的切线来近似曲线，而是用几段连接的直线段来近似它。
+[小信号模型](@keyword=small_signal_model|lang=zh-CN|style=Feynman)非常适合分析微小的摆动，但对于将[二极管](@keyword=diode|lang=zh-CN|style=Feynman)从完全关闭推到完全开启的大电压摆幅呢？为此，我们需要一种不同的简化方法：**[分段线性模型](@keyword=pwl_model|lang=zh-CN|style=Feynman)**。我们不是用一个点的切线来近似曲线，而是用几段连接的直线段来近似它。
 
-在其最常见的形式中，二极管被建模为处于两种状态之一。当[反向偏置](@article_id:320492)或正向电压低于某个阈值时，二极管处于“关断”状态——它像一个开路，不允许电流流过。一旦其两端电压超过一个**导通电压**（通常称为 $V_{on}$ 或 $V_\gamma$），[二极管](@article_id:320743)就“导通”了。在这种状态下，它被建模为一个值为 $V_{on}$ 的[理想电压源](@article_id:340300)与一个小的**正向电阻** $r_f$ 串联。
+在其最常见的形式中，二极管被建模为处于两种状态之一。当[反向偏置](@keyword=reverse_bias|lang=zh-CN|style=Feynman)或正向电压低于某个阈值时，二极管处于“关断”状态——它像一个开路，不允许电流流过。一旦其两端电压超过一个**导通电压**（通常称为 $V_{on}$ 或 $V_\gamma$），[二极管](@keyword=diode|lang=zh-CN|style=Feynman)就“导通”了。在这种状态下，它被建模为一个值为 $V_{on}$ 的[理想电压源](@keyword=ideal_voltage_source|lang=zh-CN|style=Feynman)与一个小的**正向电阻** $r_f$ 串联。
 
-这个模型完美地捕捉了二极管作为开关的本质。它要么是一扇开着的门，要么是一扇关着的门，有一个小小的入场费（$V_{on}$）和一点通行阻力（$r_f$）。这个模型非常适合分析像**限幅器**这样的电路，这些电路旨在限制电压摆幅。当使用[二极管](@article_id:320743)来限幅信号时，电路的传输特性（$v_{out}$ vs $v_{in}$）将真正地由两个线性段组成。在“关断”区域，输出跟随输入。在“导通”或“限幅”区域，输出由电路的串联电阻和二极管的正向电阻 $r_f$ 形成的[分压器](@article_id:339224)决定 。
+这个模型完美地捕捉了二极管作为开关的本质。它要么是一扇开着的门，要么是一扇关着的门，有一个小小的入场费（$V_{on}$）和一点通行阻力（$r_f$）。这个模型非常适合分析像**限幅器**这样的电路，这些电路旨在限制电压摆幅。当使用[二极管](@keyword=diode|lang=zh-CN|style=Feynman)来限幅信号时，电路的传输特性（$v_{out}$ vs $v_{in}$）将真正地由两个线性段组成。在“关断”区域，输出跟随输入。在“导通”或“限幅”区域，输出由电路的串联电阻和二极管的正向电阻 $r_f$ 形成的[分压器](@keyword=voltage_divider|lang=zh-CN|style=Feynman)决定 [@problem_id:1299213]。
 
-类似的分段方法也用于模拟[齐纳二极管](@article_id:325260)在其击穿区内的行为。在这里，$I-V$曲线是一条近乎垂直的线，被建模为一个理想直流电压源 $V_{Z0}$ 与一个小的[动态电阻](@article_id:331267) $r_Z$ 串联 。这个简单的模型使我们能够轻松区分二极管的整体直流行为（其**[静态电阻](@article_id:334617)**，$R_{DC} = V_Z / I_Z$）和它对小信号变化的响应（其**[动态电阻](@article_id:331267)**，$r_{ac} = r_Z$） 。
+类似的分段方法也用于模拟[齐纳二极管](@keyword=zener_diode|lang=zh-CN|style=Feynman)在其击穿区内的行为。在这里，$I-V$曲线是一条近乎垂直的线，被建模为一个理想直流电压源 $V_{Z0}$ 与一个小的[动态电阻](@keyword=small_signal_resistance|lang=zh-CN|style=Feynman) $r_Z$ 串联 [@problem_id:1281826]。这个简单的模型使我们能够轻松区分二极管的整体直流行为（其**[静态电阻](@keyword=static_resistance|lang=zh-CN|style=Feynman)**，$R_{DC} = V_Z / I_Z$）和它对小信号变化的响应（其**[动态电阻](@keyword=small_signal_resistance|lang=zh-CN|style=Feynman)**，$r_{ac} = r_Z$） [@problem_id:1299777]。
 
 ### 线性化的实际应用：驯服纹波
 
-这些[线性模型](@article_id:357202)的真正威力在于它们解锁了强大的分析工具，其中最著名的是**叠加原理**。叠加原理指出，在任何线性电路中，对多个源的总响应是每个源单独作用时响应的总和。
+这些[线性模型](@keyword=linear_models|lang=zh-CN|style=Feynman)的真正威力在于它们解锁了强大的分析工具，其中最著名的是**叠加原理**。叠加原理指出，在任何线性电路中，对多个源的总响应是每个源单独作用时响应的总和。
 
-让我们在一个齐纳二极管稳压器中看看这一点，这是一个旨在将带噪声的直流输入转换为稳定直流输出的电路。输入可能是一个直流电压 $V_S$ 叠加了一个小的、不希望有的交流纹波 $v_{p}(t)$。我们可以使用其[分段线性](@article_id:380160)击穿模型来模拟[齐纳二极管](@article_id:325260)：一个直流源 $V_Z$ 和一个[动态电阻](@article_id:331267) $R_Z$。因为我们现在有了一个电路的[线性模型](@article_id:357202)（假设齐纳管保持在击穿状态），我们可以应用[叠加原理](@article_id:308501) ：
+让我们在一个齐纳二极管稳压器中看看这一点，这是一个旨在将带噪声的直流输入转换为稳定直流输出的电路。输入可能是一个直流电压 $V_S$ 叠加了一个小的、不希望有的交流纹波 $v_{p}(t)$。我们可以使用其[分段线性](@keyword=piecewise_linearity|lang=zh-CN|style=Feynman)击穿模型来模拟[齐纳二极管](@keyword=zener_diode|lang=zh-CN|style=Feynman)：一个直流源 $V_Z$ 和一个[动态电阻](@keyword=small_signal_resistance|lang=zh-CN|style=Feynman) $R_Z$。因为我们现在有了一个电路的[线性模型](@keyword=linear_models|lang=zh-CN|style=Feynman)（假设齐纳管保持在击穿状态），我们可以应用[叠加原理](@keyword=principle_of_superposition|lang=zh-CN|style=Feynman) [@problem_id:1340856]：
 
 1.  **直流分析：** 为了找到直流输出电压，我们只考虑直流源（$V_S$ 和齐纳管内部的 $V_Z$）。所有交流源都被关闭。
-2.  **交流分析：** 为了找到输出端的交流纹波，我们只考虑交流纹波源 $v_p(t)$。所有直流电压源都被短路替代。在这个交流[等效电路](@article_id:337805)中，强大的齐纳二极管仅仅变成了它的[动态电阻](@article_id:331267) $R_Z$。[电路简化](@article_id:333915)为一个简单的[分压器](@article_id:339224)，我们可以轻松计算出纹波被衰减了多少。
+2.  **交流分析：** 为了找到输出端的交流纹波，我们只考虑交流纹波源 $v_p(t)$。所有直流电压源都被短路替代。在这个交流[等效电路](@keyword=equivalent_circuits|lang=zh-CN|style=Feynman)中，强大的齐纳二极管仅仅变成了它的[动态电阻](@keyword=small_signal_resistance|lang=zh-CN|style=Feynman) $R_Z$。[电路简化](@keyword=circuit_simplification|lang=zh-CN|style=Feynman)为一个简单的[分压器](@keyword=voltage_divider|lang=zh-CN|style=Feynman)，我们可以轻松计算出纹波被衰减了多少。
 
-最终的输出电压就是步骤1的直流结果和步骤2的交流结果之和。这种“分而治之”的策略非常强大，它使我们能够清晰地将电路的直流偏置与其[交流信号](@article_id:328083)行为分离开来。
+最终的输出电压就是步骤1的直流结果和步骤2的交流结果之和。这种“分而治之”的策略非常强大，它使我们能够清晰地将电路的直流偏置与其[交流信号](@keyword=ac_signal|lang=zh-CN|style=Feynman)行为分离开来。
 
-### 一句警告：[叠加原理的局限性](@article_id:329860)
+### 一句警告：[叠加原理的局限性](@keyword=superposition_principle_limitations|lang=zh-CN|style=Feynman)
 
 然而，我们必须非常小心地应用叠加原理。这仅仅是线性系统赋予的特权。试图在一个根本非线性的系统上使用它会导致错误的结果。
 
-考虑一个[全波整流器](@article_id:330328)，其作用是将交流[正弦波](@article_id:338691)的负半周翻转为正。这是一个高度非线性的操作。一个常见的错误是认为可以通过对整流波形进行傅里叶级数分解（将其分解为直流分量和交流[谐波](@article_id:360901)），然后对滤波器应用叠加原理来分析后续的滤波级。这在根本上是错误的 。为什么？因为[整流器](@article_id:329382)的行为并非独立于与之相连的滤波器。[二极管](@article_id:320743)只有在输入电压超过滤波电容上的电压时才导通。因此，[整流器](@article_id:329382)的输出波形与负载的状态错综复杂地耦合在一起。整个系统是非线性的，[叠加原理](@article_id:308501)是无效的。线性化和[叠加原理](@article_id:308501)适用于*固定*[工作点](@article_id:352470)周围的小信号，而不适用于导致电路在完全不同的状态之间切换的大信号。
+考虑一个[全波整流器](@keyword=full_wave_rectifier|lang=zh-CN|style=Feynman)，其作用是将交流[正弦波](@keyword=sinusoid|lang=zh-CN|style=Feynman)的负半周翻转为正。这是一个高度非线性的操作。一个常见的错误是认为可以通过对整流波形进行傅里叶级数分解（将其分解为直流分量和交流[谐波](@keyword=harmonic_waves|lang=zh-CN|style=Feynman)），然后对滤波器应用叠加原理来分析后续的滤波级。这在根本上是错误的 [@problem_id:1286254]。为什么？因为[整流器](@keyword=rectifier|lang=zh-CN|style=Feynman)的行为并非独立于与之相连的滤波器。[二极管](@keyword=diode|lang=zh-CN|style=Feynman)只有在输入电压超过滤波电容上的电压时才导通。因此，[整流器](@keyword=rectifier|lang=zh-CN|style=Feynman)的输出波形与负载的状态错综复杂地耦合在一起。整个系统是非线性的，[叠加原理](@keyword=principle_of_superposition|lang=zh-CN|style=Feynman)是无效的。线性化和[叠加原理](@keyword=principle_of_superposition|lang=zh-CN|style=Feynman)适用于*固定*[工作点](@keyword=operating_point|lang=zh-CN|style=Feynman)周围的小信号，而不适用于导致电路在完全不同的状态之间切换的大信号。
 
 ### 真实世界：当情况升温时
 
-我们的[线性模型](@article_id:357202)虽然强大，但它们仍然是对更复杂现实的近似。最重要的现实世界因素之一是温度。我们模型中的参数不是常数；它们是温度的函数。对于一个硅二极管，导通电压 $V_\gamma$ 每升高一[摄氏度](@article_id:301952)大约下降 $2.1 \text{ mV}$，而正向电阻 $r_f$ 与[绝对温度](@article_id:305113)成比例增加 。一个精确的模型必须考虑这些变化。
+我们的[线性模型](@keyword=linear_models|lang=zh-CN|style=Feynman)虽然强大，但它们仍然是对更复杂现实的近似。最重要的现实世界因素之一是温度。我们模型中的参数不是常数；它们是温度的函数。对于一个硅二极管，导通电压 $V_\gamma$ 每升高一[摄氏度](@keyword=celsius|lang=zh-CN|style=Feynman)大约下降 $2.1 \text{ mV}$，而正向电阻 $r_f$ 与[绝对温度](@keyword=absolute_temperature|lang=zh-CN|style=Feynman)成比例增加 [@problem_id:1335915]。一个精确的模型必须考虑这些变化。
 
-这种温度依赖性可能导致一个被称为**热失控**的危险[正反馈](@article_id:352170)循环。想象一个通过串联电阻由恒压源偏置的二极管。这个过程以一个恶性循环展开 ：
+这种温度依赖性可能导致一个被称为**热失控**的危险[正反馈](@keyword=positive_feedback|lang=zh-CN|style=Feynman)循环。想象一个通过串联电阻由恒压源偏置的二极管。这个过程以一个恶性循环展开 [@problem_id:1335928]：
 
-1.  电流流过二极管，导致其[耗散功率](@article_id:356275)并发热。
-2.  随着[二极管](@article_id:320743)温度升高，其[正向压降](@article_id:336211) $V_D$ 减小。
-3.  由于电源电压是恒定的，较低的 $V_D$ 意味着串联电阻上的[压降](@article_id:378658)更大。根据[欧姆定律](@article_id:300974)，这意味着电流*增加*。
+1.  电流流过二极管，导致其[耗散功率](@keyword=dissipated_power|lang=zh-CN|style=Feynman)并发热。
+2.  随着[二极管](@keyword=diode|lang=zh-CN|style=Feynman)温度升高，其[正向压降](@keyword=forward_voltage_drop|lang=zh-CN|style=Feynman) $V_D$ 减小。
+3.  由于电源电压是恒定的，较低的 $V_D$ 意味着串联电阻上的[压降](@keyword=pressure_loss|lang=zh-CN|style=Feynman)更大。根据[欧姆定律](@keyword=ohm_s_law|lang=zh-CN|style=Feynman)，这意味着电流*增加*。
 4.  这个增加的电流导致二极管耗散更多的功率，使其进一步升温。
 
-如果热量不能足够快地散发出去，这个循环可以持续下去，直到[二极管](@article_id:320743)的温度失控上升，导致其被摧毁。理解这一现象需要我们将我们的电气模型与热模型耦合起来——这是一个优美而关键的例子，说明了简单的[线性化](@article_id:331373)行为仅仅是理解即便是最简单的电子元器件丰富而复杂的物理学之旅的第一步。
+如果热量不能足够快地散发出去，这个循环可以持续下去，直到[二极管](@keyword=diode|lang=zh-CN|style=Feynman)的温度失控上升，导致其被摧毁。理解这一现象需要我们将我们的电气模型与热模型耦合起来——这是一个优美而关键的例子，说明了简单的[线性化](@keyword=linearization|lang=zh-CN|style=Feynman)行为仅仅是理解即便是最简单的电子元器件丰富而复杂的物理学之旅的第一步。

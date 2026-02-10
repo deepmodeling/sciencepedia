@@ -3,7 +3,7 @@ In the vast landscape of science and engineering, we frequently encounter integr
 
 This article provides a comprehensive exploration of Laplace-type integrals, guiding you from the fundamental intuition to its sophisticated applications. By understanding the principle of peak dominance, you will gain a master key for unlocking the secrets of seemingly intractable problems. In the following sections, you will learn not just the "how" but the "why" behind this remarkable method.
 
-The first section, **Principles and Mechanisms**, demystifies the core idea using an intuitive analogy. It breaks down the main techniques, from the straightforward application of Watson's Lemma for integrals with a peak at the boundary to the more general Laplace method for internal maxima, which beautifully connects to the famous Gaussian integral. You will also learn the practical "judo" of manipulating integrals into a form where these methods can be applied. Following this, the section on **Applications and Interdisciplinary Connections** showcases the method's incredible reach. We will see how it tames a wide variety of [special functions](@article_id:142740) essential to mathematics and how it provides profound insights into physical systems, from the behavior of stellar plasma to the fundamental nature of empty space as described by [quantum electrodynamics](@article_id:153707).
+The first section, **Principles and Mechanisms**, demystifies the core idea using an intuitive analogy. It breaks down the main techniques, from the straightforward application of Watson's Lemma for integrals with a peak at the boundary to the more general Laplace method for internal maxima, which beautifully connects to the famous Gaussian integral. You will also learn the practical "judo" of manipulating integrals into a form where these methods can be applied. Following this, the section on **Applications and Interdisciplinary Connections** showcases the method's incredible reach. We will see how it tames a wide variety of [special functions](@keyword=special_functions|lang=en-US|style=Feynman) essential to mathematics and how it provides profound insights into physical systems, from the behavior of stellar plasma to the fundamental nature of empty space as described by [quantum electrodynamics](@keyword=quantum_electrodynamics|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
@@ -47,7 +47,7 @@ $$
 
 The integral on the right is a famous one, giving rise to the Gamma function, $\Gamma(n+1) = n!$.
 
-Let's see this in action. Consider the integral from problem :
+Let's see this in action. Consider the integral from problem [@problem_id:512058]:
 
 $$
 I(x) = \int_0^\infty \frac{e^{-xt}}{1+t^2} dt
@@ -59,23 +59,23 @@ $$
 I(x) \sim \int_0^\infty (1 - t^2) e^{-xt} dt = \int_0^\infty e^{-xt} dt - \int_0^\infty t^2 e^{-xt} dt
 $$
 
-Using our formula, the first term gives $\frac{0!}{x^{0+1}} = \frac{1}{x}$. The second term gives $\frac{2!}{x^{2+1}} = \frac{2}{x^3}$. Putting them together, we get the [asymptotic expansion](@article_id:148808):
+Using our formula, the first term gives $\frac{0!}{x^{0+1}} = \frac{1}{x}$. The second term gives $\frac{2!}{x^{2+1}} = \frac{2}{x^3}$. Putting them together, we get the [asymptotic expansion](@keyword=asymptotic_expansion|lang=en-US|style=Feynman):
 
 $$
 I(x) \sim \frac{1}{x} - \frac{2}{x^3}
 $$
 
-This series gives an incredibly accurate approximation for large $x$. What if the function $f(t)$ itself is zero at the peak, as in problem  with $f(x) = \ln(1+x)$? No problem. The expansion of $\ln(1+x)$ is $x - \frac{x^2}{2} + \dots$. We just take the *first non-zero* term, which is $x$, and integrate $\int_0^\infty x e^{-Mx} dx$ to get the leading behavior, which turns out to be $1/M^2$.
+This series gives an incredibly accurate approximation for large $x$. What if the function $f(t)$ itself is zero at the peak, as in problem [@problem_id:476553] with $f(x) = \ln(1+x)$? No problem. The expansion of $\ln(1+x)$ is $x - \frac{x^2}{2} + \dots$. We just take the *first non-zero* term, which is $x$, and integrate $\int_0^\infty x e^{-Mx} dx$ to get the leading behavior, which turns out to be $1/M^2$.
 
-This principle highlights the extreme locality of the method. In problem , the function has a nasty [logarithmic singularity](@article_id:189943) at $t=1$. But does it matter? Not at all. The exponential tyrant $e^{-\lambda t}$ has already crushed the integrand to near-zero long before we get to the troublesome point at $t=1$. Only the behavior at $t=0$ counts.
+This principle highlights the extreme locality of the method. In problem [@problem_id:1163910], the function has a nasty [logarithmic singularity](@keyword=logarithmic_singularity|lang=en-US|style=Feynman) at $t=1$. But does it matter? Not at all. The exponential tyrant $e^{-\lambda t}$ has already crushed the integrand to near-zero long before we get to the troublesome point at $t=1$. Only the behavior at $t=0$ counts.
 
 ### Reshaping the Beam: The General Laplace Method
 
 Nature doesn't always provide a simple exponent like $-\lambda t$. The "phase function" $\phi(t)$ can be more complex, which means our spotlight might have a different shape or be centered elsewhere.
 
-A common variation is an integral like $\int_0^\infty f(t) e^{-\lambda t^p} dt$. The peak is still at $t=0$, but for $p=2$, for example, the decay is Gaussian-like, which is much faster than a simple exponential. For $p=3$ (), the decay is even more abrupt. The principle is the same: expand $f(t)$ around $t=0$ and integrate term by term. The resulting integrals, of the form $\int t^n e^{-\lambda t^p} dt$, produce Gamma functions of non-integer arguments and lead to fascinating [asymptotic series](@article_id:167898) with fractional powers, like $\lambda^{-1/3}$ or $\lambda^{-5/3}$. These fractional powers are not just mathematical quirks; they are a direct reflection of the geometric shape of the peak at the origin.
+A common variation is an integral like $\int_0^\infty f(t) e^{-\lambda t^p} dt$. The peak is still at $t=0$, but for $p=2$, for example, the decay is Gaussian-like, which is much faster than a simple exponential. For $p=3$ ([@problem_id:928975]), the decay is even more abrupt. The principle is the same: expand $f(t)$ around $t=0$ and integrate term by term. The resulting integrals, of the form $\int t^n e^{-\lambda t^p} dt$, produce Gamma functions of non-integer arguments and lead to fascinating [asymptotic series](@keyword=asymptotic_series|lang=en-US|style=Feynman) with fractional powers, like $\lambda^{-1/3}$ or $\lambda^{-5/3}$. These fractional powers are not just mathematical quirks; they are a direct reflection of the geometric shape of the peak at the origin.
 
-Now for the most elegant case: what if the spotlight isn't at the end of the road, but somewhere in the middle? Consider an integral where the function $\phi(x)$ has its maximum at a point $x_0$ *inside* the integration interval, like in problem :
+Now for the most elegant case: what if the spotlight isn't at the end of the road, but somewhere in the middle? Consider an integral where the function $\phi(x)$ has its maximum at a point $x_0$ *inside* the integration interval, like in problem [@problem_id:476865]:
 
 $$
 I(M) = \int_{0}^{1} \exp\left(M(x-x^2) + \alpha x\right) dx
@@ -87,7 +87,7 @@ $$
 \Phi(x) \approx \Phi(x_0) + \Phi'(x_0)(x-x_0) + \frac{1}{2}\Phi''(x_0)(x-x_0)^2
 $$
 
-By definition of a maximum, the first derivative $\Phi'(x_0)$ is zero. So the top of our hill is described by a simple quadratic. The [integral transforms](@article_id:185715) into:
+By definition of a maximum, the first derivative $\Phi'(x_0)$ is zero. So the top of our hill is described by a simple quadratic. The [integral transforms](@keyword=integral_transforms|lang=en-US|style=Feynman) into:
 
 $$
 I(M) \sim \int_{-\infty}^\infty \exp\left(\Phi(x_0) + \frac{1}{2}\Phi''(x_0)(x-x_0)^2\right) dx = e^{\Phi(x_0)} \int_{-\infty}^\infty e^{\frac{1}{2}\Phi''(x_0)(x-x_0)^2} dx
@@ -105,10 +105,10 @@ $$
 
 Often, an integral that arises in a real problem doesn't look like a perfect Laplace-type integral. The true art of applying this method lies in a bit of mathematical "judo"—using a clever move to throw the problem into a standard form we can easily defeat.
 
-*   **Shifting the Peak:** What if the integral runs from $1$ to $\infty$, with the peak at the boundary $t=1$?  This is no challenge. We simply shift our perspective by defining a new variable $u=t-1$. As $t$ goes from $1$ to $\infty$, $u$ goes from $0$ to $\infty$. The integral is now over the familiar interval, and Watson's Lemma applies directly. An exponential factor like $e^{-s}$ will pop out of the calculation—this is not an accident! It is precisely the value of the original exponential peak $e^{-st}$ at the maximum point $t=1$.
+*   **Shifting the Peak:** What if the integral runs from $1$ to $\infty$, with the peak at the boundary $t=1$? [@problem_id:928976] This is no challenge. We simply shift our perspective by defining a new variable $u=t-1$. As $t$ goes from $1$ to $\infty$, $u$ goes from $0$ to $\infty$. The integral is now over the familiar interval, and Watson's Lemma applies directly. An exponential factor like $e^{-s}$ will pop out of the calculation—this is not an accident! It is precisely the value of the original exponential peak $e^{-st}$ at the maximum point $t=1$.
 
-*   **Linearizing the Exponent:** What if the exponent contains a pesky non-linear term, like $e^{-s\sqrt{t}}$?  The judo move is to make the exponent linear. We introduce a new variable $x=\sqrt{t}$. The integral is instantly transformed into the standard form $\int g(x)e^{-sx}dx$, and our machinery works perfectly. This works even for very [complex exponents](@article_id:162141) like $\phi(t) = t - \sin t$ from problem . Near $t=0$, this behaves like $t^3/6$. The change of variable $u = t - \sin t$ "flattens" the complex exponent back into a simple linear one, demonstrating the incredible robustness of the core principle.
+*   **Linearizing the Exponent:** What if the exponent contains a pesky non-linear term, like $e^{-s\sqrt{t}}$? [@problem_id:928832] The judo move is to make the exponent linear. We introduce a new variable $x=\sqrt{t}$. The integral is instantly transformed into the standard form $\int g(x)e^{-sx}dx$, and our machinery works perfectly. This works even for very [complex exponents](@keyword=complex_exponents|lang=en-US|style=Feynman) like $\phi(t) = t - \sin t$ from problem [@problem_id:797843]. Near $t=0$, this behaves like $t^3/6$. The change of variable $u = t - \sin t$ "flattens" the complex exponent back into a simple linear one, demonstrating the incredible robustness of the core principle.
 
-*   **Finding the Scenery:** Perhaps the most elegant demonstration of the power of local information comes from a problem like . Here, we need to find the asymptotic behavior of $\int f(t)e^{-\lambda t} dt$, but we are not even given an explicit formula for $f(t)$! It is defined implicitly by the equation $f(t) - \sin(f(t)) = t$. Do we need to solve this impossible equation? No. Watson's Lemma only requires the behavior of $f(t)$ for *small* $t$. By expanding the sine function in its own Taylor series ($ \sin f \approx f - f^3/6 $), the implicit equation simplifies to $f^3/6 \approx t$, telling us immediately that $f(t) \sim (6t)^{1/3}$ near the origin. This is all the information we need. We can feed this directly into our asymptotic machinery.
+*   **Finding the Scenery:** Perhaps the most elegant demonstration of the power of local information comes from a problem like [@problem_id:618930]. Here, we need to find the asymptotic behavior of $\int f(t)e^{-\lambda t} dt$, but we are not even given an explicit formula for $f(t)$! It is defined implicitly by the equation $f(t) - \sin(f(t)) = t$. Do we need to solve this impossible equation? No. Watson's Lemma only requires the behavior of $f(t)$ for *small* $t$. By expanding the sine function in its own Taylor series ($ \sin f \approx f - f^3/6 $), the implicit equation simplifies to $f^3/6 \approx t$, telling us immediately that $f(t) \sim (6t)^{1/3}$ near the origin. This is all the information we need. We can feed this directly into our asymptotic machinery.
 
 From simple approximations to complex transformations, the Laplace method and Watson's Lemma are a testament to a single, powerful idea: in the face of an overwhelming exponential, only the immediate vicinity of the peak matters. By focusing our attention there, we can tame seemingly intractable integrals and reveal their hidden simplicity.

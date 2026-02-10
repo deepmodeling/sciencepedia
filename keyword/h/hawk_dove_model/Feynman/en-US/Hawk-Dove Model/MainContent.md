@@ -1,7 +1,7 @@
 ## Introduction
-In a world governed by competition for limited resources, how does nature balance the drive to win against the risks of conflict? From animals fighting over territory to microbes competing for nutrients, a strategic tension exists between aggression and restraint. This dynamic is elegantly captured by the Hawk-Dove model, a cornerstone of [evolutionary game theory](@article_id:145280). The model addresses a fundamental question: if aggression can yield rewards, why doesn't every contest escalate into a destructive fight? It reveals how stable behavioral patterns can emerge from unthinking evolutionary pressures, rather than conscious choice.
+In a world governed by competition for limited resources, how does nature balance the drive to win against the risks of conflict? From animals fighting over territory to microbes competing for nutrients, a strategic tension exists between aggression and restraint. This dynamic is elegantly captured by the Hawk-Dove model, a cornerstone of [evolutionary game theory](@keyword=evolutionary_game_theory|lang=en-US|style=Feynman). The model addresses a fundamental question: if aggression can yield rewards, why doesn't every contest escalate into a destructive fight? It reveals how stable behavioral patterns can emerge from unthinking evolutionary pressures, rather than conscious choice.
 
-This article delves into the logic and broad implications of this powerful model. In the first section, **Principles and Mechanisms**, we will dissect the core components of the game—the strategies, payoffs, and the critical concept of an Evolutionarily Stable Strategy (ESS)—to understand how a balance between aggression and passivity is mathematically determined. Subsequently, the **Applications and Interdisciplinary Connections** section will showcase the model's remarkable versatility, exploring how its principles provide testable hypotheses in [behavioral ecology](@article_id:152768) and offer surprising insights into fields as diverse as cancer biology and epidemiology.
+This article delves into the logic and broad implications of this powerful model. In the first section, **Principles and Mechanisms**, we will dissect the core components of the game—the strategies, payoffs, and the critical concept of an Evolutionarily Stable Strategy (ESS)—to understand how a balance between aggression and passivity is mathematically determined. Subsequently, the **Applications and Interdisciplinary Connections** section will showcase the model's remarkable versatility, exploring how its principles provide testable hypotheses in [behavioral ecology](@keyword=behavioral_ecology|lang=en-US|style=Feynman) and offer surprising insights into fields as diverse as cancer biology and epidemiology.
 
 ## Principles and Mechanisms
 
@@ -25,7 +25,7 @@ With these simple ingredients, we can map out all possible outcomes, just like a
 
 The entire game hinges on one critical assumption: the cost of injury is greater than the value of the prize. That is, $C > V$. This is realistic for most conflicts in nature; a lost territory might be replaceable, but a life-threatening injury is not. Under this assumption, the payoff for a Hawk-Hawk fight, $\frac{V-C}{2}$, is negative. It’s a losing proposition.
 
-So, we can rank the outcomes from best to worst for an individual :
+So, we can rank the outcomes from best to worst for an individual [@problem_id:1971498]:
 1.  Being a Hawk against a Dove (payoff = $V$)
 2.  Being a Dove against a Dove (payoff = $\frac{V}{2}$)
 3.  Being a Dove against a Hawk (payoff = $0$)
@@ -50,15 +50,15 @@ $E_{H} = p \cdot \frac{V-C}{2} + (1-p) \cdot V$
 And for a Dove? It meets a Hawk with probability $p$ (payoff $0$) and another Dove with probability $(1-p)$ (payoff $\frac{V}{2}$). Its average payoff is:
 $E_{D} = p \cdot 0 + (1-p) \cdot \frac{V}{2}$
 
-The stable equilibrium $p^*$ is the point where $E_{H} = E_{D}$. Setting these two equations equal and solving for $p$ gives a result of stunning simplicity  :
+The stable equilibrium $p^*$ is the point where $E_{H} = E_{D}$. Setting these two equations equal and solving for $p$ gives a result of stunning simplicity [@problem_id:1971430] [@problem_id:2715302]:
 
 $$ p^* = \frac{V}{C} $$
 
-This is a remarkable prediction. The stable frequency of aggression in a population is simply the ratio of the resource's value to the conflict's cost. If a territory is worth 10 units and an injury costs 25 units, the population will stabilize with $p^* = \frac{10}{25} = 0.4$, or 40% Hawks . The [complex dynamics](@article_id:170698) of social interaction boil down to a simple, elegant fraction.
+This is a remarkable prediction. The stable frequency of aggression in a population is simply the ratio of the resource's value to the conflict's cost. If a territory is worth 10 units and an injury costs 25 units, the population will stabilize with $p^* = \frac{10}{25} = 0.4$, or 40% Hawks [@problem_id:1971430]. The [complex dynamics](@keyword=complex_dynamics|lang=en-US|style=Feynman) of social interaction boil down to a simple, elegant fraction.
 
 ### The Unseen Hand of Frequency
 
-Why is this equilibrium so stable? The mechanism that holds the population in this delicate balance is a powerful force in evolution known as **Negative Frequency-Dependent Selection (NFDS)** . The name sounds complicated, but the idea is simple: your success goes down the more common your strategy becomes. It's a "curse of the majority."
+Why is this equilibrium so stable? The mechanism that holds the population in this delicate balance is a powerful force in evolution known as **Negative Frequency-Dependent Selection (NFDS)** [@problem_id:2811500]. The name sounds complicated, but the idea is simple: your success goes down the more common your strategy becomes. It's a "curse of the majority."
 
 Think about it from the Hawk's perspective. When Hawks are very rare, almost every opponent they meet is a Dove. They get a high payoff of $V$ almost all the time. Life is good, and the Hawk strategy spreads. But as the frequency of Hawks ($p$) increases, they start bumping into other Hawks more and more often. The frequency of disastrous, costly fights goes up, and the average payoff for being a Hawk goes down.
 
@@ -72,23 +72,23 @@ What happens if our core assumption, $C > V$, is flipped? Suppose an ecological 
 
 In this new reality, the payoff for a Hawk-Hawk fight, $\frac{V-C}{2}$, becomes positive. Fighting is no longer a losing game; it’s a calculated, profitable risk. What does our model predict?
 
-Let's re-examine the population of pure Hawks. Their average payoff is now positive. A mutant Dove entering this population still gets a payoff of $0$. But now, $0$ is no longer better! The Hawks are out-competing the Doves even when fighting each other. The Dove strategy cannot invade. The mixed equilibrium at $p^*=V/C$ no longer applies (it would give a frequency greater than 1), and the only ESS is a population of 100% Hawks . The model gives an intuitive result: when the stakes are high enough, everyone fights.
+Let's re-examine the population of pure Hawks. Their average payoff is now positive. A mutant Dove entering this population still gets a payoff of $0$. But now, $0$ is no longer better! The Hawks are out-competing the Doves even when fighting each other. The Dove strategy cannot invade. The mixed equilibrium at $p^*=V/C$ no longer applies (it would give a frequency greater than 1), and the only ESS is a population of 100% Hawks [@problem_id:1774784]. The model gives an intuitive result: when the stakes are high enough, everyone fights.
 
 ### Beyond Simple Duels: Asymmetry and New Players
 
 The real world, of course, is more complex than a simple symmetric contest. What if the two opponents aren't identical? A classic example is a conflict between the **owner** of a territory and an **intruder**. The owner might value the territory more highly ($V_o$) than the intruder ($V_i$) because it has already invested in it. This introduces an asymmetry.
 
-This asymmetry allows for a new kind of strategy, called the **Bourgeois** strategy: "If I'm the owner, I act like a Hawk. If I'm the intruder, I act like a Dove." What happens in a population of such players? When two individuals contest a territory, one is the owner and one is the intruder. The owner plays Hawk, the intruder plays Dove, and the intruder retreats. The resource is handed over without a fight! This simple, conditional rule—a "respect for ownership" convention—can be an incredibly stable ESS because it avoids the costly Hawk-Hawk conflicts entirely . It's a beautiful example of how social conventions can evolve to resolve conflict efficiently.
+This asymmetry allows for a new kind of strategy, called the **Bourgeois** strategy: "If I'm the owner, I act like a Hawk. If I'm the intruder, I act like a Dove." What happens in a population of such players? When two individuals contest a territory, one is the owner and one is the intruder. The owner plays Hawk, the intruder plays Dove, and the intruder retreats. The resource is handed over without a fight! This simple, conditional rule—a "respect for ownership" convention—can be an incredibly stable ESS because it avoids the costly Hawk-Hawk conflicts entirely [@problem_id:1925729]. It's a beautiful example of how social conventions can evolve to resolve conflict efficiently.
 
-The framework is also robust enough to handle more than two strategies. Imagine a third type of player, the **Bully**. A Bully acts like a Hawk towards a Dove (it escalates and wins) but like a Dove towards a Hawk (it retreats) . In a world with Hawks, Doves, and Bullies, the poor Doves are in a terrible position. They lose to Hawks and they lose to Bullies. The Bully strategy is always better than the Dove strategy; in the language of [game theory](@article_id:140236), it is **dominated**. Doves would be driven to extinction. The game would then continue between Hawks and Bullies, settling into a new mixed equilibrium between them. This shows how the Hawk-Dove framework is not a static museum piece, but a dynamic tool for exploring the evolution of ever more complex social behaviors.
+The framework is also robust enough to handle more than two strategies. Imagine a third type of player, the **Bully**. A Bully acts like a Hawk towards a Dove (it escalates and wins) but like a Dove towards a Hawk (it retreats) [@problem_id:2381490]. In a world with Hawks, Doves, and Bullies, the poor Doves are in a terrible position. They lose to Hawks and they lose to Bullies. The Bully strategy is always better than the Dove strategy; in the language of [game theory](@keyword=game_theory|lang=en-US|style=Feynman), it is **dominated**. Doves would be driven to extinction. The game would then continue between Hawks and Bullies, settling into a new mixed equilibrium between them. This shows how the Hawk-Dove framework is not a static museum piece, but a dynamic tool for exploring the evolution of ever more complex social behaviors.
 
 ### A Tale of Two Populations: Individuals vs. The Group
 
 Finally, let’s consider a deeper question. When we say the population is 40% Hawks, what do we actually mean? There are two possibilities:
 
 1.  A **Polymorphic Population**: The population is a mix of specialists. 40% of the individuals are pure Hawks, and 60% are pure Doves.
-2.  A **Population of Mixed Strategists**: Every individual is identical, and each one plays a [mixed strategy](@article_id:144767), randomly choosing to act like a Hawk 40% of the time and a Dove 60% of the time in any given encounter.
+2.  A **Population of Mixed Strategists**: Every individual is identical, and each one plays a [mixed strategy](@keyword=mixed_strategy|lang=en-US|style=Feynman), randomly choosing to act like a Hawk 40% of the time and a Dove 60% of the time in any given encounter.
 
-Amazingly, for the simple, one-shot games we've discussed, these two scenarios are mathematically equivalent . The average payoffs and the evolutionary dynamics are identical. Whether the variation exists between individuals or within individuals, the outcome is the same. This is a profound result known as the Bishop-Cannings theorem.
+Amazingly, for the simple, one-shot games we've discussed, these two scenarios are mathematically equivalent [@problem_id:2490126]. The average payoffs and the evolutionary dynamics are identical. Whether the variation exists between individuals or within individuals, the outcome is the same. This is a profound result known as the Bishop-Cannings theorem.
 
 However, this elegant equivalence is fragile. It breaks down if the game gets more complex. For instance, if individuals interact repeatedly and remember past actions, or if they choose their opponents non-randomly (e.g., Hawks prefer to challenge Doves), the two types of populations start to behave very differently. The history of play matters for an individual flipping a coin, but not for a hard-wired specialist. This teaches us a crucial lesson: the power of a model lies not just in its predictions, but in understanding the assumptions that define its limits. The simple Hawk-Dove game is a starting point, a lens through which we can begin to see the hidden logic that governs the dance of conflict and cooperation all around us.

@@ -21,9 +21,9 @@ $$
 \mathbf{J} = -D \nabla c
 $$
 
-This is **Fick's first law**. Let's unpack it. It states that the diffusion flux $\mathbf{J}$ is directly proportional to the concentration gradient $\nabla c$. The constant of proportionality, $D$, is called the **diffusion coefficient** or **diffusivity**. It's a property of the specific substance and the medium it's diffusing through (e.g., ink in water) and has units of area per time (like $\mathrm{m^2/s}$). A larger $D$ means faster spreading. 
+This is **Fick's first law**. Let's unpack it. It states that the diffusion flux $\mathbf{J}$ is directly proportional to the concentration gradient $\nabla c$. The constant of proportionality, $D$, is called the **diffusion coefficient** or **diffusivity**. It's a property of the specific substance and the medium it's diffusing through (e.g., ink in water) and has units of area per time (like $\mathrm{m^2/s}$). A larger $D$ means faster spreading. [@problem_id:2642573]
 
-But the most profound part of this equation is that little minus sign. It might look like a mere convention, but it is a direct command from one of the most powerful laws in all of physics: the Second Law of Thermodynamics. The universe tends towards disorder, towards an increase in **entropy**. A concentrated drop of ink is a state of relative order. A uniformly colored glass of water is a state of higher disorder, or higher entropy. Diffusion is a spontaneous, [irreversible process](@article_id:143841) that moves the system towards this more probable, higher-entropy state. The flux $\mathbf{J}$ *must* be directed from high concentration to low concentration to smooth out inhomogeneities and increase entropy. A positive sign would describe a world where ink spontaneously gathers itself from a solution into a tiny, concentrated drop—a world where entropy decreases, which the Second Law forbids. So, that minus sign isn't just math; it's a statement about the arrow of time and the irreversible nature of the universe. 
+But the most profound part of this equation is that little minus sign. It might look like a mere convention, but it is a direct command from one of the most powerful laws in all of physics: the Second Law of Thermodynamics. The universe tends towards disorder, towards an increase in **entropy**. A concentrated drop of ink is a state of relative order. A uniformly colored glass of water is a state of higher disorder, or higher entropy. Diffusion is a spontaneous, [irreversible process](@keyword=irreversible_process|lang=en-US|style=Feynman) that moves the system towards this more probable, higher-entropy state. The flux $\mathbf{J}$ *must* be directed from high concentration to low concentration to smooth out inhomogeneities and increase entropy. A positive sign would describe a world where ink spontaneously gathers itself from a solution into a tiny, concentrated drop—a world where entropy decreases, which the Second Law forbids. So, that minus sign isn't just math; it's a statement about the arrow of time and the irreversible nature of the universe. [@problem_id:2484538]
 
 ### Keeping Score: The Conservation Equation
 
@@ -37,7 +37,7 @@ $$
 \frac{\partial c}{\partial t} = -(\text{Net outflow per unit volume}) + (\text{Production per unit volume})
 $$
 
-Mathematically, this becomes the general [species conservation equation](@article_id:150794):
+Mathematically, this becomes the general [species conservation equation](@keyword=species_conservation_equation|lang=en-US|style=Feynman):
 
 $$
 \frac{\partial c}{\partial t} + \nabla \cdot \mathbf{J} = R
@@ -49,27 +49,27 @@ $$
 \frac{\partial c}{\partial t} = D \nabla^2 c + R
 $$
 
-This powerful equation allows us, if we know the initial distribution of ink, to predict its concentration at any point in space, at any time in the future. 
+This powerful equation allows us, if we know the initial distribution of ink, to predict its concentration at any point in space, at any time in the future. [@problem_id:2642573]
 
 ### A Tale of Two Transports: Convection vs. Diffusion
 
 So far, we've considered a perfectly still glass of water. But what if we stir it? The ink spreads much faster. This is because we've introduced a second mode of transport: **convection** (or advection), which is the transport of a substance by the bulk motion of the fluid itself.
 
-The total flux of a species, let's call it $\mathbf{n}_A$ for species A, is the sum of the part that's carried along with the fluid's velocity $\mathbf{v}$ (convection) and the part that spreads out relative to the fluid's motion (diffusion). On a mass basis, using the [mass fraction](@article_id:161081) $Y_A$, this is:
+The total flux of a species, let's call it $\mathbf{n}_A$ for species A, is the sum of the part that's carried along with the fluid's velocity $\mathbf{v}$ (convection) and the part that spreads out relative to the fluid's motion (diffusion). On a mass basis, using the [mass fraction](@keyword=mass_fraction|lang=en-US|style=Feynman) $Y_A$, this is:
 
 $$
 \mathbf{n}_A = \underbrace{\rho Y_A \mathbf{v}}_{\text{Convective Flux}} + \underbrace{\mathbf{j}_A}_{\text{Diffusive Flux}}
 $$
 
-Here, $\rho$ is the fluid's total density and $\mathbf{j}_A$ is the diffusive mass flux, given by Fick's Law, $\mathbf{j}_A = -\rho D \nabla Y_A$. When we plug this total flux into the conservation equation (with no reactions), we get the **[advection-diffusion equation](@article_id:143508)**:
+Here, $\rho$ is the fluid's total density and $\mathbf{j}_A$ is the diffusive mass flux, given by Fick's Law, $\mathbf{j}_A = -\rho D \nabla Y_A$. When we plug this total flux into the conservation equation (with no reactions), we get the **[advection-diffusion equation](@keyword=advection_diffusion_equation|lang=en-US|style=Feynman)**:
 
 $$
 \frac{\partial (\rho Y_A)}{\partial t} + \nabla \cdot (\rho Y_A \mathbf{v}) = \nabla \cdot (\rho D \nabla Y_A)
 $$
 
-This equation governs everything from the dispersion of pollutants in the atmosphere to the transport of oxygen in our blood.  
+This equation governs everything from the dispersion of pollutants in the atmosphere to the transport of oxygen in our blood. [@problem_id:2484505] [@problem_id:2523804]
 
-So, which process dominates, the organized [bulk flow](@article_id:149279) of convection or the random walk of diffusion? We can answer this with a single dimensionless number, the **Péclet number** ($Pe$):
+So, which process dominates, the organized [bulk flow](@keyword=bulk_flow|lang=en-US|style=Feynman) of convection or the random walk of diffusion? We can answer this with a single dimensionless number, the **Péclet number** ($Pe$):
 
 $$
 \mathrm{Pe} = \frac{\text{Rate of Convective Transport}}{\text{Rate of Diffusive Transport}} = \frac{U L}{D}
@@ -77,42 +77,42 @@ $$
 
 Here, $U$ and $L$ are a characteristic velocity and length scale of the system.
 *   If $\mathrm{Pe} \gg 1$, convection wins. Think of stirring cream into your coffee. The swirling motion dominates the transport.
-*   If $\mathrm{Pe} \ll 1$, diffusion wins. This is our original, unstirred glass of ink. The random motion of molecules is the main way the ink spreads. 
+*   If $\mathrm{Pe} \ll 1$, diffusion wins. This is our original, unstirred glass of ink. The random motion of molecules is the main way the ink spreads. [@problem_id:2484505]
 
 ### Choosing Your Viewpoint: Mass vs. Moles in a Mixture
 
 When we deal with a mixture of different molecules, like nitrogen and oxygen in the air, a subtle but important question arises. When we talk about the "average" velocity of the fluid, what are we averaging?
 
-We have two natural choices. We can calculate a **[mass-averaged velocity](@article_id:149081)**, $\mathbf{v}^m$, where the velocity of each type of molecule is weighted by its mass fraction. This is like finding the center of mass of the flowing fluid. Or, we can calculate a **molar-averaged velocity**, $\mathbf{v}^n$, where each velocity is weighted by its [mole fraction](@article_id:144966) (its numerical abundance). This is like finding the center of "population".
+We have two natural choices. We can calculate a **[mass-averaged velocity](@keyword=mass_averaged_velocity|lang=en-US|style=Feynman)**, $\mathbf{v}^m$, where the velocity of each type of molecule is weighted by its mass fraction. This is like finding the center of mass of the flowing fluid. Or, we can calculate a **molar-averaged velocity**, $\mathbf{v}^n$, where each velocity is weighted by its [mole fraction](@keyword=mole_fraction|lang=en-US|style=Feynman) (its numerical abundance). This is like finding the center of "population".
 
-Unless all molecules in the mixture have the same mass, these two average velocities will be different! $\mathbf{v}^m \neq \mathbf{v}^n$. 
+Unless all molecules in the mixture have the same mass, these two average velocities will be different! $\mathbf{v}^m \neq \mathbf{v}^n$. [@problem_id:2491815]
 
 This has a crucial consequence: the diffusive flux, which is defined as the motion *relative* to the average velocity, depends on which average you choose!
 *   The **diffusive mass flux**, $\mathbf{j}_i = \rho_i (\mathbf{v}_i - \mathbf{v}^m)$, is transport relative to the center of mass.
-*   The **diffusive [molar flux](@article_id:155769)**, $\mathbf{J}_i = c_i (\mathbf{v}_i - \mathbf{v}^n)$, is transport relative to the average number of molecules.
+*   The **diffusive [molar flux](@keyword=molar_flux|lang=en-US|style=Feynman)**, $\mathbf{J}_i = c_i (\mathbf{v}_i - \mathbf{v}^n)$, is transport relative to the average number of molecules.
 
-By their very definitions, the sum of all diffusive mass fluxes must be zero in the mass-averaged frame ($\sum_i \mathbf{j}_i = \mathbf{0}$), and the sum of all diffusive molar fluxes must be zero in the molar-averaged frame ($\sum_i \mathbf{J}_i = \mathbf{0}$). This makes perfect sense: "diffusion" is the internal shuffling of components, which, by definition, can't create a net movement of the whole system relative to its own average motion. These two types of fluxes are not independent; they are linked by a precise mathematical relationship that depends on the molecular weights of all the species in the mixture.  This distinction seems technical, but it is vital for correctly describing complex mixtures, from combustion engines to [planetary atmospheres](@article_id:148174).
+By their very definitions, the sum of all diffusive mass fluxes must be zero in the mass-averaged frame ($\sum_i \mathbf{j}_i = \mathbf{0}$), and the sum of all diffusive molar fluxes must be zero in the molar-averaged frame ($\sum_i \mathbf{J}_i = \mathbf{0}$). This makes perfect sense: "diffusion" is the internal shuffling of components, which, by definition, can't create a net movement of the whole system relative to its own average motion. These two types of fluxes are not independent; they are linked by a precise mathematical relationship that depends on the molecular weights of all the species in the mixture. [@problem_id:2523793] This distinction seems technical, but it is vital for correctly describing complex mixtures, from combustion engines to [planetary atmospheres](@keyword=planetary_atmospheres|lang=en-US|style=Feynman).
 
 ### The Fine Print: When the Simple Law Isn't Enough
 
-Fick's simple law, $\mathbf{J} = -D \nabla c$, is a brilliant and useful approximation, but nature is often more intricate. Its validity rests on several hidden assumptions. The real world often presents us with phenomena that go beyond this simple picture. 
+Fick's simple law, $\mathbf{J} = -D \nabla c$, is a brilliant and useful approximation, but nature is often more intricate. Its validity rests on several hidden assumptions. The real world often presents us with phenomena that go beyond this simple picture. [@problem_id:2535118]
 
-*   **Multicomponent Mayhem:** Fick's law is truly exact only for a binary (two-component) mixture. In a mixture of three or more components, the diffusion of any one species can be driven by the concentration gradients of *all* the other species. This is called **cross-diffusion**. The simple law is a good approximation only when we are looking at a trace species diffusing through a single dominant background gas (a quasi-binary system). 
+*   **Multicomponent Mayhem:** Fick's law is truly exact only for a binary (two-component) mixture. In a mixture of three or more components, the diffusion of any one species can be driven by the concentration gradients of *all* the other species. This is called **cross-diffusion**. The simple law is a good approximation only when we are looking at a trace species diffusing through a single dominant background gas (a quasi-binary system). [@problem_id:2474018]
 
-*   **Thermodiffusion (The Soret Effect):** Here is something truly remarkable. You can create a diffusive flux without any initial concentration gradient at all! If you take a perfectly uniform mixture and impose a temperature gradient—making one end hot and the other cold—the different species will start to separate. Typically, lighter molecules tend to migrate to the hot region and heavier molecules to the cold region. This movement, a mass flux driven by a temperature gradient, is called **[thermodiffusion](@article_id:148246)**, or the **Soret effect**. It is a "coupled" phenomenon, a beautiful example of the interconnectedness of physical processes. 
+*   **Thermodiffusion (The Soret Effect):** Here is something truly remarkable. You can create a diffusive flux without any initial concentration gradient at all! If you take a perfectly uniform mixture and impose a temperature gradient—making one end hot and the other cold—the different species will start to separate. Typically, lighter molecules tend to migrate to the hot region and heavier molecules to the cold region. This movement, a mass flux driven by a temperature gradient, is called **[thermodiffusion](@keyword=thermodiffusion|lang=en-US|style=Feynman)**, or the **Soret effect**. It is a "coupled" phenomenon, a beautiful example of the interconnectedness of physical processes. [@problem_id:2507733]
 
-*   **Pressure and Forced Diffusion:** In a similar vein, a pressure gradient can cause **barodiffusion**, which is critical for separating isotopes in a gas centrifuge. Likewise, an external force like gravity can cause **forced diffusion**, which is why heavier gases in a tall, still column will be slightly more concentrated at the bottom. 
+*   **Pressure and Forced Diffusion:** In a similar vein, a pressure gradient can cause **barodiffusion**, which is critical for separating isotopes in a gas centrifuge. Likewise, an external force like gravity can cause **forced diffusion**, which is why heavier gases in a tall, still column will be slightly more concentrated at the bottom. [@problem_id:2535118]
 
-*   **When the Continuum Breaks:** All our talk of "concentration gradients" assumes we can treat the fluid as a smooth continuum. This works when molecules are constantly bumping into each other, much more often than they bump into the walls of their container. But in very low-pressure gases or inside microscopic pores (nanotechnology!), the molecular mean free path can become larger than the container itself. This is the high **Knudsen number** ($Kn$) regime. Here, the idea of a local gradient breaks down. Molecules interact more with the walls than with each other, and a different type of physics, **Knudsen diffusion**, takes over. 
+*   **When the Continuum Breaks:** All our talk of "concentration gradients" assumes we can treat the fluid as a smooth continuum. This works when molecules are constantly bumping into each other, much more often than they bump into the walls of their container. But in very low-pressure gases or inside microscopic pores (nanotechnology!), the molecular mean free path can become larger than the container itself. This is the high **Knudsen number** ($Kn$) regime. Here, the idea of a local gradient breaks down. Molecules interact more with the walls than with each other, and a different type of physics, **Knudsen diffusion**, takes over. [@problem_id:2535118]
 
 ### The Engine of Diffusion: A Return to Entropy
 
-We began with the idea that diffusion is driven by the Second Law of Thermodynamics. Let's close by returning to this fundamental point. When molecules diffuse, they are not just carrying mass; they are carrying entropy. The total flow of entropy in a mixture is not just due to [heat conduction](@article_id:143015); there is an additional entropy flux caused by the inter-diffusion of the species. This **diffusive entropy flux** is given by:
+We began with the idea that diffusion is driven by the Second Law of Thermodynamics. Let's close by returning to this fundamental point. When molecules diffuse, they are not just carrying mass; they are carrying entropy. The total flow of entropy in a mixture is not just due to [heat conduction](@keyword=heat_conduction|lang=en-US|style=Feynman); there is an additional entropy flux caused by the inter-diffusion of the species. This **diffusive entropy flux** is given by:
 
 $$
 \mathbf{J}_s^{\mathrm{diff}} = \sum_{i=1}^N s_i \mathbf{j}_i
 $$
 
-where $s_i$ is the specific entropy of species $i$ and $\mathbf{j}_i$ is its diffusive mass flux.  This expression is generally not zero. The shuffling of different types of molecules, each carrying its own amount of entropy, creates a net transport of entropy. The overall process of diffusion always generates new entropy, pushing the universe further along its irreversible path toward thermal equilibrium.
+where $s_i$ is the specific entropy of species $i$ and $\mathbf{j}_i$ is its diffusive mass flux. [@problem_id:2521105] This expression is generally not zero. The shuffling of different types of molecules, each carrying its own amount of entropy, creates a net transport of entropy. The overall process of diffusion always generates new entropy, pushing the universe further along its irreversible path toward thermal equilibrium.
 
 So, the next time you see steam rising from a cup or smell a flower from across a garden, you are witnessing something profound. You are seeing the restless, random dance of countless individual molecules, a dance governed by elegant conservation laws and simple-looking rules. But beneath it all, you are watching the inexorable engine of the cosmos at work, tirelessly and patiently spreading things out, fulfilling the fundamental tendency of the universe towards states of greater probability and greater entropy.

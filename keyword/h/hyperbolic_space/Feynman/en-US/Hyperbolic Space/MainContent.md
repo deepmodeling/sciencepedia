@@ -3,7 +3,7 @@ Our everyday world is governed by the rules of Euclidean geometry, where paralle
 
 ## Principles and Mechanisms
 
-Imagine you are an ant living on a perfectly flat, infinite sheet of paper. Your entire world is Euclidean geometry. The shortest path between two points is a straight line. If you and two friends stand at the vertices of a triangle, the angles you make always add up to $180$ degrees, or $\pi$ [radians](@article_id:171199). This seems like an unshakeable law of the universe.
+Imagine you are an ant living on a perfectly flat, infinite sheet of paper. Your entire world is Euclidean geometry. The shortest path between two points is a straight line. If you and two friends stand at the vertices of a triangle, the angles you make always add up to $180$ degrees, or $\pi$ [radians](@keyword=radians|lang=en-US|style=Feynman). This seems like an unshakeable law of the universe.
 
 But what if the very fabric of your universe was different? What if space itself were... curved? Not in the way a sphere is curved, which curves *in on itself*, but in a way that is much harder to picture—a space that curves *away from itself* at every single point. Welcome to hyperbolic space. To understand this world, we can't trust our flat-space intuition. We have to rebuild our understanding of geometry from the ground up, starting with the most fundamental question of all.
 
@@ -19,9 +19,9 @@ In this model, our Euclidean eyes are deceived. The geodesics, the straightest p
 
 
 
-This second rule seems strange. Why a circular arc? And why must it be orthogonal to the boundary? Think of it this way: to be the "straightest" path, a geodesic must head towards infinity as directly as possible. Hitting the boundary at a right angle is the geometric equivalent of doing just that. To construct such a path between two points inside the disk, say from a point $r$ on the real axis to a point $is$ on the imaginary axis, one must find the center of a Euclidean circle that passes through both points *and* satisfies this [orthogonality condition](@article_id:168411). This often means the circle's center lies far outside the disk itself . Furthermore, the angles between these geodesics are exactly what they appear to be to our Euclidean eyes—a property called conformality. Two geodesics are perpendicular in the hyperbolic sense if and only if their tangents are perpendicular in the Euclidean sense .
+This second rule seems strange. Why a circular arc? And why must it be orthogonal to the boundary? Think of it this way: to be the "straightest" path, a geodesic must head towards infinity as directly as possible. Hitting the boundary at a right angle is the geometric equivalent of doing just that. To construct such a path between two points inside the disk, say from a point $r$ on the real axis to a point $is$ on the imaginary axis, one must find the center of a Euclidean circle that passes through both points *and* satisfies this [orthogonality condition](@keyword=orthogonality_condition|lang=en-US|style=Feynman). This often means the circle's center lies far outside the disk itself [@problem_id:1641301]. Furthermore, the angles between these geodesics are exactly what they appear to be to our Euclidean eyes—a property called conformality. Two geodesics are perpendicular in the hyperbolic sense if and only if their tangents are perpendicular in the Euclidean sense [@problem_id:2245889].
 
-Another useful map is the **Poincaré half-plane model**, where the universe is the upper half of the complex plane. Here, geodesics are either vertical lines or semicircles centered on the real axis. If two points are at the same "height" in this model, the shortest path between them is not the horizontal Euclidean line, but a semicircular arc that bulges upwards . This is our first clue about the warped nature of distance in this space.
+Another useful map is the **Poincaré half-plane model**, where the universe is the upper half of the complex plane. Here, geodesics are either vertical lines or semicircles centered on the real axis. If two points are at the same "height" in this model, the shortest path between them is not the horizontal Euclidean line, but a semicircular arc that bulges upwards [@problem_id:1014332]. This is our first clue about the warped nature of distance in this space.
 
 ### A Stretchy, Infinite World
 
@@ -35,7 +35,7 @@ Here, $|dz|$ is the tiny step you'd measure with a normal Euclidean ruler, and $
 
 This is why the boundary is infinitely far away. Even with infinite time, you could never reach it. The entire infinite universe truly does fit inside the disk.
 
-This warping of distance has beautiful and bizarre consequences. Consider a circle. In our flat world, a circle is the set of points equidistant from a center. The same is true in hyperbolic space. But what does a **Poincaré circle** centered at the origin look like? It is, in fact, a simple Euclidean circle. However, its hyperbolic radius $R_h$ and its Euclidean radius $\rho$ are related in a fascinating way :
+This warping of distance has beautiful and bizarre consequences. Consider a circle. In our flat world, a circle is the set of points equidistant from a center. The same is true in hyperbolic space. But what does a **Poincaré circle** centered at the origin look like? It is, in fact, a simple Euclidean circle. However, its hyperbolic radius $R_h$ and its Euclidean radius $\rho$ are related in a fascinating way [@problem_id:2279795]:
 
 $$
 \rho = \tanh\left(\frac{R_h}{2}\right)
@@ -43,7 +43,7 @@ $$
 
 The hyperbolic tangent function, $\tanh(x)$, approaches $1$ as $x$ goes to infinity. This means you can have a hyperbolic circle with an *infinite* radius, and it would still be a finite circle in the disk, snuggled right up against the boundary.
 
-The power of mathematics allows us to capture this strange notion of distance in a single, elegant formula. Using the symmetries of the disk, one can find the hyperbolic distance $d_H$ between any two points $z_1$ and $z_2$ :
+The power of mathematics allows us to capture this strange notion of distance in a single, elegant formula. Using the symmetries of the disk, one can find the hyperbolic distance $d_H$ between any two points $z_1$ and $z_2$ [@problem_id:1652521]:
 
 $$
 d_H(z_1, z_2) = 2 \arctanh\left(\left|\frac{z_1 - z_2}{1 - \bar{z_1}z_2}\right|\right)
@@ -53,11 +53,11 @@ This formula perfectly encodes the stretching of space, all in one neat package.
 
 ### Space That Bends Away from Itself
 
-The warped ruler doesn't just affect distances; it also transforms area. That tiny patch near the boundary, which looks so small, has an immense hyperbolic area . This "roominess" of hyperbolic space fundamentally changes the laws of geometry.
+The warped ruler doesn't just affect distances; it also transforms area. That tiny patch near the boundary, which looks so small, has an immense hyperbolic area [@problem_id:992155]. This "roominess" of hyperbolic space fundamentally changes the laws of geometry.
 
-The most celebrated example is the triangle. In Euclidean geometry, the sum of the angles in any triangle is always $\pi$ radians ($180^\circ$). In hyperbolic space, the sum of the angles is *always less than* $\pi$. The difference is called the **[angle defect](@article_id:203962)**.
+The most celebrated example is the triangle. In Euclidean geometry, the sum of the angles in any triangle is always $\pi$ radians ($180^\circ$). In hyperbolic space, the sum of the angles is *always less than* $\pi$. The difference is called the **[angle defect](@keyword=angle_defect|lang=en-US|style=Feynman)**.
 
-The truly astonishing discovery, first made by Johann Heinrich Lambert and later formalized by Gauss, is that the area of a hyperbolic triangle is directly proportional to its [angle defect](@article_id:203962). For a space with a constant **curvature** of $-1$, the relationship is stunningly simple :
+The truly astonishing discovery, first made by Johann Heinrich Lambert and later formalized by Gauss, is that the area of a hyperbolic triangle is directly proportional to its [angle defect](@keyword=angle_defect|lang=en-US|style=Feynman). For a space with a constant **curvature** of $-1$, the relationship is stunningly simple [@problem_id:2245884]:
 
 $$
 \text{Area} = \pi - (\alpha + \beta + \gamma)
@@ -65,23 +65,23 @@ $$
 
 where $\alpha$, $\beta$, and $\gamma$ are the interior angles of the triangle. Think about what this means. It means that in hyperbolic space, there are no "similar" triangles like in Euclidean geometry. If you know the angles of a triangle, you know its area, period. A tiny, needle-like triangle will have angles that sum to nearly $\pi$, giving it a very small area. A huge triangle, with its vertices spread far apart, will have very sharp angles that sum to nearly zero, giving it the maximum possible area of $\pi$.
 
-This behavior is the signature of **negative curvature**. While a sphere has positive curvature (it curves in on itself, and triangle angles sum to *more* than $\pi$), hyperbolic space has [negative curvature](@article_id:158841). Imagine a saddle or a Pringles chip. At every point, the surface curves up in one direction and down in another. Hyperbolic space is like a three-dimensional version of this, "saddling" in all directions at once. This constant "opening up" creates far more space than our flat Euclidean world, and it is this property that leads to its strange and beautiful geometry. In fact, a careful calculation shows that the Poincaré disk model has a constant Gaussian curvature of precisely $-1$ everywhere .
+This behavior is the signature of **negative curvature**. While a sphere has positive curvature (it curves in on itself, and triangle angles sum to *more* than $\pi$), hyperbolic space has [negative curvature](@keyword=negative_curvature|lang=en-US|style=Feynman). Imagine a saddle or a Pringles chip. At every point, the surface curves up in one direction and down in another. Hyperbolic space is like a three-dimensional version of this, "saddling" in all directions at once. This constant "opening up" creates far more space than our flat Euclidean world, and it is this property that leads to its strange and beautiful geometry. In fact, a careful calculation shows that the Poincaré disk model has a constant Gaussian curvature of precisely $-1$ everywhere [@problem_id:1668855].
 
 ### Many Maps of a Single Reality
 
-By now, you might be feeling a bit of vertigo. We have the Poincaré disk, the half-plane, and this abstract idea of a negatively [curved space](@article_id:157539). How do they all fit together?
+By now, you might be feeling a bit of vertigo. We have the Poincaré disk, the half-plane, and this abstract idea of a negatively [curved space](@keyword=curved_space|lang=en-US|style=Feynman). How do they all fit together?
 
-The key insight is to realize that hyperbolic space is the *abstract thing itself*—a manifold that is complete, simply connected, and has constant negative curvature . The different models are just different "maps" or "projections" of this single reality, each useful for different purposes, much like how cartographers use different map projections (like Mercator or Peters) to represent the spherical Earth on a flat piece of paper.
+The key insight is to realize that hyperbolic space is the *abstract thing itself*—a manifold that is complete, simply connected, and has constant negative curvature [@problem_id:1668855]. The different models are just different "maps" or "projections" of this single reality, each useful for different purposes, much like how cartographers use different map projections (like Mercator or Peters) to represent the spherical Earth on a flat piece of paper.
 
--   The **Hyperboloid Model** is perhaps the most "natural." It represents hyperbolic space as one sheet of a two-sheeted [hyperboloid](@article_id:170242) embedded in a 3D space with a time-like dimension (Minkowski spacetime). This model gives hyperbolic geometry a tangible form as a truly curved surface .
+-   The **Hyperboloid Model** is perhaps the most "natural." It represents hyperbolic space as one sheet of a two-sheeted [hyperboloid](@keyword=hyperboloid|lang=en-US|style=Feynman) embedded in a 3D space with a time-like dimension (Minkowski spacetime). This model gives hyperbolic geometry a tangible form as a truly curved surface [@problem_id:992224].
 
--   The **Poincaré Disk Model** can be obtained by a [stereographic projection](@article_id:141884) of the [hyperboloid](@article_id:170242) model. It's like taking a photograph of the [hyperboloid](@article_id:170242) from one of its "poles." Its great advantage is being **conformal**: it preserves angles, so shapes look correct locally .
+-   The **Poincaré Disk Model** can be obtained by a [stereographic projection](@keyword=stereographic_projection|lang=en-US|style=Feynman) of the [hyperboloid](@keyword=hyperboloid|lang=en-US|style=Feynman) model. It's like taking a photograph of the [hyperboloid](@keyword=hyperboloid|lang=en-US|style=Feynman) from one of its "poles." Its great advantage is being **conformal**: it preserves angles, so shapes look correct locally [@problem_id:992224].
 
--   The **Beltrami-Klein Model** is another projection, this time from the center of the [hyperboloid](@article_id:170242). Its amazing feature is that geodesics are actual Euclidean straight lines! However, this comes at a cost: the map heavily distorts angles .
+-   The **Beltrami-Klein Model** is another projection, this time from the center of the [hyperboloid](@keyword=hyperboloid|lang=en-US|style=Feynman). Its amazing feature is that geodesics are actual Euclidean straight lines! However, this comes at a cost: the map heavily distorts angles [@problem_id:1663372].
 
--   The **Poincaré Half-Plane Model** is intimately related to the disk model via a beautiful transformation from complex analysis called a Möbius transformation (specifically, the Cayley transform). It's often the easiest model for calculations .
+-   The **Poincaré Half-Plane Model** is intimately related to the disk model via a beautiful transformation from complex analysis called a Möbius transformation (specifically, the Cayley transform). It's often the easiest model for calculations [@problem_id:1647735].
 
-All these maps describe the exact same [intrinsic geometry](@article_id:158294). A trip from point A to point B is the same hyperbolic distance whether you calculate it in the disk, the half-plane, or on the hyperboloid. The choice of map is purely a matter of convenience.
+All these maps describe the exact same [intrinsic geometry](@keyword=intrinsic_geometry|lang=en-US|style=Feynman). A trip from point A to point B is the same hyperbolic distance whether you calculate it in the disk, the half-plane, or on the hyperboloid. The choice of map is purely a matter of convenience.
 
 ### The Peculiar Case of the Hyperbolic Circle
 
@@ -89,7 +89,7 @@ Let's end our journey by returning to the humble circle and uncovering one last 
 
 In our flat world, for a circle of radius $r$, $L = 2\pi r$ and $A = \pi r^2$. The ratio $A/L = r/2$. As the circle gets bigger, the area grows much faster than the perimeter.
 
-In hyperbolic space, the result is completely different. Both the area and perimeter grow much, much faster than their Euclidean counterparts as the radius increases. But what about their ratio? A direct calculation reveals a mind-bending result :
+In hyperbolic space, the result is completely different. Both the area and perimeter grow much, much faster than their Euclidean counterparts as the radius increases. But what about their ratio? A direct calculation reveals a mind-bending result [@problem_id:1677379]:
 
 $$
 \frac{A_h}{L_h} = \tanh\left(\frac{R_h}{2}\right)
@@ -97,4 +97,4 @@ $$
 
 For very small circles ($R_h \ll 1$), this ratio is approximately $R_h/2$, mimicking the Euclidean case. But as the hyperbolic radius $R_h$ grows towards infinity, the ratio doesn't grow without bound. Instead, because $\tanh(x) \to 1$ as $x \to \infty$, the ratio $A_h/L_h$ approaches a constant value of $1$!
 
-This is a profound statement about the nature of space. It's the **[isoperimetric inequality](@article_id:196483)** for hyperbolic space. It tells us that because of the explosive, [exponential growth](@article_id:141375) of space due to negative curvature, the perimeter of a shape grows so extravagantly that the area it encloses can't "keep up" in the same way it does in flat space. It is in these subtle, quantitative relationships that the true, weird, and wonderful character of hyperbolic space reveals itself. It's a universe of boundless room, governed by rules that challenge our deepest intuitions about the very meaning of space.
+This is a profound statement about the nature of space. It's the **[isoperimetric inequality](@keyword=isoperimetric_inequality|lang=en-US|style=Feynman)** for hyperbolic space. It tells us that because of the explosive, [exponential growth](@keyword=exponential_growth|lang=en-US|style=Feynman) of space due to negative curvature, the perimeter of a shape grows so extravagantly that the area it encloses can't "keep up" in the same way it does in flat space. It is in these subtle, quantitative relationships that the true, weird, and wonderful character of hyperbolic space reveals itself. It's a universe of boundless room, governed by rules that challenge our deepest intuitions about the very meaning of space.

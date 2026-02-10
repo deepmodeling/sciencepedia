@@ -23,25 +23,25 @@ Here, $V_P$, $V_G$, and $V_E$ are the phenotypic, genotypic, and environmental v
 
 ### The Art of Breaking Correlations
 
-So, how do we get rid of this troublesome covariance term? We can't just wish it away. Instead, we must be clever and *design* our experiments to break the link between genes and environment. This is where the true genius of [quantitative genetics](@article_id:154191) emerges.
+So, how do we get rid of this troublesome covariance term? We can't just wish it away. Instead, we must be clever and *design* our experiments to break the link between genes and environment. This is where the true genius of [quantitative genetics](@keyword=quantitative_genetics|lang=en-US|style=Feynman) emerges.
 
-One powerful strategy is **randomization**. If we take a collection of different plant genotypes and randomly assign them to different plots in a field, we, by design, ensure that no particular genotype gets a systematic advantage. On average, the "good" and "bad" plots will be distributed evenly across all genotypes. This forces the covariance term, $\operatorname{Cov}(G,E)$, to be zero .
+One powerful strategy is **randomization**. If we take a collection of different plant genotypes and randomly assign them to different plots in a field, we, by design, ensure that no particular genotype gets a systematic advantage. On average, the "good" and "bad" plots will be distributed evenly across all genotypes. This forces the covariance term, $\operatorname{Cov}(G,E)$, to be zero [@problem_id:2838190].
 
-An even simpler approach, if possible, is the **[common garden experiment](@article_id:171088)**. If we raise all our different genotypes in an absolutely identical, uniform environment, then the environmental value $E$ is a constant for everyone. A constant has no variance ($V_E=0$), and a variable that doesn't vary cannot co-vary with anything else. Thus, $\operatorname{Cov}(G,E)$ must be zero .
+An even simpler approach, if possible, is the **[common garden experiment](@keyword=common_garden_experiment|lang=en-US|style=Feynman)**. If we raise all our different genotypes in an absolutely identical, uniform environment, then the environmental value $E$ is a constant for everyone. A constant has no variance ($V_E=0$), and a variable that doesn't vary cannot co-vary with anything else. Thus, $\operatorname{Cov}(G,E)$ must be zero [@problem_id:2838190].
 
-For animal studies, the most elegant and famous technique is **cross-fostering**. Imagine you want to untangle the genetics of maternal care from the environment a mother provides. At birth, you could randomly swap pups between litters. A pup now receives its genes from its biological mother, but its "nurture"—the milk, warmth, and care—from an unrelated foster mother. This act of swapping brilliantly severs the natural association between the inherited genotype and the family environment, once again forcing $\operatorname{Cov}(G,E)$ to zero by design  . These designs are not just procedural details; they are profound conceptual tools that allow us to ask clearer questions of nature.
+For animal studies, the most elegant and famous technique is **cross-fostering**. Imagine you want to untangle the genetics of maternal care from the environment a mother provides. At birth, you could randomly swap pups between litters. A pup now receives its genes from its biological mother, but its "nurture"—the milk, warmth, and care—from an unrelated foster mother. This act of swapping brilliantly severs the natural association between the inherited genotype and the family environment, once again forcing $\operatorname{Cov}(G,E)$ to zero by design [@problem_id:2838190] [@problem_id:2695408]. These designs are not just procedural details; they are profound conceptual tools that allow us to ask clearer questions of nature.
 
 ### Peeling the Genetic Onion
 
-With the genotype-environment covariance neutralized by good design, our equation simplifies to $V_P = V_G + V_E$. Now we can turn our attention to the [genetic variance](@article_id:150711), $V_G$. It turns out that "[genetic variance](@article_id:150711)" is not a single entity. It’s like an onion with several layers. For our purposes, the two most important layers are the **additive** and **dominance** variances.
+With the genotype-environment covariance neutralized by good design, our equation simplifies to $V_P = V_G + V_E$. Now we can turn our attention to the [genetic variance](@keyword=genetic_variance|lang=en-US|style=Feynman), $V_G$. It turns out that "[genetic variance](@keyword=genetic_variance|lang=en-US|style=Feynman)" is not a single entity. It’s like an onion with several layers. For our purposes, the two most important layers are the **additive** and **dominance** variances.
 
 $$
 V_G = V_A + V_D
 $$
 
-**Additive genetic variance ($V_A$)** is the part of [genetic variance](@article_id:150711) that is due to the average effects of alleles. Think of it as the "heritable" part in the everyday sense. It's the component that creates the reliable resemblance between parents and offspring. An individual's **[breeding value](@article_id:195660)** is their genetic worth as a parent, and $V_A$ is the variance of these breeding values in the population. This is the variance that breeders and evolution can act upon most directly, because it's the part that is faithfully transmitted through generations.
+**Additive genetic variance ($V_A$)** is the part of [genetic variance](@keyword=genetic_variance|lang=en-US|style=Feynman) that is due to the average effects of alleles. Think of it as the "heritable" part in the everyday sense. It's the component that creates the reliable resemblance between parents and offspring. An individual's **[breeding value](@keyword=breeding_value|lang=en-US|style=Feynman)** is their genetic worth as a parent, and $V_A$ is the variance of these breeding values in the population. This is the variance that breeders and evolution can act upon most directly, because it's the part that is faithfully transmitted through generations.
 
-**Dominance genetic variance ($V_D$)**, on the other hand, arises from the interaction of alleles *at the same locus*. If you have an allele 'A' and an allele 'a', the heterozygote 'Aa' might not be exactly intermediate between 'AA' and 'aa'. This deviation from the average is a dominance effect. This variance is a bit trickier. A parent passes on only a single allele to its offspring, not its diploid genotype. So, a specific favorable combination of alleles in a parent (like 'Aa') gets broken up during meiosis. This is why [dominance variance](@article_id:183762) contributes to the similarity of full siblings (who can inherit the same pair of alleles from their parents) but does *not* contribute to the resemblance between parents and their offspring .
+**Dominance genetic variance ($V_D$)**, on the other hand, arises from the interaction of alleles *at the same locus*. If you have an allele 'A' and an allele 'a', the heterozygote 'Aa' might not be exactly intermediate between 'AA' and 'aa'. This deviation from the average is a dominance effect. This variance is a bit trickier. A parent passes on only a single allele to its offspring, not its diploid genotype. So, a specific favorable combination of alleles in a parent (like 'Aa') gets broken up during meiosis. This is why [dominance variance](@keyword=dominance_variance|lang=en-US|style=Feynman) contributes to the similarity of full siblings (who can inherit the same pair of alleles from their parents) but does *not* contribute to the resemblance between parents and their offspring [@problem_id:2695408].
 
 ### Using Relatives to See the Unseen
 
@@ -51,7 +51,7 @@ So we have this beautiful theoretical decomposition: $V_P = V_A + V_D + V_E$. Bu
     $$
     \operatorname{Cov}(\text{Half-Sibs}) = \frac{1}{4}V_A
     $$
-    This is an incredibly clean and powerful relationship. It gives us a direct window into the additive genetic variance, untainted by dominance or common environmental effects .
+    This is an incredibly clean and powerful relationship. It gives us a direct window into the additive genetic variance, untainted by dominance or common environmental effects [@problem_id:2695408].
 
 -   **Full-Sibs:** These individuals share both parents. They are, on average, more similar than half-sibs. Their covariance includes the additive part (they share 1/2 of their additive genes) and, crucially, a dominance part (they have a 1/4 chance of inheriting the exact same genotype at a locus from their parents):
     $$
@@ -60,9 +60,9 @@ So we have this beautiful theoretical decomposition: $V_P = V_A + V_D + V_E$. Bu
 
 ### The Sire-and-Dam Design: A Machine for Partitioning Variance
 
-Now we can assemble these pieces into a beautiful experimental machine. A widely used approach is the **nested mating design**, often called a North Carolina Design I. In this setup, a number of sires are each mated to a unique set of dams, and we measure the trait in their offspring  .
+Now we can assemble these pieces into a beautiful experimental machine. A widely used approach is the **nested mating design**, often called a North Carolina Design I. In this setup, a number of sires are each mated to a unique set of dams, and we measure the trait in their offspring [@problem_id:2830982] [@problem_id:2821440].
 
-We then use a statistical technique called Analysis of Variance (ANOVA) to partition the [total variation](@article_id:139889) in the data into three piles:
+We then use a statistical technique called Analysis of Variance (ANOVA) to partition the [total variation](@keyword=total_variation|lang=en-US|style=Feynman) in the data into three piles:
 1.  Variance **among sires** ($\sigma_s^2$): How much do the average offspring of different sires vary? This variation is caused by the genetic differences between the sires. In fact, this variance component is a direct estimate of the covariance between paternal half-sibs.
     $$
     \sigma_s^2 = \operatorname{Cov}(\text{Half-Sibs}) = \frac{1}{4}V_A
@@ -77,24 +77,24 @@ Look at the magic here! From the ANOVA output, we can get estimates of $\sigma_s
 -   From the sire component: $\widehat{V}_A = 4\widehat{\sigma}_s^2$
 -   Then, using the dam component: $\widehat{V}_D = 4(\widehat{\sigma}_d^2 - \widehat{\sigma}_s^2)$
 
-This [experimental design](@article_id:141953) is a beautiful instrument that translates observable variation into estimates of the fundamental, unobservable parameters of inheritance   .
+This [experimental design](@keyword=experimental_design|lang=en-US|style=Feynman) is a beautiful instrument that translates observable variation into estimates of the fundamental, unobservable parameters of inheritance [@problem_id:1479709] [@problem_id:2821473] [@problem_id:2695401].
 
 ### The Environment Strikes Back: A Final Confounding
 
-But there is a ghost in our machine. The elegant logic above assumed the extra similarity of full-sibs was only due to genetics. What if full-sibs that share a mother also share a common environment ($V_C$)? This could be a shared womb, maternal milk quality, or nest conditions. If so, this environmental effect gets lumped in with the dam component .
+But there is a ghost in our machine. The elegant logic above assumed the extra similarity of full-sibs was only due to genetics. What if full-sibs that share a mother also share a common environment ($V_C$)? This could be a shared womb, maternal milk quality, or nest conditions. If so, this environmental effect gets lumped in with the dam component [@problem_id:2695401].
 
 The full-sib covariance becomes: $\operatorname{Cov}(\text{Full-Sibs}) = \frac{1}{2}V_A + \frac{1}{4}V_D + V_C$.
 And the dam variance component now estimates: $\sigma_d^2 = \frac{1}{4}V_A + \frac{1}{4}V_D + V_C$.
 
-We are stuck! The design can no longer distinguish between [dominance variance](@article_id:183762) ($V_D$) and common environmental variance ($V_C$). This is a critical limitation. But again, a more clever design comes to the rescue. The full [cross-fostering experiment](@article_id:195236) described earlier, where litters are not just swapped but split and mixed, creates new kinds of relationships: full-sibs reared apart and unrelated individuals reared together. This generates enough unique covariance equations to solve for all the components, including $V_C$, finally disentangling nature and nurture .
+We are stuck! The design can no longer distinguish between [dominance variance](@keyword=dominance_variance|lang=en-US|style=Feynman) ($V_D$) and common environmental variance ($V_C$). This is a critical limitation. But again, a more clever design comes to the rescue. The full [cross-fostering experiment](@keyword=cross_fostering_experiment|lang=en-US|style=Feynman) described earlier, where litters are not just swapped but split and mixed, creates new kinds of relationships: full-sibs reared apart and unrelated individuals reared together. This generates enough unique covariance equations to solve for all the components, including $V_C$, finally disentangling nature and nurture [@problem_id:2831011].
 
 ### The Payoff: Heritability and Prediction
 
-Why do we go to all this trouble? The ultimate goal is often to calculate **[heritability](@article_id:150601)**.
+Why do we go to all this trouble? The ultimate goal is often to calculate **[heritability](@keyword=heritability|lang=en-US|style=Feynman)**.
 
 -   **Narrow-sense heritability ($h^2$)** is the proportion of total phenotypic variance that is due to additive genetic variance: $h^2 = V_A / V_P$. This is the most important single number in quantitative genetics. It tells us how much of the variation is heritable in a way that allows for a predictable response to selection.
--   **Broad-sense heritability ($H^2$)** is the proportion due to all [genetic variance](@article_id:150711): $H^2 = (V_A + V_D) / V_P$.
+-   **Broad-sense heritability ($H^2$)** is the proportion due to all [genetic variance](@keyword=genetic_variance|lang=en-US|style=Feynman): $H^2 = (V_A + V_D) / V_P$.
 
-Once we have an estimate of $h^2$, we can use the famous **Breeder's Equation**, $R = h^2 S$. This equation predicts the **Response to selection ($R$)**—how much a trait will change in the next generation—from the [heritability](@article_id:150601) and the **Selection differential ($S$)**, which is how strongly we select the parents. This simple equation is the engine of agricultural improvement and a cornerstone of [evolutionary theory](@article_id:139381). The entire apparatus of dam designs and variance partitioning is built to provide the crucial ingredient: an accurate estimate of $h^2$ .
+Once we have an estimate of $h^2$, we can use the famous **Breeder's Equation**, $R = h^2 S$. This equation predicts the **Response to selection ($R$)**—how much a trait will change in the next generation—from the [heritability](@keyword=heritability|lang=en-US|style=Feynman) and the **Selection differential ($S$)**, which is how strongly we select the parents. This simple equation is the engine of agricultural improvement and a cornerstone of [evolutionary theory](@keyword=evolutionary_theory|lang=en-US|style=Feynman). The entire apparatus of dam designs and variance partitioning is built to provide the crucial ingredient: an accurate estimate of $h^2$ [@problem_id:2745762].
 
-Of course, the real world is messy. Data is often unbalanced, with unequal family sizes. Simple ANOVA methods can sometimes give nonsensical results, like negative variance estimates. Modern geneticists now rely on more sophisticated statistical methods like **Restricted Maximum Likelihood (REML)**, which are better equipped to handle the complexities of real data while respecting the physical reality that variance cannot be negative . But the beautiful logic of using relatives to partition variance, pioneered by these classical experimental designs, remains the conceptual heart of the entire field.
+Of course, the real world is messy. Data is often unbalanced, with unequal family sizes. Simple ANOVA methods can sometimes give nonsensical results, like negative variance estimates. Modern geneticists now rely on more sophisticated statistical methods like **Restricted Maximum Likelihood (REML)**, which are better equipped to handle the complexities of real data while respecting the physical reality that variance cannot be negative [@problem_id:2831029]. But the beautiful logic of using relatives to partition variance, pioneered by these classical experimental designs, remains the conceptual heart of the entire field.

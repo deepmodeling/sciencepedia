@@ -24,7 +24,7 @@ for very large $\lambda$, we don't need to know the intricate details of $f(t)$ 
 Let's see how this works. If only the behavior of $f(t)$ near $t=0$ matters, why not replace $f(t)$ with a simpler function that looks just like it at the origin? The most natural way to do this is with a Taylor series. For a well-behaved function, we can write:
 $$ f(t) \sim a_0 + a_1 t + a_2 t^2 + \dots \quad (\text{for } t \to 0^+) $$
 
-Let's take a concrete example. Suppose we want to understand the integral $I(\lambda) = \int_0^\infty \frac{e^{-\lambda t}}{1 + t^2} dt$ for large $\lambda$ . Here, our "treasure map" is $f(t) = \frac{1}{1+t^2}$. Near $t=0$, we can use the geometric series expansion:
+Let's take a concrete example. Suppose we want to understand the integral $I(\lambda) = \int_0^\infty \frac{e^{-\lambda t}}{1 + t^2} dt$ for large $\lambda$ [@problem_id:618399]. Here, our "treasure map" is $f(t) = \frac{1}{1+t^2}$. Near $t=0$, we can use the geometric series expansion:
 $$ \frac{1}{1+t^2} = 1 - t^2 + t^4 - t^6 + \dots $$
 
 Because the exponential fog $e^{-\lambda t}$ cares only about this initial behavior, we can boldly substitute the series into the integral and integrate term by term:
@@ -34,14 +34,14 @@ $$ I(\lambda) \sim \int_0^\infty 1 \cdot e^{-\lambda t} dt - \int_0^\infty t^2 e
 Now we face a series of integrals of the form $\int_0^\infty t^n e^{-\lambda t} dt$. This is where a truly magical mathematical tool comes into play: the **Gamma function**, $\Gamma(z)$. It is defined as $\Gamma(z) = \int_0^\infty u^{z-1} e^{-u} du$. With a simple substitution $u = \lambda t$, our integral becomes:
 $$ \int_0^\infty t^n e^{-\lambda t} dt = \frac{1}{\lambda^{n+1}} \int_0^\infty u^n e^{-u} du = \frac{\Gamma(n+1)}{\lambda^{n+1}} $$
 
-For integers, $\Gamma(n+1) = n!$, a familiar [factorial](@article_id:266143). So, our [term-by-term integration](@article_id:138202) gives:
+For integers, $\Gamma(n+1) = n!$, a familiar [factorial](@keyword=factorial|lang=en-US|style=Feynman). So, our [term-by-term integration](@keyword=term_by_term_integration|lang=en-US|style=Feynman) gives:
 $$ I(\lambda) \sim \frac{\Gamma(1)}{\lambda^1} - \frac{\Gamma(3)}{\lambda^3} + \frac{\Gamma(5)}{\lambda^5} - \dots = \frac{0!}{\lambda} - \frac{2!}{\lambda^3} + \frac{4!}{\lambda^5} - \dots $$
 
-The first two terms of our [asymptotic expansion](@article_id:148808) are thus $\frac{1}{\lambda} - \frac{2}{\lambda^3}$. We have found an incredibly accurate approximation for a complicated integral, just by looking at the first two terms of a simple [series expansion](@article_id:142384)! The same logic applies even if the function is a bit more complex, like $f(t) = \frac{\sin(\sqrt{t})}{\sqrt{t}}$, which also expands into a nice integer power series starting with $1 - \frac{t}{6} + \dots$, yielding an approximation for its integral .
+The first two terms of our [asymptotic expansion](@keyword=asymptotic_expansion|lang=en-US|style=Feynman) are thus $\frac{1}{\lambda} - \frac{2}{\lambda^3}$. We have found an incredibly accurate approximation for a complicated integral, just by looking at the first two terms of a simple [series expansion](@keyword=series_expansion|lang=en-US|style=Feynman)! The same logic applies even if the function is a bit more complex, like $f(t) = \frac{\sin(\sqrt{t})}{\sqrt{t}}$, which also expands into a nice integer power series starting with $1 - \frac{t}{6} + \dots$, yielding an approximation for its integral [@problem_id:618850].
 
 ### The True Leader: On Cancellations and Dominance
 
-Sometimes, the most obvious behavior of a function near zero is misleading. Consider the function $f(t) = \cosh t - \cos t$ . The Taylor series for these functions are:
+Sometimes, the most obvious behavior of a function near zero is misleading. Consider the function $f(t) = \cosh t - \cos t$ [@problem_id:1122098]. The Taylor series for these functions are:
 $$ \cosh t = 1 + \frac{t^2}{2!} + \frac{t^4}{4!} + \dots $$
 $$ \cos t = 1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \dots $$
 
@@ -51,25 +51,25 @@ $$ f(t) = \left(1 + \frac{t^2}{2} + \dots \right) - \left(1 - \frac{t^2}{2} + \d
 The "leading" behavior, the first non-zero term that dictates the function's character near the origin, is $t^2$. This is the term our exponential fog will "see" first. Consequently, the integral will be dominated by the contribution from this term:
 $$ I(\lambda) = \int_0^\infty (\cosh t - \cos t) e^{-\lambda t} dt \sim \int_0^\infty t^2 e^{-\lambda t} dt = \frac{\Gamma(3)}{\lambda^3} = \frac{2}{\lambda^3} $$
 
-This teaches us a crucial lesson: we must always look for the *leading non-zero term* in the expansion of $f(t)$. Sometimes this requires peering past cancellations between different parts of the function, as seen in the case of $\sin t - \arctan t$, where the first-order terms cancel, leaving the third-order term to dominate the integral's behavior .
+This teaches us a crucial lesson: we must always look for the *leading non-zero term* in the expansion of $f(t)$. Sometimes this requires peering past cancellations between different parts of the function, as seen in the case of $\sin t - \arctan t$, where the first-order terms cancel, leaving the third-order term to dominate the integral's behavior [@problem_id:618745].
 
 ### Venturing Beyond Integers
 
 Nature doesn't always paint with the simple palette of integer powers. What if our function $f(t)$ behaves like $\sqrt{t}$ or $t^{1/2}$ near the origin? Does our method fail? Not at all! This is where the true power of the Gamma function shines. It is defined not just for integers, but for any complex number with a positive real part.
 
-Let's examine an integral involving such behavior: $I(\lambda) = \int_0^\infty \frac{1 - \cos t}{t^{3/2}} e^{-\lambda t} dt$ . The function is $f(t) = \frac{1-\cos t}{t^{3/2}}$. Near $t=0$, we know $1-\cos t \approx \frac{t^2}{2}$. Therefore,
+Let's examine an integral involving such behavior: $I(\lambda) = \int_0^\infty \frac{1 - \cos t}{t^{3/2}} e^{-\lambda t} dt$ [@problem_id:618574]. The function is $f(t) = \frac{1-\cos t}{t^{3/2}}$. Near $t=0$, we know $1-\cos t \approx \frac{t^2}{2}$. Therefore,
 $$ f(t) \approx \frac{t^2/2}{t^{3/2}} = \frac{1}{2} t^{1/2} $$
 
 The leading power is fractional! But our formalism handles this with grace. The leading term of the integral is:
 $$ I(\lambda) \sim \int_0^\infty \left( \frac{1}{2} t^{1/2} \right) e^{-\lambda t} dt = \frac{1}{2} \frac{\Gamma(1/2 + 1)}{\lambda^{1/2 + 1}} = \frac{1}{2} \frac{\Gamma(3/2)}{\lambda^{3/2}} $$
 
-The Gamma function has a famous value, $\Gamma(1/2) = \sqrt{\pi}$, and a key property, $\Gamma(z+1) = z\Gamma(z)$. So, $\Gamma(3/2) = \frac{1}{2}\Gamma(1/2) = \frac{\sqrt{\pi}}{2}$. Plugging this in, we find the leading behavior is $\frac{\sqrt{\pi}}{4\lambda^{3/2}}$. The method is perfectly general, accommodating any power $\alpha > -1$, whether it's an integer, a fraction, or irrational. Other examples, such as those involving logarithmic terms, similarly result in series with non-integer exponents that are handled just as elegantly .
+The Gamma function has a famous value, $\Gamma(1/2) = \sqrt{\pi}$, and a key property, $\Gamma(z+1) = z\Gamma(z)$. So, $\Gamma(3/2) = \frac{1}{2}\Gamma(1/2) = \frac{\sqrt{\pi}}{2}$. Plugging this in, we find the leading behavior is $\frac{\sqrt{\pi}}{4\lambda^{3/2}}$. The method is perfectly general, accommodating any power $\alpha > -1$, whether it's an integer, a fraction, or irrational. Other examples, such as those involving logarithmic terms, similarly result in series with non-integer exponents that are handled just as elegantly [@problem_id:928873].
 
 ### The Art of Disguise: Finding the Right Coordinates
 
 What if an integral doesn't look like our standard form? Consider this challenge:
 $$ I(s) = \int_0^{\infty} e^{-s \frac{t}{1+t}} \frac{1}{\sqrt{1+t}} dt \quad \text{for large } s $$
-. The exponent is not a simple linear term $-st$, but a more complicated function $\phi(t) = \frac{t}{1+t}$.
+[@problem_id:928951]. The exponent is not a simple linear term $-st$, but a more complicated function $\phi(t) = \frac{t}{1+t}$.
 
 The core principle, however, remains unchanged. The integral will be dominated by the region where the exponent is most negative, which corresponds to the *minimum* of the function $\phi(t)$ on the integration path $[0, \infty)$. A quick check shows that $\phi(t)$ is an increasing function, so its minimum is at $t=0$, where $\phi(0) = 0$.
 
@@ -78,6 +78,6 @@ $$ u = \frac{t}{1+t} $$
 Our goal is to rewrite the *entire* integral in terms of $u$. A bit of algebra gives us $t = \frac{u}{1-u}$, and from there we can find expressions for $dt$ and the other parts of the integrand. The magic happens when we substitute everything back:
 $$ I(s) = \int_0^1 e^{-su} (1-u)^{-3/2} du $$
 
-Look what we have done! Through a clever [change of coordinates](@article_id:272645), we have transformed a seemingly complex problem into the [canonical form](@article_id:139743) for Watson's Lemma. Now, we are back on familiar ground. We simply expand the function $f(u) = (1-u)^{-3/2}$ as a [power series](@article_id:146342) in $u$, and integrate term by term using our Gamma function toolkit. This technique of identifying the minimum of the exponential argument and making a substitution is incredibly powerful, unlocking a vast class of integrals, from those with exponents like $\sinh^3(x)$  to those with integration limits that don't start at zero .
+Look what we have done! Through a clever [change of coordinates](@keyword=change_of_coordinates|lang=en-US|style=Feynman), we have transformed a seemingly complex problem into the [canonical form](@keyword=canonical_form|lang=en-US|style=Feynman) for Watson's Lemma. Now, we are back on familiar ground. We simply expand the function $f(u) = (1-u)^{-3/2}$ as a [power series](@keyword=power_series|lang=en-US|style=Feynman) in $u$, and integrate term by term using our Gamma function toolkit. This technique of identifying the minimum of the exponential argument and making a substitution is incredibly powerful, unlocking a vast class of integrals, from those with exponents like $\sinh^3(x)$ [@problem_id:1117219] to those with integration limits that don't start at zero [@problem_id:797852].
 
 This process is like putting on the right pair of glasses. The original problem may look distorted and complicated, but with the right change of variable—the right prescription—the picture snaps into a clear, simple form that we already know how to solve. The art lies in finding that perfect transformation.

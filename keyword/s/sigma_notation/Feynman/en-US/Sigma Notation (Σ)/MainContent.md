@@ -27,7 +27,7 @@ For $k=2$, we get $2(2)-1=3$.
 For $k=3$, we get $2(3)-1=5$.
 ...and so on, until we reach the last term, $2n-1$.
 
-The sum is $S_n = 1 + 3 + 5 + \dots + (2n-1)$. What are these numbers? They are the first $n$ positive odd integers. So, the notation $\sum_{k=1}^{n} (2k-1)$ is nothing less than a compact, unambiguous definition for "the sum of the first $n$ positive odd integers."  It's a language of pure logic.
+The sum is $S_n = 1 + 3 + 5 + \dots + (2n-1)$. What are these numbers? They are the first $n$ positive odd integers. So, the notation $\sum_{k=1}^{n} (2k-1)$ is nothing less than a compact, unambiguous definition for "the sum of the first $n$ positive odd integers." [@problem_id:1398922] It's a language of pure logic.
 
 ### From Recipes to Reality
 
@@ -37,11 +37,11 @@ Imagine a software developer in a 30-day coding challenge. She starts by writing
 
 We can see the pattern. On any given day $k$, the number of lines she writes is $L_0 + (k-1)d$. To find the total, we need to sum this quantity for $k$ from 1 to 30. And just like that, the sigma notation almost writes itself:
 $$ T = \sum_{k=1}^{30} \left(L_{0}+(k-1)d\right) $$
-This single line captures the entire 30-day process perfectly. 
+This single line captures the entire 30-day process perfectly. [@problem_id:1398899]
 
 The recipe doesn't have to be so orderly. It can be as whimsical as the Fibonacci sequence, where each number is the sum of the two preceding ones: $1, 1, 2, 3, 5, 8, \dots$. Let's say we draw a series of squares, where the side length of the $k$-th square is the $k$-th Fibonacci number, $F_k$. The area of that square would be $F_k^2$. What is the total area of the first $n$ of these squares? Again, sigma notation gives us an immediate and elegant answer:
 $$ \text{Total Area} = \sum_{k=1}^{n} F_k^2 $$
-The notation doesn't care if the sequence is simple or complex; it handles them all with the same grace.  In a moment of pure mathematical beauty, one can even prove that this particular sum has a shockingly simple result: it's equal to the product $F_n F_{n+1}$. The world of sums is filled with such surprising and beautiful connections.
+The notation doesn't care if the sequence is simple or complex; it handles them all with the same grace. [@problem_id:1398897] In a moment of pure mathematical beauty, one can even prove that this particular sum has a shockingly simple result: it's equal to the product $F_n F_{n+1}$. The world of sums is filled with such surprising and beautiful connections.
 
 ### The Secret Life of Sums
 
@@ -49,7 +49,7 @@ Once we have this language, we can start to play with it. We can manipulate summ
 
 Consider a process where the size of a dataset, $M_k$, grows by a multiplicative factor at each step: $M_k = M_{k-1} \cdot a^k$, starting with $M_0=1$. After $n$ steps, the final size is a long product: $M_n = a^1 \cdot a^2 \cdot a^3 \cdots a^n$. This looks complicated. But remember a fundamental rule of exponents: $a^x \cdot a^y = a^{x+y}$. A product of powers becomes a power of a sum! Our expression magically simplifies:
 $$ M_n = a^{1+2+3+\cdots+n} = a^{\sum_{k=1}^{n} k} $$
-A messy product has been tamed into a sum in an exponent. 
+A messy product has been tamed into a sum in an exponent. [@problem_id:1398918]
 
 This particular sum, $S_n = \sum_{k=1}^{n} k$, is legendary. The story goes that the great mathematician Carl Friedrich Gauss discovered a simple way to calculate it as a young schoolboy. Imagine writing the sum down, and then writing it again, but backwards:
 $$ S_n = 1 \quad + \quad 2 \quad + \dots + (n-1) + n $$
@@ -66,13 +66,13 @@ Think of a grid of gene expression data from a bioinformatics study, where $g_{i
 $$ \text{Condition Score}_j = \sum_{i=1}^{m} g_{ij} $$
 Now, if we want the total activity across *all* conditions, we simply sum up these individual scores:
 $$ \text{Total Signal} = \sum_{j=1}^{n} (\text{Condition Score}_j) = \sum_{j=1}^{n} \sum_{i=1}^{m} g_{ij} $$
-A double summation is just a nested instruction: "For each $j$ from $1$ to $n$, calculate an inner sum over $i$ from $1$ to $m$." 
+A double summation is just a nested instruction: "For each $j$ from $1$ to $n$, calculate an inner sum over $i$ from $1$ to $m$." [@problem_id:1398881]
 
 An interesting property of these finite sums is that you can almost always swap the order. Summing the columns first and then adding those totals is the same as summing the rows first and adding their totals. In both cases, you've added every single number in the grid.
 
 But what if we don't want to sum the whole grid? What if we only want a specific region? Suppose we have an $n \times n$ matrix with entries $a_{ij}$ and we want to sum only the elements on or below the main diagonal (where the row index is greater than or equal to the column index, $i \ge j$). We can instruct our summation to do this by linking the limits.
 $$ S = \sum_{i=1}^{n} \sum_{j=1}^{i} a_{ij} $$
-Here, the inner sum's upper limit is not a fixed number, but the current value of the outer index, $i$. For the first row ($i=1$), we only sum up to $j=1$. For the second row ($i=2$), we sum for $j=1$ and $j=2$. This allows us to carve out a triangular region of the matrix, demonstrating the notation's power to handle complex, dependent boundaries with ease. 
+Here, the inner sum's upper limit is not a fixed number, but the current value of the outer index, $i$. For the first row ($i=1$), we only sum up to $j=1$. For the second row ($i=2$), we sum for $j=1$ and $j=2$. This allows us to carve out a triangular region of the matrix, demonstrating the notation's power to handle complex, dependent boundaries with ease. [@problem_id:1398913]
 
 ### The Physicist's Gambit: Einstein's Silent Sum
 
@@ -80,12 +80,12 @@ For many simple sums, sigma notation is perfect. But at the frontiers of physics
 
 It was Albert Einstein who had the brilliantly lazy, or perhaps brilliantly efficient, insight. He noticed that in his equations, whenever an index was being summed, it almost always appeared exactly twice in the term. His radical proposal: if an index is repeated, just *assume* it’s being summed. Let's drop the $\Sigma$ altogether.
 
-This is the **Einstein summation convention**. Let's see it in action. The standard way to write a [matrix-vector product](@article_id:150508) $\vec{V} = M\vec{U}$ in component form is $V_i = \sum_{j=1}^{3} M_{ij} U_j$. In Einstein's world, this becomes simply:
+This is the **Einstein summation convention**. Let's see it in action. The standard way to write a [matrix-vector product](@keyword=matrix_vector_product|lang=en-US|style=Feynman) $\vec{V} = M\vec{U}$ in component form is $V_i = \sum_{j=1}^{3} M_{ij} U_j$. In Einstein's world, this becomes simply:
 $$ V_i = M_{ij} U_j $$
-How do we read this? The index $j$ appears twice on the right-hand side (once on $M$ and once on $U$), so it's implicitly summed over. It is a **dummy index**; its only job is to be summed away. We could have called it $k$ ($V_i = M_{ik} U_k$) and the meaning would be identical. The index $i$, however, appears only once on the right and once on the left. It is a **[free index](@article_id:188936)**. It is not summed. It specifies which component of the vector $\vec{V}$ we are calculating. The fundamental rule is that the free indices must match on both sides of any equation. 
+How do we read this? The index $j$ appears twice on the right-hand side (once on $M$ and once on $U$), so it's implicitly summed over. It is a **dummy index**; its only job is to be summed away. We could have called it $k$ ($V_i = M_{ik} U_k$) and the meaning would be identical. The index $i$, however, appears only once on the right and once on the left. It is a **[free index](@keyword=free_index|lang=en-US|style=Feynman)**. It is not summed. It specifies which component of the vector $\vec{V}$ we are calculating. The fundamental rule is that the free indices must match on both sides of any equation. [@problem_id:1833074]
 
-This is more than a shorthand; it's a new and powerful grammar for physics. It allows for astonishing simplifications. Consider an expression from [differential geometry](@article_id:145324) involving Christoffel symbols: $S_{\mu\nu} = \Gamma^\beta_{\mu\alpha}\Gamma^\alpha_{\beta\nu}$. Here, both $\alpha$ and $\beta$ are repeated, so they are both dummy indices being summed over. Since dummy indices are just placeholders, we are free to relabel them. Let's swap every $\alpha$ with a $\beta$ and every $\beta$ with an $\alpha$. The expression becomes $\Gamma^\alpha_{\mu\beta}\Gamma^\beta_{\alpha\nu}$. But this is the definition of a different term, $P_{\mu\nu}$. With a simple relabeling, we have proven that two monstrous-looking expressions are, in fact, one and the same. 
+This is more than a shorthand; it's a new and powerful grammar for physics. It allows for astonishing simplifications. Consider an expression from [differential geometry](@keyword=differential_geometry|lang=en-US|style=Feynman) involving Christoffel symbols: $S_{\mu\nu} = \Gamma^\beta_{\mu\alpha}\Gamma^\alpha_{\beta\nu}$. Here, both $\alpha$ and $\beta$ are repeated, so they are both dummy indices being summed over. Since dummy indices are just placeholders, we are free to relabel them. Let's swap every $\alpha$ with a $\beta$ and every $\beta$ with an $\alpha$. The expression becomes $\Gamma^\alpha_{\mu\beta}\Gamma^\beta_{\alpha\nu}$. But this is the definition of a different term, $P_{\mu\nu}$. With a simple relabeling, we have proven that two monstrous-looking expressions are, in fact, one and the same. [@problem_id:1505733]
 
-This notation makes complex [tensor algebra](@article_id:161177) almost effortless. The **trace** of a matrix $T$ (the sum of its diagonal elements), normally written $\sum_i T_{ii}$, becomes simply $T^\alpha_\alpha$. The trace of the square of a matrix, $\text{Tr}(T^2)$, becomes $T^\mu_\rho T^\rho_\mu$. The notation lays bare the algebraic structure. When one calculates the trace of the square of a "traceless" tensor, an important quantity in physics, the calculation becomes a fluid manipulation of indices, where properties of objects like the Kronecker delta ($\delta^\mu_\nu$) emerge naturally to simplify the result. 
+This notation makes complex [tensor algebra](@keyword=tensor_algebra|lang=en-US|style=Feynman) almost effortless. The **trace** of a matrix $T$ (the sum of its diagonal elements), normally written $\sum_i T_{ii}$, becomes simply $T^\alpha_\alpha$. The trace of the square of a matrix, $\text{Tr}(T^2)$, becomes $T^\mu_\rho T^\rho_\mu$. The notation lays bare the algebraic structure. When one calculates the trace of the square of a "traceless" tensor, an important quantity in physics, the calculation becomes a fluid manipulation of indices, where properties of objects like the Kronecker delta ($\delta^\mu_\nu$) emerge naturally to simplify the result. [@problem_id:1512598]
 
 From a simple tool for writing down series, sigma notation evolves into a sophisticated engine for theoretical physics. It is a testament to the power of good notation—the ability not just to express ideas, but to transform them, to reveal hidden symmetries, and to make the impossibly complex manageable. It is a journey from counting on your fingers to describing the curvature of spacetime.

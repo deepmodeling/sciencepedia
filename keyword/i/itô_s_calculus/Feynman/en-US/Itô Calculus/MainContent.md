@@ -21,7 +21,7 @@ But when we compute the left side using the formal rules of Itô's calculus, a s
 $$
 \mathbb{E}\left[\int_0^T W_s \, dW_s\right] = 0
 $$
-So we have a paradox. Our classical intuition expects the answer to be, on average, $\frac{T}{2}$, but the rigorous stochastic answer is $0$. The difference is not a mere trifle; it is a systematic, non-zero gap . Something fundamental is broken. The old rules no longer apply.
+So we have a paradox. Our classical intuition expects the answer to be, on average, $\frac{T}{2}$, but the rigorous stochastic answer is $0$. The difference is not a mere trifle; it is a systematic, non-zero gap [@problem_id:1327894]. Something fundamental is broken. The old rules no longer apply.
 
 ### The Jiggle is the Key: Quadratic Variation and Itô's Lemma
 
@@ -29,7 +29,7 @@ The culprit behind this breakdown is the very nature of the random walk. A Brown
 
 This infinite "jiggliness" has a stunning consequence. In classical calculus, a small change $dx$ is proportional to $dt$, so its square, $(dx)^2$, is proportional to $(dt)^2$. As $dt$ becomes infinitesimally small, $(dt)^2$ becomes "infinitely smaller," so we happily ignore it. But for a Brownian motion, the change $dW_t$ is, roughly speaking, proportional to $\sqrt{dt}$. This means its square, $(dW_t)^2$, behaves like $(\sqrt{dt})^2 = dt$. This small quantity does *not* vanish as quickly! It survives.
 
-This surviving "squared jiggle" is the heart of Itô's calculus. We call it **quadratic variation**. While a smooth path has zero quadratic variation, a Brownian motion has a quadratic variation equal to the time elapsed: $[W, W]_t = t$. In the shorthand of [differentials](@article_id:157928), we write this as the most important rule in the new game:
+This surviving "squared jiggle" is the heart of Itô's calculus. We call it **quadratic variation**. While a smooth path has zero quadratic variation, a Brownian motion has a quadratic variation equal to the time elapsed: $[W, W]_t = t$. In the shorthand of [differentials](@keyword=differentials|lang=en-US|style=Feynman), we write this as the most important rule in the new game:
 $$
 (dW_t)^2 = dt
 $$
@@ -61,17 +61,17 @@ There it is! The integral is not $\frac{1}{2}W_T^2$, but $\frac{1}{2}W_T^2 - \fr
 
 ### Is There Another Way? The World of Stratonovich
 
-This might leave you feeling a bit uneasy. Itô's Lemma is powerful, but it comes at the cost of breaking the familiar [chain rule](@article_id:146928). Is this the only way? What if we valued our old rules so much that we were willing to define a new kind of integral just to save them?
+This might leave you feeling a bit uneasy. Itô's Lemma is powerful, but it comes at the cost of breaking the familiar [chain rule](@keyword=chain_rule|lang=en-US|style=Feynman). Is this the only way? What if we valued our old rules so much that we were willing to define a new kind of integral just to save them?
 
-This is precisely the motivation behind the **Stratonovich integral**, denoted with a small circle: $\circ$. The Itô integral is defined by evaluating the function at the *start* of each small time interval (a left-point rule). The Stratonovich integral, in contrast, is defined by evaluating the function at the *midpoint* of the interval . This seemingly small change has enormous consequences.
+This is precisely the motivation behind the **Stratonovich integral**, denoted with a small circle: $\circ$. The Itô integral is defined by evaluating the function at the *start* of each small time interval (a left-point rule). The Stratonovich integral, in contrast, is defined by evaluating the function at the *midpoint* of the interval [@problem_id:2404267]. This seemingly small change has enormous consequences.
 
 Let's revisit our integral $\int_0^t W_s \, dW_s$, but this time in the Stratonovich sense. A remarkable thing happens:
 $$
 \int_0^t W_s \circ dW_s = \frac{1}{2}W_t^2
 $$
-The classical chain rule is restored! . We seem to have a choice between two parallel universes of stochastic calculus:
-1.  **The Itô Universe**: The [chain rule](@article_id:146928) is modified, but the integral has a wonderful statistical property: it's a **[martingale](@article_id:145542)**, meaning its expectation is constant (and typically zero). This makes it the perfect tool for pricing [financial derivatives](@article_id:636543), where "no free lunch" translates to [martingales](@article_id:267285).
-2.  **The Stratonovich Universe**: The classical chain rule holds, making it far more intuitive for physicists and engineers who are used to the rules of ordinary differential equations. It behaves nicely under changes of coordinates, a property Itô's calculus lacks .
+The classical chain rule is restored! [@problem_id:3004197]. We seem to have a choice between two parallel universes of stochastic calculus:
+1.  **The Itô Universe**: The [chain rule](@keyword=chain_rule|lang=en-US|style=Feynman) is modified, but the integral has a wonderful statistical property: it's a **[martingale](@keyword=martingale|lang=en-US|style=Feynman)**, meaning its expectation is constant (and typically zero). This makes it the perfect tool for pricing [financial derivatives](@keyword=financial_derivatives|lang=en-US|style=Feynman), where "no free lunch" translates to [martingales](@keyword=martingales|lang=en-US|style=Feynman).
+2.  **The Stratonovich Universe**: The classical chain rule holds, making it far more intuitive for physicists and engineers who are used to the rules of ordinary differential equations. It behaves nicely under changes of coordinates, a property Itô's calculus lacks [@problem_id:2982360].
 
 ### From One World to Another
 
@@ -79,14 +79,14 @@ If we have two different calculuses, we had better have a dictionary to translat
 $$
 \int_0^t \sigma(W_s) \circ dW_s = \int_0^t \sigma(W_s) \, dW_s + \frac{1}{2}[\sigma(W), W]_t
 $$
-The term on the right, $\frac{1}{2}[\sigma(W), W]_t$, is a "correction" that accounts for the **[quadratic covariation](@article_id:179661)** between the integrand $\sigma(W_t)$ and the integrator $W_t$. For many cases, this simplifies to an extra drift term in the equation. This "drift correction" arises because the midpoint evaluation in the Stratonovich integral creates a subtle correlation between the function's value and the random step being taken, a correlation that is absent in Itô's non-anticipating left-point rule .
+The term on the right, $\frac{1}{2}[\sigma(W), W]_t$, is a "correction" that accounts for the **[quadratic covariation](@keyword=quadratic_covariation|lang=en-US|style=Feynman)** between the integrand $\sigma(W_t)$ and the integrator $W_t$. For many cases, this simplifies to an extra drift term in the equation. This "drift correction" arises because the midpoint evaluation in the Stratonovich integral creates a subtle correlation between the function's value and the random step being taken, a correlation that is absent in Itô's non-anticipating left-point rule [@problem_id:2404267].
 
 ### The Physicist's Choice: Why Reality Might Prefer Stratonovich
 
 This brings us to a deep question: which integral is more "real"? Which one should we use to model the world? The answer is beautifully subtle and reveals the connection between abstract mathematics and physical reality.
 
-The **Wong-Zakai theorem** provides a stunning insight. It tells us that if we model a system driven by "real-world" noise—which, on some microscopic level, is always a very fast but smooth and continuous process—and then take the mathematical limit as this noise becomes infinitely fast and "white," the system's behavior converges to the solution of a **Stratonovich** stochastic differential equation .
+The **Wong-Zakai theorem** provides a stunning insight. It tells us that if we model a system driven by "real-world" noise—which, on some microscopic level, is always a very fast but smooth and continuous process—and then take the mathematical limit as this noise becomes infinitely fast and "white," the system's behavior converges to the solution of a **Stratonovich** stochastic differential equation [@problem_id:3004478].
 
 In a sense, the universe prefers the Stratonovich integral, as it is the natural limit of physical systems. Itô's calculus, then, can be seen as a brilliantly clever mathematical construction, a slight "re-gauging" of reality that yields an object—the Itô integral—with incredibly convenient properties for probability theory and finance.
 
-Ultimately, both frameworks are built upon a single, inviolable principle: the [arrow of time](@article_id:143285). In both Itô and Stratonovich calculus, our integrands must be **non-anticipating**. At any given moment $t$, our decisions and functions can only depend on the information we have gathered *up to* that point, represented by the history of the random walk. We are not allowed to peek into the future . This strict adherence to causality is the bedrock upon which this entire, elegant structure is built. To violate it is to enter an even stranger world of "anticipating calculus," a story for another day.
+Ultimately, both frameworks are built upon a single, inviolable principle: the [arrow of time](@keyword=arrow_of_time|lang=en-US|style=Feynman). In both Itô and Stratonovich calculus, our integrands must be **non-anticipating**. At any given moment $t$, our decisions and functions can only depend on the information we have gathered *up to* that point, represented by the history of the random walk. We are not allowed to peek into the future [@problem_id:2988674]. This strict adherence to causality is the bedrock upon which this entire, elegant structure is built. To violate it is to enter an even stranger world of "anticipating calculus," a story for another day.

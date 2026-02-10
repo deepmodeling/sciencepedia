@@ -1,5 +1,5 @@
 ## Introduction
-In our quest for efficient and flawless communication, a fundamental challenge arises: how can we encode information so that it is both compact and instantly understandable? Sending messages, whether through digital networks or simple flashlights, risks ambiguity if the boundaries between symbols are not clear. Relying on pauses or separators is inefficient, begging the question of whether a smarter code structure could eliminate this problem entirely. This article introduces the elegant solution: the prefix code, a system that builds unambiguous decoding directly into its design. We will first explore the core **Principles and Mechanisms** of [prefix codes](@article_id:266568), uncovering the mathematical laws like Kraft's inequality that govern their construction. Subsequently, in the **Applications and Interdisciplinary Connections** section, we will witness how this powerful concept is applied everywhere from data compression and engineering to biology and the theoretical [limits of computation](@article_id:137715), revealing its profound impact on our digital world and beyond.
+In our quest for efficient and flawless communication, a fundamental challenge arises: how can we encode information so that it is both compact and instantly understandable? Sending messages, whether through digital networks or simple flashlights, risks ambiguity if the boundaries between symbols are not clear. Relying on pauses or separators is inefficient, begging the question of whether a smarter code structure could eliminate this problem entirely. This article introduces the elegant solution: the prefix code, a system that builds unambiguous decoding directly into its design. We will first explore the core **Principles and Mechanisms** of [prefix codes](@keyword=prefix_codes|lang=en-US|style=Feynman), uncovering the mathematical laws like Kraft's inequality that govern their construction. Subsequently, in the **Applications and Interdisciplinary Connections** section, we will witness how this powerful concept is applied everywhere from data compression and engineering to biology and the theoretical [limits of computation](@keyword=limits_of_computation|lang=en-US|style=Feynman), revealing its profound impact on our digital world and beyond.
 
 ## Principles and Mechanisms
 
@@ -9,9 +9,9 @@ This is the central quest in the art of making codes. We want our messages to be
 
 ### The Magic of the Prefix Condition
 
-A code is called a **prefix code** (or an **[instantaneous code](@article_id:267525)**) if no codeword is the beginning—the prefix—of any other codeword. It’s a simple rule with powerful consequences.
+A code is called a **prefix code** (or an **[instantaneous code](@keyword=instantaneous_code|lang=en-US|style=Feynman)**) if no codeword is the beginning—the prefix—of any other codeword. It’s a simple rule with powerful consequences.
 
-Let's look at a few examples from a communications engineer's notebook . Suppose we want to encode four states: 'Clear', 'Overcast', 'Drizzle', and 'Storm'.
+Let's look at a few examples from a communications engineer's notebook [@problem_id:1610373]. Suppose we want to encode four states: 'Clear', 'Overcast', 'Drizzle', and 'Storm'.
 
 Consider this code: `{Clear: 0, Overcast: 10, Drizzle: 110, Storm: 111}`.
 
@@ -23,13 +23,13 @@ Now, let's see why it's called "instantaneous". Imagine you receive a stream of 
 3. The next bit is '0'. It must be 'Clear'. Decode, move on.
 4. The next bits are '1', then '1', then '1'. Aha! '111' is 'Storm'. Decode, move on.
 
-You never have to wait or look ahead to disambiguate. The end of a codeword is self-evident. This is the magic of [prefix codes](@article_id:266568). Other excellent examples include codes where all codewords have the same length, like `{00, 01, 10, 11}`, as no string of a certain length can be a proper prefix of another string of the same length .
+You never have to wait or look ahead to disambiguate. The end of a codeword is self-evident. This is the magic of [prefix codes](@keyword=prefix_codes|lang=en-US|style=Feynman). Other excellent examples include codes where all codewords have the same length, like `{00, 01, 10, 11}`, as no string of a certain length can be a proper prefix of another string of the same length [@problem_id:1632809].
 
-Now consider a problematic code: `{IDLE: 0, ACTIVE: 01, ERROR: 11}` . This is *not* a prefix code, because the codeword for `IDLE` ('0') is a prefix of the codeword for `ACTIVE` ('01'). If you receive a '0', your decoder is stuck in a moment of indecision. Is this `IDLE`? Or is it the beginning of `ACTIVE`? It has to wait for the next bit to find out. This hesitation, this need to look ahead, is precisely what [prefix codes](@article_id:266568) eliminate.
+Now consider a problematic code: `{IDLE: 0, ACTIVE: 01, ERROR: 11}` [@problem_id:1659093]. This is *not* a prefix code, because the codeword for `IDLE` ('0') is a prefix of the codeword for `ACTIVE` ('01'). If you receive a '0', your decoder is stuck in a moment of indecision. Is this `IDLE`? Or is it the beginning of `ACTIVE`? It has to wait for the next bit to find out. This hesitation, this need to look ahead, is precisely what [prefix codes](@keyword=prefix_codes|lang=en-US|style=Feynman) eliminate.
 
 ### A Hierarchy of Codes
 
-So, are [prefix codes](@article_id:266568) the only game in town? Not quite. They are part of a larger, beautiful hierarchy of codes, each class nested within the next like Russian dolls .
+So, are [prefix codes](@keyword=prefix_codes|lang=en-US|style=Feynman) the only game in town? Not quite. They are part of a larger, beautiful hierarchy of codes, each class nested within the next like Russian dolls [@problem_id:1610403].
 
 1.  **Non-Singular Codes:** This is the most basic requirement. A code is non-singular if every unique symbol gets a unique codeword. You can't have both 'A' and 'B' mapping to '01'. This is just common sense.
 
@@ -41,7 +41,7 @@ The crucial insight is that these sets are proper subsets:
 $$
 S_{\text{Instantaneous}} \subset S_{\text{Uniquely Decodable}} \subset S_{\text{Non-Singular}}
 $$
-Every [instantaneous code](@article_id:267525) is uniquely decodable, but not all [uniquely decodable codes](@article_id:261480) are instantaneous. Remember our problematic code `{0, 01, 11}`? While it fails the prefix test, it turns out to be uniquely decodable! . If you get the message `011`, you can reason it out. Does it start with `0` (IDLE)? If so, what's left is `11`, which is `ERROR`. So one possibility is `(IDLE, ERROR)`. Does it start with `01` (ACTIVE)? If so, what's left is `1`, which isn't a codeword. So that path is a dead end. The only valid decoding is `(IDLE, ERROR)`. The message is unambiguous in the end, but you had to think and backtrack. Instantaneous codes save you the trouble.
+Every [instantaneous code](@keyword=instantaneous_code|lang=en-US|style=Feynman) is uniquely decodable, but not all [uniquely decodable codes](@keyword=uniquely_decodable_codes|lang=en-US|style=Feynman) are instantaneous. Remember our problematic code `{0, 01, 11}`? While it fails the prefix test, it turns out to be uniquely decodable! [@problem_id:1659093]. If you get the message `011`, you can reason it out. Does it start with `0` (IDLE)? If so, what's left is `11`, which is `ERROR`. So one possibility is `(IDLE, ERROR)`. Does it start with `01` (ACTIVE)? If so, what's left is `1`, which isn't a codeword. So that path is a dead end. The only valid decoding is `(IDLE, ERROR)`. The message is unambiguous in the end, but you had to think and backtrack. Instantaneous codes save you the trouble.
 
 ### The Budget of Bits: Kraft's Inequality
 
@@ -55,14 +55,14 @@ where $l_i$ are the lengths of your codewords.
 
 Think of it this way: choosing a short codeword is "expensive." If you choose '0' as a codeword (length 1), its cost is $2^{-1} = \frac{1}{2}$. You've just used up half of all possible "coding space," because no other codeword can now start with '0'. If you choose a codeword of length 3, its cost is only $2^{-3} = \frac{1}{8}$. It's "cheaper" because it closes off a much smaller part of the coding possibilities. Kraft's inequality simply states that your total spending cannot exceed your budget of 1.
 
-Let's test some proposed length sets for a four-symbol alphabet :
+Let's test some proposed length sets for a four-symbol alphabet [@problem_id:1625252]:
 -   Lengths $\{2, 2, 2, 2\}$: The sum is $2^{-2} + 2^{-2} + 2^{-2} + 2^{-2} = \frac{1}{4} + \frac{1}{4} + \frac{1}{4} + \frac{1}{4} = 1$. The budget is exactly met. This is possible! (An example is `{00, 01, 10, 11}`).
 -   Lengths $\{1, 2, 3, 3\}$: The sum is $2^{-1} + 2^{-2} + 2^{-3} + 2^{-3} = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{8} = 1$. Again, possible! (An example is `{0, 10, 110, 111}`).
 -   Lengths $\{1, 1, 2, 3\}$: The sum is $2^{-1} + 2^{-1} + 2^{-2} + 2^{-3} = \frac{1}{2} + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} = \frac{11}{8}$. This is greater than 1. You've overspent your budget! It is impossible to construct a prefix code with these lengths.
 
-And here's a startling realization from the **Kraft-McMillan theorem**: this inequality governs not just [prefix codes](@article_id:266568), but *all [uniquely decodable codes](@article_id:261480)*. If your lengths cause the sum to exceed 1, you can't even create one of those tricky, puzzle-like UD codes . For the lengths $\{1, 2, 2, 2\}$, the sum is $2^{-1} + 3 \times 2^{-2} = \frac{1}{2} + \frac{3}{4} = \frac{5}{4} > 1$. The theorem tells us definitively that no [uniquely decodable code](@article_id:269768) of *any* kind can be built with these lengths. The budget is a fundamental limit on information itself.
+And here's a startling realization from the **Kraft-McMillan theorem**: this inequality governs not just [prefix codes](@keyword=prefix_codes|lang=en-US|style=Feynman), but *all [uniquely decodable codes](@keyword=uniquely_decodable_codes|lang=en-US|style=Feynman)*. If your lengths cause the sum to exceed 1, you can't even create one of those tricky, puzzle-like UD codes [@problem_id:1640966]. For the lengths $\{1, 2, 2, 2\}$, the sum is $2^{-1} + 3 \times 2^{-2} = \frac{1}{2} + \frac{3}{4} = \frac{5}{4} > 1$. The theorem tells us definitively that no [uniquely decodable code](@keyword=uniquely_decodable_code|lang=en-US|style=Feynman) of *any* kind can be built with these lengths. The budget is a fundamental limit on information itself.
 
-This principle is not limited to binary. If you build your code from an alphabet of $D$ symbols, the inequality simply becomes :
+This principle is not limited to binary. If you build your code from an alphabet of $D$ symbols, the inequality simply becomes [@problem_id:1636211]:
 $$
 \sum_{i} D^{-l_i} \le 1
 $$
@@ -70,12 +70,12 @@ This allows us to determine the minimum alphabet size needed for a particular se
 
 ### Complete Codes and Unused Space
 
-What happens when the Kraft sum is *strictly less* than 1? For instance, the code `{00, 01, 100, 110, 111}` has lengths $\{2, 2, 3, 3, 3\}$. The sum is $2 \cdot 2^{-2} + 3 \cdot 2^{-3} = \frac{1}{2} + \frac{3}{8} = \frac{7}{8}$ .
+What happens when the Kraft sum is *strictly less* than 1? For instance, the code `{00, 01, 100, 110, 111}` has lengths $\{2, 2, 3, 3, 3\}$. The sum is $2 \cdot 2^{-2} + 3 \cdot 2^{-3} = \frac{1}{2} + \frac{3}{8} = \frac{7}{8}$ [@problem_id:1610397].
 
 This sum being less than 1 tells us the code is not **complete**. There is "room" left in our budget. We have some unused coding space. We could, in principle, add more codewords to our codebook without violating the prefix condition.
 
 How much room, exactly? The remaining budget is $1 - \frac{7}{8} = \frac{1}{8}$. This means we could add, for instance, one more codeword of length 3 (costing $2^{-3} = \frac{1}{8}$), like the currently unused `101`. This would make the code complete.
 
-This idea becomes even more powerful when we quantify it. Imagine an engineer has a ternary ($D=3$) code with lengths $\{1, 2, 2, 3\}$ . The Kraft sum is $3^{-1} + 2 \cdot 3^{-2} + 3^{-3} = \frac{1}{3} + \frac{2}{9} + \frac{1}{27} = \frac{9+6+1}{27} = \frac{16}{27}$. The available budget is $1 - \frac{16}{27} = \frac{11}{27}$. If the engineer wants to add new codewords, all of length 3, how many can be added? Each new word costs $3^{-3} = \frac{1}{27}$. The number of new words, $n$, must satisfy $n \cdot \frac{1}{27} \le \frac{11}{27}$, which means $n \le 11$. They can add up to 11 new codewords of length 3, transforming a clever theoretical inequality into a practical engineering guideline.
+This idea becomes even more powerful when we quantify it. Imagine an engineer has a ternary ($D=3$) code with lengths $\{1, 2, 2, 3\}$ [@problem_id:1632842]. The Kraft sum is $3^{-1} + 2 \cdot 3^{-2} + 3^{-3} = \frac{1}{3} + \frac{2}{9} + \frac{1}{27} = \frac{9+6+1}{27} = \frac{16}{27}$. The available budget is $1 - \frac{16}{27} = \frac{11}{27}$. If the engineer wants to add new codewords, all of length 3, how many can be added? Each new word costs $3^{-3} = \frac{1}{27}$. The number of new words, $n$, must satisfy $n \cdot \frac{1}{27} \le \frac{11}{27}$, which means $n \le 11$. They can add up to 11 new codewords of length 3, transforming a clever theoretical inequality into a practical engineering guideline.
 
 From a simple desire to avoid ambiguity, we have journeyed to a universal law governing the very structure of information. The prefix code is not just a clever trick; it is a manifestation of a deep mathematical order, a budgeting of bits that dictates what is possible and what will forever remain out of reach.

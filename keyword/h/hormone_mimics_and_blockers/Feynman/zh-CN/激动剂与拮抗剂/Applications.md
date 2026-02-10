@@ -4,23 +4,23 @@
 
 ### 驾驭激素：分子设计时代
 
-在历史的大部[分时](@article_id:338112)间里，我们对生物学的干预都是一种蛮力。为了控制害虫，我们使用广谱毒药；为了改变植物，我们使用嫁接刀。但理解[激素受体](@article_id:301758)的逻辑，使得一种更为精妙和智能的方法成为可能。我们现在可以设计出不作为大锤，而是作为极其特异的钥匙的分子，既能开启一个生物过程，也能卡住锁孔将其关闭。
+在历史的大部[分时](@keyword=time_sharing|lang=zh-CN|style=Feynman)间里，我们对生物学的干预都是一种蛮力。为了控制害虫，我们使用广谱毒药；为了改变植物，我们使用嫁接刀。但理解[激素受体](@keyword=hormone_receptors|lang=zh-CN|style=Feynman)的逻辑，使得一种更为精妙和智能的方法成为可能。我们现在可以设计出不作为大锤，而是作为极其特异的钥匙的分子，既能开启一个生物过程，也能卡住锁孔将其关闭。
 
 #### 农业和园艺学的革命
 
-这一点在现代农业中表现得最为明显。考虑控制像蚊子这样的害虫所面临的挑战，它们不仅是滋扰，还传播致命疾病。我们可以部署一种“智能”武器：一种合成的激素模拟物，而不是可能伤害蜜蜂、鸟类和其他野生动物的通用神经毒素。昆虫的发育是一场由激素升降精确编排的芭蕾舞。其中一位领舞者是[保幼激素](@article_id:313047)（Juvenile Hormone, JH）。只要JH存在，昆虫幼虫就会[蜕皮](@article_id:343736)变成另一个更大的幼虫。只有当JH水平降至接近零时，昆虫才能变态为蛹，然后成为成虫。
+这一点在现代农业中表现得最为明显。考虑控制像蚊子这样的害虫所面临的挑战，它们不仅是滋扰，还传播致命疾病。我们可以部署一种“智能”武器：一种合成的激素模拟物，而不是可能伤害蜜蜂、鸟类和其他野生动物的通用神经毒素。昆虫的发育是一场由激素升降精确编排的芭蕾舞。其中一位领舞者是[保幼激素](@keyword=juvenile_hormone|lang=zh-CN|style=Feynman)（Juvenile Hormone, JH）。只要JH存在，昆虫幼虫就会[蜕皮](@keyword=molting|lang=zh-CN|style=Feynman)变成另一个更大的幼虫。只有当JH水平降至接近零时，昆虫才能变态为蛹，然后成为成虫。
 
-通过引入一种能模拟JH的稳定化学物质，即[保幼激素](@article_id:313047)类似物（Juvenile Hormone Analog, JHA），我们可以将昆虫永远困在它的幼年期。每当幼虫准备变成成虫时，JHA信号就会大喊：“保持年轻！”幼虫被迫[蜕皮](@article_id:343736)进入另一个额外的幼虫期。它可能会变成一个庞然大物，但它是一个无法存活的怪物，无法繁殖，注定在完成其生命周期前死亡  。这种方法具有极好的特异性；由于脊椎动物不使用JH，这些化合物对更广泛的生态系统要安全得多。
+通过引入一种能模拟JH的稳定化学物质，即[保幼激素](@keyword=juvenile_hormone|lang=zh-CN|style=Feynman)类似物（Juvenile Hormone Analog, JHA），我们可以将昆虫永远困在它的幼年期。每当幼虫准备变成成虫时，JHA信号就会大喊：“保持年轻！”幼虫被迫[蜕皮](@keyword=molting|lang=zh-CN|style=Feynman)进入另一个额外的幼虫期。它可能会变成一个庞然大物，但它是一个无法存活的怪物，无法繁殖，注定在完成其生命周期前死亡 [@problem_id:1718663] [@problem_id:1694023]。这种方法具有极好的特异性；由于脊椎动物不使用JH，这些化合物对更广泛的生态系统要安全得多。
 
-同样的精妙手法也可以应用于植物。一株植物的结构——无论是高而瘦长还是矮而浓密——都不是偶然的。它由激素控制。例如，一类名为[独脚金内酯](@article_id:311192)（strigolactones）的激素作为抑制信号，阻止主茎上的芽（腋芽）生长成新的分枝。如果你想销售一种更密集、更紧凑的观赏植物，你会怎么做？你设计一种化学阻断剂。一个能够紧密贴合[独脚金内酯](@article_id:311192)受体（我们称之为$D14$受体）但不激活它的分子，充当了竞争[性拮抗](@article_id:347947)剂。它占据了锁孔，阻止了天然的“不分枝”钥匙进入。抑制被解除，植物的腋芽迸发出来，创造出更浓密、更具美感的形态 。
+同样的精妙手法也可以应用于植物。一株植物的结构——无论是高而瘦长还是矮而浓密——都不是偶然的。它由激素控制。例如，一类名为[独脚金内酯](@keyword=strigolactones|lang=zh-CN|style=Feynman)（strigolactones）的激素作为抑制信号，阻止主茎上的芽（腋芽）生长成新的分枝。如果你想销售一种更密集、更紧凑的观赏植物，你会怎么做？你设计一种化学阻断剂。一个能够紧密贴合[独脚金内酯](@keyword=strigolactones|lang=zh-CN|style=Feynman)受体（我们称之为$D14$受体）但不激活它的分子，充当了竞争[性拮抗](@keyword=sexual_antagonism|lang=zh-CN|style=Feynman)剂。它占据了锁孔，阻止了天然的“不分枝”钥匙进入。抑制被解除，植物的腋芽迸发出来，创造出更浓密、更具美感的形态 [@problem_id:1743481]。
 
-同样，气态激素乙烯（ethylene）协调着植物对应激的反应，以及[果实成熟](@article_id:309875)的过程。当一棵在黑暗中生长的幼苗碰到石头时，它会产生[乙烯](@article_id:315597)，引发“三重反应”：停止伸长、茎部变粗、并夸大其顶端弯钩以保护其娇嫩的尖端。通过将植物暴露于像[1-甲基环丙烯](@article_id:309413)（[1-MCP](@article_id:309413)）这样的阻断剂中（它能不可逆地与[乙烯](@article_id:315597)[受体结合](@article_id:369335)），我们可以使它们对[乙烯](@article_id:315597)信号“充耳不闻”。经过[1-MCP](@article_id:309413)处理的暗生幼苗会忽略自身的[乙烯](@article_id:315597)，继续长得又高又细，顶钩伸直，仿佛没有障碍物存在一样 。在商业上，正是利用这一原理来防止苹果在储存中过快成熟，从而将其保质期延长数月。
+同样，气态激素乙烯（ethylene）协调着植物对应激的反应，以及[果实成熟](@keyword=fruit_ripening|lang=zh-CN|style=Feynman)的过程。当一棵在黑暗中生长的幼苗碰到石头时，它会产生[乙烯](@keyword=ethylene|lang=zh-CN|style=Feynman)，引发“三重反应”：停止伸长、茎部变粗、并夸大其顶端弯钩以保护其娇嫩的尖端。通过将植物暴露于像[1-甲基环丙烯](@keyword=1_mcp|lang=zh-CN|style=Feynman)（[1-MCP](@keyword=1_mcp|lang=zh-CN|style=Feynman)）这样的阻断剂中（它能不可逆地与[乙烯](@keyword=ethylene|lang=zh-CN|style=Feynman)[受体结合](@keyword=receptor_binding|lang=zh-CN|style=Feynman)），我们可以使它们对[乙烯](@keyword=ethylene|lang=zh-CN|style=Feynman)信号“充耳不闻”。经过[1-MCP](@keyword=1_mcp|lang=zh-CN|style=Feynman)处理的暗生幼苗会忽略自身的[乙烯](@keyword=ethylene|lang=zh-CN|style=Feynman)，继续长得又高又细，顶钩伸直，仿佛没有障碍物存在一样 [@problem_id:1733083]。在商业上，正是利用这一原理来防止苹果在储存中过快成熟，从而将其保质期延长数月。
 
 #### 现代医学的分子工具箱
 
-[激动剂和拮抗剂](@article_id:342375)的逻辑是现代[药理学](@article_id:302851)的绝对基石。几乎你能想到的每一种药物都遵循这个原理，通过与特定[受体结合](@article_id:369335)来模拟或阻断一个自然信号。其后果，无论是预期的还是非预期的，都直接取决于激素在体内的作用。
+[激动剂和拮抗剂](@keyword=agonist_and_antagonist|lang=zh-CN|style=Feynman)的逻辑是现代[药理学](@keyword=pharmacology|lang=zh-CN|style=Feynman)的绝对基石。几乎你能想到的每一种药物都遵循这个原理，通过与特定[受体结合](@keyword=receptor_binding|lang=zh-CN|style=Feynman)来模拟或阻断一个自然信号。其后果，无论是预期的还是非预期的，都直接取决于激素在体内的作用。
 
-考虑一种被开发为[多巴胺](@article_id:309899)（dopamine）受体强效[激动剂](@article_id:342911)的药物。多巴胺是一种[神经递质](@article_id:301362)，因其在大脑[奖赏通路](@article_id:366917)中的作用而闻名，但它也是一种激素。它是身体主要的[催乳素](@article_id:315812)抑制激素（Prolactin-Inhibiting Hormone, PIH）。多巴胺从[下丘脑](@article_id:312697)释放，行至[垂体前叶](@article_id:313538)，与[催乳素](@article_id:315812)细胞（lactotroph cells）上的$D2$[受体结合](@article_id:369335)，告诉它们停止产生[催乳素](@article_id:315812)（prolactin）——这是产奶所必需的激素。现在，想象一位新妈妈因为一个完全无关的原因服用一种[多巴胺](@article_id:309899)激动剂，也许是作为一种新型的体重管理药物。这种药物会忠实地与它所能找到的任何[多巴胺受体](@article_id:352726)结合，包括垂体中的那些[催乳素](@article_id:315812)细胞。通过强力模仿多巴胺的“停止”信号，该药物会关闭[催乳素](@article_id:315812)的分泌。完全可以预测到，尽管不幸，其副作用是患者可能会发现自己无法产奶 。这揭示了[药理学](@article_id:302851)中一个深刻的教训：一种激素很少只有一个功能，而模拟物或阻断剂会忠实地在激素遍布全身的*所有*工作场所执行其功能。
+考虑一种被开发为[多巴胺](@keyword=dopamine|lang=zh-CN|style=Feynman)（dopamine）受体强效[激动剂](@keyword=agonist|lang=zh-CN|style=Feynman)的药物。多巴胺是一种[神经递质](@keyword=neurotransmitter|lang=zh-CN|style=Feynman)，因其在大脑[奖赏通路](@keyword=reward_pathway|lang=zh-CN|style=Feynman)中的作用而闻名，但它也是一种激素。它是身体主要的[催乳素](@keyword=prolactin|lang=zh-CN|style=Feynman)抑制激素（Prolactin-Inhibiting Hormone, PIH）。多巴胺从[下丘脑](@keyword=hypothalamus|lang=zh-CN|style=Feynman)释放，行至[垂体前叶](@keyword=anterior_pituitary|lang=zh-CN|style=Feynman)，与[催乳素](@keyword=prolactin|lang=zh-CN|style=Feynman)细胞（lactotroph cells）上的$D2$[受体结合](@keyword=receptor_binding|lang=zh-CN|style=Feynman)，告诉它们停止产生[催乳素](@keyword=prolactin|lang=zh-CN|style=Feynman)（prolactin）——这是产奶所必需的激素。现在，想象一位新妈妈因为一个完全无关的原因服用一种[多巴胺](@keyword=dopamine|lang=zh-CN|style=Feynman)激动剂，也许是作为一种新型的体重管理药物。这种药物会忠实地与它所能找到的任何[多巴胺受体](@keyword=dopamine_receptors|lang=zh-CN|style=Feynman)结合，包括垂体中的那些[催乳素](@keyword=prolactin|lang=zh-CN|style=Feynman)细胞。通过强力模仿多巴胺的“停止”信号，该药物会关闭[催乳素](@keyword=prolactin|lang=zh-CN|style=Feynman)的分泌。完全可以预测到，尽管不幸，其副作用是患者可能会发现自己无法产奶 [@problem_id:1712372]。这揭示了[药理学](@keyword=pharmacology|lang=zh-CN|style=Feynman)中一个深刻的教训：一种激素很少只有一个功能，而模拟物或阻断剂会忠实地在激素遍布全身的*所有*工作场所执行其功能。
 
 ### 当信号出错：自然界的模拟物与意想不到的后果
 
@@ -28,20 +28,20 @@
 
 #### 身体内战：自身免疫性疾病
 
-有时，身体自身的免疫系统会犯错，产生一种完美的、尽管是偶然的激素模拟物。[Graves病](@article_id:312455)就是一个经典而悲惨的例子。甲状腺的活动通常由来自垂体的促[甲状腺激素](@article_id:310666)（Thyroid-Stimulating Hormone, TSH）控制。TSH与其在甲状腺细胞上的[受体结合](@article_id:369335)，告诉它们产生甲状腺激素。在[Graves病](@article_id:312455)中，免疫系统产生一种[自身抗体](@article_id:359710)，其形状恰好能与TSH[受体结合](@article_id:369335)并*激活*它。
+有时，身体自身的免疫系统会犯错，产生一种完美的、尽管是偶然的激素模拟物。[Graves病](@keyword=graves__disease|lang=zh-CN|style=Feynman)就是一个经典而悲惨的例子。甲状腺的活动通常由来自垂体的促[甲状腺激素](@keyword=thyroid_hormones|lang=zh-CN|style=Feynman)（Thyroid-Stimulating Hormone, TSH）控制。TSH与其在甲状腺细胞上的[受体结合](@keyword=receptor_binding|lang=zh-CN|style=Feynman)，告诉它们产生甲状腺激素。在[Graves病](@keyword=graves__disease|lang=zh-CN|style=Feynman)中，免疫系统产生一种[自身抗体](@keyword=autoantibodies|lang=zh-CN|style=Feynman)，其形状恰好能与TSH[受体结合](@keyword=receptor_binding|lang=zh-CN|style=Feynman)并*激活*它。
 
-这种[抗体](@article_id:307222)是一种异常的[激动剂](@article_id:342911)。与TSH在受控量下释放不同，这种[抗体](@article_id:307222)是持续产生的，向甲状腺提供一个无休止的“开始！”信号。甲状腺变得过度刺激，生长成甲状腺肿，并大量分泌[甲状腺激素](@article_id:310666)。患者患上[甲状腺功能亢进症](@article_id:369588)，出现心跳加速和体重急剧下降等症状。与此同时，垂体自身的反馈系统工作正常；它检测到高激素水平并完全停止TSH的生产。面对TSH水平为零而甲状腺活动却亢进的悖论，其谜底就在于这种[分子模拟](@article_id:362031)者——刺激性[自身抗体](@article_id:359710)——的存在 。
+这种[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)是一种异常的[激动剂](@keyword=agonist|lang=zh-CN|style=Feynman)。与TSH在受控量下释放不同，这种[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)是持续产生的，向甲状腺提供一个无休止的“开始！”信号。甲状腺变得过度刺激，生长成甲状腺肿，并大量分泌[甲状腺激素](@keyword=thyroid_hormones|lang=zh-CN|style=Feynman)。患者患上[甲状腺功能亢进症](@keyword=hyperthyroidism|lang=zh-CN|style=Feynman)，出现心跳加速和体重急剧下降等症状。与此同时，垂体自身的反馈系统工作正常；它检测到高激素水平并完全停止TSH的生产。面对TSH水平为零而甲状腺活动却亢进的悖论，其谜底就在于这种[分子模拟](@keyword=molecular_simulations|lang=zh-CN|style=Feynman)者——刺激性[自身抗体](@keyword=autoantibodies|lang=zh-CN|style=Feynman)——的存在 [@problem_id:2256794]。
 
 #### 看不见的战场：病原体与宿主
 
-病原体与其宿主之间的进化军备竞赛是一场化学战。例如，植物在检测到入侵细菌的分[子模](@article_id:309341)式时，会关闭叶片上的微小孔隙——[气孔](@article_id:305440)（stomata）——来自我防御。这就像一座城堡升起它的吊桥。但一些聪明的[细菌进化](@article_id:304167)出了对策。细菌 *Pseudomonas syringae* 会产生一种名为[冠菌素](@article_id:342617)（coronatine）的毒素。事实证明，[冠菌素](@article_id:342617)是植物自身应激激素茉莉酰-L-异亮氨酸（jasmonoyl-L-isoleucine, JA-Ile）的惊人结构模拟物。这种激素被一个涉及名为COI1的蛋白质的受体复合物所感知。通过产生[冠菌素](@article_id:342617)，该细菌直接劫持了植物的JA-Ile信号通路。具有生理讽刺意味的是，这个信号会覆盖“关闭”信号，迫使[气孔](@article_id:305440)重新开放，有效地为入侵的军队放下了城堡的吊桥 。
+病原体与其宿主之间的进化军备竞赛是一场化学战。例如，植物在检测到入侵细菌的分[子模](@keyword=submodule|lang=zh-CN|style=Feynman)式时，会关闭叶片上的微小孔隙——[气孔](@keyword=stomata|lang=zh-CN|style=Feynman)（stomata）——来自我防御。这就像一座城堡升起它的吊桥。但一些聪明的[细菌进化](@keyword=bacterial_evolution|lang=zh-CN|style=Feynman)出了对策。细菌 *Pseudomonas syringae* 会产生一种名为[冠菌素](@keyword=coronatine|lang=zh-CN|style=Feynman)（coronatine）的毒素。事实证明，[冠菌素](@keyword=coronatine|lang=zh-CN|style=Feynman)是植物自身应激激素茉莉酰-L-异亮氨酸（jasmonoyl-L-isoleucine, JA-Ile）的惊人结构模拟物。这种激素被一个涉及名为COI1的蛋白质的受体复合物所感知。通过产生[冠菌素](@keyword=coronatine|lang=zh-CN|style=Feynman)，该细菌直接劫持了植物的JA-Ile信号通路。具有生理讽刺意味的是，这个信号会覆盖“关闭”信号，迫使[气孔](@keyword=stomata|lang=zh-CN|style=Feynman)重新开放，有效地为入侵的军队放下了城堡的吊桥 [@problem_id:2576646]。
 
-#### 环境中的回响：[内分泌干扰物](@article_id:377497)
+#### 环境中的回响：[内分泌干扰物](@keyword=endocrine_disrupting_chemicals|lang=zh-CN|style=Feynman)
 
-也许最令人担忧的激素模拟和阻断的例子来自[环境污染](@article_id:376735)。数十年的工业活动已向我们的生态系统释放了无数新颖的化合物，其中一些恰好具有合适的形状，能够干扰生物体的[内分泌系统](@article_id:297404)。这些就是[内分泌干扰](@article_id:366084)化学物质（endocrine-disrupting chemicals, EDCs）。
+也许最令人担忧的激素模拟和阻断的例子来自[环境污染](@keyword=environmental_pollution|lang=zh-CN|style=Feynman)。数十年的工业活动已向我们的生态系统释放了无数新颖的化合物，其中一些恰好具有合适的形状，能够干扰生物体的[内分泌系统](@keyword=endocrine_system|lang=zh-CN|style=Feynman)。这些就是[内分泌干扰](@keyword=hormone_disruption|lang=zh-CN|style=Feynman)化学物质（endocrine-disrupting chemicals, EDCs）。
 
-一个臭名昭著的案例是三丁基锡（tributyltin, TBT），这是一种曾广泛用于船体涂料以防止藤壶生长的化合物。在海洋螺类中，人们发现TBT会导致一种称为“雌性雄化”（imposex）的现象，即雌性开始发育出雄性生殖器官。其机制是一种激素阻断形式。在这些螺类中，与许多动物一样，雄性和雌性特征之间的平衡由雄激素与雌激素的比例决定。一个关键的酶——芳香化酶（aromatase）——将雄激素（如睾酮）转化为雌激素。TBT是芳香化酶的强效抑制剂。通过阻断这种酶，TBT阻止了转化过程，导致雌性体内的雄激素积聚到足以引发雄性解剖结构发育的水平。其生态后果是毁灭性的，导致整个螺类种群变得不育 。
+一个臭名昭著的案例是三丁基锡（tributyltin, TBT），这是一种曾广泛用于船体涂料以防止藤壶生长的化合物。在海洋螺类中，人们发现TBT会导致一种称为“雌性雄化”（imposex）的现象，即雌性开始发育出雄性生殖器官。其机制是一种激素阻断形式。在这些螺类中，与许多动物一样，雄性和雌性特征之间的平衡由雄激素与雌激素的比例决定。一个关键的酶——芳香化酶（aromatase）——将雄激素（如睾酮）转化为雌激素。TBT是芳香化酶的强效抑制剂。通过阻断这种酶，TBT阻止了转化过程，导致雌性体内的雄激素积聚到足以引发雄性解剖结构发育的水平。其生态后果是毁灭性的，导致整个螺类种群变得不育 [@problem_id:1683537]。
 
-EDCs的发现为[毒理学](@article_id:334857)增加了一层新的复杂性。设计一种对害虫致命但对虾等有益甲壳类动物无害的杀虫剂，需要极高的特异性。昆虫和甲壳类动物都是节肢动物，使用同一类激素——蜕皮[类固醇](@article_id:306988)（ecdysteroids）——来引发[蜕皮](@article_id:343736)。然而，一种精心设计的杀虫剂可以杀死一个而不伤害另一个。秘密在于进化。经过数百万年，昆虫和甲壳类动物谱系中[蜕皮激素受体](@article_id:316638)蛋白的精确三维结构已经发生了足够的分化。一种合成的阻断剂可能与昆虫受体紧密结合，但对虾的受体没有亲和力，从而提供了使其既有效又相对安全的目标特异性 。
+EDCs的发现为[毒理学](@keyword=toxicology|lang=zh-CN|style=Feynman)增加了一层新的复杂性。设计一种对害虫致命但对虾等有益甲壳类动物无害的杀虫剂，需要极高的特异性。昆虫和甲壳类动物都是节肢动物，使用同一类激素——蜕皮[类固醇](@keyword=steroids|lang=zh-CN|style=Feynman)（ecdysteroids）——来引发[蜕皮](@keyword=molting|lang=zh-CN|style=Feynman)。然而，一种精心设计的杀虫剂可以杀死一个而不伤害另一个。秘密在于进化。经过数百万年，昆虫和甲壳类动物谱系中[蜕皮激素受体](@keyword=ecdysone_receptor|lang=zh-CN|style=Feynman)蛋白的精确三维结构已经发生了足够的分化。一种合成的阻断剂可能与昆虫受体紧密结合，但对虾的受体没有亲和力，从而提供了使其既有效又相对安全的目标特异性 [@problem_id:1730008]。
 
-这给我们带来了一个最终的、深刻的挑战：当我们观察到野生种群的变化时，我们如何区分环境[内分泌干扰物](@article_id:377497)的影响与自然的、遗传控制的变异？例如，一种仅在雄性中出现的性状，可能是一种经典的[限性遗传](@article_id:364650)表达，即基因效应仅在高雄激素环境中表现出来。但原则上，一种抗雄激素的污染物也可能通过改变该激素环境而导致类似的模式。厘清这些可能性——遗传、环境及其相互作用——需要极其谨慎和复杂的科学调查，通常涉及将基因、产前环境和成年期激素状态的影响分离开来的[对照实验](@article_id:305164) 。这是一个严峻的提醒，随着我们不断塑造化学世界，我们必须更加警惕地倾听我们的创造物在生命精密的激素交响乐中发出的那些微妙的、有时不和谐的回响。
+这给我们带来了一个最终的、深刻的挑战：当我们观察到野生种群的变化时，我们如何区分环境[内分泌干扰物](@keyword=endocrine_disrupting_chemicals|lang=zh-CN|style=Feynman)的影响与自然的、遗传控制的变异？例如，一种仅在雄性中出现的性状，可能是一种经典的[限性遗传](@keyword=sex_limited_inheritance|lang=zh-CN|style=Feynman)表达，即基因效应仅在高雄激素环境中表现出来。但原则上，一种抗雄激素的污染物也可能通过改变该激素环境而导致类似的模式。厘清这些可能性——遗传、环境及其相互作用——需要极其谨慎和复杂的科学调查，通常涉及将基因、产前环境和成年期激素状态的影响分离开来的[对照实验](@keyword=controlled_experiment|lang=zh-CN|style=Feynman) [@problem_id:2850321]。这是一个严峻的提醒，随着我们不断塑造化学世界，我们必须更加警惕地倾听我们的创造物在生命精密的激素交响乐中发出的那些微妙的、有时不和谐的回响。

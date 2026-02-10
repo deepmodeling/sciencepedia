@@ -1,13 +1,13 @@
 ## Introduction
 In our digital world, every piece of information, from a text message to a satellite signal, is vulnerable to corruption. A stray cosmic ray or a flicker in memory can flip a 0 to a 1, silently altering data and threatening the integrity of communication. How can we build systems that are robust against such inevitable noise? The answer lies not in preventing errors, but in designing clever ways to detect and correct them. This requires a new way of thinking about information—not just as sequences of bits, but as points in a geometric space, where distance signifies difference.
 
-This article delves into the elegant geometry of [error correction](@article_id:273268) through the concept of Hamming spheres. We will first explore the foundational **Principles and Mechanisms**, defining how "distance" is measured in the binary universe and how "spheres of protection" can be drawn around valid messages. This will lead us to the profound Hamming bound, a universal speed limit on reliable communication, and the tantalizing quest for "[perfect codes](@article_id:264910)" that achieve this limit. Following this theoretical grounding, we will journey into **Applications and Interdisciplinary Connections**, discovering how these geometric principles are not just abstract curiosities but are the blueprints for some of the most efficient codes ever designed and are now being used to decode the language of life itself in genomics and DNA data storage.
+This article delves into the elegant geometry of [error correction](@keyword=error_correction|lang=en-US|style=Feynman) through the concept of Hamming spheres. We will first explore the foundational **Principles and Mechanisms**, defining how "distance" is measured in the binary universe and how "spheres of protection" can be drawn around valid messages. This will lead us to the profound Hamming bound, a universal speed limit on reliable communication, and the tantalizing quest for "[perfect codes](@keyword=perfect_codes|lang=en-US|style=Feynman)" that achieve this limit. Following this theoretical grounding, we will journey into **Applications and Interdisciplinary Connections**, discovering how these geometric principles are not just abstract curiosities but are the blueprints for some of the most efficient codes ever designed and are now being used to decode the language of life itself in genomics and DNA data storage.
 
 ## Principles and Mechanisms
 
 Imagine you are trying to communicate with a friend across a noisy room. You shout a word, but the din of the crowd might garble it. Your friend might hear "cat" when you said "bat". How can you make your communication more robust? You might agree beforehand on a special list of words—say, only "TANGO", "HOTEL", "ECHO". These words are chosen to be very different from one another. If your friend hears "HOKEL", they can guess you probably meant "HOTEL", because it's much "closer" than "TANGO".
 
-This simple idea is the heart of [error correction](@article_id:273268). We just need to make it precise. What does it mean for messages to be "close" or "far apart" in a digital world? And how can we choose our special list of words to be as efficient as possible?
+This simple idea is the heart of [error correction](@keyword=error_correction|lang=en-US|style=Feynman). We just need to make it precise. What does it mean for messages to be "close" or "far apart" in a digital world? And how can we choose our special list of words to be as efficient as possible?
 
 ### A Universe of Messages: Distance in a Digital World
 
@@ -32,7 +32,7 @@ So, the volume is given by the sum: $V(n,t) = \sum_{i=0}^{t} \binom{n}{i}$.
 
 This formula isn't just for binary codes. If our alphabet had $q$ symbols instead of just 2 (like the ternary alphabet {0, 1, 2}), each flip could be to any of the other $q-1$ symbols. The term for distance $i$ becomes $\binom{n}{i}(q-1)^i$, counting the ways to choose the $i$ positions and the ways to change the symbols in them.
 
-For our decoding scheme to work without ambiguity, these spheres of protection around our chosen codewords must not overlap. If a received string falls into the sphere of `codeword A` and also the sphere of `codeword B`, how would we know which was sent? We wouldn't. Therefore, the fundamental rule of [error-correcting codes](@article_id:153300) is that the Hamming spheres of radius $t$ for any two distinct codewords must be completely separate—their intersection must be the empty set.
+For our decoding scheme to work without ambiguity, these spheres of protection around our chosen codewords must not overlap. If a received string falls into the sphere of `codeword A` and also the sphere of `codeword B`, how would we know which was sent? We wouldn't. Therefore, the fundamental rule of [error-correcting codes](@keyword=error_correcting_codes|lang=en-US|style=Feynman) is that the Hamming spheres of radius $t$ for any two distinct codewords must be completely separate—their intersection must be the empty set.
 
 ### The Ultimate Speed Limit: The Hamming Bound
 
@@ -40,7 +40,7 @@ This simple geometric constraint—that our spheres cannot overlap—leads to a 
 
 Our "box" is the entire universe of $2^n$ possible bit strings. Our "bubbles" are the $M$ Hamming spheres, one for each of our $M$ codewords. Each sphere has a volume of $V(n,t)$. Since the spheres must be disjoint, their total volume cannot possibly exceed the volume of the entire space.
 
-This gives us the famous **[sphere-packing bound](@article_id:147108)**, or **Hamming bound**:
+This gives us the famous **[sphere-packing bound](@keyword=sphere_packing_bound|lang=en-US|style=Feynman)**, or **Hamming bound**:
 
 $$ M \cdot V(n,t) \le 2^n $$
 
@@ -56,15 +56,15 @@ Solving for $M$, we find $M \le \frac{64}{7} \approx 9.14$. Since we can't have 
 
 The Hamming bound gives us an upper limit. But it also hints at a tantalizing possibility. What if we could be so clever in our choice of codewords that the spheres pack *perfectly*? What if they fit together without any gaps, completely filling the entire space like a perfectly laid tile floor?
 
-Such a code is called a **[perfect code](@article_id:265751)**. For a [perfect code](@article_id:265751), the inequality in the Hamming bound becomes a strict equality:
+Such a code is called a **[perfect code](@keyword=perfect_code|lang=en-US|style=Feynman)**. For a [perfect code](@keyword=perfect_code|lang=en-US|style=Feynman), the inequality in the Hamming bound becomes a strict equality:
 
 $$ M \cdot V(n,t) = 2^n $$
 
 This means that *every possible string* in the universe of length $n$ is in exactly one decoding sphere. There is no wasted space, no ambiguity. Every received message, no matter how corrupted (within the correctable limit), has a unique, pre-determined interpretation.
 
-This seems like an impossibly high standard, yet such codes exist! From the equality, we can predict their properties. For a perfect single-error-correcting ($t=1$) [binary code](@article_id:266103), the volume of each sphere is $V(n,1) = n+1$. The number of codewords must therefore be $M = \frac{2^n}{n+1}$.
+This seems like an impossibly high standard, yet such codes exist! From the equality, we can predict their properties. For a perfect single-error-correcting ($t=1$) [binary code](@keyword=binary_code|lang=en-US|style=Feynman), the volume of each sphere is $V(n,1) = n+1$. The number of codewords must therefore be $M = \frac{2^n}{n+1}$.
 
-This formula immediately tells us that [perfect codes](@article_id:264910) are rare. For most values of $n$, $2^n/(n+1)$ is not an integer. But for certain "magic" values of $n$, it works.
+This formula immediately tells us that [perfect codes](@keyword=perfect_codes|lang=en-US|style=Feynman) are rare. For most values of $n$, $2^n/(n+1)$ is not an integer. But for certain "magic" values of $n$, it works.
 
 *   For $n=7$, $M = \frac{2^7}{7+1} = \frac{128}{8} = 16$. This is the celebrated $[7,4]$ Hamming code, which encodes 4 information bits into a 7-bit codeword.
 *   For $n=31$, $M = \frac{2^{31}}{31+1} = \frac{2^{31}}{32} = 2^{26}$. This describes another Hamming code, capable of encoding 26 information bits into a 31-bit block that can correct any single error.
@@ -73,11 +73,11 @@ Perfection is not limited to single errors. One of the most beautiful objects in
 
 $$ V(23,3) = \binom{23}{0} + \binom{23}{1} + \binom{23}{2} + \binom{23}{3} = 1 + 23 + 253 + 1771 = 2048 $$
 
-Amazingly, $2048$ is exactly $2^{11}$. The Hamming bound equality predicts the number of codewords should be $M = \frac{2^{23}}{V(23,3)} = \frac{2^{23}}{2^{11}} = 2^{12} = 4096$. And indeed, the Golay code has exactly 4096 codewords, meaning it can carry 12 bits of pure information. It is a [perfect code](@article_id:265751).
+Amazingly, $2048$ is exactly $2^{11}$. The Hamming bound equality predicts the number of codewords should be $M = \frac{2^{23}}{V(23,3)} = \frac{2^{23}}{2^{11}} = 2^{12} = 4096$. And indeed, the Golay code has exactly 4096 codewords, meaning it can carry 12 bits of pure information. It is a [perfect code](@keyword=perfect_code|lang=en-US|style=Feynman).
 
 ### Life on the Edge of a Perfect World
 
-Living in a "perfectly tiled" universe has some strange and fascinating consequences. Because the spheres cover everything, the farthest any string can be from the nearest codeword is exactly $t$. This is called the **covering radius**, $\rho$, and for a [perfect code](@article_id:265751), $\rho = t$. There are no remote corners or "no man's lands" in the message space.
+Living in a "perfectly tiled" universe has some strange and fascinating consequences. Because the spheres cover everything, the farthest any string can be from the nearest codeword is exactly $t$. This is called the **covering radius**, $\rho$, and for a [perfect code](@keyword=perfect_code|lang=en-US|style=Feynman), $\rho = t$. There are no remote corners or "no man's lands" in the message space.
 
 But this perfection comes with a sharp edge. What happens if an error occurs that is just beyond the code's capability? Suppose we use a perfect $t$-error-correcting code, and a transmitted codeword $c_{tx}$ is hit with $t+1$ bit flips. The received message $r_{rx}$ is now at a distance of $t+1$ from its true origin. It lies *outside* its home sphere.
 
@@ -87,12 +87,12 @@ Even more remarkably, we can say exactly how far this wrongly decoded codeword i
 
 ### The Grand Unification: Packing, Entropy, and the Price of Information
 
-This beautiful geometric picture of [sphere packing](@article_id:267801) connects to one of the deepest ideas in science: entropy. Let's zoom out and consider families of very long codes, which are essential for modern communication. Instead of counting absolute errors $t$, we think about the fraction of errors, $\delta = t/n$.
+This beautiful geometric picture of [sphere packing](@keyword=sphere_packing|lang=en-US|style=Feynman) connects to one of the deepest ideas in science: entropy. Let's zoom out and consider families of very long codes, which are essential for modern communication. Instead of counting absolute errors $t$, we think about the fraction of errors, $\delta = t/n$.
 
-The Hamming bound can be rephrased in terms of the code's **rate** $R$, which measures how many information bits are sent per transmitted bit ($R = k/n$). For large $n$, a powerful approximation relates the volume of the Hamming sphere to the **[binary entropy function](@article_id:268509)**, $H(\delta) = -\delta \log_2(\delta) - (1-\delta) \log_2(1-\delta)$. The Hamming bound then takes on a new form:
+The Hamming bound can be rephrased in terms of the code's **rate** $R$, which measures how many information bits are sent per transmitted bit ($R = k/n$). For large $n$, a powerful approximation relates the volume of the Hamming sphere to the **[binary entropy function](@keyword=binary_entropy_function|lang=en-US|style=Feynman)**, $H(\delta) = -\delta \log_2(\delta) - (1-\delta) \log_2(1-\delta)$. The Hamming bound then takes on a new form:
 
 $$ R \le 1 - H(\delta) $$
 
-This is the asymptotic [sphere-packing bound](@article_id:147108). What does it tell us? It says the maximum possible rate of your code is 1 (sending all information, no protection) minus a penalty term, $H(\delta)$. The function $H(\delta)$ can be interpreted as the amount of "information" or "uncertainty" contained in the error pattern itself. It is the fundamental price you must pay, in terms of [code rate](@article_id:175967), to be able to correct a fraction $\delta$ of errors.
+This is the asymptotic [sphere-packing bound](@keyword=sphere_packing_bound|lang=en-US|style=Feynman). What does it tell us? It says the maximum possible rate of your code is 1 (sending all information, no protection) minus a penalty term, $H(\delta)$. The function $H(\delta)$ can be interpreted as the amount of "information" or "uncertainty" contained in the error pattern itself. It is the fundamental price you must pay, in terms of [code rate](@keyword=code_rate|lang=en-US|style=Feynman), to be able to correct a fraction $\delta$ of errors.
 
-Here we see a grand unification. The purely geometric problem of packing spheres into a [discrete space](@article_id:155191) is ultimately governed by the same laws of entropy that govern thermodynamics and the flow of information itself. The quest to send a clear message through a [noisy channel](@article_id:261699) forces us to confront these fundamental limits, and the most elegant solutions, the [perfect codes](@article_id:264910), are those that respect this deep geometry with an almost supernatural efficiency.
+Here we see a grand unification. The purely geometric problem of packing spheres into a [discrete space](@keyword=discrete_space|lang=en-US|style=Feynman) is ultimately governed by the same laws of entropy that govern thermodynamics and the flow of information itself. The quest to send a clear message through a [noisy channel](@keyword=noisy_channel|lang=en-US|style=Feynman) forces us to confront these fundamental limits, and the most elegant solutions, the [perfect codes](@keyword=perfect_codes|lang=en-US|style=Feynman), are those that respect this deep geometry with an almost supernatural efficiency.

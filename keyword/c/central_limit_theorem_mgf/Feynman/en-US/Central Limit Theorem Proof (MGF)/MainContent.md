@@ -1,5 +1,5 @@
 ## Introduction
-The Central Limit Theorem (CLT) is one of the most remarkable results in all of probability theory and statistics. It describes a universal phenomenon: the sum of a large number of [independent random variables](@article_id:273402), regardless of their original distribution, tends to follow a normal distribution—the iconic bell curve. This powerful idea underpins countless statistical methods and models of the natural world. But while its effect is widely observed, the question remains: what is the underlying mathematical mechanism that orchestrates this convergence from chaos to order?
+The Central Limit Theorem (CLT) is one of the most remarkable results in all of probability theory and statistics. It describes a universal phenomenon: the sum of a large number of [independent random variables](@keyword=independent_random_variables|lang=en-US|style=Feynman), regardless of their original distribution, tends to follow a normal distribution—the iconic bell curve. This powerful idea underpins countless statistical methods and models of the natural world. But while its effect is widely observed, the question remains: what is the underlying mathematical mechanism that orchestrates this convergence from chaos to order?
 
 This article demystifies the CLT by presenting a rigorous yet intuitive proof using a powerful mathematical tool: the Moment-Generating Function (MGF). We will move beyond simply stating the theorem to explore the 'how' and 'why' behind its magic, revealing the machinery that transforms complex sums into a simple, predictable form.
 
@@ -23,7 +23,7 @@ $$
 
 The coefficients of the series are the **moments** of the random variable ($\mathbb{E}[X]$, $\mathbb{E}[X^2]$, etc.), which describe its shape, center, spread, and so on. The MGF packages all this information into a single, neat function.
 
-Here’s the real magic: this fingerprint is unique. If two random variables have MGFs that are identical in some [open interval](@article_id:143535) around $t=0$, then they must have the exact same distribution. This is a deep and powerful result, sometimes called the **uniqueness theorem for MGFs**. It's the key that allows us to prove the Central Limit Theorem. If we can show that the MGF of our sum of variables approaches the MGF of a [normal distribution](@article_id:136983), then we have no choice but to conclude that the sum *itself* is becoming normally distributed .
+Here’s the real magic: this fingerprint is unique. If two random variables have MGFs that are identical in some [open interval](@keyword=open_interval|lang=en-US|style=Feynman) around $t=0$, then they must have the exact same distribution. This is a deep and powerful result, sometimes called the **uniqueness theorem for MGFs**. It's the key that allows us to prove the Central Limit Theorem. If we can show that the MGF of our sum of variables approaches the MGF of a [normal distribution](@keyword=normal_distribution|lang=en-US|style=Feynman), then we have no choice but to conclude that the sum *itself* is becoming normally distributed [@problem_id:1395641].
 
 ### The Quest: Finding the Shape of Large Sums
 
@@ -31,7 +31,7 @@ Our goal is to understand the shape of a sum of many independent and identically
 
 Trying to figure out the probability distribution of $S_n$ directly is a nightmare. It involves a mathematical operation called convolution, and with each variable we add, the calculation gets exponentially more complex. It’s like trying to predict the final shape of a sand pile by tracking every single grain.
 
-But with our MGF [transformer](@article_id:265135), the problem becomes astonishingly simple. Because the variables are independent, the expectation of a product is the product of expectations. This means the MGF of the sum $S_n$ is just the product of the individual MGFs:
+But with our MGF [transformer](@keyword=transformer|lang=en-US|style=Feynman), the problem becomes astonishingly simple. Because the variables are independent, the expectation of a product is the product of expectations. This means the MGF of the sum $S_n$ is just the product of the individual MGFs:
 
 $$
 M_{S_n}(t) = \mathbb{E}[\exp(t(X_1 + \dots + X_n))] = \mathbb{E}[\exp(tX_1) \cdots \exp(tX_n)] = \mathbb{E}[\exp(tX_1)] \cdots \mathbb{E}[\exp(tX_n)] = [M_X(t)]^n
@@ -47,7 +47,7 @@ First, we shift the distribution so its mean is always at zero. We do this by su
 
 Second, we rescale it so its variance is always constant (we'll choose 1 for convenience). The variance of $S_n$ is $n\sigma^2$, so its standard deviation is $\sigma\sqrt{n}$. To make the variance 1, we must divide by this amount.
 
-This gives us our [standardized random variable](@article_id:202569), which we'll call $Z_n$:
+This gives us our [standardized random variable](@keyword=standardized_random_variable|lang=en-US|style=Feynman), which we'll call $Z_n$:
 
 $$
 Z_n = \frac{S_n - n\mu}{\sigma\sqrt{n}}
@@ -57,7 +57,7 @@ This variable $Z_n$ has a mean of 0 and a variance of 1, for any $n$. It’s pin
 
 ### The Grand Unveiling: The Limit of the MGF
 
-Let's apply our MGF machinery to $Z_n$ and see what happens. This is the heart of the proof . It's easier to work with centered variables first. Let $Y_i = X_i - \mu$. Each $Y_i$ has a mean of 0 and a variance of $\sigma^2$. Our standardized sum becomes:
+Let's apply our MGF machinery to $Z_n$ and see what happens. This is the heart of the proof [@problem_id:1937185]. It's easier to work with centered variables first. Let $Y_i = X_i - \mu$. Each $Y_i$ has a mean of 0 and a variance of $\sigma^2$. Our standardized sum becomes:
 
 $$
 Z_n = \frac{\sum_{i=1}^n Y_i}{\sigma\sqrt{n}}
@@ -107,19 +107,19 @@ And what distribution has this as its MGF fingerprint? The standard normal distr
 
 This isn't just an abstract formula; it's a powerful statement about universality. The fine details of the original distribution get washed away.
 
-For instance, consider a sequence of variables whose MGF is given by $M_{X_n}(t) = (\cosh(t/\sqrt{n}))^n$ . This looks exotic, but $\cosh(x)$ expands as $1 + x^2/2! + x^4/4! + \dots$. For large $n$, $x = t/\sqrt{n}$ is small, so $\cosh(t/\sqrt{n}) \approx 1 + t^2/(2n)$. The MGF becomes approximately $(1+t^2/(2n))^n$, which, once again, marches inexorably towards $\exp(t^2/2)$.
+For instance, consider a sequence of variables whose MGF is given by $M_{X_n}(t) = (\cosh(t/\sqrt{n}))^n$ [@problem_id:1353089]. This looks exotic, but $\cosh(x)$ expands as $1 + x^2/2! + x^4/4! + \dots$. For large $n$, $x = t/\sqrt{n}$ is small, so $\cosh(t/\sqrt{n}) \approx 1 + t^2/(2n)$. The MGF becomes approximately $(1+t^2/(2n))^n$, which, once again, marches inexorably towards $\exp(t^2/2)$.
 
-Or take a completely different starting point: a simple discrete variable that can be $-a$, $0$, or $+a$ with certain probabilities . You can calculate its MGF, go through the same standardization process, take the limit as you sum up $n$ of them, and out pops the same answer: $\exp(t^2/2)$.
+Or take a completely different starting point: a simple discrete variable that can be $-a$, $0$, or $+a$ with certain probabilities [@problem_id:1966540]. You can calculate its MGF, go through the same standardization process, take the limit as you sum up $n$ of them, and out pops the same answer: $\exp(t^2/2)$.
 
-It's a form of [statistical entropy](@article_id:149598). The individual quirks and features of the initial components are lost, and what remains is a simple, universal form governed only by the mean and variance.
+It's a form of [statistical entropy](@keyword=statistical_entropy|lang=en-US|style=Feynman). The individual quirks and features of the initial components are lost, and what remains is a simple, universal form governed only by the mean and variance.
 
 ### The Fine Print: When Can We Trust the Magic?
 
-Now, a careful physicist or mathematician always asks: are there any hidden assumptions? Can we really trust this sleight of hand? For instance, when we used the Taylor expansion, we were implicitly assuming the limit and the expectation could be swapped. This is not always permissible in mathematics .
+Now, a careful physicist or mathematician always asks: are there any hidden assumptions? Can we really trust this sleight of hand? For instance, when we used the Taylor expansion, we were implicitly assuming the limit and the expectation could be swapped. This is not always permissible in mathematics [@problem_id:1424292].
 
-This is where the rigor of the theory provides the safety net. The existence of the MGF in the first place, specifically in an interval around zero, provides the necessary "good behavior" for the random variables. It ensures they don't have "fat tails" that run off to infinity in a way that would spoil our calculation. A more formal condition, like the one in problem , provides a rigorous guarantee that the sequence is "[uniformly integrable](@article_id:202399)," which is the technical term for this good behavior, allowing the limit and expectation to be interchanged.
+This is where the rigor of the theory provides the safety net. The existence of the MGF in the first place, specifically in an interval around zero, provides the necessary "good behavior" for the random variables. It ensures they don't have "fat tails" that run off to infinity in a way that would spoil our calculation. A more formal condition, like the one in problem [@problem_id:1424292], provides a rigorous guarantee that the sequence is "[uniformly integrable](@keyword=uniformly_integrable|lang=en-US|style=Feynman)," which is the technical term for this good behavior, allowing the limit and expectation to be interchanged.
 
-Furthermore, the very reason we care so much about the MGF is that its convergence is not just a curiosity—it implies the convergence of the distribution itself. This is guaranteed by the **Curtiss-Lévy Continuity Theorem**, a cornerstone of probability theory. As long as the limiting function, $\exp(t^2/2)$, is itself the MGF of a well-behaved distribution (which it is), the convergence is guaranteed .
+Furthermore, the very reason we care so much about the MGF is that its convergence is not just a curiosity—it implies the convergence of the distribution itself. This is guaranteed by the **Curtiss-Lévy Continuity Theorem**, a cornerstone of probability theory. As long as the limiting function, $\exp(t^2/2)$, is itself the MGF of a well-behaved distribution (which it is), the convergence is guaranteed [@problem_id:1395641].
 
 ### Beyond "If" to "How Fast?": The Rate of Convergence
 
@@ -133,4 +133,4 @@ $$
 
 The first term we ignored, the $s^3$ term, involves the third moment of the distribution, which is related to its **skewness** (its lopsidedness). This term is the dominant source of error. When we follow this term through the derivation, we find that the error in our approximation decreases in proportion to $1/\sqrt{n}$.
 
-This means that to get 10 times more accurate, you need 100 times more data! By carefully analyzing this error term, as explored in problems like , one can even derive an explicit formula for the number of samples $N_c$ needed to ensure the difference between the true MGF and the normal MGF is less than some small tolerance $\varepsilon$. This turns the CLT from a beautiful abstract idea into a concrete engineering tool, allowing us to put [error bars](@article_id:268116) on our approximations and know precisely when we can trust the elegant simplicity of the bell curve.
+This means that to get 10 times more accurate, you need 100 times more data! By carefully analyzing this error term, as explored in problems like [@problem_id:442343], one can even derive an explicit formula for the number of samples $N_c$ needed to ensure the difference between the true MGF and the normal MGF is less than some small tolerance $\varepsilon$. This turns the CLT from a beautiful abstract idea into a concrete engineering tool, allowing us to put [error bars](@keyword=error_bars|lang=en-US|style=Feynman) on our approximations and know precisely when we can trust the elegant simplicity of the bell curve.

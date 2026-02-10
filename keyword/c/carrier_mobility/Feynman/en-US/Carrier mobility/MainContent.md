@@ -7,7 +7,7 @@ Imagine you are trying to push a small cart through a crowd of people. How fast 
 
 ### The Big Picture: Drift Velocity and Electric Fields
 
-When we apply a voltage across a piece of material, we create an **electric field**, denoted by $E$. This field exerts a force on the [free charge](@entry_id:264392) carriers within the material—typically electrons or their counterparts, holes. This force accelerates them, but they don't accelerate forever. Their journey is a frantic pinball-like game of start-stop, as they constantly collide with the atomic landscape. The net result is that the entire sea of carriers drifts in the direction of the [electric force](@entry_id:264587) with a certain average speed, known as the **drift velocity**, $v_d$.
+When we apply a voltage across a piece of material, we create an **electric field**, denoted by $E$. This field exerts a force on the [free charge](@keyword=free_charge|lang=en-US|style=Feynman) carriers within the material—typically electrons or their counterparts, holes. This force accelerates them, but they don't accelerate forever. Their journey is a frantic pinball-like game of start-stop, as they constantly collide with the atomic landscape. The net result is that the entire sea of carriers drifts in the direction of the [electric force](@keyword=electric_force|lang=en-US|style=Feynman) with a certain average speed, known as the **drift velocity**, $v_d$.
 
 For a wide range of conditions, this drift velocity is directly proportional to the strength of the electric field. The constant of proportionality is the mobility, represented by the Greek letter $\mu$ (mu). This gives us the foundational definition of mobility:
 
@@ -17,7 +17,7 @@ This simple equation is powerful. It tells us that for the same electric push ($
 
 $$ \sigma = n |q| \mu $$
 
-Here, $|q|$ is the magnitude of the charge on a single carrier (the [elementary charge](@entry_id:272261), $e$, for electrons and holes). This shows that a material can be highly conductive either by having a vast number of carriers or by having carriers that are exceptionally mobile. In many practical devices, like the [doped semiconductors](@entry_id:145553) used in computer chips, the number of carriers ($n$) is intentionally set by adding impurities. Therefore, the mobility becomes the star player determining the device's performance .
+Here, $|q|$ is the magnitude of the charge on a single carrier (the [elementary charge](@keyword=elementary_charge|lang=en-US|style=Feynman), $e$, for electrons and holes). This shows that a material can be highly conductive either by having a vast number of carriers or by having carriers that are exceptionally mobile. In many practical devices, like the [doped semiconductors](@keyword=doped_semiconductors|lang=en-US|style=Feynman) used in computer chips, the number of carriers ($n$) is intentionally set by adding impurities. Therefore, the mobility becomes the star player determining the device's performance [@problem_id:1283443].
 
 ### The Microscopic Dance: A Pinball-Machine World
 
@@ -27,13 +27,13 @@ However, the ball's path is not smooth. It is constantly colliding with the "pin
 
 A longer relaxation time means more "free time" for the carrier to accelerate and gain speed before its next collision. It's like driving on a highway with very few other cars versus being in bumper-to-bumper traffic.
 
-The other factor is the carrier's inertia. How easily does it accelerate? In the quantum world of a crystal, an electron doesn't behave as if it has its normal rest mass, $m_0$. Its interaction with the [periodic potential](@entry_id:140652) of the crystal lattice makes it behave as if it has a different mass, the **effective mass**, $m^*$. This is a profound idea. The crystal's structure can make an electron feel much lighter or heavier than it actually is.
+The other factor is the carrier's inertia. How easily does it accelerate? In the quantum world of a crystal, an electron doesn't behave as if it has its normal rest mass, $m_0$. Its interaction with the [periodic potential](@keyword=periodic_potential|lang=en-US|style=Feynman) of the crystal lattice makes it behave as if it has a different mass, the **effective mass**, $m^*$. This is a profound idea. The crystal's structure can make an electron feel much lighter or heavier than it actually is.
 
 Putting these ideas together, we arrive at a beautiful microscopic formula for mobility:
 
 $$ \mu = \frac{|q|\tau}{m^*} $$
 
-This equation is the key to the whole story. It tells us that mobility is high if the relaxation time ($\tau$) is long and the effective mass ($m^*$) is small. For example, if we have two materials with identical carriers but the relaxation time in one is only 60% of the other, its mobility will also be 60% of the other . Similarly, the reason electrons often have higher mobility than holes in the same semiconductor is that the complex structure of the valence band often results in holes having a larger effective mass, making them more "sluggish" to accelerate .
+This equation is the key to the whole story. It tells us that mobility is high if the relaxation time ($\tau$) is long and the effective mass ($m^*$) is small. For example, if we have two materials with identical carriers but the relaxation time in one is only 60% of the other, its mobility will also be 60% of the other [@problem_id:1800119]. Similarly, the reason electrons often have higher mobility than holes in the same semiconductor is that the complex structure of the valence band often results in holes having a larger effective mass, making them more "sluggish" to accelerate [@problem_id:1301461].
 
 ### The Enemies of Motion: Scattering Mechanisms
 
@@ -41,13 +41,13 @@ What determines the relaxation time, $\tau$? What are the "pins" in our pinball 
 
 #### 1. Lattice Scattering (Phonons)
 
-The atoms in a crystal lattice are not frozen in place; they are constantly vibrating due to thermal energy. The hotter the material, the more violently they vibrate. These collective, quantized vibrations are called **phonons**. To a moving electron, the crystal looks like a churning sea of vibrating atoms. A higher temperature means a denser "gas" of phonons for the electron to collide with. This increases the scattering rate and, therefore, *decreases* the relaxation time $\tau$. As a result, at higher temperatures where this mechanism dominates, mobility decreases as temperature increases, typically following a power law like $\mu_L \propto T^{-3/2}$ .
+The atoms in a crystal lattice are not frozen in place; they are constantly vibrating due to thermal energy. The hotter the material, the more violently they vibrate. These collective, quantized vibrations are called **phonons**. To a moving electron, the crystal looks like a churning sea of vibrating atoms. A higher temperature means a denser "gas" of phonons for the electron to collide with. This increases the scattering rate and, therefore, *decreases* the relaxation time $\tau$. As a result, at higher temperatures where this mechanism dominates, mobility decreases as temperature increases, typically following a power law like $\mu_L \propto T^{-3/2}$ [@problem_id:1340216].
 
 #### 2. Ionized Impurity Scattering
 
 To make a semiconductor useful (n-type or p-type), we deliberately introduce impurity atoms called **dopants**. These dopants become ionized, meaning they sit in the lattice as fixed positive or negative charges. A moving electron or hole is deflected by the electrostatic pull or push from these charged centers. This is like having fixed, sticky obstacles in the pinball machine.
 
-Interestingly, this type of scattering is most effective at *low* temperatures. When a carrier is moving slowly (low thermal energy), it spends more time near an ionized impurity, giving the [electrostatic force](@entry_id:145772) more time to significantly alter its path. As the temperature rises, the carriers zip past the impurities so quickly that they are less affected. Therefore, the mobility limited by this mechanism, $\mu_I$, actually *increases* with temperature, often as $\mu_I \propto T^{3/2}$.
+Interestingly, this type of scattering is most effective at *low* temperatures. When a carrier is moving slowly (low thermal energy), it spends more time near an ionized impurity, giving the [electrostatic force](@keyword=electrostatic_force|lang=en-US|style=Feynman) more time to significantly alter its path. As the temperature rises, the carriers zip past the impurities so quickly that they are less affected. Therefore, the mobility limited by this mechanism, $\mu_I$, actually *increases* with temperature, often as $\mu_I \propto T^{3/2}$.
 
 #### The Grand Compromise: The Mobility Peak
 
@@ -57,15 +57,15 @@ The total scattering rate is the sum of the individual rates. Since mobility is 
 
 $$ \frac{1}{\mu_{total}} = \frac{1}{\mu_{L}} + \frac{1}{\mu_{I}} $$
 
-This competition naturally leads to a peak in mobility at some intermediate temperature . This is the temperature where the material offers the "path of least resistance" to its charge carriers, a perfect compromise between avoiding fixed impurities and dodging vibrating atoms .
+This competition naturally leads to a peak in mobility at some intermediate temperature [@problem_id:1790680]. This is the temperature where the material offers the "path of least resistance" to its charge carriers, a perfect compromise between avoiding fixed impurities and dodging vibrating atoms [@problem_id:1775848].
 
 ### When Order Breaks Down: Transport in Disordered Materials
 
-Our pinball analogy assumes a regular, periodic array of pins—a crystal. What happens in a disordered or **amorphous** material, like the [amorphous silicon](@entry_id:264655) used in some solar panels, which is more like a glass?
+Our pinball analogy assumes a regular, periodic array of pins—a crystal. What happens in a disordered or **amorphous** material, like the [amorphous silicon](@keyword=amorphous_silicon|lang=en-US|style=Feynman) used in some solar panels, which is more like a glass?
 
-Here, the beautiful, wave-like motion of electrons described by [band theory](@entry_id:139801) breaks down. The lack of long-range order creates a chaotic energy landscape filled with "potholes" and "dead ends" known as **[localized states](@entry_id:137880)** or **traps**. Instead of drifting freely, a carrier might move a short distance and then fall into one of these traps, becoming immobilized. It can only escape if it gets a lucky thermal "kick" from the vibrating atoms.
+Here, the beautiful, wave-like motion of electrons described by [band theory](@keyword=band_theory|lang=en-US|style=Feynman) breaks down. The lack of long-range order creates a chaotic energy landscape filled with "potholes" and "dead ends" known as **[localized states](@keyword=localized_states|lang=en-US|style=Feynman)** or **traps**. Instead of drifting freely, a carrier might move a short distance and then fall into one of these traps, becoming immobilized. It can only escape if it gets a lucky thermal "kick" from the vibrating atoms.
 
-This process is called **trap-limited transport**. The carrier spends most of its time waiting to be released from a trap rather than moving. This drastically reduces its average drift velocity and, consequently, its [effective mobility](@entry_id:1124187). This is the fundamental reason why mobility in [amorphous silicon](@entry_id:264655) is orders of magnitude lower than in its perfectly ordered crystalline cousin .
+This process is called **trap-limited transport**. The carrier spends most of its time waiting to be released from a trap rather than moving. This drastically reduces its average drift velocity and, consequently, its [effective mobility](@keyword=effective_mobility|lang=en-US|style=Feynman). This is the fundamental reason why mobility in [amorphous silicon](@keyword=amorphous_silicon|lang=en-US|style=Feynman) is orders of magnitude lower than in its perfectly ordered crystalline cousin [@problem_id:1322660].
 
 ### Drift and Diffusion: Two Sides of a Single Coin
 
@@ -77,20 +77,20 @@ This profound connection is captured by the **Einstein Relation**:
 
 $$ \frac{D}{\mu} = \frac{k_B T}{e} $$
 
-Here, $D$ is the diffusion coefficient (a measure of how fast diffusion happens), $k_B$ is the Boltzmann constant, and $T$ is the absolute temperature. This equation is a cornerstone of [semiconductor physics](@entry_id:139594). It tells us that if we know a material's mobility, we can immediately calculate its diffusion coefficient at a given temperature, and vice-versa . It is a testament to the fact that the directed response to a force and the random thermal wandering of a particle are just two different manifestations of the same underlying microscopic dance.
+Here, $D$ is the diffusion coefficient (a measure of how fast diffusion happens), $k_B$ is the Boltzmann constant, and $T$ is the absolute temperature. This equation is a cornerstone of [semiconductor physics](@keyword=semiconductor_physics|lang=en-US|style=Feynman). It tells us that if we know a material's mobility, we can immediately calculate its diffusion coefficient at a given temperature, and vice-versa [@problem_id:1814550]. It is a testament to the fact that the directed response to a force and the random thermal wandering of a particle are just two different manifestations of the same underlying microscopic dance.
 
 ### How Do We Know? Measuring Mobility
 
 This all sounds wonderful, but how can we measure a property like mobility, which describes the behavior of single electrons? We can't see them directly. The answer lies in clever experiments that measure macroscopic properties.
 
-As we saw, conductivity is given by $\sigma = ne\mu$. If we could somehow measure the conductivity $\sigma$ and the [carrier density](@entry_id:199230) $n$, we could calculate $\mu$. Measuring conductivity is relatively easy. But how do we count the number of carriers in a cubic centimeter of a solid?
+As we saw, conductivity is given by $\sigma = ne\mu$. If we could somehow measure the conductivity $\sigma$ and the [carrier density](@keyword=carrier_density|lang=en-US|style=Feynman) $n$, we could calculate $\mu$. Measuring conductivity is relatively easy. But how do we count the number of carriers in a cubic centimeter of a solid?
 
-This is where the magic of the **Hall Effect** comes in. If we pass a current through a sample and simultaneously apply a magnetic field perpendicular to the current, the magnetic force deflects the charge carriers to one side of the sample. This buildup of charge creates a transverse voltage—the Hall voltage. The size of this voltage is directly related to the Hall Coefficient, $R_H$, which is inversely proportional to the [carrier density](@entry_id:199230) ($R_H \approx 1/(nq)$).
+This is where the magic of the **Hall Effect** comes in. If we pass a current through a sample and simultaneously apply a magnetic field perpendicular to the current, the magnetic force deflects the charge carriers to one side of the sample. This buildup of charge creates a transverse voltage—the Hall voltage. The size of this voltage is directly related to the Hall Coefficient, $R_H$, which is inversely proportional to the [carrier density](@keyword=carrier_density|lang=en-US|style=Feynman) ($R_H \approx 1/(nq)$).
 
 By measuring the Hall coefficient, we can determine both the sign of the charge carriers (positive holes or negative electrons) and their concentration, $n$. Once we have both the conductivity $\sigma$ and the Hall coefficient $R_H$, we can combine them to find the mobility directly:
 
 $$ \mu = |\sigma R_H| $$
 
-This elegant relationship allows us to take two relatively simple, macroscopic measurements and deduce a fundamental microscopic property of the material's charge carriers .
+This elegant relationship allows us to take two relatively simple, macroscopic measurements and deduce a fundamental microscopic property of the material's charge carriers [@problem_id:1830908].
 
-Finally, it's worth taking a moment to consider what mobility *is* in terms of [fundamental units](@entry_id:148878). Through [dimensional analysis](@entry_id:140259), we find that the SI base units of mobility are $\mathrm{kg}^{-1} \mathrm{s}^{2} \mathrm{A}$ . While this might seem abstract, it grounds the concept in the fundamental dimensions of mass, time, and current, reminding us that mobility, for all its quantum mechanical subtlety, is a physically real and measurable property, a bridge connecting the invisible world of electrons to the tangible world of electronic devices.
+Finally, it's worth taking a moment to consider what mobility *is* in terms of [fundamental units](@keyword=fundamental_units|lang=en-US|style=Feynman). Through [dimensional analysis](@keyword=dimensional_analysis|lang=en-US|style=Feynman), we find that the SI base units of mobility are $\mathrm{kg}^{-1} \mathrm{s}^{2} \mathrm{A}$ [@problem_id:2016575]. While this might seem abstract, it grounds the concept in the fundamental dimensions of mass, time, and current, reminding us that mobility, for all its quantum mechanical subtlety, is a physically real and measurable property, a bridge connecting the invisible world of electrons to the tangible world of electronic devices.

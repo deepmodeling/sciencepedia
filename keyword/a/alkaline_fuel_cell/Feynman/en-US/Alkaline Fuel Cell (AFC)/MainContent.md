@@ -19,11 +19,11 @@ On either side of this electrolyte are two electrodes, the **anode** and the **c
 
 Now, let's zoom in on what happens at each electrode.
 
-At the **anode**, the hydrogen gas arrives, ready to react. But it can't meet the oxygen directly. Instead, it encounters the hydroxide ions that are present in the electrolyte. In a process called **oxidation** (the loss of electrons), the [hydrogen molecule](@article_id:147745) is pulled apart. It reacts with the hydroxide ions, releasing its electrons and forming pure water. The [half-reaction](@article_id:175911) looks like this:
+At the **anode**, the hydrogen gas arrives, ready to react. But it can't meet the oxygen directly. Instead, it encounters the hydroxide ions that are present in the electrolyte. In a process called **oxidation** (the loss of electrons), the [hydrogen molecule](@keyword=hydrogen_molecule|lang=en-US|style=Feynman) is pulled apart. It reacts with the hydroxide ions, releasing its electrons and forming pure water. The [half-reaction](@keyword=half_reaction|lang=en-US|style=Feynman) looks like this:
 
 **Anode (Oxidation):** $H_2 + 2OH^- \rightarrow 2H_2O + 2e^-$
 
-Notice two critical things here : hydroxide ions are *consumed*, and water is *produced*. Most importantly, two electrons ($2e^-$) are set free for every molecule of hydrogen that reacts.
+Notice two critical things here [@problem_id:1536944]: hydroxide ions are *consumed*, and water is *produced*. Most importantly, two electrons ($2e^-$) are set free for every molecule of hydrogen that reacts.
 
 These liberated electrons now face a choice. They cannot travel through the electrolyte—it's a highway for ions, not electrons. Their only path is through an external wire connected between the anode and the cathode.
 
@@ -31,18 +31,18 @@ Meanwhile, at the **cathode**, oxygen gas is being supplied. Oxygen is notorious
 
 **Cathode (Reduction):** $O_2 + 2H_2O + 4e^- \rightarrow 4OH^-$
 
-Here, you can see that water is *consumed*, and hydroxide ions are *produced* .
+Here, you can see that water is *consumed*, and hydroxide ions are *produced* [@problem_id:1536910].
 
 ### The Great Electron Relay Race
 
-Now we can see the complete picture of this elegant system. It's a self-sustaining cycle, a perfectly choreographed dance of molecules and electrons .
+Now we can see the complete picture of this elegant system. It's a self-sustaining cycle, a perfectly choreographed dance of molecules and electrons [@problem_id:1536934].
 
 1.  **At the anode**, hydrogen fuel is oxidized, consuming $OH^-$ ions, producing water, and releasing electrons into an external wire.
-2.  These **electrons flow through the external circuit**—this flow *is* the [electric current](@article_id:260651)—from the anode to the cathode, ready to power a lightbulb or a motor along the way .
+2.  These **electrons flow through the external circuit**—this flow *is* the [electric current](@keyword=electric_current|lang=en-US|style=Feynman)—from the anode to the cathode, ready to power a lightbulb or a motor along the way [@problem_id:1536927].
 3.  **At the cathode**, oxygen is reduced, consuming the electrons from the wire and water from the electrolyte to produce fresh $OH^-$ ions.
 4.  These newly made **hydroxide ions travel through the internal electrolyte highway** from the cathode back to the anode, where they are ready to react with more hydrogen, completing the circuit.
 
-If we add the [anode and cathode](@article_id:261652) [half-reactions](@article_id:266312) together (after doubling the anode reaction to balance the electrons), something wonderful happens. The hydroxide ions and the electrons on both sides cancel out, as do some of the water molecules. We are left with our familiar, clean overall reaction :
+If we add the [anode and cathode](@keyword=anode_and_cathode|lang=en-US|style=Feynman) [half-reactions](@keyword=half_reactions|lang=en-US|style=Feynman) together (after doubling the anode reaction to balance the electrons), something wonderful happens. The hydroxide ions and the electrons on both sides cancel out, as do some of the water molecules. We are left with our familiar, clean overall reaction [@problem_id:1536956]:
 
 $$2H_2 + O_2 \rightarrow 2H_2O$$
 
@@ -52,24 +52,24 @@ The hydroxide ions are the essential messengers, the shuttles that keep the sepa
 
 If the process is so thermodynamically favorable, why don't hydrogen and oxygen just react on any surface? The reason is that the molecules themselves are quite content. The covalent bonds holding hydrogen atoms together ($H-H$) and oxygen atoms together ($O=O$) are very strong. Before they can react, these bonds must be broken, or at least weakened. This requires an initial input of energy, a sort of "activation hill" that the reaction must climb before it can slide down the other side, releasing energy. This is called the **activation energy**.
 
-This is where **catalysts** come in. The electrodes in an AFC are coated with a thin layer of a catalytic material, like platinum or nickel. A catalyst is like a chemical matchmaker. It doesn't change the overall energy released by the reaction, but it provides a new, easier reaction pathway with a much lower activation hill. It does this by grabbing onto the $H_2$ and $O_2$ molecules, stretching and weakening their bonds, and making them much more susceptible to reaction . Without the catalyst, the reaction would be so slow at normal temperatures that it would be practically useless.
+This is where **catalysts** come in. The electrodes in an AFC are coated with a thin layer of a catalytic material, like platinum or nickel. A catalyst is like a chemical matchmaker. It doesn't change the overall energy released by the reaction, but it provides a new, easier reaction pathway with a much lower activation hill. It does this by grabbing onto the $H_2$ and $O_2$ molecules, stretching and weakening their bonds, and making them much more susceptible to reaction [@problem_id:1536938]. Without the catalyst, the reaction would be so slow at normal temperatures that it would be practically useless.
 
-Even with a perfect catalyst, however, we can't turn 100% of the chemical energy into electricity. Thermodynamics imposes a fundamental limit. The total heat energy released by the reaction is called the **[enthalpy change](@article_id:147145)** ($\Delta H$). But not all of this energy is available to do useful work; some is inevitably lost as [waste heat](@article_id:139466) due to changes in entropy. The maximum amount of useful [electrical work](@article_id:273476) we can ever hope to get is given by the **Gibbs free energy change** ($\Delta G$).
+Even with a perfect catalyst, however, we can't turn 100% of the chemical energy into electricity. Thermodynamics imposes a fundamental limit. The total heat energy released by the reaction is called the **[enthalpy change](@keyword=enthalpy_change|lang=en-US|style=Feynman)** ($\Delta H$). But not all of this energy is available to do useful work; some is inevitably lost as [waste heat](@keyword=waste_heat|lang=en-US|style=Feynman) due to changes in entropy. The maximum amount of useful [electrical work](@keyword=electrical_work|lang=en-US|style=Feynman) we can ever hope to get is given by the **Gibbs free energy change** ($\Delta G$).
 
 The **maximum theoretical efficiency** of a fuel cell is therefore the ratio of the useful energy out to the total energy in:
 
 $$\eta_{\max} = \frac{|\Delta G^\circ|}{|\Delta H^\circ|}$$
 
-For the [hydrogen-oxygen reaction](@article_id:170530), this value is about 0.83, or 83% under standard conditions . This is vastly better than a typical [internal combustion engine](@article_id:199548) (20-30% efficiency), but it reminds us that even in the most elegant systems, nature always claims a tax.
+For the [hydrogen-oxygen reaction](@keyword=hydrogen_oxygen_reaction|lang=en-US|style=Feynman), this value is about 0.83, or 83% under standard conditions [@problem_id:1536943]. This is vastly better than a typical [internal combustion engine](@keyword=internal_combustion_engine|lang=en-US|style=Feynman) (20-30% efficiency), but it reminds us that even in the most elegant systems, nature always claims a tax.
 
 ### An Achilles' Heel and a Watery Puzzle
 
 With its high efficiency and clean water exhaust, the AFC seems almost perfect. So why aren't they everywhere? The main reason is their sensitivity to a common gas we all exhale: carbon dioxide ($CO_2$).
 
-The alkaline electrolyte is, by definition, basic. Carbon dioxide is a weakly acidic gas. When air is used as the oxygen source, the $CO_2$ present in it eagerly reacts with the potassium hydroxide electrolyte in a classic [acid-base neutralization](@article_id:145960) reaction:
+The alkaline electrolyte is, by definition, basic. Carbon dioxide is a weakly acidic gas. When air is used as the oxygen source, the $CO_2$ present in it eagerly reacts with the potassium hydroxide electrolyte in a classic [acid-base neutralization](@keyword=acid_base_neutralization|lang=en-US|style=Feynman) reaction:
 
 $$CO_2 + 2KOH \rightarrow K_2CO_3 + H_2O$$
 
-This "poisoning" is a double blow. First, it consumes the hydroxide ions, reducing the electrolyte's ability to conduct charge. Second, the product, potassium carbonate ($K_2CO_3$), is a salt that is not very soluble and can precipitate within the fine pores of the electrodes, physically blocking the flow of fuel and oxidant and ultimately choking the cell to death . This is why the most successful applications of AFCs, like in the Apollo space missions, used pure oxygen, avoiding the $CO_2$ problem entirely.
+This "poisoning" is a double blow. First, it consumes the hydroxide ions, reducing the electrolyte's ability to conduct charge. Second, the product, potassium carbonate ($K_2CO_3$), is a salt that is not very soluble and can precipitate within the fine pores of the electrodes, physically blocking the flow of fuel and oxidant and ultimately choking the cell to death [@problem_id:1536891]. This is why the most successful applications of AFCs, like in the Apollo space missions, used pure oxygen, avoiding the $CO_2$ problem entirely.
 
-Finally, there is a subtle but fascinating puzzle inside the AFC: water management. Let's look again at the reactions: water is *produced* at the anode but *consumed* at the cathode . Furthermore, the hydroxide ions moving from the cathode to the anode don't travel alone; they drag a shell of water molecules with them in a process called **electro-osmotic drag**. Both of these effects—the reaction and the ion movement—work together to transport water *towards the anode*. This creates a tricky engineering challenge: the anode can become "flooded" with liquid water, blocking the path for hydrogen fuel, while the cathode is at risk of drying out . This delicate water balance is a defining characteristic of AFCs, a beautiful and complex interplay of chemistry and physics that engineers must master to unlock the full potential of this remarkable device.
+Finally, there is a subtle but fascinating puzzle inside the AFC: water management. Let's look again at the reactions: water is *produced* at the anode but *consumed* at the cathode [@problem_id:1536953]. Furthermore, the hydroxide ions moving from the cathode to the anode don't travel alone; they drag a shell of water molecules with them in a process called **electro-osmotic drag**. Both of these effects—the reaction and the ion movement—work together to transport water *towards the anode*. This creates a tricky engineering challenge: the anode can become "flooded" with liquid water, blocking the path for hydrogen fuel, while the cathode is at risk of drying out [@problem_id:1582272]. This delicate water balance is a defining characteristic of AFCs, a beautiful and complex interplay of chemistry and physics that engineers must master to unlock the full potential of this remarkable device.

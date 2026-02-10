@@ -1,17 +1,17 @@
 ## 引言
-[线性时不变](@article_id:339980)（LTI）系统是现代科学与工程的基石，可用于模拟从简单电子电路到复杂通信[信道](@article_id:330097)的各种事物。理解这些系统的行为是一项关键任务，但如何才能完全刻画这样一个“黑箱”呢？虽然许多输入会产生复杂难解的输出，但存在一类特殊的信号——[复指数信号](@article_id:337562)——它们就像一把万能钥匙。当这些信号输入 LTI 系统时，它们输出时基本保持不变，以优雅而简洁的方式揭示了系统最深层的特性。它们是系统自身的“语言”。
+[线性时不变](@keyword=linear_time_invariant|lang=zh-CN|style=Feynman)（LTI）系统是现代科学与工程的基石，可用于模拟从简单电子电路到复杂通信[信道](@keyword=information_channel|lang=zh-CN|style=Feynman)的各种事物。理解这些系统的行为是一项关键任务，但如何才能完全刻画这样一个“黑箱”呢？虽然许多输入会产生复杂难解的输出，但存在一类特殊的信号——[复指数信号](@keyword=complex_exponential_signals|lang=zh-CN|style=Feynman)——它们就像一把万能钥匙。当这些信号输入 LTI 系统时，它们输出时基本保持不变，以优雅而简洁的方式揭示了系统最深层的特性。它们是系统自身的“语言”。
 
-本文将探讨这种深刻的关系。它旨在填补一个核心知识空白：如何从复杂的、基于时间的系统描述转向更简单、更强大的基于频率的视角。您不仅将学到什么是[特征函数](@article_id:365996)，还将理解为何这一概念是信号处理和[系统分析](@article_id:339116)的基石。
+本文将探讨这种深刻的关系。它旨在填补一个核心知识空白：如何从复杂的、基于时间的系统描述转向更简单、更强大的基于频率的视角。您不仅将学到什么是[特征函数](@keyword=indicator_functions|lang=zh-CN|style=Feynman)，还将理解为何这一概念是信号处理和[系统分析](@keyword=systems_analysis|lang=zh-CN|style=Feynman)的基石。
 
-首先，在“原理与机制”一章中，我们将深入探讨其基本数学原理，解释为何[复指数](@article_id:342070)是 LTI 系统唯一的特征函数，以及这一性质如何将令人生畏的微积分问题转化为简单的代数问题。然后，在“应用与跨学科联系”一章中，我们将看到这一理论原理如何催生出大量实用工具，用于塑造声音、增强图像和实现现代通信。
+首先，在“原理与机制”一章中，我们将深入探讨其基本数学原理，解释为何[复指数](@keyword=complex_exponents|lang=zh-CN|style=Feynman)是 LTI 系统唯一的特征函数，以及这一性质如何将令人生畏的微积分问题转化为简单的代数问题。然后，在“应用与跨学科联系”一章中，我们将看到这一理论原理如何催生出大量实用工具，用于塑造声音、增强图像和实现现代通信。
 
 ## 原理与机制
 
-想象一下，你有一个神秘的黑箱。你知道它是一个**线性时不变（LTI）**系统，这是一个比较正式的说法，意思是它遵循两条简单的规则：输出与输入成正比（线性），其行为不随时间改变（[时不变性](@article_id:337773)）。这个黑箱可能是一个音频滤波器、一个响应阵风的飞机机翼，或是一个简单的电子电路。你的任务是完全理解它的行为。你会怎么做？
+想象一下，你有一个神秘的黑箱。你知道它是一个**线性时不变（LTI）**系统，这是一个比较正式的说法，意思是它遵循两条简单的规则：输出与输入成正比（线性），其行为不随时间改变（[时不变性](@keyword=time_invariance_property|lang=zh-CN|style=Feynman)）。这个黑箱可能是一个音频滤波器、一个响应阵风的飞机机翼，或是一个简单的电子电路。你的任务是完全理解它的行为。你会怎么做？
 
 你可以用锤子敲它一下——即施加一个尖锐、突然的输入，称为冲激（impulse）——然后观察它的反应。这是一个有效的方法。但还有一种更优雅、近乎神奇的方式。你可以输入一种非常特殊的信号，系统自身就会向你揭示其最深层的秘密。这个神奇的探针就是**复指数**信号，其形式为 $x(t) = \exp(st)$ 或 $x[n] = z^n$。
 
-当你将这类信号之一输入 LTI 系统时，会发生一件非凡的事情：输出是*完全相同的[复指数信号](@article_id:337562)*，只是其[幅度和相位](@article_id:333571)被缩放和移动了。这就像对着峡谷哼一个纯音，听到的回声是同一个音调，只是声音或大或小。信号的基本特性，即其频率，保持不变。正是由于这个特殊的性质，[复指数](@article_id:342070)被称为 LTI 系统的**[特征函数](@article_id:365996)**（eigenfunctions）——这个词源于德语 *eigen*，意为“自身的”或“特有的”。它们是系统自身的特征信号。用于缩放输出的复数就是**[特征值](@article_id:315305)**（eigenvalue），它告诉我们系统如何响应那个特定频率的全部信息。
+当你将这类信号之一输入 LTI 系统时，会发生一件非凡的事情：输出是*完全相同的[复指数信号](@keyword=complex_exponential_signals|lang=zh-CN|style=Feynman)*，只是其[幅度和相位](@keyword=magnitude_and_phase|lang=zh-CN|style=Feynman)被缩放和移动了。这就像对着峡谷哼一个纯音，听到的回声是同一个音调，只是声音或大或小。信号的基本特性，即其频率，保持不变。正是由于这个特殊的性质，[复指数](@keyword=complex_exponents|lang=zh-CN|style=Feynman)被称为 LTI 系统的**[特征函数](@keyword=indicator_functions|lang=zh-CN|style=Feynman)**（eigenfunctions）——这个词源于德语 *eigen*，意为“自身的”或“特有的”。它们是系统自身的特征信号。用于缩放输出的复数就是**[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)**（eigenvalue），它告诉我们系统如何响应那个特定频率的全部信息。
 
 ### 一个具体例子：机器中的回声
 
@@ -29,7 +29,7 @@ $y[n] = \alpha \exp(j\omega_0 n) + \beta \exp(j\omega_0 n) \exp(-j\omega_0 D)$
 
 $y[n] = \left( \alpha + \beta \exp(-j\omega_0 D) \right) \exp(j\omega_0 n)$
 
-看看我们得到了什么！输出 $y[n]$ 就是输入 $x[n] = \exp(j\omega_0 n)$ 乘以括号中的复数。这个数 $G(\omega_0) = \alpha + \beta \exp(-j\omega_0 D)$ 就是我们的[特征值](@article_id:315305) 。它取决于输入的频率 $\omega_0$，但与时间 $n$ 无关。这个[特征值](@article_id:315305)，通常被称为**[频率响应](@article_id:323629)**，精确地告诉我们这个回声机器将如何改变我们送入的任何纯音的[幅度和相位](@article_id:333571)。其精妙之处在于，输出仍然是*完全相同频率*的纯音。
+看看我们得到了什么！输出 $y[n]$ 就是输入 $x[n] = \exp(j\omega_0 n)$ 乘以括号中的复数。这个数 $G(\omega_0) = \alpha + \beta \exp(-j\omega_0 D)$ 就是我们的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) [@problem_id:1715387]。它取决于输入的频率 $\omega_0$，但与时间 $n$ 无关。这个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)，通常被称为**[频率响应](@keyword=frequency_response|lang=zh-CN|style=Feynman)**，精确地告诉我们这个回声机器将如何改变我们送入的任何纯音的[幅度和相位](@keyword=magnitude_and_phase|lang=zh-CN|style=Feynman)。其精妙之处在于，输出仍然是*完全相同频率*的纯音。
 
 ### 一般性法则：为何魔法总是有效
 
@@ -49,42 +49,42 @@ $y[n] = z^n \left( \sum_{k=-\infty}^{\infty} h[k] z^{-k} \right)$
 
 $y[n] = H(z) \cdot z^n = H(z) \cdot x[n]$
 
-这个优雅的证明表明，对于任何 LTI 系统，[复指数](@article_id:342070)输入总会得到相同的复指数输出，只是被[特征值](@article_id:315305) $H(z)$ 缩放了 。唯一的先决条件是定义 $H(z)$ 的求和必须收敛，所有稳定系统都满足这个条件。
+这个优雅的证明表明，对于任何 LTI 系统，[复指数](@keyword=complex_exponents|lang=zh-CN|style=Feynman)输入总会得到相同的复指数输出，只是被[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) $H(z)$ 缩放了 [@problem_id:2873876]。唯一的先决条件是定义 $H(z)$ 的求和必须收敛，所有稳定系统都满足这个条件。
 
-这个一般性法则甚至适用于最简单的信号。一个常数输入信号 $x(t) = C$ 可以看作是频率为零的复指数，$x(t) = C \exp(0 \cdot t)$。其[特征值](@article_id:315305)就是系统在零频率处的响应 $H(0)$，它恰好是冲激响应曲线下的总面积 。在离散世界中，可能的最快[振荡](@article_id:331484)信号是交变序列 $x[n] = (-1)^n$，也就是 $\exp(j\pi n)$。它也是一个[特征函数](@article_id:365996)，被系统在频率 $\pi$ 处的响应 $H(\exp(j\pi))$ 所缩放 。
+这个一般性法则甚至适用于最简单的信号。一个常数输入信号 $x(t) = C$ 可以看作是频率为零的复指数，$x(t) = C \exp(0 \cdot t)$。其[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)就是系统在零频率处的响应 $H(0)$，它恰好是冲激响应曲线下的总面积 [@problem_id:1716609]。在离散世界中，可能的最快[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)信号是交变序列 $x[n] = (-1)^n$，也就是 $\exp(j\pi n)$。它也是一个[特征函数](@keyword=indicator_functions|lang=zh-CN|style=Feynman)，被系统在频率 $\pi$ 处的响应 $H(\exp(j\pi))$ 所缩放 [@problem_id:1716652]。
 
 ### 从抽象系统到现实物理
 
-这个原理不仅仅是数学上的一个趣闻。它是解锁用微分和差分方程描述的真实世界[系统分析](@article_id:339116)的关键。思考最简单的 LTI 运算：[微分](@article_id:319122)。当你对我们的神奇探针 $x(t) = \exp(st)$ 求导时会发生什么？
+这个原理不仅仅是数学上的一个趣闻。它是解锁用微分和差分方程描述的真实世界[系统分析](@keyword=systems_analysis|lang=zh-CN|style=Feynman)的关键。思考最简单的 LTI 运算：[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)。当你对我们的神奇探针 $x(t) = \exp(st)$ 求导时会发生什么？
 
 $\frac{d}{dt} \exp(st) = s \cdot \exp(st)$
 
-[微分算子](@article_id:300589)是一个 LTI 系统，而 $\exp(st)$ 是它的特征函数，[特征值](@article_id:315305)为 $s$ 。在这个“特征函数域”中，每一次时域上的[微分](@article_id:319122)都变成了一次简单的乘以 $s$ 的运算。
+[微分算子](@keyword=differentiation_operator|lang=zh-CN|style=Feynman)是一个 LTI 系统，而 $\exp(st)$ 是它的特征函数，[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)为 $s$ [@problem_id:1706082]。在这个“特征函数域”中，每一次时域上的[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)都变成了一次简单的乘以 $s$ 的运算。
 
-现在，考虑一个真实的系统，比如一个 RLC 电路或一个阻尼[机械振子](@article_id:333736)，它由一个看起来很复杂的[微分方程](@article_id:327891)描述：
+现在，考虑一个真实的系统，比如一个 RLC 电路或一个阻尼[机械振子](@keyword=mechanical_oscillators|lang=zh-CN|style=Feynman)，它由一个看起来很复杂的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)描述：
 
 $\sum_{k=0}^{n} a_{k} \frac{d^{k}y}{dt^{k}}(t) = \sum_{k=0}^{m} b_{k} \frac{d^{k}x}{dt^{k}}(t)$
 
-这看起来很吓人。但如果我们用 $x(t) = \exp(st)$ 作为输入，我们可以猜测输出将是 $y(t) = H(s) \exp(st)$。右边的每一次求导都变成了乘以 $s^k$，左边的每一次求导也变成了乘以 $s^k$。这个可怕的[微分方程](@article_id:327891)变成了一个简单的[代数方程](@article_id:336361)：
+这看起来很吓人。但如果我们用 $x(t) = \exp(st)$ 作为输入，我们可以猜测输出将是 $y(t) = H(s) \exp(st)$。右边的每一次求导都变成了乘以 $s^k$，左边的每一次求导也变成了乘以 $s^k$。这个可怕的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)变成了一个简单的[代数方程](@keyword=algebraic_equations|lang=zh-CN|style=Feynman)：
 
 $H(s) \left( \sum_{k=0}^{n} a_{k} s^{k} \right) \exp(st) = \left( \sum_{k=0}^{m} b_{k} s^{k} \right) \exp(st)$
 
-$\exp(st)$ 项被消掉，我们可以通过简单的除法求解[特征值](@article_id:315305) $H(s)$：
+$\exp(st)$ 项被消掉，我们可以通过简单的除法求解[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) $H(s)$：
 
 $H(s) = \frac{\sum_{k=0}^{m} b_{k} s^{k}}{\sum_{k=0}^{n} a_{k} s^{k}}$
 
-这个宏伟的结果就是系统的**传递函数**。一个曾经的微积分问题变成了一个代数问题，这一切都归功于复指数的特征函数性质  。同样的逻辑也完美地适用于由[差分方程](@article_id:325888)描述的离散时间系统，从而得到一个以变量 $z$ 表示的类似传递函数 。
+这个宏伟的结果就是系统的**传递函数**。一个曾经的微积分问题变成了一个代数问题，这一切都归功于复指数的特征函数性质 [@problem_id:1748975] [@problem_id:2867915]。同样的逻辑也完美地适用于由[差分方程](@keyword=difference_equations|lang=zh-CN|style=Feynman)描述的离散时间系统，从而得到一个以变量 $z$ 表示的类似传递函数 [@problem_id:2867893]。
 
 ### 重要提醒：原理的边界
 
-这个原理的力量是巨大的，但理解其边界至关重要。这个“魔法”对于一个真正的[复指数信号](@article_id:337562)——一个被想象成从 $t = -\infty$ 到 $t = +\infty$ 永远存在的信号——是完美有效的。
+这个原理的力量是巨大的，但理解其边界至关重要。这个“魔法”对于一个真正的[复指数信号](@keyword=complex_exponential_signals|lang=zh-CN|style=Feynman)——一个被想象成从 $t = -\infty$ 到 $t = +\infty$ 永远存在的信号——是完美有效的。
 
-如果我们使用一个更现实的信号，比如[单位阶跃函数](@article_id:332509) $u(t)$（在 $t=0$ 之前为零，之后为一），会发生什么？如果你将它输入一个 RC 电路，输出将是一条充电曲线 $y(t) = (1 - \exp(-t/\tau)) u(t)$。这显然不是输入[阶跃函数](@article_id:362824)的缩放版本。因此，对于大多数系统来说，$u(t)$ 不是一个特征函数 。
+如果我们使用一个更现实的信号，比如[单位阶跃函数](@keyword=unit_step_function|lang=zh-CN|style=Feynman) $u(t)$（在 $t=0$ 之前为零，之后为一），会发生什么？如果你将它输入一个 RC 电路，输出将是一条充电曲线 $y(t) = (1 - \exp(-t/\tau)) u(t)$。这显然不是输入[阶跃函数](@keyword=staircase_function|lang=zh-CN|style=Feynman)的缩放版本。因此，对于大多数系统来说，$u(t)$ 不是一个特征函数 [@problem_id:1716642]。
 
-如果我们取一个完美的[正弦波](@article_id:338691)并在 $t=0$ 时刻开启它，形成像 $x(t) = \exp(j\omega_0 t) u(t)$ 这样的输入，同样的问题也会出现。这个信号不再是一个真正的、永恒的[特征函数](@article_id:365996)。在 $t=0$ 时的突然启动对系统来说是一个冲击。因此，系统的输出将包含两部分：
-1.  **[稳态响应](@article_id:323333)**：这是我们熟悉的[特征函数](@article_id:365996)部分，$H(j\omega_0)\exp(j\omega_0 t)$，它在一段时间后占主导地位。
-2.  **[瞬态响应](@article_id:323068)**：这是一个初始的、衰减的信号，取决于系统的内部特性（其固有频率）。这是系统从初始静止状态调整到新的、持续驱动状态的方式 。
+如果我们取一个完美的[正弦波](@keyword=sinusoid|lang=zh-CN|style=Feynman)并在 $t=0$ 时刻开启它，形成像 $x(t) = \exp(j\omega_0 t) u(t)$ 这样的输入，同样的问题也会出现。这个信号不再是一个真正的、永恒的[特征函数](@keyword=indicator_functions|lang=zh-CN|style=Feynman)。在 $t=0$ 时的突然启动对系统来说是一个冲击。因此，系统的输出将包含两部分：
+1.  **[稳态响应](@keyword=steady_state_response|lang=zh-CN|style=Feynman)**：这是我们熟悉的[特征函数](@keyword=indicator_functions|lang=zh-CN|style=Feynman)部分，$H(j\omega_0)\exp(j\omega_0 t)$，它在一段时间后占主导地位。
+2.  **[瞬态响应](@keyword=transient_response|lang=zh-CN|style=Feynman)**：这是一个初始的、衰减的信号，取决于系统的内部特性（其固有频率）。这是系统从初始静止状态调整到新的、持续驱动状态的方式 [@problem_id:1748943]。
 
-最后，是共振的情况。如果你试图用一个指数信号 $\exp(st)$ 来驱动一个系统，而 $s$ 恰好是系统的固有频率之一（即传递函数 $H(s)$ 的一个**极点**），那么 $H(s)$ 的分母将变为零。简单的特征函数关系不再成立，输出幅度会无限制地增长。在这些特殊情况下，指数信号在这种简单意义上不是特征函数 。
+最后，是共振的情况。如果你试图用一个指数信号 $\exp(st)$ 来驱动一个系统，而 $s$ 恰好是系统的固有频率之一（即传递函数 $H(s)$ 的一个**极点**），那么 $H(s)$ 的分母将变为零。简单的特征函数关系不再成立，输出幅度会无限制地增长。在这些特殊情况下，指数信号在这种简单意义上不是特征函数 [@problem_id:2867909]。
 
-这些例外并没有削弱这个原理，反而完善了它。它们提醒我们，[特征函数](@article_id:365996)模型的优雅简洁对应的是一种理想化的[稳态](@article_id:326048)，任何偏离这种理想状态的情况——比如启动一个信号或达到共振——都会引入新的、可预测的现象。从[音频工程](@article_id:324602)到控制理论，LTI [系统分析](@article_id:339116)的基础就建立在系统与其特征信号之间这种优美而深刻的关系之上。
+这些例外并没有削弱这个原理，反而完善了它。它们提醒我们，[特征函数](@keyword=indicator_functions|lang=zh-CN|style=Feynman)模型的优雅简洁对应的是一种理想化的[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)，任何偏离这种理想状态的情况——比如启动一个信号或达到共振——都会引入新的、可预测的现象。从[音频工程](@keyword=audio_engineering|lang=zh-CN|style=Feynman)到控制理论，LTI [系统分析](@keyword=systems_analysis|lang=zh-CN|style=Feynman)的基础就建立在系统与其特征信号之间这种优美而深刻的关系之上。

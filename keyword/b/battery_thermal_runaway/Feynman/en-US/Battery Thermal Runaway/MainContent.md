@@ -9,15 +9,15 @@ To understand this process, we don’t need to be electrochemists, but we do nee
 
 ### The Tipping Point of Stability
 
-Every time you use a battery, it generates a little heat from its own internal resistance, a process called **Joule heating** . It's the same reason a toaster element glows red. In a well-designed system, a cooling mechanism—be it airflow, a liquid coolant, or just dissipation into the surrounding case—removes this heat. Under normal conditions, these two processes find a happy, stable balance. If the battery gets a bit warmer, it cools down a bit faster, and the temperature returns to a safe equilibrium. This is like a marble resting at the bottom of a bowl; nudge it, and it rolls right back to the center.
+Every time you use a battery, it generates a little heat from its own internal resistance, a process called **Joule heating** [@problem_id:1526241]. It's the same reason a toaster element glows red. In a well-designed system, a cooling mechanism—be it airflow, a liquid coolant, or just dissipation into the surrounding case—removes this heat. Under normal conditions, these two processes find a happy, stable balance. If the battery gets a bit warmer, it cools down a bit faster, and the temperature returns to a safe equilibrium. This is like a marble resting at the bottom of a bowl; nudge it, and it rolls right back to the center.
 
-But the chemistry inside a battery hides a darker potential. Besides simple resistive heating, the battery's components can undergo powerful **[exothermic reactions](@entry_id:199674)**—chemical reactions that release their own heat. Unlike Joule heating, which depends on the current, the rate of these side reactions depends ferociously on temperature. As it gets hotter, these reactions go faster, which releases more heat, which makes it even hotter, which makes the reactions go even faster.
+But the chemistry inside a battery hides a darker potential. Besides simple resistive heating, the battery's components can undergo powerful **[exothermic reactions](@keyword=exothermic_reactions|lang=en-US|style=Feynman)**—chemical reactions that release their own heat. Unlike Joule heating, which depends on the current, the rate of these side reactions depends ferociously on temperature. As it gets hotter, these reactions go faster, which releases more heat, which makes it even hotter, which makes the reactions go even faster.
 
 This is the dreaded **positive feedback loop**.
 
-The point of no return is not when heat generation is simply greater than heat removal. The real tipping point is more subtle and far more critical. Thermal runaway begins when the *sensitivity* of heat generation to a temperature change surpasses the sensitivity of heat removal . Let's picture it. The rate of heat removal increases linearly with temperature—if it's 10 degrees hotter, it cools twice as fast as when it's 5 degrees hotter. This is a straight, predictable line on a graph. The rate of heat generation from chemical reactions, however, follows a curve that gets exponentially steeper, governed by the famous **Arrhenius equation** .
+The point of no return is not when heat generation is simply greater than heat removal. The real tipping point is more subtle and far more critical. Thermal runaway begins when the *sensitivity* of heat generation to a temperature change surpasses the sensitivity of heat removal [@problem_id:3903133]. Let's picture it. The rate of heat removal increases linearly with temperature—if it's 10 degrees hotter, it cools twice as fast as when it's 5 degrees hotter. This is a straight, predictable line on a graph. The rate of heat generation from chemical reactions, however, follows a curve that gets exponentially steeper, governed by the famous **Arrhenius equation** [@problem_id:3954825].
 
-For a while, as the battery warms up, the cooling line is steeper than the [heating curve](@entry_id:145529). Any extra heat is quickly shed. But at a certain critical temperature, the [heating curve](@entry_id:145529) becomes steeper than the cooling line. From this point on, any tiny increase in temperature causes heat generation to skyrocket, far outstripping the cooling system's ability to cope. The marble is no longer in a bowl; it’s been placed on the very peak of a hill. The slightest nudge sends it careening down, unstoppably. This critical condition, where the slopes of the heating and cooling curves match, defines the onset of thermal runaway .
+For a while, as the battery warms up, the cooling line is steeper than the [heating curve](@keyword=heating_curve|lang=en-US|style=Feynman). Any extra heat is quickly shed. But at a certain critical temperature, the [heating curve](@keyword=heating_curve|lang=en-US|style=Feynman) becomes steeper than the cooling line. From this point on, any tiny increase in temperature causes heat generation to skyrocket, far outstripping the cooling system's ability to cope. The marble is no longer in a bowl; it’s been placed on the very peak of a hill. The slightest nudge sends it careening down, unstoppably. This critical condition, where the slopes of the heating and cooling curves match, defines the onset of thermal runaway [@problem_id:4090355].
 
 ### A Cascade of Failure: The Domino Effect
 
@@ -27,23 +27,23 @@ Thermal runaway isn't a single explosion; it’s a rapid, cascading sequence of 
 
 The story often begins with a delicate, microscopic layer called the **Solid Electrolyte Interphase (SEI)**. This layer forms on the surface of the anode (the negative electrode) and acts as a crucial gatekeeper, allowing lithium or sodium ions to pass while preventing the highly reactive electrode from being consumed by the liquid electrolyte. It's the silent hero that makes rechargeable batteries possible.
 
-But this hero has an Achilles' heel: heat. As temperatures rise into the 80–120 °C range, the SEI begins to decompose. This decomposition is itself exothermic, releasing a small but significant puff of heat. More importantly, its demise exposes the raw, energetic anode material to the electrolyte, like tearing a scab off a wound. New, more vigorous [exothermic reactions](@entry_id:199674) ignite between the two, releasing more heat and pushing the temperature higher still. This is the primary initiating event .
+But this hero has an Achilles' heel: heat. As temperatures rise into the 80–120 °C range, the SEI begins to decompose. This decomposition is itself exothermic, releasing a small but significant puff of heat. More importantly, its demise exposes the raw, energetic anode material to the electrolyte, like tearing a scab off a wound. New, more vigorous [exothermic reactions](@keyword=exothermic_reactions|lang=en-US|style=Feynman) ignite between the two, releasing more heat and pushing the temperature higher still. This is the primary initiating event [@problem_id:1587514].
 
 #### The Middle Dominoes: Shorts and Gasses (120–200 °C)
 
-With the temperature now climbing rapidly, the next domino falls: the **separator**. This thin sheet of polymer is the physical barrier that prevents the [anode and cathode](@entry_id:262146) from touching. As it melts, it can no longer do its job. This allows for massive **internal short circuits**, turning the battery into a powerful heater as vast amounts of current flow directly between the electrodes . Imagine connecting the positive and negative terminals of a car battery with a wrench—the same thing is now happening inside the cell.
+With the temperature now climbing rapidly, the next domino falls: the **separator**. This thin sheet of polymer is the physical barrier that prevents the [anode and cathode](@keyword=anode_and_cathode|lang=en-US|style=Feynman) from touching. As it melts, it can no longer do its job. This allows for massive **internal short circuits**, turning the battery into a powerful heater as vast amounts of current flow directly between the electrodes [@problem_id:3900046]. Imagine connecting the positive and negative terminals of a car battery with a wrench—the same thing is now happening inside the cell.
 
 Simultaneously, the runaway reactions between the electrodes and the electrolyte begin producing large volumes of flammable hydrocarbon gases. The pressure inside the sealed battery can builds up dramatically, causing it to swell.
 
 #### The Final Domino: The Cathode Collapses ( > 200 °C)
 
-This is the point of catastrophe. In a charged state, the cathode (the positive electrode) is in a delicate, high-energy condition, like a tightly wound spring. At sufficiently high temperatures, the crystal structure of the cathode material itself can become unstable and break down. For many common [cathode materials](@entry_id:161536), this collapse releases pure, molecular **oxygen** .
+This is the point of catastrophe. In a charged state, the cathode (the positive electrode) is in a delicate, high-energy condition, like a tightly wound spring. At sufficiently high temperatures, the crystal structure of the cathode material itself can become unstable and break down. For many common [cathode materials](@keyword=cathode_materials|lang=en-US|style=Feynman), this collapse releases pure, molecular **oxygen** [@problem_id:1544278].
 
 Now, all the ingredients for a firestorm are present inside a sealed can: flammable gases from the electrolyte, intense heat, and a fresh supply of pure oxygen. The result is a violent event, often involving the venting of fiery jets of gas and, in the worst cases, an explosion that ruptures the cell entirely.
 
 ### Chemistry is Destiny
 
-Whether a battery is prone to this catastrophic failure, and at what temperature it begins, is written in its fundamental chemistry. This is most apparent in the stability of the cathode .
+Whether a battery is prone to this catastrophic failure, and at what temperature it begins, is written in its fundamental chemistry. This is most apparent in the stability of the cathode [@problem_id:3956230].
 
 *   **Lithium Iron Phosphate (LFP)**: Often hailed as the safest chemistry, the oxygen atoms in an LFP cathode are locked into the crystal structure by extremely strong phosphorus-oxygen bonds. It's like a fortress that refuses to surrender its oxygen, even at very high temperatures. By preventing the final, oxygen-releasing domino from falling, LFP chemistry largely sidesteps the most violent phase of thermal runaway.
 
@@ -55,7 +55,7 @@ Whether a battery is prone to this catastrophic failure, and at what temperature
 
 A single cell failing is a serious problem. But in a large battery pack, like in an electric vehicle, the real danger is **propagation**: the runaway of one cell triggering its neighbors, leading to a chain reaction that consumes the entire pack.
 
-Heat from a failed cell, which can reach temperatures of over 800 °C, spreads to its neighbors through several pathways :
+Heat from a failed cell, which can reach temperatures of over 800 °C, spreads to its neighbors through several pathways [@problem_id:3956794]:
 
 1.  **Solid Conduction**: Heat travels directly through the physical connections, casings, and structural supports linking the cells. In a tightly packed module, this is often the fastest and most dominant pathway, like a hot poker being pressed against the adjacent cell.
 

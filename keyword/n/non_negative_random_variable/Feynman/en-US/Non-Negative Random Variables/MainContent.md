@@ -17,11 +17,11 @@ How do we usually think about an average? We sum up all the possible values, eac
 
 But for a non-negative variable like lifetime, there is another, breathtakingly elegant way to see it. Instead of asking what values $T$ can take, let's ask a different question for every possible time $t$: "What is the probability that the component survives *longer* than $t$?" This gives us a function, $S(t) = P(T > t)$, known as the **survival function**. It starts at $S(0) = 1$ (it definitely lasts longer than zero time) and gradually decays to zero as $t$ goes to infinity.
 
-Here is the beautiful discovery: the [expected lifetime](@article_id:274430), $E[T]$, is precisely the total area under this survival curve from zero to infinity.
+Here is the beautiful discovery: the [expected lifetime](@keyword=expected_lifetime|lang=en-US|style=Feynman), $E[T]$, is precisely the total area under this survival curve from zero to infinity.
 $$
 E[T] = \int_0^{\infty} S(t) \, dt = \int_0^{\infty} P(T > t) \, dt
 $$
-Think about what this means. You can find the average lifetime of a component without ever knowing the probability of it failing at any specific instant! All you need is the curve describing its probability of survival over time. For example, if we model a component's survival as $S(t) = (1 + \lambda t)^{-k}$, we can calculate its [expected lifetime](@article_id:274430) simply by integrating this function, which reveals the central role of the parameters $\lambda$ and $k$ in determining its reliability. This geometric interpretation transforms the abstract concept of expectation into something we can visualize: a tangible area representing the totality of survival.
+Think about what this means. You can find the average lifetime of a component without ever knowing the probability of it failing at any specific instant! All you need is the curve describing its probability of survival over time. For example, if we model a component's survival as $S(t) = (1 + \lambda t)^{-k}$, we can calculate its [expected lifetime](@keyword=expected_lifetime|lang=en-US|style=Feynman) simply by integrating this function, which reveals the central role of the parameters $\lambda$ and $k$ in determining its reliability. This geometric interpretation transforms the abstract concept of expectation into something we can visualize: a tangible area representing the totality of survival.
 
 ### The Average of the Function is Not the Function of the Average
 
@@ -29,13 +29,13 @@ Let's play with this idea of expectation. A common trap is to assume that operat
 
 Absolutely not. And more importantly, the relationship between them is fixed. For any non-negative random variable $X$ that isn't a constant, we will always find that $E[\sqrt{X}]  \sqrt{E[X]}$. This is a manifestation of **Jensen's inequality**. You can visualize this with the graph of the function $f(x) = \sqrt{x}$. Because the curve is concave (it bends downwards), the line segment connecting any two points on the curve will always lie below the curve itself. The average of the function's outputs is always less than the function of the average input.
 
-This principle is completely general. If we take a [convex function](@article_id:142697) (one that bends upwards) like $f(y) = y^2$, the inequality flips. For example, by applying this idea to the random variable $X^2$, we can prove that $(E[X^2])^2 \le E[X^4]$. This is not just a collection of random facts; it's a fundamental principle about how expectation interacts with the geometry of functions.
+This principle is completely general. If we take a [convex function](@keyword=convex_function|lang=en-US|style=Feynman) (one that bends upwards) like $f(y) = y^2$, the inequality flips. For example, by applying this idea to the random variable $X^2$, we can prove that $(E[X^2])^2 \le E[X^4]$. This is not just a collection of random facts; it's a fundamental principle about how expectation interacts with the geometry of functions.
 
 ### The Universal Speed Limit: Markov's Inequality
 
 Let's return to our beautiful formula, $E[X] = \int_0^\infty P(X > t) \, dt$. It holds a powerful secret, and we can coax it out with a simple geometric argument.
 
-The expectation, $\mu = E[X]$, is the *total* area under the survival curve. Now, pick any positive value $a$ on the horizontal axis. Consider the rectangle with width $a$ and height $P(X \ge a)$. The [survival function](@article_id:266889) $P(X \ge t)$ is non-increasing, so for all $t$ from $0$ to $a$, we know that $P(X \ge t) \ge P(X \ge a)$. This means the area under the curve just from $0$ to $a$ is already greater than the area of this rectangle.
+The expectation, $\mu = E[X]$, is the *total* area under the survival curve. Now, pick any positive value $a$ on the horizontal axis. Consider the rectangle with width $a$ and height $P(X \ge a)$. The [survival function](@keyword=survival_function|lang=en-US|style=Feynman) $P(X \ge t)$ is non-increasing, so for all $t$ from $0$ to $a$, we know that $P(X \ge t) \ge P(X \ge a)$. This means the area under the curve just from $0$ to $a$ is already greater than the area of this rectangle.
 $$
 \mu = \int_0^\infty P(X \ge t) \, dt \ge \int_0^a P(X \ge t) \, dt \ge \int_0^a P(X \ge a) \, dt = a \cdot P(X \ge a)
 $$

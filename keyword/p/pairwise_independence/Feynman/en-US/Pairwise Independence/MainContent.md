@@ -11,7 +11,7 @@ Our intuition might lead us to a simple conclusion: if I have a collection of ev
 
 Let's explore this with a game. Imagine we flip two fair coins, a penny and a nickel. The four possible outcomes—(Heads, Heads), (Heads, Tails), (Tails, Heads), (Tails, Tails)—are all equally likely, each with a probability of $1/4$.
 
-Now, let's define three events of interest  :
+Now, let's define three events of interest [@problem_id:9092] [@problem_id:1922917]:
 
 -   **Event A**: The penny comes up Heads.
 -   **Event B**: The nickel comes up Heads.
@@ -29,15 +29,15 @@ Now, let's check if the pairs are independent.
 
 This is a remarkable result. We have three events, and every single pair of them is independent. This is what we call **pairwise independence**.
 
-So, is the whole group of three events independent? For that, we need to check one more condition, the hallmark of **[mutual independence](@article_id:273176)**: does $P(A \cap B \cap C)$ equal $P(A)P(B)P(C)$?
+So, is the whole group of three events independent? For that, we need to check one more condition, the hallmark of **[mutual independence](@keyword=mutual_independence|lang=en-US|style=Feynman)**: does $P(A \cap B \cap C)$ equal $P(A)P(B)P(C)$?
 
 The product $P(A)P(B)P(C)$ is easy: $(1/2)(1/2)(1/2) = 1/8$.
 
 Now, what is the event "$A \cap B \cap C$"? It's the event that "the first coin is Heads, AND the second coin is Heads, AND they match." But if the first two conditions are met, the third is automatically satisfied! The event is simply (Heads, Heads). The probability of this event, $P(A \cap B \cap C)$, is $1/4$.
 
-And there it is. We find that $1/4 \neq 1/8$. The condition for [mutual independence](@article_id:273176) fails spectacularly. Although any two of these events behave as if they are completely unrelated, the three of them together are secretly linked. The secret is that Event C is completely determined by the outcomes that define A and B. Specifically, $C$ happens if and only if $A$ and $B$ both happen or both fail to happen. This hidden logical structure is invisible to pairwise checks but binds the whole system together.
+And there it is. We find that $1/4 \neq 1/8$. The condition for [mutual independence](@keyword=mutual_independence|lang=en-US|style=Feynman) fails spectacularly. Although any two of these events behave as if they are completely unrelated, the three of them together are secretly linked. The secret is that Event C is completely determined by the outcomes that define A and B. Specifically, $C$ happens if and only if $A$ and $B$ both happen or both fail to happen. This hidden logical structure is invisible to pairwise checks but binds the whole system together.
 
-This isn't just a one-off trick. Another beautiful example, first described by Sergei Bernstein, involves three coin flips . Let's define Event A as "the first and second flips match," Event B as "the second and third flips match," and Event C as "the first and third flips match." Once again, you can show that these three events are pairwise independent. However, they are not mutually independent. Why? Because if you know that A and B both occurred (flip 1 = flip 2, and flip 2 = flip 3), then it is an absolute certainty that C occurred (flip 1 = flip 3). The probability of all three happening is not the product of their individual probabilities.
+This isn't just a one-off trick. Another beautiful example, first described by Sergei Bernstein, involves three coin flips [@problem_id:1922708]. Let's define Event A as "the first and second flips match," Event B as "the second and third flips match," and Event C as "the first and third flips match." Once again, you can show that these three events are pairwise independent. However, they are not mutually independent. Why? Because if you know that A and B both occurred (flip 1 = flip 2, and flip 2 = flip 3), then it is an absolute certainty that C occurred (flip 1 = flip 3). The probability of all three happening is not the product of their individual probabilities.
 
 ### Why "Good Enough" is Incredibly Powerful
 
@@ -45,15 +45,15 @@ At this point, you might be thinking that pairwise independence is just a mathem
 
 Consider the **Law of Large Numbers**. This is one of the pillars of probability, and it's the reason we can trust polling, run simulations, and operate casinos. It states, roughly, that if you take the average of many independent, identically-distributed trials, that average will get closer and closer to the true expected value. The more trials you run, the more certain you are of the result.
 
-The standard proof of this law assumes that all the trials are mutually independent. But what if they aren't? What if they are only pairwise independent? Imagine you're running a massive [computer simulation](@article_id:145913) on a grid of processors to estimate some physical constant $\mu$ . Each processor $i$ produces an estimate $X_i$. For the Law of Large Numbers to hold, we need the variance of the average of these estimates, $\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$, to shrink to zero as $n$ gets larger.
+The standard proof of this law assumes that all the trials are mutually independent. But what if they aren't? What if they are only pairwise independent? Imagine you're running a massive [computer simulation](@keyword=computer_simulation|lang=en-US|style=Feynman) on a grid of processors to estimate some physical constant $\mu$ [@problem_id:1355965]. Each processor $i$ produces an estimate $X_i$. For the Law of Large Numbers to hold, we need the variance of the average of these estimates, $\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i$, to shrink to zero as $n$ gets larger.
 
-Let's look at this variance. Using basic [properties of variance](@article_id:184922), we can show that:
+Let's look at this variance. Using basic [properties of variance](@keyword=properties_of_variance|lang=en-US|style=Feynman), we can show that:
 $$
 \text{Var}(\bar{X}_n) = \frac{1}{n^2} \text{Var}\left(\sum_{i=1}^{n} X_i\right)
 $$
 The crucial part is the variance of the sum. For any two random variables, $\text{Var}(X_i + X_j) = \text{Var}(X_i) + \text{Var}(X_j) + 2\text{Cov}(X_i, X_j)$. The term $\text{Cov}(X_i, X_j)$ is the covariance, and it measures how the two variables are related. If they are independent, their covariance is zero. When we expand the variance of a sum of $n$ variables, it becomes the sum of their individual variances plus the sum of all the pairwise covariance terms.
 
-And here is the magic: to make all those covariance terms disappear, we don't need the variables to be mutually independent. We only need every *pair* $(X_i, X_j)$ to be independent!  If the variables are pairwise independent, then every $\text{Cov}(X_i, X_j)$ for $i \neq j$ is zero. The variance of the sum simplifies beautifully:
+And here is the magic: to make all those covariance terms disappear, we don't need the variables to be mutually independent. We only need every *pair* $(X_i, X_j)$ to be independent! [@problem_id:1668554] If the variables are pairwise independent, then every $\text{Cov}(X_i, X_j)$ for $i \neq j$ is zero. The variance of the sum simplifies beautifully:
 $$
 \text{Var}\left(\sum_{i=1}^{n} X_i\right) = \sum_{i=1}^{n} \text{Var}(X_i)
 $$
@@ -61,13 +61,13 @@ If all variables also have the same variance $\sigma^2$, this becomes $n\sigma^2
 $$
 \text{Var}(\bar{X}_n) = \frac{1}{n^2} (n\sigma^2) = \frac{\sigma^2}{n}
 $$
-This is exactly the same result we get under the much stronger assumption of [mutual independence](@article_id:273176)! This means that for the Law of Large Numbers to work its magic, we don't need to eliminate all possible forms of [statistical dependence](@article_id:267058). We only need to ensure that the trials are pairwise independent. This is a profound and liberating realization. It means that systems can have all sorts of complex, higher-order dependencies and still produce reliable averages. Pairwise independence is often "good enough," and that makes it an immensely practical tool.
+This is exactly the same result we get under the much stronger assumption of [mutual independence](@keyword=mutual_independence|lang=en-US|style=Feynman)! This means that for the Law of Large Numbers to work its magic, we don't need to eliminate all possible forms of [statistical dependence](@keyword=statistical_dependence|lang=en-US|style=Feynman). We only need to ensure that the trials are pairwise independent. This is a profound and liberating realization. It means that systems can have all sorts of complex, higher-order dependencies and still produce reliable averages. Pairwise independence is often "good enough," and that makes it an immensely practical tool.
 
 ### A Final Twist: The Shape of Dependence
 
 The distinction between different types of independence shows how subtle these concepts can be. Sometimes, dependence or independence is not an inherent property of a system, but a feature of how we choose to describe it.
 
-Consider a simple system where a point $(X, Y)$ is chosen at random from one of the four vertices of a diamond: $(1, 0)$, $(-1, 0)$, $(0, 1)$, and $(0, -1)$ . Are the coordinates $X$ and $Y$ independent? Absolutely not. If you know that $X=1$, for instance, you know with 100% certainty that $Y=0$. They are strongly dependent.
+Consider a simple system where a point $(X, Y)$ is chosen at random from one of the four vertices of a diamond: $(1, 0)$, $(-1, 0)$, $(0, 1)$, and $(0, -1)$ [@problem_id:1922967]. Are the coordinates $X$ and $Y$ independent? Absolutely not. If you know that $X=1$, for instance, you know with 100% certainty that $Y=0$. They are strongly dependent.
 
 But now let's describe this same system using a different set of coordinates. Let's define a new pair of variables, $U = X + Y$ and $V = X - Y$. This is just a rotation and scaling of our coordinate system. What are the possible values for the pair $(U, V)$?
 -   If $(X,Y) = (1,0)$, then $(U,V) = (1,1)$.

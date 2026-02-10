@@ -9,7 +9,7 @@ The central question we will explore is this: How does the total energy or power
 
 ### A Law of Conservation for Signals
 
-In physics and engineering, the average power of a [periodic signal](@article_id:260522), say a voltage $x(t)$ with period $T$, is often defined by the average of its squared value over one period. For a voltage across a $1\,\Omega$ resistor, this is:
+In physics and engineering, the average power of a [periodic signal](@keyword=periodic_signal|lang=en-US|style=Feynman), say a voltage $x(t)$ with period $T$, is often defined by the average of its squared value over one period. For a voltage across a $1\,\Omega$ resistor, this is:
 
 $$
 P_{\text{avg}} = \frac{1}{T} \int_{0}^{T} |x(t)|^2 dt
@@ -31,13 +31,13 @@ $$
 \frac{1}{T} \int_{0}^{T} |x(t)|^2 dt = \sum_{k=-\infty}^{\infty} |c_k|^2
 $$
 
-This is a conservation law, just as fundamental as the [conservation of energy](@article_id:140020) in mechanics. It tells us that no power is lost or gained by simply changing our perspective from the time domain to the frequency domain. The total power is perfectly partitioned among the signal's harmonic components.
+This is a conservation law, just as fundamental as the [conservation of energy](@keyword=conservation_of_energy|lang=en-US|style=Feynman) in mechanics. It tells us that no power is lost or gained by simply changing our perspective from the time domain to the frequency domain. The total power is perfectly partitioned among the signal's harmonic components.
 
 ### The Magic of Orthogonality
 
 Why is this true? The secret lies in a beautiful mathematical property called **orthogonality**. Think of the basic building blocks of the Fourier series—the functions $\exp(j k \omega_0 t)$—as being perfectly "independent" of one another. When you multiply two different harmonics, say for $k=2$ and $k=5$, and integrate over a full period, the result is always zero. They don't interfere with each other's energy contribution.
 
-Let's sketch this out without getting lost in the details . We start with the definition of power, writing $|x(t)|^2$ as $x(t) \cdot x^*(t)$ (where $*$ denotes the complex conjugate).
+Let's sketch this out without getting lost in the details [@problem_id:2867259]. We start with the definition of power, writing $|x(t)|^2$ as $x(t) \cdot x^*(t)$ (where $*$ denotes the complex conjugate).
 
 $$
 P_{\text{avg}} = \frac{1}{T} \int_{0}^{T} x(t) \cdot x^*(t) dt
@@ -49,11 +49,11 @@ Now, substitute the Fourier series for $x(t)$ and its conjugate for $x^*(t)$. Yo
 
 This theorem is far from a mere mathematical curiosity; it is the bedrock of practical signal processing.
 
-Consider a simple scenario: you pass an electrical signal through an amplifier with a gain of $A$ . The output signal is $y(t) = A x(t)$. What happens to the power? In the time domain, the calculation is straightforward: the new power is $\frac{1}{T} \int |A x(t)|^2 dt = A^2 \frac{1}{T} \int |x(t)|^2 dt$. The power increases by a factor of $A^2$.
+Consider a simple scenario: you pass an electrical signal through an amplifier with a gain of $A$ [@problem_id:1740384]. The output signal is $y(t) = A x(t)$. What happens to the power? In the time domain, the calculation is straightforward: the new power is $\frac{1}{T} \int |A x(t)|^2 dt = A^2 \frac{1}{T} \int |x(t)|^2 dt$. The power increases by a factor of $A^2$.
 
 Parseval's theorem gives us the same answer from a different perspective. Amplifying the signal by $A$ multiplies every one of its Fourier coefficients $c_k$ by $A$. The new power in the frequency domain is the sum of the new squared coefficients: $\sum |A c_k|^2 = \sum A^2 |c_k|^2 = A^2 \sum |c_k|^2$. Once again, the power is scaled by $A^2$. The two viewpoints agree perfectly, reinforcing our confidence in the theorem.
 
-Now, let's look at a more sophisticated example: a filter . Imagine a signal, like a full-wave rectified sine wave, which contains a DC component (zero frequency) and an infinite series of even harmonics. We pass this signal through an "[ideal low-pass filter](@article_id:265665)," a device that completely blocks any frequency above a certain cutoff, say $5$ rad/s, and lets anything below that pass through unchanged.
+Now, let's look at a more sophisticated example: a filter [@problem_id:1721548]. Imagine a signal, like a full-wave rectified sine wave, which contains a DC component (zero frequency) and an infinite series of even harmonics. We pass this signal through an "[ideal low-pass filter](@keyword=ideal_low_pass_filter|lang=en-US|style=Feynman)," a device that completely blocks any frequency above a certain cutoff, say $5$ rad/s, and lets anything below that pass through unchanged.
 
 How do we calculate the power of the output signal? The time-domain approach would be agonizing. We would have to figure out which harmonics pass, reconstruct the new, filtered signal in the time domain (by summing those surviving sine waves), square the resulting complicated function, and then integrate it.
 
@@ -73,13 +73,13 @@ Finding the exact value of this sum, known as the Basel problem, stumped the gre
 
 Parseval's theorem gives us a breathtakingly elegant method to find these values. The strategy is to turn the problem on its head. Instead of starting with a series and trying to sum it, let's start with a simple function, calculate its power in two different ways (time domain and frequency domain), and see what the equality tells us.
 
-Let's try this with the simple parabolic function $f(x) = x^2$ over the interval $[-\pi, \pi]$ .
+Let's try this with the simple parabolic function $f(x) = x^2$ over the interval $[-\pi, \pi]$ [@problem_id:500110].
 
 1.  **Time-Domain Power:** We calculate the average power by integrating. This is a standard calculus problem: $\frac{1}{2\pi} \int_{-\pi}^{\pi} (x^2)^2 dx = \frac{1}{2\pi} \int_{-\pi}^{\pi} x^4 dx = \frac{\pi^4}{5}$.
 
 2.  **Frequency-Domain Power:** We first need the Fourier coefficients of $f(x) = x^2$. After some integration by parts, we find the DC coefficient $a_0 = \frac{2\pi^2}{3}$ and the cosine coefficients $a_n = \frac{4(-1)^n}{n^2}$ for $n \ge 1$.
 
-3.  **Apply Parseval's Theorem:** The theorem states that the time-domain power must equal the sum of the frequency-domain powers. For a real, [even function](@article_id:164308) like ours, the formula is $\frac{1}{\pi} \int_0^\pi [f(x)]^2 dx = \frac{a_0^2}{4} + \frac{1}{2}\sum_{n=1}^\infty a_n^2$. Plugging in our values gives:
+3.  **Apply Parseval's Theorem:** The theorem states that the time-domain power must equal the sum of the frequency-domain powers. For a real, [even function](@keyword=even_function|lang=en-US|style=Feynman) like ours, the formula is $\frac{1}{\pi} \int_0^\pi [f(x)]^2 dx = \frac{a_0^2}{4} + \frac{1}{2}\sum_{n=1}^\infty a_n^2$. Plugging in our values gives:
     $$
     \frac{\pi^4}{5} = \frac{(2\pi^2/3)^2}{4} + \frac{1}{2}\sum_{n=1}^{\infty} \left(\frac{4(-1)^n}{n^2}\right)^2
     $$
@@ -96,6 +96,6 @@ Let's try this with the simple parabolic function $f(x) = x^2$ over the interval
     \sum_{n=1}^{\infty} \frac{1}{n^4} = \frac{\pi^4}{90}
     $$
 
-This is a remarkable result! By considering the "energy" of a simple parabolic shape, we have found the exact value of a famous mathematical series. This is not a one-off trick. By choosing other [simple functions](@article_id:137027), like a triangular wave , a rectangular pulse train , or other polynomials like $x(\pi-x)$  and $x(x^2-\pi^2)$ , we can unlock the exact values for a whole family of infinite series, including those for $\sum \frac{1}{n^6}$ and many others.
+This is a remarkable result! By considering the "energy" of a simple parabolic shape, we have found the exact value of a famous mathematical series. This is not a one-off trick. By choosing other [simple functions](@keyword=simple_functions|lang=en-US|style=Feynman), like a triangular wave [@problem_id:36535], a rectangular pulse train [@problem_id:36486], or other polynomials like $x(\pi-x)$ [@problem_id:500277] and $x(x^2-\pi^2)$ [@problem_id:1075906], we can unlock the exact values for a whole family of infinite series, including those for $\sum \frac{1}{n^6}$ and many others.
 
-This is the inherent beauty and unity of science that we seek. A concept rooted in the physical world of [signal power](@article_id:273430) becomes a master key, unlocking doors in the abstract palace of pure mathematics. The energy in a vibrating string is governed by the same elegant law that sums an infinite series of numbers.
+This is the inherent beauty and unity of science that we seek. A concept rooted in the physical world of [signal power](@keyword=signal_power|lang=en-US|style=Feynman) becomes a master key, unlocking doors in the abstract palace of pure mathematics. The energy in a vibrating string is governed by the same elegant law that sums an infinite series of numbers.

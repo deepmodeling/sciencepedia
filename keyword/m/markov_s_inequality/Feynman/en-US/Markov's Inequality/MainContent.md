@@ -31,9 +31,9 @@ $$
 
 So, you can go to your boss and say, "I can't tell you the exact probability, but I can guarantee it's no more than 20%." This is a powerful statement, born not from a complex simulation, but from a simple, robust piece of logic.
 
-This principle is incredibly general. Consider an engineer designing a sensor that can be corrupted if the background electromagnetic noise power, $N$, exceeds 21.0 microwatts. If field tests show the average noise power is only $E[N] = 3.0$ microwatts, the engineer can immediately calculate an upper bound on the failure rate without needing to know the exact distribution of the noise. The probability of corruption is at most $\frac{3.0}{21.0} = \frac{1}{7}$, or about 14.3% . Similarly, if a CPU core has an average power draw of 1.2 Watts, the chance it will spike to 6.0 Watts or more is at most $\frac{1.2}{6.0} = 0.2$, or 20% .
+This principle is incredibly general. Consider an engineer designing a sensor that can be corrupted if the background electromagnetic noise power, $N$, exceeds 21.0 microwatts. If field tests show the average noise power is only $E[N] = 3.0$ microwatts, the engineer can immediately calculate an upper bound on the failure rate without needing to know the exact distribution of the noise. The probability of corruption is at most $\frac{3.0}{21.0} = \frac{1}{7}$, or about 14.3% [@problem_id:1319683]. Similarly, if a CPU core has an average power draw of 1.2 Watts, the chance it will spike to 6.0 Watts or more is at most $\frac{1.2}{6.0} = 0.2$, or 20% [@problem_id:1376527].
 
-The true beauty of Markov's inequality is its universality. It doesn't care if the probability distribution is a neat bell curve or a wild, jagged mess. It holds for *any* non-negative quantity, which is why it is as fundamental in pure mathematics as it is in engineering . Its power comes from its minimal demands: just give me the average, and I'll give you a bound.
+The true beauty of Markov's inequality is its universality. It doesn't care if the probability distribution is a neat bell curve or a wild, jagged mess. It holds for *any* non-negative quantity, which is why it is as fundamental in pure mathematics as it is in engineering [@problem_id:1335845]. Its power comes from its minimal demands: just give me the average, and I'll give you a bound.
 
 ### When is the Bound Perfect? The "Worst-Case" Scenario
 
@@ -49,7 +49,7 @@ $$
 
 We know the average is 10, so we set $50p = 10$, which gives $p = \frac{10}{50} = 0.2$. In this peculiar scenario, the probability of hitting the threshold of 50 is $\Pr(X \ge 50) = \Pr(X=50) = p = 0.2$. This exactly matches the bound from Markov's inequality!
 
-This reveals a profound truth: the bound holds with equality only when the random variable takes on just two values: zero, and the threshold itself . Markov's inequality is essentially a statement about this most extreme, polarized distribution. Any other distribution, with values spread out in the middle, will result in a probability strictly less than the bound.
+This reveals a profound truth: the bound holds with equality only when the random variable takes on just two values: zero, and the threshold itself [@problem_id:1933114]. Markov's inequality is essentially a statement about this most extreme, polarized distribution. Any other distribution, with values spread out in the middle, will result in a probability strictly less than the bound.
 
 ### The Markov Engine: Building Better Tools
 
@@ -81,11 +81,11 @@ $$
 \Pr(|X-\mu| \ge a) \le \frac{\sigma^2}{a^2}
 $$
 
-And there it is! We've just derived **Chebyshev's Inequality** from scratch, just by applying Markov's inequality to a cleverly chosen variable. This inequality is often much stronger than Markov's because it uses more information (the variance). For instance, if a pollutant's concentration in a lake has a mean of 50 ppm and a standard deviation of 5 ppm, Chebyshev's inequality can tell us that the probability of the concentration deviating by 15 ppm or more is at most $\frac{5^2}{15^2} = \frac{25}{225} = \frac{1}{9}$ . This is a more refined statement than what we could get from the mean alone. This same technique is invaluable for problems like estimating the probability of damaging voltage spikes in an electronic circuit when we know the mean squared voltage .
+And there it is! We've just derived **Chebyshev's Inequality** from scratch, just by applying Markov's inequality to a cleverly chosen variable. This inequality is often much stronger than Markov's because it uses more information (the variance). For instance, if a pollutant's concentration in a lake has a mean of 50 ppm and a standard deviation of 5 ppm, Chebyshev's inequality can tell us that the probability of the concentration deviating by 15 ppm or more is at most $\frac{5^2}{15^2} = \frac{25}{225} = \frac{1}{9}$ [@problem_id:1903438]. This is a more refined statement than what we could get from the mean alone. This same technique is invaluable for problems like estimating the probability of damaging voltage spikes in an electronic circuit when we know the mean squared voltage [@problem_id:1933047].
 
 #### The Chernoff Trick: An Exponential Leap
 
-We've seen that transforming our variable can lead to better bounds. What if we use a really powerful transformation? This is the idea behind **Chernoff Bounds**, which represent another turn of the crank on the Markov engine, this time using the [exponential function](@article_id:160923).
+We've seen that transforming our variable can lead to better bounds. What if we use a really powerful transformation? This is the idea behind **Chernoff Bounds**, which represent another turn of the crank on the Markov engine, this time using the [exponential function](@keyword=exponential_function|lang=en-US|style=Feynman).
 
 For any parameter $t > 0$, we can define yet another non-negative variable, $Z_t = \exp(tX)$. The event $X \ge a$ is identical to the event $\exp(tX) \ge \exp(ta)$. Applying the Markov engine to $Z_t$:
 
@@ -93,7 +93,7 @@ $$
 \Pr(X \ge a) = \Pr(Z_t \ge \exp(ta)) \le \frac{E[Z_t]}{\exp(ta)} = \frac{E[\exp(tX)]}{\exp(ta)}
 $$
 
-This might look complicated, but the idea is brilliant. We haven't just found one new bound; we've found an entire *family* of them, one for every possible choice of $t > 0$. Since every one of these is a valid upper bound, we are free to choose the value of $t$ that makes the bound as small as possible—the tightest bound in the family. By finding the optimal $t$, we can often get dramatically better estimates than Chebyshev's inequality, especially when dealing with sums of many [independent random variables](@article_id:273402), like modeling the number of cache misses in a computer system .
+This might look complicated, but the idea is brilliant. We haven't just found one new bound; we've found an entire *family* of them, one for every possible choice of $t > 0$. Since every one of these is a valid upper bound, we are free to choose the value of $t$ that makes the bound as small as possible—the tightest bound in the family. By finding the optimal $t$, we can often get dramatically better estimates than Chebyshev's inequality, especially when dealing with sums of many [independent random variables](@keyword=independent_random_variables|lang=en-US|style=Feynman), like modeling the number of cache misses in a computer system [@problem_id:1372017].
 
 ### Bounds in the Real World: A Reality Check
 
@@ -102,9 +102,9 @@ These inequalities are universal, but this universality comes at a cost. Because
 Consider trying to reboot a server where each attempt succeeds with a probability of $p=1/5$. The average number of attempts needed is $E[X]=5$. What is the probability it will take at least 15 attempts?
 -   **Markov's Inequality** gives a bound of $P(X \ge 15) \le \frac{5}{15} \approx 0.3333$.
 -   **Chebyshev's Inequality**, using the variance as well, gives a tighter bound of $P(X \ge 15) \le 0.2000$.
--   The **Exact Probability**, calculated from the [geometric distribution](@article_id:153877), is $(4/5)^{14} \approx 0.0440$.
+-   The **Exact Probability**, calculated from the [geometric distribution](@keyword=geometric_distribution|lang=en-US|style=Feynman), is $(4/5)^{14} \approx 0.0440$.
 
-As you can see, the true probability is much lower than either bound . A similar pattern emerges when analyzing the sum of 100 die rolls: Markov's bound might be large and not very useful, Chebyshev's is a significant improvement, and a Chernoff-style bound (like Hoeffding's inequality) can give an estimate that is orders of magnitude tighter and closer to the real probability .
+As you can see, the true probability is much lower than either bound [@problem_id:1348444]. A similar pattern emerges when analyzing the sum of 100 die rolls: Markov's bound might be large and not very useful, Chebyshev's is a significant improvement, and a Chernoff-style bound (like Hoeffding's inequality) can give an estimate that is orders of magnitude tighter and closer to the real probability [@problem_id:1610155].
 
 This doesn't mean the bounds are useless! It simply illustrates a fundamental trade-off: the more information you have about a system (e.g., just the mean, or mean and variance, or the full distribution), the more precise your predictions can be. Markov's inequality is the bedrock—the most general statement you can make with the least information.
 
@@ -120,4 +120,4 @@ $$
 P(X \le a) \le \frac{M - \mu}{M - a}
 $$
 
-This elegant result  is a beautiful demonstration that understanding the *mechanism* of a proof is often more powerful than just memorizing the result. The simple idea of balancing an average, which lies at the heart of Markov's inequality, is a key that unlocks a whole world of reasoning about uncertainty. It reminds us that even with very little information, logic and a bit of creativity can put firm limits on the unknown.
+This elegant result [@problem_id:1371982] is a beautiful demonstration that understanding the *mechanism* of a proof is often more powerful than just memorizing the result. The simple idea of balancing an average, which lies at the heart of Markov's inequality, is a key that unlocks a whole world of reasoning about uncertainty. It reminds us that even with very little information, logic and a bit of creativity can put firm limits on the unknown.

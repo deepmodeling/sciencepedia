@@ -4,46 +4,46 @@
 
 ### 自然伙伴：曲线及其渐屈线
 
-想象一条曲线在空间中描绘出一条路径。在每一点，它都在弯曲。我们可以用其曲率 $\kappa$ 来衡量它弯曲的*程度*。转弯越急，曲率越大。现在，对于我们曲线上的每一点，我们可以找到一个“[曲率中心](@article_id:333733)”——即在该点最能逼近曲线的圆的中心。如果我们收集所有这些[曲率中心](@article_id:333733)，它们本身就会描绘出一条新的曲线。这条新曲线被称为原始曲线的**渐屈线**。
+想象一条曲线在空间中描绘出一条路径。在每一点，它都在弯曲。我们可以用其曲率 $\kappa$ 来衡量它弯曲的*程度*。转弯越急，曲率越大。现在，对于我们曲线上的每一点，我们可以找到一个“[曲率中心](@keyword=center_of_curvature|lang=zh-CN|style=Feynman)”——即在该点最能逼近曲线的圆的中心。如果我们收集所有这些[曲率中心](@keyword=center_of_curvature|lang=zh-CN|style=Feynman)，它们本身就会描绘出一条新的曲线。这条新曲线被称为原始曲线的**渐屈线**。
 
-曲线 $\boldsymbol{\alpha}$ 的渐屈线 $\boldsymbol{\beta}$ 的公式由 $\boldsymbol{\beta}(s) = \boldsymbol{\alpha}(s) + \frac{1}{\kappa(s)}\mathbf{N}(s)$ 给出，其中 $\mathbf{N}(s)$ 是[主法向量](@article_id:326970)。这看起来熟悉吗？应该熟悉！它具有与伯特兰关系 $\boldsymbol{\alpha}^*(s) = \boldsymbol{\alpha}(s) + a\mathbf{N}(s)$ 完全相同的形式。
+曲线 $\boldsymbol{\alpha}$ 的渐屈线 $\boldsymbol{\beta}$ 的公式由 $\boldsymbol{\beta}(s) = \boldsymbol{\alpha}(s) + \frac{1}{\kappa(s)}\mathbf{N}(s)$ 给出，其中 $\mathbf{N}(s)$ 是[主法向量](@keyword=principal_normal_vector|lang=zh-CN|style=Feynman)。这看起来熟悉吗？应该熟悉！它具有与伯特兰关系 $\boldsymbol{\alpha}^*(s) = \boldsymbol{\alpha}(s) + a\mathbf{N}(s)$ 完全相同的形式。
 
-这导出了一个优美而直接的结论：一条曲线和它的[渐屈线](@article_id:334933)构成一个伯特兰对，当且仅当它们之间的距离，也就是[曲率半径](@article_id:338383) $\rho = 1/\kappa$，是常数。换句话说，一条具有**[常曲率](@article_id:322525)**的曲线，其[渐屈线](@article_id:334933)是其天然的伯特兰伴侣。
+这导出了一个优美而直接的结论：一条曲线和它的[渐屈线](@keyword=evolute|lang=zh-CN|style=Feynman)构成一个伯特兰对，当且仅当它们之间的距离，也就是[曲率半径](@keyword=radius_of_curvature|lang=zh-CN|style=Feynman) $\rho = 1/\kappa$，是常数。换句话说，一条具有**[常曲率](@keyword=constant_curvature|lang=zh-CN|style=Feynman)**的曲线，其[渐屈线](@keyword=evolute|lang=zh-CN|style=Feynman)是其天然的伯特兰伴侣。
 
-什么是有名的[常曲率](@article_id:322525)曲线？圆柱螺旋线！它是弹簧的形状，或带电粒子在均匀[磁场](@article_id:313708)中运动的路径。如果你计算圆柱螺旋线的[渐屈线](@article_id:334933)，你会发现一些非凡的事情：它也是另一条圆柱螺旋线 。它们被锁定在一起，一条追踪另一条[曲率中心](@article_id:333733)的路径，永远保持相同的主法线。
+什么是有名的[常曲率](@keyword=constant_curvature|lang=zh-CN|style=Feynman)曲线？圆柱螺旋线！它是弹簧的形状，或带电粒子在均匀[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)中运动的路径。如果你计算圆柱螺旋线的[渐屈线](@keyword=evolute|lang=zh-CN|style=Feynman)，你会发现一些非凡的事情：它也是另一条圆柱螺旋线 [@problem_id:1643505]。它们被锁定在一起，一条追踪另一条[曲率中心](@keyword=center_of_curvature|lang=zh-CN|style=Feynman)的路径，永远保持相同的主法线。
 
-这种关系甚至更深。对于任何与其[渐屈线](@article_id:334933)构成伯特兰对的[常曲率](@article_id:322525)曲线，都会出现一个隐藏的对称性，关联着它们的挠率。如果 $\tau$ 是原始[曲线的挠率](@article_id:641328)，$\tilde{\tau}$ 是其[渐屈线](@article_id:334933)伴侣的挠率，它们的乘积被曲率优雅地固定下来：$\tau(s)\tilde{\tau}(s) = \kappa^2$ 。这不仅仅是一个公式；它是一种守恒定律，一种源于伯特兰条件的[几何不变量](@article_id:357501)。
+这种关系甚至更深。对于任何与其[渐屈线](@keyword=evolute|lang=zh-CN|style=Feynman)构成伯特兰对的[常曲率](@keyword=constant_curvature|lang=zh-CN|style=Feynman)曲线，都会出现一个隐藏的对称性，关联着它们的挠率。如果 $\tau$ 是原始[曲线的挠率](@keyword=torsion_of_curves|lang=zh-CN|style=Feynman)，$\tilde{\tau}$ 是其[渐屈线](@keyword=evolute|lang=zh-CN|style=Feynman)伴侣的挠率，它们的乘积被曲率优雅地固定下来：$\tau(s)\tilde{\tau}(s) = \kappa^2$ [@problem_id:1647560]。这不仅仅是一个公式；它是一种守恒定律，一种源于伯特兰条件的[几何不变量](@keyword=geometric_invariants|lang=zh-CN|style=Feynman)。
 
-### 球面视角：[球面像](@article_id:324497)与[测地线](@article_id:327811)
+### 球面视角：[球面像](@keyword=spherical_image|lang=zh-CN|style=Feynman)与[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)
 
-让我们换个角度。与其在空间中观察曲线，不如只看它们的 Frenet 标架向量指向的*方向*。我们可以通过取一个向量，比如[主法向量](@article_id:326970) $\mathbf{N}(s)$，并将其尾部放在[单位球](@article_id:302998)的球心来实现。随着 $s$ 的变化，向量的尖端将在球面上描绘出一条路径。这条路径被称为**主法线[球面像](@article_id:324497)**。
+让我们换个角度。与其在空间中观察曲线，不如只看它们的 Frenet 标架向量指向的*方向*。我们可以通过取一个向量，比如[主法向量](@keyword=principal_normal_vector|lang=zh-CN|style=Feynman) $\mathbf{N}(s)$，并将其尾部放在[单位球](@keyword=unit_ball|lang=zh-CN|style=Feynman)的球心来实现。随着 $s$ 的变化，向量的尖端将在球面上描绘出一条路径。这条路径被称为**主法线[球面像](@keyword=spherical_image|lang=zh-CN|style=Feynman)**。
 
-那么，伯特兰定义最直接的推论是什么？由于两条伯特兰伴侣曲线 $\boldsymbol{\alpha}$ 和 $\boldsymbol{\alpha}^*$ 在对应点上共享相同的[主法向量](@article_id:326970) $\mathbf{N}(s)$，它们必须有**完全相同**的主[法线](@article_id:346925)[球面像](@article_id:324497)！它们在方向的[天球](@article_id:318672)上望着同一颗“指引星”。
+那么，伯特兰定义最直接的推论是什么？由于两条伯特兰伴侣曲线 $\boldsymbol{\alpha}$ 和 $\boldsymbol{\alpha}^*$ 在对应点上共享相同的[主法向量](@keyword=principal_normal_vector|lang=zh-CN|style=Feynman) $\mathbf{N}(s)$，它们必须有**完全相同**的主[法线](@keyword=normal_line|lang=zh-CN|style=Feynman)[球面像](@keyword=spherical_image|lang=zh-CN|style=Feynman)！它们在方向的[天球](@keyword=celestial_sphere|lang=zh-CN|style=Feynman)上望着同一颗“指引星”。
 
-这条共享的球面曲线充当了两条母曲线之间的桥梁。这个单一[球面像](@article_id:324497)的几何性质与两个伴侣的属性都相关联。例如，[球面像](@article_id:324497)的切线可以与两条曲线的 Frenet 标架相关联。这使我们能够发现另一个优雅的关系：一条伯特兰曲[线与](@article_id:356071)其[法线](@article_id:346925)[球面像](@article_id:324497)切线之间的夹角，以一种惊人简单的方式与其伴侣的相应夹角相关联，直接涉及到伴侣曲线之间的恒定夹角 $\theta$ 。一个在三维空间中定义的属性（$\theta$）在一个二维球面上表现为角度的简单[相移](@article_id:314754)。
+这条共享的球面曲线充当了两条母曲线之间的桥梁。这个单一[球面像](@keyword=spherical_image|lang=zh-CN|style=Feynman)的几何性质与两个伴侣的属性都相关联。例如，[球面像](@keyword=spherical_image|lang=zh-CN|style=Feynman)的切线可以与两条曲线的 Frenet 标架相关联。这使我们能够发现另一个优雅的关系：一条伯特兰曲[线与](@keyword=wired_and|lang=zh-CN|style=Feynman)其[法线](@keyword=normal_line|lang=zh-CN|style=Feynman)[球面像](@keyword=spherical_image|lang=zh-CN|style=Feynman)切线之间的夹角，以一种惊人简单的方式与其伴侣的相应夹角相关联，直接涉及到伴侣曲线之间的恒定夹角 $\theta$ [@problem_id:1663112]。一个在三维空间中定义的属性（$\theta$）在一个二维球面上表现为角度的简单[相移](@keyword=phase_shift|lang=zh-CN|style=Feynman)。
 
-如果我们更进一步，想象我们的曲线从一开始就生活在一个球面上呢？伯特兰条件能告诉我们关于它被限制在这个新世界中的生活什么信息？[曲面](@article_id:331153)上曲线的曲率可以分为两部分：它在[曲面](@article_id:331153)*内*弯曲的程度（[测地曲率](@article_id:318432)，$k_g$）和它通过*脱离*[曲面](@article_id:331153)弯曲的程度（[法曲率](@article_id:334664)）。对于单位球面上的曲线，这些量通过优美的毕达哥拉斯式公式 $\kappa^2 = k_g^2 + 1$ 与总空间曲率 $\kappa$ 相关联。
+如果我们更进一步，想象我们的曲线从一开始就生活在一个球面上呢？伯特兰条件能告诉我们关于它被限制在这个新世界中的生活什么信息？[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上曲线的曲率可以分为两部分：它在[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)*内*弯曲的程度（[测地曲率](@keyword=geodesic_curvature|lang=zh-CN|style=Feynman)，$k_g$）和它通过*脱离*[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)弯曲的程度（[法曲率](@keyword=normal_curvature|lang=zh-CN|style=Feynman)）。对于单位球面上的曲线，这些量通过优美的毕达哥拉斯式公式 $\kappa^2 = k_g^2 + 1$ 与总空间曲率 $\kappa$ 相关联。
 
-如果我们知道我们的球面曲线有一个伯特兰伴侣，并且我们做一个合理的物理假设（例如，伴侣也位于同一个球面上），这个约束就足以确定曲线的空间曲率 $\kappa$。一旦 $\kappa$ 已知，我们就可以立即计算出其[测地曲率](@article_id:318432) $k_g$ 。所以，拥有一个在空间别处的伴侣曲线这一“外在”属性，告诉了我们一些关于曲线在其自身球面宇宙中行为的深刻“内在”信息。
+如果我们知道我们的球面曲线有一个伯特兰伴侣，并且我们做一个合理的物理假设（例如，伴侣也位于同一个球面上），这个约束就足以确定曲线的空间曲率 $\kappa$。一旦 $\kappa$ 已知，我们就可以立即计算出其[测地曲率](@keyword=geodesic_curvature|lang=zh-CN|style=Feynman) $k_g$ [@problem_id:1640582]。所以，拥有一个在空间别处的伴侣曲线这一“外在”属性，告诉了我们一些关于曲线在其自身球面宇宙中行为的深刻“内在”信息。
 
-### 从曲线到[曲面](@article_id:331153)：编织[可展曲面](@article_id:332766)
+### 从曲线到[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)：编织[可展曲面](@keyword=developable_surfaces|lang=zh-CN|style=Feynman)
 
-到目前为止，我们讨论的是成对的一维曲线。但这些曲线可以用来生成二维[曲面](@article_id:331153)。想象一下，用一条直线段连接曲线 $\boldsymbol{\alpha}$ 上的每个点与其伯特兰伴侣 $\boldsymbol{\alpha}^*$ 上的对应点。当你沿着曲线滑动时，这条线会扫出一个[曲面](@article_id:331153)，称为**[直纹面](@article_id:339897)**。
+到目前为止，我们讨论的是成对的一维曲线。但这些曲线可以用来生成二维[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)。想象一下，用一条直线段连接曲线 $\boldsymbol{\alpha}$ 上的每个点与其伯特兰伴侣 $\boldsymbol{\alpha}^*$ 上的对应点。当你沿着曲线滑动时，这条线会扫出一个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，称为**[直纹面](@keyword=ruled_surfaces|lang=zh-CN|style=Feynman)**。
 
-现在，有些[曲面](@article_id:331153)，比如一张纸，可以展开平铺在桌面上而没有任何拉伸或撕裂。圆柱体就是这样，圆锥体也是。球体则不是。这些“可展开”的[曲面](@article_id:331153)被称为**[可展曲面](@article_id:332766)**，它们在制造业和设计中极为重要。在数学上，它们的特征是处处具有[零高斯曲率](@article_id:326117)（$K=0$）。
+现在，有些[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，比如一张纸，可以展开平铺在桌面上而没有任何拉伸或撕裂。圆柱体就是这样，圆锥体也是。球体则不是。这些“可展开”的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)被称为**[可展曲面](@keyword=developable_surfaces|lang=zh-CN|style=Feynman)**，它们在制造业和设计中极为重要。在数学上，它们的特征是处处具有[零高斯曲率](@keyword=zero_gaussian_curvature|lang=zh-CN|style=Feynman)（$K=0$）。
 
-这里的关键联系是：由伯特兰[对生成](@article_id:314537)的[直纹面](@article_id:339897)具有一个特殊的性质。它的可展性直接与定义伯特兰曲线的曲率和挠率之间的基本线性关系相关。事实上，可以证明这个[直纹面](@article_id:339897)是可展的，当且仅当原始[曲线的挠率](@article_id:641328) $\tau$ 为零。
+这里的关键联系是：由伯特兰[对生成](@keyword=pair_production|lang=zh-CN|style=Feynman)的[直纹面](@keyword=ruled_surfaces|lang=zh-CN|style=Feynman)具有一个特殊的性质。它的可展性直接与定义伯特兰曲线的曲率和挠率之间的基本线性关系相关。事实上，可以证明这个[直纹面](@keyword=ruled_surfaces|lang=zh-CN|style=Feynman)是可展的，当且仅当原始[曲线的挠率](@keyword=torsion_of_curves|lang=zh-CN|style=Feynman) $\tau$ 为零。
 
-让我们以我们可靠的圆柱螺旋线为例。要使其挠率为零，其螺距必须为零，这意味着它坍缩成平面上的一个简单圆。它的伯特兰伴侣是另一个同心圆。它们之间扫出的[直纹面](@article_id:339897)只是一个平坦的[环带](@article_id:343088)，一个垫圈形状。这显然是可展的——它本来就是平的！而著名的 Gauss-Bonnet 定理，这个联系几何（曲率）与拓扑（角度）的定理，告诉我们关于这个简单形状的什么呢？它告诉我们，当你绕其边界走一圈时，转角之和必须是 $2\pi$，这个结果可以通过对圆弧和直边进行直接计算来验证 。这为一条深刻的拓扑定理提供了一个可爱而具体的检验，而一切都始于伯特兰伴侣的思想。
+让我们以我们可靠的圆柱螺旋线为例。要使其挠率为零，其螺距必须为零，这意味着它坍缩成平面上的一个简单圆。它的伯特兰伴侣是另一个同心圆。它们之间扫出的[直纹面](@keyword=ruled_surfaces|lang=zh-CN|style=Feynman)只是一个平坦的[环带](@keyword=annulus|lang=zh-CN|style=Feynman)，一个垫圈形状。这显然是可展的——它本来就是平的！而著名的 Gauss-Bonnet 定理，这个联系几何（曲率）与拓扑（角度）的定理，告诉我们关于这个简单形状的什么呢？它告诉我们，当你绕其边界走一圈时，转角之和必须是 $2\pi$，这个结果可以通过对圆弧和直边进行直接计算来验证 [@problem_id:1047957]。这为一条深刻的拓扑定理提供了一个可爱而具体的检验，而一切都始于伯特兰伴侣的思想。
 
 ### 分析透镜：从几何到方程
 
-我们的讨论在很大程度上是几何和视觉的。但在许多实际应用中，从[机器人学](@article_id:311041)到计算机图形学，我们需要计算。我们需要方程。伯特兰条件能否从几何的语言翻译成分析的语言？
+我们的讨论在很大程度上是几何和视觉的。但在许多实际应用中，从[机器人学](@keyword=robotics|lang=zh-CN|style=Feynman)到计算机图形学，我们需要计算。我们需要方程。伯特兰条件能否从几何的语言翻译成分析的语言？
 
-答案是响亮的“是”。Frenet-Serret 公式本身就是一个[一阶线性微分方程组](@article_id:355310)。它们描述了当我们沿曲线移动时，[切向量](@article_id:329199)、[法向量](@article_id:327892)和副[法向量](@article_id:327892)如何变化。伯特兰关系式 $\boldsymbol{\alpha}^*(s) = \boldsymbol{\alpha}(s) + a\mathbf{N}(s)$ 提供了两个伴侣位置向量之间的代数联系。
+答案是响亮的“是”。Frenet-Serret 公式本身就是一个[一阶线性微分方程组](@keyword=systems_of_first_order_linear_differential_equations|lang=zh-CN|style=Feynman)。它们描述了当我们沿曲线移动时，[切向量](@keyword=tangent_vectors|lang=zh-CN|style=Feynman)、[法向量](@keyword=normal_vector|lang=zh-CN|style=Feynman)和副[法向量](@keyword=normal_vector|lang=zh-CN|style=Feynman)如何变化。伯特兰关系式 $\boldsymbol{\alpha}^*(s) = \boldsymbol{\alpha}(s) + a\mathbf{N}(s)$ 提供了两个伴侣位置向量之间的代数联系。
 
-通过将这些结合起来，我们可以将一个几何问题转化为一个分析问题。如果我们知道一条曲线的曲率 $\kappa(s)$ 和挠率 $\tau(s)$（也许来自系统的物理性质），并且我们知道它有一个伯特兰伴侣，我们就可以系统地计算出其伴侣位置向量 $\boldsymbol{\alpha}^*$ 的所有[导数](@article_id:318324)。二阶[导数](@article_id:318324) $\frac{d^2\boldsymbol{\alpha}^*}{ds^2}$ 给出了其加速度的主要贡献；三阶[导数](@article_id:318324)给出了加速度的变化率，依此类推。这些[导数](@article_id:318324)正是围绕一个起点为伴侣曲线构建[泰勒级数展开](@article_id:298916)所需的系数 。
+通过将这些结合起来，我们可以将一个几何问题转化为一个分析问题。如果我们知道一条曲线的曲率 $\kappa(s)$ 和挠率 $\tau(s)$（也许来自系统的物理性质），并且我们知道它有一个伯特兰伴侣，我们就可以系统地计算出其伴侣位置向量 $\boldsymbol{\alpha}^*$ 的所有[导数](@keyword=derivative|lang=zh-CN|style=Feynman)。二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman) $\frac{d^2\boldsymbol{\alpha}^*}{ds^2}$ 给出了其加速度的主要贡献；三阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)给出了加速度的变化率，依此类推。这些[导数](@keyword=derivative|lang=zh-CN|style=Feynman)正是围绕一个起点为伴侣曲线构建[泰勒级数展开](@keyword=taylor_series_expansion|lang=zh-CN|style=Feynman)所需的系数 [@problem_id:1101792]。
 
 这意味着我们可以利用伯特兰条件，从局部信息逐段*预测*伴侣曲线的路径。它弥合了曲线的抽象柏拉图式理想与绘制其轨迹或命令机器遵循它所需的具体数值计算之间的鸿沟。
 
-最终，我们看到，共享法线这个听起来简单的性质，其后果却一点也不简单。它是一个强大的透镜，揭示了几何的相互关联性，向我们展示了螺旋线及其渐屈线是亲属，空间中的曲线在球面上留下的影子讲述着它们的故事，成对的曲线可以编织出具有巨大实用价值的[曲面](@article_id:331153)，视觉几何可以无缝地转化为方程的预测能力。这是对数学世界美丽而统一结构的证明。
+最终，我们看到，共享法线这个听起来简单的性质，其后果却一点也不简单。它是一个强大的透镜，揭示了几何的相互关联性，向我们展示了螺旋线及其渐屈线是亲属，空间中的曲线在球面上留下的影子讲述着它们的故事，成对的曲线可以编织出具有巨大实用价值的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，视觉几何可以无缝地转化为方程的预测能力。这是对数学世界美丽而统一结构的证明。
