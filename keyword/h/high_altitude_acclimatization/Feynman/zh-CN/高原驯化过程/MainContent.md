@@ -7,48 +7,48 @@
 
 ### 第一口喘息：即时警报
 
-在你肺部温暖湿润的肺泡环境中，[氧分子](@article_id:371446)从空气中移动到血液里，并被[红细胞](@article_id:298661)中的血红蛋白捕获。这是一个可逆的化学平衡之舞：
+在你肺部温暖湿润的肺泡环境中，[氧分子](@keyword=oxygen_molecule|lang=zh-CN|style=Feynman)从空气中移动到血液里，并被[红细胞](@keyword=red_blood_cells|lang=zh-CN|style=Feynman)中的血红蛋白捕获。这是一个可逆的化学平衡之舞：
 
 $$Hb(aq) + O_2(g) \rightleftharpoons HbO_2(aq)$$
 
-在此，$Hb$ 是血红蛋白，$HbO_2$ 是富含氧的氧合血红蛋白。与任何化学平衡一样，它对其反应物的浓度——在这里是[分压](@article_id:348162)——非常敏感。你到达高海拔的那一刻，肺部较低的氧分压（$P_{O_2}$）意味着可与血红蛋白结合的 $O_2$ 分子减少了。正如[勒夏特列原理](@article_id:297793)（Le Châtelier's principle）这一基本概念所预测的，平衡向左移动 。离开肺部的血红蛋白分子携带的氧气载荷减少，你的动脉血氧饱和度随之骤降。这就是**[低氧血症](@article_id:315820)**，是暴露于高海拔环境的核心危机。
+在此，$Hb$ 是血红蛋白，$HbO_2$ 是富含氧的氧合血红蛋白。与任何化学平衡一样，它对其反应物的浓度——在这里是[分压](@keyword=partial_pressures|lang=zh-CN|style=Feynman)——非常敏感。你到达高海拔的那一刻，肺部较低的氧分压（$P_{O_2}$）意味着可与血红蛋白结合的 $O_2$ 分子减少了。正如[勒夏特列原理](@keyword=le_chatelier_s_principle|lang=zh-CN|style=Feynman)（Le Châtelier's principle）这一基本概念所预测的，平衡向左移动 [@problem_id:2002291]。离开肺部的血红蛋白分子携带的氧气载荷减少，你的动脉血氧饱和度随之骤降。这就是**[低氧血症](@keyword=hypoxemia|lang=zh-CN|style=Feynman)**，是暴露于高海拔环境的核心危机。
 
-你的身体并不会被动等待。它有沉默的哨兵，即被称为**[外周化学感受器](@article_id:312326)**的微小细胞簇，主要位于颈部大动脉分叉处的[颈动脉体](@article_id:350171)中。这些是你身体主要的氧气传感器。在动脉氧分压（$P_{aO_2}$）下降的几分钟内，这些传感器就会拉响警报。其分子机制非常精妙：低氧抑制了传感器细胞中特定的[钾离子通道](@article_id:353166)，导致它们向脑干的呼吸中枢发出一连串快速的神经信号 。指令明确无误：*立即加深、加快呼吸！* 你的回应是**缺氧性通气反应**（HVR）——你的呼吸变得更快、更深。
+你的身体并不会被动等待。它有沉默的哨兵，即被称为**[外周化学感受器](@keyword=peripheral_chemoreceptors|lang=zh-CN|style=Feynman)**的微小细胞簇，主要位于颈部大动脉分叉处的[颈动脉体](@keyword=carotid_bodies|lang=zh-CN|style=Feynman)中。这些是你身体主要的氧气传感器。在动脉氧分压（$P_{aO_2}$）下降的几分钟内，这些传感器就会拉响警报。其分子机制非常精妙：低氧抑制了传感器细胞中特定的[钾离子通道](@keyword=potassium_channels|lang=zh-CN|style=Feynman)，导致它们向脑干的呼吸中枢发出一连串快速的神经信号 [@problem_id:2556408]。指令明确无误：*立即加深、加快呼吸！* 你的回应是**缺氧性通气反应**（HVR）——你的呼吸变得更快、更深。
 
 ### 不稳定的休战：通气困境
 
-这种初期的过度通气是一种强大的急救措施。通过增加你用新鲜空气冲洗肺部的速率，你提高了[肺泡](@article_id:310194)中的氧分压（$P_{AO_2}$），从而部分补偿了“稀薄”的空气。这并非微不足道的效果；例如，呼吸量相对温和的增加，使你的[肺泡](@article_id:310194)二氧化碳[分压](@article_id:348162)（$P_{ACO_2}$）下降 $10$ mmHg，便可赢回大约 $12.5$ mmHg 宝贵的肺泡氧压——在每个[氧分子](@article_id:371446)都至关重要时，这是一项重大收获 。
+这种初期的过度通气是一种强大的急救措施。通过增加你用新鲜空气冲洗肺部的速率，你提高了[肺泡](@keyword=alveoli|lang=zh-CN|style=Feynman)中的氧分压（$P_{AO_2}$），从而部分补偿了“稀薄”的空气。这并非微不足道的效果；例如，呼吸量相对温和的增加，使你的[肺泡](@keyword=alveoli|lang=zh-CN|style=Feynman)二氧化碳[分压](@keyword=partial_pressures|lang=zh-CN|style=Feynman)（$P_{ACO_2}$）下降 $10$ mmHg，便可赢回大约 $12.5$ mmHg 宝贵的肺泡氧压——在每个[氧分子](@keyword=oxygen_molecule|lang=zh-CN|style=Feynman)都至关重要时，这是一项重大收获 [@problem_id:2556408]。
 
-但这种救生反射伴随着一个严重的副作用。当你呼吸更多时，你不仅吸入更多氧气，还以更快的速度呼出二氧化碳。这导致你血液中的 $P_{CO_2}$ 下降，这种情况称为**低[碳酸](@article_id:359818)血症**。在这里，我们遇到了你身体控制系统中的一个巧妙冲突。你的呼吸驱动力并不仅仅由氧气决定；它对二氧化碳，或者更准确地说，对你血液和大脑的pH值，极其敏感。
+但这种救生反射伴随着一个严重的副作用。当你呼吸更多时，你不仅吸入更多氧气，还以更快的速度呼出二氧化碳。这导致你血液中的 $P_{CO_2}$ 下降，这种情况称为**低[碳酸](@keyword=carbonic_acid|lang=zh-CN|style=Feynman)血症**。在这里，我们遇到了你身体控制系统中的一个巧妙冲突。你的呼吸驱动力并不仅仅由氧气决定；它对二氧化碳，或者更准确地说，对你血液和大脑的pH值，极其敏感。
 
-二氧化碳是你身体体液中的主要酸性物质。当你的动脉 $P_{CO_2}$ 下降时，你的血液以及至关重要的脑脊液（CSF）会变得更偏碱性。另一组位于脑干的传感器，即**[中枢化学感受器](@article_id:316670)**，是血液化学的主调节器。它们检测到脑脊液pH值的上升，并将其解读为你呼吸*过快*的信号。它们向呼吸中枢发送抑制信号，有效地对你的呼吸施加“制动” 。
+二氧化碳是你身体体液中的主要酸性物质。当你的动脉 $P_{CO_2}$ 下降时，你的血液以及至关重要的脑脊液（CSF）会变得更偏碱性。另一组位于脑干的传感器，即**[中枢化学感受器](@keyword=central_chemoreceptors|lang=zh-CN|style=Feynman)**，是血液化学的主调节器。它们检测到脑脊液pH值的上升，并将其解读为你呼吸*过快*的信号。它们向呼吸中枢发送抑制信号，有效地对你的呼吸施加“制动” [@problem_id:1699231]。
 
-因此，你陷入了一场生理拔河赛。你的[外周化学感受器](@article_id:312326)在尖叫着要求更多空气以对抗缺氧，而你的[中枢化学感受器](@article_id:316670)则试图减缓你的呼吸以纠正碱中毒。结果是一种不稳定的休战。你的通气量增加了，但没有达到仅由[缺氧](@article_id:314197)刺激所要求的程度。为了真正适应，你的身体必须解决这个冲突。
+因此，你陷入了一场生理拔河赛。你的[外周化学感受器](@keyword=peripheral_chemoreceptors|lang=zh-CN|style=Feynman)在尖叫着要求更多空气以对抗缺氧，而你的[中枢化学感受器](@keyword=central_chemoreceptors|lang=zh-CN|style=Feynman)则试图减缓你的呼吸以纠正碱中毒。结果是一种不稳定的休战。你的通气量增加了，但没有达到仅由[缺氧](@keyword=hypoxia|lang=zh-CN|style=Feynman)刺激所要求的程度。为了真正适应，你的身体必须解决这个冲突。
 
 ### 重新校准系统：接下来的日子
 
 接下来的几天是一个安静但深刻的重新校准期。你的身体致力于改变游戏规则，调整其内部化学环境，以实现持续、有效的过度通气。
 
-首先，中枢的“制动”被轻轻释放。大脑中产生脑脊液的结构——[脉络丛](@article_id:352008)，开始主动将碳酸氢根离子（$HCO_3^-$），即脑脊液中的主要缓冲物质，泵出液体之外 。通过移除这种碱性缓冲物，脑脊液的pH值开始回落至其正常的、略带酸性的设定点，*即使 $P_{CO_2}$ 仍然很低*。这个巧妙的技巧有效地“重置”了[中枢化学感受器](@article_id:316670)。它们不再对低 $CO_2$ 感到警觉，其抑制信号也随之消退。外周的[缺氧驱动](@article_id:310768)力现在被释放出来，你的通气量攀升到一个新的、更高的、更稳定的水平。这种通过逐渐重置生理参数以达到新稳定状态的过程，是**异态平衡**（allostasis）或“通过变化实现稳定”的标志  。
+首先，中枢的“制动”被轻轻释放。大脑中产生脑脊液的结构——[脉络丛](@keyword=choroid_plexus|lang=zh-CN|style=Feynman)，开始主动将碳酸氢根离子（$HCO_3^-$），即脑脊液中的主要缓冲物质，泵出液体之外 [@problem_id:1699231]。通过移除这种碱性缓冲物，脑脊液的pH值开始回落至其正常的、略带酸性的设定点，*即使 $P_{CO_2}$ 仍然很低*。这个巧妙的技巧有效地“重置”了[中枢化学感受器](@keyword=central_chemoreceptors|lang=zh-CN|style=Feynman)。它们不再对低 $CO_2$ 感到警觉，其抑制信号也随之消退。外周的[缺氧驱动](@keyword=hypoxic_drive|lang=zh-CN|style=Feynman)力现在被释放出来，你的通气量攀升到一个新的、更高的、更稳定的水平。这种通过逐渐重置生理参数以达到新稳定状态的过程，是**异态平衡**（allostasis）或“通过变化实现稳定”的标志 [@problem_id:1741574] [@problem_id:1748146]。
 
-与此同时，你的肾脏为血液执行类似的功能。为了对抗全身性的[呼吸性碱中毒](@article_id:308762)，肾脏开始向尿液中[排泄](@article_id:299267)更多的[碳酸](@article_id:359818)氢根 。它们通过下调近端小管中通常重吸收[碳酸](@article_id:359818)氢根的[转运蛋白](@article_id:355583)，并上调集合管中主动分泌碳酸氢根的其他[转运蛋白](@article_id:355583)来实现这一点 。通过抛弃这些多余的碱，肾脏将你的血液pH值恢复到约7.4的正常值，这一过程称为**肾脏代偿**。
+与此同时，你的肾脏为血液执行类似的功能。为了对抗全身性的[呼吸性碱中毒](@keyword=respiratory_alkalosis|lang=zh-CN|style=Feynman)，肾脏开始向尿液中[排泄](@keyword=excretion|lang=zh-CN|style=Feynman)更多的[碳酸](@keyword=carbonic_acid|lang=zh-CN|style=Feynman)氢根 [@problem_id:2556408]。它们通过下调近端小管中通常重吸收[碳酸](@keyword=carbonic_acid|lang=zh-CN|style=Feynman)氢根的[转运蛋白](@keyword=transport_proteins|lang=zh-CN|style=Feynman)，并上调集合管中主动分泌碳酸氢根的其他[转运蛋白](@keyword=transport_proteins|lang=zh-CN|style=Feynman)来实现这一点 [@problem_id:2604706]。通过抛弃这些多余的碱，肾脏将你的血液pH值恢复到约7.4的正常值，这一过程称为**肾脏代偿**。
 
-在此期间，你的红细胞内部正在发生另一种微妙但关键的生物化学调整。它们开始产生更多一种名为**2,[3-二磷酸甘油酸](@article_id:353314)（2,3-BPG）**的分子。该分子是[血红蛋白](@article_id:297336)的[变构调节剂](@article_id:367732)。它会楔入[血红蛋白](@article_id:297336)蛋白的中央[空腔](@article_id:376386)，但前提是血红蛋白处于脱氧（T-状态）形式。通过与这种形式结合并使其稳定，2,[3-BPG](@article_id:302673)有效地降低了血红蛋白对氧气的亲和力 。这听起来可能违反直觉——为什么会希望让血红蛋白*更难*抓住氧气呢？
+在此期间，你的红细胞内部正在发生另一种微妙但关键的生物化学调整。它们开始产生更多一种名为**2,[3-二磷酸甘油酸](@keyword=3_diphosphoglycerate|lang=zh-CN|style=Feynman)（2,3-BPG）**的分子。该分子是[血红蛋白](@keyword=hemoglobin|lang=zh-CN|style=Feynman)的[变构调节剂](@keyword=allosteric_modulator|lang=zh-CN|style=Feynman)。它会楔入[血红蛋白](@keyword=hemoglobin|lang=zh-CN|style=Feynman)蛋白的中央[空腔](@keyword=hohlraum|lang=zh-CN|style=Feynman)，但前提是血红蛋白处于脱氧（T-状态）形式。通过与这种形式结合并使其稳定，2,[3-BPG](@keyword=3_bpg|lang=zh-CN|style=Feynman)有效地降低了血红蛋白对氧气的亲和力 [@problem_id:2049684]。这听起来可能违反直觉——为什么会希望让血红蛋白*更难*抓住氧气呢？
 
-答案在于肺部与组织之间的差异。在高海拔地区，主要挑战不仅是在肺部加载氧气，更在于将其卸载到你缺氧的组织中。2,3-BPG的增加就像一个撬棍，帮助氧分子在血红蛋白通过外周毛细血管时从其上[脱落](@article_id:315189)。这一变化在氧-[血红蛋白](@article_id:297336)解离曲线上表现为“右移”，意味着血红蛋白50%饱和时的分压（$P_{50}$）增加 。策略已经改变：如果每次运输不能携带同样多的氧气，那么就确保更有效地卸载你所拥有的。
+答案在于肺部与组织之间的差异。在高海拔地区，主要挑战不仅是在肺部加载氧气，更在于将其卸载到你缺氧的组织中。2,3-BPG的增加就像一个撬棍，帮助氧分子在血红蛋白通过外周毛细血管时从其上[脱落](@keyword=abscission|lang=zh-CN|style=Feynman)。这一变化在氧-[血红蛋白](@keyword=hemoglobin|lang=zh-CN|style=Feynman)解离曲线上表现为“右移”，意味着血红蛋白50%饱和时的分压（$P_{50}$）增加 [@problem_id:1749329]。策略已经改变：如果每次运输不能携带同样多的氧气，那么就确保更有效地卸载你所拥有的。
 
 ### 建立更大的运输队：长期解决方案
 
-虽然呼吸和生物化学的调整至关重要，但身体的最终解决方案更为直接：如果氧气稀缺，就制造更多的运输工具。这个过程在数周内展开，是内分泌[反馈回路](@article_id:337231)的一个绝佳范例。
+虽然呼吸和生物化学的调整至关重要，但身体的最终解决方案更为直接：如果氧气稀缺，就制造更多的运输工具。这个过程在数周内展开，是内分泌[反馈回路](@keyword=feedback_loop|lang=zh-CN|style=Feynman)的一个绝佳范例。
 
-故事再次始于肾脏检测到[低氧血症](@article_id:315820)。作为回应，它们加大了名为**促[红细胞生成](@article_id:316729)素（EPO）**的激素的生产。EPO通过血液循环到达红[骨髓](@article_id:381003)，即身体的血细胞工厂。在那里，它传递一个强有力的信息：开始制造更多的[红细胞](@article_id:298661)。EPO刺激[造血干细胞](@article_id:324145)分化为红细胞前体，这些前体随后成熟并以更高的速率释放到循环中。这一整个因果链——低氧检测、EPO分泌、骨髓刺激，以及最终红细胞计数的增加——是长期习服的基石 。
+故事再次始于肾脏检测到[低氧血症](@keyword=hypoxemia|lang=zh-CN|style=Feynman)。作为回应，它们加大了名为**促[红细胞生成](@keyword=erythropoiesis|lang=zh-CN|style=Feynman)素（EPO）**的激素的生产。EPO通过血液循环到达红[骨髓](@keyword=bone_marrow|lang=zh-CN|style=Feynman)，即身体的血细胞工厂。在那里，它传递一个强有力的信息：开始制造更多的[红细胞](@keyword=red_blood_cells|lang=zh-CN|style=Feynman)。EPO刺激[造血干细胞](@keyword=hematopoietic_stem_cells|lang=zh-CN|style=Feynman)分化为红细胞前体，这些前体随后成熟并以更高的速率释放到循环中。这一整个因果链——低氧检测、EPO分泌、骨髓刺激，以及最终红细胞计数的增加——是长期习服的基石 [@problem_id:1723653]。
 
-这个称为**红细胞增多症**（erythrocytosis）的过程，其结果是你的**血细胞[比容](@article_id:296885)**——即红细胞占血液体积的百分比——增加。有了更多的[红细胞](@article_id:298661)，你的血液总携氧能力增加，有助于确保尽管饱和度较低，但每分钟输送到组织的氧气总量能够得以维持。
+这个称为**红细胞增多症**（erythrocytosis）的过程，其结果是你的**血细胞[比容](@keyword=specific_volume|lang=zh-CN|style=Feynman)**——即红细胞占血液体积的百分比——增加。有了更多的[红细胞](@keyword=red_blood_cells|lang=zh-CN|style=Feynman)，你的血液总携氧能力增加，有助于确保尽管饱和度较低，但每分钟输送到组织的氧气总量能够得以维持。
 
 ### 适应的代价：一个警示故事
 
-这一系列的适应是[生理学](@article_id:311838)上的一个胜利，是身体智慧的证明。然而，正如在所有物理学和生物学中一样，没有免费的午餐。增加血细胞[比容](@article_id:296885)的解决方案也带来了其自身的危险权衡。
+这一系列的适应是[生理学](@keyword=physiology|lang=zh-CN|style=Feynman)上的一个胜利，是身体智慧的证明。然而，正如在所有物理学和生物学中一样，没有免费的午餐。增加血细胞[比容](@keyword=specific_volume|lang=zh-CN|style=Feynman)的解决方案也带来了其自身的危险权衡。
 
-随着[红细胞](@article_id:298661)浓度的升高，你的血液变得更稠、更黏。其差异类似于试图泵送水与泵送蜂蜜。这种增加的黏度意味着你的心脏必须更努力地工作，才能将黏稠的血液推过你的[循环系统](@article_id:311540) 。血细胞[比容](@article_id:296885)从海平面的正常值0.45上升到高海拔的0.60，仅为了维持相同的[血流](@article_id:309096)量，就可能使心脏的功率输出增加近50%。
+随着[红细胞](@keyword=red_blood_cells|lang=zh-CN|style=Feynman)浓度的升高，你的血液变得更稠、更黏。其差异类似于试图泵送水与泵送蜂蜜。这种增加的黏度意味着你的心脏必须更努力地工作，才能将黏稠的血液推过你的[循环系统](@keyword=circulatory_system|lang=zh-CN|style=Feynman) [@problem_id:1729403]。血细胞[比容](@keyword=specific_volume|lang=zh-CN|style=Feynman)从海平面的正常值0.45上升到高海拔的0.60，仅为了维持相同的[血流](@keyword=blood_flow|lang=zh-CN|style=Feynman)量，就可能使心脏的功率输出增加近50%。
 
-对于大多数人来说，身体会找到一个最佳[平衡点](@article_id:323137)，在增加血细胞[比容](@article_id:296885)以提高氧气输送的同时，不过度劳损心脏。但有时，这种适应性反应会过度。在一些长期居住在高海拔地区的人中，产生[红细胞](@article_id:298661)的驱动力变得失控，导致**过度性红细胞增多症**。这是**慢性[高山病](@article_id:342181)（Monge氏病）**的标志。血细胞[比容](@article_id:296885)可能攀升至极高水平，使血液变得如此黏稠以至于循环受损，反而加剧了组织[缺氧](@article_id:314197)。这种适应不良会导致衰弱的症状，并凸显了成功习服所依赖的微妙平衡 。身体的精妙解决方案，在被推向极致时，本身就成了疾病的根源——这是关于[生理适应](@article_id:311147)复杂且往往是双刃剑性质的深刻教训。
+对于大多数人来说，身体会找到一个最佳[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)，在增加血细胞[比容](@keyword=specific_volume|lang=zh-CN|style=Feynman)以提高氧气输送的同时，不过度劳损心脏。但有时，这种适应性反应会过度。在一些长期居住在高海拔地区的人中，产生[红细胞](@keyword=red_blood_cells|lang=zh-CN|style=Feynman)的驱动力变得失控，导致**过度性红细胞增多症**。这是**慢性[高山病](@keyword=mountain_sickness|lang=zh-CN|style=Feynman)（Monge氏病）**的标志。血细胞[比容](@keyword=specific_volume|lang=zh-CN|style=Feynman)可能攀升至极高水平，使血液变得如此黏稠以至于循环受损，反而加剧了组织[缺氧](@keyword=hypoxia|lang=zh-CN|style=Feynman)。这种适应不良会导致衰弱的症状，并凸显了成功习服所依赖的微妙平衡 [@problem_id:1729394]。身体的精妙解决方案，在被推向极致时，本身就成了疾病的根源——这是关于[生理适应](@keyword=physiological_adaptation|lang=zh-CN|style=Feynman)复杂且往往是双刃剑性质的深刻教训。

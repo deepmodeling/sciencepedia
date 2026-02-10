@@ -17,7 +17,7 @@ $$
 d_1(P_1, P_2) = |x_1 - x_2| + |y_1 - y_2|
 $$
 
-It's the sum of the absolute differences of their coordinates. This isn't just a quirky thought experiment. Imagine a robotic arm on an assembly line that moves along a fixed set of perpendicular tracks. To get from a supply bin at $A = (2.5, -4.0, 8.1)$ to a station at $B = (10.0, 1.5, 3.6)$, it must first move along the x-axis, then the y-axis, then the z-axis. Its total travel distance is the Manhattan distance: $|10.0 - 2.5| + |1.5 - (-4.0)| + |3.6 - 8.1| = 7.5 + 5.5 + 4.5 = 17.5$ cm . In any system where movement is constrained to a grid, the Manhattan norm is not just an alternative; it's the most natural and direct way to measure travel.
+It's the sum of the absolute differences of their coordinates. This isn't just a quirky thought experiment. Imagine a robotic arm on an assembly line that moves along a fixed set of perpendicular tracks. To get from a supply bin at $A = (2.5, -4.0, 8.1)$ to a station at $B = (10.0, 1.5, 3.6)$, it must first move along the x-axis, then the y-axis, then the z-axis. Its total travel distance is the Manhattan distance: $|10.0 - 2.5| + |1.5 - (-4.0)| + |3.6 - 8.1| = 7.5 + 5.5 + 4.5 = 17.5$ cm [@problem_id:2225312]. In any system where movement is constrained to a grid, the Manhattan norm is not just an alternative; it's the most natural and direct way to measure travel.
 
 ### The Shape of "Nearness": Circles that are Squares
 
@@ -29,11 +29,11 @@ But with our taxicab ruler, the equation is $\|v\|_1 = |x| + |y| = 1$. What shap
 
 This is a profound discovery! In the Manhattan world, circles are squares.
 
-Now, let's compare the "unit balls"—the set of all points *inside* the unit circle. Let $B_2$ be the familiar round disk ($\|v\|_2 \lt 1$) and $B_1$ be the taxicab "disk" ($\|v\|_1 \lt 1$), which is our tilted square. If you draw them on top of each other, you'll see that the diamond-shaped $B_1$ fits entirely inside the round $B_2$ .
+Now, let's compare the "unit balls"—the set of all points *inside* the unit circle. Let $B_2$ be the familiar round disk ($\|v\|_2 \lt 1$) and $B_1$ be the taxicab "disk" ($\|v\|_1 \lt 1$), which is our tilted square. If you draw them on top of each other, you'll see that the diamond-shaped $B_1$ fits entirely inside the round $B_2$ [@problem_id:1873293].
 
 This isn't just a visual trick; it's a consequence of a fundamental inequality: for any vector $v$, $\|v\|_2 \le \|v\|_1$. The Euclidean distance is never more than the taxicab distance. Think about it: the shortest path between two points is a straight line. The taxicab is forced to take a longer, zig-zag path.
 
-But are there points inside the Euclidean circle that are *outside* the taxicab circle? Absolutely. Consider the point $(0.7, 0.7)$. Its Euclidean distance is $\sqrt{0.7^2 + 0.7^2} = \sqrt{0.98}$, which is less than 1. So it's inside the round disk $B_2$. But its taxicab distance is $|0.7| + |0.7| = 1.4$, which is greater than 1, placing it outside the diamond-shaped disk $B_1$ . These points lie in the four crescent-shaped regions between the boundaries of the two "circles."
+But are there points inside the Euclidean circle that are *outside* the taxicab circle? Absolutely. Consider the point $(0.7, 0.7)$. Its Euclidean distance is $\sqrt{0.7^2 + 0.7^2} = \sqrt{0.98}$, which is less than 1. So it's inside the round disk $B_2$. But its taxicab distance is $|0.7| + |0.7| = 1.4$, which is greater than 1, placing it outside the diamond-shaped disk $B_1$ [@problem_id:1896468]. These points lie in the four crescent-shaped regions between the boundaries of the two "circles."
 
 ### When Do the Rulers Agree? A Question of Direction
 
@@ -51,13 +51,13 @@ $$
 
 Subtracting $x_1^2 + x_2^2$ from both sides, we are left with $2|x_1||x_2| = 0$. This simple equation tells us everything. For it to be true, either $x_1=0$ or $x_2=0$.
 
-This means the two norms are equal only for vectors that lie purely on the coordinate axes! . The moment you move in a diagonal direction, the Euclidean distance becomes strictly shorter than the Manhattan distance. This reveals a deep truth: the Manhattan norm has built-in "preferred directions." It privileges movement along the grid itself. The Euclidean norm is isotropic—it treats all directions equally.
+This means the two norms are equal only for vectors that lie purely on the coordinate axes! [@problem_id:2308545]. The moment you move in a diagonal direction, the Euclidean distance becomes strictly shorter than the Manhattan distance. This reveals a deep truth: the Manhattan norm has built-in "preferred directions." It privileges movement along the grid itself. The Euclidean norm is isotropic—it treats all directions equally.
 
 ### A World Without Pythagoras
 
 The special status of the coordinate axes hints at an even deeper structural difference. In Euclidean geometry, the Pythagorean theorem is sacred. For any two orthogonal (perpendicular) vectors $u$ and $v$, we have $\|u\|_2^2 + \|v\|_2^2 = \|u+v\|_2^2$. This is the geometric soul of the dot product and the very definition of our concept of "angle."
 
-Does this hold in the taxicab world? Let's check. Take the simplest [orthogonal vectors](@article_id:141732): the [standard basis vectors](@article_id:151923) $u = (1,0)$ and $v = (0,1)$.
+Does this hold in the taxicab world? Let's check. Take the simplest [orthogonal vectors](@keyword=orthogonal_vectors|lang=en-US|style=Feynman): the [standard basis vectors](@keyword=standard_basis_vectors|lang=en-US|style=Feynman) $u = (1,0)$ and $v = (0,1)$.
 
 - $\|u\|_1 = |1| + |0| = 1$
 - $\|v\|_1 = |0| + |1| = 1$
@@ -66,17 +66,17 @@ Does this hold in the taxicab world? Let's check. Take the simplest [orthogonal 
 Now let's check Pythagoras: Is $\|u\|_1^2 + \|v\|_1^2 = \|u+v\|_1^2$?
 $1^2 + 1^2 = 2$.
 And on the other side, we have $2^2 = 4$.
-$2 \ne 4$. The theorem fails!  .
+$2 \ne 4$. The theorem fails! [@problem_id:1897291] [@problem_id:1898393].
 
-This isn't just a minor curiosity. It's a sign that the Manhattan norm does not come from an **inner product** (like the dot product). A more general version of the Pythagorean theorem is the **[parallelogram law](@article_id:137498)**: for any two vectors $u$ and $v$, $\|u+v\|^2 + \|u-v\|^2 = 2(\|u\|^2 + \|v\|^2)$. This law holds if and only if the norm is induced by an inner product. For our [taxicab norm](@article_id:142542) with $u=(1,0)$ and $v=(0,1)$, the left side is $\|(1,1)\|_1^2 + \|(1,-1)\|_1^2 = 2^2 + 2^2 = 8$, while the right side is $2(1^2+1^2) = 4$. The law fails, confirming that the geometry of the taxicab world lacks the rich structure of angles and projections that we get from an inner product.
+This isn't just a minor curiosity. It's a sign that the Manhattan norm does not come from an **inner product** (like the dot product). A more general version of the Pythagorean theorem is the **[parallelogram law](@keyword=parallelogram_law|lang=en-US|style=Feynman)**: for any two vectors $u$ and $v$, $\|u+v\|^2 + \|u-v\|^2 = 2(\|u\|^2 + \|v\|^2)$. This law holds if and only if the norm is induced by an inner product. For our [taxicab norm](@keyword=taxicab_norm|lang=en-US|style=Feynman) with $u=(1,0)$ and $v=(0,1)$, the left side is $\|(1,1)\|_1^2 + \|(1,-1)\|_1^2 = 2^2 + 2^2 = 8$, while the right side is $2(1^2+1^2) = 4$. The law fails, confirming that the geometry of the taxicab world lacks the rich structure of angles and projections that we get from an inner product.
 
 ### The Tyranny of the Grid: No Rotational Freedom
 
-The preference for coordinate axes has another startling consequence. In our Euclidean world, distance is invariant under rotation. If you take two points, measure the distance, then rotate the entire plane, the distance between the transformed points is the same. Rotation is a "[rigid motion](@article_id:154845)" or an **[isometry](@article_id:150387)**.
+The preference for coordinate axes has another startling consequence. In our Euclidean world, distance is invariant under rotation. If you take two points, measure the distance, then rotate the entire plane, the distance between the transformed points is the same. Rotation is a "[rigid motion](@keyword=rigid_motion|lang=en-US|style=Feynman)" or an **[isometry](@keyword=isometry|lang=en-US|style=Feynman)**.
 
-Is a rotation an [isometry](@article_id:150387) in the taxicab world? Let's take two points, $P = (\sqrt{2}, 0)$ and $Q = (0, \sqrt{2})$. The taxicab distance is $d_1(P,Q) = |\sqrt{2}-0| + |0-\sqrt{2}| = 2\sqrt{2}$.
+Is a rotation an [isometry](@keyword=isometry|lang=en-US|style=Feynman) in the taxicab world? Let's take two points, $P = (\sqrt{2}, 0)$ and $Q = (0, \sqrt{2})$. The taxicab distance is $d_1(P,Q) = |\sqrt{2}-0| + |0-\sqrt{2}| = 2\sqrt{2}$.
 
-Now, let's rotate the whole city by 45 degrees counter-clockwise. The point $P$ moves to $T(P) = (1,1)$ and $Q$ moves to $T(Q) = (-1,1)$. What's the new taxicab distance? It's $d_1(T(P), T(Q)) = |1 - (-1)| + |1 - 1| = 2$. The distance changed from $2\sqrt{2}$ to $2$! .
+Now, let's rotate the whole city by 45 degrees counter-clockwise. The point $P$ moves to $T(P) = (1,1)$ and $Q$ moves to $T(Q) = (-1,1)$. What's the new taxicab distance? It's $d_1(T(P), T(Q)) = |1 - (-1)| + |1 - 1| = 2$. The distance changed from $2\sqrt{2}$ to $2$! [@problem_id:1662741].
 
 Rotating the grid changes the very fabric of distance. A path that was efficient might become inefficient, and vice-versa. The grid is not just a coordinate system; it is an absolute structure that dictates the geometry.
 
@@ -84,18 +84,18 @@ Rotating the grid changes the very fabric of distance. A path that was efficient
 
 With all these strange differences, one might think the Euclidean and Manhattan worlds are completely alien to each other. But there's a subtle and powerful connection. The inequalities we saw earlier, which for any two points $p_1, p_2$ can be written as $d_E(p_1, p_2) \le d_T(p_1, p_2) \le \sqrt{2} d_E(p_1, p_2)$, tells us that the two distances, while not identical, are always within a constant factor of each other.
 
-This means they are **topologically equivalent**. In layman's terms, they agree on the concept of "nearness." A sequence of points converging to a limit in the Euclidean sense will also converge to the same limit in the taxicab sense . If you zoom in on any point, a small round neighborhood will always contain a small diamond-shaped neighborhood, and vice-versa. They describe the same "topology," the same fundamental [connectedness](@article_id:141572) of the space, even though they measure its geometry differently.
+This means they are **topologically equivalent**. In layman's terms, they agree on the concept of "nearness." A sequence of points converging to a limit in the Euclidean sense will also converge to the same limit in the taxicab sense [@problem_id:1594348]. If you zoom in on any point, a small round neighborhood will always contain a small diamond-shaped neighborhood, and vice-versa. They describe the same "topology," the same fundamental [connectedness](@keyword=connectedness|lang=en-US|style=Feynman) of the space, even though they measure its geometry differently.
 
-A beautiful illustration of this tension is to take a shape defined by one ruler and measure it with the other. Consider the standard, round, Euclidean unit disk $C = \{ (x, y) \mid x^2 + y^2 \le 1 \}$. What is its diameter—the longest possible distance between any two points within it—if we use the [taxicab metric](@article_id:140632)? The answer is not 2 (the Euclidean diameter) but $2\sqrt{2}$ . This maximum taxicab distance is achieved between the points $(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2})$ and $(-\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2})$, which lie on the boundary of the Euclidean circle. This single number, $2\sqrt{2}$, elegantly captures the geometric distortion between the two worlds.
+A beautiful illustration of this tension is to take a shape defined by one ruler and measure it with the other. Consider the standard, round, Euclidean unit disk $C = \{ (x, y) \mid x^2 + y^2 \le 1 \}$. What is its diameter—the longest possible distance between any two points within it—if we use the [taxicab metric](@keyword=taxicab_metric|lang=en-US|style=Feynman)? The answer is not 2 (the Euclidean diameter) but $2\sqrt{2}$ [@problem_id:39302]. This maximum taxicab distance is achieved between the points $(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2})$ and $(-\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2})$, which lie on the boundary of the Euclidean circle. This single number, $2\sqrt{2}$, elegantly captures the geometric distortion between the two worlds.
 
 ### The Power of Being Pointy: Sparsity and a Nobel Idea
 
 Why would we ever want to use this strange, pointy, grid-locked geometry? It turns out that the "flaws" of the Manhattan norm are its greatest strengths in the world of modern data science and machine learning.
 
-Many problems in these fields involve finding a simple model to explain complex data. "Simple" often means a model with as few non-zero parameters as possible—a property called **[sparsity](@article_id:136299)**. For example, in predicting house prices, we might start with a hundred potential features, but a sparse model would find that only square footage, number of bedrooms, and location are truly important, setting the coefficients for all other features to zero.
+Many problems in these fields involve finding a simple model to explain complex data. "Simple" often means a model with as few non-zero parameters as possible—a property called **[sparsity](@keyword=sparsity|lang=en-US|style=Feynman)**. For example, in predicting house prices, we might start with a hundred potential features, but a sparse model would find that only square footage, number of bedrooms, and location are truly important, setting the coefficients for all other features to zero.
 
-This is where the pointy shape of the $L_1$ [unit ball](@article_id:142064) becomes a hero. Imagine trying to find the point on a unit ball that is closest to some external data point. If the ball is the perfectly round Euclidean ball, the solution can be anywhere on its smooth surface. But if the ball is the pointy $L_1$ diamond, the solution will very often land squarely on one of its corners! And where are the corners? They are on the axes, where one coordinate is zero. By minimizing a function subject to an $L_1$ constraint, we are encouraging our solutions to be zero in many components. This idea, known as L1 regularization or the "Lasso," was a breakthrough that contributed to the 2021 Nobel Prize in Economics.
+This is where the pointy shape of the $L_1$ [unit ball](@keyword=unit_ball|lang=en-US|style=Feynman) becomes a hero. Imagine trying to find the point on a unit ball that is closest to some external data point. If the ball is the perfectly round Euclidean ball, the solution can be anywhere on its smooth surface. But if the ball is the pointy $L_1$ diamond, the solution will very often land squarely on one of its corners! And where are the corners? They are on the axes, where one coordinate is zero. By minimizing a function subject to an $L_1$ constraint, we are encouraging our solutions to be zero in many components. This idea, known as L1 regularization or the "Lasso," was a breakthrough that contributed to the 2021 Nobel Prize in Economics.
 
-The mechanism behind this is fascinating. The $L_1$ norm is not differentiable at points where a component is zero. When we use optimization algorithms like the **[subgradient method](@article_id:164266)**, we have a choice of "directions" to move in. At a point like $(v_1, 0, v_3)$, the algorithm can choose a subgradient that either pushes the second component away from zero or, crucially, one that *keeps it at zero* while improving the other components . This ability to "stick" to the axes is the engine of sparsity.
+The mechanism behind this is fascinating. The $L_1$ norm is not differentiable at points where a component is zero. When we use optimization algorithms like the **[subgradient method](@keyword=subgradient_method|lang=en-US|style=Feynman)**, we have a choice of "directions" to move in. At a point like $(v_1, 0, v_3)$, the algorithm can choose a subgradient that either pushes the second component away from zero or, crucially, one that *keeps it at zero* while improving the other components [@problem_id:2207137]. This ability to "stick" to the axes is the engine of sparsity.
 
-So, the Manhattan norm, born from a simple model of a city grid, gives us a geometry without Pythagoras or [rotational symmetry](@article_id:136583). But its very "pointiness," a flaw in classical geometry, becomes a feature of immense power, allowing us to cut through the noise of high-dimensional data and find the simple, sparse truths hidden within.
+So, the Manhattan norm, born from a simple model of a city grid, gives us a geometry without Pythagoras or [rotational symmetry](@keyword=rotational_symmetry|lang=en-US|style=Feynman). But its very "pointiness," a flaw in classical geometry, becomes a feature of immense power, allowing us to cut through the noise of high-dimensional data and find the simple, sparse truths hidden within.

@@ -1,45 +1,45 @@
 ## 应用与跨学科联系
 
-在努力掌握了[拉格朗日力学](@article_id:307469)的原理之后，你可能会感到一种满足感。我们有了一个新的、强大的工具。但一个新工具的真正魅力不只在于欣赏它，而在于看它能构建出什么。那么，拉格朗日量和作用量最小化这整套东西的意义何在？它仅仅是一种巧妙的方法，用来解决我们已经可以用牛顿定律解决的旧问题吗？答案是响亮的“不”。[拉格朗日形式体系](@article_id:318589)是通往更深刻理解物理世界的大门。它清除了力、约束和[坐标系](@article_id:316753)带来的混乱，让我们能够看清物理定律的基本结构。让我们踏上一段旅程，看看这个视角[能带](@article_id:306995)我们去到哪些地方。
+在努力掌握了[拉格朗日力学](@keyword=lagrangian_mechanics|lang=zh-CN|style=Feynman)的原理之后，你可能会感到一种满足感。我们有了一个新的、强大的工具。但一个新工具的真正魅力不只在于欣赏它，而在于看它能构建出什么。那么，拉格朗日量和作用量最小化这整套东西的意义何在？它仅仅是一种巧妙的方法，用来解决我们已经可以用牛顿定律解决的旧问题吗？答案是响亮的“不”。[拉格朗日形式体系](@keyword=lagrangian_formalism|lang=zh-CN|style=Feynman)是通往更深刻理解物理世界的大门。它清除了力、约束和[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)带来的混乱，让我们能够看清物理定律的基本结构。让我们踏上一段旅程，看看这个视角[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)我们去到哪些地方。
 
 ### 驾驭力学复杂性
 
-[拉格朗日方法](@article_id:303261)最直接的好处之一是它能够驾驭复杂的力学系统。想象一个龙门吊，简化为一个质量为 $M$ 的重物在轨道上滑动，其上通过一根杆悬挂着一个质量为 $m$ 的载荷 。如果你要用牛顿定律来分析这个问题，你必须画出[受力分析图](@article_id:348851)，平衡杆中的[张力](@article_id:357470)（其方向会改变！）、重物上的支持力以及重力的分量。这简直是一场计算的噩梦。
+[拉格朗日方法](@keyword=lagrangian_method|lang=zh-CN|style=Feynman)最直接的好处之一是它能够驾驭复杂的力学系统。想象一个龙门吊，简化为一个质量为 $M$ 的重物在轨道上滑动，其上通过一根杆悬挂着一个质量为 $m$ 的载荷 [@problem_id:2086642]。如果你要用牛顿定律来分析这个问题，你必须画出[受力分析图](@keyword=free_body_diagram|lang=zh-CN|style=Feynman)，平衡杆中的[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)（其方向会改变！）、重物上的支持力以及重力的分量。这简直是一场计算的噩梦。
 
-[拉格朗日方法](@article_id:303261)提出了一个简单得多的问题：系统的动能和势能是什么？动能取决于重物的速度和载荷的速度。载荷的速度是重物运动和其自身摆动的组合。[拉格朗日方法](@article_id:303261)自动处理了这种耦合。你只需写下一个单一的函数——拉格朗日量，然后套用[欧拉-拉格朗日方程](@article_id:319936)，就能得到描述重物滑动和载荷摆动的正确运动方程。该形式体系甚至不问杆中的[张力](@article_id:357470)是多少；它只是遵守杆长固定的约束，然后完成任务。
+[拉格朗日方法](@keyword=lagrangian_method|lang=zh-CN|style=Feynman)提出了一个简单得多的问题：系统的动能和势能是什么？动能取决于重物的速度和载荷的速度。载荷的速度是重物运动和其自身摆动的组合。[拉格朗日方法](@keyword=lagrangian_method|lang=zh-CN|style=Feynman)自动处理了这种耦合。你只需写下一个单一的函数——拉格朗日量，然后套用[欧拉-拉格朗日方程](@keyword=euler_lagrange_equations|lang=zh-CN|style=Feynman)，就能得到描述重物滑动和载荷摆动的正确运动方程。该形式体系甚至不问杆中的[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)是多少；它只是遵守杆长固定的约束，然后完成任务。
 
-这种威力从离散部件延伸到[连续体](@article_id:320471)。考虑一条柔性链条从桌子上滑下 。对于一个不同部分做着不同事情——有些水平移动，有些垂直下落——且运动中的质量不断变化的系统，你如何应用 $F=ma$？使用拉格朗日量，你不用考虑微元上的力。你只需写出整条链条的总动能和悬挂部分的总势能，这两者都可以通过对链条长度积分得到。然后，最小作用量原理就能一步到位地给出整个系统的[运动方程](@article_id:349901)，即使对于质量密度不均匀的链条也是如此。
+这种威力从离散部件延伸到[连续体](@keyword=continuum|lang=zh-CN|style=Feynman)。考虑一条柔性链条从桌子上滑下 [@problem_id:2195490]。对于一个不同部分做着不同事情——有些水平移动，有些垂直下落——且运动中的质量不断变化的系统，你如何应用 $F=ma$？使用拉格朗日量，你不用考虑微元上的力。你只需写出整条链条的总动能和悬挂部分的总势能，这两者都可以通过对链条长度积分得到。然后，最小作用量原理就能一步到位地给出整个系统的[运动方程](@keyword=equations_of_motion|lang=zh-CN|style=Feynman)，即使对于质量密度不均匀的链条也是如此。
 
-在处理[振动](@article_id:331484)问题时，这种优雅之处或许最为引人注目。考虑两个由弹簧连接的摆 。如果你推动其中一个，另一个也会开始运动。能量在它们之间来回传递。用力来描述这种共舞是复杂的。但使用[拉格朗日量](@article_id:303648)，我们写下两个摆锤的动能以及储存在重力和拉伸弹簧中的势能。当我们分析得到的小幅[摆动方程](@article_id:335261)时，我们发现存在特殊的“[简正模](@article_id:300087)式”[振动](@article_id:331484)：一种是两个摆同向摆动，另一种是它们反向摆动。系统的任何复杂运动都只是这两种简单、[基本模式](@article_id:344550)的叠加。[简正模](@article_id:300087)式这个概念不仅适用于摆；它也是理解从吉他弦的[振动](@article_id:331484)到晶体中原子[振荡](@article_id:331484)等一切事物的关键。
+在处理[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)问题时，这种优雅之处或许最为引人注目。考虑两个由弹簧连接的摆 [@problem_id:1262241]。如果你推动其中一个，另一个也会开始运动。能量在它们之间来回传递。用力来描述这种共舞是复杂的。但使用[拉格朗日量](@keyword=lagrangian|lang=zh-CN|style=Feynman)，我们写下两个摆锤的动能以及储存在重力和拉伸弹簧中的势能。当我们分析得到的小幅[摆动方程](@keyword=pendulum_equation|lang=zh-CN|style=Feynman)时，我们发现存在特殊的“[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman)式”[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)：一种是两个摆同向摆动，另一种是它们反向摆动。系统的任何复杂运动都只是这两种简单、[基本模式](@keyword=fundamental_mode|lang=zh-CN|style=Feynman)的叠加。[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman)式这个概念不仅适用于摆；它也是理解从吉他弦的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)到晶体中原子[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)等一切事物的关键。
 
 ### 物理学的通用语言
 
-到目前为止，我们一直停留在力学领域。但关于[拉格朗日形式体系](@article_id:318589)，真正令人惊奇的是，它的核心根本不是关于力学。它是一个通用的框架。“位置”不必是位置，“速度”也不必是速度。
+到目前为止，我们一直停留在力学领域。但关于[拉格朗日形式体系](@keyword=lagrangian_formalism|lang=zh-CN|style=Feynman)，真正令人惊奇的是，它的核心根本不是关于力学。它是一个通用的框架。“位置”不必是位置，“速度”也不必是速度。
 
-让我们进入一个完全不同的世界：电路 。想象两个简单的电路，每个都带有一个[电感](@article_id:339724)和电容，它们彼此靠近，使得它们的电感发生[磁耦合](@article_id:317063)。电流来回[振荡](@article_id:331484)，就像我们的[耦合摆](@article_id:357469)一样。我们能用拉格朗日量来描述这个过程吗？
+让我们进入一个完全不同的世界：电路 [@problem_id:1237014]。想象两个简单的电路，每个都带有一个[电感](@keyword=inductance|lang=zh-CN|style=Feynman)和电容，它们彼此靠近，使得它们的电感发生[磁耦合](@keyword=magnetic_coupling|lang=zh-CN|style=Feynman)。电流来回[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，就像我们的[耦合摆](@keyword=coupled_pendulums|lang=zh-CN|style=Feynman)一样。我们能用拉格朗日量来描述这个过程吗？
 
-让我们来做一个疯狂的类比。如果我们说[电容器](@article_id:331067)上的[电荷](@article_id:339187) $q$ 就像我们系统的“位置”，而电流 $I = \dot{q}$ 是“速度”，会怎么样？[储存在电容器中的能量](@article_id:324276)是 $\frac{1}{2}q^2/C$，这看起来就像弹簧的势能 $\frac{1}{2}kx^2$。所以，$1/C$ 就像是[弹簧常数](@article_id:346486)。[电感中的能量](@article_id:331217)是 $\frac{1}{2}LI^2$，这看起来就像动能 $\frac{1}{2}m\dot{x}^2$。所以，[电感](@article_id:339724) $L$ 就像是质量——它代表了对电流变化的惯性。
+让我们来做一个疯狂的类比。如果我们说[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)上的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman) $q$ 就像我们系统的“位置”，而电流 $I = \dot{q}$ 是“速度”，会怎么样？[储存在电容器中的能量](@keyword=energy_stored_in_a_capacitor|lang=zh-CN|style=Feynman)是 $\frac{1}{2}q^2/C$，这看起来就像弹簧的势能 $\frac{1}{2}kx^2$。所以，$1/C$ 就像是[弹簧常数](@keyword=spring_constant|lang=zh-CN|style=Feynman)。[电感中的能量](@keyword=energy_in_inductor|lang=zh-CN|style=Feynman)是 $\frac{1}{2}LI^2$，这看起来就像动能 $\frac{1}{2}m\dot{x}^2$。所以，[电感](@keyword=inductance|lang=zh-CN|style=Feynman) $L$ 就像是质量——它代表了对电流变化的惯性。
 
 如果我们定义一个“拉格朗日量”为磁能（“动能”）减去电能（“势能”），我们可以写出：
 $$
 \mathcal{L} = T_{magnetic} - V_{electric} = \left(\frac{1}{2}L_1 I_1^2 + \frac{1}{2}L_2 I_2^2 + M I_1 I_2\right) - \left(\frac{q_1^2}{2C_1} + \frac{q_2^2}{2C_2}\right)
 $$
-如果你将欧拉-拉格朗日方程应用于这个函数，并将[电荷](@article_id:339187) $q_1$ 和 $q_2$ 作为你的[广义坐标](@article_id:316982)，你将得到*完全*正确的电路方程（基尔霍夫定律）！[最小作用量原理](@article_id:299369)支配着[电荷](@article_id:339187)的流动，就像它支配着摆的摆动一样。这是一个深刻的统一。同样的优美原理在底层运作。
+如果你将欧拉-拉格朗日方程应用于这个函数，并将[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman) $q_1$ 和 $q_2$ 作为你的[广义坐标](@keyword=generalized_coordinates|lang=zh-CN|style=Feynman)，你将得到*完全*正确的电路方程（基尔霍夫定律）！[最小作用量原理](@keyword=principle_of_least_action|lang=zh-CN|style=Feynman)支配着[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的流动，就像它支配着摆的摆动一样。这是一个深刻的统一。同样的优美原理在底层运作。
 
-这种联系甚至更为深刻。[电磁学](@article_id:363853)的基本力——洛伦兹力 $\mathbf{F} = q(\mathbf{E} + \mathbf{v}\times\mathbf{B})$——从何而来？在牛顿物理学中，它只是我们从实验中得出的一个规则。在[拉格朗日](@article_id:373322)物理学中，它是自然而然产生的。如果我们假设一个带电粒子的拉格朗日量是其通常的动能加上一个简单的相互作用项，$L_{int} = q\phi - q\mathbf{v} \cdot \mathbf{A}$，其中 $\phi$ 和 $\mathbf{A}$ 分别是[标量势和矢量势](@article_id:329944)，那么神奇的事情就发生了。对这个拉格朗日量应用欧拉-拉格朗日方程，你就能完美地得出[洛伦兹力定律](@article_id:334434) 。那个复杂的、与速度相关的磁力不再是一个独立的公理，而是对[拉格朗日量](@article_id:303648)进行简单、优美补充后的必然结果。
+这种联系甚至更为深刻。[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)的基本力——洛伦兹力 $\mathbf{F} = q(\mathbf{E} + \mathbf{v}\times\mathbf{B})$——从何而来？在牛顿物理学中，它只是我们从实验中得出的一个规则。在[拉格朗日](@keyword=lagrange|lang=zh-CN|style=Feynman)物理学中，它是自然而然产生的。如果我们假设一个带电粒子的拉格朗日量是其通常的动能加上一个简单的相互作用项，$L_{int} = q\phi - q\mathbf{v} \cdot \mathbf{A}$，其中 $\phi$ 和 $\mathbf{A}$ 分别是[标量势和矢量势](@keyword=scalar_and_vector_potentials|lang=zh-CN|style=Feynman)，那么神奇的事情就发生了。对这个拉格朗日量应用欧拉-拉格朗日方程，你就能完美地得出[洛伦兹力定律](@keyword=lorentz_force_law|lang=zh-CN|style=Feynman) [@problem_id:609886]。那个复杂的、与速度相关的磁力不再是一个独立的公理，而是对[拉格朗日量](@keyword=lagrangian|lang=zh-CN|style=Feynman)进行简单、优美补充后的必然结果。
 
 ### 通往现代物理学之路
 
-[拉格朗日方法](@article_id:303261)的真正统治领域是现代物理学。在这里，它不仅仅是一个有用的工具；它是书写这些理论所用的语言。
+[拉格朗日方法](@keyword=lagrangian_method|lang=zh-CN|style=Feynman)的真正统治领域是现代物理学。在这里，它不仅仅是一个有用的工具；它是书写这些理论所用的语言。
 
-想一想 Einstein 的[等效原理](@article_id:317923)。一个在密闭盒子里的观察者无法区分自己是静止在[引力场](@article_id:348648)中，还是在空无一物的空间中加速。让我们看看拉格朗日量如何处理这个问题。想象一位物理学家在一艘远离任何行星的航天器上，以加速度 $\vec{a}_0$ 运动 。在惯性系中，一个自由粒子的[拉格朗日量](@article_id:303648)很简单，$L = \frac{1}{2}m\dot{\vec{r}}^2$。如果我们用飞船上物理学家使用的坐标 $\vec{r}'$ 来重写这个拉格朗日量，该形式体系会自动产生一个等效势能项，$V_{eff} = m\vec{a}_0 \cdot \vec{r}'$。这一项产生了一个“虚拟”力 $\vec{F}' = -m\vec{a}_0$。对于飞船上的物理学家来说，每个自由物体看起来都以加速度 $-\vec{a}_0$ 下落，就好像他们处在一个均匀[引力场](@article_id:348648)中一样。[拉格朗日量](@article_id:303648)使这种等效性显而易见。
+想一想 Einstein 的[等效原理](@keyword=principle_of_equivalence|lang=zh-CN|style=Feynman)。一个在密闭盒子里的观察者无法区分自己是静止在[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)中，还是在空无一物的空间中加速。让我们看看拉格朗日量如何处理这个问题。想象一位物理学家在一艘远离任何行星的航天器上，以加速度 $\vec{a}_0$ 运动 [@problem_id:1832078]。在惯性系中，一个自由粒子的[拉格朗日量](@keyword=lagrangian|lang=zh-CN|style=Feynman)很简单，$L = \frac{1}{2}m\dot{\vec{r}}^2$。如果我们用飞船上物理学家使用的坐标 $\vec{r}'$ 来重写这个拉格朗日量，该形式体系会自动产生一个等效势能项，$V_{eff} = m\vec{a}_0 \cdot \vec{r}'$。这一项产生了一个“虚拟”力 $\vec{F}' = -m\vec{a}_0$。对于飞船上的物理学家来说，每个自由物体看起来都以加速度 $-\vec{a}_0$ 下落，就好像他们处在一个均匀[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)中一样。[拉格朗日量](@keyword=lagrangian|lang=zh-CN|style=Feynman)使这种等效性显而易见。
 
-这种思维方式是[相对论](@article_id:327421)的核心。在狭义相对论中，我们不再谈论空间中的路径，而是四维[时空](@article_id:370647)中的[世界线](@article_id:324131)。什么决定了[自由粒子](@article_id:309167)的路径？[最小作用量原理](@article_id:299369)。在[闵可夫斯基时空](@article_id:316828)中，自由粒子的[拉格朗日量](@article_id:303648)可以写成与其[四维速度](@article_id:324807)平方成正比的形式，$L = -\frac{1}{2} m \eta_{\mu\nu} \dot{x}^\mu \dot{x}^\nu$ 。对其应用欧拉-拉格朗日方程可以得到 $\ddot{x}^\alpha = 0$。这个简单的方程表明，自由粒子在[时空](@article_id:370647)中沿[直线运动](@article_id:344495)——它遵循一条[测地线](@article_id:327811)。最小作用量原理规定了最直的可能路径。在广义[相对论](@article_id:327421)中，[时空](@article_id:370647)被质量和能量弯曲，但原理依然成立：物体遵循[测地线](@article_id:327811)，即让作用量取极值的路径。
+这种思维方式是[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)的核心。在狭义相对论中，我们不再谈论空间中的路径，而是四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中的[世界线](@keyword=worldline|lang=zh-CN|style=Feynman)。什么决定了[自由粒子](@keyword=the_free_particle|lang=zh-CN|style=Feynman)的路径？[最小作用量原理](@keyword=principle_of_least_action|lang=zh-CN|style=Feynman)。在[闵可夫斯基时空](@keyword=minkowski_spacetime|lang=zh-CN|style=Feynman)中，自由粒子的[拉格朗日量](@keyword=lagrangian|lang=zh-CN|style=Feynman)可以写成与其[四维速度](@keyword=4_velocity|lang=zh-CN|style=Feynman)平方成正比的形式，$L = -\frac{1}{2} m \eta_{\mu\nu} \dot{x}^\mu \dot{x}^\nu$ [@problem_id:1527238]。对其应用欧拉-拉格朗日方程可以得到 $\ddot{x}^\alpha = 0$。这个简单的方程表明，自由粒子在[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中沿[直线运动](@keyword=rectilinear_motion|lang=zh-CN|style=Feynman)——它遵循一条[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)。最小作用量原理规定了最直的可能路径。在广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)中，[时空](@keyword=space_time|lang=zh-CN|style=Feynman)被质量和能量弯曲，但原理依然成立：物体遵循[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)，即让作用量取极值的路径。
 
-这种[范式](@article_id:329204)的最终体现在量子[场论](@article_id:315652)中。我们宇宙的基本实体不是粒子，而是遍布整个空间的场——电子场、[光子](@article_id:305617)场等等。这些场的动力学由一个拉格朗日量密度 $\mathcal{L}$ 决定。对于[电磁学](@article_id:363853)，[拉格朗日量](@article_id:303648)密度是一个涉及[场张量](@article_id:365672) $F_{\mu\nu}$ 的简单而优美的表达式 ：
+这种[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)的最终体现在量子[场论](@keyword=field_theory|lang=zh-CN|style=Feynman)中。我们宇宙的基本实体不是粒子，而是遍布整个空间的场——电子场、[光子](@keyword=photon|lang=zh-CN|style=Feynman)场等等。这些场的动力学由一个拉格朗日量密度 $\mathcal{L}$ 决定。对于[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)，[拉格朗日量](@keyword=lagrangian|lang=zh-CN|style=Feynman)密度是一个涉及[场张量](@keyword=field_tensor|lang=zh-CN|style=Feynman) $F_{\mu\nu}$ 的简单而优美的表达式 [@problem_id:1825710]：
 $$
 \mathcal{L} = -\frac{1}{4\mu_0} F_{\mu\nu}F^{\mu\nu} - J^\mu A_\mu
 $$
-第一项描述了自由[电磁场](@article_id:329585)的能量，第二项描述了它与[电荷](@article_id:339187)和电流的相互作用。通过将[四维势](@article_id:367533) $A_\mu$ 视为“坐标”并应用场论版本的欧拉-拉格朗日方程，你就能推导出[麦克斯韦方程组](@article_id:311357)——所有电、磁和光现象的基本定律。
+第一项描述了自由[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)的能量，第二项描述了它与[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)和电流的相互作用。通过将[四维势](@keyword=4_vector_potential|lang=zh-CN|style=Feynman) $A_\mu$ 视为“坐标”并应用场论版本的欧拉-拉格朗日方程，你就能推导出[麦克斯韦方程组](@keyword=maxwell_s_equations|lang=zh-CN|style=Feynman)——所有电、磁和光现象的基本定律。
 
-从摆动的钟摆到自然界的基本定律，[最小作用量原理](@article_id:299369)提供了一个单一、连贯且极其优美的框架。它鼓励我们超越力和约束的表面复杂性，去探寻一个更深层次的问题：宇宙可能在讲述的最简单、最优雅的故事是什么？而答案，往往就在拉格朗日量之中。
+从摆动的钟摆到自然界的基本定律，[最小作用量原理](@keyword=principle_of_least_action|lang=zh-CN|style=Feynman)提供了一个单一、连贯且极其优美的框架。它鼓励我们超越力和约束的表面复杂性，去探寻一个更深层次的问题：宇宙可能在讲述的最简单、最优雅的故事是什么？而答案，往往就在拉格朗日量之中。

@@ -1,7 +1,7 @@
 ## Introduction
 Vectors are often first introduced as simple arrows, representing quantities like force, velocity, or displacement. This intuitive picture is a useful starting point, but it barely scratches the surface of their true power. To unlock their full potential, we must move beyond simple diagrams and establish a rigorous mathematical framework that works in any number of dimensions. This article bridges the gap between the intuitive concept of a vector and its profound role as a universal language for science and engineering.
 
-We will embark on this journey in two parts. First, in **Principles and Mechanisms**, we will delve into the core machinery of vectors, discovering how a single operation—the dot product—allows us to define length, measure angles, and derive fundamental geometric laws. Then, in **Applications and Interdisciplinary Connections**, we will witness this framework in action, exploring how vectors are used to model everything from the stability of ecosystems and the [internal forces](@article_id:167111) in materials to the very structure of the universe itself. By the end, the humble vector will be revealed not just as a mathematical tool, but as a fundamental pillar of our scientific understanding.
+We will embark on this journey in two parts. First, in **Principles and Mechanisms**, we will delve into the core machinery of vectors, discovering how a single operation—the dot product—allows us to define length, measure angles, and derive fundamental geometric laws. Then, in **Applications and Interdisciplinary Connections**, we will witness this framework in action, exploring how vectors are used to model everything from the stability of ecosystems and the [internal forces](@keyword=internal_forces|lang=en-US|style=Feynman) in materials to the very structure of the universe itself. By the end, the humble vector will be revealed not just as a mathematical tool, but as a fundamental pillar of our scientific understanding.
 
 ## Principles and Mechanisms
 
@@ -21,7 +21,7 @@ $$
 \mathbf{u} \cdot \mathbf{v} = \|\mathbf{u}\| \, \|\mathbf{v}\| \cos(\theta)
 $$
 
-Here, $\|\mathbf{u}\|$ is the length (or **norm**) of the vector $\mathbf{u}$, and $\theta$ is the angle between the two vectors when placed tail-to-tail. Suddenly, this operation is no longer just about crunching numbers; it's about the intrinsic geometric relationship between the vectors. The dot product is the magical bridge connecting the world of algebra with the world of geometry. It tells us that the simple [sum of products](@article_id:164709) is secretly encoding information about lengths and angles.
+Here, $\|\mathbf{u}\|$ is the length (or **norm**) of the vector $\mathbf{u}$, and $\theta$ is the angle between the two vectors when placed tail-to-tail. Suddenly, this operation is no longer just about crunching numbers; it's about the intrinsic geometric relationship between the vectors. The dot product is the magical bridge connecting the world of algebra with the world of geometry. It tells us that the simple [sum of products](@keyword=sum_of_products|lang=en-US|style=Feynman) is secretly encoding information about lengths and angles.
 
 ### What is the Dot Product Telling Us?
 
@@ -31,7 +31,7 @@ Let's look closely at the geometric formula. The lengths $\|\mathbf{u}\|$ and $\
 -   If the vectors are perfectly **orthogonal** (perpendicular), $\theta = \pi/2$, so $\cos(\theta) = 0$, and the dot product is exactly zero. This is an incredibly useful test for perpendicularity.
 -   If the vectors point in roughly opposite directions, $\theta$ is obtuse ($\pi/2 \lt \theta \le \pi$), so $\cos(\theta)$ is negative, and the dot product is negative.
 
-What are the extremes? Imagine we have two vectors with fixed lengths, say $\|\mathbf{u}\|=4$ and $\|\mathbf{v}\|=3$. The dot product $\mathbf{u} \cdot \mathbf{v} = (4)(3)\cos(\theta) = 12 \cos(\theta)$ can vary only by changing the angle between them. The maximum value occurs when they are perfectly aligned ($\theta=0$, $\cos(\theta)=1$), giving a dot product of $12$. The minimum value occurs when they are perfectly anti-aligned ($\theta=\pi$, $\cos(\theta)=-1$), giving a dot product of $-12$ . The dot product, therefore, quantifies the extent to which one vector "agrees" with another.
+What are the extremes? Imagine we have two vectors with fixed lengths, say $\|\mathbf{u}\|=4$ and $\|\mathbf{v}\|=3$. The dot product $\mathbf{u} \cdot \mathbf{v} = (4)(3)\cos(\theta) = 12 \cos(\theta)$ can vary only by changing the angle between them. The maximum value occurs when they are perfectly aligned ($\theta=0$, $\cos(\theta)=1$), giving a dot product of $12$. The minimum value occurs when they are perfectly anti-aligned ($\theta=\pi$, $\cos(\theta)=-1$), giving a dot product of $-12$ [@problem_id:7101]. The dot product, therefore, quantifies the extent to which one vector "agrees" with another.
 
 ### Measuring a Vector By Itself
 
@@ -41,7 +41,7 @@ $$
 \mathbf{v} \cdot \mathbf{v} = \|\mathbf{v}\| \, \|\mathbf{v}\| \cos(0) = \|\mathbf{v}\|^2
 $$
 
-Isn't that beautiful? The length of a vector isn't some extra piece of information we have to carry around. It's encoded right there in the dot product. The [norm of a vector](@article_id:154388) is simply the square root of its dot product with itself:
+Isn't that beautiful? The length of a vector isn't some extra piece of information we have to carry around. It's encoded right there in the dot product. The [norm of a vector](@keyword=norm_of_a_vector|lang=en-US|style=Feynman) is simply the square root of its dot product with itself:
 
 $$
 \|\mathbf{v}\| = \sqrt{\mathbf{v} \cdot \mathbf{v}}
@@ -58,7 +58,7 @@ $$
 \|\mathbf{u} + \mathbf{v}\|^2 = (\mathbf{u} + \mathbf{v}) \cdot (\mathbf{u} + \mathbf{v})
 $$
 
-We can expand this expression just like we would with numbers in ordinary algebra, using the [distributive property](@article_id:143590) of the dot product.
+We can expand this expression just like we would with numbers in ordinary algebra, using the [distributive property](@keyword=distributive_property|lang=en-US|style=Feynman) of the dot product.
 $$
 (\mathbf{u} + \mathbf{v}) \cdot (\mathbf{u} + \mathbf{v}) = \mathbf{u} \cdot \mathbf{u} + \mathbf{u} \cdot \mathbf{v} + \mathbf{v} \cdot \mathbf{u} + \mathbf{v} \cdot \mathbf{v}
 $$
@@ -68,14 +68,14 @@ $$
 \|\mathbf{u} + \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 + 2(\mathbf{u} \cdot \mathbf{v})
 $$
 
-Finally, substituting the geometric definition of the dot product, $\mathbf{u} \cdot \mathbf{v} = \|\mathbf{u}\| \, \|\mathbf{v}\| \cos(\theta)$, we arrive at a stunning result :
+Finally, substituting the geometric definition of the dot product, $\mathbf{u} \cdot \mathbf{v} = \|\mathbf{u}\| \, \|\mathbf{v}\| \cos(\theta)$, we arrive at a stunning result [@problem_id:7065]:
 $$
 \|\mathbf{u} + \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 + 2\|\mathbf{u}\| \, \|\mathbf{v}\| \cos(\theta)
 $$
 
 This is the **Law of Cosines** from trigonometry! The rule that relates the sides of any triangle is not some isolated fact of geometry. It is a direct, unavoidable consequence of the fundamental properties of vectors and the dot product. This reveals a deep unity in mathematics; the structure of vectors naturally gives rise to the rules of Euclidean space.
 
-From this law, another fundamental principle emerges: the **[triangle inequality](@article_id:143256)**. We know that the value of $\cos(\theta)$ can never be greater than $1$. Therefore,
+From this law, another fundamental principle emerges: the **[triangle inequality](@keyword=triangle_inequality|lang=en-US|style=Feynman)**. We know that the value of $\cos(\theta)$ can never be greater than $1$. Therefore,
 $$
 \|\mathbf{u} + \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 + 2\|\mathbf{u}\| \, \|\mathbf{v}\| \cos(\theta) \le \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 + 2\|\mathbf{u}\| \, \|\mathbf{v}\| = (\|\mathbf{u}\| + \|\mathbf{v}\|)^2
 $$
@@ -83,7 +83,7 @@ Taking the square root of both sides gives us the famous inequality:
 $$
 \|\mathbf{u} + \mathbf{v}\| \le \|\mathbf{u}\| + \|\mathbf{v}\|
 $$
-This abstract statement  is the mathematical formulation of the old adage, "the shortest path between two points is a straight line." The length of the journey from the start to the end of $\mathbf{u}+\mathbf{v}$ can never be longer than the sum of the lengths of the individual legs of the journey, $\mathbf{u}$ and $\mathbf{v}$. Equality only holds if the vectors point in the same direction ($\theta=0$), which is when the "triangle" is flattened into a single line.
+This abstract statement [@problem_id:7071] is the mathematical formulation of the old adage, "the shortest path between two points is a straight line." The length of the journey from the start to the end of $\mathbf{u}+\mathbf{v}$ can never be longer than the sum of the lengths of the individual legs of the journey, $\mathbf{u}$ and $\mathbf{v}$. Equality only holds if the vectors point in the same direction ($\theta=0$), which is when the "triangle" is flattened into a single line.
 
 ### Spanning Space: Area and Dependence
 
@@ -97,6 +97,6 @@ Let's substitute $\mathbf{v} = c\mathbf{u}$ into the area formula. We find that 
 $$
 \text{Area} = \sqrt{\|\mathbf{u}\|^2 (c^2\|\mathbf{u}\|^2) - (c\|\mathbf{u}\|^2)^2} = \sqrt{c^2\|\mathbf{u}\|^4 - c^2\|\mathbf{u}\|^4} = \sqrt{0} = 0
 $$
-The result is zero, just as our intuition demanded . When vectors are **linearly dependent** (one is a multiple of the other), they do not span a two-dimensional area. The algebraic condition of dependence perfectly mirrors the geometric consequence of a degenerate parallelogram.
+The result is zero, just as our intuition demanded [@problem_id:12841]. When vectors are **linearly dependent** (one is a multiple of the other), they do not span a two-dimensional area. The algebraic condition of dependence perfectly mirrors the geometric consequence of a degenerate parallelogram.
 
-From a few simple rules governing one operation—the dot product—we have derived the concepts of length, angle, the Law of Cosines, the [triangle inequality](@article_id:143256), and even area. This is the power and beauty of the vector framework: it provides a single, unified language to describe and explore the geometry of space, no matter how many dimensions that space may have.
+From a few simple rules governing one operation—the dot product—we have derived the concepts of length, angle, the Law of Cosines, the [triangle inequality](@keyword=triangle_inequality|lang=en-US|style=Feynman), and even area. This is the power and beauty of the vector framework: it provides a single, unified language to describe and explore the geometry of space, no matter how many dimensions that space may have.

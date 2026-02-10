@@ -9,9 +9,9 @@ So, how do we get a handle on the truly exceptional? How do we build a science o
 
 Imagine you're tasked with charting the highest elevations of a vast, uncharted continent. You have two primary strategies.
 
-The first, let's call it the **Block Maxima** approach, is systematic and patient. You could divide the continent into a grid of, say, 100-kilometer squares. For each square, you find the single highest peak and record its elevation. You'd end up with a list of the "best-of-the-best" from each region. In science, we do this with time. To understand extreme heat, a climatologist might look at a 50-year weather record and pull out only the single hottest day from *each year*. This collection of 50 annual maxima forms the basis for a model . The mathematical tool for this approach is a beautiful, all-encompassing distribution known as the **Generalized Extreme Value (GEV) distribution**.
+The first, let's call it the **Block Maxima** approach, is systematic and patient. You could divide the continent into a grid of, say, 100-kilometer squares. For each square, you find the single highest peak and record its elevation. You'd end up with a list of the "best-of-the-best" from each region. In science, we do this with time. To understand extreme heat, a climatologist might look at a 50-year weather record and pull out only the single hottest day from *each year*. This collection of 50 annual maxima forms the basis for a model [@problem_id:2802468]. The mathematical tool for this approach is a beautiful, all-encompassing distribution known as the **Generalized Extreme Value (GEV) distribution**.
 
-The second strategy is more of a targeted expedition. This is the **Peaks-Over-Threshold (POT)** approach. Instead of a grid, you declare: "I'm only interested in mountains that are truly world-class, say, anything over 8,000 meters." You then send out teams to find and measure *every single peak* that crosses this high-altitude threshold. You might find a dozen such peaks in the Himalayas, and none in Australia. This method is often more efficient—you don't waste time on the highest hill in a flat region, and you get more data from the regions that are rich in extremes. In data science, this means setting a high threshold—a stock market loss of more than 5% in a day, a river flow above a critical flood stage, a fine from a financial regulator exceeding $50 million—and analyzing the distribution of all the events that gallop past it . The universal distribution that describes these "excesses" is the equally elegant **Generalized Pareto Distribution (GPD)**.
+The second strategy is more of a targeted expedition. This is the **Peaks-Over-Threshold (POT)** approach. Instead of a grid, you declare: "I'm only interested in mountains that are truly world-class, say, anything over 8,000 meters." You then send out teams to find and measure *every single peak* that crosses this high-altitude threshold. You might find a dozen such peaks in the Himalayas, and none in Australia. This method is often more efficient—you don't waste time on the highest hill in a flat region, and you get more data from the regions that are rich in extremes. In data science, this means setting a high threshold—a stock market loss of more than 5% in a day, a river flow above a critical flood stage, a fine from a financial regulator exceeding $50 million—and analyzing the distribution of all the events that gallop past it [@problem_id:1949193]. The universal distribution that describes these "excesses" is the equally elegant **Generalized Pareto Distribution (GPD)**.
 
 Whether we're collecting the king of each year's data or every event that dares to cross a high bar, EVT tells us that the underlying mathematical structure is the same. It's a stunning example of unity in science.
 
@@ -19,7 +19,7 @@ Whether we're collecting the king of each year's data or every event that dares 
 
 So what is this universal structure? Both the GEV and GPD are described by a small set of parameters, the "knobs" we turn to make the model fit our data. You can think of them as three ingredients in a recipe for extremes:
 
-1.  A **location parameter**, $\mu$: This tells you the general neighborhood where the extremes happen. It pins the distribution to a certain spot on the number line. For yearly temperature maxima, it might be around $30^{\circ}\mathrm{C}$ .
+1.  A **location parameter**, $\mu$: This tells you the general neighborhood where the extremes happen. It pins the distribution to a certain spot on the number line. For yearly temperature maxima, it might be around $30^{\circ}\mathrm{C}$ [@problem_id:2802468].
 
 2.  A **scale parameter**, $\sigma$: This tells you about the spread or variability of the extremes. A small $\sigma$ means the annual maxima are all tightly clustered, while a large $\sigma$ means they are all over the place.
 
@@ -40,7 +40,7 @@ The shape parameter is where the real magic happens. It sorts the world of extre
 
 ### Calculating the "Once-in-a-Century" Event
 
-With these tools, we can finally ask the question we started with: What is the level of a "100-year flood" or a "100-year heatwave"? We call this the **return level**. Let's see how it's done using the Peaks-Over-Threshold (POT) approach .
+With these tools, we can finally ask the question we started with: What is the level of a "100-year flood" or a "100-year heatwave"? We call this the **return level**. Let's see how it's done using the Peaks-Over-Threshold (POT) approach [@problem_id:1949193].
 
 Suppose we are interested in the $N$-observation return level, $x_N$. By definition, this is a value so large that we expect to see it, or something larger, only once every $N$ observations. So, the probability of any single observation exceeding it is just $P(X > x_N) = \frac{1}{N}$.
 
@@ -62,7 +62,7 @@ Every part of this tells a story. The return level is our starting threshold $u$
 
 ### A Glimpse into the Future
 
-This framework isn't just for looking at the past; its real power is in helping us anticipate the future. Consider the plight of a heat-sensitive reptile whose eggs fail to develop if the nest temperature gets too high . Biologists have determined from historical records that the 100-year return level for daily maximum temperature at the nesting site is, let's say, $38.76^{\circ}\mathrm{C}$.
+This framework isn't just for looking at the past; its real power is in helping us anticipate the future. Consider the plight of a heat-sensitive reptile whose eggs fail to develop if the nest temperature gets too high [@problem_id:2802468]. Biologists have determined from historical records that the 100-year return level for daily maximum temperature at the nesting site is, let's say, $38.76^{\circ}\mathrm{C}$.
 
 Now, climate scientists project that due to global warming, the overall pattern of daily maximum temperatures will shift upwards by $2^{\circ}\mathrm{C}$. In the language of EVT, this corresponds to increasing the location parameter $\mu$ of our GEV model by $2$. What does this do to the 100-year heatwave?
 
@@ -78,4 +78,4 @@ Here, too, a beautiful and fundamental law of statistics comes to our aid. The p
 
 Width $\propto \frac{1}{\sqrt{N_u}}$
 
-This means if you work for 10 times as long and collect 10 times more extreme events—say, going from 20 exceedances to 200—your confidence interval doesn't become 10 times smaller. It narrows only by a factor of $\sqrt{10}$, which is about 3.16 . This simple relationship is both humbling and empowering. It's humbling because it tells us that getting a truly precise handle on very rare events requires a colossal amount of data. A short data record will always yield an estimate with wide [error bars](@article_id:268116). But it's empowering because it gives us a language to quantify our own ignorance and a clear directive for improving our knowledge: to understand the rare, we must be diligent and patient collectors of data. The bedrock of our confidence is, and always will be, the number of observations we stand upon.
+This means if you work for 10 times as long and collect 10 times more extreme events—say, going from 20 exceedances to 200—your confidence interval doesn't become 10 times smaller. It narrows only by a factor of $\sqrt{10}$, which is about 3.16 [@problem_id:2418732]. This simple relationship is both humbling and empowering. It's humbling because it tells us that getting a truly precise handle on very rare events requires a colossal amount of data. A short data record will always yield an estimate with wide [error bars](@keyword=error_bars|lang=en-US|style=Feynman). But it's empowering because it gives us a language to quantify our own ignorance and a clear directive for improving our knowledge: to understand the rare, we must be diligent and patient collectors of data. The bedrock of our confidence is, and always will be, the number of observations we stand upon.

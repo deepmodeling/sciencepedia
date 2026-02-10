@@ -9,7 +9,7 @@ Imagine you are at a grand marketplace. Each stall offers a different kind of pa
 
 Now, let's wander over to a rather special stall, one glowing with an intense, warm light. This is the stall for photons, the particles of light. You look for a price tag, but there isn't one. You ask the stall-keeper, "How much for a photon?" The answer is surprising: "They're free!"
 
-Why should light be free? In the world of physics, this isn't a marketing gimmick; it's a profound truth about the nature of thermal equilibrium. The chemical potential of a [photon gas](@article_id:143491) in equilibrium—like the radiation inside a hot furnace or the light emanating from a star—is exactly zero. Our journey in this chapter is to understand why this is so, not just as a mathematical quirk, but as a beautiful consequence of fundamental physical laws, viewed from several different, yet converging, perspectives.
+Why should light be free? In the world of physics, this isn't a marketing gimmick; it's a profound truth about the nature of thermal equilibrium. The chemical potential of a [photon gas](@keyword=photon_gas|lang=en-US|style=Feynman) in equilibrium—like the radiation inside a hot furnace or the light emanating from a star—is exactly zero. Our journey in this chapter is to understand why this is so, not just as a mathematical quirk, but as a beautiful consequence of fundamental physical laws, viewed from several different, yet converging, perspectives.
 
 ### The Argument from Freedom
 
@@ -21,15 +21,15 @@ To find the minimum of any function, you take its derivative and set it to zero.
 
 $$ \mu = \left( \frac{\partial F}{\partial N} \right)_{T,V} $$
 
-So, for the system to be in its most stable, [equilibrium state](@article_id:269870), it must be that:
+So, for the system to be in its most stable, [equilibrium state](@keyword=equilibrium_state|lang=en-US|style=Feynman), it must be that:
 
 $$ \left( \frac{\partial F}{\partial N} \right)_{T,V} = \mu = 0 $$
 
-This is the cornerstone of our understanding   . The freedom of the system to create and destroy photons at will, without any conservation law telling it "you must keep the number of photons constant," forces the "price" of a photon to be zero. If $\mu$ were positive, the system could lower its free energy by destroying photons. If $\mu$ were negative, it would create more. The process only stops when $N$ has adjusted itself to the point where the cost of adding one more photon is exactly zero .
+This is the cornerstone of our understanding [@problem_id:1845426] [@problem_id:1953633] [@problem_id:1170931]. The freedom of the system to create and destroy photons at will, without any conservation law telling it "you must keep the number of photons constant," forces the "price" of a photon to be zero. If $\mu$ were positive, the system could lower its free energy by destroying photons. If $\mu$ were negative, it would create more. The process only stops when $N$ has adjusted itself to the point where the cost of adding one more photon is exactly zero [@problem_id:1953943].
 
 ### A Tale of Two Bosons: Photons vs. Atoms
 
-You might wonder if this is just a feature of all bosons—particles that, unlike fermions, are happy to share the same quantum state. To see why it's not, let's compare our box of photons with another box containing a gas of Helium-4 atoms at the same temperature . Helium-4 atoms are also bosons. Yet, their chemical potential is *not* zero; it's typically a negative number.
+You might wonder if this is just a feature of all bosons—particles that, unlike fermions, are happy to share the same quantum state. To see why it's not, let's compare our box of photons with another box containing a gas of Helium-4 atoms at the same temperature [@problem_id:1955807]. Helium-4 atoms are also bosons. Yet, their chemical potential is *not* zero; it's typically a negative number.
 
 What's the difference? The crucial distinction is **particle number conservation**. If you seal a million Helium-4 atoms in a box, you will have a million atoms in that box tomorrow, and the day after. They don't just vanish or appear out of the vacuum. Their number, $N$, is a conserved quantity.
 
@@ -43,7 +43,7 @@ The beauty of a fundamental truth in physics is that you can arrive at it from m
 
 **The Chemist's Viewpoint**
 
-Imagine the interaction between light and matter as a chemical reaction . An atom in an excited state, $A^*$, can decay to its ground state, $A$, by emitting a photon, $\gamma$. This is a reversible reaction:
+Imagine the interaction between light and matter as a chemical reaction [@problem_id:1884492]. An atom in an excited state, $A^*$, can decay to its ground state, $A$, by emitting a photon, $\gamma$. This is a reversible reaction:
 
 $$ A^* \rightleftharpoons A + \gamma $$
 
@@ -55,28 +55,28 @@ Now for the key insight: the excited state $A^*$ and the ground state $A$ are ju
 
 $$ \mu_A = \mu_A + \mu_{\gamma} \quad \implies \quad \mu_{\gamma} = 0 $$
 
-From the perspective of chemical reactions, the photon's chemical potential must be zero for equilibrium to hold .
+From the perspective of chemical reactions, the photon's chemical potential must be zero for equilibrium to hold [@problem_id:2798478].
 
 **The Accountant's Ledger**
 
-We can also take a purely macroscopic view, using the grand laws of thermodynamics without worrying about individual particles. For a [photon gas](@article_id:143491), a remarkable property holds: its pressure $P$ depends *only* on the temperature $T$, a fact related to the Stefan-Boltzmann law. The **Gibbs-Duhem equation** is a fundamental consistency relation in thermodynamics that acts like a master ledger for the system's properties: $S dT - V dP + N d\mu = 0$.
+We can also take a purely macroscopic view, using the grand laws of thermodynamics without worrying about individual particles. For a [photon gas](@keyword=photon_gas|lang=en-US|style=Feynman), a remarkable property holds: its pressure $P$ depends *only* on the temperature $T$, a fact related to the Stefan-Boltzmann law. The **Gibbs-Duhem equation** is a fundamental consistency relation in thermodynamics that acts like a master ledger for the system's properties: $S dT - V dP + N d\mu = 0$.
 
-Let's consider what happens if we change our system of photons while keeping the temperature constant ($dT=0$). Since the pressure only depends on temperature, it must also be constant ($dP=0$). The Gibbs-Duhem equation then simplifies dramatically to $N d\mu = 0$. Since the number of photons $N$ is not zero, this forces $d\mu = 0$, meaning the chemical potential must be a constant, independent of volume or particle number . What could this constant be? As we argued before, if it were any value other than zero, the system would create or destroy photons to lower its energy. The only stable value for this constant is zero.
+Let's consider what happens if we change our system of photons while keeping the temperature constant ($dT=0$). Since the pressure only depends on temperature, it must also be constant ($dP=0$). The Gibbs-Duhem equation then simplifies dramatically to $N d\mu = 0$. Since the number of photons $N$ is not zero, this forces $d\mu = 0$, meaning the chemical potential must be a constant, independent of volume or particle number [@problem_id:347150]. What could this constant be? As we argued before, if it were any value other than zero, the system would create or destroy photons to lower its energy. The only stable value for this constant is zero.
 
 **The Reservoir's Balance Sheet**
 
-Finally, let's consider the cavity walls themselves, which act as a vast reservoir of energy for the photons . When a wall emits a photon, its own internal energy decreases, and its entropy also decreases. In thermal equilibrium, these two changes are perfectly balanced such that the change in the wall's *free energy* is precisely zero. Since the chemical potential of the reservoir is defined by this change in free energy per particle emitted, the reservoir's chemical potential for photons is zero. For the [photon gas](@article_id:143491) to be in equilibrium with the walls, their chemical potentials must match. The walls set the price to zero, and the gas must agree.
+Finally, let's consider the cavity walls themselves, which act as a vast reservoir of energy for the photons [@problem_id:34862]. When a wall emits a photon, its own internal energy decreases, and its entropy also decreases. In thermal equilibrium, these two changes are perfectly balanced such that the change in the wall's *free energy* is precisely zero. Since the chemical potential of the reservoir is defined by this change in free energy per particle emitted, the reservoir's chemical potential for photons is zero. For the [photon gas](@keyword=photon_gas|lang=en-US|style=Feynman) to be in equilibrium with the walls, their chemical potentials must match. The walls set the price to zero, and the gas must agree.
 
 ### When Light Has a Price: The Frontiers of Non-Equilibrium
 
 For a long time, the story ended there: the chemical potential of light is zero. But what if we could change the rules? What if we could build a system where the number of photons *is* conserved, at least for a while?
 
-This is exactly what physicists have recently achieved in remarkable experiments . Imagine trapping photons between two highly reflective mirrors, forming an [optical microcavity](@article_id:262355). We then inject photons into this trap using a laser. The photons can't easily escape, and we fill the cavity with dye molecules that absorb and re-emit the photons very quickly, allowing them to exchange energy and thermalize without changing their total number significantly.
+This is exactly what physicists have recently achieved in remarkable experiments [@problem_id:2798478]. Imagine trapping photons between two highly reflective mirrors, forming an [optical microcavity](@keyword=optical_microcavity|lang=en-US|style=Feynman). We then inject photons into this trap using a laser. The photons can't easily escape, and we fill the cavity with dye molecules that absorb and re-emit the photons very quickly, allowing them to exchange energy and thermalize without changing their total number significantly.
 
 Suddenly, we have a system where the photon number is approximately conserved! The argument from freedom no longer applies. To describe this system, we need an "accounting fee"—a non-zero chemical potential $\mu$—to keep track of the fixed number of photons.
 
 This non-zero $\mu$ is more than just a bookkeeping device; it's a powerful control knob. As we pump more and more photons into the cavity, their density increases, and we must raise their chemical potential. We are literally paying a higher energy "price" to cram more photons into the fixed volume.
 
-And here, something extraordinary happens. As the chemical potential $\mu$ is raised until it gets incredibly close to the energy of the lowest-possible energy state in the cavity, $\epsilon_0$, the system undergoes a phase transition. A massive number of photons suddenly drop down and occupy that single ground state, all moving in perfect lockstep. This is a **Bose-Einstein Condensate (BEC) of light**—a new, [coherent state](@article_id:154375) of matter akin to a laser beam. The ability to create a non-zero chemical potential for light is the key that unlocked this exotic quantum phenomenon. Similar physics applies to "hot phonons" in solids, where sound particles can acquire an effective chemical potential in non-equilibrium situations .
+And here, something extraordinary happens. As the chemical potential $\mu$ is raised until it gets incredibly close to the energy of the lowest-possible energy state in the cavity, $\epsilon_0$, the system undergoes a phase transition. A massive number of photons suddenly drop down and occupy that single ground state, all moving in perfect lockstep. This is a **Bose-Einstein Condensate (BEC) of light**—a new, [coherent state](@keyword=coherent_state|lang=en-US|style=Feynman) of matter akin to a laser beam. The ability to create a non-zero chemical potential for light is the key that unlocked this exotic quantum phenomenon. Similar physics applies to "hot phonons" in solids, where sound particles can acquire an effective chemical potential in non-equilibrium situations [@problem_id:2798478].
 
 The journey of the photon's chemical potential reveals a deep principle in physics. Its value of zero in the everyday world of thermal equilibrium is a direct consequence of the lack of a conservation law for photon number. Yet, by cleverly engineering systems that defy this freedom, we can bestow a "price" upon light, transforming it from a simple tool for illumination into a building block for new and fascinating quantum states of matter.

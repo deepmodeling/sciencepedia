@@ -1,8 +1,8 @@
 ## 应用与跨学科联系
 
-我们花了一些时间来定义集合的“内部”——一个听起来相当抽象、安全地隐藏于动荡边界之后的点集。你可能会想把它当作纯粹的数学趣闻束之高阁。但事实证明，大自然极其关注内部与外部的区别。“内部”这一概念，以不止一种形式，成为一把钥匙，解锁了关于世界的深刻真理，从房间的温度到[黑洞](@article_id:318975)周围[时空](@article_id:370647)的结构，从流体的流动到量子力学的诞生。
+我们花了一些时间来定义集合的“内部”——一个听起来相当抽象、安全地隐藏于动荡边界之后的点集。你可能会想把它当作纯粹的数学趣闻束之高阁。但事实证明，大自然极其关注内部与外部的区别。“内部”这一概念，以不止一种形式，成为一把钥匙，解锁了关于世界的深刻真理，从房间的温度到[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)周围[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的结构，从流体的流动到量子力学的诞生。
 
-在我们的旅程中，我们将看到“内部”这个概念以两个主要且截然不同的角色出现。第一个是我们所熟知的：*拓扑内部*，一个场所，一个区域，是边界之内的“物质”。第二个是来自几何学世界的一个更动态、更代数的概念：*[内乘](@article_id:318531)*，一个动作，一种用一个数学对象探测另一个数学对象的方式。虽然不同，但它们都阐述了一个深刻的原理：要理解一个系统，你必须理解“内部”发生了什么。
+在我们的旅程中，我们将看到“内部”这个概念以两个主要且截然不同的角色出现。第一个是我们所熟知的：*拓扑内部*，一个场所，一个区域，是边界之内的“物质”。第二个是来自几何学世界的一个更动态、更代数的概念：*[内乘](@keyword=interior_product|lang=zh-CN|style=Feynman)*，一个动作，一种用一个数学对象探测另一个数学对象的方式。虽然不同，但它们都阐述了一个深刻的原理：要理解一个系统，你必须理解“内部”发生了什么。
 
 ### 拓扑内部：围墙之内的世界
 
@@ -14,39 +14,39 @@
 
 这个简单的观察是一个深刻数学真理的物理体现，这个真理被称为**极大值原理** (Maximum Principle)。对于由拉普拉斯方程 ($\Delta u = 0$) 或热方程 ($u_t = k u_{xx}$) 等描述的一大类基本物理现象，解的最大值（和最小值）*必须*出现在区域的边界上，绝不会在内部（除非解在各处都只是一个乏味的常数）。
 
-如果有人声称找到了一个热方程的解，其温度在[时空](@article_id:370647)区域*内部*的某个点 $(x_0, t_0)$ 达到峰值，那么数学本身就会揭示一个矛盾。在这样一个极大值点，函数在时间上必须是局部平坦的 ($u_t = 0$)，在空间上必须是向下弯曲的 ($u_{xx} \leq 0$)。但热方程要求 $u_t = k u_{xx}$，这意味着 $0 = k u_{xx}$，迫使空间曲率为零，而不是负数！这阻止了在区域内部形成一个真正的峰值 。这个原理非常稳健；即使加上像 $-\alpha u$（其中 $\alpha > 0$）这样的项来描述热量损失或[粒子衰变](@article_id:320342)等现象，结论也不会改变。最大值仍然被迫出现在边界上 。这不仅仅是关于热量；它还支配着[静电势](@article_id:367497)、化学物质的[扩散](@article_id:327616)，甚至是金融数学中的模型。内部是一个舞台，但主要的角色——[最大值和最小值](@article_id:306354)——总是在边缘。
+如果有人声称找到了一个热方程的解，其温度在[时空](@keyword=space_time|lang=zh-CN|style=Feynman)区域*内部*的某个点 $(x_0, t_0)$ 达到峰值，那么数学本身就会揭示一个矛盾。在这样一个极大值点，函数在时间上必须是局部平坦的 ($u_t = 0$)，在空间上必须是向下弯曲的 ($u_{xx} \leq 0$)。但热方程要求 $u_t = k u_{xx}$，这意味着 $0 = k u_{xx}$，迫使空间曲率为零，而不是负数！这阻止了在区域内部形成一个真正的峰值 [@problem_id:2147401]。这个原理非常稳健；即使加上像 $-\alpha u$（其中 $\alpha > 0$）这样的项来描述热量损失或[粒子衰变](@keyword=particle_decay|lang=zh-CN|style=Feynman)等现象，结论也不会改变。最大值仍然被迫出现在边界上 [@problem_id:2147000]。这不仅仅是关于热量；它还支配着[静电势](@keyword=electrostatics_potential|lang=zh-CN|style=Feynman)、化学物质的[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)，甚至是金融数学中的模型。内部是一个舞台，但主要的角色——[最大值和最小值](@keyword=maximum_and_minimum|lang=zh-CN|style=Feynman)——总是在边缘。
 
-#### 盒子中的宇宙：[黑体辐射](@article_id:297674)与广义[相对论](@article_id:327421)
+#### 盒子中的宇宙：[黑体辐射](@keyword=blackbody_radiation|lang=zh-CN|style=Feynman)与广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)
 
-内部决定从外部所见行为的这一思想，在宇宙尺度上得到了更宏大的体现。考虑一个密封的空心盒子（物理学家称之为*hohlraum*或[空腔](@article_id:376386)），保持在恒定温度 $T$。盒子的壁不断地吸收和发射辐射。片刻之后，空腔*内部*的辐射场与壁达到完美的[热平衡](@article_id:318390)。这个内部辐射场变得完全均匀和各向同性，其颜色光谱*仅*取决于温度 $T$，完全忘记了壁本身的具体[材料属性](@article_id:307141)。
+内部决定从外部所见行为的这一思想，在宇宙尺度上得到了更宏大的体现。考虑一个密封的空心盒子（物理学家称之为*hohlraum*或[空腔](@keyword=hohlraum|lang=zh-CN|style=Feynman)），保持在恒定温度 $T$。盒子的壁不断地吸收和发射辐射。片刻之后，空腔*内部*的辐射场与壁达到完美的[热平衡](@keyword=thermal_balance|lang=zh-CN|style=Feynman)。这个内部辐射场变得完全均匀和各向同性，其颜色光谱*仅*取决于温度 $T$，完全忘记了壁本身的具体[材料属性](@keyword=material_properties|lang=zh-CN|style=Feynman)。
 
-现在，如果我们在盒子上戳一个小针孔，泄漏出来的辐射就是这个理想化内部状态的完美样本。外面的观察者会看到这个针孔本身是一个完美的发射体——一个“黑体”。这种逃逸光的性质是普适的 。正是通过研究这种“内部”辐射场的光谱，Max Planck 被迫引入了量子概念，从而引发了现代物理学最伟大的革命。
+现在，如果我们在盒子上戳一个小针孔，泄漏出来的辐射就是这个理想化内部状态的完美样本。外面的观察者会看到这个针孔本身是一个完美的发射体——一个“黑体”。这种逃逸光的性质是普适的 [@problem_id:2539026]。正是通过研究这种“内部”辐射场的光谱，Max Planck 被迫引入了量子概念，从而引发了现代物理学最伟大的革命。
 
-一个惊人相似的原理出现在 Einstein 的广义[相对论](@article_id:327421)中。想象一颗恒星。它的内部是[核反应](@article_id:319845)的大漩涡，具有复杂甚至可能是各向异性的压力 。你可能会认为，所有这些内部的复杂性会在恒星外部产生一个相应复杂的[引力场](@article_id:348648)。但事实并非如此。一个名为 Birkhoff 定理的卓越结果表明，任何球对称物体*外部*真空区域的[时空](@article_id:370647)只取决于一个数字：它的总质量。外部的几何结构总是简单而优雅的 Schwarzschild 度规。就好像[时空](@article_id:370647)在恒星之外，完全忽略了[恒星内部](@article_id:318601)物理的混乱细节。就像黑体空腔一样，外部的景象是由内部世界的一个单一属性决定的简化、普适的真理。
+一个惊人相似的原理出现在 Einstein 的广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)中。想象一颗恒星。它的内部是[核反应](@keyword=nuclear_reactions|lang=zh-CN|style=Feynman)的大漩涡，具有复杂甚至可能是各向异性的压力 [@problem_id:1823889]。你可能会认为，所有这些内部的复杂性会在恒星外部产生一个相应复杂的[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)。但事实并非如此。一个名为 Birkhoff 定理的卓越结果表明，任何球对称物体*外部*真空区域的[时空](@keyword=space_time|lang=zh-CN|style=Feynman)只取决于一个数字：它的总质量。外部的几何结构总是简单而优雅的 Schwarzschild 度规。就好像[时空](@keyword=space_time|lang=zh-CN|style=Feynman)在恒星之外，完全忽略了[恒星内部](@keyword=stellar_interiors|lang=zh-CN|style=Feynman)物理的混乱细节。就像黑体空腔一样，外部的景象是由内部世界的一个单一属性决定的简化、普适的真理。
 
 #### 事物的形状：化繁为简
 
-“内部”不仅是物理学的舞台；它的形状本身就具有深远的影响。在复分析中，著名的**[黎曼映射定理](@article_id:356555)** (Riemann Mapping Theorem) 提供了一种数学上的魔杖。它指出，平面上任何单连通开区域的内部（只要它不是整个平面）都可以完美平滑地映射到一个简单[单位圆盘](@article_id:351449)的内部 。即使边界是一个像[科赫雪花](@article_id:336619)那样令人难以置信的复杂[分形](@article_id:301219)，这个定理也成立！
+“内部”不仅是物理学的舞台；它的形状本身就具有深远的影响。在复分析中，著名的**[黎曼映射定理](@keyword=riemann_mapping_theorem|lang=zh-CN|style=Feynman)** (Riemann Mapping Theorem) 提供了一种数学上的魔杖。它指出，平面上任何单连通开区域的内部（只要它不是整个平面）都可以完美平滑地映射到一个简单[单位圆盘](@keyword=unit_disk|lang=zh-CN|style=Feynman)的内部 [@problem_id:2282263]。即使边界是一个像[科赫雪花](@keyword=koch_snowflake|lang=zh-CN|style=Feynman)那样令人难以置信的复杂[分形](@keyword=fractal|lang=zh-CN|style=Feynman)，这个定理也成立！
 
-这一定理的力量是巨大的。如果你想解决一个难题，比如关于一个复杂形状内部的[流体流动](@article_id:379727)或[静电学](@article_id:300932)问题，你可以使用黎曼映射将[问题转换](@article_id:337967)成一个等价但在简单圆盘内更容易解决的问题。你在圆盘内解决它，然后将解映射回去。是*内部*的[拓扑性质](@article_id:302046)——它没有洞——使得这一切成为可能，而与边界的复杂性无关。
+这一定理的力量是巨大的。如果你想解决一个难题，比如关于一个复杂形状内部的[流体流动](@keyword=fluid_flow|lang=zh-CN|style=Feynman)或[静电学](@keyword=electrostatics|lang=zh-CN|style=Feynman)问题，你可以使用黎曼映射将[问题转换](@keyword=problem_transformation|lang=zh-CN|style=Feynman)成一个等价但在简单圆盘内更容易解决的问题。你在圆盘内解决它，然后将解映射回去。是*内部*的[拓扑性质](@keyword=topological_property|lang=zh-CN|style=Feynman)——它没有洞——使得这一切成为可能，而与边界的复杂性无关。
 
-这个主题——内部的拓扑结构决定了内部的物理学——在**[庞加莱引理](@article_id:320554)** (Poincaré Lemma) 中得到了呼应。在[电磁学](@article_id:363853)中，我们知道一个没有源的[静磁场](@article_id:374443) ($\nabla \cdot \mathbf{B} = 0$) 总可以写成一个矢量势的旋度 ($\mathbf{B} = \nabla \times \mathbf{A}$)。但在任何空间中，对于类似的场，这总是成立的吗？答案取决于空间内部的形状。如果区域是“星形的”，或者更一般地是“可缩的”（意味着它可以在自身内部[连续收缩](@article_id:314527)到一个点，就像一个椭球体的内部），那么答案是肯定的。任何“闭”[微分形式](@article_id:307165)（[无源场](@article_id:356932)的推广）都保证是“恰当的”（可由一个势导出） 。如果内部有一个洞，就像甜甜圈那样，这个保证就失去了。物理势的存在与否，本身就是一个关于它们所居住的宇宙内部拓扑结构的问题。
+这个主题——内部的拓扑结构决定了内部的物理学——在**[庞加莱引理](@keyword=poincaré_s_lemma|lang=zh-CN|style=Feynman)** (Poincaré Lemma) 中得到了呼应。在[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)中，我们知道一个没有源的[静磁场](@keyword=static_magnetic_fields|lang=zh-CN|style=Feynman) ($\nabla \cdot \mathbf{B} = 0$) 总可以写成一个矢量势的旋度 ($\mathbf{B} = \nabla \times \mathbf{A}$)。但在任何空间中，对于类似的场，这总是成立的吗？答案取决于空间内部的形状。如果区域是“星形的”，或者更一般地是“可缩的”（意味着它可以在自身内部[连续收缩](@keyword=continuous_retraction|lang=zh-CN|style=Feynman)到一个点，就像一个椭球体的内部），那么答案是肯定的。任何“闭”[微分形式](@keyword=differential_forms|lang=zh-CN|style=Feynman)（[无源场](@keyword=source_free_fields|lang=zh-CN|style=Feynman)的推广）都保证是“恰当的”（可由一个势导出） [@problem_id:1681111]。如果内部有一个洞，就像甜甜圈那样，这个保证就失去了。物理势的存在与否，本身就是一个关于它们所居住的宇宙内部拓扑结构的问题。
 
-最后，拓扑学为我们提供了一种语言来描述集合本身的结构。我们可以有像著名的[康托集](@article_id:302344)那样的集合，它包含无限多个点却没有内部——它们是一种数学尘埃，全是边界而无实质内容 。我们可以精确地定义两个集合何时真正地“分离”，这一性质在考虑它们各自的内部时被优雅地保留了下来 。我们甚至可以分析数学对象的空间，比如矩阵空间，并发现“好的”对象（比如[可对角化矩阵](@article_id:310519)）形成一个内部，其边界由更麻烦的退化情况组成 。内部和边界的语言使得对抽象空间进行极其详细的解剖成为可能。
+最后，拓扑学为我们提供了一种语言来描述集合本身的结构。我们可以有像著名的[康托集](@keyword=cantor_set|lang=zh-CN|style=Feynman)那样的集合，它包含无限多个点却没有内部——它们是一种数学尘埃，全是边界而无实质内容 [@problem_id:2318779]。我们可以精确地定义两个集合何时真正地“分离”，这一性质在考虑它们各自的内部时被优雅地保留了下来 [@problem_id:1573426]。我们甚至可以分析数学对象的空间，比如矩阵空间，并发现“好的”对象（比如[可对角化矩阵](@keyword=diagonalizable_matrix|lang=zh-CN|style=Feynman)）形成一个内部，其边界由更麻烦的退化情况组成 [@problem_id:926504]。内部和边界的语言使得对抽象空间进行极其详细的解剖成为可能。
 
-### [内乘](@article_id:318531)：用流来探测场
+### [内乘](@keyword=interior_product|lang=zh-CN|style=Feynman)：用流来探测场
 
-现在让我们转向一个完全不同但同样强大的概念，它有着相似的名字：**[内乘](@article_id:318531)**。这不是一个地方，而是一个*动作*。它是[微分几何](@article_id:306240)中的一个基本运算，允许我们用[向量场](@article_id:322515)来探测微分形式。
+现在让我们转向一个完全不同但同样强大的概念，它有着相似的名字：**[内乘](@keyword=interior_product|lang=zh-CN|style=Feynman)**。这不是一个地方，而是一个*动作*。它是[微分几何](@keyword=differential_geometry|lang=zh-CN|style=Feynman)中的一个基本运算，允许我们用[向量场](@keyword=vector_field|lang=zh-CN|style=Feynman)来探测微分形式。
 
-想象一个微分 $k$-形式 $\omega$ 是一个设计用来测量 $k$ 维对象的机器。一个 [1-形式](@article_id:334092)测量沿曲线的长度，一个 2-形式测量穿过[曲面](@article_id:331153)的通量，依此类推。一个[向量场](@article_id:322515) $X$ 可以看作是一个流，比如流体或风的速度。[内乘](@article_id:318531)，记作 $i_X \omega$，是将[向量场](@article_id:322515)“插入”到形式的一个输入槽中的行为。结果是一个 $(k-1)$-形式。
+想象一个微分 $k$-形式 $\omega$ 是一个设计用来测量 $k$ 维对象的机器。一个 [1-形式](@keyword=one_forms|lang=zh-CN|style=Feynman)测量沿曲线的长度，一个 2-形式测量穿过[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的通量，依此类推。一个[向量场](@keyword=vector_field|lang=zh-CN|style=Feynman) $X$ 可以看作是一个流，比如流体或风的速度。[内乘](@keyword=interior_product|lang=zh-CN|style=Feynman)，记作 $i_X \omega$，是将[向量场](@keyword=vector_field|lang=zh-CN|style=Feynman)“插入”到形式的一个输入槽中的行为。结果是一个 $(k-1)$-形式。
 
-例如，如果 $\omega$ 是一个测量穿过[曲面](@article_id:331153)通量的 [2-形式](@article_id:367145)，$i_X \omega$ 就是一个 1-形式。它测量什么？它测量的是一条被流 $X$ 输运的线，“每单位长度”的通量。它本质上告诉你由 $\omega$ 测量的量如何与流 $X$ 相互作用。这个乘积的计算是几何学家的标准工具  。例如，如果 $\Omega = K \, dx \wedge dy$ 代表一个[曲面](@article_id:331153)的曲率，而 $X$ 是一个代表旋转的[向量场](@article_id:322515)，那么[内乘](@article_id:318531) $i_X \Omega$ 会产生一个 1-形式，描述了该曲率是如何沿着[旋转流](@article_id:323809)被“感受”到的 。
+例如，如果 $\omega$ 是一个测量穿过[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)通量的 [2-形式](@keyword=2_forms|lang=zh-CN|style=Feynman)，$i_X \omega$ 就是一个 1-形式。它测量什么？它测量的是一条被流 $X$ 输运的线，“每单位长度”的通量。它本质上告诉你由 $\omega$ 测量的量如何与流 $X$ 相互作用。这个乘积的计算是几何学家的标准工具 [@problem_id:1667550] [@problem_id:1503128]。例如，如果 $\Omega = K \, dx \wedge dy$ 代表一个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的曲率，而 $X$ 是一个代表旋转的[向量场](@keyword=vector_field|lang=zh-CN|style=Feynman)，那么[内乘](@keyword=interior_product|lang=zh-CN|style=Feynman) $i_X \Omega$ 会产生一个 1-形式，描述了该曲率是如何沿着[旋转流](@keyword=rotating_flows|lang=zh-CN|style=Feynman)被“感受”到的 [@problem_id:1503128]。
 
-这可能看起来很抽象，但这正是许多现代物理学所使用的语言。在[哈密顿力学](@article_id:306622)中，它描述了从[行星轨道](@article_id:357873)到量子场的一切演化，整个动力学被编码在一个优美的方程中：$i_{X_H} \omega = dH$。这里，$H$ 是能量函数，$\omega$ 是系统相空间的基本“辛形式”，而 $X_H$ 是决定系统如何随时间演化的[向量场](@article_id:322515)。[内乘](@article_id:318531)是连接空间几何 ($\omega$) 与运动物理 ($X_H$) 的桥梁，通过能量 ($H$) 实现。
+这可能看起来很抽象，但这正是许多现代物理学所使用的语言。在[哈密顿力学](@keyword=hamiltonian_mechanics|lang=zh-CN|style=Feynman)中，它描述了从[行星轨道](@keyword=planetary_orbits|lang=zh-CN|style=Feynman)到量子场的一切演化，整个动力学被编码在一个优美的方程中：$i_{X_H} \omega = dH$。这里，$H$ 是能量函数，$\omega$ 是系统相空间的基本“辛形式”，而 $X_H$ 是决定系统如何随时间演化的[向量场](@keyword=vector_field|lang=zh-CN|style=Feynman)。[内乘](@keyword=interior_product|lang=zh-CN|style=Feynman)是连接空间几何 ($\omega$) 与运动物理 ($X_H$) 的桥梁，通过能量 ($H$) 实现。
 
 ### 两种内部的故事
 
-我们已经看到了“内部”的两种概念。一个是*场所*，其拓扑特性——它的连通性、它的洞、它的存在本身——塑造了在其内部上演的物理定律。我们最基本方程的解受到其区域边界的约束，而恒星或[空腔](@article_id:376386)内部的整个行为宇宙可以被总结为发送给外部世界的简单信息。
+我们已经看到了“内部”的两种概念。一个是*场所*，其拓扑特性——它的连通性、它的洞、它的存在本身——塑造了在其内部上演的物理定律。我们最基本方程的解受到其区域边界的约束，而恒星或[空腔](@keyword=hohlraum|lang=zh-CN|style=Feynman)内部的整个行为宇宙可以被总结为发送给外部世界的简单信息。
 
 另一个是*动作*，一种代数工具，让我们看到流和场如何相互作用，揭示物理定律背后隐藏的几何机制。
 

@@ -1,5 +1,5 @@
 ## Introduction
-The Pythagorean theorem, $a^2 + b^2 = c^2$, is a foundational rule of geometry, essential for measuring physical space. But is its utility confined to triangles and construction, or does it hint at a more universal principle? This article bridges the gap between high-school geometry and advanced mathematics, revealing how this ancient theorem can be powerfully generalized to the abstract realm of functions. We will explore how concepts like length and perpendicularity can be redefined for functions, transforming them into vectors within an [infinite-dimensional space](@article_id:138297). The journey begins by establishing the core principles and mechanisms of this "[function space](@article_id:136396) geometry," showing how the Pythagorean theorem emerges naturally from these new definitions. From there, we will uncover the widespread applications and interdisciplinary connections of this idea, demonstrating how it provides a powerful toolkit for approximation, signal processing, and even solving long-standing mathematical puzzles. By the end, you will see Pythagoras's rule not as a simple formula, but as a key to understanding the hidden structure of the mathematical and physical world.
+The Pythagorean theorem, $a^2 + b^2 = c^2$, is a foundational rule of geometry, essential for measuring physical space. But is its utility confined to triangles and construction, or does it hint at a more universal principle? This article bridges the gap between high-school geometry and advanced mathematics, revealing how this ancient theorem can be powerfully generalized to the abstract realm of functions. We will explore how concepts like length and perpendicularity can be redefined for functions, transforming them into vectors within an [infinite-dimensional space](@keyword=infinite_dimensional_space|lang=en-US|style=Feynman). The journey begins by establishing the core principles and mechanisms of this "[function space](@keyword=function_space|lang=en-US|style=Feynman) geometry," showing how the Pythagorean theorem emerges naturally from these new definitions. From there, we will uncover the widespread applications and interdisciplinary connections of this idea, demonstrating how it provides a powerful toolkit for approximation, signal processing, and even solving long-standing mathematical puzzles. By the end, you will see Pythagoras's rule not as a simple formula, but as a key to understanding the hidden structure of the mathematical and physical world.
 
 ## Principles and Mechanisms
 
@@ -17,13 +17,13 @@ $$
 
 The integral is taken over some interval, which defines the space we're working in. This squared norm often has a physical meaning, like the total energy of a wave or signal.
 
-Next, what about the **angle** between two functions, say $f(x)$ and $g(x)$? In [vector algebra](@article_id:151846), the dot product of two vectors tells us about the angle between them. If the dot product is zero, the vectors are perpendicular (orthogonal). We need an equivalent for functions. This is called the **inner product**, written as $\langle f, g \rangle$. For real functions, a common definition is:
+Next, what about the **angle** between two functions, say $f(x)$ and $g(x)$? In [vector algebra](@keyword=vector_algebra|lang=en-US|style=Feynman), the dot product of two vectors tells us about the angle between them. If the dot product is zero, the vectors are perpendicular (orthogonal). We need an equivalent for functions. This is called the **inner product**, written as $\langle f, g \rangle$. For real functions, a common definition is:
 
 $$
 \langle f, g \rangle = \int f(x)g(x) dx
 $$
 
-For complex functions, we need a slight modification to ensure the "length" is a real number, using a complex conjugate: $\langle f, g \rangle = \int f(x)\overline{g(x)}dx$ . The inner [product measures](@article_id:266352) how much the functions $f$ and $g$ are "aligned." If one function is large and positive where the other is also large and positive, it contributes a large positive value to the integral. If they tend to have opposite signs, their product is negative, and the integral might be small, or even zero.
+For complex functions, we need a slight modification to ensure the "length" is a real number, using a complex conjugate: $\langle f, g \rangle = \int f(x)\overline{g(x)}dx$ [@problem_id:1898371]. The inner [product measures](@keyword=product_measures|lang=en-US|style=Feynman) how much the functions $f$ and $g$ are "aligned." If one function is large and positive where the other is also large and positive, it contributes a large positive value to the integral. If they tend to have opposite signs, their product is negative, and the integral might be small, or even zero.
 
 And this brings us to the crucial point. We say that two functions $f$ and $g$ are **orthogonal** if their inner product is zero:
 
@@ -47,17 +47,17 @@ $$
 
 If $f$ and $g$ are orthogonal, the cross-term $\langle f,g \rangle$ is zero, and the theorem appears!
 
-Let's see this in action. Consider the functions $f(x) = \sin(x)$ and $g(x) = \cos(x)$ on the interval $[0, 2\pi]$ . Are they orthogonal? Let's check:
+Let's see this in action. Consider the functions $f(x) = \sin(x)$ and $g(x) = \cos(x)$ on the interval $[0, 2\pi]$ [@problem_id:2301276]. Are they orthogonal? Let's check:
 $$
 \langle \sin(x), \cos(x) \rangle = \int_{0}^{2\pi} \sin(x)\cos(x) dx = \frac{1}{2} \int_{0}^{2\pi} \sin(2x) dx = 0
 $$
 Yes, they are! The positive and negative parts of $\sin(2x)$ cancel out perfectly over a full cycle. So, the Pythagorean theorem must hold.
 
-Or consider an even simpler pair: $f(x) = 1$ and $g(x) = x$ on the symmetric interval $[-1, 1]$ . Their inner product is $\int_{-1}^{1} 1 \cdot x \, dx = 0$, because we are integrating an odd function over a symmetric interval. They are orthogonal! So, we know instantly that $\|1+x\|^2 = \|1\|^2 + \|x\|^2$. Calculating each part separately, we find $\|1\|^2 = \int_{-1}^{1} 1^2 dx = 2$ and $\|x\|^2 = \int_{-1}^{1} x^2 dx = \frac{2}{3}$. Therefore, the "energy" of their sum is simply $2 + \frac{2}{3} = \frac{8}{3}$, no need to integrate $(1+x)^2$. This is more than a curiosity; it's a profound simplification.
+Or consider an even simpler pair: $f(x) = 1$ and $g(x) = x$ on the symmetric interval $[-1, 1]$ [@problem_id:1453599]. Their inner product is $\int_{-1}^{1} 1 \cdot x \, dx = 0$, because we are integrating an odd function over a symmetric interval. They are orthogonal! So, we know instantly that $\|1+x\|^2 = \|1\|^2 + \|x\|^2$. Calculating each part separately, we find $\|1\|^2 = \int_{-1}^{1} 1^2 dx = 2$ and $\|x\|^2 = \int_{-1}^{1} x^2 dx = \frac{2}{3}$. Therefore, the "energy" of their sum is simply $2 + \frac{2}{3} = \frac{8}{3}$, no need to integrate $(1+x)^2$. This is more than a curiosity; it's a profound simplification.
 
 ### The Power of Many Right Angles
 
-The real power of this idea comes when we have not just two, but a whole set of mutually [orthogonal functions](@article_id:160442) $\{f_1, f_2, f_3, \dots \}$. If $\langle f_k, f_l \rangle = 0$ for any $k \neq l$, then a magnificent generalization of the Pythagorean theorem holds:
+The real power of this idea comes when we have not just two, but a whole set of mutually [orthogonal functions](@keyword=orthogonal_functions|lang=en-US|style=Feynman) $\{f_1, f_2, f_3, \dots \}$. If $\langle f_k, f_l \rangle = 0$ for any $k \neq l$, then a magnificent generalization of the Pythagorean theorem holds:
 
 $$
 \left\| \sum_{k=1}^{N} f_k \right\|^2 = \sum_{k=1}^{N} \|f_k\|^2
@@ -92,9 +92,9 @@ $$
 \|f\|^2 = \|P_N f\|^2 + \|f - P_N f\|^2
 $$
 
-This equation is wonderfully profound. It says that the total energy of the function (${\|f\|^2}$) is split cleanly into two parts: the energy of our best approximation (${\|P_N f\|^2}$) and the energy of the approximation error (${\|f - P_N f\|^2}$) . Because of this, the projection $P_N f$ is the "best approximation" in the sense that it minimizes the error energy $\|f - P_N f\|^2$. Any other combination of the basis functions would give a larger error.
+This equation is wonderfully profound. It says that the total energy of the function (${\|f\|^2}$) is split cleanly into two parts: the energy of our best approximation (${\|P_N f\|^2}$) and the energy of the approximation error (${\|f - P_N f\|^2}$) [@problem_id:1874546]. Because of this, the projection $P_N f$ is the "best approximation" in the sense that it minimizes the error energy $\|f - P_N f\|^2$. Any other combination of the basis functions would give a larger error.
 
-This gives us a clever way to calculate the error of a Fourier approximation. In problem `1874546`, we are asked to find the error in approximating the [simple function](@article_id:160838) $f(x)=x$ with just first-order sines and cosines. Instead of finding the [error function](@article_id:175775) $x - P_1 x$ and then integrating its square (which would be tedious), we can just rearrange the Pythagorean relation:
+This gives us a clever way to calculate the error of a Fourier approximation. In problem `1874546`, we are asked to find the error in approximating the [simple function](@keyword=simple_function|lang=en-US|style=Feynman) $f(x)=x$ with just first-order sines and cosines. Instead of finding the [error function](@keyword=error_function|lang=en-US|style=Feynman) $x - P_1 x$ and then integrating its square (which would be tedious), we can just rearrange the Pythagorean relation:
 $$
 \|f - P_1 f\|^2 = \|f\|^2 - \|P_1 f\|^2
 $$
@@ -102,7 +102,7 @@ Calculating $\|f\|^2 = \int_{-\pi}^{\pi} x^2 dx$ and $\|P_1 f\|^2$ is far easier
 
 ### Infinite Dimensions and Finite Energy
 
-So far, we've dealt with finite sums. But many of the most useful [basis sets](@article_id:163521), like the full set of sines and cosines, are infinite. What happens then? The Pythagorean relation $\|f\|^2 = \|P_N f\|^2 + \|f - P_N f\|^2$ still holds for any finite $N$. Since the error term $\|f - P_N f\|^2$ is a squared norm, it can't be negative. This leads immediately to a crucial inequality:
+So far, we've dealt with finite sums. But many of the most useful [basis sets](@keyword=basis_sets|lang=en-US|style=Feynman), like the full set of sines and cosines, are infinite. What happens then? The Pythagorean relation $\|f\|^2 = \|P_N f\|^2 + \|f - P_N f\|^2$ still holds for any finite $N$. Since the error term $\|f - P_N f\|^2$ is a squared norm, it can't be negative. This leads immediately to a crucial inequality:
 
 $$
 \|P_N f\|^2 \le \|f\|^2
@@ -118,13 +118,13 @@ This tells us something remarkable. Even if we have an infinite number of orthog
 
 What if the equality holds? If $\sum_{n=1}^{\infty} |\langle f, e_n \rangle|^2 = \|f\|^2$, we have **Parseval's identity**. This means there is zero energy in the error term; our infinite series represents the function perfectly. This only happens if our orthonormal system $\{e_n\}$ is **complete**—if it's not "missing" any dimensions.
 
-If the inequality is strict, as in $\sum |c_n|^2 < \|f\|^2$, it tells us our basis set is incomplete . There is a part of our function, a "ghost" component, that is orthogonal to *every single one* of our basis functions. Our basis is blind to this part of the function. Problem `1847094` provides a concrete example where we try to represent a function using only sines of positive frequencies ($e^{ikt}$ for $k>0$). Since the function $\sin^3(t)$ also contains [negative frequency](@article_id:263527) components, our basis is incomplete, and we are left with a non-zero "projection residual." The Pythagorean theorem allows us to quantify exactly how much of the function's energy lives in the dimensions our chosen basis cannot see.
+If the inequality is strict, as in $\sum |c_n|^2 < \|f\|^2$, it tells us our basis set is incomplete [@problem_id:1406056]. There is a part of our function, a "ghost" component, that is orthogonal to *every single one* of our basis functions. Our basis is blind to this part of the function. Problem `1847094` provides a concrete example where we try to represent a function using only sines of positive frequencies ($e^{ikt}$ for $k>0$). Since the function $\sin^3(t)$ also contains [negative frequency](@keyword=negative_frequency|lang=en-US|style=Feynman) components, our basis is incomplete, and we are left with a non-zero "projection residual." The Pythagorean theorem allows us to quantify exactly how much of the function's energy lives in the dimensions our chosen basis cannot see.
 
 ### A Universal Principle and a Word of Caution
 
-This geometric way of thinking is not confined to functions on an interval. It is one of the most unifying concepts in science. Take probability theory, for example. A random variable can be seen as a vector in a Hilbert space. The "best guess" for the value of a random variable $f$, given only partial information (represented by a subspace, or sub-$\sigma$-algebra $\mathcal{G}$), is its **conditional expectation** $E[f|\mathcal{G}]$. What is this, really? It is nothing more than the orthogonal projection of $f$ onto the subspace of functions measurable with respect to $\mathcal{G}$! So, the Pythagorean theorem holds here too, in the form known as the [law of total variance](@article_id:184211) : the variance of $f$ is the sum of the variance of its best guess and the variance of the error of that guess. Same principle, different language.
+This geometric way of thinking is not confined to functions on an interval. It is one of the most unifying concepts in science. Take probability theory, for example. A random variable can be seen as a vector in a Hilbert space. The "best guess" for the value of a random variable $f$, given only partial information (represented by a subspace, or sub-$\sigma$-algebra $\mathcal{G}$), is its **conditional expectation** $E[f|\mathcal{G}]$. What is this, really? It is nothing more than the orthogonal projection of $f$ onto the subspace of functions measurable with respect to $\mathcal{G}$! So, the Pythagorean theorem holds here too, in the form known as the [law of total variance](@keyword=law_of_total_variance|lang=en-US|style=Feynman) [@problem_id:1434756]: the variance of $f$ is the sum of the variance of its best guess and the variance of the error of that guess. Same principle, different language.
 
-But a word of caution is in order. The magic of Pythagoras hinges entirely on orthogonality. What if you take two [orthogonal functions](@article_id:160442), $f_1$ and $f_2$, and you transform them both through some physical process or mathematical operator, $T$? The new functions, $Tf_1$ and $Tf_2$, are not necessarily orthogonal anymore. In problem `1898385`, we consider the simple operator that multiplies a function by $x$, so $(Tf)(x) = xf(x)$. Even if $f_1$ and $f_2$ are orthogonal, $Tf_1$ and $Tf_2$ might not be. In that case, the Pythagorean theorem for the transformed functions will fail:
+But a word of caution is in order. The magic of Pythagoras hinges entirely on orthogonality. What if you take two [orthogonal functions](@keyword=orthogonal_functions|lang=en-US|style=Feynman), $f_1$ and $f_2$, and you transform them both through some physical process or mathematical operator, $T$? The new functions, $Tf_1$ and $Tf_2$, are not necessarily orthogonal anymore. In problem `1898385`, we consider the simple operator that multiplies a function by $x$, so $(Tf)(x) = xf(x)$. Even if $f_1$ and $f_2$ are orthogonal, $Tf_1$ and $Tf_2$ might not be. In that case, the Pythagorean theorem for the transformed functions will fail:
 $$
 \|T(f_1+f_2)\|^2 \neq \|Tf_1\|^2 + \|Tf_2\|^2
 $$

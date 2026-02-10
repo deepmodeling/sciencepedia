@@ -25,9 +25,9 @@ The most immediate benefit of the mixed-product property is its power to simplif
 
 If we were to tackle this head-on, we would first have to compute the Kronecker products. Even for simple $2 \times 2$ matrices, $A \otimes B$ and $C \otimes D$ would be $4 \times 4$ matrices. Multiplying these two $4 \times 4$ matrices is a tedious task, prone to error.
 
-But with the mixed-product property, we can choose a much more elegant path. Instead of building the large matrices first, we simply compute the small products $AC$ and $BD$. These are just products of $2 \times 2$ matrices, a far more manageable task. Then, we take the Kronecker product of the results. This shortcut is not just faster; it's less work and far more insightful  .
+But with the mixed-product property, we can choose a much more elegant path. Instead of building the large matrices first, we simply compute the small products $AC$ and $BD$. These are just products of $2 \times 2$ matrices, a far more manageable task. Then, we take the Kronecker product of the results. This shortcut is not just faster; it's less work and far more insightful [@problem_id:1382415] [@problem_id:1376293].
 
-For instance, if we needed to find just one specific element of the final matrix—say, the element in the third row and second column—the property allows us to find it without computing any large matrices at all. We would calculate the matrices $AC$ and $BD$, and from their structure, we could directly pinpoint the element we need, often with just a few multiplications  . It transforms a daunting calculation into a simple, targeted exercise.
+For instance, if we needed to find just one specific element of the final matrix—say, the element in the third row and second column—the property allows us to find it without computing any large matrices at all. We would calculate the matrices $AC$ and $BD$, and from their structure, we could directly pinpoint the element we need, often with just a few multiplications [@problem_id:22509] [@problem_id:1092507]. It transforms a daunting calculation into a simple, targeted exercise.
 
 ### Operators on Different Worlds
 
@@ -45,13 +45,13 @@ $$
 (A \otimes I)(I \otimes B) = (AI) \otimes (IB) = A \otimes B
 $$
 
-The result is identical! The final state of the combined system is the same regardless of the order. This mathematical result, $(A \otimes I)(I \otimes B) = (I \otimes B)(A \otimes I)$, confirms our physical intuition: if two actions are performed on completely independent parts of a larger system, the order in which they occur doesn't matter. The mixed-product property is the mathematical engine that guarantees this fundamental principle of commuting independent operations .
+The result is identical! The final state of the combined system is the same regardless of the order. This mathematical result, $(A \otimes I)(I \otimes B) = (I \otimes B)(A \otimes I)$, confirms our physical intuition: if two actions are performed on completely independent parts of a larger system, the order in which they occur doesn't matter. The mixed-product property is the mathematical engine that guarantees this fundamental principle of commuting independent operations [@problem_id:1370617].
 
 ### Preserving Character
 
 Beyond computation and physical intuition, the mixed-product property reveals how algebraic structures are preserved when we combine systems. If a matrix has a certain "character" or property, does the Kronecker product of such matrices inherit that character?
 
-Let's consider a special type of matrix called a **[projection matrix](@article_id:153985)**. A matrix $P$ is a projection if doing the action twice is the same as doing it once, which we write as $P^2 = P$. Think of casting a shadow: once the shadow is cast, trying to "cast a shadow of the shadow" onto the same surface doesn't change it.
+Let's consider a special type of matrix called a **[projection matrix](@keyword=projection_matrix|lang=en-US|style=Feynman)**. A matrix $P$ is a projection if doing the action twice is the same as doing it once, which we write as $P^2 = P$. Think of casting a shadow: once the shadow is cast, trying to "cast a shadow of the shadow" onto the same surface doesn't change it.
 
 So, if we have two projection matrices, $A$ and $B$, is their Kronecker product $M = A \otimes B$ also a projection? To find out, we need to check if $M^2 = M$. Let's compute the square:
 
@@ -71,6 +71,6 @@ $$
 M^2 = A \otimes B = M
 $$
 
-It works! The Kronecker product of two projection matrices is itself a [projection matrix](@article_id:153985). The property is preserved . This allows us to reason about complex systems with startling clarity. For example, if you encounter an expression like $(I \otimes P)^2 - (I \otimes P)$, where $P$ is a projection, you don't need to perform any calculations. Since $I$ and $P$ are both projections, their Kronecker product $I \otimes P$ must also be a projection. This means $(I \otimes P)^2 = I \otimes P$, and the entire expression is simply the zero matrix. Its trace, therefore, must be zero .
+It works! The Kronecker product of two projection matrices is itself a [projection matrix](@keyword=projection_matrix|lang=en-US|style=Feynman). The property is preserved [@problem_id:1370680]. This allows us to reason about complex systems with startling clarity. For example, if you encounter an expression like $(I \otimes P)^2 - (I \otimes P)$, where $P$ is a projection, you don't need to perform any calculations. Since $I$ and $P$ are both projections, their Kronecker product $I \otimes P$ must also be a projection. This means $(I \otimes P)^2 = I \otimes P$, and the entire expression is simply the zero matrix. Its trace, therefore, must be zero [@problem_id:27010].
 
 From a simple computational trick to a deep principle governing composite systems, the mixed-product property is a perfect example of the elegance and unity found in mathematics. It is a key that unlocks a simpler, more intuitive understanding of how different worlds combine.

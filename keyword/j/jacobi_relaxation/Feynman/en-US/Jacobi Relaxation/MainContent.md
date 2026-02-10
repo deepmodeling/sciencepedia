@@ -1,7 +1,7 @@
 ## Introduction
-In the vast landscape of science and engineering, many complex phenomena—from the stress in a bridge to the flow of heat in a circuit—are described by large systems of linear equations. While direct methods like Gaussian elimination provide exact solutions, they can become prohibitively slow when dealing with millions of variables. This challenge opens the door for a different approach: [iterative methods](@article_id:138978), which refine an initial guess until it is close enough to the true solution.
+In the vast landscape of science and engineering, many complex phenomena—from the stress in a bridge to the flow of heat in a circuit—are described by large systems of linear equations. While direct methods like Gaussian elimination provide exact solutions, they can become prohibitively slow when dealing with millions of variables. This challenge opens the door for a different approach: [iterative methods](@keyword=iterative_methods|lang=en-US|style=Feynman), which refine an initial guess until it is close enough to the true solution.
 
-This article explores one of the most fundamental iterative techniques: the **Jacobi relaxation**. It provides an elegant and intuitive way to tackle large-scale [linear systems](@article_id:147356). Across the following chapters, you will gain a comprehensive understanding of this powerful tool. The first chapter, "Principles and Mechanisms," will deconstruct the method's core algorithm, explain the mathematical conditions that guarantee a solution, such as [diagonal dominance](@article_id:143120), and uncover the deeper truth of convergence through the spectral radius. Following that, the chapter on "Applications and Interdisciplinary Connections" will showcase how the Jacobi method is applied in diverse fields, from structural analysis and [plasma physics](@article_id:138657) to economics, while also framing it as a stepping stone to more advanced numerical techniques.
+This article explores one of the most fundamental iterative techniques: the **Jacobi relaxation**. It provides an elegant and intuitive way to tackle large-scale [linear systems](@keyword=linear_systems|lang=en-US|style=Feynman). Across the following chapters, you will gain a comprehensive understanding of this powerful tool. The first chapter, "Principles and Mechanisms," will deconstruct the method's core algorithm, explain the mathematical conditions that guarantee a solution, such as [diagonal dominance](@keyword=diagonal_dominance|lang=en-US|style=Feynman), and uncover the deeper truth of convergence through the spectral radius. Following that, the chapter on "Applications and Interdisciplinary Connections" will showcase how the Jacobi method is applied in diverse fields, from structural analysis and [plasma physics](@keyword=plasma_physics|lang=en-US|style=Feynman) to economics, while also framing it as a stepping stone to more advanced numerical techniques.
 
 ## Principles and Mechanisms
 
@@ -11,7 +11,7 @@ Direct methods for solving such systems, like the Gaussian elimination you might
 
 ### The Art of Guessing and Refining
 
-This is where the beauty of iterative methods, like the **Jacobi relaxation**, comes into play. Instead of a frontal assault, we take a more Zen-like approach. We start with a guess—any guess will do, even that all variables are zero—and then we progressively refine it, hoping to inch closer and closer to the true solution with each step . It's a bit like tuning an old radio: you start with static, make an adjustment, listen, and then make another small adjustment, getting closer to the clear station with each turn of the dial.
+This is where the beauty of iterative methods, like the **Jacobi relaxation**, comes into play. Instead of a frontal assault, we take a more Zen-like approach. We start with a guess—any guess will do, even that all variables are zero—and then we progressively refine it, hoping to inch closer and closer to the true solution with each step [@problem_id:1396143]. It's a bit like tuning an old radio: you start with static, make an adjustment, listen, and then make another small adjustment, getting closer to the clear station with each turn of the dial.
 
 The core idea of the Jacobi method is wonderfully simple. It's a strategy of "divide and conquer" applied to each equation in the system. Let's look at a single equation from our web, say:
 
@@ -23,7 +23,7 @@ $x_i = \frac{1}{a_{ii}} \left( b_i - \sum_{j \neq i} a_{ij}x_j \right)$
 
 The Jacobi "relaxation" consists of doing this for *every variable* in the system simultaneously. We take our entire vector of old guesses, $\mathbf{x}^{(k)}$, and use it on the right-hand side to compute an entirely new vector of updated guesses, $\mathbf{x}^{(k+1)}$.
 
-Let's make this tangible. Consider a simplified model of heat distribution in a rod, where the temperatures $x_1, x_2, x_3$ at three points are governed by the following equations :
+Let's make this tangible. Consider a simplified model of heat distribution in a rod, where the temperatures $x_1, x_2, x_3$ at three points are governed by the following equations [@problem_id:1369756]:
 
 $$
 \begin{align*}
@@ -53,33 +53,33 @@ $$
 
 So, our new guess is $\mathbf{x}^{(1)} = (47.5, 2.5, 27.5)^T$. It's almost certainly not the correct answer, but is it better? We can repeat the process: take these new values, plug them back into the right side, and calculate $\mathbf{x}^{(2)}$. And so on. Each step is a "relaxation," allowing the variables to adjust to each other's new values.
 
-One immediate and crucial observation arises from the formula: to calculate the new $x_i$, we must divide by its own coefficient, $a_{ii}$. This means that for the standard Jacobi method to even be definable, **all diagonal elements of the matrix A must be non-zero**. If a diagonal element $a_{ii}$ were zero, the whole scheme would collapse, as you'd be asked to divide by zero .
+One immediate and crucial observation arises from the formula: to calculate the new $x_i$, we must divide by its own coefficient, $a_{ii}$. This means that for the standard Jacobi method to even be definable, **all diagonal elements of the matrix A must be non-zero**. If a diagonal element $a_{ii}$ were zero, the whole scheme would collapse, as you'd be asked to divide by zero [@problem_id:2163173].
 
 In the more formal language of matrices, we can express this entire process elegantly. If we decompose our matrix $A$ into its diagonal part $D$, its strictly lower-triangular part $L$, and its strictly upper-triangular part $U$, the Jacobi iteration becomes a single, clean matrix equation:
 
 $\mathbf{x}^{(k+1)} = -D^{-1}(L+U)\mathbf{x}^{(k)} + D^{-1}\mathbf{b}$
 
-This is in the form $\mathbf{x}^{(k+1)} = T_J \mathbf{x}^{(k)} + \mathbf{c}$, where $T_J = -D^{-1}(L+U)$ is the famous **Jacobi [iteration matrix](@article_id:636852)** and $\mathbf{c} = D^{-1}\mathbf{b}$ is a constant vector that depends on the system .
+This is in the form $\mathbf{x}^{(k+1)} = T_J \mathbf{x}^{(k)} + \mathbf{c}$, where $T_J = -D^{-1}(L+U)$ is the famous **Jacobi [iteration matrix](@keyword=iteration_matrix|lang=en-US|style=Feynman)** and $\mathbf{c} = D^{-1}\mathbf{b}$ is a constant vector that depends on the system [@problem_id:1369761].
 
 ### A Simple Rule for Success: Diagonal Dominance
 
 This iterative dance is elegant, but it raises a critical question: are we always dancing *towards* the solution? Or could we be spinning away from it?
 
-It turns out, convergence is not guaranteed. Consider a simple-looking system like :
+It turns out, convergence is not guaranteed. Consider a simple-looking system like [@problem_id:1396163]:
 $$A = \begin{pmatrix} 2 & 3 \\ 4 & 1 \end{pmatrix}, \quad \mathbf{b} = \begin{pmatrix} 8 \\ 6 \end{pmatrix}$$
 The true solution is $\mathbf{x} = (1, 2)^T$. If we start with a guess of $\mathbf{x}^{(0)} = (0, 0)^T$, the initial error is $\sqrt{(1-0)^2 + (2-0)^2} = \sqrt{5}$. After one Jacobi iteration, we get $\mathbf{x}^{(1)} = (4, 6)^T$. The new error is $\sqrt{(1-4)^2 + (2-6)^2} = \sqrt{9+16} = 5$. The error *increased* from $\sqrt{5} \approx 2.236$ to $5$! We are getting colder, not hotter. The process is diverging.
 
-So, how can we know beforehand if our iterative journey will lead to the promised land? Luckily, there's a simple, powerful condition that provides a guarantee: **[strict diagonal dominance](@article_id:153783)**.
+So, how can we know beforehand if our iterative journey will lead to the promised land? Luckily, there's a simple, powerful condition that provides a guarantee: **[strict diagonal dominance](@keyword=strict_diagonal_dominance|lang=en-US|style=Feynman)**.
 
 A matrix is called **strictly diagonally dominant** if, for every row, the absolute value of the diagonal element is larger than the sum of the absolute values of all other elements in that row. Intuitively, this means that in each equation, the variable on the diagonal ($x_i$) has a stronger self-influence than the combined influence of all other variables.
 
 Let's check the matrix from our successful heat-flow problem:
 $$A = \begin{pmatrix} 2 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 2 \end{pmatrix}$$
 - Row 1: $|2| > |-1| + |0|$ (True, $2 > 1$)
-- Row 2: $|2| > |-1| + |-1|$ (The condition $2 > 2$ is false, so the matrix is not *strictly* dominant. Let's consider the matrix from  as a better example.)
+- Row 2: $|2| > |-1| + |-1|$ (The condition $2 > 2$ is false, so the matrix is not *strictly* dominant. Let's consider the matrix from [@problem_id:2216362] as a better example.)
 - Row 3: $|2| > |-1| + |0|$ (True, $2 > 1$)
 
-Let's use the matrix from problem :
+Let's use the matrix from problem [@problem_id:2216362]:
 $$A = \begin{pmatrix} 10 & 2 & -3 & 1 \\ 4 & -15 & 5 & -2 \\ -1 & 8 & 20 & 6 \\ 3 & -1 & 7 & -12 \end{pmatrix}$$
 - Row 1: $|10| > |2| + |-3| + |1|$ (True, $10 > 6$)
 - Row 2: $|-15| > |4| + |5| + |-2|$ (True, $15 > 11$)
@@ -90,29 +90,29 @@ Since the condition holds for every row, this matrix is strictly diagonally domi
 
 ### The Deeper Truth: The Spectral Radius
 
-Is [diagonal dominance](@article_id:143120) the whole story? As with so many things in physics and mathematics, a simple rule of thumb often hides a deeper, more beautiful principle.
+Is [diagonal dominance](@keyword=diagonal_dominance|lang=en-US|style=Feynman) the whole story? As with so many things in physics and mathematics, a simple rule of thumb often hides a deeper, more beautiful principle.
 
-Consider this matrix from problem :
+Consider this matrix from problem [@problem_id:2384201]:
 $$A = \begin{pmatrix} 1 & 2 \\ 1 & 3 \end{pmatrix}$$
 In the first row, the diagonal element $|1|$ is *not* greater than the off-diagonal element $|2|$. This matrix is clearly *not* diagonally dominant. Our simple rule gives us no assurance of success. We might even expect it to fail, like our previous divergent example.
 
-But let's not jump to conclusions. Let's find the real gatekeeper of convergence. The secret lies in the **[iteration matrix](@article_id:636852)**, $T_J$. Recall that the error vector $\mathbf{e}^{(k)} = \mathbf{x}^{(k)} - \mathbf{x}^*$ (where $\mathbf{x}^*$ is the true solution) transforms at each step according to $\mathbf{e}^{(k+1)} = T_J \mathbf{e}^{(k)}$. For the error to vanish over time, the matrix $T_J$ must fundamentally be a "shrinking" operator.
+But let's not jump to conclusions. Let's find the real gatekeeper of convergence. The secret lies in the **[iteration matrix](@keyword=iteration_matrix|lang=en-US|style=Feynman)**, $T_J$. Recall that the error vector $\mathbf{e}^{(k)} = \mathbf{x}^{(k)} - \mathbf{x}^*$ (where $\mathbf{x}^*$ is the true solution) transforms at each step according to $\mathbf{e}^{(k+1)} = T_J \mathbf{e}^{(k)}$. For the error to vanish over time, the matrix $T_J$ must fundamentally be a "shrinking" operator.
 
-The ultimate measure of a matrix's "shrinking" or "growing" power is its **spectral radius**, denoted $\rho(T_J)$. The [spectral radius](@article_id:138490) is the largest absolute value of the matrix's eigenvalues. The eigenvalues represent the factors by which the matrix stretches or shrinks vectors in specific, special directions (the eigenvectors). If the largest of these stretching factors is less than 1, then repeated application of the matrix will eventually shrink *any* vector to zero.
+The ultimate measure of a matrix's "shrinking" or "growing" power is its **spectral radius**, denoted $\rho(T_J)$. The [spectral radius](@keyword=spectral_radius|lang=en-US|style=Feynman) is the largest absolute value of the matrix's eigenvalues. The eigenvalues represent the factors by which the matrix stretches or shrinks vectors in specific, special directions (the eigenvectors). If the largest of these stretching factors is less than 1, then repeated application of the matrix will eventually shrink *any* vector to zero.
 
 The one true condition for the Jacobi method to converge for any initial guess is this:
 $$\rho(T_J) < 1$$
 
-Let's go back to our puzzling non-[diagonally dominant matrix](@article_id:140764) $A = \begin{pmatrix} 1 & 2 \\ 1 & 3 \end{pmatrix}$. Its [iteration matrix](@article_id:636852) is $T_J = \begin{pmatrix} 0 & -2 \\ -1/3 & 0 \end{pmatrix}$. The eigenvalues of this matrix are the roots of $\lambda^2 - 2/3 = 0$, which are $\pm\sqrt{2/3}$. The [spectral radius](@article_id:138490) is therefore $\rho(T_J) = \sqrt{2/3} \approx 0.816$. Since this is less than 1, the Jacobi method **will converge** for this system, even though it wasn't diagonally dominant! .
+Let's go back to our puzzling non-[diagonally dominant matrix](@keyword=diagonally_dominant_matrix|lang=en-US|style=Feynman) $A = \begin{pmatrix} 1 & 2 \\ 1 & 3 \end{pmatrix}$. Its [iteration matrix](@keyword=iteration_matrix|lang=en-US|style=Feynman) is $T_J = \begin{pmatrix} 0 & -2 \\ -1/3 & 0 \end{pmatrix}$. The eigenvalues of this matrix are the roots of $\lambda^2 - 2/3 = 0$, which are $\pm\sqrt{2/3}$. The [spectral radius](@keyword=spectral_radius|lang=en-US|style=Feynman) is therefore $\rho(T_J) = \sqrt{2/3} \approx 0.816$. Since this is less than 1, the Jacobi method **will converge** for this system, even though it wasn't diagonally dominant! [@problem_id:2384201].
 
-This reveals the true hierarchy of principles: [strict diagonal dominance](@article_id:153783) is a simple test that *implies* $\rho(T_J) < 1$. But the [spectral radius](@article_id:138490) criterion is the fundamental truth. We can even derive the exact condition for a general 2x2 matrix , or analyze precisely for which parameter values a more complex system will converge by calculating the [spectral radius](@article_id:138490) as a function of those parameters .
+This reveals the true hierarchy of principles: [strict diagonal dominance](@keyword=strict_diagonal_dominance|lang=en-US|style=Feynman) is a simple test that *implies* $\rho(T_J) < 1$. But the [spectral radius](@keyword=spectral_radius|lang=en-US|style=Feynman) criterion is the fundamental truth. We can even derive the exact condition for a general 2x2 matrix [@problem_id:2163209], or analyze precisely for which parameter values a more complex system will converge by calculating the [spectral radius](@keyword=spectral_radius|lang=en-US|style=Feynman) as a function of those parameters [@problem_id:2168153].
 
 ### How Fast to the Finish Line?
 
-Knowing that we will eventually arrive at the destination is good. Knowing how long the journey will take is even better. The [rate of convergence](@article_id:146040) is also governed by the spectral radius. The smaller the value of $\rho(T_J)$, the faster the error shrinks. A spectral radius of $0.99$ means convergence will be agonizingly slow, while a value of $0.1$ implies a rapid reduction in error.
+Knowing that we will eventually arrive at the destination is good. Knowing how long the journey will take is even better. The [rate of convergence](@keyword=rate_of_convergence|lang=en-US|style=Feynman) is also governed by the spectral radius. The smaller the value of $\rho(T_J)$, the faster the error shrinks. A spectral radius of $0.99$ means convergence will be agonizingly slow, while a value of $0.1$ implies a rapid reduction in error.
 
-In practice, calculating the spectral radius can be as hard as solving the original problem. However, we can easily calculate a [matrix norm](@article_id:144512), such as the **[infinity norm](@article_id:268367)** (the maximum absolute row sum), which gives an upper bound on the error reduction. For the iteration matrix $T_J$, we have the inequality $\| \mathbf{e}^{(k)} \|_{\infty} \leq \|T_J\|_{\infty}^k \|\mathbf{e}^{(0)}\|_{\infty}$.
+In practice, calculating the spectral radius can be as hard as solving the original problem. However, we can easily calculate a [matrix norm](@keyword=matrix_norm|lang=en-US|style=Feynman), such as the **[infinity norm](@keyword=infinity_norm|lang=en-US|style=Feynman)** (the maximum absolute row sum), which gives an upper bound on the error reduction. For the iteration matrix $T_J$, we have the inequality $\| \mathbf{e}^{(k)} \|_{\infty} \leq \|T_J\|_{\infty}^k \|\mathbf{e}^{(0)}\|_{\infty}$.
 
-For instance, if we calculate that $\|T_J\|_{\infty} = 0.5$, we are guaranteed that the largest component of our error vector is at least halved at every single step . This allows us to estimate the number of iterations needed to achieve a desired level of accuracy, turning our abstract iterative dance into a predictable and practical computational tool.
+For instance, if we calculate that $\|T_J\|_{\infty} = 0.5$, we are guaranteed that the largest component of our error vector is at least halved at every single step [@problem_id:2216349]. This allows us to estimate the number of iterations needed to achieve a desired level of accuracy, turning our abstract iterative dance into a predictable and practical computational tool.
 
-And so, we see a beautiful layering of understanding. We start with a simple, intuitive idea of [iterative refinement](@article_id:166538). We find a practical rule of thumb—[diagonal dominance](@article_id:143120)—that guarantees success. But by digging deeper, we uncover the fundamental principle of the spectral radius, a single number that tells us everything: whether we will converge, why we converge, and how quickly we will get there. This journey from a simple mechanism to a unifying mathematical principle is the very essence of scientific discovery.
+And so, we see a beautiful layering of understanding. We start with a simple, intuitive idea of [iterative refinement](@keyword=iterative_refinement|lang=en-US|style=Feynman). We find a practical rule of thumb—[diagonal dominance](@keyword=diagonal_dominance|lang=en-US|style=Feynman)—that guarantees success. But by digging deeper, we uncover the fundamental principle of the spectral radius, a single number that tells us everything: whether we will converge, why we converge, and how quickly we will get there. This journey from a simple mechanism to a unifying mathematical principle is the very essence of scientific discovery.

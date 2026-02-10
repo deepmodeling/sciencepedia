@@ -3,7 +3,7 @@ The world of electricity is often seen as a tale of two materials: conductors th
 
 This article bridges the gap between the simple observation of increased capacitance and the underlying physics. It unravels the mystery of the dielectric constant, a single parameter that captures a material's electrical response.
 
-First, in "Principles and Mechanisms," we will journey inside [dielectric materials](@article_id:146669) to uncover how atoms and molecules react to an electric field through a process called polarization. Following this, "Applications and Interdisciplinary Connections" will explore the astonishing reach of the dielectric constant, demonstrating how it serves as a master controller in fields as diverse as engineering, chemistry, physics, and even the biology of our own nervous system. By the end, this seemingly simple number will be revealed as a cornerstone concept connecting disparate parts of the scientific world.
+First, in "Principles and Mechanisms," we will journey inside [dielectric materials](@keyword=dielectric_materials|lang=en-US|style=Feynman) to uncover how atoms and molecules react to an electric field through a process called polarization. Following this, "Applications and Interdisciplinary Connections" will explore the astonishing reach of the dielectric constant, demonstrating how it serves as a master controller in fields as diverse as engineering, chemistry, physics, and even the biology of our own nervous system. By the end, this seemingly simple number will be revealed as a cornerstone concept connecting disparate parts of the scientific world.
 
 ## Principles and Mechanisms
 
@@ -11,11 +11,11 @@ So, we've met the idea of a dielectric. You take a capacitor, a simple device of
 
 ### A Capacitor's Secret: More Than Just Empty Space
 
-Let’s start with that first observation. We put a material in a capacitor and its capacitance $C$ becomes larger than its original value in a vacuum, $C_0$. We can quantify this effect by a simple ratio. This ratio, a pure number that tells us the "strength" of the dielectric effect, is what physicists call the **[relative permittivity](@article_id:267321)**, $\epsilon_r$. In older books and in many engineering fields, you'll find it called the **dielectric constant**, often labeled $K$. They are one and the same:
+Let’s start with that first observation. We put a material in a capacitor and its capacitance $C$ becomes larger than its original value in a vacuum, $C_0$. We can quantify this effect by a simple ratio. This ratio, a pure number that tells us the "strength" of the dielectric effect, is what physicists call the **[relative permittivity](@keyword=relative_permittivity|lang=en-US|style=Feynman)**, $\epsilon_r$. In older books and in many engineering fields, you'll find it called the **dielectric constant**, often labeled $K$. They are one and the same:
 
 $$ \epsilon_r = K = \frac{C}{C_0} $$
 
-If an engineer tells you a new material has a dielectric constant of $K=6.5$, they are simply saying that using it as a spacer in a capacitor will increase its capacitance by a factor of 6.5 compared to a vacuum . This is a simple, macroscopic definition. It's what you measure in the lab. It's clean and useful. But it's also a bit of a black box. It tells us *what* happens, but not *why*. To understand the why, we have to imagine what's happening inside the material itself.
+If an engineer tells you a new material has a dielectric constant of $K=6.5$, they are simply saying that using it as a spacer in a capacitor will increase its capacitance by a factor of 6.5 compared to a vacuum [@problem_id:1596180]. This is a simple, macroscopic definition. It's what you measure in the lab. It's clean and useful. But it's also a bit of a black box. It tells us *what* happens, but not *why*. To understand the why, we have to imagine what's happening inside the material itself.
 
 ### The Inner World: Polarization and the Opposing Field
 

@@ -1,13 +1,13 @@
 ## Introduction
-In any number system, the ability to reverse an operation is as crucial as the operation itself. Just as subtraction undoes addition and division undoes multiplication, the concept of an inverse provides a way to go backward. For quaternions, the four-dimensional numbers that elegantly describe 3D rotations, the question of how to "un-multiply" is central to unlocking their full potential. This process is not as simple as division in the real numbers, as [quaternions](@article_id:146529) possess a unique non-commutative structure where the order of multiplication matters.
+In any number system, the ability to reverse an operation is as crucial as the operation itself. Just as subtraction undoes addition and division undoes multiplication, the concept of an inverse provides a way to go backward. For quaternions, the four-dimensional numbers that elegantly describe 3D rotations, the question of how to "un-multiply" is central to unlocking their full potential. This process is not as simple as division in the real numbers, as [quaternions](@keyword=quaternions|lang=en-US|style=Feynman) possess a unique non-commutative structure where the order of multiplication matters.
 
-This article delves into the concept of the quaternion inverse, providing the tools to navigate this fascinating algebraic landscape. Across the following chapters, you will gain a comprehensive understanding of this fundamental operator. The "Principles and Mechanisms" chapter will derive the formula for the inverse, exploring its relationship with the quaternion conjugate, norm, and [matrix representations](@article_id:145531). Following this, the "Applications and Interdisciplinary Connections" chapter will demonstrate how this single concept provides a bridge between abstract algebra and tangible problems in 3D graphics, robotics, and control systems, showcasing why the quaternion inverse is an indispensable tool for scientists and engineers.
+This article delves into the concept of the quaternion inverse, providing the tools to navigate this fascinating algebraic landscape. Across the following chapters, you will gain a comprehensive understanding of this fundamental operator. The "Principles and Mechanisms" chapter will derive the formula for the inverse, exploring its relationship with the quaternion conjugate, norm, and [matrix representations](@keyword=matrix_representations|lang=en-US|style=Feynman). Following this, the "Applications and Interdisciplinary Connections" chapter will demonstrate how this single concept provides a bridge between abstract algebra and tangible problems in 3D graphics, robotics, and control systems, showcasing why the quaternion inverse is an indispensable tool for scientists and engineers.
 
 ## Principles and Mechanisms
 
 In any game of numbers, we learn the rules of moving forward—addition, multiplication. But the real power comes when we learn how to go backward. Subtraction undoes addition, and division undoes multiplication. For the real numbers you've known your whole life, division is simple: dividing by 2 is the same as multiplying by $\frac{1}{2}$. This number, $\frac{1}{2}$, is the **multiplicative inverse** of 2. It's the unique number that, when multiplied by 2, gives us the multiplicative identity, 1.
 
-So, as we explore the world of [quaternions](@article_id:146529), a natural and crucial question arises: can we "un-multiply"? Can we find an inverse for any quaternion? The answer is a resounding yes, and the journey to finding it reveals the deep and elegant structure that makes quaternions so powerful.
+So, as we explore the world of [quaternions](@keyword=quaternions|lang=en-US|style=Feynman), a natural and crucial question arises: can we "un-multiply"? Can we find an inverse for any quaternion? The answer is a resounding yes, and the journey to finding it reveals the deep and elegant structure that makes quaternions so powerful.
 
 ### The Conjugate: A Mirror Image with a Secret
 
@@ -29,7 +29,7 @@ That simple real number, the norm, is the key that unlocks the inverse. We start
 $$ q\bar{q} = N(q) $$
 As long as our quaternion $q$ is not the zero quaternion ($0+0i+0j+0k$), its norm $N(q) = a^2+b^2+c^2+d^2$ will be a positive real number. And since it's just a number, we can divide by it! Let's divide both sides by $N(q)$:
 $$ q \left( \frac{\bar{q}}{N(q)} \right) = 1 $$
-Look closely at what we have. We've found an expression, $\frac{\bar{q}}{N(q)}$, that when multiplied by $q$, gives 1. This is precisely the definition of the [multiplicative inverse](@article_id:137455). And because quaternions form what mathematicians call a **[division ring](@article_id:149074)**, this inverse is unique. So, we have our grand formula:
+Look closely at what we have. We've found an expression, $\frac{\bar{q}}{N(q)}$, that when multiplied by $q$, gives 1. This is precisely the definition of the [multiplicative inverse](@keyword=multiplicative_inverse|lang=en-US|style=Feynman). And because quaternions form what mathematicians call a **[division ring](@keyword=division_ring|lang=en-US|style=Feynman)**, this inverse is unique. So, we have our grand formula:
 $$ q^{-1} = \frac{\bar{q}}{N(q)} = \frac{a - bi - cj - dk}{a^2 + b^2 + c^2 + d^2} $$
 Let's see this in action. Suppose a friend gives you the quaternion $q = 2 - 3i + j - 4k$ and challenges you to find its inverse. First, we find its conjugate and its norm:
 $$ \bar{q} = 2 + 3i - j + 4k $$
@@ -40,17 +40,17 @@ And there it is. You can multiply this result by the original $q$ and, after a b
 
 ### A Surprising Connection: Quaternions as Matrices
 
-You might think this is just a clever algebraic trick. But the beauty of mathematics is that a deep truth often reveals itself from multiple, seemingly unrelated directions. Let's look at [quaternions](@article_id:146529) from a completely different angle: as matrices.
+You might think this is just a clever algebraic trick. But the beauty of mathematics is that a deep truth often reveals itself from multiple, seemingly unrelated directions. Let's look at [quaternions](@keyword=quaternions|lang=en-US|style=Feynman) from a completely different angle: as matrices.
 
 It turns out we can represent any quaternion $q = a + bi + cj + dk$ as a $2 \times 2$ matrix with complex numbers as its entries:
 $$ \phi(q) = \begin{pmatrix} a+bi & c+di \\ -c+di & a-bi \end{pmatrix} $$
-This isn't just a random mapping; it's an "algebra homomorphism," which is a fancy way of saying that [quaternion multiplication](@article_id:154259) corresponds perfectly to the multiplication of these matrices. Now, how do we find the [inverse of a matrix](@article_id:154378)? We use the formula involving its determinant and [adjugate matrix](@article_id:155111).
+This isn't just a random mapping; it's an "algebra homomorphism," which is a fancy way of saying that [quaternion multiplication](@keyword=quaternion_multiplication|lang=en-US|style=Feynman) corresponds perfectly to the multiplication of these matrices. Now, how do we find the [inverse of a matrix](@keyword=inverse_of_a_matrix|lang=en-US|style=Feynman)? We use the formula involving its determinant and [adjugate matrix](@keyword=adjugate_matrix|lang=en-US|style=Feynman).
 
 Let's calculate the determinant of our quaternion-matrix:
 $$ \det(\phi(q)) = (a+bi)(a-bi) - (c+di)(-c+di) $$
 $$ = (a^2 - (bi)^2) - (-(c^2 - (di)^2)) $$
 $$ = (a^2 + b^2) + (c^2 + d^2) = a^2 + b^2 + c^2 + d^2 $$
-It's the norm, $N(q)$! The determinant of the matrix representation *is* the norm of the quaternion. This is a beautiful, non-obvious connection. The condition for a quaternion to have an inverse (being non-zero) is exactly the condition for its matrix to have an inverse (having a [non-zero determinant](@article_id:153416)).
+It's the norm, $N(q)$! The determinant of the matrix representation *is* the norm of the quaternion. This is a beautiful, non-obvious connection. The condition for a quaternion to have an inverse (being non-zero) is exactly the condition for its matrix to have an inverse (having a [non-zero determinant](@keyword=non_zero_determinant|lang=en-US|style=Feynman)).
 
 The inverse of the matrix is then:
 $$ \phi(q)^{-1} = \frac{1}{\det(\phi(q))} \begin{pmatrix} a-bi & -(c+di) \\ -(-c+di) & a+bi \end{pmatrix} = \frac{1}{N(q)} \begin{pmatrix} a-bi & -c-di \\ c-di & a+bi \end{pmatrix} $$
@@ -67,13 +67,13 @@ The answer is: it matters! These two operations will generally give different re
 Consider a simple case: let $p = 1+i$ and $q=j$. The inverse of $q=j$ is $q^{-1} = \frac{-j}{1^2} = -j$. Let's compute both forms of division:
 - **Right division:** $pq^{-1} = (1+i)(-j) = -j - ij = -j - k$.
 - **Left division:** $q^{-1}p = (-j)(1+i) = -j - ji = -j - (-k) = -j + k$.
-Clearly, $-j-k$ is not the same as $-j+k$. This is a fundamental consequence of non-commutativity. There is no single "division" for [quaternions](@article_id:146529), only left and right division.
+Clearly, $-j-k$ is not the same as $-j+k$. This is a fundamental consequence of non-commutativity. There is no single "division" for [quaternions](@keyword=quaternions|lang=en-US|style=Feynman), only left and right division.
 
 ### The Algebra of Inverses: The Socks-and-Shoes Rule
 
 The inverse operation has its own algebra, with rules that stem directly from the non-commutative nature of quaternions. One of the most important is the rule for the inverse of a product:
 $$ (pq)^{-1} = q^{-1}p^{-1} $$
-Notice the order is reversed! This is often called the **socks-and-shoes rule**. Think about it: in the morning, you put on your socks first, then your shoes. To undo this operation in the evening, you must take off your shoes first, and then your socks. The order of the inverse operations is the reverse of the original operations. For [quaternions](@article_id:146529), to undo the multiplication of $p$ then $q$, you must first undo $q$ (with $q^{-1}$) and then undo $p$ (with $p^{-1}$).
+Notice the order is reversed! This is often called the **socks-and-shoes rule**. Think about it: in the morning, you put on your socks first, then your shoes. To undo this operation in the evening, you must take off your shoes first, and then your socks. The order of the inverse operations is the reverse of the original operations. For [quaternions](@keyword=quaternions|lang=en-US|style=Feynman), to undo the multiplication of $p$ then $q$, you must first undo $q$ (with $q^{-1}$) and then undo $p$ (with $p^{-1}$).
 
 Another elegant property is the interplay between inversion and conjugation. It turns out that taking the inverse of the conjugate is the same as taking the conjugate of the inverse:
 $$ (\bar{q})^{-1} = \overline{q^{-1}} $$
@@ -81,14 +81,14 @@ These rules are not just curiosities; they are the bedrock that ensures the alge
 
 ### The Elegance of Unity: Inverses and Rotations
 
-We end our journey where the power of quaternions truly shines: in the world of 3D rotations. As mentioned in the introduction, quaternions are the tool of choice in [computer graphics](@article_id:147583), [robotics](@article_id:150129), and aerospace for representing orientation and rotation.
+We end our journey where the power of quaternions truly shines: in the world of 3D rotations. As mentioned in the introduction, quaternions are the tool of choice in [computer graphics](@keyword=computer_graphics|lang=en-US|style=Feynman), [robotics](@keyword=robotics|lang=en-US|style=Feynman), and aerospace for representing orientation and rotation.
 
-The [quaternions](@article_id:146529) used for this purpose are special: they are **[unit quaternions](@article_id:203976)**, meaning their norm is 1. That is, $N(q) = a^2+b^2+c^2+d^2 = 1$.
+The [quaternions](@keyword=quaternions|lang=en-US|style=Feynman) used for this purpose are special: they are **[unit quaternions](@keyword=unit_quaternions|lang=en-US|style=Feynman)**, meaning their norm is 1. That is, $N(q) = a^2+b^2+c^2+d^2 = 1$.
 
-Now, let's look at our formula for the inverse for one of these [unit quaternions](@article_id:203976):
+Now, let's look at our formula for the inverse for one of these [unit quaternions](@keyword=unit_quaternions|lang=en-US|style=Feynman):
 $$ q^{-1} = \frac{\bar{q}}{N(q)} = \frac{\bar{q}}{1} = \bar{q} $$
 This is a result of profound elegance. For any unit quaternion, its inverse is simply its conjugate.
 
-What does this mean in practice? A quaternion $q$ might represent a rotation of, say, $120^\circ$ around some axis. The inverse operation, $q^{-1}$, must represent the rotation that "undoes" the first one—a rotation of $-120^\circ$ (or $240^\circ$) around the same axis. The fact that $q^{-1} = \bar{q}$ means that to find the quaternion for the opposite rotation, we don't need any complex division or calculation. We just flip the signs of the imaginary parts. This computational simplicity and [numerical stability](@article_id:146056) is a major reason why [quaternions](@article_id:146529) are preferred over other methods like rotation matrices or Euler angles in high-performance applications.
+What does this mean in practice? A quaternion $q$ might represent a rotation of, say, $120^\circ$ around some axis. The inverse operation, $q^{-1}$, must represent the rotation that "undoes" the first one—a rotation of $-120^\circ$ (or $240^\circ$) around the same axis. The fact that $q^{-1} = \bar{q}$ means that to find the quaternion for the opposite rotation, we don't need any complex division or calculation. We just flip the signs of the imaginary parts. This computational simplicity and [numerical stability](@keyword=numerical_stability|lang=en-US|style=Feynman) is a major reason why [quaternions](@keyword=quaternions|lang=en-US|style=Feynman) are preferred over other methods like rotation matrices or Euler angles in high-performance applications.
 
-From a simple desire to "un-multiply," we have uncovered a rich structure connecting algebra, [matrix theory](@article_id:184484), and the geometry of 3D space. The quaternion inverse is not just a formula; it's a gateway to understanding the deep consistency and surprising utility of this remarkable number system.
+From a simple desire to "un-multiply," we have uncovered a rich structure connecting algebra, [matrix theory](@keyword=matrix_theory|lang=en-US|style=Feynman), and the geometry of 3D space. The quaternion inverse is not just a formula; it's a gateway to understanding the deep consistency and surprising utility of this remarkable number system.

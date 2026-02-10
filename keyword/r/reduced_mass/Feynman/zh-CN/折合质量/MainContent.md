@@ -1,5 +1,5 @@
 ## 引言
-在物理学中，描述多个相互作用物体的运动是一项基本挑战。即使是看似简单的“[二体问题](@article_id:319120)”——例如行星绕恒星运行或两个原子形成一个分子——也构成了一个复杂的谜题，其中每个物体的运动都依赖于另一个物体。本文介绍了一个解决这一难题的优雅而强大的方案：折合质量的概念。通过改变我们的视角，我们可以将这个纠缠、耦合的系统转化为一个更简单、等效的[单体](@article_id:297013)问题。在接下来的章节中，我们将首先深入探讨“原理与机制”，以理解什么是[折合质量](@article_id:312833)以及它是如何从运动定律中产生的。之后，“应用与跨学科联系”一章将带领我们跨越不同科学学科，揭示这一个简单的思想如何成为理解从天体轨道到[原子量](@article_id:305460)子行为乃至现代电子设备特性的不可或缺的工具。
+在物理学中，描述多个相互作用物体的运动是一项基本挑战。即使是看似简单的“[二体问题](@keyword=two_body_problem|lang=zh-CN|style=Feynman)”——例如行星绕恒星运行或两个原子形成一个分子——也构成了一个复杂的谜题，其中每个物体的运动都依赖于另一个物体。本文介绍了一个解决这一难题的优雅而强大的方案：折合质量的概念。通过改变我们的视角，我们可以将这个纠缠、耦合的系统转化为一个更简单、等效的[单体](@keyword=monomer|lang=zh-CN|style=Feynman)问题。在接下来的章节中，我们将首先深入探讨“原理与机制”，以理解什么是[折合质量](@keyword=reduced_mass|lang=zh-CN|style=Feynman)以及它是如何从运动定律中产生的。之后，“应用与跨学科联系”一章将带领我们跨越不同科学学科，揭示这一个简单的思想如何成为理解从天体轨道到[原子量](@keyword=atomic_weight|lang=zh-CN|style=Feynman)子行为乃至现代电子设备特性的不可或缺的工具。
 
 ## 原理与机制
 
@@ -9,15 +9,15 @@
 
 ### 驯服二体之舞
 
-我们不再追踪两个舞者的绝对位置，而是追踪两个不同的量：它们的**[质心](@article_id:298800)**位置——即系统的整体[平衡点](@article_id:323137)——以及从一个物体指向另一个物体的**相对[分离矢量](@article_id:332170)**。当我们用这些新坐标重写运动定律时，奇妙的事情发生了。
+我们不再追踪两个舞者的绝对位置，而是追踪两个不同的量：它们的**[质心](@keyword=center_of_mass|lang=zh-CN|style=Feynman)**位置——即系统的整体[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)——以及从一个物体指向另一个物体的**相对[分离矢量](@keyword=separation_vector|lang=zh-CN|style=Feynman)**。当我们用这些新坐标重写运动定律时，奇妙的事情发生了。
 
-首先，[质心](@article_id:298800)的运动变得异常简单。如果系统没有受到外力作用，[质心](@article_id:298800)就以[恒定速度](@article_id:349865)在空间中平稳滑行。所有复杂而有趣的部分——轨道、[振动](@article_id:331484)、碰撞——都与这种简单的[匀速运动](@article_id:340475)完全分离。
+首先，[质心](@keyword=center_of_mass|lang=zh-CN|style=Feynman)的运动变得异常简单。如果系统没有受到外力作用，[质心](@keyword=center_of_mass|lang=zh-CN|style=Feynman)就以[恒定速度](@keyword=constant_velocity|lang=zh-CN|style=Feynman)在空间中平稳滑行。所有复杂而有趣的部分——轨道、[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)、碰撞——都与这种简单的[匀速运动](@keyword=constant_speed_motion|lang=zh-CN|style=Feynman)完全分离。
 
-我们最终得到了一个描述两个物体相对运动的单一方程。关键在于：这个方程看起来与一个*单一*物体在另一个物体产生的[力场](@article_id:307740)中运动的方程完全一样。[二体问题](@article_id:319120)已经被转化为一个等效且简单得多的**[单体](@article_id:297013)问题**。
+我们最终得到了一个描述两个物体相对运动的单一方程。关键在于：这个方程看起来与一个*单一*物体在另一个物体产生的[力场](@keyword=force_field|lang=zh-CN|style=Feynman)中运动的方程完全一样。[二体问题](@keyword=two_body_problem|lang=zh-CN|style=Feynman)已经被转化为一个等效且简单得多的**[单体](@keyword=monomer|lang=zh-CN|style=Feynman)问题**。
 
-### 一个虚拟粒子的诞生：[折合质量](@article_id:312833)
+### 一个虚拟粒子的诞生：[折合质量](@keyword=reduced_mass|lang=zh-CN|style=Feynman)
 
-但是，这个代表整个相互作用的新的虚拟物体的质量是多少？它既不是第一个物体的质量，也不是第二个物体的质量，更不是它们的总和。它是一个新的量，称为**[折合质量](@article_id:312833)**，通常用希腊字母 $\mu$ (mu) 表示。它的定义非常优美对称：
+但是，这个代表整个相互作用的新的虚拟物体的质量是多少？它既不是第一个物体的质量，也不是第二个物体的质量，更不是它们的总和。它是一个新的量，称为**[折合质量](@keyword=reduced_mass|lang=zh-CN|style=Feynman)**，通常用希腊字母 $\mu$ (mu) 表示。它的定义非常优美对称：
 
 $$
 \mu = \frac{m_1 m_2}{m_1 + m_2}
@@ -31,19 +31,19 @@ $$
 
 这个小小的公式就是关键。它告诉我们，两个相互作用的物体 $m_1$ 和 $m_2$ 的动力学，可以被一个质量为 $\mu$ 的虚拟物体在相同相互作用力下运动的动力学完美地描述。“折合”这个名字非常贴切，因为快速看一下公式就会发现，$\mu$ 总是小于 $m_1$ 和 $m_2$。
 
-### 感受[折合质量](@article_id:312833)
+### 感受[折合质量](@keyword=reduced_mass|lang=zh-CN|style=Feynman)
 
 为了建立对这个概念的直观理解，我们来探讨几个场景。
 
-首先，考虑一个由两个相等质量组成的系统，$m_1 = m_2 = m$。这可以作为像 $H_2$ 或 $O_2$ 这样的双原子分子的模型 。代入公式，我们得到：
+首先，考虑一个由两个相等质量组成的系统，$m_1 = m_2 = m$。这可以作为像 $H_2$ 或 $O_2$ 这样的双原子分子的模型 [@problem_id:2210340]。代入公式，我们得到：
 
 $$
 \mu = \frac{m \cdot m}{m + m} = \frac{m^2}{2m} = \frac{m}{2}
 $$
 
-两个相等质量的相对运动，其行为就像一个质量为*一半*的单个粒子。这会带来真实、可测量的后果。例如，双原子分子的[振动频率](@article_id:330258)取决于这个质量。一个假设一个原子固定而另一个原子[振荡](@article_id:331484)的幼稚模型会得到错误的答案。使用[折合质量](@article_id:312833)的正确模型揭示了不同的[振动能](@article_id:318313)量 ，这一差异可以通过光谱测量来证实。
+两个相等质量的相对运动，其行为就像一个质量为*一半*的单个粒子。这会带来真实、可测量的后果。例如，双原子分子的[振动频率](@keyword=vibrational_frequency|lang=zh-CN|style=Feynman)取决于这个质量。一个假设一个原子固定而另一个原子[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的幼稚模型会得到错误的答案。使用[折合质量](@keyword=reduced_mass|lang=zh-CN|style=Feynman)的正确模型揭示了不同的[振动能](@keyword=vibrational_energy|lang=zh-CN|style=Feynman)量 [@problem_id:2032726]，这一差异可以通过光谱测量来证实。
 
-现在，让我们看看“大卫与歌利亚”的情景，即一个物体的质量远大于另一个物体，比如 $M \gg m$。地球绕太阳运行，或者氢原子中电子绕质子运行就是这种情况 。让我们稍微改写一下折合质量的公式：
+现在，让我们看看“大卫与歌利亚”的情景，即一个物体的质量远大于另一个物体，比如 $M \gg m$。地球绕太阳运行，或者氢原子中电子绕质子运行就是这种情况 [@problem_id:2035307]。让我们稍微改写一下折合质量的公式：
 
 $$
 \mu = \frac{Mm}{M+m} = \frac{m}{1 + \frac{m}{M}}
@@ -51,28 +51,28 @@ $$
 
 由于 $M$ 远大于 $m$，分数 $\frac{m}{M}$ 非常接近于零。因此，分母非常接近于 1，我们发现 $\mu \approx m$。
 
-这是一个深刻的结果！它意味着当一个物体的质量占绝对优势时，系统的[折合质量](@article_id:312833)基本上就是*较轻*物体的质量。这个二体之舞简化为轻物体围绕一个几乎固定不动的重物体的运动。这就是为什么在计算地球轨道时，假设太阳是静止的，或者在氢原子中假设质子是电子的固定中心，通常是一个非常好的近似。我们使用这种近似所产生的误差非常小——量级与[质量比](@article_id:346948) $\frac{m}{M}$ 本身相当 。对于质子-电子系统，这个误差大约是 2000 分之一 ，这在高精度原子物理学领域是一个虽小但至关重要的修正。
+这是一个深刻的结果！它意味着当一个物体的质量占绝对优势时，系统的[折合质量](@keyword=reduced_mass|lang=zh-CN|style=Feynman)基本上就是*较轻*物体的质量。这个二体之舞简化为轻物体围绕一个几乎固定不动的重物体的运动。这就是为什么在计算地球轨道时，假设太阳是静止的，或者在氢原子中假设质子是电子的固定中心，通常是一个非常好的近似。我们使用这种近似所产生的误差非常小——量级与[质量比](@keyword=mass_ratio|lang=zh-CN|style=Feynman) $\frac{m}{M}$ 本身相当 [@problem_id:2210269]。对于质子-电子系统，这个误差大约是 2000 分之一 [@problem_id:2035307]，这在高精度原子物理学领域是一个虽小但至关重要的修正。
 
 ### 一把通往多扇大门的万能钥匙
 
-[折合质量](@article_id:312833)真正非凡之处在于其普适性。这一个简单概念解决了科学领域中一系列惊人广泛的问题，揭示了自然法则深层次的统一性。
+[折合质量](@keyword=reduced_mass|lang=zh-CN|style=Feynman)真正非凡之处在于其普适性。这一个简单概念解决了科学领域中一系列惊人广泛的问题，揭示了自然法则深层次的统一性。
 
--   **天文学**：它决定了行星绕恒星  和卫星绕行星的轨道周期。
+-   **天文学**：它决定了行星绕恒星 [@problem_id:2210269] 和卫星绕行星的轨道周期。
 
--   **[原子与分子物理学](@article_id:370282)**：它决定了原子的能级  以及分子的[振动](@article_id:331484)和[转动光谱](@article_id:343048) [@problem_id:2032726, @problem_id:1499253]。
+-   **[原子与分子物理学](@keyword=atomic_and_molecular_physics|lang=zh-CN|style=Feynman)**：它决定了原子的能级 [@problem_id:2035307] 以及分子的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)和[转动光谱](@keyword=rotational_spectra|lang=zh-CN|style=Feynman) [@problem_id:2032726, @problem_id:1499253]。
 
--   **核物理学**：它对于分析[粒子散射](@article_id:313353)至关重要，例如在恒星核心，质子与α粒子（alpha particle）的碰撞 。
+-   **核物理学**：它对于分析[粒子散射](@keyword=particle_scattering|lang=zh-CN|style=Feynman)至关重要，例如在恒星核心，质子与α粒子（alpha particle）的碰撞 [@problem_id:2210295]。
 
--   **固态物理学**：**[激子](@article_id:307714)**（exciton）——[半导体](@article_id:301977)中电子和“空穴”形成的束缚对，正是驱动我们数字设备的物理学基础——其行为被建模为一个[类氢原子](@article_id:344259)系统，其性质由一个折合有效质量决定 。
+-   **固态物理学**：**[激子](@keyword=excitons|lang=zh-CN|style=Feynman)**（exciton）——[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)中电子和“空穴”形成的束缚对，正是驱动我们数字设备的物理学基础——其行为被建模为一个[类氢原子](@keyword=hydrogenic_atoms|lang=zh-CN|style=Feynman)系统，其性质由一个折合有效质量决定 [@problem_id:1775182]。
 
--   **化学**：它决定了分子间碰撞的相对速度，这是[化学动力学](@article_id:356401)和[反应速率理论](@article_id:383054)的基石 。
+-   **化学**：它决定了分子间碰撞的相对速度，这是[化学动力学](@keyword=chemical_dynamics|lang=zh-CN|style=Feynman)和[反应速率理论](@keyword=reaction_rate_theory|lang=zh-CN|style=Feynman)的基石 [@problem_id:1491496]。
 
--   **量子力学**：在严谨的量子[散射理论](@article_id:303909)中，[概率流](@article_id:311366)——衡量碰撞粒子流率的量——与[折合质量](@article_id:312833) $\mu$ 成反比，而不是与任一单个粒子的质量成反比 。
+-   **量子力学**：在严谨的量子[散射理论](@keyword=scattering_theory|lang=zh-CN|style=Feynman)中，[概率流](@keyword=probability_current|lang=zh-CN|style=Feynman)——衡量碰撞粒子流率的量——与[折合质量](@keyword=reduced_mass|lang=zh-CN|style=Feynman) $\mu$ 成反比，而不是与任一单个粒子的质量成反比 [@problem_id:2664445]。
 
 从广袤的太空到无穷小的量子粒子世界，折合质量为理解任何二体相互作用提供了正确的框架。
 
 ### 超越二重奏：运动的交响乐
 
-那么拥有三个、四个或一百个物体的系统呢？不幸的是，[二体问题](@article_id:319120)那种优美的简单性消失了。然而，折合质量的精神依然存在。例如，在研究复杂[多原子分子的振动](@article_id:377326)时，所有原子混乱的晃动可以被分解为一组不同、有组织的运动模式，称为**[简正模](@article_id:300087)**。这些模式中的每一种——如对称伸缩或反对称弯曲——都以特定频率[振动](@article_id:331484)，其行为就像一个独立的谐振子。那么，是什么决定了该模式的惯性呢？是**广义折合质量**，一个取决于所有相关原子质量以及该特定[振动](@article_id:331484)之舞的具体几何构型的量 。
+那么拥有三个、四个或一百个物体的系统呢？不幸的是，[二体问题](@keyword=two_body_problem|lang=zh-CN|style=Feynman)那种优美的简单性消失了。然而，折合质量的精神依然存在。例如，在研究复杂[多原子分子的振动](@keyword=vibrations_of_polyatomic_molecules|lang=zh-CN|style=Feynman)时，所有原子混乱的晃动可以被分解为一组不同、有组织的运动模式，称为**[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman)**。这些模式中的每一种——如对称伸缩或反对称弯曲——都以特定频率[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，其行为就像一个独立的谐振子。那么，是什么决定了该模式的惯性呢？是**广义折合质量**，一个取决于所有相关原子质量以及该特定[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)之舞的具体几何构型的量 [@problem_id:2894938]。
 
-因此，这个从简化两个物体之舞中诞生的优雅思想，在众多物体构成的复杂交响乐中找到了更精致的回响。它证明了找到正确视角的力量——一种[坐标变换](@article_id:323290)，能将一团乱麻转化为优美、可解的简单性。
+因此，这个从简化两个物体之舞中诞生的优雅思想，在众多物体构成的复杂交响乐中找到了更精致的回响。它证明了找到正确视角的力量——一种[坐标变换](@keyword=coordinate_transformations|lang=zh-CN|style=Feynman)，能将一团乱麻转化为优美、可解的简单性。

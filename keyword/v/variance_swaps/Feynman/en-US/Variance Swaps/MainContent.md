@@ -11,7 +11,7 @@ Imagine the simplest possible world. A stock is at $S_0 = \$100$ today. Tomorrow
 
 How do we determine a fair price for this bet today? The key is a cornerstone of modern finance: **risk-neutral pricing**. We don’t use real-world probabilities. Instead, we invent a special, fictitious probability, called the **risk-neutral probability** $q$, for the "up" move. This $q$ is cleverly chosen so that the expected return of the stock in this imaginary world is exactly the risk-free interest rate, $r$. This might seem strange, but it's a profound trick that eliminates any need to guess investors' risk appetites. It's the probability that exists in a world where everyone is indifferent to risk.
 
-Once we have this magical probability $q$, the fair value of our simple variance bet is just the discounted expected payoff in this risk-neutral world . It's a weighted average of the two possible squared outcomes, $(\ln u)^2$ and $(\ln d)^2$, discounted back to today:
+Once we have this magical probability $q$, the fair value of our simple variance bet is just the discounted expected payoff in this risk-neutral world [@problem_id:694720]. It's a weighted average of the two possible squared outcomes, $(\ln u)^2$ and $(\ln d)^2$, discounted back to today:
 
 $$
 V_0 = e^{-rT} \left[ q (\ln u)^2 + (1-q) (\ln d)^2 \right]
@@ -23,7 +23,7 @@ This is the fundamental building block. Every complex variance swap is, in essen
 
 Of course, the real world isn't a single coin toss. Asset prices wiggle every second of every day. To capture the total movement over a period, say a year, we add up the squared log-returns from each tiny time step. This sum is what we call the **realized variance**.
 
-A fascinating principle emerges when we price a swap on this realized variance. Let's say we have a contract that pays out the average variance over many periods. How do we find its fair price, or what's called the **fair variance strike**? It turns out that the risk-neutral expectation of the total realized variance is simply the sum of the expected variances from each individual period . There's a beautiful additivity at play. The fair strike for a one-year variance swap is, in essence, the market's expectation of the average variance that will unfold day by day over that year. It’s an average of expected future wiggles.
+A fascinating principle emerges when we price a swap on this realized variance. Let's say we have a contract that pays out the average variance over many periods. How do we find its fair price, or what's called the **fair variance strike**? It turns out that the risk-neutral expectation of the total realized variance is simply the sum of the expected variances from each individual period [@problem_id:793349]. There's a beautiful additivity at play. The fair strike for a one-year variance swap is, in essence, the market's expectation of the average variance that will unfold day by day over that year. It’s an average of expected future wiggles.
 
 ### The Great Synthesis: Replicating Variance with Options
 
@@ -35,7 +35,7 @@ $$
 \text{Fair Variance} \propto \int_0^\infty \frac{\text{Price of OTM option at strike } K}{K^2} dK
 $$
 
-This is a moment of grand unification. It tells us that the price of variance is not some arbitrary number; it is fundamentally locked in by the collective prices of all the options available in the market. A variance swap is, in disguise, a meticulously weighted strip of puts and calls . This isn't just a theoretical curiosity; it's how major banks actually price and hedge these instruments. They look at the "smile" of option prices, and from that curve, they can read the market's price for future variance. And if the market's option prices have tiny imperfections—like a carpenter's wood having a rough edge—they can use mathematical tools like Quadratic Programming to smooth them out and build a perfectly consistent price.
+This is a moment of grand unification. It tells us that the price of variance is not some arbitrary number; it is fundamentally locked in by the collective prices of all the options available in the market. A variance swap is, in disguise, a meticulously weighted strip of puts and calls [@problem_id:2424341]. This isn't just a theoretical curiosity; it's how major banks actually price and hedge these instruments. They look at the "smile" of option prices, and from that curve, they can read the market's price for future variance. And if the market's option prices have tiny imperfections—like a carpenter's wood having a rough edge—they can use mathematical tools like Quadratic Programming to smooth them out and build a perfectly consistent price.
 
 ### A Pricey Dance: Why Falling Stocks Mean Rising Variance
 
@@ -43,7 +43,7 @@ Now that we know a variance swap is secretly a portfolio of options, we can unlo
 
 In a perfect, textbook world like the Black-Scholes model where volatility is assumed to be constant, the Delta would indeed be zero. But the real world has a crucial feature: the **volatility skew**. For most stock markets, if you plot the implied volatility (the volatility backed out of an option's price) against the strike price, the line slopes downward. Low-strike options (puts that protect against a crash) are more expensive in volatility terms than high-strike options. This reflects the market's greater fear of a sudden crash compared to a sudden rally.
 
-Because a variance swap is replicated by a strip of options all across this skew, a change in the stock price matters. If the stock price $S_t$ falls, it's as if our entire replicating portfolio "slides down" the skew into a region of higher average implied volatility. All the options in the portfolio become, on average, more valuable. And so, the value of the variance swap itself increases. A fall in price leads to a rise in the swap's value. This means a variance swap on a stock index typically has a **negative Delta** . This behavior is not an independent assumption; it is a direct and necessary consequence of replicating variance with options in a skewed market.
+Because a variance swap is replicated by a strip of options all across this skew, a change in the stock price matters. If the stock price $S_t$ falls, it's as if our entire replicating portfolio "slides down" the skew into a region of higher average implied volatility. All the options in the portfolio become, on average, more valuable. And so, the value of the variance swap itself increases. A fall in price leads to a rise in the swap's value. This means a variance swap on a stock index typically has a **negative Delta** [@problem_id:2416868]. This behavior is not an independent assumption; it is a direct and necessary consequence of replicating variance with options in a skewed market.
 
 ### Modeling the Invisible Hand of Volatility
 
@@ -53,7 +53,7 @@ The replication formula tells us how to price variance from options, but it does
 
 A key observation about volatility is that it seems to have a memory. Periods of high volatility are often followed by calmer periods, and vice-versa. It seems to be constantly pulled back towards some long-run average level, a behavior known as **mean reversion**.
 
-Models like the Heston model capture this idea mathematically  . In this world, the instantaneous variance $v_t$ is not constant but follows its own random process. The fair strike for a variance swap is then the time-average of the *expected future path* of this variance. If today's variance $v_0$ is above its long-run mean $\theta$, we expect it to drift downwards. The fair variance strike over a future period will therefore be a value somewhere between today's high level and the lower long-run mean. The exact value depends on the time to maturity $T$ and the speed of mean reversion $\kappa$, as captured by the beautiful formula:
+Models like the Heston model capture this idea mathematically [@problem_id:2420976] [@problem_id:2441205]. In this world, the instantaneous variance $v_t$ is not constant but follows its own random process. The fair strike for a variance swap is then the time-average of the *expected future path* of this variance. If today's variance $v_0$ is above its long-run mean $\theta$, we expect it to drift downwards. The fair variance strike over a future period will therefore be a value somewhere between today's high level and the lower long-run mean. The exact value depends on the time to maturity $T$ and the speed of mean reversion $\kappa$, as captured by the beautiful formula:
 
 $$
 K_{\mathrm{var}} = \theta + (v_0 - \theta) \frac{1 - e^{-\kappa T}}{\kappa T}
@@ -65,7 +65,7 @@ This tells us that the fair price today depends critically on both the starting 
 
 Sometimes, prices don't just wiggle; they jump. An unexpected earnings announcement, a sudden geopolitical event, or a central bank decision can cause a discontinuous leap in price. These jumps are a potent source of variance.
 
-Models like the Merton jump-diffusion model explicitly account for this . The total realized variance in such a world can be cleanly split into two components: the variance from the continuous, wiggly part of the process, and the variance from the sudden, discrete jumps. The fair variance strike becomes an elegant sum:
+Models like the Merton jump-diffusion model explicitly account for this [@problem_id:2410146]. The total realized variance in such a world can be cleanly split into two components: the variance from the continuous, wiggly part of the process, and the variance from the sudden, discrete jumps. The fair variance strike becomes an elegant sum:
 
 $$
 K_{\mathrm{var}} = \sigma^2 + \lambda (\mu_J^2 + \delta_J^2)
@@ -73,7 +73,7 @@ $$
 
 Here, $\sigma^2$ is the variance from the continuous diffusion, and the second term is the contribution from jumps—the product of the jump frequency ($\lambda$) and the expected squared-size of a log-jump. This additive structure is remarkably clean.
 
-Taking this idea to its logical conclusion, we can even imagine a world made *entirely* of jumps, as described by general **Lévy processes**. A model like the CGMY model specifies a **Lévy measure**, $\nu(dx)$, which acts as a master recipe, defining the intensity of jumps of every possible size. In this profoundly general framework, the fair variance strike has a breathtakingly simple identity: it is the **second moment of the Lévy measure** . The price of variance becomes a fundamental physical constant of the process itself.
+Taking this idea to its logical conclusion, we can even imagine a world made *entirely* of jumps, as described by general **Lévy processes**. A model like the CGMY model specifies a **Lévy measure**, $\nu(dx)$, which acts as a master recipe, defining the intensity of jumps of every possible size. In this profoundly general framework, the fair variance strike has a breathtakingly simple identity: it is the **second moment of the Lévy measure** [@problem_id:786429]. The price of variance becomes a fundamental physical constant of the process itself.
 
 $$
 K_{\mathrm{var}} = \int_{-\infty}^{\infty} x^2 \nu(dx)
@@ -83,10 +83,10 @@ $$
 
 As a final thought, let's consider a subtle but important distinction. We've been talking about variance swaps, which bet on realized variance, $\mathrm{RV}_T$. What about a **volatility swap**, which bets on realized volatility, $\sqrt{\mathrm{RV}_T}$? At first glance, they seem almost identical. The fair variance strike is $K_{\mathrm{var}} = \mathbb{E}[\mathrm{RV}_T]$, and the fair volatility strike is $K_{\mathrm{vol}} = \mathbb{E}[\sqrt{\mathrm{RV}_T}]$. You might guess that $K_{\mathrm{vol}} = \sqrt{K_{\mathrm{var}}}$.
 
-But this is not true. A fundamental mathematical rule, **Jensen's inequality**, tells us that for any concave function (like the square root) and any random variable $X$, we have $\mathbb{E}[f(X)] \le f(\mathbb{E}[X])$. Applying this here gives us a powerful result :
+But this is not true. A fundamental mathematical rule, **Jensen's inequality**, tells us that for any concave function (like the square root) and any random variable $X$, we have $\mathbb{E}[f(X)] \le f(\mathbb{E}[X])$. Applying this here gives us a powerful result [@problem_id:2404601]:
 
 $$
 K_{\mathrm{vol}} = \mathbb{E}[\sqrt{\mathrm{RV}_T}] \le \sqrt{\mathbb{E}[\mathrm{RV}_T]} = \sqrt{K_{\mathrm{var}}}
 $$
 
-The fair volatility strike is always less than or equal to the square root of the fair variance strike. The difference, $\sqrt{K_{\mathrm{var}}} - K_{\mathrm{vol}}$, is known as the **[convexity](@article_id:138074) gap**. This gap exists for one reason: uncertainty. If the [realized variance](@article_id:635395) were a deterministic, non-random number, the equality would hold. But because future variance is uncertain—due to [stochastic volatility](@article_id:140302) or the random arrival of jumps—the strict inequality kicks in. The [convexity](@article_id:138074) gap is, in a very real sense, the market's price for the curvature of the [square root function](@article_id:184136). It's a penalty you pay for wanting to bet on volatility directly, rather than on variance, in an uncertain world. It is a beautiful and direct manifestation of a mathematical theorem in the price of a financial asset.
+The fair volatility strike is always less than or equal to the square root of the fair variance strike. The difference, $\sqrt{K_{\mathrm{var}}} - K_{\mathrm{vol}}$, is known as the **[convexity](@keyword=convexity|lang=en-US|style=Feynman) gap**. This gap exists for one reason: uncertainty. If the [realized variance](@keyword=realized_variance|lang=en-US|style=Feynman) were a deterministic, non-random number, the equality would hold. But because future variance is uncertain—due to [stochastic volatility](@keyword=stochastic_volatility|lang=en-US|style=Feynman) or the random arrival of jumps—the strict inequality kicks in. The [convexity](@keyword=convexity|lang=en-US|style=Feynman) gap is, in a very real sense, the market's price for the curvature of the [square root function](@keyword=square_root_function|lang=en-US|style=Feynman). It's a penalty you pay for wanting to bet on volatility directly, rather than on variance, in an uncertain world. It is a beautiful and direct manifestation of a mathematical theorem in the price of a financial asset.

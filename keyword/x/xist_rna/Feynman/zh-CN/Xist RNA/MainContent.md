@@ -1,50 +1,50 @@
 ## 引言
-在雌性哺乳动物的细胞中，与只有一条[X染色体](@article_id:317127)的雄性相比，两条[X染色体](@article_id:317127)的存在造成了潜在的致命剂量问题。大自然给出的精妙解决方案不是剔除多余的[染色体](@article_id:340234)，而是通过一个称为[X染色体失活](@article_id:309247)的过程将其沉默。这场复杂的[基因沉默](@article_id:298545)交响乐的总指挥是一种非凡的分子，名为[Xist RNA](@article_id:308909)。这种[长链非编码RNA](@article_id:335270)充当分子开关，启动一系列事件，将整条[染色体](@article_id:340234)压缩成[转录](@article_id:361745)惰性状态。本文将深入探讨Xist的世界，解答一个根本性问题：细胞如何能够选择性地、可遗传地关闭单条[染色体](@article_id:340234)上的数千个基因。
+在雌性哺乳动物的细胞中，与只有一条[X染色体](@keyword=x_chromosome|lang=zh-CN|style=Feynman)的雄性相比，两条[X染色体](@keyword=x_chromosome|lang=zh-CN|style=Feynman)的存在造成了潜在的致命剂量问题。大自然给出的精妙解决方案不是剔除多余的[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)，而是通过一个称为[X染色体失活](@keyword=x_inactivation|lang=zh-CN|style=Feynman)的过程将其沉默。这场复杂的[基因沉默](@keyword=gene_silencing|lang=zh-CN|style=Feynman)交响乐的总指挥是一种非凡的分子，名为[Xist RNA](@keyword=xist_rna|lang=zh-CN|style=Feynman)。这种[长链非编码RNA](@keyword=lncrna|lang=zh-CN|style=Feynman)充当分子开关，启动一系列事件，将整条[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)压缩成[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)惰性状态。本文将深入探讨Xist的世界，解答一个根本性问题：细胞如何能够选择性地、可遗传地关闭单条[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)上的数千个基因。
 
-接下来的章节将引导您了解这个迷人的生物学过程。首先，我们将探讨[X染色体失活](@article_id:309247)的**原理与机制**，剖析这场多幕剧——从最初选择沉默哪条[染色体](@article_id:340234)，到将这一决定终身锁定的表观遗传机制。接下来，我们将审视其深远的**应用与跨学科联系**，揭示Xist的功能如何对发育、人类疾病、基因组的三维结构以及我们对进化本身的理解产生深远影响。
+接下来的章节将引导您了解这个迷人的生物学过程。首先，我们将探讨[X染色体失活](@keyword=x_inactivation|lang=zh-CN|style=Feynman)的**原理与机制**，剖析这场多幕剧——从最初选择沉默哪条[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)，到将这一决定终身锁定的表观遗传机制。接下来，我们将审视其深远的**应用与跨学科联系**，揭示Xist的功能如何对发育、人类疾病、基因组的三维结构以及我们对进化本身的理解产生深远影响。
 
 ## 原理与机制
 
-想象一下，您有两本内容极其详尽的说明书，但要正确组装您的机器，您必须只阅读其中一本。同时阅读两本会导致零件灾难性的过剩和完全的混乱。这正是雌性哺乳[动物细胞](@article_id:329267)面临的困境。雌性细胞拥有两条[X染色体](@article_id:317127)，每条都装满了[必需基因](@article_id:379017)，与只有一条X染色体的雄性细胞相比，其[X连锁遗传](@article_id:333625)信息的剂量可能是致命性的双倍。大自然的解决方案不是撕掉多余说明书的书页，而是优雅而全面地将其关闭，把它捆绑得如此之紧，以至于无法再被阅读。这个过程被称为[X染色体失活](@article_id:309247)，其总策划者是一种名为**Xist**的非凡分子。
+想象一下，您有两本内容极其详尽的说明书，但要正确组装您的机器，您必须只阅读其中一本。同时阅读两本会导致零件灾难性的过剩和完全的混乱。这正是雌性哺乳[动物细胞](@keyword=animal_cell|lang=zh-CN|style=Feynman)面临的困境。雌性细胞拥有两条[X染色体](@keyword=x_chromosome|lang=zh-CN|style=Feynman)，每条都装满了[必需基因](@keyword=essential_genes|lang=zh-CN|style=Feynman)，与只有一条X染色体的雄性细胞相比，其[X连锁遗传](@keyword=x_linked_inheritance|lang=zh-CN|style=Feynman)信息的剂量可能是致命性的双倍。大自然的解决方案不是撕掉多余说明书的书页，而是优雅而全面地将其关闭，把它捆绑得如此之紧，以至于无法再被阅读。这个过程被称为[X染色体失活](@keyword=x_inactivation|lang=zh-CN|style=Feynman)，其总策划者是一种名为**Xist**的非凡分子。
 
-### 主控开关：一种[非编码RNA](@article_id:365823)
+### 主控开关：一种[非编码RNA](@keyword=non_coding_rnas|lang=zh-CN|style=Feynman)
 
-这个过程的核心是一个与大多数基因不同的基因。它不编码蛋白质——细胞中典型的“主力”。相反，它产生一条非常长的RNA链，称为**[X染色体失活](@article_id:309247)特异性[转录](@article_id:361745)本 (X-inactive specific transcript, Xist)**。这种**[长链非编码RNA (lncRNA)](@article_id:344386)** 是整个操作的关键。它的工作不是携带待翻译的信息，而是亲自扮演一个物理角色——一个分子结构构件。
+这个过程的核心是一个与大多数基因不同的基因。它不编码蛋白质——细胞中典型的“主力”。相反，它产生一条非常长的RNA链，称为**[X染色体失活](@keyword=x_inactivation|lang=zh-CN|style=Feynman)特异性[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)本 (X-inactive specific transcript, Xist)**。这种**[长链非编码RNA (lncRNA)](@keyword=long_non_coding_rnas_(lncrnas)|lang=zh-CN|style=Feynman)** 是整个操作的关键。它的工作不是携带待翻译的信息，而是亲自扮演一个物理角色——一个分子结构构件。
 
-Xist的作用方式非常直接且具局部性。它从X染色体上一个注定要被沉默的特定区域[转录](@article_id:361745)而来，该区域被称为**[X染色体失活](@article_id:309247)中心 (X-inactivation center, XIC)**。一旦产生，[Xist RNA](@article_id:308909)并不会穿过细胞核去寻找其靶标。相反，它以“顺式”(*cis*)方式起作用，这个术语意为“在同一侧”。它从其基因中产生，然后开始物理性地包裹住创造它的那条[染色体](@article_id:340234)，像裹尸布一样蔓延，直到整条[染色体](@article_id:340234)被覆盖 。
+Xist的作用方式非常直接且具局部性。它从X染色体上一个注定要被沉默的特定区域[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)而来，该区域被称为**[X染色体失活](@keyword=x_inactivation|lang=zh-CN|style=Feynman)中心 (X-inactivation center, XIC)**。一旦产生，[Xist RNA](@keyword=xist_rna|lang=zh-CN|style=Feynman)并不会穿过细胞核去寻找其靶标。相反，它以“顺式”(*cis*)方式起作用，这个术语意为“在同一侧”。它从其基因中产生，然后开始物理性地包裹住创造它的那条[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)，像裹尸布一样蔓延，直到整条[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)被覆盖 [@problem_id:1475344]。
 
-这种[染色体](@article_id:340234)包裹的后果是什么？直接且大规模的后果是深度的[转录](@article_id:361745)沉默。[Xist RNA](@article_id:308909)作为一个支架，一个停机坪，供大量蛋白质附着，这些蛋白质将系统性地抑制其下方的基因。曾经活跃的[染色体](@article_id:340234)逐渐被压缩成一种致密的、沉默的状态，称为**巴氏小体 (Barr body)** 。
+这种[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)包裹的后果是什么？直接且大规模的后果是深度的[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)沉默。[Xist RNA](@keyword=xist_rna|lang=zh-CN|style=Feynman)作为一个支架，一个停机坪，供大量蛋白质附着，这些蛋白质将系统性地抑制其下方的基因。曾经活跃的[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)逐渐被压缩成一种致密的、沉默的状态，称为**巴氏小体 (Barr body)** [@problem_id:2336901]。
 
-如果我们能用一种只与[Xist RNA](@article_id:308909)结合的特殊荧光探针来观察雌性细胞的细胞核，我们不会看到弥散的辉光。相反，我们会看到一个单一、极其明亮的斑点——失活[X染色体](@article_id:317127)的发光魅影，完美地展示了Xist的局部作用。在不经历此过程的雄性细胞中，则看不到这样的斑点 。这个简单的视觉现象证实了一个基本原则：Xist是这样一个分子信号，它宣告：“这条[染色体](@article_id:340234)，且只有这条，将被沉默。” 事实上，Xist是如此重要，以至于如果一个雌性胚胎的两条[X染色体](@article_id:317127)都发生突变，无法产生功能性[Xist RNA](@article_id:308909)，那么失活过程将完全失败。两条X染色体都将保持活性，导致X[连锁基因](@article_id:327813)产物的致命性过量 。
+如果我们能用一种只与[Xist RNA](@keyword=xist_rna|lang=zh-CN|style=Feynman)结合的特殊荧光探针来观察雌性细胞的细胞核，我们不会看到弥散的辉光。相反，我们会看到一个单一、极其明亮的斑点——失活[X染色体](@keyword=x_chromosome|lang=zh-CN|style=Feynman)的发光魅影，完美地展示了Xist的局部作用。在不经历此过程的雄性细胞中，则看不到这样的斑点 [@problem_id:2348171]。这个简单的视觉现象证实了一个基本原则：Xist是这样一个分子信号，它宣告：“这条[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)，且只有这条，将被沉默。” 事实上，Xist是如此重要，以至于如果一个雌性胚胎的两条[X染色体](@keyword=x_chromosome|lang=zh-CN|style=Feynman)都发生突变，无法产生功能性[Xist RNA](@keyword=xist_rna|lang=zh-CN|style=Feynman)，那么失活过程将完全失败。两条X染色体都将保持活性，导致X[连锁基因](@keyword=linked_genes|lang=zh-CN|style=Feynman)产物的致命性过量 [@problem_id:2304804]。
 
 ### 沉默的四幕剧
 
-从两条活性X染色体到一条活性、一条沉默的旅程并非单一事件，而是一场精心编排的四幕剧，在[胚胎发育](@article_id:301090)的最早阶段上演 。
+从两条活性X染色体到一条活性、一条沉默的旅程并非单一事件，而是一场精心编排的四幕剧，在[胚胎发育](@keyword=embryonic_development|lang=zh-CN|style=Feynman)的最早阶段上演 [@problem_id:2634988]。
 
-#### 第一幕：计数——有多少条[X染色体](@article_id:317127)？
+#### 第一幕：计数——有多少条[X染色体](@keyword=x_chromosome|lang=zh-CN|style=Feynman)？
 
-在采取任何行动之前，细胞必须首先确定自己是否处于需要失活的境地。它需要“计数”其[X染色体](@article_id:317127)相对于其常[染色体](@article_id:340234)（autosomes）组的数量。细胞有一个简单的规则：每个[二倍体](@article_id:331756)常[染色体](@article_id:340234)组保留一条活性[X染色体](@article_id:317127)，并失活任何多余的。雄性 (XY) 细胞数到一条[X染色体](@article_id:317127)，便无所作为。雌性 (XX) 细胞数到两条，识别出一条是多余的，然后进入下一幕。这种计数机制确保了X染色体失活仅在必要时启动。
+在采取任何行动之前，细胞必须首先确定自己是否处于需要失活的境地。它需要“计数”其[X染色体](@keyword=x_chromosome|lang=zh-CN|style=Feynman)相对于其常[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)（autosomes）组的数量。细胞有一个简单的规则：每个[二倍体](@keyword=diploid|lang=zh-CN|style=Feynman)常[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)组保留一条活性[X染色体](@keyword=x_chromosome|lang=zh-CN|style=Feynman)，并失活任何多余的。雄性 (XY) 细胞数到一条[X染色体](@keyword=x_chromosome|lang=zh-CN|style=Feynman)，便无所作为。雌性 (XX) 细胞数到两条，识别出一条是多余的，然后进入下一幕。这种计数机制确保了X染色体失活仅在必要时启动。
 
 #### 第二幕：选择——一场分子拔河赛
 
-一旦细胞“知道”它必须沉默一条[X染色体](@article_id:317127)，它就面临一个选择：哪一条？在有胎盘哺乳动物中，这个选择通常是随机的。这个决定是通过一场以[X染色体失活](@article_id:309247)中心为焦点的迷人分子对决作出的。在这里，位于*Xist*基因DNA链的对侧，存在着另一个名为**Tsix**的[lncRNA](@article_id:335270)基因。
+一旦细胞“知道”它必须沉默一条[X染色体](@keyword=x_chromosome|lang=zh-CN|style=Feynman)，它就面临一个选择：哪一条？在有胎盘哺乳动物中，这个选择通常是随机的。这个决定是通过一场以[X染色体失活](@keyword=x_inactivation|lang=zh-CN|style=Feynman)中心为焦点的迷人分子对决作出的。在这里，位于*Xist*基因DNA链的对侧，存在着另一个名为**Tsix**的[lncRNA](@keyword=lncrna|lang=zh-CN|style=Feynman)基因。
 
-*Tsix*是*Xist*的反义拮抗物。当*Xist*促进沉默时，*Tsix*通过抑制*Xist*来保持[染色体](@article_id:340234)的活性。在失活前夕，两条X染色体都参与了一场微妙的“拔河比赛”。在随机选择的一条[染色体](@article_id:340234)上，*Tsix*团队的力量减弱，其表达动摇，*Xist*团队占了上风。*Xist*的表达上调，该[染色体](@article_id:340234)便注定被失活。在另一条[染色体](@article_id:340234)上，*Tsix*的表达保持强劲，抑制了*Xist*，从而确保该[染色体](@article_id:340234)保持活性。
+*Tsix*是*Xist*的反义拮抗物。当*Xist*促进沉默时，*Tsix*通过抑制*Xist*来保持[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)的活性。在失活前夕，两条X染色体都参与了一场微妙的“拔河比赛”。在随机选择的一条[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)上，*Tsix*团队的力量减弱，其表达动摇，*Xist*团队占了上风。*Xist*的表达上调，该[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)便注定被失活。在另一条[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)上，*Tsix*的表达保持强劲，抑制了*Xist*，从而确保该[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)保持活性。
 
-我们可以通过巧妙的实验看到这一原理的实际作用。如果科学家仅在一条[X染色体](@article_id:317127)上删除*Tsix*的[启动子](@article_id:316909)，他们就有效地破坏了其“保持活性”的信号。当这些细胞被触发去失活一条[X染色体](@article_id:317127)时，选择便不再是随机的。带有失活*Tsix*基因的[染色体](@article_id:340234)几乎总是被沉默的那一条，因为它的*Xist*基因现在已无对手 。
+我们可以通过巧妙的实验看到这一原理的实际作用。如果科学家仅在一条[X染色体](@keyword=x_chromosome|lang=zh-CN|style=Feynman)上删除*Tsix*的[启动子](@keyword=promoter|lang=zh-CN|style=Feynman)，他们就有效地破坏了其“保持活性”的信号。当这些细胞被触发去失活一条[X染色体](@keyword=x_chromosome|lang=zh-CN|style=Feynman)时，选择便不再是随机的。带有失活*Tsix*基因的[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)几乎总是被沉默的那一条，因为它的*Xist*基因现在已无对手 [@problem_id:2348161]。
 
-#### 第三幕：沉默——用“关闭”信号涂抹[染色体](@article_id:340234)
+#### 第三幕：沉默——用“关闭”信号涂抹[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)
 
-随着选择完成，*Xist* RNA覆盖了注定被沉默的[染色体](@article_id:340234)，沉默过程正式开始。*Xist*涂层是一个信标，招募了第一波沉默机器。其中最关键的早期响应者之一是一种名为**[多梳抑制复合物2](@article_id:345993) (Polycomb Repressive Complex 2, PRC2)** 的[蛋白质复合物](@article_id:332940)。
+随着选择完成，*Xist* RNA覆盖了注定被沉默的[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)，沉默过程正式开始。*Xist*涂层是一个信标，招募了第一波沉默机器。其中最关键的早期响应者之一是一种名为**[多梳抑制复合物2](@keyword=polycomb_repressive_complex_2|lang=zh-CN|style=Feynman) (Polycomb Repressive Complex 2, PRC2)** 的[蛋白质复合物](@keyword=protein_complexes|lang=zh-CN|style=Feynman)。
 
-PRC2是一种表观遗传“书写器”。它的工作是在[组蛋白](@article_id:375151)（DNA缠绕的线轴）上放置特定的化学标记。PRC2书写的主要标记是[组蛋白](@article_id:375151)H3上特定氨基酸赖氨酸27的三甲基化。这个标记，缩写为**[H3K27me3](@article_id:354529)**，是一个强有力的“关闭”信号。在*Xist*的引导下，PRC2在[染色体](@article_id:340234)上移动，用[H3K27me3](@article_id:354529)涂抹[染色体](@article_id:340234)，建立起一波[基因抑制](@article_id:325246) 。这个由组蛋白修饰驱动的初始阶段被称为沉默的**建立**。如果细胞缺少PRC2的关键催化部分（如EZH2这样的酶），这个至关重要的第一步就会失败，X染色体从一开始就无法被有效沉默 。
+PRC2是一种表观遗传“书写器”。它的工作是在[组蛋白](@keyword=histone_proteins|lang=zh-CN|style=Feynman)（DNA缠绕的线轴）上放置特定的化学标记。PRC2书写的主要标记是[组蛋白](@keyword=histone_proteins|lang=zh-CN|style=Feynman)H3上特定氨基酸赖氨酸27的三甲基化。这个标记，缩写为**[H3K27me3](@keyword=h3k27me3|lang=zh-CN|style=Feynman)**，是一个强有力的“关闭”信号。在*Xist*的引导下，PRC2在[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)上移动，用[H3K27me3](@keyword=h3k27me3|lang=zh-CN|style=Feynman)涂抹[染色体](@keyword=chromosome|lang=zh-CN|style=Feynman)，建立起一波[基因抑制](@keyword=genetic_suppression|lang=zh-CN|style=Feynman) [@problem_id:2348154]。这个由组蛋白修饰驱动的初始阶段被称为沉默的**建立**。如果细胞缺少PRC2的关键催化部分（如EZH2这样的酶），这个至关重要的第一步就会失败，X染色体从一开始就无法被有效沉默 [@problem_id:1732274]。
 
 #### 第四幕：维持——为后代永久锁定
 
-由PRC2进行的初始沉默是有效的，但并非万无一失，尤其是在细胞分裂时。为了使沉默状态永久化并传递给一个细胞的所有后代，需要一个更坚固的锁。这就是**维持**阶段，它确保一旦一个细胞选择沉默父源[X染色体](@article_id:317127)，其所有后代细胞也将沉默父源X染色体。
+由PRC2进行的初始沉默是有效的，但并非万无一失，尤其是在细胞分裂时。为了使沉默状态永久化并传递给一个细胞的所有后代，需要一个更坚固的锁。这就是**维持**阶段，它确保一旦一个细胞选择沉默父源[X染色体](@keyword=x_chromosome|lang=zh-CN|style=Feynman)，其所有后代细胞也将沉默父源X染色体。
 
-这种[细胞记忆](@article_id:301328)主要通过**DNA甲基化**实现。在初始沉默之后，称为[DNA甲基转移酶](@article_id:362428)的酶被招募到失活的X染色体上。它们将甲基基团直接添加到基因[启动子区域](@article_id:346203)的DNA上，充当基因表达的更永久的锁。这里的关键角色是一种“维持”酶，**[DNMT1](@article_id:336530)**，它在DNA复制期间起作用。当DNA被复制时，旧链保留其甲基化标记。[DNMT1](@article_id:336530)识别这些标记，并忠实地将它们复制到新合成的链上。这确保了沉默状态在无数次细胞分裂中被完美地遗传 。如果一个细胞被改造成缺乏[DNMT1](@article_id:336530)，它仍然可以在开始时*建立*沉默，但无法*维持*它。随着每次细胞分裂，沉默的“锁”会变弱，失活的X染色体慢慢开始重新激活 。
+这种[细胞记忆](@keyword=cellular_memory|lang=zh-CN|style=Feynman)主要通过**DNA甲基化**实现。在初始沉默之后，称为[DNA甲基转移酶](@keyword=dna_methyltransferase|lang=zh-CN|style=Feynman)的酶被招募到失活的X染色体上。它们将甲基基团直接添加到基因[启动子区域](@keyword=promoter_region|lang=zh-CN|style=Feynman)的DNA上，充当基因表达的更永久的锁。这里的关键角色是一种“维持”酶，**[DNMT1](@keyword=dnmt1|lang=zh-CN|style=Feynman)**，它在DNA复制期间起作用。当DNA被复制时，旧链保留其甲基化标记。[DNMT1](@keyword=dnmt1|lang=zh-CN|style=Feynman)识别这些标记，并忠实地将它们复制到新合成的链上。这确保了沉默状态在无数次细胞分裂中被完美地遗传 [@problem_id:2348135]。如果一个细胞被改造成缺乏[DNMT1](@keyword=dnmt1|lang=zh-CN|style=Feynman)，它仍然可以在开始时*建立*沉默，但无法*维持*它。随着每次细胞分裂，沉默的“锁”会变弱，失活的X染色体慢慢开始重新激活 [@problem_id:1732274]。
 
-随着时间的推移，其他因子如[组蛋白变体](@article_id:383049)**[macroH2A](@article_id:371567)**也被整合到失活的[X染色体](@article_id:317127)中，帮助进一步压缩染色质并稳定其沉默状态 。这个由*Xist*包裹、组蛋白修饰和[DNA甲基化](@article_id:306835)组成的多层系统，确保了在早期胚胎中做出的选择，能够在生物体的一生中被克隆性地、可遗传地传播下去 。
+随着时间的推移，其他因子如[组蛋白变体](@keyword=histone_variants|lang=zh-CN|style=Feynman)**[macroH2A](@keyword=macroh2a|lang=zh-CN|style=Feynman)**也被整合到失活的[X染色体](@keyword=x_chromosome|lang=zh-CN|style=Feynman)中，帮助进一步压缩染色质并稳定其沉默状态 [@problem_id:2634988]。这个由*Xist*包裹、组蛋白修饰和[DNA甲基化](@keyword=dna_methylation|lang=zh-CN|style=Feynman)组成的多层系统，确保了在早期胚胎中做出的选择，能够在生物体的一生中被克隆性地、可遗传地传播下去 [@problem_id:1690060]。
 
-有趣的是，这种沉默并非绝对。失活X染色体上的一小部分基因，可能高达15%，成功“逃逸”失活并保持表达。这个迷人的例外突显出，即使在如此深刻的遗传沉默行为中，生物学仍然保留了一层科学家们仍在努力完全理解的细微差别和复杂性 。
+有趣的是，这种沉默并非绝对。失活X染色体上的一小部分基因，可能高达15%，成功“逃逸”失活并保持表达。这个迷人的例外突显出，即使在如此深刻的遗传沉默行为中，生物学仍然保留了一层科学家们仍在努力完全理解的细微差别和复杂性 [@problem_id:1690060]。

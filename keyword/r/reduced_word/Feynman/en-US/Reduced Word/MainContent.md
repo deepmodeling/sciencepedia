@@ -19,22 +19,22 @@ But wait, we're not done! The symbol $b^2$ is just shorthand for $bb$. So we rea
 $$
 a\underbrace{b^{-1}b}_{\text{vanish!}}ba \quad \to \quad aba
 $$
-Now, there are no more adjacent block/anti-block pairs. The word $aba$ is the reduced form of our original product .
+Now, there are no more adjacent block/anti-block pairs. The word $aba$ is the reduced form of our original product [@problem_id:1619562].
 
-A remarkable fact, a cornerstone of this theory, is that no matter how you choose to perform the cancellations, you will always arrive at the *same* [unique reduced word](@article_id:160669). A word is **freely reduced** if it is its own reduced form—it's already as simple as it can get. For instance, the word $ab^2ca^{-1}cb^{-2}a^{-1}$ may look complicated, but if you inspect its adjacent pairs—$(a,b)$, $(b,b)$, $(b,c)$, $(c,a^{-1})$, and so on—you'll find that no symbol is next to its inverse. It is already a reduced word, a finished sculpture that cannot be simplified further . The number of symbols in this final, reduced form is its **length**.
+A remarkable fact, a cornerstone of this theory, is that no matter how you choose to perform the cancellations, you will always arrive at the *same* [unique reduced word](@keyword=unique_reduced_word|lang=en-US|style=Feynman). A word is **freely reduced** if it is its own reduced form—it's already as simple as it can get. For instance, the word $ab^2ca^{-1}cb^{-2}a^{-1}$ may look complicated, but if you inspect its adjacent pairs—$(a,b)$, $(b,b)$, $(b,c)$, $(c,a^{-1})$, and so on—you'll find that no symbol is next to its inverse. It is already a reduced word, a finished sculpture that cannot be simplified further [@problem_id:1797000]. The number of symbols in this final, reduced form is its **length**.
 
 ### The Stubbornness of Order
 
-In the familiar world of high school algebra, $xy = yx$. We can swap numbers around without a care. This comfort is the first thing we must abandon in the land of [free groups](@article_id:150755). Here, order is sacred. Suppose a student claims that the sequence of operations $aba^{-1}b^{-1}$ is a "null operation"—that it's equivalent to doing nothing, the empty word or **identity element**, $e$. This is a tempting thought; it feels like all the ingredients are there to cancel out. But can we?
+In the familiar world of high school algebra, $xy = yx$. We can swap numbers around without a care. This comfort is the first thing we must abandon in the land of [free groups](@keyword=free_groups|lang=en-US|style=Feynman). Here, order is sacred. Suppose a student claims that the sequence of operations $aba^{-1}b^{-1}$ is a "null operation"—that it's equivalent to doing nothing, the empty word or **identity element**, $e$. This is a tempting thought; it feels like all the ingredients are there to cancel out. But can we?
 
 The word is $w = aba^{-1}b^{-1}$. Are there any adjacent inverse pairs?
 - $(a, b)$? No.
 - $(b, a^{-1})$? No.
 - $(a^{-1}, b^{-1})$? No.
 
-The word is already reduced. It has a length of 4 . Since the [unique reduced word](@article_id:160669) for the identity is the empty word (length 0), $aba^{-1}b^{-1}$ is most definitely *not* the identity . You cannot simply rearrange the letters to make them cancel. The expression $ba^{-1}$ is not the same as $a^{-1}b$. This rigid ordering means that, unlike the numbers you're used to, the generators of a [free group](@article_id:143173) do not commute. The group is **non-abelian**.
+The word is already reduced. It has a length of 4 [@problem_id:1796967]. Since the [unique reduced word](@keyword=unique_reduced_word|lang=en-US|style=Feynman) for the identity is the empty word (length 0), $aba^{-1}b^{-1}$ is most definitely *not* the identity [@problem_id:1800188]. You cannot simply rearrange the letters to make them cancel. The expression $ba^{-1}$ is not the same as $a^{-1}b$. This rigid ordering means that, unlike the numbers you're used to, the generators of a [free group](@keyword=free_group|lang=en-US|style=Feynman) do not commute. The group is **non-abelian**.
 
-This very word, $[a,b] = aba^{-1}b^{-1}$, is called the **commutator** of $a$ and $b$. In a sense, its "non-zeroness" is a direct measure of how much $a$ and $b$ fail to commute. Even if we square it, the stubbornness of order persists. The word $w^2 = (aba^{-1}b^{-1})(aba^{-1}b^{-1})$ concatenates to $aba^{-1}b^{-1}aba^{-1}b^{-1}$. The letters at the "seam," $b^{-1}$ and $a$, are not inverses. No cancellation occurs, and we are left with a reduced word of length 8 .
+This very word, $[a,b] = aba^{-1}b^{-1}$, is called the **commutator** of $a$ and $b$. In a sense, its "non-zeroness" is a direct measure of how much $a$ and $b$ fail to commute. Even if we square it, the stubbornness of order persists. The word $w^2 = (aba^{-1}b^{-1})(aba^{-1}b^{-1})$ concatenates to $aba^{-1}b^{-1}aba^{-1}b^{-1}$. The letters at the "seam," $b^{-1}$ and $a$, are not inverses. No cancellation occurs, and we are left with a reduced word of length 8 [@problem_id:1796992].
 
 ### Echoes into Infinity: Torsion-Free Words
 
@@ -48,7 +48,7 @@ w^2 = (aba^{-1})(aba^{-1}) = ab \underbrace{a^{-1}a}_{\text{vanish!}} ba^{-1} = 
 $$
 The word didn't vanish! The outer "crust" ($a$ and $a^{-1}$) remained, while the inner "core" ($b$) got squared. If we take $w^k$, we get $ab^ka^{-1}$. This will only be the identity if $b^k$ is the identity, which we've just seen is impossible for a non-empty word.
 
-This property holds universally: in a free group, no non-[identity element](@article_id:138827) has finite order. They are **[torsion-free](@article_id:161170)**. If you shout a word $w$ into the cavern of a [free group](@article_id:143173), its echoes $w, w^2, w^3, \dots$ will never fade away into silence. They continue, distinct, forever .
+This property holds universally: in a free group, no non-[identity element](@keyword=identity_element|lang=en-US|style=Feynman) has finite order. They are **[torsion-free](@keyword=torsion_free|lang=en-US|style=Feynman)**. If you shout a word $w$ into the cavern of a [free group](@keyword=free_group|lang=en-US|style=Feynman), its echoes $w, w^2, w^3, \dots$ will never fade away into silence. They continue, distinct, forever [@problem_id:1619565].
 
 ### Hidden Symmetries: Parity and Perspective
 
@@ -62,17 +62,17 @@ Despite this rigid structure, the world of reduced words is not without its own 
     $$
     Looking at this equation in terms of parity (even or odd), the term $2c$ is always even. This means the parity of $\ell(uv)$ is the same as the parity of $\ell(u) + \ell(v)$. If $\ell(u)$ and $\ell(v)$ are both even, their sum is even, and thus $\ell(uv)$ must be even! The set is closed. Check.
 
-So, yes, a beautiful hidden structure emerges: the set of even-length words is a subgroup, like a checkerboard pattern laid across the entire group .
+So, yes, a beautiful hidden structure emerges: the set of even-length words is a subgroup, like a checkerboard pattern laid across the entire group [@problem_id:1614346].
 
-Another form of symmetry is **[conjugacy](@article_id:151260)**. Two words $u$ and $v$ are conjugate if one can be turned into the other by a "change of perspective," mathematically written as $v = wuw^{-1}$ for some word $w$. It's like looking at the object $u$ from the point of view of $w$. A marvelous theorem states that two cyclically reduced words are conjugate if and only if one is a *cyclic shift* of the other. Consider the words $u = aba^{-1}b$ and $v = baba^{-1}$. Are they conjugate? Let's check. Both are cyclically reduced. If we write out $u$ and start shifting letters from the front to the back, we get:
+Another form of symmetry is **[conjugacy](@keyword=conjugacy|lang=en-US|style=Feynman)**. Two words $u$ and $v$ are conjugate if one can be turned into the other by a "change of perspective," mathematically written as $v = wuw^{-1}$ for some word $w$. It's like looking at the object $u$ from the point of view of $w$. A marvelous theorem states that two cyclically reduced words are conjugate if and only if one is a *cyclic shift* of the other. Consider the words $u = aba^{-1}b$ and $v = baba^{-1}$. Are they conjugate? Let's check. Both are cyclically reduced. If we write out $u$ and start shifting letters from the front to the back, we get:
 - $u = (a)(b)(a^{-1})(b)$
 - Shift 1: $(b)(a^{-1})(b)(a)$
 - Shift 2: $(a^{-1})(b)(a)(b)$
 - Shift 3: $(b)(a)(b)(a^{-1})$ which is exactly $v$!
-Because one is a cyclic permutation of the other, they must be conjugate. In fact, we can see that $v = b(aba^{-1}b)b^{-1}$ after a quick calculation . This reveals a deep connection between algebraic manipulation (conjugation) and a simple geometric action (rotation).
+Because one is a cyclic permutation of the other, they must be conjugate. In fact, we can see that $v = b(aba^{-1}b)b^{-1}$ after a quick calculation [@problem_id:1796960]. This reveals a deep connection between algebraic manipulation (conjugation) and a simple geometric action (rotation).
 
 ### A Universe of Words
 
 The power of this "reduction" idea is so fundamental that it extends far beyond simple alphabets. We can build even grander structures, like the **free product** of two entire groups, say $H$ and $K$. Now, our "letters" are no longer single symbols, but non-identity *elements* from the groups $H$ and $K$. A reduced word in $G = H * K$ is a sequence $g_1 g_2 \dots g_n$ where the adjacent letters come from different parent groups (e.g., if $g_1 \in H$, then $g_2 \in K$, and $g_3 \in H$, etc.).
 
-If we have a word like $w = a^2 b^4 a^3 b^7 a^4$ in $G = \mathbb{Z}_6 * \mathbb{Z}_9$ (where $a$ generates $\mathbb{Z}_6$ and $b$ generates $\mathbb{Z}_9$), we see it's not cyclically reduced, as it begins and ends with elements from the $\mathbb{Z}_6$ family. Using conjugation, a kind of algebraic "spinning," we can simplify it. By cleverly conjugating $w$, we can cancel the "ends" until we are left with a cyclically reduced core. In this case, the magnificent word boils down to a simple, cyclically reduced word of length 2 . This shows how the single, beautiful principle of reduction provides the foundation for building and understanding a vast universe of complex algebraic structures. From a single rule, an infinite and intricate world is born.
+If we have a word like $w = a^2 b^4 a^3 b^7 a^4$ in $G = \mathbb{Z}_6 * \mathbb{Z}_9$ (where $a$ generates $\mathbb{Z}_6$ and $b$ generates $\mathbb{Z}_9$), we see it's not cyclically reduced, as it begins and ends with elements from the $\mathbb{Z}_6$ family. Using conjugation, a kind of algebraic "spinning," we can simplify it. By cleverly conjugating $w$, we can cancel the "ends" until we are left with a cyclically reduced core. In this case, the magnificent word boils down to a simple, cyclically reduced word of length 2 [@problem_id:954540]. This shows how the single, beautiful principle of reduction provides the foundation for building and understanding a vast universe of complex algebraic structures. From a single rule, an infinite and intricate world is born.

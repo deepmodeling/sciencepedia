@@ -37,7 +37,7 @@ With this formula, we can build a library of famous series. For $f(x) = \sin(x)$
 
 $$\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dots = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!}$$
 
-Once you know this pattern, you can spot it in the wild. For example, if you were asked to calculate the sum of the intimidating series $S = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!} (\frac{\pi}{3})^{2n+1}$, you don't need a supercomputer. You just need to recognize the pattern. This series is precisely the Maclaurin series for $\sin(x)$ with $x$ set to $\frac{\pi}{3}$ . The sum is nothing more than $\sin(\frac{\pi}{3})$, which is exactly $\frac{\sqrt{3}}{2}$. The infinite complexity collapses into a simple, elegant number. This is the first taste of the series’ power: turning infinite sums into familiar friends.
+Once you know this pattern, you can spot it in the wild. For example, if you were asked to calculate the sum of the intimidating series $S = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!} (\frac{\pi}{3})^{2n+1}$, you don't need a supercomputer. You just need to recognize the pattern. This series is precisely the Maclaurin series for $\sin(x)$ with $x$ set to $\frac{\pi}{3}$ [@problem_id:1282112]. The sum is nothing more than $\sin(\frac{\pi}{3})$, which is exactly $\frac{\sqrt{3}}{2}$. The infinite complexity collapses into a simple, elegant number. This is the first taste of the series’ power: turning infinite sums into familiar friends.
 
 ### A Toolkit for Taylor Tinkerers
 
@@ -45,7 +45,7 @@ Calculating derivatives all day is tedious. The real art of using Maclaurin seri
 
 **1. Algebraic Manipulation (Multiplying and Dividing)**
 
-Our most basic block is the [geometric series](@article_id:157996), a wonderful result you might have seen before:
+Our most basic block is the [geometric series](@keyword=geometric_series|lang=en-US|style=Feynman), a wonderful result you might have seen before:
 
 $$\frac{1}{1-x} = 1 + x + x^2 + x^3 + \dots = \sum_{n=0}^{\infty} x^n$$
 
@@ -53,7 +53,7 @@ What if we want the series for a more complicated function, like $f(x) = \frac{1
 
 $f(x) = (1+x)(1 + x + x^2 + \dots) = (1 + x + x^2 + \dots) + (x + x^2 + x^3 + \dots)$
 
-Combining the terms, we get $f(x) = 1 + 2x + 2x^2 + 2x^3 + \dots$ . It's that simple. We can even multiply two [infinite series](@article_id:142872) together. To find the coefficient of a certain power, say $z^4$, in the product of two series, you just find all the pairs of terms, one from each series, whose powers add up to 4 . It’s a systematic bookkeeping process that lets us construct series for a huge variety of rational functions.
+Combining the terms, we get $f(x) = 1 + 2x + 2x^2 + 2x^3 + \dots$ [@problem_id:2333625]. It's that simple. We can even multiply two [infinite series](@keyword=infinite_series|lang=en-US|style=Feynman) together. To find the coefficient of a certain power, say $z^4$, in the product of two series, you just find all the pairs of terms, one from each series, whose powers add up to 4 [@problem_id:2268098]. It’s a systematic bookkeeping process that lets us construct series for a huge variety of rational functions.
 
 **2. Calculus with Series (Integrating and Differentiating)**
 
@@ -67,7 +67,7 @@ Now, we can integrate this series term-by-term from $0$ to $z$, something that i
 
 $$S(z) = \int_{0}^{z} \left( w^2 - \frac{w^6}{6} + \frac{w^{10}}{120} - \dots \right) dw = \frac{z^3}{3} - \frac{z^7}{7 \cdot 6} + \frac{z^{11}}{11 \cdot 120} - \dots$$
 
-This gives us an explicit infinite series for the once-impenetrable Fresnel integral . For any value of $z$, we can plug it in and calculate the result to any desired accuracy by just taking enough terms. We have tamed the beast.
+This gives us an explicit infinite series for the once-impenetrable Fresnel integral [@problem_id:2247173]. For any value of $z$, we can plug it in and calculate the result to any desired accuracy by just taking enough terms. We have tamed the beast.
 
 **3. Composition of Series**
 
@@ -77,7 +77,7 @@ We can treat the entire series for $\sin(z)$ as the variable $u$ and substitute 
 
 $$\cosh(\sin z) = 1 + \frac{1}{2!} \left(z - \frac{z^3}{6} + \dots \right)^2 + \frac{1}{4!} \left(z - \frac{z^3}{6} + \dots \right)^4 + \dots$$
 
-The algebra gets a bit hairy, and you have to be very careful to collect all the pieces that contribute to a given power of $z$ . But the principle is sound. It's like building an elaborate Lego castle. You have your basic bricks (simple series) and a set of rules for combining them (our toolkit), allowing you to construct almost anything you can imagine .
+The algebra gets a bit hairy, and you have to be very careful to collect all the pieces that contribute to a given power of $z$ [@problem_id:925998]. But the principle is sound. It's like building an elaborate Lego castle. You have your basic bricks (simple series) and a set of rules for combining them (our toolkit), allowing you to construct almost anything you can imagine [@problem_id:917989].
 
 ### The Secret Lives of Functions
 
@@ -87,22 +87,22 @@ So far, we've treated the Maclaurin series as a computational tool. But its true
 
 A series doesn't always work for all values of $x$. The geometric series for $\frac{1}{1-x}$ only works when $|x| \lt 1$. Why? What's so special about $x=1$? The function itself blows up there! This is no coincidence. A Maclaurin series converges in a disk centered at the origin, and the radius of that disk is precisely the distance to the function's nearest "singularity"—a point where it blows up, wiggles infinitely, or otherwise misbehaves.
 
-Consider the differential equation $\frac{dx}{dt} = 1 + x^2$ with the starting condition $x(0) = 0$. One can find a power [series solution](@article_id:199789) for $x(t)$ around $t=0$. What is its radius of convergence? We can solve this equation directly to find $x(t) = \tan(t)$. The function $\tan(t)$ has singularities where its denominator, $\cos(t)$, is zero, namely at $t = \pm\frac{\pi}{2}, \pm\frac{3\pi}{2}, \dots$. The nearest ones to the origin are at $t = \pm\frac{\pi}{2}$. The distance from the origin to these points is $\frac{\pi}{2}$. And sure enough, that is exactly the radius of convergence for the Maclaurin series of $\tan(t)$ . The series "knows" where the function will fail. It carries a warning label about its own limitations, dictated by the intrinsic properties of the function it represents.
+Consider the differential equation $\frac{dx}{dt} = 1 + x^2$ with the starting condition $x(0) = 0$. One can find a power [series solution](@keyword=series_solution|lang=en-US|style=Feynman) for $x(t)$ around $t=0$. What is its radius of convergence? We can solve this equation directly to find $x(t) = \tan(t)$. The function $\tan(t)$ has singularities where its denominator, $\cos(t)$, is zero, namely at $t = \pm\frac{\pi}{2}, \pm\frac{3\pi}{2}, \dots$. The nearest ones to the origin are at $t = \pm\frac{\pi}{2}$. The distance from the origin to these points is $\frac{\pi}{2}$. And sure enough, that is exactly the radius of convergence for the Maclaurin series of $\tan(t)$ [@problem_id:872333]. The series "knows" where the function will fail. It carries a warning label about its own limitations, dictated by the intrinsic properties of the function it represents.
 
 **From Local to Global: The Power of Analyticity**
 
-The fact that the derivatives at a single point can determine the function far away is a property of what mathematicians call **[analytic functions](@article_id:139090)**. For these functions, the information is not siloed. Knowing a function's complete behavior in one tiny neighborhood is enough to know its behavior everywhere.
+The fact that the derivatives at a single point can determine the function far away is a property of what mathematicians call **[analytic functions](@keyword=analytic_functions|lang=en-US|style=Feynman)**. For these functions, the information is not siloed. Knowing a function's complete behavior in one tiny neighborhood is enough to know its behavior everywhere.
 
-This leads to almost magical consequences. Imagine you are given the full Taylor series for a function centered not at the origin, but at some other point, say $z=i$. Could you use that information to find its Maclaurin series back at $z=0$? It seems impossible—like trying to guess a person's life story from a single photograph. Yet for [analytic functions](@article_id:139090), it is entirely possible. By using algebraic transformations, one can "re-center" the series expansion from one point to another . The information encoded in the coefficients at $z=i$ can be systematically translated to find the coefficients at $z=0$. This reveals an incredible rigidity and interconnectedness in the mathematical world.
+This leads to almost magical consequences. Imagine you are given the full Taylor series for a function centered not at the origin, but at some other point, say $z=i$. Could you use that information to find its Maclaurin series back at $z=0$? It seems impossible—like trying to guess a person's life story from a single photograph. Yet for [analytic functions](@keyword=analytic_functions|lang=en-US|style=Feynman), it is entirely possible. By using algebraic transformations, one can "re-center" the series expansion from one point to another [@problem_id:909884]. The information encoded in the coefficients at $z=i$ can be systematically translated to find the coefficients at $z=0$. This reveals an incredible rigidity and interconnectedness in the mathematical world.
 
 **Hidden Arithmetic: Analysis Meets Number Theory**
 
-Perhaps the most startling revelation comes from looking at more exotic series. Consider a **Lambert series**, which has the form $G(z) = \sum_{n=1}^\infty a_n \frac{z^n}{1-z^n}$. This doesn't look like a standard [power series](@article_id:146342) at all. But for $|z| \lt 1$, we can use our [geometric series](@article_id:157996) trick on each term $\frac{1}{1-z^n}$ and rearrange the whole expression.
+Perhaps the most startling revelation comes from looking at more exotic series. Consider a **Lambert series**, which has the form $G(z) = \sum_{n=1}^\infty a_n \frac{z^n}{1-z^n}$. This doesn't look like a standard [power series](@keyword=power_series|lang=en-US|style=Feynman) at all. But for $|z| \lt 1$, we can use our [geometric series](@keyword=geometric_series|lang=en-US|style=Feynman) trick on each term $\frac{1}{1-z^n}$ and rearrange the whole expression.
 
 When we do this, something truly miraculous happens. The coefficient $c_k$ of the $z^k$ term in the resulting Maclaurin series isn't some horribly complicated expression. It turns out to be simply the sum of the original coefficients $a_d$ for all numbers $d$ that are divisors of $k$.
 
 $$c_k = \sum_{d|k} a_d$$
 
-For example, to find the coefficient of $z^{10}$ for a given Lambert series, you don't need to expand everything out. You just identify the divisors of 10 (which are 1, 2, 5, and 10), and add up the corresponding coefficients: $c_{10} = a_1 + a_2 + a_5 + a_{10}$ . A problem that started in complex analysis—finding a [power series](@article_id:146342) coefficient—has morphed into a problem in number theory—summing over divisors. This is the kind of unexpected, beautiful unity that physicists and mathematicians live for. It shows that the structures we build are not separate islands; they are part of a single, deeply connected continent of ideas.
+For example, to find the coefficient of $z^{10}$ for a given Lambert series, you don't need to expand everything out. You just identify the divisors of 10 (which are 1, 2, 5, and 10), and add up the corresponding coefficients: $c_{10} = a_1 + a_2 + a_5 + a_{10}$ [@problem_id:2285630]. A problem that started in complex analysis—finding a [power series](@keyword=power_series|lang=en-US|style=Feynman) coefficient—has morphed into a problem in number theory—summing over divisors. This is the kind of unexpected, beautiful unity that physicists and mathematicians live for. It shows that the structures we build are not separate islands; they are part of a single, deeply connected continent of ideas.
 
 The Maclaurin series, then, is far more than a formula. It is a lens that transforms our view of functions, a universal toolkit for solving problems, and a window into the elegant, underlying order of the mathematical cosmos.

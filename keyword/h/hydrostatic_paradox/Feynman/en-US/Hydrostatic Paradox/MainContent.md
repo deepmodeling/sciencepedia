@@ -17,7 +17,7 @@ Now, **pressure** is defined as force per unit area. To find the pressure at the
 
 $P = \frac{\text{Force}}{\text{Area}} = \frac{\rho \times A \times h \times g}{A}$
 
-Notice how the area $A$ cancels out beautifully! We are left with a wonderfully simple and powerful equation for [hydrostatic pressure](@article_id:141133):
+Notice how the area $A$ cancels out beautifully! We are left with a wonderfully simple and powerful equation for [hydrostatic pressure](@keyword=hydrostatic_pressure|lang=en-US|style=Feynman):
 
 $P = \rho g h$
 
@@ -27,13 +27,13 @@ This equation tells us something remarkable: the pressure at a certain depth $h$
 
 Here is where the fun begins. Physics is not just about memorizing formulas; it's about challenging our intuition and seeing if the physical laws hold up. Let's consider a thought experiment based on a common laboratory setup.
 
-Imagine we have two containers open to the air . One is a wide, sturdy cylinder. The other is an elegant vase with a base the same size as the cylinder's, but with walls that curve inwards, meaning it holds significantly less liquid. We fill both containers with the same liquid to the exact same vertical height, $h$. Now, we ask a simple question: in which container is the pressure at the center of the base greater?
+Imagine we have two containers open to the air [@problem_id:1780684]. One is a wide, sturdy cylinder. The other is an elegant vase with a base the same size as the cylinder's, but with walls that curve inwards, meaning it holds significantly less liquid. We fill both containers with the same liquid to the exact same vertical height, $h$. Now, we ask a simple question: in which container is the pressure at the center of the base greater?
 
 Our intuition might scream, "The cylinder, of course!" It contains much more water, so the total weight of the water column is far greater. It seems perfectly logical that this greater weight should result in a greater pressure at the bottom.
 
 But our formula, $P = \rho g h$, whispers a different story. It doesn't have a term for the container's shape or the total volume of water. It only cares about the vertical depth, $h$. And since $h$ is the same for both, the pressure must be... the same.
 
-Let's flip the experiment on its head to make sure. Let's take another pair of containers . This time, one is a narrow cylinder, and the other is a vase with a narrow base that flares outwards, holding much *more* water than the cylinder when filled to the same height $h$. Surely now, with its far greater weight of water, the flared vase must exert a higher pressure at its base?
+Let's flip the experiment on its head to make sure. Let's take another pair of containers [@problem_id:1885342]. This time, one is a narrow cylinder, and the other is a vase with a narrow base that flares outwards, holding much *more* water than the cylinder when filled to the same height $h$. Surely now, with its far greater weight of water, the flared vase must exert a higher pressure at its base?
 
 Again, the quiet insistence of physics says no. The pressure is still $P = \rho g h$ in both cases. They are identical.
 
@@ -43,9 +43,9 @@ This apparent contradiction is known as the **hydrostatic paradox**: the pressur
 
 The "paradox" dissolves the moment we remember one crucial detail: pressure acts in all directions, and it always acts **perpendicular** to any surface it encounters. The bottom of the container is not the only surface the water is touching. The water is also pushing on the container's side walls.
 
-Let's go back to our slender, inward-curving vase . As the walls slope inwards, the water pushes against them with a force that is perpendicular to the surface—directed outwards and *upwards*. By Newton's third law, the walls must push back on the water with a force that is inwards and *downwards*. This downward force component from the walls adds to the weight of the water, transmitting a greater total force to the base than the fluid's weight alone would suggest.
+Let's go back to our slender, inward-curving vase [@problem_id:1780684]. As the walls slope inwards, the water pushes against them with a force that is perpendicular to the surface—directed outwards and *upwards*. By Newton's third law, the walls must push back on the water with a force that is inwards and *downwards*. This downward force component from the walls adds to the weight of the water, transmitting a greater total force to the base than the fluid's weight alone would suggest.
 
-Now consider the wide, flared-out vase . Here, the water pushes on the outward-sloping walls, and this force is perpendicular to the surface—so it's directed outwards and *downwards*. The walls, in turn, push back on the water with an equal and opposite force: inwards and *upwards*. Aha! That upward force from the walls is what supports the "extra" water in the overhangs, the water that is not directly in the column above the base. The bottom of the vase is no longer solely responsible for holding up the entire column; a portion of the total fluid weight is supported by the walls.
+Now consider the wide, flared-out vase [@problem_id:1885342]. Here, the water pushes on the outward-sloping walls, and this force is perpendicular to the surface—so it's directed outwards and *downwards*. The walls, in turn, push back on the water with an equal and opposite force: inwards and *upwards*. Aha! That upward force from the walls is what supports the "extra" water in the overhangs, the water that is not directly in the column above the base. The bottom of the vase is no longer solely responsible for holding up the entire column; a portion of the total fluid weight is supported by the walls.
 
 So, the mystery is solved. The pressure $P = \rho g h$ correctly predicts the force *per unit area* at the bottom. The total force on the base is simply this pressure multiplied by the area of the base, $F_{\text{bottom}} = P \times A_{\text{bottom}}$. This force is *not* necessarily equal to the total weight of the fluid, $W = \rho g V_{\text{total}}$.
 

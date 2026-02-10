@@ -1,5 +1,5 @@
 ## Introduction
-Solving large systems of linear equations is a foundational task across science and engineering, from modeling physical phenomena to analyzing [complex networks](@article_id:261201). While direct methods provide exact solutions, they can become prohibitively slow and memory-intensive for the massive problems encountered in modern research. This creates a need for alternative strategies that are both computationally efficient and scalable. The Jacobi method emerges as a beautifully simple and intuitive iterative approach, trading a single, complex calculation for a series of simple, repeated refinement steps.
+Solving large systems of linear equations is a foundational task across science and engineering, from modeling physical phenomena to analyzing [complex networks](@keyword=complex_networks|lang=en-US|style=Feynman). While direct methods provide exact solutions, they can become prohibitively slow and memory-intensive for the massive problems encountered in modern research. This creates a need for alternative strategies that are both computationally efficient and scalable. The Jacobi method emerges as a beautifully simple and intuitive iterative approach, trading a single, complex calculation for a series of simple, repeated refinement steps.
 
 This article demystifies this powerful algorithm. In the following chapters, you will delve into the core principles and mechanisms of the Jacobi method, understanding how it works through a step-by-step process and its underlying matrix formulation. Subsequently, we will explore its diverse applications and interdisciplinary connections, revealing its role in fields from physics to high-performance computing and its enduring relevance in the age of parallel processing.
 
@@ -11,7 +11,7 @@ This simple, almost social, process of collective guessing is the very essence o
 
 ### The Art of Guessing and Updating
 
-Let's make our guessing game more concrete. Suppose we have a [system of equations](@article_id:201334) describing the temperature at three points in a metal rod, where each point's temperature is influenced by its neighbors. This might look something like this ():
+Let's make our guessing game more concrete. Suppose we have a [system of equations](@keyword=system_of_equations|lang=en-US|style=Feynman) describing the temperature at three points in a metal rod, where each point's temperature is influenced by its neighbors. This might look something like this ([@problem_id:1369756]):
 
 $$
 \begin{align*}
@@ -55,9 +55,9 @@ Solving for our next guess, $\mathbf{x}^{(k+1)}$, we get:
 
 $$ \mathbf{x}^{(k+1)} = D^{-1}(L+U)\mathbf{x}^{(k)} + D^{-1}\mathbf{b} $$
 
-This has the form $\mathbf{x}^{(k+1)} = T_J \mathbf{x}^{(k)} + \mathbf{c}$, where the matrix $T_J = D^{-1}(L+U)$ is the famous **Jacobi iteration matrix** (). This matrix is the true engine of the method. It takes our current guess $\mathbf{x}^{(k)}$ and transforms it, moving it one step closer (we hope!) to the final solution. The constant vector $\mathbf{c} = D^{-1}\mathbf{b}$ provides a steady push in the right direction.
+This has the form $\mathbf{x}^{(k+1)} = T_J \mathbf{x}^{(k)} + \mathbf{c}$, where the matrix $T_J = D^{-1}(L+U)$ is the famous **Jacobi iteration matrix** ([@problem_id:2182353]). This matrix is the true engine of the method. It takes our current guess $\mathbf{x}^{(k)}$ and transforms it, moving it one step closer (we hope!) to the final solution. The constant vector $\mathbf{c} = D^{-1}\mathbf{b}$ provides a steady push in the right direction.
 
-Notice something critical right away: this formulation requires us to calculate $D^{-1}$, the inverse of the diagonal matrix. This is easy—we just take the reciprocal of each diagonal element—but it immediately tells us when the method will fail at the most basic level. If any diagonal element of our original matrix $A$ is zero, then $D$ is singular, its inverse does not exist, and the entire Jacobi recipe is undefined (). You can't divide by zero, and the Jacobi method knows it!
+Notice something critical right away: this formulation requires us to calculate $D^{-1}$, the inverse of the diagonal matrix. This is easy—we just take the reciprocal of each diagonal element—but it immediately tells us when the method will fail at the most basic level. If any diagonal element of our original matrix $A$ is zero, then $D$ is singular, its inverse does not exist, and the entire Jacobi recipe is undefined ([@problem_id:2163173]). You can't divide by zero, and the Jacobi method knows it!
 
 ### The Crucial Question: Does it Converge?
 
@@ -73,35 +73,35 @@ $$
 e^{(k+1)} = T_J e^{(k)}
 $$
 
-By applying this repeatedly, we find that the error after $k$ steps is just the initial error transformed by the $k$-th power of the iteration matrix ():
+By applying this repeatedly, we find that the error after $k$ steps is just the initial error transformed by the $k$-th power of the iteration matrix ([@problem_id:2163181]):
 
 $$
 e^{(k)} = T_J^k e^{(0)}
 $$
 
-For our method to converge, the error must vanish as $k$ goes to infinity. This means we need the matrix power $T_J^k$ to shrink to the [zero matrix](@article_id:155342). The condition for this is one of the most important results in numerical analysis: it happens if and only if all the eigenvalues of $T_J$ have a magnitude strictly less than 1. The largest of these eigenvalue magnitudes is called the **spectral radius**, denoted $\rho(T_J)$.
+For our method to converge, the error must vanish as $k$ goes to infinity. This means we need the matrix power $T_J^k$ to shrink to the [zero matrix](@keyword=zero_matrix|lang=en-US|style=Feynman). The condition for this is one of the most important results in numerical analysis: it happens if and only if all the eigenvalues of $T_J$ have a magnitude strictly less than 1. The largest of these eigenvalue magnitudes is called the **spectral radius**, denoted $\rho(T_J)$.
 
-So, we have our iron-clad, necessary and sufficient condition for convergence: the Jacobi method is guaranteed to converge for any initial guess if and only if $\rho(T_J) < 1$ (). If the [spectral radius](@article_id:138490) is 1 or greater, the error will, in general, not shrink, and our guesses will bounce around erratically or fly off to infinity, never settling on the true solution ().
+So, we have our iron-clad, necessary and sufficient condition for convergence: the Jacobi method is guaranteed to converge for any initial guess if and only if $\rho(T_J) < 1$ ([@problem_id:2168153]). If the [spectral radius](@keyword=spectral_radius|lang=en-US|style=Feynman) is 1 or greater, the error will, in general, not shrink, and our guesses will bounce around erratically or fly off to infinity, never settling on the true solution ([@problem_id:2160089]).
 
 ### Rules of Thumb and Deeper Truths
 
-Calculating the spectral radius means finding all the eigenvalues of a matrix, which can be just as hard as solving the original problem! We need a simpler, practical test. One such test is **[strict diagonal dominance](@article_id:153783)**. A matrix is strictly diagonally dominant if, for every single row, the absolute value of the diagonal element is larger than the sum of the absolute values of all other elements in that row.
+Calculating the spectral radius means finding all the eigenvalues of a matrix, which can be just as hard as solving the original problem! We need a simpler, practical test. One such test is **[strict diagonal dominance](@keyword=strict_diagonal_dominance|lang=en-US|style=Feynman)**. A matrix is strictly diagonally dominant if, for every single row, the absolute value of the diagonal element is larger than the sum of the absolute values of all other elements in that row.
 
 $$ |a_{ii}| > \sum_{j \neq i} |a_{ij}| \quad \text{for all } i $$
 
-If a matrix has this property, it's a theorem that the Jacobi method is guaranteed to converge (). This is because [diagonal dominance](@article_id:143120) guarantees that the norm of the Jacobi matrix is less than 1, which in turn implies the spectral radius is less than 1. It’s an easy-to-check, sufficient condition.
+If a matrix has this property, it's a theorem that the Jacobi method is guaranteed to converge ([@problem_id:1369745]). This is because [diagonal dominance](@keyword=diagonal_dominance|lang=en-US|style=Feynman) guarantees that the norm of the Jacobi matrix is less than 1, which in turn implies the spectral radius is less than 1. It’s an easy-to-check, sufficient condition.
 
-But here is a beautiful lesson in logic. "Sufficient" does not mean "necessary". Just because a matrix is *not* diagonally dominant does not mean the Jacobi method will fail. Consider a matrix where the diagonal entries are not the kings of their rows. It might feel like the system is too "unstable" for the Jacobi method's simple guessing game. Yet, the method can still converge! This happens if the eigenvalues of the iteration matrix, through some subtle cancellations in their calculation, all happen to be small enough. The [spectral radius](@article_id:138490) criterion is the ultimate [arbiter](@article_id:172555), and it can reveal convergence where simpler rules of thumb predict failure ().
+But here is a beautiful lesson in logic. "Sufficient" does not mean "necessary". Just because a matrix is *not* diagonally dominant does not mean the Jacobi method will fail. Consider a matrix where the diagonal entries are not the kings of their rows. It might feel like the system is too "unstable" for the Jacobi method's simple guessing game. Yet, the method can still converge! This happens if the eigenvalues of the iteration matrix, through some subtle cancellations in their calculation, all happen to be small enough. The [spectral radius](@keyword=spectral_radius|lang=en-US|style=Feynman) criterion is the ultimate [arbiter](@keyword=arbiter|lang=en-US|style=Feynman), and it can reveal convergence where simpler rules of thumb predict failure ([@problem_id:2384201]).
 
 ### A Place in the Universe of Solvers
 
 It's enlightening to see how the Jacobi method fits into the broader landscape of numerical algorithms.
 
-First, its behavior when a system is singular (has no unique solution) is profoundly different from that of a **direct method** like Gaussian elimination. Gaussian elimination tries to solve the system in one go by systematically eliminating variables. If the matrix is singular, this process hits a wall: it tries to divide by a zero "pivot" and the algorithm halts with an error (). The Jacobi method doesn't halt. It simply fails to converge. The iterates might oscillate or diverge, silently telling you that there isn't a single, stable point for them to settle on.
+First, its behavior when a system is singular (has no unique solution) is profoundly different from that of a **direct method** like Gaussian elimination. Gaussian elimination tries to solve the system in one go by systematically eliminating variables. If the matrix is singular, this process hits a wall: it tries to divide by a zero "pivot" and the algorithm halts with an error ([@problem_id:2160089]). The Jacobi method doesn't halt. It simply fails to converge. The iterates might oscillate or diverge, silently telling you that there isn't a single, stable point for them to settle on.
 
-Second, the Jacobi method is a beautiful example of a more general strategy called **preconditioning** (). The idea is to take a difficult system $A\mathbf{x} = \mathbf{b}$ and "precondition" it by multiplying by a matrix $P^{-1}$, turning it into an easier system $P^{-1}A\mathbf{x} = P^{-1}\mathbf{b}$. The Jacobi method can be seen as a form of the **Richardson iteration** where the preconditioner $P$ is simply $D$, the diagonal of $A$. In other words, we're saying, "The full matrix $A$ is complicated. Let's approximate it with its simplest part, the diagonal, and use that to guide our iteration."
+Second, the Jacobi method is a beautiful example of a more general strategy called **preconditioning** ([@problem_id:2194440]). The idea is to take a difficult system $A\mathbf{x} = \mathbf{b}$ and "precondition" it by multiplying by a matrix $P^{-1}$, turning it into an easier system $P^{-1}A\mathbf{x} = P^{-1}\mathbf{b}$. The Jacobi method can be seen as a form of the **Richardson iteration** where the preconditioner $P$ is simply $D$, the diagonal of $A$. In other words, we're saying, "The full matrix $A$ is complicated. Let's approximate it with its simplest part, the diagonal, and use that to guide our iteration."
 
-This perspective opens up a world of possibilities. What if we add a "knob" to our process? This leads to the **weighted Jacobi method**, where we don't take a full step as prescribed by the Jacobi update, but rather a fraction $\omega$ of that step, blended with our previous position ().
+This perspective opens up a world of possibilities. What if we add a "knob" to our process? This leads to the **weighted Jacobi method**, where we don't take a full step as prescribed by the Jacobi update, but rather a fraction $\omega$ of that step, blended with our previous position ([@problem_id:2163185]).
 
 $$ \mathbf{x}^{(k+1)} = (1-\omega)\mathbf{x}^{(k)} + \omega \mathbf{x}^{(k+1)}_{\text{Jacobi}} $$
 

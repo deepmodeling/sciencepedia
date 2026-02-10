@@ -4,41 +4,41 @@
 
 ### 第一次反思：教算术阅读自己的证明
 
-[可表示性](@article_id:639573)最直接和基础的应用是[元数学的算术化](@article_id:311923)。想一想数学证明是什么。它是一个有限的符号陈述序列，其中每个陈述要么是公理，要么是根据固定的[推理规则](@article_id:336844)（如[肯定前件式](@article_id:331907)）从前面的陈述推导出来的。检查一段给定的文本是否为有效证明的过程是纯机械的。你不需要理解公式的*含义*；你只需要检查它们是否遵循规则。这个公式是公理吗？是的。这个公式是根据那两个较早的公式和规则推导出来的吗？是的。它是一个[算法](@article_id:331821)。
+[可表示性](@keyword=representability|lang=zh-CN|style=Feynman)最直接和基础的应用是[元数学的算术化](@keyword=arithmetization_of_metamathematics|lang=zh-CN|style=Feynman)。想一想数学证明是什么。它是一个有限的符号陈述序列，其中每个陈述要么是公理，要么是根据固定的[推理规则](@keyword=rules_of_inference|lang=zh-CN|style=Feynman)（如[肯定前件式](@keyword=modus_ponens|lang=zh-CN|style=Feynman)）从前面的陈述推导出来的。检查一段给定的文本是否为有效证明的过程是纯机械的。你不需要理解公式的*含义*；你只需要检查它们是否遵循规则。这个公式是公理吗？是的。这个公式是根据那两个较早的公式和规则推导出来的吗？是的。它是一个[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)。
 
-这个机械的检查过程是一个可计算的[递归函数](@article_id:639288)。因为每个[递归函数](@article_id:639288)在算术中都是可表示的，我们可以创建一个公式——我们称之为 $\mathrm{Proof}(p, f)$——它当且仅当数字 $p$ 是公式（其[哥德尔编码](@article_id:313401)为 $f$）的有效证明的[哥德尔编码](@article_id:313401)时成立。
+这个机械的检查过程是一个可计算的[递归函数](@keyword=recursive_function|lang=zh-CN|style=Feynman)。因为每个[递归函数](@keyword=recursive_function|lang=zh-CN|style=Feynman)在算术中都是可表示的，我们可以创建一个公式——我们称之为 $\mathrm{Proof}(p, f)$——它当且仅当数字 $p$ 是公式（其[哥德尔编码](@keyword=gödel_numbering|lang=zh-CN|style=Feynman)为 $f$）的有效证明的[哥德尔编码](@keyword=gödel_numbering|lang=zh-CN|style=Feynman)时成立。
 
-从这里，定义整个[元数学](@article_id:315797)中最重要的谓词：可证性谓词 $\mathrm{Prov}(f)$，就只有一小步之遥。我们可以这样定义它：
+从这里，定义整个[元数学](@keyword=metamathematics|lang=zh-CN|style=Feynman)中最重要的谓词：可证性谓词 $\mathrm{Prov}(f)$，就只有一小步之遥。我们可以这样定义它：
 
 $$
 \mathrm{Prov}(f) \equiv \exists p \, \mathrm{Proof}(p, f)
 $$
 
-这个公式现在在算术语言内部表达了“编码为 $f$ 的公式是可证的”这一概念。我们成功地教会了算术如何识别它自己的定理。这一项成就构成了后续一切的基石。它让我们能够将关于证明极限的问题转化为关于数字的问题，然后算术就可以直接对这些问题进行推理。
+这个公式现在在算术语言内部表达了“编码为 $f$ 的公式是可证的”这一概念。我们成功地教会了算术如何识别它自己的定理[@problem_id:2974927]。这一项成就构成了后续一切的基石。它让我们能够将关于证明极限的问题转化为关于数字的问题，然后算术就可以直接对这些问题进行推理。
 
 ### 哈哈镜：一种新的可证性逻辑
 
-一旦可证性的概念被引入算术，它就开始有了自己的生命。我们可以从系统*内部*研究它的属性。算术对它自己的可证性谓词了解多少？事实证明，它了解很多。例如，它可以证明逻辑推导规则的形式化版本。这些被称为希尔伯特-伯奈斯可导出性条件。算术可以证明：
+一旦可证性的概念被引入算术，它就开始有了自己的生命。我们可以从系统*内部*研究它的属性。算术对它自己的可证性谓词了解多少？事实证明，它了解很多。例如，它可以证明逻辑推导规则的形式化版本。这些被称为希尔伯特-伯奈斯可导出性条件[@problem_id:2974950]。算术可以证明：
 
 1.  如果一个句子 $\varphi$ 是一个定理，那么句子“$\varphi$ 是可证的”也是一个定理。（$PA \vdash \varphi \implies PA \vdash \mathrm{Prov}(\ulcorner\varphi\urcorner)$）
 2.  句子“如果‘$\varphi \to \psi$’是可证的并且‘$\varphi$’是可证的，那么‘$\psi$’是可证的”是一个定理。
 3.  句子“如果‘$\varphi$’是可证的，那么句子‘$\varphi$是可证的’是可证的”是一个定理。
 
-这些条件表明，算术内部可证性的映像并没有失真；它保留了其基本的逻辑结构。这一观察催生了一个全新的领域：**可证性逻辑 (Provability Logic)**。逻辑学家们问道：支配 $\mathrm{Prov}$ 谓词的完整原则集合是什么？由 Robert Solovay 找到的惊人答案是，这些原则构成了一个行为良好的[模态逻辑](@article_id:309505)系统，称为GL。这一发现锻造了数论基石与最初为研究必然性和可能性等概念而发展的抽象[模态逻辑](@article_id:309505)世界之间一道深刻而出人意料的桥梁。算术内部的“可证性逻辑”本身就是一个优美、完备而简洁的逻辑系统。
+这些条件表明，算术内部可证性的映像并没有失真；它保留了其基本的逻辑结构。这一观察催生了一个全新的领域：**可证性逻辑 (Provability Logic)**。逻辑学家们问道：支配 $\mathrm{Prov}$ 谓词的完整原则集合是什么？由 Robert Solovay 找到的惊人答案是，这些原则构成了一个行为良好的[模态逻辑](@keyword=modal_logic|lang=zh-CN|style=Feynman)系统，称为GL[@problem_id:2980179]。这一发现锻造了数论基石与最初为研究必然性和可能性等概念而发展的抽象[模态逻辑](@keyword=modal_logic|lang=zh-CN|style=Feynman)世界之间一道深刻而出人意料的桥梁。算术内部的“可证性逻辑”本身就是一个优美、完备而简洁的逻辑系统。
 
-### 无限循环：[自指](@article_id:349641)的魔力
+### 无限循环：[自指](@keyword=self_referencing|lang=zh-CN|style=Feynman)的魔力
 
-现在是神来之笔，这个技巧颠覆了数学。它同样是表示一个简单[递归函数](@article_id:639288)的直接结果。考虑一个函数，它接收一个带有一个空格的公式模板的编码，比如“编码为___的陈述的作者很聪明”，然后输出你用模板自身的编码填充该空格后得到的句子的编码。结果将是一个声称其自身作者很聪明的句子。
+现在是神来之笔，这个技巧颠覆了数学。它同样是表示一个简单[递归函数](@keyword=recursive_function|lang=zh-CN|style=Feynman)的直接结果。考虑一个函数，它接收一个带有一个空格的公式模板的编码，比如“编码为___的陈述的作者很聪明”，然后输出你用模板自身的编码填充该空格后得到的句子的编码。结果将是一个声称其自身作者很聪明的句子。
 
-这个思想在**[对角引理](@article_id:309708) (Diagonal Lemma)** 或[不动点引理](@article_id:311455) (Fixed-Point Lemma) 中被形式化。它保证了对于*任何*可以用算术语言表达的性质 $P(x)$，我们都可以构造一个句子 $\theta$，它本质上说“我具有性质 $P$”。形式上，系统证明了等价关系 $\theta \leftrightarrow P(\ulcorner\theta\urcorner)$。
+这个思想在**[对角引理](@keyword=diagonal_lemma|lang=zh-CN|style=Feynman) (Diagonal Lemma)** 或[不动点引理](@keyword=fixed_point_lemma|lang=zh-CN|style=Feynman) (Fixed-Point Lemma) 中被形式化。它保证了对于*任何*可以用算术语言表达的性质 $P(x)$，我们都可以构造一个句子 $\theta$，它本质上说“我具有性质 $P$”。形式上，系统证明了等价关系 $\theta \leftrightarrow P(\ulcorner\theta\urcorner)$[@problem_id:2974944]。
 
-这个引理是[自指](@article_id:349641)的引擎。它赋予了[形式系统](@article_id:638353)以一种精确且不容否认的方式谈论自身的能力。而且至关重要的是，它的证明是一个纯粹的句法构造。它不依赖任何关于真理或意义的宏大哲学假设，只依赖于系统表示简单符号 shuffling 函数的基本能力。这使得它的后果如此不可避免。
+这个引理是[自指](@keyword=self_referencing|lang=zh-CN|style=Feynman)的引擎。它赋予了[形式系统](@keyword=formal_systems|lang=zh-CN|style=Feynman)以一种精确且不容否认的方式谈论自身的能力。而且至关重要的是，它的证明是一个纯粹的句法构造。它不依赖任何关于真理或意义的宏大哲学假设，只依赖于系统表示简单符号 shuffling 函数的基本能力[@problem_id:2984075]。这使得它的后果如此不可避免。
 
-### 无法企及的山峰：[哥德尔](@article_id:642168)不完备性
+### 无法企及的山峰：[哥德尔](@keyword=gödel|lang=zh-CN|style=Feynman)不完备性
 
-有了[对角引理](@article_id:309708)这个工具，[Kurt Gödel](@article_id:308735) 的革命性发现的舞台就搭建好了。让我们选择一个性质。让我们的性质 $P(x)$ 是“是不可证的”。使用我们的可证性谓词，我们可以将其写为 $\neg \mathrm{Prov}(x)$。
+有了[对角引理](@keyword=diagonal_lemma|lang=zh-CN|style=Feynman)这个工具，[Kurt Gödel](@keyword=kurt_gödel|lang=zh-CN|style=Feynman) 的革命性发现的舞台就搭建好了。让我们选择一个性质。让我们的性质 $P(x)$ 是“是不可证的”。使用我们的可证性谓词，我们可以将其写为 $\neg \mathrm{Prov}(x)$。
 
-现在，[对角引理](@article_id:309708)给了我们一个句子，我们将其命名为著名的 $G$，使得系统证明：
+现在，[对角引理](@keyword=diagonal_lemma|lang=zh-CN|style=Feynman)给了我们一个句子，我们将其命名为著名的 $G$，使得系统证明：
 
 $$
 G \leftrightarrow \neg \mathrm{Prov}(\ulcorner G \urcorner)
@@ -49,25 +49,25 @@ $$
 -   假设 $G$ *是*可证的。那么系统正在证明一个根据其内部逻辑必须为真的句子。但这个句子说它是不可证的。这是一个直接的矛盾。一个相容的系统不能证明 $G$。
 -   所以，我们必须得出结论，$G$ 是*不可*证的。但等等——如果 $G$ 不可证，那么它所断言的（“我是不可证的”）就是*真*的。
 
-这就是惊天动地的结论：我们构造了一个我们知道为真，但我们同时也证明了它在[形式系统](@article_id:638353)内是不可证的句子 $G$。因此，该系统是**不完备的**。在算术中存在着永远无法被证明的真陈述。
+这就是惊天动地的结论：我们构造了一个我们知道为真，但我们同时也证明了它在[形式系统](@keyword=formal_systems|lang=zh-CN|style=Feynman)内是不可证的句子 $G$。因此，该系统是**不完备的**。在算术中存在着永远无法被证明的真陈述。
 
-这个结果具有毁灭性的普遍性。[Gödel](@article_id:642168) 最初的证明需要一个温和的语义假设，称为 $\omega$-相容性。但后来，J.B. Rosser 设计了一个更巧妙的自指句子，仅使用系统相容性的基本假设就得出了相同的结论。一个完备且终极的数学公理化的梦想破灭了，被一个允许系统谈论自身的简单[递归函数](@article_id:639288)所扼杀。
+这个结果具有毁灭性的普遍性。[Gödel](@keyword=gödel|lang=zh-CN|style=Feynman) 最初的证明需要一个温和的语义假设，称为 $\omega$-相容性。但后来，J.B. Rosser 设计了一个更巧妙的自指句子，仅使用系统相容性的基本假设就得出了相同的结论[@problem_id:2973586]。一个完备且终极的数学公理化的梦想破灭了，被一个允许系统谈论自身的简单[递归函数](@keyword=recursive_function|lang=zh-CN|style=Feynman)所扼杀。
 
-### 计算的极限：不可解的[停机问题](@article_id:328947)
+### 计算的极限：不可解的[停机问题](@keyword=the_halting_problem|lang=zh-CN|style=Feynman)
 
-由[可表示性](@article_id:639573)构建的[逻辑与计算](@article_id:334429)之间的桥梁是双向的。不仅逻辑可以[模拟计算](@article_id:336734)，逻辑的极限也对计算施加了限制。[理论计算机科学](@article_id:330816)中最著名的问题是**停机问题 (Halting Problem)**，它问：我们能否编写一个单一的计算机程序，给定任何其他程序及其输入，能够确定该程序最终会停机还是会永远运行下去？Alan Turing 证明了这样的程序是不可能的。
+由[可表示性](@keyword=representability|lang=zh-CN|style=Feynman)构建的[逻辑与计算](@keyword=logic_and_computation|lang=zh-CN|style=Feynman)之间的桥梁是双向的。不仅逻辑可以[模拟计算](@keyword=analog_computing|lang=zh-CN|style=Feynman)，逻辑的极限也对计算施加了限制。[理论计算机科学](@keyword=computer_science_theory|lang=zh-CN|style=Feynman)中最著名的问题是**停机问题 (Halting Problem)**，它问：我们能否编写一个单一的计算机程序，给定任何其他程序及其输入，能够确定该程序最终会停机还是会永远运行下去？Alan Turing 证明了这样的程序是不可能的。
 
-[递归函数的可表示性](@article_id:315314)为此提供了另一种深刻的证明。任何图灵机的操作都是一个机械的、递归的过程。因此，我们可以构造一个算术公式 $\theta_{M,x}$，它在算术的标准模型中为真当且仅当“图灵机 $M$ 在输入 $x$ 上停机”。
+[递归函数的可表示性](@keyword=representability_of_recursive_functions|lang=zh-CN|style=Feynman)为此提供了另一种深刻的证明[@problem_id:2970381]。任何图灵机的操作都是一个机械的、递归的过程。因此，我们可以构造一个算术公式 $\theta_{M,x}$，它在算术的标准模型中为真当且仅当“图灵机 $M$ 在输入 $x$ 上停机”。
 
-现在，想象一下如果存在一个[算法](@article_id:331821)——一个“判定程序”——能够确定*任何*算术句子的真假。如果这样的[算法](@article_id:331821)存在，我们就可以用它来解决[停机问题](@article_id:328947)。怎么做？只需将句子 $\theta_{M,x}$ 喂给它。该[算法](@article_id:331821)的答案（“真”或“假”）就会告诉我们机器 $M$ 是否在输入 $x$ 上停机。
+现在，想象一下如果存在一个[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)——一个“判定程序”——能够确定*任何*算术句子的真假。如果这样的[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)存在，我们就可以用它来解决[停机问题](@keyword=the_halting_problem|lang=zh-CN|style=Feynman)。怎么做？只需将句子 $\theta_{M,x}$ 喂给它。该[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的答案（“真”或“假”）就会告诉我们机器 $M$ 是否在输入 $x$ 上停机。
 
-既然我们知道停机问题是不可解的，我们必须得出结论，我们的初始前提是错误的。不存在这样的用于判定算术真理的通用[算法](@article_id:331821)。所有算术真陈述的集合 $Th(\mathbb{N})$ 是**不可判定的**。这揭示了一个不仅对[数学证明](@article_id:297612)，而且对计算本身都存在的根本障碍。
+既然我们知道停机问题是不可解的，我们必须得出结论，我们的初始前提是错误的。不存在这样的用于判定算术真理的通用[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)。所有算术真陈述的集合 $Th(\mathbb{N})$ 是**不可判定的**。这揭示了一个不仅对[数学证明](@keyword=mathematical_proof|lang=zh-CN|style=Feynman)，而且对计算本身都存在的根本障碍。
 
 ### 机器中的幽灵：塔斯基真理不可定义性
 
-[Gödel](@article_id:642168) 表明“真理”与“可证性”不同。那么什么是真理？我们至少能在算术语言中给出一个真理的形式*定义*吗？也就是说，我们能找到一个公式 $\mathrm{True}(f)$，它当且仅当编码为 $f$ 的句子在标准模型中为真时成立吗？
+[Gödel](@keyword=gödel|lang=zh-CN|style=Feynman) 表明“真理”与“可证性”不同。那么什么是真理？我们至少能在算术语言中给出一个真理的形式*定义*吗？也就是说，我们能找到一个公式 $\mathrm{True}(f)$，它当且仅当编码为 $f$ 的句子在标准模型中为真时成立吗？
 
-再一次，[对角引理](@article_id:309708)提供了一个惊人优雅的否定答案。这就是 Alfred Tarski 关于真理不可定义性的定理。让我们的性质 $P(x)$ 是“不是真的”，我们写成 $\neg \mathrm{True}(x)$。[对角引理](@article_id:309708)给了我们一个句子 $\lambda$，它断言“我不是真的”。
+再一次，[对角引理](@keyword=diagonal_lemma|lang=zh-CN|style=Feynman)提供了一个惊人优雅的否定答案。这就是 Alfred Tarski 关于真理不可定义性的定理[@problem_id:2984080]。让我们的性质 $P(x)$ 是“不是真的”，我们写成 $\neg \mathrm{True}(x)$。[对角引理](@keyword=diagonal_lemma|lang=zh-CN|style=Feynman)给了我们一个句子 $\lambda$，它断言“我不是真的”。
 
 $$
 \lambda \leftrightarrow \neg \mathrm{True}(\ulcorner \lambda \urcorner)
@@ -75,16 +75,16 @@ $$
 
 但真理谓词的定义本身就要求，对于任何句子，包括我们的句子 $\lambda$，都必须有 $\mathrm{True}(\ulcorner \lambda \urcorner) \leftrightarrow \lambda$。将这两个等价关系结合起来，就导致了荒谬的 $\lambda \leftrightarrow \neg \lambda$。这就是古老的说谎者悖论（“这句话是假的”），在形式数学的心脏地带复活了。
 
-结论是，没有一个足够强大的[形式语言](@article_id:328817)能够定义其自身的真理谓词。“真理”在一种语言中必然超越该语言。这或许是从[可表示性](@article_id:639573)的技术机制中产生的最重要的哲学洞见，为形式语义学的范围设定了一个根本的限制。
+结论是，没有一个足够强大的[形式语言](@keyword=formal_languages|lang=zh-CN|style=Feynman)能够定义其自身的真理谓词[@problem_id:2984059]。“真理”在一种语言中必然超越该语言。这或许是从[可表示性](@keyword=representability|lang=zh-CN|style=Feynman)的技术机制中产生的最重要的哲学洞见，为形式语义学的范围设定了一个根本的限制。
 
 ### 地平线之外：衡量理论的强度
 
-[哥德尔](@article_id:642168)第二不[完备性定理](@article_id:312012)，作为第一定理的推论，指出一个相容的系统如皮亚诺算术（PA）不能证明其自身的相容性陈述 $\mathrm{Con}(\mathrm{PA})$。这催生了一个引人入胜的研究纲领：如果PA不能证明自身的相容性，我们需要添加什么*更强*的原则才能做到这一点？
+[哥德尔](@keyword=gödel|lang=zh-CN|style=Feynman)第二不[完备性定理](@keyword=completeness_theorem|lang=zh-CN|style=Feynman)，作为第一定理的推论，指出一个相容的系统如皮亚诺算术（PA）不能证明其自身的相容性陈述 $\mathrm{Con}(\mathrm{PA})$。这催生了一个引人入胜的研究纲领：如果PA不能证明自身的相容性，我们需要添加什么*更强*的原则才能做到这一点？
 
-在20世纪30年代，[Gerhard Gentzen](@article_id:310910) 给出了一个答案。他给出了P[A相](@article_id:374368)容性的一个证明，但他的证明使用了一个来自算术之外的原则：直到某个特定的、非常大的可数[序数](@article_id:312988)（一个来自集合论的序数，称为 $\varepsilon_0$）的[超限归纳法](@article_id:314332)。关键点在于，“直到 $\varepsilon_0$ 的[超限归纳法](@article_id:314332)是有效的”这一陈述本身在PA中是不可证的。事实上，在一个弱基础理论之上，它被证明在逻辑上等价于 $\mathrm{Con}(\mathrm{PA})$。
+在20世纪30年代，[Gerhard Gentzen](@keyword=gerhard_gentzen|lang=zh-CN|style=Feynman) 给出了一个答案。他给出了P[A相](@keyword=a_phase|lang=zh-CN|style=Feynman)容性的一个证明，但他的证明使用了一个来自算术之外的原则：直到某个特定的、非常大的可数[序数](@keyword=ordinal_numbers|lang=zh-CN|style=Feynman)（一个来自集合论的序数，称为 $\varepsilon_0$）的[超限归纳法](@keyword=transfinite_induction|lang=zh-CN|style=Feynman)。关键点在于，“直到 $\varepsilon_0$ 的[超限归纳法](@keyword=transfinite_induction|lang=zh-CN|style=Feynman)是有效的”这一陈述本身在PA中是不可证的。事实上，在一个弱基础理论之上，它被证明在逻辑上等价于 $\mathrm{Con}(\mathrm{PA})$[@problem_id:2974942]。
 
-这创造了一种优美而出人意料的方式来“衡量”形式理论的强度。[可表示性](@article_id:639573)的后果（特别是哥德尔第二定理）提供了一个基准。一个理论的强度可以通过它能证明其良序性的序数来衡量，从而将形式系统的逻辑极限与[集合论](@article_id:298234)中巍峨的无穷数等级体系联系起来。
+这创造了一种优美而出人意料的方式来“衡量”形式理论的强度。[可表示性](@keyword=representability|lang=zh-CN|style=Feynman)的后果（特别是哥德尔第二定理）提供了一个基准。一个理论的强度可以通过它能证明其良序性的序数来衡量，从而将形式系统的逻辑极限与[集合论](@keyword=set_theory|lang=zh-CN|style=Feynman)中巍峨的无穷数等级体系联系起来。
 
 ### 一沙一世界
 
-从用数字表示机械程序的简单想法到这些深刻结论的旅程，是现代思想的伟大史诗之一。最初作为形式化句法的技术工具，它变成了一种“万能酸”，揭示了证明、计算和定义的根本限制。它表明，任何足够丰富以包含自然数 humble 算术的形式系统，也都包含了其自身不完备性和不可定义性的种子。这远非一个缺陷，这种自我反思的能力正是使这些系统无穷迷人的原因。它保证了总有新的真理位于可证地平线之外，总有新问题位于可计算范围之外——一个真正无限的宇宙，被捕获在简单的[数字逻辑](@article_id:323520)之中。
+从用数字表示机械程序的简单想法到这些深刻结论的旅程，是现代思想的伟大史诗之一。最初作为形式化句法的技术工具，它变成了一种“万能酸”，揭示了证明、计算和定义的根本限制。它表明，任何足够丰富以包含自然数 humble 算术的形式系统，也都包含了其自身不完备性和不可定义性的种子。这远非一个缺陷，这种自我反思的能力正是使这些系统无穷迷人的原因。它保证了总有新的真理位于可证地平线之外，总有新问题位于可计算范围之外——一个真正无限的宇宙，被捕获在简单的[数字逻辑](@keyword=digital_logic|lang=zh-CN|style=Feynman)之中。

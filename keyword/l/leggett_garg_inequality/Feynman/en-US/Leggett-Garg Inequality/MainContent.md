@@ -26,23 +26,23 @@ Now, let’s consider a peculiar combination of these values for a single histor
 
 No matter what the history is, the value of $Q_1Q_2 + Q_2Q_3 - Q_1Q_3$ for a single system can only be $1$ or $-3$. Now, let's consider a statistical experiment. We can't measure all three values at once without running into trouble (measuring $Q_2$ might disturb the relationship between $Q_1$ and $Q_3$). So, we do three separate experiments on identically prepared systems: one to measure the correlation $C_{12} = \langle Q_1 Q_2 \rangle$, one for $C_{23} = \langle Q_2 Q_3 \rangle$, and one for $C_{13} = \langle Q_1 Q_3 \rangle$. The angle brackets mean we're averaging the products over many runs.
 
-If our classical assumptions hold, the statistical average of our peculiar quantity, which we'll call $K_3 = C_{12} + C_{23} - C_{13}$, must be an average of values that are only ever $1$ or $-3$. Therefore, the average value $K_3$ can never be greater than $1$.  This is the famous **Leggett-Garg inequality**:
+If our classical assumptions hold, the statistical average of our peculiar quantity, which we'll call $K_3 = C_{12} + C_{23} - C_{13}$, must be an average of values that are only ever $1$ or $-3$. Therefore, the average value $K_3$ can never be greater than $1$. [@problem_id:679607] This is the famous **Leggett-Garg inequality**:
 
 $$
 K_3 \le 1
 $$
 
-This simple inequality is the line in the sand. Any system that adheres to Macroscopic Realism and Non-Invasive Measurability, no matter how complex, must obey this rule. The full bounds are actually $-3 \le K_3 \le 1$ , but it's the upper bound that quantum mechanics loves to challenge.
+This simple inequality is the line in the sand. Any system that adheres to Macroscopic Realism and Non-Invasive Measurability, no matter how complex, must obey this rule. The full bounds are actually $-3 \le K_3 \le 1$ [@problem_id:2931617], but it's the upper bound that quantum mechanics loves to challenge.
 
 ### Quantum Choreography and the Broken Promise
 
-So, what does quantum mechanics, our prime suspect, have to say? Let's take the simplest quantum system imaginable: a **qubit**. This could be the spin of an electron in a magnetic field or a tiny superconducting circuit called a [flux qubit](@article_id:146891) . Our observable $Q$ is now a [quantum operator](@article_id:144687), for instance, the Pauli matrix $\sigma_z$, whose outcomes are indeed $\pm 1$.
+So, what does quantum mechanics, our prime suspect, have to say? Let's take the simplest quantum system imaginable: a **qubit**. This could be the spin of an electron in a magnetic field or a tiny superconducting circuit called a [flux qubit](@keyword=flux_qubit|lang=en-US|style=Feynman) [@problem_id:1214668]. Our observable $Q$ is now a [quantum operator](@keyword=quantum_operator|lang=en-US|style=Feynman), for instance, the Pauli matrix $\sigma_z$, whose outcomes are indeed $\pm 1$.
 
-The experiment proceeds much as described before. We prepare our qubit in a starting state, say the $+1$ eigenstate of $\sigma_z$. Then we let it evolve. A common way to make a qubit evolve is to apply a magnetic field that causes its state to precess, a process known as Rabi oscillations . The evolution is described by a Hamiltonian like $H = \frac{\hbar \Omega}{2}\sigma_x$, which causes the quantum state to rotate around the x-axis of the Bloch sphere.
+The experiment proceeds much as described before. We prepare our qubit in a starting state, say the $+1$ eigenstate of $\sigma_z$. Then we let it evolve. A common way to make a qubit evolve is to apply a magnetic field that causes its state to precess, a process known as Rabi oscillations [@problem_id:154116]. The evolution is described by a Hamiltonian like $H = \frac{\hbar \Omega}{2}\sigma_x$, which causes the quantum state to rotate around the x-axis of the Bloch sphere.
 
 Here comes the crucial difference. In quantum mechanics, measurement is not a gentle peek. It's a forceful interrogation. When we measure $\sigma_z$ at time $t_1$, the system is *forced* to choose an outcome, $+1$ or $-1$, and its state collapses into the corresponding eigenstate. This act of measurement fundamentally alters the system, erasing the delicate superposition it might have been in. This is a direct assault on the principle of Non-Invasive Measurability.
 
-Let's calculate the correlations for this quantum dance. It turns out that for this specific kind of evolution, the correlation between a measurement at time $t_i$ and a later time $t_j$ is given by a beautifully simple formula :
+Let's calculate the correlations for this quantum dance. It turns out that for this specific kind of evolution, the correlation between a measurement at time $t_i$ and a later time $t_j$ is given by a beautifully simple formula [@problem_id:1214668]:
 
 $$
 C_{ij} = \cos(\Omega(t_j - t_i))
@@ -50,7 +50,7 @@ $$
 
 where $\Omega$ is the frequency of the Rabi oscillations. The correlation depends only on the time difference, fading and reviving in a perfect sinusoidal wave.
 
-Now we plug these [quantum correlations](@article_id:135833) into the Leggett-Garg expression. Let's choose our measurement times to be equally spaced, $t_1=0$, $t_2=\tau$, and $t_3=2\tau$. Then our expression becomes [@problem_id:2081519, 49916]:
+Now we plug these [quantum correlations](@keyword=quantum_correlations|lang=en-US|style=Feynman) into the Leggett-Garg expression. Let's choose our measurement times to be equally spaced, $t_1=0$, $t_2=\tau$, and $t_3=2\tau$. Then our expression becomes [@problem_id:2081519, 49916]:
 
 $$
 K_3 = C_{12} + C_{23} - C_{13} = \cos(\Omega\tau) + \cos(\Omega\tau) - \cos(2\Omega\tau) = 2\cos(\Omega\tau) - \cos(2\Omega\tau)
@@ -62,13 +62,13 @@ $$
 K_3 = 2\cos\left(\frac{\pi}{3}\right) - \cos\left(\frac{2\pi}{3}\right) = 2 \cdot \left(\frac{1}{2}\right) - \left(-\frac{1}{2}\right) = 1 + \frac{1}{2} = \frac{3}{2}
 $$
 
-We find $K_3 = 1.5$. This value is unambiguously greater than $1$. The classical worldview, built on the bedrock of realism and non-invasive observation, has been shown to be incompatible with the predictions of quantum mechanics. For certain choices of timing, a quantum system is simply not guaranteed to satisfy the inequality .
+We find $K_3 = 1.5$. This value is unambiguously greater than $1$. The classical worldview, built on the bedrock of realism and non-invasive observation, has been shown to be incompatible with the predictions of quantum mechanics. For certain choices of timing, a quantum system is simply not guaranteed to satisfy the inequality [@problem_id:1214668].
 
 ### The Quantum Speed Limit
 
-Is $1.5$ a special number? It is. For any system that can be described as a single qubit, this value of $3/2$ is the absolute maximum possible violation of the three-time inequality. This ceiling is sometimes called the **Lüders bound** . It's a fundamental limit, derived from the geometry of [quantum state evolution](@article_id:154263) itself.
+Is $1.5$ a special number? It is. For any system that can be described as a single qubit, this value of $3/2$ is the absolute maximum possible violation of the three-time inequality. This ceiling is sometimes called the **Lüders bound** [@problem_id:647998]. It's a fundamental limit, derived from the geometry of [quantum state evolution](@keyword=quantum_state_evolution|lang=en-US|style=Feynman) itself.
 
-And the story doesn't end with three measurements. We can construct a whole family of these inequalities. For instance, a four-time version, $K_4 = C_{12} + C_{23} + C_{34} - C_{41}$, is classically bound by $K_4 \le 2$. What does quantum mechanics say? For a precessing qubit, by optimizing the timing, we can achieve a value of $K_4 = 2\sqrt{2} \approx 2.828$, again smashing the classical bound . In fact, the relative violation gets even more severe as we add more measurement times, showing that this quantum-classical disagreement is deep and persistent.
+And the story doesn't end with three measurements. We can construct a whole family of these inequalities. For instance, a four-time version, $K_4 = C_{12} + C_{23} + C_{34} - C_{41}$, is classically bound by $K_4 \le 2$. What does quantum mechanics say? For a precessing qubit, by optimizing the timing, we can achieve a value of $K_4 = 2\sqrt{2} \approx 2.828$, again smashing the classical bound [@problem_id:2097081]. In fact, the relative violation gets even more severe as we add more measurement times, showing that this quantum-classical disagreement is deep and persistent.
 
 ### The Inevitable Disturbance
 
@@ -78,7 +78,7 @@ This is a valid and crucial point, known as the **NIM loophole**. The violation 
 
 Can we quantify this "clumsiness"? We can. Let's build a model where our measurement isn't perfect. Imagine that every time we measure our qubit, there's a probability $\alpha$ that the measurement is so disruptive that it completely scrambles the qubit's state into a random, useless mixture. The parameter $\alpha$ is a measure of our measurement's "invasiveness."
 
-If we re-calculate the maximum value of $K_3$ with this imperfection, we get a truly elegant result :
+If we re-calculate the maximum value of $K_3$ with this imperfection, we get a truly elegant result [@problem_id:647820]:
 
 $$
 K_{3, \text{max}} = 1 + \frac{(1-\alpha)^2}{2}
@@ -86,6 +86,6 @@ $$
 
 Look at this formula. If the measurement is perfectly non-invasive ($\alpha = 0$), we get $K_{3, \text{max}} = 1 + 1/2 = 3/2$, the full quantum violation. If the measurement is maximally clumsy and always scrambles the state ($\alpha = 1$), we get $K_{3, \text{max}} = 1$, the classical bound. No violation is possible. This model provides a beautiful bridge between the quantum and classical worlds, showing how the "quantumness" of the result, the degree of violation, is directly tied to how gently we can probe the system.
 
-Even a very subtle disturbance has consequences. In another model, instead of randomizing the state, each measurement gives the qubit a tiny, unwanted rotational "kick" of strength $\alpha$ . Even for an infinitesimally small kick ($\alpha \ll 1$), the value of $K_3$ is measurably shifted away from the ideal quantum value, with the correction being proportional to $\alpha$. This extreme sensitivity underscores a profound truth: in the quantum world, there is no such thing as a truly silent observer. The act of gaining information inevitably leaves a footprint.
+Even a very subtle disturbance has consequences. In another model, instead of randomizing the state, each measurement gives the qubit a tiny, unwanted rotational "kick" of strength $\alpha$ [@problem_id:720602]. Even for an infinitesimally small kick ($\alpha \ll 1$), the value of $K_3$ is measurably shifted away from the ideal quantum value, with the correction being proportional to $\alpha$. This extreme sensitivity underscores a profound truth: in the quantum world, there is no such thing as a truly silent observer. The act of gaining information inevitably leaves a footprint.
 
 The principles of Leggett and Garg, therefore, do more than just distinguish between classical and quantum mechanics. They provide a quantitative tool to probe the very nature of measurement and reality. They transform a philosophical question—"Is the world real and is our observation of it passive?"—into a concrete, experimental test whose outcome, $K_3 \gt 1$, tells us that the simple, common-sense picture of our world is, at its core, incomplete. The universe, it seems, does not play by the rules we might have expected. The act of observing its story is part of the story itself.

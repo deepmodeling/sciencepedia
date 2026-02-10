@@ -1,17 +1,17 @@
 ## 引言
-想象一下，你有一套乐高积木，然后发现用完全相同的积木块可以拼搭出几种不同的物体。仅仅通过改变积木的连接方式，你就能创造出截然不同的结构。这个简单而强大的思想正是化学中[构造异构](@article_id:309846)的精髓，它解释了分子世界为何如此丰富多彩。[构造异构体](@article_id:316142)是具有相同[分子式](@article_id:297377)（即原子清单相同）但连接方式（即原子如何连接的蓝图）不同的化合物。这种看似微小的差异却会带来深远的影响，用有限的原子构件创造出具有独特性质和功能的物质。但这一原理是如何体现的？为什么它对从[材料科学](@article_id:312640)到生物学等领域都如此重要？
+想象一下，你有一套乐高积木，然后发现用完全相同的积木块可以拼搭出几种不同的物体。仅仅通过改变积木的连接方式，你就能创造出截然不同的结构。这个简单而强大的思想正是化学中[构造异构](@keyword=constitutional_isomerism|lang=zh-CN|style=Feynman)的精髓，它解释了分子世界为何如此丰富多彩。[构造异构体](@keyword=constitutional_isomers|lang=zh-CN|style=Feynman)是具有相同[分子式](@keyword=molecular_formula|lang=zh-CN|style=Feynman)（即原子清单相同）但连接方式（即原子如何连接的蓝图）不同的化合物。这种看似微小的差异却会带来深远的影响，用有限的原子构件创造出具有独特性质和功能的物质。但这一原理是如何体现的？为什么它对从[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)到生物学等领域都如此重要？
 
-本文将深入探讨[构造异构](@article_id:309846)的核心。“原理与机制”一章将剖析其基本规则，探索不同类型的[异构现象](@article_id:304227)，并将其与相关概念进行区分。随后的“应用与跨学科联系”一章将揭示这些原理如何在现实世界中发挥作用，塑造着从汽车燃料到我们体内的蛋白质等一切事物。
+本文将深入探讨[构造异构](@keyword=constitutional_isomerism|lang=zh-CN|style=Feynman)的核心。“原理与机制”一章将剖析其基本规则，探索不同类型的[异构现象](@keyword=isomerism|lang=zh-CN|style=Feynman)，并将其与相关概念进行区分。随后的“应用与跨学科联系”一章将揭示这些原理如何在现实世界中发挥作用，塑造着从汽车燃料到我们体内的蛋白质等一切事物。
 
 ## 原理与机制
 
-想象一下，你拿到一盒乐高积木。假设你有五块黑色长积木和十二块白色小积木。游戏很简单：将它们全部连接起来。你可能首先会搭出一条长长的直链。然后，你可能会把它拆开，尝试搭建一个更紧凑的[支链](@article_id:357386)结构。或者，你也许会创造一个星形物体。在每种情况下，你都使用了完全相同的部件，但创造出的物体却截然不同。“蓝图”——即哪块积木连接到哪块积木的示意图——每次都不同。
+想象一下，你拿到一盒乐高积木。假设你有五块黑色长积木和十二块白色小积木。游戏很简单：将它们全部连接起来。你可能首先会搭出一条长长的直链。然后，你可能会把它拆开，尝试搭建一个更紧凑的[支链](@keyword=chain_branching|lang=zh-CN|style=Feynman)结构。或者，你也许会创造一个星形物体。在每种情况下，你都使用了完全相同的部件，但创造出的物体却截然不同。“蓝图”——即哪块积木连接到哪块积木的示意图——每次都不同。
 
-这正是**[构造异构](@article_id:309846)**的核心所在。在化学中，[构造异构体](@article_id:316142)是具有完全相同分子式（即原子清单相同）但**连接方式**不同的分子。也就是说，原子以不同的顺序连接在一起。这个简单的思想带来了深远的影响，用有限的原子构件创造出具有独特性质和功能的各种物质。
+这正是**[构造异构](@keyword=constitutional_isomerism|lang=zh-CN|style=Feynman)**的核心所在。在化学中，[构造异构体](@keyword=constitutional_isomers|lang=zh-CN|style=Feynman)是具有完全相同分子式（即原子清单相同）但**连接方式**不同的分子。也就是说，原子以不同的顺序连接在一起。这个简单的思想带来了深远的影响，用有限的原子构件创造出具有独特性质和功能的各种物质。
 
-### 分子的蓝图：碳链、位置和[官能团](@article_id:299926)
+### 分子的蓝图：碳链、位置和[官能团](@keyword=functional_groups|lang=zh-CN|style=Feynman)
 
-让我们从乐高积木转向真实的原子。以[分子式](@article_id:297377)为 $\text{C}_5\text{H}_{12}$ 的简单碳氢化合物为例。这在化学上等同于我们那个装有五个碳“积木”和十二个氢“积木”的盒子。遵循每个碳原子必须形成四个键、每个氢原子必须形成一个键的基本规则，我们有多少种不同的方式来组装它们？
+让我们从乐高积木转向真实的原子。以[分子式](@keyword=molecular_formula|lang=zh-CN|style=Feynman)为 $\text{C}_5\text{H}_{12}$ 的简单碳氢化合物为例。这在化学上等同于我们那个装有五个碳“积木”和十二个氢“积木”的盒子。遵循每个碳原子必须形成四个键、每个氢原子必须形成一个键的基本规则，我们有多少种不同的方式来组装它们？
 
 首先，我们可以将五个碳原子串成一条连续的、无支链的线，就像串珠子一样。然后我们连接氢原子，以满足每个碳原子形成四个键的需求。这就得到了正戊烷（n-pentane），汽油的成分之一。
 
@@ -23,43 +23,43 @@ $\text{CH}_3-\text{CH}_2-\text{CH}_2-\text{CH}_2-\text{CH}_3$
 $\text{CH}_3-\text{CH}(\text{CH}_3)-\text{CH}_2-\text{CH}_3$
 (Isopentane)
 
-我们可以将这个想法更进一步。如果我们把[主链](@article_id:362534)缩短到只有三个碳原子呢？然后我们可以将剩下的两个碳原子作为[支链](@article_id:357386)连接到中心碳原子上，从而创造出一个高度紧凑、近乎球形的分子，称为新戊烷（neopentane）或2,2-二甲基丙烷。
+我们可以将这个想法更进一步。如果我们把[主链](@keyword=parent_chain|lang=zh-CN|style=Feynman)缩短到只有三个碳原子呢？然后我们可以将剩下的两个碳原子作为[支链](@keyword=chain_branching|lang=zh-CN|style=Feynman)连接到中心碳原子上，从而创造出一个高度紧凑、近乎球形的分子，称为新戊烷（neopentane）或2,2-二甲基丙烷。
 
 $\text{C}(\text{CH}_3)_4$
 (Neopentane)
 
-就这样。你尝试绘制的任何其他[排列](@article_id:296886)方式，最终都只是这三种分子从不同角度观察的结果。因此，对于[分子式](@article_id:297377) $\text{C}_5\text{H}_{12}$，自然界恰好提供了三种不同的蓝图，即三种[构造异构体](@article_id:316142) 。这种碳骨架的差异被称为**碳链异构**，它不仅仅是纸面上的奇特现象。正戊烷的沸点是 $36^\circ \text{C}$，而更紧凑的新戊烷[沸点](@article_id:300339)则低得多，仅为 $9.5^\circ \text{C}$。它们不同的形状影响了它们彼此间的相互作用，从而导致了不同的物理性质。
+就这样。你尝试绘制的任何其他[排列](@keyword=permutation|lang=zh-CN|style=Feynman)方式，最终都只是这三种分子从不同角度观察的结果。因此，对于[分子式](@keyword=molecular_formula|lang=zh-CN|style=Feynman) $\text{C}_5\text{H}_{12}$，自然界恰好提供了三种不同的蓝图，即三种[构造异构体](@keyword=constitutional_isomers|lang=zh-CN|style=Feynman) [@problem_id:2820767]。这种碳骨架的差异被称为**碳链异构**，它不仅仅是纸面上的奇特现象。正戊烷的沸点是 $36^\circ \text{C}$，而更紧凑的新戊烷[沸点](@keyword=boiling_point|lang=zh-CN|style=Feynman)则低得多，仅为 $9.5^\circ \text{C}$。它们不同的形状影响了它们彼此间的相互作用，从而导致了不同的物理性质。
 
-蓝图也可以通过更微妙的方式改变。我们不必[重排](@article_id:369331)整个碳骨架，只需改变某个特定特征的位置即可。以1-己炔（1-hexyne）和3-己炔（3-hexyne）这两个分子为例 。两者都具有六碳链和一根[三键](@article_id:381155)，[分子式](@article_id:297377)为 $\text{C}_6\text{H}_{10}$。在1-己炔中，三键位于碳链的最末端，在1号和2号碳原子之间。在3-己炔中，它位于中间，在3号和4号碳原子之间。碳骨架是相同的，但官能团（[三键](@article_id:381155)）的*位置*发生了变化。这被称为**位置异构**。对于芳香环，也可以玩类似的游戏。如果我们将两个氯原子连接到一个苯环上，我们可以创造出三种不同的二氯苯位置异构体：1,2-二氯（邻位）、1,3-二氯（间位）和1,4-二氯（对位），每种都有其独特的性质和用途 。
+蓝图也可以通过更微妙的方式改变。我们不必[重排](@keyword=derangement|lang=zh-CN|style=Feynman)整个碳骨架，只需改变某个特定特征的位置即可。以1-己炔（1-hexyne）和3-己炔（3-hexyne）这两个分子为例 [@problem_id:2204204]。两者都具有六碳链和一根[三键](@keyword=triple_bond|lang=zh-CN|style=Feynman)，[分子式](@keyword=molecular_formula|lang=zh-CN|style=Feynman)为 $\text{C}_6\text{H}_{10}$。在1-己炔中，三键位于碳链的最末端，在1号和2号碳原子之间。在3-己炔中，它位于中间，在3号和4号碳原子之间。碳骨架是相同的，但官能团（[三键](@keyword=triple_bond|lang=zh-CN|style=Feynman)）的*位置*发生了变化。这被称为**位置异构**。对于芳香环，也可以玩类似的游戏。如果我们将两个氯原子连接到一个苯环上，我们可以创造出三种不同的二氯苯位置异构体：1,2-二氯（邻位）、1,3-二氯（间位）和1,4-二氯（对位），每种都有其独特的性质和用途 [@problem_id:2204440]。
 
-有时，连接方式的改变是如此深刻，以至于它改变了分子“个性”的本质。这就产生了**[官能团异构体](@article_id:360675)**。最著名的生物学例子可能是葡萄糖（glucose）和果糖（fructose）。两者的分子式都是 $\text{C}_6\text{H}_{12}\text{O}_6$。然而，葡萄糖是一种[醛糖](@article_id:352302)，意味着它的羰基（$\text{C}=\text{O}$）位于碳链的末端，形成一个醛基。相比之下，果糖是一种[酮糖](@article_id:353695)；它的羰基位于第二个碳原子上，形成一个酮基 。双键位置上这个看似微小的移动却带来了巨大的生物学影响。我们的身体对它们的代谢方式不同，它们的甜度也不同。它们都是六碳糖，但它们不是同一种化合物——它们是[构造异构体](@article_id:316142)。
+有时，连接方式的改变是如此深刻，以至于它改变了分子“个性”的本质。这就产生了**[官能团异构体](@keyword=functional_group_isomers|lang=zh-CN|style=Feynman)**。最著名的生物学例子可能是葡萄糖（glucose）和果糖（fructose）。两者的分子式都是 $\text{C}_6\text{H}_{12}\text{O}_6$。然而，葡萄糖是一种[醛糖](@keyword=aldose|lang=zh-CN|style=Feynman)，意味着它的羰基（$\text{C}=\text{O}$）位于碳链的末端，形成一个醛基。相比之下，果糖是一种[酮糖](@keyword=ketose|lang=zh-CN|style=Feynman)；它的羰基位于第二个碳原子上，形成一个酮基 [@problem_id:2052896]。双键位置上这个看似微小的移动却带来了巨大的生物学影响。我们的身体对它们的代谢方式不同，它们的甜度也不同。它们都是六碳糖，但它们不是同一种化合物——它们是[构造异构体](@keyword=constitutional_isomers|lang=zh-CN|style=Feynman)。
 
-可能性之多令[人眼](@article_id:343903)花缭乱。一个分子式为 $\text{C}_5\text{H}_{10}$ 的分子可以作为带有双键的直链烯烃（1-戊烯）存在，也可以形成一个环。但即使是环状形式也呈现出[构造异构](@article_id:309846)的盛宴：它可以是一个简单的五元环（环戊烷），一个连接有甲基的四元环（甲基环丁烷），甚至是一个连接有两个甲基的三元环（例如，1,1-二甲基环丙烷或1,2-二甲基环丙烷）。这些都是具有相同原子清单的、独特而稳定的化合物 。
+可能性之多令[人眼](@keyword=human_eye|lang=zh-CN|style=Feynman)花缭乱。一个分子式为 $\text{C}_5\text{H}_{10}$ 的分子可以作为带有双键的直链烯烃（1-戊烯）存在，也可以形成一个环。但即使是环状形式也呈现出[构造异构](@keyword=constitutional_isomerism|lang=zh-CN|style=Feynman)的盛宴：它可以是一个简单的五元环（环戊烷），一个连接有甲基的四元环（甲基环丁烷），甚至是一个连接有两个甲基的三元环（例如，1,1-二甲基环丙烷或1,2-二甲基环丙烷）。这些都是具有相同原子清单的、独特而稳定的化合物 [@problem_id:2178055]。
 
 ### 划清界限：区分异构体
 
 要真正掌握一个概念，我们不仅要理解它*是*什么，还要理解它*不是*什么。异构体的世界是丰富的，很容易迷失其中。驾驭它的关键在于连接性的概念。
 
-#### [构造异构体](@article_id:316142)与立体异构体
+#### [构造异构体](@keyword=constitutional_isomers|lang=zh-CN|style=Feynman)与立体异构体
 
-让我们回到醇类。以1-丁醇和2-丁醇为例。两者的分子式都是 $\text{C}_4\text{H}_{10}\text{O}$。在1-丁醇中，羟基（$-\text{OH}$）连接在末端碳原子（C1）上。在2-丁醇中，它连接在内部碳原子（C2）上。蓝图不同，原子间的连接顺序也不同。它们是[构造异构体](@article_id:316142) 。
+让我们回到醇类。以1-丁醇和2-丁醇为例。两者的分子式都是 $\text{C}_4\text{H}_{10}\text{O}$。在1-丁醇中，羟基（$-\text{OH}$）连接在末端碳原子（C1）上。在2-丁醇中，它连接在内部碳原子（C2）上。蓝图不同，原子间的连接顺序也不同。它们是[构造异构体](@keyword=constitutional_isomers|lang=zh-CN|style=Feynman) [@problem_id:2160157]。
 
-现在，让我们仔细看看2-丁醇。连接着 $-\text{OH}$ 基团的那个碳原子还连接着其他三个不同的基团。这使得它成为一个[手性中心](@article_id:373672)，意味着该分子可以以两种互为镜像但不能重叠的形式存在，就像你的左手和右手一样。它们被称为(R)-2-丁醇和(S)-2-丁醇。它们的*连接方式完全相同*——在这两种分子中，$-\text{OH}$ 基团都在C2上，而C2与C1、C3和一个氢原子相连。唯一的区别是它们在空间中的三维[排列](@article_id:296886)。它们是**立体异构体**，特别是**对映异构体**，而不是[构造异构体](@article_id:316142)。同样，顺式-1,2-二甲基环戊烷和反式-1,2-二甲基环戊烷是立体异构体，而1,2-二甲基环戊烷和1,3-二甲基环戊烷是[构造异构体](@article_id:316142)，因为甲基的位置不同 。
+现在，让我们仔细看看2-丁醇。连接着 $-\text{OH}$ 基团的那个碳原子还连接着其他三个不同的基团。这使得它成为一个[手性中心](@keyword=stereocenter|lang=zh-CN|style=Feynman)，意味着该分子可以以两种互为镜像但不能重叠的形式存在，就像你的左手和右手一样。它们被称为(R)-2-丁醇和(S)-2-丁醇。它们的*连接方式完全相同*——在这两种分子中，$-\text{OH}$ 基团都在C2上，而C2与C1、C3和一个氢原子相连。唯一的区别是它们在空间中的三维[排列](@keyword=permutation|lang=zh-CN|style=Feynman)。它们是**立体异构体**，特别是**对映异构体**，而不是[构造异构体](@keyword=constitutional_isomers|lang=zh-CN|style=Feynman)。同样，顺式-1,2-二甲基环戊烷和反式-1,2-二甲基环戊烷是立体异构体，而1,2-二甲基环戊烷和1,3-二甲基环戊烷是[构造异构体](@keyword=constitutional_isomers|lang=zh-CN|style=Feynman)，因为甲基的位置不同 [@problem_id:2166869]。
 
-规则很简单：如果必须通过断裂和形成[化学键](@article_id:305517)才能将一个分子转变为另一个分子，那么它们就是[构造异构体](@article_id:316142)。如果你可以（原则上）仅通过在空间中重新[排列](@article_id:296886)而不破坏[化学键](@article_id:305517)就将一个分子转变为另一个分子，那么它们就是[立体异构体](@article_id:299937)。
+规则很简单：如果必须通过断裂和形成[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)才能将一个分子转变为另一个分子，那么它们就是[构造异构体](@keyword=constitutional_isomers|lang=zh-CN|style=Feynman)。如果你可以（原则上）仅通过在空间中重新[排列](@keyword=permutation|lang=zh-CN|style=Feynman)而不破坏[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)就将一个分子转变为另一个分子，那么它们就是[立体异构体](@keyword=stereoisomers|lang=zh-CN|style=Feynman)。
 
-#### [构造异构体](@article_id:316142)与构象异构体
+#### [构造异构体](@keyword=constitutional_isomers|lang=zh-CN|style=Feynman)与构象异构体
 
-还有一个更微妙的区别需要说明。以简单分子乙烷 $\text{C}_2\text{H}_6$ 为例。两个甲基（$\text{CH}_3$）通过一个单键相连。这个键就像一[根轴](@article_id:345941)，两个基团可以围绕它自由旋转。在任何给定时刻，该分子可能处于“交错式”构象，即前面碳原子上的氢原子正好位于后面碳原子上氢原子之间的空隙中。这是能量最低的状态。片刻之后，它可能旋转成“重叠式”构象，此时氢原子对齐，产生排斥力，能量状态更高。
+还有一个更微妙的区别需要说明。以简单分子乙烷 $\text{C}_2\text{H}_6$ 为例。两个甲基（$\text{CH}_3$）通过一个单键相连。这个键就像一[根轴](@keyword=radical_axis|lang=zh-CN|style=Feynman)，两个基团可以围绕它自由旋转。在任何给定时刻，该分子可能处于“交错式”构象，即前面碳原子上的氢原子正好位于后面碳原子上氢原子之间的空隙中。这是能量最低的状态。片刻之后，它可能旋转成“重叠式”构象，此时氢原子对齐，产生排斥力，能量状态更高。
 
-这两种形式——交错式和重叠式——是异构体吗？不是。它们是**构象异构体**，或简称**构象体**（conformers）。它们具有相同的连接方式，在室温下无需断裂任何[化学键](@article_id:305517)即可极快地相互转换。它们不是可以分离的独立化合物，而是*同一个*分子的不同瞬时形态 。而真正的[构造异构体](@article_id:316142)，如丁烷和异丁烷，需要断裂并重组碳-碳键才能相互转化——这是一个不会自发发生的[化学反应](@article_id:307389)。
+这两种形式——交错式和重叠式——是异构体吗？不是。它们是**构象异构体**，或简称**构象体**（conformers）。它们具有相同的连接方式，在室温下无需断裂任何[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)即可极快地相互转换。它们不是可以分离的独立化合物，而是*同一个*分子的不同瞬时形态 [@problem_id:2184963]。而真正的[构造异构体](@keyword=constitutional_isomers|lang=zh-CN|style=Feynman)，如丁烷和异丁烷，需要断裂并重组碳-碳键才能相互转化——这是一个不会自发发生的[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)。
 
 ### 普适原理：超越碳化学
 
-虽然这些例子都来自[有机化学](@article_id:298184)，但[构造异构](@article_id:309846)原理是普适的。它适用于任何原子连接形成分子的地方。在配位化学中，[中心金属离子](@article_id:300142)被配体包围。在这里，同样的部件也可以用不同的方式组装。
+虽然这些例子都来自[有机化学](@keyword=organic_chemistry|lang=zh-CN|style=Feynman)，但[构造异构](@keyword=constitutional_isomerism|lang=zh-CN|style=Feynman)原理是普适的。它适用于任何原子连接形成分子的地方。在配位化学中，[中心金属离子](@keyword=central_metal_ion|lang=zh-CN|style=Feynman)被配体包围。在这里，同样的部件也可以用不同的方式组装。
 
-例如，[配合物](@article_id:317067) $[\text{Co}(\text{NH}_3)_5(\text{NO}_2)]\text{Cl}_2$ 中有一个亚硝酸根配体（$\text{NO}_2^-$），它通过氮原子与中心钴原子连接。它的[构造异构体](@article_id:316142) $[\text{Co}(\text{NH}_3)_5(\text{ONO})]\text{Cl}_2$ 具有完全相同的分子式，但亚[硝酸](@article_id:314248)根配体是通过其氧原子之一连接的。这被称为**[键合异构](@article_id:299402)**。另一种类型，**[电离异构](@article_id:307838)**，发生在配体和抗衡[离子交换](@article_id:311278)位置时。化合物 $[\text{Co}(\text{NH}_3)_5\text{SO}_4]\text{Br}$ 有一个[硫酸](@article_id:297048)根配体和一个溴离子抗衡离子。它的异构体 $[\text{Co}(\text{NH}_3)_5\text{Br}]\text{SO}_4$ 有一个溴配体和一个[硫酸](@article_id:297048)根抗衡离子。当溶解在水中时，它们会释放出不同的离子——这是它们连接方式不同的一个完美证明 。
+例如，[配合物](@keyword=coordination_compound|lang=zh-CN|style=Feynman) $[\text{Co}(\text{NH}_3)_5(\text{NO}_2)]\text{Cl}_2$ 中有一个亚硝酸根配体（$\text{NO}_2^-$），它通过氮原子与中心钴原子连接。它的[构造异构体](@keyword=constitutional_isomers|lang=zh-CN|style=Feynman) $[\text{Co}(\text{NH}_3)_5(\text{ONO})]\text{Cl}_2$ 具有完全相同的分子式，但亚[硝酸](@keyword=nitric_acid|lang=zh-CN|style=Feynman)根配体是通过其氧原子之一连接的。这被称为**[键合异构](@keyword=linkage_isomerism|lang=zh-CN|style=Feynman)**。另一种类型，**[电离异构](@keyword=ionization_isomerism|lang=zh-CN|style=Feynman)**，发生在配体和抗衡[离子交换](@keyword=ion_exchange|lang=zh-CN|style=Feynman)位置时。化合物 $[\text{Co}(\text{NH}_3)_5\text{SO}_4]\text{Br}$ 有一个[硫酸](@keyword=sulfuric_acid|lang=zh-CN|style=Feynman)根配体和一个溴离子抗衡离子。它的异构体 $[\text{Co}(\text{NH}_3)_5\text{Br}]\text{SO}_4$ 有一个溴配体和一个[硫酸](@keyword=sulfuric_acid|lang=zh-CN|style=Feynman)根抗衡离子。当溶解在水中时，它们会释放出不同的离子——这是它们连接方式不同的一个完美证明 [@problem_id:2000953]。
 
-最后，将异构现象与一个相关概念**同素异形**区分开来至关重要。[斜方硫](@article_id:316614)和[单斜硫](@article_id:317038)是*元素*硫的两种不同晶体形式。石墨和金刚石是*元素*碳的两种不同网络结构。这些是**同素异形体**。而[异构现象](@article_id:304227)则描述了*化合物*——由两种或多种不同元素组成的物质——内部的不同[排列](@article_id:296886)方式 。正丁烷和异丁烷是化合物 $\text{C}_4\text{H}_{10}$ 的异构体。同素异形是关于单一元素如何呈现不同结构形态；异构则是关于一组不同元素如何以不同方式组织。
+最后，将异构现象与一个相关概念**同素异形**区分开来至关重要。[斜方硫](@keyword=rhombic_sulfur|lang=zh-CN|style=Feynman)和[单斜硫](@keyword=monoclinic_sulfur|lang=zh-CN|style=Feynman)是*元素*硫的两种不同晶体形式。石墨和金刚石是*元素*碳的两种不同网络结构。这些是**同素异形体**。而[异构现象](@keyword=isomerism|lang=zh-CN|style=Feynman)则描述了*化合物*——由两种或多种不同元素组成的物质——内部的不同[排列](@keyword=permutation|lang=zh-CN|style=Feynman)方式 [@problem_id:2233577]。正丁烷和异丁烷是化合物 $\text{C}_4\text{H}_{10}$ 的异构体。同素异形是关于单一元素如何呈现不同结构形态；异构则是关于一组不同元素如何以不同方式组织。
 
-从简单的[碳氢化合物](@article_id:306294)到复杂的金属离子和赋予生命的糖类，[构造异构](@article_id:309846)原理证明了自然界组合创造的非凡天赋。仅通过改变原子连接的蓝图，同一组原子就能产生丰富多彩的分子，每种分子在宇宙中都有自己独特的故事和作用。
+从简单的[碳氢化合物](@keyword=hydrocarbons|lang=zh-CN|style=Feynman)到复杂的金属离子和赋予生命的糖类，[构造异构](@keyword=constitutional_isomerism|lang=zh-CN|style=Feynman)原理证明了自然界组合创造的非凡天赋。仅通过改变原子连接的蓝图，同一组原子就能产生丰富多彩的分子，每种分子在宇宙中都有自己独特的故事和作用。

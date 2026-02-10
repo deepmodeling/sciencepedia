@@ -1,7 +1,7 @@
 ## 引言
-当一个物体高速穿过流体时，一种称为[粘性耗散](@article_id:304140)的现象会将流动的动能在一个薄薄的[边界层](@article_id:299864)内转化为热量，从而提高物体表面温度。这种[气动加热](@article_id:311367)是航空航天工程、气象学等领域面临的关键挑战。核心问题不仅在于加热的发生，更在于如何精确预测表面将变得多热。动能完全转化为热能代表了一个理论上的最大值，但现实情况更为复杂。解开这个谜题的关键在于理解恢复因子——一个量化这种[能量转换](@article_id:299022)效率的概念。
+当一个物体高速穿过流体时，一种称为[粘性耗散](@keyword=viscous_dissipation|lang=zh-CN|style=Feynman)的现象会将流动的动能在一个薄薄的[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)内转化为热量，从而提高物体表面温度。这种[气动加热](@keyword=aerodynamic_heating|lang=zh-CN|style=Feynman)是航空航天工程、气象学等领域面临的关键挑战。核心问题不仅在于加热的发生，更在于如何精确预测表面将变得多热。动能完全转化为热能代表了一个理论上的最大值，但现实情况更为复杂。解开这个谜题的关键在于理解恢复因子——一个量化这种[能量转换](@keyword=energy_conversion|lang=zh-CN|style=Feynman)效率的概念。
 
-本文对恢复因子进行了全面探讨，从其基本物理基础延伸至其至关重要的实际应用。第一章“原理与机制”将解构[粘性加热](@article_id:322050)的物理过程，引入[普朗特数](@article_id:303738)的关键作用，并推导出控制光滑[层流](@article_id:309877)和混沌[湍流](@article_id:318989)中恢复因子的经典关系。随后，“应用与跨学科联系”一章将展示此概念如何应用于预测和管理高速飞行器的热量、分析复杂流动几何形状，并将流[体力](@article_id:353281)学与高温化学联系起来，揭示恢复因子作为现代[气动设计](@article_id:337565)的基石。
+本文对恢复因子进行了全面探讨，从其基本物理基础延伸至其至关重要的实际应用。第一章“原理与机制”将解构[粘性加热](@keyword=viscous_heating|lang=zh-CN|style=Feynman)的物理过程，引入[普朗特数](@keyword=prandtl_number|lang=zh-CN|style=Feynman)的关键作用，并推导出控制光滑[层流](@keyword=laminar_flow|lang=zh-CN|style=Feynman)和混沌[湍流](@keyword=turbulence|lang=zh-CN|style=Feynman)中恢复因子的经典关系。随后，“应用与跨学科联系”一章将展示此概念如何应用于预测和管理高速飞行器的热量、分析复杂流动几何形状，并将流[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)学与高温化学联系起来，揭示恢复因子作为现代[气动设计](@keyword=aerodynamic_design|lang=zh-CN|style=Feynman)的基石。
 
 ## 原理与机制
 
@@ -9,29 +9,29 @@
 
 为了解开这个谜题，让我们遵循物理学中的一个经典策略：从一个“完美世界”的情景开始，以建立我们的直觉。
 
-### 热与运动的完美舞蹈：[普朗特数](@article_id:303738)为一的世界
+### 热与运动的完美舞蹈：[普朗特数](@keyword=prandtl_number|lang=zh-CN|style=Feynman)为一的世界
 
-想象一种假设的流体，其中动量和热量以完全相同的速率[扩散](@article_id:327616)。动量的[扩散](@article_id:327616)就是我们所说的**粘性**（viscosity）。正是流体的这种“粘滞性”导致接触表面的那层空气停止运动，然后这种“缓慢”向外[扩散](@article_id:327616)到流场中。热量的[扩散](@article_id:327616)则由**热导率**（thermal conductivity）控制，这个属性使得热量能从热的区域传播到冷的区域。
+想象一种假设的流体，其中动量和热量以完全相同的速率[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)。动量的[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)就是我们所说的**粘性**（viscosity）。正是流体的这种“粘滞性”导致接触表面的那层空气停止运动，然后这种“缓慢”向外[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)到流场中。热量的[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)则由**热导率**（thermal conductivity）控制，这个属性使得热量能从热的区域传播到冷的区域。
 
-这两种扩散率之比由一个关键的[无量纲数](@article_id:297266)来描述：**普朗特数**（Prandtl number, $Pr$）。
+这两种扩散率之比由一个关键的[无量纲数](@keyword=dimensionless_numbers|lang=zh-CN|style=Feynman)来描述：**普朗特数**（Prandtl number, $Pr$）。
 
 $$
 Pr = \frac{\text{动量扩散率}}{\text{热扩散率}} = \frac{\nu}{\alpha} = \frac{\mu c_p}{k}
 $$
 
-其中 $\mu$ 是流体的粘度，$c_p$ 是比热容，$k$ 是[热导率](@article_id:307691)。
+其中 $\mu$ 是流体的粘度，$c_p$ 是比热容，$k$ 是[热导率](@keyword=thermal_conductivity|lang=zh-CN|style=Feynman)。
 
-在我们的“完美世界”中，这两种[扩散](@article_id:327616)率相等，因此**[普朗特数](@article_id:303738)恰好为一（$Pr=1$）**。在这样的流体中，动量和热量进行着一场完全同步的舞蹈。当一个流体[质点](@article_id:365946)因粘性在表面附近减速，放弃其动能时，等量的能量便以热的形式出现。因为热量[扩散](@article_id:327616)的速率与[动量亏损](@article_id:371893)的速率相同，能量得以完美守恒。
+在我们的“完美世界”中，这两种[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)率相等，因此**[普朗特数](@keyword=prandtl_number|lang=zh-CN|style=Feynman)恰好为一（$Pr=1$）**。在这样的流体中，动量和热量进行着一场完全同步的舞蹈。当一个流体[质点](@keyword=point_mass|lang=zh-CN|style=Feynman)因粘性在表面附近减速，放弃其动能时，等量的能量便以热的形式出现。因为热量[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)的速率与[动量亏损](@keyword=momentum_deficit|lang=zh-CN|style=Feynman)的速率相同，能量得以完美守恒。
 
-这导出了一个非常优美的结论。**[总焓](@article_id:371860)**（total enthalpy），即流体的热能（静焓，$h=c_pT$）和其动能（$\frac{1}{2}u^2$）之和，在流体[质点](@article_id:365946)穿越[边界层](@article_id:299864)时保持不变。如果我们有一个完全绝热的表面——我们称之为**[绝热壁](@article_id:308137)**（adiabatic wall）——它不能吸收或释放热量。它的温度将上升，直到与紧邻它的流体达到平衡。在这种特殊的 $Pr=1$ 情况下，壁面温度，即**[绝热壁温](@article_id:312469)**（$T_{aw}$），会恰好上升到自由来流的**[驻点温度](@article_id:303700)**（$T_0$） 。[驻点温度](@article_id:303700)是指将气体完全、无摩擦地停下来，将其所有宏观动能转化为热量后所达到的温度。
+这导出了一个非常优美的结论。**[总焓](@keyword=stagnation_enthalpy|lang=zh-CN|style=Feynman)**（total enthalpy），即流体的热能（静焓，$h=c_pT$）和其动能（$\frac{1}{2}u^2$）之和，在流体[质点](@keyword=point_mass|lang=zh-CN|style=Feynman)穿越[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)时保持不变。如果我们有一个完全绝热的表面——我们称之为**[绝热壁](@keyword=adiabatic_wall|lang=zh-CN|style=Feynman)**（adiabatic wall）——它不能吸收或释放热量。它的温度将上升，直到与紧邻它的流体达到平衡。在这种特殊的 $Pr=1$ 情况下，壁面温度，即**[绝热壁温](@keyword=adiabatic_wall_temperature|lang=zh-CN|style=Feynman)**（$T_{aw}$），会恰好上升到自由来流的**[驻点温度](@keyword=stagnation_temperature|lang=zh-CN|style=Feynman)**（$T_0$）[@problem_id:583208] [@problem_id:583221]。[驻点温度](@keyword=stagnation_temperature|lang=zh-CN|style=Feynman)是指将气体完全、无摩擦地停下来，将其所有宏观动能转化为热量后所达到的温度。
 
 因为100%的可利用动能都作为壁面热能的增加而被“恢复”，我们说对于 $Pr=1$ 的情况，**恢复因子**（$r$）恰好为1。
 
 ### 现实的失衡：当 $Pr \neq 1$ 时
 
-当然，现实世界很少如此完美。对于标准条件下的空气，[普朗特数](@article_id:303738)不是1，而是约0.71。这意味着什么？普朗特数小于一意味着热量扩散得比动量*更快*。流体传播热量的能力超过了其“粘滞性”。
+当然，现实世界很少如此完美。对于标准条件下的空气，[普朗特数](@keyword=prandtl_number|lang=zh-CN|style=Feynman)不是1，而是约0.71。这意味着什么？普朗特数小于一意味着热量扩散得比动量*更快*。流体传播热量的能力超过了其“粘滞性”。
 
-现在，当粘性耗散在[边界层](@article_id:299864)内产生热量时，这些热量比[动量亏损](@article_id:371893)的传播更容易散失。可以这样想：厨房变热了（产生了热量），但窗户开得比门更大（热扩散率高），所以并非所有热量都留在室内。因此，在空气流中的[绝热壁](@article_id:308137)不会像自由来流[驻点温度](@article_id:303700)那么热。只有一部分动能在壁面被恢复。
+现在，当粘性耗散在[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)内产生热量时，这些热量比[动量亏损](@keyword=momentum_deficit|lang=zh-CN|style=Feynman)的传播更容易散失。可以这样想：厨房变热了（产生了热量），但窗户开得比门更大（热扩散率高），所以并非所有热量都留在室内。因此，在空气流中的[绝热壁](@keyword=adiabatic_wall|lang=zh-CN|style=Feynman)不会像自由来流[驻点温度](@keyword=stagnation_temperature|lang=zh-CN|style=Feynman)那么热。只有一部分动能在壁面被恢复。
 
 这个比例正是**恢复因子**（$r$）所量化的。它由一个简单而强大的关系定义：
 
@@ -39,19 +39,19 @@ $$
 T_{aw} = T_{\infty} + r (T_{0, \infty} - T_{\infty})
 $$
 
-在这里，$T_{\infty}$ 是远离物体的空气静温，$T_{0, \infty}$ 是自由来流的[驻点温度](@article_id:303700)。项 $(T_{0, \infty} - T_{\infty})$ 代表了流动的全部动能，以温差的形式表示。恢复因子 $r$ 告诉我们，这部分动能有多少实际表现为绝热表面上的温度升高。对于任何高速物体，从探空火箭到客机机翼，这个原理决定了其未受热表面的温度  。
+在这里，$T_{\infty}$ 是远离物体的空气静温，$T_{0, \infty}$ 是自由来流的[驻点温度](@keyword=stagnation_temperature|lang=zh-CN|style=Feynman)。项 $(T_{0, \infty} - T_{\infty})$ 代表了流动的全部动能，以温差的形式表示。恢复因子 $r$ 告诉我们，这部分动能有多少实际表现为绝热表面上的温度升高。对于任何高速物体，从探空火箭到客机机翼，这个原理决定了其未受热表面的温度 [@problem_id:1812106] [@problem_id:1797567]。
 
 ### 更深层的联系：温度-速度定律
 
-这一物理现象的美妙之处不止于一个数字。事实证明，在[边界层](@article_id:299864)内的*每一点*，温度和速度之间都存在着密切的联系。对于流过绝热平板的光滑[层流](@article_id:309877)，复杂的流体运动控制方程可以简化为一个惊人简洁的代数关系，即**Crocco-Busemann关系**。它指出，温度分布是速度分布的一个简单二次函数 ：
+这一物理现象的美妙之处不止于一个数字。事实证明，在[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)内的*每一点*，温度和速度之间都存在着密切的联系。对于流过绝热平板的光滑[层流](@keyword=laminar_flow|lang=zh-CN|style=Feynman)，复杂的流体运动控制方程可以简化为一个惊人简洁的代数关系，即**Crocco-Busemann关系**。它指出，温度分布是速度分布的一个简单二次函数 [@problem_id:2472778]：
 
 $$
 T(y) = T_{aw} - \frac{r}{2c_p} u(y)^2
 $$
 
-这告诉我们，如果你知道[边界层](@article_id:299864)内某个高度 $y$ 处的速度 $u$，你就能立刻知道该点的温度 $T$！整个热结构都受[速度场](@article_id:335158)支配。普朗特数的作用隐藏在那个恢复因子 $r$ 中。
+这告诉我们，如果你知道[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)内某个高度 $y$ 处的速度 $u$，你就能立刻知道该点的温度 $T$！整个热结构都受[速度场](@keyword=velocity_field|lang=zh-CN|style=Feynman)支配。普朗特数的作用隐藏在那个恢复因子 $r$ 中。
 
-我们甚至可以通过检验壁面处的物理现象来观察这种关系的出现。对表面（$y=0$，速度为零）的动量和能量控制方程进行仔细分析，可以揭示温度对速度曲线的曲率直接由普朗特数决定 ：
+我们甚至可以通过检验壁面处的物理现象来观察这种关系的出现。对表面（$y=0$，速度为零）的动量和能量控制方程进行仔细分析，可以揭示温度对速度曲线的曲率直接由普朗特数决定 [@problem_id:458536]：
 
 $$
 \frac{d^2T}{du^2}\bigg|_{u=0} = -\frac{Pr}{c_p}
@@ -63,29 +63,29 @@ $$
 r \approx \sqrt{Pr}
 $$
 
-对于空气，其 $Pr \approx 0.71$，这给出的恢复因子为 $r \approx \sqrt{0.71} \approx 0.84$。这意味着在高速层流中的绝热表面，其温度将反映大约84%的动能转化。这个简单的平方根关系是[高速空气动力学](@article_id:335783)的基石之一，尽管它在流体性质变化不大的中等速度光滑[层流](@article_id:309877)中最为准确 。
+对于空气，其 $Pr \approx 0.71$，这给出的恢复因子为 $r \approx \sqrt{0.71} \approx 0.84$。这意味着在高速层流中的绝热表面，其温度将反映大约84%的动能转化。这个简单的平方根关系是[高速空气动力学](@keyword=high_speed_aerodynamics|lang=zh-CN|style=Feynman)的基石之一，尽管它在流体性质变化不大的中等速度光滑[层流](@keyword=laminar_flow|lang=zh-CN|style=Feynman)中最为准确 [@problem_id:2520152]。
 
-### [湍流](@article_id:318989)的混沌
+### [湍流](@keyword=turbulence|lang=zh-CN|style=Feynman)的混沌
 
-当流动不再是光滑、分层的华尔兹，而崩溃成混沌、翻腾的**[湍流](@article_id:318989)**时，会发生什么？情况变了。在[湍流](@article_id:318989)中，动量和热量不再仅仅通过缓慢的分子扩散来输运，而是被称作涡旋（eddies）的旋转涡团猛烈地抛来抛去。这种[湍流混合](@article_id:381247)远比其分子对应物有效得多。
+当流动不再是光滑、分层的华尔兹，而崩溃成混沌、翻腾的**[湍流](@keyword=turbulence|lang=zh-CN|style=Feynman)**时，会发生什么？情况变了。在[湍流](@keyword=turbulence|lang=zh-CN|style=Feynman)中，动量和热量不再仅仅通过缓慢的分子扩散来输运，而是被称作涡旋（eddies）的旋转涡团猛烈地抛来抛去。这种[湍流混合](@keyword=turbulent_mixing|lang=zh-CN|style=Feynman)远比其分子对应物有效得多。
 
-对于动量和热量，涡旋混合的相对效率由一个**[湍流普朗特数](@article_id:314151)**（$Pr_t$）来描述，对于许多流动，这个值很方便地接近于1。这意味着混沌混合本身并不会强烈地区分动量和热量。然而，整个过程仍然必须在紧邻壁面的一个非常薄的层中与流体的分子特性相抗衡。这种剧烈的外部混合与精细的近壁[分子输运](@article_id:374128)之间复杂相互作用的结果，导致了不同的标度律，这通常由热传递类比（如Colburn类比）推导得出 ：
+对于动量和热量，涡旋混合的相对效率由一个**[湍流普朗特数](@keyword=turbulent_prandtl_number|lang=zh-CN|style=Feynman)**（$Pr_t$）来描述，对于许多流动，这个值很方便地接近于1。这意味着混沌混合本身并不会强烈地区分动量和热量。然而，整个过程仍然必须在紧邻壁面的一个非常薄的层中与流体的分子特性相抗衡。这种剧烈的外部混合与精细的近壁[分子输运](@keyword=molecular_transport|lang=zh-CN|style=Feynman)之间复杂相互作用的结果，导致了不同的标度律，这通常由热传递类比（如Colburn类比）推导得出 [@problem_id:2472759]：
 
 $$
 r \approx \sqrt[3]{Pr}
 $$
 
-这给我们带来了一个迷人且违反直觉的结果。让我们比较一下空气（$Pr \approx 0.71$）在两种流动状态下的恢复因子  ：
+这给我们带来了一个迷人且违反直觉的结果。让我们比较一下空气（$Pr \approx 0.71$）在两种流动状态下的恢复因子 [@problem_id:2472759] [@problem_id:2520185]：
 
 - **层流：** $r_{lam} \approx (0.71)^{1/2} \approx 0.843$
-- **[湍流](@article_id:318989)：** $r_{turb} \approx (0.71)^{1/3} \approx 0.892$
+- **[湍流](@keyword=turbulence|lang=zh-CN|style=Feynman)：** $r_{turb} \approx (0.71)^{1/3} \approx 0.892$
 
-在[湍流边界层](@article_id:331625)下的[绝热壁](@article_id:308137)比在[层流边界层](@article_id:313428)下的*更热*！这与“[湍流](@article_id:318989)增强冷却”的简单直觉相悖。当你有一个热物体想用冷流体来冷却时，那种直觉是正确的。然而，在这里，热量是由粘性耗散在*流体内部*产生的。[湍流](@article_id:318989)的高效混合更善于将这种内部产生的热量输送到壁面，从而导致更高的恢复温度。
+在[湍流边界层](@keyword=turbulent_boundary_layer|lang=zh-CN|style=Feynman)下的[绝热壁](@keyword=adiabatic_wall|lang=zh-CN|style=Feynman)比在[层流边界层](@keyword=laminar_boundary_layer|lang=zh-CN|style=Feynman)下的*更热*！这与“[湍流](@keyword=turbulence|lang=zh-CN|style=Feynman)增强冷却”的简单直觉相悖。当你有一个热物体想用冷流体来冷却时，那种直觉是正确的。然而，在这里，热量是由粘性耗散在*流体内部*产生的。[湍流](@keyword=turbulence|lang=zh-CN|style=Feynman)的高效混合更善于将这种内部产生的热量输送到壁面，从而导致更高的恢复温度。
 
 ### 最后一剂现实
 
-这些优美的[标度律](@article_id:300393)，$r \sim Pr^{1/2}$ 和 $r \sim Pr^{1/3}$，是物理推理的胜利。它们为我们提供了深刻的理解和强大的预测工具。然而，我们必须始终记住它们所存在的那个世界——一个具有恒定性质的[理想流体](@article_id:336460)的世界。
+这些优美的[标度律](@keyword=scaling_laws|lang=zh-CN|style=Feynman)，$r \sim Pr^{1/2}$ 和 $r \sim Pr^{1/3}$，是物理推理的胜利。它们为我们提供了深刻的理解和强大的预测工具。然而，我们必须始终记住它们所存在的那个世界——一个具有恒定性质的[理想流体](@keyword=ideal_fluid|lang=zh-CN|style=Feynman)的世界。
 
-在[高超声速飞行](@article_id:335784)的极端环境中，[边界层](@article_id:299864)内的温度变化可达数千度。在这些温度下，空气的粘度和热导率不再是常数，它们会发生剧烈变化。这意味着局部的[普朗特数](@article_id:303738)本身在[边界层](@article_id:299864)内部随位置而变化，打破了我们模型的[简单假设](@article_id:346382) 。工程师和科学家们必须转而使用强大的计算机模拟来高精度地计算[气动加热](@article_id:311367)。
+在[高超声速飞行](@keyword=hypersonic_flight|lang=zh-CN|style=Feynman)的极端环境中，[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)内的温度变化可达数千度。在这些温度下，空气的粘度和热导率不再是常数，它们会发生剧烈变化。这意味着局部的[普朗特数](@keyword=prandtl_number|lang=zh-CN|style=Feynman)本身在[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)内部随位置而变化，打破了我们模型的[简单假设](@keyword=simple_hypothesis|lang=zh-CN|style=Feynman) [@problem_id:2520185]。工程师和科学家们必须转而使用强大的计算机模拟来高精度地计算[气动加热](@keyword=aerodynamic_heating|lang=zh-CN|style=Feynman)。
 
 然而，即使面对如此复杂性，这些简单的原理仍然是我们不可或缺的指南。它们提供了基本的洞察力、物理直觉以及构建所有进一步理解的概念框架。它们是简单而强大的思想如何照亮自然世界复杂运作的美丽证明。

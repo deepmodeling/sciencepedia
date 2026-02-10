@@ -1,7 +1,7 @@
 ## Introduction
-When we stretch, rotate, or shear a geometric object, we are performing a [linear transformation](@article_id:142586). These operations are fundamental not just in mathematics but in fields from computer graphics to physics. But how do these actions affect the fundamental properties of shapes? If you transform a square into a parallelogram, or a sphere into an ellipsoid, is there a simple way to predict how its area or volume changes? This question uncovers a profound gap between intuitive geometry and the algebra used to describe it, a gap that is elegantly bridged by a single, powerful concept: the scaling factor.
+When we stretch, rotate, or shear a geometric object, we are performing a [linear transformation](@keyword=linear_transformation|lang=en-US|style=Feynman). These operations are fundamental not just in mathematics but in fields from computer graphics to physics. But how do these actions affect the fundamental properties of shapes? If you transform a square into a parallelogram, or a sphere into an ellipsoid, is there a simple way to predict how its area or volume changes? This question uncovers a profound gap between intuitive geometry and the algebra used to describe it, a gap that is elegantly bridged by a single, powerful concept: the scaling factor.
 
-This article reveals that the [determinant of a matrix](@article_id:147704) is the secret key to understanding [geometric scaling](@article_id:271856). You will learn how one number can dictate the change in area or volume for every possible shape under a given [linear transformation](@article_id:142586). We will first delve into the core principles, exploring how the determinant measures scaling and how its sign indicates orientation. Following this, we will journey through its diverse applications, discovering how this single idea connects geometry, analyzes the stability of ecosystems, and even finds relevance in the abstract landscapes of modern mathematics.
+This article reveals that the [determinant of a matrix](@keyword=determinant_of_a_matrix|lang=en-US|style=Feynman) is the secret key to understanding [geometric scaling](@keyword=geometric_scaling|lang=en-US|style=Feynman). You will learn how one number can dictate the change in area or volume for every possible shape under a given [linear transformation](@keyword=linear_transformation|lang=en-US|style=Feynman). We will first delve into the core principles, exploring how the determinant measures scaling and how its sign indicates orientation. Following this, we will journey through its diverse applications, discovering how this single idea connects geometry, analyzes the stability of ecosystems, and even finds relevance in the abstract landscapes of modern mathematics.
 
 ## Principles and Mechanisms
 
@@ -11,7 +11,7 @@ The magic of linear algebra tells us that for a uniform stretching—a **linear 
 
 ### The Determinant: A Measure of Change
 
-Let's start in a two-dimensional world, a flat plane. Any point on this plane can be described by a vector, and a linear transformation $T$ is a rule for moving these points around. To understand what the transformation does to the entire plane, we only need to see what it does to our fundamental reference vectors, the [standard basis vectors](@article_id:151923) $\vec{e}_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ and $\vec{e}_2 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$. These two vectors form a unit square with an area of 1.
+Let's start in a two-dimensional world, a flat plane. Any point on this plane can be described by a vector, and a linear transformation $T$ is a rule for moving these points around. To understand what the transformation does to the entire plane, we only need to see what it does to our fundamental reference vectors, the [standard basis vectors](@keyword=standard_basis_vectors|lang=en-US|style=Feynman) $\vec{e}_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ and $\vec{e}_2 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$. These two vectors form a unit square with an area of 1.
 
 Suppose our transformation maps $\vec{e}_1$ to a new vector $\vec{v}_1 = \begin{pmatrix} a \\ c \end{pmatrix}$ and $\vec{e}_2$ to $\vec{v}_2 = \begin{pmatrix} b \\ d \end{pmatrix}$. The original unit square is now twisted and stretched into a parallelogram spanned by $\vec{v}_1$ and $\vec{v}_2$. What is the area of this new parallelogram? This is one of the most elegant results in elementary mathematics: the area is given by the determinant of the matrix formed by these new vectors. The matrix of the transformation, $A$, is simply $\begin{pmatrix} a & b \\ c & d \end{pmatrix}$.
 
@@ -19,9 +19,9 @@ $$
 \text{Area}_{\text{new}} = \det(A) = ad - bc
 $$
 
-This value, the determinant, is the "orientation-preserving factor" for the transformation . If you apply a filter to a digital image that maps the pixel at $(1, 0)$ to $(4, -1)$ and the pixel at $(0, 1)$ to $(2, 3)$, the [transformation matrix](@article_id:151122) is $A = \begin{pmatrix} 4 & 2 \\ -1 & 3 \end{pmatrix}$. The determinant is $(4)(3) - (2)(-1) = 14$. This means the unit square is transformed into a parallelogram with an area of 14.
+This value, the determinant, is the "orientation-preserving factor" for the transformation [@problem_id:2162403]. If you apply a filter to a digital image that maps the pixel at $(1, 0)$ to $(4, -1)$ and the pixel at $(0, 1)$ to $(2, 3)$, the [transformation matrix](@keyword=transformation_matrix|lang=en-US|style=Feynman) is $A = \begin{pmatrix} 4 & 2 \\ -1 & 3 \end{pmatrix}$. The determinant is $(4)(3) - (2)(-1) = 14$. This means the unit square is transformed into a parallelogram with an area of 14.
 
-But here is the truly remarkable part: this scaling factor applies to *everything*. A circle, a triangle, or a complex shape with an initial area of $A_0$ will be transformed into a new shape with area $A_f = 14 \cdot A_0$ . The determinant of the transformation matrix is the universal scaling factor for area across the entire plane.
+But here is the truly remarkable part: this scaling factor applies to *everything*. A circle, a triangle, or a complex shape with an initial area of $A_0$ will be transformed into a new shape with area $A_f = 14 \cdot A_0$ [@problem_id:1365137]. The determinant of the transformation matrix is the universal scaling factor for area across the entire plane.
 
 ### The Significance of the Sign: A Flip in the Fabric of Space
 
@@ -31,19 +31,19 @@ Imagine the original basis vectors $\vec{e}_1$ and $\vec{e}_2$. You can rotate $
 
 However, if the transformation is like a reflection, it might flip the space. You might find that you now have to rotate $T(\vec{e}_1)$ *clockwise* to get to $T(\vec{e}_2)$. The orientation has been reversed. In this case, the determinant is negative. So, the determinant isn't just a scaling factor; it's a **signed scaling factor**. It tells us *how much* the area scales and *whether* the space was flipped inside-out in the process.
 
-The [geometric scaling](@article_id:271856) factor for area, which must be a positive number, is therefore the **absolute value** of the determinant, $|\det(A)|$. A transformation with a determinant of $-2$ doubles the area of all shapes but also flips their orientation.
+The [geometric scaling](@keyword=geometric_scaling|lang=en-US|style=Feynman) factor for area, which must be a positive number, is therefore the **absolute value** of the determinant, $|\det(A)|$. A transformation with a determinant of $-2$ doubles the area of all shapes but also flips their orientation.
 
 ### Expanding to Higher Dimensions
 
-This beautiful principle is not confined to the flatland of 2D. It works just as well in our 3D world. Here, the [standard basis vectors](@article_id:151923) $\vec{e}_1, \vec{e}_2, \vec{e}_3$ define a unit cube with a volume of 1. A linear transformation $T$ maps this cube to a slanted box, a **parallelepiped**.
+This beautiful principle is not confined to the flatland of 2D. It works just as well in our 3D world. Here, the [standard basis vectors](@keyword=standard_basis_vectors|lang=en-US|style=Feynman) $\vec{e}_1, \vec{e}_2, \vec{e}_3$ define a unit cube with a volume of 1. A linear transformation $T$ maps this cube to a slanted box, a **parallelepiped**.
 
-As you might guess, the volume of this new parallelepiped is given by the determinant of the $3 \times 3$ [transformation matrix](@article_id:151122). For instance, if a computational process deforms a crystal's unit cube by mapping the basis vectors to $(2, -1, 0.5)$, $(1, 3, 1)$, and $(-1, 2, 1/3)$, the resulting volume is the absolute value of the determinant of the matrix formed by these vectors  .
+As you might guess, the volume of this new parallelepiped is given by the determinant of the $3 \times 3$ [transformation matrix](@keyword=transformation_matrix|lang=en-US|style=Feynman). For instance, if a computational process deforms a crystal's unit cube by mapping the basis vectors to $(2, -1, 0.5)$, $(1, 3, 1)$, and $(-1, 2, 1/3)$, the resulting volume is the absolute value of the determinant of the matrix formed by these vectors [@problem_id:1364841] [@problem_id:1651531].
 
 $$
 A = \begin{pmatrix} 2 & 1 & -1 \\ -1 & 3 & 2 \\ 0.5 & 1 & 1/3 \end{pmatrix} \implies V_{\text{new}} = |\det(A)| \cdot V_{\text{old}} = |\frac{11}{6}| \cdot 1 \approx 1.83
 $$
 
-Just as in the 2D case, this volume scaling factor $|\det(A)|$ is universal. It doesn't matter if the [initial object](@article_id:147866) is a cube, a sphere, or a complex molecular structure; its volume will be multiplied by this same constant factor .
+Just as in the 2D case, this volume scaling factor $|\det(A)|$ is universal. It doesn't matter if the [initial object](@keyword=initial_object|lang=en-US|style=Feynman) is a cube, a sphere, or a complex molecular structure; its volume will be multiplied by this same constant factor [@problem_id:2133570].
 
 ### Unveiling Deeper Connections
 
@@ -51,7 +51,7 @@ The power of this concept comes from its deep connections to other properties of
 
 #### The Role of Eigenvalues
 
-Some transformations have special directions, called **eigenvectors**. When you apply the transformation, vectors pointing in these directions are not rotated; they are simply stretched or compressed. The amount of stretching is the **eigenvalue**, $\lambda$. Imagine a transformation that stretches everything by a factor of 5 along one axis and reverses and stretches by a factor of 2 along another axis. The eigenvalues are $\lambda_1 = 5$ and $\lambda_2 = -2$ .
+Some transformations have special directions, called **eigenvectors**. When you apply the transformation, vectors pointing in these directions are not rotated; they are simply stretched or compressed. The amount of stretching is the **eigenvalue**, $\lambda$. Imagine a transformation that stretches everything by a factor of 5 along one axis and reverses and stretches by a factor of 2 along another axis. The eigenvalues are $\lambda_1 = 5$ and $\lambda_2 = -2$ [@problem_id:1364823].
 
 What is the overall effect on area? It is not the sum of the stretches. Instead, the total change in area is governed by their product. The determinant of a matrix is equal to the product of its eigenvalues.
 
@@ -59,18 +59,18 @@ $$
 \det(A) = \lambda_1 \lambda_2 \dots \lambda_n
 $$
 
-So, for our example, $\det(A) = (5)(-2) = -10$. The area scaling factor is $|\det(A)| = 10$. This provides a powerful link: the macroscopic, [geometric scaling](@article_id:271856) of the entire space is determined by the microscopic, algebraic stretching factors along its special axes.
+So, for our example, $\det(A) = (5)(-2) = -10$. The area scaling factor is $|\det(A)| = 10$. This provides a powerful link: the macroscopic, [geometric scaling](@keyword=geometric_scaling|lang=en-US|style=Feynman) of the entire space is determined by the microscopic, algebraic stretching factors along its special axes.
 
 #### Composing and Inverting Transformations
 
-What if we perform several transformations in a row? For example, we might rotate an object, then scale it, then rotate it again . The total [transformation matrix](@article_id:151122) $M$ is the product of the individual matrices, $M = R_2 S R_1$. One of the most useful [properties of determinants](@article_id:149234) is that the [determinant of a product](@article_id:155079) is the product of the determinants:
+What if we perform several transformations in a row? For example, we might rotate an object, then scale it, then rotate it again [@problem_id:1346085]. The total [transformation matrix](@keyword=transformation_matrix|lang=en-US|style=Feynman) $M$ is the product of the individual matrices, $M = R_2 S R_1$. One of the most useful [properties of determinants](@keyword=properties_of_determinants|lang=en-US|style=Feynman) is that the [determinant of a product](@keyword=determinant_of_a_product|lang=en-US|style=Feynman) is the product of the determinants:
 
 $$
 \det(M) = \det(R_2) \det(S) \det(R_1)
 $$
 
-A rotation doesn't change the area of a shape, it just moves it. For a pure rotation, the determinant is 1. The [scaling matrix](@article_id:187856) $S = \begin{pmatrix} k_x & 0 \\ 0 & k_y \end{pmatrix}$ has a determinant of $k_x k_y$. Therefore, the total scaling factor is simply $1 \cdot (k_x k_y) \cdot 1 = k_x k_y$. The entire change in area comes purely from the scaling step, as our intuition would demand! This principle allows us to analyze complex operations by understanding the scaling properties of their simpler parts. In fact, a deep result known as the Singular Value Decomposition (SVD) tells us that *any* [linear transformation](@article_id:142586) can be broken down this way, and its volume scaling factor is always the product of its fundamental scaling values, the **[singular values](@article_id:152413)** .
+A rotation doesn't change the area of a shape, it just moves it. For a pure rotation, the determinant is 1. The [scaling matrix](@keyword=scaling_matrix|lang=en-US|style=Feynman) $S = \begin{pmatrix} k_x & 0 \\ 0 & k_y \end{pmatrix}$ has a determinant of $k_x k_y$. Therefore, the total scaling factor is simply $1 \cdot (k_x k_y) \cdot 1 = k_x k_y$. The entire change in area comes purely from the scaling step, as our intuition would demand! This principle allows us to analyze complex operations by understanding the scaling properties of their simpler parts. In fact, a deep result known as the Singular Value Decomposition (SVD) tells us that *any* [linear transformation](@keyword=linear_transformation|lang=en-US|style=Feynman) can be broken down this way, and its volume scaling factor is always the product of its fundamental scaling values, the **[singular values](@keyword=singular_values|lang=en-US|style=Feynman)** [@problem_id:1049192].
 
-And what about undoing a transformation? If a transformation $T$ inflates the area of a region from an initial area $A_0$ to a final area $A_1$, its scaling factor is $S(T) = A_1 / A_0$. The inverse transformation, $T^{-1}$, must shrink the region back to its original size. Intuitively, its scaling factor should be the reciprocal, $A_0 / A_1$. This is precisely what the mathematics tells us. Since $T \circ T^{-1}$ is the [identity transformation](@article_id:264177) (which does nothing and has a determinant of 1), we must have $\det(A) \cdot \det(A^{-1}) = 1$, which means the scaling factor of the inverse is indeed the reciprocal of the original .
+And what about undoing a transformation? If a transformation $T$ inflates the area of a region from an initial area $A_0$ to a final area $A_1$, its scaling factor is $S(T) = A_1 / A_0$. The inverse transformation, $T^{-1}$, must shrink the region back to its original size. Intuitively, its scaling factor should be the reciprocal, $A_0 / A_1$. This is precisely what the mathematics tells us. Since $T \circ T^{-1}$ is the [identity transformation](@keyword=identity_transformation|lang=en-US|style=Feynman) (which does nothing and has a determinant of 1), we must have $\det(A) \cdot \det(A^{-1}) = 1$, which means the scaling factor of the inverse is indeed the reciprocal of the original [@problem_id:11369].
 
-This simple, elegant idea—that one number, the determinant, captures the [geometric scaling](@article_id:271856) of a linear transformation—weaves together geometry and algebra, connecting visual distortions to the abstract properties of matrices, eigenvalues, and inverses. It is a perfect example of the unity and beauty inherent in mathematics.
+This simple, elegant idea—that one number, the determinant, captures the [geometric scaling](@keyword=geometric_scaling|lang=en-US|style=Feynman) of a linear transformation—weaves together geometry and algebra, connecting visual distortions to the abstract properties of matrices, eigenvalues, and inverses. It is a perfect example of the unity and beauty inherent in mathematics.

@@ -1,9 +1,9 @@
 ## 引言
-我们如何用一个统一的数学思想来描述世界上看到的各种形状变化——从拉伸的橡皮筋到构造板块的缓慢褶皱？这是连续介质力学——一个致力于研究连续材料物理学的领域——所面临的一个基本挑战。答案在于一个强大而优雅的工具：变形梯度[张量](@article_id:321604)。本文旨在揭开这个核心概念的神秘面纱，以满足量化涉及同时拉伸、剪切和旋转的复杂变形框架的需求。我们将首先探讨其基本原理和机制，深入研究该[张量](@article_id:321604)是如何定义和分解的，以揭示体积变化和纯拉伸的奥秘。随后，我们将遍历其多样化的应用，探索这个单一的数学对象如何为理解工程、物理和生物学中的各种现象提供一种通用语言。
+我们如何用一个统一的数学思想来描述世界上看到的各种形状变化——从拉伸的橡皮筋到构造板块的缓慢褶皱？这是连续介质力学——一个致力于研究连续材料物理学的领域——所面临的一个基本挑战。答案在于一个强大而优雅的工具：变形梯度[张量](@keyword=tensor|lang=zh-CN|style=Feynman)。本文旨在揭开这个核心概念的神秘面纱，以满足量化涉及同时拉伸、剪切和旋转的复杂变形框架的需求。我们将首先探讨其基本原理和机制，深入研究该[张量](@keyword=tensor|lang=zh-CN|style=Feynman)是如何定义和分解的，以揭示体积变化和纯拉伸的奥秘。随后，我们将遍历其多样化的应用，探索这个单一的数学对象如何为理解工程、物理和生物学中的各种现象提供一种通用语言。
 
 ## 原理与机制
 
-想象一下，你拿一块黏土把它压扁，你就使其发生了变形。或者想象一下地壳，在数百万年间缓慢地弯曲和折叠，形成了山脉。又或者是一颗心肌细胞，随着每一次心跳收缩和舒张。我们究竟如何能用一个统一的数学思想来描述如此纷繁多样的形状变化？这是[连续介质力学](@article_id:315536)的宏大挑战，而答案就在于一个优美而强大的概念：**变形梯度[张量](@article_id:321604)**。
+想象一下，你拿一块黏土把它压扁，你就使其发生了变形。或者想象一下地壳，在数百万年间缓慢地弯曲和折叠，形成了山脉。又或者是一颗心肌细胞，随着每一次心跳收缩和舒张。我们究竟如何能用一个统一的数学思想来描述如此纷繁多样的形状变化？这是[连续介质力学](@keyword=continuum_mechanics|lang=zh-CN|style=Feynman)的宏大挑战，而答案就在于一个优美而强大的概念：**变形梯度[张量](@keyword=tensor|lang=zh-CN|style=Feynman)**。
 
 ### 从点到图：捕捉变形的映射
 
@@ -15,29 +15,29 @@
 
 $$ \mathrm{d}\mathbf{x} = \mathbf{F} \, \mathrm{d}\mathbf{X} $$
 
-这个对象 $\mathbf{F}$ 就是**变形梯度[张量](@article_id:321604)**。它是一个矩阵，作用于原始物体中的任何微小矢量 $\mathrm{d}\mathbf{X}$，并告诉你该矢量在变形后的物体中变成了什么（$\mathrm{d}\mathbf{x}$）。它是变形的[局部线性](@article_id:330684)“地图”。在数学上，它是位置映射 $\chi$ 的梯度（偏导数矩阵）：
+这个对象 $\mathbf{F}$ 就是**变形梯度[张量](@keyword=tensor|lang=zh-CN|style=Feynman)**。它是一个矩阵，作用于原始物体中的任何微小矢量 $\mathrm{d}\mathbf{X}$，并告诉你该矢量在变形后的物体中变成了什么（$\mathrm{d}\mathbf{x}$）。它是变形的[局部线性](@keyword=local_linearity|lang=zh-CN|style=Feynman)“地图”。在数学上，它是位置映射 $\chi$ 的梯度（偏导数矩阵）：
 
 $$ F_{ij} = \frac{\partial x_i}{\partial X_j} $$
 
 其中 $x_i$ 是新位置的分量，$X_j$ 是原始位置的分量。
 
-如果变形只是一个均匀拉伸，其中每个坐标都按比例因子 $k$ 缩放，即 $\mathbf{x} = k\mathbf{X}$，那么 $\mathbf{F}$ 就是 $k$ 乘以[单位矩阵](@article_id:317130)。如果物体经历一个小的刚性旋转，映射会更复杂，但所得的 $\mathbf{F}$ 仍然可以直接从定义中计算出来。对于更复杂的情况，比如气球的非均匀充气，其拉伸本身因地而异，$\mathbf{F}$ 将是初始位置 $\mathbf{X}$ 的函数。
+如果变形只是一个均匀拉伸，其中每个坐标都按比例因子 $k$ 缩放，即 $\mathbf{x} = k\mathbf{X}$，那么 $\mathbf{F}$ 就是 $k$ 乘以[单位矩阵](@keyword=identity_matrix|lang=zh-CN|style=Feynman)。如果物体经历一个小的刚性旋转，映射会更复杂，但所得的 $\mathbf{F}$ 仍然可以直接从定义中计算出来。对于更复杂的情况，比如气球的非均匀充气，其拉伸本身因地而异，$\mathbf{F}$ 将是初始位置 $\mathbf{X}$ 的函数。
 
-### F内部的秘密：体积、[拉伸与旋转](@article_id:310616)
+### F内部的秘密：体积、[拉伸与旋转](@keyword=stretch_and_rotation|lang=zh-CN|style=Feynman)
 
-[张量](@article_id:321604) $\mathbf{F}$ 是一个信息紧凑的包。就其本身而言，它的分量看起来可能有点奇怪，混合了拉伸、剪切和旋转。真正的魔力始于我们开始解构它。
+[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $\mathbf{F}$ 是一个信息紧凑的包。就其本身而言，它的分量看起来可能有点奇怪，混合了拉伸、剪切和旋转。真正的魔力始于我们开始解构它。
 
 #### 体积变化之声：雅可比行列式
 
-我们能从 $\mathbf{F}$ 中解读出的第一个秘密是体积如何变化。想象原始材料中一个体积为 $\mathrm{d}V$ 的微小立方体。变形后，这个立方体很可能被扭曲成一个平行六面体，新体积为 $\mathrm{d}v$。新旧体积之比由 $\mathbf{F}$ 的[行列式](@article_id:303413)给出！我们称之为变形的**[雅可比行列式](@article_id:365483)**（Jacobian），记作 $J = \det(\mathbf{F})$。
+我们能从 $\mathbf{F}$ 中解读出的第一个秘密是体积如何变化。想象原始材料中一个体积为 $\mathrm{d}V$ 的微小立方体。变形后，这个立方体很可能被扭曲成一个平行六面体，新体积为 $\mathrm{d}v$。新旧体积之比由 $\mathbf{F}$ 的[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)给出！我们称之为变形的**[雅可比行列式](@keyword=jacobian_factor|lang=zh-CN|style=Feynman)**（Jacobian），记作 $J = \det(\mathbf{F})$。
 
 $$ \mathrm{d}v = J \, \mathrm{d}V $$
 
-所以，如果一个变形的 $J = 2$，那么材料的每一小部分体积都增加了一倍。如果 $J=0.5$，它就被压缩到原来体积的一半。$J=1$ 的变形被称为**等体积**（isochoric）或体积保持变形；可以想象挤压一个装满水的气球。这对密度有直接而关键的影响。如果[质量守恒](@article_id:331706)，那么初始密度为 $\rho_0$ 的材料将具有新的密度 $\rho = \rho_0 / J$。注意这里的反比关系！随着[体积膨胀](@article_id:304671)（$J > 1$），密度必须下降。
+所以，如果一个变形的 $J = 2$，那么材料的每一小部分体积都增加了一倍。如果 $J=0.5$，它就被压缩到原来体积的一半。$J=1$ 的变形被称为**等体积**（isochoric）或体积保持变形；可以想象挤压一个装满水的气球。这对密度有直接而关键的影响。如果[质量守恒](@keyword=conservation_of_mass|lang=zh-CN|style=Feynman)，那么初始密度为 $\rho_0$ 的材料将具有新的密度 $\rho = \rho_0 / J$。注意这里的反比关系！随着[体积膨胀](@keyword=volumetric_expansion|lang=zh-CN|style=Feynman)（$J > 1$），密度必须下降。
 
-那么纯旋转呢？旋转不改变体积，所以它的 $J$ 必须等于1。这是[旋转矩阵](@article_id:300745)的一个基本性质；它们的[行列式](@article_id:303413)总是1。这给了我们第一个线索：旋转和体积变化是两个独立的概念，尽管它们都编码在 $\mathbf{F}$ 中。
+那么纯旋转呢？旋转不改变体积，所以它的 $J$ 必须等于1。这是[旋转矩阵](@keyword=rotation_matrix|lang=zh-CN|style=Feynman)的一个基本性质；它们的[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)总是1。这给了我们第一个线索：旋转和体积变化是两个独立的概念，尽管它们都编码在 $\mathbf{F}$ 中。
 
-#### 测量拉伸：[柯西-格林张量](@article_id:368175)
+#### 测量拉伸：[柯西-格林张量](@keyword=cauchy_green_tensor|lang=zh-CN|style=Feynman)
 
 现在是最棘手的部分：我们如何将“拉伸”从“旋转”中分离出来？$\mathbf{F}$ 本身做不到这一点，因为它既拉伸矢量又旋转矢量。诀窍在于不看矢量本身，而是看它们的长度，确切地说是它们的长度平方。
 
@@ -45,9 +45,9 @@ $$ \mathrm{d}v = J \, \mathrm{d}V $$
 
 $$ |\mathrm{d}\mathbf{x}|^2 = (\mathbf{F} \, \mathrm{d}\mathbf{X})^T (\mathbf{F} \, \mathrm{d}\mathbf{X}) = \mathrm{d}\mathbf{X}^T (\mathbf{F}^T \mathbf{F}) \mathrm{d}\mathbf{X} $$
 
-看中间的那个对象：$\mathbf{C} = \mathbf{F}^T \mathbf{F}$。这就是**右柯西-格林变形[张量](@article_id:321604)**。它是一个存在于*参考*构型中的[张量](@article_id:321604)，告诉你材料纤维长度的平方是如何变化的。请注意，如果 $\mathbf{F}$ 包含一个旋转，比如说 $\mathbf{F} = \mathbf{R}$（其中 $\mathbf{R}$ 是一个旋转矩阵），那么 $\mathbf{C} = \mathbf{R}^T \mathbf{R} = \mathbf{I}$（单位矩阵）。这意味着纯旋[转导](@article_id:300266)致 $\mathbf{C} = \mathbf{I}$，告诉我们所有长度都保持不变，这与我们的预期完全一致！所以，$\mathbf{C}$ 成功地“忽略”了旋转，并分离出了纯变形。它测量了材料几何形状被扭曲的程度，而不管其在空间中的最终朝向如何。
+看中间的那个对象：$\mathbf{C} = \mathbf{F}^T \mathbf{F}$。这就是**右柯西-格林变形[张量](@keyword=tensor|lang=zh-CN|style=Feynman)**。它是一个存在于*参考*构型中的[张量](@keyword=tensor|lang=zh-CN|style=Feynman)，告诉你材料纤维长度的平方是如何变化的。请注意，如果 $\mathbf{F}$ 包含一个旋转，比如说 $\mathbf{F} = \mathbf{R}$（其中 $\mathbf{R}$ 是一个旋转矩阵），那么 $\mathbf{C} = \mathbf{R}^T \mathbf{R} = \mathbf{I}$（单位矩阵）。这意味着纯旋[转导](@keyword=transduction|lang=zh-CN|style=Feynman)致 $\mathbf{C} = \mathbf{I}$，告诉我们所有长度都保持不变，这与我们的预期完全一致！所以，$\mathbf{C}$ 成功地“忽略”了旋转，并分离出了纯变形。它测量了材料几何形状被扭曲的程度，而不管其在空间中的最终朝向如何。
 
-还有一个姊妹[张量](@article_id:321604)，即**左柯西-格林变形[张量](@article_id:321604)**，$\mathbf{B} = \mathbf{F} \mathbf{F}^T$，它做着类似的工作，但定义在*当前*的变形构型中。对于一个简单的均匀膨胀 $\mathbf{x} = k\mathbf{X}$，我们发现 $\mathbf{B} = k^2 \mathbf{I}$，这优雅地表明所有方向上的长度平方都按 $k^2$ 比例缩放了。
+还有一个姊妹[张量](@keyword=tensor|lang=zh-CN|style=Feynman)，即**左柯西-格林变形[张量](@keyword=tensor|lang=zh-CN|style=Feynman)**，$\mathbf{B} = \mathbf{F} \mathbf{F}^T$，它做着类似的工作，但定义在*当前*的变形构型中。对于一个简单的均匀膨胀 $\mathbf{x} = k\mathbf{X}$，我们发现 $\mathbf{B} = k^2 \mathbf{I}$，这优雅地表明所有方向上的长度平方都按 $k^2$ 比例缩放了。
 
 ### 压轴大戏：极分解定理
 
@@ -57,24 +57,24 @@ $$ |\mathrm{d}\mathbf{x}|^2 = (\mathbf{F} \, \mathrm{d}\mathbf{X})^T (\mathbf{F}
 
 $$ \mathbf{F} = \mathbf{R}\mathbf{U} $$
 
-这里，$\mathbf{R}$ 是一个**[旋转张量](@article_id:370993)**（$\mathbf{R}^T\mathbf{R}=\mathbf{I}$ 且 $\det(\mathbf{R})=1$），而 $\mathbf{U}$ 是一个对称[正定张量](@article_id:383010)，称为**右[拉伸张量](@article_id:372157)**。这个分解的美妙之处在于，$\mathbf{U}$ 代表了变形的纯“拉伸和剪切”部分，施加在物体的原始方向上。然后，[旋转矩阵](@article_id:300745) $\mathbf{R}$ 简单地将这个被拉伸的物体刚性地旋转到其最终方向。
+这里，$\mathbf{R}$ 是一个**[旋转张量](@keyword=rotation_tensor|lang=zh-CN|style=Feynman)**（$\mathbf{R}^T\mathbf{R}=\mathbf{I}$ 且 $\det(\mathbf{R})=1$），而 $\mathbf{U}$ 是一个对称[正定张量](@keyword=positive_definite_tensor|lang=zh-CN|style=Feynman)，称为**右[拉伸张量](@keyword=stretch_tensor|lang=zh-CN|style=Feynman)**。这个分解的美妙之处在于，$\mathbf{U}$ 代表了变形的纯“拉伸和剪切”部分，施加在物体的原始方向上。然后，[旋转矩阵](@keyword=rotation_matrix|lang=zh-CN|style=Feynman) $\mathbf{R}$ 简单地将这个被拉伸的物体刚性地旋转到其最终方向。
 
-这与我们的[柯西-格林张量](@article_id:368175)有何联系？如果你将 $\mathbf{F} = \mathbf{R}\mathbf{U}$ 代入 $\mathbf{C}$ 的定义，你会得到：
+这与我们的[柯西-格林张量](@keyword=cauchy_green_tensor|lang=zh-CN|style=Feynman)有何联系？如果你将 $\mathbf{F} = \mathbf{R}\mathbf{U}$ 代入 $\mathbf{C}$ 的定义，你会得到：
 
 $$ \mathbf{C} = \mathbf{F}^T\mathbf{F} = (\mathbf{R}\mathbf{U})^T(\mathbf{R}\mathbf{U}) = \mathbf{U}^T\mathbf{R}^T\mathbf{R}\mathbf{U} = \mathbf{U}^T\mathbf{I}\mathbf{U} = \mathbf{U}^T\mathbf{U} $$
 
-由于 $\mathbf{U}$ 是对称的（$\mathbf{U}^T = \mathbf{U}$），这简化为 $\mathbf{C} = \mathbf{U}^2$。这是一个深刻的联系！右[拉伸张量](@article_id:372157) $\mathbf{U}$ 就是[右柯西-格林张量](@article_id:353212) $\mathbf{C}$ 的[矩阵平方根](@article_id:319334)。
+由于 $\mathbf{U}$ 是对称的（$\mathbf{U}^T = \mathbf{U}$），这简化为 $\mathbf{C} = \mathbf{U}^2$。这是一个深刻的联系！右[拉伸张量](@keyword=stretch_tensor|lang=zh-CN|style=Feynman) $\mathbf{U}$ 就是[右柯西-格林张量](@keyword=right_cauchy_green_tensor|lang=zh-CN|style=Feynman) $\mathbf{C}$ 的[矩阵平方根](@keyword=matrix_square_root|lang=zh-CN|style=Feynman)。
 
-这让我们最终可以为拉伸赋予一个清晰的物理意义。[拉伸张量](@article_id:372157) $\mathbf{U}$ 的[特征值](@article_id:315305)被称为**[主拉伸](@article_id:373569)**。它们代表了沿着一组特殊的三个正交方向（$\mathbf{U}$ 的[特征向量](@article_id:312227)）的拉伸比。例如，如果[主拉伸](@article_id:373569)是 $(1.5, 1.0, 0.5)$，这意味着沿第一个[主方向](@article_id:339880)的材料纤维被拉伸了50%，沿第二个方向的纤维没有变化，而沿第三个方向的纤维被压缩到其原始长度的一半。这些[特征值](@article_id:315305)就是 $\mathbf{C}$ 的[特征值](@article_id:315305)的平方根。
+这让我们最终可以为拉伸赋予一个清晰的物理意义。[拉伸张量](@keyword=stretch_tensor|lang=zh-CN|style=Feynman) $\mathbf{U}$ 的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)被称为**[主拉伸](@keyword=principal_stretches|lang=zh-CN|style=Feynman)**。它们代表了沿着一组特殊的三个正交方向（$\mathbf{U}$ 的[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)）的拉伸比。例如，如果[主拉伸](@keyword=principal_stretches|lang=zh-CN|style=Feynman)是 $(1.5, 1.0, 0.5)$，这意味着沿第一个[主方向](@keyword=principal_directions|lang=zh-CN|style=Feynman)的材料纤维被拉伸了50%，沿第二个方向的纤维没有变化，而沿第三个方向的纤维被压缩到其原始长度的一半。这些[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)就是 $\mathbf{C}$ 的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)的平方根。
 
-这种分解不仅仅是一个数学上的奇趣；它在工程和科学中至关重要。例如，在设计一个软体机器人手臂时，工程师需要精确地知道材料是如何拉伸的，这与手臂整体如何旋转是分开的。通过测量或计算 $\mathbf{F}$，他们可以进行[极分解](@article_id:375742)以找到 $\mathbf{R}$ 和 $\mathbf{U}$，从而完全独立地理解这两种效应。
+这种分解不仅仅是一个数学上的奇趣；它在工程和科学中至关重要。例如，在设计一个软体机器人手臂时，工程师需要精确地知道材料是如何拉伸的，这与手臂整体如何旋转是分开的。通过测量或计算 $\mathbf{F}$，他们可以进行[极分解](@keyword=a=up_decomposition|lang=zh-CN|style=Feynman)以找到 $\mathbf{R}$ 和 $\mathbf{U}$，从而完全独立地理解这两种效应。
 
 ### 运动中的变形
 
-到目前为止，我们主要讨论的是从一种形状到另一种形状的静态变化。但是流动的河水或[振动](@article_id:331484)的吉他弦呢？变形通常是一个随时间发生的过程。我们的框架能处理这个吗？
+到目前为止，我们主要讨论的是从一种形状到另一种形状的静态变化。但是流动的河水或[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的吉他弦呢？变形通常是一个随时间发生的过程。我们的框架能处理这个吗？
 
-是的，可以。变形梯度 $\mathbf{F}$ 变成时间的函数，$\mathbf{F}(t)$。我们可以探究它如何变化。给定一块材料，$\mathbf{F}$ 的变化率 $\dot{\mathbf{F}}$ 与材料速度的空间变化直接相关。这种变化由另一个[张量](@article_id:321604)——**[空间速度梯度](@article_id:366361)** $\mathbf{l} = \nabla_{\mathbf{x}} \mathbf{v}$ 来捕捉。它们之间的关系惊人地简单：
+是的，可以。变形梯度 $\mathbf{F}$ 变成时间的函数，$\mathbf{F}(t)$。我们可以探究它如何变化。给定一块材料，$\mathbf{F}$ 的变化率 $\dot{\mathbf{F}}$ 与材料速度的空间变化直接相关。这种变化由另一个[张量](@keyword=tensor|lang=zh-CN|style=Feynman)——**[空间速度梯度](@keyword=spatial_velocity_gradient|lang=zh-CN|style=Feynman)** $\mathbf{l} = \nabla_{\mathbf{x}} \mathbf{v}$ 来捕捉。它们之间的关系惊人地简单：
 
 $$ \dot{\mathbf{F}} = \mathbf{l} \mathbf{F} $$
 
-这个优美的小方程是连接[有限变形](@article_id:351218)世界（固体）和流动世界（流体）的桥梁。它告诉我们，储存在 $\mathbf{F}$ 中的累积变形历史，是如何在每个瞬间被当前的速度场所更新的。从一个简单的想法——一个局部扭曲的映射——我们建立了一个可以描述几乎任何事物形状变化的框架，从聚合物链的扭曲到星系的旋转，揭示了连续介质世界物理学中深刻而令人满意的统一性。
+这个优美的小方程是连接[有限变形](@keyword=finite_deformation|lang=zh-CN|style=Feynman)世界（固体）和流动世界（流体）的桥梁。它告诉我们，储存在 $\mathbf{F}$ 中的累积变形历史，是如何在每个瞬间被当前的速度场所更新的。从一个简单的想法——一个局部扭曲的映射——我们建立了一个可以描述几乎任何事物形状变化的框架，从聚合物链的扭曲到星系的旋转，揭示了连续介质世界物理学中深刻而令人满意的统一性。

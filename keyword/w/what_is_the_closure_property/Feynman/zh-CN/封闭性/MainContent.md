@@ -1,7 +1,7 @@
 ## 引言
-在广阔的数学领域中，某些原理如同基石，支撑着整个理论大厦。[封闭性](@article_id:297350)就是这样一个概念，其表述简单，但影响深远。它决定了一个系统是自洽的还是混乱的，是一个完整的独立世界，还是仅仅一堆互不相干的对象的集合。虽然我们在简单的语境中对它很熟悉——比如知道两个整数相加会得到另一个整数——但其真正的力量及其缺失所带来的影响却常常被低估。为什么某些运算集合能形成优美、可预测的结构，而另一些则会陷入混乱？是什么让一个系统变得稳定和稳健？
+在广阔的数学领域中，某些原理如同基石，支撑着整个理论大厦。[封闭性](@keyword=closure_property|lang=zh-CN|style=Feynman)就是这样一个概念，其表述简单，但影响深远。它决定了一个系统是自洽的还是混乱的，是一个完整的独立世界，还是仅仅一堆互不相干的对象的集合。虽然我们在简单的语境中对它很熟悉——比如知道两个整数相加会得到另一个整数——但其真正的力量及其缺失所带来的影响却常常被低估。为什么某些运算集合能形成优美、可预测的结构，而另一些则会陷入混乱？是什么让一个系统变得稳定和稳健？
 
-本文将深入探讨[封闭性](@article_id:297350)，阐明其作为数学结构“守门人”的核心角色。接下来的章节将通过直观的类比和具体的数学例子来阐释封闭性的正式定义，并超越纯数学，揭示这一理念如何为不同领域带来秩序。您将了解到，[封闭性](@article_id:297350)是如何成为构建群等[代数结构](@article_id:297503)的不可或缺的第一步，以及它如何作为一种统一的设计原则，确保从生命密码到宇宙基本对称性等各种系统的可靠性和可预测性。
+本文将深入探讨[封闭性](@keyword=closure_property|lang=zh-CN|style=Feynman)，阐明其作为数学结构“守门人”的核心角色。接下来的章节将通过直观的类比和具体的数学例子来阐释封闭性的正式定义，并超越纯数学，揭示这一理念如何为不同领域带来秩序。您将了解到，[封闭性](@keyword=closure_property|lang=zh-CN|style=Feynman)是如何成为构建群等[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)的不可或缺的第一步，以及它如何作为一种统一的设计原则，确保从生命密码到宇宙基本对称性等各种系统的可靠性和可预测性。
 
 ## 原理与机制
 
@@ -15,13 +15,13 @@
 $$
 \begin{pmatrix} 0 & a \\ b & 0 \end{pmatrix}
 $$
-其中 $a$ 和 $b$ 是非零实数。“游戏”是标准的[矩阵乘法](@article_id:316443)。这个集合是封闭的吗？我们来玩一下。我们取两个这样的矩阵相乘：
+其中 $a$ 和 $b$ 是非零实数。“游戏”是标准的[矩阵乘法](@keyword=matrix_multiplication|lang=zh-CN|style=Feynman)。这个集合是封闭的吗？我们来玩一下。我们取两个这样的矩阵相乘：
 $$
 \begin{pmatrix} 0 & a \\ b & 0 \end{pmatrix} \begin{pmatrix} 0 & c \\ d & 0 \end{pmatrix} = \begin{pmatrix} (0)(0) + (a)(d) & (0)(c) + (a)(0) \\ (b)(0) + (0)(d) & (b)(c) + (0)(0) \end{pmatrix} = \begin{pmatrix} ad & 0 \\ 0 & bc \end{pmatrix}
 $$
-看看结果！它是一个[对角矩阵](@article_id:642074)，而不是反[对角矩阵](@article_id:642074)。通过玩这个游戏，我们立刻被踢出了我们的游乐场 。定义我们集合的结构本身被这个运算破坏了。这个集合不封闭。
+看看结果！它是一个[对角矩阵](@keyword=diagonal_matrix|lang=zh-CN|style=Feynman)，而不是反[对角矩阵](@keyword=diagonal_matrix|lang=zh-CN|style=Feynman)。通过玩这个游戏，我们立刻被踢出了我们的游乐场 [@problem_id:1612766]。定义我们集合的结构本身被这个运算破坏了。这个集合不封闭。
 
-让我们尝试一个不同的矩阵游乐场。这一次，我们的集合包含所有左上角元素为零的 $2 \times 2$ 矩阵 。
+让我们尝试一个不同的矩阵游乐场。这一次，我们的集合包含所有左上角元素为零的 $2 \times 2$ 矩阵 [@problem_id:1782229]。
 $$
 \begin{pmatrix} 0 & x \\ y & z \end{pmatrix}
 $$
@@ -31,29 +31,29 @@ $$
 $$
 乘积的左上角元素是 $xv$。这个值永远是零吗？当然不是。如果 $x=1$ 且 $v=1$，乘积的左上角元素就是 1。我们又一次被逐出了我们的游乐场。
 
-这不仅仅是矩阵的问题。考虑[复平面](@article_id:318633)上一小组变换：单位变换 $Id(z)=z$、[倒数变换](@article_id:361576) $Rec(z) = 1/z$ 和[共轭](@article_id:312168)变换 $Con(z) = z^*$ 。如果我们将[倒数变换](@article_id:361576)与[共轭](@article_id:312168)变换复合，我们会得到一个新的变换：$(Rec \circ Con)(z) = Rec(Con(z)) = Rec(z^*) = 1/z^*$。这个新变换是我们最初三个变换中的一个吗？它既不是单位变换，也不是[倒数变换](@article_id:361576)，更不是[共轭](@article_id:312168)变换。它是一个全新的东西。我们的小工具箱不是自给自足的；它不是封闭的。
+这不仅仅是矩阵的问题。考虑[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上一小组变换：单位变换 $Id(z)=z$、[倒数变换](@keyword=reciprocal_transformation|lang=zh-CN|style=Feynman) $Rec(z) = 1/z$ 和[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)变换 $Con(z) = z^*$ [@problem_id:1599796]。如果我们将[倒数变换](@keyword=reciprocal_transformation|lang=zh-CN|style=Feynman)与[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)变换复合，我们会得到一个新的变换：$(Rec \circ Con)(z) = Rec(Con(z)) = Rec(z^*) = 1/z^*$。这个新变换是我们最初三个变换中的一个吗？它既不是单位变换，也不是[倒数变换](@keyword=reciprocal_transformation|lang=zh-CN|style=Feynman)，更不是[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)变换。它是一个全新的东西。我们的小工具箱不是自给自足的；它不是封闭的。
 
 ### 结构的起源：群
 
-那又怎样？一个集合不封闭有什么大不了的？奇迹发生在集合*是*封闭的时候。封闭性是构建**群**（group）——数学家眼中优美、自洽的代数世界的黄金标准——不可或缺的第一步。群是一个集合与一种运算的组合，它不仅具有[封闭性](@article_id:297350)，还包含一个单位元（一个“什么都不做”的动作），并且对于每个动作都有一个[逆元](@article_id:301233)（一个“撤销”按钮）。
+那又怎样？一个集合不封闭有什么大不了的？奇迹发生在集合*是*封闭的时候。封闭性是构建**群**（group）——数学家眼中优美、自洽的代数世界的黄金标准——不可或缺的第一步。群是一个集合与一种运算的组合，它不仅具有[封闭性](@keyword=closure_property|lang=zh-CN|style=Feynman)，还包含一个单位元（一个“什么都不做”的动作），并且对于每个动作都有一个[逆元](@keyword=inverse_elements|lang=zh-CN|style=Feynman)（一个“撤销”按钮）。
 
-没有封闭性，整个结构甚至在建立之前就崩溃了。考虑四个元素上的所有**[错排](@article_id:328539)**（derangements）的集合——这些是移动了每一个元素，不留任何元素在原位的[置换](@article_id:296886) 。例如，交换 1 和 2，并交换 3 和 4 的[置换](@article_id:296886) $\sigma$，记作 $(12)(34)$，就是一个错排。如果我们应用这个[置换](@article_id:296886)两次会发生什么？$\sigma \circ \sigma$ 先交换它们，再把它们换回来，结果是单位[置换](@article_id:296886)，即所有东西都回到了原位。单位[置换](@article_id:296886)*不是*一个[错排](@article_id:328539)！所以，通过组合我们集合中的两个元素，我们得到了一个集合外的元素。[错排](@article_id:328539)集合不封闭，因此其自身无法构成一个群。
+没有封闭性，整个结构甚至在建立之前就崩溃了。考虑四个元素上的所有**[错排](@keyword=permutations_with_no_fixed_points|lang=zh-CN|style=Feynman)**（derangements）的集合——这些是移动了每一个元素，不留任何元素在原位的[置换](@keyword=permutation|lang=zh-CN|style=Feynman) [@problem_id:1840636]。例如，交换 1 和 2，并交换 3 和 4 的[置换](@keyword=permutation|lang=zh-CN|style=Feynman) $\sigma$，记作 $(12)(34)$，就是一个错排。如果我们应用这个[置换](@keyword=permutation|lang=zh-CN|style=Feynman)两次会发生什么？$\sigma \circ \sigma$ 先交换它们，再把它们换回来，结果是单位[置换](@keyword=permutation|lang=zh-CN|style=Feynman)，即所有东西都回到了原位。单位[置换](@keyword=permutation|lang=zh-CN|style=Feynman)*不是*一个[错排](@keyword=permutations_with_no_fixed_points|lang=zh-CN|style=Feynman)！所以，通过组合我们集合中的两个元素，我们得到了一个集合外的元素。[错排](@keyword=permutations_with_no_fixed_points|lang=zh-CN|style=Feynman)集合不封闭，因此其自身无法构成一个群。
 
-这是潜在的群构建失败的一种常见方式。在研究对称性时，比如正方形的对称性（群 $D_4$），我们可能会想，一个较小的对称性集合是否能构成一个“[子群](@article_id:306585)”。但如果我们取包含单位元、一个 90 度旋转 $r$、一个反射 $s$ 以及组合 $rs$ 的集合，就会发现一个问题。$r \circ r$ 是什么？它是一个 180 度的旋转，记作 $r^2$。这个新的对称性不在我们原来的集合里，所以这个集合不封闭，无法成为一个[子群](@article_id:306585) 。
+这是潜在的群构建失败的一种常见方式。在研究对称性时，比如正方形的对称性（群 $D_4$），我们可能会想，一个较小的对称性集合是否能构成一个“[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)”。但如果我们取包含单位元、一个 90 度旋转 $r$、一个反射 $s$ 以及组合 $rs$ 的集合，就会发现一个问题。$r \circ r$ 是什么？它是一个 180 度的旋转，记作 $r^2$。这个新的对称性不在我们原来的集合里，所以这个集合不封闭，无法成为一个[子群](@keyword=subgroup|lang=zh-CN|style=Feynman) [@problem_id:1620876]。
 
-然而，当[封闭性](@article_id:297350)成立时，世界就变得井然有序。考虑实数上所有[非递减函数](@article_id:381177)的集合，比如 $f(x)=x^3$ 或 $g(x)=e^x$ 。如果你将任意两个这样的[函数复合](@article_id:305307)，结果仍然是一个[非递减函数](@article_id:381177)。这个性质被保留了下来；该集合在复合运算下是封闭的。这个世界是稳定的。
+然而，当[封闭性](@keyword=closure_property|lang=zh-CN|style=Feynman)成立时，世界就变得井然有序。考虑实数上所有[非递减函数](@keyword=non_decreasing_function|lang=zh-CN|style=Feynman)的集合，比如 $f(x)=x^3$ 或 $g(x)=e^x$ [@problem_id:1782241]。如果你将任意两个这样的[函数复合](@keyword=function_composition|lang=zh-CN|style=Feynman)，结果仍然是一个[非递减函数](@keyword=non_decreasing_function|lang=zh-CN|style=Feynman)。这个性质被保留了下来；该集合在复合运算下是封闭的。这个世界是稳定的。
 
-对于一个群的宏伟世界来说，封闭性是有保证的，一个美妙的模式也随之出现，即**[重排定理](@article_id:315364)**（rearrangement theorem）。如果你写出一个群的[乘法表](@article_id:298638)，每一行和每一列都是该群元素的一个完美[置换](@article_id:296886)。每个元素都恰好出现一次 。没有重复，也没有遗漏。这个美丽的、类似数独的性质是[群公理](@article_id:298669)的深刻结果，而所有这些公理都始于[封闭性](@article_id:297350)这一谦逊的要求。它告诉我们，在这个封闭的宇宙中，运算以可以想象的最有序的方式重新[排列](@article_id:296886)元素。
+对于一个群的宏伟世界来说，封闭性是有保证的，一个美妙的模式也随之出现，即**[重排定理](@keyword=rearrangement_theorem|lang=zh-CN|style=Feynman)**（rearrangement theorem）。如果你写出一个群的[乘法表](@keyword=multiplication_table|lang=zh-CN|style=Feynman)，每一行和每一列都是该群元素的一个完美[置换](@keyword=permutation|lang=zh-CN|style=Feynman)。每个元素都恰好出现一次 [@problem_id:2256036]。没有重复，也没有遗漏。这个美丽的、类似数独的性质是[群公理](@keyword=group_axioms|lang=zh-CN|style=Feynman)的深刻结果，而所有这些公理都始于[封闭性](@keyword=closure_property|lang=zh-CN|style=Feynman)这一谦逊的要求。它告诉我们，在这个封闭的宇宙中，运算以可以想象的最有序的方式重新[排列](@keyword=permutation|lang=zh-CN|style=Feynman)元素。
 
 ### 一次意外的逃逸
 
-我们被整数等简单系统训练出的直觉有时会误导我们。人们可能会合理地推测，如果你取一个庞大而复杂的群，并收集其中所有“稳定”的元素——那些具有有限阶的元素，意味着它们在重复应用一定次数后最终会回到单位元——那么这个稳定元素的集合本身应该是一个封闭的、稳定的[子群](@article_id:306585)。在许多情况下（特别是在阿贝尔群，即交换群中），这是正确的。
+我们被整数等简单系统训练出的直觉有时会误导我们。人们可能会合理地推测，如果你取一个庞大而复杂的群，并收集其中所有“稳定”的元素——那些具有有限阶的元素，意味着它们在重复应用一定次数后最终会回到单位元——那么这个稳定元素的集合本身应该是一个封闭的、稳定的[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)。在许多情况下（特别是在阿贝尔群，即交换群中），这是正确的。
 
 但世界并不总是那么简单。让我们回到矩阵领域，特别是所有可逆的 $2 \times 2$ 实矩阵构成的群 $GL(2, \mathbb{R})$。考虑这两个矩阵：
 $$
 A = \begin{pmatrix} -1 & 1 \\ 0 & 1 \end{pmatrix}, \quad B = \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}
 $$
-你可以验证 $A^2 = I$ 和 $B^2 = I$，其中 $I$ 是单位矩阵。$A$ 和 $B$ 都是完美的 2 阶稳定元素。它们具有有限且可预测的生命周期。现在，让我们玩这个游戏，将它们相乘 ：
+你可以验证 $A^2 = I$ 和 $B^2 = I$，其中 $I$ 是单位矩阵。$A$ 和 $B$ 都是完美的 2 阶稳定元素。它们具有有限且可预测的生命周期。现在，让我们玩这个游戏，将它们相乘 [@problem_id:1782260]：
 $$
 AB = \begin{pmatrix} -1 & 1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}
 $$
@@ -61,14 +61,14 @@ $$
 $$
 U^2 = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix}, \quad U^3 = \begin{pmatrix} 1 & 3 \\ 0 & 1 \end{pmatrix}, \quad \dots \quad , \quad U^n = \begin{pmatrix} 1 & n \\ 0 & 1 \end{pmatrix}
 $$
-这个矩阵*永远*不会回到[单位矩阵](@article_id:317130)！它的阶是无限的。我们组合了两个具有有限、稳定生命周期的元素，却创造了一个永远“逃逸”的元素。我们的有限阶元素集合不封闭。这个惊人的[反例](@article_id:309079)揭示了一个深刻的真理：在非交换的世界里，组合稳定的组件并不能保证得到一个稳定的系统。[封闭性](@article_id:297350)是一个必须严格检验的性质，而不能仅仅凭直觉。
+这个矩阵*永远*不会回到[单位矩阵](@keyword=identity_matrix|lang=zh-CN|style=Feynman)！它的阶是无限的。我们组合了两个具有有限、稳定生命周期的元素，却创造了一个永远“逃逸”的元素。我们的有限阶元素集合不封闭。这个惊人的[反例](@keyword=counterexample|lang=zh-CN|style=Feynman)揭示了一个深刻的真理：在非交换的世界里，组合稳定的组件并不能保证得到一个稳定的系统。[封闭性](@keyword=closure_property|lang=zh-CN|style=Feynman)是一个必须严格检验的性质，而不能仅仅凭直觉。
 
 ### 一个统一的原则
 
-对封闭性的追求是一个反复出现的主题，是贯穿整个数学的发现驱动力。它不仅仅关乎数字和矩阵。考虑测量[实数线](@article_id:308695)上子集“大小”（或**测度**，measure）的挑战。我们可以轻松地测量像 $[0, 1]$ 或 $(2, 5)$ 这样的区间的长度。所以，让我们将我们的游乐场定义为 $\mathbb{R}$ 中所有可能区间的集合。
+对封闭性的追求是一个反复出现的主题，是贯穿整个数学的发现驱动力。它不仅仅关乎数字和矩阵。考虑测量[实数线](@keyword=real_line|lang=zh-CN|style=Feynman)上子集“大小”（或**测度**，measure）的挑战。我们可以轻松地测量像 $[0, 1]$ 或 $(2, 5)$ 这样的区间的长度。所以，让我们将我们的游乐场定义为 $\mathbb{R}$ 中所有可能区间的集合。
 
-现在，我们需要执行哪些运算？我们希望能够组合集合（并集）和取补集。让我们测试一下并集运算下的[封闭性](@article_id:297350) 。取两个区间的并集：$(0, 1) \cup (2, 3)$。结果是一个中间有间隙的集合。这不是一个区间！我们的集合在有限并集下不封闭，更不用说可数并集了。同样，区间 $(0, 1)$ 的[补集](@article_id:306716)是 $(-\infty, 0] \cup [1, \infty)$，这也不是一个区间。
+现在，我们需要执行哪些运算？我们希望能够组合集合（并集）和取补集。让我们测试一下并集运算下的[封闭性](@keyword=closure_property|lang=zh-CN|style=Feynman) [@problem_id:1330313]。取两个区间的并集：$(0, 1) \cup (2, 3)$。结果是一个中间有间隙的集合。这不是一个区间！我们的集合在有限并集下不封闭，更不用说可数并集了。同样，区间 $(0, 1)$ 的[补集](@keyword=complement_of_a_set|lang=zh-CN|style=Feynman)是 $(-\infty, 0] \cup [1, \infty)$，这也不是一个区间。
 
-简单、直观的区间集合，对于构建[测度论](@article_id:300191)所需的运算来说，并不是一个封闭的系统。对封闭性的要求迫使我们必须更有创造力。我们必须扩展我们的游乐场，不仅包括区间，还包括所有通过对区间进行可数次并、交和补运算所能形成的集合。这就引出了一个更广阔、更强大的集合，称为 **$\sigma$-代数**（$\sigma$-algebra）。正是因为这个新的集合*是*封闭的，我们才能在其上建立一个一致且强大的测度论。
+简单、直观的区间集合，对于构建[测度论](@keyword=measure_theory|lang=zh-CN|style=Feynman)所需的运算来说，并不是一个封闭的系统。对封闭性的要求迫使我们必须更有创造力。我们必须扩展我们的游乐场，不仅包括区间，还包括所有通过对区间进行可数次并、交和补运算所能形成的集合。这就引出了一个更广阔、更强大的集合，称为 **$\sigma$-代数**（$\sigma$-algebra）。正是因为这个新的集合*是*封闭的，我们才能在其上建立一个一致且强大的测度论。
 
 从检验两个整数相加是否得到整数，到构建现代分析的基础，封闭性都是那个沉默而必要的守门人。它决定了我们的数学结构是松散的对象集合，还是准备好被探索的、稳健且自洽的宇宙。

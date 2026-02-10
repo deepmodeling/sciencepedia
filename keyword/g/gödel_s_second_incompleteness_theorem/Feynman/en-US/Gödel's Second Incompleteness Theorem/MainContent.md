@@ -5,15 +5,15 @@ This article explores the earth-shattering answer provided by Kurt Gödel. We wi
 
 ## Principles and Mechanisms
 
-Imagine you are trying to teach a language a new trick: you want it to be able to describe its own grammar. Not just to form sentences, but to form sentences *about* its sentences, its rules, its very structure. This is the intellectual precipice where mathematics stood in the early 20th century. The language in question was not English or French, but the precise and powerful language of arithmetic. The goal was to see if arithmetic, a system for reasoning about numbers, could be turned inward to reason about its own reasoning—about its axioms, its [rules of inference](@article_id:272654), and, most importantly, its proofs. What it discovered when it looked in the mirror was not only astonishing but would shake the very foundations of mathematics and philosophy.
+Imagine you are trying to teach a language a new trick: you want it to be able to describe its own grammar. Not just to form sentences, but to form sentences *about* its sentences, its rules, its very structure. This is the intellectual precipice where mathematics stood in the early 20th century. The language in question was not English or French, but the precise and powerful language of arithmetic. The goal was to see if arithmetic, a system for reasoning about numbers, could be turned inward to reason about its own reasoning—about its axioms, its [rules of inference](@keyword=rules_of_inference|lang=en-US|style=Feynman), and, most importantly, its proofs. What it discovered when it looked in the mirror was not only astonishing but would shake the very foundations of mathematics and philosophy.
 
 ### The Secret Code: Turning Proofs into Numbers
 
-The first brilliant step, the key that unlocked this entire world of [self-reference](@article_id:152774), is a process called **arithmetization**, or more famously, **Gödel numbering**. The idea is deceptively simple: every symbol, every formula, and every sequence of formulas that constitutes a proof can be assigned a unique natural number. Think of it as a cosmic serial number for every possible statement and argument in the language of arithmetic.
+The first brilliant step, the key that unlocked this entire world of [self-reference](@keyword=self_reference|lang=en-US|style=Feynman), is a process called **arithmetization**, or more famously, **Gödel numbering**. The idea is deceptively simple: every symbol, every formula, and every sequence of formulas that constitutes a proof can be assigned a unique natural number. Think of it as a cosmic serial number for every possible statement and argument in the language of arithmetic.
 
 A formula like $S(0) + S(0) = S(S(0))$ (which is just $1+1=2$) is a string of symbols. We can assign a number to each symbol ('$+$' gets 1, '=' gets 2, etc.), and then use a clever mathematical recipe—like using prime numbers and exponents—to combine these into a single, enormous, but unique integer that represents the whole formula. A proof, being just a finite sequence of formulas, can similarly be encoded into one giant number.
 
-Suddenly, questions about mathematics become questions about numbers. "Is this a valid axiom?" becomes "Does this number have property X?" "Does this proof correctly prove this theorem?" becomes "Do the numbers $p$ and $\varphi$ stand in a specific numerical relationship?" The study of mathematical proofs ([metamathematics](@article_id:154893)) has been transformed into a chapter of number theory.
+Suddenly, questions about mathematics become questions about numbers. "Is this a valid axiom?" becomes "Does this number have property X?" "Does this proof correctly prove this theorem?" becomes "Do the numbers $p$ and $\varphi$ stand in a specific numerical relationship?" The study of mathematical proofs ([metamathematics](@keyword=metamathematics|lang=en-US|style=Feynman)) has been transformed into a chapter of number theory.
 
 ### The Mechanical Proof-Checker
 
@@ -23,7 +23,7 @@ This isn't magic. Building this formula is like writing a computer program. The 
 1.  Is it an axiom? (A checkable property of its Gödel number).
 2.  Does it follow from previous formulas by a rule of inference, like Modus Ponens? (A checkable relationship between the Gödel numbers of the formulas involved).
 
-Finally, it checks if the very **last formula** in the sequence is the one with the Gödel number $\varphi$. All these checks are purely mechanical, or what logicians call **primitive recursive**. They are tasks so straightforward that a simple computer could perform them. And Peano Arithmetic ($PA$), the standard [formal system](@article_id:637447) for arithmetic, is powerful enough to express *any* such primitive recursive relationship.
+Finally, it checks if the very **last formula** in the sequence is the one with the Gödel number $\varphi$. All these checks are purely mechanical, or what logicians call **primitive recursive**. They are tasks so straightforward that a simple computer could perform them. And Peano Arithmetic ($PA$), the standard [formal system](@keyword=formal_system|lang=en-US|style=Feynman) for arithmetic, is powerful enough to express *any* such primitive recursive relationship.
 
 This means that for any two specific numbers, say $n=10^{500}$ and $m=10^{100}$, the statement $\mathrm{Prf}_{PA}(\overline{n}, \overline{m})$ ("the number $n$ codes a proof of the formula coded by $m$") is a definite arithmetical claim that $PA$ can either prove or refute. There is no ambiguity.
 
@@ -31,7 +31,7 @@ This means that for any two specific numbers, say $n=10^{500}$ and $m=10^{100}$,
 
 With our proof-checking machine $\mathrm{Prf}_{PA}(p, \varphi)$ in hand, we can take a giant leap. Instead of asking whether a *given* number $p$ is a proof of $\varphi$, we can ask a much more profound question: does a proof of $\varphi$ *exist at all*?
 
-This gives rise to the **[provability predicate](@article_id:634191)**, $\mathrm{Prov}_{PA}(\varphi)$, which is defined as:
+This gives rise to the **[provability predicate](@keyword=provability_predicate|lang=en-US|style=Feynman)**, $\mathrm{Prov}_{PA}(\varphi)$, which is defined as:
 $$ \mathrm{Prov}_{PA}(\ulcorner\varphi\urcorner) \equiv \exists p \, \mathrm{Prf}_{PA}(p, \ulcorner\varphi\urcorner) $$
 This formula asserts, "There exists a number $p$ such that $p$ codes a proof of the formula $\varphi$." This is the formal, arithmetical version of the statement "`$\varphi$ is provable in $PA$`."
 
@@ -41,11 +41,11 @@ The introduction of "there exists" ($\exists$) is a crucial change. Checking a g
 
 So, we've built a mirror. We've created a formula, $\mathrm{Prov}_{PA}$, that allows Peano Arithmetic to talk about its own notion of provability. The next question is: does this internal notion behave sensibly? Does $PA$ "know" the rules of its own game?
 
-The beautiful answer is yes. $PA$ is strong enough to prove that its own [provability predicate](@article_id:634191) obeys a set of three fundamental laws, known as the **Hilbert-Bernays-Löb (HBL) [derivability conditions](@article_id:153820)**.
+The beautiful answer is yes. $PA$ is strong enough to prove that its own [provability predicate](@keyword=provability_predicate|lang=en-US|style=Feynman) obeys a set of three fundamental laws, known as the **Hilbert-Bernays-Löb (HBL) [derivability conditions](@keyword=derivability_conditions|lang=en-US|style=Feynman)**.
 
 1.  **Internalized Necessitation:** If $PA$ proves a sentence $\varphi$ (written $PA \vdash \varphi$), then $PA$ also proves that $\varphi$ is provable ($PA \vdash \mathrm{Prov}_{PA}(\ulcorner\varphi\urcorner)$). This makes perfect sense. If you have a proof, you can hold it up, calculate its Gödel number $\overline{n}$, and then formally verify inside $PA$ that $\mathrm{Prf}_{PA}(\overline{n}, \ulcorner\varphi\urcorner)$ is true. From this concrete instance, the existential statement $\mathrm{Prov}_{PA}(\ulcorner\varphi\urcorner)$ follows immediately.
 
-2.  **Distribution over Implication:** $PA$ proves that [provability](@article_id:148675) distributes over the 'if-then' arrow. Formally, $PA \vdash \mathrm{Prov}_{PA}(\ulcorner \varphi \rightarrow \psi \urcorner) \rightarrow (\mathrm{Prov}_{PA}(\ulcorner \varphi \urcorner) \rightarrow \mathrm{Prov}_{PA}(\ulcorner \psi \urcorner))$. This is just $PA$'s internal recognition of its most basic rule of reasoning, Modus Ponens. It reflects the simple fact that if you have a proof of "if $\varphi$ then $\psi$" and a proof of "$\varphi$," you can mechanically stick them together to produce a proof of "$\psi$."
+2.  **Distribution over Implication:** $PA$ proves that [provability](@keyword=provability|lang=en-US|style=Feynman) distributes over the 'if-then' arrow. Formally, $PA \vdash \mathrm{Prov}_{PA}(\ulcorner \varphi \rightarrow \psi \urcorner) \rightarrow (\mathrm{Prov}_{PA}(\ulcorner \varphi \urcorner) \rightarrow \mathrm{Prov}_{PA}(\ulcorner \psi \urcorner))$. This is just $PA$'s internal recognition of its most basic rule of reasoning, Modus Ponens. It reflects the simple fact that if you have a proof of "if $\varphi$ then $\psi$" and a proof of "$\varphi$," you can mechanically stick them together to produce a proof of "$\psi$."
 
 3.  **Iteration of Provability:** $PA$ proves that if a statement is provable, then it's provable that it's provable. Formally, $PA \vdash \mathrm{Prov}_{PA}(\ulcorner \varphi \urcorner) \rightarrow \mathrm{Prov}_{PA}(\ulcorner \mathrm{Prov}_{PA}(\ulcorner \varphi \urcorner) \urcorner)$. The system is not only aware of its theorems, but it is aware of its awareness. This follows from the fact that the reasoning in the first condition—finding a proof and verifying it—is itself a mechanical process that can be formalized and proven within $PA$.
 
@@ -65,15 +65,15 @@ Here lies the earth-shattering conclusion of **Gödel's Second Incompleteness Th
 > If Peano Arithmetic is consistent, then it cannot prove its own consistency.
 > $$ \text{If } PA \text{ is consistent, then } PA \nvdash \mathrm{Con}(PA). $$
 
-Why on earth should this be true? The argument is one of stunning elegance. Consider the **reflection schema**: the set of all sentences of the form $\mathrm{Prov}_{PA}(\ulcorner \varphi \urcorner) \rightarrow \varphi$. This schema asserts the system's own [soundness](@article_id:272524): "If a statement $\varphi$ is provable, then it's true." If $PA$ could prove this entire schema for every $\varphi$, it could certainly prove it for the specific, false statement $\varphi \equiv (0=1)$. That is, it would prove:
+Why on earth should this be true? The argument is one of stunning elegance. Consider the **reflection schema**: the set of all sentences of the form $\mathrm{Prov}_{PA}(\ulcorner \varphi \urcorner) \rightarrow \varphi$. This schema asserts the system's own [soundness](@keyword=soundness|lang=en-US|style=Feynman): "If a statement $\varphi$ is provable, then it's true." If $PA$ could prove this entire schema for every $\varphi$, it could certainly prove it for the specific, false statement $\varphi \equiv (0=1)$. That is, it would prove:
 $$ PA \vdash \mathrm{Prov}_{PA}(\ulcorner 0=1 \urcorner) \rightarrow (0=1) $$
 But inside $PA$, this is logically equivalent to its contrapositive, $\neg(0=1) \rightarrow \neg \mathrm{Prov}_{PA}(\ulcorner 0=1 \urcorner)$. Since $PA$ can easily prove that $0 \neq 1$, it would use Modus Ponens to conclude $\neg \mathrm{Prov}_{PA}(\ulcorner 0=1 \urcorner)$, which is exactly $\mathrm{Con}(PA)$!
 
-So, the ability to prove its own consistency hinges on the ability to guarantee its own soundness. But this is a form of philosophical bootstrapping that no [formal system](@article_id:637447) can perform. It cannot, from within its own axiomatic framework, declare that everything it proves is true. To do so would be an act of faith, not proof.
+So, the ability to prove its own consistency hinges on the ability to guarantee its own soundness. But this is a form of philosophical bootstrapping that no [formal system](@keyword=formal_system|lang=en-US|style=Feynman) can perform. It cannot, from within its own axiomatic framework, declare that everything it proves is true. To do so would be an act of faith, not proof.
 
 ### The Surprising Logic of Provability
 
-Gödel's theorem was not an end, but a beginning. It opened up a new field, **[provability logic](@article_id:148529)**, which studies the abstract structure of the [provability predicate](@article_id:634191). The HBL conditions become axioms for a new [modal logic](@article_id:148592), $GL$. The most profound discovery in this field is **Löb's Theorem**, a mind-bending generalization of Gödel's result.
+Gödel's theorem was not an end, but a beginning. It opened up a new field, **[provability logic](@keyword=provability_logic|lang=en-US|style=Feynman)**, which studies the abstract structure of the [provability predicate](@keyword=provability_predicate|lang=en-US|style=Feynman). The HBL conditions become axioms for a new [modal logic](@keyword=modal_logic|lang=en-US|style=Feynman), $GL$. The most profound discovery in this field is **Löb's Theorem**, a mind-bending generalization of Gödel's result.
 
 Löb's Theorem states:
 > For any sentence $\varphi$, if $PA \vdash \mathrm{Prov}_{PA}(\ulcorner \varphi \urcorner) \rightarrow \varphi$, then $PA \vdash \varphi$.

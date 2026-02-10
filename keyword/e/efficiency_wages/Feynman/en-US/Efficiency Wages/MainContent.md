@@ -21,7 +21,7 @@ Think of it like buying light bulbs. You could buy the cheapest bulb on the shel
 
 If a higher wage leads to higher efficiency, but also higher costs, there must be an optimal point, a 'sweet spot' where you get the most bang for your buck. How do we find it?
 
-Let's imagine a simple, hypothetical world to make the idea crystal clear . Suppose a worker’s efficiency is related to their wage by the [simple function](@article_id:160838) $e(w) = \ln(w)$, for any wage $w$ greater than 1. In this case, the cost per efficiency unit is $c(w) = \frac{w}{\ln(w)}$. The firm's goal is to choose a wage $w$ that makes this value as small as possible.
+Let's imagine a simple, hypothetical world to make the idea crystal clear [@problem_id:2422420]. Suppose a worker’s efficiency is related to their wage by the [simple function](@keyword=simple_function|lang=en-US|style=Feynman) $e(w) = \ln(w)$, for any wage $w$ greater than 1. In this case, the cost per efficiency unit is $c(w) = \frac{w}{\ln(w)}$. The firm's goal is to choose a wage $w$ that makes this value as small as possible.
 
 Using a sprinkle of calculus, we can find the minimum of this function. The answer turns out to be a magically simple number: $w^* = e \approx 2.718$. What's remarkable is that this optimal wage doesn't depend on the price of the product the firm sells, or its specific production technology. It depends *only* on the relationship between wage and efficiency.
 
@@ -55,7 +55,7 @@ This is the central insight of the celebrated **Shapiro-Stiglitz shirking model*
 
 In this world, the wage is not just payment for time; it is a bond posted for good behavior. The firm willingly pays this premium because it buys them the thing they really want: effort.
 
-We can even model this more formally, as economists do in more advanced settings . The minimum wage a firm must pay to even begin to deter shirking—the **no-shirking wage**, $w_{\mathrm{NS}}$—depends on several factors in the economic environment.
+We can even model this more formally, as economists do in more advanced settings [@problem_id:2443637]. The minimum wage a firm must pay to even begin to deter shirking—the **no-shirking wage**, $w_{\mathrm{NS}}$—depends on several factors in the economic environment.
 - If unemployment benefits ($b$) go up, the no-shirking wage must also rise, because the alternative to working becomes more attractive.
 - If the firm improves its monitoring and increases the probability of catching a shirker ($p$), it can get away with paying a lower wage, because the risk of shirking goes up.
 - If jobs are very stable and the separation rate ($s$) is low, the current job is more valuable, which helps deter shirking.

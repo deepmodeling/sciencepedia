@@ -11,7 +11,7 @@ This powerful idea appears in two, at first glance, very different domains: econ
 
 Imagine you hold a lottery ticket. A flip of a fair coin will decide your fate: heads, you win $100,000; tails, you win nothing. The *expected value* of this lottery is easy to calculate: a 50% chance of $100,000 and a 50% chance of $0 gives an average of $50,000. Now, someone comes along and offers to buy your ticket before the coin is flipped. What is the lowest price you would accept?
 
-Would you sell it for $49,000, guaranteed? Almost certainly. What about $40,000? $30,000? It's unlikely you'd take, say, $1,000. Somewhere between these numbers lies your personal walk-away price. That specific dollar amount, the guaranteed cash-in-hand that would make you feel exactly as happy as you feel holding the risky ticket, is your **[certainty equivalent](@article_id:143367) (CE)**.
+Would you sell it for $49,000, guaranteed? Almost certainly. What about $40,000? $30,000? It's unlikely you'd take, say, $1,000. Somewhere between these numbers lies your personal walk-away price. That specific dollar amount, the guaranteed cash-in-hand that would make you feel exactly as happy as you feel holding the risky ticket, is your **[certainty equivalent](@keyword=certainty_equivalent|lang=en-US|style=Feynman) (CE)**.
 
 Most people, unless they are dedicated thrill-seekers, would accept an amount somewhat less than the $50,000 expected value. Why? This brings us to the concept of **utility**.
 
@@ -27,7 +27,7 @@ $$
 u(W_{CE}) = \mathbb{E}[u(W)] = \sum_i p_i u(W_i)
 $$
 
-Let's make this concrete with an example. Suppose an investor's utility is modeled by the function $U(W) = 20\sqrt{W}$, a classic concave function. They are considering a risky investment (Strategy B) that has a 60% chance of resulting in a final wealth of $6.25$ million dollars and a 40% chance of resulting in $1.96$ million dollars .
+Let's make this concrete with an example. Suppose an investor's utility is modeled by the function $U(W) = 20\sqrt{W}$, a classic concave function. They are considering a risky investment (Strategy B) that has a 60% chance of resulting in a final wealth of $6.25$ million dollars and a 40% chance of resulting in $1.96$ million dollars [@problem_id:2161306].
 
 First, we calculate the expected utility of the gamble:
 $$
@@ -46,9 +46,9 @@ $$
 RP = \mathbb{E}[W_B] - W_{CE} = 4.534 - 4.2436 = 0.2904 \text{ million dollars}
 $$
 
-The risk premium is the amount of expected value the investor is willing to "pay" to avoid the uncertainty of the gamble. It is the price of sleeping soundly at night. For a risk-averse individual, this premium is always positive .
+The risk premium is the amount of expected value the investor is willing to "pay" to avoid the uncertainty of the gamble. It is the price of sleeping soundly at night. For a risk-averse individual, this premium is always positive [@problem_id:1926115].
 
-The power of this framework is stunningly demonstrated by its ability to resolve the famous **St. Petersburg Paradox** . In the original paradox, a coin is tossed until it lands on tails. If this happens on the $n$-th toss, the payout is $2^{n-1}$ dollars. The strange result is that the expected *value* of this game is infinite!
+The power of this framework is stunningly demonstrated by its ability to resolve the famous **St. Petersburg Paradox** [@problem_id:1406407]. In the original paradox, a coin is tossed until it lands on tails. If this happens on the $n$-th toss, the payout is $2^{n-1}$ dollars. The strange result is that the expected *value* of this game is infinite!
 $$
 \mathbb{E}[\text{Payout}] = \sum_{n=1}^{\infty} \left(\frac{1}{2}\right)^n \times 2^{n-1} = \frac{1}{2} + \frac{1}{2} + \frac{1}{2} + \dots = \infty
 $$
@@ -62,11 +62,11 @@ The square-root function is just one way to model risk aversion. Economists have
 - **Constant Relative Risk Aversion (CRRA):** $u(w) = \frac{w^{1-\rho}}{1-\rho}$, where $\rho$ is the coefficient of relative risk aversion. Log utility is the special case where $\rho=1$. Someone with CRRA utility is willing to risk the same *fraction* of their wealth on a given bet, regardless of how rich they are.
 - **Constant Absolute Risk Aversion (CARA):** $u(w) = -\exp(-aw)$, where $a$ is the coefficient of absolute risk aversion. Someone with CARA utility is willing to risk the same *absolute amount* of money on a bet, regardless of their total wealth.
 
-The choice of utility function is not just an academic exercise; it has real-world consequences. Imagine a set of three different assets with varying levels of risk and potential return. An investor with logarithmic utility might rank them in one order, while an investor with a high-risk-aversion CRRA utility might rank them completely differently, preferring a safer, low-return asset that the first investor shunned . Your personal "utility curve" dictates your investment strategy.
+The choice of utility function is not just an academic exercise; it has real-world consequences. Imagine a set of three different assets with varying levels of risk and potential return. An investor with logarithmic utility might rank them in one order, while an investor with a high-risk-aversion CRRA utility might rank them completely differently, preferring a safer, low-return asset that the first investor shunned [@problem_id:2445908]. Your personal "utility curve" dictates your investment strategy.
 
-Finding the certainty equivalent for these varied and complex scenarios used to be a daunting task. But today, we can harness the power of computation. For any lottery with discrete outcomes, we can write a simple program: first, it calculates the expected utility by summing up the utility of each outcome weighted by its probability. Then, it uses a numerical root-finding algorithm to instantly solve the equation $u(CE) = \mathbb{E}[u(W)]$ .
+Finding the certainty equivalent for these varied and complex scenarios used to be a daunting task. But today, we can harness the power of computation. For any lottery with discrete outcomes, we can write a simple program: first, it calculates the expected utility by summing up the utility of each outcome weighted by its probability. Then, it uses a numerical root-finding algorithm to instantly solve the equation $u(CE) = \mathbb{E}[u(W)]$ [@problem_id:2391058].
 
-For even more complex financial products, where the payoff distribution doesn't follow a simple formula, we can use **Monte Carlo simulation**. A computer can simulate thousands or millions of possible futures for the asset, calculate the utility of each one, and average them to get a highly accurate estimate of the expected utility. From there, it's the same final step of finding the CE . This combination of a century-old theory with modern computing allows us to put a price on nearly any form of risk. In fact, economists even use clever experimental setups, like the **Becker-DeGroot-Marschak (BDM) mechanism**, to try and measure a person's "true" certainty equivalent in a laboratory setting, bridging economic theory with human psychology .
+For even more complex financial products, where the payoff distribution doesn't follow a simple formula, we can use **Monte Carlo simulation**. A computer can simulate thousands or millions of possible futures for the asset, calculate the utility of each one, and average them to get a highly accurate estimate of the expected utility. From there, it's the same final step of finding the CE [@problem_id:2445887]. This combination of a century-old theory with modern computing allows us to put a price on nearly any form of risk. In fact, economists even use clever experimental setups, like the **Becker-DeGroot-Marschak (BDM) mechanism**, to try and measure a person's "true" certainty equivalent in a laboratory setting, bridging economic theory with human psychology [@problem_id:2391066].
 
 ### A Different Beast: The Certainty Equivalence Principle in Control
 
@@ -80,14 +80,14 @@ The **certainty equivalence principle** offers a brilliantly simple, yet powerfu
 2.  In the real system, build an estimator that provides the best possible real-time *guess* of those parameters.
 3.  Simply feed these estimates into your controller formula, acting as if they were the true values.
 
-This approach is at the heart of the celebrated **Linear-Quadratic-Gaussian (LQG) control** solution, a cornerstone of modern engineering . The problem involves controlling a system affected by random noise. The solution elegantly splits into two parts, a phenomenon known as the **separation principle**:
+This approach is at the heart of the celebrated **Linear-Quadratic-Gaussian (LQG) control** solution, a cornerstone of modern engineering [@problem_id:1589159]. The problem involves controlling a system affected by random noise. The solution elegantly splits into two parts, a phenomenon known as the **separation principle**:
 
 -   **The Controller (LQR):** An optimal state-feedback controller is designed assuming the system's state can be measured perfectly, without any noise.
 -   **The Estimator (Kalman Filter):** A **Kalman filter**, a masterful algorithm for deducing the "truth" from noisy measurements, is designed to produce the best possible estimate of the system's true state.
 
 The magic is that you can design these two components completely independently of each other. Then, you simply connect the output of the Kalman filter (the state estimate $\hat{x}$) to the input of the LQR controller, and the entire system is provably optimal. The controller acts with certainty on an estimate provided by the filter.
 
-This "act on the estimate as if it were truth" strategy is not a leap of faith. For many systems, it can be proven to be stable and effective. In **adaptive control**, this principle is used to control systems whose parameters are not just noisy, but completely unknown . An "[adaptation law](@article_id:163274)" constantly updates the parameter estimates based on the system's performance error. The controller then uses these ever-changing estimates. The rigorous proof of stability requires a sophisticated tool known as a **Lyapunov function**, which acts like an "energy" function for the system's total error (both tracking error and [parameter estimation](@article_id:138855) error). The [adaptation law](@article_id:163274) is designed precisely to ensure this total energy can never increase, guiding the system to a stable state.
+This "act on the estimate as if it were truth" strategy is not a leap of faith. For many systems, it can be proven to be stable and effective. In **adaptive control**, this principle is used to control systems whose parameters are not just noisy, but completely unknown [@problem_id:2722771]. An "[adaptation law](@keyword=adaptation_law|lang=en-US|style=Feynman)" constantly updates the parameter estimates based on the system's performance error. The controller then uses these ever-changing estimates. The rigorous proof of stability requires a sophisticated tool known as a **Lyapunov function**, which acts like an "energy" function for the system's total error (both tracking error and [parameter estimation](@keyword=parameter_estimation|lang=en-US|style=Feynman) error). The [adaptation law](@keyword=adaptation_law|lang=en-US|style=Feynman) is designed precisely to ensure this total energy can never increase, guiding the system to a stable state.
 
 ### A Unifying Vision
 

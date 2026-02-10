@@ -7,9 +7,9 @@ Symmetry is one of the most fundamental ideas in physics and mathematics. We say
 
 ### What is Symmetry, Really?
 
-Let's start with a very simple, concrete question. Imagine you have a machine that takes a string of $n$ bits—zeros and ones—and outputs a single bit, either 0 or 1. This is a **binary [boolean function](@article_id:156080)**. We call such a function **symmetric** if it doesn't care about the *order* of the input bits, only about the *content*. For example, if the function receives `10100` and outputs `1`, it must also output `1` for `00110`, `01010`, and any other arrangement of two ones and three zeros. The only thing that matters is the *count* of ones.
+Let's start with a very simple, concrete question. Imagine you have a machine that takes a string of $n$ bits—zeros and ones—and outputs a single bit, either 0 or 1. This is a **binary [boolean function](@keyword=boolean_function|lang=en-US|style=Feynman)**. We call such a function **symmetric** if it doesn't care about the *order* of the input bits, only about the *content*. For example, if the function receives `10100` and outputs `1`, it must also output `1` for `00110`, `01010`, and any other arrangement of two ones and three zeros. The only thing that matters is the *count* of ones.
 
-So, how many of these symmetric functions are there for $n$ variables? The key insight is that the function's behavior is completely determined once we decide its output for each possible *number* of ones. The number of ones in an input string can be 0, 1, 2, ..., all the way up to $n$. That gives us $n+1$ possible scenarios. For each scenario (say, inputs with exactly $k$ ones), we have two choices for the output: 0 or 1. Since these choices are independent for each of the $n+1$ scenarios, the total number of distinct symmetric functions is $2 \times 2 \times \dots \times 2$, repeated $n+1$ times. The answer is simply $2^{n+1}$ .
+So, how many of these symmetric functions are there for $n$ variables? The key insight is that the function's behavior is completely determined once we decide its output for each possible *number* of ones. The number of ones in an input string can be 0, 1, 2, ..., all the way up to $n$. That gives us $n+1$ possible scenarios. For each scenario (say, inputs with exactly $k$ ones), we have two choices for the output: 0 or 1. Since these choices are independent for each of the $n+1$ scenarios, the total number of distinct symmetric functions is $2 \times 2 \times \dots \times 2$, repeated $n+1$ times. The answer is simply $2^{n+1}$ [@problem_id:484092].
 
 This simple counting exercise reveals the essence of symmetry for functions: a symmetric function is one whose value depends only on the collection of its inputs, not on which input has which value. If you have a function $f(x_1, x_2, \dots, x_n)$, it is symmetric if you can swap $x_1$ and $x_2$, or any other pair of variables, and the value of the function remains utterly unchanged. $f(x_1, x_2, x_3) = f(x_2, x_1, x_3) = f(x_3, x_2, x_1)$, and so on for any permutation.
 
@@ -37,17 +37,17 @@ These three families are the primary colors from which all other symmetric funct
 
 The fact that we have multiple sets of building blocks is incredibly powerful. It means we can switch between them to solve a problem in the most convenient language. The rules for translating between these languages are not arbitrary; they are deep, structural relationships. These are the famous **Newton's Identities**.
 
-For example, problem  asks us to express the power sum $p_4$ in terms of the complete homogeneous functions $h_k$. By systematically applying the identities that connect the two families, one can derive that:
+For example, problem [@problem_id:1808746] asks us to express the power sum $p_4$ in terms of the complete homogeneous functions $h_k$. By systematically applying the identities that connect the two families, one can derive that:
 $$ p_4 = 4 h_4 - 4 h_1 h_3 - 2 h_2^2 + 4 h_1^2 h_2 - h_1^4 $$
 The exact formula isn't what's important. What's amazing is that such a definite, algebraic relationship exists. It's like a dictionary.
 
-This idea of changing bases is central. Consider the function $S = e_2 e_1$. This is a symmetric function of degree 3, built from the elementary blocks. We can ask for its "recipe" in the language of the complete homogeneous functions . The process is like solving a [system of linear equations](@article_id:139922), and we find that:
+This idea of changing bases is central. Consider the function $S = e_2 e_1$. This is a symmetric function of degree 3, built from the elementary blocks. We can ask for its "recipe" in the language of the complete homogeneous functions [@problem_id:965335]. The process is like solving a [system of linear equations](@keyword=system_of_linear_equations|lang=en-US|style=Feynman), and we find that:
 $$ e_2 e_1 = h_1^3 - h_2 h_1 $$
 (The full basis for degree 3 also includes $h_3$, but its coefficient turns out to be zero in this case). This ability to translate is not just a mathematical curiosity; it is the machinery that makes this theory work, allowing us to jump from one perspective to another to gain new insights.
 
 ### The Aristocrats: Schur Functions and the Shape of Symmetry
 
-While the $p_k$, $e_k$, and $h_k$ families are the workhorses of the theory, there is another, more regal family of functions: the **Schur functions**, denoted $s_\lambda$. These are the true aristocrats of the symmetric function world. Their importance comes from a stunning, unexpected connection to a completely different field: the representation theory of the [symmetric group](@article_id:141761), which is the mathematical study of symmetry itself.
+While the $p_k$, $e_k$, and $h_k$ families are the workhorses of the theory, there is another, more regal family of functions: the **Schur functions**, denoted $s_\lambda$. These are the true aristocrats of the symmetric function world. Their importance comes from a stunning, unexpected connection to a completely different field: the representation theory of the [symmetric group](@keyword=symmetric_group|lang=en-US|style=Feynman), which is the mathematical study of symmetry itself.
 
 The label $\lambda$ on a Schur function $s_\lambda$ is not just an index; it's a **partition** of an integer, which can be visualized as a **Young diagram**. For example, the partition $(2,1)$ of the number 3 corresponds to a diagram with 2 boxes in the first row and 1 in the second:
 
@@ -57,9 +57,9 @@ The label $\lambda$ on a Schur function $s_\lambda$ is not just an index; it's a
 ```
 The Schur functions form yet another basis for $\Lambda$. What makes them so special?
 
-First, they have beautiful combinatorial properties. For instance, **Pieri's rule** gives a simple, visual way to multiply a Schur function by a simple one like $s_{(k)} = h_k$. It tells you the product is a sum of new Schur functions whose diagrams are obtained by adding $k$ boxes to the original diagram, subject to a simple rule (no two new boxes in the same column) . Algebra becomes a game of adding blocks!
+First, they have beautiful combinatorial properties. For instance, **Pieri's rule** gives a simple, visual way to multiply a Schur function by a simple one like $s_{(k)} = h_k$. It tells you the product is a sum of new Schur functions whose diagrams are obtained by adding $k$ boxes to the original diagram, subject to a simple rule (no two new boxes in the same column) [@problem_id:447914]. Algebra becomes a game of adding blocks!
 
-Second, and more profoundly, they are the link to representation theory. The coefficients needed to translate from the power sum basis to the Schur basis are precisely the **characters** of the [symmetric group](@article_id:141761) $S_n$ . A character is a function that captures the essential properties of a [group representation](@article_id:146594)—a way of seeing an abstract group as a set of matrices. The fact that these numbers, arising from the abstract study of [symmetry operations](@article_id:142904), are the exact same numbers needed for our change of basis formula is one of those moments of mathematical serendipity that hints at a deep, underlying unity in the structure of the universe. It means that Schur functions are, in a sense, the "natural" basis for anything involving group symmetry.
+Second, and more profoundly, they are the link to representation theory. The coefficients needed to translate from the power sum basis to the Schur basis are precisely the **characters** of the [symmetric group](@keyword=symmetric_group|lang=en-US|style=Feynman) $S_n$ [@problem_id:965182]. A character is a function that captures the essential properties of a [group representation](@keyword=group_representation|lang=en-US|style=Feynman)—a way of seeing an abstract group as a set of matrices. The fact that these numbers, arising from the abstract study of [symmetry operations](@keyword=symmetry_operations|lang=en-US|style=Feynman), are the exact same numbers needed for our change of basis formula is one of those moments of mathematical serendipity that hints at a deep, underlying unity in the structure of the universe. It means that Schur functions are, in a sense, the "natural" basis for anything involving group symmetry.
 
 ### Calculus in a World Without Space
 
@@ -67,7 +67,7 @@ We have built this rich algebraic world, this space $\Lambda$ populated by symme
 
 This is not just a formal game; it's a powerful tool. Let's define an operator $\frac{\partial}{\partial p_k}$ that does just this: it differentiates a symmetric function as if it were a polynomial in the variables $p_1, p_2, \dots$. What happens when we apply this operator to one of our other building blocks, say $h_n$?
 
-The answer is astonishingly simple and elegant . We find that:
+The answer is astonishingly simple and elegant [@problem_id:428003]. We find that:
 $$ \frac{\partial h_n}{\partial p_k} = \frac{1}{k} h_{n-k} $$
 This result is beautiful. Taking a "derivative" with respect to the power sum $p_k$ on the homogeneous function $h_n$ gives you back another homogeneous function, $h_{n-k}$, of a lower degree. The structure is perfectly preserved. It's as if we've discovered that in this abstract world, the functions behave just like the exponential function in ordinary calculus, where differentiation gives you back something of the same form.
 

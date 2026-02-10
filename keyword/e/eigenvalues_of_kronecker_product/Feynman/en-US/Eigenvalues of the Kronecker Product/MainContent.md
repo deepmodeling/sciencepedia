@@ -1,7 +1,7 @@
 ## Introduction
 The Kronecker product is a fundamental operation in linear algebra that provides a formal language for combining systems. Whether merging the state spaces of two quantum particles or applying separate filters to the rows and columns of an image, this mathematical construct describes the resulting composite system. However, a crucial question arises: if we know the defining properties of the individual parts, can we predict the properties of the whole? This article addresses this knowledge gap by focusing on one of the most important characteristics of any linear system: its eigenvalues.
 
-This exploration is divided into two parts. In the first chapter, "Principles and Mechanisms," we will derive the elegant and surprisingly simple rule that governs the eigenvalues of a Kronecker product, exploring its consequences for key metrics like the trace and [spectral radius](@article_id:138490). Following this, the chapter on "Applications and Interdisciplinary Connections" will reveal how this single principle serves as a unifying thread, providing powerful insights into fields as diverse as quantum computing, [population biology](@article_id:153169), and [digital signal processing](@article_id:263166). We begin our journey by examining the mechanics of how this combination works at the most fundamental level.
+This exploration is divided into two parts. In the first chapter, "Principles and Mechanisms," we will derive the elegant and surprisingly simple rule that governs the eigenvalues of a Kronecker product, exploring its consequences for key metrics like the trace and [spectral radius](@keyword=spectral_radius|lang=en-US|style=Feynman). Following this, the chapter on "Applications and Interdisciplinary Connections" will reveal how this single principle serves as a unifying thread, providing powerful insights into fields as diverse as quantum computing, [population biology](@keyword=population_biology|lang=en-US|style=Feynman), and [digital signal processing](@keyword=digital_signal_processing|lang=en-US|style=Feynman). We begin our journey by examining the mechanics of how this combination works at the most fundamental level.
 
 ## Principles and Mechanisms
 
@@ -9,7 +9,7 @@ Having introduced the Kronecker product as a way to combine systems, we now emba
 
 ### A First Glimpse: Composing Simple Systems
 
-Let's not jump into the deep end. Instead, let's start with the simplest possible systems we can imagine: systems whose defining matrices are **diagonal**. A [diagonal matrix](@article_id:637288) is wonderfully straightforward; its behavior is entirely captured by the numbers on its main diagonal, which are, in fact, its eigenvalues.
+Let's not jump into the deep end. Instead, let's start with the simplest possible systems we can imagine: systems whose defining matrices are **diagonal**. A [diagonal matrix](@keyword=diagonal_matrix|lang=en-US|style=Feynman) is wonderfully straightforward; its behavior is entirely captured by the numbers on its main diagonal, which are, in fact, its eigenvalues.
 
 Imagine two such simple systems, described by matrices $A$ and $B$:
 $$
@@ -28,7 +28,7 @@ C = \begin{pmatrix}
 0 & 0 & 0 & \lambda_2 \mu_2
 \end{pmatrix}
 $$
-Look at that! The resulting matrix is also diagonal. And what are its eigenvalues? They are right there on the diagonal: $\lambda_1 \mu_1$, $\lambda_1 \mu_2$, $\lambda_2 \mu_1$, and $\lambda_2 \mu_2$. This is a remarkable observation. The eigenvalues of the combined system are nothing more than **all the possible products** of the eigenvalues from the original systems . It’s as if every state of system A has been combined with every state of system B, and their characteristic values have simply multiplied.
+Look at that! The resulting matrix is also diagonal. And what are its eigenvalues? They are right there on the diagonal: $\lambda_1 \mu_1$, $\lambda_1 \mu_2$, $\lambda_2 \mu_1$, and $\lambda_2 \mu_2$. This is a remarkable observation. The eigenvalues of the combined system are nothing more than **all the possible products** of the eigenvalues from the original systems [@problem_id:26967]. It’s as if every state of system A has been combined with every state of system B, and their characteristic values have simply multiplied.
 
 This hints at a profound and simple rule. But does this beautiful simplicity hold when the matrices are not so tidy and diagonal?
 
@@ -56,7 +56,7 @@ $$
 M\mathbf{u} = (\lambda\mu) \mathbf{u}
 $$
 
-This is an eigenvalue equation! It tells us that the composite vector $\mathbf{v} \otimes \mathbf{w}$ is an eigenvector of the composite matrix $A \otimes B$, and its corresponding eigenvalue is simply the product $\lambda\mu$ . Our suspicion from the diagonal case was correct, and it holds universally.
+This is an eigenvalue equation! It tells us that the composite vector $\mathbf{v} \otimes \mathbf{w}$ is an eigenvector of the composite matrix $A \otimes B$, and its corresponding eigenvalue is simply the product $\lambda\mu$ [@problem_id:22560]. Our suspicion from the diagonal case was correct, and it holds universally.
 
 **The eigenvalues of a Kronecker product $A \otimes B$ are all the possible products of the eigenvalues of $A$ and the eigenvalues of $B$.**
 
@@ -80,9 +80,9 @@ $$
 \sum_{i,j} \lambda_i \mu_j = \left( \sum_i \lambda_i \right) \left( \sum_j \mu_j \right) = \text{tr}(A) \text{tr}(B)
 $$
 
-So we have another wonderfully simple rule: **the trace of the product is the product of the traces** .
+So we have another wonderfully simple rule: **the trace of the product is the product of the traces** [@problem_id:1097115].
 
-Consider the almost magical implication of this. Let's take a matrix $A$ that represents a rotation in 2D, and a matrix $B$ that represents a reflection. What's the sum of the eigenvalues of their Kronecker product $C = A \otimes B$? Calculating the full $4 \times 4$ matrix $C$ and its eigenvalues seems like a lot of work. But we don't have to. The trace of the [rotation matrix](@article_id:139808) $A$ is $2\cos\theta$. The trace of the reflection matrix $B = \begin{pmatrix} 0  1 \\ 1  0 \end{pmatrix}$ is $0+0=0$. Therefore, the trace of the combined system is $\text{tr}(C) = \text{tr}(A) \text{tr}(B) = (2\cos\theta)(0) = 0$. The sum of all four eigenvalues of this complex system is exactly zero, no matter what the angle of rotation is! . This is the power of understanding the underlying principle.
+Consider the almost magical implication of this. Let's take a matrix $A$ that represents a rotation in 2D, and a matrix $B$ that represents a reflection. What's the sum of the eigenvalues of their Kronecker product $C = A \otimes B$? Calculating the full $4 \times 4$ matrix $C$ and its eigenvalues seems like a lot of work. But we don't have to. The trace of the [rotation matrix](@keyword=rotation_matrix|lang=en-US|style=Feynman) $A$ is $2\cos\theta$. The trace of the reflection matrix $B = \begin{pmatrix} 0  1 \\ 1  0 \end{pmatrix}$ is $0+0=0$. Therefore, the trace of the combined system is $\text{tr}(C) = \text{tr}(A) \text{tr}(B) = (2\cos\theta)(0) = 0$. The sum of all four eigenvalues of this complex system is exactly zero, no matter what the angle of rotation is! [@problem_id:1027953]. This is the power of understanding the underlying principle.
 
 #### The "Size" of Eigenvalues: The Spectral Radius
 
@@ -98,17 +98,17 @@ $$
 \rho(A \otimes B) = \left( \max_i |\lambda_i| \right) \left( \max_j |\mu_j| \right) = \rho(A) \rho(B)
 $$
 
-Again, a [product rule](@article_id:143930)! To find the largest eigenvalue magnitude of a potentially huge matrix, we just need to find the largest for each of the small matrices and multiply them. For instance, if we are given two matrices, one with eigenvalues $1 \pm 2i$ (a spectral radius of $\sqrt{1^2 + 2^2} = \sqrt{5}$) and another with eigenvalues $\pm 3i$ (a [spectral radius](@article_id:138490) of $3$), we can immediately say that the spectral radius of their Kronecker product is $3\sqrt{5}$, without ever constructing the matrix itself . This is not just a trick; it's a deep property of how these systems combine .
+Again, a [product rule](@keyword=product_rule|lang=en-US|style=Feynman)! To find the largest eigenvalue magnitude of a potentially huge matrix, we just need to find the largest for each of the small matrices and multiply them. For instance, if we are given two matrices, one with eigenvalues $1 \pm 2i$ (a spectral radius of $\sqrt{1^2 + 2^2} = \sqrt{5}$) and another with eigenvalues $\pm 3i$ (a [spectral radius](@keyword=spectral_radius|lang=en-US|style=Feynman) of $3$), we can immediately say that the spectral radius of their Kronecker product is $3\sqrt{5}$, without ever constructing the matrix itself [@problem_id:1869166]. This is not just a trick; it's a deep property of how these systems combine [@problem_id:1003948].
 
 ### A Deeper Dive: When Eigenvalues Repeat
 
-Nature loves symmetry, and symmetry often leads to **degeneracy**—the situation where multiple distinct states share the same characteristic value (eigenvalue). What happens when we combine systems with [degenerate eigenvalues](@article_id:186822)?
+Nature loves symmetry, and symmetry often leads to **degeneracy**—the situation where multiple distinct states share the same characteristic value (eigenvalue). What happens when we combine systems with [degenerate eigenvalues](@keyword=degenerate_eigenvalues|lang=en-US|style=Feynman)?
 
 This brings us to two important concepts:
-- **Algebraic Multiplicity ($m$)**: The number of times an eigenvalue appears as a root of the [characteristic polynomial](@article_id:150415). It's the "count" of the eigenvalue.
-- **Geometric Multiplicity ($g$)**: The number of [linearly independent](@article_id:147713) eigenvectors associated with that eigenvalue. It's the dimension of the "[eigenspace](@article_id:150096)".
+- **Algebraic Multiplicity ($m$)**: The number of times an eigenvalue appears as a root of the [characteristic polynomial](@keyword=characteristic_polynomial|lang=en-US|style=Feynman). It's the "count" of the eigenvalue.
+- **Geometric Multiplicity ($g$)**: The number of [linearly independent](@keyword=linearly_independent|lang=en-US|style=Feynman) eigenvectors associated with that eigenvalue. It's the dimension of the "[eigenspace](@keyword=eigenspace|lang=en-US|style=Feynman)".
 
-For a matrix to be "nice" (diagonalizable), the algebraic and [geometric multiplicity](@article_id:155090) must be equal for all its eigenvalues ($m=g$). If for any eigenvalue $g  m$, the matrix is non-diagonalizable.
+For a matrix to be "nice" (diagonalizable), the algebraic and [geometric multiplicity](@keyword=geometric_multiplicity|lang=en-US|style=Feynman) must be equal for all its eigenvalues ($m=g$). If for any eigenvalue $g  m$, the matrix is non-diagonalizable.
 
 Let's see how these multiplicities behave under the Kronecker product. Suppose the eigenvalue $\gamma$ of $C=A \otimes B$ can be formed in different ways, for example, $\gamma = \lambda_1 \mu_2$ and also $\gamma = \lambda_3 \mu_4$.
 
@@ -117,11 +117,11 @@ $$
 m_C(\gamma) = \sum_{\lambda_i \mu_j = \gamma} m_A(\lambda_i) m_B(\mu_j)
 $$
 
-Similarly, the new **geometric multiplicity** of $\gamma$, $g_C(\gamma)$, also follows a [product rule](@article_id:143930), **provided that at least one of the matrices $A$ or $B$ is diagonalizable**:
+Similarly, the new **geometric multiplicity** of $\gamma$, $g_C(\gamma)$, also follows a [product rule](@keyword=product_rule|lang=en-US|style=Feynman), **provided that at least one of the matrices $A$ or $B$ is diagonalizable**:
 $$
 g_C(\gamma) = \sum_{\lambda_i \mu_j = \gamma} g_A(\lambda_i) g_B(\mu_j)
 $$
-(If both matrices are non-diagonalizable, the structure is more complex.) Let's unpack this with a valid example. Consider matrix $A$ with an eigenvalue $\lambda=2$ that appears twice ([algebraic multiplicity](@article_id:153746) $m_A(2)=2$), but it only has one corresponding eigenvector ([geometric multiplicity](@article_id:155090) $g_A(2)=1$). This makes $A$ non-diagonalizable. Matrix $B$ has a simple eigenvalue $\mu=12$ with $m_B(12)=1$ and $g_B(12)=1$. Since $B$ is diagonalizable, our rule applies. The combined system $A \otimes B$ will have an eigenvalue $\gamma = 2 \times 12 = 24$. Its [algebraic multiplicity](@article_id:153746) will be $m_C(24) = m_A(2)m_B(12) = 2 \times 1 = 2$. Its [geometric multiplicity](@article_id:155090) will be $g_C(24) = g_A(2)g_B(12) = 1 \times 1 = 1$. Since $g_C(24)  m_C(24)$, the "defect" of the original matrix $A$ has propagated into the composite system, making $A \otimes B$ non-diagonalizable as well . These rules give us a precise way to track how the detailed structure of our systems carries over when they are combined.
+(If both matrices are non-diagonalizable, the structure is more complex.) Let's unpack this with a valid example. Consider matrix $A$ with an eigenvalue $\lambda=2$ that appears twice ([algebraic multiplicity](@keyword=algebraic_multiplicity|lang=en-US|style=Feynman) $m_A(2)=2$), but it only has one corresponding eigenvector ([geometric multiplicity](@keyword=geometric_multiplicity|lang=en-US|style=Feynman) $g_A(2)=1$). This makes $A$ non-diagonalizable. Matrix $B$ has a simple eigenvalue $\mu=12$ with $m_B(12)=1$ and $g_B(12)=1$. Since $B$ is diagonalizable, our rule applies. The combined system $A \otimes B$ will have an eigenvalue $\gamma = 2 \times 12 = 24$. Its [algebraic multiplicity](@keyword=algebraic_multiplicity|lang=en-US|style=Feynman) will be $m_C(24) = m_A(2)m_B(12) = 2 \times 1 = 2$. Its [geometric multiplicity](@keyword=geometric_multiplicity|lang=en-US|style=Feynman) will be $g_C(24) = g_A(2)g_B(12) = 1 \times 1 = 1$. Since $g_C(24)  m_C(24)$, the "defect" of the original matrix $A$ has propagated into the composite system, making $A \otimes B$ non-diagonalizable as well [@problem_id:1347033]. These rules give us a precise way to track how the detailed structure of our systems carries over when they are combined.
 
 ### What It All Means: From Particles to Pixels
 
@@ -129,6 +129,6 @@ Why do we care so much about these rules? Because the Kronecker product is the l
 
 In **quantum mechanics**, if a matrix $A$ describes the possible energies of an electron and $B$ describes the energies of a proton, then $A \otimes B$ describes the possible energies of the hydrogen atom they form. Our rule tells us how the individual energy levels combine to create the spectrum of the atom.
 
-A particularly simple yet illustrative case is taking the Kronecker product with the identity matrix, $I \otimes B$. The [identity matrix](@article_id:156230) $I$ is as simple as it gets; all its eigenvalues are 1. It represents a sort of "neutral" system. According to our rule, the eigenvalues of $I \otimes B$ are just the eigenvalues of $B$, since they are all multiplied by 1. If $I$ is $2 \times 2$, then each eigenvalue of $B$ will appear twice in the new spectrum. In essence, taking a Kronecker product with the identity matrix is like creating multiple, non-interacting copies of your original system, stacked together in a larger mathematical space .
+A particularly simple yet illustrative case is taking the Kronecker product with the identity matrix, $I \otimes B$. The [identity matrix](@keyword=identity_matrix|lang=en-US|style=Feynman) $I$ is as simple as it gets; all its eigenvalues are 1. It represents a sort of "neutral" system. According to our rule, the eigenvalues of $I \otimes B$ are just the eigenvalues of $B$, since they are all multiplied by 1. If $I$ is $2 \times 2$, then each eigenvalue of $B$ will appear twice in the new spectrum. In essence, taking a Kronecker product with the identity matrix is like creating multiple, non-interacting copies of your original system, stacked together in a larger mathematical space [@problem_id:1077914].
 
 From the spin states of coupled particles to the frequencies in a multidimensional signal, or the interconnected growth rates in an ecosystem, the Kronecker product provides the framework. The principles we've uncovered are not just mathematical curiosities; they are the fundamental grammar of how independent systems merge to form a more complex, unified whole. By understanding the eigenvalues, we understand the essential character of that new reality.

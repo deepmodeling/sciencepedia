@@ -1,33 +1,33 @@
 ## 引言
 为什么雨滴在打蜡的汽车引擎盖上会凝结成珠，但在干净的玻璃上却会摊开？这个日常观察揭示了一种基本的自然力量：润湿。液体和固体之间的相互作用主宰着无数现象，然而，决定一个表面是排斥还是吸引液体的基本原理却常常被忽视。本文旨在弥合这一差距，超越简单的观察，解释一个小液滴形状背后的“为什么”。通过理解这种微观的力之舞蹈，我们得以解锁控制从发电到医学等不同领域过程的能力。
 
-我们将在第一章“原理与机制”中开始探索，深入研究润湿的核心物理学。在这里，您将了解表面[张力](@article_id:357470)的微观拔河、[杨氏方程](@article_id:309681)如何优雅地捕捉它，以及现实世界中[表面粗糙度](@article_id:350176)和柔软度等复杂性如何改变基本规则。随后，“应用与[交叉](@article_id:315017)学科联系”一章将带您领略其在现实世界中的广泛影响。我们将发现，掌握润湿对于设计高效发电厂、开发拯救生命的医疗方法，乃至理解自然本身的运作方式都至关重要，揭示了一个连接我们整个世界的统一原理。
+我们将在第一章“原理与机制”中开始探索，深入研究润湿的核心物理学。在这里，您将了解表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)的微观拔河、[杨氏方程](@keyword=young_s_equation|lang=zh-CN|style=Feynman)如何优雅地捕捉它，以及现实世界中[表面粗糙度](@keyword=surface_roughness|lang=zh-CN|style=Feynman)和柔软度等复杂性如何改变基本规则。随后，“应用与[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)学科联系”一章将带您领略其在现实世界中的广泛影响。我们将发现，掌握润湿对于设计高效发电厂、开发拯救生命的医疗方法，乃至理解自然本身的运作方式都至关重要，揭示了一个连接我们整个世界的统一原理。
 
 ## 原理与机制
 
-您是否曾观察过雨滴附着在窗玻璃上，或见过水黾在池塘表面上翩翩起舞？是什么决定了清晨的露珠是在荷叶上[凝结](@article_id:381105)成珠，还是[浸入](@article_id:321938)棉质衬衫？这些日常问题的答案，在于一场精妙而优美的力的舞蹈，一场在每一种液体边缘上演的微观戏剧。要理解润湿，我们必须去往那个边缘——固、液、气三相交汇的三相接触线。
+您是否曾观察过雨滴附着在窗玻璃上，或见过水黾在池塘表面上翩翩起舞？是什么决定了清晨的露珠是在荷叶上[凝结](@keyword=coagulation|lang=zh-CN|style=Feynman)成珠，还是[浸入](@keyword=immersions|lang=zh-CN|style=Feynman)棉质衬衫？这些日常问题的答案，在于一场精妙而优美的力的舞蹈，一场在每一种液体边缘上演的微观戏剧。要理解润湿，我们必须去往那个边缘——固、液、气三相交汇的三相接触线。
 
 ### 水之边缘的三方拔河
 
-想象一滴水静置于一个表面上。它最终的形状并非偶然，而是一种能量最低的状态。宇宙以其优雅的惰性，总是寻求阻力最小的路径，即能量成本最低的构型。对于我们的水滴来说，这个能量成本是以**[界面张力](@article_id:335598)**为货币支付的，通常用希腊字母 gamma ($\gamma$) 表示。
+想象一滴水静置于一个表面上。它最终的形状并非偶然，而是一种能量最低的状态。宇宙以其优雅的惰性，总是寻求阻力最小的路径，即能量成本最低的构型。对于我们的水滴来说，这个能量成本是以**[界面张力](@keyword=interfacial_tension|lang=zh-CN|style=Feynman)**为货币支付的，通常用希腊字母 gamma ($\gamma$) 表示。
 
-可以把界面张力看作是在两种不同物质之间创建边界所付出的能量代价。液-气界面 ($\gamma_{LV}$) 存在一个成本，这也就是我们通常所说的表面[张力](@article_id:357470)。正是这种力将水分子聚集在一起，试图通过形成球体来最小化表面积。此外，固-液界面 ($\gamma_{SL}$) 和固-气界面 ($\gamma_{SV}$) 也存在成本。
+可以把界面张力看作是在两种不同物质之间创建边界所付出的能量代价。液-气界面 ($\gamma_{LV}$) 存在一个成本，这也就是我们通常所说的表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)。正是这种力将水分子聚集在一起，试图通过形成球体来最小化表面积。此外，固-液界面 ($\gamma_{SL}$) 和固-气界面 ($\gamma_{SV}$) 也存在成本。
 
-在液滴与固体及周围空气相遇的确切位置——即接触线——这三种[张力](@article_id:357470)进行着一场微观的拔河比赛。液-气[张力](@article_id:357470) $\gamma_{LV}$ 将液滴边缘向内拉，试图使其卷曲。固体偏好湿润或干燥的倾向，则表现为固-液[张力](@article_id:357470) $\gamma_{SL}$ 与固-气[张力](@article_id:357470) $\gamma_{SV}$ 之间的竞争。如果固体“更乐意”被润湿，有效力会将接触线向外拉，促使液滴铺展开来。
+在液滴与固体及周围空气相遇的确切位置——即接触线——这三种[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)进行着一场微观的拔河比赛。液-气[张力](@keyword=tension_force|lang=zh-CN|style=Feynman) $\gamma_{LV}$ 将液滴边缘向内拉，试图使其卷曲。固体偏好湿润或干燥的倾向，则表现为固-液[张力](@keyword=tension_force|lang=zh-CN|style=Feynman) $\gamma_{SL}$ 与固-气[张力](@keyword=tension_force|lang=zh-CN|style=Feynman) $\gamma_{SV}$ 之间的竞争。如果固体“更乐意”被润湿，有效力会将接触线向外拉，促使液滴铺展开来。
 
-对于一个理想的光滑刚性表面，这种力的平衡在两个多世纪前被 Thomas Young 优雅地捕捉到。由此达成的“休战”状态由**[杨氏方程](@article_id:309681)**描述：
+对于一个理想的光滑刚性表面，这种力的平衡在两个多世纪前被 Thomas Young 优雅地捕捉到。由此达成的“休战”状态由**[杨氏方程](@keyword=young_s_equation|lang=zh-CN|style=Feynman)**描述：
 
 $$
 \gamma_{SV} = \gamma_{SL} + \gamma_{LV} \cos\theta
 $$
 
-在这里，$\theta$ 是**[接触角](@article_id:306038)**，即固体表面与液滴边缘切线之间形成的夹角。这个简单的方程就是我们的罗塞塔石碑。它告诉我们，一个单一且易于测量的角度 $\theta$，蕴含着关于分子间作用力和[表面能](@article_id:321632)这个无形世界的深刻信息。
+在这里，$\theta$ 是**[接触角](@keyword=contact_angle|lang=zh-CN|style=Feynman)**，即固体表面与液滴边缘切线之间形成的夹角。这个简单的方程就是我们的罗塞塔石碑。它告诉我们，一个单一且易于测量的角度 $\theta$，蕴含着关于分子间作用力和[表面能](@keyword=surface_energy|lang=zh-CN|style=Feynman)这个无形世界的深刻信息。[@problem_id:2932110]
 
 ### 接触角：微观故事的讲述者
 
-[接触角](@article_id:306038) $\theta$ 不仅仅是一个几何特征；它是来自微观拔河前线的直接报告。仅通过观察液滴的形状，我们就能判断其下方表面的性质。
+[接触角](@keyword=contact_angle|lang=zh-CN|style=Feynman) $\theta$ 不仅仅是一个几何特征；它是来自微观拔河前线的直接报告。仅通过观察液滴的形状，我们就能判断其下方表面的性质。
 
-我们可以重新[排列](@article_id:296886)[杨氏方程](@article_id:309681)来求解 $\cos\theta$：
+我们可以重新[排列](@keyword=permutation|lang=zh-CN|style=Feynman)[杨氏方程](@keyword=young_s_equation|lang=zh-CN|style=Feynman)来求解 $\cos\theta$：
 
 $$
 \cos\theta = \frac{\gamma_{SV} - \gamma_{SL}}{\gamma_{LV}}
@@ -35,29 +35,29 @@ $$
 
 这就说明了一切。$\cos\theta$ 的符号由 $\gamma_{SV} - \gamma_{SL}$ 的符号决定，后者代表润湿固体所节省的净能量。
 
--   如果 $\theta < 90^\circ$，我们称该表面为**[亲水性](@article_id:381550)**（爱水的）。这发生在 $\cos\theta > 0$ 时，意味着 $\gamma_{SV} > \gamma_{SL}$。通俗地讲，系统可以通过用“湿”的固-液界面替换“干”的固-气界面来降低其总能量。水分子与固体之间的**附着力**足够强大，能够克服部分水自身的**内聚力**，从而将液滴拉平。
+-   如果 $\theta < 90^\circ$，我们称该表面为**[亲水性](@keyword=hydrophilic|lang=zh-CN|style=Feynman)**（爱水的）。这发生在 $\cos\theta > 0$ 时，意味着 $\gamma_{SV} > \gamma_{SL}$。通俗地讲，系统可以通过用“湿”的固-液界面替换“干”的固-气界面来降低其总能量。水分子与固体之间的**附着力**足够强大，能够克服部分水自身的**内聚力**，从而将液滴拉平。
 
--   如果 $\theta > 90^\circ$，该表面则为**疏水性**（憎水的）。这意味着 $\cos\theta < 0$，因此 $\gamma_{SV} < \gamma_{SL}$。固-气界面的能量成本低于固-液界面。水滴内部的[内聚力](@article_id:338517)在与表面的微弱附着力的拔河中获胜。为了最小化与固体之间能量昂贵的接触，水将自己收缩成一个紧密的珠状。
+-   如果 $\theta > 90^\circ$，该表面则为**疏水性**（憎水的）。这意味着 $\cos\theta < 0$，因此 $\gamma_{SV} < \gamma_{SL}$。固-气界面的能量成本低于固-液界面。水滴内部的[内聚力](@keyword=cohesive_forces|lang=zh-CN|style=Feynman)在与表面的微弱附着力的拔河中获胜。为了最小化与固体之间能量昂贵的接触，水将自己收缩成一个紧密的珠状。[@problem_id:1286353]
 
-因此，[材料科学](@article_id:312640)家只需用[接触角](@article_id:306038)测量仪快速测量，比如测得接触角为 $98^\circ$，就能立刻知道他们新开发的导管涂层是[疏水性的](@article_id:364837)。他们甚至可以利用这个测量值，结合已知的 $\gamma_{LV}$ 和 $\gamma_{SV}$ 的估算值，来计算固-液[界面能](@article_id:377121) $\gamma_{SL}$，这是一个在其他情况下很难直接测量的基本属性。
+因此，[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)家只需用[接触角](@keyword=contact_angle|lang=zh-CN|style=Feynman)测量仪快速测量，比如测得接触角为 $98^\circ$，就能立刻知道他们新开发的导管涂层是[疏水性的](@keyword=hydrophobic|lang=zh-CN|style=Feynman)。他们甚至可以利用这个测量值，结合已知的 $\gamma_{LV}$ 和 $\gamma_{SV}$ 的估算值，来计算固-液[界面能](@keyword=interfacial_energy|lang=zh-CN|style=Feynman) $\gamma_{SL}$，这是一个在其他情况下很难直接测量的基本属性。[@problem_id:2932110]
 
 ### 不归点：完全润湿与铺展系数
 
-如果固体*极其*亲水会发生什么？如果润湿表面所节省的能量巨大呢？让我们考虑当液体铺展[开覆盖](@article_id:300466)干燥表面时的总能量变化。我们可以定义一个**铺展系数** $S$：
+如果固体*极其*亲水会发生什么？如果润湿表面所节省的能量巨大呢？让我们考虑当液体铺展[开覆盖](@keyword=open_cover|lang=zh-CN|style=Feynman)干燥表面时的总能量变化。我们可以定义一个**铺展系数** $S$：
 
 $$
 S = \gamma_{SV} - (\gamma_{SL} + \gamma_{LV})
 $$
 
-这个系数代表每平方米干燥表面变湿时获得的净能量回报（$S > 0$）或付出的代价（$S < 0$）。如果 $S$ 为正，液体将自发铺展形成薄膜，这种现象称为**完全润湿**。
+这个系数代表每平方米干燥表面变湿时获得的净能量回报（$S > 0$）或付出的代价（$S < 0$）。如果 $S$ 为正，液体将自发铺展形成薄膜，这种现象称为**完全润湿**。[@problem_id:2007080]
 
-但等一下，[杨氏方程](@article_id:309681)对此怎么说？如果我们将铺展的条件 $\gamma_{SV} - \gamma_{SL} \ge \gamma_{LV}$ 代入接触角方程，我们会得到 $\cos\theta \ge 1$。这在数学上是不可能的！余弦函数的值绝不可能大于 1。物理学并没有被打破；相反，这个方程告诉我们，不存在稳定的[接触角](@article_id:306038)。这场拔河比赛如此一边倒，以至于无法达到平衡。液体不断铺展，我们唯一能赋予它的角度是 $\theta=0^\circ$。
+但等一下，[杨氏方程](@keyword=young_s_equation|lang=zh-CN|style=Feynman)对此怎么说？如果我们将铺展的条件 $\gamma_{SV} - \gamma_{SL} \ge \gamma_{LV}$ 代入接触角方程，我们会得到 $\cos\theta \ge 1$。这在数学上是不可能的！余弦函数的值绝不可能大于 1。物理学并没有被打破；相反，这个方程告诉我们，不存在稳定的[接触角](@keyword=contact_angle|lang=zh-CN|style=Feynman)。这场拔河比赛如此一边倒，以至于无法达到平衡。液体不断铺展，我们唯一能赋予它的角度是 $\theta=0^\circ$。
 
-这不仅仅是一个理论上的奇观。材料可以经历**润湿转变**。想象一个表面，在某个临界温度 $T_c$ 以下，界面能导致铺展系数为负，液滴稳定，角度为 $60^\circ$。现在，我们缓慢地将材料加热到 $T_c$ 以上。表面上一个微妙的[相变](@article_id:297531)可能足以改变 $\gamma_{SV}$ 和 $\gamma_{SL}$ 的值，使铺展系数 $S$ 变为正。突然间，液滴塌陷并铺展成一层微观薄膜。[接触角](@article_id:306038)从 $60^\circ$ 灾难性地降至 $0^\circ$。这种转变不仅是[热力学](@article_id:359663)的优美展示，它们在润滑、涂层和印刷等过程中也至关重要。
+这不仅仅是一个理论上的奇观。材料可以经历**润湿转变**。想象一个表面，在某个临界温度 $T_c$ 以下，界面能导致铺展系数为负，液滴稳定，角度为 $60^\circ$。现在，我们缓慢地将材料加热到 $T_c$ 以上。表面上一个微妙的[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)可能足以改变 $\gamma_{SV}$ 和 $\gamma_{SL}$ 的值，使铺展系数 $S$ 变为正。突然间，液滴塌陷并铺展成一层微观薄膜。[接触角](@keyword=contact_angle|lang=zh-CN|style=Feynman)从 $60^\circ$ 灾难性地降至 $0^\circ$。这种转变不仅是[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)的优美展示，它们在润滑、涂层和印刷等过程中也至关重要。[@problem_id:2847069]
 
 ### 真实世界并非平坦：粗糙、黏滞与柔软
 
-到目前为止，我们一直生活在物理学家梦想中的世界里，那里有完美光滑、刚性且均匀的表面。而真实的表面，从荷叶到冷却管道，都是杂乱、[颠簸](@article_id:642184)且异常复杂的。这些不完美之处不仅是微小的细节，它们从根本上改变了润湿的规则。
+到目前为止，我们一直生活在物理学家梦想中的世界里，那里有完美光滑、刚性且均匀的表面。而真实的表面，从荷叶到冷却管道，都是杂乱、[颠簸](@keyword=thrashing|lang=zh-CN|style=Feynman)且异常复杂的。这些不完美之处不仅是微小的细节，它们从根本上改变了润湿的规则。[@problem_id:2527079]
 
 #### Wenzel 和 Cassie-Baxter 状态：当凹凸放大或抵抗润湿时
 
@@ -69,26 +69,26 @@ $$
 \cos\theta^* = r \cos\theta
 $$
 
-如果光滑表面是亲水性的（$\theta < 90^\circ$，所以 $\cos\theta > 0$），那么粗糙度会使 $\cos\theta^*$ 更大，导致[接触角](@article_id:306038)更小（$\theta^* < \theta$）。一个轻微可润湿的表面变得非常可润湿。相反，如果光滑表面是[疏水性的](@article_id:364837)（$\theta > 90^\circ$，所以 $\cos\theta < 0$），粗糙度会使 $\cos\theta^*$ 更负，导致接触角大得多（$\theta^* > \theta$）。一个憎水表面变得极度憎水！  这种效应在工程中至关重要。例如，在冷凝器中使用的亲水表面上制造微观粗糙度可以增强其[润湿性](@article_id:369999)，使水蒸气形成薄膜（[膜状冷凝](@article_id:313808)）而不是凝结成珠。
+如果光滑表面是亲水性的（$\theta < 90^\circ$，所以 $\cos\theta > 0$），那么粗糙度会使 $\cos\theta^*$ 更大，导致[接触角](@keyword=contact_angle|lang=zh-CN|style=Feynman)更小（$\theta^* < \theta$）。一个轻微可润湿的表面变得非常可润湿。相反，如果光滑表面是[疏水性的](@keyword=hydrophobic|lang=zh-CN|style=Feynman)（$\theta > 90^\circ$，所以 $\cos\theta < 0$），粗糙度会使 $\cos\theta^*$ 更负，导致接触角大得多（$\theta^* > \theta$）。一个憎水表面变得极度憎水！[@problem_id:2527953] [@problem_id:2527878] 这种效应在工程中至关重要。例如，在冷凝器中使用的亲水表面上制造微观粗糙度可以增强其[润湿性](@keyword=wettability|lang=zh-CN|style=Feynman)，使水蒸气形成薄膜（[膜状冷凝](@keyword=film_condensation|lang=zh-CN|style=Feynman)）而不是凝结成珠。[@problem_id:2527953]
 
-但还有第二种，甚至更戏剧性的可能性。如果表面足够粗糙且疏水，液体可能根本不会[渗透](@article_id:361061)到山谷中。相反，它会停留在凸起的顶端，将微小的气穴困在下面。这就是 **Cassie-Baxter 状态**。此时，液滴坐落在一个复合表面上——部分是固体，部分是空气。由于空气是极度疏水的（空气中的水滴与周围空气的接触角为 $180^\circ$），这种构型可以导致极高的表观接触角，通常超过 $150^\circ$。这就是**[超疏水性](@article_id:340368)**的秘密，也是荷叶能保持干净干燥的原因，因为水滴像弹珠一样从它们上面滚落。
+但还有第二种，甚至更戏剧性的可能性。如果表面足够粗糙且疏水，液体可能根本不会[渗透](@keyword=permeation|lang=zh-CN|style=Feynman)到山谷中。相反，它会停留在凸起的顶端，将微小的气穴困在下面。这就是 **Cassie-Baxter 状态**。此时，液滴坐落在一个复合表面上——部分是固体，部分是空气。由于空气是极度疏水的（空气中的水滴与周围空气的接触角为 $180^\circ$），这种构型可以导致极高的表观接触角，通常超过 $150^\circ$。这就是**[超疏水性](@keyword=superhydrophobic|lang=zh-CN|style=Feynman)**的秘密，也是荷叶能保持干净干燥的原因，因为水滴像弹珠一样从它们上面滚落。[@problem_id:2527079]
 
-#### 黏滞情况：无处不在的[滞后现象](@article_id:332240)
+#### 黏滞情况：无处不在的[滞后现象](@keyword=hysteresis|lang=zh-CN|style=Feynman)
 
 真实表面不仅粗糙，而且往往在化学上是斑驳的。这些物理和化学上的不完美之处，就像微观的黏性点，会粘住接触线。推动接触线越过这些障碍比让它后退需要更多的力。
 
-这导致了一种称为**[接触角滞后](@article_id:309116)**的现象。此时不再有一个单一的平衡角，而是存在一个稳定的角度范围。在接触线前进前观察到的最大角度是**前进[接触角](@article_id:306038) $\theta_a$**。在接触线后退前观察到的最小角度是**后退[接触角](@article_id:306038) $\theta_r$**。两者之差 $\theta_a - \theta_r$ 就是滞后值。这就是为什么雨滴可以黏在倾斜的窗玻璃上而不会滑落的原因。
+这导致了一种称为**[接触角滞后](@keyword=contact_angle_hysteresis|lang=zh-CN|style=Feynman)**的现象。此时不再有一个单一的平衡角，而是存在一个稳定的角度范围。在接触线前进前观察到的最大角度是**前进[接触角](@keyword=contact_angle|lang=zh-CN|style=Feynman) $\theta_a$**。在接触线后退前观察到的最小角度是**后退[接触角](@keyword=contact_angle|lang=zh-CN|style=Feynman) $\theta_r$**。两者之差 $\theta_a - \theta_r$ 就是滞后值。这就是为什么雨滴可以黏在倾斜的窗玻璃上而不会滑落的原因。
 
-[滞后现象](@article_id:332240)不仅是一个静态的不便，它还支配着动态过程。考虑一下发电厂或高性能电子设备中使用的关键冷却系统。沸腾被用来带走大量的热量。一个蒸汽泡在热表面上形成、长大并脱离，留下一个干斑。这个干斑必须被周围的液体迅速重新润湿，以防止[过热](@article_id:307676)和灾难性故障（一种被称为达到**[临界热通量](@article_id:315798)**或 CHF 的状态）。这种重新润湿的速度由前进接触角 $\theta_a$ 决定。一个被设计成高度可润湿（$\theta_a$ 很小）的表面会重新润湿得快得多，从而使系统能够安全地处理更多的热量。理解和控制[接触角滞后](@article_id:309116)是一个价值数十亿美元的工程挑战。
+[滞后现象](@keyword=hysteresis|lang=zh-CN|style=Feynman)不仅是一个静态的不便，它还支配着动态过程。考虑一下发电厂或高性能电子设备中使用的关键冷却系统。沸腾被用来带走大量的热量。一个蒸汽泡在热表面上形成、长大并脱离，留下一个干斑。这个干斑必须被周围的液体迅速重新润湿，以防止[过热](@keyword=superheating|lang=zh-CN|style=Feynman)和灾难性故障（一种被称为达到**[临界热通量](@keyword=critical_heat_flux|lang=zh-CN|style=Feynman)**或 CHF 的状态）。这种重新润湿的速度由前进接触角 $\theta_a$ 决定。一个被设计成高度可润湿（$\theta_a$ 很小）的表面会重新润湿得快得多，从而使系统能够安全地处理更多的热量。理解和控制[接触角滞后](@keyword=contact_angle_hysteresis|lang=zh-CN|style=Feynman)是一个价值数十亿美元的工程挑战。[@problem_id:2475824]
 
 #### 轻柔触碰：当固体反击时
 
-我们最后一次偏离理想情况，来考虑一个非刚性的固体。如果我们的液滴在一个柔软的凝胶或弹性体上会怎样？液体的表面[张力](@article_id:357470)作用在接触线上，其强度足以使固体变形，拉起一个微小的“润湿脊”。[杨氏方程](@article_id:309681)简单的水平力平衡已不再足够。我们现在面临一个更复杂的**[弹性毛细现象](@article_id:369326)**问题，固体的弹性恢复力也参与其中。表观接触角甚至可能变得依赖于液滴本身的大小！这是[材料科学](@article_id:312640)的一个前沿领域，提醒我们即使是像润湿这样古老的概念，仍然蕴含着新的、令人兴奋的秘密。
+我们最后一次偏离理想情况，来考虑一个非刚性的固体。如果我们的液滴在一个柔软的凝胶或弹性体上会怎样？液体的表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)作用在接触线上，其强度足以使固体变形，拉起一个微小的“润湿脊”。[杨氏方程](@keyword=young_s_equation|lang=zh-CN|style=Feynman)简单的水平力平衡已不再足够。我们现在面临一个更复杂的**[弹性毛细现象](@keyword=elastocapillarity|lang=zh-CN|style=Feynman)**问题，固体的弹性恢复力也参与其中。表观接触角甚至可能变得依赖于液滴本身的大小！这是[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)的一个前沿领域，提醒我们即使是像润湿这样古老的概念，仍然蕴含着新的、令人兴奋的秘密。[@problem_id:2527079]
 
 ### 润湿的统一性：从毛细攀爬到化学引擎
 
-润湿的原理并非孤立存在，它们被编织在物理科学的织物中。我们熟悉的**[毛细作用](@article_id:297320)**现象——水在细管中向上攀升——正是润湿的直接后果。液体的[曲面](@article_id:331153)，即弯月面，其两侧存在由**[杨-拉普拉斯方程](@article_id:299302)**给出的压力差。这个压力差与 $\cos\theta$ 成正比。一个高度润湿的液体（$\theta$ 接近零）会产生一个强烈弯曲的弯月面和一个巨大的[毛细压力](@article_id:315921)，驱动液体在管中克服重力向上攀升。改变[接触角](@article_id:306038)，例如通过预先润湿管的内壁，会直接改变[毛细压力](@article_id:315921)和液体可以达到的高度。
+润湿的原理并非孤立存在，它们被编织在物理科学的织物中。我们熟悉的**[毛细作用](@keyword=capillary_action|lang=zh-CN|style=Feynman)**现象——水在细管中向上攀升——正是润湿的直接后果。液体的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，即弯月面，其两侧存在由**[杨-拉普拉斯方程](@keyword=young_laplace_equation|lang=zh-CN|style=Feynman)**给出的压力差。这个压力差与 $\cos\theta$ 成正比。一个高度润湿的液体（$\theta$ 接近零）会产生一个强烈弯曲的弯月面和一个巨大的[毛细压力](@keyword=capillary_pressure|lang=zh-CN|style=Feynman)，驱动液体在管中克服重力向上攀升。改变[接触角](@keyword=contact_angle|lang=zh-CN|style=Feynman)，例如通过预先润湿管的内壁，会直接改变[毛细压力](@keyword=capillary_pressure|lang=zh-CN|style=Feynman)和液体可以达到的高度。[@problem_id:2766994]
 
-故事可以变得更加动态和复杂。想象一个液滴被放置在一个能与液体发生[化学反应](@article_id:307389)的表面上，但反应只在接触线处发生。这个反应产生了一种表面活性剂，它会急剧降低液滴边缘的表面[张力](@article_id:357470)。这产生了一个[表面张力梯度](@article_id:316546)，一股将液体从高[张力](@article_id:357470)的中心拉向低[张力](@article_id:357470)边缘的力，这种现象被称为马兰戈尼效应。这股力可以抵消初始的铺展，使液滴的运动在一个新的动态平衡角处停止。在这里，[热力学](@article_id:359663)、[流体动力学](@article_id:319275)和化学在一个优美的[自调节系统](@article_id:319116)中交织在一起。
+故事可以变得更加动态和复杂。想象一个液滴被放置在一个能与液体发生[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的表面上，但反应只在接触线处发生。这个反应产生了一种表面活性剂，它会急剧降低液滴边缘的表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)。这产生了一个[表面张力梯度](@keyword=surface_tension_gradient|lang=zh-CN|style=Feynman)，一股将液体从高[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)的中心拉向低[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)边缘的力，这种现象被称为马兰戈尼效应。这股力可以抵消初始的铺展，使液滴的运动在一个新的动态平衡角处停止。在这里，[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)、[流体动力学](@keyword=hydrodynamics|lang=zh-CN|style=Feynman)和化学在一个优美的[自调节系统](@keyword=self_regulating_systems|lang=zh-CN|style=Feynman)中交织在一起。[@problem_id:524541]
 
 从一颗简单露珠的形状到先进冷却系统和自驱动化学引擎的设计，润湿科学揭示了一个统一的原理：宏观行为是微观力量的集体表现。通过理解液体边缘那场精妙的拔河，我们不仅获得了解释我们世界的能力，更获得了创造一个更美好世界的力量。

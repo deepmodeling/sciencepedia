@@ -1,5 +1,5 @@
 ## Introduction
-In computer science, we often distinguish between a program's code—its physical "body"—and its behavior—its functional "soul." While analyzing the code for simple structural patterns is straightforward, understanding its behavior is a far deeper challenge. Can we create a master program that can look at any other program and predict its actions with certainty—whether it will crash, whether it's secure, or whether it gives the right answer? This question strikes at the heart of what computation can and cannot achieve, and this article delves into the definitive answer provided by Rice's Theorem. We will first explore the "Principles and Mechanisms" of the theorem, dissecting the crucial difference between a program's syntax and semantics, and then examine its "Applications and Interdisciplinary Connections" to see how this abstract idea has concrete consequences for software engineering, [compiler design](@article_id:271495), and beyond.
+In computer science, we often distinguish between a program's code—its physical "body"—and its behavior—its functional "soul." While analyzing the code for simple structural patterns is straightforward, understanding its behavior is a far deeper challenge. Can we create a master program that can look at any other program and predict its actions with certainty—whether it will crash, whether it's secure, or whether it gives the right answer? This question strikes at the heart of what computation can and cannot achieve, and this article delves into the definitive answer provided by Rice's Theorem. We will first explore the "Principles and Mechanisms" of the theorem, dissecting the crucial difference between a program's syntax and semantics, and then examine its "Applications and Interdisciplinary Connections" to see how this abstract idea has concrete consequences for software engineering, [compiler design](@keyword=compiler_design|lang=en-US|style=Feynman), and beyond.
 
 ## Principles and Mechanisms
 
@@ -7,26 +7,26 @@ Imagine you are a biologist studying an unknown lifeform. You could ask two fund
 
 Second, you could ask about its behavior: "What does it eat?" "Does it hunt at night?" "How does it raise its young?" These questions are about its dynamic life, its actions, its *purpose*. They are far more complex, requiring you to observe the creature over time in its environment.
 
-Computer programs are much the same. They too have a "body" and a "soul." The body is the program's source code—the sequence of characters you type into a text editor. The soul is what the program *does* when you run it—its behavior, its function, its logic in motion. The most profound discovery of [theoretical computer science](@article_id:262639), a beautiful and terrifying result called **Rice's Theorem**, tells us that while we can know almost anything about a program's body, we can know almost nothing for certain about its soul.
+Computer programs are much the same. They too have a "body" and a "soul." The body is the program's source code—the sequence of characters you type into a text editor. The soul is what the program *does* when you run it—its behavior, its function, its logic in motion. The most profound discovery of [theoretical computer science](@keyword=theoretical_computer_science|lang=en-US|style=Feynman), a beautiful and terrifying result called **Rice's Theorem**, tells us that while we can know almost anything about a program's body, we can know almost nothing for certain about its soul.
 
 ### The Body and the Soul: Syntax vs. Semantics
 
 Let's make this distinction concrete. A question about a program's body is a **syntactic** question. It's about the text of the code itself. For example:
 
-*   Does this program's code contain the word `while`? 
-*   Is the number of instructions less than 100? 
-*   Is the file size of the program an even number of bytes? 
-*   Does the machine's blueprint specify an even number of states? 
+*   Does this program's code contain the word `while`? [@problem_id:2986071]
+*   Is the number of instructions less than 100? [@problem_id:2986071]
+*   Is the file size of the program an even number of bytes? [@problem_id:2970589]
+*   Does the machine's blueprint specify an even number of states? [@problem_id:1377291]
 
-You can imagine writing a simple script to answer these questions. It would read the program's code file, count the lines, search for specific keywords, or check the file properties. The script would always give a correct "yes" or "no" answer and would be guaranteed to finish. In the language of computer science, these syntactic properties are **decidable**. They are also called **intensional** properties, as they pertain to the specific way the program is written. 
+You can imagine writing a simple script to answer these questions. It would read the program's code file, count the lines, search for specific keywords, or check the file properties. The script would always give a correct "yes" or "no" answer and would be guaranteed to finish. In the language of computer science, these syntactic properties are **decidable**. They are also called **intensional** properties, as they pertain to the specific way the program is written. [@problem_id:2988385]
 
 Now, consider questions about the program's soul—its behavior. These are **semantic** questions. They aren't concerned with *how* the code is written, but with the result of *executing* it.
 
-*   Does this program eventually stop running on the input $0$? 
-*   Does this program work for *every* possible input without crashing or looping forever? (Is it **total**?)  
-*   Does this program compute the exact same function as a program that always just outputs the number zero? 
+*   Does this program eventually stop running on the input $0$? [@problem_id:2970589]
+*   Does this program work for *every* possible input without crashing or looping forever? (Is it **total**?) [@problem_id:2970589] [@problem_id:2986071]
+*   Does this program compute the exact same function as a program that always just outputs the number zero? [@problem_id:2970589]
 
-These properties are fundamentally different. They depend only on the input-output behavior. If you have two programs, $P_1$ and $P_2$, written completely differently, but they always produce the same output for the same input (or both run forever), then they are semantically identical. A semantic property must treat them the same; either both programs have the property, or neither does. This is the condition of being **extensional**—the property depends on the function the program computes, not the form it takes.  
+These properties are fundamentally different. They depend only on the input-output behavior. If you have two programs, $P_1$ and $P_2$, written completely differently, but they always produce the same output for the same input (or both run forever), then they are semantically identical. A semantic property must treat them the same; either both programs have the property, or neither does. This is the condition of being **extensional**—the property depends on the function the program computes, not the form it takes. [@problem_id:2970589] [@problem_id:2986068]
 
 It feels like we should be able to answer these questions, too. After all, what is the point of software engineering if not to build programs that have desirable behaviors, like "doesn't crash" or "gives the right answer"? But here we hit a wall. A great, immovable wall of logic.
 
@@ -37,11 +37,11 @@ It feels like we should be able to answer these questions, too. After all, what 
 > *Any nontrivial semantic property of programs is undecidable.*
 
 Let's break that down.
-*   **"Semantic property"**: We've just covered this. It's a property of the program's behavior, not its code. 
-*   **"Nontrivial"**: This just means the property is not boring. A "trivial" property is one that is true for *all* programs (e.g., "the program is a program") or false for *all* programs (e.g., "the program can solve the Halting Problem"). A nontrivial property is one that some programs have and some programs don't.  For instance, the property "halts on all inputs" is nontrivial because some programs do (like `print("hello")`) and some don't (like `while(true){}`).
+*   **"Semantic property"**: We've just covered this. It's a property of the program's behavior, not its code. [@problem_id:2986068]
+*   **"Nontrivial"**: This just means the property is not boring. A "trivial" property is one that is true for *all* programs (e.g., "the program is a program") or false for *all* programs (e.g., "the program can solve the Halting Problem"). A nontrivial property is one that some programs have and some programs don't. [@problem_id:2986068] For instance, the property "halts on all inputs" is nontrivial because some programs do (like `print("hello")`) and some don't (like `while(true){}`).
 *   **"Undecidable"**: This is the hammer blow. It means no algorithm, no computer program, can exist that will take any arbitrary program as input and correctly answer "yes" or "no" for whether it has that property.
 
-This means all those interesting behavioral questions we asked—"Does it halt on input 0?", "Is it total?", "Does it compute the zero function?"—are undecidable. The dream of a universal software verifier, a program that could automatically check any other program for correctness (e.g., "Does this code correctly implement the tax laws?"), is not just difficult, it is logically impossible. 
+This means all those interesting behavioral questions we asked—"Does it halt on input 0?", "Is it total?", "Does it compute the zero function?"—are undecidable. The dream of a universal software verifier, a program that could automatically check any other program for correctness (e.g., "Does this code correctly implement the tax laws?"), is not just difficult, it is logically impossible. [@problem_id:2986074]
 
 ### A Glimpse into the Abyss: Why is this True?
 
@@ -58,7 +58,7 @@ Here's my plan. I take an arbitrary program, let's call it `ProgramW`, and an in
 3.  **If** this simulation of `ProgramW(InputX)` eventually halts, then `Mischief` proceeds to a very simple task: it returns the number 42.
 4.  **If** the simulation of `ProgramW(InputX)` runs forever, then `Mischief` also gets stuck, looping infinitely.
 
-This construction is always possible because of **Universal Turing Machines**—the principle that a program can simulate any other program.  Now, let's look at the *behavior* of `Mischief`.
+This construction is always possible because of **Universal Turing Machines**—the principle that a program can simulate any other program. [@problem_id:2988366] Now, let's look at the *behavior* of `Mischief`.
 
 *   If `ProgramW` halts on `InputX`, then `Mischief` will always complete step 2 and proceed to step 3, returning `42` for any `InputZ`. In this case, `Mischief` is a total function—it halts on all inputs.
 *   If `ProgramW` runs forever on `InputX`, then `Mischief` gets stuck in step 2 and never finishes, for any `InputZ`. In this case, `Mischief` is a function that *never* halts.
@@ -70,17 +70,17 @@ Now for the grand finale. I feed the source code of my newly minted `Mischief` p
 
 Look what we've done! By observing your box's output for `Mischief`, I can definitively determine whether `ProgramW` halts on `InputX`. I have used your Totality Checker to build a Halting Problem solver. Since we know a Halting Problem solver is impossible, the initial premise must be false. Your magic box cannot exist.
 
-This line of reasoning works for *any* nontrivial semantic property, not just totality. You just need one program that has the property and one that doesn't to stand in for "return 42" and "loop forever" in the argument. This reveals a deep unity in computation: the power of simulation and [self-reference](@article_id:152774) makes all nontrivial behavioral questions equivalent in difficulty to the Halting Problem.
+This line of reasoning works for *any* nontrivial semantic property, not just totality. You just need one program that has the property and one that doesn't to stand in for "return 42" and "loop forever" in the argument. This reveals a deep unity in computation: the power of simulation and [self-reference](@keyword=self_reference|lang=en-US|style=Feynman) makes all nontrivial behavioral questions equivalent in difficulty to the Halting Problem.
 
 ### Escaping the Theorem's Grasp
 
 If Rice's Theorem paints such a bleak picture, how is any software ever written or tested? We escape its grasp by not demanding the impossible. The theorem applies to questions about an *infinite* set of all possible programs.
 
-One "escape" is to limit your world. If you are only interested in programs with, say, at most 20 states and a fixed alphabet, you are no longer dealing with an infinite set. The number of such programs is astronomically large, but it is *finite*. In principle, you could test every single one, see if it halts on the empty string, and build a giant, hardcoded lookup table of the answers. This table would be a "decider" for this very limited problem. This doesn't contradict Rice's theorem; it just shows that its power only applies to domains of infinite possibility. 
+One "escape" is to limit your world. If you are only interested in programs with, say, at most 20 states and a fixed alphabet, you are no longer dealing with an infinite set. The number of such programs is astronomically large, but it is *finite*. In principle, you could test every single one, see if it halts on the empty string, and build a giant, hardcoded lookup table of the answers. This table would be a "decider" for this very limited problem. This doesn't contradict Rice's theorem; it just shows that its power only applies to domains of infinite possibility. [@problem_id:1457046]
 
-The more practical escape, however, is to give up on perfection. A real-world program verifier cannot be both **sound** (it never gives a [false positive](@article_id:635384), e.g., certifying a buggy program as correct) and **complete** (it can certify every correct program).  Faced with an [undecidable problem](@article_id:271087), a verifier must make a choice:
+The more practical escape, however, is to give up on perfection. A real-world program verifier cannot be both **sound** (it never gives a [false positive](@keyword=false_positive|lang=en-US|style=Feynman), e.g., certifying a buggy program as correct) and **complete** (it can certify every correct program). [@problem_id:2986074] Faced with an [undecidable problem](@keyword=undecidable_problem|lang=en-US|style=Feynman), a verifier must make a choice:
 
-1.  **Be Sound but Incomplete**: This is the path taken by most static analysis tools that check for bugs or prove program termination. They might analyze a program and say, "Yes, this program will definitely terminate." Or, they might encounter a very [complex structure](@article_id:268634) and say, "I can't be sure, so I will flag this as a potential issue." It will never wrongly certify a non-terminating program as terminating, but it may fail to certify a perfectly good program. It sacrifices completeness for the sake of soundness.
+1.  **Be Sound but Incomplete**: This is the path taken by most static analysis tools that check for bugs or prove program termination. They might analyze a program and say, "Yes, this program will definitely terminate." Or, they might encounter a very [complex structure](@keyword=complex_structure|lang=en-US|style=Feynman) and say, "I can't be sure, so I will flag this as a potential issue." It will never wrongly certify a non-terminating program as terminating, but it may fail to certify a perfectly good program. It sacrifices completeness for the sake of soundness.
 
 2.  **Be Complete but Unsound**: This is unthinkable for safety-critical systems. It would mean a verifier could certify a buggy program as correct.
 

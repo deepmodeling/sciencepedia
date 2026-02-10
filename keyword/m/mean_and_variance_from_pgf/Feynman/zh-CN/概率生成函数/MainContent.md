@@ -1,23 +1,23 @@
 ## 引言
-在研究随机现象时，无论是系统中的粒子数，还是物种的后代数量，一个关键的挑战是如何以一种有效的方式来概括整个[概率分布](@article_id:306824)。虽然概率列表可能显得冗长笨拙，但一种称为[概率生成函数](@article_id:323873)（PGF）的强大数学工具，能将这些信息优雅地编码成一个单一的[连续函数](@article_id:297812)。本文旨在解决计算关键统计量（如均值和方差）的问题，这些计算若使用标准求和公式通常计算量巨大。PGF 将这一挑战转化为一个系统性的[微分](@article_id:319122)过程，从而揭示了随机性背后更深层次的结构。
+在研究随机现象时，无论是系统中的粒子数，还是物种的后代数量，一个关键的挑战是如何以一种有效的方式来概括整个[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)。虽然概率列表可能显得冗长笨拙，但一种称为[概率生成函数](@keyword=probability_generating_functions|lang=zh-CN|style=Feynman)（PGF）的强大数学工具，能将这些信息优雅地编码成一个单一的[连续函数](@keyword=continuous_function|lang=zh-CN|style=Feynman)。本文旨在解决计算关键统计量（如均值和方差）的问题，这些计算若使用标准求和公式通常计算量巨大。PGF 将这一挑战转化为一个系统性的[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)过程，从而揭示了随机性背后更深层次的结构。
 
-本文将首先深入探讨PGF的**原理与机制**，展示简单的微积分如何揭示分布的均值和方差，并探索其在处理[随机变量之和](@article_id:326080)与[混合分布](@article_id:340197)时的强大性质。随后，在**应用与跨学科联系**部分，文章将展示PGF如何在生态学和[分子生物学](@article_id:300774)等领域充当统一的视角，使科学家能够为[种群动态建模](@article_id:331729)、量化生物“噪声”，并破译支配我们世界的[随机过程](@article_id:333307)的本质。
+本文将首先深入探讨PGF的**原理与机制**，展示简单的微积分如何揭示分布的均值和方差，并探索其在处理[随机变量之和](@keyword=sums_of_random_variables|lang=zh-CN|style=Feynman)与[混合分布](@keyword=mixture_distributions|lang=zh-CN|style=Feynman)时的强大性质。随后，在**应用与跨学科联系**部分，文章将展示PGF如何在生态学和[分子生物学](@keyword=molecular_biology|lang=zh-CN|style=Feynman)等领域充当统一的视角，使科学家能够为[种群动态建模](@keyword=population_dynamics_modeling|lang=zh-CN|style=Feynman)、量化生物“噪声”，并破译支配我们世界的[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)的本质。
 
 ## 原理与机制
 
 想象你是一位自然学家，正在研究一种奇特的萤火虫。一个种群中的每只萤火虫在一个晚上可以发出特定次数的闪光：零次、一次、两次、三次，以此类推。你的数据由一系列概率组成：看到一只萤火虫发出 $k$ 次闪光的概率为 $P(k)$。你如何能将这整个概率列表——即萤火虫种群的全部“个性”——打包成一个简洁的数学对象呢？
 
-这时，我们引入一个非常巧妙的工具，称为**[概率生成函数](@article_id:323873)（PGF）**。它是一种将无限的概率列表 $P(0), P(1), P(2), \dots$ 编码到一个[连续函数](@article_id:297812)中的方法。
+这时，我们引入一个非常巧妙的工具，称为**[概率生成函数](@keyword=probability_generating_functions|lang=zh-CN|style=Feynman)（PGF）**。它是一种将无限的概率列表 $P(0), P(1), P(2), \dots$ 编码到一个[连续函数](@keyword=continuous_function|lang=zh-CN|style=Feynman)中的方法。
 
 ### 一种新的记账方式
 
-我们不要被它的名字吓到。[生成函数](@article_id:363704)不过是一种巧妙的记账工具。对于一个取非负整数值的[随机变量](@article_id:324024) $X$，其 PGF（我们称之为 $G_X(s)$）定义如下：
+我们不要被它的名字吓到。[生成函数](@keyword=generator_function|lang=zh-CN|style=Feynman)不过是一种巧妙的记账工具。对于一个取非负整数值的[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman) $X$，其 PGF（我们称之为 $G_X(s)$）定义如下：
 
 $$
 G_X(s) = P(X=0)s^0 + P(X=1)s^1 + P(X=2)s^2 + \dots = \sum_{k=0}^{\infty} P(X=k)s^k
 $$
 
-可以把它想象成一个多项式，其中 $s^k$ 的系数是我们的[随机变量](@article_id:324024) $X$ 等于 $k$ 的概率。我们已经将离散的概率列表编织进了一个[平滑函数](@article_id:362303)的结构中。变量 $s$ 只是一个占位符，一种为我们的概率建立的归档系统。根据其定义，PGF 就是 $s^X$ 的[期望值](@article_id:313620)，即 $G_X(s) = \mathbb{E}[s^X]$。这个简单的函数现在包含了关于我们[随机变量](@article_id:324024)的所有信息。但为什么要费这么大功夫呢？因为这个函数不仅仅是一个储物柜，它是一台强大的机器。
+可以把它想象成一个多项式，其中 $s^k$ 的系数是我们的[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman) $X$ 等于 $k$ 的概率。我们已经将离散的概率列表编织进了一个[平滑函数](@keyword=smoothing_functions|lang=zh-CN|style=Feynman)的结构中。变量 $s$ 只是一个占位符，一种为我们的概率建立的归档系统。根据其定义，PGF 就是 $s^X$ 的[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)，即 $G_X(s) = \mathbb{E}[s^X]$。这个简单的函数现在包含了关于我们[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman)的所有信息。但为什么要费这么大功夫呢？因为这个函数不仅仅是一个储物柜，它是一台强大的机器。
 
 ### 微积分技巧：解锁矩
 
@@ -27,21 +27,21 @@ $$
 G_X'(s) = \frac{d}{ds} \sum_{k=0}^{\infty} P(X=k)s^k = \sum_{k=1}^{\infty} k \cdot P(X=k)s^{k-1}
 $$
 
-这看起来没什么特别，直到我们考察在特[定点](@article_id:304105) $s=1$ 处会发生什么。如果我们将 $s=1$ 代入上面的表达式，每一项 $s^{k-1}$ 都变成了 $1^{k-1}=1$。我们剩下的结果令人惊叹：
+这看起来没什么特别，直到我们考察在特[定点](@keyword=fixed_points|lang=zh-CN|style=Feynman) $s=1$ 处会发生什么。如果我们将 $s=1$ 代入上面的表达式，每一项 $s^{k-1}$ 都变成了 $1^{k-1}=1$。我们剩下的结果令人惊叹：
 
 $$
 G_X'(1) = \sum_{k=1}^{\infty} k \cdot P(X=k) = \mathbb{E}[X]
 $$
 
-PGF 在 $s=1$ 处的一阶[导数](@article_id:318324)就是[随机变量](@article_id:324024)的**均值**（或[期望值](@article_id:313620)）！萤火虫闪光的平均次数就隐藏在 PGF 在某一点的斜率之中。
+PGF 在 $s=1$ 处的一阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)就是[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman)的**均值**（或[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)）！萤火虫闪光的平均次数就隐藏在 PGF 在某一点的斜率之中。
 
-我们能否更进一步？二阶[导数](@article_id:318324)呢？
+我们能否更进一步？二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)呢？
 
 $$
 G_X''(s) = \frac{d^2}{ds^2} \sum_{k=0}^{\infty} P(X=k)s^k = \sum_{k=2}^{\infty} k(k-1) \cdot P(X=k)s^{k-2}
 $$
 
-将其在 $s=1$ 处求值，我们得到了另一个特殊的量，称为二阶[阶乘矩](@article_id:380223)：
+将其在 $s=1$ 处求值，我们得到了另一个特殊的量，称为二阶[阶乘矩](@keyword=factorial_moments|lang=zh-CN|style=Feynman)：
 
 $$
 G_X''(1) = \sum_{k=2}^{\infty} k(k-1) \cdot P(X=k) = \mathbb{E}[X(X-1)]
@@ -59,11 +59,11 @@ $$
 \text{Var}(X) = \left( G_X''(1) + G_X'(1) \right) - (G_X'(1))^2
 $$
 
-这是一个绝妙的结果。我们已经将计算均值和方差这个通常涉及繁杂求和的问题，转化为了一个系统化、机械化的[微分](@article_id:319122)过程。例如，在一个游戏中，打开一个宝箱会得到随机数量的“星晶”，其数量由 PGF $G_X(s) = (0.25 + 0.75s^3)^2$ 描述。我们不需要知道获得 0、1、2……个星晶的各自概率。我们只需启动我们的微积分机器：求出 $G_X'(1)$ 得到均值，然后使用上述公式求出方差，便能以优雅高效的方式揭示[期望](@article_id:311378)的收获及其波动性 。
+这是一个绝妙的结果。我们已经将计算均值和方差这个通常涉及繁杂求和的问题，转化为了一个系统化、机械化的[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)过程。例如，在一个游戏中，打开一个宝箱会得到随机数量的“星晶”，其数量由 PGF $G_X(s) = (0.25 + 0.75s^3)^2$ 描述。我们不需要知道获得 0、1、2……个星晶的各自概率。我们只需启动我们的微积分机器：求出 $G_X'(1)$ 得到均值，然后使用上述公式求出方差，便能以优雅高效的方式揭示[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)的收获及其波动性 [@problem_id:1382734]。
 
 ### 确定性的简洁之美
 
-为了建立直觉，让我们考虑最简单的情况：一个完全没有随机性的系统。想象一个物理系统，它被置于一个*保证*恰好包含 $\mu$ 个粒子的状态 。粒子数不是随机的，它是固定的。这个分布的 PGF 是什么样的呢？
+为了建立直觉，让我们考虑最简单的情况：一个完全没有随机性的系统。想象一个物理系统，它被置于一个*保证*恰好包含 $\mu$ 个粒子的状态 [@problem_id:1987182]。粒子数不是随机的，它是固定的。这个分布的 PGF 是什么样的呢？
 
 在这里，概率 $P(N=\mu)$ 为 1，而所有其他概率 $P(N=k)$（对于 $k \ne \mu$）都为零。我们庞大的 PGF 求和式简化为单一一项：
 
@@ -71,7 +71,7 @@ $$
 G_N(s) = 0 \cdot s^0 + \dots + 1 \cdot s^\mu + 0 \cdot s^{\mu+1} + \dots = s^\mu
 $$
 
-PGF 就是 $s^\mu$。这太美妙了！一个完全确定的情况对应于一个简单的、纯粹的[幂函数](@article_id:345851)。让我们用我们的微积分机器来检验它。均值是 $G_N'(1)$。由于 $G_N'(s) = \mu s^{\mu-1}$，我们得到 $G_N'(1) = \mu$。正确。方差需要 $G_N''(1)$。由于 $G_N''(s) = \mu(\mu-1)s^{\mu-2}$，我们有 $G_N''(1) = \mu(\mu-1)$。代入我们的方差公式：
+PGF 就是 $s^\mu$。这太美妙了！一个完全确定的情况对应于一个简单的、纯粹的[幂函数](@keyword=power_function|lang=zh-CN|style=Feynman)。让我们用我们的微积分机器来检验它。均值是 $G_N'(1)$。由于 $G_N'(s) = \mu s^{\mu-1}$，我们得到 $G_N'(1) = \mu$。正确。方差需要 $G_N''(1)$。由于 $G_N''(s) = \mu(\mu-1)s^{\mu-2}$，我们有 $G_N''(1) = \mu(\mu-1)$。代入我们的方差公式：
 
 $$
 \text{Var}(N) = G_N''(1) + G_N'(1) - (G_N'(1))^2 = \mu(\mu-1) + \mu - (\mu)^2 = \mu^2 - \mu + \mu - \mu^2 = 0
@@ -81,7 +81,7 @@ $$
 
 ### 乘法的魔力：世界的总和
 
-现在来看 PGF 最强大、最优雅的性质之一。假设你有两个*独立*的[随机过程](@article_id:333307)。你掷一个四面骰子，得到结果 $X$；再掷一个六面骰子，得到结果 $Y$ 。我们能对它们的和 $Z = X+Y$ 说些什么？直接计算 $Z$ 的[概率分布](@article_id:306824)需要一个称为卷积的繁琐过程。
+现在来看 PGF 最强大、最优雅的性质之一。假设你有两个*独立*的[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)。你掷一个四面骰子，得到结果 $X$；再掷一个六面骰子，得到结果 $Y$ [@problem_id:1409558]。我们能对它们的和 $Z = X+Y$ 说些什么？直接计算 $Z$ 的[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)需要一个称为卷积的繁琐过程。
 
 但使用 PGF，故事就惊人地简单了。让我们求 $Z$ 的 PGF：
 
@@ -89,27 +89,27 @@ $$
 G_Z(s) = \mathbb{E}[s^Z] = \mathbb{E}[s^{X+Y}] = \mathbb{E}[s^X s^Y]
 $$
 
-因为 $X$ 和 $Y$ 是独立的，所以它们乘积的[期望](@article_id:311378)等于它们各自[期望](@article_id:311378)的乘积。这是关键的一步！
+因为 $X$ 和 $Y$ 是独立的，所以它们乘积的[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)等于它们各自[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)的乘积。这是关键的一步！
 
 $$
 \mathbb{E}[s^X s^Y] = \mathbb{E}[s^X] \mathbb{E}[s^Y] = G_X(s) G_Y(s)
 $$
 
-因此，[独立随机变量之和](@article_id:339783)的 PGF 就是它们各自 PGF 的**乘积**。繁琐费力的卷积世界变成了干净简单的乘法世界。这个原理具有极强的普适性。如果一颗卫星的总寿命 $Z$ 是两个独立模块 $X$ 和 $Y$ 寿命的总和，那么其总的 PGF 就是 $G_Z(s) = G_X(s) G_Y(s)$ 。这个性质深层次地解释了为什么对于[独立变量](@article_id:330821)，和的均值等于均值的和，和的方差等于方差的和。
+因此，[独立随机变量之和](@keyword=sums_of_independent_random_variables|lang=zh-CN|style=Feynman)的 PGF 就是它们各自 PGF 的**乘积**。繁琐费力的卷积世界变成了干净简单的乘法世界。这个原理具有极强的普适性。如果一颗卫星的总寿命 $Z$ 是两个独立模块 $X$ 和 $Y$ 寿命的总和，那么其总的 PGF 就是 $G_Z(s) = G_X(s) G_Y(s)$ [@problem_id:1409543]。这个性质深层次地解释了为什么对于[独立变量](@keyword=independent_variables|lang=zh-CN|style=Feynman)，和的均值等于均值的和，和的方差等于方差的和。
 
 ### 加法的优雅：现实的混合
 
-如果我们的现实是不同情况的混合体呢？想象一个呼叫中心，来电请求的数量遵循[泊松分布](@article_id:308183)。但是请求的速率取决于一天中的时间：在非高峰时段（概率为 $q$），平均速率是 $\lambda_{off}$；在高峰时段（概率为 $1-q$），平均速率是 $\lambda_{peak}$ 。如果你随机选择一分钟，那么呼叫次数 $N$ 的 PGF 是什么？
+如果我们的现实是不同情况的混合体呢？想象一个呼叫中心，来电请求的数量遵循[泊松分布](@keyword=poisson_distribution|lang=zh-CN|style=Feynman)。但是请求的速率取决于一天中的时间：在非高峰时段（概率为 $q$），平均速率是 $\lambda_{off}$；在高峰时段（概率为 $1-q$），平均速率是 $\lambda_{peak}$ [@problem_id:1409532]。如果你随机选择一分钟，那么呼叫次数 $N$ 的 PGF 是什么？
 
-根据全[期望](@article_id:311378)定律，总的 PGF 只是每种情景下 PGF 的[加权平均](@article_id:304268)：
+根据全[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)定律，总的 PGF 只是每种情景下 PGF 的[加权平均](@keyword=weighted_average|lang=zh-CN|style=Feynman)：
 
 $$
 G_N(s) = q \cdot G_{off}(s) + (1-q) \cdot G_{peak}(s)
 $$
 
-同样，一个简单的规则支配了一个复杂的情况。[混合分布](@article_id:340197)的 PGF 是各组成部分 PGF 按其概率加权的**和**。然后我们可以对这个组合的 $G_N(s)$ 应用我们的[微分](@article_id:319122)工具，来求出总的呼叫量的均值和方差。
+同样，一个简单的规则支配了一个复杂的情况。[混合分布](@keyword=mixture_distributions|lang=zh-CN|style=Feynman)的 PGF 是各组成部分 PGF 按其概率加权的**和**。然后我们可以对这个组合的 $G_N(s)$ 应用我们的[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)工具，来求出总的呼叫量的均值和方差。
 
-当我们这样做时，我们发现了一些深刻的东西。[混合系统](@article_id:334880)的总方差并不仅仅是各个方差的[加权平均](@article_id:304268)。一个通用的推导揭示了其完整结构 ：
+当我们这样做时，我们发现了一些深刻的东西。[混合系统](@keyword=hybrid_systems|lang=zh-CN|style=Feynman)的总方差并不仅仅是各个方差的[加权平均](@keyword=weighted_average|lang=zh-CN|style=Feynman)。一个通用的推导揭示了其完整结构 [@problem_id:1409504]：
 
 $$
 \text{Var}(X) = w\sigma_{1}^{2}+(1-w)\sigma_{2}^{2}+w(1-w)\left(\mu_{1}-\mu_{2}\right)^{2}
@@ -119,10 +119,10 @@ $$
 
 ### 更深层次的探究：对数的力量
 
-当处理许多[独立变量之和](@article_id:357343)时，PGF 变成了许多函数的乘积。物理学家和数学家有一个将乘积转化为和的标准技巧：取对数。
+当处理许多[独立变量之和](@keyword=sums_of_independent_variables|lang=zh-CN|style=Feynman)时，PGF 变成了许多函数的乘积。物理学家和数学家有一个将乘积转化为和的标准技巧：取对数。
 
-通过考虑**[累积量生成函数 (CGF)](@article_id:382549)**，其定义为 $K_X(t) = \ln(G_X(\exp(t)))$，PGF 对求和的乘积性质变成了 CGF 的可加性：$K_{X+Y}(t) = K_X(t) + K_Y(t)$。
+通过考虑**[累积量生成函数 (CGF)](@keyword=cumulant_generating_function_(cgf)|lang=zh-CN|style=Feynman)**，其定义为 $K_X(t) = \ln(G_X(\exp(t)))$，PGF 对求和的乘积性质变成了 CGF 的可加性：$K_{X+Y}(t) = K_X(t) + K_Y(t)$。
 
-CGF 在 $t=0$ 处的[导数](@article_id:318324)给出了称为[累积量](@article_id:313394)的特殊量。第一[累积量](@article_id:313394)是均值，第二[累积量](@article_id:313394)是方差。CGF 的可加性直接告诉我们，[独立变量之和](@article_id:357343)的方差是它们各自方差的和。这为这一关[键性](@article_id:318164)质提供了更根本的解释。当处理[随机变量](@article_id:324024)的无穷和时，这种方法尤其强大，此时 PGF 变为[无穷乘积](@article_id:355315)，而使用对数可以优雅地解开这种复杂情况 。
+CGF 在 $t=0$ 处的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)给出了称为[累积量](@keyword=cumulants|lang=zh-CN|style=Feynman)的特殊量。第一[累积量](@keyword=cumulants|lang=zh-CN|style=Feynman)是均值，第二[累积量](@keyword=cumulants|lang=zh-CN|style=Feynman)是方差。CGF 的可加性直接告诉我们，[独立变量之和](@keyword=sums_of_independent_variables|lang=zh-CN|style=Feynman)的方差是它们各自方差的和。这为这一关[键性](@keyword=bond_character|lang=zh-CN|style=Feynman)质提供了更根本的解释。当处理[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman)的无穷和时，这种方法尤其强大，此时 PGF 变为[无穷乘积](@keyword=infinite_products|lang=zh-CN|style=Feynman)，而使用对数可以优雅地解开这种复杂情况 [@problem_id:1409510]。
 
 从一个简单的记账工具开始，PGF 已然揭示了自己是通往概率深层结构的门户，它将复杂的操作转化为简单的代数和微积分，并将数学公式与直观的物理事实联系起来。

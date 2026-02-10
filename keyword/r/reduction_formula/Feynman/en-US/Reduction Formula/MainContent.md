@@ -3,7 +3,7 @@ Imagine trying to solve a problem so complex it feels like counting every grain 
 
 ## Principles and Mechanisms
 
-Imagine you have a set of Russian nesting dolls. To understand the whole set, you don't need to describe each doll individually. You only need to know two things: the innermost doll, and the rule that says, "to get the next doll, make it a bit bigger and place the current one inside." This simple, self-referential rule, combined with a starting point, generates the entire beautiful complexity. This is the heart of a **[recurrence relation](@article_id:140545)**, a concept that mathematicians and physicists use to describe systems that build upon themselves, step by step. In science, we often call these powerful recipes **reduction formulas**.
+Imagine you have a set of Russian nesting dolls. To understand the whole set, you don't need to describe each doll individually. You only need to know two things: the innermost doll, and the rule that says, "to get the next doll, make it a bit bigger and place the current one inside." This simple, self-referential rule, combined with a starting point, generates the entire beautiful complexity. This is the heart of a **[recurrence relation](@keyword=recurrence_relation|lang=en-US|style=Feynman)**, a concept that mathematicians and physicists use to describe systems that build upon themselves, step by step. In science, we often call these powerful recipes **reduction formulas**.
 
 ### The Art of the Next Step: What is a Recurrence Relation?
 
@@ -15,13 +15,13 @@ $$
 \Gamma(z+1) = z \Gamma(z)
 $$
 
-This little equation is a powerhouse. It tells us that the value of the Gamma function at some number is directly related to its value at the number just before it. If we have a "seed" value, we can use this rule to grow an entire chain of results. For instance, it's a known fact that $\Gamma(\frac{1}{2}) = \sqrt{\pi}$. This single piece of information is our innermost nesting doll. What if we want to find $\Gamma(\frac{7}{2})$? We don't need to wrestle with a complex calculation from scratch. We simply apply the rule, step by step :
+This little equation is a powerhouse. It tells us that the value of the Gamma function at some number is directly related to its value at the number just before it. If we have a "seed" value, we can use this rule to grow an entire chain of results. For instance, it's a known fact that $\Gamma(\frac{1}{2}) = \sqrt{\pi}$. This single piece of information is our innermost nesting doll. What if we want to find $\Gamma(\frac{7}{2})$? We don't need to wrestle with a complex calculation from scratch. We simply apply the rule, step by step [@problem_id:29077]:
 
 *   To get $\Gamma(\frac{3}{2})$, we use the rule with $z = \frac{1}{2}$: $\Gamma(\frac{3}{2}) = \Gamma(\frac{1}{2}+1) = \frac{1}{2}\Gamma(\frac{1}{2}) = \frac{1}{2}\sqrt{\pi}$.
 *   Next, for $\Gamma(\frac{5}{2})$, we use $z = \frac{3}{2}$: $\Gamma(\frac{5}{2}) = \Gamma(\frac{3}{2}+1) = \frac{3}{2}\Gamma(\frac{3}{2}) = \frac{3}{2} \times (\frac{1}{2}\sqrt{\pi}) = \frac{3}{4}\sqrt{\pi}$.
 *   Finally, for $\Gamma(\frac{7}{2})$, we use $z = \frac{5}{2}$: $\Gamma(\frac{7}{2}) = \Gamma(\frac{5}{2}+1) = \frac{5}{2}\Gamma(\frac{5}{2}) = \frac{5}{2} \times (\frac{3}{4}\sqrt{\pi}) = \frac{15}{8}\sqrt{\pi}$.
 
-Like a game of leapfrog, we jumped from one value to the next. This iterative process is not only efficient; it reveals the deep, interconnected structure of the function. We can even run the rule in reverse, $\Gamma(z) = \frac{\Gamma(z+1)}{z}$, to explore values in the other direction, allowing us to find quantities like $\Gamma(-\frac{3}{2})$ just as easily  . A single rule unlocks the entire family.
+Like a game of leapfrog, we jumped from one value to the next. This iterative process is not only efficient; it reveals the deep, interconnected structure of the function. We can even run the rule in reverse, $\Gamma(z) = \frac{\Gamma(z+1)}{z}$, to explore values in the other direction, allowing us to find quantities like $\Gamma(-\frac{3}{2})$ just as easily [@problem_id:29103] [@problem_id:29056]. A single rule unlocks the entire family.
 
 ### Unraveling Integrals: The Power of Parts
 
@@ -29,7 +29,7 @@ So, these relations are wonderfully useful, but where do they come from? Are the
 
 The formula $\int u \, dv = uv - \int v \, du$ is more than just a rule to memorize. It's a way of trading one integral for another. The hope is that the new integral, $\int v \, du$, is simpler than the one we started with. But sometimes, something even more magical happens: the new integral turns out to be a cousin of the original one.
 
-Let's consider the integral $J_n = \int_0^1 (1-x^2)^n \, dx$, where $n$ is an integer. Trying to solve this directly for, say, $n=10$ would be a nightmare of expanding $(1-x^2)^{10}$. Instead, let's try to relate $J_n$ to $J_{n-1}$ using [integration by parts](@article_id:135856) . By making a clever choice for $u$ and $dv$ and performing a small algebraic trick—rewriting $x^2$ as $1-(1-x^2)$—we can put our original integral on a sort of balance scale. After the dust settles, we arrive at an astonishingly simple relationship:
+Let's consider the integral $J_n = \int_0^1 (1-x^2)^n \, dx$, where $n$ is an integer. Trying to solve this directly for, say, $n=10$ would be a nightmare of expanding $(1-x^2)^{10}$. Instead, let's try to relate $J_n$ to $J_{n-1}$ using [integration by parts](@keyword=integration_by_parts|lang=en-US|style=Feynman) [@problem_id:1304495]. By making a clever choice for $u$ and $dv$ and performing a small algebraic trick—rewriting $x^2$ as $1-(1-x^2)$—we can put our original integral on a sort of balance scale. After the dust settles, we arrive at an astonishingly simple relationship:
 
 $$
 J_n = \frac{2n}{2n+1} J_{n-1}
@@ -37,15 +37,15 @@ $$
 
 This is a reduction formula! Instead of tackling the beastly $J_{10}$ head-on, we can start with the trivial case $J_0 = \int_0^1 (1-x^2)^0 \, dx = \int_0^1 1 \, dx = 1$. Then we can just turn the crank: $J_1 = \frac{2}{3}J_0$, $J_2 = \frac{4}{5}J_1$, and so on. We've replaced a difficult calculus problem with simple arithmetic.
 
-This technique is a workhorse in physics and statistics. For example, integrals like $I_n = \int_0^\infty x^n \exp(-\alpha x^2) dx$, which are crucial for understanding the energies of molecules in a gas, obey a similar recurrence. In that case, [integration by parts](@article_id:135856) links $I_n$ not to its immediate predecessor, but to $I_{n-2}$ . This two-step dance is just as powerful, allowing us to compute any even or odd moment from a single starting value.
+This technique is a workhorse in physics and statistics. For example, integrals like $I_n = \int_0^\infty x^n \exp(-\alpha x^2) dx$, which are crucial for understanding the energies of molecules in a gas, obey a similar recurrence. In that case, [integration by parts](@keyword=integration_by_parts|lang=en-US|style=Feynman) links $I_n$ not to its immediate predecessor, but to $I_{n-2}$ [@problem_id:1077313]. This two-step dance is just as powerful, allowing us to compute any even or odd moment from a single starting value.
 
 ### Building Solutions Brick by Brick: Recurrence in Differential Equations
 
-The reach of [recurrence relations](@article_id:276118) extends far beyond integrals. They are the very backbone for solving many **differential equations**—the equations that describe motion, heat flow, quantum waves, and nearly every other form of change in the universe.
+The reach of [recurrence relations](@keyword=recurrence_relations|lang=en-US|style=Feynman) extends far beyond integrals. They are the very backbone for solving many **differential equations**—the equations that describe motion, heat flow, quantum waves, and nearly every other form of change in the universe.
 
-Consider the famous Airy equation, $y'' - xy = 0$. This equation describes phenomena from the behavior of light near a caustic (like the bright line in the bottom of a coffee cup) to the quantum mechanics of a particle in a constant [force field](@article_id:146831). We can't solve it with standard textbook methods. So what do we do? We can assume the solution is a **[power series](@article_id:146342)**: an infinitely long polynomial of the form $y(x) = a_0 + a_1x + a_2x^2 + \dots = \sum_{n=0}^{\infty} a_n x^n$.
+Consider the famous Airy equation, $y'' - xy = 0$. This equation describes phenomena from the behavior of light near a caustic (like the bright line in the bottom of a coffee cup) to the quantum mechanics of a particle in a constant [force field](@keyword=force_field|lang=en-US|style=Feynman). We can't solve it with standard textbook methods. So what do we do? We can assume the solution is a **[power series](@keyword=power_series|lang=en-US|style=Feynman)**: an infinitely long polynomial of the form $y(x) = a_0 + a_1x + a_2x^2 + \dots = \sum_{n=0}^{\infty} a_n x^n$.
 
-The challenge, of course, is to find the infinite list of coefficients $a_n$. This seems impossible, but it's not. When we substitute this series into the differential equation and demand that the equation holds true for *every* value of $x$, something remarkable happens. The equation acts like a sorting machine, forcing a strict rule onto the coefficients . For the Airy equation, that rule is:
+The challenge, of course, is to find the infinite list of coefficients $a_n$. This seems impossible, but it's not. When we substitute this series into the differential equation and demand that the equation holds true for *every* value of $x$, something remarkable happens. The equation acts like a sorting machine, forcing a strict rule onto the coefficients [@problem_id:21929]. For the Airy equation, that rule is:
 
 $$
 a_n = \frac{a_{n-3}}{n(n-1)} \quad \text{for } n \ge 3
@@ -57,15 +57,15 @@ This is a recurrence relation! It tells us that the entire infinite sequence of 
 
 There are other, more holistic ways to look at sequences. Imagine you could pack an entire infinite sequence into a single, finite object. This is the idea behind a **generating function**. It's like a mathematical clothesline, where the coefficient of $t^n$ is the $n$-th term of your sequence. For the Hermite polynomials, which are essential in quantum mechanics, the generating function is $G(x, t) = \exp(2xt - t^2) = \sum_{n=0}^{\infty} \frac{H_n(x)}{n!} t^n$.
 
-This compact function is the DNA of the Hermite polynomials; it encodes the entire family. And just as we can read DNA to understand how an organism is built, we can "interrogate" the generating function to find the rules governing its sequence. By simply differentiating $G(x,t)$ with respect to the placeholder variable $t$, a bit of manipulation reveals the recurrence relation that connects any three consecutive Hermite polynomials :
+This compact function is the DNA of the Hermite polynomials; it encodes the entire family. And just as we can read DNA to understand how an organism is built, we can "interrogate" the generating function to find the rules governing its sequence. By simply differentiating $G(x,t)$ with respect to the placeholder variable $t$, a bit of manipulation reveals the recurrence relation that connects any three consecutive Hermite polynomials [@problem_id:1133267]:
 
 $$
 H_{n+1}(x) = 2x H_n(x) - 2n H_{n-1}(x)
 $$
 
-The [generating function](@article_id:152210) provides a bird's-eye view, from which the ground-level, step-by-step rule naturally emerges.
+The [generating function](@keyword=generating_function|lang=en-US|style=Feynman) provides a bird's-eye view, from which the ground-level, step-by-step rule naturally emerges.
 
-We can also work from the other direction. For many linear recurrences, like $a_n = C_1 a_{n-1} + C_2 a_{n-2}$, the solutions are built from simple geometric progressions, $r^n$. The special bases, $r$, that form these solutions are called the **characteristic roots**. These roots are the fundamental "frequencies" or "modes of growth" for the sequence. If a systems engineer analyzes a black box and finds that its behavior is governed by the roots $8$ and $-2$, they can work backward to uniquely determine the rule that must be inside the box . The [characteristic equation](@article_id:148563) $(r-8)(r+2) = r^2 - 6r - 16 = 0$ tells them immediately that the underlying [recurrence](@article_id:260818) must be $a_n = 6a_{n-1} + 16a_{n-2}$. The long-term behavior (the roots) reveals the local rule (the [recurrence](@article_id:260818)).
+We can also work from the other direction. For many linear recurrences, like $a_n = C_1 a_{n-1} + C_2 a_{n-2}$, the solutions are built from simple geometric progressions, $r^n$. The special bases, $r$, that form these solutions are called the **characteristic roots**. These roots are the fundamental "frequencies" or "modes of growth" for the sequence. If a systems engineer analyzes a black box and finds that its behavior is governed by the roots $8$ and $-2$, they can work backward to uniquely determine the rule that must be inside the box [@problem_id:1355401]. The [characteristic equation](@keyword=characteristic_equation|lang=en-US|style=Feynman) $(r-8)(r+2) = r^2 - 6r - 16 = 0$ tells them immediately that the underlying [recurrence](@keyword=recurrence|lang=en-US|style=Feynman) must be $a_n = 6a_{n-1} + 16a_{n-2}$. The long-term behavior (the roots) reveals the local rule (the [recurrence](@keyword=recurrence|lang=en-US|style=Feynman)).
 
 ### A Clever Disguise: Taming Non-Linearity
 
@@ -75,7 +75,7 @@ $$
 x_{n+1} = \frac{\alpha x_n}{1 + \beta x_n}
 $$
 
-This is a non-linear [recurrence](@article_id:260818), and it looks tough. But here, we can apply one of the most powerful strategies in all of science: if you don't like the problem you have, change it into one you know how to solve. The key is to find the right change of perspective.
+This is a non-linear [recurrence](@keyword=recurrence|lang=en-US|style=Feynman), and it looks tough. But here, we can apply one of the most powerful strategies in all of science: if you don't like the problem you have, change it into one you know how to solve. The key is to find the right change of perspective.
 
 Instead of looking at the quantity $x_n$, let's see what happens to its reciprocal, $y_n = 1/x_n$. Taking the reciprocal of both sides of our nasty equation gives $y_{n+1} = \frac{1 + \beta x_n}{\alpha x_n} = \frac{1}{\alpha x_n} + \frac{\beta}{\alpha}$. And since $1/x_n = y_n$, this becomes:
 
@@ -83,4 +83,4 @@ $$
 y_{n+1} = \frac{1}{\alpha} y_n + \frac{\beta}{\alpha}
 $$
 
-Look at that! By a clever substitution, we transformed a daunting non-linear problem into a simple, first-order [linear recurrence relation](@article_id:179678)—a type we can easily solve . Once we find the solution for $y_n$, we just flip it back over to get our answer for $x_n$. It's a beautiful piece of mathematical judo. It teaches us that sometimes, the most complex systems are just simple systems in a clever disguise, waiting for us to find the right lens through which to view them.
+Look at that! By a clever substitution, we transformed a daunting non-linear problem into a simple, first-order [linear recurrence relation](@keyword=linear_recurrence_relation|lang=en-US|style=Feynman)—a type we can easily solve [@problem_id:1077165]. Once we find the solution for $y_n$, we just flip it back over to get our answer for $x_n$. It's a beautiful piece of mathematical judo. It teaches us that sometimes, the most complex systems are just simple systems in a clever disguise, waiting for us to find the right lens through which to view them.

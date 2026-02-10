@@ -1,7 +1,7 @@
 ## Introduction
 Heat transfer is a fundamental process that governs everything from the comfort of our homes to the performance of advanced technology. Among its modes, conduction—the flow of heat through a material—is a primary concern in engineering and design. While we intuitively understand that heat flows from hot to cold, accurately predicting and controlling this flow, especially through complex structures like multi-layered walls or high-tech components, presents a significant challenge. How can we systematically analyze this thermal "leakage" to design more efficient and reliable systems?
 
-This article provides a comprehensive exploration of [heat conduction](@article_id:143015) in plane walls, addressing this challenge head-on. First, in "Principles and Mechanisms," we will delve into the foundational rule of Fourier's Law and develop the elegant and powerful thermal resistance analogy. Then, in "Applications and Interdisciplinary Connections," we will see how this simple model provides profound insights into a vast range of fields, from building science and industrial processes to [aerospace engineering](@article_id:268009) and even biology. By the end, the reader will not only understand the equations but also appreciate the conceptual unity that connects a simple house wall to the fundamental laws of thermodynamics.
+This article provides a comprehensive exploration of [heat conduction](@keyword=heat_conduction|lang=en-US|style=Feynman) in plane walls, addressing this challenge head-on. First, in "Principles and Mechanisms," we will delve into the foundational rule of Fourier's Law and develop the elegant and powerful thermal resistance analogy. Then, in "Applications and Interdisciplinary Connections," we will see how this simple model provides profound insights into a vast range of fields, from building science and industrial processes to [aerospace engineering](@keyword=aerospace_engineering|lang=en-US|style=Feynman) and even biology. By the end, the reader will not only understand the equations but also appreciate the conceptual unity that connects a simple house wall to the fundamental laws of thermodynamics.
 
 ## Principles and Mechanisms
 
@@ -37,13 +37,13 @@ $$
 T_1 - T_2 = \dot{Q} \left( \frac{L}{kA} \right)
 $$
 
-Does this look familiar? It should! It has the exact same form as Ohm's Law for [electrical circuits](@article_id:266909), $V = IR$, where voltage difference $V$ drives a current $I$ through a resistance $R$.
+Does this look familiar? It should! It has the exact same form as Ohm's Law for [electrical circuits](@keyword=electrical_circuits|lang=en-US|style=Feynman), $V = IR$, where voltage difference $V$ drives a current $I$ through a resistance $R$.
 
-In our thermal version, the temperature difference $\Delta T = T_1 - T_2$ is the "[thermal voltage](@article_id:266592)"—the driving potential for the flow. The heat rate $\dot{Q}$ is the "thermal current"—the flow itself. This means the term in the parentheses, $\frac{L}{kA}$, must be the **thermal resistance**, $R_{\text{cond}}$.
+In our thermal version, the temperature difference $\Delta T = T_1 - T_2$ is the "[thermal voltage](@keyword=thermal_voltage|lang=en-US|style=Feynman)"—the driving potential for the flow. The heat rate $\dot{Q}$ is the "thermal current"—the flow itself. This means the term in the parentheses, $\frac{L}{kA}$, must be the **thermal resistance**, $R_{\text{cond}}$.
 
 This is more than just a cute analogy; it is a profound unification of different physical phenomena under a single conceptual framework. The idea of resistance—the ratio of a driving potential to the resulting flow—appears everywhere in physics.
 
-It's vital to distinguish this **[thermal resistance](@article_id:143606)** from the material's intrinsic **thermal conductivity** ($k$) or its inverse, **thermal resistivity** ($\rho_t = 1/k$). Conductivity and [resistivity](@article_id:265987) are inherent properties of a substance—copper is simply a better conductor than glass, regardless of its shape. Thermal resistance, however, is a property of an *object*. It depends not only on the material ($k$) but also on its geometry—its thickness ($L$) and area ($A$). A thick sheet of copper can have a higher resistance than a thin film of glass. Resistance tells you how much a specific component, like your wall or window, impedes the flow of heat.
+It's vital to distinguish this **[thermal resistance](@keyword=thermal_resistance|lang=en-US|style=Feynman)** from the material's intrinsic **thermal conductivity** ($k$) or its inverse, **thermal resistivity** ($\rho_t = 1/k$). Conductivity and [resistivity](@keyword=resistivity|lang=en-US|style=Feynman) are inherent properties of a substance—copper is simply a better conductor than glass, regardless of its shape. Thermal resistance, however, is a property of an *object*. It depends not only on the material ($k$) but also on its geometry—its thickness ($L$) and area ($A$). A thick sheet of copper can have a higher resistance than a thin film of glass. Resistance tells you how much a specific component, like your wall or window, impedes the flow of heat.
 
 ### Building with Blocks: Resistors in Series
 
@@ -57,7 +57,7 @@ $$
 
 Once we know the total resistance, we can find the total heat flow $\dot{Q} = \frac{\Delta T_{\text{total}}}{R_{\text{total}}}$. Even better, we can find the temperature at the interface between the layers. The "voltage drop" (temperature drop) across the wood layer is $\Delta T_{\text{wood}} = \dot{Q} R_{\text{wood}}$. So, the interface temperature is just the indoor temperature minus this drop. The resistance concept allows us to dissect the system with remarkable ease.
 
-This model can be made even more realistic. When two solid surfaces are pressed together, they don't make perfect contact. On a microscopic level, they are rough, touching only at a few high points. The gaps in between are typically filled with air, which is a poor conductor of heat. This creates an extra resistance at the interface, a **[thermal contact resistance](@article_id:142958)**. This is a huge issue in modern electronics, where heat must be efficiently wicked away from a hot CPU chip to a heat sink. That tiny, imperfect interface can be a major bottleneck, creating a significant temperature jump. Our resistance network simply gains another resistor: $R_{\text{total}} = R_{\text{chip}} + R_{\text{contact}} + R_{\text{heatsink}}$.
+This model can be made even more realistic. When two solid surfaces are pressed together, they don't make perfect contact. On a microscopic level, they are rough, touching only at a few high points. The gaps in between are typically filled with air, which is a poor conductor of heat. This creates an extra resistance at the interface, a **[thermal contact resistance](@keyword=thermal_contact_resistance|lang=en-US|style=Feynman)**. This is a huge issue in modern electronics, where heat must be efficiently wicked away from a hot CPU chip to a heat sink. That tiny, imperfect interface can be a major bottleneck, creating a significant temperature jump. Our resistance network simply gains another resistor: $R_{\text{total}} = R_{\text{chip}} + R_{\text{contact}} + R_{\text{heatsink}}$.
 
 ### The Whole System: Conduction, Convection, and the Overall Picture
 
@@ -69,7 +69,7 @@ $$
 R_{\text{total}} = R_{\text{conv,in}} + R_{\text{cond,wall}} + R_{\text{conv,out}} = \frac{1}{h_{\text{in}}A} + \frac{L}{kA} + \frac{1}{h_{\text{out}}A}
 $$
 
-Engineers often combine all these effects into a single parameter, the **[overall heat transfer coefficient](@article_id:151499)**, $U$, defined by $\dot{Q} = U A \Delta T_{\text{overall}}$. It's easy to see that $U$ is simply related to the inverse of the total resistance:
+Engineers often combine all these effects into a single parameter, the **[overall heat transfer coefficient](@keyword=overall_heat_transfer_coefficient|lang=en-US|style=Feynman)**, $U$, defined by $\dot{Q} = U A \Delta T_{\text{overall}}$. It's easy to see that $U$ is simply related to the inverse of the total resistance:
 
 $$
 \frac{1}{U A} = R_{\text{total}} \quad \implies \quad U = \frac{1}{\frac{1}{h_{\text{in}}} + \frac{L}{k} + \frac{1}{h_{\text{out}}}} \times \frac{1}{A}
@@ -79,18 +79,18 @@ A common engineering convention is to define $U$ based on a unit area, such that
 
 ### A Curious Twist: Insulation that Heats
 
-Does adding a layer of insulation *always* reduce [heat loss](@article_id:165320)? For a flat plane wall, the answer is a resounding yes. The conduction resistance $\frac{L}{kA}$ increases with thickness $L$, while the convection resistance $\frac{1}{hA}$ stays the same because the area $A$ is constant. The total resistance can only go up.
+Does adding a layer of insulation *always* reduce [heat loss](@keyword=heat_loss|lang=en-US|style=Feynman)? For a flat plane wall, the answer is a resounding yes. The conduction resistance $\frac{L}{kA}$ increases with thickness $L$, while the convection resistance $\frac{1}{hA}$ stays the same because the area $A$ is constant. The total resistance can only go up.
 
 But what about a curved surface, like a pipe or a sphere? Here, nature has a wonderful surprise for us. When we add insulation to a pipe, we increase its outer radius. This has two competing effects:
 
 1.  The conduction resistance increases because the heat has to travel through a thicker layer of insulation.
 2.  The convection resistance *decreases* because the outer surface area, which is where convection happens, gets larger.
 
-When the pipe's initial radius is small, the second effect can dominate! Adding a bit of insulation can actually *increase* the total heat loss by providing a larger surface area for convection to the surrounding air. This continues until a **[critical radius](@article_id:141937) of insulation** is reached, beyond which adding more insulation finally starts to reduce [heat loss](@article_id:165320) as expected. For a cylinder, this critical radius is $r_c = \frac{k}{h}$. This counter-intuitive phenomenon is a beautiful example of how geometry can fundamentally alter the physics of heat transfer, and it's a direct consequence of the interplay between [conduction and convection](@article_id:156315) resistances.
+When the pipe's initial radius is small, the second effect can dominate! Adding a bit of insulation can actually *increase* the total heat loss by providing a larger surface area for convection to the surrounding air. This continues until a **[critical radius](@keyword=critical_radius|lang=en-US|style=Feynman) of insulation** is reached, beyond which adding more insulation finally starts to reduce [heat loss](@keyword=heat_loss|lang=en-US|style=Feynman) as expected. For a cylinder, this critical radius is $r_c = \frac{k}{h}$. This counter-intuitive phenomenon is a beautiful example of how geometry can fundamentally alter the physics of heat transfer, and it's a direct consequence of the interplay between [conduction and convection](@keyword=conduction_and_convection|lang=en-US|style=Feynman) resistances.
 
 ### Heat from Within
 
-So far, we've treated walls as passive conduits for heat. But what if the wall itself generates heat? This happens all the time. An electric current passing through a wire generates heat (Joule heating), and [nuclear reactions](@article_id:158947) generate heat in a fuel rod. Let's say heat is generated uniformly throughout our plane wall at a rate of $q'''$ per unit volume.
+So far, we've treated walls as passive conduits for heat. But what if the wall itself generates heat? This happens all the time. An electric current passing through a wire generates heat (Joule heating), and [nuclear reactions](@keyword=nuclear_reactions|lang=en-US|style=Feynman) generate heat in a fuel rod. Let's say heat is generated uniformly throughout our plane wall at a rate of $q'''$ per unit volume.
 
 This changes everything. The heat flow rate $\dot{Q}$ is no longer constant through the wall. As we move through the wall, more and more generated heat is added to the flow. The simple linear temperature profile is gone. The governing differential equation becomes what is known as Poisson's equation, and its solution reveals that the temperature profile is now a **parabola**. The peak temperature is no longer at the boundary but somewhere in the middle of the wall, at the point where the temperature gradient is zero.
 
@@ -98,12 +98,12 @@ The situation can be even more complex. In some materials, the rate of heat gene
 
 ### The Unseen Price: Entropy Generation
 
-Our journey has taken us from simple analogies to complex, real-world scenarios. But there is one final, deeper layer to uncover. Every process we have discussed is irreversible. Heat flowing from hot to cold is a one-way street, a clear manifestation of the Second Law of Thermodynamics. The [physical measure](@article_id:263566) of this irreversibility is **entropy generation**.
+Our journey has taken us from simple analogies to complex, real-world scenarios. But there is one final, deeper layer to uncover. Every process we have discussed is irreversible. Heat flowing from hot to cold is a one-way street, a clear manifestation of the Second Law of Thermodynamics. The [physical measure](@keyword=physical_measure|lang=en-US|style=Feynman) of this irreversibility is **entropy generation**.
 
-Every [thermal resistance](@article_id:143606) is a site of [entropy generation](@article_id:138305). Whenever heat $\dot{Q}$ flows across a finite temperature difference, the entropy of the universe increases. For any single resistive element—be it a solid layer, a contact interface, or a convective boundary layer—the rate of entropy generation is given by a beautifully simple formula:
+Every [thermal resistance](@keyword=thermal_resistance|lang=en-US|style=Feynman) is a site of [entropy generation](@keyword=entropy_generation|lang=en-US|style=Feynman). Whenever heat $\dot{Q}$ flows across a finite temperature difference, the entropy of the universe increases. For any single resistive element—be it a solid layer, a contact interface, or a convective boundary layer—the rate of entropy generation is given by a beautifully simple formula:
 
 $$
 \dot{S}_{\text{gen}} = \dot{Q} \left( \frac{1}{T_{\text{out}}} - \frac{1}{T_{\text{in}}} \right)
 $$
 
-Here, $T_{\text{in}}$ and $T_{\text{out}}$ are the absolute temperatures at which heat enters and leaves the element. For a composite wall, the total entropy generated is simply the sum of the generation in each part. This shows that our practical resistance model is perfectly consistent with the fundamental laws of thermodynamics. Minimizing heat loss is equivalent to minimizing resistance, which in turn means minimizing the generation of entropy. The resistance model is not just a convenient tool; it is a direct accounting of the thermodynamic "price" paid for the irreversible flow of heat. It connects the practical world of engineering design to the profound and universal [arrow of time](@article_id:143285).
+Here, $T_{\text{in}}$ and $T_{\text{out}}$ are the absolute temperatures at which heat enters and leaves the element. For a composite wall, the total entropy generated is simply the sum of the generation in each part. This shows that our practical resistance model is perfectly consistent with the fundamental laws of thermodynamics. Minimizing heat loss is equivalent to minimizing resistance, which in turn means minimizing the generation of entropy. The resistance model is not just a convenient tool; it is a direct accounting of the thermodynamic "price" paid for the irreversible flow of heat. It connects the practical world of engineering design to the profound and universal [arrow of time](@keyword=arrow_of_time|lang=en-US|style=Feynman).

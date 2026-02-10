@@ -1,61 +1,61 @@
 ## 引言
-“热[蠕变](@article_id:320937)”一词在科学词汇中呈现出一种奇特的二元性，它既描述了热金属在负载下的缓慢永久变形，也描述了[微通道](@article_id:338554)中由热驱动的无声气体流动。乍一看，这两种现象——一个关乎结构失效，另一个是无运动部件泵的基础——似乎完全不相关，给统一理解带来了挑战。本文通过探索[热激活](@article_id:379999)输运的基本性质，旨在弥合这一概念上的鸿沟。文章首先在“原理与机理”一章中剖析固体和气体中[蠕变](@article_id:320937)的不同世界，审视[位错](@article_id:299027)和分子的微观运动机制。随后，“应用与[交叉](@article_id:315017)学科联系”一章将揭示这一概念的深远影响，从[喷气发动机](@article_id:377438)设计和[微流控学](@article_id:332854)到[超导体](@article_id:370061)的量子行为，最终揭示物质在能量和时间的共同作用下屈服的多种方式背后深刻的统一性。
+“热[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)”一词在科学词汇中呈现出一种奇特的二元性，它既描述了热金属在负载下的缓慢永久变形，也描述了[微通道](@keyword=microchannel|lang=zh-CN|style=Feynman)中由热驱动的无声气体流动。乍一看，这两种现象——一个关乎结构失效，另一个是无运动部件泵的基础——似乎完全不相关，给统一理解带来了挑战。本文通过探索[热激活](@keyword=thermal_activation|lang=zh-CN|style=Feynman)输运的基本性质，旨在弥合这一概念上的鸿沟。文章首先在“原理与机理”一章中剖析固体和气体中[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)的不同世界，审视[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)和分子的微观运动机制。随后，“应用与[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)学科联系”一章将揭示这一概念的深远影响，从[喷气发动机](@keyword=jet_engine|lang=zh-CN|style=Feynman)设计和[微流控学](@keyword=microfluidics|lang=zh-CN|style=Feynman)到[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)的量子行为，最终揭示物质在能量和时间的共同作用下屈服的多种方式背后深刻的统一性。
 
 ## 原理与机理
 
 ### 两种蠕变的故事
 
-在物理学和工程学的世界里，词语有时可能很巧妙。它们可以被用来描述表面上似乎相去甚远的现象。以**热[蠕变](@article_id:320937)**一词为例。如果你问一位[材料科学](@article_id:312640)家，他们可能会告诉你[喷气发动机](@article_id:377438)中金属梁缓慢、永久的下垂，这个过程可能在数月或数年内导致灾难性失效。如果你问一位研究微型器件的物理学家，他们可能会描述一种稀薄气体在微小管道中的幽灵般、无声的流动，其驱动力仅仅是温差——一种无运动部件的泵。
+在物理学和工程学的世界里，词语有时可能很巧妙。它们可以被用来描述表面上似乎相去甚远的现象。以**热[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)**一词为例。如果你问一位[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)家，他们可能会告诉你[喷气发动机](@keyword=jet_engine|lang=zh-CN|style=Feynman)中金属梁缓慢、永久的下垂，这个过程可能在数月或数年内导致灾难性失效。如果你问一位研究微型器件的物理学家，他们可能会描述一种稀薄气体在微小管道中的幽灵般、无声的流动，其驱动力仅仅是温差——一种无运动部件的泵。
 
-下垂的金属和流动的气体。它们之间能有什么共同点呢？这似乎是一个用相同名称指代两种截然不同事物的典型案例。在很多方面，确实如此。其微观作用者和它们上演的物理过程是完全不同的。然而，随着我们深入探究，将会发现一条优美而统一的线索。两者都是关于**[热激活](@article_id:379999)输运**的故事——物质在能量和时间驱动下缓慢而不可阻挡的前行。我们的任务是首先分别理解这两个故事，然后再去领会它们共同奏出的微妙而深刻的乐章。
+下垂的金属和流动的气体。它们之间能有什么共同点呢？这似乎是一个用相同名称指代两种截然不同事物的典型案例。在很多方面，确实如此。其微观作用者和它们上演的物理过程是完全不同的。然而，随着我们深入探究，将会发现一条优美而统一的线索。两者都是关于**[热激活](@keyword=thermal_activation|lang=zh-CN|style=Feynman)输运**的故事——物质在能量和时间驱动下缓慢而不可阻挡的前行。我们的任务是首先分别理解这两个故事，然后再去领会它们共同奏出的微妙而深刻的乐章。
 
 ### 固体的缓慢、持续拉伸
 
-想象一下图书馆里一个旧书架，几十年来一直承载着沉重的书籍。你可能会注意到，曾经笔直的木制搁板已经出现了永久性的、轻微的弯曲。它们没有断裂，而是在持续的重压下，极其缓慢地“流动”了。这是最常见形式的蠕变。在高[性能工程](@article_id:334496)领域——如发电厂、[喷气发动机](@article_id:377438)和[核反应堆](@article_id:299224)中——这种缓慢变形是一个关键的敌人。在这里，当温度接近材料熔点时，“热[蠕变](@article_id:320937)”是一种无情的力，零部件的设计必须能够承受它。
+想象一下图书馆里一个旧书架，几十年来一直承载着沉重的书籍。你可能会注意到，曾经笔直的木制搁板已经出现了永久性的、轻微的弯曲。它们没有断裂，而是在持续的重压下，极其缓慢地“流动”了。这是最常见形式的蠕变。在高[性能工程](@keyword=performance_engineering|lang=zh-CN|style=Feynman)领域——如发电厂、[喷气发动机](@keyword=jet_engine|lang=zh-CN|style=Feynman)和[核反应堆](@keyword=nuclear_reactor|lang=zh-CN|style=Feynman)中——这种缓慢变形是一个关键的敌人。在这里，当温度接近材料熔点时，“热[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)”是一种无情的力，零部件的设计必须能够承受它。
 
 那么，当那块看似坚固的金属缓慢拉伸时，其内部发生了什么？
 
-#### 微观战场：运动中的[位错](@article_id:299027)
+#### 微观战场：运动中的[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)
 
-一个完美的晶体非常坚固。要使其变形，你必须使整层原子相互滑过，这需要同时打破数十亿个原子键。但真实的材料从不完美。它们充满了缺陷，其中对我们的故事最重要的就是**[位错](@article_id:299027)**。
+一个完美的晶体非常坚固。要使其变形，你必须使整层原子相互滑过，这需要同时打破数十亿个原子键。但真实的材料从不完美。它们充满了缺陷，其中对我们的故事最重要的就是**[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)**。
 
-你可以把[位错](@article_id:299027)想象成大地毯上的一道皱褶。如果你想移动整块地毯，一次性全部拉动是很困难的。但在一端制造一个皱褶并将其推到另一端则很容易。[位错](@article_id:299027)就像插入[晶格](@article_id:300090)中的一个额外的原子半平面。通过在晶体中移动这个缺陷，材料一次只变形一个原子行，这比移动整个原子平面要容易得多。塑性变形——即永久性变形——几乎完全是[位错](@article_id:299027)移动的故事。
+你可以把[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)想象成大地毯上的一道皱褶。如果你想移动整块地毯，一次性全部拉动是很困难的。但在一端制造一个皱褶并将其推到另一端则很容易。[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)就像插入[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中的一个额外的原子半平面。通过在晶体中移动这个缺陷，材料一次只变形一个原子行，这比移动整个原子平面要容易得多。塑性变形——即永久性变形——几乎完全是[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)移动的故事。
 
-在施加载荷下，这些[位错](@article_id:299027)开始滑移。但它们的旅程并不轻松。
+在施加载荷下，这些[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)开始滑移。但它们的旅程并不轻松。
 
 #### 蠕变的三个阶段
 
-当一个金属部件在高温下承受恒定载荷时，其随时间发生的变形通常遵循一个经典的三阶段过程，材料内部的微观运动机制优美地诠释了这一点 。
+当一个金属部件在高温下承受恒定载荷时，其随时间发生的变形通常遵循一个经典的三阶段过程，材料内部的微观运动机制优美地诠释了这一点 [@problem_id:2811163]。
 
-**第一阶段：[初始蠕变](@article_id:383305)。**当载荷首次施加时，[位错](@article_id:299027)开始移动和增殖。材料开始变形。但很快，[位错](@article_id:299027)就会相互碰撞，就像交通堵塞中的汽车。它们纠缠在一起，形成复杂的堆积和“森林”，阻碍了进一步的运动。这个过程称为**加工硬化**，增加了材料[内部对流](@article_id:309143)动的阻力。因此，[蠕变](@article_id:320937)速率，即应变率（$\dot{\varepsilon}$），开始时很高，然后随时间*减小*。
+**第一阶段：[初始蠕变](@keyword=primary_creep|lang=zh-CN|style=Feynman)。**当载荷首次施加时，[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)开始移动和增殖。材料开始变形。但很快，[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)就会相互碰撞，就像交通堵塞中的汽车。它们纠缠在一起，形成复杂的堆积和“森林”，阻碍了进一步的运动。这个过程称为**加工硬化**，增加了材料[内部对流](@keyword=internal_convection|lang=zh-CN|style=Feynman)动的阻力。因此，[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)速率，即应变率（$\dot{\varepsilon}$），开始时很高，然后随时间*减小*。
 
-**第二阶段：二次[蠕变](@article_id:320937)（或[稳态蠕变](@article_id:322144)）。**在高温下，晶体中的原子并非静止不动；它们在剧烈[振动](@article_id:331484)。这种热能使得一个关键的回复机制得以启动。被困住的[位错](@article_id:299027)无法直接滑过障碍物，但它们可以“攀移”越过它们。**[位错攀移](@article_id:378180)**是一个非凡的过程，[位错](@article_id:299027)边缘的一整排原子通过[空位](@article_id:308249)的逐个扩散而移走，从而使[位错](@article_id:299027)能够有效地跳到另一个畅通的[滑移面](@article_id:319113)上。这是一个缓慢的、由[扩散控制](@article_id:330848)的过程，但在高温下非常有效。
+**第二阶段：二次[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)（或[稳态蠕变](@keyword=steady_state_creep|lang=zh-CN|style=Feynman)）。**在高温下，晶体中的原子并非静止不动；它们在剧烈[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。这种热能使得一个关键的回复机制得以启动。被困住的[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)无法直接滑过障碍物，但它们可以“攀移”越过它们。**[位错攀移](@keyword=dislocation_climb|lang=zh-CN|style=Feynman)**是一个非凡的过程，[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)边缘的一整排原子通过[空位](@keyword=vacancies|lang=zh-CN|style=Feynman)的逐个扩散而移走，从而使[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)能够有效地跳到另一个畅通的[滑移面](@keyword=slip_planes|lang=zh-CN|style=Feynman)上。这是一个缓慢的、由[扩散控制](@keyword=diffusion_control|lang=zh-CN|style=Feynman)的过程，但在高温下非常有效。
 
-在二次[蠕变](@article_id:320937)阶段，达到了一种微妙的平衡。加工硬化（[位错](@article_id:299027)纠缠）的速率与回复（[位错](@article_id:299027)通过攀移逃逸）的速率完全匹配。这种[动态平衡](@article_id:306712)导致了稳定的[位错](@article_id:299027)结构，从而产生一个几乎恒定且最小的[蠕变](@article_id:320937)速率。这是构件生命中最长、最可预测的阶段，工程师们围绕这个[稳态蠕变](@article_id:322144)速率进行设计。
+在二次[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)阶段，达到了一种微妙的平衡。加工硬化（[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)纠缠）的速率与回复（[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)通过攀移逃逸）的速率完全匹配。这种[动态平衡](@keyword=allostasis|lang=zh-CN|style=Feynman)导致了稳定的[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)结构，从而产生一个几乎恒定且最小的[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)速率。这是构件生命中最长、最可预测的阶段，工程师们围绕这个[稳态蠕变](@keyword=steady_state_creep|lang=zh-CN|style=Feynman)速率进行设计。
 
-**第三阶段：三次[蠕变](@article_id:320937)。**美好的事物总有尽头。在最后阶段，[蠕变](@article_id:320937)速率开始*加速*，最终导致断裂。这个悲剧性的转变主要由两个罪魁祸首驱动。首先，材料内部开始形成微小的空洞和腔体，通常发生在晶粒之间的边界上。这些[空洞长大](@article_id:371754)并连接起来，形成微裂纹，减小了有效承载[截面](@article_id:315406)积。其次，即使没有内部空洞，随着构件的拉伸，其[截面](@article_id:315406)自然变细（一个称为颈缩的过程）。在恒定载荷测试中，更小的面积意味着*[真实应力](@article_id:370022)*——单位*实际*面积上的力——在持续增加。
+**第三阶段：三次[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)。**美好的事物总有尽头。在最后阶段，[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)速率开始*加速*，最终导致断裂。这个悲剧性的转变主要由两个罪魁祸首驱动。首先，材料内部开始形成微小的空洞和腔体，通常发生在晶粒之间的边界上。这些[空洞长大](@keyword=void_growth|lang=zh-CN|style=Feynman)并连接起来，形成微裂纹，减小了有效承载[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)积。其次，即使没有内部空洞，随着构件的拉伸，其[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)自然变细（一个称为颈缩的过程）。在恒定载荷测试中，更小的面积意味着*[真实应力](@keyword=true_stress|lang=zh-CN|style=Feynman)*——单位*实际*面积上的力——在持续增加。
 
-我们可以用一个来自[连续介质损伤力学](@article_id:356380)领域的简单而强大的概念来捕捉这个想法 。让我们定义一个[损伤变量](@article_id:375904)，$D$，作为因空洞而损失的截面积分数。如果原始（名义）应力为$\sigma_N$，那么作用在剩余完好材料上的[真实应力](@article_id:370022)，即**[有效应力](@article_id:376851)**，变为$\sigma_{\mathrm{eff}} = \sigma_N / (1-D)$。由于蠕变速率对应力高度敏感（通常为$\dot{\varepsilon} \propto \sigma^n$，其中$n$为3到8），随着损伤$D$的增长，[有效应力](@article_id:376851)急剧上升，[蠕变](@article_id:320937)速率向无穷[大加速](@article_id:377658)。这种损伤和应力放大的反馈循环宣告了材料的终结。
+我们可以用一个来自[连续介质损伤力学](@keyword=continuum_damage_mechanics|lang=zh-CN|style=Feynman)领域的简单而强大的概念来捕捉这个想法 [@problem_id:2476803]。让我们定义一个[损伤变量](@keyword=damage_variable|lang=zh-CN|style=Feynman)，$D$，作为因空洞而损失的截面积分数。如果原始（名义）应力为$\sigma_N$，那么作用在剩余完好材料上的[真实应力](@keyword=true_stress|lang=zh-CN|style=Feynman)，即**[有效应力](@keyword=effective_stress|lang=zh-CN|style=Feynman)**，变为$\sigma_{\mathrm{eff}} = \sigma_N / (1-D)$。由于蠕变速率对应力高度敏感（通常为$\dot{\varepsilon} \propto \sigma^n$，其中$n$为3到8），随着损伤$D$的增长，[有效应力](@keyword=effective_stress|lang=zh-CN|style=Feynman)急剧上升，[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)速率向无穷[大加速](@keyword=great_acceleration|lang=zh-CN|style=Feynman)。这种损伤和应力放大的反馈循环宣告了材料的终结。
 
-#### 驯服野兽：[材料设计](@article_id:320854)的艺术
+#### 驯服野兽：[材料设计](@keyword=materials_design|lang=zh-CN|style=Feynman)的艺术
 
-理解这些机理不仅仅是一项学术活动；它是创造能够在[喷气发动机](@article_id:377438)内部地狱般环境中生存的材料的关键。
+理解这些机理不仅仅是一项学术活动；它是创造能够在[喷气发动机](@keyword=jet_engine|lang=zh-CN|style=Feynman)内部地狱般环境中生存的材料的关键。
 
-我们如何对抗[蠕变](@article_id:320937)？我们可以攻击它的弱点。我们了解到，晶界是薄弱之处，空洞在此形成，原子可以通过[扩散蠕变](@article_id:320050)机制相互滑过 。解决方案？消除它们！性能最高的涡轮叶片是由[镍基高温合金](@article_id:322157)生长而成的巨大**单晶** 。没有晶界，[扩散](@article_id:327616)和滑移的“高速公路”就被消除了，从而显著提高了[抗蠕变性](@article_id:320220)。
+我们如何对抗[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)？我们可以攻击它的弱点。我们了解到，晶界是薄弱之处，空洞在此形成，原子可以通过[扩散蠕变](@keyword=diffusional_creep|lang=zh-CN|style=Feynman)机制相互滑过 [@problem_id:1292312]。解决方案？消除它们！性能最高的涡轮叶片是由[镍基高温合金](@keyword=nickel_based_superalloys|lang=zh-CN|style=Feynman)生长而成的巨大**单晶** [@problem_id:1292288]。没有晶界，[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)和滑移的“高速公路”就被消除了，从而显著提高了[抗蠕变性](@keyword=creep_resistance|lang=zh-CN|style=Feynman)。
 
-另一个绝妙的策略是让移动的[位错](@article_id:299027)处境更加艰难。这就是**[沉淀硬化](@article_id:318226)**背后的原理 。通过精确热处理合金，工程师可以使微小的、具有不同[晶体结构](@article_id:300816)的硬质颗粒（称为沉淀相）在整个材料中形成。这些沉淀相就像坚不可摧的路障。[位错](@article_id:299027)无法轻易地切过它们；相反，它被迫使用缓慢、耗能的攀移过程来越过它们。通过使[位错攀移](@article_id:378180)成为[速率限制步骤](@article_id:311160)，这些纳米级的障碍物有效地为[蠕变](@article_id:320937)踩下了刹车。
+另一个绝妙的策略是让移动的[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)处境更加艰难。这就是**[沉淀硬化](@keyword=precipitation_hardening|lang=zh-CN|style=Feynman)**背后的原理 [@problem_id:1327493]。通过精确热处理合金，工程师可以使微小的、具有不同[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)的硬质颗粒（称为沉淀相）在整个材料中形成。这些沉淀相就像坚不可摧的路障。[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)无法轻易地切过它们；相反，它被迫使用缓慢、耗能的攀移过程来越过它们。通过使[位错攀移](@keyword=dislocation_climb|lang=zh-CN|style=Feynman)成为[速率限制步骤](@keyword=rate_limiting_step|lang=zh-CN|style=Feynman)，这些纳米级的障碍物有效地为[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)踩下了刹车。
 
-为了将这一切联系起来，物理学家和工程师们开发了数学模型，即**[本构定律](@article_id:357811)**，来描述这种行为。这些定律，如优雅的**Garofalo双曲正弦定律**（$\dot{\varepsilon} \propto [\sinh(\alpha \sigma)]^n$），能够捕捉材料在广泛应力范围内的响应，从低应力下的[幂律](@article_id:320566)依赖平滑过渡到高应力下的指数依赖，为底层物理学提供了一幅统一的图景 。
+为了将这一切联系起来，物理学家和工程师们开发了数学模型，即**[本构定律](@keyword=constitutive_laws|lang=zh-CN|style=Feynman)**，来描述这种行为。这些定律，如优雅的**Garofalo双曲正弦定律**（$\dot{\varepsilon} \propto [\sinh(\alpha \sigma)]^n$），能够捕捉材料在广泛应力范围内的响应，从低应力下的[幂律](@keyword=power_laws|lang=zh-CN|style=Feynman)依赖平滑过渡到高应力下的指数依赖，为底层物理学提供了一幅统一的图景 [@problem_id:2883426]。
 
 ### 稀薄气体的幽灵般流动
 
-现在，让我们离开致密、[晶态](@article_id:372300)固体的世界，进入稀薄气体的奇异领域。在这里，“热[蠕变](@article_id:320937)”一词指的是完全不同的东西：由[温度梯度](@article_id:297296)引起的气体自身的流动。
+现在，让我们离开致密、[晶态](@keyword=crystalline_state|lang=zh-CN|style=Feynman)固体的世界，进入稀薄气体的奇异领域。在这里，“热[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)”一词指的是完全不同的东西：由[温度梯度](@keyword=temperature_gradient|lang=zh-CN|style=Feynman)引起的气体自身的流动。
 
-想象一根非常细的管子，细到里面的气体分子与管壁碰撞的频率高于它们之间相互碰撞的频率。这就是**稀薄**或**[滑移流](@article_id:314545)**区域。现在，让我们使这个通道的一面壁在一端热，另一端冷。令人惊讶的是，气体将开始流动，仿佛被一只无形的手推动，从冷端流向热端。这就是热蠕变，也称为**热蒸腾**。
+想象一根非常细的管子，细到里面的气体分子与管壁碰撞的频率高于它们之间相互碰撞的频率。这就是**稀薄**或**[滑移流](@keyword=slip_flow|lang=zh-CN|style=Feynman)**区域。现在，让我们使这个通道的一面壁在一端热，另一端冷。令人惊讶的是，气体将开始流动，仿佛被一只无形的手推动，从冷端流向热端。这就是热蠕变，也称为**热蒸腾**。
 
 #### 机理：统计性的推动
 
-这种力从何而来？没有运动部件，没有活塞，最初也没有[压力梯度](@article_id:337807)。秘密在于气体动理论——在于无数单个分子的随机运动 。
+这种力从何而来？没有运动部件，没有活塞，最初也没有[压力梯度](@keyword=pressure_gradient|lang=zh-CN|style=Feynman)。秘密在于气体动理论——在于无数单个分子的随机运动 [@problem_id:305075]。
 
 考虑通道壁上的一小块区域。气体分子不断地从四面八方撞击它。从较热一侧到达该区域的分子，平均而言运动得更快，携带的动量也比从较冷一侧到达的分子更多。当这些分子撞击壁面并反弹（或被吸收再发射）时，它们与壁面交换动量。
 
@@ -63,20 +63,20 @@
 
 #### 制造无运动部件的泵
 
-这个看似微妙的效应不仅仅是一种奇特现象；它可以被用来做实际的工作。在一个封闭的通道中，热[蠕变](@article_id:320937)流将在热端积聚气体，从而产生压力差 。这个[压力梯度](@article_id:337807)反过来又会驱动一个常规的、压力驱动的流（[泊肃叶流](@article_id:340061)）回到冷端。当压力驱动的回流恰好抵消热蠕变的前向流时，就达到了[稳态](@article_id:326048)。结果是在两端之间产生了静态的压力差——我们制造了一个泵！
+这个看似微妙的效应不仅仅是一种奇特现象；它可以被用来做实际的工作。在一个封闭的通道中，热[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)流将在热端积聚气体，从而产生压力差 [@problem_id:1788055]。这个[压力梯度](@keyword=pressure_gradient|lang=zh-CN|style=Feynman)反过来又会驱动一个常规的、压力驱动的流（[泊肃叶流](@keyword=poiseuille_flow|lang=zh-CN|style=Feynman)）回到冷端。当压力驱动的回流恰好抵消热蠕变的前向流时，就达到了[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)。结果是在两端之间产生了静态的压力差——我们制造了一个泵！
 
-这些热蒸腾泵是微工程的奇迹。它们没有运动部件，因此坚固、无声，并且可以微型化到令人难以置信的尺度，使其成为控制微流控“芯片实验室”系统中微量气体或用于[航天器推进](@article_id:380594)的理想选择。这种效应的强度取决于许多因素：气体种类、[温度梯度](@article_id:297296)、压力，以及至关重要的是，气体-表面相互作用本身的性质 。分子如何从[表面散射](@article_id:332154)的细节——由诸如**切向动量[适应系数](@article_id:311569)**等参数捕捉——决定了这种动量交换的效率，从而决定了泵的性能。
+这些热蒸腾泵是微工程的奇迹。它们没有运动部件，因此坚固、无声，并且可以微型化到令人难以置信的尺度，使其成为控制微流控“芯片实验室”系统中微量气体或用于[航天器推进](@keyword=spacecraft_propulsion|lang=zh-CN|style=Feynman)的理想选择。这种效应的强度取决于许多因素：气体种类、[温度梯度](@keyword=temperature_gradient|lang=zh-CN|style=Feynman)、压力，以及至关重要的是，气体-表面相互作用本身的性质 [@problem_id:623891]。分子如何从[表面散射](@keyword=surface_scattering|lang=zh-CN|style=Feynman)的细节——由诸如**切向动量[适应系数](@keyword=accommodation_coefficient|lang=zh-CN|style=Feynman)**等参数捕捉——决定了这种动量交换的效率，从而决定了泵的性能。
 
 ### 更深层次的统一性：不可逆性的交响曲
 
 所以，我们有两种现象：固体在应力下的变形和气体在温度梯度下的流动。除了名字相同，它们似乎毫无共同之处。但现在我们来到了终曲，来到了Feynman如此热衷于揭示的深层联系。
 
-两种形式的蠕变都是**不可逆过程**的例子。它们是[热力学](@article_id:359663)中的单行道。一根被拉伸的金属丝不会自发收缩并举起重物，就像热量不会自发地从冷物体流向热物体一样。这些过程由[热力学](@article_id:359663)“力”（如应力或温度梯度）驱动，引起[热力学](@article_id:359663)“流”（如应变率或[质量流](@article_id:303858)）。
+两种形式的蠕变都是**不可逆过程**的例子。它们是[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)中的单行道。一根被拉伸的金属丝不会自发收缩并举起重物，就像热量不会自发地从冷物体流向热物体一样。这些过程由[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)“力”（如应力或温度梯度）驱动，引起[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)“流”（如应变率或[质量流](@keyword=mass_flow|lang=zh-CN|style=Feynman)）。
 
-在1930年代，物理学家Lars Onsager发现了一个支配这些过程的深刻原理，其根源在于微观定律的[时间反演对称性](@article_id:298543)。**[昂萨格倒易关系](@article_id:300582)**指出，连接力和流的[系数矩阵](@article_id:311889)必须是对称的。
+在1930年代，物理学家Lars Onsager发现了一个支配这些过程的深刻原理，其根源在于微观定律的[时间反演对称性](@keyword=time_reversal_symmetry|lang=zh-CN|style=Feynman)。**[昂萨格倒易关系](@keyword=onsager_relations|lang=zh-CN|style=Feynman)**指出，连接力和流的[系数矩阵](@keyword=coefficient_matrix|lang=zh-CN|style=Feynman)必须是对称的。
 
-让我们再来看一下气体中的热蠕变 。我们有一个物质“流”（滑移速度，$u_s$），由一个与温度梯度（$\nabla_t T$）相关的“力”驱动。连接它们的系数$L_{uT}$描述了热[蠕变](@article_id:320937)。Onsager原理预测，*必定*存在一个倒易效应：一个由与*速度梯度*或剪切应力（$\tau_t$）相关的力驱动的*热*流（$q_t$）。这个效应的系数$L_{qu}$必须等于$L_{uT}$！
+让我们再来看一下气体中的热蠕变 [@problem_id:2522724]。我们有一个物质“流”（滑移速度，$u_s$），由一个与温度梯度（$\nabla_t T$）相关的“力”驱动。连接它们的系数$L_{uT}$描述了热[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)。Onsager原理预测，*必定*存在一个倒易效应：一个由与*速度梯度*或剪切应力（$\tau_t$）相关的力驱动的*热*流（$q_t$）。这个效应的系数$L_{qu}$必须等于$L_{uT}$！
 
-这意味着热蠕变（由热梯度引起的物质流）及其倒易伙伴——剪切引起的热流，是同一枚硬币的两面。它们被自然界的[基本对称性](@article_id:321660)密不可分地联系在一起。你不可能只拥有其中一个而没有另一个。
+这意味着热蠕变（由热梯度引起的物质流）及其倒易伙伴——剪切引起的热流，是同一枚硬币的两面。它们被自然界的[基本对称性](@keyword=fundamental_symmetries|lang=zh-CN|style=Feynman)密不可分地联系在一起。你不可能只拥有其中一个而没有另一个。
 
-于是，我们两个关于“热[蠕变](@article_id:320937)”的迥异故事找到了一个共同的概念归宿。一个是机械应力驱动、由热能促成的[位错](@article_id:299027)[输运过程](@article_id:356908)。另一个是热梯度驱动、产生机械流动的[分子输运](@article_id:374128)过程。两者都是宇宙趋向平衡的体现，由优美而微妙的[非平衡热力学](@article_id:299172)定律所编排。下垂的梁和幽灵般的流动是远亲，它们都属于塑造我们世界的宏大不可逆现象家族的一部分。
+于是，我们两个关于“热[蠕变](@keyword=creep|lang=zh-CN|style=Feynman)”的迥异故事找到了一个共同的概念归宿。一个是机械应力驱动、由热能促成的[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)[输运过程](@keyword=transport_processes|lang=zh-CN|style=Feynman)。另一个是热梯度驱动、产生机械流动的[分子输运](@keyword=molecular_transport|lang=zh-CN|style=Feynman)过程。两者都是宇宙趋向平衡的体现，由优美而微妙的[非平衡热力学](@keyword=non_equilibrium_thermodynamics|lang=zh-CN|style=Feynman)定律所编排。下垂的梁和幽灵般的流动是远亲，它们都属于塑造我们世界的宏大不可逆现象家族的一部分。

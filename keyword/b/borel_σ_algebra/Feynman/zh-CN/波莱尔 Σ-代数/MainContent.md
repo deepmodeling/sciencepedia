@@ -15,35 +15,35 @@
 
 3.  **对可数并运算封闭。** 如果你从俱乐部中取出可数个集合——$A_1, A_2, A_3, \dots$——它们的并集 $\bigcup_{n=1}^{\infty} A_n$ 也必须是其中的成员。这是最核心的规则。它允许我们将无限多个部分（只要我们能数清它们）组合起来，形成新的、通常复杂得多的成员。
 
-由于关于补集的规则，一个 $\sigma$-代数也自动地对可数*交*运算封闭。为什么呢？因为一个集合族的交集是它们各自[补集](@article_id:306716)的[并集的补集](@article_id:319905)——这是一个直接从规则中推导出来的巧妙技巧！
+由于关于补集的规则，一个 $\sigma$-代数也自动地对可数*交*运算封闭。为什么呢？因为一个集合族的交集是它们各自[补集](@keyword=complement_of_a_set|lang=zh-CN|style=Feynman)的[并集的补集](@keyword=complement_of_a_union|lang=zh-CN|style=Feynman)——这是一个直接从规则中推导出来的巧妙技巧！
 
-现在，我们用一种极其简洁的方式来定义**波莱尔 $\sigma$-代数**（记作 $\mathcal{B}(\mathbb{R})$）：它是包含 $\mathbb{R}$ 中所有[开集](@article_id:303845)的**最小** $\sigma$-代数。“最小”这个词至关重要。它意味着，除非一个集合是基于初始构件（[开集](@article_id:303845)）并遵循三条规则被绝对强制生成的，否则我们不会将其包含在内。这是最经济、最不含冗余的集族。
+现在，我们用一种极其简洁的方式来定义**波莱尔 $\sigma$-代数**（记作 $\mathcal{B}(\mathbb{R})$）：它是包含 $\mathbb{R}$ 中所有[开集](@keyword=open_set|lang=zh-CN|style=Feynman)的**最小** $\sigma$-代数。“最小”这个词至关重要。它意味着，除非一个集合是基于初始构件（[开集](@keyword=open_set|lang=zh-CN|style=Feynman)）并遵循三条规则被绝对强制生成的，否则我们不会将其包含在内。这是最经济、最不含冗余的集族。
 
 ### 生成元的交响乐
 
-波莱尔集的一个显著特征，揭示了其內在的统一性，即你实际上并不需要从*所有*[开集](@article_id:303845)开始来构建它们。最终建成的殿堂出人意料地独立于你最初使用的那堆砖块，只要那堆砖块足够丰富。这些初始集族被称为**生成元** (generators)。
+波莱尔集的一个显著特征，揭示了其內在的统一性，即你实际上并不需要从*所有*[开集](@keyword=open_set|lang=zh-CN|style=Feynman)开始来构建它们。最终建成的殿堂出人意料地独立于你最初使用的那堆砖块，只要那堆砖块足够丰富。这些初始集族被称为**生成元** (generators)。
 
-如果我们从一个更简单的集族开始，比如所有[开区间](@article_id:317982) $(a, b)$，情况会怎样？由于每个[开集](@article_id:303845)都可以写成可数个开区间的并集，这些区间就足够了。$\sigma$-代数的三条规则将接管一切，并构造出完全相同的集族 $\mathcal{B}(\mathbb{R})$！
+如果我们从一个更简单的集族开始，比如所有[开区间](@keyword=open_intervals|lang=zh-CN|style=Feynman) $(a, b)$，情况会怎样？由于每个[开集](@keyword=open_set|lang=zh-CN|style=Feynman)都可以写成可数个开区间的并集，这些区间就足够了。$\sigma$-代数的三条规则将接管一切，并构造出完全相同的集族 $\mathcal{B}(\mathbb{R})$！[@problem_id:1406439]
 
-我们甚至可以更加精简。我们甚至不需要所有的开区间。只考虑端点 $a$ 和 $b$ 都是**有理数**（分数）的[开区间](@article_id:317982) $(a, b)$。因为有理数在实数轴上是“稠密”的（在任何两个不同的实数之间总能找到一个有理数），这个可数的区间集合*仍然*足以生成整个波莱尔 $\sigma$-代数。这令人惊叹：一个可数无限的简单种子集合，竟然能绽放成一个[不可数无限](@article_id:307562)的、包含着极其复杂集合的集族。
+我们甚至可以更加精简。我们甚至不需要所有的开区间。只考虑端点 $a$ 和 $b$ 都是**有理数**（分数）的[开区间](@keyword=open_intervals|lang=zh-CN|style=Feynman) $(a, b)$。因为有理数在实数轴上是“稠密”的（在任何两个不同的实数之间总能找到一个有理数），这个可数的区间集合*仍然*足以生成整个波莱尔 $\sigma$-代数。这令人惊叹：一个可数无限的简单种子集合，竟然能绽放成一个[不可数无限](@keyword=uncountably_infinite|lang=zh-CN|style=Feynman)的、包含着极其复杂集合的集族。[@problem_id:1284283]
 
-这种稳健性是一个反复出现的主题。如果我们从所有*[闭集](@article_id:296900)*而非[开集](@article_id:303845)开始呢？由于一个集合是[闭集](@article_id:296900)当且仅当其补集是[开集](@article_id:303845)，而我们的规则要求对补集运算封闭，因此我们最终生成的仍然是同一个波莱尔 $\sigma$-代数。这种对称性是完美的。 如果我们从所有形如 $(-\infty, a]$ 的闭射线开始，结果也是一样。
+这种稳健性是一个反复出现的主题。如果我们从所有*[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)*而非[开集](@keyword=open_set|lang=zh-CN|style=Feynman)开始呢？由于一个集合是[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)当且仅当其补集是[开集](@keyword=open_set|lang=zh-CN|style=Feynman)，而我们的规则要求对补集运算封闭，因此我们最终生成的仍然是同一个波莱尔 $\sigma$-代数。这种对称性是完美的。[@problem_id:1406465] 如果我们从所有形如 $(-\infty, a]$ 的闭射线开始，结果也是一样。[@problem_id:1406439]
 
-更令人惊讶的是，考虑一种不同的定义“[开集](@article_id:303845)”的方式。$\mathbb{R}$ 上的**Sorgenfrey 拓扑**使用形如 $[a, b)$ 的[半开区间](@article_id:373321)作为其基本[开集](@article_id:303845)。这个拓扑严格比[标准拓扑](@article_id:312666)“更精细”——它包含更多的[开集](@article_id:303845)。然而，当我们从这个更丰富的初始构件集合出发构造 $\sigma$-代数时，闭包规则的强大力量会“填补”所有相同的空白，我们最终得到的恰好还是同一个波莱尔 $\sigma$-代数 $\mathcal{B}(\mathbb{R})$。
+更令人惊讶的是，考虑一种不同的定义“[开集](@keyword=open_set|lang=zh-CN|style=Feynman)”的方式。$\mathbb{R}$ 上的**Sorgenfrey 拓扑**使用形如 $[a, b)$ 的[半开区间](@keyword=half_open_intervals|lang=zh-CN|style=Feynman)作为其基本[开集](@keyword=open_set|lang=zh-CN|style=Feynman)。这个拓扑严格比[标准拓扑](@keyword=standard_topology|lang=zh-CN|style=Feynman)“更精细”——它包含更多的[开集](@keyword=open_set|lang=zh-CN|style=Feynman)。然而，当我们从这个更丰富的初始构件集合出发构造 $\sigma$-代数时，闭包规则的强大力量会“填补”所有相同的空白，我们最终得到的恰好还是同一个波莱尔 $\sigma$-代数 $\mathcal{B}(\mathbb{R})$。[@problem_id:1431696]
 
-然而，并非任何集族都能胜任。如果你试图仅从 $\mathbb{R}$ 的所有*有限*子集开始生成一个 $\sigma$-代数，你会创建一个小得多的、贫乏的俱乐部。这个俱乐部包含所有[可数集](@article_id:299124)及其补集，但它甚至无法包含一个简单的[开区间](@article_id:317982)，如 $(0, 1)$，因为它既不是可数的，其[补集](@article_id:306716)也不是可数的。初始构件必须足够丰富，以覆盖整个实数轴，而不仅仅是孤立的点。 
+然而，并非任何集族都能胜任。如果你试图仅从 $\mathbb{R}$ 的所有*有限*子集开始生成一个 $\sigma$-代数，你会创建一个小得多的、贫乏的俱乐部。这个俱乐部包含所有[可数集](@keyword=countable_sets|lang=zh-CN|style=Feynman)及其补集，但它甚至无法包含一个简单的[开区间](@keyword=open_intervals|lang=zh-CN|style=Feynman)，如 $(0, 1)$，因为它既不是可数的，其[补集](@keyword=complement_of_a_set|lang=zh-CN|style=Feynman)也不是可数的。初始构件必须足够丰富，以覆盖整个实数轴，而不仅仅是孤立的点。[@problem_id:1406439] [@problem_id:1284283]
 
-### [波莱尔集](@article_id:304935)的[原子结构](@article_id:297641)
+### [波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)的[原子结构](@keyword=atomic_structure|lang=zh-CN|style=Feynman)
 
-现在让我们放大视角，看看几条简单的规则能产生出多么复杂的集合。我们从[开区间](@article_id:317982)开始，但我们的俱乐部里还有什么？
+现在让我们放大视角，看看几条简单的规则能产生出多么复杂的集合。我们从[开区间](@keyword=open_intervals|lang=zh-CN|style=Feynman)开始，但我们的俱乐部里还有什么？
 
-考虑一个单点，比如 $\{x_0\}$。这是一个[波莱尔集](@article_id:304935)吗？它当然不是一个[开集](@article_id:303845)。但想想它周围的嵌套[开区间](@article_id:317982)序列：$(x_0-1, x_0+1)$, $(x_0-1/2, x_0+1/2)$, $(x_0-1/3, x_0+1/3)$，依此类推。这些都是[开集](@article_id:303845)，因此是我们波莱尔俱乐部的创始成员。它们的交集是什么？
+考虑一个单点，比如 $\{x_0\}$。这是一个[波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)吗？它当然不是一个[开集](@keyword=open_set|lang=zh-CN|style=Feynman)。但想想它周围的嵌套[开区间](@keyword=open_intervals|lang=zh-CN|style=Feynman)序列：$(x_0-1, x_0+1)$, $(x_0-1/2, x_0+1/2)$, $(x_0-1/3, x_0+1/3)$，依此类推。这些都是[开集](@keyword=open_set|lang=zh-CN|style=Feynman)，因此是我们波莱尔俱乐部的创始成员。它们的交集是什么？
 $$ \{x_0\} = \bigcap_{n=1}^{\infty} \left(x_0 - \frac{1}{n}, x_0 + \frac{1}{n}\right) $$
-当我们对所有[自然数](@article_id:640312) $n$ 取交集时，这个不断收紧的区间序列最终会压缩到只剩下 $x_0$ 这一个点。由于每个区间都是[波莱尔集](@article_id:304935)，它们的可数交集也必须是[波莱尔集](@article_id:304935)。所以，是的，实数轴上的每一个单点都是波莱尔 $\sigma$-代数的光荣成员。
+当我们对所有[自然数](@keyword=natural_numbers|lang=zh-CN|style=Feynman) $n$ 取交集时，这个不断收紧的区间序列最终会压缩到只剩下 $x_0$ 这一个点。由于每个区间都是[波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)，它们的可数交集也必须是[波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)。所以，是的，实数轴上的每一个单点都是波莱尔 $\sigma$-代数的光荣成员。[@problem_id:1406437]
 
-这是意义深远的第一步。如果每个单点都是[波莱尔集](@article_id:304935)，那么一个可数的点集，比如所有有理数的集合 $\mathbb{Q}$ 呢？我们可以将任何可数集 $S = \{x_1, x_2, x_3, \dots\}$ 写成这些单点集的可数并集：
+这是意义深远的第一步。如果每个单点都是[波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)，那么一个可数的点集，比如所有有理数的集合 $\mathbb{Q}$ 呢？我们可以将任何可数集 $S = \{x_1, x_2, x_3, \dots\}$ 写成这些单点集的可数并集：
 $$ S = \bigcup_{n=1}^\infty \{x_n\} $$
-因为每个 $\{x_n\}$ 都是[波莱尔集](@article_id:304935)，而我们的俱乐部对可数并运算封闭，所以可以立即得出结论：*$\mathbb{R}$ 的每个可数子集都是波莱尔集*。 从一个不起眼的开区间出发，我们已经构造出了具有惊人复杂性和粒度的集合。我们正在逐个原子地构建集合。
+因为每个 $\{x_n\}$ 都是[波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)，而我们的俱乐部对可数并运算封闭，所以可以立即得出结论：*$\mathbb{R}$ 的每个可数子集都是波莱尔集*。[@problem_id:1426953] 从一个不起眼的开区间出发，我们已经构造出了具有惊人复杂性和粒度的集合。我们正在逐个原子地构建集合。
 
 ### 这个集族有多大？一个惊人的答案
 
@@ -51,24 +51,24 @@ $$ S = \bigcup_{n=1}^\infty \{x_n\} $$
 
 答案是响亮而谦逊的：**否**。
 
-这是一个关于无穷量级对决的问题。实数集 $\mathbb{R}$ 的大小，即**基数** (cardinality)，被称为[连续统](@article_id:320471)，记作 $\mathfrak{c}$。通过集合论中一个优美的论证，可以证明[波莱尔集](@article_id:304935)的总数也是 $\mathfrak{c}$。集族 $\mathcal{B}(\mathbb{R})$ 虽然浩瀚，但其“无穷的层次”与实数轴本身相同。
+这是一个关于无穷量级对决的问题。实数集 $\mathbb{R}$ 的大小，即**基数** (cardinality)，被称为[连续统](@keyword=continuum|lang=zh-CN|style=Feynman)，记作 $\mathfrak{c}$。通过集合论中一个优美的论证，可以证明[波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)的总数也是 $\mathfrak{c}$。集族 $\mathcal{B}(\mathbb{R})$ 虽然浩瀚，但其“无穷的层次”与实数轴本身相同。
 
-然而，$\mathbb{R}$ 的*所有*可能子集的集合——即[幂集](@article_id:297874) $\mathcal{P}(\mathbb{R})$——的[基数](@article_id:298224)为 $2^{\mathfrak{c}}$。这是一个可以被证明的、远比 $\mathfrak{c}$ 更大的惊人无穷大。事实证明，实数轴上的*大多数*子集都不是波莱尔集。它们是如此病态复杂，如此缺乏结构，以至于无法通过可数次步骤从开区间构造出来。它们是我们精心构建的宇宙之外的幽灵。
+然而，$\mathbb{R}$ 的*所有*可能子集的集合——即[幂集](@keyword=power_set|lang=zh-CN|style=Feynman) $\mathcal{P}(\mathbb{R})$——的[基数](@keyword=cardinality|lang=zh-CN|style=Feynman)为 $2^{\mathfrak{c}}$。这是一个可以被证明的、远比 $\mathfrak{c}$ 更大的惊人无穷大。事实证明，实数轴上的*大多数*子集都不是波莱尔集。它们是如此病态复杂，如此缺乏结构，以至于无法通过可数次步骤从开区间构造出来。它们是我们精心构建的宇宙之外的幽灵。[@problem_id:1406453]
 
 ### 边界：超越波莱尔
 
-如果存在[非波莱尔集](@article_id:330194)，它们是什么样的？如果它们存在，这是否意味着我们的[波莱尔集](@article_id:304935)不够好？这就引出了谜题的最后一块：[波莱尔集](@article_id:304935)与**[勒贝格可测集](@article_id:298002)** (Lebesgue measurable sets) 之间的关系。
+如果存在[非波莱尔集](@keyword=non_borel_sets|lang=zh-CN|style=Feynman)，它们是什么样的？如果它们存在，这是否意味着我们的[波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)不够好？这就引出了谜题的最后一块：[波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)与**[勒贝格可测集](@keyword=lebesgue_measurable_sets|lang=zh-CN|style=Feynman)** (Lebesgue measurable sets) 之间的关系。
 
-[勒贝格测度](@article_id:300228)理论是现代[积分学](@article_id:306713)的黄金标准，它使用一个稍大的集族——勒贝格 $\sigma$-代数 $\mathcal{L}(\mathbb{R})$。这个集族包含了所有的[波莱尔集](@article_id:304935)，但增加了一个关键属性：**[完备性](@article_id:304263)** (completeness)。如果一个测度零集的任何子集本身也是可测的（并且测度也为零），那么这个[测度空间](@article_id:370716)就是完备的。这是一个直观且理想的性质；如果一个区域的“面积为零”，那么它的任何一部分也应该具有零面积。
+[勒贝格测度](@keyword=lebesgue_measure|lang=zh-CN|style=Feynman)理论是现代[积分学](@keyword=integral_calculus|lang=zh-CN|style=Feynman)的黄金标准，它使用一个稍大的集族——勒贝格 $\sigma$-代数 $\mathcal{L}(\mathbb{R})$。这个集族包含了所有的[波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)，但增加了一个关键属性：**[完备性](@keyword=completeness|lang=zh-CN|style=Feynman)** (completeness)。如果一个测度零集的任何子集本身也是可测的（并且测度也为零），那么这个[测度空间](@keyword=measure_spaces|lang=zh-CN|style=Feynman)就是完备的。这是一个直观且理想的性质；如果一个区域的“面积为零”，那么它的任何一部分也应该具有零面积。
 
-现在，考虑著名的[康托集](@article_id:302344) (Cantor set)。它是一个波莱尔集，通过反复移除区间的三分之一中段构造而成，并且它有一个惊人的性质：它的总长度，即勒贝格测度，为零。鉴于[勒贝格测度](@article_id:300228)是完备的，[康托集](@article_id:302344)的任何一个子集都必须是勒贝格可测的。
+现在，考虑著名的[康托集](@keyword=cantor_set|lang=zh-CN|style=Feynman) (Cantor set)。它是一个波莱尔集，通过反复移除区间的三分之一中段构造而成，并且它有一个惊人的性质：它的总长度，即勒贝格测度，为零。鉴于[勒贝格测度](@keyword=lebesgue_measure|lang=zh-CN|style=Feynman)是完备的，[康托集](@keyword=cantor_set|lang=zh-CN|style=Feynman)的任何一个子集都必须是勒贝格可测的。
 
-这里的关键在于：可以证明（尽管并不容易！）康托集虽然与整个实数轴拥有相同数量的点，但它包含一些*不是*波莱尔集的子集。
+这里的关键在于：可以证明（尽管并不容易！）康托集虽然与整个实数轴拥有相同数量的点，但它包含一些*不是*波莱尔集的子集。[@problem_id:1406483]
 
 让我们把这些碎片拼接起来。
-1.  存在一个集合 $A$，它是[康托集](@article_id:302344)的子集，并且 $A$ *不是*一个波莱尔集。
-2.  康托集的[勒贝格测度](@article_id:300228)为零。由于勒贝格测度是完备的，它的任何子集，包括我们的集合 $A$，*都是*一个[勒贝格可测集](@article_id:298002)。
+1.  存在一个集合 $A$，它是[康托集](@keyword=cantor_set|lang=zh-CN|style=Feynman)的子集，并且 $A$ *不是*一个波莱尔集。
+2.  康托集的[勒贝格测度](@keyword=lebesgue_measure|lang=zh-CN|style=Feynman)为零。由于勒贝格测度是完备的，它的任何子集，包括我们的集合 $A$，*都是*一个[勒贝格可测集](@keyword=lebesgue_measurable_sets|lang=zh-CN|style=Feynman)。
 
-因此，我们找到了一个集合 $A$，它属于 $\mathcal{L}(\mathbb{R})$ 但不属于 $\mathcal{B}(\mathbb{R})$。这表明波莱尔 $\sigma$-代数是勒贝格 $\sigma$-代数的一个[真子集](@article_id:312689)。可测集的世界比[波莱尔集](@article_id:304935)的世界稍大一些。完备化过程将所有测度零集的“病态”子集都包含了进来，为积分的实际工作整理了理论。
+因此，我们找到了一个集合 $A$，它属于 $\mathcal{L}(\mathbb{R})$ 但不属于 $\mathcal{B}(\mathbb{R})$。这表明波莱尔 $\sigma$-代数是勒贝格 $\sigma$-代数的一个[真子集](@keyword=proper_subset|lang=zh-CN|style=Feynman)。可测集的世界比[波莱尔集](@keyword=borel_sets|lang=zh-CN|style=Feynman)的世界稍大一些。完备化过程将所有测度零集的“病态”子集都包含了进来，为积分的实际工作整理了理论。
 
 探索波莱尔集的旅程向我们展示了数学发现的真正精神。我们从最简单的构件和几条强大的规则开始，构建了一个广阔而优雅的结构，发现了它惊人的对称性和意想不到的大小，最后，我们找到了它的边界，而这个边界又反过来为我们指明了一个更宏伟的图景。

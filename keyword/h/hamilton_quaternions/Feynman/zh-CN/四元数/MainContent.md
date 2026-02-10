@@ -1,19 +1,19 @@
 ## 引言
-虽然复数能够优雅地映射二维平面上的运算，但为三维空间寻找类似的代数体系却被证明是异常困难的。这一挑战曾让数学家 [William Rowan Hamilton](@article_id:376162) 痴迷不已，并最终引导他发现了一个超越三维、进入四维的突破性成果：四元数。本文将探讨这一强大的数学工具，填补简单[向量代数](@article_id:312753)与空间旋转复杂要求之间的鸿沟。在接下来的章节中，我们将首先剖析四元数的核心“原理与机制”，从其[非交换乘法](@article_id:378564)到使其能够进行除法运算的优雅结构。随后，我们将探讨其“应用与跨学科联系”，揭示这种[抽象代数](@article_id:305640)如何为计算机图形学、量子物理学和纯数学等不同领域提供一种实用而深刻的语言。
+虽然复数能够优雅地映射二维平面上的运算，但为三维空间寻找类似的代数体系却被证明是异常困难的。这一挑战曾让数学家 [William Rowan Hamilton](@keyword=william_rowan_hamilton|lang=zh-CN|style=Feynman) 痴迷不已，并最终引导他发现了一个超越三维、进入四维的突破性成果：四元数。本文将探讨这一强大的数学工具，填补简单[向量代数](@keyword=vector_algebra|lang=zh-CN|style=Feynman)与空间旋转复杂要求之间的鸿沟。在接下来的章节中，我们将首先剖析四元数的核心“原理与机制”，从其[非交换乘法](@keyword=non_commutative_multiplication|lang=zh-CN|style=Feynman)到使其能够进行除法运算的优雅结构。随后，我们将探讨其“应用与跨学科联系”，揭示这种[抽象代数](@keyword=abstract_algebra|lang=zh-CN|style=Feynman)如何为计算机图形学、量子物理学和纯数学等不同领域提供一种实用而深刻的语言。
 
 ## 原理与机制
 
-我们已经初步了解了这种名为[四元数](@article_id:307439)的好奇之物，它是伟大的物理学家兼数学家 [William Rowan Hamilton](@article_id:376162) 的智慧结晶。但它究竟*是*什么？要踏上这段旅程，我们必须首先亲自动手，理解这台机器本身。它的部件是什么，它们又是如何工作的？
+我们已经初步了解了这种名为[四元数](@keyword=quaternions|lang=zh-CN|style=Feynman)的好奇之物，它是伟大的物理学家兼数学家 [William Rowan Hamilton](@keyword=william_rowan_hamilton|lang=zh-CN|style=Feynman) 的智慧结晶。但它究竟*是*什么？要踏上这段旅程，我们必须首先亲自动手，理解这台机器本身。它的部件是什么，它们又是如何工作的？
 
 ### 一种新的数
 
-假设你熟悉复数，它们的形式是 $a + bi$。复数有两部分，一个实部 $a$ 和一个[虚部](@article_id:370770) $b$，存在于一个二维平面上。Hamilton 的绝妙想法是：我们能否为三维空间做类似的事情？他漫长的探索最终没有得到一个三元数，而是一个四元数。一个**四元数**，他用 $q$ 表示，具有以下形式：
+假设你熟悉复数，它们的形式是 $a + bi$。复数有两部分，一个实部 $a$ 和一个[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman) $b$，存在于一个二维平面上。Hamilton 的绝妙想法是：我们能否为三维空间做类似的事情？他漫长的探索最终没有得到一个三元数，而是一个四元数。一个**四元数**，他用 $q$ 表示，具有以下形式：
 
 $$ q = w + x\vec{i} + y\vec{j} + z\vec{k} $$
 
-这里，$w, x, y,$ 和 $z$ 都只是普通的实数。我们称 $w$ 为**标量部分**（或实部），而其余部分 $x\vec{i} + y\vec{j} + z\vec{k}$ 称为**矢量部分**（或[虚部](@article_id:370770)）。元素 $\vec{i}, \vec{j}, \vec{k}$ 是新型的虚数单位，我们可以将它们想象成指向三维空间中基本坐标轴的单位向量。
+这里，$w, x, y,$ 和 $z$ 都只是普通的实数。我们称 $w$ 为**标量部分**（或实部），而其余部分 $x\vec{i} + y\vec{j} + z\vec{k}$ 称为**矢量部分**（或[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)）。元素 $\vec{i}, \vec{j}, \vec{k}$ 是新型的虚数单位，我们可以将它们想象成指向三维空间中基本坐标轴的单位向量。
 
-如果我们只对它们进行加法运算，那就相当乏味了。你只需将相应的部分相加，就像向量加法一样：$(w_1 + x_1\vec{i} + \dots) + (w_2 + x_2\vec{i} + \dots) = (w_1+w_2) + (x_1+x_2)\vec{i} + \dots$。从这个角度看，所有四元数的集合（我们称之为 $\mathbb{H}$）的行为与所有四维向量的集合 $\mathbb{R}^4$ 甚至所有 $2 \times 2$ 矩阵的集合完全一样 。其结构是相同的。
+如果我们只对它们进行加法运算，那就相当乏味了。你只需将相应的部分相加，就像向量加法一样：$(w_1 + x_1\vec{i} + \dots) + (w_2 + x_2\vec{i} + \dots) = (w_1+w_2) + (x_1+x_2)\vec{i} + \dots$。从这个角度看，所有四元数的集合（我们称之为 $\mathbb{H}$）的行为与所有四维向量的集合 $\mathbb{R}^4$ 甚至所有 $2 \times 2$ 矩阵的集合完全一样 [@problem_id:1799937]。其结构是相同的。
 
 但 Hamilton 发明四元数并非为了加法，而是为了乘法。而这才是真正神奇之处的开始。
 
@@ -27,11 +27,11 @@ $$ \vec{i}^2 = \vec{j}^2 = \vec{k}^2 = \vec{i}\vec{j}\vec{k} = -1 $$
 
 $$ \vec{i}\vec{j} = \vec{k} $$
 
-通过以不同方式玩这个游戏，我们可以揭示整个[乘法表](@article_id:298638)：
+通过以不同方式玩这个游戏，我们可以揭示整个[乘法表](@keyword=multiplication_table|lang=zh-CN|style=Feynman)：
 
 $$ \vec{i}\vec{j} = \vec{k}, \quad \vec{j}\vec{k} = \vec{i}, \quad \vec{k}\vec{i} = \vec{j} $$
 
-这看起来就像你在物理学中学到的[单位向量](@article_id:345230)的叉积法则！我们似乎在描述三维空间的正确轨道上。但等等，那么 $\vec{j}\vec{i}$ 呢？让我们回到 $\vec{i}\vec{j}=\vec{k}$，然后从*左边*乘以 $\vec{i}$。我们得到 $\vec{i}(\vec{i}\vec{j}) = \vec{i}\vec{k}$。这变成 $\vec{i}^2\vec{j} = \vec{i}\vec{k}$，或者 $-\vec{j} = \vec{i}\vec{k}$。两边都乘以 $-1$ 得到 $\vec{j} = -\vec{i}\vec{k}$。这很有趣。那么将 $\vec{j}\vec{k}=\vec{i}$ 从右边乘以 $\vec{j}$ 呢？我们发现 $\vec{j}\vec{k}\vec{j} = \vec{i}\vec{j} = \vec{k}$。但我们可以将其分组为 $\vec{j}(\vec{k}\vec{j})=\vec{k}$。那么 $\vec{k}\vec{j}$ 是什么？
+这看起来就像你在物理学中学到的[单位向量](@keyword=unit_vectors|lang=zh-CN|style=Feynman)的叉积法则！我们似乎在描述三维空间的正确轨道上。但等等，那么 $\vec{j}\vec{i}$ 呢？让我们回到 $\vec{i}\vec{j}=\vec{k}$，然后从*左边*乘以 $\vec{i}$。我们得到 $\vec{i}(\vec{i}\vec{j}) = \vec{i}\vec{k}$。这变成 $\vec{i}^2\vec{j} = \vec{i}\vec{k}$，或者 $-\vec{j} = \vec{i}\vec{k}$。两边都乘以 $-1$ 得到 $\vec{j} = -\vec{i}\vec{k}$。这很有趣。那么将 $\vec{j}\vec{k}=\vec{i}$ 从右边乘以 $\vec{j}$ 呢？我们发现 $\vec{j}\vec{k}\vec{j} = \vec{i}\vec{j} = \vec{k}$。但我们可以将其分组为 $\vec{j}(\vec{k}\vec{j})=\vec{k}$。那么 $\vec{k}\vec{j}$ 是什么？
 
 如果你继续这个过程，你会发现一些深刻而令人不安的事情。
 
@@ -41,17 +41,17 @@ $$ \vec{i}\vec{j} = \vec{k}, \quad \vec{j}\vec{k} = \vec{i}, \quad \vec{k}\vec{i
 
 $$ \vec{j}\vec{i} = -\vec{k}, \quad \vec{k}\vec{j} = -\vec{i}, \quad \vec{i}\vec{k} = -\vec{j} $$
 
-在[四元数](@article_id:307439)的世界里，$AB$ 并不总是等于 $BA$。你相乘的顺序至关重要！这与我们日常使用的数字截然不同。我们说[四元数乘法](@article_id:315165)是**[非交换的](@article_id:367701)**。
+在[四元数](@keyword=quaternions|lang=zh-CN|style=Feynman)的世界里，$AB$ 并不总是等于 $BA$。你相乘的顺序至关重要！这与我们日常使用的数字截然不同。我们说[四元数乘法](@keyword=quaternion_multiplication|lang=zh-CN|style=Feynman)是**[非交换的](@keyword=non_commutative|lang=zh-CN|style=Feynman)**。
 
-这不仅仅是一个抽象的奇特性；它是我们周围世界的一个基本特征。想想穿衣服：你先穿袜子，*然后*再穿鞋。相反的顺序会得到一个非常不同且远不舒适的结果。三维空间中的旋转也是[非交换的](@article_id:367701)。拿一本书，向前旋转90度，然后向右旋转90度。记下它的最终朝向。现在，重置这本书，并以相反的顺序进行旋转：先向右旋转90度，然后向前旋转90度。书最终会处于一个不同的朝向！四元数捕捉到了这种现实世界中的[非交换性](@article_id:313957)，这就是为什么它们在物理学、机器人学和[计算机图形学](@article_id:308496)中如此有用的原因。
+这不仅仅是一个抽象的奇特性；它是我们周围世界的一个基本特征。想想穿衣服：你先穿袜子，*然后*再穿鞋。相反的顺序会得到一个非常不同且远不舒适的结果。三维空间中的旋转也是[非交换的](@keyword=non_commutative|lang=zh-CN|style=Feynman)。拿一本书，向前旋转90度，然后向右旋转90度。记下它的最终朝向。现在，重置这本书，并以相反的顺序进行旋转：先向右旋转90度，然后向前旋转90度。书最终会处于一个不同的朝向！四元数捕捉到了这种现实世界中的[非交换性](@keyword=non_commutativity|lang=zh-CN|style=Feynman)，这就是为什么它们在物理学、机器人学和[计算机图形学](@keyword=computer_graphics|lang=zh-CN|style=Feynman)中如此有用的原因。
 
-这种[交换律](@article_id:301656)的失效是可以“衡量”的。对于任意两个四元数 $q_A$ 和 $q_B$，我们可以计算**换位子**，$[q_A, q_B] = q_A q_B - q_B q_A$。如果它们满足[交换律](@article_id:301656)，结果将是零。对于四元数，结果通常不是零。例如，对于 $q_A = 2 + 3\vec{j}$ 和 $q_B = 1 - 4\vec{i} + \vec{k}$，换位子是一个非零四元数 $6\vec{i} + 24\vec{k}$ 。
+这种[交换律](@keyword=commutative_property|lang=zh-CN|style=Feynman)的失效是可以“衡量”的。对于任意两个四元数 $q_A$ 和 $q_B$，我们可以计算**换位子**，$[q_A, q_B] = q_A q_B - q_B q_A$。如果它们满足[交换律](@keyword=commutative_property|lang=zh-CN|style=Feynman)，结果将是零。对于四元数，结果通常不是零。例如，对于 $q_A = 2 + 3\vec{j}$ 和 $q_B = 1 - 4\vec{i} + \vec{k}$，换位子是一个非零四元数 $6\vec{i} + 24\vec{k}$ [@problem_id:1534810]。
 
-交换律的失效意味着我们必须非常小心。许多我们熟悉的代数法则不再适用。考虑简单的[二项式展开](@article_id:333305) $(x+y)^2 = x^2 + 2xy + y^2$。这个法则建立在 $xy=yx$ 的隐藏假设之上，从而使得 $xy+yx=2xy$。在四元数世界里，这是错误的。让我们用 $x=\vec{i}$ 和 $y=\vec{j}$ 来试试 ：
+交换律的失效意味着我们必须非常小心。许多我们熟悉的代数法则不再适用。考虑简单的[二项式展开](@keyword=binomial_expansion|lang=zh-CN|style=Feynman) $(x+y)^2 = x^2 + 2xy + y^2$。这个法则建立在 $xy=yx$ 的隐藏假设之上，从而使得 $xy+yx=2xy$。在四元数世界里，这是错误的。让我们用 $x=\vec{i}$ 和 $y=\vec{j}$ 来试试 [@problem_id:1787294]：
 
 $$ (\vec{i}+\vec{j})^2 = (\vec{i}+\vec{j})(\vec{i}+\vec{j}) = \vec{i}^2 + \vec{i}\vec{j} + \vec{j}\vec{i} + \vec{j}^2 $$
 
-使用我们的法则，这变成 $-1 + \vec{k} - \vec{k} - 1 = -2$。但熟悉的公式会给出 $\vec{i}^2 + 2\vec{i}\vec{j} + \vec{j}^2 = -1 + 2\vec{k} - 1 = -2 + 2\vec{k}$。答案是不同的！旧的法则被打破了。这甚至影响到像[矩阵行列式](@article_id:373000)这样根深蒂固的概念。如果一个矩阵包含[四元数](@article_id:307439)项，标准的[行列式](@article_id:303413)公式就变得模棱两可，因为乘法顺序很重要 。
+使用我们的法则，这变成 $-1 + \vec{k} - \vec{k} - 1 = -2$。但熟悉的公式会给出 $\vec{i}^2 + 2\vec{i}\vec{j} + \vec{j}^2 = -1 + 2\vec{k} - 1 = -2 + 2\vec{k}$。答案是不同的！旧的法则被打破了。这甚至影响到像[矩阵行列式](@keyword=matrix_determinant|lang=zh-CN|style=Feynman)这样根深蒂固的概念。如果一个矩阵包含[四元数](@keyword=quaternions|lang=zh-CN|style=Feynman)项，标准的[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)公式就变得模棱两可，因为乘法顺序很重要 [@problem_id:1388123]。
 
 ### 混沌中的秩序：范数与逆的美妙
 
@@ -59,7 +59,7 @@ $$ (\vec{i}+\vec{j})^2 = (\vec{i}+\vec{j})(\vec{i}+\vec{j}) = \vec{i}^2 + \vec{i
 
 让我们为四元数 $q = w + x\vec{i} + y\vec{j} + z\vec{k}$ 定义两个至关重要的概念。
 
-首先，它的**[共轭](@article_id:312168)**，记作 $\bar{q}$，只需将矢量部分的符号翻转即可得到：
+首先，它的**[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)**，记作 $\bar{q}$，只需将矢量部分的符号翻转即可得到：
 
 $$ \bar{q} = w - x\vec{i} - y\vec{j} - z\vec{k} $$
 
@@ -67,27 +67,27 @@ $$ \bar{q} = w - x\vec{i} - y\vec{j} - z\vec{k} $$
 
 $$ \|q\| = \sqrt{w^2 + x^2 + y^2 + z^2} $$
 
-现在，让我们看看当一个四元数乘以它自己的[共轭](@article_id:312168)时会发生什么。这是魔法发生的时刻。让我们来计算：
+现在，让我们看看当一个四元数乘以它自己的[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)时会发生什么。这是魔法发生的时刻。让我们来计算：
 
 $$ q\bar{q} = (w + x\vec{i} + y\vec{j} + z\vec{k})(w - x\vec{i} - y\vec{j} - z\vec{k}) $$
 
-如果你耐心地把所有16项都乘出来，一个奇妙的事情发生了。所有涉及像 $\vec{i}\vec{j}$ 和 $\vec{j}\vec{i}$ 这样的乘积的[交叉](@article_id:315017)项都成对抵消了！例如，你会从第一部分得到一个项 $-w(x\vec{i})$，从第二部分得到 $+w(x\vec{i})$。你会得到 $-xy(\vec{i}\vec{j})$ 和 $-yx(\vec{j}\vec{i})$。由于 $\vec{i}\vec{j}=-\vec{j}\vec{i}$，这两项变成 $-xy\vec{k}$ 和 $+xy\vec{k}$，它们完美地抵消了。当尘埃落定，你将得到一个惊人简单的结果：
+如果你耐心地把所有16项都乘出来，一个奇妙的事情发生了。所有涉及像 $\vec{i}\vec{j}$ 和 $\vec{j}\vec{i}$ 这样的乘积的[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)项都成对抵消了！例如，你会从第一部分得到一个项 $-w(x\vec{i})$，从第二部分得到 $+w(x\vec{i})$。你会得到 $-xy(\vec{i}\vec{j})$ 和 $-yx(\vec{j}\vec{i})$。由于 $\vec{i}\vec{j}=-\vec{j}\vec{i}$，这两项变成 $-xy\vec{k}$ 和 $+xy\vec{k}$，它们完美地抵消了。当尘埃落定，你将得到一个惊人简单的结果：
 
 $$ q\bar{q} = w^2 + x^2 + y^2 + z^2 = \|q\|^2 $$
 
-一个四元数乘以它的[共轭](@article_id:312168)总会产生一个非负实数！而且因为实数与任何数都满足[交换律](@article_id:301656)，我们也有 $\bar{q}q = \|q\|^2$。这一个性质驯服了狂野的非交换性，并允许我们进行除法运算。如果我们想找到一个非零[四元数](@article_id:307439) $q$ 的逆，我们可以简单地写出：
+一个四元数乘以它的[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)总会产生一个非负实数！而且因为实数与任何数都满足[交换律](@keyword=commutative_property|lang=zh-CN|style=Feynman)，我们也有 $\bar{q}q = \|q\|^2$。这一个性质驯服了狂野的非交换性，并允许我们进行除法运算。如果我们想找到一个非零[四元数](@keyword=quaternions|lang=zh-CN|style=Feynman) $q$ 的逆，我们可以简单地写出：
 
 $$ q^{-1} = \frac{\bar{q}}{\|q\|^2} $$
 
-这是因为 $q \cdot (\frac{\bar{q}}{\|q\|^2}) = \frac{q\bar{q}}{\|q\|^2} = \frac{\|q\|^2}{\|q\|^2} = 1$。这意味着每个非零[四元数](@article_id:307439)都有一个乘法逆元。这样的结构被称为**[除环](@article_id:309987)**——它就像一个域（如实数或复数），但附加条件是乘法不满足[交换律](@article_id:301656)。
+这是因为 $q \cdot (\frac{\bar{q}}{\|q\|^2}) = \frac{q\bar{q}}{\|q\|^2} = \frac{\|q\|^2}{\|q\|^2} = 1$。这意味着每个非零[四元数](@keyword=quaternions|lang=zh-CN|style=Feynman)都有一个乘法逆元。这样的结构被称为**[除环](@keyword=division_ring|lang=zh-CN|style=Feynman)**——它就像一个域（如实数或复数），但附加条件是乘法不满足[交换律](@keyword=commutative_property|lang=zh-CN|style=Feynman)。
 
-这对**[单位四元数](@article_id:383069)**——那些范数为1的[四元数](@article_id:307439)——导出了一个特别优雅的结果。如果 $\|q\|=1$，那么逆的公式就简化为 $q^{-1} = \bar{q}$ 。逆就是[共轭](@article_id:312168)！这种优美的简洁性是[单位四元数](@article_id:383069)成为表示旋转的完美工具的原因之一。
+这对**[单位四元数](@keyword=unit_quaternions|lang=zh-CN|style=Feynman)**——那些范数为1的[四元数](@keyword=quaternions|lang=zh-CN|style=Feynman)——导出了一个特别优雅的结果。如果 $\|q\|=1$，那么逆的公式就简化为 $q^{-1} = \bar{q}$ [@problem_id:1806548]。逆就是[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)！这种优美的简洁性是[单位四元数](@keyword=unit_quaternions|lang=zh-CN|style=Feynman)成为表示旋转的完美工具的原因之一。
 
 ### 揭示更深层的结构
 
 现在我们有了基本工具，可以探索四元数一些更微妙和令人惊讶的特性。
 
-例如，在这个[非交换的](@article_id:367701)世界里，有*任何*元素能与所有元素交换吗？有，但只有最乏味的那些。如果一个元素 $c$ 对于*每一个*[四元数](@article_id:307439) $q$ 都满足 $cq = qc$，那么它就在[四元数](@article_id:307439)的**中心**里。事实证明，$\mathbb{H}$ 的中心就是实数集 。如果你取一个实数，比如 $2$，和一个[四元数](@article_id:307439)，比如 $\vec{i}$，那么 $2 \cdot \vec{i} = \vec{i} \cdot 2 = 2\vec{i}$。但如果你取一个非实的四元数，比如 $\vec{j}$，然后乘以 $\vec{i}$，你会得到 $\vec{j}\vec{i} = -\vec{k}$，而 $\vec{i}\vec{j} = \vec{k}$。它们不交换。只有实数在这场[非交换](@article_id:297053)之舞中保持超然。
+例如，在这个[非交换的](@keyword=non_commutative|lang=zh-CN|style=Feynman)世界里，有*任何*元素能与所有元素交换吗？有，但只有最乏味的那些。如果一个元素 $c$ 对于*每一个*[四元数](@keyword=quaternions|lang=zh-CN|style=Feynman) $q$ 都满足 $cq = qc$，那么它就在[四元数](@keyword=quaternions|lang=zh-CN|style=Feynman)的**中心**里。事实证明，$\mathbb{H}$ 的中心就是实数集 [@problem_id:1823187]。如果你取一个实数，比如 $2$，和一个[四元数](@keyword=quaternions|lang=zh-CN|style=Feynman)，比如 $\vec{i}$，那么 $2 \cdot \vec{i} = \vec{i} \cdot 2 = 2\vec{i}$。但如果你取一个非实的四元数，比如 $\vec{j}$，然后乘以 $\vec{i}$，你会得到 $\vec{j}\vec{i} = -\vec{k}$，而 $\vec{i}\vec{j} = \vec{k}$。它们不交换。只有实数在这场[非交换](@keyword=non_commutation|lang=zh-CN|style=Feynman)之舞中保持超然。
 
 也许最惊人的发现来自于我们问一个高中代数里的简单问题：$x^2 = -1$ 的解是什么？在实数中，没有解。复数的发明正是为了解决这个问题，给了我们两个答案：$i$ 和 $-i$。那么在四元数中呢？我们已经知道 $\vec{i}, \vec{j},$ 和 $\vec{k}$ 是解。还有其他的吗？
 
@@ -99,10 +99,10 @@ $$ x^2 = (w^2 - (x^2+y^2+z^2)) + 2w\vec{v} $$
 1.  $2w\vec{v} = 0$。这意味着要么 $w=0$，要么 $\vec{v}=0$。如果 $\vec{v}=0$，那么 $x$ 只是实数 $w$，而 $w^2=-1$ 没有解。所以我们必须有 $w=0$。
 2.  $w^2 - (x^2+y^2+z^2) = -1$。因为 $w=0$，这简化为 $-(x^2+y^2+z^2)=-1$，或者 $x^2+y^2+z^2=1$。
 
-这是一个不可思议的结果 。一个四元数 $x$ 是 $-1$ 的平方根，当且仅当它的实部为零且其矢量部分的长度为1。从几何上看，这是三维空间中单位球面上所有点的集合！我们得到的不是两个解，而是*无穷多个*解，形成了一个美丽的球面。复数给了我们一条线上的两个点；[四元数](@article_id:307439)则给了我们一整个球面的可能性。
+这是一个不可思议的结果 [@problem_id:1778869]。一个四元数 $x$ 是 $-1$ 的平方根，当且仅当它的实部为零且其矢量部分的长度为1。从几何上看，这是三维空间中单位球面上所有点的集合！我们得到的不是两个解，而是*无穷多个*解，形成了一个美丽的球面。复数给了我们一条线上的两个点；[四元数](@keyword=quaternions|lang=zh-CN|style=Feynman)则给了我们一整个球面的可能性。
 
-最后，我们可以看到[四元数](@article_id:307439)是如何成为复数的自然扩展的。一个复数是 $a+bi$。如果我们把一个[四元数](@article_id:307439) $q=w+x\vec{i}+y\vec{j}+z\vec{k}$ 用一种稍微不同的方式写出来呢？让我们把各项分组：
+最后，我们可以看到[四元数](@keyword=quaternions|lang=zh-CN|style=Feynman)是如何成为复数的自然扩展的。一个复数是 $a+bi$。如果我们把一个[四元数](@keyword=quaternions|lang=zh-CN|style=Feynman) $q=w+x\vec{i}+y\vec{j}+z\vec{k}$ 用一种稍微不同的方式写出来呢？让我们把各项分组：
 $$ q = (w + x\vec{i}) + (y\vec{j} + z\vec{k}) $$
-我们可以从第二部分中提出一个因子 $\vec{j}$。利用 $\vec{j}\vec{i}=-\vec{k}$ 的关系，我们可以验证 $\vec{j}(y-z\vec{i}) = y\vec{j} - z\vec{j}\vec{i} = y\vec{j} + z\vec{k}$。因此，任何[四元数](@article_id:307439)都可以写成：
+我们可以从第二部分中提出一个因子 $\vec{j}$。利用 $\vec{j}\vec{i}=-\vec{k}$ 的关系，我们可以验证 $\vec{j}(y-z\vec{i}) = y\vec{j} - z\vec{j}\vec{i} = y\vec{j} + z\vec{k}$。因此，任何[四元数](@keyword=quaternions|lang=zh-CN|style=Feynman)都可以写成：
 $$ q = (w+x\vec{i}) + \vec{j}(y-z\vec{i}) $$
-如果我们令 $z_1 = w+x\vec{i}$ 和 $z_2 = y-z\vec{i}$，我们看到任何四元数都可以表示为 $q = z_1 + \vec{j}z_2$，其中 $z_1$ 和 $z_2$ 是复数 。这揭示了一种深刻而优雅的统一性：四维的四元数空间可以被看作是复数上的二维空间。它们不是一个奇怪的畸变，而是我们在构建描述周围世界的数系探索中的下一个逻辑步骤。正是这种丰富的、[非交换的](@article_id:367701)、深刻几何的结构，我们将用它来探索旋转的世界。
+如果我们令 $z_1 = w+x\vec{i}$ 和 $z_2 = y-z\vec{i}$，我们看到任何四元数都可以表示为 $q = z_1 + \vec{j}z_2$，其中 $z_1$ 和 $z_2$ 是复数 [@problem_id:1797119]。这揭示了一种深刻而优雅的统一性：四维的四元数空间可以被看作是复数上的二维空间。它们不是一个奇怪的畸变，而是我们在构建描述周围世界的数系探索中的下一个逻辑步骤。正是这种丰富的、[非交换的](@keyword=non_commutative|lang=zh-CN|style=Feynman)、深刻几何的结构，我们将用它来探索旋转的世界。
